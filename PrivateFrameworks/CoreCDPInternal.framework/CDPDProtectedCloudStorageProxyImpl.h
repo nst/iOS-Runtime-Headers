@@ -9,8 +9,17 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (BOOL)_performPCSBlock:(id /* block */)arg1 error:(id*)arg2;
+- (struct _PCSIdentitySetData { }*)pcsIdentityCreateWithInfo:(id)arg1 error:(id*)arg2;
+- (BOOL)pcsIdentityMigrateCloseDoorWithInfo:(id)arg1 error:(id*)arg2;
+- (BOOL)pcsIdentityMigrateDropStingrayWithInfo:(id)arg1 error:(id*)arg2;
+- (BOOL)pcsIdentityMigrateRestoreHSMWithInfo:(id)arg1 error:(id*)arg2;
 - (BOOL)pcsIdentityMigrateToStingrayWithInfo:(id)arg1 error:(id*)arg2;
-- (BOOL)pcsIdentityMigrateToiCDPWithInfo:(id)arg1 erorr:(id*)arg2;
+- (BOOL)pcsIdentityMigrateToiCDPWithInfo:(id)arg1 error:(id*)arg2;
+- (BOOL)pcsIdentityPlesioLocalWithInfo:(id)arg1 error:(id*)arg2;
+- (BOOL)pcsIdentityPlesioNetworkedWithInfo:(id)arg1 error:(id*)arg2;
+- (BOOL)pcsIdentityPlesioStateWithInfo:(id)arg1 networked:(BOOL)arg2 error:(id*)arg3;
+- (BOOL)pcsIdentitySetIsInICDPLocal:(struct _PCSIdentitySetData { }*)arg1 error:(id*)arg2;
 - (BOOL)pcsIdentitySetIsInICDPNetwork:(struct _PCSIdentitySetData { }*)arg1 error:(id*)arg2;
 - (struct _PCSIdentitySetData { }*)pcsIdentitySetupWithInfo:(id)arg1 error:(id*)arg2;
 

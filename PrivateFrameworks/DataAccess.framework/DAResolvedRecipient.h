@@ -3,11 +3,11 @@
  */
 
 @interface DAResolvedRecipient : NSObject {
-    int _availabilityStatus;
-    int _certificatesStatus;
-    NSMutableDictionary *_mResolvedEmailToX509Certs;
-    NSString *_mergedFreeBusy;
-    int _status;
+    int  _availabilityStatus;
+    int  _certificatesStatus;
+    NSMutableDictionary * _mResolvedEmailToX509Certs;
+    NSString * _mergedFreeBusy;
+    int  _status;
 }
 
 @property (nonatomic) int availabilityStatus;

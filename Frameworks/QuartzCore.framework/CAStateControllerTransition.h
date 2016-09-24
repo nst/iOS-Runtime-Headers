@@ -2,21 +2,25 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@interface CAStateControllerTransition : NSObject {
-    NSMutableArray *_animations;
-    double _beginTime;
-    CAStateController *_controller;
-    double _duration;
-    CALayer *_layer;
-    NSString *_masterKey;
-    float _speed;
-    CAStateTransition *_transition;
+@interface CAStateControllerTransition : NSObject <CAAnimationDelegate> {
+    NSMutableArray * _animations;
+    double  _beginTime;
+    CAStateController * _controller;
+    double  _duration;
+    CALayer * _layer;
+    NSString * _masterKey;
+    double  _speed;
+    CAStateTransition * _transition;
 }
 
 @property (nonatomic, readonly) double beginTime;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) double duration;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) CALayer *layer;
-@property (nonatomic, readonly) float speed;
+@property (nonatomic, readonly) double speed;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) CAStateTransition *transition;
 
 - (void)addAnimation:(id)arg1;

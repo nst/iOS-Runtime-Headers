@@ -3,21 +3,23 @@
  */
 
 @interface BBAccessoryIcon : NSObject <NSCopying, NSSecureCoding> {
-    NSMutableDictionary *_imagesForContentSize;
+    NSMutableDictionary * _imagesForContentSize;
 }
 
 @property (nonatomic, copy) NSDictionary *imagesForContentSize;
 
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (void)addImage:(id)arg1 forContentSizeCategory:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned int)hash;
 - (id)imageForContentSizeCategory:(id)arg1;
 - (id)imagesForContentSize;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)setImagesForContentSize:(id)arg1;
 
 @end

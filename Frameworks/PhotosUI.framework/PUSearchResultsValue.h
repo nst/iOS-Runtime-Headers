@@ -3,19 +3,25 @@
  */
 
 @interface PUSearchResultsValue : NSObject <PUSearchResult> {
-    id _albumUUID;
-    unsigned int _approximateCount;
-    NSAttributedString *_attributedDisplayTitle;
-    <PUSearchResultsValueDelegate> *_delegate;
-    NSString *_displaySubtitle;
-    PSIGroupResult *_groupResult;
-    NSObject<OS_dispatch_queue> *_queue;
-    double _score;
-    NSArray *_uuids;
+    NSArray * _additionalUUIDs;
+    id  _albumUUID;
+    unsigned int  _approximateCount;
+    NSAttributedString * _attributedDisplayTitle;
+    <PUSearchResultsValueDelegate> * _delegate;
+    NSString * _displaySubtitle;
+    PSIGroupResult * _groupResult;
+    id  _memoryUUID;
+    NSObject<OS_dispatch_queue> * _queue;
+    double  _score;
+    NSString * _selectedDisplayTitle;
+    NSMutableDictionary * _uuidToAssetMap;
+    NSArray * _uuids;
 }
 
-@property (retain) id albumUUID;
-@property unsigned int approximateCount;
+@property (setter=_setAdditionalUUIDs:, retain) NSArray *additionalUUIDs;
+@property (setter=_setAlbumUUID:, retain) id albumUUID;
+@property (setter=_setApproximateCount:) unsigned int approximateCount;
+@property (readonly, copy) NSArray *assets;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUSearchResultsValueDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -23,31 +29,52 @@
 @property (readonly, copy) NSString *displayTitle;
 @property (setter=_setGroupResult:, retain) PSIGroupResult *groupResult;
 @property (readonly) unsigned int hash;
+@property (setter=_setMemoryUUID:, retain) id memoryUUID;
 @property (readonly) double score;
+@property (readonly) unsigned int searchCategories;
 @property (readonly, copy) NSString *searchString;
+@property (nonatomic, readonly) NSArray *searchTokens;
+@property (setter=_setSelectedDisplayTitle:, retain) NSString *selectedDisplayTitle;
 @property (readonly) Class superclass;
-@property (retain) NSArray *uuids;
+@property (readonly) NSMutableDictionary *uuidToAssetMap;
+@property (setter=_setUUIDs:, retain) NSArray *uuids;
 
 - (void).cxx_destruct;
 - (void)_computeScoreWithMaxGroupedResultsCount:(unsigned int)arg1;
+- (void)_setAdditionalUUIDs:(id)arg1;
 - (void)_setAlbumUUID:(id)arg1;
 - (void)_setApproximateCount:(unsigned int)arg1;
+- (void)_setAsset:(id)arg1 forUUID:(id)arg2;
 - (void)_setGroupResult:(id)arg1;
+- (void)_setMemoryUUID:(id)arg1;
+- (void)_setSelectedDisplayTitle:(id)arg1;
 - (void)_setUUIDs:(id)arg1;
+- (id)additionalUUIDs;
 - (id)albumUUID;
 - (unsigned int)approximateCount;
+- (id)assetLocalIdentifiersForPreview;
+- (id)assets;
 - (int)compare:(id)arg1;
 - (id)delegate;
 - (id)displaySubtitle;
 - (id)displayTitle;
-- (id)displayTitleWithDefaultAttributes:(id)arg1 highlightedAttributes:(id)arg2;
+- (id)displayTitleWithDefaultAttributes:(id)arg1 highlightedAttributes:(id)arg2 selectedDisplayTitle:(id*)arg3;
+- (void)fetchAdditionalUUIDs:(id /* block */)arg1;
+- (void)fetchAllUUIDs:(id /* block */)arg1;
 - (void)fetchRemainingUUIDs:(id /* block */)arg1;
 - (id)groupResult;
+- (BOOL)hasAdditionalUUIDs;
 - (id)init;
 - (BOOL)isFinished;
+- (id)memoryUUID;
+- (void)performAggdSelectionLog;
 - (double)score;
+- (unsigned int)searchCategories;
 - (id)searchString;
+- (id)searchTokens;
+- (id)selectedDisplayTitle;
 - (void)setDelegate:(id)arg1;
+- (id)uuidToAssetMap;
 - (id)uuids;
 
 @end

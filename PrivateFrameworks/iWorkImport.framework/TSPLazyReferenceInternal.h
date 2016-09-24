@@ -3,12 +3,13 @@
  */
 
 @interface TSPLazyReferenceInternal : TSPLazyReference {
-    NSUUID *_objectUUID;
+    NSUUID * _objectUUID;
 }
 
 @property (nonatomic, retain) NSUUID *objectUUID;
 
 - (void).cxx_destruct;
+- (id)additionalDescription;
 - (id)objectUUID;
 - (void)setObjectUUID:(id)arg1;
 

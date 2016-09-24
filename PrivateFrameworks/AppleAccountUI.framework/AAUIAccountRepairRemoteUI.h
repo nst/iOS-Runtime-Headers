@@ -3,19 +3,19 @@
  */
 
 @interface AAUIAccountRepairRemoteUI : NSObject <RUIObjectModelDelegate> {
-    ACAccount *_account;
-    UINavigationController *_accountRepairUIViewController;
-    ACAccountStore *_accountStore;
-    NSString *_agreeURL;
-    NSDictionary *_cookieHeadersForRepairRequest;
-    <AAUIAccountRepairRemoteUIDelegate> *_delegate;
-    BOOL _isModal;
-    id /* block */ _linkLoadCompletion;
-    RUILoader *_loader;
-    NSMutableArray *_objectModels;
-    UIViewController *_originatingViewController;
-    UINavigationController *_parentNavController;
-    UIAlertView *_tcConfirmationAlert;
+    ACAccount * _account;
+    UINavigationController * _accountRepairUIViewController;
+    ACAccountStore * _accountStore;
+    NSString * _agreeURL;
+    NSDictionary * _cookieHeadersForRepairRequest;
+    <AAUIAccountRepairRemoteUIDelegate> * _delegate;
+    BOOL  _isModal;
+    id /* block */  _linkLoadCompletion;
+    RUILoader * _loader;
+    NSMutableArray * _objectModels;
+    UIViewController * _originatingViewController;
+    UINavigationController * _parentNavController;
+    UIAlertView * _tcConfirmationAlert;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -35,7 +35,7 @@
 - (id)delegate;
 - (id)initWithAccount:(id)arg1 inStore:(id)arg2;
 - (void)loader:(id)arg1 didFailWithError:(id)arg2;
-- (void)loader:(id)arg1 receivedObjectModel:(id)arg2 actionSignal:(int)arg3;
+- (void)loader:(id)arg1 receivedObjectModel:(id)arg2 actionSignal:(unsigned int)arg3;
 - (void)objectModel:(id)arg1 pressedButton:(id)arg2 attributes:(id)arg3;
 - (void)objectModel:(id)arg1 pressedLink:(id)arg2 httpMethod:(id)arg3 completion:(id /* block */)arg4;
 - (void)objectModelPressedBack:(id)arg1;

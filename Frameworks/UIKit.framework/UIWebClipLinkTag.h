@@ -3,11 +3,11 @@
  */
 
 @interface UIWebClipLinkTag : NSObject {
-    NSString *_href;
-    BOOL _mediaMatchesLandscapeOrientation;
-    BOOL _mediaMatchesPortraitOrientation;
-    NSString *_rel;
-    NSString *_sizes;
+    NSString * _href;
+    BOOL  _mediaMatchesLandscapeOrientation;
+    BOOL  _mediaMatchesPortraitOrientation;
+    NSString * _rel;
+    NSString * _sizes;
 }
 
 @property (nonatomic, copy) NSString *href;

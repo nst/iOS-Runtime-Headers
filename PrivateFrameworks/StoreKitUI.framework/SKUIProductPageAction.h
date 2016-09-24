@@ -3,11 +3,11 @@
  */
 
 @interface SKUIProductPageAction : NSObject {
-    int _actionType;
-    SKUIItem *_item;
-    NSURL *_url;
-    NSString *_urlTitle;
-    id /* block */ _viewControllerBlock;
+    int  _actionType;
+    SKUIItem * _item;
+    NSURL * _url;
+    NSString * _urlTitle;
+    id /* block */  _viewControllerBlock;
 }
 
 @property (nonatomic, copy) NSURL *URL;

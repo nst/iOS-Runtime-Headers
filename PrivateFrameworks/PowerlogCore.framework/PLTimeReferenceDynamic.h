@@ -3,13 +3,13 @@
  */
 
 @interface PLTimeReferenceDynamic : PLTimeReference {
-    NSDate *_lastQueryTime;
-    NSMutableArray *_offsetHistory;
-    int _offsetHistoryHead;
-    PLTimer *_periodicCurrentTime;
-    NSMutableDictionary *_timeChangeBlocks;
-    double _tooFarInFutureDistance;
-    double _tooFarInPastDistance;
+    NSDate * _lastQueryTime;
+    NSMutableArray * _offsetHistory;
+    int  _offsetHistoryHead;
+    PLTimer * _periodicCurrentTime;
+    NSMutableDictionary * _timeChangeBlocks;
+    double  _tooFarInFutureDistance;
+    double  _tooFarInPastDistance;
 }
 
 @property (retain) NSDate *lastQueryTime;

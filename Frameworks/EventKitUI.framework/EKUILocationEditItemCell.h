@@ -3,11 +3,11 @@
  */
 
 @interface EKUILocationEditItemCell : UITableViewCell {
-    UIButton *_clearButton;
-    id /* block */ _clearButtonTapped;
-    UIImageView *_image;
-    UIActivityIndicatorView *_spinner;
-    UILabel *_title;
+    UIButton * _clearButton;
+    id /* block */  _clearButtonTapped;
+    UIImageView * _image;
+    UIActivityIndicatorView * _spinner;
+    UILabel * _title;
 }
 
 @property (nonatomic, copy) id /* block */ clearButtonTapped;

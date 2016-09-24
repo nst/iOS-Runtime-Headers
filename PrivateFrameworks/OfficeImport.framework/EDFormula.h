@@ -3,7 +3,7 @@
  */
 
 @interface EDFormula : NSObject <EDFormulaBuilding> {
-    struct __CFData { } *mPackedData;
+    struct __CFData { } * mPackedData;
 }
 
 @property (readonly, copy) NSString *debugDescription;

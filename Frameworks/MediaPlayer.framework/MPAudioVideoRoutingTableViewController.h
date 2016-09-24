@@ -3,15 +3,15 @@
  */
 
 @interface MPAudioVideoRoutingTableViewController : UITableViewController <MPAVRoutingControllerDelegate> {
-    int _airPlayPasswordAlertDidAppearToken;
-    BOOL _airPlayPasswordAlertDidAppearTokenIsValid;
-    int _airPlayPasswordAlertDidCancelToken;
-    unsigned int _avItemType;
-    BOOL _displayMirroringRoutes;
-    NSArray *_displayedRoutes;
-    MPAVRoutingController *_routingController;
-    BOOL _wirelessDisplayCapableRouteIsPicked;
-    BOOL _wirelessDisplayRouteIsPendingAsPicked;
+    int  _airPlayPasswordAlertDidAppearToken;
+    BOOL  _airPlayPasswordAlertDidAppearTokenIsValid;
+    int  _airPlayPasswordAlertDidCancelToken;
+    int  _avItemType;
+    BOOL  _displayMirroringRoutes;
+    NSArray * _displayedRoutes;
+    MPAVRoutingController * _routingController;
+    BOOL  _wirelessDisplayCapableRouteIsPicked;
+    BOOL  _wirelessDisplayRouteIsPendingAsPicked;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -31,7 +31,7 @@
 - (id)_pickedRoute;
 - (BOOL)_wirelessDisplayCapableRouteIsPicked;
 - (void)dealloc;
-- (id)initWithType:(unsigned int)arg1 displayMirroringRoutes:(BOOL)arg2;
+- (id)initWithType:(int)arg1 displayMirroringRoutes:(BOOL)arg2;
 - (id)routingController;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

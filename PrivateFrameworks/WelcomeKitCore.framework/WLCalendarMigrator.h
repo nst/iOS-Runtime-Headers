@@ -3,7 +3,7 @@
  */
 
 @interface WLCalendarMigrator : WLMigrationWebService {
-    EKEventStore *_eventStore;
+    EKEventStore * _eventStore;
 }
 
 + (id)contentType;

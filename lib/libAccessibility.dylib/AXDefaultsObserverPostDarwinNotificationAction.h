@@ -3,7 +3,7 @@
  */
 
 @interface AXDefaultsObserverPostDarwinNotificationAction : NSObject <AXDefaultsObserverAction> {
-    NSString *_note;
+    NSString * _note;
 }
 
 @property (readonly, copy) NSString *debugDescription;

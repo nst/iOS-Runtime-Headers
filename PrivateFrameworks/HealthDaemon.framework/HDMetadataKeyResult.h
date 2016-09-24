@@ -3,13 +3,13 @@
  */
 
 @interface HDMetadataKeyResult : NSObject {
-    NSString *_key;
+    NSString * _key;
 }
 
-@property (nonatomic, retain) NSString *key;
+@property (nonatomic, readonly) NSString *key;
 
 - (void).cxx_destruct;
+- (id)initWithKey:(id)arg1;
 - (id)key;
-- (void)setKey:(id)arg1;
 
 @end

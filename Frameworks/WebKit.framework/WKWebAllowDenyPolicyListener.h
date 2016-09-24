@@ -5,7 +5,7 @@
 @interface WKWebAllowDenyPolicyListener : NSObject <WebAllowDenyPolicyListener> {
     struct RefPtr<WebKit::GeolocationPermissionRequestProxy> { 
         struct GeolocationPermissionRequestProxy {} *m_ptr; 
-    } _permissionRequestProxy;
+    }  _permissionRequestProxy;
 }
 
 @property (readonly, copy) NSString *debugDescription;

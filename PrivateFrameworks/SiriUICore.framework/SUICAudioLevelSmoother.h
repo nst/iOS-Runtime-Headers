@@ -3,29 +3,29 @@
  */
 
 @interface SUICAudioLevelSmoother : NSObject {
-    float _attackSpeed;
-    float _attackVelocity;
-    float _baseValue;
-    float _decaySpeed;
-    float _decayVelocity;
-    float _exponentMultiplier;
-    int _historyLength;
-    float _maximumPower;
-    float _minimumPower;
-    unsigned int _powerPointer;
-    float _previousLevel;
-    float *_runningPowerLevels;
-    int _samplesSinceLastCleared;
-    BOOL _usesAttackAndDecaySpeed;
-    BOOL _usesExponentialCurve;
+    double  _attackSpeed;
+    double  _attackVelocity;
+    double  _baseValue;
+    double  _decaySpeed;
+    double  _decayVelocity;
+    double  _exponentMultiplier;
+    int  _historyLength;
+    double  _maximumPower;
+    double  _minimumPower;
+    unsigned int  _powerPointer;
+    double  _previousLevel;
+    double * _runningPowerLevels;
+    int  _samplesSinceLastCleared;
+    BOOL  _usesAttackAndDecaySpeed;
+    BOOL  _usesExponentialCurve;
 }
 
-@property (nonatomic) float attackSpeed;
-@property (nonatomic) float baseValue;
-@property (nonatomic) float decaySpeed;
-@property (nonatomic) float exponentMultiplier;
-@property (nonatomic) float maximumPower;
-@property (nonatomic) float minimumPower;
+@property (nonatomic) double attackSpeed;
+@property (nonatomic) double baseValue;
+@property (nonatomic) double decaySpeed;
+@property (nonatomic) double exponentMultiplier;
+@property (nonatomic) double maximumPower;
+@property (nonatomic) double minimumPower;
 @property (nonatomic, readonly) BOOL usesAttackAndDecaySpeed;
 @property (nonatomic, readonly) BOOL usesExponentialCurve;
 

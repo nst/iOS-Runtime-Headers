@@ -3,9 +3,9 @@
  */
 
 @interface OCFont : NSObject {
-    BOOL _bold;
-    BOOL _italic;
-    OCFontSubfamily *_subfamily;
+    BOOL  _bold;
+    BOOL  _italic;
+    OCFontSubfamily * _subfamily;
 }
 
 @property (nonatomic) BOOL bold;

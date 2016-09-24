@@ -3,7 +3,7 @@
  */
 
 @interface _CUIPSDSublayerInfo : NSObject {
-    unsigned int _numOfSublayers;
+    unsigned int  _numOfSublayers;
 }
 
 + (id)newWithSublayerCount:(unsigned int)arg1 indexSet:(id)arg2;

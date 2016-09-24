@@ -3,8 +3,8 @@
  */
 
 @interface BKSHIDEventKeyboardDescriptor : BKSHIDEventDescriptor {
-    unsigned int _page;
-    unsigned int _usage;
+    unsigned int  _page;
+    unsigned int  _usage;
 }
 
 @property (readonly) unsigned int page;

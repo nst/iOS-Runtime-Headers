@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DTSDFillTexture : TSCH3DTexture {
-    TSDFill *mFill;
+    TSDFill * mFill;
 }
 
 + (id)textureWithTSDFill:(id)arg1;

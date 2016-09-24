@@ -3,8 +3,8 @@
  */
 
 @interface HDIdentifierTable : NSObject {
-    NSMapTable *_map;
-    unsigned int _nextIdentifier;
+    NSMapTable * _map;
+    unsigned int  _nextIdentifier;
 }
 
 @property (nonatomic, retain) NSMapTable *map;

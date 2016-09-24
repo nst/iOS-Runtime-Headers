@@ -3,8 +3,8 @@
  */
 
 @interface DAMessageFetchAttachmentRequest : NSObject {
-    NSString *_attachmentName;
-    NSString *_messageID;
+    NSString * _attachmentName;
+    NSString * _messageID;
 }
 
 @property (nonatomic, copy) NSString *attachmentName;

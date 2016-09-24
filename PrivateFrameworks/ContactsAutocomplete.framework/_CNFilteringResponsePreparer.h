@@ -3,7 +3,7 @@
  */
 
 @interface _CNFilteringResponsePreparer : _CNAutocompleteResponsePreparerDecorator {
-    id /* block */ _filter;
+    id /* block */  _filter;
 }
 
 @property (readonly, copy) id /* block */ filter;

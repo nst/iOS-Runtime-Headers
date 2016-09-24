@@ -3,8 +3,8 @@
  */
 
 @interface CNContactViewExtensionContext : NSExtensionContext <CNContactViewHostAsyncProtocol, CNContactViewHostProtocol, CNContactViewServiceProtocol> {
-    BOOL _asyncShouldPerformResponse;
-    NSObject<OS_dispatch_semaphore> *_asyncShouldPerformSemaphore;
+    BOOL  _asyncShouldPerformResponse;
+    NSObject<OS_dispatch_semaphore> * _asyncShouldPerformSemaphore;
 }
 
 @property (nonatomic) BOOL asyncShouldPerformResponse;
@@ -22,6 +22,7 @@
 - (void)asyncShouldPerformDefaultActionResponse:(BOOL)arg1;
 - (BOOL)asyncShouldPerformResponse;
 - (id)asyncShouldPerformSemaphore;
+- (void)didChangePreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)didChangeToEditMode:(BOOL)arg1;
 - (void)didCompleteWithContact:(id)arg1;
 - (void)didDeleteContact:(id)arg1;

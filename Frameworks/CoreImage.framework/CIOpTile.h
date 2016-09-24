@@ -3,11 +3,11 @@
  */
 
 @interface CIOpTile : CIFilter {
-    NSNumber *inputAngle;
-    CIVector *inputCenter;
-    CIImage *inputImage;
-    NSNumber *inputScale;
-    NSNumber *inputWidth;
+    NSNumber * inputAngle;
+    CIVector * inputCenter;
+    CIImage * inputImage;
+    NSNumber * inputScale;
+    NSNumber * inputWidth;
 }
 
 + (id)customAttributes;

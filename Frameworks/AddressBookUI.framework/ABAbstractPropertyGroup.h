@@ -3,10 +3,10 @@
  */
 
 @interface ABAbstractPropertyGroup : NSObject {
-    BOOL _hasChanges;
-    NSArray *_people;
-    ABUIPerson *_preinsertedPerson;
-    <ABStyleProvider> *_styleProvider;
+    BOOL  _hasChanges;
+    NSArray * _people;
+    ABUIPerson * _preinsertedPerson;
+    <ABStyleProvider> * _styleProvider;
 }
 
 @property (nonatomic) BOOL hasChanges;

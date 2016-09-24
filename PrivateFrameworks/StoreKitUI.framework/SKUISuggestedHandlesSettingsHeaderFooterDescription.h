@@ -3,9 +3,9 @@
  */
 
 @interface SKUISuggestedHandlesSettingsHeaderFooterDescription : SKUISettingsHeaderFooterDescription {
-    SKUIClientContext *_clientContext;
-    <SKUISuggestedHandlesSettingsHeaderFooterDescriptionDelegate> *_delegate;
-    NSArray *_suggestedHandles;
+    SKUIClientContext * _clientContext;
+    <SKUISuggestedHandlesSettingsHeaderFooterDescriptionDelegate> * _delegate;
+    NSArray * _suggestedHandles;
 }
 
 @property (nonatomic) <SKUISuggestedHandlesSettingsHeaderFooterDescriptionDelegate> *delegate;

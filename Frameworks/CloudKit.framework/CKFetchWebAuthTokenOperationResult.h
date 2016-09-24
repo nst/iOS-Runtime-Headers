@@ -3,7 +3,7 @@
  */
 
 @interface CKFetchWebAuthTokenOperationResult : CKOperationResult <NSSecureCoding> {
-    NSString *_webAuthToken;
+    NSString * _webAuthToken;
 }
 
 @property (nonatomic, copy) NSString *webAuthToken;

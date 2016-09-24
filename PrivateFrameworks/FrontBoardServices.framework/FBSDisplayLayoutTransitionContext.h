@@ -3,7 +3,7 @@
  */
 
 @interface FBSDisplayLayoutTransitionContext : NSObject <BSDescriptionProviding, BSXPCCoding> {
-    NSString *_transitionReason;
+    NSString * _transitionReason;
 }
 
 @property (readonly, copy) NSString *debugDescription;

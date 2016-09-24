@@ -2,22 +2,22 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUUIImageViewController : PLUIImageViewController <ISPlayerViewDelegate, UIGestureRecognizerDelegate> {
-    NSURL *__assetURL;
-    int __imageManagerVideoRequestID;
-    PUBrowsingIrisPlayer *__irisPlayer;
-    ISPlayerView *__irisPlayerView;
-    NSString *__videoAssetURL;
-    PHAsset *_asset;
-    BOOL _isIris;
-    BOOL _wantsLivePhotoResult;
-    BOOL _wantsVideoURLResult;
+@interface PUUIImageViewController : PLUIImageViewController <UIGestureRecognizerDelegate> {
+    NSURL * __assetURL;
+    int  __imageManagerVideoRequestID;
+    PUBrowsingIrisPlayer * __irisPlayer;
+    PHLivePhotoView * __livePhotoView;
+    NSString * __videoAssetURL;
+    PHAsset * _asset;
+    BOOL  _isIris;
+    BOOL  _wantsLivePhotoResult;
+    BOOL  _wantsVideoURLResult;
 }
 
 @property (setter=_setAssetURL:, nonatomic, retain) NSURL *_assetURL;
 @property (setter=_setImageManagerVideoRequestID:) int _imageManagerVideoRequestID;
 @property (nonatomic, retain) PUBrowsingIrisPlayer *_irisPlayer;
-@property (setter=_setIrisPlayerView:, nonatomic, retain) ISPlayerView *_irisPlayerView;
+@property (setter=_setLivePhotoView:, nonatomic, retain) PHLivePhotoView *_livePhotoView;
 @property (setter=_setVideoAssetURL:, nonatomic, retain) NSString *_videoAssetURL;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -28,13 +28,14 @@
 - (id)_assetURL;
 - (void)_fetchLivePhotoWithCompletion:(id /* block */)arg1;
 - (void)_fetchVideoWithCompletion:(id /* block */)arg1;
+- (void)_handleLivePhotoRequestResult:(id)arg1 info:(id)arg2;
 - (int)_imageManagerVideoRequestID;
 - (id)_irisPlayer;
-- (id)_irisPlayerView;
-- (void)_loadIrisPlayerItem:(id)arg1;
+- (id)_livePhotoView;
+- (void)_loadLivePhoto;
 - (void)_setAssetURL:(id)arg1;
 - (void)_setImageManagerVideoRequestID:(int)arg1;
-- (void)_setIrisPlayerView:(id)arg1;
+- (void)_setLivePhotoView:(id)arg1;
 - (void)_setVideoAssetURL:(id)arg1;
 - (id)_videoAssetURL;
 - (void)cropOverlayWasOKed:(id)arg1;

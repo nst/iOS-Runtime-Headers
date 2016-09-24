@@ -3,8 +3,8 @@
  */
 
 @interface HDSourceRevision : NSObject {
-    HDSourceEntity *_sourceEntity;
-    NSString *_sourceRevision;
+    HDSourceEntity * _sourceEntity;
+    NSString * _sourceRevision;
 }
 
 @property (nonatomic, readonly) HDSourceEntity *sourceEntity;

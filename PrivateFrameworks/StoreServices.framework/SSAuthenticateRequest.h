@@ -3,7 +3,7 @@
  */
 
 @interface SSAuthenticateRequest : SSRequest <SSXPCCoding> {
-    SSAuthenticationContext *_authenticationContext;
+    SSAuthenticationContext * _authenticationContext;
 }
 
 @property (readonly) SSAuthenticationContext *authenticationContext;

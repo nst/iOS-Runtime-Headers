@@ -3,11 +3,11 @@
  */
 
 @interface IMUserNotificationCenter : NSObject {
-    NSMutableDictionary *_identifierToBlockQueueMap;
-    NSMutableDictionary *_identifierToCFUserNotificationMap;
-    NSMutableDictionary *_identifierToIMUserNotificationQueueMap;
-    NSMutableDictionary *_identifierToListenerQueueMap;
-    NSMutableDictionary *_identifierToRunLoopSourcesMap;
+    NSMutableDictionary * _identifierToBlockQueueMap;
+    NSMutableDictionary * _identifierToCFUserNotificationMap;
+    NSMutableDictionary * _identifierToIMUserNotificationQueueMap;
+    NSMutableDictionary * _identifierToListenerQueueMap;
+    NSMutableDictionary * _identifierToRunLoopSourcesMap;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *identifierToBlockQueueMap;

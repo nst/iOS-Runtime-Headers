@@ -3,11 +3,11 @@
  */
 
 @interface KNSlideTree : TSPContainedObject <KNSlideCollection> {
-    NSMutableArray *mDisplayedSlideNodeCache;
-    TSUPointerKeyDictionary *mFormulaReferenceNamesForSlideNodesCache;
-    NSMutableOrderedSet *mSlideNodes;
-    NSMutableDictionary *mSlideNodesForFormulaReferenceNamesCache;
-    NSMutableDictionary *mSlideNodesForUniqueIdentifiersCache;
+    NSMutableArray * mDisplayedSlideNodeCache;
+    TSUPointerKeyDictionary * mFormulaReferenceNamesForSlideNodesCache;
+    NSMutableOrderedSet * mSlideNodes;
+    NSMutableDictionary * mSlideNodesForFormulaReferenceNamesCache;
+    NSMutableDictionary * mSlideNodesForUniqueIdentifiersCache;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,14 +20,18 @@
 @property (nonatomic, readonly) NSArray *visibleSlideNodes;
 
 + (id)slideNodeDepthMapToCleanUpSlideNodes:(id)arg1 atDepths:(id)arg2 minimumValidDepth:(unsigned int)arg3;
++ (id)slideNodeDepthMapToCleanUpSlideNodes:(id)arg1 atDepths:(id)arg2 minimumValidDepth:(unsigned int)arg3 canExceedSlideTreeMaxDepth:(BOOL)arg4;
 + (id)slideNodeDepthMapToCleanUpSlideNodes:(id)arg1 minimumValidDepth:(unsigned int)arg2;
++ (id)slideNodeDepthMapToCleanUpSlideNodes:(id)arg1 minimumValidDepth:(unsigned int)arg2 canExceedSlideTreeMaxDepth:(BOOL)arg3;
 
 - (void)addSlideNode:(id)arg1 atDepth:(unsigned int)arg2 dolcContext:(id)arg3;
 - (void)addSlideNodeForDocumentUpgrade:(id)arg1 atDepth:(unsigned int)arg2;
 - (unsigned int)byBuildPageIndexForSlideIndex:(unsigned int)arg1 andEventIndex:(unsigned int)arg2;
 - (id)childrenOfSlideNode:(id)arg1;
+- (BOOL)containsSlideNode:(id)arg1;
 - (void)dealloc;
 - (id)defaultSlideNodeForNewSelection;
+- (id)defaultSlideNodeForNewSelectionNearestToIndex:(unsigned int)arg1;
 - (id)descendantsOfSlideNode:(id)arg1 omitSkippedSlideNodes:(BOOL)arg2 omitCollapsedSlideNodes:(BOOL)arg3;
 - (id)displayedSlideNodes;
 - (id)formulaReferenceNameForSlideNode:(id)arg1;
@@ -42,12 +46,13 @@
 - (id)objectEnumerator;
 - (id)orderedSlideNodesInSelection:(id)arg1;
 - (void)p_cacheSlideNodes;
+- (void)p_checkTargetIndexForError:(unsigned int)arg1 reason:(id)arg2;
 - (void)p_clearSlideNodeCache;
 - (void)p_logSlideTreeErrorWithMessage:(id)arg1 slideNodesOrderBeforeEdit:(id)arg2 depthsBeforeEdit:(id)arg3;
 - (id)parentOfSlideNode:(id)arg1;
 - (void)reloadDisplayedNodes;
 - (void)removeAll;
-- (void)removeSlideNodesAtIndexes:(id)arg1 slideNodesChangingDepths:(id)arg2 depthsOfSlideNodesChangingDepths:(id)arg3;
+- (void)removeSlideNodes:(id)arg1 atIndexes:(id)arg2 slideNodesChangingDepths:(id)arg3 depthsOfSlideNodesChangingDepths:(id)arg4;
 - (void)saveToArchive:(struct SlideTreeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; }*)arg1 archiver:(id)arg2;
 - (void)setDisplayedSlideNodes:(id)arg1;
 - (void)slideIndex:(unsigned int*)arg1 andEventIndex:(unsigned int*)arg2 forByBuildPageIndex:(unsigned int)arg3;

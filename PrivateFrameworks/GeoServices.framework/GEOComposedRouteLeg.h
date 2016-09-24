@@ -3,16 +3,16 @@
  */
 
 @interface GEOComposedRouteLeg : NSObject {
-    GEOComposedRoute *_composedRoute;
+    GEOComposedRoute * _composedRoute;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _pointRange;
+    }  _pointRange;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _stepRange;
-    int _type;
+    }  _stepRange;
+    int  _type;
 }
 
 @property (nonatomic) GEOComposedRoute *composedRoute;

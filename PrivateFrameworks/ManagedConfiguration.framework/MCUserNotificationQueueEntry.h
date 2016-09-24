@@ -3,16 +3,16 @@
  */
 
 @interface MCUserNotificationQueueEntry : NSObject {
-    NSString *_alternateButtonText;
-    id /* block */ _completionBlock;
-    NSString *_defaultButtonText;
-    double _dismissAfterTimeInterval;
-    BOOL _displayInAppWhitelistModes;
-    BOOL _displayOnLockScreen;
-    NSString *_message;
-    id _notification;
-    NSString *_otherButtonText;
-    NSString *_title;
+    NSString * _alternateButtonText;
+    id /* block */  _completionBlock;
+    NSString * _defaultButtonText;
+    double  _dismissAfterTimeInterval;
+    BOOL  _displayInAppWhitelistModes;
+    BOOL  _displayOnLockScreen;
+    NSString * _message;
+    id  _notification;
+    NSString * _otherButtonText;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) NSString *alternateButtonText;

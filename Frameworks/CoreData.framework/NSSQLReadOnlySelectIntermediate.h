@@ -3,9 +3,9 @@
  */
 
 @interface NSSQLReadOnlySelectIntermediate : NSSQLSelectIntermediate {
-    BOOL _onlyFetchesAggregates;
-    NSMutableDictionary *_propertyToAliasMappings;
-    NSMutableDictionary *_variableToAliasMappings;
+    BOOL  _onlyFetchesAggregates;
+    NSMutableDictionary * _propertyToAliasMappings;
+    NSMutableDictionary * _variableToAliasMappings;
 }
 
 - (void)dealloc;

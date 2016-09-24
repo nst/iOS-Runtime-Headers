@@ -3,7 +3,7 @@
  */
 
 @interface ISVitalityAutoplayFilter : ISVitalityFilter {
-    int __state;
+    int  __state;
 }
 
 @property (setter=_setState:, nonatomic) int _state;

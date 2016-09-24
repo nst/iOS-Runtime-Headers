@@ -3,28 +3,30 @@
  */
 
 @interface _UIMotionEffectEngine : NSObject <_UIMotionEffectEventConsumer> {
-    BOOL _allAnalyzersAreCentered;
-    _UILazyMapTable *_analyzerSettingsToAnalyzers;
-    NSMapTable *_analyzersToEffects;
-    CADisplayLink *_displayLink;
-    _UIAssociationTable *_effectViewAssociationTable;
-    _UIMotionEffectEventProvider *_eventProvider;
-    int _eventProviderStatus;
-    BOOL _generatingUpdates;
-    BOOL _hasAppliedAtLeastOneUpdateSinceStarting;
-    BOOL _hasReceivedAtLeastOneEventSinceStarting;
-    BOOL _isPendingReset;
-    _UIMotionEffectEvent *_lastEvent;
-    _UIMotionEffectEngineLogger *_motionLogger;
-    _UIMotionEffectEvent *_pendingEvent;
-    int _pendingEventLock;
-    BOOL _pendingSlowDown;
-    int _screenDimmingNotificationToken;
-    BOOL _slowUpdatesEnabled;
-    NSMutableSet *_suspendReasons;
-    NSMapTable *_suspendedViewsToEffectSets;
-    int _targetInterfaceOrientation;
-    int _thermalNotificationToken;
+    BOOL  _allAnalyzersAreCentered;
+    _UILazyMapTable * _analyzerSettingsToAnalyzers;
+    NSMapTable * _analyzersToEffects;
+    CADisplayLink * _displayLink;
+    _UIAssociationTable * _effectViewAssociationTable;
+    _UIMotionEffectEventProvider * _eventProvider;
+    int  _eventProviderStatus;
+    BOOL  _generatingUpdates;
+    BOOL  _hasAppliedAtLeastOneUpdateSinceStarting;
+    BOOL  _hasReceivedAtLeastOneEventSinceStarting;
+    BOOL  _isPendingReset;
+    _UIMotionEffectEvent * _lastEvent;
+    _UIMotionEffectEngineLogger * _motionLogger;
+    _UIMotionEffectEvent * _pendingEvent;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _pendingEventLock;
+    BOOL  _pendingSlowDown;
+    int  _screenDimmingNotificationToken;
+    BOOL  _slowUpdatesEnabled;
+    NSMutableSet * _suspendReasons;
+    NSMapTable * _suspendedViewsToEffectSets;
+    int  _targetInterfaceOrientation;
+    int  _thermalNotificationToken;
 }
 
 @property (setter=_setTargetInterfaceOrientation:, nonatomic) int _targetInterfaceOrientation;

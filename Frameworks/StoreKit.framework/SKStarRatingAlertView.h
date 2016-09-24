@@ -3,10 +3,10 @@
  */
 
 @interface SKStarRatingAlertView : UIAlertView {
-    SKStarRatingControl *_ratingControl;
+    SKStarRatingControl * _ratingControl;
 }
 
-@property (nonatomic) float rating;
+@property (nonatomic) double rating;
 
 - (void)_ratingControlChanged:(id)arg1;
 - (void)dealloc;

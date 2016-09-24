@@ -3,14 +3,14 @@
  */
 
 @interface FBSWorkspace : NSObject <FBSWorkspaceClientDelegate> {
-    FBSSerialQueue *_callOutQueue;
-    FBSWorkspaceClient *_client;
-    <FBSWorkspaceDelegate> *_delegate;
-    NSHashTable *_preFenceTriggers;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_scenesByIdentifier;
-    NSObject<OS_dispatch_queue> *_scenesQueue;
-    BOOL _synchronizingFence;
+    FBSSerialQueue * _callOutQueue;
+    FBSWorkspaceClient * _client;
+    <FBSWorkspaceDelegate> * _delegate;
+    NSHashTable * _preFenceTriggers;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableDictionary * _scenesByIdentifier;
+    NSObject<OS_dispatch_queue> * _scenesQueue;
+    BOOL  _synchronizingFence;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -50,7 +50,6 @@
 - (id)scenes;
 - (void)setDelegate:(id)arg1;
 - (void)synchronizeSystemAnimationFencesWithCleanUpBlock:(id /* block */)arg1;
-- (void)synchronizeSystemAnimationFencesWithSpinCleanUpBlock:(id /* block */)arg1;
 - (BOOL)trackSystemAnimationFence:(id)arg1;
 
 @end

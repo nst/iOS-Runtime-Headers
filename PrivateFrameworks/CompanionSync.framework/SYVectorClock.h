@@ -3,11 +3,12 @@
  */
 
 @interface SYVectorClock : PBCodable <NSCopying> {
-    NSMutableArray *_clocks;
+    NSMutableArray * _clocks;
 }
 
 @property (nonatomic, retain) NSMutableArray *clocks;
 
++ (Class)clocksType;
 + (void)initialize;
 
 - (void).cxx_destruct;
@@ -16,8 +17,8 @@
 - (void)clearClocks;
 - (id)clockForPeer:(id)arg1;
 - (id)clockForPeerID:(id)arg1;
-- (unsigned long long)clockValueForPeer:(id)arg1;
-- (unsigned long long)clockValueForPeerID:(id)arg1;
+- (unsigned int)clockValueForPeer:(id)arg1;
+- (unsigned int)clockValueForPeerID:(id)arg1;
 - (id)clocks;
 - (id)clocksAtIndex:(unsigned int)arg1;
 - (unsigned int)clocksCount;
@@ -29,8 +30,8 @@
 - (BOOL)hasClockForPeer:(id)arg1;
 - (BOOL)hasClockForPeerID:(id)arg1;
 - (unsigned int)hash;
-- (void)increaseClockForPeer:(id)arg1 by:(unsigned long long)arg2;
-- (void)increaseClockForPeerID:(id)arg1 by:(unsigned long long)arg2;
+- (void)increaseClockForPeer:(id)arg1 by:(unsigned int)arg2;
+- (void)increaseClockForPeerID:(id)arg1 by:(unsigned int)arg2;
 - (void)incrementClockForPeer:(id)arg1;
 - (void)incrementClockForPeerID:(id)arg1;
 - (id)initWithJSONRepresentation:(id)arg1;
@@ -38,8 +39,8 @@
 - (id)jsonRepresentation;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setClockValue:(unsigned long long)arg1 forPeer:(id)arg2;
-- (void)setClockValue:(unsigned long long)arg1 forPeerID:(id)arg2;
+- (void)setClockValue:(unsigned int)arg1 forPeer:(id)arg2;
+- (void)setClockValue:(unsigned int)arg1 forPeerID:(id)arg2;
 - (void)setClocks:(id)arg1;
 - (void)writeTo:(id)arg1;
 

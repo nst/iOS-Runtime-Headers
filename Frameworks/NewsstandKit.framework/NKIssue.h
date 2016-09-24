@@ -3,15 +3,15 @@
  */
 
 @interface NKIssue : NSObject {
-    NSMutableArray *_assets;
-    NSMapTable *_assetsByRequest;
-    NSDate *_date;
-    NSString *_directory;
-    BOOL _foundContent;
-    BOOL _isDecodingValid;
-    NKLibrary *_library;
-    NSString *_name;
-    NSMutableSet *_resolvedAssets;
+    NSMutableArray * _assets;
+    NSMapTable * _assetsByRequest;
+    NSDate * _date;
+    NSString * _directory;
+    BOOL  _foundContent;
+    BOOL  _isDecodingValid;
+    NKLibrary * _library;
+    NSString * _name;
+    NSMutableSet * _resolvedAssets;
 }
 
 @property (readonly, copy) NSURL *contentURL;

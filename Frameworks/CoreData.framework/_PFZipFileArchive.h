@@ -3,22 +3,22 @@
  */
 
 @interface _PFZipFileArchive : NSObject {
-    NSMutableDictionary *_cachedContents;
-    NSMutableArray *_centralDirectoryEntries;
-    NSDictionary *_contents;
-    NSData *_data;
-    int _desc;
-    PFZipEndOfCentralDirectoryRecord *_endRecord;
-    NSMutableDictionary *_entryNameToCentralDirectoryFileHeader;
-    NSMutableDictionary *_entryNameToData;
-    NSMutableDictionary *_entryNameToLocalFileHeader;
-    NSMutableArray *_localFileHeaders;
-    NSArray *_names;
-    NSString *_path;
-    NSDictionary *_properties;
-    id _provider;
-    void *_reserved;
-    void *_reserved2;
+    NSMutableDictionary * _cachedContents;
+    NSMutableArray * _centralDirectoryEntries;
+    NSDictionary * _contents;
+    NSData * _data;
+    int  _desc;
+    PFZipEndOfCentralDirectoryRecord * _endRecord;
+    NSMutableDictionary * _entryNameToCentralDirectoryFileHeader;
+    NSMutableDictionary * _entryNameToData;
+    NSMutableDictionary * _entryNameToLocalFileHeader;
+    NSMutableArray * _localFileHeaders;
+    NSArray * _names;
+    NSString * _path;
+    NSDictionary * _properties;
+    id  _provider;
+    void * _reserved;
+    void * _reserved2;
     struct __zFlags { 
         unsigned int providerSuppliesContents : 1; 
         unsigned int providerSuppliesStreams : 1; 
@@ -26,7 +26,7 @@
         unsigned int noContentsCaching : 1; 
         unsigned int fileOpen : 1; 
         unsigned int reserved : 27; 
-    } _zFlags;
+    }  _zFlags;
 }
 
 @property (nonatomic, readonly) NSArray *entryNames;
@@ -36,7 +36,7 @@
 + (unsigned int)readInt32FromBytes:(const char *)arg1 offset:(unsigned int*)arg2;
 + (void)writeInt16:(unsigned short)arg1 toData:(id)arg2;
 + (void)writeInt32:(unsigned int)arg1 toData:(id)arg2;
-+ (void)writeInt64:(unsigned long long)arg1 toData:(id)arg2;
++ (void)writeInt64:(unsigned int)arg1 toData:(id)arg2;
 
 - (BOOL)addCentralDirectoryEndRecordWithBytes:(const char *)arg1 offset:(unsigned int)arg2;
 - (BOOL)addCentralDirectoryHeaderWithBytes:(const char *)arg1 offset:(unsigned int)arg2;

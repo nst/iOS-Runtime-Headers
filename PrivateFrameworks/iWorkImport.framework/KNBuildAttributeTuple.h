@@ -3,13 +3,13 @@
  */
 
 @interface KNBuildAttributeTuple : TSPObject <NSCopying> {
-    KNBuildAttributeValue *_attributeValue;
-    KNBuildChunkIdentifier *_buildChunkIdentifier;
-    NSUUID *_buildId;
-    BOOL _definedAttributeValue;
-    BOOL _definedBuildChunkIdentifier;
-    BOOL _definedBuildId;
-    NSString *_property;
+    KNBuildAttributeValue * _attributeValue;
+    KNBuildChunkIdentifier * _buildChunkIdentifier;
+    NSUUID * _buildId;
+    BOOL  _definedAttributeValue;
+    BOOL  _definedBuildChunkIdentifier;
+    BOOL  _definedBuildId;
+    NSString * _property;
 }
 
 @property (nonatomic, readonly) KNBuild *build;

@@ -3,9 +3,9 @@
  */
 
 @interface _MFDADeferredNewMailboxOperation : MFOfflineCacheOperation <MFDADeferredFolderChangeOperation> {
-    NSString *_displayName;
-    NSString *_parentFolderID;
-    NSString *_temporaryFolderID;
+    NSString * _displayName;
+    NSString * _parentFolderID;
+    NSString * _temporaryFolderID;
 }
 
 - (void)applyToFolderMap:(id)arg1;

@@ -3,9 +3,11 @@
  */
 
 @interface _HKCompoundUnit : HKUnit {
-    _HKFactorization *_baseUnits;
-    _HKDimension *_dimension;
-    int _dimensionLock;
+    _HKFactorization * _baseUnits;
+    _HKDimension * _dimension;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _dimensionLock;
 }
 
 + (BOOL)supportsSecureCoding;

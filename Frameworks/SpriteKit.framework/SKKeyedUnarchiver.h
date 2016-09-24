@@ -3,7 +3,7 @@
  */
 
 @interface SKKeyedUnarchiver : NSKeyedUnarchiver {
-    NSArray *searchPaths;
+    NSArray * searchPaths;
 }
 
 @property (nonatomic, retain) NSArray *searchPaths;

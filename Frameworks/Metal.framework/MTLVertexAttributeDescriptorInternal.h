@@ -3,9 +3,9 @@
  */
 
 @interface MTLVertexAttributeDescriptorInternal : MTLVertexAttributeDescriptor {
-    unsigned int _bufferIndex;
-    unsigned int _offset;
-    unsigned int _vertexFormat;
+    unsigned int  _bufferIndex;
+    unsigned int  _offset;
+    unsigned int  _vertexFormat;
 }
 
 - (unsigned int)bufferIndex;

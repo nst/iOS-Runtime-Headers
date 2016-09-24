@@ -3,8 +3,8 @@
  */
 
 @interface SKUIExpandViewElement : SKUIViewElement {
-    BOOL _open;
-    BOOL _previousIsOpen;
+    BOOL  _open;
+    BOOL  _previousIsOpen;
 }
 
 @property (getter=isOpen, nonatomic, readonly) BOOL open;

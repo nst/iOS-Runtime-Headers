@@ -3,19 +3,19 @@
  */
 
 @interface PFUbiquitySafeSaveFile : NSObject {
-    BOOL _continueCheckingDownload;
-    BOOL _continueCheckingUpload;
-    PFUbiquityLocation *_currentLocation;
-    NSError *_downloadError;
-    BOOL _downloadSuccess;
-    BOOL _isRegistered;
-    NSString *_localPeerID;
-    BOOL _moveAfterSave;
-    PFUbiquityLocation *_permanentLocation;
-    NSError *_safeSaveError;
-    PFUbiquityLocation *_safeSaveLocation;
-    NSObject<OS_dispatch_semaphore> *_safeSaveSemaphore;
-    BOOL _safeSaveSuccess;
+    BOOL  _continueCheckingDownload;
+    BOOL  _continueCheckingUpload;
+    PFUbiquityLocation * _currentLocation;
+    NSError * _downloadError;
+    BOOL  _downloadSuccess;
+    BOOL  _isRegistered;
+    NSString * _localPeerID;
+    BOOL  _moveAfterSave;
+    PFUbiquityLocation * _permanentLocation;
+    NSError * _safeSaveError;
+    PFUbiquityLocation * _safeSaveLocation;
+    NSObject<OS_dispatch_semaphore> * _safeSaveSemaphore;
+    BOOL  _safeSaveSuccess;
 }
 
 @property (nonatomic, readonly) BOOL continueCheckingDownload;

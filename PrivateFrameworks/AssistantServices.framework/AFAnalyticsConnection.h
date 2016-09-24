@@ -3,12 +3,11 @@
  */
 
 @interface AFAnalyticsConnection : NSObject <AFAnalyticsService> {
-    NSXPCConnection *_connection;
-    NSObject<OS_dispatch_source> *_houseKeepingTimer;
-    BOOL _needsCleanUpConnection;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableSet *_stagedEventsBeingSent;
-    NSMutableSet *_stagedEventsToBeSent;
+    NSXPCConnection * _connection;
+    NSObject<OS_dispatch_source> * _idleTimer;
+    BOOL  _needsCleanUpConnection;
+    unsigned int  _numberOfEventsBeingSent;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -23,23 +22,20 @@
 - (id)_connection;
 - (void)_connectionInterrupted;
 - (void)_connectionInvalidated;
-- (void)_finalizeSendingEvents:(id)arg1;
-- (void)_handleBarrierCallbackForEvents:(id)arg1;
-- (void)_handleFailureCallbackForEvents:(id)arg1 error:(id)arg2;
-- (void)_houseKeeperArrived;
-- (void)_mutateStagedEventsSynchronouslyUsingBlock:(id /* block */)arg1;
-- (unsigned int)_numberOfStagedEvents;
-- (void)_processStagedEvents;
-- (void)_sendEvents:(id)arg1;
-- (void)_stageEvent:(id)arg1;
-- (void)_stageEvents:(id)arg1;
-- (void)_startHouseKeepingTimer;
-- (void)_stopHouseKeepingTimer;
+- (void)_didFinishSendingEvents:(id)arg1;
+- (void)_handleFailureCallbackForEvents:(id)arg1 error:(id)arg2 numberOfRetries:(unsigned int)arg3 completion:(id /* block */)arg4;
+- (void)_handleSuccessCallbackForEvents:(id)arg1 completion:(id /* block */)arg2;
+- (void)_idleTimerFired;
+- (void)_sendEvents:(id)arg1 numberOfRetries:(unsigned int)arg2 completion:(id /* block */)arg3;
+- (void)_startIdleTimer;
+- (void)_stopIdleTimer;
+- (void)_willStartSendingEvents:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (BOOL)needsCleanUpConnection;
 - (void)setNeedsCleanUpConnection:(BOOL)arg1;
 - (oneway void)stageEvent:(id)arg1;
 - (oneway void)stageEvents:(id)arg1;
+- (oneway void)stageEvents:(id)arg1 completion:(id /* block */)arg2;
 
 @end

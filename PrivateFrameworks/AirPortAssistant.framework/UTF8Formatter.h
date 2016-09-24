@@ -3,7 +3,7 @@
  */
 
 @interface UTF8Formatter : APFormatter {
-    unsigned int _maxByteCount;
+    unsigned int  _maxByteCount;
 }
 
 + (id)afpFormatter:(unsigned int)arg1;

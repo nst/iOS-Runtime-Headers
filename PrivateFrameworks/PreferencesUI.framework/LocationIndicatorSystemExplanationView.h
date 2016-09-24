@@ -3,7 +3,7 @@
  */
 
 @interface LocationIndicatorSystemExplanationView : LocationIndicatorExplanationView {
-    UILabel *_additionalInfoLabel;
+    UILabel * _additionalInfoLabel;
 }
 
 - (void).cxx_destruct;

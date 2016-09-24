@@ -3,7 +3,7 @@
  */
 
 @interface SKUIMediaQuerySizeFeature : SKUIMediaQueryFeature {
-    float _value;
+    double  _value;
 }
 
 + (BOOL)supportsFeatureName:(id)arg1;

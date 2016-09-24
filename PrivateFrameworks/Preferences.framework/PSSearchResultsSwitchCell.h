@@ -3,9 +3,9 @@
  */
 
 @interface PSSearchResultsSwitchCell : PSSearchResultsCell {
-    PSSpecifierAction *_action;
-    PSSpecifier *_specifier;
-    UISwitch *_switch;
+    PSSpecifierAction * _action;
+    PSSpecifier * _specifier;
+    UISwitch * _switch;
 }
 
 @property (nonatomic, copy) PSSpecifierAction *action;

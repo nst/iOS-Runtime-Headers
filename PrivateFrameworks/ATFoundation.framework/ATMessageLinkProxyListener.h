@@ -3,8 +3,8 @@
  */
 
 @interface ATMessageLinkProxyListener : NSObject <NSXPCListenerDelegate> {
-    NSXPCListener *_listener;
-    ATMessageLink *_messageLink;
+    NSXPCListener * _listener;
+    ATMessageLink * _messageLink;
 }
 
 @property (readonly, copy) NSString *debugDescription;

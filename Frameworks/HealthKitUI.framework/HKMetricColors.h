@@ -3,14 +3,14 @@
  */
 
 @interface HKMetricColors : NSObject {
-    UIColor *_adjustmentButtonBackgroundColor;
-    UIColor *_buttonDisabledTextColor;
-    UIColor *_buttonTextColor;
-    UIColor *_gradientDarkColor;
-    UIColor *_gradientLightColor;
-    UIColor *_nonGradientTextColor;
-    UIColor *_valueDisplayColor;
-    NSString *_workoutRingColorIdentifier;
+    UIColor * _adjustmentButtonBackgroundColor;
+    UIColor * _buttonDisabledTextColor;
+    UIColor * _buttonTextColor;
+    UIColor * _gradientDarkColor;
+    UIColor * _gradientLightColor;
+    UIColor * _nonGradientTextColor;
+    UIColor * _valueDisplayColor;
+    NSString * _workoutRingColorIdentifier;
 }
 
 @property (nonatomic, retain) UIColor *adjustmentButtonBackgroundColor;

@@ -3,7 +3,7 @@
  */
 
 @interface MFDAOfflineCache : MFOfflineCache {
-    NSString *_lastSelectedFolderID;
+    NSString * _lastSelectedFolderID;
 }
 
 - (void)dealloc;

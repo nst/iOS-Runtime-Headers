@@ -3,7 +3,7 @@
  */
 
 @interface CoreIRLearningSessionClient : CoreIRLearningSession {
-    CoreRCManagerClient *_manager;
+    CoreRCManagerClient * _manager;
 }
 
 @property (nonatomic) CoreRCManagerClient *manager;

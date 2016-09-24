@@ -3,18 +3,18 @@
  */
 
 @interface MFConnectionSettings : NSObject <NSCopying> {
-    NSString *_accountIdentifier;
-    BOOL _allowsTrustPrompt;
-    NSString *_certUIService;
-    NSArray *_clientCertificates;
-    struct __CFString { } *_connectionServiceType;
-    NSString *_hostname;
-    unsigned int _portNumber;
-    NSString *_serviceName;
-    NSString *_sourceApplicationBundleIdentifier;
-    BOOL _tryDirectSSLConnection;
-    BOOL _usesOpportunisticSockets;
-    BOOL _usesSSL;
+    NSString * _accountIdentifier;
+    BOOL  _allowsTrustPrompt;
+    NSString * _certUIService;
+    NSArray * _clientCertificates;
+    struct __CFString { } * _connectionServiceType;
+    NSString * _hostname;
+    unsigned int  _portNumber;
+    NSString * _serviceName;
+    NSString * _sourceApplicationBundleIdentifier;
+    BOOL  _tryDirectSSLConnection;
+    BOOL  _usesOpportunisticSockets;
+    BOOL  _usesSSL;
 }
 
 @property (nonatomic, copy) NSString *accountIdentifier;

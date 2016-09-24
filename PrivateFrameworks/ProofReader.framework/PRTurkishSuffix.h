@@ -3,13 +3,13 @@
  */
 
 @interface PRTurkishSuffix : NSObject {
-    unsigned char _isOptional;
-    NSString *_name;
-    NSString *_pattern;
-    unsigned char _patternBuffer;
-    unsigned int _patternBufferLength;
-    BOOL _postponesApostrophe;
-    int _suffixType;
+    unsigned char  _isOptional;
+    NSString * _name;
+    NSString * _pattern;
+    unsigned char  _patternBuffer;
+    unsigned int  _patternBufferLength;
+    BOOL  _postponesApostrophe;
+    int  _suffixType;
 }
 
 + (void)_enumerateSuffixMatchesForBuffer:(char *)arg1 length:(unsigned int)arg2 followedByLetter:(unsigned char)arg3 options:(unsigned int)arg4 depth:(unsigned int)arg5 matchState:(int)arg6 suffixStack:(id*)arg7 suffixRangeStack:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg8 usingBlock:(id /* block */)arg9;

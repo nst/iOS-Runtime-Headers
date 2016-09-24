@@ -7,6 +7,7 @@
 
 - (NSArray *)children;
 - (NSString *)data;
+- (NSString *)impressionQueueTag;
 - (long)index;
 - (id)parent;
 - (NSArray *)timestamps;

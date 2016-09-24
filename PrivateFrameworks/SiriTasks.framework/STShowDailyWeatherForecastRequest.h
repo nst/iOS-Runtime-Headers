@@ -3,10 +3,10 @@
  */
 
 @interface STShowDailyWeatherForecastRequest : AFSiriRequest {
-    STCity *_city;
-    STWeatherAttributes *_currentAttributes;
-    NSArray *_dailyAttributes;
-    int _startWeekday;
+    STCity * _city;
+    STWeatherAttributes * _currentAttributes;
+    NSArray * _dailyAttributes;
+    int  _startWeekday;
 }
 
 + (BOOL)supportsSecureCoding;

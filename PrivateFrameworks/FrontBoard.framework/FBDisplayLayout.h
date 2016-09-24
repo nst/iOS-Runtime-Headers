@@ -3,17 +3,17 @@
  */
 
 @interface FBDisplayLayout : NSObject <FBDisplayManagerObserver> {
-    NSMutableSet *_assertions;
-    int _backlightLevel;
-    FBSDisplayLayout *_currentLayout;
-    FBSDisplayLayoutTransitionContext *_currentTransitionContext;
-    <FBDisplayLayoutDelegate> *_delegate;
-    FBSDisplay *_display;
-    int _displayBacklightToken;
-    unsigned int _displayType;
-    int _interfaceOrientation;
-    BOOL _transitionActive;
-    NSMutableSet *_transitions;
+    NSMutableSet * _assertions;
+    int  _backlightLevel;
+    FBSDisplayLayout * _currentLayout;
+    FBSDisplayLayoutTransitionContext * _currentTransitionContext;
+    <FBDisplayLayoutDelegate> * _delegate;
+    FBSDisplay * _display;
+    int  _displayBacklightToken;
+    unsigned int  _displayType;
+    int  _interfaceOrientation;
+    BOOL  _transitionActive;
+    NSMutableSet * _transitions;
 }
 
 @property (nonatomic, readonly, retain) FBSDisplayLayout *currentLayout;

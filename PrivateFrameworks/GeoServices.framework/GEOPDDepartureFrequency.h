@@ -3,8 +3,8 @@
  */
 
 @interface GEOPDDepartureFrequency : PBCodable <GEOTransitDepartureFrequency, NSCopying> {
-    unsigned int _displayDepartureFrequency;
-    unsigned int _earliestDepartureTime;
+    unsigned int  _displayDepartureFrequency;
+    unsigned int  _earliestDepartureTime;
     struct { 
         unsigned int displayDepartureFrequency : 1; 
         unsigned int earliestDepartureTime : 1; 
@@ -12,11 +12,11 @@
         unsigned int maxDepartureFrequency : 1; 
         unsigned int minDepartureFrequency : 1; 
         unsigned int isEstimated : 1; 
-    } _has;
-    BOOL _isEstimated;
-    unsigned int _latestDepartureTime;
-    unsigned int _maxDepartureFrequency;
-    unsigned int _minDepartureFrequency;
+    }  _has;
+    BOOL  _isEstimated;
+    unsigned int  _latestDepartureTime;
+    unsigned int  _maxDepartureFrequency;
+    unsigned int  _minDepartureFrequency;
 }
 
 @property (readonly, copy) NSString *debugDescription;

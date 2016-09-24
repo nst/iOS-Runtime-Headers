@@ -3,7 +3,7 @@
  */
 
 @interface BLTAttachmentHashCache : NSObject {
-    NSMutableDictionary *_cacheBySectionID;
+    NSMutableDictionary * _cacheBySectionID;
 }
 
 - (void).cxx_destruct;

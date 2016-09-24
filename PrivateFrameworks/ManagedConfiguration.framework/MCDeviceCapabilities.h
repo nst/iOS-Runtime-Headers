@@ -3,8 +3,8 @@
  */
 
 @interface MCDeviceCapabilities : NSObject {
-    BOOL _supportsBlockLevelEncryption;
-    BOOL _supportsFileLevelEncryption;
+    BOOL  _supportsBlockLevelEncryption;
+    BOOL  _supportsFileLevelEncryption;
 }
 
 @property (nonatomic, readonly) BOOL supportsBlockLevelEncryption;

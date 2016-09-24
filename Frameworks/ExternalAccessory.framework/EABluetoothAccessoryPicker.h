@@ -3,8 +3,8 @@
  */
 
 @interface EABluetoothAccessoryPicker : NSObject <BTDevicePickerDelegate> {
-    <EABluetoothAccessoryPickerDelegate> *_delegate;
-    BTDevicePicker *_picker;
+    <EABluetoothAccessoryPickerDelegate> * _delegate;
+    BTDevicePicker * _picker;
 }
 
 @property (readonly, copy) NSString *debugDescription;

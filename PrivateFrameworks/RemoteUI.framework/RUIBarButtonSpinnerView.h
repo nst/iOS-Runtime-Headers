@@ -3,7 +3,7 @@
  */
 
 @interface RUIBarButtonSpinnerView : UIBarButtonItem {
-    UIActivityIndicatorView *_spinner;
+    UIActivityIndicatorView * _spinner;
 }
 
 - (void).cxx_destruct;

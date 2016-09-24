@@ -3,8 +3,8 @@
  */
 
 @interface SCRCTargetSelector : NSObject {
-    SEL _selector;
-    id _target;
+    SEL  _selector;
+    id  _target;
 }
 
 + (id)targetSelectorWithTarget:(id)arg1 selector:(SEL)arg2;

@@ -3,8 +3,8 @@
  */
 
 @interface TSCHChartSeriesAxisStorage : NSObject {
-    TSCHChartGridAdapter *adapter;
-    TSCHChartAxisID *axisID;
+    TSCHChartGridAdapter * adapter;
+    TSCHChartAxisID * axisID;
 }
 
 @property (nonatomic, retain) TSCHChartGridAdapter *adapter;

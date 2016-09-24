@@ -3,16 +3,16 @@
  */
 
 @interface AAUIFamilySetupViewController : AAUIBleachedNavigationController <AAUIFamilySetupPageDelegate, RemoteUIControllerDelegate> {
-    ACAccount *_account;
-    ACAccountStore *_accountStore;
-    NSMutableURLRequest *_currentRemoteUIRequest;
-    AAGrandSlamSigner *_grandSlamSigner;
-    BOOL _isShowingSpinner;
-    UINavigationItem *_navigationItemShowingSpinner;
-    UIBarButtonItem *_originalRightBarButtonItem;
-    RemoteUIController *_remoteUIController;
-    UIActivityIndicatorView *_spinnerView;
-    NSMutableURLRequest *_startRemoteUIRequest;
+    ACAccount * _account;
+    ACAccountStore * _accountStore;
+    NSMutableURLRequest * _currentRemoteUIRequest;
+    AAGrandSlamSigner * _grandSlamSigner;
+    BOOL  _isShowingSpinner;
+    UINavigationItem * _navigationItemShowingSpinner;
+    NSArray * _originalRightBarButtonItems;
+    RemoteUIController * _remoteUIController;
+    UIActivityIndicatorView * _spinnerView;
+    NSMutableURLRequest * _startRemoteUIRequest;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -38,7 +38,7 @@
 - (id)initWithAccount:(id)arg1 store:(id)arg2;
 - (id)initWithGrandSlamSigner:(id)arg1 familyEligibilityResponse:(id)arg2;
 - (void)remoteUIController:(id)arg1 didReceiveHTTPResponse:(id)arg2;
-- (void)remoteUIController:(id)arg1 willLoadRequest:(id)arg2;
+- (BOOL)remoteUIController:(id)arg1 shouldLoadRequest:(id)arg2 redirectResponse:(id)arg3;
 - (void)remoteUIController:(id)arg1 willPresentObjectModel:(id)arg2 modally:(BOOL)arg3;
 - (void)remoteUIControllerDidDismiss:(id)arg1;
 - (BOOL)shouldAutorotate;

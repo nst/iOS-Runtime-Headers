@@ -3,16 +3,16 @@
  */
 
 @interface NEFilterDataExtensionProviderContext : NEFilterExtensionProviderContext <NEFilterDataExtensionProviderHostProtocol, NEFilterDataExtensionProviderProtocol> {
-    NSDictionary *_URLAppendStringMap;
-    NSMutableDictionary *_browserFlows;
-    NSObject<OS_xpc_object> *_clientListener;
-    BOOL _controlProviderExists;
-    NSXPCListenerEndpoint *_listenerEndpoint;
-    NSMutableArray *_pendingConnections;
-    NSDictionary *_remediationMap;
-    NSMutableArray *_socketExceptions;
-    NSMutableDictionary *_socketFlows;
-    NSObject<OS_dispatch_source> *_source;
+    NSDictionary * _URLAppendStringMap;
+    NSMutableDictionary * _browserFlows;
+    NSObject<OS_xpc_object> * _clientListener;
+    BOOL  _controlProviderExists;
+    NSXPCListenerEndpoint * _listenerEndpoint;
+    NSMutableArray * _pendingConnections;
+    NSDictionary * _remediationMap;
+    NSMutableArray * _socketExceptions;
+    NSMutableDictionary * _socketFlows;
+    NSObject<OS_dispatch_source> * _source;
 }
 
 @property (retain) NSDictionary *URLAppendStringMap;
@@ -41,7 +41,7 @@
 - (id)clientListener;
 - (void)closeBrowserFilterFlow:(id)arg1 forUUID:(id)arg2;
 - (void)closePendingConnections;
-- (void)closeSocketFlow:(id)arg1 socketID:(unsigned long long)arg2;
+- (void)closeSocketFlow:(id)arg1 socketID:(unsigned int)arg2;
 - (BOOL)controlProviderExists;
 - (void)dispose;
 - (void)fetchCurrentRulesForFlow:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -74,7 +74,7 @@
 - (void)setURLAppendStringMap:(id)arg1;
 - (void)setupSocketContentFilterWithControlSocket:(int)arg1;
 - (void)setupSocketSourceWithControlSocket:(int)arg1;
-- (BOOL)socketContentFilterWriteMessageWithControlSocket:(int)arg1 socketID:(unsigned long long)arg2 drop:(BOOL)arg3 inboundPassOffset:(unsigned long long)arg4 inboundPeekOffset:(unsigned long long)arg5 outboundPassOffset:(unsigned long long)arg6 outboundPeekOffset:(unsigned long long)arg7;
+- (BOOL)socketContentFilterWriteMessageWithControlSocket:(int)arg1 socketID:(unsigned int)arg2 drop:(BOOL)arg3 inboundPassOffset:(unsigned int)arg4 inboundPeekOffset:(unsigned int)arg5 outboundPassOffset:(unsigned int)arg6 outboundPeekOffset:(unsigned int)arg7;
 - (id)socketExceptions;
 - (id)socketFlows;
 - (id)source;

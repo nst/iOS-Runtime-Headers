@@ -3,9 +3,9 @@
  */
 
 @interface TSTFormulaTokenContext : NSObject {
-    unsigned int mArgumentIndex;
-    TSTExpressionNode *mExpressionNode;
-    unsigned int mParenNestingLevel;
+    unsigned int  mArgumentIndex;
+    TSTExpressionNode * mExpressionNode;
+    unsigned int  mParenNestingLevel;
 }
 
 @property (nonatomic, readonly) unsigned int argumentIndex;

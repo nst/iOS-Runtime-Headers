@@ -3,9 +3,9 @@
  */
 
 @interface NSFilePresenterOperationRecord : NSObject {
-    NSString *operationDescription;
-    id reactor;
-    int state;
+    NSString * operationDescription;
+    id  reactor;
+    int  state;
 }
 
 @property (readonly) NSString *operationDescription;
@@ -14,6 +14,7 @@
 
 + (id)operationRecordWithDescription:(id)arg1;
 
+- (id)_reactorQueue;
 - (void)dealloc;
 - (id)description;
 - (void)didBegin;

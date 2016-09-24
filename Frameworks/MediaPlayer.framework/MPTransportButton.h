@@ -3,7 +3,7 @@
  */
 
 @interface MPTransportButton : MPButton {
-    MPAVController *player;
+    MPAVController * player;
 }
 
 @property (nonatomic, retain) MPAVController *player;

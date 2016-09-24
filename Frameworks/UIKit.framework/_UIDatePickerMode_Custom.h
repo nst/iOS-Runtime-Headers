@@ -3,11 +3,11 @@
  */
 
 @interface _UIDatePickerMode_Custom : _UIDatePickerMode {
-    NSArray *_components;
-    int _desiredUnits;
-    int _displayedUnits;
-    NSString *_originalFormat;
-    NSArray *_sortedComponents;
+    NSArray * _components;
+    int  _desiredUnits;
+    int  _displayedUnits;
+    NSString * _originalFormat;
+    NSArray * _sortedComponents;
 }
 
 - (void).cxx_destruct;

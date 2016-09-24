@@ -3,30 +3,30 @@
  */
 
 @interface AFUISpeechSynthesisElement : NSObject {
-    NSString *_animationIdentifier;
-    id /* block */ _completion;
-    <AFUISpeechSynthesisElementDelegate> *_delegate;
-    BOOL _durationHasElapsed;
-    BOOL _eligibleForSynthesis;
-    BOOL _isPhonetic;
-    BOOL _preprationBlockCompleted;
-    BOOL _provisional;
-    VSSpeechRequest *_speechRequest;
-    int _synthesisResult;
-    NSString *_text;
+    NSString * _animationIdentifier;
+    id /* block */  _completion;
+    <AFUISpeechSynthesisElementDelegate> * _delegate;
+    BOOL  _durationHasElapsed;
+    BOOL  _eligibleForSynthesis;
+    BOOL  _isPhonetic;
+    BOOL  _preprationBlockCompleted;
+    BOOL  _provisional;
+    VSSpeechRequest * _speechRequest;
+    int  _synthesisResult;
+    NSString * _text;
 }
 
 @property (nonatomic, readonly) NSString *animationIdentifier;
 @property (getter=_completion, nonatomic, readonly) id /* block */ completion;
 @property (nonatomic) <AFUISpeechSynthesisElementDelegate> *delegate;
 @property (setter=_setDurationHasElapsed:) BOOL durationHasElapsed;
-@property (getter=isEligibleForSynthesis, nonatomic) BOOL eligibleForSynthesis;
+@property (getter=isEligibleForSynthesis, setter=_setEligibleForSynthesis:, nonatomic) BOOL eligibleForSynthesis;
 @property (nonatomic) BOOL isPhonetic;
 @property (setter=_setPreparationBlockCompleted:) BOOL preprationBlockCompleted;
 @property (getter=isProvisional, nonatomic, readonly) BOOL provisional;
 @property (nonatomic, retain) VSSpeechRequest *speechRequest;
 @property (nonatomic) int synthesisResult;
-@property (nonatomic, copy) NSString *text;
+@property (setter=_setText:, nonatomic, copy) NSString *text;
 
 - (void).cxx_destruct;
 - (id /* block */)_completion;

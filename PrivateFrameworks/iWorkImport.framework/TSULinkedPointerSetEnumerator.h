@@ -3,8 +3,8 @@
  */
 
 @interface TSULinkedPointerSetEnumerator : NSEnumerator {
-    TSULinkedPointerSetEntry *mHead;
-    TSULinkedPointerSetEntry *mLastUsed;
+    TSULinkedPointerSetEntry * mHead;
+    TSULinkedPointerSetEntry * mLastUsed;
 }
 
 - (id)initWithFirstEntry:(id)arg1;

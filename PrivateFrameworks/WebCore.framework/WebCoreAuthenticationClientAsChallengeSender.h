@@ -3,8 +3,7 @@
  */
 
 @interface WebCoreAuthenticationClientAsChallengeSender : NSObject <NSURLAuthenticationChallengeSender> {
-    struct _CFURLAuthChallenge { } *m_cfChallenge;
-    struct AuthenticationClient { int (**x1)(); } *m_client;
+    struct AuthenticationClient { int (**x1)(); } * m_client;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -13,12 +12,12 @@
 @property (readonly) Class superclass;
 
 - (void)cancelAuthenticationChallenge:(id)arg1;
-- (struct _CFURLAuthChallenge { }*)cfChallenge;
 - (struct AuthenticationClient { int (**x1)(); }*)client;
 - (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
 - (void)detachClient;
 - (id)initWithAuthenticationClient:(struct AuthenticationClient { int (**x1)(); }*)arg1;
-- (void)setCFChallenge:(struct _CFURLAuthChallenge { }*)arg1;
+- (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
+- (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;
 - (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 
 @end

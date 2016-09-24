@@ -3,7 +3,7 @@
  */
 
 @interface SCN3DDisplayRenderingTechnique : SCNTechnique <SCNStereoscopicRenderingTechnique> {
-    int _displayLayout;
+    int  _displayLayout;
 }
 
 @property (nonatomic, readonly) int displayLayout;

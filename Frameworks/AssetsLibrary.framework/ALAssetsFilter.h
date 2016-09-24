@@ -3,7 +3,7 @@
  */
 
 @interface ALAssetsFilter : NSObject {
-    id _internal;
+    id  _internal;
 }
 
 @property (nonatomic, retain) ALAssetsFilterInternal *internal;

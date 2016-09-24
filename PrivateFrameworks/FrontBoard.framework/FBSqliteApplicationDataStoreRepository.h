@@ -3,13 +3,13 @@
  */
 
 @interface FBSqliteApplicationDataStoreRepository : NSObject <FBApplicationDataStoreRepository> {
-    NSObject<OS_dispatch_queue> *_calloutQueue;
-    NSObject<OS_dispatch_queue> *_dbQueue;
-    unsigned int _dbQueue_batchDepth;
-    FBSqliteDatabaseConnection *_dbQueue_dbConnection;
-    int _dbQueue_firstUnlockToken;
-    <FBApplicationDataStoreRepositoryDelegate> *_delegate;
-    NSURL *_storeURL;
+    NSObject<OS_dispatch_queue> * _calloutQueue;
+    NSObject<OS_dispatch_queue> * _dbQueue;
+    unsigned int  _dbQueue_batchDepth;
+    FBSqliteDatabaseConnection * _dbQueue_dbConnection;
+    int  _dbQueue_firstUnlockToken;
+    <FBApplicationDataStoreRepositoryDelegate> * _delegate;
+    NSURL * _storeURL;
 }
 
 @property (readonly, copy) NSString *debugDescription;

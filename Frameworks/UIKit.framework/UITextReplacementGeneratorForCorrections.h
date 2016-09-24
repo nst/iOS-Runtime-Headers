@@ -3,14 +3,14 @@
  */
 
 @interface UITextReplacementGeneratorForCorrections : UITextReplacementGenerator {
-    TIKeyboardCandidate *_autocorrectionRecord;
-    BOOL _forceAutocorrectionGuesses;
-    BOOL _forceHistoryReplacement;
-    BOOL _forceSpellingGuesses;
-    unsigned int _maxCountAfterAutocorrectionGuesses;
-    unsigned int _maxCountAfterSpellingGuesses;
-    unsigned int _maxEditDistance;
-    UITextChecker *_textChecker;
+    TIKeyboardCandidate * _autocorrectionRecord;
+    BOOL  _forceAutocorrectionGuesses;
+    BOOL  _forceHistoryReplacement;
+    BOOL  _forceSpellingGuesses;
+    unsigned int  _maxCountAfterAutocorrectionGuesses;
+    unsigned int  _maxCountAfterSpellingGuesses;
+    unsigned int  _maxEditDistance;
+    UITextChecker * _textChecker;
 }
 
 @property (nonatomic, retain) TIKeyboardCandidate *autocorrectionRecord;
@@ -33,6 +33,7 @@
 - (BOOL)forceSpellingGuesses;
 - (id)init;
 - (BOOL)isStringMisspelled:(id)arg1;
+- (BOOL)isStringToReplaceMisspelled;
 - (unsigned int)maxCountAfterAutocorrectionGuesses;
 - (unsigned int)maxCountAfterSpellingGuesses;
 - (unsigned int)maxEditDistance;

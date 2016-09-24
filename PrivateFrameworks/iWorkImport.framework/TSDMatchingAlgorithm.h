@@ -3,17 +3,17 @@
  */
 
 @interface TSDMatchingAlgorithm : NSObject {
-    int *mCostMatrix;
-    BOOL *mIsColCovered;
-    BOOL *mIsRowCovered;
-    BOOL *mIsStarInColumn;
-    BOOL *mIsStarInRow;
-    char *mMaskMatrix;
-    int mMatrixDimension;
-    id *mObjectMapping;
-    NSMutableArray *mResults;
-    int mZ0Col;
-    int mZ0Row;
+    int * mCostMatrix;
+    BOOL * mIsColCovered;
+    BOOL * mIsRowCovered;
+    BOOL * mIsStarInColumn;
+    BOOL * mIsStarInRow;
+    char * mMaskMatrix;
+    int  mMatrixDimension;
+    id * mObjectMapping;
+    NSMutableArray * mResults;
+    int  mZ0Col;
+    int  mZ0Row;
 }
 
 + (id)bestMatchesFromArray:(id)arg1;

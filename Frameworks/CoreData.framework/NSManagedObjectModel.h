@@ -3,20 +3,20 @@
  */
 
 @interface NSManagedObjectModel : NSObject <NSCoding, NSCopying, NSFastEnumeration> {
-    NSMutableDictionary *_configurations;
-    id _dataForOptimization;
-    NSMutableDictionary *_entities;
-    NSMutableDictionary *_fetchRequestTemplates;
-    id _localizationPolicy;
+    NSMutableDictionary * _configurations;
+    id  _dataForOptimization;
+    NSMutableDictionary * _entities;
+    NSMutableDictionary * _fetchRequestTemplates;
+    id  _localizationPolicy;
     struct __managedObjectModelFlags { 
         unsigned int _isInUse : 1; 
         unsigned int _isImmutable : 1; 
         unsigned int _isOptimizedForEncoding : 1; 
         unsigned int _hasEntityWithConstraints : 1; 
         unsigned int _reservedEntityDescription : 28; 
-    } _managedObjectModelFlags;
-    id *_optimizationHints;
-    NSSet *_versionIdentifiers;
+    }  _managedObjectModelFlags;
+    id * _optimizationHints;
+    NSSet * _versionIdentifiers;
 }
 
 @property (readonly) NSArray *configurations;
@@ -24,8 +24,11 @@
 @property (readonly, copy) NSDictionary *entitiesByName;
 @property (readonly, copy) NSDictionary *entityVersionHashesByName;
 @property (readonly, copy) NSDictionary *fetchRequestTemplatesByName;
+@property (nonatomic, readonly) NSString *ic_versionHash;
 @property (retain) NSDictionary *localizationDictionary;
 @property (copy) NSSet *versionIdentifiers;
+
+// Image: /System/Library/Frameworks/CoreData.framework/CoreData
 
 + (void)_deepCollectEntitiesInArray:(id)arg1 entity:(id)arg2;
 + (id)_modelPathsFromBundles:(id)arg1;
@@ -96,5 +99,14 @@
 - (void)setVersionIdentifiers:(id)arg1;
 - (id)versionHash;
 - (id)versionIdentifiers;
+
+// Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
+
++ (id)vs_developerModeModelForVersion:(int)arg1;
++ (id)vs_identityProviderEntityForVersion:(int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
+- (id)ic_versionHash;
 
 @end

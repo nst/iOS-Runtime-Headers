@@ -3,17 +3,17 @@
  */
 
 @interface _MRAudioBufferProtobuf : PBCodable <NSCopying> {
-    NSData *_contents;
-    _MRAudioFormatSettingsProtobuf *_formatSettings;
+    NSData * _contents;
+    _MRAudioFormatSettingsProtobuf * _formatSettings;
     struct { 
         unsigned int maximumPacketSize : 1; 
         unsigned int packetCapacity : 1; 
         unsigned int packetCount : 1; 
-    } _has;
-    long long _maximumPacketSize;
-    long long _packetCapacity;
-    long long _packetCount;
-    NSMutableArray *_packetDescriptions;
+    }  _has;
+    int  _maximumPacketSize;
+    int  _packetCapacity;
+    int  _packetCount;
+    NSMutableArray * _packetDescriptions;
 }
 
 @property (nonatomic, retain) NSData *contents;
@@ -23,10 +23,12 @@
 @property (nonatomic) BOOL hasMaximumPacketSize;
 @property (nonatomic) BOOL hasPacketCapacity;
 @property (nonatomic) BOOL hasPacketCount;
-@property (nonatomic) long long maximumPacketSize;
-@property (nonatomic) long long packetCapacity;
-@property (nonatomic) long long packetCount;
+@property (nonatomic) int maximumPacketSize;
+@property (nonatomic) int packetCapacity;
+@property (nonatomic) int packetCount;
 @property (nonatomic, retain) NSMutableArray *packetDescriptions;
+
++ (Class)packetDescriptionsType;
 
 - (void)addPacketDescriptions:(id)arg1;
 - (void)clearPacketDescriptions;
@@ -44,10 +46,10 @@
 - (BOOL)hasPacketCount;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (long long)maximumPacketSize;
+- (int)maximumPacketSize;
 - (void)mergeFrom:(id)arg1;
-- (long long)packetCapacity;
-- (long long)packetCount;
+- (int)packetCapacity;
+- (int)packetCount;
 - (id)packetDescriptions;
 - (id)packetDescriptionsAtIndex:(unsigned int)arg1;
 - (unsigned int)packetDescriptionsCount;
@@ -57,9 +59,9 @@
 - (void)setHasMaximumPacketSize:(BOOL)arg1;
 - (void)setHasPacketCapacity:(BOOL)arg1;
 - (void)setHasPacketCount:(BOOL)arg1;
-- (void)setMaximumPacketSize:(long long)arg1;
-- (void)setPacketCapacity:(long long)arg1;
-- (void)setPacketCount:(long long)arg1;
+- (void)setMaximumPacketSize:(int)arg1;
+- (void)setPacketCapacity:(int)arg1;
+- (void)setPacketCount:(int)arg1;
 - (void)setPacketDescriptions:(id)arg1;
 - (void)writeTo:(id)arg1;
 

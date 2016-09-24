@@ -3,11 +3,11 @@
  */
 
 @interface GEOPDDeparture : PBCodable <GEOTransitDeparture, NSCopying> {
-    double _absDepartureTime;
+    double  _absDepartureTime;
     struct { 
         unsigned int absDepartureTime : 1; 
-    } _has;
-    NSString *_vehicleNumber;
+    }  _has;
+    NSString * _vehicleNumber;
 }
 
 @property (nonatomic) double absDepartureTime;

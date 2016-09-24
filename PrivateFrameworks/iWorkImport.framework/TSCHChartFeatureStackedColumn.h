@@ -11,9 +11,11 @@
 - (Class)presetImagerClass;
 - (BOOL)reverseSingleColumnLegendOrder;
 - (float)sageMaxDepthRatio;
+- (float)spiceMaxDepthRatio;
 - (int)stackingSignRule;
 - (id)supportedAxisScales;
 - (BOOL)supportsCategoryAxisSeriesNames;
+- (BOOL)supportsReferenceLines;
 - (BOOL)supportsSeriesLabels;
 - (BOOL)supportsTrendLines;
 - (id)userInterfaceName;

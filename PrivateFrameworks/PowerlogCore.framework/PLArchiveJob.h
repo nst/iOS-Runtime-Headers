@@ -3,9 +3,9 @@
  */
 
 @interface PLArchiveJob : NSObject {
-    PLArchiveEntry *_archiveEntry;
-    <PLArchiveJobManager> *_manager;
-    PLTimer *_watchdog;
+    PLArchiveEntry * _archiveEntry;
+    <PLArchiveJobManager> * _manager;
+    PLTimer * _watchdog;
 }
 
 @property (retain) PLArchiveEntry *archiveEntry;

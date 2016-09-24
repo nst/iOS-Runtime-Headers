@@ -3,7 +3,7 @@
  */
 
 @interface NMRSendCommandResultMessage : NSObject <NMRMediaRemoteProtobufCodable> {
-    _NMRSendCommandResultMessageProtobuf *_protobuf;
+    _NMRSendCommandResultMessageProtobuf * _protobuf;
 }
 
 @property (readonly, copy) NSString *debugDescription;

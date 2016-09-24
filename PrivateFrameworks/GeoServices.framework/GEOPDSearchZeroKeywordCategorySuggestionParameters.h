@@ -6,19 +6,26 @@
     struct { 
         unsigned int requestLocalTimestamp : 1; 
         unsigned int maxNumCategoriesPerEntry : 1; 
-    } _has;
-    unsigned int _maxNumCategoriesPerEntry;
-    double _requestLocalTimestamp;
-    GEOLatLng *_significantLocation;
+        unsigned int userPreferredTransportType : 1; 
+    }  _has;
+    unsigned int  _maxNumCategoriesPerEntry;
+    double  _requestLocalTimestamp;
+    GEOLatLng * _significantLocation;
+    PBUnknownFields * _unknownFields;
+    int  _userPreferredTransportType;
 }
 
 @property (nonatomic) BOOL hasMaxNumCategoriesPerEntry;
 @property (nonatomic) BOOL hasRequestLocalTimestamp;
 @property (nonatomic, readonly) BOOL hasSignificantLocation;
+@property (nonatomic) BOOL hasUserPreferredTransportType;
 @property (nonatomic) unsigned int maxNumCategoriesPerEntry;
 @property (nonatomic) double requestLocalTimestamp;
 @property (nonatomic, retain) GEOLatLng *significantLocation;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+@property (nonatomic) int userPreferredTransportType;
 
+- (int)StringAsUserPreferredTransportType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -27,6 +34,7 @@
 - (BOOL)hasMaxNumCategoriesPerEntry;
 - (BOOL)hasRequestLocalTimestamp;
 - (BOOL)hasSignificantLocation;
+- (BOOL)hasUserPreferredTransportType;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)maxNumCategoriesPerEntry;
@@ -35,10 +43,15 @@
 - (double)requestLocalTimestamp;
 - (void)setHasMaxNumCategoriesPerEntry:(BOOL)arg1;
 - (void)setHasRequestLocalTimestamp:(BOOL)arg1;
+- (void)setHasUserPreferredTransportType:(BOOL)arg1;
 - (void)setMaxNumCategoriesPerEntry:(unsigned int)arg1;
 - (void)setRequestLocalTimestamp:(double)arg1;
 - (void)setSignificantLocation:(id)arg1;
+- (void)setUserPreferredTransportType:(int)arg1;
 - (id)significantLocation;
+- (id)unknownFields;
+- (int)userPreferredTransportType;
+- (id)userPreferredTransportTypeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

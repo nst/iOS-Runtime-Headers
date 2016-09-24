@@ -3,10 +3,10 @@
  */
 
 @interface CoreDAVPropStatItem : CoreDAVItem {
-    CoreDAVErrorItem *_errorItem;
-    CoreDAVItem *_prop;
-    CoreDAVLeafItem *_responseDescription;
-    CoreDAVLeafItem *_status;
+    CoreDAVErrorItem * _errorItem;
+    CoreDAVItem * _prop;
+    CoreDAVLeafItem * _responseDescription;
+    CoreDAVLeafItem * _status;
 }
 
 @property (nonatomic, retain) CoreDAVErrorItem *errorItem;

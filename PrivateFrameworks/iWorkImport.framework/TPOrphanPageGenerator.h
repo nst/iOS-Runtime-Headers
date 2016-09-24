@@ -3,7 +3,7 @@
  */
 
 @interface TPOrphanPageGenerator : NSObject <TPPageGenerator> {
-    TPDocumentRoot *_documentRoot;
+    TPDocumentRoot * _documentRoot;
 }
 
 @property (readonly, copy) NSString *debugDescription;

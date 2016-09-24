@@ -3,9 +3,9 @@
  */
 
 @interface CellularPlanVinylTestXPCServer : NSObject <NSXPCListenerDelegate> {
-    <CellularPlanVinylTest> *fDelegate;
-    NSMutableArray *fXpcConnections;
-    NSXPCListener *fXpcListener;
+    <CellularPlanVinylTest> * fDelegate;
+    NSMutableArray * fXpcConnections;
+    NSXPCListener * fXpcListener;
 }
 
 @property (readonly, copy) NSString *debugDescription;

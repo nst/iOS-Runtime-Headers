@@ -3,13 +3,13 @@
  */
 
 @interface HSConnectionConfiguration : NSObject <NSCopying, NSSecureCoding> {
-    SSAccount *_account;
-    NSURL *_baseURL;
-    NSString *_buildIdentifier;
-    NSNumber *_familyMemberStoreID;
-    NSString *_libraryBagKey;
-    NSString *_purchaseClientIdentifier;
-    long long _requestReason;
+    SSAccount * _account;
+    NSURL * _baseURL;
+    NSString * _buildIdentifier;
+    NSNumber * _familyMemberStoreID;
+    NSString * _libraryBagKey;
+    NSString * _purchaseClientIdentifier;
+    int  _requestReason;
 }
 
 @property (nonatomic, retain) SSAccount *account;
@@ -18,7 +18,7 @@
 @property (nonatomic, copy) NSNumber *familyMemberStoreID;
 @property (nonatomic, copy) NSString *libraryBagKey;
 @property (nonatomic, copy) NSString *purchaseClientIdentifier;
-@property (nonatomic) long long requestReason;
+@property (nonatomic) int requestReason;
 
 + (BOOL)supportsSecureCoding;
 
@@ -33,13 +33,13 @@
 - (id)initWithCoder:(id)arg1;
 - (id)libraryBagKey;
 - (id)purchaseClientIdentifier;
-- (long long)requestReason;
+- (int)requestReason;
 - (void)setAccount:(id)arg1;
 - (void)setBaseURL:(id)arg1;
 - (void)setBuildIdentifier:(id)arg1;
 - (void)setFamilyMemberStoreID:(id)arg1;
 - (void)setLibraryBagKey:(id)arg1;
 - (void)setPurchaseClientIdentifier:(id)arg1;
-- (void)setRequestReason:(long long)arg1;
+- (void)setRequestReason:(int)arg1;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface PLCloudPhotoLibraryUserSwitchHandler : NSObject <UMUserSwitchStakeholder> {
-    <PLCloudUserSessionHandling> *_sessionHandler;
+    <PLCloudUserSessionHandling> * _sessionHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;

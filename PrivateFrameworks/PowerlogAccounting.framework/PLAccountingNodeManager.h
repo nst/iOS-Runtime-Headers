@@ -3,8 +3,8 @@
  */
 
 @interface PLAccountingNodeManager : NSObject {
-    NSMutableDictionary *_nodeIDToNodeName;
-    NSMutableDictionary *_nodeNameToNodeID;
+    NSMutableDictionary * _nodeIDToNodeName;
+    NSMutableDictionary * _nodeNameToNodeID;
 }
 
 @property (retain) NSMutableDictionary *nodeIDToNodeName;

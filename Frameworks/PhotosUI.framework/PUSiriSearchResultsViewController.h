@@ -2,8 +2,8 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUSiriSearchResultsViewController : PUSearchResultsViewController {
-    NSString *_siriSearchString;
+@interface PUSiriSearchResultsViewController : PUSearchGridViewController {
+    NSString * _siriSearchString;
 }
 
 @property (nonatomic, retain) NSString *siriSearchString;

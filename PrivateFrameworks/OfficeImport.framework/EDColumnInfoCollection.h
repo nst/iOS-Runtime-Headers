@@ -3,8 +3,8 @@
  */
 
 @interface EDColumnInfoCollection : EDSortedCollection {
-    EDResources *mResources;
-    EDWorksheet *mWorksheet;
+    EDResources * mResources;
+    EDWorksheet * mWorksheet;
 }
 
 - (id)columnInfoCreateIfNilForColumnNumber:(int)arg1;

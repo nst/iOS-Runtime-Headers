@@ -3,12 +3,12 @@
  */
 
 @interface GEOTransitDepartureSequenceUsage : PBCodable <NSCopying> {
-    NSString *_direction;
+    NSString * _direction;
     struct { 
         unsigned int lineId : 1; 
-    } _has;
-    NSString *_headsign;
-    unsigned long long _lineId;
+    }  _has;
+    NSString * _headsign;
+    unsigned int  _lineId;
 }
 
 @property (nonatomic, retain) NSString *direction;
@@ -16,7 +16,7 @@
 @property (nonatomic, readonly) BOOL hasHeadsign;
 @property (nonatomic) BOOL hasLineId;
 @property (nonatomic, retain) NSString *headsign;
-@property (nonatomic) unsigned long long lineId;
+@property (nonatomic) unsigned int lineId;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -30,13 +30,13 @@
 - (unsigned int)hash;
 - (id)headsign;
 - (BOOL)isEqual:(id)arg1;
-- (unsigned long long)lineId;
+- (unsigned int)lineId;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setDirection:(id)arg1;
 - (void)setHasLineId:(BOOL)arg1;
 - (void)setHeadsign:(id)arg1;
-- (void)setLineId:(unsigned long long)arg1;
+- (void)setLineId:(unsigned int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

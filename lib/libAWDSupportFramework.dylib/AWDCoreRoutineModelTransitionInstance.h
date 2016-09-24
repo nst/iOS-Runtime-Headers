@@ -3,13 +3,13 @@
  */
 
 @interface AWDCoreRoutineModelTransitionInstance : PBCodable <NSCopying> {
-    unsigned int _distance;
-    unsigned int _duration;
+    unsigned int  _distance;
+    unsigned int  _duration;
     struct { 
         unsigned int distance : 1; 
         unsigned int duration : 1; 
-    } _has;
-    AWDCoreRoutineTransitionMotionType *_transitionHistogram;
+    }  _has;
+    AWDCoreRoutineTransitionMotionType * _transitionHistogram;
 }
 
 @property (nonatomic) unsigned int distance;

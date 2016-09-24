@@ -3,7 +3,7 @@
  */
 
 @interface RWIProtocolDOMDomainEventDispatcher : NSObject {
-    struct AugmentableInspectorController { int (**x1)(); } *_controller;
+    struct AugmentableInspectorController { int (**x1)(); } * _controller;
 }
 
 - (void)attributeModifiedWithNodeId:(int)arg1 name:(id)arg2 value:(id)arg3;

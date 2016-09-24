@@ -3,7 +3,7 @@
  */
 
 @interface AARegisterRequest : AAAuthenticateRequest {
-    NSMutableDictionary *_additionalCookieHeaders;
+    NSMutableDictionary * _additionalCookieHeaders;
 }
 
 + (Class)responseClass;

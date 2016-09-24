@@ -3,10 +3,10 @@
  */
 
 @interface YTImageLoad : NSObject <NSURLConnectionDelegate> {
-    NSURL *_URL;
-    NSURLConnection *_connection;
-    NSMutableData *_imageData;
-    NSString *_videoID;
+    NSURL * _URL;
+    NSURLConnection * _connection;
+    NSMutableData * _imageData;
+    NSString * _videoID;
 }
 
 @property (readonly, copy) NSString *debugDescription;

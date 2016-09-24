@@ -3,7 +3,7 @@
  */
 
 @interface PLHealthKitAgent : PLAgent {
-    PLXPCListenerOperatorComposition *_queryHandler;
+    PLXPCListenerOperatorComposition * _queryHandler;
 }
 
 @property (retain) PLXPCListenerOperatorComposition *queryHandler;

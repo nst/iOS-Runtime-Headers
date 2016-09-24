@@ -3,11 +3,11 @@
  */
 
 @interface HLPHelpItem : NSObject <NSCopying> {
-    NSURL *_iconURL;
-    NSString *_identifier;
-    int _level;
-    NSString *_name;
-    HLPHelpItem *_parent;
+    NSURL * _iconURL;
+    NSString * _identifier;
+    int  _level;
+    NSString * _name;
+    HLPHelpItem * _parent;
 }
 
 @property (nonatomic, copy) NSURL *iconURL;

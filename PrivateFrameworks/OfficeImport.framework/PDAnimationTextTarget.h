@@ -6,8 +6,8 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } mRange;
-    int mType;
+    }  mRange;
+    int  mType;
 }
 
 - (unsigned int)hash;

@@ -3,7 +3,7 @@
  */
 
 @interface TSTFilteredTableDynamicContentDelegate : NSObject <TSTLayoutDynamicContentProtocol> {
-    TSTTableModel *mTableModel;
+    TSTTableModel * mTableModel;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -11,7 +11,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (BOOL)cell:(id*)arg1 forCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
+- (BOOL)cell:(id*)arg1 forCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (void)dealloc;
 - (BOOL)dynamicContentMustDrawOnMainThread;
 - (id)initWithTableModel:(id)arg1;

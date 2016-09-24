@@ -5,8 +5,8 @@
 @interface _MRVolumeControlAvailabilityProtobuf : PBCodable <NSCopying> {
     struct { 
         unsigned int volumeControlAvailable : 1; 
-    } _has;
-    BOOL _volumeControlAvailable;
+    }  _has;
+    BOOL  _volumeControlAvailable;
 }
 
 @property (nonatomic) BOOL hasVolumeControlAvailable;

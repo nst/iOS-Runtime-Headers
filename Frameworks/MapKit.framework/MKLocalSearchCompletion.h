@@ -3,11 +3,11 @@
  */
 
 @interface MKLocalSearchCompletion : NSObject {
-    BOOL _alreadySentFeedback;
-    <GEOCompletionItem> *_item;
-    NSString *_localizedSectionHeader;
-    MKMapItem *_mapItem;
-    NSString *_sourceID;
+    BOOL  _alreadySentFeedback;
+    <GEOCompletionItem> * _item;
+    NSString * _localizedSectionHeader;
+    MKMapItem * _mapItem;
+    NSString * _sourceID;
 }
 
 @property (getter=_alreadySentFeedback, nonatomic, readonly) BOOL alreadySentFeedback;
@@ -21,16 +21,18 @@
 @property (nonatomic, readonly) NSArray *subtitleHighlightRanges;
 @property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) NSArray *titleHighlightRanges;
+@property (getter=_type, nonatomic, readonly) int type;
 
 - (void).cxx_destruct;
 - (BOOL)_alreadySentFeedback;
+- (int)_type;
 - (id)calloutTitle;
 - (id)category;
 - (id)copyStorage;
 - (id)description;
 - (id)displayLines;
 - (id)geoCompletionItem;
-- (BOOL)getCoordinate:(struct { double x1; double x2; }*)arg1;
+- (BOOL)getCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; }*)arg1;
 - (unsigned int)hash;
 - (id)highlightsForLine:(unsigned int)arg1;
 - (id)iconWithScale:(float)arg1;

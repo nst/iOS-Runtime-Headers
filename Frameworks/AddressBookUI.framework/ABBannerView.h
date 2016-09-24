@@ -3,8 +3,8 @@
  */
 
 @interface ABBannerView : UITableViewCell {
-    NSString *_title;
-    NSString *_value;
+    NSString * _title;
+    NSString * _value;
 }
 
 @property (nonatomic, copy) NSString *title;

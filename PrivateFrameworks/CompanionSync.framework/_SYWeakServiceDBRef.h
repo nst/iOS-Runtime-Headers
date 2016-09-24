@@ -3,8 +3,8 @@
  */
 
 @interface _SYWeakServiceDBRef : NSObject {
-    _SYSharedServiceDB *_db;
-    NSString *_name;
+    _SYSharedServiceDB * _db;
+    NSString * _name;
 }
 
 @property (nonatomic) _SYSharedServiceDB *db;

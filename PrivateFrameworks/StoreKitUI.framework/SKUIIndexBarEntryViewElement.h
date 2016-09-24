@@ -3,8 +3,8 @@
  */
 
 @interface SKUIIndexBarEntryViewElement : SKUIViewElement {
-    NSString *_targetIndexBarEntryID;
-    int _visibilityPriority;
+    NSString * _targetIndexBarEntryID;
+    int  _visibilityPriority;
 }
 
 @property (nonatomic, readonly) SKUIViewElement *childElement;

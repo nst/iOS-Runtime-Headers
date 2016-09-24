@@ -3,12 +3,13 @@
  */
 
 @interface SKUINavigationDocumentController : NSObject <IKAppNavigationController> {
-    SKUIClientContext *_clientContext;
-    <SKUINavigationDocumentDelegate> *_delegate;
-    UINavigationController *_navigationController;
-    UINavigationController *_overrideNavigationController;
-    NSMutableArray *_pendingNavigationStackEnsureConsistencyRequests;
-    NSMutableArray *_stackItems;
+    SKUIClientContext * _clientContext;
+    <SKUINavigationDocumentDelegate> * _delegate;
+    UINavigationController * _moreNavigationController;
+    UINavigationController * _navigationController;
+    UINavigationController * _overrideNavigationController;
+    NSMutableArray * _pendingNavigationStackEnsureConsistencyRequests;
+    NSMutableArray * _stackItems;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
@@ -17,6 +18,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSArray *documentStackItems;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) UINavigationController *moreNavigationController;
 @property (nonatomic, readonly) UINavigationController *navigationController;
 @property (nonatomic, retain) UINavigationController *overrideNavigationController;
 @property (readonly) Class superclass;
@@ -36,6 +38,7 @@
 - (void)ensureStackConsistencyForNavigationControllerOperation:(int)arg1 operationDidComplete:(BOOL)arg2;
 - (id)initWithNavigationController:(id)arg1;
 - (void)insertDocument:(id)arg1 beforeDocument:(id)arg2 options:(id)arg3;
+- (id)moreNavigationController;
 - (id)navigationController;
 - (id)overrideNavigationController;
 - (void)popAllDocuments;
@@ -47,6 +50,7 @@
 - (void)replaceDocument:(id)arg1 withDocument:(id)arg2 options:(id)arg3;
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setMoreNavigationController:(id)arg1;
 - (void)setOverrideNavigationController:(id)arg1;
 - (void)setStackItems:(id)arg1 animated:(BOOL)arg2;
 

@@ -3,15 +3,17 @@
  */
 
 @interface TSKAnnotationAuthorStorage : TSPObject {
-    NSMutableSet *mAuthors;
+    NSMutableSet * mAuthors;
 }
 
 @property (nonatomic, readonly) NSSet *authors;
 
 - (void)addAuthor:(id)arg1;
-- (id)authorWithName:(id)arg1;
+- (id)authorInStorageAddingAuthorIfNecessary:(id)arg1;
+- (id)authorInStorageMatchingAuthor:(id)arg1;
 - (id)authors;
-- (id)currentAuthorColorWithAuthorName:(id)arg1;
+- (id)authorsMatchingPrivateID:(id)arg1;
+- (id)currentAuthorColorWithKey:(id)arg1;
 - (void)dealloc;
 - (unsigned int)delayedArchivingPriority;
 - (id)description;
@@ -25,6 +27,7 @@
 - (int)p_hashCodeForColorKey:(id)arg1;
 - (BOOL)p_withToleranceDoesColorSet:(id)arg1 containColor:(id)arg2;
 - (id)packageLocator;
+- (id)preferredAuthorMatchingPrivateID:(id)arg1 name:(id)arg2;
 - (void)removeAuthor:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (BOOL)shouldDelayArchiving;

@@ -3,9 +3,9 @@
  */
 
 @interface SKUIGalleryPageComponent : SKUIPageComponent {
-    NSArray *_childComponents;
-    double _cycleInterval;
-    BOOL _hidesPageIndicator;
+    NSArray * _childComponents;
+    double  _cycleInterval;
+    BOOL  _hidesPageIndicator;
 }
 
 @property (nonatomic, readonly) NSArray *childComponents;

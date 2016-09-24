@@ -3,10 +3,10 @@
  */
 
 @interface PBBProtoDidFailToCreatePasscode : PBCodable <NSCopying> {
-    int _error;
+    int  _error;
     struct { 
         unsigned int error : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic) int error;

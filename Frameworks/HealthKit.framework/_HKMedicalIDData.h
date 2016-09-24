@@ -3,36 +3,39 @@
  */
 
 @interface _HKMedicalIDData : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_allergyInfo;
-    NSDate *_birthdate;
-    int _bloodType;
-    NSDate *_dateSaved;
-    NSArray *_emergencyContacts;
-    HKQuantity *_height;
-    BOOL _isDisabled;
-    NSNumber *_isOrganDonor;
-    NSString *_medicalConditions;
-    NSString *_medicalNotes;
-    NSString *_medicationInfo;
-    NSString *_name;
-    NSData *_pictureData;
-    int _schemaVersion;
-    HKQuantity *_weight;
+    NSString * _allergyInfo;
+    NSDate * _birthdate;
+    int  _bloodType;
+    NSDate * _dateSaved;
+    NSArray * _emergencyContacts;
+    NSDate * _gmtBirthdate;
+    HKQuantity * _height;
+    BOOL  _isDisabled;
+    NSNumber * _isOrganDonor;
+    NSString * _medicalConditions;
+    NSString * _medicalNotes;
+    NSString * _medicationInfo;
+    NSString * _name;
+    NSData * _pictureData;
+    int  _schemaVersion;
+    HKQuantity * _weight;
 }
 
-@property (nonatomic, retain) NSString *allergyInfo;
+@property (nonatomic, copy) NSString *allergyInfo;
 @property (nonatomic, retain) NSDate *birthdate;
 @property (nonatomic) int bloodType;
 @property (nonatomic, retain) NSDate *dateSaved;
-@property (nonatomic, retain) NSArray *emergencyContacts;
+@property (nonatomic, copy) NSArray *emergencyContacts;
+@property (nonatomic, retain) NSDate *gmtBirthdate;
+@property (nonatomic, copy) NSDateComponents *gregorianBirthday;
 @property (nonatomic, retain) HKQuantity *height;
 @property (nonatomic) BOOL isDisabled;
 @property (nonatomic, retain) NSNumber *isOrganDonor;
-@property (nonatomic, retain) NSString *medicalConditions;
-@property (nonatomic, retain) NSString *medicalNotes;
-@property (nonatomic, retain) NSString *medicationInfo;
-@property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSData *pictureData;
+@property (nonatomic, copy) NSString *medicalConditions;
+@property (nonatomic, copy) NSString *medicalNotes;
+@property (nonatomic, copy) NSString *medicationInfo;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSData *pictureData;
 @property (nonatomic) int schemaVersion;
 @property (nonatomic, retain) HKQuantity *weight;
 
@@ -41,6 +44,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_gregorianUtcCalendar;
 - (id)allergyInfo;
 - (id)birthdate;
 - (int)bloodType;
@@ -48,6 +52,8 @@
 - (id)dateSaved;
 - (id)emergencyContacts;
 - (void)encodeWithCoder:(id)arg1;
+- (id)gmtBirthdate;
+- (id)gregorianBirthday;
 - (BOOL)hasAnyData;
 - (id)height;
 - (id)init;
@@ -66,6 +72,8 @@
 - (void)setBloodType:(int)arg1;
 - (void)setDateSaved:(id)arg1;
 - (void)setEmergencyContacts:(id)arg1;
+- (void)setGmtBirthdate:(id)arg1;
+- (void)setGregorianBirthday:(id)arg1;
 - (void)setHeight:(id)arg1;
 - (void)setIsDisabled:(BOOL)arg1;
 - (void)setIsOrganDonor:(id)arg1;
@@ -82,6 +90,8 @@
 
 + (id)contactKeysToLoadForMedicalID;
 
+- (id)_contactKeysToFetch;
 - (void)loadDataFromCNContact:(id)arg1;
+- (BOOL)updateEmergencyContacts;
 
 @end

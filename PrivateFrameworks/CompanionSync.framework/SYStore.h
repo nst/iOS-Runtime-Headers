@@ -3,9 +3,9 @@
  */
 
 @interface SYStore : NSObject <SYChangeSerializer, SYChangeTrackingWithErrors, SYServiceDelegate> {
-    BOOL _allowsDeletes;
-    <SYStoreDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
+    BOOL  _allowsDeletes;
+    <SYStoreDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
     struct { 
         unsigned int delegateWillUpdate : 1; 
         unsigned int delegateWillUpdateWithCount : 1; 
@@ -23,15 +23,15 @@
         unsigned int delegateSentMessage : 1; 
         unsigned int delegatePeerProcessedMessage : 1; 
         unsigned int delegateSentLastSyncMessage : 1; 
-    } _flags;
-    int _maxBytesInFlight;
-    SYStoreResetSessionOwner *_pendingResetSessionOwner;
-    SYPersistentStore *_persistentStore;
-    NSObject<OS_dispatch_queue> *_qosTargetQueue;
-    <SYSerialization> *_serializer;
-    SYStoreSessionOwner *_sessionOwner;
-    SYAtomicFIFO *_sessionQueue;
-    SYService *_syService;
+    }  _flags;
+    int  _maxBytesInFlight;
+    SYStoreResetSessionOwner * _pendingResetSessionOwner;
+    SYPersistentStore * _persistentStore;
+    NSObject<OS_dispatch_queue> * _qosTargetQueue;
+    <SYSerialization> * _serializer;
+    SYStoreSessionOwner * _sessionOwner;
+    SYAtomicFIFO * _sessionQueue;
+    SYService * _syService;
 }
 
 @property (nonatomic) BOOL allowsDeletes;

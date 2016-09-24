@@ -3,13 +3,13 @@
  */
 
 @interface AWDIDSRegistrationPhoneNumberReceivedSMS : PBCodable <NSCopying> {
-    NSString *_guid;
+    NSString * _guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int smsRoundTripDuration : 1; 
-    } _has;
-    unsigned int _smsRoundTripDuration;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned int  _smsRoundTripDuration;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic, retain) NSString *guid;

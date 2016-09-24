@@ -3,22 +3,22 @@
  */
 
 @interface CKPackageSection : NSObject {
-    int _index;
-    NSData *_signature;
-    unsigned long long _size;
+    int  _index;
+    NSData * _signature;
+    unsigned int  _size;
 }
 
 @property (nonatomic, readonly) int index;
 @property (nonatomic, readonly) NSData *signature;
-@property (nonatomic) unsigned long long size;
+@property (nonatomic) unsigned int size;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (id)description;
 - (int)index;
-- (id)initWithIndex:(int)arg1 signature:(id)arg2 size:(unsigned long long)arg3;
-- (void)setSize:(unsigned long long)arg1;
+- (id)initWithIndex:(int)arg1 signature:(id)arg2 size:(unsigned int)arg3;
+- (void)setSize:(unsigned int)arg1;
 - (id)signature;
-- (unsigned long long)size;
+- (unsigned int)size;
 
 @end

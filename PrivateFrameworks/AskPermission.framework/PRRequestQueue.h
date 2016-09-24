@@ -3,8 +3,8 @@
  */
 
 @interface PRRequestQueue : NSObject {
-    <PRRequestDelegate> *_delegate;
-    NSString *_identifier;
+    <PRRequestDelegate> * _delegate;
+    NSString * _identifier;
 }
 
 @property (nonatomic) <PRRequestDelegate> *delegate;

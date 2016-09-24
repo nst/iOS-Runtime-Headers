@@ -3,10 +3,10 @@
  */
 
 @interface GEOVLaneConnection : PBCodable <NSCopying> {
-    unsigned int _firstLaneIndex;
-    unsigned int _firstRoadIndex;
-    unsigned int _secondLaneIndex;
-    unsigned int _secondRoadIndex;
+    unsigned int  _firstLaneIndex;
+    unsigned int  _firstRoadIndex;
+    unsigned int  _secondLaneIndex;
+    unsigned int  _secondRoadIndex;
 }
 
 @property (nonatomic) unsigned int firstLaneIndex;

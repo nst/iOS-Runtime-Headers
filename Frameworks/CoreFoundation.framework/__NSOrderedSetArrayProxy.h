@@ -3,7 +3,7 @@
  */
 
 @interface __NSOrderedSetArrayProxy : NSArray {
-    id _orderedSet;
+    id  _orderedSet;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

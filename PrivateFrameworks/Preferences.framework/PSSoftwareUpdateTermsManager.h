@@ -3,12 +3,14 @@
  */
 
 @interface PSSoftwareUpdateTermsManager : NSObject <RemoteUIControllerDelegate> {
-    SUDownload *_download;
-    BOOL _forceTermsModal;
-    UIViewController *_hostController;
-    RUIStyle *_serverFlowStyle;
-    id /* block */ _termsCompletion;
-    RemoteUIController *_termsRemoteUI;
+    UIViewController * _hostController;
+    BOOL  _overrideNextRUIAction;
+    UIViewController * _presentedViewController;
+    RUIStyle * _serverFlowStyle;
+    UINavigationController * _showProgressViewController;
+    id /* block */  _termsCompletion;
+    RemoteUIController * _termsRemoteUI;
+    SUDescriptor * _update;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -25,12 +27,16 @@
 - (void)_loadRemoteUITermsWithCloudAtURL:(id)arg1;
 - (void)_loadTermsFromUpdateAsset;
 - (void)_loadTermsRemoteUIFailureWithError:(id)arg1;
+- (void)_presentModalController:(id)arg1;
 - (void)_termsDisagree;
-- (void)presentTermsIfNecessaryForDownload:(id)arg1 overController:(id)arg2 completion:(id /* block */)arg3;
+- (void)cancelLoadingTerms:(id)arg1;
+- (void)presentTermsIfNecessaryForUpdate:(id)arg1 overController:(id)arg2 showLoadSpinner:(BOOL)arg3 completion:(id /* block */)arg4;
 - (void)remoteUIController:(id)arg1 didFinishLoadWithError:(id)arg2;
-- (void)remoteUIController:(id)arg1 didReceiveObjectModel:(id)arg2 actionSignal:(int*)arg3;
+- (void)remoteUIController:(id)arg1 didReceiveObjectModel:(id)arg2 actionSignal:(unsigned int*)arg3;
 - (void)remoteUIController:(id)arg1 willPresentObjectModel:(id)arg2 modally:(BOOL)arg3;
+- (void)remoteUIControllerDidDismiss:(id)arg1;
 - (id)serverFlowStyle;
 - (void)setServerFlowStyle:(id)arg1;
+- (void)showLoadingSpinnerViewController;
 
 @end

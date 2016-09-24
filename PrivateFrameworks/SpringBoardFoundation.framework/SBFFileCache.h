@@ -3,16 +3,16 @@
  */
 
 @interface SBFFileCache : NSObject {
-    double _accessDateTimeAdjustment;
-    <SBFFileCacheDelegate> *_delegate;
-    <SBFFileCacheFaultHandler> *_faultHandler;
-    NSMutableArray *_manifest;
-    double _maxAllowedTimeSinceGeneration;
-    double _maxAllowedTimeSinceLastAccess;
-    unsigned int _maxTotalFileCount;
-    unsigned int _maxTotalFileSize;
-    NSObject<OS_dispatch_queue> *_queue;
-    <SBFFileCacheStore> *_store;
+    double  _accessDateTimeAdjustment;
+    <SBFFileCacheDelegate> * _delegate;
+    <SBFFileCacheFaultHandler> * _faultHandler;
+    NSMutableArray * _manifest;
+    double  _maxAllowedTimeSinceGeneration;
+    double  _maxAllowedTimeSinceLastAccess;
+    unsigned int  _maxTotalFileCount;
+    unsigned int  _maxTotalFileSize;
+    NSObject<OS_dispatch_queue> * _queue;
+    <SBFFileCacheStore> * _store;
 }
 
 @property double accessDateTimeAdjustment;

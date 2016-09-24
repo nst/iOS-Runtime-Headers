@@ -3,7 +3,7 @@
  */
 
 @interface ICSearchIndexableIdentifiers : NSObject <ICPropertyListSerializable, NSCopying, NSMutableCopying> {
-    NSOrderedSet *_identifiers;
+    NSOrderedSet * _identifiers;
 }
 
 @property (nonatomic, readonly) unsigned int count;
@@ -19,7 +19,7 @@
 - (id)initForAnyContextWithObjectIdentifiers:(id)arg1;
 - (id)initWithAssignedOrderedSet:(id)arg1;
 - (id)initWithOrderedSet:(id)arg1;
-- (id)initWithPropertyListObjectRepresentation:(id)arg1 version:(long long)arg2;
+- (id)initWithPropertyListObjectRepresentation:(id)arg1 version:(int)arg2;
 - (id)initWithSearchIndexableIdentifier:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectIdentifiers;

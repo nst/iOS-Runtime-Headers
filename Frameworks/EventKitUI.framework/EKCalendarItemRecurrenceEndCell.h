@@ -3,8 +3,8 @@
  */
 
 @interface EKCalendarItemRecurrenceEndCell : UITableViewCell {
-    UIDatePicker *_datePicker;
-    UIButton *_neverButton;
+    UIDatePicker * _datePicker;
+    UIButton * _neverButton;
 }
 
 @property (nonatomic, retain) NSDate *date;

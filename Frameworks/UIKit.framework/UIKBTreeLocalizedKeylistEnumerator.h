@@ -3,8 +3,8 @@
  */
 
 @interface UIKBTreeLocalizedKeylistEnumerator : NSEnumerator {
-    NSDictionary *_keyplaneCache;
-    NSEnumerator *_nameEnum;
+    NSDictionary * _keyplaneCache;
+    NSEnumerator * _nameEnum;
 }
 
 - (void)dealloc;

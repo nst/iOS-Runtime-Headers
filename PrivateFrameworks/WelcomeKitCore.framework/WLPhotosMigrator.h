@@ -3,7 +3,7 @@
  */
 
 @interface WLPhotosMigrator : WLFileMigrationWebService {
-    NSObject<OS_dispatch_semaphore> *_importSema;
+    NSObject<OS_dispatch_semaphore> * _importSema;
 }
 
 + (id)contentType;

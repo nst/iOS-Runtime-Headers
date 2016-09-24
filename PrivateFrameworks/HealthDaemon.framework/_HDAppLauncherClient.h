@@ -3,9 +3,9 @@
  */
 
 @interface _HDAppLauncherClient : NSObject {
-    NSMutableDictionary *_expirationDateByRegistrationIdentifier;
-    BOOL _launching;
-    BOOL _retry;
+    NSMutableDictionary * _expirationDateByRegistrationIdentifier;
+    BOOL  _launching;
+    BOOL  _retry;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *expirationDateByRegistrationIdentifier;

@@ -3,7 +3,7 @@
  */
 
 @interface TSUBasicProgress : TSUProgress {
-    TSUBasicProgressStorage *mStorage;
+    TSUBasicProgressStorage * mStorage;
 }
 
 @property (getter=isIndeterminate) BOOL indeterminate;

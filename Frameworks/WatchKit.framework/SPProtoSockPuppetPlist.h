@@ -3,7 +3,7 @@
  */
 
 @interface SPProtoSockPuppetPlist : PBCodable <NSCopying> {
-    NSMutableArray *_objects;
+    NSMutableArray * _objects;
 }
 
 @property (nonatomic, retain) NSMutableArray *objects;

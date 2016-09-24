@@ -3,13 +3,15 @@
  */
 
 @interface IMLocalObject : NSObject {
-    id _internal;
+    id  _internal;
 }
 
 @property (nonatomic, readonly) NSObject<OS_xpc_object> *connection;
+@property (nonatomic, readonly) BOOL forceSecureCoding;
 @property (nonatomic, readonly) BOOL isValid;
 @property (nonatomic, readonly) NSString *portName;
 @property (nonatomic, retain) NSString *processName;
+@property (nonatomic, readonly) NSProtocolChecker *protocolChecker;
 @property (nonatomic) id target;
 
 + (id)_imLocalObjectQueue;
@@ -38,9 +40,11 @@
 - (id)connection;
 - (void)dealloc;
 - (id)description;
+- (BOOL)forceSecureCoding;
 - (BOOL)handleInvocation:(id)arg1;
 - (id)initWithTarget:(id)arg1 connection:(id)arg2 protocol:(id)arg3;
-- (id)initWithTarget:(id)arg1 connection:(id)arg2 protocol:(id)arg3 offMainThread:(BOOL)arg4;
+- (id)initWithTarget:(id)arg1 connection:(id)arg2 protocol:(id)arg3 forceSecureCoding:(BOOL)arg4;
+- (id)initWithTarget:(id)arg1 connection:(id)arg2 protocol:(id)arg3 forceSecureCoding:(BOOL)arg4 offMainThread:(BOOL)arg5;
 - (id)initWithTarget:(id)arg1 portName:(id)arg2 protocol:(id)arg3;
 - (id)initWithTarget:(id)arg1 protocol:(id)arg2;
 - (void)invalidate;
@@ -48,6 +52,7 @@
 - (BOOL)isValidSelector:(SEL)arg1;
 - (id)portName;
 - (id)processName;
+- (id)protocolChecker;
 - (void)setPortName:(id)arg1;
 - (void)setProcessName:(id)arg1;
 - (void)setTarget:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface PTPInitEventRequestPacket : NSObject {
-    unsigned long _connectionNumber;
+    unsigned long  _connectionNumber;
 }
 
 - (unsigned long)connectionNumber;

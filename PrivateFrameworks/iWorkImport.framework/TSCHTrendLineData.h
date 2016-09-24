@@ -5,33 +5,33 @@
 @interface TSCHTrendLineData : NSObject <TSCHUnretainedParent> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } mCachedChartFrame;
-    BOOL mCachedChartVertical;
-    TSUBezierPath *mCachedTrendLinePath;
-    int mInputAxisType;
-    int mLineType;
-    double mMaxXValue;
-    double mMaxYValue;
-    double mMinXValue;
-    double mMinYValue;
-    double mOffsetInBody;
-    int mOutputAxisType;
-    TSURegressionModel *mRegression;
-    TSCHChartSeries *mSeries;
-    BOOL mShowTrendLine;
-    BOOL mTrendLineInvalid;
+    }  mCachedChartFrame;
+    BOOL  mCachedChartVertical;
+    TSUBezierPath * mCachedTrendLinePath;
+    int  mInputAxisType;
+    int  mLineType;
+    double  mMaxXValue;
+    double  mMaxYValue;
+    double  mMinXValue;
+    double  mMinYValue;
+    double  mOffsetInBody;
+    int  mOutputAxisType;
+    TSURegressionModel * mRegression;
+    TSCHChartSeries * mSeries;
+    BOOL  mShowTrendLine;
+    BOOL  mTrendLineInvalid;
 }
 
-@property (nonatomic, readonly) float equationTextOpacity;
+@property (nonatomic, readonly) double equationTextOpacity;
 @property (nonatomic, readonly) NSString *rSquaredText;
-@property (nonatomic, readonly) float rSquaredTextOpacity;
+@property (nonatomic, readonly) double rSquaredTextOpacity;
 @property (nonatomic, readonly) BOOL showEquation;
 @property (nonatomic, readonly) BOOL showRSquared;
 @property (nonatomic, readonly) BOOL showTrendLine;
@@ -58,7 +58,7 @@
 - (int)p_getTrendLineType;
 - (id)p_linePathFromPoints:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2;
 - (void)p_releaseCache;
-- (struct { double x1; double x2; })p_unitPoint:(struct { double x1; double x2; })arg1 toScreenFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 offset:(double)arg3 vertical:(BOOL)arg4;
+- (struct { double x1; double x2; })p_unitPoint:(struct { double x1; double x2; })arg1 toScreenFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 offset:(double)arg3 vertical:(BOOL)arg4;
 - (void)p_updateTrendLineData;
 - (id)rSquaredText;
 - (float)rSquaredTextOpacity;
@@ -68,7 +68,7 @@
 - (BOOL)showTrendLineForAxisID:(id)arg1;
 - (BOOL)showTrendLineLegendText;
 - (id)trendLineLegendText;
-- (id)trendLinePathForChartRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 offsetInBody:(double)arg2 vertical:(BOOL)arg3;
+- (id)trendLinePathForChartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 offsetInBody:(double)arg2 vertical:(BOOL)arg3;
 - (void)trendLineUnitSpacePoints:(struct { /* ? */ }**)arg1 count:(unsigned int*)arg2 drawCurve:(BOOL*)arg3 maxPoints:(unsigned int)arg4;
 - (void)updateIfNeeded;
 

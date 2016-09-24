@@ -7,11 +7,11 @@
         BOOL applicationExists; 
         BOOL oldPluginExists; 
         BOOL currentPluginExists; 
-    } _availability;
-    BOOL _checkedEndNoteAvailability;
-    NSArray *_defaultFormats;
-    unsigned int _failedPluginLoadingAttempts;
-    NSString *_format;
+    }  _availability;
+    BOOL  _checkedEndNoteAvailability;
+    NSArray * _defaultFormats;
+    unsigned int  _failedPluginLoadingAttempts;
+    NSString * _format;
 }
 
 @property (retain) NSString *format;

@@ -3,10 +3,10 @@
  */
 
 @interface TSDStrokePattern : NSObject <NSCopying, TSDMixing> {
-    unsigned int mCount;
-    float mPattern;
-    float mPhase;
-    int mType;
+    unsigned int  mCount;
+    double  mPattern;
+    double  mPhase;
+    int  mType;
 }
 
 @property (nonatomic, readonly) unsigned int count;
@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) BOOL isRoundDash;
 @property (nonatomic, readonly) float*pattern;
 @property (nonatomic, readonly) int patternType;
-@property (nonatomic, readonly) float phase;
+@property (nonatomic, readonly) double phase;
 
 + (id)dashPatternWithSpacing:(float)arg1;
 + (id)emptyPattern;
@@ -33,7 +33,7 @@
 - (id)description;
 - (unsigned int)hash;
 - (void)i_applyToContext:(struct CGContext { }*)arg1 lineWidth:(float)arg2 capStyle:(unsigned int*)arg3;
-- (id)initWithArchive:(const struct StrokePatternArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; int x5; float x6; struct RepeatedField<float> { float *x_7_1_1; int x_7_1_2; int x_7_1_3; } x7; unsigned int x8; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct StrokePatternArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; int x5; double x6; struct RepeatedField<float> { double *x_7_1_1; int x_7_1_2; int x_7_1_3; } x7; unsigned int x8; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithPattern:(const float*)arg1 count:(unsigned int)arg2 phase:(float)arg3;
 - (BOOL)isDash;
 - (BOOL)isEqual:(id)arg1;
@@ -42,9 +42,12 @@
 - (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (void)p_applyToCAShapeLayer:(id)arg1 lineWidth:(float)arg2;
 - (id)p_initWithType:(int)arg1 pattern:(const float*)arg2 count:(unsigned int)arg3 phase:(float)arg4;
+- (id)p_patternString;
+- (float)p_renderableLengthForUnclippedPatternWithLineWidth:(float)arg1 withinAvailableLength:(float)arg2;
+- (id)p_typeString;
 - (float*)pattern;
 - (int)patternType;
 - (float)phase;
-- (void)saveToArchive:(struct StrokePatternArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; int x5; float x6; struct RepeatedField<float> { float *x_7_1_1; int x_7_1_2; int x_7_1_3; } x7; unsigned int x8; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct StrokePatternArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; int x5; double x6; struct RepeatedField<float> { double *x_7_1_1; int x_7_1_2; int x_7_1_3; } x7; unsigned int x8; }*)arg1 archiver:(id)arg2;
 
 @end

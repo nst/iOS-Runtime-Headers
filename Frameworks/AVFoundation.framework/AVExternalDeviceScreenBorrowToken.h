@@ -3,9 +3,9 @@
  */
 
 @interface AVExternalDeviceScreenBorrowToken : NSObject {
-    NSString *_client;
-    AVExternalDevice *_externalDevice;
-    NSString *_reason;
+    NSString * _client;
+    AVExternalDevice * _externalDevice;
+    NSString * _reason;
 }
 
 @property (nonatomic, readonly) NSString *client;

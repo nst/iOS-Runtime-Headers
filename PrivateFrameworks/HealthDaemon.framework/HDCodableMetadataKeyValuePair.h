@@ -3,16 +3,17 @@
  */
 
 @interface HDCodableMetadataKeyValuePair : PBCodable <NSCopying> {
-    double _dateValue;
+    double  _dateValue;
     struct { 
         unsigned int dateValue : 1; 
         unsigned int numberDoubleValue : 1; 
         unsigned int numberIntValue : 1; 
-    } _has;
-    NSString *_key;
-    double _numberDoubleValue;
-    long long _numberIntValue;
-    NSString *_stringValue;
+    }  _has;
+    NSString * _key;
+    double  _numberDoubleValue;
+    int  _numberIntValue;
+    HDCodableQuantity * _quantityValue;
+    NSString * _stringValue;
 }
 
 @property (nonatomic) double dateValue;
@@ -20,10 +21,12 @@
 @property (nonatomic, readonly) BOOL hasKey;
 @property (nonatomic) BOOL hasNumberDoubleValue;
 @property (nonatomic) BOOL hasNumberIntValue;
+@property (nonatomic, readonly) BOOL hasQuantityValue;
 @property (nonatomic, readonly) BOOL hasStringValue;
 @property (nonatomic, retain) NSString *key;
 @property (nonatomic) double numberDoubleValue;
-@property (nonatomic) long long numberIntValue;
+@property (nonatomic) int numberIntValue;
+@property (nonatomic, retain) HDCodableQuantity *quantityValue;
 @property (nonatomic, retain) NSString *stringValue;
 
 - (void).cxx_destruct;
@@ -36,13 +39,15 @@
 - (BOOL)hasKey;
 - (BOOL)hasNumberDoubleValue;
 - (BOOL)hasNumberIntValue;
+- (BOOL)hasQuantityValue;
 - (BOOL)hasStringValue;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)key;
 - (void)mergeFrom:(id)arg1;
 - (double)numberDoubleValue;
-- (long long)numberIntValue;
+- (int)numberIntValue;
+- (id)quantityValue;
 - (BOOL)readFrom:(id)arg1;
 - (void)setDateValue:(double)arg1;
 - (void)setHasDateValue:(BOOL)arg1;
@@ -50,7 +55,8 @@
 - (void)setHasNumberIntValue:(BOOL)arg1;
 - (void)setKey:(id)arg1;
 - (void)setNumberDoubleValue:(double)arg1;
-- (void)setNumberIntValue:(long long)arg1;
+- (void)setNumberIntValue:(int)arg1;
+- (void)setQuantityValue:(id)arg1;
 - (void)setStringValue:(id)arg1;
 - (id)stringValue;
 - (void)writeTo:(id)arg1;

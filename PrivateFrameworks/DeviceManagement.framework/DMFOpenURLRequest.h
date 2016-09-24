@@ -3,7 +3,7 @@
  */
 
 @interface DMFOpenURLRequest : CATTaskRequest {
-    NSURL *_url;
+    NSURL * _url;
 }
 
 @property (nonatomic, copy) NSURL *url;

@@ -5,7 +5,7 @@
 @interface NSTextCheckingResult : NSObject <NSCopying, NSSecureCoding>
 
 @property (readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
-@property (readonly) unsigned long long resultType;
+@property (readonly) unsigned int resultType;
 
 + (id)addressCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 components:(id)arg2;
 + (id)correctionCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 replacementString:(id)arg2;
@@ -39,16 +39,22 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)grammarDetails;
 - (id)initWithCoder:(id)arg1;
+- (id)leadingText;
 - (unsigned int)numberOfRanges;
 - (id)orthography;
 - (id)phoneNumber;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeAtIndex:(unsigned int)arg1;
+- (id)referenceDate;
 - (id)regularExpression;
 - (id)replacementString;
 - (id)resultByAdjustingRangesWithOffset:(int)arg1;
-- (unsigned long long)resultType;
+- (unsigned int)resultType;
+- (BOOL)timeIsApproximate;
+- (BOOL)timeIsPast;
+- (BOOL)timeIsSignificant;
 - (id)timeZone;
+- (id)trailingText;
 - (void*)underlyingResult;
 
 @end

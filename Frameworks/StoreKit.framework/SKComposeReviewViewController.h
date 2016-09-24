@@ -3,12 +3,12 @@
  */
 
 @interface SKComposeReviewViewController : UIViewController {
-    _UIAsyncInvocation *_cancelRequest;
-    NSURL *_compositionURL;
-    <SKComposeReviewDelegate> *_delegate;
-    id /* block */ _prepareBlock;
-    SKRemoteComposeReviewViewController *_remoteViewController;
-    SKInvocationQueueProxy<SKUIServiceComposeReviewViewController> *_serviceProxy;
+    _UIAsyncInvocation * _cancelRequest;
+    NSURL * _compositionURL;
+    <SKComposeReviewDelegate> * _delegate;
+    id /* block */  _prepareBlock;
+    SKRemoteComposeReviewViewController * _remoteViewController;
+    SKInvocationQueueProxy<SKUIServiceComposeReviewViewController> * _serviceProxy;
 }
 
 @property (nonatomic) <SKComposeReviewDelegate> *delegate;

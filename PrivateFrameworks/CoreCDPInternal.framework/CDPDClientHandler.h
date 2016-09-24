@@ -3,23 +3,37 @@
  */
 
 @interface CDPDClientHandler : NSObject <CDPDaemonProtocol> {
-    unsigned int _clientType;
-    NSXPCConnection *_connection;
-    unsigned int _entitlements;
+    unsigned int  _clientType;
+    NSXPCConnection * _connection;
+    unsigned int  _entitlements;
+    id  _notificationObject;
 }
 
 - (void).cxx_destruct;
+- (BOOL)_allowDataRecovery;
+- (BOOL)_allowFollowUps;
 - (BOOL)_allowStateMachineAccess;
 - (BOOL)_allowUtilityAccess;
+- (void)_removeObserver;
+- (void)_startObservingConnectionStateForRepairWithStateMachine:(id)arg1;
+- (void)clearFollowUpWithContext:(id)arg1 completion:(id /* block */)arg2;
+- (void)dealloc;
 - (void)finishOfflineLocalSecretChangeWithContext:(id)arg1 uiProvider:(id)arg2 completion:(id /* block */)arg3;
+- (void)getStingrayDisableEligibility:(id)arg1 completion:(id /* block */)arg2;
+- (void)getStingrayStateForContext:(id)arg1 completion:(id /* block */)arg2;
 - (void)handleCloudDataProtectionStateWithContext:(id)arg1 uiProvider:(id)arg2 completion:(id /* block */)arg3;
 - (void)hasLocalSecretWithCompletion:(id /* block */)arg1;
 - (id)initWithConnection:(id)arg1 entitlements:(unsigned int)arg2 clientType:(unsigned int)arg3;
 - (void)isICDPEnabledForDSID:(id)arg1 checkWithServer:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)isUserVisibleKeychainSyncEnabledWithCompletion:(id /* block */)arg1;
 - (void)localSecretChangedTo:(id)arg1 secretType:(unsigned int)arg2 context:(id)arg3 completion:(id /* block */)arg4;
+- (void)postFollowUpWithContext:(id)arg1 completion:(id /* block */)arg2;
+- (void)preflightStingrayDisableForContext:(id)arg1 uiProvider:(id)arg2 completion:(id /* block */)arg3;
+- (void)recoverIDMSRecoveryDictionaryWithContext:(id)arg1 uiProvider:(id)arg2 authProvider:(id)arg3 completion:(id /* block */)arg4;
 - (void)removeNonViewAwarePeersFromCircleWithContext:(id)arg1 completion:(id /* block */)arg2;
 - (void)repairCloudDataProtectionStateWithContext:(id)arg1 uiProvider:(id)arg2 completion:(id /* block */)arg3;
+- (void)setStingrayState:(BOOL)arg1 context:(id)arg2 completion:(id /* block */)arg3;
 - (void)setUserVisibleKeychainSyncEnabled:(BOOL)arg1 withCompletion:(id /* block */)arg2;
+- (void)shouldPerformRepairForContext:(id)arg1 completion:(id /* block */)arg2;
 
 @end

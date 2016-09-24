@@ -3,9 +3,9 @@
  */
 
 @interface GEOSource : PBCodable <NSCopying> {
-    NSString *_sourceId;
-    NSString *_sourceName;
-    NSString *_sourceVersion;
+    NSString * _sourceId;
+    NSString * _sourceName;
+    NSString * _sourceVersion;
 }
 
 @property (nonatomic, readonly) BOOL hasSourceVersion;

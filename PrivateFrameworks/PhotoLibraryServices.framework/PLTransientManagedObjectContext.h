@@ -4,7 +4,7 @@
 
 @interface PLTransientManagedObjectContext : PLManagedObjectContext
 
++ (BOOL)_shouldRequestModelMigratorCreateDatabaseOnRebuildAndRetry;
 + (BOOL)canMergeRemoteChanges;
-+ (BOOL)useModelMigratorToCreateDatabase;
 
 @end

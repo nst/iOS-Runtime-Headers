@@ -3,7 +3,7 @@
  */
 
 @interface SBFSubject : SBFObservable <SBFObserver> {
-    NSMutableArray *_observers;
+    NSMutableArray * _observers;
 }
 
 @property (readonly, copy) NSString *debugDescription;

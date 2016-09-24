@@ -3,10 +3,10 @@
  */
 
 @interface SSCacheObjectStore : NSObject {
-    SSDatabaseCache *_databaseCache;
-    NSMutableSet *_factories;
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    NSString *_sessionIdentifier;
+    SSDatabaseCache * _databaseCache;
+    NSMutableSet * _factories;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    NSString * _sessionIdentifier;
 }
 
 - (id)_factoryForTypeIdentifier:(id)arg1;

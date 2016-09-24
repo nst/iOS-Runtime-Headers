@@ -3,7 +3,7 @@
  */
 
 @interface AASetupAssistantTermsFetchRequest : AARequest {
-    ACAccount *_account;
+    ACAccount * _account;
 }
 
 + (Class)responseClass;

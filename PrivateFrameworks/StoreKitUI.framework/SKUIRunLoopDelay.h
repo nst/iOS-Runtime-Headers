@@ -3,10 +3,10 @@
  */
 
 @interface SKUIRunLoopDelay : NSObject {
-    NSString *_mode;
-    struct __CFRunLoop { } *_runLoop;
-    struct __CFRunLoopSource { } *_runLoopSource;
-    double _timeout;
+    NSString * _mode;
+    struct __CFRunLoop { } * _runLoop;
+    struct __CFRunLoopSource { } * _runLoopSource;
+    double  _timeout;
 }
 
 - (void).cxx_destruct;

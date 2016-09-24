@@ -3,7 +3,7 @@
  */
 
 @interface PUTiltWheelTriangleView : UIView {
-    int _wheelOrientation;
+    int  _wheelOrientation;
 }
 
 @property (nonatomic) int wheelOrientation;

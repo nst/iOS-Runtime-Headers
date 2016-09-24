@@ -3,8 +3,8 @@
  */
 
 @interface CIRAWGamutMapping : CIFilter {
-    CIImage *inputImage;
-    NSDictionary *inputRAWDictionary;
+    CIImage * inputImage;
+    NSDictionary * inputRAWDictionary;
 }
 
 - (id)outputImage;

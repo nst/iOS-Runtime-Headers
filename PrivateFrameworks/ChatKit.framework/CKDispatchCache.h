@@ -3,12 +3,12 @@
  */
 
 @interface CKDispatchCache : NSObject <IMSystemMonitorListener> {
-    long _dispatchPriority;
-    CKDispatchQueue *_dispatchQueue;
-    NSObject<OS_dispatch_queue> *_lockQueue;
-    NSCache *_objectCache;
-    NSMutableDictionary *_pendingGroups;
-    NSCountedSet *_pendingKeys;
+    long  _dispatchPriority;
+    CKDispatchQueue * _dispatchQueue;
+    NSObject<OS_dispatch_queue> * _lockQueue;
+    NSCache * _objectCache;
+    NSMutableDictionary * _pendingGroups;
+    NSCountedSet * _pendingKeys;
 }
 
 @property (nonatomic) long dispatchPriority;
@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NSMutableDictionary *pendingGroups;
 @property (nonatomic, retain) NSCountedSet *pendingKeys;
 
+- (void).cxx_destruct;
 - (void)_beginGeneratingForKeyUnlocked:(id)arg1;
 - (void)_endGeneratingForKeyUnlocked:(id)arg1;
 - (void)beginGeneratingForKey:(id)arg1;

@@ -3,15 +3,15 @@
  */
 
 @interface CAMNebulaDaemonConnectionManager : NSObject <CAMNebulaDaemonClientProtocol, NSXPCConnectionDelegate> {
-    Protocol *__allowedProtocol;
-    NSXPCConnection *__connection;
-    NSString *__name;
-    NSObject<OS_dispatch_queue> *__queue;
-    NSMutableArray *__registeredProtocols;
-    NSMutableArray *__registeredTargets;
-    NSMutableDictionary *__tasksPerIdentifier;
-    <CAMNebulaDaemonConnectionManagerDelegate> *_delegate;
-    NSString *_identifier;
+    Protocol * __allowedProtocol;
+    NSXPCConnection * __connection;
+    NSString * __name;
+    NSObject<OS_dispatch_queue> * __queue;
+    NSMutableArray * __registeredProtocols;
+    NSMutableArray * __registeredTargets;
+    NSMutableDictionary * __tasksPerIdentifier;
+    <CAMNebulaDaemonConnectionManagerDelegate> * _delegate;
+    NSString * _identifier;
 }
 
 @property (nonatomic, readonly) Protocol *_allowedProtocol;

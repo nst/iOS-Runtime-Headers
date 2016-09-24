@@ -3,21 +3,22 @@
  */
 
 @interface VKLabelFeatureMarker : VKFeatureMarker {
-    struct shared_ptr<vk::LabelFeature> { 
-        struct LabelFeature {} *__ptr_; 
+    struct shared_ptr<md::LabelFeatureMarker> { 
+        struct LabelFeatureMarker {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _labelFeature;
-    struct shared_ptr<vk::LabelManager> { 
-        struct LabelManager {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    } _labelManager;
+    }  _actualLabelFeatureMarker;
 }
 
 @property (nonatomic) int viewProximity;
 
++ (id)markerWithLabelFeatureMarker:(const struct shared_ptr<md::LabelFeatureMarker> { struct LabelFeatureMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
+
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)initWithFeature:(struct { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned long long x7; BOOL x8; unsigned long long x9; float x10; unsigned long long x11; id x12; }*)arg1 labelFeature:(struct shared_ptr<vk::LabelFeature> { struct LabelFeature {} *x1; struct __shared_weak_count {} *x2; })arg2 manager:(struct shared_ptr<vk::LabelManager> { struct LabelManager {} *x1; struct __shared_weak_count {} *x2; })arg3;
+- (float)closestApproach;
+- (struct CGVector { double x1; double x2; })direction;
+- (id)initWithFeatureMarkerPtr:(const struct shared_ptr<md::FeatureMarker> { struct FeatureMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
+- (id)initWithLabelFeatureMarkerPtr:(const struct shared_ptr<md::LabelFeatureMarker> { struct LabelFeatureMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
 - (void)setViewProximity:(int)arg1;
 - (int)viewProximity;
 

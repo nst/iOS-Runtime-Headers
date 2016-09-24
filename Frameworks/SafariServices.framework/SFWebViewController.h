@@ -2,20 +2,21 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@interface SFWebViewController : UIViewController <WBUFormAutoFillControllerDelegate, WKNavigationDelegatePrivate, WKUIDelegatePrivate, _SFJavaScriptDialogControllerDelegate, _WKFormDelegate> {
-    WBUFormAutoFillController *_autoFillController;
-    <SFWebViewControllerDelegate> *_delegate;
-    BOOL _didFinishDocumentLoad;
-    BOOL _didFirstLayout;
-    BOOL _didFirstVisuallyNonEmptyLayout;
-    _SFJavaScriptDialogController *_javaScriptDialogController;
-    BOOL _loading;
-    BOOL _shouldSuppressJavaScriptDialogs;
+@interface SFWebViewController : UIViewController <WBUFormAutoFillControllerDelegate, WKNavigationDelegatePrivate, WKUIDelegatePrivate, _SFDialogControllerDelegate, _WKFormDelegate> {
+    WBUFormAutoFillController * _autoFillController;
+    <SFWebViewControllerDelegate> * _delegate;
+    _SFDialogController * _dialogController;
+    BOOL  _didFinishDocumentLoad;
+    BOOL  _didFirstLayout;
+    BOOL  _didFirstVisuallyNonEmptyLayout;
+    BOOL  _loading;
+    BOOL  _shouldSuppressDialogsThatBlockWebProcess;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SFWebViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) _SFDialogController *dialogController;
 @property (nonatomic, readonly) BOOL didFirstVisuallyNonEmptyLayout;
 @property (readonly) unsigned int hash;
 @property (getter=isLoading, nonatomic) BOOL loading;
@@ -26,21 +27,23 @@
 
 - (void).cxx_destruct;
 - (id)_actionsForElement:(id)arg1 defaultActions:(id)arg2 isPreviewing:(BOOL)arg3;
+- (id)_presentingViewControllerForWebView:(id)arg1;
 - (void)_webView:(id)arg1 accessoryViewCustomButtonTappedInFormInputSession:(id)arg2;
 - (id)_webView:(id)arg1 actionsForElement:(id)arg2 defaultActions:(id)arg3;
 - (void)_webView:(id)arg1 commitPreviewedViewController:(id)arg2;
 - (void)_webView:(id)arg1 didStartInputSession:(id)arg2;
+- (void)_webView:(id)arg1 insertTextSuggestion:(id)arg2 inInputSession:(id)arg3;
 - (void)_webView:(id)arg1 navigationDidFinishDocumentLoad:(id)arg2;
 - (id)_webView:(id)arg1 previewViewControllerForURL:(id)arg2 defaultActions:(id)arg3 elementInfo:(id)arg4;
 - (void)_webView:(id)arg1 renderingProgressDidChange:(unsigned int)arg2;
 - (BOOL)_webView:(id)arg1 shouldIncludeAppLinkActionsForElement:(id)arg2;
 - (void)_webView:(id)arg1 willSubmitFormValues:(id)arg2 userObject:(id)arg3 submissionHandler:(id /* block */)arg4;
-- (void)_webViewWebProcessDidBecomeResponsive:(id)arg1;
-- (void)_webViewWebProcessDidBecomeUnresponsive:(id)arg1;
 - (void)_webViewWebProcessDidCrash:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)dialogControllerShouldSuppressDialogs:(id)arg1;
+- (id)dialogController;
+- (BOOL)dialogController:(id)arg1 shouldSuppressDialog:(id)arg2;
+- (void)dialogController:(id)arg1 willPresentDialog:(id)arg2;
 - (BOOL)didFirstVisuallyNonEmptyLayout;
 - (BOOL)formAutoFillControllerCanPrefillForm:(id)arg1;
 - (BOOL)formAutoFillControllerShouldDisableAutoFill:(id)arg1;

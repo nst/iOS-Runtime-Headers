@@ -3,8 +3,8 @@
  */
 
 @interface AVOutputDeviceInternal : NSObject {
-    struct OpaqueFigEndpoint { } *_figEndpoint;
-    AVWeakReference *_weakReference;
+    struct OpaqueFigEndpoint { } * _figEndpoint;
+    AVWeakReference * _weakReference;
 }
 
 @end

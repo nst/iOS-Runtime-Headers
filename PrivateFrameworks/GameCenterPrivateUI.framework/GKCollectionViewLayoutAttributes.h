@@ -3,20 +3,20 @@
  */
 
 @interface GKCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes {
-    BOOL _allSectionItemsVisible;
-    unsigned int _currentTotalItemCount;
-    unsigned int _currentVisibleItemCount;
-    <UICollectionViewDataSource> *_dataSource;
-    BOOL _doesAbutLeftOfCollectionView;
-    unsigned int _gridLayoutLocation;
-    BOOL _isPartOfGlobalPinningGroup;
-    BOOL _isPinned;
-    float _leadingMargin;
-    unsigned int _maxTotalItemCount;
-    GKSectionMetrics *_sectionMetrics;
-    GKSupplementaryViewMetrics *_supplementaryMetrics;
-    float _trailingMargin;
-    float _unpinnedY;
+    BOOL  _allSectionItemsVisible;
+    unsigned int  _currentTotalItemCount;
+    unsigned int  _currentVisibleItemCount;
+    <UICollectionViewDataSource> * _dataSource;
+    BOOL  _doesAbutLeftOfCollectionView;
+    unsigned int  _gridLayoutLocation;
+    BOOL  _isPartOfGlobalPinningGroup;
+    BOOL  _isPinned;
+    double  _leadingMargin;
+    unsigned int  _maxTotalItemCount;
+    GKSectionMetrics * _sectionMetrics;
+    GKSupplementaryViewMetrics * _supplementaryMetrics;
+    double  _trailingMargin;
+    double  _unpinnedY;
 }
 
 @property (nonatomic) BOOL allSectionItemsVisible;
@@ -27,12 +27,12 @@
 @property (nonatomic) unsigned int gridLayoutLocation;
 @property (nonatomic) BOOL isPartOfGlobalPinningGroup;
 @property (nonatomic) BOOL isPinned;
-@property (nonatomic) float leadingMargin;
+@property (nonatomic) double leadingMargin;
 @property (nonatomic) unsigned int maxTotalItemCount;
 @property (nonatomic, retain) GKSectionMetrics *sectionMetrics;
 @property (nonatomic, retain) GKSupplementaryViewMetrics *supplementaryMetrics;
-@property (nonatomic) float trailingMargin;
-@property (nonatomic) float unpinnedY;
+@property (nonatomic) double trailingMargin;
+@property (nonatomic) double unpinnedY;
 
 - (BOOL)allSectionItemsVisible;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

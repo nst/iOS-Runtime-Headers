@@ -3,7 +3,7 @@
  */
 
 @interface _MRSendHIDEventMessageProtobuf : PBCodable <NSCopying> {
-    NSData *_hidEventData;
+    NSData * _hidEventData;
 }
 
 @property (nonatomic, readonly) BOOL hasHidEventData;

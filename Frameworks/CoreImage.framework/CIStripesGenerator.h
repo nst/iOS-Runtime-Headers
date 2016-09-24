@@ -3,11 +3,11 @@
  */
 
 @interface CIStripesGenerator : CIFilter {
-    CIVector *inputCenter;
-    CIColor *inputColor0;
-    CIColor *inputColor1;
-    NSNumber *inputSharpness;
-    NSNumber *inputWidth;
+    CIVector * inputCenter;
+    CIColor * inputColor0;
+    CIColor * inputColor1;
+    NSNumber * inputSharpness;
+    NSNumber * inputWidth;
 }
 
 @property (nonatomic, retain) CIVector *inputCenter;

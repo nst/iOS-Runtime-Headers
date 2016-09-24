@@ -3,27 +3,27 @@
  */
 
 @interface WLAuthenticator : WLSocketHandler <WLDeviceAuthenticatorProtocol> {
-    WLDeviceAuthentication *_auth;
-    NSData *_certBSignatureData;
-    WLAuthenticationCredentials *_credentials;
-    <WLDeviceAuthenticationDelegate> *_delegate;
-    WLSourceDevice *_device;
-    NSData *_ecKeyAData;
-    NSData *_ecKeyBData;
-    struct _CCECCryptor { } *_ecPrivateKeyA;
-    struct _CCECCryptor { } *_ecPrivateKeyB;
-    struct _CCECCryptor { } *_ecPublicKeyA;
-    struct _CCECCryptor { } *_ecPublicKeyB;
-    NSData *_localCertPEMData;
-    NSMutableData *_pendingBlobData;
-    unsigned int _pendingBlobDataSize;
-    NSObject<OS_dispatch_source> *_readSource;
-    NSData *_rnAData;
-    NSData *_rnBData;
-    int _sockfd;
-    NSData *_sourceCommitmentData;
-    unsigned int _state;
-    NSObject<OS_dispatch_queue> *_writeQueue;
+    WLDeviceAuthentication * _auth;
+    NSData * _certBSignatureData;
+    WLAuthenticationCredentials * _credentials;
+    <WLDeviceAuthenticationDelegate> * _delegate;
+    WLSourceDevice * _device;
+    NSData * _ecKeyAData;
+    NSData * _ecKeyBData;
+    struct _CCECCryptor { } * _ecPrivateKeyA;
+    struct _CCECCryptor { } * _ecPrivateKeyB;
+    struct _CCECCryptor { } * _ecPublicKeyA;
+    struct _CCECCryptor { } * _ecPublicKeyB;
+    NSData * _localCertPEMData;
+    NSMutableData * _pendingBlobData;
+    unsigned int  _pendingBlobDataSize;
+    NSObject<OS_dispatch_source> * _readSource;
+    NSData * _rnAData;
+    NSData * _rnBData;
+    int  _sockfd;
+    NSData * _sourceCommitmentData;
+    unsigned int  _state;
+    NSObject<OS_dispatch_queue> * _writeQueue;
 }
 
 @property (nonatomic, readonly) <WLDeviceAuthenticationDelegate> *delegate;

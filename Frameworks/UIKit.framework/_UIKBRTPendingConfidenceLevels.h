@@ -3,10 +3,10 @@
  */
 
 @interface _UIKBRTPendingConfidenceLevels : _UIKBRTConfidenceLevels {
-    float _confidenceCheckTimeout;
+    double  _confidenceCheckTimeout;
 }
 
-@property (nonatomic) float confidenceCheckTimeout;
+@property (nonatomic) double confidenceCheckTimeout;
 
 - (float)confidenceCheckTimeout;
 - (void)setConfidenceCheckTimeout:(float)arg1;

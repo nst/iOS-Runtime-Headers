@@ -2,30 +2,13 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDBulletinCategory : NSObject {
-    NSArray *_entries;
-}
-
-@property (nonatomic, retain) NSArray *entries;
+@interface HMDBulletinCategory : NSObject
 
 + (id)_enumerationValueLocalizationKeys;
++ (id)_localizedStateForValue:(id)arg1 characteristicType:(id)arg2;
++ (id)_presentationTypeForType:(id)arg1;
 + (id)_secureStateMap;
-+ (id)categoryForIdentifier:(id)arg1;
-+ (id)defaultCategories;
-
-- (void).cxx_destruct;
-- (BOOL)_alarmTriggerChange:(struct NSDictionary { Class x1; }*)arg1 previousContext:(struct NSDictionary { Class x1; }*)arg2;
-- (BOOL)_isSecureState:(struct NSDictionary { Class x1; }*)arg1;
-- (BOOL)_isUnsecureState:(struct NSDictionary { Class x1; }*)arg1;
-- (id)_localizedStateForValue:(id)arg1 characteristicType:(id)arg2;
-- (id)_presentationTypeForType:(id)arg1;
-- (id)_presentationValueForValue:(id)arg1 type:(id)arg2;
-- (id)entries;
-- (BOOL)hasCharacteristic:(id)arg1;
-- (id)identifier;
-- (id)localizedName;
-- (id)localizedStateForCharacteristic:(id)arg1;
-- (void)setEntries:(id)arg1;
-- (BOOL)shouldChangeSecureStateForCharacteristic:(id)arg1 previousContext:(struct NSDictionary { Class x1; }*)arg2;
++ (id)localizedStateForCharacteristic:(id)arg1;
++ (id)presentationValueForValue:(id)arg1 type:(id)arg2;
 
 @end

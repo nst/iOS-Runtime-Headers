@@ -2,25 +2,19 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicContextualActionsHeaderViewController : UIViewController <MusicContextualActionsHeaderLockupViewDelegate, MusicEntityProviderDownloadInformationControllerObserver> {
-    MusicEntityProviderDownloadInformationController *_containerDownloadInformationController;
-    MusicEntityViewHorizontalLockupContentDescriptor *_contentDescriptor;
-    NSArray *_contextualActions;
-    id /* block */ _dismissRequestHandler;
-    struct MusicEntityDownloadInformation { 
-        int downloadStatus; 
-        float downloadProgress; 
-    } _downloadInformation;
-    MusicEntityDownloadInformationController *_entityDownloadInformationController;
-    id _entityDownloadInformationObservationToken;
-    MusicEntityValueContext *_entityValueContext;
-    MusicContextualActionsHeaderLockupView *_lockupView;
-    MusicContextualAlertAction *_pendingAlertAction;
+@interface MusicContextualActionsHeaderViewController : UIViewController <MusicContextualActionsHeaderLockupViewDelegate> {
+    MusicEntityProviderDownloadInformationController * _containerDownloadInformationController;
+    MusicEntityViewHorizontalLockupContentDescriptor * _contentDescriptor;
+    NSArray * _contextualActions;
+    id /* block */  _dismissRequestHandler;
+    MusicEntityValueContext * _entityValueContext;
+    MusicContextualActionsHeaderLockupView * _lockupView;
+    MusicContextualAlertAction * _pendingAlertAction;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _previousBoundsSize;
-    id /* block */ _selectionHandler;
+        double width; 
+        double height; 
+    }  _previousBoundsSize;
+    id /* block */  _selectionHandler;
 }
 
 @property (nonatomic, readonly, copy) NSArray *contextualActions;
@@ -41,22 +35,17 @@
 - (id)_keepLocalAlertAction;
 - (id)_libraryUpdateAlertActionPassingTest:(id /* block */)arg1;
 - (id)_newContentDescriptorForEntityValueContext:(id)arg1;
-- (id)_radioAlertAction;
 - (id)_removeFromLibraryAlertAction;
 - (void)_requestDismissalWithDelay:(double)arg1 completionHandler:(id /* block */)arg2;
 - (id)_shareAlertAction;
-- (void)_updateDownloadProgress;
-- (void)_updateDownloadProgressWithInformation:(struct MusicEntityDownloadInformation { int x1; float x2; })arg1;
 - (void)_updatePreferredContentSizeForced:(BOOL)arg1;
 - (id)contextualActions;
 - (void)contextualActionsHeaderLockupViewDidSelectDownloadButton:(id)arg1;
 - (void)contextualActionsHeaderLockupViewDidSelectLikeButton:(id)arg1;
-- (void)contextualActionsHeaderLockupViewDidSelectRadioButton:(id)arg1;
 - (void)contextualActionsHeaderLockupViewDidSelectShareButton:(id)arg1;
 - (void)contextualActionsHeaderLockupViewWasSelected:(id)arg1;
 - (void)dealloc;
 - (id /* block */)dismissRequestHandler;
-- (void)downloadInformationController:(id)arg1 downloadInformationDidChange:(struct MusicEntityDownloadInformation { int x1; float x2; })arg2;
 - (id)entityValueContext;
 - (id)initWithEntityValueContext:(id)arg1 contextualActions:(id)arg2;
 - (id /* block */)selectionHandler;

@@ -3,17 +3,17 @@
  */
 
 @interface VimeoDetailsController : UITableViewController <UITextFieldDelegate> {
-    <VimeoComposeOptionViewDelegate> *_delegate;
-    UITableViewCell *_descriptionCell;
-    UITextView *_descriptionTextView;
-    NSIndexPath *_indexPathForPendingFirstResponder;
-    NSArray *_privacyLevels;
-    int _privacySetting;
-    NSMutableArray *_tags;
-    int _videoSize;
-    NSArray *_videoSizeFormatStrings;
-    NSArray *_videoSizeStrings;
-    NSMutableArray *_videoSizes;
+    <VimeoComposeOptionViewDelegate> * _delegate;
+    UITableViewCell * _descriptionCell;
+    UITextView * _descriptionTextView;
+    NSIndexPath * _indexPathForPendingFirstResponder;
+    NSArray * _privacyLevels;
+    int  _privacySetting;
+    NSMutableArray * _tags;
+    int  _videoSize;
+    NSArray * _videoSizeFormatStrings;
+    NSArray * _videoSizeStrings;
+    NSMutableArray * _videoSizes;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -40,7 +40,7 @@
 - (id)initWithStyle:(int)arg1;
 - (void)loadView;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (id)privacyLevels;
 - (int)privacySetting;
 - (void)setDelegate:(id)arg1;

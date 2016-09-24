@@ -3,8 +3,8 @@
  */
 
 @interface IMPerfSinkPair : NSObject {
-    <IMPerfProfilerBehavior> *_behavior;
-    <IMPerfProfilerSink> *_sink;
+    <IMPerfProfilerBehavior> * _behavior;
+    <IMPerfProfilerSink> * _sink;
 }
 
 @property (nonatomic, readonly) <IMPerfProfilerBehavior> *behavior;

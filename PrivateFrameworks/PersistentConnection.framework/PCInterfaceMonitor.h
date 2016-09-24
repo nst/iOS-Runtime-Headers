@@ -3,8 +3,8 @@
  */
 
 @interface PCInterfaceMonitor : NSObject <PCInterfaceMonitorProtocol, PCInterfaceUsabilityMonitorDelegate> {
-    NSMapTable *_delegateMap;
-    <PCInterfaceUsabilityMonitorProtocol> *_internal;
+    NSMapTable * _delegateMap;
+    <PCInterfaceUsabilityMonitorProtocol> * _internal;
 }
 
 @property (nonatomic, readonly) struct __CFString { }*currentRAT;

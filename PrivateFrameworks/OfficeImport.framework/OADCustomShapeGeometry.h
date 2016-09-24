@@ -3,11 +3,11 @@
  */
 
 @interface OADCustomShapeGeometry : OADShapeGeometry {
-    NSMutableArray *mFormulas;
-    struct CsRect<int> { int x1[4]; } *mGeometryCoordSpace;
-    struct CsPoint<int> { int x1[2]; } *mLimo;
-    NSMutableArray *mPaths;
-    NSMutableArray *mTextBodyRects;
+    NSMutableArray * mFormulas;
+    struct CsRect<int> { int x1[4]; } * mGeometryCoordSpace;
+    struct CsPoint<int> { int x1[2]; } * mLimo;
+    NSMutableArray * mPaths;
+    NSMutableArray * mTextBodyRects;
 }
 
 - (void)addFormula:(id)arg1;

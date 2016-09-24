@@ -3,12 +3,12 @@
  */
 
 @interface MSCLAudioPickerVoiceMemosViewController : SKUIViewController <MSCLAudioPickerSourceViewController, MSCLAudioPlayerManagerDataSource, UITableViewDataSource, UITableViewDelegate> {
-    MSCLAudioPlayerManager *_audioPlayerManager;
-    NSDateFormatter *_dateFormatter;
-    MSCLDurationFormatter *_durationFormatter;
-    NSArray *_recordings;
-    id /* block */ _selectionBlock;
-    UITableView *_tableView;
+    MSCLAudioPlayerManager * _audioPlayerManager;
+    NSDateFormatter * _dateFormatter;
+    MSCLDurationFormatter * _durationFormatter;
+    NSArray * _recordings;
+    id /* block */  _selectionBlock;
+    UITableView * _tableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

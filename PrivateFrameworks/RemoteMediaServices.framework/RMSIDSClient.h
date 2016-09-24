@@ -3,11 +3,11 @@
  */
 
 @interface RMSIDSClient : NSObject <IDSServiceDelegate> {
-    BOOL _companionAvailable;
-    NSObject<OS_dispatch_queue> *_idsDispatchQueue;
-    NSObject<OS_dispatch_queue> *_idsOutgoingQueue;
-    IDSService *_idsService;
-    NSMutableDictionary *_messageRecords;
+    BOOL  _companionAvailable;
+    NSObject<OS_dispatch_queue> * _idsDispatchQueue;
+    NSObject<OS_dispatch_queue> * _idsOutgoingQueue;
+    IDSService * _idsService;
+    NSMutableDictionary * _messageRecords;
 }
 
 @property (getter=isCompanionAvailable, nonatomic) BOOL companionAvailable;
@@ -47,7 +47,7 @@
 - (BOOL)_isCompanionAvailable;
 - (void)_sendMessage:(id)arg1 type:(unsigned short)arg2 timeout:(int)arg3 queueOneID:(id)arg4 priority:(int)arg5 responseBlock:(id)arg6;
 - (void)_updateCompanionAvailability;
-- (void)addToWishlist:(unsigned long long)arg1 databaseID:(unsigned long long)arg2 sessionIdentifier:(int)arg3 completionHandler:(id /* block */)arg4;
+- (void)addToWishlist:(unsigned int)arg1 databaseID:(unsigned int)arg2 sessionIdentifier:(int)arg3 completionHandler:(id /* block */)arg4;
 - (void)beginDiscoverySessionWithDiscoveryTypes:(int)arg1 pairedNetworkNames:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)beginObservingNowPlayingWithSessionIdentifier:(int)arg1 completionHandler:(id /* block */)arg2;
 - (void)beginPairingSessionWithPasscode:(id)arg1 appName:(id)arg2 deviceName:(id)arg3 deviceModel:(id)arg4 completionHandler:(id /* block */)arg5;
@@ -58,7 +58,7 @@
 - (id)init;
 - (BOOL)isCompanionAvailable;
 - (void)logoutWithSessionIdentifier:(int)arg1;
-- (void)pickAudioRouteWithMacAddress:(unsigned long long)arg1 sessionIdentifier:(int)arg2 completionHandler:(id /* block */)arg3;
+- (void)pickAudioRouteWithMacAddress:(unsigned int)arg1 sessionIdentifier:(int)arg2 completionHandler:(id /* block */)arg3;
 - (void)requestArtworkDataForNowPlayingInfo:(id)arg1 width:(unsigned long)arg2 height:(unsigned long)arg3 compressionQuality:(float)arg4 completionHandler:(id /* block */)arg5;
 - (void)seekToPlaybackTime:(int)arg1 sessionIdentifier:(int)arg2;
 - (void)sendHeartbeatWithSessionIdentifier:(int)arg1 completionHandler:(id /* block */)arg2;
@@ -70,7 +70,7 @@
 - (void)service:(id)arg1 account:(id)arg2 incomingUnhandledProtobuf:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)service:(id)arg1 devicesChanged:(id)arg2;
 - (void)setCompanionAvailable:(BOOL)arg1;
-- (void)setLikedState:(int)arg1 itemID:(unsigned long long)arg2 databaseID:(unsigned long long)arg3 sessionIdentifier:(int)arg4 completionHandler:(id /* block */)arg5;
+- (void)setLikedState:(int)arg1 itemID:(unsigned int)arg2 databaseID:(unsigned int)arg3 sessionIdentifier:(int)arg4 completionHandler:(id /* block */)arg5;
 - (void)setVolume:(float)arg1 sessionIdentifier:(int)arg2;
 - (void)updatePairedNetworkNames:(id)arg1 sessionIdentifier:(int)arg2;
 

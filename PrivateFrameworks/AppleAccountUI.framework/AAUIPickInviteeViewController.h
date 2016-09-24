@@ -3,29 +3,29 @@
  */
 
 @interface AAUIPickInviteeViewController : UIViewController <AAUIContactsSearchDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
-    ACAccount *_account;
-    ACAccountStore *_accountStore;
-    void *_addressBook;
-    UILabel *_childAccountLabel;
-    UITextField *_contactSearchBar;
-    UIView *_contactSearchBarContainer;
-    AAUIContactsSearchController *_contactsSearchController;
-    UIView *_container;
-    UIButton *_createChildAccountButton;
-    NSString *_createChildAccountButtonTitle;
-    NSString *_createChildAccountInstructions;
-    <AAUIPickInviteeDelegate> *_delegate;
-    UILabel *_instructionsLabel;
-    NSString *_inviteeCompositeName;
-    NSString *_inviteeEmail;
-    NSString *_inviteeShortName;
-    ABMonogrammer *_monogrammer;
-    UIBarButtonItem *_nextButton;
-    UITableView *_resultsTableView;
-    NSString *_searchQuery;
-    NSArray *_searchResults;
-    UIView *_separator;
-    UILabel *_toLabel;
+    ACAccount * _account;
+    ACAccountStore * _accountStore;
+    void * _addressBook;
+    UILabel * _childAccountLabel;
+    UITextField * _contactSearchBar;
+    UIView * _contactSearchBarContainer;
+    AAUIContactsSearchController * _contactsSearchController;
+    UIView * _container;
+    UIButton * _createChildAccountButton;
+    NSString * _createChildAccountButtonTitle;
+    NSString * _createChildAccountInstructions;
+    <AAUIPickInviteeDelegate> * _delegate;
+    UILabel * _instructionsLabel;
+    NSString * _inviteeCompositeName;
+    NSString * _inviteeEmail;
+    NSString * _inviteeShortName;
+    ABMonogrammer * _monogrammer;
+    UIBarButtonItem * _nextButton;
+    UITableView * _resultsTableView;
+    NSString * _searchQuery;
+    NSArray * _searchResults;
+    UIView * _separator;
+    UILabel * _toLabel;
 }
 
 @property (nonatomic, copy) NSString *createChildAccountButtonTitle;

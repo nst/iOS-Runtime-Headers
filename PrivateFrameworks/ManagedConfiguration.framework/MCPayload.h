@@ -3,16 +3,16 @@
  */
 
 @interface MCPayload : NSObject {
-    NSString *_UUID;
-    NSString *_displayName;
-    NSString *_identifier;
-    BOOL _mustInstallNonInteractively;
-    NSString *_organization;
-    NSString *_payloadDescription;
-    NSString *_persistentResourceID;
-    MCProfile *_profile;
-    NSString *_type;
-    int _version;
+    NSString * _UUID;
+    NSString * _displayName;
+    NSString * _identifier;
+    BOOL  _mustInstallNonInteractively;
+    NSString * _organization;
+    NSString * _payloadDescription;
+    NSString * _persistentResourceID;
+    MCProfile * _profile;
+    NSString * _type;
+    int  _version;
 }
 
 @property (nonatomic, readonly, retain) NSString *UUID;

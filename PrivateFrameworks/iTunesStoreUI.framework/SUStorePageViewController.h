@@ -3,35 +3,36 @@
  */
 
 @interface SUStorePageViewController : SUViewController <ISURLOperationDelegate, SKUITabBarItemRootViewController, SUMenuViewControllerDelegate, SUPreviewOverlayContainer, UIPopoverControllerDelegate> {
-    SUViewController *_activeChildViewController;
-    int _activeSectionIndex;
-    struct __CFSet { } *_allowedInterfaceOrientations;
-    SSAuthenticationContext *_authContext;
-    _UIBackdropView *_backdropView;
-    BOOL _canMoveToOverlay;
-    <SUStorePageViewControllerDelegate> *_delegate;
-    double _expirationTime;
-    BOOL _externalRequest;
-    BOOL _lastLoadDidFail;
-    SUStorePageProtocol *_lastValidProtocol;
-    id /* block */ _loadBlock;
-    BOOL _loadingForSectionChange;
-    BOOL _loadsWhenHidden;
-    UIPopoverController *_navigationMenuPopover;
-    SUNavigationMenuViewController *_navigationMenuViewController;
-    BOOL _needsAuthentication;
-    int _pageType;
-    SUViewController *_pendingChildViewController;
-    ISURLRequestPerformance *_performanceMetrics;
-    BOOL _reloadOnAppear;
-    BOOL _reloadsWhenCacheExpired;
-    NSString *_scriptUserInfo;
-    SUSearchFieldController *_searchFieldController;
-    SUPageSectionGroup *_sectionsGroup;
-    SUSegmentedControl *_segmentedControl;
-    BOOL _shouldAdjustContentOffsets;
-    SSMutableURLRequestProperties *_urlRequestProperties;
-    BOOL _useWebViewFastPath;
+    SUViewController * _activeChildViewController;
+    int  _activeSectionIndex;
+    struct __CFSet { } * _allowedInterfaceOrientations;
+    SSAuthenticationContext * _authContext;
+    _UIBackdropView * _backdropView;
+    BOOL  _canMoveToOverlay;
+    <SUStorePageViewControllerDelegate> * _delegate;
+    double  _expirationTime;
+    BOOL  _externalRequest;
+    BOOL  _lastLoadDidFail;
+    SUStorePageProtocol * _lastValidProtocol;
+    id /* block */  _loadBlock;
+    BOOL  _loadingForSectionChange;
+    BOOL  _loadsWhenHidden;
+    UIPopoverController * _navigationMenuPopover;
+    SUNavigationMenuViewController * _navigationMenuViewController;
+    BOOL  _needsAuthentication;
+    int  _pageType;
+    SUViewController * _pendingChildViewController;
+    SUWebScriptReloadContext * _pendingWebScriptReloadContext;
+    ISURLRequestPerformance * _performanceMetrics;
+    BOOL  _reloadOnAppear;
+    BOOL  _reloadsWhenCacheExpired;
+    NSString * _scriptUserInfo;
+    SUSearchFieldController * _searchFieldController;
+    SUPageSectionGroup * _sectionsGroup;
+    SUSegmentedControl * _segmentedControl;
+    BOOL  _shouldAdjustContentOffsets;
+    SSMutableURLRequestProperties * _urlRequestProperties;
+    BOOL  _useWebViewFastPath;
 }
 
 @property (nonatomic, copy) SSURLRequestProperties *URLRequestProperties;
@@ -44,7 +45,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SUStorePageViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } documentBounds;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } documentBounds;
 @property (getter=isExternalRequest, nonatomic) BOOL externalRequest;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL loadsWhenHidden;
@@ -68,7 +69,7 @@
 - (void)_finishHandlingFailure;
 - (void)_finishSuccessfulLoad;
 - (void)_finishWebViewLoadWithResult:(BOOL)arg1 error:(id)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForActiveViewController;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForActiveViewController;
 - (void)_handleFailureWithError:(id)arg1;
 - (void)_handleViewControllerBecameReady:(id)arg1;
 - (BOOL)_isCacheExpired;
@@ -96,6 +97,7 @@
 - (BOOL)_reloadsWhenCacheExpired;
 - (void)_renderStorePage:(id)arg1 withType:(int)arg2 viewController:(id)arg3 block:(id /* block */)arg4;
 - (void)_repositionForChildViewController:(id)arg1;
+- (void)_requestWebScriptReloadWithContext:(id)arg1;
 - (void)_scriptEventNotification:(id)arg1;
 - (void)_sectionControlAction:(id)arg1;
 - (BOOL)_sectionIsNetworkConstrained;
@@ -133,7 +135,7 @@
 - (void)didMoveToParentViewController:(id)arg1;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (id)displayedURL;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })documentBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })documentBounds;
 - (void)enqueueFetchOperation;
 - (void)enqueueFetchOperationForPageSection:(id)arg1;
 - (void)handleApplicationURL:(id)arg1 withSourceApplication:(id)arg2 sourceURL:(id)arg3;
@@ -147,8 +149,8 @@
 - (void)invalidate;
 - (void)invalidateForMemoryPurge;
 - (BOOL)isExternalRequest;
-- (BOOL)isLoaded;
 - (BOOL)isShowingPreviewOverlay;
+- (BOOL)isSkLoaded;
 - (BOOL)loadMoreWithURL:(id)arg1;
 - (void)loadView;
 - (BOOL)loadsWhenHidden;
@@ -170,6 +172,7 @@
 - (BOOL)reloadForSectionsWithGroup:(id)arg1;
 - (void)reloadWithStorePage:(id)arg1 ofType:(int)arg2 forURL:(id)arg3;
 - (BOOL)reloadWithURLRequestProperties:(id)arg1;
+- (void)requestWebScriptReloadWithContext:(id)arg1;
 - (void)resetNavigationItem:(id)arg1;
 - (void)restoreArchivableContext:(id)arg1;
 - (id)scriptUserInfo;
@@ -182,7 +185,6 @@
 - (void)setDelegate:(id)arg1;
 - (id)setDisplayedSectionGroup:(id)arg1;
 - (void)setExternalRequest:(BOOL)arg1;
-- (void)setLoading:(BOOL)arg1;
 - (void)setLoadsWhenHidden:(BOOL)arg1;
 - (void)setNeedsAuthentication:(BOOL)arg1;
 - (void)setParentViewController:(id)arg1;
@@ -190,6 +192,7 @@
 - (void)setScriptUserInfo:(id)arg1;
 - (void)setSection:(id)arg1;
 - (void)setShouldAdjustContentOffsets:(BOOL)arg1;
+- (void)setSkLoading:(BOOL)arg1;
 - (void)setURLRequest:(id)arg1;
 - (void)setURLRequestProperties:(id)arg1;
 - (void)setUrlBagKey:(id)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface SKUIItemOfferButtonAppearance : NSObject {
-    UIColor *_buttonColor;
-    UIColor *_confirmationColor;
+    UIColor * _buttonColor;
+    UIColor * _confirmationColor;
 }
 
 @property (nonatomic, readonly) UIColor *buttonColor;

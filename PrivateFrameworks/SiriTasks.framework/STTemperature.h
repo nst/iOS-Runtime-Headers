@@ -3,8 +3,8 @@
  */
 
 @interface STTemperature : STSiriModelObject {
-    int _units;
-    double _value;
+    int  _units;
+    double  _value;
 }
 
 + (BOOL)supportsSecureCoding;

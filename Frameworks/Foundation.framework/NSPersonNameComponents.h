@@ -3,7 +3,7 @@
  */
 
 @interface NSPersonNameComponents : NSObject <NSCopying, NSSecureCoding> {
-    id _private;
+    id  _private;
 }
 
 @property (copy) NSString *familyName;
@@ -28,7 +28,6 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)familyName;
-- (void)finalize;
 - (id)givenName;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -47,9 +46,28 @@
 - (void)setNickname:(id)arg1;
 - (void)setPhoneticRepresentation:(id)arg1;
 
+// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
+
+- (id)CKPropertiesToDescribe:(BOOL)arg1;
+
 // Image: /System/Library/Frameworks/Contacts.framework/Contacts
 
 + (id)componentsForContact:(id)arg1;
 + (id)keyPathMapping;
+
+- (void)overrideComponentsInContact:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
+
+- (id)br_formattedName;
+
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
+
+- (BOOL)isGivenNameFirst;
+
+// Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
+
+- (id)ic_componentsForSearchHighlighting;
+- (id)ic_localizedNameWithDefaultFormattingStyle;
 
 @end

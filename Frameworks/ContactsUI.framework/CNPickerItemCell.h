@@ -3,7 +3,7 @@
  */
 
 @interface CNPickerItemCell : UITableViewCell {
-    UITextField *_textField;
+    UITextField * _textField;
 }
 
 @property (nonatomic, retain) UITextField *textField;

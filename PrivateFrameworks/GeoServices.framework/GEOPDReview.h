@@ -5,12 +5,12 @@
 @interface GEOPDReview : PBCodable <NSCopying> {
     struct { 
         unsigned int reviewTime : 1; 
-    } _has;
-    GEOPDRating *_rating;
-    NSString *_reviewId;
-    double _reviewTime;
-    GEOPDUser *_reviewer;
-    NSMutableArray *_snippets;
+    }  _has;
+    GEOPDRating * _rating;
+    NSString * _reviewId;
+    double  _reviewTime;
+    GEOPDUser * _reviewer;
+    NSMutableArray * _snippets;
 }
 
 @property (nonatomic, readonly) BOOL hasRating;
@@ -24,6 +24,7 @@
 @property (nonatomic, retain) NSMutableArray *snippets;
 
 + (id)reviewsForPlaceData:(id)arg1;
++ (Class)snippetType;
 
 - (id)_bestSnippet;
 - (void)addSnippet:(id)arg1;

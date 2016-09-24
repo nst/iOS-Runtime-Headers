@@ -3,8 +3,8 @@
  */
 
 @interface EKCalendarColorEditItem : EKCalendarEditItem {
-    NSMutableArray *_cells;
-    unsigned int _checkedRow;
+    NSMutableArray * _cells;
+    unsigned int  _checkedRow;
 }
 
 @property (nonatomic, readonly) NSMutableArray *cells;
@@ -14,6 +14,7 @@
 - (void)calendarEditor:(id)arg1 didSelectSubitem:(unsigned int)arg2;
 - (id)cellForSubitemAtIndex:(unsigned int)arg1;
 - (id)cells;
+- (BOOL)configureWithCalendar:(id)arg1;
 - (id)headerTitle;
 - (unsigned int)numberOfSubitems;
 - (void)reset;

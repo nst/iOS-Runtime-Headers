@@ -3,15 +3,15 @@
  */
 
 @interface WBSAutomaticReadingListAppExtensionItem : WBSAutomaticReadingListItem {
-    UIImage *_profileImage;
-    NSString *_title;
+    UIImage * _profileImage;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) UIImage *profileImage;
 @property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
-- (id)bestOriginatorProfileImageForSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)bestOriginatorProfileImageForSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)biggerOriginatorProfileImageURL;
 - (id)continuousBannerDisplayString;
 - (id)continuousBannerTitle;

@@ -3,9 +3,9 @@
  */
 
 @interface GEOVLabelLanguage : PBCodable <NSCopying> {
-    unsigned int _endOffset;
-    NSString *_languageLocale;
-    unsigned int _startOffset;
+    unsigned int  _endOffset;
+    NSString * _languageLocale;
+    unsigned int  _startOffset;
 }
 
 @property (nonatomic) unsigned int endOffset;

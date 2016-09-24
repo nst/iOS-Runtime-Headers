@@ -3,19 +3,19 @@
  */
 
 @interface NSRunStorage : NSObject <NSCopying> {
-    unsigned int _cachedBlock;
+    unsigned int  _cachedBlock;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _cachedBlockRange;
-    unsigned int _count;
-    unsigned int _elementSize;
-    unsigned int _gapBlockIndex;
-    int _indexDelta;
-    unsigned int _indexDeltaStartBlock;
-    unsigned int _maxBlocks;
-    unsigned int _numBlocks;
-    struct _NSRunBlock { unsigned int x1; unsigned char x2[0]; } *_runs;
+    }  _cachedBlockRange;
+    unsigned int  _count;
+    unsigned int  _elementSize;
+    unsigned int  _gapBlockIndex;
+    int  _indexDelta;
+    unsigned int  _indexDeltaStartBlock;
+    unsigned int  _maxBlocks;
+    unsigned int  _numBlocks;
+    struct _NSRunBlock { unsigned int x1; unsigned char x2[0]; } * _runs;
 }
 
 + (void)_setConsistencyCheckingEnabled:(BOOL)arg1 superCheckEnabled:(BOOL)arg2;

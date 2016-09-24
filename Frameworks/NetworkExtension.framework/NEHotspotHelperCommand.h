@@ -3,7 +3,7 @@
  */
 
 @interface NEHotspotHelperCommand : NSObject {
-    struct __CNPluginCommand { } *_command;
+    struct __CNPluginCommand { } * _command;
 }
 
 @property struct __CNPluginCommand { }*command;

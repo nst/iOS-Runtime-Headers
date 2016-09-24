@@ -3,20 +3,22 @@
  */
 
 @interface GEOCategory : PBCodable <NSCopying> {
-    NSString *_alias;
-    long long _geoOntologyId;
+    NSString * _alias;
+    int  _geoOntologyId;
     struct { 
         unsigned int geoOntologyId : 1; 
-    } _has;
-    int _level;
-    NSMutableArray *_localizedNames;
+    }  _has;
+    int  _level;
+    NSMutableArray * _localizedNames;
 }
 
 @property (nonatomic, retain) NSString *alias;
-@property (nonatomic) long long geoOntologyId;
+@property (nonatomic) int geoOntologyId;
 @property (nonatomic) BOOL hasGeoOntologyId;
 @property (nonatomic) int level;
 @property (nonatomic, retain) NSMutableArray *localizedNames;
+
++ (Class)localizedNamesType;
 
 - (void)addLocalizedNames:(id)arg1;
 - (id)alias;
@@ -26,7 +28,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (long long)geoOntologyId;
+- (int)geoOntologyId;
 - (BOOL)hasGeoOntologyId;
 - (unsigned int)hash;
 - (id)initWithPlaceDataCategory:(id)arg1;
@@ -38,7 +40,7 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAlias:(id)arg1;
-- (void)setGeoOntologyId:(long long)arg1;
+- (void)setGeoOntologyId:(int)arg1;
 - (void)setHasGeoOntologyId:(BOOL)arg1;
 - (void)setLevel:(int)arg1;
 - (void)setLocalizedNames:(id)arg1;

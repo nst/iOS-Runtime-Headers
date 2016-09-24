@@ -3,73 +3,62 @@
  */
 
 @interface CNAvatarCardActionCell : UITableViewCell {
-    CNQuickAction *_action;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } _actionImageFrame;
-    UIImageView *_actionImageView;
-    int _context;
-    CNAvatarCardHighlightView *_defaultHighlightView;
-    UIButton *_expandButton;
-    NSLayoutConstraint *_expandButtonWidthConstraint;
-    BOOL _gestureActivated;
+    CNQuickAction * _action;
+    UIImageView * _actionImageView;
+    int  _context;
+    CNAvatarCardHighlightView * _defaultHighlightView;
+    UIButton * _expandButton;
+    NSLayoutConstraint * _expandButtonWidthConstraint;
+    BOOL  _gestureActivated;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _initialLocation;
-    float _initialTranslatingViewLeadingConstraintConstant;
+        double x; 
+        double y; 
+    }  _initialLocation;
+    double  _initialTranslatingViewLeadingConstraintConstant;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _lastLocation;
-    unsigned int _lastScrollDirection;
-    double _lastScrollDirectionTimestamp;
-    int _mode;
-    CNAvatarCardHighlightView *_moreHighlightView;
-    NSLayoutConstraint *_moreHighlightViewHiddingConstraint;
-    BOOL _moreHighlighted;
-    UILabel *_moreLabel;
-    UIPageControl *_pageControl;
-    NSLayoutConstraint *_pageControlLeadingConstraint;
-    NSLayoutConstraint *_punchOutLeftConstraint;
-    UIView *_separatorView;
-    UILabel *_subtitleLabel;
-    BOOL _swipped;
-    UILabel *_titleLabel;
-    BOOL _transitioning;
-    UIView *_translatingView;
-    NSLayoutConstraint *_translatingViewLeadingConstraint;
+        double x; 
+        double y; 
+    }  _lastLocation;
+    unsigned int  _lastScrollDirection;
+    double  _lastScrollDirectionTimestamp;
+    int  _mode;
+    CNAvatarCardHighlightView * _moreHighlightView;
+    NSLayoutConstraint * _moreHighlightViewHiddingConstraint;
+    BOOL  _moreHighlighted;
+    UILabel * _moreLabel;
+    UIPageControl * _pageControl;
+    NSLayoutConstraint * _pageControlLeadingConstraint;
+    NSLayoutConstraint * _punchOutLeftConstraint;
+    UIView * _separatorView;
+    UILabel * _subtitleLabel;
+    BOOL  _swipped;
+    UILabel * _titleLabel;
+    BOOL  _transitioning;
+    UIView * _translatingView;
+    NSLayoutConstraint * _translatingViewLeadingConstraint;
 }
 
 @property (nonatomic, retain) CNQuickAction *action;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } actionImageFrame;
 @property (nonatomic, retain) UIImageView *actionImageView;
 @property (nonatomic) int context;
 @property (nonatomic, retain) CNAvatarCardHighlightView *defaultHighlightView;
 @property (nonatomic, retain) UIButton *expandButton;
 @property (nonatomic, retain) NSLayoutConstraint *expandButtonWidthConstraint;
 @property (nonatomic) BOOL gestureActivated;
-@property (nonatomic) float initialTranslatingViewLeadingConstraintConstant;
+@property (nonatomic) double initialTranslatingViewLeadingConstraintConstant;
 @property (nonatomic) unsigned int lastScrollDirection;
 @property (nonatomic) double lastScrollDirectionTimestamp;
 @property (nonatomic) int mode;
 @property (nonatomic, retain) CNAvatarCardHighlightView *moreHighlightView;
 @property (nonatomic, retain) NSLayoutConstraint *moreHighlightViewHiddingConstraint;
-@property BOOL moreHighlighted;
+@property (nonatomic) BOOL moreHighlighted;
 @property (nonatomic, retain) UILabel *moreLabel;
 @property (nonatomic, retain) UIPageControl *pageControl;
 @property (nonatomic, retain) NSLayoutConstraint *pageControlLeadingConstraint;
 @property (nonatomic, retain) NSLayoutConstraint *punchOutLeftConstraint;
 @property (nonatomic, retain) UIView *separatorView;
 @property (nonatomic, retain) UILabel *subtitleLabel;
-@property BOOL swipped;
+@property (nonatomic) BOOL swipped;
 @property (nonatomic, retain) UILabel *titleLabel;
 @property (nonatomic) BOOL transitioning;
 @property (nonatomic, retain) UIView *translatingView;
@@ -78,14 +67,12 @@
 + (id)animatingCell;
 + (id)cellNibForContacts;
 + (id)cellNibForMode:(int)arg1;
-+ (id)contactFormatter;
 
 - (void).cxx_destruct;
 - (void)_animateActions:(id)arg1 fromIndex:(unsigned int)arg2 withDelta:(int)arg3 scrollDirection:(unsigned int)arg4;
 - (void)_updateFonts;
 - (void)_updateHighlightAnimated:(BOOL)arg1;
 - (id)action;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })actionImageFrame;
 - (id)actionImageView;
 - (void)awakeFromNib;
 - (int)context;
@@ -108,7 +95,6 @@
 - (void)reloadData;
 - (id)separatorView;
 - (void)setAction:(id)arg1;
-- (void)setActionImageFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setActionImageView:(id)arg1;
 - (void)setContext:(int)arg1;
 - (void)setDefaultHighlightView:(id)arg1;

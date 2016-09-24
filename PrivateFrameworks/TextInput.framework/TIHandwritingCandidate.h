@@ -3,24 +3,24 @@
  */
 
 @interface TIHandwritingCandidate : TIKeyboardCandidateSingle {
-    unsigned long long _completionUniqueID;
-    unsigned long long _uniqueID;
+    unsigned int  _completionUniqueID;
+    unsigned int  _uniqueID;
 }
 
-@property (nonatomic, readonly) unsigned long long completionUniqueID;
-@property (nonatomic, readonly) unsigned long long uniqueID;
+@property (nonatomic, readonly) unsigned int completionUniqueID;
+@property (nonatomic, readonly) unsigned int uniqueID;
 
 + (BOOL)supportsSecureCoding;
 + (int)type;
 
-- (unsigned long long)completionUniqueID;
+- (unsigned int)completionUniqueID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCandidateResultSetCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithCandidate:(id)arg1 forInput:(id)arg2 uniqueID:(unsigned long long)arg3 completionUniqueID:(unsigned long long)arg4;
+- (id)initWithCandidate:(id)arg1 forInput:(id)arg2 uniqueID:(unsigned int)arg3 completionUniqueID:(unsigned int)arg4;
 - (id)initWithCandidateResultSetCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isInlineCompletionCandidate;
-- (unsigned long long)uniqueID;
+- (unsigned int)uniqueID;
 
 @end

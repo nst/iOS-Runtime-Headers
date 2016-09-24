@@ -3,8 +3,8 @@
  */
 
 @interface MCAppLayerVPNPayload : MCVPNPayloadBase {
-    NSArray *_SafariDomains;
-    NSString *_VPNUUID;
+    NSArray * _SafariDomains;
+    NSString * _VPNUUID;
 }
 
 @property (nonatomic, retain) NSArray *SafariDomains;

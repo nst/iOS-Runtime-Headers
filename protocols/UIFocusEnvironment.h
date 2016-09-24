@@ -6,9 +6,13 @@
 @required
 
 - (void)didUpdateFocusInContext:(UIFocusUpdateContext *)arg1 withAnimationCoordinator:(UIFocusAnimationCoordinator *)arg2;
-- (UIView *)preferredFocusedView;
+- (NSArray *)preferredFocusEnvironments;
 - (void)setNeedsFocusUpdate;
 - (BOOL)shouldUpdateFocusInContext:(UIFocusUpdateContext *)arg1;
 - (void)updateFocusIfNeeded;
+
+@optional
+
+- (UIView *)preferredFocusedView;
 
 @end

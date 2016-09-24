@@ -3,7 +3,7 @@
  */
 
 @interface SUSnapshotView : UIView {
-    UIView *_imageView;
+    UIView * _imageView;
 }
 
 - (void)_takeCGSnapshotOfView:(id)arg1;

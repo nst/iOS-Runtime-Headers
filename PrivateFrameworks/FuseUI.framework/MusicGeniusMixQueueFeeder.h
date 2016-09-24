@@ -3,8 +3,8 @@
  */
 
 @interface MusicGeniusMixQueueFeeder : MusicQueryQueueFeeder <NSSecureCoding> {
-    unsigned int _currentPlaylistOffset;
-    <MusicGeniusMixQueueFeederDataSource> *_dataSource;
+    unsigned int  _currentPlaylistOffset;
+    <MusicGeniusMixQueueFeederDataSource> * _dataSource;
 }
 
 @property (nonatomic, retain) <MusicGeniusMixQueueFeederDataSource> *dataSource;
@@ -23,11 +23,11 @@
 - (unsigned int)numberOfPaths;
 - (id)pathAtIndex:(unsigned int)arg1;
 - (id)query;
-- (unsigned int)realRepeatType;
+- (int)realRepeatType;
 - (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setDataSource:(id)arg1;
 - (void)shuffleItemsWithAnchor:(unsigned int*)arg1;
-- (unsigned int)shuffleType;
+- (int)shuffleType;
 - (BOOL)userCanChangeShuffleAndRepeatType;
 
 @end

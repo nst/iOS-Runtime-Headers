@@ -3,29 +3,29 @@
  */
 
 @interface PSSpecifier : NSObject {
-    SEL _buttonAction;
-    SEL _confirmationAction;
-    SEL _confirmationCancelAction;
-    SEL _controllerLoadAction;
-    NSString *_name;
-    NSMutableDictionary *_properties;
-    NSDictionary *_shortTitleDict;
-    BOOL _showContentString;
-    NSDictionary *_titleDict;
-    id _userInfo;
-    NSArray *_values;
-    SEL action;
-    int autoCapsType;
-    int autoCorrectionType;
-    SEL cancel;
-    int cellType;
-    Class detailControllerClass;
-    Class editPaneClass;
-    SEL getter;
-    int keyboardType;
-    SEL setter;
-    id target;
-    unsigned int textFieldType;
+    SEL  _buttonAction;
+    SEL  _confirmationAction;
+    SEL  _confirmationCancelAction;
+    SEL  _controllerLoadAction;
+    NSString * _name;
+    NSMutableDictionary * _properties;
+    NSDictionary * _shortTitleDict;
+    BOOL  _showContentString;
+    NSDictionary * _titleDict;
+    id  _userInfo;
+    NSArray * _values;
+    SEL  action;
+    int  autoCapsType;
+    int  autoCorrectionType;
+    SEL  cancel;
+    int  cellType;
+    Class  detailControllerClass;
+    Class  editPaneClass;
+    SEL  getter;
+    int  keyboardType;
+    SEL  setter;
+    id  target;
+    unsigned int  textFieldType;
 }
 
 @property (nonatomic, retain) IMAccount *CNFRegAccount;

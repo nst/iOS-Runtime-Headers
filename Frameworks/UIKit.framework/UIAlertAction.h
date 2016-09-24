@@ -3,28 +3,30 @@
  */
 
 @interface UIAlertAction : NSObject <NSCopying> {
-    UIAlertController *__alertController;
-    NSString *__descriptiveText;
-    <UIAlertActionViewRepresentation_Internal> *__representer;
-    BOOL _checked;
-    UIViewController *_contentViewController;
-    BOOL _enabled;
-    id /* block */ _handler;
-    UIImage *_image;
-    UIColor *_imageTintColor;
-    BOOL _isPreferred;
-    NSString *_keyCommandInput;
-    int _keyCommandModifierFlags;
-    id /* block */ _shouldDismissHandler;
-    id /* block */ _simpleHandler;
-    int _style;
-    NSString *_title;
-    int _titleTextAlignment;
-    UIColor *_titleTextColor;
+    UIAlertController * __alertController;
+    NSString * __descriptiveText;
+    UIInterfaceAction<UIAlertActionMutablePropertyObservering> * __interfaceActionRepresentation;
+    <UIAlertActionViewRepresentation_Internal> * __representer;
+    BOOL  _checked;
+    UIViewController * _contentViewController;
+    BOOL  _enabled;
+    id /* block */  _handler;
+    UIImage * _image;
+    UIColor * _imageTintColor;
+    BOOL  _isPreferred;
+    NSString * _keyCommandInput;
+    int  _keyCommandModifierFlags;
+    id /* block */  _shouldDismissHandler;
+    id /* block */  _simpleHandler;
+    int  _style;
+    NSString * _title;
+    int  _titleTextAlignment;
+    UIColor * _titleTextColor;
 }
 
 @property (setter=_setAlertController:, nonatomic) UIAlertController *_alertController;
 @property (setter=_setDescriptiveText:, nonatomic, copy) NSString *_descriptiveText;
+@property (setter=_setInterfaceActionRepresentation:) UIInterfaceAction<UIAlertActionMutablePropertyObservering> *_interfaceActionRepresentation;
 @property (setter=_setIsPreferred:) BOOL _isPreferred;
 @property (setter=_setRepresenter:) <UIAlertActionViewRepresentation_Internal> *_representer;
 @property (getter=_contentViewController, setter=_setContentViewController:, nonatomic, retain) UIViewController *contentViewController;
@@ -50,6 +52,7 @@
 - (id)_descriptiveText;
 - (void)_didAddContentViewController;
 - (id)_imageTintColor;
+- (id)_interfaceActionRepresentation;
 - (BOOL)_isChecked;
 - (BOOL)_isPreferred;
 - (id)_keyCommandInput;
@@ -60,6 +63,7 @@
 - (void)_setContentViewController:(id)arg1;
 - (void)_setDescriptiveText:(id)arg1;
 - (void)_setImageTintColor:(id)arg1;
+- (void)_setInterfaceActionRepresentation:(id)arg1;
 - (void)_setIsPreferred:(BOOL)arg1;
 - (void)_setKeyCommandInput:(id)arg1;
 - (void)_setKeyCommandInput:(id)arg1 modifierFlags:(int)arg2;

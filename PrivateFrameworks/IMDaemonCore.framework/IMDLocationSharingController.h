@@ -3,13 +3,13 @@
  */
 
 @interface IMDLocationSharingController : NSObject {
-    FMFSession *_session;
+    FMFSession * _session;
 }
 
 + (id)sharedInstance;
 
 - (void)_forwardMappingPacket:(id)arg1 toID:(id)arg2 account:(id)arg3;
-- (void)_generateLocationSharingItemWithHandleID:(id)arg1 direction:(long long)arg2 action:(long long)arg3;
+- (void)_generateLocationSharingItemWithHandleID:(id)arg1 direction:(int)arg2 action:(int)arg3;
 - (void)dealloc;
 - (void)didFailToHandleMappingPacket:(id)arg1 error:(id)arg2;
 - (void)didStartAbilityToGetLocationForHandle:(id)arg1;

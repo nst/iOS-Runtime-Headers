@@ -3,13 +3,13 @@
  */
 
 @interface __NSTimeZone : NSTimeZone {
-    struct __CFData { } *_data;
+    struct __CFData { } * _data;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _lock;
-    struct __CFString { } *_name;
-    void **_ucal;
+    }  _lock;
+    struct __CFString { } * _name;
+    void ** _ucal;
 }
 
 + (id)__new:(struct __CFString { }*)arg1 cache:(BOOL)arg2;
@@ -21,7 +21,6 @@
 - (id)data;
 - (double)daylightSavingTimeOffsetForDate:(id)arg1;
 - (void)dealloc;
-- (void)finalize;
 - (BOOL)isDaylightSavingTimeForDate:(id)arg1;
 - (id)localizedName:(int)arg1 locale:(id)arg2;
 - (id)name;

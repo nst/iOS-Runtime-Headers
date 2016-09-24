@@ -3,16 +3,16 @@
  */
 
 @interface CKAggregateExpressionValidator : CKPredicateValidatorInstance {
-    NSArray *_rangeValidators;
+    NSArray * _subExpressionValidators;
 }
 
-@property (nonatomic, retain) NSArray *rangeValidators;
+@property (nonatomic, retain) NSArray *subExpressionValidators;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (id)initWithValidators:(id)arg1;
-- (id)rangeValidators;
-- (void)setRangeValidators:(id)arg1;
+- (void)setSubExpressionValidators:(id)arg1;
+- (id)subExpressionValidators;
 - (BOOL)validate:(id)arg1 error:(id*)arg2;
 
 @end

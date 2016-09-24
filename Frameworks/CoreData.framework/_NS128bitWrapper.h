@@ -4,9 +4,9 @@
 
 @interface _NS128bitWrapper : NSObject <NSCopying> {
     struct _double_quad_uint { 
-        unsigned long long high64; 
-        unsigned long long low64; 
-    } bits;
+        unsigned int high64; 
+        unsigned int low64; 
+    }  bits;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

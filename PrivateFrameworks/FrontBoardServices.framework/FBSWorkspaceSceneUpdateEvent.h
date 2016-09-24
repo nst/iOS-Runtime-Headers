@@ -3,8 +3,8 @@
  */
 
 @interface FBSWorkspaceSceneUpdateEvent : FBSWorkspaceSceneEvent {
-    FBSSceneSettingsDiff *_settings;
-    FBSSceneTransitionContext *_transitionContext;
+    FBSSceneSettingsDiff * _settings;
+    FBSSceneTransitionContext * _transitionContext;
 }
 
 @property (nonatomic, retain) FBSSceneSettingsDiff *settingsDiff;

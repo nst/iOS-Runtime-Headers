@@ -3,8 +3,8 @@
  */
 
 @interface SKUIJSAppleAccount : NSObject <SKUIJSAppleAccount> {
-    ACAccount *_account;
-    ACAccount *_nativeAccount;
+    ACAccount * _account;
+    ACAccount * _nativeAccount;
 }
 
 @property (nonatomic, readonly) NSString *DSID;

@@ -3,7 +3,7 @@
  */
 
 @interface BWSourceNode : BWNode {
-    <BWSourceNodeErrorDelegate> *_errorDelegate;
+    <BWSourceNodeErrorDelegate> * _errorDelegate;
 }
 
 @property (nonatomic, readonly) struct OpaqueCMClock { }*clock;

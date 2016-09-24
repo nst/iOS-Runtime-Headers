@@ -3,8 +3,8 @@
  */
 
 @interface SKUIDonationResultViewController : SKUIDonationStepViewController <SKUIDonationConfigurationObserver> {
-    SKUIGiftAmount *_donationAmount;
-    SKUIDonationResultView *_resultView;
+    SKUIGiftAmount * _donationAmount;
+    SKUIDonationResultView * _resultView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

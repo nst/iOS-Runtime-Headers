@@ -3,12 +3,12 @@
  */
 
 @interface SUBDocumentation : NSObject <NSSecureCoding> {
-    NSString *_currentLanguage;
-    NSURL *_documentationBundleURL;
-    NSString *_humanReadableUpdateName;
-    NSData *_licenseAgreement;
-    NSData *_releaseNotes;
-    NSData *_releaseNotesSummary;
+    NSString * _currentLanguage;
+    NSURL * _documentationBundleURL;
+    NSString * _humanReadableUpdateName;
+    NSData * _licenseAgreement;
+    NSData * _releaseNotes;
+    NSData * _releaseNotesSummary;
 }
 
 @property (nonatomic, retain) NSString *currentLanguage;

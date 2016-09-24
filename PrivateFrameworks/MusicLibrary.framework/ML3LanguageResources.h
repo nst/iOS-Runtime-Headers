@@ -3,9 +3,9 @@
  */
 
 @interface ML3LanguageResources : NSObject <NSSecureCoding> {
-    NSString *_canonicalLanguageIdentifier;
-    NSDictionary *_sectionsInfo;
-    NSDictionary *_sortingDetails;
+    NSString * _canonicalLanguageIdentifier;
+    NSDictionary * _sectionsInfo;
+    NSDictionary * _sortingDetails;
 }
 
 @property (nonatomic, readonly) NSString *canonicalLanguageIdentifier;

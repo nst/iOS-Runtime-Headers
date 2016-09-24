@@ -4,9 +4,9 @@
 
 @interface NWStatisticsRouteSource : NWStatisticsSource {
     struct nstat_route_descriptor { 
-        unsigned long long id; 
-        unsigned long long parent_id; 
-        unsigned long long gateway_id; 
+        unsigned int id; 
+        unsigned int parent_id; 
+        unsigned int gateway_id; 
         union { 
             struct sockaddr_in { 
                 unsigned char sin_len; 
@@ -99,20 +99,20 @@
         } gateway; 
         unsigned int ifindex; 
         unsigned int flags; 
-    } _descriptor;
-    NSData *_destination;
-    NSData *_gateway;
-    NSData *_mask;
+    }  _descriptor;
+    NSData * _destination;
+    NSData * _gateway;
+    NSData * _mask;
 }
 
 @property (retain) NSData *destination;
 @property (readonly) unsigned int flags;
 @property (retain) NSData *gateway;
-@property (readonly) unsigned long long gatewayID;
+@property (readonly) unsigned int gatewayID;
 @property (readonly) int interface;
 @property (retain) NSData *mask;
-@property (readonly) unsigned long long parentID;
-@property (readonly) unsigned long long routeID;
+@property (readonly) unsigned int parentID;
+@property (readonly) unsigned int routeID;
 
 - (void).cxx_destruct;
 - (id)createCounts;
@@ -120,13 +120,13 @@
 - (id)destination;
 - (unsigned int)flags;
 - (id)gateway;
-- (unsigned long long)gatewayID;
+- (unsigned int)gatewayID;
 - (BOOL)handleDescriptor:(void*)arg1 length:(unsigned long)arg2;
 - (id)initWithManager:(id)arg1 destination:(const struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg2 mask:(const struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg3 interface:(unsigned int)arg4;
 - (int)interface;
 - (id)mask;
-- (unsigned long long)parentID;
-- (unsigned long long)routeID;
+- (unsigned int)parentID;
+- (unsigned int)routeID;
 - (void)setDestination:(id)arg1;
 - (void)setGateway:(id)arg1;
 - (void)setMask:(id)arg1;

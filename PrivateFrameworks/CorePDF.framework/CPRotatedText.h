@@ -3,7 +3,7 @@
  */
 
 @interface CPRotatedText : NSObject {
-    NSMutableArray *zones;
+    NSMutableArray * zones;
 }
 
 - (void)addRotationZonesTo:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface CADDefaultPermissionValidator : NSObject <CADPermissionValidator> {
-    ClientConnection *_connection;
+    ClientConnection * _connection;
 }
 
 @property (readonly) BOOL canMakeSpotlightChanges;
@@ -13,17 +13,23 @@
 @property (retain) ClientConnection *connection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (readonly) BOOL hasContactsUIEntitlement;
 @property (readonly) unsigned int hash;
+@property (readonly) BOOL internalAccessLevelGranted;
 @property (readonly) Class superclass;
+@property (readonly) BOOL testingAccessLevelGranted;
 
 - (void).cxx_destruct;
+- (BOOL)_valueForBooleanEntitlement:(id)arg1 defaultValue:(BOOL)arg2;
 - (BOOL)canMakeSpotlightChanges;
 - (BOOL)canModifyCalendarDatabase;
 - (BOOL)canModifySuggestedEventCalendar;
 - (BOOL)canSetAutomaticLocationGeocodingAllowedValue;
 - (id)connection;
-- (id)init;
+- (BOOL)hasContactsUIEntitlement;
 - (id)initWithClientConnection:(id)arg1;
+- (BOOL)internalAccessLevelGranted;
 - (void)setConnection:(id)arg1;
+- (BOOL)testingAccessLevelGranted;
 
 @end

@@ -3,9 +3,9 @@
  */
 
 @interface CKApplicationPermissionGroup : NSObject <NSSecureCoding> {
-    NSArray *_applicationBundleIDs;
-    NSArray *_containerIDs;
-    unsigned int _enabledPermissions;
+    NSArray * _applicationBundleIDs;
+    NSArray * _containerIDs;
+    unsigned int  _enabledPermissions;
 }
 
 @property (nonatomic, retain) NSArray *applicationBundleIDs;

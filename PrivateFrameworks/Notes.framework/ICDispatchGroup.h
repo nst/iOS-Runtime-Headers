@@ -3,7 +3,7 @@
  */
 
 @interface ICDispatchGroup : NSObject {
-    NSObject<OS_dispatch_group> *_dispatchGroup;
+    NSObject<OS_dispatch_group> * _dispatchGroup;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *dispatchGroup;

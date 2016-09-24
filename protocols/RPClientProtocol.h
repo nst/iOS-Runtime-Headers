@@ -6,5 +6,6 @@
 @required
 
 - (oneway void)stopRecordingWithError:(NSError *)arg1 movieURL:(NSURL *)arg2;
+- (oneway void)updateBroadcastServiceInfo:(NSDictionary *)arg1;
 
 @end

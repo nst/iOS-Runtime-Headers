@@ -3,10 +3,10 @@
  */
 
 @interface PasscodeFieldCell : PSTableCell <PSPasscodeFieldDelegate> {
-    BOOL _convertsNumeralsToASCII;
-    <KeychainSyncPasscodeFieldDelegate> *_delegate;
-    BOOL _denyFirstResponder;
-    PSPasscodeField *_passcodeField;
+    BOOL  _convertsNumeralsToASCII;
+    <KeychainSyncPasscodeFieldDelegate> * _delegate;
+    BOOL  _denyFirstResponder;
+    PSPasscodeField * _passcodeField;
 }
 
 @property (nonatomic) BOOL convertsNumeralsToASCII;

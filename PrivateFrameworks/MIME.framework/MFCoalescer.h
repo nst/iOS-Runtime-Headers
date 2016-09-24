@@ -3,11 +3,13 @@
  */
 
 @interface MFCoalescer : NSObject {
-    id _coalescedValue;
-    NSObject<OS_dispatch_source> *_coalescer;
-    id /* block */ _coalescerAction;
-    int _lock;
-    NSObject<OS_dispatch_queue> *_queue;
+    id  _coalescedValue;
+    NSObject<OS_dispatch_source> * _coalescer;
+    id /* block */  _coalescerAction;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 - (void)_handleCoalesceEvent;

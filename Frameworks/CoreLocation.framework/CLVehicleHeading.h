@@ -3,7 +3,7 @@
  */
 
 @interface CLVehicleHeading : NSObject <NSCopying, NSSecureCoding> {
-    id _internal;
+    id  _internal;
 }
 
 @property (nonatomic, readonly) NSDate *timestamp;

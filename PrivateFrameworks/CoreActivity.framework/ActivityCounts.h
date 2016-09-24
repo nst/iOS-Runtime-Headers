@@ -3,15 +3,15 @@
  */
 
 @interface ActivityCounts : NSObject {
-    NSTimer *_calorieComputeTimer;
-    <CoreActivityActivityDelegate> *_delegate;
-    int _epoch_count;
+    NSTimer * _calorieComputeTimer;
+    <CoreActivityActivityDelegate> * _delegate;
+    int  _epoch_count;
     struct { 
         double xagg; 
         double yagg; 
         double zagg; 
         int numSamples; 
-    } calorieFeature;
+    }  calorieFeature;
 }
 
 @property (nonatomic, retain) NSTimer *calorieComputeTimer;

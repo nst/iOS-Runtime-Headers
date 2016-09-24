@@ -3,9 +3,9 @@
  */
 
 @interface MCFontPayload : MCPayload {
-    NSData *_fontData;
-    NSString *_name;
-    NSURL *_persistentURL;
+    NSData * _fontData;
+    NSString * _name;
+    NSURL * _persistentURL;
 }
 
 @property (nonatomic, retain) NSData *fontData;

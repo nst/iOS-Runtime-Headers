@@ -3,9 +3,9 @@
  */
 
 @interface WBUFormAutoFillFrameHandle : NSObject <NSCopying, NSSecureCoding, WBUFormAutoFillFrameHandle> {
-    NSURL *_URL;
-    NSArray *_certificateChain;
-    _WKFrameHandle *_frameHandle;
+    NSURL * _URL;
+    _WKFrameHandle * _frameHandle;
+    struct __SecTrust { } * _serverTrust;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,21 +14,22 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSURL *webui_URL;
-@property (nonatomic, readonly) NSArray *webui_certificateChain;
+@property (nonatomic, readonly) struct __SecTrust { }*webui_serverTrust;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)frameHandle;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrameHandle:(id)arg1 URL:(id)arg2 certificateChain:(id)arg3;
+- (id)initWithFrameHandle:(id)arg1 URL:(id)arg2 serverTrust:(struct __SecTrust { }*)arg3;
 - (id)initWithWebProcessPlugInFrame:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)webui_URL;
-- (id)webui_certificateChain;
+- (struct __SecTrust { }*)webui_serverTrust;
 
 @end

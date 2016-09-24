@@ -3,8 +3,8 @@
  */
 
 @interface HMCharacteristicEvent : HMEvent <NSSecureCoding> {
-    HMCharacteristic *_characteristic;
-    <NSCopying> *_triggerValue;
+    HMCharacteristic * _characteristic;
+    <NSCopying> * _triggerValue;
 }
 
 @property (nonatomic, retain) HMCharacteristic *characteristic;

@@ -3,9 +3,9 @@
  */
 
 @interface GKGameMatch : NSObject {
-    GKGame *_game;
-    GKRecentMatchInternal *_internal;
-    GKPlayer *_player;
+    GKGame * _game;
+    GKRecentMatchInternal * _internal;
+    GKPlayer * _player;
 }
 
 @property (nonatomic, retain) NSDate *date;

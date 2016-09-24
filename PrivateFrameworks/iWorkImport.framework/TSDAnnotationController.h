@@ -2,15 +2,23 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDAnnotationController : NSObject
+@interface TSDAnnotationController : NSObject {
+    <TSDAnnotationDelegate> * _delegate;
+    TSKSelectionPath * _displayedAnnotationSelectionPath;
+    BOOL  _isNavigatingAnnotations;
+}
 
 @property (nonatomic, readonly) unsigned int annotationCount;
 @property (nonatomic, readonly) NSString *annotationNavigationString;
+@property (nonatomic) <TSDAnnotationDelegate> *delegate;
+@property (nonatomic, retain) TSKSelectionPath *displayedAnnotationSelectionPath;
 @property (nonatomic, readonly) unsigned int filteredAnnotationCount;
 @property (nonatomic, readonly) BOOL hasAnnotations;
+@property (nonatomic) BOOL isNavigatingAnnotations;
 @property (nonatomic) BOOL textSelectionChangeShouldDismissAnnotations;
 
 + (float)commentFontSize;
++ (id)commentPossibleFontSizes;
 
 - (unsigned int)annotationCount;
 - (id)annotationMenuItemTextShowNext;
@@ -19,17 +27,23 @@
 - (id)annotationToolTipTextGoToNext;
 - (id)annotationToolTipTextGoToPrevious;
 - (void)commitCommentText:(id)arg1 forAnnotation:(id)arg2;
+- (void)dealloc;
+- (id)delegate;
 - (void)didShowAnnotation:(id)arg1;
+- (id)displayedAnnotationSelectionPath;
 - (unsigned int)filteredAnnotationCount;
 - (BOOL)hasAnnotations;
+- (id)init;
 - (void)invalidateAnnotationAuthors;
+- (BOOL)isNavigatingAnnotations;
 - (void)nextAnnotation:(id)arg1;
 - (void)previousAnnotation:(id)arg1;
-- (void)registerDelegate:(id)arg1;
-- (void)setFilteredAuthors:(id)arg1;
+- (void)setAuthorFilter:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setDisplayedAnnotationSelectionPath:(id)arg1;
+- (void)setIsNavigatingAnnotations:(BOOL)arg1;
 - (void)setTextSelectionChangeShouldDismissAnnotations:(BOOL)arg1;
 - (BOOL)textSelectionChangeShouldDismissAnnotations;
-- (void)unregisterDelegate:(id)arg1;
 - (void)updateCurrentAnnotation:(id)arg1;
 - (void)willShowAnnotation:(id)arg1;
 

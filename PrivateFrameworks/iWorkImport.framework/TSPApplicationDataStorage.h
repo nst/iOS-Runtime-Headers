@@ -3,7 +3,7 @@
  */
 
 @interface TSPApplicationDataStorage : TSPDocumentResourceDataStorage {
-    BOOL _isValidated;
+    BOOL  _isValidated;
 }
 
 - (id)fileURLForInfo:(id)arg1;

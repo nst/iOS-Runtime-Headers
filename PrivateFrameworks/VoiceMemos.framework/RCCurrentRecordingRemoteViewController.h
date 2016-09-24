@@ -3,7 +3,7 @@
  */
 
 @interface RCCurrentRecordingRemoteViewController : _UIRemoteViewController <RCUIClientCurrentRecordingViewController> {
-    <RCCurrentRecordingViewControllerDelegate> *_delegate;
+    <RCCurrentRecordingViewControllerDelegate> * _delegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

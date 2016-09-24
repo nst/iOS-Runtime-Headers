@@ -3,14 +3,14 @@
  */
 
 @interface MSCLFacebookPageSelectionViewController : SKUIViewController <UITableViewDataSource, UITableViewDelegate> {
-    MSCLAccountStore *_accountStore;
-    BOOL _didRequestImages;
-    NSMapTable *_images;
-    NSArray *_pages;
-    UIImage *_placeholderImage;
-    MSCLSettingsTableViewCell *_removeAccountButtonCell;
-    NSString *_selectedPageIdentifier;
-    UITableView *_tableView;
+    MSCLAccountStore * _accountStore;
+    BOOL  _didRequestImages;
+    NSMapTable * _images;
+    NSArray * _pages;
+    UIImage * _placeholderImage;
+    MSCLSettingsTableViewCell * _removeAccountButtonCell;
+    NSString * _selectedPageIdentifier;
+    UITableView * _tableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

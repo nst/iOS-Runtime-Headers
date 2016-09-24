@@ -3,16 +3,16 @@
  */
 
 @interface OADGraphicStyleCache : NSObject {
-    OADGraphicFeatureCache *mChartIdCache;
-    OADGraphicFeatureCache *mColorCache;
-    OADGraphicFeatureCache *mDrawableStyleCacheArray;
-    OADGraphicFeatureCache *mFillCacheArray;
-    OADGraphicFeatureCache *mFontFaceCache;
-    OADGraphicFeatureCache *mShadowCache;
-    OADGraphicFeatureCache *mStrokeCache;
-    OADGraphicFeatureCache *mTableIdCache;
-    NSMutableDictionary *mTableStyleCache;
-    OADGraphicFeatureCache *mTextStyleCache;
+    OADGraphicFeatureCache * mChartIdCache;
+    OADGraphicFeatureCache * mColorCache;
+    OADGraphicFeatureCache * mDrawableStyleCacheArray;
+    OADGraphicFeatureCache * mFillCacheArray;
+    OADGraphicFeatureCache * mFontFaceCache;
+    OADGraphicFeatureCache * mShadowCache;
+    OADGraphicFeatureCache * mStrokeCache;
+    OADGraphicFeatureCache * mTableIdCache;
+    NSMutableDictionary * mTableStyleCache;
+    OADGraphicFeatureCache * mTextStyleCache;
 }
 
 + (int)fillCatagory:(id)arg1;

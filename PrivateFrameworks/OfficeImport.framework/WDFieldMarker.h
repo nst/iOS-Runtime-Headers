@@ -3,18 +3,18 @@
  */
 
 @interface WDFieldMarker : WDRun {
-    NSData *mData;
-    int mFieldPosition;
-    unsigned char mFieldType;
-    unsigned int mHasSeparator;
-    unsigned int mLocked;
-    int mMarkerType;
-    unsigned int mNested;
-    unsigned int mPrivateResult;
-    WDCharacterProperties *mProperties;
-    unsigned int mResultDirty;
-    unsigned int mResultEdited;
-    unsigned int mZombieEmbed;
+    NSData * mData;
+    int  mFieldPosition;
+    unsigned char  mFieldType;
+    unsigned int  mHasSeparator;
+    unsigned int  mLocked;
+    int  mMarkerType;
+    unsigned int  mNested;
+    unsigned int  mPrivateResult;
+    WDCharacterProperties * mProperties;
+    unsigned int  mResultDirty;
+    unsigned int  mResultEdited;
+    unsigned int  mZombieEmbed;
 }
 
 - (void)clearProperties;

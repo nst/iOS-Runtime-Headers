@@ -2,8 +2,8 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotosPreviewPresentationController : UIPreviewPresentationController {
-    <PUPhotosPreviewPresentationControllerDelegate> *_photosPreviewingDelegate;
+@interface PUPhotosPreviewPresentationController : _UIPreviewPresentationController {
+    <PUPhotosPreviewPresentationControllerDelegate> * _photosPreviewingDelegate;
 }
 
 @property (nonatomic) <PUPhotosPreviewPresentationControllerDelegate> *photosPreviewingDelegate;

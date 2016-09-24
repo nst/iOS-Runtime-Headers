@@ -3,18 +3,18 @@
  */
 
 @interface PLMav7BasebandHardwareMessage : PLMav5BasebandHardwareMessage {
-    struct _PLMav7BasebandHWStatsClockStateMask { unsigned int x1[4]; } *_apps_clock_count_mask;
-    NSMutableString *_apps_clock_duration;
-    struct _PLMav7BasebandHWStatsClockStateMask { unsigned int x1[4]; } *_apps_clock_duration_mask;
-    struct _PLMav7BasebandGPSDPOBin { unsigned int x1[6]; } *_gps_dpo_bins;
-    struct _PLMav7BasebandHWStatsHSICState { unsigned int x1[8]; } *_hsic;
-    struct _PLMav7BasebandHWStatsMCPMVeto { unsigned int x1[6]; } *_mcpm_sleep_veto;
-    struct _PLMav7BasebandHWStatsClockStateMask { unsigned int x1[4]; } *_mpss_clock_count_mask;
-    NSMutableString *_mpss_clock_duration;
-    struct _PLMav7BasebandHWStatsClockStateMask { unsigned int x1[4]; } *_mpss_clock_duration_mask;
-    struct _PLMav7BasebandHWStatsNPAVeto { unsigned int x1; unsigned int x2[24]; } *_npa_sleep_veto;
-    struct _PLMav7BasebandHWStatsProtocol { unsigned int x1[6][16]; unsigned int x2[6]; } *_protocol;
-    struct _PLMav7BasebandHWStatsRFTech { unsigned int x1[6][4]; unsigned int x2[6][13]; unsigned int x3[6][13]; unsigned int x4[6][12]; unsigned int x5[6][11]; unsigned int x6[6][11]; } *_rf;
+    struct _PLMav7BasebandHWStatsClockStateMask { unsigned int x1[4]; } * _apps_clock_count_mask;
+    NSMutableString * _apps_clock_duration;
+    struct _PLMav7BasebandHWStatsClockStateMask { unsigned int x1[4]; } * _apps_clock_duration_mask;
+    struct _PLMav7BasebandGPSDPOBin { unsigned int x1[6]; } * _gps_dpo_bins;
+    struct _PLMav7BasebandHWStatsHSICState { unsigned int x1[8]; } * _hsic;
+    struct _PLMav7BasebandHWStatsMCPMVeto { unsigned int x1[6]; } * _mcpm_sleep_veto;
+    struct _PLMav7BasebandHWStatsClockStateMask { unsigned int x1[4]; } * _mpss_clock_count_mask;
+    NSMutableString * _mpss_clock_duration;
+    struct _PLMav7BasebandHWStatsClockStateMask { unsigned int x1[4]; } * _mpss_clock_duration_mask;
+    struct _PLMav7BasebandHWStatsNPAVeto { unsigned int x1; unsigned int x2[24]; } * _npa_sleep_veto;
+    struct _PLMav7BasebandHWStatsProtocol { unsigned int x1[6][16]; unsigned int x2[6]; } * _protocol;
+    struct _PLMav7BasebandHWStatsRFTech { unsigned int x1[6][4]; unsigned int x2[6][13]; unsigned int x3[6][13]; unsigned int x4[6][12]; unsigned int x5[6][11]; unsigned int x6[6][11]; } * _rf;
 }
 
 @property (nonatomic) struct _PLMav7BasebandHWStatsClockStateMask { unsigned int x1[4]; }*apps_clock_count_mask;

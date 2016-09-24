@@ -3,13 +3,13 @@
  */
 
 @interface PKPaymentWebServiceRegion : NSObject <NSSecureCoding> {
-    NSURL *_brokerURL;
-    NSArray *_certificates;
-    int _consistencyCheckBackoffLevel;
-    NSString *_lastUpdatedTag;
-    NSURL *_paymentServicesURL;
-    NSString *_trustedServiceManagerPushTopic;
-    NSURL *_trustedServiceManagerURL;
+    NSURL * _brokerURL;
+    NSArray * _certificates;
+    int  _consistencyCheckBackoffLevel;
+    NSString * _lastUpdatedTag;
+    NSURL * _paymentServicesURL;
+    NSString * _trustedServiceManagerPushTopic;
+    NSURL * _trustedServiceManagerURL;
 }
 
 @property (nonatomic, retain) NSURL *brokerURL;
@@ -22,10 +22,10 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)brokerURL;
 - (id)certificates;
 - (int)consistencyCheckBackoffLevel;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)lastUpdatedTag;

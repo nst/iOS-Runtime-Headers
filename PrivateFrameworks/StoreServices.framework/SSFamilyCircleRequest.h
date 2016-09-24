@@ -3,8 +3,8 @@
  */
 
 @interface SSFamilyCircleRequest : SSRequest <SSXPCCoding> {
-    int _authenticationPromptStyle;
-    BOOL _fetchITunesAccountNames;
+    int  _authenticationPromptStyle;
+    BOOL  _fetchITunesAccountNames;
 }
 
 @property (nonatomic) int authenticationPromptStyle;

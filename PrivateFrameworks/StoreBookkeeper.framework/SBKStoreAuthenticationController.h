@@ -3,8 +3,8 @@
  */
 
 @interface SBKStoreAuthenticationController : NSObject {
-    BOOL _shouldAuthenticate;
-    SSAccount *_storeAccount;
+    BOOL  _shouldAuthenticate;
+    SSAccount * _storeAccount;
 }
 
 @property BOOL shouldAuthenticate;

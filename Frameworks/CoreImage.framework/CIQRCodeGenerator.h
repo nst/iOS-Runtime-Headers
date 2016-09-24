@@ -3,7 +3,7 @@
  */
 
 @interface CIQRCodeGenerator : CICodeGenerator {
-    NSString *inputCorrectionLevel;
+    NSString * inputCorrectionLevel;
 }
 
 @property (nonatomic, copy) NSString *inputCorrectionLevel;

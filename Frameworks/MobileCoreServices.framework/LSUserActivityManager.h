@@ -3,14 +3,14 @@
  */
 
 @interface LSUserActivityManager : NSObject <LSUserActivityClientResponseProtocol> {
-    NSUUID *_activeUserActivityUUID;
-    BOOL _activityContinuationIsEnabled;
-    NSXPCConnection *_connection;
-    BOOL _connectionInitializationSucceeded;
-    BOOL _needToSendInitialMessage;
-    NSObject<OS_dispatch_queue> *_serverQ;
-    BOOL _supportsActivityContinuation;
-    NSMapTable *_userActivitiesByUUID;
+    NSUUID * _activeUserActivityUUID;
+    BOOL  _activityContinuationIsEnabled;
+    NSXPCConnection * _connection;
+    BOOL  _connectionInitializationSucceeded;
+    BOOL  _needToSendInitialMessage;
+    NSObject<OS_dispatch_queue> * _serverQ;
+    BOOL  _supportsActivityContinuation;
+    NSMapTable * _userActivitiesByUUID;
 }
 
 @property (copy) NSUUID *activeUserActivityUUID;

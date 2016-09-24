@@ -3,10 +3,10 @@
  */
 
 @interface NEVPNIKEv1ProposalParameters : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
-    int _diffieHellmanGroup;
-    int _encryptionAlgorithm;
-    int _integrityAlgorithm;
-    int _lifetimeSeconds;
+    int  _diffieHellmanGroup;
+    int  _encryptionAlgorithm;
+    int  _integrityAlgorithm;
+    int  _lifetimeSeconds;
 }
 
 @property int diffieHellmanGroup;

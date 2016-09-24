@@ -3,7 +3,7 @@
  */
 
 @interface KNMacArchivedUILayout : TSPObject {
-    KNMacUILayout *mUILayout;
+    KNMacUILayout * mUILayout;
 }
 
 @property (nonatomic, readonly) KNMacUILayout *uiLayout;

@@ -3,7 +3,7 @@
  */
 
 @interface GQDRStrokePattern : NSObject {
-    int mType;
+    int  mType;
 }
 
 + (id)solidPattern;

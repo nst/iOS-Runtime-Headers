@@ -6,12 +6,12 @@
     struct { 
         unsigned int requestType : 1; 
         unsigned int statusCode : 1; 
-    } _has;
-    int _requestType;
-    int _statusCode;
-    GEOCMTicketFollowupResponse *_ticketFollowupResponse;
-    GEOCMTicketStatusResponse *_ticketStatusResponse;
-    GEOCMTicketSubmissionResponse *_ticketSubmissionResponse;
+    }  _has;
+    int  _requestType;
+    int  _statusCode;
+    GEOCMTicketFollowupResponse * _ticketFollowupResponse;
+    GEOCMTicketStatusResponse * _ticketStatusResponse;
+    GEOCMTicketSubmissionResponse * _ticketSubmissionResponse;
 }
 
 @property (nonatomic) BOOL hasRequestType;
@@ -25,6 +25,8 @@
 @property (nonatomic, retain) GEOCMTicketStatusResponse *ticketStatusResponse;
 @property (nonatomic, retain) GEOCMTicketSubmissionResponse *ticketSubmissionResponse;
 
+- (int)StringAsRequestType:(id)arg1;
+- (int)StringAsStatusCode:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -40,6 +42,7 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (int)requestType;
+- (id)requestTypeAsString:(int)arg1;
 - (void)setHasRequestType:(BOOL)arg1;
 - (void)setHasStatusCode:(BOOL)arg1;
 - (void)setRequestType:(int)arg1;
@@ -48,6 +51,7 @@
 - (void)setTicketStatusResponse:(id)arg1;
 - (void)setTicketSubmissionResponse:(id)arg1;
 - (int)statusCode;
+- (id)statusCodeAsString:(int)arg1;
 - (id)ticketFollowupResponse;
 - (id)ticketStatusResponse;
 - (id)ticketSubmissionResponse;

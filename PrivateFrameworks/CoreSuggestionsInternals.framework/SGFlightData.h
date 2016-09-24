@@ -3,27 +3,29 @@
  */
 
 @interface SGFlightData : NSObject {
-    SGOffsetDictionary *_airportDataOffsets;
-    SGOffsetDictionary *_airportUpdateDataOffsets;
-    <SGSeekable> *_airportsFh;
-    SGAsset *_airportsUpdateAsset;
-    <SGSeekable> *_airportsUpdateFh;
-    NSDictionary *_carrierCodesByName;
-    NSDictionary *_carrierNames;
-    SGAsset *_carrierUpdateAsset;
-    NSDictionary *_carrierUpdateCodesByName;
-    NSDictionary *_carrierUpdateNames;
-    SGOffsetDictionary *_flightDataOffsets;
-    SGOffsetDictionary *_flightUpdateDataOffsets;
-    <SGSeekable> *_flightsFh;
-    SGAsset *_flightsUpdateAsset;
-    <SGSeekable> *_flightsUpdateFh;
+    SGOffsetDictionary * _airportDataOffsets;
+    SGOffsetDictionary * _airportUpdateDataOffsets;
+    <SGSeekable> * _airportsFh;
+    SGAsset * _airportsUpdateAsset;
+    <SGSeekable> * _airportsUpdateFh;
+    NSDictionary * _carrierCodesByName;
+    NSDictionary * _carrierNames;
+    SGAsset * _carrierUpdateAsset;
+    NSDictionary * _carrierUpdateCodesByName;
+    NSDictionary * _carrierUpdateNames;
+    SGOffsetDictionary * _flightDataOffsets;
+    SGOffsetDictionary * _flightUpdateDataOffsets;
+    <SGSeekable> * _flightsFh;
+    SGAsset * _flightsUpdateAsset;
+    <SGSeekable> * _flightsUpdateFh;
 }
 
++ (id)airportNameNoiseKeywords;
++ (id)sanitizeAirportName:(id)arg1;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (id)airportCodeForAirportName:(id)arg1 flightCarrier:(id)arg2 flightNumber:(unsigned short)arg3;
+- (id)airportCodeForAirportName:(id)arg1 flightCarrier:(id)arg2 flightNumber:(unsigned short)arg3 outputInfos:(id)arg4;
 - (id)airportIataCodes;
 - (id)airportIataCodesForDataOffset:(id)arg1;
 - (id)airportsServicedByCarrier:(id)arg1 flightNumber:(unsigned short)arg2;

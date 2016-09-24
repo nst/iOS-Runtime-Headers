@@ -3,13 +3,13 @@
  */
 
 @interface PUAttributedStringHTMLParser : NSObject {
-    NSDictionary *__currentAttributes;
-    NSCountedSet *__currentMarkupElements;
-    unsigned int __currentTraits;
-    NSDictionary *__defaultAttributes;
-    NSString *__htmlString;
-    id /* block */ _parsedAttributedStringBlock;
-    id /* block */ _parsedErrorBlock;
+    NSDictionary * __currentAttributes;
+    NSCountedSet * __currentMarkupElements;
+    unsigned int  __currentTraits;
+    NSDictionary * __defaultAttributes;
+    NSString * __htmlString;
+    id /* block */  _parsedAttributedStringBlock;
+    id /* block */  _parsedErrorBlock;
 }
 
 @property (setter=_setCurrentAttributes:, nonatomic, copy) NSDictionary *_currentAttributes;

@@ -3,9 +3,9 @@
  */
 
 @interface SBUIBannerTargetProxy : NSObject <SBUIBannerTarget> {
-    void *_identifier;
-    int _idiom;
-    <SBUIBannerTargetImplementation> *_implementation;
+    void * _identifier;
+    int  _idiom;
+    <SBUIBannerTargetImplementation> * _implementation;
 }
 
 @property (nonatomic, readonly) void*bannerTargetIdentifier;

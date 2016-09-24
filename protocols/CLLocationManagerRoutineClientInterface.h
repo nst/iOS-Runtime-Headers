@@ -6,5 +6,6 @@
 @required
 
 - (void)didUpdateLocations:(NSArray *)arg1;
+- (void)didUpdatePredictedApplications:(NSArray *)arg1;
 
 @end

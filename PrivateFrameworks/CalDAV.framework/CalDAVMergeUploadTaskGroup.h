@@ -3,10 +3,10 @@
  */
 
 @interface CalDAVMergeUploadTaskGroup : CoreDAVTaskGroup {
-    <CalDAVCalendar> *_calendar;
-    <CalDAVPrincipal> *_principal;
-    BOOL _shouldTrySyncTokenForBulkUpload;
-    CalDAVBulkUploadTaskGroup *_uploadTaskGroup;
+    <CalDAVCalendar> * _calendar;
+    <CalDAVPrincipal> * _principal;
+    BOOL  _shouldTrySyncTokenForBulkUpload;
+    CalDAVBulkUploadTaskGroup * _uploadTaskGroup;
 }
 
 @property (nonatomic, retain) <CalDAVCalendar> *calendar;

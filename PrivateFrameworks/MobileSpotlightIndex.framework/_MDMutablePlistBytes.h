@@ -3,13 +3,13 @@
  */
 
 @interface _MDMutablePlistBytes : _MDPlistBytes {
-    int _containerUID;
-    int _currentUID;
-    unsigned long long *_fillPtr;
-    unsigned long long *_limitPtr;
-    struct __CFArray { } *_parentUIDStack;
-    struct __CFDictionary { } *_ptrUIDMap;
-    unsigned long long *_rleTagPtr;
+    int  _containerUID;
+    int  _currentUID;
+    unsigned int * _fillPtr;
+    unsigned int * _limitPtr;
+    struct __CFArray { } * _parentUIDStack;
+    struct __CFDictionary { } * _ptrUIDMap;
+    unsigned int * _rleTagPtr;
 }
 
 + (struct __MDPlistBytes { }*)createArrayPlistBytesUsingBlock:(id /* block */)arg1;

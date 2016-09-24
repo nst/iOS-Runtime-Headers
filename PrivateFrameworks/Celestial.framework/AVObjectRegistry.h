@@ -3,8 +3,8 @@
  */
 
 @interface AVObjectRegistry : NSObject {
-    NSRecursiveLock *_lock;
-    NSHashTable *_registeredObjects;
+    NSRecursiveLock * _lock;
+    NSHashTable * _registeredObjects;
 }
 
 + (id)defaultObjectRegistry;

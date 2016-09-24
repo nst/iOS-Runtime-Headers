@@ -3,11 +3,11 @@
  */
 
 @interface UINibDecoder : NSCoder {
-    Class arrayClass;
-    Class *classes;
-    id delegate;
-    Class dictionaryClass;
-    int failedByKeyMask;
+    Class  arrayClass;
+    Class * classes;
+    id  delegate;
+    Class  dictionaryClass;
+    int  failedByKeyMask;
     struct UINibDecoderHeader { 
         unsigned char type[10]; 
         unsigned int formatVersion; 
@@ -28,8 +28,8 @@
             unsigned int count; 
             unsigned int offset; 
         } classes; 
-    } header;
-    long inlinedValueKey;
+    }  header;
+    long  inlinedValueKey;
     struct UIKeyToKeyIDCache { 
         NSString *previousKey[64]; 
         void *previousKeyID[64]; 
@@ -37,33 +37,33 @@
         int hashHits; 
         int hashHotMisses; 
         int hashColdMisses; 
-    } keyIDCache;
-    UINibStringIDTable *keyIDTable;
-    unsigned int *keyMasks;
-    unsigned int *longObjectClassIDs;
-    int lookupRounds;
-    int maxPossibleLookupRounds;
-    id *missingClasses;
-    struct UINibDecoderObjectEntry { unsigned int x1; unsigned int x2; } *objects;
-    id *objectsByObjectID;
+    }  keyIDCache;
+    UINibStringIDTable * keyIDTable;
+    unsigned int * keyMasks;
+    unsigned int * longObjectClassIDs;
+    int  lookupRounds;
+    int  maxPossibleLookupRounds;
+    id * missingClasses;
+    struct UINibDecoderObjectEntry { unsigned int x1; unsigned int x2; } * objects;
+    id * objectsByObjectID;
     struct UINibDecoderRecursiveState { 
         int objectID; 
         int nextGenericKey; 
         unsigned int nextValueSearchIndex; 
         BOOL replaced; 
-    } recursiveState;
-    int savedByKeyMask;
-    Class setClass;
-    char *shortObjectClassIDs;
+    }  recursiveState;
+    int  savedByKeyMask;
+    Class  setClass;
+    char * shortObjectClassIDs;
     struct UIKeyAndScopeToValueCache { 
         unsigned int previousScope; 
         unsigned int previousKey; 
         struct UINibDecoderValue {} *previousValue; 
-    } valueCache;
-    void *valueData;
-    unsigned long valueDataSize;
-    char *valueTypes;
-    struct UINibDecoderValue { unsigned int x1; unsigned int x2; } *values;
+    }  valueCache;
+    void * valueData;
+    unsigned long  valueDataSize;
+    char * valueTypes;
+    struct UINibDecoderValue { unsigned int x1; unsigned int x2; } * values;
 }
 
 @property id delegate;
@@ -81,22 +81,22 @@
 - (BOOL)decodeBoolForKey:(id)arg1;
 - (const char *)decodeBytesForKey:(id)arg1 returnedLength:(unsigned int*)arg2;
 - (void*)decodeBytesWithReturnedLength:(unsigned int*)arg1;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })decodeCGAffineTransformForKey:(id)arg1;
-- (struct CGPoint { float x1; float x2; })decodeCGPointForKey:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })decodeCGRectForKey:(id)arg1;
-- (struct CGSize { float x1; float x2; })decodeCGSizeForKey:(id)arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })decodeCGAffineTransformForKey:(id)arg1;
+- (struct CGPoint { double x1; double x2; })decodeCGPointForKey:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })decodeCGRectForKey:(id)arg1;
+- (struct CGSize { double x1; double x2; })decodeCGSizeForKey:(id)arg1;
 - (id)decodeDataObject;
 - (double)decodeDoubleForKey:(id)arg1;
 - (float)decodeFloatForKey:(id)arg1;
 - (int)decodeInt32ForKey:(id)arg1;
-- (long long)decodeInt64ForKey:(id)arg1;
+- (int)decodeInt64ForKey:(id)arg1;
 - (int)decodeIntForKey:(id)arg1;
 - (int)decodeIntegerForKey:(id)arg1;
 - (id)decodeNXObject;
 - (id)decodeObject;
 - (id)decodeObjectForKey:(id)arg1;
 - (id)decodePropertyList;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })decodeUIEdgeInsetsForKey:(id)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })decodeUIEdgeInsetsForKey:(id)arg1;
 - (void)decodeValueOfObjCType:(const char *)arg1 at:(void*)arg2;
 - (void)decodeValuesOfObjCTypes:(const char *)arg1;
 - (id)delegate;

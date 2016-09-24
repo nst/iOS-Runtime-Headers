@@ -3,9 +3,9 @@
  */
 
 @interface ICQServiceView : UIView {
-    UILabel *_descriptionLabel;
-    UIImageView *_imageView;
-    _ICQServiceSpecification *_serviceSpecification;
+    UILabel * _descriptionLabel;
+    UIImageView * _imageView;
+    _ICQServiceSpecification * _serviceSpecification;
 }
 
 @property (nonatomic, retain) UILabel *descriptionLabel;

@@ -3,10 +3,10 @@
  */
 
 @interface PUSuggestedSearchNearby : PUSuggestedSearch {
-    BOOL _cancelled;
-    CLLocation *_lastLocation;
-    CLLocationManager *_locationManager;
-    BOOL _monitoringLocation;
+    BOOL  _cancelled;
+    CLLocation * _lastLocation;
+    CLLocationManager * _locationManager;
+    BOOL  _monitoringLocation;
 }
 
 - (void).cxx_destruct;

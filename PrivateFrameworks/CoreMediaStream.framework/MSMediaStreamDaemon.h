@@ -3,8 +3,8 @@
  */
 
 @interface MSMediaStreamDaemon : MSDaemon {
-    <MSMediaStreamDaemonDelegate> *_delegate;
-    NSCountedSet *_retainedObjects;
+    <MSMediaStreamDaemonDelegate> * _delegate;
+    NSCountedSet * _retainedObjects;
 }
 
 @property (nonatomic) <MSMediaStreamDaemonDelegate> *delegate;

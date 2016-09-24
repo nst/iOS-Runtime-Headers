@@ -3,10 +3,10 @@
  */
 
 @interface MPFeedbackCommand : MPRemoteCommand {
-    BOOL _active;
-    NSString *_localizedShortTitle;
-    NSString *_localizedTitle;
-    int _presentationStyle;
+    BOOL  _active;
+    NSString * _localizedShortTitle;
+    NSString * _localizedTitle;
+    int  _presentationStyle;
 }
 
 @property (getter=isActive, nonatomic) BOOL active;
@@ -18,6 +18,7 @@
 - (BOOL)isActive;
 - (id)localizedShortTitle;
 - (id)localizedTitle;
+- (id)newCommandEventWithState:(int)arg1;
 - (int)presentationStyle;
 - (void)setActive:(BOOL)arg1;
 - (void)setLocalizedShortTitle:(id)arg1;

@@ -3,9 +3,9 @@
  */
 
 @interface _PHFetchRequestWrapper : NSObject <NSCopying> {
-    NSManagedObjectID *_containerIdentifier;
-    NSFetchRequest *_fetchRequest;
-    unsigned int _hash;
+    NSManagedObjectID * _containerIdentifier;
+    NSFetchRequest * _fetchRequest;
+    unsigned int  _hash;
 }
 
 @property (nonatomic, readonly) NSManagedObjectID *containerIdentifier;

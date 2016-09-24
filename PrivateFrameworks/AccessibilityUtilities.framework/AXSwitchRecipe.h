@@ -3,12 +3,12 @@
  */
 
 @interface AXSwitchRecipe : NSObject {
-    NSArray *_mappings;
-    NSString *_menuIconIdentifier;
-    NSString *_name;
-    double _timeout;
-    NSString *_unlocalizedName;
-    NSUUID *_uuid;
+    NSArray * _mappings;
+    NSString * _menuIconIdentifier;
+    NSString * _name;
+    double  _timeout;
+    NSString * _unlocalizedName;
+    NSUUID * _uuid;
 }
 
 @property (nonatomic, retain) NSArray *mappings;

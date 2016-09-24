@@ -3,13 +3,13 @@
  */
 
 @interface HKObject : NSObject <NSCopying, NSSecureCoding> {
-    NSUUID *_UUID;
-    double _creationTimestamp;
-    HKDevice *_device;
-    NSDictionary *_metadata;
-    int _provenanceID;
-    NSString *_sourceBundleIdentifier;
-    HKSourceRevision *_sourceRevision;
+    NSUUID * _UUID;
+    double  _creationTimestamp;
+    HKDevice * _device;
+    NSDictionary * _metadata;
+    int  _provenanceID;
+    NSString * _sourceBundleIdentifier;
+    HKSourceRevision * _sourceRevision;
 }
 
 @property (readonly) NSUUID *UUID;
@@ -33,7 +33,6 @@
 - (id)_creationDate;
 - (double)_creationTimestamp;
 - (id)_init;
-- (BOOL)_objectCanBeSaved:(id*)arg1;
 - (void)_setCreationDate:(id)arg1;
 - (void)_setCreationTimestamp:(double)arg1;
 - (void)_setDevice:(id)arg1;
@@ -41,23 +40,28 @@
 - (void)_setSourceBundleIdentifier:(id)arg1;
 - (void)_setSourceRevision:(id)arg1;
 - (void)_setUUID:(id)arg1;
+- (BOOL)_shouldNotifyOnInsert;
 - (id)_source;
 - (id)_sourceBundleIdentifier;
 - (id)_validateConfiguration;
+- (id)_validateConfigurationAllowingPrivateMetadata:(BOOL)arg1;
 - (void)_validateForCreation;
+- (BOOL)_validateForSavingWithClientEntitlements:(id)arg1 error:(id*)arg2;
 - (id)_valueDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)device;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
+- (int)hk_integerValue;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)metadata;
+- (BOOL)prepareForDelivery:(id*)arg1;
+- (BOOL)prepareForSaving:(id*)arg1;
 - (id)source;
 - (id)sourceRevision;
-- (BOOL)validateForSaving:(id*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
@@ -72,12 +76,8 @@
 - (id)hd_associatedObjects;
 - (id)hd_associatedSampleTypes;
 - (Class)hd_dataEntityClass;
-- (BOOL)hd_insertRelatedDataWithHealthDaemon:(id)arg1 database:(id)arg2 entityPersistentID:(id)arg3 error:(id*)arg4;
+- (BOOL)hd_insertRelatedDataWithProfile:(id)arg1 database:(id)arg2 entityPersistentID:(id)arg3 error:(id*)arg4;
 - (id)hd_relatedJournalEntries;
 - (id)hd_sampleType;
-
-// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
-
-- (int)hk_integerValue;
 
 @end

@@ -3,9 +3,9 @@
  */
 
 @interface UIAccessibilityCustomAction : NSObject {
-    NSString *_name;
-    SEL _selector;
-    id _target;
+    NSString * _name;
+    SEL  _selector;
+    id  _target;
 }
 
 @property (getter=_image, setter=_setImage:, nonatomic, retain) UIImage *image;

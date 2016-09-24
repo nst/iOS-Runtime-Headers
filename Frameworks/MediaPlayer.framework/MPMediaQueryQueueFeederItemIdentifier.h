@@ -3,14 +3,14 @@
  */
 
 @interface MPMediaQueryQueueFeederItemIdentifier : NSObject <MPAVItemQueueIdentifier, NSSecureCoding> {
-    unsigned long long _feederRevisionID;
-    MPMediaItem *_mediaItem;
-    unsigned int _repeatIndex;
+    unsigned int  _feederRevisionID;
+    MPMediaItem * _mediaItem;
+    unsigned int  _repeatIndex;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) unsigned long long feederRevisionID;
+@property (nonatomic, readonly) unsigned int feederRevisionID;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) MPMediaItem *mediaItem;
 @property (nonatomic, readonly) unsigned int repeatIndex;
@@ -21,10 +21,10 @@
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)feederRevisionID;
+- (unsigned int)feederRevisionID;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMediaItem:(id)arg1 repeatIndex:(unsigned int)arg2 feederRevisionID:(unsigned long long)arg3;
+- (id)initWithMediaItem:(id)arg1 repeatIndex:(unsigned int)arg2 feederRevisionID:(unsigned int)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (id)mediaItem;
 - (unsigned int)repeatIndex;

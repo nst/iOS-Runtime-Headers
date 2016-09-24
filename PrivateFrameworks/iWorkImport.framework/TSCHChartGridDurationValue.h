@@ -3,7 +3,7 @@
  */
 
 @interface TSCHChartGridDurationValue : NSObject <TSCHChartGridValue> {
-    double mDuration;
+    double  mDuration;
 }
 
 @property (nonatomic, readonly) int chartGridValueType;

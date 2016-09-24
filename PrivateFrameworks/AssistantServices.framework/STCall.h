@@ -3,9 +3,9 @@
  */
 
 @interface STCall : STSiriModelObject {
-    STContactAddress *_initiatorAddress;
-    STContactAddress *_recipientAddress;
-    int _service;
+    STContactAddress * _initiatorAddress;
+    STContactAddress * _recipientAddress;
+    int  _service;
 }
 
 + (BOOL)supportsSecureCoding;

@@ -3,8 +3,8 @@
  */
 
 @interface MusicTrackCountInformation : NSObject {
-    BOOL _libraryFallback;
-    unsigned int _trackCount;
+    BOOL  _libraryFallback;
+    unsigned int  _trackCount;
 }
 
 @property (getter=isLibraryFallback, nonatomic) BOOL libraryFallback;

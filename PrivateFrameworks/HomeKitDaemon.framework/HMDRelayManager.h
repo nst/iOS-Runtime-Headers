@@ -2,21 +2,21 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDRelayManager : NSObject <HMDNetworkMonitorDelegate, IDSServiceDelegateHomeKit, NSURLSessionDelegate> {
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    NSString *_controllerIdentifier;
-    unsigned int _currentState;
-    NSHashTable *_delegates;
-    BOOL _enabled;
-    HMDHome *_home;
-    IDSService *_idsService;
-    HMDNetworkMonitor *_networkMonitor;
-    BOOL _networkReachable;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
-    NSHashTable *_relayAccessories;
-    NSMutableArray *_relayStreams;
-    BOOL _supported;
-    NSURLSession *_urlSession;
+@interface HMDRelayManager : NSObject <HMFLogging, HMFNetMonitorDelegate, IDSServiceDelegateHomeKit, NSURLSessionDelegate> {
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    NSString * _controllerIdentifier;
+    unsigned int  _currentState;
+    NSHashTable * _delegates;
+    BOOL  _enabled;
+    HMDHome * _home;
+    IDSService * _idsService;
+    HMFNetMonitor * _networkMonitor;
+    BOOL  _networkReachable;
+    NSObject<OS_dispatch_queue> * _propertyQueue;
+    NSHashTable * _relayAccessories;
+    NSMutableArray * _relayStreams;
+    BOOL  _supported;
+    NSURLSession * _urlSession;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
@@ -29,7 +29,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) HMDHome *home;
 @property (nonatomic, readonly) IDSService *idsService;
-@property (nonatomic, readonly) HMDNetworkMonitor *networkMonitor;
+@property (nonatomic, readonly) HMFNetMonitor *networkMonitor;
 @property (getter=isNetworkReachable, nonatomic) BOOL networkReachable;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic, readonly) NSHashTable *relayAccessories;
@@ -37,6 +37,8 @@
 @property (readonly) Class superclass;
 @property (getter=isSupported, nonatomic) BOOL supported;
 @property (nonatomic, readonly) NSURLSession *urlSession;
+
++ (id)logCategory;
 
 - (void).cxx_destruct;
 - (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(id /* block */)arg4;
@@ -81,6 +83,7 @@
 - (BOOL)isEnabled;
 - (BOOL)isNetworkReachable;
 - (BOOL)isSupported;
+- (id)logIdentifier;
 - (id)networkMonitor;
 - (void)networkMonitorIsReachable:(id)arg1;
 - (void)networkMonitorIsUnreachable:(id)arg1;

@@ -23,7 +23,7 @@
             struct _SSRW_CLIPDATA {} *pclipdata; 
             short boolVal; 
         } v; 
-    } mProp;
+    }  mProp;
 }
 
 - (id)asDataOfType:(int*)arg1;

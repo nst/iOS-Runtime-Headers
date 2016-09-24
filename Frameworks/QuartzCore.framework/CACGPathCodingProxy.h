@@ -3,7 +3,7 @@
  */
 
 @interface CACGPathCodingProxy : CACodingProxy {
-    struct CGPath { } *_path;
+    struct CGPath { } * _path;
 }
 
 - (void)dealloc;

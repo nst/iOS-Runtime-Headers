@@ -3,19 +3,16 @@
  */
 
 @interface MusicEntityEditableVerticalLockupView : MusicEntityVerticalLockupView {
-    UIView *_artworkEditingOverlayView;
-    MusicNowPlayingFloatingButton *_cameraButton;
-    BOOL _editing;
+    UIView * _artworkEditingOverlayView;
+    BOOL  _editing;
 }
 
 @property (nonatomic) <MusicEntityEditableVerticalLockupViewDelegate> *delegate;
 @property (getter=isEditing, nonatomic) BOOL editing;
 
 - (void).cxx_destruct;
-- (void)_cameraButtonTapped:(id)arg1;
 - (void)_layoutEditingSubviews;
 - (void)_layoutEditingSubviewsForEditing:(BOOL)arg1 editingViewsAlpha:(float)arg2;
-- (void)dealloc;
 - (BOOL)isEditing;
 - (void)layoutSubviews;
 - (void)setEditing:(BOOL)arg1;

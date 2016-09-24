@@ -3,11 +3,11 @@
  */
 
 @interface AWDWifiHardwareVersion : PBCodable <NSCopying> {
-    NSString *_hardwareVersion;
+    NSString * _hardwareVersion;
     struct { 
         unsigned int timestamp : 1; 
-    } _has;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic, retain) NSString *hardwareVersion;

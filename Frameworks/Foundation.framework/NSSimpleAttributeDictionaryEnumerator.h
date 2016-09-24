@@ -3,12 +3,11 @@
  */
 
 @interface NSSimpleAttributeDictionaryEnumerator : NSEnumerator {
-    NSSimpleAttributeDictionary *dictionary;
-    unsigned int nextElement;
+    NSSimpleAttributeDictionary * dictionary;
+    unsigned int  nextElement;
 }
 
 - (void)dealloc;
-- (void)finalize;
 - (id)initWithAttributeDictionary:(id)arg1;
 - (id)nextObject;
 

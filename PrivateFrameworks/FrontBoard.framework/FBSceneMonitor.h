@@ -3,26 +3,26 @@
  */
 
 @interface FBSceneMonitor : NSObject <FBSceneLayerManagerObserver, FBSceneManagerInternalObserver, FBSceneMonitorDelegate> {
-    <FBSceneMonitorDelegate> *_delegate;
-    FBSSceneClientSettingsDiffInspector *_diffInspector;
-    FBSMutableSceneSettings *_effectiveSettings;
-    NSMutableSet *_externalSceneIDs;
-    BOOL _invalidated;
-    BOOL _isSynchronizing;
-    FBSSceneSettings *_lastCommitSettings;
-    BOOL _monitorClientSettings;
-    BOOL _monitorEffectiveSettings;
-    BOOL _monitorPairing;
-    BOOL _monitorSceneCommits;
-    BOOL _monitorSettings;
-    NSMutableDictionary *_monitorsBySceneID;
-    NSMutableSet *_pairedExternalSceneIDs;
-    FBScene *_scene;
-    NSString *_sceneID;
-    FBSMutableSceneSettings *_sceneSettings;
-    NSMutableDictionary *_updateContextsByTransactionID;
-    BOOL _updateExternalScenesAfterSync;
-    BOOL _updateSettingsAfterSync;
+    <FBSceneMonitorDelegate> * _delegate;
+    FBSSceneClientSettingsDiffInspector * _diffInspector;
+    FBSMutableSceneSettings * _effectiveSettings;
+    NSMutableSet * _externalSceneIDs;
+    BOOL  _invalidated;
+    BOOL  _isSynchronizing;
+    FBSSceneSettings * _lastCommitSettings;
+    BOOL  _monitorClientSettings;
+    BOOL  _monitorEffectiveSettings;
+    BOOL  _monitorPairing;
+    BOOL  _monitorSceneCommits;
+    BOOL  _monitorSettings;
+    NSMutableDictionary * _monitorsBySceneID;
+    NSMutableSet * _pairedExternalSceneIDs;
+    FBScene * _scene;
+    NSString * _sceneID;
+    FBSMutableSceneSettings * _sceneSettings;
+    NSMutableDictionary * _updateContextsByTransactionID;
+    BOOL  _updateExternalScenesAfterSync;
+    BOOL  _updateSettingsAfterSync;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,8 +3,8 @@
  */
 
 @interface SKUIAccountButtonsComponent : SKUIPageComponent {
-    SKUILink *_ecommerceLink;
-    BOOL _hidesTermsAndConditions;
+    SKUILink * _ecommerceLink;
+    BOOL  _hidesTermsAndConditions;
 }
 
 @property (nonatomic, retain) SKUILink *ECommerceLink;

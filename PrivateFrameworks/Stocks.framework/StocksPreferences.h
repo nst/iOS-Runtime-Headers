@@ -3,10 +3,10 @@
  */
 
 @interface StocksPreferences : NSObject {
-    BOOL _changeColorSwapped;
-    NSUserDefaults *_sharedDefaults;
-    BOOL _textAttachmentDirectionIsRightToLeft;
-    unsigned int _textDirection;
+    BOOL  _changeColorSwapped;
+    NSUserDefaults * _sharedDefaults;
+    BOOL  _textAttachmentDirectionIsRightToLeft;
+    unsigned int  _textDirection;
 }
 
 @property (getter=isChangeColorSwapped, nonatomic, readonly) BOOL changeColorSwapped;

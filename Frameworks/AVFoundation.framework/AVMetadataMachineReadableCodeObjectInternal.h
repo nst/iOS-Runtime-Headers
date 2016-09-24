@@ -3,10 +3,10 @@
  */
 
 @interface AVMetadataMachineReadableCodeObjectInternal : NSObject {
-    NSDictionary *basicDescriptor;
-    NSArray *corners;
-    BOOL decoded;
-    NSString *stringValue;
+    NSDictionary * basicDescriptor;
+    NSArray * corners;
+    BOOL  decoded;
+    NSString * stringValue;
 }
 
 @property (retain) NSDictionary *basicDescriptor;

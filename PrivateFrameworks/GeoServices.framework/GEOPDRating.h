@@ -8,11 +8,11 @@
         unsigned int score : 1; 
         unsigned int numRatingsUsedForScore : 1; 
         unsigned int ratingType : 1; 
-    } _has;
-    double _maxScore;
-    int _numRatingsUsedForScore;
-    int _ratingType;
-    double _score;
+    }  _has;
+    double  _maxScore;
+    int  _numRatingsUsedForScore;
+    int  _ratingType;
+    double  _score;
 }
 
 @property (nonatomic) BOOL hasMaxScore;
@@ -26,6 +26,7 @@
 
 + (id)ratingForPlaceData:(id)arg1 type:(int)arg2;
 
+- (int)StringAsRatingType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -40,6 +41,7 @@
 - (void)mergeFrom:(id)arg1;
 - (int)numRatingsUsedForScore;
 - (int)ratingType;
+- (id)ratingTypeAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (double)score;
 - (void)setHasMaxScore:(BOOL)arg1;

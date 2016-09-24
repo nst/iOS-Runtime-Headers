@@ -3,10 +3,10 @@
  */
 
 @interface SKUISearchItem : SKUIItem {
-    NSArray *_childItemIdentifiers;
-    NSMutableDictionary *_loadedChildItems;
-    SKUIScreenshot *_primaryScreenshot;
-    NSArray *_screenshots;
+    NSArray * _childItemIdentifiers;
+    NSMutableDictionary * _loadedChildItems;
+    SKUIScreenshot * _primaryScreenshot;
+    NSArray * _screenshots;
 }
 
 @property (nonatomic, readonly) SKUIScreenshot *primaryScreenshot;

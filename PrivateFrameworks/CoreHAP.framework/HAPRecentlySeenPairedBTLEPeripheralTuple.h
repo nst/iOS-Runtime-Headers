@@ -3,45 +3,60 @@
  */
 
 @interface HAPRecentlySeenPairedBTLEPeripheralTuple : NSObject {
-    NSMutableDictionary *_cachedDescriptors;
-    NSMapTable *_cachedSignatures;
-    NSNumber *_categoryIdentifier;
-    NSNumber *_configNumber;
-    NSString *_identifier;
-    double _lastSeen;
-    BOOL _notifyingCharacteristicUpdated;
-    CBPeripheral *_peripheral;
-    NSNumber *_stateNumber;
-    NSNumber *_statusFlags;
+    unsigned int  _advertisementFormat;
+    NSMapTable * _cachedCharacteristicSignatures;
+    NSMutableDictionary * _cachedDescriptors;
+    NSMapTable * _cachedServiceSignatures;
+    NSNumber * _categoryIdentifier;
+    NSNumber * _configNumber;
+    unsigned int  _connectionPriority;
+    NSString * _identifier;
+    double  _lastSeen;
+    BOOL  _monitorState;
+    BOOL  _notifyingCharacteristicUpdated;
+    CBPeripheral * _peripheral;
+    NSNumber * _stateNumber;
+    NSNumber * _statusFlags;
 }
 
+@property (nonatomic, readonly) unsigned int advertisementFormat;
+@property (nonatomic, readonly) NSMapTable *cachedCharacteristicSignatures;
 @property (nonatomic, readonly) NSMutableDictionary *cachedDescriptors;
-@property (nonatomic, readonly) NSMapTable *cachedSignatures;
+@property (nonatomic, readonly) NSMapTable *cachedServiceSignatures;
 @property (nonatomic, retain) NSNumber *categoryIdentifier;
 @property (nonatomic, retain) NSNumber *configNumber;
+@property (nonatomic) unsigned int connectionPriority;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) double lastSeen;
+@property (nonatomic) BOOL monitorState;
 @property (nonatomic) BOOL notifyingCharacteristicUpdated;
 @property (nonatomic, readonly) CBPeripheral *peripheral;
 @property (nonatomic, retain) NSNumber *stateNumber;
 @property (nonatomic, retain) NSNumber *statusFlags;
 
 - (void).cxx_destruct;
+- (unsigned int)advertisementFormat;
+- (id)cachedCharacteristicSignatures;
 - (id)cachedDescriptors;
-- (id)cachedSignatures;
+- (id)cachedServiceSignatures;
 - (id)categoryIdentifier;
 - (id)configNumber;
+- (unsigned int)connectionPriority;
 - (id)identifier;
-- (id)initRecentlySeenPairedBTLEPeripheral:(id)arg1 statusFlags:(id)arg2 stateNumber:(id)arg3 category:(id)arg4 configNumber:(id)arg5 identifier:(id)arg6;
+- (id)initRecentlySeenPairedBTLEPeripheral:(id)arg1 statusFlags:(id)arg2 stateNumber:(id)arg3 category:(id)arg4 configNumber:(id)arg5 identifier:(id)arg6 advertisementFormat:(unsigned int)arg7;
 - (double)lastSeen;
+- (BOOL)monitorState;
 - (BOOL)notifyingCharacteristicUpdated;
 - (id)peripheral;
 - (void)setCategoryIdentifier:(id)arg1;
 - (void)setConfigNumber:(id)arg1;
+- (void)setConnectionPriority:(unsigned int)arg1;
+- (void)setMonitorState:(BOOL)arg1;
 - (void)setNotifyingCharacteristicUpdated:(BOOL)arg1;
 - (void)setStateNumber:(id)arg1;
 - (void)setStatusFlags:(id)arg1;
 - (id)stateNumber;
 - (id)statusFlags;
+- (void)updatePairedPeripheralConfiguration:(BOOL)arg1 connectionPriority:(unsigned int)arg2;
 
 @end

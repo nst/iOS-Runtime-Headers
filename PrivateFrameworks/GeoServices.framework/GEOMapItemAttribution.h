@@ -3,10 +3,10 @@
  */
 
 @interface GEOMapItemAttribution : NSObject {
-    NSArray *_attributionURLs;
-    GEOSearchAttributionInfo *_info;
-    NSString *_poiID;
-    NSString *_yelpID;
+    NSArray * _attributionURLs;
+    GEOSearchAttributionInfo * _info;
+    NSString * _poiID;
+    NSString * _yelpID;
 }
 
 @property (nonatomic, readonly) NSArray *attributionApps;

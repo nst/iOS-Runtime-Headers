@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptMediaPlayerItem : SUScriptObject {
-    SUMediaPlayerItem *_mediaItem;
+    SUMediaPlayerItem * _mediaItem;
 }
 
 @property (copy) NSString *URL;

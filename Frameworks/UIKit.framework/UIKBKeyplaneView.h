@@ -3,34 +3,36 @@
  */
 
 @interface UIKBKeyplaneView : UIKBSplitImageView <UIKBCacheableView> {
-    NSTimer *_activatedTimer;
-    NSMutableDictionary *_activeViewIndex;
-    UIKBCacheToken *_cacheToken;
-    UIKBKeyView *_candidateGapView;
-    UIKBTree *_defaultKeyplane;
-    UIKBCacheToken *_defaultKeyplaneCacheToken;
-    NSMutableDictionary *_delayedDeactivationKeys;
-    UIKBRenderFactory *_factory;
-    UIKBSplitImageView *_keyBackgrounds;
-    UIKBSplitImageView *_keyBorders;
-    UIKBSplitImageView *_keyCaps;
-    UIKBKeyViewAnimator *_keyViewAnimator;
-    UIKBTree *_keyplane;
-    BOOL _performingDeactivation;
-    UIKBRenderConfig *_renderConfig;
-    NSMutableDictionary *_renderedKeyViews;
-    BOOL _shouldDrawRect;
-    NSMutableDictionary *_subviewIndex;
+    NSTimer * _activatedTimer;
+    NSMutableDictionary * _activeViewIndex;
+    UIKBCacheToken * _cacheToken;
+    UIKBKeyView * _candidateGapView;
+    UIKBTree * _defaultKeyplane;
+    UIKBCacheToken * _defaultKeyplaneCacheToken;
+    NSMutableDictionary * _delayedDeactivationKeys;
+    UIKeyboardEmojiKeyDisplayController * _emojiKeyManager;
+    UIKBRenderFactory * _factory;
+    UIKBSplitImageView * _keyBackgrounds;
+    UIKBSplitImageView * _keyBorders;
+    UIKBSplitImageView * _keyCaps;
+    UIKBKeyViewAnimator * _keyViewAnimator;
+    UIKBTree * _keyplane;
+    BOOL  _performingDeactivation;
+    UIKBRenderConfig * _renderConfig;
+    NSMutableDictionary * _renderedKeyViews;
+    BOOL  _shouldDrawRect;
+    NSMutableDictionary * _subviewIndex;
 }
 
 @property (nonatomic, readonly) BOOL cacheDeferable;
 @property (nonatomic, readonly) NSString *cacheKey;
 @property (nonatomic, retain) UIKBCacheToken *cacheToken;
-@property (nonatomic, readonly) float cachedWidth;
+@property (nonatomic, readonly) double cachedWidth;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) UIKBTree *defaultKeyplane;
 @property (nonatomic, retain) UIKBCacheToken *defaultKeyplaneCacheToken;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIKeyboardEmojiKeyDisplayController *emojiKeyManager;
 @property (nonatomic, retain) UIKBRenderFactory *factory;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL keepNonPersistent;
@@ -64,15 +66,17 @@
 - (void)dimKeys:(id)arg1;
 - (void)displayLayer:(id)arg1;
 - (void)drawContentsOfRenderers:(id)arg1;
+- (id)emojiKeyManager;
 - (id)factory;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyplane:(id)arg2;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 keyplane:(id)arg2;
 - (BOOL)isPasscodeStyle;
 - (BOOL)keepNonPersistent;
 - (id)keyViewAnimator;
 - (id)keyplane;
 - (void)performDelayedDeactivation:(id)arg1;
 - (void)prepareForDisplay;
+- (void)purgeFactory;
 - (void)purgeKeyViews;
 - (void)purgeLayerContents;
 - (void)purgeSubviews;
@@ -83,6 +87,7 @@
 - (void)setCacheToken:(id)arg1;
 - (void)setDefaultKeyplane:(id)arg1;
 - (void)setDefaultKeyplaneCacheToken:(id)arg1;
+- (void)setEmojiKeyManager:(id)arg1;
 - (void)setFactory:(id)arg1;
 - (void)setKeyViewAnimator:(id)arg1;
 - (void)setKeyplane:(id)arg1;

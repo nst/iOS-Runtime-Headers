@@ -3,16 +3,16 @@
  */
 
 @interface SSSQLiteDatabase : NSObject {
-    NSString *_databasePath;
-    struct sqlite3 { } *_db;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    BOOL _isInTransaction;
-    BOOL _readOnly;
-    id /* block */ _setupBlock;
-    struct __CFDictionary { } *_statementCache;
-    BOOL _takesTaskCompletionAssertions;
-    struct SBSProcessAssertion { } *_taskAssertion;
-    int _taskAssertionCount;
+    NSString * _databasePath;
+    struct sqlite3 { } * _db;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    BOOL  _isInTransaction;
+    BOOL  _readOnly;
+    id /* block */  _setupBlock;
+    struct __CFDictionary { } * _statementCache;
+    BOOL  _takesTaskCompletionAssertions;
+    BKSProcessAssertion * _taskAssertion;
+    int  _taskAssertionCount;
 }
 
 @property (nonatomic, copy) id /* block */ setupBlock;
@@ -36,7 +36,7 @@
 - (void)beginTaskCompletionAssertion;
 - (int)countChanges;
 - (void)dealloc;
-- (void)dispatchAfter:(unsigned long long)arg1 block:(id /* block */)arg2;
+- (void)dispatchAfter:(unsigned int)arg1 block:(id /* block */)arg2;
 - (void)dispatchBlockAsync:(id /* block */)arg1;
 - (void)dispatchBlockSync:(id /* block */)arg1;
 - (void)endTaskCompletionAssertion;

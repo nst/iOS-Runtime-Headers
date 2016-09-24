@@ -3,14 +3,16 @@
  */
 
 @interface SGName : SGObject {
-    NSString *_firstName;
-    NSString *_fullName;
-    NSString *_lastName;
-    NSString *_middleName;
-    NSString *_prefix;
-    NSString *_suffix;
+    unsigned int  _extractionType;
+    NSString * _firstName;
+    NSString * _fullName;
+    NSString * _lastName;
+    NSString * _middleName;
+    NSString * _prefix;
+    NSString * _suffix;
 }
 
+@property (nonatomic, readonly) unsigned int extractionType;
 @property (nonatomic, readonly) NSString *firstName;
 @property (nonatomic, readonly) NSString *fullName;
 @property (nonatomic, readonly) NSString *lastName;
@@ -26,11 +28,13 @@
 - (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned int)extractionType;
 - (id)firstName;
 - (id)fullName;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFirstName:(id)arg1 middleName:(id)arg2 lastName:(id)arg3 fullName:(id)arg4 prefix:(id)arg5 suffix:(id)arg6 recordId:(id)arg7 origin:(id)arg8;
+- (id)initWithFirstName:(id)arg1 middleName:(id)arg2 lastName:(id)arg3 fullName:(id)arg4 prefix:(id)arg5 suffix:(id)arg6 recordId:(id)arg7 origin:(id)arg8 extractionType:(unsigned int)arg9;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToName:(id)arg1;
 - (id)lastName;

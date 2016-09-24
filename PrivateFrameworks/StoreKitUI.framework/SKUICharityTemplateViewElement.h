@@ -3,8 +3,8 @@
  */
 
 @interface SKUICharityTemplateViewElement : SKUIViewElement {
-    NSString *_campaignIdentifier;
-    NSString *_charityMetadataURLString;
+    NSString * _campaignIdentifier;
+    NSString * _charityMetadataURLString;
 }
 
 @property (nonatomic, readonly) NSString *campaignIdentifier;

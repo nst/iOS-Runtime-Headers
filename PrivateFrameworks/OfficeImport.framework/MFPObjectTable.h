@@ -3,7 +3,7 @@
  */
 
 @interface MFPObjectTable : NSObject {
-    NSMutableDictionary *mObjects;
+    NSMutableDictionary * mObjects;
 }
 
 - (void)dealloc;

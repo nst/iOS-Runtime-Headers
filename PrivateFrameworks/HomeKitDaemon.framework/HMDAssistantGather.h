@@ -2,34 +2,46 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDAssistantGather : NSObject {
-    NSArray *_currentHomekitObjects;
-    HMDHomeManager *_manager;
+@interface HMDAssistantGather : NSObject <HMFLogging> {
+    NSArray * _currentHomekitObjects;
+    HMDHomeManager * _manager;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
+@property (nonatomic, readonly) NSString *currentHomeName;
+@property (nonatomic, readonly) NSUUID *currentHomeUUID;
 @property (nonatomic, retain) NSArray *currentHomekitObjects;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) int homeCount;
 @property (nonatomic, readonly) NSArray *homeKitObjects;
 @property (nonatomic) HMDHomeManager *manager;
-@property (nonatomic, readonly) NSString *primaryHomeID;
 @property (nonatomic, readonly) NSString *primaryHomeName;
+@property (nonatomic, readonly) NSUUID *primaryHomeUUID;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
+
++ (id)logCategory;
 
 - (void).cxx_destruct;
 - (void)_gatherHomeKitObjects;
+- (id)_getCurrentHome;
 - (id)_getPrimaryHome;
-- (void)_setAssistantTeamIdentifier;
-- (void)addToList:(id)arg1 objectReference:(id)arg2 name:(id)arg3 type:(id)arg4 home:(id)arg5 andIdentifer:(id)arg6;
-- (void)addToList:(id)arg1 room:(id)arg2;
-- (void)addToList:(id)arg1 service:(id)arg2;
+- (id)currentHomeName;
+- (id)currentHomeUUID;
 - (id)currentHomekitObjects;
 - (void)gatherHomeKitObjects;
+- (void)getSyncEntityObjectsWithValidity:(id)arg1 completionHandler:(id /* block */)arg2;
 - (int)homeCount;
 - (id)homeKitObjects;
-- (id)initWithHomeManager:(id)arg1;
+- (id)initWithHomeManager:(id)arg1 queue:(id)arg2;
 - (id)manager;
-- (id)primaryHomeID;
 - (id)primaryHomeName;
+- (id)primaryHomeUUID;
 - (void)setCurrentHomekitObjects:(id)arg1;
 - (void)setManager:(id)arg1;
+- (void)setWorkQueue:(id)arg1;
+- (id)workQueue;
 
 @end

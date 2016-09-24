@@ -3,11 +3,11 @@
  */
 
 @interface SUNetworkObserver : NSObject <ISSingleton, ISStoreURLOperationDelegate> {
-    ISStoreURLOperation *_partnerDetectOperation;
-    NSString *_partnerIdentifier;
-    BOOL _partnersEnabled;
-    NSTimer *_startupTimer;
-    int _storeServicesNetworkUsageCount;
+    ISStoreURLOperation * _partnerDetectOperation;
+    NSString * _partnerIdentifier;
+    BOOL  _partnersEnabled;
+    NSTimer * _startupTimer;
+    int  _storeServicesNetworkUsageCount;
 }
 
 @property (readonly, copy) NSString *debugDescription;

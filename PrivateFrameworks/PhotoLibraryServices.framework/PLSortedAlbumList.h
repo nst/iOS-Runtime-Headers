@@ -3,11 +3,11 @@
  */
 
 @interface PLSortedAlbumList : NSObject <PLAlbumContainer, PLIndexMappingCache> {
-    struct NSObject { Class x1; } *_backingAlbumList;
-    struct __CFArray { } *_fromBackingMap;
-    id /* block */ _sortComparator;
-    struct __CFArray { } *_toBackingMap;
-    NSMutableOrderedSet *_weak_albums;
+    struct NSObject { Class x1; } * _backingAlbumList;
+    struct __CFArray { } * _fromBackingMap;
+    id /* block */  _sortComparator;
+    struct __CFArray { } * _toBackingMap;
+    NSMutableOrderedSet * _weak_albums;
 }
 
 @property (nonatomic, retain) NSMutableOrderedSet *_albums;
@@ -27,6 +27,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned int unreadAlbumsCount;
 
+- (void).cxx_destruct;
 - (id)_albums;
 - (id)_prettyDescription;
 - (id)_typeDescription;

@@ -3,7 +3,7 @@
  */
 
 @interface SKUIOverlayFlipTransition : NSObject {
-    UIView *_flipSourceView;
+    UIView * _flipSourceView;
 }
 
 @property (nonatomic, retain) UIView *flipSourceView;

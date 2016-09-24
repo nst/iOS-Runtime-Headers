@@ -3,14 +3,14 @@
  */
 
 @interface OADGraphicProperties : OADDrawableProperties <OADEffectsParent, OADProperties3DParent> {
-    NSArray *mEffects;
-    NSArray *mExts;
-    OADFill *mFill;
-    unsigned int mHasIsBehindText;
-    unsigned int mIsBehindText;
-    OADScene3D *mScene3D;
-    OADShape3D *mShape3D;
-    OADStroke *mStroke;
+    NSArray * mEffects;
+    NSArray * mExts;
+    OADFill * mFill;
+    unsigned int  mHasIsBehindText;
+    unsigned int  mIsBehindText;
+    OADScene3D * mScene3D;
+    OADShape3D * mShape3D;
+    OADStroke * mStroke;
 }
 
 @property (readonly, copy) NSString *debugDescription;

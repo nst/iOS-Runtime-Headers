@@ -3,10 +3,10 @@
  */
 
 @interface NFAWDVASSelect : NSObject <NFAWDEventProtocol> {
-    AWDNFCHCEVASSelectEvent *_metric;
-    unsigned int mobileCapabilities;
-    unsigned int swStatus;
-    unsigned int version;
+    AWDNFCHCEVASSelectEvent * _metric;
+    unsigned int  _mobileCapabilities;
+    unsigned int  _swStatus;
+    unsigned int  _version;
 }
 
 @property (readonly, copy) NSString *debugDescription;

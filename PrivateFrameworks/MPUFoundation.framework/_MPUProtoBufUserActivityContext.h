@@ -3,13 +3,13 @@
  */
 
 @interface _MPUProtoBufUserActivityContext : PBCodable <NSCopying> {
-    NSMutableArray *_containerItems;
+    NSMutableArray * _containerItems;
     struct { 
         unsigned int originatorType : 1; 
         unsigned int originatorVersion : 1; 
-    } _has;
-    int _originatorType;
-    int _originatorVersion;
+    }  _has;
+    int  _originatorType;
+    int  _originatorVersion;
 }
 
 @property (nonatomic, retain) NSMutableArray *containerItems;

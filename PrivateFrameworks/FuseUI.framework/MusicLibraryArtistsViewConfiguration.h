@@ -3,9 +3,9 @@
  */
 
 @interface MusicLibraryArtistsViewConfiguration : MusicLibraryBrowseTableViewConfiguration {
-    MusicEntityViewDescriptor *_artistsTableViewDescriptor;
-    MusicEntityViewDescriptor *_recentlyAddedOverviewTableViewDescriptor;
-    BOOL _shouldIncludeRecentlyAddedOverview;
+    MusicEntityViewDescriptor * _artistsTableViewDescriptor;
+    MusicEntityViewDescriptor * _recentlyAddedOverviewTableViewDescriptor;
+    BOOL  _shouldIncludeRecentlyAddedOverview;
 }
 
 @property (nonatomic) BOOL shouldIncludeRecentlyAddedOverview;

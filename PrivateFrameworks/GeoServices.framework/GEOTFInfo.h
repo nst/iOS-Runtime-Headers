@@ -3,8 +3,8 @@
  */
 
 @interface GEOTFInfo : PBCodable <NSCopying> {
-    NSString *_comment;
-    NSString *_language;
+    NSString * _comment;
+    NSString * _language;
 }
 
 @property (nonatomic, retain) NSString *comment;

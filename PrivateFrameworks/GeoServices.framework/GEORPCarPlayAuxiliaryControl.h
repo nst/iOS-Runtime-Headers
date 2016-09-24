@@ -3,7 +3,7 @@
  */
 
 @interface GEORPCarPlayAuxiliaryControl : PBCodable <NSCopying> {
-    GEOCarInfo *_carInfo;
+    GEOCarInfo * _carInfo;
 }
 
 @property (nonatomic, retain) GEOCarInfo *carInfo;

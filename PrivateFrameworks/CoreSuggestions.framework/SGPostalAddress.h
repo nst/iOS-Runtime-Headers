@@ -3,10 +3,13 @@
  */
 
 @interface SGPostalAddress : SGLabeledObject {
-    NSString *_cachedAddress;
-    long _cachedAddressDispatchOnceToken;
-    SGPostalAddressComponents *_components;
-    NSString *_rawAddress;
+    NSString * _cachedAddress;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
+    }  _cachedAddressLock;
+    SGPostalAddressComponents * _components;
+    NSString * _rawAddress;
 }
 
 @property (nonatomic, readonly) NSString *address;
@@ -19,6 +22,7 @@
 - (void).cxx_destruct;
 - (id)address;
 - (id)components;
+- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;

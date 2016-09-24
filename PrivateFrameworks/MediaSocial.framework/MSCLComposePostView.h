@@ -3,22 +3,22 @@
  */
 
 @interface MSCLComposePostView : UIScrollView <NSLayoutManagerDelegate, UITextViewDelegate> {
-    int _allowedCharacterCount;
-    UIButton *_attachmentButton;
-    NSMutableArray *_attachmentViews;
-    UILabel *_characterCountLabel;
-    <MSCLComposePostViewDataSource> *_dataSource;
-    NSArray *_footerViews;
-    NSArray *_headerViews;
-    int _numberOfAttachments;
+    int  _allowedCharacterCount;
+    UIButton * _attachmentButton;
+    NSMutableArray * _attachmentViews;
+    UILabel * _characterCountLabel;
+    <MSCLComposePostViewDataSource> * _dataSource;
+    NSArray * _footerViews;
+    NSArray * _headerViews;
+    int  _numberOfAttachments;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _preCompletionContentOffset;
-    NSArray *_scrollableHeaderViews;
-    UITapGestureRecognizer *_tapRecognizer;
-    UIViewController *_textCompletionViewController;
-    MSCLTokenTextView *_textView;
+        double x; 
+        double y; 
+    }  _preCompletionContentOffset;
+    NSArray * _scrollableHeaderViews;
+    UITapGestureRecognizer * _tapRecognizer;
+    UIViewController * _textCompletionViewController;
+    MSCLTokenTextView * _textView;
 }
 
 @property (nonatomic) int allowedCharacterCount;
@@ -54,7 +54,7 @@
 - (id)footerViews;
 - (id)headerViews;
 - (void)hideTextCompletionViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)insertTag:(id)arg1;
 - (void)layoutManager:(id)arg1 didCompleteLayoutForTextContainer:(id)arg2 atEnd:(BOOL)arg3;
 - (void)layoutSubviews;

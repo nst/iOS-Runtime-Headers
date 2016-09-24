@@ -3,20 +3,20 @@
  */
 
 @interface BRServerInfoRecordInfo : PBCodable <NSCopying> {
-    unsigned long long _bounceNo;
-    NSData *_encryptedBasename;
-    NSString *_etag;
-    NSString *_extension;
+    unsigned int  _bounceNo;
+    NSData * _encryptedBasename;
+    NSString * _etag;
+    NSString * _extension;
     struct { 
         unsigned int bounceNo : 1; 
-    } _has;
-    NSString *_recordID;
-    NSData *_recordProtectionInfo;
-    NSString *_zoneName;
-    NSData *_zoneProtectionInfo;
+    }  _has;
+    NSString * _recordID;
+    NSData * _recordProtectionInfo;
+    NSString * _zoneName;
+    NSData * _zoneProtectionInfo;
 }
 
-@property (nonatomic) unsigned long long bounceNo;
+@property (nonatomic) unsigned int bounceNo;
 @property (nonatomic, retain) NSData *encryptedBasename;
 @property (nonatomic, retain) NSString *etag;
 @property (nonatomic, retain) NSString *extension;
@@ -33,10 +33,10 @@
 @property (nonatomic, retain) NSString *zoneName;
 @property (nonatomic, retain) NSData *zoneProtectionInfo;
 
-- (unsigned long long)bounceNo;
+- (void).cxx_destruct;
+- (unsigned int)bounceNo;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)encryptedBasename;
@@ -56,7 +56,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)recordID;
 - (id)recordProtectionInfo;
-- (void)setBounceNo:(unsigned long long)arg1;
+- (void)setBounceNo:(unsigned int)arg1;
 - (void)setEncryptedBasename:(id)arg1;
 - (void)setEtag:(id)arg1;
 - (void)setExtension:(id)arg1;

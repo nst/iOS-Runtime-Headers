@@ -3,8 +3,8 @@
  */
 
 @interface MKLocalSearch : NSObject {
-    MKLocalSearchRequest *_request;
-    <MKMapServiceTicket> *_ticket;
+    MKLocalSearchRequest * _request;
+    <MKMapServiceTicket> * _ticket;
 }
 
 @property (getter=isSearching, nonatomic, readonly) BOOL searching;

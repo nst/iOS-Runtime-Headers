@@ -3,8 +3,8 @@
  */
 
 @interface EDProcessors : NSObject {
-    NSMutableArray *mProcessors;
-    EDWorkbook *mWorkbook;
+    NSMutableArray * mProcessors;
+    EDWorkbook * mWorkbook;
 }
 
 - (void)addProcessorClass:(Class)arg1;

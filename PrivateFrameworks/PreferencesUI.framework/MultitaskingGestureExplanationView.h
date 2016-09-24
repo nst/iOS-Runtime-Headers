@@ -3,11 +3,11 @@
  */
 
 @interface MultitaskingGestureExplanationView : UIView <PSHeaderFooterView> {
-    UIColor *_footerTextColor;
-    UILabel *_labels;
-    float _sized;
-    UnderlineButton *_videoLinkButton;
-    float _width;
+    UIColor * _footerTextColor;
+    UILabel * _labels;
+    double  _sized;
+    UnderlineButton * _videoLinkButton;
+    double  _width;
 }
 
 - (void).cxx_destruct;

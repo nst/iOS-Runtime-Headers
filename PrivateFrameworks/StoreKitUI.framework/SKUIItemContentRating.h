@@ -3,10 +3,10 @@
  */
 
 @interface SKUIItemContentRating : NSObject {
-    NSString *_contentRank;
-    NSArray *_contentRatingAdvisories;
-    NSString *_contentRatingName;
-    NSString *_contentRatingSystemName;
+    NSString * _contentRank;
+    NSArray * _contentRatingAdvisories;
+    NSString * _contentRatingName;
+    NSString * _contentRatingSystemName;
 }
 
 @property (nonatomic, readonly) NSString *contentRank;

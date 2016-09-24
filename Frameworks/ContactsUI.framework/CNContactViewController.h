@@ -3,37 +3,38 @@
  */
 
 @interface CNContactViewController : UIViewController <CNContactViewHostProtocol> {
-    _UIAccessDeniedView *_accessDeniedView;
-    int _actions;
-    CNContact *_additionalContact;
-    void *_addressBook;
-    BOOL _allowsEditing;
-    NSString *_alternateName;
-    CNContact *_contact;
-    CNContactFormatter *_contactFormatter;
-    UIView *_contactHeaderView;
-    CNContactStore *_contactStore;
-    CNContact *_contentContact;
-    CNContactContentViewController *_contentViewController;
-    <CNContactViewControllerDelegate> *_delegate;
-    int _displayMode;
-    NSArray *_displayedPropertyKeys;
-    int _editMode;
-    NSArray *_extraBarButtonItems;
-    NSString *_highlightedPropertyIdentifier;
-    BOOL _highlightedPropertyImportant;
-    NSString *_highlightedPropertyKey;
-    BOOL _ignoreViewWillBePresented;
-    BOOL _isRealViewLoaded;
-    NSString *_message;
-    int _mode;
-    CNContainer *_parentContainer;
-    CNGroup *_parentGroup;
-    CNPolicy *_policy;
-    NSString *_primaryPropertyKey;
-    BOOL _shouldShowLinkedContacts;
-    BOOL _showingMeContact;
-    UIViewController<CNContactContentViewController> *_viewController;
+    _UIAccessDeniedView * _accessDeniedView;
+    int  _actions;
+    CNContact * _additionalContact;
+    void * _addressBook;
+    BOOL  _allowsEditing;
+    NSString * _alternateName;
+    CNContact * _contact;
+    CNContactFormatter * _contactFormatter;
+    UIView * _contactHeaderView;
+    UIViewController * _contactHeaderViewController;
+    CNContactStore * _contactStore;
+    CNContact * _contentContact;
+    CNContactContentViewController * _contentViewController;
+    <CNContactViewControllerDelegate> * _delegate;
+    int  _displayMode;
+    NSArray * _displayedPropertyKeys;
+    int  _editMode;
+    NSArray * _extraBarButtonItems;
+    NSString * _highlightedPropertyIdentifier;
+    BOOL  _highlightedPropertyImportant;
+    NSString * _highlightedPropertyKey;
+    BOOL  _ignoreViewWillBePresented;
+    NSString * _message;
+    int  _mode;
+    CNContainer * _parentContainer;
+    CNGroup * _parentGroup;
+    CNPolicy * _policy;
+    NSString * _primaryPropertyKey;
+    BOOL  _requiresSetup;
+    BOOL  _shouldShowLinkedContacts;
+    BOOL  _showingMeContact;
+    UIViewController<CNContactContentViewController> * _viewController;
 }
 
 @property (nonatomic, readonly) _UIAccessDeniedView *accessDeniedView;
@@ -45,6 +46,7 @@
 @property (nonatomic, retain) CNContact *contact;
 @property (nonatomic, retain) CNContactFormatter *contactFormatter;
 @property (nonatomic, retain) UIView *contactHeaderView;
+@property (nonatomic, retain) UIViewController *contactHeaderViewController;
 @property (nonatomic, retain) CNContactStore *contactStore;
 @property (nonatomic, retain) CNContact *contentContact;
 @property (nonatomic, retain) CNContactContentViewController *contentViewController;
@@ -59,7 +61,6 @@
 @property (nonatomic, retain) NSString *highlightedPropertyIdentifier;
 @property (nonatomic) BOOL highlightedPropertyImportant;
 @property (nonatomic, retain) NSString *highlightedPropertyKey;
-@property (nonatomic) BOOL isRealViewLoaded;
 @property (nonatomic, copy) NSString *message;
 @property (nonatomic, readonly) int mode;
 @property (nonatomic, retain) CNContainer *parentContainer;
@@ -67,6 +68,7 @@
 @property (nonatomic, readonly) CNPolicy *policy;
 @property (nonatomic, retain) NSString *primaryPropertyKey;
 @property (nonatomic, readonly) <CNContactViewControllerPrivateDelegate> *privateDelegate;
+@property (nonatomic) BOOL requiresSetup;
 @property (nonatomic) BOOL shouldShowLinkedContacts;
 @property (nonatomic) BOOL showingMeContact;
 @property (readonly) Class superclass;
@@ -94,16 +96,20 @@
 - (BOOL)allowsActions;
 - (BOOL)allowsEditing;
 - (id)alternateName;
+- (void)configureNavigationItem:(id)arg1;
 - (id)contact;
 - (id)contactFormatter;
 - (id)contactHeaderView;
+- (id)contactHeaderViewController;
 - (id)contactStore;
 - (id)contentContact;
 - (id)contentViewController;
 - (void)dealloc;
 - (id)delegate;
+- (void)didChangePreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)didCompleteWithContact:(id)arg1;
 - (void)didDeleteContact:(id)arg1;
+- (void)didMoveToParentViewController:(id)arg1;
 - (int)displayMode;
 - (id)displayedPropertyKeys;
 - (void)editCancel:(id)arg1;
@@ -119,7 +125,6 @@
 - (id)initWithMode:(int)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)isPresentingFullscreen:(BOOL)arg1;
-- (BOOL)isRealViewLoaded;
 - (void)loadView;
 - (id)message;
 - (int)mode;
@@ -129,6 +134,7 @@
 - (id)policy;
 - (id)primaryPropertyKey;
 - (id)privateDelegate;
+- (BOOL)requiresSetup;
 - (void)setActions:(int)arg1;
 - (void)setAdditionalContact:(id)arg1;
 - (void)setAllowsActions:(BOOL)arg1;
@@ -138,6 +144,7 @@
 - (void)setContact:(id)arg1 additionalContact:(id)arg2 mode:(int)arg3;
 - (void)setContactFormatter:(id)arg1;
 - (void)setContactHeaderView:(id)arg1;
+- (void)setContactHeaderViewController:(id)arg1;
 - (void)setContactStore:(id)arg1;
 - (void)setContentContact:(id)arg1;
 - (void)setContentViewController:(id)arg1;
@@ -151,11 +158,11 @@
 - (void)setHighlightedPropertyIdentifier:(id)arg1;
 - (void)setHighlightedPropertyImportant:(BOOL)arg1;
 - (void)setHighlightedPropertyKey:(id)arg1;
-- (void)setIsRealViewLoaded:(BOOL)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setParentContainer:(id)arg1;
 - (void)setParentGroup:(id)arg1;
 - (void)setPrimaryPropertyKey:(id)arg1;
+- (void)setRequiresSetup:(BOOL)arg1;
 - (void)setShouldShowLinkedContacts:(BOOL)arg1;
 - (void)setShowingMeContact:(BOOL)arg1;
 - (void)setViewController:(id)arg1;
@@ -168,5 +175,6 @@
 - (void)updateEditing:(BOOL)arg1 doneButtonEnabled:(BOOL)arg2 doneButtonText:(id)arg3;
 - (id)viewController;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewWillLayoutSubviews;
 
 @end

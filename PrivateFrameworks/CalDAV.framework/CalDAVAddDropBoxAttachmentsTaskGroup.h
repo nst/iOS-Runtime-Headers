@@ -3,16 +3,16 @@
  */
 
 @interface CalDAVAddDropBoxAttachmentsTaskGroup : CoreDAVTaskGroup <CoreDAVTaskDelegate, CoreDAVTaskGroupDelegate> {
-    NSSet *_aceItems;
-    NSDictionary *_attachments;
-    NSSet *_attendeePrincipalURLs;
-    BOOL _attendeesCanManageDropBox;
-    NSDictionary *_contentTypes;
-    NSURL *_dropboxURL;
-    NSDictionary *_putFailureSizes;
-    NSMutableDictionary *_sentAttachmentURLsToETags;
-    int _state;
-    CoreDAVUpdateACLTaskGroup *_updateACLTaskGroup;
+    NSSet * _aceItems;
+    NSDictionary * _attachments;
+    NSSet * _attendeePrincipalURLs;
+    BOOL  _attendeesCanManageDropBox;
+    NSDictionary * _contentTypes;
+    NSURL * _dropboxURL;
+    NSDictionary * _putFailureSizes;
+    NSMutableDictionary * _sentAttachmentURLsToETags;
+    int  _state;
+    CoreDAVUpdateACLTaskGroup * _updateACLTaskGroup;
 }
 
 @property (nonatomic, retain) NSSet *aceItems;

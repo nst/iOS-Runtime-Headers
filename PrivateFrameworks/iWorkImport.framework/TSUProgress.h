@@ -3,9 +3,9 @@
  */
 
 @interface TSUProgress : NSObject {
-    NSString *mMessage;
-    NSMutableSet *mProgressObservers;
-    NSObject<OS_dispatch_queue> *mProgressObserversQueue;
+    NSString * mMessage;
+    NSMutableSet * mProgressObservers;
+    NSObject<OS_dispatch_queue> * mProgressObserversQueue;
 }
 
 @property (getter=isIndeterminate, readonly) BOOL indeterminate;

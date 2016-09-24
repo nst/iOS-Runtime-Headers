@@ -3,14 +3,14 @@
  */
 
 @interface DDActionController : NSObject <DDActionDelegate, UIPopoverPresentationControllerDelegate> {
-    UIAlertController *_alertController;
-    UIView *_baseView;
-    DDAction *_currentAction;
-    UIViewController *_currentBaseViewController;
-    NSString *_idsListenerID;
-    <DDDetectionControllerInteractionDelegate> *_interactionDelegate;
-    UIWindow *_originalWindow;
-    UIViewController *_presentedViewController;
+    UIAlertController * _alertController;
+    UIView * _baseView;
+    DDAction * _currentAction;
+    UIViewController * _currentBaseViewController;
+    NSString * _idsListenerID;
+    <DDDetectionControllerInteractionDelegate> * _interactionDelegate;
+    UIWindow * _originalWindow;
+    UIViewController * _presentedViewController;
 }
 
 @property (nonatomic, retain) UIAlertController *alertController;

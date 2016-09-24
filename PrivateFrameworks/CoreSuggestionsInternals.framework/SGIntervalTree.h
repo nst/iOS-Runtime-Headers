@@ -3,11 +3,11 @@
  */
 
 @interface SGIntervalTree : NSObject <SGIntervalTreeProtocol> {
-    NSMutableDictionary *_keyToInterval;
-    SGIntervalTreeNode *_root;
-    BOOL _treeFrozen;
-    BOOL _treeKeyed;
-    NSMutableIndexSet *_treePositions;
+    NSMutableDictionary * _keyToInterval;
+    SGIntervalTreeNode * _root;
+    BOOL  _treeFrozen;
+    BOOL  _treeKeyed;
+    NSMutableIndexSet * _treePositions;
 }
 
 - (void).cxx_destruct;

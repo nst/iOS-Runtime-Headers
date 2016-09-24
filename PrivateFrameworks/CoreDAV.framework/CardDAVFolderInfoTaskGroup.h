@@ -3,7 +3,7 @@
  */
 
 @interface CardDAVFolderInfoTaskGroup : CoreDAVContainerInfoTaskGroup {
-    NSSet *_directoryGatewayURLs;
+    NSSet * _directoryGatewayURLs;
 }
 
 - (id)_copyContainerParserMappings;

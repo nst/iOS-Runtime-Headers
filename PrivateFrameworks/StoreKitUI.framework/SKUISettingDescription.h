@@ -3,9 +3,9 @@
  */
 
 @interface SKUISettingDescription : NSObject {
-    BOOL _editsValid;
-    SKUISettingsGroupDescription *_parent;
-    SKUIViewElement *_viewElement;
+    BOOL  _editsValid;
+    SKUISettingsGroupDescription * _parent;
+    SKUIViewElement * _viewElement;
 }
 
 @property (nonatomic, readonly) BOOL allowsSelection;

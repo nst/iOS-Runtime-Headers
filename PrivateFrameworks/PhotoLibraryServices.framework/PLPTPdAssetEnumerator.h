@@ -3,12 +3,11 @@
  */
 
 @interface PLPTPdAssetEnumerator : NSObject <NSFastEnumeration> {
-    NSArray *_albumObjectIDs;
-    NSArray *_assetObjectIDs;
-    PLManagedObjectContext *_managedObjectContext;
+    NSArray * _assetObjectIDs;
+    PLManagedObjectContext * _managedObjectContext;
 }
 
-+ (id)enumeratorWithAssetObjectIDs:(id)arg1 albumObjectIDs:(id)arg2 managedObjectContext:(id)arg3;
++ (id)enumeratorWithAssetObjectIDs:(id)arg1 managedObjectContext:(id)arg2;
 
 - (id)assetsFromOffset:(unsigned int)arg1 count:(unsigned int)arg2;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
@@ -16,6 +15,6 @@
 - (void)enumerateDictionariesUsingBlock:(id /* block */)arg1;
 - (void)enumerateDictionariesWithCount:(unsigned int)arg1 fetchOffset:(unsigned int)arg2 usingBlock:(id /* block */)arg3;
 - (unsigned int)getPTPdInfo:(id*)arg1 count:(unsigned int)arg2 fetchOffset:(unsigned int)arg3;
-- (id)init;
+- (id)initWithAssetObjectIDs:(id)arg1 managedObjectContext:(id)arg2;
 
 @end

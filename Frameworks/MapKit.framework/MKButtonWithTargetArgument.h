@@ -3,7 +3,7 @@
  */
 
 @interface MKButtonWithTargetArgument : UIButton {
-    id _targetArgument;
+    id  _targetArgument;
 }
 
 @property (nonatomic, retain) id targetArgument;

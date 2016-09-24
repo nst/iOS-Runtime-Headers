@@ -3,11 +3,10 @@
  */
 
 @interface WorldClockManager : NSObject {
-    NSMutableArray *_cities;
-    WorldClockPreferences *_defaults;
-    BOOL _dirty;
-    NSTimer *_weatherUpdateTimer;
-    NSDate *lastModified;
+    NSMutableArray * _cities;
+    WorldClockPreferences * _defaults;
+    BOOL  _dirty;
+    NSDate * lastModified;
 }
 
 @property (nonatomic, readonly) NSArray *cities;
@@ -35,9 +34,6 @@
 - (void)removeCityAtIndex:(unsigned int)arg1;
 - (void)saveCities;
 - (void)setLastModified:(id)arg1;
-- (void)updateWeatherDataForCities:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)updateWeatherDataWithCompletion:(id /* block */)arg1;
-- (id)weatherReachabilityURL;
 - (id)worldClockCityFromPersistenceArray:(id)arg1;
 - (id)worldClockCityFromPersistenceDictionary:(id)arg1;
 - (id)worldClockCityFromPersistenceRepresentation:(id)arg1;

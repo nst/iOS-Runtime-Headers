@@ -3,11 +3,11 @@
  */
 
 @interface OCDSummary : NSObject {
-    NSString *mAuthor;
-    NSString *mComments;
-    NSString *mHyperlinkBase;
-    NSString *mKeywords;
-    NSString *mTitle;
+    NSString * mAuthor;
+    NSString * mComments;
+    NSString * mHyperlinkBase;
+    NSString * mKeywords;
+    NSString * mTitle;
 }
 
 - (id)author;

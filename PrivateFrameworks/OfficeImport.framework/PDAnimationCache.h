@@ -3,27 +3,27 @@
  */
 
 @interface PDAnimationCache : NSObject {
-    PDBuild *mBuild;
-    double mDelay;
-    double mDirection;
-    double mDuration;
-    NSString *mGroupId;
-    BOOL mHasDelay;
-    BOOL mHasDirection;
-    BOOL mHasDuration;
-    BOOL mHasPartCount;
-    BOOL mHasValue;
-    BOOL mIsHead;
-    int mIterateType;
-    int mLevel;
-    PDAnimateMotionBehavior *mMotionPath;
-    int mNodeType;
-    int mPartCount;
-    int mPresetClass;
-    int mPresetId;
-    int mPresetSubType;
-    PDAnimationTarget *mTarget;
-    double mValue;
+    PDBuild * mBuild;
+    double  mDelay;
+    double  mDirection;
+    double  mDuration;
+    NSString * mGroupId;
+    BOOL  mHasDelay;
+    BOOL  mHasDirection;
+    BOOL  mHasDuration;
+    BOOL  mHasPartCount;
+    BOOL  mHasValue;
+    BOOL  mIsHead;
+    int  mIterateType;
+    int  mLevel;
+    PDAnimateMotionBehavior * mMotionPath;
+    int  mNodeType;
+    int  mPartCount;
+    int  mPresetClass;
+    int  mPresetId;
+    int  mPresetSubType;
+    PDAnimationTarget * mTarget;
+    double  mValue;
 }
 
 @property (nonatomic, retain) PDBuild *build;

@@ -3,12 +3,19 @@
  */
 
 @interface NSFilePresenterRelinquishment : NSObject {
-    NSCountedSet *_blockingAccessClaimIDs;
-    id /* block */ _reacquirer;
+    NSCountedSet * _blockingAccessClaimIDs;
+    NSMutableArray * _blockingPrerelinquishReplies;
+    BOOL  _prerelinquishInProgress;
+    id /* block */  _reacquirer;
+    NSMutableArray * _relinquishReplies;
 }
 
-- (BOOL)addBlockingAccessClaimID:(id)arg1;
+- (void)addPrerelinquishReply:(id /* block */)arg1;
+- (void)addRelinquishReply:(id /* block */)arg1;
 - (void)dealloc;
+- (void)didRelinquish;
+- (void)performRelinquishmentToAccessClaimIfNecessary:(id)arg1 usingBlock:(id /* block */)arg2 withReply:(id /* block */)arg3;
+- (void)performRemoteDeletePrerelinquishmentIfNecessaryUsingBlock:(id /* block */)arg1 withReply:(id /* block */)arg2;
 - (void)removeAllBlockingAccessClaimIDs;
 - (void)removeBlockingAccessClaimID:(id)arg1;
 - (void)removeBlockingAccessClaimID:(id)arg1 thenContinue:(id /* block */)arg2;

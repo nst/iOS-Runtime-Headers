@@ -2,28 +2,47 @@
    Image: /System/Library/PrivateFrameworks/VoiceTrigger.framework/VoiceTrigger
  */
 
-@interface VTStateManager : NSObject {
-    id /* block */ _callback;
-    id /* block */ _callbackWithMessage;
-    NSXPCListener *_listener;
-    VTXListenerDelegate *_listenerDelegate;
-    BOOL _needBatteryPolicyOverride;
-    VTPhraseSpotter *_phraseSpotter;
+@interface VTStateManager : NSObject <VTGestureMonitorDelegate> {
+    id /* block */  _callbackWithMessageAndTimestamp;
+    VTPolicy * _enablePolicy;
+    VTGestureMonitor * _gestureMonitor;
+    VTPhraseSpotter * _phraseSpotter;
+    NSObject<OS_dispatch_queue> * _queue;
+    BOOL  _voiceTriggerIsEnabled;
+    unsigned int  _wakeGestureHostTime;
+    VTXPCServiceServer * _xpcServer;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+
 + (id)_serviceClient;
-+ (BOOL)enabledByAssertion;
-+ (BOOL)onBattery;
++ (void)clearVoiceTriggerCount;
++ (id)firstChanceAudioBuffer;
++ (id)firstChanceTriggeredDate;
++ (id)firstChanceVTEventInfo;
++ (int)getVoiceTriggerCount;
++ (BOOL)isLastTriggerForced;
++ (BOOL)isLastTriggerSecondChanceTriggered;
++ (void)notifyVoiceTriggeredSiriSessionCancelled;
++ (void)requestForcedSecondChance;
++ (void)requestForcedTriggerEvent;
 + (void)requestPhraseSpotterBypassing:(BOOL)arg1 timeout:(double)arg2;
 + (void)requestVoiceTriggerEnabled:(BOOL)arg1 forReason:(id)arg2;
 
 - (void).cxx_destruct;
-- (void)dealloc;
+- (void)_initializeXPCService;
+- (void)_notifyStateTransitionToState:(int)arg1 withStartTimestamp:(unsigned int)arg2;
+- (void)_powerlog:(id)arg1;
+- (void)_stateTransitionDidOccur:(BOOL)arg1;
+- (void)gestureMonitorDidReceiveSleepGesture:(id)arg1;
+- (void)gestureMonitorDidReceiveWakeGesture:(id)arg1;
 - (id)getModel;
 - (id)getPhraseSpotter;
 - (id)initWithProperty:(id)arg1 callbackWithMessage:(id /* block */)arg2;
-- (id)initWithStateTransitionCallback:(id /* block */)arg1;
-- (BOOL)needBatteryPolicyOverride;
-- (void)notify:(BOOL)arg1;
+- (id)initWithProperty:(id)arg1 callbackWithMessageAndTimestamp:(id /* block */)arg2;
+- (id)initWithProperty:(id)arg1 phraseSpotter:(id)arg2 enablePolicy:(id)arg3 callbackWithMessageAndTimestamp:(id /* block */)arg4;
 
 @end

@@ -2,45 +2,45 @@
    Image: /System/Library/PrivateFrameworks/WebApp.framework/WebApp
  */
 
-@interface WebAppController : WebUIDelegate <UIApplicationDelegate, UIWebViewDelegate, UIWebViewPrivateDelegate, WebPolicyDelegate> {
-    NSMutableArray *_alerts;
-    WebUIAuthenticationManager *_authenticationManager;
-    NSDictionary *_connectionProperties;
-    WebUIDownloadManager *_downloadManager;
-    NSArray *_fallbackURLs;
-    NSMutableSet *_highLevelDomainsAndPortsToUseOnlyAvailableIdentityWithoutPrompting;
+@interface WebAppController : NSObject <UIApplicationDelegate, UIWebViewDelegate, UIWebViewPrivateDelegate, WebPolicyDelegate> {
+    NSMutableArray * _alerts;
+    WebUIAuthenticationManager * _authenticationManager;
+    NSDictionary * _connectionProperties;
+    WebUIDownloadManager * _downloadManager;
+    NSArray * _fallbackURLs;
+    NSMutableSet * _highLevelDomainsAndPortsToUseOnlyAvailableIdentityWithoutPrompting;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _inputViewScreenBoundsAfterRotation;
-    BOOL _isSuspended;
-    UIView *_loadingView;
-    int _orientation;
-    unsigned int _rotationEdgePin;
+    }  _inputViewScreenBoundsAfterRotation;
+    BOOL  _isSuspended;
+    UIView * _loadingView;
+    int  _orientation;
+    unsigned int  _rotationEdgePin;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _rotationRect;
-    WBUSheetController *_sheetController;
-    UIWindow *_window;
-    BOOL snapshotHideTimeHasExpired;
-    NSTimer *snapshotHideTimer;
-    UIWebClip *webClip;
-    UIWebView *webView;
-    BOOL webViewDidLayout;
-    BOOL webViewHasFinishedLoading;
+    }  _rotationRect;
+    WBUSheetController * _sheetController;
+    UIWindow * _window;
+    BOOL  snapshotHideTimeHasExpired;
+    NSTimer * snapshotHideTimer;
+    UIWebClip * webClip;
+    UIWebView * webView;
+    BOOL  webViewDidLayout;
+    BOOL  webViewHasFinishedLoading;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -67,7 +67,7 @@
 - (id)_sheetController;
 - (void)addAlert:(id)arg1;
 - (void)addAlertWithTitle:(id)arg1 bodyText:(id)arg2 context:(id)arg3;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })browserFrameForOrientation:(int)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })browserFrameForOrientation:(int)arg1;
 - (void)cancelFromAuthenticationManager:(id)arg1 forChallenge:(id)arg2;
 - (id)containerViewForAuthenticationPanel;
 - (void)continueAfterCertificateAlertWithContext:(id)arg1;

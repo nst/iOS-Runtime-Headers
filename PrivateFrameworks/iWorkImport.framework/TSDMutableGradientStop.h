@@ -5,8 +5,8 @@
 @interface TSDMutableGradientStop : TSDGradientStop
 
 @property (nonatomic, copy) TSUColor *color;
-@property (nonatomic) float fraction;
-@property (nonatomic) float inflection;
+@property (nonatomic) double fraction;
+@property (nonatomic) double inflection;
 
 - (void)setColor:(id)arg1;
 - (void)setFraction:(float)arg1;

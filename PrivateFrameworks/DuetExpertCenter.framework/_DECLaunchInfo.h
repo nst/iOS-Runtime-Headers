@@ -3,11 +3,11 @@
  */
 
 @interface _DECLaunchInfo : NSObject <NSSecureCoding> {
-    unsigned char _consumerSubtype;
-    int _itemsShownCount;
-    NSDictionary *_itemsShownCounts;
-    int _launchSource;
-    NSString *_query;
+    unsigned char  _consumerSubtype;
+    int  _itemsShownCount;
+    NSDictionary * _itemsShownCounts;
+    int  _launchSource;
+    NSString * _query;
 }
 
 @property (nonatomic, readonly) unsigned char consumerSubtype;

@@ -3,10 +3,10 @@
  */
 
 @interface CKPCSDiagnosticInformation : NSObject <NSSecureCoding> {
-    NSString *_identityInfo;
-    NSMutableArray *_notFoundZoneIDs;
-    NSMutableDictionary *_pcsInfoByZoneID;
-    NSString *_serviceIdentityInfo;
+    NSString * _identityInfo;
+    NSMutableArray * _notFoundZoneIDs;
+    NSMutableDictionary * _pcsInfoByZoneID;
+    NSString * _serviceIdentityInfo;
 }
 
 @property (nonatomic, retain) NSString *identityInfo;

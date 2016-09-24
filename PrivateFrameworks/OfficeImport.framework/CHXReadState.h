@@ -3,16 +3,16 @@
  */
 
 @interface CHXReadState : NSObject {
-    <CHAutoStyling> *mAutoStyling;
-    CHDChart *mChart;
-    OCPPackagePart *mChartPart;
-    CHDChartType *mCurrentChartType;
-    CHDSeries *mCurrentSeries;
-    OADParagraphProperties *mDefaultTextProperties;
-    BOOL mDefaultTextPropertiesHaveExplicitFontSize;
-    EXOfficeArtState *mDrawingState;
-    BOOL mIgnoreFormulas;
-    EDResources *mResources;
+    <CHAutoStyling> * mAutoStyling;
+    CHDChart * mChart;
+    OCPPackagePart * mChartPart;
+    CHDChartType * mCurrentChartType;
+    CHDSeries * mCurrentSeries;
+    OADParagraphProperties * mDefaultTextProperties;
+    BOOL  mDefaultTextPropertiesHaveExplicitFontSize;
+    EXOfficeArtState * mDrawingState;
+    BOOL  mIgnoreFormulas;
+    EDResources * mResources;
 }
 
 @property (nonatomic) BOOL ignoreFormulas;

@@ -3,16 +3,16 @@
  */
 
 @interface SFAirDropDiscoveryController : NSObject <SFWirelessSettingsControllerDelegate, UIActionSheetDelegate> {
-    UIAlertController *_alertController;
-    id _alertControllerDelegate;
-    struct __SFOperation { } *_controller;
-    id _delegate;
-    int _discoverableMode;
-    BOOL _isLegacyDevice;
-    BOOL _isLegacyModeEnabled;
-    BOOL _isLegacyModeSettable;
-    BOOL _isVisible;
-    SFWirelessSettingsController *_settingsController;
+    UIAlertController * _alertController;
+    id  _alertControllerDelegate;
+    struct __SFOperation { } * _controller;
+    id  _delegate;
+    int  _discoverableMode;
+    BOOL  _isLegacyDevice;
+    BOOL  _isLegacyModeEnabled;
+    BOOL  _isLegacyModeSettable;
+    BOOL  _isVisible;
+    SFWirelessSettingsController * _settingsController;
 }
 
 @property <SFAirDropDiscoveryAlertControllerDelegate> *alertControllerDelegate;
@@ -27,6 +27,7 @@
 @property (readonly) Class superclass;
 @property (getter=isVisible, readonly) BOOL visible;
 
+- (void).cxx_destruct;
 - (id)alertControllerDelegate;
 - (void)dealloc;
 - (id)delegate;

@@ -3,7 +3,7 @@
  */
 
 @interface BSXPCCodingArray : NSObject <BSXPCCoding, NSFastEnumeration> {
-    NSArray *_array;
+    NSArray * _array;
 }
 
 @property (readonly, copy) NSString *debugDescription;

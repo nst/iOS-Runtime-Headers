@@ -3,7 +3,7 @@
  */
 
 @interface IKCSSDeclarationList : NSObject {
-    NSMutableArray *declarations;
+    NSMutableArray * declarations;
 }
 
 - (void).cxx_destruct;

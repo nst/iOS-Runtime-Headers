@@ -3,15 +3,15 @@
  */
 
 @interface BBRemoteDataProvider : BBDataProvider <BBRemoteDataProviderServerProxy> {
-    <BBRemoteDataProviderClientProxy> *_clientProxy;
-    BOOL _connected;
-    <BBRemoteDataProviderDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_proxyQueue;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_queue> *_replyQueue;
-    NSString *_sectionID;
-    NSObject<OS_dispatch_queue> *_serverControlQueue;
-    BOOL _serverIsReady;
+    <BBRemoteDataProviderClientProxy> * _clientProxy;
+    BOOL  _connected;
+    <BBRemoteDataProviderDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _proxyQueue;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_queue> * _replyQueue;
+    NSString * _sectionID;
+    NSObject<OS_dispatch_queue> * _serverControlQueue;
+    BOOL  _serverIsReady;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -19,11 +19,10 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_logDoesNotRespond:(SEL)arg1;
 - (void)_sendClientRequest:(id /* block */)arg1;
 - (void)addBulletin:(id)arg1 forDestinations:(unsigned int)arg2;
-- (void)attachmentAspectRatioForRecordID:(id)arg1 completion:(id /* block */)arg2;
-- (void)attachmentPNGDataForRecordID:(id)arg1 sizeConstraints:(id)arg2 completion:(id /* block */)arg3;
 - (void)bulletinsWithRequestParameters:(id)arg1 lastCleared:(id)arg2 completion:(id /* block */)arg3;
 - (void)calloutToServer:(id /* block */)arg1;
 - (BOOL)canPerformMigration;
@@ -36,15 +35,17 @@
 - (id)debugDescription;
 - (id)debugDescriptionWithChildren:(unsigned int)arg1;
 - (void)deliverMessageWithName:(id)arg1 userInfo:(id)arg2;
-- (void)deliverResponse:(id)arg1 forBulletinRequest:(id)arg2;
+- (void)deliverResponse:(id)arg1 forBulletinRequest:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)getAspectRatioForAttachmentUUID:(id)arg1 recordID:(id)arg2 isPrimary:(BOOL)arg3 withHandler:(id /* block */)arg4;
 - (void)getClearedInfoWithCompletion:(id /* block */)arg1;
+- (void)getDataForAttachmentUUID:(id)arg1 recordID:(id)arg2 isPrimary:(BOOL)arg3 withHandler:(id /* block */)arg4;
+- (void)getPNGDataForAttachmentUUID:(id)arg1 recordID:(id)arg2 isPrimary:(BOOL)arg3 sizeConstraints:(id)arg4 withHandler:(id /* block */)arg5;
 - (void)getSectionInfoWithCompletion:(id /* block */)arg1;
 - (id)initWithSectionID:(id)arg1 delegate:(id)arg2;
 - (void)invalidateBulletins;
 - (BOOL)migrateSectionInfo:(id)arg1 oldSectionInfo:(id)arg2;
 - (void)modifyBulletin:(id)arg1;
 - (void)noteSectionInfoDidChange:(id)arg1;
-- (void)primaryAttachmentDataForRecordID:(id)arg1 completion:(id /* block */)arg2;
 - (void)reloadDefaultSectionInfo:(id)arg1;
 - (void)reloadIdentityWithCompletion:(id /* block */)arg1;
 - (void)reloadSectionParameters:(id)arg1;

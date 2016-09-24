@@ -3,9 +3,9 @@
  */
 
 @interface SCNNodeComponent : NSObject {
-    id component;
-    SCNNodeComponent *next;
-    int type;
+    id  component;
+    SCNNodeComponent * next;
+    int  type;
 }
 
 @property (nonatomic, retain) id component;

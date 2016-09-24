@@ -3,12 +3,12 @@
  */
 
 @interface GKThreadsafeCache : NSObject <GKCache> {
-    GKLinkedList *_cacheList;
-    unsigned int _count;
-    NSMutableDictionary *_dictionary;
-    unsigned int _maxCount;
-    NSMutableDictionary *_missingEntryQueues;
-    NSObject<OS_dispatch_queue> *_syncQueue;
+    GKLinkedList * _cacheList;
+    unsigned int  _count;
+    NSMutableDictionary * _dictionary;
+    unsigned int  _maxCount;
+    NSMutableDictionary * _missingEntryQueues;
+    NSObject<OS_dispatch_queue> * _syncQueue;
 }
 
 @property (nonatomic, retain) GKLinkedList *cacheList;

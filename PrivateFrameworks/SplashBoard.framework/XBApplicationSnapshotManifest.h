@@ -3,7 +3,7 @@
  */
 
 @interface XBApplicationSnapshotManifest : NSObject <BSDescriptionProviding> {
-    XBApplicationSnapshotManifestImpl *_manifestImpl;
+    XBApplicationSnapshotManifestImpl * _manifestImpl;
 }
 
 @property (nonatomic, readonly, copy) NSString *bundleIdentifier;
@@ -18,7 +18,6 @@
 + (void)deleteAllSystemSnapshots;
 + (void)initialize;
 
-- (void)archive;
 - (void)beginSnapshotAccessTransaction:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (id)bundleIdentifier;
 - (id)containerPath;
@@ -36,10 +35,10 @@
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
+- (void)generateImageForSnapshot:(id)arg1 dataProvider:(id)arg2 writeToFile:(BOOL)arg3 completion:(id /* block */)arg4;
 - (void)generateImageForSnapshot:(id)arg1 dataProvider:(id)arg2 writeToFile:(BOOL)arg3 didGenerateImage:(id /* block */)arg4 didSaveImage:(id /* block */)arg5;
-- (id)initWithApplicationCompatibilityInfo:(id)arg1;
 - (id)initWithApplicationInfo:(id)arg1;
-- (id)initWithBundleIdentifier:(id)arg1;
+- (id)initWithContainerIdentity:(id)arg1 store:(id)arg2;
 - (id)manifestImpl;
 - (void)saveSnapshot:(id)arg1 atPath:(id)arg2 withContext:(id)arg3;
 - (id)snapshotsForGroupID:(id)arg1;

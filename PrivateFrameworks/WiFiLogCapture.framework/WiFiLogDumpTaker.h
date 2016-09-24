@@ -3,9 +3,9 @@
  */
 
 @interface WiFiLogDumpTaker : NSObject {
-    BOOL _didLastCaptureFallback;
-    NSObject<OS_dispatch_queue> *event_queue;
-    NSObject<OS_xpc_object> *xpc_connection;
+    BOOL  _didLastCaptureFallback;
+    NSObject<OS_dispatch_queue> * event_queue;
+    NSObject<OS_xpc_object> * xpc_connection;
 }
 
 @property (nonatomic, readonly) BOOL didLastCaptureFallback;

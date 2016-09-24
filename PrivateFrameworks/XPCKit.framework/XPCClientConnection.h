@@ -3,10 +3,10 @@
  */
 
 @interface XPCClientConnection : NSObject {
-    NSObject<OS_xpc_object> *_connection;
-    <XPCClientConnectionDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSString *_serviceName;
+    NSObject<OS_xpc_object> * _connection;
+    <XPCClientConnectionDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSString * _serviceName;
 }
 
 @property (nonatomic, readonly) <XPCClientConnectionDelegate> *delegate;

@@ -3,7 +3,7 @@
  */
 
 @interface PDInOutDirectionOptions : PDTransitionOptions {
-    int mInOut;
+    int  mInOut;
 }
 
 - (int)inOut;

@@ -3,8 +3,8 @@
  */
 
 @interface PKPaymentSession : NSObject {
-    NFSession *_internalSession;
-    NSObject<OS_dispatch_queue> *_internalSessionSerialQueue;
+    NFSession * _internalSession;
+    NSObject<OS_dispatch_queue> * _internalSessionSerialQueue;
 }
 
 @property (nonatomic, readonly) unsigned int lifecycleState;
@@ -12,7 +12,7 @@
 + (id)startContactlessInterfaceSessionWithCompletion:(id /* block */)arg1;
 + (id)startInAppSessionWithCompletion:(id /* block */)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithInternalSession:(id)arg1;
 - (void)invalidateSession;
 - (void)invalidateSessionWithCompletion:(id /* block */)arg1;

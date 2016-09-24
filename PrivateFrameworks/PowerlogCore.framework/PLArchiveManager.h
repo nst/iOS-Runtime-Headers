@@ -3,14 +3,14 @@
  */
 
 @interface PLArchiveManager : NSObject <PLArchiveJobManager> {
-    double _allDBDuration;
-    NSMutableArray *_archiveJobs;
-    BOOL _enabled;
-    BOOL _interrupted;
-    double _interval;
-    double _mainDBDuration;
-    double _mustRunInterval;
-    NSMutableArray *_notificationBlocks;
+    double  _allDBDuration;
+    NSMutableArray * _archiveJobs;
+    BOOL  _enabled;
+    BOOL  _interrupted;
+    double  _interval;
+    double  _mainDBDuration;
+    double  _mustRunInterval;
+    NSMutableArray * _notificationBlocks;
 }
 
 @property double allDBDuration;
@@ -30,9 +30,7 @@
 + (id)archiveEntriesFinished;
 + (id)archiveEntriesUnfinished;
 + (id)archiveEntriesWithComparisons:(id)arg1;
-+ (void)crashMoverDidFinish;
 + (id)lastArchivePath;
-+ (void)linkAllArchiveDBToCRFolder;
 + (id)sharedInstance;
 + (id)storageQueue;
 + (void)systemTimeChangedByOffset:(double)arg1;

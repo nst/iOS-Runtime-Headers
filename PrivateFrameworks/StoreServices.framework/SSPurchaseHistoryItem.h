@@ -3,7 +3,7 @@
  */
 
 @interface SSPurchaseHistoryItem : NSObject <NSCopying, SSXPCCoding> {
-    NSMutableDictionary *_properties;
+    NSMutableDictionary * _properties;
 }
 
 @property (readonly, copy) NSString *debugDescription;

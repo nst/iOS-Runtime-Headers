@@ -3,18 +3,18 @@
  */
 
 @interface HDCurrentActivitySummaryHelper : NSObject {
-    NSDate *_dateOverride;
-    BOOL _hasLoadedActivitySummaries;
-    <HDHealthDaemon> *_healthDaemon;
-    NSObject<OS_dispatch_queue> *_observerQueue;
-    NSHashTable *_observers;
-    HDActivitySummaryQueryHelper *_queryHelper;
-    NSObject<OS_dispatch_queue> *_queue;
-    long long _todayIndex;
-    HKActivitySummary *_todaySummary;
-    NSArray *_typesForDataCollection;
-    long long _yesterdayIndex;
-    HKActivitySummary *_yesterdaySummary;
+    NSDate * _dateOverride;
+    BOOL  _hasLoadedActivitySummaries;
+    NSObject<OS_dispatch_queue> * _observerQueue;
+    NSHashTable * _observers;
+    HDProfile * _profile;
+    HDActivitySummaryQueryHelper * _queryHelper;
+    NSObject<OS_dispatch_queue> * _queue;
+    int  _todayIndex;
+    HKActivitySummary * _todaySummary;
+    NSArray * _typesForDataCollection;
+    int  _yesterdayIndex;
+    HKActivitySummary * _yesterdaySummary;
 }
 
 @property (readonly) BOOL hasLoadedActivitySummaries;
@@ -23,8 +23,8 @@
 
 - (void).cxx_destruct;
 - (unsigned int)_changedFieldsBetweenPreviousActivitySummary:(id)arg1 andNewActivitySummary:(id)arg2;
-- (id)_createEmptyActivitySummaryForIndex:(long long)arg1;
-- (void)_generateCacheIndexesWithTodayIndex:(long long*)arg1 yesterdayIndex:(long long*)arg2;
+- (id)_createEmptyActivitySummaryForIndex:(int)arg1;
+- (void)_generateCacheIndexesWithTodayIndex:(int*)arg1 yesterdayIndex:(int*)arg2;
 - (void)_handleSignificantTimeChangeNotification:(id)arg1;
 - (void)_queue_alertObserversTodaySummaryUpdated:(id)arg1 changedFields:(unsigned int)arg2;
 - (void)_queue_alertObserversYesterdaySummaryUpdated:(id)arg1 changedFields:(unsigned int)arg2;
@@ -39,7 +39,7 @@
 - (id)dateOverride;
 - (void)dealloc;
 - (BOOL)hasLoadedActivitySummaries;
-- (id)initWithHealthDaemon:(id)arg1;
+- (id)initWithProfile:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)setDateOverride:(id)arg1;
 - (id)todayActivitySummary;

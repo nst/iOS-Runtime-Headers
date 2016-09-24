@@ -3,7 +3,7 @@
  */
 
 @interface CNLabelPickerController : CNPickerController {
-    CNPropertyGroupItem *_item;
+    CNPropertyGroupItem * _item;
 }
 
 @property (nonatomic, readonly) CNPropertyGroupItem *item;

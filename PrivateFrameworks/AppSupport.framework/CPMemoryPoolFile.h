@@ -3,16 +3,16 @@
  */
 
 @interface CPMemoryPoolFile : NSObject {
-    struct __CFAllocator { } *_deallocator;
-    int _fd;
+    struct __CFAllocator { } * _deallocator;
+    int  _fd;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _mutex;
-    unsigned long _slotCount;
-    unsigned long _slotLength;
-    char *_slots;
-    struct __CFBitVector { } *_usedSlots;
+    }  _mutex;
+    unsigned long  _slotCount;
+    unsigned long  _slotLength;
+    char * _slots;
+    struct __CFBitVector { } * _usedSlots;
 }
 
 - (void)dealloc;

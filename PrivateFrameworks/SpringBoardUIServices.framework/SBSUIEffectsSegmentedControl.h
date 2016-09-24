@@ -3,9 +3,9 @@
  */
 
 @interface SBSUIEffectsSegmentedControl : UISegmentedControl {
-    BOOL _irisPossible;
-    _UILegibilitySettings *_legibilitySettings;
-    BOOL _parallaxPossible;
+    BOOL  _irisPossible;
+    _UILegibilitySettings * _legibilitySettings;
+    BOOL  _parallaxPossible;
 }
 
 @property (nonatomic, retain) _UILegibilitySettings *legibilitySettings;

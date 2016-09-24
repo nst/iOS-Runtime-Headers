@@ -3,7 +3,7 @@
  */
 
 @interface FMMapAnnotationGestureRecognizer : UIGestureRecognizer {
-    <FMMapAnnotationGestureRecognizerDelegate> *_touchDelegate;
+    <FMMapAnnotationGestureRecognizerDelegate> * _touchDelegate;
 }
 
 @property (nonatomic) <FMMapAnnotationGestureRecognizerDelegate> *touchDelegate;

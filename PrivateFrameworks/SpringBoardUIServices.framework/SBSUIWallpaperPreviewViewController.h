@@ -3,19 +3,19 @@
  */
 
 @interface SBSUIWallpaperPreviewViewController : UIViewController <SBFLegibilitySettingsProvider, SBFLegibilitySettingsProviderDelegate> {
-    BOOL _allowScrolling;
-    BOOL _colorSamplingEnabled;
-    NSTimer *_dateTimer;
-    <SBFLegibilitySettingsProviderDelegate> *_delegate;
-    BOOL _motionEnabled;
-    NSString *_name;
-    NSDictionary *_proceduralWallpaper;
-    NSDictionary *_proceduralWallpaperOptions;
-    double _stillTimeInVideo;
-    int _variant;
-    AVURLAsset *_video;
-    SBFWallpaperConfigurationManager *_wallpaperConfigurationManager;
-    UIImage *_wallpaperImage;
+    BOOL  _allowScrolling;
+    BOOL  _colorSamplingEnabled;
+    NSTimer * _dateTimer;
+    <SBFLegibilitySettingsProviderDelegate> * _delegate;
+    BOOL  _motionEnabled;
+    NSString * _name;
+    NSDictionary * _proceduralWallpaper;
+    NSDictionary * _proceduralWallpaperOptions;
+    double  _stillTimeInVideo;
+    int  _variant;
+    AVURLAsset * _video;
+    SBFWallpaperConfigurationManager * _wallpaperConfigurationManager;
+    UIImage * _wallpaperImage;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -31,14 +31,14 @@
 - (id)_dateView;
 - (float)_parallaxFactor;
 - (id)_previewView;
-- (id)_proceduralWallpaperViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 variant:(int)arg2;
+- (id)_proceduralWallpaperViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 variant:(int)arg2;
 - (void)_startDateTimer;
 - (void)_stopDateTimer;
 - (void)_updateDateView;
 - (id)_wallpaperView;
-- (id)_wallpaperViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)_wallpaperViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 image:(id)arg2 video:(id)arg3 videoURL:(id)arg4 stillTimeInVideo:(double)arg5 supportsCropping:(BOOL)arg6 variant:(int)arg7;
-- (id)_wallpaperViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 variant:(int)arg2 options:(id)arg3;
+- (id)_wallpaperViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)_wallpaperViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 image:(id)arg2 video:(id)arg3 videoURL:(id)arg4 stillTimeInVideo:(double)arg5 supportsCropping:(BOOL)arg6 variant:(int)arg7;
+- (id)_wallpaperViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 variant:(int)arg2 options:(id)arg3;
 - (BOOL)colorSamplingEnabled;
 - (void)dealloc;
 - (id)delegate;

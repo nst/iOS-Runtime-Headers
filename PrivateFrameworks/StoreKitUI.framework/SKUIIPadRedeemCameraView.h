@@ -3,13 +3,13 @@
  */
 
 @interface SKUIIPadRedeemCameraView : UIView <UITextFieldDelegate> {
-    <SKUIRedeemCameraViewDelegate> *_delegate;
-    SKUIRedeemTextField *_inputAccessoryTextField;
-    SKUIRedeemCameraLandingView *_landingView;
-    UIView *_redeemerView;
-    UIScrollView *_scrollView;
-    UIButton *_termsButton;
-    SKUIRedeemTextField *_textField;
+    <SKUIRedeemCameraViewDelegate> * _delegate;
+    SKUIRedeemTextField * _inputAccessoryTextField;
+    SKUIRedeemCameraLandingView * _landingView;
+    UIView * _redeemerView;
+    UIScrollView * _scrollView;
+    UIButton * _termsButton;
+    SKUIRedeemTextField * _textField;
 }
 
 @property (readonly, copy) NSString *debugDescription;

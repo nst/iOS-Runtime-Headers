@@ -3,12 +3,12 @@
  */
 
 @interface AMAuthInstallURLSession : NSObject <NSURLSessionDelegate> {
-    NSMutableDictionary *_completions;
-    NSMutableDictionary *_data;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_responses;
-    NSURLSession *_session;
-    double _timeout;
+    NSMutableDictionary * _completions;
+    NSMutableDictionary * _data;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableDictionary * _responses;
+    NSURLSession * _session;
+    double  _timeout;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *completions;

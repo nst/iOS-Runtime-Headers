@@ -3,7 +3,7 @@
  */
 
 @interface SKProduct : NSObject {
-    id _internal;
+    id  _internal;
 }
 
 @property (getter=_localeIdentifier, setter=_setLocaleIdentifier:, nonatomic, copy) NSString *_localeIdentifier;

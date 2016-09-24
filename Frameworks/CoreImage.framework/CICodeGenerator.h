@@ -3,7 +3,7 @@
  */
 
 @interface CICodeGenerator : CIFilter {
-    NSData *inputMessage;
+    NSData * inputMessage;
 }
 
 @property (nonatomic, copy) NSData *inputMessage;

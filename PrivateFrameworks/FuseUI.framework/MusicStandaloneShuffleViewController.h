@@ -3,10 +3,10 @@
  */
 
 @interface MusicStandaloneShuffleViewController : UIViewController <MusicTableViewDelegate, UITableViewDataSource> {
-    MusicShuffleActionEntityProvider *_shuffleActionEntityProvider;
-    MusicEntityViewDescriptor *_shuffleEntityViewDescriptor;
-    MusicEntityTracklistItemView *_shuffleItemView;
-    MusicTableView *_tableView;
+    MusicShuffleActionEntityProvider * _shuffleActionEntityProvider;
+    MusicEntityViewDescriptor * _shuffleEntityViewDescriptor;
+    MusicEntityTracklistItemView * _shuffleItemView;
+    MusicTableView * _tableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

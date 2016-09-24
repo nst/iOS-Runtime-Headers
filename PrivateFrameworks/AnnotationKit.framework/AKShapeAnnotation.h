@@ -3,7 +3,7 @@
  */
 
 @interface AKShapeAnnotation : AKStrokedAnnotation <AKFilledAnnotationProtocol> {
-    UIColor *_fillColor;
+    UIColor * _fillColor;
 }
 
 @property (readonly, copy) NSString *debugDescription;

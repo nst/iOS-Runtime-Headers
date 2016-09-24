@@ -3,9 +3,9 @@
  */
 
 @interface FBUISceneEvent : NSObject {
-    id /* block */ _sender;
-    BOOL _sent;
-    FBSSceneTransitionContext *_transitionContext;
+    id /* block */  _sender;
+    BOOL  _sent;
+    FBSSceneTransitionContext * _transitionContext;
 }
 
 @property (nonatomic, readonly, retain) FBSSceneTransitionContext *transitionContext;

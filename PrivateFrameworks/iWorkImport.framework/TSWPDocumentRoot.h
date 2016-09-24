@@ -2,18 +2,24 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSWPDocumentRoot : TSKDocumentRoot <TSWPObjectIndex>
+@interface TSWPDocumentRoot : TSKDocumentRoot <TSWPObjectIndex> {
+    BOOL  _didRemoveMissingAttachments;
+}
 
 @property (getter=isChangeTrackingEnabled, nonatomic, readonly) BOOL changeTrackingEnabled;
+@property (nonatomic) BOOL didRemoveMissingAttachments;
 @property (nonatomic, readonly) BOOL supportHeaderFooterParagraphAlignmentInInspectors;
 
+- (BOOL)cellCommentsAllowedOnInfo:(id)arg1;
 - (id)changeSessionManagerForModel:(id)arg1;
 - (id)changeVisibility;
+- (BOOL)didRemoveMissingAttachments;
 - (void)documentDidLoad;
 - (id)documentFonts;
 - (struct __CFLocale { }*)hyphenationLocale;
 - (BOOL)isChangeTrackingEnabled;
 - (int)naturalAlignmentAtCharIndex:(unsigned int)arg1 inTextStorage:(id)arg2;
+- (void)setDidRemoveMissingAttachments:(BOOL)arg1;
 - (BOOL)shouldHyphenate;
 - (BOOL)supportHeaderFooterParagraphAlignmentInInspectors;
 - (id)unavailableDocumentFonts;

@@ -3,9 +3,9 @@
  */
 
 @interface SYStoreResetSessionOwner : SYStoreSessionOwner {
-    NSMutableArray *_buffer;
-    int _bufferedState;
-    id /* block */ _fetchNextBatch;
+    NSMutableArray * _buffer;
+    int  _bufferedState;
+    id /* block */  _fetchNextBatch;
 }
 
 @property (nonatomic, copy) id /* block */ fetchNextBatch;

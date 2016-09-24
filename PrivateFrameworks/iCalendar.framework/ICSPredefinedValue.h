@@ -3,7 +3,7 @@
  */
 
 @interface ICSPredefinedValue : NSNumber {
-    long _value;
+    long  _value;
 }
 
 + (id)numberWithLong:(long)arg1;

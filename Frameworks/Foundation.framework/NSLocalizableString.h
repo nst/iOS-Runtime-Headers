@@ -3,8 +3,8 @@
  */
 
 @interface NSLocalizableString : NSString {
-    NSString *_developmentLanguageString;
-    NSString *_stringsFileKey;
+    NSString * _developmentLanguageString;
+    NSString * _stringsFileKey;
 }
 
 @property (readonly, copy) NSString *developmentLanguageString;

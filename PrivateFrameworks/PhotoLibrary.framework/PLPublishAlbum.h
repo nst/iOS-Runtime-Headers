@@ -3,7 +3,7 @@
  */
 
 @interface PLPublishAlbum : NSObject {
-    NSString *_title;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) NSString *title;

@@ -3,7 +3,7 @@
  */
 
 @interface SearchUITableRowContainerView : UIView {
-    SearchUITableRowCardSectionView *_rowCardSectionView;
+    SearchUITableRowCardSectionView * _rowCardSectionView;
 }
 
 @property SearchUITableRowCardSectionView *rowCardSectionView;

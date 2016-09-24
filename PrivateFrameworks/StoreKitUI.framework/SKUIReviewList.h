@@ -3,8 +3,8 @@
  */
 
 @interface SKUIReviewList : NSObject <SKUICacheCoding> {
-    NSDictionary *_dictionary;
-    NSMutableArray *_reviews;
+    NSDictionary * _dictionary;
+    NSMutableArray * _reviews;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *cacheRepresentation;
@@ -20,7 +20,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) int threeStarRatingCount;
 @property (nonatomic, readonly) int twoStarRatingCount;
-@property (nonatomic, readonly) float userRating;
+@property (nonatomic, readonly) double userRating;
 @property (nonatomic, readonly) NSURL *writeReviewURL;
 
 - (void).cxx_destruct;

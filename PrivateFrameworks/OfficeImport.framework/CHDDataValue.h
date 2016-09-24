@@ -16,7 +16,7 @@
             } ; 
         } value; 
         unsigned int contentFormatId; 
-    } mDataPoint;
+    }  mDataPoint;
 }
 
 + (id)dataValue;

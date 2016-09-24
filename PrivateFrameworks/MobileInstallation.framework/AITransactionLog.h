@@ -3,7 +3,7 @@
  */
 
 @interface AITransactionLog : NSObject {
-    NSObject<OS_os_log> *_log;
+    NSObject<OS_os_log> * _log;
 }
 
 + (id)_defaultLog;

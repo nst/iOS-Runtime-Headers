@@ -3,10 +3,10 @@
  */
 
 @interface _MPUSearchOperation : NSOperation {
-    MPUSearchDataSource *_dataSource;
-    int _entityType;
-    MPMediaQuery *_query;
-    NSString *_searchString;
+    MPUSearchDataSource * _dataSource;
+    int  _entityType;
+    MPMediaQuery * _query;
+    NSString * _searchString;
 }
 
 @property (nonatomic, readonly) MPUSearchDataSource *dataSource;

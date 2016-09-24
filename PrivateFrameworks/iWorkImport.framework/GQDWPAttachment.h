@@ -3,7 +3,7 @@
  */
 
 @interface GQDWPAttachment : NSObject {
-    GQDDrawable *mDrawable;
+    GQDDrawable * mDrawable;
 }
 
 - (void)dealloc;

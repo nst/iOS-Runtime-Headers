@@ -3,9 +3,9 @@
  */
 
 @interface MusicSocialFollowOperation : MusicSocialAbstractOperation {
-    NSString *_entityType;
-    BOOL _follow;
-    NSNumber *_storeEntityID;
+    NSString * _entityType;
+    BOOL  _follow;
+    NSNumber * _storeEntityID;
 }
 
 @property (nonatomic, copy) NSNumber *storeEntityID;

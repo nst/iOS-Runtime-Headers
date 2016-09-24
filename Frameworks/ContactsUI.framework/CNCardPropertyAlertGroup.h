@@ -3,7 +3,7 @@
  */
 
 @interface CNCardPropertyAlertGroup : CNCardPropertyGroup {
-    CNLabeledValue *_labeledValue;
+    CNLabeledValue * _labeledValue;
 }
 
 @property (nonatomic, retain) CNLabeledValue *labeledValue;

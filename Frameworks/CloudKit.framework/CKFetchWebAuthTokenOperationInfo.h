@@ -3,7 +3,7 @@
  */
 
 @interface CKFetchWebAuthTokenOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    NSString *_APIToken;
+    NSString * _APIToken;
 }
 
 @property (nonatomic, retain) NSString *APIToken;

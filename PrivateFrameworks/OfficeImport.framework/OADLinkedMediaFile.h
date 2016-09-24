@@ -3,8 +3,8 @@
  */
 
 @interface OADLinkedMediaFile : OADMovie {
-    BOOL mIsExternal;
-    NSURL *mUrl;
+    BOOL  mIsExternal;
+    NSURL * mUrl;
 }
 
 @property BOOL isExternal;

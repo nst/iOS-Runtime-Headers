@@ -3,20 +3,20 @@
  */
 
 @interface TSWPPadding : NSObject <TSDMixing, TSSPropertyCommandSerializing> {
-    float _bottomInset;
-    float _leftInset;
-    float _rightInset;
-    float _topInset;
+    double  _bottomInset;
+    double  _leftInset;
+    double  _rightInset;
+    double  _topInset;
 }
 
-@property (nonatomic) float bottomInset;
+@property (nonatomic) double bottomInset;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) float leftInset;
-@property (nonatomic) float rightInset;
+@property (nonatomic) double leftInset;
+@property (nonatomic) double rightInset;
 @property (readonly) Class superclass;
-@property (nonatomic) float topInset;
+@property (nonatomic) double topInset;
 
 + (id)padding;
 + (id)paddingWithTopInset:(float)arg1 leftInset:(float)arg2 bottomInset:(float)arg3 rightInset:(float)arg4;
@@ -26,20 +26,20 @@
 - (id)description;
 - (id)init;
 - (id)initFromPropertyCommandMessage:(const struct Message { int (**x1)(); }*)arg1 unarchiver:(id)arg2;
-- (id)initWithArchive:(const struct PaddingArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; float x5; float x6; float x7; float x8; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct PaddingArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; double x6; double x7; double x8; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithTopInset:(float)arg1 leftInset:(float)arg2 bottomInset:(float)arg3 rightInset:(float)arg4;
 - (BOOL)isEqual:(id)arg1;
 - (float)leftInset;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
 - (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (float)rightInset;
-- (void)saveToArchive:(struct PaddingArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; float x5; float x6; float x7; float x8; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct PaddingArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; double x6; double x7; double x8; }*)arg1 archiver:(id)arg2;
 - (void)saveToPropertyCommandMessage:(struct Message { int (**x1)(); }*)arg1 archiver:(id)arg2;
 - (void)setBottomInset:(float)arg1;
 - (void)setLeftInset:(float)arg1;
 - (void)setRightInset:(float)arg1;
 - (void)setTopInset:(float)arg1;
 - (float)topInset;
-- (void)transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 
 @end

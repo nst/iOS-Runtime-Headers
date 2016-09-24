@@ -3,8 +3,8 @@
  */
 
 @interface CNContactsWithIdentifiersPredicate : CNPredicate <CNSuggestedContactPredicate> {
-    NSArray *_identifiers;
-    NSMutableDictionary *_internalIdentifiers;
+    NSArray * _identifiers;
+    NSMutableDictionary * _internalIdentifiers;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -13,10 +13,14 @@
 @property (nonatomic, readonly, copy) NSArray *identifiers;
 @property (readonly) Class superclass;
 
++ (BOOL)supportsSecureCoding;
+
 - (BOOL)cn_supportsNativeSorting;
 - (void)dealloc;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (id)identifiers;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifiers:(id)arg1;
 - (id)internalIdentifiersForStoreWithIdentifier:(id)arg1;
 - (id)suggestionsWithSortOrder:(int)arg1 mutableObjects:(BOOL)arg2 service:(id)arg3 error:(id*)arg4;

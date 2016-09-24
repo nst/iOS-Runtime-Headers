@@ -3,8 +3,8 @@
  */
 
 @interface PLPersistentConnectionAgent : PLAgent {
-    PLCFNotificationOperatorComposition *_intervalChangedNotification;
-    PLCFNotificationOperatorComposition *_preferencesChangedNotification;
+    PLCFNotificationOperatorComposition * _intervalChangedNotification;
+    PLCFNotificationOperatorComposition * _preferencesChangedNotification;
 }
 
 @property (readonly) PLCFNotificationOperatorComposition *intervalChangedNotification;

@@ -3,11 +3,11 @@
  */
 
 @interface AWDWPA2Counters : PBCodable <NSCopying> {
-    unsigned long long _ccmpfmterr;
-    unsigned long long _ccmpreplay;
-    unsigned long long _ccmpundec;
-    unsigned long long _decsuccess;
-    unsigned long long _fourwayfail;
+    unsigned long long  _ccmpfmterr;
+    unsigned long long  _ccmpreplay;
+    unsigned long long  _ccmpundec;
+    unsigned long long  _decsuccess;
+    unsigned long long  _fourwayfail;
     struct { 
         unsigned int ccmpfmterr : 1; 
         unsigned int ccmpreplay : 1; 
@@ -21,14 +21,14 @@
         unsigned int wepexcluded : 1; 
         unsigned int wepicverr : 1; 
         unsigned int wepundec : 1; 
-    } _has;
-    unsigned long long _tkipcntrmsr;
-    unsigned long long _tkipicverr;
-    unsigned long long _tkipmicfaill;
-    unsigned long long _tkipreplay;
-    unsigned long long _wepexcluded;
-    unsigned long long _wepicverr;
-    unsigned long long _wepundec;
+    }  _has;
+    unsigned long long  _tkipcntrmsr;
+    unsigned long long  _tkipicverr;
+    unsigned long long  _tkipmicfaill;
+    unsigned long long  _tkipreplay;
+    unsigned long long  _wepexcluded;
+    unsigned long long  _wepicverr;
+    unsigned long long  _wepundec;
 }
 
 @property (nonatomic) unsigned long long ccmpfmterr;

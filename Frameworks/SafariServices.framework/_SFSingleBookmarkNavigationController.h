@@ -3,10 +3,10 @@
  */
 
 @interface _SFSingleBookmarkNavigationController : UINavigationController <_SFBookmarkInfoViewControllerDelegate> {
-    <_SFSingleBookmarkNavigationControllerDelegate> *_bookmarkNavDelegate;
-    WebBookmarkCollection *_collection;
-    BOOL _delegateNotifiedOfResult;
-    _SFBookmarkInfoViewController *_infoViewController;
+    <_SFSingleBookmarkNavigationControllerDelegate> * _bookmarkNavDelegate;
+    WebBookmarkCollection * _collection;
+    BOOL  _delegateNotifiedOfResult;
+    _SFBookmarkInfoViewController * _infoViewController;
 }
 
 @property (nonatomic) <_SFSingleBookmarkNavigationControllerDelegate> *bookmarkNavDelegate;
@@ -27,11 +27,8 @@
 - (id)initForAddingToFavoritesInCollection:(id)arg1;
 - (id)initWithBookmark:(id)arg1 inCollection:(id)arg2;
 - (id)initWithCollection:(id)arg1;
-- (void)panelWillSuspend;
+- (BOOL)prepareForPresentationForAddingBookmark:(BOOL)arg1;
 - (void)setBookmarkNavDelegate:(id)arg1;
-- (BOOL)shouldResumePanel;
-- (BOOL)shouldShowBrowserPanel;
 - (void)viewDidDisappear:(BOOL)arg1;
-- (void)willHideOnSuspend;
 
 @end

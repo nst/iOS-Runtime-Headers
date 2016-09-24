@@ -8,7 +8,7 @@
 - (void)applicationShouldFocusWithBundle:(void *)arg1 onCompletion:(void *)arg2; // needs 2 arg types, found 7: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
 - (void)notifyHostedPIDsOfSuppression:(BOOL)arg1;
 - (void)retrieveDebugInformation:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, void*
-- (void)setDebugLevel:(int)arg1;
+- (void)retrieveMoreDebugInformationWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, void*
 - (void)setWindowContextID:(unsigned int)arg1 sceneIdentifier:(NSString *)arg2 forKeyboard:(BOOL)arg3 withLevel:(float)arg4;
 - (void)setWindowHostingPID:(int)arg1 active:(BOOL)arg2;
 - (void)signalKeyboardChangeComplete;

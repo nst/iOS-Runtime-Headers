@@ -3,7 +3,7 @@
  */
 
 @interface CKDModifyBadgeURLRequest : CKDURLRequest {
-    unsigned int _badgeValue;
+    unsigned int  _badgeValue;
 }
 
 @property (nonatomic, readonly) unsigned int badgeValue;

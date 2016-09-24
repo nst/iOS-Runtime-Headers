@@ -3,8 +3,8 @@
  */
 
 @interface STShowActivityRequest : AFSiriRequest {
-    int _dataType;
-    int _view;
+    int  _dataType;
+    int  _view;
 }
 
 + (BOOL)supportsSecureCoding;

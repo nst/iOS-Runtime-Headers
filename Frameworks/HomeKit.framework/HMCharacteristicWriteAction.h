@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMCharacteristicWriteAction : HMAction <HMObjectMerge, NSSecureCoding> {
-    HMCharacteristic *_characteristic;
-    <NSCopying> *_targetValue;
+@interface HMCharacteristicWriteAction : HMAction <HFPrettyDescription, HMObjectMerge, NSSecureCoding> {
+    HMCharacteristic * _characteristic;
+    id  _targetValue;
 }
 
 @property (nonatomic, retain) HMCharacteristic *characteristic;
@@ -12,8 +12,10 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
-@property (nonatomic, copy) <NSCopying> *targetValue;
+@property (nonatomic, copy) id targetValue;
 @property (nonatomic, readonly) NSUUID *uniqueIdentifier;
+
+// Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
 + (id)_actionWithInfo:(id)arg1 home:(id)arg2;
 + (id)_lookupActionWithInfo:(id)arg1 inArray:(id)arg2;
@@ -34,5 +36,9 @@
 - (void)setTargetValue:(id)arg1;
 - (id)targetValue;
 - (void)updateTargetValue:(id)arg1 completionHandler:(id /* block */)arg2;
+
+// Image: /System/Library/PrivateFrameworks/Home.framework/Home
+
+- (id)hf_prettyDescription;
 
 @end

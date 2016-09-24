@@ -3,16 +3,16 @@
  */
 
 @interface AWDWRMWiFiCallingEnd : PBCodable <NSCopying> {
-    BOOL _aTMRegistrationState;
-    unsigned int _bBAudioErasures;
-    unsigned int _bBAudioPacketLoss;
-    unsigned int _bSSLoad;
-    unsigned int _beaconRate;
-    NSString *_callEndReason;
-    NSString *_callId;
-    BOOL _captiveNetwork;
-    unsigned int _hOBool;
-    BOOL _hOCapability;
+    BOOL  _aTMRegistrationState;
+    unsigned int  _bBAudioErasures;
+    unsigned int  _bBAudioPacketLoss;
+    unsigned int  _bSSLoad;
+    unsigned int  _beaconRate;
+    NSString * _callEndReason;
+    NSString * _callId;
+    BOOL  _captiveNetwork;
+    unsigned int  _hOBool;
+    BOOL  _hOCapability;
     struct { 
         unsigned int lTECTRSRP : 1; 
         unsigned int lTERSRP : 1; 
@@ -45,31 +45,31 @@
         unsigned int wOWEnabled : 1; 
         unsigned int wiFiBSSIDChange : 1; 
         unsigned int wiFiPreferred : 1; 
-    } _has;
-    BOOL _iPSecTunnelStatus;
-    BOOL _iWLANStatus;
-    long long _lTECTRSRP;
-    unsigned int _lTEDataLQM;
-    BOOL _lTEQoSAvailable;
-    long long _lTERSRP;
-    int _lTESINR;
-    unsigned int _lTETxPower;
-    unsigned int _lTEVoiceLQM;
-    unsigned int _latteDejitterBufferUnderflow;
-    unsigned int _latteErasures;
-    unsigned int _latteNominalJitterBufferSize;
-    unsigned int _latteRTPPacketLoss;
-    unsigned int _sessionId;
-    unsigned int _signalBar;
-    unsigned long long _timestamp;
-    BOOL _wOWEnabled;
-    NSString *_wRMRecommendedRAT;
-    BOOL _wiFiBSSIDChange;
-    BOOL _wiFiPreferred;
-    long long _wiFiRSSI;
-    unsigned int _wiFiRxRetry;
-    long long _wiFiSINR;
-    unsigned int _wiFiTxPER;
+    }  _has;
+    BOOL  _iPSecTunnelStatus;
+    BOOL  _iWLANStatus;
+    long long  _lTECTRSRP;
+    unsigned int  _lTEDataLQM;
+    BOOL  _lTEQoSAvailable;
+    long long  _lTERSRP;
+    int  _lTESINR;
+    unsigned int  _lTETxPower;
+    unsigned int  _lTEVoiceLQM;
+    unsigned int  _latteDejitterBufferUnderflow;
+    unsigned int  _latteErasures;
+    unsigned int  _latteNominalJitterBufferSize;
+    unsigned int  _latteRTPPacketLoss;
+    unsigned int  _sessionId;
+    unsigned int  _signalBar;
+    unsigned long long  _timestamp;
+    BOOL  _wOWEnabled;
+    NSString * _wRMRecommendedRAT;
+    BOOL  _wiFiBSSIDChange;
+    BOOL  _wiFiPreferred;
+    long long  _wiFiRSSI;
+    unsigned int  _wiFiRxRetry;
+    long long  _wiFiSINR;
+    unsigned int  _wiFiTxPER;
 }
 
 @property (nonatomic) BOOL aTMRegistrationState;

@@ -3,8 +3,8 @@
  */
 
 @interface SSVSAPSignatureComponent : NSObject <NSCopying> {
-    int _componentType;
-    NSString *_key;
+    int  _componentType;
+    NSString * _key;
 }
 
 @property (nonatomic, readonly) int componentType;

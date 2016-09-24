@@ -3,7 +3,7 @@
  */
 
 @interface SCNMTLSubBuffer : SCNMTLBuffer {
-    SCNFixedSizePage *_parentPage;
+    SCNFixedSizePage * _parentPage;
 }
 
 - (void)dealloc;

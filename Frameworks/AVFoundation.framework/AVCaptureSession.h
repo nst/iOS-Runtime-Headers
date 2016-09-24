@@ -3,10 +3,11 @@
  */
 
 @interface AVCaptureSession : NSObject {
-    AVCaptureSessionInternal *_internal;
+    AVCaptureSessionInternal * _internal;
 }
 
 @property (nonatomic) BOOL automaticallyConfiguresApplicationAudioSession;
+@property (nonatomic) BOOL automaticallyConfiguresCaptureDeviceForWideColor;
 @property (nonatomic, readonly) NSArray *inputs;
 @property (getter=isInterrupted, nonatomic, readonly) BOOL interrupted;
 @property (nonatomic, readonly) struct OpaqueCMClock { }*masterClock;
@@ -17,17 +18,21 @@
 
 // Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
++ (void)_beginConfiguringActiveColorSpaceForDevice:(id)arg1;
++ (void)_finishConfiguringActiveColorSpaceForDevice:(id)arg1;
++ (BOOL)_isActiveColorSpaceBeingConfiguredForDevice:(id)arg1;
 + (id)allSessionPresets;
 + (BOOL)automaticallyNotifiesObserversOfMasterClock;
 + (BOOL)automaticallyNotifiesObserversOfRunning;
 + (id)dotString;
 + (void)initialize;
 
-- (void)_addConnection:(id)arg1;
-- (void)_addInputWithNoConnections:(id)arg1;
-- (void)_addOutputWithNoConnections:(id)arg1;
-- (void)_addVideoPreviewLayer:(id)arg1;
-- (void)_addVideoPreviewLayerWithNoConnection:(id)arg1;
+- (BOOL)_addConnection:(id)arg1 exceptionReason:(id*)arg2;
+- (BOOL)_addInputWithNoConnections:(id)arg1 exceptionReason:(id*)arg2;
+- (BOOL)_addOutputWithNoConnections:(id)arg1 exceptionReason:(id*)arg2;
+- (BOOL)_addVideoPreviewLayer:(id)arg1 exceptionReason:(id*)arg2;
+- (BOOL)_addVideoPreviewLayerWithNoConnection:(id)arg1 exceptionReason:(id*)arg2;
+- (BOOL)_allowsRecordingOfPhotoFormats;
 - (void)_beginConfiguration;
 - (BOOL)_buildAndRunGraph;
 - (BOOL)_canAddConnection:(id)arg1 failureReason:(id*)arg2;
@@ -51,6 +56,7 @@
 - (void)_notifyMediaServerdDied;
 - (void)_notifySessionStarted;
 - (void)_notifySessionStopped;
+- (id)_outputWithClass:(Class)arg1 forSourceDevice:(id)arg2;
 - (void)_postRuntimeError:(id)arg1;
 - (void)_rebuildGraph;
 - (void)_reconnectAfterServerConnectionDied;
@@ -67,14 +73,14 @@
 - (id)_stopError;
 - (BOOL)_stopFigCaptureSession;
 - (void)_teardownFigCaptureSession;
-- (void)_updateActiveConnections;
-- (void)_updateDeviceActiveFormats;
+- (void)_updateDeviceActiveFormatsAndActiveConnections;
 - (void)addConnection:(id)arg1;
 - (void)addInput:(id)arg1;
 - (void)addInputWithNoConnections:(id)arg1;
 - (void)addOutput:(id)arg1;
 - (void)addOutputWithNoConnections:(id)arg1;
 - (BOOL)automaticallyConfiguresApplicationAudioSession;
+- (BOOL)automaticallyConfiguresCaptureDeviceForWideColor;
 - (void)beginConfiguration;
 - (BOOL)canAddConnection:(id)arg1;
 - (BOOL)canAddInput:(id)arg1;
@@ -98,6 +104,7 @@
 - (id)sessionPreset;
 - (id)sessionVideoCaptureDevices;
 - (void)setAutomaticallyConfiguresApplicationAudioSession:(BOOL)arg1;
+- (void)setAutomaticallyConfiguresCaptureDeviceForWideColor:(BOOL)arg1;
 - (void)setSessionPreset:(id)arg1;
 - (void)setUsesApplicationAudioSession:(BOOL)arg1;
 - (void)startRunning;

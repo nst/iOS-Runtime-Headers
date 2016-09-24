@@ -3,13 +3,13 @@
  */
 
 @interface TSTStrokeLayerStack : TSTStrokeLayerAbstractStack {
-    TSTMutableStrokeLayer *_clearedStrokeLayer;
-    TSTStrokeLayer *_customStrokeLayer;
-    TSTStrokeLayer *_defaultStrokeLayer;
-    TSTMutableStrokeLayer *_dynamicStrokeLayer;
-    TSTMutableStrokeLayer *_spillStrokeLayer;
-    int _stackKind;
-    int _type;
+    TSTMutableStrokeLayer * _clearedStrokeLayer;
+    TSTStrokeLayer * _customStrokeLayer;
+    TSTStrokeLayer * _defaultStrokeLayer;
+    TSTMutableStrokeLayer * _dynamicStrokeLayer;
+    TSTMutableStrokeLayer * _spillStrokeLayer;
+    int  _stackKind;
+    int  _type;
 }
 
 @property (nonatomic, retain) TSTMutableStrokeLayer *clearedStrokeLayer;

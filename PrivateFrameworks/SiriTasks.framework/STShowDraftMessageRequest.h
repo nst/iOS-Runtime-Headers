@@ -3,7 +3,7 @@
  */
 
 @interface STShowDraftMessageRequest : AFSiriRequest {
-    NSURL *_draftMessageIdentifier;
+    NSURL * _draftMessageIdentifier;
 }
 
 + (BOOL)supportsSecureCoding;

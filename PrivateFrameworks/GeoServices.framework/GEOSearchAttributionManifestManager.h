@@ -3,7 +3,7 @@
  */
 
 @interface GEOSearchAttributionManifestManager : NSObject {
-    <GEOSearchAttributionServerProxy> *_serverProxy;
+    <GEOSearchAttributionServerProxy> * _serverProxy;
 }
 
 @property (nonatomic, readonly) <GEOSearchAttributionServerProxy> *serverProxy;

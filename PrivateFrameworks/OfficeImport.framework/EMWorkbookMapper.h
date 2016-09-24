@@ -3,31 +3,31 @@
  */
 
 @interface EMWorkbookMapper : CMMapper <CMMapperRoot> {
-    EDWorkbook *edWorkbook;
-    CMArchiveManager *mArchiver;
-    OIXMLElement *mBodyElement;
-    NSString *mFileName;
-    BOOL mHasPushedFirstSheet;
-    BOOL mHasPushedHeader;
-    int mHeight;
-    bool mIsFirstMappedSheet;
-    bool mIsFrameset;
-    BOOL mLoadingMessageVisible;
-    unsigned int mNumberOfMappedSheets;
-    unsigned int mRealSheetCount;
-    NSString *mResourceUrlPrefix;
-    NSString *mResourceUrlProtocol;
-    unsigned int mSheetIndex;
-    NSMutableArray *mSheetURLs;
-    NSString *mStyleSheetGuid;
-    OIXMLDocument *mTabBarDoc;
-    NSString *mTabBarURL;
-    float mTabPosition;
-    int mWidth;
-    NSMutableArray *mWorksheetGuids;
-    NSMutableArray *mWorksheetNames;
-    NSMutableArray *mWorksheetUrls;
-    OIXMLDocument *mXhtmlDoc;
+    EDWorkbook * edWorkbook;
+    CMArchiveManager * mArchiver;
+    OIXMLElement * mBodyElement;
+    NSString * mFileName;
+    BOOL  mHasPushedFirstSheet;
+    BOOL  mHasPushedHeader;
+    int  mHeight;
+    bool  mIsFirstMappedSheet;
+    bool  mIsFrameset;
+    BOOL  mLoadingMessageVisible;
+    unsigned int  mNumberOfMappedSheets;
+    unsigned int  mRealSheetCount;
+    NSString * mResourceUrlPrefix;
+    NSString * mResourceUrlProtocol;
+    unsigned int  mSheetIndex;
+    NSMutableArray * mSheetURLs;
+    NSString * mStyleSheetGuid;
+    OIXMLDocument * mTabBarDoc;
+    NSString * mTabBarURL;
+    double  mTabPosition;
+    int  mWidth;
+    NSMutableArray * mWorksheetGuids;
+    NSMutableArray * mWorksheetNames;
+    NSMutableArray * mWorksheetUrls;
+    OIXMLDocument * mXhtmlDoc;
 }
 
 + (id)borderStyleCache;
@@ -47,10 +47,9 @@
 - (void)finishMappingWithState:(id)arg1;
 - (BOOL)hasMultipleSheets;
 - (id)initWithEDWorkbook:(id)arg1 archiver:(id)arg2;
-- (bool)isMultiPage;
 - (void)mapBodyStyleAt:(id)arg1;
 - (void)mapElement:(id)arg1 atIndex:(unsigned int)arg2 withState:(id)arg3 isLastElement:(BOOL)arg4;
-- (struct CGSize { float x1; float x2; })pageSizeForDevice;
+- (struct CGSize { double x1; double x2; })pageSizeForDevice;
 - (void)setFileName:(id)arg1;
 - (void)startMappingWithState:(id)arg1;
 - (id)styleMatrix;

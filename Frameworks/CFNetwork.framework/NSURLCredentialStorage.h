@@ -3,7 +3,7 @@
  */
 
 @interface NSURLCredentialStorage : NSObject {
-    NSURLCredentialStorageInternal *_internal;
+    NSURLCredentialStorageInternal * _internal;
 }
 
 @property (nonatomic) BOOL _useSystemKeychain;

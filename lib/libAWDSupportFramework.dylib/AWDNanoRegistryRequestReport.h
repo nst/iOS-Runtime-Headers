@@ -3,19 +3,19 @@
  */
 
 @interface AWDNanoRegistryRequestReport : PBCodable <NSCopying> {
-    NSString *_gizmoBuild;
-    NSString *_gizmoHardware;
+    NSString * _gizmoBuild;
+    NSString * _gizmoHardware;
     struct { 
         unsigned int requestDuration : 1; 
         unsigned int timestamp : 1; 
         unsigned int requestResponseCode : 1; 
         unsigned int isAutomated : 1; 
-    } _has;
-    BOOL _isAutomated;
-    unsigned long long _requestDuration;
-    unsigned int _requestResponseCode;
-    NSString *_requestType;
-    unsigned long long _timestamp;
+    }  _has;
+    BOOL  _isAutomated;
+    unsigned long long  _requestDuration;
+    unsigned int  _requestResponseCode;
+    NSString * _requestType;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic, retain) NSString *gizmoBuild;

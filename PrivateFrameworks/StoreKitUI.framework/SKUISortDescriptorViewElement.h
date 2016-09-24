@@ -3,8 +3,8 @@
  */
 
 @interface SKUISortDescriptorViewElement : SKUIViewElement {
-    BOOL _ascending;
-    NSString *_property;
+    BOOL  _ascending;
+    NSString * _property;
 }
 
 @property (getter=isAscending, nonatomic, readonly) BOOL ascending;

@@ -3,9 +3,9 @@
  */
 
 @interface SKUILockupViewElement : SKUIViewElement {
-    BOOL _enabled;
-    int _lockupViewType;
-    BOOL _selectable;
+    BOOL  _enabled;
+    int  _lockupViewType;
+    BOOL  _selectable;
 }
 
 @property (nonatomic, readonly) BOOL containsElementGroups;

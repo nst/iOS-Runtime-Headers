@@ -3,7 +3,7 @@
  */
 
 @interface PDSetBehavior : PDAnimateBehavior {
-    id mValue;
+    id  mValue;
 }
 
 - (void)dealloc;

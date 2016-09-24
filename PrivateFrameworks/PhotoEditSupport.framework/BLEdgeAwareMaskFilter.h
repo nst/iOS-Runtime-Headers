@@ -3,20 +3,20 @@
  */
 
 @interface BLEdgeAwareMaskFilter : CIFilter {
-    CIFilter *_ciColorCubeFilter;
-    float *_cubeData;
+    CIFilter * _ciColorCubeFilter;
+    double * _cubeData;
     struct { 
         unsigned char blue; 
         unsigned char green; 
         unsigned char red; 
         unsigned char alpha; 
-    } _currentInputColor;
+    }  _currentInputColor;
     struct { 
         unsigned char blue; 
         unsigned char green; 
         unsigned char red; 
         unsigned char alpha; 
-    } _inputColor;
+    }  _inputColor;
 }
 
 @property struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; } inputColor;

@@ -3,14 +3,14 @@
  */
 
 @interface CUIPSDLayer : NSObject {
-    int _blendMode;
-    NSString *_name;
-    float _opacity;
+    int  _blendMode;
+    NSString * _name;
+    double  _opacity;
 }
 
 @property (nonatomic) int blendMode;
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic) float opacity;
+@property (nonatomic) double opacity;
 
 - (int)blendMode;
 - (void)dealloc;

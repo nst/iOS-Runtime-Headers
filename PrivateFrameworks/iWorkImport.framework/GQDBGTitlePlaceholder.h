@@ -3,7 +3,7 @@
  */
 
 @interface GQDBGTitlePlaceholder : GQDBGPlaceholder <GQDNameMappable> {
-    GQDWPLayoutFrame *mFrame;
+    GQDWPLayoutFrame * mFrame;
 }
 
 @property (readonly, copy) NSString *debugDescription;

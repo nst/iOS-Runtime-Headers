@@ -3,11 +3,11 @@
  */
 
 @interface IKAppDataStorage : NSObject <IKAppDataStoring> {
-    NSString *_filePath;
-    unsigned int _format;
-    NSString *_identifier;
-    NSMutableDictionary *_storageDict;
-    NSObject<OS_dispatch_queue> *_storageQueue;
+    NSString * _filePath;
+    unsigned int  _format;
+    NSString * _identifier;
+    NSMutableDictionary * _storageDict;
+    NSObject<OS_dispatch_queue> * _storageQueue;
 }
 
 @property (nonatomic, readonly, retain) NSString *filePath;

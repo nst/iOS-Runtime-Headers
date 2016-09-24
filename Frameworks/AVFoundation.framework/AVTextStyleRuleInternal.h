@@ -3,8 +3,8 @@
  */
 
 @interface AVTextStyleRuleInternal : NSObject {
-    NSDictionary *textMarkupAttributes;
-    NSString *textSelector;
+    NSDictionary * textMarkupAttributes;
+    NSString * textSelector;
 }
 
 @end

@@ -3,12 +3,12 @@
  */
 
 @interface TQQuicklook : NSObject {
-    TSABaseApplicationDelegate *mBaseAppDelegate;
-    TSACirrusDocument *mDocument;
-    <TSKRenderingExporter> *mExporter;
-    NSString *mPassphrase;
-    NSString *mPath;
-    TSUTemporaryDirectory *mTemporaryDirectory;
+    TSABaseApplicationDelegate * mBaseAppDelegate;
+    TSACirrusDocument * mDocument;
+    <TSKRenderingExporter> * mExporter;
+    NSString * mPassphrase;
+    NSString * mPath;
+    TSUTemporaryDirectory * mTemporaryDirectory;
 }
 
 + (void)loadAssetColorMap;

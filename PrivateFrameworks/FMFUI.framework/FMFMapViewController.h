@@ -3,45 +3,45 @@
  */
 
 @interface FMFMapViewController : UIViewController <FMF3HiddenMapTrackingHandlerDelegate, FMFMapOptionsViewControllerDelegate, FMFMapViewDelegateInternalDelegate, FMFNoLocationViewDelegate, FMFSessionDelegateInternal> {
-    BOOL __blockDidReceiveAnimation;
-    NSSet *__internalHandlesShowingLocations;
-    BOOL __isRenderingInitialMap;
-    NSSet *__preloadedHandles;
-    BOOL __refreshingIsPaused;
-    void *_addressBook;
-    BOOL _alwaysShowAccuracy;
-    UIColor *_annotationTintColor;
-    UIImageView *_cachedMapView;
-    BOOL _canShowNoLocation;
-    unsigned int _defaultMapType;
-    <FMFMapViewControllerDelegate> *_delegate;
-    UIBarButtonItem *_directionsBarButtonItem;
+    BOOL  __blockDidReceiveAnimation;
+    NSSet * __internalHandlesShowingLocations;
+    BOOL  __isRenderingInitialMap;
+    NSSet * __preloadedHandles;
+    BOOL  __refreshingIsPaused;
+    void * _addressBook;
+    BOOL  _alwaysShowAccuracy;
+    UIColor * _annotationTintColor;
+    UIImageView * _cachedMapView;
+    BOOL  _canShowNoLocation;
+    unsigned int  _defaultMapType;
+    <FMFMapViewControllerDelegate> * _delegate;
+    UIBarButtonItem * _directionsBarButtonItem;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _edgeInsets;
-    UIToolbar *_floatingLocationToolbar;
-    UIView *_floatingToolbarView;
-    FMFSession *_fmfSession;
-    FMF3HiddenMapTrackingHandler *_hiddenMap;
-    UIBarButtonItem *_infoBarButtonItem;
-    BOOL _isMapCenteringDisabled;
-    BOOL _isSimpleMap;
-    FMFMapOptionsViewController *_mapOptionsVC;
-    BOOL _mapTypeLoaded;
-    MKMapView *_mapView;
-    FMFMapViewDelegateInternal *_mapViewDelegate;
-    FMFNoLocationView *_noLocationView;
-    FMFRefreshBarButtonItem *_refreshButton;
-    BOOL _shouldZoomToFitMeAndLocations;
-    BOOL _shouldZoomToFitNewLocations;
-    BOOL _showFloatingMapLocationButton;
-    FMFTitleView *_titleView;
-    UIToolbar *_toolbar;
-    MKUserTrackingBarButtonItem *_userLocationButton;
-    BOOL _viewWillAppearCalled;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _edgeInsets;
+    UIToolbar * _floatingLocationToolbar;
+    UIView * _floatingToolbarView;
+    FMFSession * _fmfSession;
+    FMF3HiddenMapTrackingHandler * _hiddenMap;
+    UIBarButtonItem * _infoBarButtonItem;
+    BOOL  _isMapCenteringDisabled;
+    BOOL  _isSimpleMap;
+    FMFMapOptionsViewController * _mapOptionsVC;
+    BOOL  _mapTypeLoaded;
+    MKMapView * _mapView;
+    FMFMapViewDelegateInternal * _mapViewDelegate;
+    FMFNoLocationView * _noLocationView;
+    FMFRefreshBarButtonItem * _refreshButton;
+    BOOL  _shouldZoomToFitMeAndLocations;
+    BOOL  _shouldZoomToFitNewLocations;
+    BOOL  _showFloatingMapLocationButton;
+    FMFTitleView * _titleView;
+    UIToolbar * _toolbar;
+    MKUserTrackingBarButtonItem * _userLocationButton;
+    BOOL  _viewWillAppearCalled;
 }
 
 @property (nonatomic) BOOL _blockDidReceiveAnimation;
@@ -59,7 +59,7 @@
 @property (nonatomic) <FMFMapViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIBarButtonItem *directionsBarButtonItem;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } edgeInsets;
 @property (nonatomic, retain) UIToolbar *floatingLocationToolbar;
 @property (nonatomic, retain) UIView *floatingToolbarView;
 @property (nonatomic, retain) FMFSession *fmfSession;
@@ -84,7 +84,7 @@
 @property (nonatomic, retain) MKUserTrackingBarButtonItem *userLocationButton;
 @property (nonatomic) BOOL viewWillAppearCalled;
 
-+ (struct CGSize { float x1; float x2; })annotationImageSize;
++ (struct CGSize { double x1; double x2; })annotationImageSize;
 
 - (void).cxx_destruct;
 - (void)_authorizeMonitoringLocation;
@@ -124,7 +124,7 @@
 - (void)didStopAbilityToGetLocationForHandle:(id)arg1;
 - (void)didUpdateUserLocation:(id)arg1;
 - (id)directionsBarButtonItem;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
 - (void)enablePreloadedHandles;
 - (id)floatingLocationToolbar;
 - (id)floatingToolbarView;
@@ -141,6 +141,7 @@
 - (id)initWithDelegate:(id)arg1 handles:(id)arg2;
 - (void)initializeDefaults;
 - (BOOL)isCompact;
+- (BOOL)isLocationAlreadyOnMap:(id)arg1;
 - (BOOL)isMapCenteringDisabled;
 - (BOOL)isSimpleMap;
 - (void)loadCachedLocationsForHandles;
@@ -179,7 +180,7 @@
 - (void)setDefaultMapType:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDirectionsBarButtonItem:(id)arg1;
-- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setFloatingLocationToolbar:(id)arg1;
 - (void)setFloatingToolbarView:(id)arg1;
 - (void)setFmfSession:(id)arg1;
@@ -229,7 +230,7 @@
 - (void)viewWillAppearWillMoveToWindowSetup;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)zoomAndSelectHandle:(id)arg1;
 - (void)zoomToFit;

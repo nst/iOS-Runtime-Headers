@@ -3,9 +3,9 @@
  */
 
 @interface OIXMLNode : NSObject <NSCopying> {
-    unsigned int _kind;
-    NSString *_name;
-    id _value;
+    unsigned int  _kind;
+    NSString * _name;
+    id  _value;
 }
 
 + (void)_escapeCharacters:(const unsigned short*)arg1 amount:(unsigned int)arg2 escapeWhiteSpaces:(BOOL)arg3 inString:(id)arg4 appendingToString:(struct __CFString { }*)arg5;

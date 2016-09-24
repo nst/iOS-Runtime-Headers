@@ -3,7 +3,7 @@
  */
 
 @interface MCPowerAssertion : MCProcessAssertion {
-    BOOL _parked;
+    BOOL  _parked;
 }
 
 @property (getter=isParked, nonatomic, readonly) BOOL parked;

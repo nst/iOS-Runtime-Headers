@@ -3,9 +3,9 @@
  */
 
 @interface MCTeslaConfiguration : NSObject {
-    id /* block */ _callback;
-    NSXPCConnection *_connection;
-    BOOL _fetching;
+    id /* block */  _callback;
+    NSXPCConnection * _connection;
+    BOOL  _fetching;
 }
 
 @property (nonatomic, copy) id /* block */ callback;

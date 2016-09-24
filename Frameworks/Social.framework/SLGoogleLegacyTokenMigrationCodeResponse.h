@@ -3,7 +3,7 @@
  */
 
 @interface SLGoogleLegacyTokenMigrationCodeResponse : SLGoogleLegacyTokenMigrationResponse {
-    NSString *_code;
+    NSString * _code;
 }
 
 @property (readonly) NSString *code;

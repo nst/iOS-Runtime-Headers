@@ -3,7 +3,7 @@
  */
 
 @interface NSURLCredential : NSObject <NSCopying, NSSecureCoding> {
-    NSURLCredentialInternal *_internal;
+    NSURLCredentialInternal * _internal;
 }
 
 @property (readonly) unsigned int persistence;
@@ -13,8 +13,8 @@
 + (id)credentialWithUser:(id)arg1 password:(id)arg2 persistence:(unsigned int)arg3;
 + (BOOL)supportsSecureCoding;
 
-- (struct _CFURLCredential { }*)_CFURLCredential;
-- (struct _CFURLCredential { }*)_cfurlcredential;
+- (const struct _CFURLCredential { }*)_CFURLCredential;
+- (const struct _CFURLCredential { }*)_cfurlcredential;
 - (BOOL)_hasSWCACreatorAttribute;
 - (id)_initWithCFURLCredential:(struct _CFURLCredential { }*)arg1;
 - (void)_removeSWCACreatorAttribute;

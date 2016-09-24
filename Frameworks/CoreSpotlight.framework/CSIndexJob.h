@@ -3,11 +3,11 @@
  */
 
 @interface CSIndexJob : NSObject <NSCopying, NSSecureCoding> {
-    NSArray *_bundleIDs;
-    NSArray *_excludedBundleIDs;
-    NSArray *_identifiersToReindex;
-    int _jobOptions;
-    int _jobType;
+    NSArray * _bundleIDs;
+    NSArray * _excludedBundleIDs;
+    NSArray * _identifiersToReindex;
+    int  _jobOptions;
+    int  _jobType;
 }
 
 @property (nonatomic, retain) NSArray *bundleIDs;

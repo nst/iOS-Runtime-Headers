@@ -3,7 +3,7 @@
  */
 
 @interface PUPhotosPickerViewControllerSpec : NSObject {
-    unsigned int _supportedInterfaceOrientations;
+    unsigned int  _supportedInterfaceOrientations;
 }
 
 @property (nonatomic, readonly) unsigned int supportedInterfaceOrientations;

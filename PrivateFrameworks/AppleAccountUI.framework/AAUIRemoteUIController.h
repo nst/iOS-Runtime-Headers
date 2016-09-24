@@ -3,7 +3,7 @@
  */
 
 @interface AAUIRemoteUIController : RemoteUIController {
-    NSHTTPURLResponse *_redirectResponse;
+    NSHTTPURLResponse * _redirectResponse;
 }
 
 @property (nonatomic, retain) NSHTTPURLResponse *redirectResponse;

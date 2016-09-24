@@ -3,21 +3,21 @@
  */
 
 @interface GLKShaderBlockNode : NSObject <NSCopying, NSXMLParserDelegate> {
-    NSMutableString *_blockText;
-    GLKShaderBlockNode *_children;
-    unsigned int _index;
-    BOOL _indexedMask;
-    NSString *_label;
-    NSString *_loopVar;
+    NSMutableString * _blockText;
+    GLKShaderBlockNode * _children;
+    unsigned int  _index;
+    BOOL  _indexedMask;
+    NSString * _label;
+    NSString * _loopVar;
     struct GLKBigInt_s { 
-        unsigned long long n0; 
-        unsigned long long n1; 
-    } _mask;
-    GLKShaderBlockNode *_next;
-    GLKShaderBlockNode *_parent;
-    int _propertyClass;
-    int _type;
-    int _unrollCt;
+        unsigned int n0; 
+        unsigned int n1; 
+    }  _mask;
+    GLKShaderBlockNode * _next;
+    GLKShaderBlockNode * _parent;
+    int  _propertyClass;
+    int  _type;
+    int  _unrollCt;
 }
 
 @property (nonatomic, retain) NSMutableString *blockText;
@@ -29,7 +29,7 @@
 @property (nonatomic) BOOL indexedMask;
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic, copy) NSString *loopVar;
-@property (nonatomic) struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; } mask;
+@property (nonatomic) struct GLKBigInt_s { unsigned int x1; unsigned int x2; } mask;
 @property (nonatomic) GLKShaderBlockNode *next;
 @property (nonatomic) GLKShaderBlockNode *parent;
 @property (nonatomic) int propertyClass;
@@ -41,12 +41,12 @@
 + (id)copyTreeWithRoot:(id)arg1 parent:(id)arg2;
 + (id)copyTreeWithRootButNotSiblings:(id)arg1 parent:(id)arg2;
 + (void)insertNode:(id)arg1 afterSibling:(id)arg2;
-+ (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })maskForLabel:(id)arg1 root:(id)arg2 index:(int)arg3;
++ (struct GLKBigInt_s { unsigned int x1; unsigned int x2; })maskForLabel:(id)arg1 root:(id)arg2 index:(int)arg3;
 + (unsigned int)nodeCt:(id)arg1 nodeCt:(unsigned int*)arg2;
 + (void)printTree:(id)arg1;
 + (void)printTreeVerbose:(id)arg1;
 + (void)setIndicesForRoot:(id)arg1 andReplaceLoopVar:(id)arg2 baseLabel:(id)arg3 basePropertyClass:(int)arg4 usingIndex:(unsigned int)arg5 indexString:(id)arg6;
-+ (void)setMasksWithRoot:(id)arg1 treeRoot:(id)arg2 mask:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)arg3;
++ (void)setMasksWithRoot:(id)arg1 treeRoot:(id)arg2 mask:(struct GLKBigInt_s { unsigned int x1; unsigned int x2; }*)arg3;
 
 - (id)blockText;
 - (id)children;
@@ -58,7 +58,7 @@
 - (id)init;
 - (id)label;
 - (id)loopVar;
-- (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })mask;
+- (struct GLKBigInt_s { unsigned int x1; unsigned int x2; })mask;
 - (id)next;
 - (id)parent;
 - (void)parser:(id)arg1 didEndElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4;
@@ -71,7 +71,7 @@
 - (void)setIndexedMask:(BOOL)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setLoopVar:(id)arg1;
-- (void)setMask:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setMask:(struct GLKBigInt_s { unsigned int x1; unsigned int x2; })arg1;
 - (void)setNext:(id)arg1;
 - (void)setParent:(id)arg1;
 - (void)setPropertyClass:(int)arg1;

@@ -3,12 +3,12 @@
  */
 
 @interface SYIncomingTransactionSession : SYSession {
-    unsigned long long _activity;
-    id /* block */ _completion;
-    SYChangeMessage *_message;
-    BOOL canRestart;
-    BOOL canRollback;
-    int state;
+    id /* block */  _completion;
+    SYChangeMessage * _message;
+    NSObject<OS_os_activity> * _sessionActivity;
+    BOOL  canRestart;
+    BOOL  canRollback;
+    int  state;
 }
 
 - (void).cxx_destruct;
@@ -17,7 +17,7 @@
 - (void)_sendComplete;
 - (BOOL)canRestart;
 - (BOOL)canRollback;
-- (void)cancel;
+- (void)cancelWithError:(id)arg1;
 - (void)didCompleteSession;
 - (id)initWithService:(id)arg1 transaction:(id)arg2 completion:(id /* block */)arg3;
 - (BOOL)isResetSync;

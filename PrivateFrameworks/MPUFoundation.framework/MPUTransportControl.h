@@ -3,13 +3,13 @@
  */
 
 @interface MPUTransportControl : NSObject <NSCopying> {
-    BOOL _acceptsTapsWhenDisabled;
-    BOOL _enabled;
-    int _group;
-    BOOL _highlighted;
-    unsigned int _numberOfAvailableSlotsInContainer;
-    BOOL _supportsLongPress;
-    int _type;
+    BOOL  _acceptsTapsWhenDisabled;
+    BOOL  _enabled;
+    int  _group;
+    BOOL  _highlighted;
+    unsigned int  _numberOfAvailableSlotsInContainer;
+    BOOL  _supportsLongPress;
+    int  _type;
 }
 
 @property (nonatomic) BOOL acceptsTapsWhenDisabled;

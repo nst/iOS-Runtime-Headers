@@ -3,7 +3,7 @@
  */
 
 @interface UIWebOverflowScrollListener : NSObject <UIScrollViewDelegate> {
-    UIWebOverflowScrollView *_scrollView;
+    UIWebOverflowScrollView * _scrollView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

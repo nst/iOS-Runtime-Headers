@@ -3,20 +3,20 @@
  */
 
 @interface PTPDevicePropDescDataset : NSObject {
-    NSMutableData *_content;
-    id _currentValue;
-    unsigned short _dataTypeCode;
-    unsigned short _devicePropertyCode;
-    BOOL _dirty;
-    id _factoryDefaultValue;
-    unsigned char _formFlag;
-    id _maximumValue;
-    id _minimumValue;
-    unsigned short _numberOfValues;
-    BOOL _readOnlyObject;
-    unsigned char _readWriteAttribute;
-    id _stepSize;
-    NSMutableArray *_supportedValues;
+    NSMutableData * _content;
+    id  _currentValue;
+    unsigned short  _dataTypeCode;
+    unsigned short  _devicePropertyCode;
+    BOOL  _dirty;
+    id  _factoryDefaultValue;
+    unsigned char  _formFlag;
+    id  _maximumValue;
+    id  _minimumValue;
+    unsigned short  _numberOfValues;
+    BOOL  _readOnlyObject;
+    unsigned char  _readWriteAttribute;
+    id  _stepSize;
+    NSMutableArray * _supportedValues;
 }
 
 - (id)content;

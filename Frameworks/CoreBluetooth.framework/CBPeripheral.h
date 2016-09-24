@@ -3,10 +3,10 @@
  */
 
 @interface CBPeripheral : CBPeer {
-    NSNumber *_RSSI;
-    NSMutableDictionary *_attributes;
-    CBCentralManager *_centralManager;
-    <CBPeripheralDelegate> *_delegate;
+    NSNumber * _RSSI;
+    NSMutableDictionary * _attributes;
+    CBCentralManager * _centralManager;
+    <CBPeripheralDelegate> * _delegate;
     struct { 
         unsigned int didUpdateName : 1; 
         unsigned int didModifyServices : 1; 
@@ -22,11 +22,11 @@
         unsigned int didUpdateDescriptorValue : 1; 
         unsigned int didWriteDescriptorValue : 1; 
         unsigned int didReceiveTimeSync : 1; 
-    } _delegateFlags;
-    BOOL _isConnectedToSystem;
-    NSString *_name;
-    NSMutableArray *_services;
-    int _state;
+    }  _delegateFlags;
+    BOOL  _isConnectedToSystem;
+    NSString * _name;
+    NSArray * _services;
+    int  _state;
 }
 
 @property (retain) NSNumber *RSSI;
@@ -36,6 +36,7 @@
 @property (retain) NSArray *services;
 @property int state;
 
+- (void).cxx_destruct;
 - (id)RSSI;
 - (id)attributeForHandle:(id)arg1;
 - (void)dealloc;

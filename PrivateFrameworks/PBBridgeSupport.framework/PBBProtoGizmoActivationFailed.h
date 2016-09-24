@@ -3,7 +3,7 @@
  */
 
 @interface PBBProtoGizmoActivationFailed : PBCodable <NSCopying> {
-    NSString *_failureDescription;
+    NSString * _failureDescription;
 }
 
 @property (nonatomic, retain) NSString *failureDescription;

@@ -3,12 +3,12 @@
  */
 
 @interface GKAggregateMapping : NSObject <NSCopying> {
-    GKCollectionViewDataSource *_dataSource;
-    NSString *_dynamicTag;
-    NSMutableDictionary *_globalSectionsToTags;
-    NSMutableDictionary *_globalToLocalSections;
-    NSMutableDictionary *_localToGlobalSections;
-    int _sectionCount;
+    GKCollectionViewDataSource * _dataSource;
+    NSString * _dynamicTag;
+    NSMutableDictionary * _globalSectionsToTags;
+    NSMutableDictionary * _globalToLocalSections;
+    NSMutableDictionary * _localToGlobalSections;
+    int  _sectionCount;
 }
 
 @property (nonatomic, retain) GKCollectionViewDataSource *dataSource;

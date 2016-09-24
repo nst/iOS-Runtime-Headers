@@ -3,9 +3,9 @@
  */
 
 @interface MPUEffectCache : NSObject {
-    NSObject<OS_dispatch_queue> *_blurQueue;
-    NSCache *_effectCache;
-    NSOperationQueue *_effectQueue;
+    NSObject<OS_dispatch_queue> * _blurQueue;
+    NSCache * _effectCache;
+    NSOperationQueue * _effectQueue;
 }
 
 @property unsigned int countLimit;

@@ -3,20 +3,20 @@
  */
 
 @interface BLModalPresenter : UIWindow <UIKeyInput> {
-    NSMutableArray *_controllers;
+    NSMutableArray * _controllers;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _keyboard;
-    BOOL _keyboardVisible;
-    int _lockCount;
-    BLModalPresenterRootViewController *_rootViewController;
+    }  _keyboard;
+    BOOL  _keyboardVisible;
+    int  _lockCount;
+    BLModalPresenterRootViewController * _rootViewController;
 }
 
 @property (nonatomic) int autocapitalizationType;
@@ -24,6 +24,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL enablesReturnKeyAutomatically;
+@property (nonatomic, readonly) BOOL hasText;
 @property (readonly) unsigned int hash;
 @property (nonatomic) int keyboardAppearance;
 @property (nonatomic) int keyboardType;
@@ -31,6 +32,7 @@
 @property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
 @property (nonatomic) int spellCheckingType;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *textContentType;
 
 + (id)presenter;
 
@@ -40,7 +42,7 @@
 - (void)configureForOncreen:(id)arg1 orientation:(int)arg2;
 - (void)dealloc;
 - (void)deleteBackward;
-- (struct CGSize { float x1; float x2; })formSheetSizeForController:(id)arg1 withOrientation:(int)arg2;
+- (struct CGSize { double x1; double x2; })formSheetSizeForController:(id)arg1 withOrientation:(int)arg2;
 - (BOOL)hasText;
 - (id)hidden;
 - (void)hideController:(id)arg1 animated:(BOOL)arg2 withCompletion:(id /* block */)arg3;

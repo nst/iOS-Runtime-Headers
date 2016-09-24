@@ -3,14 +3,14 @@
  */
 
 @interface CPMLModel : NSObject {
-    NSObject<OS_dispatch_queue> *_dispatch_queue;
-    void *_mData;
-    NSString *_modelPath;
-    double *_realBase;
-    NSString *_savedPlistPath;
-    unsigned long long _totalBytesIntSection;
-    unsigned long long _totalBytesRealSection;
-    CPMLModelEvaluate *cpModelEvaluate;
+    NSObject<OS_dispatch_queue> * _dispatch_queue;
+    void * _mData;
+    NSString * _modelPath;
+    double * _realBase;
+    NSString * _savedPlistPath;
+    unsigned int  _totalBytesIntSection;
+    unsigned int  _totalBytesRealSection;
+    CPMLModelEvaluate * cpModelEvaluate;
 }
 
 @property (retain) CPMLModelEvaluate *cpModelEvaluate;

@@ -3,11 +3,10 @@
  */
 
 @interface CAForceField : NSObject <NSCoding, NSCopying, NSMutableCopying> {
-    BOOL _enabled;
-    CAValueFunction *_function;
-    CALayer *_layer;
-    NSString *_name;
-    void *_priv;
+    BOOL  _enabled;
+    CAValueFunction * _function;
+    CALayer * _layer;
+    NSString * _name;
 }
 
 @property (getter=isEnabled) BOOL enabled;

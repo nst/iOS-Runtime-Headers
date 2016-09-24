@@ -3,15 +3,15 @@
  */
 
 @interface MPUCompletionQueryDataSource : MPUQueryDataSource {
-    <MPUCompletionQueryDataSourceDelegate> *_completionDelegate;
-    NSMutableDictionary *_completions;
-    BOOL _hasAutomaticallyLoadedCompletions;
-    NSMutableSet *_overlayedSectionEntityPIDs;
-    BOOL _shouldAutomaticallyLoadCompletions;
-    BOOL _shouldShowCompletions;
-    NSMutableDictionary *_statuses;
-    NSMutableDictionary *_tokens;
-    NSMutableDictionary *_variants;
+    <MPUCompletionQueryDataSourceDelegate> * _completionDelegate;
+    NSMutableDictionary * _completions;
+    BOOL  _hasAutomaticallyLoadedCompletions;
+    NSMutableSet * _overlayedSectionEntityPIDs;
+    BOOL  _shouldAutomaticallyLoadCompletions;
+    BOOL  _shouldShowCompletions;
+    NSMutableDictionary * _statuses;
+    NSMutableDictionary * _tokens;
+    NSMutableDictionary * _variants;
 }
 
 @property (nonatomic) <MPUCompletionQueryDataSourceDelegate> *completionDelegate;
@@ -21,7 +21,7 @@
 
 - (void).cxx_destruct;
 - (void)_didInvalidateWithContext:(id)arg1;
-- (long long)_pidForSectionAtIndex:(int)arg1;
+- (int)_pidForSectionAtIndex:(int)arg1;
 - (void)_setCompletion:(id)arg1 forSectionAtIndex:(int)arg2;
 - (void)_setToken:(unsigned int)arg1 forSectionAtIndex:(int)arg2;
 - (int)_tokenForSectionAtIndex:(int)arg1;

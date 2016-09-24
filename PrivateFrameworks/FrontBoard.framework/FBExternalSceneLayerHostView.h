@@ -3,13 +3,13 @@
  */
 
 @interface FBExternalSceneLayerHostView : FBSceneLayerHostView <FBSceneMonitorDelegate> {
-    FBSceneHostManager *_hostManager;
-    UIView<FBSceneHostView> *_hostView;
-    FBSceneMonitor *_monitor;
-    FBScene *_parentScene;
-    NSString *_requester;
-    FBScene *_targetScene;
-    NSString *_targetSceneID;
+    FBSceneHostManager * _hostManager;
+    UIView<FBSceneHostView> * _hostView;
+    FBSceneMonitor * _monitor;
+    FBScene * _parentScene;
+    NSString * _requester;
+    FBScene * _targetScene;
+    NSString * _targetSceneID;
 }
 
 @property (readonly, copy) NSString *debugDescription;

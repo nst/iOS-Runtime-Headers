@@ -3,14 +3,14 @@
  */
 
 @interface NGSInternalSettingsManager : NSObject {
-    NSArray *_blacklistedWatchKitIDs;
-    NSMutableArray *_glanceDefinitions;
-    BOOL _hasSettings;
-    NSMutableDictionary *_installStatesByGlanceID;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSString *_selectedGlanceIdentifier;
-    NSArray *_storedSettings;
-    NPSManager *_syncManager;
+    NSArray * _blacklistedWatchKitIDs;
+    NSMutableArray * _glanceDefinitions;
+    BOOL  _hasSettings;
+    NSMutableDictionary * _installStatesByGlanceID;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSString * _selectedGlanceIdentifier;
+    NSArray * _storedSettings;
+    NPSManager * _syncManager;
 }
 
 @property (nonatomic, readonly) unsigned int glanceCount;

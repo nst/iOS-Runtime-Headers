@@ -3,37 +3,37 @@
  */
 
 @interface TSCH3DGenericAxisLabelPositioner : NSObject <TSCH3DAxisLabelPositioner> {
-    unsigned int mAlignment;
-    unsigned int mAxis;
-    float mOffset;
+    unsigned int  mAlignment;
+    unsigned int  mAxis;
+    double  mOffset;
     struct tvec2<float> { 
         union { 
-            float x; 
-            float r; 
-            float s; 
+            double x; 
+            double r; 
+            double s; 
         } ; 
         union { 
-            float y; 
-            float g; 
-            float t; 
+            double y; 
+            double g; 
+            double t; 
         } ; 
-    } mRange;
+    }  mRange;
 }
 
 + (id)horizontal;
-+ (id)horizontalWithRange:(struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1;
-+ (id)horizontalWithRange:(struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1 offset:(float)arg2;
++ (id)horizontalWithRange:(struct tvec2<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; }*)arg1;
++ (id)horizontalWithRange:(struct tvec2<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; }*)arg1 offset:(float)arg2;
 + (id)vertical;
-+ (id)verticalWithRange:(struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1;
-+ (id)verticalWithRange:(struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1 offset:(float)arg2;
++ (id)verticalWithRange:(struct tvec2<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; }*)arg1;
++ (id)verticalWithRange:(struct tvec2<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; }*)arg1 offset:(float)arg2;
 
 - (id).cxx_construct;
-- (unsigned int)alignmentForChartDirection:(const struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; }*)arg1;
+- (unsigned int)alignmentForChartDirection:(const struct tvec3<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; }*)arg1;
 - (BOOL)hasOffset;
 - (id)init;
-- (id)initWithAxis:(int)arg1 alignment:(unsigned int)arg2 offset:(float)arg3 range:(struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg4;
+- (id)initWithAxis:(int)arg1 alignment:(unsigned int)arg2 offset:(float)arg3 range:(struct tvec2<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; }*)arg4;
 - (BOOL)isHorizontal;
 - (float)labelGapForCount:(unsigned int)arg1;
-- (struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; })positionForValue:(double)arg1 count:(unsigned int)arg2 chartDirection:(const struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; }*)arg3;
+- (struct tvec3<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; })positionForValue:(double)arg1 count:(unsigned int)arg2 chartDirection:(const struct tvec3<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; }*)arg3;
 
 @end

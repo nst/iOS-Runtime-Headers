@@ -3,8 +3,8 @@
  */
 
 @interface SSSQLiteQuery : NSObject {
-    SSSQLiteDatabase *_database;
-    SSSQLiteQueryDescriptor *_descriptor;
+    SSSQLiteDatabase * _database;
+    SSSQLiteQueryDescriptor * _descriptor;
 }
 
 @property (readonly) int countOfEntities;

@@ -14,9 +14,11 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)scheduledTimerWithTimeInterval:(double)arg1 invocation:(id)arg2 repeats:(BOOL)arg3;
++ (id)scheduledTimerWithTimeInterval:(double)arg1 repeats:(BOOL)arg2 block:(id /* block */)arg3;
 + (id)scheduledTimerWithTimeInterval:(double)arg1 target:(id)arg2 selector:(SEL)arg3 userInfo:(id)arg4 repeats:(BOOL)arg5;
 + (id)timerWithFireDate:(id)arg1 target:(id)arg2 selector:(SEL)arg3 userInfo:(id)arg4;
 + (id)timerWithTimeInterval:(double)arg1 invocation:(id)arg2 repeats:(BOOL)arg3;
++ (id)timerWithTimeInterval:(double)arg1 repeats:(BOOL)arg2 block:(id /* block */)arg3;
 + (id)timerWithTimeInterval:(double)arg1 target:(id)arg2 selector:(SEL)arg3 userInfo:(id)arg4 repeats:(BOOL)arg5;
 
 - (double)_cffireTime;
@@ -25,6 +27,7 @@
 - (void)fire;
 - (id)fireDate;
 - (double)fireTime;
+- (id)initWithFireDate:(id)arg1 interval:(double)arg2 repeats:(BOOL)arg3 block:(id /* block */)arg4;
 - (id)initWithFireDate:(id)arg1 interval:(double)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5 repeats:(BOOL)arg6;
 - (double)interval;
 - (void)invalidate;
@@ -51,7 +54,7 @@
 
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 
-+ (void)_safari_blockTimerDidFire:(id)arg1;
 + (id)safari_scheduledTimerWithTimeInterval:(double)arg1 repeats:(BOOL)arg2 block:(id /* block */)arg3;
++ (id)safari_timerWithTimeInterval:(double)arg1 repeats:(BOOL)arg2 block:(id /* block */)arg3;
 
 @end

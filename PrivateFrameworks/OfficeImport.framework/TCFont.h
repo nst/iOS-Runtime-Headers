@@ -3,16 +3,16 @@
  */
 
 @interface TCFont : NSObject <NSCopying> {
-    TCFontFamily *_family;
-    NSDictionary *_namesByLanguage;
-    NSString *_psName;
+    TCFontFamily * _family;
+    NSDictionary * _namesByLanguage;
+    NSString * _psName;
     struct TCFontStyling { 
         int fontClass; 
         unsigned int stringEncoding; 
         BOOL weight; 
         BOOL italic; 
         int width; 
-    } _styling;
+    }  _styling;
 }
 
 @property (nonatomic) TCFontFamily *family;

@@ -3,15 +3,15 @@
  */
 
 @interface STShowStockOverviewRequest : AFSiriRequest {
-    NSNumber *_change;
-    NSNumber *_changePercent;
-    NSString *_chartData;
-    NSString *_exchange;
-    NSNumber *_high;
-    NSNumber *_low;
-    NSString *_name;
-    NSNumber *_price;
-    NSString *_symbol;
+    NSNumber * _change;
+    NSNumber * _changePercent;
+    NSString * _chartData;
+    NSString * _exchange;
+    NSNumber * _high;
+    NSNumber * _low;
+    NSString * _name;
+    NSNumber * _price;
+    NSString * _symbol;
 }
 
 + (BOOL)supportsSecureCoding;

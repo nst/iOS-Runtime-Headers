@@ -3,8 +3,8 @@
  */
 
 @interface NSDictionaryMapNode : NSStoreMapNode <NSCoding> {
-    id *_attributes;
-    id _attributesAsEncoded;
+    id * _attributes;
+    id  _attributesAsEncoded;
 }
 
 + (void)initialize;

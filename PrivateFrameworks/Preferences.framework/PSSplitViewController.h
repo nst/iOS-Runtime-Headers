@@ -3,8 +3,8 @@
  */
 
 @interface PSSplitViewController : UISplitViewController {
-    PSRootController *_containerNavigationController;
-    <PSSplitViewControllerNavigationDelegate> *_navigationDelegate;
+    PSRootController * _containerNavigationController;
+    <PSSplitViewControllerNavigationDelegate> * _navigationDelegate;
 }
 
 @property (nonatomic, retain) PSRootController *containerNavigationController;

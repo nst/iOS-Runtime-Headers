@@ -3,15 +3,15 @@
  */
 
 @interface SGRe2Subregexps : SGRe2 {
-    SGRe2PrefilterTree *_prefilter;
-    NSArray *_subregexps;
+    SGRe2PrefilterTree * _prefilter;
+    NSArray * _subregexps;
 }
 
 - (void).cxx_destruct;
-- (BOOL)_enumerateMatchesInUtf8:(const char *)arg1 fromString:(id)arg2 ngroups:(unsigned int)arg3 block:(id /* block */)arg4;
+- (int)_enumerateMatchesInUtf8:(const char *)arg1 fromString:(id)arg2 ngroups:(unsigned int)arg3 block:(id /* block */)arg4;
 - (id)description;
-- (BOOL)existsInUtf8:(const char *)arg1;
+- (id)existsInUtf8:(const char *)arg1;
 - (id)initWithSubregexps:(id)arg1 prefilter:(id)arg2;
-- (BOOL)matchesUtf8:(const char *)arg1;
+- (id)matchesUtf8:(const char *)arg1;
 
 @end

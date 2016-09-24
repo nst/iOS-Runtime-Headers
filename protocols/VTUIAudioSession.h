@@ -5,7 +5,9 @@
 
 @required
 
+- (int)audioSource;
 - (float)averagePower;
+- (BOOL)hasCorrectAudioRoute;
 - (BOOL)isRecording;
 - (BOOL)prepareRecord;
 - (void)releaseAudioSession;

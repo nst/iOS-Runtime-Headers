@@ -3,8 +3,8 @@
  */
 
 @interface CoreDAVItemWithHrefChildren : CoreDAVItem {
-    NSMutableSet *_hrefs;
-    CoreDAVItemWithNoChildren *_unauthenticated;
+    NSMutableSet * _hrefs;
+    CoreDAVItemWithNoChildren * _unauthenticated;
 }
 
 @property (nonatomic, retain) NSMutableSet *hrefs;

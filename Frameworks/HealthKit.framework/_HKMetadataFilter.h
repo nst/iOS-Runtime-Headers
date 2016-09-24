@@ -3,8 +3,8 @@
  */
 
 @interface _HKMetadataFilter : _HKFilter {
-    NSString *_key;
-    unsigned int _operatorType;
+    NSString * _key;
+    unsigned int  _operatorType;
 }
 
 @property (nonatomic, readonly, copy) NSString *key;
@@ -28,6 +28,7 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
-- (id)predicateWithHealthDaemon:(id)arg1;
+- (id)_filterIgnoringPrivateMetadata;
+- (id)predicateWithProfile:(id)arg1;
 
 @end

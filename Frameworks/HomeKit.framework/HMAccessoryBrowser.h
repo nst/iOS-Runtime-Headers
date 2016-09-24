@@ -2,17 +2,17 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMAccessoryBrowser : NSObject <HMMessageReceiver> {
-    HMThreadSafeMutableArrayCollection *_accessories;
-    BOOL _browsing;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    <HMAccessoryBrowserDelegate> *_delegate;
-    HMDelegateCaller *_delegateCaller;
-    unsigned int _generationCounter;
-    HMMessageDispatcher *_msgDispatcher;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
-    NSUUID *_uuid;
-    HMXpcClient *_xpcClient;
+@interface HMAccessoryBrowser : NSObject <HMFMessageReceiver> {
+    HMThreadSafeMutableArrayCollection * _accessories;
+    BOOL  _browsing;
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    <HMAccessoryBrowserDelegate> * _delegate;
+    HMDelegateCaller * _delegateCaller;
+    unsigned int  _generationCounter;
+    HMFMessageDispatcher * _msgDispatcher;
+    NSObject<OS_dispatch_queue> * _propertyQueue;
+    NSUUID * _uuid;
+    HMXpcClient * _xpcClient;
 }
 
 @property (nonatomic, retain) HMThreadSafeMutableArrayCollection *accessories;
@@ -27,7 +27,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
-@property (nonatomic, retain) HMMessageDispatcher *msgDispatcher;
+@property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSUUID *uuid;

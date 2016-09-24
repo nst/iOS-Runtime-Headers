@@ -3,10 +3,10 @@
  */
 
 @interface PGPictureInPictureRemoteObject : NSObject <PGPictureInPictureRemoteObjectInterface, PGPictureInPictureViewControllerDelegate> {
-    NSXPCConnection *_connection;
-    int _controlsStyle;
-    int _currentState;
-    <PGPictureInPictureRemoteObjectDelegate> *_delegate;
+    NSXPCConnection * _connection;
+    int  _controlsStyle;
+    int  _currentState;
+    <PGPictureInPictureRemoteObjectDelegate> * _delegate;
     struct { 
         unsigned int pictureInPictureRemoteObject_shouldAcceptSetupRequest : 1; 
         unsigned int pictureInPictureRemoteObject_didCreatePictureInPictureViewController : 1; 
@@ -15,17 +15,19 @@
         unsigned int pictureInPictureRemoteObject_willHidePictureInPictureViewController : 1; 
         unsigned int pictureInPictureRemoteObject_didHidePictureInPictureViewController : 1; 
         unsigned int pictureInPictureRemoteObject_willDestroyPictureInPictureViewController : 1; 
-    } _delegateRespondsTo;
-    unsigned int _isPictureInPicturePossible;
-    unsigned int _isStartingStoppingOrCancellingPictureInPicture;
-    PGPictureInPictureApplication *_pictureInPictureApplication;
-    int _pictureInPictureInterruptionCounter;
-    unsigned int _pictureInPictureShouldStartWhenEnteringBackground;
-    PGPictureInPictureViewController *_pictureInPictureViewController;
-    BKSProcessAssertion *_processAssertion;
-    NSObject<OS_dispatch_queue> *_queue;
-    unsigned int _shouldShowAlternateActionButtonImage;
-    unsigned int _shouldShowLoadingIndicator;
+    }  _delegateRespondsTo;
+    BOOL  _isPictureInPicturePossible;
+    BOOL  _isStartingStoppingOrCancellingPictureInPicture;
+    NSArray * _loadedTimeRanges;
+    PGPictureInPictureApplication * _pictureInPictureApplication;
+    int  _pictureInPictureInterruptionCounter;
+    BOOL  _pictureInPictureShouldStartWhenEnteringBackground;
+    PGPictureInPictureViewController * _pictureInPictureViewController;
+    PGPlaybackProgress * _playbackProgress;
+    BKSProcessAssertion * _processAssertion;
+    NSObject<OS_dispatch_queue> * _queue;
+    BOOL  _shouldShowAlternateActionButtonImage;
+    BOOL  _shouldShowLoadingIndicator;
 }
 
 @property (nonatomic, readonly) NSXPCConnection *connection;
@@ -56,8 +58,7 @@
 - (id)pictureInPictureApplication;
 - (void)pictureInPictureInterruptionBegan;
 - (void)pictureInPictureInterruptionEnded;
-- (void)pictureInPictureViewController:(id)arg1 controlsVisibilityChanged:(BOOL)arg2 animated:(BOOL)arg3;
-- (void)pictureInPictureViewController:(id)arg1 updateHostedWindowSize:(struct CGSize { float x1; float x2; })arg2 animationType:(int)arg3 initialSpringVelocity:(float)arg4;
+- (void)pictureInPictureViewController:(id)arg1 updateHostedWindowSize:(struct CGSize { double x1; double x2; })arg2 animationType:(int)arg3 initialSpringVelocity:(float)arg4;
 - (void)pictureInPictureViewControllerActionButtonTapped:(id)arg1;
 - (void)pictureInPictureViewControllerCancelButtonTapped:(id)arg1;
 - (void)pictureInPictureViewControllerHostedWindowSizeChangeBegan:(id)arg1;
@@ -67,16 +68,18 @@
 - (void)resume;
 - (oneway void)rotateContentContainer:(int)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)setDelegate:(id)arg1;
+- (oneway void)setLoadedTimeRanges:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setPictureInPicturePossible:(BOOL)arg1;
 - (oneway void)setPictureInPictureShouldStartWhenEnteringBackground:(BOOL)arg1 completionHandler:(id /* block */)arg2;
+- (oneway void)setPlaybackProgress:(id)arg1 completionHandler:(id /* block */)arg2;
 - (oneway void)setShouldShowAlternateActionButtonImage:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (oneway void)setShouldShowLoadingIndicator:(BOOL)arg1 completionHandler:(id /* block */)arg2;
-- (oneway void)setupAnimated:(BOOL)arg1 withHostedWindowHostingHandle:(id)arg2 preferredContentSize:(struct CGSize { float x1; float x2; })arg3 initialLayerFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 completionHandler:(id /* block */)arg5;
+- (oneway void)setupAnimated:(BOOL)arg1 withHostedWindowHostingHandle:(id)arg2 preferredContentSize:(struct CGSize { double x1; double x2; })arg3 initialLayerFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4 completionHandler:(id /* block */)arg5;
 - (BOOL)shouldStartPictureInPictureEnteringBackground;
 - (oneway void)startPictureInPictureAnimated:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (void)startPictureInPictureEnteringBackgroundAnimated:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
-- (oneway void)stopPictureInPictureAnimated:(BOOL)arg1 withFinalLayerFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 completionHandler:(id /* block */)arg3;
+- (oneway void)stopPictureInPictureAnimated:(BOOL)arg1 withFinalLayerFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 completionHandler:(id /* block */)arg3;
 - (void)suspend;
-- (oneway void)updatePreferredContentSize:(struct CGSize { float x1; float x2; })arg1 withCompletionHandler:(id /* block */)arg2;
+- (oneway void)updatePreferredContentSize:(struct CGSize { double x1; double x2; })arg1 withCompletionHandler:(id /* block */)arg2;
 
 @end

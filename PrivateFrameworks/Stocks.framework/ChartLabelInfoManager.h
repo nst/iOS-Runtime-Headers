@@ -3,10 +3,10 @@
  */
 
 @interface ChartLabelInfoManager : NSObject {
-    NSMutableArray *_integerLabelInfoArray;
-    NSMutableArray *_monthLabelInfoArrays;
-    BOOL _use24hrTime;
-    ChartLabelInfo *_yAxisLabelInfo;
+    NSMutableArray * _integerLabelInfoArray;
+    NSMutableArray * _monthLabelInfoArrays;
+    BOOL  _use24hrTime;
+    ChartLabelInfo * _yAxisLabelInfo;
 }
 
 + (struct __CFString { }*)_CFDateFormatterPropertyForMonthLabelLength:(int)arg1;

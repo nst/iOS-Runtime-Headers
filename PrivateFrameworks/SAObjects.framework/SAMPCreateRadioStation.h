@@ -4,15 +4,18 @@
 
 @interface SAMPCreateRadioStation : SABaseClientBoundCommand
 
+@property (nonatomic, copy) NSString *airplayRouteUID;
 @property (nonatomic, copy) NSNumber *startPlaying;
 @property (nonatomic, copy) NSURL *stationUrl;
 
 + (id)createRadioStation;
 + (id)createRadioStationWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)airplayRouteUID;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (BOOL)requiresResponse;
+- (void)setAirplayRouteUID:(id)arg1;
 - (void)setStartPlaying:(id)arg1;
 - (void)setStationUrl:(id)arg1;
 - (id)startPlaying;

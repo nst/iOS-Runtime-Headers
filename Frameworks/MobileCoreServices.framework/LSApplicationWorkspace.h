@@ -2,19 +2,33 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@interface LSApplicationWorkspace : NSObject
+@interface LSApplicationWorkspace : NSObject {
+    NSXPCConnection * _connection;
+    NSMutableDictionary * _createdInstallProgresses;
+    LSInstallProgressDelegate * _delegateProxy;
+    LSInstallProgressList * _observedInstallProgresses;
+    LSApplicationWorkspaceRemoteObserver * _remoteObserver;
+}
+
+@property (readonly) NSXPCConnection *connection;
+@property (readonly) NSMutableDictionary *createdInstallProgresses;
+@property (readonly) LSInstallProgressDelegate *delegateProxy;
+@property (readonly) LSInstallProgressList *observedInstallProgresses;
+@property (readonly) LSApplicationWorkspaceRemoteObserver *remoteObserver;
 
 // Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
 
 + (id)activeManagedConfigurationRestrictionUUIDs;
++ (id)callbackQueue;
 + (id)defaultWorkspace;
 
 - (id)URLOverrideForURL:(id)arg1;
+- (id)URLSchemesOfType:(int)arg1;
 - (void)_LSClearSchemaCaches;
+- (void)_LSFailedToOpenURL:(id)arg1 withBundle:(id)arg2;
 - (BOOL)_LSPrivateDatabaseNeedsRebuild;
 - (BOOL)_LSPrivateRebuildApplicationDatabasesForSystemApps:(BOOL)arg1 internal:(BOOL)arg2 user:(BOOL)arg3;
 - (void)_LSPrivateSyncWithMobileInstallation;
-- (void)_clearCachedAdvertisingIdentifier;
 - (void)addObserver:(id)arg1;
 - (id)allApplications;
 - (id)allInstalledApplications;
@@ -22,22 +36,35 @@
 - (id)applicationForUserActivityDomainName:(id)arg1;
 - (id)applicationForUserActivityType:(id)arg1;
 - (BOOL)applicationIsInstalled:(id)arg1;
+- (id)applicationProxiesWithPlistFlags:(unsigned long)arg1 bundleFlags:(unsigned int)arg2;
 - (id)applicationsAvailableForHandlingURLScheme:(id)arg1;
 - (id)applicationsAvailableForOpeningDocument:(id)arg1;
+- (id)applicationsAvailableForOpeningURL:(id)arg1;
+- (id)applicationsAvailableForOpeningURL:(id)arg1 legacySPI:(BOOL)arg2;
+- (id)applicationsForUserActivityType:(id)arg1;
+- (id)applicationsForUserActivityType:(id)arg1 limit:(unsigned int)arg2;
 - (id)applicationsOfType:(unsigned int)arg1;
 - (id)applicationsWithAudioComponents;
-- (id)applicationsWithExternalAccessoryProtocols;
-- (id)applicationsWithSettingsBundle;
 - (id)applicationsWithUIBackgroundModes;
 - (id)applicationsWithVPNPlugins;
+- (id)bundleIdentifiersForMachOUUIDs:(id)arg1 error:(id*)arg2;
 - (void)clearAdvertisingIdentifier;
 - (void)clearCreatedProgressForBundleID:(id)arg1;
+- (id)connection;
+- (id)createdInstallProgresses;
+- (void)dealloc;
 - (id)delegateProxy;
 - (id)deviceIdentifierForAdvertising;
 - (id)deviceIdentifierForVendor;
 - (id)directionsApplications;
 - (BOOL)downgradeApplicationToPlaceholder:(id)arg1 withOptions:(id)arg2 error:(id*)arg3;
+- (void)enumerateApplicationsForSiriWithBlock:(id /* block */)arg1;
+- (void)enumerateApplicationsOfType:(unsigned int)arg1 block:(id /* block */)arg2;
+- (void)enumerateApplicationsOfType:(unsigned int)arg1 legacySPI:(BOOL)arg2 block:(id /* block */)arg3;
+- (void)enumerateBundlesOfType:(unsigned int)arg1 block:(id /* block */)arg2;
+- (void)enumerateBundlesOfType:(unsigned int)arg1 legacySPI:(BOOL)arg2 block:(id /* block */)arg3;
 - (void)enumerateBundlesOfType:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumeratePluginsMatchingQuery:(id)arg1 withBlock:(id /* block */)arg2;
 - (BOOL)establishConnection;
 - (BOOL)getClaimedActivityTypes:(id*)arg1 domains:(id*)arg2;
 - (unsigned int)getInstallTypeForOptions:(id)arg1 andApp:(id)arg2;
@@ -50,9 +77,13 @@
 - (id)installProgressForApplication:(id)arg1 withPhase:(unsigned int)arg2;
 - (id)installProgressForBundleID:(id)arg1 makeSynchronous:(unsigned char)arg2;
 - (id)installedPlugins;
-- (id)installedVPNPlugins;
 - (BOOL)invalidateIconCache:(id)arg1;
 - (BOOL)isApplicationAvailableToOpenURL:(id)arg1 error:(id*)arg2;
+- (BOOL)isApplicationAvailableToOpenURL:(id)arg1 includePrivateURLSchemes:(BOOL)arg2 error:(id*)arg3;
+- (BOOL)isApplicationAvailableToOpenURLCommon:(id)arg1 includePrivateURLSchemes:(BOOL)arg2 error:(id*)arg3;
+- (id)legacyApplicationProxiesListWithType:(unsigned int)arg1;
+- (id)machOUUIDsForBundleIdentifiers:(id)arg1 error:(id*)arg2;
+- (id)observedInstallProgresses;
 - (BOOL)openApplicationWithBundleID:(id)arg1;
 - (BOOL)openSensitiveURL:(id)arg1 withOptions:(id)arg2;
 - (BOOL)openSensitiveURL:(id)arg1 withOptions:(id)arg2 error:(id*)arg3;
@@ -60,11 +91,13 @@
 - (BOOL)openURL:(id)arg1 withOptions:(id)arg2;
 - (BOOL)openURL:(id)arg1 withOptions:(id)arg2 error:(id*)arg3;
 - (void)openUserActivity:(id)arg1 withApplicationProxy:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)openUserActivity:(id)arg1 withApplicationProxy:(id)arg2 options:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)operationToOpenResource:(id)arg1 usingApplication:(id)arg2 uniqueDocumentIdentifier:(id)arg3 sourceIsManaged:(BOOL)arg4 userInfo:(id)arg5 delegate:(id)arg6;
 - (id)operationToOpenResource:(id)arg1 usingApplication:(id)arg2 uniqueDocumentIdentifier:(id)arg3 userInfo:(id)arg4;
 - (id)operationToOpenResource:(id)arg1 usingApplication:(id)arg2 uniqueDocumentIdentifier:(id)arg3 userInfo:(id)arg4 delegate:(id)arg5;
 - (id)operationToOpenResource:(id)arg1 usingApplication:(id)arg2 userInfo:(id)arg3;
 - (id)placeholderApplications;
+- (id)pluginsMatchingQuery:(id)arg1 applyFilter:(id /* block */)arg2;
 - (id)pluginsWithIdentifiers:(id)arg1 protocols:(id)arg2 version:(id)arg3;
 - (id)pluginsWithIdentifiers:(id)arg1 protocols:(id)arg2 version:(id)arg3 applyFilter:(id /* block */)arg4;
 - (id)pluginsWithIdentifiers:(id)arg1 protocols:(id)arg2 version:(id)arg3 withFilter:(id /* block */)arg4;
@@ -80,7 +113,13 @@
 - (void)removeObserver:(id)arg1;
 - (id)removedSystemApplications;
 - (BOOL)restoreSystemApplication:(id)arg1;
+- (void)scanForApplicationStateChangesFromRank:(id)arg1 toRank:(id)arg2;
+- (void)scanForApplicationStateChangesFromWhitelist:(id)arg1 to:(id)arg2;
+- (void)sendApplicationStateChangedNotificationsFor:(id)arg1;
+- (void)sendInstallNotificationForApp:(id)arg1 withPlugins:(id)arg2;
+- (void)sendUninstallNotificationForApp:(id)arg1 withPlugins:(id)arg2;
 - (BOOL)uninstallApplication:(id)arg1 withOptions:(id)arg2;
+- (BOOL)uninstallApplication:(id)arg1 withOptions:(id)arg2 error:(id*)arg3 usingBlock:(id /* block */)arg4;
 - (BOOL)uninstallApplication:(id)arg1 withOptions:(id)arg2 usingBlock:(id /* block */)arg3;
 - (BOOL)uninstallSystemApplication:(id)arg1 withOptions:(id)arg2 usingBlock:(id /* block */)arg3;
 - (BOOL)unregisterApplication:(id)arg1;

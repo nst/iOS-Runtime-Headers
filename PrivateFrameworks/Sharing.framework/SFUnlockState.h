@@ -3,8 +3,8 @@
  */
 
 @interface SFUnlockState : NSObject <NSSecureCoding> {
-    NSNumber *_remotePasscodeEnabled;
-    NSNumber *_unlockEnabled;
+    NSNumber * _remotePasscodeEnabled;
+    NSNumber * _unlockEnabled;
 }
 
 @property (readonly) NSNumber *remotePasscodeEnabled;
@@ -12,7 +12,7 @@
 
 + (BOOL)supportsSecureCoding;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithUnlockEnabled:(id)arg1 remotePasscodeEnabled:(id)arg2;

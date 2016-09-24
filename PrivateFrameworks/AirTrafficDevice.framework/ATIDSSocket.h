@@ -3,12 +3,12 @@
  */
 
 @interface ATIDSSocket : ATSocket {
-    unsigned int _btWriteBufferSize;
-    IDSDevice *_device;
-    IDSDeviceConnection *_deviceConnection;
-    int _priority;
-    ATIDSService *_service;
-    unsigned int _wifiWriteBufferSize;
+    unsigned int  _btWriteBufferSize;
+    IDSDevice * _device;
+    IDSDeviceConnection * _deviceConnection;
+    int  _priority;
+    ATIDSService * _service;
+    unsigned int  _wifiWriteBufferSize;
 }
 
 @property (nonatomic, readonly) IDSDevice *device;

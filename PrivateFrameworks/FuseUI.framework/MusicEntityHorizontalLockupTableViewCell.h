@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicEntityHorizontalLockupTableViewCell : UITableViewCell <MusicEntityContentDescriptorViewConfiguring, MusicEntityHorizontalLockupViewDelegate, MusicEntityViewDownloadInformationObserving, MusicEntityViewPlaybackStatusObserving> {
-    BOOL _entityDisabled;
-    MusicEntityHorizontalLockupView *_lockupView;
+@interface MusicEntityHorizontalLockupTableViewCell : UITableViewCell <MusicEntityContentDescriptorViewConfiguring, MusicEntityHorizontalLockupViewDelegate> {
+    BOOL  _entityDisabled;
+    MusicEntityHorizontalLockupView * _lockupView;
 }
 
 @property (nonatomic, retain) MusicEntityViewContentDescriptor *contentDescriptor;
@@ -38,11 +38,9 @@
 - (id)lockupView;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setContentDescriptor:(id)arg1;
-- (void)setDownloadInformation:(struct MusicEntityDownloadInformation { int x1; float x2; })arg1;
 - (void)setEntityDisabled:(BOOL)arg1;
 - (void)setEntityValueProvider:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setPlaybackStatus:(id)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)updateForAsynchronousPropertyLoadCompleted;
 

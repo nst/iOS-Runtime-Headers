@@ -3,8 +3,8 @@
  */
 
 @interface OADShape : OADGraphic {
-    OADShapeGeometry *mGeometry;
-    OADTextBody *mTextBody;
+    OADShapeGeometry * mGeometry;
+    OADTextBody * mTextBody;
 }
 
 - (void)changeParentTextListStylePreservingEffectiveValues:(id)arg1;

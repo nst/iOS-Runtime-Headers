@@ -3,7 +3,7 @@
  */
 
 @interface _LSIconCacheService : _LSIconCache <LSIconCacheServiceProtocol, NSXPCListenerDelegate> {
-    NSObject<OS_dispatch_queue> *_serialQueue;
+    NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -11,6 +11,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
++ (void)beginListening;
 + (id)cacheSalt;
 + (id)sharedInstance;
 

@@ -3,7 +3,7 @@
  */
 
 @interface AAFamilyEligibilityRequest : AAFamilyRequest {
-    SSAccount *_iTunesAccount;
+    SSAccount * _iTunesAccount;
 }
 
 @property (nonatomic, retain) SSAccount *iTunesAccount;

@@ -3,7 +3,7 @@
  */
 
 @interface MIPMultiverseIdentifier : PBCodable <NSCopying> {
-    long long _accountId;
+    int  _accountId;
     struct { 
         unsigned int accountId : 1; 
         unsigned int purchaseHistoryId : 1; 
@@ -11,17 +11,17 @@
         unsigned int storeId : 1; 
         unsigned int mediaObjectType : 1; 
         unsigned int mediaType : 1; 
-    } _has;
-    NSMutableArray *_libraryIdentifiers;
-    int _mediaObjectType;
-    int _mediaType;
-    NSString *_name;
-    long long _purchaseHistoryId;
-    long long _sagaId;
-    long long _storeId;
+    }  _has;
+    NSMutableArray * _libraryIdentifiers;
+    int  _mediaObjectType;
+    int  _mediaType;
+    NSString * _name;
+    int  _purchaseHistoryId;
+    int  _sagaId;
+    int  _storeId;
 }
 
-@property (nonatomic) long long accountId;
+@property (nonatomic) int accountId;
 @property (nonatomic) BOOL hasAccountId;
 @property (nonatomic) BOOL hasMediaObjectType;
 @property (nonatomic) BOOL hasMediaType;
@@ -33,12 +33,16 @@
 @property (nonatomic) int mediaObjectType;
 @property (nonatomic) int mediaType;
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic) long long purchaseHistoryId;
-@property (nonatomic) long long sagaId;
-@property (nonatomic) long long storeId;
+@property (nonatomic) int purchaseHistoryId;
+@property (nonatomic) int sagaId;
+@property (nonatomic) int storeId;
+
++ (Class)libraryIdentifiersType;
 
 - (void).cxx_destruct;
-- (long long)accountId;
+- (int)StringAsMediaObjectType:(id)arg1;
+- (int)StringAsMediaType:(id)arg1;
+- (int)accountId;
 - (void)addLibraryIdentifiers:(id)arg1;
 - (void)clearLibraryIdentifiers;
 - (void)copyTo:(id)arg1;
@@ -58,13 +62,15 @@
 - (id)libraryIdentifiersAtIndex:(unsigned int)arg1;
 - (unsigned int)libraryIdentifiersCount;
 - (int)mediaObjectType;
+- (id)mediaObjectTypeAsString:(int)arg1;
 - (int)mediaType;
+- (id)mediaTypeAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
-- (long long)purchaseHistoryId;
+- (int)purchaseHistoryId;
 - (BOOL)readFrom:(id)arg1;
-- (long long)sagaId;
-- (void)setAccountId:(long long)arg1;
+- (int)sagaId;
+- (void)setAccountId:(int)arg1;
 - (void)setHasAccountId:(BOOL)arg1;
 - (void)setHasMediaObjectType:(BOOL)arg1;
 - (void)setHasMediaType:(BOOL)arg1;
@@ -75,10 +81,10 @@
 - (void)setMediaObjectType:(int)arg1;
 - (void)setMediaType:(int)arg1;
 - (void)setName:(id)arg1;
-- (void)setPurchaseHistoryId:(long long)arg1;
-- (void)setSagaId:(long long)arg1;
-- (void)setStoreId:(long long)arg1;
-- (long long)storeId;
+- (void)setPurchaseHistoryId:(int)arg1;
+- (void)setSagaId:(int)arg1;
+- (void)setStoreId:(int)arg1;
+- (int)storeId;
 - (void)writeTo:(id)arg1;
 
 @end

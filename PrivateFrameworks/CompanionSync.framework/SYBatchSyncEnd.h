@@ -3,9 +3,9 @@
  */
 
 @interface SYBatchSyncEnd : PBCodable <NSCopying> {
-    SYErrorInfo *_error;
-    SYMessageHeader *_header;
-    NSString *_syncID;
+    SYErrorInfo * _error;
+    SYMessageHeader * _header;
+    NSString * _syncID;
 }
 
 @property (nonatomic, retain) SYErrorInfo *error;

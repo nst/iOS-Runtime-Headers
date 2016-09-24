@@ -3,25 +3,25 @@
  */
 
 @interface WLMigrationProgressViewController : WLWelcomeGroupViewController <WLDataMigrationDelegate, WLDeviceAuthenticationDelegate> {
-    WLDeviceAuthenticationController *_authController;
-    NSObject<OS_dispatch_queue> *_authDelegateSerialQueue;
-    BOOL _authDidSucceed;
-    id /* block */ _authenticationDidSucceedHandler;
-    id /* block */ _completionHandler;
-    UILabel *_deviceNameView;
-    UILabel *_explanationView;
-    BOOL _migrationConcluded;
-    WLDataMigrationController *_migrationController;
-    BOOL _migrationControllerIsRestartable;
-    id /* block */ _migrationDidBeginHandler;
-    unsigned int _migrationState;
-    NSString *_progressString;
-    UIProgressView *_progressView;
-    WLSourceDevice *_sourceDevice;
-    UIActivityIndicatorView *_spinner;
-    UILabel *_stateView;
-    NSArray *_stateViewConstraintsForNoSpinner;
-    NSArray *_stateViewConstraintsForWithSpinner;
+    WLDeviceAuthenticationController * _authController;
+    NSObject<OS_dispatch_queue> * _authDelegateSerialQueue;
+    BOOL  _authDidSucceed;
+    id /* block */  _authenticationDidSucceedHandler;
+    id /* block */  _completionHandler;
+    UILabel * _deviceNameView;
+    UILabel * _explanationView;
+    BOOL  _migrationConcluded;
+    WLDataMigrationController * _migrationController;
+    BOOL  _migrationControllerIsRestartable;
+    id /* block */  _migrationDidBeginHandler;
+    unsigned int  _migrationState;
+    NSString * _progressString;
+    UIProgressView * _progressView;
+    WLSourceDevice * _sourceDevice;
+    UIActivityIndicatorView * _spinner;
+    UILabel * _stateView;
+    NSArray * _stateViewConstraintsForNoSpinner;
+    NSArray * _stateViewConstraintsForWithSpinner;
 }
 
 @property (nonatomic, copy) id /* block */ authenticationDidSucceedHandler;

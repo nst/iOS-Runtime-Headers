@@ -3,7 +3,7 @@
  */
 
 @interface FBSceneClientProviderInvalidationAction : NSObject {
-    BSAction *_action;
+    BSAction * _action;
 }
 
 - (void)dealloc;

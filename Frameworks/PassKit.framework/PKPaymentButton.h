@@ -4,30 +4,35 @@
 
 @interface PKPaymentButton : UIButton {
     struct CGSize { 
-        float width; 
-        float height; 
-    } _boundsSize;
-    UILabel *_buyLabel;
-    UIView *_container;
-    CAFilter *_highlightFilter;
-    BOOL _highlighted;
-    CAShapeLayer *_layer;
-    PKShapeView *_maskView;
-    PKPDFView *_pdfView;
-    int _style;
-    int _type;
+        double width; 
+        double height; 
+    }  _boundsSize;
+    UILabel * _buyLabel;
+    UIView * _container;
+    double  _fontRatio;
+    CAFilter * _highlightFilter;
+    BOOL  _highlighted;
+    CAShapeLayer * _layer;
+    PKShapeView * _maskView;
+    PKPDFView * _pdfView;
+    int  _style;
+    int  _type;
 }
 
 + (id)buttonWithType:(int)arg1 style:(int)arg2;
 + (Class)layerClass;
 
+- (void).cxx_destruct;
 - (void)_createHighlightFilterIfNecessary;
+- (float)_labelHeightForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_sharedInit;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithPaymentButtonType:(int)arg1 paymentButtonStyle:(int)arg2;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 - (void)setHighlighted:(BOOL)arg1;
 

@@ -3,12 +3,12 @@
  */
 
 @interface PBBProtoOfflineTerms : PBCodable <NSCopying> {
-    NSMutableArray *_appleLanguages;
-    NSString *_countryCode;
-    NSString *_languageCode;
-    NSData *_license;
-    NSData *_multiterms;
-    NSData *_warranty;
+    NSMutableArray * _appleLanguages;
+    NSString * _countryCode;
+    NSString * _languageCode;
+    NSData * _license;
+    NSData * _multiterms;
+    NSData * _warranty;
 }
 
 @property (nonatomic, retain) NSMutableArray *appleLanguages;

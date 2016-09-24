@@ -3,47 +3,46 @@
  */
 
 @interface _GCController : GCController <NSSecureCoding> {
-    NSMutableArray *_allDeviceRefs;
-    id /* block */ _controllerPausedHandler;
-    char *_deviceHIDReportBuffer;
-    unsigned int _deviceHash;
-    struct __IOHIDDevice { } *_deviceRef;
-    NSObject<OS_dispatch_queue> *_handlerQueue;
-    int _playerIndex;
-    <GCNamedProfile> *_profile;
-    unsigned int _service;
-    NSString *_vendorName;
+    id /* block */  _controllerPausedHandler;
+    unsigned int  _deviceHash;
+    NSObject<OS_dispatch_queue> * _handlerQueue;
+    NSMutableArray * _hidServices;
+    int  _playerIndex;
+    <GCNamedProfile> * _profile;
+    unsigned int  _service;
+    NSString * _vendorName;
+    NSString * physicalDeviceUniqueID;
 }
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)addDeviceRefs:(id)arg1;
-- (void)clearDeviceRef;
+- (void)addServiceRefs:(id)arg1;
+- (void)clearServiceRef;
 - (id /* block */)controllerPausedHandler;
 - (void)dealloc;
 - (id)description;
 - (unsigned int)deviceHash;
-- (struct __IOHIDDevice { }*)deviceRef;
-- (id)deviceRefs;
 - (void)encodeWithCoder:(id)arg1;
 - (id)extendedGamepad;
 - (id)gamepad;
 - (id)handlerQueue;
-- (char *)hidReportBuffer;
+- (BOOL)hasServiceRef:(struct __IOHIDServiceClient { }*)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDeviceRef:(struct __IOHIDDevice { }*)arg1;
 - (id)initWithProfile:(id)arg1;
+- (id)initWithServiceRef:(struct __IOHIDServiceClient { }*)arg1;
 - (BOOL)isAttachedToDevice;
 - (BOOL)isEqualToController:(id)arg1;
+- (id)microGamepad;
 - (id)motion;
+- (id)physicalDeviceUniqueID;
 - (int)playerIndex;
 - (id)profile;
-- (void)removeDeviceRef:(struct __IOHIDDevice { }*)arg1;
+- (void)removeServiceRef:(struct __IOHIDServiceClient { }*)arg1;
 - (unsigned int)service;
 - (void)setControllerPausedHandler:(id /* block */)arg1;
 - (void)setHandlerQueue:(id)arg1;
-- (void)setHidReportBuffer:(char *)arg1;
+- (void)setPhysicalDeviceUniqueID:(id)arg1;
 - (void)setPlayerIndex:(int)arg1;
 - (void)setProfile:(id)arg1;
 - (id)vendorName;

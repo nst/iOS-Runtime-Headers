@@ -2,60 +2,69 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKPlaceSectionHeaderView : UIView {
-    SEL _action;
-    NSArray *_marginConstraints;
-    NSString *_providerName;
-    NSMutableArray *_scaledConstraints;
-    UILabel *_sectionHeaderLabel;
-    UILabel *_seeMoreButton;
-    NSArray *_seeMoreButtonConstraints;
-    UIGestureRecognizer *_seeMoreGestureRecognizer;
-    UIView *_separator;
-    BOOL _showSeeMoreButton;
-    BOOL _showSeparator;
-    id _target;
+@interface MKPlaceSectionHeaderView : MKPlaceSectionItemView {
+    SEL  _action;
+    NSLayoutConstraint * _baselineToBottomConstraint;
+    NSLayoutConstraint * _baselineToTopConstraint;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _iconDisplaySize;
+    NSLayoutConstraint * _iconHeightConstraint;
+    NSLayoutConstraint * _iconWidthConstraint;
+    NSArray * _marginConstraints;
+    NSString * _providerName;
+    _MKUILabel * _sectionHeaderLabel;
+    NSLayoutConstraint * _seeMoreBaselineConstraint;
+    _MKRightImageButton * _seeMoreButton;
+    NSArray * _seeMoreButtonConstraints;
+    NSString * _seeMoreButtonText;
+    NSLayoutConstraint * _seeMoreCenterYConstraint;
+    UIView * _separator;
+    BOOL  _showSeeMoreButton;
+    BOOL  _showSeparator;
+    id  _target;
 }
 
 @property (nonatomic) SEL action;
+@property (nonatomic, retain) UIImage *icon;
+@property (nonatomic) struct CGSize { double x1; double x2; } iconDisplaySize;
 @property (nonatomic, retain) NSArray *marginConstraints;
 @property (nonatomic, retain) NSString *providerName;
-@property (nonatomic, retain) NSMutableArray *scaledConstraints;
-@property (nonatomic, retain) UILabel *sectionHeaderLabel;
-@property (nonatomic, retain) UILabel *seeMoreButton;
+@property (nonatomic, retain) _MKUILabel *sectionHeaderLabel;
+@property (nonatomic, retain) _MKRightImageButton *seeMoreButton;
 @property (nonatomic, retain) NSArray *seeMoreButtonConstraints;
-@property (nonatomic, retain) UIGestureRecognizer *seeMoreGestureRecognizer;
+@property (nonatomic, retain) NSString *seeMoreButtonText;
 @property (nonatomic, retain) UIView *separator;
 @property (nonatomic) BOOL showSeeMoreButton;
 @property (nonatomic) BOOL showSeparator;
 @property (nonatomic) id target;
 @property (nonatomic, retain) NSString *title;
 
-+ (float)intrinsicContentHeightForFont:(id)arg1;
-
 - (void).cxx_destruct;
 - (SEL)action;
 - (void)contentSizeDidChange;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)layoutMarginsDidChange;
+- (id)icon;
+- (struct CGSize { double x1; double x2; })iconDisplaySize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
 - (id)marginConstraints;
 - (id)providerName;
-- (void)refreshMarginConstraints;
-- (id)scaledConstraints;
 - (id)sectionHeaderLabel;
 - (id)seeMoreButton;
 - (id)seeMoreButtonConstraints;
-- (id)seeMoreGestureRecognizer;
+- (id)seeMoreButtonText;
 - (id)separator;
 - (void)setAction:(SEL)arg1;
+- (void)setIcon:(id)arg1;
+- (void)setIconDisplaySize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setMarginConstraints:(id)arg1;
 - (void)setProviderName:(id)arg1;
-- (void)setScaledConstraints:(id)arg1;
 - (void)setSectionHeaderLabel:(id)arg1;
 - (void)setSeeMoreButton:(id)arg1;
 - (void)setSeeMoreButtonConstraints:(id)arg1;
-- (void)setSeeMoreGestureRecognizer:(id)arg1;
+- (void)setSeeMoreButtonText:(id)arg1;
 - (void)setSeparator:(id)arg1;
 - (void)setShowSeeMoreButton:(BOOL)arg1;
 - (void)setShowSeparator:(BOOL)arg1;

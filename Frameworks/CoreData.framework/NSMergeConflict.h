@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSMergeConflict : NSObject {
-    unsigned int _newVersion;
-    unsigned int _oldVersion;
-    id _snapshot1;
-    id _snapshot2;
-    id _snapshot3;
-    id _source;
+@interface NSMergeConflict : NSObject <NSSecureCoding> {
+    unsigned int  _newVersion;
+    unsigned int  _oldVersion;
+    id  _snapshot1;
+    id  _snapshot2;
+    id  _snapshot3;
+    id  _source;
 }
 
 @property (readonly, retain) NSDictionary *cachedSnapshot;
@@ -18,12 +18,18 @@
 @property (readonly, retain) NSDictionary *persistedSnapshot;
 @property (readonly, retain) NSManagedObject *sourceObject;
 
++ (BOOL)supportsSecureCoding;
+
+- (void)_doCleanupForXPCStore:(id)arg1 context:(id)arg2;
 - (id)ancestorSnapshot;
 - (id)cachedSnapshot;
 - (void)dealloc;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithSource:(id)arg1 newVersion:(unsigned int)arg2 oldVersion:(unsigned int)arg3 cachedSnapshot:(id)arg4 persistedSnapshot:(id)arg5;
+- (id)initWithSource:(id)arg1 newVersion:(unsigned int)arg2 oldVersion:(unsigned int)arg3 snapshot1:(id)arg4 snapshot2:(id)arg5 snapshot3:(id)arg6;
 - (unsigned int)newVersionNumber;
 - (id)objectForKey:(id)arg1;
 - (id)objectSnapshot;

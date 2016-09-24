@@ -3,8 +3,8 @@
  */
 
 @interface MPMoviePlayerViewControllerInternal : NSObject {
-    MPMoviePlayerController *_moviePlayer;
-    BOOL _wasDisplayedAnimated;
+    MPMoviePlayerController * _moviePlayer;
+    BOOL  _wasDisplayedAnimated;
 }
 
 - (void).cxx_destruct;

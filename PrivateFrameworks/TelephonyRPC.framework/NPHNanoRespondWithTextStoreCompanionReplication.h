@@ -3,7 +3,7 @@
  */
 
 @interface NPHNanoRespondWithTextStoreCompanionReplication : NSObject {
-    NPSManager *_npsManager;
+    NPSManager * _npsManager;
 }
 
 - (void).cxx_destruct;

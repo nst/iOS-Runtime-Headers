@@ -3,8 +3,8 @@
  */
 
 @interface ABActionSheetDelegate : NSObject <UIActionSheetDelegate> {
-    SEL _action;
-    id _target;
+    SEL  _action;
+    id  _target;
 }
 
 @property (readonly, copy) NSString *debugDescription;

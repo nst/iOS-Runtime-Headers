@@ -3,13 +3,14 @@
  */
 
 @interface GEOAdditionalEnabledMarkets : PBCodable <NSCopying> {
-    NSMutableArray *_transitMarkets;
+    NSMutableArray * _transitMarkets;
 }
 
 @property (nonatomic, retain) NSMutableArray *transitMarkets;
 
 + (id)_additionalEnabledTransitMarkets;
 + (id)additionalEnabledMarkets;
++ (Class)transitMarketType;
 
 - (void)addTransitMarket:(id)arg1;
 - (void)clearTransitMarkets;

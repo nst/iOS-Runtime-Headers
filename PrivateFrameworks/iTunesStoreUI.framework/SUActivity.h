@@ -3,11 +3,11 @@
  */
 
 @interface SUActivity : UIActivity {
-    <SUActivityDelegate> *_delegate;
-    UIImage *_suActivityImage;
-    NSString *_suActivityTitle;
-    NSString *_suActivityType;
-    UIViewController *_suActivityViewController;
+    <SUActivityDelegate> * _delegate;
+    UIImage * _suActivityImage;
+    NSString * _suActivityTitle;
+    NSString * _suActivityType;
+    UIViewController * _suActivityViewController;
 }
 
 @property (nonatomic) <SUActivityDelegate> *ITunesStoreDelegate;

@@ -3,18 +3,19 @@
  */
 
 @interface CoreIRDevice : CoreRCDevice {
-    NSString *_OSDName;
-    NSArray *_buttons;
-    BOOL _isReceiver;
-    BOOL _isTransmitter;
-    CoreIRLearningSession *_learningSession;
-    unsigned int _vendorID;
+    NSString * _OSDName;
+    NSArray * _buttons;
+    BOOL  _isReceiver;
+    BOOL  _isTransmitter;
+    CoreIRLearningSession * _learningSession;
+    unsigned int  _vendorID;
 }
 
 @property (nonatomic, copy) NSString *OSDName;
 @property (nonatomic, copy) NSArray *buttons;
 @property (nonatomic, readonly) NSUUID *deviceID;
 @property (nonatomic, readonly) BOOL is3rdPartyRemote;
+@property (nonatomic, readonly) BOOL isAppleRemote;
 @property (nonatomic) BOOL isReceiver;
 @property (nonatomic) BOOL isTransmitter;
 @property (nonatomic, retain) CoreIRLearningSession *learningSession;
@@ -38,10 +39,12 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDevice:(id)arg1;
 - (BOOL)is3rdPartyRemote;
+- (BOOL)isAppleRemote;
 - (BOOL)isReceiver;
 - (BOOL)isTransmitter;
 - (id)learningSession;
 - (id)mergeProperties;
+- (BOOL)pairAppleRemote:(id*)arg1;
 - (BOOL)sendCommand:(id)arg1 error:(id*)arg2;
 - (void)setButtons:(id)arg1;
 - (BOOL)setCommand:(unsigned int)arg1 target:(id)arg2 forButtonCombination:(id)arg3 delay:(double)arg4 error:(id*)arg5;
@@ -53,6 +56,7 @@
 - (BOOL)setRemoteName:(id)arg1 error:(id*)arg2;
 - (void)setVendorID:(unsigned int)arg1;
 - (id)startLearningSessionWithReason:(unsigned int)arg1 error:(id*)arg2;
+- (BOOL)unpairAppleRemote:(id*)arg1;
 - (BOOL)updateMappingWithSession:(id)arg1 error:(id*)arg2;
 - (unsigned int)vendorID;
 

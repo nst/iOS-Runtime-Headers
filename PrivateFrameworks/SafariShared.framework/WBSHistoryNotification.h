@@ -3,8 +3,8 @@
  */
 
 @interface WBSHistoryNotification : NSObject <NSSecureCoding> {
-    NSString *_name;
-    NSDictionary *_userInfo;
+    NSString * _name;
+    NSDictionary * _userInfo;
 }
 
 @property (nonatomic, readonly, copy) NSString *name;

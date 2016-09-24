@@ -3,10 +3,10 @@
  */
 
 @interface AWDFaceTimeCallConnected : PBCodable <NSCopying> {
-    unsigned int _connectDuration;
-    unsigned int _connectionType;
-    unsigned int _currentNatType;
-    NSString *_guid;
+    unsigned int  _connectDuration;
+    unsigned int  _connectionType;
+    unsigned int  _currentNatType;
+    NSString * _guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int connectDuration : 1; 
@@ -19,15 +19,15 @@
         unsigned int remoteNatType : 1; 
         unsigned int remoteNetworkConnection : 1; 
         unsigned int usesRelay : 1; 
-    } _has;
-    unsigned int _isVideo;
-    unsigned int _localNetworkConnection;
-    unsigned int _onLockScreen;
-    unsigned int _relayConnectDuration;
-    unsigned int _remoteNatType;
-    unsigned int _remoteNetworkConnection;
-    unsigned long long _timestamp;
-    unsigned int _usesRelay;
+    }  _has;
+    unsigned int  _isVideo;
+    unsigned int  _localNetworkConnection;
+    unsigned int  _onLockScreen;
+    unsigned int  _relayConnectDuration;
+    unsigned int  _remoteNatType;
+    unsigned int  _remoteNetworkConnection;
+    unsigned long long  _timestamp;
+    unsigned int  _usesRelay;
 }
 
 @property (nonatomic) unsigned int connectDuration;

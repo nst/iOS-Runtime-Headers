@@ -3,10 +3,10 @@
  */
 
 @interface ISVideoAnalyzer : NSObject {
-    int __currentRequestID;
-    NSObject<OS_dispatch_queue> *_isolationQueue;
-    NSOperationQueue *_operationQueue;
-    NSMutableDictionary *_operationsByRequestID;
+    int  __currentRequestID;
+    NSObject<OS_dispatch_queue> * _isolationQueue;
+    NSOperationQueue * _operationQueue;
+    NSMutableDictionary * _operationsByRequestID;
 }
 
 @property (setter=_setCurrentRequestID:, nonatomic) int _currentRequestID;

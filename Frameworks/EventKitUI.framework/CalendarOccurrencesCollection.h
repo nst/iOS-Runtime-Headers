@@ -3,9 +3,9 @@
  */
 
 @interface CalendarOccurrencesCollection : NSObject <NSCopying> {
-    NSArray *_allDayOccurrences;
-    NSArray *_occurrences;
-    NSArray *_timedOccurrences;
+    NSArray * _allDayOccurrences;
+    NSArray * _occurrences;
+    NSArray * _timedOccurrences;
 }
 
 @property (nonatomic, readonly) NSArray *allDayOccurrences;

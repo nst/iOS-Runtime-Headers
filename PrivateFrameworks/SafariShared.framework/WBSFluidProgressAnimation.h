@@ -3,15 +3,15 @@
  */
 
 @interface WBSFluidProgressAnimation : NSObject {
-    double _animationDuration;
-    float _destinationPosition;
-    float _initialPosition;
-    CAMediaTimingFunction *_timingFunction;
+    double  _animationDuration;
+    double  _destinationPosition;
+    double  _initialPosition;
+    CAMediaTimingFunction * _timingFunction;
 }
 
 @property (nonatomic) double animationDuration;
-@property (nonatomic) float destinationPosition;
-@property (nonatomic) float initialPosition;
+@property (nonatomic) double destinationPosition;
+@property (nonatomic) double initialPosition;
 @property (nonatomic, retain) CAMediaTimingFunction *timingFunction;
 
 - (void).cxx_destruct;

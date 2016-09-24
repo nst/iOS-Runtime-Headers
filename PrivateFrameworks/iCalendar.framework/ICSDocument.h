@@ -3,7 +3,7 @@
  */
 
 @interface ICSDocument : NSObject {
-    ICSCalendar *_calendar;
+    ICSCalendar * _calendar;
 }
 
 + (int)ICSChecksumVersionSpecifiedInOptions:(unsigned int)arg1;
@@ -12,6 +12,7 @@
 - (void).cxx_destruct;
 - (id)ICSChecksumForVersion:(int)arg1;
 - (id)ICSChecksumStringForVersion:(int)arg1;
+- (id)ICSCompressedDataWithOptions:(unsigned int)arg1;
 - (id)ICSDataWithOptions:(unsigned int)arg1;
 - (id)ICSStringWithOptions:(unsigned int)arg1;
 - (id)calendar;

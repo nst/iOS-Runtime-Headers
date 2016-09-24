@@ -3,12 +3,12 @@
  */
 
 @interface _DKEvent : _DKObject <_DKHasComparableValue, _DKHasPrimaryValue> {
-    double _confidence;
-    NSDate *_endDate;
-    NSDate *_startDate;
-    _DKEventStream *_stream;
-    NSTimeZone *_timeZone;
-    _DKObject *_value;
+    double  _confidence;
+    NSDate * _endDate;
+    NSDate * _startDate;
+    _DKEventStream * _stream;
+    NSTimeZone * _timeZone;
+    _DKObject * _value;
 }
 
 @property double confidence;
@@ -22,22 +22,32 @@
 @property (retain) NSTimeZone *timeZone;
 @property (retain) _DKObject *value;
 
+// Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
+
 + (id)entityName;
++ (id)eventStreamFromManagedObject:(id)arg1 forValue:(id)arg2 cache:(id)arg3;
++ (id)eventValueFromManagedObject:(id)arg1 streamName:(id)arg2 readMetadata:(BOOL)arg3 cache:(id)arg4;
++ (id)eventWithStream:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 categoryIntegerValue:(int)arg4 metadata:(id)arg5;
++ (id)eventWithStream:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 identifierStringValue:(id)arg4 metadata:(id)arg5;
++ (id)eventWithStream:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 quantityDoubleValue:(double)arg4 metadata:(id)arg5;
 + (id)eventWithStream:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 value:(id)arg4;
 + (id)eventWithStream:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 value:(id)arg4 confidence:(double)arg5 metadata:(id)arg6;
 + (id)eventWithStream:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 value:(id)arg4 metadata:(id)arg5;
++ (id)objectFromManagedObject:(id)arg1 readMetadata:(BOOL)arg2 cache:(id)arg3;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (BOOL)boolValue;
 - (int)compareValue:(id)arg1;
 - (double)confidence;
-- (BOOL)copyFromManagedObject:(id)arg1 readMetadata:(BOOL)arg2;
 - (BOOL)copyToManagedObject:(id)arg1;
 - (id)description;
+- (double)doubleValue;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStream:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 value:(id)arg4 confidence:(double)arg5 metadata:(id)arg6;
+- (int)integerValue;
 - (id)primaryValue;
 - (void)setConfidence:(double)arg1;
 - (void)setEndDate:(id)arg1;
@@ -47,7 +57,12 @@
 - (void)setValue:(id)arg1;
 - (id)startDate;
 - (id)stream;
+- (id)stringValue;
 - (id)timeZone;
 - (id)value;
+
+// Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
+
+- (id)shortDescription;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface WDCitationAuthor : NSObject {
-    NSString *mFirst;
-    NSString *mLast;
+    NSString * mFirst;
+    NSString * mLast;
 }
 
 @property (nonatomic, retain) NSString *first;

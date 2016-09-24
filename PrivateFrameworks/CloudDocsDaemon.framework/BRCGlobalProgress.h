@@ -3,58 +3,62 @@
  */
 
 @interface BRCGlobalProgress : NSObject <BRCReachabilityDelegate> {
-    NSMutableSet *_containersWaitingInitialFaults;
-    NSMutableDictionary *_downloadProgresses;
-    NSMutableDictionary *_downloadVersionSizes;
-    long _firstOperationToken;
-    BOOL _networkReachable;
-    NSObject<OS_dispatch_source> *_operationTimer;
-    unsigned int _operationTimerSuspendCount;
-    NSProgress *_parentProgress;
-    NSObject<OS_dispatch_queue> *_queue;
-    BOOL _showAdditionalLocalizedDescription;
-    long long _sumOfCompletedUnitCountDelta;
-    long long _sumOfTotalUnitCountDelta;
-    struct br_pacer_t { } *_updateUnitCountPacer;
-    NSMutableDictionary *_uploadProgresses;
-    NSMutableDictionary *_uploadVersionSizes;
+    NSMutableSet * _appLibrariesNotLive;
+    _BRCDownloadInfo * _downloads;
+    BRCProgress * _globalProgress;
+    BOOL  _lazyInitDone;
+    BOOL  _networkReachable;
+    NSObject<OS_dispatch_source> * _operationTimer;
+    unsigned int  _operationTimerSuspendCount;
+    NSObject<OS_dispatch_queue> * _queue;
+    BRCAccountSession * _session;
+    BOOL  _showExtendedInfo;
+    br_pacer * _updatePacer;
+    _BRCUploadInfo * _uploads;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BRCAccountSession *session;
 @property (readonly) Class superclass;
 
 + (id)_keyPathsToObserve;
 
 - (void).cxx_destruct;
 - (void)_cancelDownloadForDocumentID:(id)arg1;
-- (void)_cancelDownloadForDocumentID:(id)arg1 destroyIfLast:(BOOL)arg2;
-- (void)_cancelUploadForDocumentID:(id)arg1 willRetryTransfer:(BOOL)arg2;
-- (long long)_computeDeltaFromSize:(long long)arg1 toSize:(long long)arg2 versionSize:(long long)arg3 progressSize:(long long)arg4 isFinished:(BOOL)arg5;
-- (void)_createNewIndeterminateParentProgress;
-- (void)_createNewParentProgressInGroup:(id)arg1 completedUnitCount:(long long)arg2 totalUnitCount:(long long)arg3;
-- (void)_destroyParentProgressWithReason:(BOOL)arg1;
+- (void)_cancelDownloadForDocumentID:(id)arg1 destroyIfLast:(BOOL)arg2 willRetryTransfer:(BOOL)arg3;
+- (void)_cancelUploadForDocumentID:(id)arg1 inState:(unsigned int)arg2;
+- (void)_cancelUploadForDocumentID:(id)arg1 inState:(unsigned int)arg2 willRetryTransfer:(BOOL)arg3;
+- (void)_cancelUploadForDocumentID:(id)arg1 inState:(unsigned int)arg2 willRetryTransfer:(BOOL)arg3 pendingQuota:(BOOL)arg4;
+- (void)_createDownloadMetadataWithCompletedUnitCount:(int)arg1 totalUnitCount:(int)arg2;
+- (void)_createNewGlobalProgressInGroup:(id)arg1 completedUnitCount:(int)arg2 totalUnitCount:(int)arg3;
+- (void)_createNewIndeterminateGlobalProgress;
+- (void)_createUploadMetadataWithCompletedUnitCount:(int)arg1 totalUnitCount:(int)arg2;
+- (void)_deleteDocument:(id)arg1 reason:(BOOL)arg2;
+- (void)_destroyDownloadWithReason:(BOOL)arg1;
+- (void)_destroyProgressInGroup:(id)arg1 reason:(BOOL)arg2;
+- (void)_destroyUploadWithReason:(BOOL)arg1;
 - (void)_resumeProgressForAnotherOperationIfNeeded;
 - (void)_startObservingProgress:(id)arg1;
 - (void)_stopObservingProgress:(id)arg1;
-- (long long)_syncUpSizeWithVersionSize:(long long)arg1;
-- (BOOL)_trackingKind;
-- (long long)_transferSizeWithVersionSize:(long long)arg1;
-- (void)_updateParentProgressLocalizedDescription;
-- (void)_updateState:(id)arg1 forContainerID:(id)arg2 shouldBeAdded:(BOOL)arg3;
-- (void)_updateUploadStateForDocumentID:(id)arg1 withSyncUpState:(unsigned int)arg2 versionSize:(long long)arg3;
+- (void)_updateAppLibraryID:(id)arg1;
+- (void)_updateDocument:(id)arg1;
+- (void)_updateGlobalProgress;
 - (void)addProgress:(id)arg1 forDocument:(id)arg2 inGroup:(BOOL)arg3;
+- (void)clearOutOfQuotaState;
 - (void)dealloc;
 - (void)didDeleteDocument:(id)arg1;
-- (void)didUpdateContainer:(id)arg1 changes:(unsigned int)arg2;
+- (void)didUpdateClientZone:(id)arg1;
 - (void)didUpdateDocument:(id)arg1;
 - (void)dumpToContext:(id)arg1;
-- (id)init;
+- (id)initWithSession:(id)arg1;
 - (void)networkReachabilityChanged:(BOOL)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)removeProgressBecauseTransferFailed:(id)arg1 willRetryTransfer:(BOOL)arg2;
+- (id)session;
 - (void)stopPublishingProgress;
+- (void)updateDownloadThrottleForDocument:(id)arg1 toState:(int)arg2;
+- (void)updateUploadThrottleForDocument:(id)arg1 toState:(int)arg2;
 - (void)willResumeDocumentUpload:(id)arg1;
 - (void)willScheduleDocumentForDownload:(id)arg1;
 

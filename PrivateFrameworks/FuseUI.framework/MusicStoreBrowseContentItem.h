@@ -2,49 +2,68 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicStoreBrowseContentItem : MPUModelObject {
-    MPUModelAlbum *_album;
-    MPUModelCurator *_curator;
-    int _detailedItemType;
-    unsigned int _itemType;
-    MPUModelMusicVideo *_musicVideo;
-    MPUModelPlaylist *_playlist;
-    MPUModelRadioStation *_radioStation;
-    MPUModelSong *_song;
+@interface MusicStoreBrowseContentItem : MPModelObject {
+    MPModelAlbum * _album;
+    MPModelArtist * _artist;
+    NSString * _artistUploadedContentType;
+    MPModelCurator * _curator;
+    int  _detailedItemType;
+    unsigned int  _itemType;
+    MPModelPlaylist * _playlist;
+    MPModelRadioStation * _radioStation;
+    MPModelSong * _song;
 }
 
-@property (nonatomic, retain) MPUModelAlbum *album;
-@property (nonatomic, retain) MPUModelCurator *curator;
+@property (nonatomic, retain) MPModelAlbum *album;
+@property (nonatomic, retain) MPModelArtist *artist;
+@property (nonatomic, copy) NSString *artistUploadedContentType;
+@property (nonatomic, retain) MPModelCurator *curator;
 @property (nonatomic) int detailedItemType;
 @property (nonatomic) unsigned int itemType;
-@property (nonatomic, retain) MPUModelMusicVideo *musicVideo;
-@property (nonatomic, retain) MPUModelPlaylist *playlist;
-@property (nonatomic, retain) MPUModelRadioStation *radioStation;
-@property (nonatomic, retain) MPUModelSong *song;
+@property (nonatomic, retain) MPModelPlaylist *playlist;
+@property (nonatomic, retain) MPModelRadioStation *radioStation;
+@property (nonatomic, retain) MPModelSong *song;
 
++ (id)__MusicStoreBrowseContentItemPropertyArtistUploadedContentType__PROPERTY;
++ (id)__MusicStoreBrowseContentItemPropertyDetailedItemType__PROPERTY;
++ (id)__MusicStoreBrowseContentItemPropertyItemType__PROPERTY;
++ (id)__MusicStoreBrowseContentItemRelationshipAlbum__PROPERTY;
++ (id)__MusicStoreBrowseContentItemRelationshipArtist__PROPERTY;
++ (id)__MusicStoreBrowseContentItemRelationshipCurator__PROPERTY;
++ (id)__MusicStoreBrowseContentItemRelationshipPlaylist__PROPERTY;
++ (id)__MusicStoreBrowseContentItemRelationshipRadioStation__PROPERTY;
++ (id)__MusicStoreBrowseContentItemRelationshipSong__PROPERTY;
 + (id)__album__KEY;
++ (id)__artistUploadedContentType__KEY;
++ (id)__artist__KEY;
 + (id)__curator__KEY;
 + (id)__detailedItemType__KEY;
 + (id)__itemType__KEY;
-+ (id)__musicVideo__KEY;
 + (id)__playlist__KEY;
 + (id)__radioStation__KEY;
 + (id)__song__KEY;
++ (id)requiredStoreLibraryPersonalizationProperties;
 
 - (void).cxx_destruct;
 - (id)album;
+- (id)artist;
+- (id)artistUploadedContentType;
 - (id)curator;
-- (id)descriptionWithType:(unsigned int)arg1;
+- (id)descriptionWithType:(int)arg1;
 - (int)detailedItemType;
+- (id)innerObject;
 - (unsigned int)itemType;
-- (id)musicVideo;
+- (id)objectWithStoreLibraryPersonalizationRelativeModelObject:(id)arg1;
+- (id)personalizationScopedPropertiesForProperties:(id)arg1;
 - (id)playlist;
 - (id)radioStation;
+- (id)relativeModelObjectForStoreLibraryPersonalization;
 - (void)setAlbum:(id)arg1;
+- (void)setArtist:(id)arg1;
+- (void)setArtistUploadedContentType:(id)arg1;
 - (void)setCurator:(id)arg1;
 - (void)setDetailedItemType:(int)arg1;
 - (void)setItemType:(unsigned int)arg1;
-- (void)setMusicVideo:(id)arg1;
 - (void)setPlaylist:(id)arg1;
 - (void)setRadioStation:(id)arg1;
 - (void)setSong:(id)arg1;

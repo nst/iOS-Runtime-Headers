@@ -3,11 +3,11 @@
  */
 
 @interface _MRSendCommandMessageProtobuf : PBCodable <NSCopying> {
-    int _command;
+    int  _command;
     struct { 
         unsigned int command : 1; 
-    } _has;
-    _MRCommandOptionsProtobuf *_options;
+    }  _has;
+    _MRCommandOptionsProtobuf * _options;
 }
 
 @property (nonatomic) int command;
@@ -15,7 +15,9 @@
 @property (nonatomic, readonly) BOOL hasOptions;
 @property (nonatomic, retain) _MRCommandOptionsProtobuf *options;
 
+- (int)StringAsCommand:(id)arg1;
 - (int)command;
+- (id)commandAsString:(int)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

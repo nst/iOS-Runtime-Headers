@@ -3,9 +3,12 @@
  */
 
 @interface SYPeer : PBCodable <NSCopying> {
-    NSString *_peerID;
+    NSString * _generationID;
+    NSString * _peerID;
 }
 
+@property (nonatomic, retain) NSString *generationID;
+@property (nonatomic, readonly) BOOL hasGenerationID;
 @property (nonatomic, retain) NSString *peerID;
 
 - (void).cxx_destruct;
@@ -13,12 +16,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)generationID;
+- (BOOL)hasGenerationID;
 - (unsigned int)hash;
-- (id)initWithPeerID:(id)arg1;
+- (id)initWithPeerID:(id)arg1 generation:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)peerID;
 - (BOOL)readFrom:(id)arg1;
+- (void)setGenerationID:(id)arg1;
 - (void)setPeerID:(id)arg1;
 - (void)writeTo:(id)arg1;
 

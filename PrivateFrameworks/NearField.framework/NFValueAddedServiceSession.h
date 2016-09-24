@@ -3,7 +3,7 @@
  */
 
 @interface NFValueAddedServiceSession : NFSession <NFValueAddedServiceSessionCallbacks> {
-    NFWeakReference *_delegate;
+    NFWeakReference * _delegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -19,6 +19,7 @@
 - (void)didSelectValueAddedService:(BOOL)arg1;
 - (void)didStartSession:(id)arg1;
 - (void)endSession;
+- (void)endSessionWithCompletion:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHostCards:(id)arg1;
 - (BOOL)startHostCardEmulation;

@@ -3,15 +3,15 @@
  */
 
 @interface MBBackup : NSObject <NSCoding, NSCopying> {
-    NSString *_backupUDID;
-    NSString *_backupUUID;
-    NSString *_deviceClass;
-    NSString *_hardwareModel;
-    BOOL _isMBSBackup;
-    NSString *_marketingName;
-    NSString *_productType;
-    BOOL _restoreSystemFiles;
-    NSArray *_snapshots;
+    NSString * _backupUDID;
+    NSString * _backupUUID;
+    NSString * _deviceClass;
+    NSString * _hardwareModel;
+    BOOL  _isMBSBackup;
+    NSString * _marketingName;
+    NSString * _productType;
+    BOOL  _restoreSystemFiles;
+    NSArray * _snapshots;
 }
 
 @property (nonatomic, readonly) NSString *backupUDID;

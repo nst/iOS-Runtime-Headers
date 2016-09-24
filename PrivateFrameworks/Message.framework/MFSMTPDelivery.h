@@ -3,7 +3,7 @@
  */
 
 @interface MFSMTPDelivery : MFMailDelivery {
-    MFSMTPConnection *_connection;
+    MFSMTPConnection * _connection;
 }
 
 - (void)_openConnection;

@@ -3,7 +3,7 @@
  */
 
 @interface RadioGetStreamingStationsRequest : RadioRequest {
-    SSURLConnectionRequest *_request;
+    SSURLConnectionRequest * _request;
 }
 
 - (void).cxx_destruct;

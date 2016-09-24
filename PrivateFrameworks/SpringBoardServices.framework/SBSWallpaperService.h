@@ -3,9 +3,9 @@
  */
 
 @interface SBSWallpaperService : NSObject {
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    SBSWallpaperClient *_client;
-    BOOL _wasInvalidated;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    SBSWallpaperClient * _client;
+    BOOL  _wasInvalidated;
 }
 
 - (void).cxx_destruct;

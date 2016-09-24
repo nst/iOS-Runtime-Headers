@@ -3,10 +3,10 @@
  */
 
 @interface AAUIAlertView : UIAlertView {
-    id /* block */ _action;
-    id /* block */ _actionWithText;
-    NSObject<OS_dispatch_semaphore> *_buttonChosenSemaphore;
-    int _chosenButtonIndex;
+    id /* block */  _action;
+    id /* block */  _actionWithText;
+    NSObject<OS_dispatch_semaphore> * _buttonChosenSemaphore;
+    int  _chosenButtonIndex;
 }
 
 @property (readonly) int chosenButtonIndex;

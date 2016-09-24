@@ -3,18 +3,18 @@
  */
 
 @interface CalDAVContainerSyncTaskGroup : CoreDAVContainerSyncTaskGroup {
-    <CalDAVCalendar> *_calendar;
-    NSDateComponents *_eventFilterEndDate;
-    NSDateComponents *_eventFilterStartDate;
-    BOOL _fallbackOnMultiGetError;
-    int _fetchingEtagState;
-    BOOL _getScheduleChanges;
-    BOOL _getScheduleTags;
-    BOOL _supportsExtendedCalendarQuery;
-    BOOL _syncEvents;
-    BOOL _syncTodos;
-    NSDateComponents *_todoFilterEndDate;
-    NSDateComponents *_todoFilterStartDate;
+    <CalDAVCalendar> * _calendar;
+    NSDateComponents * _eventFilterEndDate;
+    NSDateComponents * _eventFilterStartDate;
+    BOOL  _fallbackOnMultiGetError;
+    int  _fetchingEtagState;
+    BOOL  _getScheduleChanges;
+    BOOL  _getScheduleTags;
+    BOOL  _supportsExtendedCalendarQuery;
+    BOOL  _syncEvents;
+    BOOL  _syncTodos;
+    NSDateComponents * _todoFilterEndDate;
+    NSDateComponents * _todoFilterStartDate;
 }
 
 @property (nonatomic, retain) <CalDAVCalendar> *calendar;

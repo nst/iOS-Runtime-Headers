@@ -3,7 +3,7 @@
  */
 
 @interface MPPurchaseCommand : MPRemoteCommand {
-    int _state;
+    int  _state;
 }
 
 @property (nonatomic) int state;

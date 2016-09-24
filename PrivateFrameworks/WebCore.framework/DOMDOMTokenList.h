@@ -5,14 +5,14 @@
 @interface DOMDOMTokenList : DOMObject
 
 @property (readonly) unsigned int length;
+@property (copy) NSString *value;
 
-- (void)add:(id)arg1;
 - (BOOL)contains:(id)arg1;
 - (void)dealloc;
-- (void)finalize;
 - (id)item:(unsigned int)arg1;
 - (unsigned int)length;
-- (void)remove:(id)arg1;
+- (void)setValue:(id)arg1;
 - (BOOL)toggle:(id)arg1 force:(BOOL)arg2;
+- (id)value;
 
 @end

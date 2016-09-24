@@ -3,31 +3,31 @@
  */
 
 @interface _MFMailCompositionContext : NSObject {
-    MFAttachmentCompositionContext *_attachmentContext;
-    NSString *_attachmentToMarkupContentID;
-    id _autosaveIdentifier;
-    NSArray *_bccRecipients;
-    MFComposeBodyField *_bodyField;
-    unsigned int _caretPosition;
-    NSArray *_ccRecipients;
-    int _composeType;
-    NSMutableArray *_deferredAttachments;
-    BOOL _includeAttachments;
-    BOOL _loadRest;
-    MFMessageViewingContext *_loadingContext;
-    NSString *_messageBody;
-    id _originalContent;
-    MFMailMessage *_originalMessage;
-    NSString *_originatingBundleID;
-    BOOL _prefersFirstLineSelection;
-    BOOL _registeredForDraw;
-    NSString *_sendingAddress;
-    BOOL _showContentImmediately;
-    BOOL _showKeyboardImmediately;
-    int _sourceAccountManagement;
-    NSString *_subject;
-    NSArray *_toRecipients;
-    BOOL _usingDefaultAccount;
+    MFAttachmentCompositionContext * _attachmentContext;
+    NSString * _attachmentToMarkupContentID;
+    id  _autosaveIdentifier;
+    NSArray * _bccRecipients;
+    MFComposeBodyField * _bodyField;
+    unsigned int  _caretPosition;
+    NSArray * _ccRecipients;
+    int  _composeType;
+    NSMutableArray * _deferredAttachments;
+    BOOL  _includeAttachments;
+    BOOL  _loadRest;
+    MFMessageLoadingContext * _loadingContext;
+    NSString * _messageBody;
+    id  _originalContent;
+    MFMailMessage * _originalMessage;
+    NSString * _originatingBundleID;
+    BOOL  _prefersFirstLineSelection;
+    BOOL  _registeredForDraw;
+    NSString * _sendingAddress;
+    BOOL  _showContentImmediately;
+    BOOL  _showKeyboardImmediately;
+    int  _sourceAccountManagement;
+    NSString * _subject;
+    NSArray * _toRecipients;
+    BOOL  _usingDefaultAccount;
 }
 
 @property (nonatomic, readonly) MFAttachmentCompositionContext *attachmentContext;
@@ -41,7 +41,7 @@
 @property (nonatomic, readonly) NSString *contextID;
 @property (nonatomic) BOOL includeAttachments;
 @property (nonatomic) BOOL loadRest;
-@property (nonatomic, retain) MFMessageViewingContext *loadingContext;
+@property (nonatomic, retain) MFMessageLoadingContext *loadingContext;
 @property (nonatomic, retain) id originalContent;
 @property (nonatomic, readonly) MFMailMessage *originalMessage;
 @property (nonatomic, copy) NSString *originatingBundleID;

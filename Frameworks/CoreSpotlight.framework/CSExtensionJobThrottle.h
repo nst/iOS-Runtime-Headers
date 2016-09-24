@@ -3,12 +3,12 @@
  */
 
 @interface CSExtensionJobThrottle : NSObject {
-    NSMutableDictionary *_countersByBundleID;
-    unsigned int _maxRetryCount;
-    unsigned int _maxSecondsBetweenRetries;
-    unsigned int _maxSecondsBetweenRetriesUnderMemoryPressure;
-    unsigned int _minSecondsBetweenRetries;
-    unsigned int _minSecondsBetweenRetriesUnderMemoryPressure;
+    NSMutableDictionary * _countersByBundleID;
+    unsigned int  _maxRetryCount;
+    unsigned int  _maxSecondsBetweenRetries;
+    unsigned int  _maxSecondsBetweenRetriesUnderMemoryPressure;
+    unsigned int  _minSecondsBetweenRetries;
+    unsigned int  _minSecondsBetweenRetriesUnderMemoryPressure;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *countersByBundleID;
@@ -26,7 +26,7 @@
 - (unsigned int)maxSecondsBetweenRetriesUnderMemoryPressure;
 - (unsigned int)minSecondsBetweenRetries;
 - (unsigned int)minSecondsBetweenRetriesUnderMemoryPressure;
-- (long long)nextDispatchTimeDeltaForExtension:(id)arg1 job:(id)arg2 memoryPressure:(BOOL)arg3;
+- (int)nextDispatchTimeDeltaForExtension:(id)arg1 job:(id)arg2 memoryPressure:(BOOL)arg3;
 - (void)setCountersByBundleID:(id)arg1;
 - (void)setMaxRetryCount:(unsigned int)arg1;
 - (void)setMaxSecondsBetweenRetries:(unsigned int)arg1;

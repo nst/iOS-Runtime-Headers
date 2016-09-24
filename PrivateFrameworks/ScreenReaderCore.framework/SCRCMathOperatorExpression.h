@@ -3,7 +3,7 @@
  */
 
 @interface SCRCMathOperatorExpression : SCRCMathSimpleExpression {
-    unsigned short _operatorChar;
+    unsigned short  _operatorChar;
 }
 
 @property (nonatomic, readonly) unsigned short operatorChar;

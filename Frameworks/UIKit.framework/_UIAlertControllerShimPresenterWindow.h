@@ -3,7 +3,7 @@
  */
 
 @interface _UIAlertControllerShimPresenterWindow : UIApplicationRotationFollowingWindow {
-    UIAlertController *_alertController;
+    UIAlertController * _alertController;
 }
 
 @property (nonatomic, readonly, retain) UIAlertController *alertController;

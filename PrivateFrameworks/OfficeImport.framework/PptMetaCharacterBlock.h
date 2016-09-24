@@ -3,9 +3,9 @@
  */
 
 @interface PptMetaCharacterBlock : NSObject {
-    int mExtraData;
-    int mPosition;
-    int mType;
+    int  mExtraData;
+    int  mPosition;
+    int  mType;
 }
 
 - (int)extraData;

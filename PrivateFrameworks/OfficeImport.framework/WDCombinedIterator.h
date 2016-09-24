@@ -3,8 +3,8 @@
  */
 
 @interface WDCombinedIterator : WDIterator {
-    WDIterator *mChildIterator;
-    WDIterator *mParentIterator;
+    WDIterator * mChildIterator;
+    WDIterator * mParentIterator;
 }
 
 @property (nonatomic, retain) WDIterator *childIterator;

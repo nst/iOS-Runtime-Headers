@@ -3,10 +3,10 @@
  */
 
 @interface TSCH3DBarChartDefaultAppearance : NSObject <TSCH3DBarChartAppearance, TSCHUnretainedParent> {
-    TSCH3DChartBarElementProperties *mProperties;
+    TSCH3DChartBarElementProperties * mProperties;
 }
 
-+ (struct BarExtrusionDetails { struct BarExtrusionCrossSectionDetails { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; int x_1_1_5; } x1; struct BarExtrusionSpineDetails { float x_2_1_1; int x_2_1_2; int x_2_1_3; float x_2_1_4; } x2; })defaultDetails;
++ (struct BarExtrusionDetails { struct BarExtrusionCrossSectionDetails { double x_1_1_1; double x_1_1_2; double x_1_1_3; double x_1_1_4; int x_1_1_5; } x1; struct BarExtrusionSpineDetails { double x_2_1_1; int x_2_1_2; int x_2_1_3; double x_2_1_4; } x2; })defaultDetails;
 + (int)shapeType;
 
 - (float)chartMinZForScene:(id)arg1;

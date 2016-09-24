@@ -3,8 +3,8 @@
  */
 
 @interface CNAutocompleteObservable : CNObservable {
-    NSString *_debugDescription;
-    CNObservable *_observable;
+    NSString * _debugDescription;
+    CNObservable * _observable;
 }
 
 @property (nonatomic, retain) NSString *debugDescription;

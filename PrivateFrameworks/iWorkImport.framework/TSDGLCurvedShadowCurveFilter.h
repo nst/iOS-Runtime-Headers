@@ -3,10 +3,10 @@
  */
 
 @interface TSDGLCurvedShadowCurveFilter : CIFilter {
-    NSNumber *inputCurveAmount;
-    CIImage *inputImage;
-    NSNumber *inputPadding;
-    CIVector *inputSampleExtent;
+    NSNumber * inputCurveAmount;
+    CIImage * inputImage;
+    NSNumber * inputPadding;
+    CIVector * inputSampleExtent;
 }
 
 + (id)curveKernel;

@@ -3,9 +3,9 @@
  */
 
 @interface RCExtAudioFilePipe : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    unsigned long _accessQueueID;
-    struct OpaqueExtAudioFile { } *_audioFileRef;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    unsigned long  _accessQueueID;
+    struct OpaqueExtAudioFile { } * _audioFileRef;
     struct AudioStreamBasicDescription { 
         double mSampleRate; 
         unsigned int mFormatID; 
@@ -16,8 +16,8 @@
         unsigned int mChannelsPerFrame; 
         unsigned int mBitsPerChannel; 
         unsigned int mReserved; 
-    } _outputFormatDescriptionStruct;
-    unsigned long long _sourceFileSize;
+    }  _outputFormatDescriptionStruct;
+    unsigned int  _sourceFileSize;
     struct AudioStreamBasicDescription { 
         double mSampleRate; 
         unsigned int mFormatID; 
@@ -28,12 +28,12 @@
         unsigned int mChannelsPerFrame; 
         unsigned int mBitsPerChannel; 
         unsigned int mReserved; 
-    } _sourceFormatDescriptionStruct;
-    NSURL *_sourceURL;
+    }  _sourceFormatDescriptionStruct;
+    NSURL * _sourceURL;
 }
 
 @property (nonatomic, readonly) struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; }*outputFormatDescription;
-@property (nonatomic, readonly) unsigned long long sourceFileSize;
+@property (nonatomic, readonly) unsigned int sourceFileSize;
 @property (nonatomic, readonly) struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; }*sourceFormatDescription;
 @property (nonatomic, readonly) NSURL *sourceURL;
 
@@ -44,11 +44,11 @@
 - (struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; }*)outputFormatDescription;
 - (void)performTransactionWithBlock:(id /* block */)arg1;
 - (long)readConvertedFramesIntoBuffer:(id)arg1 requestedFrameCount:(long)arg2;
-- (BOOL)seekToSourceFrameIndex:(long long)arg1;
-- (long long)sourceCurrentFrameIndex;
-- (unsigned long long)sourceFileSize;
+- (BOOL)seekToSourceFrameIndex:(int)arg1;
+- (int)sourceCurrentFrameIndex;
+- (unsigned int)sourceFileSize;
 - (struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; }*)sourceFormatDescription;
-- (long long)sourceFrameIndexForTime:(double)arg1;
+- (int)sourceFrameIndexForTime:(double)arg1;
 - (id)sourceURL;
 
 @end

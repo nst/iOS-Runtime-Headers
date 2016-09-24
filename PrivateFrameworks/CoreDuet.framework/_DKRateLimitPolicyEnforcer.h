@@ -3,7 +3,7 @@
  */
 
 @interface _DKRateLimitPolicyEnforcer : NSObject {
-    NSDictionary *_eventStreamRateLimiters;
+    NSDictionary * _eventStreamRateLimiters;
 }
 
 + (id)rateLimitPolicyEnforcer;

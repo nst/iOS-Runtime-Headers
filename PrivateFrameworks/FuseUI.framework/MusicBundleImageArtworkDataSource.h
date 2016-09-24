@@ -3,8 +3,8 @@
  */
 
 @interface MusicBundleImageArtworkDataSource : NSObject <MPArtworkDataSource> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSCache *_defaultCache;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSCache * _defaultCache;
 }
 
 @property (readonly, copy) NSString *debugDescription;

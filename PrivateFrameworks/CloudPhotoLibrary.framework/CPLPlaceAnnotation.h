@@ -3,8 +3,8 @@
  */
 
 @interface CPLPlaceAnnotation : NSObject <NSCopying, NSSecureCoding> {
-    NSNumber *_placeLevel;
-    NSString *_placeName;
+    NSNumber * _placeLevel;
+    NSString * _placeName;
 }
 
 @property (nonatomic, copy) NSNumber *placeLevel;

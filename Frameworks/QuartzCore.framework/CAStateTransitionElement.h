@@ -3,10 +3,10 @@
  */
 
 @interface CAStateTransitionElement : NSObject <NSCoding, NSCopying> {
-    CAAnimation *_animation;
-    BOOL _enabled;
-    NSString *_key;
-    CALayer *_target;
+    CAAnimation * _animation;
+    BOOL  _enabled;
+    NSString * _key;
+    CALayer * _target;
 }
 
 @property (nonatomic, retain) CAAnimation *animation;

@@ -3,7 +3,7 @@
  */
 
 @interface PMMasterSlideMapper : CMMapper {
-    PDSlideBase *_slide;
+    PDSlideBase * _slide;
 }
 
 - (void)dealloc;

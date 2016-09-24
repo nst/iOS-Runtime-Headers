@@ -3,9 +3,9 @@
  */
 
 @interface SKUIIndexBarLocaleStandardEntryListController : SKUIIndexBarEntryListController {
-    SKUIIndexBarEntryListViewElement *_entryListViewElement;
-    NSSet *_requiredVisibilitySet;
-    IKViewElementStyle *_style;
+    SKUIIndexBarEntryListViewElement * _entryListViewElement;
+    NSSet * _requiredVisibilitySet;
+    IKViewElementStyle * _style;
 }
 
 - (void).cxx_destruct;

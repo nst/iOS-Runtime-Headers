@@ -3,7 +3,7 @@
  */
 
 @interface CAMPanoramaOutput : AVCaptureVideoDataOutput {
-    CAMCaptureEngine *__engine;
+    CAMCaptureEngine * __engine;
 }
 
 @property (nonatomic, readonly) CAMCaptureEngine *_engine;

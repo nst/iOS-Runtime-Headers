@@ -3,8 +3,8 @@
  */
 
 @interface PCDistributedLock : NSObject <NSLocking> {
-    int _fd;
-    NSString *_path;
+    int  _fd;
+    NSString * _path;
 }
 
 - (BOOL)_lockBlocking:(BOOL)arg1;

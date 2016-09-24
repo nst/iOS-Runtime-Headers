@@ -3,21 +3,21 @@
  */
 
 @interface SBKTransactionController : NSObject <ISStoreURLOperationDelegate> {
-    SSAccount *_account;
-    SBKStoreAuthenticationController *_authenticationController;
-    SBKTaskAssertion *_backgroundTaskAssertion;
-    int _conflictResolutionAttempts;
-    SBKTransaction *_currentTransaction;
-    <SBKTransactionControllerDelegate> *_delegate;
-    NSString *_domain;
-    BOOL _enabled;
-    BOOL _isResolvingError;
-    id _networkTypeObserver;
-    NSOperationQueue *_operationQueue;
-    NSMutableArray *_pendingTransactions;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSURL *_requestURL;
-    BOOL _shouldAuthenticateIfNecessary;
+    SSAccount * _account;
+    SBKStoreAuthenticationController * _authenticationController;
+    SBKTaskAssertion * _backgroundTaskAssertion;
+    int  _conflictResolutionAttempts;
+    SBKTransaction * _currentTransaction;
+    <SBKTransactionControllerDelegate> * _delegate;
+    NSString * _domain;
+    BOOL  _enabled;
+    BOOL  _isResolvingError;
+    id  _networkTypeObserver;
+    NSOperationQueue * _operationQueue;
+    NSMutableArray * _pendingTransactions;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSURL * _requestURL;
+    BOOL  _shouldAuthenticateIfNecessary;
 }
 
 @property (retain) SSAccount *account;

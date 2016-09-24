@@ -3,9 +3,9 @@
  */
 
 @interface FontSizeSliderCell : PSSliderTableCell {
-    UILabel *_largeSizeLabel;
-    UILabel *_smallSizeLabel;
-    UILabel *_veryLargeSizeLabel;
+    UILabel * _largeSizeLabel;
+    UILabel * _smallSizeLabel;
+    UILabel * _veryLargeSizeLabel;
 }
 
 - (void).cxx_destruct;

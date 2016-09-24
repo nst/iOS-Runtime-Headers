@@ -7,11 +7,11 @@
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _avoidedModes;
+    }  _avoidedModes;
     struct { 
         unsigned int preferredSpeed : 1; 
-    } _has;
-    double _preferredSpeed;
+    }  _has;
+    double  _preferredSpeed;
 }
 
 @property (nonatomic, readonly) int*avoidedModes;
@@ -19,9 +19,11 @@
 @property (nonatomic) BOOL hasPreferredSpeed;
 @property (nonatomic) double preferredSpeed;
 
+- (int)StringAsAvoidedModes:(id)arg1;
 - (void)addAvoidedMode:(int)arg1;
 - (int)avoidedModeAtIndex:(unsigned int)arg1;
 - (int*)avoidedModes;
+- (id)avoidedModesAsString:(int)arg1;
 - (unsigned int)avoidedModesCount;
 - (void)clearAvoidedModes;
 - (void)copyTo:(id)arg1;

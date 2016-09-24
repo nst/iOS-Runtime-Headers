@@ -3,17 +3,16 @@
  */
 
 @interface _PFManagedObjectReferenceQueue : NSObject {
-    int _cd_rc;
-    NSManagedObjectContext *_context;
-    int _flags;
-    int _processing;
-    struct __CFArray { } *_queue;
-    struct __CFRunLoopObserver { } *_rlObserver;
-    int _signalRunloop;
-    int _spinLock;
+    int  _cd_rc;
+    NSManagedObjectContext * _context;
+    int  _flags;
+    int  _processing;
+    struct __CFArray { } * _queue;
+    struct __CFRunLoopObserver { } * _rlObserver;
+    int  _signalRunloop;
+    int  _spinLock;
 }
 
-- (BOOL)_GC_queueForDealloc:(id)arg1;
 - (void)_contextDidDealloc;
 - (BOOL)_isDeallocating;
 - (void)_processReferenceQueue:(BOOL)arg1;

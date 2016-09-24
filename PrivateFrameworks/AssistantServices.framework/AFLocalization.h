@@ -3,8 +3,8 @@
  */
 
 @interface AFLocalization : NSObject {
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_tables;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableDictionary * _tables;
 }
 
 + (id)sharedInstance;

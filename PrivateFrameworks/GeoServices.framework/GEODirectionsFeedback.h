@@ -3,18 +3,29 @@
  */
 
 @interface GEODirectionsFeedback : PBCodable <NSCopying> {
-    NSData *_directionResponseID;
-    NSMutableArray *_stepFeedbacks;
-    NSMutableArray *_trafficRerouteFeedbacks;
+    NSMutableArray * _alightNotificationFeedbacks;
+    NSData * _directionResponseID;
+    NSMutableArray * _stepFeedbacks;
+    NSMutableArray * _trafficRerouteFeedbacks;
 }
 
+@property (nonatomic, retain) NSMutableArray *alightNotificationFeedbacks;
 @property (nonatomic, retain) NSData *directionResponseID;
 @property (nonatomic, readonly) BOOL hasDirectionResponseID;
 @property (nonatomic, retain) NSMutableArray *stepFeedbacks;
 @property (nonatomic, retain) NSMutableArray *trafficRerouteFeedbacks;
 
++ (Class)alightNotificationFeedbackType;
++ (Class)stepFeedbackType;
++ (Class)trafficRerouteFeedbackType;
+
+- (void)addAlightNotificationFeedback:(id)arg1;
 - (void)addStepFeedback:(id)arg1;
 - (void)addTrafficRerouteFeedback:(id)arg1;
+- (id)alightNotificationFeedbackAtIndex:(unsigned int)arg1;
+- (id)alightNotificationFeedbacks;
+- (unsigned int)alightNotificationFeedbacksCount;
+- (void)clearAlightNotificationFeedbacks;
 - (void)clearStepFeedbacks;
 - (void)clearTrafficRerouteFeedbacks;
 - (void)copyTo:(id)arg1;
@@ -28,6 +39,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)setAlightNotificationFeedbacks:(id)arg1;
 - (void)setDirectionResponseID:(id)arg1;
 - (void)setStepFeedbacks:(id)arg1;
 - (void)setTrafficRerouteFeedbacks:(id)arg1;

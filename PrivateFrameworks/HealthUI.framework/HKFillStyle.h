@@ -3,15 +3,15 @@
  */
 
 @interface HKFillStyle : NSObject <NSCopying> {
-    UIImage *_cachedImage;
+    UIImage * _cachedImage;
 }
 
 - (void).cxx_destruct;
-- (BOOL)_needsRenderForSize:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)_needsRenderForSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_renderCacheIfNecessaryForHeight:(float)arg1;
-- (void)_renderCacheIfNecessaryForSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_renderCacheIfNecessaryForSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_renderCacheIfNecessaryForWidth:(float)arg1;
-- (void)_renderInContext:(struct CGContext { }*)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (void)_renderInContext:(struct CGContext { }*)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)fillImageWithHeight:(float)arg1;
 - (id)fillImageWithWidth:(float)arg1;

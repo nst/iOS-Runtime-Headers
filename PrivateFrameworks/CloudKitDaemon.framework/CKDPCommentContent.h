@@ -3,11 +3,11 @@
  */
 
 @interface CKDPCommentContent : PBCodable <NSCopying> {
-    NSData *_comment;
-    BOOL _encrypted;
+    NSData * _comment;
+    BOOL  _encrypted;
     struct { 
         unsigned int encrypted : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic, retain) NSData *comment;

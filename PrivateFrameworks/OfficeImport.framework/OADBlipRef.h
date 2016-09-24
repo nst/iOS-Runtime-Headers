@@ -3,10 +3,10 @@
  */
 
 @interface OADBlipRef : NSObject <NSCopying> {
-    OADBlip *mBlip;
-    NSMutableArray *mEffects;
-    long mIndex;
-    NSString *mName;
+    OADBlip * mBlip;
+    NSMutableArray * mEffects;
+    long  mIndex;
+    NSString * mName;
 }
 
 + (id)blipRefWithIndex:(long)arg1 name:(id)arg2 blip:(id)arg3;

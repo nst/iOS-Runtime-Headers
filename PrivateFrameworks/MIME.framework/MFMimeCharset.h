@@ -3,12 +3,12 @@
  */
 
 @interface MFMimeCharset : NSObject {
-    unsigned int _canBeUsedForOutgoingMessages;
-    NSString *_charsetName;
-    unsigned int _coversLargeUnicodeSubset;
-    unsigned long _encoding;
-    NSString *_primaryLanguage;
-    unsigned int _useBase64InHeaders;
+    unsigned int  _canBeUsedForOutgoingMessages;
+    NSString * _charsetName;
+    unsigned int  _coversLargeUnicodeSubset;
+    unsigned long  _encoding;
+    NSString * _primaryLanguage;
+    unsigned int  _useBase64InHeaders;
 }
 
 + (id)allMimeCharsets;

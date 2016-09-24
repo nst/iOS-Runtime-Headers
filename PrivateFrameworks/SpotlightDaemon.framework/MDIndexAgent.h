@@ -3,7 +3,7 @@
  */
 
 @interface MDIndexAgent : MDAgent {
-    MDSearchableIndexService *_service;
+    MDSearchableIndexService * _service;
 }
 
 @property (retain) MDSearchableIndexService *service;

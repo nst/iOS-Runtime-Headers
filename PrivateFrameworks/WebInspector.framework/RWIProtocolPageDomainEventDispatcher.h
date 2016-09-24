@@ -3,7 +3,7 @@
  */
 
 @interface RWIProtocolPageDomainEventDispatcher : NSObject {
-    struct AugmentableInspectorController { int (**x1)(); } *_controller;
+    struct AugmentableInspectorController { int (**x1)(); } * _controller;
 }
 
 - (void)domContentEventFiredWithTimestamp:(double)arg1;

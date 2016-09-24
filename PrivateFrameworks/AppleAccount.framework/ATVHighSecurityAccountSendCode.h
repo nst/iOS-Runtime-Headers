@@ -3,7 +3,7 @@
  */
 
 @interface ATVHighSecurityAccountSendCode : AAAppleTVRequest {
-    NSDictionary *_device;
+    NSDictionary * _device;
 }
 
 + (Class)responseClass;

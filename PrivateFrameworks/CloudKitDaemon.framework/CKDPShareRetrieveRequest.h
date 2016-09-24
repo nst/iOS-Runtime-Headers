@@ -3,8 +3,8 @@
  */
 
 @interface CKDPShareRetrieveRequest : PBRequest <NSCopying> {
-    CKDPShareIdentifier *_shareId;
-    CKDPRecordZoneIdentifier *_zoneId;
+    CKDPShareIdentifier * _shareId;
+    CKDPRecordZoneIdentifier * _zoneId;
 }
 
 @property (nonatomic, readonly) BOOL hasShareId;

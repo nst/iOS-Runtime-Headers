@@ -3,24 +3,27 @@
  */
 
 @interface GEOETAResultByType : PBCodable <NSCopying> {
-    unsigned int _distance;
-    double _expectedTimeOfDeparture;
+    unsigned int  _distance;
+    double  _expectedTimeOfDeparture;
     struct { 
         unsigned int expectedTimeOfDeparture : 1; 
         unsigned int distance : 1; 
         unsigned int historicTravelTime : 1; 
+        unsigned int staticTravelTime : 1; 
         unsigned int status : 1; 
         unsigned int transportType : 1; 
         unsigned int travelTimeAggressiveEstimate : 1; 
         unsigned int travelTimeBestEstimate : 1; 
         unsigned int travelTimeConservativeEstimate : 1; 
-    } _has;
-    unsigned int _historicTravelTime;
-    int _status;
-    int _transportType;
-    unsigned int _travelTimeAggressiveEstimate;
-    unsigned int _travelTimeBestEstimate;
-    unsigned int _travelTimeConservativeEstimate;
+    }  _has;
+    unsigned int  _historicTravelTime;
+    unsigned int  _staticTravelTime;
+    int  _status;
+    NSMutableArray * _summaryForPredictedDestinations;
+    int  _transportType;
+    unsigned int  _travelTimeAggressiveEstimate;
+    unsigned int  _travelTimeBestEstimate;
+    unsigned int  _travelTimeConservativeEstimate;
 }
 
 @property (nonatomic) unsigned int distance;
@@ -28,20 +31,30 @@
 @property (nonatomic) BOOL hasDistance;
 @property (nonatomic) BOOL hasExpectedTimeOfDeparture;
 @property (nonatomic) BOOL hasHistoricTravelTime;
+@property (nonatomic) BOOL hasStaticTravelTime;
 @property (nonatomic) BOOL hasStatus;
 @property (nonatomic) BOOL hasTransportType;
 @property (nonatomic) BOOL hasTravelTimeAggressiveEstimate;
 @property (nonatomic) BOOL hasTravelTimeBestEstimate;
 @property (nonatomic) BOOL hasTravelTimeConservativeEstimate;
 @property (nonatomic) unsigned int historicTravelTime;
+@property (nonatomic) unsigned int staticTravelTime;
 @property (nonatomic) int status;
+@property (nonatomic, retain) NSMutableArray *summaryForPredictedDestinations;
 @property (nonatomic) int transportType;
 @property (nonatomic) unsigned int travelTimeAggressiveEstimate;
 @property (nonatomic) unsigned int travelTimeBestEstimate;
 @property (nonatomic) unsigned int travelTimeConservativeEstimate;
 
++ (Class)summaryForPredictedDestinationType;
+
+- (int)StringAsStatus:(id)arg1;
+- (int)StringAsTransportType:(id)arg1;
+- (void)addSummaryForPredictedDestination:(id)arg1;
+- (void)clearSummaryForPredictedDestinations;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)distance;
@@ -49,6 +62,7 @@
 - (BOOL)hasDistance;
 - (BOOL)hasExpectedTimeOfDeparture;
 - (BOOL)hasHistoricTravelTime;
+- (BOOL)hasStaticTravelTime;
 - (BOOL)hasStatus;
 - (BOOL)hasTransportType;
 - (BOOL)hasTravelTimeAggressiveEstimate;
@@ -64,19 +78,28 @@
 - (void)setHasDistance:(BOOL)arg1;
 - (void)setHasExpectedTimeOfDeparture:(BOOL)arg1;
 - (void)setHasHistoricTravelTime:(BOOL)arg1;
+- (void)setHasStaticTravelTime:(BOOL)arg1;
 - (void)setHasStatus:(BOOL)arg1;
 - (void)setHasTransportType:(BOOL)arg1;
 - (void)setHasTravelTimeAggressiveEstimate:(BOOL)arg1;
 - (void)setHasTravelTimeBestEstimate:(BOOL)arg1;
 - (void)setHasTravelTimeConservativeEstimate:(BOOL)arg1;
 - (void)setHistoricTravelTime:(unsigned int)arg1;
+- (void)setStaticTravelTime:(unsigned int)arg1;
 - (void)setStatus:(int)arg1;
+- (void)setSummaryForPredictedDestinations:(id)arg1;
 - (void)setTransportType:(int)arg1;
 - (void)setTravelTimeAggressiveEstimate:(unsigned int)arg1;
 - (void)setTravelTimeBestEstimate:(unsigned int)arg1;
 - (void)setTravelTimeConservativeEstimate:(unsigned int)arg1;
+- (unsigned int)staticTravelTime;
 - (int)status;
+- (id)statusAsString:(int)arg1;
+- (id)summaryForPredictedDestinationAtIndex:(unsigned int)arg1;
+- (id)summaryForPredictedDestinations;
+- (unsigned int)summaryForPredictedDestinationsCount;
 - (int)transportType;
+- (id)transportTypeAsString:(int)arg1;
 - (unsigned int)travelTimeAggressiveEstimate;
 - (unsigned int)travelTimeBestEstimate;
 - (unsigned int)travelTimeConservativeEstimate;

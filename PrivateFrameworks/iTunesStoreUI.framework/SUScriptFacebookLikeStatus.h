@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptFacebookLikeStatus : SUScriptObject {
-    NSDictionary *_dictionary;
+    NSDictionary * _dictionary;
 }
 
 @property (readonly) unsigned int friendLikeCount;

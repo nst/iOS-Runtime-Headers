@@ -3,14 +3,16 @@
  */
 
 @interface SSURLBagContext : NSObject <NSCopying, SSXPCCoding> {
-    int _allowedRetryCount;
-    BOOL _allowsBootstrapCellularData;
-    BOOL _allowsExpiredBags;
-    int _bagType;
-    NSMutableDictionary *_httpHeaders;
-    BOOL _ignoresCaches;
-    NSNumber *_userIdentifier;
-    BOOL _usesCachedBagsOnly;
+    int  _allowedRetryCount;
+    BOOL  _allowsBootstrapCellularData;
+    BOOL  _allowsExpiredBags;
+    int  _bagType;
+    NSData * _clientAuditTokenData;
+    NSMutableDictionary * _httpHeaders;
+    BOOL  _ignoresCaches;
+    NSLock * _lock;
+    NSNumber * _userIdentifier;
+    BOOL  _usesCachedBagsOnly;
 }
 
 @property (nonatomic, copy) NSDictionary *allHTTPHeaders;
@@ -19,6 +21,8 @@
 @property (nonatomic) BOOL allowsExpiredBags;
 @property (nonatomic) int bagType;
 @property (nonatomic, readonly) NSString *cacheKey;
+@property (nonatomic, retain) NSData *clientAuditTokenData;
+@property (nonatomic, readonly) NSString *clientBundleIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -29,12 +33,15 @@
 
 + (id)contextWithBagType:(int)arg1;
 
+- (id)_init;
 - (id)allHTTPHeaders;
 - (int)allowedRetryCount;
 - (BOOL)allowsBootstrapCellularData;
 - (BOOL)allowsExpiredBags;
 - (int)bagType;
 - (id)cacheKey;
+- (id)clientAuditTokenData;
+- (id)clientBundleIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
 - (void)dealloc;
@@ -49,6 +56,7 @@
 - (void)setAllowsBootstrapCellularData:(BOOL)arg1;
 - (void)setAllowsExpiredBags:(BOOL)arg1;
 - (void)setBagType:(int)arg1;
+- (void)setClientAuditTokenData:(id)arg1;
 - (void)setIgnoresCaches:(BOOL)arg1;
 - (void)setUserIdentifier:(id)arg1;
 - (void)setUsesCachedBagsOnly:(BOOL)arg1;

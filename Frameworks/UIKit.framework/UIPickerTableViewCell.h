@@ -3,11 +3,14 @@
  */
 
 @interface UIPickerTableViewCell : UITableViewCell {
-    UITapGestureRecognizer *_tap;
-    UIPickerTableView *pickerTable;
+    UITapGestureRecognizer * _tap;
+    UIPickerTableView * pickerTable;
 }
 
 @property (nonatomic) UIPickerTableView *pickerTable;
+
++ (id)_modernCenterCellFont;
++ (id)_modernNonCenterCellFont;
 
 - (void).cxx_destruct;
 - (void)_setIsCenterCell:(BOOL)arg1 shouldModifyAlphaOfView:(BOOL)arg2;

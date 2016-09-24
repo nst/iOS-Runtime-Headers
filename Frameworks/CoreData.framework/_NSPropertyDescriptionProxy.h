@@ -3,10 +3,10 @@
  */
 
 @interface _NSPropertyDescriptionProxy : NSObject {
-    NSEntityDescription *_entityDescription;
-    unsigned int _entitysReferenceIDForProperty;
-    id _sourceBuffer;
-    NSPropertyDescription *_underlyingProperty;
+    NSEntityDescription * _entityDescription;
+    unsigned int  _entitysReferenceIDForProperty;
+    id  _sourceBuffer;
+    NSPropertyDescription * _underlyingProperty;
 }
 
 + (BOOL)resolveInstanceMethod:(SEL)arg1;

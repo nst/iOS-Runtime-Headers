@@ -3,12 +3,12 @@
  */
 
 @interface _MRRegisterVoiceInputDeviceResponseMessageProtobuf : PBCodable <NSCopying> {
-    unsigned int _deviceID;
-    unsigned int _errorCode;
+    unsigned int  _deviceID;
+    unsigned int  _errorCode;
     struct { 
         unsigned int deviceID : 1; 
         unsigned int errorCode : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic) unsigned int deviceID;

@@ -3,12 +3,12 @@
  */
 
 @interface CKDPCSFetchAggregator : NSObject {
-    CKDClientContext *_context;
-    NSObject<OS_dispatch_queue> *_opQueue;
-    NSOperationQueue *_queue;
-    NSMutableArray *_queuedFetches;
-    NSMutableArray *_runningFetches;
-    NSObject<OS_dispatch_source> *_timerSource;
+    CKDClientContext * _context;
+    NSObject<OS_dispatch_queue> * _opQueue;
+    NSOperationQueue * _queue;
+    NSMutableArray * _queuedFetches;
+    NSMutableArray * _runningFetches;
+    NSObject<OS_dispatch_source> * _timerSource;
 }
 
 @property (nonatomic) CKDClientContext *context;
@@ -31,6 +31,7 @@
 - (id)queuedFetches;
 - (void)requestFetchOfRecordWithID:(id)arg1 forOperation:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)requestFetchOfShareWithID:(id)arg1 forOperation:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)requestFetchOfZoneWithID:(id)arg1 forOperation:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (id)runningFetches;
 - (void)setContext:(id)arg1;
 - (void)setOpQueue:(id)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface MFMailAccountProxyGenerator : NSObject {
-    BOOL _allowsRestrictedAccounts;
-    _MFMailAccountProxySource *_proxySource;
+    BOOL  _allowsRestrictedAccounts;
+    _MFMailAccountProxySource * _proxySource;
 }
 
 - (id)accountProxyContainingEmailAddress:(id)arg1 includingInactive:(BOOL)arg2;

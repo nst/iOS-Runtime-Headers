@@ -3,8 +3,8 @@
  */
 
 @interface SSDownloadPolicyApplicationState : NSObject <NSCoding, NSCopying, SSXPCCoding> {
-    NSString *_applicationIdentifier;
-    NSSet *_applicationStates;
+    NSString * _applicationIdentifier;
+    NSSet * _applicationStates;
 }
 
 @property (nonatomic, copy) NSString *applicationIdentifier;

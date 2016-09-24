@@ -3,8 +3,8 @@
  */
 
 @interface CSLUIPBUIPluginTriggerResponse : PBCodable <NSCopying> {
-    NSString *_errorString;
-    BOOL _success;
+    NSString * _errorString;
+    BOOL  _success;
 }
 
 @property (nonatomic, retain) NSString *errorString;

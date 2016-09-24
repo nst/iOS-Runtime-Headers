@@ -3,35 +3,35 @@
  */
 
 @interface SLFacebookComposeViewController : SLComposeServiceViewController <SLFacebookAlbumChooserViewControllerDelegate, SLFacebookAudienceViewControllerDelegate, SLFacebookVideoOptionsDelegate, SLPlaceDataSourceDelegate, SLSheetPlaceViewControllerDelegate> {
-    ACAccountStore *_accountStore;
+    ACAccountStore * _accountStore;
     struct { 
         unsigned int showAlbumAction : 1; 
         unsigned int showPrivacyAction : 1; 
         unsigned int showPlaceAction : 1; 
         unsigned int showVideoDetailAction : 1; 
-    } _actionFlags;
-    SLFacebookAlbumChooserViewController *_albumChooserViewController;
-    SLComposeSheetConfigurationItem *_albumConfigurationItem;
-    SLFacebookAlbumManager *_albumManager;
-    ALAssetsLibrary *_assetsLibrary;
-    UIViewController<SLFacebookAudienceViewController> *_audienceViewController;
-    id /* block */ _completionHandler;
-    BOOL _didFetchPrivilegedAccount;
-    BOOL _hasAccessToAccount;
-    BOOL _hasCheckedAccess;
-    BOOL _hasShowedLocationDeniedAlert;
-    CLInUseAssertion *_locationInUseAssertion;
-    SLComposeSheetConfigurationItem *_placeConfigurationItem;
-    SLFacebookPlaceManager *_placeManager;
-    SLSheetPlaceViewController *_placeViewController;
-    SLFacebookPost *_post;
-    SLFacebookPostPrivacyManager *_postPrivacyManager;
-    SLComposeSheetConfigurationItem *_privacyConfigurationItem;
-    ACAccount *_privilegedAccount;
-    SLVideoQualityOption *_selectedVideoQualityOption;
-    SLFacebookSession *_session;
-    SLComposeSheetConfigurationItem *_videoOptionsConfigurationItem;
-    SLFacebookVideoOptionsViewController *_videoOptionsViewController;
+    }  _actionFlags;
+    SLFacebookAlbumChooserViewController * _albumChooserViewController;
+    SLComposeSheetConfigurationItem * _albumConfigurationItem;
+    SLFacebookAlbumManager * _albumManager;
+    ALAssetsLibrary * _assetsLibrary;
+    UIViewController<SLFacebookAudienceViewController> * _audienceViewController;
+    id /* block */  _completionHandler;
+    BOOL  _didFetchPrivilegedAccount;
+    BOOL  _hasAccessToAccount;
+    BOOL  _hasCheckedAccess;
+    BOOL  _hasShowedLocationDeniedAlert;
+    CLInUseAssertion * _locationInUseAssertion;
+    SLComposeSheetConfigurationItem * _placeConfigurationItem;
+    SLFacebookPlaceManager * _placeManager;
+    SLSheetPlaceViewController * _placeViewController;
+    SLFacebookPost * _post;
+    SLFacebookPostPrivacyManager * _postPrivacyManager;
+    SLComposeSheetConfigurationItem * _privacyConfigurationItem;
+    ACAccount * _privilegedAccount;
+    SLVideoQualityOption * _selectedVideoQualityOption;
+    SLFacebookSession * _session;
+    SLComposeSheetConfigurationItem * _videoOptionsConfigurationItem;
+    SLFacebookVideoOptionsViewController * _videoOptionsViewController;
 }
 
 @property (retain) ACAccountStore *accountStore;

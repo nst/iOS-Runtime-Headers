@@ -3,7 +3,7 @@
  */
 
 @interface CECRouterInterface : CECInterface {
-    CECRouter *_router;
+    CECRouter * _router;
 }
 
 - (void)dealloc;

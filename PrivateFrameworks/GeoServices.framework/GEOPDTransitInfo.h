@@ -3,11 +3,11 @@
  */
 
 @interface GEOPDTransitInfo : PBCodable <NSCopying> {
-    NSMutableArray *_labels;
-    NSMutableArray *_lines;
-    NSString *_searchDisplayName;
-    NSMutableArray *_systems;
-    NSMutableArray *_transitConnections;
+    NSMutableArray * _labels;
+    NSMutableArray * _lines;
+    NSString * _searchDisplayName;
+    NSMutableArray * _systems;
+    NSMutableArray * _transitConnections;
 }
 
 @property (nonatomic, readonly) BOOL hasSearchDisplayName;
@@ -17,6 +17,10 @@
 @property (nonatomic, retain) NSMutableArray *systems;
 @property (nonatomic, retain) NSMutableArray *transitConnections;
 
++ (Class)labelType;
++ (Class)lineType;
++ (Class)systemType;
++ (Class)transitConnectionType;
 + (id)transitInfoForPlaceData:(id)arg1;
 
 - (void)addLabel:(id)arg1;

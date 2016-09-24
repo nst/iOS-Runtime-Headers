@@ -3,15 +3,15 @@
  */
 
 @interface _UINonEditableTextSelectionForceGesture : _UITextSelectionForceGesture <_UIKeyboardTextSelectionGestureControllerDelegate> {
-    _UIKeyboardTextSelectionGestureController *_gestureController;
-    _UIKeyboardTextSelectionController *_textSelectionController;
-    <_UINonEditableTextSelectionForceGestureDelegate> *forceGestureDelegate;
+    _UIKeyboardTextSelectionGestureController * _gestureController;
+    _UIKeyboardTextSelectionController * _textSelectionController;
+    <_UINonEditableTextSelectionForceGestureDelegate> * forceGestureDelegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <_UINonEditableTextSelectionForceGestureDelegate> *forceGestureDelegate;
-@property (nonatomic) _UIKeyboardTextSelectionGestureController *gestureController;
+@property (nonatomic, retain) _UIKeyboardTextSelectionGestureController *gestureController;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIKeyboardTaskQueue *taskQueue;

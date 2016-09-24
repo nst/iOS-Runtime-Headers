@@ -3,8 +3,8 @@
  */
 
 @interface PDInvertCoordinateOptions : PDTransitionOptions {
-    BOOL mIsInvX;
-    BOOL mIsInvY;
+    BOOL  mIsInvX;
+    BOOL  mIsInvY;
 }
 
 - (BOOL)isInvX;

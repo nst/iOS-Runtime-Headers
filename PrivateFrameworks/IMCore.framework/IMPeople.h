@@ -3,9 +3,9 @@
  */
 
 @interface IMPeople : NSObject {
-    int _coalesceCount;
-    BOOL _hidePeople;
-    NSMutableArray *_people;
+    int  _coalesceCount;
+    BOOL  _hidePeople;
+    NSMutableArray * _people;
 }
 
 @property (nonatomic, readonly) BOOL coalescingChanges;
@@ -14,6 +14,7 @@
 @property (setter=setShouldHidePeople:, nonatomic) BOOL hidePeople;
 @property (nonatomic, readonly) NSArray *people;
 
+- (void).cxx_destruct;
 - (void)_addedPeople:(id)arg1;
 - (BOOL)addIMHandle:(id)arg1;
 - (void)addNotificationObserver:(id)arg1 selector:(SEL)arg2;

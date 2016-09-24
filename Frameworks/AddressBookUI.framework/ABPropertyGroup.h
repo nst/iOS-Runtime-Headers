@@ -3,27 +3,27 @@
  */
 
 @interface ABPropertyGroup : ABAbstractPropertyGroup {
-    ABActionsController *_actionsController;
-    BOOL _allowsVibrations;
-    CNCapabilitiesManager *_capabilitiesManager;
-    void *_context;
-    void *_defaultPolicy;
-    NSString *_insertionLabel;
-    NSMutableDictionary *_insertionRecordInfoDictionary;
-    id _insertionValue;
-    NSString *_labelForItemBeingDeleted;
-    int _lastIndexWithAddedItem;
-    NSMutableDictionary *_lineInfosByIndex;
-    NSString *_preinsertedLabel;
-    NSMutableDictionary *_preinsertedRecordInfoDictionary;
-    id _preinsertedValue;
-    int _property;
-    NSMutableArray *_propertyLabels;
-    NSMutableArray *_recordInfoDictionaries;
-    NSMutableDictionary *_recordInfoDictionaryForItemBeingDeleted;
-    NSMutableDictionary *_valueForItemBeingDeleted;
-    NSMutableDictionary *_valuesByPerson;
-    id _vibrationManager;
+    ABActionsController * _actionsController;
+    BOOL  _allowsVibrations;
+    CNCapabilitiesManager * _capabilitiesManager;
+    void * _context;
+    void * _defaultPolicy;
+    NSString * _insertionLabel;
+    NSMutableDictionary * _insertionRecordInfoDictionary;
+    id  _insertionValue;
+    NSString * _labelForItemBeingDeleted;
+    int  _lastIndexWithAddedItem;
+    NSMutableDictionary * _lineInfosByIndex;
+    NSString * _preinsertedLabel;
+    NSMutableDictionary * _preinsertedRecordInfoDictionary;
+    id  _preinsertedValue;
+    int  _property;
+    NSMutableArray * _propertyLabels;
+    NSMutableArray * _recordInfoDictionaries;
+    NSMutableDictionary * _recordInfoDictionaryForItemBeingDeleted;
+    NSMutableDictionary * _valueForItemBeingDeleted;
+    NSMutableDictionary * _valuesByPerson;
+    id  _vibrationManager;
 }
 
 - (void)_addValuesToCache;

@@ -3,29 +3,30 @@
  */
 
 @interface CalendarEventLoader : NSObject {
-    int _cancelSeed;
-    unsigned int _componentForExpandingPadding;
-    unsigned int _componentForExpandingRequests;
-    double _currentlyLoadingEnd;
-    double _currentlyLoadingStart;
-    unsigned int _daysOfPadding;
-    <CalendarEventLoaderDelegate> *_delegate;
-    double _lastRequestedEnd;
-    double _lastRequestedStart;
-    NSObject<OS_dispatch_group> *_loadGroup;
-    NSObject<OS_dispatch_queue> *_loadQueue;
-    double _loadedEnd;
-    NSArray *_loadedOccurrences;
-    BOOL _loadedOccurrencesAreStale;
-    double _loadedStart;
-    unsigned int _maxDaysToCache;
-    NSMutableSet *_occurrencesAwaitingDeletion;
-    NSMutableSet *_occurrencesAwaitingRefresh;
-    NSObject<OS_dispatch_queue> *_occurrencesLock;
-    double _preferredReloadEnd;
-    double _preferredReloadStart;
-    NSSet *_selectedCalendars;
-    EKEventStore *_store;
+    int  _cancelSeed;
+    unsigned int  _componentForExpandingPadding;
+    unsigned int  _componentForExpandingRequests;
+    double  _currentlyLoadingEnd;
+    double  _currentlyLoadingStart;
+    unsigned int  _daysOfPadding;
+    <CalendarEventLoaderDelegate> * _delegate;
+    double  _lastRequestedEnd;
+    double  _lastRequestedStart;
+    NSObject<OS_dispatch_group> * _loadGroup;
+    NSObject<OS_dispatch_queue> * _loadQueue;
+    double  _loadedEnd;
+    NSArray * _loadedOccurrences;
+    BOOL  _loadedOccurrencesAreStale;
+    NSArray * _loadedProposedTimeOccurrences;
+    double  _loadedStart;
+    unsigned int  _maxDaysToCache;
+    NSMutableSet * _occurrencesAwaitingDeletion;
+    NSMutableSet * _occurrencesAwaitingRefresh;
+    NSObject<OS_dispatch_queue> * _occurrencesLock;
+    double  _preferredReloadEnd;
+    double  _preferredReloadStart;
+    NSSet * _selectedCalendars;
+    EKEventStore * _store;
 }
 
 @property (nonatomic) <CalendarEventLoaderDelegate> *delegate;

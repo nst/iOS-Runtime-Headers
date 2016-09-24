@@ -3,9 +3,9 @@
  */
 
 @interface SGContactMatchArrayOption : NSObject <NSCopying, NSSecureCoding> {
-    NSArray *_matches;
-    SGRecordId *_recordId;
-    unsigned int _type;
+    NSArray * _matches;
+    SGRecordId * _recordId;
+    unsigned int  _type;
 }
 
 @property (nonatomic, readonly) NSArray *matches;

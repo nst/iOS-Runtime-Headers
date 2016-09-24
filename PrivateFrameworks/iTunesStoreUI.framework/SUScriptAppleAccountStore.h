@@ -3,8 +3,8 @@
  */
 
 @interface SUScriptAppleAccountStore : SUScriptObject {
-    ACAccountStore *_accountStore;
-    NSString *_effectiveBundleID;
+    ACAccountStore * _accountStore;
+    NSString * _effectiveBundleID;
 }
 
 @property (readonly) NSString *accessPurposeRead;

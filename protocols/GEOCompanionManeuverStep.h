@@ -11,7 +11,7 @@
 - (void)clearSignposts;
 - (BOOL)hasJunctionType;
 - (BOOL)hasManeuverType;
-- (struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)junctionElements;
+- (struct GEOJunctionElement { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)junctionElements;
 - (unsigned int)junctionElementsCount;
 - (int)junctionType;
 - (GEONameInfoList *)maneuverNameAtIndex:(unsigned int)arg1;

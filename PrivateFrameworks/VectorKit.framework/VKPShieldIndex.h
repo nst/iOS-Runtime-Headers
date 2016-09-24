@@ -3,9 +3,9 @@
  */
 
 @interface VKPShieldIndex : PBCodable <NSCopying> {
-    NSMutableArray *_entries;
-    NSMutableArray *_textEntries;
-    NSMutableArray *_variantEntries;
+    NSMutableArray * _entries;
+    NSMutableArray * _textEntries;
+    NSMutableArray * _variantEntries;
 }
 
 @property (nonatomic, retain) NSMutableArray *entries;
@@ -15,7 +15,7 @@
 - (void)addEntries:(id)arg1;
 - (void)addTextEntries:(id)arg1;
 - (void)addVariantEntries:(id)arg1;
-- (id)artworkIdentifierForShieldType:(long long)arg1 textSpecificIdentifiers:(id*)arg2 variant:(unsigned int)arg3;
+- (id)artworkIdentifierForShieldType:(int)arg1 textSpecificIdentifiers:(id*)arg2 variant:(unsigned int)arg3;
 - (void)clearEntries;
 - (void)clearTextEntries;
 - (void)clearVariantEntries;

@@ -18,6 +18,7 @@
 - (id)init;
 - (BOOL)isEqualForContact:(id)arg1 other:(id)arg2;
 - (BOOL)isValidValue:(id)arg1 error:(id*)arg2;
+- (id)nilValue;
 - (void)setCNValue:(id)arg1 onContact:(id)arg2;
 - (Class)valueClass;
 

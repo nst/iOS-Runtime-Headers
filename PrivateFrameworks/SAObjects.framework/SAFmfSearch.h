@@ -2,23 +2,17 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAFmfSearch : SABaseClientBoundCommand {
-    NSArray *_emailAddresses;
-    NSURL *_targetAppId;
-}
+@interface SAFmfSearch : SADomainCommand
 
 @property (nonatomic, retain) SALocation *currentLocation;
-@property (nonatomic, copy) NSArray *emailAddresses;
 @property (nonatomic, copy) NSArray *friends;
 @property (nonatomic, copy) NSString *proximity;
 @property (nonatomic, retain) SALocation *requestedLocation;
-@property (nonatomic, copy) NSURL *targetAppId;
 
 + (id)search;
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)currentLocation;
-- (id)emailAddresses;
 - (id)encodedClassName;
 - (id)friends;
 - (id)groupIdentifier;
@@ -26,11 +20,8 @@
 - (id)requestedLocation;
 - (BOOL)requiresResponse;
 - (void)setCurrentLocation:(id)arg1;
-- (void)setEmailAddresses:(id)arg1;
 - (void)setFriends:(id)arg1;
 - (void)setProximity:(id)arg1;
 - (void)setRequestedLocation:(id)arg1;
-- (void)setTargetAppId:(id)arg1;
-- (id)targetAppId;
 
 @end

@@ -3,35 +3,35 @@
  */
 
 @interface UITableViewCellDeleteConfirmationView : UIView {
-    _UITableViewCellActionButton *_accessoryView;
-    NSArray *_actionButtons;
+    _UITableViewCellActionButton * _accessoryView;
+    NSArray * _actionButtons;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _contentSize;
-    float _cornerRadius;
-    _UITableViewCellActionButton *_deleteView;
-    int _sectionLocation;
-    float _visibleHeightRatio;
-    float _visibleWidth;
+        double width; 
+        double height; 
+    }  _contentSize;
+    double  _cornerRadius;
+    _UITableViewCellActionButton * _deleteView;
+    int  _sectionLocation;
+    double  _visibleHeightRatio;
+    double  _visibleWidth;
 }
 
 @property (nonatomic, readonly) _UITableViewCellActionButton *accessoryView;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } contentSize;
-@property (nonatomic) float cornerRadius;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } contentSize;
+@property (nonatomic) double cornerRadius;
 @property (nonatomic, readonly) _UITableViewCellActionButton *deleteView;
 @property (nonatomic) int sectionLocation;
-@property (nonatomic) float visibleHeightRatio;
-@property (nonatomic) float visibleWidth;
+@property (nonatomic) double visibleHeightRatio;
+@property (nonatomic) double visibleWidth;
 
 - (void).cxx_destruct;
 - (id)accessoryView;
-- (struct CGSize { float x1; float x2; })contentSize;
+- (struct CGSize { double x1; double x2; })contentSize;
 - (float)cornerRadius;
 - (void)dealloc;
 - (id)deleteView;
 - (void)didMoveToWindow;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 actionButtons:(id)arg2 contentSize:(struct CGSize { float x1; float x2; })arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 actionButtons:(id)arg2 contentSize:(struct CGSize { double x1; double x2; })arg3;
 - (int)sectionLocation;
 - (void)setCornerRadius:(float)arg1;
 - (void)setSectionLocation:(int)arg1;

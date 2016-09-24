@@ -3,8 +3,9 @@
  */
 
 @interface UIBarItem : NSObject <NSCoding, UIAppearance> {
-    BOOL _hasCustomizableInstanceAppearanceModifications;
-    BOOL _shouldArchiveUIAppearanceTags;
+    BOOL  _hasCustomizableInstanceAppearanceModifications;
+    BOOL  _shouldArchiveUIAppearanceTags;
+    int  _tag;
 }
 
 @property (setter=_setHasCustomizableInstanceAppearanceModifications:, nonatomic) BOOL _hasCustomizableInstanceAppearanceModifications;
@@ -16,9 +17,9 @@
 @property (nonatomic, readonly) BOOL hasTitle;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIImage *image;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imageInsets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } imageInsets;
 @property (nonatomic, retain) UIImage *landscapeImagePhone;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } landscapeImagePhoneInsets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } landscapeImagePhoneInsets;
 @property (nonatomic, readonly, copy) NSString *resolvedTitle;
 @property (nonatomic, readonly) BOOL selected;
 @property (readonly) Class superclass;
@@ -47,7 +48,9 @@
 - (id)initWithCoder:(id)arg1;
 - (id)resolvedTitle;
 - (BOOL)selected;
+- (void)setTag:(int)arg1;
 - (void)setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
+- (int)tag;
 - (id)titleTextAttributesForState:(unsigned int)arg1;
 
 @end

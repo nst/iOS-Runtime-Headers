@@ -3,16 +3,16 @@
  */
 
 @interface MCCalDAVAccountPayload : MCPayload {
-    NSString *_accountDescription;
-    NSString *_accountPersistentUUID;
-    NSString *_hostname;
-    NSString *_password;
-    int _port;
-    NSNumber *_portNum;
-    NSString *_principalURL;
-    BOOL _useSSL;
-    NSNumber *_useSSLNum;
-    NSString *_username;
+    NSString * _accountDescription;
+    NSString * _accountPersistentUUID;
+    NSString * _hostname;
+    NSString * _password;
+    int  _port;
+    NSNumber * _portNum;
+    NSString * _principalURL;
+    BOOL  _useSSL;
+    NSNumber * _useSSLNum;
+    NSString * _username;
 }
 
 @property (nonatomic, readonly, retain) NSString *accountDescription;

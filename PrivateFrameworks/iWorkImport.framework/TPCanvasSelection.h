@@ -3,9 +3,9 @@
  */
 
 @interface TPCanvasSelection : TSWPSelection <TSDCanvasSelection> {
-    NSSet *mAdditionalInfos;
-    NSSet *mExcludedInfos;
-    NSSet *mInfos;
+    NSSet * mAdditionalInfos;
+    NSSet * mExcludedInfos;
+    NSSet * mInfos;
 }
 
 @property (nonatomic, readonly) int canvasSelectionKind;
@@ -29,6 +29,7 @@
 + (id)emptySelection;
 + (id)selectionWithInfos:(id)arg1;
 
+- (id)UUIDDescription;
 - (int)canvasSelectionKind;
 - (BOOL)containsKindOfClass:(Class)arg1;
 - (BOOL)containsUnlockedKindOfClass:(Class)arg1;
@@ -44,6 +45,7 @@
 - (id)copyWithVisualRanges:(const struct TSWPRangeVector { struct _NSRange {} *x1; struct _NSRange {} *x2; struct __compressed_pair<_NSRange *, std::__1::allocator<_NSRange> > { struct _NSRange {} *x_3_1_1; } x3; }*)arg1 headChar:(unsigned int)arg2 tailChar:(unsigned int)arg3 rightToLeft:(BOOL)arg4 sameLine:(BOOL)arg5;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (unsigned int)infoCount;
 - (id)infos;
 - (id)infosOfClass:(Class)arg1;
@@ -53,6 +55,7 @@
 - (id)initWithType:(int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 styleInsertionBehavior:(int)arg3 caretAffinity:(int)arg4 smartFieldRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5 leadingEdge:(BOOL)arg6 leadingCharIndex:(unsigned int)arg7 infos:(id)arg8 excludedInfos:(id)arg9 additionalInfos:(id)arg10;
 - (BOOL)isEmpty;
 - (BOOL)isEqual:(id)arg1;
+- (id)p_UUIDDescriptionsForInfosSet:(id)arg1;
 - (void)p_commonCopyTo:(id)arg1;
 - (id)rawAdditionalInfos;
 - (id)rawExcludedInfos;

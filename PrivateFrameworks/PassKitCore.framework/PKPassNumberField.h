@@ -3,8 +3,8 @@
  */
 
 @interface PKPassNumberField : PKPassField {
-    NSString *_currencyCode;
-    int _numberStyle;
+    NSString * _currencyCode;
+    int  _numberStyle;
 }
 
 @property (nonatomic, copy) NSString *currencyCode;
@@ -12,8 +12,8 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)currencyCode;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (int)numberStyle;

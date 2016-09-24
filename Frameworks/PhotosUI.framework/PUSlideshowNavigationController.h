@@ -5,6 +5,6 @@
 @interface PUSlideshowNavigationController : UINavigationController
 
 - (id)initWithRootViewController:(id)arg1;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 
 @end

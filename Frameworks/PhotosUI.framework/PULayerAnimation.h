@@ -2,19 +2,23 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PULayerAnimation : PUAnimationGroup {
-    CAAnimation *__animation;
-    double _beginTime;
-    BOOL _isAnimationRunning;
-    NSString *_key;
-    CALayer *_layer;
-    float _speed;
-    double _timeOffset;
+@interface PULayerAnimation : PUAnimationGroup <CAAnimationDelegate> {
+    CAAnimation * __animation;
+    double  _beginTime;
+    BOOL  _isAnimationRunning;
+    NSString * _key;
+    CALayer * _layer;
+    double  _speed;
+    double  _timeOffset;
 }
 
 @property (setter=_setAnimation:, nonatomic, retain) CAAnimation *_animation;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly, copy) NSString *key;
 @property (nonatomic, readonly) CALayer *layer;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_animation;

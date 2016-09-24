@@ -3,9 +3,9 @@
  */
 
 @interface SKSoundBuffer : NSObject {
-    unsigned int _bufferId;
-    double _duration;
-    NSString *_path;
+    unsigned int  _bufferId;
+    double  _duration;
+    NSString * _path;
 }
 
 @property (nonatomic, readonly) unsigned int bufferId;

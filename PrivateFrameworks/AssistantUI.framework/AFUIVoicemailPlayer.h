@@ -3,7 +3,8 @@
  */
 
 @interface AFUIVoicemailPlayer : AFUIAudioPlayer {
-    VMVoicemail *_voicemailObject;
+    VMVoicemailManager * _voicemailManager;
+    VMVoicemail * _voicemailObject;
 }
 
 @property (getter=_voicemailObject, setter=_setVoicemailObject:, nonatomic, retain) VMVoicemail *voicemailObject;
@@ -15,6 +16,7 @@
 - (void)_setVoicemailObject:(id)arg1;
 - (void)_updateVoicemailPlayedState:(id)arg1 finished:(BOOL)arg2;
 - (int)_voicemailID;
+- (id)_voicemailManager;
 - (id)_voicemailObject;
 - (void)audioPlayerDidFinishPlaying:(id)arg1 successfully:(BOOL)arg2;
 - (void)setPlaybackCommand:(id)arg1;

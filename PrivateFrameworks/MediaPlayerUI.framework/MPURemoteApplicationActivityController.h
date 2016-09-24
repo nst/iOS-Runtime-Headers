@@ -3,10 +3,10 @@
  */
 
 @interface MPURemoteApplicationActivityController : NSObject {
-    MPURemoteApplicationActivity *_currentActivity;
-    NSLock *_currentActivityFetchLock;
-    <MPURemoteApplicationActivityDelegate> *_delegate;
-    BOOL _isObservingActivityStatusChanges;
+    MPURemoteApplicationActivity * _currentActivity;
+    NSLock * _currentActivityFetchLock;
+    <MPURemoteApplicationActivityDelegate> * _delegate;
+    BOOL  _isObservingActivityStatusChanges;
 }
 
 @property (nonatomic, readonly) MPURemoteApplicationActivity *currentActivity;

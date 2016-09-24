@@ -3,7 +3,7 @@
  */
 
 @interface UIStatusBarLocationItemView : UIStatusBarItemView {
-    int _iconType;
+    int  _iconType;
 }
 
 - (id)contentsImage;

@@ -3,8 +3,8 @@
  */
 
 @interface MPStoreItemLibraryImportLookupElement : MPStoreItemLibraryImportElement {
-    NSDictionary *_lookupDictionary;
-    SSLookupItem *_storeItem;
+    NSDictionary * _lookupDictionary;
+    SSLookupItem * _storeItem;
 }
 
 @property (nonatomic, readonly) NSDictionary *lookupDictionary;

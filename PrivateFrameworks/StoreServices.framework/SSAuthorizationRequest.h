@@ -3,35 +3,57 @@
  */
 
 @interface SSAuthorizationRequest : SSRequest <SSXPCCoding> {
-    NSNumber *_accountIdentifier;
-    NSString *_keybagPath;
-    NSString *_reason;
-    id _token;
+    NSNumber * _accountIdentifier;
+    NSString * _clientIdentifierHeader;
+    NSNumber * _familyAccountIdentifier;
+    NSString * _keybagPath;
+    NSString * _reason;
+    BOOL  _shouldAddKeysToKeyBag;
+    BOOL  _shouldPromptForCredentials;
+    id  _token;
+    NSString * _userAgent;
 }
 
-@property (readonly) NSNumber *accountIdentifier;
+@property (copy) NSNumber *accountIdentifier;
 @property (readonly) id authorizationToken;
+@property (copy) NSString *clientIdentifierHeader;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SSAuthorizationRequestDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (copy) NSNumber *familyAccountIdentifier;
 @property (readonly) unsigned int hash;
 @property (copy) NSString *keybagPath;
 @property (copy) NSString *reason;
+@property (nonatomic) BOOL shouldAddKeysToKeyBag;
+@property (nonatomic) BOOL shouldPromptForCredentials;
 @property (readonly) Class superclass;
+@property (copy) NSString *userAgent;
 
+- (void).cxx_destruct;
+- (id)_init;
 - (id)accountIdentifier;
 - (id)authorizationToken;
+- (id)clientIdentifierHeader;
 - (id)copyXPCEncoding;
-- (void)dealloc;
+- (id)familyAccountIdentifier;
 - (id)init;
 - (id)initWithAuthorizationToken:(id)arg1 accountIdentifier:(id)arg2;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)keybagPath;
 - (id)reason;
+- (void)setAccountIdentifier:(id)arg1;
+- (void)setClientIdentifierHeader:(id)arg1;
+- (void)setFamilyAccountIdentifier:(id)arg1;
 - (void)setKeybagPath:(id)arg1;
 - (void)setReason:(id)arg1;
+- (void)setShouldAddKeysToKeyBag:(BOOL)arg1;
+- (void)setShouldPromptForCredentials:(BOOL)arg1;
+- (void)setUserAgent:(id)arg1;
+- (BOOL)shouldAddKeysToKeyBag;
+- (BOOL)shouldPromptForCredentials;
 - (BOOL)start;
 - (void)startWithAuthorizationResponseBlock:(id /* block */)arg1;
 - (void)startWithCompletionBlock:(id /* block */)arg1;
+- (id)userAgent;
 
 @end

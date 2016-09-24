@@ -3,7 +3,7 @@
  */
 
 @interface PUCloudPhotoLogMarkController : NSObject <UIAlertViewDelegate> {
-    UIAlertView *_alertView;
+    UIAlertView * _alertView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

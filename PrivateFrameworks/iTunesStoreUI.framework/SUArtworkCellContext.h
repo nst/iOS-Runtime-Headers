@@ -3,10 +3,10 @@
  */
 
 @interface SUArtworkCellContext : SUCellConfigurationContext {
-    SUImageCache *_imageCache;
-    ISURLOperationPool *_imagePool;
-    SUImageDataProvider *_imageProvider;
-    UIImage *_placeholderImage;
+    SUImageCache * _imageCache;
+    ISURLOperationPool * _imagePool;
+    SUImageDataProvider * _imageProvider;
+    UIImage * _placeholderImage;
 }
 
 @property (nonatomic, retain) SUImageCache *imageCache;

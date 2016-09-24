@@ -3,31 +3,31 @@
  */
 
 @interface SKUIProductPageHeaderView : UIView <SKUIContentRatingArtworkLoaderObserver, SKUIItemOfferButtonDelegate> {
-    UILabel *_ageBandLabel;
-    UIButton *_artistButton;
-    SKUIClientContext *_clientContext;
-    SKUIColorScheme *_colorScheme;
-    SKUIItemContentRating *_contentRating;
-    SKUIContentRatingArtworkResourceLoader *_contentRatingArtworkLoader;
-    SKUIBadgeLabel *_editorialBadgeLabel;
-    float _headerImageHeight;
-    UIImageView *_headerImageView;
-    UIImageView *_iconImageView;
-    UILabel *_inAppPurchasesLabel;
-    SKUIItemOffer *_itemOffer;
-    SKUIItemOfferButton *_itemOfferButton;
-    UILabel *_itemOfferExplanationLabel;
-    UILabel *_itemOfferExplanationTitleLabel;
-    SKUIItemState *_itemState;
-    BOOL _needsLayoutAfterButtonAnimation;
-    int _numberOfUserRatings;
-    BOOL _restricted;
-    SKUIItemContentRating *_secondaryContentRating;
-    UIButton *_shareButton;
-    SKUIProductPageHeaderLabel *_titleLabel;
-    float _userRating;
-    UILabel *_userRatingLabel;
-    UIImageView *_userRatingStarsView;
+    UILabel * _ageBandLabel;
+    UIButton * _artistButton;
+    SKUIClientContext * _clientContext;
+    SKUIColorScheme * _colorScheme;
+    SKUIItemContentRating * _contentRating;
+    SKUIContentRatingArtworkResourceLoader * _contentRatingArtworkLoader;
+    SKUIBadgeLabel * _editorialBadgeLabel;
+    double  _headerImageHeight;
+    UIImageView * _headerImageView;
+    UIImageView * _iconImageView;
+    UILabel * _inAppPurchasesLabel;
+    SKUIItemOffer * _itemOffer;
+    SKUIItemOfferButton * _itemOfferButton;
+    UILabel * _itemOfferExplanationLabel;
+    UILabel * _itemOfferExplanationTitleLabel;
+    SKUIItemState * _itemState;
+    BOOL  _needsLayoutAfterButtonAnimation;
+    int  _numberOfUserRatings;
+    BOOL  _restricted;
+    SKUIItemContentRating * _secondaryContentRating;
+    UIButton * _shareButton;
+    SKUIProductPageHeaderLabel * _titleLabel;
+    double  _userRating;
+    UILabel * _userRatingLabel;
+    UIImageView * _userRatingStarsView;
 }
 
 @property (nonatomic, copy) NSString *ageBandString;
@@ -41,7 +41,7 @@
 @property (nonatomic, copy) NSString *editorialBadge;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIImage *headerImage;
-@property (nonatomic) float headerImageHeight;
+@property (nonatomic) double headerImageHeight;
 @property (nonatomic, retain) UIImage *iconImage;
 @property (nonatomic, copy) NSString *inAppPurchasesString;
 @property (nonatomic, retain) SKUIItemOffer *itemOffer;
@@ -55,7 +55,7 @@
 @property (nonatomic, readonly) UIControl *shareButton;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic) float userRating;
+@property (nonatomic) double userRating;
 
 - (void).cxx_destruct;
 - (void)_cancelConfirmationAction:(id)arg1;

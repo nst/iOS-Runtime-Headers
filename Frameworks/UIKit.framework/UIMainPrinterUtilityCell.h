@@ -3,11 +3,11 @@
  */
 
 @interface UIMainPrinterUtilityCell : UITableViewCell {
-    BOOL _showSupplyDataUnderPrinterName;
-    NSArray *_supplies;
-    NSArray *_supplyLevelViews;
-    float detailTextLabelY;
-    float textLabelY;
+    BOOL  _showSupplyDataUnderPrinterName;
+    NSArray * _supplies;
+    NSArray * _supplyLevelViews;
+    double  detailTextLabelY;
+    double  textLabelY;
 }
 
 @property (nonatomic) BOOL showSupplyDataUnderPrinterName;

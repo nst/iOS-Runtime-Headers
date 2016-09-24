@@ -3,30 +3,31 @@
  */
 
 @interface PKDaemonClient : NSObject {
-    NSObject<OS_xpc_object> *_pkd;
-    long long _protocolVersion;
-    NSObject<OS_dispatch_queue> *_replyQueue;
+    NSObject<OS_xpc_object> * _pkd;
+    int  _protocolVersion;
+    NSObject<OS_dispatch_queue> * _replyQueue;
 }
 
 @property (retain) NSObject<OS_xpc_object> *pkd;
-@property long long protocolVersion;
+@property int protocolVersion;
 @property (retain) NSObject<OS_dispatch_queue> *replyQueue;
 
-+ (id)convertToXPC:(id)arg1 version:(unsigned long long)arg2;
++ (id)convertToXPC:(id)arg1 version:(unsigned int)arg2;
 
 - (void).cxx_destruct;
-- (void)accessPlugIns:(id)arg1 flags:(unsigned long long)arg2 reply:(id /* block */)arg3;
+- (void)accessPlugIns:(id)arg1 flags:(unsigned int)arg2 reply:(id /* block */)arg3;
 - (void)addPlugIns:(id)arg1 reply:(id /* block */)arg2;
-- (void)bulkPlugins:(unsigned long long)arg1 reply:(id /* block */)arg2;
+- (void)bulkPlugins:(unsigned int)arg1 reply:(id /* block */)arg2;
+- (void)bulkSetPluginAnnotations:(id)arg1 reply:(id /* block */)arg2;
 - (id)convertFromXPC:(id)arg1;
 - (void)copyReceipt:(id /* block */)arg1;
 - (id)errorInReply:(id)arg1;
-- (void)holdPlugins:(id)arg1 flags:(unsigned long long)arg2 reply:(id /* block */)arg3;
+- (void)holdPlugins:(id)arg1 flags:(unsigned int)arg2 reply:(id /* block */)arg3;
 - (id)initWithServiceName:(const char *)arg1;
-- (void)matchPlugIns:(id)arg1 flags:(unsigned long long)arg2 reply:(id /* block */)arg3;
+- (void)matchPlugIns:(id)arg1 flags:(unsigned int)arg2 reply:(id /* block */)arg3;
 - (id)pkd;
-- (long long)protocolVersion;
-- (void)readyPlugIns:(id)arg1 flags:(unsigned long long)arg2 reply:(id /* block */)arg3;
+- (int)protocolVersion;
+- (void)readyPlugIns:(id)arg1 flags:(unsigned int)arg2 reply:(id /* block */)arg3;
 - (void)releaseHold:(id)arg1 reply:(id /* block */)arg2;
 - (void)removePlugIns:(id)arg1 reply:(id /* block */)arg2;
 - (id)replyQueue;
@@ -36,7 +37,7 @@
 - (void)set:(id)arg1 uuids:(id)arg2;
 - (void)setPkd:(id)arg1;
 - (void)setPluginAnnotations:(id)arg1 annotations:(id)arg2 reply:(id /* block */)arg3;
-- (void)setProtocolVersion:(long long)arg1;
+- (void)setProtocolVersion:(int)arg1;
 - (void)setReplyQueue:(id)arg1;
 
 @end

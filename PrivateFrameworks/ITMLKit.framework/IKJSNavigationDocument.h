@@ -3,7 +3,7 @@
  */
 
 @interface IKJSNavigationDocument : IKJSObject <IKJSNavigationDocument> {
-    <IKAppNavigationController> *_navigationControllerDelegate;
+    <IKAppNavigationController> * _navigationControllerDelegate;
 }
 
 @property (nonatomic, readonly, retain) NSArray *documents;

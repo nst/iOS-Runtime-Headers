@@ -3,7 +3,7 @@
  */
 
 @interface AVPlayerMediaSelectionCriteria : NSObject {
-    AVPlayerMediaSelectionCriteriaInternal *_criteria;
+    AVPlayerMediaSelectionCriteriaInternal * _criteria;
 }
 
 @property (nonatomic, readonly) NSArray *preferredLanguages;

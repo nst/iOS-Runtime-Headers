@@ -3,19 +3,19 @@
  */
 
 @interface FMFLocationSharingViewController : PSListController <FMFSessionDelegateInternal> {
-    void *_addressBook;
-    NSArray *_allFollowersHandles;
-    NSMutableDictionary *_dsidToFamilyPhoto;
-    NSArray *_familyMembers;
-    NSArray *_familySpecifiers;
-    NSArray *_followersHandles;
-    NSArray *_followersSpecifiers;
-    UIAlertController *_genericErrorAlert;
-    NSArray *_hashedFamilyDsids;
-    BOOL _isMyLocationEnabled;
-    FMFHandle *_lastSelectedHandle;
-    BOOL _useFamilyCirclePhotos;
-    BOOL _useFamilyCirclePhotosLoaded;
+    void * _addressBook;
+    NSArray * _allFollowersHandles;
+    NSMutableDictionary * _dsidToFamilyPhoto;
+    NSArray * _familyMembers;
+    NSArray * _familySpecifiers;
+    NSArray * _followersHandles;
+    NSArray * _followersSpecifiers;
+    UIAlertController * _genericErrorAlert;
+    NSArray * _hashedFamilyDsids;
+    BOOL  _isMyLocationEnabled;
+    FMFHandle * _lastSelectedHandle;
+    BOOL  _useFamilyCirclePhotos;
+    BOOL  _useFamilyCirclePhotosLoaded;
 }
 
 @property (nonatomic) void*addressBook;

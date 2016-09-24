@@ -3,7 +3,7 @@
  */
 
 @interface OADCharacterBulletProperties : OADBulletProperties {
-    NSString *mBullet;
+    NSString * mBullet;
 }
 
 - (id)bullet;

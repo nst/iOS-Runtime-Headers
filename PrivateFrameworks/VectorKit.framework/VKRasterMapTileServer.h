@@ -3,11 +3,11 @@
  */
 
 @interface VKRasterMapTileServer : NSObject {
-    NSMutableDictionary *_activeTileCreators;
-    NSObject<OS_dispatch_queue> *_homeQueue;
-    NSMutableDictionary *_pendingRequests;
-    unsigned int _superTileSize;
-    NSMutableSet *_tileCreators;
+    NSMutableDictionary * _activeTileCreators;
+    NSObject<OS_dispatch_queue> * _homeQueue;
+    NSMutableDictionary * _pendingRequests;
+    unsigned int  _superTileSize;
+    NSMutableSet * _tileCreators;
 }
 
 @property (nonatomic, readonly) unsigned int superTileSize;
@@ -15,6 +15,7 @@
 - (void)_renderRequest:(id)arg1 completion:(id /* block */)arg2;
 - (void)dealloc;
 - (id)detailedDescription;
+- (id)detailedDescriptionDictionaryRepresentation;
 - (id)init;
 - (id)initWithSuperTileSize:(unsigned int)arg1 homeQueue:(id)arg2;
 - (void)renderRequest:(id)arg1 completion:(id /* block */)arg2;

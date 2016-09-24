@@ -3,10 +3,10 @@
  */
 
 @interface IAPClientPort : NSObject {
-    NSObject<OS_dispatch_queue> *_clientPortEventQueue;
-    id /* block */ _sendDataHandler;
-    NSObject<OS_dispatch_queue> *_sendDataHandlerQueue;
-    NSString *_uuid;
+    NSObject<OS_dispatch_queue> * _clientPortEventQueue;
+    id /* block */  _sendDataHandler;
+    NSObject<OS_dispatch_queue> * _sendDataHandlerQueue;
+    NSString * _uuid;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientPortEventQueue;

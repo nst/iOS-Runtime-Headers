@@ -3,8 +3,8 @@
  */
 
 @interface SKActionTable : NSObject <NSCoding> {
-    NSMutableDictionary *__info;
-    NSDictionary *_actionTableDictionary;
+    NSMutableDictionary * __info;
+    NSDictionary * _actionTableDictionary;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *_info;

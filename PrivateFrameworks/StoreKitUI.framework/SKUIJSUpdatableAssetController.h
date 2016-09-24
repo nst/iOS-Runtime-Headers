@@ -3,7 +3,7 @@
  */
 
 @interface SKUIJSUpdatableAssetController : IKJSObject <SKUIJSUpdatableAssetController> {
-    SKUIClientContext *_clientContext;
+    SKUIClientContext * _clientContext;
 }
 
 - (void).cxx_destruct;

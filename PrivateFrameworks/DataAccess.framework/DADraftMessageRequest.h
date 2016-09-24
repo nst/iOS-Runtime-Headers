@@ -3,8 +3,8 @@
  */
 
 @interface DADraftMessageRequest : DAMailboxRequest {
-    DAMailMessage *_message;
-    BOOL _send;
+    DAMailMessage * _message;
+    BOOL  _send;
 }
 
 @property (nonatomic, retain) DAMailMessage *message;

@@ -3,8 +3,8 @@
  */
 
 @interface OADGenericTextField : OADTextField {
-    NSString *_guid;
-    NSString *_type;
+    NSString * _guid;
+    NSString * _type;
 }
 
 @property (nonatomic, copy) NSString *guid;

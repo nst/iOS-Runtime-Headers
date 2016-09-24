@@ -3,11 +3,11 @@
  */
 
 @interface AVPlayerItemTrack : NSObject {
-    AVPlayerItemTrackInternal *_playerItemTrack;
+    AVPlayerItemTrackInternal * _playerItemTrack;
 }
 
 @property (nonatomic, readonly) AVAssetTrack *assetTrack;
-@property (nonatomic, readonly) float currentVideoFrameRate;
+@property (nonatomic, readonly) double currentVideoFrameRate;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
 
 + (id)playerItemTrackWithFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 readyForInspection:(BOOL)arg2 trackID:(int)arg3 asset:(id)arg4 playerItem:(id)arg5;

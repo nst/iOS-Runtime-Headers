@@ -3,9 +3,9 @@
  */
 
 @interface HKHorizontalTimePeriodDataSource : HKHealthQueryChartCacheDataSource {
-    HKSampleType *_sampleType;
-    id /* block */ _userInfoCreationBlock;
-    NSArray *_valueOrder;
+    HKSampleType * _sampleType;
+    id /* block */  _userInfoCreationBlock;
+    NSArray * _valueOrder;
 }
 
 @property (nonatomic, retain) HKSampleType *sampleType;
@@ -14,7 +14,7 @@
 
 - (void).cxx_destruct;
 - (void)_handleSamples:(id)arg1 completion:(id /* block */)arg2;
-- (id)_organizeSamplesByValueAndTimePeriod:(id)arg1;
+- (id)_organizeSamplesByValueAndDateInterval:(id)arg1;
 - (id)queriesForStartDate:(id)arg1 endDate:(id)arg2 statisticsInterval:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)sampleType;
 - (void)setSampleType:(id)arg1;

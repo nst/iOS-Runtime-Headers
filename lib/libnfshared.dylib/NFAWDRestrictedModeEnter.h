@@ -3,9 +3,8 @@
  */
 
 @interface NFAWDRestrictedModeEnter : NSObject <NFAWDEventProtocol> {
-    AWDNFCJCOPRestrictedModeEvent *_metric;
-    NSData *attackLog;
-    BOOL contactlessMode;
+    BOOL  _contactlessMode;
+    AWDNFCJCOPRestrictedModeEvent * _metric;
 }
 
 @property (nonatomic, retain) NSData *attackLog;

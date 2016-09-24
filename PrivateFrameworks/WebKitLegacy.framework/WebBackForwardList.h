@@ -3,7 +3,7 @@
  */
 
 @interface WebBackForwardList : NSObject {
-    WebBackForwardListPrivate *_private;
+    WebBackForwardListPrivate * _private;
 }
 
 @property (nonatomic, readonly) WebHistoryItem *backItem;
@@ -26,7 +26,6 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (void)finalize;
 - (id)forwardItem;
 - (int)forwardListCount;
 - (id)forwardListWithLimit:(int)arg1;

@@ -3,19 +3,19 @@
  */
 
 @interface PSUISoftwareUpdateController : PSListController <DevicePINControllerDelegate, PSUISoftwareUpdateManagerDelegate, UITableViewDelegate> {
-    NSString *_devicePasscode;
-    id /* block */ _devicePasscodeCompletion;
-    BOOL _disableInstallButton;
-    BOOL _hideInsufficientStorageUI;
-    PSSpecifier *_installButtonGroup;
-    PSSpecifier *_installButtonSpecifier;
-    PSUISoftwareUpdateManager *_manager;
-    BOOL _refreshOnNextAppearance;
-    BOOL _showingTerms;
-    NSError *_suError;
-    PSSoftwareUpdateTitleCell *_titleCell;
-    PSSpecifier *_titleGroup;
-    UsageStorageController *_usageStorageController;
+    NSString * _devicePasscode;
+    id /* block */  _devicePasscodeCompletion;
+    BOOL  _disableInstallButton;
+    BOOL  _hideInsufficientStorageUI;
+    PSSpecifier * _installButtonGroup;
+    PSSpecifier * _installButtonSpecifier;
+    PSUISoftwareUpdateManager * _manager;
+    BOOL  _refreshOnNextAppearance;
+    BOOL  _showingTerms;
+    NSError * _suError;
+    PSSoftwareUpdateTitleCell * _titleCell;
+    PSSpecifier * _titleGroup;
+    UsageStorageController * _usageStorageController;
 }
 
 @property (nonatomic, retain) NSError *SUError;

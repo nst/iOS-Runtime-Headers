@@ -8,13 +8,13 @@
 @property (nonatomic) double endDate;
 @property (nonatomic) short endDayOfWeek;
 @property (nonatomic) int endSecondOfDay;
-@property (nonatomic) long long secondsFromGMT;
+@property (nonatomic) int secondsFromGMT;
 @property (nonatomic) double startDate;
 @property (nonatomic) short startDayOfWeek;
 @property (nonatomic) int startSecondOfDay;
 @property (nonatomic, retain) NSString *streamName;
 @property (nonatomic, retain) _DKObjectMO *value;
 @property (nonatomic) double valueDouble;
-@property (nonatomic) long long valueInteger;
+@property (nonatomic) int valueInteger;
 
 @end

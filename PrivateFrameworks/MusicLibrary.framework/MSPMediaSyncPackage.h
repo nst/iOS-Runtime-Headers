@@ -3,15 +3,15 @@
  */
 
 @interface MSPMediaSyncPackage : PBCodable <NSCopying> {
-    MSPMediaSyncError *_error;
+    MSPMediaSyncError * _error;
     struct { 
         unsigned int type : 1; 
         unsigned int lastPackage : 1; 
-    } _has;
-    MSPMediaSyncHeader *_header;
-    BOOL _lastPackage;
-    MSPMediaSyncOperation *_syncOperation;
-    int _type;
+    }  _has;
+    MSPMediaSyncHeader * _header;
+    BOOL  _lastPackage;
+    MSPMediaSyncOperation * _syncOperation;
+    int  _type;
 }
 
 @property (nonatomic, retain) MSPMediaSyncError *error;
@@ -26,6 +26,7 @@
 @property (nonatomic) int type;
 
 - (void).cxx_destruct;
+- (int)StringAsType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -51,6 +52,7 @@
 - (void)setType:(int)arg1;
 - (id)syncOperation;
 - (int)type;
+- (id)typeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

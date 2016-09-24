@@ -3,8 +3,8 @@
  */
 
 @interface PUPhotosSharingTransitionContext : NSObject {
-    <PHAssetCollectionDataSource> *_assetCollectionsDataSource;
-    NSIndexPath *_keyAssetIndexPath;
+    <PHAssetCollectionDataSource> * _assetCollectionsDataSource;
+    NSIndexPath * _keyAssetIndexPath;
 }
 
 @property (nonatomic, retain) <PHAssetCollectionDataSource> *assetCollectionsDataSource;

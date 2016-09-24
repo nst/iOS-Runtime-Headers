@@ -3,7 +3,7 @@
  */
 
 @interface MusicMetricsEvent : NSObject {
-    UIViewController<MusicJSNativeViewControllerFactory><MusicClientContextConsuming> *_sourceViewController;
+    UIViewController<MusicJSNativeViewControllerFactory><MusicClientContextConsuming> * _sourceViewController;
 }
 
 @property (nonatomic, retain) UIViewController<MusicJSNativeViewControllerFactory><MusicClientContextConsuming> *sourceViewController;

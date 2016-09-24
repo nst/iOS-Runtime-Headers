@@ -2,30 +2,30 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNAbstractSlide : TSPObject <TSDDrawableContainerInfo, TSKDocumentObject, TSKTransformableObject, TSSPropertySource, TSSStyleClient> {
-    NSArray *_buildChunks;
-    NSSet *_builds;
-    KNSlideBackgroundInfo *mBackground;
-    KNBodyPlaceholderInfo *mBodyPlaceholder;
-    NSOrderedSet *mChildInfos;
-    TSUPointerKeyDictionary *mDrawableToGhostInfosMap;
-    TSUMutablePointerSet *mDrawablesWithInvalidGhosts;
-    BOOL mInDocument;
-    BOOL mNeedsSlideNodeEventCountUpdate;
-    KNObjectPlaceholderInfo *mObjectPlaceholder;
-    NSMutableDictionary *mPlaceholdersForTags;
-    BOOL mShouldConsiderAllChunksActive;
-    KNSlideNode *mSlideNode;
-    KNSlideNumberPlaceholderInfo *mSlideNumberPlaceholder;
-    KNSlideStyle *mStyle;
-    KNTitlePlaceholderInfo *mTitlePlaceholder;
-    KNTransition *mTransition;
+@interface KNAbstractSlide : TSPObject <TSDCompatibilityAwareMediaContainer, TSDDrawableContainerInfo, TSDReducibleImageContainer, TSDReplaceableMediaContainer, TSKDocumentObject, TSKTransformableObject, TSSPropertySource, TSSStyleClient> {
+    NSArray * _buildChunks;
+    NSSet * _builds;
+    KNSlideBackgroundInfo * mBackground;
+    KNBodyPlaceholderInfo * mBodyPlaceholder;
+    NSOrderedSet * mChildInfos;
+    TSUPointerKeyDictionary * mDrawableToGhostInfosMap;
+    TSUMutablePointerSet * mDrawablesWithInvalidGhosts;
+    BOOL  mInDocument;
+    BOOL  mNeedsSlideNodeEventCountUpdate;
+    KNObjectPlaceholderInfo * mObjectPlaceholder;
+    NSMutableDictionary * mPlaceholdersForTags;
+    BOOL  mShouldConsiderAllChunksActive;
+    KNSlideNode * mSlideNode;
+    KNSlideNumberPlaceholderInfo * mSlideNumberPlaceholder;
+    KNSlideStyle * mStyle;
+    KNTitlePlaceholderInfo * mTitlePlaceholder;
+    KNTransition * mTransition;
 }
 
 @property (nonatomic, readonly) NSArray *activeBuildChunks;
 @property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;
 @property (getter=isAttachedToBodyText, nonatomic, readonly) BOOL attachedToBodyText;
-@property (nonatomic, retain) KNSlideBackgroundInfo *background;
+@property (nonatomic, readonly) KNSlideBackgroundInfo *background;
 @property (nonatomic, readonly) TSDFill *backgroundFill;
 @property (nonatomic, retain) KNBodyPlaceholderInfo *bodyPlaceholder;
 @property (getter=isBodyVisible, nonatomic, readonly) BOOL bodyVisible;
@@ -34,6 +34,7 @@
 @property (nonatomic, readonly) unsigned int buildCount;
 @property (nonatomic, copy) NSSet *builds;
 @property (nonatomic, readonly) NSArray *buildsGroupedByDeliveryGroup;
+@property (nonatomic, readonly) NSDictionary *datasForReplacingMediaContentsWithAssociatedHints;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) unsigned int deliveryGroupCount;
 @property (readonly, copy) NSString *description;
@@ -79,6 +80,7 @@
 - (void)addChildInfo:(id)arg1;
 - (void)addDrawable:(id)arg1 dolcContext:(id)arg2;
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
+- (BOOL)areBuildChunksInValidOrderIgnoringInactiveChunks:(id)arg1;
 - (id)background;
 - (id)backgroundFill;
 - (id)bodyPlaceholder;
@@ -97,7 +99,9 @@
 - (BOOL)canMoveDrawables:(id)arg1 toIndexes:(id)arg2;
 - (id)childEnumerator;
 - (id)childInfos;
+- (id)chunksForDrawable:(id)arg1 animationType:(int)arg2;
 - (void)clearBackPointerToParentInfoIfNeeded:(id)arg1;
+- (id)compatibilityCheckerForData:(id)arg1 associatedHint:(id)arg2;
 - (BOOL)containsProperty:(int)arg1;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
@@ -110,6 +114,7 @@
 - (unsigned int)deliveryGroupCount;
 - (unsigned int)deliveryGroupIndexForBuildChunk:(id)arg1;
 - (id)deliveryGroupIndexesForBuilds:(id)arg1;
+- (void)didInitFromSOS;
 - (double)doubleValueForProperty:(int)arg1;
 - (float)floatValueForProperty:(int)arg1;
 - (id)geometry;
@@ -144,11 +149,13 @@
 - (BOOL)isFloatingAboveText;
 - (BOOL)isInlineWithText;
 - (BOOL)isObjectVisible;
+- (BOOL)isSelectable;
 - (BOOL)isSlideNumberVisible;
 - (BOOL)isThemeContent;
 - (BOOL)isTitleVisible;
 - (Class)layoutClass;
-- (void)loadFromArchive:(const struct SlideArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[2]; struct Reference {} *x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<KN::BuildChunkArchive> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct RepeatedPtrField<TSP::Reference> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct TransitionArchive {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; struct Reference {} *x12; struct RepeatedPtrField<TSP::Reference> { void **x_13_1_1; int x_13_1_2; int x_13_1_3; int x_13_1_4; } x13; struct RepeatedPtrField<TSP::Reference> { void **x_14_1_1; int x_14_1_2; int x_14_1_3; int x_14_1_4; } x14; struct RepeatedPtrField<KN::SlideArchive_SageTagMapEntry> { void **x_15_1_1; int x_15_1_2; int x_15_1_3; int x_15_1_4; } x15; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x16; struct GeometryArchive {} *x17; unsigned int x18; unsigned int x19; struct ShapeStylePropertiesArchive {} *x20; struct GeometryArchive {} *x21; unsigned int x22; unsigned int x23; struct ShapeStylePropertiesArchive {} *x24; struct GeometryArchive {} *x25; unsigned int x26; unsigned int x27; struct ShapeStylePropertiesArchive {} *x28; struct Reference {} *x29; struct RepeatedPtrField<TSP::Reference> { void **x_30_1_1; int x_30_1_2; int x_30_1_3; int x_30_1_4; } x30; struct RepeatedPtrField<TSP::Reference> { void **x_31_1_1; int x_31_1_2; int x_31_1_3; int x_31_1_4; } x31; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x32; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x33; struct Reference {} *x34; struct RepeatedPtrField<TSD::GuideArchive> { void **x_35_1_1; int x_35_1_2; int x_35_1_3; int x_35_1_4; } x35; struct Reference {} *x36; struct Reference {} *x37; struct RepeatedPtrField<TSP::Reference> { void **x_38_1_1; int x_38_1_2; int x_38_1_3; int x_38_1_4; } x38; struct Reference {} *x39; bool x40; bool x41; bool x42; bool x43; int x44; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct SlideArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[2]; struct Reference {} *x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<KN::BuildChunkArchive> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct RepeatedPtrField<TSP::Reference> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct TransitionArchive {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; struct Reference {} *x12; struct RepeatedPtrField<TSP::Reference> { void **x_13_1_1; int x_13_1_2; int x_13_1_3; int x_13_1_4; } x13; struct RepeatedPtrField<TSP::Reference> { void **x_14_1_1; int x_14_1_2; int x_14_1_3; int x_14_1_4; } x14; struct RepeatedPtrField<KN::SlideArchive_SageTagMapEntry> { void **x_15_1_1; int x_15_1_2; int x_15_1_3; int x_15_1_4; } x15; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x16; }*)arg1 unarchiver:(id)arg2;
+- (int)mediaCompatibilityTypeForData:(id)arg1 associatedHint:(id)arg2;
 - (void)moveChildren:(id)arg1 toIndexes:(id)arg2;
 - (id)objectForProperty:(int)arg1;
 - (id)objectPlaceholder;
@@ -157,6 +164,7 @@
 - (id)ownedChildInfos;
 - (id)owningAttachment;
 - (id)owningAttachmentNoRecurse;
+- (id)p_ChunksForDrawable:(id)arg1 animationType:(int)arg2 onlyActiveChunks:(BOOL)arg3;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })p_activeChunkRangeForBuild:(id)arg1 inActiveChunks:(id)arg2;
 - (BOOL)p_activeChunks:(id)arg1 areInOrderForBuild:(id)arg2;
 - (BOOL)p_activeChunks:(id)arg1 interleaveChunksForComplementOfBuild:(id)arg2;
@@ -179,9 +187,10 @@
 - (void)p_setChildInfosAsOrderedSet:(id)arg1 usingDOLC:(BOOL)arg2 dolcContext:(id)arg3;
 - (void)p_updateBuildsReplacingPlaceholder:(id)arg1 withPlaceholder:(id)arg2;
 - (void)p_updateChartBuildChunksImmediatelyWithoutUndoHistory;
+- (void)p_updateChunkCount;
 - (void)p_updateOverlappingBuildEventTriggers;
 - (void)p_updatePreUFFBuildEffects;
-- (void)p_updateStartAndEndOffsetsIfNecessaryForFileVersion:(unsigned long long)arg1;
+- (void)p_updateStartAndEndOffsetsIfNecessaryForFileVersion:(unsigned int)arg1;
 - (id)parentInfo;
 - (id)pdfDataUsingDocumentRoot:(id)arg1;
 - (void)performBlockOnInfos:(id /* block */)arg1;
@@ -201,8 +210,7 @@
 - (Class)repClass;
 - (void)replaceChildInfo:(id)arg1 with:(id)arg2;
 - (void)replaceReferencedStylesUsingBlock:(id /* block */)arg1;
-- (void)saveToArchive:(struct SlideArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[2]; struct Reference {} *x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<KN::BuildChunkArchive> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct RepeatedPtrField<TSP::Reference> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct TransitionArchive {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; struct Reference {} *x12; struct RepeatedPtrField<TSP::Reference> { void **x_13_1_1; int x_13_1_2; int x_13_1_3; int x_13_1_4; } x13; struct RepeatedPtrField<TSP::Reference> { void **x_14_1_1; int x_14_1_2; int x_14_1_3; int x_14_1_4; } x14; struct RepeatedPtrField<KN::SlideArchive_SageTagMapEntry> { void **x_15_1_1; int x_15_1_2; int x_15_1_3; int x_15_1_4; } x15; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x16; struct GeometryArchive {} *x17; unsigned int x18; unsigned int x19; struct ShapeStylePropertiesArchive {} *x20; struct GeometryArchive {} *x21; unsigned int x22; unsigned int x23; struct ShapeStylePropertiesArchive {} *x24; struct GeometryArchive {} *x25; unsigned int x26; unsigned int x27; struct ShapeStylePropertiesArchive {} *x28; struct Reference {} *x29; struct RepeatedPtrField<TSP::Reference> { void **x_30_1_1; int x_30_1_2; int x_30_1_3; int x_30_1_4; } x30; struct RepeatedPtrField<TSP::Reference> { void **x_31_1_1; int x_31_1_2; int x_31_1_3; int x_31_1_4; } x31; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x32; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x33; struct Reference {} *x34; struct RepeatedPtrField<TSD::GuideArchive> { void **x_35_1_1; int x_35_1_2; int x_35_1_3; int x_35_1_4; } x35; struct Reference {} *x36; struct Reference {} *x37; struct RepeatedPtrField<TSP::Reference> { void **x_38_1_1; int x_38_1_2; int x_38_1_3; int x_38_1_4; } x38; struct Reference {} *x39; bool x40; bool x41; bool x42; bool x43; int x44; }*)arg1 archiver:(id)arg2;
-- (void)setBackground:(id)arg1;
+- (void)saveToArchive:(struct SlideArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[2]; struct Reference {} *x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<KN::BuildChunkArchive> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct RepeatedPtrField<TSP::Reference> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct TransitionArchive {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; struct Reference {} *x12; struct RepeatedPtrField<TSP::Reference> { void **x_13_1_1; int x_13_1_2; int x_13_1_3; int x_13_1_4; } x13; struct RepeatedPtrField<TSP::Reference> { void **x_14_1_1; int x_14_1_2; int x_14_1_3; int x_14_1_4; } x14; struct RepeatedPtrField<KN::SlideArchive_SageTagMapEntry> { void **x_15_1_1; int x_15_1_2; int x_15_1_3; int x_15_1_4; } x15; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x16; }*)arg1 archiver:(id)arg2;
 - (void)setBodyPlaceholder:(id)arg1;
 - (void)setBuildChunks:(id)arg1 generateIdentifiers:(BOOL)arg2;
 - (void)setBuilds:(id)arg1;
@@ -224,6 +232,7 @@
 - (id)slideNumberPlaceholder;
 - (id)style;
 - (id)tagForInfo:(id)arg1;
+- (struct CGSize { double x1; double x2; })targetSizeForImageData:(id)arg1 associatedHint:(id)arg2;
 - (id)titlePlaceholder;
 - (id)transition;
 - (int)validateMoveActiveBuildChunks:(id)arg1 toActiveIndex:(unsigned int)arg2;

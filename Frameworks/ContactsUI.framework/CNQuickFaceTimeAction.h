@@ -3,7 +3,7 @@
  */
 
 @interface CNQuickFaceTimeAction : CNQuickPropertyAction {
-    BOOL _audioOnly;
+    BOOL  _audioOnly;
 }
 
 @property (nonatomic) BOOL audioOnly;

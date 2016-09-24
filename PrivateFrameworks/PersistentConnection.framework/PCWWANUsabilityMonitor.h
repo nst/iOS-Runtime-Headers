@@ -3,22 +3,22 @@
  */
 
 @interface PCWWANUsabilityMonitor : NSObject <PCInterfaceUsabilityMonitorDelegate, PCInterfaceUsabilityMonitorProtocol> {
-    NSObject<OS_dispatch_queue> *_ctServerQueue;
-    struct __CFString { } *_currentRAT;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    CUTWeakReference *_delegateReference;
-    PCInterfaceUsabilityMonitor *_interfaceMonitor;
-    NSString *_interfaceName;
-    BOOL _isInCall;
-    BOOL _isInHighPowerState;
-    NSObject<OS_dispatch_queue> *_ivarQueue;
-    NSObject<OS_dispatch_queue> *_monitorDelegateQueue;
-    int _powerlogCDRXToken;
-    struct __CTServerConnection { } *_telephonyServer;
-    unsigned int _thresholdOffTransitionCount;
-    BOOL _trackUsability;
-    double _trackedTimeInterval;
-    long _wwanContextID;
+    NSObject<OS_dispatch_queue> * _ctServerQueue;
+    struct __CFString { } * _currentRAT;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    CUTWeakReference * _delegateReference;
+    PCInterfaceUsabilityMonitor * _interfaceMonitor;
+    NSString * _interfaceName;
+    BOOL  _isInCall;
+    BOOL  _isInHighPowerState;
+    NSObject<OS_dispatch_queue> * _ivarQueue;
+    NSObject<OS_dispatch_queue> * _monitorDelegateQueue;
+    int  _powerlogCDRXToken;
+    struct __CTServerConnection { } * _telephonyServer;
+    unsigned int  _thresholdOffTransitionCount;
+    BOOL  _trackUsability;
+    double  _trackedTimeInterval;
+    long  _wwanContextID;
 }
 
 @property (nonatomic, readonly) struct __CFString { }*currentRAT;

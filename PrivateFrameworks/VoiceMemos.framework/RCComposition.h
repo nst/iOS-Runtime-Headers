@@ -3,15 +3,15 @@
  */
 
 @interface RCComposition : NSObject <NSCopying, NSMutableCopying, RCDictionaryPListRepresentationCoding> {
-    double _cachedComposedAVURLDuration;
-    BOOL _cachedComposedAVURLDurationIsValid;
-    NSURL *_composedAVURL;
-    NSArray *_composedFragments;
-    NSURL *_composedWaveformURL;
-    NSDate *_creationDate;
-    NSArray *_decomposedFragments;
-    BOOL _readonly;
-    NSURL *_savedRecordingURI;
+    double  _cachedComposedAVURLDuration;
+    BOOL  _cachedComposedAVURLDurationIsValid;
+    NSURL * _composedAVURL;
+    NSArray * _composedFragments;
+    NSURL * _composedWaveformURL;
+    NSDate * _creationDate;
+    NSArray * _decomposedFragments;
+    BOOL  _readonly;
+    NSURL * _savedRecordingURI;
 }
 
 @property (nonatomic) double cachedComposedAVURLDuration;
@@ -47,7 +47,7 @@
 - (void).cxx_destruct;
 - (id)_calcualteComposedFragments;
 - (double)_composedDuration;
-- (unsigned long long)_fileSizeOfComposedAssetsIncludingRelatedResources:(BOOL)arg1;
+- (unsigned int)_fileSizeOfComposedAssetsIncludingRelatedResources:(BOOL)arg1;
 - (double)cachedComposedAVURLDuration;
 - (BOOL)cachedComposedAVURLDurationIsValid;
 - (id)composedAVURL;
@@ -67,8 +67,8 @@
 - (id)description;
 - (id)dictionaryPListRepresentation;
 - (void)enumerateOrphanedFragmentsWithBlock:(id /* block */)arg1;
-- (unsigned long long)estimatedFileSizeOfComposedAssetIncludingRelatedResources:(BOOL)arg1;
-- (unsigned long long)fileSizeOfAssetsIncludingRelatedResources:(BOOL)arg1;
+- (unsigned int)estimatedFileSizeOfComposedAssetIncludingRelatedResources:(BOOL)arg1;
+- (unsigned int)fileSizeOfAssetsIncludingRelatedResources:(BOOL)arg1;
 - (id)initWithComposedAVURL:(id)arg1 savedRecordingURI:(id)arg2 decomposedFragments:(id)arg3 composedFragments:(id)arg4;
 - (id)initWithDictionaryPListRepresentation:(id)arg1;
 - (BOOL)isContentBeingModified;

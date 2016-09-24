@@ -3,7 +3,7 @@
  */
 
 @interface NNMKMessageContentSyncServiceClient : NNMKSyncServiceEndpoint {
-    <NNMKMessageContentSyncServiceClientDelegate> *_delegate;
+    <NNMKMessageContentSyncServiceClientDelegate> * _delegate;
 }
 
 @property (nonatomic) <NNMKMessageContentSyncServiceClientDelegate> *delegate;

@@ -3,7 +3,7 @@
  */
 
 @interface GQDWPTextMarker : NSObject {
-    int mType;
+    int  mType;
 }
 
 - (int)type;

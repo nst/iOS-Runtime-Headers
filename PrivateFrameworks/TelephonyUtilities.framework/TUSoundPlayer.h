@@ -3,9 +3,9 @@
  */
 
 @interface TUSoundPlayer : NSObject {
-    NSObject<OS_dispatch_queue> *_queue;
-    TURepeatingActor *_repeatingActor;
-    unsigned long _soundID;
+    NSObject<OS_dispatch_queue> * _queue;
+    TURepeatingActor * _repeatingActor;
+    unsigned long  _soundID;
 }
 
 @property (getter=isPlaying, nonatomic, readonly) BOOL playing;

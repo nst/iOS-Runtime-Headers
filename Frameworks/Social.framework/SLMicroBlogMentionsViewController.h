@@ -3,11 +3,11 @@
  */
 
 @interface SLMicroBlogMentionsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    NSObject<SLMicroBlogMentionsDelegate> *_delegate;
-    NSArray *_mentions;
-    NSString *_searchString;
-    NSObject<SLMicroBlogSheetDelegate> *_sheetDelegate;
-    UITableView *_tableView;
+    NSObject<SLMicroBlogMentionsDelegate> * _delegate;
+    NSArray * _mentions;
+    NSString * _searchString;
+    NSObject<SLMicroBlogSheetDelegate> * _sheetDelegate;
+    UITableView * _tableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

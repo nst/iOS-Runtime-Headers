@@ -28,9 +28,9 @@
         int floor; 
         unsigned int integrity; 
         int referenceFrame; 
-    } fLocation;
-    CLLocationMatchInfo *fMatchInfo;
-    double fTrustedTimestamp;
+    }  fLocation;
+    CLLocationMatchInfo * fMatchInfo;
+    double  fTrustedTimestamp;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

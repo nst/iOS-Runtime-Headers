@@ -3,11 +3,11 @@
  */
 
 @interface GKObserverTrampoline : NSObject {
-    id /* block */ _block;
-    int _cancellationPredicate;
-    NSString *_keyPath;
-    id _observee;
-    unsigned int _options;
+    id /* block */  _block;
+    int  _cancellationPredicate;
+    NSString * _keyPath;
+    id  _observee;
+    unsigned int  _options;
 }
 
 @property (readonly) id token;

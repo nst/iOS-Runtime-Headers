@@ -3,8 +3,8 @@
  */
 
 @interface _SFActivityItemProvider : UIActivityItemProvider {
-    NSString *_pageTitle;
-    NSURL *_url;
+    NSString * _pageTitle;
+    NSURL * _url;
 }
 
 @property (nonatomic, copy) NSString *pageTitle;

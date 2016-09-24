@@ -3,9 +3,9 @@
  */
 
 @interface SYObjectChangeSet : NSObject {
-    NSMutableSet *_added;
-    NSMutableSet *_deleted;
-    NSMutableSet *_updated;
+    NSMutableSet * _added;
+    NSMutableSet * _deleted;
+    NSMutableSet * _updated;
 }
 
 @property (nonatomic, copy) NSMutableSet *added;

@@ -3,9 +3,9 @@
  */
 
 @interface SKUIJSTelephony : IKJSObject <SKUIJSTelephony> {
-    BOOL _isObserving;
-    NSObject<OS_dispatch_queue> *_telephonyQueue;
-    struct __CTServerConnection { } *_telephonyServer;
+    BOOL  _isObserving;
+    NSObject<OS_dispatch_queue> * _telephonyQueue;
+    struct __CTServerConnection { } * _telephonyServer;
 }
 
 @property (getter=isCellularRoaming, nonatomic, readonly) BOOL cellularRoaming;

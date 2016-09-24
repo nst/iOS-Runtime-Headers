@@ -3,84 +3,85 @@
  */
 
 @interface GEOTileGroup : PBCodable <NSCopying> {
-    unsigned int _attributionBadgeIndex;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _attributionIndexs;
+    }  _attributionIndexs;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _fontIndexs;
-    struct { 
-        unsigned int attributionBadgeIndex : 1; 
-    } _has;
-    struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; } *_hybridUnavailableRegions;
-    unsigned int _hybridUnavailableRegionsCount;
-    unsigned int _hybridUnavailableRegionsSpace;
+    }  _fontIndexs;
+    struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; } * _hybridUnavailableRegions;
+    unsigned int  _hybridUnavailableRegionsCount;
+    unsigned int  _hybridUnavailableRegionsSpace;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _iconIndexs;
-    unsigned int _identifier;
-    struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; unsigned int x_5_1_3 : 1; unsigned int x_5_1_4 : 1; } x5; } *_regionalResourceIndexs;
-    unsigned int _regionalResourceIndexsCount;
-    unsigned int _regionalResourceIndexsSpace;
+    }  _iconIndexs;
+    unsigned int  _identifier;
+    struct GEORegionalResourceIndex { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; } * _regionalResourceIndexs;
+    unsigned int  _regionalResourceIndexsCount;
+    unsigned int  _regionalResourceIndexsSpace;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _styleSheetIndexs;
+    }  _resourceIndexs;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _textureIndexs;
-    struct { unsigned int x1; unsigned int x2; } *_tileSets;
-    unsigned int _tileSetsCount;
-    unsigned int _tileSetsSpace;
+    }  _styleSheetIndexs;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _xmlIndexs;
+    }  _textureIndexs;
+    struct GEOVersionedTileSet { unsigned int x1; unsigned int x2; } * _tileSets;
+    unsigned int  _tileSetsCount;
+    unsigned int  _tileSetsSpace;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    }  _xmlIndexs;
 }
 
-@property (nonatomic) unsigned int attributionBadgeIndex;
 @property (nonatomic, readonly) unsigned int*attributionIndexs;
 @property (nonatomic, readonly) unsigned int attributionIndexsCount;
 @property (nonatomic, readonly) unsigned int*fontIndexs;
 @property (nonatomic, readonly) unsigned int fontIndexsCount;
-@property (nonatomic) BOOL hasAttributionBadgeIndex;
-@property (nonatomic, readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*hybridUnavailableRegions;
+@property (nonatomic, readonly) struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*hybridUnavailableRegions;
 @property (nonatomic, readonly) unsigned int hybridUnavailableRegionsCount;
 @property (nonatomic, readonly) unsigned int*iconIndexs;
 @property (nonatomic, readonly) unsigned int iconIndexsCount;
 @property (nonatomic) unsigned int identifier;
-@property (nonatomic, readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; unsigned int x_5_1_3 : 1; unsigned int x_5_1_4 : 1; } x5; }*regionalResourceIndexs;
+@property (nonatomic, readonly) struct GEORegionalResourceIndex { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*regionalResourceIndexs;
 @property (nonatomic, readonly) unsigned int regionalResourceIndexsCount;
+@property (nonatomic, readonly) unsigned int*resourceIndexs;
+@property (nonatomic, readonly) unsigned int resourceIndexsCount;
 @property (nonatomic, readonly) unsigned int*styleSheetIndexs;
 @property (nonatomic, readonly) unsigned int styleSheetIndexsCount;
 @property (nonatomic, readonly) unsigned int*textureIndexs;
 @property (nonatomic, readonly) unsigned int textureIndexsCount;
-@property (nonatomic, readonly) struct { unsigned int x1; unsigned int x2; }*tileSets;
+@property (nonatomic, readonly) struct GEOVersionedTileSet { unsigned int x1; unsigned int x2; }*tileSets;
 @property (nonatomic, readonly) unsigned int tileSetsCount;
 @property (nonatomic, readonly) unsigned int*xmlIndexs;
 @property (nonatomic, readonly) unsigned int xmlIndexsCount;
 
 - (void)addAttributionIndex:(unsigned int)arg1;
 - (void)addFontIndex:(unsigned int)arg1;
-- (void)addHybridUnavailableRegion:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })arg1;
+- (void)addHybridUnavailableRegion:(struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })arg1;
 - (void)addIconIndex:(unsigned int)arg1;
-- (void)addRegionalResourceIndex:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; unsigned int x_5_1_3 : 1; unsigned int x_5_1_4 : 1; } x5; })arg1;
+- (void)addRegionalResourceIndex:(struct GEORegionalResourceIndex { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; })arg1;
+- (void)addResourceIndex:(unsigned int)arg1;
 - (void)addStyleSheetIndex:(unsigned int)arg1;
 - (void)addTextureIndex:(unsigned int)arg1;
-- (void)addTileSet:(struct { unsigned int x1; unsigned int x2; })arg1;
+- (void)addTileSet:(struct GEOVersionedTileSet { unsigned int x1; unsigned int x2; })arg1;
 - (void)addXmlIndex:(unsigned int)arg1;
-- (unsigned int)attributionBadgeIndex;
 - (unsigned int)attributionIndexAtIndex:(unsigned int)arg1;
 - (unsigned int*)attributionIndexs;
 - (unsigned int)attributionIndexsCount;
@@ -89,6 +90,7 @@
 - (void)clearHybridUnavailableRegions;
 - (void)clearIconIndexs;
 - (void)clearRegionalResourceIndexs;
+- (void)clearResourceIndexs;
 - (void)clearStyleSheetIndexs;
 - (void)clearTextureIndexs;
 - (void)clearTileSets;
@@ -101,10 +103,9 @@
 - (unsigned int)fontIndexAtIndex:(unsigned int)arg1;
 - (unsigned int*)fontIndexs;
 - (unsigned int)fontIndexsCount;
-- (BOOL)hasAttributionBadgeIndex;
 - (unsigned int)hash;
-- (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })hybridUnavailableRegionAtIndex:(unsigned int)arg1;
-- (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)hybridUnavailableRegions;
+- (struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })hybridUnavailableRegionAtIndex:(unsigned int)arg1;
+- (struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)hybridUnavailableRegions;
 - (unsigned int)hybridUnavailableRegionsCount;
 - (unsigned int)iconIndexAtIndex:(unsigned int)arg1;
 - (unsigned int*)iconIndexs;
@@ -113,20 +114,22 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; unsigned int x_5_1_3 : 1; unsigned int x_5_1_4 : 1; } x5; })regionalResourceIndexAtIndex:(unsigned int)arg1;
-- (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; unsigned int x_5_1_3 : 1; unsigned int x_5_1_4 : 1; } x5; }*)regionalResourceIndexs;
+- (struct GEORegionalResourceIndex { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; })regionalResourceIndexAtIndex:(unsigned int)arg1;
+- (struct GEORegionalResourceIndex { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)regionalResourceIndexs;
 - (unsigned int)regionalResourceIndexsCount;
-- (void)setAttributionBadgeIndex:(unsigned int)arg1;
+- (unsigned int)resourceIndexAtIndex:(unsigned int)arg1;
+- (unsigned int*)resourceIndexs;
+- (unsigned int)resourceIndexsCount;
 - (void)setAttributionIndexs:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)setFontIndexs:(unsigned int*)arg1 count:(unsigned int)arg2;
-- (void)setHasAttributionBadgeIndex:(BOOL)arg1;
-- (void)setHybridUnavailableRegions:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)arg1 count:(unsigned int)arg2;
+- (void)setHybridUnavailableRegions:(struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)arg1 count:(unsigned int)arg2;
 - (void)setIconIndexs:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)setIdentifier:(unsigned int)arg1;
-- (void)setRegionalResourceIndexs:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; unsigned int x_5_1_3 : 1; unsigned int x_5_1_4 : 1; } x5; }*)arg1 count:(unsigned int)arg2;
+- (void)setRegionalResourceIndexs:(struct GEORegionalResourceIndex { unsigned int x1; unsigned int x2; unsigned int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)arg1 count:(unsigned int)arg2;
+- (void)setResourceIndexs:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)setStyleSheetIndexs:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)setTextureIndexs:(unsigned int*)arg1 count:(unsigned int)arg2;
-- (void)setTileSets:(struct { unsigned int x1; unsigned int x2; }*)arg1 count:(unsigned int)arg2;
+- (void)setTileSets:(struct GEOVersionedTileSet { unsigned int x1; unsigned int x2; }*)arg1 count:(unsigned int)arg2;
 - (void)setXmlIndexs:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (unsigned int)styleSheetIndexAtIndex:(unsigned int)arg1;
 - (unsigned int*)styleSheetIndexs;
@@ -134,8 +137,8 @@
 - (unsigned int)textureIndexAtIndex:(unsigned int)arg1;
 - (unsigned int*)textureIndexs;
 - (unsigned int)textureIndexsCount;
-- (struct { unsigned int x1; unsigned int x2; })tileSetAtIndex:(unsigned int)arg1;
-- (struct { unsigned int x1; unsigned int x2; }*)tileSets;
+- (struct GEOVersionedTileSet { unsigned int x1; unsigned int x2; })tileSetAtIndex:(unsigned int)arg1;
+- (struct GEOVersionedTileSet { unsigned int x1; unsigned int x2; }*)tileSets;
 - (unsigned int)tileSetsCount;
 - (void)writeTo:(id)arg1;
 - (unsigned int)xmlIndexAtIndex:(unsigned int)arg1;

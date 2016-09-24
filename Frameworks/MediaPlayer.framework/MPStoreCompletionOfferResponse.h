@@ -3,9 +3,9 @@
  */
 
 @interface MPStoreCompletionOfferResponse : NSObject {
-    NSMutableDictionary *_itemsByVariant;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSDictionary *_responseDictionary;
+    NSMutableDictionary * _itemsByVariant;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSDictionary * _responseDictionary;
 }
 
 @property (nonatomic, readonly) NSDictionary *responseDictionary;

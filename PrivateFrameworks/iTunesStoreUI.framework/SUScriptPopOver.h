@@ -3,8 +3,8 @@
  */
 
 @interface SUScriptPopOver : SUScriptObject {
-    UIViewController *_contentViewController;
-    BOOL _ignoreDismiss;
+    UIViewController * _contentViewController;
+    BOOL  _ignoreDismiss;
 }
 
 @property (readonly) UIViewController *activeViewController;
@@ -14,8 +14,8 @@
 @property (readonly) int backgroundStyleCream;
 @property (readonly) int backgroundStyleDefault;
 @property (readonly) int backgroundStyleShare;
-@property float contentHeight;
-@property float contentWidth;
+@property double contentHeight;
+@property double contentWidth;
 @property (nonatomic, retain) UIPopoverController *nativePopoverController;
 @property (nonatomic, readonly) UIPopoverController *presentablePopoverController;
 @property (readonly) SUScriptViewController *presentingViewController;

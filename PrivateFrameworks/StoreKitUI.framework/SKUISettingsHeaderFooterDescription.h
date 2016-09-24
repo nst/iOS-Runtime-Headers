@@ -3,7 +3,7 @@
  */
 
 @interface SKUISettingsHeaderFooterDescription : NSObject {
-    SKUIViewElement *_viewElement;
+    SKUIViewElement * _viewElement;
 }
 
 + (id)_settingsHeaderFooterDescriptionWithFooterElement:(id)arg1;

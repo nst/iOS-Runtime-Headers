@@ -2,21 +2,32 @@
    Image: /System/Library/PrivateFrameworks/CoreCDP.framework/CoreCDP
  */
 
-@interface CDPContext : NSObject <NSSecureCoding> {
-    BOOL __alwaysCreateEscrowRecord;
-    BOOL __useSecureBackupCachedPassphrase;
-    NSString *_appleID;
-    NSDictionary *_authenticationResults;
-    NSString *_cachedLocalSecret;
-    unsigned int _cachedLocalSecretType;
-    BOOL _didUseSMSVerification;
-    NSNumber *_dsid;
-    BOOL _isHSA2Account;
-    NSString *_password;
-    NSString *_passwordEquivToken;
+@interface CDPContext : NSObject <NSCopying, NSSecureCoding> {
+    BOOL  __alwaysCreateEscrowRecord;
+    <CDPAuthProviderInternal> * __authProvider;
+    BOOL  __guestMode;
+    BOOL  __idmsRecovery;
+    NSString * __recoveryToken;
+    BOOL  __useSecureBackupCachedPassphrase;
+    NSString * _appleID;
+    NSDictionary * _authenticationResults;
+    NSString * _cachedLocalSecret;
+    unsigned int  _cachedLocalSecretType;
+    BOOL  _didUseSMSVerification;
+    NSNumber * _dsid;
+    KCAESGCMDuplexSession * _duplexSession;
+    BOOL  _isHSA2Account;
+    NSString * _password;
+    NSString * _passwordEquivToken;
+    AKCircleRequestContext * _resumeContext;
+    int  _type;
 }
 
 @property (nonatomic) BOOL _alwaysCreateEscrowRecord;
+@property (nonatomic, retain) <CDPAuthProviderInternal> *_authProvider;
+@property (nonatomic) BOOL _guestMode;
+@property (nonatomic) BOOL _idmsRecovery;
+@property (nonatomic, copy) NSString *_recoveryToken;
 @property (nonatomic) BOOL _useSecureBackupCachedPassphrase;
 @property (nonatomic, copy) NSString *appleID;
 @property (nonatomic, copy) NSDictionary *authenticationResults;
@@ -24,9 +35,12 @@
 @property (nonatomic) unsigned int cachedLocalSecretType;
 @property (nonatomic) BOOL didUseSMSVerification;
 @property (nonatomic, copy) NSNumber *dsid;
+@property (nonatomic, retain) KCAESGCMDuplexSession *duplexSession;
 @property (nonatomic) BOOL isHSA2Account;
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, copy) NSString *passwordEquivToken;
+@property (nonatomic, retain) AKCircleRequestContext *resumeContext;
+@property (nonatomic) int type;
 
 // Image: /System/Library/PrivateFrameworks/CoreCDP.framework/CoreCDP
 
@@ -34,30 +48,46 @@
 
 - (void).cxx_destruct;
 - (BOOL)_alwaysCreateEscrowRecord;
+- (id)_authProvider;
+- (BOOL)_guestMode;
+- (BOOL)_idmsRecovery;
+- (id)_recoveryToken;
 - (BOOL)_useSecureBackupCachedPassphrase;
 - (id)appleID;
 - (id)authenticationResults;
 - (id)cachedLocalSecret;
 - (unsigned int)cachedLocalSecretType;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)didUseSMSVerification;
 - (id)dsid;
+- (id)duplexSession;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithAuthenticationResults:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isHSA2Account;
 - (id)password;
 - (id)passwordEquivToken;
+- (void)purgeResumeData;
+- (id)resumeContext;
 - (void)setAppleID:(id)arg1;
 - (void)setAuthenticationResults:(id)arg1;
 - (void)setCachedLocalSecret:(id)arg1;
 - (void)setCachedLocalSecretType:(unsigned int)arg1;
 - (void)setDidUseSMSVerification:(BOOL)arg1;
 - (void)setDsid:(id)arg1;
+- (void)setDuplexSession:(id)arg1;
 - (void)setIsHSA2Account:(BOOL)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setPasswordEquivToken:(id)arg1;
+- (void)setResumeContext:(id)arg1;
+- (void)setType:(int)arg1;
 - (void)set_alwaysCreateEscrowRecord:(BOOL)arg1;
+- (void)set_authProvider:(id)arg1;
+- (void)set_guestMode:(BOOL)arg1;
+- (void)set_idmsRecovery:(BOOL)arg1;
+- (void)set_recoveryToken:(id)arg1;
 - (void)set_useSecureBackupCachedPassphrase:(BOOL)arg1;
+- (int)type;
 - (void)updateWithAuthenticationResults:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CoreCDPInternal.framework/CoreCDPInternal

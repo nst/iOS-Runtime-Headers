@@ -3,17 +3,17 @@
  */
 
 @interface SSURLConnectionRequest : SSRequest <SSXPCCoding> {
-    SSAuthenticationContext *_authenticationContext;
-    SSVURLDataConsumer *_dataConsumer;
-    NSURL *_destinationFileURL;
-    SSURLRequestProperties *_requestProperties;
-    BOOL _runsInProcess;
-    SSVFairPlaySAPSession *_sapSession;
-    SSVSAPSignaturePolicy *_sapSignaturePolicy;
-    BOOL _sendsResponseForHTTPFailures;
-    BOOL _shouldMescalSign;
-    SSURLBag *_urlBag;
-    SSVURLBagInterpreter *_urlBagInterpreter;
+    SSAuthenticationContext * _authenticationContext;
+    SSVURLDataConsumer * _dataConsumer;
+    NSURL * _destinationFileURL;
+    SSURLRequestProperties * _requestProperties;
+    BOOL  _runsInProcess;
+    SSVFairPlaySAPSession * _sapSession;
+    SSVSAPSignaturePolicy * _sapSignaturePolicy;
+    BOOL  _sendsResponseForHTTPFailures;
+    BOOL  _shouldMescalSign;
+    SSURLBag * _urlBag;
+    SSVURLBagInterpreter * _urlBagInterpreter;
 }
 
 @property (retain) SSVFairPlaySAPSession *SAPSession;

@@ -3,8 +3,8 @@
  */
 
 @interface NRDevicePropertyDiffType : NSObject <NSCopying, NSSecureCoding> {
-    unsigned int _changeType;
-    NRDevicePropertyDiff *_diff;
+    unsigned int  _changeType;
+    NRDevicePropertyDiff * _diff;
 }
 
 @property (nonatomic, readonly) unsigned int changeType;

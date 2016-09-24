@@ -16,7 +16,7 @@
         struct __compressed_pair<unsigned long, std::__1::allocator<geo::TransitEdgePiece> > { 
             unsigned long __first_; 
         } __size_; 
-    } _pieces;
+    }  _pieces;
 }
 
 - (id).cxx_construct;
@@ -24,9 +24,9 @@
 - (void)_buildCompleteEdge;
 - (BOOL)_findEdgeAheadInTile:(id)arg1;
 - (BOOL)_findEdgeBehindInTile:(id)arg1;
-- (struct Matrix<float, 2, 1> { float x1[2]; })_firstPoint;
+- (struct Matrix<float, 2, 1> { double x1[2]; })_firstPoint;
 - (id)_firstTile;
-- (struct Matrix<float, 2, 1> { float x1[2]; })_lastPoint;
+- (struct Matrix<float, 2, 1> { double x1[2]; })_lastPoint;
 - (id)_lastTile;
 - (unsigned int)_maxTileCount;
 - (BOOL)_shouldFindEdgeAhead;

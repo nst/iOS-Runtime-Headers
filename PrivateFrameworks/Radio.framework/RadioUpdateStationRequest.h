@@ -3,11 +3,11 @@
  */
 
 @interface RadioUpdateStationRequest : RadioSyncRequest {
-    NSString *_name;
-    NSArray *_seeds;
-    int _songMixType;
-    RadioStation *_station;
-    NSString *_stationDescription;
+    NSString * _name;
+    NSArray * _seeds;
+    int  _songMixType;
+    RadioStation * _station;
+    NSString * _stationDescription;
 }
 
 @property (nonatomic, copy) NSString *name;

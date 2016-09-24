@@ -3,7 +3,7 @@
  */
 
 @interface STWeatherUnits : STSiriModelObject {
-    int _temperatureUnits;
+    int  _temperatureUnits;
 }
 
 + (BOOL)supportsSecureCoding;

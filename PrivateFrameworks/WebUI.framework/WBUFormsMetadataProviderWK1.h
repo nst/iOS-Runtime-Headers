@@ -3,8 +3,8 @@
  */
 
 @interface WBUFormsMetadataProviderWK1 : NSObject <WBSFormsMetadataProvider> {
-    NSArray *_framesForAllForms;
-    NSArray *_metadataForAllForms;
+    NSArray * _framesForAllForms;
+    NSArray * _metadataForAllForms;
 }
 
 @property (readonly, copy) NSString *debugDescription;

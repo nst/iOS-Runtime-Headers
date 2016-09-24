@@ -3,14 +3,14 @@
  */
 
 @interface SKUICommentTemplateViewElement : SKUIViewElement {
-    NSString *_asFormat;
-    NSString *_asText;
-    NSString *_commentAsText;
-    NSString *_myselfText;
-    NSString *_postButtonText;
-    NSString *_postPlaceholderText;
-    BOOL _scrollNewCommentToView;
-    BOOL _showKeyboard;
+    NSString * _asFormat;
+    NSString * _asText;
+    NSString * _commentAsText;
+    NSString * _myselfText;
+    NSString * _postButtonText;
+    NSString * _postPlaceholderText;
+    BOOL  _scrollNewCommentToView;
+    BOOL  _showKeyboard;
 }
 
 @property (nonatomic, readonly) NSString *asFormat;

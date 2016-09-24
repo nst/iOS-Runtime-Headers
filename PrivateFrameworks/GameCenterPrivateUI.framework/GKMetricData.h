@@ -3,11 +3,11 @@
  */
 
 @interface GKMetricData : NSObject {
-    unsigned int _currentMaxVisibleItemCount;
-    unsigned int _filteredTotalItemCount;
-    NSMutableArray *_footerPinnableAttributes;
-    NSMutableArray *_headerPinnableAttributes;
-    GKGridLayoutMetrics *_metrics;
+    unsigned int  _currentMaxVisibleItemCount;
+    unsigned int  _filteredTotalItemCount;
+    NSMutableArray * _footerPinnableAttributes;
+    NSMutableArray * _headerPinnableAttributes;
+    GKGridLayoutMetrics * _metrics;
 }
 
 @property (nonatomic) unsigned int currentMaxVisibleItemCount;

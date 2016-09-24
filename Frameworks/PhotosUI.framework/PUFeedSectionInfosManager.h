@@ -3,14 +3,14 @@
  */
 
 @interface PUFeedSectionInfosManager : NSObject <PLAssetChangeObserver, PLCloudCommentsChangeObserver, PLCloudFeedEntriesObserver, PLPhotoLibraryShouldReloadObserver> {
-    <PUFeedSectionInfosManagerDelegate> *_delegate;
-    NSDate *_earliestDate;
-    NSMutableArray *_pendingAssetsChangeNotifications;
-    NSMutableArray *_pendingCommentsChangeNotifications;
-    NSMutableArray *_pendingFeedEntriesChangeNotifications;
-    PLPhotoLibrary *_photoLibrary;
-    NSMutableArray *_sectionInfos;
-    NSMapTable *_sectionInfosByCloudFeedEntry;
+    <PUFeedSectionInfosManagerDelegate> * _delegate;
+    NSDate * _earliestDate;
+    NSMutableArray * _pendingAssetsChangeNotifications;
+    NSMutableArray * _pendingCommentsChangeNotifications;
+    NSMutableArray * _pendingFeedEntriesChangeNotifications;
+    PLPhotoLibrary * _photoLibrary;
+    NSMutableArray * _sectionInfos;
+    NSMapTable * _sectionInfosByCloudFeedEntry;
 }
 
 @property (nonatomic) <PUFeedSectionInfosManagerDelegate> *delegate;

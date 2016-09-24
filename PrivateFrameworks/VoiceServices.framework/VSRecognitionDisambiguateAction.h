@@ -3,13 +3,13 @@
  */
 
 @interface VSRecognitionDisambiguateAction : VSRecognitionRecognizeAction {
-    NSMutableDictionary *_ambiguousPhoneticValues;
-    NSMutableDictionary *_ambiguousValues;
-    void *_context;
-    NSMutableDictionary *_knownPhoneticValues;
-    NSMutableDictionary *_knownValues;
-    NSString *_repeatedSpokenFeedbackString;
-    NSString *_sequenceTag;
+    NSMutableDictionary * _ambiguousPhoneticValues;
+    NSMutableDictionary * _ambiguousValues;
+    void * _context;
+    NSMutableDictionary * _knownPhoneticValues;
+    NSMutableDictionary * _knownValues;
+    NSString * _repeatedSpokenFeedbackString;
+    NSString * _sequenceTag;
 }
 
 - (id)_actionForEmptyResults;

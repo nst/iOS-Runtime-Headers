@@ -3,10 +3,10 @@
  */
 
 @interface HKHealthQueryFetchOperation : HKChartCacheFetchOperation {
-    id /* block */ _clientCompletion;
-    id /* block */ _fetchOperationManager;
-    HKHealthStore *_healthStore;
-    NSArray *_queries;
+    id /* block */  _clientCompletion;
+    id /* block */  _fetchOperationManager;
+    HKHealthStore * _healthStore;
+    NSArray * _queries;
 }
 
 @property (nonatomic, retain) NSArray *queries;

@@ -5,8 +5,8 @@
 
 @required
 
-- (struct { double x1; double x2; })coordinateOfDroppedPin;
-- (<GEOMapItemPrivate> *)geoMapItem;
+- (struct CLLocationCoordinate2D { double x1; double x2; })coordinateOfDroppedPin;
+- (<GEOMapItem> *)geoMapItem;
 - (NSString *)title;
 
 @end

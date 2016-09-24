@@ -6,40 +6,47 @@
     struct { 
         struct { 
             struct { 
-                long long value; 
+                int value; 
                 int timescale; 
                 unsigned int flags; 
-                long long epoch; 
+                int epoch; 
             } start; 
             struct { 
-                long long value; 
+                int value; 
                 int timescale; 
                 unsigned int flags; 
-                long long epoch; 
+                int epoch; 
             } duration; 
         } source; 
         struct { 
             struct { 
-                long long value; 
+                int value; 
                 int timescale; 
                 unsigned int flags; 
-                long long epoch; 
+                int epoch; 
             } start; 
             struct { 
-                long long value; 
+                int value; 
                 int timescale; 
                 unsigned int flags; 
-                long long epoch; 
+                int epoch; 
             } duration; 
         } target; 
-    } _timeMapping;
+    }  _timeMapping;
 }
 
-+ (id)valueWithCMTimeMapping:(struct { struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_1_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_1_1_2; } x1; struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_2_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_2_1_2; } x2; })arg1;
++ (BOOL)supportsSecureCoding;
++ (id)valueWithCMTimeMapping:(struct { struct { struct { int x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; int x_1_2_4; } x_1_1_1; struct { int x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; int x_2_2_4; } x_1_1_2; } x1; struct { struct { int x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; int x_1_2_4; } x_2_1_1; struct { int x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; int x_2_2_4; } x_2_1_2; } x2; })arg1;
 
-- (struct { struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_1_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_1_1_2; } x1; struct { struct { long long x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; long long x_1_2_4; } x_2_1_1; struct { long long x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; long long x_2_2_4; } x_2_1_2; } x2; })CMTimeMappingValue;
+- (struct { struct { struct { int x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; int x_1_2_4; } x_1_1_1; struct { int x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; int x_2_2_4; } x_1_1_2; } x1; struct { struct { int x_1_2_1; int x_1_2_2; unsigned int x_1_2_3; int x_1_2_4; } x_2_1_1; struct { int x_2_2_1; int x_2_2_2; unsigned int x_2_2_3; int x_2_2_4; } x_2_1_2; } x2; })CMTimeMappingValue;
+- (Class)classForCoder;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (void)getValue:(void*)arg1;
+- (unsigned int)hash;
+- (id)initWithCoder:(id)arg1;
+- (BOOL)isEqualToValue:(id)arg1;
 - (const char *)objCType;
 
 @end

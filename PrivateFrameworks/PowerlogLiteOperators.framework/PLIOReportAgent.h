@@ -3,11 +3,11 @@
  */
 
 @interface PLIOReportAgent : PLAgent {
-    PLEntryNotificationOperatorComposition *_batteryLevelChangedNotifications;
-    NSDictionary *_entryTransformation;
-    NSMutableDictionary *_sampleChannelsDaily;
-    NSMutableDictionary *_sampleChannelsHalfHour;
-    NSMutableDictionary *_sampleChannelsSignificantBattery;
+    PLEntryNotificationOperatorComposition * _batteryLevelChangedNotifications;
+    NSDictionary * _entryTransformation;
+    NSMutableDictionary * _sampleChannelsDaily;
+    NSMutableDictionary * _sampleChannelsHalfHour;
+    NSMutableDictionary * _sampleChannelsSignificantBattery;
 }
 
 @property (retain) PLEntryNotificationOperatorComposition *batteryLevelChangedNotifications;
@@ -16,22 +16,33 @@
 @property (nonatomic, retain) NSMutableDictionary *sampleChannelsHalfHour;
 @property (nonatomic, retain) NSMutableDictionary *sampleChannelsSignificantBattery;
 
-+ (double)SOCCorrectionFactor;
 + (id)defaults;
 + (id)energyKeyToRootNodeID;
 + (id)entryEventBackwardDefinitionAMCStatsPerfCounters;
++ (id)entryEventBackwardDefinitionAOPAOPSensors;
++ (id)entryEventBackwardDefinitionAOPAmpPower;
++ (id)entryEventBackwardDefinitionAOPmuxPower;
 + (id)entryEventBackwardDefinitionAppleEmbeddedPCIELinkStates;
 + (id)entryEventBackwardDefinitionCLPCStatsControlEffort;
 + (id)entryEventBackwardDefinitionCLPCStatsCounters;
 + (id)entryEventBackwardDefinitionCLPCStatsFrameRateHistogram;
 + (id)entryEventBackwardDefinitionCLPCStatsLeadingController;
++ (id)entryEventBackwardDefinitionCLPCStatsSchedulingLatencyQoS0;
++ (id)entryEventBackwardDefinitionCLPCStatsSchedulingLatencyQoS1;
++ (id)entryEventBackwardDefinitionCLPCStatsSchedulingLatencyQoS2;
++ (id)entryEventBackwardDefinitionCLPCStatsSchedulingLatencyQoS3;
++ (id)entryEventBackwardDefinitionCLPCStatsSchedulingLatencyQoS4;
++ (id)entryEventBackwardDefinitionCLPCStatsSchedulingLatencyQoS5;
++ (id)entryEventBackwardDefinitionCLPCStatsSchedulingLatencyQoS6;
 + (id)entryEventBackwardDefinitionCPUStatsActiveTimeHistogram;
 + (id)entryEventBackwardDefinitionCPUStatsCPUPerformanceStates;
 + (id)entryEventBackwardDefinitionCPUStatsDVDStats;
++ (id)entryEventBackwardDefinitionCPUStatsEvents;
 + (id)entryEventBackwardDefinitionCPUStatsIdleTimeHistogram;
 + (id)entryEventBackwardDefinitionCPUStatsVoltageDomainPerformanceStates;
 + (id)entryEventBackwardDefinitionClpcStatsMetricHistograms;
 + (id)entryEventBackwardDefinitionCorePerformanceLevel;
++ (id)entryEventBackwardDefinitionCorePerformanceLevelResidency;
 + (id)entryEventBackwardDefinitionCpuStatsCpuFeatures;
 + (id)entryEventBackwardDefinitionEnergyModel;
 + (id)entryEventBackwardDefinitionGPUStatsActiveTimeHistogram;
@@ -87,7 +98,7 @@
 - (void)log;
 - (void)logEventBackwardIOReport;
 - (void)logEventBackwardIOReportWithDelta:(id)arg1 forChannelGroup:(id)arg2;
-- (void)mergeServiceName:(id)arg1 withID:(unsigned long long)arg2 toChannels:(struct __CFDictionary { }*)arg3;
+- (void)mergeServiceName:(id)arg1 withID:(unsigned int)arg2 toChannels:(struct __CFDictionary { }*)arg3;
 - (void)modelAPSoCPower:(id)arg1;
 - (BOOL)processNotificationForChannelGroup:(id)arg1;
 - (void)pruneAllChannelsWithChannels:(struct __CFDictionary { }*)arg1;

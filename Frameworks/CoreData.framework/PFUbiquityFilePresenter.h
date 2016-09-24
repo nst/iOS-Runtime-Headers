@@ -3,16 +3,16 @@
  */
 
 @interface PFUbiquityFilePresenter : NSObject <NSFilePresenter> {
-    NSString *_localPeerID;
-    NSMutableDictionary *_locationToSafeSaveFile;
-    NSMutableDictionary *_locationToStatus;
-    NSMutableArray *_pendingURLs;
-    int _pendingURLsLock;
-    NSURL *_presentedItemURL;
-    NSObject<OS_dispatch_queue> *_processingQueue;
-    BOOL _scheduledProcessingBlock;
-    NSString *_storeName;
-    PFUbiquityLocation *_ubiquityRootLocation;
+    NSString * _localPeerID;
+    NSMutableDictionary * _locationToSafeSaveFile;
+    NSMutableDictionary * _locationToStatus;
+    NSMutableArray * _pendingURLs;
+    int  _pendingURLsLock;
+    NSURL * _presentedItemURL;
+    NSObject<OS_dispatch_queue> * _processingQueue;
+    BOOL  _scheduledProcessingBlock;
+    NSString * _storeName;
+    PFUbiquityLocation * _ubiquityRootLocation;
 }
 
 @property (readonly, copy) NSString *debugDescription;

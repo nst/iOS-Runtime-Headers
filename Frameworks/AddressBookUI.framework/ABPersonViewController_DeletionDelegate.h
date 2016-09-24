@@ -3,7 +3,7 @@
  */
 
 @interface ABPersonViewController_DeletionDelegate : NSObject <UIActionSheetDelegate> {
-    ABPersonViewControllerHelper *_controller;
+    ABPersonViewControllerHelper * _controller;
 }
 
 @property (readonly, copy) NSString *debugDescription;

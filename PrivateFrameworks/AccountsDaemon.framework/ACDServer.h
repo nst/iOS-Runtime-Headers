@@ -3,22 +3,22 @@
  */
 
 @interface ACDServer : NSObject <ACDAccountStoreDelegate, NSXPCListenerDelegate> {
-    ACDAccessPluginManager *_accessPluginManager;
-    NSMutableArray *_accountStoreClients;
-    NSXPCListener *_accountStoreListener;
-    NSXPCListener *_authenticationDialogListener;
-    ACDAuthenticationDialogManager *_authenticationDialogManager;
-    NSMutableArray *_authenticationDialogManagerClients;
-    ACDAuthenticationPluginManager *_authenticationPluginManager;
-    NSMutableDictionary *_clientsByConnection;
-    ACDDataclassOwnersManager *_dataclassOwnersManager;
-    NSObject<OS_dispatch_queue> *_deferredConnectionResumeQueue;
-    NSObject<OS_dispatch_semaphore> *_deferredConnectionResumeQueueSemaphore;
-    NSMutableDictionary *_entitlementsByConnection;
-    NSMutableArray *_oauthSignerClients;
-    NSXPCListener *_oauthSignerListener;
-    NSObject<OS_dispatch_queue> *_performMigrationQueue;
-    ACRemoteDeviceProxy *_remoteDeviceProxy;
+    ACDAccessPluginManager * _accessPluginManager;
+    NSMutableArray * _accountStoreClients;
+    NSXPCListener * _accountStoreListener;
+    NSXPCListener * _authenticationDialogListener;
+    ACDAuthenticationDialogManager * _authenticationDialogManager;
+    NSMutableArray * _authenticationDialogManagerClients;
+    ACDAuthenticationPluginManager * _authenticationPluginManager;
+    NSMutableDictionary * _clientsByConnection;
+    ACDDataclassOwnersManager * _dataclassOwnersManager;
+    NSObject<OS_dispatch_queue> * _deferredConnectionResumeQueue;
+    NSObject<OS_dispatch_semaphore> * _deferredConnectionResumeQueueSemaphore;
+    NSMutableDictionary * _entitlementsByConnection;
+    NSMutableArray * _oauthSignerClients;
+    NSXPCListener * _oauthSignerListener;
+    NSObject<OS_dispatch_queue> * _performMigrationQueue;
+    ACRemoteDeviceProxy * _remoteDeviceProxy;
 }
 
 @property (nonatomic, retain) ACDAccessPluginManager *accessPluginManager;

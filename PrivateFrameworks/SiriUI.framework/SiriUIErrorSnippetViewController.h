@@ -3,7 +3,7 @@
  */
 
 @interface SiriUIErrorSnippetViewController : SiriUISnippetViewController {
-    NSError *_error;
+    NSError * _error;
 }
 
 - (void).cxx_destruct;

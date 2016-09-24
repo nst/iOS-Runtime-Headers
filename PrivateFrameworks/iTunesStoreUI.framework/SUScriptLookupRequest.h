@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptLookupRequest : SUScriptObject {
-    SSLookupRequest *_request;
+    SSLookupRequest * _request;
 }
 
 @property (retain) id authenticatesIfNeeded;

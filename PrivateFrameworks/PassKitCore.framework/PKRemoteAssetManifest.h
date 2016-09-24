@@ -3,16 +3,16 @@
  */
 
 @interface PKRemoteAssetManifest : NSObject {
-    NSURL *_fileURL;
-    NSString *_name;
-    NSMutableDictionary *_remoteAssets;
+    NSURL * _fileURL;
+    NSString * _name;
+    NSMutableDictionary * _remoteAssets;
 }
 
 @property (nonatomic, readonly) NSURL *fileURL;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSDictionary *remoteAssets;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)deviceSpecificAsset;
 - (id)deviceSpecificAssetForScreenScale:(float)arg1 suffix:(id)arg2;
 - (id)fileURL;

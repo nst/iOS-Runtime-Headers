@@ -3,9 +3,9 @@
  */
 
 @interface NSMassFormatter : NSFormatter <NSObservable, NSObserver> {
-    void *_formatter;
-    BOOL _isForPersonMassUse;
-    void *_reserved;
+    void * _formatter;
+    BOOL  _isForPersonMassUse;
+    void * _reserved;
 }
 
 @property (readonly, copy) NSString *debugDescription;

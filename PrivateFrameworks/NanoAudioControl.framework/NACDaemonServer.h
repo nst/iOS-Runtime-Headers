@@ -3,7 +3,7 @@
  */
 
 @interface NACDaemonServer : NSObject {
-    NACIDSServer *_idsServer;
+    NACIDSServer * _idsServer;
 }
 
 + (id)companionServer;

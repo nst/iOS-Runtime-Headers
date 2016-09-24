@@ -3,16 +3,16 @@
  */
 
 @interface NSFetchRequestExpression : NSExpression {
-    NSExpression *_fetchRequest;
+    NSExpression * _fetchRequest;
     struct _fetchExpressionFlags { 
         unsigned int isCountOnly : 1; 
         unsigned int _RESERVED : 31; 
-    } _flags;
-    NSExpression *_managedObjectContext;
-    void *_reserved1;
-    void *_reserved2;
-    void *_reserved3;
-    void *_reserved4;
+    }  _flags;
+    NSExpression * _managedObjectContext;
+    void * _reserved1;
+    void * _reserved2;
+    void * _reserved3;
+    void * _reserved4;
 }
 
 @property (readonly) NSExpression *contextExpression;

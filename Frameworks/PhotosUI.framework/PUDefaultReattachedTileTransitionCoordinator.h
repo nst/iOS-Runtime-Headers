@@ -3,7 +3,7 @@
  */
 
 @interface PUDefaultReattachedTileTransitionCoordinator : PUDefaultTileTransitionCoordinator {
-    PUTileReattachmentContext *_context;
+    PUTileReattachmentContext * _context;
 }
 
 @property (nonatomic, retain) PUTileReattachmentContext *context;

@@ -3,19 +3,16 @@
  */
 
 @interface MPViewController : UIViewController <MPAVControllerNode, MPControllerProtocol> {
-    unsigned int _appearing;
-    id _delegate;
-    BOOL _idleTimerDisabled;
-    int _interfaceOrientation;
-    MPAVItem *_item;
-    unsigned int _observesApplicationSuspendResumeEventsOnly;
-    MPAVController *_player;
-    int _playerLockedCount;
-    id /* block */ _popViewControllerHandler;
-    MPTransitionController *_pushedTransitionController;
-    MPViewController *_pushedViewController;
-    BOOL _registeredForPlayerNotifications;
-    unsigned int _showOverlayWhileAppearingDisabled;
+    unsigned int  _appearing;
+    id  _delegate;
+    BOOL  _idleTimerDisabled;
+    int  _interfaceOrientation;
+    MPAVItem * _item;
+    unsigned int  _observesApplicationSuspendResumeEventsOnly;
+    MPAVController * _player;
+    int  _playerLockedCount;
+    BOOL  _registeredForPlayerNotifications;
+    unsigned int  _showOverlayWhileAppearingDisabled;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -27,15 +24,12 @@
 @property (nonatomic) BOOL observesApplicationSuspendResumeEventsOnly;
 @property (nonatomic) int orientation;
 @property (nonatomic, retain) MPAVController *player;
-@property (nonatomic, copy) id /* block */ popViewControllerHandler;
 @property (nonatomic) BOOL registeredForPlayerNotifications;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, retain) UIView *view;
 
 - (void).cxx_destruct;
 - (BOOL)_canReloadView;
-- (void)_popTransitionEnded:(id)arg1;
-- (void)_pushTransitionEnded:(id)arg1;
 - (void)addChildViewController:(id)arg1;
 - (void)applicationDidResumeEventsOnly;
 - (void)applicationDidSuspendEventsOnly;
@@ -61,9 +55,6 @@
 - (BOOL)observesApplicationSuspendResumeEventsOnly;
 - (int)orientation;
 - (id)player;
-- (id)popViewControllerAnimated:(BOOL)arg1;
-- (id /* block */)popViewControllerHandler;
-- (void)pushViewController:(id)arg1 withTransition:(id)arg2;
 - (void)registerForPlayerNotifications;
 - (BOOL)registeredForPlayerNotifications;
 - (void)removeChildViewController:(id)arg1;
@@ -75,7 +66,6 @@
 - (void)setOrientation:(int)arg1;
 - (void)setOrientation:(int)arg1 animate:(BOOL)arg2;
 - (void)setPlayer:(id)arg1;
-- (void)setPopViewControllerHandler:(id /* block */)arg1;
 - (void)setRegisteredForPlayerNotifications:(BOOL)arg1;
 - (void)setView:(id)arg1;
 - (void)startTicking;
@@ -84,7 +74,6 @@
 - (void)unregisterForPlayerNotifications;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 - (void)willChangeToInterfaceOrientation:(int)arg1;
 
 @end

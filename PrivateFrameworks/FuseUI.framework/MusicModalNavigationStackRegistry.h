@@ -3,8 +3,8 @@
  */
 
 @interface MusicModalNavigationStackRegistry : NSObject <MusicClientContextConsuming, SKUINavigationControllerDelegate, SKUINavigationDocumentDelegate, UINavigationControllerDelegate> {
-    MusicClientContext *_clientContext;
-    NSMapTable *_navigationControllerToItemMap;
+    MusicClientContext * _clientContext;
+    NSMapTable * _navigationControllerToItemMap;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

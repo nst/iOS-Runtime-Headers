@@ -7,7 +7,10 @@
 
 - (unsigned int)cpuCacheMode;
 - (<MTLDevice> *)device;
+- (<MTLHeap> *)heap;
+- (BOOL)isAliasable;
 - (NSString *)label;
+- (void)makeAliasable;
 - (void)setLabel:(NSString *)arg1;
 - (unsigned int)setPurgeableState:(unsigned int)arg1;
 - (unsigned int)storageMode;

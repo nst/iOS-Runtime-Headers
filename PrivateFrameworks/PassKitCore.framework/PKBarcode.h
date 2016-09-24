@@ -3,10 +3,10 @@
  */
 
 @interface PKBarcode : NSObject <NSSecureCoding> {
-    NSString *_altText;
-    int _format;
-    NSData *_messageData;
-    NSDictionary *_options;
+    NSString * _altText;
+    int  _format;
+    NSData * _messageData;
+    NSDictionary * _options;
 }
 
 @property (nonatomic, copy) NSString *altText;
@@ -19,8 +19,8 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)altText;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (int)format;
 - (unsigned int)hash;
@@ -35,7 +35,7 @@
 - (void)setMessageData:(id)arg1;
 - (void)setOptions:(id)arg1;
 
-// Image: /System/Library/Frameworks/PassKit.framework/PassKit
+// Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
 
 - (id)_imageFromBarcodeMessage;
 - (id)image;

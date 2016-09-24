@@ -11,7 +11,7 @@
                 struct Database {} *__first_; 
             } __end_cap_; 
         } m_databases; 
-    } _databaseStatus;
+    }  _databaseStatus;
 }
 
 @property (nonatomic, readonly) unsigned int databaseCount;
@@ -24,6 +24,6 @@
 - (id)lastUpdateTimeOfDatabaseAtIndex:(unsigned int)arg1;
 - (id)nameOfDatabaseAtIndex:(unsigned int)arg1;
 - (id)nextPollingTimeOfDatabaseAtIndex:(unsigned int)arg1;
-- (unsigned long long)sizeOfDatabaseAtIndex:(unsigned int)arg1;
+- (unsigned int)sizeOfDatabaseAtIndex:(unsigned int)arg1;
 
 @end

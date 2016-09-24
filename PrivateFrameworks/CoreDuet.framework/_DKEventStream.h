@@ -3,14 +3,16 @@
  */
 
 @interface _DKEventStream : NSObject <NSSecureCoding> {
-    _CDEventStreamProperties *_eventProperties;
-    _DKObjectType *_eventValueType;
-    NSString *_name;
+    _CDEventStreamProperties * _eventProperties;
+    _DKObjectType * _eventValueType;
+    NSString * _name;
 }
 
 @property (readonly) _CDEventStreamProperties *eventProperties;
 @property (readonly) _DKObjectType *eventValueType;
 @property (readonly) NSString *name;
+
+// Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
 
 + (id)eventStreamWithName:(id)arg1;
 + (id)eventStreamWithName:(id)arg1 valueType:(id)arg2;
@@ -22,8 +24,11 @@
 - (id)eventProperties;
 - (id)eventValueType;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithName:(id)arg1 valueType:(id)arg2;
+- (id)initWithName:(id)arg1 valueType:(id)arg2 cache:(id)arg3;
 - (id)name;
-- (void)setupEventProperties:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
+
+- (id)shortDescription;
 
 @end

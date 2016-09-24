@@ -19,7 +19,6 @@
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)deleteCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)finalize;
 - (void)insertAttributedString:(id)arg1 atIndex:(unsigned int)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToAttributedString:(id)arg1;

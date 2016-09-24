@@ -3,7 +3,7 @@
  */
 
 @interface BWFigCaptureSessionExternal : NSObject <BWGraphStatusDelegate> {
-    struct OpaqueFigCaptureSession { } *_captureSession;
+    struct OpaqueFigCaptureSession { } * _captureSession;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,6 +12,7 @@
 @property (readonly) Class superclass;
 
 - (void)graph:(id)arg1 didFinishStartingWithError:(long)arg2;
+- (void)graphDidPrepareNodes:(id)arg1;
 - (id)initWithFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
 
 @end

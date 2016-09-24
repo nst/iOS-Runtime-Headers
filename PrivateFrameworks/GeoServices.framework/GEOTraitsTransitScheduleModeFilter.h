@@ -3,30 +3,24 @@
  */
 
 @interface GEOTraitsTransitScheduleModeFilter : PBCodable <NSCopying> {
-    double _additionalTimeLimit;
     struct { 
-        unsigned int additionalTimeLimit : 1; 
         unsigned int numAdditionalDepartures : 1; 
-    } _has;
-    unsigned int _numAdditionalDepartures;
-    GEOTraitsTransitScheduleTimeRange *_timeRange;
+    }  _has;
+    unsigned int  _numAdditionalDepartures;
+    GEOTraitsTransitScheduleTimeRange * _timeRange;
 }
 
-@property (nonatomic) double additionalTimeLimit;
-@property (nonatomic) BOOL hasAdditionalTimeLimit;
 @property (nonatomic) BOOL hasNumAdditionalDepartures;
 @property (nonatomic, readonly) BOOL hasTimeRange;
 @property (nonatomic) unsigned int numAdditionalDepartures;
 @property (nonatomic, retain) GEOTraitsTransitScheduleTimeRange *timeRange;
 
-- (double)additionalTimeLimit;
 - (void)configureWithDefaultStartTime:(double)arg1 duration:(double)arg2 numAdditionalDepartures:(unsigned int)arg3;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAdditionalTimeLimit;
 - (BOOL)hasNumAdditionalDepartures;
 - (BOOL)hasTimeRange;
 - (unsigned int)hash;
@@ -34,8 +28,6 @@
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)numAdditionalDepartures;
 - (BOOL)readFrom:(id)arg1;
-- (void)setAdditionalTimeLimit:(double)arg1;
-- (void)setHasAdditionalTimeLimit:(BOOL)arg1;
 - (void)setHasNumAdditionalDepartures:(BOOL)arg1;
 - (void)setNumAdditionalDepartures:(unsigned int)arg1;
 - (void)setTimeRange:(id)arg1;

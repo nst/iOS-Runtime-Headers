@@ -3,8 +3,8 @@
  */
 
 @interface _UIKBRTObject : NSObject {
-    NSMutableArray *_owner;
-    NSObject<OS_dispatch_queue> *_syncQueue;
+    NSMutableArray * _owner;
+    NSObject<OS_dispatch_queue> * _syncQueue;
 }
 
 - (void).cxx_destruct;

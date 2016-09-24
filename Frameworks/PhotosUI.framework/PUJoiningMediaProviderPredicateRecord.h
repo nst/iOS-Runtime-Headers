@@ -3,8 +3,8 @@
  */
 
 @interface PUJoiningMediaProviderPredicateRecord : NSObject {
-    PUMediaProvider *_mediaProvider;
-    id /* block */ _predicate;
+    PUMediaProvider * _mediaProvider;
+    id /* block */  _predicate;
 }
 
 @property (nonatomic, readonly) PUMediaProvider *mediaProvider;

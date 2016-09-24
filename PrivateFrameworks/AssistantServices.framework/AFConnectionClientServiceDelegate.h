@@ -3,7 +3,7 @@
  */
 
 @interface AFConnectionClientServiceDelegate : NSObject <AFClientServiceDelegate> {
-    AFConnection *_connection;
+    AFConnection * _connection;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -16,6 +16,10 @@
 - (oneway void)aceConnectionWillRetryOnError:(id)arg1;
 - (oneway void)acousticIDRequestDidFinishWithSuccess:(BOOL)arg1;
 - (oneway void)acousticIDRequestWillStart;
+- (oneway void)audioSessionDidBeginInterruption;
+- (oneway void)audioSessionDidEndInterruption:(BOOL)arg1;
+- (oneway void)audioSessionIDChanged:(unsigned int)arg1;
+- (oneway void)cacheImage:(id)arg1;
 - (oneway void)getBulletinContext:(id /* block */)arg1;
 - (id)initWithConnection:(id)arg1;
 - (oneway void)invalidateCurrentUserActivity;
@@ -30,13 +34,19 @@
 - (oneway void)shouldSpeakChanged:(BOOL)arg1;
 - (oneway void)speechRecognitionDidFail:(id)arg1;
 - (oneway void)speechRecognized:(id)arg1;
+- (oneway void)speechRecognizedAdditionalInterpretation:(id)arg1 refId:(id)arg2;
 - (oneway void)speechRecognizedPartialResult:(id)arg1;
 - (oneway void)speechRecordingDidBeginOnAVRecordRoute:(id)arg1;
 - (oneway void)speechRecordingDidCancel;
 - (oneway void)speechRecordingDidChangeAVRecordRoute:(id)arg1;
 - (oneway void)speechRecordingDidEnd;
 - (oneway void)speechRecordingDidFail:(id)arg1;
+- (oneway void)speechRecordingDidFinishRecognitionUpdateWithError:(id)arg1;
+- (oneway void)speechRecordingDidRecognizePhrases:(id)arg1 utterances:(id)arg2;
+- (oneway void)speechRecordingDidUpdateRecognitionPhrases:(id)arg1 utterances:(id)arg2 refId:(id)arg3;
+- (oneway void)speechRecordingPerformTwoShotPromptWithType:(int)arg1 reply:(id /* block */)arg2;
 - (oneway void)speechRecordingStartpointDetected;
+- (oneway void)speechRecordingWillBeginRecognitionUpdateForTask:(id)arg1;
 - (oneway void)speechRecordingWillBeginWithLevelsSharedMem:(id)arg1;
 
 @end

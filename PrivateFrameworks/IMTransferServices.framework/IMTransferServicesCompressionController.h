@@ -3,7 +3,7 @@
  */
 
 @interface IMTransferServicesCompressionController : NSObject {
-    NSMutableDictionary *_blockMap;
+    NSMutableDictionary * _blockMap;
 }
 
 + (id)sharedInstance;

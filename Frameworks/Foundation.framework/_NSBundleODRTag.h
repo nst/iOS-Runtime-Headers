@@ -3,8 +3,8 @@
  */
 
 @interface _NSBundleODRTag : NSObject <NSSecureCoding> {
-    BOOL _alwaysPreserved;
-    double _preservationPriority;
+    BOOL  _alwaysPreserved;
+    double  _preservationPriority;
 }
 
 @property BOOL alwaysPreserved;

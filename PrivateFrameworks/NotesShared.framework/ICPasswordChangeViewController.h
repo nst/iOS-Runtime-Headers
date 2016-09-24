@@ -3,32 +3,32 @@
  */
 
 @interface ICPasswordChangeViewController : UIViewController <ICScrollViewKeyboardResizerDelegate, UITextFieldDelegate> {
-    UIBarButtonItem *_cancelButton;
-    id /* block */ _completionHandler;
-    NSLayoutConstraint *_disclaimerHeightConstraint;
-    ICLearnMoreTextView *_disclaimerLabel;
-    UIBarButtonItem *_doneButton;
-    UILabel *_headerLabel;
-    UILabel *_hintLabel;
-    UITextField *_hintTextField;
-    int _incorrectPasswordAttempts;
-    BOOL _isInSettings;
-    BOOL _isSetupForChangePassword;
-    BOOL _isSetupForInitialPassword;
-    NSLayoutConstraint *_oldPasswordHeightConstraint;
-    UILabel *_oldPasswordLabel;
-    UITextField *_oldPasswordTextField;
-    NSArray *_orderedTextFields;
-    UILabel *_passwordLabel;
-    UITextField *_passwordTextField;
-    ICPasswordUtilities *_passwordUtilities;
-    UIScrollView *_scrollView;
-    ICScrollViewKeyboardResizer *_scrollViewResizer;
-    UIView *_touchIDContainer;
-    NSLayoutConstraint *_touchIDZeroHeightConstraint;
-    UISwitch *_useTouchIDSwitch;
-    UILabel *_verifyLabel;
-    UITextField *_verifyTextField;
+    UIBarButtonItem * _cancelButton;
+    id /* block */  _completionHandler;
+    NSLayoutConstraint * _disclaimerHeightConstraint;
+    ICLearnMoreTextView * _disclaimerLabel;
+    UIBarButtonItem * _doneButton;
+    UILabel * _headerLabel;
+    UILabel * _hintLabel;
+    UITextField * _hintTextField;
+    int  _incorrectPasswordAttempts;
+    BOOL  _isInSettings;
+    BOOL  _isSetupForChangePassword;
+    BOOL  _isSetupForInitialPassword;
+    NSLayoutConstraint * _oldPasswordHeightConstraint;
+    UILabel * _oldPasswordLabel;
+    UITextField * _oldPasswordTextField;
+    NSArray * _orderedTextFields;
+    UILabel * _passwordLabel;
+    UITextField * _passwordTextField;
+    ICPasswordUtilities * _passwordUtilities;
+    UIScrollView * _scrollView;
+    ICScrollViewKeyboardResizer * _scrollViewResizer;
+    UIView * _touchIDContainer;
+    NSLayoutConstraint * _touchIDZeroHeightConstraint;
+    UISwitch * _useTouchIDSwitch;
+    UILabel * _verifyLabel;
+    UITextField * _verifyTextField;
 }
 
 @property (nonatomic) UIBarButtonItem *cancelButton;
@@ -82,6 +82,7 @@
 - (BOOL)isInSettings;
 - (BOOL)isSetupForChangePassword;
 - (BOOL)isSetupForInitialPassword;
+- (id)keyboardResizerScrollView;
 - (id)oldPasswordHeightConstraint;
 - (id)oldPasswordLabel;
 - (id)oldPasswordTextField;
@@ -138,6 +139,6 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

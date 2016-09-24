@@ -3,12 +3,12 @@
  */
 
 @interface NSInvocation : NSObject {
-    id _container;
-    void *_frame;
-    unsigned char _reserved;
-    unsigned char _retainedArgs;
-    void *_retdata;
-    id _signature;
+    id  _container;
+    void * _frame;
+    unsigned char  _reserved;
+    unsigned char  _retainedArgs;
+    void * _retdata;
+    id  _signature;
 }
 
 @property (readonly) BOOL argumentsRetained;

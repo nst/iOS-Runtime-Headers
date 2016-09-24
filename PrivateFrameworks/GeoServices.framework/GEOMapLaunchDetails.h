@@ -3,8 +3,8 @@
  */
 
 @interface GEOMapLaunchDetails : PBCodable <NSCopying> {
-    NSString *_launchUri;
-    NSString *_sourceAppId;
+    NSString * _launchUri;
+    NSString * _sourceAppId;
 }
 
 @property (nonatomic, readonly) BOOL hasLaunchUri;

@@ -3,15 +3,15 @@
  */
 
 @interface NEVPNProtocolIPSec : NEVPNProtocol {
-    int _authenticationMethod;
-    BOOL _extendedAuthPasswordPrompt;
-    NSArray *_legacyExchangeMode;
-    NSArray *_legacyProposals;
-    NSString *_localIdentifier;
-    NSString *_remoteIdentifier;
-    NEKeychainItem *_sharedSecretKeychainItem;
-    NSData *_sharedSecretReference;
-    BOOL _useExtendedAuthentication;
+    int  _authenticationMethod;
+    BOOL  _extendedAuthPasswordPrompt;
+    NSArray * _legacyExchangeMode;
+    NSArray * _legacyProposals;
+    NSString * _localIdentifier;
+    NSString * _remoteIdentifier;
+    NEKeychainItem * _sharedSecretKeychainItem;
+    NSData * _sharedSecretReference;
+    BOOL  _useExtendedAuthentication;
 }
 
 @property int authenticationMethod;
@@ -43,6 +43,7 @@
 - (id)legacyProposals;
 - (id)localIdentifier;
 - (void)migratePasswordsFromPreferences:(struct __SCPreferences { }*)arg1;
+- (BOOL)needToUpdateKeychain;
 - (id)remoteIdentifier;
 - (void)removeKeychainItemsInDomain:(int)arg1 keepIdentity:(bool)arg2;
 - (void)setAuthenticationMethod:(int)arg1;

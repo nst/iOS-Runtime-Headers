@@ -9,13 +9,13 @@
         unsigned int messageSize : 1; 
         unsigned int priority : 1; 
         unsigned int timestamp : 1; 
-    } _has;
-    unsigned long long _isFromDefaultPairedDevice;
-    unsigned long long _linkType;
-    unsigned long long _messageSize;
-    unsigned long long _priority;
-    NSString *_service;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _isFromDefaultPairedDevice;
+    unsigned long long  _linkType;
+    unsigned long long  _messageSize;
+    unsigned long long  _priority;
+    NSString * _service;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL hasIsFromDefaultPairedDevice;

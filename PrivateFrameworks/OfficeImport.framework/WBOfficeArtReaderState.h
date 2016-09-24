@@ -3,9 +3,9 @@
  */
 
 @interface WBOfficeArtReaderState : OABReaderState {
-    int mCurrentTextType;
-    WBReader *mReader;
-    WXReadState *mXmlDocumentState;
+    int  mCurrentTextType;
+    WBReader * mReader;
+    WXReadState * mXmlDocumentState;
 }
 
 @property (nonatomic) int currentTextType;

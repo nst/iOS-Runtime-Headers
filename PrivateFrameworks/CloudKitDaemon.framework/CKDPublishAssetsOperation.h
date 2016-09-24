@@ -3,13 +3,13 @@
  */
 
 @interface CKDPublishAssetsOperation : CKDDatabaseOperation {
-    unsigned int _URLOptions;
-    id /* block */ _assetPublishedBlock;
-    NSOperation *_fetchRecordsOperation;
-    NSMutableDictionary *_fetchedRecordsByID;
-    NSDictionary *_fileNamesByAssetFieldNames;
-    NSArray *_recordIDs;
-    unsigned int _requestedTTL;
+    unsigned int  _URLOptions;
+    id /* block */  _assetPublishedBlock;
+    NSOperation * _fetchRecordsOperation;
+    NSMutableDictionary * _fetchedRecordsByID;
+    NSDictionary * _fileNamesByAssetFieldNames;
+    NSArray * _recordIDs;
+    unsigned int  _requestedTTL;
 }
 
 @property (nonatomic) unsigned int URLOptions;
@@ -27,7 +27,7 @@
 - (void)_fetchPCSForRecords;
 - (void)_fetchRecords;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (id /* block */)assetPublishedBlock;
 - (void)cancel;
 - (id)fetchRecordsOperation;

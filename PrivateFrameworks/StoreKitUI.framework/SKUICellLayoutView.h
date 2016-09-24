@@ -3,7 +3,7 @@
  */
 
 @interface SKUICellLayoutView : UIView {
-    SKUICellLayout *_layout;
+    SKUICellLayout * _layout;
 }
 
 @property (nonatomic, retain) SKUICellLayout *layout;

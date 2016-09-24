@@ -3,8 +3,8 @@
  */
 
 @interface PSKeychainSyncPhoneNumber : NSObject {
-    KeychainSyncCountryInfo *_countryInfo;
-    NSString *_digits;
+    KeychainSyncCountryInfo * _countryInfo;
+    NSString * _digits;
 }
 
 @property (nonatomic, retain) KeychainSyncCountryInfo *countryInfo;

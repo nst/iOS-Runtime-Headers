@@ -3,8 +3,8 @@
  */
 
 @interface CANodeButton : UIButton {
-    NSURL *_url;
-    BOOL hasLabel;
+    NSURL * _url;
+    BOOL  hasLabel;
 }
 
 @property BOOL hasLabel;

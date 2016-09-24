@@ -3,7 +3,7 @@
  */
 
 @interface _MFQuoteLevelPopoverViewController : UITableViewController <UIPopoverPresentationControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
-    id /* block */ _decisionBlock;
+    id /* block */  _decisionBlock;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -17,7 +17,7 @@
 - (void)dealloc;
 - (id /* block */)decisionBlock;
 - (id)initWithStyle:(int)arg1;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)setDecisionBlock:(id /* block */)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

@@ -3,8 +3,8 @@
  */
 
 @interface SiriUIConfiguration : NSObject <NSCopying> {
-    int _flamesViewFidelity;
-    BOOL _isSystemHostedPresentation;
+    int  _flamesViewFidelity;
+    BOOL  _isSystemHostedPresentation;
 }
 
 @property (nonatomic, readonly) int flamesViewFidelity;

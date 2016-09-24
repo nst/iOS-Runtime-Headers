@@ -3,7 +3,7 @@
  */
 
 @interface GQDWPText : NSObject {
-    char *mContent;
+    char * mContent;
 }
 
 - (const char *)content;

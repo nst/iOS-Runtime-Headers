@@ -3,32 +3,35 @@
  */
 
 @interface FTDeviceSupport : NSObject {
-    BOOL _accountModificationRestricted;
-    BOOL _blockPost;
-    int _carrierBundleSupported;
-    BOOL _commCenterDead;
-    BOOL _faceTimeBlocked;
-    int _iMessageAllowedToken;
-    BOOL _iMessageBlocked;
-    BOOL _mmsConfigured;
-    NSString *_number;
-    int _performanceClass;
-    BOOL _shouldUseSIMState;
-    BOOL _simBecameNotReady;
-    BOOL _simInserted;
-    BOOL _supportsBackCamera;
-    BOOL _supportsCellularData;
-    BOOL _supportsFT;
-    BOOL _supportsFTA;
-    BOOL _supportsFrontCamera;
-    BOOL _supportsHandoff;
-    BOOL _supportsMMS;
-    BOOL _supportsNonWiFiFaceTime;
-    BOOL _supportsSMS;
-    BOOL _supportsTethering;
-    BOOL _supportsWLAN;
-    BOOL _supportsWiFi;
-    BOOL _supportsiMessage;
+    BOOL  _accountModificationRestricted;
+    BOOL  _blockPost;
+    int  _carrierBundleSupported;
+    BOOL  _commCenterDead;
+    BOOL  _faceTimeBlocked;
+    int  _iMessageAllowedToken;
+    BOOL  _iMessageBlocked;
+    BOOL  _mmsConfigured;
+    NSString * _number;
+    int  _performanceClass;
+    BOOL  _shouldUseSIMState;
+    BOOL  _simBecameNotReady;
+    BOOL  _simInserted;
+    BOOL  _supportsApplePay;
+    BOOL  _supportsBackCamera;
+    BOOL  _supportsCellularData;
+    BOOL  _supportsFT;
+    BOOL  _supportsFTA;
+    BOOL  _supportsFrontCamera;
+    BOOL  _supportsHandoff;
+    BOOL  _supportsMMS;
+    BOOL  _supportsNonWiFiFaceTime;
+    BOOL  _supportsRegistrationControl;
+    BOOL  _supportsSMS;
+    BOOL  _supportsTethering;
+    BOOL  _supportsWLAN;
+    BOOL  _supportsWiFi;
+    BOOL  _supportsiMessage;
+    BOOL  _wantsForcedCelluarQueries;
 }
 
 @property (nonatomic, readonly) NSDictionary *CTNetworkInformation;
@@ -56,6 +59,7 @@
 @property (nonatomic, readonly) BOOL iMessageSupported;
 @property (nonatomic, readonly) BOOL identityServicesSupported;
 @property (nonatomic, readonly) BOOL isC2KEquipment;
+@property (nonatomic, readonly) BOOL isInMultiUserMode;
 @property (nonatomic, readonly) BOOL isTelephonyDevice;
 @property (nonatomic, readonly) BOOL madridAvailable;
 @property (nonatomic, readonly) BOOL madridBlocked;
@@ -70,6 +74,7 @@
 @property (nonatomic, readonly) NSString *productVersion;
 @property (nonatomic, readonly) BOOL registrationSupported;
 @property (nonatomic, readonly) BOOL supportsAppleIDIdentification;
+@property (nonatomic, readonly) BOOL supportsApplePay;
 @property (nonatomic, readonly) BOOL supportsBackFacingCamera;
 @property (nonatomic, readonly) BOOL supportsCellularData;
 @property (nonatomic, readonly) BOOL supportsFrontFacingCamera;
@@ -77,6 +82,7 @@
 @property (nonatomic, readonly) BOOL supportsMMS;
 @property (nonatomic, readonly) BOOL supportsNonWiFiCalling;
 @property (nonatomic, readonly) BOOL supportsNonWiFiFaceTime;
+@property (nonatomic, readonly) BOOL supportsRegistrationControl;
 @property (nonatomic, readonly) BOOL supportsSMS;
 @property (nonatomic, readonly) BOOL supportsSMSIdentification;
 @property (nonatomic, readonly) BOOL supportsSimultaneousVoiceAndDataRightNow;
@@ -87,6 +93,7 @@
 @property (nonatomic, readonly) NSDictionary *telephonyCapabilities;
 @property (nonatomic, readonly) NSString *userAgentString;
 @property (nonatomic, readonly) BOOL wantsBreakBeforeMake;
+@property (nonatomic, readonly) BOOL wantsForcedCelluarQueries;
 
 + (id)sharedInstance;
 
@@ -139,12 +146,14 @@
 - (BOOL)identityServicesSupported;
 - (id)init;
 - (BOOL)isC2KEquipment;
+- (BOOL)isInMultiUserMode;
 - (BOOL)isTelephonyDevice;
 - (BOOL)madridAvailable;
 - (BOOL)madridBlocked;
 - (BOOL)madridSupported;
 - (BOOL)mmsConfigured;
 - (id)model;
+- (BOOL)nonWifiAvailableForBundleId:(id)arg1;
 - (BOOL)nonWifiCallingAvailable;
 - (BOOL)nonWifiFaceTimeAvailable;
 - (int)performanceClass;
@@ -155,6 +164,7 @@
 - (void)profileConnectionDidReceiveRestrictionChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (BOOL)registrationSupported;
 - (BOOL)supportsAppleIDIdentification;
+- (BOOL)supportsApplePay;
 - (BOOL)supportsBackFacingCamera;
 - (BOOL)supportsCellularData;
 - (BOOL)supportsFrontFacingCamera;
@@ -162,6 +172,7 @@
 - (BOOL)supportsMMS;
 - (BOOL)supportsNonWiFiCalling;
 - (BOOL)supportsNonWiFiFaceTime;
+- (BOOL)supportsRegistrationControl;
 - (BOOL)supportsSMS;
 - (BOOL)supportsSMSIdentification;
 - (BOOL)supportsSimultaneousVoiceAndDataRightNow;
@@ -172,5 +183,7 @@
 - (id)telephonyCapabilities;
 - (id)userAgentString;
 - (BOOL)wantsBreakBeforeMake;
+- (BOOL)wantsForcedCelluarQueries;
+- (BOOL)wifiAllowedForBundleId:(id)arg1;
 
 @end

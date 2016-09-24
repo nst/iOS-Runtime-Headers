@@ -3,7 +3,7 @@
  */
 
 @interface CKCompoundTypePredicateValidator : CKPredicateValidatorInstance {
-    unsigned int _type;
+    unsigned int  _type;
 }
 
 @property (nonatomic) unsigned int type;

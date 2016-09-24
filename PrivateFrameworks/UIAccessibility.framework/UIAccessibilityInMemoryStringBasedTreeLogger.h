@@ -3,10 +3,10 @@
  */
 
 @interface UIAccessibilityInMemoryStringBasedTreeLogger : NSObject <UIAccessibilityElementTraversalTreeLogger> {
-    NSMutableArray *_currentPrefix;
-    NSString *_descriptionKey;
-    NSString *_prefix;
-    NSMutableString *_stringRepresentation;
+    NSMutableArray * _currentPrefix;
+    NSString * _descriptionKey;
+    NSString * _prefix;
+    NSMutableString * _stringRepresentation;
 }
 
 @property (readonly, copy) NSString *debugDescription;

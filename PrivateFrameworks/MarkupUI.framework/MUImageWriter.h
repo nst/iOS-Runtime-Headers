@@ -4,6 +4,7 @@
 
 @interface MUImageWriter : NSObject
 
-- (void)writeDataOfType:(id)arg1 toConsumer:(struct CGDataConsumer { }*)arg2 withAnnotationsFromController:(id)arg3 onBaseImage:(id)arg4;
+- (id)encodedModelFromAnnotationsController:(id)arg1 encrypt:(BOOL)arg2;
+- (BOOL)writeUsingBaseImage:(id)arg1 withAnnotationsFromController:(id)arg2 asImageOfType:(id)arg3 toConsumer:(struct CGDataConsumer { }*)arg4 embedSourceImageAndAnnotationsAsMetadata:(BOOL)arg5 encryptPrivateMetadata:(BOOL)arg6 error:(id*)arg7;
 
 @end

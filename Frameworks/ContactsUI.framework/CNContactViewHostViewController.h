@@ -3,9 +3,9 @@
  */
 
 @interface CNContactViewHostViewController : _UIRemoteViewController <CNContactContentViewController, CNContactViewHostProtocol> {
-    <NSCopying> *_currentRequestIdentifier;
-    <CNContactViewHostProtocol> *_delegate;
-    NSExtension *_extension;
+    <NSCopying> * _currentRequestIdentifier;
+    <CNContactViewHostProtocol> * _delegate;
+    NSExtension * _extension;
 }
 
 @property (nonatomic, retain) <NSCopying> *currentRequestIdentifier;
@@ -23,6 +23,7 @@
 - (void).cxx_destruct;
 - (id)currentRequestIdentifier;
 - (id)delegate;
+- (void)didChangePreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)didChangeToEditMode:(BOOL)arg1;
 - (void)didCompleteWithContact:(id)arg1;
 - (void)didDeleteContact:(id)arg1;
@@ -38,5 +39,7 @@
 - (BOOL)shouldPerformDefaultActionForContact:(id)arg1 propertyKey:(id)arg2 propertyIdentifier:(id)arg3;
 - (void)toggleEditing;
 - (void)updateEditing:(BOOL)arg1 doneButtonEnabled:(BOOL)arg2 doneButtonText:(id)arg3;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

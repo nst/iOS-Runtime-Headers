@@ -3,7 +3,7 @@
  */
 
 @interface _HKStringSample : _HKBinarySample {
-    NSString *_stringValue;
+    NSString * _stringValue;
 }
 
 @property (readonly) _HKStringSampleType *stringType;

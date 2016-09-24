@@ -3,9 +3,9 @@
  */
 
 @interface SKUIComposeReviewFormViewController : SUViewController <SKUIComposeReviewViewDelegate> {
-    SKUIComposeReviewView *_composeView;
-    <SKUIComposeReviewFormDelegate> *_delegate;
-    SKUIReviewMetadata *_review;
+    SKUIComposeReviewView * _composeView;
+    <SKUIComposeReviewFormDelegate> * _delegate;
+    SKUIReviewMetadata * _review;
 }
 
 @property (readonly, copy) NSString *debugDescription;

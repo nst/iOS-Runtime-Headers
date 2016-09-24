@@ -3,10 +3,10 @@
  */
 
 @interface MCPlainCertificatePayload : MCCertificatePayload {
-    NSData *_certificateData;
-    NSString *_certificateFileName;
-    int _dataEncoding;
-    NSString *_password;
+    NSData * _certificateData;
+    NSString * _certificateFileName;
+    int  _dataEncoding;
+    NSString * _password;
 }
 
 @property (nonatomic, readonly, retain) NSData *certificateData;

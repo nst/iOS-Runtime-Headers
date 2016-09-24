@@ -3,8 +3,8 @@
  */
 
 @interface TSCECalcTimeoutObject : NSObject {
-    NSString *_blockingIdentifier;
-    double _timeoutInterval;
+    NSString * _blockingIdentifier;
+    double  _timeoutInterval;
 }
 
 @property (readonly) NSString *blockingIdentifier;

@@ -3,8 +3,8 @@
  */
 
 @interface YTCaptionTrackRequest : YTXMLHTTPRequest {
-    YTCaptionTrack *_captionTrack;
-    <YTCaptionTrackRequestDelegate> *_delegate;
+    YTCaptionTrack * _captionTrack;
+    <YTCaptionTrackRequestDelegate> * _delegate;
 }
 
 - (void)_requestCaptionTrackDataWithURL:(id)arg1;

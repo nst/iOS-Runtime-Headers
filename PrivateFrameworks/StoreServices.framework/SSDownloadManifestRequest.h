@@ -3,9 +3,9 @@
  */
 
 @interface SSDownloadManifestRequest : SSRequest <SSXPCCoding> {
-    int _manifestFormat;
-    BOOL _shouldHideUserPrompts;
-    NSURLRequest *_urlRequest;
+    int  _manifestFormat;
+    BOOL  _shouldHideUserPrompts;
+    NSURLRequest * _urlRequest;
 }
 
 @property (readonly) NSURLRequest *URLRequest;

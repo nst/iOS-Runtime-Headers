@@ -3,15 +3,15 @@
  */
 
 @interface PLQLDuetInMemoryCache : NSObject {
-    double _cellIn;
-    double _cellOut;
-    int _refCount;
-    NSDictionary *_startArgs;
-    double _startTime;
-    NSDictionary *_stopArgs;
-    double _stopTime;
-    double _wifiIn;
-    double _wifiOut;
+    double  _cellIn;
+    double  _cellOut;
+    int  _refCount;
+    NSDictionary * _startArgs;
+    double  _startTime;
+    NSDictionary * _stopArgs;
+    double  _stopTime;
+    double  _wifiIn;
+    double  _wifiOut;
 }
 
 @property double cellIn;

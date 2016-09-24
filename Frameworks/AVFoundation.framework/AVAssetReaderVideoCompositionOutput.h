@@ -3,7 +3,7 @@
  */
 
 @interface AVAssetReaderVideoCompositionOutput : AVAssetReaderOutput {
-    AVAssetReaderVideoCompositionOutputInternal *_videoCompositionOutputInternal;
+    AVAssetReaderVideoCompositionOutputInternal * _videoCompositionOutputInternal;
 }
 
 @property (nonatomic, readonly) <AVVideoCompositing> *customVideoCompositor;
@@ -16,9 +16,11 @@
 - (id)_asset;
 - (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
 - (id)_errorForOSStatus:(long)arg1;
+- (id)_formatDescriptions;
 - (BOOL)_prepareForReadingReturningError:(id*)arg1;
 - (void)_setVideoComposition:(id)arg1;
 - (void)_setVideoComposition:(id)arg1 customVideoCompositorSession:(id)arg2;
+- (id)_videoCompositionProcessorColorProperties;
 - (BOOL)alwaysCopiesSampleData;
 - (id)customVideoCompositor;
 - (void)dealloc;

@@ -3,7 +3,7 @@
  */
 
 @interface NSOldValueObservationTransformer : NSObservationTransformer {
-    id _lastValue;
+    id  _lastValue;
 }
 
 + (id)oldValuesTransformer;

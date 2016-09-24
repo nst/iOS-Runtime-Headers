@@ -3,13 +3,13 @@
  */
 
 @interface CRCameraReaderOutputInternal : NSObject {
-    NSNumber *_dayValue;
-    NSString *_formattedStringValue;
-    NSNumber *_monthValue;
-    NSString *_stringValue;
-    NSString *_type;
-    NSArray *_vertices;
-    NSNumber *_yearValue;
+    NSNumber * _dayValue;
+    NSString * _formattedStringValue;
+    NSNumber * _monthValue;
+    NSString * _stringValue;
+    NSString * _type;
+    NSArray * _vertices;
+    NSNumber * _yearValue;
 }
 
 @property (retain) NSNumber *dayValue;

@@ -3,8 +3,8 @@
  */
 
 @interface NSConcreteSetChange : NSSetChange {
-    unsigned int _changeType;
-    id _value;
+    unsigned int  _changeType;
+    id  _value;
 }
 
 - (unsigned int)changeType;

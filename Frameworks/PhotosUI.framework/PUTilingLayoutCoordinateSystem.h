@@ -4,13 +4,13 @@
 
 @interface PUTilingLayoutCoordinateSystem : NSObject <PUTilingCoordinateSystem> {
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _coordinateSystemOrigin;
-    <PUTilingCoordinateSystem> *_parentCoordinateSystem;
+        double x; 
+        double y; 
+    }  _coordinateSystemOrigin;
+    <PUTilingCoordinateSystem> * _parentCoordinateSystem;
 }
 
-@property (nonatomic) struct CGPoint { float x1; float x2; } coordinateSystemOrigin;
+@property (nonatomic) struct CGPoint { double x1; double x2; } coordinateSystemOrigin;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -18,9 +18,9 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (struct CGPoint { float x1; float x2; })coordinateSystemOrigin;
+- (struct CGPoint { double x1; double x2; })coordinateSystemOrigin;
 - (id)parentCoordinateSystem;
-- (void)setCoordinateSystemOrigin:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setCoordinateSystemOrigin:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setParentCoordinateSystem:(id)arg1;
 
 @end

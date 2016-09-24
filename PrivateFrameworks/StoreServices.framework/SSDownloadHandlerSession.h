@@ -3,8 +3,8 @@
  */
 
 @interface SSDownloadHandlerSession : SSDownloadSession {
-    NSString *_downloadPhase;
-    NSNumber *_duetTimeoutInterval;
+    NSString * _downloadPhase;
+    NSNumber * _duetTimeoutInterval;
 }
 
 @property BOOL blocksOtherDownloads;

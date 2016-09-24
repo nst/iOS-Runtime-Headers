@@ -3,8 +3,8 @@
  */
 
 @interface SCNActionGroup : SCNAction {
-    NSArray *_actions;
-    void *_mycaction;
+    NSArray * _actions;
+    void * _mycaction;
 }
 
 + (id)groupWithActions:(id)arg1;

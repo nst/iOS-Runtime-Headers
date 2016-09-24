@@ -3,9 +3,9 @@
  */
 
 @interface _MPUSharedLibrariesViewController : UITableViewController {
-    MPMediaLibrary *_connectingMediaLibrary;
-    NSArray *_sharedMediaLibraries;
-    BOOL _showsLocalLibrary;
+    MPMediaLibrary * _connectingMediaLibrary;
+    NSArray * _sharedMediaLibraries;
+    BOOL  _showsLocalLibrary;
 }
 
 @property (nonatomic) BOOL showsLocalLibrary;

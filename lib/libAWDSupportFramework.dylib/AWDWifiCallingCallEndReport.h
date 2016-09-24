@@ -3,13 +3,13 @@
  */
 
 @interface AWDWifiCallingCallEndReport : PBCodable <NSCopying> {
-    NSString *_callID;
+    NSString * _callID;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _frameErasureRateHistograms;
-    unsigned int _frameErasureRateMean;
+    }  _frameErasureRateHistograms;
+    unsigned int  _frameErasureRateMean;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int frameErasureRateMean : 1; 
@@ -18,28 +18,28 @@
         unsigned int jitterBufferResidencyTimeMedian : 1; 
         unsigned int jitterBufferUnderflowRateMean : 1; 
         unsigned int rtpPacketLossRateMean : 1; 
-    } _has;
-    unsigned int _jitterBufferResidencyTime95Percentile;
+    }  _has;
+    unsigned int  _jitterBufferResidencyTime95Percentile;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _jitterBufferResidencyTimeHistograms;
-    unsigned int _jitterBufferResidencyTimeMean;
-    unsigned int _jitterBufferResidencyTimeMedian;
+    }  _jitterBufferResidencyTimeHistograms;
+    unsigned int  _jitterBufferResidencyTimeMean;
+    unsigned int  _jitterBufferResidencyTimeMedian;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _jitterBufferUnderflowRateHistograms;
-    unsigned int _jitterBufferUnderflowRateMean;
+    }  _jitterBufferUnderflowRateHistograms;
+    unsigned int  _jitterBufferUnderflowRateMean;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _rtpPacketLossRateHistograms;
-    unsigned int _rtpPacketLossRateMean;
-    unsigned long long _timestamp;
+    }  _rtpPacketLossRateHistograms;
+    unsigned int  _rtpPacketLossRateMean;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic, retain) NSString *callID;

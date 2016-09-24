@@ -3,11 +3,11 @@
  */
 
 @interface RadioSearchResultCategory : NSObject <NSCopying, NSMutableCopying> {
-    int _categoryType;
-    BOOL _hasMoreResults;
-    NSString *_name;
-    NSDictionary *_responseDictionary;
-    NSArray *_stationResults;
+    int  _categoryType;
+    BOOL  _hasMoreResults;
+    NSString * _name;
+    NSDictionary * _responseDictionary;
+    NSArray * _stationResults;
 }
 
 @property (nonatomic, readonly) int categoryType;

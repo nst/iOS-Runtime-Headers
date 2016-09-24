@@ -3,9 +3,9 @@
  */
 
 @interface MSVArtworkServiceOperation : NSOperation {
-    NSString *_debugMessage;
-    NSError *_operationError;
-    MSVArtworkServiceRequest *_request;
+    NSString * _debugMessage;
+    NSError * _operationError;
+    MSVArtworkServiceRequest * _request;
 }
 
 @property (nonatomic, readonly, copy) NSString *debugMessage;

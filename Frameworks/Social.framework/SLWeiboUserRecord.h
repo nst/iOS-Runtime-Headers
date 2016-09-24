@@ -3,8 +3,8 @@
  */
 
 @interface SLWeiboUserRecord : SLMicroBlogUserRecord <NSSecureCoding> {
-    NSURL *_objectID;
-    NSNumber *_uid;
+    NSURL * _objectID;
+    NSNumber * _uid;
 }
 
 @property (nonatomic, retain) NSURL *objectID;

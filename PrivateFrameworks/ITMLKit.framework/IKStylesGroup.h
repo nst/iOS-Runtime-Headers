@@ -3,10 +3,10 @@
  */
 
 @interface IKStylesGroup : NSObject {
-    NSIndexSet *_groupIndexes;
-    NSDictionary *_indexedSelectors;
-    NSArray *_mediaQueryList;
-    NSArray *_orderedStylesOrGroups;
+    NSIndexSet * _groupIndexes;
+    NSDictionary * _indexedSelectors;
+    NSArray * _mediaQueryList;
+    NSArray * _orderedStylesOrGroups;
 }
 
 @property (nonatomic, readonly, retain) NSIndexSet *groupIndexes;

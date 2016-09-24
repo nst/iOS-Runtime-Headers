@@ -3,8 +3,8 @@
  */
 
 @interface ML3DatabaseRow : NSObject {
-    ML3DatabaseResult *_parentResult;
-    struct sqlite3_stmt { } *_stmt;
+    ML3DatabaseResult * _parentResult;
+    struct sqlite3_stmt { } * _stmt;
 }
 
 @property (nonatomic, readonly) ML3DatabaseResult *parentResult;
@@ -23,8 +23,8 @@
 - (void)getBlobBytes:(const void**)arg1 outLength:(int*)arg2 forColumnName:(id)arg3;
 - (id)init;
 - (id)initWithParentResult:(id)arg1;
-- (long long)int64ForColumnIndex:(unsigned int)arg1;
-- (long long)int64ForColumnName:(id)arg1;
+- (int)int64ForColumnIndex:(unsigned int)arg1;
+- (int)int64ForColumnName:(id)arg1;
 - (int)intForColumnIndex:(unsigned int)arg1;
 - (int)intForColumnName:(id)arg1;
 - (id)numberForColumnIndex:(unsigned int)arg1;

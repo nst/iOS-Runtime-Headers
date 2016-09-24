@@ -3,9 +3,9 @@
  */
 
 @interface CKDContainerPrivacySettings : NSObject {
-    NSSet *_applicationBundleIDs;
-    CKContainerID *_containerID;
-    int _discoverable;
+    NSSet * _applicationBundleIDs;
+    CKContainerID * _containerID;
+    int  _discoverable;
 }
 
 @property (nonatomic, copy) NSSet *applicationBundleIDs;

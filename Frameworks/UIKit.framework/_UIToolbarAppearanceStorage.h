@@ -3,13 +3,13 @@
  */
 
 @interface _UIToolbarAppearanceStorage : _UIBarAppearanceStorage {
-    UIImage *_backgroundImage;
-    BOOL _hidesShadow;
-    UIImage *_miniBackgroundImage;
-    UIImage *_miniTopBackgroundImage;
-    UIImage *_shadowImage;
-    UIImage *_topBackgroundImage;
-    UIImage *_topShadowImage;
+    UIImage * _backgroundImage;
+    BOOL  _hidesShadow;
+    UIImage * _miniBackgroundImage;
+    UIImage * _miniTopBackgroundImage;
+    UIImage * _shadowImage;
+    UIImage * _topBackgroundImage;
+    UIImage * _topShadowImage;
 }
 
 @property (nonatomic, retain) UIImage *backgroundImage;
@@ -22,8 +22,8 @@
 
 + (int)typicalBarPosition;
 
+- (void).cxx_destruct;
 - (id)backgroundImage;
-- (void)dealloc;
 - (BOOL)hidesShadow;
 - (id)miniBackgroundImage;
 - (id)miniTopBackgroundImage;

@@ -3,10 +3,10 @@
  */
 
 @interface WMFieldMapper : WMParagraphMapper {
-    NSString *mLink;
-    NSMutableString *mMarkerText;
-    int mMode;
-    unsigned int mType;
+    NSString * mLink;
+    NSMutableString * mMarkerText;
+    int  mMode;
+    unsigned int  mType;
 }
 
 - (void)dealloc;

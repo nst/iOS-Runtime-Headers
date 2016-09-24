@@ -3,7 +3,7 @@
  */
 
 @interface SKRemoteAccountPageViewController : _UIRemoteViewController <SKUIClientAccountPageViewController> {
-    SKAccountPageViewController *_accountPageViewController;
+    SKAccountPageViewController * _accountPageViewController;
 }
 
 @property (nonatomic) SKAccountPageViewController *accountPageViewController;

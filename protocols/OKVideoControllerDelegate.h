@@ -7,6 +7,7 @@
 
 - (void)videoPlayerController:(OKVideoPlayerController *)arg1 didFailToPlayItem:(AVPlayerItem *)arg2;
 - (void)videoPlayerController:(OKVideoPlayerController *)arg1 didFinishPlayingItem:(AVPlayerItem *)arg2;
+- (void)videoPlayerController:(OKVideoPlayerController *)arg1 didStartPlayingItem:(AVPlayerItem *)arg2;
 
 @optional
 

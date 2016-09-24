@@ -3,21 +3,21 @@
  */
 
 @interface TSCH3DShaderProgram : NSObject {
-    NSMutableString *mAccumulator;
-    NSMutableArray *mConclusionSection;
-    NSMutableArray *mDeclarationSection;
-    NSString *mFragment;
-    NSMutableSet *mFunctionNames;
-    NSMutableArray *mFunctions;
-    BOOL mIsLinked;
-    NSMutableDictionary *mLinks;
-    NSMutableArray *mOutcomeSection;
-    NSMutableArray *mResolutionSection;
-    NSMutableArray *mSections;
-    NSMutableArray *mStatementSection;
-    NSMutableArray *mTemporarySection;
-    TSCH3DGLVersion *mVersion;
-    NSString *mVertex;
+    NSMutableString * mAccumulator;
+    NSMutableArray * mConclusionSection;
+    NSMutableArray * mDeclarationSection;
+    NSString * mFragment;
+    NSMutableSet * mFunctionNames;
+    NSMutableArray * mFunctions;
+    BOOL  mIsLinked;
+    NSMutableDictionary * mLinks;
+    NSMutableArray * mOutcomeSection;
+    NSMutableArray * mResolutionSection;
+    NSMutableArray * mSections;
+    NSMutableArray * mStatementSection;
+    NSMutableArray * mTemporarySection;
+    TSCH3DGLVersion * mVersion;
+    NSString * mVertex;
 }
 
 @property (nonatomic, readonly) NSString *fragment;
@@ -138,7 +138,7 @@
 - (id)p_generateType:(struct TSCH3DShaderType { unsigned int x1; })arg1;
 - (void)p_generateType:(struct TSCH3DShaderType { unsigned int x1; })arg1 globalType:(struct TSCH3DShaderVariableScopeType { unsigned int x1; })arg2 storageQualifier:(id)arg3;
 - (unsigned int)processSection:(id)arg1 accumulate:(id)arg2 conclusions:(id)arg3;
-- (struct pair<signed char, TSCH3DShaderVariableLinkage *> { BOOL x1; id x2; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x3; void*x4; void*x5; void x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; bool x13; void*x14; void*x15; unsigned int x16; oneway int x17; void*x18; void*x19; unsigned short x20; void*x21; const void x22; int x23; BOOL x24; void*x25; oneway int x26; void*x27; void*x28; unsigned char x29; out in void*x30; const out long x31; long x32; void*x33; const bycopy void*x34; void*x35; const void*x36; void*x37; out const void*x38; void*x39; void*x40; void*x41; out void*x42; void*x43; oneway int x44; void*x45; void*x46; unsigned char x47; out in void*x48; const out long x49; long x50; void*x51; const unsigned int x52; in void*x53; void*x54; const float x55; void*x56; BOOL x57; void*x58; void*x59; void*x60; void*x61; void*x62; void*x63; void*x64; })resultLinkageOfVariable:(id)arg1;
+- (/* Warning: unhandled struct encoding: '{pair<signed char, TSCH3DShaderVariableLinkage *>=c@}' */ struct pair<signed char, TSCH3DShaderVariableLinkage *> { BOOL x1; id x2; })resultLinkageOfVariable:(id)arg1;
 - (struct TSCH3DShaderType { unsigned int x1; })uniformLinkageFor:(id)arg1;
 - (id)usedAttributeNameForVariable:(id)arg1;
 - (id)usedNameForVariable:(id)arg1 type:(struct TSCH3DShaderType { unsigned int x1; })arg2 scope:(struct TSCH3DShaderVariableScopeType { unsigned int x1; })arg3;

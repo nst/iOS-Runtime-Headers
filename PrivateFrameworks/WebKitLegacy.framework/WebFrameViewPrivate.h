@@ -3,9 +3,9 @@
  */
 
 @interface WebFrameViewPrivate : NSObject {
-    WAKScrollView *frameScrollView;
-    BOOL includedInWebKitStatistics;
-    WebFrame *webFrame;
+    WAKScrollView * frameScrollView;
+    BOOL  includedInWebKitStatistics;
+    WebFrame * webFrame;
 }
 
 - (void)dealloc;

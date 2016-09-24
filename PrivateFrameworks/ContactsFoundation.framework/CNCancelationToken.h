@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ContactsFoundation.framework/ContactsFoundation
  */
 
-@interface CNCancelationToken : NSObject <CNCancelable> {
-    NSMutableArray *_cancelationBlocks;
-    BOOL _isCanceled;
+@interface CNCancelationToken : NSObject <CNCancelable, CNCancelationToken> {
+    NSMutableArray * _cancelationBlocks;
+    BOOL  _isCanceled;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,13 +15,14 @@
 + (id)tokenWithCancelationBlock:(id /* block */)arg1;
 + (id)tokenWrappingCancelable:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)addCancelable:(id)arg1;
 - (void)addCancelationBlock:(id /* block */)arg1;
 - (void)callCancelationBlocks:(id)arg1;
 - (void)cancel;
-- (void)dealloc;
 - (id)init;
 - (BOOL)isCanceled;
 - (id)nts_cancel;
+- (void)performBlock:(id /* block */)arg1;
 
 @end

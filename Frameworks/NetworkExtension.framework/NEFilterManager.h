@@ -3,9 +3,9 @@
  */
 
 @interface NEFilterManager : NSObject <NEPrettyDescription> {
-    NEConfiguration *_configuration;
-    NEConfigurationManager *_configurationManager;
-    BOOL _hasLoaded;
+    NEConfiguration * _configuration;
+    NEConfigurationManager * _configurationManager;
+    BOOL  _hasLoaded;
 }
 
 @property (retain) NEConfiguration *configuration;

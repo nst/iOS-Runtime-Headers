@@ -3,9 +3,9 @@
  */
 
 @interface HDDatabaseJournal : NSObject {
-    NSFileHandle *_fileHandle;
-    NSLock *_journalLock;
-    NSString *_path;
+    NSFileHandle * _fileHandle;
+    NSLock * _journalLock;
+    NSString * _path;
 }
 
 @property (nonatomic, retain) NSFileHandle *fileHandle;
@@ -18,13 +18,13 @@
 - (id)_loadJournalEntry:(id)arg1;
 - (BOOL)_loadJournalFromMapping:(void*)arg1 size:(unsigned long)arg2 headerLength:(unsigned long)arg3 journalEntries:(id*)arg4 error:(id*)arg5;
 - (BOOL)_loadJournalWithFileHandle:(id)arg1 journalEntries:(id*)arg2 error:(id*)arg3;
-- (void)_mergeJournalEntries:(id)arg1 daemon:(id)arg2;
+- (void)_mergeJournalEntries:(id)arg1 profile:(id)arg2;
 - (id)_nameOfNextJournalFile;
-- (BOOL)_performPostJournalMergeWithVersion:(unsigned int)arg1 daemon:(id)arg2 database:(id)arg3 error:(id*)arg4;
-- (unsigned int)_processJournalFile:(id)arg1 daemon:(id)arg2 sqlDatabase:(id)arg3 error:(id*)arg4;
-- (unsigned int)_processJournalFile:(id)arg1 daemon:(id)arg2 sqlDatabase:(id)arg3 fileHandle:(id)arg4 mapping:(void*)arg5 length:(unsigned long)arg6 error:(id*)arg7;
-- (unsigned int)_processMonarchJournalWithVersion:(unsigned int)arg1 fileHandle:(id)arg2 mapping:(void*)arg3 size:(unsigned long)arg4 headerLength:(unsigned long)arg5 daemon:(id)arg6 database:(id)arg7 error:(id*)arg8;
-- (unsigned int)_processOkemoJournalWithVersion:(unsigned int)arg1 fileHandle:(id)arg2 mapping:(void*)arg3 size:(unsigned long)arg4 headerLength:(unsigned long)arg5 daemon:(id)arg6 database:(id)arg7 error:(id*)arg8;
+- (BOOL)_performPostJournalMergeWithVersion:(unsigned int)arg1 profile:(id)arg2 database:(id)arg3 error:(id*)arg4;
+- (unsigned int)_processJournalFile:(id)arg1 profile:(id)arg2 sqlDatabase:(id)arg3 error:(id*)arg4;
+- (unsigned int)_processJournalFile:(id)arg1 profile:(id)arg2 sqlDatabase:(id)arg3 fileHandle:(id)arg4 mapping:(void*)arg5 length:(unsigned long)arg6 error:(id*)arg7;
+- (unsigned int)_processMonarchJournalWithVersion:(unsigned int)arg1 fileHandle:(id)arg2 mapping:(void*)arg3 size:(unsigned long)arg4 headerLength:(unsigned long)arg5 profile:(id)arg6 database:(id)arg7 error:(id*)arg8;
+- (unsigned int)_processOkemoJournalWithVersion:(unsigned int)arg1 fileHandle:(id)arg2 mapping:(void*)arg3 size:(unsigned long)arg4 headerLength:(unsigned long)arg5 profile:(id)arg6 database:(id)arg7 error:(id*)arg8;
 - (id)_sortedListOfJournalFiles;
 - (BOOL)addJournalEntries:(id)arg1 error:(id*)arg2;
 - (void)dealloc;
@@ -32,7 +32,7 @@
 - (id)init;
 - (id)initWithPath:(id)arg1;
 - (id)journalLock;
-- (BOOL)mergeWithDaemon:(id)arg1;
+- (BOOL)mergeWithProfile:(id)arg1;
 - (id)path;
 - (void)setFileHandle:(id)arg1;
 - (void)setJournalLock:(id)arg1;

@@ -6,12 +6,14 @@
 @required
 
 + (void)applyElementAttributeCacheScheme:(int)arg1;
-+ (id)uiElementAtCoordinate:(struct CGPoint { float x1; float x2; })arg1;
-+ (id)uiElementAtCoordinate:(struct CGPoint { float x1; float x2; })arg1 hitTestOrientation:(int)arg2;
++ (id)uiElementAtCoordinate:(struct CGPoint { double x1; double x2; })arg1;
++ (id)uiElementAtCoordinate:(struct CGPoint { double x1; double x2; })arg1 forApplication:(struct __AXUIElement { }*)arg2 contextId:(unsigned int)arg3;
++ (id)uiElementAtCoordinate:(struct CGPoint { double x1; double x2; })arg1 hitTestOrientation:(int)arg2;
 
 - (NSArray *)arrayWithAXAttribute:(int)arg1;
 - (BOOL)boolWithAXAttribute:(int)arg1;
 - (BOOL)canPerformAXAction:(int)arg1;
+- (struct CGColor { }*)colorWithAXAttribute:(int)arg1;
 - (void)disableCache;
 - (void)enableCache:(BOOL)arg1;
 - (BOOL)isMockElement;
@@ -26,11 +28,12 @@
 - (struct CGPath { }*)pathWithAXAttribute:(int)arg1;
 - (BOOL)performAXAction:(int)arg1;
 - (BOOL)performAXAction:(int)arg1 withValue:(id)arg2;
+- (BOOL)performAXAction:(int)arg1 withValue:(id)arg2 fencePort:(unsigned int)arg3;
 - (int)pid;
-- (struct CGPoint { float x1; float x2; })pointWithAXAttribute:(int)arg1;
+- (struct CGPoint { double x1; double x2; })pointWithAXAttribute:(int)arg1;
 - (NSArray *)previousElementsWithCount:(unsigned int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeWithAXAttribute:(int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectWithAXAttribute:(int)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectWithAXAttribute:(int)arg1;
 - (void)setAXAttribute:(int)arg1 withArray:(NSArray *)arg2;
 - (void)setAXAttribute:(int)arg1 withBOOL:(BOOL)arg2;
 - (void)setAXAttribute:(int)arg1 withFloat:(float)arg2;
@@ -38,9 +41,9 @@
 - (void)setAXAttribute:(int)arg1 withNumber:(NSNumber *)arg2;
 - (void)setAXAttribute:(int)arg1 withObject:(id)arg2;
 - (void)setAXAttribute:(int)arg1 withObject:(id)arg2 synchronous:(BOOL)arg3;
-- (void)setAXAttribute:(int)arg1 withPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (void)setAXAttribute:(int)arg1 withPoint:(struct CGPoint { double x1; double x2; })arg2;
 - (void)setAXAttribute:(int)arg1 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)setAXAttribute:(int)arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)setAXAttribute:(int)arg1 withSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)setAXAttribute:(int)arg1 withString:(NSString *)arg2;
 - (void)setAXAttribute:(int)arg1 withUIElement:(id)arg2;
 - (void)setAXAttribute:(int)arg1 withUIElementArray:(NSArray *)arg2;

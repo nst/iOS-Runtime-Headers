@@ -3,20 +3,23 @@
  */
 
 @interface SCNMetalMesh : NSObject {
-    NSArray *_buffers;
-    NSArray *_elements;
-    long _mutabilityTimestamp;
-    MTLVertexDescriptor *_vertexDescriptor;
-    <MTLBuffer> *_volatileBuffer;
-    unsigned int vertexLayoutHash;
-    int volatileOffset;
-    int volatileStride;
+    NSArray * _buffers;
+    NSArray * _elements;
+    long  _mutabilityTimestamp;
+    MTLVertexDescriptor * _vertexDescriptor;
+    <MTLBuffer> * _volatileBuffer;
+    unsigned int  vertexLayoutHash;
+    int  verticesCount;
+    int  volatileOffset;
+    int  volatileStride;
 }
 
 @property (nonatomic, copy) NSArray *buffers;
 @property (nonatomic, copy) NSArray *elements;
+@property (nonatomic) long mutabilityTimestamp;
 @property (nonatomic, retain) MTLVertexDescriptor *vertexDescriptor;
 @property (nonatomic) unsigned int vertexLayoutHash;
+@property (nonatomic) int verticesCount;
 @property (nonatomic, retain) <MTLBuffer> *volatileBuffer;
 @property (nonatomic) int volatileOffset;
 @property (nonatomic) int volatileStride;
@@ -24,15 +27,19 @@
 - (id)buffers;
 - (void)dealloc;
 - (id)elements;
+- (long)mutabilityTimestamp;
 - (void)setBuffers:(id)arg1;
 - (void)setElements:(id)arg1;
+- (void)setMutabilityTimestamp:(long)arg1;
 - (void)setVertexDescriptor:(id)arg1;
 - (void)setVertexLayoutHash:(unsigned int)arg1;
+- (void)setVerticesCount:(int)arg1;
 - (void)setVolatileBuffer:(id)arg1;
 - (void)setVolatileOffset:(int)arg1;
 - (void)setVolatileStride:(int)arg1;
 - (id)vertexDescriptor;
 - (unsigned int)vertexLayoutHash;
+- (int)verticesCount;
 - (id)volatileBuffer;
 - (int)volatileOffset;
 - (int)volatileStride;

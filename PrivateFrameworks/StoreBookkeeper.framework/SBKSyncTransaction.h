@@ -3,14 +3,14 @@
  */
 
 @interface SBKSyncTransaction : SBKTransaction {
-    int _conflictDetectionType;
-    NSString *_domain;
-    NSArray *_keysToDelete;
-    NSArray *_keysToUpdate;
-    NSString *_syncAnchor;
-    NSURL *_syncRequestURL;
-    <SBKSyncTransactionProcessing> *_transactionProcessor;
-    int _type;
+    int  _conflictDetectionType;
+    NSString * _domain;
+    NSArray * _keysToDelete;
+    NSArray * _keysToUpdate;
+    NSString * _syncAnchor;
+    NSURL * _syncRequestURL;
+    <SBKSyncTransactionProcessing> * _transactionProcessor;
+    int  _type;
 }
 
 @property (readonly) int conflictDetectionType;

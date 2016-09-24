@@ -3,11 +3,12 @@
  */
 
 @interface ISVitalitySettings : ISSettings <ISVitalitySettings> {
-    ISVitalitySpecificSettings *_activityViewSettings;
-    ISVitalitySpecificSettings *_oneUpSettings;
-    ISVitalitySpecificSettings *_orbPreviewSettings;
-    ISVitalitySpecificSettings *_shareViewSettings;
-    BOOL _useLegacyBehavior;
+    ISVitalitySpecificSettings * _activityViewSettings;
+    ISVitalitySpecificSettings * _oneUpSettings;
+    ISVitalitySpecificSettings * _orbPreviewSettings;
+    ISVitalitySpecificSettings * _shareViewSettings;
+    BOOL  _shouldPreroll;
+    BOOL  _useLegacyBehavior;
 }
 
 @property (nonatomic, retain) ISVitalitySpecificSettings *activityViewSettings;
@@ -17,6 +18,7 @@
 @property (nonatomic, retain) ISVitalitySpecificSettings *oneUpSettings;
 @property (nonatomic, retain) ISVitalitySpecificSettings *orbPreviewSettings;
 @property (nonatomic, retain) ISVitalitySpecificSettings *shareViewSettings;
+@property (nonatomic) BOOL shouldPreroll;
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL useLegacyBehavior;
 
@@ -46,8 +48,10 @@
 - (void)setOneUpSettings:(id)arg1;
 - (void)setOrbPreviewSettings:(id)arg1;
 - (void)setShareViewSettings:(id)arg1;
+- (void)setShouldPreroll:(BOOL)arg1;
 - (void)setUseLegacyBehavior:(BOOL)arg1;
 - (id)shareViewSettings;
+- (BOOL)shouldPreroll;
 - (BOOL)useLegacyBehavior;
 
 @end

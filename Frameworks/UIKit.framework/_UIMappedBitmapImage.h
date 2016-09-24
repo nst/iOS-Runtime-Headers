@@ -3,7 +3,7 @@
  */
 
 @interface _UIMappedBitmapImage : UIImage {
-    NSData *_data;
+    NSData * _data;
 }
 
 @property (nonatomic, retain) NSData *data;

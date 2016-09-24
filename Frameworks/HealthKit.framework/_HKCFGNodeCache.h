@@ -3,7 +3,7 @@
  */
 
 @interface _HKCFGNodeCache : NSObject {
-    NSMutableDictionary *_cache;
+    NSMutableDictionary * _cache;
 }
 
 - (void).cxx_destruct;

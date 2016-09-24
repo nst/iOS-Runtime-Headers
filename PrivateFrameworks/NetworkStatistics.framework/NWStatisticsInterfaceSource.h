@@ -3,15 +3,15 @@
  */
 
 @interface NWStatisticsInterfaceSource : NWStatisticsSource {
-    unsigned int _cellConfigBackoffTime;
-    unsigned int _cellConfigInactivityTime;
-    unsigned int _cellUlAvgQueueSize;
-    unsigned int _cellUlMaxQueueSize;
-    unsigned int _cellUlMinQueueSize;
+    unsigned int  _cellConfigBackoffTime;
+    unsigned int  _cellConfigInactivityTime;
+    unsigned int  _cellUlAvgQueueSize;
+    unsigned int  _cellUlMaxQueueSize;
+    unsigned int  _cellUlMinQueueSize;
     struct nstat_ifnet_descriptor { 
         BOOL name[17]; 
         unsigned int ifindex; 
-        unsigned long long threshold; 
+        unsigned int threshold; 
         unsigned int type; 
         BOOL description[128]; 
         struct nstat_ifnet_desc_link_status { 
@@ -34,6 +34,7 @@
                     unsigned int dl_max_bandwidth; 
                     unsigned int config_inactivity_time; 
                     unsigned int config_backoff_time; 
+                    unsigned short mss_recommended; 
                 } cellular; 
                 struct nstat_ifnet_desc_wifi_status { 
                     unsigned int valid_bitmask; 
@@ -59,28 +60,28 @@
                 } wifi; 
             } u; 
         } link_status; 
-    } _descriptor;
-    unsigned int _dlEffectiveBandwidth;
-    unsigned int _dlMaxBandwidth;
-    NSString *_interfaceDescription;
-    NSString *_interfaceName;
-    unsigned int _linkQualityMetric;
-    unsigned int _ulBytesLost;
-    unsigned int _ulEffectiveBandwidth;
-    unsigned int _ulEffectiveLatency;
-    unsigned int _ulMaxBandwidth;
-    unsigned int _ulMaxLatency;
-    unsigned int _ulMinLatency;
-    unsigned int _ulReTxtLevel;
-    unsigned int _wifiConfigFrequency;
-    unsigned int _wifiConfigMulticastRate;
-    unsigned int _wifiDlEffectiveLatency;
-    unsigned int _wifiDlErrorRate;
-    unsigned int _wifiDlMaxLatency;
-    unsigned int _wifiDlMinLatency;
-    unsigned int _wifiScanCount;
-    unsigned int _wifiScanDuration;
-    unsigned int _wifiUlErrorRate;
+    }  _descriptor;
+    unsigned int  _dlEffectiveBandwidth;
+    unsigned int  _dlMaxBandwidth;
+    NSString * _interfaceDescription;
+    NSString * _interfaceName;
+    unsigned int  _linkQualityMetric;
+    unsigned int  _ulBytesLost;
+    unsigned int  _ulEffectiveBandwidth;
+    unsigned int  _ulEffectiveLatency;
+    unsigned int  _ulMaxBandwidth;
+    unsigned int  _ulMaxLatency;
+    unsigned int  _ulMinLatency;
+    unsigned int  _ulReTxtLevel;
+    unsigned int  _wifiConfigFrequency;
+    unsigned int  _wifiConfigMulticastRate;
+    unsigned int  _wifiDlEffectiveLatency;
+    unsigned int  _wifiDlErrorRate;
+    unsigned int  _wifiDlMaxLatency;
+    unsigned int  _wifiDlMinLatency;
+    unsigned int  _wifiScanCount;
+    unsigned int  _wifiScanDuration;
+    unsigned int  _wifiUlErrorRate;
 }
 
 @property unsigned int cellConfigBackoffTime;
@@ -114,7 +115,7 @@
 @property unsigned int wifiUlErrorRate;
 
 - (void).cxx_destruct;
-- (void)_handleCellExtra:(struct nstat_ifnet_desc_cellular_status { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; }*)arg1;
+- (void)_handleCellExtra:(struct nstat_ifnet_desc_cellular_status { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned short x17; }*)arg1;
 - (void)_handleWifiExtra:(struct nstat_ifnet_desc_wifi_status { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; unsigned int x19; unsigned int x20; }*)arg1;
 - (void)_invalidateAllExtraCounts;
 - (void)_invalidateCellCounts;

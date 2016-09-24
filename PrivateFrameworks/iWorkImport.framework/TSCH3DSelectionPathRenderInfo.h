@@ -3,12 +3,12 @@
  */
 
 @interface TSCH3DSelectionPathRenderInfo : NSObject {
-    float mRotation;
-    NSString *mString;
-    unsigned int mStyleIndex;
+    double  mRotation;
+    NSString * mString;
+    unsigned int  mStyleIndex;
 }
 
-@property (nonatomic, readonly) float rotation;
+@property (nonatomic, readonly) double rotation;
 @property (nonatomic, readonly) NSString *string;
 @property (nonatomic, readonly) unsigned int styleIndex;
 

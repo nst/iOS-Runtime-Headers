@@ -3,10 +3,10 @@
  */
 
 @interface NEPathController : NSObject <NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
-    int _cellularFallbackFlags;
-    BOOL _enabled;
-    NSArray *_pathRules;
-    NSArray *_payloadAppRules;
+    int  _cellularFallbackFlags;
+    BOOL  _enabled;
+    NSArray * _pathRules;
+    NSArray * _payloadAppRules;
 }
 
 @property int cellularFallbackFlags;

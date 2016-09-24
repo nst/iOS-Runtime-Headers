@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptError : SUScriptObject {
-    NSError *_error;
+    NSError * _error;
 }
 
 @property (readonly) int code;

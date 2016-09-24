@@ -3,7 +3,7 @@
  */
 
 @interface GKMasterDetailNavigationController : GKNavigationController <UISplitViewControllerDelegate> {
-    GKMasterDetailViewController *_parentMasterDetailVC;
+    GKMasterDetailViewController * _parentMasterDetailVC;
 }
 
 @property (nonatomic) GKMasterDetailViewController *parentMasterDetailVC;

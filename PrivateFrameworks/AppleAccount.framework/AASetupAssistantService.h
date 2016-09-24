@@ -3,14 +3,14 @@
  */
 
 @interface AASetupAssistantService : NSObject {
-    ACAccount *_account;
-    NSString *_appleID;
-    struct OpaqueCFHTTPCookieStorage { } *_cookieStorage;
-    NSString *_emailChoice;
-    NSString *_password;
-    NSOperationQueue *_requesterQueue;
-    AASigningSession *_signingSession;
-    NSDate *_signingSessionCreationDate;
+    ACAccount * _account;
+    NSString * _appleID;
+    struct OpaqueCFHTTPCookieStorage { } * _cookieStorage;
+    NSString * _emailChoice;
+    NSString * _password;
+    NSOperationQueue * _requesterQueue;
+    AASigningSession * _signingSession;
+    NSDate * _signingSessionCreationDate;
 }
 
 @property (nonatomic, copy) NSString *appleID;
@@ -43,6 +43,7 @@
 - (void)setupDelegateAccountsWithParameters:(id)arg1 handler:(id /* block */)arg2;
 - (void)shouldPresentUpgradeFlowWithCompletion:(id /* block */)arg1;
 - (void)updateAppleIDWithParameters:(id)arg1 handler:(id /* block */)arg2;
+- (void)upgradeiCloudTermsIfNecessaryWithCustomHeaders:(id)arg1 handler:(id /* block */)arg2;
 - (void)upgradeiCloudTermsIfNecessaryWithHandler:(id /* block */)arg1;
 
 @end

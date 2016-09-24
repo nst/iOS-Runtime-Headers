@@ -3,10 +3,10 @@
  */
 
 @interface MPUCellInvalidationContext : NSObject {
-    BOOL _animated;
-    BOOL _invalidateDownloadStatus;
-    BOOL _invalidateEverything;
-    BOOL _invalidateLayout;
+    BOOL  _animated;
+    BOOL  _invalidateDownloadStatus;
+    BOOL  _invalidateEverything;
+    BOOL  _invalidateLayout;
 }
 
 @property (getter=isAnimated, nonatomic) BOOL animated;

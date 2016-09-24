@@ -3,12 +3,12 @@
  */
 
 @interface AFSetSettingsRequest : AFSiriRequest {
-    BOOL _applyChanges;
-    NSArray *_settings;
+    BOOL  _applyChanges;
+    NSArray * _settings;
 }
 
-@property (nonatomic) BOOL applyChanges;
-@property (nonatomic, copy) NSArray *settings;
+@property (setter=_setApplyChanges:, nonatomic) BOOL applyChanges;
+@property (setter=_setSettings:, nonatomic, copy) NSArray *settings;
 
 + (BOOL)supportsSecureCoding;
 

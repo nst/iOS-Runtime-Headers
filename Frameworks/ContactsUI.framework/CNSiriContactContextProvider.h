@@ -3,8 +3,8 @@
  */
 
 @interface CNSiriContactContextProvider : NSObject <AFContextProvider> {
-    CNContact *_contact;
-    CNContactStore *_store;
+    CNContact * _contact;
+    CNContactStore * _store;
 }
 
 - (void).cxx_destruct;

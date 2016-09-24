@@ -3,14 +3,14 @@
  */
 
 @interface RCWaveformDataSource : NSObject <RCWaveformGeneratorSegmentOutputObserver> {
-    RCMutableWaveform *_accumulatorWaveform;
-    NSURL *_generatedWaveformOutputURL;
-    BOOL _hasSavedGeneratedWaveform;
-    BOOL _hasStartedLoading;
-    NSObject<OS_dispatch_queue> *_observerQueue;
-    NSObject<OS_dispatch_queue> *_queue;
-    RCWaveformGenerator *_waveformGenerator;
-    NSHashTable *_weakObservers;
+    RCMutableWaveform * _accumulatorWaveform;
+    NSURL * _generatedWaveformOutputURL;
+    BOOL  _hasSavedGeneratedWaveform;
+    BOOL  _hasStartedLoading;
+    NSObject<OS_dispatch_queue> * _observerQueue;
+    NSObject<OS_dispatch_queue> * _queue;
+    RCWaveformGenerator * _waveformGenerator;
+    NSHashTable * _weakObservers;
 }
 
 @property (nonatomic, readonly) RCWaveform *accumulatorWaveform;
@@ -24,7 +24,7 @@
 @property (nonatomic, readonly) BOOL hasSavedGeneratedWaveform;
 @property (nonatomic, readonly) BOOL hasStartedLoading;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) float loadingProgress;
+@property (nonatomic, readonly) double loadingProgress;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *observerQueue;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;

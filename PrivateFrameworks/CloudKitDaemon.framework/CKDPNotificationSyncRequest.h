@@ -6,10 +6,10 @@
     struct { 
         unsigned int maxChanges : 1; 
         unsigned int wantsChanges : 1; 
-    } _has;
-    unsigned int _maxChanges;
-    NSData *_serverChangeToken;
-    BOOL _wantsChanges;
+    }  _has;
+    unsigned int  _maxChanges;
+    NSData * _serverChangeToken;
+    BOOL  _wantsChanges;
 }
 
 @property (nonatomic) BOOL hasMaxChanges;
@@ -34,6 +34,8 @@
 - (unsigned int)maxChanges;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (unsigned int)requestTypeCode;
+- (Class)responseClass;
 - (id)serverChangeToken;
 - (void)setHasMaxChanges:(BOOL)arg1;
 - (void)setHasWantsChanges:(BOOL)arg1;

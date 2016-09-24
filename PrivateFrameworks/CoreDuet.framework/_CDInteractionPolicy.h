@@ -3,12 +3,12 @@
  */
 
 @interface _CDInteractionPolicy : NSObject {
-    unsigned int _lifespanInSeconds;
-    unsigned int _maxNumberOfKeywords;
-    unsigned int _maxNumberOfRecipients;
-    unsigned int _maxNumberStored;
-    _CDRateLimiter *_rateLimiter;
-    unsigned int _timeResolutionInSeconds;
+    unsigned int  _lifespanInSeconds;
+    unsigned int  _maxNumberOfKeywords;
+    unsigned int  _maxNumberOfRecipients;
+    unsigned int  _maxNumberStored;
+    _CDRateLimiter * _rateLimiter;
+    unsigned int  _timeResolutionInSeconds;
 }
 
 @property unsigned int lifespanInSeconds;

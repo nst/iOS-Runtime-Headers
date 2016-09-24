@@ -3,24 +3,24 @@
  */
 
 @interface SKUIHorizontalScrollingContainerViewController : SKUIViewController <SKUIProxyScrollViewDelegate, SKUIScrollViewDelegateObserver, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
-    UICollectionView *_contentCollectionView;
+    UICollectionView * _contentCollectionView;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _contentCollectionViewItemSize;
-    <SKUIHorizontalScrollingContainerViewControllerDelegate> *_delegate;
-    BOOL _initialScrollWasPerformed;
-    BOOL _isHandlingScrollViewDidScroll;
-    UICollectionView *_menuBarCollectionView;
-    SKUIProxyScrollView *_proxyScrollView;
+        double width; 
+        double height; 
+    }  _contentCollectionViewItemSize;
+    <SKUIHorizontalScrollingContainerViewControllerDelegate> * _delegate;
+    BOOL  _initialScrollWasPerformed;
+    BOOL  _isHandlingScrollViewDidScroll;
+    UICollectionView * _menuBarCollectionView;
+    SKUIProxyScrollView * _proxyScrollView;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _proxyScrollViewContentInsetAdjustment;
-    NSMapTable *_viewControllerToExistingContentInsetAdjustment;
-    NSArray *_viewControllers;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _proxyScrollViewContentInsetAdjustment;
+    NSMapTable * _viewControllerToExistingContentInsetAdjustment;
+    NSArray * _viewControllers;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -34,8 +34,8 @@
 @property (nonatomic, copy) NSArray *viewControllers;
 
 - (void).cxx_destruct;
-- (void)_applyNewContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 toViewController:(id)arg2;
-- (void)_applyNewContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 toViewControllers:(id)arg2;
+- (void)_applyNewContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 toViewController:(id)arg2;
+- (void)_applyNewContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 toViewControllers:(id)arg2;
 - (id)_indexPathOfFocusedContentItemWithDistanceToFocusedPosition:(float*)arg1 layoutAttributes:(id*)arg2;
 - (void)_scrollViewDidScroll:(id)arg1;
 - (void)_scrollViewWillBeginDecelerating:(id)arg1;
@@ -45,7 +45,7 @@
 - (void)_updateScrollViewContentOffsetsToTargetContentOffsets;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
-- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (id)contentScrollView;
@@ -66,7 +66,7 @@
 - (void)setMenuBarCollectionView:(id)arg1;
 - (void)setNeedsViewControllerContentScrollViewContentInsetUpdate;
 - (void)setViewControllers:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })viewControllerContentScrollViewContentInset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })viewControllerContentScrollViewContentInset;
 - (id)viewControllers;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

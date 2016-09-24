@@ -3,7 +3,7 @@
  */
 
 @interface HDSQLitePropertyPredicate : HDSQLitePredicate <NSCopying> {
-    NSString *_property;
+    NSString * _property;
 }
 
 @property (nonatomic, readonly) NSString *property;

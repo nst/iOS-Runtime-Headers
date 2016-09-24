@@ -3,13 +3,13 @@
  */
 
 @interface MSCLManageAccountViewController : SKUIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
-    MSCLAccount *_account;
-    MSCLAccountStore *_accountStore;
-    MSCLSettingsTableViewCell *_deleteAccountButtonCell;
-    BOOL _isVerifying;
-    MSCLSettingsTextFieldTableViewCell *_passwordCell;
-    UITableView *_tableView;
-    MSCLSettingsTextFieldTableViewCell *_userNameCell;
+    MSCLAccount * _account;
+    MSCLAccountStore * _accountStore;
+    MSCLSettingsTableViewCell * _deleteAccountButtonCell;
+    BOOL  _isVerifying;
+    MSCLSettingsTextFieldTableViewCell * _passwordCell;
+    UITableView * _tableView;
+    MSCLSettingsTextFieldTableViewCell * _userNameCell;
 }
 
 @property (nonatomic, readonly) MSCLAccount *account;

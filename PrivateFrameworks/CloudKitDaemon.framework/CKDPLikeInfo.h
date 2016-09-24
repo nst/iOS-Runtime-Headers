@@ -6,9 +6,9 @@
     struct { 
         unsigned int likeCount : 1; 
         unsigned int likedByCurrentUser : 1; 
-    } _has;
-    int _likeCount;
-    BOOL _likedByCurrentUser;
+    }  _has;
+    int  _likeCount;
+    BOOL  _likedByCurrentUser;
 }
 
 @property (nonatomic) BOOL hasLikeCount;

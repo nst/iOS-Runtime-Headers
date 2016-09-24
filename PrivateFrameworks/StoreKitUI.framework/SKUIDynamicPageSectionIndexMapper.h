@@ -3,12 +3,12 @@
  */
 
 @interface SKUIDynamicPageSectionIndexMapper : NSObject {
-    <SKUIEntityProviding> *_entityProvider;
+    <SKUIEntityProviding> * _entityProvider;
     struct { 
         unsigned int respondsToNumberOfSections : 1; 
-    } _entityProviderFlags;
-    int _numberOfSections;
-    struct _NSRange { unsigned int x1; unsigned int x2; } *_sectionIndexToEntityRange;
+    }  _entityProviderFlags;
+    int  _numberOfSections;
+    struct _NSRange { unsigned int x1; unsigned int x2; } * _sectionIndexToEntityRange;
 }
 
 @property (nonatomic, retain) <SKUIEntityProviding> *entityProvider;

@@ -7,9 +7,9 @@
         double *list; 
         unsigned int count; 
         unsigned int size; 
-    } _parameters;
-    double _radius;
-    int _status;
+    }  _parameters;
+    double  _radius;
+    int  _status;
 }
 
 @property (nonatomic, readonly) double*parameters;
@@ -17,6 +17,7 @@
 @property (nonatomic) double radius;
 @property (nonatomic) int status;
 
+- (int)StringAsStatus:(id)arg1;
 - (void)addParameters:(double)arg1;
 - (void)clearParameters;
 - (void)copyTo:(id)arg1;
@@ -36,6 +37,7 @@
 - (void)setRadius:(double)arg1;
 - (void)setStatus:(int)arg1;
 - (int)status;
+- (id)statusAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

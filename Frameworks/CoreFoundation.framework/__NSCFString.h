@@ -24,7 +24,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)deleteCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (unsigned int)fastestEncoding;
-- (void)finalize;
 - (BOOL)getCString:(char *)arg1 maxLength:(unsigned int)arg2 encoding:(unsigned int)arg3;
 - (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)getLineStart:(unsigned int*)arg1 end:(unsigned int*)arg2 contentsEnd:(unsigned int*)arg3 forRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;

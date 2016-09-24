@@ -3,11 +3,11 @@
  */
 
 @interface VKTileKeyList : NSObject <NSCopying, NSFastEnumeration> {
-    unsigned int _count;
-    void *_head;
-    VKTileKeyMap *_map;
-    unsigned int _maxCount;
-    void *_tail;
+    unsigned int  _count;
+    void * _head;
+    VKTileKeyMap * _map;
+    unsigned int  _maxCount;
+    void * _tail;
 }
 
 - (void)_addKeyToBack:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;

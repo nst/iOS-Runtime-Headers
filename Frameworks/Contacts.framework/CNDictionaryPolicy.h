@@ -3,7 +3,7 @@
  */
 
 @interface CNDictionaryPolicy : CNPermissivePolicy {
-    NSDictionary *_policyDictionary;
+    NSDictionary * _policyDictionary;
 }
 
 - (id)contactRestrictionsForLabeledProperty:(id)arg1;

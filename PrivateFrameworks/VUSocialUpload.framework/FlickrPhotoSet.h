@@ -3,37 +3,37 @@
  */
 
 @interface FlickrPhotoSet : NSObject {
-    long long _farmID;
-    long long _identifier;
-    NSString *_photoSetDescription;
-    long long _primaryPhotoID;
-    NSString *_secret;
-    long long _serverID;
-    NSString *_title;
+    int  _farmID;
+    int  _identifier;
+    NSString * _photoSetDescription;
+    int  _primaryPhotoID;
+    NSString * _secret;
+    int  _serverID;
+    NSString * _title;
 }
 
-@property (nonatomic) long long farmID;
-@property (nonatomic) long long identifier;
+@property (nonatomic) int farmID;
+@property (nonatomic) int identifier;
 @property (nonatomic, copy) NSString *photoSetDescription;
-@property (nonatomic) long long primaryPhotoID;
+@property (nonatomic) int primaryPhotoID;
 @property (nonatomic, copy) NSString *secret;
-@property (nonatomic) long long serverID;
+@property (nonatomic) int serverID;
 @property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (id)description;
-- (long long)farmID;
-- (long long)identifier;
+- (int)farmID;
+- (int)identifier;
 - (id)photoSetDescription;
-- (long long)primaryPhotoID;
+- (int)primaryPhotoID;
 - (id)secret;
-- (long long)serverID;
-- (void)setFarmID:(long long)arg1;
-- (void)setIdentifier:(long long)arg1;
+- (int)serverID;
+- (void)setFarmID:(int)arg1;
+- (void)setIdentifier:(int)arg1;
 - (void)setPhotoSetDescription:(id)arg1;
-- (void)setPrimaryPhotoID:(long long)arg1;
+- (void)setPrimaryPhotoID:(int)arg1;
 - (void)setSecret:(id)arg1;
-- (void)setServerID:(long long)arg1;
+- (void)setServerID:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 

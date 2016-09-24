@@ -3,9 +3,9 @@
  */
 
 @interface _PLExpirableSet : NSObject {
-    NSMutableDictionary *_recentTouches;
-    double _secondsToExpire;
-    NSMutableSet *_set;
+    NSMutableDictionary * _recentTouches;
+    double  _secondsToExpire;
+    NSMutableSet * _set;
 }
 
 - (BOOL)_didExpireObject:(id)arg1;

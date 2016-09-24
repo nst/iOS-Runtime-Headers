@@ -3,10 +3,10 @@
  */
 
 @interface MFNameSearchOperation : _MFAddressBookSearchOperation <ABPredicateDelegate> {
-    struct __CFArray { } *_addresses;
-    struct __CFArray { } *_identifiers;
-    struct __CFArray { } *_properties;
-    struct __CFArray { } *_uids;
+    struct __CFArray { } * _addresses;
+    struct __CFArray { } * _identifiers;
+    struct __CFArray { } * _properties;
+    struct __CFArray { } * _uids;
 }
 
 @property (readonly, copy) NSString *debugDescription;

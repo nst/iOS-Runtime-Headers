@@ -3,8 +3,8 @@
  */
 
 @interface UIAlphaAnimation : UIAnimation {
-    float _endAlpha;
-    float _startAlpha;
+    double  _endAlpha;
+    double  _startAlpha;
 }
 
 - (float)_alphaForMultiplier:(float)arg1;

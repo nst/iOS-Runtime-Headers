@@ -3,8 +3,8 @@
  */
 
 @interface FTCServiceContainer : NSObject {
-    NSMutableSet *_listeners;
-    FTCServiceMonitor *_monitor;
+    NSMutableSet * _listeners;
+    FTCServiceMonitor * _monitor;
 }
 
 @property (nonatomic, readonly, retain) NSMutableSet *listeners;

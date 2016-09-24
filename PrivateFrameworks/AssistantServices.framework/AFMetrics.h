@@ -3,10 +3,10 @@
  */
 
 @interface AFMetrics : NSObject <NSSecureCoding> {
-    int _category;
-    NSNumber *_duration;
-    NSDictionary *_eventInfo;
-    NSString *_originalCommandId;
+    int  _category;
+    NSNumber * _duration;
+    NSDictionary * _eventInfo;
+    NSString * _originalCommandId;
 }
 
 @property (nonatomic) int category;

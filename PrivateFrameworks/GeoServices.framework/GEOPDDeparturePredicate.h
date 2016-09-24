@@ -3,36 +3,30 @@
  */
 
 @interface GEOPDDeparturePredicate : PBCodable <NSCopying> {
-    unsigned int _additionalTimeLimit;
     struct { 
         unsigned int timeRange : 1; 
-        unsigned int additionalTimeLimit : 1; 
         unsigned int numAdditionalDepartures : 1; 
-    } _has;
-    unsigned int _numAdditionalDepartures;
-    struct { 
+    }  _has;
+    unsigned int  _numAdditionalDepartures;
+    struct GEOPDTimeRange { 
         unsigned int _duration; 
         unsigned int _startTime; 
         struct { 
             unsigned int duration : 1; 
             unsigned int startTime : 1; 
         } _has; 
-    } _timeRange;
+    }  _timeRange;
 }
 
-@property (nonatomic) unsigned int additionalTimeLimit;
-@property (nonatomic) BOOL hasAdditionalTimeLimit;
 @property (nonatomic) BOOL hasNumAdditionalDepartures;
 @property (nonatomic) BOOL hasTimeRange;
 @property (nonatomic) unsigned int numAdditionalDepartures;
-@property (nonatomic) struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } timeRange;
+@property (nonatomic) struct GEOPDTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } timeRange;
 
-- (unsigned int)additionalTimeLimit;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAdditionalTimeLimit;
 - (BOOL)hasNumAdditionalDepartures;
 - (BOOL)hasTimeRange;
 - (unsigned int)hash;
@@ -41,13 +35,11 @@
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)numAdditionalDepartures;
 - (BOOL)readFrom:(id)arg1;
-- (void)setAdditionalTimeLimit:(unsigned int)arg1;
-- (void)setHasAdditionalTimeLimit:(BOOL)arg1;
 - (void)setHasNumAdditionalDepartures:(BOOL)arg1;
 - (void)setHasTimeRange:(BOOL)arg1;
 - (void)setNumAdditionalDepartures:(unsigned int)arg1;
-- (void)setTimeRange:(struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
-- (struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })timeRange;
+- (void)setTimeRange:(struct GEOPDTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
+- (struct GEOPDTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })timeRange;
 - (void)writeTo:(id)arg1;
 
 @end

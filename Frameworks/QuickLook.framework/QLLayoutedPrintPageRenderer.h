@@ -3,15 +3,15 @@
  */
 
 @interface QLLayoutedPrintPageRenderer : QLWebViewPrintPageHelper {
-    NSMutableArray *_nodes;
-    UIWebPaginationInfo *_paginationInfo;
+    NSMutableArray * _nodes;
+    UIWebPaginationInfo * _paginationInfo;
 }
 
+- (void).cxx_destruct;
 - (id)_currentNodes;
 - (id)_htmlPageXPath;
-- (void)dealloc;
 - (int)numberOfPages;
-- (id)pdfDataForPageAtIndex:(int)arg1 printingDone:(BOOL*)arg2;
+- (id)pdfDataForPageAtIndex:(int)arg1;
 - (void)prepareForDrawingPages:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 
 @end

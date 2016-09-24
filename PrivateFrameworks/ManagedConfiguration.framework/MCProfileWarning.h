@@ -3,9 +3,9 @@
  */
 
 @interface MCProfileWarning : NSObject <NSSecureCoding> {
-    BOOL _isLongForm;
-    NSString *_localizedBody;
-    NSString *_localizedTitle;
+    BOOL  _isLongForm;
+    NSString * _localizedBody;
+    NSString * _localizedTitle;
 }
 
 @property (nonatomic) BOOL isLongForm;

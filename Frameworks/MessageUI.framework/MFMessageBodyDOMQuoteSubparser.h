@@ -3,14 +3,14 @@
  */
 
 @interface MFMessageBodyDOMQuoteSubparser : MFMessageBodySubparser {
-    id /* block */ _foundDedentedAttributionRangeBlock;
-    id /* block */ _foundTrailingEmptyQuoteRangeBlock;
-    <MFMessageBodyElement_Private> *_lastUnindentedAttributionHint;
-    <MFMessageBodyElement_Private> *_lastUnindentedElement;
-    unsigned int _trailingEmptyQuoteLevel;
-    DOMRange *_trailingEmptyQuoteRange;
-    unsigned int _unindentedSiblingGap;
-    NSMutableArray *_unindentedSiblingNodes;
+    id /* block */  _foundDedentedAttributionRangeBlock;
+    id /* block */  _foundTrailingEmptyQuoteRangeBlock;
+    <MFMessageBodyElement_Private> * _lastUnindentedAttributionHint;
+    <MFMessageBodyElement_Private> * _lastUnindentedElement;
+    unsigned int  _trailingEmptyQuoteLevel;
+    DOMRange * _trailingEmptyQuoteRange;
+    unsigned int  _unindentedSiblingGap;
+    NSMutableArray * _unindentedSiblingNodes;
 }
 
 - (void)_enumerateSurroundableRangesInRange:(id)arg1 withBlock:(id /* block */)arg2;

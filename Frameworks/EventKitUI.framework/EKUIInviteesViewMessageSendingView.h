@@ -3,7 +3,7 @@
  */
 
 @interface EKUIInviteesViewMessageSendingView : UIView {
-    UIView *_composeView;
+    UIView * _composeView;
 }
 
 @property (nonatomic, retain) UIView *composeView;

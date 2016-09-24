@@ -3,7 +3,7 @@
  */
 
 @interface SSVFamilyContentDeletionEvent : NSObject {
-    NSArray *_deletedAccounts;
+    NSArray * _deletedAccounts;
 }
 
 @property (nonatomic, readonly) NSArray *deletedAccounts;

@@ -3,13 +3,13 @@
  */
 
 @interface IMPingTest : NSObject {
-    NSString *_address;
-    id _collector;
-    BOOL _isRunning;
-    double _secondsToRun;
-    NSObject<OS_dispatch_source> *_sendTimer;
-    NSObject<OS_dispatch_source> *_socketReadSource;
-    BOOL _usesWifi;
+    NSString * _address;
+    id  _collector;
+    BOOL  _isRunning;
+    double  _secondsToRun;
+    NSObject<OS_dispatch_source> * _sendTimer;
+    NSObject<OS_dispatch_source> * _socketReadSource;
+    BOOL  _usesWifi;
 }
 
 @property (nonatomic, readonly) double secondsToRun;

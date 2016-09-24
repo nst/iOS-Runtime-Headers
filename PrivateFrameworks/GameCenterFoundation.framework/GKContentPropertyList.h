@@ -3,11 +3,11 @@
  */
 
 @interface GKContentPropertyList : NSObject {
-    NSDictionary *_achievementsByIdentifier;
-    NSString *_bundleID;
-    NSDictionary *_leaderboardSetsByIdentifier;
-    NSDictionary *_leaderboardsByIdentifier;
-    NSDictionary *_root;
+    NSDictionary * _achievementsByIdentifier;
+    NSString * _bundleID;
+    NSDictionary * _leaderboardSetsByIdentifier;
+    NSDictionary * _leaderboardsByIdentifier;
+    NSDictionary * _root;
 }
 
 @property (retain) NSString *bundleID;

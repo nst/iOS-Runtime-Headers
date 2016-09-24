@@ -3,41 +3,22 @@
  */
 
 @interface TKVibrationRecorderTouchSurface : TKVibrationRecorderRippleView {
-    <TKVibrationRecorderTouchSurfaceDelegate> *_delegate;
-    TKVibrationRecorderTouchSurfaceRecordedDataWrapper *_recordedDataWrapper;
-    BOOL _recordingModeEnabled;
-    BOOL _replayModeEnabled;
-    double _replayModeWasEnteredStartTime;
-    BOOL _shouldIgnoreCurrentTouch;
-    double _vibrationPatternMaximumDuration;
-    TLVibrationPattern *_vibrationPatternToReplay;
+    <TKVibrationRecorderTouchSurfaceDelegate> * _delegate;
+    <NSCopying> * _displayLinkManagerObserverToken;
+    BOOL  _isRecordingModeEnabled;
+    BOOL  _isReplayModeEnabled;
+    TKVibrationRecorderTouchSurfaceRecordedDataWrapper * _recordedDataWrapper;
+    double  _replayModeWasEnteredStartTime;
+    BOOL  _shouldIgnoreCurrentTouch;
+    double  _vibrationPatternMaximumDuration;
+    TLVibrationPattern * _vibrationPatternToReplay;
 }
 
-@property (setter=_setRecordedDataWrapper:, nonatomic, retain) TKVibrationRecorderTouchSurfaceRecordedDataWrapper *_recordedDataWrapper;
-@property (getter=_isRecordingModeEnabled, setter=_setRecordingModeEnabled:, nonatomic) BOOL _recordingModeEnabled;
-@property (getter=_isReplayModeEnabled, setter=_setReplayModeEnabled:, nonatomic) BOOL _replayModeEnabled;
-@property (setter=_setReplayModeWasEnteredStartTime:, nonatomic) double _replayModeWasEnteredStartTime;
-@property (setter=_setShouldIgnoreCurrentTouch:, nonatomic) BOOL _shouldIgnoreCurrentTouch;
-@property (setter=_setVibrationPatternMaximumDuration:, nonatomic) double _vibrationPatternMaximumDuration;
-@property (setter=_setVibrationPatternToReplay:, nonatomic, retain) TLVibrationPattern *_vibrationPatternToReplay;
 @property (nonatomic) <TKVibrationRecorderTouchSurfaceDelegate> *delegate;
 
-- (BOOL)_isRecordingModeEnabled;
-- (BOOL)_isReplayModeEnabled;
-- (void)_recordTouchLocation:(struct CGPoint { float x1; float x2; })arg1 touchPhase:(int)arg2;
-- (id)_recordedDataWrapper;
-- (double)_replayModeWasEnteredStartTime;
-- (void)_setRecordedDataWrapper:(id)arg1;
-- (void)_setRecordingModeEnabled:(BOOL)arg1;
-- (void)_setReplayModeEnabled:(BOOL)arg1;
-- (void)_setReplayModeWasEnteredStartTime:(double)arg1;
-- (void)_setShouldIgnoreCurrentTouch:(BOOL)arg1;
-- (void)_setVibrationPatternMaximumDuration:(double)arg1;
-- (void)_setVibrationPatternToReplay:(id)arg1;
-- (BOOL)_shouldIgnoreCurrentTouch;
+- (void).cxx_destruct;
+- (void)_recordTouchLocation:(struct CGPoint { double x1; double x2; })arg1 touchPhase:(int)arg2;
 - (void)_updateTouchLocationForReplayMode:(id)arg1;
-- (double)_vibrationPatternMaximumDuration;
-- (id)_vibrationPatternToReplay;
 - (void)currentVibrationComponentShouldEnd;
 - (void)dealloc;
 - (id)delegate;
@@ -45,7 +26,6 @@
 - (void)enterReplayModeWithVibrationPattern:(id)arg1;
 - (void)exitRecordingMode;
 - (void)exitReplayMode;
-- (id)init;
 - (id)initWithVibrationPatternMaximumDuration:(double)arg1 styleProvider:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

@@ -3,10 +3,10 @@
  */
 
 @interface CLLocationMatchInfo : NSObject <NSCopying, NSSecureCoding> {
-    id _internal;
+    id  _internal;
 }
 
-@property (nonatomic, readonly) struct { double x1; double x2; } matchCoordinate;
+@property (nonatomic, readonly) struct CLLocationCoordinate2D { double x1; double x2; } matchCoordinate;
 @property (nonatomic, readonly) double matchCourse;
 @property (nonatomic, readonly) int matchFormOfWay;
 @property (nonatomic, readonly) int matchQuality;
@@ -20,9 +20,9 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMatchQuality:(int)arg1 matchCoordinate:(struct { double x1; double x2; })arg2 matchCourse:(double)arg3 matchFormOfWay:(int)arg4 matchRoadClass:(int)arg5 matchShifted:(BOOL)arg6;
+- (id)initWithMatchQuality:(int)arg1 matchCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg2 matchCourse:(double)arg3 matchFormOfWay:(int)arg4 matchRoadClass:(int)arg5 matchShifted:(BOOL)arg6;
 - (BOOL)isMatchShifted;
-- (struct { double x1; double x2; })matchCoordinate;
+- (struct CLLocationCoordinate2D { double x1; double x2; })matchCoordinate;
 - (double)matchCourse;
 - (int)matchFormOfWay;
 - (int)matchQuality;

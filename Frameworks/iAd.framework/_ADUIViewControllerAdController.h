@@ -3,19 +3,19 @@
  */
 
 @interface _ADUIViewControllerAdController : NSObject <ADBannerViewDelegate, ADInterstitialAdDelegate, _UIViewControllerContentViewEmbedding> {
-    NSString *_bannerAdSection;
-    NSString *_bannerAuthUserName;
-    NSURL *_bannerServerURL;
-    ADBannerView *_bannerView;
-    BOOL _canDisplayBannerAds;
-    BOOL _canOwnSharedBanner;
-    UIViewController *_contentViewController;
-    ADInterstitialAd *_interstitialAd;
-    NSString *_interstitialAdSection;
-    NSString *_interstitialAuthUserName;
-    int _interstitialPresentationPolicy;
-    NSURL *_interstitialServerURL;
-    BOOL _presentingFullScreenAd;
+    NSString * _bannerAdSection;
+    NSString * _bannerAuthUserName;
+    NSURL * _bannerServerURL;
+    ADBannerView * _bannerView;
+    BOOL  _canDisplayBannerAds;
+    BOOL  _canOwnSharedBanner;
+    UIViewController * _contentViewController;
+    ADInterstitialAd * _interstitialAd;
+    NSString * _interstitialAdSection;
+    NSString * _interstitialAuthUserName;
+    int  _interstitialPresentationPolicy;
+    NSURL * _interstitialServerURL;
+    BOOL  _presentingFullScreenAd;
 }
 
 @property (nonatomic, copy) NSString *bannerAdSection;
@@ -44,7 +44,7 @@
 - (void)_hideBannerView;
 - (void)_layoutContentAndBannerViewAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (BOOL)_presentInterstitialIfReady;
-- (void)_setEmbeddedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_setEmbeddedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)bannerAdSection;
 - (id)bannerAuthUserName;
 - (id)bannerServerURL;

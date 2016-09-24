@@ -3,7 +3,7 @@
  */
 
 @interface IMWeakArray : NSObject {
-    NSMutableArray *_weakArray;
+    NSMutableArray * _weakArray;
 }
 
 - (void)addObject:(id)arg1;

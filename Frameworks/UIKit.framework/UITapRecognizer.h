@@ -3,42 +3,42 @@
  */
 
 @interface UITapRecognizer : NSObject <NSCoding> {
-    NSMutableSet *_activeTouches;
-    float _allowableMovement;
-    float _allowableSeparation;
-    double _allowableTouchTimeSeparation;
-    int _currentNumberOfTaps;
-    int _currentNumberOfTouches;
-    <UITapRecognizerDelegate> *_delegate;
+    NSMutableSet * _activeTouches;
+    double  _allowableMovement;
+    double  _allowableSeparation;
+    double  _allowableTouchTimeSeparation;
+    int  _currentNumberOfTaps;
+    int  _currentNumberOfTouches;
+    <UITapRecognizerDelegate> * _delegate;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _digitizerLocation;
-    int _exclusiveDirectionalAxis;
+        double x; 
+        double y; 
+    }  _digitizerLocation;
+    int  _exclusiveDirectionalAxis;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _location;
-    double _maximumIntervalBetweenSuccessiveTaps;
-    double _maximumSingleTapDuration;
-    double _maximumTapDuration;
-    unsigned int _multitouchTimerOn;
-    unsigned int _noNewTouches;
-    unsigned int _numberOfTapsRequired;
-    int _numberOfTouchesForCurrentTap;
-    unsigned int _numberOfTouchesRequired;
+        double x; 
+        double y; 
+    }  _location;
+    double  _maximumIntervalBetweenSuccessiveTaps;
+    double  _maximumSingleTapDuration;
+    double  _maximumTapDuration;
+    unsigned int  _multitouchTimerOn;
+    unsigned int  _noNewTouches;
+    unsigned int  _numberOfTapsRequired;
+    int  _numberOfTouchesForCurrentTap;
+    unsigned int  _numberOfTouchesRequired;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _startPoint;
-    int _strongestDirectionalAxis;
-    float _strongestDirectionalForce;
-    unsigned int _timerOn;
-    NSMutableArray *_touches;
+        double x; 
+        double y; 
+    }  _startPoint;
+    int  _strongestDirectionalAxis;
+    double  _strongestDirectionalForce;
+    unsigned int  _timerOn;
+    NSMutableArray * _touches;
 }
 
-@property (nonatomic) float allowableMovement;
-@property (nonatomic) float allowableSeparation;
+@property (nonatomic) double allowableMovement;
+@property (nonatomic) double allowableSeparation;
 @property (nonatomic) double allowableTouchTimeSeparation;
 @property (nonatomic) <UITapRecognizerDelegate> *delegate;
 @property (nonatomic) int exclusiveDirectionalAxis;
@@ -51,10 +51,10 @@
 
 - (void).cxx_destruct;
 - (void)_beginInteraction;
-- (struct CGPoint { float x1; float x2; })_digitizerLocation;
+- (struct CGPoint { double x1; double x2; })_digitizerLocation;
 - (float)_effectiveAllowableMovement;
 - (void)_interactionEndedTouch:(BOOL)arg1;
-- (struct CGPoint { float x1; float x2; })_locationInSceneReferenceSpace;
+- (struct CGPoint { double x1; double x2; })_locationInSceneReferenceSpace;
 - (void)_reset;
 - (void)_updateDigitizerLocationForEvent:(id)arg1;
 - (BOOL)activeTouchesExceedAllowableSeparation;
@@ -69,7 +69,7 @@
 - (int)exclusiveDirectionalAxis;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
+- (struct CGPoint { double x1; double x2; })locationInView:(id)arg1;
 - (double)maximumIntervalBetweenSuccessiveTaps;
 - (double)maximumSingleTapDuration;
 - (double)maximumTapDuration;

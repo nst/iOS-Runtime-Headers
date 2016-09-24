@@ -3,8 +3,8 @@
  */
 
 @interface SKUIMenuViewElement : SKUIViewElement {
-    BOOL _enabled;
-    SKUILabelViewElement *_menuLabel;
+    BOOL  _enabled;
+    SKUILabelViewElement * _menuLabel;
 }
 
 @property (nonatomic, readonly) NSArray *menuItemTitles;

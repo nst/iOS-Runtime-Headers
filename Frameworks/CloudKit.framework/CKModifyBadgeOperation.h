@@ -3,8 +3,8 @@
  */
 
 @interface CKModifyBadgeOperation : CKOperation {
-    unsigned int _badgeValue;
-    id /* block */ _modifyBadgeCompletionBlock;
+    unsigned int  _badgeValue;
+    id /* block */  _modifyBadgeCompletionBlock;
 }
 
 @property (nonatomic) unsigned int badgeValue;
@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (unsigned int)badgeValue;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;

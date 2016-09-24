@@ -3,15 +3,15 @@
  */
 
 @interface NEPolicyResult : NSObject <NEPrettyDescription> {
-    NSUUID *_agentUUID;
-    unsigned int _controlUnit;
-    NSString *_interfaceName;
-    int _resultType;
-    NSArray *_routeRules;
-    int _secondaryResultType;
-    unsigned int _serviceData;
-    NSUUID *_serviceUUID;
-    unsigned int _skipOrder;
+    NSUUID * _agentUUID;
+    unsigned int  _controlUnit;
+    NSString * _interfaceName;
+    int  _resultType;
+    NSArray * _routeRules;
+    int  _secondaryResultType;
+    unsigned int  _serviceData;
+    NSUUID * _serviceUUID;
+    unsigned int  _skipOrder;
 }
 
 @property (copy) NSUUID *agentUUID;

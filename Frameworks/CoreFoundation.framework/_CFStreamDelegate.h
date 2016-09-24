@@ -8,15 +8,15 @@
         int (*_wcb)(); 
         int (*genericCallback)(); 
         void *genericPointer; 
-    } _cb;
+    }  _cb;
     struct { 
         int version; 
         void *info; 
         int (*retain)(); 
         int (*release)(); 
         int (*copyDescription)(); 
-    } _client;
-    unsigned long _flags;
+    }  _client;
+    unsigned long  _flags;
 }
 
 @property (readonly, copy) NSString *debugDescription;

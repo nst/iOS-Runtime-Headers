@@ -3,7 +3,7 @@
  */
 
 @interface RadioStationMatchStoreMetadata : RadioStationMatchMetadata {
-    NSNumber *_storeID;
+    NSNumber * _storeID;
 }
 
 @property (nonatomic, copy) NSNumber *storeID;

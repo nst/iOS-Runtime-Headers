@@ -3,7 +3,7 @@
  */
 
 @interface GQDWPFootnoteMark : NSObject {
-    struct __CFString { } *mValue;
+    struct __CFString { } * mValue;
 }
 
 - (void)dealloc;

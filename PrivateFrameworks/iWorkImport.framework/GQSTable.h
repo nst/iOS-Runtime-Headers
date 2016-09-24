@@ -3,13 +3,13 @@
  */
 
 @interface GQSTable : NSObject {
-    BOOL mAlwaysPutReadCellsInArray;
-    long mCellCount;
-    GQDTOverlapCell *mCurrentOverlapCell;
-    BOOL mIsCounting;
-    BOOL mIsStreaming;
-    GQDTCell *mLastCellRead;
-    GQDTTable *mTable;
+    BOOL  mAlwaysPutReadCellsInArray;
+    long  mCellCount;
+    GQDTOverlapCell * mCurrentOverlapCell;
+    BOOL  mIsCounting;
+    BOOL  mIsStreaming;
+    GQDTCell * mLastCellRead;
+    GQDTTable * mTable;
 }
 
 - (BOOL)alwaysPutReadCellsInArray;

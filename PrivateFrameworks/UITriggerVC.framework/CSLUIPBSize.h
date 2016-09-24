@@ -3,12 +3,12 @@
  */
 
 @interface CSLUIPBSize : PBCodable <NSCopying> {
-    float _height;
-    float _width;
+    double  _height;
+    double  _width;
 }
 
-@property (nonatomic) float height;
-@property (nonatomic) float width;
+@property (nonatomic) double height;
+@property (nonatomic) double width;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

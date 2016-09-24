@@ -3,9 +3,9 @@
  */
 
 @interface CATSessionMessageResumed : CATSessionMessage {
-    NSArray *_pendingRemoteTaskUUIDs;
-    NSDictionary *_serverUserInfo;
-    NSUUID *_sessionUUID;
+    NSArray * _pendingRemoteTaskUUIDs;
+    NSDictionary * _serverUserInfo;
+    NSUUID * _sessionUUID;
 }
 
 @property (nonatomic, copy) NSArray *pendingRemoteTaskUUIDs;

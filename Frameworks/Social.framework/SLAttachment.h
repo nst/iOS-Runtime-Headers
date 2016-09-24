@@ -3,20 +3,20 @@
  */
 
 @interface SLAttachment : NSObject <NSSecureCoding> {
-    int _downsampleStatus;
-    NSString *_identifier;
-    NSItemProvider *_itemProvider;
-    int _itemProviderPreviewType;
-    BOOL _needsAnotherPreviewGeneration;
-    id _payload;
-    NSURL *_payloadSourceFileURL;
-    id /* block */ _payloadUpdateObserver;
-    UIImage *_previewImage;
-    int _previewType;
-    id /* block */ _previewUpdateObserver;
-    BOOL _startedPayloadLoad;
-    int _type;
-    NSString *_typeIdentifier;
+    int  _downsampleStatus;
+    NSString * _identifier;
+    NSItemProvider * _itemProvider;
+    int  _itemProviderPreviewType;
+    BOOL  _needsAnotherPreviewGeneration;
+    id  _payload;
+    NSURL * _payloadSourceFileURL;
+    id /* block */  _payloadUpdateObserver;
+    UIImage * _previewImage;
+    int  _previewType;
+    id /* block */  _previewUpdateObserver;
+    BOOL  _startedPayloadLoad;
+    int  _type;
+    NSString * _typeIdentifier;
 }
 
 @property (nonatomic) int downsampleStatus;

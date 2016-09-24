@@ -7,16 +7,15 @@
 
 - (void)invalidateTextContainerOrigin;
 - (BOOL)isHorizontallyResizable;
-- (struct CGSize { float x1; float x2; })minSize;
-- (void)setConstrainedFrameSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 avoidAdditionalLayout:(BOOL)arg2;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textContainerInset;
-- (struct CGPoint { float x1; float x2; })textContainerOrigin;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
+- (struct CGSize { double x1; double x2; })minSize;
+- (void)setConstrainedFrameSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 avoidAdditionalLayout:(BOOL)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })textContainerInset;
+- (struct CGPoint { double x1; double x2; })textContainerOrigin;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleRect;
 
 @optional
 
-- (void)addTextAttachmentView:(UIView *)arg1 forAttachment:(NSTextAttachment *)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })markedRange;
 - (void)setMarkedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setTextContainer:(NSTextContainer *)arg1;

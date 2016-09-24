@@ -3,9 +3,9 @@
  */
 
 @interface CNContactStoreFilter : CNContactFilter {
-    NSSet *_containerIdentifiers;
-    NSSet *_groupIdentifiers;
-    BOOL _isServerFilter;
+    NSSet * _containerIdentifiers;
+    NSSet * _groupIdentifiers;
+    BOOL  _isServerFilter;
 }
 
 @property (nonatomic, retain) NSSet *containerIdentifiers;

@@ -3,30 +3,34 @@
  */
 
 @interface GEOTrafficBannerText : PBCodable <NSCopying> {
-    GEOFormattedString *_bannerLargeText;
-    GEOFormattedString *_bannerSmallText;
+    GEOFormattedString * _bannerLargeText;
+    GEOFormattedString * _bannerSmallText;
+    BOOL  _disableFasterRerouteByDefault;
     struct { 
         unsigned int hideAtDistance : 1; 
         unsigned int incidentDistance : 1; 
         unsigned int incidentIndex : 1; 
         unsigned int previousBannerChange : 1; 
         unsigned int showAtDistance : 1; 
-    } _has;
-    unsigned int _hideAtDistance;
-    unsigned int _incidentDistance;
-    unsigned int _incidentIndex;
-    NSMutableArray *_localizedIncidentBanners;
-    NSMutableArray *_localizedIncidentSpokenTexts;
-    NSMutableArray *_localizedIncidentSubBanners;
-    int _previousBannerChange;
-    unsigned int _showAtDistance;
-    GEOFormattedString *_spokenPrompt;
+        unsigned int disableFasterRerouteByDefault : 1; 
+    }  _has;
+    unsigned int  _hideAtDistance;
+    unsigned int  _incidentDistance;
+    unsigned int  _incidentIndex;
+    NSMutableArray * _localizedIncidentBanners;
+    NSMutableArray * _localizedIncidentSpokenTexts;
+    NSMutableArray * _localizedIncidentSubBanners;
+    int  _previousBannerChange;
+    unsigned int  _showAtDistance;
+    GEOFormattedString * _spokenPrompt;
 }
 
 @property (nonatomic, retain) GEOFormattedString *bannerLargeText;
 @property (nonatomic, retain) GEOFormattedString *bannerSmallText;
+@property (nonatomic) BOOL disableFasterRerouteByDefault;
 @property (nonatomic, readonly) BOOL hasBannerLargeText;
 @property (nonatomic, readonly) BOOL hasBannerSmallText;
+@property (nonatomic) BOOL hasDisableFasterRerouteByDefault;
 @property (nonatomic) BOOL hasHideAtDistance;
 @property (nonatomic) BOOL hasIncidentDistance;
 @property (nonatomic) BOOL hasIncidentIndex;
@@ -43,6 +47,11 @@
 @property (nonatomic) unsigned int showAtDistance;
 @property (nonatomic, retain) GEOFormattedString *spokenPrompt;
 
++ (Class)localizedIncidentBannerType;
++ (Class)localizedIncidentSpokenTextType;
++ (Class)localizedIncidentSubBannerType;
+
+- (int)StringAsPreviousBannerChange:(id)arg1;
 - (void)addLocalizedIncidentBanner:(id)arg1;
 - (void)addLocalizedIncidentSpokenText:(id)arg1;
 - (void)addLocalizedIncidentSubBanner:(id)arg1;
@@ -56,8 +65,10 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)disableFasterRerouteByDefault;
 - (BOOL)hasBannerLargeText;
 - (BOOL)hasBannerSmallText;
+- (BOOL)hasDisableFasterRerouteByDefault;
 - (BOOL)hasHideAtDistance;
 - (BOOL)hasIncidentDistance;
 - (BOOL)hasIncidentIndex;
@@ -80,9 +91,12 @@
 - (unsigned int)localizedIncidentSubBannersCount;
 - (void)mergeFrom:(id)arg1;
 - (int)previousBannerChange;
+- (id)previousBannerChangeAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setBannerLargeText:(id)arg1;
 - (void)setBannerSmallText:(id)arg1;
+- (void)setDisableFasterRerouteByDefault:(BOOL)arg1;
+- (void)setHasDisableFasterRerouteByDefault:(BOOL)arg1;
 - (void)setHasHideAtDistance:(BOOL)arg1;
 - (void)setHasIncidentDistance:(BOOL)arg1;
 - (void)setHasIncidentIndex:(BOOL)arg1;

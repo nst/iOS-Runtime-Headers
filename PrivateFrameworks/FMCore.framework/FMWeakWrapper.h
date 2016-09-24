@@ -3,8 +3,8 @@
  */
 
 @interface FMWeakWrapper : NSObject <NSCopying> {
-    id _object;
-    unsigned int _objectHash;
+    id  _object;
+    unsigned int  _objectHash;
 }
 
 @property (nonatomic) id object;

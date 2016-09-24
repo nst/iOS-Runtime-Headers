@@ -3,7 +3,7 @@
  */
 
 @interface FBTransactionWatchdog : BSWatchdog {
-    FBTransaction *_transaction;
+    FBTransaction * _transaction;
 }
 
 @property (nonatomic, readonly, retain) FBTransaction *transaction;

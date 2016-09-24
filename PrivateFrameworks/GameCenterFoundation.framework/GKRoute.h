@@ -3,9 +3,9 @@
  */
 
 @interface GKRoute : NSObject {
-    NSArray *_parameterNames;
-    NSRegularExpression *_regex;
-    NSString *_scheme;
+    NSArray * _parameterNames;
+    NSRegularExpression * _regex;
+    NSString * _scheme;
 }
 
 - (void)dealloc;

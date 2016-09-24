@@ -3,8 +3,8 @@
  */
 
 @interface SKUIShareSheetActivityViewElement : SKUIViewElement {
-    NSString *_activityType;
-    NSURL *_contentSourceURL;
+    NSString * _activityType;
+    NSURL * _contentSourceURL;
 }
 
 @property (nonatomic, readonly) SKUIURLViewElement *URL;

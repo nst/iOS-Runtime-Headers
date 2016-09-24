@@ -3,16 +3,16 @@
  */
 
 @interface AppLaunchStatsStatistics : NSObject <DuetLoggerProtocol, DuetSaveAndRestore> {
-    NSMutableDictionary *appStatistics;
-    BOOL bypass;
-    NSMutableArray *lastForegroundApps;
-    NSMutableArray *lastPredictedApps;
-    NSDate *lastTriggeredDate;
-    short lastTriggeredSlot;
-    unsigned long long records;
-    AppLaunchStatsSaveAndRestore *saveAndRestoreContext;
-    id /* block */ scoreCallback;
-    NSObject<OS_dispatch_queue> *statsQueue;
+    NSMutableDictionary * appStatistics;
+    BOOL  bypass;
+    NSMutableArray * lastForegroundApps;
+    NSMutableArray * lastPredictedApps;
+    NSDate * lastTriggeredDate;
+    short  lastTriggeredSlot;
+    unsigned int  records;
+    AppLaunchStatsSaveAndRestore * saveAndRestoreContext;
+    id /* block */  scoreCallback;
+    NSObject<OS_dispatch_queue> * statsQueue;
 }
 
 - (void).cxx_destruct;

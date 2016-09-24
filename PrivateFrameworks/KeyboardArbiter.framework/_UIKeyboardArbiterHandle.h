@@ -3,28 +3,28 @@
  */
 
 @interface _UIKeyboardArbiterHandle : NSObject <_UIKeyboardArbitration> {
-    BOOL _active;
-    NSString *_bundleIdentifier;
-    BOOL _checkingShowability;
-    NSXPCConnection *_connection;
-    NSMutableSet *_hostedPids;
-    BOOL _invalidated;
-    float _level;
-    _UIKeyboardArbiter *_owner;
-    BKSProcessAssertion *_remoteKeepAliveAssertion;
-    unsigned int _remoteKeepAliveAssertionCount;
-    unsigned int _remoteKeepAliveTimerCount;
-    NSString *_remoteSceneID;
-    BOOL _running;
-    FBSCAContextSceneLayer *_sceneLayer;
-    int _suppressionCount;
-    BOOL _wantedActive;
+    BOOL  _active;
+    NSString * _bundleIdentifier;
+    BOOL  _checkingShowability;
+    NSXPCConnection * _connection;
+    NSMutableSet * _hostedPids;
+    BOOL  _invalidated;
+    double  _level;
+    _UIKeyboardArbiter * _owner;
+    BKSProcessAssertion * _remoteKeepAliveAssertion;
+    unsigned int  _remoteKeepAliveAssertionCount;
+    unsigned int  _remoteKeepAliveTimerCount;
+    NSString * _remoteSceneID;
+    BOOL  _running;
+    FBSCAContextSceneLayer * _sceneLayer;
+    int  _suppressionCount;
+    BOOL  _wantedActive;
 }
 
 @property (readonly) BOOL active;
 @property (readonly, retain) NSString *bundleIdentifier;
 @property (readonly) NSXPCConnection *connection;
-@property (readonly) float level;
+@property (readonly) double level;
 @property (readonly) int processIdentifier;
 @property (readonly, retain) NSString *remoteSceneID;
 @property BOOL running;
@@ -49,9 +49,9 @@
 - (void)releaseProcessAssertion;
 - (id)remoteSceneID;
 - (void)retrieveDebugInformation:(id /* block */)arg1;
+- (void)retrieveMoreDebugInformationWithCompletion:(id /* block */)arg1;
 - (BOOL)running;
 - (id)sceneLayer;
-- (void)setDebugLevel:(int)arg1;
 - (void)setRunning:(BOOL)arg1;
 - (void)setWindowContextID:(unsigned int)arg1 sceneIdentifier:(id)arg2 forKeyboard:(BOOL)arg3 withLevel:(float)arg4;
 - (void)setWindowHostingPID:(int)arg1 active:(BOOL)arg2;

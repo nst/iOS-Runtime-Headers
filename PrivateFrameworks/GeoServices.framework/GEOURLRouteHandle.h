@@ -3,10 +3,10 @@
  */
 
 @interface GEOURLRouteHandle : PBCodable <NSCopying> {
-    NSData *_directionsResponseID;
-    NSData *_routeID;
-    NSData *_transitData;
-    NSData *_zilchPoints;
+    NSData * _directionsResponseID;
+    NSData * _routeID;
+    NSData * _transitData;
+    NSData * _zilchPoints;
 }
 
 @property (nonatomic, retain) NSData *directionsResponseID;

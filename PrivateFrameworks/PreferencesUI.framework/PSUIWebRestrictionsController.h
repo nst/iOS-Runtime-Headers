@@ -3,16 +3,16 @@
  */
 
 @interface PSUIWebRestrictionsController : PSEditableListController <MCProfileConnectionObserver> {
-    NSMutableArray *_allowedGroup;
-    NSArray *_contentFilterOverriddenBlackListedSites;
-    NSArray *_contentFilterOverriddenWhiteListedSites;
-    NSMutableArray *_deniedGroup;
-    NSMutableArray *_inAndOutList;
-    int _restrictionState;
-    BOOL _webFilterEditingAllowedByProfile;
-    NSArray *_whiteListAllowedSites;
-    NSMutableArray *_whitelist;
-    NSMutableArray *_whitelistAllowedGroup;
+    NSMutableArray * _allowedGroup;
+    NSArray * _contentFilterOverriddenBlackListedSites;
+    NSArray * _contentFilterOverriddenWhiteListedSites;
+    NSMutableArray * _deniedGroup;
+    NSMutableArray * _inAndOutList;
+    int  _restrictionState;
+    BOOL  _webFilterEditingAllowedByProfile;
+    NSArray * _whiteListAllowedSites;
+    NSMutableArray * _whitelist;
+    NSMutableArray * _whitelistAllowedGroup;
 }
 
 @property (nonatomic, retain) NSMutableArray *allowedGroup;

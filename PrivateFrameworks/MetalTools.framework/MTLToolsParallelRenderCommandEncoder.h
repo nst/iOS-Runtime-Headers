@@ -3,7 +3,7 @@
  */
 
 @interface MTLToolsParallelRenderCommandEncoder : MTLToolsCommandEncoder <MTLParallelRenderCommandEncoder> {
-    MTLToolsPointerArray *_renderCommandEncoders;
+    MTLToolsPointerArray * _renderCommandEncoders;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -19,5 +19,8 @@
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
 - (id)renderCommandEncoder;
 - (id)renderCommandEncoders;
+- (void)setColorStoreAction:(unsigned int)arg1 atIndex:(unsigned int)arg2;
+- (void)setDepthStoreAction:(unsigned int)arg1;
+- (void)setStencilStoreAction:(unsigned int)arg1;
 
 @end

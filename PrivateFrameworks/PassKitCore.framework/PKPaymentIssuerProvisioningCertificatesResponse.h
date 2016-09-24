@@ -3,19 +3,19 @@
  */
 
 @interface PKPaymentIssuerProvisioningCertificatesResponse : PKPaymentWebServiceResponse {
-    NSArray *_certificates;
-    NSData *_nonce;
-    NSData *_nonceSignature;
-    NSData *_publicKeyHash;
+    NSArray * _certificates;
+    NSData * _nonce;
+    NSData * _nonceSignature;
+    NSData * _publicKeyHash;
 }
 
-@property (nonatomic, readonly) NSArray *certificates;
-@property (nonatomic, readonly) NSData *nonce;
+@property (nonatomic, readonly, copy) NSArray *certificates;
+@property (nonatomic, readonly, copy) NSData *nonce;
 @property (nonatomic, copy) NSData *nonceSignature;
 @property (nonatomic, copy) NSData *publicKeyHash;
 
+- (void).cxx_destruct;
 - (id)certificates;
-- (void)dealloc;
 - (id)initWithData:(id)arg1;
 - (id)nonce;
 - (id)nonceSignature;

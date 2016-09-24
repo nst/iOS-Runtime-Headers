@@ -3,9 +3,9 @@
  */
 
 @interface UMUserSwitchContext : NSObject {
-    BOOL _secondaryActionRequired;
-    NSData *_setupData;
-    NSString *_shortLivedToken;
+    BOOL  _secondaryActionRequired;
+    NSData * _setupData;
+    NSString * _shortLivedToken;
 }
 
 @property (nonatomic) BOOL secondaryActionRequired;

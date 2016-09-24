@@ -3,13 +3,13 @@
  */
 
 @interface UITableViewUpdateGap : NSObject {
-    NSMutableArray *_deleteItems;
-    UIUpdateItem *_firstUpdateItem;
+    NSMutableArray * _deleteItems;
+    UIUpdateItem * _firstUpdateItem;
     struct { 
         unsigned int hasAutomaticAnimationItems : 1; 
-    } _gapFlags;
-    NSMutableArray *_insertItems;
-    UIUpdateItem *_lastUpdateItem;
+    }  _gapFlags;
+    NSMutableArray * _insertItems;
+    UIUpdateItem * _lastUpdateItem;
 }
 
 @property (nonatomic, readonly) NSArray *deleteItems;

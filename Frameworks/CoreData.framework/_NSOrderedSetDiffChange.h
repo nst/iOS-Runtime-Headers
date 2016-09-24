@@ -3,7 +3,7 @@
  */
 
 @interface _NSOrderedSetDiffChange : _NSOrderedSetDiff {
-    unsigned int _index;
+    unsigned int  _index;
 }
 
 - (id)initWithObject:(id)arg1 index:(unsigned int)arg2;

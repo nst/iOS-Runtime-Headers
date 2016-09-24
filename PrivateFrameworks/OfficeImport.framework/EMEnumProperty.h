@@ -3,7 +3,7 @@
  */
 
 @interface EMEnumProperty : CMProperty {
-    int wdValue;
+    int  wdValue;
 }
 
 + (id)mapHorizontalAlignmentValue:(int)arg1;

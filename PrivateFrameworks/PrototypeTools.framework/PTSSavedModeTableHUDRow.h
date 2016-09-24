@@ -3,7 +3,7 @@
  */
 
 @interface PTSSavedModeTableHUDRow : PTSHUDRow {
-    PTSSavedModeTableViewController *_tableViewController;
+    PTSSavedModeTableViewController * _tableViewController;
 }
 
 @property (nonatomic, retain) PTSSavedModeTableViewController *tableViewController;

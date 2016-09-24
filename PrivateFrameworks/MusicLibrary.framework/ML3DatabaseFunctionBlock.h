@@ -3,7 +3,7 @@
  */
 
 @interface ML3DatabaseFunctionBlock : ML3DatabaseFunction {
-    id /* block */ _block;
+    id /* block */  _block;
 }
 
 @property (nonatomic, copy) id /* block */ block;

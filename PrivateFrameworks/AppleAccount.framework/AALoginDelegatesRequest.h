@@ -3,8 +3,8 @@
  */
 
 @interface AALoginDelegatesRequest : AARequest {
-    ACAccount *_account;
-    NSDictionary *_loginParameters;
+    ACAccount * _account;
+    NSDictionary * _loginParameters;
 }
 
 + (Class)responseClass;

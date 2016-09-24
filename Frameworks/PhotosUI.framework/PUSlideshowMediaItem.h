@@ -3,9 +3,9 @@
  */
 
 @interface PUSlideshowMediaItem : NSObject {
-    MPMediaItem *_mediaItem;
-    OKProducerPreset *_preset;
-    int _type;
+    MPMediaItem * _mediaItem;
+    OKProducerPreset * _preset;
+    int  _type;
 }
 
 @property (nonatomic, readonly) NSURL *audioURL;

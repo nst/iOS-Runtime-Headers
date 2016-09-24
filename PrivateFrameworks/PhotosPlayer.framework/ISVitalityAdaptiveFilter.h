@@ -3,14 +3,14 @@
  */
 
 @interface ISVitalityAdaptiveFilter : ISVitalityFilter {
-    double __rawVitalityOffset;
-    ISDynamicValueFilter *__vitalityOffsetValueFilter;
-    BOOL _didVisibilityOffsetCrossCenter;
-    int _direction;
-    double _maxRate;
-    BOOL _previousVisibility;
-    double _previousVisibilityOffset;
-    double _vitalityRange;
+    double  __rawVitalityOffset;
+    ISDynamicValueFilter * __vitalityOffsetValueFilter;
+    BOOL  _didVisibilityOffsetCrossCenter;
+    int  _direction;
+    double  _maxRate;
+    BOOL  _previousVisibility;
+    double  _previousVisibilityOffset;
+    double  _vitalityRange;
 }
 
 @property (setter=_setRawVitalityOffset:, nonatomic) double _rawVitalityOffset;

@@ -3,13 +3,15 @@
  */
 
 @interface CKDContainerInfo : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_containerScopedUserID;
-    NSURL *_publicCloudDBURL;
-    NSURL *_publicDeviceServiceURL;
-    NSURL *_publicShareServiceURL;
+    NSString * _containerScopedUserID;
+    int  _environment;
+    NSURL * _publicCloudDBURL;
+    NSURL * _publicDeviceServiceURL;
+    NSURL * _publicShareServiceURL;
 }
 
 @property (nonatomic, copy) NSString *containerScopedUserID;
+@property (nonatomic) int environment;
 @property (nonatomic, copy) NSURL *publicCloudDBURL;
 @property (nonatomic, copy) NSURL *publicDeviceServiceURL;
 @property (nonatomic, copy) NSURL *publicShareServiceURL;
@@ -22,13 +24,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (int)environment;
 - (unsigned int)hash;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)publicCloudDBURL;
 - (id)publicDeviceServiceURL;
 - (id)publicShareServiceURL;
 - (void)setContainerScopedUserID:(id)arg1;
+- (void)setEnvironment:(int)arg1;
 - (void)setPublicCloudDBURL:(id)arg1;
 - (void)setPublicDeviceServiceURL:(id)arg1;
 - (void)setPublicShareServiceURL:(id)arg1;

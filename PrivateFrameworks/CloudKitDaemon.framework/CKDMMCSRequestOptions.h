@@ -3,16 +3,18 @@
  */
 
 @interface CKDMMCSRequestOptions : NSObject {
-    BOOL _allowsCellularAccess;
-    BOOL _allowsPowerNapScheduling;
-    NSString *_applicationBundleID;
-    NSString *_applicationSecondaryID;
-    NSString *_containerID;
-    int _qualityOfService;
-    BOOL _usesBackgroundSession;
-    NSArray *_zoneNames;
+    NSDictionary * _MMCSRequestOptions;
+    BOOL  _allowsCellularAccess;
+    BOOL  _allowsPowerNapScheduling;
+    NSString * _applicationBundleID;
+    NSString * _applicationSecondaryID;
+    NSString * _containerID;
+    int  _qualityOfService;
+    BOOL  _usesBackgroundSession;
+    NSArray * _zoneNames;
 }
 
+@property (nonatomic, retain) NSDictionary *MMCSRequestOptions;
 @property (nonatomic) BOOL allowsCellularAccess;
 @property (nonatomic) BOOL allowsPowerNapScheduling;
 @property (nonatomic, retain) NSString *applicationBundleID;
@@ -25,6 +27,7 @@
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (id)MMCSOptions;
+- (id)MMCSRequestOptions;
 - (BOOL)allowsCellularAccess;
 - (BOOL)allowsPowerNapScheduling;
 - (id)applicationBundleID;
@@ -38,6 +41,7 @@
 - (void)setApplicationBundleID:(id)arg1;
 - (void)setApplicationSecondaryID:(id)arg1;
 - (void)setContainerID:(id)arg1;
+- (void)setMMCSRequestOptions:(id)arg1;
 - (void)setQualityOfService:(int)arg1;
 - (void)setUsesBackgroundSession:(BOOL)arg1;
 - (void)setZoneNames:(id)arg1;

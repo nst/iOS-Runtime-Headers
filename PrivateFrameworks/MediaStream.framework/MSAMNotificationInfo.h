@@ -3,11 +3,11 @@
  */
 
 @interface MSAMNotificationInfo : NSObject {
-    id /* block */ _completionBlock;
-    MSAlertManager *_owner;
-    NSString *_personID;
-    struct __CFRunLoopSource { } *_runLoopSource;
-    struct __CFUserNotification { } *_userNotification;
+    id /* block */  _completionBlock;
+    MSAlertManager * _owner;
+    NSString * _personID;
+    struct __CFRunLoopSource { } * _runLoopSource;
+    struct __CFUserNotification { } * _userNotification;
 }
 
 @property (nonatomic, copy) id /* block */ completionBlock;

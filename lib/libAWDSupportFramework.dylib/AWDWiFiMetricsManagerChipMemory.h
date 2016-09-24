@@ -11,14 +11,14 @@
         unsigned int heapTotal : 1; 
         unsigned int heapTotalMax : 1; 
         unsigned int heapTotalMin : 1; 
-    } _has;
-    unsigned int _heapFree;
-    unsigned int _heapFreeMax;
-    unsigned int _heapFreeMin;
-    unsigned int _heapTotal;
-    unsigned int _heapTotalMax;
-    unsigned int _heapTotalMin;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned int  _heapFree;
+    unsigned int  _heapFreeMax;
+    unsigned int  _heapFreeMin;
+    unsigned int  _heapTotal;
+    unsigned int  _heapTotalMax;
+    unsigned int  _heapTotalMin;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL hasHeapFree;

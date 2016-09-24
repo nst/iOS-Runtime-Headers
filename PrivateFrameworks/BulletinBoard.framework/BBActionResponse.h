@@ -3,15 +3,20 @@
  */
 
 @interface BBActionResponse : NSObject <NSSecureCoding> {
-    NSString *_actionID;
-    int _actionType;
-    NSString *_bulletinButtonID;
-    NSDictionary *_bulletinContext;
-    NSString *_bulletinPublisherID;
-    NSString *_bulletinRecordID;
-    NSDictionary *_context;
+    unsigned int  _actionActivationMode;
+    int  _actionBehavior;
+    NSString * _actionID;
+    int  _actionType;
+    NSString * _bulletinButtonID;
+    NSDictionary * _bulletinContext;
+    NSString * _bulletinPublisherID;
+    NSString * _bulletinRecordID;
+    NSDictionary * _context;
+    NSString * _originID;
 }
 
+@property (nonatomic) unsigned int actionActivationMode;
+@property (nonatomic) int actionBehavior;
 @property (nonatomic, copy) NSString *actionID;
 @property (nonatomic) int actionType;
 @property (nonatomic, copy) NSString *bulletinButtonID;
@@ -19,10 +24,14 @@
 @property (nonatomic, copy) NSString *bulletinPublisherID;
 @property (nonatomic, copy) NSString *bulletinRecordID;
 @property (nonatomic, copy) NSDictionary *context;
+@property (nonatomic, copy) NSString *originID;
 
 + (id)actionResponseForResponse:(id)arg1 bulletinRequest:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
+- (unsigned int)actionActivationMode;
+- (int)actionBehavior;
 - (id)actionID;
 - (int)actionType;
 - (id)bulletinButtonID;
@@ -30,10 +39,12 @@
 - (id)bulletinPublisherID;
 - (id)bulletinRecordID;
 - (id)context;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)originID;
+- (void)setActionActivationMode:(unsigned int)arg1;
+- (void)setActionBehavior:(int)arg1;
 - (void)setActionID:(id)arg1;
 - (void)setActionType:(int)arg1;
 - (void)setBulletinButtonID:(id)arg1;
@@ -41,5 +52,6 @@
 - (void)setBulletinPublisherID:(id)arg1;
 - (void)setBulletinRecordID:(id)arg1;
 - (void)setContext:(id)arg1;
+- (void)setOriginID:(id)arg1;
 
 @end

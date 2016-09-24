@@ -3,7 +3,7 @@
  */
 
 @interface GKAchievementInternal : GKInternalRepresentation {
-    NSString *_achievedDescription;
+    NSString * _achievedDescription;
     union { 
         struct { 
             unsigned int _maximumPoints : 16; 
@@ -12,15 +12,15 @@
             unsigned int _reserved : 14; 
         } ; 
         unsigned int _value; 
-    } _attributes;
-    NSString *_groupIdentifier;
-    NSDictionary *_icons;
-    NSString *_identifier;
-    NSDate *_lastReportedDate;
-    double _percentComplete;
-    GKPlayerInternal *_player;
-    NSString *_title;
-    NSString *_unachievedDescription;
+    }  _attributes;
+    NSString * _groupIdentifier;
+    NSDictionary * _icons;
+    NSString * _identifier;
+    NSDate * _lastReportedDate;
+    double  _percentComplete;
+    GKPlayerInternal * _player;
+    NSString * _title;
+    NSString * _unachievedDescription;
 }
 
 @property (nonatomic, retain) NSString *achievedDescription;

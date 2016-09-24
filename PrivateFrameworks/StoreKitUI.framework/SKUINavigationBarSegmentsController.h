@@ -3,7 +3,7 @@
  */
 
 @interface SKUINavigationBarSegmentsController : SKUINavigationBarSectionController {
-    SKUISegmentedControlViewElementController *_underlyingController;
+    SKUISegmentedControlViewElementController * _underlyingController;
 }
 
 - (void).cxx_destruct;

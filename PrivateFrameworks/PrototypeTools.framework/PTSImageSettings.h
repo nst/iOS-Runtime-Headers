@@ -3,11 +3,11 @@
  */
 
 @interface PTSImageSettings : _UISettings <_UISettingsKeyObserver> {
-    UIImage *_image;
-    int _imageOrientation;
-    float _imageScale;
-    NSData *_pngData;
-    BOOL _unarchiving;
+    UIImage * _image;
+    int  _imageOrientation;
+    double  _imageScale;
+    NSData * _pngData;
+    BOOL  _unarchiving;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,7 +15,7 @@
 @property (readonly) unsigned int hash;
 @property (retain) UIImage *image;
 @property int imageOrientation;
-@property float imageScale;
+@property double imageScale;
 @property (retain) NSData *pngData;
 @property (readonly) Class superclass;
 

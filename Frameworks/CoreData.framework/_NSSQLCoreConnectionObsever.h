@@ -3,7 +3,7 @@
  */
 
 @interface _NSSQLCoreConnectionObsever : NSObject {
-    NSSQLCore *_core;
+    NSSQLCore * _core;
 }
 
 - (void)_clearBinding;

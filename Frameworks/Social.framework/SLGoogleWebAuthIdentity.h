@@ -3,11 +3,11 @@
  */
 
 @interface SLGoogleWebAuthIdentity : NSObject {
-    NSString *_displayName;
-    NSString *_refreshToken;
-    NSString *_token;
-    NSString *_username;
-    NSString *_youTubeUsername;
+    NSString * _displayName;
+    NSString * _refreshToken;
+    NSString * _token;
+    NSString * _username;
+    NSString * _youTubeUsername;
 }
 
 @property (nonatomic, copy) NSString *displayName;

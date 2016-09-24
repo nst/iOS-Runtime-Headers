@@ -3,27 +3,30 @@
  */
 
 @interface BRCContainerMetadataSyncDownOperation : _BRCOperation <BRCOperationSubclass> {
-    NSMutableSet *_containerIDsUpdated;
-    NSMutableArray *_desiredKeysForDesiredAssets;
-    NSMutableArray *_recordIDsForDesiredAssets;
-    NSMutableDictionary *_recordIDsToVersionETagsForDesiredAssets;
-    BRCAccountSession *_session;
-    BRCContainerMetadataSyncPersistedState *_state;
+    NSMutableSet * _containerIDsUpdated;
+    NSMutableArray * _desiredKeysForDesiredAssets;
+    NSMutableArray * _recordIDsForDesiredAssets;
+    NSMutableDictionary * _recordIDsToVersionETagsForDesiredAssets;
+    BRCAccountSession * _session;
+    BOOL  _shouldFetchAnotherBatch;
+    BRCContainerMetadataSyncPersistedState * _state;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL shouldFetchAnotherBatch;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_completedWithServerChangeToken:(id)arg1;
+- (id)createActivity;
 - (id)initWithSession:(id)arg1 state:(id)arg2;
 - (void)main;
 - (void)performAfterCreatingZoneIfNeeded:(id /* block */)arg1;
 - (void)performAfterFetchingAssetContents:(id /* block */)arg1;
 - (void)performAfterFetchingRecordChanges:(id /* block */)arg1;
+- (BOOL)shouldFetchAnotherBatch;
 - (BOOL)shouldRetryForError:(id)arg1;
-- (unsigned long long)startActivity;
 
 @end

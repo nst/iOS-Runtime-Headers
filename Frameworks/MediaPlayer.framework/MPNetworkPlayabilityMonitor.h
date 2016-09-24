@@ -3,10 +3,10 @@
  */
 
 @interface MPNetworkPlayabilityMonitor : NSObject {
-    int _effectiveNetworkTypeForCloudPlayback;
-    double _lastAverageBitrate;
-    int _networkType;
-    NSObject<OS_dispatch_queue> *_queue;
+    int  _effectiveNetworkTypeForCloudPlayback;
+    double  _lastAverageBitrate;
+    int  _networkType;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, readonly) int effectiveNetworkTypeForPlayback;

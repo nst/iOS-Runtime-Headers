@@ -3,9 +3,9 @@
  */
 
 @interface DCUploadManager : NSObject {
-    DCService *_service;
-    NSMutableDictionary *_uploadTasks;
-    NSMutableDictionary *_uploadingFiles;
+    DCService * _service;
+    NSMutableDictionary * _uploadTasks;
+    NSMutableDictionary * _uploadingFiles;
 }
 
 + (id)uploadManagerForService:(id)arg1;

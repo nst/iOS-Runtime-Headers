@@ -3,11 +3,11 @@
  */
 
 @interface _UIFilteredDataSource : NSObject <UITableViewDataSource> {
-    int _filterType;
-    BOOL _limitingWithSections;
-    int _maxVisibleSection;
-    int _numberOfVisibleItemsInLastSection;
-    <UITableViewDataSource> *_tableDataSource;
+    int  _filterType;
+    BOOL  _limitingWithSections;
+    int  _maxVisibleSection;
+    int  _numberOfVisibleItemsInLastSection;
+    <UITableViewDataSource> * _tableDataSource;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,12 +3,12 @@
  */
 
 @interface SPProtoCacheMessage : PBCodable <NSCopying> {
-    NSData *_assetData;
-    NSString *_assetKey;
-    int _cacheType;
-    NSString *_gizmoCacheIdentifier;
-    int _messageType;
-    SPProtoCacheSyncData *_syncData;
+    NSData * _assetData;
+    NSString * _assetKey;
+    int  _cacheType;
+    NSString * _gizmoCacheIdentifier;
+    int  _messageType;
+    SPProtoCacheSyncData * _syncData;
 }
 
 @property (nonatomic, retain) NSData *assetData;

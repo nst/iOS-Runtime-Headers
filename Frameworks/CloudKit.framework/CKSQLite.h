@@ -3,19 +3,20 @@
  */
 
 @interface CKSQLite : NSObject {
-    BOOL _corrupt;
-    NSDateFormatter *_dateFormatter;
-    struct sqlite3 { } *_db;
-    BOOL _hasMigrated;
-    NSString *_objectClassPrefix;
-    unsigned int _openCount;
-    NSString *_path;
-    NSString *_schema;
-    NSString *_schemaVersion;
-    BOOL _shouldVacuum;
-    NSMutableDictionary *_statementsBySQL;
-    int _synchronousMode;
-    long _userVersion;
+    BOOL  _corrupt;
+    NSDateFormatter * _dateFormatter;
+    struct sqlite3 { } * _db;
+    BOOL  _hasMigrated;
+    NSString * _objectClassPrefix;
+    unsigned int  _openCount;
+    NSString * _path;
+    NSString * _schema;
+    NSString * _schemaVersion;
+    BOOL  _shouldVacuum;
+    NSMutableDictionary * _statementsBySQL;
+    int  _synchronousMode;
+    BOOL  _traced;
+    long  _userVersion;
 }
 
 @property (nonatomic) BOOL corrupt;
@@ -31,6 +32,7 @@
 @property (nonatomic) BOOL shouldVacuum;
 @property (nonatomic, readonly) NSMutableDictionary *statementsBySQL;
 @property (nonatomic) int synchronousMode;
+@property (nonatomic) BOOL traced;
 @property (nonatomic) long userVersion;
 
 - (void).cxx_destruct;
@@ -43,6 +45,7 @@
 - (id)allTableNames;
 - (void)analyze;
 - (void)begin;
+- (int)changes;
 - (void)close;
 - (BOOL)corrupt;
 - (id)creationDate;
@@ -51,6 +54,9 @@
 - (struct sqlite3 { }*)db;
 - (long)dbUserVersion;
 - (void)dealloc;
+- (int)deleteAllObjectsOfClass:(Class)arg1 where:(id)arg2 bindings:(id)arg3;
+- (BOOL)deleteExactObject:(id)arg1;
+- (void)deleteFrom:(id)arg1 matchingValues:(id)arg2;
 - (void)deleteFrom:(id)arg1 where:(id)arg2 bindings:(id)arg3;
 - (void)dropAllTables;
 - (void)end;
@@ -58,10 +64,10 @@
 - (void)executeSQL:(id)arg1 arguments:(void*)arg2;
 - (BOOL)hasMigrated;
 - (id)initWithPath:(id)arg1 schema:(id)arg2;
-- (long long)insertOrReplaceInto:(id)arg1 values:(id)arg2;
-- (long long)insertOrReplaceObject:(id)arg1;
+- (int)insertOrReplaceInto:(id)arg1 values:(id)arg2;
+- (int)insertOrReplaceObject:(id)arg1;
 - (BOOL)isOpen;
-- (long long)lastInsertRowID;
+- (int)lastInsertRowID;
 - (id)objectClassPrefix;
 - (void)open;
 - (unsigned int)openCount;
@@ -77,13 +83,15 @@
 - (id)schemaVersion;
 - (id)select:(id)arg1 from:(id)arg2;
 - (id)select:(id)arg1 from:(id)arg2 where:(id)arg3 bindings:(id)arg4;
+- (void)select:(id)arg1 from:(id)arg2 where:(id)arg3 bindings:(id)arg4 orderBy:(id)arg5 limit:(id)arg6 block:(id /* block */)arg7;
 - (id)selectAllFrom:(id)arg1 where:(id)arg2 bindings:(id)arg3;
 - (id)selectAllObjectsOfClass:(Class)arg1;
 - (id)selectAllObjectsOfClass:(Class)arg1 where:(id)arg2 bindings:(id)arg3;
 - (id)selectAllObjectsOfClass:(Class)arg1 where:(id)arg2 bindings:(id)arg3 limit:(id)arg4;
+- (void)selectAllObjectsOfClass:(Class)arg1 where:(id)arg2 bindings:(id)arg3 orderBy:(id)arg4 limit:(id)arg5 block:(id /* block */)arg6;
 - (unsigned int)selectCountFrom:(id)arg1 where:(id)arg2 bindings:(id)arg3;
 - (id)selectFrom:(id)arg1 where:(id)arg2 bindings:(id)arg3 limit:(id)arg4;
-- (void)selectFrom:(id)arg1 where:(id)arg2 bindings:(id)arg3 limit:(id)arg4 block:(id /* block */)arg5;
+- (void)selectFrom:(id)arg1 where:(id)arg2 bindings:(id)arg3 orderBy:(id)arg4 limit:(id)arg5 block:(id /* block */)arg6;
 - (id)selectObjectOfClass:(Class)arg1 where:(id)arg2 bindings:(id)arg3;
 - (void)setCorrupt:(BOOL)arg1;
 - (void)setDateFormatter:(id)arg1;
@@ -94,11 +102,15 @@
 - (void)setProperty:(id)arg1 forKey:(id)arg2;
 - (void)setShouldVacuum:(BOOL)arg1;
 - (void)setSynchronousMode:(int)arg1;
+- (void)setTraced:(BOOL)arg1;
 - (void)setUserVersion:(long)arg1;
 - (BOOL)shouldVacuum;
 - (id)statementForSQL:(id)arg1;
 - (id)statementsBySQL;
 - (int)synchronousMode;
+- (BOOL)traced;
+- (void)update:(id)arg1 set:(id)arg2 where:(id)arg3 bindings:(id)arg4 limit:(id)arg5;
+- (void)updateAllObjectsOfClass:(Class)arg1 set:(id)arg2 where:(id)arg3 bindings:(id)arg4;
 - (long)userVersion;
 - (void)vacuum;
 

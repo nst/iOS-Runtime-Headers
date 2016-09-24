@@ -3,7 +3,7 @@
  */
 
 @interface CNAutocompleteUsageMonitor : NSObject {
-    <CNAutocompleteProbeProvider> *_probeProvider;
+    <CNAutocompleteProbeProvider> * _probeProvider;
 }
 
 @property (nonatomic, readonly) <CNAutocompleteProbeProvider> *probeProvider;

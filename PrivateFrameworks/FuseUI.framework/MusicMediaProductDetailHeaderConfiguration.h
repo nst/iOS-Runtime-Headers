@@ -3,11 +3,11 @@
  */
 
 @interface MusicMediaProductDetailHeaderConfiguration : NSObject {
-    MPArtworkCatalog *_headerArtworkCatalog;
-    unsigned int _headerStyle;
-    NSString *_lockupArtworkProperty;
-    BOOL _shouldIncludeHeader;
-    BOOL _shouldUseSplitMainForContentView;
+    MPArtworkCatalog * _headerArtworkCatalog;
+    unsigned int  _headerStyle;
+    NSString * _lockupArtworkProperty;
+    BOOL  _shouldIncludeHeader;
+    BOOL  _shouldUseSplitMainForContentView;
 }
 
 @property (nonatomic, retain) MPArtworkCatalog *headerArtworkCatalog;

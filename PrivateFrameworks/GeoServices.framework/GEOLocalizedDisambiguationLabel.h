@@ -3,8 +3,8 @@
  */
 
 @interface GEOLocalizedDisambiguationLabel : PBCodable <NSCopying> {
-    NSString *_locale;
-    NSString *_string;
+    NSString * _locale;
+    NSString * _string;
 }
 
 @property (nonatomic, readonly) BOOL hasLocale;

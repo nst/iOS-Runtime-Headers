@@ -3,13 +3,13 @@
  */
 
 @interface CUIStructuredThemeStore : NSObject <CUIStructuredThemeStorage, CUIStructuredThemeStorage2> {
-    NSString *_bundleID;
-    NSMutableDictionary *_cache;
-    NSLock *_cacheLock;
-    NSCache *_namedRenditionKeyCache;
-    CUICommonAssetStorage *_store;
-    NSLock *_storeLock;
-    unsigned int _themeIndex;
+    NSString * _bundleID;
+    NSMutableDictionary * _cache;
+    NSLock * _cacheLock;
+    NSCache * _namedRenditionKeyCache;
+    CUICommonAssetStorage * _store;
+    NSLock * _storeLock;
+    unsigned int  _themeIndex;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -57,7 +57,7 @@
 - (int)maximumRenditionKeyTokenCount;
 - (id)prefilteredAssetDataForKey:(struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
 - (const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)renditionKeyForName:(id)arg1;
-- (const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)renditionKeyForName:(id)arg1 cursorHotSpot:(struct CGPoint { float x1; float x2; }*)arg2;
+- (const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)renditionKeyForName:(id)arg1 cursorHotSpot:(struct CGPoint { double x1; double x2; }*)arg2;
 - (const struct _renditionkeyfmt { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4[0]; }*)renditionKeyFormat;
 - (id)renditionNameForKeyList:(struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
 - (id)renditionWithKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;

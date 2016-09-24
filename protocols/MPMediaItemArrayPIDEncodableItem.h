@@ -5,7 +5,7 @@
 
 @required
 
-- (id)initWithPersistentID:(long long)arg1 library:(MPMediaLibrary *)arg2;
+- (id)initWithPersistentID:(int)arg1 library:(MPMediaLibrary *)arg2;
 - (Class)itemArrayCoderPIDDataCodingClass;
 - (MPMediaLibrary *)mediaLibrary;
 

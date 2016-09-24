@@ -3,8 +3,8 @@
  */
 
 @interface OCCancel : NSObject <TCCancelDelegate> {
-    BOOL mIsCancelled;
-    BOOL mIsQuit;
+    BOOL  mIsCancelled;
+    BOOL  mIsQuit;
 }
 
 @property (readonly, copy) NSString *debugDescription;

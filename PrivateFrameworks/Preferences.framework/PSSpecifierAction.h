@@ -3,8 +3,8 @@
  */
 
 @interface PSSpecifierAction : NSObject <NSCopying> {
-    id /* block */ _getter;
-    id /* block */ _setter;
+    id /* block */  _getter;
+    id /* block */  _setter;
 }
 
 @property (nonatomic, copy) id /* block */ getter;

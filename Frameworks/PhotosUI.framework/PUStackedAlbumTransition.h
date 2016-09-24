@@ -3,33 +3,34 @@
  */
 
 @interface PUStackedAlbumTransition : PUNavigationTransition <PUCollectionViewLayoutTransitioningDelegate, PUTransitionViewAnimatorDelegate> {
-    id __disableToken;
-    PUStackedAlbumTransitionLayout *__interactiveTransitionLayout;
-    PUPhotoPinchGestureRecognizer *__photoPinchGestureRecognizer;
-    PUStackedAlbumLayout *__transitionLayout;
-    PUTransitionViewAnimator *__transitionViewAnimator;
-    UIView *_animatorView;
-    <PUStackedAlbumTransitionDelegate> *_delegate;
-    BOOL _forFolder;
+    id  __disableToken;
+    PUStackedAlbumTransitionLayout * __interactiveTransitionLayout;
+    PUPhotoPinchGestureRecognizer * __photoPinchGestureRecognizer;
+    PUStackedAlbumLayout * __transitionLayout;
+    PUTransitionViewAnimator * __transitionViewAnimator;
+    UIView * _animatorView;
+    <PUStackedAlbumTransitionDelegate> * _delegate;
+    BOOL  _didAnimateRoundedCorners;
+    BOOL  _forFolder;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _interactionCenter;
-    BOOL _isExpanding;
-    BOOL _isForStandInAlbum;
-    PHCollection *_ph_photoCollection;
-    <PLAssetContainer> *_photoCollection;
+        double x; 
+        double y; 
+    }  _interactionCenter;
+    BOOL  _isExpanding;
+    BOOL  _isForStandInAlbum;
+    PHCollection * _ph_photoCollection;
+    <PLAssetContainer> * _photoCollection;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _popTransitionInitialVisibleBounds;
-    NSSet *_popTransitionInitialVisibleStackedAssetIndexPaths;
+    }  _popTransitionInitialVisibleBounds;
+    NSSet * _popTransitionInitialVisibleStackedAssetIndexPaths;
 }
 
 @property (setter=_setDisableToken:, nonatomic, retain) id _disableToken;
@@ -43,8 +44,8 @@
 @property (getter=isForFolder, nonatomic) BOOL forFolder;
 @property (nonatomic, readonly) UIViewController<PUStackedAlbumControllerTransition> *fromViewController;
 @property (readonly) unsigned int hash;
-@property (nonatomic) struct CGPoint { float x1; float x2; } interactionCenter;
-@property (nonatomic) BOOL isExpanding;
+@property (nonatomic) struct CGPoint { double x1; double x2; } interactionCenter;
+@property (setter=_setExpanding:, nonatomic) BOOL isExpanding;
 @property (setter=setForStandInAlbum:, nonatomic) BOOL isForStandInAlbum;
 @property (setter=ph_setPhotoCollection:, nonatomic, retain) PHCollection *ph_photoCollection;
 @property (nonatomic, retain) <PLAssetContainer> *photoCollection;
@@ -73,7 +74,7 @@
 - (void)completeInteractiveOperation:(int)arg1 finished:(BOOL)arg2;
 - (id)delegate;
 - (id)init;
-- (struct CGPoint { float x1; float x2; })interactionCenter;
+- (struct CGPoint { double x1; double x2; })interactionCenter;
 - (BOOL)isExpanding;
 - (BOOL)isForFolder;
 - (BOOL)isForStandInAlbum;
@@ -83,12 +84,12 @@
 - (void)setDelegate:(id)arg1;
 - (void)setForFolder:(BOOL)arg1;
 - (void)setForStandInAlbum:(BOOL)arg1;
-- (void)setInteractionCenter:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setInteractionCenter:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setPhotoCollection:(id)arg1;
 - (void)startInteractiveTransitionWithPhotoPinchGestureRecognizer:(id)arg1 isExpanding:(BOOL)arg2;
 - (void)transitionViewAnimatorDidEnd:(id)arg1 finished:(BOOL)arg2;
 - (void)transitionViewAnimatorDidUpdate:(id)arg1;
-- (void)transitionViewAnimatorWillEnd:(id)arg1 withTargetTranslation:(inout struct CGPoint { float x1; float x2; }*)arg2;
+- (void)transitionViewAnimatorWillEnd:(id)arg1 withTargetTranslation:(inout struct CGPoint { double x1; double x2; }*)arg2;
 - (void)updateInteractiveTransitionWithPhotoPinchGestureRecognizer:(id)arg1;
 
 @end

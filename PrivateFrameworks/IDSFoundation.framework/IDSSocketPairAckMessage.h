@@ -3,7 +3,7 @@
  */
 
 @interface IDSSocketPairAckMessage : IDSSocketPairMessage {
-    unsigned int _sequenceNumber;
+    unsigned int  _sequenceNumber;
 }
 
 @property (nonatomic, readonly) unsigned int sequenceNumber;

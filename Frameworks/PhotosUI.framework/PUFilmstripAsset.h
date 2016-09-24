@@ -3,12 +3,12 @@
  */
 
 @interface PUFilmstripAsset : NSObject <PUDisplayAsset> {
-    AVAsset *__asset;
-    BOOL __isSourceTimeAccurate;
-    double __normalizedTime;
-    unsigned int _pixelHeight;
-    unsigned int _pixelWidth;
-    double _sourceTime;
+    AVAsset * __asset;
+    BOOL  __isSourceTimeAccurate;
+    double  __normalizedTime;
+    unsigned int  _pixelHeight;
+    unsigned int  _pixelWidth;
+    double  _sourceTime;
 }
 
 @property (setter=_setAsset:, nonatomic) AVAsset *_asset;
@@ -27,10 +27,11 @@
 @property (nonatomic, readonly) BOOL isPhotoIrisPlaceholder;
 @property (nonatomic, readonly) BOOL isTemporaryPlaceholder;
 @property (nonatomic, readonly) NSString *localizedGeoDescription;
+@property (nonatomic, readonly) CLLocation *location;
 @property (nonatomic, readonly) unsigned int mediaType;
 @property (nonatomic, readonly) NSDate *modificationDate;
-@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } photoIrisStillDisplayTime;
-@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } photoIrisVideoDuration;
+@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } photoIrisStillDisplayTime;
+@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } photoIrisVideoDuration;
 @property (nonatomic, readonly) unsigned int pixelHeight;
 @property (nonatomic, readonly) unsigned int pixelWidth;
 @property (nonatomic) double sourceTime;
@@ -61,10 +62,11 @@
 - (BOOL)isTemporaryPlaceholder;
 - (void)loadSourceTimeWithCompletionHandler:(id /* block */)arg1;
 - (id)localizedGeoDescription;
+- (id)location;
 - (unsigned int)mediaType;
 - (id)modificationDate;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })photoIrisStillDisplayTime;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })photoIrisVideoDuration;
+- (struct { int x1; int x2; unsigned int x3; int x4; })photoIrisStillDisplayTime;
+- (struct { int x1; int x2; unsigned int x3; int x4; })photoIrisVideoDuration;
 - (unsigned int)pixelHeight;
 - (unsigned int)pixelWidth;
 - (void)setSourceTime:(double)arg1;

@@ -3,9 +3,9 @@
  */
 
 @interface PULoadingIndicatorTileViewController : PUTileViewController {
-    PUProgressIndicatorView *__indicatorView;
-    BOOL __shouldShowIndeterminateActivityIndicator;
-    PUAssetViewModel *_assetViewModel;
+    PUProgressIndicatorView * __indicatorView;
+    BOOL  __shouldShowIndeterminateActivityIndicator;
+    PUAssetViewModel * _assetViewModel;
 }
 
 @property (setter=_setIndicatorView:, nonatomic, retain) PUProgressIndicatorView *_indicatorView;
@@ -14,7 +14,7 @@
 
 + (id)_createIndicatorView;
 + (BOOL)canShowLoadingIndicatorTileForAsset:(id)arg1;
-+ (struct CGSize { float x1; float x2; })loadingIndicatorTileSize;
++ (struct CGSize { double x1; double x2; })loadingIndicatorTileSize;
 
 - (void).cxx_destruct;
 - (id)_indicatorView;

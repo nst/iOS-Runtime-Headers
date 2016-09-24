@@ -3,15 +3,15 @@
  */
 
 @interface WKBrowsingContextHandle : NSObject <NSSecureCoding> {
-    unsigned long long _pageID;
+    unsigned int  _pageID;
 }
 
-@property (getter=_pageID, nonatomic, readonly) unsigned long long pageID;
+@property (getter=_pageID, nonatomic, readonly) unsigned int pageID;
 
 + (BOOL)supportsSecureCoding;
 
-- (id)_initWithPageID:(unsigned long long)arg1;
-- (unsigned long long)_pageID;
+- (id)_initWithPageID:(unsigned int)arg1;
+- (unsigned int)_pageID;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;

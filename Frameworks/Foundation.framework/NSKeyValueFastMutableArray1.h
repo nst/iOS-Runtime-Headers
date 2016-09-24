@@ -3,10 +3,10 @@
  */
 
 @interface NSKeyValueFastMutableArray1 : NSKeyValueFastMutableArray {
-    NSKeyValueNonmutatingArrayMethodSet *_nonmutatingMethods;
+    NSKeyValueNonmutatingArrayMethodSet * _nonmutatingMethods;
 }
 
-+ (struct { unsigned int x1; /* Warning: unhandled array encoding: '[4@]}' */ id x2[4]; void*x3; void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; }*)_proxyNonGCPoolPointer;
++ (struct { unsigned int x1; /* Warning: unhandled array encoding: '[4@]}' */ id x2[4]; }*)_proxyNonGCPoolPointer;
 
 - (id)_proxyInitWithContainer:(id)arg1 getter:(id)arg2;
 - (void)_proxyNonGCFinalize;

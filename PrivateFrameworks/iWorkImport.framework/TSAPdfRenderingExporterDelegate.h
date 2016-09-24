@@ -3,13 +3,13 @@
  */
 
 @interface TSAPdfRenderingExporterDelegate : NSObject <TSARenderingExporterDelegate> {
-    NSString *mPassphraseOpen;
-    NSString *mPassphrasePrintCopy;
-    TSARenderingExporter *mRenderingExporter;
-    int mRenderingQuality;
-    BOOL mRequireCopyPassword;
-    BOOL mRequireOpenPassword;
-    BOOL mRequirePrintPassword;
+    NSString * mPassphraseOpen;
+    NSString * mPassphrasePrintCopy;
+    TSARenderingExporter * mRenderingExporter;
+    int  mRenderingQuality;
+    BOOL  mRequireCopyPassword;
+    BOOL  mRequireOpenPassword;
+    BOOL  mRequirePrintPassword;
 }
 
 - (void)dealloc;

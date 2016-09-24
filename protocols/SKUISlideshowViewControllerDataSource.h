@@ -6,10 +6,8 @@
 @required
 
 - (int)numberOfItemsInSlideshowViewController:(UIViewController *)arg1;
-
-@optional
-
-- (UIImage *)slideshowViewController:(UIViewController *)arg1 imageAtIndex:(int)arg2;
-- (NSURL *)slideshowViewController:(UIViewController *)arg1 imageURLAtIndex:(int)arg2 size:(struct CGSize { float x1; float x2; }*)arg3;
+- (SKUIScreenshotDataConsumer *)slideshowViewController:(UIViewController *)arg1 dataConsumerAtIndex:(int)arg2;
+- (NSURL *)slideshowViewController:(UIViewController *)arg1 imageURLAtIndex:(int)arg2;
+- (UIImage *)slideshowViewController:(UIViewController *)arg1 placeholderImageAtIndex:(int)arg2;
 
 @end

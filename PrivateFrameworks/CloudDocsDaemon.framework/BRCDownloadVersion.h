@@ -3,12 +3,13 @@
  */
 
 @interface BRCDownloadVersion : BRCDownload {
-    NSError *_gsError;
-    BOOL _isLoser;
-    CKRecord *_secondaryRecord;
-    CKRecordID *_secondaryRecordID;
-    BOOL _sharedZone;
-    GSPermanentStorage *_storage;
+    BRCClientZone * _clientZone;
+    NSError * _gsError;
+    BOOL  _isLoser;
+    CKRecord * _secondaryRecord;
+    CKRecordID * _secondaryRecordID;
+    BOOL  _sharedZone;
+    GSPermanentStorage * _storage;
 }
 
 @property (nonatomic, readonly) NSError *gsError;

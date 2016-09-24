@@ -3,13 +3,13 @@
  */
 
 @interface SYSyncEndResponse : PBCodable <NSCopying> {
-    SYErrorInfo *_error;
-    int _errorResolution;
+    SYErrorInfo * _error;
+    int  _errorResolution;
     struct { 
         unsigned int errorResolution : 1; 
-    } _has;
-    SYMessageHeader *_header;
-    NSString *_syncID;
+    }  _has;
+    SYMessageHeader * _header;
+    NSString * _syncID;
 }
 
 @property (nonatomic, retain) SYErrorInfo *error;
@@ -20,12 +20,14 @@
 @property (nonatomic, retain) NSString *syncID;
 
 - (void).cxx_destruct;
+- (int)StringAsErrorResolution:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)error;
 - (int)errorResolution;
+- (id)errorResolutionAsString:(int)arg1;
 - (BOOL)hasError;
 - (BOOL)hasErrorResolution;
 - (unsigned int)hash;

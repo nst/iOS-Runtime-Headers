@@ -3,7 +3,7 @@
  */
 
 @interface HSBrowseResponse : HSResponse {
-    NSArray *collections;
+    NSArray * collections;
 }
 
 @property (nonatomic, copy) NSArray *collections;

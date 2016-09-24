@@ -3,8 +3,8 @@
  */
 
 @interface CAMCaptureResponse : NSObject {
-    unsigned short _sessionIdentifier;
-    int _type;
+    unsigned short  _sessionIdentifier;
+    int  _type;
 }
 
 @property (nonatomic, readonly) unsigned short sessionIdentifier;

@@ -3,8 +3,8 @@
  */
 
 @interface AppLaunchStatsLaunchObject : NSObject {
-    id /* block */ aplsLaunchQueueBlock;
-    NSString *bundleID;
+    id /* block */  aplsLaunchQueueBlock;
+    NSString * bundleID;
 }
 
 @property (copy) id /* block */ aplsLaunchQueueBlock;

@@ -3,9 +3,9 @@
  */
 
 @interface WBSCreditCardFormatter : NSFormatter {
-    BOOL _allowsUnknownCardTypes;
-    BOOL _showCreditCardNumber;
-    BOOL _showLastFourDigits;
+    BOOL  _allowsUnknownCardTypes;
+    BOOL  _showCreditCardNumber;
+    BOOL  _showLastFourDigits;
 }
 
 @property (nonatomic) BOOL allowsUnknownCardTypes;

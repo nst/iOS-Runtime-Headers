@@ -3,8 +3,8 @@
  */
 
 @interface _MFLibrarySearchableIndexResultKey : NSObject {
-    MFMessageCriterion *_criterion;
-    NSIndexSet *_mailboxIDs;
+    MFMessageCriterion * _criterion;
+    NSIndexSet * _mailboxIDs;
 }
 
 @property (nonatomic, retain) MFMessageCriterion *criterion;

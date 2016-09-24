@@ -13,9 +13,9 @@
 - (void)setContextOpacity:(float)arg1 state:(GQHState *)arg2;
 - (void)setFillColor:(GQDColor *)arg1 state:(GQHState *)arg2;
 - (void)setGradient:(GQDRGradient *)arg1 state:(GQHState *)arg2;
-- (void)setImageFill:(struct __CFURL { }*)arg1 srcSize:(struct CGSize { float x1; float x2; })arg2 mode:(int)arg3 state:(GQHState *)arg4;
+- (void)setImageFill:(struct __CFURL { }*)arg1 srcSize:(struct CGSize { double x1; double x2; })arg2 mode:(int)arg3 state:(GQHState *)arg4;
 - (void)setStrokeColor:(GQDColor *)arg1 width:(float)arg2 state:(GQHState *)arg3;
 - (void)teardownContext:(GQHState *)arg1;
-- (void)translate:(struct CGSize { float x1; float x2; })arg1 state:(GQHState *)arg2;
+- (void)translate:(struct CGSize { double x1; double x2; })arg1 state:(GQHState *)arg2;
 
 @end

@@ -3,13 +3,13 @@
  */
 
 @interface _DKDataProtectionMaster : NSObject {
-    NSMutableDictionary *_availableState;
-    BOOL _deviceFormatedForContentProtection;
-    NSMutableDictionary *_handlers;
-    BOOL _notifyEnabled;
-    NSObject<OS_dispatch_queue> *_notifyQueue;
-    int _notifyToken;
-    NSObject<OS_dispatch_queue> *_stateQueue;
+    NSMutableDictionary * _availableState;
+    BOOL  _deviceFormatedForContentProtection;
+    NSMutableDictionary * _handlers;
+    BOOL  _notifyEnabled;
+    NSObject<OS_dispatch_queue> * _notifyQueue;
+    int  _notifyToken;
+    NSObject<OS_dispatch_queue> * _stateQueue;
 }
 
 + (id)sharedInstance;

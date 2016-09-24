@@ -3,10 +3,10 @@
  */
 
 @interface _NSUndoStack : NSObject {
-    unsigned int _count;
-    _NSUndoObject *_head;
-    unsigned int _max;
-    unsigned int _nestingLevel;
+    unsigned int  _count;
+    _NSUndoObject * _head;
+    unsigned int  _max;
+    unsigned int  _nestingLevel;
 }
 
 - (id)_beginMark;

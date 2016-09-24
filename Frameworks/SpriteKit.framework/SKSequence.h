@@ -3,9 +3,9 @@
  */
 
 @interface SKSequence : SKAction {
-    NSArray *_actions;
-    unsigned long _animIndex;
-    struct SKCSequence { int (**x1)(); unsigned int x2; float x3; id /* block */ x4; id x5; double x6; double x7; float x8; float x9; double x10; bool x11; bool x12; id /* block */ x13; int x14; float x15; float x16; float x17; float x18; struct vector<SKCAction *, std::__1::allocator<SKCAction *> > { struct SKCAction {} **x_19_1_1; struct SKCAction {} **x_19_1_2; struct __compressed_pair<SKCAction **, std::__1::allocator<SKCAction *> > { struct SKCAction {} **x_3_2_1; } x_19_1_3; } x19; unsigned long x20; } *_mycaction;
+    NSArray * _actions;
+    unsigned long  _animIndex;
+    struct SKCSequence { int (**x1)(); unsigned int x2; double x3; id /* block */ x4; id x5; double x6; double x7; double x8; double x9; double x10; bool x11; bool x12; id /* block */ x13; int x14; double x15; double x16; double x17; double x18; struct vector<SKCAction *, std::__1::allocator<SKCAction *> > { struct SKCAction {} **x_19_1_1; struct SKCAction {} **x_19_1_2; struct __compressed_pair<SKCAction **, std::__1::allocator<SKCAction *> > { struct SKCAction {} **x_3_2_1; } x_19_1_3; } x19; unsigned long x20; } * _mycaction;
 }
 
 + (id)sequenceWithActions:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface AASigningSessionResponse : AAResponse {
-    NSData *_sessionData;
+    NSData * _sessionData;
 }
 
 @property (nonatomic, retain) NSData *sessionData;

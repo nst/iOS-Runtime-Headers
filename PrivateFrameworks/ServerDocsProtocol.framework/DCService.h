@@ -3,9 +3,9 @@
  */
 
 @interface DCService : NSObject {
-    NSString *_keychainItemIdentifier;
-    NSString *_uniqueIdentifier;
-    NSURL *_url;
+    NSString * _keychainItemIdentifier;
+    NSString * _uniqueIdentifier;
+    NSURL * _url;
 }
 
 @property (readonly, retain) NSString *keychainItemIdentifier;

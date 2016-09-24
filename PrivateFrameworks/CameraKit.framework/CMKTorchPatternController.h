@@ -3,12 +3,12 @@
  */
 
 @interface CMKTorchPatternController : NSObject {
-    CMKTorchPattern *__currentPattern;
-    CADisplayLink *__displayLink;
-    BOOL __performing;
-    double __startTime;
-    AVCaptureDevice *_captureDevice;
-    double _stepInterval;
+    CMKTorchPattern * __currentPattern;
+    CADisplayLink * __displayLink;
+    BOOL  __performing;
+    double  __startTime;
+    AVCaptureDevice * _captureDevice;
+    double  _stepInterval;
 }
 
 @property (nonatomic, readonly) CMKTorchPattern *_currentPattern;

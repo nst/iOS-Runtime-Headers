@@ -3,11 +3,11 @@
  */
 
 @interface TSUProgressObserver : NSObject {
-    id /* block */ mHandler;
-    BOOL mLastHandledIndeterminate;
-    double mLastHandledValue;
-    NSObject<OS_dispatch_queue> *mQueue;
-    double mValueInterval;
+    id /* block */  mHandler;
+    BOOL  mLastHandledIndeterminate;
+    double  mLastHandledValue;
+    NSObject<OS_dispatch_queue> * mQueue;
+    double  mValueInterval;
 }
 
 @property (nonatomic, readonly) double valueInterval;

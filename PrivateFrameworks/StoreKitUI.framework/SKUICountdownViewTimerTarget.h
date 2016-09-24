@@ -3,7 +3,7 @@
  */
 
 @interface SKUICountdownViewTimerTarget : NSObject {
-    id /* block */ _actionBlock;
+    id /* block */  _actionBlock;
 }
 
 @property (nonatomic, copy) id /* block */ actionBlock;

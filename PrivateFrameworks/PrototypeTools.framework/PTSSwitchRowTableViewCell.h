@@ -3,7 +3,7 @@
  */
 
 @interface PTSSwitchRowTableViewCell : PTSRowTableViewCell {
-    UISwitch *_switch;
+    UISwitch * _switch;
 }
 
 - (void).cxx_destruct;

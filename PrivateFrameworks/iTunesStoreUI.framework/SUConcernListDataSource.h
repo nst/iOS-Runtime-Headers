@@ -3,9 +3,9 @@
  */
 
 @interface SUConcernListDataSource : SUTableDataSource {
-    NSArray *_concerns;
-    int _selectedConcernIndex;
-    SUTextViewCell *_textViewCell;
+    NSArray * _concerns;
+    int  _selectedConcernIndex;
+    SUTextViewCell * _textViewCell;
 }
 
 @property (nonatomic, retain) NSArray *concerns;

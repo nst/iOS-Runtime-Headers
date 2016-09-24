@@ -3,7 +3,7 @@
  */
 
 @interface NSSimpleOrthography : NSOrthography {
-    unsigned int _orthographyFlags;
+    unsigned int  _orthographyFlags;
 }
 
 + (void)initialize;

@@ -3,7 +3,7 @@
  */
 
 @interface WLContactsMigrator : WLMigrationWebService {
-    CNContactStore *_contactStore;
+    CNContactStore * _contactStore;
 }
 
 + (id)contentType;

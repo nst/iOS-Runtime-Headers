@@ -3,12 +3,12 @@
  */
 
 @interface PUConnection : NSObject <PUUnlockClient> {
-    NSXPCConnection *_connection;
-    NSObject<OS_dispatch_queue> *_connectionQueue;
-    <PUConnectionDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    id /* block */ _getRemoteDevicePasscodeStateHandler;
-    id /* block */ _remoteDeviceRemoveLockoutHandler;
+    NSXPCConnection * _connection;
+    NSObject<OS_dispatch_queue> * _connectionQueue;
+    <PUConnectionDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    id /* block */  _getRemoteDevicePasscodeStateHandler;
+    id /* block */  _remoteDeviceRemoveLockoutHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;

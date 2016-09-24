@@ -3,13 +3,13 @@
  */
 
 @interface SKUIRedeemConfiguration : NSObject {
-    int _category;
-    SKUIClientContext *_clientContext;
-    UIImage *_inputImage;
-    SKUIITunesPassConfiguration *_itunesPassConfiguration;
-    UIImage *_landingImage;
-    NSOperationQueue *_operationQueue;
-    UIImage *_successImage;
+    int  _category;
+    SKUIClientContext * _clientContext;
+    UIImage * _inputImage;
+    SKUIITunesPassConfiguration * _itunesPassConfiguration;
+    UIImage * _landingImage;
+    NSOperationQueue * _operationQueue;
+    UIImage * _successImage;
 }
 
 @property (nonatomic, readonly) SKUIITunesPassConfiguration *ITunesPassConfiguration;

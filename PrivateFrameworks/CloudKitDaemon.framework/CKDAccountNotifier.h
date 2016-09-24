@@ -3,9 +3,9 @@
  */
 
 @interface CKDAccountNotifier : NSObject {
-    NSOperationQueue *_accountChangeHandlerQueue;
-    int _accountChangedToken;
-    NSMapTable *_notificationHandlers;
+    NSOperationQueue * _accountChangeHandlerQueue;
+    int  _accountChangedToken;
+    NSMapTable * _notificationHandlers;
 }
 
 @property (nonatomic, retain) NSOperationQueue *accountChangeHandlerQueue;

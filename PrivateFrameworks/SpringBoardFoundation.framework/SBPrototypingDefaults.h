@@ -6,7 +6,6 @@
 
 @property (nonatomic, readonly) BOOL allowPrototypeSettings;
 @property (nonatomic) BOOL prototypeSettingsNeedsMigration;
-@property (nonatomic, readonly) BOOL shouldVolumeButtonsDisplayBanner;
 
 - (void)_bindAndRegisterDefaults;
 

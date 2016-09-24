@@ -3,17 +3,17 @@
  */
 
 @interface ABGroupWrapper : NSObject {
-    NSString *_accountIdentifier;
-    ACAccountStore *_accountStore;
-    void *_addressBook;
-    NSString *_cachedName;
-    NSSet *_childGroupWrappers;
-    id _delegate;
-    void *_group;
-    ABGroupWrapper *_parentGroupWrapper;
-    BOOL _selected;
-    BOOL _shouldBeSelectedWhenAllChildrenAreSelected;
-    void *_source;
+    NSString * _accountIdentifier;
+    ACAccountStore * _accountStore;
+    void * _addressBook;
+    NSString * _cachedName;
+    NSSet * _childGroupWrappers;
+    id  _delegate;
+    void * _group;
+    ABGroupWrapper * _parentGroupWrapper;
+    BOOL  _selected;
+    BOOL  _shouldBeSelectedWhenAllChildrenAreSelected;
+    void * _source;
 }
 
 @property (nonatomic, readonly) NSString *_accountDescriptionBasedOnIdentifier;

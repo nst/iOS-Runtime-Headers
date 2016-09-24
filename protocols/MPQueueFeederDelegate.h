@@ -8,5 +8,7 @@
 - (void)queueFeeder:(MPQueueFeeder *)arg1 didChangeContentsWithPreferredStartIndex:(unsigned int)arg2 error:(NSError *)arg3;
 - (void)queueFeeder:(MPQueueFeeder *)arg1 didChangeContentsWithReplacementPlaybackContext:(MPPlaybackContext *)arg2;
 - (void)queueFeederDidInvalidateAssets:(MPQueueFeeder *)arg1;
+- (void)queueFeederDidInvalidateRealRepeatType:(MPQueueFeeder *)arg1;
+- (void)queueFeederDidInvalidateRealShuffleType:(MPQueueFeeder *)arg1;
 
 @end

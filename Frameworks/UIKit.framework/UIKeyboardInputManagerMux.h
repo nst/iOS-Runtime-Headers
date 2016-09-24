@@ -3,9 +3,9 @@
  */
 
 @interface UIKeyboardInputManagerMux : NSObject {
-    NSMutableArray *_clients;
-    <_UIIVCResponseDelegateImpl> *_responseDelegate;
-    <TIKeyboardInputManager> *_systemInputManager;
+    NSMutableArray * _clients;
+    <_UIIVCResponseDelegateImpl> * _responseDelegate;
+    <TIKeyboardInputManager> * _systemInputManager;
 }
 
 @property (nonatomic, readonly) BOOL hasSystemInputManager;

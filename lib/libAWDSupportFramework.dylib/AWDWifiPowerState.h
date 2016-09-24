@@ -6,9 +6,9 @@
     struct { 
         unsigned int timestamp : 1; 
         unsigned int powerState : 1; 
-    } _has;
-    BOOL _powerState;
-    unsigned long long _timestamp;
+    }  _has;
+    BOOL  _powerState;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL hasPowerState;

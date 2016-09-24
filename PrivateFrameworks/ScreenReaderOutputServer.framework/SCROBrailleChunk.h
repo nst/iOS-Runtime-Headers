@@ -6,22 +6,22 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _brailleSelection;
-    NSMutableAttributedString *_brailleString;
-    int _contractionMode;
-    BOOL _hasTextSelection;
-    BOOL _isFocused;
-    BOOL _isTechnical;
-    NSString *_language;
-    NSString *_overrideText;
-    BOOL _showDotsSevenAndEight;
-    BOOL _showEightDot;
-    NSString *_text;
+    }  _brailleSelection;
+    NSMutableAttributedString * _brailleString;
+    int  _contractionMode;
+    BOOL  _hasTextSelection;
+    BOOL  _isFocused;
+    BOOL  _isTechnical;
+    NSString * _language;
+    NSString * _overrideText;
+    BOOL  _showDotsSevenAndEight;
+    BOOL  _showEightDot;
+    NSString * _text;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _textSelection;
-    int _token;
+    }  _textSelection;
+    int  _token;
 }
 
 @property (nonatomic, readonly) NSString *language;

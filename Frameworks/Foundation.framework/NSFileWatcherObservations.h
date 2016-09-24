@@ -3,13 +3,13 @@
  */
 
 @interface NSFileWatcherObservations : NSObject {
-    BOOL _attributesChanged;
-    BOOL _contentsChanged;
-    BOOL _deleted;
-    BOOL _didResetPath;
-    NSString *_lastObservedPath;
-    BOOL _moved;
-    NSString *_path;
+    BOOL  _attributesChanged;
+    BOOL  _contentsChanged;
+    BOOL  _deleted;
+    BOOL  _didResetPath;
+    NSString * _lastObservedPath;
+    BOOL  _moved;
+    NSString * _path;
 }
 
 - (void)addAnnouncedMoveToPath:(id)arg1;

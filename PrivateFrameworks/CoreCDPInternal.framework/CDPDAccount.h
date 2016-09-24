@@ -4,12 +4,17 @@
 
 @interface CDPDAccount : NSObject
 
+@property (nonatomic) BOOL hasDisabledKeychainExplicitly;
+
 + (id)sharedInstance;
 
+- (id)_primaryiCloudAccount;
+- (BOOL)hasDisabledKeychainExplicitly;
 - (BOOL)isICDPEnabledForDSID:(id)arg1;
 - (BOOL)isICDPEnabledForDSID:(id)arg1 checkWithServer:(BOOL)arg2;
 - (id)primaryAccountAltDSID;
 - (id)primaryAccountDSID;
 - (id)primaryAccountUsername;
+- (void)setHasDisabledKeychainExplicitly:(BOOL)arg1;
 
 @end

@@ -3,13 +3,13 @@
  */
 
 @interface CUIPSDLayerEffects : NSObject {
-    NSMutableDictionary *_effectList;
-    float _effectScale;
-    BOOL _visible;
+    NSMutableDictionary * _effectList;
+    double  _effectScale;
+    BOOL  _visible;
 }
 
 @property (copy) NSMutableDictionary *effectList;
-@property float effectScale;
+@property double effectScale;
 @property BOOL visible;
 
 - (void)addLayerEffectComponent:(id)arg1;

@@ -3,13 +3,13 @@
  */
 
 @interface SKUIPageComponentContext : NSObject <NSCopying> {
-    NSDictionary *_componentDictionary;
-    NSArray *_ineligibleGratisIdentifiers;
-    NSDictionary *_items;
-    int _layoutStyle;
-    double _pageGenerationTime;
-    NSDictionary *_platformKeyProfileOverrides;
-    NSMutableSet *_unavailableItems;
+    NSDictionary * _componentDictionary;
+    NSArray * _ineligibleGratisIdentifiers;
+    NSDictionary * _items;
+    int  _layoutStyle;
+    double  _pageGenerationTime;
+    NSDictionary * _platformKeyProfileOverrides;
+    NSMutableSet * _unavailableItems;
 }
 
 @property (nonatomic, readonly, copy) NSSet *allUnavailableItemIdentifiers;

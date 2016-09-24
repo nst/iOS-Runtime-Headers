@@ -9,18 +9,18 @@
         struct __compressed_pair<_TSWPCharIndexAndAffinity *, std::__1::allocator<_TSWPCharIndexAndAffinity> > { 
             struct _TSWPCharIndexAndAffinity {} *__first_; 
         } __end_cap_; 
-    } _mappedIndexes;
+    }  _mappedIndexes;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _subRange;
+    }  _subRange;
     struct vector<_TSWPCharIndexAndAffinity, std::__1::allocator<_TSWPCharIndexAndAffinity> > { 
         struct _TSWPCharIndexAndAffinity {} *__begin_; 
         struct _TSWPCharIndexAndAffinity {} *__end_; 
         struct __compressed_pair<_TSWPCharIndexAndAffinity *, std::__1::allocator<_TSWPCharIndexAndAffinity> > { 
             struct _TSWPCharIndexAndAffinity {} *__first_; 
         } __end_cap_; 
-    } _unmappedIndexes;
+    }  _unmappedIndexes;
 }
 
 - (id).cxx_construct;

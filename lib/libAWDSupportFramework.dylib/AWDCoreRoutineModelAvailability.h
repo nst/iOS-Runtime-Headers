@@ -3,14 +3,14 @@
  */
 
 @interface AWDCoreRoutineModelAvailability : PBCodable <NSCopying> {
-    int _availability;
+    int  _availability;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int availability : 1; 
         unsigned int precisionRecall : 1; 
-    } _has;
-    unsigned int _precisionRecall;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned int  _precisionRecall;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) int availability;

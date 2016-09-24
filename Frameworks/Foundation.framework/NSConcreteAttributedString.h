@@ -3,8 +3,8 @@
  */
 
 @interface NSConcreteAttributedString : NSAttributedString {
-    NSRLEArray *attributes;
-    NSString *string;
+    NSRLEArray * attributes;
+    NSString * string;
 }
 
 - (id)_runArrayHoldingAttributes;
@@ -12,7 +12,6 @@
 - (id)attributesAtIndex:(unsigned int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)finalize;
 - (id)init;
 - (id)initWithAttributedString:(id)arg1;
 - (id)initWithString:(id)arg1;

@@ -5,10 +5,10 @@
 @interface GEOPBTransitShield : PBCodable <GEOTransitShieldDataSource, NSCopying> {
     struct { 
         unsigned int shieldEnumValue : 1; 
-    } _has;
-    NSString *_shieldColor;
-    unsigned int _shieldEnumValue;
-    NSString *_shieldText;
+    }  _has;
+    NSString * _shieldColor;
+    unsigned int  _shieldEnumValue;
+    NSString * _shieldText;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -22,7 +22,7 @@
 @property (nonatomic) unsigned int shieldEnumValue;
 @property (nonatomic, readonly) NSString *shieldText;
 @property (nonatomic, retain) NSString *shieldText;
-@property (nonatomic, readonly) long long shieldType;
+@property (nonatomic, readonly) int shieldType;
 @property (readonly) Class superclass;
 
 - (void)copyTo:(id)arg1;
@@ -45,7 +45,7 @@
 - (id)shieldColorString;
 - (unsigned int)shieldEnumValue;
 - (id)shieldText;
-- (long long)shieldType;
+- (int)shieldType;
 - (void)writeTo:(id)arg1;
 
 @end

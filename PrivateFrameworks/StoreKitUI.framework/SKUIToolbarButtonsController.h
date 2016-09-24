@@ -3,8 +3,8 @@
  */
 
 @interface SKUIToolbarButtonsController : NSObject {
-    NSMapTable *_buttonItemElements;
-    SKUIToolbarViewElement *_toolbarElement;
+    NSMapTable * _buttonItemElements;
+    SKUIToolbarViewElement * _toolbarElement;
 }
 
 - (void).cxx_destruct;

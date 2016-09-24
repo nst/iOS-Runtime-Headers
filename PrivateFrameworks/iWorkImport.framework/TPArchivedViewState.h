@@ -3,61 +3,71 @@
  */
 
 @interface TPArchivedViewState : TSPObject {
-    TSWPSelection *_bodySelection;
-    BOOL _changeTrackingPaused;
-    NSMutableDictionary *_chartUIState;
-    BOOL _hasShowsCTDeletions;
-    BOOL _hasShowsCTMarkup;
-    BOOL _inspectorHidden;
-    BOOL _layoutBordersVisible;
-    BOOL _masterDrawablesSelectable;
-    BOOL _rulerVisible;
-    NSString *_selectedInspectorSwitchSegmentIdentifier;
-    TSKSelectionPath *_selectionPath;
-    BOOL _showUserDefinedGuides;
-    BOOL _showsActivitySidebar;
-    BOOL _showsCTDeletions;
-    BOOL _showsCTMarkup;
-    BOOL _showsComments;
-    BOOL _showsPageNavigator;
-    float _viewScale;
-    int _viewScaleMode;
+    TSKAnnotationAuthor * _authorFilter;
+    NSString * _authorFilterName;
+    TSWPSelection * _bodySelection;
+    BOOL  _changeTrackingPaused;
+    NSMutableDictionary * _chartUIState;
+    TSKSelectionPath * _compatibilitySelectionPath;
+    BOOL  _hasShowsCTDeletions;
+    BOOL  _hasShowsCTMarkup;
+    BOOL  _inspectorHidden;
+    BOOL  _layoutBordersVisible;
+    BOOL  _masterDrawablesSelectable;
+    BOOL  _rulerVisible;
+    NSString * _selectedInspectorSwitchSegmentIdentifier;
+    TSKSelectionPath * _selectionPath;
+    BOOL  _showUserDefinedGuides;
+    BOOL  _showsActivitySidebar;
+    BOOL  _showsCTDeletions;
+    BOOL  _showsCTMarkup;
+    BOOL  _showsComments;
+    BOOL  _showsPageNavigator;
+    double  _viewScale;
+    int  _viewScaleMode;
+    int  _viewScaleModeiOS;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _visibleRect;
+    }  _visibleRect;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _windowFrame;
+    }  _windowFrame;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _wordCountHUDPosition;
-    int _wordCountHUDType;
-    BOOL _wordCountHUDVisible;
+        double x; 
+        double y; 
+    }  _wordCountHUDPosition;
+    int  _wordCountHUDType;
+    BOOL  _wordCountHUDVisible;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *chartUIState;
+@property (nonatomic, retain) TSKSelectionPath *compatibilitySelectionPath;
+@property (nonatomic, retain) TSKSelectionPath *selectionPath;
 
 - (void)captureViewStateWithProvider:(id)arg1;
 - (id)chartUIState;
+- (id)compatibilitySelectionPath;
 - (void)dealloc;
 - (id)initFromUnarchiver:(id)arg1;
 - (void)readViewStateWithConsumer:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
+- (id)selectionPath;
+- (void)setCompatibilitySelectionPath:(id)arg1;
+- (void)setSelectionPath:(id)arg1;
 - (BOOL)showsComments;
 
 @end

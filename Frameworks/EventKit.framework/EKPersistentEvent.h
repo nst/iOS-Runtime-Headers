@@ -10,7 +10,7 @@
         int hours; 
         int minutes; 
         double seconds; 
-    } _cachedDurationUnits;
+    }  _cachedDurationUnits;
 }
 
 @property (nonatomic, copy) NSURL *URL;
@@ -23,10 +23,12 @@
 @property (getter=isEditable, nonatomic, readonly) BOOL editable;
 @property (nonatomic, copy) NSDate *endDate;
 @property (nonatomic, readonly) NSString *eventIdentifier;
+@property (nonatomic) BOOL firedTTL;
 @property (getter=isFloating, nonatomic, readonly) BOOL floating;
 @property (getter=isInvitation, nonatomic, readonly) BOOL invitation;
 @property (nonatomic, readonly) unsigned int invitationChangedProperties;
 @property (nonatomic) unsigned int invitationStatus;
+@property (nonatomic) int locationPredictionState;
 @property (getter=isMeeting, nonatomic, readonly) BOOL meeting;
 @property (nonatomic) unsigned int modifiedProperties;
 @property (nonatomic) BOOL needsOccurrenceCacheUpdate;
@@ -34,6 +36,7 @@
 @property (nonatomic) int participationStatus;
 @property (nonatomic, readonly) int pendingParticipationStatus;
 @property (nonatomic) int privacyLevel;
+@property (nonatomic, copy) NSDate *proposedStartDate;
 @property (nonatomic, copy) NSString *responseComment;
 @property (nonatomic) int status;
 @property (nonatomic, retain) EKPersistentSuggestedEventInfo *suggestedEventInfo;
@@ -49,26 +52,27 @@
 - (BOOL)_areDurationUnitsCached;
 - (BOOL)_hasExternalIDOrDeliverySource;
 - (void)_invalidateCachedDurationUnits;
+- (void)_updateSelfFromDetachedEventIfNeededForDelete;
 - (id)actions;
 - (void)addAction:(id)arg1;
 - (BOOL)allowsParticipationStatusModifications;
 - (int)availability;
 - (int)birthdayID;
 - (int)birthdayId;
+- (BOOL)canForward;
 - (void)clearExceptionDatesAndUpdateDetachedOriginalDates;
 - (id)committedStartDate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)deleteFromOccurrenceDateOnward:(id)arg1;
 - (id)description;
-- (id)detachWithStartDate:(id)arg1 newStartDate:(id)arg2 future:(BOOL)arg3;
+- (BOOL)disallowProposeNewTime;
 - (double)duration;
 - (struct { int x1; int x2; int x3; int x4; int x5; double x6; })durationUnits;
 - (id)endDate;
 - (int)entityType;
 - (id)eventIdentifier;
-- (id)exportToICS;
 - (void)filterExceptionDates;
+- (BOOL)firedTTL;
 - (BOOL)hasValidEventAction;
 - (id)initCommon;
 - (unsigned int)invitationChangedProperties;
@@ -77,6 +81,7 @@
 - (BOOL)isFloating;
 - (BOOL)isInvitation;
 - (BOOL)isMeeting;
+- (int)locationPredictionState;
 - (unsigned int)modifiedProperties;
 - (BOOL)needsOccurrenceCacheUpdate;
 - (id)organizer;
@@ -85,6 +90,7 @@
 - (int)pendingParticipationStatus;
 - (void)primitiveValueChangedForKey:(id)arg1;
 - (int)privacyLevel;
+- (id)proposedStartDate;
 - (BOOL)refresh;
 - (void)removeAction:(id)arg1;
 - (id)responseComment;
@@ -92,12 +98,15 @@
 - (void)setActions:(id)arg1;
 - (void)setAvailability:(int)arg1;
 - (void)setEndDate:(id)arg1;
+- (void)setFiredTTL:(BOOL)arg1;
 - (void)setInvitationStatus:(unsigned int)arg1;
+- (void)setLocationPredictionState:(int)arg1;
 - (void)setModifiedProperties:(unsigned int)arg1;
 - (void)setNeedsOccurrenceCacheUpdate:(BOOL)arg1;
 - (void)setOriginalStartDate:(id)arg1;
 - (void)setParticipationStatus:(int)arg1;
 - (void)setPrivacyLevel:(int)arg1;
+- (void)setProposedStartDate:(id)arg1;
 - (void)setResponseComment:(id)arg1;
 - (void)setStatus:(int)arg1;
 - (void)setSuggestedEventInfo:(id)arg1;

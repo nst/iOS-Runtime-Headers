@@ -3,17 +3,17 @@
  */
 
 @interface CKDModifyRecordsURLRequest : CKDURLRequest {
-    BOOL _atomic;
-    NSData *_clientChangeTokenData;
-    NSDictionary *_conflictLosersToResolveByRecordID;
-    BOOL _oplock;
-    NSMutableDictionary *_recordByRequestID;
-    NSMutableDictionary *_recordIDByRequestID;
-    NSArray *_recordIDsToDelete;
-    NSDictionary *_recordIDsToDeleteToEtags;
-    id /* block */ _recordPostedBlock;
-    NSArray *_records;
-    BOOL _sendAllFields;
+    BOOL  _atomic;
+    NSData * _clientChangeTokenData;
+    NSDictionary * _conflictLosersToResolveByRecordID;
+    BOOL  _oplock;
+    NSMutableDictionary * _recordByRequestID;
+    NSMutableDictionary * _recordIDByRequestID;
+    NSArray * _recordIDsToDelete;
+    NSDictionary * _recordIDsToDeleteToEtags;
+    id /* block */  _recordPostedBlock;
+    NSArray * _records;
+    BOOL  _sendAllFields;
 }
 
 @property (nonatomic) BOOL atomic;

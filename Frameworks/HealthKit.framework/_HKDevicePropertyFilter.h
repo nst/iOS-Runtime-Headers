@@ -3,9 +3,9 @@
  */
 
 @interface _HKDevicePropertyFilter : _HKFilter {
-    NSSet *_allowedValues;
-    NSString *_keyPath;
-    NSString *_propertyKey;
+    NSSet * _allowedValues;
+    NSString * _keyPath;
+    NSString * _propertyKey;
 }
 
 @property (nonatomic, readonly) NSSet *allowedValues;
@@ -34,7 +34,7 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
-- (id)_devicesWithHealthDaemon:(id)arg1 error:(id*)arg2;
-- (id)predicateWithHealthDaemon:(id)arg1;
+- (id)_devicesWithProfile:(id)arg1 error:(id*)arg2;
+- (id)predicateWithProfile:(id)arg1;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface ICReachability : NSObject {
-    BOOL _alwaysReturnLocalWiFiStatus;
-    struct __SCNetworkReachability { } *_reachabilityRef;
+    BOOL  _alwaysReturnLocalWiFiStatus;
+    struct __SCNetworkReachability { } * _reachabilityRef;
 }
 
 + (id)reachabilityForInternetConnection;

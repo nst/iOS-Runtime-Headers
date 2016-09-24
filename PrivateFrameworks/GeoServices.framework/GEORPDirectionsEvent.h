@@ -3,8 +3,8 @@
  */
 
 @interface GEORPDirectionsEvent : PBCodable <NSCopying> {
-    long long _errorCode;
-    NSString *_errorDomain;
+    int  _errorCode;
+    NSString * _errorDomain;
     struct { 
         unsigned int errorCode : 1; 
         unsigned int occurrenceResponseIndex : 1; 
@@ -12,19 +12,19 @@
         unsigned int switchedToResponseIndex : 1; 
         unsigned int synthesizedStepManeuverType : 1; 
         unsigned int type : 1; 
-    } _has;
-    GEOLatLng *_occurrenceLatLng;
-    unsigned int _occurrenceResponseIndex;
-    NSData *_occurrenceRouteId;
-    unsigned int _occurrenceStepIndex;
-    unsigned int _switchedToResponseIndex;
-    NSData *_switchedToRouteId;
-    NSString *_synthesizedStepInstructions;
-    int _synthesizedStepManeuverType;
-    int _type;
+    }  _has;
+    GEOLatLng * _occurrenceLatLng;
+    unsigned int  _occurrenceResponseIndex;
+    NSData * _occurrenceRouteId;
+    unsigned int  _occurrenceStepIndex;
+    unsigned int  _switchedToResponseIndex;
+    NSData * _switchedToRouteId;
+    NSString * _synthesizedStepInstructions;
+    int  _synthesizedStepManeuverType;
+    int  _type;
 }
 
-@property (nonatomic) long long errorCode;
+@property (nonatomic) int errorCode;
 @property (nonatomic, retain) NSString *errorDomain;
 @property (nonatomic) BOOL hasErrorCode;
 @property (nonatomic, readonly) BOOL hasErrorDomain;
@@ -47,12 +47,14 @@
 @property (nonatomic) int synthesizedStepManeuverType;
 @property (nonatomic) int type;
 
+- (int)StringAsSynthesizedStepManeuverType:(id)arg1;
+- (int)StringAsType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (long long)errorCode;
+- (int)errorCode;
 - (id)errorDomain;
 - (BOOL)hasErrorCode;
 - (BOOL)hasErrorDomain;
@@ -73,7 +75,7 @@
 - (id)occurrenceRouteId;
 - (unsigned int)occurrenceStepIndex;
 - (BOOL)readFrom:(id)arg1;
-- (void)setErrorCode:(long long)arg1;
+- (void)setErrorCode:(int)arg1;
 - (void)setErrorDomain:(id)arg1;
 - (void)setHasErrorCode:(BOOL)arg1;
 - (void)setHasOccurrenceResponseIndex:(BOOL)arg1;
@@ -94,7 +96,9 @@
 - (id)switchedToRouteId;
 - (id)synthesizedStepInstructions;
 - (int)synthesizedStepManeuverType;
+- (id)synthesizedStepManeuverTypeAsString:(int)arg1;
 - (int)type;
+- (id)typeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

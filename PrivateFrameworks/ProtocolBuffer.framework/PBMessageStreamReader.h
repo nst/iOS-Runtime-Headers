@@ -3,9 +3,9 @@
  */
 
 @interface PBMessageStreamReader : NSObject {
-    Class _classOfNextMessage;
-    unsigned int _position;
-    NSInputStream *_stream;
+    Class  _classOfNextMessage;
+    unsigned int  _position;
+    NSInputStream * _stream;
 }
 
 @property Class classOfNextMessage;

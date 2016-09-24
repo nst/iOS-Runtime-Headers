@@ -2,13 +2,19 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDRelayActivationClient : HAPRelayActivationClient {
-    NSString *_challengeIdentifier;
-    NSObject<OS_dispatch_queue> *_workQueue;
+@interface HMDRelayActivationClient : HAPRelayActivationClient <HMFLogging> {
+    NSString * _challengeIdentifier;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic, retain) NSString *challengeIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
+
++ (id)logCategory;
 
 - (void).cxx_destruct;
 - (void)_closeWithError:(id)arg1;

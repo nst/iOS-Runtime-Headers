@@ -3,7 +3,7 @@
  */
 
 @interface _DECInternalConsumerManager : NSObject {
-    NSArray *_consumers;
+    NSArray * _consumers;
 }
 
 @property (nonatomic, readonly) NSArray *consumers;

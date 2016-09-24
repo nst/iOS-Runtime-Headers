@@ -3,15 +3,15 @@
  */
 
 @interface CAMBurstSession : NSObject {
-    CIBurstImageSet *__burstImageSet;
-    unsigned int _count;
-    unsigned int _estimatedCount;
-    BOOL _finalized;
+    CIBurstImageSet * __burstImageSet;
+    unsigned int  _count;
+    unsigned int  _estimatedCount;
+    BOOL  _finalized;
 }
 
 @property (nonatomic, readonly) CIBurstImageSet *_burstImageSet;
-@property (nonatomic) unsigned int count;
-@property (nonatomic) unsigned int estimatedCount;
+@property (setter=_setCount:, nonatomic) unsigned int count;
+@property (setter=_setEstimatedCount:, nonatomic) unsigned int estimatedCount;
 @property (getter=_isFinalized, setter=_setFinalized:, nonatomic) BOOL finalized;
 @property (nonatomic, readonly, copy) NSString *identifier;
 

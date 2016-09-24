@@ -3,8 +3,8 @@
  */
 
 @interface PDCmdBehavior : PDAnimateBehavior {
-    int mBehaviorType;
-    BOOL mHasBehaviorType;
+    int  mBehaviorType;
+    BOOL  mHasBehaviorType;
 }
 
 - (int)behaviorType;

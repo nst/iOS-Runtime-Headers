@@ -3,22 +3,25 @@
  */
 
 @interface RemoteUIController : NSObject <RUILoaderDelegate, RUIObjectModelDelegate, RUIParserDelegate, UINavigationControllerDelegate> {
-    NSString *_SMSAutoFillToken;
-    <RemoteUIControllerDelegate> *_delegate;
-    NSMutableDictionary *_elementChangeHandlers;
-    UIViewController *_hostViewController;
-    NSString *_listeningForSMSIdentifier;
-    id /* block */ _loadCompletion;
-    RUILoader *_loader;
-    RUINavigationController *_modalNavigationController;
-    NSMutableArray *_modalObjectModels;
-    NSMutableArray *_objectModels;
-    RUIPage *_pageOriginatingLoad;
-    NSURLSessionConfiguration *_sessionConfiguration;
-    RUIStyle *_style;
-    NSString *_userAgentString;
+    NSString * _SMSAutoFillToken;
+    NSUUID * _UUID;
+    <RemoteUIControllerDelegate> * _delegate;
+    NSMutableDictionary * _elementChangeHandlers;
+    UIViewController * _hostViewController;
+    NSString * _listeningForSMSIdentifier;
+    id /* block */  _loadCompletion;
+    RUILoader * _loader;
+    RUINavigationController * _modalNavigationController;
+    NSMutableArray * _modalObjectModels;
+    NSMutableArray * _objectModels;
+    RUIPage * _pageOriginatingLoad;
+    NSURLSessionConfiguration * _sessionConfiguration;
+    RUIStyle * _style;
+    BOOL  _testMode;
+    NSString * _userAgentString;
 }
 
+@property (nonatomic, copy) NSUUID *UUID;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <RemoteUIControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -34,14 +37,21 @@
 @property (nonatomic, copy) NSString *userAgentString;
 
 - (void).cxx_destruct;
+- (id)UUID;
 - (void)_beginListeningForSMSAutoFill;
+- (void)_didPresentObjectModel:(id)arg1 modally:(BOOL)arg2;
 - (void)_didRemoveObjectModel:(id)arg1;
+- (void)_enableTestMode;
 - (void)_loadURL:(id)arg1 fromObjectModel:(id)arg2 postBody:(id)arg3;
 - (void)_loadURL:(id)arg1 postBody:(id)arg2 fromObjectModel:(id)arg3 completion:(id /* block */)arg4;
 - (void)_modalNavigationWasDismissed;
+- (id)_modalObjectModels;
 - (void)_modalViewControllerWasPopped:(id)arg1;
+- (id)_objectModelStack;
+- (id)_objectModels;
 - (void)_removePreviousObjectModelsBackToIdentifier:(id)arg1;
 - (void)_setHandlerWithKey:(id)arg1 forElementsMatching:(id /* block */)arg2 handler:(id /* block */)arg3;
+- (BOOL)_shouldAnimate;
 - (void)_stopListeningForSMSAutoFill;
 - (void)_willPresentObjectModel:(id)arg1 modally:(BOOL)arg2;
 - (void)dealloc;
@@ -57,20 +67,22 @@
 - (void)loadURL:(id)arg1 postBody:(id)arg2;
 - (void)loadURL:(id)arg1 postBody:(id)arg2 completion:(id /* block */)arg3;
 - (id)loader;
-- (void)loader:(id)arg1 didFailWithError:(id)arg2;
+- (void)loader:(id)arg1 didFinishLoadWithError:(id)arg2;
 - (void)loader:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)loader:(id)arg1 didReceiveHTTPResponse:(id)arg2;
-- (void)loader:(id)arg1 receivedObjectModel:(id)arg2 actionSignal:(int)arg3;
+- (void)loader:(id)arg1 receivedObjectModel:(id)arg2 topActionSignal:(id)arg3;
 - (id)loader:(id)arg1 willLoadRequest:(id)arg2 redirectResponse:(id)arg3;
 - (id)navigationController;
 - (void)objectModel:(id)arg1 didNavigateBackFromController:(id)arg2 withGesture:(BOOL)arg3;
 - (void)objectModel:(id)arg1 elementDidChange:(id)arg2;
 - (void)objectModel:(id)arg1 pressedLink:(id)arg2 httpMethod:(id)arg3 completion:(id /* block */)arg4;
+- (BOOL)objectModel:(id)arg1 shouldDisplayNamedElement:(id)arg2 page:(id)arg3;
 - (void)objectModel:(id)arg1 willLoadLinkURL:(id)arg2 attributes:(id)arg3;
 - (id)parentViewControllerForObjectModel:(id)arg1;
 - (id)parser:(id)arg1 createPageWithName:(id)arg2 attributes:(id)arg3;
 - (id)popObjectModelAnimated:(BOOL)arg1;
 - (void)pushObjectModel:(id)arg1 animated:(BOOL)arg2;
+- (void)refreshTopModelWithModel:(id)arg1;
 - (void)removeHandlerForKey:(id)arg1;
 - (id)sessionConfiguration;
 - (id)sessionConfigurationForLoader:(id)arg1;
@@ -85,6 +97,7 @@
 - (void)setNavigationController:(id)arg1;
 - (void)setSessionConfiguration:(id)arg1;
 - (void)setStyle:(id)arg1;
+- (void)setUUID:(id)arg1;
 - (void)setUserAgentString:(id)arg1;
 - (id)style;
 - (unsigned int)supportedInterfaceOrientationsForObjectModel:(id)arg1 page:(id)arg2;

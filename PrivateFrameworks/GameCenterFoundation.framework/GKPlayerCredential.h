@@ -3,13 +3,14 @@
  */
 
 @interface GKPlayerCredential : GKInternalRepresentation {
-    NSString *_accountName;
-    NSString *_altDSID;
-    NSString *_authenticationToken;
-    int _environment;
-    GKPlayerInternal *_playerInternal;
-    unsigned int _scope;
-    NSDate *_scopeModificationDate;
+    NSString * _accountName;
+    NSString * _altDSID;
+    NSString * _authenticationToken;
+    int  _environment;
+    GKPlayerInternal * _playerInternal;
+    NSString * _rawPassword;
+    unsigned int  _scope;
+    NSDate * _scopeModificationDate;
 }
 
 @property (retain) NSString *accountName;
@@ -17,7 +18,9 @@
 @property (retain) NSString *authenticationToken;
 @property int environment;
 @property (retain) GKPlayerInternal *playerInternal;
+@property (retain) NSString *rawPassword;
 @property unsigned int scope;
+@property (readonly) NSString *scopeAsString;
 @property (retain) NSDate *scopeModificationDate;
 
 + (id)secureCodedPropertyKeys;
@@ -31,13 +34,16 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)playerInternal;
+- (id)rawPassword;
 - (unsigned int)scope;
+- (id)scopeAsString;
 - (id)scopeModificationDate;
 - (void)setAccountName:(id)arg1;
 - (void)setAltDSID:(id)arg1;
 - (void)setAuthenticationToken:(id)arg1;
 - (void)setEnvironment:(int)arg1;
 - (void)setPlayerInternal:(id)arg1;
+- (void)setRawPassword:(id)arg1;
 - (void)setScope:(unsigned int)arg1;
 - (void)setScopeModificationDate:(id)arg1;
 

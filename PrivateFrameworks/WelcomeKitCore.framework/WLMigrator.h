@@ -3,18 +3,18 @@
  */
 
 @interface WLMigrator : NSObject <WLDataMigratorProtocol, WLMigrationWebServiceDelegate> {
-    WLDeviceAuthentication *_auth;
-    NSString *_connectionKey;
-    unsigned int _dataTypes;
-    <WLDataMigrationDelegate> *_delegate;
-    double _lastProgressSentToAndroidDevice;
-    NSMutableArray *_migrators;
-    double _progress;
-    NSLock *_progressLock;
-    NSString *_progressString;
-    WLProgressWebService *_progressWebService;
-    BOOL _shouldSendProgressToDevice;
-    WLSourceDevice *_sourceDevice;
+    WLDeviceAuthentication * _auth;
+    NSString * _connectionKey;
+    unsigned int  _dataTypes;
+    <WLDataMigrationDelegate> * _delegate;
+    double  _lastProgressSentToAndroidDevice;
+    NSMutableArray * _migrators;
+    double  _progress;
+    NSLock * _progressLock;
+    NSString * _progressString;
+    WLProgressWebService * _progressWebService;
+    BOOL  _shouldSendProgressToDevice;
+    WLSourceDevice * _sourceDevice;
 }
 
 @property (nonatomic, readonly) WLDeviceAuthentication *auth;
@@ -24,8 +24,8 @@
 @property (nonatomic, readonly, retain) WLSourceDevice *sourceDevice;
 
 + (id)_aggdStringForStatistics:(id)arg1;
-+ (unsigned long long)_bucketedUnsignedInteger:(unsigned long long)arg1;
-+ (unsigned long long)_bytesFreeOnDevice;
++ (unsigned int)_bucketedUnsignedInteger:(unsigned int)arg1;
++ (unsigned int)_bytesFreeOnDevice;
 + (void)_cleanUpAfterFinalizeMigratableAppsWithCompletion:(id /* block */)arg1;
 + (id)_dataTypesAndSizesXMLDataFromMap:(id)arg1;
 + (id)_deviceType;

@@ -2,48 +2,26 @@
    Image: /System/Library/PrivateFrameworks/VisualVoicemail.framework/VisualVoicemail
  */
 
-@interface VMServiceClient : NSObject <VMClientXPCProtocol> {
-    long long _behaviorFlags;
-    NSXPCConnection *_clientConnection;
-    NSObject<OS_dispatch_queue> *_queue;
-    int _token;
+@interface VMServiceClient : NSObject {
+    VMVoicemailManager * _voicemailManager;
 }
 
-@property long long behaviorFlags;
-@property (nonatomic, retain) NSXPCConnection *clientConnection;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
-@property (readonly) Class superclass;
-@property (nonatomic) int token;
+@property (nonatomic, retain) VMVoicemailManager *voicemailManager;
 
 + (id)sharedClient;
 
 - (void).cxx_destruct;
-- (void)_handleApplicationResumed:(id)arg1;
-- (void)_handleApplicationSuspended:(id)arg1;
-- (void)_handleXPCConnectionEstablished:(id)arg1;
-- (void)_handleXPCDisconnectNotification:(id)arg1;
 - (void)addObserver:(id)arg1 selector:(SEL)arg2 name:(id)arg3 object:(id)arg4;
-- (long long)behaviorFlags;
-- (void)callAsynchronousMethod:(id)arg1 onObjectType:(id)arg2 withIdentifier:(id)arg3 andArguments:(id)arg4 reply:(id /* block */)arg5;
-- (void)callAsynchronousMethod:(id)arg1 onObjectType:(id)arg2 withIdentifier:(id)arg3 andArguments:(id)arg4 reply:(id /* block */)arg5 errorHandler:(id /* block */)arg6;
-- (id)callSynchronousMethod:(id)arg1 onObjectType:(id)arg2 withIdentifier:(id)arg3 withArguments:(id)arg4;
-- (id)clientConnection;
 - (void)dealloc;
-- (void)handleMessage:(id)arg1;
+- (void)handleOnlineStatusChangedNotification:(id)arg1;
+- (void)handleSubscriptionStatusChangedNotification:(id)arg1;
+- (void)handleVoicemailsChangedNotification:(id)arg1;
 - (id)init;
-- (id)proxyObjectFromProxyDictionary:(id)arg1;
-- (id)queue;
 - (void)removeObserver:(id)arg1;
 - (void)removeObserver:(id)arg1 name:(id)arg2 object:(id)arg3;
-- (void)setBehaviorFlags:(long long)arg1;
-- (void)setClientConnection:(id)arg1;
-- (void)setQueue:(id)arg1;
-- (void)setToken:(int)arg1;
+- (void)setVoicemailManager:(id)arg1;
 - (id)sharedAccount;
 - (BOOL)sharedServiceIsSubscribed;
-- (int)token;
+- (id)voicemailManager;
 
 @end

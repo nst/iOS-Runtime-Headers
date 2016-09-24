@@ -3,9 +3,9 @@
  */
 
 @interface HDSQLiteRawPredicate : HDSQLitePredicate <NSCopying> {
-    NSArray *_properties;
-    NSString *_sql;
-    NSArray *_values;
+    NSArray * _properties;
+    NSString * _sql;
+    NSArray * _values;
 }
 
 + (id)predicateWithSQL:(id)arg1 overProperties:(id)arg2 values:(id)arg3;

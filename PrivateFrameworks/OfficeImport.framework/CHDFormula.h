@@ -3,8 +3,8 @@
  */
 
 @interface CHDFormula : EDFormula {
-    EDReferenceCollection *mReferences;
-    EDWorkbook *mWorkbook;
+    EDReferenceCollection * mReferences;
+    EDWorkbook * mWorkbook;
 }
 
 + (id)formulaWithReference:(id)arg1;

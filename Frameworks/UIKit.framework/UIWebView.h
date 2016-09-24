@@ -3,7 +3,7 @@
  */
 
 @interface UIWebView : UIView <NSCoding, UIScrollViewDelegate, WebPolicyDelegate> {
-    UIWebViewInternal *_internal;
+    UIWebViewInternal * _internal;
 }
 
 @property (nonatomic) BOOL allowsInlineMediaPlayback;
@@ -16,14 +16,14 @@
 @property (nonatomic) <UIWebViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL detectsPhoneNumbers;
-@property (nonatomic) float gapBetweenPages;
+@property (nonatomic) double gapBetweenPages;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL keyboardDisplayRequiresUserAction;
 @property (getter=isLoading, nonatomic, readonly) BOOL loading;
 @property (nonatomic) BOOL mediaPlaybackAllowsAirPlay;
 @property (nonatomic) BOOL mediaPlaybackRequiresUserAction;
 @property (nonatomic, readonly) unsigned int pageCount;
-@property (nonatomic) float pageLength;
+@property (nonatomic) double pageLength;
 @property (nonatomic) int paginationBreakingMode;
 @property (nonatomic) int paginationMode;
 @property (nonatomic, readonly) NSURLRequest *request;
@@ -54,9 +54,8 @@
 - (void)_finishRotation;
 - (void)_frameOrBoundsChanged;
 - (float)_gapBetweenPages;
-- (id)_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 enableReachability:(BOOL)arg2;
+- (id)_initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 enableReachability:(BOOL)arg2;
 - (id)_initWithWebView:(id)arg1;
-- (void)_lookup:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_makeAlertView;
 - (id)_networkInterfaceName;
 - (unsigned int)_pageCount;
@@ -76,6 +75,7 @@
 - (void)_setDrawInWebThread:(BOOL)arg1;
 - (void)_setDrawsCheckeredPattern:(BOOL)arg1;
 - (void)_setGapBetweenPages:(float)arg1;
+- (void)_setIsBlankBeforeFirstNonEmptyLayout:(BOOL)arg1;
 - (void)_setNetworkInterfaceName:(id)arg1;
 - (void)_setOverridesOrientationChangeEventHandling:(BOOL)arg1;
 - (void)_setPageLength:(float)arg1;
@@ -95,7 +95,7 @@
 - (void)_webView:(id)arg1 didDismissPreview:(id)arg2 committing:(BOOL)arg3;
 - (id)_webView:(id)arg1 presentationRectsForPreview:(id)arg2;
 - (id)_webView:(id)arg1 presentationSnapshotForPreview:(id)arg2;
-- (BOOL)_webView:(id)arg1 previewIsAllowedForPosition:(struct CGPoint { float x1; float x2; })arg2;
+- (BOOL)_webView:(id)arg1 previewIsAllowedForPosition:(struct CGPoint { double x1; double x2; })arg2;
 - (id)_webView:(id)arg1 previewViewControllerForURL:(id)arg2;
 - (void)_webView:(id)arg1 willPresentPreview:(id)arg2;
 - (void)_webViewCommonInitWithWebView:(id)arg1 scalesPageToFit:(BOOL)arg2;
@@ -106,9 +106,8 @@
 - (BOOL)canGoBack;
 - (BOOL)canGoForward;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (void)configureWithSettings:(id)arg1;
 - (void)copy:(id)arg1;
-- (struct CGImage { }*)createSnapshotWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGImage { }*)createSnapshotWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (unsigned int)dataDetectorTypes;
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
@@ -120,7 +119,7 @@
 - (void)goBack;
 - (void)goForward;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isLoading;
 - (BOOL)keyboardDisplayRequiresUserAction;
@@ -129,7 +128,7 @@
 - (void)loadRequest:(id)arg1;
 - (BOOL)mediaPlaybackAllowsAirPlay;
 - (BOOL)mediaPlaybackRequiresUserAction;
-- (struct CGImage { }*)newSnapshotWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGImage { }*)newSnapshotWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (unsigned int)pageCount;
 - (float)pageLength;
 - (int)paginationBreakingMode;
@@ -155,11 +154,11 @@
 - (void)setAllowsLinkPreview:(BOOL)arg1;
 - (void)setAllowsPictureInPictureMediaPlayback:(BOOL)arg1;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setDataDetectorTypes:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDetectsPhoneNumbers:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setGapBetweenPages:(float)arg1;
 - (void)setKeyboardDisplayRequiresUserAction:(BOOL)arg1;
 - (void)setMediaPlaybackAllowsAirPlay:(BOOL)arg1;
@@ -170,11 +169,11 @@
 - (void)setPaginationMode:(int)arg1;
 - (void)setScalesPageToFit:(BOOL)arg1;
 - (void)setSuppressesIncrementalRendering:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)stopLoading;
 - (id)stringByEvaluatingJavaScriptFromString:(id)arg1;
 - (BOOL)suppressesIncrementalRendering;
-- (void)view:(id)arg1 didSetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 oldFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (void)view:(id)arg1 didSetFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 oldFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (id)viewForZoomingInScrollView:(id)arg1;
 - (id)webThreadWebView:(id)arg1 resource:(id)arg2 willSendRequest:(id)arg3 redirectResponse:(id)arg4 fromDataSource:(id)arg5;
 - (id)webView:(id)arg1 connectionPropertiesForResource:(id)arg2 dataSource:(id)arg3;
@@ -219,5 +218,10 @@
 - (void)_accessibilityPauseSpeaking:(id)arg1;
 - (void)_accessibilitySpeak:(id)arg1;
 - (id)_accessibilitySpeakSelectionTextInputResponder;
+
+// Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
+
+- (int)highlightAllOccurencesOfTokens:(id)arg1;
+- (void)removeAllHighlights;
 
 @end

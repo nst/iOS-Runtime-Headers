@@ -3,8 +3,8 @@
  */
 
 @interface CPLEngineComponentEnumerator : NSObject {
-    NSEnumerator *_enumerator;
-    id /* block */ _handler;
+    NSEnumerator * _enumerator;
+    id /* block */  _handler;
 }
 
 - (void).cxx_destruct;

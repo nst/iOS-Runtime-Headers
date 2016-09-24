@@ -3,7 +3,7 @@
  */
 
 @interface CoreDAVNullParser : NSObject <CoreDAVResponseBodyParser> {
-    NSError *_parserError;
+    NSError * _parserError;
 }
 
 @property (readonly, copy) NSString *debugDescription;

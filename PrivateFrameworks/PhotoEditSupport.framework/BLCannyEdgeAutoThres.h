@@ -3,16 +3,16 @@
  */
 
 @interface BLCannyEdgeAutoThres : NSObject {
-    float *_anglePointer;
-    int _cols;
-    char *_dataPointer;
-    int *_deriv_x;
-    int *_deriv_y;
-    int *_magnitude;
-    char *_nonMaxSup;
-    int _rows;
-    float _sigma;
-    int *_smoothedImg;
+    double * _anglePointer;
+    int  _cols;
+    char * _dataPointer;
+    int * _deriv_x;
+    int * _deriv_y;
+    int * _magnitude;
+    char * _nonMaxSup;
+    int  _rows;
+    double  _sigma;
+    int * _smoothedImg;
 }
 
 - (void)CannyEdge:(char *)arg1 rows:(int)arg2 cols:(int)arg3 output:(char *)arg4 outputAngle:(float*)arg5;

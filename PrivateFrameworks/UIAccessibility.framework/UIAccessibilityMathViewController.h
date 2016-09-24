@@ -3,8 +3,8 @@
  */
 
 @interface UIAccessibilityMathViewController : UIViewController {
-    NSDictionary *_mathDictionary;
-    SCRCMathExpression *_mathExpression;
+    NSDictionary * _mathDictionary;
+    SCRCMathExpression * _mathExpression;
 }
 
 @property (nonatomic, readonly) NSDictionary *mathDictionary;

@@ -3,7 +3,7 @@
  */
 
 @interface _MRSendVoiceInputMessageProtobuf : PBCodable <NSCopying> {
-    _MRAudioDataBlockProtobuf *_dataBlock;
+    _MRAudioDataBlockProtobuf * _dataBlock;
 }
 
 @property (nonatomic, retain) _MRAudioDataBlockProtobuf *dataBlock;

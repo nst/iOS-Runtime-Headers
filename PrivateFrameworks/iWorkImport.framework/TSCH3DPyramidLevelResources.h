@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DPyramidLevelResources : NSObject {
-    TSUPair *mResourcePair;
+    TSUPair * mResourcePair;
 }
 
 @property (nonatomic, readonly) TSCH3DPyramidBlurFBOResource *finalResource;

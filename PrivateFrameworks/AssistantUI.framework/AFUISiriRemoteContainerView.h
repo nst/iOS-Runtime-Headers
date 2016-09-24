@@ -3,7 +3,7 @@
  */
 
 @interface AFUISiriRemoteContainerView : UIView <AFUISiriRemoteViewHosting> {
-    UIView *_remoteContentView;
+    UIView * _remoteContentView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

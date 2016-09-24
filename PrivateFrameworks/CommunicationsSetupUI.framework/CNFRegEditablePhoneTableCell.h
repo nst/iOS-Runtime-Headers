@@ -3,8 +3,8 @@
  */
 
 @interface CNFRegEditablePhoneTableCell : CNFRegEditableTableCell {
-    SEL _countryCodeSelector;
-    NSString *_previousValue;
+    SEL  _countryCodeSelector;
+    NSString * _previousValue;
 }
 
 - (id)countryCode;

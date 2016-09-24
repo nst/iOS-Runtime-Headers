@@ -3,10 +3,10 @@
  */
 
 @interface SKUIMediaSocialSuggestedHandlesOperation : SSVComplexOperation {
-    SKUIClientContext *_clientContext;
-    NSLock *_lock;
-    id /* block */ _outputBlock;
-    NSArray *_words;
+    SKUIClientContext * _clientContext;
+    NSLock * _lock;
+    id /* block */  _outputBlock;
+    NSArray * _words;
 }
 
 @property (copy) id /* block */ outputBlock;

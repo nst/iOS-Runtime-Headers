@@ -3,7 +3,7 @@
  */
 
 @interface BLTPBSetSectionInfoRequest : PBRequest <NSCopying> {
-    BLTPBSectionInfo *_sectionInfo;
+    BLTPBSectionInfo * _sectionInfo;
 }
 
 @property (nonatomic, readonly) BOOL hasSectionInfo;

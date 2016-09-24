@@ -3,20 +3,23 @@
  */
 
 @interface NSFileWritingClaim : NSFileAccessClaim {
-    NSFileAccessNode *_location;
-    unsigned int _options;
-    NSURL *_url;
-    BOOL _urlDidChange;
+    NSFileAccessNode * _location;
+    unsigned int  _options;
+    NSURL * _url;
+    BOOL  _urlDidChange;
 }
+
++ (BOOL)supportsSecureCoding;
 
 - (id)allURLs;
 - (BOOL)blocksClaim:(id)arg1;
 - (void)dealloc;
 - (void)devalueSelf;
+- (void)encodeWithCoder:(id)arg1;
 - (BOOL)evaluateSelfWithRootNode:(id)arg1 checkSubarbitrability:(BOOL)arg2;
-- (void)forwardUsingMessageSender:(id /* block */)arg1 crashHandler:(id /* block */)arg2;
+- (void)forwardUsingConnection:(id)arg1 crashHandler:(id /* block */)arg2;
 - (void)granted;
-- (id)initWithClient:(id)arg1 messageParameters:(id)arg2 arbiterQueue:(id)arg3 replySender:(id /* block */)arg4;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithPurposeID:(id)arg1 url:(id)arg2 options:(unsigned int)arg3 claimer:(id /* block */)arg4;
 - (void)invokeClaimer;
 - (BOOL)isBlockedByReadingItemAtLocation:(id)arg1 options:(unsigned int)arg2;

@@ -3,7 +3,7 @@
  */
 
 @interface BKSProcessAssertionEvent : NSObject <BSXPCCoding> {
-    NSString *_identifier;
+    NSString * _identifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;

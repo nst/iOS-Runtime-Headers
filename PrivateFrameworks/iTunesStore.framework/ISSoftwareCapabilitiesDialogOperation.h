@@ -3,8 +3,8 @@
  */
 
 @interface ISSoftwareCapabilitiesDialogOperation : ISOperation {
-    NSDictionary *_mismatches;
-    id _requiredCapabilities;
+    NSDictionary * _mismatches;
+    id  _requiredCapabilities;
 }
 
 @property (readonly) NSDictionary *mismatches;

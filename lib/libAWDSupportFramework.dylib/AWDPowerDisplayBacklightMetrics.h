@@ -3,23 +3,23 @@
  */
 
 @interface AWDPowerDisplayBacklightMetrics : PBCodable <NSCopying> {
-    unsigned int _alsAutoBrightnessChangeCount;
-    int _alsAutoBrightnessCurveE0A;
-    int _alsAutoBrightnessCurveE0B;
-    int _alsAutoBrightnessCurveE1;
-    int _alsAutoBrightnessCurveE2;
-    int _alsAutoBrightnessCurveEdynth;
-    int _alsAutoBrightnessCurveL0A;
-    int _alsAutoBrightnessCurveL0B;
-    int _alsAutoBrightnessCurveL1;
-    int _alsAutoBrightnessCurveL2;
-    unsigned int _alsAutoBrightnessLux;
-    unsigned int _alsAutoBrightnessSlider;
-    unsigned int _alsBrightnessEnableCnt;
-    NSMutableArray *_backlightBuckets;
-    unsigned int _dispOnCount;
-    unsigned int _displayIdlePercentage;
-    unsigned int _frameRateResidencyPercentage;
+    unsigned int  _alsAutoBrightnessChangeCount;
+    int  _alsAutoBrightnessCurveE0A;
+    int  _alsAutoBrightnessCurveE0B;
+    int  _alsAutoBrightnessCurveE1;
+    int  _alsAutoBrightnessCurveE2;
+    int  _alsAutoBrightnessCurveEdynth;
+    int  _alsAutoBrightnessCurveL0A;
+    int  _alsAutoBrightnessCurveL0B;
+    int  _alsAutoBrightnessCurveL1;
+    int  _alsAutoBrightnessCurveL2;
+    unsigned int  _alsAutoBrightnessLux;
+    unsigned int  _alsAutoBrightnessSlider;
+    unsigned int  _alsBrightnessEnableCnt;
+    NSMutableArray * _backlightBuckets;
+    unsigned int  _dispOnCount;
+    unsigned int  _displayIdlePercentage;
+    unsigned int  _frameRateResidencyPercentage;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int alsAutoBrightnessChangeCount : 1; 
@@ -46,16 +46,16 @@
         unsigned int totalBacklightPower : 1; 
         unsigned int totalDisplayPower : 1; 
         unsigned int unpluggedDisplayOnDuration : 1; 
-    } _has;
-    unsigned int _mieCount;
-    unsigned int _mieDuration;
-    unsigned int _pluggedDisplayOnDuration;
-    unsigned int _residencyPercentage30Hz;
-    unsigned int _residencyPercentage60Hz;
-    unsigned long long _timestamp;
-    unsigned int _totalBacklightPower;
-    unsigned int _totalDisplayPower;
-    unsigned int _unpluggedDisplayOnDuration;
+    }  _has;
+    unsigned int  _mieCount;
+    unsigned int  _mieDuration;
+    unsigned int  _pluggedDisplayOnDuration;
+    unsigned int  _residencyPercentage30Hz;
+    unsigned int  _residencyPercentage60Hz;
+    unsigned long long  _timestamp;
+    unsigned int  _totalBacklightPower;
+    unsigned int  _totalDisplayPower;
+    unsigned int  _unpluggedDisplayOnDuration;
 }
 
 @property (nonatomic) unsigned int alsAutoBrightnessChangeCount;

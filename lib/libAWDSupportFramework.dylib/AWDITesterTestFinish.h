@@ -6,11 +6,11 @@
     struct { 
         unsigned int timestamp : 1; 
         unsigned int testStatus : 1; 
-    } _has;
-    NSString *_testName;
-    unsigned int _testStatus;
-    unsigned long long _timestamp;
-    NSString *_uniqueKey;
+    }  _has;
+    NSString * _testName;
+    unsigned int  _testStatus;
+    unsigned long long  _timestamp;
+    NSString * _uniqueKey;
 }
 
 @property (nonatomic, readonly) BOOL hasTestName;

@@ -5,16 +5,13 @@
 @interface MPMediaItem : MPMediaEntity
 
 @property (nonatomic, readonly) NSString *albumArtist;
-@property (nonatomic, readonly) unsigned long long albumArtistPersistentID;
-@property (nonatomic, readonly) NSString *albumArtistWithFallback;
-@property (nonatomic, readonly) unsigned long long albumPersistentID;
+@property (nonatomic, readonly) unsigned int albumArtistPersistentID;
+@property (nonatomic, readonly) unsigned int albumPersistentID;
 @property (nonatomic, readonly) NSString *albumTitle;
-@property (nonatomic, readonly) NSString *albumTitleWithFallback;
 @property (nonatomic, readonly) unsigned int albumTrackCount;
 @property (nonatomic, readonly) unsigned int albumTrackNumber;
 @property (nonatomic, readonly) NSString *artist;
-@property (nonatomic, readonly) unsigned long long artistPersistentID;
-@property (nonatomic, readonly) NSString *artistWithFallback;
+@property (nonatomic, readonly) unsigned int artistPersistentID;
 @property (nonatomic, readonly) MPMediaItemArtwork *artwork;
 @property (nonatomic, readonly) NSURL *assetURL;
 @property (nonatomic, readonly) unsigned int beatsPerMinute;
@@ -24,14 +21,16 @@
 @property (nonatomic, readonly) NSString *comments;
 @property (getter=isCompilation, nonatomic, readonly) BOOL compilation;
 @property (nonatomic, readonly) NSString *composer;
-@property (nonatomic, readonly) unsigned long long composerPersistentID;
+@property (nonatomic, readonly) unsigned int composerPersistentID;
 @property (nonatomic, copy) NSDate *dateAccessed;
+@property (nonatomic, readonly) NSDate *dateAdded;
 @property (nonatomic, readonly) unsigned int discCount;
 @property (nonatomic, readonly) unsigned int discNumber;
 @property (nonatomic, readonly) NSString *effectiveAlbumArtist;
 @property (nonatomic, readonly) double effectiveStopTime;
+@property (getter=isExplicitItem, nonatomic, readonly) BOOL explicitItem;
 @property (nonatomic, readonly) NSString *genre;
-@property (nonatomic, readonly) unsigned long long genrePersistentID;
+@property (nonatomic, readonly) unsigned int genrePersistentID;
 @property (nonatomic) BOOL hasBeenPlayed;
 @property (nonatomic, readonly) BOOL isITunesU;
 @property (nonatomic, readonly) BOOL isRental;
@@ -40,12 +39,11 @@
 @property (nonatomic, copy) NSDate *lastSkippedDate;
 @property (nonatomic, readonly) NSString *lyrics;
 @property (nonatomic, readonly) unsigned int mediaType;
-@property (nonatomic, readonly) BOOL mediaTypeCanSeedGenius;
-@property (nonatomic, readonly) unsigned long long persistentID;
+@property (nonatomic, readonly) unsigned int persistentID;
 @property (nonatomic, readonly) unsigned int playCount;
 @property (nonatomic) unsigned int playCountSinceSync;
 @property (nonatomic, readonly) double playbackDuration;
-@property (nonatomic, readonly) unsigned long long podcastPersistentID;
+@property (nonatomic, readonly) unsigned int podcastPersistentID;
 @property (nonatomic, readonly) NSString *podcastTitle;
 @property (getter=hasProtectedAsset, nonatomic, readonly) BOOL protectedAsset;
 @property (nonatomic, readonly) unsigned int rating;
@@ -56,7 +54,6 @@
 @property (nonatomic, readonly) double startTime;
 @property (nonatomic, readonly) double stopTime;
 @property (nonatomic, readonly) NSString *title;
-@property (nonatomic, readonly) NSString *titleWithFallback;
 @property (nonatomic, readonly) NSString *userGrouping;
 @property (nonatomic, readonly) unsigned int year;
 
@@ -83,13 +80,13 @@
 - (id)_libraryLinkPlaylistName;
 - (id)_libraryLinkURL;
 - (id)albumArtist;
-- (unsigned long long)albumArtistPersistentID;
-- (unsigned long long)albumPersistentID;
+- (unsigned int)albumArtistPersistentID;
+- (unsigned int)albumPersistentID;
 - (id)albumTitle;
 - (unsigned int)albumTrackCount;
 - (unsigned int)albumTrackNumber;
 - (id)artist;
-- (unsigned long long)artistPersistentID;
+- (unsigned int)artistPersistentID;
 - (id)artwork;
 - (id)artworkCatalog;
 - (id)assetURL;
@@ -102,9 +99,10 @@
 - (void)clearLocationProperties;
 - (id)comments;
 - (id)composer;
-- (unsigned long long)composerPersistentID;
+- (unsigned int)composerPersistentID;
 - (unsigned int)countOfChaptersOfType:(int)arg1;
 - (id)dateAccessed;
+- (id)dateAdded;
 - (void)didReceiveMemoryWarning;
 - (BOOL)didSkipWithPlayedToTime:(double)arg1;
 - (unsigned int)discCount;
@@ -113,9 +111,9 @@
 - (double)effectiveStopTime;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)existsInLibrary;
-- (void)gaplessHeuristicInfo:(unsigned int*)arg1 durationInSamples:(unsigned long long*)arg2 lastPacketsResync:(unsigned long long*)arg3 encodingDelay:(unsigned int*)arg4 encodingDrain:(unsigned int*)arg5;
+- (void)gaplessHeuristicInfo:(unsigned int*)arg1 durationInSamples:(unsigned int*)arg2 lastPacketsResync:(unsigned int*)arg3 encodingDelay:(unsigned int*)arg4 encodingDrain:(unsigned int*)arg5;
 - (id)genre;
-- (unsigned long long)genrePersistentID;
+- (unsigned int)genrePersistentID;
 - (BOOL)hasBeenPlayed;
 - (BOOL)hasProtectedAsset;
 - (unsigned int)hash;
@@ -124,10 +122,11 @@
 - (void)incrementSkipCount;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMultiverseIdentifier:(id)arg1;
-- (id)initWithPersistentID:(unsigned long long)arg1;
+- (id)initWithPersistentID:(unsigned int)arg1;
 - (BOOL)isCloudItem;
 - (BOOL)isCompilation;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isExplicitItem;
 - (BOOL)isITunesU;
 - (BOOL)isRental;
 - (BOOL)isUsableAsRepresentativeItem;
@@ -137,14 +136,13 @@
 - (id)lyrics;
 - (void)markNominalAmountHasBeenPlayed;
 - (unsigned int)mediaType;
-- (BOOL)mediaTypeCanSeedGenius;
 - (id)multiverseIdentifier;
 - (double)nominalHasBeenPlayedThreshold;
 - (void)noteWasPlayedToTime:(double)arg1 skipped:(BOOL)arg2;
 - (unsigned int)playCount;
 - (unsigned int)playCountSinceSync;
 - (double)playbackDuration;
-- (unsigned long long)podcastPersistentID;
+- (unsigned int)podcastPersistentID;
 - (id)podcastTitle;
 - (void)populateLocationPropertiesWithPath:(id)arg1;
 - (void)populateLocationPropertiesWithPath:(id)arg1 assetProtectionType:(int)arg2;
@@ -198,10 +196,6 @@
 // Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
 
 - (id)SAMPMediaItemRepresentation;
-- (id)albumArtistWithFallback;
-- (id)albumImageWithFallbackForSize:(struct CGSize { float x1; float x2; })arg1 doubleLineRow:(BOOL)arg2;
-- (id)albumTitleWithFallback;
-- (id)artistWithFallback;
-- (id)titleWithFallback;
+- (id)albumImageWithFallbackForSize:(struct CGSize { double x1; double x2; })arg1 doubleLineRow:(BOOL)arg2;
 
 @end

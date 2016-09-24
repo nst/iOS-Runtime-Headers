@@ -3,37 +3,52 @@
  */
 
 @interface BLTDNDSyncInternal : NSObject {
-    unsigned int _bulletinBoardDNDState;
-    BOOL _isDNDMirrorEnabled;
-    NPSManager *_npsManager;
-    BBSettingsGateway *_settingsGateway;
+    NSString * _assertionActiveKey;
+    NSString * _assertionOnBehalfOfActiveKey;
+    unsigned int  _bulletinBoardDNDState;
+    BLTRemoteObject * _connection;
+    BBQuietModeOverrideAssertion * _dndAssertionOnBehalfOf;
+    BOOL  _isDNDMirrorEnabled;
+    NPSManager * _npsManager;
+    BBSettingsGateway * _settingsGateway;
 }
 
 @property (nonatomic, readonly) unsigned int bulletinBoardDNDState;
+@property (nonatomic, retain) BLTRemoteObject *connection;
+@property (nonatomic, retain) BBQuietModeOverrideAssertion *dndAssertionOnBehalfOf;
 @property (nonatomic) BOOL isDNDMirrorEnabled;
 @property (nonatomic, retain) NPSManager *npsManager;
 @property (nonatomic, retain) BBSettingsGateway *settingsGateway;
 
 - (void).cxx_destruct;
-- (BOOL)_isChangeToDNDSettingObsoleteAtDate:(id)arg1 overrides:(id)arg2;
+- (void)_isChangeToDNDSettingObsoleteAtDate:(id)arg1 completion:(id /* block */)arg2;
+- (void)_setAssertionOnBehalfOfActive:(BOOL)arg1;
+- (void)_settingsGatewayReconnected:(id)arg1;
+- (void)_transportConnectionStatusChanged:(id)arg1;
+- (void)_updateOnBehalfOfAssertActiveWithConnectionStatus:(unsigned int)arg1 updateObserver:(BOOL)arg2;
 - (void)_updateSettingsGatewayTo:(BOOL)arg1 changeDate:(id)arg2;
+- (void)_updateTransportConnectionStatusObserver:(BOOL)arg1;
 - (unsigned int)bulletinBoardDNDState;
+- (id)connection;
 - (void)dealloc;
+- (id)dndAssertionOnBehalfOf;
 - (id)init;
+- (id)initWithSettingsGateway:(id)arg1 connection:(id)arg2 assertionActiveKey:(id)arg3 assertionOnBehalfOfActiveKey:(id)arg4;
 - (BOOL)isDNDMirrorEnabled;
 - (id)npsManager;
 - (void)removeDNDHandlers;
 - (void)setBehaviorOverrideStatus:(int)arg1;
 - (void)setBehaviorOverrideTypes:(unsigned int)arg1 changedDate:(id)arg2;
 - (void)setBehaviorOverrides:(id)arg1;
+- (void)setConnection:(id)arg1;
 - (void)setDNDHandlers;
+- (void)setDndAssertionOnBehalfOf:(id)arg1;
 - (void)setDoNotDisturb:(BOOL)arg1 changeDate:(id)arg2 updateSettingsGateway:(BOOL)arg3;
 - (void)setIsDNDMirrorEnabled:(BOOL)arg1;
 - (void)setNpsManager:(id)arg1;
 - (void)setPrivilegedSenderTypes:(unsigned int)arg1;
 - (void)setSettingsGateway:(id)arg1;
 - (id)settingsGateway;
-- (void)synchronizeDNDEnabled:(BOOL)arg1 andChangeDate:(id)arg2;
 - (void)updateDNDMirrorState;
 - (void)updateDNDStateChangedByPreferencesSync:(BOOL)arg1;
 

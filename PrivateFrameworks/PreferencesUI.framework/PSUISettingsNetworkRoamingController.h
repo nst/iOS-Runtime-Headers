@@ -3,9 +3,9 @@
  */
 
 @interface PSUISettingsNetworkRoamingController : PSListController {
-    PSSpecifier *_cdmaRoamingSpecifier;
-    PSSpecifier *_dataRoamingSpecifier;
-    PSSpecifier *_voiceRoamingSpecifier;
+    PSSpecifier * _cdmaRoamingSpecifier;
+    PSSpecifier * _dataRoamingSpecifier;
+    PSSpecifier * _voiceRoamingSpecifier;
 }
 
 - (void).cxx_destruct;

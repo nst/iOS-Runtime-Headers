@@ -3,9 +3,9 @@
  */
 
 @interface TSUIntegerKeyDictionaryKeyEnumerator : NSObject {
-    unsigned int _count;
-    unsigned int _index;
-    int **_keys;
+    unsigned int  _count;
+    unsigned int  _index;
+    int ** _keys;
 }
 
 - (void)dealloc;

@@ -3,7 +3,7 @@
  */
 
 @interface SSVPlaybackAsset : NSObject {
-    NSDictionary *_assetDictionary;
+    NSDictionary * _assetDictionary;
 }
 
 @property (nonatomic, readonly) NSString *URLString;

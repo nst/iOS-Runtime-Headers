@@ -3,24 +3,24 @@
  */
 
 @interface TSKAnimatedGIFController : NSObject <TSKMediaPlayerController> {
-    BOOL fastForwarding;
-    BOOL fastReversing;
-    double mAbsoluteCurrentTime;
-    <TSKMediaPlayerControllerDelegate> *mDelegate;
-    CADisplayLink *mDisplayLink;
-    unsigned int mDisplayLinkCounter;
-    double mEndTime;
-    NSArray *mFrames;
-    double mLastDisplayUpdateTime;
-    NSMutableSet *mLayers;
-    BOOL mPlaying;
-    float mRate;
-    float mRateBeforeScrubbing;
-    int mRepeatMode;
-    unsigned int mScrubbingCount;
-    struct CGImageSource { } *mSource;
-    double mStartTime;
-    float mVolume;
+    BOOL  fastForwarding;
+    BOOL  fastReversing;
+    double  mAbsoluteCurrentTime;
+    <TSKMediaPlayerControllerDelegate> * mDelegate;
+    CADisplayLink * mDisplayLink;
+    unsigned int  mDisplayLinkCounter;
+    double  mEndTime;
+    NSArray * mFrames;
+    double  mLastDisplayUpdateTime;
+    NSMutableSet * mLayers;
+    BOOL  mPlaying;
+    double  mRate;
+    double  mRateBeforeScrubbing;
+    int  mRepeatMode;
+    unsigned int  mScrubbingCount;
+    struct CGImageSource { } * mSource;
+    double  mStartTime;
+    double  mVolume;
 }
 
 @property (nonatomic, readonly) double absoluteCurrentTime;
@@ -40,13 +40,13 @@
 @property (nonatomic, readonly) struct CGImage { }*imageForCurrentTime;
 @property (nonatomic) double lastDisplayUpdateTime;
 @property (getter=isPlaying, nonatomic) BOOL playing;
-@property (nonatomic) float rate;
+@property (nonatomic) double rate;
 @property (nonatomic, readonly) double remainingTime;
 @property (nonatomic) int repeatMode;
 @property (getter=isScrubbing, nonatomic, readonly) BOOL scrubbing;
 @property (nonatomic) double startTime;
 @property (readonly) Class superclass;
-@property (nonatomic) float volume;
+@property (nonatomic) double volume;
 
 - (double)absoluteCurrentTime;
 - (double)absoluteDuration;
@@ -65,6 +65,7 @@
 - (double)endTime;
 - (struct CGImage { }*)imageForCurrentTime;
 - (struct CGImage { }*)imageForTime:(double)arg1;
+- (id)init;
 - (id)initWithData:(id)arg1 delegate:(id)arg2;
 - (id)initWithImageSource:(struct CGImageSource { }*)arg1 delegate:(id)arg2;
 - (BOOL)isFastForwarding;

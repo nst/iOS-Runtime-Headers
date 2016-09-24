@@ -3,7 +3,7 @@
  */
 
 @interface AFShowAlarmRequest : AFSiriRequest {
-    NSArray *_alarms;
+    NSArray * _alarms;
 }
 
 @property (nonatomic, copy) NSArray *alarms;

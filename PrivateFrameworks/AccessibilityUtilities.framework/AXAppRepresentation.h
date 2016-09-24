@@ -3,9 +3,9 @@
  */
 
 @interface AXAppRepresentation : NSObject <NSSecureCoding> {
-    NSString *_bundleIdentifier;
-    int _layoutRole;
-    int _pid;
+    NSString * _bundleIdentifier;
+    int  _layoutRole;
+    int  _pid;
 }
 
 @property (nonatomic, retain) NSString *bundleIdentifier;
@@ -19,6 +19,7 @@
 
 - (void)_commonInit;
 - (id)bundleIdentifier;
+- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;

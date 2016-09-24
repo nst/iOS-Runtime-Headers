@@ -3,9 +3,9 @@
  */
 
 @interface VTUIStringsHelper : NSObject {
-    NSString *_heySiriTriggerPhrase;
-    NSDictionary *_localizedStringTable;
-    NSDictionary *_localizedStringTableForSiriLanguage;
+    NSString * _heySiriTriggerPhrase;
+    NSDictionary * _localizedStringTable;
+    NSDictionary * _localizedStringTableForSiriLanguage;
 }
 
 + (void)initialize;

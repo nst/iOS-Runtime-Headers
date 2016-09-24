@@ -3,19 +3,19 @@
  */
 
 @interface TSTLayoutDynamicResizeInfoUnify : TSTLayoutDynamicResizeInfo {
-    float mTargetHeight;
-    float mTargetWidth;
+    double  mTargetHeight;
+    double  mTargetWidth;
 }
 
-@property (nonatomic, readonly) float targetHeight;
-@property (nonatomic, readonly) float targetWidth;
+@property (nonatomic, readonly) double targetHeight;
+@property (nonatomic, readonly) double targetWidth;
 
-- (void)applyFixedHeight:(float)arg1;
-- (void)applyFixedWidth:(float)arg1;
+- (BOOL)applyFixedHeight:(float)arg1;
+- (BOOL)applyFixedWidth:(float)arg1;
 - (float)applyResizeHeightFactor:(float)arg1;
 - (float)applyResizeWidthFactor:(float)arg1;
 - (void)captureNewMinimumRowHeights:(id)arg1;
-- (void)p_applyUnifyFixedSize:(float)arg1 region:(id)arg2 direction:(int)arg3 count:(unsigned short)arg4 currentArray:(float*)arg5 minimumArray:(float*)arg6;
+- (BOOL)p_applyUnifyFixedSize:(float)arg1 region:(id)arg2 direction:(int)arg3 count:(unsigned short)arg4 currentArray:(float*)arg5 minimumArray:(float*)arg6;
 - (float)p_applyUnifyResizeFactor:(float)arg1 region:(id)arg2 direction:(int)arg3 totalOfCaptured:(float)arg4 count:(unsigned short)arg5 capturedArray:(float*)arg6 currentArray:(float*)arg7 minimumArray:(float*)arg8;
 - (float)targetHeight;
 - (float)targetWidth;

@@ -3,18 +3,18 @@
  */
 
 @interface NSConcreteTextStorage : NSTextStorage {
-    NSConcreteNotifyingMutableAttributedString *_contents;
+    NSConcreteNotifyingMutableAttributedString * _contents;
     struct _opaque_pthread_rwlock_t { 
         long __sig; 
         BOOL __opaque[124]; 
-    } _lock;
+    }  _lock;
     struct { 
         unsigned int _forceFixAttributes : 1; 
         unsigned int _needLock : 1; 
         unsigned int _lockInitialized : 1; 
         unsigned int _inFixingAttributes : 1; 
         unsigned int _reserved : 28; 
-    } _pFlags;
+    }  _pFlags;
 }
 
 + (unsigned long)_writerCountTSDKey;

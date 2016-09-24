@@ -3,7 +3,7 @@
  */
 
 @interface SKUIItemRoomTableViewCell : SKUIItemTableViewCell {
-    SKUIItemBrowseCellLayout *_layout;
+    SKUIItemBrowseCellLayout * _layout;
 }
 
 @property (nonatomic, readonly) SKUIItemBrowseCellLayout *layout;

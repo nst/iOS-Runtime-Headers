@@ -3,10 +3,10 @@
  */
 
 @interface PLTelephonyConnection : NSObject {
-    PLAgent *_observerAgent;
-    struct __CTServerConnection { } *connection;
-    struct __CFMachPort { } *ctServerPort;
-    struct __CFRunLoopSource { } *ctServerSource;
+    PLAgent * _observerAgent;
+    struct __CTServerConnection { } * connection;
+    struct __CFMachPort { } * ctServerPort;
+    struct __CFRunLoopSource { } * ctServerSource;
 }
 
 @property (nonatomic, readonly) struct __CTServerConnection { }*connection;
@@ -35,6 +35,5 @@
 - (void)requestBasebandStateDurationReport;
 - (void)setObserverAgent:(id)arg1;
 - (void)teardownConnection;
-- (id)wakeReason;
 
 @end

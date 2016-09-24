@@ -3,33 +3,33 @@
  */
 
 @interface HDAppSubscription : NSObject {
-    NSString *_bundleIdentifier;
-    int _dataCode;
-    long long _lastAckTime;
-    unsigned long long _lastAnchor;
-    long long _launchTimeHysteresis;
-    unsigned long long _updateFrequency;
+    NSString * _bundleIdentifier;
+    int  _dataCode;
+    int  _lastAckTime;
+    unsigned int  _lastAnchor;
+    int  _launchTimeHysteresis;
+    unsigned int  _updateFrequency;
 }
 
 @property (nonatomic, readonly) NSString *bundleIdentifier;
 @property (nonatomic, readonly) int dataCode;
-@property (nonatomic, readonly) long long lastAckTime;
-@property (nonatomic, readonly) unsigned long long lastAnchor;
-@property (nonatomic, readonly) long long launchTimeHysteresis;
-@property (nonatomic, readonly) unsigned long long updateFrequency;
+@property (nonatomic, readonly) int lastAckTime;
+@property (nonatomic, readonly) unsigned int lastAnchor;
+@property (nonatomic, readonly) int launchTimeHysteresis;
+@property (nonatomic, readonly) unsigned int updateFrequency;
 
 - (void).cxx_destruct;
 - (id)bundleIdentifier;
 - (int)dataCode;
 - (id)init;
 - (id)initWithBundleIdentifier:(id)arg1 dataCode:(int)arg2;
-- (long long)lastAckTime;
-- (unsigned long long)lastAnchor;
-- (long long)launchTimeHysteresis;
-- (void)setLastAckTime:(long long)arg1;
-- (void)setLastAnchor:(unsigned long long)arg1;
-- (void)setLaunchTimeHysteresis:(long long)arg1;
-- (void)setUpdateFrequency:(unsigned long long)arg1;
-- (unsigned long long)updateFrequency;
+- (int)lastAckTime;
+- (unsigned int)lastAnchor;
+- (int)launchTimeHysteresis;
+- (void)setLastAckTime:(int)arg1;
+- (void)setLastAnchor:(unsigned int)arg1;
+- (void)setLaunchTimeHysteresis:(int)arg1;
+- (void)setUpdateFrequency:(unsigned int)arg1;
+- (unsigned int)updateFrequency;
 
 @end

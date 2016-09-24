@@ -3,8 +3,8 @@
  */
 
 @interface ECTwoIntegerKeyCache : NSObject {
-    BOOL _assertForCollisions;
-    OITSUIntegerKeyDictionary *mCache;
+    BOOL  _assertForCollisions;
+    OITSUIntegerKeyDictionary * mCache;
 }
 
 @property (nonatomic) BOOL assertForCollisions;

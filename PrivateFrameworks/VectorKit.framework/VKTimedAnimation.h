@@ -3,13 +3,13 @@
  */
 
 @interface VKTimedAnimation : VKAnimation {
-    double _duration;
-    double _lastTimestamp;
-    BOOL _resuming;
-    double _startTimestamp;
-    BOOL _startTimestampSet;
-    id /* block */ _stepHandler;
-    id /* block */ _timingFunction;
+    double  _duration;
+    double  _lastTimestamp;
+    BOOL  _resuming;
+    double  _startTimestamp;
+    BOOL  _startTimestampSet;
+    id /* block */  _stepHandler;
+    id /* block */  _timingFunction;
 }
 
 @property (nonatomic, copy) id /* block */ stepHandler;

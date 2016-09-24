@@ -3,14 +3,14 @@
  */
 
 @interface SSDatabaseCache : NSObject {
-    Class _cacheEntryClass;
-    NSString *_cacheName;
-    SSSQLiteDatabase *_database;
-    NSString *_identifier;
-    unsigned int _maximumInlineBlobSize;
-    NSString *_path;
-    SSPersistentCache *_persistentCache;
-    NSObject<OS_dispatch_queue> *_serialQueue;
+    Class  _cacheEntryClass;
+    NSString * _cacheName;
+    SSSQLiteDatabase * _database;
+    NSString * _identifier;
+    unsigned int  _maximumInlineBlobSize;
+    NSString * _path;
+    SSPersistentCache * _persistentCache;
+    NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
 @property (nonatomic) unsigned int maximumInlineBlobSize;

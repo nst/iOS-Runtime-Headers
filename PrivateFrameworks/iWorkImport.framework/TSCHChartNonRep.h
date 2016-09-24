@@ -3,9 +3,9 @@
  */
 
 @interface TSCHChartNonRep : NSObject <TSCHSupportsRendering> {
-    TSCHChartInfo *mChartInfo;
-    TSCHChartLayout *mChartLayout;
-    NSArray *mRenderers;
+    TSCHChartInfo * mChartInfo;
+    TSCHChartLayout * mChartLayout;
+    NSArray * mRenderers;
 }
 
 @property (nonatomic, retain) TSCHChartInfo *chartInfo;
@@ -19,8 +19,8 @@
 - (id)chartLayout;
 - (void)clearRenderers;
 - (id)commandController;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertNaturalRectToLayerRelative:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertUnscaledToBoundsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertNaturalRectToLayerRelative:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertUnscaledToBoundsRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)dealloc;
 - (void)didDrawInLayer:(id)arg1 context:(struct CGContext { }*)arg2;
 - (void)drawInContext:(struct CGContext { }*)arg1;
@@ -29,7 +29,7 @@
 - (id)initWithChartInfo:(id)arg1;
 - (BOOL)is2DRepFor3DChartRep;
 - (BOOL)isDrawingIntoPDF;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })outerShadowFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })outerShadowFrame;
 - (BOOL)renderElements;
 - (BOOL)renderElementsShadowOnly;
 - (BOOL)renderElementsWithoutShadows;

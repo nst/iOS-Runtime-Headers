@@ -3,24 +3,26 @@
  */
 
 @interface TSDTextureContext : NSObject <NSCopying> {
-    unsigned int _isMagicMove;
-    <TSDAnimationSession> *_session;
-    unsigned int _shouldAddFinal;
-    unsigned int _shouldAddMagicMoveObjectOnly;
-    unsigned int _shouldAddMasks;
-    BOOL _shouldAddNoShapeAttributes;
-    unsigned int _shouldAddReversedFinal;
-    unsigned int _shouldDistortToFit;
-    unsigned int _shouldForceTextureGeneration;
-    unsigned int _shouldIgnoreScaleInSourceImage;
-    unsigned int _shouldNotAddContainedReps;
-    unsigned int _shouldNotAddShapeAttributes;
-    unsigned int _shouldNotAddText;
-    unsigned int _shouldNotCacheTexture;
-    unsigned int _shouldSeparateReflection;
-    unsigned int _shouldSeparateShadow;
-    unsigned int _shouldSeparateStroke;
-    unsigned int _shouldSeparateText;
+    unsigned int  _isMagicMove;
+    <TSDAnimationSession> * _session;
+    unsigned int  _shouldAddFinal;
+    unsigned int  _shouldAddMagicMoveObjectOnly;
+    unsigned int  _shouldAddMasks;
+    BOOL  _shouldAddNoShapeAttributes;
+    unsigned int  _shouldAddParameterizedStroke;
+    unsigned int  _shouldAddReversedFinal;
+    unsigned int  _shouldDistortToFit;
+    unsigned int  _shouldForceTextureGeneration;
+    unsigned int  _shouldIgnoreScaleInSourceImage;
+    unsigned int  _shouldNotAddContainedReps;
+    unsigned int  _shouldNotAddShapeAttributes;
+    unsigned int  _shouldNotAddText;
+    unsigned int  _shouldNotCacheTexture;
+    unsigned int  _shouldReverseStrokeDrawing;
+    unsigned int  _shouldSeparateReflection;
+    unsigned int  _shouldSeparateShadow;
+    unsigned int  _shouldSeparateStroke;
+    unsigned int  _shouldSeparateText;
 }
 
 @property (nonatomic) BOOL isMagicMove;
@@ -28,6 +30,7 @@
 @property (nonatomic) BOOL shouldAddFinal;
 @property (nonatomic) BOOL shouldAddMagicMoveObjectOnly;
 @property (nonatomic) BOOL shouldAddMasks;
+@property (nonatomic) BOOL shouldAddParameterizedStroke;
 @property (nonatomic) BOOL shouldAddReversedFinal;
 @property (nonatomic) BOOL shouldDistortToFit;
 @property (nonatomic) BOOL shouldForceTextureGeneration;
@@ -36,6 +39,7 @@
 @property (nonatomic) BOOL shouldNotAddShapeAttributes;
 @property (nonatomic) BOOL shouldNotAddText;
 @property (nonatomic) BOOL shouldNotCacheTexture;
+@property (nonatomic) BOOL shouldReverseStrokeDrawing;
 @property (nonatomic) BOOL shouldSeparateReflection;
 @property (nonatomic) BOOL shouldSeparateShadow;
 @property (nonatomic) BOOL shouldSeparateStroke;
@@ -57,6 +61,7 @@
 - (void)setShouldAddFinal:(BOOL)arg1;
 - (void)setShouldAddMagicMoveObjectOnly:(BOOL)arg1;
 - (void)setShouldAddMasks:(BOOL)arg1;
+- (void)setShouldAddParameterizedStroke:(BOOL)arg1;
 - (void)setShouldAddReversedFinal:(BOOL)arg1;
 - (void)setShouldDistortToFit:(BOOL)arg1;
 - (void)setShouldForceTextureGeneration:(BOOL)arg1;
@@ -65,6 +70,7 @@
 - (void)setShouldNotAddShapeAttributes:(BOOL)arg1;
 - (void)setShouldNotAddText:(BOOL)arg1;
 - (void)setShouldNotCacheTexture:(BOOL)arg1;
+- (void)setShouldReverseStrokeDrawing:(BOOL)arg1;
 - (void)setShouldSeparateReflection:(BOOL)arg1;
 - (void)setShouldSeparateShadow:(BOOL)arg1;
 - (void)setShouldSeparateStroke:(BOOL)arg1;
@@ -72,6 +78,7 @@
 - (BOOL)shouldAddFinal;
 - (BOOL)shouldAddMagicMoveObjectOnly;
 - (BOOL)shouldAddMasks;
+- (BOOL)shouldAddParameterizedStroke;
 - (BOOL)shouldAddReversedFinal;
 - (BOOL)shouldDistortToFit;
 - (BOOL)shouldForceTextureGeneration;
@@ -80,6 +87,7 @@
 - (BOOL)shouldNotAddShapeAttributes;
 - (BOOL)shouldNotAddText;
 - (BOOL)shouldNotCacheTexture;
+- (BOOL)shouldReverseStrokeDrawing;
 - (BOOL)shouldSeparateReflection;
 - (BOOL)shouldSeparateShadow;
 - (BOOL)shouldSeparateStroke;

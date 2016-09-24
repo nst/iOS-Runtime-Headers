@@ -3,9 +3,9 @@
  */
 
 @interface IDSSendMessage : IDSFaceTimeMessage <NSCopying> {
-    NSArray *_peers;
-    NSNumber *_reason;
-    NSData *_selfPushToken;
+    NSArray * _peers;
+    NSNumber * _reason;
+    NSData * _selfPushToken;
 }
 
 @property (copy) NSArray *peers;

@@ -3,32 +3,32 @@
  */
 
 @interface UIGroupTableViewCellBackground : UIView {
-    int _animationCount;
-    UIView *_bottomSeparatorView;
+    int  _animationCount;
+    UIView * _bottomSeparatorView;
     struct { 
         unsigned int selected : 1; 
-    } _groupBackgroundFlags;
-    int _newSectionLocation;
-    float _sectionBorderWidth;
-    int _sectionLocation;
-    int _selectionStyle;
-    UIColor *_selectionTintColor;
+    }  _groupBackgroundFlags;
+    int  _newSectionLocation;
+    double  _sectionBorderWidth;
+    int  _sectionLocation;
+    int  _selectionStyle;
+    UIColor * _selectionTintColor;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _separatorInset;
-    int _separatorStyle;
-    UIView *_topSeparatorView;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _separatorInset;
+    int  _separatorStyle;
+    UIView * _topSeparatorView;
 }
 
-@property (nonatomic) float sectionBorderWidth;
+@property (nonatomic) double sectionBorderWidth;
 @property (nonatomic) int sectionLocation;
 @property (getter=isSelected, nonatomic) BOOL selected;
 @property (nonatomic) int selectionStyle;
 @property (nonatomic, retain) UIColor *selectionTintColor;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } separatorInset;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } separatorInset;
 @property (nonatomic) int separatorStyle;
 
 + (void)_flushCacheOnNotification:(id)arg1;
@@ -38,35 +38,43 @@
 - (id)_bottomShadowColor;
 - (id)_cachedImageForKey:(id)arg1;
 - (id)_contentMaskLayer;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentRectForContentHeight:(float)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentsCenter:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentsRect:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_contentRectForContentHeight:(float)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_contentsCenter:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_contentsRect:(BOOL)arg1;
 - (void)_decrementAnimationCount;
 - (id)_fillColor;
 - (void)_incrementAnimationCount;
 - (void)_layoutSubviews:(BOOL)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_modernResizableBackgroundImageCapInsets;
+- (BOOL)_modernResizableBackgroundImageEnabled;
+- (struct CGSize { double x1; double x2; })_modernResizableBackgroundImageSize;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_modernResizableContentsCenter;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_modernResizableContentsRect;
 - (float)_pixelDisplayedImageHeight;
-- (id)_roundedRectBezierPathInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withSectionLocation:(int)arg2 forBorder:(BOOL)arg3 cornerRadiusAdjustment:(float)arg4;
+- (id)_roundedRectBezierPathInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withSectionLocation:(int)arg2 forBorder:(BOOL)arg3 cornerRadiusAdjustment:(float)arg4;
 - (id)_sectionBorderColor;
+- (float)_sectionCornerRadius;
 - (id)_separatorColor;
 - (void)_setSectionLocationAnimationDidStop;
 - (id)_topShadowColor;
 - (id)_topShadowViewWithColor:(id)arg1;
 - (void)_updateSeparatorViews;
+- (BOOL)_useModernResizableBackgroundImage;
+- (BOOL)_useResizableBackgroundImage;
 - (id)backgroundColor;
 - (void)dealloc;
 - (void)displayLayer:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isSelected;
 - (void)layoutSubviews;
 - (float)sectionBorderWidth;
 - (int)sectionLocation;
 - (int)selectionStyle;
 - (id)selectionTintColor;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })separatorInset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })separatorInset;
 - (int)separatorStyle;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setSectionBorderWidth:(float)arg1;
 - (void)setSectionLocation:(int)arg1;
 - (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
@@ -74,7 +82,7 @@
 - (void)setSelectionStyle:(int)arg1;
 - (void)setSelectionTintColor:(id)arg1;
 - (void)setSelectionTintColor:(id)arg1 layoutSubviews:(BOOL)arg2;
-- (void)setSeparatorInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setSeparatorInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setSeparatorStyle:(int)arg1;
 
 @end

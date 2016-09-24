@@ -3,23 +3,23 @@
  */
 
 @interface AVAsynchronousVideoCompositionRequestInternal : NSObject {
-    struct OpaqueFigVideoCompositorFrame { } *_compositionFrame;
+    struct OpaqueFigVideoCompositorFrame { } * _compositionFrame;
     struct { 
-        long long value; 
+        int value; 
         int timescale; 
         unsigned int flags; 
-        long long epoch; 
-    } _compositionTime;
-    <AVVideoCompositionInstruction> *_instruction;
-    BOOL _isFinished;
-    AVVideoCompositionRenderContext *_renderContext;
-    AVWeakReference *_session;
-    NSArray *_sourceTrackIDsInClientOrder;
-    NSDictionary *_sourcesByTrackID;
+        int epoch; 
+    }  _compositionTime;
+    <AVVideoCompositionInstruction> * _instruction;
+    BOOL  _isFinished;
+    AVVideoCompositionRenderContext * _renderContext;
+    AVWeakReference * _session;
+    NSArray * _sourceTrackIDsInClientOrder;
+    NSDictionary * _sourcesByTrackID;
 }
 
 @property (nonatomic) struct OpaqueFigVideoCompositorFrame { }*compositionFrame;
-@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } compositionTime;
+@property (nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } compositionTime;
 @property (nonatomic, retain) <AVVideoCompositionInstruction> *instruction;
 @property (nonatomic) BOOL isFinished;
 @property (nonatomic, retain) AVVideoCompositionRenderContext *renderContext;
@@ -28,14 +28,14 @@
 @property (nonatomic, retain) NSDictionary *sourcesByTrackID;
 
 - (struct OpaqueFigVideoCompositorFrame { }*)compositionFrame;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })compositionTime;
+- (struct { int x1; int x2; unsigned int x3; int x4; })compositionTime;
 - (void)dealloc;
 - (id)instruction;
 - (BOOL)isFinished;
 - (id)renderContext;
 - (id)session;
 - (void)setCompositionFrame:(struct OpaqueFigVideoCompositorFrame { }*)arg1;
-- (void)setCompositionTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setCompositionTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
 - (void)setInstruction:(id)arg1;
 - (void)setIsFinished:(BOOL)arg1;
 - (void)setRenderContext:(id)arg1;

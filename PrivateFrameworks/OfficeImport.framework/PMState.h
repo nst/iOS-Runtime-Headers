@@ -3,8 +3,8 @@
  */
 
 @interface PMState : CMState {
-    OADTablePartStyle *mCurrentRowStyle;
-    CMOutlineState *mListState;
+    OADTablePartStyle * mCurrentRowStyle;
+    CMOutlineState * mListState;
 }
 
 - (id)currentRowStyle;

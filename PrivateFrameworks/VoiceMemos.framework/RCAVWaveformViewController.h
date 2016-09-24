@@ -3,32 +3,32 @@
  */
 
 @interface RCAVWaveformViewController : UIViewController <RCCaptureSessionObserver, RCGLWaveformViewDelegate, RCPreviewControllerObserver> {
-    RCAVState *_AVState;
-    RCUIConfiguration *_UIConfiguration;
-    RCCompositionController *_activeCaptureCompositionController;
-    RCCaptureSession *_activeCaptureSession;
-    RCPreviewController *_activePreviewController;
-    BOOL _autocenterCurrentTimeIndicatorAlways;
-    int _batchUpdatingDisplayableTimesCount;
-    BOOL _clipsTimeMarkersToDuration;
-    double _currentTime;
-    BOOL _currentTimeTracksCapturedEndPoint;
-    double _defaultVisibleDuration;
-    <RCAVWaveformViewControllerDelegate> *_delegate;
-    double _duration;
+    RCAVState * _AVState;
+    RCUIConfiguration * _UIConfiguration;
+    RCCompositionController * _activeCaptureCompositionController;
+    RCCaptureSession * _activeCaptureSession;
+    RCPreviewController * _activePreviewController;
+    BOOL  _autocenterCurrentTimeIndicatorAlways;
+    int  _batchUpdatingDisplayableTimesCount;
+    BOOL  _clipsTimeMarkersToDuration;
+    double  _currentTime;
+    BOOL  _currentTimeTracksCapturedEndPoint;
+    double  _defaultVisibleDuration;
+    <RCAVWaveformViewControllerDelegate> * _delegate;
+    double  _duration;
     struct { 
         double beginTime; 
         double endTime; 
-    } _highlightTimeRange;
-    RCLayoutMetrics *_layoutMetrics;
-    double _maximumSelectionDuration;
-    BOOL _needsUpdateDisplayableTime;
-    double _nextPreviewStartTime;
-    BOOL _selectionOverlayVisible;
-    BOOL _showingSelectionOverlayEnabled;
-    BOOL _userInteractionEnabled;
-    RCWaveformDataSource *_waveformDataSource;
-    RCGLWaveformViewController *_waveformViewController;
+    }  _highlightTimeRange;
+    RCLayoutMetrics * _layoutMetrics;
+    double  _maximumSelectionDuration;
+    BOOL  _needsUpdateDisplayableTime;
+    double  _nextPreviewStartTime;
+    BOOL  _selectionOverlayVisible;
+    BOOL  _showingSelectionOverlayEnabled;
+    BOOL  _userInteractionEnabled;
+    RCWaveformDataSource * _waveformDataSource;
+    RCGLWaveformViewController * _waveformViewController;
 }
 
 @property (nonatomic, readonly) RCAVState *AVState;
@@ -38,7 +38,7 @@
 @property (nonatomic) BOOL autocenterCurrentTimeIndicatorAlways;
 @property (nonatomic) BOOL clipsTimeMarkersToDuration;
 @property (nonatomic) double currentTime;
-@property (nonatomic, readonly) float currentTimeIndicatorCoordinate;
+@property (nonatomic, readonly) double currentTimeIndicatorCoordinate;
 @property (nonatomic) BOOL currentTimeTracksCapturedEndPoint;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <RCAVWaveformViewControllerDelegate> *delegate;
@@ -55,7 +55,7 @@
 @property (readonly) Class superclass;
 @property (getter=isUserInteractionEnabled, nonatomic) BOOL userInteractionEnabled;
 @property (nonatomic) struct { double x1; double x2; } visibleTimeRange;
-@property (nonatomic, readonly) float waveformBottomLineInset;
+@property (nonatomic, readonly) double waveformBottomLineInset;
 @property (nonatomic, retain) RCWaveformDataSource *waveformDataSource;
 @property (nonatomic, retain) RCGLWaveformViewController *waveformViewController;
 
@@ -75,7 +75,7 @@
 - (void)_updateInterfaceForAVState;
 - (id)activeCaptureSession;
 - (id)activePreviewController;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })annotatedWaveformRectForLayoutBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })annotatedWaveformRectForLayoutBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)autocenterCurrentTimeIndicatorAlways;
 - (void)captureSession:(id)arg1 destinationFragmentDurationDidChangeToDuration:(double)arg2;
 - (void)captureSession:(id)arg1 didFinishWithSuccess:(BOOL)arg2;
@@ -134,7 +134,7 @@
 - (struct { double x1; double x2; })visibleTimeRange;
 - (float)waveformBottomLineInset;
 - (id)waveformDataSource;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })waveformRectForLayoutBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })waveformRectForLayoutBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)waveformViewController;
 - (void)waveformViewController:(id)arg1 didChangeToSelectedTimeRange:(struct { double x1; double x2; })arg2;
 - (void)waveformViewController:(id)arg1 didScrubToTime:(double)arg2 finished:(BOOL)arg3;

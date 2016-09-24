@@ -3,7 +3,7 @@
  */
 
 @interface TSUEncodedBlockInfoInternal : NSObject <TSUEncodedBlockInfo> {
-    unsigned long _encodedLength;
+    unsigned long  _encodedLength;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -16,6 +16,7 @@
 - (unsigned long)decodedLength;
 - (id)description;
 - (unsigned long)encodedLength;
+- (unsigned int)hash;
 - (id)initWithEncodedLength:(unsigned long)arg1;
 - (BOOL)isEqual:(id)arg1;
 

@@ -3,10 +3,10 @@
  */
 
 @interface UIHeldAction : UIDelayedAction {
-    double _baseDelay;
-    NSDate *_holdBegan;
-    BOOL _holding;
-    double _timeBalance;
+    double  _baseDelay;
+    NSDate * _holdBegan;
+    BOOL  _holding;
+    double  _timeBalance;
 }
 
 - (void).cxx_destruct;

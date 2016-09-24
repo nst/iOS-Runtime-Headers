@@ -3,10 +3,10 @@
  */
 
 @interface AAUIServerSuppliedProfilePictureCacheEntry : NSObject {
-    NSDate *_expirationDate;
-    UIImage *_picture;
-    NSString *_serverCacheTag;
-    BOOL _updating;
+    NSDate * _expirationDate;
+    UIImage * _picture;
+    NSString * _serverCacheTag;
+    BOOL  _updating;
 }
 
 @property (nonatomic, readonly) BOOL expired;

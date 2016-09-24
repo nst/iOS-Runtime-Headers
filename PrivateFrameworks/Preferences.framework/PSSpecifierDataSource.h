@@ -3,9 +3,9 @@
  */
 
 @interface PSSpecifierDataSource : NSObject <PSSpecifierDataSource> {
-    NSMutableSet *_observerRefs;
-    NSMutableArray *_specifiers;
-    BOOL _specifiersLoaded;
+    NSMutableSet * _observerRefs;
+    NSMutableArray * _specifiers;
+    BOOL  _specifiersLoaded;
 }
 
 @property (readonly, copy) NSString *debugDescription;

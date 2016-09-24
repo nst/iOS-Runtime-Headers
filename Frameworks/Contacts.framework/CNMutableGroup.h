@@ -9,6 +9,7 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) CNGroup *snapshot;
 
+- (void)adoptValuesFromAndSetSnaphot:(id)arg1;
 - (id)copy;
 - (id)freeze;
 - (id)freezeWithSelfAsSnapshot;

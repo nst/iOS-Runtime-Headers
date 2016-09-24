@@ -3,24 +3,24 @@
  */
 
 @interface TNChartMediator : TSCHChartMediator <TSCECalculationEngineRegistration, TSCEFormulaOwning> {
-    TNChartFormulaStorage *mCleanFormulaStorage;
-    TNMutableChartFormulaStorage *mEditingAccumulatedFormulas;
-    TNMutableChartFormulaStorage *mEditingActiveFormulas;
-    BOOL mEditingHasIsPhantomOverride;
-    BOOL mEditingIsPhantomOverride;
-    TNChartFormulaStorage *mEditingStorageOverride;
-    struct __CFUUID { } *mEntityId;
-    TSUIntToIntDictionary *mFormulaIndexToGridIndex;
-    TNChartFormulaStorage *mFormulaStorage;
-    NSMutableArray *mFormulasToRecalculate;
-    NSMutableArray *mFormulasToRewrite;
-    BOOL mHasBlittedSinceConditionVarSet;
-    NSCondition *mImportUpgradeCondition;
-    TSCEFormulaRewriteSpec *mInFlightRewriteSpec;
-    BOOL mIsEditing;
-    BOOL mIsRegisteredWithCalcEngine;
-    int mScatterFormat;
-    BOOL mShouldFixAreaFormula;
+    TNChartFormulaStorage * mCleanFormulaStorage;
+    TNMutableChartFormulaStorage * mEditingAccumulatedFormulas;
+    TNMutableChartFormulaStorage * mEditingActiveFormulas;
+    BOOL  mEditingHasIsPhantomOverride;
+    BOOL  mEditingIsPhantomOverride;
+    TNChartFormulaStorage * mEditingStorageOverride;
+    struct __CFUUID { } * mEntityId;
+    TSUIntToIntDictionary * mFormulaIndexToGridIndex;
+    TNChartFormulaStorage * mFormulaStorage;
+    NSMutableArray * mFormulasToRecalculate;
+    NSMutableArray * mFormulasToRewrite;
+    BOOL  mHasBlittedSinceConditionVarSet;
+    NSCondition * mImportUpgradeCondition;
+    TSCEFormulaRewriteSpec * mInFlightRewriteSpec;
+    BOOL  mIsEditing;
+    BOOL  mIsRegisteredWithCalcEngine;
+    int  mScatterFormat;
+    BOOL  mShouldFixAreaFormula;
 }
 
 @property (nonatomic, readonly) TSCECalculationEngine *calculationEngine;
@@ -69,7 +69,7 @@
 - (id)endRewriteForCalculationEngine:(id)arg1 spec:(id)arg2;
 - (struct __CFUUID { }*)entityID;
 - (id)errorBarCustomFormulaForSeriesIndex:(unsigned int)arg1 dataType:(int)arg2;
-- (id)expandSingleRangeForProposedCategoryLabels:(struct { struct TSCERangeCoordinate { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg1;
+- (id)expandSingleRangeForProposedCategoryLabels:(struct { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct TSUCellCoord { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg1;
 - (unsigned int)formulaIndexForSeriesDimension:(id)arg1;
 - (struct __CFUUID { }*)formulaOwnerID;
 - (id)formulaStorage;
@@ -90,6 +90,7 @@
 - (id)labelFormulasForType:(unsigned int)arg1;
 - (unsigned int)labelIndexForSeriesNameSeriesIndex:(unsigned int)arg1;
 - (void)localizeFormulaLiteralsWithBundle:(id)arg1;
+- (id)nonDefaultDataFormatterForSeries:(id)arg1 index:(unsigned int)arg2 axisType:(int)arg3 documentRoot:(id)arg4;
 - (id)objectToArchiveInDependencyTracker;
 - (id)ownerUIDMapper;
 - (id)p_commandToSetSeriesNameFormulaWrapper:(id)arg1 seriesIndex:(unsigned int)arg2;
@@ -112,14 +113,14 @@
 - (void)p_repairMissingTabularCategoryLabelsIrregularInMap:(id)arg1;
 - (void)p_repairMissingTabularCategoryLabelsRegularInMap:(id)arg1;
 - (void)p_reregister:(BOOL)arg1 withCalculationEngine:(id)arg2;
-- (BOOL)p_tableHasCell:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; })arg1 withCalcEngine:(id)arg2;
-- (BOOL)p_tableHasRange:(struct { struct TSCERangeCoordinate { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg1 withCalcEngine:(id)arg2;
+- (void)p_signalImportUpgradeCondition;
+- (BOOL)p_tableHasCell:(struct { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; })arg1 withCalcEngine:(id)arg2;
+- (BOOL)p_tableHasRange:(struct { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct TSUCellCoord { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg1 withCalcEngine:(id)arg2;
 - (BOOL)p_tabularCategoryLabelsAppearRegularInMap:(id)arg1;
 - (void)p_transposeSeriesAndCategoryLabelsInMap:(id)arg1;
 - (id)p_tstFormulaFromForumulaWrapper:(id)arg1;
 - (void)p_unregisterAllFormulaeFromCalcEngine:(id)arg1;
 - (id)p_untitledLabelWithIndex:(unsigned int)arg1;
-- (void)p_updateForTableIDHistoryWithCalcEngine:(id)arg1;
 - (id)rawFormulaStorage;
 - (struct { BOOL x1; BOOL x2; BOOL x3; })recalculateForCalculationEngine:(id)arg1 formulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2 isInCycle:(BOOL)arg3 hasCalculatedPrecedents:(BOOL)arg4;
 - (id)referencedEntities;
@@ -127,6 +128,7 @@
 - (BOOL)registerLast;
 - (void)registerWithCalculationEngineForDocumentLoad:(id)arg1;
 - (void)releaseForCalculationEngine:(id)arg1;
+- (void)repairBadRefsInFormulas:(id)arg1;
 - (void)repairMissingCategoryLabelsInMap:(id)arg1;
 - (void)repairMissingCategoryLabelsInMap:(id)arg1 ignoringNonVisibleLabels:(BOOL)arg2;
 - (void)repairMissingSeriesLabelsInMap:(id)arg1;
@@ -152,6 +154,7 @@
 - (void)synchronizeModelFromFormulaStorage:(id)arg1;
 - (void)unregisterFromCalculationEngine:(id)arg1;
 - (id)untitledLabelOfType:(unsigned int)arg1 formulaMap:(id)arg2 existingLabels:(id)arg3 runningIndex:(unsigned int*)arg4;
+- (void)updateForTableIDHistoryWithCalcEngine:(id)arg1;
 - (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)willBeAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)willBeRemovedFromDocumentRoot:(id)arg1;

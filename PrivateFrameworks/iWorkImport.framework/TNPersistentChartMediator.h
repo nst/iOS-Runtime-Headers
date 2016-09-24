@@ -9,6 +9,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (struct __CFUUID { }*)formulaOwnerID;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)objectToArchiveInDependencyTracker;
 - (BOOL)registerLast;

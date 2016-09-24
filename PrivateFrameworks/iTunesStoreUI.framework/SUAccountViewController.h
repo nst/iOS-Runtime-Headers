@@ -3,11 +3,11 @@
  */
 
 @interface SUAccountViewController : SUStorePageViewController {
-    BOOL _failed;
-    SUMescalSession *_mescalSession;
-    int _mescalState;
-    NSString *_primingSignature;
-    int _style;
+    BOOL  _failed;
+    SUMescalSession * _mescalSession;
+    int  _mescalState;
+    NSString * _primingSignature;
+    int  _style;
 }
 
 @property (getter=_mescalSession, nonatomic, readonly) SUMescalSession *_mescalSession;

@@ -3,7 +3,7 @@
  */
 
 @interface IKCSSAtParseRule : IKCSSParseRule {
-    NSString *_name;
+    NSString * _name;
 }
 
 @property (nonatomic, retain) NSString *name;

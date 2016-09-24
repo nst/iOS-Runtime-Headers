@@ -3,10 +3,10 @@
  */
 
 @interface WBSAutomaticReadingListRecordRange : NSObject <NSCopying> {
-    id _newest;
-    NSDate *_newestCreationDate;
-    id _oldest;
-    NSDate *_oldestCreationDate;
+    id  _newest;
+    NSDate * _newestCreationDate;
+    id  _oldest;
+    NSDate * _oldestCreationDate;
 }
 
 @property (nonatomic, copy) id newest;

@@ -3,7 +3,7 @@
  */
 
 @interface IKJSBlob : IKJSObject <IKJSBlob> {
-    NSData *_data;
+    NSData * _data;
 }
 
 @property (nonatomic, readonly) NSData *data;

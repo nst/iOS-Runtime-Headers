@@ -3,19 +3,19 @@
  */
 
 @interface MPMovie : NSObject {
-    double _endPlaybackTime;
-    BOOL _explicitlySetMovieSourceType;
-    MPAVItem *_item;
-    double _lastKnownDuration;
+    double  _endPlaybackTime;
+    BOOL  _explicitlySetMovieSourceType;
+    MPAVItem * _item;
+    double  _lastKnownDuration;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _lastKnownNaturalSize;
-    unsigned int _lastKnownType;
-    BOOL _movieIsUnplayable;
-    int _movieSourceType;
-    double _startPlaybackTime;
-    NSURL *_url;
+        double width; 
+        double height; 
+    }  _lastKnownNaturalSize;
+    int  _lastKnownType;
+    BOOL  _movieIsUnplayable;
+    int  _movieSourceType;
+    double  _startPlaybackTime;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) AVAsset *asset;
@@ -23,7 +23,7 @@
 @property (nonatomic) double endPlaybackTime;
 @property (nonatomic, readonly) unsigned int movieMediaTypes;
 @property (nonatomic) int movieSourceType;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } naturalSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } naturalSize;
 @property (nonatomic, readonly) double playableDuration;
 @property (nonatomic, readonly) AVPlayerItem *playerItem;
 @property (nonatomic) double startPlaybackTime;
@@ -49,7 +49,7 @@
 - (double)endPlaybackTime;
 - (unsigned int)movieMediaTypes;
 - (int)movieSourceType;
-- (struct CGSize { float x1; float x2; })naturalSize;
+- (struct CGSize { double x1; double x2; })naturalSize;
 - (double)playableDuration;
 - (id)playerItem;
 - (void)setEndPlaybackTime:(double)arg1;

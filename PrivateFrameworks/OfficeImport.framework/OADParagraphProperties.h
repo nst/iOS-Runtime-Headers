@@ -3,36 +3,36 @@
  */
 
 @interface OADParagraphProperties : OADCharacterProperties {
-    OADTextSpacing *mAfterSpacing;
-    unsigned char mAlign;
-    OADTextSpacing *mBeforeSpacing;
-    int mBulletCharSet;
-    OADBulletColor *mBulletColor;
-    OADBulletFont *mBulletFont;
-    OADBulletProperties *mBulletProperties;
-    OADBulletSize *mBulletSize;
-    float mDefaultTab;
-    unsigned char mFontAlign;
-    unsigned int mHasAlign;
-    unsigned int mHasBulletCharSet;
-    unsigned int mHasDefaultTab;
-    unsigned int mHasFontAlign;
-    unsigned int mHasIndent;
-    unsigned int mHasIsHangingPunctuation;
-    unsigned int mHasIsLatinLineBreak;
-    unsigned int mHasLeftMargin;
-    unsigned int mHasLevel;
-    unsigned int mHasRightMargin;
-    unsigned int mHasWrap;
-    float mIndent;
-    unsigned int mIsHangingPunctuation;
-    unsigned int mIsLatinLineBreak;
-    float mLeftMargin;
-    int mLevel;
-    OADTextSpacing *mLineSpacing;
-    float mRightMargin;
-    NSArray *mTabStops;
-    unsigned char mWrap;
+    OADTextSpacing * mAfterSpacing;
+    unsigned char  mAlign;
+    OADTextSpacing * mBeforeSpacing;
+    int  mBulletCharSet;
+    OADBulletColor * mBulletColor;
+    OADBulletFont * mBulletFont;
+    OADBulletProperties * mBulletProperties;
+    OADBulletSize * mBulletSize;
+    double  mDefaultTab;
+    unsigned char  mFontAlign;
+    unsigned int  mHasAlign;
+    unsigned int  mHasBulletCharSet;
+    unsigned int  mHasDefaultTab;
+    unsigned int  mHasFontAlign;
+    unsigned int  mHasIndent;
+    unsigned int  mHasIsHangingPunctuation;
+    unsigned int  mHasIsLatinLineBreak;
+    unsigned int  mHasLeftMargin;
+    unsigned int  mHasLevel;
+    unsigned int  mHasRightMargin;
+    unsigned int  mHasWrap;
+    double  mIndent;
+    unsigned int  mIsHangingPunctuation;
+    unsigned int  mIsLatinLineBreak;
+    double  mLeftMargin;
+    int  mLevel;
+    OADTextSpacing * mLineSpacing;
+    double  mRightMargin;
+    NSArray * mTabStops;
+    unsigned char  mWrap;
 }
 
 + (id)defaultProperties;

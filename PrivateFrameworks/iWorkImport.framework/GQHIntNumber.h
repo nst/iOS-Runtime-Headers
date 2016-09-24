@@ -3,8 +3,8 @@
  */
 
 @interface GQHIntNumber : NSObject {
-    int mType;
-    int mValue;
+    int  mType;
+    int  mValue;
 }
 
 - (struct __CFString { }*)createStringRef;

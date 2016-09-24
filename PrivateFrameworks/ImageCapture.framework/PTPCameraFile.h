@@ -3,8 +3,8 @@
  */
 
 @interface PTPCameraFile : ICCameraFile {
-    NSString *_path;
-    void *_ptpCameraFileProperties;
+    NSString * _path;
+    void * _ptpCameraFileProperties;
 }
 
 @property (copy) id info;
@@ -13,6 +13,7 @@
 @property (readonly) unsigned long storageID;
 @property (readonly) unsigned int type;
 
+- (int)compare:(id)arg1 against:(id)arg2 withContext:(void*)arg3;
 - (void)dealloc;
 - (void)finalize;
 - (id)info;
@@ -25,6 +26,6 @@
 - (unsigned long)storageID;
 - (id)thumbData;
 - (unsigned int)type;
-- (long)writeDataToFile:(int)arg1 fromOffset:(long long)arg2 ofLength:(long long*)arg3;
+- (long)writeDataToFile:(int)arg1 fromOffset:(int)arg2 ofLength:(int*)arg3;
 
 @end

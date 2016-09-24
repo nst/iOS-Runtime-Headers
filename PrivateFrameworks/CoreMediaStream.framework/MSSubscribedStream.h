@@ -3,8 +3,8 @@
  */
 
 @interface MSSubscribedStream : NSObject <NSCoding> {
-    NSString *_ctag;
-    NSString *_streamID;
+    NSString * _ctag;
+    NSString * _streamID;
 }
 
 @property (nonatomic, retain) NSString *ctag;

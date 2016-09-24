@@ -3,9 +3,9 @@
  */
 
 @interface HMDWatchSync : NSObject {
-    BOOL _inProgress;
-    NSUUID *_syncIdentifier;
-    unsigned int _syncOption;
+    BOOL  _inProgress;
+    NSUUID * _syncIdentifier;
+    unsigned int  _syncOption;
 }
 
 @property (nonatomic) BOOL inProgress;

@@ -3,11 +3,11 @@
  */
 
 @interface CKDPResponseOperationResult : PBCodable <NSCopying> {
-    int _code;
-    CKDPResponseOperationResultError *_error;
+    int  _code;
+    CKDPResponseOperationResultError * _error;
     struct { 
         unsigned int code : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic) int code;
@@ -16,8 +16,10 @@
 @property (nonatomic, readonly) BOOL hasError;
 
 - (void).cxx_destruct;
+- (int)StringAsCode:(id)arg1;
 - (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;
 - (int)code;
+- (id)codeAsString:(int)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

@@ -3,9 +3,9 @@
  */
 
 @interface AAUIUpdateMyPhotoRequest : AARequest {
-    ACAccount *_account;
-    NSValue *_cropRect;
-    UIImage *_photo;
+    ACAccount * _account;
+    NSValue * _cropRect;
+    UIImage * _photo;
 }
 
 + (id)_downsampleImage:(id)arg1 fromStartingQuality:(float)arg2 toEndingQuality:(float)arg3 increment:(float)arg4 maxLength:(unsigned int)arg5;

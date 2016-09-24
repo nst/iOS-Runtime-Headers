@@ -3,7 +3,7 @@
  */
 
 @interface PSSSSubscriptionManagerClient : NSObject <PSSSSubscriptionManagerService> {
-    NSString *_clientId;
+    NSString * _clientId;
 }
 
 @property (nonatomic, retain) NSString *clientId;

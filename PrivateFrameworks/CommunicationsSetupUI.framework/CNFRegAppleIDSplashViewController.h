@@ -3,9 +3,9 @@
  */
 
 @interface CNFRegAppleIDSplashViewController : PSAppleIDSplashViewController {
-    CNFRegController *_regController;
-    int _serviceType;
-    BOOL _showBusyUIOnAppearance;
+    CNFRegController * _regController;
+    int  _serviceType;
+    BOOL  _showBusyUIOnAppearance;
 }
 
 @property (retain) CNFRegController *regController;

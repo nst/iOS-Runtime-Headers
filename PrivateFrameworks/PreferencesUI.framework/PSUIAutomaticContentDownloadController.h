@@ -3,9 +3,9 @@
  */
 
 @interface PSUIAutomaticContentDownloadController : PSListController {
-    NSMutableDictionary *_applicationStates;
-    NSMutableArray *_applications;
-    id _settingsChangedObserver;
+    NSMutableDictionary * _applicationStates;
+    NSMutableArray * _applications;
+    id  _settingsChangedObserver;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *applicationStates;

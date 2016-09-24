@@ -3,7 +3,7 @@
  */
 
 @interface DADeliveryAccount : DeliveryAccount {
-    DAMailAccount *_DAMailAccount;
+    DAMailAccount * _DAMailAccount;
 }
 
 - (void)dealloc;

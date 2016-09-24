@@ -6,6 +6,7 @@
 @required
 
 - (void)cancelPinRequestFromPrimaryDevice;
+- (void)endEmergencyCallbackMode;
 - (void)invalidateAndRefreshThumperCallingProvisioningURL;
 - (void)invalidateAndRefreshWiFiCallingProvisioningURL;
 - (void)requestPinFromPrimaryDevice;
@@ -16,5 +17,6 @@
 - (void)setThumperCallingEnabled:(BOOL)arg1;
 - (void)setVoLTECallingEnabled:(BOOL)arg1;
 - (void)setWiFiCallingEnabled:(BOOL)arg1;
+- (void)setWiFiCallingRoamingEnabled:(BOOL)arg1;
 
 @end

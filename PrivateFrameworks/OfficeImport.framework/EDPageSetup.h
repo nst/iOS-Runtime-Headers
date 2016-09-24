@@ -3,19 +3,19 @@
  */
 
 @interface EDPageSetup : NSObject {
-    float mBottomMargin;
-    bool mCustomFirstPageNumber;
-    unsigned long mFirstPageNumber;
-    unsigned long mFitToHeight;
-    unsigned long mFitToWidth;
-    float mFooterMargin;
-    float mHeaderMargin;
-    float mLeftMargin;
-    int mOrientation;
-    int mPageOrder;
-    float mRightMargin;
-    unsigned long mScale;
-    float mTopMargin;
+    double  mBottomMargin;
+    bool  mCustomFirstPageNumber;
+    unsigned long  mFirstPageNumber;
+    unsigned long  mFitToHeight;
+    unsigned long  mFitToWidth;
+    double  mFooterMargin;
+    double  mHeaderMargin;
+    double  mLeftMargin;
+    int  mOrientation;
+    int  mPageOrder;
+    double  mRightMargin;
+    unsigned long  mScale;
+    double  mTopMargin;
 }
 
 + (id)pageSetup;

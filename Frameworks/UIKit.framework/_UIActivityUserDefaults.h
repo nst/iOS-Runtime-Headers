@@ -3,8 +3,8 @@
  */
 
 @interface _UIActivityUserDefaults : NSObject {
-    NSString *_identifier;
-    NSUserDefaults *_userDefaults;
+    NSString * _identifier;
+    NSUserDefaults * _userDefaults;
 }
 
 @property (nonatomic, copy) NSString *identifier;
@@ -23,7 +23,6 @@
 - (id)defaultsValueForKey:(id)arg1 activity:(id)arg2;
 - (id)identifier;
 - (id)identifierForActivity:(id)arg1;
-- (id)init;
 - (id)initWithIdentifier:(id)arg1 userDefaults:(id)arg2;
 - (id)migrateSortOrderIfNeededForBuiltInActivityType:(id)arg1 activityIdentifierOrder:(id)arg2;
 - (id)mutableActivityIdentifiersArrayForActivitiesArray:(id)arg1;

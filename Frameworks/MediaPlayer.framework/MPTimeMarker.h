@@ -3,13 +3,13 @@
  */
 
 @interface MPTimeMarker : NSObject {
-    double _duration;
-    unsigned int _index;
-    int _markerType;
-    NSDictionary *_metadata;
-    double _time;
-    NSString *_title;
-    NSURL *_url;
+    double  _duration;
+    unsigned int  _index;
+    int  _markerType;
+    NSDictionary * _metadata;
+    double  _time;
+    NSString * _title;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) double comparableTime;

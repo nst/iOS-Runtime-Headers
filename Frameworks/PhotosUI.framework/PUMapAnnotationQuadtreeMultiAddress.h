@@ -3,7 +3,7 @@
  */
 
 @interface PUMapAnnotationQuadtreeMultiAddress : PUMapAnnotationQuadtreeAddress {
-    NSMutableSet *_alternativeAddresses;
+    NSMutableSet * _alternativeAddresses;
 }
 
 @property (nonatomic, readonly) NSArray *alternativeAddresses;

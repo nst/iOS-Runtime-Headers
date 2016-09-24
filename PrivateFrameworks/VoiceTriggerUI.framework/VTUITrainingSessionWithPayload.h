@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/VoiceTriggerUI.framework/VoiceTriggerUI
  */
 
-@interface VTUITrainingSessionWithPayload : VTUITrainingSession <AFAudioAnalyzerDelegate, SFSpeechRecognitionTaskDelegate, VTUIAudioSessionDelegate> {
-    BOOL _ASRResultReceived;
-    BOOL _detectBOS;
+@interface VTUITrainingSessionWithPayload : VTUITrainingSession <SFSpeechRecognitionTaskDelegate, VTUIAudioSessionDelegate, VTUIEndPointDelegate> {
+    BOOL  _ASRResultReceived;
+    BOOL  _detectBOS;
+    BOOL  _reportedStopListening;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,13 +13,18 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (void)audioAnalyzer:(id)arg1 didDetectHardEndpointAtTime:(double)arg2;
-- (void)audioAnalyzer:(id)arg1 didDetectStartpointAtTime:(double)arg2;
+- (void)_firedEndPointTimeout;
+- (void)_firedVoiceTriggerTimeout;
+- (void)_registerEndPointTimeout;
+- (void)_registerVoiceTriggerTimeout;
+- (void)_reportStopListening;
 - (void)audioSessionDidStartRecording:(BOOL)arg1 error:(id)arg2;
 - (void)audioSessionDidStopRecording:(int)arg1;
 - (void)audioSessionErrorDidOccur:(id)arg1;
 - (void)audioSessionRecordBufferAvailable:(id)arg1;
 - (void)audioSessionUnsupportedAudioRoute;
+- (void)didDetectBeginOfSpeech;
+- (void)didDetectEndOfSpeech:(int)arg1;
 - (void)handleAudioInput:(id)arg1;
 - (void)matchRecognitionResult:(id)arg1 withMatchedBlock:(id /* block */)arg2 withNonMatchedBlock:(id /* block */)arg3;
 - (BOOL)shouldHandleSession;

@@ -3,7 +3,7 @@
  */
 
 @interface PBBProtoSetRegion : PBCodable <NSCopying> {
-    NSString *_region;
+    NSString * _region;
 }
 
 @property (nonatomic, retain) NSString *region;

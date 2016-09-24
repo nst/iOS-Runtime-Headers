@@ -3,13 +3,13 @@
  */
 
 @interface OITSUProgressStage : NSObject {
-    OITSUProgressContext *m_context;
-    double m_currentPosition;
-    double m_nextSubStageParentSize;
-    OITSUProgressStage *m_parentStage;
-    double m_startInParent;
-    double m_stepsInParent;
-    double m_totalSteps;
+    OITSUProgressContext * m_context;
+    double  m_currentPosition;
+    double  m_nextSubStageParentSize;
+    OITSUProgressStage * m_parentStage;
+    double  m_startInParent;
+    double  m_stepsInParent;
+    double  m_totalSteps;
 }
 
 - (void)advanceProgress:(double)arg1;

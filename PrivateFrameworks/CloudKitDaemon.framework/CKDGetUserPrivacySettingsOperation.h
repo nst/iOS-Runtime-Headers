@@ -3,13 +3,13 @@
  */
 
 @interface CKDGetUserPrivacySettingsOperation : CKDOperation {
-    int _discoverable;
+    int  _discoverable;
 }
 
 @property (nonatomic) int discoverable;
 
 - (void)_handleRetrievedPrivacySettings:(id)arg1;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (int)discoverable;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;

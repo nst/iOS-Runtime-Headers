@@ -3,7 +3,7 @@
  */
 
 @interface SCNActionRemove : SCNAction {
-    BOOL _hasFired;
+    BOOL  _hasFired;
 }
 
 + (id)removeFromParentNode;

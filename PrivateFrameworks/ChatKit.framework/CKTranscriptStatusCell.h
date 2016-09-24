@@ -3,27 +3,31 @@
  */
 
 @interface CKTranscriptStatusCell : CKTranscriptLabelCell {
-    float _prevBalloonWidth;
-    UIButton *_statusButton;
+    BOOL  _buttonAlignmentRelativeToContent;
+    double  _prevBalloonWidth;
+    UIButton * _statusButton;
 }
 
 @property (nonatomic, copy) NSAttributedString *attributedButtonText;
-@property (nonatomic) float prevBalloonWidth;
+@property (nonatomic) BOOL buttonAlignmentRelativeToContent;
+@property (nonatomic) double prevBalloonWidth;
 @property (nonatomic, retain) UIButton *statusButton;
 
 + (id)statusButton;
 + (void)transitionFromView:(id)arg1 toView:(id)arg2 duration:(double)arg3 options:(unsigned int)arg4 completion:(id /* block */)arg5;
 + (void)zoomAnimation:(id /* block */)arg1 completion:(id /* block */)arg2;
 
+- (void).cxx_destruct;
 - (id)attributedButtonText;
+- (BOOL)buttonAlignmentRelativeToContent;
 - (void)configureForChatItem:(id)arg1;
-- (void)dealloc;
 - (void)layoutSubviewsForAlignmentContents;
 - (void)performInsertion:(id /* block */)arg1;
 - (void)performReload:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (void)performRemoval:(id /* block */)arg1;
 - (float)prevBalloonWidth;
 - (void)setAttributedButtonText:(id)arg1;
+- (void)setButtonAlignmentRelativeToContent:(BOOL)arg1;
 - (void)setOrientation:(BOOL)arg1;
 - (void)setPrevBalloonWidth:(float)arg1;
 - (void)setStatusButton:(id)arg1;

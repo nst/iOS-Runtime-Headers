@@ -3,21 +3,25 @@
  */
 
 @interface MRTelevisionClientConnection : NSObject <MSVMessageParserDelegate, NSStreamDelegate> {
-    NSString *_authToken;
-    <MRTelevisionClientConnectionDelegate> *_delegate;
-    NSInputStream *_inputStream;
-    MRTelevisionMessageQueue *_messageQueue;
-    NSOutputStream *_outputStream;
-    MSVMessageParser *_parser;
-    BOOL _registeredKeyboardUpdates;
-    BOOL _registeredToNowPlayingArtworkUpdates;
-    BOOL _registeredToNowPlayingUpdates;
-    BOOL _registeredVolumeControlAvailabilityUpdates;
-    NSRunLoop *_runLoop;
-    unsigned int _voiceRecordingState;
+    MRCryptoPairingSession * _cryptoSession;
+    <MRTelevisionClientConnectionDelegate> * _delegate;
+    BOOL  _disconnected;
+    unsigned int  _firstClientNanoseconds;
+    unsigned int  _firstDeviceTicks;
+    NSInputStream * _inputStream;
+    MRTelevisionMessageQueue * _messageQueue;
+    NSOutputStream * _outputStream;
+    MSVMessageParser * _parser;
+    BOOL  _registeredKeyboardUpdates;
+    BOOL  _registeredToNowPlayingArtworkUpdates;
+    BOOL  _registeredToNowPlayingUpdates;
+    BOOL  _registeredVolumeControlAvailabilityUpdates;
+    NSRunLoop * _runLoop;
+    BOOL  _useSSL;
+    unsigned int  _voiceRecordingState;
 }
 
-@property (nonatomic, copy) NSString *authToken;
+@property (nonatomic, retain) MRCryptoPairingSession *cryptoSession;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MRTelevisionClientConnectionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -30,11 +34,16 @@
 @property (nonatomic) BOOL registeredVolumeControlAvailabilityUpdates;
 @property (nonatomic, readonly) BOOL streamsAreValid;
 @property (readonly) Class superclass;
+@property (nonatomic) BOOL useSSL;
 @property (nonatomic) unsigned int voiceRecordingState;
 
+- (void)_adjustTimestamp:(id)arg1;
+- (void)_disconnectClient;
 - (void)_flush;
 - (void)_openStream:(id)arg1;
-- (id)authToken;
+- (void)_preProcessMessage:(id)arg1 data:(id)arg2;
+- (void)_setQOSPropertiesOnStream:(id)arg1;
+- (id)cryptoSession;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithInputStream:(id)arg1 outputStream:(id)arg2 runLoop:(id)arg3;
@@ -47,15 +56,17 @@
 - (BOOL)registeredVolumeControlAvailabilityUpdates;
 - (void)sendMessage:(id)arg1;
 - (void)sendMessage:(id)arg1 queue:(id)arg2 reply:(id /* block */)arg3;
-- (void)setAuthToken:(id)arg1;
+- (void)setCryptoSession:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setRegisteredKeyboardUpdates:(BOOL)arg1;
 - (void)setRegisteredToNowPlayingArtworkUpdates:(BOOL)arg1;
 - (void)setRegisteredToNowPlayingUpdates:(BOOL)arg1;
 - (void)setRegisteredVolumeControlAvailabilityUpdates:(BOOL)arg1;
+- (void)setUseSSL:(BOOL)arg1;
 - (void)setVoiceRecordingState:(unsigned int)arg1;
 - (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
 - (BOOL)streamsAreValid;
+- (BOOL)useSSL;
 - (unsigned int)voiceRecordingState;
 
 @end

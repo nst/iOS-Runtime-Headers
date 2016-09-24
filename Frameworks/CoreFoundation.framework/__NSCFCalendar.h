@@ -16,7 +16,6 @@
 - (id)dateByAddingComponents:(id)arg1 toDate:(id)arg2 options:(unsigned int)arg3;
 - (id)dateFromComponents:(id)arg1;
 - (void)enumerateDatesStartingAfterDate:(id)arg1 matchingComponents:(id)arg2 options:(unsigned int)arg3 usingBlock:(id /* block */)arg4;
-- (void)finalize;
 - (unsigned int)firstWeekday;
 - (id)gregorianStartDate;
 - (unsigned int)hash;

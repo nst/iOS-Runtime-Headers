@@ -3,9 +3,9 @@
  */
 
 @interface PDNotesMaster : PDSlideBase {
-    OADColorMap *mColorMap;
-    OADTextListStyle *mNotesTextStyle;
-    OADTheme *mTheme;
+    OADColorMap * mColorMap;
+    OADTextListStyle * mNotesTextStyle;
+    OADTheme * mTheme;
 }
 
 - (id)colorMap;

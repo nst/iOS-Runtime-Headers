@@ -3,10 +3,10 @@
  */
 
 @interface CKDPLocale : PBCodable <NSCopying> {
-    NSString *_activeKeyboard;
-    NSMutableArray *_enabledKeyboards;
-    NSString *_languageCode;
-    NSString *_regionCode;
+    NSString * _activeKeyboard;
+    NSMutableArray * _enabledKeyboards;
+    NSString * _languageCode;
+    NSString * _regionCode;
 }
 
 @property (nonatomic, retain) NSString *activeKeyboard;
@@ -16,6 +16,8 @@
 @property (nonatomic, readonly) BOOL hasRegionCode;
 @property (nonatomic, retain) NSString *languageCode;
 @property (nonatomic, retain) NSString *regionCode;
+
++ (Class)enabledKeyboardsType;
 
 - (void).cxx_destruct;
 - (id)activeKeyboard;

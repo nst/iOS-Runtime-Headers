@@ -3,14 +3,14 @@
  */
 
 @interface _DECDataProtectionMonitor : NSObject {
-    int _dataProtectionStatus;
-    <_DECDataProtectionMonitorDelegate> *_delegate;
-    int _encryptedDataAvailability;
+    int  _dataProtectionStatus;
+    <_DECDataProtectionMonitorDelegate> * _delegate;
+    int  _encryptedDataAvailability;
     struct _opaque_pthread_rwlock_t { 
         long __sig; 
         BOOL __opaque[124]; 
-    } _rwlock;
-    BOOL _unlockedSinceBoot;
+    }  _rwlock;
+    BOOL  _unlockedSinceBoot;
 }
 
 @property (nonatomic, readonly) int dataProtectionStatus;

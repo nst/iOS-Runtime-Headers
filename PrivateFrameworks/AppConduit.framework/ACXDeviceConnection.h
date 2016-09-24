@@ -3,11 +3,11 @@
  */
 
 @interface ACXDeviceConnection : NSObject <ACXDeviceConnectionDelegateProtocol> {
-    <ACXDeviceConnectionDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_internalQueue;
-    NSObject<OS_dispatch_source> *_observerReEstablishTimer;
-    NSHashTable *_observers;
-    NSXPCConnection *_xpcConnection;
+    <ACXDeviceConnectionDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _internalQueue;
+    NSObject<OS_dispatch_source> * _observerReEstablishTimer;
+    NSHashTable * _observers;
+    NSXPCConnection * _xpcConnection;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -66,6 +66,7 @@
 - (void)removeObserver:(id)arg1;
 - (void)removeProvisioningProfileWithID:(id)arg1 completion:(id /* block */)arg2;
 - (void)removeProvisioningProfileWithID:(id)arg1 fromPairedDevice:(id)arg2 completion:(id /* block */)arg3;
+- (void)setAllExistingAppsShouldBeInstalled:(BOOL)arg1 forNewDevice:(id)arg2;
 - (void)setAlwaysInstall:(id)arg1;
 - (void)setAlwaysInstall:(id)arg1 forDevice:(id)arg2;
 - (void)setDelegate:(id)arg1;

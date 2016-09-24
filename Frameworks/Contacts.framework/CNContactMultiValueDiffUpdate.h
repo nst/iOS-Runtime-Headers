@@ -3,14 +3,14 @@
  */
 
 @interface CNContactMultiValueDiffUpdate : CNContactUpdate {
-    CNMultiValueDiff *_diff;
-    CNMultiValuePropertyDescription *_property;
+    CNMultiValueDiff * _diff;
+    CNMultiValuePropertyDescription * _property;
 }
 
 @property (readonly) CNMultiValueDiff *diff;
 @property (readonly) CNMultiValuePropertyDescription *property;
 
-- (BOOL)applyToABPerson:(void*)arg1 withSaveContext:(id)arg2 error:(id*)arg3;
+- (BOOL)applyToABPerson:(void*)arg1 withPropertiesContext:(id)arg2 error:(id*)arg3;
 - (void)applyToMutableContact:(id)arg1 withIdentifierMap:(id)arg2;
 - (void)dealloc;
 - (id)description;

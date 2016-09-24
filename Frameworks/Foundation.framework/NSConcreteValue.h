@@ -3,8 +3,8 @@
  */
 
 @interface NSConcreteValue : NSValue {
-    unsigned int _specialFlags;
-    void *typeInfo;
+    unsigned int  _specialFlags;
+    void * typeInfo;
 }
 
 + (void)initialize;

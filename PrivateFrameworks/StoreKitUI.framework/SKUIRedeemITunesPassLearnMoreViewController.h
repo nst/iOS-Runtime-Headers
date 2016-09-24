@@ -3,10 +3,10 @@
  */
 
 @interface SKUIRedeemITunesPassLearnMoreViewController : SKUIRedeemStepViewController <SKUIPassbookLoaderDelegate> {
-    BOOL _didTapAddPassbookButton;
-    SKUIRedeemITunesPassLearnMoreView *_learnMoreView;
-    SKUIPassbookLoader *_passbookLoader;
-    NSURL *_passbookURL;
+    BOOL  _didTapAddPassbookButton;
+    SKUIRedeemITunesPassLearnMoreView * _learnMoreView;
+    SKUIPassbookLoader * _passbookLoader;
+    NSURL * _passbookURL;
 }
 
 @property (readonly, copy) NSString *debugDescription;

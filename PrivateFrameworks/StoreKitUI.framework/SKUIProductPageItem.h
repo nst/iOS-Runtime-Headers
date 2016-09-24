@@ -3,31 +3,31 @@
  */
 
 @interface SKUIProductPageItem : SKUIItem {
-    NSURL *_artistPageURL;
-    NSArray *_childItemIdentifiers;
-    SKUIItemContentRating *_contentRating;
-    NSString *_copyrightString;
-    SKUIDeveloperInfo *_developerInfo;
-    NSArray *_inAppPurchases;
-    NSString *_installationRequirementsDescription;
-    NSString *_itemDescription;
-    NSString *_lastUpdateDateString;
-    NSString *_licenseAgreementURLString;
-    NSMutableDictionary *_loadedChildItems;
-    NSArray *_parentBundleItemIdentifiers;
-    NSString *_privacyPolicyURLString;
-    NSString *_regularPriceString;
-    NSArray *_releaseNotes;
-    NSString *_reviewsURLString;
-    NSArray *_screenshots;
-    NSArray *_secondaryContentRatings;
-    NSString *_sellerName;
-    NSString *_shortenedProductPageURLString;
-    SKUIStoreNotes *_storeNotes;
-    NSString *_supportURLString;
-    int _supportedFeatures;
-    unsigned int _supportedGameCenterFeatures;
-    NSString *_updateDescription;
+    NSURL * _artistPageURL;
+    NSArray * _childItemIdentifiers;
+    SKUIItemContentRating * _contentRating;
+    NSString * _copyrightString;
+    SKUIDeveloperInfo * _developerInfo;
+    NSArray * _inAppPurchases;
+    NSString * _installationRequirementsDescription;
+    NSString * _itemDescription;
+    NSString * _lastUpdateDateString;
+    NSString * _licenseAgreementURLString;
+    NSMutableDictionary * _loadedChildItems;
+    NSArray * _parentBundleItemIdentifiers;
+    NSString * _privacyPolicyURLString;
+    NSString * _regularPriceString;
+    NSArray * _releaseNotes;
+    NSString * _reviewsURLString;
+    NSArray * _screenshots;
+    NSArray * _secondaryContentRatings;
+    NSString * _sellerName;
+    NSString * _shortenedProductPageURLString;
+    SKUIStoreNotes * _storeNotes;
+    NSString * _supportURLString;
+    int  _supportedFeatures;
+    unsigned int  _supportedGameCenterFeatures;
+    NSString * _updateDescription;
 }
 
 @property (nonatomic, readonly) NSURL *artistPageURL;

@@ -3,19 +3,20 @@
  */
 
 @interface FLHSA2LoginNotification : NSObject <NSSecureCoding> {
-    NSString *_altDSID;
-    NSString *_appleID;
-    NSString *_approveButtonTitle;
-    NSString *_codePrompt;
-    NSString *_deviceColorString;
-    NSString *_deviceModel;
-    NSString *_deviceType;
-    NSString *_dismissButtonTitle;
-    NSString *_informativeText;
-    NSNumber *_latitude;
-    NSNumber *_longitude;
-    NSString *_pushMessageID;
-    NSString *_title;
+    NSString * _altDSID;
+    NSString * _appleID;
+    NSString * _approveButtonTitle;
+    NSString * _codePrompt;
+    NSString * _deviceColorString;
+    NSString * _deviceModel;
+    NSString * _deviceType;
+    NSString * _dismissButtonTitle;
+    NSString * _informativeText;
+    NSNumber * _latitude;
+    NSNumber * _longitude;
+    NSString * _pushMessageID;
+    NSSet * _supportedDismissActions;
+    NSString * _title;
 }
 
 @property (nonatomic, copy) NSString *altDSID;
@@ -30,6 +31,7 @@
 @property (nonatomic, copy) NSNumber *latitude;
 @property (nonatomic, copy) NSNumber *longitude;
 @property (nonatomic, copy) NSString *pushMessageID;
+@property (nonatomic, copy) NSSet *supportedDismissActions;
 @property (nonatomic, copy) NSString *title;
 
 + (BOOL)supportsSecureCoding;
@@ -63,7 +65,9 @@
 - (void)setLatitude:(id)arg1;
 - (void)setLongitude:(id)arg1;
 - (void)setPushMessageID:(id)arg1;
+- (void)setSupportedDismissActions:(id)arg1;
 - (void)setTitle:(id)arg1;
+- (id)supportedDismissActions;
 - (id)title;
 
 @end

@@ -5,13 +5,15 @@
 @interface TSWPTOCRep : TSWPShapeRep
 
 - (BOOL)canMakePathEditable;
-- (unsigned int)charIndexAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (id)hitRep:(struct CGPoint { float x1; float x2; })arg1;
-- (unsigned int)i_indexOfHitTOCEntryAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (id)i_paragraphStyleAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (unsigned int)charIndexAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)hitRep:(struct CGPoint { double x1; double x2; })arg1;
+- (id)hyperlinkRegions;
+- (unsigned int)i_indexOfHitTOCEntryAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)i_paragraphStyleAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)paragraphStylesBetweenCharIndex:(unsigned int)arg1 andCharIndex:(unsigned int)arg2;
 - (BOOL)shouldCreateKnobs;
 - (BOOL)shouldShowKnobs;
+- (void)showTableOfContentsEditingCollaborationHUDAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)tocInfo;
 
 @end

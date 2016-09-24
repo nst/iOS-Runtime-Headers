@@ -3,10 +3,10 @@
  */
 
 @interface HAPRelayResponseMessage : NSObject {
-    NSData *_body;
-    HAPRelayRequestMessage *_request;
-    int _statusCode;
-    unsigned int _type;
+    NSData * _body;
+    HAPRelayRequestMessage * _request;
+    int  _statusCode;
+    unsigned int  _type;
 }
 
 @property (nonatomic, retain) NSData *body;

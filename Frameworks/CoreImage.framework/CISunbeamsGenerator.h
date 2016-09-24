@@ -3,13 +3,13 @@
  */
 
 @interface CISunbeamsGenerator : CIFilter {
-    CIVector *inputCenter;
-    CIColor *inputColor;
-    NSNumber *inputMaxStriationRadius;
-    NSNumber *inputStriationContrast;
-    NSNumber *inputStriationStrength;
-    NSNumber *inputSunRadius;
-    NSNumber *inputTime;
+    CIVector * inputCenter;
+    CIColor * inputColor;
+    NSNumber * inputMaxStriationRadius;
+    NSNumber * inputStriationContrast;
+    NSNumber * inputStriationStrength;
+    NSNumber * inputSunRadius;
+    NSNumber * inputTime;
 }
 
 + (id)customAttributes;

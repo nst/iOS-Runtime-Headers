@@ -3,8 +3,8 @@
  */
 
 @interface _UIDetachedFieldEditorBackgroundView : UIView {
-    NSLayoutConstraint *_heightConstraint;
-    NSLayoutConstraint *_widthConstraint;
+    NSLayoutConstraint * _heightConstraint;
+    NSLayoutConstraint * _widthConstraint;
 }
 
 @property (nonatomic, retain) NSLayoutConstraint *heightConstraint;

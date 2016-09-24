@@ -3,11 +3,11 @@
  */
 
 @interface WebPluginController : NSObject <WebPluginContainerCheckController, WebPluginManualLoader> {
-    NSMutableSet *_checksInProgress;
-    WebDataSource *_dataSource;
-    WAKView *_documentView;
-    BOOL _started;
-    NSMutableArray *_views;
+    NSMutableSet * _checksInProgress;
+    WebDataSource * _dataSource;
+    WAKView * _documentView;
+    BOOL  _started;
+    NSMutableArray * _views;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,10 +3,10 @@
  */
 
 @interface MFAttachmentRaw : NSObject {
-    NSString *_contentID;
-    NSData *_data;
-    NSString *_fileName;
-    NSString *_mimeType;
+    NSString * _contentID;
+    NSData * _data;
+    NSString * _fileName;
+    NSString * _mimeType;
 }
 
 @property (nonatomic, copy) NSString *contentID;

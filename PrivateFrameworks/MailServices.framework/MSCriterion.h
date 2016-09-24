@@ -3,9 +3,9 @@
  */
 
 @interface MSCriterion : NSObject <NSSecureCoding> {
-    <NSObject> *_criteria;
-    NSString *_qualifier;
-    NSString *_type;
+    <NSObject> * _criteria;
+    NSString * _qualifier;
+    NSString * _type;
 }
 
 + (BOOL)supportsSecureCoding;

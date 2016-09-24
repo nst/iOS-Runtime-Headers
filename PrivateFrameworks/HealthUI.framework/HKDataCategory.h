@@ -3,41 +3,44 @@
  */
 
 @interface HKDataCategory : NSObject {
-    UIColor *_bottomColor;
-    NSMutableDictionary *_cachedGradients;
-    NSMutableDictionary *_cachedRoundedCornerGradients;
-    int _categoryID;
-    UIImage *_dashboardIcon;
-    NSMutableArray *_dataUnits;
-    NSString *_displayName;
-    UIImage *_listIcon;
-    NSString *_listIconName;
-    UIImage *_shareIcon;
-    UIColor *_topColor;
+    UIColor * _bottomColor;
+    NSMutableDictionary * _cachedGradients;
+    NSMutableDictionary * _cachedRoundedCornerGradients;
+    int  _categoryID;
+    NSString * _categoryName;
+    NSString * _displayName;
+    UIImage * _healthDataIcon;
+    UIImage * _listIcon;
+    NSString * _listIconName;
+    UIImage * _shareIcon;
+    UIColor * _topColor;
 }
 
 @property (nonatomic, readonly) int categoryID;
-@property (nonatomic, readonly) UIImage *dashboardIcon;
-@property (nonatomic, readonly) NSArray *dataUnits;
+@property (nonatomic, readonly) NSString *categoryName;
 @property (nonatomic, readonly) NSString *displayName;
+@property (nonatomic, readonly) UIImage *healthDataIcon;
 @property (nonatomic, readonly) BOOL isMeCategory;
+@property (nonatomic, readonly) BOOL isTopLevelCategory;
 @property (nonatomic, readonly) UIImage *listIcon;
 @property (nonatomic, readonly) NSString *listIconName;
 @property (nonatomic, readonly) UIColor *seriesColor;
 @property (nonatomic, readonly) UIImage *shareIcon;
 
++ (id)topLevelCategoryIdentifiers;
+
 - (void).cxx_destruct;
 - (id)_generateGradientOfHeight:(float)arg1;
 - (id)_generateRoundedCornerGradientWithHeight:(float)arg1;
-- (void)addDataUnit:(id)arg1;
 - (int)categoryID;
-- (id)dashboardIcon;
-- (id)dataUnits;
+- (id)categoryName;
 - (id)displayName;
 - (id)gradientWithHeight:(float)arg1;
+- (id)healthDataIcon;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
 - (BOOL)isMeCategory;
+- (BOOL)isTopLevelCategory;
 - (id)listIcon;
 - (id)listIconName;
 - (id)roundedCornerGradientWithHeight:(float)arg1;

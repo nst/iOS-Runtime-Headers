@@ -3,10 +3,10 @@
  */
 
 @interface STGenericIntentLocation : NSObject <NSCoding> {
-    BOOL _isLatLong;
-    double _latitude;
-    double _longitude;
-    NSString *_name;
+    BOOL  _isLatLong;
+    double  _latitude;
+    double  _longitude;
+    NSString * _name;
 }
 
 @property (nonatomic) BOOL isLatLong;

@@ -3,14 +3,14 @@
  */
 
 @interface PLIdentityServicesAgent : PLAgent {
-    PLXPCListenerOperatorComposition *_infraWiFiRequestHandler;
-    NSDate *_initialEntryDate;
-    NSMutableDictionary *_lastEntryDatePerCategory;
-    NSDate *_lastLocalDeliveryLogDate;
-    PLXPCListenerOperatorComposition *_localLinkTypeHandler;
-    PLXPCListenerOperatorComposition *_networkStatsHandler;
-    NSMutableDictionary *_previousStatsByPriority;
-    PLXPCListenerOperatorComposition *_xpcHandler;
+    PLXPCListenerOperatorComposition * _infraWiFiRequestHandler;
+    NSDate * _initialEntryDate;
+    NSMutableDictionary * _lastEntryDatePerCategory;
+    NSDate * _lastLocalDeliveryLogDate;
+    PLXPCListenerOperatorComposition * _localLinkTypeHandler;
+    PLXPCListenerOperatorComposition * _networkStatsHandler;
+    NSMutableDictionary * _previousStatsByPriority;
+    PLXPCListenerOperatorComposition * _xpcHandler;
 }
 
 @property (retain) PLXPCListenerOperatorComposition *infraWiFiRequestHandler;

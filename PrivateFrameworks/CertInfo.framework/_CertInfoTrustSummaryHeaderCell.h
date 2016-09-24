@@ -3,23 +3,23 @@
  */
 
 @interface _CertInfoTrustSummaryHeaderCell : UITableViewCell {
-    _CertInfoActionButton *_actionButton;
-    UIImage *_certificateImage;
-    UIImage *_notTrustedGradient;
-    UILabel *_subtitleLabel;
-    UILabel *_titleLabel;
-    BOOL _trusted;
-    _CertInfoGradientLabel *_trustedLabel;
+    _CertInfoActionButton * _actionButton;
+    UIImage * _certificateImage;
+    UIImage * _notTrustedGradient;
+    UILabel * _subtitleLabel;
+    UILabel * _titleLabel;
+    BOOL  _trusted;
+    _CertInfoGradientLabel * _trustedLabel;
 }
 
 @property (nonatomic, readonly) _CertInfoActionButton *actionButton;
-@property (nonatomic, readonly) float rowHeight;
+@property (nonatomic, readonly) double rowHeight;
 @property (nonatomic, copy) NSString *trustSubtitle;
 @property (nonatomic, copy) NSString *trustTitle;
 @property (getter=isTrusted, nonatomic) BOOL trusted;
 
 - (void).cxx_destruct;
-- (void)_layoutSubviewsWithActionButtonSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_layoutSubviewsWithActionButtonSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)_subtitleLabel;
 - (id)_titleLabel;
 - (id)_trustedLabel;

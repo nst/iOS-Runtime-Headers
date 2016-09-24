@@ -2,21 +2,23 @@
    Image: /System/Library/PrivateFrameworks/Catalyst.framework/Catalyst
  */
 
-@interface CATTaskSession : NSObject <CATTransportDelegate> {
-    NSDictionary *_clientUserInfo;
-    <CATTaskSessionDelegate> *_delegate;
-    NSUUID *_sessionUUID;
-    NSDictionary *_userInfo;
-    NSMutableArray *mEnqueuedMessages;
-    CATStateMachine *mFSM;
-    NSMutableDictionary *mOperationByRemoteUUID;
-    NSMutableSet *mOperations;
-    CATOperationQueue *mOrphanedOperationQueue;
-    NSHashTable *mOrphanedTransports;
-    NSDictionary *mPreviousSessionInfo;
-    NSObject<OS_dispatch_group> *mSessionDidInvalidateGroup;
-    CATTaskSession *mStrongSelf;
-    CATTransport *mTransport;
+@interface CATTaskSession : NSObject <CATTaskOperationNotificationDelegate, CATTransportDelegate> {
+    NSDictionary * _clientUserInfo;
+    <CATTaskSessionDelegate> * _delegate;
+    NSUUID * _sessionUUID;
+    NSDictionary * _userInfo;
+    CATOperationQueue * mDelegationQueue;
+    NSMutableArray * mEnqueuedMessages;
+    CATStateMachine * mFSM;
+    BOOL  mIsStarting;
+    NSMutableDictionary * mOperationByRemoteUUID;
+    NSMutableSet * mOperations;
+    CATOperationQueue * mOrphanedOperationQueue;
+    NSHashTable * mOrphanedTransports;
+    NSDictionary * mPreviousSessionInfo;
+    NSObject<OS_dispatch_group> * mSessionDidInvalidateGroup;
+    CATTaskSession * mStrongSelf;
+    CATTransport * mTransport;
 }
 
 @property (nonatomic, copy) NSDictionary *clientUserInfo;
@@ -46,7 +48,7 @@
 - (void)delegateDidInvalidate;
 - (void)delegateDidInvalidateAndFinalize;
 - (void)delegateEnqueueOperation:(id)arg1;
-- (id)delegateEnqueueOperationWithRequest:(id)arg1 error:(id*)arg2;
+- (id)delegatePrepareOperationWithRequest:(id)arg1 error:(id*)arg2;
 - (BOOL)delegateShouldAcceptConnection;
 - (void)delegateWillInvalidate;
 - (void)delegateWillInvalidateAndInvalidateSessionWithError:(id)arg1;
@@ -85,6 +87,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setSessionUUID:(id)arg1;
 - (void)setUserInfo:(id)arg1;
+- (void)taskOperation:(id)arg1 didPostNotificationWithName:(id)arg2 userInfo:(id)arg3;
 - (id)transport;
 - (void)transport:(id)arg1 didFailToSendMessage:(id)arg2 error:(id)arg3;
 - (void)transport:(id)arg1 didInterruptWithError:(id)arg2;

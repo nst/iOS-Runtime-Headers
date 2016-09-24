@@ -3,7 +3,7 @@
  */
 
 @interface GQDWPPageStart : NSObject {
-    long mIndex;
+    long  mIndex;
 }
 
 - (long)index;

@@ -3,7 +3,7 @@
  */
 
 @interface NSDirInfo : NSMutableDictionary {
-    NSMutableDictionary *dict;
+    NSMutableDictionary * dict;
 }
 
 - (unsigned int)count;

@@ -3,18 +3,20 @@
  */
 
 @interface NSDateCheckingResult : NSTextCheckingResult {
-    NSDate *_date;
-    double _duration;
+    NSDate * _date;
+    double  _duration;
+    NSString * _leadingText;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
-    NSDate *_referenceDate;
-    BOOL _timeIsApproximate;
-    BOOL _timeIsPast;
-    BOOL _timeIsSignificant;
-    NSTimeZone *_timeZone;
-    id _underlyingResult;
+    }  _range;
+    NSDate * _referenceDate;
+    BOOL  _timeIsApproximate;
+    BOOL  _timeIsPast;
+    BOOL  _timeIsSignificant;
+    NSTimeZone * _timeZone;
+    NSString * _trailingText;
+    id  _underlyingResult;
 }
 
 @property (readonly) double duration;
@@ -40,14 +42,17 @@
 - (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 date:(id)arg2 timeZone:(id)arg3 duration:(double)arg4 referenceDate:(id)arg5 underlyingResult:(void*)arg6;
 - (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 date:(id)arg2 timeZone:(id)arg3 duration:(double)arg4 referenceDate:(id)arg5 underlyingResult:(void*)arg6 timeIsSignificant:(BOOL)arg7 timeIsApproximate:(BOOL)arg8;
 - (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 date:(id)arg2 timeZone:(id)arg3 duration:(double)arg4 referenceDate:(id)arg5 underlyingResult:(void*)arg6 timeIsSignificant:(BOOL)arg7 timeIsApproximate:(BOOL)arg8 timeIsPast:(BOOL)arg9;
+- (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 date:(id)arg2 timeZone:(id)arg3 duration:(double)arg4 referenceDate:(id)arg5 underlyingResult:(void*)arg6 timeIsSignificant:(BOOL)arg7 timeIsApproximate:(BOOL)arg8 timeIsPast:(BOOL)arg9 leadingText:(id)arg10 trailingText:(id)arg11;
+- (id)leadingText;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (id)referenceDate;
 - (id)resultByAdjustingRangesWithOffset:(int)arg1;
-- (unsigned long long)resultType;
+- (unsigned int)resultType;
 - (BOOL)timeIsApproximate;
 - (BOOL)timeIsPast;
 - (BOOL)timeIsSignificant;
 - (id)timeZone;
+- (id)trailingText;
 - (void*)underlyingResult;
 
 @end

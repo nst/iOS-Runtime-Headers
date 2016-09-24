@@ -3,7 +3,7 @@
  */
 
 @interface SBKSyncResponse : SBKResponse {
-    SBKSyncResponseData *_syncResponseData;
+    SBKSyncResponseData * _syncResponseData;
 }
 
 @property (readonly) SBKSyncResponseData *syncResponseData;

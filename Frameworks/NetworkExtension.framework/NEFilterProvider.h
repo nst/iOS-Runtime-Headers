@@ -3,7 +3,7 @@
  */
 
 @interface NEFilterProvider : NEProvider <NSExtensionRequestHandling> {
-    NEFilterProviderConfiguration *_filterConfiguration;
+    NEFilterProviderConfiguration * _filterConfiguration;
 }
 
 @property (readonly, copy) NSString *debugDescription;

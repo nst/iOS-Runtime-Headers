@@ -3,24 +3,28 @@
  */
 
 @interface PKPassPreviewImageSet : PKPassImageSet {
-    PKImage *_iconImage;
+    PKImage * _iconImage;
+    PKImage * _notificationIconImage;
 }
 
 @property (nonatomic, retain) PKImage *iconImage;
+@property (nonatomic, retain) PKImage *notificationIconImage;
 
 + (id)archiveName;
-+ (int)currentVersion;
++ (unsigned int)currentVersion;
 + (int)imageSetType;
 + (BOOL)supportsSecureCoding;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)iconImage;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDisplayProfile:(id)arg1 fileURL:(id)arg2 screenScale:(float)arg3 suffix:(id)arg4;
 - (BOOL)isEqual:(id)arg1;
+- (id)notificationIconImage;
 - (void)preheatImages;
 - (void)setIconImage:(id)arg1;
+- (void)setNotificationIconImage:(id)arg1;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface AVExternalDevice : NSObject {
-    AVExternalDeviceInternal *_externalDevice;
+    AVExternalDeviceInternal * _externalDevice;
 }
 
 @property (nonatomic, readonly) NSString *ID;
@@ -21,6 +21,7 @@
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) BOOL nightMode;
 @property (nonatomic, readonly) BOOL nightModeSupported;
+@property (nonatomic, readonly) BOOL ownsScreen;
 @property (nonatomic, readonly) BOOL ownsTurnByTurnNavigation;
 @property (nonatomic, readonly) BOOL recognizingSpeech;
 @property (nonatomic, readonly) BOOL rightHandDrive;
@@ -32,7 +33,6 @@
 
 + (id)currentCarPlayExternalDevice;
 + (id)currentExternalDevice;
-+ (BOOL)setDiagnosticMode:(BOOL)arg1 error:(id*)arg2;
 + (id)sharedLocalDevice;
 
 - (id)ID;
@@ -42,6 +42,7 @@
 - (BOOL)OEMIconVisible;
 - (id)OEMIcons;
 - (id)_figEndpointPropertyValueForKey:(struct __CFString { }*)arg1;
+- (id)_screenInfo;
 - (void)_triggerFakeNotificationNamed:(id)arg1 withPayload:(id)arg2;
 - (id)_weakReference;
 - (id)borrowScreenForClient:(id)arg1 reason:(id)arg2;
@@ -61,6 +62,7 @@
 - (id)name;
 - (BOOL)nightMode;
 - (BOOL)nightModeSupported;
+- (BOOL)ownsScreen;
 - (BOOL)ownsTurnByTurnNavigation;
 - (BOOL)recognizingSpeech;
 - (void)requestCarUI;

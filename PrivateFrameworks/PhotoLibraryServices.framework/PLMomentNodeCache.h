@@ -3,14 +3,14 @@
  */
 
 @interface PLMomentNodeCache : NSObject {
-    struct sqlite3 { } *__momentsDatabase;
-    NSMutableDictionary *__nodesByObjectID;
-    NSMutableArray *__nodesByRowID;
-    NSMutableDictionary *__nodesByUserTag;
-    struct sqlite3_stmt { } *__spatialInsertStatement;
-    struct sqlite3_stmt { } *__spatialSelectStatement;
-    struct sqlite3_stmt { } *__temporalInsertStatement;
-    struct sqlite3_stmt { } *__temporalSelectStatement;
+    struct sqlite3 { } * __momentsDatabase;
+    NSMutableDictionary * __nodesByObjectID;
+    NSMutableArray * __nodesByRowID;
+    NSMutableDictionary * __nodesByUserTag;
+    struct sqlite3_stmt { } * __spatialInsertStatement;
+    struct sqlite3_stmt { } * __spatialSelectStatement;
+    struct sqlite3_stmt { } * __temporalInsertStatement;
+    struct sqlite3_stmt { } * __temporalSelectStatement;
 }
 
 @property (nonatomic, readonly) struct sqlite3 { }*_momentsDatabase;

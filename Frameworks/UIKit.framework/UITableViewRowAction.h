@@ -3,12 +3,12 @@
  */
 
 @interface UITableViewRowAction : NSObject <NSCopying> {
-    UIColor *_backgroundColor;
-    UIVisualEffect *_backgroundEffect;
-    _UITableViewCellActionButton *_button;
-    id /* block */ _handler;
-    int _style;
-    NSString *_title;
+    UIColor * _backgroundColor;
+    UIVisualEffect * _backgroundEffect;
+    _UITableViewCellActionButton * _button;
+    id /* block */  _handler;
+    int  _style;
+    NSString * _title;
 }
 
 @property (nonatomic, copy) UIColor *backgroundColor;

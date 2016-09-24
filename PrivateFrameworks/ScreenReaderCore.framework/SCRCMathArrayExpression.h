@@ -3,7 +3,7 @@
  */
 
 @interface SCRCMathArrayExpression : SCRCMathExpression {
-    NSArray *_children;
+    NSArray * _children;
 }
 
 @property (nonatomic, readonly) NSArray *mathMLAttributes;

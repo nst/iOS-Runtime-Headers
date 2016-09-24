@@ -3,21 +3,21 @@
  */
 
 @interface __NSCFURLLocalStreamTaskFromDataTask : __NSCFURLLocalStreamTask <SessionConnectionDelegate> {
-    struct __CFReadStream { } *_myReadToHisWrite;
-    BOOL _myReadToHisWriteEOF;
+    struct __CFReadStream { } * _myReadToHisWrite;
+    BOOL  _myReadToHisWriteEOF;
     struct { 
         int domain; 
         int error; 
-    } _myReadToHisWriteError;
-    BOOL _myReadToHisWriteSignaled;
-    struct __CFWriteStream { } *_myWriteToHisRead;
-    BOOL _myWriteToHisReadEOF;
+    }  _myReadToHisWriteError;
+    BOOL  _myReadToHisWriteSignaled;
+    struct __CFWriteStream { } * _myWriteToHisRead;
+    BOOL  _myWriteToHisReadEOF;
     struct { 
         int domain; 
         int error; 
-    } _myWriteToHisReadError;
-    BOOL _myWriteToHisReadSignaled;
-    NSMutableArray *_myWriteToHisReadWork;
+    }  _myWriteToHisReadError;
+    BOOL  _myWriteToHisReadSignaled;
+    NSMutableArray * _myWriteToHisReadWork;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -34,14 +34,16 @@
 - (void)connection:(id)arg1 _conditionalRequirementsChanged:(BOOL)arg2;
 - (void)connection:(id)arg1 _willSendRequestForEstablishedConnection:(id)arg2 completion:(id /* block */)arg3;
 - (void)connection:(id)arg1 challenged:(id)arg2 authCallback:(id /* block */)arg3;
+- (void)connection:(id)arg1 didFinishCollectingMetrics:(id)arg2 completion:(id /* block */)arg3;
 - (void)connection:(id)arg1 didFinishLoadingWithError:(id)arg2;
-- (void)connection:(id)arg1 didReceiveConnectionCacheKey:(struct HTTPConnectionCacheKey { int (**x1)(); struct __CFAllocator {} *x2; int x3; unsigned int x4; struct __CFString {} *x5; int x6; int x7; struct __CFDictionary {} *x8; unsigned int x9; struct __CFDictionary {} *x10; struct NetworkProxy {} *x11; struct __CFString {} *x12; int x13; int x14; }*)arg2;
+- (void)connection:(id)arg1 didReceiveConnectionCacheKey:(struct HTTPConnectionCacheKey { int (**x1)(); struct __CFAllocator {} *x2; int x3; unsigned int x4; struct __CFString {} *x5; int x6; int x7; struct __CFDictionary {} *x8; unsigned int x9; struct __CFDictionary {} *x10; struct shared_ptr<NetworkProxy> { struct NetworkProxy {} *x_11_1_1; struct __shared_weak_count {} *x_11_1_2; } x11; struct shared_ptr<const __CFString> { struct __CFString {} *x_12_1_1; struct __shared_weak_count {} *x_12_1_2; } x12; int x13; int x14; }*)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2 completion:(id /* block */)arg3;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2 completion:(id /* block */)arg3;
 - (void)connection:(id)arg1 didReceiveSocketInputStream:(id)arg2 outputStream:(id)arg3;
+- (void)connection:(id)arg1 needConnectedSocketToHost:(id)arg2 port:(unsigned int)arg3 completion:(id /* block */)arg4;
 - (void)connection:(id)arg1 request:(id)arg2 needsNewBodyStreamCallback:(id /* block */)arg3;
 - (void)connection:(id)arg1 sentBodyBytes:(id)arg2 totalBytes:(id)arg3 expectedBytes:(id)arg4;
-- (void)connection:(id)arg1 waitingWithReason:(long long)arg2;
+- (void)connection:(id)arg1 waitingWithReason:(int)arg2;
 - (void)connection:(id)arg1 wasRedirected:(id)arg2 newRequest:(id)arg3 responseCallback:(id /* block */)arg4;
 - (void)connection:(id)arg1 willCacheResponse:(id)arg2 responseCallback:(id /* block */)arg3;
 - (void)connectionWillFinishLoading:(id)arg1;

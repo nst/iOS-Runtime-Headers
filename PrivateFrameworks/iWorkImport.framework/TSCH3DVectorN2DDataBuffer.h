@@ -9,7 +9,7 @@
         struct __compressed_pair<unsigned char *, std::__1::allocator<unsigned char> > { 
             char *__first_; 
         } __end_cap_; 
-    } mContainer;
+    }  mContainer;
 }
 
 @property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{vector<unsigned char' */ struct *container; /* unknown property attribute:  std::__1::allocator<unsigned char> >=*}} */

@@ -3,18 +3,18 @@
  */
 
 @interface MPUSystemMediaControlsView : UIView <SKUIItemOfferButtonDelegate> {
-    MPUItemOfferButton *_buyAlbumButton;
-    MPUSystemBuyButtonConfiguration *_buyAlbumConfiguration;
-    MPUItemOfferButton *_buyTrackButton;
-    MPUSystemBuyButtonConfiguration *_buyTrackConfiguration;
-    <MPUSystemMediaControlsViewDelegate> *_delegate;
-    int _prefsChangedNotifyToken;
-    MPUSkipLimitView *_skipLimitView;
-    int _style;
-    MPUChronologicalProgressView *_timeInformationView;
-    MPUMediaControlsTitlesView *_trackInformationView;
-    MPUTransportControlsView *_transportControlsView;
-    MPUMediaControlsVolumeView *_volumeView;
+    MPUItemOfferButton * _buyAlbumButton;
+    MPUSystemBuyButtonConfiguration * _buyAlbumConfiguration;
+    MPUItemOfferButton * _buyTrackButton;
+    MPUSystemBuyButtonConfiguration * _buyTrackConfiguration;
+    <MPUSystemMediaControlsViewDelegate> * _delegate;
+    int  _prefsChangedNotifyToken;
+    MPUSkipLimitView * _skipLimitView;
+    int  _style;
+    MPUChronologicalProgressView * _timeInformationView;
+    MPUMediaControlsTitlesView * _trackInformationView;
+    MPUTransportControlsView * _transportControlsView;
+    MPUMediaControlsVolumeView * _volumeView;
 }
 
 @property (nonatomic, readonly) MPUSystemBuyButtonConfiguration *buyAlbumConfiguration;
@@ -37,7 +37,7 @@
 - (void)_buyButtonPurchaseAction:(id)arg1;
 - (void)_buyButtonShowConfirmationAction:(id)arg1;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_controlsInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_controlsInsets;
 - (id)_createBuyButtonConfiguration;
 - (id)_createBuyButtonWithTitle:(id)arg1 style:(int)arg2;
 - (void)_layoutBuyButtons;
@@ -50,13 +50,13 @@
 - (void)_setDownloadProgress:(float)arg1 forBuyButton:(id)arg2;
 - (void)_setProgressType:(unsigned int)arg1 forBuyButton:(id)arg2;
 - (BOOL)_systemwideBuyButtonsEnabled;
-- (float)_transportControlsFullWidthPaddingForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (float)_transportControlsFullWidthPaddingForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_updateBuyButton:(id)arg1 withOffer:(id)arg2;
 - (id)buyAlbumConfiguration;
 - (id)buyTrackConfiguration;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithStyle:(int)arg1;
 - (void)itemOfferButtonWillAnimateTransition:(id)arg1;
 - (void)layoutSubviews;

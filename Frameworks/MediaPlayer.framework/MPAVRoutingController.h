@@ -3,21 +3,22 @@
  */
 
 @interface MPAVRoutingController : NSObject {
-    NSMutableArray *_asyncFetchingCompletionHandlers;
-    BOOL _asyncFetchingRoutes;
-    MPAVRoute *_cachedPickedRoute;
-    NSArray *_cachedRoutes;
-    NSString *_category;
-    <MPAVRoutingControllerDelegate> *_delegate;
-    int _deviceAvailabilityNotifyToken;
-    BOOL _deviceAvailabilityOverrideState;
-    int _discoveryMode;
-    int _externalScreenType;
-    BOOL _hasExternalScreenType;
-    BOOL _hasVolumeControlInfoForPickedRoute;
-    NSString *_name;
-    BOOL _pickedRouteHasVolumeControl;
-    BOOL _scheduledSendDelegateRoutesChanged;
+    NSMutableArray * _asyncFetchingCompletionHandlers;
+    BOOL  _asyncFetchingRoutes;
+    MPAVRoute * _cachedPickedRoute;
+    NSArray * _cachedRoutes;
+    NSString * _category;
+    <MPAVRoutingControllerDelegate> * _delegate;
+    int  _deviceAvailabilityNotifyToken;
+    BOOL  _deviceAvailabilityOverrideState;
+    int  _discoveryMode;
+    int  _externalScreenType;
+    BOOL  _hasExternalScreenType;
+    BOOL  _hasVolumeControlInfoForPickedRoute;
+    NSString * _name;
+    MPAVRoute * _pendingPickedRoute;
+    BOOL  _pickedRouteHasVolumeControl;
+    BOOL  _scheduledSendDelegateRoutesChanged;
 }
 
 @property (nonatomic, readonly, copy) NSArray *availableRoutes;
@@ -26,6 +27,7 @@
 @property (nonatomic) int discoveryMode;
 @property (nonatomic, readonly) int externalScreenType;
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, readonly) MPAVRoute *pendingPickedRoute;
 @property (nonatomic, readonly) MPAVRoute *pickedRoute;
 @property (nonatomic, readonly) BOOL volumeControlIsAvailable;
 
@@ -35,6 +37,7 @@
 - (void)_mediaServerDiedNotification:(id)arg1;
 - (id)_parseAVRouteDescriptions:(id)arg1;
 - (void)_pickableRoutesDidChangeNotification:(id)arg1;
+- (id)_pickedRouteInArray:(id)arg1;
 - (void)_registerNotifications;
 - (void)_routeStatusDidChangeNotification:(id)arg1;
 - (void)_scheduleSendDelegateRoutesChanged;
@@ -56,6 +59,7 @@
 - (id)initWithName:(id)arg1;
 - (void)logCurrentRoutes;
 - (id)name;
+- (id)pendingPickedRoute;
 - (BOOL)pickBestDeviceRoute;
 - (BOOL)pickHandsetRoute;
 - (BOOL)pickRoute:(id)arg1;
@@ -70,6 +74,7 @@
 - (void)setDiscoveryMode:(int)arg1;
 - (void)setName:(id)arg1;
 - (BOOL)speakerRouteIsPicked;
+- (void)unpickAirPlayScreenRouteWithCompletion:(id /* block */)arg1;
 - (id)videoRouteForRoute:(id)arg1;
 - (BOOL)volumeControlIsAvailable;
 - (BOOL)wirelessDisplayRouteIsPicked;

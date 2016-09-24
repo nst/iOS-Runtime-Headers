@@ -3,14 +3,14 @@
  */
 
 @interface GKHostedChallengeIssueController : UIViewController <GKExtensionParentViewControllerProtocol> {
-    GKChallenge *_challenge;
-    id /* block */ _completionHandler;
-    NSString *_defaultMessage;
-    id /* block */ _dismissCompletionHandler;
-    BOOL _forcePicker;
-    NSArray *_players;
-    id /* block */ _receivedRemoteHandler;
-    GKChallengeIssueHostViewController *_remoteViewController;
+    GKChallenge * _challenge;
+    id /* block */  _completionHandler;
+    NSString * _defaultMessage;
+    id /* block */  _dismissCompletionHandler;
+    BOOL  _forcePicker;
+    NSArray * _players;
+    id /* block */  _receivedRemoteHandler;
+    GKChallengeIssueHostViewController * _remoteViewController;
 }
 
 @property (nonatomic, retain) GKChallenge *challenge;

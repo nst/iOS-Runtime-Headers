@@ -3,12 +3,12 @@
  */
 
 @interface WBSParsecCardSection : NSObject {
-    WBSParsecPunchout *_app;
-    NSString *_punchoutPickerDismissLabel;
-    NSString *_punchoutPickerLabel;
-    NSArray *_punchouts;
-    NSString *_type;
-    NSURL *_url;
+    WBSParsecPunchout * _app;
+    NSString * _punchoutPickerDismissLabel;
+    NSString * _punchoutPickerLabel;
+    NSArray * _punchouts;
+    NSString * _type;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) WBSParsecPunchout *app;

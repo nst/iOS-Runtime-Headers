@@ -3,10 +3,10 @@
  */
 
 @interface SLMicroBlogAccountsTableViewController : UITableViewController {
-    NSArray *_accountUserRecords;
-    UIImage *_blankImage;
-    SLMicroBlogUserRecord *_selectedAccountUserRecord;
-    <SLMicroBlogAccountsTableViewControllerDelegate> *_selectionDelegate;
+    NSArray * _accountUserRecords;
+    UIImage * _blankImage;
+    SLMicroBlogUserRecord * _selectedAccountUserRecord;
+    <SLMicroBlogAccountsTableViewControllerDelegate> * _selectionDelegate;
 }
 
 - (void).cxx_destruct;

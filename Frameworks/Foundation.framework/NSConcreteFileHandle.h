@@ -3,27 +3,26 @@
  */
 
 @interface NSConcreteFileHandle : NSFileHandle {
-    unsigned short _activity;
-    NSObject<OS_dispatch_source> *_dsrc;
-    int _error;
-    int _fd;
-    NSObject<OS_dispatch_queue> *_fhQueue;
-    unsigned short _flags;
-    NSObject<OS_dispatch_queue> *_monitoringQueue;
-    NSObject<OS_dispatch_io> *_readChannel;
-    NSObject<OS_dispatch_source> *_readMonitoringSource;
-    id /* block */ _readabilityHandler;
-    NSObject<OS_dispatch_data> *_resultData;
-    int _resultSocket;
-    struct __CFRunLoop { } *_rl;
-    struct __CFRunLoopSource { } *_source;
-    NSObject<OS_dispatch_source> *_writeMonitoringSource;
-    id /* block */ _writeabilityHandler;
+    unsigned short  _activity;
+    NSObject<OS_dispatch_source> * _dsrc;
+    int  _error;
+    int  _fd;
+    NSObject<OS_dispatch_queue> * _fhQueue;
+    unsigned short  _flags;
+    NSObject<OS_dispatch_queue> * _monitoringQueue;
+    NSObject<OS_dispatch_io> * _readChannel;
+    NSObject<OS_dispatch_source> * _readMonitoringSource;
+    id /* block */  _readabilityHandler;
+    NSObject<OS_dispatch_data> * _resultData;
+    int  _resultSocket;
+    struct __CFRunLoop { } * _rl;
+    struct __CFRunLoopSource { } * _source;
+    NSObject<OS_dispatch_source> * _writeMonitoringSource;
+    id /* block */  _writeabilityHandler;
 }
 
 - (void)_cancelDispatchSources;
 - (void)_closeOnDealloc;
-- (void)_commonDealloc;
 - (void)_locked_clearHandler:(id /* block */*)arg1 forSource:(id*)arg2;
 - (id)_monitor:(int)arg1;
 - (void)acceptConnectionInBackgroundAndNotify;
@@ -34,14 +33,13 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (int)fileDescriptor;
-- (void)finalize;
 - (id)init;
 - (id)initWithFileDescriptor:(int)arg1;
 - (id)initWithFileDescriptor:(int)arg1 closeOnDealloc:(BOOL)arg2;
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3;
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
 - (id)initWithURL:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
-- (unsigned long long)offsetInFile;
+- (unsigned int)offsetInFile;
 - (void)performActivity:(int)arg1 modes:(id)arg2;
 - (id)port;
 - (id)readDataOfLength:(unsigned int)arg1;
@@ -52,13 +50,13 @@
 - (void)readToEndOfFileInBackgroundAndNotify;
 - (void)readToEndOfFileInBackgroundAndNotifyForModes:(id)arg1;
 - (id /* block */)readabilityHandler;
-- (unsigned long long)seekToEndOfFile;
-- (void)seekToFileOffset:(unsigned long long)arg1;
+- (unsigned int)seekToEndOfFile;
+- (void)seekToFileOffset:(unsigned int)arg1;
 - (void)setPort:(id)arg1;
 - (void)setReadabilityHandler:(id /* block */)arg1;
 - (void)setWriteabilityHandler:(id /* block */)arg1;
 - (void)synchronizeFile;
-- (void)truncateFileAtOffset:(unsigned long long)arg1;
+- (void)truncateFileAtOffset:(unsigned int)arg1;
 - (void)waitForDataInBackgroundAndNotify;
 - (void)waitForDataInBackgroundAndNotifyForModes:(id)arg1;
 - (void)writeData:(id)arg1;

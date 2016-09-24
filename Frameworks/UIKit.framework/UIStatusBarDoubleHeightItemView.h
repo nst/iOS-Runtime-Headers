@@ -3,9 +3,9 @@
  */
 
 @interface UIStatusBarDoubleHeightItemView : UIStatusBarItemView {
-    NSString *_contentsString;
-    BOOL _ellipsize;
-    float _letterSpacing;
+    NSString * _contentsString;
+    BOOL  _ellipsize;
+    double  _letterSpacing;
 }
 
 - (void).cxx_destruct;

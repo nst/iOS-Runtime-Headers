@@ -3,8 +3,8 @@
  */
 
 @interface FBUISceneClientIdentity : NSObject <NSCopying> {
-    NSString *_applicationBundleID;
-    NSString *_identifier;
+    NSString * _applicationBundleID;
+    NSString * _identifier;
 }
 
 @property (nonatomic, copy) NSString *applicationBundleID;

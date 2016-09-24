@@ -3,12 +3,12 @@
  */
 
 @interface MusicStoreStreamingPlaybackItemMetadata : MPMediaLibraryPlaybackItemMetadata {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    BOOL _hasLoadedMediaItem;
-    BOOL _isLoadingMediaItem;
-    NSMutableArray *_mediaItemLoadCompletionHandlers;
-    MPStoreItemMetadata *_storeItemMetadata;
-    MusicStoreItemMetadataContext *_storeItemMetadataContext;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    BOOL  _hasLoadedMediaItem;
+    BOOL  _isLoadingMediaItem;
+    NSMutableArray * _mediaItemLoadCompletionHandlers;
+    MPStoreItemMetadata * _storeItemMetadata;
+    MusicStoreItemMetadataContext * _storeItemMetadataContext;
 }
 
 @property (nonatomic, retain) MusicStoreItemMetadataContext *storeItemMetadataContext;
@@ -22,11 +22,11 @@
 - (void)_storeItemMetadataContextRepresentativeMediaEntityDidChangeNotification:(id)arg1;
 - (void)_unregisterForNotificationsForStoreItemMetadataContext:(id)arg1;
 - (id)albumArtistName;
-- (long long)albumStoreAdamID;
+- (int)albumStoreAdamID;
 - (id)albumTitle;
 - (BOOL)allowsAssetCaching;
 - (id)artistName;
-- (long long)artistStoreAdamID;
+- (int)artistStoreAdamID;
 - (id)artworkCatalogForPlaybackTime:(double)arg1;
 - (id)composerName;
 - (id)contentTitle;
@@ -43,8 +43,8 @@
 - (void)setStoreItemMetadataContext:(id)arg1;
 - (BOOL)shouldReportPlayEventsToStore;
 - (BOOL)showComposer;
-- (long long)storeAdamID;
+- (int)storeAdamID;
 - (id)storeItemMetadataContext;
-- (long long)storeSubscriptionAdamID;
+- (int)storeSubscriptionAdamID;
 
 @end

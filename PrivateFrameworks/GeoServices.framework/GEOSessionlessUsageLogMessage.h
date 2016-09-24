@@ -3,10 +3,10 @@
  */
 
 @interface GEOSessionlessUsageLogMessage : PBCodable <NSCopying> {
-    GEODirectionsFeedbackLogMessage *_directionsFeedbackLogMessage;
-    GEOTimeToLeaveHypothesisLogMessage *_timeToLeaveHypothesisLogMessage;
-    GEOTimeToLeaveInitialTravelTimeLogMessage *_timeToLeaveInitialTravelTimeLogMessage;
-    GEOTransitAppLaunchLogMessage *_transitAppLaunchLogMessage;
+    GEODirectionsFeedbackLogMessage * _directionsFeedbackLogMessage;
+    GEOTimeToLeaveHypothesisLogMessage * _timeToLeaveHypothesisLogMessage;
+    GEOTimeToLeaveInitialTravelTimeLogMessage * _timeToLeaveInitialTravelTimeLogMessage;
+    GEOTransitAppLaunchLogMessage * _transitAppLaunchLogMessage;
 }
 
 @property (nonatomic, retain) GEODirectionsFeedbackLogMessage *directionsFeedbackLogMessage;

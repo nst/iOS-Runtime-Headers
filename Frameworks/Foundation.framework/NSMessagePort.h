@@ -3,8 +3,8 @@
  */
 
 @interface NSMessagePort : NSPort {
-    id _delegate;
-    void *_port;
+    id  _delegate;
+    void * _port;
 }
 
 + (void)_fixNSMessagePortLeak;
@@ -14,7 +14,6 @@
 - (BOOL)_tryRetain;
 - (void)dealloc;
 - (id)delegate;
-- (void)finalize;
 - (id)init;
 - (id)initWithName:(id)arg1;
 - (id)initWithRemoteName:(id)arg1;

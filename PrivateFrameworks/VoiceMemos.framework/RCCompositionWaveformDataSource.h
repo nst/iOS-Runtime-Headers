@@ -3,15 +3,15 @@
  */
 
 @interface RCCompositionWaveformDataSource : RCWaveformDataSource <RCWaveformDataSourceObserver> {
-    _RCTimeRangeFileInputWaveformDataSource *_activeFragmentDataSource;
-    RCComposition *_composition;
-    NSOperationQueue *_fragmentLoadingOperationQueue;
-    BOOL _highlightLastDecomposedFragment;
-    BOOL _preferLoadingFragmentWaveforms;
-    float _progressOfFinishedFragments;
-    float _progressWeightPerFragment;
-    BOOL _saveGeneratedWaveform;
-    NSObject<OS_dispatch_queue> *_searialQueue;
+    _RCTimeRangeFileInputWaveformDataSource * _activeFragmentDataSource;
+    RCComposition * _composition;
+    NSOperationQueue * _fragmentLoadingOperationQueue;
+    BOOL  _highlightLastDecomposedFragment;
+    BOOL  _preferLoadingFragmentWaveforms;
+    double  _progressOfFinishedFragments;
+    double  _progressWeightPerFragment;
+    BOOL  _saveGeneratedWaveform;
+    NSObject<OS_dispatch_queue> * _searialQueue;
 }
 
 @property (nonatomic, readonly) RCComposition *composition;

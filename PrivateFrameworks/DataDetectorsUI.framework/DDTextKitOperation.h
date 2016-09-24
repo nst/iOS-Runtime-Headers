@@ -3,17 +3,18 @@
  */
 
 @interface DDTextKitOperation : DDOperation {
-    int _editCount;
+    int  _editCount;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
+    }  _range;
 }
 
 @property (nonatomic, retain) UITextView *container;
 @property struct _NSRange { unsigned int x1; unsigned int x2; } range;
 
-- (BOOL)_addResultsToAttributes;
+- (BOOL)_addResultToAttributes:(id)arg1 inStorage:(id)arg2;
+- (BOOL)_addResultsToAttributesInStorage:(id)arg1;
 - (struct __DDScanQuery { }*)_createScanQueryForBackend;
 - (BOOL)_rangeValidForContainer;
 - (void)_updateGenerationNumber;

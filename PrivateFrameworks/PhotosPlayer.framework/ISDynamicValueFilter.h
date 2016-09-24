@@ -3,15 +3,15 @@
  */
 
 @interface ISDynamicValueFilter : NSObject {
-    CADisplayLink *__displayLink;
-    BOOL __isPerformingInputChanges;
-    double __speed;
-    double __time;
-    double _maximumDeceleration;
-    double _maximumSpeed;
-    double _outputValue;
-    id /* block */ _outputValueChangeHandler;
-    double _targetValue;
+    CADisplayLink * __displayLink;
+    BOOL  __isPerformingInputChanges;
+    double  __speed;
+    double  __time;
+    double  _maximumDeceleration;
+    double  _maximumSpeed;
+    double  _outputValue;
+    id /* block */  _outputValueChangeHandler;
+    double  _targetValue;
 }
 
 @property (setter=_setDisplayLink:, nonatomic, retain) CADisplayLink *_displayLink;
@@ -20,7 +20,7 @@
 @property (setter=_setTime:, nonatomic) double _time;
 @property (nonatomic) double maximumDeceleration;
 @property (nonatomic) double maximumSpeed;
-@property (nonatomic) double outputValue;
+@property (setter=_setOutputValue:, nonatomic) double outputValue;
 @property (nonatomic, copy) id /* block */ outputValueChangeHandler;
 @property (nonatomic) double targetValue;
 

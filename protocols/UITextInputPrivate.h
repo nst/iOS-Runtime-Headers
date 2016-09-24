@@ -17,13 +17,18 @@
 - (float)_delayUntilRepeatInsertText:(NSString *)arg1;
 - (void)_didHideCorrections;
 - (void)_insertAttributedTextWithoutClosingTyping:(NSAttributedString *)arg1;
+- (SEL)_sendCurrentLocationAction;
 - (BOOL)_shouldRepeatInsertText:(NSString *)arg1;
+- (BOOL)_shouldSuppressSelectionCommands;
+- (int)_textInputSource;
 - (void)_willShowCorrections;
 - (void)acceptedAutoFillWord:(NSString *)arg1;
 - (UIView *)automaticallySelectedOverlay;
 - (UIFont *)fontForCaretSelection;
 - (void)handleKeyWebEvent:(WebEvent *)arg1;
+- (void)handleKeyWebEvent:(void *)arg1 withCompletionHandler:(void *)arg2; // needs 2 arg types, found 8: WebEvent *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, WebEvent *, BOOL, void*
 - (void)insertDictationResult:(NSArray *)arg1 withCorrectionIdentifier:(id)arg2;
+- (void)insertTextSuggestion:(UITextSuggestion *)arg1;
 - (BOOL)isAutoFillMode;
 - (NSArray *)metadataDictionariesForDictationResults;
 - (UITextRange *)rangeWithTextAlternatives:(id*)arg1 atPosition:(UITextPosition *)arg2;
@@ -33,9 +38,11 @@
 - (<UISelectionInteractionAssistant> *)selectionInteractionAssistant;
 - (void)setBottomBufferHeight:(float)arg1;
 - (void)setSelectionGranularity:(int)arg1;
+- (void)set_textInputSource:(int)arg1;
 - (void)streamingDictationDidBegin;
 - (void)streamingDictationDidEnd;
 - (UIColor *)textColorForCaretSelection;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
+- (<UITextInputSuggestionDelegate> *)textInputSuggestionDelegate;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleRect;
 
 @end

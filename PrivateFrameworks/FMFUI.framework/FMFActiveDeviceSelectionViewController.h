@@ -3,11 +3,11 @@
  */
 
 @interface FMFActiveDeviceSelectionViewController : PSListController <FMFSessionDelegate, UITableViewDataSource, UITableViewDelegate> {
-    FMFDevice *_currentActiveDevice;
-    NSMutableArray *_deviceList;
-    FMFSession *_fmfSession;
-    FMFDevice *_nowActiveDevice;
-    int _specifierStartIndex;
+    FMFDevice * _currentActiveDevice;
+    NSMutableArray * _deviceList;
+    FMFSession * _fmfSession;
+    FMFDevice * _nowActiveDevice;
+    int  _specifierStartIndex;
 }
 
 @property (nonatomic, retain) FMFDevice *currentActiveDevice;

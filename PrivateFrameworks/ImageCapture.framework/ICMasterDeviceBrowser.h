@@ -3,12 +3,12 @@
  */
 
 @interface ICMasterDeviceBrowser : NSObject {
-    NSMutableArray *_browsers;
-    NSMutableArray *_devices;
-    ExFATCameraDeviceManager *_exFATManager;
-    MSCameraDeviceManager *_msDevManager;
-    int _numberOfBrowsingBrowsers;
-    PTPCameraDeviceManager *_ptpDevManager;
+    NSMutableArray * _browsers;
+    NSMutableArray * _devices;
+    ExFATCameraDeviceManager * _exFATManager;
+    MSCameraDeviceManager * _msDevManager;
+    int  _numberOfBrowsingBrowsers;
+    PTPCameraDeviceManager * _ptpDevManager;
 }
 
 @property (readonly) NSMutableArray *browsers;

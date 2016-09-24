@@ -3,11 +3,11 @@
  */
 
 @interface RPStoreInfo : NSObject {
-    NSString *_appName;
-    NSString *_author;
-    NSString *_bundleID;
-    NSArray *_categories;
-    NSString *_itemURL;
+    NSString * _appName;
+    NSString * _author;
+    NSString * _bundleID;
+    NSArray * _categories;
+    NSString * _itemURL;
 }
 
 @property (nonatomic, retain) NSString *appName;
@@ -21,6 +21,7 @@
 - (id)author;
 - (id)bundleID;
 - (id)categories;
+- (id)dictionary;
 - (id)itemURL;
 - (void)setAppName:(id)arg1;
 - (void)setAuthor:(id)arg1;

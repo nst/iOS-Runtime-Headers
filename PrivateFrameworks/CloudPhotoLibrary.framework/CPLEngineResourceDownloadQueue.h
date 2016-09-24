@@ -3,18 +3,18 @@
  */
 
 @interface CPLEngineResourceDownloadQueue : CPLEngineStorage <CPLAbstractObject> {
-    NSMutableArray *_backgroundActiveTasks;
-    NSObject<OS_dispatch_queue> *_downloadQueue;
-    NSMutableArray *_highPriorityActiveTaskGroups;
-    NSMutableArray *_highPriorityActiveTasks;
-    NSMutableArray *_highPriorityTasksQueue;
-    NSMutableArray *_lowPriorityActiveTaskGroups;
-    NSMutableArray *_lowPriorityActiveTasks;
-    NSMutableArray *_lowPriorityTasksQueue;
-    BOOL _shouldRequestABackgroundDownloadSyncPhase;
-    unsigned int _totalClientRequestErrors;
-    unsigned int _totalClientRequests;
-    unsigned int _totalPutInBackground;
+    NSMutableArray * _backgroundActiveTasks;
+    NSObject<OS_dispatch_queue> * _downloadQueue;
+    NSMutableArray * _highPriorityActiveTaskGroups;
+    NSMutableArray * _highPriorityActiveTasks;
+    NSMutableArray * _highPriorityTasksQueue;
+    NSMutableArray * _lowPriorityActiveTaskGroups;
+    NSMutableArray * _lowPriorityActiveTasks;
+    NSMutableArray * _lowPriorityTasksQueue;
+    BOOL  _shouldRequestABackgroundDownloadSyncPhase;
+    unsigned int  _totalClientRequestErrors;
+    unsigned int  _totalClientRequests;
+    unsigned int  _totalPutInBackground;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -52,6 +52,7 @@
 - (id)downloadTaskForLocalResource:(id)arg1 clientBundleID:(id)arg2 highPriority:(BOOL)arg3 proposedTaskIdentifier:(id)arg4 didStartHandler:(id /* block */)arg5 progressHandler:(id /* block */)arg6 completionHandler:(id /* block */)arg7;
 - (BOOL)enqueueBackgroundDownloadTaskForResource:(id)arg1 taskIdentifier:(unsigned int)arg2 error:(id*)arg3;
 - (id)enumeratorForDownloadedResources;
+- (BOOL)hasActiveOrQueuedBackgroundDownloadOperations;
 - (id)initWithEngineStore:(id)arg1 name:(id)arg2;
 - (void)launchDownloadTasks:(id)arg1;
 - (BOOL)markBackgroundDownloadTaskForResourceAsSuceeded:(id)arg1 taskIdentifier:(unsigned int)arg2 error:(id*)arg3;
@@ -60,6 +61,7 @@
 - (BOOL)removeBackgroundDownloadTaskForResource:(id)arg1 taskIdentifier:(unsigned int)arg2 error:(id*)arg3;
 - (BOOL)resetDequeuedBackgroundDownloadTasksWithError:(id*)arg1;
 - (BOOL)resetWithError:(id*)arg1;
+- (void)sanityCheck;
 - (id)status;
 
 @end

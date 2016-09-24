@@ -3,10 +3,10 @@
  */
 
 @interface HDKeyValueDomain : NSObject {
-    int _category;
-    NSString *_domainName;
-    Class _entityClass;
-    <HDHealthDaemon> *_healthDaemon;
+    int  _category;
+    NSString * _domainName;
+    Class  _entityClass;
+    HDProfile * _profile;
 }
 
 @property (nonatomic, readonly) int category;
@@ -18,7 +18,7 @@
 - (id)dataForKey:(id)arg1 error:(id*)arg2;
 - (id)dateForKey:(id)arg1 error:(id*)arg2;
 - (id)domainName;
-- (id)initWithCategory:(int)arg1 domainName:(id)arg2 healthDaemon:(id)arg3;
+- (id)initWithCategory:(int)arg1 domainName:(id)arg2 profile:(id)arg3;
 - (id)modificationDatesForKeys:(id)arg1 error:(id*)arg2;
 - (id)numberForKey:(id)arg1 error:(id*)arg2;
 - (id)quantityForKey:(id)arg1 unit:(id)arg2 error:(id*)arg3;

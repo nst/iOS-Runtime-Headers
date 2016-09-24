@@ -3,8 +3,8 @@
  */
 
 @interface CKDPCommentedOnId : PBCodable <NSCopying> {
-    NSData *_itemId;
-    CKDPShareIdentifier *_shareIdentifier;
+    NSData * _itemId;
+    CKDPShareIdentifier * _shareIdentifier;
 }
 
 @property (nonatomic, readonly) BOOL hasItemId;

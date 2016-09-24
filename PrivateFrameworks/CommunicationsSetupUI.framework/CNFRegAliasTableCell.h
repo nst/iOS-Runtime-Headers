@@ -3,9 +3,9 @@
  */
 
 @interface CNFRegAliasTableCell : PSTableCell {
-    BOOL _hasSpinner;
-    BOOL _hidesDisclosureButton;
-    UIActivityIndicatorView *_spinner;
+    BOOL  _hasSpinner;
+    BOOL  _hidesDisclosureButton;
+    UIActivityIndicatorView * _spinner;
 }
 
 @property (nonatomic) BOOL hasSpinner;

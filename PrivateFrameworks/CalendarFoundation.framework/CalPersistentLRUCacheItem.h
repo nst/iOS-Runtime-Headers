@@ -3,10 +3,10 @@
  */
 
 @interface CalPersistentLRUCacheItem : NSObject <NSSecureCoding> {
-    <NSCopying><NSSecureCoding> *_key;
-    CalPersistentLRUCacheItem *_nextItem;
-    CalPersistentLRUCacheItem *_previousItem;
-    <NSSecureCoding> *_value;
+    <NSCopying><NSSecureCoding> * _key;
+    CalPersistentLRUCacheItem * _nextItem;
+    CalPersistentLRUCacheItem * _previousItem;
+    <NSSecureCoding> * _value;
 }
 
 @property (nonatomic, readonly) <NSCopying><NSSecureCoding> *key;

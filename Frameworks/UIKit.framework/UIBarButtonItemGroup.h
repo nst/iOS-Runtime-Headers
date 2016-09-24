@@ -3,15 +3,16 @@
  */
 
 @interface UIBarButtonItemGroup : NSObject <NSCoding> {
-    NSMutableArray *_barButtonItems;
-    BOOL _hidden;
-    BOOL _locked;
-    float _minimumLeadingSpace;
-    float _minimumTrailingSpace;
-    <_UIBarButtonItemGroupOwner> *_owner;
-    float _priority;
-    UIBarButtonItem *_representativeItem;
-    _UIButtonGroupViewController *_representativeUI;
+    NSMutableArray * _barButtonItems;
+    BOOL  _hidden;
+    BOOL  _locked;
+    double  _minimumLeadingSpace;
+    double  _minimumTrailingSpace;
+    <_UIBarButtonItemGroupOwner> * _owner;
+    double  _priority;
+    UIBarButtonItem * _representativeItem;
+    _UIButtonGroupViewController * _representativeUI;
+    BOOL  _sendActionsBeforeDismiss;
 }
 
 @property (nonatomic, copy) NSArray *barButtonItems;
@@ -19,12 +20,13 @@
 @property (getter=_isHidden, setter=_setHidden:, nonatomic) BOOL hidden;
 @property (getter=_items, nonatomic, readonly) NSArray *items;
 @property (getter=_isLocked, setter=_setLocked:, nonatomic) BOOL locked;
-@property (getter=_minimumLeadingSpace, setter=_setMinimumLeadingSpace:, nonatomic) float minimumLeadingSpace;
-@property (getter=_minimumTrailingSpace, setter=_setMinimumTrailingSpace:, nonatomic) float minimumTrailingSpace;
+@property (getter=_minimumLeadingSpace, setter=_setMinimumLeadingSpace:, nonatomic) double minimumLeadingSpace;
+@property (getter=_minimumTrailingSpace, setter=_setMinimumTrailingSpace:, nonatomic) double minimumTrailingSpace;
 @property (getter=_owner, setter=_setOwner:, nonatomic) <_UIBarButtonItemGroupOwner> *owner;
-@property (getter=_priority, setter=_setPriority:, nonatomic) float priority;
+@property (getter=_priority, setter=_setPriority:, nonatomic) double priority;
 @property (nonatomic, retain) UIBarButtonItem *representativeItem;
 @property (getter=_representativeUI, setter=_setRepresentativeUI:, nonatomic, retain) _UIButtonGroupViewController *representativeUI;
+@property (getter=_sendActionsBeforeDismiss, setter=_setSendActionsBeforeDismiss:, nonatomic) BOOL sendActionsBeforeDismiss;
 
 - (void).cxx_destruct;
 - (BOOL)_isHidden;
@@ -37,6 +39,7 @@
 - (void)_removeBarButtonItem:(id)arg1;
 - (void)_removeRepresentative:(id)arg1;
 - (id)_representativeUI;
+- (BOOL)_sendActionsBeforeDismiss;
 - (void)_setHidden:(BOOL)arg1;
 - (void)_setLocked:(BOOL)arg1;
 - (void)_setMinimumLeadingSpace:(float)arg1;
@@ -44,6 +47,7 @@
 - (void)_setOwner:(id)arg1;
 - (void)_setPriority:(float)arg1;
 - (void)_setRepresentativeUI:(id)arg1;
+- (void)_setSendActionsBeforeDismiss:(BOOL)arg1;
 - (void)_validateAllItems;
 - (id)barButtonItems;
 - (id)description;

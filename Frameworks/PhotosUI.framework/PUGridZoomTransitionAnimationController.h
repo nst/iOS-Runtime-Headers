@@ -3,7 +3,7 @@
  */
 
 @interface PUGridZoomTransitionAnimationController : _UICollectionViewControllerLayoutToLayoutTransition {
-    <UIViewControllerContextTransitioning> *_transitionContext;
+    <UIViewControllerContextTransitioning> * _transitionContext;
 }
 
 @property (nonatomic, readonly) PUZoomableGridTransition *gridTransitionInfo;

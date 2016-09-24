@@ -3,23 +3,22 @@
  */
 
 @interface _NSXPCConnectionExportedObjectTable : NSObject {
-    NSLock *_lock;
-    unsigned long long _next;
-    struct __CFDictionary { } *_objectToProxyNumber;
-    struct __CFDictionary { } *_proxyNumberToObject;
-    BOOL _valid;
+    NSLock * _lock;
+    unsigned int  _next;
+    struct __CFDictionary { } * _objectToProxyNumber;
+    struct __CFDictionary { } * _proxyNumberToObject;
+    BOOL  _valid;
 }
 
 - (void)dealloc;
 - (id)description;
-- (id)exportedObjectForProxyNumber:(unsigned long long)arg1;
-- (void)finalize;
+- (id)exportedObjectForProxyNumber:(unsigned int)arg1;
 - (id)init;
-- (id)interfaceForProxyNumber:(unsigned long long)arg1;
+- (id)interfaceForProxyNumber:(unsigned int)arg1;
 - (void)invalidate;
-- (unsigned long long)proxyNumberForExportedObject:(id)arg1 interface:(id)arg2;
-- (void)releaseExportedObject:(unsigned long long)arg1;
-- (void)setExportedObject:(id)arg1 forProxyNumber:(unsigned long long)arg2;
-- (void)setInterface:(id)arg1 forProxyNumber:(unsigned long long)arg2;
+- (unsigned int)proxyNumberForExportedObject:(id)arg1 interface:(id)arg2;
+- (void)releaseExportedObject:(unsigned int)arg1;
+- (void)setExportedObject:(id)arg1 forProxyNumber:(unsigned int)arg2;
+- (void)setInterface:(id)arg1 forProxyNumber:(unsigned int)arg2;
 
 @end

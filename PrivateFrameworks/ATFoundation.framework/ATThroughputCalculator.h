@@ -3,11 +3,11 @@
  */
 
 @interface ATThroughputCalculator : NSObject {
-    ATMovingAverage *_average;
-    double _currentValue;
-    double _lastUpdate;
-    double _startTime;
-    BOOL _suspended;
+    ATMovingAverage * _average;
+    double  _currentValue;
+    double  _lastUpdate;
+    double  _startTime;
+    BOOL  _suspended;
 }
 
 @property (nonatomic, readonly) double throughput;

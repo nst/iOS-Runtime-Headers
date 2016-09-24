@@ -3,8 +3,8 @@
  */
 
 @interface SKUIFacebookViewElement : SKUIViewElement {
-    int _facebookType;
-    NSString *_urlString;
+    int  _facebookType;
+    NSString * _urlString;
 }
 
 @property (nonatomic, readonly) NSString *URLString;

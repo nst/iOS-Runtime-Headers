@@ -3,9 +3,9 @@
  */
 
 @interface HKObjectType : NSObject <NSCopying, NSSecureCoding> {
-    int _code;
-    Class _dataObjectClass;
-    NSString *_identifier;
+    int  _code;
+    Class  _dataObjectClass;
+    NSString * _identifier;
 }
 
 @property (nonatomic, readonly) int code;
@@ -23,7 +23,8 @@
 + (BOOL)_allowAuthorizationForReadingWithTypes:(id)arg1 entitlements:(id)arg2 disallowedTypes:(id)arg3;
 + (BOOL)_allowAuthorizationForSharing:(BOOL)arg1 types:(id)arg2 entitlements:(id)arg3 disallowedTypes:(id)arg4;
 + (BOOL)_allowAuthorizationForSharingWithTypes:(id)arg1 entitlements:(id)arg2 disallowedTypes:(id)arg3;
-+ (void)_insertCode:(int)arg1 forIdentifier:(id)arg2;
++ (id)_objectTypeWithIdentifier:(id)arg1 class:(Class)arg2 lookupTable:(id)arg3;
++ (id)_typeWithIdentifier:(id)arg1;
 + (id)activityCacheType;
 + (id)activitySummaryType;
 + (id)briskMinuteDataType;
@@ -33,7 +34,13 @@
 + (id)coachingEventType;
 + (id)correlationTypeForIdentifier:(id)arg1;
 + (id)dataTypeWithCode:(int)arg1;
++ (id)deepBreathingSessionType;
++ (id)documentTypeForIdentifier:(id)arg1;
++ (id)fitnessFriendAchievementType;
++ (id)fitnessFriendActivitySnapshotType;
++ (id)fitnessFriendWorkoutType;
 + (id)quantityTypeForIdentifier:(id)arg1;
++ (id)seriesTypeForIdentifier:(id)arg1;
 + (BOOL)supportsSecureCoding;
 + (id)watchActivationType;
 + (id)workoutType;
@@ -42,8 +49,8 @@
 - (BOOL)_allowAuthorizationForReadingWithEntitlements:(id)arg1;
 - (BOOL)_allowAuthorizationForSharingWithEntitlements:(id)arg1;
 - (id)_initWithDefinition:(struct { int x1; char *x2; char *x3; int x4; char *x5; char *x6; }*)arg1;
+- (id)_predicateForSDKVersion:(unsigned int)arg1;
 - (BOOL)_requiresAuthorization;
-- (id)_safeDescription;
 - (int)code;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (Class)dataObjectClass;

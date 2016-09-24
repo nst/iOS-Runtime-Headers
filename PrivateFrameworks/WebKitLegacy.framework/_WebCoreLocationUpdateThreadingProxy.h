@@ -3,7 +3,7 @@
  */
 
 @interface _WebCoreLocationUpdateThreadingProxy : NSObject <WebGeolocationCoreLocationUpdateListener> {
-    WebGeolocationProviderIOS *_provider;
+    WebGeolocationProviderIOS * _provider;
 }
 
 - (void)errorOccurred:(id)arg1;

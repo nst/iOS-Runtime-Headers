@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DAxisLabelEnumerator : TSCH3DValueEnumerator {
-    TSCHChartAxis *mAxis;
-    TSCH3DAxisLabelKind *mKind;
+    TSCHChartAxis * mAxis;
+    TSCH3DAxisLabelKind * mKind;
 }
 
 @property (nonatomic, readonly) TSCH3DAxisLabelKind *kind;

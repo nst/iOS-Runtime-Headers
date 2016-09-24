@@ -3,10 +3,10 @@
  */
 
 @interface _SBFAccumulatingObserver : NSObject <SBFObserver> {
-    BOOL _didComplete;
-    NSError *_error;
-    NSMutableArray *_results;
-    NSObject<OS_dispatch_semaphore> *_semaphore;
+    BOOL  _didComplete;
+    NSError * _error;
+    NSMutableArray * _results;
+    NSObject<OS_dispatch_semaphore> * _semaphore;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,14 +3,14 @@
  */
 
 @interface UIWKAutocorrectionContext : NSObject {
-    NSString *_contextAfterSelection;
-    NSString *_contextBeforeSelection;
-    NSString *_markedText;
+    NSString * _contextAfterSelection;
+    NSString * _contextBeforeSelection;
+    NSString * _markedText;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _rangeInMarkedText;
-    NSString *_selectedText;
+    }  _rangeInMarkedText;
+    NSString * _selectedText;
 }
 
 @property (nonatomic, copy) NSString *contextAfterSelection;

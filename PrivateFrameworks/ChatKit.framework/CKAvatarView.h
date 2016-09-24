@@ -3,13 +3,15 @@
  */
 
 @interface CKAvatarView : CNAvatarView {
-    NSString *_preferredHandle;
-    UIViewController *_presentingViewController;
+    NSString * _preferredHandle;
+    UIViewController * _presentingViewController;
 }
 
 @property (nonatomic) NSString *preferredHandle;
 @property (nonatomic) UIViewController *presentingViewController;
 
+- (void).cxx_destruct;
+- (id)init;
 - (id)preferredHandle;
 - (id)presentingViewController;
 - (void)setHighlighted:(BOOL)arg1;

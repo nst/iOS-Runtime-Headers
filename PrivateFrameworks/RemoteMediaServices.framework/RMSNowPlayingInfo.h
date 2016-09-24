@@ -3,24 +3,24 @@
  */
 
 @interface RMSNowPlayingInfo : NSObject {
-    NSString *_albumName;
-    NSString *_artistName;
-    BOOL _canSkipNext;
-    BOOL _canSkipPrevious;
-    BOOL _canWishlist;
-    unsigned long long _databaseID;
-    BOOL _hasChapterData;
-    unsigned long long _itemID;
-    BOOL _likeable;
-    int _likedState;
-    int _mediaKind;
-    int _playbackState;
-    int _revisionNumber;
-    int _scrubbableState;
-    double _timeRemaining;
-    double _timestamp;
-    double _totalDuration;
-    NSString *_trackName;
+    NSString * _albumName;
+    NSString * _artistName;
+    BOOL  _canSkipNext;
+    BOOL  _canSkipPrevious;
+    BOOL  _canWishlist;
+    unsigned int  _databaseID;
+    BOOL  _hasChapterData;
+    unsigned int  _itemID;
+    BOOL  _likeable;
+    int  _likedState;
+    int  _mediaKind;
+    int  _playbackState;
+    int  _revisionNumber;
+    int  _scrubbableState;
+    double  _timeRemaining;
+    double  _timestamp;
+    double  _totalDuration;
+    NSString * _trackName;
 }
 
 @property (nonatomic, retain) NSString *albumName;
@@ -29,9 +29,9 @@
 @property (nonatomic) BOOL canSkipNext;
 @property (nonatomic) BOOL canSkipPrevious;
 @property (nonatomic) BOOL canWishlist;
-@property (nonatomic) unsigned long long databaseID;
+@property (nonatomic) unsigned int databaseID;
 @property (nonatomic) BOOL hasChapterData;
-@property (nonatomic) unsigned long long itemID;
+@property (nonatomic) unsigned int itemID;
 @property (getter=isLikeable, nonatomic) BOOL likeable;
 @property (nonatomic) int likedState;
 @property (nonatomic) int mediaKind;
@@ -51,13 +51,13 @@
 - (BOOL)canSkipNext;
 - (BOOL)canSkipPrevious;
 - (BOOL)canWishlist;
-- (unsigned long long)databaseID;
+- (unsigned int)databaseID;
 - (id)description;
 - (BOOL)hasChapterData;
 - (id)initWithProtobuf:(id)arg1;
 - (BOOL)isLikeable;
 - (BOOL)isPlaying;
-- (unsigned long long)itemID;
+- (unsigned int)itemID;
 - (int)likedState;
 - (int)mediaKind;
 - (int)playbackState;
@@ -69,9 +69,9 @@
 - (void)setCanSkipNext:(BOOL)arg1;
 - (void)setCanSkipPrevious:(BOOL)arg1;
 - (void)setCanWishlist:(BOOL)arg1;
-- (void)setDatabaseID:(unsigned long long)arg1;
+- (void)setDatabaseID:(unsigned int)arg1;
 - (void)setHasChapterData:(BOOL)arg1;
-- (void)setItemID:(unsigned long long)arg1;
+- (void)setItemID:(unsigned int)arg1;
 - (void)setLikeable:(BOOL)arg1;
 - (void)setLikedState:(int)arg1;
 - (void)setMediaKind:(int)arg1;

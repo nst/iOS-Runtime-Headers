@@ -3,7 +3,7 @@
  */
 
 @interface CMLogItem : NSObject <NSCopying, NSSecureCoding> {
-    id _internalLogItem;
+    id  _internalLogItem;
 }
 
 @property (nonatomic, readonly) double timestamp;

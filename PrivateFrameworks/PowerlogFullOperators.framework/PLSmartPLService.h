@@ -3,7 +3,7 @@
  */
 
 @interface PLSmartPLService : PLService {
-    NSMutableDictionary *_smartPLHelpers;
+    NSMutableDictionary * _smartPLHelpers;
 }
 
 @property (retain) NSMutableDictionary *smartPLHelpers;

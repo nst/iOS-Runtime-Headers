@@ -3,8 +3,8 @@
  */
 
 @interface _NSXPCConnectionRequestedReplyInfo : NSObject {
-    id /* block */ _cleanupBlock;
-    NSProgress *_progress;
+    id /* block */  _cleanupBlock;
+    NSProgress * _progress;
 }
 
 @property (copy) id /* block */ cleanupBlock;

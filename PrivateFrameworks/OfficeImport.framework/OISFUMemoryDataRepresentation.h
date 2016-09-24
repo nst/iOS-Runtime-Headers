@@ -3,13 +3,13 @@
  */
 
 @interface OISFUMemoryDataRepresentation : OISFUDataRepresentation {
-    NSData *mData;
+    NSData * mData;
 }
 
 - (id)bufferedInputStream;
 - (id)bufferedInputStreamWithBufferSize:(unsigned long)arg1;
 - (id)data;
-- (long long)dataLength;
+- (int)dataLength;
 - (void)dealloc;
 - (BOOL)hasSameLocationAs:(id)arg1;
 - (id)initWithData:(id)arg1;

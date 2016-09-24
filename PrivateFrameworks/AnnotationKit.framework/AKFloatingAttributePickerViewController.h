@@ -3,16 +3,16 @@
  */
 
 @interface AKFloatingAttributePickerViewController : UIViewController <AKTextAttributesUserInterfaceItem> {
-    UIColor *_color;
-    int _colorAttributeTag;
-    AKColorPaletteView *_colorPalette;
-    UIBarButtonItem *_colorPaletteButtonItem;
-    AKController *_controller;
-    NSArray *_rightButtonItems;
-    UIView *_separatorView;
-    NSArray *_staticItems;
-    int _tag;
-    UIToolbar *_toolbar;
+    UIColor * _color;
+    int  _colorAttributeTag;
+    AKColorPaletteView * _colorPalette;
+    UIBarButtonItem * _colorPaletteButtonItem;
+    AKController * _controller;
+    NSArray * _rightButtonItems;
+    UIView * _separatorView;
+    NSArray * _staticItems;
+    int  _tag;
+    UIToolbar * _toolbar;
 }
 
 @property (nonatomic, retain) UIColor *color;
@@ -31,6 +31,7 @@
 @property (nonatomic, retain) UIToolbar *toolbar;
 
 - (void).cxx_destruct;
+- (id)_separatorColorForToolbarColor:(id)arg1;
 - (id)color;
 - (int)colorAttributeTag;
 - (id)colorPalette;

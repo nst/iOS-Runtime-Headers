@@ -3,8 +3,8 @@
  */
 
 @interface CSLUIPBProperty : PBCodable <NSCopying> {
-    NSString *_name;
-    CSLUIPBPropertyValue *_value;
+    NSString * _name;
+    CSLUIPBPropertyValue * _value;
 }
 
 @property (nonatomic, readonly) BOOL hasName;

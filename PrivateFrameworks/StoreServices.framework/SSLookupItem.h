@@ -3,7 +3,7 @@
  */
 
 @interface SSLookupItem : NSObject {
-    NSDictionary *_dictionary;
+    NSDictionary * _dictionary;
 }
 
 @property (nonatomic, readonly) NSNumber *ITunesStoreIdentifier;
@@ -19,8 +19,8 @@
 @property (nonatomic, readonly) int numberOfUserRatingsForCurrentVersion;
 @property (nonatomic, readonly) NSArray *offers;
 @property (nonatomic, readonly) NSURL *productPageURL;
-@property (nonatomic, readonly) float userRating;
-@property (nonatomic, readonly) float userRatingForCurrentVersion;
+@property (nonatomic, readonly) double userRating;
+@property (nonatomic, readonly) double userRatingForCurrentVersion;
 
 // Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
 
@@ -49,5 +49,13 @@
 - (BOOL)ml_isAUCVideoKind;
 - (BOOL)ml_isMusicItemKind;
 - (BOOL)ml_isMusicVideoKind;
+
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
+- (id)appAdamID;
+- (BOOL)isPeriodValid:(id)arg1 includeDays:(BOOL)arg2;
+- (id)offerName;
+- (id)subscriptionPeriodInISO_8601;
+- (id)trialPeriodInISO_8601;
 
 @end

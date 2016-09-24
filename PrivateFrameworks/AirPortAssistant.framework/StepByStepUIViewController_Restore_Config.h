@@ -3,11 +3,11 @@
  */
 
 @interface StepByStepUIViewController_Restore_Config : StepByStepUIViewController {
-    BOOL dontRestore;
-    UIView *dontRestoreRecommendationContainerView;
-    UILabel *dontRestoreRecommendationLabel;
-    UIView *restoreRecommendationContainerView;
-    UILabel *restoreRecommendationLabel;
+    BOOL  dontRestore;
+    UIView * dontRestoreRecommendationContainerView;
+    UILabel * dontRestoreRecommendationLabel;
+    UIView * restoreRecommendationContainerView;
+    UILabel * restoreRecommendationLabel;
 }
 
 @property (nonatomic, retain) UIView *dontRestoreRecommendationContainerView;

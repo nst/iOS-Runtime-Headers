@@ -3,9 +3,9 @@
  */
 
 @interface CoreRCManagerProvider : CoreRCManager <CoreRCInterfaceControllerDelegate> {
-    CoreRCInterfaceController *_interfaceController;
-    NSArray *_pluginOverrides;
-    CoreCECOverride *_standardOverride;
+    CoreRCInterfaceController * _interfaceController;
+    NSArray * _pluginOverrides;
+    CoreCECOverride * _standardOverride;
 }
 
 @property (readonly, copy) NSString *debugDescription;

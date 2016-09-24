@@ -3,12 +3,12 @@
  */
 
 @interface MDLTextureFilter : NSObject {
-    unsigned int magFilter;
-    unsigned int minFilter;
-    unsigned int mipFilter;
-    unsigned int rWrapMode;
-    unsigned int sWrapMode;
-    unsigned int tWrapMode;
+    unsigned int  magFilter;
+    unsigned int  minFilter;
+    unsigned int  mipFilter;
+    unsigned int  rWrapMode;
+    unsigned int  sWrapMode;
+    unsigned int  tWrapMode;
 }
 
 @property (nonatomic) unsigned int magFilter;

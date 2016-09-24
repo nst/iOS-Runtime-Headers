@@ -3,16 +3,16 @@
  */
 
 @interface CPLMasterChange : CPLItemChange {
-    NSDate *_creationDate;
-    NSString *_filename;
-    unsigned int _fullSizeJPEGSource;
-    NSDate *_importDate;
-    NSString *_importGroupIdentifier;
-    NSString *_itemType;
-    NSData *_mediaMetaData;
-    NSString *_mediaMetaDataType;
-    int _originalOrientation;
-    NSArray *_resources;
+    NSDate * _creationDate;
+    NSString * _filename;
+    unsigned int  _fullSizeJPEGSource;
+    NSDate * _importDate;
+    NSString * _importGroupIdentifier;
+    NSString * _itemType;
+    NSData * _mediaMetaData;
+    NSString * _mediaMetaDataType;
+    int  _originalOrientation;
+    NSArray * _resources;
 }
 
 @property (nonatomic, copy) NSDate *creationDate;
@@ -61,6 +61,7 @@
 - (void)setName:(id)arg1;
 - (void)setOriginalOrientation:(int)arg1;
 - (void)setResources:(id)arg1;
+- (BOOL)supportsDeletion;
 - (BOOL)supportsResources;
 
 @end

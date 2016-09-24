@@ -3,7 +3,7 @@
  */
 
 @interface GEOWeakPointerWrapper : NSObject {
-    id _weakObject;
+    id  _weakObject;
 }
 
 @property (nonatomic, readonly) id object;

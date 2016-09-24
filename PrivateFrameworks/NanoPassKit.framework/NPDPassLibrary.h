@@ -3,18 +3,24 @@
  */
 
 @interface NPDPassLibrary : NSObject <PDXPCServiceExportedInterface> {
-    NSXPCConnection *_connection;
-    NPKPassLibraryFilter *_filter;
-    NSObject<OS_dispatch_queue> *_queue;
-    BOOL _serviceActive;
+    NSXPCConnection * _connection;
+    <NPDPassLibraryDelegate> * _delegate;
+    NPKPassLibraryFilter * _filter;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSString * _remoteProcessApplicationIdentifier;
+    int  _remoteProcessIdentifier;
+    BOOL  _serviceActive;
 }
 
-@property (retain) NSXPCConnection *connection;
+@property (nonatomic) NSXPCConnection *connection;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <NPDPassLibraryDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (retain) NPKPassLibraryFilter *filter;
+@property (nonatomic, retain) NPKPassLibraryFilter *filter;
 @property (readonly) unsigned int hash;
 @property (retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, readonly) NSString *remoteProcessApplicationIdentifier;
+@property (readonly) int remoteProcessIdentifier;
 @property BOOL serviceActive;
 @property (readonly) Class superclass;
 
@@ -23,13 +29,17 @@
 - (void)broadcastPassRemoved:(id)arg1;
 - (void)broadcastPassUpdated:(id)arg1;
 - (id)connection;
+- (id)delegate;
 - (id)filter;
 - (id)initWithConnection:(id)arg1;
 - (id)queue;
+- (id)remoteProcessApplicationIdentifier;
+- (int)remoteProcessIdentifier;
 - (BOOL)serviceActive;
 - (void)serviceResumed;
 - (void)serviceSuspended;
 - (void)setConnection:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setFilter:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setServiceActive:(BOOL)arg1;

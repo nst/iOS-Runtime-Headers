@@ -3,10 +3,10 @@
  */
 
 @interface CUIMutableThemeRendition : CUIThemeRendition {
-    struct CGImage { } *_image;
-    struct _renditionkeytoken { unsigned short x1; unsigned short x2; } *_renditionKey;
-    CUIRenditionMetrics *_renditionMetrics;
-    CUIRenditionSliceInformation *_sliceInformation;
+    struct CGImage { } * _image;
+    struct _renditionkeytoken { unsigned short x1; unsigned short x2; } * _renditionKey;
+    CUIRenditionMetrics * _renditionMetrics;
+    CUIRenditionSliceInformation * _sliceInformation;
 }
 
 - (void)dealloc;

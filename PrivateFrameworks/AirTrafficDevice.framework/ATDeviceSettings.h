@@ -3,8 +3,8 @@
  */
 
 @interface ATDeviceSettings : NSObject {
-    NSObject<OS_dispatch_queue> *_queue;
-    NSUserDefaults *_userDefaults;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSUserDefaults * _userDefaults;
 }
 
 @property (nonatomic, readonly, copy) NSArray *dataClassesNeedingSync;
@@ -14,6 +14,8 @@
 @property (nonatomic, readonly) BOOL isDeviceLinkClient;
 @property (nonatomic, readonly, copy) NSString *libraryIdentifier;
 @property (nonatomic, readonly) double pairingSyncCompletionTime;
+@property (nonatomic, readonly) unsigned int restoreBatchSize;
+@property (nonatomic, readonly) BOOL restoreBatchingEnabled;
 @property (nonatomic, readonly, copy) NSString *serviceDomain;
 @property (nonatomic, readonly, copy) NSString *serviceName;
 @property (nonatomic, readonly, copy) NSString *serviceType;
@@ -39,6 +41,8 @@
 - (id)libraryIdentifier;
 - (double)pairingSyncCompletionTime;
 - (void)removeEndpointInfoForLibrary:(id)arg1;
+- (unsigned int)restoreBatchSize;
+- (BOOL)restoreBatchingEnabled;
 - (id)serviceDomain;
 - (id)serviceName;
 - (id)serviceType;

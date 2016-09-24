@@ -3,10 +3,10 @@
  */
 
 @interface SSSQLiteContainsPredicate : SSSQLitePropertyPredicate <NSCopying> {
-    BOOL _negative;
-    SSSQLiteQuery *_query;
-    NSString *_queryProperty;
-    id _values;
+    BOOL  _negative;
+    SSSQLiteQuery * _query;
+    NSString * _queryProperty;
+    id  _values;
 }
 
 @property (getter=isNegative, nonatomic, readonly) BOOL negative;

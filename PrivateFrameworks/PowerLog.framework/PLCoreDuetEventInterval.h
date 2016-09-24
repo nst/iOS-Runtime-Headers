@@ -3,8 +3,8 @@
  */
 
 @interface PLCoreDuetEventInterval : NSObject {
-    NSDate *_endDate;
-    NSDate *_startDate;
+    NSDate * _endDate;
+    NSDate * _startDate;
 }
 
 @property (retain) NSDate *endDate;

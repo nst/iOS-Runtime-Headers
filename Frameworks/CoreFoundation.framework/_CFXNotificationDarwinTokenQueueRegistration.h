@@ -3,7 +3,7 @@
  */
 
 @interface _CFXNotificationDarwinTokenQueueRegistration : _CFXNotificationDarwinTokenRegistration {
-    id _queue;
+    id  _queue;
 }
 
 @property (retain) id queue;

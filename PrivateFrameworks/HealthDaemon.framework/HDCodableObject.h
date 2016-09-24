@@ -2,32 +2,35 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDCodableObject : PBCodable <NSCopying> {
-    double _creationDate;
+@interface HDCodableObject : PBCodable <HDDecoding, NSCopying> {
+    double  _creationDate;
     struct { 
         unsigned int creationDate : 1; 
-    } _has;
-    HDCodableMetadataDictionary *_metadataDictionary;
-    NSString *_sourceBundleIdentifier;
-    NSData *_uuid;
+    }  _has;
+    HDCodableMetadataDictionary * _metadataDictionary;
+    NSString * _sourceBundleIdentifier;
+    NSData * _uuid;
 }
 
 @property (nonatomic) double creationDate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL hasCreationDate;
 @property (nonatomic, readonly) BOOL hasMetadataDictionary;
 @property (nonatomic, readonly) BOOL hasSourceBundleIdentifier;
 @property (nonatomic, readonly) BOOL hasUuid;
+@property (readonly) unsigned int hash;
 @property (nonatomic, retain) HDCodableMetadataDictionary *metadataDictionary;
 @property (nonatomic, retain) NSString *sourceBundleIdentifier;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) NSData *uuid;
 
 - (void).cxx_destruct;
+- (BOOL)applyToObject:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)creationDate;
-- (double)decodedCreationDate;
 - (id)decodedMetadata;
-- (id)decodedUUID;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasCreationDate;

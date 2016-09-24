@@ -3,8 +3,8 @@
  */
 
 @interface EBSheetContext : NSObject <OCDDelayedNodeContext> {
-    unsigned int mSheetIndex;
-    EBReaderSheetState *mSheetState;
+    unsigned int  mSheetIndex;
+    EBReaderSheetState * mSheetState;
 }
 
 @property (readonly, copy) NSString *debugDescription;

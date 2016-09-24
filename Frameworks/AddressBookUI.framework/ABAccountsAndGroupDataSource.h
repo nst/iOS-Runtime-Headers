@@ -3,14 +3,14 @@
  */
 
 @interface ABAccountsAndGroupDataSource : NSObject <UITableViewDataSource> {
-    NSArray *_accountDisplayNames;
-    NSArray *_accountIdentifiers;
-    ACAccountStore *_accountStore;
-    BOOL _dirty;
-    NSDictionary *_groupsByAccountIdentifier;
-    BOOL _hidesGlobalGroupWrapper;
-    BOOL _hidesSearchableSources;
-    ABModel *_model;
+    NSArray * _accountDisplayNames;
+    NSArray * _accountIdentifiers;
+    ACAccountStore * _accountStore;
+    BOOL  _dirty;
+    NSDictionary * _groupsByAccountIdentifier;
+    BOOL  _hidesGlobalGroupWrapper;
+    BOOL  _hidesSearchableSources;
+    ABModel * _model;
 }
 
 @property (nonatomic, retain) ACAccountStore *accountStore;

@@ -3,15 +3,15 @@
  */
 
 @interface HDIDSIncomingResponse : NSObject <HDNanoSyncDescription> {
-    NSData *_data;
-    IDSDevice *_fromDevice;
-    NSString *_idsIdentifier;
-    HDIDSMessageCenter *_messageCenter;
-    unsigned short _messageID;
-    id _pbResponse;
-    NSString *_requestIDSIdentifier;
-    NSDictionary *_requestPersistentUserInfo;
-    NSDate *_requestSent;
+    NSData * _data;
+    IDSDevice * _fromDevice;
+    NSString * _idsIdentifier;
+    HDIDSMessageCenter * _messageCenter;
+    unsigned short  _messageID;
+    id  _pbResponse;
+    NSString * _requestIDSIdentifier;
+    NSDictionary * _requestPersistentUserInfo;
+    NSDate * _requestSent;
 }
 
 @property (nonatomic, retain) NSData *data;

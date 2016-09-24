@@ -3,18 +3,22 @@
  */
 
 @interface CKDPShare : PBCodable <NSCopying> {
-    NSString *_etag;
+    NSString * _etag;
     struct { 
         unsigned int publicAccess : 1; 
-    } _has;
-    NSData *_internalAppSpecificMetadata;
-    CKDPProtectionInfo *_invitedPcs;
-    NSMutableArray *_participants;
-    int _publicAccess;
-    CKDPProtectionInfo *_selfAddedPcs;
-    CKDPShareIdentifier *_shareId;
-    NSData *_shortTokenHash;
-    NSString *_shortTokenRoutingKey;
+        unsigned int publisherModel : 1; 
+    }  _has;
+    NSData * _internalAppSpecificMetadata;
+    NSMutableArray * _invitedKeyToRemoves;
+    CKDPProtectionInfo * _invitedPcs;
+    NSMutableArray * _participants;
+    NSMutableArray * _potentialMatchs;
+    int  _publicAccess;
+    BOOL  _publisherModel;
+    CKDPProtectionInfo * _selfAddedPcs;
+    CKDPShareIdentifier * _shareId;
+    NSData * _shortTokenHash;
+    NSString * _shortTokenRoutingKey;
 }
 
 @property (nonatomic, retain) NSString *etag;
@@ -22,22 +26,36 @@
 @property (nonatomic, readonly) BOOL hasInternalAppSpecificMetadata;
 @property (nonatomic, readonly) BOOL hasInvitedPcs;
 @property (nonatomic) BOOL hasPublicAccess;
+@property (nonatomic) BOOL hasPublisherModel;
 @property (nonatomic, readonly) BOOL hasSelfAddedPcs;
 @property (nonatomic, readonly) BOOL hasShareId;
 @property (nonatomic, readonly) BOOL hasShortTokenHash;
 @property (nonatomic, readonly) BOOL hasShortTokenRoutingKey;
 @property (nonatomic, retain) NSData *internalAppSpecificMetadata;
+@property (nonatomic, retain) NSMutableArray *invitedKeyToRemoves;
 @property (nonatomic, retain) CKDPProtectionInfo *invitedPcs;
 @property (nonatomic, retain) NSMutableArray *participants;
+@property (nonatomic, retain) NSMutableArray *potentialMatchs;
 @property (nonatomic) int publicAccess;
+@property (nonatomic) BOOL publisherModel;
 @property (nonatomic, retain) CKDPProtectionInfo *selfAddedPcs;
 @property (nonatomic, retain) CKDPShareIdentifier *shareId;
 @property (nonatomic, retain) NSData *shortTokenHash;
 @property (nonatomic, retain) NSString *shortTokenRoutingKey;
 
++ (Class)invitedKeyToRemoveType;
++ (Class)participantType;
++ (Class)potentialMatchType;
+
 - (void).cxx_destruct;
+- (int)StringAsPublicAccess:(id)arg1;
+- (id)_publicAccessCKLogValue;
+- (void)addInvitedKeyToRemove:(id)arg1;
 - (void)addParticipant:(id)arg1;
+- (void)addPotentialMatch:(id)arg1;
+- (void)clearInvitedKeyToRemoves;
 - (void)clearParticipants;
+- (void)clearPotentialMatchs;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -47,27 +65,40 @@
 - (BOOL)hasInternalAppSpecificMetadata;
 - (BOOL)hasInvitedPcs;
 - (BOOL)hasPublicAccess;
+- (BOOL)hasPublisherModel;
 - (BOOL)hasSelfAddedPcs;
 - (BOOL)hasShareId;
 - (BOOL)hasShortTokenHash;
 - (BOOL)hasShortTokenRoutingKey;
 - (unsigned int)hash;
 - (id)internalAppSpecificMetadata;
+- (id)invitedKeyToRemoveAtIndex:(unsigned int)arg1;
+- (id)invitedKeyToRemoves;
+- (unsigned int)invitedKeyToRemovesCount;
 - (id)invitedPcs;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)participantAtIndex:(unsigned int)arg1;
 - (id)participants;
 - (unsigned int)participantsCount;
+- (id)potentialMatchAtIndex:(unsigned int)arg1;
+- (id)potentialMatchs;
+- (unsigned int)potentialMatchsCount;
 - (int)publicAccess;
+- (id)publicAccessAsString:(int)arg1;
+- (BOOL)publisherModel;
 - (BOOL)readFrom:(id)arg1;
 - (id)selfAddedPcs;
 - (void)setEtag:(id)arg1;
 - (void)setHasPublicAccess:(BOOL)arg1;
+- (void)setHasPublisherModel:(BOOL)arg1;
 - (void)setInternalAppSpecificMetadata:(id)arg1;
+- (void)setInvitedKeyToRemoves:(id)arg1;
 - (void)setInvitedPcs:(id)arg1;
 - (void)setParticipants:(id)arg1;
+- (void)setPotentialMatchs:(id)arg1;
 - (void)setPublicAccess:(int)arg1;
+- (void)setPublisherModel:(BOOL)arg1;
 - (void)setSelfAddedPcs:(id)arg1;
 - (void)setShareId:(id)arg1;
 - (void)setShortTokenHash:(id)arg1;

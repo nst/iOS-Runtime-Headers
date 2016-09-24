@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DTransformGeometryRenderProcessor : TSCH3DRetargetRenderProcessor {
-    TSCH3DDataBuffer *mBuffer;
+    TSCH3DDataBuffer * mBuffer;
 }
 
 @property (nonatomic, readonly) TSCH3DDataBuffer *buffer;

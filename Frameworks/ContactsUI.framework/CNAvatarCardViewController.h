@@ -2,26 +2,29 @@
    Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
  */
 
-@interface CNAvatarCardViewController : UIViewController <CNAvatarCardActionsViewDelegate, CNCardTransitioning, UIGestureRecognizerDelegate> {
-    CNAvatarCardActionsView *_actionsView;
-    CNAvatarCardController *_cardController;
-    <CNAvatarCardViewControllerDelegate> *_delegate;
-    UIView *_effectView;
-    BOOL _hasBackgroundColor;
-    BOOL _hasHeader;
-    UIView *_headerContainerView;
-    BOOL _headerOnTop;
-    UIView *_sourceView;
-    NSArray *_verticalConstraints;
-    BOOL _visible;
+@interface CNAvatarCardViewController : UIViewController <CNAvatarCardActionsViewDelegate, CNCardTransitioning, CNContactActionsViewControllerDelegate, UIGestureRecognizerDelegate> {
+    CNContactActionsViewController * _actionsViewController;
+    NSLayoutConstraint * _actionsViewControllerHeightConstraint;
+    CNAvatarCardController * _cardController;
+    <CNAvatarCardViewControllerDelegate> * _delegate;
+    UIView * _effectView;
+    BOOL  _hasBackgroundColor;
+    BOOL  _hasHeader;
+    UIView * _headerContainerView;
+    BOOL  _headerOnTop;
+    CNAvatarCardActionsView * _legacyContactActionsView;
+    UIView * _sourceView;
+    NSArray * _verticalConstraints;
+    BOOL  _visible;
 }
 
 @property (nonatomic, copy) NSArray *actionCategories;
+@property (nonatomic, readonly) <CNAvatarCardActionList> *actionList;
 @property (nonatomic) BOOL actionsReversed;
-@property (nonatomic, retain) CNAvatarCardActionsView *actionsView;
+@property (nonatomic, retain) CNContactActionsViewController *actionsViewController;
+@property (nonatomic, retain) NSLayoutConstraint *actionsViewControllerHeightConstraint;
 @property (nonatomic) BOOL bypassActionValidation;
 @property (nonatomic) CNAvatarCardController *cardController;
-@property (nonatomic, retain) NSArray *contacts;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CNAvatarCardViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -32,32 +35,38 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIView *headerContainerView;
 @property (nonatomic) BOOL headerOnTop;
+@property (nonatomic, retain) CNAvatarCardActionsView *legacyContactActionsView;
 @property (nonatomic, retain) UIView *sourceView;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } transitioningContentFrame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } transitioningContentFrame;
 @property (nonatomic, readonly) UIView *transitioningContentView;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } transitioningFrame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } transitioningFrame;
 @property (nonatomic, readonly) UIImage *transitioningImage;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } transitioningImageFrame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } transitioningImageFrame;
 @property BOOL transitioningImageVisible;
 @property (nonatomic, readonly) UIView *transitioningView;
 @property (nonatomic, retain) NSArray *verticalConstraints;
 @property (getter=isVisible, nonatomic) BOOL visible;
 
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_photoFrameInView:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_photoFrameInView:(id)arg1;
 - (void)_updatePreferredSize;
 - (id)actionCategories;
+- (id)actionList;
 - (BOOL)actionsReversed;
 - (id)actionsView;
+- (id)actionsViewController;
+- (id)actionsViewControllerHeightConstraint;
 - (BOOL)bypassActionValidation;
 - (void)cardActionsView:(id)arg1 didShowActions:(id)arg2;
 - (id)cardActionsView:(id)arg1 orderedPropertiesForProperties:(id)arg2 category:(id)arg3;
 - (void)cardActionsView:(id)arg1 willShowActions:(id)arg2;
 - (id)cardController;
-- (id)contacts;
+- (void)contactActionsViewController:(id)arg1 didSelectAction:(id)arg2;
 - (void)contentSizeCategoryDidChange:(id)arg1;
 - (id)delegate;
+- (void)didAddActionsViewToHierarchy;
+- (void)dismissAnimated:(BOOL)arg1;
 - (void)dismissViewControllerForCardActionsView:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)dismissesBeforePerforming;
 - (id)effectView;
@@ -65,15 +74,17 @@
 - (BOOL)hasHeader;
 - (id)headerContainerView;
 - (BOOL)headerOnTop;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)initWithContacts:(id)arg1;
 - (BOOL)isVisible;
+- (id)legacyContactActionsView;
+- (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)refreshActions;
 - (void)setActionCategories:(id)arg1;
 - (void)setActionsReversed:(BOOL)arg1;
-- (void)setActionsView:(id)arg1;
+- (void)setActionsViewController:(id)arg1;
+- (void)setActionsViewControllerHeightConstraint:(id)arg1;
 - (void)setBypassActionValidation:(BOOL)arg1;
 - (void)setCardController:(id)arg1;
-- (void)setContacts:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDismissesBeforePerforming:(BOOL)arg1;
 - (void)setEffectView:(id)arg1;
@@ -81,17 +92,19 @@
 - (void)setHasHeader:(BOOL)arg1;
 - (void)setHeaderContainerView:(id)arg1;
 - (void)setHeaderOnTop:(BOOL)arg1;
+- (void)setLegacyContactActionsView:(id)arg1;
 - (void)setSourceView:(id)arg1;
 - (void)setTransitioningImageVisible:(BOOL)arg1;
 - (void)setVerticalConstraints:(id)arg1;
 - (void)setVisible:(BOOL)arg1;
 - (id)sourceView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })transitioningContentFrame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })transitioningFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })transitioningContentFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })transitioningFrame;
 - (id)transitioningImage;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })transitioningImageFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })transitioningImageFrame;
 - (BOOL)transitioningImageVisible;
 - (id)transitioningView;
+- (void)updateActionsControllerHeightConstraint;
 - (void)updateViewConstraints;
 - (id)verticalConstraints;
 - (id)viewControllerForCardActionsView:(id)arg1;
@@ -100,5 +113,6 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)willAddActionsViewToHierarchy;
 
 @end

@@ -6,8 +6,8 @@
     struct _opaque_pthread_rwlock_t { 
         long __sig; 
         BOOL __opaque[124]; 
-    } mRWLock;
-    TSURetainedPointerKeyDictionary *mRetainedPointerKeyDictionary;
+    }  mRWLock;
+    TSURetainedPointerKeyDictionary * mRetainedPointerKeyDictionary;
 }
 
 - (void)dealloc;

@@ -3,7 +3,7 @@
  */
 
 @interface MFPalette : NSObject <MFObject> {
-    NSMutableArray *m_colours;
+    NSMutableArray * m_colours;
 }
 
 + (id)paletteWithColours:(id)arg1;

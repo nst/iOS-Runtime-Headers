@@ -3,12 +3,12 @@
  */
 
 @interface CUIPSDLayerEffectInnerShadow : CUIPSDLayerEffectComponent {
-    short _angle;
-    int _blendMode;
-    unsigned int _blurSize;
-    CUIColor *_color;
-    unsigned int _distance;
-    float _opacity;
+    short  _angle;
+    int  _blendMode;
+    unsigned int  _blurSize;
+    CUIColor * _color;
+    unsigned int  _distance;
+    double  _opacity;
 }
 
 @property short angle;
@@ -16,7 +16,7 @@
 @property unsigned int blurSize;
 @property (retain) CUIColor *color;
 @property unsigned int distance;
-@property float opacity;
+@property double opacity;
 
 - (short)angle;
 - (int)blendMode;

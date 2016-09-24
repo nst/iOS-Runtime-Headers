@@ -3,10 +3,10 @@
  */
 
 @interface PKPushTokenFetcher : NSObject <APSConnectionDelegate> {
-    NSMutableArray *_completionHandlers;
-    NSObject<OS_dispatch_queue> *_internalQueue;
-    APSConnection *_pushConnection;
-    NSObject<OS_dispatch_source> *_timeoutTimer;
+    NSMutableArray * _completionHandlers;
+    NSObject<OS_dispatch_queue> * _internalQueue;
+    APSConnection * _pushConnection;
+    NSObject<OS_dispatch_source> * _timeoutTimer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,6 +14,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_handleTimeout;
 - (void)_invokeCompletionWithPushToken:(id)arg1;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;

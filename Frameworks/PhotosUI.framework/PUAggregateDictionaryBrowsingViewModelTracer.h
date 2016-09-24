@@ -3,26 +3,26 @@
  */
 
 @interface PUAggregateDictionaryBrowsingViewModelTracer : NSObject <PUBrowsingViewModelChangeObserver> {
-    BOOL __didScheduleCurrentAssetChange;
-    BOOL __didScheduleViewUpdate;
-    BOOL __isApplicationActive;
-    BOOL __isPerformingChanges;
-    BOOL __isPerformingUpdate;
-    BOOL __isPlayingStreamedVideo;
-    BOOL __isPlayingVideo;
-    BOOL __isStreamedVideoActuallyPlaying;
-    BOOL __isStreamedVideoStalled;
-    BOOL __needsUpdateOneUpSessionActive;
-    BOOL __needsUpdatePlayingVideo;
-    BOOL __needsUpdateViewedAsset;
-    BOOL __needsUpdateViewedAssetLongEnough;
-    BOOL __oneUpSessionActive;
-    double __oneUpSessionStartTime;
-    <PUDisplayAsset> *__viewedAsset;
-    BOOL __viewedAssetLongEnough;
-    double __viewedAssetStartTime;
-    NSHashTable *__viewingContexts;
-    PUBrowsingViewModel *_browsingViewModel;
+    BOOL  __didScheduleCurrentAssetChange;
+    BOOL  __didScheduleViewUpdate;
+    BOOL  __isApplicationActive;
+    BOOL  __isPerformingChanges;
+    BOOL  __isPerformingUpdate;
+    BOOL  __isPlayingStreamedVideo;
+    BOOL  __isPlayingVideo;
+    BOOL  __isStreamedVideoActuallyPlaying;
+    BOOL  __isStreamedVideoStalled;
+    BOOL  __needsUpdateOneUpSessionActive;
+    BOOL  __needsUpdatePlayingVideo;
+    BOOL  __needsUpdateViewedAsset;
+    BOOL  __needsUpdateViewedAssetLongEnough;
+    BOOL  __oneUpSessionActive;
+    double  __oneUpSessionStartTime;
+    <PUDisplayAsset> * __viewedAsset;
+    BOOL  __viewedAssetLongEnough;
+    double  __viewedAssetStartTime;
+    NSHashTable * __viewingContexts;
+    PUBrowsingViewModel * _browsingViewModel;
 }
 
 @property (setter=_setDidScheduleCurrentAssetChange:, nonatomic) BOOL _didScheduleCurrentAssetChange;

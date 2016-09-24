@@ -3,12 +3,12 @@
  */
 
 @interface UIStoryboardSegueTemplate : NSObject <NSCoding> {
-    BOOL _animates;
-    NSString *_destinationViewControllerIdentifier;
-    NSString *_identifier;
-    BOOL _performOnViewLoad;
-    NSString *_segueClassName;
-    UIViewController *_viewController;
+    BOOL  _animates;
+    NSString * _destinationViewControllerIdentifier;
+    NSString * _identifier;
+    BOOL  _performOnViewLoad;
+    NSString * _segueClassName;
+    UIViewController * _viewController;
 }
 
 @property (nonatomic) BOOL animates;

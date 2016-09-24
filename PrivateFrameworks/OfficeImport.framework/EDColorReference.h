@@ -3,11 +3,11 @@
  */
 
 @interface EDColorReference : NSObject <NSCopying> {
-    unsigned int mColorIndex;
-    EDResources *mResources;
-    int mSystemColorID;
-    unsigned int mThemeIndex;
-    double mTint;
+    unsigned int  mColorIndex;
+    EDResources * mResources;
+    int  mSystemColorID;
+    unsigned int  mThemeIndex;
+    double  mTint;
 }
 
 + (id)colorReferenceWithColor:(id)arg1 resources:(id)arg2;

@@ -3,11 +3,11 @@
  */
 
 @interface SKUIGiftConfirmLabeledValue : UIView {
-    SKUIGiftDashView *_dashView;
-    UILabel *_labelLabel;
-    int _style;
-    UILabel *_subtitleLabel;
-    UILabel *_valueLabel;
+    SKUIGiftDashView * _dashView;
+    UILabel * _labelLabel;
+    int  _style;
+    UILabel * _subtitleLabel;
+    UILabel * _valueLabel;
 }
 
 @property (nonatomic, readonly) int giftConfirmLabelStyle;
@@ -23,7 +23,7 @@
 - (void)setLabel:(id)arg1;
 - (void)setSubtitleLabel:(id)arg1;
 - (void)setValue:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)subtitleLabel;
 - (id)value;
 

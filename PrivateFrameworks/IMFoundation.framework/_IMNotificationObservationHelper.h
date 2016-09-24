@@ -3,10 +3,10 @@
  */
 
 @interface _IMNotificationObservationHelper : NSObject {
-    id /* block */ _block;
-    NSString *_name;
-    id _object;
-    id _observer;
+    id /* block */  _block;
+    NSString * _name;
+    id  _object;
+    id  _observer;
 }
 
 - (void)_notification:(id)arg1;

@@ -3,10 +3,10 @@
  */
 
 @interface MRAVRoutingClientController : NSObject {
-    NSMutableDictionary *_cachedRoutesForCategories;
-    struct MRMediaRemoteService { } *_mediaRemoteService;
-    NSMutableDictionary *_pendingCompletionHandlersForCategories;
-    NSObject<OS_dispatch_queue> *_serialQueue;
+    NSMutableDictionary * _cachedRoutesForCategories;
+    struct MRMediaRemoteService { } * _mediaRemoteService;
+    NSMutableDictionary * _pendingCompletionHandlersForCategories;
+    NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
 @property (nonatomic, readonly) struct MRMediaRemoteService { }*mediaRemoteService;

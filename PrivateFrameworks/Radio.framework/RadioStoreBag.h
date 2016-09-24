@@ -3,17 +3,17 @@
  */
 
 @interface RadioStoreBag : NSObject {
-    NSArray *_amdDomains;
-    NSString *_leaseCertificateURLString;
-    NSDictionary *_mescalRequestWhitelist;
-    NSDictionary *_mescalResponseWhitelist;
-    NSString *_mescalSetupCertURLString;
-    NSString *_mescalSetupURLString;
-    SSVPlatformContext *_platformContext;
-    NSNumber *_shouldSendKBSyncDataValue;
-    NSString *_srdnldURLString;
-    NSString *_storeFrontSuffix;
-    NSDictionary *_tiltDictionary;
+    NSArray * _amdDomains;
+    NSString * _leaseCertificateURLString;
+    NSDictionary * _mescalRequestWhitelist;
+    NSDictionary * _mescalResponseWhitelist;
+    NSString * _mescalSetupCertURLString;
+    NSString * _mescalSetupURLString;
+    SSVPlatformContext * _platformContext;
+    NSNumber * _shouldSendKBSyncDataValue;
+    NSString * _srdnldURLString;
+    NSString * _storeFrontSuffix;
+    NSDictionary * _tiltDictionary;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *URLBagDictionary;

@@ -3,9 +3,9 @@
  */
 
 @interface SSVComplexOperation : SSVOperation {
-    SSVFairPlaySAPSession *_sapSession;
-    SSURLBag *_urlBag;
-    NSDictionary *_urlBagDictionary;
+    SSVFairPlaySAPSession * _sapSession;
+    SSURLBag * _urlBag;
+    NSDictionary * _urlBagDictionary;
 }
 
 @property (retain) SSVFairPlaySAPSession *SAPSession;

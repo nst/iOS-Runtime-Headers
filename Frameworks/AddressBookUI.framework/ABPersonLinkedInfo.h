@@ -3,10 +3,10 @@
  */
 
 @interface ABPersonLinkedInfo : NSObject {
-    NSString *_name;
-    ABUIPerson *_person;
-    NSString *_type;
-    BOOL _unified;
+    NSString * _name;
+    ABUIPerson * _person;
+    NSString * _type;
+    BOOL  _unified;
 }
 
 @property (retain) NSString *name;

@@ -3,10 +3,10 @@
  */
 
 @interface SKUIColorScheme : NSObject <NSCopying, NSSecureCoding> {
-    UIColor *_backgroundColor;
-    UIColor *_highlightedTextColor;
-    UIColor *_primaryTextColor;
-    UIColor *_secondaryTextColor;
+    UIColor * _backgroundColor;
+    UIColor * _highlightedTextColor;
+    UIColor * _primaryTextColor;
+    UIColor * _secondaryTextColor;
 }
 
 @property (nonatomic, copy) UIColor *backgroundColor;

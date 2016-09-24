@@ -3,21 +3,21 @@
  */
 
 @interface SKUIInteractiveSegmentedControl : UIControl {
-    id /* block */ _dividerCreationBlock;
-    NSMutableArray *_dividerViews;
-    float _dividerWidth;
-    NSArray *_segments;
-    float _selectionProgress;
+    id /* block */  _dividerCreationBlock;
+    NSMutableArray * _dividerViews;
+    double  _dividerWidth;
+    NSArray * _segments;
+    double  _selectionProgress;
 }
 
 @property (nonatomic, copy) id /* block */ dividerCreationBlock;
-@property (nonatomic) float dividerWidth;
+@property (nonatomic) double dividerWidth;
 @property (nonatomic, copy) NSArray *segments;
-@property (nonatomic) float selectionProgress;
+@property (nonatomic) double selectionProgress;
 
 - (void).cxx_destruct;
 - (void)_applySelectionProgressToSegments;
-- (id)_createDividerViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)_createDividerViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_notifyClientsOfSelectionProgressChange;
 - (void)_registerForObservationOfSegment:(id)arg1;
 - (void)_segmentControlTouchUpInsideAction:(id)arg1;
@@ -26,8 +26,8 @@
 - (void)dealloc;
 - (id /* block */)dividerCreationBlock;
 - (float)dividerWidth;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (float)relativeSelectionProgressForSelectionProgress:(float)arg1 segmentIndex:(int)arg2;
 - (id)segments;
@@ -39,6 +39,6 @@
 - (void)setDividerWidth:(float)arg1;
 - (void)setSegments:(id)arg1;
 - (void)setSelectionProgress:(float)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

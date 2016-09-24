@@ -14,6 +14,7 @@
 - (float)maxDepthRatio;
 - (Class)presetImagerClass;
 - (float)sageMaxDepthRatio;
+- (float)spiceMaxDepthRatio;
 - (Class)stageClass;
 - (id)supportedAxisScales;
 - (BOOL)supportsCategoryAxisSeriesNames;

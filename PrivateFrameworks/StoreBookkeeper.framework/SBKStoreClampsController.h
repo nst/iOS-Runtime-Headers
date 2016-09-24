@@ -3,16 +3,16 @@
  */
 
 @interface SBKStoreClampsController : NSObject <NSCoding> {
-    double _accountIdentifierCheckTimestamp;
-    double _authenticationNeededTimestamp;
-    double _backOffUntil;
-    double _networkingBlockedUntil;
-    double _nextUserCancelBackOffInterval;
-    NSData *_pendingUserDefaultArchivedData;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSDictionary *_transactionClamps;
-    double _userAcceptedSyncTimestamp;
-    double _userCancelledSignInBackOffUntil;
+    double  _accountIdentifierCheckTimestamp;
+    double  _authenticationNeededTimestamp;
+    double  _backOffUntil;
+    double  _networkingBlockedUntil;
+    double  _nextUserCancelBackOffInterval;
+    NSData * _pendingUserDefaultArchivedData;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSDictionary * _transactionClamps;
+    double  _userAcceptedSyncTimestamp;
+    double  _userCancelledSignInBackOffUntil;
 }
 
 @property double accountIdentifierCheckTimestamp;

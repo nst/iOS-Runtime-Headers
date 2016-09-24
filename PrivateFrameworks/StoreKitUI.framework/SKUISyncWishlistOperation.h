@@ -3,9 +3,9 @@
  */
 
 @interface SKUISyncWishlistOperation : NSOperation {
-    SKUIClientContext *_clientContext;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    id /* block */ _resultBlock;
+    SKUIClientContext * _clientContext;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    id /* block */  _resultBlock;
 }
 
 @property (copy) id /* block */ resultBlock;

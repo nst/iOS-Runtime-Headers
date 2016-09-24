@@ -2,28 +2,32 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKGlobeCameraController : VKScreenCameraController <VKInteractiveCameraController> {
+@interface VKGlobeCameraController : VKScreenCameraController <VKGesturingCameraController> {
+    double  _beganDoublePanPitch;
     struct CameraManager { 
         int (**_vptr$CameraManager)(); 
         bool _panBegin; 
         bool _panInProgress; 
         bool _panEnd; 
-        struct Vector2i { 
-            int _x; 
-            int _y; 
+        struct Matrix<int, 2, 1> { 
+            int _e[2]; 
         } _panCurrentCursor; 
-        struct Vector2i { 
-            int _x; 
-            int _y; 
+        struct Matrix<int, 2, 1> { 
+            int _e[2]; 
         } _panPreviousCursor; 
-        struct Vector2i { 
-            int _x; 
-            int _y; 
+        struct Matrix<int, 2, 1> { 
+            int _e[2]; 
         } _panStartCursor; 
-        struct Position3d { 
-            double _latitude; 
-            double _longitude; 
-            double _height; 
+        struct Coordinate3D<Radians, double> { 
+            struct Unit<RadianUnitDescription, double> { 
+                double _value; 
+            } latitude; 
+            struct Unit<RadianUnitDescription, double> { 
+                double _value; 
+            } longitude; 
+            struct Unit<MeterUnitDescription, double> { 
+                double _value; 
+            } altitude; 
         } _panStartPosition; 
         double _panDistance; 
         bool _panAtStartPosition; 
@@ -35,9 +39,8 @@
             double _longitude; 
             double _height; 
         } _rotateStartPosition; 
-        struct Vector2i { 
-            int _x; 
-            int _y; 
+        struct Matrix<int, 2, 1> { 
+            int _e[2]; 
         } _rotateCurrentCursor; 
         double _rotateAngle; 
         bool _tiltBegin; 
@@ -48,13 +51,11 @@
             double _longitude; 
             double _height; 
         } _tiltStartPosition; 
-        struct Vector2i { 
-            int _x; 
-            int _y; 
+        struct Matrix<int, 2, 1> { 
+            int _e[2]; 
         } _tiltCurrentCursor; 
-        struct Vector2i { 
-            int _x; 
-            int _y; 
+        struct Matrix<int, 2, 1> { 
+            int _e[2]; 
         } _tiltPreviousCursor; 
         double _tiltAngle; 
         bool _zoomBegin; 
@@ -65,9 +66,8 @@
             double _longitude; 
             double _height; 
         } _zoomStartPosition; 
-        struct Vector2i { 
-            int _x; 
-            int _y; 
+        struct Matrix<int, 2, 1> { 
+            int _e[2]; 
         } _zoomCurrentCursor; 
         double _zoomFactor; 
         double _zoomStartDistance; 
@@ -85,53 +85,54 @@
             double _y; 
             double _z; 
         } _startTiltLimitPosition; 
-        struct Vector3d { 
-            double _x; 
-            double _y; 
-            double _z; 
+        struct Matrix<double, 3, 1> { 
+            double _e[3]; 
         } _startTiltLimitDirection; 
         double _fullZoomTiltLimitFactor; 
-    } _cameraManager;
-    BOOL _couldEnter3DMode;
-    double _currentDoublePanPitch;
-    int _flyoverMode;
-    struct GlobeView { int (**x1)(); } *_globeView;
-    BOOL _isPitching;
-    BOOL _isRotating;
-    BOOL _wasPitched;
+    }  _cameraManager;
+    BOOL  _couldEnter3DMode;
+    double  _currentDoublePanPitch;
+    double  _currentZoomLevel;
+    int  _flyoverMode;
+    struct GlobeView { int (**x1)(); struct AnchorManagerPrivate {} *x2; struct Scene {} *x3; struct Context {} *x4; struct DtmCacheNode {} *x5; struct DtmRequestManager {} *x6; struct FreezeViewNode {} *x7; struct Projection { struct Perspective { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_8_1_1; struct Ortho { double x_2_2_1; double x_2_2_2; double x_2_2_3; double x_2_2_4; double x_2_2_5; double x_2_2_6; } x_8_1_2; bool x_8_1_3; bool x_8_1_4; } x8; struct FrameLatLon { double x_9_1_1; double x_9_1_2; double x_9_1_3; double x_9_1_4; struct PositionLatLonAlt { double x_5_2_1; double x_5_2_2; double x_5_2_3; } x_9_1_5; } x9; bool x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_11_1_1; } x11; } * _globeView;
+    BOOL  _isPitching;
+    BOOL  _isRotating;
+    double  _lastRotation;
+    double  _maxZoomLevel;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _panLastScreenPoint;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _panStartScreenPoint;
+    BOOL  _wasPitched;
 }
 
-@property (nonatomic, readonly) struct { double x1; double x2; double x3; } centerCoordinate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) int flyoverMode;
-@property (nonatomic) struct GlobeView { int (**x1)(); }*globeView;
+@property (nonatomic) struct GlobeView { int (**x1)(); struct AnchorManagerPrivate {} *x2; struct Scene {} *x3; struct Context {} *x4; struct DtmCacheNode {} *x5; struct DtmRequestManager {} *x6; struct FreezeViewNode {} *x7; struct Projection { struct Perspective { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_8_1_1; struct Ortho { double x_2_2_1; double x_2_2_2; double x_2_2_3; double x_2_2_4; double x_2_2_5; double x_2_2_6; } x_8_1_2; bool x_8_1_3; bool x_8_1_4; } x8; struct FrameLatLon { double x_9_1_1; double x_9_1_2; double x_9_1_3; double x_9_1_4; struct PositionLatLonAlt { double x_5_2_1; double x_5_2_2; double x_5_2_3; } x_9_1_5; } x9; bool x10; /* Warning: unhandled struct encoding: '{basic_string<char' */ struct x11; }*globeView; /* unknown property attribute:  std::__1::less<altitude::ManifestListener *> >=L}}}^{GeoServicesLoader}^{ManifestManager}^{GlobeDispatch}} */
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) GEOMapRegion *mapRegion;
-@property (nonatomic, readonly) GEOMapRegion *mapRegionOfInterest;
-@property (nonatomic, readonly) double pitch;
-@property (nonatomic, readonly) double presentationYaw;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) double yaw;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (struct { double x1; double x2; })_centerCoordinateForMapRegion:(id)arg1;
-- (struct CGPoint { float x1; float x2; })_centerScreenPoint;
-- (struct Vector2i { int x1; int x2; })_cursorFromScreenPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)_rotateAroundTargetWithDuration:(double)arg1 rotations:(double)arg2 completion:(id /* block */)arg3;
-- (struct CGPoint { float x1; float x2; })_scaledScreenPointForPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (double)_fovAdjustment;
 - (void)_updateCanEnter3DMode;
 - (void)_updateGlobeFromCamera;
 - (void)_updateIsPitched;
 - (void)adjustLoadingForAnimation:(float)arg1 progressFactor:(float)arg2;
 - (double)altitude;
-- (void)animateToMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 duration:(double)arg4 completion:(id /* block */)arg5;
 - (struct PositionGeo3d { double x1; double x2; double x3; })cameraPosition;
 - (BOOL)canEnter3DMode;
-- (struct { double x1; double x2; double x3; })centerCoordinate;
-- (BOOL)currentZoomLevelAllowsRotation;
+- (struct { double x1; double x2; })centerCoordinate;
+- (id /* block */)createMoveToZoomOutZoomInFrameFunction:(struct FrameLatLon { double x1; double x2; double x3; double x4; struct PositionLatLonAlt { double x_5_1_1; double x_5_1_2; double x_5_1_3; } x5; })arg1 toLatLon:(struct FrameLatLon { double x1; double x2; double x3; double x4; struct PositionLatLonAlt { double x_5_1_1; double x_5_1_2; double x_5_1_3; } x5; })arg2;
+- (double)currentZoomLevel;
 - (void)dealloc;
+- (double)distanceFromCenterCoordinate;
 - (double)durationToAnimateToMapRegion:(id)arg1;
 - (double)earthRadiusAt:(double)arg1;
 - (void)enter3DMode;
@@ -139,67 +140,60 @@
 - (int)flyoverMode;
 - (void)flyoverTourAnimation:(id)arg1 animateToStart:(BOOL)arg2 labelChanged:(id /* block */)arg3 stateChange:(id /* block */)arg4;
 - (double)geocAngleBetween:(struct { double x1; double x2; })arg1 andCoordinate:(struct { double x1; double x2; })arg2;
-- (struct GlobeView { int (**x1)(); }*)globeView;
+- (struct Matrix<double, 3, 1> { double x1[3]; })geocentricFromPosition:(struct PositionLatLonAlt { double x1; double x2; double x3; })arg1;
+- (struct GlobeView { int (**x1)(); struct AnchorManagerPrivate {} *x2; struct Scene {} *x3; struct Context {} *x4; struct DtmCacheNode {} *x5; struct DtmRequestManager {} *x6; struct FreezeViewNode {} *x7; struct Projection { struct Perspective { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_8_1_1; struct Ortho { double x_2_2_1; double x_2_2_2; double x_2_2_3; double x_2_2_4; double x_2_2_5; double x_2_2_6; } x_8_1_2; bool x_8_1_3; bool x_8_1_4; } x8; struct FrameLatLon { double x_9_1_1; double x_9_1_2; double x_9_1_3; double x_9_1_4; struct PositionLatLonAlt { double x_5_2_1; double x_5_2_2; double x_5_2_3; } x_9_1_5; } x9; bool x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_11_1_1; } x11; }*)globeView;
 - (double)greatCircleMidPointLatitude:(double)arg1 deltaLongitude:(double)arg2;
+- (double)heading;
 - (id)init;
 - (void)interruptFlyoverTourAnimation;
 - (BOOL)isFlyoverTourStarted;
 - (BOOL)isFullyPitched;
 - (BOOL)isPitched;
 - (id)mapRegion;
-- (id)mapRegionOfInterest;
-- (int)maximumNormalizedZoomLevel;
-- (int)minimumNormalizedZoomLevel;
+- (double)maximumZoomLevel;
+- (double)minimumZoomLevel;
 - (void)moveTo:(struct { double x1; double x2; })arg1 height:(double)arg2 useHeight:(BOOL)arg3 zoom:(double)arg4 rotation:(double)arg5 tilt:(double)arg6 duration:(double)arg7 timingCurve:(id /* block */)arg8 completion:(id /* block */)arg9;
 - (void)moveTo:(struct { double x1; double x2; })arg1 zoom:(double)arg2 rotation:(double)arg3 tilt:(double)arg4 duration:(double)arg5 timingCurve:(id /* block */)arg6 completion:(id /* block */)arg7;
 - (void)moveToZoomOutZoomInTransition:(struct { double x1; double x2; })arg1 height:(double)arg2 useHeight:(BOOL)arg3 zoom:(double)arg4 rotation:(double)arg5 tilt:(double)arg6 duration:(double)arg7 timingCurve:(id /* block */)arg8 completion:(id /* block */)arg9;
-- (void)panWithOffset:(struct CGPoint { float x1; float x2; })arg1 relativeToScreenPoint:(struct CGPoint { float x1; float x2; })arg2 animated:(BOOL)arg3 duration:(double)arg4 completionHandler:(id /* block */)arg5;
+- (void)panWithOffset:(struct CGPoint { double x1; double x2; })arg1 relativeToScreenPoint:(struct CGPoint { double x1; double x2; })arg2 animated:(BOOL)arg3 duration:(double)arg4 completionHandler:(id /* block */)arg5;
 - (void)pauseFlyoverTourAnimation;
 - (double)pitch;
-- (void)pitch:(struct CGPoint { float x1; float x2; })arg1 translation:(double)arg2;
+- (void)pitch:(struct CGPoint { double x1; double x2; })arg1 translation:(double)arg2;
 - (double)presentationYaw;
 - (BOOL)restoreViewportFromInfo:(id)arg1;
 - (void)resumeFlyoverTourAnimation;
-- (void)rotate:(double)arg1 atScreenPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (void)rotate:(double)arg1 atScreenPoint:(struct CGPoint { double x1; double x2; })arg2;
 - (void)rotateTo:(double)arg1 animated:(BOOL)arg2;
 - (void)setCenterCoordinate3D:(struct { double x1; double x2; double x3; })arg1 altitude:(double)arg2 yaw:(double)arg3 pitch:(double)arg4 duration:(double)arg5 animationStyle:(int)arg6 timingCurve:(id /* block */)arg7 completion:(id /* block */)arg8;
 - (void)setCenterCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 yaw:(double)arg3 pitch:(double)arg4 duration:(double)arg5 animationStyle:(int)arg6 timingCurve:(id /* block */)arg7 completion:(id /* block */)arg8;
+- (void)setCurrentZoomLevel:(double)arg1;
 - (void)setFlyoverMode:(int)arg1;
 - (void)setGesturing:(BOOL)arg1;
-- (void)setGlobeView:(struct GlobeView { int (**x1)(); }*)arg1;
-- (void)setMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 animated:(BOOL)arg4 completion:(id /* block */)arg5;
+- (void)setGlobeView:(struct GlobeView { int (**x1)(); struct AnchorManagerPrivate {} *x2; struct Scene {} *x3; struct Context {} *x4; struct DtmCacheNode {} *x5; struct DtmRequestManager {} *x6; struct FreezeViewNode {} *x7; struct Projection { struct Perspective { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_8_1_1; struct Ortho { double x_2_2_1; double x_2_2_2; double x_2_2_3; double x_2_2_4; double x_2_2_5; double x_2_2_6; } x_8_1_2; bool x_8_1_3; bool x_8_1_4; } x8; struct FrameLatLon { double x_9_1_1; double x_9_1_2; double x_9_1_3; double x_9_1_4; struct PositionLatLonAlt { double x_5_2_1; double x_5_2_2; double x_5_2_3; } x_9_1_5; } x9; bool x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_11_1_1; } x11; }*)arg1;
+- (void)setMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 duration:(double)arg4 completion:(id /* block */)arg5;
+- (void)setMaxZoomLevel:(double)arg1;
 - (void)setYaw:(double)arg1 animated:(BOOL)arg2;
-- (void)showSearchResultAnimationAtCoordinate:(struct { double x1; double x2; })arg1 withZoom:(double)arg2;
 - (float)slowDownFactorFromLoadProgress;
-- (BOOL)snapMapIfNecessary:(const struct VKPoint { double x1; double x2; double x3; }*)arg1 animated:(BOOL)arg2;
-- (void)startPanningAtPoint:(struct CGPoint { float x1; float x2; })arg1 panAtStartPoint:(BOOL)arg2;
-- (void)startPinchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)startPitchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)startRotatingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)snapMapIfNecessary:(BOOL)arg1;
+- (void)startPinchingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)startTrackingAnnotation:(id)arg1 trackHeading:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)stopFlyoverTourAnimation;
 - (void)stopGlobeAnimations;
-- (void)stopPanningAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)stopPinchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)stopPitchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)stopRotatingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)stopSearchResultAnimation;
-- (void)tapZoom:(struct CGPoint { float x1; float x2; })arg1 levels:(double)arg2 completionHandler:(id /* block */)arg3;
+- (void)stopPinchingWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)tapZoom:(struct CGPoint { double x1; double x2; })arg1 levels:(double)arg2 completionHandler:(id /* block */)arg3;
 - (int)tileSize;
 - (void)tiltTo:(double)arg1 animated:(BOOL)arg2 exaggerate:(BOOL)arg3;
+- (double)topDownMinimumZoomLevel;
 - (void)transitionToFlyoverMode:(int)arg1 animated:(BOOL)arg2;
 - (void)updateCameraManager;
 - (void)updateFlyoverMode;
-- (void)updatePanWithTranslation:(struct CGPoint { float x1; float x2; })arg1;
-- (void)updatePinchWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1 oldFactor:(double)arg2 newFactor:(double)arg3;
-- (void)updatePitchWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1 translation:(double)arg2;
-- (void)updateRotationWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1 newValue:(double)arg2;
+- (void)updatePinchWithFocusPoint:(struct CGPoint { double x1; double x2; })arg1 oldFactor:(double)arg2 newFactor:(double)arg3;
+- (void)updateState;
 - (id)viewportInfo;
 - (double)widestLatitudeForMapRegion:(id)arg1;
-- (double)yaw;
-- (void)zoom:(double)arg1 withFocusPoint:(struct CGPoint { float x1; float x2; })arg2 completionHandler:(id /* block */)arg3;
+- (void)zoom:(double)arg1 withFocusPoint:(struct CGPoint { double x1; double x2; })arg2 completionHandler:(id /* block */)arg3;
 - (double)zoomForMapRegion:(id)arg1;
-- (void)zoomToDistance:(struct CGPoint { float x1; float x2; })arg1 distance:(double)arg2 time:(double)arg3;
-- (void)zoomToDistance:(struct CGPoint { float x1; float x2; })arg1 distance:(double)arg2 time:(double)arg3 completionHandler:(id /* block */)arg4;
+- (void)zoomToDistance:(struct CGPoint { double x1; double x2; })arg1 distance:(double)arg2 time:(double)arg3;
+- (void)zoomToDistance:(struct CGPoint { double x1; double x2; })arg1 distance:(double)arg2 time:(double)arg3 completionHandler:(id /* block */)arg4;
 
 @end

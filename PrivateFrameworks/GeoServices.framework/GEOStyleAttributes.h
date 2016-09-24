@@ -3,17 +3,18 @@
  */
 
 @interface GEOStyleAttributes : PBCodable <NSCopying> {
-    NSMutableArray *_attributes;
-    unsigned long long _customIconId;
+    NSMutableArray * _attributes;
+    unsigned int  _customIconId;
     struct { 
         unsigned int customIconId : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic, retain) NSMutableArray *attributes;
-@property (nonatomic) unsigned long long customIconId;
+@property (nonatomic) unsigned int customIconId;
 @property (nonatomic) BOOL hasCustomIconId;
 
++ (Class)attributeType;
 + (id)attributesForTransitLine:(id)arg1;
 + (id)attributesForTransitSystem:(id)arg1;
 
@@ -24,7 +25,7 @@
 - (void)clearAttributes;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned long long)customIconId;
+- (unsigned int)customIconId;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -34,7 +35,7 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAttributes:(id)arg1;
-- (void)setCustomIconId:(unsigned long long)arg1;
+- (void)setCustomIconId:(unsigned int)arg1;
 - (void)setHasCustomIconId:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
 

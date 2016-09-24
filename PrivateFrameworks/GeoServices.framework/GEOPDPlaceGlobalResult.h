@@ -3,37 +3,48 @@
  */
 
 @interface GEOPDPlaceGlobalResult : PBCodable <NSCopying> {
-    GEOPDAutocompleteResult *_autocompleteResult;
-    GEOPDBatchPopularNearbySearchResult *_batchPopularNearbySearchResult;
-    GEOPDSearchBrowseCategorySuggestionResult *_browseCategorySuggestionResult;
-    GEOPDCanonicalLocationSearchResult *_canonicalSearchResult;
-    GEOPDCategorySearchResult *_categorySearchResult;
-    GEOPDGeocodingResult *_geocodingResult;
-    GEOPDLocationDirectedSearchResult *_locationDirectedSearchResult;
-    GEOPDMerchantLookupResult *_merchantLookupResult;
-    GEOPDNearbySearchResult *_nearbySearchResult;
-    GEOPDPlaceLookupResult *_placeLookupResult;
-    GEOPDPlaceRefinementResult *_placeRefinementResult;
-    GEOPDPopularNearbySearchResult *_popularNearbySearchResult;
-    GEOPDReverseGeocodingResult *_reverseGeocodingResult;
-    GEOPDSearchFieldPlaceholderResult *_searchFieldPlaceholderResult;
-    GEOPDSearchResult *_searchResult;
-    GEOPDSearchZeroKeywordCategorySuggestionResult *_searchZeroKeywordCategorySuggestionResult;
-    GEOPDSiriSearchResult *_siriSearchResult;
-    GEOPDVendorSpecificPlaceRefinementResult *_vendorSpecificPlaceRefinementResult;
+    GEOPDAddressObjectGeocodingResult * _addressObjectGeocodingResult;
+    GEOPDAutocompleteResult * _autocompleteResult;
+    GEOPDBatchPopularNearbySearchResult * _batchPopularNearbySearchResult;
+    GEOPDSearchBrowseCategorySuggestionResult * _browseCategorySuggestionResult;
+    GEOPDCanonicalLocationSearchResult * _canonicalSearchResult;
+    GEOPDCategorySearchResult * _categorySearchResult;
+    GEOPDExternalTransitLookupResult * _externalTransitLookupResult;
+    GEOPDFeatureIdGeocodingResult * _featureIdGeocodingResult;
+    GEOPDGeocodingResult * _geocodingResult;
+    GEOPDLocationDirectedSearchResult * _locationDirectedSearchResult;
+    GEOPDMerchantLookupResult * _merchantLookupResult;
+    GEOPDNearbySearchResult * _nearbySearchResult;
+    GEOPDPlaceLookupResult * _placeLookupResult;
+    GEOPDPlaceRefinementResult * _placeRefinementResult;
+    GEOPDPopularNearbySearchResult * _popularNearbySearchResult;
+    GEOPDReverseGeocodingResult * _reverseGeocodingResult;
+    GEOPDSearchFieldPlaceholderResult * _searchFieldPlaceholderResult;
+    GEOPDSearchResult * _searchResult;
+    GEOPDSearchZeroKeywordCategorySuggestionResult * _searchZeroKeywordCategorySuggestionResult;
+    GEOPDSearchZeroKeywordWithSearchResultsSuggestionResult * _searchZeroKeywordWithSearchResultsSuggestionResult;
+    GEOPDSiriSearchResult * _siriSearchResult;
+    PBUnknownFields * _unknownFields;
+    GEOPDVendorSpecificPlaceRefinementResult * _vendorSpecificPlaceRefinementResult;
 }
 
+@property (nonatomic, retain) GEOPDAddressObjectGeocodingResult *addressObjectGeocodingResult;
 @property (nonatomic, retain) GEOPDAutocompleteResult *autocompleteResult;
 @property (nonatomic, retain) GEOPDBatchPopularNearbySearchResult *batchPopularNearbySearchResult;
 @property (nonatomic, retain) GEOPDSearchBrowseCategorySuggestionResult *browseCategorySuggestionResult;
 @property (nonatomic, retain) GEOPDCanonicalLocationSearchResult *canonicalSearchResult;
 @property (nonatomic, retain) GEOPDCategorySearchResult *categorySearchResult;
+@property (nonatomic, retain) GEOPDExternalTransitLookupResult *externalTransitLookupResult;
+@property (nonatomic, retain) GEOPDFeatureIdGeocodingResult *featureIdGeocodingResult;
 @property (nonatomic, retain) GEOPDGeocodingResult *geocodingResult;
+@property (nonatomic, readonly) BOOL hasAddressObjectGeocodingResult;
 @property (nonatomic, readonly) BOOL hasAutocompleteResult;
 @property (nonatomic, readonly) BOOL hasBatchPopularNearbySearchResult;
 @property (nonatomic, readonly) BOOL hasBrowseCategorySuggestionResult;
 @property (nonatomic, readonly) BOOL hasCanonicalSearchResult;
 @property (nonatomic, readonly) BOOL hasCategorySearchResult;
+@property (nonatomic, readonly) BOOL hasExternalTransitLookupResult;
+@property (nonatomic, readonly) BOOL hasFeatureIdGeocodingResult;
 @property (nonatomic, readonly) BOOL hasGeocodingResult;
 @property (nonatomic, readonly) BOOL hasLocationDirectedSearchResult;
 @property (nonatomic, readonly) BOOL hasMerchantLookupResult;
@@ -45,6 +56,7 @@
 @property (nonatomic, readonly) BOOL hasSearchFieldPlaceholderResult;
 @property (nonatomic, readonly) BOOL hasSearchResult;
 @property (nonatomic, readonly) BOOL hasSearchZeroKeywordCategorySuggestionResult;
+@property (nonatomic, readonly) BOOL hasSearchZeroKeywordWithSearchResultsSuggestionResult;
 @property (nonatomic, readonly) BOOL hasSiriSearchResult;
 @property (nonatomic, readonly) BOOL hasVendorSpecificPlaceRefinementResult;
 @property (nonatomic, retain) GEOPDLocationDirectedSearchResult *locationDirectedSearchResult;
@@ -57,9 +69,12 @@
 @property (nonatomic, retain) GEOPDSearchFieldPlaceholderResult *searchFieldPlaceholderResult;
 @property (nonatomic, retain) GEOPDSearchResult *searchResult;
 @property (nonatomic, retain) GEOPDSearchZeroKeywordCategorySuggestionResult *searchZeroKeywordCategorySuggestionResult;
+@property (nonatomic, retain) GEOPDSearchZeroKeywordWithSearchResultsSuggestionResult *searchZeroKeywordWithSearchResultsSuggestionResult;
 @property (nonatomic, retain) GEOPDSiriSearchResult *siriSearchResult;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) GEOPDVendorSpecificPlaceRefinementResult *vendorSpecificPlaceRefinementResult;
 
+- (id)addressObjectGeocodingResult;
 - (id)autocompleteResult;
 - (id)batchPopularNearbySearchResult;
 - (id)browseCategorySuggestionResult;
@@ -70,12 +85,17 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)externalTransitLookupResult;
+- (id)featureIdGeocodingResult;
 - (id)geocodingResult;
+- (BOOL)hasAddressObjectGeocodingResult;
 - (BOOL)hasAutocompleteResult;
 - (BOOL)hasBatchPopularNearbySearchResult;
 - (BOOL)hasBrowseCategorySuggestionResult;
 - (BOOL)hasCanonicalSearchResult;
 - (BOOL)hasCategorySearchResult;
+- (BOOL)hasExternalTransitLookupResult;
+- (BOOL)hasFeatureIdGeocodingResult;
 - (BOOL)hasGeocodingResult;
 - (BOOL)hasLocationDirectedSearchResult;
 - (BOOL)hasMerchantLookupResult;
@@ -87,6 +107,7 @@
 - (BOOL)hasSearchFieldPlaceholderResult;
 - (BOOL)hasSearchResult;
 - (BOOL)hasSearchZeroKeywordCategorySuggestionResult;
+- (BOOL)hasSearchZeroKeywordWithSearchResultsSuggestionResult;
 - (BOOL)hasSiriSearchResult;
 - (BOOL)hasVendorSpecificPlaceRefinementResult;
 - (unsigned int)hash;
@@ -103,11 +124,15 @@
 - (id)searchFieldPlaceholderResult;
 - (id)searchResult;
 - (id)searchZeroKeywordCategorySuggestionResult;
+- (id)searchZeroKeywordWithSearchResultsSuggestionResult;
+- (void)setAddressObjectGeocodingResult:(id)arg1;
 - (void)setAutocompleteResult:(id)arg1;
 - (void)setBatchPopularNearbySearchResult:(id)arg1;
 - (void)setBrowseCategorySuggestionResult:(id)arg1;
 - (void)setCanonicalSearchResult:(id)arg1;
 - (void)setCategorySearchResult:(id)arg1;
+- (void)setExternalTransitLookupResult:(id)arg1;
+- (void)setFeatureIdGeocodingResult:(id)arg1;
 - (void)setGeocodingResult:(id)arg1;
 - (void)setLocationDirectedSearchResult:(id)arg1;
 - (void)setMerchantLookupResult:(id)arg1;
@@ -119,9 +144,11 @@
 - (void)setSearchFieldPlaceholderResult:(id)arg1;
 - (void)setSearchResult:(id)arg1;
 - (void)setSearchZeroKeywordCategorySuggestionResult:(id)arg1;
+- (void)setSearchZeroKeywordWithSearchResultsSuggestionResult:(id)arg1;
 - (void)setSiriSearchResult:(id)arg1;
 - (void)setVendorSpecificPlaceRefinementResult:(id)arg1;
 - (id)siriSearchResult;
+- (id)unknownFields;
 - (id)vendorSpecificPlaceRefinementResult;
 - (void)writeTo:(id)arg1;
 

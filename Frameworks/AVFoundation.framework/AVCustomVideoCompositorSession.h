@@ -3,27 +3,30 @@
  */
 
 @interface AVCustomVideoCompositorSession : NSObject {
-    void *_callbackContextToken;
-    <AVVideoCompositing> *_clientCustomCompositor;
-    NSObject<OS_dispatch_queue> *_clientCustomCompositorQ;
-    NSError *_clientError;
-    NSObject<OS_dispatch_queue> *_clientErrorQ;
-    NSDictionary *_clientRequiredPixelBufferAttributes;
-    struct OpaqueFigVideoCompositor { } *_figCustomCompositor;
-    NSObject<OS_dispatch_queue> *_finishedRequestQ;
-    BOOL _hasRegisteredFigCustomCompositorCallbacks;
-    AVVideoCompositionRenderContext *_renderContext;
-    NSObject<OS_dispatch_queue> *_renderContextQ;
-    AVVideoComposition *_videoComposition;
-    BOOL _videoCompositionDidChange;
-    NSObject<OS_dispatch_queue> *_videoCompositionQ;
-    AVWeakReference *_weakSelf;
+    void * _callbackContextToken;
+    <AVVideoCompositing> * _clientCustomCompositor;
+    NSObject<OS_dispatch_queue> * _clientCustomCompositorQ;
+    NSError * _clientError;
+    NSObject<OS_dispatch_queue> * _clientErrorQ;
+    NSDictionary * _clientRequiredPixelBufferAttributes;
+    struct OpaqueFigVideoCompositor { } * _figCustomCompositor;
+    NSObject<OS_dispatch_queue> * _finishedRequestQ;
+    BOOL  _hasRegisteredFigCustomCompositorCallbacks;
+    AVVideoCompositionRenderContext * _renderContext;
+    NSObject<OS_dispatch_queue> * _renderContextQ;
+    AVVideoComposition * _videoComposition;
+    BOOL  _videoCompositionDidChange;
+    NSObject<OS_dispatch_queue> * _videoCompositionQ;
+    AVWeakReference * _weakSelf;
 }
 
+@property (nonatomic, readonly) BOOL supportsWideColorSourceFrames;
+
++ (BOOL)_colorPropertiesAreSetInVideoComposition:(id)arg1;
 + (id)sessionWithVideoComposition:(id)arg1 recyclingSession:(id)arg2;
 
 - (void)_cleanupFigCallbacks;
-- (long)_compositionFrame:(struct OpaqueFigVideoCompositorFrame { }*)arg1 atTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 requiresRenderUsingSources:(id)arg3 withInstruction:(void*)arg4;
+- (long)_compositionFrame:(struct OpaqueFigVideoCompositorFrame { }*)arg1 atTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg2 requiresRenderUsingSources:(id)arg3 withInstruction:(void*)arg4;
 - (struct OpaqueFigVideoCompositor { }*)_copyFigVideoCompositor;
 - (void)_customCompositorFigPropertyDidChange;
 - (long)_customCompositorShouldCancelPendingFrames;
@@ -39,5 +42,6 @@
 - (void)request:(id)arg1 didFinishWithError:(id)arg2;
 - (void)requestDidCancel:(id)arg1;
 - (void)setVideoComposition:(id)arg1;
+- (BOOL)supportsWideColorSourceFrames;
 
 @end

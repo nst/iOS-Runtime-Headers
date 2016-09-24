@@ -3,8 +3,8 @@
  */
 
 @interface IMDAppleServiceSession : IMDServiceSession {
-    NSString *_GUID;
-    NSString *_serviceName;
+    NSString * _GUID;
+    NSString * _serviceName;
 }
 
 @property (nonatomic, readonly, retain) NSString *GUID;

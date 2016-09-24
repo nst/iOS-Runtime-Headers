@@ -3,9 +3,9 @@
  */
 
 @interface TSDGLShaderQualifier : NSObject {
-    NSString *_name;
-    BOOL _needsUpdate;
-    int _uniformLocation;
+    NSString * _name;
+    BOOL  _needsUpdate;
+    int  _uniformLocation;
 }
 
 @property (nonatomic, readonly) NSString *name;
@@ -13,6 +13,7 @@
 @property (nonatomic) int uniformLocation;
 
 - (void)dealloc;
+- (id)init;
 - (id)initWithName:(id)arg1;
 - (id)name;
 - (BOOL)needsUpdate;

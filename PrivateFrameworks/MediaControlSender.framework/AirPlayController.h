@@ -3,9 +3,9 @@
  */
 
 @interface AirPlayController : NSObject <AirPlayControllerAsync, AirPlayControllerSync> {
-    NSXPCConnection *_cnx;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSString *_xpcName;
+    NSXPCConnection * _cnx;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSString * _xpcName;
 }
 
 @property (nonatomic, copy) NSString *xpcName;

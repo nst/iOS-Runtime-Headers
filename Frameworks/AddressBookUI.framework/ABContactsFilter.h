@@ -3,11 +3,11 @@
  */
 
 @interface ABContactsFilter : NSObject {
-    void *_addressBook;
-    void *_directorySource;
-    NSArray *_groups;
-    BOOL _showsAllContacts;
-    NSArray *_sources;
+    void * _addressBook;
+    void * _directorySource;
+    NSArray * _groups;
+    BOOL  _showsAllContacts;
+    NSArray * _sources;
 }
 
 @property (nonatomic, readonly) void*addressBook;

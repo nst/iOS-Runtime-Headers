@@ -3,10 +3,10 @@
  */
 
 @interface SKUISearchRequest : NSObject <NSCopying> {
-    NSNumber *_searchHintIndex;
-    NSString *_searchHintOriginalTerm;
-    NSString *_term;
-    NSURL *_url;
+    NSNumber * _searchHintIndex;
+    NSString * _searchHintOriginalTerm;
+    NSString * _term;
+    NSURL * _url;
 }
 
 @property (nonatomic, copy) NSURL *URL;

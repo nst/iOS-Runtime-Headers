@@ -3,7 +3,7 @@
  */
 
 @interface SCNLayerSource : SCNImageSource {
-    CALayer *_layer;
+    CALayer * _layer;
 }
 
 @property (nonatomic, retain) CALayer *layer;

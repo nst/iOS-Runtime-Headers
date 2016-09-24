@@ -3,27 +3,28 @@
  */
 
 @interface PKHostPlugIn : PKPlugInCore <NSXPCConnectionDelegate, PKPlugInPrivate> {
-    NSObject<OS_dispatch_queue> *__replyQueue;
-    NSObject<OS_dispatch_queue> *__startQueue;
-    NSObject<OS_dispatch_queue> *__syncQueue;
-    NSDate *_beganUsingAt;
-    NSUserDefaults *_defaults;
-    NSDictionary *_discoveryExtensions;
-    NSBundle *_embeddedBundle;
-    id _embeddedPrincipal;
-    NSUUID *_multipleInstanceUUID;
-    id /* block */ _notificationBlock;
-    id _plugInPrincipal;
-    NSXPCConnection *_pluginConnection;
-    id _queuedHostPrincipal;
-    Protocol *_queuedHostProtocol;
-    NSArray *_sandboxExtensions;
-    <PKCorePlugInProtocol> *_service;
-    NSDictionary *_sourceForm;
-    unsigned int _state;
-    <PKPlugIn> *_supersededBy;
-    NSUUID *_supersedingUUID;
-    unsigned int _useCount;
+    NSObject<OS_dispatch_queue> * __replyQueue;
+    NSObject<OS_dispatch_queue> * __startQueue;
+    NSObject<OS_dispatch_queue> * __syncQueue;
+    NSDate * _beganUsingAt;
+    NSUserDefaults * _defaults;
+    NSDictionary * _discoveryExtensions;
+    NSBundle * _embeddedBundle;
+    id  _embeddedPrincipal;
+    NSUUID * _multipleInstanceUUID;
+    id /* block */  _notificationBlock;
+    id  _plugInPrincipal;
+    NSXPCConnection * _pluginConnection;
+    id  _queuedHostPrincipal;
+    Protocol * _queuedHostProtocol;
+    NSArray * _sandboxExtensions;
+    <PKCorePlugInProtocol> * _service;
+    NSDictionary * _sourceForm;
+    unsigned int  _state;
+    <PKPlugIn> * _supersededBy;
+    NSUUID * _supersedingUUID;
+    bool  _terminating;
+    unsigned int  _useCount;
 }
 
 @property (retain) NSObject<OS_dispatch_queue> *_replyQueue;
@@ -41,6 +42,7 @@
 @property (readonly) NSUUID *effectiveUUID;
 @property (retain) NSBundle *embeddedBundle;
 @property (retain) id embeddedPrincipal;
+@property (readonly) NSDictionary *entitlements;
 @property (retain) NSDictionary *extensionState;
 @property (readonly) unsigned int hash;
 @property (readonly) NSString *identifier;
@@ -63,6 +65,7 @@
 @property (readonly) Class superclass;
 @property (retain) <PKPlugIn> *supersededBy;
 @property (retain) NSUUID *supersedingUUID;
+@property bool terminating;
 @property (readonly) NSDate *timestamp;
 @property (readonly) NSURL *url;
 @property unsigned int useCount;
@@ -121,6 +124,7 @@
 - (void)setState:(unsigned int)arg1;
 - (void)setSupersededBy:(id)arg1;
 - (void)setSupersedingUUID:(id)arg1;
+- (void)setTerminating:(bool)arg1;
 - (void)setUseCount:(unsigned int)arg1;
 - (void)setUserElection:(int)arg1;
 - (void)set_replyQueue:(id)arg1;
@@ -133,6 +137,7 @@
 - (id)supersededBy;
 - (id)supersedingUUID;
 - (void)suspend;
+- (bool)terminating;
 - (void)unwind:(unsigned int)arg1 force:(BOOL)arg2;
 - (BOOL)useBundle:(id)arg1 error:(id*)arg2;
 - (unsigned int)useCount;

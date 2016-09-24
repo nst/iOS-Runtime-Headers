@@ -3,8 +3,8 @@
  */
 
 @interface CNPropertyNoteCell : CNPropertyCell {
-    UILabel *_labelLabel;
-    UITextView *_textView;
+    UILabel * _labelLabel;
+    UITextView * _textView;
 }
 
 @property (nonatomic, readonly) UILabel *labelLabel;

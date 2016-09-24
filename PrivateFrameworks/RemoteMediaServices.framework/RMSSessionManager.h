@@ -3,9 +3,9 @@
  */
 
 @interface RMSSessionManager : NSObject {
-    <RMSSessionManagerDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_sessionManagerQueue;
-    NSMutableDictionary *_sessions;
+    <RMSSessionManagerDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _sessionManagerQueue;
+    NSMutableDictionary * _sessions;
 }
 
 @property (nonatomic) <RMSSessionManagerDelegate> *delegate;

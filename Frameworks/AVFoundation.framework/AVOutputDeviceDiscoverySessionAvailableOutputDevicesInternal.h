@@ -3,9 +3,9 @@
  */
 
 @interface AVOutputDeviceDiscoverySessionAvailableOutputDevicesInternal : NSObject {
-    NSArray *_figEndpoints;
-    NSMutableArray *_otherDevices;
-    NSMutableArray *_recentlyUsedDevices;
+    NSArray * _figEndpoints;
+    NSMutableArray * _otherDevices;
+    NSMutableArray * _recentlyUsedDevices;
 }
 
 @end

@@ -3,14 +3,31 @@
  */
 
 @interface TKTokenDriver : NSObject {
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_tokens;
+    <TKTokenDriverDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableDictionary * _tokens;
 }
 
+@property (readonly) NSString *classID;
+@property <TKTokenDriverDelegate> *delegate;
+@property (readonly) NSDictionary *extensionAttributes;
+@property (readonly) NSObject<OS_dispatch_queue> *queue;
+@property (retain) NSMutableDictionary *tokens;
+
 - (void).cxx_destruct;
-- (void)acquireTokenWithInstanceID:(id)arg1 classID:(id)arg2 reply:(id /* block */)arg3;
-- (void)getTokenWithInstanceID:(id)arg1 reply:(id /* block */)arg2;
+- (id)classID;
+- (id)delegate;
+- (id)extensionAttributes;
+- (void)getTokenEndpointWithAttributes:(id)arg1 reply:(id /* block */)arg2;
+- (void)getTokenWithAttributes:(id)arg1 reply:(id /* block */)arg2;
 - (id)init;
-- (void)releaseTokenWithInstanceID:(id)arg1;
+- (void)invalidateToken:(id)arg1;
+- (id)queue;
+- (void)releaseTokenWithTokenID:(id)arg1;
+- (void)removeTokenEndpoint:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setTokens:(id)arg1;
+- (id)tokenIDForInstanceID:(id)arg1;
+- (id)tokens;
 
 @end

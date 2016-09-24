@@ -3,9 +3,9 @@
  */
 
 @interface _GKNSPredicateRule : GKNSPredicateRule {
-    BOOL _asserting;
-    <NSObject> *_fact;
-    float _grade;
+    BOOL  _asserting;
+    <NSObject> * _fact;
+    double  _grade;
 }
 
 - (void).cxx_destruct;

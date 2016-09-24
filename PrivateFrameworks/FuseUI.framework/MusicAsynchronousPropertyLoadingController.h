@@ -3,11 +3,11 @@
  */
 
 @interface MusicAsynchronousPropertyLoadingController : NSObject {
-    NSOperationQueue *_asynchronousPropertyLoadingOperationQueue;
-    NSCountedSet *_contentDescriptorsBeingObserved;
-    NSMapTable *_contentDescriptorsToAllPropertiesToLoadAsynchronously;
-    NSMapTable *_entityViewToAsynchronousPropertyLoadOperation;
-    NSMutableArray *_visibleEntityViews;
+    NSOperationQueue * _asynchronousPropertyLoadingOperationQueue;
+    NSCountedSet * _contentDescriptorsBeingObserved;
+    NSMapTable * _contentDescriptorsToAllPropertiesToLoadAsynchronously;
+    NSMapTable * _entityViewToAsynchronousPropertyLoadOperation;
+    NSMutableArray * _visibleEntityViews;
 }
 
 - (void).cxx_destruct;

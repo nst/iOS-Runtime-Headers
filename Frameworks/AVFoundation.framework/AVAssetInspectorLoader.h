@@ -3,7 +3,7 @@
  */
 
 @interface AVAssetInspectorLoader : NSObject <AVAsynchronousKeyValueLoading, NSCopying> {
-    AVWeakReference *_weakReference;
+    AVWeakReference * _weakReference;
 }
 
 @property (nonatomic, readonly) NSURL *URL;
@@ -11,8 +11,8 @@
 @property (getter=_classForTrackInspectors, nonatomic, readonly) Class classForTrackInspectors;
 @property (getter=isCompatibleWithSavedPhotosAlbum, nonatomic, readonly) BOOL compatibleWithSavedPhotosAlbum;
 @property (getter=isComposable, nonatomic, readonly) BOOL composable;
-@property (nonatomic, readonly) unsigned long long downloadToken;
-@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } duration;
+@property (nonatomic, readonly) unsigned int downloadToken;
+@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } duration;
 @property (getter=isExportable, nonatomic, readonly) BOOL exportable;
 @property (getter=_figAsset, nonatomic, readonly) struct OpaqueFigAsset { }*figAsset;
 @property (nonatomic, readonly) NSArray *figChapterGroupInfo;
@@ -32,6 +32,8 @@
 + (void)initialize;
 
 - (id)URL;
+- (id)_URLSessionDataDelegate;
+- (id)_URLSessionOperationQueue;
 - (Class)_classForTrackInspectors;
 - (id)_createAVErrorForError:(id)arg1 andFigErrorCode:(long)arg2;
 - (void)_ensureAllDependenciesOfKeyAreLoaded:(id)arg1;
@@ -48,8 +50,8 @@
 - (void)cancelLoading;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned long long)downloadToken;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
+- (unsigned int)downloadToken;
+- (struct { int x1; int x2; unsigned int x3; int x4; })duration;
 - (id)figChapterGroupInfo;
 - (id)figChapters;
 - (BOOL)hasProtectedContent;

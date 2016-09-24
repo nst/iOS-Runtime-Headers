@@ -3,10 +3,10 @@
  */
 
 @interface AWDVPNSession : PBCodable <NSCopying> {
-    BOOL _appVpnUsed;
-    BOOL _connectFailed;
-    unsigned int _disconnectReason;
-    unsigned int _duration;
+    BOOL  _appVpnUsed;
+    BOOL  _connectFailed;
+    unsigned int  _disconnectReason;
+    unsigned int  _duration;
     struct { 
         unsigned int inBytes : 1; 
         unsigned int outBytes : 1; 
@@ -23,19 +23,19 @@
         unsigned int appVpnUsed : 1; 
         unsigned int connectFailed : 1; 
         unsigned int proxyInstalled : 1; 
-    } _has;
-    unsigned long long _inBytes;
-    unsigned int _ipv4Installed;
-    unsigned int _ipv6Installed;
-    unsigned long long _outBytes;
-    NSString *_protocol;
-    BOOL _proxyInstalled;
-    unsigned int _reassertCount;
-    unsigned int _systemAuthenMethod;
-    unsigned long long _timestamp;
-    unsigned int _triggerTrafficClass;
-    unsigned int _triggerType;
-    unsigned int _userAuthenMethod;
+    }  _has;
+    unsigned long long  _inBytes;
+    unsigned int  _ipv4Installed;
+    unsigned int  _ipv6Installed;
+    unsigned long long  _outBytes;
+    NSString * _protocol;
+    BOOL  _proxyInstalled;
+    unsigned int  _reassertCount;
+    unsigned int  _systemAuthenMethod;
+    unsigned long long  _timestamp;
+    unsigned int  _triggerTrafficClass;
+    unsigned int  _triggerType;
+    unsigned int  _userAuthenMethod;
 }
 
 @property (nonatomic) BOOL appVpnUsed;

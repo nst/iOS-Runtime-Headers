@@ -3,70 +3,135 @@
  */
 
 @interface MTLDebugRenderCommandEncoder : MTLToolsRenderCommandEncoder {
-    unsigned int _backStencilRef;
-    float _blendColorAlpha;
-    float _blendColorBlue;
-    float _blendColorGreen;
-    float _blendColorRed;
-    <MTLDevice> *_cachedDevice;
-    unsigned int _cullMode;
-    MTLDepthStencilDescriptor *_defaultDepthStencilDescriptor;
-    float _depthBias;
-    float _depthBiasClamp;
-    float _depthBiasSlopeScale;
-    unsigned int _depthClipMode;
-    <MTLDepthStencilState> *_depthStencilState;
-    MTLRenderPassDescriptor *_descriptor;
-    unsigned int _encoderState;
+    struct { 
+        unsigned int pixelFormat; 
+        unsigned int sampleCount; 
+    }  _attachmentInfo;
+    unsigned int  _backStencilRef;
+    double  _blendColorAlpha;
+    double  _blendColorBlue;
+    double  _blendColorGreen;
+    double  _blendColorRed;
+    <MTLDevice> * _cachedDevice;
+    unsigned int  _cullMode;
+    MTLDepthStencilDescriptor * _defaultDepthStencilDescriptor;
+    struct ResourceTrackingDeferredAttachments { 
+        NSMutableArray *colorAttachments; 
+        MTLRenderPassDepthAttachmentDescriptorInternal *depthAttachment; 
+        MTLRenderPassStencilAttachmentDescriptorInternal *stencilAttachment; 
+    }  _deferredAttachments;
+    double  _depthBias;
+    double  _depthBiasClamp;
+    double  _depthBiasSlopeScale;
+    unsigned int  _depthClipMode;
+    <MTLDepthStencilState> * _depthStencilState;
+    MTLRenderPassDescriptor * _descriptor;
+    unsigned int  _dirtyBits;
+    unsigned int  _encoderState;
     /* Warning: unhandled struct encoding: '{?="isValid"c"hasBeenUsed"c"type"I"object"@"baseLevel"I"bufferLength"I"bufferOffset"I"threadgroupMemoryLength"I"hasLodClamp"c"lodMinClamp"f"lodMaxClamp"f}]' */ struct { 
         BOOL isValid; 
         BOOL hasBeenUsed; 
         unsigned int type; 
         id object; 
-    } _fragmentBuffers;
+    }  _fragmentBuffers;
     /* Warning: unhandled struct encoding: '{?="isValid"c"hasBeenUsed"c"type"I"object"@"baseLevel"I"bufferLength"I"bufferOffset"I"threadgroupMemoryLength"I"hasLodClamp"c"lodMinClamp"f"lodMaxClamp"f}]' */ struct { 
         BOOL isValid; 
         BOOL hasBeenUsed; 
         unsigned int type; 
         id object; 
-    } _fragmentSamplers;
+    }  _fragmentSamplers;
     /* Warning: unhandled struct encoding: '{?="isValid"c"hasBeenUsed"c"type"I"object"@"baseLevel"I"bufferLength"I"bufferOffset"I"threadgroupMemoryLength"I"hasLodClamp"c"lodMinClamp"f"lodMaxClamp"f}]' */ struct { 
         BOOL isValid; 
         BOOL hasBeenUsed; 
         unsigned int type; 
         id object; 
-    } _fragmentTextures;
-    unsigned int _frontFacingWinding;
-    unsigned int _frontStencilRef;
-    unsigned int _height;
-    const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; float x19; float x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned int x35; unsigned int x36; } *_limits;
-    float _lineWidth;
-    <MTLRenderPipelineState> *_renderPipelineState;
+    }  _fragmentTextures;
+    unsigned int  _frontFacingWinding;
+    unsigned int  _frontStencilRef;
+    unsigned int  _height;
+    struct { 
+        unsigned int maxColorAttachments; 
+        unsigned int maxVertexAttributes; 
+        unsigned int maxVertexBuffers; 
+        unsigned int maxVertexTextures; 
+        unsigned int maxVertexSamplers; 
+        unsigned int maxVertexInlineDataSize; 
+        unsigned int maxInterpolants; 
+        unsigned int maxFragmentBuffers; 
+        unsigned int maxFragmentTextures; 
+        unsigned int maxFragmentSamplers; 
+        unsigned int maxFragmentInlineDataSize; 
+        unsigned int maxComputeBuffers; 
+        unsigned int maxComputeTextures; 
+        unsigned int maxComputeSamplers; 
+        unsigned int maxComputeInlineDataSize; 
+        unsigned int maxComputeLocalMemorySizes; 
+        unsigned int maxTotalComputeThreadsPerThreadgroup; 
+        unsigned int maxComputeThreadgroupMemory; 
+        double maxLineWidth; 
+        double maxPointSize; 
+        unsigned int maxVisibilityQueryOffset; 
+        unsigned int maxBufferLength; 
+        unsigned int minConstantBufferAlignmentBytes; 
+        unsigned int minBufferNoCopyAlignmentBytes; 
+        unsigned int maxTextureWidth1D; 
+        unsigned int maxTextureWidth2D; 
+        unsigned int maxTextureHeight2D; 
+        unsigned int maxTextureWidth3D; 
+        unsigned int maxTextureHeight3D; 
+        unsigned int maxTextureDepth3D; 
+        unsigned int maxTextureDimensionCube; 
+        unsigned int maxTextureLayers; 
+        unsigned int linearTextureAlignmentBytes; 
+        unsigned int iosurfaceTextureAlignmentBytes; 
+        unsigned int iosurfaceReadOnlyTextureAlignmentBytes; 
+        unsigned int deviceLinearTextureAlignmentBytes; 
+        unsigned int deviceLinearReadOnlyTextureAlignmentBytes; 
+        unsigned int maxFunctionConstantIndices; 
+        unsigned int maxComputeThreadgroupMemoryAlignmentBytes; 
+        unsigned int maxInterpolatedComponents; 
+        unsigned int maxFramebufferStorageBits; 
+    }  _limits;
+    double  _lineWidth;
+    <MTLRenderPipelineState> * _renderPipelineState;
     struct { 
         unsigned int x; 
         unsigned int y; 
         unsigned int width; 
         unsigned int height; 
-    } _scissorRect;
-    unsigned int _triangleFillMode;
+    }  _scissorRect;
+    /* Warning: unhandled struct encoding: '{?="isValid"c"hasBeenUsed"c"type"I"object"@"baseLevel"I"bufferLength"I"bufferOffset"I"threadgroupMemoryLength"I"hasLodClamp"c"lodMinClamp"f"lodMaxClamp"f}' */ struct { 
+        BOOL isValid; 
+        BOOL hasBeenUsed; 
+        unsigned int type; 
+        id object; 
+    }  _tessellationFactorBufferArgument;
+    unsigned int  _tessellationFactorBufferInstanceStride;
+    double  _tessellationFactorScale;
+    unsigned int  _triangleFillMode;
+    unsigned int  _unknownStoreActions;
+    unsigned int  _vertexBufferStride;
     /* Warning: unhandled struct encoding: '{?="isValid"c"hasBeenUsed"c"type"I"object"@"baseLevel"I"bufferLength"I"bufferOffset"I"threadgroupMemoryLength"I"hasLodClamp"c"lodMinClamp"f"lodMaxClamp"f}]' */ struct { 
         BOOL isValid; 
         BOOL hasBeenUsed; 
         unsigned int type; 
         id object; 
-    } _vertexBuffers;
+    }  _vertexBuffers;
+    unsigned int  _vertexBuiltinArgumentCapacity;
+    unsigned int  _vertexBuiltinArgumentCount;
+    struct { unsigned int x1; unsigned int x2; } * _vertexBuiltinArguments;
     /* Warning: unhandled struct encoding: '{?="isValid"c"hasBeenUsed"c"type"I"object"@"baseLevel"I"bufferLength"I"bufferOffset"I"threadgroupMemoryLength"I"hasLodClamp"c"lodMinClamp"f"lodMaxClamp"f}]' */ struct { 
         BOOL isValid; 
         BOOL hasBeenUsed; 
         unsigned int type; 
         id object; 
-    } _vertexSamplers;
+    }  _vertexSamplers;
     /* Warning: unhandled struct encoding: '{?="isValid"c"hasBeenUsed"c"type"I"object"@"baseLevel"I"bufferLength"I"bufferOffset"I"threadgroupMemoryLength"I"hasLodClamp"c"lodMinClamp"f"lodMaxClamp"f}]' */ struct { 
         BOOL isValid; 
         BOOL hasBeenUsed; 
         unsigned int type; 
         id object; 
-    } _vertexTextures;
+    }  _vertexTextures;
     struct { 
         double originX; 
         double originY; 
@@ -74,33 +139,41 @@
         double height; 
         double znear; 
         double zfar; 
-    } _viewport;
-    struct set<unsigned int, std::__1::less<unsigned int>, std::__1::allocator<unsigned int> > { struct __tree<unsigned int, std::__1::less<unsigned int>, std::__1::allocator<unsigned int> > { struct __tree_node<unsigned int, void *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<unsigned int, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, std::__1::less<unsigned int> > { unsigned long x_3_2_1; } x_1_1_3; } x1; } *_visibilityOffsets;
-    unsigned int _visibilityResultMode;
-    unsigned int _visibilityResultOffset;
-    unsigned int _width;
+    }  _viewport;
+    struct set<unsigned int, std::__1::less<unsigned int>, std::__1::allocator<unsigned int> > { struct __tree<unsigned int, std::__1::less<unsigned int>, std::__1::allocator<unsigned int> > { struct __tree_node<unsigned int, void *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<unsigned int, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, std::__1::less<unsigned int> > { unsigned long x_3_2_1; } x_1_1_3; } x1; } * _visibilityOffsets;
+    unsigned int  _visibilityResultMode;
+    unsigned int  _visibilityResultOffset;
+    unsigned int  _width;
+    struct deque<__weak id, std::__1::allocator<__weak id> > { 
+        /* Warning: unhandled struct encoding: '{__split_buffer<__weak id *, std::__1::allocator<__weak id *> >="__first_"^^@"__begin_"^^@"__end_"^^@"__end_cap_"{__compressed_pair<__weak id **, std::__1::allocator<__weak id *> >="__first_"^^@}}"__start_"I"__size_"{__compressed_pair<unsigned long, std::__1::allocator<__weak id> >="__first_"L}}' */ struct __split_buffer<__weak id *, std::__1::allocator<__weak id *> > { 
+            __begin_ ***__first_; 
+        } __map_; 
+    }  updatedFences;
 }
 
 @property (nonatomic, readonly) unsigned int backStencilRef;
-@property (nonatomic, readonly) float blendColorAlpha;
-@property (nonatomic, readonly) float blendColorBlue;
-@property (nonatomic, readonly) float blendColorGreen;
-@property (nonatomic, readonly) float blendColorRed;
+@property (nonatomic, readonly) double blendColorAlpha;
+@property (nonatomic, readonly) double blendColorBlue;
+@property (nonatomic, readonly) double blendColorGreen;
+@property (nonatomic, readonly) double blendColorRed;
 @property (nonatomic, readonly) <MTLDevice> *cachedDevice;
 @property (nonatomic, readonly) unsigned int cullMode;
 @property (nonatomic, readonly) MTLDepthStencilDescriptor *defaultDepthStencilDescriptor;
-@property (nonatomic, readonly) float depthBias;
-@property (nonatomic, readonly) float depthBiasClamp;
-@property (nonatomic, readonly) float depthBiasSlopeScale;
+@property (nonatomic, readonly) double depthBias;
+@property (nonatomic, readonly) double depthBiasClamp;
+@property (nonatomic, readonly) double depthBiasSlopeScale;
 @property (nonatomic, readonly) unsigned int depthClipMode;
 @property (nonatomic, readonly) <MTLDepthStencilState> *depthStencilState;
 @property (nonatomic, readonly, copy) MTLRenderPassDescriptor *descriptor;
 @property (nonatomic, readonly) unsigned int frontFacingWinding;
 @property (nonatomic, readonly) unsigned int frontStencilRef;
 @property (readonly) unsigned int height;
-@property (nonatomic, readonly) float lineWidth;
+@property (nonatomic, readonly) double lineWidth;
 @property (nonatomic, readonly) <MTLRenderPipelineState> *renderPipelineState;
 @property (nonatomic, readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; } scissorRect;
+@property (nonatomic, readonly) struct { BOOL x1; BOOL x2; unsigned int x3; id x4; unsigned int x5; unsigned int x6; unsigned int x7; BOOL x8; double x9; double x10; } tessellationFactorBufferArgument;
+@property (nonatomic, readonly) unsigned int tessellationFactorBufferInstanceStride;
+@property (nonatomic, readonly) double tessellationFactorScale;
 @property (nonatomic, readonly) unsigned int triangleFillMode;
 @property (nonatomic, readonly) struct { double x1; double x2; double x3; double x4; double x5; double x6; } viewport;
 @property (nonatomic, readonly) unsigned int visibilityResultMode;
@@ -109,6 +182,9 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)_resourceTrackingRecordBoundResourceAccesses;
+- (void)_resourceTrackingRecordDrawAccesses;
+- (void)_resourceTrackingRecordRenderTargetAccessesForEndEncoding:(BOOL)arg1;
 - (void)_setDefaults;
 - (void)_validateAllFunctionArguments;
 - (unsigned int)backStencilRef;
@@ -127,10 +203,12 @@
 - (id)depthStencilState;
 - (id)description;
 - (id)descriptor;
+- (void)drawIndexedPatches:(unsigned int)arg1 patchStart:(unsigned int)arg2 patchCount:(unsigned int)arg3 patchIndexBuffer:(id)arg4 patchIndexBufferOffset:(unsigned int)arg5 controlPointIndexBuffer:(id)arg6 controlPointIndexBufferOffset:(unsigned int)arg7 instanceCount:(unsigned int)arg8 baseInstance:(unsigned int)arg9;
 - (void)drawIndexedPrimitives:(unsigned int)arg1 indexCount:(unsigned int)arg2 indexType:(unsigned int)arg3 indexBuffer:(id)arg4 indexBufferOffset:(unsigned int)arg5;
 - (void)drawIndexedPrimitives:(unsigned int)arg1 indexCount:(unsigned int)arg2 indexType:(unsigned int)arg3 indexBuffer:(id)arg4 indexBufferOffset:(unsigned int)arg5 instanceCount:(unsigned int)arg6;
 - (void)drawIndexedPrimitives:(unsigned int)arg1 indexCount:(unsigned int)arg2 indexType:(unsigned int)arg3 indexBuffer:(id)arg4 indexBufferOffset:(unsigned int)arg5 instanceCount:(unsigned int)arg6 baseVertex:(int)arg7 baseInstance:(unsigned int)arg8;
 - (void)drawIndexedPrimitives:(unsigned int)arg1 indexType:(unsigned int)arg2 indexBuffer:(id)arg3 indexBufferOffset:(unsigned int)arg4 indirectBuffer:(id)arg5 indirectBufferOffset:(unsigned int)arg6;
+- (void)drawPatches:(unsigned int)arg1 patchStart:(unsigned int)arg2 patchCount:(unsigned int)arg3 patchIndexBuffer:(id)arg4 patchIndexBufferOffset:(unsigned int)arg5 instanceCount:(unsigned int)arg6 baseInstance:(unsigned int)arg7;
 - (void)drawPrimitives:(unsigned int)arg1 indirectBuffer:(id)arg2 indirectBufferOffset:(unsigned int)arg3;
 - (void)drawPrimitives:(unsigned int)arg1 vertexStart:(unsigned int)arg2 vertexCount:(unsigned int)arg3;
 - (void)drawPrimitives:(unsigned int)arg1 vertexStart:(unsigned int)arg2 vertexCount:(unsigned int)arg3 instanceCount:(unsigned int)arg4;
@@ -150,10 +228,16 @@
 - (id)renderPipelineState;
 - (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; })scissorRect;
 - (void)setBlendColorRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
+- (void)setColorResolveTexture:(id)arg1 slice:(unsigned int)arg2 depthPlane:(unsigned int)arg3 level:(unsigned int)arg4 atIndex:(unsigned int)arg5;
+- (void)setColorResolveTexture:(id)arg1 slice:(unsigned int)arg2 depthPlane:(unsigned int)arg3 level:(unsigned int)arg4 yInvert:(BOOL)arg5 atIndex:(unsigned int)arg6;
+- (void)setColorStoreAction:(unsigned int)arg1 atIndex:(unsigned int)arg2;
 - (void)setCullMode:(unsigned int)arg1;
 - (void)setDepthBias:(float)arg1 slopeScale:(float)arg2 clamp:(float)arg3;
 - (void)setDepthClipMode:(unsigned int)arg1;
+- (void)setDepthResolveTexture:(id)arg1 slice:(unsigned int)arg2 depthPlane:(unsigned int)arg3 level:(unsigned int)arg4;
+- (void)setDepthResolveTexture:(id)arg1 slice:(unsigned int)arg2 depthPlane:(unsigned int)arg3 level:(unsigned int)arg4 yInvert:(BOOL)arg5;
 - (void)setDepthStencilState:(id)arg1;
+- (void)setDepthStoreAction:(unsigned int)arg1;
 - (void)setFragmentBuffer:(id)arg1 offset:(unsigned int)arg2 atIndex:(unsigned int)arg3;
 - (void)setFragmentBufferOffset:(unsigned int)arg1 atIndex:(unsigned int)arg2;
 - (void)setFragmentBuffers:(const id*)arg1 offsets:(const unsigned int*)arg2 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
@@ -164,7 +248,6 @@
 - (void)setFragmentSamplerStates:(const id*)arg1 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)setFragmentTexture:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)setFragmentTexture:(id)arg1 atTextureIndex:(unsigned int)arg2 samplerState:(id)arg3 atSamplerIndex:(unsigned int)arg4;
-- (void)setFragmentTexture:(id)arg1 baseLevel:(unsigned int)arg2 atIndex:(unsigned int)arg3;
 - (void)setFragmentTextures:(const id*)arg1 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)setFrontFacingWinding:(unsigned int)arg1;
 - (void)setLineWidth:(float)arg1;
@@ -172,6 +255,9 @@
 - (void)setScissorRect:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1;
 - (void)setStencilFrontReferenceValue:(unsigned int)arg1 backReferenceValue:(unsigned int)arg2;
 - (void)setStencilReferenceValue:(unsigned int)arg1;
+- (void)setStencilStoreAction:(unsigned int)arg1;
+- (void)setTessellationFactorBuffer:(id)arg1 offset:(unsigned int)arg2 instanceStride:(unsigned int)arg3;
+- (void)setTessellationFactorScale:(float)arg1;
 - (void)setTriangleFillMode:(unsigned int)arg1;
 - (void)setVertexBuffer:(id)arg1 offset:(unsigned int)arg2 atIndex:(unsigned int)arg3;
 - (void)setVertexBufferOffset:(unsigned int)arg1 atIndex:(unsigned int)arg2;
@@ -182,18 +268,23 @@
 - (void)setVertexSamplerStates:(const id*)arg1 lodMinClamps:(const float*)arg2 lodMaxClamps:(const float*)arg3 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
 - (void)setVertexSamplerStates:(const id*)arg1 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)setVertexTexture:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)setVertexTexture:(id)arg1 baseLevel:(unsigned int)arg2 atIndex:(unsigned int)arg3;
 - (void)setVertexTextures:(const id*)arg1 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)setViewport:(struct { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (void)setVisibilityResultMode:(unsigned int)arg1 offset:(unsigned int)arg2;
+- (struct { BOOL x1; BOOL x2; unsigned int x3; id x4; unsigned int x5; unsigned int x6; unsigned int x7; BOOL x8; double x9; double x10; })tessellationFactorBufferArgument;
+- (unsigned int)tessellationFactorBufferInstanceStride;
+- (float)tessellationFactorScale;
 - (unsigned int)triangleFillMode;
+- (void)updateFence:(id)arg1 afterStages:(unsigned int)arg2;
+- (void)updatePipelineData;
 - (void)validateCommonDrawErrors:(unsigned int)arg1 instanceCount:(unsigned int)arg2 baseInstance:(unsigned int)arg3 maxVertexID:(unsigned int)arg4;
-- (void)validateDrawIndexedPrimitives:(unsigned int)arg1 indexCount:(unsigned int)arg2 indexType:(unsigned int)arg3 indexBuffer:(id)arg4 indexBufferOffset:(unsigned int)arg5 instanceCount:(unsigned int)arg6;
-- (void)validateDrawPrimitives:(unsigned int)arg1 vertexStart:(unsigned int)arg2 vertexCount:(unsigned int)arg3 instanceCount:(unsigned int)arg4;
+- (void)validateDrawIndexedPrimitives:(unsigned int)arg1 indexCount:(unsigned int)arg2 indexType:(unsigned int)arg3 indexBuffer:(id)arg4 indexBufferOffset:(unsigned int)arg5 instanceCount:(unsigned int)arg6 function:(const char *)arg7;
+- (void)validateDrawPrimitives:(unsigned int)arg1 vertexStart:(unsigned int)arg2 vertexCount:(unsigned int)arg3 instanceCount:(unsigned int)arg4 function:(const char *)arg5;
 - (void)validateFramebufferWithRenderPipelineState:(id)arg1;
 - (struct { double x1; double x2; double x3; double x4; double x5; double x6; })viewport;
 - (unsigned int)visibilityResultMode;
 - (unsigned int)visibilityResultOffset;
+- (void)waitForFence:(id)arg1 beforeStages:(unsigned int)arg2;
 - (unsigned int)width;
 
 @end

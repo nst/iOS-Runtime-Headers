@@ -3,19 +3,19 @@
  */
 
 @interface AAUICredentialRecoveryController : NSObject <RUILoaderDelegate, RUIObjectModelDelegate> {
-    NSObject<AAUICredentialRecoveryPresentationDelegate> *_delegate;
-    BOOL _isModal;
-    BOOL _isShowingSpinner;
-    RUIPage *_loadingPage;
-    UIViewController *_navigationBaseViewController;
-    UINavigationController *_navigationController;
-    UINavigationItem *_navigationItemShowingSpinner;
-    NSMutableArray *_objectModels;
-    UIBarButtonItem *_originalRightBarButtonItem;
-    UIViewController *_presentationViewController;
-    RUILoader *_remoteUILoader;
-    NSURL *_remoteUIURL;
-    UIActivityIndicatorView *_spinnerView;
+    NSObject<AAUICredentialRecoveryPresentationDelegate> * _delegate;
+    BOOL  _isModal;
+    BOOL  _isShowingSpinner;
+    RUIPage * _loadingPage;
+    UIViewController * _navigationBaseViewController;
+    UINavigationController * _navigationController;
+    UINavigationItem * _navigationItemShowingSpinner;
+    NSMutableArray * _objectModels;
+    UIBarButtonItem * _originalRightBarButtonItem;
+    UIViewController * _presentationViewController;
+    RUILoader * _remoteUILoader;
+    NSURL * _remoteUIURL;
+    UIActivityIndicatorView * _spinnerView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -39,7 +39,7 @@
 - (id)init;
 - (id)initWithRemoteUIURL:(id)arg1 modalPresentation:(BOOL)arg2;
 - (void)loader:(id)arg1 didFailWithError:(id)arg2;
-- (void)loader:(id)arg1 receivedObjectModel:(id)arg2 actionSignal:(int)arg3;
+- (void)loader:(id)arg1 receivedObjectModel:(id)arg2 actionSignal:(unsigned int)arg3;
 - (void)objectModel:(id)arg1 pressedButton:(id)arg2 attributes:(id)arg3;
 - (void)objectModel:(id)arg1 pressedLink:(id)arg2 httpMethod:(id)arg3;
 - (void)objectModelPressedBack:(id)arg1;

@@ -3,14 +3,14 @@
  */
 
 @interface FBSUIApplicationSystemService : NSObject {
-    <FBSUIApplicationSystemServiceDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
+    <FBSUIApplicationSystemServiceDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
 }
 
 @property (nonatomic, readonly) double backgroundTimeRemaining;
 @property (nonatomic) int badgeNumber;
 @property (nonatomic, copy) NSString *badgeString;
-@property (nonatomic) float currentBacklightLevel;
+@property (nonatomic) double currentBacklightLevel;
 @property (nonatomic) <FBSUIApplicationSystemServiceDelegate> *delegate;
 
 - (id)_getBadgeValue;

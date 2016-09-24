@@ -5,12 +5,12 @@
 @interface NACHapticIntensityMessage : PBCodable <NSCopying> {
     struct { 
         unsigned int intensity : 1; 
-    } _has;
-    float _intensity;
+    }  _has;
+    double  _intensity;
 }
 
 @property (nonatomic) BOOL hasIntensity;
-@property (nonatomic) float intensity;
+@property (nonatomic) double intensity;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

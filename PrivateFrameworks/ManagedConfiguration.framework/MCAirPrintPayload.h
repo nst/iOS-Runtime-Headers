@@ -3,8 +3,8 @@
  */
 
 @interface MCAirPrintPayload : MCPayload {
-    unsigned int _airPrintCount;
-    NSMutableArray *_ippAddresses;
+    unsigned int  _airPrintCount;
+    NSMutableArray * _ippAddresses;
 }
 
 @property (nonatomic) unsigned int airPrintCount;

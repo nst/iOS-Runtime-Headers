@@ -4,12 +4,12 @@
 
 @interface CPTextObject : CPChunk {
     struct CGPoint { 
-        float x; 
-        float y; 
-    } anchor;
-    double maxFontLineHeight;
-    float maxFontSize;
-    BOOL metricInfoCalculated;
+        double x; 
+        double y; 
+    }  anchor;
+    double  maxFontLineHeight;
+    double  maxFontSize;
+    BOOL  metricInfoCalculated;
 }
 
 - (void)calculateMetrics;

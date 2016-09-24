@@ -5,9 +5,12 @@
 
 @required
 
+- (void)onLeechedVisit:(CLVisit *)arg1 withError:(NSError *)arg2;
 - (void)onNextPredictedLocationsOfInterest:(NSArray *)arg1 withError:(NSError *)arg2;
 - (void)onPredictedApplications:(NSArray *)arg1 error:(NSError *)arg2;
+- (void)onPredictedRooms:(NSArray *)arg1 error:(NSError *)arg2;
 - (void)onScenarioTrigger:(RTScenarioTrigger *)arg1 withError:(NSError *)arg2;
+- (void)onVehicleEvents:(NSArray *)arg1 error:(NSError *)arg2;
 - (void)onVisit:(CLVisit *)arg1 withError:(NSError *)arg2;
 
 @end

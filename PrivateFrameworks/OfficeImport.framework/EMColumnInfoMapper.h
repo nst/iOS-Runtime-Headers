@@ -3,9 +3,9 @@
  */
 
 @interface EMColumnInfoMapper : CMMapper {
-    unsigned int columnSpan;
-    double columnWidth;
-    EDColumnInfo *edColumnInfo;
+    unsigned int  columnSpan;
+    double  columnWidth;
+    EDColumnInfo * edColumnInfo;
 }
 
 - (double)columnWidth;

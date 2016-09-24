@@ -2,23 +2,27 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUScriptInterface : SUScriptObject <SUScriptXMLHTTPRequestDelegate> {
-    SUScriptAccountManager *_accountManager;
-    SUScriptKeyValueStore *_applicationLocalStorage;
-    SSAuthenticationContext *_authenticationContext;
-    SUClientInterface *_clientInterface;
-    <SUScriptInterfaceDelegate> *_delegate;
-    SUScriptKeyValueStore *_deviceLocalStorage;
-    NSMutableDictionary *_downloadQueues;
-    WebFrame *_frame;
-    SUScriptMediaLibrary *_mediaLibrary;
-    SUScriptNotificationObserver *_notificationObserver;
-    SUScriptPreviewOverlay *_previewOverlay;
-    SUScriptPurchaseManager *_purchaseManager;
-    NSMutableSet *_requireCellularURLs;
-    SUScriptOperationDelegate *_scriptOperationDelegate;
-    SUScriptWindowContext *_scriptWindowContext;
-    id _threadSafeDelegate;
+@interface SUScriptInterface : SUScriptObject <SUScriptModalDialogDelegate, SUScriptXMLHTTPRequestDelegate> {
+    SUScriptAccountManager * _accountManager;
+    SUScriptKeyValueStore * _applicationLocalStorage;
+    SSAuthenticationContext * _authenticationContext;
+    SUScriptCarrierBundlingController * _carrierBundlingController;
+    SUClientInterface * _clientInterface;
+    <SUScriptInterfaceDelegate> * _delegate;
+    SUScriptKeyValueStore * _deviceLocalStorage;
+    NSMutableDictionary * _downloadQueues;
+    WebFrame * _frame;
+    SUScriptMediaLibrary * _mediaLibrary;
+    SUScriptMetricsController * _metricsController;
+    SUScriptNotificationObserver * _notificationObserver;
+    SUScriptPreviewOverlay * _previewOverlay;
+    SUScriptPurchaseManager * _purchaseManager;
+    NSMutableSet * _requireCellularURLs;
+    SUScriptOperationDelegate * _scriptOperationDelegate;
+    SUScriptStoreBagLoader * _scriptStoreBagLoader;
+    SUScriptWindowContext * _scriptWindowContext;
+    SUScriptSubscriptionStatusCoordinator * _subscriptionStatusCoordinator;
+    id  _threadSafeDelegate;
 }
 
 @property (readonly) SUScriptFairPlayContext *accountCreationSecureContext;
@@ -32,9 +36,12 @@
 @property (readonly) SUScriptKeyValueStore *applicationLocalStorage;
 @property (readonly) NSString *askToBuyPrompt;
 @property (copy) SSAuthenticationContext *authenticationContext;
+@property (readonly) SUScriptCarrierBundlingController *carrierBundlingController;
 @property (readonly) NSString *clientIdentifier;
 @property (retain) SUClientInterface *clientInterface;
 @property (copy) NSString *cookie;
+@property (readonly) NSString *cookieDefaultURL;
+@property (readonly) NSString *cookieForDefaultURL;
 @property (readonly, copy) NSString *debugDescription;
 @property <SUScriptInterfaceDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -45,6 +52,7 @@
 @property (readonly) NSArray *installedSoftwareApplications;
 @property (readonly) id loggingEnabled;
 @property (readonly) SUScriptMediaLibrary *mediaLibrary;
+@property (readonly) SUScriptMetricsController *metricsController;
 @property (readonly) SUScriptNavigationBar *navigationBar;
 @property (readonly) NSNumber *orientation;
 @property (readonly) SUScriptPassbookLibrary *passbookLibrary;
@@ -53,10 +61,13 @@
 @property (retain) SUScriptAccount *primaryLockerAccount;
 @property (readonly) SUScriptProtocol *protocol;
 @property (readonly) SUScriptPurchaseManager *purchaseManager;
+@property (readonly) NSString *referrerURL;
 @property (readonly) NSString *referringUserAgent;
 @property (readonly) id screenReaderRunning;
+@property (readonly) SUScriptDictionary *scriptStoreBagDictionary;
 @property (retain) SUScriptWindowContext *scriptWindowContext;
 @property (readonly) SUScriptSectionsController *sectionsController;
+@property (readonly) NSString *storeFrontIdentifier;
 @property (readonly) int storeSheetType;
 @property (readonly) int storeSheetTypeAskToBuy;
 @property (readonly) int storeSheetTypeDefault;
@@ -75,6 +86,7 @@
 - (id)DOMElementWithElement:(id)arg1;
 - (void)_accessibilityPostLayoutChange;
 - (id)_className;
+- (id)_cookieForURL:(id)arg1;
 - (id)_copyDialogWithMessage:(id)arg1 title:(id)arg2 cancelButtonTitle:(id)arg3 okButtonTitle:(id)arg4;
 - (void)_getSoftwareApplicationWithCompletionFunction:(id)arg1 lookupBlock:(id /* block */)arg2;
 - (void)_globalEventNotification:(id)arg1;
@@ -100,23 +112,29 @@
 - (id)application;
 - (id)applicationAccessibilityEnabled;
 - (id)applicationLocalStorage;
-- (void)approveInPerson:(id)arg1;
+- (void)approveInPerson:(id)arg1 completionFunction:(id)arg2;
 - (BOOL)arePodcastsDisabled;
 - (id)askToBuyPrompt;
 - (id)attributeKeys;
 - (void)authenticateForAccount:(id)arg1 withOptions:(id)arg2;
 - (id)authenticationContext;
 - (BOOL)canSendEmail;
+- (id)carrierBundlingController;
 - (BOOL)checkCapabilitiesPropertyListString:(id)arg1 showFailureDialog:(BOOL)arg2;
 - (id)clientIdentifier;
 - (id)clientInterface;
 - (void)composeEmailWithSubject:(id)arg1 body:(id)arg2;
 - (void)composeReviewWithURL:(id)arg1 itemIdentifier:(id)arg2 type:(id)arg3;
 - (id)cookie;
+- (id)cookieDefaultURL;
+- (id)cookieForDefaultURL;
 - (struct OpaqueJSContext { }*)copyJavaScriptContext;
 - (void)dealloc;
 - (void)deallocAuthentication;
+- (void)deallocCarrierBundlingController;
 - (void)deallocMediaLibrary;
+- (void)deallocMetricsController;
+- (void)deallocSubscriptionStatusCoordinator;
 - (id)delegate;
 - (id)device;
 - (id)deviceLocalStorage;
@@ -189,6 +207,7 @@
 - (id)makeSplitViewController;
 - (id)makeStorePageWithURLs:(id)arg1;
 - (id)makeStoreSheetViewController;
+- (id)makeSubscriptionStatusRequest;
 - (id)makeTextFieldWithStyle:(id)arg1 placeholder:(id)arg2 value:(id)arg3 width:(id)arg4;
 - (id)makeTweetComposeViewController;
 - (id)makeURLRequestWithURLs:(id)arg1 timeoutInterval:(id)arg2;
@@ -196,6 +215,7 @@
 - (id)makeWindow;
 - (id)makeXMLHTTPRequest;
 - (id)mediaLibrary;
+- (id)metricsController;
 - (id)navigationBar;
 - (void)openURL:(id)arg1;
 - (id)orientation;
@@ -204,12 +224,14 @@
 - (void)perfLog:(id)arg1;
 - (void)performPurchaseAnimationForIdentifier:(id)arg1 style:(id)arg2;
 - (void)pingURL:(id)arg1;
+- (id)presentingViewControllerForScriptModalDialog:(id)arg1;
 - (id)previewOverlay;
 - (id)primaryAccount;
 - (id)primaryLockerAccount;
 - (id)protocol;
 - (id)purchaseManager;
 - (void)redeemCode:(id)arg1;
+- (id)referrerURL;
 - (id)referringUserAgent;
 - (void)registerNavBarButtonWithTitle:(id)arg1 side:(id)arg2 function:(id)arg3;
 - (void)reloadFooterSection:(id)arg1 withURL:(id)arg2;
@@ -219,6 +241,7 @@
 - (void)retryAllRestoreDownloads;
 - (id)screenReaderRunning;
 - (id)scriptAttributeKeys;
+- (id)scriptStoreBagDictionary;
 - (id)scriptWindowContext;
 - (BOOL)scriptXMLHTTPRequest:(id)arg1 requiresCellularForURL:(id)arg2;
 - (id)sectionsController;
@@ -227,20 +250,27 @@
 - (void)sendPostOfType:(id)arg1 withOptions:(id)arg2;
 - (void)setAccounts:(id)arg1;
 - (void)setAuthenticationContext:(id)arg1;
+- (void)setCarrierBundlingController:(id)arg1;
 - (void)setClientInterface:(id)arg1;
 - (void)setCookie:(id)arg1;
+- (void)setCookieDefaultURL:(id)arg1;
+- (void)setCookieForDefaultURL:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDevice:(id)arg1;
 - (void)setGlobalRootObject:(id)arg1;
 - (void)setLibraryIdentifierWithType:(id)arg1 value:(id)arg2;
 - (void)setLoggingEnabled:(id)arg1;
 - (void)setMediaLibrary:(id)arg1;
+- (void)setMetricsController:(id)arg1;
 - (void)setNavigationBar:(id)arg1;
 - (void)setOrientation:(id)arg1;
 - (void)setPrimaryAccount:(id)arg1;
 - (void)setPrimaryLockerAccount:(id)arg1;
+- (void)setReferrerURL:(id)arg1;
 - (void)setReferringUserAgent:(id)arg1;
 - (void)setScriptWindowContext:(id)arg1;
+- (void)setStoreFrontIdentifier:(id)arg1;
+- (void)setSubscriptionStatusCoordinator:(id)arg1;
 - (void)setWebFrame:(id)arg1;
 - (void)setWindow:(id)arg1;
 - (BOOL)shouldRestrictContentOfSystem:(id)arg1 level:(id)arg2;
@@ -253,9 +283,11 @@
 - (id)softwareApplicationWithAdamID:(id)arg1;
 - (id)softwareApplicationWithBundleID:(id)arg1;
 - (void)startedTest:(id)arg1;
+- (id)storeFrontIdentifier;
 - (int)storeSheetType;
 - (int)storeSheetTypeAskToBuy;
 - (int)storeSheetTypeDefault;
+- (id)subscriptionStatusCoordinator;
 - (id)systemItemAction;
 - (id)systemItemAdd;
 - (id)systemItemBookmarks;

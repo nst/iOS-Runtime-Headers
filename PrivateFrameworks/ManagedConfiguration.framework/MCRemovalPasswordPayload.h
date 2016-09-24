@@ -3,7 +3,7 @@
  */
 
 @interface MCRemovalPasswordPayload : MCPayload {
-    NSString *_removalPasscode;
+    NSString * _removalPasscode;
 }
 
 @property (nonatomic, retain) NSString *removalPasscode;

@@ -3,7 +3,7 @@
  */
 
 @interface FBWorkspaceConnectionListener : NSObject <BSXPCConnectionListenerHandler> {
-    NSObject<OS_dispatch_queue> *_connectionDispatcherQueue;
+    NSObject<OS_dispatch_queue> * _connectionDispatcherQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

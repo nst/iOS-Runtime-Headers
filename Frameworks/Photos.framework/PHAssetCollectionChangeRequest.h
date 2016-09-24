@@ -3,15 +3,15 @@
  */
 
 @interface PHAssetCollectionChangeRequest : NSObject <PHInsertChangeRequest, PHUpdateChangeRequest> {
-    PHCollectionChangeRequestHelper *_assetsHelper;
-    BOOL _clientEntitled;
-    NSString *_clientName;
-    int _clientProcessID;
-    PHChangeRequestHelper *_helper;
-    PHAssetCollection *_originalAssetCollection;
+    PHRelationshipChangeRequestHelper * _assetsHelper;
+    BOOL  _clientEntitled;
+    NSString * _clientName;
+    int  _clientProcessID;
+    PHChangeRequestHelper * _helper;
+    PHAssetCollection * _originalAssetCollection;
 }
 
-@property (nonatomic, readonly) PHCollectionChangeRequestHelper *assetsHelper;
+@property (nonatomic, readonly) PHRelationshipChangeRequestHelper *assetsHelper;
 @property (getter=isClientEntitled, nonatomic, readonly) BOOL clientEntitled;
 @property (nonatomic, readonly) NSString *clientName;
 @property (nonatomic, readonly) int clientProcessID;
@@ -56,7 +56,7 @@
 - (id)helper;
 - (id)initForNewObject;
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2;
-- (id)initWithXPCDict:(id)arg1 clientEntitled:(BOOL)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
+- (id)initWithXPCDict:(id)arg1 clientEntitlements:(id)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
 - (void)insertAsset:(id)arg1 inAssetsAtIndex:(unsigned int)arg2;
 - (void)insertAssets:(id)arg1 atIndexes:(id)arg2;
 - (BOOL)isClientEntitled;

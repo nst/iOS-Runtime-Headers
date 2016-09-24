@@ -3,20 +3,20 @@
  */
 
 @interface _CDPeopleSuggesterSettings : NSObject <NSCopying> {
-    BOOL _aggregateByIdentifier;
-    NSSet *_constrainAccounts;
-    NSSet *_constrainBundleIds;
-    NSSet *_constrainDomainIdentifiers;
-    NSSet *_constrainIdentifiers;
-    unsigned int _constrainMaxRecipientCount;
-    NSSet *_constrainMechanisms;
-    NSSet *_constrainPersonIdType;
-    NSSet *_constrainPersonIds;
-    NSSet *_ignoreContactIdentifiers;
-    unsigned int _maxNumberOfPeopleSuggested;
-    BOOL _requireOutgoingInteraction;
-    BOOL _useFuture;
-    BOOL _useTitleToContrainKeywords;
+    BOOL  _aggregateByIdentifier;
+    NSSet * _constrainAccounts;
+    NSSet * _constrainBundleIds;
+    NSSet * _constrainDomainIdentifiers;
+    NSSet * _constrainIdentifiers;
+    unsigned int  _constrainMaxRecipientCount;
+    NSSet * _constrainMechanisms;
+    NSSet * _constrainPersonIdType;
+    NSSet * _constrainPersonIds;
+    NSSet * _ignoreContactIdentifiers;
+    unsigned int  _maxNumberOfPeopleSuggested;
+    BOOL  _requireOutgoingInteraction;
+    BOOL  _useFuture;
+    BOOL  _useTitleToContrainKeywords;
 }
 
 @property BOOL aggregateByIdentifier;

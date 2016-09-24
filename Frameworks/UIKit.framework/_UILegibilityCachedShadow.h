@@ -3,14 +3,14 @@
  */
 
 @interface _UILegibilityCachedShadow : NSObject {
-    _UILegibilitySettings *_settings;
-    UIImage *_shadow;
-    float _strength;
+    _UILegibilitySettings * _settings;
+    UIImage * _shadow;
+    double  _strength;
 }
 
 @property (nonatomic, retain) _UILegibilitySettings *settings;
 @property (nonatomic, retain) UIImage *shadow;
-@property (nonatomic) float strength;
+@property (nonatomic) double strength;
 
 - (void)dealloc;
 - (BOOL)isEqual:(id)arg1;

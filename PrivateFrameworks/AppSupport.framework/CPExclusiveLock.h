@@ -3,8 +3,8 @@
  */
 
 @interface CPExclusiveLock : NSObject <NSLocking> {
-    int _fd;
-    NSString *_name;
+    int  _fd;
+    NSString * _name;
 }
 
 - (void)dealloc;

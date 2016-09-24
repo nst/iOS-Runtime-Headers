@@ -8,6 +8,7 @@
 
 - (BOOL)_selectAndScrollToItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(unsigned int)arg3;
 - (void)configureAsCandidatesBar;
+- (BOOL)delaysContentTouches;
 - (id)selectedItemIndexPath;
 
 @end

@@ -4,13 +4,14 @@
 
 @interface UIKBRenderFactoryEmoji_iPad : UIKBRenderFactoryEmoji_iPhone
 
-- (void)_customizeTraits:(id)arg1 forPopupForKey:(id)arg2 withRenderConfig:(id)arg3 keycapsFontName:(id)arg4;
+- (void)_customizeTraits:(id)arg1 forPopupForKey:(id)arg2 withRenderingContext:(id)arg3 keycapsFontName:(id)arg4;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
-- (struct CGPoint { float x1; float x2; })emojiInternationalKeyOffset;
+- (struct CGPoint { double x1; double x2; })emojiInternationalKeyOffset;
 - (float)emojiInternationalKeySize;
-- (struct CGPoint { float x1; float x2; })emojiPopupTextOffset;
+- (struct CGPoint { double x1; double x2; })emojiPopupTextOffset;
 - (float)keyCornerRadius;
 - (id)lightKeycapsFontName;
+- (id)messagesWriteboardKeyImageName;
 - (BOOL)shouldClearBaseDisplayStringForVariants:(id)arg1;
 - (id)thinKeycapsFontName;
 

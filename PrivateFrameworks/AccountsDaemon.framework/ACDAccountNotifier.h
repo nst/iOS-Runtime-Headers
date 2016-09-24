@@ -3,10 +3,10 @@
  */
 
 @interface ACDAccountNotifier : NSObject {
-    NSMutableDictionary *_instantiatedPluginsByAccountTypeID;
-    NSSet *_notificationPlugins;
-    NSDictionary *_pluginBundlesByAccountTypeID;
-    NSMutableDictionary *_principalObjectByPluginBundleURL;
+    NSMutableDictionary * _instantiatedPluginsByAccountTypeID;
+    NSSet * _notificationPlugins;
+    NSDictionary * _pluginBundlesByAccountTypeID;
+    NSMutableDictionary * _principalObjectByPluginBundleURL;
 }
 
 + (id)_presumedAccountTypeIDsByNotificationPluginID;

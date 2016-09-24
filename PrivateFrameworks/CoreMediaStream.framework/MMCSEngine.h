@@ -3,14 +3,14 @@
  */
 
 @interface MMCSEngine : NSObject {
-    NSString *_appIDHeader;
-    BOOL _autoGenerateItemID;
-    NSMutableDictionary *_autoItemIDDictionary;
-    NSObject<OS_dispatch_queue> *_autoItemIDDictionaryQueue;
-    NSURL *_autoItemIDPersistenceURL;
-    NSString *_dataClass;
-    <MMCSEngineDelegate> *_delegate;
-    struct _mmcs_engine { } *_engine;
+    NSString * _appIDHeader;
+    BOOL  _autoGenerateItemID;
+    NSMutableDictionary * _autoItemIDDictionary;
+    NSObject<OS_dispatch_queue> * _autoItemIDDictionaryQueue;
+    NSURL * _autoItemIDPersistenceURL;
+    NSString * _dataClass;
+    <MMCSEngineDelegate> * _delegate;
+    struct _mmcs_engine { } * _engine;
     struct { 
         int version; 
         void *context; 
@@ -20,17 +20,17 @@
         int (*putItemProgressCallback)(); 
         int (*putItemDoneCallback)(); 
         int (*requestCompletedCallback)(); 
-    } _engineClientContext;
-    BOOL _isDone;
-    BOOL _isMetricsGatheringEnabled;
-    NSMutableDictionary *_itemIDToAssetMap;
-    NSObject<OS_dispatch_queue> *_itemIDToAssetMapQueue;
-    NSDictionary *_options;
-    NSObject<OS_dispatch_queue> *_reqestorContextQueue;
-    NSMutableArray *_requestorContexts;
-    NSTimer *_threadKeepAliveTimer;
-    NSURL *_workPathURL;
-    NSThread *_workThread;
+    }  _engineClientContext;
+    BOOL  _isDone;
+    BOOL  _isMetricsGatheringEnabled;
+    NSMutableDictionary * _itemIDToAssetMap;
+    NSObject<OS_dispatch_queue> * _itemIDToAssetMapQueue;
+    NSDictionary * _options;
+    NSObject<OS_dispatch_queue> * _reqestorContextQueue;
+    NSMutableArray * _requestorContexts;
+    NSTimer * _threadKeepAliveTimer;
+    NSURL * _workPathURL;
+    NSThread * _workThread;
 }
 
 @property (nonatomic) BOOL autoGenerateItemID;
@@ -45,19 +45,19 @@
 + (id)logStringForPutItemState:(int)arg1;
 
 - (void).cxx_destruct;
-- (id)_assetWithItemID:(unsigned long long)arg1;
+- (id)_assetWithItemID:(unsigned int)arg1;
 - (void)_doNothingTimerHandler:(id)arg1;
-- (BOOL)_getFileDescriptorAndContentTypeFromItemID:(unsigned long long)arg1 outFD:(int*)arg2 outItemType:(id*)arg3 outError:(id*)arg4;
-- (void)_getItemDoneItemID:(unsigned long long)arg1 path:(id)arg2 requestorContext:(id)arg3 error:(id)arg4;
-- (void)_getItemProgressItemID:(unsigned long long)arg1 state:(int)arg2 progress:(double)arg3 requestorContext:(id)arg4 error:(id)arg5;
+- (BOOL)_getFileDescriptorAndContentTypeFromItemID:(unsigned int)arg1 outFD:(int*)arg2 outItemType:(id*)arg3 outError:(id*)arg4;
+- (void)_getItemDoneItemID:(unsigned int)arg1 path:(id)arg2 requestorContext:(id)arg3 error:(id)arg4;
+- (void)_getItemProgressItemID:(unsigned int)arg1 state:(int)arg2 progress:(double)arg3 requestorContext:(id)arg4 error:(id)arg5;
 - (void)_initItemIDPersistence;
 - (void)_logLevel:(int)arg1 message:(id)arg2;
-- (unsigned long long)_nextItemID;
-- (void)_putItemDoneItemID:(unsigned long long)arg1 requestorContext:(id)arg2 putReceipt:(id)arg3 error:(id)arg4;
-- (void)_putItemProgressItemID:(unsigned long long)arg1 state:(int)arg2 progress:(double)arg3 requestorContext:(id)arg4 error:(id)arg5;
+- (unsigned int)_nextItemID;
+- (void)_putItemDoneItemID:(unsigned int)arg1 requestorContext:(id)arg2 putReceipt:(id)arg3 error:(id)arg4;
+- (void)_putItemProgressItemID:(unsigned int)arg1 state:(int)arg2 progress:(double)arg3 requestorContext:(id)arg4 error:(id)arg5;
 - (void)_registerAsset:(id)arg1;
 - (void)_registerRequestorContext:(id)arg1;
-- (void)_removeAssetForItemID:(unsigned long long)arg1;
+- (void)_removeAssetForItemID:(unsigned int)arg1;
 - (void)_removeRequestorContext:(id)arg1;
 - (void)_requestCompletedRequestorContext:(id)arg1;
 - (BOOL)autoGenerateItemID;

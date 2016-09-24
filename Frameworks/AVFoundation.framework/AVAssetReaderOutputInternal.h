@@ -3,17 +3,17 @@
  */
 
 @interface AVAssetReaderOutputInternal : NSObject {
-    BOOL alwaysCopiesSampleData;
-    BOOL currentConfigurationIsFinal;
-    NSArray *currentTimeRanges;
-    BOOL extractionCompleteForCurrentConfiguration;
-    int extractionID;
-    struct OpaqueFigAssetReader { } *figAssetReader;
-    int finished;
-    AVRunLoopCondition *sampleBufferAvailabilityCondition;
-    BOOL supportsRandomAccess;
-    AVWeakReference *weakReference;
-    AVWeakReference *weakReferenceToAssetReader;
+    BOOL  alwaysCopiesSampleData;
+    BOOL  currentConfigurationIsFinal;
+    NSArray * currentTimeRanges;
+    BOOL  extractionCompleteForCurrentConfiguration;
+    int  extractionID;
+    struct OpaqueFigAssetReader { } * figAssetReader;
+    int  finished;
+    AVRunLoopCondition * sampleBufferAvailabilityCondition;
+    BOOL  supportsRandomAccess;
+    AVWeakReference * weakReference;
+    AVWeakReference * weakReferenceToAssetReader;
 }
 
 @end

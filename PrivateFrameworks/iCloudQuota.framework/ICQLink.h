@@ -3,10 +3,10 @@
  */
 
 @interface ICQLink : NSObject {
-    int _action;
-    int _options;
-    NSDictionary *_parameters;
-    NSString *_text;
+    int  _action;
+    int  _options;
+    NSDictionary * _parameters;
+    NSString * _text;
 }
 
 @property (nonatomic, readonly) int action;

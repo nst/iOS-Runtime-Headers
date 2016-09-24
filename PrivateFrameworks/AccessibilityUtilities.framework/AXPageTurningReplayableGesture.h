@@ -3,8 +3,8 @@
  */
 
 @interface AXPageTurningReplayableGesture : AXReplayableGesture {
-    BOOL _isLandscape;
-    BOOL _isLeftToRightSwipe;
+    BOOL  _isLandscape;
+    BOOL  _isLeftToRightSwipe;
 }
 
 @property (nonatomic) BOOL isLandscape;
@@ -19,7 +19,7 @@
 - (BOOL)isLandscape;
 - (BOOL)isLeftToRightSwipe;
 - (unsigned int)numberOfEvents;
-- (struct CGPoint { float x1; float x2; })pointForFingerIdentifier:(id)arg1 atEventIndex:(unsigned int)arg2;
+- (struct CGPoint { double x1; double x2; })pointForFingerIdentifier:(id)arg1 atEventIndex:(unsigned int)arg2;
 - (void)setIsLandscape:(BOOL)arg1;
 - (void)setIsLeftToRightSwipe:(BOOL)arg1;
 - (double)timeAtEventIndex:(unsigned int)arg1;

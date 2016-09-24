@@ -3,7 +3,7 @@
  */
 
 @interface SSPlistCacheObject : NSObject <SSCacheObject> {
-    NSDictionary *_plist;
+    NSDictionary * _plist;
 }
 
 @property (readonly, copy) NSString *debugDescription;

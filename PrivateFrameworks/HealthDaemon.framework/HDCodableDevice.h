@@ -3,19 +3,19 @@
  */
 
 @interface HDCodableDevice : PBCodable <NSCopying> {
-    double _creationDate;
-    NSString *_fDAUDI;
-    NSString *_firmwareVersion;
-    NSString *_hardwareVersion;
+    double  _creationDate;
+    NSString * _fDAUDI;
+    NSString * _firmwareVersion;
+    NSString * _hardwareVersion;
     struct { 
         unsigned int creationDate : 1; 
-    } _has;
-    NSString *_localIdentifier;
-    NSString *_manufacturer;
-    NSString *_model;
-    NSString *_name;
-    NSString *_softwareVersion;
-    NSData *_uuid;
+    }  _has;
+    NSString * _localIdentifier;
+    NSString * _manufacturer;
+    NSString * _model;
+    NSString * _name;
+    NSString * _softwareVersion;
+    NSData * _uuid;
 }
 
 @property (nonatomic) double creationDate;

@@ -3,7 +3,7 @@
  */
 
 @interface IMMultiQueue : NSObject {
-    NSMutableDictionary *_queueMap;
+    NSMutableDictionary * _queueMap;
 }
 
 - (void)_addBlock:(id /* block */)arg1 withGUID:(id)arg2 forKey:(id)arg3 description:(id)arg4;

@@ -3,11 +3,11 @@
  */
 
 @interface BookmarkDAVFolder : CoreDAVContainer <CoreDAVAddedContainer, CoreDAVLeafDataPayload, CoreDAVModifiedContainer> {
-    NSDictionary *_appleAttributes;
-    NSString *_bulkParsedCTag;
-    NSString *_bulkParsedPTag;
-    CoreDAVErrorItem *_bulkUploadErrorItem;
-    NSMutableArray *_childrenOrder;
+    NSDictionary * _appleAttributes;
+    NSString * _bulkParsedCTag;
+    NSString * _bulkParsedPTag;
+    CoreDAVErrorItem * _bulkUploadErrorItem;
+    NSMutableArray * _childrenOrder;
 }
 
 @property (nonatomic, readonly) NSDictionary *appleAttributes;

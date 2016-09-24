@@ -3,7 +3,7 @@
  */
 
 @interface MSCLMPArtworkCatalogResourceOperation : SKUILoadResourceOperation {
-    MPArtworkCatalog *_artworkCatalog;
+    MPArtworkCatalog * _artworkCatalog;
 }
 
 - (void).cxx_destruct;

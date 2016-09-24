@@ -3,7 +3,7 @@
  */
 
 @interface HKChartCacheFetchOperation : HKFetchOperation {
-    <NSCopying> *_identifier;
+    <NSCopying> * _identifier;
 }
 
 @property (nonatomic, retain) <NSCopying> *identifier;

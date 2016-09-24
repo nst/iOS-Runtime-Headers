@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@interface GKPlayer : NSObject <NSCoding, NSSecureCoding> {
-    NSArray *_friends;
-    GKPlayerInternal *_internal;
-    NSAttributedString *_whenString;
+@interface GKPlayer : GKBasePlayer <NSCoding, NSSecureCoding> {
+    NSArray * _friends;
+    GKPlayerInternal * _internal;
+    NSAttributedString * _whenString;
 }
 
 @property (nonatomic, copy) NSString *alias;
@@ -20,7 +20,6 @@
 @property (nonatomic, readonly) BOOL isAutomatchPlayer;
 @property (nonatomic, readonly) BOOL isFamiliarFriend;
 @property (nonatomic) BOOL isFriend;
-@property (nonatomic, readonly) BOOL isFriendRecommendation;
 @property (nonatomic, readonly) BOOL isLocalPlayer;
 @property (nonatomic, readonly) BOOL isUnknownPlayer;
 @property (nonatomic, readonly) NSString *lastName;
@@ -56,10 +55,8 @@
 + (id)unknownPlayer;
 
 - (void)_postChangeNotification;
-- (void)acceptFriendRequestWithCompletionHandler:(id /* block */)arg1;
 - (id)cacheKey;
 - (void)dealloc;
-- (void)declineFriendRequestWithCompletionHandler:(id /* block */)arg1;
 - (id)description;
 - (id)displayName;
 - (id)displayNameWithOptions:(unsigned char)arg1;
@@ -70,13 +67,13 @@
 - (id)friends;
 - (BOOL)hasPhoto;
 - (unsigned int)hash;
+- (id)identifierForIDS;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithInternalRepresentation:(id)arg1;
 - (id)internal;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isFamiliarFriend;
-- (BOOL)isFriendRecommendation;
 - (BOOL)isFriendablePlayer;
 - (id)lastPlayedGame;
 - (void)loadCommonFriends:(BOOL)arg1 asPlayersWithCompletionHandler:(id /* block */)arg2;

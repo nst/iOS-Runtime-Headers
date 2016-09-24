@@ -3,8 +3,8 @@
  */
 
 @interface CMVehicleConnectionData : NSObject <NSCopying, NSSecureCoding> {
-    NSDate *fEndDate;
-    NSDate *fStartDate;
+    NSDate * fEndDate;
+    NSDate * fStartDate;
 }
 
 @property (nonatomic, readonly) NSDate *endDate;

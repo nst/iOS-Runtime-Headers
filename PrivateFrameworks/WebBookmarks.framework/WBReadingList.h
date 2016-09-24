@@ -3,8 +3,8 @@
  */
 
 @interface WBReadingList : NSObject {
-    WBReadingListPrivate *_private;
-    NSObject<OS_dispatch_queue> *_serialQueue;
+    WBReadingListPrivate * _private;
+    NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
 + (id)defaultReadingList;

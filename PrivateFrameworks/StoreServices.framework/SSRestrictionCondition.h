@@ -3,7 +3,7 @@
  */
 
 @interface SSRestrictionCondition : SSProtocolCondition {
-    NSString *_restrictionName;
+    NSString * _restrictionName;
 }
 
 - (void)dealloc;

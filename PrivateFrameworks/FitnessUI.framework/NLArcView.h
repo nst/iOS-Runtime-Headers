@@ -3,22 +3,22 @@
  */
 
 @interface NLArcView : UIView {
-    NLArcMaskLayer *_arcMaskLayer;
-    NLArcLayer *_baseRing;
-    CALayer *_coloredDotIndicatorLayer;
-    CAGradientLayer *_gradientLayer;
-    CALayer *_iconLayer;
-    float _indicatorPercentage;
-    float _radius;
-    BOOL _shouldDrawIndicator;
-    BOOL _shouldShowIcon;
-    CALayer *_whiteDotIndicatorLayer;
+    NLArcMaskLayer * _arcMaskLayer;
+    NLArcLayer * _baseRing;
+    CALayer * _coloredDotIndicatorLayer;
+    CAGradientLayer * _gradientLayer;
+    CALayer * _iconLayer;
+    double  _indicatorPercentage;
+    double  _radius;
+    BOOL  _shouldDrawIndicator;
+    BOOL  _shouldShowIcon;
+    CALayer * _whiteDotIndicatorLayer;
 }
 
-@property (nonatomic) float arcStart;
-@property (nonatomic) float indicatorPercentage;
-@property (nonatomic) float lineWidth;
-@property (nonatomic) float radius;
+@property (nonatomic) double arcStart;
+@property (nonatomic) double indicatorPercentage;
+@property (nonatomic) double lineWidth;
+@property (nonatomic) double radius;
 @property (nonatomic) BOOL shouldDrawIndicator;
 @property (nonatomic) BOOL shouldShowIcon;
 
@@ -27,10 +27,10 @@
 - (void)_positionIndicator;
 - (void)_showIndicatorIfNecessary;
 - (id)_whiteDotIndicatorLayer;
-- (void)animateToCenter:(struct CGPoint { float x1; float x2; })arg1 radius:(float)arg2 lineWidth:(float)arg3 duration:(float)arg4;
+- (void)animateToCenter:(struct CGPoint { double x1; double x2; })arg1 radius:(float)arg2 lineWidth:(float)arg3 duration:(float)arg4;
 - (float)arcStart;
 - (float)indicatorPercentage;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (float)lineWidth;
 - (float)percentageFull;

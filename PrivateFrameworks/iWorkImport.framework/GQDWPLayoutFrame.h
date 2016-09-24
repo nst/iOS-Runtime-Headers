@@ -3,10 +3,10 @@
  */
 
 @interface GQDWPLayoutFrame : NSObject {
-    GQDWPLayoutStorage *mStorage;
-    GQDSStyle *mStyle;
-    char *mStyleRef;
-    unsigned int mTextScale;
+    GQDWPLayoutStorage * mStorage;
+    GQDSStyle * mStyle;
+    char * mStyleRef;
+    unsigned int  mTextScale;
 }
 
 - (void)dealloc;

@@ -3,7 +3,7 @@
  */
 
 @interface KNArchivedSlideCollectionSelection : TSPObject <TSKArchivedSelection> {
-    KNSlideCollectionSelection *mSelection;
+    KNSlideCollectionSelection * mSelection;
 }
 
 @property (readonly, copy) NSString *debugDescription;

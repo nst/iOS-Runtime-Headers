@@ -3,9 +3,9 @@
  */
 
 @interface VUAuthenticator : NSObject <JSONHTTPRequestDelegate> {
-    NSString *_accountName;
-    JSONHTTPRequest *_authenticationRequest;
-    int _authenticatorState;
+    NSString * _accountName;
+    JSONHTTPRequest * _authenticationRequest;
+    int  _authenticatorState;
 }
 
 @property (nonatomic, readonly) NSString *accountName;

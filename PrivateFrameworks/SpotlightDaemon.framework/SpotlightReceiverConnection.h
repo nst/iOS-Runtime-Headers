@@ -3,44 +3,69 @@
  */
 
 @interface SpotlightReceiverConnection : NSObject {
-    NSArray *_bundleIDs;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<SpotlightReceiverJob> *_receiver;
-    unsigned int _requestCount;
-    NSString *_serviceName;
-    NSArray *_types;
-    BOOL _wantsHTML;
-    BOOL _wantsText;
+    NSSet * _INIntentClassNames;
+    NSSet * _bundleIDs;
+    NSArray * _contentTypes;
+    NSMutableSet * _negativeSet;
+    NSMutableSet * _positiveSet;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<SpotlightReceiverJob> * _receiver;
+    unsigned int  _requestCount;
+    NSString * _serviceName;
+    BOOL  _wantsHTML;
+    BOOL  _wantsIndexUpdates;
+    BOOL  _wantsInteractions;
+    BOOL  _wantsText;
+    BOOL  _wantsUAs;
 }
 
-@property (nonatomic, readonly) NSArray *bundleIDs;
+@property (nonatomic, readonly) NSSet *INIntentClassNames;
+@property (nonatomic, readonly) NSSet *bundleIDs;
+@property (nonatomic, readonly) NSArray *contentTypes;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, readonly) NSObject<SpotlightReceiverJob> *receiver;
 @property (nonatomic, readonly) unsigned int requestCount;
 @property (nonatomic, readonly) NSString *serviceName;
-@property (nonatomic, readonly) NSArray *types;
 @property (nonatomic) BOOL wantsHTML;
+@property (nonatomic) BOOL wantsIndexUpdates;
+@property (nonatomic) BOOL wantsInteractions;
 @property (nonatomic) BOOL wantsText;
+@property (nonatomic) BOOL wantsUAs;
 
 + (void)setup;
 
 - (void).cxx_destruct;
+- (id)INIntentClassNames;
+- (BOOL)_wantsBundleID:(id)arg1;
+- (BOOL)_wantsContentType:(id)arg1;
+- (void)addInteraction:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
+- (void)addUserActions:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
 - (id)bundleIDs;
-- (void)deleteFromBundle:(id)arg1 sinceData:(id)arg2 domains:(id)arg3 deletes:(id)arg4;
-- (void)indexFromBundle:(id)arg1 items:(id)arg2 itemsContent:(id)arg3;
-- (id)initWithServiceName:(id)arg1;
-- (void)loadBundleIDs;
-- (void)loadTypes;
+- (id)contentTypes;
+- (void)deleteAllInteractionsWithBundleID:(id)arg1 protectionClass:(id)arg2;
+- (void)deleteFromBundle:(id)arg1;
+- (void)deleteFromBundle:(id)arg1 contentType:(id)arg2 identifiers:(id)arg3;
+- (void)deleteFromBundle:(id)arg1 domainIdentifiers:(id)arg2;
+- (void)deleteFromBundle:(id)arg1 encodedIdentifiers:(id)arg2;
+- (void)deleteFromBundle:(id)arg1 sinceDate:(id)arg2;
+- (void)deleteInteractionsWithGroupIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
+- (void)deleteInteractionsWithIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
+- (void)indexFromBundle:(id)arg1 protectionClass:(id)arg2 items:(id)arg3 itemsContent:(id)arg4;
+- (id)initWithServiceName:(id)arg1 clientID:(int)arg2 wantsText:(BOOL)arg3 wantsHTML:(BOOL)arg4;
 - (void)purgeFromBundle:(id)arg1 identifiers:(id)arg2;
 - (id)queue;
 - (id)receiver;
 - (unsigned int)requestCount;
 - (id)serviceName;
 - (void)setWantsHTML:(BOOL)arg1;
+- (void)setWantsIndexUpdates:(BOOL)arg1;
+- (void)setWantsInteractions:(BOOL)arg1;
 - (void)setWantsText:(BOOL)arg1;
-- (id)types;
-- (void)userActions:(id)arg1;
+- (void)setWantsUAs:(BOOL)arg1;
 - (BOOL)wantsHTML;
+- (BOOL)wantsIndexUpdates;
+- (BOOL)wantsInteractions;
 - (BOOL)wantsText;
+- (BOOL)wantsUAs;
 
 @end

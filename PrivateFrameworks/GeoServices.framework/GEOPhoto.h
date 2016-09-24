@@ -5,10 +5,10 @@
 @interface GEOPhoto : PBCodable <NSCopying> {
     struct { 
         unsigned int photoType : 1; 
-    } _has;
-    NSMutableArray *_photoInfos;
-    int _photoType;
-    NSString *_uid;
+    }  _has;
+    NSMutableArray * _photoInfos;
+    int  _photoType;
+    NSString * _uid;
 }
 
 @property (nonatomic) BOOL hasPhotoType;
@@ -17,6 +17,9 @@
 @property (nonatomic) int photoType;
 @property (nonatomic, retain) NSString *uid;
 
++ (Class)photoInfoType;
+
+- (int)StringAsPhotoType:(id)arg1;
 - (id)_bestURLForSize:(int)arg1;
 - (id)_photoInfoForSize:(int)arg1 includeSmallerSizes:(BOOL)arg2;
 - (void)addPhotoInfo:(id)arg1;
@@ -36,6 +39,7 @@
 - (id)photoInfos;
 - (unsigned int)photoInfosCount;
 - (int)photoType;
+- (id)photoTypeAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasPhotoType:(BOOL)arg1;
 - (void)setPhotoInfos:(id)arg1;

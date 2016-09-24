@@ -3,18 +3,18 @@
  */
 
 @interface TSTTableStyleNetwork : TSPObject <NSFastEnumeration> {
-    TSTCellStyle *mBodyCellStyle;
-    TSWPParagraphStyle *mBodyTextStyle;
-    TSTCellStyle *mFooterRowCellStyle;
-    TSWPParagraphStyle *mFooterRowTextStyle;
-    TSTCellStyle *mHeaderColumnCellStyle;
-    TSWPParagraphStyle *mHeaderColumnTextStyle;
-    TSTCellStyle *mHeaderRowCellStyle;
-    TSWPParagraphStyle *mHeaderRowTextStyle;
-    int mPresetIndex;
-    TSWPShapeStyle *mTableNameShapeStyle;
-    TSWPParagraphStyle *mTableNameStyle;
-    TSTTableStyle *mTableStyle;
+    TSTCellStyle * mBodyCellStyle;
+    TSWPParagraphStyle * mBodyTextStyle;
+    TSTCellStyle * mFooterRowCellStyle;
+    TSWPParagraphStyle * mFooterRowTextStyle;
+    TSTCellStyle * mHeaderColumnCellStyle;
+    TSWPParagraphStyle * mHeaderColumnTextStyle;
+    TSTCellStyle * mHeaderRowCellStyle;
+    TSWPParagraphStyle * mHeaderRowTextStyle;
+    int  mPresetIndex;
+    TSWPShapeStyle * mTableNameShapeStyle;
+    TSWPParagraphStyle * mTableNameStyle;
+    TSTTableStyle * mTableStyle;
 }
 
 @property (nonatomic, readonly) TSTCellStyle *bodyCellStyle;
@@ -66,7 +66,7 @@
 - (id)initWithContext:(id)arg1 fromArray:(id)arg2 presetID:(unsigned int)arg3;
 - (id)initWithContext:(id)arg1 fromDictionary:(id)arg2 withPreset:(unsigned int)arg3;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
+- (BOOL)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1 styleComparisonBlock:(id /* block */)arg2;
 - (void)loadFromArchive:(const struct TableStyleNetworkArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct Reference {} *x6; struct Reference {} *x7; struct Reference {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; struct Reference {} *x12; struct Reference {} *x13; struct Reference {} *x14; struct Reference {} *x15; unsigned int x16; }*)arg1 withUnarchiver:(id)arg2;
 - (unsigned int)presetID;
 - (void)saveToArchive:(struct TableStyleNetworkArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct Reference {} *x6; struct Reference {} *x7; struct Reference {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; struct Reference {} *x12; struct Reference {} *x13; struct Reference {} *x14; struct Reference {} *x15; unsigned int x16; }*)arg1 archiver:(id)arg2;
@@ -92,6 +92,7 @@
 - (id)tableNameStyle;
 - (id)tableStyle;
 - (id)textStyleForTableArea:(unsigned int)arg1;
+- (void)upgradeIfNecessary;
 - (BOOL)valid;
 
 @end

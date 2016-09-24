@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptStorePageViewController : SUScriptViewController {
-    NSArray *_initialURLStrings;
+    NSArray * _initialURLStrings;
 }
 
 @property (readonly) NSArray *URLStrings;

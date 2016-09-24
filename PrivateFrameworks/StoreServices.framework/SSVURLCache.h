@@ -3,10 +3,10 @@
  */
 
 @interface SSVURLCache : NSObject {
-    NSObject<OS_dispatch_queue> *_accessSerialQueue;
-    struct __CFURLStorageSession { } *_cacheStorageSession;
-    SSVURLCacheConfiguration *_configuration;
-    struct _CFURLCache { } *_urlCache;
+    NSObject<OS_dispatch_queue> * _accessSerialQueue;
+    struct __CFURLStorageSession { } * _cacheStorageSession;
+    SSVURLCacheConfiguration * _configuration;
+    struct _CFURLCache { } * _urlCache;
 }
 
 - (void).cxx_destruct;

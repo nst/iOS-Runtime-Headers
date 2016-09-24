@@ -7,14 +7,14 @@
         unsigned int phoneticType : 1; 
         unsigned int shieldType : 1; 
         unsigned int signType : 1; 
-    } _has;
-    NSString *_locale;
-    NSString *_name;
-    NSString *_phoneticName;
-    int _phoneticType;
-    NSString *_shield;
-    int _shieldType;
-    int _signType;
+    }  _has;
+    NSString * _locale;
+    NSString * _name;
+    NSString * _phoneticName;
+    int  _phoneticType;
+    NSString * _shield;
+    int  _shieldType;
+    int  _signType;
 }
 
 @property (nonatomic, readonly) BOOL hasLocale;
@@ -32,6 +32,8 @@
 @property (nonatomic) int shieldType;
 @property (nonatomic) int signType;
 
+- (int)StringAsPhoneticType:(id)arg1;
+- (int)StringAsSignType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -51,6 +53,7 @@
 - (id)name;
 - (id)phoneticName;
 - (int)phoneticType;
+- (id)phoneticTypeAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasPhoneticType:(BOOL)arg1;
 - (void)setHasShieldType:(BOOL)arg1;
@@ -65,6 +68,7 @@
 - (id)shield;
 - (int)shieldType;
 - (int)signType;
+- (id)signTypeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

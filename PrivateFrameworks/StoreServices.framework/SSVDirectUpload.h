@@ -3,31 +3,31 @@
  */
 
 @interface SSVDirectUpload : NSObject <SSXPCCoding> {
-    NSString *_categoryName;
-    long long _countOfBytesExpectedToSend;
-    long long _countOfBytesSent;
-    NSError *_error;
-    BOOL _explicitContent;
-    long long _persistentIdentifier;
-    int _state;
-    NSString *_subtitle;
-    NSURL *_thumbnailImageURL;
-    NSString *_title;
-    NSString *_uploadKind;
-    NSString *_uti;
+    NSString * _categoryName;
+    int  _countOfBytesExpectedToSend;
+    int  _countOfBytesSent;
+    NSError * _error;
+    BOOL  _explicitContent;
+    int  _persistentIdentifier;
+    int  _state;
+    NSString * _subtitle;
+    NSURL * _thumbnailImageURL;
+    NSString * _title;
+    NSString * _uploadKind;
+    NSString * _uti;
 }
 
 @property (nonatomic, copy) NSString *UTI;
 @property (setter=_setUploadKind:, nonatomic, copy) NSString *_uploadKind;
 @property (nonatomic, copy) NSString *categoryName;
-@property (nonatomic) long long countOfBytesExpectedToSend;
-@property (nonatomic) long long countOfBytesSent;
+@property (nonatomic) int countOfBytesExpectedToSend;
+@property (nonatomic) int countOfBytesSent;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSError *error;
 @property (getter=isExplicitContent, nonatomic) BOOL explicitContent;
 @property (readonly) unsigned int hash;
-@property (nonatomic) long long persistentIdentifier;
+@property (nonatomic) int persistentIdentifier;
 @property (nonatomic) int state;
 @property (nonatomic, copy) NSString *subtitle;
 @property (readonly) Class superclass;
@@ -41,21 +41,21 @@
 - (id)_uploadKind;
 - (id)categoryName;
 - (id)copyXPCEncoding;
-- (long long)countOfBytesExpectedToSend;
-- (long long)countOfBytesSent;
+- (int)countOfBytesExpectedToSend;
+- (int)countOfBytesSent;
 - (id)description;
 - (id)error;
 - (unsigned int)hash;
 - (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isExplicitContent;
-- (long long)persistentIdentifier;
+- (int)persistentIdentifier;
 - (void)setCategoryName:(id)arg1;
-- (void)setCountOfBytesExpectedToSend:(long long)arg1;
-- (void)setCountOfBytesSent:(long long)arg1;
+- (void)setCountOfBytesExpectedToSend:(int)arg1;
+- (void)setCountOfBytesSent:(int)arg1;
 - (void)setError:(id)arg1;
 - (void)setExplicitContent:(BOOL)arg1;
-- (void)setPersistentIdentifier:(long long)arg1;
+- (void)setPersistentIdentifier:(int)arg1;
 - (void)setState:(int)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setThumbnailImageURL:(id)arg1;

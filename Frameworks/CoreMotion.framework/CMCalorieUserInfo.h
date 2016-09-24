@@ -3,11 +3,11 @@
  */
 
 @interface CMCalorieUserInfo : CMLogItem {
-    double fAge;
-    int fCondition;
-    int fGender;
-    double fHeight;
-    double fWeight;
+    double  fAge;
+    int  fCondition;
+    int  fGender;
+    double  fHeight;
+    double  fWeight;
 }
 
 @property (nonatomic, readonly) double age;

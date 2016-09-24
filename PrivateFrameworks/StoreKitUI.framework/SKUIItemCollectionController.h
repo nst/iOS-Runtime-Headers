@@ -2,27 +2,28 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIItemCollectionController : NSObject <SKUIArtworkRequestDelegate, SKUIItemStateCenterObserver, SKUIResourceLoaderDelegate> {
-    SKUIItemArtworkContext *_artworkContext;
-    SKUIResourceLoader *_artworkLoader;
-    SKUIClientContext *_clientContext;
-    <SKUIItemCollectionDelegate> *_delegate;
-    BOOL _delegateProvidesScreenshots;
-    NSMutableDictionary *_iconArtworkRequestIDs;
-    SKUIStyledImageDataConsumer *_iconDataConsumer;
-    NSArray *_items;
-    SKUIScreenshotDataConsumer *_landscapeScreenshotDataConsumer;
-    UIImage *_landscapeScreenshotPlaceholderImage;
-    int _numberOfItemsPerPage;
-    float _numberOfPagesToCacheAhead;
-    UIImage *_placeholderImage;
-    SKUIScreenshotDataConsumer *_portraitScreenshotDataConsumer;
-    UIImage *_portraitScreenshotPlaceholderImage;
-    NSMutableDictionary *_screenshotArtworkRequestIDs;
+@interface SKUIItemCollectionController : NSObject <SKUIArtworkRequestDelegate, SKUIItemStateCenterObserver> {
+    SKUIItemArtworkContext * _artworkContext;
+    SKUIResourceLoader * _artworkLoader;
+    SKUIClientContext * _clientContext;
+    <SKUIItemCollectionDelegate> * _delegate;
+    BOOL  _delegateProvidesScreenshots;
+    SKUIStyledImageDataConsumer * _iconDataConsumer;
+    NSMutableDictionary * _itemIDsToArtworkRequestIDs;
+    NSMutableDictionary * _itemIDsToScreenshotRequestIDs;
+    NSArray * _items;
+    SKUIScreenshotDataConsumer * _landscapeScreenshotDataConsumer;
+    UIImage * _landscapeScreenshotPlaceholderImage;
+    int  _numberOfItemsPerPage;
+    double  _numberOfPagesToCacheAhead;
+    UIImage * _placeholderImage;
+    SKUIScreenshotDataConsumer * _portraitScreenshotDataConsumer;
+    UIImage * _portraitScreenshotPlaceholderImage;
 }
 
 @property (nonatomic, retain) SKUIItemArtworkContext *artworkContext;
 @property (nonatomic, retain) SKUIResourceLoader *artworkLoader;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKUIItemCollectionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -31,7 +32,7 @@
 @property (nonatomic, copy) NSArray *items;
 @property (nonatomic, retain) SKUIScreenshotDataConsumer *landscapeScreenshotDataConsumer;
 @property (nonatomic) int numberOfItemsPerPage;
-@property (nonatomic) float numberOfPagesToCacheAhead;
+@property (nonatomic) double numberOfPagesToCacheAhead;
 @property (nonatomic, retain) SKUIScreenshotDataConsumer *portraitScreenshotDataConsumer;
 @property (readonly) Class superclass;
 
@@ -52,12 +53,15 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_visibleItemRange;
 - (id)artworkContext;
 - (id)artworkLoader;
-- (void)artworkLoaderDidIdle:(id)arg1;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (void)cancelArtworkLoadForItemIndex:(int)arg1;
+- (id)clientContext;
 - (void)configureCellLayout:(id)arg1 forIndex:(int)arg2;
 - (void)dealloc;
 - (id)delegate;
+- (void)didEndDisplayingItemAtIndex:(int)arg1;
+- (void)enterBackground;
+- (void)enterForeground;
 - (id)iconDataConsumer;
 - (id)init;
 - (id)initWithClientContext:(id)arg1;
@@ -70,13 +74,14 @@
 - (float)numberOfPagesToCacheAhead;
 - (id)performActionForItemAtIndex:(int)arg1;
 - (id)portraitScreenshotDataConsumer;
-- (void)precacheNextPageArtworkForOffset:(struct CGPoint { float x1; float x2; })arg1 direction:(float)arg2;
+- (void)precacheNextPageArtworkForOffset:(struct CGPoint { double x1; double x2; })arg1 direction:(float)arg2;
 - (void)removeAllCachedResources;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
 - (void)setArtworkContext:(id)arg1;
 - (void)setArtworkLoader:(id)arg1;
+- (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIconDataConsumer:(id)arg1;
 - (void)setItems:(id)arg1;

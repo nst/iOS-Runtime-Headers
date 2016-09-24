@@ -3,7 +3,7 @@
  */
 
 @interface _MFDADeferredDeleteMessageOperation : MFOfflineCacheOperation <MFDAOfflineCacheOperation> {
-    NSString *_messageID;
+    NSString * _messageID;
 }
 
 - (void)dealloc;

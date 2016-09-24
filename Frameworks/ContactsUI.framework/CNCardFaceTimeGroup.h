@@ -3,7 +3,7 @@
  */
 
 @interface CNCardFaceTimeGroup : CNCardGroup {
-    NSArray *_displayItems;
+    NSArray * _displayItems;
 }
 
 - (void).cxx_destruct;

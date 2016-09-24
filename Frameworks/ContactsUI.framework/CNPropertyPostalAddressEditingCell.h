@@ -3,7 +3,7 @@
  */
 
 @interface CNPropertyPostalAddressEditingCell : CNPropertyEditingCell {
-    CNPostalAddressEditorView *_addressEditor;
+    CNPostalAddressEditorView * _addressEditor;
 }
 
 @property (nonatomic, retain) CNPostalAddressEditorView *addressEditor;

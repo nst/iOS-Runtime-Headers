@@ -3,12 +3,15 @@
  */
 
 @interface GEONavigationRouteTransitSummary : PBCodable <NSCopying> {
-    NSMutableArray *_possibleStops;
-    NSMutableArray *_scheduledLinks;
+    NSMutableArray * _possibleStops;
+    NSMutableArray * _scheduledLinks;
 }
 
 @property (nonatomic, retain) NSMutableArray *possibleStops;
 @property (nonatomic, retain) NSMutableArray *scheduledLinks;
+
++ (Class)possibleStopType;
++ (Class)scheduledLinkType;
 
 - (void)addPossibleStop:(id)arg1;
 - (void)addScheduledLink:(id)arg1;

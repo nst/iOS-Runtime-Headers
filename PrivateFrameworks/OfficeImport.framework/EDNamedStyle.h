@@ -3,7 +3,7 @@
  */
 
 @interface EDNamedStyle : EDStyle {
-    NSString *mName;
+    NSString * mName;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

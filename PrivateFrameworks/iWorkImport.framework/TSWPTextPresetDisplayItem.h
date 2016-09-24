@@ -3,8 +3,8 @@
  */
 
 @interface TSWPTextPresetDisplayItem : NSObject {
-    NSString *_displayName;
-    TSWPTextStylePreset *_preset;
+    NSString * _displayName;
+    TSWPTextStylePreset * _preset;
 }
 
 @property (nonatomic, copy) NSString *displayName;

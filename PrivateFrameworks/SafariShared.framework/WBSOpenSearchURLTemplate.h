@@ -3,9 +3,9 @@
  */
 
 @interface WBSOpenSearchURLTemplate : NSObject <NSCopying, NSSecureCoding> {
-    NSMutableArray *_parameters;
-    NSMutableDictionary *_parametersByName;
-    NSString *_templateString;
+    NSMutableArray * _parameters;
+    NSMutableDictionary * _parametersByName;
+    NSString * _templateString;
 }
 
 @property (nonatomic, readonly, copy) NSString *templateString;

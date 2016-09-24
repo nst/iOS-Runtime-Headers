@@ -3,23 +3,23 @@
  */
 
 @interface EAInputStream : NSInputStream {
-    EAAccessory *_accessory;
-    id _delegate;
-    BOOL _hasNewBytesAvailable;
-    char *_inputFromAccBuffer;
-    NSCondition *_inputFromAccCondition;
-    NSMutableData *_inputFromAccData;
-    NSObject<OS_dispatch_queue> *_inputFromAccQueue;
-    BOOL _isAtEndEventSent;
-    BOOL _isOpenCompletedEventSent;
-    struct __CFRunLoop { } *_runLoop;
-    struct __CFRunLoopSource { } *_runLoopSource;
-    NSRecursiveLock *_runloopLock;
-    EASession *_session;
-    int _sock;
-    NSObject<OS_dispatch_source> *_sockListenSource;
-    NSRecursiveLock *_statusLock;
-    unsigned int _streamStatus;
+    EAAccessory * _accessory;
+    id  _delegate;
+    BOOL  _hasNewBytesAvailable;
+    char * _inputFromAccBuffer;
+    NSCondition * _inputFromAccCondition;
+    NSMutableData * _inputFromAccData;
+    NSObject<OS_dispatch_queue> * _inputFromAccQueue;
+    BOOL  _isAtEndEventSent;
+    BOOL  _isOpenCompletedEventSent;
+    struct __CFRunLoop { } * _runLoop;
+    struct __CFRunLoopSource { } * _runLoopSource;
+    NSRecursiveLock * _runloopLock;
+    EASession * _session;
+    int  _sock;
+    NSObject<OS_dispatch_source> * _sockListenSource;
+    NSRecursiveLock * _statusLock;
+    unsigned int  _streamStatus;
 }
 
 - (void)_accessoryDidDisconnect:(id)arg1;

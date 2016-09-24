@@ -3,8 +3,8 @@
  */
 
 @interface PLTimeReferenceBaseband : PLTimeReferenceDynamic {
-    PLNSNotificationOperatorComposition *_basebandTimeNotification;
-    BOOL _followupCurrentTimeRunning;
+    PLNSNotificationOperatorComposition * _basebandTimeNotification;
+    BOOL  _followupCurrentTimeRunning;
 }
 
 @property (retain) PLNSNotificationOperatorComposition *basebandTimeNotification;

@@ -3,9 +3,9 @@
  */
 
 @interface _DKEventDateRef : NSObject {
-    NSDate *_date;
-    _DKEvent *_event;
-    unsigned int _type;
+    NSDate * _date;
+    _DKEvent * _event;
+    unsigned int  _type;
 }
 
 @property (retain) NSDate *date;

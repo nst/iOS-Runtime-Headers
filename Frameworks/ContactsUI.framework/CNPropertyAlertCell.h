@@ -12,8 +12,8 @@
 
 + (BOOL)wantsChevron;
 
-- (id)_correspondingAlertItemOfKind:(int)arg1;
 - (id)alertItem;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)performDefaultAction;
 - (void)picker:(id)arg1 didPickItem:(id)arg2;
 - (void)pickerDidCancel:(id)arg1;

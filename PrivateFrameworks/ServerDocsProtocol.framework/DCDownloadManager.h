@@ -3,10 +3,10 @@
  */
 
 @interface DCDownloadManager : NSObject {
-    NSMutableDictionary *_downloadTasks;
-    NSMutableDictionary *_downloads;
-    DCService *_service;
-    BOOL _shouldRetryIfAuthError;
+    NSMutableDictionary * _downloadTasks;
+    NSMutableDictionary * _downloads;
+    DCService * _service;
+    BOOL  _shouldRetryIfAuthError;
 }
 
 + (id)downloadManagerForService:(id)arg1;

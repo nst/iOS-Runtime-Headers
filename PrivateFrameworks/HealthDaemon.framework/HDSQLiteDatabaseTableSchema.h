@@ -3,9 +3,9 @@
  */
 
 @interface HDSQLiteDatabaseTableSchema : NSObject {
-    NSDictionary *_columns;
-    NSSet *_indices;
-    NSString *_name;
+    NSDictionary * _columns;
+    NSSet * _indices;
+    NSString * _name;
 }
 
 @property (nonatomic, retain) NSDictionary *columns;

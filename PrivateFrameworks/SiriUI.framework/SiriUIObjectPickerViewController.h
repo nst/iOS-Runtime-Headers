@@ -3,8 +3,8 @@
  */
 
 @interface SiriUIObjectPickerViewController : UIViewController {
-    SAUIDomainObjectPicker *_picker;
-    <SiriUIObjectPickerViewControllerDelegate> *_pickerDelegate;
+    SAUIDomainObjectPicker * _picker;
+    <SiriUIObjectPickerViewControllerDelegate> * _pickerDelegate;
 }
 
 @property (getter=_picker, nonatomic, readonly) SAUIDomainObjectPicker *picker;

@@ -3,8 +3,8 @@
  */
 
 @interface SUDocumentInteractionSession : NSObject <UIDocumentInteractionControllerDelegate> {
-    id /* block */ _completionHandler;
-    UIDocumentInteractionController *_documentInteractionController;
+    id /* block */  _completionHandler;
+    UIDocumentInteractionController * _documentInteractionController;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;

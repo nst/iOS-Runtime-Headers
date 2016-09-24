@@ -3,9 +3,9 @@
  */
 
 @interface CUIKUserActivityWithSource : CUIKUserActivity {
-    NSString *_sourceHost;
-    NSString *_sourceOwner;
-    int _sourceType;
+    NSString * _sourceHost;
+    NSString * _sourceOwner;
+    int  _sourceType;
 }
 
 - (void).cxx_destruct;

@@ -3,12 +3,12 @@
  */
 
 @interface ABAnyValuePredicate : ABPredicate {
-    int _property;
+    int  _property;
 }
 
 @property (nonatomic) int property;
 
-- (void)ab_bindWhereClauseComponentOfStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
+- (void)ab_bindWhereClauseComponentOfStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; double x3; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
 - (id)init;
 - (BOOL)isValid;
 - (int)property;

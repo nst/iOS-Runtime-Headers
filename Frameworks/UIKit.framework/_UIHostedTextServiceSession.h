@@ -3,12 +3,13 @@
  */
 
 @interface _UIHostedTextServiceSession : _UITextServiceSession {
-    <_UIHostedTextServiceSessionDelegate> *_delegate;
+    <_UIHostedTextServiceSessionDelegate> * _delegate;
 }
 
 @property (nonatomic) <_UIHostedTextServiceSessionDelegate> *delegate;
 
-+ (id)showServiceForText:(id)arg1 type:(int)arg2 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 inView:(id)arg4;
++ (id)showServiceForText:(id)arg1 selectedTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 type:(int)arg3 fromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4 inView:(id)arg5;
++ (id)showServiceForText:(id)arg1 type:(int)arg2 fromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 inView:(id)arg4;
 
 - (id)delegate;
 - (void)dismissTextServiceAnimated:(BOOL)arg1;

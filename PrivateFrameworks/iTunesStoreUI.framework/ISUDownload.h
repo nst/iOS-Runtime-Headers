@@ -3,13 +3,13 @@
  */
 
 @interface ISUDownload : NSObject {
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    SSDownload *_download;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    SSDownload * _download;
 }
 
 @property (nonatomic, readonly) NSString *artistName;
-@property (nonatomic, readonly) long long bytesDownloaded;
-@property (nonatomic, readonly) long long bytesTotal;
+@property (nonatomic, readonly) int bytesDownloaded;
+@property (nonatomic, readonly) int bytesTotal;
 @property (getter=isContentRestricted, nonatomic, readonly) BOOL contentRestricted;
 @property (nonatomic, readonly) double estimatedSecondsRemaining;
 @property (nonatomic, retain) SSDownload *managedDownload;
@@ -28,8 +28,8 @@
 + (void)initialize;
 
 - (id)artistName;
-- (long long)bytesDownloaded;
-- (long long)bytesTotal;
+- (int)bytesDownloaded;
+- (int)bytesTotal;
 - (id)copyLocalizedStatusString;
 - (void)dealloc;
 - (double)estimatedSecondsRemaining;

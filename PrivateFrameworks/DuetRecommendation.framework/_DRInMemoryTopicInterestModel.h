@@ -3,9 +3,9 @@
  */
 
 @interface _DRInMemoryTopicInterestModel : NSObject <_DRTopicInterestModeling> {
-    _DRTopicInterestSummary *_summary;
-    NSObject<OS_dispatch_queue> *_syncQueue;
-    NSMutableArray *_topics;
+    _DRTopicInterestSummary * _summary;
+    NSObject<OS_dispatch_queue> * _syncQueue;
+    NSMutableArray * _topics;
 }
 
 + (id)predicateForTopicInteractionsAfter:(id)arg1;

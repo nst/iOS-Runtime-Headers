@@ -3,8 +3,8 @@
  */
 
 @interface AVPixelBufferAttributesVideoOutputSettings : AVVideoOutputSettings <AVDecodedVideoSettingsForFig> {
-    NSDictionary *_VTCleanApertureDictionary;
-    NSDictionary *_VTPixelAspectRatioDictionary;
+    NSDictionary * _VTCleanApertureDictionary;
+    NSDictionary * _VTPixelAspectRatioDictionary;
 }
 
 @property (nonatomic, readonly) NSDictionary *pixelBufferAttributes;

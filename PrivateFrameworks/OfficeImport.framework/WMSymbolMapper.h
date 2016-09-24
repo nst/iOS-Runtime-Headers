@@ -3,8 +3,8 @@
  */
 
 @interface WMSymbolMapper : CMMapper {
-    unsigned short mCharacter;
-    NSString *mFontName;
+    unsigned short  mCharacter;
+    NSString * mFontName;
 }
 
 + (BOOL)isSymbolFontName:(id)arg1;

@@ -3,16 +3,16 @@
  */
 
 @interface MFContactsAutocompleteSearchOperation : MFContactsSearchOperation <CNAutocompleteFetchDelegate> {
-    CNAutocompleteStore *_autocompleteStore;
-    CNAutocompleteFetchContext *_fetchContext;
-    NSError *_fetchError;
-    <CNCancelable> *_fetchRequestHandle;
-    NSObject<OS_dispatch_semaphore> *_fetchRequestSemaphore;
-    BOOL _includeContacts;
-    BOOL _includeRecents;
-    BOOL _includeServers;
-    BOOL _includeSuggestions;
-    BOOL _simulateResults;
+    CNAutocompleteStore * _autocompleteStore;
+    CNAutocompleteFetchContext * _fetchContext;
+    NSError * _fetchError;
+    <CNCancelable> * _fetchRequestHandle;
+    NSObject<OS_dispatch_semaphore> * _fetchRequestSemaphore;
+    BOOL  _includeContacts;
+    BOOL  _includeRecents;
+    BOOL  _includeServers;
+    BOOL  _includeSuggestions;
+    BOOL  _simulateResults;
 }
 
 @property (nonatomic, retain) CNAutocompleteStore *autocompleteStore;

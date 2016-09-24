@@ -3,9 +3,9 @@
  */
 
 @interface _UIDynamicAnimationGroup : _UIDynamicAnimation {
-    NSMutableArray *_animations;
-    id /* block */ _applier;
-    NSMutableArray *_runningAnimations;
+    NSMutableArray * _animations;
+    id /* block */  _applier;
+    NSMutableArray * _runningAnimations;
 }
 
 @property (nonatomic, copy) NSArray *animations;

@@ -3,33 +3,31 @@
  */
 
 @interface PKObject : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_authenticationToken;
-    PKContent *_content;
-    PKDataAccessor *_dataAccessor;
-    PKDisplayProfile *_displayProfile;
-    PKImageSet *_imageSets;
-    BOOL _initializedViaInitWithCoder;
-    NSData *_manifestHash;
-    float _preferredImageScale;
-    NSString *_preferredImageSuffix;
-    unsigned int _settings;
-    int _shareCount;
-    NSString *_uniqueID;
-    NSURL *_webServiceURL;
+    NSString * _authenticationToken;
+    PKContent * _content;
+    PKDataAccessor * _dataAccessor;
+    PKDisplayProfile * _displayProfile;
+    NSLock * _imageSetLock;
+    PKImageSet * _imageSets;
+    BOOL  _initializedViaInitWithCoder;
+    NSData * _manifestHash;
+    double  _preferredImageScale;
+    NSString * _preferredImageSuffix;
+    unsigned int  _settings;
+    int  _shareCount;
+    NSString * _uniqueID;
+    NSURL * _webServiceURL;
 }
 
-@property (nonatomic, readonly, retain) NSData *archiveData;
 @property (nonatomic, copy) NSString *authenticationToken;
 @property (nonatomic, retain) PKContent *content;
 @property (nonatomic, retain) PKDataAccessor *dataAccessor;
 @property (nonatomic, retain) PKDisplayProfile *displayProfile;
 @property (nonatomic, readonly) BOOL initializedViaInitWithCoder;
 @property (nonatomic, copy) NSData *manifestHash;
-@property (nonatomic, readonly, retain) NSDate *modificationDate;
-@property (nonatomic) float preferredImageScale;
+@property (nonatomic) double preferredImageScale;
 @property (nonatomic, retain) NSString *preferredImageSuffix;
 @property (nonatomic, readonly) BOOL remoteAssetsDownloaded;
-@property (nonatomic, readonly, retain) NSData *serializedFileWrapper;
 @property (nonatomic) unsigned int settings;
 @property (nonatomic) int shareCount;
 @property (nonatomic, copy) NSString *uniqueID;
@@ -39,6 +37,7 @@
 + (BOOL)isValidObjectWithFileURL:(id)arg1 warnings:(id*)arg2 orError:(id*)arg3;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)archiveData;
 - (id)authenticationToken;
 - (id)content;
@@ -51,7 +50,6 @@
 - (void)downloadRemoteAssetsWithCompletion:(id /* block */)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)flushFormattedFieldValues;
-- (void)flushImageSetOfType:(int)arg1;
 - (void)flushLoadedContent;
 - (void)flushLoadedImageSets;
 - (id)imageSetLoadedIfNeeded:(int)arg1;
@@ -97,7 +95,7 @@
 - (unsigned int)settings;
 - (int)shareCount;
 - (id)uniqueID;
-- (void)updateImageSetCachesAtURL:(id)arg1;
+- (void)updateImageSetForURL:(id)arg1 withCacheURL:(id)arg2;
 - (id)webServiceURL;
 
 @end

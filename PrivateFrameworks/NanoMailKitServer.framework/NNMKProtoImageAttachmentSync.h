@@ -3,14 +3,14 @@
  */
 
 @interface NNMKProtoImageAttachmentSync : PBCodable <NSCopying> {
-    NSString *_contentId;
-    NSData *_dateSynced;
-    unsigned int _fullSyncVersion;
+    NSString * _contentId;
+    NSData * _dateSynced;
+    unsigned int  _fullSyncVersion;
     struct { 
         unsigned int fullSyncVersion : 1; 
-    } _has;
-    NSData *_imageData;
-    NSString *_messageId;
+    }  _has;
+    NSData * _imageData;
+    NSString * _messageId;
 }
 
 @property (nonatomic, retain) NSString *contentId;

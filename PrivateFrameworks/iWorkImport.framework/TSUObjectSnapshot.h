@@ -3,9 +3,9 @@
  */
 
 @interface TSUObjectSnapshot : NSObject {
-    NSArray *mCompared;
-    unsigned long mEntryCount;
-    void **mSnapshot;
+    NSArray * mCompared;
+    unsigned long  mEntryCount;
+    void ** mSnapshot;
 }
 
 - (void)calibrate:(id)arg1;

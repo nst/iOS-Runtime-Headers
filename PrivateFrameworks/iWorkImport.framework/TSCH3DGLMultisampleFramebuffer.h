@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DGLMultisampleFramebuffer : TSCH3DGLMixinFramebuffer <TSCH3DGLResolveFramebuffer> {
-    BOOL mDisableDestroyAssertion;
-    TSCH3DGLFramebufferMultisample *mMultisample;
+    BOOL  mDisableDestroyAssertion;
+    TSCH3DGLFramebufferMultisample * mMultisample;
 }
 
 @property (nonatomic) BOOL disableDestroyAssertion;

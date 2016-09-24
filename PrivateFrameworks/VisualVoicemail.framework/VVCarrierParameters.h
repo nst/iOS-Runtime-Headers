@@ -3,7 +3,7 @@
  */
 
 @interface VVCarrierParameters : NSObject {
-    NSDictionary *_parameterValues;
+    NSDictionary * _parameterValues;
 }
 
 + (id)carrierServiceName;

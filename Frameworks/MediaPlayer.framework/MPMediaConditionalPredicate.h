@@ -3,9 +3,9 @@
  */
 
 @interface MPMediaConditionalPredicate : MPMediaPredicate <MPPProtobufferCoding> {
-    MPMediaPredicate *_conditionPredicate;
-    MPMediaPredicate *_elsePredicate;
-    MPMediaPredicate *_thenPredicate;
+    MPMediaPredicate * _conditionPredicate;
+    MPMediaPredicate * _elsePredicate;
+    MPMediaPredicate * _thenPredicate;
 }
 
 @property (nonatomic, readonly, copy) MPMediaPredicate *conditionPredicate;

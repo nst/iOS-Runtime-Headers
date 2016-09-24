@@ -3,8 +3,8 @@
  */
 
 @interface CoreDAVOctetStreamParser : NSObject <CoreDAVResponseBodyParser> {
-    NSMutableData *_octetStreamData;
-    NSError *_parserError;
+    NSMutableData * _octetStreamData;
+    NSError * _parserError;
 }
 
 @property (readonly, copy) NSString *debugDescription;

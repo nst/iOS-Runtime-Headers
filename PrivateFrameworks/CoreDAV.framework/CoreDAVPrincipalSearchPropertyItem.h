@@ -3,8 +3,8 @@
  */
 
 @interface CoreDAVPrincipalSearchPropertyItem : CoreDAVItem {
-    CoreDAVLeafItem *_descriptionItem;
-    CoreDAVItem *_prop;
+    CoreDAVLeafItem * _descriptionItem;
+    CoreDAVItem * _prop;
 }
 
 @property (nonatomic, retain) CoreDAVLeafItem *descriptionItem;

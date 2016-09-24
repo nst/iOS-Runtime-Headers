@@ -3,13 +3,13 @@
  */
 
 @interface GEOAddressCorrectionUpdateRequest : PBRequest <NSCopying> {
-    NSString *_addressID;
-    NSMutableArray *_addressResults;
-    int _correctionStatus;
+    NSString * _addressID;
+    NSMutableArray * _addressResults;
+    int  _correctionStatus;
     struct { 
         unsigned int correctionStatus : 1; 
-    } _has;
-    NSMutableArray *_significantLocations;
+    }  _has;
+    NSMutableArray * _significantLocations;
 }
 
 @property (nonatomic, retain) NSString *addressID;
@@ -19,6 +19,10 @@
 @property (nonatomic) BOOL hasCorrectionStatus;
 @property (nonatomic, retain) NSMutableArray *significantLocations;
 
++ (Class)addressResultType;
++ (Class)significantLocationType;
+
+- (int)StringAsCorrectionStatus:(id)arg1;
 - (void)addAddressResult:(id)arg1;
 - (void)addSignificantLocation:(id)arg1;
 - (id)addressID;
@@ -30,6 +34,7 @@
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)correctionStatus;
+- (id)correctionStatusAsString:(int)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;

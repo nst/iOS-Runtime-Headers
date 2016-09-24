@@ -3,18 +3,18 @@
  */
 
 @interface PUToolbarViewModel : PUViewModel {
-    UIViewController *__viewController;
-    UIView *_accessoryView;
-    float _accessoryViewTopOutset;
-    float _maximumHeight;
-    NSArray *_toolbarItems;
+    UIViewController * __viewController;
+    UIView * _accessoryView;
+    double  _accessoryViewTopOutset;
+    double  _maximumHeight;
+    NSArray * _toolbarItems;
 }
 
 @property (setter=_setViewController:, nonatomic) UIViewController *_viewController;
 @property (nonatomic, retain) UIView *accessoryView;
-@property (nonatomic) float accessoryViewTopOutset;
+@property (nonatomic) double accessoryViewTopOutset;
 @property (nonatomic, readonly) PUToolbarViewModelChange *currentChange;
-@property (nonatomic) float maximumHeight;
+@property (nonatomic) double maximumHeight;
 @property (nonatomic, copy) NSArray *toolbarItems;
 
 - (void).cxx_destruct;

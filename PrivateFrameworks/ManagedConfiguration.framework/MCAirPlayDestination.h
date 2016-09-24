@@ -3,9 +3,9 @@
  */
 
 @interface MCAirPlayDestination : NSObject {
-    NSString *_deviceID;
-    NSString *_deviceName;
-    NSString *_password;
+    NSString * _deviceID;
+    NSString * _deviceName;
+    NSString * _password;
 }
 
 @property (nonatomic, retain) NSString *deviceID;

@@ -3,18 +3,22 @@
  */
 
 @interface WebInspector : NSObject {
-    WebInspectorFrontend *_frontend;
-    WebView *_webView;
+    WebInspectorFrontend * _frontend;
+    WebView * _inspectedWebView;
 }
+
+@property (getter=isOpen, nonatomic, readonly) BOOL open;
 
 - (void)attach:(id)arg1;
 - (void)close:(id)arg1;
 - (void)dealloc;
 - (void)detach:(id)arg1;
 - (void)evaluateInFrontend:(id)arg1 script:(id)arg2;
-- (id)initWithWebView:(id)arg1;
+- (id)initWithInspectedWebView:(id)arg1;
+- (void)inspectedWebViewClosed;
 - (BOOL)isDebuggingJavaScript;
 - (BOOL)isJavaScriptProfilingEnabled;
+- (BOOL)isOpen;
 - (BOOL)isProfilingJavaScript;
 - (BOOL)isTimelineProfilingEnabled;
 - (void)releaseFrontend;
@@ -30,6 +34,5 @@
 - (void)stopProfilingJavaScript:(id)arg1;
 - (void)toggleDebuggingJavaScript:(id)arg1;
 - (void)toggleProfilingJavaScript:(id)arg1;
-- (void)webViewClosed;
 
 @end

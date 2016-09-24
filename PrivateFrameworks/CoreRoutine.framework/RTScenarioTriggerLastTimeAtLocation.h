@@ -3,9 +3,9 @@
  */
 
 @interface RTScenarioTriggerLastTimeAtLocation : RTScenarioTrigger {
-    NSDate *_lastEntryDate;
-    NSDate *_lastExitDate;
-    RTLocationOfInterest *_locationOfInterest;
+    NSDate * _lastEntryDate;
+    NSDate * _lastExitDate;
+    RTLocationOfInterest * _locationOfInterest;
 }
 
 @property (nonatomic, readonly) NSDate *lastEntryDate;

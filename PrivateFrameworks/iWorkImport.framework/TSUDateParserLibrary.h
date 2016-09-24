@@ -3,16 +3,18 @@
  */
 
 @interface TSUDateParserLibrary : NSObject {
-    NSMutableArray *mAvailableDateParsers;
-    TSULocale *mLocale;
-    unsigned int mMaxPermittedParsers;
-    unsigned int mNumberOfUses;
-    NSCondition *mParserLibraryConditionVariable;
-    unsigned int mParsersCreated;
+    NSMutableArray * mAvailableDateParsers;
+    TSULocale * mLocale;
+    unsigned int  mMaxPermittedParsers;
+    unsigned int  mNumberOfUses;
+    NSCondition * mParserLibraryConditionVariable;
+    unsigned int  mParsersCreated;
 }
 
 - (id)checkoutDateParser;
+- (void)dealloc;
 - (id)initWithLocale:(id)arg1;
+- (void)prepareDateParserInBackground;
 - (void)returnDateParser:(id)arg1;
 
 @end

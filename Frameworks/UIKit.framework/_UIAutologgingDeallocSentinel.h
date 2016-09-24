@@ -3,8 +3,8 @@
  */
 
 @interface _UIAutologgingDeallocSentinel : NSObject {
-    BOOL _called;
-    NSString *_message;
+    BOOL  _called;
+    NSString * _message;
 }
 
 @property (nonatomic) BOOL called;

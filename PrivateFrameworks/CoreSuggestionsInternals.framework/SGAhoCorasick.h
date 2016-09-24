@@ -3,7 +3,7 @@
  */
 
 @interface SGAhoCorasick : NSObject {
-    NSData *_bytecode;
+    NSData * _bytecode;
 }
 
 - (void).cxx_destruct;

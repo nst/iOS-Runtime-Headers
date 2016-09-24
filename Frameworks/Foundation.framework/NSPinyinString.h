@@ -3,17 +3,17 @@
  */
 
 @interface NSPinyinString : NSString {
-    unsigned int _deletionCount;
-    unsigned int _firstModificationIndex;
-    unsigned int _insertionCount;
-    BOOL _lastSyllableIsPartial;
-    unsigned int _rangeCount;
-    struct _NSRange { unsigned int x1; unsigned int x2; } *_ranges;
-    unsigned int _replacementCount;
-    unsigned int _score;
-    NSString *_string;
-    unsigned int _syllableCount;
-    unsigned int _transpositionCount;
+    unsigned int  _deletionCount;
+    unsigned int  _firstModificationIndex;
+    unsigned int  _insertionCount;
+    BOOL  _lastSyllableIsPartial;
+    unsigned int  _rangeCount;
+    struct _NSRange { unsigned int x1; unsigned int x2; } * _ranges;
+    unsigned int  _replacementCount;
+    unsigned int  _score;
+    NSString * _string;
+    unsigned int  _syllableCount;
+    unsigned int  _transpositionCount;
 }
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation

@@ -3,12 +3,12 @@
  */
 
 @interface AWDIDSMagnetCorruption : PBCodable <NSCopying> {
-    long long _corrupted;
+    long long  _corrupted;
     struct { 
         unsigned int corrupted : 1; 
         unsigned int timestamp : 1; 
-    } _has;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) long long corrupted;

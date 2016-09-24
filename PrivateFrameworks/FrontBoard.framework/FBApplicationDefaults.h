@@ -3,12 +3,12 @@
  */
 
 @interface FBApplicationDefaults : NSObject {
-    int _backgroundStyle;
-    int _interfaceOrientation;
-    NSString *_launchImageFile;
-    BOOL _statusBarHidden;
-    BOOL _statusBarHiddenWhenVerticallyCompact;
-    int _statusBarStyle;
+    int  _backgroundStyle;
+    int  _interfaceOrientation;
+    NSString * _launchImageFile;
+    BOOL  _statusBarHidden;
+    BOOL  _statusBarHiddenWhenVerticallyCompact;
+    int  _statusBarStyle;
 }
 
 @property (nonatomic) int backgroundStyle;

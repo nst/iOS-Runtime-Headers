@@ -3,13 +3,15 @@
  */
 
 @interface UIDictationInputMode : UIKeyboardInputMode {
-    UIKeyboardInputMode *_inputModeThatInvokedDictation;
-    UITouch *_triggeringTouch;
+    UIKeyboardInputMode * _inputModeThatInvokedDictation;
+    UITouch * _triggeringTouch;
 }
 
 @property (nonatomic, retain) UIKeyboardInputMode *inputModeThatInvokedDictation;
 @property (nonatomic, retain) UITouch *triggeringTouch;
 @property (nonatomic, readonly) Class viewControllerClass;
+
++ (BOOL)currentInputModeSupportsDictation;
 
 - (void)dealloc;
 - (id)inputModeThatInvokedDictation;

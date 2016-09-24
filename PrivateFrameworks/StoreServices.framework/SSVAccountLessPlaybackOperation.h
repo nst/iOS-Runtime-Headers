@@ -3,8 +3,8 @@
  */
 
 @interface SSVAccountLessPlaybackOperation : SSVComplexOperation {
-    NSString *_itemIdentifier;
-    id /* block */ _responseBlock;
+    NSString * _itemIdentifier;
+    id /* block */  _responseBlock;
 }
 
 @property (copy) NSString *itemIdentifier;

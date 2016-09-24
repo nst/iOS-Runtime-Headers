@@ -12,10 +12,10 @@
 - (float)vibrationRecorderControlsToolbarItemsHorizontalOffsetFromEdge;
 - (float)vibrationRecorderControlsToolbarVerticalOffset;
 - (UIColor *)vibrationRecorderInstructionsLabelBackgroundColor;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })vibrationRecorderInstructionsLabelEdgeInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })vibrationRecorderInstructionsLabelEdgeInsets;
 - (double)vibrationRecorderInstructionsLabelFadeAnimationDuration;
 - (UIFont *)vibrationRecorderInstructionsLabelFont;
-- (struct UIOffset { float x1; float x2; })vibrationRecorderInstructionsLabelPositionOffset;
+- (struct UIOffset { double x1; double x2; })vibrationRecorderInstructionsLabelPositionOffset;
 - (UIColor *)vibrationRecorderInstructionsLabelTextColor;
 - (float)vibrationRecorderProgressToolbarAdditionalHeight;
 - (float)vibrationRecorderProgressToolbarVerticalOffset;

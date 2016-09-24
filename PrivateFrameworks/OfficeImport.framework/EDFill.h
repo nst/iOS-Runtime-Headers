@@ -3,7 +3,7 @@
  */
 
 @interface EDFill : NSObject <NSCopying> {
-    EDResources *mResources;
+    EDResources * mResources;
 }
 
 + (id)fillWithResources:(id)arg1;

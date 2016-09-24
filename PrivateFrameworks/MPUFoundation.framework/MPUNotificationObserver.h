@@ -3,7 +3,7 @@
  */
 
 @interface MPUNotificationObserver : NSObject {
-    id _notificationObservationToken;
+    id  _notificationObservationToken;
 }
 
 @property (nonatomic, retain) id notificationObservationToken;

@@ -3,8 +3,9 @@
  */
 
 @interface BRCPeriodicSyncOperation : _BRCOperation <BRCOperationSubclass> {
-    CKServerChangeToken *_metadataChangeToken;
-    BRCContainerScheduler *_scheduler;
+    CKServerChangeToken * _metadataChangeToken;
+    BRCContainerScheduler * _scheduler;
+    CKServerChangeToken * _zoneHealthChangeToken;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -13,14 +14,16 @@
 @property (nonatomic, readonly) CKServerChangeToken *metadataChangeToken;
 @property (nonatomic, readonly) BRCContainerScheduler *scheduler;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) CKServerChangeToken *zoneHealthChangeToken;
 
 - (void).cxx_destruct;
-- (id)initWithContainerScheduler:(id)arg1 metadataChangeToken:(id)arg2;
+- (id)createActivity;
+- (id)initWithContainerScheduler:(id)arg1 metadataChangeToken:(id)arg2 zoneHealthChangeToken:(id)arg3;
 - (void)main;
 - (id)metadataChangeToken;
 - (BOOL)scheduleSyncDownIfNeededForZoneID:(id)arg1 zoneIfAny:(id)arg2;
 - (id)scheduler;
 - (BOOL)shouldRetryForError:(id)arg1;
-- (unsigned long long)startActivity;
+- (id)zoneHealthChangeToken;
 
 @end

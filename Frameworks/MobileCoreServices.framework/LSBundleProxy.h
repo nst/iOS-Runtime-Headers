@@ -3,26 +3,34 @@
  */
 
 @interface LSBundleProxy : LSResourceProxy <NSSecureCoding> {
-    NSURL *_appStoreReceiptURL;
-    NSString *_bundleExecutable;
-    unsigned long long _bundleFlags;
-    NSString *_bundleType;
-    NSURL *_bundleURL;
-    NSString *_bundleVersion;
-    NSUUID *_cacheGUID;
-    NSDictionary *_entitlements;
-    NSDictionary *_environmentVariables;
-    BOOL _foundBackingBundle;
-    NSDictionary *_groupContainerURLs;
-    BOOL _isContainerized;
-    NSString *_localizedShortName;
-    NSArray *_machOUUIDs;
-    unsigned long long _plistContentFlags;
-    unsigned int _sequenceNumber;
-    NSString *_signerIdentity;
+    BOOL  _UPPValidated;
+    _LSLazyPropertyList * __entitlements;
+    _LSLazyPropertyList * __environmentVariables;
+    _LSLazyPropertyList * __groupContainers;
+    _LSLazyPropertyList * __infoDictionary;
+    NSURL * _appStoreReceiptURL;
+    NSString * _bundleExecutable;
+    unsigned int  _bundleFlags;
+    NSString * _bundleType;
+    NSURL * _bundleURL;
+    NSString * _bundleVersion;
+    NSUUID * _cacheGUID;
+    BOOL  _foundBackingBundle;
+    BOOL  _isContainerized;
+    NSString * _localizedShortName;
+    NSArray * _machOUUIDs;
+    unsigned long  _plistContentFlags;
+    BOOL  _profileValidated;
+    unsigned int  _sequenceNumber;
+    NSString * _signerIdentity;
 }
 
-@property (nonatomic, readonly) NSURL *appStoreReceiptURL;
+@property (nonatomic, readonly) BOOL UPPValidated;
+@property (setter=_setEntitlements:, nonatomic, copy) _LSLazyPropertyList *_entitlements;
+@property (setter=_setEnvironmentVariables:, nonatomic, copy) _LSLazyPropertyList *_environmentVariables;
+@property (setter=_setGroupContainers:, nonatomic, copy) _LSLazyPropertyList *_groupContainers;
+@property (setter=_setInfoDictionary:, nonatomic, copy) _LSLazyPropertyList *_infoDictionary;
+@property (nonatomic, copy) NSURL *appStoreReceiptURL;
 @property (nonatomic, readonly) NSURL *bundleContainerURL;
 @property (nonatomic, readonly) NSString *bundleExecutable;
 @property (nonatomic, readonly) NSString *bundleIdentifier;
@@ -38,26 +46,34 @@
 @property (nonatomic, readonly) NSDictionary *groupContainerURLs;
 @property (nonatomic, readonly) BOOL isContainerized;
 @property (nonatomic, readonly) NSString *localizedShortName;
-@property (nonatomic, readonly) NSArray *machOUUIDs;
+@property (nonatomic, copy) NSArray *machOUUIDs;
+@property (nonatomic, readonly) BOOL profileValidated;
 @property (nonatomic, readonly) unsigned int sequenceNumber;
 @property (nonatomic, readonly) NSString *signerIdentity;
 
 // Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
 
++ (id)bundleProxyForCurrentProcess;
 + (id)bundleProxyForIdentifier:(id)arg1;
 + (id)bundleProxyForURL:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
-- (unsigned long long)_containerClassForLSBundleType:(id)arg1;
-- (unsigned char)_createContext:(struct LSContext { struct LSDatabase {} *x1; }*)arg1 andGetBundle:(unsigned int*)arg2 withData:(const struct LSBundleData {}**)arg3;
+- (BOOL)UPPValidated;
+- (unsigned int)_containerClassForLSBundleType:(id)arg1;
 - (id)_dataContainerURLFromContainerManager;
+- (id)_entitlements;
+- (id)_environmentVariables;
 - (id)_environmentVariablesFromContainerManager;
 - (id)_groupContainerURLsFromContainerManager;
-- (id)_initWithBundleUnit:(unsigned long)arg1 bundleType:(unsigned int)arg2 BundleID:(id)arg3 localizedName:(id)arg4 bundleContainerURL:(id)arg5 dataContainerURL:(id)arg6 resourcesDirectoryURL:(id)arg7 iconsDictionary:(id)arg8 iconFileNames:(id)arg9 version:(id)arg10;
-- (id)_plistValueForKey:(id)arg1 ofClass:(Class)arg2;
-- (id)_plistValueForKey:(id)arg1 ofClass:(Class)arg2 valuesOfClass:(Class)arg3;
+- (id)_groupContainers;
+- (id)_infoDictionary;
+- (id)_initWithBundleUnit:(unsigned int)arg1 bundleType:(unsigned int)arg2 bundleID:(id)arg3 localizedName:(id)arg4 bundleContainerURL:(id)arg5 dataContainerURL:(id)arg6 resourcesDirectoryURL:(id)arg7 iconsDictionary:(id)arg8 iconFileNames:(id)arg9 version:(id)arg10;
+- (void)_setEntitlements:(id)arg1;
+- (void)_setEnvironmentVariables:(id)arg1;
+- (void)_setGroupContainers:(id)arg1;
+- (void)_setInfoDictionary:(id)arg1;
+- (id)_valueForEqualityTesting;
 - (id)appStoreReceiptURL;
-- (id)applicationGroupIdentifiers;
 - (id)bundleContainerURL;
 - (id)bundleExecutable;
 - (id)bundleIdentifier;
@@ -69,6 +85,8 @@
 - (id)dataContainerURL;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
+- (id)entitlementValueForKey:(id)arg1 ofClass:(Class)arg2;
+- (id)entitlementValueForKey:(id)arg1 ofClass:(Class)arg2 valuesOfClass:(Class)arg3;
 - (id)entitlements;
 - (id)environmentVariables;
 - (BOOL)foundBackingBundle;
@@ -79,8 +97,14 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)localizedShortName;
 - (id)machOUUIDs;
+- (id)objectForInfoDictionaryKey:(id)arg1 ofClass:(Class)arg2;
+- (id)objectForInfoDictionaryKey:(id)arg1 ofClass:(Class)arg2 valuesOfClass:(Class)arg3;
+- (BOOL)profileValidated;
 - (unsigned int)sequenceNumber;
+- (void)setAppStoreReceiptURL:(id)arg1;
 - (void)setLocalizedShortName:(id)arg1;
+- (void)setMachOUUIDs:(id)arg1;
+- (void)setPropertyListCachingStrategy:(unsigned int)arg1;
 - (id)signerIdentity;
 - (id)uniqueIdentifier;
 
@@ -89,5 +113,14 @@
 + (id)_hk_appExtensionContainerBundleProxyWithProperties:(id)arg1;
 + (id)hk_appExtensionContainerBundleForConnection:(id)arg1;
 + (id)hk_appExtensionContainerBundleForCurrentTask;
+
+// Image: /System/Library/Frameworks/UserNotifications.framework/UserNotifications
+
+- (id)_un_applicationBundleURL;
+- (id)un_applicationBundle;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (id)__ck_icon;
 
 @end

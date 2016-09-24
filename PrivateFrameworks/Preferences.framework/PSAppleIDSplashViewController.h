@@ -3,26 +3,26 @@
  */
 
 @interface PSAppleIDSplashViewController : PSListController <RemoteUIControllerDelegate> {
-    AKAppleIDAuthenticationController *_authController;
-    UIBarButtonItem *_cancelButtonBarItem;
-    PSSpecifier *_createNewAccountButtonSpecifier;
-    NSTimer *_idleJiggleTimer;
-    BOOL _isPasswordDirty;
-    BOOL _isPresentedModally;
-    ABMonogrammer *_monogrammer;
-    UIBarButtonItem *_nextButtonBarItem;
-    NSString *_password;
-    void *_powerAssertion;
-    id /* block */ _remoteUICompletion;
-    RemoteUIController *_remoteUIController;
-    BOOL _shouldHideBackButton;
-    BOOL _shouldShowCreateAppleIDButton;
-    PSSpecifier *_signInButtonSpecifier;
-    UIImageView *_silhouetteView;
-    UIActivityIndicatorView *_spinner;
-    UIBarButtonItem *_spinnerBarItem;
-    id _textFieldTextDidChangeObserver;
-    NSString *_username;
+    AKAppleIDAuthenticationController * _authController;
+    UIBarButtonItem * _cancelButtonBarItem;
+    PSSpecifier * _createNewAccountButtonSpecifier;
+    NSTimer * _idleJiggleTimer;
+    BOOL  _isPasswordDirty;
+    BOOL  _isPresentedModally;
+    ABMonogrammer * _monogrammer;
+    UIBarButtonItem * _nextButtonBarItem;
+    NSString * _password;
+    void * _powerAssertion;
+    id /* block */  _remoteUICompletion;
+    RemoteUIController * _remoteUIController;
+    BOOL  _shouldHideBackButton;
+    BOOL  _shouldShowCreateAppleIDButton;
+    PSSpecifier * _signInButtonSpecifier;
+    UIImageView * _silhouetteView;
+    UIActivityIndicatorView * _spinner;
+    UIBarButtonItem * _spinnerBarItem;
+    id  _textFieldTextDidChangeObserver;
+    NSString * _username;
 }
 
 @property (nonatomic, readonly) AKAppleIDAuthenticationController *authenticationController;

@@ -3,10 +3,10 @@
  */
 
 @interface SKUIRatingStarsCache : NSObject {
-    NSMutableDictionary *_cachedImages;
-    UIImage *_emptyStarImage;
-    UIImage *_filledStarImage;
-    UIImage *_halfStarImage;
+    NSMutableDictionary * _cachedImages;
+    UIImage * _emptyStarImage;
+    UIImage * _filledStarImage;
+    UIImage * _halfStarImage;
 }
 
 + (id)cacheWithProperties:(int)arg1;

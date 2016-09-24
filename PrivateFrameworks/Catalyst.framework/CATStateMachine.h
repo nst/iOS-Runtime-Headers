@@ -3,13 +3,13 @@
  */
 
 @interface CATStateMachine : NSObject {
-    CATState *_currentState;
-    CATState *_initialState;
-    unsigned int _logLevel;
-    NSString *_name;
-    id _target;
-    NSString *mCalloutReason;
-    NSMutableDictionary *mStateByName;
+    CATState * _currentState;
+    CATState * _initialState;
+    unsigned int  _logLevel;
+    NSString * _name;
+    id  _target;
+    NSString * mCalloutReason;
+    NSMutableDictionary * mStateByName;
 }
 
 @property (nonatomic, retain) CATState *currentState;

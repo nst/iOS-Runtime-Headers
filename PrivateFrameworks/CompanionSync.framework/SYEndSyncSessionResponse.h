@@ -3,13 +3,13 @@
  */
 
 @interface SYEndSyncSessionResponse : PBCodable <NSCopying> {
-    BOOL _didRollback;
-    SYErrorInfo *_error;
+    BOOL  _didRollback;
+    SYErrorInfo * _error;
     struct { 
         unsigned int didRollback : 1; 
-    } _has;
-    SYMessageHeader *_header;
-    NSString *_sessionID;
+    }  _has;
+    SYMessageHeader * _header;
+    NSString * _sessionID;
 }
 
 @property (nonatomic) BOOL didRollback;

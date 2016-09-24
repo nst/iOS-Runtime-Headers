@@ -3,7 +3,7 @@
  */
 
 @interface _NSMemoryStorePredicateRemapper : NSObject {
-    NSManagedObjectContext *_context;
+    NSManagedObjectContext * _context;
 }
 
 + (id)defaultInstance;

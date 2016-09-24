@@ -3,24 +3,24 @@
  */
 
 @interface RKSentenceClassifier : NSObject {
-    NSString *_RKLinguisticTagDataDetected;
-    NSArray *_alternatives;
-    NSArray *_appreciations;
-    NSArray *_choiceDelimiters;
-    NSArray *_dataDetected;
-    NSArray *_interrogatives;
-    NSArray *_inversions;
-    NSString *_languageIdentifier;
-    BOOL _lemmaAvailable;
-    BOOL _lexicalClassAvailable;
-    NSArray *_sentenceEntities;
-    BOOL _sentenceHasAlternativeConjunction;
-    BOOL _sentenceHasQuestionTerminator;
-    BOOL _sentenceIsAllSymbols;
-    BOOL _sentenceIsTerminated;
-    NSString *_sentenceString;
-    NSString *_sentenceStringOriginal;
-    NSValue *_sentenceTag;
+    NSString * _RKLinguisticTagDataDetected;
+    NSArray * _alternatives;
+    NSArray * _appreciations;
+    NSArray * _choiceDelimiters;
+    NSArray * _dataDetected;
+    NSArray * _interrogatives;
+    NSArray * _inversions;
+    NSString * _languageIdentifier;
+    BOOL  _lemmaAvailable;
+    BOOL  _lexicalClassAvailable;
+    NSArray * _sentenceEntities;
+    BOOL  _sentenceHasAlternativeConjunction;
+    BOOL  _sentenceHasQuestionTerminator;
+    BOOL  _sentenceIsAllSymbols;
+    BOOL  _sentenceIsTerminated;
+    NSString * _sentenceString;
+    NSString * _sentenceStringOriginal;
+    NSValue * _sentenceTag;
 }
 
 @property (retain) NSString *RKLinguisticTagDataDetected;

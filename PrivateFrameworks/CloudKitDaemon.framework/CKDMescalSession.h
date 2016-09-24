@@ -3,22 +3,22 @@
  */
 
 @interface CKDMescalSession : NSObject {
-    CKDClientContext *_context;
-    BOOL _isSetup;
-    NSError *_lastSetupError;
+    CKDClientContext * _context;
+    BOOL  _isSetup;
+    NSError * _lastSetupError;
     struct FairPlayHWInfo_ { 
         unsigned int IDLength; 
         unsigned char ID[20]; 
-    } _mescalHWInfo;
-    struct FPSAPContextOpaque_ { } *_mescalSession;
-    NSObject<OS_dispatch_queue> *_opQueue;
-    NSOperationQueue *_renewQueue;
-    NSObject<OS_dispatch_group> *_renewalGroup;
-    BOOL _renewing;
+    }  _mescalHWInfo;
+    struct FPSAPContextOpaque_ { } * _mescalSession;
+    NSObject<OS_dispatch_queue> * _opQueue;
+    NSOperationQueue * _renewQueue;
+    NSObject<OS_dispatch_group> * _renewalGroup;
+    BOOL  _renewing;
 }
 
 @property (nonatomic, readonly) CKDClientContext *context;
-@property (nonatomic) BOOL isSetup;
+@property BOOL isSetup;
 @property (nonatomic, retain) NSError *lastSetupError;
 @property (nonatomic) struct FairPlayHWInfo_ { unsigned int x1; unsigned char x2[20]; } mescalHWInfo;
 @property (nonatomic) struct FPSAPContextOpaque_ { }*mescalSession;
@@ -29,16 +29,16 @@
 
 - (void).cxx_destruct;
 - (void)_getHardwareInfo:(struct FairPlayHWInfo_ { unsigned int x1; unsigned char x2[20]; }*)arg1 withCompletionHandler:(id /* block */)arg2;
-- (void)_reallyExchangeData:(id)arg1 serverVersion:(int)arg2 withCompletionHandler:(id /* block */)arg3;
-- (void)_reallyProcessSignedData:(id)arg1 signature:(id)arg2 withCompletionHandler:(id /* block */)arg3;
-- (void)_reallySignData:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)_reallyExchangeData:(id)arg1 serverVersion:(int)arg2 qualityOfService:(int)arg3 withCompletionHandler:(id /* block */)arg4;
+- (void)_reallyProcessSignedData:(id)arg1 signature:(id)arg2 qualityOfService:(int)arg3 withCompletionHandler:(id /* block */)arg4;
+- (void)_reallySignData:(id)arg1 qualityOfService:(int)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)_renewMescalSessionForRequestLocked:(id)arg1 withCallback:(id /* block */)arg2;
 - (void)_setUpWithCompletionHandler:(id /* block */)arg1;
 - (void)_teardown;
 - (void)_teardownLocked;
 - (id)context;
 - (void)dealloc;
-- (void)exchangeData:(id)arg1 serverVersion:(int)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)exchangeData:(id)arg1 serverVersion:(int)arg2 qualityOfService:(int)arg3 withCompletionHandler:(id /* block */)arg4;
 - (id)init;
 - (id)initWithContext:(id)arg1;
 - (BOOL)isSetup;
@@ -61,5 +61,6 @@
 - (void)setRenewalGroup:(id)arg1;
 - (void)setRenewing:(BOOL)arg1;
 - (void)signData:(id)arg1 forRequest:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (id)signatureHeadersForRequest:(id)arg1;
 
 @end

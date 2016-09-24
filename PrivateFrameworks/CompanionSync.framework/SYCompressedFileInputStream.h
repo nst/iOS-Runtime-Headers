@@ -3,20 +3,20 @@
  */
 
 @interface SYCompressedFileInputStream : NSInputStream <NSStreamDelegate, SYStreamEventHandlerBlocks, SYStreamProgress, SYStreamThroughputCounter, _SYStreamRunLoopSourceHandler> {
-    unsigned long long _byteCount;
-    void *_file;
-    _SYStreamGuts *_internal;
-    id /* block */ _onBytesAvailable;
-    id /* block */ _onClose;
-    id /* block */ _onEndOfFile;
-    id /* block */ _onError;
-    id /* block */ _onOpenComplete;
-    id /* block */ _onSpaceAvailable;
-    NSProgress *_progress;
-    NSURL *_url;
+    unsigned int  _byteCount;
+    struct gzFile_s { unsigned int x1; char *x2; int x3; } * _file;
+    _SYStreamGuts * _internal;
+    id /* block */  _onBytesAvailable;
+    id /* block */  _onClose;
+    id /* block */  _onEndOfFile;
+    id /* block */  _onError;
+    id /* block */  _onOpenComplete;
+    id /* block */  _onSpaceAvailable;
+    NSProgress * _progress;
+    NSURL * _url;
 }
 
-@property (nonatomic, readonly) unsigned long long bytesThroughput;
+@property (nonatomic, readonly) unsigned int bytesThroughput;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -34,7 +34,7 @@
 - (void)_SY_notifyOnQueue:(id)arg1 handler:(id /* block */)arg2;
 - (id)_internal;
 - (void)_postEventToDelegate:(unsigned int)arg1;
-- (unsigned long long)bytesThroughput;
+- (unsigned int)bytesThroughput;
 - (void)close;
 - (void)dealloc;
 - (id)delegate;

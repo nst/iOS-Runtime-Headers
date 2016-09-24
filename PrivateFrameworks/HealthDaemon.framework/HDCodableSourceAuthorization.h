@@ -3,8 +3,8 @@
  */
 
 @interface HDCodableSourceAuthorization : PBCodable <NSCopying> {
-    NSMutableArray *_authorizations;
-    NSData *_sourceUUID;
+    NSMutableArray * _authorizations;
+    NSData * _sourceUUID;
 }
 
 @property (nonatomic, retain) NSMutableArray *authorizations;

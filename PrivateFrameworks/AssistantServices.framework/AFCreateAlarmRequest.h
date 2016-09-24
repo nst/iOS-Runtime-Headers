@@ -3,7 +3,7 @@
  */
 
 @interface AFCreateAlarmRequest : AFSiriRequest {
-    STAlarm *_alarm;
+    STAlarm * _alarm;
 }
 
 @property (nonatomic, retain) STAlarm *alarm;

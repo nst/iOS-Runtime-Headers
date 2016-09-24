@@ -3,23 +3,23 @@
  */
 
 @interface UIScrollTestParameters : NSObject {
-    int _axis;
-    NSString *_currentTest;
-    int _delta;
-    CADisplayLink *_displayLink;
-    int _iterations;
-    int _scrollLength;
-    float _startOffset;
+    int  _axis;
+    NSString * _currentTest;
+    int  _delta;
+    CADisplayLink * _displayLink;
+    int  _iterations;
+    int  _scrollLength;
+    double  _startOffset;
 }
 
 @property (nonatomic) int axis;
 @property (nonatomic, retain) NSString *currentTest;
 @property (nonatomic) int delta;
 @property (nonatomic, retain) CADisplayLink *displayLink;
-@property (nonatomic, readonly) float endOffset;
+@property (nonatomic, readonly) double endOffset;
 @property (nonatomic) int iterations;
 @property (nonatomic) int scrollLength;
-@property (nonatomic) float startOffset;
+@property (nonatomic) double startOffset;
 
 - (void).cxx_destruct;
 - (int)axis;

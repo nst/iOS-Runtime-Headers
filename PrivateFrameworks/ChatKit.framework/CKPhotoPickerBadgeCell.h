@@ -3,16 +3,16 @@
  */
 
 @interface CKPhotoPickerBadgeCell : UICollectionReusableView {
-    UIImageView *_checkmarkImageView;
-    BOOL _selected;
+    UIImageView * _checkmarkImageView;
+    BOOL  _selected;
 }
 
 @property (nonatomic, retain) UIImageView *checkmarkImageView;
 @property (getter=isSelected, nonatomic) BOOL selected;
 
+- (void).cxx_destruct;
 - (id)checkmarkImageView;
-- (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isSelected;
 - (void)setCheckmarkImageView:(id)arg1;
 - (void)setSelected:(BOOL)arg1;

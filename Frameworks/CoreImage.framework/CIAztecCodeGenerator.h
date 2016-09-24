@@ -3,9 +3,9 @@
  */
 
 @interface CIAztecCodeGenerator : CICodeGenerator {
-    NSNumber *inputCompactStyle;
-    NSNumber *inputCorrectionLevel;
-    NSNumber *inputLayers;
+    NSNumber * inputCompactStyle;
+    NSNumber * inputCorrectionLevel;
+    NSNumber * inputLayers;
 }
 
 @property (nonatomic, copy) NSNumber *inputCompactStyle;

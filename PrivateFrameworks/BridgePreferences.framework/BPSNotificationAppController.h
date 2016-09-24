@@ -3,16 +3,17 @@
  */
 
 @interface BPSNotificationAppController : PSListController <BPSInternalGlanceObserverDelegate> {
-    NPSDomainAccessor *_bbAppsSettings;
-    BBSectionInfo *_bbSectionInfo;
-    NSString *_bundleIdentifier;
-    NGSGlance *_glance;
-    BPSInternalGlanceManager *_manager;
-    BOOL _mirrorSettings;
-    NSMutableArray *_notificationApplicationSpecifiers;
-    NSMutableArray *_notificationSpecifiers;
-    NSMutableDictionary *_sectionInfo;
-    unsigned int _settingsMode;
+    NPSDomainAccessor * _bbAppsSettings;
+    BBSectionInfo * _bbSectionInfo;
+    NSString * _bundleIdentifier;
+    NGSGlance * _glance;
+    BPSInternalGlanceManager * _manager;
+    BOOL  _mirrorSettings;
+    NSMutableArray * _notificationApplicationSpecifiers;
+    NSMutableArray * _notificationSpecifiers;
+    BPSInternalGlanceManager * _oldManager;
+    NSMutableDictionary * _sectionInfo;
+    unsigned int  _settingsMode;
 }
 
 @property (nonatomic, retain) NPSDomainAccessor *bbAppsSettings;
@@ -26,6 +27,7 @@
 @property (nonatomic, readonly) BOOL mirrorSettings;
 @property (nonatomic, retain) NSMutableArray *notificationApplicationSpecifiers;
 @property (nonatomic, readonly) NSMutableArray *notificationSpecifiers;
+@property (nonatomic, retain) BPSInternalGlanceManager *oldManager;
 @property (nonatomic, readonly) PSSpecifier *previewSwitchSpecifier;
 @property (nonatomic, readonly) NSMutableDictionary *sectionInfo;
 @property (nonatomic) unsigned int settingsMode;
@@ -60,6 +62,7 @@
 - (id)mirroredApplicationGroupSpecifiers;
 - (id)notificationApplicationSpecifiers;
 - (id)notificationSpecifiers;
+- (id)oldManager;
 - (id)previewSwitchSpecifier;
 - (void)removeAlertOptions;
 - (void)removeMirrorOptions;
@@ -72,6 +75,7 @@
 - (void)setManager:(id)arg1;
 - (void)setMirrorSettings:(BOOL)arg1;
 - (void)setNotificationApplicationSpecifiers:(id)arg1;
+- (void)setOldManager:(id)arg1;
 - (void)setSettingsMode:(unsigned int)arg1;
 - (void)setShowAlertsValue:(id)arg1 forSpecifier:(id)arg2;
 - (void)setShowPreviewValue:(id)arg1 forSpecifier:(id)arg2;
@@ -95,6 +99,7 @@
 - (void)updateSubsections;
 - (id)vibrationValue:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)wantsGlanceRowIfApplicable;
 - (BOOL)wantsPreviewChoice;
 - (void)writeSectionState;
 

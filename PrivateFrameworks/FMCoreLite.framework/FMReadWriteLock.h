@@ -6,8 +6,8 @@
     struct _opaque_pthread_rwlock_t { 
         long __sig; 
         BOOL __opaque[124]; 
-    } _lock;
-    NSString *_lockName;
+    }  _lock;
+    NSString * _lockName;
 }
 
 @property (nonatomic) struct _opaque_pthread_rwlock_t { long x1; BOOL x2[124]; } lock;

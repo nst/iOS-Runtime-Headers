@@ -38,7 +38,10 @@
 - (NSString *)phoneticFirstName;
 - (NSString *)phoneticLastName;
 - (NSString *)phoneticMiddleName;
+- (NSString *)phoneticOrganization;
 - (NSArray *)postalAddresses;
+- (NSString *)preferredApplePersonaIdentifier;
+- (NSString *)preferredLikenessSource;
 - (NSString *)pronunciationFirstName;
 - (NSString *)pronunciationLastName;
 - (NSArray *)relatedNames;

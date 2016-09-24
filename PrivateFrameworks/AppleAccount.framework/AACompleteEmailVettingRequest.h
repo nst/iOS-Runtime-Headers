@@ -3,7 +3,7 @@
  */
 
 @interface AACompleteEmailVettingRequest : AAEmailVettingRequest {
-    NSString *_token;
+    NSString * _token;
 }
 
 + (Class)responseClass;

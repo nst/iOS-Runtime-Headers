@@ -3,18 +3,18 @@
  */
 
 @interface GKMatchEventQueue : NSObject {
-    NSMutableDictionary *_connectionInfo;
-    BOOL _counted;
-    int _deferedPlayerState;
-    NSMutableArray *_events;
-    BOOL _hasInitRelayInfo;
-    BOOL _hasUpdateRelayInfo;
-    GKPlayer *_hostPlayer;
-    BOOL _okToSend;
-    GKPlayer *_player;
-    int _playerState;
-    BOOL _relayInitiated;
-    unsigned int _sequenceNumber;
+    NSMutableDictionary * _connectionInfo;
+    BOOL  _counted;
+    int  _deferedPlayerState;
+    NSMutableArray * _events;
+    BOOL  _hasInitRelayInfo;
+    BOOL  _hasUpdateRelayInfo;
+    GKPlayer * _hostPlayer;
+    BOOL  _okToSend;
+    GKPlayer * _player;
+    int  _playerState;
+    BOOL  _relayInitiated;
+    unsigned int  _sequenceNumber;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *connectionInfo;

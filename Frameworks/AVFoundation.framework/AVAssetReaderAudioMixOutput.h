@@ -3,7 +3,7 @@
  */
 
 @interface AVAssetReaderAudioMixOutput : AVAssetReaderOutput {
-    AVAssetReaderAudioMixOutputInternal *_audioMixOutputInternal;
+    AVAssetReaderAudioMixOutputInternal * _audioMixOutputInternal;
 }
 
 @property (nonatomic, copy) AVAudioMix *audioMix;

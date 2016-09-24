@@ -3,9 +3,9 @@
  */
 
 @interface VMUObjectLabelHandlerInfo : NSObject {
-    NSString *_className;
-    SEL _handlerSelector;
-    Class _localClass;
+    NSString * _className;
+    SEL  _handlerSelector;
+    Class  _localClass;
 }
 
 - (void)dealloc;

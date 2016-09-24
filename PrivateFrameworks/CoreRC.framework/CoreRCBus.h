@@ -3,11 +3,11 @@
  */
 
 @interface CoreRCBus : NSObject <NSCopying, NSSecureCoding> {
-    unsigned int _assertionID;
-    <CoreRCBusDelegate> *_delegate;
-    NSMutableSet *_devicesInternal;
-    CoreRCManager *_manager;
-    NSUUID *_uniqueID;
+    unsigned int  _assertionID;
+    <CoreRCBusDelegate> * _delegate;
+    NSMutableSet * _devicesInternal;
+    CoreRCManager * _manager;
+    NSUUID * _uniqueID;
 }
 
 @property (nonatomic, readonly) BOOL allowHibernation;

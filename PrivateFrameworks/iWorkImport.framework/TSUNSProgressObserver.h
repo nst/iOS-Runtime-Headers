@@ -3,11 +3,11 @@
  */
 
 @interface TSUNSProgressObserver : NSObject {
-    TSUBasicProgress *_basicProgress;
-    double _basicProgressMaxValue;
-    BOOL _didStart;
-    NSProgress *_nsProgress;
-    TSUProgressContext *_progressContext;
+    TSUBasicProgress * _basicProgress;
+    double  _basicProgressMaxValue;
+    BOOL  _didStart;
+    NSProgress * _nsProgress;
+    TSUProgressContext * _progressContext;
 }
 
 + (id)observerForNSProgress:(id)arg1 reportingToBasicProgress:(id)arg2 maxValue:(double)arg3;

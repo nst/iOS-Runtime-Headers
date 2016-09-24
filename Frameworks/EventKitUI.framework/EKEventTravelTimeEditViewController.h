@@ -3,41 +3,41 @@
  */
 
 @interface EKEventTravelTimeEditViewController : EKEditItemViewController <EKEditItemViewControllerDelegate, EKTravelRouteEstimationControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
-    NSDate *_arrivalDate;
-    EKCalendarItem *_calendarItem;
-    NSIndexPath *_checkedItem;
-    BOOL _customTimesGroupIsShowing;
-    double _customTravelTimeDuration;
-    EKStructuredLocation *_destinationStructuredLocation;
-    BOOL _estimatedRowIsChecked;
-    BOOL _estimationGroupIsShowing;
-    EKEventStore *_eventStore;
-    BOOL _externallySetValueGroupIsShowing;
+    NSDate * _arrivalDate;
+    EKCalendarItem * _calendarItem;
+    NSIndexPath * _checkedItem;
+    BOOL  _customTimesGroupIsShowing;
+    double  _customTravelTimeDuration;
+    EKStructuredLocation * _destinationStructuredLocation;
+    BOOL  _estimatedRowIsChecked;
+    BOOL  _estimationGroupIsShowing;
+    EKEventStore * _eventStore;
+    BOOL  _externallySetValueGroupIsShowing;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _initFrame;
-    BOOL _isAnimatingTableSections;
-    BOOL _isOriginSelectionVisible;
-    EKStructuredLocation *_originStructuredLocation;
-    int _originalSelectedRoutingMode;
-    double _originalSelectedTravelTime;
-    BOOL _pendingReloadData;
-    EKTravelRouteEstimationController *_routeEstimationControler;
-    NSString *_routeEstimationErrorMessage;
-    int _selectedRoutingMode;
-    double _selectedTravelTime;
-    UIView *_shadowView;
-    BOOL _suppressErrors;
-    UISwitch *_switchControl;
-    UITableView *_table;
-    int _travelTimeSelectedChoice;
+    }  _initFrame;
+    BOOL  _isAnimatingTableSections;
+    BOOL  _isOriginSelectionVisible;
+    EKStructuredLocation * _originStructuredLocation;
+    int  _originalSelectedRoutingMode;
+    double  _originalSelectedTravelTime;
+    BOOL  _pendingReloadData;
+    EKTravelRouteEstimationController * _routeEstimationControler;
+    NSString * _routeEstimationErrorMessage;
+    int  _selectedRoutingMode;
+    double  _selectedTravelTime;
+    UIView * _shadowView;
+    BOOL  _suppressErrors;
+    UISwitch * _switchControl;
+    UITableView * _table;
+    int  _travelTimeSelectedChoice;
 }
 
 @property (nonatomic, retain) NSDate *arrivalDate;
@@ -49,6 +49,12 @@
 @property (nonatomic) int selectedRoutingMode;
 @property (nonatomic) double selectedTravelTime;
 @property (readonly) Class superclass;
+
++ (id)_cannotProvideDirectionsLocalizedString;
++ (id)_directionsCouldNotBeFoundLocalizedString;
++ (id)_okLocalizedString;
++ (id)_startingLocationLocalizedString;
++ (id)_travelTimeLocalizedString;
 
 - (void).cxx_destruct;
 - (void)_autoselectFromAvailableChoices;
@@ -82,7 +88,7 @@
 - (void)editItemViewController:(id)arg1 didCompleteWithAction:(int)arg2;
 - (BOOL)editItemViewControllerSave:(id)arg1;
 - (BOOL)editItemViewControllerShouldShowDetachAlert;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2 calendarItem:(id)arg3 eventStore:(id)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 styleProvider:(id)arg2 calendarItem:(id)arg3 eventStore:(id)arg4;
 - (void)loadView;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)originStructuredLocation;

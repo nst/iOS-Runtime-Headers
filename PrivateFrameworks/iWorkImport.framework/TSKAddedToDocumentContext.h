@@ -3,12 +3,13 @@
  */
 
 @interface TSKAddedToDocumentContext : NSObject {
-    NSMutableArray *mInsertedTableInfos;
+    NSMutableArray * mInsertedTableInfos;
 }
 
 @property (retain) <TSKMultiTableRemapping> *multiTableRemapper;
 
 + (id)changeTrackingSubstorageForCopyContext;
++ (id)defaultContext;
 + (id)dragCopyContext;
 + (id)dragMoveContext;
 + (id)exportFootnoteContext;

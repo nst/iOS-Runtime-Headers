@@ -3,10 +3,10 @@
  */
 
 @interface EDPivotConditionalFormat : NSObject {
-    EDCollection *mPivotAreas;
-    unsigned long mPriority;
-    int mScope;
-    int mType;
+    EDCollection * mPivotAreas;
+    unsigned long  mPriority;
+    int  mScope;
+    int  mType;
 }
 
 + (id)pivotConditionalFormat;

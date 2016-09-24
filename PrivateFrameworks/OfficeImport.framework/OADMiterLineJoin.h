@@ -3,8 +3,8 @@
  */
 
 @interface OADMiterLineJoin : OADLineJoin {
-    unsigned int mIsLimitOverridden;
-    float mLimit;
+    unsigned int  mIsLimitOverridden;
+    double  mLimit;
 }
 
 + (id)defaultProperties;

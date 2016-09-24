@@ -3,14 +3,14 @@
  */
 
 @interface UINibStorage : NSObject {
-    NSData *archiveData;
-    NSBundle *bundle;
-    NSString *bundleDirectoryName;
-    NSString *bundleResourceName;
-    BOOL captureImplicitLoadingContextOnDecode;
-    NSString *identifierForStringsFile;
-    BOOL instantiatingForSimulator;
-    UINibDecoder *nibDecoder;
+    NSData * archiveData;
+    NSBundle * bundle;
+    NSString * bundleDirectoryName;
+    NSString * bundleResourceName;
+    BOOL  captureImplicitLoadingContextOnDecode;
+    NSString * identifierForStringsFile;
+    BOOL  instantiatingForSimulator;
+    UINibDecoder * nibDecoder;
 }
 
 @property (nonatomic, copy) NSData *archiveData;

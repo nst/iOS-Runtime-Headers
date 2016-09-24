@@ -3,7 +3,7 @@
  */
 
 @interface NEPacketTunnelProvider : NETunnelProvider <NSExtensionRequestHandling> {
-    NEPacketTunnelFlow *_packetFlow;
+    NEPacketTunnelFlow * _packetFlow;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,8 +3,8 @@
  */
 
 @interface TSUDateFormatCategory : NSObject {
-    NSMutableArray *mEntries;
-    struct __CFDateFormatter { } *mInitialFormatter;
+    NSMutableArray * mEntries;
+    struct __CFDateFormatter { } * mInitialFormatter;
 }
 
 - (void)addSeparator:(unsigned short)arg1 format:(id)arg2 locale:(struct __CFLocale { }*)arg3;

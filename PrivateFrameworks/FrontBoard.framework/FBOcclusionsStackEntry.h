@@ -3,14 +3,14 @@
  */
 
 @interface FBOcclusionsStackEntry : NSObject {
-    NSString *_key;
-    float _level;
-    NSSet *_occlusions;
-    NSOrderedSet *_orderedOcclusions;
+    NSString * _key;
+    double  _level;
+    NSSet * _occlusions;
+    NSOrderedSet * _orderedOcclusions;
 }
 
 @property (nonatomic, readonly, copy) NSString *key;
-@property (nonatomic) float level;
+@property (nonatomic) double level;
 @property (nonatomic, copy) NSSet *occlusions;
 @property (nonatomic, readonly, copy) NSOrderedSet *orderedOcclusions;
 

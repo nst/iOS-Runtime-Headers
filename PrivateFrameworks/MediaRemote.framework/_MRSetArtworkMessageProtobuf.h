@@ -3,7 +3,7 @@
  */
 
 @interface _MRSetArtworkMessageProtobuf : PBCodable <NSCopying> {
-    NSData *_jpegData;
+    NSData * _jpegData;
 }
 
 @property (nonatomic, readonly) BOOL hasJpegData;

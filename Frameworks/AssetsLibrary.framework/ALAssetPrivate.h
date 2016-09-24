@@ -3,10 +3,10 @@
  */
 
 @interface ALAssetPrivate : NSObject <ALAssetsLibraryAsset> {
-    BOOL _isValid;
-    ALAssetsLibrary *_library;
-    PLManagedAsset *_photo;
-    PLPhotoLibrary *_photoLibrary;
+    BOOL  _isValid;
+    ALAssetsLibrary * _library;
+    PLManagedAsset * _photo;
+    PLPhotoLibrary * _photoLibrary;
 }
 
 @property (nonatomic, retain) PLPhotoLibrary *_photoLibrary;
@@ -19,6 +19,7 @@
 @property (nonatomic, retain) PLManagedAsset *photo;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_performBlockAndWait:(id /* block */)arg1;
 - (id)_photoLibrary;
 - (void)dealloc;

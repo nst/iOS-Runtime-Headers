@@ -3,11 +3,11 @@
  */
 
 @interface GQDWPParagraph : GQDWPInlineList {
-    BOOL mContinue;
-    BOOL mIsHidden;
-    long mListLevel;
-    GQDSStyle *mParaStyle;
-    BOOL mRestartList;
+    BOOL  mContinue;
+    BOOL  mIsHidden;
+    long  mListLevel;
+    GQDSStyle * mParaStyle;
+    BOOL  mRestartList;
 }
 
 - (BOOL)cont;

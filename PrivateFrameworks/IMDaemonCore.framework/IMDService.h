@@ -3,15 +3,15 @@
  */
 
 @interface IMDService : NSObject <IMSystemMonitorListener> {
-    NSDictionary *_accountDefaults;
-    BOOL _blockPrefWriting;
-    NSBundle *_bundle;
-    NSDictionary *_cachedServiceDefaults;
-    NSDictionary *_cachedSetupServiceDefaults;
-    NSString *_internalName;
-    NSDictionary *_serviceDefaults;
-    NSDictionary *_serviceProperties;
-    Class _sessionClass;
+    NSDictionary * _accountDefaults;
+    BOOL  _blockPrefWriting;
+    NSBundle * _bundle;
+    NSDictionary * _cachedServiceDefaults;
+    NSDictionary * _cachedSetupServiceDefaults;
+    NSString * _internalName;
+    NSDictionary * _serviceDefaults;
+    NSDictionary * _serviceProperties;
+    Class  _sessionClass;
 }
 
 @property (nonatomic, readonly) Class accountClass;

@@ -3,7 +3,7 @@
  */
 
 @interface MFRecentComposeRecipientGroup : MFComposeRecipientGroup {
-    CRRecentContact *_recentContact;
+    CRRecentContact * _recentContact;
 }
 
 @property (nonatomic, readonly, retain) CRRecentContact *recentContact;

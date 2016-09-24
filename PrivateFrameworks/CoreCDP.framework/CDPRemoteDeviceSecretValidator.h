@@ -3,19 +3,18 @@
  */
 
 @interface CDPRemoteDeviceSecretValidator : NSObject {
-    unsigned int _failedAttempts;
-    <CDPRemoteDeviceSecretValidatorProtocol> *_validator;
+    <CDPRemoteDeviceSecretValidatorProtocol> * _validator;
 }
 
-@property (nonatomic, readonly) unsigned int failedAttempts;
-
 - (void).cxx_destruct;
+- (void)_executeSyncOnMainThreadIfNeeded:(id /* block */)arg1;
 - (void)approveFromAnotherDeviceWithCompletion:(id /* block */)arg1;
 - (void)cancelApproveFromAnotherDevice;
 - (void)cancelValidationWithError:(id)arg1;
-- (unsigned int)failedAttempts;
 - (id)initWithContext:(id)arg1 validator:(id)arg2;
 - (void)resetAccountCDPState;
+- (unsigned int)supportedEscapeOfferMask;
+- (void)supportedEscapeOfferMaskCompletion:(id /* block */)arg1;
 - (void)validateSecret:(id)arg1 devices:(id)arg2 type:(unsigned int)arg3 withCompletion:(id /* block */)arg4;
 
 @end

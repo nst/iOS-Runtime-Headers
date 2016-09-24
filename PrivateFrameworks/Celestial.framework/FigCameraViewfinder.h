@@ -3,8 +3,8 @@
  */
 
 @interface FigCameraViewfinder : NSObject {
-    FigCameraViewfinderSession *_delegateActiveViewfinderSession;
-    FigDelegateStorage *_delegateStorage;
+    FigCameraViewfinderSession * _delegateActiveViewfinderSession;
+    FigDelegateStorage * _delegateStorage;
 }
 
 @property (readonly) <FigCameraViewfinderDelegate><FigCameraViewfinderSessionDelegate> *delegate;

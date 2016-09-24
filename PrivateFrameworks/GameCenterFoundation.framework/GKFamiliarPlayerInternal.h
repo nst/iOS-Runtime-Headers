@@ -3,9 +3,9 @@
  */
 
 @interface GKFamiliarPlayerInternal : GKPlayerInternal {
-    NSString *_compositeName;
-    NSString *_firstName;
-    NSString *_lastName;
+    NSString * _compositeName;
+    NSString * _firstName;
+    NSString * _lastName;
 }
 
 + (id)secureCodedPropertyKeys;

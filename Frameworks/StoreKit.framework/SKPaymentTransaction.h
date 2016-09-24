@@ -3,7 +3,7 @@
  */
 
 @interface SKPaymentTransaction : NSObject {
-    id _internal;
+    id  _internal;
 }
 
 @property (nonatomic, readonly) NSString *_transactionIdentifier;

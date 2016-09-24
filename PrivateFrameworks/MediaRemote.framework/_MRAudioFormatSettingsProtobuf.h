@@ -3,7 +3,7 @@
  */
 
 @interface _MRAudioFormatSettingsProtobuf : PBCodable <NSCopying> {
-    NSData *_formatSettingsPlistData;
+    NSData * _formatSettingsPlistData;
 }
 
 @property (nonatomic, retain) NSData *formatSettingsPlistData;

@@ -3,10 +3,10 @@
  */
 
 @interface ML3EntityReplacer : NSObject {
-    ML3DatabaseConnection *_connection;
-    ML3MusicLibrary *_library;
-    NSMutableArray *_naturalStatements;
-    struct __CFDictionary { } *_propertyToIndexPair;
+    ML3DatabaseConnection * _connection;
+    ML3MusicLibrary * _library;
+    NSMutableArray * _naturalStatements;
+    struct __CFDictionary { } * _propertyToIndexPair;
 }
 
 @property (getter=isOpen, nonatomic, readonly) BOOL open;
@@ -15,7 +15,7 @@
 - (void)bindDouble:(double)arg1 forProperty:(id)arg2;
 - (void)bindInt:(int)arg1 forProperty:(id)arg2;
 - (void)bindNullForProperty:(id)arg1;
-- (void)bindPersistentID:(long long)arg1;
+- (void)bindPersistentID:(int)arg1;
 - (void)bindValue:(id)arg1 forProperty:(id)arg2;
 - (void)clearBindings;
 - (void)close;

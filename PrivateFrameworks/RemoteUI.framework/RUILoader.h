@@ -3,11 +3,11 @@
  */
 
 @interface RUILoader : RUIHTTPRequest {
-    BOOL _allowNonSecureHTTP;
-    RUIParser *_parser;
-    <RUIParserDelegate> *_parserDelegate;
-    RUIStyle *_style;
-    NSURL *_url;
+    BOOL  _allowNonSecureHTTP;
+    RUIParser * _parser;
+    <RUIParserDelegate> * _parserDelegate;
+    RUIStyle * _style;
+    NSURL * _url;
 }
 
 @property (nonatomic) BOOL allowNonSecureHTTP;

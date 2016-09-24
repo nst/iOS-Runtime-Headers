@@ -3,22 +3,22 @@
  */
 
 @interface MCHTTPTransaction : NSObject {
-    NSString *_CMSSignatureHeaderName;
-    NSURLConnection *_connection;
-    NSString *_contentType;
-    NSURL *_currentURL;
-    NSData *_data;
-    NSObject<OS_dispatch_semaphore> *_doneSema;
-    NSError *_error;
-    struct __SecIdentity { } *_identity;
-    NSString *_method;
-    NSURL *_permanentlyRedirectedURL;
-    BOOL _rememberData;
-    NSURL *_requestURL;
-    NSMutableData *_responseData;
-    int _statusCode;
-    double _timeout;
-    NSString *_userAgent;
+    NSString * _CMSSignatureHeaderName;
+    NSURLConnection * _connection;
+    NSString * _contentType;
+    NSURL * _currentURL;
+    NSData * _data;
+    NSObject<OS_dispatch_semaphore> * _doneSema;
+    NSError * _error;
+    struct __SecIdentity { } * _identity;
+    NSString * _method;
+    NSURL * _permanentlyRedirectedURL;
+    BOOL  _rememberData;
+    NSURL * _requestURL;
+    NSMutableData * _responseData;
+    int  _statusCode;
+    double  _timeout;
+    NSString * _userAgent;
 }
 
 @property (nonatomic, retain) NSString *CMSSignatureHeaderName;

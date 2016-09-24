@@ -3,15 +3,15 @@
  */
 
 @interface MFMessageBodyParser : MFMessageBodyParserObject {
-    NSMutableArray *_elementPool;
-    id /* block */ _foundMessageBodyElementBlock;
-    struct __CFDictionary { } *_nodesLevelCache;
-    struct __CFDictionary { } *_nodesQuoteLevelCache;
-    struct __CFArray { } *_nodesStackCache;
-    unsigned int _options;
-    NSMutableArray *_paragraphNodes;
-    NSError *_parserError;
-    NSMutableArray *_subparsers;
+    NSMutableArray * _elementPool;
+    id /* block */  _foundMessageBodyElementBlock;
+    struct __CFDictionary { } * _nodesLevelCache;
+    struct __CFDictionary { } * _nodesQuoteLevelCache;
+    struct __CFArray { } * _nodesStackCache;
+    unsigned int  _options;
+    NSMutableArray * _paragraphNodes;
+    NSError * _parserError;
+    NSMutableArray * _subparsers;
 }
 
 @property (nonatomic) unsigned int options;

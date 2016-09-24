@@ -3,13 +3,13 @@
  */
 
 @interface PUAdjustmentsMode : NSObject {
-    int __modeType;
-    PLPhotoEditMutableModel *_photoEditModel;
-    NSArray *_submodes;
-    PUAdjustmentsMode *_supermode;
-    BOOL _toggleable;
-    BOOL _useAccurateStatistics;
-    PUPhotoEditValuesCalculator *_valuesCalculator;
+    int  __modeType;
+    PLPhotoEditMutableModel * _photoEditModel;
+    NSArray * _submodes;
+    PUAdjustmentsMode * _supermode;
+    BOOL  _toggleable;
+    BOOL  _useAccurateStatistics;
+    PUPhotoEditValuesCalculator * _valuesCalculator;
 }
 
 @property (nonatomic, readonly) int _modeType;

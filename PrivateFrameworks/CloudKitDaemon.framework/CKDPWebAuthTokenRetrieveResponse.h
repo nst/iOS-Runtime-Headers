@@ -3,8 +3,8 @@
  */
 
 @interface CKDPWebAuthTokenRetrieveResponse : PBCodable <NSCopying> {
-    NSString *_containerScopedUserId;
-    NSString *_token;
+    NSString * _containerScopedUserId;
+    NSString * _token;
 }
 
 @property (nonatomic, retain) NSString *containerScopedUserId;

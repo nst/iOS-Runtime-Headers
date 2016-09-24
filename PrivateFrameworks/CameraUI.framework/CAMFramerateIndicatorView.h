@@ -3,30 +3,34 @@
  */
 
 @interface CAMFramerateIndicatorView : UIView {
-    UIImageView *__borderImageView;
-    UILabel *__bottomLabel;
-    UILabel *__topLabel;
-    int _style;
+    UIImageView * __borderImageView;
+    UILabel * __label;
+    int  _layoutStyle;
+    int  _style;
 }
 
 @property (nonatomic, readonly) UIImageView *_borderImageView;
-@property (nonatomic, readonly) UILabel *_bottomLabel;
-@property (nonatomic, readonly) UILabel *_topLabel;
+@property (nonatomic, readonly) UILabel *_label;
+@property (nonatomic) int layoutStyle;
 @property (nonatomic) int style;
 
 - (void).cxx_destruct;
 - (id)_borderImageView;
-- (id)_bottomLabel;
-- (void)_commonCAMFramerateIndicatorViewInitialization;
+- (void)_commonCAMFramerateIndicatorViewInitializationWithLayoutStyle:(int)arg1;
 - (int)_framesPerSecond;
-- (id)_labelText;
-- (id)_topLabel;
-- (void)_updateLabels;
+- (id)_label;
+- (void)_updateAppearance;
+- (void)_updateForAppearanceChange;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithLayoutStyle:(int)arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (int)layoutStyle;
 - (void)layoutSubviews;
+- (void)setLayoutStyle:(int)arg1;
 - (void)setStyle:(int)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (int)style;
 
 @end

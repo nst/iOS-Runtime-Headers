@@ -3,34 +3,34 @@
  */
 
 @interface TimerDialView : UIView {
-    double _currentDuration;
-    double _currentTime;
-    double _fireTime;
-    struct __CFNumberFormatter { } *_formatter;
-    unsigned int _graduatedSectionCount;
-    NSMutableArray *_graduatedSectionLabels;
-    NSMutableArray *_graduatedSectionValues;
-    float _graduatedSectionWidth;
-    NSMutableArray *_graduatedSections;
-    UIFont *_labelFont;
-    float _majorTickHeight;
-    float _minorTickHeight;
-    unsigned int _minorTicksPerSection;
-    double _remainingTime;
-    BOOL _running;
-    float _tickHorizontalSpacing;
+    double  _currentDuration;
+    double  _currentTime;
+    double  _fireTime;
+    struct __CFNumberFormatter { } * _formatter;
+    unsigned int  _graduatedSectionCount;
+    NSMutableArray * _graduatedSectionLabels;
+    NSMutableArray * _graduatedSectionValues;
+    double  _graduatedSectionWidth;
+    NSMutableArray * _graduatedSections;
+    UIFont * _labelFont;
+    double  _majorTickHeight;
+    double  _minorTickHeight;
+    unsigned int  _minorTicksPerSection;
+    double  _remainingTime;
+    BOOL  _running;
+    double  _tickHorizontalSpacing;
 }
 
 @property (nonatomic, retain) UIFont *labelFont;
-@property (nonatomic) float majorTickHeight;
-@property (nonatomic) float minorTickHeight;
+@property (nonatomic) double majorTickHeight;
+@property (nonatomic) double minorTickHeight;
 @property (nonatomic) unsigned int minorTicksPerSection;
-@property (nonatomic) float tickHorizontalSpacing;
+@property (nonatomic) double tickHorizontalSpacing;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)graduatedSection;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)labelFont;
 - (void)layoutSubviews;
 - (float)majorTickHeight;

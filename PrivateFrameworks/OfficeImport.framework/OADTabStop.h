@@ -3,8 +3,8 @@
  */
 
 @interface OADTabStop : NSObject {
-    unsigned char mAlign;
-    int mPosition;
+    unsigned char  mAlign;
+    int  mPosition;
 }
 
 - (unsigned char)align;

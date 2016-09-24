@@ -3,17 +3,17 @@
  */
 
 @interface CAMBurstController : NSObject {
-    CAMBurstSession *__activeSession;
-    NSObject<OS_dispatch_queue> *__analysisQueue;
-    NSMutableDictionary *__faceResultsByIdentifier;
-    NSCountedSet *__inflightRequestsByIdentifier;
-    NSObject<OS_dispatch_queue> *__mutexQueue;
-    CAMPersistenceController *__persistenceController;
-    CAMPowerController *__powerController;
-    CAMProtectionController *__protectionController;
-    CAMRemoteShutterController *__remoteShutterController;
-    NSCountedSet *__requestsPendingPersistenceByIdentifier;
-    NSMutableDictionary *__sessionsByIdentifier;
+    CAMBurstSession * __activeSession;
+    NSObject<OS_dispatch_queue> * __analysisQueue;
+    NSMutableDictionary * __faceResultsByIdentifier;
+    NSCountedSet * __inflightRequestsByIdentifier;
+    NSObject<OS_dispatch_queue> * __mutexQueue;
+    CAMPersistenceController * __persistenceController;
+    CAMPowerController * __powerController;
+    CAMProtectionController * __protectionController;
+    CAMRemoteShutterController * __remoteShutterController;
+    NSCountedSet * __requestsPendingPersistenceByIdentifier;
+    NSMutableDictionary * __sessionsByIdentifier;
 }
 
 @property (setter=_setActiveSession:, nonatomic, retain) CAMBurstSession *_activeSession;

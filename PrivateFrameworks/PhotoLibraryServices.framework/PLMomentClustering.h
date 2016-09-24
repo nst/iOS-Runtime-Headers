@@ -3,32 +3,32 @@
  */
 
 @interface PLMomentClustering : NSObject {
-    NSMutableDictionary *__clustersByNodeObjectID;
-    NSMutableDictionary *__clustersByObjectID;
-    CLGeocoder *__geocoder;
-    NSMutableDictionary *__markedNodesByObjectID;
-    unsigned int __minimumNumberOfNodes;
-    PLMomentNodeCache *__nodeCache;
-    unsigned int __numberOfVisitedNodes;
-    unsigned int __totalNumberOfNodes;
-    BOOL _accumulatesSmallClusters;
-    double _accumulationJoinThreshold;
-    double _accumulationRejectionThreshold;
-    double _accumulationRejectionTimeInterval;
-    unsigned int _accumulationSize;
-    double _accumulationTimeInterval;
-    NSArray *_clusters;
-    NSSet *_deletedClusters;
-    BOOL _dirty;
-    NSSet *_insertedClusters;
-    id /* block */ _progressBlock;
-    BOOL _shouldApplyUserInfluenceBeforeClustering;
-    double _sigma;
-    double _spatialJoinThreshold;
-    double _spatialJoinTimeInterval;
-    BOOL _spatialJoinsAdjacentClusters;
-    double _theta;
-    NSSet *_updatedClusters;
+    NSMutableDictionary * __clustersByNodeObjectID;
+    NSMutableDictionary * __clustersByObjectID;
+    CLGeocoder * __geocoder;
+    NSMutableDictionary * __markedNodesByObjectID;
+    unsigned int  __minimumNumberOfNodes;
+    PLMomentNodeCache * __nodeCache;
+    unsigned int  __numberOfVisitedNodes;
+    unsigned int  __totalNumberOfNodes;
+    BOOL  _accumulatesSmallClusters;
+    double  _accumulationJoinThreshold;
+    double  _accumulationRejectionThreshold;
+    double  _accumulationRejectionTimeInterval;
+    unsigned int  _accumulationSize;
+    double  _accumulationTimeInterval;
+    NSArray * _clusters;
+    NSSet * _deletedClusters;
+    BOOL  _dirty;
+    NSSet * _insertedClusters;
+    id /* block */  _progressBlock;
+    BOOL  _shouldApplyUserInfluenceBeforeClustering;
+    double  _sigma;
+    double  _spatialJoinThreshold;
+    double  _spatialJoinTimeInterval;
+    BOOL  _spatialJoinsAdjacentClusters;
+    double  _theta;
+    NSSet * _updatedClusters;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *_clustersByNodeObjectID;
@@ -45,11 +45,11 @@
 @property (nonatomic) double accumulationRejectionTimeInterval;
 @property (nonatomic) unsigned int accumulationSize;
 @property (nonatomic) double accumulationTimeInterval;
-@property (nonatomic, copy) NSArray *clusters;
-@property (nonatomic, copy) NSSet *deletedClusters;
+@property (setter=_setClusters:, nonatomic, copy) NSArray *clusters;
+@property (setter=_setDeletedClusters:, nonatomic, copy) NSSet *deletedClusters;
 @property (getter=isDirty, setter=_setDirty:, nonatomic) BOOL dirty;
 @property (nonatomic, readonly) BOOL hasMarkedNodes;
-@property (nonatomic, copy) NSSet *insertedClusters;
+@property (setter=_setInsertedClusters:, nonatomic, copy) NSSet *insertedClusters;
 @property (nonatomic, copy) id /* block */ progressBlock;
 @property (nonatomic) BOOL shouldApplyUserInfluenceBeforeClustering;
 @property (nonatomic) double sigma;
@@ -57,7 +57,7 @@
 @property (nonatomic) double spatialJoinTimeInterval;
 @property (nonatomic) BOOL spatialJoinsAdjacentClusters;
 @property (nonatomic) double theta;
-@property (nonatomic, copy) NSSet *updatedClusters;
+@property (setter=_setUpdatedClusters:, nonatomic, copy) NSSet *updatedClusters;
 
 + (double)maximumClusterTime;
 

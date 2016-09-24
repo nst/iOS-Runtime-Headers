@@ -3,11 +3,11 @@
  */
 
 @interface EKUICustomRecurrenceIntervalViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate> {
-    id /* block */ _changeBlock;
-    int _frequency;
-    int _interval;
-    BOOL _maximumInterval;
-    UIPickerView *_pickerView;
+    id /* block */  _changeBlock;
+    int  _frequency;
+    int  _interval;
+    BOOL  _maximumInterval;
+    UIPickerView * _pickerView;
 }
 
 @property (copy) id /* block */ changeBlock;

@@ -5,6 +5,6 @@
 
 @required
 
-- (void)vcSecureDataChannel:(VCSecureDataChannel *)arg1 receivedData:(NSData *)arg2;
+- (void)vcSecureDataChannel:(VCSecureDataChannel *)arg1 messageType:(unsigned int)arg2 receivedData:(NSData *)arg3;
 
 @end

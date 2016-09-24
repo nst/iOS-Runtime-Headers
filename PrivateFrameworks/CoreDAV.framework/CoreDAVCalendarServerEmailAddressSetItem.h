@@ -3,8 +3,8 @@
  */
 
 @interface CoreDAVCalendarServerEmailAddressSetItem : CoreDAVItem {
-    NSMutableSet *_emailAddresses;
-    CoreDAVItemWithNoChildren *_unauthenticated;
+    NSMutableSet * _emailAddresses;
+    CoreDAVItemWithNoChildren * _unauthenticated;
 }
 
 @property (nonatomic, retain) NSMutableSet *emailAddresses;

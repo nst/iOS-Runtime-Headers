@@ -3,7 +3,7 @@
  */
 
 @interface HMDCharacteristicNotificationRegistry : NSObject <NSSecureCoding> {
-    NSMutableDictionary *_notificationRegistry;
+    NSMutableDictionary * _notificationRegistry;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *notificationRegistry;

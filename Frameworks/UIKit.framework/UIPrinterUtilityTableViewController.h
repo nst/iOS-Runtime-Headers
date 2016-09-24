@@ -3,9 +3,13 @@
  */
 
 @interface UIPrinterUtilityTableViewController : UITableViewController {
-    PKPrinter *_printer;
-    BOOL _showSupplyDataUnderPrinterName;
-    NSArray *_supplyData;
+    int  _identifyPrinterSection;
+    int  _mainPrinterCellSection;
+    PKPrinter * _printer;
+    int  _printerNameAndLocationSection;
+    int  _removeKeychainItemSection;
+    BOOL  _showSupplyDataUnderPrinterName;
+    NSArray * _supplyData;
 }
 
 @property (nonatomic, retain) NSArray *supplyData;

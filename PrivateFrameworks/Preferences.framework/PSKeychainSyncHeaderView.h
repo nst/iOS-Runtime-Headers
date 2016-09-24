@@ -3,9 +3,9 @@
  */
 
 @interface PSKeychainSyncHeaderView : UIView <PSHeaderFooterView> {
-    UILabel *_detailLabel;
-    UILabel *_titleLabel;
-    BOOL _usesCompactLayout;
+    UILabel * _detailLabel;
+    UILabel * _titleLabel;
+    BOOL  _usesCompactLayout;
 }
 
 @property (nonatomic) BOOL usesCompactLayout;

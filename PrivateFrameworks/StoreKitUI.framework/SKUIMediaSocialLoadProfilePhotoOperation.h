@@ -3,10 +3,10 @@
  */
 
 @interface SKUIMediaSocialLoadProfilePhotoOperation : SSVComplexOperation {
-    SKUIClientContext *_clientContext;
-    NSLock *_lock;
-    id /* block */ _outputBlock;
-    SKUIMediaSocialProfile *_profile;
+    SKUIClientContext * _clientContext;
+    NSLock * _lock;
+    id /* block */  _outputBlock;
+    SKUIMediaSocialProfile * _profile;
 }
 
 @property (copy) id /* block */ outputBlock;

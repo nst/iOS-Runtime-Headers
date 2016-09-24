@@ -3,9 +3,9 @@
  */
 
 @interface UIDocumentAlertPresenter : NSObject <UIAlertViewDelegate> {
-    UIAlertView *_alert;
-    id /* block */ _completionHandler;
-    NSError *_error;
+    UIAlertView * _alert;
+    id /* block */  _completionHandler;
+    NSError * _error;
 }
 
 @property (readonly, copy) NSString *debugDescription;

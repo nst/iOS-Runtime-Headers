@@ -3,9 +3,9 @@
  */
 
 @interface CRKNetworkPowerAssertion : NSObject {
-    unsigned int _count;
-    NSString *_name;
-    unsigned int mPowerAssertion;
+    unsigned int  _count;
+    NSString * _name;
+    unsigned int  mPowerAssertion;
 }
 
 @property (nonatomic) unsigned int count;

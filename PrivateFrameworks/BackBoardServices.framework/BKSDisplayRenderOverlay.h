@@ -2,8 +2,8 @@
    Image: /System/Library/PrivateFrameworks/BackBoardServices.framework/BackBoardServices
  */
 
-@interface BKSDisplayRenderOverlay : NSObject <BKSDisplayRenderOverlayDescribing, BSDescriptionProviding> {
-    BKSDisplayRenderOverlayDescriptor *_descriptor;
+@interface BKSDisplayRenderOverlay : NSObject <BKSDisplayRenderOverlayDescribing, BKSDisplayRenderOverlayDismissAction, BSDescriptionProviding> {
+    BKSDisplayRenderOverlayDescriptor * _descriptor;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,12 +12,14 @@
 @property (nonatomic, readonly, retain) CADisplay *display;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) int interfaceOrientation;
+@property (getter=isInterstitial, nonatomic, readonly) BOOL interstitial;
 @property (nonatomic, readonly) BOOL lockBacklight;
 @property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, readonly) BKSDisplayRenderOverlayDescriptor *overlayDescriptor;
 @property (nonatomic, readonly) BKSDisplayProgressIndicatorProperties *progressIndicatorProperties;
 @property (readonly) Class superclass;
 
-+ (void)dismissAllOverlays;
++ (id)dismissActions;
 + (id)existingOverlayForDisplay:(id)arg1;
 
 - (id)_descriptor;
@@ -31,8 +33,10 @@
 - (void)freeze;
 - (id)initWithDescriptor:(id)arg1;
 - (int)interfaceOrientation;
+- (BOOL)isInterstitial;
 - (BOOL)lockBacklight;
 - (id)name;
+- (id)overlayDescriptor;
 - (void)present;
 - (id)progressIndicatorProperties;
 - (id)succinctDescription;

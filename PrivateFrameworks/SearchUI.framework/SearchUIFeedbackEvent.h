@@ -3,13 +3,13 @@
  */
 
 @interface SearchUIFeedbackEvent : NSObject {
-    NSString *_actionArea;
-    NSString *_actionCardType;
-    NSString *_actionDestination;
-    NSString *_actionTarget;
-    NSString *_actionType;
-    <SearchUIResult> *_result;
-    NSDate *_timestamp;
+    NSString * _actionArea;
+    NSString * _actionCardType;
+    NSString * _actionDestination;
+    NSString * _actionTarget;
+    NSString * _actionType;
+    id  _result;
+    NSDate * _timestamp;
 }
 
 @property (nonatomic, copy) NSString *actionArea;
@@ -17,7 +17,7 @@
 @property (nonatomic, copy) NSString *actionDestination;
 @property (nonatomic, copy) NSString *actionTarget;
 @property (nonatomic, copy) NSString *actionType;
-@property (nonatomic, retain) <SearchUIResult> *result;
+@property (nonatomic, retain) id result;
 @property (nonatomic, retain) NSDate *timestamp;
 
 + (id)feedbackEventOnResult:(id)arg1 actionArea:(id)arg2 actionType:(id)arg3 cardType:(id)arg4 actionTarget:(id)arg5 actionDestination:(id)arg6;

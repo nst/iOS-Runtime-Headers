@@ -3,10 +3,10 @@
  */
 
 @interface CPLEngineResourceStorage : CPLEngineStorage <CPLAbstractObject> {
-    CPLEngineFileStorage *_fileStorage;
-    NSMutableSet *_identitiesToCommit;
-    NSMutableSet *_identitiesToDelete;
-    NSURL *_tempFolderURL;
+    CPLEngineFileStorage * _fileStorage;
+    NSMutableSet * _identitiesToCommit;
+    NSMutableSet * _identitiesToDelete;
+    NSURL * _tempFolderURL;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -30,8 +30,8 @@
 - (BOOL)releaseFileURL:(id)arg1 forResource:(id)arg2 error:(id*)arg3;
 - (BOOL)resetWithError:(id*)arg1;
 - (id)retainFileURLForResource:(id)arg1 error:(id*)arg2;
-- (unsigned long long)sizeOfOriginalResourcesToUpload;
-- (unsigned long long)sizeOfResourcesToUpload;
+- (unsigned int)sizeOfOriginalResourcesToUpload;
+- (unsigned int)sizeOfResourcesToUpload;
 - (BOOL)storeDownloadedResource:(id)arg1 atURL:(id)arg2 error:(id*)arg3;
 - (BOOL)storeResourceForUpload:(id)arg1 error:(id*)arg2;
 - (void)writeTransactionDidFail;

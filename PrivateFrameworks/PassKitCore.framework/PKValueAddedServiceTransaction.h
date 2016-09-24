@@ -3,14 +3,14 @@
  */
 
 @interface PKValueAddedServiceTransaction : NSObject <NSSecureCoding> {
-    BOOL _didSucceed;
-    int _error;
-    NSString *_identifier;
-    PKValueAddedMerchant *_merchant;
-    NSString *_merchantURL;
-    NSNumber *_terminalApplicationVersion;
-    int _terminalMode;
-    NSDate *_transactionDate;
+    BOOL  _didSucceed;
+    int  _error;
+    NSString * _identifier;
+    PKValueAddedMerchant * _merchant;
+    NSString * _merchantURL;
+    NSNumber * _terminalApplicationVersion;
+    int  _terminalMode;
+    NSDate * _transactionDate;
 }
 
 @property (nonatomic) BOOL didSucceed;
@@ -24,7 +24,7 @@
 
 + (BOOL)supportsSecureCoding;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (BOOL)didSucceed;
 - (void)encodeWithCoder:(id)arg1;

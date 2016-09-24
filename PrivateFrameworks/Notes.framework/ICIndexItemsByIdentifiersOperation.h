@@ -3,7 +3,7 @@
  */
 
 @interface ICIndexItemsByIdentifiersOperation : ICIndexItemsOperation {
-    NSArray *_identifiersToIndex;
+    NSArray * _identifiersToIndex;
 }
 
 @property (nonatomic, copy) NSArray *identifiersToIndex;

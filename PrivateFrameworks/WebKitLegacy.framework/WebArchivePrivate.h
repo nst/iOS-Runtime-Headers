@@ -3,12 +3,12 @@
  */
 
 @interface WebArchivePrivate : NSObject {
-    WebResource *cachedMainResource;
-    NSArray *cachedSubframeArchives;
-    NSArray *cachedSubresources;
+    WebResource * cachedMainResource;
+    NSArray * cachedSubframeArchives;
+    NSArray * cachedSubresources;
     struct RefPtr<WebCore::LegacyWebArchive> { 
         struct LegacyWebArchive {} *m_ptr; 
-    } coreArchive;
+    }  coreArchive;
 }
 
 + (void)initialize;

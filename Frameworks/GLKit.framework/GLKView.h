@@ -3,37 +3,37 @@
  */
 
 @interface GLKView : UIView <NSCoding> {
-    EAGLContext *_context;
-    <GLKViewDelegate> *_delegate;
-    unsigned int _depthRenderbuffer;
-    unsigned int _depthStencilRenderbuffer;
-    int (*_drawRectIMP;
-    int _drawableColorFormat;
-    int _drawableDepthFormat;
-    int _drawableHeight;
-    int _drawableMultisample;
-    NSMutableDictionary *_drawableProperties;
-    int _drawableStencilFormat;
-    int _drawableWidth;
-    BOOL _enableSetNeedsDisplay;
-    BOOL _inDraw;
-    unsigned int _multisampleColorRenderbuffer;
-    unsigned int _multisampleFramebuffer;
-    unsigned int _resolveColorRenderbuffer;
-    unsigned int _resolveFramebuffer;
-    BOOL _shouldDeleteFramebuffer;
-    unsigned int _stencilRenderbuffer;
+    EAGLContext * _context;
+    <GLKViewDelegate> * _delegate;
+    unsigned int  _depthRenderbuffer;
+    unsigned int  _depthStencilRenderbuffer;
+    int (* _drawRectIMP;
+    int  _drawableColorFormat;
+    int  _drawableDepthFormat;
+    int  _drawableHeight;
+    int  _drawableMultisample;
+    NSMutableDictionary * _drawableProperties;
+    int  _drawableStencilFormat;
+    int  _drawableWidth;
+    BOOL  _enableSetNeedsDisplay;
+    BOOL  _inDraw;
+    unsigned int  _multisampleColorRenderbuffer;
+    unsigned int  _multisampleFramebuffer;
+    unsigned int  _resolveColorRenderbuffer;
+    unsigned int  _resolveFramebuffer;
+    BOOL  _shouldDeleteFramebuffer;
+    unsigned int  _stencilRenderbuffer;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _viewBounds;
-    float _viewContentScaleFactor;
+    }  _viewBounds;
+    double  _viewContentScaleFactor;
 }
 
 @property (nonatomic, retain) EAGLContext *context;
@@ -57,8 +57,8 @@
 @property (nonatomic) BOOL shouldDeleteFramebuffer;
 @property (readonly) UIImage *snapshot;
 @property (nonatomic) unsigned int stencilRenderbuffer;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } viewBounds;
-@property (nonatomic) float viewContentScaleFactor;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } viewBounds;
+@property (nonatomic) double viewContentScaleFactor;
 
 + (Class)layerClass;
 
@@ -92,8 +92,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)inDraw;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 context:(id)arg2;
 - (void)layoutSubviews;
 - (unsigned int)multisampleColorRenderbuffer;
 - (unsigned int)multisampleFramebuffer;
@@ -118,12 +118,12 @@
 - (void)setResolveFramebuffer:(unsigned int)arg1;
 - (void)setShouldDeleteFramebuffer:(BOOL)arg1;
 - (void)setStencilRenderbuffer:(unsigned int)arg1;
-- (void)setViewBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setViewBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setViewContentScaleFactor:(float)arg1;
 - (BOOL)shouldDeleteFramebuffer;
 - (id)snapshot;
 - (unsigned int)stencilRenderbuffer;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })viewBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })viewBounds;
 - (float)viewContentScaleFactor;
 
 @end

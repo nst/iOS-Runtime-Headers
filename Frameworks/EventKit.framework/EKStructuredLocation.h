@@ -2,44 +2,59 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@interface EKStructuredLocation : EKObject <NSCopying>
+@interface EKStructuredLocation : EKObject <NSCopying> {
+    BOOL  _imprecise;
+    RTPredictedLocationOfInterest * _predictedLOI;
+}
 
 @property (nonatomic, retain) NSString *address;
 @property (nonatomic, copy) NSString *addressBookEntityID;
+@property (nonatomic, copy) NSString *derivedFrom;
 @property (nonatomic, retain) CLLocation *geoLocation;
 @property (nonatomic, readonly) BOOL hasKnownSpatialData;
+@property (getter=isImprecise, nonatomic) BOOL imprecise;
 @property (nonatomic, readonly) BOOL isStructured;
 @property (nonatomic, copy) NSData *mapKitHandle;
+@property (nonatomic, retain) RTPredictedLocationOfInterest *predictedLOI;
+@property (getter=isPrediction, nonatomic, readonly) BOOL prediction;
 @property (nonatomic) double radius;
 @property (nonatomic, retain) NSString *routing;
 @property (nonatomic, retain) NSString *title;
 
 // Image: /System/Library/Frameworks/EventKit.framework/EventKit
 
-+ (id)_stringByStrippingCongtrolCharactersFromString:(id)arg1;
++ (id)_stringByStrippingControlCharactersFromString:(id)arg1;
 + (id)locationWithMapItem:(id)arg1;
 + (id)locationWithTitle:(id)arg1;
 
-- (id)_asCalLocation;
+- (void).cxx_destruct;
 - (id)_persistentLocation;
 - (id)address;
 - (id)addressBookEntityID;
 - (id)cacheKey;
+- (id)calLocation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)derivedFrom;
 - (id)description;
 - (id)geoLocation;
 - (id)geoURLString;
 - (BOOL)hasKnownSpatialData;
 - (id)init;
 - (BOOL)isEqualToLocation:(id)arg1;
+- (BOOL)isImprecise;
+- (BOOL)isPrediction;
 - (BOOL)isStructured;
 - (id)mapKitHandle;
+- (id)predictedLOI;
 - (double)radius;
 - (id)routing;
 - (void)setAddress:(id)arg1;
 - (void)setAddressBookEntityID:(id)arg1;
+- (void)setDerivedFrom:(id)arg1;
 - (void)setGeoLocation:(id)arg1;
+- (void)setImprecise:(BOOL)arg1;
 - (void)setMapKitHandle:(id)arg1;
+- (void)setPredictedLOI:(id)arg1;
 - (void)setRadius:(double)arg1;
 - (void)setRouting:(id)arg1;
 - (void)setTitle:(id)arg1;

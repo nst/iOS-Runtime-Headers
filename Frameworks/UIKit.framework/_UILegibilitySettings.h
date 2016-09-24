@@ -2,29 +2,33 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UILegibilitySettings : NSObject <NSSecureCoding> {
-    UIColor *_contentColor;
-    float _imageOutset;
-    float _minFillHeight;
-    UIColor *_primaryColor;
-    UIColor *_secondaryColor;
-    float _shadowAlpha;
-    UIColor *_shadowColor;
-    NSString *_shadowCompositingFilterName;
-    float _shadowRadius;
-    int _style;
+@interface _UILegibilitySettings : NSObject <BSDescriptionProviding, NSSecureCoding> {
+    UIColor * _contentColor;
+    double  _imageOutset;
+    double  _minFillHeight;
+    UIColor * _primaryColor;
+    UIColor * _secondaryColor;
+    double  _shadowAlpha;
+    UIColor * _shadowColor;
+    NSString * _shadowCompositingFilterName;
+    double  _shadowRadius;
+    int  _style;
 }
 
 @property (nonatomic, retain) UIColor *contentColor;
-@property (nonatomic) float imageOutset;
-@property (nonatomic) float minFillHeight;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) double imageOutset;
+@property (nonatomic) double minFillHeight;
 @property (nonatomic, retain) UIColor *primaryColor;
 @property (nonatomic, retain) UIColor *secondaryColor;
-@property (nonatomic) float shadowAlpha;
+@property (nonatomic) double shadowAlpha;
 @property (nonatomic, retain) UIColor *shadowColor;
 @property (nonatomic, copy) NSString *shadowCompositingFilterName;
-@property (nonatomic) float shadowRadius;
+@property (nonatomic) double shadowRadius;
 @property (nonatomic) int style;
+@property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
@@ -64,7 +68,13 @@
 
 // Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
 
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
+- (id)sb_copy;
 - (id)sb_description;
+- (BOOL)sb_isEqualToLegibilitySettings:(id)arg1;
 - (id)sb_styleString;
+- (id)succinctDescription;
+- (id)succinctDescriptionBuilder;
 
 @end

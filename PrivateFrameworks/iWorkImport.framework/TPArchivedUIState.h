@@ -3,8 +3,8 @@
  */
 
 @interface TPArchivedUIState : TSPObject {
-    TPArchivedLayoutState *_layoutState;
-    TPArchivedViewState *_viewState;
+    TPArchivedLayoutState * _layoutState;
+    TPArchivedViewState * _viewState;
 }
 
 @property (nonatomic, retain) TPArchivedLayoutState *layoutState;

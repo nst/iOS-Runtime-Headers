@@ -3,7 +3,7 @@
  */
 
 @interface _UILongDefinitionViewController : UIViewController {
-    _UIDefinitionValue *_definitionValue;
+    _UIDefinitionValue * _definitionValue;
 }
 
 - (void).cxx_destruct;

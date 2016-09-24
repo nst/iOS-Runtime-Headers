@@ -3,9 +3,9 @@
  */
 
 @interface NMSObfuscatableDescriptionItem : NSObject {
-    NSString *_format;
-    BOOL _obfuscated;
-    <NSObject> *_value;
+    NSString * _format;
+    BOOL  _obfuscated;
+    <NSObject> * _value;
 }
 
 @property (nonatomic, retain) NSString *format;

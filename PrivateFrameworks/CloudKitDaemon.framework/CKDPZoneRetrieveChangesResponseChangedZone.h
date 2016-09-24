@@ -3,11 +3,11 @@
  */
 
 @interface CKDPZoneRetrieveChangesResponseChangedZone : PBCodable <NSCopying> {
-    int _changeType;
+    int  _changeType;
     struct { 
         unsigned int changeType : 1; 
-    } _has;
-    CKDPRecordZoneIdentifier *_zoneIdentifier;
+    }  _has;
+    CKDPRecordZoneIdentifier * _zoneIdentifier;
 }
 
 @property (nonatomic) int changeType;
@@ -16,7 +16,9 @@
 @property (nonatomic, retain) CKDPRecordZoneIdentifier *zoneIdentifier;
 
 - (void).cxx_destruct;
+- (int)StringAsChangeType:(id)arg1;
 - (int)changeType;
+- (id)changeTypeAsString:(int)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

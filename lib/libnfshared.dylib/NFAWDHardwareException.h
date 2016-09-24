@@ -3,9 +3,8 @@
  */
 
 @interface NFAWDHardwareException : NSObject <NFAWDEventProtocol> {
-    AWDNFCHardwareExceptionEvent *_metric;
-    NSString *data;
-    unsigned int type;
+    AWDNFCHardwareExceptionEvent * _metric;
+    unsigned int  _type;
 }
 
 @property (nonatomic, retain) NSString *data;

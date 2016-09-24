@@ -2,34 +2,39 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFMailboxUid : NSObject <NSCopying> {
-    MFWeakReferenceHolder *_account;
-    unsigned int _attributes;
-    NSMutableArray *_children;
-    MFMessageCriterion *_criterion;
-    NSArray *_extraAttributes;
-    unsigned int _mailboxID;
-    MFWeakReferenceHolder *_parent;
-    NSString *_pathComponent;
-    NSNumber *_pendingLevel;
-    NSString *_permanentTag;
-    NSString *_realFullPath;
-    MailAccount *_representedAccount;
-    int _type;
-    NSMutableDictionary *_userInfo;
-    BOOL allCriteriaMustBeSatisfied;
-    NSString *uniqueId;
+@interface MFMailboxUid : NSObject <MFMailboxPredictionMailbox, NSCopying> {
+    MFWeakReferenceHolder * _account;
+    unsigned int  _attributes;
+    NSMutableArray * _children;
+    MFMessageCriterion * _criterion;
+    NSArray * _extraAttributes;
+    unsigned int  _mailboxID;
+    MFWeakReferenceHolder * _parent;
+    NSString * _pathComponent;
+    NSNumber * _pendingLevel;
+    NSString * _permanentTag;
+    NSString * _realFullPath;
+    MailAccount * _representedAccount;
+    int  _type;
+    NSMutableDictionary * _userInfo;
+    BOOL  allCriteriaMustBeSatisfied;
+    NSString * uniqueId;
 }
 
+@property (nonatomic, readonly) MFInvocationQueue *attachmentDownloadQueue;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSArray *extraAttributes;
+@property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSString *permanentTag;
 @property (nonatomic, readonly) unsigned int suggestionsLostMessageSearchResultCount;
 @property (nonatomic, readonly) double suggestionsLostMessageSearchTimestamp;
+@property (readonly) Class superclass;
 
 + (BOOL)isDraftsMailboxType:(int)arg1;
 + (BOOL)isOutgoingMailboxType:(int)arg1;
 + (BOOL)isSentMailboxType:(int)arg1;
-+ (BOOL)isSpecialMailboxUidType:(int)arg1;
++ (BOOL)isStandardizedMailboxUidType:(int)arg1;
 + (id)specialNameForType:(int)arg1;
 
 - (id)URL;
@@ -40,10 +45,12 @@
 - (id)_loadUserInfo;
 - (id)_mutableChildren;
 - (id)account;
+- (id)accountDisplayName;
 - (id)accountRelativePath;
 - (void)addToPostOrderTraversal:(id)arg1;
 - (BOOL)alwaysWriteFullMessageFile;
 - (id)ancestralAccount;
+- (id)attachmentDownloadQueue;
 - (unsigned int)attributes;
 - (id)childAtIndex:(unsigned int)arg1;
 - (id)childEnumerator;
@@ -76,9 +83,12 @@
 - (void)invalidate;
 - (BOOL)isContainer;
 - (BOOL)isDescendantOfMailbox:(id)arg1;
+- (BOOL)isNotesMailboxUid;
 - (BOOL)isOutgoingMailboxUid;
 - (BOOL)isSelectable;
+- (BOOL)isSentMailboxUid;
 - (BOOL)isSpecialMailboxUid;
+- (BOOL)isStandardizedMailboxUid;
 - (BOOL)isStore;
 - (BOOL)isValid;
 - (BOOL)isVisible;
@@ -96,6 +106,7 @@
 - (id)pathRelativeToMailbox:(id)arg1;
 - (id)pathRelativeToMailboxForDisplay:(id)arg1;
 - (id)permanentTag;
+- (id)persistentID;
 - (id)realFullPath;
 - (void)removeChild:(id)arg1;
 - (id)representedAccount;
@@ -112,7 +123,6 @@
 - (void)setPermanentTag:(id)arg1;
 - (void)setRepresentedAccount:(id)arg1;
 - (void)setType:(int)arg1;
-- (BOOL)setUnreadCount:(unsigned int)arg1;
 - (void)setUserInfoBool:(BOOL)arg1 forKey:(id)arg2;
 - (void)setUserInfoObject:(id)arg1 forKey:(id)arg2;
 - (void)setUserInfoWithDictionary:(id)arg1;

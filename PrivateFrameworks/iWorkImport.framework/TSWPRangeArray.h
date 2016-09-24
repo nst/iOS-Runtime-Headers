@@ -3,7 +3,7 @@
  */
 
 @interface TSWPRangeArray : NSObject <NSCopying> {
-    void *_rangeVectorOpaque;
+    void * _rangeVectorOpaque;
 }
 
 @property (nonatomic, readonly) unsigned int finish;

@@ -7,7 +7,7 @@
 @property (nonatomic, retain) NSString *bundleId;
 @property (nonatomic, retain) NSString *deviceId;
 @property (nonatomic, retain) NSSet *object;
-@property (nonatomic) long long sourceHash;
+@property (nonatomic) int sourceHash;
 @property (nonatomic) short userId;
 
 @end

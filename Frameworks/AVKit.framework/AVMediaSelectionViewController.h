@@ -3,10 +3,10 @@
  */
 
 @interface AVMediaSelectionViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    AVPlayerController *_playerController;
-    AVMediaSelectionOption *_selectedAudioMediaSelectionOption;
-    AVMediaSelectionOption *_selectedLegibleMediaSelectionOption;
-    UITableView *_tableView;
+    AVPlayerController * _playerController;
+    AVMediaSelectionOption * _selectedAudioMediaSelectionOption;
+    AVMediaSelectionOption * _selectedLegibleMediaSelectionOption;
+    UITableView * _tableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

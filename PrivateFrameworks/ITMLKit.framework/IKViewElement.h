@@ -2,26 +2,27 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKViewElement : NSObject <IKStyleableElement> {
-    NSString *_accessibilityText;
-    NSMutableSet *_activeSingularEvents;
-    IKAppDocument *_appDocument;
-    NSDictionary *_attributes;
-    NSString *_autoHighlightIdentifier;
-    NSArray *_children;
-    BOOL _didUpdateAutoHighlightIdentifier;
-    BOOL _disabled;
-    NSString *_elementID;
-    NSString *_elementName;
-    unsigned int _elementType;
-    NSArray *_features;
-    BOOL _impressionable;
-    NSString *_itmlID;
-    NSMutableDictionary *_metadataDict;
-    IKViewElement *_parent;
-    <IKStyleableElement> *_parentStyleableElement;
-    IKViewElementStyleComposer *_styleComposer;
-    unsigned int _updateType;
+@interface IKViewElement : NSObject <IKAppDocumentStyleChangeObserving, IKStyleableElement> {
+    NSString * _accessibilityText;
+    NSMutableSet * _activeSingularEvents;
+    IKAppDocument * _appDocument;
+    NSDictionary * _attributes;
+    NSString * _autoHighlightIdentifier;
+    NSArray * _children;
+    BOOL  _didUpdateAutoHighlightIdentifier;
+    BOOL  _disabled;
+    NSString * _elementID;
+    NSString * _elementName;
+    unsigned int  _elementType;
+    NSArray * _features;
+    BOOL  _impressionable;
+    NSDictionary * _impressionableAttributes;
+    NSString * _itmlID;
+    NSMutableDictionary * _metadataDict;
+    IKViewElement * _parent;
+    <IKStyleableElement> * _parentStyleableElement;
+    IKViewElementStyleComposer * _styleComposer;
+    unsigned int  _updateType;
 }
 
 @property (nonatomic, readonly, copy) NSString *accessibilityText;
@@ -30,6 +31,8 @@
 @property (nonatomic, readonly, retain) NSDictionary *attributes;
 @property (nonatomic, copy) NSString *autoHighlightIdentifier;
 @property (nonatomic, retain) NSArray *children;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL didUpdateAutoHighlightIdentifier;
 @property (getter=isDisabled, nonatomic) BOOL disabled;
 @property (nonatomic, readonly, copy) NSString *elementID;
@@ -37,13 +40,16 @@
 @property (nonatomic, readonly) unsigned int elementType;
 @property (nonatomic, readonly) SKUIEntityProviderListViewElement *entityProviderList;
 @property (nonatomic, readonly, copy) NSArray *features;
+@property (readonly) unsigned int hash;
 @property (getter=isImpressionable, nonatomic) BOOL impressionable;
+@property (nonatomic, readonly) NSDictionary *impressionableAttributes;
 @property (nonatomic, readonly, retain) NSString *itmlID;
 @property (nonatomic, retain) NSMutableDictionary *metadataDict;
 @property (nonatomic) IKViewElement *parent;
 @property (nonatomic, readonly) <IKStyleableElement> *parentStyleableElement;
 @property (nonatomic, readonly, retain) IKViewElementStyle *style;
 @property (nonatomic, retain) IKViewElementStyleComposer *styleComposer;
+@property (readonly) Class superclass;
 @property (nonatomic) unsigned int updateType;
 
 // Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
@@ -54,7 +60,6 @@
 + (id)supportedFeatures;
 
 - (void).cxx_destruct;
-- (void)_appDocumentDidMarkStylesDirty:(id)arg1;
 - (void)_applyUpdatesToChildrenWithElements:(id)arg1;
 - (void)_reorderAndUpdateChildrenWithElements:(id)arg1;
 - (void)_resetUpdates;
@@ -62,6 +67,7 @@
 - (id)accessibilityText;
 - (id)activeSingularEvents;
 - (id)appDocument;
+- (void)appDocumentDidMarkStylesDirty;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)attributes;
 - (id)autoHighlightIdentifier;
@@ -71,6 +77,7 @@
 - (id)childTextElementWithStyle:(unsigned int)arg1;
 - (id)children;
 - (void)dealloc;
+- (id)debugDescription;
 - (BOOL)didUpdateAutoHighlightIdentifier;
 - (void)dispatchEvent:(id)arg1 eventAttribute:(id)arg2 canBubble:(BOOL)arg3 isCancelable:(BOOL)arg4 extraInfo:(id)arg5 completionBlock:(id /* block */)arg6;
 - (void)dispatchEventOfType:(unsigned int)arg1 canBubble:(BOOL)arg2 isCancelable:(BOOL)arg3 extraInfo:(id)arg4 completionBlock:(id /* block */)arg5;
@@ -78,6 +85,7 @@
 - (id)elementName;
 - (unsigned int)elementType;
 - (id)features;
+- (id)impressionableAttributes;
 - (id)init;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (BOOL)isDisabled;
@@ -100,9 +108,15 @@
 - (void)setParent:(id)arg1;
 - (void)setStyleComposer:(id)arg1;
 - (void)setUpdateType:(unsigned int)arg1;
+- (void)setViewElementUpdateType:(unsigned int)arg1;
 - (id)style;
 - (id)styleComposer;
 - (unsigned int)updateType;
+
+// Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
+
+- (unsigned int)vs_elementType;
+- (id)vs_itemElementsOfType:(unsigned int)arg1;
 
 // Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
 

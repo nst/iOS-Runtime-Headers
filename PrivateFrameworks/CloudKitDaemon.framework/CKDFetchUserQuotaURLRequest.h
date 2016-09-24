@@ -3,7 +3,7 @@
  */
 
 @interface CKDFetchUserQuotaURLRequest : CKDURLRequest {
-    id /* block */ _quotaFetchedBlock;
+    id /* block */  _quotaFetchedBlock;
 }
 
 @property (nonatomic, copy) id /* block */ quotaFetchedBlock;

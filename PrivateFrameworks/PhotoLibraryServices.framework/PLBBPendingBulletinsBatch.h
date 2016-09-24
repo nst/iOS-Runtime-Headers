@@ -3,13 +3,13 @@
  */
 
 @interface PLBBPendingBulletinsBatch : NSObject {
-    NSObject<OS_dispatch_source> *_coalescingTimerSource;
-    int _currentState;
-    <PLBBPendingBulletinsBatchDelegate> *_delegate;
-    BOOL _downloadTimerExpired;
-    NSObject<OS_dispatch_source> *_downloadTimerSource;
-    NSObject<OS_dispatch_queue> *_isolationQueue;
-    NSMutableArray *_pendingBulletins;
+    NSObject<OS_dispatch_source> * _coalescingTimerSource;
+    int  _currentState;
+    <PLBBPendingBulletinsBatchDelegate> * _delegate;
+    BOOL  _downloadTimerExpired;
+    NSObject<OS_dispatch_source> * _downloadTimerSource;
+    NSObject<OS_dispatch_queue> * _isolationQueue;
+    NSMutableArray * _pendingBulletins;
 }
 
 @property (readonly) BOOL canAcceptMergeBulletins;

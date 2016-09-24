@@ -3,9 +3,9 @@
  */
 
 @interface GKStandaloneWiggleRotateAnimator : GKWiggleRotateAnimator {
-    GKBubbleFlowContainerView *_containerView;
-    int _rotationDirection;
-    _GKBubbleFlowPathTransitionInfo *_transitionContext;
+    GKBubbleFlowContainerView * _containerView;
+    int  _rotationDirection;
+    _GKBubbleFlowPathTransitionInfo * _transitionContext;
 }
 
 @property (nonatomic, retain) GKBubbleFlowContainerView *containerView;

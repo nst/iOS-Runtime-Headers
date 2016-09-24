@@ -3,16 +3,16 @@
  */
 
 @interface ATFileBufferedPipe : NSObject {
-    ATFileBuffer *_buffer;
-    NSFileHandle *_fileHandleForReading;
-    NSFileHandle *_fileHandleForWriting;
-    NSPipe *_inputPipe;
-    NSPipe *_outputPipe;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_source> *_readSource;
-    BOOL _readyForData;
-    BOOL _readyToClose;
-    NSObject<OS_dispatch_source> *_writeSource;
+    ATFileBuffer * _buffer;
+    NSFileHandle * _fileHandleForReading;
+    NSFileHandle * _fileHandleForWriting;
+    NSPipe * _inputPipe;
+    NSPipe * _outputPipe;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_source> * _readSource;
+    BOOL  _readyForData;
+    BOOL  _readyToClose;
+    NSObject<OS_dispatch_source> * _writeSource;
 }
 
 @property (readonly, retain) NSFileHandle *fileHandleForReading;

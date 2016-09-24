@@ -3,9 +3,9 @@
  */
 
 @interface PLManagedAlbumList : _PLManagedAlbumList <PLAlbumContainer, PLDerivedAlbumListOrigin, PLIndexMappersDataOrigin> {
-    NSObject<PLIndexMappingCache> *_derivedAlbumLists;
-    BOOL didRegisteredWithUserInterfaceContext;
-    BOOL isRegisteredForChanges;
+    NSObject<PLIndexMappingCache> * _derivedAlbumLists;
+    BOOL  didRegisteredWithUserInterfaceContext;
+    BOOL  isRegisteredForChanges;
 }
 
 @property (nonatomic, readonly, retain) NSString *_prettyDescription;
@@ -55,6 +55,8 @@
 + (unsigned int)priorityForAlbumKind:(int)arg1;
 + (void)pushChangesFromAlbumContainer:(id)arg1 toAlbumContainer:(id)arg2;
 + (void)restoreAlbumListFromPersistedDataAtPath:(id)arg1 library:(id)arg2;
++ (id)scenesAlbumListInManagedObjectContext:(id)arg1;
++ (id)scenesAlbumListInPhotoLibrary:(id)arg1;
 + (id)wallpaperAlbumListInPhotoLibrary:(id)arg1;
 
 - (id)_albumsCountFetchRequest;

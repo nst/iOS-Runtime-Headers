@@ -3,7 +3,7 @@
  */
 
 @interface _MKBatchNearbyTicket : NSObject <MKMapServiceBatchNearbyTicket> {
-    <GEOMapServiceBatchNearbyTicket> *_ticket;
+    <GEOMapServiceBatchNearbyTicket> * _ticket;
 }
 
 @property (readonly, copy) NSString *debugDescription;

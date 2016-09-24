@@ -3,14 +3,14 @@
  */
 
 @interface SSSQLiteComparisonPredicate : SSSQLitePropertyPredicate <NSCopying> {
-    int _comparisonType;
-    id _value;
+    int  _comparisonType;
+    id  _value;
 }
 
 @property (nonatomic, readonly) int comparisonType;
 @property (nonatomic, readonly) id value;
 
-+ (id)predicateWithProperty:(id)arg1 equalToLongLong:(long long)arg2;
++ (id)predicateWithProperty:(id)arg1 equalToLongLong:(int)arg2;
 + (id)predicateWithProperty:(id)arg1 equalToValue:(id)arg2;
 + (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparisonType:(int)arg3;
 

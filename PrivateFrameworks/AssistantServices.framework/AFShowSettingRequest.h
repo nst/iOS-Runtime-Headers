@@ -3,7 +3,7 @@
  */
 
 @interface AFShowSettingRequest : AFSiriRequest {
-    int _settingType;
+    int  _settingType;
 }
 
 + (BOOL)supportsSecureCoding;

@@ -3,8 +3,8 @@
  */
 
 @interface CNVCardEncoding : NSObject {
-    NSString *_name;
-    unsigned int _stringEncoding;
+    NSString * _name;
+    unsigned int  _stringEncoding;
 }
 
 @property (readonly) NSString *name;
@@ -20,6 +20,7 @@
 + (id)standardEncodings;
 + (id)utf8Encoding;
 
+- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 stringEncoding:(unsigned int)arg2;
 - (id)name;
 - (unsigned int)stringEncoding;

@@ -3,13 +3,13 @@
  */
 
 @interface CNFRegTableLabel : UIView <PSHeaderFooterView> {
-    NSURL *_URLTarget;
-    NSString *_URLText;
-    UITableView *_cnfreg_tableView;
-    BOOL _isTopmostHeader;
-    UILabel *_label;
-    PSSpecifier *_specifier;
-    CNFRegLearnMoreButton *_urlButton;
+    NSURL * _URLTarget;
+    NSString * _URLText;
+    UITableView * _cnfreg_tableView;
+    BOOL  _isTopmostHeader;
+    UILabel * _label;
+    PSSpecifier * _specifier;
+    CNFRegLearnMoreButton * _urlButton;
 }
 
 @property (nonatomic, copy) NSURL *URLTarget;

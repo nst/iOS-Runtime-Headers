@@ -3,12 +3,12 @@
  */
 
 @interface RCDebugAudioGenerator : NSObject {
-    id /* block */ _curveFunction;
-    double _duration;
-    id /* block */ _generateCompletionHandler;
-    double _intervalBetweenPeaks;
-    NSDictionary *_outputSettings;
-    NSURL *_outputURL;
+    id /* block */  _curveFunction;
+    double  _duration;
+    id /* block */  _generateCompletionHandler;
+    double  _intervalBetweenPeaks;
+    NSDictionary * _outputSettings;
+    NSURL * _outputURL;
 }
 
 @property (nonatomic, readonly) id /* block */ curveFunction;

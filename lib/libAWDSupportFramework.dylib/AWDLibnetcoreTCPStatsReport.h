@@ -12,15 +12,15 @@
         unsigned int tcpSendPLR : 1; 
         unsigned int tcpSendReorderRate : 1; 
         unsigned int tcpSendTLRTO : 1; 
-    } _has;
-    unsigned long long _tcpConnectionAccepts;
-    unsigned long long _tcpConnectionAttempts;
-    unsigned long long _tcpIPv4AvgRTT;
-    unsigned long long _tcpIPv6AvgRTT;
-    unsigned long long _tcpRecvPLR;
-    unsigned long long _tcpSendPLR;
-    unsigned long long _tcpSendReorderRate;
-    unsigned long long _tcpSendTLRTO;
+    }  _has;
+    unsigned long long  _tcpConnectionAccepts;
+    unsigned long long  _tcpConnectionAttempts;
+    unsigned long long  _tcpIPv4AvgRTT;
+    unsigned long long  _tcpIPv6AvgRTT;
+    unsigned long long  _tcpRecvPLR;
+    unsigned long long  _tcpSendPLR;
+    unsigned long long  _tcpSendReorderRate;
+    unsigned long long  _tcpSendTLRTO;
 }
 
 @property (nonatomic) BOOL hasTcpConnectionAccepts;

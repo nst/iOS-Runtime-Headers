@@ -3,11 +3,11 @@
  */
 
 @interface SYRetryTimer : NSObject {
-    double _backoffFactor;
-    double _interval;
-    int _maxRetries;
-    int _numRetries;
-    NSObject<OS_dispatch_source> *_timer;
+    double  _backoffFactor;
+    double  _interval;
+    int  _maxRetries;
+    int  _numRetries;
+    NSObject<OS_dispatch_source> * _timer;
 }
 
 - (void).cxx_destruct;

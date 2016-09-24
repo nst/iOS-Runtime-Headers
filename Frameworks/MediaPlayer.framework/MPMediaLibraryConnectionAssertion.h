@@ -3,8 +3,8 @@
  */
 
 @interface MPMediaLibraryConnectionAssertion : NSObject {
-    NSString *_identifier;
-    MPMediaLibrary *_library;
+    NSString * _identifier;
+    MPMediaLibrary * _library;
 }
 
 @property (nonatomic, readonly) NSString *identifier;

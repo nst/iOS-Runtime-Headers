@@ -3,7 +3,7 @@
  */
 
 @interface TSCHStyleOwnerPath : NSObject <NSCopying> {
-    NSArray *mUuids;
+    NSArray * mUuids;
 }
 
 @property (nonatomic, readonly) NSArray *uuids;

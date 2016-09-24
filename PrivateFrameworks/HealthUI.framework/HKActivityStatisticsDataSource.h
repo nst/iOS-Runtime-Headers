@@ -3,10 +3,10 @@
  */
 
 @interface HKActivityStatisticsDataSource : HKHealthQueryChartCacheDataSource {
-    NSCalendar *_gregorianCalendar;
-    NSCalendar *_gregorianNonUTCCalendar;
-    NSPredicate *_sourcesPredicate;
-    HKUnitController *_unitController;
+    NSCalendar * _gregorianCalendar;
+    NSCalendar * _gregorianNonUTCCalendar;
+    NSPredicate * _sourcesPredicate;
+    HKUnitController * _unitController;
 }
 
 - (void).cxx_destruct;

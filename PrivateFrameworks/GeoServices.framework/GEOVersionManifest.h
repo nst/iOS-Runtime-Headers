@@ -3,10 +3,12 @@
  */
 
 @interface GEOVersionManifest : PBCodable <NSCopying> {
-    NSMutableArray *_serviceVersions;
+    NSMutableArray * _serviceVersions;
 }
 
 @property (nonatomic, retain) NSMutableArray *serviceVersions;
+
++ (Class)serviceVersionType;
 
 - (void)addServiceVersion:(id)arg1;
 - (void)clearServiceVersions;

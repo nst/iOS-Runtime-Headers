@@ -3,15 +3,15 @@
  */
 
 @interface FigCPEFPAirPlaySession : NSObject {
-    NSDictionary *_contentInfo;
-    unsigned long _fairPlayContext;
-    struct FPStreamOpaque_ { } *_fairPlaySession;
-    BOOL _invalid;
-    NSString *_mediaControlUUID;
-    struct OpaqueFigEndpointPlaybackSession { } *_playbackSession;
-    NSDictionary *_protectionInfo;
-    NSObject<OS_dispatch_queue> *_serializationQueue;
-    unsigned long _vodkaVersion;
+    NSDictionary * _contentInfo;
+    unsigned long  _fairPlayContext;
+    struct FPStreamOpaque_ { } * _fairPlaySession;
+    BOOL  _invalid;
+    NSString * _mediaControlUUID;
+    struct OpaqueFigEndpointPlaybackSession { } * _playbackSession;
+    NSDictionary * _protectionInfo;
+    NSObject<OS_dispatch_queue> * _serializationQueue;
+    unsigned long  _vodkaVersion;
 }
 
 - (void)authorizeItemCompletionHandler_objc:(struct { id x1; id /* block */ x2; }*)arg1 picData:(struct __CFData { }*)arg2 playerGUID:(struct __CFString { }*)arg3 error:(long)arg4;

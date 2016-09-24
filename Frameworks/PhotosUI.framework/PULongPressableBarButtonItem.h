@@ -3,8 +3,8 @@
  */
 
 @interface PULongPressableBarButtonItem : UIBarButtonItem {
-    SEL _longPressAction;
-    id _longPressTarget;
+    SEL  _longPressAction;
+    id  _longPressTarget;
 }
 
 - (void).cxx_destruct;

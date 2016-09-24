@@ -3,12 +3,12 @@
  */
 
 @interface NSEntityStoreMapping : NSStoreMapping {
-    NSEntityDescription *_entity;
-    BOOL _isSingleTableEntity;
-    NSArray *_primaryKeys;
-    NSDictionary *_propertyMappings;
-    NSString *_subentityColumn;
-    unsigned int _subentityID;
+    NSEntityDescription * _entity;
+    BOOL  _isSingleTableEntity;
+    NSArray * _primaryKeys;
+    NSDictionary * _propertyMappings;
+    NSString * _subentityColumn;
+    unsigned int  _subentityID;
 }
 
 - (id)attributeColumnDefinitions;

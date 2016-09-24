@@ -3,10 +3,10 @@
  */
 
 @interface GEORPFeatureHandle : PBCodable <NSCopying> {
-    unsigned int _featureIndex;
-    unsigned int _featureTileX;
-    unsigned int _featureTileY;
-    unsigned int _featureTileZ;
+    unsigned int  _featureIndex;
+    unsigned int  _featureTileX;
+    unsigned int  _featureTileY;
+    unsigned int  _featureTileZ;
     struct { 
         unsigned int featureIndex : 1; 
         unsigned int featureTileX : 1; 
@@ -15,13 +15,13 @@
         unsigned int identifier : 1; 
         unsigned int style : 1; 
         unsigned int type : 1; 
-    } _has;
-    unsigned int _identifier;
-    int _style;
-    struct { int x1; int x2; } *_styleAttributes;
-    unsigned int _styleAttributesCount;
-    unsigned int _styleAttributesSpace;
-    int _type;
+    }  _has;
+    unsigned int  _identifier;
+    int  _style;
+    struct GEORPFeatureHandleStyleAttribute { int x1; int x2; } * _styleAttributes;
+    unsigned int  _styleAttributesCount;
+    unsigned int  _styleAttributesSpace;
+    int  _type;
 }
 
 @property (nonatomic) unsigned int featureIndex;
@@ -37,11 +37,13 @@
 @property (nonatomic) BOOL hasType;
 @property (nonatomic) unsigned int identifier;
 @property (nonatomic) int style;
-@property (nonatomic, readonly) struct { int x1; int x2; }*styleAttributes;
+@property (nonatomic, readonly) struct GEORPFeatureHandleStyleAttribute { int x1; int x2; }*styleAttributes;
 @property (nonatomic, readonly) unsigned int styleAttributesCount;
 @property (nonatomic) int type;
 
-- (void)addStyleAttribute:(struct { int x1; int x2; })arg1;
+- (int)StringAsStyle:(id)arg1;
+- (int)StringAsType:(id)arg1;
+- (void)addStyleAttribute:(struct GEORPFeatureHandleStyleAttribute { int x1; int x2; })arg1;
 - (void)clearStyleAttributes;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -77,13 +79,15 @@
 - (void)setHasType:(BOOL)arg1;
 - (void)setIdentifier:(unsigned int)arg1;
 - (void)setStyle:(int)arg1;
-- (void)setStyleAttributes:(struct { int x1; int x2; }*)arg1 count:(unsigned int)arg2;
+- (void)setStyleAttributes:(struct GEORPFeatureHandleStyleAttribute { int x1; int x2; }*)arg1 count:(unsigned int)arg2;
 - (void)setType:(int)arg1;
 - (int)style;
-- (struct { int x1; int x2; })styleAttributeAtIndex:(unsigned int)arg1;
-- (struct { int x1; int x2; }*)styleAttributes;
+- (id)styleAsString:(int)arg1;
+- (struct GEORPFeatureHandleStyleAttribute { int x1; int x2; })styleAttributeAtIndex:(unsigned int)arg1;
+- (struct GEORPFeatureHandleStyleAttribute { int x1; int x2; }*)styleAttributes;
 - (unsigned int)styleAttributesCount;
 - (int)type;
+- (id)typeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -3,9 +3,9 @@
  */
 
 @interface SUScriptCalloutView : SUScriptObject {
-    BOOL _isVisible;
-    NSString *_subtitle;
-    NSString *_title;
+    BOOL  _isVisible;
+    NSString * _subtitle;
+    NSString * _title;
 }
 
 @property (copy) NSString *subtitle;

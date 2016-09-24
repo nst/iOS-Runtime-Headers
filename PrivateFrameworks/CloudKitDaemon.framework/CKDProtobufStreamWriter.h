@@ -3,21 +3,21 @@
  */
 
 @interface CKDProtobufStreamWriter : NSObject <NSStreamDelegate> {
-    NSMutableArray *_allObjects;
-    NSFileHandle *_binaryLogFileHandle;
-    unsigned int _bufferSize;
-    NSData *_curData;
-    unsigned int _curDataPos;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    BOOL _hasInitedCompression;
-    BOOL _haveFinishedCompression;
-    BOOL _haveFinishedStreaming;
-    BOOL _haveFlushedZlib;
-    NSInputStream *_inputStream;
-    id /* block */ _logRequestObjectBlock;
-    NSOutputStream *_outputStream;
-    BOOL _shouldCompress;
-    <CKDProtobufMessageSigningDelegate> *_signingDelegate;
+    NSMutableArray * _allObjects;
+    NSFileHandle * _binaryLogFileHandle;
+    unsigned int  _bufferSize;
+    NSData * _curData;
+    unsigned int  _curDataPos;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    BOOL  _hasInitedCompression;
+    BOOL  _haveFinishedCompression;
+    BOOL  _haveFinishedStreaming;
+    BOOL  _haveFlushedZlib;
+    NSInputStream * _inputStream;
+    id /* block */  _logRequestObjectBlock;
+    NSOutputStream * _outputStream;
+    BOOL  _shouldCompress;
+    <CKDProtobufMessageSigningDelegate> * _signingDelegate;
     struct z_stream_s { 
         char *next_in; 
         unsigned int avail_in; 
@@ -33,7 +33,7 @@
         int data_type; 
         unsigned int adler; 
         unsigned int reserved; 
-    } _zlibStream;
+    }  _zlibStream;
 }
 
 @property (nonatomic, retain) NSFileHandle *binaryLogFileHandle;

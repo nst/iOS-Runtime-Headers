@@ -3,7 +3,7 @@
  */
 
 @interface HAPRelayActivationClient : NSObject {
-    <HAPRelayActivationClientDelegate> *_delegate;
+    <HAPRelayActivationClientDelegate> * _delegate;
 }
 
 @property <HAPRelayActivationClientDelegate> *delegate;

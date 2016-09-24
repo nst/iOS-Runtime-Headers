@@ -3,12 +3,12 @@
  */
 
 @interface _MCDPCNotifcationCallbackHelper : NSObject {
-    NSIndexPath *_indexPath;
-    id /* block */ _loadCompletion;
-    MCDPCModel *_model;
-    id /* block */ _playCompletion;
-    BOOL _playback;
-    id _selfRef;
+    NSIndexPath * _indexPath;
+    id /* block */  _loadCompletion;
+    MCDPCModel * _model;
+    id /* block */  _playCompletion;
+    BOOL  _playback;
+    id  _selfRef;
 }
 
 - (void).cxx_destruct;

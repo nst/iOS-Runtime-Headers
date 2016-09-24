@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAStockSearchCompleted : SABaseCommand <SAServerBoundCommand> {
-    NSArray *_stockList;
-}
+@interface SAStockSearchCompleted : SABaseCommand <SAServerBoundCommand>
 
 @property (nonatomic, copy) NSString *aceId;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSString *refId;
-@property (nonatomic, copy) NSArray *stockList;
 @property (nonatomic, copy) NSArray *stockReferences;
 @property (readonly) Class superclass;
 
@@ -20,9 +17,7 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (void)setStockList:(id)arg1;
 - (void)setStockReferences:(id)arg1;
-- (id)stockList;
 - (id)stockReferences;
 
 @end

@@ -3,28 +3,28 @@
  */
 
 @interface AutoGuessController : AssistantCallbackController {
-    struct ACPBrowserSession { } *_acpBrowserSession;
-    NSThread *_autoGuessThread;
-    BOOL _autoJoinState;
-    int _bonjourBrowseStatus;
-    NSTimer *_browseReadyTimer;
-    NSMutableDictionary *_browsedBases;
-    int _currentAutoGuessUISelector;
-    NSString *_currentParamString;
-    id _delegate;
-    NSDictionary *_guessCompletionDict;
-    struct AutoGuessContext { } *_guessContext;
-    int _lastAutoGuessUISelector;
-    NSDictionary *_lastInstrumentation;
-    NSString *_lastParamString;
-    BOOL _onShortTimer;
-    NSDictionary *_targetBrowseRecord;
-    NSString *_targetMACAddress;
-    NSDictionary *_targetScanRecord;
-    BOOL _updatedTargetInfo;
-    NSArray *_wifiScanInfos;
-    int _wifiScanStatus;
-    NSDictionary *unconfiguredDeviceThatIsBeingSetup;
+    struct ACPBrowserSession { } * _acpBrowserSession;
+    NSThread * _autoGuessThread;
+    BOOL  _autoJoinState;
+    int  _bonjourBrowseStatus;
+    NSTimer * _browseReadyTimer;
+    NSMutableDictionary * _browsedBases;
+    int  _currentAutoGuessUISelector;
+    NSString * _currentParamString;
+    id  _delegate;
+    NSDictionary * _guessCompletionDict;
+    struct AutoGuessContext { } * _guessContext;
+    int  _lastAutoGuessUISelector;
+    NSDictionary * _lastInstrumentation;
+    NSString * _lastParamString;
+    BOOL  _onShortTimer;
+    NSDictionary * _targetBrowseRecord;
+    NSString * _targetMACAddress;
+    NSDictionary * _targetScanRecord;
+    BOOL  _updatedTargetInfo;
+    NSArray * _wifiScanInfos;
+    int  _wifiScanStatus;
+    NSDictionary * unconfiguredDeviceThatIsBeingSetup;
 }
 
 @property (retain) NSTimer *_browseReadyTimer;

@@ -3,21 +3,21 @@
  */
 
 @interface SUTabBarController : UITabBarController <SUOverlayBackgroundDelegate, _UIBasicAnimationFactory> {
-    SUClientInterface *_clientInterface;
-    BOOL _ignoreTabReselection;
-    UIImage *_moreListSelectedImage;
-    NSString *_moreListTitle;
-    UIImage *_moreListUnselectedImage;
-    NSMutableArray *_overlayBackgroundViewControllers;
-    UIViewController *_preTransientSelectedViewController;
-    SUViewController *_preloadedViewController;
-    NSString *_preloadedViewControllerIdentifier;
-    NSString *_preloadedViewControllerKey;
-    SUPreviewOverlayViewController *_previewOverlayViewController;
-    int _reloadingUnderneathTransientControllerCount;
-    NSArray *_sections;
-    int _storeBarStyle;
-    SUNavigationBarBackgroundView *_tabBarBackdropView;
+    SUClientInterface * _clientInterface;
+    BOOL  _ignoreTabReselection;
+    UIImage * _moreListSelectedImage;
+    NSString * _moreListTitle;
+    UIImage * _moreListUnselectedImage;
+    NSMutableArray * _overlayBackgroundViewControllers;
+    UIViewController * _preTransientSelectedViewController;
+    SUViewController * _preloadedViewController;
+    NSString * _preloadedViewControllerIdentifier;
+    NSString * _preloadedViewControllerKey;
+    SUPreviewOverlayViewController * _previewOverlayViewController;
+    int  _reloadingUnderneathTransientControllerCount;
+    NSArray * _sections;
+    int  _storeBarStyle;
+    SUNavigationBarBackgroundView * _tabBarBackdropView;
 }
 
 @property (getter=_previewOverlayViewController, nonatomic, readonly) SUPreviewOverlayViewController *_previewOverlayViewController;

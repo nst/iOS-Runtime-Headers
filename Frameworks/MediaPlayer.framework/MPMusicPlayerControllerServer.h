@@ -3,7 +3,7 @@
  */
 
 @interface MPMusicPlayerControllerServer : NSObject {
-    MPMusicPlayerControllerServerInternal *_internal;
+    MPMusicPlayerControllerServerInternal * _internal;
 }
 
 @property (nonatomic, readonly) MPAVController *player;

@@ -3,12 +3,12 @@
  */
 
 @interface SPProtoAudioFileQueuePlayerSetRate : PBCodable <NSCopying> {
-    NSString *_identifier;
-    float _rate;
+    NSString * _identifier;
+    double  _rate;
 }
 
 @property (nonatomic, retain) NSString *identifier;
-@property (nonatomic) float rate;
+@property (nonatomic) double rate;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

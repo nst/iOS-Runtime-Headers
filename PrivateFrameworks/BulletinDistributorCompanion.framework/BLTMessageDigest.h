@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@interface BLTMessageDigest : NSObject <NSCoding> {
-    NSData *_messageDigest;
+@interface BLTMessageDigest : NSObject <NSSecureCoding> {
+    NSData * _messageDigest;
 }
 
 @property (nonatomic, retain) NSData *messageDigest;
+
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

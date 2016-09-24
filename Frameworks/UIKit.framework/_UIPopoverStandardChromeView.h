@@ -3,49 +3,54 @@
  */
 
 @interface _UIPopoverStandardChromeView : UIPopoverBackgroundView {
-    unsigned int _arrowDirection;
-    float _arrowOffset;
-    UIView *_arrowView;
-    BOOL _arrowVisible;
-    int _backgroundStyle;
-    _UIBackdropView *_blurView;
-    BOOL _debugMode;
-    float _dimmingViewTopEdgeInset;
-    NSArray *_dimmingViews;
-    UIView *_leftCapView;
-    UIColor *_popoverBackgroundColor;
-    UIView *_rightCapView;
-    BOOL useShortMode;
+    unsigned int  _arrowDirection;
+    double  _arrowOffset;
+    UIView * _arrowView;
+    BOOL  _arrowVisible;
+    int  _backgroundStyle;
+    _UIPopoverBackgroundVisualEffectView * _blurView;
+    _UIVisualEffectCaptureView * _blurViewCapture;
+    BOOL  _debugMode;
+    UIView * _leftCapView;
+    UIColor * _popoverBackgroundColor;
+    BOOL  _popoverBackgroundColorIsOpaque;
+    UIView * _rightCapView;
+    BOOL  useShortMode;
 }
 
 @property (getter=isArrowVisible, nonatomic) BOOL arrowVisible;
 @property (nonatomic) int backgroundStyle;
+@property (nonatomic, readonly) UIColor *contentBlendingColor;
 @property (getter=isDebugModeEnabled, nonatomic) BOOL debugModeEnabled;
-@property (nonatomic) float dimmingViewTopEdgeInset;
 @property (nonatomic, copy) UIColor *popoverBackgroundColor;
 @property (nonatomic) BOOL useShortMode;
 
 + (float)arrowBase;
 + (float)arrowHeight;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentViewInsets;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentViewInsets;
 
 - (void).cxx_destruct;
+- (void)_configureEffectView;
 - (void)_layoutArrowViewsLeftOrRight;
 - (void)_layoutArrowViewsNone;
 - (void)_layoutArrowViewsUpOrDown;
 - (void)_loadNecessaryViews;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_shadowInsets;
-- (struct CGSize { float x1; float x2; })_shadowOffset;
+- (BOOL)_needsSeperateBlending;
+- (void)_removeEffectView;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_shadowInsets;
+- (struct CGSize { double x1; double x2; })_shadowOffset;
 - (float)_shadowOpacity;
 - (id)_shadowPath;
 - (float)_shadowRadius;
+- (void)_updateChrome;
 - (unsigned int)arrowDirection;
 - (float)arrowOffset;
+- (id)backgroundEffect;
 - (int)backgroundStyle;
+- (id)contentBlendingColor;
 - (void)didMoveToWindow;
-- (float)dimmingViewTopEdgeInset;
 - (BOOL)hasComponentViews;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isArrowVisible;
 - (BOOL)isDebugModeEnabled;
 - (BOOL)isPinned;
@@ -65,7 +70,6 @@
 - (void)setBackgroundStyle:(int)arg1;
 - (void)setBackgroundStyle:(int)arg1 animated:(BOOL)arg2;
 - (void)setDebugModeEnabled:(BOOL)arg1;
-- (void)setDimmingViewTopEdgeInset:(float)arg1;
 - (void)setPopoverBackgroundColor:(id)arg1;
 - (void)setUseShortMode:(BOOL)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

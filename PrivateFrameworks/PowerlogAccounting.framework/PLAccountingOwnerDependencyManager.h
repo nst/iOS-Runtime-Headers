@@ -3,14 +3,14 @@
  */
 
 @interface PLAccountingOwnerDependencyManager : NSObject <PLAccountingDependencyManager, PLAccountingOwnerManager> {
-    NSMutableDictionary *_dependencyIDToDependencies;
-    NSMutableDictionary *_dependencyIDToObservingOwners;
-    PLMonotonicTimer *_freeTimer;
-    int _numDependencies;
-    NSMutableDictionary *_ownerIDToLastOwner;
-    NSMutableDictionary *_ownerIDToObservingDependencies;
-    NSMutableSet *_ownersRepository;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    NSMutableDictionary * _dependencyIDToDependencies;
+    NSMutableDictionary * _dependencyIDToObservingOwners;
+    PLMonotonicTimer * _freeTimer;
+    int  _numDependencies;
+    NSMutableDictionary * _ownerIDToLastOwner;
+    NSMutableDictionary * _ownerIDToObservingDependencies;
+    NSMutableSet * _ownersRepository;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -31,6 +31,7 @@
 + (int)maxOwners;
 
 - (void).cxx_destruct;
+- (id)_lastDependencyForDependencyID:(id)arg1;
 - (void)addDependency:(id)arg1;
 - (void)addOwner:(id)arg1;
 - (void)canFreeDependency:(id)arg1;

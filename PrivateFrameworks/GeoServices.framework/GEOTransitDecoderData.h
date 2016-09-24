@@ -3,24 +3,22 @@
  */
 
 @interface GEOTransitDecoderData : PBCodable <NSCopying> {
-    NSMutableArray *_accessPoints;
-    NSMutableArray *_artworks;
-    NSMutableArray *_brands;
-    NSMutableArray *_halls;
-    NSMutableArray *_lines;
-    NSMutableArray *_stations;
-    NSMutableArray *_steps;
-    NSMutableArray *_stops;
-    NSMutableArray *_systems;
-    NSMutableArray *_transitIncidentMessages;
-    NSMutableArray *_transitIncidents;
-    NSMutableArray *_walkings;
-    NSMutableArray *_zilchPoints;
+    NSMutableArray * _accessPoints;
+    NSMutableArray * _artworks;
+    NSMutableArray * _halls;
+    NSMutableArray * _lines;
+    NSMutableArray * _stations;
+    NSMutableArray * _steps;
+    NSMutableArray * _stops;
+    NSMutableArray * _systems;
+    NSMutableArray * _transitIncidentMessages;
+    NSMutableArray * _transitIncidents;
+    NSMutableArray * _walkings;
+    NSMutableArray * _zilchPoints;
 }
 
 @property (nonatomic, retain) NSMutableArray *accessPoints;
 @property (nonatomic, retain) NSMutableArray *artworks;
-@property (nonatomic, retain) NSMutableArray *brands;
 @property (nonatomic, retain) NSMutableArray *halls;
 @property (nonatomic, retain) NSMutableArray *lines;
 @property (nonatomic, retain) NSMutableArray *stations;
@@ -32,12 +30,24 @@
 @property (nonatomic, retain) NSMutableArray *walkings;
 @property (nonatomic, retain) NSMutableArray *zilchPoints;
 
++ (Class)accessPointType;
++ (Class)artworkType;
++ (Class)hallType;
++ (Class)lineType;
++ (Class)stationType;
++ (Class)stepType;
++ (Class)stopType;
++ (Class)systemType;
++ (Class)transitIncidentMessageType;
++ (Class)transitIncidentType;
++ (Class)walkingType;
++ (Class)zilchPointsType;
+
 - (id)accessPointAtIndex:(unsigned int)arg1;
 - (id)accessPoints;
 - (unsigned int)accessPointsCount;
 - (void)addAccessPoint:(id)arg1;
 - (void)addArtwork:(id)arg1;
-- (void)addBrand:(id)arg1;
 - (void)addHall:(id)arg1;
 - (void)addLine:(id)arg1;
 - (void)addStation:(id)arg1;
@@ -52,12 +62,8 @@
 - (id)artworkFromIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (id)artworks;
 - (unsigned int)artworksCount;
-- (id)brandAtIndex:(unsigned int)arg1;
-- (id)brands;
-- (unsigned int)brandsCount;
 - (void)clearAccessPoints;
 - (void)clearArtworks;
-- (void)clearBrands;
 - (void)clearHalls;
 - (void)clearLines;
 - (void)clearStations;
@@ -85,7 +91,6 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setAccessPoints:(id)arg1;
 - (void)setArtworks:(id)arg1;
-- (void)setBrands:(id)arg1;
 - (void)setHalls:(id)arg1;
 - (void)setLines:(id)arg1;
 - (void)setStations:(id)arg1;

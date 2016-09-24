@@ -3,11 +3,11 @@
  */
 
 @interface SKUISearchBarViewElement : SKUIInputViewElement {
-    NSString *_accessoryText;
-    SKUIViewElementText *_defaultText;
-    NSString *_placeholderString;
-    NSString *_searchHintsURLString;
-    NSString *_trendingSearchURLString;
+    NSString * _accessoryText;
+    SKUIViewElementText * _defaultText;
+    NSString * _placeholderString;
+    NSString * _searchHintsURLString;
+    NSString * _trendingSearchURLString;
 }
 
 @property (nonatomic, readonly) NSString *accessoryText;

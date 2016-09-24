@@ -3,20 +3,19 @@
  */
 
 @interface SKUIArtwork : NSObject <SKUICacheCoding> {
-    int _height;
-    NSURL *_url;
-    NSString *_urlString;
-    int _width;
+    int  _height;
+    NSURL * _url;
+    NSString * _urlString;
+    int  _width;
 }
 
 @property (nonatomic, readonly) NSURL *URL;
-@property (getter=_lookupDictionary, nonatomic, readonly) NSDictionary *_lookupDictionary;
 @property (nonatomic, readonly) NSMutableDictionary *cacheRepresentation;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) int height;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) int width;
 
@@ -30,9 +29,9 @@
 - (int)height;
 - (id)initWithArtworkDictionary:(id)arg1;
 - (id)initWithCacheRepresentation:(id)arg1;
-- (id)initWithURL:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (id)initWithURL:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 - (BOOL)isEqual:(id)arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { double x1; double x2; })size;
 - (int)width;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface _CUIPSDStopAndMidpointPair : NSObject {
-    float midpoint;
-    id stop;
+    double  midpoint;
+    id  stop;
 }
 
 - (int)compare:(id)arg1;

@@ -7,14 +7,17 @@
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _days;
-    NSMutableArray *_timeRanges;
+    }  _days;
+    NSMutableArray * _timeRanges;
 }
 
 @property (nonatomic, readonly) int*days;
 @property (nonatomic, readonly) unsigned int daysCount;
 @property (nonatomic, retain) NSMutableArray *timeRanges;
 
++ (Class)timeRangeType;
+
+- (int)StringAsDays:(id)arg1;
 - (void)addDay:(int)arg1;
 - (void)addTimeRange:(id)arg1;
 - (void)clearDays;
@@ -23,6 +26,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)dayAtIndex:(unsigned int)arg1;
 - (int*)days;
+- (id)daysAsString:(int)arg1;
 - (unsigned int)daysCount;
 - (void)dealloc;
 - (id)description;

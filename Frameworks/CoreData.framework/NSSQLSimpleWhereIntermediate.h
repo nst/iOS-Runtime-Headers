@@ -3,15 +3,16 @@
  */
 
 @interface NSSQLSimpleWhereIntermediate : NSSQLWhereIntermediate {
-    NSMutableArray *_comparisonPredicateScopedItem;
-    NSExpression *_effectiveLeftExpression;
-    NSExpression *_effectiveRightExpression;
+    NSMutableArray * _comparisonPredicateScopedItem;
+    NSExpression * _effectiveLeftExpression;
+    NSExpression * _effectiveRightExpression;
 }
 
 - (long)_cfStringOptionsFromPredicateOptions:(unsigned int)arg1;
 - (id)_entityDestinationIfKeyOfSomeSort:(id)arg1;
 - (id)_generateSQLBeginsWithStringInContext:(id)arg1;
 - (id)_generateSQLBetweenStringInContext:(id)arg1;
+- (id)_generateSQLBoundByStringInContext:(id)arg1;
 - (id)_generateSQLContainmentStringInContext:(id)arg1;
 - (id)_generateSQLEndsWithStringInContext:(id)arg1;
 - (id)_generateSQLForConst:(id)arg1 inAttribute:(id)arg2 expression:(id)arg3 inContext:(id)arg4;
@@ -27,6 +28,7 @@
 - (id)_generateSQLType3InContext:(id)arg1;
 - (BOOL)_isNilExpression:(id)arg1;
 - (id)_lastScopedItem;
+- (id)_prefetchSourceOfUnidirectionalVirtualInverse:(id)arg1;
 - (id)_sqlTokenForPredicateOperator:(unsigned int)arg1 inContext:(id)arg2;
 - (id)_upperBoundSearchStringForString:(id)arg1 context:(id)arg2;
 - (void)dealloc;

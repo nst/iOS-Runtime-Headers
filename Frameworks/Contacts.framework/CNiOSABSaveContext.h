@@ -3,27 +3,16 @@
  */
 
 @interface CNiOSABSaveContext : NSObject {
-    NSMutableDictionary *_abAccountsByIdentifier;
-    NSMutableDictionary *_abGroupsByIdentifier;
-    NSMutableDictionary *_abPersonsByIdentifier;
-    NSMutableDictionary *_abSourcesByIdentifier;
-    void *_addressBook;
-    BOOL _hasPendingCropRect;
-    BOOL _hasPendingImageData;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } _pendingCropRect;
-    NSData *_pendingFullscreenImageData;
-    NSData *_pendingImageData;
-    NSData *_pendingThumbnailImageData;
-    CNSaveRequest *_saveRequest;
+    NSMutableDictionary * _abAccountsByIdentifier;
+    NSMutableDictionary * _abGroupsByIdentifier;
+    NSMutableDictionary * _abPersonsByIdentifier;
+    NSMutableDictionary * _abSourcesByIdentifier;
+    void * _addressBook;
+    NSMapTable * _contactIndicesByInstance;
+    NSMapTable * _containerIndicesByInstance;
+    NSMapTable * _groupIndicesByInstance;
+    CNSaveRequest * _saveRequest;
+    CNMutableSaveResponse * _saveResponse;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *abAccountsByIdentifier;
@@ -31,32 +20,25 @@
 @property (nonatomic, retain) NSMutableDictionary *abPersonsByIdentifier;
 @property (nonatomic, retain) NSMutableDictionary *abSourcesByIdentifier;
 @property (nonatomic, readonly) void*addressBook;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } pendingCropRect;
-@property (nonatomic, copy) NSData *pendingFullscreenImageData;
-@property (nonatomic, copy) NSData *pendingImageData;
-@property (nonatomic, copy) NSData *pendingThumbnailImageData;
 @property (nonatomic, readonly) CNSaveRequest *saveRequest;
+@property (nonatomic, readonly) CNMutableSaveResponse *saveResponse;
 
+- (void)_populateSaveRequestIndexTables;
 - (id)abAccountsByIdentifier;
 - (id)abGroupsByIdentifier;
 - (id)abPersonsByIdentifier;
 - (id)abSourcesByIdentifier;
 - (void*)addressBook;
 - (void)dealloc;
-- (BOOL)flushPendingImageChangesToPerson:(void*)arg1 error:(id*)arg2;
-- (id)initWithSaveRequest:(id)arg1 addressBook:(void*)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pendingCropRect;
-- (id)pendingFullscreenImageData;
-- (id)pendingImageData;
-- (id)pendingThumbnailImageData;
+- (id)indexPathForContactInstance:(id)arg1;
+- (id)indexPathForContainerInstance:(id)arg1;
+- (id)indexPathForGroupInstance:(id)arg1;
+- (id)initWithSaveRequest:(id)arg1 response:(id)arg2 addressBook:(void*)arg3;
 - (id)saveRequest;
+- (id)saveResponse;
 - (void)setAbAccountsByIdentifier:(id)arg1;
 - (void)setAbGroupsByIdentifier:(id)arg1;
 - (void)setAbPersonsByIdentifier:(id)arg1;
 - (void)setAbSourcesByIdentifier:(id)arg1;
-- (void)setPendingCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setPendingFullscreenImageData:(id)arg1;
-- (void)setPendingImageData:(id)arg1;
-- (void)setPendingThumbnailImageData:(id)arg1;
 
 @end

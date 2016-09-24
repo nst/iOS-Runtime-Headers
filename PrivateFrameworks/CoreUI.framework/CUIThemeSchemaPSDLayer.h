@@ -3,7 +3,7 @@
  */
 
 @interface CUIThemeSchemaPSDLayer : NSObject {
-    NSString *name;
+    NSString * name;
 }
 
 @property (nonatomic, retain) NSString *name;

@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptMediaLibrary : SUScriptObject {
-    NSMutableArray *_musicPlayers;
+    NSMutableArray * _musicPlayers;
 }
 
 @property (readonly) NSString *itemPropertyAlbumArtist;

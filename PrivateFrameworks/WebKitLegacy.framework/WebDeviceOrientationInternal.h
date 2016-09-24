@@ -5,7 +5,7 @@
 @interface WebDeviceOrientationInternal : NSObject {
     struct RefPtr<WebCore::DeviceOrientationData> { 
         struct DeviceOrientationData {} *m_ptr; 
-    } m_orientation;
+    }  m_orientation;
 }
 
 - (id).cxx_construct;

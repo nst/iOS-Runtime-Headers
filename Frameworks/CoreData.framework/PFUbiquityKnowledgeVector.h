@@ -3,9 +3,9 @@
  */
 
 @interface PFUbiquityKnowledgeVector : NSObject <NSCoding, NSCopying> {
-    unsigned int _hash;
-    NSDictionary *_kv;
-    NSDictionary *_storeKVDict;
+    unsigned int  _hash;
+    NSDictionary * _kv;
+    NSDictionary * _storeKVDict;
 }
 
 @property (nonatomic, readonly) unsigned int hash;

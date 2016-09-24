@@ -3,8 +3,8 @@
  */
 
 @interface OISFUZipArchiveFileDataRepresentation : OISFUDataRepresentation <SFUZipArchiveDataRepresentation> {
-    int mFd;
-    OISFUFileDataRepresentation *mFileRepresentation;
+    int  mFd;
+    OISFUFileDataRepresentation * mFileRepresentation;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,13 +12,13 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (id)bufferedInputStreamWithOffset:(long long)arg1 length:(long long)arg2;
-- (long long)dataLength;
+- (id)bufferedInputStreamWithOffset:(int)arg1 length:(int)arg2;
+- (int)dataLength;
 - (void)dealloc;
 - (BOOL)hasSameLocationAs:(id)arg1;
 - (id)initWithPath:(id)arg1;
 - (id)inputStream;
-- (id)inputStreamWithOffset:(long long)arg1 length:(long long)arg2;
+- (id)inputStreamWithOffset:(int)arg1 length:(int)arg2;
 - (BOOL)isEncrypted;
 - (BOOL)isReadable;
 - (id)path;

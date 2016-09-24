@@ -3,19 +3,19 @@
  */
 
 @interface ADAdSlot : NSObject <ADBannerViewInternalDelegate, NSSecureCoding> {
-    id /* block */ _completionHandler;
-    <ADAdSlotDelegate> *_delegate;
-    BOOL _didBeginPlayback;
-    BOOL _didReportFinish;
-    BOOL _didRequest;
-    NSData *_followingSongData;
-    BOOL _gatewayAdSlot;
-    NSString *_identifier;
-    NSMutableArray *_pendingBannerLoads;
-    NSData *_previousSongData;
-    NSData *_stationData;
-    NSMutableArray *_visuallyDisengagedBanners;
-    NSMutableArray *_visuallyEngagedBanners;
+    id /* block */  _completionHandler;
+    <ADAdSlotDelegate> * _delegate;
+    BOOL  _didBeginPlayback;
+    BOOL  _didReportFinish;
+    BOOL  _didRequest;
+    NSData * _followingSongData;
+    BOOL  _gatewayAdSlot;
+    NSString * _identifier;
+    NSMutableArray * _pendingBannerLoads;
+    NSData * _previousSongData;
+    NSData * _stationData;
+    NSMutableArray * _visuallyDisengagedBanners;
+    NSMutableArray * _visuallyEngagedBanners;
 }
 
 @property (nonatomic, readonly, retain) NSArray *ads;

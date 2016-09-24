@@ -3,7 +3,7 @@
  */
 
 @interface GKAchievementChallengeInternal : GKChallengeInternal {
-    GKAchievementInternal *_achievement;
+    GKAchievementInternal * _achievement;
 }
 
 @property (nonatomic, copy) GKAchievementInternal *achievement;

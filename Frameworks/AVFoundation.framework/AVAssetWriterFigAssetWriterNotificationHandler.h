@@ -3,11 +3,11 @@
  */
 
 @interface AVAssetWriterFigAssetWriterNotificationHandler : NSObject {
-    int _didNotCallDelegate;
-    struct OpaqueFigAssetWriter { } *_figAssetWriter;
-    int _notificationHandlersAreRegistered;
-    AVWeakReference *_weakReferenceToDelegate;
-    AVWeakReference *_weakReferenceToSelf;
+    int  _didNotCallDelegate;
+    struct OpaqueFigAssetWriter { } * _figAssetWriter;
+    int  _notificationHandlersAreRegistered;
+    AVWeakReference * _weakReferenceToDelegate;
+    AVWeakReference * _weakReferenceToSelf;
 }
 
 @property <AVAssetWriterFigAssetWriterNotificationHandlerDelegate> *delegate;

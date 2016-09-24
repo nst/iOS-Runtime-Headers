@@ -3,9 +3,9 @@
  */
 
 @interface CKFetchWebAuthTokenOperation : CKDatabaseOperation {
-    NSString *_APIToken;
-    id /* block */ _fetchWebAuthTokenCompletionBlock;
-    NSString *_webAuthToken;
+    NSString * _APIToken;
+    id /* block */  _fetchWebAuthTokenCompletionBlock;
+    NSString * _webAuthToken;
 }
 
 @property (nonatomic, copy) NSString *APIToken;
@@ -14,9 +14,10 @@
 
 - (void).cxx_destruct;
 - (id)APIToken;
+- (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleCompletionCallback:(id)arg1;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (id /* block */)fetchWebAuthTokenCompletionBlock;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;

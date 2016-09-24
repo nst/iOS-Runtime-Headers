@@ -3,13 +3,13 @@
  */
 
 @interface WBSURLCompletionHistorySnapshot : NSObject <WBSURLCompletionDataSource> {
-    WBSURLCompletionDatabase *_completionDatabase;
-    NSObject<OS_dispatch_queue> *_completionDatabaseQueue;
+    WBSURLCompletionDatabase * _completionDatabase;
+    NSObject<OS_dispatch_queue> * _completionDatabaseQueue;
     struct unique_ptr<std::__1::vector<WTF::RefPtr<SafariShared::HistoryURLCompletionItem>, std::__1::allocator<WTF::RefPtr<SafariShared::HistoryURLCompletionItem> > >, std::__1::default_delete<std::__1::vector<WTF::RefPtr<SafariShared::HistoryURLCompletionItem>, std::__1::allocator<WTF::RefPtr<SafariShared::HistoryURLCompletionItem> > > > > { 
         struct __compressed_pair<std::__1::vector<WTF::RefPtr<SafariShared::HistoryURLCompletionItem>, std::__1::allocator<WTF::RefPtr<SafariShared::HistoryURLCompletionItem> > > *, std::__1::default_delete<std::__1::vector<WTF::RefPtr<SafariShared::HistoryURLCompletionItem>, std::__1::allocator<WTF::RefPtr<SafariShared::HistoryURLCompletionItem> > > > > { 
             struct vector<WTF::RefPtr<SafariShared::HistoryURLCompletionItem>, std::__1::allocator<WTF::RefPtr<SafariShared::HistoryURLCompletionItem> > > {} *__first_; 
         } __ptr_; 
-    } _items;
+    }  _items;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,7 +3,7 @@
  */
 
 @interface CPLGetAssetCountsTask : CPLEngineSyncTask {
-    <CPLEngineTransportGetAssetCountsTask> *_transportTask;
+    <CPLEngineTransportGetLibraryInfoTask> * _transportTask;
 }
 
 - (void).cxx_destruct;

@@ -3,13 +3,13 @@
  */
 
 @interface MFSMTPResponse : NSObject <NSCopying> {
-    NSArray *_continuationResponses;
-    id _lastResponseLine;
-    int _status;
-    unsigned int _statusClass;
-    unsigned int _statusDetail;
-    NSString *_statusString;
-    unsigned int _statusSubject;
+    NSArray * _continuationResponses;
+    id  _lastResponseLine;
+    int  _status;
+    unsigned int  _statusClass;
+    unsigned int  _statusDetail;
+    NSString * _statusString;
+    unsigned int  _statusSubject;
 }
 
 @property (nonatomic, retain) NSArray *continuationResponses;

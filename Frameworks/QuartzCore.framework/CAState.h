@@ -3,14 +3,14 @@
  */
 
 @interface CAState : NSObject <NSCoding, NSCopying> {
-    NSString *_basedOn;
-    NSMutableArray *_elements;
-    BOOL _enabled;
-    BOOL _initial;
-    BOOL _locked;
-    NSString *_name;
-    double _nextDelay;
-    double _previousDelay;
+    NSString * _basedOn;
+    NSMutableArray * _elements;
+    BOOL  _enabled;
+    BOOL  _initial;
+    BOOL  _locked;
+    NSString * _name;
+    double  _nextDelay;
+    double  _previousDelay;
 }
 
 @property (copy) NSString *basedOn;

@@ -3,13 +3,13 @@
  */
 
 @interface SCRCArgumentParser : SCRCArgumentSubcommand {
-    NSString *_appName;
-    int _argc;
-    NSMutableArray *_argumentArray;
-    char **_argv;
-    BOOL _isLaunchedAtLogin;
-    SCRCArgumentSubcommand *_subcommand;
-    NSMutableArray *_subcommandArray;
+    NSString * _appName;
+    int  _argc;
+    NSMutableArray * _argumentArray;
+    char ** _argv;
+    BOOL  _isLaunchedAtLogin;
+    SCRCArgumentSubcommand * _subcommand;
+    NSMutableArray * _subcommandArray;
 }
 
 + (id)commandPath;

@@ -3,8 +3,8 @@
  */
 
 @interface PDAnimateBehavior : PDTimeNode {
-    NSMutableArray *mAttributeNames;
-    PDAnimationTarget *mTgtElement;
+    NSMutableArray * mAttributeNames;
+    PDAnimationTarget * mTgtElement;
 }
 
 @property (nonatomic, retain) NSMutableArray *attributeNames;

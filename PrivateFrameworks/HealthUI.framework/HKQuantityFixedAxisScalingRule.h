@@ -3,9 +3,9 @@
  */
 
 @interface HKQuantityFixedAxisScalingRule : HKAbstractFixedAxisScalingRule {
-    HKValueRange *_defaultQuantityBounds;
-    NSDictionary *_quantityBoundsOverrides;
-    HKUnit *_unit;
+    HKValueRange * _defaultQuantityBounds;
+    NSDictionary * _quantityBoundsOverrides;
+    HKUnit * _unit;
 }
 
 @property (nonatomic, retain) HKUnit *unit;

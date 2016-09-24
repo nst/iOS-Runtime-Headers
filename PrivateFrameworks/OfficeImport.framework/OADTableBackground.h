@@ -3,8 +3,8 @@
  */
 
 @interface OADTableBackground : NSObject <OADEffectsParent> {
-    NSArray *mEffects;
-    OADFill *mFill;
+    NSArray * mEffects;
+    OADFill * mFill;
 }
 
 @property (readonly, copy) NSString *debugDescription;

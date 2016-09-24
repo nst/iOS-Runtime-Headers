@@ -3,7 +3,7 @@
  */
 
 @interface MCDQueryDataSource : MPUCompletionQueryDataSource {
-    MPMediaPredicate *_localPredicate;
+    MPMediaPredicate * _localPredicate;
 }
 
 - (void).cxx_destruct;

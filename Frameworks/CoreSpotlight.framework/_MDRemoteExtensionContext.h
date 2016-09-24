@@ -3,7 +3,7 @@
  */
 
 @interface _MDRemoteExtensionContext : _MDExtensionContext <_MDRemoteExtensionContextProtocol> {
-    CSIndexExtensionRequestHandler *_requestHandler;
+    CSIndexExtensionRequestHandler * _requestHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;

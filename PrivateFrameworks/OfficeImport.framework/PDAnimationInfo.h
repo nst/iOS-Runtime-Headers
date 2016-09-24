@@ -3,10 +3,10 @@
  */
 
 @interface PDAnimationInfo : NSObject {
-    PDAnimationInfoData *mEntrance;
-    PDAnimationInfoData *mExit;
-    PDAnimationInfoData *mMedia;
-    PDMediaNode *mediaNode;
+    PDAnimationInfoData * mEntrance;
+    PDAnimationInfoData * mExit;
+    PDAnimationInfoData * mMedia;
+    PDMediaNode * mediaNode;
 }
 
 @property (nonatomic, retain) PDAnimationInfoData *mediaData;

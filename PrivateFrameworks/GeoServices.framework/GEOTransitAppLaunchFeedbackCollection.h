@@ -3,13 +3,13 @@
  */
 
 @interface GEOTransitAppLaunchFeedbackCollection : PBCodable <NSCopying> {
-    NSString *_bundleIdentifier;
-    GEOLatLng *_destination;
+    NSString * _bundleIdentifier;
+    GEOLatLng * _destination;
     struct { 
         unsigned int timestamp : 1; 
-    } _has;
-    GEOLatLng *_source;
-    double _timestamp;
+    }  _has;
+    GEOLatLng * _source;
+    double  _timestamp;
 }
 
 @property (nonatomic, retain) NSString *bundleIdentifier;

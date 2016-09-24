@@ -3,7 +3,7 @@
  */
 
 @interface Object  {
-    Class isa;
+    Class  isa;
 }
 
 + (id)autorelease;

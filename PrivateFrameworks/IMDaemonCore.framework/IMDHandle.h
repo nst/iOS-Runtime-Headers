@@ -3,9 +3,9 @@
  */
 
 @interface IMDHandle : NSObject {
-    NSString *_countryCode;
-    NSString *_id;
-    NSString *_unformattedID;
+    NSString * _countryCode;
+    NSString * _id;
+    NSString * _unformattedID;
 }
 
 @property (nonatomic, retain) NSString *ID;

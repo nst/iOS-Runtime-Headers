@@ -3,10 +3,10 @@
  */
 
 @interface AXAssertionWorkItem : NSObject {
-    BOOL _acquire;
-    NSString *_identifier;
-    unsigned int _retries;
-    NSString *_type;
+    BOOL  _acquire;
+    NSString * _identifier;
+    unsigned int  _retries;
+    NSString * _type;
 }
 
 @property (nonatomic, readonly) BOOL acquire;

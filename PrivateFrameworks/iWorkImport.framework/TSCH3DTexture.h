@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DTexture : NSObject {
-    TSCH3DTextureResource *mTextureResource;
+    TSCH3DTextureResource * mTextureResource;
 }
 
 @property (nonatomic, readonly) TSCH3DResource *resource;

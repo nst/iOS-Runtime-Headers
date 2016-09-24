@@ -3,8 +3,8 @@
  */
 
 @interface _ICQFlowSpecification : NSObject {
-    NSDictionary *_pagesByIdentifier;
-    _ICQPageSpecification *_startPage;
+    NSDictionary * _pagesByIdentifier;
+    _ICQPageSpecification * _startPage;
 }
 
 @property (nonatomic, readonly) NSDictionary *pagesByIdentifier;

@@ -6,10 +6,10 @@
     struct { 
         unsigned int statusCode : 1; 
         unsigned int isNotificationSupported : 1; 
-    } _has;
-    BOOL _isNotificationSupported;
-    NSString *_problemId;
-    int _statusCode;
+    }  _has;
+    BOOL  _isNotificationSupported;
+    NSString * _problemId;
+    int  _statusCode;
 }
 
 @property (nonatomic) BOOL hasIsNotificationSupported;
@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSString *problemId;
 @property (nonatomic) int statusCode;
 
+- (int)StringAsStatusCode:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -39,6 +40,7 @@
 - (void)setProblemId:(id)arg1;
 - (void)setStatusCode:(int)arg1;
 - (int)statusCode;
+- (id)statusCodeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

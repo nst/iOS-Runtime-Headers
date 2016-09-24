@@ -3,43 +3,41 @@
  */
 
 @interface _HKRing : HKAnimatableObject {
-    UIColor *_bottomColor;
-    float _bottomColorBlue;
-    float _bottomColorGreen;
-    float _bottomColorRed;
-    _HKIcon *_dotIcon;
-    float _dotPercentage;
-    _HKIcon *_icon;
-    float _opacity;
-    float _percentage;
+    UIColor * _bottomColor;
+    double  _bottomColorBlue;
+    double  _bottomColorGreen;
+    double  _bottomColorRed;
+    _HKIcon * _icon;
+    double  _opacity;
+    double  _percentage;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _position;
-    float _size;
-    float _thickness;
-    UIColor *_topColor;
-    float _topColorBlue;
-    float _topColorGreen;
-    float _topColorRed;
+        double x; 
+        double y; 
+    }  _position;
+    double  _size;
+    double  _thickness;
+    UIColor * _topColor;
+    double  _topColorBlue;
+    double  _topColorGreen;
+    double  _topColorRed;
+    double  _zRotation;
 }
 
 @property (nonatomic, retain) UIColor *bottomColor;
-@property (nonatomic, readonly) float bottomColorBlue;
-@property (nonatomic, readonly) float bottomColorGreen;
-@property (nonatomic, readonly) float bottomColorRed;
-@property (nonatomic, retain) _HKIcon *dotIcon;
-@property (nonatomic) float dotPercentage;
+@property (nonatomic, readonly) double bottomColorBlue;
+@property (nonatomic, readonly) double bottomColorGreen;
+@property (nonatomic, readonly) double bottomColorRed;
 @property (nonatomic, retain) _HKIcon *icon;
-@property (nonatomic) float opacity;
-@property (nonatomic) float percentage;
-@property (nonatomic) struct CGPoint { float x1; float x2; } position;
-@property (nonatomic) float size;
-@property (nonatomic) float thickness;
+@property (nonatomic) double opacity;
+@property (nonatomic) double percentage;
+@property (nonatomic) struct CGPoint { double x1; double x2; } position;
+@property (nonatomic) double size;
+@property (nonatomic) double thickness;
 @property (nonatomic, retain) UIColor *topColor;
-@property (nonatomic, readonly) float topColorBlue;
-@property (nonatomic, readonly) float topColorGreen;
-@property (nonatomic, readonly) float topColorRed;
+@property (nonatomic, readonly) double topColorBlue;
+@property (nonatomic, readonly) double topColorGreen;
+@property (nonatomic, readonly) double topColorRed;
+@property (nonatomic) double zRotation;
 
 - (void).cxx_destruct;
 - (id)_newAnimatablePropertyForType:(unsigned int)arg1;
@@ -48,29 +46,29 @@
 - (float)bottomColorBlue;
 - (float)bottomColorGreen;
 - (float)bottomColorRed;
-- (id)dotIcon;
-- (float)dotPercentage;
 - (id)icon;
 - (id)init;
 - (float)opacity;
 - (float)percentage;
-- (struct CGPoint { float x1; float x2; })position;
+- (struct CGPoint { double x1; double x2; })position;
 - (void)removeAllAnimationsForRingPropertyType:(unsigned int)arg1;
 - (void)setBottomColor:(id)arg1;
-- (void)setDotIcon:(id)arg1;
-- (void)setDotPercentage:(float)arg1;
+- (void)setCGPointValue:(struct CGPoint { double x1; double x2; })arg1 forRingPropertyType:(unsigned int)arg2;
+- (void)setFloatValue:(float)arg1 forRingPropertyType:(unsigned int)arg2;
 - (void)setIcon:(id)arg1;
 - (void)setOpacity:(float)arg1;
 - (void)setPercentage:(float)arg1;
-- (void)setPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setPosition:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setSize:(float)arg1;
 - (void)setThickness:(float)arg1;
 - (void)setTopColor:(id)arg1;
+- (void)setZRotation:(float)arg1;
 - (float)size;
 - (float)thickness;
 - (id)topColor;
 - (float)topColorBlue;
 - (float)topColorGreen;
 - (float)topColorRed;
+- (float)zRotation;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface SPColorWrapper : NSObject <NSSecureCoding> {
-    UIColor *_color;
+    UIColor * _color;
 }
 
 @property (nonatomic, readonly) UIColor *color;

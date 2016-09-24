@@ -3,7 +3,7 @@
  */
 
 @interface SKUIOrdinalViewElement : SKUIViewElement {
-    SKUIViewElementText *_text;
+    SKUIViewElementText * _text;
 }
 
 @property (nonatomic, readonly) SKUIViewElementText *text;

@@ -3,15 +3,14 @@
  */
 
 @interface _HDUserDefaultRemovedJournalEntry : HDJournalEntry {
-    NSString *_bundleIdentifier;
-    NSString *_key;
+    NSString * _bundleIdentifier;
+    NSString * _key;
 }
 
 @property (nonatomic, readonly) NSString *bundleIdentifier;
 @property (nonatomic, readonly) NSString *key;
 
-+ (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
-+ (int)behavior;
++ (void)applyEntries:(id)arg1 withProfile:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;

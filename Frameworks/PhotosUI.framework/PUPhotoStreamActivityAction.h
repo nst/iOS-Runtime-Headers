@@ -3,9 +3,9 @@
  */
 
 @interface PUPhotoStreamActivityAction : NSObject {
-    id /* block */ _action;
-    NSString *_title;
-    NSString *_valueText;
+    id /* block */  _action;
+    NSString * _title;
+    NSString * _valueText;
 }
 
 @property (nonatomic, copy) id /* block */ action;

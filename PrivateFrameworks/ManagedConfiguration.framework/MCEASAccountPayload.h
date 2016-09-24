@@ -3,27 +3,29 @@
  */
 
 @interface MCEASAccountPayload : MCEmailAccountPayloadBase {
-    NSString *_accountDescription;
-    NSString *_accountPersistentUUID;
-    NSData *_certificatePersistentID;
-    NSString *_certificateUUID;
-    NSString *_emailAddress;
-    NSData *_embeddedCertificate;
-    NSString *_embeddedCertificateName;
-    NSString *_embeddedCertificatePassword;
-    NSString *_hostname;
-    NSNumber *_mailNumberOfPastDaysToSync;
-    NSString *_password;
-    BOOL _syncDefaultFoldersOnly;
-    NSNumber *_syncDefaultFoldersOnlyNum;
-    NSNumber *_useSSL;
-    NSString *_username;
+    NSString * _accountDescription;
+    NSString * _accountPersistentUUID;
+    NSData * _certificatePersistentID;
+    NSString * _certificateUUID;
+    NSDictionary * _communicationServiceRules;
+    NSString * _emailAddress;
+    NSData * _embeddedCertificate;
+    NSString * _embeddedCertificateName;
+    NSString * _embeddedCertificatePassword;
+    NSString * _hostname;
+    NSNumber * _mailNumberOfPastDaysToSync;
+    NSString * _password;
+    BOOL  _syncDefaultFoldersOnly;
+    NSNumber * _syncDefaultFoldersOnlyNum;
+    NSNumber * _useSSL;
+    NSString * _username;
 }
 
 @property (nonatomic, readonly, retain) NSString *accountDescription;
 @property (nonatomic, copy) NSString *accountPersistentUUID;
 @property (nonatomic, retain) NSData *certificatePersistentID;
 @property (nonatomic, readonly, retain) NSString *certificateUUID;
+@property (nonatomic, readonly) NSDictionary *communicationServiceRules;
 @property (nonatomic, copy) NSString *emailAddress;
 @property (nonatomic, readonly, retain) NSData *embeddedCertificate;
 @property (nonatomic, readonly, retain) NSString *embeddedCertificateName;
@@ -46,6 +48,7 @@
 - (id)accountPersistentUUID;
 - (id)certificatePersistentID;
 - (id)certificateUUID;
+- (id)communicationServiceRules;
 - (BOOL)containsSensitiveUserInformation;
 - (id)description;
 - (id)emailAddress;
@@ -58,6 +61,7 @@
 - (id)mailNumberOfPastDaysToSync;
 - (id)password;
 - (id)payloadDescriptionKeyValueSections;
+- (id)restrictions;
 - (void)setAccountPersistentUUID:(id)arg1;
 - (void)setCertificatePersistentID:(id)arg1;
 - (void)setEmailAddress:(id)arg1;

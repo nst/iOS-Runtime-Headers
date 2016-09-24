@@ -3,18 +3,18 @@
  */
 
 @interface OITSUImage : NSObject {
-    long mCachedImageLock;
-    struct CGImage { } *mCachedSliceableImage;
-    id mCachedSystemImage;
-    long mImageSliceCacheLock;
-    struct __CFDictionary { } *mImageSlices;
+    long  mCachedImageLock;
+    struct CGImage { } * mCachedSliceableImage;
+    id  mCachedSystemImage;
+    long  mImageSliceCacheLock;
+    struct __CFDictionary { } * mImageSlices;
 }
 
 @property (nonatomic, readonly) struct CGImage { }*CGImage;
 @property (nonatomic, readonly) UIImage *UIImage;
 @property (nonatomic, readonly) int imageOrientation;
-@property (nonatomic, readonly) float scale;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) double scale;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)imageNamed:(id)arg1;
@@ -27,15 +27,15 @@
 
 - (struct CGImage { }*)CGImage;
 - (struct CGImage { }*)CGImageForContentsScale:(float)arg1;
-- (struct CGImage { }*)CGImageForSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGImage { }*)CGImageForSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)JPEGRepresentationWithCompressionQuality:(float)arg1;
 - (id)PNGRepresentation;
 - (id)TIFFRepresentation;
 - (id)UIImage;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(struct CGContext { }*)arg2 stretchingCenterWidthBy:(float)arg3;
-- (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 isFlipped:(BOOL)arg3;
+- (void)drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 context:(struct CGContext { }*)arg2 stretchingCenterWidthBy:(float)arg3;
+- (void)drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 fromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 isFlipped:(BOOL)arg3;
 - (int)imageOrientation;
 - (id)imagePartsWithLeftCapWidth:(float)arg1 rightCapWidth:(float)arg2 topCapHeight:(float)arg3 bottomCapHeight:(float)arg4;
 - (id)init;
@@ -47,7 +47,7 @@
 - (id)initWithUIImage:(id)arg1;
 - (BOOL)isEmpty;
 - (float)scale;
-- (struct CGSize { float x1; float x2; })size;
-- (id)stretchedImageOfSize:(struct CGSize { float x1; float x2; })arg1 leftCapWidth:(float)arg2 rightCapWidth:(float)arg3 topCapHeight:(float)arg4 bottomCapHeight:(float)arg5;
+- (struct CGSize { double x1; double x2; })size;
+- (id)stretchedImageOfSize:(struct CGSize { double x1; double x2; })arg1 leftCapWidth:(float)arg2 rightCapWidth:(float)arg3 topCapHeight:(float)arg4 bottomCapHeight:(float)arg5;
 
 @end

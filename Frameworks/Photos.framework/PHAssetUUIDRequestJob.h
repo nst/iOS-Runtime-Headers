@@ -3,8 +3,8 @@
  */
 
 @interface PHAssetUUIDRequestJob : PLDaemonJob {
-    id /* block */ _completionHandler;
-    NSString *_uuid;
+    id /* block */  _completionHandler;
+    NSString * _uuid;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;
@@ -14,7 +14,7 @@
 
 - (void).cxx_destruct;
 - (id /* block */)completionHandler;
-- (long long)daemonOperation;
+- (int)daemonOperation;
 - (void)encodeToXPCObject:(id)arg1;
 - (void)handleReply;
 - (id)initFromXPCObject:(id)arg1 connection:(id)arg2;

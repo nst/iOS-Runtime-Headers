@@ -3,9 +3,9 @@
  */
 
 @interface TPTextExporter : NSObject <TSKExporter> {
-    TPDocumentRoot *mDocumentRoot;
-    BOOL mIsCancelled;
-    TSUProgressContext *mProgressContext;
+    TPDocumentRoot * mDocumentRoot;
+    BOOL  mIsCancelled;
+    TSUProgressContext * mProgressContext;
 }
 
 @property (readonly, copy) NSString *debugDescription;

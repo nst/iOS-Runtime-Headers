@@ -3,8 +3,8 @@
  */
 
 @interface SKUIClientContextPreviewContainer : IKJSObject <SKUIClientContextPreviewContainer> {
-    SKUIClientContext *_clientContext;
-    UIViewController *_previewContainerViewController;
+    SKUIClientContext * _clientContext;
+    SKUIPreviewContainerViewController * _previewContainerViewController;
 }
 
 - (void).cxx_destruct;

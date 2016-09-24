@@ -3,10 +3,10 @@
  */
 
 @interface PBBridgeBarcode : NSObject {
-    NSString *_altText;
-    int _format;
-    NSData *_messageData;
-    NSDictionary *_options;
+    NSString * _altText;
+    int  _format;
+    NSData * _messageData;
+    NSDictionary * _options;
 }
 
 @property (nonatomic, copy) NSString *altText;

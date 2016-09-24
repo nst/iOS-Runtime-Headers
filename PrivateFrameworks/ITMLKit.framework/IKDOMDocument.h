@@ -3,8 +3,8 @@
  */
 
 @interface IKDOMDocument : IKDOMNode <IKJSDOMDocument, IKJSDOMXPathEvaluator, JSExport> {
-    <IKJSDOMDocumentAppBridge> *_appBridge;
-    unsigned int _itmlIDSequence;
+    <IKJSDOMDocumentAppBridge> * _appBridge;
+    unsigned int  _itmlIDSequence;
 }
 
 @property (nonatomic) <IKJSDOMDocumentAppBridge> *appBridge;
@@ -44,10 +44,11 @@
 - (id)inputEncoding;
 - (unsigned int)itmlIDSequence;
 - (BOOL)markUpdated;
+- (id)matchingImpressions:(id)arg1 :(id)arg2;
 - (id)navigationDocument;
 - (id)nodeName;
 - (int)nodeType;
-- (id)recordedImpressions;
+- (id)recordedImpressions:(id)arg1;
 - (void)replace:(id)arg1;
 - (void)runTest:(id)arg1 :(id)arg2;
 - (void)scrollToTop;

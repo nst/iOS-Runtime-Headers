@@ -3,7 +3,7 @@
  */
 
 @interface _CDPSerializedDataHarvester : NSObject <_CDPDataHarvester> {
-    NSURL *_url;
+    NSURL * _url;
 }
 
 @property (readonly, copy) NSString *debugDescription;

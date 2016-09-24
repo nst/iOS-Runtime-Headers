@@ -3,8 +3,8 @@
  */
 
 @interface SUSimpleMenuViewController : SUMenuViewController {
-    NSString *_cancelButtonTitle;
-    NSArray *_titles;
+    NSString * _cancelButtonTitle;
+    NSArray * _titles;
 }
 
 @property (nonatomic, copy) NSString *cancelButtonTitle;

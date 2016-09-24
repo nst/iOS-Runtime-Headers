@@ -3,11 +3,11 @@
  */
 
 @interface SLYahooUserInfoResponse : NSObject {
-    NSString *_displayName;
-    NSString *_emailAddress;
-    NSError *_error;
-    NSString *_errorMessage;
-    int _statusCode;
+    NSString * _displayName;
+    NSString * _emailAddress;
+    NSError * _error;
+    NSString * _errorMessage;
+    int  _statusCode;
 }
 
 @property (readonly) NSString *displayName;

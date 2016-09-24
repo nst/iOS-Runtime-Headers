@@ -3,12 +3,13 @@
  */
 
 @interface UIKBTouchOrderedTaskList : NSObject {
-    NSValue *_currentTouchPoint;
-    BOOL _ignoredOnBegin;
-    double _originalStartTime;
-    unsigned int _pathIndex;
-    NSMutableArray *_touchStateTasks;
-    NSUUID *_touchUUID;
+    NSValue * _currentTouchPoint;
+    BOOL  _ignoredOnBegin;
+    double  _originalStartTime;
+    unsigned int  _pathIndex;
+    NSMutableArray * _touchStateTasks;
+    NSObject<OS_dispatch_queue> * _touchStateTasksQueue;
+    NSUUID * _touchUUID;
 }
 
 @property (nonatomic, readonly, retain) NSValue *currentTouchPoint;
@@ -28,8 +29,10 @@
 - (BOOL)hasTasks;
 - (BOOL)ignoredOnBegin;
 - (id)initWithTouchUUID:(id)arg1 withPathIndex:(unsigned int)arg2;
+- (BOOL)isExecutingFirstTask;
 - (double)originalStartTime;
 - (unsigned int)pathIndex;
+- (void)removeTasksMatchingFilter:(id /* block */)arg1;
 - (void)setIgnoredOnBegin:(BOOL)arg1;
 - (id)touchUUID;
 

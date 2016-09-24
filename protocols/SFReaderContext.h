@@ -14,7 +14,6 @@
 - (void)deactivateReaderNow:(unsigned int)arg1;
 - (void)decreaseReaderTextSize;
 - (WBSReaderFontManager *)fontManager;
-- (BOOL)hasMultiplePages;
 - (void)increaseReaderTextSize;
 - (BOOL)isLoadingNextPage;
 - (BOOL)isReaderAvailable;

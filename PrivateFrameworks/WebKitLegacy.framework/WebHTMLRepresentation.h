@@ -3,7 +3,7 @@
  */
 
 @interface WebHTMLRepresentation : NSObject <WebDocumentDOM, WebDocumentRepresentation> {
-    WebHTMLRepresentationPrivate *_private;
+    WebHTMLRepresentationPrivate * _private;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -29,7 +29,6 @@
 - (BOOL)elementDoesAutoComplete:(id)arg1;
 - (BOOL)elementIsPassword:(id)arg1;
 - (id)elementWithName:(id)arg1 inForm:(id)arg2;
-- (void)finalize;
 - (void)finishedLoadingWithDataSource:(id)arg1;
 - (id)formForElement:(id)arg1;
 - (id)init;

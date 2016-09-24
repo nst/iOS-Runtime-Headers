@@ -3,10 +3,10 @@
  */
 
 @interface BLTSectionConfigurationItem : NSObject {
-    BOOL _alwaysSyncSettings;
-    BOOL _optOutOfAttachmentTransmission;
-    BOOL _optOutOfCoordination;
-    NSArray *_whitelistedSubtypes;
+    BOOL  _alwaysSyncSettings;
+    BOOL  _optOutOfAttachmentTransmission;
+    BOOL  _optOutOfCoordination;
+    NSArray * _whitelistedSubtypes;
 }
 
 @property (nonatomic) BOOL alwaysSyncSettings;

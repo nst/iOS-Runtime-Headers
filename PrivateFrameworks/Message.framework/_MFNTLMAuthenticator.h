@@ -3,8 +3,8 @@
  */
 
 @interface _MFNTLMAuthenticator : MFSASLAuthenticator {
-    long _ntlmError;
-    struct NtlmGenerator { } *_ntlmGeneratorRef;
+    long  _ntlmError;
+    struct NtlmGenerator { } * _ntlmGeneratorRef;
 }
 
 - (void)dealloc;

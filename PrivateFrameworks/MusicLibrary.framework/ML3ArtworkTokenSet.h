@@ -3,15 +3,15 @@
  */
 
 @interface ML3ArtworkTokenSet : NSObject {
-    NSDictionary *_artworkSourceToTokenMap;
-    int _artworkType;
-    NSString *_availableArtworkToken;
-    ML3Entity *_entity;
-    BOOL _faultedInBestTokens;
-    BOOL _faultedInTokens;
-    int _fetchableArtworkSourceType;
-    NSString *_fetchableArtworkToken;
-    double _retrievalTime;
+    NSDictionary * _artworkSourceToTokenMap;
+    int  _artworkType;
+    NSString * _availableArtworkToken;
+    ML3Entity * _entity;
+    BOOL  _faultedInBestTokens;
+    BOOL  _faultedInTokens;
+    int  _fetchableArtworkSourceType;
+    NSString * _fetchableArtworkToken;
+    double  _retrievalTime;
 }
 
 @property (nonatomic, readonly) NSString *availableArtworkToken;

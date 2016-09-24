@@ -3,14 +3,14 @@
  */
 
 @interface SSURLBag : NSObject {
-    SSXPCConnection *_connection;
-    SSURLBagContext *_context;
-    NSDictionary *_dictionary;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    double _expirationTime;
-    BOOL _ignoreCacheForNextLookup;
-    NSMutableArray *_pendingLookups;
-    NSString *_storeFrontIdentifier;
+    SSXPCConnection * _connection;
+    SSURLBagContext * _context;
+    NSDictionary * _dictionary;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    double  _expirationTime;
+    BOOL  _ignoreCacheForNextLookup;
+    NSMutableArray * _pendingLookups;
+    NSString * _storeFrontIdentifier;
 }
 
 @property (readonly) SSURLBagContext *URLBagContext;

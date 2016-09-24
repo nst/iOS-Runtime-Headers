@@ -3,7 +3,7 @@
  */
 
 @interface PUPhotosPreviewTransitionDelegate : _UIPreviewTransitionDelegate {
-    <PUPhotosPreviewPresentationControllerDelegate> *_photosPreviewingDelegate;
+    <PUPhotosPreviewPresentationControllerDelegate> * _photosPreviewingDelegate;
 }
 
 @property (nonatomic) <PUPhotosPreviewPresentationControllerDelegate> *photosPreviewingDelegate;

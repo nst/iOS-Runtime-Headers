@@ -2,67 +2,38 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUITextAreaView : UIView {
-    NSLayoutConstraint *_embeddedThumbnailAspectConstraint;
-    UIImageView *_embeddedThumbnailView;
-    UILabel *_footnoteLabel;
-    UIView *_lastView;
-    NSString *_reuseID;
-    NSArray *_richTextFields;
-    UIView *_secondToLastView;
-    UIImageView *_secondaryImageView;
-    UILabel *_secondaryTitleLabel;
-    NSLayoutConstraint *_titleHeightConstraint;
-    UILabel *_titleLabel;
+@interface SearchUITextAreaView : NUIContainerStackView <NUIContainerStackViewDelegate> {
+    UILabel * _footnoteLabel;
+    NSMutableArray * _richTextFields;
+    unsigned int  _style;
+    SearchUITitleContainerView * _titleContainer;
 }
 
-@property (retain) NSLayoutConstraint *embeddedThumbnailAspectConstraint;
-@property (retain) UIImageView *embeddedThumbnailView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (retain) UILabel *footnoteLabel;
-@property (retain) UIView *lastView;
-@property (retain) NSString *reuseID;
-@property (retain) NSArray *richTextFields;
-@property (retain) UIView *secondToLastView;
-@property (retain) UIImageView *secondaryImageView;
-@property (retain) UILabel *secondaryTitleLabel;
-@property (retain) NSLayoutConstraint *titleHeightConstraint;
-@property (retain) UILabel *titleLabel;
+@property (readonly) unsigned int hash;
+@property (retain) NSMutableArray *richTextFields;
+@property unsigned int style;
+@property (readonly) Class superclass;
+@property (retain) SearchUITitleContainerView *titleContainer;
 
-+ (id)_reuseIDForResult:(id)arg1 textAreaData:(id)arg2 formatter:(id)arg3;
-+ (id)reuseIDForData:(id)arg1 formatter:(id)arg2;
-+ (id)reuseIDForResult:(id)arg1 formatter:(id)arg2;
-+ (float)uiLabelTwoRowHeightForFont:(id)arg1;
++ (id)footNoteLabelFont;
 
 - (void).cxx_destruct;
-- (id)embeddedThumbnailAspectConstraint;
-- (id)embeddedThumbnailView;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })containerStackView:(id)arg1 layoutFrameForArrangedSubview:(id)arg2 withProposedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })containerStackView:(id)arg1 minimumSpacingAdjecentToArrangedSubview:(id)arg2;
 - (id)footnoteLabel;
-- (id)initWithResult:(id)arg1 style:(unsigned int)arg2 formatter:(id)arg3;
-- (id)initWithTextAreaData:(id)arg1 style:(unsigned int)arg2 formatter:(id)arg3;
-- (id)lastView;
-- (id)reuseID;
+- (id)initWithStyle:(unsigned int)arg1;
+- (BOOL)noFootNote;
+- (BOOL)noRichTextFields;
 - (id)richTextFields;
-- (id)secondToLastView;
-- (id)secondaryImageView;
-- (id)secondaryTitleLabel;
-- (void)setEmbeddedThumbnailAspectConstraint:(id)arg1;
-- (void)setEmbeddedThumbnailView:(id)arg1;
 - (void)setFootnoteLabel:(id)arg1;
-- (void)setLastView:(id)arg1;
-- (void)setReuseID:(id)arg1;
 - (void)setRichTextFields:(id)arg1;
-- (void)setSecondToLastView:(id)arg1;
-- (void)setSecondaryImageView:(id)arg1;
-- (void)setSecondaryTitleLabel:(id)arg1;
-- (void)setTitleHeightConstraint:(id)arg1;
-- (void)setTitleLabel:(id)arg1;
-- (id)titleHeightConstraint;
-- (id)titleLabel;
-- (void)updateTextWidths;
-- (BOOL)updateWithResult:(id)arg1 formatter:(id)arg2;
-- (BOOL)updateWithTextAreaData:(id)arg1 formatter:(id)arg2;
-- (id)viewForFirstBaselineLayout;
-- (id)viewForLastBaselineLayout;
-- (id)viewForSecondToLastBaselineLayout;
+- (void)setStyle:(unsigned int)arg1;
+- (void)setTitleContainer:(id)arg1;
+- (unsigned int)style;
+- (id)titleContainer;
+- (void)updateWithResult:(id)arg1;
 
 @end

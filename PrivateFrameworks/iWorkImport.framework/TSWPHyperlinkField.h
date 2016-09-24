@@ -3,10 +3,12 @@
  */
 
 @interface TSWPHyperlinkField : TSWPSmartField {
-    NSURL *_url;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSString *displayText;
+@property (nonatomic, readonly) TSWPSelection *highlightSelection;
+@property (nonatomic, readonly) BOOL isInGroupedShape;
 @property (setter=setURL:, nonatomic, retain) NSURL *url;
 
 + (id)defaultFieldStyleIdentifier;
@@ -19,7 +21,6 @@
 + (BOOL)schemeIsValidForURL:(id)arg1;
 + (BOOL)schemeIsValidForURLReference:(id)arg1;
 + (id)urlReferenceFromURL:(id)arg1;
-+ (id)urlWithEmailAddress:(id)arg1 subject:(id)arg2;
 
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 - (BOOL)allowsEditing;
@@ -29,10 +30,12 @@
 - (id)filePath;
 - (id)fullPath;
 - (BOOL)hasDisplayText;
+- (id)highlightSelection;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 url:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isFileURL;
+- (BOOL)isInGroupedShape;
 - (void)loadFromArchive:(const struct HyperlinkFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct SmartFieldArchive {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; }*)arg1 unarchiver:(id)arg2;
 - (void)p_performHyperlinkSelector:(SEL)arg1 onStorage:(id)arg2;
 - (void)saveToArchive:(struct HyperlinkFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct SmartFieldArchive {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; }*)arg1 archiver:(id)arg2;

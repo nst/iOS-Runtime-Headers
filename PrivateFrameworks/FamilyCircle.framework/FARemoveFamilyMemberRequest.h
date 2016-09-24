@@ -3,7 +3,7 @@
  */
 
 @interface FARemoveFamilyMemberRequest : FAFamilyCircleRequest {
-    NSNumber *_memberDSID;
+    NSNumber * _memberDSID;
 }
 
 @property (readonly, copy) NSNumber *memberDSID;

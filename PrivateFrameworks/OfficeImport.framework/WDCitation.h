@@ -3,18 +3,18 @@
  */
 
 @interface WDCitation : NSObject {
-    NSMutableArray *mAuthors;
-    WDDocument *mDocument;
-    NSString *mNumber;
-    NSString *mPages;
-    NSString *mPeriodicalTitle;
-    NSString *mPubDate;
-    NSString *mSection;
-    NSString *mSourceType;
-    NSMutableArray *mTitles;
-    NSMutableArray *mUrls;
-    NSString *mVolume;
-    NSString *mYear;
+    NSMutableArray * mAuthors;
+    WDDocument * mDocument;
+    NSString * mNumber;
+    NSString * mPages;
+    NSString * mPeriodicalTitle;
+    NSString * mPubDate;
+    NSString * mSection;
+    NSString * mSourceType;
+    NSMutableArray * mTitles;
+    NSMutableArray * mUrls;
+    NSString * mVolume;
+    NSString * mYear;
 }
 
 @property (nonatomic, retain) NSMutableArray *authors;

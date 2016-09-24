@@ -3,11 +3,11 @@
  */
 
 @interface _UIKBRTTimerBlock : NSObject {
-    id /* block */ _onTimer;
-    id _owner;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_queue> *_selfQueue;
-    NSTimer *_timer;
+    id /* block */  _onTimer;
+    id  _owner;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_queue> * _selfQueue;
+    NSTimer * _timer;
 }
 
 @property (nonatomic, readonly, copy) id /* block */ onTimer;

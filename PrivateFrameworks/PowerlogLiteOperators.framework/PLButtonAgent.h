@@ -3,8 +3,8 @@
  */
 
 @interface PLButtonAgent : PLAgent {
-    PLHIDEventOperatorComposition *_menuButton;
-    PLHIDEventOperatorComposition *_powerButton;
+    PLHIDEventOperatorComposition * _menuButton;
+    PLHIDEventOperatorComposition * _powerButton;
 }
 
 @property (retain) PLHIDEventOperatorComposition *menuButton;

@@ -3,14 +3,14 @@
  */
 
 @interface AWDSafariPageLoadStartedEvent : PBCodable <NSCopying> {
-    unsigned long long _configurationID;
+    unsigned long long  _configurationID;
     struct { 
         unsigned int configurationID : 1; 
         unsigned int pageID : 1; 
         unsigned int timestamp : 1; 
-    } _has;
-    unsigned long long _pageID;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _pageID;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned long long configurationID;

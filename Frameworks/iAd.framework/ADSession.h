@@ -3,14 +3,18 @@
  */
 
 @interface ADSession : NSObject <ADAdSheetConnectionDelegate, ADAdSheetProxyDelegate, ADSession_RPC> {
-    NSMutableArray *_adSpaces;
-    BOOL _applicationCanReceiveBackgroundAds;
-    int _classicUnavailableToken;
-    ADAdSheetConnection *_connection;
+    NSMutableArray * _adSpaces;
+    BOOL  _applicationCanReceiveBackgroundAds;
+    BOOL  _canUpdateFrequencyCap;
+    BOOL  _canUpdateToroClickData;
+    int  _classicUnavailableToken;
+    ADAdSheetConnection * _connection;
 }
 
 @property (nonatomic, retain) NSMutableArray *adSpaces;
 @property (nonatomic) BOOL applicationCanReceiveBackgroundAds;
+@property BOOL canUpdateFrequencyCap;
+@property BOOL canUpdateToroClickData;
 @property (nonatomic) int classicUnavailableToken;
 @property (nonatomic, retain) ADAdSheetConnection *connection;
 @property (readonly, copy) NSString *debugDescription;
@@ -26,7 +30,8 @@
 - (void)_remote_heartbeatTokenDidChange:(id)arg1 expirationDate:(double)arg2 error:(id)arg3;
 - (void)_remote_policyEngineDidIdleDisable;
 - (void)_reportAdSpaceStatusEventWithAdOpportunityIdentifier:(id)arg1 adOriginIdentifier:(id)arg2 durationInFeed:(double)arg3 responseTime:(double)arg4 firstMessage:(BOOL)arg5 screenfuls:(int)arg6 errorCode:(int)arg7;
-- (void)_reportAdSpaceStatusEventWithAdOpportunityIdentifier:(id)arg1 adOriginIdentifier:(id)arg2 durationInFeed:(double)arg3 responseTime:(double)arg4 screenfuls:(int)arg5 errorCode:(int)arg6;
+- (void)_reportAdSpaceStatusEventWithAdOpportunityIdentifier:(id)arg1 adOriginIdentifier:(id)arg2 tags:(id)arg3 durationInFeed:(double)arg4 responseTime:(double)arg5 firstMessage:(BOOL)arg6 screenfuls:(int)arg7 errorCode:(int)arg8;
+- (void)_reportAdSubscriptionEvent:(id)arg1;
 - (void)adSheetConnectionEstablished;
 - (void)adSheetConnectionLost;
 - (id)adSheetMachServiceName;
@@ -35,6 +40,8 @@
 - (void)addClientToSegments:(id)arg1 replaceExisting:(BOOL)arg2 privateSegment:(BOOL)arg3;
 - (id)additionalAdSheetLaunchOptions;
 - (BOOL)applicationCanReceiveBackgroundAds;
+- (BOOL)canUpdateFrequencyCap;
+- (BOOL)canUpdateToroClickData;
 - (int)classicUnavailableToken;
 - (void)configureConnection:(id)arg1;
 - (id)connection;
@@ -42,19 +49,30 @@
 - (id)init;
 - (void)lookupAdConversionDetails:(id /* block */)arg1;
 - (void)performWhenConnected:(id /* block */)arg1;
+- (void)refreshTargetingData;
 - (void)registerAdSpace:(id)arg1;
 - (void)reportPrerollRequest;
-- (void)requestAdsForContext:(id)arg1 creativeTypes:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)requestAdsForContext:(id)arg1 serverURL:(id)arg2 creativeTypes:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)requestAttributionDetailsWithBlock:(id /* block */)arg1;
+- (void)requestSponsoredSearchData:(id /* block */)arg1;
+- (void)requestSponsoredSearchDataAndRequestID:(id /* block */)arg1;
+- (void)requestSponsoredSearchURL:(id /* block */)arg1;
+- (void)requestTrendingSearchData:(id /* block */)arg1;
+- (void)requestTrendingSearchURL:(id /* block */)arg1;
+- (void)requestUserTargetingIdentifier:(id /* block */)arg1;
 - (id)rpcProxy;
 - (id)rpcProxyWithErrorHandler:(id /* block */)arg1;
 - (void)setAdSpaces:(id)arg1;
 - (void)setApplicationCanReceiveBackgroundAds:(BOOL)arg1;
+- (void)setCanUpdateFrequencyCap:(BOOL)arg1;
+- (void)setCanUpdateToroClickData:(BOOL)arg1;
 - (void)setClassicUnavailableToken:(int)arg1;
 - (void)setConnection:(id)arg1;
 - (BOOL)shouldConnectToAdSheet;
 - (BOOL)shouldLaunchAdSheet;
 - (void)unregisterAdSpace:(id)arg1;
+- (void)updateDPIDWithAction:(unsigned int)arg1;
+- (void)updateSponsoredFrequencyCapData:(id)arg1;
+- (void)updateToroClickData:(id)arg1;
+- (void)updateTrendingFrequencyCapData:(id)arg1;
 
 @end

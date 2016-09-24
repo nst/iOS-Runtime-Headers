@@ -3,7 +3,7 @@
  */
 
 @interface AVCompositionTrackInternal : NSObject {
-    struct OpaqueFigMutableComposition { } *mutableComposition;
+    struct OpaqueFigMutableComposition { } * mutableComposition;
 }
 
 @end

@@ -3,18 +3,18 @@
  */
 
 @interface TSKAVPlayerController : NSObject <TSKMediaPlayerController> {
-    BOOL mCanPlay;
-    <TSKMediaPlayerControllerDelegate> *mDelegate;
-    BOOL mFastForwarding;
-    BOOL mFastReversing;
-    BOOL mIsObservingStatus;
-    AVPlayer *mPlayer;
-    BOOL mPlaying;
-    float mRateBeforeScrubbing;
-    int mRepeatMode;
-    unsigned int mScrubbingCount;
-    BOOL mStreaming;
-    float mVolume;
+    BOOL  mCanPlay;
+    <TSKMediaPlayerControllerDelegate> * mDelegate;
+    BOOL  mFastForwarding;
+    BOOL  mFastReversing;
+    BOOL  mIsObservingStatus;
+    AVPlayer * mPlayer;
+    BOOL  mPlaying;
+    double  mRateBeforeScrubbing;
+    int  mRepeatMode;
+    unsigned int  mScrubbingCount;
+    BOOL  mStreaming;
+    double  mVolume;
 }
 
 @property (nonatomic, readonly) double absoluteCurrentTime;
@@ -33,13 +33,13 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) AVPlayer *player;
 @property (getter=isPlaying, nonatomic) BOOL playing;
-@property (nonatomic) float rate;
+@property (nonatomic) double rate;
 @property (nonatomic, readonly) double remainingTime;
 @property (nonatomic) int repeatMode;
 @property (getter=isScrubbing, nonatomic, readonly) BOOL scrubbing;
 @property (nonatomic) double startTime;
 @property (readonly) Class superclass;
-@property (nonatomic) float volume;
+@property (nonatomic) double volume;
 
 + (BOOL)automaticallyNotifiesObserversOfEndTime;
 + (BOOL)automaticallyNotifiesObserversOfRate;
@@ -51,6 +51,7 @@
 + (id)keyPathsForValuesAffectingEndTime;
 + (id)keyPathsForValuesAffectingRate;
 + (id)keyPathsForValuesAffectingStartTime;
++ (void)p_patchPropertyGettersForPlayer:(id)arg1;
 
 - (double)absoluteCurrentTime;
 - (double)absoluteDuration;

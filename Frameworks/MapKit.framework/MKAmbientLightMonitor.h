@@ -3,30 +3,30 @@
  */
 
 @interface MKAmbientLightMonitor : NSObject {
-    int _ambientLightLevel;
-    struct __IOHIDEventSystemClient { } *_client;
-    BOOL _debugLogLux;
-    float _lightLevelLowThreshold;
-    float _lightLevelMediumThreshold;
-    float _lightLevelNoneThreshold;
-    BOOL _monitoring;
-    NSHashTable *_observers;
+    int  _ambientLightLevel;
+    struct __IOHIDEventSystemClient { } * _client;
+    BOOL  _debugLogLux;
+    double  _lightLevelLowThreshold;
+    double  _lightLevelMediumThreshold;
+    double  _lightLevelNoneThreshold;
+    BOOL  _monitoring;
+    NSHashTable * _observers;
     struct deque<float, std::__1::allocator<float> > { 
-        struct __split_buffer<float *, std::__1::allocator<float *> > { 
-            float **__first_; 
-            float **__begin_; 
-            float **__end_; 
-            struct __compressed_pair<float **, std::__1::allocator<float *> > { 
-                float **__first_; 
+        struct __split_buffer<double *, std::__1::allocator<double *> > { 
+            double **__first_; 
+            double **__begin_; 
+            double **__end_; 
+            struct __compressed_pair<double **, std::__1::allocator<double *> > { 
+                double **__first_; 
             } __end_cap_; 
         } __map_; 
         unsigned int __start_; 
         struct __compressed_pair<unsigned long, std::__1::allocator<float> > { 
             unsigned long __first_; 
         } __size_; 
-    } _runningStatBuffer;
-    unsigned int _runningStatSize;
-    float _runningStatSum;
+    }  _runningStatBuffer;
+    unsigned int  _runningStatSize;
+    double  _runningStatSum;
 }
 
 @property (nonatomic, readonly) int ambientLightLevel;

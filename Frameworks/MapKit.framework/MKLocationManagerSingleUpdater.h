@@ -3,14 +3,14 @@
  */
 
 @interface MKLocationManagerSingleUpdater : NSObject <MKLocationManagerObserver, MKLocationManagerOperation> {
-    BOOL _active;
-    double _desiredAccuracy;
-    id /* block */ _handler;
-    MKLocationManager *_locationManager;
-    double _maxLocationAge;
-    MKLocationManagerSingleUpdater *_selfReference;
-    double _timeout;
-    NSTimer *_timeoutTimer;
+    BOOL  _active;
+    double  _desiredAccuracy;
+    id /* block */  _handler;
+    MKLocationManager * _locationManager;
+    double  _maxLocationAge;
+    MKLocationManagerSingleUpdater * _selfReference;
+    double  _timeout;
+    NSTimer * _timeoutTimer;
 }
 
 @property (readonly, copy) NSString *debugDescription;

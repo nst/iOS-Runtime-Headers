@@ -3,8 +3,8 @@
  */
 
 @interface CUIMutableCatalog : CUICatalog {
-    unsigned int _checkRespondsTo;
-    unsigned int _respondsToCheck;
+    unsigned int  _checkRespondsTo;
+    unsigned int  _respondsToCheck;
 }
 
 - (id)_baseKeyForName:(id)arg1;

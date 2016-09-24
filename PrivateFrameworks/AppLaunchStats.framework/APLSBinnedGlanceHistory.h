@@ -3,9 +3,9 @@
  */
 
 @interface APLSBinnedGlanceHistory : NSObject {
-    NSMutableDictionary *_dailyLaunches;
-    NSArray *_recentLaunches;
-    NSMutableDictionary *_weeklyLaunches;
+    NSMutableDictionary * _dailyLaunches;
+    NSArray * _recentLaunches;
+    NSMutableDictionary * _weeklyLaunches;
 }
 
 @property (retain) NSMutableDictionary *dailyLaunches;

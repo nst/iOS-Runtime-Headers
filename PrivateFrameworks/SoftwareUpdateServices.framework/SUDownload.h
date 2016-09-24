@@ -3,9 +3,9 @@
  */
 
 @interface SUDownload : NSObject <NSCopying, NSSecureCoding> {
-    SUDescriptor *_descriptor;
-    SUDownloadMetadata *_metadata;
-    SUOperationProgress *_progress;
+    SUDescriptor * _descriptor;
+    SUDownloadMetadata * _metadata;
+    SUOperationProgress * _progress;
 }
 
 @property (nonatomic, retain) SUDescriptor *descriptor;
@@ -25,6 +25,6 @@
 - (void)setDescriptor:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setProgress:(id)arg1;
-- (unsigned long long)totalSpaceConsumed;
+- (unsigned int)totalSpaceConsumed;
 
 @end

@@ -3,9 +3,9 @@
  */
 
 @interface SKStorePageRequest : NSObject {
-    int _pageStyle;
-    NSDictionary *_productParameters;
-    NSURL *_productURL;
+    int  _pageStyle;
+    NSDictionary * _productParameters;
+    NSURL * _productURL;
 }
 
 @property (nonatomic) int productPageStyle;

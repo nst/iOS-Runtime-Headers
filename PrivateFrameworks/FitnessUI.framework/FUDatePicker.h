@@ -3,28 +3,28 @@
  */
 
 @interface FUDatePicker : UIView <FUScrollWheelDataSource, FUScrollWheelDelegate> {
-    NSDate *_date;
-    NSDateFormatter *_dateFormatter;
-    unsigned int _dateOffset;
-    FUScrollWheel *_dateWheel;
-    UILabel *_dayLabel;
-    int _dayOrder;
-    NSArray *_dayValues;
-    <FUDatePickerDelegate> *_delegate;
-    BOOL _displayEra;
-    BOOL _firstResponderShouldChange;
-    UILabel *_monthLabel;
-    NSArray *_monthNames;
-    unsigned int _monthOffset;
-    int _monthOrder;
-    FUScrollWheel *_monthWheel;
-    unsigned int _numRowsDate;
-    unsigned int _numRowsMonth;
-    unsigned int _numRowsYear;
-    UILabel *_yearLabel;
-    int _yearOrder;
-    FUScrollWheel *_yearWheel;
-    NSMutableArray *_yearsWithNames;
+    NSDate * _date;
+    NSDateFormatter * _dateFormatter;
+    unsigned int  _dateOffset;
+    FUScrollWheel * _dateWheel;
+    UILabel * _dayLabel;
+    int  _dayOrder;
+    NSArray * _dayValues;
+    <FUDatePickerDelegate> * _delegate;
+    BOOL  _displayEra;
+    BOOL  _firstResponderShouldChange;
+    UILabel * _monthLabel;
+    NSArray * _monthNames;
+    unsigned int  _monthOffset;
+    int  _monthOrder;
+    FUScrollWheel * _monthWheel;
+    unsigned int  _numRowsDate;
+    unsigned int  _numRowsMonth;
+    unsigned int  _numRowsYear;
+    UILabel * _yearLabel;
+    int  _yearOrder;
+    FUScrollWheel * _yearWheel;
+    NSMutableArray * _yearsWithNames;
 }
 
 @property (nonatomic, retain) NSDate *date;
@@ -45,7 +45,7 @@
 - (id)date;
 - (id)dateWheel;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)monthWheel;
 - (unsigned int)numberOfRowsInScrollWheel:(id)arg1;

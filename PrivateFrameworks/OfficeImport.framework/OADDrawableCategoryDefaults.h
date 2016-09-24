@@ -3,9 +3,9 @@
  */
 
 @interface OADDrawableCategoryDefaults : NSObject {
-    OADShapeProperties *mShapeProperties;
-    OADTextBodyProperties *mTextBodyProperties;
-    OADTextListStyle *mTextListStyle;
+    OADShapeProperties * mShapeProperties;
+    OADTextBodyProperties * mTextBodyProperties;
+    OADTextListStyle * mTextListStyle;
 }
 
 - (void)dealloc;

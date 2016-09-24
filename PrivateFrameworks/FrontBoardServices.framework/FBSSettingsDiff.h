@@ -3,9 +3,9 @@
  */
 
 @interface FBSSettingsDiff : NSObject <BSSettingDescriptionProvider, BSXPCCoding> {
-    BSSettings *_changes;
-    BSSettingsDiff *_otherSettingsDiff;
-    Class _settingsClass;
+    BSSettings * _changes;
+    BSSettingsDiff * _otherSettingsDiff;
+    Class  _settingsClass;
 }
 
 @property (readonly, copy) NSString *debugDescription;

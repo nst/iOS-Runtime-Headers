@@ -3,12 +3,12 @@
  */
 
 @interface _UICollectionViewControllerLayoutToLayoutTransition : NSObject <UIViewControllerAnimatedTransitioning> {
-    BOOL _crossFadeBottomBars;
-    BOOL _crossFadeNavigationBar;
-    BOOL _interactionAborted;
-    UIPercentDrivenInteractiveTransition *_interactionController;
-    int _operation;
-    UICollectionViewLayout *_toLayout;
+    BOOL  _crossFadeBottomBars;
+    BOOL  _crossFadeNavigationBar;
+    BOOL  _interactionAborted;
+    UIPercentDrivenInteractiveTransition * _interactionController;
+    int  _operation;
+    UICollectionViewLayout * _toLayout;
 }
 
 @property (nonatomic) BOOL crossFadeBottomBars;

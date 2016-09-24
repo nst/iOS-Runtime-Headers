@@ -6,8 +6,8 @@
     struct _expressionFlags { 
         unsigned int _evaluationBlocked : 1; 
         unsigned int _reservedExpressionFlags : 31; 
-    } _expressionFlags;
-    unsigned int _expressionType;
+    }  _expressionFlags;
+    unsigned int  _expressionType;
 }
 
 @property (readonly, copy) NSArray *arguments;
@@ -87,8 +87,17 @@
 
 - (id)minimalFormInContext:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
+
+- (BOOL)br_isConstantValueExpression:(id)arg1;
+- (BOOL)br_isKeyPathExpression:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
 
 + (id)expressionWithCKDPRecordFieldValue:(id)arg1 translator:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
++ (id)expressionWithFCCKPRecordFieldValue:(id)arg1 translator:(id)arg2;
 
 @end

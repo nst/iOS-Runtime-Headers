@@ -3,17 +3,17 @@
  */
 
 @interface AWDWRMStreamingReport : PBCodable <NSCopying> {
-    unsigned int _counter;
-    unsigned int _duration;
+    unsigned int  _counter;
+    unsigned int  _duration;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int counter : 1; 
         unsigned int duration : 1; 
         unsigned int samplePeriods : 1; 
-    } _has;
-    NSMutableArray *_instValues;
-    unsigned int _samplePeriods;
-    unsigned long long _timestamp;
+    }  _has;
+    NSMutableArray * _instValues;
+    unsigned int  _samplePeriods;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int counter;

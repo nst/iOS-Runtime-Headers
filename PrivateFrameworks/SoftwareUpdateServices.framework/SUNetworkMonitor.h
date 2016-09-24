@@ -3,10 +3,10 @@
  */
 
 @interface SUNetworkMonitor : NSObject {
-    int _currentNetworkType;
-    NSHashTable *_observers;
-    struct __SCNetworkReachability { } *_reachability;
-    BOOL _roaming;
+    int  _currentNetworkType;
+    NSHashTable * _observers;
+    struct __SCNetworkReachability { } * _reachability;
+    BOOL  _roaming;
 }
 
 + (BOOL)holdsWiFiAssertion;

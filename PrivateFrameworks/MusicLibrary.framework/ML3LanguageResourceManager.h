@@ -3,8 +3,8 @@
  */
 
 @interface ML3LanguageResourceManager : NSObject {
-    ML3LanguageResources *_cachedResources;
-    NSObject<OS_dispatch_queue> *_serialQueue;
+    ML3LanguageResources * _cachedResources;
+    NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
 + (id)sharedResourceManager;

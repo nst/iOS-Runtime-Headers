@@ -3,36 +3,36 @@
  */
 
 @interface SKUIStorePageSectionContext : NSObject {
-    SKUIMetricsImpressionSession *_activeMetricsImpressionSession;
-    float _activePageWidth;
-    UICollectionView *_collectionView;
-    SKUIColorScheme *_colorScheme;
-    int _defaultPinningTransitionStyle;
-    SKUIItemOfferButtonAppearance *_itemOfferButtonAppearance;
-    float _landscapePageWidth;
-    int _layoutStyle;
-    SKUIMetricsController *_metricsController;
-    SKUIStorePageSectionsViewController *_parentViewController;
-    UIColor *_placeholderColor;
-    float _portraitPageWidth;
-    SKUIResourceLoader *_resourceLoader;
-    SKUILayoutCache *_textLayoutCache;
+    SKUIMetricsImpressionSession * _activeMetricsImpressionSession;
+    double  _activePageWidth;
+    UICollectionView * _collectionView;
+    SKUIColorScheme * _colorScheme;
+    int  _defaultPinningTransitionStyle;
+    SKUIItemOfferButtonAppearance * _itemOfferButtonAppearance;
+    double  _landscapePageWidth;
+    int  _layoutStyle;
+    SKUIMetricsController * _metricsController;
+    SKUIStorePageSectionsViewController * _parentViewController;
+    UIColor * _placeholderColor;
+    double  _portraitPageWidth;
+    SKUIResourceLoader * _resourceLoader;
+    SKUILayoutCache * _textLayoutCache;
 }
 
 @property (nonatomic, readonly) SKUIMetricsImpressionSession *activeMetricsImpressionSession;
-@property (nonatomic, readonly) float activePageWidth;
+@property (nonatomic, readonly) double activePageWidth;
 @property (nonatomic, readonly) SKUIClientContext *clientContext;
 @property (nonatomic, readonly) UICollectionView *collectionView;
 @property (nonatomic, readonly) SKUIColorScheme *colorScheme;
 @property (nonatomic, readonly) int defaultPinningTransitionStyle;
-@property (nonatomic, readonly) float horizontalPadding;
+@property (nonatomic, readonly) double horizontalPadding;
 @property (nonatomic, readonly) SKUIItemOfferButtonAppearance *itemOfferButtonAppearance;
-@property (nonatomic, readonly) float landscapePageWidth;
+@property (nonatomic, readonly) double landscapePageWidth;
 @property (nonatomic, readonly) int layoutStyle;
 @property (nonatomic, readonly) SKUIMetricsController *metricsController;
 @property (nonatomic, readonly) SKUIStorePageSectionsViewController *parentViewController;
 @property (nonatomic, readonly) UIColor *placeholderColor;
-@property (nonatomic, readonly) float portraitPageWidth;
+@property (nonatomic, readonly) double portraitPageWidth;
 @property (nonatomic, readonly) SKUIResourceLoader *resourceLoader;
 @property (nonatomic, readonly) SKUILayoutCache *textLayoutCache;
 

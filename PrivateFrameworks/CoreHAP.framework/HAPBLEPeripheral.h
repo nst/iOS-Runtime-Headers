@@ -3,17 +3,17 @@
  */
 
 @interface HAPBLEPeripheral : NSObject {
-    NSString *_accessoryName;
-    NSNumber *_advInterval;
-    NSNumber *_category;
-    NSNumber *_compatibleVersion;
-    NSNumber *_configNumber;
-    NSNumber *_hkType;
-    double _lastSeen;
-    NSString *_pairingIdentifier;
-    NSNumber *_pairingStatusFlag;
-    NSUUID *_peripheralUUID;
-    NSNumber *_stateNumber;
+    NSString * _accessoryName;
+    NSNumber * _advInterval;
+    NSNumber * _category;
+    NSNumber * _compatibleVersion;
+    NSNumber * _configNumber;
+    NSNumber * _hkType;
+    double  _lastSeen;
+    NSString * _pairingIdentifier;
+    NSNumber * _pairingStatusFlag;
+    NSUUID * _peripheralUUID;
+    NSNumber * _stateNumber;
 }
 
 @property (nonatomic, readonly) NSString *accessoryName;

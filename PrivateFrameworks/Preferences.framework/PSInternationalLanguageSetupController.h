@@ -3,7 +3,7 @@
  */
 
 @interface PSInternationalLanguageSetupController : PSSetupController {
-    PSLanguageSelector *_languageSelector;
+    PSLanguageSelector * _languageSelector;
 }
 
 @property (nonatomic, retain) PSLanguageSelector *languageSelector;

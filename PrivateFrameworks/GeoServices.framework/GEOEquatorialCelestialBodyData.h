@@ -3,8 +3,8 @@
  */
 
 @interface GEOEquatorialCelestialBodyData : NSObject {
-    double _declination;
-    double _rightAscension;
+    double  _declination;
+    double  _rightAscension;
 }
 
 @property (nonatomic, readonly) double declination;

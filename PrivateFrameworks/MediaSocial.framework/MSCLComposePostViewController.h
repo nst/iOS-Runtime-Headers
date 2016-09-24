@@ -3,25 +3,25 @@
  */
 
 @interface MSCLComposePostViewController : SKUIViewController <MSCLAttachmentAlertDelegate, MSCLAttachmentPropertiesDelegate, MSCLAudioPickerDelegate, MSCLComposeImagePickerDelegate, MSCLComposePostViewDelegate, MSCLSoundBiteViewControllerDelegate, MSCLTagListDelegate> {
-    MSCLAccountStore *_accountStore;
-    MSCLAttachmentDownloadOperation *_attachmentDownloadOperation;
-    BOOL _attachmentWasDownloadedAndNeedsRemoval;
-    NSMutableArray *_attachments;
-    SKUIMediaSocialAuthor *_attributionAuthor;
-    MSCLComposeLabelValueButton *_attributionButton;
-    MSCLAudioPickerViewController *_audioPickerController;
-    MSCLAuthorView *_authorSelectionView;
-    MSCLComposePostView *_composeView;
-    MSCLConfiguration *_configuration;
-    <MSCLComposePostViewControllerDelegate> *_delegate;
-    BOOL _didAppear;
-    MSCLAttachment *_editingAttachment;
-    MSCLComposeLabelValueButton *_externalServicesButton;
-    MSCLComposeImagePickerController *_imagePickerController;
-    SKUIResourceLoader *_resourceLoader;
-    SKUIMediaSocialAuthor *_selectedAuthor;
-    NSMutableArray *_soundBiteViewControllers;
-    MSCLTagListViewController *_tagCompletionViewController;
+    MSCLAccountStore * _accountStore;
+    MSCLAttachmentDownloadOperation * _attachmentDownloadOperation;
+    BOOL  _attachmentWasDownloadedAndNeedsRemoval;
+    NSMutableArray * _attachments;
+    SKUIMediaSocialAuthor * _attributionAuthor;
+    MSCLComposeLabelValueButton * _attributionButton;
+    MSCLAudioPickerViewController * _audioPickerController;
+    MSCLAuthorView * _authorSelectionView;
+    MSCLComposePostView * _composeView;
+    MSCLConfiguration * _configuration;
+    <MSCLComposePostViewControllerDelegate> * _delegate;
+    BOOL  _didAppear;
+    MSCLAttachment * _editingAttachment;
+    MSCLComposeLabelValueButton * _externalServicesButton;
+    MSCLComposeImagePickerController * _imagePickerController;
+    SKUIResourceLoader * _resourceLoader;
+    SKUIMediaSocialAuthor * _selectedAuthor;
+    NSMutableArray * _soundBiteViewControllers;
+    MSCLTagListViewController * _tagCompletionViewController;
 }
 
 @property (nonatomic) MSCLAttachmentDownloadOperation *attachmentDownloadOperation;

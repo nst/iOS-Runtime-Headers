@@ -3,26 +3,26 @@
  */
 
 @interface ADPolicyEngine : NSObject <ADBannerViewInternalDelegate, ADInterstitialAdDelegate> {
-    BOOL _canAutoEnable;
-    NSData *_currentSongData;
-    NSData *_currentStationData;
-    BOOL _enabled;
-    NSData *_heartbeatToken;
-    NSError *_heartbeatTokenError;
-    double _heartbeatTokenExpiration;
-    NSError *_lastSharedMediaPlayerVideoAdError;
-    double _nextInterstitialPresentationTime;
-    double _nextPrerollPlaybackTime;
-    NSObject<OS_dispatch_queue> *_policyEngineQueue;
-    NSMutableArray *_queuedCommands;
-    ADInterstitialAd *_sharedInterstitialAd;
-    BOOL _sharedInterstitialAdIsInUse;
-    NSString *_sharedInterstitialAuthenticationUserName;
-    NSString *_sharedInterstitialSection;
-    NSURL *_sharedInterstitialServerURL;
-    ADBannerView *_sharedMediaPlayerVideoAd;
-    BOOL _sharedMediaPlayerVideoAdClaimed;
-    BOOL _visuallyEngaged;
+    BOOL  _canAutoEnable;
+    NSData * _currentSongData;
+    NSData * _currentStationData;
+    BOOL  _enabled;
+    NSData * _heartbeatToken;
+    NSError * _heartbeatTokenError;
+    double  _heartbeatTokenExpiration;
+    NSError * _lastSharedMediaPlayerVideoAdError;
+    double  _nextInterstitialPresentationTime;
+    double  _nextPrerollPlaybackTime;
+    NSObject<OS_dispatch_queue> * _policyEngineQueue;
+    NSMutableArray * _queuedCommands;
+    ADInterstitialAd * _sharedInterstitialAd;
+    BOOL  _sharedInterstitialAdIsInUse;
+    NSString * _sharedInterstitialAuthenticationUserName;
+    NSString * _sharedInterstitialSection;
+    NSURL * _sharedInterstitialServerURL;
+    ADBannerView * _sharedMediaPlayerVideoAd;
+    BOOL  _sharedMediaPlayerVideoAdClaimed;
+    BOOL  _visuallyEngaged;
 }
 
 @property (nonatomic) BOOL canAutoEnable;

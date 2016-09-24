@@ -3,17 +3,17 @@
  */
 
 @interface SUAudioPlayer : NSObject <AVAssetResourceLoaderDelegate> {
-    AVURLAsset *_asset;
-    NSURL *_certificateUrl;
-    BOOL _didPostForPreviewHistory;
-    NSURL *_keyUrl;
-    NSMutableDictionary *_nowPlayingInfo;
-    AVPlayer *_player;
-    AVPlayerItem *_playerItem;
-    SUPlayerStatus *_status;
-    long long _storeItemIdentifier;
-    id _timeObserver;
-    NSURL *_url;
+    AVURLAsset * _asset;
+    NSURL * _certificateUrl;
+    BOOL  _didPostForPreviewHistory;
+    NSURL * _keyUrl;
+    NSMutableDictionary * _nowPlayingInfo;
+    AVPlayer * _player;
+    AVPlayerItem * _playerItem;
+    SUPlayerStatus * _status;
+    int  _storeItemIdentifier;
+    id  _timeObserver;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSURL *URL;
@@ -23,7 +23,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSURL *keyURL;
 @property (nonatomic, readonly) SUPlayerStatus *playerStatus;
-@property (nonatomic) long long storeItemIdentifier;
+@property (nonatomic) int storeItemIdentifier;
 @property (readonly) Class superclass;
 
 - (id)URL;
@@ -50,10 +50,10 @@
 - (void)seekToTime:(double)arg1;
 - (void)setCertificateURL:(id)arg1;
 - (void)setKeyURL:(id)arg1;
-- (void)setStoreItemIdentifier:(long long)arg1;
+- (void)setStoreItemIdentifier:(int)arg1;
 - (void)setValue:(id)arg1 forNowPlayingKey:(id)arg2;
 - (void)stop;
-- (long long)storeItemIdentifier;
+- (int)storeItemIdentifier;
 - (id)valueForNowPlayingKey:(id)arg1;
 
 @end

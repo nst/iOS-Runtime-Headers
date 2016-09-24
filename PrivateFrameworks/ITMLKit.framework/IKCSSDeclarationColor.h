@@ -3,8 +3,8 @@
  */
 
 @interface IKCSSDeclarationColor : IKCSSDeclaration {
-    IKColor *_color;
-    int _sourceType;
+    IKColor * _color;
+    int  _sourceType;
 }
 
 @property (nonatomic, retain) IKColor *color;

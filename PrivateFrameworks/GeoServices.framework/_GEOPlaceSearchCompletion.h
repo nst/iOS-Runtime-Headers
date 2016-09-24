@@ -3,7 +3,7 @@
  */
 
 @interface _GEOPlaceSearchCompletion : NSObject <GEOCompletion> {
-    NSArray *_groups;
+    NSArray * _groups;
 }
 
 @property (readonly, copy) NSString *debugDescription;

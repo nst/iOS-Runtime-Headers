@@ -3,7 +3,7 @@
  */
 
 @interface _GEOLocationShifterLocalProxy : NSObject <_GEOLocationShifterProxy> {
-    _GEOLocationShiftRequester *_requester;
+    _GEOLocationShiftRequester * _requester;
 }
 
 @property (readonly, copy) NSString *debugDescription;

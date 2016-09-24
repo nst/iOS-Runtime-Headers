@@ -3,22 +3,22 @@
  */
 
 @interface PLSyncSaveJob : NSObject {
-    NSDate *_cleanupBeforeDate;
-    BOOL _cleanupSyncState;
-    id /* block */ _finishedBlock;
-    NSSet *albumURIs;
-    NSDate *creationDate;
-    NSArray *facesInfo;
-    BOOL hasVideoComplement;
-    BOOL isSyncComplete;
-    BOOL isVideo;
-    CLLocation *location;
-    NSDate *modificationDate;
-    NSURL *originalAssetURL;
-    NSString *originalFileName;
-    NSNumber *sortToken;
-    NSString *uuid;
-    NSURL *videoComplementURL;
+    NSDate * _cleanupBeforeDate;
+    BOOL  _cleanupSyncState;
+    id /* block */  _finishedBlock;
+    NSSet * albumURIs;
+    NSDate * creationDate;
+    NSArray * facesInfo;
+    BOOL  hasVideoComplement;
+    BOOL  isSyncComplete;
+    BOOL  isVideo;
+    CLLocation * location;
+    NSDate * modificationDate;
+    NSURL * originalAssetURL;
+    NSString * originalFileName;
+    NSNumber * sortToken;
+    NSString * uuid;
+    NSURL * videoComplementURL;
 }
 
 @property (nonatomic, copy) NSSet *albumURIs;

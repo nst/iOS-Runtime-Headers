@@ -3,8 +3,8 @@
  */
 
 @interface CKContainerID : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_containerIdentifier;
-    int _environment;
+    NSString * _containerIdentifier;
+    int  _environment;
 }
 
 @property (nonatomic, readonly) NSString *containerIdentifier;

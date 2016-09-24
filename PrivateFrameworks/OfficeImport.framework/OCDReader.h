@@ -3,13 +3,13 @@
  */
 
 @interface OCDReader : NSObject {
-    <TCCancelDelegate> *mCancelDelegate;
-    NSData *mData;
-    <OCDReaderDelegate> *mDelegate;
-    NSString *mFileName;
-    BOOL mIsThumbnail;
-    NSError *mStartError;
-    TCImportTracing *mTracing;
+    <TCCancelDelegate> * mCancelDelegate;
+    NSData * mData;
+    <OCDReaderDelegate> * mDelegate;
+    NSString * mFileName;
+    BOOL  mIsThumbnail;
+    NSError * mStartError;
+    TCImportTracing * mTracing;
 }
 
 @property (nonatomic, retain) <TCCancelDelegate> *cancelDelegate;

@@ -3,10 +3,10 @@
  */
 
 @interface CoreDAVMkcolTask : CoreDAVActionBackedTask {
-    int _absoluteOrder;
-    NSURL *_priorOrderedURL;
-    NSSet *_propertiesToSet;
-    BOOL _sendOrder;
+    int  _absoluteOrder;
+    NSURL * _priorOrderedURL;
+    NSSet * _propertiesToSet;
+    BOOL  _sendOrder;
 }
 
 @property (nonatomic) int absoluteOrder;

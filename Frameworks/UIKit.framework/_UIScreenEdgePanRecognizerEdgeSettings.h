@@ -3,15 +3,15 @@
  */
 
 @interface _UIScreenEdgePanRecognizerEdgeSettings : _UISettings {
-    double _backProjectionTime;
-    double _bottomEdgeRegionSize;
-    double _edgeAngleWindow;
-    double _edgeAngleWindowDecayTime;
-    double _edgeRegionSize;
-    double _hysteresis;
-    double _maximumSwipeDuration;
-    float _restrictedEdgeRegionMinimumWeight;
-    double _restrictedEdgeRegionTimeInterval;
+    double  _backProjectionTime;
+    double  _bottomEdgeRegionSize;
+    double  _edgeAngleWindow;
+    double  _edgeAngleWindowDecayTime;
+    double  _edgeRegionSize;
+    double  _hysteresis;
+    double  _maximumSwipeDuration;
+    double  _restrictedEdgeRegionMinimumWeight;
+    double  _restrictedEdgeRegionTimeInterval;
 }
 
 @property (nonatomic) double backProjectionTime;
@@ -22,7 +22,7 @@
 @property (nonatomic) double edgeRegionSize;
 @property (nonatomic) double hysteresis;
 @property (nonatomic) double maximumSwipeDuration;
-@property (nonatomic) float restrictedEdgeRegionMinimumWeight;
+@property (nonatomic) double restrictedEdgeRegionMinimumWeight;
 @property (nonatomic) double restrictedEdgeRegionTimeInterval;
 
 + (id)keyPathsForValuesAffectingEdgeAngleWindowDegreees;

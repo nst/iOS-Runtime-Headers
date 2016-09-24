@@ -3,7 +3,7 @@
  */
 
 @interface SSVSubscriptionResponse : NSObject <NSCopying, SSXPCCoding> {
-    NSMutableDictionary *_accountUniqueIdentifierToSubscriptionStatus;
+    NSMutableDictionary * _accountUniqueIdentifierToSubscriptionStatus;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,7 +15,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (void)setSubscriptionStatus:(id)arg1 forAccountUniqueIdentifier:(unsigned long long)arg2;
-- (id)subscriptionStatusForAccountUniqueIdentifier:(unsigned long long)arg1;
+- (void)setSubscriptionStatus:(id)arg1 forAccountUniqueIdentifier:(unsigned int)arg2;
+- (id)subscriptionStatusForAccountUniqueIdentifier:(unsigned int)arg1;
 
 @end

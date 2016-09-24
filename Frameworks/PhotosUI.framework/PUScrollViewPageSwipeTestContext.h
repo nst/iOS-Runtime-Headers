@@ -3,21 +3,21 @@
  */
 
 @interface PUScrollViewPageSwipeTestContext : NSObject {
-    int _currentDirection;
-    int _currentIteration;
-    int _currentPage;
-    double _currentPageSwipeProgress;
-    int _currentState;
-    CADisplayLink *_displayLink;
-    double _lastIncrementTime;
-    int _numberOfIterations;
-    int _numberOfPages;
+    int  _currentDirection;
+    int  _currentIteration;
+    int  _currentPage;
+    double  _currentPageSwipeProgress;
+    int  _currentState;
+    CADisplayLink * _displayLink;
+    double  _lastIncrementTime;
+    int  _numberOfIterations;
+    int  _numberOfPages;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _originContentOffset;
-    int _scrollAxis;
-    NSString *_testName;
+        double x; 
+        double y; 
+    }  _originContentOffset;
+    int  _scrollAxis;
+    NSString * _testName;
 }
 
 @property (nonatomic) int currentDirection;
@@ -29,7 +29,7 @@
 @property (nonatomic) double lastIncrementTime;
 @property (nonatomic) int numberOfIterations;
 @property (nonatomic) int numberOfPages;
-@property (nonatomic) struct CGPoint { float x1; float x2; } originContentOffset;
+@property (nonatomic) struct CGPoint { double x1; double x2; } originContentOffset;
 @property (nonatomic) int scrollAxis;
 @property (nonatomic, copy) NSString *testName;
 
@@ -44,7 +44,7 @@
 - (double)lastIncrementTime;
 - (int)numberOfIterations;
 - (int)numberOfPages;
-- (struct CGPoint { float x1; float x2; })originContentOffset;
+- (struct CGPoint { double x1; double x2; })originContentOffset;
 - (int)scrollAxis;
 - (void)setCurrentDirection:(int)arg1;
 - (void)setCurrentIteration:(int)arg1;
@@ -55,7 +55,7 @@
 - (void)setLastIncrementTime:(double)arg1;
 - (void)setNumberOfIterations:(int)arg1;
 - (void)setNumberOfPages:(int)arg1;
-- (void)setOriginContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setOriginContentOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setScrollAxis:(int)arg1;
 - (void)setTestName:(id)arg1;
 - (id)testName;

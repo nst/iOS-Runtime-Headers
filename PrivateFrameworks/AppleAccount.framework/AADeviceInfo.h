@@ -3,10 +3,10 @@
  */
 
 @interface AADeviceInfo : NSObject {
-    APSConnection *_apsConnection;
-    NSData *_token;
-    BOOL _tokenDone;
-    NSObject<OS_dispatch_semaphore> *_tokenSema;
+    APSConnection * _apsConnection;
+    NSData * _token;
+    BOOL  _tokenDone;
+    NSObject<OS_dispatch_semaphore> * _tokenSema;
 }
 
 + (id)apnsToken;
@@ -24,9 +24,12 @@
 - (id)appleIDClientIdentifier;
 - (id)buildVersion;
 - (id)clientInfoHeader;
+- (id)deviceBackingColor;
 - (id)deviceClass;
 - (id)deviceColor;
+- (id)deviceCoverGlassColor;
 - (id)deviceEnclosureColor;
+- (id)deviceHousingColor;
 - (id)deviceInfoDictionary;
 - (id)deviceName;
 - (BOOL)hasCellularCapability;

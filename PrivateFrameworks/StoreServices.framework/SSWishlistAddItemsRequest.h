@@ -3,9 +3,9 @@
  */
 
 @interface SSWishlistAddItemsRequest : SSRequest {
-    NSString *_caller;
-    NSArray *_items;
-    NSString *_version;
+    NSString * _caller;
+    NSArray * _items;
+    NSString * _version;
 }
 
 @property (readonly, copy) NSString *caller;

@@ -3,9 +3,12 @@
  */
 
 @interface TSUPair : NSObject <NSCoding, NSCopying, NSMutableCopying> {
-    id mFirst;
-    id mSecond;
+    id  mFirst;
+    id  mSecond;
 }
+
+@property (nonatomic, readonly) id first;
+@property (nonatomic, readonly) id second;
 
 + (id)pair;
 + (id)pairWithFirst:(id)arg1 second:(id)arg2;

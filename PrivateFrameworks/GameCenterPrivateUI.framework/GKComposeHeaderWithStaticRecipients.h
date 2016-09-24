@@ -3,7 +3,7 @@
  */
 
 @interface GKComposeHeaderWithStaticRecipients : GKComposeHeaderField {
-    NSArray *_recipientNameStrings;
+    NSArray * _recipientNameStrings;
 }
 
 @property (nonatomic, retain) NSArray *recipientNameStrings;

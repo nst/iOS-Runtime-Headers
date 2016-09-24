@@ -3,12 +3,12 @@
  */
 
 @interface AWDWiProxBluetoothState : PBCodable <NSCopying> {
-    int _btState;
+    int  _btState;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int btState : 1; 
-    } _has;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) int btState;

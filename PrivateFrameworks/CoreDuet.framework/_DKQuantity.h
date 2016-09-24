@@ -3,8 +3,8 @@
  */
 
 @interface _DKQuantity : _DKObject <_DKHasComparableValue, _DKHasObjectType, _DKHasPrimaryValue> {
-    double _doubleValue;
-    _DKQuantityType *_quantityType;
+    double  _doubleValue;
+    _DKQuantityType * _quantityType;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,12 +15,12 @@
 @property (readonly) Class superclass;
 
 + (id)entityName;
++ (id)objectFromManagedObject:(id)arg1 readMetadata:(BOOL)arg2 cache:(id)arg3;
 + (id)quantityWithDouble:(double)arg1 type:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (int)compareValue:(id)arg1;
-- (BOOL)copyFromManagedObject:(id)arg1 readMetadata:(BOOL)arg2;
 - (BOOL)copyToManagedObject:(id)arg1;
 - (id)description;
 - (double)doubleValue;
@@ -32,7 +32,6 @@
 - (id)quantityType;
 - (void)setDoubleValue:(double)arg1;
 - (void)setQuantityType:(id)arg1;
-- (double)valueDouble;
-- (long long)valueInteger;
+- (id)stringValue;
 
 @end

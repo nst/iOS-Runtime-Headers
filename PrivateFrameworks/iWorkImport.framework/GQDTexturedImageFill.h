@@ -3,9 +3,9 @@
  */
 
 @interface GQDTexturedImageFill : NSObject <GQDNameMappable> {
-    GQDColor *mColor;
-    GQDFilteredImage *mFilteredImage;
-    int mTechnique;
+    GQDColor * mColor;
+    GQDFilteredImage * mFilteredImage;
+    int  mTechnique;
 }
 
 @property (readonly, copy) NSString *debugDescription;

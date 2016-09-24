@@ -3,9 +3,9 @@
  */
 
 @interface MFMutableFilterDataConsumer : MFBaseFilterDataConsumer <MFGuaranteedCollectingDataConsumer> {
-    MFLock *_consumerLock;
-    BOOL _isDone;
-    <MFGuaranteedCollectingDataConsumer> *_mainConsumer;
+    MFLock * _consumerLock;
+    BOOL  _isDone;
+    <MFGuaranteedCollectingDataConsumer> * _mainConsumer;
 }
 
 @property (readonly, copy) NSString *debugDescription;

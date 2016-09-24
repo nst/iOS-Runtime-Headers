@@ -3,7 +3,7 @@
  */
 
 @interface UITextInputStringTokenizer : NSObject <UITextInputTokenizer> {
-    UIResponder<UITextInput> *_textInput;
+    UIResponder<UITextInput> * _textInput;
 }
 
 @property (readonly, copy) NSString *debugDescription;

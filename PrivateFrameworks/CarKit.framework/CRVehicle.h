@@ -3,13 +3,13 @@
  */
 
 @interface CRVehicle : NSObject <NSSecureCoding> {
-    NSSet *_accessoryProtocols;
-    NSString *_bluetoothAddress;
-    NSString *_carplayWiFiUUID;
-    NSData *_certificateSerialNumber;
-    NSUUID *_identifier;
-    unsigned int _pairingStatus;
-    NSString *_vehicleName;
+    NSSet * _accessoryProtocols;
+    NSString * _bluetoothAddress;
+    NSString * _carplayWiFiUUID;
+    NSData * _certificateSerialNumber;
+    NSUUID * _identifier;
+    unsigned int  _pairingStatus;
+    NSString * _vehicleName;
 }
 
 @property (nonatomic, retain) NSSet *accessoryProtocols;
@@ -33,10 +33,12 @@
 - (id)description;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned int)hash;
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 certificateSerial:(id)arg2;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isPaired;
 - (void)mergeAttributesFromVehicle:(id)arg1;
 - (unsigned int)pairingStatus;

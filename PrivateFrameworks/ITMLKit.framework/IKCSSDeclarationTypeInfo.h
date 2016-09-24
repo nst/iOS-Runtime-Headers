@@ -3,8 +3,8 @@
  */
 
 @interface IKCSSDeclarationTypeInfo : NSObject {
-    NSString *_name;
-    unsigned int _type;
+    NSString * _name;
+    unsigned int  _type;
 }
 
 @property (nonatomic, retain) NSString *name;

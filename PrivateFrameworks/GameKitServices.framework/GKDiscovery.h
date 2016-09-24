@@ -3,7 +3,7 @@
  */
 
 @interface GKDiscovery : NSObject {
-    GKDiscoveryManager *_manager;
+    GKDiscoveryManager * _manager;
 }
 
 @property (nonatomic, retain) GKDiscoveryManager *manager;

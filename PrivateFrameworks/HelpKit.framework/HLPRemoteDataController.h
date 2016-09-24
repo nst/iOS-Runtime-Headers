@@ -3,10 +3,10 @@
  */
 
 @interface HLPRemoteDataController : NSObject {
-    NSURL *_URL;
-    HLPURLSession *_URLSession;
-    BOOL _hasLoaded;
-    BOOL _loading;
+    NSURL * _URL;
+    HLPURLSession * _URLSession;
+    BOOL  _hasLoaded;
+    BOOL  _loading;
 }
 
 @property (nonatomic, copy) NSURL *URL;

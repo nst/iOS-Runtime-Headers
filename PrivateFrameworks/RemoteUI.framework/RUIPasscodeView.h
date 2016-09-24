@@ -2,33 +2,35 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@interface RUIPasscodeView : RUIElement <PSPasscodeFieldDelegate, RUITableFooterDelegate> {
-    BOOL _appeared;
-    UITextField *_complexPasscodeField;
-    UIView *_containerView;
-    RUIElement *_footer;
-    UIView<RemoteUITableFooter> *_footerView;
-    UIColor *_foregroundColor;
-    RUIElement *_header;
-    NSString *_headerTitle;
-    UIView<RemoteUITableHeader> *_headerView;
-    int _keyboardAppearance;
-    unsigned int _numberOfEntryFields;
-    RUIObjectModel *_objectModel;
-    RUIPage *_page;
-    PSPasscodeField *_passcodeField;
-    unsigned int _passcodeValidationAttempts;
-    NSString *_pendingAutoFillToken;
-    NSString *_submittedPIN;
-    UILabel *_titleLabel;
+@interface RUIPasscodeView : RUIElement <CAAnimationDelegate, PSPasscodeFieldDelegate, RUITableFooterDelegate, RUITopLevelPageElement> {
+    RUIHTMLHeaderElement * _HTMLHeader;
+    RUIHTMLHeaderView * _HTMLHeaderView;
+    BOOL  _appeared;
+    UITextField * _complexPasscodeField;
+    UIView * _containerView;
+    RUIElement * _footer;
+    UIView<RemoteUITableFooter> * _footerView;
+    UIColor * _foregroundColor;
+    RUIHeaderElement * _header;
+    NSString * _headerTitle;
+    UIView<RUIHeader> * _headerView;
+    int  _keyboardAppearance;
+    unsigned int  _numberOfEntryFields;
+    RUIObjectModel * _objectModel;
+    RUIPage * _page;
+    PSPasscodeField * _passcodeField;
+    unsigned int  _passcodeValidationAttempts;
+    NSString * _pendingAutoFillToken;
+    NSString * _submittedPIN;
 }
 
+@property (nonatomic, retain) RUIHTMLHeaderElement *HTMLHeader;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) RUIElement *footer;
 @property (nonatomic, retain) UIColor *foregroundColor;
 @property (readonly) unsigned int hash;
-@property (nonatomic, retain) RUIElement *header;
+@property (nonatomic, retain) RUIHeaderElement *header;
 @property (nonatomic, copy) NSString *headerTitle;
 @property (nonatomic) int keyboardAppearance;
 @property (nonatomic) unsigned int numberOfEntryFields;
@@ -39,6 +41,8 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)HTMLHeader;
+- (id)HTMLHeaderView;
 - (void)_clearPasscode;
 - (void)_complexPasscodeFieldDidChange:(id)arg1;
 - (void)_doneButtonTapped:(id)arg1;
@@ -64,6 +68,7 @@
 - (void)populatePostbackDictionary:(id)arg1;
 - (void)setFooter:(id)arg1;
 - (void)setForegroundColor:(id)arg1;
+- (void)setHTMLHeader:(id)arg1;
 - (void)setHeader:(id)arg1;
 - (void)setHeaderTitle:(id)arg1;
 - (void)setKeyboardAppearance:(int)arg1;
@@ -75,6 +80,7 @@
 - (void)submitPIN;
 - (id)submittedPIN;
 - (id)titleLabel;
+- (id)view;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLayout;
 - (void)viewWillAppear:(BOOL)arg1;

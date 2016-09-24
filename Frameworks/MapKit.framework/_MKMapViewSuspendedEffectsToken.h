@@ -3,8 +3,8 @@
  */
 
 @interface _MKMapViewSuspendedEffectsToken : NSObject <_MKMapViewSuspendedEffectsToken> {
-    BOOL _invalidated;
-    MKMapView *_owner;
+    BOOL  _invalidated;
+    MKMapView * _owner;
 }
 
 @property (readonly, copy) NSString *debugDescription;

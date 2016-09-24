@@ -3,8 +3,8 @@
  */
 
 @interface HDObserverQueryServer : HDQueryServer {
-    NSNumber *_anchor;
-    BOOL _deliverOnUnlock;
+    NSNumber * _anchor;
+    BOOL  _deliverOnUnlock;
 }
 
 @property (nonatomic, readonly) NSNumber *anchor;

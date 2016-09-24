@@ -3,7 +3,7 @@
  */
 
 @interface ODITitlePoint : ODIHorizonalList3 {
-    NSString *mTitlePointPresentationName;
+    NSString * mTitlePointPresentationName;
 }
 
 - (void)dealloc;

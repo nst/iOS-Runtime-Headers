@@ -3,7 +3,7 @@
  */
 
 @interface _UIQuickLookActivity : UIActivity {
-    UIDocumentInteractionController *_documentInteractionController;
+    UIDocumentInteractionController * _documentInteractionController;
 }
 
 - (void).cxx_destruct;

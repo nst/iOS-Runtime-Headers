@@ -9,11 +9,11 @@
         struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int> > { 
             unsigned int *__first_; 
         } __end_cap_; 
-    } mFilterOffsets;
-    BOOL mIsEnabled;
-    BOOL mNeedsFormulaRewriteForImport;
-    NSArray *mRules;
-    int mType;
+    }  mFilterOffsets;
+    BOOL  mIsEnabled;
+    BOOL  mNeedsFormulaRewriteForImport;
+    NSArray * mRules;
+    int  mType;
 }
 
 @property (nonatomic, readonly) BOOL canAddRules;

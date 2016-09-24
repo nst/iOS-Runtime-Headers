@@ -3,8 +3,8 @@
  */
 
 @interface SKStarRatingAlertViewDelegate : NSObject <UIAlertViewDelegate> {
-    SKStarRatingAlertView *_alertView;
-    id /* block */ _completionBlock;
+    SKStarRatingAlertView * _alertView;
+    id /* block */  _completionBlock;
 }
 
 @property (readonly, copy) NSString *debugDescription;

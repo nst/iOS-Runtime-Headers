@@ -3,10 +3,10 @@
  */
 
 @interface FBSystemServiceServer : BSBaseXPCServer <FBSystemServiceServer> {
-    NSMutableSet *_completedMilestones;
-    NSMutableDictionary *_facilitiesByIdentifier;
-    NSMutableSet *_pendingConnects;
-    NSMutableDictionary *_suspendedFacilitiesByIdentifier;
+    NSMutableSet * _completedMilestones;
+    NSMutableDictionary * _facilitiesByIdentifier;
+    NSMutableSet * _pendingConnects;
+    NSMutableDictionary * _suspendedFacilitiesByIdentifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -30,6 +30,6 @@
 - (void)queue_clientRemoved:(id)arg1;
 - (void)queue_handleMessage:(id)arg1 client:(id)arg2;
 - (void)removeFacility:(id)arg1;
-- (void)sendMessage:(id)arg1 withType:(long long)arg2 toClients:(id)arg3;
+- (void)sendMessage:(id)arg1 withType:(int)arg2 toClients:(id)arg3;
 
 @end

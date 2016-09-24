@@ -3,10 +3,10 @@
  */
 
 @interface GEOCompanionStep : PBCodable <NSCopying> {
-    unsigned int _distance;
-    GEOCompanionDriveStep *_driveStep;
-    unsigned int _endCoordinateIndex;
-    GEOCompanionFerryStep *_ferryStep;
+    unsigned int  _distance;
+    GEOCompanionDriveStep * _driveStep;
+    unsigned int  _endCoordinateIndex;
+    GEOCompanionFerryStep * _ferryStep;
     struct { 
         unsigned int distance : 1; 
         unsigned int endCoordinateIndex : 1; 
@@ -14,13 +14,14 @@
         unsigned int startCoordinateIndex : 1; 
         unsigned int stepID : 1; 
         unsigned int time : 1; 
-    } _has;
-    unsigned int _maneuverStartCoordinateIndex;
-    NSString *_roadName;
-    unsigned int _startCoordinateIndex;
-    unsigned int _stepID;
-    unsigned int _time;
-    GEOCompanionWalkStep *_walkStep;
+    }  _has;
+    NSMutableArray * _instructionWithAlternatives;
+    unsigned int  _maneuverStartCoordinateIndex;
+    NSString * _roadName;
+    unsigned int  _startCoordinateIndex;
+    unsigned int  _stepID;
+    unsigned int  _time;
+    GEOCompanionWalkStep * _walkStep;
 }
 
 @property (nonatomic) unsigned int distance;
@@ -37,6 +38,7 @@
 @property (nonatomic) BOOL hasStepID;
 @property (nonatomic) BOOL hasTime;
 @property (nonatomic, readonly) BOOL hasWalkStep;
+@property (nonatomic, retain) NSMutableArray *instructionWithAlternatives;
 @property (nonatomic) unsigned int maneuverStartCoordinateIndex;
 @property (nonatomic, retain) NSString *roadName;
 @property (nonatomic) unsigned int startCoordinateIndex;
@@ -44,6 +46,10 @@
 @property (nonatomic) unsigned int time;
 @property (nonatomic, retain) GEOCompanionWalkStep *walkStep;
 
++ (Class)instructionWithAlternativesType;
+
+- (void)addInstructionWithAlternatives:(id)arg1;
+- (void)clearInstructionWithAlternatives;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -65,7 +71,10 @@
 - (BOOL)hasTime;
 - (BOOL)hasWalkStep;
 - (unsigned int)hash;
-- (id)initWithStep:(id)arg1 route:(id)arg2;
+- (id)initWithStep:(id)arg1 route:(id)arg2 stringFormatter:(id)arg3;
+- (id)instructionWithAlternatives;
+- (id)instructionWithAlternativesAtIndex:(unsigned int)arg1;
+- (unsigned int)instructionWithAlternativesCount;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)maneuverStartCoordinateIndex;
 - (id)maneuverStep;
@@ -82,6 +91,7 @@
 - (void)setHasStartCoordinateIndex:(BOOL)arg1;
 - (void)setHasStepID:(BOOL)arg1;
 - (void)setHasTime:(BOOL)arg1;
+- (void)setInstructionWithAlternatives:(id)arg1;
 - (void)setManeuverStartCoordinateIndex:(unsigned int)arg1;
 - (void)setRoadName:(id)arg1;
 - (void)setStartCoordinateIndex:(unsigned int)arg1;

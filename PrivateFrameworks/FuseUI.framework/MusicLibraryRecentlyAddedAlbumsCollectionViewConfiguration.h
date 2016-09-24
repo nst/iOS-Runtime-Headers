@@ -3,7 +3,7 @@
  */
 
 @interface MusicLibraryRecentlyAddedAlbumsCollectionViewConfiguration : MusicLibraryAlbumsCollectionViewConfiguration {
-    unsigned int _entityLimit;
+    unsigned int  _entityLimit;
 }
 
 @property (nonatomic, readonly) unsigned int entityLimit;

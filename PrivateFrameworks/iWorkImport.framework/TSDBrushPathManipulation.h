@@ -3,13 +3,13 @@
  */
 
 @interface TSDBrushPathManipulation : TSDPathManipulation {
-    struct CGPath { } *mBrushStroke;
-    NSMutableArray *mMiddleSections;
-    float mRepeatLength;
-    NSMutableDictionary *mSections;
-    float mSmallLimitWidth;
-    NSMutableArray *mSmallSections;
-    BOOL mSplitAtSharpAngles;
+    struct CGPath { } * mBrushStroke;
+    NSMutableArray * mMiddleSections;
+    double  mRepeatLength;
+    NSMutableDictionary * mSections;
+    double  mSmallLimitWidth;
+    NSMutableArray * mSmallSections;
+    BOOL  mSplitAtSharpAngles;
 }
 
 @end

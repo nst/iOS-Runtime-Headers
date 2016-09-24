@@ -3,10 +3,10 @@
  */
 
 @interface PSEditingPane : UIView {
-    id _delegate;
-    unsigned int _requiresKeyboard;
-    PSSpecifier *_specifier;
-    UIViewController *_viewController;
+    id  _delegate;
+    unsigned int  _requiresKeyboard;
+    PSSpecifier * _specifier;
+    UIViewController * _viewController;
 }
 
 @property (nonatomic) UIViewController *viewController;
@@ -18,14 +18,14 @@
 - (void)addNewValue;
 - (BOOL)changed;
 - (id)childViewControllerForHostingViewController;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentRect;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)doneEditing;
 - (void)editMode;
 - (BOOL)handlesDoneButton;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)insetContent;
-- (void)layoutInsetContent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)layoutInsetContent:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)preferenceSpecifier;
 - (id)preferenceValue;
 - (BOOL)requiresKeyboard;

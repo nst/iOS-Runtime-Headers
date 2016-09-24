@@ -3,23 +3,23 @@
  */
 
 @interface IDSAcceptMessage : IDSFaceTimeMessage <NSCopying> {
-    NSData *_peerBlob;
-    NSString *_peerID;
-    NSData *_peerNATIP;
-    NSNumber *_peerNATType;
-    NSData *_peerPushToken;
-    NSData *_peerRelayIP;
-    NSNumber *_peerRelayPort;
-    NSData *_relayConnectionId;
-    NSData *_relayTokenAllocReq;
-    NSData *_relayTransactionIdAlloc;
-    NSNumber *_relayType;
-    NSData *_selfBlob;
-    NSData *_selfNATIP;
-    NSNumber *_selfNATType;
-    NSData *_selfPushToken;
-    NSData *_selfRelayIP;
-    NSNumber *_selfRelayPort;
+    NSData * _peerBlob;
+    NSString * _peerID;
+    NSData * _peerNATIP;
+    NSNumber * _peerNATType;
+    NSData * _peerPushToken;
+    NSData * _peerRelayIP;
+    NSNumber * _peerRelayPort;
+    NSData * _relayConnectionId;
+    NSData * _relayTokenAllocReq;
+    NSData * _relayTransactionIdAlloc;
+    NSNumber * _relayType;
+    NSData * _selfBlob;
+    NSData * _selfNATIP;
+    NSNumber * _selfNATType;
+    NSData * _selfPushToken;
+    NSData * _selfRelayIP;
+    NSNumber * _selfRelayPort;
 }
 
 @property (copy) NSData *peerBlob;

@@ -3,16 +3,16 @@
  */
 
 @interface SCNProgram : NSObject <NSCopying, NSSecureCoding> {
-    NSMutableDictionary *_bufferBindings;
-    id _delegate;
-    NSString *_fragmentFunctionName;
-    NSString *_fragmentShader;
-    id _library;
-    NSString *_name;
-    BOOL _opaque;
-    NSMutableDictionary *_semanticInfos;
-    NSString *_vertexFunctionName;
-    NSString *_vertexShader;
+    NSMutableDictionary * _bufferBindings;
+    id  _delegate;
+    NSString * _fragmentFunctionName;
+    NSString * _fragmentShader;
+    id  _library;
+    NSString * _name;
+    BOOL  _opaque;
+    NSMutableDictionary * _semanticInfos;
+    NSString * _vertexFunctionName;
+    NSString * _vertexShader;
 }
 
 @property (nonatomic) <SCNProgramDelegate> *delegate;

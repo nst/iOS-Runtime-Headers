@@ -3,8 +3,8 @@
  */
 
 @interface DeferredPUCameraApplicationViewController : CMKApplicationViewController {
-    DeferredFrameworkLoader *_deferredLoader;
-    CMKCameraRollSpec *_spec;
+    DeferredFrameworkLoader * _deferredLoader;
+    CMKCameraRollSpec * _spec;
 }
 
 @property (nonatomic, retain) DeferredFrameworkLoader *deferredLoader;

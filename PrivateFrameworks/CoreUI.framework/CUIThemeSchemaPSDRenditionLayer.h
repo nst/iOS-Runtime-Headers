@@ -3,7 +3,7 @@
  */
 
 @interface CUIThemeSchemaPSDRenditionLayer : CUIThemeSchemaPSDLayer {
-    CUIThemeSchemaRendition *rendition;
+    CUIThemeSchemaRendition * rendition;
 }
 
 @property (nonatomic, retain) CUIThemeSchemaRendition *rendition;

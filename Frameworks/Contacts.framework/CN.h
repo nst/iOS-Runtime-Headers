@@ -11,6 +11,7 @@
 + (id)allImageDataProperties;
 + (id)allImageDataPropertyKeys;
 + (id)allNameComponentRelatedProperties;
++ (id)allPhoneticNameComponentProperties;
 + (id)alwaysFetchedProperties;
 + (BOOL)areValidDayComponents:(id)arg1 error:(id*)arg2;
 + (BOOL)areValidGregorianDayComponents:(id)arg1 error:(id*)arg2;
@@ -27,7 +28,6 @@
 + (id)containerNameDescription;
 + (id)containerTypeDescription;
 + (id)containeriOSLegacyIdentifierDescription;
-+ (id)creationDateDescription;
 + (id)cropRectDescription;
 + (id /* block */)dateComponentsFromDictionaryTransform;
 + (id /* block */)dateComponentsToDictionaryTransform;
@@ -61,6 +61,7 @@
 + (id)localizedPhoneticNameDelimiterForContact:(id)arg1;
 + (id)mapsDataDescription;
 + (id)middleNameDescription;
++ (id)modificationDateDescription;
 + (id)multiValueContactProperties;
 + (id)namePrefixDescription;
 + (id)nameSuffixDescription;
@@ -79,11 +80,14 @@
 + (id)phoneticFamilyNameDescription;
 + (id)phoneticGivenNameDescription;
 + (id)phoneticMiddleNameDescription;
++ (id)phoneticOrganizationNameDescription;
 + (id /* block */)postalAddressFromDictionaryTransform;
 + (id /* block */)postalAddressToDictionaryTransform;
 + (id)postalAddressesDescription;
++ (id)preferredApplePersonaIdentifierDescription;
 + (id)preferredForImageDescription;
 + (id)preferredForNameDescription;
++ (id)preferredLikenessSourceDescription;
 + (id)previousFamilyNameDescription;
 + (id)pronunciationFamilyNameDescription;
 + (id)pronunciationGivenNameDescription;
@@ -98,8 +102,6 @@
 + (id /* block */)socialProfileToDictionaryTransform;
 + (id /* block */)socialProfileToFoundationProfileTransform;
 + (id)socialProfilesDescription;
-+ (id)sortingFamilyNameDescription;
-+ (id)sortingGivenNameDescription;
 + (id)textAlertDescription;
 + (id)thumbnailImageDataDescription;
 + (id)unifyContactMatchInfos:(id)arg1 linkedContacts:(id)arg2;

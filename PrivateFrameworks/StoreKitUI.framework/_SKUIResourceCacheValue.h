@@ -3,8 +3,8 @@
  */
 
 @interface _SKUIResourceCacheValue : NSObject {
-    id _requestCacheKey;
-    id _resource;
+    id  _requestCacheKey;
+    id  _resource;
 }
 
 @property (nonatomic, readonly) id requestCacheKey;

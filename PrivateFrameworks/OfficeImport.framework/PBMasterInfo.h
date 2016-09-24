@@ -3,15 +3,15 @@
  */
 
 @interface PBMasterInfo : NSObject {
-    NSDictionary *mLayoutMap;
-    unsigned int mMainPbRef;
-    PDSlideMaster *mSlideMaster;
-    struct ChVector<PBReaderMasterStyleInfo> { struct PBReaderMasterStyleInfo {} *x1; struct PBReaderMasterStyleInfo {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; } *mSrcTextStyling;
-    NSMutableArray *mTgtSlideLayoutArray;
-    unsigned int mTitlePbRef;
-    BOOL mUseXmlBlobs;
-    NSMutableDictionary *mXmlLayoutMap;
-    unsigned int mXmlMainMasterId;
+    NSDictionary * mLayoutMap;
+    unsigned int  mMainPbRef;
+    PDSlideMaster * mSlideMaster;
+    struct ChVector<PBReaderMasterStyleInfo> { struct PBReaderMasterStyleInfo {} *x1; struct PBReaderMasterStyleInfo {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; } * mSrcTextStyling;
+    NSMutableArray * mTgtSlideLayoutArray;
+    unsigned int  mTitlePbRef;
+    BOOL  mUseXmlBlobs;
+    NSMutableDictionary * mXmlLayoutMap;
+    unsigned int  mXmlMainMasterId;
 }
 
 @property (nonatomic) BOOL useXmlBlobs;

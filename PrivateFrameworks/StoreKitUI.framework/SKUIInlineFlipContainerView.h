@@ -3,8 +3,8 @@
  */
 
 @interface SKUIInlineFlipContainerView : UIView {
-    UIView *_backView;
-    UIView *_frontView;
+    UIView * _backView;
+    UIView * _frontView;
 }
 
 - (void).cxx_destruct;

@@ -3,31 +3,31 @@
  */
 
 @interface OISFUZipEntry : OISFUDataRepresentation {
-    OISFUDataRepresentation<SFUZipArchiveDataRepresentation> *mArchiveDataRepresentation;
-    unsigned long long mCompressedSize;
-    int mCompressionMethod;
-    unsigned int mCrc;
-    OISFUCryptoKey *mCryptoKey;
-    unsigned long long mDataOffset;
-    unsigned long long mEncodedLength;
-    BOOL mHasDataOffset;
-    BOOL mHasEncodedLength;
-    unsigned long long mOffset;
-    unsigned long long mUncompressedSize;
+    OISFUDataRepresentation<SFUZipArchiveDataRepresentation> * mArchiveDataRepresentation;
+    unsigned int  mCompressedSize;
+    int  mCompressionMethod;
+    unsigned int  mCrc;
+    OISFUCryptoKey * mCryptoKey;
+    unsigned int  mDataOffset;
+    unsigned int  mEncodedLength;
+    BOOL  mHasDataOffset;
+    BOOL  mHasEncodedLength;
+    unsigned int  mOffset;
+    unsigned int  mUncompressedSize;
 }
 
-- (unsigned long long)backingFileDataOffset;
+- (unsigned int)backingFileDataOffset;
 - (id)backingFilePath;
-- (unsigned long long)calculateEncodedLength;
+- (unsigned int)calculateEncodedLength;
 - (void)copyToFile:(id)arg1;
 - (unsigned int)crc;
 - (id)data;
-- (long long)dataLength;
-- (unsigned long long)dataOffset;
+- (int)dataLength;
+- (unsigned int)dataOffset;
 - (void)dealloc;
-- (long long)encodedLength;
+- (int)encodedLength;
 - (id)initFromCentralFileHeader:(const char *)arg1 dataRepresentation:(id)arg2;
-- (id)initWithDataRepresentation:(id)arg1 compressionMethod:(int)arg2 compressedSize:(unsigned long long)arg3 uncompressedSize:(unsigned long long)arg4 offset:(unsigned long long)arg5 crc:(unsigned int)arg6;
+- (id)initWithDataRepresentation:(id)arg1 compressionMethod:(int)arg2 compressedSize:(unsigned int)arg3 uncompressedSize:(unsigned int)arg4 offset:(unsigned int)arg5 crc:(unsigned int)arg6;
 - (id)inputStream;
 - (BOOL)isBackedByFile;
 - (BOOL)isCompressed;
@@ -36,6 +36,6 @@
 - (void)readZip64ExtraField:(const char *)arg1 size:(unsigned long)arg2;
 - (void)setCompressionFlags:(unsigned short)arg1;
 - (void)setCryptoKey:(id)arg1;
-- (void)setDataLength:(long long)arg1;
+- (void)setDataLength:(int)arg1;
 
 @end

@@ -3,11 +3,11 @@
  */
 
 @interface GEOCompanionRouteStatus : PBCodable <NSCopying> {
-    unsigned int _distanceRemainingOnRoute;
-    unsigned int _distanceToManeuver;
-    unsigned int _distanceToRoute;
-    int _feedbackType;
-    BOOL _guidancePromptsEnabled;
+    unsigned int  _distanceRemainingOnRoute;
+    unsigned int  _distanceToManeuver;
+    unsigned int  _distanceToRoute;
+    int  _feedbackType;
+    BOOL  _guidancePromptsEnabled;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int distanceRemainingOnRoute : 1; 
@@ -19,20 +19,20 @@
         unsigned int routeLocationOffset : 1; 
         unsigned int stepID : 1; 
         unsigned int guidancePromptsEnabled : 1; 
-    } _has;
-    GEOLocation *_location;
-    unsigned int _remainingTime;
-    NSData *_routeID;
-    unsigned int _routeLocationIndex;
-    float _routeLocationOffset;
-    GEOLatLng *_routeMatchCoordinate;
+    }  _has;
+    GEOLocation * _location;
+    unsigned int  _remainingTime;
+    NSData * _routeID;
+    unsigned int  _routeLocationIndex;
+    double  _routeLocationOffset;
+    GEOLatLng * _routeMatchCoordinate;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _selectedRideIndexs;
-    unsigned int _stepID;
-    double _timestamp;
+    }  _selectedRideIndexs;
+    unsigned int  _stepID;
+    double  _timestamp;
 }
 
 @property (nonatomic) unsigned int distanceRemainingOnRoute;
@@ -63,7 +63,7 @@
 @property (nonatomic) unsigned int remainingTime;
 @property (nonatomic, retain) NSData *routeID;
 @property (nonatomic) unsigned int routeLocationIndex;
-@property (nonatomic) float routeLocationOffset;
+@property (nonatomic) double routeLocationOffset;
 @property (nonatomic, retain) GEOLatLng *routeMatchCoordinate;
 @property (nonatomic, readonly) unsigned int*selectedRideIndexs;
 @property (nonatomic, readonly) unsigned int selectedRideIndexsCount;
@@ -71,6 +71,7 @@
 @property (nonatomic) unsigned int stepID;
 @property (nonatomic) double timestamp;
 
+- (int)StringAsFeedbackType:(id)arg1;
 - (void)_updateClusteredSectionSelectedRideIndicesFromRoute:(id)arg1;
 - (void)addSelectedRideIndex:(unsigned int)arg1;
 - (void)clearSelectedRideIndexs;
@@ -85,6 +86,7 @@
 - (unsigned int)effectiveDistanceToManeuver;
 - (unsigned int)effectiveStepID;
 - (int)feedbackType;
+- (id)feedbackTypeAsString:(int)arg1;
 - (BOOL)guidancePromptsEnabled;
 - (BOOL)hasDistanceRemainingOnRoute;
 - (BOOL)hasDistanceToManeuver;

@@ -3,7 +3,7 @@
  */
 
 @interface CNFRegCreateAccountController : CNFRegAccountWebViewController {
-    <CNFRegCreateAccountControllerDelegate> *_delegate;
+    <CNFRegCreateAccountControllerDelegate> * _delegate;
 }
 
 @property (nonatomic) <CNFRegCreateAccountControllerDelegate> *delegate;

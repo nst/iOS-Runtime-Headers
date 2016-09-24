@@ -3,13 +3,14 @@
  */
 
 @interface MPSkipIntervalCommand : MPRemoteCommand {
-    NSArray *_preferredIntervals;
+    NSArray * _preferredIntervals;
 }
 
 @property (nonatomic, copy) NSArray *preferredIntervals;
 
 - (void).cxx_destruct;
 - (id)_mediaRemoteCommandInfoOptions;
+- (id)newCommandEventWithInterval:(double)arg1;
 - (id)preferredIntervals;
 - (void)setPreferredIntervals:(id)arg1;
 

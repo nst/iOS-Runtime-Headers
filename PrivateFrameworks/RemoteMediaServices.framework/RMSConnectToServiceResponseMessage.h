@@ -3,13 +3,13 @@
  */
 
 @interface RMSConnectToServiceResponseMessage : PBCodable <NSCopying> {
-    RMSControlInterfaceMessage *_controlInterface;
+    RMSControlInterfaceMessage * _controlInterface;
     struct { 
         unsigned int responseCode : 1; 
         unsigned int sessionIdentifier : 1; 
-    } _has;
-    int _responseCode;
-    int _sessionIdentifier;
+    }  _has;
+    int  _responseCode;
+    int  _sessionIdentifier;
 }
 
 @property (nonatomic, retain) RMSControlInterfaceMessage *controlInterface;

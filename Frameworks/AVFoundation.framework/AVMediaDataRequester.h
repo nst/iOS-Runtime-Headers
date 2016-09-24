@@ -3,9 +3,9 @@
  */
 
 @interface AVMediaDataRequester : NSObject {
-    <AVMediaDataRequesterConsumer> *_mediaDataConsumer;
-    id /* block */ _requestBlock;
-    NSObject<OS_dispatch_queue> *_requestQueue;
+    <AVMediaDataRequesterConsumer> * _mediaDataConsumer;
+    id /* block */  _requestBlock;
+    NSObject<OS_dispatch_queue> * _requestQueue;
 }
 
 @property (nonatomic, readonly) id /* block */ requestBlock;

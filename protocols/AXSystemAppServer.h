@@ -9,8 +9,10 @@
 
 - (int)activeInterfaceOrientation;
 - (void)activeInterfaceOrientation:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
+- (BOOL)dismissSiri;
 - (BOOL)isAppSwitcherVisible;
 - (BOOL)isControlCenterVisible;
+- (BOOL)isMediaPlaying;
 - (BOOL)isNotificationCenterVisible;
 - (BOOL)isNowPlayingUIVisible;
 - (BOOL)isReceivingAirPlay;
@@ -19,7 +21,10 @@
 - (BOOL)isSiriTalkingOrListening;
 - (BOOL)isSiriVisible;
 - (BOOL)isSoftwareUpdateUIVisible;
+- (BOOL)isStickyNotificationVisible;
+- (BOOL)openSiri;
 - (int)pid;
 - (void)pid:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
+- (void)wakeUpDeviceIfNecessary;
 
 @end

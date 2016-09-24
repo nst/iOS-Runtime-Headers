@@ -3,7 +3,7 @@
  */
 
 @interface NSHTTPCookieStorage : NSObject {
-    NSHTTPCookieStorageInternal *_internal;
+    NSHTTPCookieStorageInternal * _internal;
 }
 
 @property unsigned int cookieAcceptPolicy;
@@ -11,6 +11,7 @@
 
 // Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
 
++ (id)_csff:(id)arg1;
 + (id)_groupContainerCookieStorages;
 + (id)_groupContainerStoragesLock;
 + (void)_setSharedHTTPCookieStorage:(id)arg1;
@@ -21,6 +22,9 @@
 - (struct OpaqueCFHTTPCookieStorage { }*)_CFHTTPCookieStorage;
 - (struct OpaqueCFHTTPCookieStorage { }*)_cookieStorage;
 - (id)_cookiesForURL:(id)arg1 mainDocumentURL:(id)arg2;
+- (void)_getCookieStoragePartitionsCompletionHandler:(id /* block */)arg1;
+- (void)_getCookiesForPartition:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_getCookiesForURL:(id)arg1 mainDocumentURL:(id)arg2 partition:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)_initWithCFHTTPCookieStorage:(struct OpaqueCFHTTPCookieStorage { }*)arg1;
 - (id)_initWithIdentifier:(id)arg1 private:(bool)arg2;
 - (void)_saveCookies;
@@ -50,5 +54,6 @@
 
 - (void)webui_applySafariCookieAcceptPolicy;
 - (void)webui_migrateSafariCookieAcceptPolicy;
+- (id)webui_safariCookieAcceptPolicy;
 
 @end

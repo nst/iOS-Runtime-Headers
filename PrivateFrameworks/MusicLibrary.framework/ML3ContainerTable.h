@@ -3,7 +3,7 @@
  */
 
 @interface ML3ContainerTable : ML3DatabaseTable {
-    NSArray *_columns;
+    NSArray * _columns;
 }
 
 - (void).cxx_destruct;

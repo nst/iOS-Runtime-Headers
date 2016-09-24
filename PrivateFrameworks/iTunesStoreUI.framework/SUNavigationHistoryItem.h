@@ -3,8 +3,8 @@
  */
 
 @interface SUNavigationHistoryItem : NSObject <NSCopying> {
-    NSString *_title;
-    SSURLRequestProperties *_urlRequestProperties;
+    NSString * _title;
+    SSURLRequestProperties * _urlRequestProperties;
 }
 
 @property (nonatomic, readonly) SSURLRequestProperties *URLRequestProperties;

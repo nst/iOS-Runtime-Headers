@@ -3,10 +3,10 @@
  */
 
 @interface MFDADeliveryConsumer : MFDAMailAccountConsumer <DAMessageSendConsumer> {
-    unsigned int _bytesRead;
-    unsigned int _bytesWritten;
-    MFError *_error;
-    int _status;
+    unsigned int  _bytesRead;
+    unsigned int  _bytesWritten;
+    MFError * _error;
+    int  _status;
 }
 
 @property (nonatomic, readonly) unsigned int bytesRead;

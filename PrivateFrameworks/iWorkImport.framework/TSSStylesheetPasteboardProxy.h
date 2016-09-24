@@ -3,10 +3,10 @@
  */
 
 @interface TSSStylesheetPasteboardProxy : TSPObject {
-    TSUMutableRetainedPointerSet *mReferencedStyles;
-    NSObject<OS_dispatch_queue> *mReferencedStylesQueue;
-    BOOL mSelfArchiving;
-    TSSStylesheet *mStylesheet;
+    TSUMutableRetainedPointerSet * mReferencedStyles;
+    NSObject<OS_dispatch_queue> * mReferencedStylesQueue;
+    BOOL  mSelfArchiving;
+    TSSStylesheet * mStylesheet;
 }
 
 - (void)addStyleReference:(id)arg1;

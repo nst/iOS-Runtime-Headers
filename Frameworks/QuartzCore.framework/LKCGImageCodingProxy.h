@@ -3,7 +3,7 @@
  */
 
 @interface LKCGImageCodingProxy : CACodingProxy {
-    struct CGImage { } *_image;
+    struct CGImage { } * _image;
 }
 
 - (void)dealloc;

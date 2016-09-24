@@ -3,10 +3,10 @@
  */
 
 @interface WCSessionFileTransfer : NSObject <NSSecureCoding> {
-    WCSessionFile *_file;
-    NSError *_transferError;
-    NSString *_transferIdentifier;
-    BOOL _transferring;
+    WCSessionFile * _file;
+    NSError * _transferError;
+    NSString * _transferIdentifier;
+    BOOL  _transferring;
 }
 
 @property (nonatomic, readonly) WCSessionFile *file;

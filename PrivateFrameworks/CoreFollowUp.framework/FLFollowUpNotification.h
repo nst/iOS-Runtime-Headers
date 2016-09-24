@@ -3,14 +3,14 @@
  */
 
 @interface FLFollowUpNotification : NSObject <NSSecureCoding> {
-    FLFollowUpAction *_activateAction;
-    FLFollowUpAction *_clearAction;
-    FLFollowUpAction *_dismissAction;
-    NSString *_informativeText;
-    NSDate *_relevanceDate;
-    unsigned int _sqlID;
-    NSString *_title;
-    NSString *_unlockActionLabel;
+    FLFollowUpAction * _activateAction;
+    FLFollowUpAction * _clearAction;
+    FLFollowUpAction * _dismissAction;
+    NSString * _informativeText;
+    NSDate * _relevanceDate;
+    unsigned int  _sqlID;
+    NSString * _title;
+    NSString * _unlockActionLabel;
 }
 
 @property (nonatomic, retain) FLFollowUpAction *activateAction;

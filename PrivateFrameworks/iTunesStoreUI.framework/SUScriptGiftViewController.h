@@ -3,8 +3,8 @@
  */
 
 @interface SUScriptGiftViewController : SUScriptViewController {
-    int _giftCategory;
-    SKUIItem *_item;
+    int  _giftCategory;
+    SKUIItem * _item;
 }
 
 @property (nonatomic, readonly) int giftCategoryApps;

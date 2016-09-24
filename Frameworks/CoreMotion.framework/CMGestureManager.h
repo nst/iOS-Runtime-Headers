@@ -3,7 +3,7 @@
  */
 
 @interface CMGestureManager : NSObject {
-    id _internal;
+    id  _internal;
 }
 
 @property (copy) id /* block */ gestureHandler;

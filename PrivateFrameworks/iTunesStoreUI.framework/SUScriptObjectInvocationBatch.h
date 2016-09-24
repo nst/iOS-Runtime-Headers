@@ -3,10 +3,10 @@
  */
 
 @interface SUScriptObjectInvocationBatch : NSObject {
-    NSMutableArray *_invocationQueue;
-    NSLock *_lock;
-    struct __CFDictionary { } *_proxies;
-    SUScriptObject *_rootObject;
+    NSMutableArray * _invocationQueue;
+    NSLock * _lock;
+    struct __CFDictionary { } * _proxies;
+    SUScriptObject * _rootObject;
 }
 
 @property SUScriptObject *rootObject;

@@ -3,11 +3,11 @@
  */
 
 @interface MFDADeferredMessageMoveOperation : MFOfflineCacheOperation <MFDAOfflineCacheOperation> {
-    NSString *_destinationMailboxID;
-    NSArray *_originalFlags;
-    NSString *_sourceMailboxID;
-    NSArray *_sourceRemoteIDs;
-    NSArray *_temporaryRemoteIDs;
+    NSString * _destinationMailboxID;
+    NSArray * _originalFlags;
+    NSString * _sourceMailboxID;
+    NSArray * _sourceRemoteIDs;
+    NSArray * _temporaryRemoteIDs;
 }
 
 - (void)dealloc;

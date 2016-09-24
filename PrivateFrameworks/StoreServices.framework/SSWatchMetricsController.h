@@ -3,9 +3,9 @@
  */
 
 @interface SSWatchMetricsController : NSObject {
-    SSXPCConnection *_connection;
-    SSWatchMetricsConfiguration *_metricsConfiguration;
-    NSObject<OS_dispatch_queue> *_serialQueue;
+    SSXPCConnection * _connection;
+    SSWatchMetricsConfiguration * _metricsConfiguration;
+    NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
 @property (nonatomic, copy) SSWatchMetricsConfiguration *metricsConfiguration;

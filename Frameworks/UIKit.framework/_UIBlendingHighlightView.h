@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIBlendingHighlightView : UIView <UIAlertControllerBackgroundView> {
-    UIView *_colorBurnView;
-    UIView *_plusDView;
+@interface _UIBlendingHighlightView : UIView <UIInterfaceActionVisualBackgroundDisplaying, UIInterfaceActionVisualGroupBackgroundDisplaying> {
+    NSMutableArray * _blendingViews;
+    double  _cornerRadius;
 }
 
-@property float cornerRadius;
+@property (nonatomic) double cornerRadius;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -18,10 +18,11 @@
 
 - (void).cxx_destruct;
 - (float)cornerRadius;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 colorBurnColor:(id)arg2 plusDColor:(id)arg3;
+- (id)initWithCompositingBurnColor:(id)arg1 plusDColor:(id)arg2;
+- (id)initWithTopLevelFilters:(id)arg1 compositingColors:(id)arg2 compositingFilterModes:(id)arg3;
 - (void)layoutSubviews;
 - (void)setCornerRadius:(float)arg1;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setPressed:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setHighlighted:(BOOL)arg1;
+- (void)setPressed:(BOOL)arg1;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface PTSChoiceViewController : UITableViewController <PTSRowObserver> {
-    PTSChoiceRow *_row;
-    NSIndexPath *_valueIndexPath;
+    PTSChoiceRow * _row;
+    NSIndexPath * _valueIndexPath;
 }
 
 @property (readonly, copy) NSString *debugDescription;

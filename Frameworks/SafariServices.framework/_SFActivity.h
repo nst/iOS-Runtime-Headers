@@ -3,7 +3,7 @@
  */
 
 @interface _SFActivity : UIActivity {
-    <_SFActivityDelegate> *_delegate;
+    <_SFActivityDelegate> * _delegate;
 }
 
 @property (nonatomic) <_SFActivityDelegate> *delegate;

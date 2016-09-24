@@ -3,11 +3,11 @@
  */
 
 @interface WBSFeedParser : NSObject <NSCopying, NSXMLParserDelegate> {
-    NSData *_data;
-    <WBSFeedParserDelegate> *_delegate;
-    NSMutableArray *_elementStack;
-    NSObject<OS_dispatch_queue> *_parsingQueue;
-    WBSFeedElement *_root;
+    NSData * _data;
+    <WBSFeedParserDelegate> * _delegate;
+    NSMutableArray * _elementStack;
+    NSObject<OS_dispatch_queue> * _parsingQueue;
+    WBSFeedElement * _root;
 }
 
 @property (readonly, copy) NSString *debugDescription;

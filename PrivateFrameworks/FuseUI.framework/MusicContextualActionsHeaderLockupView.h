@@ -3,23 +3,23 @@
  */
 
 @interface MusicContextualActionsHeaderLockupView : MusicEntityHorizontalLockupView {
-    UIImageView *_disclosureImageView;
-    float _downloadProgress;
-    MusicDownloadProgressButton *_downloadProgressButton;
-    int _downloadProgressType;
-    MusicContextualActionsHeaderBlendingHighlightView *_highlightView;
-    BOOL _highlighted;
-    UIButton *_likeButton;
-    unsigned int _likeState;
-    UIButton *_radioButton;
-    UIButton *_shareButton;
-    BOOL _supportsRadio;
-    BOOL _supportsSelection;
-    BOOL _supportsSharing;
+    UIImageView * _disclosureImageView;
+    double  _downloadProgress;
+    MusicDownloadProgressButton * _downloadProgressButton;
+    int  _downloadProgressType;
+    MusicContextualActionsHeaderBlendingHighlightView * _highlightView;
+    BOOL  _highlighted;
+    UIButton * _likeButton;
+    unsigned int  _likeState;
+    UIButton * _radioButton;
+    UIButton * _shareButton;
+    BOOL  _supportsRadio;
+    BOOL  _supportsSelection;
+    BOOL  _supportsSharing;
 }
 
 @property (nonatomic) <MusicContextualActionsHeaderLockupViewDelegate> *delegate;
-@property (nonatomic) float downloadProgress;
+@property (nonatomic) double downloadProgress;
 @property (nonatomic) int downloadProgressType;
 @property (nonatomic) unsigned int likeState;
 @property (nonatomic) BOOL supportsRadio;
@@ -32,7 +32,6 @@
 - (void)_configureArtworkCatalog:(id)arg1;
 - (void)_downloadProgressButtonAction:(id)arg1;
 - (void)_likeButtonAction:(id)arg1;
-- (void)_radioButtonAction:(id)arg1;
 - (void)_setHighlighted:(BOOL)arg1;
 - (void)_shareButtonAction:(id)arg1;
 - (id)_touchForEvent:(id)arg1;
@@ -41,7 +40,7 @@
 - (int)downloadProgressType;
 - (void)layoutSubviews;
 - (unsigned int)likeState;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })music_inheritedLayoutInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })music_inheritedLayoutInsets;
 - (void)music_inheritedLayoutInsetsDidChange;
 - (void)setDownloadProgress:(float)arg1;
 - (void)setDownloadProgressType:(int)arg1;

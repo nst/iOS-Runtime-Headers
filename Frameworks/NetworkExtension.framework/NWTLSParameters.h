@@ -3,10 +3,10 @@
  */
 
 @interface NWTLSParameters : NSObject {
-    NSSet *_SSLCipherSuites;
-    NSData *_TLSSessionID;
-    unsigned int _maximumSSLProtocolVersion;
-    unsigned int _minimumSSLProtocolVersion;
+    NSSet * _SSLCipherSuites;
+    NSData * _TLSSessionID;
+    unsigned int  _maximumSSLProtocolVersion;
+    unsigned int  _minimumSSLProtocolVersion;
 }
 
 @property (copy) NSSet *SSLCipherSuites;

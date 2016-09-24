@@ -3,7 +3,7 @@
  */
 
 @interface DMFFetchInstalledApplicationsResultObject : CATTaskResultObject {
-    NSDictionary *_applicationsByIdentifier;
+    NSDictionary * _applicationsByIdentifier;
 }
 
 @property (nonatomic, copy) NSDictionary *applicationsByIdentifier;
@@ -12,7 +12,6 @@
 
 - (void).cxx_destruct;
 - (id)applicationsByIdentifier;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setApplicationsByIdentifier:(id)arg1;

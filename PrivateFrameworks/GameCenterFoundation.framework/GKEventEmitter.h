@@ -3,10 +3,10 @@
  */
 
 @interface GKEventEmitter : NSObject {
-    NSHashTable *_listeners;
-    NSMutableArray *_queuedEvents;
-    BOOL _shouldQueue;
-    NSMutableArray *_supportedProtocols;
+    NSHashTable * _listeners;
+    NSMutableArray * _queuedEvents;
+    BOOL  _shouldQueue;
+    NSMutableArray * _supportedProtocols;
 }
 
 @property (nonatomic, retain) NSHashTable *listeners;

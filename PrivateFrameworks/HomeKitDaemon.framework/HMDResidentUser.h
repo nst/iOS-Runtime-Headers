@@ -3,15 +3,13 @@
  */
 
 @interface HMDResidentUser : HMDUser {
-    unsigned int _configurationState;
-    NSString *_deviceIdentifier;
-    NSString *_displayName;
-    BOOL _primaryResidentDevice;
+    unsigned int  _configurationState;
+    NSString * _deviceIdentifier;
+    NSString * _displayName;
 }
 
 @property (nonatomic) unsigned int configurationState;
 @property (nonatomic, readonly, copy) NSString *deviceIdentifier;
-@property (getter=isPrimaryResidentDevice, nonatomic, readonly) BOOL primaryResidentDevice;
 
 + (BOOL)supportsSecureCoding;
 
@@ -23,9 +21,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)encodingRemoteDisplayName;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithUserID:(id)arg1 pairingUsername:(id)arg2 publicKey:(id)arg3 displayName:(id)arg4 deviceIdentifier:(id)arg5 configurationState:(unsigned int)arg6;
-- (BOOL)isPrimaryResidentDevice;
-- (BOOL)mergeFromUser:(id)arg1;
+- (id)initWithUserID:(id)arg1 pairingIdentity:(id)arg2 displayName:(id)arg3 deviceIdentifier:(id)arg4 configurationState:(unsigned int)arg5;
+- (BOOL)mergeFromUser:(id)arg1 dataVersion:(int)arg2;
 - (void)setConfigurationState:(unsigned int)arg1;
 - (void)setDeviceIdentifier:(id)arg1;
 - (void)setDisplayName:(id)arg1;

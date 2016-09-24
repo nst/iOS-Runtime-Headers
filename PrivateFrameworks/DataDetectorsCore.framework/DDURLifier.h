@@ -4,7 +4,6 @@
 
 @interface DDURLifier : NSObject
 
-+ (void)initialize;
 + (BOOL)urlIfyNode:(id)arg1;
 + (BOOL)urlIfyNode:(id)arg1 phoneNumberTypes:(unsigned int)arg2;
 + (id)urlIfyNode:(id)arg1 usingScanner:(struct __DDScanner { }*)arg2 phoneNumberTypes:(unsigned int)arg3;

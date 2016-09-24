@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptAccount : SUScriptObject {
-    SSAccount *_account;
+    SSAccount * _account;
 }
 
 @property (readonly) NSString *ITunesPassSerialNumber;

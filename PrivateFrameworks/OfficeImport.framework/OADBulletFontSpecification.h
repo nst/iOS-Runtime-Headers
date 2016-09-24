@@ -3,7 +3,7 @@
  */
 
 @interface OADBulletFontSpecification : OADBulletFont {
-    NSString *mFont;
+    NSString * mFont;
 }
 
 - (void)dealloc;

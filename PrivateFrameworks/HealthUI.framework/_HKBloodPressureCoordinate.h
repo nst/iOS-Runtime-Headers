@@ -3,23 +3,23 @@
  */
 
 @interface _HKBloodPressureCoordinate : NSObject <HKGraphSeriesBlockCoordinate> {
-    HKMinMaxCoordinate *_diastolicCoordinate;
-    HKMinMaxCoordinate *_systolicCoordinate;
-    id _userInfo;
+    HKMinMaxCoordinate * _diastolicCoordinate;
+    HKMinMaxCoordinate * _systolicCoordinate;
+    id  _userInfo;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) HKMinMaxCoordinate *diastolicCoordinate;
-@property (nonatomic, readonly) float endXValue;
+@property (nonatomic, readonly) double endXValue;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) float startXValue;
+@property (nonatomic, readonly) double startXValue;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) HKMinMaxCoordinate *systolicCoordinate;
 @property (nonatomic, readonly) id userInfo;
 
 - (void).cxx_destruct;
-- (id)copyWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 roundToViewScale:(BOOL)arg2;
+- (id)copyWithTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 roundToViewScale:(BOOL)arg2;
 - (id)description;
 - (id)diastolicCoordinate;
 - (float)endXValue;

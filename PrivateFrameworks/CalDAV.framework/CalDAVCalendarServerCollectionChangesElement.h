@@ -3,9 +3,9 @@
  */
 
 @interface CalDAVCalendarServerCollectionChangesElement : CalDAVCalendarServerResourceChangeElement {
-    int _created;
-    int _deleted;
-    int _updated;
+    int  _created;
+    int  _deleted;
+    int  _updated;
 }
 
 @property (nonatomic) int created;

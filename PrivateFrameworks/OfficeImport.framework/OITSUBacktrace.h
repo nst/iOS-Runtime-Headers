@@ -3,9 +3,9 @@
  */
 
 @interface OITSUBacktrace : NSObject {
-    void **_callstack;
-    int _frames;
-    int _initAdjustment;
+    void ** _callstack;
+    int  _frames;
+    int  _initAdjustment;
 }
 
 + (id)backtrace;

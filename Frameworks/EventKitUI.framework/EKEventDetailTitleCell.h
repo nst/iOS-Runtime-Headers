@@ -2,31 +2,35 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKEventDetailTitleCell : EKEventDetailCell {
-    NSMutableArray *_dateTimeViews;
-    NSObject<EKEventDetailTitleCellDelegate> *_delegate;
-    UIButton *_editButton;
-    BOOL _hasLocationStatus;
-    int _locationStatus;
-    UIImage *_locationStatusImage;
-    UIImageView *_locationStatusView;
-    EKTextViewWithLabelTextMetrics *_locationView;
-    BOOL _observingLocaleChanges;
-    UILabel *_recurrenceView;
-    UILabel *_statusView;
-    UILabel *_titleView;
-    UILabel *_travelTimeView;
-    unsigned int _visibleItems;
+@interface EKEventDetailTitleCell : EKEventDetailCell <EKEventDetailPredictedLocationCellDelegate> {
+    NSMutableArray * _dateTimeViews;
+    NSObject<EKEventDetailTitleCellDelegate> * _delegate;
+    UIButton * _editButton;
+    BOOL  _hasLocationStatus;
+    BOOL  _hasMapItemLaunchOptionFromTimeToLeaveNotification;
+    int  _locationStatus;
+    UIImage * _locationStatusImage;
+    UIImageView * _locationStatusView;
+    EKTextViewWithLabelTextMetrics * _locationView;
+    BOOL  _observingLocaleChanges;
+    EKEventDetailPredictedLocationCell * _predictedLocationView;
+    UILabel * _recurrenceView;
+    BOOL  _rejectionReasonCell;
+    UILabel * _statusView;
+    UILabel * _titleView;
+    UILabel * _travelTimeView;
+    unsigned int  _visibleItems;
 }
 
 @property (nonatomic) NSObject<EKEventDetailTitleCellDelegate> *delegate;
+@property (nonatomic) BOOL hasMapItemLaunchOptionFromTimeToLeaveNotification;
 
 + (void)_geocodeEventIfNeeded:(id)arg1;
 + (void)_invalidateCachedFonts;
 + (id)_largeTitleFont;
 + (id)_locationFont;
 + (id)_locationStringForStructuredLocation:(id)arg1;
-+ (id)_mapsURLForLocationOnEvent:(id)arg1;
++ (id)_mapsURLForLocationOnEvent:(id)arg1 hasMapItemLaunchOptionFromTimeToLeaveNotification:(BOOL)arg2;
 + (void)_registerForInvalidation;
 + (id)_titleFont;
 
@@ -35,7 +39,10 @@
 - (id)_editButton;
 - (id)_locationStatusView;
 - (id)_locationView;
+- (id)_predictedLocationView;
+- (void)_promptForSpanWithCompletionBlock:(id /* block */)arg1;
 - (id)_recurrenceView;
+- (void)_saveEventWithSpan:(int)arg1;
 - (void)_setDateTimeString:(id)arg1 line:(unsigned int)arg2;
 - (id)_statusView;
 - (id)_titleView;
@@ -44,10 +51,15 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)editButtonTapped;
+- (void)eventDetailPredictedLocationCellAcceptedPrediction:(id)arg1 disambiguatedLocation:(id)arg2;
+- (void)eventDetailPredictedLocationCellRejectedPrediction:(id)arg1;
+- (BOOL)hasMapItemLaunchOptionFromTimeToLeaveNotification;
+- (id)initAsRejectionReasonCellWithEvent:(id)arg1;
 - (id)initWithEvent:(id)arg1 editable:(BOOL)arg2 style:(int)arg3;
 - (void)layoutForWidth:(float)arg1 position:(int)arg2;
 - (void)setColor:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setHasMapItemLaunchOptionFromTimeToLeaveNotification:(BOOL)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setPrimaryTextColor:(id)arg1;
 - (void)setRecurrenceString:(id)arg1;

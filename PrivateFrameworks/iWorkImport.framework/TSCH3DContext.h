@@ -11,7 +11,7 @@
         int depthDataType; 
         BOOL linearFilter; 
         BOOL discardHint; 
-    } mCurrentFramebufferAttributes;
+    }  mCurrentFramebufferAttributes;
 }
 
 - (id).cxx_construct;

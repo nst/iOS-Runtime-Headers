@@ -3,14 +3,14 @@
  */
 
 @interface AWDBltPrimaryDeviceSendInTime : PBCodable <NSCopying> {
-    unsigned int _connectionType;
+    unsigned int  _connectionType;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int connectionType : 1; 
         unsigned int origConnectionType : 1; 
-    } _has;
-    unsigned int _origConnectionType;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned int  _origConnectionType;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int connectionType;

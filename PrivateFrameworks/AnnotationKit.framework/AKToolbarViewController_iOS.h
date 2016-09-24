@@ -3,29 +3,29 @@
  */
 
 @interface AKToolbarViewController_iOS : AKToolbarViewController <AKSignatureCreationControllerDelegate, AKSignaturesViewControllerDelegate, UIPopoverPresentationControllerDelegate> {
-    UIView *_attributeToolbarContainer;
-    AKFloatingAttributePickerViewController *_attributeToolbarViewController;
-    NSLayoutConstraint *_attributeToolbarViewControllerConstraint;
-    AKColorPickerViewController *_colorPickerPopoverViewController;
-    UIBarButtonItem *_lineStyleButton;
-    AKLineStylesViewController *_lineStylesViewController;
-    UIGestureRecognizer *_longPressGestureRecognizer;
-    UIBarButtonItem *_loupeButton;
-    UIBarButtonItem *_richSketchButton;
-    UIBarButtonItem *_signatureButton;
-    UIAlertController *_signaturesAlertController;
-    AKSignaturesViewController_iOS *_signaturesSheetViewController;
-    UIBarButtonItem *_sketchButton;
-    NSArray *_staticToolbarItems;
-    UIBarButtonItem *_strokeColorButton;
-    AKTextAttributesViewController *_textAttributesViewController;
-    UIBarButtonItem *_textButton;
-    UIBarButtonItem *_textStyleButton;
-    UIBarButtonItem *_undoButton;
-    AKUndoRedoViewController *_undoPopoverViewController;
+    UIView * _attributeToolbarContainer;
+    AKFloatingAttributePickerViewController * _attributeToolbarViewController;
+    NSLayoutConstraint * _attributeToolbarViewControllerConstraint;
+    AKColorPickerViewController * _colorPickerPopoverViewController;
+    UIBarButtonItem * _lineStyleButton;
+    AKLineStylesViewController * _lineStylesViewController;
+    UIGestureRecognizer * _longPressGestureRecognizer;
+    UIBarButtonItem * _loupeButton;
+    UIBarButtonItem * _richSketchButton;
+    UIBarButtonItem * _signatureButton;
+    UIAlertController * _signaturesAlertController;
+    AKSignaturesViewController_iOS * _signaturesSheetViewController;
+    UIBarButtonItem * _sketchButton;
+    NSArray * _staticToolbarItems;
+    UIBarButtonItem * _strokeColorButton;
+    AKTextAttributesViewController * _textAttributesViewController;
+    UIBarButtonItem * _textButton;
+    UIBarButtonItem * _textStyleButton;
+    UIBarButtonItem * _undoButton;
+    AKUndoViewController * _undoPopoverViewController;
 }
 
-@property (nonatomic, readonly) float additionalOffset;
+@property (nonatomic, readonly) double additionalOffset;
 @property (nonatomic, retain) UIView *attributeToolbarContainer;
 @property (nonatomic, retain) AKFloatingAttributePickerViewController *attributeToolbarViewController;
 @property (nonatomic, retain) NSLayoutConstraint *attributeToolbarViewControllerConstraint;
@@ -49,7 +49,7 @@
 @property (nonatomic, retain) UIBarButtonItem *textButton;
 @property (nonatomic, retain) UIBarButtonItem *textStyleButton;
 @property (nonatomic, retain) UIBarButtonItem *undoButton;
-@property (nonatomic, retain) AKUndoRedoViewController *undoPopoverViewController;
+@property (nonatomic, retain) AKUndoViewController *undoPopoverViewController;
 
 - (void).cxx_destruct;
 - (int)_attributeTagForCurrentSelectionState;
@@ -60,7 +60,7 @@
 - (id)_createNewCustomViewToolbarButtonWithImage:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 - (id)_createNewToggleToolbarButtonWithImage:(id)arg1 tag:(int)arg2 target:(id)arg3 selector:(SEL)arg4;
 - (void)_deleteSelectedItems:(id)arg1;
-- (void)_dismissCurrentlyPresentedPopover;
+- (void)_dismissCurrentlyPresentedPopoverAnimated:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (id)_doodleModeToolbarImage;
 - (void)_layoutAttributeContainer;
 - (void)_layoutToolbarForTraitCollection:(id)arg1;
@@ -73,12 +73,13 @@
 - (void)_showUndoAlert:(id)arg1;
 - (void)_sketchButtonAction:(id)arg1;
 - (id)_toolbarButtonItemOfType:(unsigned int)arg1;
+- (void)_undoAllButtonAction:(id)arg1;
 - (void)_undoButtonAction:(id)arg1;
 - (void)_undoLongPressAction:(id)arg1;
 - (void)_undoManagerNotification:(id)arg1;
 - (void)_updateToggleButton:(id)arg1 withTraitCollection:(id)arg2;
-- (BOOL)_validateRedoButton;
 - (BOOL)_validateUndoButton;
+- (unsigned int)_workaroundToolbarPopoverPositioningBug26744300;
 - (float)additionalOffset;
 - (id)attributeToolbarContainer;
 - (id)attributeToolbarViewController;

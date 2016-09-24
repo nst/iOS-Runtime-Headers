@@ -3,13 +3,13 @@
  */
 
 @interface MSEmailModel : NSObject <NSCoding> {
-    NSArray *_bcc;
-    NSString *_body;
-    NSArray *_cc;
-    NSURL *_reference;
-    NSString *_subject;
-    NSArray *_to;
-    int _type;
+    NSArray * _bcc;
+    NSString * _body;
+    NSArray * _cc;
+    NSURL * _reference;
+    NSString * _subject;
+    NSArray * _to;
+    int  _type;
 }
 
 @property (nonatomic, copy) NSArray *bcc;

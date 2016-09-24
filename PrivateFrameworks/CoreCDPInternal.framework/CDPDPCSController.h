@@ -3,22 +3,28 @@
  */
 
 @interface CDPDPCSController : NSObject {
-    CDPContext *_context;
-    <CDPDProtectedCloudStorageProxy> *_pcsProxy;
+    CDPContext * _context;
+    <CDPDProtectedCloudStorageProxy> * _pcsProxy;
 }
 
 @property (nonatomic, retain) <CDPDProtectedCloudStorageProxy> *pcsProxy;
 
 - (void).cxx_destruct;
-- (void)_checkiCDPStatusWithCompletion:(id /* block */)arg1;
+- (void)_checkiCDPStatusNetwork:(BOOL)arg1 withCompletion:(id /* block */)arg2;
+- (id)_contextSetupDictionary;
 - (void)_disableCDPWithCompletion:(id /* block */)arg1;
 - (void)_enableCDPWithCompletion:(id /* block */)arg1;
-- (void)checkiCDPStatusWithCompletion:(id /* block */)arg1;
+- (struct _PCSIdentitySetData { }*)_getOrSetupIdentitySetRef:(id*)arg1;
+- (void)_reauthenticateAndCheckiCDPStatusWithNetwork:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)checkiCDPStatusNetwork:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (void)disableCDPWithCompletion:(id /* block */)arg1;
 - (void)enableCDPWithCompletion:(id /* block */)arg1;
+- (void)getStringrayStatusWithCompletion:(id /* block */)arg1;
 - (id)init;
 - (id)initWithContext:(id)arg1;
+- (BOOL)isStingrayDisabledUnauthenticatedNetworked:(BOOL)arg1 error:(id*)arg2;
 - (id)pcsProxy;
 - (void)setPcsProxy:(id)arg1;
+- (void)setStingrayState:(BOOL)arg1 completion:(id /* block */)arg2;
 
 @end

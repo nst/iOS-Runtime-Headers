@@ -3,8 +3,8 @@
  */
 
 @interface _HKDeviceFilter : _HKFilter {
-    NSSet *_devices;
-    unsigned int _operatorType;
+    NSSet * _devices;
+    unsigned int  _operatorType;
 }
 
 @property (nonatomic, readonly) NSSet *devices;
@@ -29,7 +29,7 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
-- (id)_devicesWithHealthDaemon:(id)arg1 error:(id*)arg2;
-- (id)predicateWithHealthDaemon:(id)arg1;
+- (id)_devicesWithProfile:(id)arg1 error:(id*)arg2;
+- (id)predicateWithProfile:(id)arg1;
 
 @end

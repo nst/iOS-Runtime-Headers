@@ -3,10 +3,10 @@
  */
 
 @interface _MFSecCMSEncoder : MFBufferedDataConsumer {
-    long _SecCMSError;
-    struct SecCmsEncoderStr { } *_encoder;
-    struct SecCmsMessageStr { } *_message;
-    NSMutableData *_singleShot;
+    long  _SecCMSError;
+    struct SecCmsEncoderStr { } * _encoder;
+    struct SecCmsMessageStr { } * _message;
+    NSMutableData * _singleShot;
 }
 
 @property (nonatomic, readonly) long lastSecCMSError;

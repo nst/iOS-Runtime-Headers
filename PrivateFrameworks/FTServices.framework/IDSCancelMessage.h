@@ -3,8 +3,8 @@
  */
 
 @interface IDSCancelMessage : IDSFaceTimeMessage <NSCopying> {
-    NSArray *_peers;
-    NSNumber *_reason;
+    NSArray * _peers;
+    NSNumber * _reason;
 }
 
 @property (copy) NSArray *peers;

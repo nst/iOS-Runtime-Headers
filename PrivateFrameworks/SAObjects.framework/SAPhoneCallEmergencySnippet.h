@@ -4,14 +4,26 @@
 
 @interface SAPhoneCallEmergencySnippet : SAPhoneCallSnippet
 
+@property (nonatomic, retain) SAUIColor *bodyBackgroundColor;
+@property (nonatomic, retain) SAUIColor *bodyTextColor;
 @property (nonatomic) int countDownSeconds;
+@property (nonatomic, retain) SAUIColor *headerBackgroundColor;
+@property (nonatomic, retain) SAUIColor *headerTextColor;
 
 + (id)callEmergencySnippet;
 + (id)callEmergencySnippetWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)bodyBackgroundColor;
+- (id)bodyTextColor;
 - (int)countDownSeconds;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (id)headerBackgroundColor;
+- (id)headerTextColor;
+- (void)setBodyBackgroundColor:(id)arg1;
+- (void)setBodyTextColor:(id)arg1;
 - (void)setCountDownSeconds:(int)arg1;
+- (void)setHeaderBackgroundColor:(id)arg1;
+- (void)setHeaderTextColor:(id)arg1;
 
 @end

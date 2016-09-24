@@ -3,9 +3,9 @@
  */
 
 @interface CoreDAVPropertySearchItem : CoreDAVItem {
-    NSString *_match;
-    NSString *_matchTypeAttribute;
-    CoreDAVLeafItem *_prop;
+    NSString * _match;
+    NSString * _matchTypeAttribute;
+    CoreDAVLeafItem * _prop;
 }
 
 @property (nonatomic, retain) NSString *match;

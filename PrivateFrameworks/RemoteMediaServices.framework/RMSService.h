@@ -3,14 +3,14 @@
  */
 
 @interface RMSService : NSObject {
-    NSString *_displayName;
-    NSString *_homeSharingGroupKey;
-    NSString *_hostName;
-    NSString *_networkName;
-    int _port;
-    int _serviceDiscoverySource;
-    int _serviceLegacyFlags;
-    int _serviceType;
+    NSString * _displayName;
+    NSString * _homeSharingGroupKey;
+    NSString * _hostName;
+    NSString * _networkName;
+    int  _port;
+    int  _serviceDiscoverySource;
+    int  _serviceLegacyFlags;
+    int  _serviceType;
 }
 
 @property (nonatomic, retain) NSString *displayName;

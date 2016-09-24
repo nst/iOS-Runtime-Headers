@@ -3,16 +3,16 @@
  */
 
 @interface PUInteractiveDismissalController : NSObject {
-    <PUInterruptibleViewControllerTransition> *__interruptibleViewControllerTransition;
-    BOOL __needsUpdateGestureRecognizers;
-    UIViewController *__viewController;
-    UIView *__viewHostingGestureRecognizers;
-    <PUInteractiveDismissalControllerDelegate> *_delegate;
+    <PUInterruptibleViewControllerTransition> * __interruptibleViewControllerTransition;
+    BOOL  __needsUpdateGestureRecognizers;
+    UIViewController * __viewController;
+    UIView * __viewHostingGestureRecognizers;
+    <PUInteractiveDismissalControllerDelegate> * _delegate;
     struct { 
-        BOOL respondsToCanBeginDismissal; 
+        BOOL respondsToCanBeginDismissalAtLocationFromProvider; 
         BOOL respondsToTilingView; 
         BOOL respondsToDesignatedTileController; 
-    } _delegateFlags;
+    }  _delegateFlags;
 }
 
 @property (setter=_setInterruptibleViewControllerTransition:, nonatomic, retain) <PUInterruptibleViewControllerTransition> *_interruptibleViewControllerTransition;
@@ -44,7 +44,7 @@
 - (id)_viewController;
 - (id)_viewHostingGestureRecognizers;
 - (void)beginDismissal;
-- (BOOL)canBeginDismissal;
+- (BOOL)canBeginDismissalAtLocationFromProvider:(id)arg1;
 - (id)delegate;
 - (id)designatedTileController;
 - (void)endDismissal:(BOOL)arg1;

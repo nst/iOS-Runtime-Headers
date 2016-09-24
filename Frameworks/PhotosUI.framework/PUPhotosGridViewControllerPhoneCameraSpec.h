@@ -4,6 +4,4 @@
 
 @interface PUPhotosGridViewControllerPhoneCameraSpec : PUPhotosGridViewControllerPhoneSpec
 
-- (id)photoBrowserSpec;
-
 @end

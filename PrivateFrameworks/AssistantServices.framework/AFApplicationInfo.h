@@ -3,8 +3,8 @@
  */
 
 @interface AFApplicationInfo : NSObject <NSSecureCoding> {
-    NSString *_identifier;
-    int _pid;
+    NSString * _identifier;
+    int  _pid;
 }
 
 @property (nonatomic, copy) NSString *identifier;

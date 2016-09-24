@@ -3,13 +3,15 @@
  */
 
 @interface _WKElementAction : NSObject {
-    id /* block */ _actionHandler;
-    WKActionSheetAssistant *_defaultActionSheetAssistant;
-    id /* block */ _dismissalHandler;
+    id /* block */  _actionHandler;
+    /* Warning: unhandled struct encoding: '{WeakObjCPtr<WKActionSheetAssistant>="m_weakReference"@}' */ struct WeakObjCPtr<WKActionSheetAssistant> { 
+        id m_weakReference; 
+    }  _defaultActionSheetAssistant;
+    id /* block */  _dismissalHandler;
     struct RetainPtr<NSString> { 
         void *m_ptr; 
-    } _title;
-    int _type;
+    }  _title;
+    int  _type;
 }
 
 @property (nonatomic, copy) id /* block */ dismissalHandler;

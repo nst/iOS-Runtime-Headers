@@ -3,7 +3,7 @@
  */
 
 @interface SKUIPredicateListViewElement : SKUIViewElement {
-    NSPredicate *_compoundEntityValuePredicate;
+    NSPredicate * _compoundEntityValuePredicate;
 }
 
 @property (nonatomic, readonly) NSPredicate *compoundEntityValuePredicate;

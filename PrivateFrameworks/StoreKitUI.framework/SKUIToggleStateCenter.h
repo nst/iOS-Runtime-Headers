@@ -3,10 +3,10 @@
  */
 
 @interface SKUIToggleStateCenter : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSMutableDictionary *_itemStates;
-    NSObject<OS_dispatch_queue> *_observerQueue;
-    NSHashTable *_observers;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSMutableDictionary * _itemStates;
+    NSObject<OS_dispatch_queue> * _observerQueue;
+    NSHashTable * _observers;
 }
 
 + (id)defaultCenter;

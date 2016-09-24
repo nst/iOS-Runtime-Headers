@@ -3,10 +3,10 @@
  */
 
 @interface OCXRelationship : NSObject {
-    BOOL mExternal;
-    NSString *mIdString;
-    NSString *mTarget;
-    NSString *mType;
+    BOOL  mExternal;
+    NSString * mIdString;
+    NSString * mTarget;
+    NSString * mType;
 }
 
 @property (nonatomic, readonly) NSString *idString;

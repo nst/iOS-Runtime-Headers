@@ -3,30 +3,32 @@
  */
 
 @interface HDActivityCacheManager : NSObject <HDDataObserver, HDDatabaseProtectedDataObserver, HDHealthDaemonReadyObserver> {
-    NSSet *_allQuantityTypes;
-    BOOL _cacheIndicesAreSet;
-    HKQuantityType *_calorieGoalType;
-    HDActivityCacheDataSource *_dataSource;
-    NSDate *_dateOverride;
-    BOOL _existingActivityCachesAreSet;
-    HKActivityCache *_existingTodayActivityCache;
-    HKActivityCache *_existingYesterdayActivityCache;
-    BOOL _hasSubscribedToSignificantTimeChangeNotifications;
-    <HDHealthDaemon> *_healthDaemon;
-    HDSourceEntity *_localDeviceSourceEntity;
-    NSObject<OS_dispatch_queue> *_observerQueue;
-    NSHashTable *_observers;
-    NSObject<OS_dispatch_queue> *_queue;
-    _HKDelayedOperation *_rebuildCachesOperation;
-    BOOL _shouldSendCacheUpdateNotification;
-    NSTimeZone *_timeZoneOverride;
-    long long _todayActivityCacheIndex;
-    _HKTimePeriod *_todayDateRange;
-    HKQuantitySample *_todayGoal;
-    _HKDelayedOperation *_updateCachesOperation;
-    long long _yesterdayActivityCacheIndex;
-    _HKTimePeriod *_yesterdayDateRange;
-    HKQuantitySample *_yesterdayGoal;
+    NSSet * _allQuantityTypes;
+    BOOL  _cacheIndicesAreSet;
+    HKQuantityType * _calorieGoalType;
+    HDActivityCacheDataSource * _dataSource;
+    NSDate * _dateOverride;
+    BOOL  _existingActivityCachesAreSet;
+    HKActivityCache * _existingTodayActivityCache;
+    HKActivityCache * _existingYesterdayActivityCache;
+    BOOL  _hasSubscribedToSignificantTimeChangeNotifications;
+    HDSourceEntity * _localDeviceSourceEntity;
+    NSObject<OS_dispatch_queue> * _observerQueue;
+    NSHashTable * _observers;
+    HDProfile * _profile;
+    HKQuantityType * _pushCountType;
+    NSObject<OS_dispatch_queue> * _queue;
+    _HKDelayedOperation * _rebuildCachesOperation;
+    BOOL  _shouldSendCacheUpdateNotification;
+    NSTimeZone * _timeZoneOverride;
+    int  _todayActivityCacheIndex;
+    _HKTimePeriod * _todayDateRange;
+    HKQuantitySample * _todayGoal;
+    _HKDelayedOperation * _updateCachesOperation;
+    int  _wheelchairUse;
+    int  _yesterdayActivityCacheIndex;
+    _HKTimePeriod * _yesterdayDateRange;
+    HKQuantitySample * _yesterdayGoal;
 }
 
 @property (readonly) NSCalendar *calendar;
@@ -40,7 +42,7 @@
 @property (nonatomic, readonly) HKActivityCache *yesterdayActivityCache;
 
 - (void).cxx_destruct;
-- (void)_calculateCacheIndicesWithTodayIndex:(long long*)arg1 yesterdayIndex:(long long*)arg2 todayStart:(id)arg3 yesterdayStart:(id)arg4 calendar:(id)arg5;
+- (void)_calculateCacheIndicesWithTodayIndex:(int*)arg1 yesterdayIndex:(int*)arg2 todayStart:(id)arg3 yesterdayStart:(id)arg4 calendar:(id)arg5;
 - (void)_didReceiveSignificantTimeChangeNotification;
 - (id)_mostRecentGoalBeforeDate:(id)arg1 error:(id*)arg2;
 - (void)_queue_alertObserversTodayActivityCacheChanged:(id)arg1;
@@ -63,7 +65,7 @@
 - (void)_queue_resetDataSource;
 - (void)_queue_resetEverything;
 - (void)_queue_resetExistingActivityCaches;
-- (id)_queue_saveCacheWithDateRange:(id)arg1 calorieGoal:(id)arg2 cacheIndex:(long long)arg3 previousCache:(id)arg4 statisticsBuilder:(id)arg5;
+- (id)_queue_saveCacheWithDateRange:(id)arg1 calorieGoal:(id)arg2 cacheIndex:(int)arg3 previousCache:(id)arg4 statisticsBuilder:(id)arg5 wheelchairUse:(int)arg6;
 - (void)_queue_saveCaches;
 - (BOOL)_queue_saveTodayCache;
 - (BOOL)_queue_saveYesterdayCache;
@@ -73,7 +75,9 @@
 - (void)_queue_updateDailyGoalsWithGoalSample:(id)arg1;
 - (void)_queue_updateDailyGoalsWithSamples:(id)arg1;
 - (void)_queue_updateDateRangesWithExistingActivityCaches;
+- (void)_queue_updateWheelchairUse;
 - (void)_significantTimeChangeOccurred:(id)arg1;
+- (void)_userCharacteristicsDidChangeNotification:(id)arg1;
 - (void)addActivityCacheObserver:(id)arg1;
 - (id)calendar;
 - (id)currentActivityCache;
@@ -81,7 +85,7 @@
 - (void)database:(id)arg1 protectedDataDidBecomeAvailable:(BOOL)arg2;
 - (id)dateOverride;
 - (void)dealloc;
-- (id)initWithHealthDaemon:(id)arg1;
+- (id)initWithProfile:(id)arg1;
 - (void)removeActivityCacheObserver:(id)arg1;
 - (void)samplesAdded:(id)arg1 anchor:(id)arg2;
 - (void)samplesOfTypesWereRemoved:(id)arg1 anchor:(id)arg2;

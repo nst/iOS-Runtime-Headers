@@ -3,9 +3,9 @@
  */
 
 @interface _RKResponse : NSObject {
-    NSString *_headword;
-    NSString *_speechAct;
-    NSString *_text;
+    NSString * _headword;
+    NSString * _speechAct;
+    NSString * _text;
 }
 
 @property (readonly) NSString *headword;

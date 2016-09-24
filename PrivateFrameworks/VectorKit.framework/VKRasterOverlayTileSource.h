@@ -3,10 +3,11 @@
  */
 
 @interface VKRasterOverlayTileSource : VKTileSource {
-    NSObject<OS_dispatch_queue> *_homeQ;
-    NSMutableArray *_overlays;
-    BOOL _overrideMaxZoomLevel;
-    NSObject<OS_dispatch_group> *_renderGroup;
+    NSObject<OS_dispatch_queue> * _homeQ;
+    NSMutableArray * _overlays;
+    BOOL  _overrideMaxZoomLevel;
+    NSObject<OS_dispatch_group> * _renderGroup;
+    NSMutableSet * _worldSizedOverlays;
 }
 
 @property (nonatomic, readonly) NSArray *overlays;
@@ -25,7 +26,7 @@
 - (void)insertOverlay:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)insertOverlay:(id)arg1 belowOverlay:(id)arg2;
 - (void)invalidate;
-- (void)invalidateRect:(const struct { double x1; double x2; double x3; double x4; }*)arg1 level:(int)arg2;
+- (void)invalidateRect:(const struct Box<double, 2> { struct Matrix<double, 2, 1> { double x_1_1_1[2]; } x1; struct Matrix<double, 2, 1> { double x_2_1_1[2]; } x2; }*)arg1 level:(int)arg2;
 - (unsigned int)maximumDownloadZoomLevel;
 - (BOOL)maximumZoomLevelBoundsCamera;
 - (unsigned int)minimumDownloadZoomLevel;

@@ -3,8 +3,8 @@
  */
 
 @interface TCXmlPrefixStreamWriterState : NSObject {
-    NSString *_attributePrefix;
-    NSString *_elementPrefix;
+    NSString * _attributePrefix;
+    NSString * _elementPrefix;
 }
 
 @property (nonatomic, copy) NSString *attributePrefix;

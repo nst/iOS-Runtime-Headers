@@ -3,8 +3,8 @@
  */
 
 @interface BWAudioConverterNode : BWNode {
-    struct OpaqueFigSampleBufferProcessor { } *_audioCompressionSBP;
-    NSDictionary *_settings;
+    struct OpaqueFigSampleBufferProcessor { } * _audioCompressionSBP;
+    NSDictionary * _settings;
 }
 
 @property (nonatomic, readonly) NSDictionary *gaplessPlaybackInfo;
@@ -15,7 +15,7 @@
 - (long)_setupAudioCompressionSBPForInputFormat:(id)arg1;
 - (void)_teardownAudioCompressionSBP;
 - (void)acquireHardware;
-- (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
+- (void)configurationWithID:(int)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;

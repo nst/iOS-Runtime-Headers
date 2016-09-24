@@ -3,9 +3,9 @@
  */
 
 @interface _MSPContainerEditRemoval : _MSPContainerEdit <MSPContainerEditRemoval> {
-    NSIndexSet *_indexesOfRemovedObjects;
-    NSArray *_originalObjects;
-    NSArray *_removedImmutableObjects;
+    NSIndexSet * _indexesOfRemovedObjects;
+    NSArray * _originalObjects;
+    NSArray * _removedImmutableObjects;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,11 +3,11 @@
  */
 
 @interface VKMemoryObserver : NSObject {
-    NSObject<OS_dispatch_source> *_memoryNotificationEventSource;
-    SEL _selector;
+    NSObject<OS_dispatch_source> * _memoryNotificationEventSource;
+    SEL  _selector;
     /* Warning: unhandled struct encoding: '{_geo_weak_ptr<id>="_p"@}' */ struct _geo_weak_ptr<id> { 
         id _p; 
-    } _target;
+    }  _target;
 }
 
 - (id).cxx_construct;

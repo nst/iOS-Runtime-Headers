@@ -3,10 +3,10 @@
  */
 
 @interface UIStoryboardUnwindSegueSource : NSObject {
-    NSMutableArray *_searchChain;
-    id _sender;
-    UIViewController *_sourceViewController;
-    SEL _unwindAction;
+    NSMutableArray * _searchChain;
+    id  _sender;
+    UIViewController * _sourceViewController;
+    SEL  _unwindAction;
 }
 
 @property (readonly) id sender;

@@ -3,9 +3,9 @@
  */
 
 @interface SKUIRedeemStepViewController : UIViewController {
-    SKUIClientContext *_clientContext;
-    SKUIRedeemConfiguration *_configuration;
-    NSOperationQueue *_operationQueue;
+    SKUIClientContext * _clientContext;
+    SKUIRedeemConfiguration * _configuration;
+    NSOperationQueue * _operationQueue;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

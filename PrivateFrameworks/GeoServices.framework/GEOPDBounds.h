@@ -3,8 +3,8 @@
  */
 
 @interface GEOPDBounds : PBCodable <NSCopying> {
-    GEOMapRegion *_displayMapRegion;
-    GEOMapRegion *_mapRegion;
+    GEOMapRegion * _displayMapRegion;
+    GEOMapRegion * _mapRegion;
 }
 
 @property (nonatomic, retain) GEOMapRegion *displayMapRegion;

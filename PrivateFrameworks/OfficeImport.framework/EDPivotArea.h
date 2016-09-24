@@ -3,12 +3,12 @@
  */
 
 @interface EDPivotArea : NSObject {
-    bool mGrandCol;
-    bool mGrandRow;
-    EDReference *mOffset;
-    bool mOutline;
-    EDCollection *mReferences;
-    int mType;
+    bool  mGrandCol;
+    bool  mGrandRow;
+    EDReference * mOffset;
+    bool  mOutline;
+    EDCollection * mReferences;
+    int  mType;
 }
 
 + (id)pivotArea;

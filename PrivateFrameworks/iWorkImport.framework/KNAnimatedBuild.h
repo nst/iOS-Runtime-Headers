@@ -3,26 +3,27 @@
  */
 
 @interface KNAnimatedBuild : NSObject {
-    BOOL _animateAtEndOfPreviousBuild;
-    KNBuildAttributes *_attributes;
-    BOOL _automatic;
-    int _buildType;
-    unsigned int _deliveryOption;
-    unsigned int _deliveryStyle;
-    unsigned int _direction;
-    double _duration;
-    double _endTime;
-    double _eventEndTime;
-    int _eventIndex;
-    double _eventStartTime;
-    NSDictionary *_finalAttributes;
-    BOOL _isMovieStartBuild;
-    BOOL _isVisibleAtBeginning;
-    BOOL _isVisibleAtEnd;
-    Class _pluginClass;
-    NSDictionary *_previousAttributes;
-    int _stageIndex;
-    double _startTime;
+    BOOL  _animateAtEndOfPreviousBuild;
+    KNBuildAttributes * _attributes;
+    BOOL  _automatic;
+    int  _buildType;
+    unsigned int  _deliveryOption;
+    unsigned int  _deliveryStyle;
+    unsigned int  _direction;
+    double  _duration;
+    NSString * _effectIdentifier;
+    double  _endTime;
+    double  _eventEndTime;
+    int  _eventIndex;
+    double  _eventStartTime;
+    NSDictionary * _finalAttributes;
+    BOOL  _isMovieStartBuild;
+    BOOL  _isVisibleAtBeginning;
+    BOOL  _isVisibleAtEnd;
+    Class  _pluginClass;
+    NSDictionary * _previousAttributes;
+    int  _stageIndex;
+    double  _startTime;
 }
 
 @property (nonatomic) BOOL animateAtEndOfPreviousBuild;
@@ -33,6 +34,7 @@
 @property (nonatomic, readonly) unsigned int deliveryStyle;
 @property (nonatomic, readonly) unsigned int direction;
 @property (nonatomic) double duration;
+@property (nonatomic, readonly) NSString *effectIdentifier;
 @property (nonatomic, readonly) double endTime;
 @property (nonatomic, readonly) double eventEndTime;
 @property (nonatomic) int eventIndex;
@@ -62,12 +64,13 @@
 - (id)description;
 - (unsigned int)direction;
 - (double)duration;
+- (id)effectIdentifier;
 - (double)endTime;
 - (double)eventEndTime;
 - (int)eventIndex;
 - (double)eventStartTime;
 - (id)finalAttributes;
-- (id)initWithBuildType:(int)arg1 attributes:(id)arg2 pluginClass:(Class)arg3 deliveryStyle:(unsigned int)arg4 eventIndex:(int)arg5 stageIndex:(int)arg6 startTime:(double)arg7 eventStartTime:(double)arg8 duration:(double)arg9 direction:(unsigned int)arg10 automatic:(BOOL)arg11 animateAtEndOfPreviousBuild:(BOOL)arg12;
+- (id)initWithBuildType:(int)arg1 effectIdentifier:(id)arg2 attributes:(id)arg3 pluginClass:(Class)arg4 deliveryStyle:(unsigned int)arg5 eventIndex:(int)arg6 stageIndex:(int)arg7 startTime:(double)arg8 eventStartTime:(double)arg9 duration:(double)arg10 direction:(unsigned int)arg11 automatic:(BOOL)arg12 animateAtEndOfPreviousBuild:(BOOL)arg13;
 - (BOOL)isActionBuild;
 - (BOOL)isBuildIn;
 - (BOOL)isBuildOut;

@@ -3,13 +3,13 @@
  */
 
 @interface UITextInputArrowKeyHistory : NSObject {
-    BOOL affinityDownstream;
-    int amount;
-    int anchor;
-    UITextPosition *cursor;
-    UITextPosition *end;
-    UITextPosition *start;
-    UITextPosition *startPosition;
+    BOOL  affinityDownstream;
+    int  amount;
+    int  anchor;
+    UITextPosition * cursor;
+    UITextPosition * end;
+    UITextPosition * start;
+    UITextPosition * startPosition;
 }
 
 @property (nonatomic) BOOL affinityDownstream;

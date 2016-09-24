@@ -3,9 +3,9 @@
  */
 
 @interface PBMutableData : NSMutableData {
-    char *buffer;
-    char *end;
-    char *p;
+    char * buffer;
+    char * end;
+    char * p;
 }
 
 - (void)_pb_growCapacityBy:(unsigned int)arg1;

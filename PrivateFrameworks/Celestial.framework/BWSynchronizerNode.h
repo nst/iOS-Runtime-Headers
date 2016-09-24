@@ -3,31 +3,31 @@
  */
 
 @interface BWSynchronizerNode : BWNode {
-    struct OpaqueCMClock { } *_masterClock;
-    int _newestPTSSyncHistoryElement;
-    int _oldestPTSSyncHistoryElement;
+    struct OpaqueCMClock { } * _masterClock;
+    int  _newestPTSSyncHistoryElement;
+    int  _oldestPTSSyncHistoryElement;
     struct { 
         struct { 
-            long long value; 
+            int value; 
             int timescale; 
             unsigned int flags; 
-            long long epoch; 
+            int epoch; 
         } sourceTime; 
         struct { 
-            long long value; 
+            int value; 
             int timescale; 
             unsigned int flags; 
-            long long epoch; 
+            int epoch; 
         } syncedTime; 
-    } _ptsSyncHistory;
-    struct OpaqueCMClock { } *_sourceClock;
+    }  _ptsSyncHistory;
+    struct OpaqueCMClock { } * _sourceClock;
 }
 
 + (void)initialize;
 
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })_getSyncedTimeForSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (struct { int x1; int x2; unsigned int x3; int x4; })_getSyncedTimeForSourceTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
 - (void)_synchronizeDetectedFaces:(id)arg1 metadata:(id)arg2 timescale:(int)arg3;
-- (void)_updatePTSSyncHistoryWithSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 syncedTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
+- (void)_updatePTSSyncHistoryWithSourceTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 syncedTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg2;
 - (void)dealloc;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
 - (void)handleDroppedSample:(id)arg1 forInput:(id)arg2;

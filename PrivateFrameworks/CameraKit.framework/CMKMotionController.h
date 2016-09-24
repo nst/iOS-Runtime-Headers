@@ -3,12 +3,12 @@
  */
 
 @interface CMKMotionController : NSObject {
-    BKSAccelerometer *__accelerometer;
-    int __numberOfDominantPhysicalButtonObservers;
-    CMMotionManager *__physicalButtonMotionManager;
-    int _captureOrientation;
-    int _deviceOrientation;
-    int _dominantPhysicalButton;
+    BKSAccelerometer * __accelerometer;
+    int  __numberOfDominantPhysicalButtonObservers;
+    CMMotionManager * __physicalButtonMotionManager;
+    int  _captureOrientation;
+    int  _deviceOrientation;
+    int  _dominantPhysicalButton;
 }
 
 @property (setter=_setAccelerometer:, nonatomic, retain) BKSAccelerometer *_accelerometer;
@@ -16,7 +16,7 @@
 @property (nonatomic, readonly) CMMotionManager *_physicalButtonMotionManager;
 @property (setter=_setCaptureOrientation:, nonatomic) int captureOrientation;
 @property (setter=_setDeviceOrientation:, nonatomic) int deviceOrientation;
-@property (nonatomic) int dominantPhysicalButton;
+@property (setter=_setDominantPhysicalButton:, nonatomic) int dominantPhysicalButton;
 
 + (id)sharedController;
 

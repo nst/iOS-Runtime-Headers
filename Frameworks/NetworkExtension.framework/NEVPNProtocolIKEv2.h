@@ -3,26 +3,26 @@
  */
 
 @interface NEVPNProtocolIKEv2 : NEVPNProtocolIPSec {
-    NEVPNIKEv2SecurityAssociationParameters *_IKESecurityAssociationParameters;
-    NSArray *_IKESecurityAssociationParametersArray;
-    int _certificateType;
-    NEVPNIKEv2SecurityAssociationParameters *_childSecurityAssociationParameters;
-    NSArray *_childSecurityAssociationParametersArray;
-    int _deadPeerDetectionRate;
-    BOOL _disableMOBIKE;
-    int _disableMOBIKERetryOnWake;
-    BOOL _disableRedirect;
-    BOOL _enablePFS;
-    BOOL _enableRevocationCheck;
-    int _natKeepAliveOffloadEnable;
-    int _natKeepAliveOffloadInterval;
-    NSString *_pluginType;
-    NSString *_providerBundleIdentifier;
-    NSString *_serverCertificateCommonName;
-    NSString *_serverCertificateIssuerCommonName;
-    BOOL _strictRevocationCheck;
-    BOOL _useConfigurationAttributeInternalIPSubnet;
-    BOOL _wakeForRekey;
+    NEVPNIKEv2SecurityAssociationParameters * _IKESecurityAssociationParameters;
+    NSArray * _IKESecurityAssociationParametersArray;
+    int  _certificateType;
+    NEVPNIKEv2SecurityAssociationParameters * _childSecurityAssociationParameters;
+    NSArray * _childSecurityAssociationParametersArray;
+    int  _deadPeerDetectionRate;
+    BOOL  _disableMOBIKE;
+    int  _disableMOBIKERetryOnWake;
+    BOOL  _disableRedirect;
+    BOOL  _enablePFS;
+    BOOL  _enableRevocationCheck;
+    int  _natKeepAliveOffloadEnable;
+    int  _natKeepAliveOffloadInterval;
+    NSString * _pluginType;
+    NSString * _providerBundleIdentifier;
+    NSString * _serverCertificateCommonName;
+    NSString * _serverCertificateIssuerCommonName;
+    BOOL  _strictRevocationCheck;
+    BOOL  _useConfigurationAttributeInternalIPSubnet;
+    BOOL  _wakeForRekey;
 }
 
 @property (readonly) NEVPNIKEv2SecurityAssociationParameters *IKESecurityAssociationParameters;

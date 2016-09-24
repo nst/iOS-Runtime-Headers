@@ -3,22 +3,30 @@
  */
 
 @interface VCPImageBlurAnalyzer : VCPImageAnalyzer {
-    NSArray *_faces;
-    float _irisSharpness;
-    NSArray *_objects;
-    float _sharpness;
-    float _sharpnessBlocks;
+    NSArray * _faces;
+    VCPCNNData * _input;
+    double  _irisSharpness;
+    VCPCNNModel * _model;
+    NSArray * _objects;
+    double  _sharpness;
+    double  _sharpnessBlocks;
+    BOOL  _useGPU;
 }
 
-@property (readonly) float irisSharpness;
-@property (readonly) float sharpness;
+@property (readonly) double irisSharpness;
+@property (readonly) double sharpness;
 
 - (void).cxx_destruct;
-- (long)analyzePixelBuffer:(struct __CVBuffer { }*)arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 flags:(unsigned int*)arg3 results:(id*)arg4 cancel:(id /* block */)arg5;
-- (float)computeFaceSharpness:(struct __CVBuffer { }*)arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2;
+- (long)analyzePixelBuffer:(struct __CVBuffer { }*)arg1 withTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2 flags:(unsigned int*)arg3 results:(id*)arg4 cancel:(id /* block */)arg5;
+- (float)calculateScoreFromNetworkOutput:(id)arg1 textureness:(char *)arg2 imageHeight:(int)arg3 imgWidth:(int)arg4;
+- (void)calculateTextureness:(float*)arg1 height:(int)arg2 width:(int)arg3 result:(char *)arg4;
+- (long)computeCNNBasedSharpness:(struct __CVBuffer { }*)arg1 cancel:(id /* block */)arg2;
+- (float)computeFaceSharpness:(struct __CVBuffer { }*)arg1 withTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2;
 - (void)computeLocalSharpness:(struct __CVBuffer { }*)arg1;
 - (float)computeObjectSharpness:(struct __CVBuffer { }*)arg1;
 - (float)computeRegionSharpness:(char *)arg1 width:(int)arg2 height:(int)arg3 stride:(int)arg4;
+- (long)initInputFromCVPixelBuffer:(struct __CVBuffer { }*)arg1 height:(int)arg2 width:(int)arg3;
+- (long)initModel;
 - (id)initWithFaceResults:(id)arg1 objectRect:(id)arg2;
 - (float)irisSharpness;
 - (float)sharpness;

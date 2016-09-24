@@ -3,10 +3,10 @@
  */
 
 @interface WDText : NSObject {
-    NSMutableArray *mBlocks;
-    WDDocument *mDocument;
-    WDTableCell *mTableCell;
-    int mTextType;
+    NSMutableArray * mBlocks;
+    WDDocument * mDocument;
+    WDTableCell * mTableCell;
+    int  mTextType;
 }
 
 - (void)addBlock:(id)arg1;

@@ -3,35 +3,35 @@
  */
 
 @interface PHLivePhotoRequest : PHImageManagerRequest {
-    PHAsset *__asset;
-    AVAsset *__avAsset;
-    BOOL __avAssetRequestCompleted;
-    BOOL __avAssetRequestFailed;
-    int __contentMode;
-    BOOL __didFinishStart;
-    NSError *__error;
-    UIImage *__image;
-    PHImageManager *__imageManager;
-    BOOL __imageRequestCompleted;
-    BOOL __imageRequestFailed;
-    BOOL __isCancelled;
-    BOOL __isImageDegraded;
-    BOOL __isInCloud;
-    BOOL __isInProgress;
-    NSRecursiveLock *__isolationLock;
-    BOOL __needsUpdateResult;
-    PHLivePhotoRequestOptions *__options;
-    id /* block */ __resultHandler;
+    PHAsset * __asset;
+    AVAsset * __avAsset;
+    BOOL  __avAssetRequestCompleted;
+    BOOL  __avAssetRequestFailed;
+    int  __contentMode;
+    BOOL  __didFinishStart;
+    NSError * __error;
+    UIImage * __image;
+    PHImageManager * __imageManager;
+    BOOL  __imageRequestCompleted;
+    BOOL  __imageRequestFailed;
+    BOOL  __isCancelled;
+    BOOL  __isImageDegraded;
+    BOOL  __isInCloud;
+    BOOL  __isInProgress;
+    NSRecursiveLock * __isolationLock;
+    BOOL  __needsUpdateResult;
+    PHLivePhotoRequestOptions * __options;
+    id /* block */  __resultHandler;
     struct { 
-        long long value; 
+        int value; 
         int timescale; 
         unsigned int flags; 
-        long long epoch; 
-    } __stillDisplayTime;
+        int epoch; 
+    }  __stillDisplayTime;
     struct CGSize { 
-        float width; 
-        float height; 
-    } __targetSize;
+        double width; 
+        double height; 
+    }  __targetSize;
 }
 
 @property (nonatomic, readonly) PHAsset *_asset;
@@ -53,8 +53,8 @@
 @property (setter=_setNeedsUpdateResult:, nonatomic) BOOL _needsUpdateResult;
 @property (nonatomic, readonly) PHLivePhotoRequestOptions *_options;
 @property (nonatomic, readonly) id /* block */ _resultHandler;
-@property (setter=_setStillDisplayTime:, nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } _stillDisplayTime;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } _targetSize;
+@property (setter=_setStillDisplayTime:, nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } _stillDisplayTime;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } _targetSize;
 
 - (void).cxx_destruct;
 - (id)_asset;
@@ -92,13 +92,13 @@
 - (void)_setInCloud:(BOOL)arg1;
 - (void)_setInProgress:(BOOL)arg1;
 - (void)_setNeedsUpdateResult:(BOOL)arg1;
-- (void)_setStillDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })_stillDisplayTime;
-- (struct CGSize { float x1; float x2; })_targetSize;
+- (void)_setStillDisplayTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (struct { int x1; int x2; unsigned int x3; int x4; })_stillDisplayTime;
+- (struct CGSize { double x1; double x2; })_targetSize;
 - (void)_update;
 - (void)_updateInProgress;
 - (void)_updateResultIfNeeded;
-- (id)initWithAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 contentMode:(int)arg3 options:(id)arg4 imageManager:(id)arg5 resultHandler:(id /* block */)arg6;
+- (id)initWithAsset:(id)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2 contentMode:(int)arg3 options:(id)arg4 imageManager:(id)arg5 resultHandler:(id /* block */)arg6;
 - (void)start;
 
 @end

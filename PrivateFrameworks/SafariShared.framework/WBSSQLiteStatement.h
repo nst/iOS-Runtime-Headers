@@ -3,10 +3,10 @@
  */
 
 @interface WBSSQLiteStatement : NSObject {
-    NSArray *_columnNames;
-    NSDictionary *_columnNamesToIndexes;
-    WBSSQLiteDatabase *_database;
-    struct sqlite3_stmt { } *_handle;
+    NSArray * _columnNames;
+    NSDictionary * _columnNamesToIndexes;
+    WBSSQLiteDatabase * _database;
+    struct sqlite3_stmt { } * _handle;
 }
 
 @property (nonatomic, readonly) NSArray *columnNames;
@@ -18,7 +18,7 @@
 - (BOOL)_isValid;
 - (void)bindData:(id)arg1 atParameterIndex:(unsigned int)arg2;
 - (void)bindDouble:(double)arg1 atParameterIndex:(unsigned int)arg2;
-- (void)bindInt64:(long long)arg1 atParameterIndex:(unsigned int)arg2;
+- (void)bindInt64:(int)arg1 atParameterIndex:(unsigned int)arg2;
 - (void)bindInt:(int)arg1 atParameterIndex:(unsigned int)arg2;
 - (void)bindNullAtParameterIndex:(unsigned int)arg1;
 - (void)bindString:(id)arg1 atParameterIndex:(unsigned int)arg2;

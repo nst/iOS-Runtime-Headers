@@ -3,7 +3,7 @@
  */
 
 @interface FBSExternalSceneLayer : FBSSceneLayer {
-    NSString *_sceneID;
+    NSString * _sceneID;
 }
 
 @property (nonatomic, readonly, copy) NSString *sceneID;

@@ -2,26 +2,20 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUIDateTimeController : PSListController <PSUIDateTimePickerCellDelegate, UIPopoverControllerDelegate> {
-    PSSpecifier *_currentTimeSpecifier;
-    struct __CFDateFormatter { } *_dateFormatter;
-    BOOL _localeForces24HourTime;
-    PSWallClockMinuteTimer *_minuteTimer;
-    NSIndexPath *_setDateAndTimeIndexPath;
-    UIPopoverController *_setDateAndTimePopoverController;
-    BOOL _setDateAndTimePopoverShouldRePresent;
-    struct __CFDateFormatter { } *_timeFormatter;
-    PSSpecifier *_timePickerSpecifier;
-    PSSpecifier *_timeZoneSpecifier;
-    NSTimer *_timer;
+@interface PSUIDateTimeController : PSListController <PSUIDateTimePickerCellDelegate> {
+    PSSpecifier * _currentTimeSpecifier;
+    struct __CFDateFormatter { } * _dateFormatter;
+    BOOL  _localeForces24HourTime;
+    PSWallClockMinuteTimer * _minuteTimer;
+    NSIndexPath * _setDateAndTimeIndexPath;
+    struct __CFDateFormatter { } * _timeFormatter;
+    PSSpecifier * _timePickerSpecifier;
+    PSSpecifier * _timeZoneSpecifier;
+    NSTimer * _timer;
 }
 
 @property (retain) PSSpecifier *currentTimeSpecifier;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
 @property (nonatomic, retain) PSWallClockMinuteTimer *minuteTimer;
-@property (readonly) Class superclass;
 @property (retain) PSSpecifier *timePickerSpecifier;
 @property (retain) PSSpecifier *timeZoneSpecifier;
 
@@ -34,7 +28,6 @@
 - (id)currentTimeString;
 - (void)datePickerChanged:(id)arg1;
 - (void)dealloc;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (id)init;
 - (id)is24HourTime:(id)arg1;
 - (void)localeChanged:(id)arg1;
@@ -42,7 +35,6 @@
 - (id)makeTimePickerSpecifier;
 - (id)minuteTimer;
 - (void)newCarrierNotification;
-- (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)reloadTimezone;
 - (void)set24HourTime:(id)arg1 specifier:(id)arg2;
 - (void)setAutomaticTimeFooter;
@@ -63,7 +55,5 @@
 - (id)timeZoneValue:(id)arg1;
 - (id)useAutomaticTime:(id)arg1;
 - (id)valueForTime:(id)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

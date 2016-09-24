@@ -3,8 +3,8 @@
  */
 
 @interface HKEnumeratedValueDataSource : HKHealthQueryChartCacheDataSource {
-    NSArray *_enumeratedValueOrder;
-    id /* block */ _userInfoCreationBlock;
+    NSArray * _enumeratedValueOrder;
+    id /* block */  _userInfoCreationBlock;
 }
 
 @property (nonatomic, retain) NSArray *enumeratedValueOrder;

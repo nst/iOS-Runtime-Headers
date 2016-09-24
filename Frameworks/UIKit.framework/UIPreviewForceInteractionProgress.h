@@ -3,18 +3,18 @@
  */
 
 @interface UIPreviewForceInteractionProgress : UIInteractionProgress <_UIForceLevelClassifierDelegate> {
-    _UIForceLevelClassifier *_classifier;
-    NSObservation *_classifierObservation;
-    BOOL _completesAtTargetState;
-    BOOL _didEnd;
-    BOOL _enteredMinimumState;
-    NSObservation *_gestureBeganObservation;
-    int _minimumState;
-    _UITouchForceObservable *_observable;
-    NSObservation *_progressObservation;
-    int _targetState;
-    NSObservation *_targetStateUpdateObservation;
-    BOOL _updateMinimumStateWithTargetState;
+    _UIForceLevelClassifier * _classifier;
+    NSObservation * _classifierObservation;
+    BOOL  _completesAtTargetState;
+    BOOL  _didEnd;
+    BOOL  _enteredMinimumState;
+    NSObservation * _gestureBeganObservation;
+    int  _minimumState;
+    _UITouchForceObservable * _observable;
+    NSObservation * _progressObservation;
+    int  _targetState;
+    NSObservation * _targetStateUpdateObservation;
+    BOOL  _updateMinimumStateWithTargetState;
 }
 
 @property (setter=_setClassifierShouldRespectSystemGestureTouchFiltering:, nonatomic) BOOL _classifierShouldRespectSystemGestureTouchFiltering;
@@ -39,6 +39,7 @@
 - (int)_targetState;
 - (BOOL)completesAtTargetState;
 - (BOOL)didEnd;
+- (BOOL)enteredMinimumState;
 - (id)initWithGestureRecognizer:(id)arg1;
 - (id)initWithGestureRecognizer:(id)arg1 minimumRequiredState:(int)arg2;
 - (id)initWithView:(id)arg1 targetState:(int)arg2;

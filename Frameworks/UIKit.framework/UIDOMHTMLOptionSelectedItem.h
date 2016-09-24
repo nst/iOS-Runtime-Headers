@@ -3,8 +3,8 @@
  */
 
 @interface UIDOMHTMLOptionSelectedItem : NSObject <UIWebSelectedItemPrivate> {
-    DOMHTMLOptionElement *_node;
-    BOOL _selected;
+    DOMHTMLOptionElement * _node;
+    BOOL  _selected;
 }
 
 @property (nonatomic, retain) DOMHTMLOptionElement *_node;

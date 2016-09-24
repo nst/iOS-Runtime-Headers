@@ -2,36 +2,40 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@interface CKAcceptSharesOperation : CKDatabaseOperation {
-    id /* block */ _acceptSharesCompletionBlock;
-    NSMutableDictionary *_errorsByShareURL;
-    id /* block */ _perShareCompletionBlock;
-    NSArray *_shareURLs;
+@interface CKAcceptSharesOperation : CKOperation {
+    id /* block */  _acceptSharesCompletionBlock;
+    NSMutableDictionary * _errorsByShareURL;
+    id /* block */  _perShareCompletionBlock;
+    NSArray * _shareMetadatas;
+    NSMutableDictionary * _shareMetadatasByShareURL;
 }
 
 @property (nonatomic, copy) id /* block */ acceptSharesCompletionBlock;
 @property (nonatomic, retain) NSMutableDictionary *errorsByShareURL;
 @property (nonatomic, copy) id /* block */ perShareCompletionBlock;
-@property (nonatomic, copy) NSArray *shareURLs;
+@property (nonatomic, copy) NSArray *shareMetadatas;
+@property (nonatomic, retain) NSMutableDictionary *shareMetadatasByShareURL;
 
 - (void).cxx_destruct;
 - (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id /* block */)acceptSharesCompletionBlock;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (id)errorsByShareURL;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
 - (BOOL)hasCKOperationCallbacksSet;
 - (id)init;
-- (id)initWithShareURLs:(id)arg1;
+- (id)initWithShareMetadatas:(id)arg1;
 - (id /* block */)perShareCompletionBlock;
 - (void)performCKOperation;
 - (void)setAcceptSharesCompletionBlock:(id /* block */)arg1;
 - (void)setErrorsByShareURL:(id)arg1;
 - (void)setPerShareCompletionBlock:(id /* block */)arg1;
-- (void)setShareURLs:(id)arg1;
-- (id)shareURLs;
+- (void)setShareMetadatas:(id)arg1;
+- (void)setShareMetadatasByShareURL:(id)arg1;
+- (id)shareMetadatas;
+- (id)shareMetadatasByShareURL;
 
 @end

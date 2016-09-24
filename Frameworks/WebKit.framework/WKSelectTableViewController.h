@@ -3,15 +3,15 @@
  */
 
 @interface WKSelectTableViewController : UITableViewController <UIKeyInput> {
-    BOOL _allowsMultipleSelection;
-    WKContentView *_contentView;
-    float _fontSize;
-    float _maximumTextWidth;
-    int _numberOfSections;
-    WKSelectPopover *_popover;
-    unsigned int _singleSelectionIndex;
-    unsigned int _singleSelectionSection;
-    int _textAlignment;
+    BOOL  _allowsMultipleSelection;
+    WKContentView * _contentView;
+    double  _fontSize;
+    double  _maximumTextWidth;
+    int  _numberOfSections;
+    WKSelectPopover * _popover;
+    unsigned int  _singleSelectionIndex;
+    unsigned int  _singleSelectionSection;
+    int  _textAlignment;
 }
 
 @property (nonatomic) int autocapitalizationType;
@@ -19,6 +19,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL enablesReturnKeyAutomatically;
+@property (nonatomic, readonly) BOOL hasText;
 @property (readonly) unsigned int hash;
 @property (nonatomic) int keyboardAppearance;
 @property (nonatomic) int keyboardType;
@@ -27,6 +28,7 @@
 @property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
 @property (nonatomic) int spellCheckingType;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *textContentType;
 
 - (void)deleteBackward;
 - (struct OptionItem { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; bool x2; bool x3; bool x4; int x5; }*)findItemAt:(id)arg1;

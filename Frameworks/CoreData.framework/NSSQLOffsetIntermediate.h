@@ -3,7 +3,7 @@
  */
 
 @interface NSSQLOffsetIntermediate : NSSQLIntermediate {
-    unsigned int _offset;
+    unsigned int  _offset;
 }
 
 - (id)generateSQLStringInContext:(id)arg1;

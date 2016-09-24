@@ -3,8 +3,8 @@
  */
 
 @interface CNFRegChangeAccountPasswordController : CNFRegAuthorizedAccountWebViewController {
-    NSString *_appleID;
-    <CNFRegChangeAccountPasswordDelegate> *_delegate;
+    NSString * _appleID;
+    <CNFRegChangeAccountPasswordDelegate> * _delegate;
 }
 
 @property (nonatomic, copy) NSString *appleID;

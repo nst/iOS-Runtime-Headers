@@ -3,15 +3,15 @@
  */
 
 @interface PSEditableTableCell : PSTableCell <UITextFieldDelegate, UITextViewDelegate> {
-    PSListController *_controllerDelegate;
-    BOOL _delaySpecifierRelease;
-    id _delegate;
-    BOOL _forceFirstResponder;
-    id _realTarget;
-    BOOL _returnKeyTapped;
-    SEL _targetSetter;
-    UIColor *_textColor;
-    BOOL _valueChanged;
+    PSListController * _controllerDelegate;
+    BOOL  _delaySpecifierRelease;
+    id  _delegate;
+    BOOL  _forceFirstResponder;
+    id  _realTarget;
+    BOOL  _returnKeyTapped;
+    SEL  _targetSetter;
+    UIColor * _textColor;
+    BOOL  _valueChanged;
 }
 
 @property (nonatomic) PSListController *controllerDelegate;

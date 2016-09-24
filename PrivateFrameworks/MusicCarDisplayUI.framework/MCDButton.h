@@ -3,9 +3,9 @@
  */
 
 @interface MCDButton : UIButton {
-    CALayer *_focusColorLayer;
-    NSString *_labelTemplateString;
-    BOOL _showBezelInTouch;
+    CALayer * _focusColorLayer;
+    NSString * _labelTemplateString;
+    BOOL  _showBezelInTouch;
 }
 
 @property (nonatomic, copy) NSString *labelTemplateString;
@@ -28,10 +28,12 @@
 - (void)focusedViewDidChange;
 - (id)labelTemplateString;
 - (void)layoutSubviews;
+- (void)setHidden:(BOOL)arg1;
 - (void)setLabelTemplateString:(id)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setShowBezelInTouch:(BOOL)arg1;
 - (BOOL)showBezelInTouch;
+- (void)updateButtonOpacityForKnobUnfocused;
 - (void)willMoveToWindow:(id)arg1;
 
 @end

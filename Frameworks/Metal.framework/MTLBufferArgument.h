@@ -3,10 +3,11 @@
  */
 
 @interface MTLBufferArgument : MTLArgumentInternal {
-    unsigned short _alignment;
-    unsigned int _dataSize;
-    unsigned short _dataType;
-    MTLStructTypeInternal *_structType;
+    unsigned short  _alignment;
+    unsigned int  _dataSize;
+    unsigned int  _dataType;
+    MTLStructTypeInternal * _structType;
+    unsigned int  _vertexDescriptorBuffer;
 }
 
 - (unsigned int)bufferAlignment;
@@ -15,8 +16,9 @@
 - (id)bufferStructType;
 - (void)dealloc;
 - (id)describe;
-- (id)description;
 - (id)initWithName:(id)arg1 type:(unsigned int)arg2 access:(unsigned int)arg3 isActive:(BOOL)arg4 locationIndex:(unsigned int)arg5 arraySize:(unsigned int)arg6 dataType:(unsigned int)arg7 dataSize:(unsigned int)arg8 alignment:(unsigned int)arg9;
+- (BOOL)isVertexDescriptorBuffer;
 - (void)setStructType:(id)arg1;
+- (void)setVertexDescriptorBuffer:(BOOL)arg1;
 
 @end

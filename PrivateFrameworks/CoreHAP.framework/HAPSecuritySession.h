@@ -3,16 +3,16 @@
  */
 
 @interface HAPSecuritySession : NSObject {
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    <HAPSecuritySessionDelegate> *_delegate;
-    NSData *_inputKey;
-    NSMutableData *_inputNonce;
-    NSData *_outputKey;
-    NSMutableData *_outputNonce;
-    struct PairingSessionPrivate { } *_pairingSession;
-    unsigned long long _resumeSessionID;
-    unsigned int _role;
-    unsigned int _state;
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    <HAPSecuritySessionDelegate> * _delegate;
+    NSData * _inputKey;
+    NSMutableData * _inputNonce;
+    NSData * _outputKey;
+    NSMutableData * _outputNonce;
+    struct PairingSessionPrivate { } * _pairingSession;
+    unsigned int  _resumeSessionID;
+    unsigned int  _role;
+    unsigned int  _state;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
@@ -22,7 +22,7 @@
 @property (nonatomic, retain) NSData *outputKey;
 @property (nonatomic, retain) NSMutableData *outputNonce;
 @property (nonatomic) struct PairingSessionPrivate { }*pairingSession;
-@property (nonatomic, readonly) unsigned long long resumeSessionID;
+@property (nonatomic, readonly) unsigned int resumeSessionID;
 @property (nonatomic, readonly) unsigned int role;
 @property (nonatomic) unsigned int state;
 
@@ -31,7 +31,7 @@
 - (id)_handleLocalPairingIdentityRequestWithStatus:(int*)arg1;
 - (id)_handlePeerPairingIdentityRequestWithIdentifier:(id)arg1 status:(int*)arg2;
 - (void)_handleSetupExchangeComplete;
-- (BOOL)_initializeSetupSession:(unsigned long long)arg1;
+- (BOOL)_initializeSetupSession:(unsigned int)arg1;
 - (void)_initiateClientSessionSetupExchange;
 - (id)_inputInfo;
 - (void)_invalidate;
@@ -48,7 +48,7 @@
 - (id)delegate;
 - (id)description;
 - (id)encryptData:(id)arg1 additionalAuthenticatedData:(id)arg2 error:(id*)arg3;
-- (id)initWithRole:(unsigned int)arg1 resumeSessionID:(unsigned long long)arg2 delegate:(id)arg3;
+- (id)initWithRole:(unsigned int)arg1 resumeSessionID:(unsigned int)arg2 delegate:(id)arg3;
 - (id)inputKey;
 - (id)inputNonce;
 - (void)open;
@@ -56,14 +56,14 @@
 - (id)outputNonce;
 - (struct PairingSessionPrivate { }*)pairingSession;
 - (void)receivedSetupExchangeData:(id)arg1 error:(id)arg2;
-- (unsigned long long)resumeSessionID;
+- (unsigned int)resumeSessionID;
 - (unsigned int)role;
 - (void)setInputKey:(id)arg1;
 - (void)setInputNonce:(id)arg1;
 - (void)setOutputKey:(id)arg1;
 - (void)setOutputNonce:(id)arg1;
 - (void)setPairingSession:(struct PairingSessionPrivate { }*)arg1;
-- (void)setResumeSessionID:(unsigned long long)arg1;
+- (void)setResumeSessionID:(unsigned int)arg1;
 - (void)setState:(unsigned int)arg1;
 - (unsigned int)state;
 

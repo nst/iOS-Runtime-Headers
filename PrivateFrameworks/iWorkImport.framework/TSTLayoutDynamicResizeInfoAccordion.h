@@ -3,12 +3,12 @@
  */
 
 @interface TSTLayoutDynamicResizeInfoAccordion : TSTLayoutDynamicResizeInfo {
-    float _heightFactor;
-    float _widthFactor;
+    double  _heightFactor;
+    double  _widthFactor;
 }
 
-@property (nonatomic, readonly) float heightFactor;
-@property (nonatomic, readonly) float widthFactor;
+@property (nonatomic, readonly) double heightFactor;
+@property (nonatomic, readonly) double widthFactor;
 
 - (float)applyResizeHeightFactor:(float)arg1;
 - (float)applyResizeWidthFactor:(float)arg1;

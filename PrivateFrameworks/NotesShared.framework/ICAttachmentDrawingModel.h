@@ -3,7 +3,7 @@
  */
 
 @interface ICAttachmentDrawingModel : ICAttachmentModel {
-    ICDrawingVersionedDocument *_drawingDocument;
+    ICDrawingVersionedDocument * _drawingDocument;
 }
 
 @property (nonatomic, readonly) ICDrawing *drawing;
@@ -14,23 +14,26 @@
 - (void).cxx_destruct;
 - (id)activityItem;
 - (id)activityItems;
-- (void)asyncLoadDrawingCompletion:(id /* block */)arg1;
+- (void)dealloc;
 - (id)drawing;
 - (id)drawingDocument;
-- (void)generatePreviews;
+- (void)drawingPreviewIsUpToDate;
 - (BOOL)generatePreviewsDuringCloudActivity;
+- (void)generatePreviewsInOperation:(id)arg1;
 - (id /* block */)genericBrickThumbnailCreator;
 - (id /* block */)genericListThumbnailCreator;
 - (BOOL)hasPreviews;
 - (struct UIImage { Class x1; }*)imageForActivityItem;
+- (id)initWithAttachment:(id)arg1;
 - (void)mergeWithMergeableData:(id)arg1;
 - (BOOL)needToGeneratePreviews;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (int)previewImageOrientation;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })previewImageOrientationTransform;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })previewImageOrientationTransform;
 - (id)previewImageURL;
 - (id)previewItemTitle;
 - (id)previewItemURL;
-- (void)setImage:(struct UIImage { Class x1; }*)arg1 forDrawing:(id)arg2 updateChangeCount:(BOOL)arg3 withCompletion:(id /* block */)arg4;
+- (void)saveDrawing:(id)arg1 withImage:(struct UIImage { Class x1; }*)arg2 forImageDrawing:(id)arg3;
 - (id)sharedDrawingController;
 - (BOOL)showThumbnailInNoteList;
 - (void)writeMergeableData;

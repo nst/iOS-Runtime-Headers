@@ -3,7 +3,7 @@
  */
 
 @interface NTKCustomWorldCityAbbreviationsStore : NSObject {
-    NPSManager *_npsManager;
+    NPSManager * _npsManager;
 }
 
 + (id)sharedInstance;

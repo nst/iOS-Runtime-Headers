@@ -3,7 +3,7 @@
  */
 
 @interface MSTimerGate : NSObject {
-    BOOL _enabled;
+    BOOL  _enabled;
 }
 
 @property (nonatomic) BOOL enabled;

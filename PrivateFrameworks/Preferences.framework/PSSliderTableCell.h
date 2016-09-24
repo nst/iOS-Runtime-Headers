@@ -3,7 +3,7 @@
  */
 
 @interface PSSliderTableCell : PSControlTableCell {
-    UIView *_disabledView;
+    UIView * _disabledView;
 }
 
 - (void).cxx_destruct;

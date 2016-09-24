@@ -3,25 +3,32 @@
  */
 
 @interface UIViewAnimationBlockDelegate : NSObject {
-    BOOL _allowUserInteraction;
-    BOOL _allowsUserInteractionToCutOffEndOfAnimation;
-    BOOL _animationDidStopSent;
-    id /* block */ _completion;
-    BOOL _didBeginBlockAnimation;
-    BOOL _isZeroDuration;
-    id /* block */ _start;
-    NSMutableArray *_systemPostAnimationActions;
+    BOOL  __forcingImmediateCompletion;
+    BOOL  _allowUserInteraction;
+    BOOL  _allowsHitTesting;
+    BOOL  _allowsUserInteractionToCutOffEndOfAnimation;
+    BOOL  _animationDidStopSent;
+    id /* block */  _completion;
+    BOOL  _didBeginBlockAnimation;
+    BOOL  _isZeroDuration;
+    id /* block */  _start;
+    NSMutableArray * _systemPostAnimationActions;
 }
 
 @property (nonatomic, readonly) BOOL _allowsUserInteraction;
+@property (setter=_setForcingImmediateCompletion:, nonatomic) BOOL _forcingImmediateCompletion;
 
++ (id)animationBlockDelegateWithDuration:(double)arg1 options:(unsigned int)arg2 start:(id /* block */)arg3 completion:(id /* block */)arg4;
 + (void)setAnimationBlockDelegateWithDuration:(double)arg1 options:(unsigned int)arg2 start:(id /* block */)arg3 completion:(id /* block */)arg4;
 
 - (void).cxx_destruct;
+- (BOOL)_allowsHitTesting;
 - (BOOL)_allowsUserInteraction;
 - (BOOL)_allowsUserInteractionToCutOffEndOfAnimation;
 - (void)_didEndBlockAnimation:(id)arg1 finished:(id)arg2 context:(id)arg3;
+- (BOOL)_forcingImmediateCompletion;
 - (void)_sendDeferredCompletion:(id)arg1;
+- (void)_setForcingImmediateCompletion:(BOOL)arg1;
 - (void)_willBeginBlockAnimation:(id)arg1 context:(id)arg2;
 
 @end

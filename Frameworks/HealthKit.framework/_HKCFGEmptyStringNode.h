@@ -3,7 +3,7 @@
  */
 
 @interface _HKCFGEmptyStringNode : _HKCFGNode {
-    id /* block */ _evaluator;
+    id /* block */  _evaluator;
 }
 
 + (id)nodeWithEvaluator:(id /* block */)arg1;

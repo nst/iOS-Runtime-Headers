@@ -6,32 +6,49 @@
     struct { 
         unsigned int trafficType : 1; 
         unsigned int includeHistoricTravelTime : 1; 
-    } _has;
-    BOOL _includeHistoricTravelTime;
-    int _trafficType;
+        unsigned int includeStaticTravelTime : 1; 
+    }  _has;
+    BOOL  _includeHistoricTravelTime;
+    BOOL  _includeStaticTravelTime;
+    int  _trafficType;
+    GEOUserPreferences * _userPreferences;
 }
 
 @property (nonatomic) BOOL hasIncludeHistoricTravelTime;
+@property (nonatomic) BOOL hasIncludeStaticTravelTime;
 @property (nonatomic) BOOL hasTrafficType;
+@property (nonatomic, readonly) BOOL hasUserPreferences;
 @property (nonatomic) BOOL includeHistoricTravelTime;
+@property (nonatomic) BOOL includeStaticTravelTime;
 @property (nonatomic) int trafficType;
+@property (nonatomic, retain) GEOUserPreferences *userPreferences;
 
+- (int)StringAsTrafficType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasIncludeHistoricTravelTime;
+- (BOOL)hasIncludeStaticTravelTime;
 - (BOOL)hasTrafficType;
+- (BOOL)hasUserPreferences;
 - (unsigned int)hash;
 - (BOOL)includeHistoricTravelTime;
+- (BOOL)includeStaticTravelTime;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasIncludeHistoricTravelTime:(BOOL)arg1;
+- (void)setHasIncludeStaticTravelTime:(BOOL)arg1;
 - (void)setHasTrafficType:(BOOL)arg1;
 - (void)setIncludeHistoricTravelTime:(BOOL)arg1;
+- (void)setIncludeStaticTravelTime:(BOOL)arg1;
 - (void)setTrafficType:(int)arg1;
+- (void)setUserPreferences:(id)arg1;
 - (int)trafficType;
+- (id)trafficTypeAsString:(int)arg1;
+- (id)userPreferences;
 - (void)writeTo:(id)arg1;
 
 @end

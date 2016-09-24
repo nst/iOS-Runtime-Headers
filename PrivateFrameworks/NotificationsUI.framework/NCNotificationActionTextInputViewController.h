@@ -3,28 +3,28 @@
  */
 
 @interface NCNotificationActionTextInputViewController : UIViewController <NCInteractiveNotificationHost, UITextViewDelegate> {
-    NSString *_actionIdentifier;
-    NSString *_buttonTitle;
-    _UITextFieldRoundedRectBackgroundViewNeue *_coverView;
-    <NCInteractiveNotificationHostDelegate> *_delegate;
-    float _maximumHeight;
-    BOOL _modal;
-    UIButton *_sendButton;
-    UITextView *_textEntryView;
-    <NCNotificationActionTextInputDelegate> *_textInputDelegate;
+    NSString * _actionIdentifier;
+    NSString * _buttonTitle;
+    _UITextFieldRoundedRectBackgroundViewNeue * _coverView;
+    <NCInteractiveNotificationHostDelegate> * _delegate;
+    double  _maximumHeight;
+    BOOL  _modal;
+    UIButton * _sendButton;
+    UITextView * _textEntryView;
+    <NCNotificationActionTextInputDelegate> * _textInputDelegate;
 }
 
-@property (nonatomic, readonly, retain) NCViewServiceDescriptor *accessoryViewService;
+@property (nonatomic, readonly) NCViewServiceDescriptor *accessoryViewService;
 @property (nonatomic, retain) NSString *actionIdentifier;
-@property (nonatomic, readonly) float bottomOverhangHeight;
+@property (nonatomic, readonly) double bottomOverhangHeight;
 @property (nonatomic, retain) NSString *buttonTitle;
 @property (nonatomic, retain) _UITextFieldRoundedRectBackgroundViewNeue *coverView;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NCInteractiveNotificationHostDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly, retain) NCViewServiceDescriptor *inlayViewService;
-@property (nonatomic) float maximumHeight;
+@property (nonatomic, readonly) NCViewServiceDescriptor *inlayViewService;
+@property (nonatomic) double maximumHeight;
 @property (getter=isModal, nonatomic) BOOL modal;
 @property (nonatomic, retain) UIButton *sendButton;
 @property (nonatomic, readonly) BOOL showsKeyboard;
@@ -32,6 +32,7 @@
 @property (nonatomic, retain) UITextView *textEntryView;
 @property (nonatomic) <NCNotificationActionTextInputDelegate> *textInputDelegate;
 
+- (void).cxx_destruct;
 - (void)_sendButtonTouchUpInside:(id)arg1;
 - (void)_updateForTextChanged;
 - (id)accessoryViewService;
@@ -39,7 +40,6 @@
 - (float)bottomOverhangHeight;
 - (id)buttonTitle;
 - (id)coverView;
-- (void)dealloc;
 - (id)delegate;
 - (void)didChangeRevealPercent:(float)arg1;
 - (void)getActionContextWithCompletion:(id /* block */)arg1;
@@ -50,7 +50,7 @@
 - (BOOL)isModal;
 - (float)maximumHeight;
 - (float)preferredContentHeight;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (id)sendButton;
 - (void)setActionIdentifier:(id)arg1;
 - (void)setButtonTitle:(id)arg1;

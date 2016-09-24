@@ -5,6 +5,7 @@
 
 @required
 
+- (NSString *)appLibraryID;
 - (NSString *)extension;
 - (BRCItemID *)itemID;
 - (NSString *)logicalName;

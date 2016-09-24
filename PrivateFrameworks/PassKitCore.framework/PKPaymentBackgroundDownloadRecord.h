@@ -3,8 +3,8 @@
  */
 
 @interface PKPaymentBackgroundDownloadRecord : NSObject <NSSecureCoding> {
-    int _retryCount;
-    int _taskType;
+    int  _retryCount;
+    int  _taskType;
 }
 
 @property (nonatomic) int retryCount;

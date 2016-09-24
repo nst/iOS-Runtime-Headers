@@ -3,9 +3,9 @@
  */
 
 @interface RUIPhotoPicker : NSObject <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
-    UIImagePickerController *_imagePickerController;
-    UIImage *_pickedImage;
-    id /* block */ _pickerCompletion;
+    UIImagePickerController * _imagePickerController;
+    UIImage * _pickedImage;
+    id /* block */  _pickerCompletion;
 }
 
 @property (readonly, copy) NSString *debugDescription;

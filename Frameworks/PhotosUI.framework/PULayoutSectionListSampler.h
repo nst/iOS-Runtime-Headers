@@ -3,12 +3,12 @@
  */
 
 @interface PULayoutSectionListSampler : PULayoutSectionSampler {
-    int _lastSeenSampledIndex;
-    int _lastSeenTopUnsampledIndex;
-    int _lastSeenUnsampledIndex;
-    int _numberOfRealItems;
-    int _numberOfVisibleItems;
-    int *_visibleItemIndexes;
+    int  _lastSeenSampledIndex;
+    int  _lastSeenTopUnsampledIndex;
+    int  _lastSeenUnsampledIndex;
+    int  _numberOfRealItems;
+    int  _numberOfVisibleItems;
+    int * _visibleItemIndexes;
 }
 
 - (void)dealloc;

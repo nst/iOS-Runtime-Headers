@@ -2,32 +2,25 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEONavigation : NSObject <GEOComposedRouteObserver> {
-    NSDate *_arrivalDate;
-    id /* block */ _companionRouteFilterBlock;
-    GEONavigationDetails *_details;
-    NSDate *_displayETA;
-    double _displayRemainingTime;
-    NSTimer *_etaUpdateTimer;
-    BOOL _forceUpdateETA;
-    GEONavigationGuidanceState *_guidanceState;
-    BOOL _hasNavigationStartedToken;
-    BOOL _hasStartedGuidance;
-    NSData *_lastSentRouteContext;
-    NSXPCConnection *_nanomapscdConnection;
-    NSXPCConnection *_navdConnection;
-    int _navigationStartedToken;
-    NSPointerArray *_observers;
-    <GEORoutePreloadSession> *_preloadSession;
-    GEOLocation *_previousLocation;
-    BOOL _shouldSendRouteWithStatus;
+@interface GEONavigation : NSObject {
+    NSDate * _arrivalDate;
+    GEONavigationDetails * _details;
+    NSDate * _displayETA;
+    double  _displayRemainingTime;
+    NSTimer * _etaUpdateTimer;
+    BOOL  _forceUpdateETA;
+    GEONavigationGuidanceState * _guidanceState;
+    BOOL  _hasStartedGuidance;
+    NSData * _lastSentRouteContext;
+    NSXPCConnection * _nanomapscdConnection;
+    NSPointerArray * _observers;
+    <GEORoutePreloadSession> * _preloadSession;
+    GEOLocation * _previousLocation;
+    BOOL  _shouldSendRouteWithStatus;
 }
 
 @property (nonatomic) unsigned int announcementStage;
 @property (nonatomic, readonly) NSDate *arrivalDate;
-@property (nonatomic, copy) id /* block */ companionRouteFilterBlock;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *destinationName;
 @property (nonatomic) int displayStep;
 @property (nonatomic, readonly) double distanceRemainingOnRoute;
@@ -38,7 +31,6 @@
 @property (nonatomic, readonly) int guidanceLevelIgnoringTimeCriterion;
 @property (nonatomic) BOOL guidancePromptsEnabled;
 @property (nonatomic, readonly) BOOL hasStartedGuidance;
-@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isNavigating;
 @property (nonatomic, readonly) GEOLocation *location;
 @property (nonatomic, readonly) BOOL locationUnreliable;
@@ -49,37 +41,28 @@
 @property (nonatomic, readonly) GEOComposedRoute *route;
 @property (nonatomic, readonly) GEORouteMatch *routeMatch;
 @property (nonatomic, readonly) BOOL shouldSuppressCellularDataAlerts;
-@property (readonly) Class superclass;
 @property (nonatomic, readonly) double timeUntilNextAnnouncement;
 
++ (BOOL)_canRunNavigationBasedOnDistanceForRoute:(id)arg1 withCurrentLocation:(id)arg2;
++ (BOOL)canNavigateWithTransportType:(int)arg1;
++ (BOOL)canRunNavigationForRoute:(id)arg1 withCurrentLocation:(id)arg2;
 + (id)displayDateForDate:(id)arg1;
 + (double)displayTimeIntervalForTimeInterval:(double)arg1;
 + (id)sharedInstance;
 
-- (BOOL)_canRunNavigationBasedOnDistanceForRoute:(id)arg1 withCurrentLocation:(id)arg2;
 - (void)_clearETATimer;
 - (void)_closeNanomapscdConnection;
-- (void)_closeNavdConnection;
 - (void)_createNanomapscdConnection;
-- (void)_createNavdConnection;
 - (void)_forceUpdateETA;
 - (void)_invalidateNavigationSessionWithRouteContext:(id)arg1;
-- (void)_sendMessage:(int)arg1 data:(id)arg2;
+- (void)_notifyObserversOfGuidanceStateChange;
 - (void)_updateETA;
 - (void)_updateNavigationGuidanceStateCellularDataAlertsAttribute:(BOOL)arg1;
 - (void)_updateNavigationRouteDetails:(id)arg1 routeStatus:(id)arg2 routeContext:(id)arg3;
 - (void)_updateNavigationRouteStatus;
-- (void)_updatePreloaderWithGuidanceLevel:(int)arg1;
 - (void)addObserver:(id)arg1;
 - (unsigned int)announcementStage;
 - (id)arrivalDate;
-- (BOOL)canNavigateWithTransportType:(int)arg1;
-- (BOOL)canRunNavigationForRoute:(id)arg1 withCurrentLocation:(id)arg2;
-- (id /* block */)companionRouteFilterBlock;
-- (void)composedRoute:(id)arg1 changedSelectedRideInClusteredLeg:(id)arg2 fromIndex:(unsigned int)arg3 toIndex:(unsigned int)arg4;
-- (void)composedRoute:(id)arg1 selectedSections:(id)arg2 deselectedSections:(id)arg3;
-- (void)composedRouteUpdatedSnappedPaths:(id)arg1;
-- (void)composedRouteUpdatedTraffic:(id)arg1;
 - (void)dealloc;
 - (id)destinationName;
 - (int)displayStep;
@@ -107,7 +90,6 @@
 - (void)selectRoute:(id)arg1 currentLocation:(id)arg2;
 - (void)sendNavigationStatus;
 - (void)setAnnouncementStage:(unsigned int)arg1;
-- (void)setCompanionRouteFilterBlock:(id /* block */)arg1;
 - (void)setDisplayStep:(int)arg1;
 - (void)setGuidanceLevel:(int)arg1;
 - (void)setGuidancePromptsEnabled:(BOOL)arg1;
@@ -118,12 +100,13 @@
 - (BOOL)shouldSuppressCellularDataAlerts;
 - (void)startTrackingFromLocation:(id)arg1;
 - (void)startTurnByTurnNavigationForTransportType:(int)arg1 state:(int)arg2;
-- (void)startWithDestinationName:(id)arg1;
+- (void)startWithDestinationName:(id)arg1 stringFormatter:(id)arg2;
 - (void)stop;
 - (void)stopTracking;
 - (void)stopTurnByTurnNavigation;
 - (double)timeUntilNextAnnouncement;
 - (void)updateLocation:(id)arg1 routeMatch:(id)arg2 etaRoute:(id)arg3 locationUnreliable:(BOOL)arg4;
+- (void)updatePreloaderWithGuidanceLevel:(int)arg1;
 - (void)updateRouteGuidanceLevelForLocation:(id)arg1 shouldFilterLocationUpdatesOnDistance:(BOOL)arg2;
 - (void)updatedETA:(id)arg1;
 

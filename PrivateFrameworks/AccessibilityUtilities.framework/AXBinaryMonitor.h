@@ -3,10 +3,10 @@
  */
 
 @interface AXBinaryMonitor : NSObject {
-    NSObject<OS_dispatch_queue> *_binaryMonitorQueue;
-    NSMutableDictionary *_bundleHandlerMap;
-    NSMutableDictionary *_dylibHandlerMap;
-    NSMutableDictionary *_frameworkHandlerMap;
+    NSObject<OS_dispatch_queue> * _binaryMonitorQueue;
+    NSMutableDictionary * _bundleHandlerMap;
+    NSMutableDictionary * _dylibHandlerMap;
+    NSMutableDictionary * _frameworkHandlerMap;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *binaryMonitorQueue;

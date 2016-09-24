@@ -3,14 +3,14 @@
  */
 
 @interface PLRevGeoRepresentativeNameInfo : NSObject {
-    BOOL _addCountyIfNeeded;
-    BOOL _allEntriesAtHome;
-    BOOL _allEntriesMatchHomeForOrderType;
-    NSMutableOrderedSet *_geoPlaces;
-    unsigned int _matchingCount;
-    NSString *_name;
-    NSMutableOrderedSet *_remainingGeoPlaces;
-    unsigned int _type;
+    BOOL  _addCountyIfNeeded;
+    BOOL  _allEntriesAtHome;
+    BOOL  _allEntriesMatchHomeForOrderType;
+    NSMutableOrderedSet * _geoPlaces;
+    unsigned int  _matchingCount;
+    NSString * _name;
+    NSMutableOrderedSet * _remainingGeoPlaces;
+    unsigned int  _type;
 }
 
 @property (nonatomic) BOOL addCountyIfNeeded;

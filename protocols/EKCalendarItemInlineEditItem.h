@@ -6,5 +6,6 @@
 @required
 
 - (BOOL)isSaveable;
+- (NSString *)searchStringForEventAutocomplete;
 
 @end

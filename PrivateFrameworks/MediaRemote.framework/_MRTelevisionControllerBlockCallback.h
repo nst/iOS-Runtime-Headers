@@ -3,8 +3,8 @@
  */
 
 @interface _MRTelevisionControllerBlockCallback : NSObject {
-    id /* block */ _callbackBlock;
-    NSObject<OS_dispatch_queue> *_queue;
+    id /* block */  _callbackBlock;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, readonly) id /* block */ callbackBlock;

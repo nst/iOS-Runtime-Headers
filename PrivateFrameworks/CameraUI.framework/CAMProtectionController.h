@@ -3,12 +3,12 @@
  */
 
 @interface CAMProtectionController : NSObject {
-    NSMutableDictionary *__burstProcessingProtectionFileDescriptorsByIdentifier;
-    int __nebulaDaemonWriteProtectionFileDescriptor;
-    NSMutableSet *__nebulaDaemonWriteProtectionInflightIdentifiers;
-    NSMutableDictionary *__persistenceProtectionFileDescriptorsByType;
-    NSCountedSet *__persistenceProtectionInflightRequestsByType;
-    NSObject<OS_dispatch_queue> *__protectionQueue;
+    NSMutableDictionary * __burstProcessingProtectionFileDescriptorsByIdentifier;
+    int  __nebulaDaemonWriteProtectionFileDescriptor;
+    NSMutableSet * __nebulaDaemonWriteProtectionInflightIdentifiers;
+    NSMutableDictionary * __persistenceProtectionFileDescriptorsByType;
+    NSCountedSet * __persistenceProtectionInflightRequestsByType;
+    NSObject<OS_dispatch_queue> * __protectionQueue;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *_burstProcessingProtectionFileDescriptorsByIdentifier;
@@ -35,10 +35,16 @@
 - (id)_persistenceProtectionPathForType:(int)arg1;
 - (int)_persistenceProtectionTypeForRequest:(id)arg1;
 - (id)_protectionQueue;
+- (void)_protectionQueueAbortProtectionForBurstProcessing;
+- (void)_protectionQueueAbortProtectionForNebulaDaemonWrites;
+- (void)_protectionQueueAbortProtectionForProtectionTypes;
+- (void)_protectionQueueRemoveBurstProcessingProtectionIndicatorForIdentifier:(id)arg1;
+- (void)_protectionQueueRemovePersistenceProtectionIndicatorForType:(int)arg1 unlinkFile:(BOOL)arg2;
+- (void)_protectionQueueStartProtectingNebulaDaemonWritesForIdentifier:(id)arg1;
 - (void)_protectionQueueStartProtectingPersistenceForType:(int)arg1;
+- (void)_protectionQueueStopProtectingNebulaDaemonWritesForIdentifier:(id)arg1 closeFile:(BOOL)arg2;
 - (void)_protectionQueueStopProtectingPersistenceForType:(int)arg1;
-- (void)_removeBurstProcessingProtectionIndicatorForIdentifier:(id)arg1;
-- (void)_removePersistenceProtectionIndicatorForType:(int)arg1;
+- (void)dealloc;
 - (id)init;
 - (void)startProtectingBurstProcessingForIdentifier:(id)arg1;
 - (void)startProtectingNebulaDaemonWritesForIdentifier:(id)arg1;

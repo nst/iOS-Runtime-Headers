@@ -12,4 +12,8 @@
 - (void)propertyCellDidChangeLayout:(CNPropertyCell *)arg1;
 - (CNContactStore *)storeForPropertyCell:(CNPropertyCell *)arg1;
 
+@optional
+
+- (<CNUIUserActionListDataSource> *)sharedActionsDataSource;
+
 @end

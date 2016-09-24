@@ -3,9 +3,9 @@
  */
 
 @interface AVCMNotificationDispatcherListenerAndCallback : NSObject {
-    int (*_callback;
-    void *_callbackContextToken;
-    AVWeakReference *_weakReferenceToListener;
+    int (* _callback;
+    void * _callbackContextToken;
+    AVWeakReference * _weakReferenceToListener;
 }
 
 @property (nonatomic, readonly) int (*callback;

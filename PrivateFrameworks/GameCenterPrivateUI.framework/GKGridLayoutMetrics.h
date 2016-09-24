@@ -3,9 +3,9 @@
  */
 
 @interface GKGridLayoutMetrics : NSObject <NSCopying> {
-    NSMutableDictionary *_keyToMetrics;
-    NSString *_layoutKey;
-    NSMutableDictionary *_locationToKeyList;
+    NSMutableDictionary * _keyToMetrics;
+    NSString * _layoutKey;
+    NSMutableDictionary * _locationToKeyList;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *keyToMetrics;

@@ -3,9 +3,9 @@
  */
 
 @interface PUProtoDidGetPasscodeState : PBCodable <NSCopying> {
-    BOOL _hasPasscode;
-    BOOL _isLocked;
-    BOOL _isUnlockOnly;
+    BOOL  _hasPasscode;
+    BOOL  _isLocked;
+    BOOL  _isUnlockOnly;
 }
 
 @property (nonatomic) BOOL hasPasscode;

@@ -3,23 +3,25 @@
  */
 
 @interface CKDMMCSEngineContext : NSObject {
-    CKDMMCS *_MMCS;
-    struct _mmcs_engine { } *_MMCSEngine;
-    NSString *_applicationBundleID;
-    unsigned long _maxChunkCountForSection;
-    NSString *_path;
-    NSString *_protocolVersion;
-    long _refCount;
-    NSRunLoop *_runLoop;
-    NSString *_runLoopMode;
-    NSObject<OS_dispatch_semaphore> *_semaphore;
-    int _state;
-    BOOL _stopMMCSThread;
+    CKDMMCS * _MMCS;
+    struct _mmcs_engine { } * _MMCSEngine;
+    NSString * _applicationBundleID;
+    NSMutableIndexSet * _inMemoryItemsIDs;
+    unsigned long  _maxChunkCountForSection;
+    NSString * _path;
+    NSString * _protocolVersion;
+    long  _refCount;
+    NSRunLoop * _runLoop;
+    NSString * _runLoopMode;
+    NSObject<OS_dispatch_semaphore> * _semaphore;
+    int  _state;
+    BOOL  _stopMMCSThread;
 }
 
 @property (nonatomic) CKDMMCS *MMCS;
 @property (nonatomic) struct _mmcs_engine { }*MMCSEngine;
 @property (nonatomic, retain) NSString *applicationBundleID;
+@property (nonatomic, retain) NSMutableIndexSet *inMemoryItemsIDs;
 @property (nonatomic) unsigned long maxChunkCountForSection;
 @property (nonatomic, retain) NSString *path;
 @property (nonatomic, retain) NSString *protocolVersion;
@@ -31,7 +33,8 @@
 @property (nonatomic) BOOL stopMMCSThread;
 
 + (id)_appID;
-+ (id)setupMMCSEngineWithApplicationBundleID:(id)arg1 path:(id)arg2 error:(id*)arg3;
++ (BOOL)hasCachedCKDMMCSEngineContextForPath:(id)arg1;
++ (id)setupMMCSEngineWithApplicationBundleID:(id)arg1 path:(id)arg2 wasCached:(BOOL*)arg3 error:(id*)arg4;
 + (id)sharedContextsByPath;
 + (id)sharedContextsQueue;
 + (void)tearDownMMCSEngineWithContext:(id)arg1;
@@ -50,9 +53,11 @@
 - (void)dealloc;
 - (long)decRefCount;
 - (id)description;
+- (id)inMemoryItemsIDs;
 - (long)incRefCount;
 - (id)initWithApplicationBundleID:(id)arg1 path:(id)arg2;
 - (unsigned long)maxChunkCountForSection;
+- (unsigned int)nextAvailableItemID;
 - (id)path;
 - (void)performOnRunLoop:(id /* block */)arg1;
 - (id)protocolVersion;
@@ -61,6 +66,7 @@
 - (id)runLoopMode;
 - (id)semaphore;
 - (void)setApplicationBundleID:(id)arg1;
+- (void)setInMemoryItemsIDs:(id)arg1;
 - (void)setMMCS:(id)arg1;
 - (void)setMMCSEngine:(struct _mmcs_engine { }*)arg1;
 - (void)setMaxChunkCountForSection:(unsigned long)arg1;
@@ -74,5 +80,6 @@
 - (void)setStopMMCSThread:(BOOL)arg1;
 - (int)state;
 - (BOOL)stopMMCSThread;
+- (void)stopTrackingItemID:(unsigned int)arg1;
 
 @end

@@ -3,13 +3,15 @@
  */
 
 @interface _UIFieldEditorLayoutManager : NSLayoutManager {
-    bool _needsExtraBulletRendering;
+    UIFont * _fontForExtraBulletRendering;
 }
 
-@property bool needsExtraBulletRendering;
+@property (nonatomic, readonly) UIFont *fontForExtraBulletRendering;
 
-- (bool)needsExtraBulletRendering;
-- (void)setNeedsExtraBulletRendering:(bool)arg1;
-- (void)showCGGlyphs:(const unsigned short*)arg1 positions:(const struct CGPoint { float x1; float x2; }*)arg2 count:(unsigned int)arg3 font:(id)arg4 matrix:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg5 attributes:(id)arg6 inContext:(struct CGContext { }*)arg7;
+- (void).cxx_destruct;
+- (id)fontForExtraBulletRendering;
+- (void)resetFontForExtraBulletRendering;
+- (void)showCGGlyphs:(const unsigned short*)arg1 positions:(const struct CGPoint { double x1; double x2; }*)arg2 count:(unsigned int)arg3 font:(id)arg4 matrix:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg5 attributes:(id)arg6 inContext:(struct CGContext { }*)arg7;
+- (void)useFontForExtraBulletRendering:(id)arg1;
 
 @end

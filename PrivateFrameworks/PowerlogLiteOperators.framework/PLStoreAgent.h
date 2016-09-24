@@ -3,10 +3,12 @@
  */
 
 @interface PLStoreAgent : PLAgent <SSEventMonitorDelegate> {
-    NSMutableDictionary *_currentDownloads;
-    SSEventMonitor *_monitor;
+    PLXPCListenerOperatorComposition * _HLSContentTierEvent;
+    NSMutableDictionary * _currentDownloads;
+    SSEventMonitor * _monitor;
 }
 
+@property (readonly) PLXPCListenerOperatorComposition *HLSContentTierEvent;
 @property (retain) NSMutableDictionary *currentDownloads;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -26,6 +28,7 @@
 + (id)railDefinitions;
 
 - (void).cxx_destruct;
+- (id)HLSContentTierEvent;
 - (id)currentDownloads;
 - (void)eventMonitor:(id)arg1 receivedEventWithName:(id)arg2 userInfo:(id)arg3;
 - (id)init;
@@ -33,6 +36,7 @@
 - (void)log;
 - (void)logAppUpdatePollWithState:(id)arg1;
 - (void)logAssetDownloadWithState:(id)arg1 info:(id)arg2;
+- (void)logHLSContentTierEvent:(id)arg1;
 - (id)monitor;
 - (void)setCurrentDownloads:(id)arg1;
 - (void)setMonitor:(id)arg1;

@@ -3,14 +3,14 @@
  */
 
 @interface CAMLocationController : NSObject <CLLocationManagerDelegate> {
-    NSObject<OS_dispatch_queue> *__authorizationQueue;
-    NSMutableArray *__enqueuedAssetsWaitingForLocation;
-    CLLocationManager *__locationManager;
-    BOOL __monitoringLocation;
-    CLHeading *_currentHeading;
-    CLLocation *_currentLocation;
-    BOOL _enabled;
-    BOOL _headingEnabled;
+    NSObject<OS_dispatch_queue> * __authorizationQueue;
+    NSMutableArray * __enqueuedAssetsWaitingForLocation;
+    CLLocationManager * __locationManager;
+    BOOL  __monitoringLocation;
+    CLHeading * _currentHeading;
+    CLLocation * _currentLocation;
+    BOOL  _enabled;
+    BOOL  _headingEnabled;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_authorizationQueue;

@@ -3,10 +3,10 @@
  */
 
 @interface GEOTimeToLeaveHypothesisFeedbackCollection : PBCodable <NSCopying> {
-    int _arrival;
-    int _departure;
-    double _earliestArrivalOffset;
-    double _earliestDepartureOffset;
+    int  _arrival;
+    int  _departure;
+    double  _earliestArrivalOffset;
+    double  _earliestDepartureOffset;
     struct { 
         unsigned int earliestArrivalOffset : 1; 
         unsigned int earliestDepartureOffset : 1; 
@@ -16,11 +16,11 @@
         unsigned int departure : 1; 
         unsigned int numberOfReroutes : 1; 
         unsigned int uiNotification : 1; 
-    } _has;
-    double _latestArrivalOffset;
-    double _latestDepartureOffset;
-    unsigned int _numberOfReroutes;
-    int _uiNotification;
+    }  _has;
+    double  _latestArrivalOffset;
+    double  _latestDepartureOffset;
+    unsigned int  _numberOfReroutes;
+    int  _uiNotification;
 }
 
 @property (nonatomic) int arrival;
@@ -40,11 +40,16 @@
 @property (nonatomic) unsigned int numberOfReroutes;
 @property (nonatomic) int uiNotification;
 
+- (int)StringAsArrival:(id)arg1;
+- (int)StringAsDeparture:(id)arg1;
+- (int)StringAsUiNotification:(id)arg1;
 - (int)arrival;
+- (id)arrivalAsString:(int)arg1;
 - (int)bucketValueForTimeDelta:(double)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)departure;
+- (id)departureAsString:(int)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (double)earliestArrivalOffset;
@@ -82,6 +87,7 @@
 - (void)setNumberOfReroutes:(unsigned int)arg1;
 - (void)setUiNotification:(int)arg1;
 - (int)uiNotification;
+- (id)uiNotificationAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

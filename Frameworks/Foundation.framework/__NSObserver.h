@@ -3,11 +3,11 @@
  */
 
 @interface __NSObserver : NSObject {
-    id /* block */ block;
-    NSString *name;
-    NSNotificationCenter *nc;
-    id object;
-    NSOperationQueue *queue;
+    id /* block */  block;
+    NSString * name;
+    NSNotificationCenter * nc;
+    id  object;
+    NSOperationQueue * queue;
 }
 
 + (void)forgetObserver:(id)arg1;

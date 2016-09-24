@@ -12,15 +12,19 @@
             unsigned int keyboardType : 4; 
             unsigned int keyboardAppearance : 2; 
             unsigned int returnKeyType : 4; 
+            unsigned int textScriptType : 4; 
             unsigned int enablesReturnKeyAutomatically : 1; 
             unsigned int secureTextEntry : 1; 
+            unsigned int disablePrediction : 1; 
         } fields; 
-    } _mask;
-    NSString *_recentInputIdentifier;
+    }  _mask;
+    NSString * _recentInputIdentifier;
+    NSString * _textContentType;
 }
 
 @property (nonatomic) unsigned int autocapitalizationType;
 @property (nonatomic) unsigned int autocorrectionType;
+@property (nonatomic) BOOL disablePrediction;
 @property (nonatomic) BOOL enablesReturnKeyAutomatically;
 @property (nonatomic) unsigned int keyboardAppearance;
 @property (nonatomic) unsigned int keyboardType;
@@ -28,6 +32,8 @@
 @property (nonatomic) unsigned int returnKeyType;
 @property (nonatomic) BOOL secureTextEntry;
 @property (nonatomic) unsigned int spellCheckingType;
+@property (nonatomic, copy) NSString *textContentType;
+@property (nonatomic) unsigned int textScriptType;
 
 // Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
 
@@ -36,7 +42,9 @@
 - (unsigned int)autocapitalizationType;
 - (unsigned int)autocorrectionType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)description;
+- (BOOL)disablePrediction;
 - (BOOL)enablesReturnKeyAutomatically;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -48,6 +56,7 @@
 - (BOOL)secureTextEntry;
 - (void)setAutocapitalizationType:(unsigned int)arg1;
 - (void)setAutocorrectionType:(unsigned int)arg1;
+- (void)setDisablePrediction:(BOOL)arg1;
 - (void)setEnablesReturnKeyAutomatically:(BOOL)arg1;
 - (void)setKeyboardAppearance:(unsigned int)arg1;
 - (void)setKeyboardType:(unsigned int)arg1;
@@ -55,7 +64,11 @@
 - (void)setReturnKeyType:(unsigned int)arg1;
 - (void)setSecureTextEntry:(BOOL)arg1;
 - (void)setSpellCheckingType:(unsigned int)arg1;
+- (void)setTextContentType:(id)arg1;
+- (void)setTextScriptType:(unsigned int)arg1;
 - (unsigned int)spellCheckingType;
+- (id)textContentType;
+- (unsigned int)textScriptType;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
@@ -67,5 +80,6 @@
 + (id)translateToTextInputRecentInputIdentifier:(id)arg1;
 + (unsigned int)translateToTextInputReturnKeyType:(int)arg1;
 + (unsigned int)translateToTextInputSpellCheckingType:(int)arg1;
++ (unsigned int)translateToTextScriptType:(int)arg1;
 
 @end

@@ -2,21 +2,27 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@interface PLScreenStateAgent : PLAgent {
-    FBSDisplayLayoutMonitor *_airPlayDisplayMonitor;
-    FBSDisplayLayoutMonitor *_carPlayDisplayMonitor;
-    FBSDisplayLayoutMonitor *_mainDisplayMonitor;
+@interface PLScreenStateAgent : PLAgent <FBSDisplayLayoutObserver> {
+    FBSDisplayLayoutMonitor * _airPlayDisplayMonitor;
+    FBSDisplayLayoutMonitor * _carPlayDisplayMonitor;
+    FBSDisplayLayoutMonitor * _mainDisplayMonitor;
 }
 
 @property (retain) FBSDisplayLayoutMonitor *airPlayDisplayMonitor;
 @property (retain) FBSDisplayLayoutMonitor *carPlayDisplayMonitor;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (retain) FBSDisplayLayoutMonitor *mainDisplayMonitor;
+@property (readonly) Class superclass;
 
 + (id)entryAggregateDefinitionForeground;
 + (id)entryAggregateDefinitions;
 + (id)entryEventBackwardDefinitions;
 + (id)entryEventForwardDefinitions;
++ (id)entryEventForwardScreenState;
 + (id)entryEventNoneDefinitions;
++ (id)entryEventPointBacklightEvent;
 + (id)entryEventPointDefinitions;
 + (void)load;
 
@@ -29,9 +35,12 @@
 - (void)dealloc;
 - (id)init;
 - (void)initOperatorDependancies;
+- (void)layoutMonitor:(id)arg1 didUpdateDisplayLayout:(id)arg2 withContext:(id)arg3;
+- (void)log;
 - (void)logEventForwardAirPlayScreenState:(id)arg1;
 - (void)logEventForwardCarScreenState:(id)arg1;
 - (void)logEventForwardMainScreenState:(id)arg1;
+- (void)logEventPointMainBacklightEvent:(id)arg1 withContext:(id)arg2;
 - (id)mainDisplayMonitor;
 - (void)setAirPlayDisplayMonitor:(id)arg1;
 - (void)setCarPlayDisplayMonitor:(id)arg1;

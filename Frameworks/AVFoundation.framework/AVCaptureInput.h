@@ -3,7 +3,7 @@
  */
 
 @interface AVCaptureInput : NSObject {
-    AVCaptureInputInternal *_inputInternal;
+    AVCaptureInputInternal * _inputInternal;
 }
 
 @property (nonatomic, readonly) NSArray *ports;

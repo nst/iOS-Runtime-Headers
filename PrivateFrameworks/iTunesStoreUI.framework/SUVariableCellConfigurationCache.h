@@ -3,9 +3,9 @@
  */
 
 @interface SUVariableCellConfigurationCache : NSObject {
-    NSMutableDictionary *_caches;
-    id _cellContext;
-    float _tableHeight;
+    NSMutableDictionary * _caches;
+    id  _cellContext;
+    double  _tableHeight;
 }
 
 @property (nonatomic, readonly) NSArray *caches;

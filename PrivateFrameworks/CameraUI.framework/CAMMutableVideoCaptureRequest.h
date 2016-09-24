@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
  */
 
-@interface CAMMutableVideoCaptureRequest : CAMVideoCaptureRequest <CAMMutableCaptureRequestLocation, CAMMutableCaptureRequestPersistence, CAMMutableCaptureRequestPower>
+@interface CAMMutableVideoCaptureRequest : CAMVideoCaptureRequest <CAMMutableCaptureRequestLocation, CAMMutableCaptureRequestOrigin, CAMMutableCaptureRequestPersistence, CAMMutableCaptureRequestPower>
 
 @property (nonatomic) unsigned int assertionIdentifier;
 @property (nonatomic) int captureDevice;
 @property (nonatomic) int captureMode;
 @property (nonatomic) int captureOrientation;
+@property (nonatomic) int captureVideoConfiguration;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) unsigned int deferredPersistenceOptions;
 @property (nonatomic) <CAMVideoCaptureRequestDelegate> *delegate;
@@ -16,17 +17,19 @@
 @property (nonatomic, copy) NSURL *localDestinationURL;
 @property (nonatomic, retain) CLLocation *location;
 @property (nonatomic) double maximumRecordedDuration;
-@property (nonatomic) long long maximumRecordedFileSize;
+@property (nonatomic) int maximumRecordedFileSize;
+@property (nonatomic) int origin;
 @property (nonatomic) int persistenceOptions;
 @property (nonatomic, copy) NSString *persistenceUUID;
 @property (nonatomic) int physicalButtonType;
-@property (nonatomic) long long remainingDiskUsageThreshold;
+@property (nonatomic) int remainingDiskUsageThreshold;
 @property (nonatomic) unsigned short sessionIdentifier;
 @property (nonatomic) BOOL shouldDelayRemotePersistence;
 @property (nonatomic) BOOL shouldExtractDiagnosticsFromMetadata;
 @property (nonatomic) BOOL shouldGenerateVideoPreviewImage;
 @property (nonatomic) BOOL shouldPersistDiagnosticsToSidecar;
 @property (readonly) Class superclass;
+@property (nonatomic) int temporaryPersistenceOptions;
 @property (getter=isTimelapse, nonatomic) BOOL timelapse;
 @property (nonatomic) int torchMode;
 
@@ -36,22 +39,24 @@
 - (void)setCaptureDevice:(int)arg1;
 - (void)setCaptureMode:(int)arg1;
 - (void)setCaptureOrientation:(int)arg1;
+- (void)setCaptureVideoConfiguration:(int)arg1;
 - (void)setDeferredPersistenceOptions:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLocalDestinationURL:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setMaximumRecordedDuration:(double)arg1;
-- (void)setMaximumRecordedFileSize:(long long)arg1;
-- (void)setParameter:(id)arg1 forKey:(id)arg2;
+- (void)setMaximumRecordedFileSize:(int)arg1;
+- (void)setOrigin:(int)arg1;
 - (void)setPersistenceOptions:(int)arg1;
 - (void)setPersistenceUUID:(id)arg1;
 - (void)setPhysicalButtonType:(int)arg1;
-- (void)setRemainingDiskUsageThreshold:(long long)arg1;
+- (void)setRemainingDiskUsageThreshold:(int)arg1;
 - (void)setSessionIdentifier:(unsigned short)arg1;
 - (void)setShouldDelayRemotePersistence:(BOOL)arg1;
 - (void)setShouldExtractDiagnosticsFromMetadata:(BOOL)arg1;
 - (void)setShouldGenerateVideoPreviewImage:(BOOL)arg1;
 - (void)setShouldPersistDiagnosticsToSidecar:(BOOL)arg1;
+- (void)setTemporaryPersistenceOptions:(int)arg1;
 - (void)setTimelapse:(BOOL)arg1;
 - (void)setTorchMode:(int)arg1;
 

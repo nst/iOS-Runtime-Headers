@@ -3,9 +3,9 @@
  */
 
 @interface OITSUMutableLinkedPointerSet : NSObject <NSFastEnumeration> {
-    struct __CFDictionary { } *mDictionary;
-    OITSULinkedPointerSetEntry *mHead;
-    OITSULinkedPointerSetEntry *mTail;
+    struct __CFDictionary { } * mDictionary;
+    OITSULinkedPointerSetEntry * mHead;
+    OITSULinkedPointerSetEntry * mTail;
 }
 
 - (void)addObject:(id)arg1;

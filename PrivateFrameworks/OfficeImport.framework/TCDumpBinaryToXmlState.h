@@ -3,8 +3,8 @@
  */
 
 @interface TCDumpBinaryToXmlState : NSObject {
-    NSString *mCurrentFieldName;
-    NSMutableDictionary *mFieldNameToValueMap;
+    NSString * mCurrentFieldName;
+    NSMutableDictionary * mFieldNameToValueMap;
 }
 
 - (void)cacheValueforCurrentField:(id)arg1;

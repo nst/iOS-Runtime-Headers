@@ -3,11 +3,11 @@
  */
 
 @interface TSCHMultiDataChartRepMultiDataBuildAnimatedLayers : NSObject {
-    CALayer *backgroundLayer;
-    CALayer *dataSetNameLayer;
-    NSArray *elementLayers;
-    CALayer *legendLayer;
-    NSArray *referenceLineLayers;
+    CALayer * backgroundLayer;
+    CALayer * dataSetNameLayer;
+    NSArray * elementLayers;
+    CALayer * legendLayer;
+    NSArray * referenceLineLayers;
 }
 
 @property (nonatomic, retain) CALayer *backgroundLayer;

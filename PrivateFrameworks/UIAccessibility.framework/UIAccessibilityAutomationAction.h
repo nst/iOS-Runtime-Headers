@@ -3,8 +3,8 @@
  */
 
 @interface UIAccessibilityAutomationAction : NSObject {
-    NSString *_identifier;
-    SEL _selector;
+    NSString * _identifier;
+    SEL  _selector;
 }
 
 @property (nonatomic, readonly) NSString *identifier;

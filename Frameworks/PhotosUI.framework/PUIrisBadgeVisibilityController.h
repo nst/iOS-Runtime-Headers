@@ -3,14 +3,14 @@
  */
 
 @interface PUIrisBadgeVisibilityController : NSObject <PUAssetViewModelChangeObserver> {
-    unsigned int _appearanceState;
-    PUAssetViewModel *_assetViewModel;
-    <PUIrisBadgeVisibilityControllerDelegate> *_delegate;
-    unsigned int _requestID;
-    BOOL _requestIsInProgress;
+    unsigned int  _appearanceState;
+    PUAssetViewModel * _assetViewModel;
+    <PUIrisBadgeVisibilityControllerDelegate> * _delegate;
+    unsigned int  _requestID;
+    BOOL  _requestIsInProgress;
 }
 
-@property (nonatomic) unsigned int appearanceState;
+@property (setter=_transitionToAppearanceState:, nonatomic) unsigned int appearanceState;
 @property (nonatomic) PUAssetViewModel *assetViewModel;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUIrisBadgeVisibilityControllerDelegate> *delegate;

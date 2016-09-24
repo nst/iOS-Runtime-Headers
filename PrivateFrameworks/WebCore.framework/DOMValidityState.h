@@ -18,7 +18,6 @@
 - (BOOL)badInput;
 - (BOOL)customError;
 - (void)dealloc;
-- (void)finalize;
 - (BOOL)patternMismatch;
 - (BOOL)rangeOverflow;
 - (BOOL)rangeUnderflow;

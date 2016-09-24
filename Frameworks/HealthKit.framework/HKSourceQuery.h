@@ -3,8 +3,8 @@
  */
 
 @interface HKSourceQuery : HKQuery {
-    id /* block */ _completionHandler;
-    id /* block */ _updateHandler;
+    id /* block */  _completionHandler;
+    id /* block */  _updateHandler;
 }
 
 @property (nonatomic, readonly) id /* block */ completionHandler;

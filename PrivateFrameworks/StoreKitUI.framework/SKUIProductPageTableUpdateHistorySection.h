@@ -3,14 +3,14 @@
  */
 
 @interface SKUIProductPageTableUpdateHistorySection : SKUIProductPageTableSection {
-    SKUIClientContext *_clientContext;
-    SKUIColorScheme *_colorScheme;
-    NSDateFormatter *_dateFormatter;
-    NSMutableIndexSet *_expandedIndexSet;
-    int _firstStringIndex;
-    SKUIProductPageTableExpandableHeaderView *_headerView;
-    NSArray *_releaseNotes;
-    SKUILayoutCache *_textLayoutCache;
+    SKUIClientContext * _clientContext;
+    SKUIColorScheme * _colorScheme;
+    NSDateFormatter * _dateFormatter;
+    NSMutableIndexSet * _expandedIndexSet;
+    int  _firstStringIndex;
+    SKUIProductPageTableExpandableHeaderView * _headerView;
+    NSArray * _releaseNotes;
+    SKUILayoutCache * _textLayoutCache;
 }
 
 @property (nonatomic, retain) SKUIColorScheme *colorScheme;

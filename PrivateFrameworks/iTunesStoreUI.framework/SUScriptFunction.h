@@ -3,9 +3,9 @@
  */
 
 @interface SUScriptFunction : NSObject {
-    WebScriptObject *_function;
-    NSLock *_lock;
-    SUScriptObject *_thisObject;
+    WebScriptObject * _function;
+    NSLock * _lock;
+    SUScriptObject * _thisObject;
 }
 
 @property (retain) WebScriptObject *scriptObject;

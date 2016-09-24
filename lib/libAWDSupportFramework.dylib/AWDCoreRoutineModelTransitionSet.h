@@ -5,9 +5,9 @@
 @interface AWDCoreRoutineModelTransitionSet : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
-    } _has;
-    NSMutableArray *_instances;
-    unsigned long long _timestamp;
+    }  _has;
+    NSMutableArray * _instances;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL hasTimestamp;

@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDShapeInfo : TSDStyledInfo <TSDInfoWithPathSource, TSDMixing, TSDReducableInfo, TSKSearchable> {
-    TSDPathSource *mPathSource;
-    TSDShapeStyle *mStyle;
+@interface TSDShapeInfo : TSDStyledInfo <TSDCompatibilityAwareMediaContainer, TSDInfoWithPathSource, TSDMixing, TSDReducibleImageContainer, TSKSearchable> {
+    TSDPathSource * mPathSource;
+    TSDShapeStyle * mStyle;
 }
 
 @property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;
 @property (getter=isAttachedToBodyText, nonatomic, readonly) BOOL attachedToBodyText;
+@property (nonatomic, readonly) NSDictionary *datasForReplacingMediaContentsWithAssociatedHints;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) TSDFill *fill;
@@ -30,19 +31,23 @@
 
 - (id)animationFilters;
 - (id)copyWithContext:(id)arg1;
+- (id)datasForReplacingMediaContentsWithAssociatedHints;
 - (void)dealloc;
 - (int)elementKind;
 - (id)fill;
 - (id)headLineEnd;
-- (id)imageDatasForReducingFileSizeWithAssociatedHints;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 pathSource:(id)arg4;
 - (BOOL)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
+- (BOOL)isLine;
+- (BOOL)isOpenPath;
 - (BOOL)isTailEndOnLeftFromTemporaryLayoutForPasteboard;
+- (BOOL)isValidShapeToUnarchive;
 - (Class)layoutClass;
 - (void)loadFromArchive:(const struct ShapeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DrawableArchive {} *x5; struct Reference {} *x6; struct PathSourceArchive {} *x7; struct LineEndArchive {} *x8; struct LineEndArchive {} *x9; }*)arg1 unarchiver:(id)arg2;
+- (int)mediaCompatibilityTypeForData:(id)arg1 associatedHint:(id)arg2;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
 - (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (id)objectForProperty:(int)arg1;
@@ -67,6 +72,6 @@
 - (BOOL)supportsShrinkTextToFit;
 - (BOOL)supportsTextInset;
 - (id)tailLineEnd;
-- (struct CGSize { float x1; float x2; })targetSizeForImageData:(id)arg1 associatedHint:(id)arg2;
+- (struct CGSize { double x1; double x2; })targetSizeForImageData:(id)arg1 associatedHint:(id)arg2;
 
 @end

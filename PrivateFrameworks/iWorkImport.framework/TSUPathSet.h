@@ -3,9 +3,9 @@
  */
 
 @interface TSUPathSet : NSObject <NSCopying> {
-    NSMutableDictionary *mBasePathToNumberMap;
-    NSMutableSet *mPaths;
-    TSUPathSet *mUnderlyingSet;
+    NSMutableDictionary * mBasePathToNumberMap;
+    NSMutableSet * mPaths;
+    TSUPathSet * mUnderlyingSet;
 }
 
 + (id)parseNumberOutOfBasename:(id)arg1 hasNumber:(BOOL*)arg2 number:(unsigned int*)arg3;

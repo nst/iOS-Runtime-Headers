@@ -3,7 +3,7 @@
  */
 
 @interface TCXmlPrefixStreamWriter : TCXmlStreamWriter {
-    NSMutableArray *mStateStack;
+    NSMutableArray * mStateStack;
 }
 
 + (struct _xmlTextWriter { }*)createNonXmlTextWriterAtEntry:(id)arg1 inOutputStream:(id)arg2 isCompressed:(BOOL)arg3;

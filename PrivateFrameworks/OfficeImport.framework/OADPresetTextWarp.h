@@ -3,7 +3,7 @@
  */
 
 @interface OADPresetTextWarp : OADTextWarp {
-    unsigned char mPresetTextWarpType;
+    unsigned char  mPresetTextWarpType;
 }
 
 + (id)stringWithPresetTextWarpType:(unsigned char)arg1;

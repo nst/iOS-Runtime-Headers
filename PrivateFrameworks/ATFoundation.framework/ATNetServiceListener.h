@@ -3,13 +3,13 @@
  */
 
 @interface ATNetServiceListener : ATMessageLinkListener {
-    BOOL _enableTLS;
-    NSString *_interfaceName;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSString *_serviceDomain;
-    NSString *_serviceName;
-    NSString *_serviceType;
-    NSObject<OS_tcp_listener> *_tcpListener;
+    BOOL  _enableTLS;
+    NSString * _interfaceName;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSString * _serviceDomain;
+    NSString * _serviceName;
+    NSString * _serviceType;
+    NSObject<OS_tcp_listener> * _tcpListener;
 }
 
 @property (nonatomic) BOOL enableTLS;

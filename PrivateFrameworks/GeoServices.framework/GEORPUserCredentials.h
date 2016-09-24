@@ -3,8 +3,8 @@
  */
 
 @interface GEORPUserCredentials : PBCodable <NSCopying> {
-    NSString *_icloudUserMapsAuthToken;
-    NSString *_icloudUserPersonId;
+    NSString * _icloudUserMapsAuthToken;
+    NSString * _icloudUserPersonId;
 }
 
 @property (nonatomic, readonly) BOOL hasIcloudUserMapsAuthToken;

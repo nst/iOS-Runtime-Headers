@@ -3,8 +3,8 @@
  */
 
 @interface CPZoneBorderNeighbor : NSObject <CPCopying, NSCopying> {
-    CPShape *neighborShape;
-    int shapeSide;
+    CPShape * neighborShape;
+    int  shapeSide;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

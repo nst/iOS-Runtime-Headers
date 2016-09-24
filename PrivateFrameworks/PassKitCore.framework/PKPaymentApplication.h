@@ -3,22 +3,22 @@
  */
 
 @interface PKPaymentApplication : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_applicationIdentifier;
-    BOOL _auxiliary;
-    NSString *_displayName;
-    NSString *_dpanIdentifier;
-    NSString *_dpanSuffix;
-    BOOL _inAppPINRequired;
-    NSDecimalNumber *_inAppPINRequiredAmount;
-    NSString *_inAppPINRequiredCurrency;
-    int _paymentNetworkIdentifier;
-    unsigned int _paymentType;
-    NSString *_sanitizedDPAN;
-    NSString *_secureElementIdentifier;
-    int _state;
-    BOOL _supportsContactlessPayment;
-    BOOL _supportsInAppPayment;
-    NSString *_suspendedReason;
+    NSString * _applicationIdentifier;
+    BOOL  _auxiliary;
+    NSString * _displayName;
+    NSString * _dpanIdentifier;
+    NSString * _dpanSuffix;
+    BOOL  _inAppPINRequired;
+    NSDecimalNumber * _inAppPINRequiredAmount;
+    NSString * _inAppPINRequiredCurrency;
+    int  _paymentNetworkIdentifier;
+    unsigned int  _paymentType;
+    NSString * _sanitizedDPAN;
+    NSString * _secureElementIdentifier;
+    int  _state;
+    BOOL  _supportsContactlessPayment;
+    BOOL  _supportsInAppPayment;
+    NSString * _suspendedReason;
 }
 
 @property (nonatomic, copy) NSString *applicationIdentifier;
@@ -39,11 +39,13 @@
 @property (nonatomic) BOOL supportsInAppPayment;
 @property (nonatomic, copy) NSString *suspendedReason;
 
++ (id)applicationWithProtobuf:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
+- (BOOL)acceptedForSupportedNetworkIdentifiers:(id)arg1 merchantCapabilities:(unsigned int)arg2 webService:(id)arg3;
 - (id)applicationIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)displayName;
 - (id)dpanIdentifier;
@@ -60,6 +62,7 @@
 - (BOOL)isEqualToPaymentApplication:(id)arg1;
 - (int)paymentNetworkIdentifier;
 - (unsigned int)paymentType;
+- (id)protobuf;
 - (id)sanitizedDPAN;
 - (id)secureElementIdentifier;
 - (void)setApplicationIdentifier:(id)arg1;
@@ -82,6 +85,7 @@
 - (id)stateAsString;
 - (BOOL)supportsContactlessPayment;
 - (BOOL)supportsInAppPayment;
+- (BOOL)supportsWebPaymentMode:(int)arg1 withExclusionList:(id)arg2;
 - (id)suspendedReason;
 
 @end

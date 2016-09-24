@@ -3,7 +3,7 @@
  */
 
 @interface SLURLAttachment : SLAttachment {
-    int _urlType;
+    int  _urlType;
 }
 
 - (id)initWithURL:(id)arg1 ofType:(int)arg2 preview:(id)arg3;

@@ -3,13 +3,13 @@
  */
 
 @interface SUTableViewController : SUViewController <UITableViewDataSource, UITableViewDelegate> {
-    SUTableDataSource *_dataSource;
-    int _disappearOrientation;
-    NSIndexPath *_firstTapIndexPath;
-    int _placeholderRowCount;
-    BOOL _preferUserInteractionWhileScrolling;
-    SUTableView *_tableView;
-    int _tableViewStyle;
+    SUTableDataSource * _dataSource;
+    int  _disappearOrientation;
+    NSIndexPath * _firstTapIndexPath;
+    int  _placeholderRowCount;
+    BOOL  _preferUserInteractionWhileScrolling;
+    SUTableView * _tableView;
+    int  _tableViewStyle;
 }
 
 @property (nonatomic, retain) SUTableDataSource *dataSource;

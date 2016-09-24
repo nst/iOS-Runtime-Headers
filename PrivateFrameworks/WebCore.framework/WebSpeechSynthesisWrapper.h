@@ -5,11 +5,11 @@
 @interface WebSpeechSynthesisWrapper : NSObject <AVSpeechSynthesizerDelegate> {
     struct RetainPtr<AVSpeechSynthesizer> { 
         void *m_ptr; 
-    } m_synthesizer;
-    struct PlatformSpeechSynthesizer { int (**x1)(); struct Vector<WTF::RefPtr<WebCore::PlatformSpeechSynthesisVoice>, 0, WTF::CrashOnOverflow, 16> { struct RefPtr<WebCore::PlatformSpeechSynthesisVoice> {} *x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; bool x3; struct PlatformSpeechSynthesizerClient {} *x4; struct RetainPtr<WebSpeechSynthesisWrapper> { void *x_5_1_1; } x5; } *m_synthesizerObject;
+    }  m_synthesizer;
+    struct PlatformSpeechSynthesizer { int (**x1)(); struct Vector<WTF::RefPtr<WebCore::PlatformSpeechSynthesisVoice>, 0, WTF::CrashOnOverflow, 16> { struct RefPtr<WebCore::PlatformSpeechSynthesisVoice> {} *x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; bool x3; struct PlatformSpeechSynthesizerClient {} *x4; struct RetainPtr<WebSpeechSynthesisWrapper> { void *x_5_1_1; } x5; } * m_synthesizerObject;
     struct RefPtr<WebCore::PlatformSpeechSynthesisUtterance> { 
         struct PlatformSpeechSynthesisUtterance {} *m_ptr; 
-    } m_utterance;
+    }  m_utterance;
 }
 
 @property (readonly, copy) NSString *debugDescription;

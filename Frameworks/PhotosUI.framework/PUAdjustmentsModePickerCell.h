@@ -3,16 +3,16 @@
  */
 
 @interface PUAdjustmentsModePickerCell : UITableViewCell {
-    UIButton *_accessoryButton;
-    NSArray *_accessoryButtonConstraints;
-    id /* block */ _buttonAction;
-    int _buttonType;
-    NSString *_currentDisplayValue;
-    UILabel *_displayValueLabel;
-    NSArray *_displayValueLabelConstraints;
-    BOOL _isSubMode;
-    NSString *_localizedModeName;
-    UIImage *_modeIcon;
+    UIButton * _accessoryButton;
+    NSArray * _accessoryButtonConstraints;
+    id /* block */  _buttonAction;
+    int  _buttonType;
+    NSString * _currentDisplayValue;
+    UILabel * _displayValueLabel;
+    NSArray * _displayValueLabelConstraints;
+    BOOL  _isSubMode;
+    NSString * _localizedModeName;
+    UIImage * _modeIcon;
 }
 
 @property (nonatomic, copy) id /* block */ buttonAction;

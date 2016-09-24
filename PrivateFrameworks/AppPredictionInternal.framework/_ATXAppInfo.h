@@ -3,10 +3,10 @@
  */
 
 @interface _ATXAppInfo : NSObject <NSCopying> {
-    NSString *_bundleId;
-    NSDate *_installDate;
-    NSDate *_lastLaunch;
-    NSDate *_lastSpotlightLaunch;
+    NSString * _bundleId;
+    NSDate * _installDate;
+    NSDate * _lastLaunch;
+    NSDate * _lastSpotlightLaunch;
 }
 
 @property (nonatomic, retain) NSString *bundleId;

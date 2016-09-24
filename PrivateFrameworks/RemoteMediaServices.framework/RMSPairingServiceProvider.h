@@ -3,8 +3,8 @@
  */
 
 @interface RMSPairingServiceProvider : RMSBonjourServiceProvider {
-    NSArray *_pairedNetworkNames;
-    NSMutableDictionary *_unmonitoredServices;
+    NSArray * _pairedNetworkNames;
+    NSMutableDictionary * _unmonitoredServices;
 }
 
 @property (nonatomic, retain) NSArray *pairedNetworkNames;

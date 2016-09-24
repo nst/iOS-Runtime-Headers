@@ -3,9 +3,10 @@
  */
 
 @interface TSPSnappyComponentWriteChannel : NSObject <TSPComponentWriteChannel> {
-    char *_uncompressedBuffer;
-    unsigned long _uncompressedLength;
-    <TSPComponentWriteChannel> *_writeChannel;
+    BOOL  _uncompressedBuffer;
+    unsigned long  _uncompressedLength;
+    <TSPComponentWriteChannel> * _writeChannel;
+    NSObject<OS_dispatch_queue> * _writeQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

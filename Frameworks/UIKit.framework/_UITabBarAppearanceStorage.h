@@ -3,30 +3,27 @@
  */
 
 @interface _UITabBarAppearanceStorage : NSObject {
-    NSMutableDictionary *_dividerImages;
-    UIImage *backgroundImage;
-    UIColor *barTintColor;
-    UIColor *selectedImageTintColor;
-    UIImage *selectionIndicatorImage;
-    UIImage *shadowImage;
-    _UITabBarItemAppearanceStorage *tabItemAppearanceStorage;
+    UIColor * _unselectedImageTintColor;
+    UIImage * backgroundImage;
+    UIColor * barTintColor;
+    UIColor * selectedImageTintColor;
+    UIImage * selectionIndicatorImage;
+    UIImage * shadowImage;
+    _UITabBarItemAppearanceStorage * tabItemAppearanceStorage;
 }
 
 @property (nonatomic, retain) UIImage *backgroundImage;
 @property (nonatomic, retain) UIColor *barTintColor;
-@property (nonatomic, readonly, copy) NSDictionary *dividerImagesForCoding;
 @property (nonatomic, retain) UIColor *selectedImageTintColor;
 @property (nonatomic, retain) UIImage *selectionIndicatorImage;
 @property (nonatomic, retain) UIImage *shadowImage;
 @property (nonatomic, retain) _UITabBarItemAppearanceStorage *tabItemAppearanceStorage;
+@property (nonatomic, retain) UIColor *unselectedImageTintColor;
 
-- (id)_dividerImageForLeftButtonState:(unsigned int)arg1 rightButtonState:(unsigned int)arg2;
-- (void)_setDividerImage:(id)arg1 forLeftButtonState:(unsigned int)arg2 rightButtonState:(unsigned int)arg3;
+- (void).cxx_destruct;
 - (id)_tabItemAppearanceStorage;
 - (id)backgroundImage;
 - (id)barTintColor;
-- (void)dealloc;
-- (id)dividerImagesForCoding;
 - (id)selectedImageTintColor;
 - (id)selectionIndicatorImage;
 - (void)setBackgroundImage:(id)arg1;
@@ -35,7 +32,9 @@
 - (void)setSelectionIndicatorImage:(id)arg1;
 - (void)setShadowImage:(id)arg1;
 - (void)setTabItemAppearanceStorage:(id)arg1;
+- (void)setUnselectedImageTintColor:(id)arg1;
 - (id)shadowImage;
 - (id)tabItemAppearanceStorage;
+- (id)unselectedImageTintColor;
 
 @end

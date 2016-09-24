@@ -3,7 +3,7 @@
  */
 
 @interface NSPlaceholderValue : NSNumber {
-    struct _NSZone { } *zoneForInstance;
+    struct _NSZone { } * zoneForInstance;
 }
 
 + (BOOL)supportsSecureCoding;
@@ -12,7 +12,6 @@
 - (BOOL)_tryRetain;
 - (id)autorelease;
 - (void)dealloc;
-- (void)finalize;
 - (void)getValue:(void*)arg1;
 - (id)init;
 - (id)initWithBytes:(const void*)arg1 objCType:(const char *)arg2;

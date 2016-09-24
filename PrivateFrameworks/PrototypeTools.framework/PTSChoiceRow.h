@@ -3,9 +3,9 @@
  */
 
 @interface PTSChoiceRow : PTSRow {
-    NSArray *_possibleShortTitles;
-    NSArray *_possibleTitles;
-    NSArray *_possibleValues;
+    NSArray * _possibleShortTitles;
+    NSArray * _possibleTitles;
+    NSArray * _possibleValues;
 }
 
 @property (nonatomic, copy) NSArray *possibleShortTitles;

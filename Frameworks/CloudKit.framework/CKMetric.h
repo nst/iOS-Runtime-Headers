@@ -3,14 +3,14 @@
  */
 
 @interface CKMetric : NSObject <NSSecureCoding> {
-    unsigned int _bytesDownloaded;
-    unsigned int _bytesUploaded;
-    unsigned int _connections;
-    unsigned int _connectionsCreated;
-    double _duration;
-    double _executing;
-    double _queueing;
-    NSDate *_startDate;
+    unsigned int  _bytesDownloaded;
+    unsigned int  _bytesUploaded;
+    unsigned int  _connections;
+    unsigned int  _connectionsCreated;
+    double  _duration;
+    double  _executing;
+    double  _queueing;
+    NSDate * _startDate;
 }
 
 @property unsigned int bytesDownloaded;

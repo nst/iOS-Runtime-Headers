@@ -5,14 +5,14 @@
 @interface MTLCompiler : NSObject {
     struct { 
         unsigned char key[32]; 
-    } _cacheUUID;
-    struct MTLCompilerConnectionManager { int (**x1)(); } *_compilerConnectionManager;
-    unsigned int _compilerFlags;
-    unsigned int _compilerId;
-    NSObject<OS_dispatch_queue> *_compilerQueue;
-    _MTLDevice *_device;
-    struct MTLCompilerCache { unsigned int x1; int x2; struct fscache_attributes_s { unsigned int x_3_1_1; unsigned short x_3_1_2; unsigned short x_3_1_3; unsigned int x_3_1_4; } x3; id x4; int x5; struct fscache_s {} *x6; } *_functionCache;
-    NSString *_pluginPath;
+    }  _cacheUUID;
+    struct MTLCompilerConnectionManager { int (**x1)(); } * _compilerConnectionManager;
+    unsigned int  _compilerFlags;
+    unsigned int  _compilerId;
+    NSObject<OS_dispatch_queue> * _compilerQueue;
+    _MTLDevice * _device;
+    struct MTLCompilerCache { unsigned int x1; int x2; struct fscache_attributes_s { unsigned int x_3_1_1; unsigned short x_3_1_2; unsigned short x_3_1_3; unsigned int x_3_1_4; } x3; id x4; int x5; struct fscache_s {} *x6; } * _functionCache;
+    NSString * _pluginPath;
 }
 
 @property (readonly) struct { unsigned char x1[32]; } cacheUUID;
@@ -25,6 +25,7 @@
 
 - (struct { unsigned char x1[32]; })cacheUUID;
 - (void)compileFragmentFunction:(id)arg1 serializedPixelFormat:(id)arg2 stateData:(id)arg3 options:(unsigned int)arg4 completionHandler:(id /* block */)arg5;
+- (void)compileFunction:(id)arg1 serializedData:(id)arg2 stateData:(id)arg3 options:(unsigned int)arg4 completionHandler:(id /* block */)arg5;
 - (void)compileFunction:(id)arg1 serializedPipelineData:(id)arg2 stateData:(id)arg3 linkDataSize:(unsigned long)arg4 frameworkLinking:(BOOL)arg5 options:(unsigned int)arg6 completionHandler:(id /* block */)arg7;
 - (void)compileFunction:(id)arg1 stateData:(id)arg2 options:(unsigned int)arg3 completionHandler:(id /* block */)arg4;
 - (void)compileRequest:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -35,6 +36,7 @@
 - (id)compilerQueue;
 - (void)dealloc;
 - (struct MTLCompilerCache { unsigned int x1; int x2; struct fscache_attributes_s { unsigned int x_3_1_1; unsigned short x_3_1_2; unsigned short x_3_1_3; unsigned int x_3_1_4; } x3; id x4; int x5; struct fscache_s {} *x6; }*)functionCache;
+- (void*)getShaderCacheKeys;
 - (id)initWithTargetData:(id)arg1 cacheUUID:(struct { unsigned char x1[32]; }*)arg2 pluginPath:(id)arg3 device:(id)arg4 compilerFlags:(unsigned int)arg5;
 - (struct { unsigned int x1; unsigned int x2; })libraryCacheStats;
 - (id)newComputePipelineStateWithDescriptor:(id)arg1 options:(unsigned int)arg2 reflection:(id*)arg3 error:(id*)arg4 completionHandler:(id /* block */)arg5;

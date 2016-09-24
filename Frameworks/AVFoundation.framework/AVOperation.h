@@ -3,9 +3,9 @@
  */
 
 @interface AVOperation : NSOperation {
-    NSError *_error;
-    NSObject<OS_dispatch_queue> *_ivarAccessQueue;
-    int _status;
+    NSError * _error;
+    NSObject<OS_dispatch_queue> * _ivarAccessQueue;
+    int  _status;
 }
 
 @property (readonly) NSError *error;

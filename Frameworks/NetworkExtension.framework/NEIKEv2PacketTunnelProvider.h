@@ -3,25 +3,27 @@
  */
 
 @interface NEIKEv2PacketTunnelProvider : NEPacketTunnelProvider {
-    NSDictionary *_childConfig;
-    id /* block */ _dnsResolverCompletionHandler;
-    unsigned int _flags;
-    NSObject<OS_dispatch_semaphore> *_getSocketSemaphore;
-    BOOL _hasNAT;
-    unsigned int _ifIndex;
-    unsigned int _ikeChildID;
-    NSArray *_ikeConfig;
-    struct NEIPSecIKE_s { } *_ikeRef;
-    BOOL _isIfCellular;
-    NEIKEv2MOBIKE *_mobikeHandle;
-    NSDictionary *_options;
-    int _pathStatus;
-    NSObject<OS_dispatch_queue> *_queue;
-    NEIKEv2Rekey *_rekey;
-    NWResolver *_resolver;
-    NEIKEv2Server *_serverAddresses;
-    id /* block */ _startTunnelCompletionHandler;
-    struct NEVirtualInterface_s { } *_virtualInterface;
+    NSDictionary * _childConfig;
+    id /* block */  _dnsResolverCompletionHandler;
+    unsigned int  _flags;
+    NSObject<OS_dispatch_semaphore> * _getSocketSemaphore;
+    BOOL  _hasNAT;
+    unsigned int  _ifIndex;
+    unsigned int  _ikeChildID;
+    NSArray * _ikeConfig;
+    struct NEIPSecIKE_s { } * _ikeRef;
+    BOOL  _isIfCellular;
+    NEIKEv2MOBIKE * _mobikeHandle;
+    NSDictionary * _options;
+    int  _pathStatus;
+    NSObject<OS_dispatch_queue> * _queue;
+    NEIKEv2Rekey * _rekey;
+    NWResolver * _resolver;
+    NWPathEvaluator * _scopedPathEvaluator;
+    NEIKEv2Server * _serverAddresses;
+    id /* block */  _startTunnelCompletionHandler;
+    BOOL  _stopped;
+    struct NEVirtualInterface_s { } * _virtualInterface;
 }
 
 @property (retain) NSDictionary *childConfig;
@@ -40,8 +42,10 @@
 @property (retain) NSObject<OS_dispatch_queue> *queue;
 @property (retain) NEIKEv2Rekey *rekey;
 @property (retain) NWResolver *resolver;
+@property (retain) NWPathEvaluator *scopedPathEvaluator;
 @property (retain) NEIKEv2Server *serverAddresses;
 @property (copy) id /* block */ startTunnelCompletionHandler;
+@property BOOL stopped;
 @property struct NEVirtualInterface_s { }*virtualInterface;
 
 - (void).cxx_destruct;
@@ -51,18 +55,22 @@
 - (id /* block */)dnsResolverCompletionHandler;
 - (unsigned int)flags;
 - (id)getSocketSemaphore;
+- (void)handleAdditionalServerAddressesNotification:(id)arg1;
 - (void)handleConfigChange;
 - (void)handleDNSResolution;
 - (void)handleDefaultPathChange;
+- (void)handleInterfaceChange:(BOOL)arg1;
 - (void)handleInterfaceDown;
 - (int)handleRedirectNotification:(id)arg1;
+- (void)handleScopedPathChange;
 - (BOOL)hasNAT;
 - (unsigned int)ifIndex;
+- (void)ignoreSigPipe;
 - (unsigned int)ikeChildID;
 - (id)ikeConfig;
 - (struct NEIPSecIKE_s { }*)ikeRef;
 - (id)init;
-- (void)invokeStartTunnelCompletionHandler:(id)arg1;
+- (BOOL)invokeStartTunnelCompletionHandler:(id)arg1;
 - (BOOL)isIfCellular;
 - (id)mobikeHandle;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
@@ -71,11 +79,12 @@
 - (int)pathStatus;
 - (id)queue;
 - (id)rekey;
-- (void)reset;
+- (void)reset:(BOOL)arg1;
 - (void)resolveServerAddressIfNeeded:(id /* block */)arg1;
 - (id)resolver;
 - (BOOL)saveChildTunnelConfig:(void*)arg1;
 - (BOOL)saveIKETunnelConfig:(void*)arg1;
+- (id)scopedPathEvaluator;
 - (id)serverAddresses;
 - (void)setChildConfig:(id)arg1;
 - (void)setDnsResolverCompletionHandler:(id /* block */)arg1;
@@ -93,19 +102,26 @@
 - (void)setQueue:(id)arg1;
 - (void)setRekey:(id)arg1;
 - (void)setResolver:(id)arg1;
+- (void)setScopedPathEvaluator:(id)arg1;
 - (void)setServerAddresses:(id)arg1;
 - (void)setStartTunnelCompletionHandler:(id /* block */)arg1;
+- (void)setStopped:(BOOL)arg1;
+- (void)setTunnelNetworkSettings:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setVirtualInterface:(struct NEVirtualInterface_s { }*)arg1;
+- (void)startCompleteOrCancelTunnelWithError:(id)arg1;
 - (void)startIKEv2TunnelWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)startRekeyTimer:(BOOL)arg1;
 - (id /* block */)startTunnelCompletionHandler;
 - (void)startTunnelWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)stopIKEv2TunnelWithReason:(int)arg1 completionHandler:(id /* block */)arg2;
 - (void)stopTunnelWithReason:(int)arg1 completionHandler:(id /* block */)arg2;
+- (BOOL)stopped;
+- (BOOL)tryAlternateServerAddresses;
 - (int)tunnelBringup;
 - (int)tunnelTeardown;
 - (struct NEVirtualInterface_s { }*)virtualInterface;
 - (void)wake;
 - (void)wakeIKEv2;
+- (void)watchIKESocketChange;
 
 @end

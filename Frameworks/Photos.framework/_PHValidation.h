@@ -3,9 +3,9 @@
  */
 
 @interface _PHValidation : NSObject {
-    NSError *_error;
-    unsigned int _requestedOptions;
-    unsigned int _validatedOptions;
+    NSError * _error;
+    unsigned int  _requestedOptions;
+    unsigned int  _validatedOptions;
 }
 
 - (void).cxx_destruct;

@@ -3,7 +3,7 @@
  */
 
 @interface TSKCustomFormatListStemMatchObject : NSObject <NSCopying> {
-    TSUCustomFormat *mCustomFormat;
+    TSUCustomFormat * mCustomFormat;
 }
 
 + (id)stemMatchObjectWithCustomFormat:(id)arg1;

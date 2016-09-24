@@ -3,8 +3,8 @@
  */
 
 @interface OITSUDeferredInvocationQueue : NSObject {
-    NSMutableArray *_invocations;
-    id _target;
+    NSMutableArray * _invocations;
+    id  _target;
 }
 
 - (void)dealloc;

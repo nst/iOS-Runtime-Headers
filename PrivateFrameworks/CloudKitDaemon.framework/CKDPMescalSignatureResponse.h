@@ -5,9 +5,9 @@
 @interface CKDPMescalSignatureResponse : PBCodable <NSCopying> {
     struct { 
         unsigned int status : 1; 
-    } _has;
-    NSData *_mescalHeaderData;
-    int _status;
+    }  _has;
+    NSData * _mescalHeaderData;
+    int  _status;
 }
 
 @property (nonatomic, readonly) BOOL hasMescalHeaderData;

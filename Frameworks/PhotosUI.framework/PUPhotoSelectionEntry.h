@@ -3,11 +3,11 @@
  */
 
 @interface PUPhotoSelectionEntry : NSObject <NSCopying> {
-    PHAssetCollection *_assetCollection;
-    PHFetchResult *_fetchResult;
-    BOOL _hasValidAssetIndexes;
-    NSMutableSet *_selectedAssets;
-    NSMutableIndexSet *_selectedIndexes;
+    PHAssetCollection * _assetCollection;
+    PHFetchResult * _fetchResult;
+    BOOL  _hasValidAssetIndexes;
+    NSMutableSet * _selectedAssets;
+    NSMutableIndexSet * _selectedIndexes;
 }
 
 @property (nonatomic, readonly) PHAssetCollection *assetCollection;

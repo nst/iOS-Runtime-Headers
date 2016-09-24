@@ -3,8 +3,8 @@
  */
 
 @interface MusicLibraryAdaptiveViewConfiguration : MusicLibraryViewConfiguration {
-    MusicLibraryViewConfiguration *_compactWidthConfiguration;
-    MusicLibraryViewConfiguration *_regularWidthConfiguration;
+    MusicLibraryViewConfiguration * _compactWidthConfiguration;
+    MusicLibraryViewConfiguration * _regularWidthConfiguration;
 }
 
 @property (nonatomic, readonly) MusicLibraryViewConfiguration *compactWidthConfiguration;

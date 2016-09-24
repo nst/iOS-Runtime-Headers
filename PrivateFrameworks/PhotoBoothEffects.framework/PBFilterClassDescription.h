@@ -3,8 +3,8 @@
  */
 
 @interface PBFilterClassDescription : NSObject {
-    NSDictionary *_attributes;
-    NSArray *_inputKeys;
+    NSDictionary * _attributes;
+    NSArray * _inputKeys;
 }
 
 + (id)classDescriptionForClass:(Class)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface MusicLibrarySearchResultsEntityProviderConfiguration : MusicLibraryBrowseHeterogenousCollectionViewConfiguration {
-    NSMutableDictionary *_contentDescriptorsForSectionAndTraitCollections;
-    MusicLibrarySearchResultsEntityProvider *_entityValueProvider;
+    NSMutableDictionary * _contentDescriptorsForSectionAndTraitCollections;
+    MusicLibrarySearchResultsEntityProvider * _entityValueProvider;
 }
 
 @property (nonatomic, readonly) MusicLibrarySearchResultsEntityProvider *entityProvider;

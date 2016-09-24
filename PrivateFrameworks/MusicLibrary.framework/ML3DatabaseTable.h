@@ -3,9 +3,9 @@
  */
 
 @interface ML3DatabaseTable : NSObject <NSCopying, NSMutableCopying> {
-    NSArray *_columns;
-    NSArray *_foreignKeyConstraints;
-    NSString *_name;
+    NSArray * _columns;
+    NSArray * _foreignKeyConstraints;
+    NSString * _name;
 }
 
 @property (nonatomic, readonly) NSArray *columns;

@@ -3,7 +3,7 @@
  */
 
 @interface MRSendCommandMessage : MRProtocolMessage {
-    NSDate *_serializationDate;
+    NSDate * _serializationDate;
 }
 
 @property (nonatomic, readonly) unsigned int command;

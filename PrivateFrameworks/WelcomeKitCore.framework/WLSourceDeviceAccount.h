@@ -3,8 +3,8 @@
  */
 
 @interface WLSourceDeviceAccount : NSObject {
-    NSString *_identifier;
-    unsigned int _sqlID;
+    NSString * _identifier;
+    unsigned int  _sqlID;
 }
 
 @property (nonatomic, copy) NSString *identifier;

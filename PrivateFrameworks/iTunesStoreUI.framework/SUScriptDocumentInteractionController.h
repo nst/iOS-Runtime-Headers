@@ -3,8 +3,8 @@
  */
 
 @interface SUScriptDocumentInteractionController : SUScriptObject {
-    SUScriptFunction *_cancelFunction;
-    SUScriptFunction *_openWithFunction;
+    SUScriptFunction * _cancelFunction;
+    SUScriptFunction * _openWithFunction;
 }
 
 @property (copy) NSString *UTI;

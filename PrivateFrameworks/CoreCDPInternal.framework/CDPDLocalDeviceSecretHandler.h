@@ -3,8 +3,8 @@
  */
 
 @interface CDPDLocalDeviceSecretHandler : NSObject <CDPLocalDeviceSecretHandlerProtocol> {
-    CDPContext *_context;
-    id /* block */ _validationHandler;
+    CDPContext * _context;
+    id /* block */  _validationHandler;
 }
 
 @property (nonatomic, readonly) CDPContext *context;

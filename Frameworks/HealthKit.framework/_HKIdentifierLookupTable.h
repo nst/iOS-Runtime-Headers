@@ -3,8 +3,10 @@
  */
 
 @interface _HKIdentifierLookupTable : NSObject {
-    NSMapTable *_identifierMapTable;
-    int _lookupTableSpinLock;
+    NSMapTable * _identifierMapTable;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lookupTableSpinLock;
 }
 
 - (void).cxx_destruct;

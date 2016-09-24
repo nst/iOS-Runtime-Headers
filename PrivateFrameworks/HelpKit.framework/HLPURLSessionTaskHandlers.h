@@ -3,9 +3,9 @@
  */
 
 @interface HLPURLSessionTaskHandlers : NSObject {
-    NSMutableArray *_completionHandlers;
-    NSURLSession *_session;
-    NSURLSessionTask *_sessionTask;
+    NSMutableArray * _completionHandlers;
+    NSURLSession * _session;
+    NSURLSessionTask * _sessionTask;
 }
 
 @property (nonatomic, retain) NSMutableArray *completionHandlers;

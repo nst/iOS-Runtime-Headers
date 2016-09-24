@@ -3,9 +3,9 @@
  */
 
 @interface STRootStorage : STStorage {
-    NSMutableData *m_StorageData;
-    struct _RootStorage { } *m_pCRoot;
-    void *m_pvBuf;
+    NSMutableData * m_StorageData;
+    struct _RootStorage { } * m_pCRoot;
+    void * m_pvBuf;
 }
 
 - (void)dealloc;

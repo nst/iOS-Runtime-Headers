@@ -3,8 +3,8 @@
  */
 
 @interface SPProtoAudioFilePlayerUpdateContainedIdentifier : PBCodable <NSCopying> {
-    NSString *_containedIdentifier;
-    NSString *_identifier;
+    NSString * _containedIdentifier;
+    NSString * _identifier;
 }
 
 @property (nonatomic, retain) NSString *containedIdentifier;

@@ -3,11 +3,11 @@
  */
 
 @interface IDSPairedDeviceManager : NSObject <IDSDaemonListenerProtocol> {
-    NSSet *_allowedTrafficClassifiers;
-    _IDSCompletionHandler *_deleteCompletion;
-    _IDSCompletionHandler *_deliveryStatsCompletion;
-    _IDSCompletionHandler *_localCompletion;
-    _IDSCompletionHandler *_pairedCompletion;
+    NSSet * _allowedTrafficClassifiers;
+    _IDSCompletionHandler * _deleteCompletion;
+    _IDSCompletionHandler * _deliveryStatsCompletion;
+    _IDSCompletionHandler * _localCompletion;
+    _IDSCompletionHandler * _pairedCompletion;
 }
 
 @property (nonatomic, retain) NSSet *allowedTrafficClassifiers;

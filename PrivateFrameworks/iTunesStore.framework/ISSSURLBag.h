@@ -3,10 +3,10 @@
  */
 
 @interface ISSSURLBag : SSURLBag {
-    ISURLBag *_bag;
-    NSMutableArray *_completionBlocks;
-    BOOL _forceInvalidationForNextLoad;
-    ISLoadURLBagOperation *_operation;
+    ISURLBag * _bag;
+    NSMutableArray * _completionBlocks;
+    BOOL  _forceInvalidationForNextLoad;
+    ISLoadURLBagOperation * _operation;
 }
 
 + (id)URLBagForContext:(id)arg1;

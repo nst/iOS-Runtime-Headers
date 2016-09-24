@@ -3,8 +3,8 @@
  */
 
 @interface WDTestIterator : WDIterator {
-    WDIterator *mIterator;
-    id mNext;
+    WDIterator * mIterator;
+    id  mNext;
 }
 
 - (void)dealloc;

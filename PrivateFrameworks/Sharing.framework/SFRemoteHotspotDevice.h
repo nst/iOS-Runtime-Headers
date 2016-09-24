@@ -3,13 +3,13 @@
  */
 
 @interface SFRemoteHotspotDevice : NSObject <NSSecureCoding> {
-    NSData *_advertisementData;
-    NSNumber *_batteryLife;
-    NSString *_deviceIdentifier;
-    NSString *_deviceName;
-    BOOL _hasDuplicates;
-    unsigned char _networkType;
-    NSNumber *_signalStrength;
+    NSData * _advertisementData;
+    NSNumber * _batteryLife;
+    NSString * _deviceIdentifier;
+    NSString * _deviceName;
+    BOOL  _hasDuplicates;
+    unsigned char  _networkType;
+    NSNumber * _signalStrength;
 }
 
 @property (nonatomic, readonly, copy) NSData *advertisementData;
@@ -22,9 +22,9 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)advertisementData;
 - (id)batteryLife;
-- (void)dealloc;
 - (id)description;
 - (id)deviceIdentifier;
 - (id)deviceName;

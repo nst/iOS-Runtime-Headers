@@ -7,7 +7,6 @@
 @property (readonly) unsigned int length;
 
 - (void)dealloc;
-- (void)finalize;
 - (id)getNamedItem:(id)arg1;
 - (id)getNamedItemNS:(id)arg1 :(id)arg2;
 - (id)getNamedItemNS:(id)arg1 localName:(id)arg2;

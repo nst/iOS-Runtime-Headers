@@ -2,29 +2,35 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKTransitInfoLabelView : UILabel {
-    BOOL _containsText;
-    BOOL _hasCustomFont;
-    BOOL _hasCustomShieldSize;
-    NSArray *_labelItems;
-    MKMapItem *_mapItem;
-    float _maxWidth;
-    int _shieldSize;
-    float _spaceBetweenShields;
-    BOOL _truncateBySwitchingToTextOnly;
+@interface MKTransitInfoLabelView : _MKUILabel {
+    BOOL  _containsText;
+    BOOL  _hasCustomFont;
+    BOOL  _hasCustomIconSize;
+    BOOL  _hasCustomShieldSize;
+    int  _iconSize;
+    NSArray * _labelItems;
+    MKMapItem * _mapItem;
+    double  _maxWidth;
+    int  _shieldSize;
+    double  _spaceBetweenIcons;
+    double  _spaceBetweenShields;
+    BOOL  _truncateBySwitchingToTextOnly;
 }
 
 @property (nonatomic, readonly) BOOL containsText;
+@property (nonatomic) int iconSize;
 @property (nonatomic, copy) NSArray *labelItems;
 @property (nonatomic, retain) MKMapItem *mapItem;
-@property (nonatomic) float maxWidth;
+@property (nonatomic) double maxWidth;
 @property (nonatomic) int shieldSize;
-@property (nonatomic) float spaceBetweenShields;
+@property (nonatomic) double spaceBetweenIcons;
+@property (nonatomic) double spaceBetweenShields;
 @property (nonatomic) BOOL truncateBySwitchingToTextOnly;
 
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange;
 - (id)_generateText:(BOOL)arg1 allowElipsis:(BOOL)arg2;
+- (int)_iconSizeForContentSizeCategory:(id)arg1;
 - (id)_imageForArtworkDataSource:(id)arg1;
 - (id)_imageForLabelItem:(id)arg1;
 - (id)_imageForShieldDataSource:(id)arg1;
@@ -34,7 +40,7 @@
 - (id)_stringAttributes;
 - (BOOL)containsText;
 - (void)dealloc;
-- (id)font;
+- (int)iconSize;
 - (id)init;
 - (id)initWithMapItem:(id)arg1;
 - (id)initWithMapItem:(id)arg1 maxWidth:(float)arg2;
@@ -42,13 +48,16 @@
 - (id)mapItem;
 - (float)maxWidth;
 - (void)setFont:(id)arg1;
+- (void)setIconSize:(int)arg1;
 - (void)setLabelItems:(id)arg1;
 - (void)setMapItem:(id)arg1;
 - (void)setMaxWidth:(float)arg1;
 - (void)setShieldSize:(int)arg1;
+- (void)setSpaceBetweenIcons:(float)arg1;
 - (void)setSpaceBetweenShields:(float)arg1;
 - (void)setTruncateBySwitchingToTextOnly:(BOOL)arg1;
 - (int)shieldSize;
+- (float)spaceBetweenIcons;
 - (float)spaceBetweenShields;
 - (BOOL)truncateBySwitchingToTextOnly;
 

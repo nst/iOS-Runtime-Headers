@@ -3,7 +3,7 @@
  */
 
 @interface FIUIClientToken : NSObject <NSCopying> {
-    NSUUID *_UUID;
+    NSUUID * _UUID;
 }
 
 - (void).cxx_destruct;

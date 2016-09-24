@@ -3,12 +3,12 @@
  */
 
 @interface AAFamilyEligibilityResponse : AAResponse {
-    NSArray *_familyFeaturePrimaryDescriptions;
-    NSArray *_familyFeatureSecondaryDescriptions;
-    NSString *_familyFeatureSecondaryTitle;
-    BOOL _hasPendingInvites;
-    NSString *_underageEligibilityAlertMessage;
-    NSString *_underageEligibilityAlertTitle;
+    NSArray * _familyFeaturePrimaryDescriptions;
+    NSArray * _familyFeatureSecondaryDescriptions;
+    NSString * _familyFeatureSecondaryTitle;
+    BOOL  _hasPendingInvites;
+    NSString * _underageEligibilityAlertMessage;
+    NSString * _underageEligibilityAlertTitle;
 }
 
 @property (nonatomic, readonly) int eligibilityStatus;

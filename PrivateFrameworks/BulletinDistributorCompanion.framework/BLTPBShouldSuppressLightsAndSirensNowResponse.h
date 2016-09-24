@@ -5,8 +5,8 @@
 @interface BLTPBShouldSuppressLightsAndSirensNowResponse : PBCodable <NSCopying> {
     struct { 
         unsigned int shouldSuppress : 1; 
-    } _has;
-    BOOL _shouldSuppress;
+    }  _has;
+    BOOL  _shouldSuppress;
 }
 
 @property (nonatomic) BOOL hasShouldSuppress;

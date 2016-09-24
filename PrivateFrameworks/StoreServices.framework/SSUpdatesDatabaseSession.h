@@ -3,7 +3,7 @@
  */
 
 @interface SSUpdatesDatabaseSession : NSObject {
-    SSSQLiteDatabase *_database;
+    SSSQLiteDatabase * _database;
 }
 
 @property (nonatomic, readonly) SSSQLiteDatabase *database;

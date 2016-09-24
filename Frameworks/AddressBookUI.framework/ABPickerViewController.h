@@ -3,12 +3,12 @@
  */
 
 @interface ABPickerViewController : UITableViewController {
-    void *_context;
-    id _defaultValue;
-    <ABPickerViewControllerDelegate> *_delegate;
-    <ABPickerViewControllerDismissDelegate> *_dismissDelegate;
-    SEL _selectionAction;
-    <ABStyleProvider> *_styleProvider;
+    void * _context;
+    id  _defaultValue;
+    <ABPickerViewControllerDelegate> * _delegate;
+    <ABPickerViewControllerDismissDelegate> * _dismissDelegate;
+    SEL  _selectionAction;
+    <ABStyleProvider> * _styleProvider;
 }
 
 @property (nonatomic, readonly) UIBarButtonItem *cancelBarButtonItem;

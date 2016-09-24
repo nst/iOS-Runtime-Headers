@@ -3,7 +3,7 @@
  */
 
 @interface SBKStoreError : NSError {
-    SBKTransaction *_transaction;
+    SBKTransaction * _transaction;
 }
 
 @property (readonly, copy) NSString *currentStoreAccountName;

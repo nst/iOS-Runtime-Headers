@@ -3,20 +3,20 @@
  */
 
 @interface ISOperation : NSOperation {
-    <ISOperationDelegate> *_delegate;
-    NSError *_error;
-    NSLock *_lock;
-    NSRunLoop *_operationRunLoop;
-    ISOperation *_parentOperation;
-    NSString *_powerAssertionIdentifier;
-    SSOperationProgress *_progress;
-    NSArray *_serializationLockIdentifiers;
-    BOOL _shouldMessageMainThread;
-    BOOL _shouldRunWithBackgroundPriority;
-    BOOL _stopped;
-    NSMutableArray *_subOperations;
-    BOOL _success;
-    id _threadSafeDelegate;
+    <ISOperationDelegate> * _delegate;
+    NSError * _error;
+    NSLock * _lock;
+    NSRunLoop * _operationRunLoop;
+    ISOperation * _parentOperation;
+    NSString * _powerAssertionIdentifier;
+    SSOperationProgress * _progress;
+    NSArray * _serializationLockIdentifiers;
+    BOOL  _shouldMessageMainThread;
+    BOOL  _shouldRunWithBackgroundPriority;
+    BOOL  _stopped;
+    NSMutableArray * _subOperations;
+    BOOL  _success;
+    id  _threadSafeDelegate;
 }
 
 @property <ISOperationDelegate> *delegate;
@@ -35,6 +35,7 @@
 
 // Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
 
+- (void).cxx_destruct;
 - (void)_addSubOperation:(id)arg1;
 - (void)_failAfterException;
 - (void)_keepAliveTimer:(id)arg1;
@@ -48,7 +49,6 @@
 - (BOOL)copyAccountID:(id*)arg1 byAuthenticatingWithContext:(id)arg2 returningError:(id*)arg3;
 - (id)copyActivePowerAssertionIdentifiers;
 - (id)copySerializationLocks;
-- (void)dealloc;
 - (id)delegate;
 - (void)dispatchCompletionBlock;
 - (id)error;

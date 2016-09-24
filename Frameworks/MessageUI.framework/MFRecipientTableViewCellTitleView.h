@@ -3,11 +3,11 @@
  */
 
 @interface MFRecipientTableViewCellTitleView : UIView <MFTinting> {
-    NSAttributedString *_deselectedAttributedString;
-    BOOL _highlighted;
-    BOOL _shouldDim;
-    UIColor *_tintColor;
-    UILabel *_titleLabel;
+    NSAttributedString * _deselectedAttributedString;
+    BOOL  _highlighted;
+    BOOL  _shouldDim;
+    UIColor * _tintColor;
+    UILabel * _titleLabel;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -25,7 +25,7 @@
 
 - (void)dealloc;
 - (BOOL)highlighted;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setShouldDim:(BOOL)arg1;

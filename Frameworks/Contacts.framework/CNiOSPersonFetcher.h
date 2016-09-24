@@ -3,8 +3,8 @@
  */
 
 @interface CNiOSPersonFetcher : NSObject {
-    void *_addressBook;
-    CNiOSPersonFetchRequest *_fetchRequest;
+    void * _addressBook;
+    CNiOSPersonFetchRequest * _fetchRequest;
 }
 
 + (id)peopleForFetchRequest:(id)arg1 matchInfos:(id*)arg2 inAddressBook:(void*)arg3 error:(id*)arg4;

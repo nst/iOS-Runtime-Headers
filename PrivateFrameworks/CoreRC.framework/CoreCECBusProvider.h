@@ -3,10 +3,10 @@
  */
 
 @interface CoreCECBusProvider : CoreCECBus <CECBusPollingOperationDelegate, CECInterfaceDelegate> {
-    BOOL _deferLossOfLink;
-    CECInterface *_interface;
-    CECBusPollingOperation *_pollingOperation;
-    BOOL _realHasLink;
+    BOOL  _deferLossOfLink;
+    CECInterface * _interface;
+    CECBusPollingOperation * _pollingOperation;
+    BOOL  _realHasLink;
 }
 
 @property (readonly, copy) NSString *debugDescription;

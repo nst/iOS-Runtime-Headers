@@ -3,8 +3,8 @@
  */
 
 @interface CNContactAddToExistingContactAction : CNContactAction <CNContactPickerDelegate, CNContactViewControllerDelegate> {
-    CNContact *_chosenContact;
-    CNContactPickerViewController *_contactPicker;
+    CNContact * _chosenContact;
+    CNContactPickerViewController * _contactPicker;
 }
 
 @property (nonatomic, retain) CNContact *chosenContact;

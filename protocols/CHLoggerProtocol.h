@@ -5,7 +5,6 @@
 
 @required
 
-- (void)logWithLevel:(unsigned int)arg1 withFormat:(NSString *)arg2;
-- (BOOL)shouldLogForLevel:(unsigned int)arg1;
+- (struct os_log_s { }*)logHandle;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface CNPropertyPlaceholderCell : CNLabeledCell {
-    UILabel *_label;
+    UILabel * _label;
 }
 
 @property (nonatomic, readonly) UILabel *label;

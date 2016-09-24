@@ -2,53 +2,40 @@
    Image: /System/Library/Frameworks/CoreSpotlight.framework/CoreSpotlight
  */
 
-@interface MDSearchQuery : NSObject <MDSearchQueryResultProcessor> {
-    BOOL _canceled;
-    NSString *_clientBundleID;
-    NSXPCConnection *_connection;
-    <MDSearchQueryDelegate> *_delegate;
-    NSDictionary *_options;
-    NSPredicate *_predicate;
-    <MDSearchQueryService> *_queryServiceProxy;
-    NSString *_queryString;
-    NSObject<OS_dispatch_queue> *_queue;
-    unsigned int _status;
+@interface MDSearchQuery : NSObject {
+    NSString * _clientBundleID;
+    <MDSearchQueryDelegate> * _delegate;
+    NSPredicate * _predicate;
+    CSSearchQuery * _query;
+    NSObject<OS_dispatch_queue> * _queue;
+    unsigned int  _status;
 }
 
 @property (retain) NSString *clientBundleID;
-@property (retain) NSXPCConnection *connection;
 @property <MDSearchQueryDelegate> *delegate;
-@property (copy) NSDictionary *options;
+@property (readonly, copy) NSDictionary *options;
 @property (copy) NSPredicate *predicate;
-@property (retain) <MDSearchQueryService> *queryServiceProxy;
+@property (nonatomic, retain) CSSearchQuery *query;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property unsigned int status;
 
 - (void).cxx_destruct;
-- (void)_didFailWithError:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)_finalize;
+- (void)_didFinishWithError:(id)arg1;
+- (void)_didReturnItems:(id)arg1;
 - (void)cancel;
 - (id)clientBundleID;
-- (id)connection;
 - (id)delegate;
-- (void)didFailWithError:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)didFinishWithCompletionHandler:(id /* block */)arg1;
-- (void)didReturnResultsData:(id)arg1 completionHandler:(id /* block */)arg2;
-- (id)extendedOptionsFromOptions:(id)arg1;
-- (id)initWithOptions:(id)arg1;
 - (id)initWithPredicate:(id)arg1 options:(id)arg2;
 - (id)initWithQueryString:(id)arg1 options:(id)arg2;
 - (id)options;
 - (id)predicate;
-- (id)queryServiceProxy;
+- (id)query;
 - (id)queryString;
 - (id)queue;
 - (void)setClientBundleID:(id)arg1;
-- (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setOptions:(id)arg1;
 - (void)setPredicate:(id)arg1;
-- (void)setQueryServiceProxy:(id)arg1;
+- (void)setQuery:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setStatus:(unsigned int)arg1;
 - (void)start;

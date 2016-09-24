@@ -3,12 +3,12 @@
  */
 
 @interface SKUIMenuViewController : UITableViewController {
-    UIColor *_borderColor;
-    <SKUIMenuViewControllerDelegate> *_delegate;
-    int _indexOfCheckedTitle;
-    NSArray *_menuImages;
-    int _menuStyle;
-    NSArray *_menuTitles;
+    UIColor * _borderColor;
+    <SKUIMenuViewControllerDelegate> * _delegate;
+    int  _indexOfCheckedTitle;
+    NSArray * _menuImages;
+    int  _menuStyle;
+    NSArray * _menuTitles;
 }
 
 @property (nonatomic) <SKUIMenuViewControllerDelegate> *delegate;

@@ -3,10 +3,10 @@
  */
 
 @interface OCPPackage : NSObject {
-    NSMutableDictionary *mContentTypeOverrides;
-    NSMutableDictionary *mDefaultContentTypes;
-    OCPPackageProperties *mProperties;
-    OCPPackageRelationshipCollection *mRelationships;
+    NSMutableDictionary * mContentTypeOverrides;
+    NSMutableDictionary * mDefaultContentTypes;
+    OCPPackageProperties * mProperties;
+    OCPPackageRelationshipCollection * mRelationships;
 }
 
 - (id)contentTypeForPartLocation:(id)arg1;

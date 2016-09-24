@@ -3,9 +3,9 @@
  */
 
 @interface CertUIKeyDataCell : UITableViewCell {
-    NSArray *_constraints;
-    UILabel *_keyLabel;
-    UILabel *_valueLabel;
+    NSArray * _constraints;
+    UILabel * _keyLabel;
+    UILabel * _valueLabel;
 }
 
 @property (nonatomic, retain) NSArray *constraints;

@@ -8,13 +8,13 @@
         unsigned int major : 1; 
         unsigned int minor : 1; 
         unsigned int rssi : 1; 
-    } _has;
-    unsigned int _major;
-    unsigned int _minor;
-    int _rssi;
-    NSString *_sessionId;
-    unsigned long long _timestamp;
-    NSString *_uuid;
+    }  _has;
+    unsigned int  _major;
+    unsigned int  _minor;
+    int  _rssi;
+    NSString * _sessionId;
+    unsigned long long  _timestamp;
+    NSString * _uuid;
 }
 
 @property (nonatomic) BOOL hasMajor;

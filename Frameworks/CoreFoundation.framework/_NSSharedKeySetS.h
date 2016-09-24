@@ -3,21 +3,21 @@
  */
 
 @interface _NSSharedKeySetS : NSObject <NSCopying> {
-    unsigned int _M;
-    double _c;
-    unsigned char *_ckeys;
-    unsigned int _factor;
-    char *_g;
-    unsigned int _keyLen;
-    unsigned short *_keys1;
-    unsigned short *_keys2;
-    unsigned short *_keys3;
-    unsigned int _numKey;
-    void *_rankTable;
-    unsigned int *_seeds;
-    unsigned char _select;
-    _NSSharedKeySetS *_subSharedKeySet;
-    unsigned int _type;
+    unsigned int  _M;
+    double  _c;
+    unsigned char * _ckeys;
+    unsigned int  _factor;
+    char * _g;
+    unsigned int  _keyLen;
+    unsigned short * _keys1;
+    unsigned short * _keys2;
+    unsigned short * _keys3;
+    unsigned int  _numKey;
+    void * _rankTable;
+    unsigned int * _seeds;
+    unsigned char  _select;
+    _NSSharedKeySetS * _subSharedKeySet;
+    unsigned int  _type;
 }
 
 @property unsigned int M;
@@ -45,7 +45,6 @@
 - (unsigned int)count;
 - (void)dealloc;
 - (unsigned int)factor;
-- (void)finalize;
 - (char *)g;
 - (unsigned int)hash;
 - (unsigned int)indexForBytes:(char *)arg1 length:(unsigned int)arg2;

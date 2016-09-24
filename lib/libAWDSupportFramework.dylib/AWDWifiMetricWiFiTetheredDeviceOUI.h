@@ -5,9 +5,9 @@
 @interface AWDWifiMetricWiFiTetheredDeviceOUI : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
-    } _has;
-    NSData *_tetheredOUI;
-    unsigned long long _timestamp;
+    }  _has;
+    NSData * _tetheredOUI;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic, readonly) BOOL hasTetheredOUI;

@@ -3,8 +3,8 @@
  */
 
 @interface OADGraphicFeatureCache : NSObject {
-    OITSUNoCopyDictionary *mFeatureMap;
-    NSMutableArray *mFeatureUsageArray;
+    OITSUNoCopyDictionary * mFeatureMap;
+    NSMutableArray * mFeatureUsageArray;
 }
 
 - (unsigned int)cacheFeature:(id)arg1;

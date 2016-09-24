@@ -3,10 +3,12 @@
  */
 
 @interface CKDPUserPrivacySettingsBatchLookupResponse : PBCodable <NSCopying> {
-    NSMutableArray *_containerPrivacySettings;
+    NSMutableArray * _containerPrivacySettings;
 }
 
 @property (nonatomic, retain) NSMutableArray *containerPrivacySettings;
+
++ (Class)containerPrivacySettingsType;
 
 - (void).cxx_destruct;
 - (void)addContainerPrivacySettings:(id)arg1;

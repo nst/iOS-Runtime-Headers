@@ -3,7 +3,7 @@
  */
 
 @interface SKUIDialogTemplateViewElement : SKUIViewElement {
-    int _dialogType;
+    int  _dialogType;
 }
 
 @property (nonatomic, readonly) NSArray *buttons;

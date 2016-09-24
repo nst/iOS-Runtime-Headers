@@ -3,18 +3,18 @@
  */
 
 @interface GEOPBTransitHall : PBCodable <GEOTransitNamedItem, NSCopying> {
-    unsigned int _hallIndex;
+    unsigned int  _hallIndex;
     struct { 
         unsigned int muid : 1; 
         unsigned int hallIndex : 1; 
         unsigned int stationIndex : 1; 
-    } _has;
-    GEOLatLng *_location;
-    unsigned long long _muid;
-    NSString *_nameDisplayString;
-    unsigned int _stationIndex;
-    GEOStyleAttributes *_styleAttributes;
-    NSMutableArray *_zoomNames;
+    }  _has;
+    GEOLatLng * _location;
+    unsigned int  _muid;
+    NSString * _nameDisplayString;
+    unsigned int  _stationIndex;
+    GEOStyleAttributes * _styleAttributes;
+    NSMutableArray * _zoomNames;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -28,12 +28,14 @@
 @property (nonatomic, readonly) BOOL hasStyleAttributes;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) GEOLatLng *location;
-@property (nonatomic) unsigned long long muid;
+@property (nonatomic) unsigned int muid;
 @property (nonatomic, retain) NSString *nameDisplayString;
 @property (nonatomic) unsigned int stationIndex;
 @property (nonatomic, retain) GEOStyleAttributes *styleAttributes;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSMutableArray *zoomNames;
+
++ (Class)zoomNameType;
 
 - (void)addZoomName:(id)arg1;
 - (id)bestName;
@@ -55,7 +57,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)location;
 - (void)mergeFrom:(id)arg1;
-- (unsigned long long)muid;
+- (unsigned int)muid;
 - (id)nameDisplayString;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHallIndex:(unsigned int)arg1;
@@ -63,7 +65,7 @@
 - (void)setHasMuid:(BOOL)arg1;
 - (void)setHasStationIndex:(BOOL)arg1;
 - (void)setLocation:(id)arg1;
-- (void)setMuid:(unsigned long long)arg1;
+- (void)setMuid:(unsigned int)arg1;
 - (void)setNameDisplayString:(id)arg1;
 - (void)setStationIndex:(unsigned int)arg1;
 - (void)setStyleAttributes:(id)arg1;

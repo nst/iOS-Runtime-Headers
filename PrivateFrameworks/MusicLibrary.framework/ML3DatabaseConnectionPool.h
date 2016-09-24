@@ -3,21 +3,21 @@
  */
 
 @interface ML3DatabaseConnectionPool : NSObject {
-    unsigned int _connectionsJournalingMode;
-    int _connectionsProfilingLevel;
-    NSString *_databasePath;
-    <ML3DatabaseConnectionPoolDelegate> *_delegate;
-    NSMutableDictionary *_identifiersConnectionsMap;
-    BOOL _locked;
-    NSObject<OS_dispatch_semaphore> *_lockedSemaphore;
-    unsigned int _maxReaders;
-    unsigned int _maxWriters;
-    NSUUID *_poolStorageKey;
-    _ML3DatabaseConnectionSubPool *_readersSubPool;
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    BOOL _useDistantWriterConnections;
-    BOOL _waitingForUnlock;
-    _ML3DatabaseConnectionSubPool *_writersSubPool;
+    unsigned int  _connectionsJournalingMode;
+    int  _connectionsProfilingLevel;
+    NSString * _databasePath;
+    <ML3DatabaseConnectionPoolDelegate> * _delegate;
+    NSMutableDictionary * _identifiersConnectionsMap;
+    BOOL  _locked;
+    NSObject<OS_dispatch_semaphore> * _lockedSemaphore;
+    unsigned int  _maxReaders;
+    unsigned int  _maxWriters;
+    NSUUID * _poolStorageKey;
+    _ML3DatabaseConnectionSubPool * _readersSubPool;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    BOOL  _useDistantWriterConnections;
+    BOOL  _waitingForUnlock;
+    _ML3DatabaseConnectionSubPool * _writersSubPool;
 }
 
 @property (nonatomic) unsigned int connectionsJournalingMode;

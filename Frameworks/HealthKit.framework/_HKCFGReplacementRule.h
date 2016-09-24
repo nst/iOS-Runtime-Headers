@@ -3,10 +3,10 @@
  */
 
 @interface _HKCFGReplacementRule : NSObject {
-    NSString *_description;
-    unsigned int _lengthIncrease;
-    id /* block */ _nodeEvaluator;
-    NSArray *_rightHandSide;
+    NSString * _description;
+    unsigned int  _lengthIncrease;
+    id /* block */  _nodeEvaluator;
+    NSArray * _rightHandSide;
 }
 
 @property (nonatomic, readonly) unsigned int lengthIncrease;

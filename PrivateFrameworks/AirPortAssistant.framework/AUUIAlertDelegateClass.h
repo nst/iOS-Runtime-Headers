@@ -3,7 +3,7 @@
  */
 
 @interface AUUIAlertDelegateClass : NSObject <AUUIAlertDelegate> {
-    AUUIAlert *uiAlert;
+    AUUIAlert * uiAlert;
 }
 
 @property (readonly, copy) NSString *debugDescription;

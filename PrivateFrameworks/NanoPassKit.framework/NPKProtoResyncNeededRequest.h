@@ -3,15 +3,15 @@
  */
 
 @interface NPKProtoResyncNeededRequest : PBRequest <NSCopying> {
-    NPKProtoHash *_expectedHash;
-    BOOL _fullResyncNeeded;
+    NPKProtoHash * _expectedHash;
+    BOOL  _fullResyncNeeded;
     struct { 
         unsigned int resyncID : 1; 
         unsigned int fullResyncNeeded : 1; 
-    } _has;
-    NSMutableArray *_manifestHashes;
-    unsigned int _resyncID;
-    NSMutableArray *_uniqueIDs;
+    }  _has;
+    NSMutableArray * _manifestHashes;
+    unsigned int  _resyncID;
+    NSMutableArray * _uniqueIDs;
 }
 
 @property (nonatomic, retain) NPKProtoHash *expectedHash;
@@ -22,6 +22,9 @@
 @property (nonatomic, retain) NSMutableArray *manifestHashes;
 @property (nonatomic) unsigned int resyncID;
 @property (nonatomic, retain) NSMutableArray *uniqueIDs;
+
++ (Class)manifestHashesType;
++ (Class)uniqueIDsType;
 
 - (void).cxx_destruct;
 - (void)addManifestHashes:(id)arg1;

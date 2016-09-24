@@ -3,8 +3,8 @@
  */
 
 @interface SSFamilyCircle : NSObject <SSXPCCoding> {
-    NSArray *_familyMembers;
-    NSArray *_iTunesAccountNames;
+    NSArray * _familyMembers;
+    NSArray * _iTunesAccountNames;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,10 +14,10 @@
 @property (nonatomic, retain) NSArray *iTunesAccountNames;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)allITunesAccountNames;
 - (id)allITunesIdentifiers;
 - (id)copyXPCEncoding;
-- (void)dealloc;
 - (id)familyMembers;
 - (id)iTunesAccountNames;
 - (id)initWithCacheRepresentation:(id)arg1;

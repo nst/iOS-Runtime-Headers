@@ -3,10 +3,10 @@
  */
 
 @interface _MusicInterleavedEntityProviderMergeInformation : NSObject {
-    id _entityComparisonObject;
-    <MusicEntityProviding> *_entityProvider;
-    id _entityUniqueIdentifier;
-    NSIndexPath *_indexPath;
+    id  _entityComparisonObject;
+    <MusicEntityProviding> * _entityProvider;
+    id  _entityUniqueIdentifier;
+    NSIndexPath * _indexPath;
 }
 
 @property (nonatomic, copy) id entityComparisonObject;

@@ -3,45 +3,47 @@
  */
 
 @interface TTMergeableString : NSObject {
-    NSMutableAttributedString *_attributedString;
-    BOOL _cacheInvalid;
-    NSObject<TTMergeableStringDelegate> *_delegate;
-    unsigned int _editCount;
+    NSMutableAttributedString * _attributedString;
+    BOOL  _cacheInvalid;
+    NSObject<TTMergeableStringDelegate> * _delegate;
+    unsigned int  _editCount;
     struct vector<TopoSubstring *, std::__1::allocator<TopoSubstring *> > { 
         struct TopoSubstring {} **__begin_; 
         struct TopoSubstring {} **__end_; 
         struct __compressed_pair<TopoSubstring **, std::__1::allocator<TopoSubstring *> > { 
             struct TopoSubstring {} **__first_; 
         } __end_cap_; 
-    } _endNodes;
-    BOOL _hasDeltas;
-    BOOL _hasLocalChanges;
-    NSHashTable *_objectsNeedingUpdatedRanges;
+    }  _endNodes;
+    BOOL  _hasLocalChanges;
+    NSHashTable * _objectsNeedingUpdatedRanges;
     struct vector<TopoSubstring *, std::__1::allocator<TopoSubstring *> > { 
         struct TopoSubstring {} **__begin_; 
         struct TopoSubstring {} **__end_; 
         struct __compressed_pair<TopoSubstring **, std::__1::allocator<TopoSubstring *> > { 
             struct TopoSubstring {} **__first_; 
         } __end_cap_; 
-    } _orderedSubstrings;
-    NSUUID *_replicaUUID;
+    }  _orderedSubstrings;
+    unsigned int  _replicaStyleClock;
+    unsigned int  _replicaTextClock;
+    NSUUID * _replicaUUID;
     struct vector<TopoSubstring *, std::__1::allocator<TopoSubstring *> > { 
         struct TopoSubstring {} **__begin_; 
         struct TopoSubstring {} **__end_; 
         struct __compressed_pair<TopoSubstring **, std::__1::allocator<TopoSubstring *> > { 
             struct TopoSubstring {} **__first_; 
         } __end_cap_; 
-    } _startNodes;
-    TTVectorMultiTimestamp *_timestamp;
-    unsigned int _unserializedClock;
-    id /* block */ _updateRangeBlock;
+    }  _startNodes;
+    TTVectorMultiTimestamp * _timestamp;
+    unsigned int  _unserializedClock;
+    id /* block */  _updateRangeBlock;
 }
 
 @property (nonatomic, retain) NSMutableAttributedString *attributedString;
 @property (nonatomic) NSObject<TTMergeableStringDelegate> *delegate;
-@property (nonatomic, readonly) BOOL hasDeltas;
 @property (nonatomic) BOOL hasLocalChanges;
 @property (nonatomic, readonly) NSHashTable *objectsNeedingUpdatedRanges;
+@property (nonatomic, readonly) unsigned int replicaStyleClock;
+@property (nonatomic, readonly) unsigned int replicaTextClock;
 @property (nonatomic, retain) NSUUID *replicaUUID;
 @property (nonatomic, retain) TTVectorMultiTimestamp *timestamp;
 
@@ -49,11 +51,14 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)_testSetTextTimestamp:(unsigned int)arg1;
 - (id)attributedString;
 - (void)beginEditing;
 - (BOOL)canMergeString:(id)arg1;
 - (id)characterRangesForSelection:(id)arg1;
+- (id)characterRangesForSelection:(id)arg1 selectedSubstringsBlock:(id /* block */)arg2;
 - (BOOL)check:(id*)arg1;
+- (void)checkTimestampLogStyleErrors:(BOOL)arg1;
 - (void)cleanupObjectsNeedingUpdatedRanges;
 - (void)coalesce;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -66,6 +71,8 @@
 - (void)dumpMergeData:(id)arg1;
 - (void)endEditing;
 - (struct vector<TopoSubstring *, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x1; struct TopoSubstring {} **x2; struct __compressed_pair<TopoSubstring **, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x_3_1_1; } x3; }*)endNodes;
+- (void)enumerateRangesModifiedAfter:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateSubstrings:(id /* block */)arg1;
 - (void)generateIdsForLocalChanges;
 - (unsigned int)getCharacterIndexForCharID:(struct TopoID { id x1; })arg1;
 - (void)getCharacterRanges:(struct vector<_NSRange, std::__1::allocator<_NSRange> > { struct _NSRange {} *x1; struct _NSRange {} *x2; struct __compressed_pair<_NSRange *, std::__1::allocator<_NSRange> > { struct _NSRange {} *x_3_1_1; } x3; }*)arg1 forSubstrings:(struct vector<TopoSubstring *, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x1; struct TopoSubstring {} **x2; struct __compressed_pair<TopoSubstring **, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x_3_1_1; } x3; }*)arg2;
@@ -74,7 +81,6 @@
 - (void)getSubstrings:(struct vector<TopoSubstring *, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x1; struct TopoSubstring {} **x2; struct __compressed_pair<TopoSubstring **, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x_3_1_1; } x3; }*)arg1 forTopoIDRange:(struct TopoIDRange { struct TopoID { id x_1_1_1; } x1; unsigned int x2; })arg2;
 - (void)getSubstrings:(struct vector<TopoSubstring *, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x1; struct TopoSubstring {} **x2; struct __compressed_pair<TopoSubstring **, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x_3_1_1; } x3; }*)arg1 inOrderedSubstrings:(struct vector<TopoSubstring *, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x1; struct TopoSubstring {} **x2; struct __compressed_pair<TopoSubstring **, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x_3_1_1; } x3; }*)arg2 forCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (BOOL)graphIsEqual:(id)arg1;
-- (BOOL)hasDeltas;
 - (BOOL)hasLocalChanges;
 - (unsigned int)hash;
 - (id)i_saveDeltasSinceTimestamp:(id)arg1 toArchive:(struct String { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<topotext::Substring> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct VectorTimestamp {} *x7; struct RepeatedPtrField<topotext::AttributeRun> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct RepeatedPtrField<topotext::Attachment> { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; }*)arg2;
@@ -97,11 +103,14 @@
 - (struct vector<TopoSubstring *, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x1; struct TopoSubstring {} **x2; struct __compressed_pair<TopoSubstring **, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x_3_1_1; } x3; }*)orderedSubstrings;
 - (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withAttributedString:(id)arg2;
 - (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withString:(id)arg2;
+- (unsigned int)replicaStyleClock;
+- (unsigned int)replicaTextClock;
 - (id)replicaUUID;
 - (id)replicaUUIDForCharacterAtIndex:(unsigned int)arg1;
 - (void)saveDeltaSinceTimestamp:(id)arg1 toArchive:(struct String { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<topotext::Substring> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct VectorTimestamp {} *x7; struct RepeatedPtrField<topotext::AttributeRun> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct RepeatedPtrField<topotext::Attachment> { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; }*)arg2;
-- (void)saveSubstrings:(struct vector<TopoSubstring *, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x1; struct TopoSubstring {} **x2; struct __compressed_pair<TopoSubstring **, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x_3_1_1; } x3; }*)arg1 archiveSet:(struct unordered_set<TopoSubstring *, std::__1::hash<TopoSubstring *>, std::__1::equal_to<TopoSubstring *>, std::__1::allocator<TopoSubstring *> > { struct __hash_table<TopoSubstring *, std::__1::hash<TopoSubstring *>, std::__1::equal_to<TopoSubstring *>, std::__1::allocator<TopoSubstring *> > { struct unique_ptr<std::__1::__hash_node<TopoSubstring *, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<TopoSubstring *, void *> *> > > { struct __compressed_pair<std::__1::__hash_node<TopoSubstring *, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<TopoSubstring *, void *> *> > > { struct __hash_node<TopoSubstring *, void *> {} **x_1_3_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<TopoSubstring *, void *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<TopoSubstring *, void *> *> > { unsigned long x_1_5_1; } x_2_4_1; } x_1_3_2; } x_1_2_1; } x_1_1_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TopoSubstring *, void *> *>, std::__1::allocator<std::__1::__hash_node<TopoSubstring *, void *> > > { struct __hash_node_base<std::__1::__hash_node<TopoSubstring *, void *> *> { struct __hash_node<TopoSubstring *, void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, std::__1::hash<TopoSubstring *> > { unsigned long x_3_2_1; } x_1_1_3; struct __compressed_pair<float, std::__1::equal_to<TopoSubstring *> > { float x_4_2_1; } x_1_1_4; } x1; }*)arg2 linkSet:(struct unordered_set<TopoSubstring *, std::__1::hash<TopoSubstring *>, std::__1::equal_to<TopoSubstring *>, std::__1::allocator<TopoSubstring *> > { struct __hash_table<TopoSubstring *, std::__1::hash<TopoSubstring *>, std::__1::equal_to<TopoSubstring *>, std::__1::allocator<TopoSubstring *> > { struct unique_ptr<std::__1::__hash_node<TopoSubstring *, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<TopoSubstring *, void *> *> > > { struct __compressed_pair<std::__1::__hash_node<TopoSubstring *, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<TopoSubstring *, void *> *> > > { struct __hash_node<TopoSubstring *, void *> {} **x_1_3_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<TopoSubstring *, void *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<TopoSubstring *, void *> *> > { unsigned long x_1_5_1; } x_2_4_1; } x_1_3_2; } x_1_2_1; } x_1_1_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TopoSubstring *, void *> *>, std::__1::allocator<std::__1::__hash_node<TopoSubstring *, void *> > > { struct __hash_node_base<std::__1::__hash_node<TopoSubstring *, void *> *> { struct __hash_node<TopoSubstring *, void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, std::__1::hash<TopoSubstring *> > { unsigned long x_3_2_1; } x_1_1_3; struct __compressed_pair<float, std::__1::equal_to<TopoSubstring *> > { float x_4_2_1; } x_1_1_4; } x1; }*)arg3 archivedString:(id*)arg4 toArchive:(struct String { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<topotext::Substring> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct VectorTimestamp {} *x7; struct RepeatedPtrField<topotext::AttributeRun> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct RepeatedPtrField<topotext::Attachment> { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; }*)arg5;
+- (void)saveSubstrings:(struct vector<TopoSubstring *, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x1; struct TopoSubstring {} **x2; struct __compressed_pair<TopoSubstring **, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x_3_1_1; } x3; }*)arg1 archiveSet:(struct unordered_set<TopoSubstring *, std::__1::hash<TopoSubstring *>, std::__1::equal_to<TopoSubstring *>, std::__1::allocator<TopoSubstring *> > { struct __hash_table<TopoSubstring *, std::__1::hash<TopoSubstring *>, std::__1::equal_to<TopoSubstring *>, std::__1::allocator<TopoSubstring *> > { struct unique_ptr<std::__1::__hash_node<TopoSubstring *, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<TopoSubstring *, void *> *> > > { struct __compressed_pair<std::__1::__hash_node<TopoSubstring *, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<TopoSubstring *, void *> *> > > { struct __hash_node<TopoSubstring *, void *> {} **x_1_3_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<TopoSubstring *, void *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<TopoSubstring *, void *> *> > { unsigned long x_1_5_1; } x_2_4_1; } x_1_3_2; } x_1_2_1; } x_1_1_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TopoSubstring *, void *> *>, std::__1::allocator<std::__1::__hash_node<TopoSubstring *, void *> > > { struct __hash_node_base<std::__1::__hash_node<TopoSubstring *, void *> *> { struct __hash_node<TopoSubstring *, void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; } x1; }*)arg2 linkSet:(struct unordered_set<TopoSubstring *, std::__1::hash<TopoSubstring *>, std::__1::equal_to<TopoSubstring *>, std::__1::allocator<TopoSubstring *> > { struct __hash_table<TopoSubstring *, std::__1::hash<TopoSubstring *>, std::__1::equal_to<TopoSubstring *>, std::__1::allocator<TopoSubstring *> > { struct unique_ptr<std::__1::__hash_node<TopoSubstring *, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<TopoSubstring *, void *> *> > > { struct __compressed_pair<std::__1::__hash_node<TopoSubstring *, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<TopoSubstring *, void *> *> > > { struct __hash_node<TopoSubstring *, void *> {} **x_1_3_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<TopoSubstring *, void *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<TopoSubstring *, void *> *> > { unsigned long x_1_5_1; } x_2_4_1; } x_1_3_2; } x_1_2_1; } x_1_1_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<TopoSubstring *, void *> *>, std::__1::allocator<std::__1::__hash_node<TopoSubstring *, void *> > > { struct __hash_node_base<std::__1::__hash_node<TopoSubstring *, void *> *> { struct __hash_node<TopoSubstring *, void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; } x1; }*)arg3 archivedString:(id*)arg4 toArchive:(struct String { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<topotext::Substring> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct VectorTimestamp {} *x7; struct RepeatedPtrField<topotext::AttributeRun> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct RepeatedPtrField<topotext::Attachment> { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; }*)arg5;
 - (void)saveToArchive:(struct String { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<topotext::Substring> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct VectorTimestamp {} *x7; struct RepeatedPtrField<topotext::AttributeRun> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct RepeatedPtrField<topotext::Attachment> { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; }*)arg1;
+- (BOOL)selection:(id)arg1 wasModifiedAfter:(id)arg2;
 - (id)selectionForCharacterRanges:(id)arg1;
 - (id)selectionForCharacterRanges:(id)arg1 selectionAffinity:(unsigned int)arg2;
 - (id)serialize;
@@ -115,6 +124,8 @@
 - (struct TopoSubstring { struct TopoIDRange { struct TopoID { id x_1_2_1; } x_1_1_1; unsigned int x_1_1_2; } x1; struct TopoID { id x_2_1_1; } x2; unsigned int x3; bool x4; struct vector<TopoSubstring *, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x_5_1_1; struct TopoSubstring {} **x_5_1_2; struct __compressed_pair<TopoSubstring **, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x_3_2_1; } x_5_1_3; } x5; unsigned int x6; }*)splitTopoSubstring:(struct TopoSubstring { struct TopoIDRange { struct TopoID { id x_1_2_1; } x_1_1_1; unsigned int x_1_1_2; } x1; struct TopoID { id x_2_1_1; } x2; unsigned int x3; bool x4; struct vector<TopoSubstring *, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x_5_1_1; struct TopoSubstring {} **x_5_1_2; struct __compressed_pair<TopoSubstring **, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x_3_2_1; } x_5_1_3; } x5; unsigned int x6; }*)arg1 atIndex:(unsigned int)arg2;
 - (struct vector<TopoSubstring *, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x1; struct TopoSubstring {} **x2; struct __compressed_pair<TopoSubstring **, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x_3_1_1; } x3; }*)startNodes;
 - (id)string;
+- (int)substring:(struct TopoSubstring { struct TopoIDRange { struct TopoID { id x_1_2_1; } x_1_1_1; unsigned int x_1_1_2; } x1; struct TopoID { id x_2_1_1; } x2; unsigned int x3; bool x4; struct vector<TopoSubstring *, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x_5_1_1; struct TopoSubstring {} **x_5_1_2; struct __compressed_pair<TopoSubstring **, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x_3_2_1; } x_5_1_3; } x5; unsigned int x6; }*)arg1 modifiedAfter:(id)arg2;
+- (BOOL)textEitherSideOfSelectionAnchor:(struct TopoID { id x1; })arg1 wasModifiedAfter:(id)arg2;
 - (id)timestamp;
 - (void)traverseUnordered:(id /* block */)arg1;
 - (void)updateAttributedStringAfterMerge;

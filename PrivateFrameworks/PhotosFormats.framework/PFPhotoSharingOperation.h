@@ -3,25 +3,27 @@
  */
 
 @interface PFPhotoSharingOperation : NSOperation {
-    PFAssetAdjustments *__adjustments;
-    NSObject<OS_dispatch_queue> *_externalIsolation;
-    NSString *_generatedFileName;
-    NSURL *_imageURL;
-    BOOL _operationComplete;
-    NSError *_operationError;
-    BOOL _operationSuccess;
-    NSURL *_outputDirectoryURL;
-    BOOL _shouldConvertToSRGB;
-    BOOL _shouldStripLocation;
-    BOOL _shouldStripMetadata;
+    PFAssetAdjustments * __adjustments;
+    NSString * _customAccessibilityLabel;
+    NSObject<OS_dispatch_queue> * _externalIsolation;
+    NSString * _generatedFileName;
+    NSURL * _imageURL;
+    BOOL  _operationComplete;
+    NSError * _operationError;
+    BOOL  _operationSuccess;
+    NSURL * _outputDirectoryURL;
+    BOOL  _shouldConvertToSRGB;
+    BOOL  _shouldStripLocation;
+    BOOL  _shouldStripMetadata;
 }
 
 @property (setter=_setAdjustments:, nonatomic, retain) PFAssetAdjustments *_adjustments;
+@property (nonatomic, copy) NSString *customAccessibilityLabel;
 @property (nonatomic, copy) NSString *generatedFileName;
-@property (nonatomic, copy) NSURL *imageURL;
+@property (setter=_setImageURL:, nonatomic, copy) NSURL *imageURL;
 @property (nonatomic, readonly) NSError *operationError;
 @property (nonatomic, copy) NSURL *outputDirectoryURL;
-@property (nonatomic, readonly) float progress;
+@property (nonatomic, readonly) double progress;
 @property (nonatomic) BOOL shouldConvertToSRGB;
 @property (nonatomic) BOOL shouldStripLocation;
 @property (nonatomic) BOOL shouldStripMetadata;
@@ -31,6 +33,7 @@
 - (id)_adjustments;
 - (void)_setAdjustments:(id)arg1;
 - (void)_setImageURL:(id)arg1;
+- (id)customAccessibilityLabel;
 - (id)generatedFileName;
 - (id)imageURL;
 - (id)initWithImageURL:(id)arg1 adjustmentData:(id)arg2;
@@ -38,6 +41,7 @@
 - (id)operationError;
 - (id)outputDirectoryURL;
 - (float)progress;
+- (void)setCustomAccessibilityLabel:(id)arg1;
 - (void)setGeneratedFileName:(id)arg1;
 - (void)setOutputDirectoryURL:(id)arg1;
 - (void)setShouldConvertToSRGB:(BOOL)arg1;

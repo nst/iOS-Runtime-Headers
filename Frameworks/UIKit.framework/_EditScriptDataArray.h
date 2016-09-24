@@ -3,8 +3,8 @@
  */
 
 @interface _EditScriptDataArray : NSObject <_EditScriptData> {
-    NSString *_cachedStringValue;
-    NSArray *_data;
+    NSString * _cachedStringValue;
+    NSArray * _data;
 }
 
 @property (nonatomic, retain) NSString *cachedStringValue;

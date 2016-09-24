@@ -3,8 +3,8 @@
  */
 
 @interface GEOResourceManifestDownload : PBCodable <NSCopying> {
-    GEODownloadMetadata *_metadata;
-    GEOResources *_resources;
+    GEODownloadMetadata * _metadata;
+    GEOResources * _resources;
 }
 
 @property (nonatomic, readonly) BOOL hasResources;

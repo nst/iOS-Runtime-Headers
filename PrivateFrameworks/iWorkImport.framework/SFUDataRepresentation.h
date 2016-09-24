@@ -3,18 +3,18 @@
  */
 
 @interface SFUDataRepresentation : NSObject {
-    BOOL mHasHash;
-    BOOL mHasSha1Hash;
-    unsigned int mHash;
-    NSData *mSha1Hash;
+    BOOL  mHasHash;
+    BOOL  mHasSha1Hash;
+    unsigned int  mHash;
+    NSData * mSha1Hash;
 }
 
 - (id)bufferedInputStream;
 - (id)bufferedInputStreamWithBufferSize:(unsigned long)arg1;
 - (struct CGDataProvider { }*)cgDataProvider;
 - (int)compare:(id)arg1;
-- (long long)dataLength;
-- (long long)encodedLength;
+- (int)dataLength;
+- (int)encodedLength;
 - (BOOL)hasSameLocationAs:(id)arg1;
 - (unsigned int)hash;
 - (id)inputStream;

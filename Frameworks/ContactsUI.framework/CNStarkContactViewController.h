@@ -3,30 +3,45 @@
  */
 
 @interface CNStarkContactViewController : CNContactContentViewController <CNPropertyBestIDSValueQueryDelegate> {
-    CNPropertyBestIDSValueQuery *_bestiMessageQuery;
-    CNCardiMessageEmailGroup *_iMessageEmailGroup;
+    NSArray * _activatedConstraints;
+    CNPropertyBestIDSValueQuery * _bestiMessageQuery;
+    CNStarkContactNameView * _contactNameView;
+    CNCardiMessageEmailGroup * _iMessageEmailGroup;
 }
 
+@property (nonatomic, retain) NSArray *activatedConstraints;
 @property (nonatomic, retain) CNPropertyBestIDSValueQuery *bestiMessageQuery;
+@property (nonatomic, retain) CNStarkContactNameView *contactNameView;
 @property (nonatomic, retain) CNCardiMessageEmailGroup *iMessageEmailGroup;
+
++ (BOOL)enablesTransportButtons;
 
 - (void).cxx_destruct;
 - (void)_initiateBestiMessagePropertyQuery;
+- (id)activatedConstraints;
 - (id)bestiMessageQuery;
+- (id)contactNameView;
 - (void)dealloc;
-- (float)heightForHeaderInTableView:(id)arg1;
+- (BOOL)hasTableViewHeaderFirstSection;
 - (id)iMessageEmailGroup;
 - (id)initWithContact:(id)arg1;
-- (void)loadView;
+- (void)initializeTableViewsForHeaderHeight;
+- (void)loadContactViewControllerViews;
 - (void)queryComplete;
+- (void)scrollViewDidScroll:(id)arg1;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)setActivatedConstraints:(id)arg1;
 - (void)setBestiMessageQuery:(id)arg1;
+- (void)setContactNameView:(id)arg1;
 - (void)setIMessageEmailGroup:(id)arg1;
+- (void)setupConstraints;
+- (void)setupTableHeaderView;
+- (BOOL)shouldDisplayAvatarHeaderView;
 - (BOOL)tableView:(id)arg1 canPerformAction:(SEL)arg2 forRowAtIndexPath:(id)arg3 withSender:(id)arg4;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)title;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(BOOL)arg2;
-- (id)viewForHeaderInTableView:(id)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
 

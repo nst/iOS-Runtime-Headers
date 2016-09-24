@@ -3,13 +3,13 @@
  */
 
 @interface MPMoviePlayerController : NSObject <MPMediaPlayback> {
-    id _implementation;
+    id  _implementation;
 }
 
 @property (nonatomic, readonly) UIView *backgroundView;
 @property (nonatomic, copy) NSURL *contentURL;
 @property (nonatomic) int controlStyle;
-@property (nonatomic) float currentPlaybackRate;
+@property (nonatomic) double currentPlaybackRate;
 @property (nonatomic) double currentPlaybackTime;
 @property (getter=isFullscreen, nonatomic) BOOL fullscreen;
 @property (nonatomic, readonly) BOOL isPreparedToPlay;
@@ -53,7 +53,7 @@
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (unsigned int)movieMediaTypes;
 - (int)movieSourceType;
-- (struct CGSize { float x1; float x2; })naturalSize;
+- (struct CGSize { double x1; double x2; })naturalSize;
 - (void)pause;
 - (void)play;
 - (double)playableDuration;

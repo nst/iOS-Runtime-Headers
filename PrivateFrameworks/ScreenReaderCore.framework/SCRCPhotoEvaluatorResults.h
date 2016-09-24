@@ -3,10 +3,10 @@
  */
 
 @interface SCRCPhotoEvaluatorResults : NSObject {
-    SCRCPhotoEvaluatorResult *_blurResult;
-    SCRCPhotoEvaluatorResult *_colorResult;
-    SCRCPhotoEvaluatorResult *_luminanceResult;
-    SCRCPhotoEvaluatorResultPeople *_peopleResult;
+    SCRCPhotoEvaluatorResult * _blurResult;
+    SCRCPhotoEvaluatorResult * _colorResult;
+    SCRCPhotoEvaluatorResult * _luminanceResult;
+    SCRCPhotoEvaluatorResultPeople * _peopleResult;
 }
 
 @property (nonatomic, readonly) SCRCPhotoEvaluatorResult *blurResult;

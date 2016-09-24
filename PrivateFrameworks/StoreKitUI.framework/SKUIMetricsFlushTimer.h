@@ -3,9 +3,9 @@
  */
 
 @interface SKUIMetricsFlushTimer : NSObject {
-    NSHashTable *_metricsControllers;
-    NSObject<OS_dispatch_source> *_timer;
-    unsigned long long _timerStartTime;
+    NSHashTable * _metricsControllers;
+    NSObject<OS_dispatch_source> * _timer;
+    unsigned int  _timerStartTime;
 }
 
 + (id)sharedTimer;

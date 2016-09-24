@@ -3,20 +3,20 @@
  */
 
 @interface SKConstraint : NSObject <NSCoding, NSCopying> {
-    BOOL _enabled;
-    SKNode *_referenceNode;
+    BOOL  _enabled;
+    SKNode * _referenceNode;
 }
 
 @property BOOL enabled;
 @property (nonatomic, retain) SKNode *referenceNode;
 
 + (id)distance:(id)arg1 toNode:(id)arg2;
-+ (id)distance:(id)arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2;
-+ (id)distance:(id)arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2 inNode:(id)arg3;
++ (id)distance:(id)arg1 toPoint:(struct CGPoint { double x1; double x2; })arg2;
++ (id)distance:(id)arg1 toPoint:(struct CGPoint { double x1; double x2; })arg2 inNode:(id)arg3;
 + (id)height:(id)arg1;
 + (id)orientToNode:(id)arg1 offset:(id)arg2;
-+ (id)orientToPoint:(struct CGPoint { float x1; float x2; })arg1 inNode:(id)arg2 offset:(id)arg3;
-+ (id)orientToPoint:(struct CGPoint { float x1; float x2; })arg1 offset:(id)arg2;
++ (id)orientToPoint:(struct CGPoint { double x1; double x2; })arg1 inNode:(id)arg2 offset:(id)arg3;
++ (id)orientToPoint:(struct CGPoint { double x1; double x2; })arg1 offset:(id)arg2;
 + (id)positionX:(id)arg1;
 + (id)positionX:(id)arg1 Y:(id)arg2;
 + (id)positionY:(id)arg1;

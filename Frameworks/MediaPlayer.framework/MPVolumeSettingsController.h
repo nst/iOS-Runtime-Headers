@@ -3,10 +3,10 @@
  */
 
 @interface MPVolumeSettingsController : UIViewController {
-    UIAlertController *_alertController;
-    NSString *_audioCategory;
-    UIWindow *_hostingWindow;
-    UIWindow *_previousWindow;
+    UIAlertController * _alertController;
+    NSString * _audioCategory;
+    UIWindow * _hostingWindow;
+    UIWindow * _previousWindow;
 }
 
 @property (nonatomic) UIWindow *hostingWindow;

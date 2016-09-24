@@ -3,41 +3,73 @@
  */
 
 @interface CKDPShareAcceptRequest : PBRequest <NSCopying> {
-    NSString *_etag;
-    CKDPProtectionInfo *_publicParticipantPublicKey;
-    CKDPProtectionInfo *_selfAddedPcs;
-    CKDPShareIdentifier *_shareId;
+    BOOL  _acceptedInProcess;
+    NSString * _etag;
+    struct { 
+        unsigned int publicKeyVersion : 1; 
+        unsigned int acceptedInProcess : 1; 
+    }  _has;
+    NSString * _participantId;
+    CKDPProtectionInfo * _protectionInfo;
+    CKDPProtectionInfo * _publicKey;
+    int  _publicKeyVersion;
+    CKDPProtectionInfo * _selfAddedPcs;
+    CKDPShareIdentifier * _shareId;
 }
 
+@property (nonatomic) BOOL acceptedInProcess;
 @property (nonatomic, retain) NSString *etag;
+@property (nonatomic) BOOL hasAcceptedInProcess;
 @property (nonatomic, readonly) BOOL hasEtag;
-@property (nonatomic, readonly) BOOL hasPublicParticipantPublicKey;
+@property (nonatomic, readonly) BOOL hasParticipantId;
+@property (nonatomic, readonly) BOOL hasProtectionInfo;
+@property (nonatomic, readonly) BOOL hasPublicKey;
+@property (nonatomic) BOOL hasPublicKeyVersion;
 @property (nonatomic, readonly) BOOL hasSelfAddedPcs;
 @property (nonatomic, readonly) BOOL hasShareId;
-@property (nonatomic, retain) CKDPProtectionInfo *publicParticipantPublicKey;
+@property (nonatomic, retain) NSString *participantId;
+@property (nonatomic, retain) CKDPProtectionInfo *protectionInfo;
+@property (nonatomic, retain) CKDPProtectionInfo *publicKey;
+@property (nonatomic) int publicKeyVersion;
 @property (nonatomic, retain) CKDPProtectionInfo *selfAddedPcs;
 @property (nonatomic, retain) CKDPShareIdentifier *shareId;
 
 + (id)options;
 
 - (void).cxx_destruct;
+- (BOOL)acceptedInProcess;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)etag;
+- (BOOL)hasAcceptedInProcess;
 - (BOOL)hasEtag;
-- (BOOL)hasPublicParticipantPublicKey;
+- (BOOL)hasParticipantId;
+- (BOOL)hasProtectionInfo;
+- (BOOL)hasPublicKey;
+- (BOOL)hasPublicKeyVersion;
 - (BOOL)hasSelfAddedPcs;
 - (BOOL)hasShareId;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (id)publicParticipantPublicKey;
+- (id)participantId;
+- (id)protectionInfo;
+- (id)publicKey;
+- (int)publicKeyVersion;
 - (BOOL)readFrom:(id)arg1;
+- (unsigned int)requestTypeCode;
+- (Class)responseClass;
 - (id)selfAddedPcs;
+- (void)setAcceptedInProcess:(BOOL)arg1;
 - (void)setEtag:(id)arg1;
-- (void)setPublicParticipantPublicKey:(id)arg1;
+- (void)setHasAcceptedInProcess:(BOOL)arg1;
+- (void)setHasPublicKeyVersion:(BOOL)arg1;
+- (void)setParticipantId:(id)arg1;
+- (void)setProtectionInfo:(id)arg1;
+- (void)setPublicKey:(id)arg1;
+- (void)setPublicKeyVersion:(int)arg1;
 - (void)setSelfAddedPcs:(id)arg1;
 - (void)setShareId:(id)arg1;
 - (id)shareId;

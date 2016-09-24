@@ -3,8 +3,8 @@
  */
 
 @interface CKDTokenDeletionURLRequest : CKDURLRequest {
-    NSString *_bundleID;
-    NSData *_token;
+    NSString * _bundleID;
+    NSData * _token;
 }
 
 @property (nonatomic, retain) NSString *bundleID;

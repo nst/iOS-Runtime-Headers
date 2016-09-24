@@ -3,9 +3,9 @@
  */
 
 @interface AXSpringBoardActionHandlerHolder : NSObject {
-    id /* block */ _handler;
-    NSString *_identifier;
-    int _type;
+    id /* block */  _handler;
+    NSString * _identifier;
+    int  _type;
 }
 
 @property (nonatomic, copy) id /* block */ handler;

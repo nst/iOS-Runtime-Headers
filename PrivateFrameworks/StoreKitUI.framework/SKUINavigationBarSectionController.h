@@ -3,8 +3,8 @@
  */
 
 @interface SKUINavigationBarSectionController : NSObject <SKUIArtworkRequestDelegate> {
-    SKUINavigationBarContext *_navigationBarContext;
-    SKUIViewElementLayoutContext *_viewLayoutContext;
+    SKUINavigationBarContext * _navigationBarContext;
+    SKUIViewElementLayoutContext * _viewLayoutContext;
 }
 
 @property (nonatomic, retain) SKUINavigationBarContext *context;

@@ -3,8 +3,8 @@
  */
 
 @interface EKEventPrivacyLevelInlineEditItem : EKEventEditItem {
-    BOOL _currentSwitchState;
-    BOOL _originalSwitchState;
+    BOOL  _currentSwitchState;
+    BOOL  _originalSwitchState;
 }
 
 - (void)_switchChanged:(id)arg1;

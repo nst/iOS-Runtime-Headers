@@ -3,8 +3,8 @@
  */
 
 @interface HMDMessageFilterChain : NSObject {
-    NSMutableArray *_messageFilters;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    NSMutableArray * _messageFilters;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic, readonly, copy) NSArray *filters;

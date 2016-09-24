@@ -3,27 +3,31 @@
  */
 
 @interface GEOPBTransitLine : PBCodable <GEOTransitNamedItem, NSCopying> {
-    GEOPBTransitArtwork *_artwork;
-    GEOPBTransitLineDisplayHints *_displayHints;
-    int _guidanceSnappingType;
+    GEOPBTransitArtwork * _artwork;
+    GEOPBTransitLineDisplayHints * _displayHints;
+    int  _guidanceSnappingType;
     struct { 
         unsigned int muid : 1; 
         unsigned int guidanceSnappingType : 1; 
         unsigned int lineIndex : 1; 
+        unsigned int placeDisplayStyle : 1; 
         unsigned int preferredDepartureTimeStyle : 1; 
         unsigned int systemIndex : 1; 
-    } _has;
-    NSString *_lineColor;
-    unsigned int _lineIndex;
-    GEOPBTransitArtwork *_modeArtwork;
-    unsigned long long _muid;
-    NSString *_nameDisplayString;
-    struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } *_operatingHours;
-    unsigned int _operatingHoursCount;
-    unsigned int _operatingHoursSpace;
-    int _preferredDepartureTimeStyle;
-    GEOStyleAttributes *_styleAttributes;
-    unsigned int _systemIndex;
+        unsigned int transitType : 1; 
+    }  _has;
+    NSString * _lineColor;
+    unsigned int  _lineIndex;
+    GEOPBTransitArtwork * _modeArtwork;
+    unsigned int  _muid;
+    NSString * _nameDisplayString;
+    struct GEOPBTransitTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } * _operatingHours;
+    unsigned int  _operatingHoursCount;
+    unsigned int  _operatingHoursSpace;
+    int  _placeDisplayStyle;
+    int  _preferredDepartureTimeStyle;
+    GEOStyleAttributes * _styleAttributes;
+    unsigned int  _systemIndex;
+    int  _transitType;
 }
 
 @property (nonatomic, retain) GEOPBTransitArtwork *artwork;
@@ -39,23 +43,30 @@
 @property (nonatomic, readonly) BOOL hasModeArtwork;
 @property (nonatomic) BOOL hasMuid;
 @property (nonatomic, readonly) BOOL hasNameDisplayString;
+@property (nonatomic) BOOL hasPlaceDisplayStyle;
 @property (nonatomic) BOOL hasPreferredDepartureTimeStyle;
 @property (nonatomic, readonly) BOOL hasStyleAttributes;
 @property (nonatomic) BOOL hasSystemIndex;
+@property (nonatomic) BOOL hasTransitType;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSString *lineColor;
 @property (nonatomic) unsigned int lineIndex;
 @property (nonatomic, retain) GEOPBTransitArtwork *modeArtwork;
-@property (nonatomic) unsigned long long muid;
+@property (nonatomic) unsigned int muid;
 @property (nonatomic, retain) NSString *nameDisplayString;
-@property (nonatomic, readonly) struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*operatingHours;
+@property (nonatomic, readonly) struct GEOPBTransitTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*operatingHours;
 @property (nonatomic, readonly) unsigned int operatingHoursCount;
+@property (nonatomic) int placeDisplayStyle;
 @property (nonatomic) int preferredDepartureTimeStyle;
 @property (nonatomic, retain) GEOStyleAttributes *styleAttributes;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned int systemIndex;
+@property (nonatomic) int transitType;
 
-- (void)addOperatingHours:(struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
+- (int)StringAsGuidanceSnappingType:(id)arg1;
+- (int)StringAsPlaceDisplayStyle:(id)arg1;
+- (int)StringAsPreferredDepartureTimeStyle:(id)arg1;
+- (void)addOperatingHours:(struct GEOPBTransitTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
 - (id)artwork;
 - (id)bestName;
 - (void)clearOperatingHours;
@@ -67,6 +78,7 @@
 - (id)displayHints;
 - (id)geoTransitLineWithSystem:(id)arg1;
 - (int)guidanceSnappingType;
+- (id)guidanceSnappingTypeAsString:(int)arg1;
 - (BOOL)hasArtwork;
 - (BOOL)hasDisplayHints;
 - (BOOL)hasGuidanceSnappingType;
@@ -75,21 +87,26 @@
 - (BOOL)hasModeArtwork;
 - (BOOL)hasMuid;
 - (BOOL)hasNameDisplayString;
+- (BOOL)hasPlaceDisplayStyle;
 - (BOOL)hasPreferredDepartureTimeStyle;
 - (BOOL)hasStyleAttributes;
 - (BOOL)hasSystemIndex;
+- (BOOL)hasTransitType;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)lineColor;
 - (unsigned int)lineIndex;
 - (void)mergeFrom:(id)arg1;
 - (id)modeArtwork;
-- (unsigned long long)muid;
+- (unsigned int)muid;
 - (id)nameDisplayString;
-- (struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)operatingHours;
-- (struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })operatingHoursAtIndex:(unsigned int)arg1;
+- (struct GEOPBTransitTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)operatingHours;
+- (struct GEOPBTransitTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })operatingHoursAtIndex:(unsigned int)arg1;
 - (unsigned int)operatingHoursCount;
+- (int)placeDisplayStyle;
+- (id)placeDisplayStyleAsString:(int)arg1;
 - (int)preferredDepartureTimeStyle;
+- (id)preferredDepartureTimeStyleAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setArtwork:(id)arg1;
 - (void)setDisplayHints:(id)arg1;
@@ -97,19 +114,24 @@
 - (void)setHasGuidanceSnappingType:(BOOL)arg1;
 - (void)setHasLineIndex:(BOOL)arg1;
 - (void)setHasMuid:(BOOL)arg1;
+- (void)setHasPlaceDisplayStyle:(BOOL)arg1;
 - (void)setHasPreferredDepartureTimeStyle:(BOOL)arg1;
 - (void)setHasSystemIndex:(BOOL)arg1;
+- (void)setHasTransitType:(BOOL)arg1;
 - (void)setLineColor:(id)arg1;
 - (void)setLineIndex:(unsigned int)arg1;
 - (void)setModeArtwork:(id)arg1;
-- (void)setMuid:(unsigned long long)arg1;
+- (void)setMuid:(unsigned int)arg1;
 - (void)setNameDisplayString:(id)arg1;
-- (void)setOperatingHours:(struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg1 count:(unsigned int)arg2;
+- (void)setOperatingHours:(struct GEOPBTransitTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg1 count:(unsigned int)arg2;
+- (void)setPlaceDisplayStyle:(int)arg1;
 - (void)setPreferredDepartureTimeStyle:(int)arg1;
 - (void)setStyleAttributes:(id)arg1;
 - (void)setSystemIndex:(unsigned int)arg1;
+- (void)setTransitType:(int)arg1;
 - (id)styleAttributes;
 - (unsigned int)systemIndex;
+- (int)transitType;
 - (void)writeTo:(id)arg1;
 
 @end

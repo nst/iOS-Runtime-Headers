@@ -3,16 +3,16 @@
  */
 
 @interface SUManualDownloadPolicy : SUDefaultDownloadPolicy {
-    BOOL _autoDownloadAllowableForCellular;
-    BOOL _downloadAllowableForCellular;
-    BOOL _downloadAllowableForCellular2G;
-    BOOL _downloadAllowableForCellularRoaming;
-    BOOL _downloadAllowableForWiFi;
-    BOOL _downloadFreeForCellular;
-    BOOL _downloadable;
-    Class _fakeClass;
-    BOOL _hasEnoughDiskSpace;
-    BOOL _powerRequired;
+    BOOL  _autoDownloadAllowableForCellular;
+    BOOL  _downloadAllowableForCellular;
+    BOOL  _downloadAllowableForCellular2G;
+    BOOL  _downloadAllowableForCellularRoaming;
+    BOOL  _downloadAllowableForWiFi;
+    BOOL  _downloadFreeForCellular;
+    BOOL  _downloadable;
+    Class  _fakeClass;
+    BOOL  _hasEnoughDiskSpace;
+    BOOL  _powerRequired;
 }
 
 @property (getter=isDownloadAllowableForCellular, nonatomic) BOOL downloadAllowableForCellular;

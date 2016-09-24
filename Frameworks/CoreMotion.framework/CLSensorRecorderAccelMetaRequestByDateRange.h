@@ -3,8 +3,8 @@
  */
 
 @interface CLSensorRecorderAccelMetaRequestByDateRange : NSObject <NSSecureCoding> {
-    double _endTime;
-    double _startTime;
+    double  _endTime;
+    double  _startTime;
 }
 
 @property double endTime;

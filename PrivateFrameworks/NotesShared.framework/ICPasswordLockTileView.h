@@ -2,27 +2,31 @@
    Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
  */
 
-@interface ICPasswordLockTileView : UIView {
-    CALayer *_backdropLayer;
-    UIView *_containerView;
-    id /* block */ _fadeInCompletionHandler;
-    id /* block */ _fadeOutCompletionHandler;
-    BOOL _isLocked;
-    UILabel *_label;
-    CALayer *_lockBase;
-    CALayer *_lockGroupLayer;
-    CALayer *_lockHandle;
+@interface ICPasswordLockTileView : UIView <CAAnimationDelegate> {
+    CALayer * _backdropLayer;
+    UIView * _containerView;
+    id /* block */  _fadeInCompletionHandler;
+    id /* block */  _fadeOutCompletionHandler;
+    BOOL  _isLocked;
+    UILabel * _label;
+    CALayer * _lockBase;
+    CALayer * _lockGroupLayer;
+    CALayer * _lockHandle;
 }
 
 @property (nonatomic, retain) CALayer *backdropLayer;
 @property (nonatomic) UIView *containerView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ fadeInCompletionHandler;
 @property (nonatomic, copy) id /* block */ fadeOutCompletionHandler;
+@property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isLocked;
 @property (nonatomic) UILabel *label;
 @property (nonatomic, retain) CALayer *lockBase;
 @property (nonatomic, retain) CALayer *lockGroupLayer;
 @property (nonatomic, retain) CALayer *lockHandle;
+@property (readonly) Class superclass;
 
 + (id)lockTileView;
 

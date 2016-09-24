@@ -3,24 +3,23 @@
  */
 
 @interface NFAWDVersionInfo : NSObject <NFAWDEventProtocol> {
-    AWDNFCVersions *_metric;
-    unsigned int nfccFWRevision;
-    unsigned int nfccFWVersion;
-    unsigned int nfccHWVersion;
-    unsigned int nfccMWVersion;
-    unsigned int nfccROMVersion;
-    unsigned int seDeviceType;
-    unsigned int seFWVersion;
-    unsigned int seHWVersion;
-    unsigned int seMigrationInst;
-    unsigned int seMigrationPkgs;
-    unsigned int seMigrationState;
-    unsigned int seOSMode;
-    NSString *sePlatformId;
-    unsigned int seRefCount;
-    unsigned int seRestrictedMode;
-    unsigned int seSeqCount;
-    unsigned int seSignKeyType;
+    AWDNFCVersions * _metric;
+    unsigned int  _nfccFWRevision;
+    unsigned int  _nfccFWVersion;
+    unsigned int  _nfccHWVersion;
+    unsigned int  _nfccMWVersion;
+    unsigned int  _nfccROMVersion;
+    unsigned int  _seDeviceType;
+    unsigned int  _seFWVersion;
+    unsigned int  _seHWVersion;
+    unsigned int  _seMigrationInst;
+    unsigned int  _seMigrationPkgs;
+    unsigned int  _seMigrationState;
+    unsigned int  _seOSMode;
+    unsigned int  _seRefCount;
+    unsigned int  _seRestrictedMode;
+    unsigned int  _seSeqCount;
+    unsigned int  _seSignKeyType;
 }
 
 @property (readonly, copy) NSString *debugDescription;

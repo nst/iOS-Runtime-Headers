@@ -3,10 +3,10 @@
  */
 
 @interface CNTCC : NSObject {
-    BOOL _simulateAccessPrompt;
-    unsigned int _simulateAccessPromptDelay;
-    BOOL _simulateAccessPromptGranted;
-    int _simulateType;
+    BOOL  _simulateAccessPrompt;
+    unsigned int  _simulateAccessPromptDelay;
+    BOOL  _simulateAccessPromptGranted;
+    int  _simulateType;
 }
 
 + (id)sharedInstance;

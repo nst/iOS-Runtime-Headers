@@ -3,38 +3,39 @@
  */
 
 @interface AFSyncInfo : NSObject <NSSecureCoding> {
-    NSString *_anchor;
-    NSString *_applicationBundleIdentifier;
-    int _count;
-    NSString *_intentSlotName;
-    NSString *_key;
-    NSString *_validity;
+    NSString * _anchor;
+    SASyncAppMetaData * _appMetadata;
+    int  _count;
+    NSString * _key;
+    BOOL  _targetIsLocal;
+    NSString * _validity;
 }
 
 @property (nonatomic, copy) NSString *anchor;
-@property (nonatomic, copy) NSString *applicationBundleIdentifier;
+@property (nonatomic, copy) SASyncAppMetaData *appMetadata;
 @property (nonatomic) int count;
-@property (nonatomic, copy) NSString *intentSlotName;
 @property (nonatomic, copy) NSString *key;
+@property (nonatomic) BOOL targetIsLocal;
 @property (nonatomic, copy) NSString *validity;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)anchor;
-- (id)applicationBundleIdentifier;
+- (id)appMetadata;
 - (int)count;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithAnchor:(id)arg1 forcingReset:(BOOL)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)intentSlotName;
 - (id)key;
 - (void)setAnchor:(id)arg1;
-- (void)setApplicationBundleIdentifier:(id)arg1;
+- (void)setAppMetadata:(id)arg1;
 - (void)setCount:(int)arg1;
-- (void)setIntentSlotName:(id)arg1;
 - (void)setKey:(id)arg1;
+- (void)setTargetIsLocal:(BOOL)arg1;
 - (void)setValidity:(id)arg1;
+- (BOOL)targetIsLocal;
 - (id)validity;
 
 @end

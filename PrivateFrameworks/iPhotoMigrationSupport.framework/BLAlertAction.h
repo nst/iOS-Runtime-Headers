@@ -3,8 +3,8 @@
  */
 
 @interface BLAlertAction : NSObject {
-    id /* block */ _block;
-    NSString *_name;
+    id /* block */  _block;
+    NSString * _name;
 }
 
 @property (readonly) id /* block */ block;

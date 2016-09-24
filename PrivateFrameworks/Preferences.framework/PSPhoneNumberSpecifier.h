@@ -3,7 +3,7 @@
  */
 
 @interface PSPhoneNumberSpecifier : PSTextFieldSpecifier <UITextFieldDelegate> {
-    NSString *_countryCode;
+    NSString * _countryCode;
 }
 
 @property (nonatomic, retain) NSString *countryCode;

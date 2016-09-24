@@ -3,15 +3,15 @@
  */
 
 @interface PRSMLManager : NSObject {
-    NSArray *_categoryList;
-    NSMutableDictionary *_combinedBottomScoreOrder;
-    NSMutableDictionary *_combinedTopScoreOrder;
-    PRSCoreDuet *_coreDuet;
-    NSMutableDictionary *_dictCoreDuetInfo;
-    NSMutableDictionary *_mapPredictionEnginesToClasses;
-    NSMutableDictionary *_mapPredictionEnginesToCountFiles;
-    NSMutableDictionary *_mapPredictionEnginesToCounts;
-    NSMutableDictionary *_mapPredictionEnginesToPredictedTopHit;
+    NSArray * _categoryList;
+    NSMutableDictionary * _combinedBottomScoreOrder;
+    NSMutableDictionary * _combinedTopScoreOrder;
+    PRSCoreDuet * _coreDuet;
+    NSMutableDictionary * _dictCoreDuetInfo;
+    NSMutableDictionary * _mapPredictionEnginesToClasses;
+    NSMutableDictionary * _mapPredictionEnginesToCountFiles;
+    NSMutableDictionary * _mapPredictionEnginesToCounts;
+    NSMutableDictionary * _mapPredictionEnginesToPredictedTopHit;
 }
 
 @property (retain) NSArray *categoryList;
@@ -40,8 +40,7 @@
 - (void)dumpPredictionStatsToFlatFiles;
 - (unsigned int)getCountForCategory:(id)arg1;
 - (id)getLastSavedCategoryRankings;
-- (id)getRankedCategories;
-- (id)getRankedCategoriesAsDictionary;
+- (id)getRankedCategoriesAsDictionaryForDays:(int)arg1;
 - (double)getTimeStampWhenLastLogged;
 - (id)getTopHitResultForQuery:(id)arg1 resultSet:(id)arg2;
 - (unsigned int)getTotalResultsUsedCount;

@@ -3,7 +3,7 @@
  */
 
 @interface AKToolbarViewController : UIViewController {
-    AKController *_controller;
+    AKController * _controller;
 }
 
 @property AKController *controller;

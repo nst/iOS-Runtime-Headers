@@ -3,15 +3,15 @@
  */
 
 @interface MPShuffleController : NSObject <NSSecureCoding> {
-    NSMutableIndexSet *_availableShuffleIndexSet;
-    <MPShuffleControllerDataSource> *_dataSource;
-    BOOL _isPendingFineGrainedInvalidation;
-    BOOL _isPendingGlobalInvalidation;
-    unsigned int _itemCount;
-    NSMapTable *_itemIdentifierToKnownCount;
-    MPSparseArray *_originalIndexToItemIdentifier;
-    MPSparseArray *_originalIndexToShuffledIndex;
-    NSMutableArray *_pendingInvalidationRemovedIdentifiers;
+    NSMutableIndexSet * _availableShuffleIndexSet;
+    <MPShuffleControllerDataSource> * _dataSource;
+    BOOL  _isPendingFineGrainedInvalidation;
+    BOOL  _isPendingGlobalInvalidation;
+    unsigned int  _itemCount;
+    NSMapTable * _itemIdentifierToKnownCount;
+    MPSparseArray * _originalIndexToItemIdentifier;
+    MPSparseArray * _originalIndexToShuffledIndex;
+    NSMutableArray * _pendingInvalidationRemovedIdentifiers;
 }
 
 @property (nonatomic) <MPShuffleControllerDataSource> *dataSource;

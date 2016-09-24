@@ -3,7 +3,7 @@
  */
 
 @interface ALAssetsGroupList : ALAssetsGroup {
-    <PLAssetContainerList> *_containerList;
+    <PLAssetContainerList> * _containerList;
 }
 
 @property (nonatomic, readonly, retain) <PLAssetContainerList> *containerList;

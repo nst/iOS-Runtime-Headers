@@ -3,7 +3,7 @@
  */
 
 @interface AVAudioSessionMediaPlayerOnly : NSObject {
-    AVAudioSessionMediaPlayerOnlyInternal *_audioSession;
+    AVAudioSessionMediaPlayerOnlyInternal * _audioSession;
 }
 
 @property (readonly) BOOL canEnterPIPMode;
@@ -20,8 +20,8 @@
 + (void)initialize;
 
 - (void)_addFPListeners;
+- (void)_attachToPlayer:(id)arg1;
 - (void)_removeFPListeners;
-- (void)_setFigPlayer:(struct OpaqueFigPlayer { }*)arg1;
 - (id)_weakReference;
 - (BOOL)canEnterPIPMode;
 - (id)category;

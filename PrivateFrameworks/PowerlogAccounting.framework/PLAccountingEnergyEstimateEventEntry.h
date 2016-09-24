@@ -3,7 +3,7 @@
  */
 
 @interface PLAccountingEnergyEstimateEventEntry : PLAccountingEnergyEventEntry {
-    BOOL _isRootNodeEnergyAggregated;
+    BOOL  _isRootNodeEnergyAggregated;
 }
 
 @property (nonatomic, retain) NSDate *correctionDate;

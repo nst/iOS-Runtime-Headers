@@ -3,7 +3,7 @@
  */
 
 @interface PTSDrillDownRowAction : PTSPushViewControllerRowAction {
-    NSString *_settingsKeyPath;
+    NSString * _settingsKeyPath;
 }
 
 @property (nonatomic, copy) NSString *settingsKeyPath;

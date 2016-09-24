@@ -3,9 +3,9 @@
  */
 
 @interface SFCompanionAdvertiser : NSObject {
-    <SFCompanionAdvertiserDelegate> *_delegate;
-    NSString *_serviceType;
-    BOOL _supportsStreams;
+    <SFCompanionAdvertiserDelegate> * _delegate;
+    NSString * _serviceType;
+    BOOL  _supportsStreams;
 }
 
 @property <SFCompanionAdvertiserDelegate> *delegate;
@@ -13,6 +13,7 @@
 @property (readonly, copy) NSString *serviceType;
 @property BOOL supportsStreams;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)delegate;
 - (void)getContinuationStreamsWithEndpointData:(id)arg1 completionHandler:(id /* block */)arg2;

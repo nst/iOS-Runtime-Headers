@@ -5,10 +5,10 @@
 @interface AWDWiProxLeRemoveServiceRequest : PBRequest <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
-    } _has;
-    NSString *_serviceUUID;
-    NSString *_sessionId;
-    unsigned long long _timestamp;
+    }  _has;
+    NSString * _serviceUUID;
+    NSString * _sessionId;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic, readonly) BOOL hasServiceUUID;

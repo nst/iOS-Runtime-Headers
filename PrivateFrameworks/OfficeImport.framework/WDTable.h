@@ -3,8 +3,8 @@
  */
 
 @interface WDTable : WDBlock {
-    WDTableProperties *mProperties;
-    NSMutableArray *mRows;
+    WDTableProperties * mProperties;
+    NSMutableArray * mRows;
 }
 
 - (id)addRow;

@@ -3,15 +3,16 @@
  */
 
 @interface BWVideoFormatRequirements : BWFormatRequirements {
-    unsigned long _bytesPerRowAlignment;
-    unsigned long _height;
-    unsigned long _heightAlignment;
-    unsigned long _planeAlignment;
-    BOOL _prewireBuffers;
-    NSArray *_supportedCacheModes;
-    NSArray *_supportedPixelFormats;
-    unsigned long _width;
-    unsigned long _widthAlignment;
+    unsigned long  _bytesPerRowAlignment;
+    unsigned long  _height;
+    unsigned long  _heightAlignment;
+    unsigned long  _planeAlignment;
+    BOOL  _prewireBuffers;
+    NSArray * _supportedCacheModes;
+    NSArray * _supportedColorSpaceProperties;
+    NSArray * _supportedPixelFormats;
+    unsigned long  _width;
+    unsigned long  _widthAlignment;
 }
 
 @property (nonatomic) unsigned long bytesPerRowAlignment;
@@ -21,6 +22,7 @@
 @property (nonatomic) unsigned long planeAlignment;
 @property (nonatomic) BOOL prewireBuffers;
 @property (nonatomic, copy) NSArray *supportedCacheModes;
+@property (nonatomic, copy) NSArray *supportedColorSpaceProperties;
 @property (nonatomic, copy) NSArray *supportedPixelFormats;
 @property (nonatomic) unsigned long width;
 @property (nonatomic) unsigned long widthAlignment;
@@ -50,10 +52,12 @@
 - (void)setPlaneAlignment:(unsigned long)arg1;
 - (void)setPrewireBuffers:(BOOL)arg1;
 - (void)setSupportedCacheModes:(id)arg1;
+- (void)setSupportedColorSpaceProperties:(id)arg1;
 - (void)setSupportedPixelFormats:(id)arg1;
 - (void)setWidth:(unsigned long)arg1;
 - (void)setWidthAlignment:(unsigned long)arg1;
 - (id)supportedCacheModes;
+- (id)supportedColorSpaceProperties;
 - (id)supportedPixelFormats;
 - (unsigned long)width;
 - (unsigned long)widthAlignment;

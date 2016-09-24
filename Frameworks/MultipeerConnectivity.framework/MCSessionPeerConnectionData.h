@@ -3,9 +3,9 @@
  */
 
 @interface MCSessionPeerConnectionData : NSObject {
-    int _encryptionPreference;
-    NSData *_gckSessionConnectionData;
-    BOOL _hasIdentitySet;
+    int  _encryptionPreference;
+    NSData * _gckSessionConnectionData;
+    BOOL  _hasIdentitySet;
 }
 
 @property (nonatomic) int encryptionPreference;

@@ -3,12 +3,12 @@
  */
 
 @interface WDBorder : NSObject <NSCopying> {
-    OITSUColor *mColor;
-    BOOL mFrame;
-    BOOL mShadow;
-    unsigned char mSpace;
-    int mStyle;
-    unsigned char mWidth;
+    OITSUColor * mColor;
+    BOOL  mFrame;
+    BOOL  mShadow;
+    unsigned char  mSpace;
+    int  mStyle;
+    unsigned char  mWidth;
 }
 
 - (id)color;

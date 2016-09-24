@@ -3,9 +3,9 @@
  */
 
 @interface BWParallelJoinerNode : BWFunnelNode {
-    int _inputsCount;
-    NSMutableDictionary *_receivedBuffers;
-    NSMutableDictionary *_sentErrorCountForID;
+    int  _inputsCount;
+    NSMutableDictionary * _receivedBuffers;
+    NSMutableDictionary * _sentErrorCountForID;
 }
 
 - (void)dealloc;

@@ -3,9 +3,9 @@
  */
 
 @interface ML3StoreItemPlaylistData : NSObject {
-    SSLookupItem *_lookupItem;
-    NSDictionary *_parsedPlaylistImportProperties;
-    NSData *_playlistData;
+    SSLookupItem * _lookupItem;
+    NSDictionary * _parsedPlaylistImportProperties;
+    NSData * _playlistData;
 }
 
 @property (nonatomic, readonly) NSDictionary *parsedPlaylistImportProperties;

@@ -3,7 +3,7 @@
  */
 
 @interface UIInputSwitcherTableView : UITableView {
-    UIKeyboardMenuView *_menu;
+    UIKeyboardMenuView * _menu;
 }
 
 @property (nonatomic) UIKeyboardMenuView *menu;

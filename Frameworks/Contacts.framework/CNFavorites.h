@@ -3,12 +3,12 @@
  */
 
 @interface CNFavorites : NSObject {
-    BOOL _dirty;
-    NSMutableArray *_entries;
-    BOOL _needsReload;
-    BOOL _postCount;
-    CNContactStore *_store;
-    NSMutableDictionary *_uidToEntry;
+    BOOL  _dirty;
+    NSMutableArray * _entries;
+    BOOL  _needsReload;
+    BOOL  _postCount;
+    CNContactStore * _store;
+    NSMutableDictionary * _uidToEntry;
 }
 
 @property (nonatomic) BOOL dirty;
@@ -19,13 +19,17 @@
 @property (nonatomic, retain) CNContactStore *store;
 @property (nonatomic, retain) NSMutableDictionary *uidToEntry;
 
+// Image: /System/Library/Frameworks/Contacts.framework/Contacts
+
 + (id)favoritesPath;
++ (void)flushSingleton;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (void)_addEntryToMap:(id)arg1;
 - (void)_delayedLookup;
 - (void)_entriesChangedExternally;
+- (id)_entryDictionaries;
 - (void)_entryIdentityChanged:(id)arg1;
 - (BOOL)_isValueForEntry:(id)arg1 equalToValue:(id)arg2;
 - (void)_postChangeNotification;
@@ -40,6 +44,7 @@
 - (BOOL)dirty;
 - (id)entries;
 - (id)entriesForContact:(id)arg1;
+- (id)entriesForContact:(id)arg1 propertyKey:(id)arg2 labeledValueIdentifier:(id)arg3 actionType:(id)arg4 bundleIdentifier:(id)arg5;
 - (id)entriesForContacts:(id)arg1;
 - (BOOL)entryIsDuplicateAndThusRemoved:(id)arg1 oldUid:(int)arg2;
 - (id)entryWithIdentifier:(id)arg1 forContact:(id)arg2;
@@ -62,6 +67,11 @@
 - (void)setStore:(id)arg1;
 - (void)setUidToEntry:(id)arg1;
 - (id)store;
+- (id)synchronousRemoteObjectProxyForContactsXPCService;
 - (id)uidToEntry;
+
+// Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
+
+- (id)entriesMatchingPredicate:(id)arg1;
 
 @end

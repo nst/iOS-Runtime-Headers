@@ -3,11 +3,11 @@
  */
 
 @interface WBSAutomaticReadingListTwitterItem : WBSAutomaticReadingListItem {
-    NSString *_displayURLString;
-    NSString *_expandedURLString;
-    NSString *_originatorProfileImageURLString;
-    NSString *_originatorScreenName;
-    NSDate *_retweetCreationDate;
+    NSString * _displayURLString;
+    NSString * _expandedURLString;
+    NSString * _originatorProfileImageURLString;
+    NSString * _originatorScreenName;
+    NSDate * _retweetCreationDate;
 }
 
 @property (nonatomic, copy) NSString *displayURLString;

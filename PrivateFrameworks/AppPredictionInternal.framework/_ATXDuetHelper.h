@@ -6,6 +6,8 @@
 
 + (id)sharedInstance;
 
-- (id)getMostRecentAppLaunchesSyncForTimeInterval:(double)arg1;
+- (id)getAppLaunchesBetweenStartDate:(id)arg1 endDate:(id)arg2;
+- (id)getScreenTransitionsBetweenStartDate:(id)arg1 endDate:(id)arg2;
+- (id)queryDuetStreams:(id)arg1 fromStartDate:(id)arg2 toEndDate:(id)arg3;
 
 @end

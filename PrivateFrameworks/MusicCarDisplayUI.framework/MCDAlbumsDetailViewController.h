@@ -3,10 +3,10 @@
  */
 
 @interface MCDAlbumsDetailViewController : MCDTableViewController {
-    float _maximumDurationWidth;
+    double  _maximumDurationWidth;
 }
 
-@property (nonatomic, readonly) float maximumDurationWidth;
+@property (nonatomic, readonly) double maximumDurationWidth;
 
 + (id)actionCellConfigurationClasses;
 

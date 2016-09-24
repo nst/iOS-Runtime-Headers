@@ -3,10 +3,10 @@
  */
 
 @interface BacklightdExportedObj : NSObject <BacklightdXPCProtocol> {
-    unsigned int _clientID;
-    BOOL _clientIDSet;
-    NSXPCConnection *_connection;
-    BrightnessSystemInternal *_server;
+    unsigned int  _clientID;
+    BOOL  _clientIDSet;
+    NSXPCConnection * _connection;
+    BrightnessSystemInternal * _server;
 }
 
 @property (nonatomic, retain) NSXPCConnection *connection;

@@ -3,15 +3,15 @@
  */
 
 @interface UIUserNotificationAction : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
-    unsigned int _activationMode;
-    NSString *_activationModeString;
-    BOOL _authenticationRequired;
-    unsigned int _behavior;
-    NSString *_behaviorString;
-    BOOL _destructive;
-    NSString *_identifier;
-    NSDictionary *_parameters;
-    NSString *_title;
+    unsigned int  _activationMode;
+    NSString * _activationModeString;
+    BOOL  _authenticationRequired;
+    unsigned int  _behavior;
+    NSString * _behaviorString;
+    BOOL  _destructive;
+    NSString * _identifier;
+    NSDictionary * _parameters;
+    NSString * _title;
 }
 
 @property (nonatomic) unsigned int activationMode;

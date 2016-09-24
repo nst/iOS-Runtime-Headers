@@ -3,9 +3,9 @@
  */
 
 @interface ICHTMLConverterClient : NSObject {
-    NSXPCConnection *_connectionToService;
-    unsigned int _requestCount;
-    NSObject<OS_dispatch_queue> *_requestCountQueue;
+    NSXPCConnection * _connectionToService;
+    unsigned int  _requestCount;
+    NSObject<OS_dispatch_queue> * _requestCountQueue;
 }
 
 @property (nonatomic) unsigned int requestCount;

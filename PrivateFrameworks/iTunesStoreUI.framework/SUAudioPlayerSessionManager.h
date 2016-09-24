@@ -3,7 +3,7 @@
  */
 
 @interface SUAudioPlayerSessionManager : NSObject {
-    NSMutableDictionary *_sessions;
+    NSMutableDictionary * _sessions;
 }
 
 @property (nonatomic, readonly) NSArray *allSessionURLs;

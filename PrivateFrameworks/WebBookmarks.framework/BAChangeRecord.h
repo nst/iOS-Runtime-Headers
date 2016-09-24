@@ -3,9 +3,9 @@
  */
 
 @interface BAChangeRecord : NSObject {
-    WebBookmark *_bookmark;
-    int _changeType;
-    WebBookmarkCollection *_collection;
+    WebBookmark * _bookmark;
+    int  _changeType;
+    WebBookmarkCollection * _collection;
 }
 
 @property (nonatomic, readonly) WebBookmark *bookmark;

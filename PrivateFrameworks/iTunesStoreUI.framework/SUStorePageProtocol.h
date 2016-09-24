@@ -3,18 +3,18 @@
  */
 
 @interface SUStorePageProtocol : NSObject <NSCopying> {
-    NSArray *_allowedOrientations;
-    NSString *_copyright;
-    NSArray *_expectedClientIdentifiers;
-    NSNumber *_focusedItemIdentifier;
-    NSArray *_navigationButtons;
-    NSArray *_navigationHistoryItems;
-    NSArray *_navigationMenus;
-    SSURLRequestProperties *_overlayBackgroundURLRequestProperties;
-    NSString *_rootSectionIdentifier;
-    BOOL _shouldDisplayInOverlay;
-    BOOL _shouldExcludeFromNavigationHistory;
-    BOOL _shouldReplaceRootViewController;
+    NSArray * _allowedOrientations;
+    NSString * _copyright;
+    NSArray * _expectedClientIdentifiers;
+    NSNumber * _focusedItemIdentifier;
+    NSArray * _navigationButtons;
+    NSArray * _navigationHistoryItems;
+    NSArray * _navigationMenus;
+    SSURLRequestProperties * _overlayBackgroundURLRequestProperties;
+    NSString * _rootSectionIdentifier;
+    BOOL  _shouldDisplayInOverlay;
+    BOOL  _shouldExcludeFromNavigationHistory;
+    BOOL  _shouldReplaceRootViewController;
 }
 
 @property (nonatomic, retain) NSArray *allowedOrientations;

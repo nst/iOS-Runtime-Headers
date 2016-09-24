@@ -3,7 +3,7 @@
  */
 
 @interface ICPTPIPBonjourService : NSObject {
-    id _bonjourServiceProperties;
+    id  _bonjourServiceProperties;
 }
 
 - (void)addClient:(id)arg1;

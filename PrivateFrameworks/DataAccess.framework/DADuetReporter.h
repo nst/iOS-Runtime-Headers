@@ -3,8 +3,8 @@
  */
 
 @interface DADuetReporter : NSObject {
-    CDAttribute *_attribute;
-    NSString *_value;
+    CDAttribute * _attribute;
+    NSString * _value;
 }
 
 + (id)session;

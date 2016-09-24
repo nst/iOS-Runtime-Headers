@@ -3,28 +3,28 @@
  */
 
 @interface MFContactsSearchManager : NSObject <DASearchQueryConsumer> {
-    void *_addressBook;
-    unsigned int _autocompleteSearchType;
-    CNAutocompleteStore *_autocompleteStore;
-    int _contactSearchAccountChangedToken;
-    NSMutableArray *_corecipientSearchTaskIDs;
-    NSArray *_explicitSearchAccountIDs;
-    unsigned int _genNumber;
-    unsigned int _implicitGroupCreationThreshold;
-    BOOL _includeUpcomingEventMembers;
-    NSOrderedSet *_properties;
-    NSOperationQueue *_queue;
-    NSString *_recentsBundleIdentifier;
-    BOOL _registeredForAddressBookChanges;
-    NSArray *_searchAccounts;
-    unsigned int _searchTypes;
-    NSString *_sendingAccountIdentifier;
-    NSString *_sendingAddress;
-    NSObject<OS_dispatch_queue> *_serverSearchQueue;
-    BOOL _simulatedResultsEnabled;
-    NSMutableDictionary *_taskContextsByTaskID;
-    struct __CFDictionary { } *_taskIDsBySearchQuery;
-    BOOL _useContactsAutocomplete;
+    void * _addressBook;
+    unsigned int  _autocompleteSearchType;
+    CNAutocompleteStore * _autocompleteStore;
+    int  _contactSearchAccountChangedToken;
+    NSMutableArray * _corecipientSearchTaskIDs;
+    NSArray * _explicitSearchAccountIDs;
+    unsigned int  _genNumber;
+    unsigned int  _implicitGroupCreationThreshold;
+    BOOL  _includeUpcomingEventMembers;
+    NSOrderedSet * _properties;
+    NSOperationQueue * _queue;
+    NSString * _recentsBundleIdentifier;
+    BOOL  _registeredForAddressBookChanges;
+    NSArray * _searchAccounts;
+    unsigned int  _searchTypes;
+    NSString * _sendingAccountIdentifier;
+    NSString * _sendingAddress;
+    NSObject<OS_dispatch_queue> * _serverSearchQueue;
+    BOOL  _simulatedResultsEnabled;
+    NSMutableDictionary * _taskContextsByTaskID;
+    struct __CFDictionary { } * _taskIDsBySearchQuery;
+    BOOL  _useContactsAutocomplete;
 }
 
 @property (nonatomic) unsigned int autocompleteSearchType;

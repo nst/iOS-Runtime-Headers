@@ -3,17 +3,18 @@
  */
 
 @interface WebUIAlert : NSObject {
-    id /* block */ _actionHandler;
-    NSString *_bodyText;
-    id _context;
-    int _defaultAction;
-    int _hideAction;
-    int _indexOfSelectedTableItem;
-    int _otherAction;
-    int _tableAction;
-    NSMutableArray *_tableItems;
-    NSString *_title;
-    int _type;
+    id /* block */  _actionHandler;
+    NSString * _bodyText;
+    id  _context;
+    int  _defaultAction;
+    int  _hideAction;
+    NSArray * _identities;
+    int  _indexOfSelectedIdentity;
+    int  _otherAction;
+    int  _tableAction;
+    NSString * _title;
+    NSArray * _titles;
+    int  _type;
 }
 
 @property (nonatomic, copy) id /* block */ actionHandler;
@@ -22,9 +23,11 @@
 @property (nonatomic, retain) id context;
 @property (nonatomic, readonly) int defaultAction;
 @property (nonatomic) int hideAction;
+@property (nonatomic, retain) NSArray *identities;
+@property (nonatomic, readonly) id selectedIdentity;
 @property (nonatomic, readonly) int tableAction;
-@property (nonatomic, readonly, copy) NSArray *tableItems;
 @property (nonatomic, readonly, copy) NSString *title;
+@property (nonatomic, readonly, copy) NSArray *titles;
 @property (nonatomic, readonly) int type;
 
 - (void).cxx_destruct;
@@ -36,19 +39,20 @@
 - (id)context;
 - (int)defaultAction;
 - (int)hideAction;
+- (id)identities;
 - (id)initWithType:(int)arg1 title:(id)arg2 bodyText:(id)arg3 defaultAction:(int)arg4 otherAction:(int)arg5;
 - (id)initWithType:(int)arg1 title:(id)arg2 bodyText:(id)arg3 defaultAction:(int)arg4 otherAction:(int)arg5 tableAction:(int)arg6;
 - (id)initWithType:(int)arg1 title:(id)arg2 defaultAction:(int)arg3 otherAction:(int)arg4;
 - (id)initWithType:(int)arg1 title:(id)arg2 defaultAction:(int)arg3 otherAction:(int)arg4 tableAction:(int)arg5;
-- (id)selectedTableItem;
+- (id)selectedIdentity;
 - (void)setActionHandler:(id /* block */)arg1;
 - (void)setContext:(id)arg1;
 - (void)setHideAction:(int)arg1;
+- (void)setIdentities:(id)arg1;
 - (void)setSelectedTableItemIndex:(int)arg1;
-- (void)setTableItems:(id)arg1 withTitles:(id)arg2;
 - (int)tableAction;
-- (id)tableItems;
 - (id)title;
+- (id)titles;
 - (int)type;
 
 @end

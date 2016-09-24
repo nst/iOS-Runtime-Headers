@@ -3,7 +3,7 @@
  */
 
 @interface SBFFileCacheFileStore : NSObject <SBFFileCacheStore> {
-    NSURL *_directoryURL;
+    NSURL * _directoryURL;
 }
 
 @property (readonly, copy) NSString *debugDescription;

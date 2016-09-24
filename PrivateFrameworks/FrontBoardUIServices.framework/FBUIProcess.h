@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardUIServices.framework/FrontBoardUIServices
  */
 
-@interface FBUIProcess : NSObject <FBUIProcess>
+@interface FBUIProcess : FBSProcess <FBUIProcess>
 
+@property (nonatomic, readonly, copy) NSString *bundleIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int pid;
 @property (readonly) Class superclass;
 
-+ (id)process;
-
-- (id)bundleIdentifier;
 - (BOOL)isApplicationProcess;
 - (BOOL)isExtensionProcess;
 - (BOOL)isRunning;
 - (BOOL)isSystemApplicationProcess;
-- (int)pid;
 
 @end

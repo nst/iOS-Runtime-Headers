@@ -3,15 +3,15 @@
  */
 
 @interface PUImageRequesterChange : NSObject {
-    BOOL _fullsizeImageDataDidChange;
-    BOOL _imageDidChange;
-    BOOL _imageIsFullQualityDidChange;
+    BOOL  _fullsizeImageDataDidChange;
+    BOOL  _imageDidChange;
+    BOOL  _imageIsFullQualityDidChange;
 }
 
 @property (nonatomic, readonly) BOOL changed;
-@property (nonatomic) BOOL fullsizeImageDataDidChange;
-@property (nonatomic) BOOL imageDidChange;
-@property (nonatomic) BOOL imageIsFullQualityDidChange;
+@property (setter=_setFullsizeImageDataDidChange:, nonatomic) BOOL fullsizeImageDataDidChange;
+@property (setter=_setImageDidChange:, nonatomic) BOOL imageDidChange;
+@property (setter=_setImageIsFullQualityDidChange:, nonatomic) BOOL imageIsFullQualityDidChange;
 
 - (void)_setFullsizeImageDataDidChange:(BOOL)arg1;
 - (void)_setImageDidChange:(BOOL)arg1;

@@ -3,14 +3,15 @@
  */
 
 @interface UIKeyboardCandidateBarCell : UICollectionViewCell <UIKBCacheableView> {
-    UILabel *_annotationLabel;
-    NSString *_annotationText;
-    BOOL _beginsFirstPage;
-    NSString *_candidateText;
-    BOOL _endsLastPage;
-    BOOL _isAtLeftEdge;
-    UILabel *_label;
-    UIKBThemedView *_themedView;
+    UILabel * _annotationLabel;
+    NSString * _annotationText;
+    BOOL  _beginsFirstPage;
+    NSString * _candidateText;
+    BOOL  _endsLastPage;
+    BOOL  _isAtLeftEdge;
+    BOOL  _isAutocorrectionCandidate;
+    UILabel * _label;
+    UIKBThemedView * _themedView;
 }
 
 @property (nonatomic, retain) UILabel *annotationLabel;
@@ -18,20 +19,21 @@
 @property (nonatomic) BOOL beginsFirstPage;
 @property (nonatomic, readonly) BOOL cacheDeferable;
 @property (nonatomic, readonly) NSString *cacheKey;
-@property (nonatomic, readonly) float cachedWidth;
+@property (nonatomic, readonly) double cachedWidth;
 @property (nonatomic, copy) NSString *candidateText;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL endsLastPage;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isAtLeftEdge;
+@property (nonatomic) BOOL isAutocorrectionCandidate;
 @property (nonatomic, readonly) BOOL keepNonPersistent;
 @property (nonatomic, retain) UILabel *label;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIKBThemedView *themedView;
 
 + (id)annotationFont;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })cacheInsets;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })cacheInsets;
 + (BOOL)drawsSideBorders;
 + (id)font;
 + (BOOL)highlightAffectsBackground;
@@ -52,10 +54,11 @@
 - (void)dealloc;
 - (void)didMoveToWindow;
 - (void)displayLayer:(id)arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)endsLastPage;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isAtLeftEdge;
+- (BOOL)isAutocorrectionCandidate;
 - (BOOL)keepNonPersistent;
 - (id)label;
 - (void)prepareForReuse;
@@ -67,6 +70,7 @@
 - (void)setEndsLastPage:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setIsAtLeftEdge:(BOOL)arg1;
+- (void)setIsAutocorrectionCandidate:(BOOL)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setThemedView:(id)arg1;

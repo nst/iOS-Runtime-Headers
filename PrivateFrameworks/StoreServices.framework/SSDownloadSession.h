@@ -3,11 +3,11 @@
  */
 
 @interface SSDownloadSession : NSObject {
-    long long _assetID;
-    SSXPCConnection *_controlConnection;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    long long _downloadID;
-    long long _sessionID;
+    int  _assetID;
+    SSXPCConnection * _controlConnection;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    int  _downloadID;
+    int  _sessionID;
 }
 
 @property (readonly) SSDownload *download;

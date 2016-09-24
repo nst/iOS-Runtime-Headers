@@ -3,8 +3,8 @@
  */
 
 @interface PBAnimationCacheState : PDAnimationCacheState {
-    NSMutableSet *mEntranceDrawables;
-    NSMutableSet *mExitDrawables;
+    NSMutableSet * mEntranceDrawables;
+    NSMutableSet * mExitDrawables;
 }
 
 - (void)dealloc;

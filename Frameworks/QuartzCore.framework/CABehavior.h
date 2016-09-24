@@ -3,13 +3,12 @@
  */
 
 @interface CABehavior : NSObject <NSCoding, NSCopying> {
-    void *_attr;
-    void *_priv;
-    unsigned int _refcount;
-    unsigned int _uid;
+    void * _attr;
+    unsigned int  _refcount;
+    unsigned int  _uid;
 }
 
-@property id delegate;
+@property <CABehaviorDelegate> *delegate;
 @property (getter=isEnabled) BOOL enabled;
 @property (copy) NSString *name;
 @property (copy) NSDictionary *style;

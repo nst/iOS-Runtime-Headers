@@ -3,19 +3,19 @@
  */
 
 @interface UIWebFormAccessory : UIInputView {
-    UIBarButtonItem *_autofill;
-    UIBarButtonItemGroup *_buttonGroupAutoFill;
-    UIBarButtonItemGroup *_buttonGroupNavigation;
-    UIBarButtonItem *_clearButton;
-    UIBarButtonItem *_doneButton;
-    UIBarButtonItem *_flexibleSpaceItem;
-    UIToolbar *_leftToolbar;
-    UIBarButtonItem *_nextItem;
-    UIBarButtonItem *_previousItem;
-    UIToolbar *_rightToolbar;
-    UISegmentedControl *_tab;
-    BOOL _usesUCB;
-    <UIWebFormAccessoryDelegate> *delegate;
+    UIBarButtonItem * _autofill;
+    UIBarButtonItemGroup * _buttonGroupAutoFill;
+    UIBarButtonItemGroup * _buttonGroupNavigation;
+    UIBarButtonItem * _clearButton;
+    UIBarButtonItem * _doneButton;
+    UIBarButtonItem * _flexibleSpaceItem;
+    UIToolbar * _leftToolbar;
+    UIBarButtonItem * _nextItem;
+    UIBarButtonItem * _previousItem;
+    UIToolbar * _rightToolbar;
+    UISegmentedControl * _tab;
+    BOOL  _usesUCB;
+    <UIWebFormAccessoryDelegate> * delegate;
 }
 
 @property (nonatomic, retain) UIBarButtonItem *_autofill;

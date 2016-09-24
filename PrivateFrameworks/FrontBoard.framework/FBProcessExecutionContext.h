@@ -3,17 +3,18 @@
  */
 
 @interface FBProcessExecutionContext : NSObject <NSCopying, NSMutableCopying> {
-    NSArray *_arguments;
-    BOOL _checkForLeaks;
-    BOOL _disableASLR;
-    NSDictionary *_environment;
-    unsigned int _launchAssertionFlags;
-    int _launchIntent;
-    NSURL *_standardErrorURL;
-    NSURL *_standardOutputURL;
-    BOOL _waitForDebugger;
-    double _watchdogExtension;
-    double _watchdogScaleFactor;
+    NSArray * _arguments;
+    BOOL  _checkForLeaks;
+    BOOL  _disableASLR;
+    NSDictionary * _environment;
+    unsigned int  _launchAssertionFlags;
+    int  _launchIntent;
+    NSURL * _standardErrorURL;
+    NSURL * _standardOutputURL;
+    BOOL  _waitForDebugger;
+    double  _watchdogExtension;
+    <FBProcessWatchdogProviding> * _watchdogProvider;
+    double  _watchdogScaleFactor;
 }
 
 @property (nonatomic, copy) NSArray *arguments;
@@ -26,6 +27,7 @@
 @property (nonatomic, retain) NSURL *standardOutputURL;
 @property (nonatomic) BOOL waitForDebugger;
 @property (nonatomic) double watchdogExtension;
+@property (nonatomic, retain) <FBProcessWatchdogProviding> *watchdogProvider;
 @property (nonatomic) double watchdogScaleFactor;
 
 - (id)_initWithExecutionContext:(id)arg1;
@@ -50,11 +52,13 @@
 - (void)setStandardOutputURL:(id)arg1;
 - (void)setWaitForDebugger:(BOOL)arg1;
 - (void)setWatchdogExtension:(double)arg1;
+- (void)setWatchdogProvider:(id)arg1;
 - (void)setWatchdogScaleFactor:(double)arg1;
 - (id)standardErrorURL;
 - (id)standardOutputURL;
 - (BOOL)waitForDebugger;
 - (double)watchdogExtension;
+- (id)watchdogProvider;
 - (double)watchdogScaleFactor;
 
 @end

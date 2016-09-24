@@ -3,8 +3,8 @@
  */
 
 @interface _UIDelegatingActionActivity : UIActivity {
-    SEL _action;
-    UIDocumentInteractionController *_documentInteractionController;
+    SEL  _action;
+    UIDocumentInteractionController * _documentInteractionController;
 }
 
 - (void).cxx_destruct;

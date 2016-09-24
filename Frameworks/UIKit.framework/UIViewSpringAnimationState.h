@@ -3,12 +3,13 @@
  */
 
 @interface UIViewSpringAnimationState : UIViewAnimationState {
-    float _damping;
-    float _mass;
-    float _stiffness;
-    float _velocity;
+    double  _damping;
+    double  _mass;
+    double  _stiffness;
+    double  _velocity;
 }
 
++ (void)computeDerivedSpringParameters:(float)arg1 zeta:(float)arg2 mass:(float)arg3 velocity:(float)arg4 epsilon:(float)arg5 stiffness:(float*)arg6 damping:(float*)arg7;
 + (id)defaultSpringAnimationForKey:(id)arg1 mass:(float)arg2 stiffness:(float)arg3 damping:(float)arg4 velocity:(float)arg5;
 
 - (id)_defaultAnimationForKey:(id)arg1;

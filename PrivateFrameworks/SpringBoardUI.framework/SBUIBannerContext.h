@@ -3,12 +3,12 @@
  */
 
 @interface SBUIBannerContext : NSObject {
-    BOOL _isValid;
-    SBUIBannerItem *_item;
-    NSString *_presentingActionIdentifier;
-    BOOL _requestsModalPresentation;
-    <SBUIBannerSource> *_source;
-    <SBUIBannerTarget> *_target;
+    BOOL  _isValid;
+    SBUIBannerItem * _item;
+    NSString * _presentingActionIdentifier;
+    BOOL  _requestsModalPresentation;
+    <SBUIBannerSource> * _source;
+    <SBUIBannerTarget> * _target;
 }
 
 @property (nonatomic, readonly) SBUIBannerItem *item;

@@ -6,16 +6,16 @@
     struct { 
         unsigned int problemType : 1; 
         unsigned int protocolVersion : 1; 
-    } _has;
-    GEORPProblemContext *_problemContext;
-    GEORPProblemCorrections *_problemCorrections;
-    int _problemType;
-    unsigned int _protocolVersion;
+    }  _has;
+    GEORPProblemContext * _problemContext;
+    GEORPProblemCorrections * _problemCorrections;
+    int  _problemType;
+    unsigned int  _protocolVersion;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _userPaths;
+    }  _userPaths;
 }
 
 @property (nonatomic, readonly) BOOL hasProblemContext;
@@ -29,6 +29,8 @@
 @property (nonatomic, readonly) int*userPaths;
 @property (nonatomic, readonly) unsigned int userPathsCount;
 
+- (int)StringAsProblemType:(id)arg1;
+- (int)StringAsUserPaths:(id)arg1;
 - (void)addUserPath:(int)arg1;
 - (void)clearUserPaths;
 - (void)copyTo:(id)arg1;
@@ -46,6 +48,7 @@
 - (id)problemContext;
 - (id)problemCorrections;
 - (int)problemType;
+- (id)problemTypeAsString:(int)arg1;
 - (unsigned int)protocolVersion;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasProblemType:(BOOL)arg1;
@@ -57,6 +60,7 @@
 - (void)setUserPaths:(int*)arg1 count:(unsigned int)arg2;
 - (int)userPathAtIndex:(unsigned int)arg1;
 - (int*)userPaths;
+- (id)userPathsAsString:(int)arg1;
 - (unsigned int)userPathsCount;
 - (void)writeTo:(id)arg1;
 

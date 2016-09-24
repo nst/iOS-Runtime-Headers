@@ -3,20 +3,20 @@
  */
 
 @interface CNAutocompleteResult : NSObject {
-    id /* block */ _contactProvider;
-    NSArray *_diagnosticLogs;
-    NSString *_displayName;
-    BOOL _hasPreferredDomain;
-    BOOL _hasPrefixMatch;
-    NSString *_identifier;
-    id /* block */ _ignoreResultBlock;
-    NSString *_lastSendingAddress;
-    id /* block */ _membersProvider;
-    CNAutocompleteNameComponents *_nameComponents;
-    int _resultType;
-    unsigned int _sourceType;
-    NSDictionary *_userInfo;
-    CNAutocompleteResultValue *_value;
+    id /* block */  _contactProvider;
+    NSArray * _diagnosticLogs;
+    NSString * _displayName;
+    BOOL  _hasPreferredDomain;
+    BOOL  _hasPrefixMatch;
+    NSString * _identifier;
+    id /* block */  _ignoreResultBlock;
+    NSString * _lastSendingAddress;
+    id /* block */  _membersProvider;
+    CNAutocompleteNameComponents * _nameComponents;
+    int  _resultType;
+    unsigned int  _sourceType;
+    NSDictionary * _userInfo;
+    CNAutocompleteResultValue * _value;
 }
 
 @property (readonly, copy) id address;

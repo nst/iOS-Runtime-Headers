@@ -3,10 +3,10 @@
  */
 
 @interface BSMachPortRight : NSObject <BSXPCCoding, NSSecureCoding> {
-    int _owner;
-    unsigned int _queue_port;
-    unsigned int _rawPort;
-    NSString *_trace;
+    int  _owner;
+    unsigned int  _queue_port;
+    unsigned int  _rawPort;
+    NSString * _trace;
 }
 
 @property (readonly, copy) NSString *debugDescription;

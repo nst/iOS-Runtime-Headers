@@ -3,9 +3,9 @@
  */
 
 @interface WBSSQLiteDatabase : NSObject {
-    struct sqlite3 { } *_handle;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSURL *_url;
+    struct sqlite3 { } * _handle;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) int changedRowCount;
@@ -17,6 +17,7 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 
 + (id)_errorWithErrorCode:(int)arg1;
++ (void)setUpLogCollection;
 + (id)writeAheadLogSharedMemoryURLForDatabaseURL:(id)arg1;
 + (id)writeAheadLogURLForDatabaseURL:(id)arg1;
 

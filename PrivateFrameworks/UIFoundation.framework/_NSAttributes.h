@@ -3,11 +3,11 @@
  */
 
 @interface _NSAttributes : NSObject {
-    NSDictionary *_attributes;
+    NSDictionary * _attributes;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
+    }  _range;
 }
 
 - (void)dealloc;

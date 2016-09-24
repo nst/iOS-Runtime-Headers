@@ -3,9 +3,9 @@
  */
 
 @interface ATConcreteService : ATService <ATMessageLinkObserver, ATMessageLinkRequestHandler> {
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_source> *_signalSource;
-    double _startTime;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_source> * _signalSource;
+    double  _startTime;
 }
 
 @property (readonly, copy) NSString *debugDescription;

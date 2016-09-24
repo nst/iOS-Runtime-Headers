@@ -3,10 +3,10 @@
  */
 
 @interface TDSchemaPartDefinition : NSManagedObject {
-    unsigned int partFeatures;
-    CUIImage *previewImage;
-    NSArray *renditionGroups;
-    NSArray *renditions;
+    unsigned int  partFeatures;
+    CUIImage * previewImage;
+    NSArray * renditionGroups;
+    NSArray * renditions;
 }
 
 @property (nonatomic, retain) TDSchemaDefinition *element;
@@ -22,6 +22,7 @@
 - (id)_schema;
 - (id)bestPreviewRendition;
 - (const struct { char *x1; char *x2; struct _renditionkeytoken { unsigned short x_3_1_1; unsigned short x_3_1_2; } x3[5]; int x4; int x5; struct { char *x_6_1_1; char *x_6_1_2; int x_6_1_3; unsigned int x_6_1_4; } x6[12]; }*)cuiPartDefinition;
+- (void)dealloc;
 - (void)didTurnIntoFault;
 - (id)displayName;
 - (int)elementID;

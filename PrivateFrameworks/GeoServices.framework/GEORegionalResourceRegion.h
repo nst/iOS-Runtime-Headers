@@ -3,24 +3,28 @@
  */
 
 @interface GEORegionalResourceRegion : PBCodable <NSCopying> {
-    NSMutableArray *_attributions;
-    NSMutableArray *_iconChecksums;
-    NSMutableArray *_icons;
-    struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; } *_tileRanges;
-    unsigned int _tileRangesCount;
-    unsigned int _tileRangesSpace;
+    NSMutableArray * _attributions;
+    NSMutableArray * _iconChecksums;
+    NSMutableArray * _icons;
+    struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; } * _tileRanges;
+    unsigned int  _tileRangesCount;
+    unsigned int  _tileRangesSpace;
 }
 
 @property (nonatomic, retain) NSMutableArray *attributions;
 @property (nonatomic, retain) NSMutableArray *iconChecksums;
 @property (nonatomic, retain) NSMutableArray *icons;
-@property (nonatomic, readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*tileRanges;
+@property (nonatomic, readonly) struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*tileRanges;
 @property (nonatomic, readonly) unsigned int tileRangesCount;
+
++ (Class)attributionType;
++ (Class)iconChecksumType;
++ (Class)iconType;
 
 - (void)addAttribution:(id)arg1;
 - (void)addIcon:(id)arg1;
 - (void)addIconChecksum:(id)arg1;
-- (void)addTileRange:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })arg1;
+- (void)addTileRange:(struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })arg1;
 - (id)attributionAtIndex:(unsigned int)arg1;
 - (id)attributions;
 - (unsigned int)attributionsCount;
@@ -46,9 +50,9 @@
 - (void)setAttributions:(id)arg1;
 - (void)setIconChecksums:(id)arg1;
 - (void)setIcons:(id)arg1;
-- (void)setTileRanges:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)arg1 count:(unsigned int)arg2;
-- (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })tileRangeAtIndex:(unsigned int)arg1;
-- (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)tileRanges;
+- (void)setTileRanges:(struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)arg1 count:(unsigned int)arg2;
+- (struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })tileRangeAtIndex:(unsigned int)arg1;
+- (struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)tileRanges;
 - (unsigned int)tileRangesCount;
 - (void)writeTo:(id)arg1;
 

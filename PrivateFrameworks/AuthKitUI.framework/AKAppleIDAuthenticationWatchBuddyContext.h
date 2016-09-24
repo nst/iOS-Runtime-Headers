@@ -3,8 +3,8 @@
  */
 
 @interface AKAppleIDAuthenticationWatchBuddyContext : AKAppleIDAuthenticationInAppContext <RemoteUIControllerDelegate> {
-    NSString *_password;
-    RUIStyle *_remoteUIStyle;
+    NSString * _password;
+    RUIStyle * _remoteUIStyle;
 }
 
 @property (readonly, copy) NSString *debugDescription;

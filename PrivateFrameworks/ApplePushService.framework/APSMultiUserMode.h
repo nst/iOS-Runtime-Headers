@@ -3,8 +3,8 @@
  */
 
 @interface APSMultiUserMode : NSObject {
-    BOOL _isLoggedInUser;
-    BOOL _isMultiUser;
+    BOOL  _isLoggedInUser;
+    BOOL  _isMultiUser;
 }
 
 @property (nonatomic, readonly) BOOL isLoggedInUser;

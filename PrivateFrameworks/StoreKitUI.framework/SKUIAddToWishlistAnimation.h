@@ -3,9 +3,9 @@
  */
 
 @interface SKUIAddToWishlistAnimation : NSObject {
-    id /* block */ _completionBlock;
-    UIImage *_image;
-    UINavigationButton *_targetButton;
+    id /* block */  _completionBlock;
+    UIImage * _image;
+    UINavigationButton * _targetButton;
 }
 
 - (void).cxx_destruct;

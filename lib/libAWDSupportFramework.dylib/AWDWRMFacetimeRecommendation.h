@@ -3,14 +3,14 @@
  */
 
 @interface AWDWRMFacetimeRecommendation : PBCodable <NSCopying> {
-    unsigned int _bssLoad;
-    BOOL _captiveNetworks;
-    unsigned int _cca;
-    unsigned int _counter;
-    unsigned int _dataLQM;
-    unsigned int _facetimeAction;
-    unsigned int _facetimePacketLoss;
-    unsigned int _facetimeTimeDelay;
+    unsigned int  _bssLoad;
+    BOOL  _captiveNetworks;
+    unsigned int  _cca;
+    unsigned int  _counter;
+    unsigned int  _dataLQM;
+    unsigned int  _facetimeAction;
+    unsigned int  _facetimePacketLoss;
+    unsigned int  _facetimeTimeDelay;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int wifiRssi : 1; 
@@ -32,22 +32,22 @@
         unsigned int wifiTxPER : 1; 
         unsigned int wifiTxPhyRate : 1; 
         unsigned int captiveNetworks : 1; 
-    } _has;
-    NSString *_iRATRecommendation;
-    NSString *_iRATRecommendationReason;
-    unsigned int _qbssLoad;
-    NSString *_ratType;
-    unsigned int _signalBar;
-    unsigned int _stationCount;
-    unsigned long long _timestamp;
-    unsigned int _voiceLQM;
-    unsigned int _wifiEstimatedBandwitdh;
-    long long _wifiRssi;
-    unsigned int _wifiRxPhyRate;
-    unsigned int _wifiRxRetry;
-    long long _wifiSNR;
-    unsigned int _wifiTxPER;
-    unsigned int _wifiTxPhyRate;
+    }  _has;
+    NSString * _iRATRecommendation;
+    NSString * _iRATRecommendationReason;
+    unsigned int  _qbssLoad;
+    NSString * _ratType;
+    unsigned int  _signalBar;
+    unsigned int  _stationCount;
+    unsigned long long  _timestamp;
+    unsigned int  _voiceLQM;
+    unsigned int  _wifiEstimatedBandwitdh;
+    long long  _wifiRssi;
+    unsigned int  _wifiRxPhyRate;
+    unsigned int  _wifiRxRetry;
+    long long  _wifiSNR;
+    unsigned int  _wifiTxPER;
+    unsigned int  _wifiTxPhyRate;
 }
 
 @property (nonatomic) unsigned int bssLoad;

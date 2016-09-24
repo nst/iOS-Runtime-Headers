@@ -3,14 +3,14 @@
  */
 
 @interface AFVoiceInfo : NSObject <NSCopying, NSSecureCoding> {
-    NSNumber *_contentVersion;
-    int _footprint;
-    int _gender;
-    BOOL _isCustom;
-    NSString *_languageCode;
-    NSString *_masteredVersion;
-    NSString *_name;
-    BOOL _wasInitalizedFromDictionaryRepresentation;
+    NSNumber * _contentVersion;
+    int  _footprint;
+    int  _gender;
+    BOOL  _isCustom;
+    NSString * _languageCode;
+    NSString * _masteredVersion;
+    NSString * _name;
+    BOOL  _wasInitalizedFromDictionaryRepresentation;
 }
 
 @property (nonatomic, readonly) NSNumber *contentVersion;
@@ -53,8 +53,8 @@
 
 // Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
 
-- (int)VSSpeechFootprint;
-- (int)VSSpeechGender;
+- (long)VSSpeechFootprint;
+- (long)VSSpeechGender;
 - (BOOL)isMatchForVoiceAsset:(id)arg1;
 
 @end

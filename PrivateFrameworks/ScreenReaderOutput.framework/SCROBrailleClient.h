@@ -3,22 +3,22 @@
  */
 
 @interface SCROBrailleClient : NSObject {
-    NSData *_aggregatedStatusCache;
-    NSData *_aggregatedStatusPending;
-    SCROConnection *_connection;
-    SCRCTargetSelectorTimer *_deathTimer;
-    id _delegate;
-    BOOL _delegateWantsKeypresses;
-    BOOL _displayDescriptorCallbackEnabled;
-    BOOL _isReady;
-    BOOL _keepConnectionAlive;
-    NSLock *_lock;
-    NSMutableAttributedString *_mainStringCache;
-    NSMutableAttributedString *_mainStringPending;
-    BOOL _needsDisplay;
-    BOOL _wantsDisconnectMessage;
-    BOOL _wantsDisplayConfigurationChanged;
-    BOOL _wantsReconnectMessage;
+    NSData * _aggregatedStatusCache;
+    NSData * _aggregatedStatusPending;
+    SCROConnection * _connection;
+    SCRCTargetSelectorTimer * _deathTimer;
+    id  _delegate;
+    BOOL  _delegateWantsKeypresses;
+    BOOL  _displayDescriptorCallbackEnabled;
+    BOOL  _isReady;
+    BOOL  _keepConnectionAlive;
+    NSLock * _lock;
+    NSMutableAttributedString * _mainStringCache;
+    NSMutableAttributedString * _mainStringPending;
+    BOOL  _needsDisplay;
+    BOOL  _wantsDisconnectMessage;
+    BOOL  _wantsDisplayConfigurationChanged;
+    BOOL  _wantsReconnectMessage;
 }
 
 @property (nonatomic) int inputContractionMode;

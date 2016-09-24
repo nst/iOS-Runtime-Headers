@@ -4,6 +4,7 @@
 
 @interface SGNames : NSObject
 
++ (unsigned int)attributesForNameWord:(id)arg1;
 + (id)bestName:(id)arg1;
 + (id)cjkSpacerCharacters;
 + (id)cjkSpacersToWhiteSpace:(id)arg1;
@@ -11,18 +12,21 @@
 + (id)handleLastNameFirstOrder:(id)arg1;
 + (void)initialize;
 + (BOOL)isCommonNameWord:(id)arg1;
-+ (BOOL)isCommonNameWordUtf8:(const char *)arg1 length:(unsigned int)arg2;
 + (BOOL)isCommonVietnameseSurname:(id)arg1;
 + (BOOL)isDifficultName:(id)arg1;
++ (BOOL)isFamilyName:(id)arg1;
 + (BOOL)isLowercaseStringCommonNameWord:(id)arg1;
 + (BOOL)isProbablyShortCJKName:(id)arg1;
++ (BOOL)isSalientName:(id)arg1;
++ (BOOL)isSalientNameByChars:(id)arg1;
 + (id)nameFromEmail:(id)arg1;
++ (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 8; unsigned int x6 : 20; })namePayload:(id)arg1;
 + (double)nameSimilarity:(id)arg1 and:(id)arg2;
-+ (id)nameStringFromEmailAddress:(id)arg1;
++ (id)nameStringFromEmailAddress:(id)arg1 inContext:(id)arg2;
 + (BOOL)namesApproximatelyMatch:(id)arg1 and:(id)arg2;
 + (BOOL)namesApproximatelyMatch:(id)arg1 and:(id)arg2 threshold:(double)arg3;
-+ (id)possibleNameStringFromEmailAddress:(id)arg1;
-+ (id)sgNameFromString:(id)arg1 withOrigin:(id)arg2 andRecordId:(id)arg3;
++ (id)possibleNameStringFromEmailAddress:(id)arg1 inContext:(id)arg2;
++ (id)sgNameFromString:(id)arg1 origin:(id)arg2 recordId:(id)arg3 extractionType:(unsigned int)arg4;
 + (BOOL)shouldInvertOrderOfFirst:(id)arg1 last:(id)arg2;
 + (id)sketchesForName:(id)arg1;
 + (id)stripAndReturnHonorifics:(id)arg1;

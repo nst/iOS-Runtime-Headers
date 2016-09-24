@@ -3,8 +3,8 @@
  */
 
 @interface OADCountedGraphicFeature : NSObject {
-    id mFeature;
-    unsigned int mUsageCount;
+    id  mFeature;
+    unsigned int  mUsageCount;
 }
 
 @property (nonatomic) unsigned int usageCount;

@@ -9,12 +9,12 @@
         unsigned int magnetState : 1; 
         unsigned int primaryLinkType : 1; 
         unsigned int recommendedLinkType : 1; 
-    } _has;
-    unsigned int _infraWiFiState;
-    unsigned int _magnetState;
-    unsigned int _primaryLinkType;
-    unsigned int _recommendedLinkType;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned int  _infraWiFiState;
+    unsigned int  _magnetState;
+    unsigned int  _primaryLinkType;
+    unsigned int  _recommendedLinkType;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL hasInfraWiFiState;

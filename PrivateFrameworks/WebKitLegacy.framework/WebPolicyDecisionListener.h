@@ -3,7 +3,7 @@
  */
 
 @interface WebPolicyDecisionListener : NSObject <WebPolicyDecisionListener> {
-    WebPolicyDecisionListenerPrivate *_private;
+    WebPolicyDecisionListenerPrivate * _private;
 }
 
 @property (readonly, copy) NSString *debugDescription;

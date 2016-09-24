@@ -3,12 +3,12 @@
  */
 
 @interface CNVCardLine : NSObject <CNVCardParameterLine> {
-    NSMutableArray *_groupedLines;
-    NSString *_grouping;
-    NSString *_itemSeparator;
-    NSString *_name;
-    NSMutableArray *_parameters;
-    id _value;
+    NSMutableArray * _groupedLines;
+    NSString * _grouping;
+    NSString * _itemSeparator;
+    NSString * _name;
+    NSMutableArray * _parameters;
+    id  _value;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -27,10 +27,10 @@
 + (id)lineWithName:(id)arg1 value:(id)arg2 itemSeparator:(id)arg3;
 + (id)versionPlaceholderLine;
 
+- (void).cxx_destruct;
 - (void)addGroupedLine:(id)arg1 withCounter:(int*)arg2;
 - (void)addParameterWithName:(id)arg1 value:(id)arg2;
 - (BOOL)canSerializeWithStrategy:(id)arg1;
-- (void)dealloc;
 - (id)groupedLines;
 - (id)groupingName;
 - (id)initWithName:(id)arg1 value:(id)arg2 itemSeparator:(id)arg3;

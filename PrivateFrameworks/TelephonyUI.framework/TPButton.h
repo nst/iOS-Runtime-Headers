@@ -3,11 +3,11 @@
  */
 
 @interface TPButton : UIButton {
-    _UIBackdropView *_backdropView;
-    BOOL _blursBackground;
-    int _color;
-    BOOL _roundsCorners;
-    BOOL _usesOverlayBlendingForContents;
+    _UIBackdropView * _backdropView;
+    BOOL  _blursBackground;
+    int  _color;
+    BOOL  _roundsCorners;
+    BOOL  _usesOverlayBlendingForContents;
 }
 
 @property (nonatomic) BOOL blursBackground;
@@ -26,9 +26,9 @@
 - (void)_animationWillBegin;
 - (BOOL)blursBackground;
 - (int)buttonColor;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithTitle:(id)arg1 icon:(id)arg2 color:(int)arg3 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithTitle:(id)arg1 icon:(id)arg2 color:(int)arg3 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 - (BOOL)roundsCorners;
 - (void)setBackgroundColor:(id)arg1;

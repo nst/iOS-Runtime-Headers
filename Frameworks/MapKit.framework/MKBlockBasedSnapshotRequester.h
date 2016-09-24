@@ -3,7 +3,7 @@
  */
 
 @interface MKBlockBasedSnapshotRequester : NSObject <MKMapSnapshotCreatorRequester> {
-    id /* block */ handler;
+    id /* block */  handler;
 }
 
 @property (readonly, copy) NSString *debugDescription;

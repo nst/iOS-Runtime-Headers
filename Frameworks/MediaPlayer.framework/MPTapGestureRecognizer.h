@@ -3,13 +3,13 @@
  */
 
 @interface MPTapGestureRecognizer : UIGestureRecognizer {
-    unsigned int _lastTapCount;
-    NSTimer *_tapHandleTimer;
+    unsigned int  _lastTapCount;
+    NSTimer * _tapHandleTimer;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _tapLocation;
-    UITouch *_trackingTouch;
+        double x; 
+        double y; 
+    }  _tapLocation;
+    UITouch * _trackingTouch;
 }
 
 @property unsigned int tapCount;
@@ -20,7 +20,7 @@
 - (void)_setTapTimerWithDuration:(double)arg1;
 - (void)dealloc;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
+- (struct CGPoint { double x1; double x2; })locationInView:(id)arg1;
 - (void)reset;
 - (void)setTapCount:(unsigned int)arg1;
 - (unsigned int)tapCount;

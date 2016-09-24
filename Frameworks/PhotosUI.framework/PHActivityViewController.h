@@ -3,7 +3,7 @@
  */
 
 @interface PHActivityViewController : UIActivityViewController <PUActivityDataSource> {
-    NSArray *__PHActivityItems;
+    NSArray * __PHActivityItems;
 }
 
 @property (setter=_setPHActivityItems:, nonatomic, copy) NSArray *_PHActivityItems;
@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (id)_PHActivityItems;
 - (void)_setPHActivityItems:(id)arg1;
-- (void)_updateActivityItems:(id)arg1 animated:(BOOL)arg2;
+- (void)_updateActivityItems:(id)arg1;
 - (id)activityItemsForActivity:(id)arg1;
 - (id)activityViewControllerForActivity:(id)arg1;
 - (id)initWithActivityItems:(id)arg1 applicationActivities:(id)arg2;

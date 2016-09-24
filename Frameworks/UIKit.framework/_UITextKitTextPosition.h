@@ -3,8 +3,8 @@
  */
 
 @interface _UITextKitTextPosition : UITextPosition {
-    int _affinity;
-    int _offset;
+    int  _affinity;
+    int  _offset;
 }
 
 @property int affinity;

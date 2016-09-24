@@ -3,23 +3,24 @@
  */
 
 @interface CKDPRecordRetrieveRequestRetrieveAssetURL : PBCodable <NSCopying> {
-    CKDPRequestedFields *_assetFields;
+    CKDPRequestedFields * _assetFields;
     struct { 
         unsigned int requestedTTL : 1; 
         unsigned int type : 1; 
-    } _has;
-    long long _requestedTTL;
-    int _type;
+    }  _has;
+    int  _requestedTTL;
+    int  _type;
 }
 
 @property (nonatomic, retain) CKDPRequestedFields *assetFields;
 @property (nonatomic, readonly) BOOL hasAssetFields;
 @property (nonatomic) BOOL hasRequestedTTL;
 @property (nonatomic) BOOL hasType;
-@property (nonatomic) long long requestedTTL;
+@property (nonatomic) int requestedTTL;
 @property (nonatomic) int type;
 
 - (void).cxx_destruct;
+- (int)StringAsType:(id)arg1;
 - (id)assetFields;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -32,13 +33,14 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (long long)requestedTTL;
+- (int)requestedTTL;
 - (void)setAssetFields:(id)arg1;
 - (void)setHasRequestedTTL:(BOOL)arg1;
 - (void)setHasType:(BOOL)arg1;
-- (void)setRequestedTTL:(long long)arg1;
+- (void)setRequestedTTL:(int)arg1;
 - (void)setType:(int)arg1;
 - (int)type;
+- (id)typeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

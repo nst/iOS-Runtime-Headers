@@ -3,7 +3,7 @@
  */
 
 @interface PKDiscoveryLSWatcher : NSObject <LSApplicationWorkspaceObserverProtocol> {
-    PKDiscoveryDriver *_wdriver;
+    PKDiscoveryDriver * _wdriver;
 }
 
 @property (readonly, copy) NSString *debugDescription;

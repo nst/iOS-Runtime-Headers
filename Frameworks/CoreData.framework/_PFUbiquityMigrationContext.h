@@ -3,9 +3,9 @@
  */
 
 @interface _PFUbiquityMigrationContext : NSObject {
-    PFUbiquityStoreSaveSnapshot *_destinationStoreSaveSnapshot;
-    PFUbiquityStoreSaveSnapshot *_sourceStoreSaveSnapshot;
-    PFUbiquityTransactionLog *_transactionLog;
+    PFUbiquityStoreSaveSnapshot * _destinationStoreSaveSnapshot;
+    PFUbiquityStoreSaveSnapshot * _sourceStoreSaveSnapshot;
+    PFUbiquityTransactionLog * _transactionLog;
 }
 
 @property (nonatomic, retain) PFUbiquityStoreSaveSnapshot *destinationStoreSaveSnapshot;

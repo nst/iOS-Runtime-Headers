@@ -3,16 +3,16 @@
  */
 
 @interface SKUIRedeemViewController : UINavigationController {
-    BOOL _attempsAutomaticRedeem;
-    BOOL _cameraRedeemEnabled;
-    int _category;
-    SKUIClientContext *_clientContext;
-    int _initialBarStyle;
-    NSString *_initialCode;
-    NSOperationQueue *_operationQueue;
-    SKUIRedeemPreflightOperation *_preflightOperation;
-    SKUIRedeemConfiguration *_redeemConfiguration;
-    SKUIRedeemStepViewController *_rootViewController;
+    BOOL  _attempsAutomaticRedeem;
+    BOOL  _cameraRedeemEnabled;
+    int  _category;
+    SKUIClientContext * _clientContext;
+    int  _initialBarStyle;
+    NSString * _initialCode;
+    NSOperationQueue * _operationQueue;
+    SKUIRedeemPreflightOperation * _preflightOperation;
+    SKUIRedeemConfiguration * _redeemConfiguration;
+    SKUIRedeemStepViewController * _rootViewController;
 }
 
 @property (nonatomic) BOOL attempsAutomaticRedeem;
@@ -34,7 +34,7 @@
 - (id)initWithRedeemCategory:(int)arg1;
 - (id)initialCode;
 - (id)operationQueue;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)redeemAgainAnimated:(BOOL)arg1;
 - (void)setAttempsAutomaticRedeem:(BOOL)arg1;
 - (void)setClientContext:(id)arg1;

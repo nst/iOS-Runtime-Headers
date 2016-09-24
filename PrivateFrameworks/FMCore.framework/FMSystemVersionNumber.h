@@ -3,10 +3,10 @@
  */
 
 @interface FMSystemVersionNumber : NSObject {
-    NSString *_baseLetter;
-    int _baseNumber;
-    int _buildNumber;
-    NSString *_suffix;
+    NSString * _baseLetter;
+    int  _baseNumber;
+    int  _buildNumber;
+    NSString * _suffix;
 }
 
 @property (nonatomic, copy) NSString *baseLetter;

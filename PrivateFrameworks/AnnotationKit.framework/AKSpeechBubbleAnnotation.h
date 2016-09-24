@@ -3,10 +3,10 @@
  */
 
 @interface AKSpeechBubbleAnnotation : AKThoughtBubbleAnnotation {
-    float _pointyBitBaseWidthAngle;
+    double  _pointyBitBaseWidthAngle;
 }
 
-@property float pointyBitBaseWidthAngle;
+@property double pointyBitBaseWidthAngle;
 
 + (id)displayNameForUndoablePropertyChangeWithKey:(id)arg1;
 + (BOOL)supportsSecureCoding;

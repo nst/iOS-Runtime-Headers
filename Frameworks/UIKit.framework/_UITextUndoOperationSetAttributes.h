@@ -3,7 +3,7 @@
  */
 
 @interface _UITextUndoOperationSetAttributes : NSUndoTextOperation {
-    _NSAttributeRun *_attributes;
+    _NSAttributeRun * _attributes;
 }
 
 - (void).cxx_destruct;

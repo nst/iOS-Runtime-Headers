@@ -3,8 +3,8 @@
  */
 
 @interface GEOPDAutocompleteEntryQuery : PBCodable <NSCopying> {
-    NSString *_completion;
-    PBUnknownFields *_unknownFields;
+    NSString * _completion;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSString *completion;

@@ -3,7 +3,7 @@
  */
 
 @interface PLAccountingQualificationOwner : PLAccountingOwner {
-    PLAccountingEnergyEstimateEventEntry *_energyEstimate;
+    PLAccountingEnergyEstimateEventEntry * _energyEstimate;
 }
 
 @property (retain) PLAccountingEnergyEstimateEventEntry *energyEstimate;

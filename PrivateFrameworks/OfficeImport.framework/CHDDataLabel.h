@@ -3,23 +3,23 @@
  */
 
 @interface CHDDataLabel : NSObject {
-    bool mContentFormatDerived;
-    unsigned int mContentFormatId;
-    bool mDeleted;
-    bool mExtensionDetected;
-    OADGraphicProperties *mGraphicProperties;
-    bool mIsPositionAffineTransform;
-    int mPosition;
-    EDResources *mResources;
-    double mRotation;
-    bool mShowBubbleSize;
-    bool mShowCategoryName;
-    bool mShowLeaderLines;
-    bool mShowLegendKey;
-    bool mShowPercent;
-    bool mShowSeriesName;
-    bool mShowValue;
-    unsigned int mStringIndex;
+    bool  mContentFormatDerived;
+    unsigned int  mContentFormatId;
+    bool  mDeleted;
+    bool  mExtensionDetected;
+    OADGraphicProperties * mGraphicProperties;
+    bool  mIsPositionAffineTransform;
+    int  mPosition;
+    EDResources * mResources;
+    double  mRotation;
+    bool  mShowBubbleSize;
+    bool  mShowCategoryName;
+    bool  mShowLeaderLines;
+    bool  mShowLegendKey;
+    bool  mShowPercent;
+    bool  mShowSeriesName;
+    bool  mShowValue;
+    unsigned int  mStringIndex;
 }
 
 + (id)dataLabelWithResources:(id)arg1;

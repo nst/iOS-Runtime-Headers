@@ -3,7 +3,7 @@
  */
 
 @interface TTMergeableStringVersionedDocument : TTVersionedDocument {
-    TTMergeableAttributedString *_mergeableString;
+    TTMergeableAttributedString * _mergeableString;
 }
 
 @property (nonatomic, retain) TTMergeableAttributedString *mergeableString;

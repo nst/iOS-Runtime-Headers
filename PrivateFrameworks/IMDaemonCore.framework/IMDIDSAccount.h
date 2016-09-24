@@ -3,7 +3,7 @@
  */
 
 @interface IMDIDSAccount : IMDAccount {
-    IDSAccount *_idsAccount;
+    IDSAccount * _idsAccount;
 }
 
 @property (nonatomic, readonly, retain) IDSAccount *idsAccount;

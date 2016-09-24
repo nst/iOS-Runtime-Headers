@@ -2,20 +2,24 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDAssistantCommand : SAHACommand <AFServiceCommand> {
-    HMDAssistantCommandHelper *_assistantCommandHelper;
-    BOOL _completionHandlerCalled;
-    HMDAssistantGather *_gather;
-    NSArray *_homeKitObjects;
-    HMHAPMetadata *_metadata;
-    int _numberOfHomes;
-    NSString *_primaryHomeID;
-    NSString *_primaryHomeName;
-    NSObject<OS_dispatch_queue> *_queue;
+@interface HMDAssistantCommand : SAHACommand <AFServiceCommand, HMFLogging> {
+    HMDAssistantCommandHelper * _assistantCommandHelper;
+    BOOL  _completionHandlerCalled;
+    NSString * _currentHomeName;
+    NSUUID * _currentHomeUUID;
+    HMDAssistantGather * _gather;
+    NSArray * _homeKitObjects;
+    HMHAPMetadata * _metadata;
+    int  _numberOfHomes;
+    NSString * _primaryHomeName;
+    NSUUID * _primaryHomeUUID;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, retain) HMDAssistantCommandHelper *assistantCommandHelper;
 @property (nonatomic) BOOL completionHandlerCalled;
+@property (nonatomic, retain) NSString *currentHomeName;
+@property (nonatomic, retain) NSUUID *currentHomeUUID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) HMDAssistantGather *gather;
@@ -23,58 +27,82 @@
 @property (nonatomic, retain) NSArray *homeKitObjects;
 @property (nonatomic, retain) HMHAPMetadata *metadata;
 @property (nonatomic) int numberOfHomes;
-@property (nonatomic, retain) NSString *primaryHomeID;
 @property (nonatomic, retain) NSString *primaryHomeName;
+@property (nonatomic, retain) NSUUID *primaryHomeUUID;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
 
 + (void)initialize;
++ (id)logCategory;
 
 - (void).cxx_destruct;
+- (id)actionSetFromObject:(id)arg1;
+- (void)addActivationCharacteristicsIfNeeded:(id)arg1 forCharacteristic:(id)arg2;
+- (id)adjustGetValue:(id)arg1 type:(id)arg2 units:(id)arg3 attribute:(id)arg4;
+- (id)adjustSetValue:(id)arg1 type:(id)arg2 units:(id)arg3 attribute:(id)arg4;
 - (id)assistantCommandHelper;
 - (id)compareCurrentValue:(id)arg1 newValue:(id)arg2 withMetadata:(id)arg3;
 - (id)compareForBoundary:(id)arg1 withMetadata:(id)arg2;
 - (BOOL)completionHandlerCalled;
+- (id)convertValue:(id)arg1 fromUnits:(id)arg2 toUnits:(id)arg3;
+- (id)currentHomeName;
+- (id)currentHomeUUID;
+- (id)entityFromActionSet:(id)arg1;
+- (id)entityFromService:(id)arg1 serviceType:(id)arg2;
 - (void)executeActionSet:(id)arg1 action:(id)arg2 withCompletionHandler:(id /* block */)arg3;
-- (id)filterObjects:(id)arg1 byAttribute:(id)arg2;
+- (id)filterObjects:(id)arg1 byAttribute:(id)arg2 forActionType:(id)arg3;
 - (id)filterObjects:(id)arg1 byCharacteristicType:(id)arg2;
+- (id)filterObjects:(id)arg1 forCharacteristicType:(id)arg2;
 - (id)filterObjects:(id)arg1 forCharacteristics:(id)arg2;
 - (id)filterObjects:(id)arg1 forGroup:(id)arg2;
 - (id)filterObjects:(id)arg1 forRoom:(id)arg2 andZone:(id)arg3;
-- (id)filterObjects:(id)arg1 forcharacteristicType:(id)arg2;
 - (id)gather;
+- (id)getLocaleUnits:(id)arg1;
+- (id)getReportingUnits:(id)arg1 hapCharacteristicType:(id)arg2;
+- (id)getValueOfType:(id)arg1 action:(id)arg2;
+- (id)getoverridingHomeUUIDFromName:(id)arg1;
 - (void)handleCommandWithCompletionHandler:(id /* block */)arg1;
 - (void)handleGetActionTypes:(id)arg1 serviceType:(id)arg2 forObjects:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)handleGetColor:(id)arg1 forObjects:(id)arg2 serviceType:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)handleGetMetadataActionTypes:(id)arg1 serviceType:(id)arg2 forObjects:(id)arg3 completionHandler:(id /* block */)arg4;
-- (id)handleReadWriteResponses:(id)arg1 error:(id)arg2 forAction:(id)arg3 inServiceType:(id)arg4 results:(id)arg5;
+- (id)handleReadWriteResponses:(id)arg1 error:(id)arg2 forAction:(id)arg3 inServiceType:(id)arg4 results:(id)arg5 forObjects:(id)arg6;
 - (void)handleSetActionTypes:(id)arg1 serviceType:(id)arg2 forObjects:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)handleSetColor:(id)arg1 forObjects:(id)arg2 service:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)handleUpdateActionTypes:(id)arg1 serviceType:(id)arg2 forObjects:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)homeKitObjects;
+- (BOOL)isAttributeValue:(id)arg1 equalTo:(id)arg2;
 - (id)metadata;
 - (int)numberOfHomes;
 - (id)objectsWithIdentifierList:(id)arg1;
 - (id)objectsWithSearchFilter:(id)arg1 inHome:(id)arg2;
 - (id)parseColorEncoding:(id)arg1;
 - (void)performWithGather:(id)arg1 queue:(id)arg2 msgDispatcher:(id)arg3 completion:(id /* block */)arg4;
-- (id)primaryHomeID;
+- (BOOL)populateColorResult:(id)arg1 serviceType:(id)arg2 service:(id)arg3 action:(id)arg4 responses:(id)arg5 forObjects:(id)arg6;
+- (BOOL)populateResult:(id)arg1 fromResponse:(id)arg2 forAction:(id)arg3 serviceType:(id)arg4 forObjects:(id)arg5;
+- (BOOL)populateResult:(id)arg1 withObject:(id)arg2 serviceType:(id)arg3 action:(id)arg4;
+- (BOOL)populateResult:(id)arg1 withService:(id)arg2 serviceType:(id)arg3 characteristic:(id)arg4 action:(id)arg5;
+- (BOOL)populateResultWithEntity:(id)arg1 action:(id)arg2 entity:(id)arg3;
 - (id)primaryHomeName;
+- (id)primaryHomeUUID;
 - (id)queue;
 - (void)reportOutcome:(id)arg1 results:(id)arg2 handler:(id /* block */)arg3;
 - (void)reportResults:(id)arg1 handler:(id /* block */)arg2;
 - (void)reportUnlockRequired:(id /* block */)arg1;
 - (void)returnResults:(id)arg1 serviceType:(id)arg2 forAction:(id)arg3 completionHandler:(id /* block */)arg4;
+- (id)serviceFromObject:(id)arg1;
 - (void)setAssistantCommandHelper:(id)arg1;
 - (void)setCompletionHandlerCalled:(BOOL)arg1;
+- (void)setCurrentHomeName:(id)arg1;
+- (void)setCurrentHomeUUID:(id)arg1;
 - (void)setGather:(id)arg1;
 - (void)setHomeKitObjects:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setNumberOfHomes:(int)arg1;
-- (void)setPrimaryHomeID:(id)arg1;
 - (void)setPrimaryHomeName:(id)arg1;
+- (void)setPrimaryHomeUUID:(id)arg1;
 - (void)setQueue:(id)arg1;
+- (id)setValue:(id)arg1 format:(id)arg2 units:(id)arg3;
 - (id)updateValue:(id)arg1 forAction:(id)arg2;
-- (id)updateValueToBoundary:(id)arg1 metadata:(id)arg2;
+- (id)updateValueToBoundary:(id)arg1 valueType:(id)arg2 fudgeMinimum:(BOOL)arg3 metadata:(id)arg4;
 
 @end

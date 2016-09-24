@@ -3,9 +3,9 @@
  */
 
 @interface HSFairPlayInfo : NSObject {
-    void *_hwInfo;
-    NSObject<OS_dispatch_queue> *_sapQueue;
-    void *_session;
+    void * _hwInfo;
+    NSObject<OS_dispatch_queue> * _sapQueue;
+    void * _session;
 }
 
 @property (nonatomic, readonly) NSString *deviceGUID;

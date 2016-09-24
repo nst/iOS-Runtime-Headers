@@ -3,7 +3,7 @@
  */
 
 @interface SKUIProductPageTableView : UITableView {
-    UIView *_productPageHeaderView;
+    UIView * _productPageHeaderView;
 }
 
 @property (nonatomic, retain) UIView *productPageHeaderView;

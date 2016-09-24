@@ -3,7 +3,7 @@
  */
 
 @interface GEOTimezone : PBCodable <NSCopying> {
-    NSString *_identifier;
+    NSString * _identifier;
 }
 
 @property (nonatomic, retain) NSString *identifier;

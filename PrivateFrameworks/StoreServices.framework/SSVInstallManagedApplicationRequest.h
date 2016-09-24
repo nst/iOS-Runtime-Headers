@@ -3,11 +3,11 @@
  */
 
 @interface SSVInstallManagedApplicationRequest : SSRequest <SSXPCCoding> {
-    NSString *_bundleIdentifier;
-    NSString *_bundleVersion;
-    NSNumber *_externalVersionIdentifier;
-    NSString *_itemIdentifier;
-    BOOL _skipDownloads;
+    NSString * _bundleIdentifier;
+    NSString * _bundleVersion;
+    NSNumber * _externalVersionIdentifier;
+    NSString * _itemIdentifier;
+    BOOL  _skipDownloads;
 }
 
 @property (nonatomic, copy) NSString *bundleIdentifier;

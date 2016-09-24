@@ -14,17 +14,17 @@
         unsigned int touchStateReadyDuration : 1; 
         unsigned int touchTotalPowerMicroWatt : 1; 
         unsigned int touchTotalUserTouchCount : 1; 
-    } _has;
-    unsigned long long _timestamp;
-    unsigned int _tocuhTotalUserInteractionDuration;
-    unsigned int _touchStateActiveDuration;
-    unsigned int _touchStateAnticipateDuration;
-    unsigned int _touchStateOffDuration;
-    unsigned int _touchStateOnDuration;
-    unsigned int _touchStateOthersDuration;
-    unsigned int _touchStateReadyDuration;
-    unsigned int _touchTotalPowerMicroWatt;
-    unsigned int _touchTotalUserTouchCount;
+    }  _has;
+    unsigned long long  _timestamp;
+    unsigned int  _tocuhTotalUserInteractionDuration;
+    unsigned int  _touchStateActiveDuration;
+    unsigned int  _touchStateAnticipateDuration;
+    unsigned int  _touchStateOffDuration;
+    unsigned int  _touchStateOnDuration;
+    unsigned int  _touchStateOthersDuration;
+    unsigned int  _touchStateReadyDuration;
+    unsigned int  _touchTotalPowerMicroWatt;
+    unsigned int  _touchTotalUserTouchCount;
 }
 
 @property (nonatomic) BOOL hasTimestamp;

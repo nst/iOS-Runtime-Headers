@@ -7,11 +7,11 @@
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _additionalPlaceTypes;
-    NSString *_deviceCountryCode;
-    NSString *_displayRegion;
-    NSMutableArray *_locations;
-    NSMutableArray *_serviceTags;
+    }  _additionalPlaceTypes;
+    NSString * _deviceCountryCode;
+    NSString * _displayRegion;
+    NSMutableArray * _locations;
+    NSMutableArray * _serviceTags;
 }
 
 @property (nonatomic, readonly) int*additionalPlaceTypes;
@@ -23,11 +23,16 @@
 @property (nonatomic, retain) NSMutableArray *locations;
 @property (nonatomic, retain) NSMutableArray *serviceTags;
 
++ (Class)locationType;
++ (Class)serviceTagType;
+
+- (int)StringAsAdditionalPlaceTypes:(id)arg1;
 - (void)addAdditionalPlaceType:(int)arg1;
 - (void)addLocation:(id)arg1;
 - (void)addServiceTag:(id)arg1;
 - (int)additionalPlaceTypeAtIndex:(unsigned int)arg1;
 - (int*)additionalPlaceTypes;
+- (id)additionalPlaceTypesAsString:(int)arg1;
 - (unsigned int)additionalPlaceTypesCount;
 - (void)clearAdditionalPlaceTypes;
 - (void)clearLocations;

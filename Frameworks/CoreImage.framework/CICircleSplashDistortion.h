@@ -3,9 +3,9 @@
  */
 
 @interface CICircleSplashDistortion : CIFilter {
-    CIVector *inputCenter;
-    CIImage *inputImage;
-    NSNumber *inputRadius;
+    CIVector * inputCenter;
+    CIImage * inputImage;
+    NSNumber * inputRadius;
 }
 
 @property (nonatomic, retain) CIVector *inputCenter;

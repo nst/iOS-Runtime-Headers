@@ -3,10 +3,10 @@
  */
 
 @interface GKViewController : UIViewController {
-    GKColorPalette *_colorPalette;
-    int _gkFocusBubbleType;
-    GKViewController *_rootViewController;
-    BOOL _shouldUpdateContentOnlyWhenAuthenticated;
+    GKColorPalette * _colorPalette;
+    int  _gkFocusBubbleType;
+    GKViewController * _rootViewController;
+    BOOL  _shouldUpdateContentOnlyWhenAuthenticated;
 }
 
 @property (nonatomic, retain) GKColorPalette *colorPalette;

@@ -3,10 +3,10 @@
  */
 
 @interface SCNMTLBuffer : NSObject {
-    <MTLBuffer> *_buffer;
-    id _dataSource;
-    int _offset;
-    int _usedCount;
+    <MTLBuffer> * _buffer;
+    id  _dataSource;
+    int  _offset;
+    int  _usedCount;
 }
 
 @property (nonatomic, retain) <MTLBuffer> *buffer;

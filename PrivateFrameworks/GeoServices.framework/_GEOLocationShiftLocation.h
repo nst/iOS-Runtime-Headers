@@ -3,18 +3,18 @@
  */
 
 @interface _GEOLocationShiftLocation : NSObject {
-    double _accuracy;
-    id /* block */ _completionHandler;
+    double  _accuracy;
+    id /* block */  _completionHandler;
     struct { 
         double latitude; 
         double longitude; 
-    } _coordinate;
-    id /* block */ _errorHandler;
-    id /* block */ _functionHandler;
-    id /* block */ _mustGoToNetworkCallback;
-    NSObject<OS_dispatch_queue> *_queue;
-    BOOL _recordCacheInfo;
-    struct __CFRunLoop { } *_runLoop;
+    }  _coordinate;
+    id /* block */  _errorHandler;
+    id /* block */  _functionHandler;
+    id /* block */  _mustGoToNetworkCallback;
+    NSObject<OS_dispatch_queue> * _queue;
+    BOOL  _recordCacheInfo;
+    struct __CFRunLoop { } * _runLoop;
 }
 
 @property (nonatomic, readonly) double accuracy;

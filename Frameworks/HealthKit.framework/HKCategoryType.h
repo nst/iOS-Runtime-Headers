@@ -4,10 +4,9 @@
 
 @interface HKCategoryType : HKSampleType
 
-+ (void)_insertCode:(int)arg1 forIdentifier:(id)arg2;
-
 - (BOOL)_acceptsValue:(int)arg1;
 - (int)_defaultValue;
+- (id)_predicateForSDKVersion:(unsigned int)arg1;
 - (BOOL)_validateMetadata:(id)arg1 error:(id*)arg2;
 
 @end

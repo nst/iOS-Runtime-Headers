@@ -3,11 +3,11 @@
  */
 
 @interface PLNfcAgent : PLAgent {
-    PLXPCListenerOperatorComposition *_cardNotification;
-    PLXPCListenerOperatorComposition *_fieldNotification;
-    double _onPower;
-    PLXPCListenerOperatorComposition *_transactionNotification;
-    PLXPCListenerOperatorComposition *_tsmCommunicationNotification;
+    PLXPCListenerOperatorComposition * _cardNotification;
+    PLXPCListenerOperatorComposition * _fieldNotification;
+    double  _onPower;
+    PLXPCListenerOperatorComposition * _transactionNotification;
+    PLXPCListenerOperatorComposition * _tsmCommunicationNotification;
 }
 
 @property (retain) PLXPCListenerOperatorComposition *cardNotification;

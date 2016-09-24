@@ -3,25 +3,24 @@
  */
 
 @interface CDPPassphraseEntryPane : DevicePINPane {
-    BOOL _formPresentation;
-    CDPPaneHeaderView *_headerView;
-    float _keyboardOffset;
+    CDPPaneHeaderView * _headerView;
+    double  _keyboardOffset;
 }
 
-@property (nonatomic) BOOL formPresentation;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } availableHeaderRect;
 
 - (void).cxx_destruct;
 - (void)_keyboardLayoutChanged;
 - (void)_layoutHeaderRect;
-- (void)_layoutPinViewWithHeight:(float)arg1;
+- (void)_layoutPinView;
 - (void)_layoutSubviews;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })availableHeaderRect;
 - (void)dealloc;
-- (BOOL)formPresentation;
+- (void)didFinishResizingHeaderView;
+- (void)didFinishResizingPinView;
 - (id)headerView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isSmallScreen;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (float)keyboardHeightOffset;
 - (void)layoutSubviews;
-- (void)setFormPresentation:(BOOL)arg1;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface TSWPNumberAttachment : TSWPTextualAttachment {
-    int _numberFormat;
-    NSString *_stringValue;
+    int  _numberFormat;
+    NSString * _stringValue;
 }
 
 @property (nonatomic) int numberFormat;

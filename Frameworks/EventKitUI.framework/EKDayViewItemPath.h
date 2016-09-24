@@ -3,8 +3,8 @@
  */
 
 @interface EKDayViewItemPath : NSObject <NSCopying> {
-    unsigned int _index;
-    int _section;
+    unsigned int  _index;
+    int  _section;
 }
 
 @property (nonatomic, readonly) unsigned int index;

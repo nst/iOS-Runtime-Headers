@@ -3,15 +3,15 @@
  */
 
 @interface _CDContactStatistics : NSObject <NSSecureCoding> {
-    NSDate *_firstIncomingRecipientDate;
-    NSDate *_firstIncomingSenderDate;
-    NSDate *_firstOutgoingRecipientDate;
-    unsigned int _incomingRecipientCount;
-    unsigned int _incomingSenderCount;
-    NSDate *_lastIncomingRecipientDate;
-    NSDate *_lastIncomingSenderDate;
-    NSDate *_lastOutgoingRecipientDate;
-    unsigned int _outgoingRecipientCount;
+    NSDate * _firstIncomingRecipientDate;
+    NSDate * _firstIncomingSenderDate;
+    NSDate * _firstOutgoingRecipientDate;
+    unsigned int  _incomingRecipientCount;
+    unsigned int  _incomingSenderCount;
+    NSDate * _lastIncomingRecipientDate;
+    NSDate * _lastIncomingSenderDate;
+    NSDate * _lastOutgoingRecipientDate;
+    unsigned int  _outgoingRecipientCount;
 }
 
 @property (retain) NSDate *firstIncomingRecipientDate;

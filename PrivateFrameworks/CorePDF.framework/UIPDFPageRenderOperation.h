@@ -3,9 +3,9 @@
  */
 
 @interface UIPDFPageRenderOperation : NSOperation {
-    UIPDFPageRenderJob *_job;
-    BOOL executing;
-    BOOL finished;
+    UIPDFPageRenderJob * _job;
+    BOOL  executing;
+    BOOL  finished;
 }
 
 @property (retain) UIPDFPageRenderJob *job;

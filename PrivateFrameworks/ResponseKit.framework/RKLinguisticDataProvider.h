@@ -3,7 +3,7 @@
  */
 
 @interface RKLinguisticDataProvider : NSObject <RKPolarityDataProvider> {
-    NSMutableDictionary *_polarityMapsByLanguageID;
+    NSMutableDictionary * _polarityMapsByLanguageID;
 }
 
 @property (retain) NSMutableDictionary *polarityMapsByLanguageID;

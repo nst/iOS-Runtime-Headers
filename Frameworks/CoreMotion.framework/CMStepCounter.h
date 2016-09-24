@@ -3,7 +3,7 @@
  */
 
 @interface CMStepCounter : NSObject {
-    CMStepCounterProxy *_stepcounterProxy;
+    CMStepCounterProxy * _stepcounterProxy;
 }
 
 @property BOOL enabled;

@@ -3,10 +3,10 @@
  */
 
 @interface _GEOCountryConfigurationLocalProxy : NSObject <_GEOCountryConfigurationServerProxy> {
-    <_GEOCountryConfigurationServerProxyDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_source> *_scheduledUpdateTimer;
-    struct __CTServerConnection { } *_telephonyServerConnection;
+    <_GEOCountryConfigurationServerProxyDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_source> * _scheduledUpdateTimer;
+    struct __CTServerConnection { } * _telephonyServerConnection;
 }
 
 @property (readonly, copy) NSString *debugDescription;

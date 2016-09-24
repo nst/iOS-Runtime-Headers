@@ -5,11 +5,12 @@
 @interface GEOPDGeocodingParameters : PBCodable <NSCopying> {
     struct { 
         unsigned int maxResults : 1; 
-    } _has;
-    unsigned int _maxResults;
-    NSString *_queryString;
-    GEOStructuredAddress *_structuredAddress;
-    GEOPDViewportInfo *_viewportInfo;
+    }  _has;
+    unsigned int  _maxResults;
+    NSString * _queryString;
+    GEOStructuredAddress * _structuredAddress;
+    PBUnknownFields * _unknownFields;
+    GEOPDViewportInfo * _viewportInfo;
 }
 
 @property (nonatomic) BOOL hasMaxResults;
@@ -19,6 +20,7 @@
 @property (nonatomic) unsigned int maxResults;
 @property (nonatomic, retain) NSString *queryString;
 @property (nonatomic, retain) GEOStructuredAddress *structuredAddress;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) GEOPDViewportInfo *viewportInfo;
 
 - (void)copyTo:(id)arg1;
@@ -45,6 +47,7 @@
 - (void)setStructuredAddress:(id)arg1;
 - (void)setViewportInfo:(id)arg1;
 - (id)structuredAddress;
+- (id)unknownFields;
 - (id)viewportInfo;
 - (void)writeTo:(id)arg1;
 

@@ -3,7 +3,7 @@
  */
 
 @interface TSUConcurrentCache : TSUCache {
-    TSUReadWriteQueue *mReadWriteQueue;
+    TSUReadWriteQueue * mReadWriteQueue;
 }
 
 @property (nonatomic, readonly) TSUReadWriteQueue *readWriteQueue;

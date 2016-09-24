@@ -3,8 +3,8 @@
  */
 
 @interface WebNodeHighlightView : WAKView {
-    NSMutableArray *_layers;
-    WebNodeHighlight *_webNodeHighlight;
+    NSMutableArray * _layers;
+    WebNodeHighlight * _webNodeHighlight;
 }
 
 - (void)_attach:(id)arg1 numLayers:(unsigned int)arg2;

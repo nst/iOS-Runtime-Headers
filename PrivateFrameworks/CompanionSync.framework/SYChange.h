@@ -3,11 +3,11 @@
  */
 
 @interface SYChange : PBCodable <NSCopying, SYChange> {
-    NSData *_changeData;
-    NSString *_objectId;
-    NSString *_sequencer;
-    int _type;
-    unsigned long long _version;
+    NSData * _changeData;
+    NSString * _objectId;
+    NSString * _sequencer;
+    int  _type;
+    unsigned int  _version;
 }
 
 @property (nonatomic, retain) NSData *changeData;
@@ -23,13 +23,14 @@
 @property (nonatomic, retain) NSString *sequencer;
 @property (readonly) Class superclass;
 @property (nonatomic) int type;
-@property (nonatomic) unsigned long long version;
+@property (nonatomic) unsigned int version;
 
 + (id)changeWithChangeObject:(id)arg1 serializer:(id)arg2;
 + (id)changeWithChangeObject:(id)arg1 serializer:(id)arg2 encodeUsingVersion:(int)arg3;
 + (id)changeWithObject:(id)arg1 updateType:(int)arg2 store:(id)arg3;
 
 - (void).cxx_destruct;
+- (int)StringAsType:(id)arg1;
 - (id)changeData;
 - (id)changeObjectWithSerializer:(id)arg1;
 - (id)changeObjectWithSerializer:(id)arg1 encodedByVersion:(int)arg2;
@@ -52,9 +53,10 @@
 - (void)setObjectId:(id)arg1;
 - (void)setSequencer:(id)arg1;
 - (void)setType:(int)arg1;
-- (void)setVersion:(unsigned long long)arg1;
+- (void)setVersion:(unsigned int)arg1;
 - (int)type;
-- (unsigned long long)version;
+- (id)typeAsString:(int)arg1;
+- (unsigned int)version;
 - (void)writeTo:(id)arg1;
 
 @end

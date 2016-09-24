@@ -3,10 +3,10 @@
  */
 
 @interface OCXContentTypes : NSObject {
-    NSMutableDictionary *mContentTypeCountMap;
-    NSMutableDictionary *mContentTypeObjectMap;
-    NSMutableArray *mContentTypes;
-    NSMutableSet *mDefaultTypes;
+    NSMutableDictionary * mContentTypeCountMap;
+    NSMutableDictionary * mContentTypeObjectMap;
+    NSMutableArray * mContentTypes;
+    NSMutableSet * mDefaultTypes;
 }
 
 + (id)relativePathForPath:(id)arg1 currentPath:(id)arg2;

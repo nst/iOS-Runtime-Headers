@@ -3,11 +3,11 @@
  */
 
 @interface CNContactListTableViewCell : UITableViewCell {
-    CNContact *_contact;
-    CNContactFormatter *_contactFormatter;
-    CNContactMatchInfo *_contactMatchInfo;
-    BOOL _isMeCard;
-    <ABStyleProvider> *_styleProvider;
+    CNContact * _contact;
+    CNContactFormatter * _contactFormatter;
+    CNContactMatchInfo * _contactMatchInfo;
+    BOOL  _isMeCard;
+    <ABStyleProvider> * _styleProvider;
 }
 
 @property (nonatomic, retain) CNContact *contact;

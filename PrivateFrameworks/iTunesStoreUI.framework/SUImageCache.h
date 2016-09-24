@@ -3,7 +3,7 @@
  */
 
 @interface SUImageCache : NSObject {
-    CPLRUDictionary *_dictionary;
+    CPLRUDictionary * _dictionary;
 }
 
 - (void)addImage:(id)arg1 forURL:(id)arg2 dataProvider:(id)arg3;

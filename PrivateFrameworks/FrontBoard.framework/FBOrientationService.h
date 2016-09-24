@@ -3,7 +3,7 @@
  */
 
 @interface FBOrientationService : NSObject {
-    FBOrientationServiceServer *_server;
+    FBOrientationServiceServer * _server;
 }
 
 + (id)sharedInstance;

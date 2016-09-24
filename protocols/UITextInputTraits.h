@@ -20,6 +20,8 @@
 - (void)setReturnKeyType:(int)arg1;
 - (void)setSecureTextEntry:(BOOL)arg1;
 - (void)setSpellCheckingType:(int)arg1;
+- (void)setTextContentType:(NSString *)arg1;
 - (int)spellCheckingType;
+- (NSString *)textContentType;
 
 @end

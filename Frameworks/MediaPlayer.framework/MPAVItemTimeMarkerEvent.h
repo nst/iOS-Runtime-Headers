@@ -3,11 +3,11 @@
  */
 
 @interface MPAVItemTimeMarkerEvent : NSObject {
-    MPAVItem *_AVItem;
-    MPTimeMarker *_URLMarker;
-    MPTimeMarker *_artworkMarker;
-    MPTimeMarker *_chapterMarker;
-    MPTimeMarker *_closedCaptionMarker;
+    MPAVItem * _AVItem;
+    MPTimeMarker * _URLMarker;
+    MPTimeMarker * _artworkMarker;
+    MPTimeMarker * _chapterMarker;
+    MPTimeMarker * _closedCaptionMarker;
 }
 
 @property (nonatomic, retain) MPAVItem *AVItem;

@@ -3,10 +3,10 @@
  */
 
 @interface BLTPBHandleAcknowledgeActionRequest : PBRequest <NSCopying> {
-    BLTPBActionInformation *_actionInfo;
-    NSString *_publisherBulletinID;
-    NSString *_recordID;
-    NSString *_sectionID;
+    BLTPBActionInformation * _actionInfo;
+    NSString * _publisherBulletinID;
+    NSString * _recordID;
+    NSString * _sectionID;
 }
 
 @property (nonatomic, retain) BLTPBActionInformation *actionInfo;

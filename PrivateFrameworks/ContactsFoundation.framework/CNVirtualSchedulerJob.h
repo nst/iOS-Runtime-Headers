@@ -3,8 +3,8 @@
  */
 
 @interface CNVirtualSchedulerJob : NSObject {
-    id /* block */ _block;
-    unsigned int _time;
+    id /* block */  _block;
+    unsigned int  _time;
 }
 
 @property (readonly, copy) id /* block */ block;
@@ -12,8 +12,8 @@
 
 + (id)jobWithTime:(unsigned int)arg1 block:(id /* block */)arg2;
 
+- (void).cxx_destruct;
 - (id /* block */)block;
-- (void)dealloc;
 - (id)description;
 - (id)initWithTime:(unsigned int)arg1 block:(id /* block */)arg2;
 - (void)setTime:(unsigned int)arg1;

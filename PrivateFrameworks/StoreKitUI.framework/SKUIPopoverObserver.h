@@ -3,9 +3,9 @@
  */
 
 @interface SKUIPopoverObserver : NSObject <UIPopoverControllerDelegate> {
-    UIPopoverController *_popoverController;
-    SEL _selector;
-    id _target;
+    UIPopoverController * _popoverController;
+    SEL  _selector;
+    id  _target;
 }
 
 @property (readonly, copy) NSString *debugDescription;

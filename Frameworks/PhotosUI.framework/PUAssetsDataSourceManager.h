@@ -3,8 +3,8 @@
  */
 
 @interface PUAssetsDataSourceManager : NSObject {
-    PUAssetsDataSource *_assetsDataSource;
-    <PUAssetsDataSourceManagerDelegate> *_delegate;
+    PUAssetsDataSource * _assetsDataSource;
+    <PUAssetsDataSourceManagerDelegate> * _delegate;
 }
 
 @property (nonatomic, retain) PUAssetsDataSource *assetsDataSource;

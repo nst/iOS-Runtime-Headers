@@ -3,9 +3,9 @@
  */
 
 @interface _AXAssertionServer : NSObject {
-    id /* block */ _assertionWasAcquiredHandler;
-    id /* block */ _assertionWasReleasedHandler;
-    NSMutableDictionary *_healdAssertionMap;
+    id /* block */  _assertionWasAcquiredHandler;
+    id /* block */  _assertionWasReleasedHandler;
+    NSMutableDictionary * _healdAssertionMap;
 }
 
 @property (nonatomic, copy) id /* block */ assertionWasAcquiredHandler;

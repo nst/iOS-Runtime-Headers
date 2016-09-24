@@ -2,26 +2,25 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotoEditToolController : UIViewController <PUPhotoEditLayoutDynamicAdaptable, UIScrollViewDelegate> {
-    UIView *__dummyScrollContentView;
-    UIScrollView *__toolControllerScrollView;
-    PLPhotoEditAggregateSession *_aggregateSession;
-    <PUPhotoEditToolControllerDelegate> *_delegate;
-    int _layoutOrientation;
-    NSString *_localizedName;
-    BOOL _performingLiveInteraction;
-    PLPhotoEditMutableModel *_photoEditModel;
-    UIButton *_preferredAlternateToolbarButton;
-    unsigned int _preferredRenderMode;
-    UIImage *_selectedToolbarIcon;
-    PUPhotoEditToolControllerSpec *_spec;
-    UIImage *_toolbarIcon;
-    PUPhotoEditValuesCalculator *_valuesCalculator;
+@interface PUPhotoEditToolController : UIViewController <PUPhotoEditLayoutDynamicAdaptable, PUViewControllerSpecChangeObserver, UIScrollViewDelegate> {
+    UIView * __dummyScrollContentView;
+    UIScrollView * __toolControllerScrollView;
+    PLPhotoEditAggregateSession * _aggregateSession;
+    <PUPhotoEditToolControllerDelegate> * _delegate;
+    int  _layoutOrientation;
+    NSString * _localizedName;
+    BOOL  _performingLiveInteraction;
+    PLPhotoEditMutableModel * _photoEditModel;
+    UIButton * _preferredAlternateToolbarButton;
+    unsigned int  _preferredRenderMode;
+    UIImage * _selectedToolbarIcon;
+    PUPhotoEditToolControllerSpec * _spec;
+    UIImage * _toolbarIcon;
+    PUPhotoEditValuesCalculator * _valuesCalculator;
 }
 
 @property (setter=_setDummyScrollContentView:, nonatomic, retain) UIView *_dummyScrollContentView;
 @property (setter=_setToolControllerScrollView:, nonatomic, retain) UIScrollView *_toolControllerScrollView;
-@property (nonatomic, retain) PLPhotoEditAggregateSession *aggregateSession;
 @property (nonatomic, readonly) PLPhotoEditAggregateSession *aggregateSession;
 @property (nonatomic, readonly) BOOL canResetToDefaultValue;
 @property (readonly, copy) NSString *debugDescription;
@@ -31,23 +30,18 @@
 @property (nonatomic, readonly) int layoutOrientation;
 @property (nonatomic, readonly) NSString *localizedName;
 @property (nonatomic, readonly) NSString *localizedResetToolActionTitle;
-@property (getter=isPerformingLiveInteraction, nonatomic) BOOL performingLiveInteraction;
 @property (getter=isPerformingLiveInteraction, nonatomic, readonly) BOOL performingLiveInteraction;
 @property (nonatomic, readonly) PLPhotoEditMutableModel *photoEditModel;
-@property (nonatomic, retain) UIButton *preferredAlternateToolbarButton;
 @property (nonatomic, readonly) UIButton *preferredAlternateToolbarButton;
 @property (nonatomic, readonly, copy) UIColor *preferredPreviewBackgroundColor;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } preferredPreviewViewInsets;
-@property (nonatomic) unsigned int preferredRenderMode;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } preferredPreviewViewInsets;
 @property (nonatomic, readonly) unsigned int preferredRenderMode;
 @property (nonatomic, readonly) UIImage *selectedToolbarIcon;
-@property (nonatomic, retain) PUPhotoEditToolControllerSpec *spec;
 @property (nonatomic, readonly) PUPhotoEditToolControllerSpec *spec;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIImage *toolbarIcon;
 @property (nonatomic, readonly) PUPhotoEditValuesCalculator *valuesCalculator;
 @property (nonatomic, readonly) BOOL wantsDefaultPreviewView;
-@property (nonatomic, readonly) BOOL wantsIrisAutoDisableWarning;
 @property (nonatomic, readonly) BOOL wantsSecondaryToolbarVisible;
 @property (nonatomic, readonly) BOOL wantsZoomAndPanEnabled;
 
@@ -58,15 +52,20 @@
 - (void)_setToolControllerScrollView:(id)arg1;
 - (id)_toolControllerScrollView;
 - (void)_updateScrollViewCentering;
+- (void)_updateTraitCollectionAndLayoutReferenceSize;
+- (void)_updateTraitCollectionAndLayoutReferenceSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)aggregateSession;
 - (void)animateBecomingActiveTool;
 - (void)animateResigningActiveTool;
+- (void)baseLivePhotoInvalidated;
+- (void)basePhotoInvalidated;
 - (BOOL)canResetToDefaultValue;
 - (void)dealloc;
 - (id)delegate;
 - (void)didBecomeActiveTool;
 - (void)didResignActiveTool;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (BOOL)installLivePhotoPlaybackGestureRecognizer:(id)arg1;
 - (BOOL)installTogglePreviewGestureRecognizer:(id)arg1;
 - (BOOL)isPerformingLiveInteraction;
 - (int)layoutOrientation;
@@ -76,7 +75,7 @@
 - (void)photoEditModelDidChange;
 - (id)preferredAlternateToolbarButton;
 - (id)preferredPreviewBackgroundColor;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })preferredPreviewViewInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })preferredPreviewViewInsets;
 - (unsigned int)preferredRenderMode;
 - (void)resetForZoomAndPan;
 - (void)resetToDefaultValueAnimated:(BOOL)arg1;
@@ -98,12 +97,12 @@
 - (id)toolbarIcon;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)valuesCalculator;
+- (void)viewControllerSpec:(id)arg1 didChange:(id)arg2;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (id)viewForZoomingInScrollView:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (BOOL)wantsDefaultPreviewView;
-- (BOOL)wantsIrisAutoDisableWarning;
 - (BOOL)wantsSecondaryToolbarVisible;
 - (BOOL)wantsZoomAndPanEnabled;
 - (void)willBecomeActiveTool;

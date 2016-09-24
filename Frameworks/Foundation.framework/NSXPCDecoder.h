@@ -3,20 +3,20 @@
  */
 
 @interface NSXPCDecoder : NSXPCCoder {
-    int _allowedClassesIndex;
-    /* Warning: unhandled array encoding: '[128@]' */ id _allowedClassesList;
-    unsigned int _collectionPointer;
-    struct { /* ? */ } *_collections;
-    NSXPCConnection *_connection;
-    void **_decoder;
-    unsigned long long _genericIndex;
-    NSXPCInterface *_interface;
-    NSObject<OS_xpc_object> *_oolObjects;
-    SEL _replyToSelector;
+    int  _allowedClassesIndex;
+    /* Warning: unhandled array encoding: '[128@]' */ id  _allowedClassesList;
+    unsigned int  _collectionPointer;
+    struct { /* ? */ } * _collections;
+    NSXPCConnection * _connection;
+    void ** _decoder;
+    unsigned int  _genericIndex;
+    NSXPCInterface * _interface;
+    NSObject<OS_xpc_object> * _oolObjects;
+    SEL  _replyToSelector;
     struct { 
         unsigned int offset; 
         int type; 
-    } _rootObject;
+    }  _rootObject;
 }
 
 @property NSXPCConnection *_connection;
@@ -32,6 +32,7 @@
 - (void)_validateAllowedClass:(Class)arg1 forKey:(id)arg2 allowingInvocations:(BOOL)arg3;
 - (id)allowedClasses;
 - (BOOL)allowsKeyedCoding;
+- (id)connection;
 - (BOOL)containsValueForKey:(id)arg1;
 - (void)dealloc;
 - (id)debugDescription;
@@ -40,7 +41,7 @@
 - (double)decodeDoubleForKey:(id)arg1;
 - (float)decodeFloatForKey:(id)arg1;
 - (int)decodeInt32ForKey:(id)arg1;
-- (long long)decodeInt64ForKey:(id)arg1;
+- (int)decodeInt64ForKey:(id)arg1;
 - (int)decodeIntForKey:(id)arg1;
 - (int)decodeIntegerForKey:(id)arg1;
 - (id)decodeInvocation;
@@ -51,7 +52,6 @@
 - (void)decodeValueOfObjCType:(const char *)arg1 at:(void*)arg2;
 - (id)decodeXPCObjectForKey:(id)arg1;
 - (id)decodeXPCObjectOfType:(struct _xpc_type_s { }*)arg1 forKey:(id)arg2;
-- (void)finalize;
 - (id)interface;
 - (SEL)replyToSelector;
 - (void)setInterface:(id)arg1;

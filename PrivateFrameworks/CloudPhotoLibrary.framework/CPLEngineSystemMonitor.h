@@ -3,10 +3,10 @@
  */
 
 @interface CPLEngineSystemMonitor : NSObject <CPLEngineComponent, CPLNetworkWatcherDelegate> {
-    CPLEngineLibrary *_engineLibrary;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSURL *_volumeURL;
-    CPLNetworkWatcher *_watcher;
+    CPLEngineLibrary * _engineLibrary;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSURL * _volumeURL;
+    CPLNetworkWatcher * _watcher;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,7 +20,7 @@
 - (id)componentName;
 - (unsigned int)diskPressureState;
 - (id)engineLibrary;
-- (unsigned long long)freeDiskSpaceSize;
+- (unsigned int)freeDiskSpaceSize;
 - (void)getStatusWithCompletionHandler:(id /* block */)arg1;
 - (id)initWithEngineLibrary:(id)arg1;
 - (BOOL)isNetworkConnected;

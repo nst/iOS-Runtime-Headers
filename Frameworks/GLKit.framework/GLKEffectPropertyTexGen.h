@@ -3,16 +3,16 @@
  */
 
 @interface GLKEffectPropertyTexGen : GLKEffectProperty {
-    int _coord;
-    float *_eyePlaneByInvModelview;
-    int _eyePlaneByInvModelviewLoc;
-    int _mode;
-    int _modeLoc;
-    char *_modeNameString;
-    float *_plane;
-    int _planeLoc;
-    char *_planeNameString;
-    unsigned int _textureIndex;
+    int  _coord;
+    double * _eyePlaneByInvModelview;
+    int  _eyePlaneByInvModelviewLoc;
+    int  _mode;
+    int  _modeLoc;
+    char * _modeNameString;
+    double * _plane;
+    int  _planeLoc;
+    char * _planeNameString;
+    unsigned int  _textureIndex;
 }
 
 @property (nonatomic, readonly) int coord;

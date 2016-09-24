@@ -3,7 +3,7 @@
  */
 
 @interface GEOWaypointLocation : PBCodable <NSCopying> {
-    GEOLocation *_location;
+    GEOLocation * _location;
 }
 
 @property (nonatomic, readonly) BOOL hasLocation;

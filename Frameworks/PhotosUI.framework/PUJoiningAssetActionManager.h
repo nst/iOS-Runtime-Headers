@@ -3,8 +3,8 @@
  */
 
 @interface PUJoiningAssetActionManager : PUAssetActionManager {
-    NSMapTable *__actionManagerByClass;
-    PUAssetActionManager *__actionManagerForNoAsset;
+    NSMapTable * __actionManagerByClass;
+    PUAssetActionManager * __actionManagerForNoAsset;
 }
 
 @property (nonatomic, readonly) NSMapTable *_actionManagerByClass;

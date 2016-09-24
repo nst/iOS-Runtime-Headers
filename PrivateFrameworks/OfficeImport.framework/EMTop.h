@@ -3,11 +3,11 @@
  */
 
 @interface EMTop : CMTop <OIProgressiveReaderDelegate> {
-    CMArchiveManager *_archiver;
-    NSString *_inFileName;
-    EMWorkbookMapper *_mapper;
-    EMState *_state;
-    BOOL _xml;
+    CMArchiveManager * _archiver;
+    NSString * _inFileName;
+    EMWorkbookMapper * _mapper;
+    EMState * _state;
+    BOOL  _xml;
 }
 
 + (void)fillHTMLArchiveForExcelData:(id)arg1 fileName:(id)arg2 xmlFlag:(BOOL)arg3 archiver:(id)arg4;

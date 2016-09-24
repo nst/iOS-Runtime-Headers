@@ -3,17 +3,17 @@
  */
 
 @interface SKUIProductPage : NSObject <NSCopying> {
-    int _defaultPageFragment;
-    SKUIProductPageItem *_item;
-    NSData *_itmlData;
-    NSHTTPURLResponse *_itmlResponse;
-    SSMetricsConfiguration *_metricsConfiguration;
-    NSString *_metricsPageDescription;
-    NSURL *_pageURL;
-    SKUIProductPageProductInfo *_productInformation;
-    NSArray *_relatedContentSwooshes;
-    SKUIReviewConfiguration *_reviewConfiguration;
-    SKUIUber *_uber;
+    int  _defaultPageFragment;
+    SKUIProductPageItem * _item;
+    NSData * _itmlData;
+    NSHTTPURLResponse * _itmlResponse;
+    SSMetricsConfiguration * _metricsConfiguration;
+    NSString * _metricsPageDescription;
+    NSURL * _pageURL;
+    SKUIProductPageProductInfo * _productInformation;
+    NSArray * _relatedContentSwooshes;
+    SKUIReviewConfiguration * _reviewConfiguration;
+    SKUIUber * _uber;
 }
 
 @property (nonatomic, retain) NSData *ITMLData;

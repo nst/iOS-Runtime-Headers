@@ -3,7 +3,7 @@
  */
 
 @interface ExFATCameraDevice : ICCameraDevice {
-    void *_exFATCameraProperties;
+    void * _exFATCameraProperties;
 }
 
 - (void)dealloc;

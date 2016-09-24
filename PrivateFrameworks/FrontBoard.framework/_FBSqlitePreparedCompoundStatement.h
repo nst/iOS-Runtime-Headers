@@ -3,8 +3,8 @@
  */
 
 @interface _FBSqlitePreparedCompoundStatement : FBSqlitePreparedStatement {
-    NSArray *_statements;
-    BSZeroingWeakReference *_weak_dbConnection;
+    NSArray * _statements;
+    BSZeroingWeakReference * _weak_dbConnection;
 }
 
 - (void)dealloc;

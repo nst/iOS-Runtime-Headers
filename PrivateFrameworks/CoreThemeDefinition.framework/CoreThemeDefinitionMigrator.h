@@ -3,11 +3,11 @@
  */
 
 @interface CoreThemeDefinitionMigrator : NSObject {
-    NSURL *_documentURL;
-    NSMigrationManager *_migrationManager;
-    int _newVersion;
-    int _oldVersion;
-    NSString *temporaryMigrationPath;
+    NSURL * _documentURL;
+    NSMigrationManager * _migrationManager;
+    int  _newVersion;
+    int  _oldVersion;
+    NSString * temporaryMigrationPath;
 }
 
 @property (copy) NSString *temporaryMigrationPath;

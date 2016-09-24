@@ -3,27 +3,27 @@
  */
 
 @interface YTImageLoader : NSObject {
-    NSLock *_cacheLock;
-    NSMutableDictionary *_imageCache;
-    NSMutableArray *_imageCacheLRU;
-    NSMutableDictionary *_largeThumbnailImageCache;
-    NSMutableArray *_loadQueue;
-    NSTimer *_loadStatusNotificationTimer;
-    struct __CFRunLoop { } *_loaderRunLoop;
-    struct __CFRunLoopSource { } *_loaderSource;
-    NSMutableSet *_loadsInProgress;
-    NSNotificationCenter *_notificationCenter;
-    NSMutableDictionary *_pluginImageCache;
-    NSLock *_queueLock;
-    NSMutableDictionary *_roundedThumbnailImageCache;
+    NSLock * _cacheLock;
+    NSMutableDictionary * _imageCache;
+    NSMutableArray * _imageCacheLRU;
+    NSMutableDictionary * _largeThumbnailImageCache;
+    NSMutableArray * _loadQueue;
+    NSTimer * _loadStatusNotificationTimer;
+    struct __CFRunLoop { } * _loaderRunLoop;
+    struct __CFRunLoopSource { } * _loaderSource;
+    NSMutableSet * _loadsInProgress;
+    NSNotificationCenter * _notificationCenter;
+    NSMutableDictionary * _pluginImageCache;
+    NSLock * _queueLock;
+    NSMutableDictionary * _roundedThumbnailImageCache;
     struct _opaque_pthread_cond_t { 
         long __sig; 
         BOOL __opaque[24]; 
-    } _startupCondition;
+    }  _startupCondition;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _startupLock;
+    }  _startupLock;
 }
 
 + (id)sharedImageLoader;

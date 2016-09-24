@@ -3,8 +3,8 @@
  */
 
 @interface EKUIDividedGridViewWeekView : UIView {
-    NSMutableArray *_buttonViews;
-    NSLayoutConstraint *_heightConstraint;
+    NSMutableArray * _buttonViews;
+    NSLayoutConstraint * _heightConstraint;
 }
 
 @property (retain) NSMutableArray *buttonViews;

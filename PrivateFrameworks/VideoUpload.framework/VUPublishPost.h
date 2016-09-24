@@ -3,8 +3,8 @@
  */
 
 @interface VUPublishPost : NSObject {
-    BOOL _allowsCellularAccessForUploads;
-    <VUPublishPostDelegate> *_delegate;
+    BOOL  _allowsCellularAccessForUploads;
+    <VUPublishPostDelegate> * _delegate;
 }
 
 @property (nonatomic) BOOL allowsCellularAccessForUploads;

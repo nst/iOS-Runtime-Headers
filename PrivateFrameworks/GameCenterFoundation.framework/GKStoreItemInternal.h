@@ -3,21 +3,21 @@
  */
 
 @interface GKStoreItemInternal : GKInternalRepresentation {
-    NSNumber *_adamID;
-    NSString *_artistName;
-    float _averageUserRating;
-    NSDate *_expirationDate;
-    unsigned int _numberOfUserRatings;
-    BOOL _owned;
-    NSString *_priceDisplay;
-    NSURL *_shortViewItemURL;
-    NSURL *_tellAFriendMessageContentsUrl;
-    NSURL *_viewItemURL;
+    NSNumber * _adamID;
+    NSString * _artistName;
+    double  _averageUserRating;
+    NSDate * _expirationDate;
+    unsigned int  _numberOfUserRatings;
+    BOOL  _owned;
+    NSString * _priceDisplay;
+    NSURL * _shortViewItemURL;
+    NSURL * _tellAFriendMessageContentsUrl;
+    NSURL * _viewItemURL;
 }
 
 @property (nonatomic, retain) NSNumber *adamID;
 @property (nonatomic, retain) NSString *artistName;
-@property (nonatomic) float averageUserRating;
+@property (nonatomic) double averageUserRating;
 @property (nonatomic, retain) NSDate *expirationDate;
 @property (nonatomic) unsigned int numberOfUserRatings;
 @property (nonatomic) BOOL owned;

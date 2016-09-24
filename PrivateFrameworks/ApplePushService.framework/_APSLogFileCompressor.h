@@ -3,7 +3,7 @@
  */
 
 @interface _APSLogFileCompressor : NSObject <CUTFileCopierDelegate> {
-    NSMutableArray *_archivers;
+    NSMutableArray * _archivers;
 }
 
 + (id)sharedInstance;

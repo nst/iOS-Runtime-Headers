@@ -3,10 +3,10 @@
  */
 
 @interface CHPhoneNumber : CHLogger {
-    NSString *_ISOCountryCode;
-    BOOL _formatted;
-    NSString *_formattedPhoneNumber;
-    NSString *_originalPhoneNumber;
+    NSString * _ISOCountryCode;
+    BOOL  _formatted;
+    NSString * _formattedPhoneNumber;
+    NSString * _originalPhoneNumber;
 }
 
 @property (copy) NSString *ISOCountryCode;

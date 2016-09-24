@@ -3,7 +3,7 @@
  */
 
 @interface ADAdSpaceRemoteViewController : _UIRemoteViewController {
-    <ADAdSpaceRemoteViewControllerDelegate> *_delegate;
+    <ADAdSpaceRemoteViewControllerDelegate> * _delegate;
 }
 
 @property (nonatomic) <ADAdSpaceRemoteViewControllerDelegate> *delegate;

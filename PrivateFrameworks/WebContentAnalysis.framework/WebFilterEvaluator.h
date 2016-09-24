@@ -3,12 +3,12 @@
  */
 
 @interface WebFilterEvaluator : NSObject <NSSecureCoding, WFPINEntryViewControllerProtocol> {
-    NSMutableData *_buffer;
-    id /* block */ _completion;
-    unsigned int _filterState;
-    NSString *_pageTitle;
-    WFRemotePINEntryViewController *_remoteViewController;
-    NSURL *_url;
+    NSMutableData * _buffer;
+    id /* block */  _completion;
+    unsigned int  _filterState;
+    NSString * _pageTitle;
+    WFRemotePINEntryViewController * _remoteViewController;
+    NSURL * _url;
 }
 
 @property (nonatomic, retain) WFRemotePINEntryViewController *remoteViewController;

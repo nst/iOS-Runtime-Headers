@@ -3,7 +3,7 @@
  */
 
 @interface HSAuthorizedDSIDsUpdatesResponse : HSResponse {
-    NSArray *authorizedDSIDs;
+    NSArray * authorizedDSIDs;
 }
 
 @property (nonatomic, copy) NSArray *authorizedDSIDs;

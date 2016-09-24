@@ -3,9 +3,9 @@
  */
 
 @interface HKActivitySummaryQuery : HKQuery {
-    id /* block */ _completionHandler;
-    BOOL _initialHandlerCalled;
-    id /* block */ _updateHandler;
+    id /* block */  _completionHandler;
+    BOOL  _initialHandlerCalled;
+    id /* block */  _updateHandler;
 }
 
 @property (nonatomic, copy) id /* block */ updateHandler;

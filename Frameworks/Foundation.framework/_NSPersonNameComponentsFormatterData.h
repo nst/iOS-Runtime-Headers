@@ -3,12 +3,13 @@
  */
 
 @interface _NSPersonNameComponentsFormatterData : NSObject <NSCopying, NSSecureCoding> {
-    BOOL _forceFamilyNameFirst;
-    BOOL _forceGivenNameFirst;
-    BOOL _ignoresFallbacks;
-    NSLocale *_locale;
-    BOOL _phonetic;
-    int _style;
+    BOOL  _forceFamilyNameFirst;
+    BOOL  _forceGivenNameFirst;
+    BOOL  _ignoresFallbacks;
+    NSLocale * _locale;
+    NPNameParser * _nameParser;
+    BOOL  _phonetic;
+    int  _style;
 }
 
 @property BOOL forceFamilyNameFirst;

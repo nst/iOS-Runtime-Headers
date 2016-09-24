@@ -3,16 +3,16 @@
  */
 
 @interface AWDIMessageAttachmentDownload : PBCodable <NSCopying> {
-    unsigned int _attachmentSize;
-    unsigned int _connectionType;
-    unsigned int _downloadDuration;
-    int _firstLevelMMCSError;
-    NSString *_firstLevelMMCSErrorDomain;
-    int _fourthLevelMMCSError;
-    NSString *_fourthLevelMMCSErrorDomain;
-    int _fzError;
-    int _genericError;
-    NSString *_guid;
+    unsigned int  _attachmentSize;
+    unsigned int  _connectionType;
+    unsigned int  _downloadDuration;
+    int  _firstLevelMMCSError;
+    NSString * _firstLevelMMCSErrorDomain;
+    int  _fourthLevelMMCSError;
+    NSString * _fourthLevelMMCSErrorDomain;
+    int  _fzError;
+    int  _genericError;
+    NSString * _guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int attachmentSize : 1; 
@@ -27,15 +27,15 @@
         unsigned int secondLevelMMCSError : 1; 
         unsigned int thirdLevelMMCSError : 1; 
         unsigned int tokenError : 1; 
-    } _has;
-    int _linkQuality;
-    unsigned int _messageError;
-    int _secondLevelMMCSError;
-    NSString *_secondLevelMMCSErrorDomain;
-    int _thirdLevelMMCSError;
-    NSString *_thirdLevelMMCSErrorDomain;
-    unsigned long long _timestamp;
-    unsigned int _tokenError;
+    }  _has;
+    int  _linkQuality;
+    unsigned int  _messageError;
+    int  _secondLevelMMCSError;
+    NSString * _secondLevelMMCSErrorDomain;
+    int  _thirdLevelMMCSError;
+    NSString * _thirdLevelMMCSErrorDomain;
+    unsigned long long  _timestamp;
+    unsigned int  _tokenError;
 }
 
 @property (nonatomic) unsigned int attachmentSize;

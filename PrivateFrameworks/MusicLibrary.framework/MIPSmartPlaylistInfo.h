@@ -3,11 +3,11 @@
  */
 
 @interface MIPSmartPlaylistInfo : PBCodable <NSCopying> {
-    BOOL _dynamic;
-    BOOL _enabledItemsOnly;
-    unsigned int _evaluationOrder;
-    BOOL _filtered;
-    BOOL _genius;
+    BOOL  _dynamic;
+    BOOL  _enabledItemsOnly;
+    unsigned int  _evaluationOrder;
+    BOOL  _filtered;
+    BOOL  _genius;
     struct { 
         unsigned int evaluationOrder : 1; 
         unsigned int limitKind : 1; 
@@ -19,13 +19,13 @@
         unsigned int genius : 1; 
         unsigned int limited : 1; 
         unsigned int reverseLimitOrder : 1; 
-    } _has;
-    int _limitKind;
-    unsigned int _limitOrder;
-    unsigned int _limitValue;
-    BOOL _limited;
-    BOOL _reverseLimitOrder;
-    NSData *_smartCriteria;
+    }  _has;
+    int  _limitKind;
+    unsigned int  _limitOrder;
+    unsigned int  _limitValue;
+    BOOL  _limited;
+    BOOL  _reverseLimitOrder;
+    NSData * _smartCriteria;
 }
 
 @property (nonatomic) BOOL dynamic;

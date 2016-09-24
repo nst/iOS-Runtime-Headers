@@ -3,12 +3,12 @@
  */
 
 @interface MCConfigurationProfile : MCProfile {
-    MCProfileServiceProfile *_OTAProfile;
-    BOOL _isCloudLocked;
-    BOOL _isCloudProfile;
-    BOOL _isMDMProfile;
-    NSArray *_managedPayloads;
-    NSArray *_payloads;
+    MCProfileServiceProfile * _OTAProfile;
+    BOOL  _isCloudLocked;
+    BOOL  _isCloudProfile;
+    BOOL  _isMDMProfile;
+    NSArray * _managedPayloads;
+    NSArray * _payloads;
 }
 
 @property (nonatomic, retain) MCProfileServiceProfile *OTAProfile;

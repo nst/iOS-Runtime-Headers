@@ -3,8 +3,8 @@
  */
 
 @interface VUDataReader : NSObject {
-    NSURL *_URL;
-    NSFileHandle *_readHandle;
+    NSURL * _URL;
+    NSFileHandle * _readHandle;
 }
 
 @property (nonatomic, retain) NSURL *URL;

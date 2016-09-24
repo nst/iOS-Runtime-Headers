@@ -3,12 +3,12 @@
  */
 
 @interface FBSceneLayer : NSObject <BSDescriptionProviding> {
-    int _alignment;
-    unsigned int _contextID;
-    NSString *_externalSceneID;
-    float _level;
-    unsigned int _sceneID;
-    int _type;
+    int  _alignment;
+    unsigned int  _contextID;
+    NSString * _externalSceneID;
+    double  _level;
+    unsigned int  _sceneID;
+    int  _type;
 }
 
 @property (nonatomic) int alignment;
@@ -18,7 +18,7 @@
 @property (nonatomic, copy) NSString *externalSceneID;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) unsigned int identifier;
-@property (nonatomic) float level;
+@property (nonatomic) double level;
 @property (nonatomic) unsigned int sceneID;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) int type;

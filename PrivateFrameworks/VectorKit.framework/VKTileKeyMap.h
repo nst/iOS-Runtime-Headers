@@ -3,8 +3,8 @@
  */
 
 @interface VKTileKeyMap : NSObject {
-    void *_map;
-    int _type;
+    void * _map;
+    int  _type;
 }
 
 - (id)contentsDescription;

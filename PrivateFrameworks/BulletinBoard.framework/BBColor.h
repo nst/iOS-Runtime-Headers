@@ -2,21 +2,17 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@interface BBColor : NSObject <BBUniquableObject, NSCopying, NSSecureCoding> {
-    float _alpha;
-    float _blue;
-    float _green;
-    float _red;
+@interface BBColor : NSObject <NSCopying, NSSecureCoding> {
+    double  _alpha;
+    double  _blue;
+    double  _green;
+    double  _red;
 }
 
-@property (nonatomic, readonly) float alpha;
-@property (nonatomic, readonly) float blue;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) float green;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) float red;
-@property (readonly) Class superclass;
+@property (nonatomic, readonly) double alpha;
+@property (nonatomic, readonly) double blue;
+@property (nonatomic, readonly) double green;
+@property (nonatomic, readonly) double red;
 @property (nonatomic, readonly, copy) UIColor *uiColor;
 
 // Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
@@ -26,16 +22,16 @@
 
 - (id)_initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 - (float)alpha;
+- (id)awakeAfterUsingCoder:(id)arg1;
 - (float)blue;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (float)green;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (float)red;
-- (id)uniqueIdentifier;
+- (id)replacementObjectForCoder:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
 

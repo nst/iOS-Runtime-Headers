@@ -11,9 +11,10 @@
 + (id)allAggregateKeysForEntryKey:(id)arg1;
 + (id)allAggregatePrimaryKeysForEntryDefinition:(id)arg1;
 + (id)allAggregatePrimaryKeysForEntryKey:(id)arg1;
-+ (id)allCoveringIndexesForEntryDefinition:(id)arg1;
 + (id)allDynamicKeysForEntryDefinition:(id)arg1;
 + (id)allDynamicKeysForEntryKey:(id)arg1;
++ (id)allIndexKeysForEntryDefinition:(id)arg1;
++ (id)allIndexKeysForEntryKey:(id)arg1;
 + (id)allKeysForEntryDefinition:(id)arg1;
 + (id)allKeysForEntryKey:(id)arg1;
 + (id)arrayKeysForEntryDefinition:(id)arg1;

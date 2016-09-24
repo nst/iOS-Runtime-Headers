@@ -5,19 +5,21 @@
 
 @required
 
-- (unsigned long long)doneSize;
+- (unsigned int)doneSize;
 - (NSString *)etag;
 - (BRCItemID *)itemID;
 - (BRCProgress *)progress;
+- (BOOL)progressPublished;
 - (CKRecord *)record;
 - (CKRecordID *)recordID;
 - (CKRecord *)secondaryRecord;
 - (CKRecordID *)secondaryRecordID;
-- (void)setDoneSize:(unsigned long long)arg1;
+- (void)setDoneSize:(unsigned int)arg1;
+- (void)setProgressPublished:(BOOL)arg1;
 - (void)setRecord:(CKRecord *)arg1;
 - (void)setSecondaryRecord:(CKRecord *)arg1;
 - (NSString *)stageID;
-- (unsigned long long)totalSize;
+- (unsigned int)totalSize;
 - (NSNumber *)transferID;
 
 @end

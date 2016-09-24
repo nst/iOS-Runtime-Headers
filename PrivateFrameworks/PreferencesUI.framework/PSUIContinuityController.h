@@ -2,11 +2,8 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUIContinuityController : PSListController {
-    SuggestedAppsController *_suggestedAppsController;
-}
+@interface PSUIContinuityController : PSListController
 
-- (void).cxx_destruct;
 - (id)init;
 - (id)isContinuityEnabled:(id)arg1;
 - (BOOL)isContinuityRestricted;

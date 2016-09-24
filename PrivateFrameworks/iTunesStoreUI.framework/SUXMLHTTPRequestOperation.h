@@ -3,8 +3,8 @@
  */
 
 @interface SUXMLHTTPRequestOperation : ISOperation {
-    id /* block */ _outputBlock;
-    SSURLRequestProperties *_requestProperties;
+    id /* block */  _outputBlock;
+    SSURLRequestProperties * _requestProperties;
 }
 
 @property (copy) id /* block */ outputBlock;

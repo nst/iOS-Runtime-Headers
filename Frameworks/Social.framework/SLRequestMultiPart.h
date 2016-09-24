@@ -3,12 +3,12 @@
  */
 
 @interface SLRequestMultiPart : NSObject {
-    NSString *_filename;
-    NSString *_multiPartBoundary;
-    NSString *_name;
-    NSData *_payload;
-    NSString *_type;
-    NSString *_uniqueIdentifier;
+    NSString * _filename;
+    NSString * _multiPartBoundary;
+    NSString * _name;
+    NSData * _payload;
+    NSString * _type;
+    NSString * _uniqueIdentifier;
 }
 
 @property (nonatomic, copy) NSString *filename;

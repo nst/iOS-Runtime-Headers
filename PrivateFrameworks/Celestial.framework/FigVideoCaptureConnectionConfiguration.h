@@ -3,13 +3,13 @@
  */
 
 @interface FigVideoCaptureConnectionConfiguration : FigCaptureConnectionConfiguration {
-    BOOL _mirroringEnabled;
-    int _orientation;
-    int _outputFormat;
-    int _outputHeight;
-    int _outputWidth;
-    int _retainedBufferCount;
-    int _videoStabilizationMethod;
+    BOOL  _mirroringEnabled;
+    int  _orientation;
+    int  _outputFormat;
+    int  _outputHeight;
+    int  _outputWidth;
+    int  _retainedBufferCount;
+    int  _videoStabilizationMethod;
 }
 
 @property (nonatomic) BOOL mirroringEnabled;

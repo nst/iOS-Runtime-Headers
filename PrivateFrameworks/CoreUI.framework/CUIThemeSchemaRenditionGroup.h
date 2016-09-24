@@ -3,9 +3,9 @@
  */
 
 @interface CUIThemeSchemaRenditionGroup : NSObject {
-    CUIRenditionKey *_baseKey;
-    struct { char *x1; char *x2; struct _renditionkeytoken { unsigned short x_3_1_1; unsigned short x_3_1_2; } x3[5]; int x4; int x5; struct { char *x_6_1_1; char *x_6_1_2; int x_6_1_3; unsigned int x_6_1_4; } x6[12]; } *_part;
-    NSArray *_renditions;
+    CUIRenditionKey * _baseKey;
+    struct { char *x1; char *x2; struct _renditionkeytoken { unsigned short x_3_1_1; unsigned short x_3_1_2; } x3[5]; int x4; int x5; struct { char *x_6_1_1; char *x_6_1_2; int x_6_1_3; unsigned int x_6_1_4; } x6[12]; } * _part;
+    NSArray * _renditions;
 }
 
 @property (nonatomic, retain) NSArray *renditions;

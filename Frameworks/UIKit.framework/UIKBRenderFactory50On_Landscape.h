@@ -7,6 +7,7 @@
 - (float)deleteKeyFontSize;
 - (float)keyCornerRadius;
 - (float)keyplaneSwitchKeyFontSize;
+- (id)messagesWriteboardKeyImageName;
 - (float)returnKeyFontSize;
 - (float)spaceKeyFontSize;
 

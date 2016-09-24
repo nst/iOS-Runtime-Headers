@@ -3,8 +3,8 @@
  */
 
 @interface _HKWorkoutGoalTypeFilter : _HKFilter {
-    unsigned int _goalType;
-    unsigned int _operatorType;
+    unsigned int  _goalType;
+    unsigned int  _operatorType;
 }
 
 @property (nonatomic, readonly) unsigned int goalType;
@@ -26,6 +26,6 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
-- (id)predicateWithHealthDaemon:(id)arg1;
+- (id)predicateWithProfile:(id)arg1;
 
 @end

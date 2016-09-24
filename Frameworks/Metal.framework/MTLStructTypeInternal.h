@@ -3,8 +3,8 @@
  */
 
 @interface MTLStructTypeInternal : MTLStructType {
-    NSDictionary *_dictionary;
-    NSArray *_members;
+    NSDictionary * _dictionary;
+    NSArray * _members;
 }
 
 - (void)dealloc;

@@ -7,6 +7,7 @@
 
 - (void)annotateForm:(NSNumber *)arg1 inFrame:(WBUFormAutoFillFrameHandle *)arg2 withValues:(NSDictionary *)arg3;
 - (void)autoFillForm:(NSNumber *)arg1 inFrame:(WBUFormAutoFillFrameHandle *)arg2 withGeneratedPassword:(NSString *)arg3;
+- (void)autoFillFormAsynchronouslyInFrame:(WBUFormAutoFillFrameHandle *)arg1 withValues:(NSDictionary *)arg2 setAutoFilled:(BOOL)arg3 focusFieldAfterFilling:(BOOL)arg4 fieldToFocus:(NSString *)arg5;
 - (void)autoFillFormAsynchronouslyInFrame:(WBUFormAutoFillFrameHandle *)arg1 withValues:(NSDictionary *)arg2 setAutoFilled:(BOOL)arg3 selectFieldAfterFilling:(NSString *)arg4;
 - (void)autoFillFormSynchronouslyInFrame:(WBUFormAutoFillFrameHandle *)arg1 withValues:(NSDictionary *)arg2;
 - (void)clearAutoFillMetadata;

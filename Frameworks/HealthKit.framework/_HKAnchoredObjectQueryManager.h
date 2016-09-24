@@ -3,10 +3,10 @@
  */
 
 @interface _HKAnchoredObjectQueryManager : NSObject {
-    HKHealthStore *_healthStore;
-    NSMutableDictionary *_observersByType;
-    NSMutableDictionary *_outstandingQueriesByType;
-    NSMutableDictionary *_queryStatesByType;
+    HKHealthStore * _healthStore;
+    NSMutableDictionary * _observersByType;
+    NSMutableDictionary * _outstandingQueriesByType;
+    NSMutableDictionary * _queryStatesByType;
 }
 
 - (void).cxx_destruct;

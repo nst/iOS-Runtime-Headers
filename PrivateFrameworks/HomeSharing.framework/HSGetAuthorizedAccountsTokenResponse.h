@@ -3,7 +3,7 @@
  */
 
 @interface HSGetAuthorizedAccountsTokenResponse : HSResponse {
-    NSData *tokenData;
+    NSData * tokenData;
 }
 
 @property (nonatomic, copy) NSData *tokenData;

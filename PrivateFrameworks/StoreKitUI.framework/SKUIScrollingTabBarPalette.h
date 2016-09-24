@@ -3,19 +3,19 @@
  */
 
 @interface SKUIScrollingTabBarPalette : UIView {
-    BOOL _attached;
-    SKUIScrollingTabBarBackgroundView *_backgroundView;
-    UIView *_contentView;
-    <SKUIScrollingTabBarPaletteDelegate> *_delegate;
-    float _paletteHeight;
-    BOOL _tabBarBackgroundExtendsBehindPalette;
+    BOOL  _attached;
+    SKUIScrollingTabBarBackgroundView * _backgroundView;
+    UIView * _contentView;
+    <SKUIScrollingTabBarPaletteDelegate> * _delegate;
+    double  _paletteHeight;
+    BOOL  _tabBarBackgroundExtendsBehindPalette;
 }
 
-@property (getter=isAttached, nonatomic) BOOL attached;
+@property (getter=isAttached, setter=_setAttached:, nonatomic) BOOL attached;
 @property (getter=_backgroundView, nonatomic, readonly) SKUIScrollingTabBarBackgroundView *backgroundView;
 @property (nonatomic, readonly) UIView *contentView;
 @property (getter=_delegate, setter=_setDelegate:, nonatomic) <SKUIScrollingTabBarPaletteDelegate> *delegate;
-@property (nonatomic, readonly) float paletteHeight;
+@property (nonatomic, readonly) double paletteHeight;
 @property (nonatomic) BOOL tabBarBackgroundExtendsBehindPalette;
 
 - (void).cxx_destruct;
@@ -24,7 +24,7 @@
 - (void)_setAttached:(BOOL)arg1;
 - (void)_setDelegate:(id)arg1;
 - (id)contentView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isAttached;
 - (void)layoutSubviews;
 - (float)paletteHeight;

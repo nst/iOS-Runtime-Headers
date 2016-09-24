@@ -3,10 +3,10 @@
  */
 
 @interface SKUIIndexBarEntryListViewElement : SKUIViewElement {
-    int _entryListElementType;
-    BOOL _indexBarHiddenWhenEmpty;
-    int _minimumEntityCount;
-    NSString *_targetIndexBarEntryID;
+    int  _entryListElementType;
+    BOOL  _indexBarHiddenWhenEmpty;
+    int  _minimumEntityCount;
+    NSString * _targetIndexBarEntryID;
 }
 
 @property (nonatomic, readonly, copy) NSArray *childIndexBarEntryElements;

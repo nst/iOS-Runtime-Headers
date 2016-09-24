@@ -3,7 +3,7 @@
  */
 
 @interface GEOPhoneNumberResolverRemoteProxy : NSObject <GEOPhoneNumberResolving> {
-    NSObject<OS_dispatch_queue> *_workQueue;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

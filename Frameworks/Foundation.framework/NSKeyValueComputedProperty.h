@@ -3,9 +3,9 @@
  */
 
 @interface NSKeyValueComputedProperty : NSKeyValueProperty {
-    NSString *_operationArgumentKeyPath;
-    NSKeyValueProperty *_operationArgumentProperty;
-    NSString *_operationName;
+    NSString * _operationArgumentKeyPath;
+    NSKeyValueProperty * _operationArgumentProperty;
+    NSString * _operationName;
 }
 
 - (void)_addDependentValueKey:(id)arg1;

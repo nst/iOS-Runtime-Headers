@@ -3,8 +3,8 @@
  */
 
 @interface OADDashStop : NSObject <NSCopying> {
-    float mDash;
-    float mSpace;
+    double  mDash;
+    double  mSpace;
 }
 
 + (void)addStopWithDash:(float)arg1 space:(float)arg2 toArray:(id)arg3;

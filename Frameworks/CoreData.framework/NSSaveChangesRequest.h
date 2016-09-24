@@ -3,12 +3,12 @@
  */
 
 @interface NSSaveChangesRequest : NSPersistentStoreRequest {
-    NSSet *_deletedObjects;
-    unsigned long _flags;
-    NSSet *_insertedObjects;
-    NSSet *_optimisticallyLockedObjects;
-    void *_reserved1;
-    NSSet *_updatedObjects;
+    NSSet * _deletedObjects;
+    unsigned long  _flags;
+    NSSet * _insertedObjects;
+    NSSet * _optimisticallyLockedObjects;
+    void * _reserved1;
+    NSSet * _updatedObjects;
 }
 
 @property (readonly) NSSet *deletedObjects;

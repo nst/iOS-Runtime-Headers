@@ -3,11 +3,12 @@
  */
 
 @interface BKSHIDEventRouterManagerBase : NSObject {
-    NSArray *_eventRouters;
+    NSArray * _eventRouters;
 }
 
 @property (nonatomic, retain) NSArray *eventRouters;
 
+- (void)dealloc;
 - (id)description;
 - (id)eventRouters;
 - (id)init;

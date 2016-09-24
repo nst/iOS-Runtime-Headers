@@ -3,12 +3,12 @@
  */
 
 @interface AAUIExplainAppleIDViewController : UIViewController {
-    UIView *_contentView;
-    UILabel *_descriptionLabel;
-    UIButton *_goToSettingsButton;
-    UIScrollView *_scrollView;
-    BOOL _shouldShowInviteeInstructions;
-    UILabel *_titleLabel;
+    UIView * _contentView;
+    UILabel * _descriptionLabel;
+    UIButton * _goToSettingsButton;
+    UIScrollView * _scrollView;
+    BOOL  _shouldShowInviteeInstructions;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic) BOOL shouldShowInviteeInstructions;

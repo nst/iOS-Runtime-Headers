@@ -3,9 +3,9 @@
  */
 
 @interface AFSpeakableUtteranceParser : NSObject {
-    id _functionHandler;
-    NSLocale *_locale;
-    NSMutableDictionary *_providers;
+    id  _functionHandler;
+    NSLocale * _locale;
+    NSMutableDictionary * _providers;
 }
 
 @property (nonatomic) BOOL handleTTSCodes;

@@ -3,11 +3,11 @@
  */
 
 @interface CalDAVModifySharedCalendarShareeListTaskGroup : CoreDAVTaskGroup <CoreDAVPostTaskDelegate> {
-    NSURL *_calendarURL;
-    NSMutableSet *_invalidSharees;
-    NSSet *_shareesToRemove;
-    NSSet *_shareesToSet;
-    NSString *_summary;
+    NSURL * _calendarURL;
+    NSMutableSet * _invalidSharees;
+    NSSet * _shareesToRemove;
+    NSSet * _shareesToSet;
+    NSString * _summary;
 }
 
 @property (nonatomic, retain) NSURL *calendarURL;

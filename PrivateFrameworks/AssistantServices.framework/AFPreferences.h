@@ -3,12 +3,12 @@
  */
 
 @interface AFPreferences : NSObject {
-    int _navToken;
-    BOOL _navTokenIsValid;
-    NSObject<OS_dispatch_queue> *_navTokenQueue;
-    BOOL _registeredForInternalPrefs;
-    BOOL _registeredForLanguageCode;
-    BOOL _registeredForOutputVoice;
+    int  _navToken;
+    BOOL  _navTokenIsValid;
+    NSObject<OS_dispatch_queue> * _navTokenQueue;
+    BOOL  _registeredForInternalPrefs;
+    BOOL  _registeredForLanguageCode;
+    BOOL  _registeredForOutputVoice;
 }
 
 + (id)sharedPreferences;
@@ -19,7 +19,6 @@
 - (void)_internalPreferencesDidChangeExternally;
 - (void)_languageCodeDidChangeExternally;
 - (id)_mappedLanguageCodeArrayFor:(id)arg1;
-- (id)_originalOrReplacementLanguageCodeFor:(id)arg1;
 - (void)_ouputVoiceDidChangeExternally;
 - (void)_preferencesDidChangeExternally;
 - (void)_registerForInteralPrefs;
@@ -29,6 +28,10 @@
 - (void)_setAssistantIsEnabledLocal:(BOOL)arg1;
 - (void)_setDictationIsEnabledLocal:(BOOL)arg1;
 - (void)_setLoggingDefaultValue:(id)arg1 forKey:(id)arg2;
+- (void)_setSiriAccess:(BOOL)arg1 forAppID:(id)arg2;
+- (void)_setSuppressDictationOptInLocal:(BOOL)arg1;
+- (BOOL)_siriAccessForAppID:(id)arg1;
+- (id)_siriDisabledAppIDs;
 - (BOOL)assistantIsEnabled;
 - (BOOL)assistantLanguageForceRTL;
 - (id)bestSupportedLanguageCodeForLanguageCode:(id)arg1;
@@ -45,8 +48,11 @@
 - (BOOL)isCurrentLocaleNativelySupported;
 - (BOOL)isLocaleIdentifierNativelySupported:(id)arg1;
 - (id)languageCode;
+- (BOOL)legacyLoggingEnabled;
 - (id)manualEndpointingThreshold;
+- (BOOL)myriadCoordinationEnabled;
 - (BOOL)offlineDictationOverride;
+- (id)offlineDictationProfileOverridePath;
 - (id)outputVoice;
 - (void)resetSessionLanguage;
 - (BOOL)respectsSystemMute;
@@ -61,16 +67,22 @@
 - (void)setIgnoreServerManualEndpointingThreshold:(BOOL)arg1;
 - (void)setLanguageCode:(id)arg1;
 - (void)setManualEndpointingThreshold:(id)arg1;
+- (void)setMyriadCoordinationEnabled:(BOOL)arg1;
 - (void)setOfflineDictationOverride:(BOOL)arg1;
+- (void)setOfflineDictationProfileOverridePath:(id)arg1;
 - (void)setOutputVoice:(id)arg1;
 - (void)setRespectsSystemMute:(BOOL)arg1;
 - (void)setShowsHoldToTalkIndicator:(BOOL)arg1;
+- (void)setSiriDebugUIEnabled:(BOOL)arg1;
 - (void)setStreamingDictationEnabled:(BOOL)arg1;
+- (void)setSuppressAssistantOptIn:(BOOL)arg1;
 - (void)setSuppressDictationOptIn:(BOOL)arg1;
 - (void)setUseDeviceSpeakerForTTS:(int)arg1;
 - (void)setValue:(id)arg1 forSessionContextKey:(id)arg2;
 - (BOOL)showsHoldToTalkIndicator;
+- (BOOL)siriDebugUIEnabled;
 - (BOOL)streamingDictationEnabled;
+- (BOOL)suppressAssistantOptIn;
 - (BOOL)suppressDictationOptIn;
 - (void)synchronize;
 - (void)synchronizeVoiceServicesLanguageCode;

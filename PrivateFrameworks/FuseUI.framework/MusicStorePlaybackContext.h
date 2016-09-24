@@ -3,9 +3,9 @@
  */
 
 @interface MusicStorePlaybackContext : MPPlaybackContext {
-    MusicClientContext *_clientContext;
-    MusicEntityValueContext *_containerEntityValueContext;
-    NSArray *_items;
+    MusicClientContext * _clientContext;
+    MusicEntityValueContext * _containerEntityValueContext;
+    NSArray * _items;
 }
 
 @property (nonatomic, retain) MusicClientContext *clientContext;

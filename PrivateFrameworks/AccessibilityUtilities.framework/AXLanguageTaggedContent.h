@@ -6,15 +6,15 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _currentChunk;
-    NSArray *_currentDialects;
-    NSLinguisticTagger *_linguisticTagger;
-    BOOL _predictedByTagger;
-    BOOL _splitContentOnNewlines;
-    BOOL _tagged;
-    NSMutableArray *_tags;
-    NSMutableOrderedSet *_unpredictedAmbiguousLangMaps;
-    NSString *_userPreferredLangID;
+    }  _currentChunk;
+    NSArray * _currentDialects;
+    NSLinguisticTagger * _linguisticTagger;
+    BOOL  _predictedByTagger;
+    BOOL  _splitContentOnNewlines;
+    BOOL  _tagged;
+    NSMutableArray * _tags;
+    NSMutableOrderedSet * _unpredictedAmbiguousLangMaps;
+    NSString * _userPreferredLangID;
 }
 
 @property (nonatomic, readonly) NSString *content;

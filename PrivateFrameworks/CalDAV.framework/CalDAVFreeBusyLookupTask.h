@@ -3,7 +3,7 @@
  */
 
 @interface CalDAVFreeBusyLookupTask : CalDAVScheduleTask {
-    NSString *_maskedUID;
+    NSString * _maskedUID;
 }
 
 @property (nonatomic, retain) NSString *maskedUID;

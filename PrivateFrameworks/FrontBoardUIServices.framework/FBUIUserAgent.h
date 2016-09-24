@@ -3,7 +3,7 @@
  */
 
 @interface FBUIUserAgent : NSObject <FBUIUserAgentInternal> {
-    BOOL _systemApp;
+    BOOL  _systemApp;
 }
 
 @property (readonly, copy) NSString *debugDescription;

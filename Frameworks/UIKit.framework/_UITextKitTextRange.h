@@ -3,8 +3,8 @@
  */
 
 @interface _UITextKitTextRange : UITextRange <NSCopying> {
-    _UITextKitTextPosition *_end;
-    _UITextKitTextPosition *_start;
+    _UITextKitTextPosition * _end;
+    _UITextKitTextPosition * _start;
 }
 
 @property (nonatomic, readonly) int affinity;

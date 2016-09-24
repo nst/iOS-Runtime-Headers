@@ -3,17 +3,17 @@
  */
 
 @interface MSVWatchdog : NSObject {
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    double _interval;
-    NSString *_mode;
-    NSOperationQueue *_operationQueue;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSRunLoop *_runLoop;
-    BOOL _running;
-    BOOL _scheduled;
-    id /* block */ _timeoutCallback;
-    double _timeoutInterval;
-    NSObject<OS_dispatch_source> *_timer;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    double  _interval;
+    NSString * _mode;
+    NSOperationQueue * _operationQueue;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSRunLoop * _runLoop;
+    BOOL  _running;
+    BOOL  _scheduled;
+    id /* block */  _timeoutCallback;
+    double  _timeoutInterval;
+    NSObject<OS_dispatch_source> * _timer;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;

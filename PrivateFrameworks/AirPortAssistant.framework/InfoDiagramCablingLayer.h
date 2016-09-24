@@ -3,16 +3,16 @@
  */
 
 @interface InfoDiagramCablingLayer : CALayer {
-    CAShapeLayer *broadbandToWANInnerLineLayer;
-    CAShapeLayer *broadbandToWANOuterLineLayer;
-    <InfoDiagramCablingAnchorDelegate> *diagramAnchorPointDelegate;
-    CAGradientLayer *internetGradientLayer;
-    CAShapeLayer *internetInnerLineLayer;
-    CAShapeLayer *internetOuterLineLayer;
-    BOOL isCompactWidth;
-    CAShapeLayer *swapArcArrowLayer;
-    CAShapeLayer *swapArcLineLayer;
-    BOOL swapCabling;
+    CAShapeLayer * broadbandToWANInnerLineLayer;
+    CAShapeLayer * broadbandToWANOuterLineLayer;
+    <InfoDiagramCablingAnchorDelegate> * diagramAnchorPointDelegate;
+    CAGradientLayer * internetGradientLayer;
+    CAShapeLayer * internetInnerLineLayer;
+    CAShapeLayer * internetOuterLineLayer;
+    BOOL  isCompactWidth;
+    CAShapeLayer * swapArcArrowLayer;
+    CAShapeLayer * swapArcLineLayer;
+    BOOL  swapCabling;
 }
 
 @property (nonatomic, retain) CAShapeLayer *broadbandToWANInnerLineLayer;

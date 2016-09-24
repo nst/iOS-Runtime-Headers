@@ -3,9 +3,9 @@
  */
 
 @interface SSVPlaybackLeaseCallback : NSObject {
-    id /* block */ _block;
-    NSError *_error;
-    SSVPlaybackLeaseResponse *_response;
+    id /* block */  _block;
+    NSError * _error;
+    SSVPlaybackLeaseResponse * _response;
 }
 
 @property (nonatomic, copy) id /* block */ block;

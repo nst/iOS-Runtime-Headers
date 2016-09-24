@@ -3,15 +3,15 @@
  */
 
 @interface CMKTimelapseController : NSObject <CMKStillImageCaptureRequestDelegate, UIAlertViewDelegate> {
-    BOOL __backendRecoveryNeeded;
-    NSObject<OS_dispatch_source> *__captureTimer;
-    CMKLowDiskSpaceAlertView *__diskSpaceAlert;
-    BOOL __ignoringTimerCallbacksForTearDown;
-    BOOL __ignoringTimerCallbacksWaitingForCaptureResponse;
-    NSCountedSet *__inFlightTimelapseUUIDs;
-    NSMutableSet *__pendingCompletedStates;
-    BOOL __previewStarted;
-    CMKTimelapseState *__state;
+    BOOL  __backendRecoveryNeeded;
+    NSObject<OS_dispatch_source> * __captureTimer;
+    CMKLowDiskSpaceAlertView * __diskSpaceAlert;
+    BOOL  __ignoringTimerCallbacksForTearDown;
+    BOOL  __ignoringTimerCallbacksWaitingForCaptureResponse;
+    NSCountedSet * __inFlightTimelapseUUIDs;
+    NSMutableSet * __pendingCompletedStates;
+    BOOL  __previewStarted;
+    CMKTimelapseState * __state;
 }
 
 @property (setter=_setBackendRecoveryNeeded:, nonatomic) BOOL _backendRecoveryNeeded;
@@ -52,7 +52,7 @@
 - (void)_notifyAGGDForDidStartCapturingWithState:(id)arg1;
 - (void)_notifyAGGDForDidStopCapturingWithState:(id)arg1;
 - (void)_notifyInsufficientDiskSpaceForContinuingCapture;
-- (void)_notifyInsufficientDiskSpaceForStartingCaptureWithNeededBytes:(long long)arg1 availableBytes:(long long)arg2;
+- (void)_notifyInsufficientDiskSpaceForStartingCaptureWithNeededBytes:(int)arg1 availableBytes:(int)arg2;
 - (id)_pendingCompletedStates;
 - (void)_prepareForTimelapseCapture;
 - (BOOL)_previewStarted;

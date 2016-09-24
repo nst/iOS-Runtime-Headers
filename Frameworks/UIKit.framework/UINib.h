@@ -3,7 +3,7 @@
  */
 
 @interface UINib : NSObject {
-    id storage;
+    id  storage;
 }
 
 + (id)nibWithData:(id)arg1 bundle:(id)arg2;

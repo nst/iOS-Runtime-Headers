@@ -3,9 +3,9 @@
  */
 
 @interface AAUIFamilyDetailsCache : NSObject {
-    BOOL _isValid;
-    BOOL _isValidating;
-    unsigned int _pendingInviteCount;
+    BOOL  _isValid;
+    BOOL  _isValidating;
+    unsigned int  _pendingInviteCount;
 }
 
 @property (nonatomic, readonly) unsigned int pendingInviteCount;

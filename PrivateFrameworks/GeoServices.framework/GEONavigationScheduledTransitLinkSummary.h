@@ -7,12 +7,12 @@
         unsigned int lineID : 1; 
         unsigned int scheduledArrival : 1; 
         unsigned int scheduledDeparture : 1; 
-    } _has;
-    unsigned long long _lineID;
-    double _scheduledArrival;
-    double _scheduledDeparture;
-    GEONavigationTransitStopSummary *_stopFrom;
-    GEONavigationTransitStopSummary *_stopTo;
+    }  _has;
+    unsigned int  _lineID;
+    double  _scheduledArrival;
+    double  _scheduledDeparture;
+    GEONavigationTransitStopSummary * _stopFrom;
+    GEONavigationTransitStopSummary * _stopTo;
 }
 
 @property (nonatomic) BOOL hasLineID;
@@ -20,7 +20,7 @@
 @property (nonatomic) BOOL hasScheduledDeparture;
 @property (nonatomic, readonly) BOOL hasStopFrom;
 @property (nonatomic, readonly) BOOL hasStopTo;
-@property (nonatomic) unsigned long long lineID;
+@property (nonatomic) unsigned int lineID;
 @property (nonatomic) double scheduledArrival;
 @property (nonatomic) double scheduledDeparture;
 @property (nonatomic, retain) GEONavigationTransitStopSummary *stopFrom;
@@ -39,7 +39,7 @@
 - (unsigned int)hash;
 - (id)initWithTransitTripRouteStep:(id)arg1 originSummary:(id)arg2 destinationSummary:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
-- (unsigned long long)lineID;
+- (unsigned int)lineID;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (double)scheduledArrival;
@@ -47,7 +47,7 @@
 - (void)setHasLineID:(BOOL)arg1;
 - (void)setHasScheduledArrival:(BOOL)arg1;
 - (void)setHasScheduledDeparture:(BOOL)arg1;
-- (void)setLineID:(unsigned long long)arg1;
+- (void)setLineID:(unsigned int)arg1;
 - (void)setScheduledArrival:(double)arg1;
 - (void)setScheduledDeparture:(double)arg1;
 - (void)setStopFrom:(id)arg1;

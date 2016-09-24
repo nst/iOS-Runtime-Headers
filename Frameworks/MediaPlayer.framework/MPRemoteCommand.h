@@ -3,34 +3,53 @@
  */
 
 @interface MPRemoteCommand : NSObject {
-    NSString *_contextID;
-    <MPRemoteCommandDelegate> *_delegate;
-    BOOL _enabled;
-    unsigned int _mediaRemoteCommandType;
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    NSMutableArray *_targetInvocations;
+    <MPRemoteCommandDelegate_Internal> * _commandCenterDelegate;
+    NSString * _contextID;
+    <MPRemoteCommandDelegate_Private> * _delegate;
+    BOOL  _enabled;
+    unsigned int  _mediaRemoteCommandType;
+    BOOL  _observing;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    NSMutableArray * _targetInvocations;
 }
 
+@property (nonatomic) <MPRemoteCommandDelegate_Internal> *commandCenterDelegate;
+@property (nonatomic) <MPRemoteCommandDelegate_Private> *delegate;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (nonatomic, readonly) BOOL hasTargets;
+@property (nonatomic, readonly) unsigned int mediaRemoteCommandType;
+@property (getter=isObserving, nonatomic) BOOL observing;
+@property (getter=isSupported, nonatomic, readonly) BOOL supported;
+@property (getter=isSupportedAndEnabled, nonatomic, readonly) BOOL supportedAndEnabled;
 
 - (void).cxx_destruct;
 - (void)_addTarget:(id)arg1 action:(SEL)arg2 retainTarget:(BOOL)arg3;
 - (id)_mediaRemoteCommandInfoOptions;
 - (void)addTarget:(id)arg1 action:(SEL)arg2;
 - (id)addTargetWithHandler:(id /* block */)arg1;
+- (id)commandCenterDelegate;
 - (struct _MRMediaRemoteCommandInfo { }*)createCommandInfoRepresentation;
 - (id)delegate;
 - (BOOL)hasTargets;
-- (id)init;
 - (id)initWithMediaRemoteCommandType:(unsigned int)arg1;
 - (void)invokeCommandWithEvent:(id)arg1 completion:(id /* block */)arg2;
 - (BOOL)isEnabled;
+- (BOOL)isEnabledForContentItemIdentifier:(id)arg1;
+- (BOOL)isObserving;
 - (BOOL)isSupported;
+- (BOOL)isSupportedAndEnabled;
+- (BOOL)isSupportedForContentItemIdentifier:(id)arg1;
 - (unsigned int)mediaRemoteCommandType;
+- (id)newCommandEvent;
+- (id)newCommandEventWithCommandType:(unsigned int)arg1 options:(id)arg2;
+- (id)newCommandEventWithContentItemIdentifier:(id)arg1;
+- (id)newSeekCommandEventWithType:(unsigned int)arg1;
 - (void)notifyPropagatablePropertyChanged;
 - (void)removeTarget:(id)arg1;
 - (void)removeTarget:(id)arg1 action:(SEL)arg2;
+- (void)setCommandCenterDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
+- (void)setObserving:(BOOL)arg1;
 
 @end

@@ -3,14 +3,15 @@
  */
 
 @interface PHObject : NSObject <NSCopying> {
-    BOOL _deleted;
-    NSManagedObjectID *_objectID;
-    PHPhotoLibrary *_photoLibrary;
-    unsigned int _propertyHint;
-    NSString *_uuid;
+    BOOL  _deleted;
+    NSManagedObjectID * _objectID;
+    PHPhotoLibrary * _photoLibrary;
+    unsigned int  _propertyHint;
+    NSString * _uuid;
 }
 
 @property (getter=isDeleted, readonly) BOOL deleted;
+@property (readonly) id identifier;
 @property (nonatomic, readonly, copy) NSString *localIdentifier;
 @property (readonly) NSManagedObjectID *objectID;
 @property (readonly) PHPhotoLibrary *photoLibrary;
@@ -20,25 +21,40 @@
 
 + (id)authorizationAwareFetchResultWithOptions:(id)arg1 fetchBlock:(id /* block */)arg2;
 + (id)entityKeyForPropertyKey:(id)arg1;
++ (void)extendPropertiesToFetch:(id)arg1 withProperties:(id)arg2;
++ (void)extendPropertiesToFetch:(id)arg1 withPropertySetClass:(Class)arg2;
 + (id)fetchPredicateFromComparisonPredicate:(id)arg1 options:(id)arg2;
++ (id)fetchType;
 + (id)identifierCode;
++ (id)identifierCodeFromLocalIdentifier:(id)arg1;
++ (id)identifierPropertiesToFetch;
 + (id)localIdentifierWithUUID:(id)arg1;
 + (id)managedEntityName;
 + (BOOL)managedObjectSupportsBursts;
++ (BOOL)managedObjectSupportsFaceVisibility;
 + (BOOL)managedObjectSupportsHiddenState;
++ (BOOL)managedObjectSupportsMontage;
++ (BOOL)managedObjectSupportsPendingState;
++ (BOOL)managedObjectSupportsPersonFilters;
++ (BOOL)managedObjectSupportsRejectedState;
 + (BOOL)managedObjectSupportsSavedAssetType;
 + (BOOL)managedObjectSupportsTrashedState;
 + (BOOL)managedObjectSupportsVisibilityState;
 + (id)propertiesToFetchWithHint:(unsigned int)arg1;
++ (unsigned int)propertyFetchHintsForPropertySets:(id)arg1;
++ (id)propertySetAccessorsByPropertySet;
++ (Class)propertySetClassForPropertySet:(id)arg1;
++ (id)propertySetsForPropertyFetchHints:(unsigned int)arg1;
 + (id)uuidFromLocalIdentifier:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)_identifier;
 - (id)_shortObjectIDURI;
 - (Class)changeRequestClass;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (BOOL)hasLoadedPropertySet:(id)arg1;
 - (unsigned int)hash;
+- (id)identifier;
 - (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;
 - (BOOL)isDeleted;
 - (BOOL)isEqual:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface TSCHChartAxisTitleLayoutItemWithStaticPadding : TSCHChartAxisTitleLayoutItem {
-    float mTitlePadding;
+    double  mTitlePadding;
 }
 
 - (id)initWithParent:(id)arg1 padding:(float)arg2;

@@ -3,7 +3,7 @@
  */
 
 @interface SSKeyValueStoreDatabase : NSObject {
-    SSSQLiteDatabase *_database;
+    SSSQLiteDatabase * _database;
 }
 
 - (void)_dispatchBlockAsync:(id /* block */)arg1;

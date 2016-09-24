@@ -3,32 +3,45 @@
  */
 
 @interface UIKeyboardAutocorrectionController : NSObject {
-    TIAutocorrectionList *_autocorrectionList;
-    BOOL _deferredAutocorrection;
-    BOOL _needsAutocorrection;
-    BOOL _requestedAutocorrection;
+    TIAutocorrectionList * _autocorrectionList;
+    BOOL  _deferredAutocorrection;
+    BOOL  _needsAutocorrection;
+    BOOL  _preserveTextSuggestion;
+    BOOL  _requestedAutocorrection;
+    TIAutocorrectionList * _textSuggestionList;
 }
 
 @property (nonatomic, readonly) TIKeyboardCandidate *autocorrection;
 @property (nonatomic, retain) TIAutocorrectionList *autocorrectionList;
 @property (nonatomic) BOOL deferredAutocorrection;
 @property (nonatomic) BOOL needsAutocorrection;
+@property (nonatomic) BOOL preserveTextSuggestion;
 @property (nonatomic) BOOL requestedAutocorrection;
+@property (nonatomic, retain) TIAutocorrectionList *textSuggestionList;
+
++ (BOOL)isPersistentTextSuggestionFromApp:(id)arg1;
++ (BOOL)isTextSuggestionFromApp:(id)arg1;
 
 - (id)autocorrection;
 - (id)autocorrectionList;
 - (void)clearAutocorrection;
+- (void)clearAutocorrectionButPreserveTextSuggestion:(BOOL)arg1;
 - (void)dealloc;
 - (BOOL)deferredAutocorrection;
 - (BOOL)hasAutocorrection;
+- (BOOL)hasCaseableAutocorrection;
 - (BOOL)needsAutocorrection;
+- (BOOL)preserveTextSuggestion;
 - (void)requestAutocorrectionWithExecutionContext:(id)arg1;
 - (BOOL)requestedAutocorrection;
 - (void)setAutocorrectionList:(id)arg1;
 - (void)setDeferredAutocorrection:(BOOL)arg1;
 - (void)setNeedsAutocorrection;
 - (void)setNeedsAutocorrection:(BOOL)arg1;
+- (void)setPreserveTextSuggestion:(BOOL)arg1;
 - (void)setRequestedAutocorrection:(BOOL)arg1;
+- (void)setTextSuggestionList:(id)arg1;
+- (id)textSuggestionList;
 - (void)updateSuggestionViews;
 
 @end

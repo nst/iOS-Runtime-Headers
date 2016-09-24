@@ -3,9 +3,9 @@
  */
 
 @interface _GEONetworkDefaultsLocalProxy : NSObject <_GEONetworkDefaultsServerProxy> {
-    <_GEONetworkDefaultsServerProxyDelegate> *_delegate;
-    NSLock *_lock;
-    NSMutableArray *_updateCompletionHandlers;
+    <_GEONetworkDefaultsServerProxyDelegate> * _delegate;
+    NSLock * _lock;
+    NSMutableArray * _updateCompletionHandlers;
 }
 
 @property (readonly, copy) NSString *debugDescription;

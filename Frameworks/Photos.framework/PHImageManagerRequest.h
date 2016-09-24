@@ -3,27 +3,27 @@
  */
 
 @interface PHImageManagerRequest : NSObject {
-    PLCPLDownloadContext *_CPLDownloadContext;
-    BOOL _CPLDownloadDegraded;
-    NSObject<OS_dispatch_group> *_CPLDownloadWaitGroup;
-    <_PLImageLoadingAsset> *_asset;
-    NSString *_assetUUID;
-    PLImageFormat *_bestFormatIssuedSoFar;
-    id /* block */ _cancellationHandler;
-    BOOL _cancelled;
-    int _cloudSharedAssetPlaceholderKind;
-    double _creationTimeInterval;
-    NSString *_debugFilename;
-    id _domain;
-    BOOL _finalResultSubmitted;
-    BOOL _isCloudSharedAsset;
-    BOOL _isPartOfBurst;
-    PHImageManagerRequest *_nextRequest;
-    int _originalImageOrientation;
-    NSString *_pathForAdjustmentFile;
-    int _registrationRefCount;
-    int _requestID;
-    PLPreheatItem *_transientPreheatlItem;
+    PLCPLDownloadContext * _CPLDownloadContext;
+    BOOL  _CPLDownloadDegraded;
+    NSObject<OS_dispatch_group> * _CPLDownloadWaitGroup;
+    <_PLImageLoadingAsset> * _asset;
+    NSString * _assetUUID;
+    PLImageFormat * _bestFormatIssuedSoFar;
+    id /* block */  _cancellationHandler;
+    BOOL  _cancelled;
+    int  _cloudSharedAssetPlaceholderKind;
+    double  _creationTimeInterval;
+    NSString * _debugFilename;
+    id  _domain;
+    BOOL  _finalResultSubmitted;
+    BOOL  _isCloudSharedAsset;
+    BOOL  _isPartOfBurst;
+    PHImageManagerRequest * _nextRequest;
+    int  _originalImageOrientation;
+    NSString * _pathForAdjustmentFile;
+    int  _registrationRefCount;
+    int  _requestID;
+    PLPreheatItem * _transientPreheatlItem;
 }
 
 @property (retain) PLCPLDownloadContext *CPLDownloadContext;

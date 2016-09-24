@@ -3,10 +3,10 @@
  */
 
 @interface SKUISettingsContext : NSObject {
-    SKUIClientContext *_clientContext;
-    NSMutableArray *_descriptionReusePool;
-    NSMutableDictionary *_elementTypeClass;
-    NSMutableArray *_viewReusePool;
+    SKUIClientContext * _clientContext;
+    NSMutableArray * _descriptionReusePool;
+    NSMutableDictionary * _elementTypeClass;
+    NSMutableArray * _viewReusePool;
 }
 
 @property (nonatomic) SKUIClientContext *clientContext;

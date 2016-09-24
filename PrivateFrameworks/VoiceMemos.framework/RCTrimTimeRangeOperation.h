@@ -3,14 +3,14 @@
  */
 
 @interface RCTrimTimeRangeOperation : NSOperation {
-    BOOL _canSimulateTrimmingProgress;
-    id /* block */ _progressUpdateBlock;
-    float _simulatedProgress;
+    BOOL  _canSimulateTrimmingProgress;
+    id /* block */  _progressUpdateBlock;
+    double  _simulatedProgress;
     struct { 
         double beginTime; 
         double endTime; 
-    } _timeRange;
-    BOOL _trimMode;
+    }  _timeRange;
+    BOOL  _trimMode;
 }
 
 @property (nonatomic, readonly) NSError *error;

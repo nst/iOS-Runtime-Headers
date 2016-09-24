@@ -3,15 +3,15 @@
  */
 
 @interface WBSSearchProvider : NSObject <NSSecureCoding> {
-    NSArray *_hostSuffixes;
-    NSArray *_pathPrefixes;
-    NSString *_queryKey;
-    NSDictionary *_safeSearchURLQueryParameters;
-    WBSOpenSearchURLTemplate *_safeSearchURLTemplate;
-    WBSOpenSearchURLTemplate *_searchURLTemplate;
-    WBSURLSuffixChecker *_suffixChecker;
-    WBSOpenSearchURLTemplate *_suggestionsURLTemplate;
-    BOOL _usesSearchTermsFromFragment;
+    NSArray * _hostSuffixes;
+    NSArray * _pathPrefixes;
+    NSString * _queryKey;
+    NSDictionary * _safeSearchURLQueryParameters;
+    WBSOpenSearchURLTemplate * _safeSearchURLTemplate;
+    WBSOpenSearchURLTemplate * _searchURLTemplate;
+    WBSURLSuffixChecker * _suffixChecker;
+    WBSOpenSearchURLTemplate * _suggestionsURLTemplate;
+    BOOL  _usesSearchTermsFromFragment;
 }
 
 @property (nonatomic, readonly) WBSOpenSearchURLTemplate *suggestionsURLTemplate;

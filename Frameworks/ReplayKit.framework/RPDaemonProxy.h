@@ -3,7 +3,7 @@
  */
 
 @interface RPDaemonProxy : NSObject <NSXPCConnectionDelegate, RPClientProtocol, RPDaemonProtocol> {
-    NSXPCConnection *_connection;
+    NSXPCConnection * _connection;
 }
 
 @property (nonatomic, retain) NSXPCConnection *connection;
@@ -24,8 +24,12 @@
 - (oneway void)pauseRecording;
 - (oneway void)resumeRecordingWithWindowLayerContextID:(unsigned int)arg1;
 - (void)setConnection:(id)arg1;
-- (oneway void)startRecordingWindowLayerContextID:(unsigned int)arg1 windowSize:(struct CGSize { float x1; float x2; })arg2 microphoneEnabled:(BOOL)arg3 withHandler:(id /* block */)arg4;
+- (oneway void)setMicrophoneEnabled:(BOOL)arg1;
+- (oneway void)setupBroadcastWithHostBundleID:(id)arg1 broadcastExtensionBundleID:(id)arg2 broadcastConfigurationData:(id)arg3 userInfo:(id)arg4 handler:(id /* block */)arg5;
+- (oneway void)startRecordingWindowLayerContextIDs:(id)arg1 windowSize:(struct CGSize { double x1; double x2; })arg2 microphoneEnabled:(BOOL)arg3 cameraEnabled:(BOOL)arg4 broadcast:(BOOL)arg5 systemRecording:(BOOL)arg6 withHandler:(id /* block */)arg7;
 - (oneway void)stopRecordingWithError:(id)arg1 movieURL:(id)arg2;
 - (oneway void)stopRecordingWithHandler:(id /* block */)arg1;
+- (oneway void)stopRecordingWithStartClipDuration:(double)arg1 endClipDuration:(double)arg2 handler:(id /* block */)arg3;
+- (oneway void)updateBroadcastServiceInfo:(id)arg1;
 
 @end

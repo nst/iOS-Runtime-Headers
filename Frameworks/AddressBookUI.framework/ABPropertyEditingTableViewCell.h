@@ -3,10 +3,10 @@
  */
 
 @interface ABPropertyEditingTableViewCell : UITableViewCell <ABStyleProviding> {
-    <ABPropertyEditingTableViewCellDelegate> *_delegate;
-    NSString *_placeholder;
-    int _property;
-    UITextField *_textField;
+    <ABPropertyEditingTableViewCellDelegate> * _delegate;
+    NSString * _placeholder;
+    int  _property;
+    UITextField * _textField;
 }
 
 @property (nonatomic) <ABPropertyEditingTableViewCellDelegate> *delegate;

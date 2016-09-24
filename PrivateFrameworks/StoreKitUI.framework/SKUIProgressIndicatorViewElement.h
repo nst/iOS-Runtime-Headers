@@ -3,10 +3,10 @@
  */
 
 @interface SKUIProgressIndicatorViewElement : SKUIViewElement {
-    float _value;
+    double  _value;
 }
 
-@property (nonatomic, readonly) float value;
+@property (nonatomic, readonly) double value;
 
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;

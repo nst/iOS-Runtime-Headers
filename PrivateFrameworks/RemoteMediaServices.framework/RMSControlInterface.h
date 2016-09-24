@@ -3,9 +3,9 @@
  */
 
 @interface RMSControlInterface : NSObject {
-    BOOL _supportsDirectionalControl;
-    BOOL _supportsSpeakerSelection;
-    BOOL _supportsVolumeControl;
+    BOOL  _supportsDirectionalControl;
+    BOOL  _supportsSpeakerSelection;
+    BOOL  _supportsVolumeControl;
 }
 
 @property (nonatomic) BOOL supportsDirectionalControl;

@@ -3,11 +3,11 @@
  */
 
 @interface SKUILayoutCache : NSObject {
-    NSMutableArray *_batchedRequests;
-    <SKUILayoutCacheDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    NSMutableArray *_layouts;
-    NSMutableArray *_requests;
+    NSMutableArray * _batchedRequests;
+    <SKUILayoutCacheDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    NSMutableArray * _layouts;
+    NSMutableArray * _requests;
 }
 
 @property (nonatomic) <SKUILayoutCacheDelegate> *delegate;

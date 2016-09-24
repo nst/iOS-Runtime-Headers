@@ -3,9 +3,9 @@
  */
 
 @interface MCKeyValue : NSObject {
-    NSString *_key;
-    id _value;
-    unsigned int _valueType;
+    NSString * _key;
+    id  _value;
+    unsigned int  _valueType;
 }
 
 @property (nonatomic, readonly) NSString *key;

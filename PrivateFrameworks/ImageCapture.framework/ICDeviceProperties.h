@@ -3,20 +3,20 @@
  */
 
 @interface ICDeviceProperties : NSObject {
-    NSString *_UUIDString;
-    BOOL _autoOpenSession;
-    BOOL _closeSessionPending;
-    id _delegate;
-    DeviceManager *_deviceManager;
-    BOOL _hasOpenSession;
-    struct CGImage { } *_icon;
-    NSString *_name;
-    BOOL _openSessionPending;
-    NSString *_productKind;
-    NSString *_transportType;
-    int _usbLocationID;
-    int _usbProductID;
-    int _usbVendorID;
+    NSString * _UUIDString;
+    BOOL  _autoOpenSession;
+    BOOL  _closeSessionPending;
+    id  _delegate;
+    DeviceManager * _deviceManager;
+    BOOL  _hasOpenSession;
+    struct CGImage { } * _icon;
+    NSString * _name;
+    BOOL  _openSessionPending;
+    NSString * _productKind;
+    NSString * _transportType;
+    int  _usbLocationID;
+    int  _usbProductID;
+    int  _usbVendorID;
 }
 
 @property (retain) NSString *UUIDString;

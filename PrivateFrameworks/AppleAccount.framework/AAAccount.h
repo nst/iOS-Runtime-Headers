@@ -3,10 +3,10 @@
  */
 
 @interface AAAccount : NSObject {
-    ACAccount *_account;
-    NSArray *_appleIDAliases;
-    NSString *_fmipToken;
-    NSString *_protocolVersion;
+    ACAccount * _account;
+    NSArray * _appleIDAliases;
+    NSString * _fmipToken;
+    NSString * _protocolVersion;
 }
 
 @property (nonatomic, copy) NSString *accountDescription;

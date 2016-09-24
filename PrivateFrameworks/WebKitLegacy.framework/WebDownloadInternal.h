@@ -3,7 +3,7 @@
  */
 
 @interface WebDownloadInternal : NSObject <NSURLDownloadDelegate> {
-    id realDelegate;
+    id  realDelegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -13,7 +13,6 @@
 
 - (void)dealloc;
 - (void)download:(id)arg1 decideDestinationWithSuggestedFilename:(id)arg2;
-- (void)download:(id)arg1 didCancelAuthenticationChallenge:(id)arg2;
 - (void)download:(id)arg1 didCreateDestination:(id)arg2;
 - (void)download:(id)arg1 didFailWithError:(id)arg2;
 - (void)download:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;

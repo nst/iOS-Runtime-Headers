@@ -3,9 +3,9 @@
  */
 
 @interface CIZoomBlur : CIFilter {
-    NSNumber *inputAmount;
-    CIVector *inputCenter;
-    CIImage *inputImage;
+    NSNumber * inputAmount;
+    CIVector * inputCenter;
+    CIImage * inputImage;
 }
 
 @property (nonatomic, retain) NSNumber *inputAmount;

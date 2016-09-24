@@ -3,7 +3,7 @@
  */
 
 @interface BookmarkDAVGetAccountPropertiesTaskGroup : CoreDAVGetAccountPropertiesTaskGroup {
-    NSSet *_bookmarkHomes;
+    NSSet * _bookmarkHomes;
 }
 
 @property (nonatomic, readonly) NSSet *bookmarkHomes;

@@ -3,18 +3,18 @@
  */
 
 @interface CMKAvalancheSession : NSObject {
-    NSMutableDictionary *__assets;
-    CIBurstImageSet *__burstImageSet;
-    NSDate *__expirationDate;
-    NSObject<OS_dispatch_queue> *__expirationQueue;
-    NSObject<OS_dispatch_source> *__expirationTimer;
-    id /* block */ _completionHandler;
-    <CMKAvalancheSessionDelegate> *_delegate;
-    unsigned int _numberOfPhotos;
-    CMKInflightAsset *_possibleAvalancheAsset;
-    int _state;
-    int _type;
-    NSString *_uuid;
+    NSMutableDictionary * __assets;
+    CIBurstImageSet * __burstImageSet;
+    NSDate * __expirationDate;
+    NSObject<OS_dispatch_queue> * __expirationQueue;
+    NSObject<OS_dispatch_source> * __expirationTimer;
+    id /* block */  _completionHandler;
+    <CMKAvalancheSessionDelegate> * _delegate;
+    unsigned int  _numberOfPhotos;
+    CMKInflightAsset * _possibleAvalancheAsset;
+    int  _state;
+    int  _type;
+    NSString * _uuid;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *_assets;
@@ -25,8 +25,8 @@
 @property (nonatomic, copy) id /* block */ completionHandler;
 @property (nonatomic) <CMKAvalancheSessionDelegate> *delegate;
 @property (nonatomic, readonly) unsigned int numberOfPhotos;
-@property (nonatomic, retain) CMKInflightAsset *possibleAvalancheAsset;
-@property (nonatomic) int state;
+@property (setter=_setPossibleAvalancheAsset:, nonatomic, retain) CMKInflightAsset *possibleAvalancheAsset;
+@property (setter=_setState:, nonatomic) int state;
 @property (nonatomic, readonly) int type;
 @property (nonatomic, readonly, copy) NSString *uuid;
 

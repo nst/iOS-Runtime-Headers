@@ -3,7 +3,7 @@
  */
 
 @interface WebArchive : NSObject <NSCoding, NSCopying> {
-    WebArchivePrivate *_private;
+    WebArchivePrivate * _private;
 }
 
 @property (nonatomic, readonly, copy) NSData *data;

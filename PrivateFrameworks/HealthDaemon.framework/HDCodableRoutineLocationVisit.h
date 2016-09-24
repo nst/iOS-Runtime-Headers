@@ -3,12 +3,12 @@
  */
 
 @interface HDCodableRoutineLocationVisit : PBCodable <NSCopying> {
-    double _entryTime;
-    double _exitTime;
+    double  _entryTime;
+    double  _exitTime;
     struct { 
         unsigned int entryTime : 1; 
         unsigned int exitTime : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic) double entryTime;

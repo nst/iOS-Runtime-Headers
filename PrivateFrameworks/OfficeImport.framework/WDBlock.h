@@ -3,7 +3,7 @@
  */
 
 @interface WDBlock : NSObject {
-    WDText *mText;
+    WDText * mText;
 }
 
 - (int)blockType;

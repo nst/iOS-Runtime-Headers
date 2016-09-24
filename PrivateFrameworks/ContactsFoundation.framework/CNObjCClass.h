@@ -3,7 +3,7 @@
  */
 
 @interface CNObjCClass : NSObject {
-    Class _cls;
+    Class  _cls;
 }
 
 + (BOOL)addMethod:(id)arg1 toClass:(Class)arg2;

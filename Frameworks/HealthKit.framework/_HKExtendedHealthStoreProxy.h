@@ -3,7 +3,7 @@
  */
 
 @interface _HKExtendedHealthStoreProxy : NSObject {
-    HKExtendedHealthStore *_extendedHealthStore;
+    HKExtendedHealthStore * _extendedHealthStore;
 }
 
 @property (nonatomic) HKExtendedHealthStore *extendedHealthStore;

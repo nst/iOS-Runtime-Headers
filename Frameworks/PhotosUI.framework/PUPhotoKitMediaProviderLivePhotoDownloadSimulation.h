@@ -3,12 +3,12 @@
  */
 
 @interface PUPhotoKitMediaProviderLivePhotoDownloadSimulation : PUPhotoKitMediaProviderDownloadSimulation {
-    NSDictionary *__resultInfo;
-    PHLivePhoto *__resultLivePhoto;
-    id /* block */ _externalProgressHandler;
-    id /* block */ _externalResultHandler;
-    id /* block */ _internalProgressHandler;
-    id /* block */ _internalResultHandler;
+    NSDictionary * __resultInfo;
+    PHLivePhoto * __resultLivePhoto;
+    id /* block */  _externalProgressHandler;
+    id /* block */  _externalResultHandler;
+    id /* block */  _internalProgressHandler;
+    id /* block */  _internalResultHandler;
 }
 
 @property (setter=_setResultInfo:, nonatomic, copy) NSDictionary *_resultInfo;

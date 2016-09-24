@@ -3,8 +3,8 @@
  */
 
 @interface TSCHStyleAndPropertyPair : NSObject <NSCopying> {
-    int mProperty;
-    TSSStyle *mStyle;
+    int  mProperty;
+    TSSStyle * mStyle;
 }
 
 + (id)pairWithStyle:(id)arg1 property:(int)arg2;

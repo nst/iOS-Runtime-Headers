@@ -3,15 +3,15 @@
  */
 
 @interface IMNetworkAvailability : NSObject {
-    id /* block */ _completionBlock;
-    void *_context;
-    unsigned int _flags;
-    NSString *_guid;
-    unsigned int _options;
-    double _startTime;
-    double _timeout;
-    NSTimer *_timer;
-    double _wifiTimeout;
+    id /* block */  _completionBlock;
+    void * _context;
+    unsigned int  _flags;
+    NSString * _guid;
+    unsigned int  _options;
+    double  _startTime;
+    double  _timeout;
+    NSTimer * _timer;
+    double  _wifiTimeout;
 }
 
 @property (nonatomic) void*context;

@@ -3,7 +3,7 @@
  */
 
 @interface MPStoreItemOffer : NSObject <NSSecureCoding> {
-    NSDictionary *_lookupDictionary;
+    NSDictionary * _lookupDictionary;
 }
 
 @property (nonatomic, readonly, copy) NSArray *assets;

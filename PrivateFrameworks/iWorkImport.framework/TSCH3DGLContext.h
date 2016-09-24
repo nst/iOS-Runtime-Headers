@@ -8,7 +8,7 @@
         struct UpdatableValue<unsigned int> { 
             unsigned int value; 
         } handle; 
-    } mBufferArraysStates;
+    }  mBufferArraysStates;
     struct BufferStates { 
         struct array<TSCH3D::GLSingleState, 2> { 
             struct GLSingleState { 
@@ -18,13 +18,13 @@
                 } handle; 
             } __elems_[2]; 
         } states; 
-    } mBufferStates;
-    NSMutableIndexSet *mChangeMask;
-    NSMutableSet *mChildrenContexts;
-    NSIndexSet *mEnabledArrays;
-    NSMutableDictionary *mExtensionsNamesDict;
-    BOOL mIsSharable;
-    TSCH3DGLContext *mSharedContext;
+    }  mBufferStates;
+    NSMutableIndexSet * mChangeMask;
+    NSMutableSet * mChildrenContexts;
+    NSIndexSet * mEnabledArrays;
+    NSMutableDictionary * mExtensionsNamesDict;
+    BOOL  mIsSharable;
+    TSCH3DGLContext * mSharedContext;
     struct RenderState { 
         bool mBlend; 
         int blendMode; 
@@ -33,14 +33,14 @@
         bool culling; 
         bool cullBack; 
         bool polygonOffset; 
-        float polygonOffsetFactor; 
-        float polygonOffsetUnits; 
+        double polygonOffsetFactor; 
+        double polygonOffsetUnits; 
         struct EnableClipDistances { 
             struct array<signed char, 8> { 
                 BOOL __elems_[8]; 
             } states; 
         } enableClipDistances; 
-    } mState;
+    }  mState;
     struct TextureUnitStates { 
         struct UpdatableValue<unsigned int> { 
             unsigned int value; 
@@ -53,8 +53,8 @@
                 } handle; 
             } __elems_[4]; 
         } states; 
-    } mTextureUnitStates;
-    TSCH3DGLVersion *mVersion;
+    }  mTextureUnitStates;
+    TSCH3DGLVersion * mVersion;
     struct box<glm::detail::tvec2<int> > { 
         struct tvec2<int> { 
             union { 
@@ -80,8 +80,8 @@
                 int t; 
             } ; 
         } mMax; 
-    } mViewport;
-    NSMutableDictionary *mVirtualScreenToCapabilitiesMap;
+    }  mViewport;
+    NSMutableDictionary * mVirtualScreenToCapabilitiesMap;
 }
 
 @property (nonatomic, readonly) NSSet *childrenContexts;
@@ -113,10 +113,10 @@
 - (void)p_removeChildContext:(id)arg1;
 - (void)removeChangeFlag:(int)arg1;
 - (void)setEnabledVertexArrays:(id)arg1;
-- (void)setState:(const struct RenderState { bool x1; int x2; bool x3; bool x4; bool x5; bool x6; bool x7; float x8; float x9; struct EnableClipDistances { struct array<signed char, 8> { BOOL x_1_2_1[8]; } x_10_1_1; } x10; }*)arg1;
+- (void)setState:(const struct RenderState { bool x1; int x2; bool x3; bool x4; bool x5; bool x6; bool x7; double x8; double x9; struct EnableClipDistances { struct array<signed char, 8> { BOOL x_1_2_1[8]; } x_10_1_1; } x10; }*)arg1;
 - (id)sharedContext;
 - (id)sharedID;
-- (struct RenderState { bool x1; int x2; bool x3; bool x4; bool x5; bool x6; bool x7; float x8; float x9; struct EnableClipDistances { struct array<signed char, 8> { BOOL x_1_2_1[8]; } x_10_1_1; } x10; })state;
+- (struct RenderState { bool x1; int x2; bool x3; bool x4; bool x5; bool x6; bool x7; double x8; double x9; struct EnableClipDistances { struct array<signed char, 8> { BOOL x_1_2_1[8]; } x_10_1_1; } x10; })state;
 - (BOOL)supportsCapability:(id)arg1;
 - (id)version;
 - (void)viewport:(struct box<glm::detail::tvec2<int> > { struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_1_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_1_1_2; } x1; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_2_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_2_1_2; } x2; }*)arg1;

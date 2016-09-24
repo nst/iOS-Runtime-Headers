@@ -3,12 +3,12 @@
  */
 
 @interface RadioRecentStationsController : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    BOOL _hasRefreshed;
-    BOOL _hasValidStationGroups;
-    NSMutableArray *_pendingRecentStations;
-    NSArray *_serverRecentStationGroups;
-    NSArray *_stationGroups;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    BOOL  _hasRefreshed;
+    BOOL  _hasValidStationGroups;
+    NSMutableArray * _pendingRecentStations;
+    NSArray * _serverRecentStationGroups;
+    NSArray * _stationGroups;
 }
 
 @property (nonatomic, readonly, copy) NSArray *stationGroups;

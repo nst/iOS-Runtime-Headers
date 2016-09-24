@@ -3,16 +3,16 @@
  */
 
 @interface TSPEncoderWriteCoordinator : NSObject <TSPArchiverManagerDelegate, TSPComponentWriterDelegate, TSPDataArchiver, TSPObjectModifyDelegate, TSPProxyObjectMapping> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    TSPArchiverManager *_archiverManager;
-    TSPObjectContext *_context;
-    NSMutableArray *_dataFinalizeHandlers;
-    NSHashTable *_delayedObjects;
-    <TSPEncoderWriteCoordinatorDelegate> *_delegate;
-    BOOL _didStopCapturingSnapshots;
-    <TSPEncoder> *_encoder;
-    BOOL _hasProxyObjects;
-    TSURetainedPointerKeyDictionary *_proxyObjectMap;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    TSPArchiverManager * _archiverManager;
+    TSPObjectContext * _context;
+    NSMutableArray * _dataFinalizeHandlers;
+    NSHashTable * _delayedObjects;
+    <TSPEncoderWriteCoordinatorDelegate> * _delegate;
+    BOOL  _didStopCapturingSnapshots;
+    <TSPEncoder> * _encoder;
+    BOOL  _hasProxyObjects;
+    TSURetainedPointerKeyDictionary * _proxyObjectMap;
 }
 
 @property (nonatomic, readonly) TSPObjectContext *context;
@@ -36,6 +36,8 @@
 - (void)delayArchivingOfObject:(id)arg1;
 - (id)init;
 - (id)initWithEncoder:(id)arg1 context:(id)arg2 archiverClass:(Class)arg3 delegate:(id)arg4;
+- (unsigned int)objectTargetType;
+- (unsigned int)objectTargetTypeForComponentWriter:(id)arg1;
 - (id)proxyForReferencedObject:(id)arg1;
 - (id)relativeURLForExternalData;
 - (void)setProxy:(id)arg1 forReferencedObject:(id)arg2;

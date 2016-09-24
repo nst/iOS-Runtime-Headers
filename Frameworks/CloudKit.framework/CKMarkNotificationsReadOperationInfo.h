@@ -3,7 +3,7 @@
  */
 
 @interface CKMarkNotificationsReadOperationInfo : CKOperationInfo {
-    NSArray *_notificationIDs;
+    NSArray * _notificationIDs;
 }
 
 @property (nonatomic, retain) NSArray *notificationIDs;

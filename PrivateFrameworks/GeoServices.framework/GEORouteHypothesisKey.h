@@ -3,7 +3,7 @@
  */
 
 @interface GEORouteHypothesisKey : NSObject <NSCopying, NSSecureCoding> {
-    GEORouteHypothesisRequest *_request;
+    GEORouteHypothesisRequest * _request;
 }
 
 @property (nonatomic, readonly, retain) GEORouteHypothesisRequest *request;

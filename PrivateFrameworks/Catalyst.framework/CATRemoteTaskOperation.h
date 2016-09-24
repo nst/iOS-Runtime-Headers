@@ -3,16 +3,19 @@
  */
 
 @interface CATRemoteTaskOperation : CATTaskOperation {
-    CATTaskClient *_client;
-    NSError *mClientError;
+    CATTaskClient * _client;
+    NSNumber * _remotePhase;
+    NSError * mClientError;
 }
 
 @property (nonatomic, readonly) CATTaskClient *client;
+@property (nonatomic, copy) NSNumber *remotePhase;
 
 + (id)invalidRemoteTaskWithRequest:(id)arg1 error:(id)arg2;
 + (BOOL)isCancelable;
 
 - (void).cxx_destruct;
+- (BOOL)canSendNotificationWithName:(id)arg1 userInfo:(id)arg2;
 - (void)cancel;
 - (void)cancelOperationIfNeeded;
 - (id)client;
@@ -24,6 +27,9 @@
 - (void)main;
 - (void)operationWillFinish;
 - (void)processMessage:(id)arg1;
+- (void)processNotificationMessage:(id)arg1;
+- (id)remotePhase;
+- (void)setRemotePhase:(id)arg1;
 - (void)updateCompletedUnitCount:(int)arg1 andTotalUnitCount:(int)arg2;
 - (void)updateProgressWithRemoteProgress:(id)arg1;
 

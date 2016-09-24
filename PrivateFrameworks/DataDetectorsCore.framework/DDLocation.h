@@ -3,11 +3,11 @@
  */
 
 @interface DDLocation : NSObject <NSCoding> {
-    NSString *_fileName;
-    int _firstColumn;
-    int _firstLine;
-    int _lastColumn;
-    int _lastLine;
+    NSString * _fileName;
+    int  _firstColumn;
+    int  _firstLine;
+    int  _lastColumn;
+    int  _lastLine;
 }
 
 @property (readonly, copy) NSString *fileName;

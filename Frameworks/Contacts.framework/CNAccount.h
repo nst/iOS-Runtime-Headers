@@ -3,8 +3,8 @@
  */
 
 @interface CNAccount : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_externalIdentifierString;
-    NSString *_identifier;
+    NSString * _externalIdentifierString;
+    NSString * _identifier;
 }
 
 @property (nonatomic, readonly) NSString *_cnui_displayName;

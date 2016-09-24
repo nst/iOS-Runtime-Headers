@@ -3,17 +3,17 @@
  */
 
 @interface CKMultiDict : NSObject {
-    unsigned int _count;
-    NSMutableDictionary *_dictionary;
-    NSObject<OS_dispatch_queue> *_lockQueue;
+    unsigned int  _count;
+    NSMutableDictionary * _dictionary;
+    NSObject<OS_dispatch_queue> * _lockQueue;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *dictionary;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *lockQueue;
 
+- (void).cxx_destruct;
 - (id)allKeys;
 - (unsigned int)count;
-- (void)dealloc;
 - (id)dequeueObjectForKey:(id)arg1;
 - (id)description;
 - (id)dictionary;

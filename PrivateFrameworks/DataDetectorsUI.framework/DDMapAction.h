@@ -3,8 +3,8 @@
  */
 
 @interface DDMapAction : DDRemoteAction {
-    NSString *_addressString;
-    NSURL *_commitURL;
+    NSString * _addressString;
+    NSURL * _commitURL;
 }
 
 + (BOOL)handlesUrl:(id)arg1 result:(struct __DDResult { }*)arg2;

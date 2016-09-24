@@ -3,10 +3,12 @@
  */
 
 @interface UIKBTouchStateTask : NSObject <NSCopying> {
-    id /* block */ _task;
-    UIKBTouchState *_touchState;
+    BOOL  _isBusy;
+    id /* block */  _task;
+    UIKBTouchState * _touchState;
 }
 
+@property (nonatomic) BOOL isBusy;
 @property (nonatomic, readonly, copy) id /* block */ task;
 @property (nonatomic, readonly, retain) UIKBTouchState *touchState;
 
@@ -16,6 +18,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)initWithTouchState:(id)arg1 andTask:(id /* block */)arg2;
+- (BOOL)isBusy;
+- (void)setIsBusy:(BOOL)arg1;
 - (id /* block */)task;
 - (id)touchState;
 

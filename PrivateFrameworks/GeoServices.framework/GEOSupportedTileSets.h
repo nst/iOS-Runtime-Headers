@@ -3,10 +3,12 @@
  */
 
 @interface GEOSupportedTileSets : PBCodable <NSCopying> {
-    NSMutableArray *_tileSets;
+    NSMutableArray * _tileSets;
 }
 
 @property (nonatomic, retain) NSMutableArray *tileSets;
+
++ (Class)tileSetType;
 
 - (void)addTileSet:(id)arg1;
 - (void)clearTileSets;

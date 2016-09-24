@@ -3,15 +3,15 @@
  */
 
 @interface SKUIMediaSocialPhotoUpload : NSObject <NSCopying> {
-    NSString *_MD5;
-    BOOL _hasAlpha;
-    unsigned int _height;
-    unsigned int _length;
-    NSString *_token;
-    NSString *_tokenType;
-    NSString *_type;
-    NSNumber *_uniqueIdentifier;
-    unsigned int _width;
+    NSString * _MD5;
+    BOOL  _hasAlpha;
+    unsigned int  _height;
+    unsigned int  _length;
+    NSString * _token;
+    NSString * _tokenType;
+    NSString * _type;
+    NSNumber * _uniqueIdentifier;
+    unsigned int  _width;
 }
 
 @property (nonatomic, copy) NSString *MD5;

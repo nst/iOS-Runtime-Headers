@@ -3,26 +3,26 @@
  */
 
 @interface CDSession : NSObject {
-    NSObject<OS_dispatch_queue> *_cacheSerializerQ;
-    NSMutableDictionary *_cachedAttributes;
-    NSMutableDictionary *_cachedBudgets;
-    CDDClientConnection *_cddClientConnection;
-    unsigned long long _clientId;
-    int _deviceChangeToken;
-    id /* block */ _deviceHandler;
-    NSSet *_deviceList;
-    BOOL _enabledCaching;
-    BOOL _unlocked;
-    BOOL _verbose;
-    int duetRestartToken;
-    NSArray *nonBundles;
+    NSObject<OS_dispatch_queue> * _cacheSerializerQ;
+    NSMutableDictionary * _cachedAttributes;
+    NSMutableDictionary * _cachedBudgets;
+    CDDClientConnection * _cddClientConnection;
+    unsigned int  _clientId;
+    int  _deviceChangeToken;
+    id /* block */  _deviceHandler;
+    NSSet * _deviceList;
+    BOOL  _enabledCaching;
+    BOOL  _unlocked;
+    BOOL  _verbose;
+    int  duetRestartToken;
+    NSArray * nonBundles;
 }
 
 @property (retain) NSObject<OS_dispatch_queue> *cacheSerializerQ;
 @property (retain) NSMutableDictionary *cachedAttributes;
 @property (retain) NSMutableDictionary *cachedBudgets;
 @property (readonly) CDDClientConnection *cddClientConnection;
-@property unsigned long long clientId;
+@property unsigned int clientId;
 @property int deviceChangeToken;
 @property (copy) id /* block */ deviceHandler;
 @property (retain) NSSet *deviceList;
@@ -30,12 +30,12 @@
 @property BOOL unlocked;
 @property BOOL verbose;
 
-+ (id)sharedSessionWithClientId:(unsigned long long)arg1;
++ (id)sharedSessionWithClientId:(unsigned int)arg1;
 
 - (void).cxx_destruct;
 - (id)attributeComponentsFromRepresentation:(id)arg1 error:(id*)arg2;
 - (id)attributeExtendedComponentsFromRepresentation:(id)arg1 error:(id*)arg2;
-- (id)attributeForName:(id)arg1 type:(int)arg2 clientId:(unsigned long long)arg3 error:(id*)arg4;
+- (id)attributeForName:(id)arg1 type:(int)arg2 clientId:(unsigned int)arg3 error:(id*)arg4;
 - (id)attributeForName:(id)arg1 type:(int)arg2 error:(id*)arg3;
 - (id)attributeFromFullname:(id)arg1 error:(id*)arg2;
 - (id)attributeFromRepresentation:(id)arg1 error:(id*)arg2;
@@ -47,10 +47,11 @@
 - (id)cachedAttributes;
 - (id)cachedBudgets;
 - (id)cddClientConnection;
-- (unsigned long long)clientId;
+- (unsigned int)clientId;
 - (id)copyDevicesUncached;
 - (void)dealloc;
 - (BOOL)deleteClientDataWithError:(id*)arg1;
+- (id)description;
 - (int)deviceChangeToken;
 - (id /* block */)deviceHandler;
 - (id)deviceList;
@@ -59,13 +60,13 @@
 - (id)getDevices;
 - (id)getDevicesInternal;
 - (id)init;
-- (id)initWithClientId:(unsigned long long)arg1;
-- (id)initWithClientId:(unsigned long long)arg1 enableCaching:(BOOL)arg2;
+- (id)initWithClientId:(unsigned int)arg1;
+- (id)initWithClientId:(unsigned int)arg1 enableCaching:(BOOL)arg2;
 - (BOOL)isClassCLocked;
 - (BOOL)loadDylibs;
 - (id)registerAttributeWithName:(id)arg1 type:(int)arg2 dataProtectionClass:(id)arg3 error:(id*)arg4;
-- (id)registerBudgetWithName:(id)arg1 value:(long long)arg2 type:(int)arg3 error:(id*)arg4;
-- (id)registerBudgetWithName:(id)arg1 value:(long long)arg2 type:(int)arg3 withOptions:(unsigned int)arg4 error:(id*)arg5;
+- (id)registerBudgetWithName:(id)arg1 value:(int)arg2 type:(int)arg3 error:(id*)arg4;
+- (id)registerBudgetWithName:(id)arg1 value:(int)arg2 type:(int)arg3 withOptions:(unsigned int)arg4 error:(id*)arg5;
 - (BOOL)registerForDeviceChanges;
 - (id)representationStringFromAttribute:(id)arg1 value:(id)arg2 error:(id*)arg3;
 - (id)representationStringFromAttribute:(id)arg1 value:(id)arg2 options:(id)arg3 error:(id*)arg4;
@@ -73,7 +74,7 @@
 - (void)setCacheSerializerQ:(id)arg1;
 - (void)setCachedAttributes:(id)arg1;
 - (void)setCachedBudgets:(id)arg1;
-- (void)setClientId:(unsigned long long)arg1;
+- (void)setClientId:(unsigned int)arg1;
 - (void)setDeviceChangeToken:(int)arg1;
 - (void)setDeviceHandler:(id /* block */)arg1;
 - (void)setDeviceList:(id)arg1;

@@ -3,11 +3,11 @@
  */
 
 @interface MecabraWordProperties : NSObject {
-    NSString *_analysisString;
-    NSArray *_characterInformation;
-    NSArray *_codeLookupInformation;
-    BOOL _emoji;
-    int _language;
+    NSString * _analysisString;
+    NSArray * _characterInformation;
+    NSArray * _codeLookupInformation;
+    BOOL  _emoji;
+    int  _language;
 }
 
 @property (nonatomic, copy) NSString *analysisString;

@@ -4,6 +4,6 @@
 
 @interface NSDashCheckingResult : NSSubstitutionCheckingResult
 
-- (unsigned long long)resultType;
+- (unsigned int)resultType;
 
 @end

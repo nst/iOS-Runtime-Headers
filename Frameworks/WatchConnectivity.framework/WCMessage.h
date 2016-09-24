@@ -3,10 +3,10 @@
  */
 
 @interface WCMessage : NSObject <NSSecureCoding> {
-    NSData *_data;
-    BOOL _dictionaryMessage;
-    NSString *_identifier;
-    NSString *_pairingID;
+    NSData * _data;
+    BOOL  _dictionaryMessage;
+    NSString * _identifier;
+    NSString * _pairingID;
 }
 
 @property (readonly, copy) NSData *data;

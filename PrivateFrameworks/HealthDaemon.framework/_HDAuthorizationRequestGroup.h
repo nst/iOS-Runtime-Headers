@@ -3,15 +3,15 @@
  */
 
 @interface _HDAuthorizationRequestGroup : NSObject {
-    NSString *_bundleIdentifier;
-    NSMutableArray *_completions;
-    BOOL _inTransaction;
-    id /* block */ _promptHandler;
-    NSUUID *_promptSessionIdentifier;
-    NSMutableArray *_requests;
-    NSObject<OS_dispatch_source> *_sessionTimeoutSource;
-    NSMutableSet *_typesToRead;
-    NSMutableSet *_typesToWrite;
+    NSString * _bundleIdentifier;
+    NSMutableArray * _completions;
+    BOOL  _inTransaction;
+    id /* block */  _promptHandler;
+    NSUUID * _promptSessionIdentifier;
+    NSMutableArray * _requests;
+    NSObject<OS_dispatch_source> * _sessionTimeoutSource;
+    NSMutableSet * _typesToRead;
+    NSMutableSet * _typesToWrite;
 }
 
 @property (nonatomic, readonly, copy) NSString *bundleIdentifier;
@@ -35,7 +35,6 @@
 - (id)completions;
 - (id)description;
 - (void)finishRequestsWithError:(id)arg1;
-- (id)init;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (BOOL)isInTransaction;
 - (id /* block */)promptHandler;

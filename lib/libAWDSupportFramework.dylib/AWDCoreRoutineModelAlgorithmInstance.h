@@ -3,14 +3,14 @@
  */
 
 @interface AWDCoreRoutineModelAlgorithmInstance : PBCodable <NSCopying> {
-    unsigned int _efficacy;
+    unsigned int  _efficacy;
     struct { 
         unsigned int efficacy : 1; 
         unsigned int source : 1; 
         unsigned int type : 1; 
-    } _has;
-    unsigned int _source;
-    unsigned int _type;
+    }  _has;
+    unsigned int  _source;
+    unsigned int  _type;
 }
 
 @property (nonatomic) unsigned int efficacy;

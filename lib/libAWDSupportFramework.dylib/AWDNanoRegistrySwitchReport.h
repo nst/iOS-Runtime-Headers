@@ -3,10 +3,10 @@
  */
 
 @interface AWDNanoRegistrySwitchReport : PBCodable <NSCopying> {
-    unsigned long long _daemonDisableDuration;
-    unsigned long long _daemonEnableDuration;
-    NSString *_gizmoBuild;
-    NSString *_gizmoHardware;
+    unsigned long long  _daemonDisableDuration;
+    unsigned long long  _daemonEnableDuration;
+    NSString * _gizmoBuild;
+    NSString * _gizmoHardware;
     struct { 
         unsigned int daemonDisableDuration : 1; 
         unsigned int daemonEnableDuration : 1; 
@@ -17,16 +17,18 @@
         unsigned int timestamp : 1; 
         unsigned int pairedDeviceCount : 1; 
         unsigned int switchCounter : 1; 
+        unsigned int switchType : 1; 
         unsigned int isAutomated : 1; 
-    } _has;
-    unsigned long long _idsSwitchDuration;
-    BOOL _isAutomated;
-    unsigned int _pairedDeviceCount;
-    unsigned long long _pingDuration;
-    unsigned long long _preSwitchDwellTime;
-    unsigned int _switchCounter;
-    unsigned long long _switchDuration;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _idsSwitchDuration;
+    BOOL  _isAutomated;
+    unsigned int  _pairedDeviceCount;
+    unsigned long long  _pingDuration;
+    unsigned long long  _preSwitchDwellTime;
+    unsigned int  _switchCounter;
+    unsigned long long  _switchDuration;
+    unsigned int  _switchType;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned long long daemonDisableDuration;
@@ -44,6 +46,7 @@
 @property (nonatomic) BOOL hasPreSwitchDwellTime;
 @property (nonatomic) BOOL hasSwitchCounter;
 @property (nonatomic) BOOL hasSwitchDuration;
+@property (nonatomic) BOOL hasSwitchType;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) unsigned long long idsSwitchDuration;
 @property (nonatomic) BOOL isAutomated;
@@ -52,6 +55,7 @@
 @property (nonatomic) unsigned long long preSwitchDwellTime;
 @property (nonatomic) unsigned int switchCounter;
 @property (nonatomic) unsigned long long switchDuration;
+@property (nonatomic) unsigned int switchType;
 @property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
@@ -74,6 +78,7 @@
 - (BOOL)hasPreSwitchDwellTime;
 - (BOOL)hasSwitchCounter;
 - (BOOL)hasSwitchDuration;
+- (BOOL)hasSwitchType;
 - (BOOL)hasTimestamp;
 - (unsigned int)hash;
 - (unsigned long long)idsSwitchDuration;
@@ -97,6 +102,7 @@
 - (void)setHasPreSwitchDwellTime:(BOOL)arg1;
 - (void)setHasSwitchCounter:(BOOL)arg1;
 - (void)setHasSwitchDuration:(BOOL)arg1;
+- (void)setHasSwitchType:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setIdsSwitchDuration:(unsigned long long)arg1;
 - (void)setIsAutomated:(BOOL)arg1;
@@ -105,9 +111,11 @@
 - (void)setPreSwitchDwellTime:(unsigned long long)arg1;
 - (void)setSwitchCounter:(unsigned int)arg1;
 - (void)setSwitchDuration:(unsigned long long)arg1;
+- (void)setSwitchType:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned int)switchCounter;
 - (unsigned long long)switchDuration;
+- (unsigned int)switchType;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 

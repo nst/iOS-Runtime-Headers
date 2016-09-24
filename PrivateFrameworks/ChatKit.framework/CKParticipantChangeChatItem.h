@@ -4,7 +4,7 @@
 
 @interface CKParticipantChangeChatItem : CKMultilineStampChatItem
 
-- (long long)changeType;
+- (int)changeType;
 - (id)handle;
 - (id)loadTranscriptText;
 - (id)sender;

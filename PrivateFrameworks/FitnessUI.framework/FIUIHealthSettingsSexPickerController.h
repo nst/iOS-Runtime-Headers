@@ -3,7 +3,7 @@
  */
 
 @interface FIUIHealthSettingsSexPickerController : FIUIHealthSettingsPickerController {
-    id /* block */ _sexUpdateHandler;
+    id /* block */  _sexUpdateHandler;
 }
 
 @property (nonatomic, copy) id /* block */ sexUpdateHandler;

@@ -3,7 +3,7 @@
  */
 
 @interface SUButtonAccessoryView : UIView {
-    SUGradientButton *_button;
+    SUGradientButton * _button;
 }
 
 @property (nonatomic, readonly) SUGradientButton *button;

@@ -3,8 +3,8 @@
  */
 
 @interface TSCHCallbackAnimationDelegate : NSObject {
-    SEL selector;
-    id target;
+    SEL  selector;
+    id  target;
 }
 
 @property (nonatomic) SEL selector;

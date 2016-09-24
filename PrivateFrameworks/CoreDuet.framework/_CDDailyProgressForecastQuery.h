@@ -3,13 +3,13 @@
  */
 
 @interface _CDDailyProgressForecastQuery : NSObject {
-    CDAttribute *_attribute;
-    BOOL _attributeEncodesProgress;
-    BOOL _considerAlternateDayPattern;
-    BOOL _considerDailyPattern;
-    BOOL _considerWeeklyPattern;
-    double _lookBackDuration;
-    double _temporalResolution;
+    CDAttribute * _attribute;
+    BOOL  _attributeEncodesProgress;
+    BOOL  _considerAlternateDayPattern;
+    BOOL  _considerDailyPattern;
+    BOOL  _considerWeeklyPattern;
+    double  _lookBackDuration;
+    double  _temporalResolution;
 }
 
 @property (retain) CDAttribute *attribute;

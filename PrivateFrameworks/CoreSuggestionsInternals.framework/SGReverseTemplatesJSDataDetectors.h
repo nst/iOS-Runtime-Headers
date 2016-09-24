@@ -3,11 +3,11 @@
  */
 
 @interface SGReverseTemplatesJSDataDetectors : NSObject {
-    NSSet *_availLocales;
-    NSDateFormatter *_dateFormatter;
-    NSDateFormatter *_naiveDateFormatter;
-    NSDateFormatter *_noTimeFormatter;
-    NSMutableDictionary *_scanners;
+    NSSet * _availLocales;
+    NSDateFormatter * _dateFormatter;
+    NSDateFormatter * _naiveDateFormatter;
+    NSDateFormatter * _noTimeFormatter;
+    NSMutableDictionary * _scanners;
 }
 
 - (void).cxx_destruct;

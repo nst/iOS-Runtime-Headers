@@ -7,13 +7,14 @@
         unsigned int _hasMaxValueInExtraIvars : 1; 
         unsigned int _hasMinValueInExtraIvars : 1; 
         unsigned int _storeBinaryDataExternally : 1; 
-        unsigned int _reservedAttributeDescription : 29; 
-    } _attributeDescriptionFlags;
-    Class _attributeValueClass;
-    NSString *_attributeValueClassName;
-    id _defaultValue;
-    unsigned int _type;
-    NSString *_valueTransformerName;
+        unsigned int _reservedAttributeFlagOne : 1; 
+        unsigned int _reservedAttributeDescription : 28; 
+    }  _attributeDescriptionFlags;
+    Class  _attributeValueClass;
+    NSString * _attributeValueClassName;
+    id  _defaultValue;
+    unsigned int  _type;
+    NSString * _valueTransformerName;
 }
 
 @property BOOL allowsExternalBinaryDataStorage;
@@ -31,9 +32,11 @@
 - (BOOL)_comparePredicatesAndWarnings:(id)arg1;
 - (BOOL)_comparePredicatesAndWarningsWithUnoptimizedAttributeDescription:(id)arg1;
 - (void)_createCachesAndOptimizeState;
+- (BOOL)_epsilonEquals:(id)arg1 rhs:(id)arg2 withFlags:(int)arg3;
 - (id)_initWithName:(id)arg1 type:(unsigned int)arg2;
 - (id)_initWithName:(id)arg1 type:(unsigned int)arg2 withClassName:(id)arg3;
 - (id)_initWithType:(unsigned int)arg1;
+- (BOOL)_isTriggerBacked;
 - (BOOL)_nonPredicateValidateValue:(id*)arg1 forKey:(id)arg2 inObject:(id)arg3 error:(id*)arg4;
 - (unsigned int)_propertyType;
 - (id)_rawValidationPredicates;

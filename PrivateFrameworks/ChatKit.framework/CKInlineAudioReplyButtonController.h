@@ -3,12 +3,12 @@
  */
 
 @interface CKInlineAudioReplyButtonController : NSObject {
-    <CKInlineAudioReplyButtonDelegate> *_delegate;
-    double _holdThreshold;
-    UIButton *_startButton;
-    BOOL _started;
-    UIButton *_stopButton;
-    double _touchDownTime;
+    <CKInlineAudioReplyButtonDelegate> * _delegate;
+    double  _holdThreshold;
+    UIButton * _startButton;
+    BOOL  _started;
+    UIButton * _stopButton;
+    double  _touchDownTime;
 }
 
 @property (nonatomic) <CKInlineAudioReplyButtonDelegate> *delegate;
@@ -18,6 +18,7 @@
 @property (nonatomic, retain) UIButton *stopButton;
 @property (nonatomic) double touchDownTime;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)delegate;
 - (double)holdThreshold;

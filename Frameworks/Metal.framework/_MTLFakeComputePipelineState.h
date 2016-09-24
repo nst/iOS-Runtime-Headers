@@ -3,8 +3,8 @@
  */
 
 @interface _MTLFakeComputePipelineState : _MTLComputePipelineState <MTLComputePipelineState> {
-    unsigned int _maxTotalThreadsPerThreadgroup;
-    unsigned int _threadExecutionWidth;
+    unsigned int  _maxTotalThreadsPerThreadgroup;
+    unsigned int  _threadExecutionWidth;
 }
 
 @property (readonly, copy) NSString *debugDescription;

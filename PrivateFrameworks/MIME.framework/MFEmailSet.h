@@ -3,7 +3,7 @@
  */
 
 @interface MFEmailSet : NSMutableSet {
-    struct __CFSet { } *_set;
+    struct __CFSet { } * _set;
 }
 
 + (id)set;

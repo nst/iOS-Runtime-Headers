@@ -3,7 +3,7 @@
  */
 
 @interface WebBookmarkWebFilterSettings : NSObject {
-    WFUserSettings *_userSettings;
+    WFUserSettings * _userSettings;
 }
 
 @property (nonatomic, readonly) WFUserSettings *userSettings;

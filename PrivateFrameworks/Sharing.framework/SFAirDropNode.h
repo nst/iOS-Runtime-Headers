@@ -3,23 +3,25 @@
  */
 
 @interface SFAirDropNode : NSObject {
-    UIImage *_displayIcon;
-    NSString *_displayName;
-    BOOL _isConversation;
-    BOOL _monogram;
-    id _node;
-    NSString *_realName;
-    NSString *_secondaryName;
-    struct __SFOperation { } *_sender;
-    BOOL _supportsFMF;
-    BOOL _supportsMixedTypes;
-    BOOL _supportsPasses;
-    BOOL _unknown;
+    NSString * _contactIdentifier;
+    UIImage * _displayIcon;
+    NSString * _displayName;
+    BOOL  _me;
+    BOOL  _monogram;
+    id  _node;
+    NSString * _realName;
+    NSString * _secondaryName;
+    struct __SFOperation { } * _sender;
+    BOOL  _supportsFMF;
+    BOOL  _supportsMixedTypes;
+    BOOL  _supportsPasses;
+    BOOL  _unknown;
 }
 
+@property (retain) NSString *contactIdentifier;
 @property (retain) UIImage *displayIcon;
 @property (retain) NSString *displayName;
-@property (readonly) BOOL isConversation;
+@property (getter=isMe) BOOL me;
 @property (getter=isMonogram) BOOL monogram;
 @property (retain) id node;
 @property (retain) NSString *realName;
@@ -33,21 +35,24 @@
 
 - (void).cxx_destruct;
 - (void)cancelSend;
+- (id)contactIdentifier;
 - (id)description;
 - (id)displayIcon;
 - (id)displayName;
 - (void)handleOperationCallback:(struct __SFOperation { }*)arg1 event:(long)arg2 withResults:(id)arg3;
 - (unsigned int)hash;
 - (id)init;
-- (BOOL)isConversation;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isMe;
 - (BOOL)isMonogram;
 - (BOOL)isUnknown;
 - (id)node;
 - (id)realName;
 - (id)secondaryName;
+- (void)setContactIdentifier:(id)arg1;
 - (void)setDisplayIcon:(id)arg1;
 - (void)setDisplayName:(id)arg1;
+- (void)setMe:(BOOL)arg1;
 - (void)setMonogram:(BOOL)arg1;
 - (void)setNode:(id)arg1;
 - (void)setRealName:(id)arg1;

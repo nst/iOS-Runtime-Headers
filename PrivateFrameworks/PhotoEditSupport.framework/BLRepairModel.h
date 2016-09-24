@@ -3,9 +3,9 @@
  */
 
 @interface BLRepairModel : NSObject {
-    BLRepairLayerStack *_layerStack;
-    NSLock *_lock;
-    NSDictionary *_strokesDataDictionary;
+    BLRepairLayerStack * _layerStack;
+    NSLock * _lock;
+    NSDictionary * _strokesDataDictionary;
 }
 
 - (void)buildLayerStackWithAnalysisImage:(id)arg1 andRepairImage:(id)arg2;

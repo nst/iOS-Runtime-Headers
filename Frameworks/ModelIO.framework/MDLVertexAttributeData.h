@@ -3,10 +3,10 @@
  */
 
 @interface MDLVertexAttributeData : NSObject {
-    void *_dataStart;
-    unsigned int _format;
-    MDLMeshBufferMap *_map;
-    unsigned int _stride;
+    void * _dataStart;
+    unsigned int  _format;
+    MDLMeshBufferMap * _map;
+    unsigned int  _stride;
 }
 
 @property (nonatomic) void*dataStart;

@@ -2,12 +2,16 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@interface CKRecordID : NSObject <CKXPCSuitableString, NSCopying, NSSecureCoding> {
-    NSString *_recordName;
-    CKRecordZoneID *_zoneID;
+@interface CKRecordID : NSObject <CKSQLiteItem, CKXPCSuitableString, ICHasDatabaseScope, NSCopying, NSSecureCoding, PQLValuable> {
+    NSString * _recordName;
+    CKRecordZoneID * _zoneID;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSString *recordName;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) CKRecordZoneID *zoneID;
 
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
@@ -16,6 +20,8 @@
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
+- (id)CKPropertiesDescriptionWithProperties:(id)arg1;
+- (id)CKPropertiesToDescribe:(BOOL)arg1;
 - (id)CKXPCSuitableString;
 - (id)ckShortDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -36,7 +42,33 @@
 
 // Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
 
-- (id)brc_itemID;
+- (id)brc_appLibraryDocumentsZoneName;
+- (id)brc_appLibraryRootZoneName;
+- (BOOL)brc_isAppLibraryDocumentsRecordID;
+- (BOOL)brc_isAppLibraryRootRecordID;
+- (BOOL)brc_isZoneRootRecordID;
+- (id)brc_itemIDOfTargetWithLibraryRowID:(id)arg1 session:(id)arg2;
+- (id)brc_itemIDWithSession:(id)arg1;
 - (BOOL)brc_itemType;
+- (id)brc_shareItemIDWithLibraryRowID:(id)arg1;
+- (id)brc_shareOwnerItemID;
+- (id)brc_shareZoneName;
+- (id)initShareIDWithDocumentItem:(id)arg1;
+- (id)initShareIDWithItemID:(id)arg1 zoneID:(id)arg2;
+- (id)initShareIDWithRecordID:(id)arg1 serverZone:(id)arg2;
+- (id)initShareIDWithRecordID:(id)arg1 zoneID:(id)arg2 session:(id)arg3;
+
+// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
+
++ (id)newFromSqliteValue:(struct Mem { }*)arg1;
+
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
+- (int)databaseScope;
+- (BOOL)ic_isOwnedByCurrentUser;
+- (id)ic_loggingDescription;
+- (id)ic_loggingDescriptionIncludingBrackets:(BOOL)arg1;
 
 @end

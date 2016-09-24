@@ -2,59 +2,63 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@interface AXEventPathInfoRepresentation : NSObject <NSCopying, NSSecureCoding> {
-    float _altitude;
-    float _azimuth;
-    float _barrelPressure;
-    unsigned int _didUpdateMask;
-    float _orbValue;
-    float _pathDensity;
-    unsigned int _pathEventMask;
-    unsigned char _pathIdentity;
-    unsigned char _pathIndex;
+@interface AXEventPathInfoRepresentation : NSObject <AXEventRepresentationDescription, NSCopying, NSSecureCoding> {
+    double  _altitude;
+    double  _azimuth;
+    double  _barrelPressure;
+    unsigned int  _didUpdateMask;
+    double  _orbValue;
+    double  _pathDensity;
+    unsigned int  _pathEventMask;
+    unsigned char  _pathIdentity;
+    unsigned char  _pathIndex;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _pathLocation;
-    float _pathMajorRadius;
-    float _pathMajorRadiusTolerance;
-    float _pathMinorRadius;
-    float _pathPressure;
-    unsigned char _pathProximity;
-    float _pathQuality;
-    float _pathTwist;
-    void *_pathWindow;
-    unsigned long _pathWindowContextID;
-    unsigned int _transducerType;
-    unsigned int _willUpdateMask;
+        double x; 
+        double y; 
+    }  _pathLocation;
+    double  _pathMajorRadius;
+    double  _pathMajorRadiusTolerance;
+    double  _pathMinorRadius;
+    double  _pathPressure;
+    unsigned char  _pathProximity;
+    double  _pathQuality;
+    double  _pathTwist;
+    void * _pathWindow;
+    unsigned long  _pathWindowContextID;
+    unsigned int  _transducerType;
+    unsigned int  _willUpdateMask;
 }
 
-@property (nonatomic) float altitude;
-@property (nonatomic) float azimuth;
-@property (nonatomic) float barrelPressure;
+@property (nonatomic) double altitude;
+@property (nonatomic) double azimuth;
+@property (nonatomic) double barrelPressure;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) unsigned int didUpdateMask;
-@property (nonatomic) float orbValue;
-@property (nonatomic) float pathDensity;
+@property (readonly) unsigned int hash;
+@property (nonatomic) double orbValue;
+@property (nonatomic) double pathDensity;
 @property (nonatomic) unsigned int pathEventMask;
 @property (nonatomic) unsigned char pathIdentity;
 @property (nonatomic) unsigned char pathIndex;
-@property (nonatomic) struct CGPoint { float x1; float x2; } pathLocation;
-@property (nonatomic) float pathMajorRadius;
-@property (nonatomic) float pathMajorRadiusTolerance;
-@property (nonatomic) float pathMinorRadius;
-@property (nonatomic) float pathPressure;
+@property (nonatomic) struct CGPoint { double x1; double x2; } pathLocation;
+@property (nonatomic) double pathMajorRadius;
+@property (nonatomic) double pathMajorRadiusTolerance;
+@property (nonatomic) double pathMinorRadius;
+@property (nonatomic) double pathPressure;
 @property (nonatomic) unsigned char pathProximity;
-@property (nonatomic) float pathQuality;
-@property (nonatomic) float pathTwist;
+@property (nonatomic) double pathQuality;
+@property (nonatomic) double pathTwist;
 @property (nonatomic) void*pathWindow;
 @property (nonatomic) unsigned long pathWindowContextID;
+@property (readonly) Class superclass;
 @property (nonatomic) unsigned int transducerType;
 @property (nonatomic) unsigned int willUpdateMask;
 
-+ (id)representationWithPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; float x4; float x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; unsigned int x7; void *x8; }*)arg1;
++ (id)representationWithPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; double x4; double x5; struct CGPoint { double x_6_1_1; double x_6_1_2; } x6; unsigned int x7; void *x8; }*)arg1;
 + (BOOL)supportsSecureCoding;
 
-- (id)_tabularDescription;
+- (id)accessibilityEventRepresentationTabularDescription;
 - (float)altitude;
 - (float)azimuth;
 - (float)barrelPressure;
@@ -68,7 +72,7 @@
 - (unsigned int)pathEventMask;
 - (unsigned char)pathIdentity;
 - (unsigned char)pathIndex;
-- (struct CGPoint { float x1; float x2; })pathLocation;
+- (struct CGPoint { double x1; double x2; })pathLocation;
 - (float)pathMajorRadius;
 - (float)pathMajorRadiusTolerance;
 - (float)pathMinorRadius;
@@ -87,7 +91,7 @@
 - (void)setPathEventMask:(unsigned int)arg1;
 - (void)setPathIdentity:(unsigned char)arg1;
 - (void)setPathIndex:(unsigned char)arg1;
-- (void)setPathLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setPathLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setPathMajorRadius:(float)arg1;
 - (void)setPathMajorRadiusTolerance:(float)arg1;
 - (void)setPathMinorRadius:(float)arg1;
@@ -101,6 +105,6 @@
 - (void)setWillUpdateMask:(unsigned int)arg1;
 - (unsigned int)transducerType;
 - (unsigned int)willUpdateMask;
-- (void)writeToPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; float x4; float x5; struct CGPoint { float x_6_1_1; float x_6_1_2; } x6; unsigned int x7; void *x8; }*)arg1;
+- (void)writeToPathInfo:(struct { unsigned char x1; unsigned char x2; unsigned char x3; double x4; double x5; struct CGPoint { double x_6_1_1; double x_6_1_2; } x6; unsigned int x7; void *x8; }*)arg1;
 
 @end

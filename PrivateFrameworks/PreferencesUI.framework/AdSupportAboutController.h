@@ -3,7 +3,7 @@
  */
 
 @interface AdSupportAboutController : UIViewController <UIWebViewDelegate> {
-    UIWebView *_webView;
+    UIWebView * _webView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

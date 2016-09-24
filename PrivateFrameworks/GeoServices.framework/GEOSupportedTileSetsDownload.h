@@ -3,8 +3,8 @@
  */
 
 @interface GEOSupportedTileSetsDownload : PBCodable <NSCopying> {
-    GEODownloadMetadata *_metadata;
-    GEOSupportedTileSets *_tileSets;
+    GEODownloadMetadata * _metadata;
+    GEOSupportedTileSets * _tileSets;
 }
 
 @property (nonatomic, retain) GEODownloadMetadata *metadata;

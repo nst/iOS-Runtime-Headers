@@ -3,19 +3,20 @@
  */
 
 @interface NNMKProtoMessageContentSync : PBCodable <NSCopying> {
-    NSMutableArray *_attachments;
-    NSData *_dateSynced;
-    unsigned int _fullSyncVersion;
+    NSMutableArray * _attachments;
+    NSData * _dateSynced;
+    unsigned int  _fullSyncVersion;
     struct { 
         unsigned int fullSyncVersion : 1; 
         unsigned int mainAlternativeValid : 1; 
         unsigned int partiallyLoaded : 1; 
-    } _has;
-    BOOL _mainAlternativeValid;
-    NSString *_messageId;
-    BOOL _partiallyLoaded;
-    NSData *_preview;
-    NSData *_text;
+    }  _has;
+    BOOL  _mainAlternativeValid;
+    NSString * _messageId;
+    NNMKProtoMessage * _notificationMessage;
+    BOOL  _partiallyLoaded;
+    NSData * _preview;
+    NSData * _text;
 }
 
 @property (nonatomic, retain) NSMutableArray *attachments;
@@ -25,11 +26,13 @@
 @property (nonatomic) BOOL hasFullSyncVersion;
 @property (nonatomic) BOOL hasMainAlternativeValid;
 @property (nonatomic, readonly) BOOL hasMessageId;
+@property (nonatomic, readonly) BOOL hasNotificationMessage;
 @property (nonatomic) BOOL hasPartiallyLoaded;
 @property (nonatomic, readonly) BOOL hasPreview;
 @property (nonatomic, readonly) BOOL hasText;
 @property (nonatomic) BOOL mainAlternativeValid;
 @property (nonatomic, retain) NSString *messageId;
+@property (nonatomic, retain) NNMKProtoMessage *notificationMessage;
 @property (nonatomic) BOOL partiallyLoaded;
 @property (nonatomic, retain) NSData *preview;
 @property (nonatomic, retain) NSData *text;
@@ -50,6 +53,7 @@
 - (BOOL)hasFullSyncVersion;
 - (BOOL)hasMainAlternativeValid;
 - (BOOL)hasMessageId;
+- (BOOL)hasNotificationMessage;
 - (BOOL)hasPartiallyLoaded;
 - (BOOL)hasPreview;
 - (BOOL)hasText;
@@ -58,6 +62,7 @@
 - (BOOL)mainAlternativeValid;
 - (void)mergeFrom:(id)arg1;
 - (id)messageId;
+- (id)notificationMessage;
 - (BOOL)partiallyLoaded;
 - (id)preview;
 - (BOOL)readFrom:(id)arg1;
@@ -69,6 +74,7 @@
 - (void)setHasPartiallyLoaded:(BOOL)arg1;
 - (void)setMainAlternativeValid:(BOOL)arg1;
 - (void)setMessageId:(id)arg1;
+- (void)setNotificationMessage:(id)arg1;
 - (void)setPartiallyLoaded:(BOOL)arg1;
 - (void)setPreview:(id)arg1;
 - (void)setText:(id)arg1;

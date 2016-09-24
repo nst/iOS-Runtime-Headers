@@ -3,12 +3,12 @@
  */
 
 @interface WBUWebProcessPlugInAutoFillPageController : WBUWebProcessPlugInPageController <WBUFormAutoFiller, WBUInjectedJavaScriptWebProcessController> {
-    _WKRemoteObjectInterface *_activityControllerInterface;
-    <WBUInjectedJavaScriptObserver> *_activityJSObserverProxy;
-    _WKRemoteObjectInterface *_autoFillerInterface;
-    WBUFormMetadataControllerWK2 *_formMetadataController;
-    WKWebProcessPlugInScriptWorld *_isolatedWorld;
-    unsigned int _loadDeferringReasons;
+    _WKRemoteObjectInterface * _activityControllerInterface;
+    <WBUInjectedJavaScriptObserver> * _activityJSObserverProxy;
+    _WKRemoteObjectInterface * _autoFillerInterface;
+    WBUFormMetadataControllerWK2 * _formMetadataController;
+    WKWebProcessPlugInScriptWorld * _isolatedWorld;
+    unsigned int  _loadDeferringReasons;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -23,6 +23,7 @@
 - (void)addLoadDeferringReasons:(unsigned int)arg1;
 - (void)annotateForm:(id)arg1 inFrame:(id)arg2 withValues:(id)arg3;
 - (void)autoFillForm:(id)arg1 inFrame:(id)arg2 withGeneratedPassword:(id)arg3;
+- (void)autoFillFormAsynchronouslyInFrame:(id)arg1 withValues:(id)arg2 setAutoFilled:(BOOL)arg3 focusFieldAfterFilling:(BOOL)arg4 fieldToFocus:(id)arg5;
 - (void)autoFillFormAsynchronouslyInFrame:(id)arg1 withValues:(id)arg2 setAutoFilled:(BOOL)arg3 selectFieldAfterFilling:(id)arg4;
 - (void)autoFillFormSynchronouslyInFrame:(id)arg1 withValues:(id)arg2;
 - (void)clearAutoFillMetadata;

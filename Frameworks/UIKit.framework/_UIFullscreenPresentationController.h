@@ -3,20 +3,21 @@
  */
 
 @interface _UIFullscreenPresentationController : _UICurrentContextPresentationController {
-    float _counterRotatedAngle;
+    double  _counterRotatedAngle;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _counterRotatedOriginalBounds;
-    UIView *_counterRotatedView;
-    int _originalOrientation;
-    id /* block */ finalRotationBlock;
+    }  _counterRotatedOriginalBounds;
+    UIView * _counterRotatedView;
+    int  _originalOrientation;
+    BOOL  _presentingViewControllerHandledCounterRotation;
+    id /* block */  finalRotationBlock;
 }
 
 - (void).cxx_destruct;
@@ -25,10 +26,11 @@
 - (void)_placeCounterRotationViewWithView:(id)arg1 inWindow:(id)arg2 fromOrientation:(int)arg3 toOrientation:(int)arg4 force:(BOOL)arg5;
 - (void)_removeCounterRotation;
 - (void)_setPresentedViewController:(id)arg1;
+- (BOOL)_shouldPresentedViewControllerControlStatusBarAppearance;
 - (BOOL)_shouldRespectDefinesPresentationContext;
 - (void)dealloc;
 - (void)dismissalTransitionDidEnd:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfPresentedViewInContainerView;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameOfPresentedViewInContainerView;
 - (int)presentationStyle;
 - (void)presentationTransitionDidEnd:(BOOL)arg1;
 - (BOOL)shouldPresentInFullscreen;

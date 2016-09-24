@@ -18,9 +18,9 @@
         int data_type; 
         unsigned int adler; 
         unsigned int reserved; 
-    } mDeflateStream;
-    char *mOutBuffer;
-    <SFUOutputStream> *mOutputStream;
+    }  mDeflateStream;
+    char * mOutBuffer;
+    <SFUOutputStream> * mOutputStream;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -35,8 +35,8 @@
 - (void)dealloc;
 - (id)initWithOutputStream:(id)arg1;
 - (id)inputStream;
-- (long long)offset;
-- (void)seekToOffset:(long long)arg1 whence:(int)arg2;
+- (int)offset;
+- (void)seekToOffset:(int)arg1 whence:(int)arg2;
 - (void)writeBuffer:(const char *)arg1 size:(unsigned long)arg2;
 
 @end

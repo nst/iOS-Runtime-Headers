@@ -10,8 +10,8 @@
 - (TSPObjectContext *)context;
 - (void)endIgnoringModificationsForObject:(TSPObject *)arg1;
 - (BOOL)isObjectInDocument:(TSPObject *)arg1;
-- (long long)modifyObjectTokenForNewObject;
-- (long long)newObjectIdentifier;
+- (int)modifyObjectTokenForNewObject;
+- (int)newObjectIdentifier;
 - (NSUUID *)newObjectUUIDForObject:(TSPObject *)arg1;
 - (TSPObjectUUIDMap *)objectUUIDMap;
 - (void)willModifyObject:(TSPObject *)arg1 duringReadOperation:(BOOL)arg2;

@@ -3,7 +3,7 @@
  */
 
 @interface DATrafficLogger : NSObject {
-    NSString *_filename;
+    NSString * _filename;
 }
 
 @property (nonatomic, retain) NSString *filename;

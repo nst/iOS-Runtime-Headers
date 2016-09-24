@@ -3,8 +3,8 @@
  */
 
 @interface ISPostReviewOperation : ISOperation <ISStoreURLOperationDelegate> {
-    BOOL _backgroundReview;
-    ISReview *_review;
+    BOOL  _backgroundReview;
+    ISReview * _review;
 }
 
 @property (getter=isBackgroundReview) BOOL backgroundReview;

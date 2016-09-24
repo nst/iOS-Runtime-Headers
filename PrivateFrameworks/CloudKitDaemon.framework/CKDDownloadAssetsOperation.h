@@ -3,21 +3,24 @@
  */
 
 @interface CKDDownloadAssetsOperation : CKDDatabaseOperation {
-    NSMutableArray *_MMCSItemsToDownload;
-    NSArray *_assetsToDownload;
-    CKDCancelTokenGroup *_cancelTokens;
-    id /* block */ _downloadCompletionBlock;
-    id /* block */ _downloadPreparationBlock;
-    id /* block */ _downloadProgressBlock;
-    NSMapTable *_downloadTasksByPackages;
-    unsigned int _maxPackageDownloadsPerBatch;
-    NSArray *_packageIndexSets;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableArray * _MMCSItemsToDownload;
+    NSArray * _assetsToDownload;
+    CKDCancelTokenGroup * _cancelTokens;
+    id /* block */  _downloadCommandBlock;
+    id /* block */  _downloadCompletionBlock;
+    id /* block */  _downloadPreparationBlock;
+    id /* block */  _downloadProgressBlock;
+    NSMapTable * _downloadTasksByPackages;
+    unsigned int  _maxPackageDownloadsPerBatch;
+    NSArray * _packageIndexSets;
+    NSObject<OS_dispatch_queue> * _queue;
+    BOOL  _shouldFetchAssetContentInMemory;
 }
 
 @property (nonatomic, retain) NSMutableArray *MMCSItemsToDownload;
 @property (nonatomic, retain) NSArray *assetsToDownload;
 @property (nonatomic, retain) CKDCancelTokenGroup *cancelTokens;
+@property (nonatomic, copy) id /* block */ downloadCommandBlock;
 @property (nonatomic, copy) id /* block */ downloadCompletionBlock;
 @property (nonatomic, copy) id /* block */ downloadPreparationBlock;
 @property (nonatomic, copy) id /* block */ downloadProgressBlock;
@@ -25,12 +28,16 @@
 @property (nonatomic) unsigned int maxPackageDownloadsPerBatch;
 @property (nonatomic, retain) NSArray *packageIndexSets;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic) BOOL shouldFetchAssetContentInMemory;
 
 - (void).cxx_destruct;
+- (id)CKStatusReportLogGroups;
 - (id)MMCSItemsToDownload;
 - (void)_collectMetricsFromCompletedItemGroup:(id)arg1;
 - (void)_collectMetricsFromCompletedItemGroupSet:(id)arg1;
 - (void)_collectMetricsFromMMCSOperationMetrics:(id)arg1;
+- (void)_didCommandForAsset:(id)arg1 command:(id)arg2;
+- (void)_didCommandForMMCSItem:(id)arg1 command:(id)arg2;
 - (void)_didDownloadAsset:(id)arg1 error:(id)arg2;
 - (void)_didDownloadMMCSItem:(id)arg1 error:(id)arg2;
 - (void)_didDownloadMMCSItems:(id)arg1 error:(id)arg2;
@@ -48,10 +55,11 @@
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (BOOL)_prepareForDownload;
 - (void)_removeUntrackedMMCSItems:(id)arg1;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (id)assetsToDownload;
 - (void)cancel;
 - (id)cancelTokens;
+- (id /* block */)downloadCommandBlock;
 - (id /* block */)downloadCompletionBlock;
 - (id /* block */)downloadPreparationBlock;
 - (id /* block */)downloadProgressBlock;
@@ -65,6 +73,7 @@
 - (id)queue;
 - (void)setAssetsToDownload:(id)arg1;
 - (void)setCancelTokens:(id)arg1;
+- (void)setDownloadCommandBlock:(id /* block */)arg1;
 - (void)setDownloadCompletionBlock:(id /* block */)arg1;
 - (void)setDownloadPreparationBlock:(id /* block */)arg1;
 - (void)setDownloadProgressBlock:(id /* block */)arg1;
@@ -73,5 +82,7 @@
 - (void)setMaxPackageDownloadsPerBatch:(unsigned int)arg1;
 - (void)setPackageIndexSets:(id)arg1;
 - (void)setQueue:(id)arg1;
+- (void)setShouldFetchAssetContentInMemory:(BOOL)arg1;
+- (BOOL)shouldFetchAssetContentInMemory;
 
 @end

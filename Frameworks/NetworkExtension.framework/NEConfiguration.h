@@ -3,19 +3,19 @@
  */
 
 @interface NEConfiguration : NSObject <NEConfigurationValidating, NEProfilePayloadHandlerDelegate, NSCopying, NSSecureCoding> {
-    NEVPN *_VPN;
-    NEAOVPN *_alwaysOnVPN;
-    NEVPNApp *_appVPN;
-    NSString *_application;
-    NSString *_applicationIdentifier;
-    NSString *_applicationName;
-    NEContentFilter *_contentFilter;
-    NSString *_externalIdentifier;
-    int _grade;
-    NSUUID *_identifier;
-    NSString *_name;
-    NEPathController *_pathController;
-    NEProfileIngestionPayloadInfo *_payloadInfo;
+    NEVPN * _VPN;
+    NEAOVPN * _alwaysOnVPN;
+    NEVPNApp * _appVPN;
+    NSString * _application;
+    NSString * _applicationIdentifier;
+    NSString * _applicationName;
+    NEContentFilter * _contentFilter;
+    NSString * _externalIdentifier;
+    int  _grade;
+    NSUUID * _identifier;
+    NSString * _name;
+    NEPathController * _pathController;
+    NEProfileIngestionPayloadInfo * _payloadInfo;
 }
 
 @property (copy) NEVPN *VPN;
@@ -59,7 +59,6 @@
 - (BOOL)configureL2TPWithPPPOptions:(id)arg1;
 - (BOOL)configurePPPCommon:(id)arg1;
 - (BOOL)configurePPPWithVPNOptions:(id)arg1 payloadBase:(id)arg2;
-- (BOOL)configurePPTPWithPPPOptions:(id)arg1;
 - (BOOL)configurePluginWithPayload:(id)arg1 pluginType:(id)arg2 payloadType:(id)arg3;
 - (BOOL)configureVpnOnDemand:(id)arg1 vpnType:(id)arg2;
 - (BOOL)configureVpnOnDemandRules:(id)arg1;
@@ -104,6 +103,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isSupportedBySC;
 - (id)name;
+- (BOOL)needToUpdateKeychain;
 - (id)pathController;
 - (id)payloadInfo;
 - (id)pluginType;

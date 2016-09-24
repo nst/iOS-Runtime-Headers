@@ -3,10 +3,10 @@
  */
 
 @interface NFAWDMiddlewareException : NSObject <NFAWDEventProtocol> {
-    AWDNFCMiddlewareExceptionEvent *_metric;
-    unsigned int errorCode;
-    unsigned int type;
-    unsigned int version;
+    unsigned int  _errorCode;
+    AWDNFCMiddlewareExceptionEvent * _metric;
+    unsigned int  _type;
+    unsigned int  _version;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,13 +3,13 @@
  */
 
 @interface CICMYKHalftone : CIFilter {
-    NSNumber *inputAngle;
-    CIVector *inputCenter;
-    NSNumber *inputGCR;
-    CIImage *inputImage;
-    NSNumber *inputSharpness;
-    NSNumber *inputUCR;
-    NSNumber *inputWidth;
+    NSNumber * inputAngle;
+    CIVector * inputCenter;
+    NSNumber * inputGCR;
+    CIImage * inputImage;
+    NSNumber * inputSharpness;
+    NSNumber * inputUCR;
+    NSNumber * inputWidth;
 }
 
 + (id)customAttributes;

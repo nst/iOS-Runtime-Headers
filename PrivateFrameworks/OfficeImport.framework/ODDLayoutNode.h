@@ -3,7 +3,7 @@
  */
 
 @interface ODDLayoutNode : ODDLayoutObjectList {
-    ODDLayoutVariablePropertySet *mVariableList;
+    ODDLayoutVariablePropertySet * mVariableList;
 }
 
 - (void)dealloc;

@@ -3,16 +3,16 @@
  */
 
 @interface CNContactStoreDataSource : NSObject <CNContactDataSource> {
-    CNContactStoreSnapshot *_currentSnapshot;
-    CNContactStoreFilter *_filter;
-    NSArray *_keysToFetch;
-    BOOL _loadingSnapshot;
-    CNContact *_meContact;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSDictionary *_sectionHeadersDictionary;
-    CNContactStore *_store;
-    CNContactFormatter *contactFormatter;
-    <CNContactDataSourceDelegate> *delegate;
+    CNContactStoreSnapshot * _currentSnapshot;
+    CNContactStoreFilter * _filter;
+    NSArray * _keysToFetch;
+    BOOL  _loadingSnapshot;
+    CNContact * _meContact;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSDictionary * _sectionHeadersDictionary;
+    CNContactStore * _store;
+    CNContactFormatter * contactFormatter;
+    <CNContactDataSourceDelegate> * delegate;
 }
 
 @property (nonatomic, readonly) unsigned int abSortOrder;
@@ -34,7 +34,7 @@
 @property (nonatomic, retain) NSArray *keysToFetch;
 @property (nonatomic, readonly) NSDictionary *localizedSectionHeaders;
 @property (nonatomic, readonly) NSDictionary *localizedSectionIndices;
-@property (nonatomic, retain) CNContact *meContact;
+@property (nonatomic, copy) CNContact *meContact;
 @property (nonatomic, readonly) NSString *meContactIdentifier;
 @property (nonatomic, readonly) NSDictionary *sectionHeadersDictionary;
 @property (nonatomic, readonly) NSArray *sections;
@@ -72,9 +72,9 @@
 - (id)keysToFetch;
 - (id)localizedSectionHeaders;
 - (id)localizedSectionIndices;
+- (id)mainStoreMeContactWithKeysToFetch:(id)arg1;
 - (id)meContact;
 - (id)meContactIdentifier;
-- (id)meContactWithKeysToFetch:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)reload;
 - (void)reloadAsynchronously;

@@ -3,9 +3,9 @@
  */
 
 @interface MSCLLoadConfigurationOperation : NSOperation {
-    SKUIClientContext *_clientContext;
-    id /* block */ _configurationBlock;
-    NSLock *_lock;
+    SKUIClientContext * _clientContext;
+    id /* block */  _configurationBlock;
+    NSLock * _lock;
 }
 
 @property (retain) SKUIClientContext *clientContext;

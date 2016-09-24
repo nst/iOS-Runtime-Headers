@@ -3,16 +3,16 @@
  */
 
 @interface GKMatchResponse : GKInternalRepresentation {
-    NSData *_cdxTicket;
-    GKMatchRequestInternal *_matchRequest;
-    NSArray *_matches;
-    GKDispatchGroup *_matchingGroup;
-    NSArray *_relayPushes;
-    NSString *_rid;
-    int _sequence;
-    NSDictionary *_serverRequest;
-    NSData *_sessionToken;
-    int _state;
+    NSData * _cdxTicket;
+    GKMatchRequestInternal * _matchRequest;
+    NSArray * _matches;
+    GKDispatchGroup * _matchingGroup;
+    NSArray * _relayPushes;
+    NSString * _rid;
+    int  _sequence;
+    NSDictionary * _serverRequest;
+    NSData * _sessionToken;
+    int  _state;
 }
 
 @property (retain) NSData *cdxTicket;

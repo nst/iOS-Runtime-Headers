@@ -3,9 +3,9 @@
  */
 
 @interface NSSQLManyToMany : NSSQLRelationship {
-    NSString *_columnName;
-    NSString *_correlationTableName;
-    NSString *_orderColumnName;
+    NSString * _columnName;
+    NSString * _correlationTableName;
+    NSString * _orderColumnName;
 }
 
 - (void)_setColumnName:(id)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DSphericalEnvironmentShaderEffect : TSCH3DShaderEffect {
-    NSArray *mMaterials;
-    TSCH3DTexturePool *mPool;
+    NSArray * mMaterials;
+    TSCH3DTexturePool * mPool;
 }
 
 + (id)effectWithMaterials:(id)arg1 pool:(id)arg2;

@@ -3,9 +3,9 @@
  */
 
 @interface PSUsageBundleCategory : NSObject {
-    NSString *_identifier;
-    NSString *_name;
-    PSUsageBundleApp *_usageBundleApp;
+    NSString * _identifier;
+    NSString * _name;
+    PSUsageBundleApp * _usageBundleApp;
 }
 
 @property (nonatomic, retain) NSString *identifier;

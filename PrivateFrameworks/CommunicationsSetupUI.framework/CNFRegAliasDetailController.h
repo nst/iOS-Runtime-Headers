@@ -3,10 +3,10 @@
  */
 
 @interface CNFRegAliasDetailController : CNFRegListController {
-    CNFRegAlias *_alias;
-    PSSpecifier *_removeButtonSpecifier;
-    PSSpecifier *_removeGroupSpecifier;
-    NSArray *_resendValidationSpecifierGroup;
+    CNFRegAlias * _alias;
+    PSSpecifier * _removeButtonSpecifier;
+    PSSpecifier * _removeGroupSpecifier;
+    NSArray * _resendValidationSpecifierGroup;
 }
 
 @property (nonatomic, retain) CNFRegAlias *alias;

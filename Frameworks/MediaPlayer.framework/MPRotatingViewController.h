@@ -3,7 +3,7 @@
  */
 
 @interface MPRotatingViewController : UIViewController {
-    id /* block */ _block;
+    id /* block */  _block;
 }
 
 - (void).cxx_destruct;

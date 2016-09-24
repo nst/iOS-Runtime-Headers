@@ -3,7 +3,7 @@
  */
 
 @interface RTScenarioTriggerFirstTimeInCity : RTScenarioTrigger {
-    NSString *_city;
+    NSString * _city;
 }
 
 @property (nonatomic, readonly) NSString *city;

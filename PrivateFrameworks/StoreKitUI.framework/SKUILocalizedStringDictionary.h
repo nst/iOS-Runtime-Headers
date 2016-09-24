@@ -3,9 +3,9 @@
  */
 
 @interface SKUILocalizedStringDictionary : NSObject {
-    NSArray *_bundles;
-    NSString *_localeName;
-    NSMutableArray *_stringTables;
+    NSArray * _bundles;
+    NSString * _localeName;
+    NSMutableArray * _stringTables;
 }
 
 @property (nonatomic, readonly) NSString *localeName;

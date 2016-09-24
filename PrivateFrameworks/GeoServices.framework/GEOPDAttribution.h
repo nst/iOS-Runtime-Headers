@@ -3,11 +3,11 @@
  */
 
 @interface GEOPDAttribution : PBCodable <NSCopying> {
-    NSString *_actionUrlComponent;
-    NSMutableArray *_attributionUrls;
-    NSString *_externalComponentId;
-    NSString *_externalItemId;
-    NSString *_vendorId;
+    NSString * _actionUrlComponent;
+    NSMutableArray * _attributionUrls;
+    NSString * _externalComponentId;
+    NSString * _externalItemId;
+    NSString * _vendorId;
 }
 
 @property (nonatomic, retain) NSString *actionUrlComponent;
@@ -23,9 +23,10 @@
 + (id)attributionForPlaceDataEncyclopedia:(id)arg1;
 + (id)attributionForPlaceDataEntity:(id)arg1;
 + (id)attributionForPlaceDataPhotos:(id)arg1;
++ (id)attributionForPlaceDataRestaurantReservationLink:(id)arg1;
 + (id)attributionForPlaceDataReview:(id)arg1;
++ (Class)attributionUrlType;
 
-- (id)_attributionKey;
 - (BOOL)_isYelp;
 - (id)actionUrlComponent;
 - (void)addAttributionUrl:(id)arg1;

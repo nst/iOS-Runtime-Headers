@@ -3,11 +3,11 @@
  */
 
 @interface CPLChangeSession : NSObject <CPLAbstractObject> {
-    CPLLibraryManager *_libraryManager;
-    CPLPlatformObject *_platformObject;
-    NSString *_sessionIdentifier;
-    NSProgress *_sessionProgress;
-    unsigned int _state;
+    CPLLibraryManager * _libraryManager;
+    CPLPlatformObject * _platformObject;
+    NSString * _sessionIdentifier;
+    NSProgress * _sessionProgress;
+    unsigned int  _state;
 }
 
 @property (readonly, copy) NSString *debugDescription;

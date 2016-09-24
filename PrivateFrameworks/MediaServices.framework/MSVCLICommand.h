@@ -3,9 +3,9 @@
  */
 
 @interface MSVCLICommand : NSObject {
-    NSDictionary *_cachedOptionsDictionary;
-    NSString *_name;
-    NSArray *_options;
+    NSDictionary * _cachedOptionsDictionary;
+    NSString * _name;
+    NSArray * _options;
 }
 
 @property (nonatomic, readonly) NSString *name;

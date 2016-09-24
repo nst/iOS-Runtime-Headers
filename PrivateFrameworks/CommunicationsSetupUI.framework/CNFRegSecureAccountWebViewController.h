@@ -3,10 +3,10 @@
  */
 
 @interface CNFRegSecureAccountWebViewController : CNFRegAuthorizedAccountWebViewController {
-    IMAccount *_account;
-    BOOL _gotNewCredential;
-    unsigned int _signinFailureCount;
-    BOOL _triedGettingNewCredentials;
+    IMAccount * _account;
+    BOOL  _gotNewCredential;
+    unsigned int  _signinFailureCount;
+    BOOL  _triedGettingNewCredentials;
 }
 
 @property (nonatomic, retain) IMAccount *account;

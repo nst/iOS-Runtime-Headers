@@ -3,7 +3,7 @@
  */
 
 @interface PLCloudSharedDeleteAlbumsJob : PLCloudSharingJob {
-    NSArray *_albumCloudGUIDsToDelete;
+    NSArray * _albumCloudGUIDsToDelete;
 }
 
 @property (nonatomic, retain) NSArray *albumCloudGUIDsToDelete;
@@ -11,7 +11,7 @@
 + (void)deleteLocalAlbumsForMSASAlbumGUIDs:(id)arg1;
 
 - (id)albumCloudGUIDsToDelete;
-- (long long)daemonOperation;
+- (int)daemonOperation;
 - (void)dealloc;
 - (id)description;
 - (void)encodeToXPCObject:(id)arg1;

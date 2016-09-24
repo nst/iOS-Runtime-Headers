@@ -3,12 +3,12 @@
  */
 
 @interface SKUIReportAConcernDocumentViewController : SKUIViewController <SKUIDocumentViewController, SKUIReportAConcernTemplateViewDelegate> {
-    NSArray *_concernIdentifiers;
-    NSArray *_concernStrings;
-    BOOL _didSelectConcern;
-    SKUIViewElementLayoutContext *_layoutContext;
-    SKUIReportAConcernTemplateView *_reportAConcernView;
-    SKUIReportAConcernTemplateViewElement *_templateElement;
+    NSArray * _concernIdentifiers;
+    NSArray * _concernStrings;
+    BOOL  _didSelectConcern;
+    SKUIViewElementLayoutContext * _layoutContext;
+    SKUIReportAConcernTemplateView * _reportAConcernView;
+    SKUIReportAConcernTemplateViewElement * _templateElement;
 }
 
 @property (readonly, copy) NSString *debugDescription;

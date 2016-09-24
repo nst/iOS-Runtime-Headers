@@ -3,10 +3,10 @@
  */
 
 @interface SUSKUIStorePageViewController : SUViewController <SKStoreProductViewControllerDelegatePrivate, SKUIIPhoneProductPageDelegate> {
-    UIViewController *_activeChildViewController;
-    SKUIIPhoneProductPageViewController *_iphoneProductPageViewController;
-    SKStoreProductViewController *_remoteProductViewController;
-    SKUIStorePageViewController *_storePageViewController;
+    UIViewController * _activeChildViewController;
+    SKUIIPhoneProductPageViewController * _iphoneProductPageViewController;
+    SKStoreProductViewController * _remoteProductViewController;
+    SKUIStorePageViewController * _storePageViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,10 +3,10 @@
  */
 
 @interface _NSMappingModelBuilder : NSObject {
-    NSEntityMapping *_currentEntityMapping;
-    NSManagedObjectModel *_destinationModel;
-    NSError *_error;
-    NSManagedObjectModel *_sourceModel;
+    NSEntityMapping * _currentEntityMapping;
+    NSManagedObjectModel * _destinationModel;
+    NSError * _error;
+    NSManagedObjectModel * _sourceModel;
 }
 
 + (int)migrationDebugLevel;

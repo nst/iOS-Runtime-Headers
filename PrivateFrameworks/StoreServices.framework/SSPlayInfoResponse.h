@@ -3,8 +3,8 @@
  */
 
 @interface SSPlayInfoResponse : NSObject <NSCopying, SSXPCCoding> {
-    NSError *_error;
-    NSData *_playInfoData;
+    NSError * _error;
+    NSData * _playInfoData;
 }
 
 @property (readonly, copy) NSString *debugDescription;

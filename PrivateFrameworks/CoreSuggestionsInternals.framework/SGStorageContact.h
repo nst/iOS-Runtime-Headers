@@ -3,22 +3,26 @@
  */
 
 @interface SGStorageContact : NSObject {
-    long _detectedDetailsOnce;
-    NSArray *_internalDetectedAddresses;
-    SGTuple3 *_internalDetectedDetails;
-    NSArray *_internalDetectedEmailAddresses;
-    NSArray *_internalDetectedPhones;
-    long long _masterEntityId;
-    NSMutableSet *_profiles;
-    SGRecordId *_recordId;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
+    }  _detectedDetailsLock;
+    NSArray * _internalDetectedAddresses;
+    SGContactDetailsHolder * _internalDetectedDetails;
+    NSArray * _internalDetectedEmailAddresses;
+    NSArray * _internalDetectedIMAddresses;
+    NSArray * _internalDetectedPhones;
+    int  _masterEntityId;
+    NSMutableSet * _profiles;
+    SGRecordId * _recordId;
 }
 
-@property (nonatomic, readonly) long long masterEntityId;
+@property (nonatomic, readonly) int masterEntityId;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) SGRecordId *recordId;
 
 + (id)contactFromContactEntity:(id)arg1;
-+ (id)contactWithMasterEntityId:(long long)arg1;
++ (id)contactWithMasterEntityId:(int)arg1;
 + (id)mergeAll:(id)arg1;
 + (void)subtractDetailsFromSGContact:(id)arg1 thatMatchCNContact:(id)arg2;
 
@@ -28,7 +32,11 @@
 - (id)bestProfile;
 - (BOOL)canMerge:(id)arg1;
 - (id)convertToContact:(id)arg1;
+- (id)convertToContact:(id)arg1 sourceEntity:(id)arg2 enrichments:(id)arg3;
+- (void)dealloc;
 - (id)description;
+- (BOOL)hasProfileFromInteraction;
+- (BOOL)hasProfileFromTextMessage;
 - (unsigned int)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
@@ -37,7 +45,7 @@
 - (id)loadAllDetailsFrom:(id)arg1;
 - (id)loadEmailAddressDetailsFrom:(id)arg1;
 - (id)loadPhoneDetailsFrom:(id)arg1;
-- (long long)masterEntityId;
+- (int)masterEntityId;
 - (void)merge:(id)arg1;
 - (id)name;
 - (id)profiles;

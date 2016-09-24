@@ -9,6 +9,7 @@
 @property (nonatomic) int checked;
 @property (nonatomic, copy) NSArray *childNodeIds;
 @property (nonatomic, copy) NSArray *controlledNodeIds;
+@property (nonatomic) int current;
 @property (nonatomic) BOOL disabled;
 @property (nonatomic) BOOL exists;
 @property (nonatomic) BOOL expanded;
@@ -38,6 +39,7 @@
 - (int)checked;
 - (id)childNodeIds;
 - (id)controlledNodeIds;
+- (int)current;
 - (BOOL)disabled;
 - (BOOL)exists;
 - (BOOL)expanded;
@@ -67,6 +69,7 @@
 - (void)setChecked:(int)arg1;
 - (void)setChildNodeIds:(id)arg1;
 - (void)setControlledNodeIds:(id)arg1;
+- (void)setCurrent:(int)arg1;
 - (void)setDisabled:(BOOL)arg1;
 - (void)setExists:(BOOL)arg1;
 - (void)setExpanded:(BOOL)arg1;

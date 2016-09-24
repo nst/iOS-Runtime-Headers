@@ -3,24 +3,24 @@
  */
 
 @interface PLPreheatItem : NSObject {
-    int _CPLNotifyRegistrationToken;
-    BOOL _CPLPrefetching;
-    BOOL _CPLPrefetchingCancelled;
-    NSString *_CPLPrefetchingDoneToken;
-    NSObject<OS_dispatch_queue> *_CPLPrefetchingIsolationQueue;
-    NSObject<OS_dispatch_group> *_CPLPrefetchingWaitGroup;
-    BOOL _CPLPrefetchingWasCancelled;
-    NSString *_assetUUID;
-    int _bestFormat;
-    BOOL _didCompleteCPLPrefetchingWithSuccessOrError;
-    int _format;
-    int _imageType;
+    int  _CPLNotifyRegistrationToken;
+    BOOL  _CPLPrefetching;
+    BOOL  _CPLPrefetchingCancelled;
+    NSString * _CPLPrefetchingDoneToken;
+    NSObject<OS_dispatch_queue> * _CPLPrefetchingIsolationQueue;
+    NSObject<OS_dispatch_group> * _CPLPrefetchingWaitGroup;
+    BOOL  _CPLPrefetchingWasCancelled;
+    NSString * _assetUUID;
+    int  _bestFormat;
+    BOOL  _didCompleteCPLPrefetchingWithSuccessOrError;
+    int  _format;
+    int  _imageType;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _optimalSourcePixelSize;
-    int _prefetchCount;
-    NSString *_virtualCPLTaskIdentifier;
+        double width; 
+        double height; 
+    }  _optimalSourcePixelSize;
+    int  _prefetchCount;
+    NSString * _virtualCPLTaskIdentifier;
 }
 
 @property (nonatomic, readonly) BOOL CPLPrefetching;
@@ -31,7 +31,7 @@
 @property BOOL didCompleteCPLPrefetchingWithSuccessOrError;
 @property (nonatomic, readonly) int format;
 @property (nonatomic, readonly) int imageType;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } optimalSourcePixelSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } optimalSourcePixelSize;
 @property (retain) NSString *virtualCPLTaskIdentifier;
 
 - (BOOL)CPLPrefetching;
@@ -53,7 +53,7 @@
 - (int)incrementPrefetchCount;
 - (id)initForCPLPrefetchingWithAssetUUID:(id)arg1 format:(int)arg2;
 - (BOOL)isCancelled;
-- (struct CGSize { float x1; float x2; })optimalSourcePixelSize;
+- (struct CGSize { double x1; double x2; })optimalSourcePixelSize;
 - (void)resetPrefetchCount;
 - (void)setBestFormat:(int)arg1;
 - (void)setCPLPrefetchingWasCancelled:(BOOL)arg1;

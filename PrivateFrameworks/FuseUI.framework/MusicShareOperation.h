@@ -3,15 +3,15 @@
  */
 
 @interface MusicShareOperation : NSObject {
-    BOOL _container;
-    MusicEntityValueContext *_entityValueContext;
-    <MusicEntityValueProviding> *_entityValueProvider;
-    NSDictionary *_extraInfo;
-    MPUContentItemIdentifierCollection *_identifierCollection;
-    NSString *_jsButtonIdentifier;
-    MusicEntityValueProviderWrapper *_playlistWrapper;
-    UIViewController *_presentationViewController;
-    UIViewController<MusicJSNativeViewControllerFactory> *_viewControllerWithJSNativeViewController;
+    BOOL  _container;
+    MusicEntityValueContext * _entityValueContext;
+    <MusicEntityValueProviding> * _entityValueProvider;
+    NSDictionary * _extraInfo;
+    MPUContentItemIdentifierCollection * _identifierCollection;
+    NSString * _jsButtonIdentifier;
+    MusicEntityValueProviderWrapper * _playlistWrapper;
+    UIViewController * _presentationViewController;
+    UIViewController<MusicJSNativeViewControllerFactory> * _viewControllerWithJSNativeViewController;
 }
 
 @property (getter=isContainer, nonatomic, readonly) BOOL container;

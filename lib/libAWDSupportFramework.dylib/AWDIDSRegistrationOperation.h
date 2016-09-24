@@ -3,9 +3,9 @@
  */
 
 @interface AWDIDSRegistrationOperation : PBCodable <NSCopying> {
-    unsigned int _connectionType;
-    int _genericError;
-    NSString *_guid;
+    unsigned int  _connectionType;
+    int  _genericError;
+    NSString * _guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int connectionType : 1; 
@@ -17,15 +17,15 @@
         unsigned int resultCode : 1; 
         unsigned int success : 1; 
         unsigned int uRLError : 1; 
-    } _has;
-    unsigned int _heartbeatDelay;
-    unsigned int _heartbeatRegister;
-    int _pOSIXError;
-    unsigned int _registrationError;
-    unsigned int _resultCode;
-    unsigned int _success;
-    unsigned long long _timestamp;
-    int _uRLError;
+    }  _has;
+    unsigned int  _heartbeatDelay;
+    unsigned int  _heartbeatRegister;
+    int  _pOSIXError;
+    unsigned int  _registrationError;
+    unsigned int  _resultCode;
+    unsigned int  _success;
+    unsigned long long  _timestamp;
+    int  _uRLError;
 }
 
 @property (nonatomic) unsigned int connectionType;

@@ -3,20 +3,20 @@
  */
 
 @interface KNTransitionRenderer : KNAnimationRenderer {
-    NSDictionary *mAnimatedLayers;
-    BOOL mAnimationsRanToCompletion;
-    NSDictionary *mAttributes;
-    CALayer *mBackgroundLayer;
-    TSDFPSCounter *mFPSCounter;
-    int mNumberOfAnimationsStarted;
-    BOOL mOutgoingSlideRendered;
-    NSString *mRenderWaitIdentifier;
-    BOOL mShouldAnimateTransition;
-    NSMutableArray *mTextures;
-    SEL mTransitionEndCallbackSelector;
-    id mTransitionEndCallbackTarget;
-    SEL mTransitionImmediateEndCallbackSelector;
-    id mTransitionImmediateEndCallbackTarget;
+    NSDictionary * mAnimatedLayers;
+    BOOL  mAnimationsRanToCompletion;
+    NSDictionary * mAttributes;
+    CALayer * mBackgroundLayer;
+    TSDFPSCounter * mFPSCounter;
+    int  mNumberOfAnimationsStarted;
+    BOOL  mOutgoingSlideRendered;
+    NSString * mRenderWaitIdentifier;
+    BOOL  mShouldAnimateTransition;
+    NSMutableArray * mTextures;
+    SEL  mTransitionEndCallbackSelector;
+    id  mTransitionEndCallbackTarget;
+    SEL  mTransitionImmediateEndCallbackSelector;
+    id  mTransitionImmediateEndCallbackTarget;
 }
 
 - (BOOL)addAnimationsAtTime:(double)arg1 relativeToCurrentMediaTime:(BOOL)arg2;
@@ -44,6 +44,7 @@
 - (void)stopAnimations;
 - (void)teardown;
 - (void)teardownTransitionIsExitingShow:(BOOL)arg1;
+- (void)updateAnimationTestingLog;
 - (void)updateAnimationsForLayerTime:(double)arg1;
 - (void)waitUntilAsyncRenderingIsComplete;
 

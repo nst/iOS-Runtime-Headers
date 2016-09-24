@@ -2,22 +2,23 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
  */
 
-@interface SBAwayViewPluginController : NSObject {
-    BOOL _alwaysFullscreen;
-    id /* block */ _disableTransitionBlock;
-    unsigned int _effectivePresentationStyle;
-    NSString *_enablingApplicationBundleIdentifier;
-    BOOL _fullscreen;
-    int _orientation;
-    UIView *_view;
-    BOOL _viewCanBeDisplayed;
+@interface SBAwayViewPluginController : UIViewController <SBLockScreenPluginController, SBLockScreenPluginViewController> {
+    <SBLockScreenPluginAgent> * _agent;
+    SBLockScreenPluginMutableAppearanceContext * _appearance;
+    BOOL  _viewCanBeDisplayed;
 }
 
-@property (getter=isAlwaysFullscreen, nonatomic) BOOL alwaysFullscreen;
-@property (getter=_effectivePresentationStyle, setter=_setEffectivePresentationStyle:, nonatomic) unsigned int effectivePresentationStyle;
-@property (nonatomic, copy) NSString *enablingApplicationBundleIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) _UILegibilitySettings *legibilitySettings;
 @property (nonatomic) int orientation;
-@property (nonatomic, retain) UIView *view;
+@property (nonatomic) <SBLockScreenPluginAgent> *pluginAgent;
+@property (nonatomic, readonly) <SBLockScreenPluginAppearance> *pluginAppearance;
+@property (nonatomic, readonly) int pluginPriority;
+@property (nonatomic, readonly, retain) SBLockScreenPluginAction *pluginUnlockAction;
+@property (nonatomic, readonly) UIViewController<SBLockScreenPluginViewController> *pluginViewController;
+@property (readonly) Class superclass;
 @property (nonatomic) BOOL viewCanBeDisplayed;
 
 + (void)disableBundleNamed:(id)arg1;
@@ -26,10 +27,9 @@
 + (void)enableBundleNamed:(id)arg1 activationContext:(id)arg2;
 
 - (void).cxx_destruct;
-- (id /* block */)_disableTransitionBlock;
-- (unsigned int)_effectivePresentationStyle;
-- (void)_setDisableTransitionBlock:(id /* block */)arg1;
-- (void)_setEffectivePresentationStyle:(unsigned int)arg1;
+- (id)_legibilitySettings;
+- (void)_updateAppearance;
+- (void)_updateAppearanceAndNotify:(BOOL)arg1;
 - (BOOL)allowsControlCenter;
 - (BOOL)allowsLockScreenCamera;
 - (BOOL)allowsLockScreenHint;
@@ -40,24 +40,14 @@
 - (BOOL)allowsSiri;
 - (BOOL)allowsTimer;
 - (BOOL)allowsUnlocking;
-- (void)alwaysFullscreenValueHasChanged;
 - (BOOL)animateResumingToApplicationWithIdentifier:(id)arg1;
-- (id)backgroundView;
 - (id)bundleIDForUnlock;
-- (BOOL)canBeAlwaysFullscreen;
-- (BOOL)canScreenDim;
 - (id)customHeaderView;
 - (id)customSubtitleColor;
 - (id)customSubtitleText;
-- (void)deviceLockViewDidHide;
-- (void)deviceLockViewWillShow;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)disable;
-- (void)disableWithTransitionBlock:(id /* block */)arg1;
 - (BOOL)disablesAwayItemsCompletely;
 - (id /* block */)enableTransitionBlock;
-- (id)enablingApplicationBundleIdentifier;
-- (BOOL)handleGesture:(int)arg1 fingerCount:(unsigned int)arg2;
 - (BOOL)handleHeadsetButtonPressed:(BOOL)arg1;
 - (BOOL)handleLockButtonPressed;
 - (BOOL)handleMenuButtonDoubleTap;
@@ -67,61 +57,45 @@
 - (BOOL)handleVolumeUpButtonPressed;
 - (BOOL)hasCustomSubtitle;
 - (id)init;
-- (BOOL)isAlwaysFullscreen;
 - (BOOL)isContentViewWhiteUnderSlideToUnlockText;
-- (BOOL)isFullscreen;
 - (id)legibilitySettings;
 - (BOOL)legibilitySettingsOverridesVibrancy;
-- (void)loadView;
-- (void)lockScreenMediaControlsShown:(BOOL)arg1;
-- (unsigned int)notificationBehavior;
+- (int)notificationBehavior;
 - (int)orientation;
-- (unsigned int)overlayStyle;
+- (int)overlayStyle;
+- (id)pluginAgent;
+- (id)pluginAnimateAppearanceTransition:(BOOL)arg1 withCompletion:(id /* block */)arg2;
+- (BOOL)pluginAnimatesAppearanceTransition:(BOOL)arg1;
+- (id)pluginAppearance;
+- (void)pluginDidDeactivateWithContext:(id)arg1;
+- (BOOL)pluginHandleEvent:(int)arg1;
 - (int)pluginPriority;
-- (unsigned int)presentationStyle;
+- (id)pluginUnlockAction;
+- (id)pluginViewController;
+- (void)pluginWillActivateWithContext:(id)arg1;
+- (int)presentationStyle;
 - (void)purgeView;
-- (BOOL)retainsPriorityWhileInactive;
 - (void)setActivationContext:(id)arg1;
-- (void)setAlwaysFullscreen:(BOOL)arg1;
 - (void)setDeactivationContext:(id)arg1;
-- (void)setEnablingApplicationBundleIdentifier:(id)arg1;
 - (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setFullscreen:(BOOL)arg1 duration:(double)arg2;
 - (void)setNeedsLegibilityAppearanceUpdate;
 - (void)setOrientation:(int)arg1;
-- (void)setView:(id)arg1;
+- (void)setPluginAgent:(id)arg1;
 - (void)setViewCanBeDisplayed:(BOOL)arg1;
 - (BOOL)shouldAutoHideNotifications;
 - (BOOL)shouldDisableOnRelock;
 - (BOOL)shouldDisableOnUnlock;
 - (BOOL)shouldShowLockStatusBarTime;
-- (BOOL)showAwayItems;
 - (BOOL)showBatteryChargingText;
 - (BOOL)showDate;
 - (BOOL)showDateView;
-- (BOOL)showHeaderView;
 - (BOOL)showStatusBar;
-- (BOOL)showsDuringCall;
 - (id)slideToUnlockText;
-- (double)transitionDuration;
 - (unsigned int)unlockAnimationStyleForDestinationApp:(id)arg1;
-- (id)view;
 - (BOOL)viewCanBeDisplayed;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (double)viewFadeInDuration;
-- (BOOL)viewWantsFullscreenLayout;
 - (BOOL)viewWantsOverlayLayout;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (BOOL)wantsAutomaticFullscreenTimer;
-- (BOOL)wantsHardwareEventsWhenScreenDimmed;
 - (BOOL)wantsMenuButtonHeldEvent;
 - (BOOL)wantsMesaAutoUnlock;
-- (BOOL)wantsSwipeGestureRecognizer;
-- (BOOL)wantsToOpenURLsWhilePasscodeLocked;
-- (BOOL)wantsUserWallpaper;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

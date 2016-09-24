@@ -3,51 +3,45 @@
  */
 
 @interface HDAchievementEngine : NSObject {
-    HDAchievementDefinitions *_achievementDefinitions;
-    NSCalendar *_cachedCalendar;
-    <HDDailyGoalDetectionDelegate> *_dailyGoalDetectionDelegate;
-    HDAchievementDataStore *_dataStore;
-    <HDAchievementEngineDelegate> *_delegate;
-    NSCalendar *_fixedCalendar;
-    NSDate *_fixedNowDate;
+    HDAchievementDefinitions * _achievementDefinitions;
+    NSCalendar * _cachedCalendar;
+    <HDDailyGoalDetectionDelegate> * _dailyGoalDetectionDelegate;
+    HDAchievementDataStore * _dataStore;
+    <HDAchievementEngineDelegate> * _delegate;
+    NSCalendar * _fixedCalendar;
+    NSDate * _fixedNowDate;
 }
 
 @property (nonatomic, readonly) HDAchievementDefinitions *achievementDefinitions;
+@property (nonatomic) <HDDailyGoalDetectionDelegate> *dailyGoalDetectionDelegate;
 @property (nonatomic) HDAchievementDataStore *dataStore;
 @property (nonatomic) <HDAchievementEngineDelegate> *delegate;
 @property (nonatomic, retain) NSCalendar *fixedCalendar;
 @property (nonatomic, retain) NSDate *fixedNowDate;
 
++ (int)_differenceInDaysBetweenActivitySummaryIndex:(int)arg1 andIndex:(int)arg2 inCalendar:(id)arg3;
++ (BOOL)_isCompleteWithNumberOfWeeks:(unsigned int)arg1 dateToday:(id)arg2 consecutiveCompleteDays:(unsigned int)arg3 inCalendar:(id)arg4;
+
 - (void).cxx_destruct;
-- (id)_achievementsWithBeginningOfDay:(id)arg1 now:(id)arg2 calorieBurnGoal:(double)arg3 consecutiveCompleteDays:(unsigned int)arg4 lifetimeCompleteDays:(unsigned int)arg5;
-- (BOOL)_atLeastNFullDaysOfHistory:(unsigned int)arg1 givenFirstCheckedActivitySummaryIndex:(long long)arg2 indexToday:(long long)arg3;
 - (id)_calendar;
-- (int)_differenceInDaysBetweenActivitySummaryIndex:(long long)arg1 andIndex:(long long)arg2 inCalendar:(id)arg3 dayLimit:(unsigned int)arg4;
-- (id)_excessCalorieBurnAchievementsWithGoal:(double)arg1 caloriesBurnedToday:(double)arg2 caloriesBurnedPreviouslyToday:(double)arg3 completionDate:(id)arg4;
-- (BOOL)_isCompleteMonthWithDateToday:(id)arg1 consecutiveCompleteDays:(unsigned int)arg2;
-- (BOOL)_isCompleteWithNumberOfWeeks:(unsigned int)arg1 dateToday:(id)arg2 consecutiveCompleteDays:(unsigned int)arg3;
+- (id)_generateAchievementWithDefinition:(id)arg1 environment:(id)arg2;
 - (id)_now;
-- (void)_runFor7WorkoutWeekAchievementWithState:(id)arg1;
-- (void)_runForBestSessionAchievementsWithState:(id)arg1;
-- (void)_runForFirstSessionOfTypeAchievementWithState:(id)arg1;
-- (id)_sanityCheckDate:(id)arg1 now:(id)arg2 defaultDate:(id)arg3;
-- (id)_sessionAchievementsStateWithSessions:(id)arg1;
-- (id)_stepAchievementsWithStartOfDay:(id)arg1 previousBestStepCount:(unsigned int)arg2 runForOneTimeMilestones:(BOOL)arg3 stepCountOnDay:(unsigned int)arg4;
-- (void)_updateDataStoreTotalSessionCountWithState:(id)arg1;
+- (void)_runForChangedDatabase;
 - (id)achievementDefinitions;
+- (id)dailyGoalDetectionDelegate;
 - (id)dataStore;
 - (id)delegate;
 - (id)fixedCalendar;
 - (id)fixedNowDate;
-- (id)init;
-- (id)initWithAchievementDefinitions:(id)arg1 dailyGoalDetectionDelegate:(id)arg2;
-- (void)runForAllAchievements;
-- (void)runForBriskMinutesAchievements;
-- (void)runForCombinedActivityAchievements;
-- (void)runForDailyCalorieGoalAchievements;
-- (void)runForSessionAchievements;
-- (void)runForStandingAchievements;
+- (BOOL)runDatabaseIdentifierCheckWithCurrentDatabaseIdentifier:(id)arg1 identifierChanged:(BOOL*)arg2 error:(id*)arg3;
+- (unsigned int)runForNewCombinedActivityData;
+- (unsigned int)runForNewExerciseData;
+- (unsigned int)runForNewMoveData;
+- (unsigned int)runForNewStandData;
+- (unsigned int)runForNewWorkouts;
 - (void)runForStepAchievements;
+- (void)runForTriggers:(unsigned int)arg1 withEnvironment:(id)arg2;
+- (void)setDailyGoalDetectionDelegate:(id)arg1;
 - (void)setDataStore:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFixedCalendar:(id)arg1;

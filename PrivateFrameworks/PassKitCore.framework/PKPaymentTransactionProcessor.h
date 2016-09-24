@@ -3,14 +3,14 @@
  */
 
 @interface PKPaymentTransactionProcessor : NSObject <CLLocationManagerDelegate> {
-    BOOL _active;
-    <PKPaymentTransactionProcessorDelegate> *_delegate;
-    CLGeocoder *_geocoder;
-    CLLocationManager *_locationManager;
-    NSMutableSet *_locationUpdateItems;
-    NSObject<OS_dispatch_source> *_locationUpdateTimeoutTimer;
-    NSMutableSet *_merchantCleanupItems;
-    PKUsageNotificationServer *_usageNotificationServer;
+    BOOL  _active;
+    <PKPaymentTransactionProcessorDelegate> * _delegate;
+    CLGeocoder * _geocoder;
+    CLLocationManager * _locationManager;
+    NSMutableSet * _locationUpdateItems;
+    NSObject<OS_dispatch_source> * _locationUpdateTimeoutTimer;
+    NSMutableSet * _merchantCleanupItems;
+    PKUsageNotificationServer * _usageNotificationServer;
 }
 
 @property (getter=isActive, nonatomic, readonly) BOOL active;
@@ -21,6 +21,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic) PKUsageNotificationServer *usageNotificationServer;
 
+- (void).cxx_destruct;
 - (void)_abortUpdatingLocationForAllLocationUpdateItems;
 - (void)_abortUpdatingLocationForLocationUpdateItem:(id)arg1;
 - (void)_continueUpdatingLocationForTransactionUpdateItem:(id)arg1;
@@ -32,7 +33,6 @@
 - (void)_startUpdatingLocationIfPossible;
 - (void)_stopUpdatingLocationIfPossible;
 - (void)_updateLocation:(id)arg1 forLocationUpdateItem:(id)arg2 andMarkAsProcessed:(BOOL)arg3;
-- (void)dealloc;
 - (id)delegate;
 - (id)init;
 - (BOOL)isActive;

@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptNumberFormatter : SUScriptObject {
-    NSNumberFormatter *_numberFormatter;
+    NSNumberFormatter * _numberFormatter;
 }
 
 @property (retain) NSString *localeIdentifier;

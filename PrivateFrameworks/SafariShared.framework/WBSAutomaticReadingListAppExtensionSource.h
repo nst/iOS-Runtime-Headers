@@ -3,10 +3,10 @@
  */
 
 @interface WBSAutomaticReadingListAppExtensionSource : WBSAutomaticReadingListSocialSource {
-    NSArray *_activeExtensions;
-    id _extensionMatchingContext;
-    NSArray *_extensions;
-    NSMutableDictionary *_identifierToEntriesMap;
+    NSArray * _activeExtensions;
+    id  _extensionMatchingContext;
+    NSArray * _extensions;
+    NSMutableDictionary * _identifierToEntriesMap;
 }
 
 @property (nonatomic, retain) NSArray *extensions;

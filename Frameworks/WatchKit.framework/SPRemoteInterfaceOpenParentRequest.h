@@ -3,9 +3,9 @@
  */
 
 @interface SPRemoteInterfaceOpenParentRequest : NSObject {
-    id /* block */ _reply;
-    NSData *_userInfoData;
-    BOOL _waitingForReply;
+    id /* block */  _reply;
+    NSData * _userInfoData;
+    BOOL  _waitingForReply;
 }
 
 @property (nonatomic, copy) id /* block */ reply;

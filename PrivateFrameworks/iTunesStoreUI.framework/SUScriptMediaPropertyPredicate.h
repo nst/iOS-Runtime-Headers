@@ -3,9 +3,9 @@
  */
 
 @interface SUScriptMediaPropertyPredicate : SUScriptObject {
-    NSString *_comparisonType;
-    NSString *_property;
-    id _value;
+    NSString * _comparisonType;
+    NSString * _property;
+    id  _value;
 }
 
 @property (readonly) NSString *comparisonType;

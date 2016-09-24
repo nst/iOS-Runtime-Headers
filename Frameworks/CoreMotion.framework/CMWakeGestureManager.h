@@ -3,47 +3,19 @@
  */
 
 @interface CMWakeGestureManager : NSObject {
-    int _crown;
-    <CMWakeGestureDelegate> *_delegate;
-    int _wrist;
-    int fCurrentState;
-    bool fEnableAudioAlert;
-    double fLastNotificationTime;
-    int fNightStandThreshold;
-    NSObject<OS_dispatch_queue> *fPrivateQueue;
-    int fScreenDimmingNotificationToken;
-    struct Dispatcher { int (**x1)(); id x2; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x3; void*x4; void*x5; void*x6; void*x7; void*x8; void x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; unsigned short x19; void*x20; void*x21; in double x22; out in void*x23; void*x24; in void*x25; void*x26; void*x27; void*x28; double x29; unsigned int x30/* : ? */; void*x31; BOOL x32; void*x33; void*x34; void*x35; void x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; unsigned short x45; void*x46; short x47; void*x48; void*x49; void*x50; void*x51; unsigned long x52; int x53; unsigned int x54/* : ? */; const void*x55; const void*x56; void*x57; void*x58; const int x59; void x60; void*x61; void*x62; void*x63; void*x64; const void*x65; void*x66; void*x67; void*x68; out const void*x69; short x70; void*x71; void*x72; void*x73; const short x74; void*x75; BOOL x76; void*x77; float x78; const void*x79; void*x80; void*x81; void*x82; out const void*x83; void*x84; void*x85; void*x86; const short x87; void*x88; BOOL x89; void*x90; void*x91; void*x92; void*x93; void*x94; void*x95; void*x96; void*x97; void*x98; void*x99; void*x100; void*x101; void*x102; void*x103; void*x104; void*x105; void*x106; void*x107; void*x108; void*x109; void*x110; void*x111; void*x112; void*x113; void*x114; void*x115; void*x116; void*x117; void*x118; void*x119; void*x120; void*x121; void*x122; void*x123; void*x124; void*x125; void*x126; void*x127; void*x128; void*x129; void*x130; void*x131; void*x132; void*x133; void*x134; void*x135; void*x136; void*x137; in void*x138; void*x139; void*x140; const void*x141; void*x142; void*x143; void*x144; void*x145; void*x146; void*x147; void*x148; void*x149; void*x150; void*x151; void*x152; void*x153; void*x154; void*x155; void*x156; void*x157; void*x158; void*x159; void*x160; void*x161; void*x162; void*x163; void*x164; void*x165; void*x166; void*x167; long doublex168; void*x169; void*x170; void*x171; void*x172; void*x173; void*x174; void*x175; short x176; void*x177; void*x178; void*x179; void*x180; void*x181; void*x182; void*x183; void*x184; void*x185; void*x186; void*x187; void*x188; void*x189; void*x190; void*x191; void*x192; void*x193; void*x194; void*x195; void*x196; void*x197; void*x198; void x199; void*x200; void*x201; void*x202; void*x203; void*x204; void*x205; void*x206; void*x207; unsigned short x208; void*x209; unsigned long x210; void*x211; void*x212; inout out double x213; void*x214; void*x215; void*x216; void*x217; void*x218; void*x219; void*x220; void*x221; void*x222; void*x223; void*x224; void*x225; void*x226; void*x227; void*x228; void*x229; } *fWakeDispatcher;
-    struct unique_ptr<CMWakeGestureVisitor, std::__1::default_delete<CMWakeGestureVisitor> > { 
-        struct __compressed_pair<CMWakeGestureVisitor *, std::__1::default_delete<CMWakeGestureVisitor> > { 
-            struct CMWakeGestureVisitor {} *__first_; 
-        } __ptr_; 
-    } fWakeGestureVisitor;
+    <CMWakeGestureDelegate> * _delegate;
 }
 
-@property (nonatomic) int crown;
 @property (nonatomic) <CMWakeGestureDelegate> *delegate;
-@property (nonatomic) int wrist;
 
-+ (void)initialize;
 + (BOOL)isWakeGestureAvailable;
 + (id)sharedManager;
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (int)crown;
-- (void)dealloc;
 - (id)delegate;
-- (id)init;
-- (void)onWakeUpdated:(const struct CLGestureReport { union { unsigned char x_1_1_1; struct Ping { unsigned char x_2_2_1; unsigned int x_2_2_2; } x_1_1_2; struct GestureState { unsigned char x_3_2_1; int x_3_2_2; unsigned char x_3_2_3; unsigned char x_3_2_4; } x_1_1_3; struct Simulate { unsigned char x_4_2_1; unsigned long long x_4_2_2; unsigned long long x_4_2_3; } x_1_1_4; struct ControlMode { unsigned char x_5_2_1; unsigned char x_5_2_2; unsigned char x_5_2_3; unsigned char x_5_2_4; } x_1_1_5; } x1; }*)arg1;
-- (void)playAlert;
-- (void)setCrown:(int)arg1;
+- (void)logAssert;
 - (void)setDelegate:(id)arg1;
-- (BOOL)setNightStandMode:(BOOL)arg1 withConfiguration:(int)arg2;
-- (void)setWrist:(int)arg1;
 - (BOOL)simulateGestureWithDelay:(double)arg1 Duration:(double)arg2;
 - (void)startWakeGestureUpdates;
 - (void)stopWakeGestureUpdates;
-- (void)updateWristAndCrown;
-- (int)wrist;
 
 @end

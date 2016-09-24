@@ -3,8 +3,8 @@
  */
 
 @interface BLTPBBulletinSummaryKey : PBCodable <NSCopying> {
-    NSString *_key;
-    NSData *_value;
+    NSString * _key;
+    NSData * _value;
 }
 
 @property (nonatomic, readonly) BOOL hasValue;

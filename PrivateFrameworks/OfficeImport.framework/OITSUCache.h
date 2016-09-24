@@ -3,8 +3,8 @@
  */
 
 @interface OITSUCache : OITSUFlushableObject {
-    NSMutableDictionary *mCache;
-    NSString *mCacheName;
+    NSMutableDictionary * mCache;
+    NSString * mCacheName;
 }
 
 - (unsigned int)count;

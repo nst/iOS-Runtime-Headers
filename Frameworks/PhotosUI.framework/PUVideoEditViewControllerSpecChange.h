@@ -3,7 +3,7 @@
  */
 
 @interface PUVideoEditViewControllerSpecChange : PUViewControllerSpecChange {
-    BOOL _wantsScrubberInToolbarChanged;
+    BOOL  _wantsScrubberInToolbarChanged;
 }
 
 @property (nonatomic) BOOL wantsScrubberInToolbarChanged;

@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DArray2DResources : TSCH3DMutable2DResources {
-    TSCH3DArray2D *mResources;
+    TSCH3DArray2D * mResources;
 }
 
 + (id)mResources;

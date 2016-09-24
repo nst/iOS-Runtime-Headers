@@ -4,6 +4,6 @@
 
 @interface _UIActivityAlertVisualStylingAlertSheet : UIAlertControllerVisualStyleActionSheet
 
-- (float)minimumActionHeight;
+- (Class)interfaceActionVisualStyleClassForManagingConcreteVisualStyle;
 
 @end

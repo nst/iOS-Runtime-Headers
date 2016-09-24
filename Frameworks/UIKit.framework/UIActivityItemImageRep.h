@@ -3,9 +3,9 @@
  */
 
 @interface UIActivityItemImageRep : NSObject {
-    id _asset;
-    id /* block */ _dataProvider;
-    id /* block */ _thumbnailProvider;
+    id  _asset;
+    id /* block */  _dataProvider;
+    id /* block */  _thumbnailProvider;
 }
 
 @property (nonatomic, retain) id asset;

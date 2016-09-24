@@ -3,10 +3,10 @@
  */
 
 @interface EKEventDetailCell : UITableViewCell {
-    BOOL _editable;
-    EKEvent *_event;
-    int _lastLaidOutPosition;
-    float _lastLaidOutWidth;
+    BOOL  _editable;
+    EKEvent * _event;
+    int  _lastLaidOutPosition;
+    double  _lastLaidOutWidth;
 }
 
 @property (nonatomic, readonly) BOOL isEditable;

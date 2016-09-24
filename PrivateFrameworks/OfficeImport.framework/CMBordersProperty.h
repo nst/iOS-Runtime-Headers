@@ -3,14 +3,14 @@
  */
 
 @interface CMBordersProperty : CMProperty {
-    OITSUColor *mBorderBottomColor;
-    OITSUColor *mBorderColor;
-    OITSUColor *mBorderLeftColor;
-    OITSUColor *mBorderRightColor;
-    int mBorderStyle;
-    OITSUColor *mBorderTopColor;
-    int mBorderWidth;
-    int mCustomWidth;
+    OITSUColor * mBorderBottomColor;
+    OITSUColor * mBorderColor;
+    OITSUColor * mBorderLeftColor;
+    OITSUColor * mBorderRightColor;
+    int  mBorderStyle;
+    OITSUColor * mBorderTopColor;
+    int  mBorderWidth;
+    int  mCustomWidth;
 }
 
 + (BOOL)isStroked:(id)arg1;

@@ -3,9 +3,9 @@
  */
 
 @interface TPHeaderFooterFragmentEnumerator : NSEnumerator {
-    int _fragmentIndex;
-    int _headerFooterType;
-    TPPageMaster *_pageMaster;
+    int  _fragmentIndex;
+    int  _headerFooterType;
+    TPPageMaster * _pageMaster;
 }
 
 @property (nonatomic) int fragmentIndex;

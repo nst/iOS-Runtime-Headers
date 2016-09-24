@@ -3,8 +3,8 @@
  */
 
 @interface SSSQLiteEntity : NSObject <SSSQLiteEntity> {
-    SSSQLiteDatabase *_database;
-    long long _persistentID;
+    SSSQLiteDatabase * _database;
+    int  _persistentID;
 }
 
 @property (nonatomic, readonly) SSSQLiteDatabase *database;
@@ -12,11 +12,11 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) BOOL existsInDatabase;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) long long persistentID;
+@property (nonatomic, readonly) int persistentID;
 @property (readonly) Class superclass;
 
 + (id)_aggregateValueForProperty:(id)arg1 function:(id)arg2 predicate:(id)arg3 database:(id)arg4;
-+ (BOOL)_insertValues:(id)arg1 intoTable:(id)arg2 withPersistentID:(long long)arg3 database:(id)arg4;
++ (BOOL)_insertValues:(id)arg1 intoTable:(id)arg2 withPersistentID:(int)arg3 database:(id)arg4;
 + (id)anyInDatabase:(id)arg1 predicate:(id)arg2;
 + (id)copyDatabaseDictionaryToSetClientDictionary:(id)arg1;
 + (id)countForProperty:(id)arg1 predicate:(id)arg2 database:(id)arg3;
@@ -44,9 +44,9 @@
 - (BOOL)deleteFromDatabase;
 - (BOOL)existsInDatabase;
 - (void)getValues:(id*)arg1 forProperties:(const id*)arg2 count:(unsigned int)arg3;
-- (id)initWithPersistentID:(long long)arg1 inDatabase:(id)arg2;
+- (id)initWithPersistentID:(int)arg1 inDatabase:(id)arg2;
 - (id)initWithPropertyValues:(id)arg1 inDatabase:(id)arg2;
-- (long long)persistentID;
+- (int)persistentID;
 - (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
 - (BOOL)setValuesWithDictionary:(id)arg1;
 - (id)valueForProperty:(id)arg1;

@@ -3,13 +3,14 @@
  */
 
 @interface GEOSentinelTile : PBCodable <NSCopying> {
-    NSString *_resourceName;
-    int _type;
+    NSString * _resourceName;
+    int  _type;
 }
 
 @property (nonatomic, retain) NSString *resourceName;
 @property (nonatomic) int type;
 
+- (int)StringAsType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -23,6 +24,7 @@
 - (void)setResourceName:(id)arg1;
 - (void)setType:(int)arg1;
 - (int)type;
+- (id)typeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

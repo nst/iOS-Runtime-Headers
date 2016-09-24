@@ -3,7 +3,7 @@
  */
 
 @interface NSMemoryStoreEqualityPredicateOperator : NSEqualityPredicateOperator {
-    NSManagedObjectContext *_context;
+    NSManagedObjectContext * _context;
 }
 
 - (void)dealloc;

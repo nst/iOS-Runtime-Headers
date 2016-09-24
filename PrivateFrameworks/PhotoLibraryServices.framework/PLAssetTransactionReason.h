@@ -3,7 +3,7 @@
  */
 
 @interface PLAssetTransactionReason : NSObject {
-    NSString *_reason;
+    NSString * _reason;
 }
 
 @property (nonatomic, retain) NSString *reason;

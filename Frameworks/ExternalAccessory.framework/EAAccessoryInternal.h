@@ -3,36 +3,36 @@
  */
 
 @interface EAAccessoryInternal : NSObject {
-    id /* block */ _WiFiCredentialsCompletionBlock;
-    NSDictionary *_audioPorts;
-    NSString *_bonjourName;
-    NSArray *_cameraComponents;
-    unsigned int _capabilities;
-    int _classType;
-    BOOL _connected;
-    unsigned int _connectionID;
-    <EAAccessoryDelegate> *_delegate;
-    NSString *_dockType;
-    unsigned int _eqIndex;
-    NSArray *_eqNames;
-    NSString *_firmwareRevision;
-    NSString *_hardwareRevision;
-    BOOL _hasIPConnection;
-    BOOL _isAvailableOverBonjour;
-    int _locationSentenceTypesMask;
-    NSString *_macAddress;
-    NSString *_manufacturer;
-    NSString *_modelNumber;
-    NSString *_name;
-    BOOL _notPresentInIAPAccessoriesArray;
-    id /* block */ _pairingCompletionBlock;
-    BOOL _pointOfInterestHandoffEnabled;
-    NSString *_preferredApp;
-    NSDictionary *_protocols;
-    NSString *_serialNumber;
-    NSMutableArray *_sessionsList;
-    NSDictionary *_vehicleInfoInitialData;
-    NSDictionary *_vehicleInfoSupportedTypes;
+    id /* block */  _WiFiCredentialsCompletionBlock;
+    NSDictionary * _audioPorts;
+    NSString * _bonjourName;
+    NSArray * _cameraComponents;
+    unsigned int  _capabilities;
+    int  _classType;
+    BOOL  _connected;
+    unsigned int  _connectionID;
+    <EAAccessoryDelegate> * _delegate;
+    NSString * _dockType;
+    unsigned int  _eqIndex;
+    NSArray * _eqNames;
+    NSString * _firmwareRevision;
+    NSString * _hardwareRevision;
+    BOOL  _hasIPConnection;
+    BOOL  _isAvailableOverBonjour;
+    int  _locationSentenceTypesMask;
+    NSString * _macAddress;
+    NSString * _manufacturer;
+    NSString * _modelNumber;
+    NSString * _name;
+    BOOL  _notPresentInIAPAccessoriesArray;
+    id /* block */  _pairingCompletionBlock;
+    BOOL  _pointOfInterestHandoffEnabled;
+    NSString * _preferredApp;
+    NSDictionary * _protocols;
+    NSString * _serialNumber;
+    NSMutableArray * _sessionsList;
+    NSDictionary * _vehicleInfoInitialData;
+    NSDictionary * _vehicleInfoSupportedTypes;
 }
 
 @property (copy) id /* block */ WiFiCredentialsCompletionBlock;

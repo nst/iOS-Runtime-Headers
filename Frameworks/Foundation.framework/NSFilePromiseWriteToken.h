@@ -3,8 +3,8 @@
  */
 
 @interface NSFilePromiseWriteToken : NSObject {
-    NSURL *logicalURL;
-    NSURL *promiseURL;
+    NSURL * logicalURL;
+    NSURL * promiseURL;
 }
 
 @property (copy) NSURL *logicalURL;

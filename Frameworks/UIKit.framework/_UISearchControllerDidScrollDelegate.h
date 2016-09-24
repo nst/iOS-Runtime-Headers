@@ -3,8 +3,8 @@
  */
 
 @interface _UISearchControllerDidScrollDelegate : NSObject <_UIScrollNotification> {
-    <_UIScrollNotification> *_controller;
-    UIScrollView *_scrollView;
+    <_UIScrollNotification> * _controller;
+    UIScrollView * _scrollView;
 }
 
 @property (nonatomic) <_UIScrollNotification> *controller;

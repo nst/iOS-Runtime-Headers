@@ -3,10 +3,10 @@
  */
 
 @interface _DECMusicContainer : NSObject <NSSecureCoding> {
-    NSString *_bundleId;
-    NSDate *_pauseTime;
-    NSDate *_playTime;
-    NSString *_trackIdentifier;
+    NSString * _bundleId;
+    NSDate * _pauseTime;
+    NSDate * _playTime;
+    NSString * _trackIdentifier;
 }
 
 @property (nonatomic, readonly) NSString *bundleId;

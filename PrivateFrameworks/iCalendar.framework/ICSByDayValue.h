@@ -3,8 +3,8 @@
  */
 
 @interface ICSByDayValue : NSObject <NSCoding> {
-    NSNumber *_number;
-    int _weekday;
+    NSNumber * _number;
+    int  _weekday;
 }
 
 @property (nonatomic, retain) NSNumber *number;

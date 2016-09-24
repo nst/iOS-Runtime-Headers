@@ -3,7 +3,7 @@
  */
 
 @interface TSPPasteboard : NSObject <TSPDecoder> {
-    id _pasteboard;
+    id  _pasteboard;
 }
 
 @property (nonatomic, readonly) NSArray *URLs;
@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) BOOL isSmartCopy;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) int numberOfItems;
+@property (nonatomic, readonly) unsigned long pasteboardItemMaxSize;
 @property (nonatomic, readonly) NSArray *richTextStrings;
 @property (nonatomic, copy) NSString *string;
 @property (nonatomic, readonly) NSArray *strings;
@@ -56,17 +57,20 @@
 - (oneway void)invalidate;
 - (BOOL)isSmartCopy;
 - (id)name;
-- (id)newReadChannelForDataWithIdentifier:(long long)arg1 info:(id)arg2;
+- (id)newReadChannelForDataWithIdentifier:(int)arg1 info:(id)arg2;
 - (id)newReadChannelForMetadata;
 - (id)newReadChannelForRootObjectComponent;
 - (int)numberOfItems;
+- (unsigned long)pasteboardItemMaxSize;
 - (id)pasteboardTypes;
 - (id)pasteboardTypesForItemSet:(id)arg1;
 - (void)performAsynchronousWriteUsingBlock:(id /* block */)arg1;
 - (id)richTextStrings;
 - (void)setString:(id)arg1;
 - (id)string;
+- (id)stringForPasteboardType:(id)arg1;
 - (id)strings;
+- (id)stringsForPasteboardType:(id)arg1 inItemSet:(id)arg2;
 - (id)valueForPasteboardType:(id)arg1;
 - (id)valuesForPasteboardType:(id)arg1 inItemSet:(id)arg2;
 

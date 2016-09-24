@@ -5,8 +5,6 @@
 
 @required
 
-- (void)contactlessInterfaceDidDismissFromSource:(int)arg1;
-- (void)contactlessInterfaceDidPresentFromSource:(int)arg1;
 - (void)didUpdateDefaultPaymentPassWithUniqueIdentifier:(NSString *)arg1;
 - (void)passWithUniqueIdentifier:(NSString *)arg1 didReceiveValueAddedServiceTransaction:(PKValueAddedServiceTransaction *)arg2;
 - (void)paymentDeviceDidEnterFieldWithProperties:(PKFieldProperties *)arg1;

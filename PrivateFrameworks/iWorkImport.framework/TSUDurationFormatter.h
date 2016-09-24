@@ -3,9 +3,9 @@
  */
 
 @interface TSUDurationFormatter : NSFormatter {
-    int mCompactStyleStartUnit;
-    NSString *mFormat;
-    TSULocale *mLocale;
+    int  mCompactStyleStartUnit;
+    NSString * mFormat;
+    TSULocale * mLocale;
 }
 
 @property (nonatomic) int compactStyleStartUnit;

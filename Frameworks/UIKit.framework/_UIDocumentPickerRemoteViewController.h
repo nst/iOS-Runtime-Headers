@@ -3,8 +3,8 @@
  */
 
 @interface _UIDocumentPickerRemoteViewController : _UIRemoteViewController <_UIDocumentPickerServiceInvalidating, _UIDocumentPickerViewControllerHost> {
-    NSString *_identifier;
-    UIViewController<_UIDocumentPickerRemoteViewControllerContaining> *_publicController;
+    NSString * _identifier;
+    UIViewController<_UIDocumentPickerRemoteViewControllerContaining> * _publicController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -28,7 +28,7 @@
 - (void)invalidate;
 - (id)publicController;
 - (void)setIdentifier:(id)arg1;
-- (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setPublicController:(id)arg1;
 - (void)viewDidLoad;
 - (void)viewServiceDidTerminateWithError:(id)arg1;

@@ -3,36 +3,46 @@
  */
 
 @interface HDCodableNanoSyncChange : PBCodable <HDNanoSyncDescription, HDSyncChange, NSCopying> {
-    long long _endAnchor;
+    BOOL  _complete;
+    int  _endAnchor;
     struct { 
         unsigned int endAnchor : 1; 
+        unsigned int sequence : 1; 
         unsigned int startAnchor : 1; 
         unsigned int objectType : 1; 
+        unsigned int complete : 1; 
         unsigned int speculative : 1; 
-    } _has;
-    NSMutableArray *_objectDatas;
-    int _objectType;
-    NSMutableArray *_requiredAnchors;
-    BOOL _speculative;
-    long long _startAnchor;
+    }  _has;
+    NSMutableArray * _objectDatas;
+    int  _objectType;
+    NSMutableArray * _requiredAnchors;
+    int  _sequence;
+    BOOL  _speculative;
+    int  _startAnchor;
 }
 
+@property (nonatomic) BOOL complete;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) long long endAnchor;
+@property (nonatomic, readonly) BOOL done;
+@property (nonatomic) int endAnchor;
+@property (nonatomic) BOOL hasComplete;
 @property (nonatomic) BOOL hasEndAnchor;
 @property (nonatomic) BOOL hasObjectType;
+@property (nonatomic) BOOL hasSequence;
 @property (nonatomic) BOOL hasSpeculative;
 @property (nonatomic) BOOL hasStartAnchor;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSMutableArray *objectDatas;
 @property (nonatomic) int objectType;
 @property (nonatomic, retain) NSMutableArray *requiredAnchors;
+@property (nonatomic) int sequence;
+@property (nonatomic, readonly) NSNumber *sequenceNumber;
 @property (getter=isSpeculative, nonatomic, readonly) BOOL speculative;
 @property (nonatomic) BOOL speculative;
-@property (nonatomic) long long startAnchor;
+@property (nonatomic) int startAnchor;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) struct HDSyncAnchorRange { long long x1; long long x2; } syncAnchorRange;
+@property (nonatomic, readonly) struct HDSyncAnchorRange { int x1; int x2; } syncAnchorRange;
 
 + (id)changeWithNanoSyncEntityClass:(Class)arg1;
 
@@ -42,14 +52,18 @@
 - (void)addRequiredAnchors:(id)arg1;
 - (void)clearObjectDatas;
 - (void)clearRequiredAnchors;
+- (BOOL)complete;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)decodedObjects;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (long long)endAnchor;
+- (BOOL)done;
+- (int)endAnchor;
+- (BOOL)hasComplete;
 - (BOOL)hasEndAnchor;
 - (BOOL)hasObjectType;
+- (BOOL)hasSequence;
 - (BOOL)hasSpeculative;
 - (BOOL)hasStartAnchor;
 - (unsigned int)hash;
@@ -67,21 +81,28 @@
 - (id)requiredAnchors;
 - (id)requiredAnchorsAtIndex:(unsigned int)arg1;
 - (unsigned int)requiredAnchorsCount;
-- (void)setEndAnchor:(long long)arg1;
+- (int)sequence;
+- (id)sequenceNumber;
+- (void)setComplete:(BOOL)arg1;
+- (void)setEndAnchor:(int)arg1;
+- (void)setHasComplete:(BOOL)arg1;
 - (void)setHasEndAnchor:(BOOL)arg1;
 - (void)setHasObjectType:(BOOL)arg1;
+- (void)setHasSequence:(BOOL)arg1;
 - (void)setHasSpeculative:(BOOL)arg1;
 - (void)setHasStartAnchor:(BOOL)arg1;
 - (void)setObjectDatas:(id)arg1;
 - (void)setObjectType:(int)arg1;
-- (void)setObjects:(id)arg1 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg2 requiredAnchorMap:(id)arg3;
+- (void)setObjects:(id)arg1 syncAnchorRange:(struct HDSyncAnchorRange { int x1; int x2; })arg2 requiredAnchorMap:(id)arg3;
 - (void)setRequiredAnchors:(id)arg1;
+- (void)setSequence:(int)arg1;
+- (void)setSequenceNumber:(int)arg1 done:(BOOL)arg2;
 - (void)setSpeculative:(BOOL)arg1;
-- (void)setStartAnchor:(long long)arg1;
+- (void)setStartAnchor:(int)arg1;
 - (BOOL)speculative;
 - (id)speculativeCopy;
-- (long long)startAnchor;
-- (struct HDSyncAnchorRange { long long x1; long long x2; })syncAnchorRange;
+- (int)startAnchor;
+- (struct HDSyncAnchorRange { int x1; int x2; })syncAnchorRange;
 - (Class)syncEntityClass;
 - (void)writeTo:(id)arg1;
 

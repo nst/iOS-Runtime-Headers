@@ -3,9 +3,9 @@
  */
 
 @interface DAECalendarAvailabilitySpan : NSObject <NSSecureCoding> {
-    NSDate *_endDate;
-    NSDate *_startDate;
-    int _type;
+    NSDate * _endDate;
+    NSDate * _startDate;
+    int  _type;
 }
 
 @property (nonatomic, readonly) NSDate *endDate;

@@ -3,10 +3,10 @@
  */
 
 @interface BLTSectionInfoSyncCoordinator : NSObject {
-    NSMutableArray *_alertingSectionIDs;
-    NSMutableDictionary *_alertingSectionState;
-    id /* block */ _infoProvider;
-    unsigned int _mostRecentIndex;
+    NSMutableArray * _alertingSectionIDs;
+    NSMutableDictionary * _alertingSectionState;
+    id /* block */  _infoProvider;
+    unsigned int  _mostRecentIndex;
 }
 
 @property (nonatomic, retain) NSMutableArray *alertingSectionIDs;

@@ -3,10 +3,10 @@
  */
 
 @interface GEOPDAutocompleteEntryCategory : PBCodable <NSCopying> {
-    GEOLocalizedString *_displayName;
-    GEOStyleAttributes *_styleAttributes;
-    NSData *_suggestionEntryMetadata;
-    PBUnknownFields *_unknownFields;
+    GEOLocalizedString * _displayName;
+    GEOStyleAttributes * _styleAttributes;
+    NSData * _suggestionEntryMetadata;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) GEOLocalizedString *displayName;

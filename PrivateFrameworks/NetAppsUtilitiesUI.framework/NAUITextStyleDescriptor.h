@@ -3,10 +3,10 @@
  */
 
 @interface NAUITextStyleDescriptor : NSObject <NSCopying> {
-    BOOL _allowsAccessibilitySizes;
-    BOOL _allowsSmallSizes;
-    unsigned int _symbolicTraits;
-    NSString *_textStyle;
+    BOOL  _allowsAccessibilitySizes;
+    BOOL  _allowsSmallSizes;
+    unsigned int  _symbolicTraits;
+    NSString * _textStyle;
 }
 
 @property (nonatomic, readonly) BOOL allowsAccessibilitySizes;

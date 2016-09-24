@@ -3,7 +3,7 @@
  */
 
 @interface CMDiagramPointArrowMapper : CMDiagramPointMapper {
-    int mArrowType;
+    int  mArrowType;
 }
 
 - (id)getTextBoundsForBounds:(id)arg1;

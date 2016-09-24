@@ -3,30 +3,34 @@
  */
 
 @interface PLDisplayAgent : PLAgent {
-    BOOL _alsOn;
-    PLTimer *_backlightFilterTimer;
-    NSTimer *_bluelightFilterTimer;
-    PLEntry *_bluelightStatusEntry;
-    BrightnessSystemClient *_brightnessSystemClient;
-    CBAdaptationClient *_colorAdaptationClient;
-    NSString *_displayHardware;
-    NSDictionary *_displayPowerModel;
-    PLIOKitOperatorComposition *_iokitBacklight;
-    PLIOKitOperatorComposition *_iokitBacklightControl;
-    PLIOKitOperatorComposition *_iokitDisplay;
-    PLIOKitOperatorComposition *_iokitTouch;
-    BOOL _isMIEActive;
-    BOOL _isMultitouchLoggingEnabled;
-    double _lastALSPowerSaved;
-    PLMonotonicTimer *_logLastALSPowerSavedTimer;
-    PLXPCListenerOperatorComposition *_multitouchXPCListener;
-    NSDictionary *_pendingBacklightEntry;
-    NSDate *_pendingBacklightEntryDate;
-    struct __IOHIDEventSystemClient { } *_touchHIDClientRef;
-    PLEventForwardDisplayEntry *_uAmpsEntry;
-    NSTimer *_uAmpsFilterTimer;
-    BOOL _userTouch;
-    NSDate *_userTouchDownTime;
+    BOOL  _alsOn;
+    PLTimer * _backlightFilterTimer;
+    NSTimer * _bluelightFilterTimer;
+    PLEntry * _bluelightStatusEntry;
+    BrightnessSystemClient * _brightnessSystemClient;
+    CBAdaptationClient * _colorAdaptationClient;
+    NSString * _displayHardware;
+    NSDictionary * _displayPowerModel;
+    BOOL  _firstEntryOnInit;
+    PLIOKitOperatorComposition * _iokitBacklight;
+    PLIOKitOperatorComposition * _iokitBacklightControl;
+    PLIOKitOperatorComposition * _iokitDisplay;
+    PLIOKitOperatorComposition * _iokitTouch;
+    BOOL  _isDisplayHighBrightness;
+    BOOL  _isDisplayOn;
+    BOOL  _isFirstTimeModeling;
+    BOOL  _isMIEActive;
+    BOOL  _isMultitouchLoggingEnabled;
+    double  _lastALSPowerSaved;
+    PLMonotonicTimer * _logLastALSPowerSavedTimer;
+    PLXPCListenerOperatorComposition * _multitouchXPCListener;
+    NSDictionary * _pendingBacklightEntry;
+    NSDate * _pendingBacklightEntryDate;
+    struct __IOHIDEventSystemClient { } * _touchHIDClientRef;
+    PLEventForwardDisplayEntry * _uAmpsEntry;
+    NSTimer * _uAmpsFilterTimer;
+    BOOL  _userTouch;
+    NSDate * _userTouchDownTime;
 }
 
 @property BOOL alsOn;
@@ -37,10 +41,14 @@
 @property (retain) CBAdaptationClient *colorAdaptationClient;
 @property (readonly) NSString *displayHardware;
 @property (readonly) NSDictionary *displayPowerModel;
+@property BOOL firstEntryOnInit;
 @property (readonly) PLIOKitOperatorComposition *iokitBacklight;
 @property (readonly) PLIOKitOperatorComposition *iokitBacklightControl;
 @property (readonly) PLIOKitOperatorComposition *iokitDisplay;
 @property (readonly) PLIOKitOperatorComposition *iokitTouch;
+@property BOOL isDisplayHighBrightness;
+@property BOOL isDisplayOn;
+@property BOOL isFirstTimeModeling;
 @property BOOL isMIEActive;
 @property BOOL isMultitouchLoggingEnabled;
 @property double lastALSPowerSaved;
@@ -84,7 +92,8 @@
 - (id)displayHardware;
 - (id)displayPowerModel;
 - (void)extractDataWithEntry:(id)arg1 withColName:(id)arg2 withDataArray:(id)arg3;
-- (unsigned long long)getBacklightEnabledTimestamp:(unsigned int)arg1;
+- (BOOL)firstEntryOnInit;
+- (unsigned int)getBacklightEnabledTimestamp:(unsigned int)arg1;
 - (void)handleBrightnessClientNotification:(id)arg1 withValue:(id)arg2;
 - (id)init;
 - (void)initOperatorDependancies;
@@ -93,6 +102,9 @@
 - (id)iokitDisplay;
 - (id)iokitTouch;
 - (BOOL)isAlsEnabled;
+- (BOOL)isDisplayHighBrightness;
+- (BOOL)isDisplayOn;
+- (BOOL)isFirstTimeModeling;
 - (BOOL)isMIEActive;
 - (BOOL)isMultitouchLoggingEnabled;
 - (double)lastALSPowerSaved;
@@ -128,6 +140,10 @@
 - (void)setBluelightStatusEntry:(id)arg1;
 - (void)setBrightnessSystemClient:(id)arg1;
 - (void)setColorAdaptationClient:(id)arg1;
+- (void)setFirstEntryOnInit:(BOOL)arg1;
+- (void)setIsDisplayHighBrightness:(BOOL)arg1;
+- (void)setIsDisplayOn:(BOOL)arg1;
+- (void)setIsFirstTimeModeling:(BOOL)arg1;
 - (void)setIsMIEActive:(BOOL)arg1;
 - (void)setIsMultitouchLoggingEnabled:(BOOL)arg1;
 - (void)setLastALSPowerSaved:(double)arg1;

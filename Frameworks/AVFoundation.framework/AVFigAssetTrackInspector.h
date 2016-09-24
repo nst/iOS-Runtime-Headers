@@ -3,14 +3,15 @@
  */
 
 @interface AVFigAssetTrackInspector : AVAssetTrackInspector {
-    NSObject<OS_dispatch_queue> *_completionHandlerQueue;
-    struct OpaqueFigAsset { } *_figAsset;
-    struct OpaqueFigAssetTrack { } *_figAssetTrack;
-    struct OpaqueFigFormatReader { } *_figFormatReader;
-    struct OpaqueFigTrackReader { } *_figTrackReader;
-    NSMutableArray *_loadingBatches;
-    struct OpaqueFigSimpleMutex { } *_loadingMutex;
-    AVWeakReference *_weakReferenceToAsset;
+    NSObject<OS_dispatch_queue> * _completionHandlerQueue;
+    struct OpaqueFigAsset { } * _figAsset;
+    struct OpaqueFigAssetTrack { } * _figAssetTrack;
+    struct OpaqueFigFormatReader { } * _figFormatReader;
+    struct OpaqueFigTrackReader { } * _figTrackReader;
+    NSMutableArray * _loadingBatches;
+    struct OpaqueFigSimpleMutex { } * _loadingMutex;
+    unsigned long  _mediaType;
+    AVWeakReference * _weakReferenceToAsset;
 }
 
 - (void)_addFigNotifications;
@@ -31,7 +32,8 @@
 - (id)availableMetadataFormats;
 - (id)commonMetadata;
 - (void)dealloc;
-- (struct CGSize { float x1; float x2; })dimensions;
+- (int)defaultAlternateGroupID;
+- (struct CGSize { double x1; double x2; })dimensions;
 - (float)estimatedDataRate;
 - (id)extendedLanguageTag;
 - (void)finalize;
@@ -47,23 +49,24 @@
 - (int)layer;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)loudnessInfo;
-- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })mediaDecodeTimeRange;
-- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })mediaPresentationTimeRange;
+- (struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })mediaDecodeTimeRange;
+- (struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })mediaPresentationTimeRange;
 - (id)mediaType;
 - (id)metadataForFormat:(id)arg1;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })minSampleDuration;
-- (struct CGSize { float x1; float x2; })naturalSize;
+- (struct { int x1; int x2; unsigned int x3; int x4; })minSampleDuration;
+- (struct CGSize { double x1; double x2; })naturalSize;
 - (int)naturalTimeScale;
 - (float)nominalFrameRate;
 - (long)playabilityValidationResult;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })preferredTransform;
 - (float)preferredVolume;
+- (int)provisionalAlternateGroupID;
 - (BOOL)requiresFrameReordering;
-- (id)segmentForTrackTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (id)segmentForTrackTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
 - (id)segments;
 - (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
-- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
-- (long long)totalSampleDataLength;
+- (struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })timeRange;
+- (int)totalSampleDataLength;
 - (int)trackID;
 
 @end

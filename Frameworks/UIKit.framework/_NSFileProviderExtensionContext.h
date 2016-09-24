@@ -3,7 +3,7 @@
  */
 
 @interface _NSFileProviderExtensionContext : NSExtensionContext <_NSFileProviderVendor> {
-    NSFileProviderExtension *_principalInstance;
+    NSFileProviderExtension * _principalInstance;
 }
 
 @property (nonatomic) NSFileProviderExtension *principalInstance;

@@ -3,11 +3,11 @@
  */
 
 @interface FLFollowUpAction : NSObject <NSSecureCoding> {
-    NSString *_label;
-    NSData *_launchActionArguments;
-    NSURL *_launchActionURL;
-    unsigned int _sqlID;
-    NSURL *_url;
+    NSString * _label;
+    NSData * _launchActionArguments;
+    NSURL * _launchActionURL;
+    unsigned int  _sqlID;
+    NSURL * _url;
 }
 
 @property (copy) NSString *label;

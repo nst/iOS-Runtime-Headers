@@ -3,12 +3,12 @@
  */
 
 @interface _UIDynamicAnimationState : NSObject {
-    NSMutableArray *_activeAnimations;
-    CADisplayLink *_displayLink;
-    double _lastUpdateTime;
-    UIScreen *_screen;
-    BOOL _shouldSchedYield;
-    NSTimer *_timer;
+    NSMutableArray * _activeAnimations;
+    CADisplayLink * _displayLink;
+    double  _lastUpdateTime;
+    UIScreen * _screen;
+    BOOL  _shouldSchedYield;
+    NSTimer * _timer;
 }
 
 @end

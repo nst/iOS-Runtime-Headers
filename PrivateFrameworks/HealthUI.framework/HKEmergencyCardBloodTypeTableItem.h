@@ -3,9 +3,10 @@
  */
 
 @interface HKEmergencyCardBloodTypeTableItem : HKEmergencyCardTableItem <HKMedicalIDEditorCellEditDelegate> {
-    _HKMedicalIDMultilineStringCell *_displayCell;
-    HKMedicalIDEditorPickerCell *_editableCell;
-    _HKCustomInsetCellLayoutManager *_layoutManager;
+    _HKMedicalIDMultilineStringCell * _displayCell;
+    HKMedicalIDEditorPickerCell * _editableCell;
+    BOOL  _isEditing;
+    _HKCustomInsetCellLayoutManager * _layoutManager;
 }
 
 - (void).cxx_destruct;

@@ -3,9 +3,9 @@
  */
 
 @interface CIBloom : CIFilter {
-    CIImage *inputImage;
-    NSNumber *inputIntensity;
-    NSNumber *inputRadius;
+    CIImage * inputImage;
+    NSNumber * inputIntensity;
+    NSNumber * inputRadius;
 }
 
 @property (nonatomic, retain) CIImage *inputImage;
@@ -20,7 +20,6 @@
 - (id)inputIntensity;
 - (id)inputRadius;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputImage:(id)arg1;
 - (void)setInputIntensity:(id)arg1;
 - (void)setInputRadius:(id)arg1;

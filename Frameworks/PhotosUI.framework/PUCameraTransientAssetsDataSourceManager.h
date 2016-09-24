@@ -3,8 +3,8 @@
  */
 
 @interface PUCameraTransientAssetsDataSourceManager : PUAssetsDataSourceManager <PUTransientDataSourceChangeObserver> {
-    <PUDisplayAssetCollection> *__containingAssetCollection;
-    <PUTransientDataSource> *__transientDataSource;
+    <PUDisplayAssetCollection> * __containingAssetCollection;
+    <PUTransientDataSource> * __transientDataSource;
 }
 
 @property (nonatomic, readonly) <PUDisplayAssetCollection> *_containingAssetCollection;

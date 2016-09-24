@@ -5,11 +5,13 @@
 @interface MSVArtworkServiceRequest : NSObject <NSSecureCoding>
 
 @property (nonatomic, readonly) Class operationClass;
+@property (nonatomic, readonly) int operationPriority;
 
 + (BOOL)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (Class)operationClass;
+- (int)operationPriority;
 
 @end

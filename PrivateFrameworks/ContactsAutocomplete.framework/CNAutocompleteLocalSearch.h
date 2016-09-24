@@ -3,8 +3,8 @@
  */
 
 @interface CNAutocompleteLocalSearch : NSObject <CNAutocompleteSearch> {
-    CNContactStore *_contactFetcherStore;
-    CNContactStore *_contactStore;
+    CNContactStore * _contactFetcherStore;
+    CNContactStore * _contactStore;
 }
 
 @property (nonatomic, retain) CNContactStore *contactFetcherStore;

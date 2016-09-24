@@ -3,9 +3,9 @@
  */
 
 @interface SSApplicationVersionCondition : SSProtocolCondition {
-    NSString *_bundleIdentifier;
-    NSString *_bundleVersion;
-    NSNumber *_externalVersion;
+    NSString * _bundleIdentifier;
+    NSString * _bundleVersion;
+    NSNumber * _externalVersion;
 }
 
 - (void)dealloc;

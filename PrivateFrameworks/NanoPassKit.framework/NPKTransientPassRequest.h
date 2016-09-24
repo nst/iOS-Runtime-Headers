@@ -3,8 +3,8 @@
  */
 
 @interface NPKTransientPassRequest : NSObject {
-    NPKTransientPassAssertionConnection *_owningConnection;
-    NSString *_uniqueID;
+    NPKTransientPassAssertionConnection * _owningConnection;
+    NSString * _uniqueID;
 }
 
 @property (nonatomic) NPKTransientPassAssertionConnection *owningConnection;

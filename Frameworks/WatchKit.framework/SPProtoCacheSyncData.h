@@ -3,9 +3,9 @@
  */
 
 @interface SPProtoCacheSyncData : PBCodable <NSCopying> {
-    NSString *_cacheIdentifier;
-    SPProtoCacheAssets *_permanentCache;
-    SPProtoCacheAssets *_transientCache;
+    NSString * _cacheIdentifier;
+    SPProtoCacheAssets * _permanentCache;
+    SPProtoCacheAssets * _transientCache;
 }
 
 @property (nonatomic, retain) NSString *cacheIdentifier;

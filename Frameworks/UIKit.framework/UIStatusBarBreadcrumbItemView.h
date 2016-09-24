@@ -3,8 +3,8 @@
  */
 
 @interface UIStatusBarBreadcrumbItemView : UIStatusBarSystemNavigationItemView {
-    NSString *_destinationText;
-    UISystemNavigationAction *_systemNavigationAction;
+    NSString * _destinationText;
+    UISystemNavigationAction * _systemNavigationAction;
 }
 
 @property (nonatomic, retain) NSString *destinationText;
@@ -12,6 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)destinationText;
+- (float)extraRightPadding;
 - (int)labelLineBreakMode;
 - (void)setDestinationText:(id)arg1;
 - (void)setSystemNavigationAction:(id)arg1;

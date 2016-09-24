@@ -3,27 +3,27 @@
  */
 
 @interface CAMEffectsRenderer : NSObject {
-    id /* block */ __atomicPreviewStartedBlock;
-    BOOL __atomicPreviewStartedNotificationNeeded;
-    UITapGestureRecognizer *__gridTapGestureRecognizer;
-    BOOL __gridTransitionInFlight;
-    BOOL __inBackground;
-    BOOL __previewLayerEnabled;
-    CAMEffectsFullsizeView *__renderEffectsFullsizeView;
-    CAMEffectsGridView *__renderGridView;
-    NSObject<OS_dispatch_queue> *__renderQueue;
-    int _atomicCaptureMode;
-    int _atomicFilterType;
-    BOOL _atomicMirrorFilterRendering;
-    CAMVideoPreviewView *_atomicVideoPreviewView;
-    CIContext *_ciContext;
-    <CAMEffectsRendererDelegate> *_delegate;
-    unsigned int _droppedFramesSinceLastReportedFrameDrop;
-    EAGLContext *_eaglContext;
-    BOOL _gridTransitionIsAnimated;
-    BOOL _isShowingGrid;
-    double _lastReportedFrameDropTime;
-    unsigned int _totalFramesSinceLastReportedFrameDrop;
+    id /* block */  __atomicPreviewStartedBlock;
+    BOOL  __atomicPreviewStartedNotificationNeeded;
+    UITapGestureRecognizer * __gridTapGestureRecognizer;
+    BOOL  __gridTransitionInFlight;
+    BOOL  __inBackground;
+    BOOL  __previewLayerEnabled;
+    CAMEffectsFullsizeView * __renderEffectsFullsizeView;
+    CAMEffectsGridView * __renderGridView;
+    NSObject<OS_dispatch_queue> * __renderQueue;
+    int  _atomicCaptureMode;
+    int  _atomicFilterType;
+    BOOL  _atomicMirrorFilterRendering;
+    CAMVideoPreviewView * _atomicVideoPreviewView;
+    CIContext * _ciContext;
+    <CAMEffectsRendererDelegate> * _delegate;
+    unsigned int  _droppedFramesSinceLastReportedFrameDrop;
+    EAGLContext * _eaglContext;
+    BOOL  _gridTransitionIsAnimated;
+    BOOL  _isShowingGrid;
+    double  _lastReportedFrameDropTime;
+    unsigned int  _totalFramesSinceLastReportedFrameDrop;
 }
 
 @property (nonatomic, readonly) UITapGestureRecognizer *_gridTapGestureRecognizer;
@@ -46,8 +46,8 @@
 
 - (void).cxx_destruct;
 - (void)_animateGridLayerZoomToGrid:(BOOL)arg1;
-- (void)_animateLayer:(id)arg1 startFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 endFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 viewTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg4 animationDuration:(double)arg5 animationTimingFunction:(id)arg6 animationDelegate:(id)arg7;
-- (void)_animateToGrid:(BOOL)arg1 layer:(id)arg2 fadeOutLayer:(id)arg3 startFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 endFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 completion:(id /* block */)arg6;
+- (void)_animateLayer:(id)arg1 startFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 endFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 viewTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg4 animationDuration:(double)arg5 animationTimingFunction:(id)arg6 animationDelegate:(id)arg7;
+- (void)_animateToGrid:(BOOL)arg1 layer:(id)arg2 fadeOutLayer:(id)arg3 startFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4 endFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5 completion:(id /* block */)arg6;
 - (id)_animatedLayerForView:(id)arg1;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_applicationDidEnterBackground:(id)arg1;
@@ -58,8 +58,8 @@
 - (void)_destroyEffectsGridView;
 - (void)_deviceStarted:(id)arg1;
 - (void)_forceResetToFilteredRendering:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameToZoomFromFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withinFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_gridFrameForCurrentFilters;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameToZoomFromFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 withinFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_gridFrameForCurrentFilters;
 - (id)_gridTapGestureRecognizer;
 - (void)_gridTapped:(id)arg1;
 - (void)_handleCaptureSessionDidStopRunning:(id)arg1;
@@ -94,7 +94,7 @@
 - (void)_transitionToGrid:(id /* block */)arg1;
 - (void)_updateEffectsFullsizeView;
 - (void)_updateStatsForFrameWasDropped:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_zoomedFrameForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromFullFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 toZoomFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_zoomedFrameForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 fromFullFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 toZoomFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (int)atomicFilterType;
 - (id)atomicVideoPreviewView;
 - (int)captureMode;
@@ -112,7 +112,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)setFilterType:(int)arg1;
 - (void)setFilterType:(int)arg1 forceStateChange:(BOOL)arg2;
-- (void)setFilterTypeAndWaitForRenderIfChanging:(int)arg1;
 - (void)setMirrorFilterRendering:(BOOL)arg1;
 - (void)setShowGrid:(BOOL)arg1;
 - (void)setShowGrid:(BOOL)arg1 animated:(BOOL)arg2;

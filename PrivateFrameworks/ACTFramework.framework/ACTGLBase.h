@@ -3,10 +3,10 @@
  */
 
 @interface ACTGLBase : NSObject <ESRenderer> {
-    unsigned int mFramebuffer;
-    EAGLContext *mGLBackupContext;
-    EAGLContext *mGLContext;
-    unsigned int mTextureArray;
+    unsigned int  mFramebuffer;
+    EAGLContext * mGLBackupContext;
+    EAGLContext * mGLContext;
+    unsigned int  mTextureArray;
 }
 
 @property (readonly, copy) NSString *debugDescription;

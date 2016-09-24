@@ -3,39 +3,44 @@
  */
 
 @interface SPUISearchTableHeaderView : UITableViewHeaderFooterView {
-    <SPUISearchTableHeaderViewDelegate> *_delegate;
-    UIButton *_moreButton;
-    NSArray *_moreButtonHiddenConstraints;
-    NSArray *_moreButtonVisibleConstraints;
-    unsigned int _section;
-    UILabel *_titleLabel;
+    <SPUISearchTableHeaderViewDelegate> * _delegate;
+    UIButton * _moreButton;
+    NSLayoutConstraint * _moreButtonHiddenConstraint;
+    NSLayoutConstraint * _moreButtonVisibleConstraint;
+    SFResultSection * _section;
+    unsigned int  _sectionHeaderType;
+    UILabel * _titleLabel;
 }
 
-@property (nonatomic) <SPUISearchTableHeaderViewDelegate> *delegate;
+@property <SPUISearchTableHeaderViewDelegate> *delegate;
 @property (nonatomic, retain) UIButton *moreButton;
-@property (retain) NSArray *moreButtonHiddenConstraints;
-@property (retain) NSArray *moreButtonVisibleConstraints;
-@property (nonatomic) unsigned int section;
+@property (nonatomic, retain) NSLayoutConstraint *moreButtonHiddenConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *moreButtonVisibleConstraint;
+@property (nonatomic, retain) SFResultSection *section;
+@property (readonly) unsigned int sectionHeaderType;
 @property (nonatomic, retain) UILabel *titleLabel;
 
 - (void).cxx_destruct;
 - (id)delegate;
 - (id)initWithReuseIdentifier:(id)arg1;
-- (void)layoutSubviews;
 - (id)moreButton;
-- (id)moreButtonHiddenConstraints;
+- (id)moreButtonHiddenConstraint;
 - (void)moreButtonPressed;
-- (id)moreButtonVisibleConstraints;
-- (unsigned int)section;
+- (id)moreButtonVisibleConstraint;
+- (id)moreResultsPunchout;
+- (id)section;
+- (unsigned int)sectionHeaderType;
 - (void)setDelegate:(id)arg1;
 - (void)setFloating:(BOOL)arg1;
 - (void)setMoreButton:(id)arg1;
-- (void)setMoreButtonHiddenConstraints:(id)arg1;
-- (void)setMoreButtonVisible:(BOOL)arg1;
-- (void)setMoreButtonVisibleConstraints:(id)arg1;
-- (void)setSection:(unsigned int)arg1;
+- (void)setMoreButtonHiddenConstraint:(id)arg1;
+- (void)setMoreButtonVisibleConstraint:(id)arg1;
+- (void)setSection:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
+- (BOOL)supportsShowMoreInApp;
 - (id)titleLabel;
-- (void)updateWithTitle:(id)arg1 section:(unsigned int)arg2 isExpanded:(BOOL)arg3;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)updateShowMoreButtonVisibility;
+- (void)updateWithSection:(id)arg1 isExpanded:(BOOL)arg2;
 
 @end

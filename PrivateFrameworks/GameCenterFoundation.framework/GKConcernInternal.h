@@ -3,9 +3,9 @@
  */
 
 @interface GKConcernInternal : GKInternalRepresentation {
-    unsigned int _concernID;
-    NSString *_message;
-    GKPlayerInternal *_player;
+    unsigned int  _concernID;
+    NSString * _message;
+    GKPlayerInternal * _player;
 }
 
 @property (nonatomic) unsigned int concernID;

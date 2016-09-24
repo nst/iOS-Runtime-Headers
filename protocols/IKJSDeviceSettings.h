@@ -6,13 +6,13 @@
 @required
 
 - (IKJSRestrictions *)Restrictions;
-- (struct CGSize { float x1; float x2; })Screen;
+- (struct CGSize { double x1; double x2; })Screen;
 - (NSString *)language;
 - (NSString *)name;
 - (NSString *)preferredVideoFormat;
 - (NSString *)preferredVideoPreviewFormat;
 - (IKJSRestrictions *)restrictions;
-- (struct CGSize { float x1; float x2; })screen;
+- (struct CGSize { double x1; double x2; })screen;
 - (NSString *)storefrontCountryCode;
 
 @end

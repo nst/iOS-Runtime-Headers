@@ -6,10 +6,10 @@
     struct { 
         unsigned int size : 1; 
         unsigned int lastSection : 1; 
-    } _has;
-    BOOL _lastSection;
-    NSData *_signature;
-    long long _size;
+    }  _has;
+    BOOL  _lastSection;
+    NSData * _signature;
+    int  _size;
 }
 
 @property (nonatomic) BOOL hasLastSection;
@@ -17,7 +17,7 @@
 @property (nonatomic) BOOL hasSize;
 @property (nonatomic) BOOL lastSection;
 @property (nonatomic, retain) NSData *signature;
-@property (nonatomic) long long size;
+@property (nonatomic) int size;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
@@ -36,9 +36,9 @@
 - (void)setHasSize:(BOOL)arg1;
 - (void)setLastSection:(BOOL)arg1;
 - (void)setSignature:(id)arg1;
-- (void)setSize:(long long)arg1;
+- (void)setSize:(int)arg1;
 - (id)signature;
-- (long long)size;
+- (int)size;
 - (void)writeTo:(id)arg1;
 
 @end

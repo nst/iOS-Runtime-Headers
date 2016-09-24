@@ -3,8 +3,8 @@
  */
 
 @interface UIKBKeyViewAnimatorMonolith : UIKBKeyViewAnimator <_UIFloatingContentViewDelegate> {
-    NSMutableDictionary *_selectedKeyTimestamps;
-    NSMutableDictionary *_transitionCompletions;
+    NSMutableDictionary * _selectedKeyTimestamps;
+    NSMutableDictionary * _transitionCompletions;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,15 +3,16 @@
  */
 
 @interface DDOpenURLAction : DDAction {
-    LSAppLink *_appLink;
-    BOOL _appLinkInitDone;
+    LSAppLink * _appLink;
+    BOOL  _appLinkInitDone;
 }
 
 - (id)appLink;
+- (BOOL)canBePerformedByOpeningURL;
 - (id)companionAction;
 - (void)dealloc;
 - (id)localizedName;
-- (void)perform;
+- (void)performFromView:(id)arg1;
 - (BOOL)useAppLink;
 
 @end

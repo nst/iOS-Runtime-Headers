@@ -3,7 +3,7 @@
  */
 
 @interface STGenericIntentGroup : NSObject <NSCoding> {
-    NSString *_name;
+    NSString * _name;
 }
 
 @property (nonatomic, copy) NSString *name;

@@ -3,10 +3,10 @@
  */
 
 @interface ISUniqueOperationManager : NSObject <ISSingleton> {
-    ISUniqueOperationContext *_activeContext;
-    NSMutableArray *_contexts;
-    NSLock *_lock;
-    NSMutableDictionary *_lockPool;
+    ISUniqueOperationContext * _activeContext;
+    NSMutableArray * _contexts;
+    NSLock * _lock;
+    NSMutableDictionary * _lockPool;
 }
 
 @property (readonly, copy) NSString *debugDescription;

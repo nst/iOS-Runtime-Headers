@@ -3,7 +3,7 @@
  */
 
 @interface PLSimpleAlbumList : NSObject <PLAssetContainerList> {
-    NSOrderedSet *_containers;
+    NSOrderedSet * _containers;
 }
 
 @property (nonatomic, retain) NSOrderedSet *containers;

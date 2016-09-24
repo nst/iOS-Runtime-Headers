@@ -3,11 +3,11 @@
  */
 
 @interface NACEventThrottler : NSObject {
-    id /* block */ _eventBlock;
-    double _lastUpdateTime;
-    double _minimumDelay;
-    NSObject<OS_dispatch_source> *_timer;
-    id _value;
+    id /* block */  _eventBlock;
+    double  _lastUpdateTime;
+    double  _minimumDelay;
+    NSObject<OS_dispatch_source> * _timer;
+    id  _value;
 }
 
 @property (nonatomic, copy) id /* block */ eventBlock;

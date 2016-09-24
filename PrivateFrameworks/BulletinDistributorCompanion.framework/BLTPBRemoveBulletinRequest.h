@@ -3,9 +3,9 @@
  */
 
 @interface BLTPBRemoveBulletinRequest : PBRequest <NSCopying> {
-    NSString *_publisherBulletinID;
-    NSString *_recordID;
-    NSString *_sectionID;
+    NSString * _publisherBulletinID;
+    NSString * _recordID;
+    NSString * _sectionID;
 }
 
 @property (nonatomic, readonly) BOOL hasPublisherBulletinID;

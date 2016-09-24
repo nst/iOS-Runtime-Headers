@@ -3,9 +3,9 @@
  */
 
 @interface AVAVVideoSettingsVideoOutputSettings : AVVideoOutputSettings <AVReencodedVideoSettingsForFig> {
-    NSDictionary *_VTCleanApertureDictionary;
-    NSDictionary *_VTPixelAspectRatioDictionary;
-    NSDictionary *_adaptedVideoCompressionProperties;
+    NSDictionary * _VTCleanApertureDictionary;
+    NSDictionary * _VTPixelAspectRatioDictionary;
+    NSDictionary * _adaptedVideoCompressionProperties;
 }
 
 @property (nonatomic, readonly) unsigned long videoCodecType;

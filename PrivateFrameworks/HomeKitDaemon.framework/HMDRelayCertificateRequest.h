@@ -3,10 +3,10 @@
  */
 
 @interface HMDRelayCertificateRequest : NSObject {
-    NSData *_challengeCertificate;
-    NSString *_challengeIdentifier;
-    NSData *_challengeResponse;
-    NSData *_publicKey;
+    NSData * _challengeCertificate;
+    NSString * _challengeIdentifier;
+    NSData * _challengeResponse;
+    NSData * _publicKey;
 }
 
 @property (nonatomic, readonly, copy) NSData *challengeCertificate;

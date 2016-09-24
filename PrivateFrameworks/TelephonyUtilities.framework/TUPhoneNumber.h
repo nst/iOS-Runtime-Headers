@@ -3,7 +3,7 @@
  */
 
 @interface TUPhoneNumber : NSObject <NSCoding, NSSecureCoding> {
-    struct __CFPhoneNumber { } *_phoneNumberRef;
+    struct __CFPhoneNumber { } * _phoneNumberRef;
 }
 
 @property (readonly) NSString *countryCode;
@@ -13,6 +13,7 @@
 @property struct __CFPhoneNumber { }*phoneNumberRef;
 @property (readonly) NSString *unformattedInternationalRepresentation;
 
++ (BOOL)areDigits:(id)arg1 equalToDigits:(id)arg2 usingCountryCode:(id)arg3;
 + (id)phoneNumberWithCFPhoneNumberRef:(struct __CFPhoneNumber { }*)arg1;
 + (id)phoneNumberWithDigits:(id)arg1 countryCode:(id)arg2;
 + (BOOL)supportsSecureCoding;

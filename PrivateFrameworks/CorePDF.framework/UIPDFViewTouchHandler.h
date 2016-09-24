@@ -3,21 +3,21 @@
  */
 
 @interface UIPDFViewTouchHandler : UIResponder <UIGestureRecognizerDelegate> {
-    BOOL _allowMenu;
-    UILongPressGestureRecognizer *_briefPressRecognizer;
-    UITapGestureRecognizer *_doubleTapRecognizer;
-    BOOL _firstTouch;
-    UILongPressGestureRecognizer *_longPressRecognizer;
-    UIPDFMagnifierController *_magnifyController;
-    UIMenuController *_menuController;
-    UIPDFPageView *_pdfPageView;
-    UIPDFSelectionController *_selectionController;
-    BOOL _showLoupe;
-    BOOL _showMagnifier;
-    UITapGestureRecognizer *_singleTapRecognizer;
-    BOOL _trackingSelection;
-    UITapGestureRecognizer *_twoFingerTapRecognizer;
-    BOOL _useDelegateForLinks;
+    BOOL  _allowMenu;
+    UILongPressGestureRecognizer * _briefPressRecognizer;
+    UITapGestureRecognizer * _doubleTapRecognizer;
+    BOOL  _firstTouch;
+    UILongPressGestureRecognizer * _longPressRecognizer;
+    UIPDFMagnifierController * _magnifyController;
+    UIMenuController * _menuController;
+    UIPDFPageView * _pdfPageView;
+    UIPDFSelectionController * _selectionController;
+    BOOL  _showLoupe;
+    BOOL  _showMagnifier;
+    UITapGestureRecognizer * _singleTapRecognizer;
+    BOOL  _trackingSelection;
+    UITapGestureRecognizer * _twoFingerTapRecognizer;
+    BOOL  _useDelegateForLinks;
 }
 
 @property BOOL allowMenu;
@@ -25,8 +25,6 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
-
-// Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
 
 + (void)releaseViewManager;
 
@@ -54,11 +52,5 @@
 - (void)showMenu;
 - (void)singleTapRecognized:(id)arg1;
 - (void)twoFingerTapRecognized:(id)arg1;
-
-// Image: /System/Library/AccessibilityBundles/QuickSpeak.bundle/QuickSpeak
-
-+ (Class)safeCategoryBaseClass;
-
-- (id)_accessibilityQuickSpeakContent;
 
 @end

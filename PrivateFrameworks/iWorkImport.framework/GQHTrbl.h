@@ -3,10 +3,10 @@
  */
 
 @interface GQHTrbl : NSObject {
-    int mBottom;
-    int mLeft;
-    int mRight;
-    int mTop;
+    int  mBottom;
+    int  mLeft;
+    int  mRight;
+    int  mTop;
 }
 
 - (int)bottom;

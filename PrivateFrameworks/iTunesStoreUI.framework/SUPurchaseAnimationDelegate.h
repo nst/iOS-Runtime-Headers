@@ -3,7 +3,7 @@
  */
 
 @interface SUPurchaseAnimationDelegate : NSObject {
-    UIView *_view;
+    UIView * _view;
 }
 
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;

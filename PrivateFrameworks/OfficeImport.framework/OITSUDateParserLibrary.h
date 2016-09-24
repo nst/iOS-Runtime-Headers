@@ -3,12 +3,12 @@
  */
 
 @interface OITSUDateParserLibrary : NSObject {
-    NSMutableArray *mAvailableDateParsers;
-    TSULocale *mLocale;
-    unsigned int mMaxPermittedParsers;
-    unsigned int mNumberOfUses;
-    NSCondition *mParserLibraryConditionVariable;
-    unsigned int mParsersCreated;
+    NSMutableArray * mAvailableDateParsers;
+    OITSULocale * mLocale;
+    unsigned int  mMaxPermittedParsers;
+    unsigned int  mNumberOfUses;
+    NSCondition * mParserLibraryConditionVariable;
+    unsigned int  mParsersCreated;
 }
 
 - (id)checkoutDateParser;

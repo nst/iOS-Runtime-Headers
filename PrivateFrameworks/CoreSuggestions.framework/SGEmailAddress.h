@@ -3,7 +3,7 @@
  */
 
 @interface SGEmailAddress : SGLabeledObject {
-    NSString *_emailAddress;
+    NSString * _emailAddress;
 }
 
 @property (nonatomic, readonly) NSString *emailAddress;

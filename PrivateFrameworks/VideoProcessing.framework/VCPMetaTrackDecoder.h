@@ -3,9 +3,9 @@
  */
 
 @interface VCPMetaTrackDecoder : NSObject {
-    AVAssetReader *_reader;
-    AVAssetReaderTrackOutput *_readerOutput;
-    AVAssetReaderOutputMetadataAdaptor *_readerOutputAdaptor;
+    AVAssetReader * _reader;
+    AVAssetReaderTrackOutput * _readerOutput;
+    AVAssetReaderOutputMetadataAdaptor * _readerOutputAdaptor;
 }
 
 - (void).cxx_destruct;

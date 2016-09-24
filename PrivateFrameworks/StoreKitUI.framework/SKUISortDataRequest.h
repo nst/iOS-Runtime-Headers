@@ -3,8 +3,8 @@
  */
 
 @interface SKUISortDataRequest : SKUIResourceRequest <NSCopying> {
-    <SKUISortDataRequestDelegate> *_delegate;
-    NSURL *_sortURL;
+    <SKUISortDataRequestDelegate> * _delegate;
+    NSURL * _sortURL;
 }
 
 @property (nonatomic) <SKUISortDataRequestDelegate> *delegate;

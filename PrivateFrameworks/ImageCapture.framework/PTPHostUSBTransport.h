@@ -3,26 +3,27 @@
  */
 
 @interface PTPHostUSBTransport : PTPTransport {
-    struct __CFRunLoopSource { } *_CFRunLoopSource;
-    unsigned char _bulkPipeIn;
-    unsigned char _bulkPipeOut;
-    BOOL _connected;
-    NSMutableData *_eventData;
-    char *_eventDataBuffer;
-    unsigned long _eventDataBufferSize;
-    struct IOUSBInterfaceStruct300 {} **_interfaceInterfaceRef;
-    unsigned char _interruptPipeIn;
-    unsigned long _locationID;
-    int _maxPacketSizeBulkIn;
-    int _maxPacketSizeBulkOut;
-    int _maxPacketSizeInterruptIn;
-    unsigned short _productID;
-    char *_readBuffer;
-    unsigned long _readBufferSize;
-    NSString *_usbSerialNumberString;
-    unsigned short _vendorID;
-    char *_writeBuffer;
-    unsigned long _writeBufferSize;
+    struct __CFRunLoopSource { } * _CFRunLoopSource;
+    unsigned char  _bulkPipeIn;
+    unsigned char  _bulkPipeOut;
+    BOOL  _connected;
+    NSMutableData * _eventData;
+    char * _eventDataBuffer;
+    unsigned long  _eventDataBufferSize;
+    struct IOUSBInterfaceStruct300 {} ** _interfaceInterfaceRef;
+    unsigned char  _interruptPipeIn;
+    unsigned long  _locationID;
+    int  _maxPacketSizeBulkIn;
+    int  _maxPacketSizeBulkOut;
+    int  _maxPacketSizeInterruptIn;
+    unsigned short  _productID;
+    char * _readBuffer;
+    NSObject<OS_dispatch_semaphore> * _readBufferSemaphore;
+    unsigned long  _readBufferSize;
+    NSString * _usbSerialNumberString;
+    unsigned short  _vendorID;
+    char * _writeBuffer;
+    unsigned long  _writeBufferSize;
 }
 
 - (void)abortPendingIO;

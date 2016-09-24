@@ -3,11 +3,11 @@
  */
 
 @interface PTPOperationRequestPacket : NSObject {
-    unsigned long _dataPhaseInfo;
-    int _numParameters;
-    unsigned short _operationCode;
-    unsigned long _parameters;
-    unsigned long _transactionID;
+    unsigned long  _dataPhaseInfo;
+    int  _numParameters;
+    unsigned short  _operationCode;
+    unsigned long  _parameters;
+    unsigned long  _transactionID;
 }
 
 - (id)contentForTCP;

@@ -3,18 +3,27 @@
  */
 
 @interface SSVOperation : NSOperation {
-    NSOperation *_childOperation;
-    NSMutableArray *_childRequests;
-    NSObject<OS_dispatch_queue> *_serialQueue;
+    NSOperation * _childOperation;
+    NSMutableArray * _childRequests;
+    NSError * _error;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    BOOL  _success;
 }
+
+@property (nonatomic, copy) NSError *error;
+@property (nonatomic) BOOL success;
 
 - (void).cxx_destruct;
 - (void)addChildRequest:(id)arg1;
 - (void)cancel;
 - (void)dispatchAsync:(id /* block */)arg1;
 - (void)dispatchSync:(id /* block */)arg1;
+- (id)error;
 - (id)init;
 - (void)removeChildRequest:(id)arg1;
 - (void)runChildOperation:(id)arg1;
+- (void)setError:(id)arg1;
+- (void)setSuccess:(BOOL)arg1;
+- (BOOL)success;
 
 @end

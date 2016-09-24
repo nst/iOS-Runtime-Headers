@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DRenderPipeline : NSObject {
-    TSCH3DRenderProcessor *mProcessor;
-    TSCH3DSession *mSession;
+    TSCH3DRenderProcessor * mProcessor;
+    TSCH3DSession * mSession;
 }
 
 @property (nonatomic, readonly) TSCH3DGLContext *context;

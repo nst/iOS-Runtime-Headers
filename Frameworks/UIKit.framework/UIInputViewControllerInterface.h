@@ -3,9 +3,9 @@
  */
 
 @interface UIInputViewControllerInterface : TIKeyboardInputManagerStub <_UIIVCInterface> {
-    _UIInputViewControllerState *_cachedState;
-    <_UIIVCInterface> *_forwardingInterface;
-    <_UIIVCResponseDelegate> *_responseDelegate;
+    _UIInputViewControllerState * _cachedState;
+    <_UIIVCInterface> * _forwardingInterface;
+    <_UIIVCResponseDelegate> * _responseDelegate;
 }
 
 @property (getter=_cachedState, setter=_setCachedState:, nonatomic, retain) _UIInputViewControllerState *cachedState;

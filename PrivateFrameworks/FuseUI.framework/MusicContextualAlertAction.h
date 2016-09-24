@@ -3,8 +3,8 @@
  */
 
 @interface MusicContextualAlertAction : UIAlertAction {
-    id /* block */ _contextualHandler;
-    id /* block */ _contextualShouldDismissHandler;
+    id /* block */  _contextualHandler;
+    id /* block */  _contextualShouldDismissHandler;
 }
 
 @property (nonatomic, readonly, copy) id /* block */ contextualHandler;

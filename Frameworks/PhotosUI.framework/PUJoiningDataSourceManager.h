@@ -3,8 +3,8 @@
  */
 
 @interface PUJoiningDataSourceManager : PUAssetsDataSourceManager <PUAssetsDataSourceManagerDelegate> {
-    int __currentUpdateID;
-    NSArray *__dataSourceManagers;
+    int  __currentUpdateID;
+    NSArray * __dataSourceManagers;
 }
 
 @property (setter=_setCurrentUpdateId:, nonatomic) int _currentUpdateID;

@@ -3,8 +3,8 @@
  */
 
 @interface PLCameraImportQueue : NSObject {
-    unsigned int _index;
-    NSMutableArray *_items;
+    unsigned int  _index;
+    NSMutableArray * _items;
 }
 
 - (void)_removeItem:(id)arg1;

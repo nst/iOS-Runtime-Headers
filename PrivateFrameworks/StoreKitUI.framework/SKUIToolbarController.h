@@ -3,10 +3,10 @@
  */
 
 @interface SKUIToolbarController : NSObject {
-    SKUIToolbarButtonsController *_buttonsController;
-    <SKUIToolbarControllerDelegate> *_delegate;
-    NSArray *_toolbarItems;
-    SKUIToolbarViewElement *_viewElement;
+    SKUIToolbarButtonsController * _buttonsController;
+    <SKUIToolbarControllerDelegate> * _delegate;
+    NSArray * _toolbarItems;
+    SKUIToolbarViewElement * _viewElement;
 }
 
 @property (nonatomic) <SKUIToolbarControllerDelegate> *delegate;

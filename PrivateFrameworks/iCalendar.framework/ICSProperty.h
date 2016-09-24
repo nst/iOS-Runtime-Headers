@@ -3,9 +3,9 @@
  */
 
 @interface ICSProperty : NSObject <ICSWriting, NSCoding> {
-    NSMutableDictionary *_parameters;
-    unsigned int _type;
-    id _value;
+    NSMutableDictionary * _parameters;
+    unsigned int  _type;
+    id  _value;
 }
 
 - (void).cxx_destruct;

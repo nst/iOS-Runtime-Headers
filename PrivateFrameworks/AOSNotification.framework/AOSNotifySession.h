@@ -2,36 +2,15 @@
    Image: /System/Library/PrivateFrameworks/AOSNotification.framework/AOSNotification
  */
 
-@interface AOSNotifySession : NSObject {
-    NSXPCConnection *_xpcConnection;
-    NSObject<OS_dispatch_queue> *_xpcConnectionCreationQueue;
-}
+@interface AOSNotifySession : NSObject
 
-@property (nonatomic, retain) NSXPCConnection *xpcConnection;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *xpcConnectionCreationQueue;
-
++ (void)load;
 + (id)sharedInstance;
 
-- (void).cxx_destruct;
-- (void)_destroyXPCConnection;
-- (id)currentXPCConnection;
-- (void)dealloc;
-- (void)didChangeFMFAccountInfo:(id)arg1;
-- (id)fmfDeviceId;
 - (id)fmipAccount;
 - (id)fmipDeviceId;
 - (id)iCloudAccount;
 - (id)init;
-- (void)locationAuthorizationForShareMyLocationWithCompletion:(id /* block */)arg1;
-- (id)newErrorForCode:(int)arg1 message:(id)arg2;
-- (BOOL)performMigration;
-- (void)retrieveFMFAccountUsingCallback:(id /* block */)arg1;
-- (void)setXpcConnection:(id)arg1;
-- (void)setXpcConnectionCreationQueue:(id)arg1;
 - (void)startListeningOnTopic:(id)arg1;
-- (id)storeAccount;
-- (void)willDeleteiCloudAccountWithCompletion:(id /* block */)arg1;
-- (id)xpcConnection;
-- (id)xpcConnectionCreationQueue;
 
 @end

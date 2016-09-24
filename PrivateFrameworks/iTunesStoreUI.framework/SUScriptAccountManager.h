@@ -3,8 +3,8 @@
  */
 
 @interface SUScriptAccountManager : NSObject {
-    NSMutableArray *_accounts;
-    NSLock *_lock;
+    NSMutableArray * _accounts;
+    NSLock * _lock;
 }
 
 @property (readonly, retain) NSArray *accounts;

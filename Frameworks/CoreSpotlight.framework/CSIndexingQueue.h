@@ -3,17 +3,17 @@
  */
 
 @interface CSIndexingQueue : NSObject {
-    NSObject<OS_dispatch_queue> *_coalescingQueue;
-    NSObject<OS_dispatch_source> *_coalescingTimer;
-    double _idleTime;
-    double _idleTimeLeeway;
-    double _lastPush;
-    <CSIndexQueuableItem> *_lastPushedItem;
-    unsigned int _maximumBatchSize;
-    int _mode;
-    id /* block */ _notifyBlock;
-    NSMutableDictionary *_queuedItems;
-    BOOL _timerArmed;
+    NSObject<OS_dispatch_queue> * _coalescingQueue;
+    NSObject<OS_dispatch_source> * _coalescingTimer;
+    double  _idleTime;
+    double  _idleTimeLeeway;
+    double  _lastPush;
+    <CSIndexQueuableItem> * _lastPushedItem;
+    unsigned int  _maximumBatchSize;
+    int  _mode;
+    id /* block */  _notifyBlock;
+    NSMutableDictionary * _queuedItems;
+    BOOL  _timerArmed;
 }
 
 @property (retain) NSObject<OS_dispatch_queue> *coalescingQueue;
@@ -30,12 +30,13 @@
 
 - (void).cxx_destruct;
 - (void)_applicationWillResign:(id)arg1;
-- (void)_flushItemsQueue;
+- (void)_flushWithAppResigned:(BOOL)arg1 forced:(BOOL)arg2;
 - (void)_pushLastItem:(id)arg1 time:(double)arg2;
 - (void)_queueItems:(id)arg1;
 - (id)coalescingQueue;
 - (id)coalescingTimer;
 - (void)dealloc;
+- (void)flush;
 - (double)idleTime;
 - (double)idleTimeLeeway;
 - (id)initWithIdleTime:(double)arg1 idleTimeLeeway:(double)arg2 maximumBatchSize:(unsigned int)arg3 mode:(int)arg4 notifyBlock:(id /* block */)arg5;

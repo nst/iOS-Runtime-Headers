@@ -3,10 +3,10 @@
  */
 
 @interface MPMusicPlayerController : NSObject <MPMediaPlayback> {
-    MPMusicPlayerControllerInternal *_internal;
+    MPMusicPlayerControllerInternal * _internal;
 }
 
-@property (nonatomic) float currentPlaybackRate;
+@property (nonatomic) double currentPlaybackRate;
 @property (nonatomic) double currentPlaybackTime;
 @property (nonatomic, readonly) BOOL isPreparedToPlay;
 
@@ -20,10 +20,10 @@
 - (void).cxx_destruct;
 - (void)_clientCheckInUsingExistencePort:(BOOL)arg1;
 - (void)_isQueuePreparedDidChange:(BOOL)arg1;
-- (void)_itemPlaybackDidEnd:(unsigned long long)arg1;
+- (void)_itemPlaybackDidEnd:(unsigned int)arg1;
 - (void)_musicPlayerDidLaunch;
 - (BOOL)_musicPlayerExistencePortIsValid;
-- (void)_nowPlayingItemDidChange:(unsigned long long)arg1;
+- (void)_nowPlayingItemDidChange:(unsigned int)arg1;
 - (void)_playbackStateDidChange:(int)arg1;
 - (void)_registerForLaunchNotifications;
 - (void)_repeatModeDidChange:(int)arg1;
@@ -58,9 +58,13 @@
 - (void)pause;
 - (void)pauseWithFadeoutDuration:(double)arg1;
 - (void)play;
+- (void)playItem:(id)arg1;
 - (int)playbackSpeed;
 - (int)playbackState;
+- (void)prepareQueueForPlayback;
 - (void)prepareToPlay;
+- (id)queueAsQuery;
+- (id)queueAsRadioStation;
 - (int)repeatMode;
 - (BOOL)serverIsAlive;
 - (void)setAllowsBackgroundVideo:(BOOL)arg1;
@@ -82,8 +86,12 @@
 - (void)setUserQueueModificationsDisabled:(BOOL)arg1;
 - (void)setVolume:(float)arg1;
 - (void)setVolumePrivate:(float)arg1;
+- (void)shuffle;
 - (int)shuffleMode;
 - (BOOL)skipInDirection:(int)arg1 error:(id*)arg2;
+- (void)skipToBeginningOrPreviousItem;
+- (void)skipToNextChapter;
+- (void)skipToPreviousChapter;
 - (void)stop;
 - (unsigned int)unshuffledIndexOfNowPlayingItem;
 - (BOOL)userQueueModificationsDisabled;

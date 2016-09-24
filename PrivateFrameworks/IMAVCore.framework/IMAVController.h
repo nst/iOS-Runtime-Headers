@@ -3,10 +3,10 @@
  */
 
 @interface IMAVController : NSObject {
-    BOOL _blockIncomingInvitationsDuringCall;
-    BOOL _blockMultipleIncomingInvitations;
-    BOOL _blockOutgoingInvitationsDuringCall;
-    NSMutableArray *_delegates;
+    BOOL  _blockIncomingInvitationsDuringCall;
+    BOOL  _blockMultipleIncomingInvitations;
+    BOOL  _blockOutgoingInvitationsDuringCall;
+    NSMutableArray * _delegates;
 }
 
 @property (nonatomic, retain) NSMutableArray *_delegates;
@@ -31,7 +31,7 @@
 - (BOOL)_ready;
 - (void)_receivedPendingACRequests;
 - (void)_receivedPendingVCRequests;
-- (void)_setServiceVCCaps:(unsigned long long)arg1 toCaps:(unsigned long long)arg2;
+- (void)_setServiceVCCaps:(unsigned int)arg1 toCaps:(unsigned int)arg2;
 - (BOOL)_shouldObserveConferences;
 - (BOOL)_shouldRunACConferences;
 - (BOOL)_shouldRunConferences;
@@ -42,7 +42,8 @@
 - (BOOL)blockOutgoingInvitationsDuringCall;
 - (BOOL)cameraCapable;
 - (BOOL)cameraConnected;
-- (void)cancelVCRequestWithBuddy:(id)arg1 vcProps:(id)arg2 forAccount:(id)arg3 conferenceID:(id)arg4;
+- (void)cancelVCRequestWithBuddy:(id)arg1 vcProps:(id)arg2 forAccount:(id)arg3 conferenceID:(id)arg4 reason:(id)arg5;
+- (void)dealloc;
 - (void)declineVCRequestWithBuddy:(id)arg1 response:(unsigned int)arg2 vcProps:(id)arg3 conferenceID:(id)arg4;
 - (void)declineVCRequestWithBuddy:(id)arg1 response:(unsigned int)arg2 vcProps:(id)arg3 forAccount:(id)arg4 conferenceID:(id)arg5;
 - (id)delegate;
@@ -67,7 +68,7 @@
 - (void)set_delegates:(id)arg1;
 - (void)setupIMAVController;
 - (void)updateActiveConference;
-- (void)vcCapabilitiesChanged:(unsigned long long)arg1;
+- (void)vcCapabilitiesChanged:(unsigned int)arg1;
 - (id)vcResponseInfoWithSessionID:(unsigned int)arg1;
 
 @end

@@ -3,14 +3,15 @@
  */
 
 @interface MFWeakProxy : NSProxy {
-    unsigned int _hash;
-    Class _objectClass;
-    MFWeakReferenceHolder *_weakRef;
+    unsigned int  _hash;
+    Class  _objectClass;
+    MFWeakReferenceHolder * _weakRef;
 }
 
 + (id)weakProxyForObject:(id)arg1;
 
 - (Class)class;
+- (BOOL)conformsToProtocol:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionWithLocale:(id)arg1;
@@ -21,7 +22,6 @@
 - (id)initWithObject:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isProxy;
-- (struct objc_method_description { SEL x1; char *x2; }*)methodDescriptionForSelector:(SEL)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (id)self;

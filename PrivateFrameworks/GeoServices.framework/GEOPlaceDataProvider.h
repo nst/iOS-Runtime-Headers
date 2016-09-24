@@ -3,9 +3,9 @@
  */
 
 @interface GEOPlaceDataProvider : NSObject {
-    id /* block */ _errorHandler;
-    id /* block */ _finishedHandler;
-    BOOL _isLoading;
+    id /* block */  _errorHandler;
+    id /* block */  _finishedHandler;
+    BOOL  _isLoading;
 }
 
 @property (nonatomic, copy) id /* block */ errorHandler;

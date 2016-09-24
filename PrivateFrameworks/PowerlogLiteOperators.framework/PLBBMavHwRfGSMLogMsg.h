@@ -3,15 +3,15 @@
  */
 
 @interface PLBBMavHwRfGSMLogMsg : PLBasebandMessage {
-    NSMutableDictionary *_commonInfo;
-    NSArray *_connState;
-    NSString *_error;
-    NSMutableArray *_groupArrEntries;
-    NSString *_groupEntryKey;
-    NSString *_groupID;
-    unsigned char _inited;
-    NSMutableDictionary *_kvPairs;
-    NSNumber *_logDuration;
+    NSMutableDictionary * _commonInfo;
+    NSArray * _connState;
+    NSString * _error;
+    NSMutableArray * _groupArrEntries;
+    NSString * _groupEntryKey;
+    NSString * _groupID;
+    unsigned char  _inited;
+    NSMutableDictionary * _kvPairs;
+    NSNumber * _logDuration;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *commonInfo;

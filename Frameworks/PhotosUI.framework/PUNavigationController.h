@@ -3,13 +3,13 @@
  */
 
 @interface PUNavigationController : UINavigationController <UINavigationControllerDelegate> {
-    PUAbstractNavigationBanner *__banner;
-    int __barStyle;
-    UIViewController *__currentToolbarViewController;
-    _UINavigationControllerPalette *__palette;
-    id /* block */ _ppt_onDidShowViewControllerBlock;
-    BOOL _pu_preventsAutorotation;
-    unsigned int _pu_supportedInterfaceOrientations;
+    PUAbstractNavigationBanner * __banner;
+    int  __barStyle;
+    UIViewController * __currentToolbarViewController;
+    _UINavigationControllerPalette * __palette;
+    id /* block */  _ppt_onDidShowViewControllerBlock;
+    BOOL  _pu_preventsAutorotation;
+    unsigned int  _pu_supportedInterfaceOrientations;
 }
 
 @property (setter=_setBanner:, nonatomic, retain) PUAbstractNavigationBanner *_banner;
@@ -32,6 +32,7 @@
 - (void)_commonPUNavigationControllerInitialization;
 - (id)_currentToolbarViewController;
 - (id)_extendedToolbar;
+- (BOOL)_navigationControllerShouldUseBuiltinInteractionController:(id)arg1;
 - (id)_palette;
 - (void)_setBanner:(id)arg1;
 - (void)_setBarStyle:(int)arg1;

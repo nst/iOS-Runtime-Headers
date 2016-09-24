@@ -3,15 +3,15 @@
  */
 
 @interface AWDCaptiveSession : PBCodable <NSCopying> {
-    NSString *_appTriggeredPassiveSymptom;
-    NSString *_autoLoginCarrierID;
-    BOOL _autoLoginFailed;
-    unsigned int _autoLoginType;
-    BOOL _detectedNotCaptiveHandledByCNP;
-    unsigned int _durationNetworkNotCaptive;
-    unsigned int _durationOnNetwork;
-    NSString *_handlerCNP;
-    BOOL _handlerCNPTriggeredLogOff;
+    NSString * _appTriggeredPassiveSymptom;
+    NSString * _autoLoginCarrierID;
+    BOOL  _autoLoginFailed;
+    unsigned int  _autoLoginType;
+    BOOL  _detectedNotCaptiveHandledByCNP;
+    unsigned int  _durationNetworkNotCaptive;
+    unsigned int  _durationOnNetwork;
+    NSString * _handlerCNP;
+    BOOL  _handlerCNPTriggeredLogOff;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int autoLoginType : 1; 
@@ -30,19 +30,19 @@
         unsigned int passiveCaptivityDetected : 1; 
         unsigned int websheetScraped : 1; 
         unsigned int wisprDetected : 1; 
-    } _has;
-    NSMutableArray *_installedCNPDisplayIDs;
-    BOOL _isDetectedCaptive;
-    unsigned int _passiveCaptivityCorrectDetection;
-    BOOL _passiveCaptivityDetected;
-    unsigned int _passiveCaptivityIncorrectDetection;
-    unsigned int _passiveCaptivitySymptom;
-    unsigned int _result;
-    unsigned long long _timestamp;
-    unsigned int _websheetProbeCount;
-    unsigned int _websheetScrapeResult;
-    BOOL _websheetScraped;
-    BOOL _wisprDetected;
+    }  _has;
+    NSMutableArray * _installedCNPDisplayIDs;
+    BOOL  _isDetectedCaptive;
+    unsigned int  _passiveCaptivityCorrectDetection;
+    BOOL  _passiveCaptivityDetected;
+    unsigned int  _passiveCaptivityIncorrectDetection;
+    unsigned int  _passiveCaptivitySymptom;
+    unsigned int  _result;
+    unsigned long long  _timestamp;
+    unsigned int  _websheetProbeCount;
+    unsigned int  _websheetScrapeResult;
+    BOOL  _websheetScraped;
+    BOOL  _wisprDetected;
 }
 
 @property (nonatomic, retain) NSString *appTriggeredPassiveSymptom;

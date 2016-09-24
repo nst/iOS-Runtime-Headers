@@ -3,13 +3,13 @@
  */
 
 @interface _WBSSiteMetadataRequestInfo : NSObject {
-    NSOperation *_operation;
-    WBSSiteMetadataProvider *_provider;
-    NSMutableSet *_tokens;
+    NSOperation * _operation;
+    <WBSSiteMetadataProvider> * _provider;
+    NSMutableSet * _tokens;
 }
 
-@property (nonatomic, retain) NSOperation *operation;
-@property (nonatomic, readonly) WBSSiteMetadataProvider *provider;
+@property (nonatomic) NSOperation *operation;
+@property (nonatomic, readonly) <WBSSiteMetadataProvider> *provider;
 @property (nonatomic, readonly) NSMutableSet *tokens;
 
 - (void).cxx_destruct;

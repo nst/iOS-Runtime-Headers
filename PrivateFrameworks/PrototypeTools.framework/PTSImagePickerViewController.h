@@ -2,15 +2,14 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@interface PTSImagePickerViewController : UITableViewController <PTSImageLoaderDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate> {
-    id /* block */ _completion;
-    BOOL _doneLoading;
-    NSMutableArray *_filenames;
-    PTSImageLoader *_imageLoader;
-    NSMutableArray *_images;
-    BOOL _includePhotoLibrary;
-    UIImagePickerController *_photoLibraryPicker;
-    UIPopoverController *_popoverController;
+@interface PTSImagePickerViewController : UITableViewController <PTSImageLoaderDelegate, UIAdaptivePresentationControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
+    id /* block */  _completion;
+    BOOL  _doneLoading;
+    NSMutableArray * _filenames;
+    PTSImageLoader * _imageLoader;
+    NSMutableArray * _images;
+    BOOL  _includePhotoLibrary;
+    UIImagePickerController * _photoLibraryPicker;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,6 +19,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (int)adaptivePresentationStyleForPresentationController:(id)arg1;
 - (void)dealloc;
 - (void)dismissAnimated:(BOOL)arg1;
 - (void)imageLoader:(id)arg1 didLoadImage:(id)arg2 forFilename:(id)arg3;
@@ -29,7 +29,6 @@
 - (BOOL)includePhotoLibrary;
 - (id)initWithResourcePath:(id)arg1 completion:(id /* block */)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)setIncludePhotoLibrary:(BOOL)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

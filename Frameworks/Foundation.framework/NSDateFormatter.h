@@ -3,11 +3,11 @@
  */
 
 @interface NSDateFormatter : NSFormatter <NSObservable, NSObserver> {
-    NSMutableDictionary *_attributes;
-    int _cacheGeneration;
-    unsigned int _counter;
-    struct __CFDateFormatter { } *_formatter;
-    NSObject<OS_dispatch_semaphore> *_lock;
+    NSMutableDictionary * _attributes;
+    int  _cacheGeneration;
+    unsigned int  _counter;
+    struct __CFDateFormatter { } * _formatter;
+    NSObject<OS_dispatch_semaphore> * _lock;
 }
 
 @property (copy) NSString *AMSymbol;
@@ -89,7 +89,6 @@
 - (BOOL)doesRelativeDateFormatting;
 - (void)encodeWithCoder:(id)arg1;
 - (id)eraSymbols;
-- (void)finalize;
 - (unsigned int)formatterBehavior;
 - (int)formattingContext;
 - (BOOL)generatesCalendarDates;
@@ -159,6 +158,10 @@
 - (id)veryShortWeekdaySymbols;
 - (id)weekdaySymbols;
 
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (id)_mapkit_roundedPastUnitsStringFromDate:(id)arg1;
+
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
 + (id)mf_formatDate:(id)arg1 shortStyle:(BOOL)arg2;
@@ -173,11 +176,7 @@
 
 // Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
 
-+ (id)FU_stringWithLongestStyleDate:(id)arg1 font:(id)arg2 maxWidth:(float)arg3;
-+ (id)FU_timeFormatter;
-+ (id)FU_timeStringWithSpaceRemoved:(id)arg1 date:(id)arg2;
-+ (BOOL)_dateStringFits:(id)arg1 font:(id)arg2 maxWidth:(float)arg3;
-+ (void)_unitPreferencesDidChange:(id)arg1;
+- (void)fu_observeTimeZoneAndLocaleChanges;
 
 // Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
@@ -186,5 +185,22 @@
 // Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
 
 - (id)stringFromDate:(id)arg1 withRelativeToTimeZone:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
+
++ (id)_navigation_localizedTimestampStringForDepartureArrivalDate:(id)arg1 inTimeZone:(id)arg2 canIncludeDate:(BOOL)arg3;
++ (id)_navigation_localizedTimestampStringForDepartureArrivalDate:(id)arg1 inTimeZone:(id)arg2 canIncludeDate:(BOOL)arg3 relativeToTimeZone:(id)arg4;
++ (id)_navigation_localizedTimestampStringForDepartureArrivalDate:(id)arg1 inTimeZone:(id)arg2 canIncludeDate:(BOOL)arg3 showTimeZone:(BOOL)arg4 useShortFormat:(BOOL)arg5;
++ (id)_navigation_localizedTimestampStringForDepartureArrivalDate:(id)arg1 inTimeZone:(id)arg2 canIncludeDate:(BOOL)arg3 suppressTimeZoneDisplay:(BOOL)arg4 useShortFormat:(BOOL)arg5;
++ (id)_timestampFormatterForTimeZone:(id)arg1 displayTimeZone:(BOOL)arg2;
+
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
++ (id)dateFormatterWithFormat:(id)arg1;
++ (id)dateFormatterWithFormat:(id)arg1 localeIdentifier:(id)arg2;
++ (id)dateFormatterWithFormat:(id)arg1 localeIdentifier:(id)arg2 timezone:(id)arg3;
++ (id)dateFormatterWithFormat:(id)arg1 timezone:(id)arg2;
+
+- (id)initWithFormat:(id)arg1 localeIdentifier:(id)arg2;
 
 @end

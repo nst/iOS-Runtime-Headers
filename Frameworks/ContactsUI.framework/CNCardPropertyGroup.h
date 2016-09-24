@@ -3,17 +3,17 @@
  */
 
 @interface CNCardPropertyGroup : CNCardGroup {
-    CNContactStore *_contactStore;
-    NSArray *_deletedItems;
-    NSArray *_displayItems;
-    NSArray *_editingItems;
-    BOOL _isAdded;
-    NSDictionary *_linkedPolicies;
-    NSArray *_originalEditingItems;
-    CNPolicy *_policy;
-    NSString *_property;
-    NSArray *_propertyItems;
-    BOOL _showActionsWhenEmpty;
+    CNContactStore * _contactStore;
+    NSArray * _deletedItems;
+    NSArray * _displayItems;
+    NSArray * _editingItems;
+    BOOL  _isAdded;
+    NSDictionary * _linkedPolicies;
+    NSArray * _originalEditingItems;
+    CNPolicy * _policy;
+    NSString * _property;
+    NSArray * _propertyItems;
+    BOOL  _showActionsWhenEmpty;
 }
 
 @property (nonatomic, readonly) BOOL allowsAdding;

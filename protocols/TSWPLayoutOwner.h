@@ -6,14 +6,17 @@
 @required
 
 - (BOOL)caresAboutStorageChanges;
+- (void)didLayoutChangingDirtyRanges;
 - (void)layoutManager:(TSWPLayoutManager *)arg1 didClearDirtyRangeWithDelta:(int)arg2 afterCharIndex:(unsigned int)arg3;
 - (void)layoutManagerNeedsLayout:(TSWPLayoutManager *)arg1;
 - (<TSWPTextWrap> *)textWrapper;
 
 @optional
 
+- (void)didLayoutWithLayoutManager:(TSWPLayoutManager *)arg1;
 - (BOOL)forceWesternLineBreaking;
 - (TSULocale *)locale;
+- (TSWPLayoutMetricsCache *)metricsCacheForStorage:(TSWPStorage *)arg1;
 - (<TSWPStyleProvider> *)styleProvider;
 - (TSUColor *)textColorOverride;
 

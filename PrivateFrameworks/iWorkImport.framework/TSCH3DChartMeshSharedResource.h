@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DChartMeshSharedResource : TSCH3DChartMeshSharedChildResource {
-    TSCH3DDataBuffer *mMesh;
+    TSCH3DDataBuffer * mMesh;
 }
 
 @property (nonatomic, retain) TSCH3DDataBuffer *mesh;

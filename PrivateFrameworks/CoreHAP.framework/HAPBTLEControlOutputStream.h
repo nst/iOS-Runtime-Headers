@@ -3,17 +3,17 @@
  */
 
 @interface HAPBTLEControlOutputStream : NSObject {
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    BOOL _complete;
-    unsigned int _controlPayloadWrittenLength;
-    <HAPBTLEControlOutputStreamDelegate> *_delegate;
-    unsigned int _mtuLength;
-    BOOL _open;
-    NSOperationQueue *_operationQueue;
-    NSData *_payload;
-    double _timeoutInterval;
-    HAPBTLETransactionIdentifier *_transactionIdentifier;
-    unsigned char _type;
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    BOOL  _complete;
+    unsigned int  _controlPayloadWrittenLength;
+    <HAPBTLEControlOutputStreamDelegate> * _delegate;
+    unsigned int  _mtuLength;
+    BOOL  _open;
+    NSOperationQueue * _operationQueue;
+    NSData * _payload;
+    double  _timeoutInterval;
+    HAPBTLETransactionIdentifier * _transactionIdentifier;
+    unsigned char  _type;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;

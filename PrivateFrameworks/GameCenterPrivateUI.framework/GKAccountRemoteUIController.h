@@ -3,11 +3,11 @@
  */
 
 @interface GKAccountRemoteUIController : GKRemoteUIController {
-    BOOL _authenticatePlayerOnCompletion;
-    NSArray *_availableExternalServices;
-    int _mode;
-    NSDictionary *_postBody;
-    NSURL *_url;
+    BOOL  _authenticatePlayerOnCompletion;
+    NSArray * _availableExternalServices;
+    int  _mode;
+    NSDictionary * _postBody;
+    NSURL * _url;
 }
 
 @property (nonatomic) BOOL authenticatePlayerOnCompletion;
@@ -24,9 +24,6 @@
 - (id)bagKey;
 - (void)dealloc;
 - (id)fallbackURL;
-- (void)fetchAvailableExternalServicesWithCompletionHandler:(id /* block */)arg1;
-- (void)fetchFacebookAuthTokenWithHandler:(id /* block */)arg1;
-- (void)fetchICloudAuthTokenWithHandler:(id /* block */)arg1;
 - (void)fireCompletionHandler;
 - (id)initWithMode:(int)arg1;
 - (id)initWithMode:(int)arg1 player:(id)arg2;

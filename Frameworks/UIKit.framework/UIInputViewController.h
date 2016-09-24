@@ -3,12 +3,17 @@
  */
 
 @interface UIInputViewController : UIViewController <UITextInputDelegate, _UITextDocumentInterfaceDelegate> {
-    BOOL _alignsToContentViewController;
-    NSString *_primaryLanguage;
-    <UITextDocumentProxy> *_textDocumentProxy;
+    BOOL  _alignsToContentViewController;
+    BOOL  _autosizeToCurrentKeyboard;
+    BOOL  _commitInputModeOnTouchEnd;
+    BOOL  _inputModeListIsShown;
+    NSString * _primaryLanguage;
+    <UITextDocumentProxy> * _textDocumentProxy;
+    double  _touchBegan;
 }
 
 @property (nonatomic) BOOL _alignsToContentViewController;
+@property (setter=_setAutosizeToCurrentKeyboard:, nonatomic) BOOL _autosizeToCurrentKeyboard;
 @property (nonatomic, readonly) BOOL _isPlaceholder;
 @property (nonatomic, readonly) UIKeyboard *_keyboard;
 @property (readonly, copy) NSString *debugDescription;
@@ -20,25 +25,31 @@
 @property (nonatomic, readonly) <UITextDocumentProxy> *textDocumentProxy;
 
 + (BOOL)_requiresProxyInterface;
++ (void)presentDialogForAddingKeyboard;
 
 - (BOOL)_alignsToContentViewController;
+- (BOOL)_autosizeToCurrentKeyboard;
+- (BOOL)_canBecomeFirstResponder;
+- (BOOL)_canResignIfContainsFirstResponder;
 - (id)_compatibilityController;
 - (void)_didResetDocumentState;
 - (id)_extensionContext;
 - (BOOL)_isPlaceholder;
 - (id)_keyboard;
 - (id)_proxyInterface;
+- (void)_setAutosizeToCurrentKeyboard:(BOOL)arg1;
 - (void)_setExtensionContext:(id)arg1;
 - (void)_setTextDocumentProxy:(id)arg1;
 - (void)_setupInputController;
 - (BOOL)_shouldForwardSystemLayoutFittingSizeChanges;
-- (struct CGSize { float x1; float x2; })_systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
+- (struct CGSize { double x1; double x2; })_systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (id)_textDocumentInterface;
 - (void)_willResetDocumentState;
 - (void)advanceToNextInputMode;
 - (void)dealloc;
 - (void)didReceiveMemoryWarning;
 - (void)dismissKeyboard;
+- (void)handleInputModeListFromView:(id)arg1 withEvent:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)inputView;
@@ -52,6 +63,7 @@
 - (void)setPrimaryLanguage:(id)arg1;
 - (void)setView:(id)arg1;
 - (void)set_alignsToContentViewController:(BOOL)arg1;
+- (void)set_autosizeToCurrentKeyboard:(BOOL)arg1;
 - (void)textDidChange:(id)arg1;
 - (id)textDocumentProxy;
 - (void)textWillChange:(id)arg1;

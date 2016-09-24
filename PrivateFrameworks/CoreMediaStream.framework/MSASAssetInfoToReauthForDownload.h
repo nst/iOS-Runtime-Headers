@@ -3,8 +3,8 @@
  */
 
 @interface MSASAssetInfoToReauthForDownload : NSObject {
-    MSASAlbum *_album;
-    MSAsset *_asset;
+    MSASAlbum * _album;
+    MSAsset * _asset;
 }
 
 @property (nonatomic, retain) MSASAlbum *album;

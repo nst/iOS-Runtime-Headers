@@ -3,10 +3,10 @@
  */
 
 @interface SSEventMonitor : NSObject {
-    <SSEventMonitorDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    SSXPCConnection *_eventConnection;
+    <SSEventMonitorDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    SSXPCConnection * _eventConnection;
 }
 
 @property <SSEventMonitorDelegate> *delegate;

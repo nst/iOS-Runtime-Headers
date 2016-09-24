@@ -5,7 +5,7 @@
 @interface WKTypeRefWrapper : NSObject {
     struct WKRetainPtr<const void *> { 
         void *m_ptr; 
-    } _object;
+    }  _object;
 }
 
 @property (readonly) void*object;

@@ -3,12 +3,12 @@
  */
 
 @interface FCRImage : NSObject {
-    char *alignedDataBuffer;
-    unsigned int bytesPerRow;
-    BOOL freeBufferWhenDone;
-    unsigned int height;
-    char *rawDataBuffer;
-    unsigned int width;
+    char * alignedDataBuffer;
+    unsigned int  bytesPerRow;
+    BOOL  freeBufferWhenDone;
+    unsigned int  height;
+    char * rawDataBuffer;
+    unsigned int  width;
 }
 
 @property unsigned int bytesPerRow;

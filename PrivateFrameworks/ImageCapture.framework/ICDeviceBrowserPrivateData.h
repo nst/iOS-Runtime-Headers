@@ -3,9 +3,9 @@
  */
 
 @interface ICDeviceBrowserPrivateData : NSObject {
-    BOOL _browsing;
-    id _delegate;
-    NSMutableArray *_internalDevices;
+    BOOL  _browsing;
+    id  _delegate;
+    NSMutableArray * _internalDevices;
 }
 
 @property (getter=isBrowsing) BOOL browsing;

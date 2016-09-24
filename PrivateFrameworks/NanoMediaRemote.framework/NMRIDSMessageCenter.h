@@ -3,10 +3,10 @@
  */
 
 @interface NMRIDSMessageCenter : NSObject <IDSServiceDelegate> {
-    <NMRIDSMessageCenterDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_idsQueue;
-    IDSService *_idsService;
-    NSMutableDictionary *_messageHandlers;
+    <NMRIDSMessageCenterDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _idsQueue;
+    IDSService * _idsService;
+    NSMutableDictionary * _messageHandlers;
 }
 
 @property (readonly, copy) NSString *debugDescription;

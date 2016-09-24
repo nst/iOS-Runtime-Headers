@@ -3,7 +3,7 @@
  */
 
 @interface ML3ContainmentPredicate : ML3PropertyPredicate {
-    NSSet *_values;
+    NSSet * _values;
 }
 
 @property (nonatomic, retain) NSSet *values;

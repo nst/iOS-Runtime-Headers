@@ -2,22 +2,25 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@interface GKMasterDetailViewController : UISplitViewController {
-    NSMutableArray *_controllersDelayingPresentation;
-    BOOL _covered;
-    <GKMasterDetailViewControllerDelegate> *_masterDetailDelegate;
-    GKMasterDetailNavigationController *_masterNavigationController;
-    id /* block */ _presentationDelayHandler;
-    UIView *_separatorBarMaskView;
-    UIView *_separatorBarView;
-    UIColor *_separatorLineColor;
-    UIView *_separatorLineView;
-    UIView *_separatorWrapperView;
-    BOOL _shouldCollapseToDetail;
+@interface GKMasterDetailViewController : UISplitViewController <CAAnimationDelegate> {
+    NSMutableArray * _controllersDelayingPresentation;
+    BOOL  _covered;
+    <GKMasterDetailViewControllerDelegate> * _masterDetailDelegate;
+    GKMasterDetailNavigationController * _masterNavigationController;
+    id /* block */  _presentationDelayHandler;
+    UIView * _separatorBarMaskView;
+    UIView * _separatorBarView;
+    UIColor * _separatorLineColor;
+    UIView * _separatorLineView;
+    UIView * _separatorWrapperView;
+    BOOL  _shouldCollapseToDetail;
 }
 
 @property (nonatomic, retain) NSMutableArray *controllersDelayingPresentation;
 @property (getter=isCovered, nonatomic) BOOL covered;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic) <GKMasterDetailViewControllerDelegate> *masterDetailDelegate;
 @property (nonatomic, retain) GKMasterDetailNavigationController *masterNavigationController;
 @property (nonatomic, copy) id /* block */ presentationDelayHandler;
@@ -28,6 +31,7 @@
 @property (nonatomic, retain) UIView *separatorLineView;
 @property (nonatomic, retain) UIView *separatorWrapperView;
 @property (nonatomic) BOOL shouldCollapseToDetail;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly, retain) UIViewController *topDetailViewController;
 @property (nonatomic, readonly, retain) UIViewController *topMasterViewController;
 
@@ -97,7 +101,7 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willAnimateKeyframesForAppearingWithBubbleFlowFromRelativeStartTime:(double)arg1 relativeDuration:(double)arg2 absoluteTransitionDuration:(double)arg3 fromViewController:(id)arg4;
 - (void)willAnimateKeyframesForDisappearingWithBubbleFlowFromRelativeStartTime:(double)arg1 relativeDuration:(double)arg2 absoluteTransitionDuration:(double)arg3 toViewController:(id)arg4;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;

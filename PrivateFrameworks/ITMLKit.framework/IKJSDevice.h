@@ -3,8 +3,8 @@
  */
 
 @interface IKJSDevice : IKJSObject <IKJSDevice, JSExport> {
-    <IKAppDeviceConfig> *_deviceConfig;
-    id _isNetworkTypeChangedToken;
+    <IKAppDeviceConfig> * _deviceConfig;
+    id  _isNetworkTypeChangedToken;
 }
 
 @property (nonatomic, readonly) NSString *advertisingIdentifier;

@@ -3,14 +3,14 @@
  */
 
 @interface SBKLogger : NSObject {
-    NSString *_auxPath;
-    NSFileHandle *_fileHandle;
-    NSString *_filter;
-    NSLock *_lock;
-    int _pid;
-    NSString *_procName;
-    NSString *_runtimeOverride;
-    NSRegularExpression *_runtimeOverrideRegex;
+    NSString * _auxPath;
+    NSFileHandle * _fileHandle;
+    NSString * _filter;
+    NSLock * _lock;
+    int  _pid;
+    NSString * _procName;
+    NSString * _runtimeOverride;
+    NSRegularExpression * _runtimeOverrideRegex;
 }
 
 @property (copy) NSString *filter;

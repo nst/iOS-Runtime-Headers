@@ -3,9 +3,9 @@
  */
 
 @interface _ADPolicyEngineEvent : NSObject <ADBannerViewInternalDelegate> {
-    NSMutableArray *_banners;
-    id /* block */ _bannersLoadedHandler;
-    NSMutableArray *_bannersWaitingOnLoad;
+    NSMutableArray * _banners;
+    id /* block */  _bannersLoadedHandler;
+    NSMutableArray * _bannersWaitingOnLoad;
 }
 
 @property (nonatomic, readonly) NSArray *bannerIdentifiers;

@@ -2,20 +2,25 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@interface AXEventAccelerometerInfoRepresentation : NSObject <NSCopying, NSSecureCoding> {
-    unsigned int _type;
-    float _x;
-    float _y;
-    float _z;
+@interface AXEventAccelerometerInfoRepresentation : NSObject <AXEventRepresentationDescription, NSCopying, NSSecureCoding> {
+    unsigned int  _type;
+    double  _x;
+    double  _y;
+    double  _z;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 @property (nonatomic) unsigned int type;
-@property (nonatomic) float x;
-@property (nonatomic) float y;
-@property (nonatomic) float z;
+@property (nonatomic) double x;
+@property (nonatomic) double y;
+@property (nonatomic) double z;
 
 + (BOOL)supportsSecureCoding;
 
+- (id)accessibilityEventRepresentationTabularDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface MSASServerSideModelGroupedCommandQueue : MSASGroupedQueue {
-    MSASEnqueuedCommand *_lastEnqueuedCommand;
+    MSASEnqueuedCommand * _lastEnqueuedCommand;
 }
 
 @property (nonatomic, retain) MSASEnqueuedCommand *lastEnqueuedCommand;

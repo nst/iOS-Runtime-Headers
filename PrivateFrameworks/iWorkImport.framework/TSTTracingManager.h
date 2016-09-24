@@ -3,7 +3,7 @@
  */
 
 @interface TSTTracingManager : NSObject {
-    TSMTraceBuffer *mBuffer;
+    TSMTraceBuffer * mBuffer;
 }
 
 + (id)_singletonAlloc;

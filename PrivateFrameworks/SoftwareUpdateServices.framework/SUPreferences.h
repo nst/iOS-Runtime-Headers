@@ -3,41 +3,50 @@
  */
 
 @interface SUPreferences : NSObject {
-    BOOL _allowSameBuildUpdates;
-    struct __asl_object_s { } *_aslHandle;
-    BOOL _disableAutoDownload;
-    BOOL _disableAutoSU;
-    BOOL _disableAvailabilityAlerts;
-    BOOL _disableBuildNumberComparison;
-    BOOL _disableUserWiFiOnlyPeriod;
-    int _logLevel;
-    BOOL _scanWeeklyInternally;
-    BOOL _simulateAutoDownload;
+    NSObject<OS_os_log> * _SUOSLogDebug;
+    NSObject<OS_os_log> * _SUOSLogInfo;
+    BOOL  _allowSameBuildUpdates;
+    BOOL  _disableAutoDownload;
+    BOOL  _disableAutoSU;
+    BOOL  _disableAvailabilityAlerts;
+    BOOL  _disableBuildNumberComparison;
+    BOOL  _disableFullReplacementFallback;
+    BOOL  _disableUserWiFiOnlyPeriod;
+    BOOL  _forceFullReplacement;
+    int  _logLevel;
+    BOOL  _scanWeeklyInternally;
+    BOOL  _simulateAutoDownload;
 }
 
+@property (nonatomic, readonly) NSObject<OS_os_log> *SUOSLogDebug;
+@property (nonatomic, readonly) NSObject<OS_os_log> *SUOSLogInfo;
 @property (nonatomic, readonly) BOOL allowSameBuildUpdates;
-@property (nonatomic, readonly) struct __asl_object_s { }*aslHandle;
 @property (getter=isAutoDownloadDisabled, nonatomic, readonly) BOOL disableAutoDownload;
 @property (getter=isAutoSUDisabled, nonatomic, readonly) BOOL disableAutoSU;
 @property (nonatomic, readonly) BOOL disableAvailabilityAlerts;
 @property (nonatomic, readonly) BOOL disableBuildNumberComparison;
+@property (nonatomic, readonly) BOOL disableFullReplacementFallback;
 @property (nonatomic, readonly) BOOL disableUserWiFiOnlyPeriod;
+@property (nonatomic, readonly) BOOL forceFullReplacement;
 @property (nonatomic, readonly) int logLevel;
 @property (nonatomic, readonly) BOOL scanWeeklyInternally;
 @property (nonatomic, readonly) BOOL simulateAutoDownload;
 
 + (id)sharedInstance;
 
+- (id)SUOSLogDebug;
+- (id)SUOSLogInfo;
 - (void*)_copyPreferenceForKey:(struct __CFString { }*)arg1 ofType:(unsigned long)arg2;
 - (int)_defaultLogLevel;
 - (BOOL)_getBooleanPreferenceForKey:(id)arg1 withDefaultValue:(BOOL)arg2;
 - (void)_loadPreferences;
 - (BOOL)allowSameBuildUpdates;
-- (struct __asl_object_s { }*)aslHandle;
 - (void)dealloc;
 - (BOOL)disableAvailabilityAlerts;
 - (BOOL)disableBuildNumberComparison;
+- (BOOL)disableFullReplacementFallback;
 - (BOOL)disableUserWiFiOnlyPeriod;
+- (BOOL)forceFullReplacement;
 - (id)init;
 - (BOOL)isAutoDownloadDisabled;
 - (BOOL)isAutoSUDisabled;

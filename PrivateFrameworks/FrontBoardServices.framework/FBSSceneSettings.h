@@ -3,35 +3,35 @@
  */
 
 @interface FBSSceneSettings : NSObject <BSDescriptionProviding, NSCopying, NSMutableCopying> {
-    BOOL _backgrounded;
+    BOOL  _backgrounded;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _frame;
-    NSSet *_ignoreOcclusionReasons;
-    int _interfaceOrientation;
-    float _level;
-    BOOL _occluded;
-    BOOL _occludedHasBeenCalculated;
-    NSArray *_occlusions;
-    BSSettings *_otherSettings;
-    BSSettings *_transientLocalSettings;
+    }  _frame;
+    NSSet * _ignoreOcclusionReasons;
+    int  _interfaceOrientation;
+    double  _level;
+    BOOL  _occluded;
+    BOOL  _occludedHasBeenCalculated;
+    NSArray * _occlusions;
+    BSSettings * _otherSettings;
+    BSSettings * _transientLocalSettings;
 }
 
 @property (getter=isBackgrounded, nonatomic, readonly) BOOL backgrounded;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (getter=isEffectivelyBackgrounded, nonatomic, readonly) BOOL effectivelyBackgrounded;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } frame;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) int interfaceOrientation;
-@property (nonatomic, readonly) float level;
+@property (nonatomic, readonly) double level;
 @property (nonatomic, readonly, copy) NSArray *occlusions;
 @property (readonly) Class superclass;
 
@@ -40,13 +40,13 @@
 + (BOOL)_isMutable;
 + (id)settings;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frame;
 - (unsigned int)hash;
 - (id)ignoreOcclusionReasons;
 - (id)init;
@@ -72,6 +72,7 @@
 
 // Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
 
+- (id)fb_fallbackSpecification;
 - (BOOL)isEffectivelyBackgrounded;
 
 @end

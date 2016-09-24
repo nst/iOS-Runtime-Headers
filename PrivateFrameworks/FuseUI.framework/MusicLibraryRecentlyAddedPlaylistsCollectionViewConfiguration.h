@@ -3,8 +3,8 @@
  */
 
 @interface MusicLibraryRecentlyAddedPlaylistsCollectionViewConfiguration : MusicLibraryBrowseCollectionViewConfiguration {
-    unsigned int _entityLimit;
-    MusicLibraryPlaylistsViewConfiguration *_playlistsViewConfiguration;
+    unsigned int  _entityLimit;
+    MusicLibraryPlaylistsViewConfiguration * _playlistsViewConfiguration;
 }
 
 @property (nonatomic, readonly) unsigned int entityLimit;

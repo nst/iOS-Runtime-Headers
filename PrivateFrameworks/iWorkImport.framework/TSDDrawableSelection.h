@@ -3,7 +3,7 @@
  */
 
 @interface TSDDrawableSelection : TSKSelection {
-    NSSet *mInfos;
+    NSSet * mInfos;
 }
 
 @property (nonatomic, readonly) unsigned int infoCount;
@@ -14,6 +14,7 @@
 
 + (Class)archivedSelectionClass;
 
+- (id)UUIDDescription;
 - (BOOL)containsKindOfClass:(Class)arg1;
 - (BOOL)containsUnlockedKindOfClass:(Class)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

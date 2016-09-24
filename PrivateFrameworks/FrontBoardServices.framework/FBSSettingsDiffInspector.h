@@ -3,9 +3,9 @@
  */
 
 @interface FBSSettingsDiffInspector : NSObject {
-    BOOL _iteratingObservers;
-    BSMutableSettings *_observerInfo;
-    BSMutableSettings *_otherSettingsObserverInfo;
+    BOOL  _iteratingObservers;
+    BSMutableSettings * _observerInfo;
+    BSMutableSettings * _otherSettingsObserverInfo;
 }
 
 - (void)_addObserver:(id)arg1 forSetting:(unsigned int)arg2 inInfo:(id)arg3;

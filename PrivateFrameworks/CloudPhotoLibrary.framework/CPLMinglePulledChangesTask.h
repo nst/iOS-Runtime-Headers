@@ -3,10 +3,10 @@
  */
 
 @interface CPLMinglePulledChangesTask : CPLEngineSyncTask {
-    NSString *_clientCacheIdentifier;
-    unsigned int _countOfNotifiedBatchesInPullQueue;
-    BOOL _hasPreparedForMingling;
-    NSObject<OS_dispatch_queue> *_lock;
+    NSString * _clientCacheIdentifier;
+    unsigned int  _countOfNotifiedBatchesInPullQueue;
+    BOOL  _hasPreparedForMingling;
+    NSObject<OS_dispatch_queue> * _lock;
 }
 
 @property (retain) <CPLMinglePulledChangesTaskDelegate> *delegate;

@@ -3,12 +3,12 @@
  */
 
 @interface SKUIRadioEntityProviderViewElement : SKUIAbstractEntityProviderViewElement <SKUIEntityProviding> {
-    int _countLimit;
-    BOOL _hasValidStations;
-    int _radioEntityProviderType;
-    RadioModel *_radioModel;
-    NSMapTable *_stationToStationEntityValueProvider;
-    NSArray *_stations;
+    int  _countLimit;
+    BOOL  _hasValidStations;
+    int  _radioEntityProviderType;
+    RadioModel * _radioModel;
+    NSMapTable * _stationToStationEntityValueProvider;
+    NSArray * _stations;
 }
 
 @property (readonly, copy) NSString *debugDescription;

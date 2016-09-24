@@ -3,8 +3,8 @@
  */
 
 @interface _HKSourceRevisionFilter : _HKFilter {
-    unsigned int _operatorType;
-    NSSet *_sourceRevisions;
+    unsigned int  _operatorType;
+    NSSet * _sourceRevisions;
 }
 
 @property (nonatomic, readonly) unsigned int operatorType;
@@ -29,7 +29,7 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
-- (id)_sourceRevisionsWithHealthDaemon:(id)arg1 error:(id*)arg2;
-- (id)predicateWithHealthDaemon:(id)arg1;
+- (id)_sourceRevisionsWithProfile:(id)arg1 error:(id*)arg2;
+- (id)predicateWithProfile:(id)arg1;
 
 @end

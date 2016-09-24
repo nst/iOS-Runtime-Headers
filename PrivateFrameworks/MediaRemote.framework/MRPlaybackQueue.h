@@ -3,11 +3,11 @@
  */
 
 @interface MRPlaybackQueue : NSObject <NSSecureCoding> {
-    NSArray *_contentItems;
+    NSArray * _contentItems;
     struct { 
         int location; 
         int length; 
-    } _range;
+    }  _range;
 }
 
 @property (nonatomic, readonly) NSArray *contentItems;

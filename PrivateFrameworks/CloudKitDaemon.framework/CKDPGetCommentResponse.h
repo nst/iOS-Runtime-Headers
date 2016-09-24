@@ -3,7 +3,7 @@
  */
 
 @interface CKDPGetCommentResponse : PBCodable <NSCopying> {
-    CKDPComment *_comment;
+    CKDPComment * _comment;
 }
 
 @property (nonatomic, retain) CKDPComment *comment;

@@ -3,7 +3,7 @@
  */
 
 @interface TSWPRubyField : TSWPSmartField {
-    NSString *_rubyText;
+    NSString * _rubyText;
 }
 
 @property (nonatomic, readonly) NSString *baseText;
@@ -26,6 +26,7 @@
 - (void)setRubyText:(id)arg1;
 - (int)smartFieldKind;
 - (int)styleAttributeArrayKind;
+- (BOOL)supportsDeepCopyForUndo;
 - (id)text;
 
 @end

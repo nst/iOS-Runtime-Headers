@@ -3,8 +3,8 @@
  */
 
 @interface GQDFilteredImage : NSObject <GQDNameMappable> {
-    GQDImageBinary *mFilteredImageBinary;
-    GQDImageBinary *mOriginalImageBinary;
+    GQDImageBinary * mFilteredImageBinary;
+    GQDImageBinary * mOriginalImageBinary;
 }
 
 @property (readonly, copy) NSString *debugDescription;

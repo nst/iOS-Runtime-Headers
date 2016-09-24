@@ -3,11 +3,11 @@
  */
 
 @interface NSValidationErrorLocalizationPolicy : NSObject <NSCopying> {
-    BOOL _hasSetLocalizationDictionary;
-    NSBundle *_localizationBundle;
-    NSDictionary *_localizationDictionary;
-    NSString *_modelStringsFileName;
-    NSURL *_url;
+    BOOL  _hasSetLocalizationDictionary;
+    NSBundle * _localizationBundle;
+    NSDictionary * _localizationDictionary;
+    NSString * _modelStringsFileName;
+    NSURL * _url;
 }
 
 - (id)_cachedObjectForKey:(id)arg1 value:(void*)arg2;

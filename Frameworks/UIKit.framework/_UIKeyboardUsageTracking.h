@@ -8,10 +8,16 @@
 + (void)keyboardExtensionCrashed;
 + (void)keyboardExtensionPrimaryLanguageChanged;
 + (void)keyboardExtensionsOnDevice;
++ (void)keyboardGestureOneFingerForcePan:(BOOL)arg1;
++ (void)keyboardGestureOneFingerForcePress:(BOOL)arg1 withPressCount:(int)arg2;
 + (void)keyboardGestureSelectedPredictiveInputCandidate;
 + (void)keyboardGestureSetPredictionPreference:(BOOL)arg1;
 + (void)keyboardGestureTwoFingerTap:(BOOL)arg1 withTapCount:(int)arg2;
++ (void)keyboardPerformanceFromTouchRelease:(double)arg1 until:(double)arg2;
++ (void)keyboardPerformanceFromTouchStart:(double)arg1 until:(double)arg2;
++ (void)keyboardReachabilityDistribution:(float)arg1;
 + (void)keyboardSetToInputMode:(id)arg1 fromPrevious:(id)arg2;
++ (void)keyboardTotalOnScreenTime:(double)arg1 orientation:(int)arg2;
 + (void)predictionViewState:(BOOL)arg1 forInputMode:(id)arg2;
 + (void)selectedPredictiveInputCandidate:(id)arg1 isAutocorrection:(BOOL)arg2;
 + (void)showCharacterPreviewPreference:(BOOL)arg1;

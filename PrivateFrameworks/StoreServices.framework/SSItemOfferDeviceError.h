@@ -3,10 +3,10 @@
  */
 
 @interface SSItemOfferDeviceError : NSObject {
-    NSString *_localizedMessage;
-    NSString *_localizedTitle;
-    NSString *_localizedURLTitle;
-    NSURL *_url;
+    NSString * _localizedMessage;
+    NSString * _localizedTitle;
+    NSString * _localizedURLTitle;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

@@ -6,6 +6,7 @@
 
 @property (nonatomic, copy) NSString *contentType;
 @property (nonatomic, retain) SAUIImageResource *image;
+@property (nonatomic, copy) NSString *imagesJsonContentPayload;
 @property (nonatomic, copy) NSString *loadingText;
 @property (nonatomic, copy) NSString *seasonId;
 @property (nonatomic, copy) NSString *showId;
@@ -19,10 +20,12 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)image;
+- (id)imagesJsonContentPayload;
 - (id)loadingText;
 - (id)seasonId;
 - (void)setContentType:(id)arg1;
 - (void)setImage:(id)arg1;
+- (void)setImagesJsonContentPayload:(id)arg1;
 - (void)setLoadingText:(id)arg1;
 - (void)setSeasonId:(id)arg1;
 - (void)setShowId:(id)arg1;

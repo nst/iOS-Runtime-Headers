@@ -3,11 +3,11 @@
  */
 
 @interface CIGlassLozenge : CIFilter {
-    CIImage *inputImage;
-    CIVector *inputPoint0;
-    CIVector *inputPoint1;
-    NSNumber *inputRadius;
-    NSNumber *inputRefraction;
+    CIImage * inputImage;
+    CIVector * inputPoint0;
+    CIVector * inputPoint1;
+    NSNumber * inputRadius;
+    NSNumber * inputRefraction;
 }
 
 + (id)customAttributes;

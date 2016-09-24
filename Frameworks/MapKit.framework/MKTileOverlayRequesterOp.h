@@ -3,8 +3,8 @@
  */
 
 @interface MKTileOverlayRequesterOp : NSObject {
-    NSData *_data;
-    MKTileOverlayRequester *_delegate;
+    NSData * _data;
+    MKTileOverlayRequester * _delegate;
     struct _GEOTileKey { 
         unsigned int z : 6; 
         unsigned int x : 26; 
@@ -16,7 +16,7 @@
         unsigned int expires : 1; 
         unsigned int reserved1 : 7; 
         unsigned char reserved2[4]; 
-    } _key;
+    }  _key;
 }
 
 @property (nonatomic, retain) NSData *data;

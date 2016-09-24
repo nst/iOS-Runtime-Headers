@@ -3,7 +3,7 @@
  */
 
 @interface CNMultiValueUpdate : NSObject <CNMultiValueUpdate_iOSAB> {
-    BOOL _ignoreIdentifiers;
+    BOOL  _ignoreIdentifiers;
 }
 
 @property (readonly, copy) NSString *debugDescription;

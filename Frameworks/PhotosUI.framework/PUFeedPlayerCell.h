@@ -3,29 +3,29 @@
  */
 
 @interface PUFeedPlayerCell : PUFeedCell {
-    UIButton *__commentButton;
-    BOOL __isPerformingIrisPlayerChanges;
-    BOOL __needsUpdatePlayerItem;
-    BOOL __needsUpdateVitality;
-    ISPlayer *__player;
-    ISPlayerView *__playerView;
-    BOOL __shouldHideCommentButton;
-    int _commentCount;
-    UICollectionView *_containingCollectionView;
-    int _currentImageRequestID;
-    BOOL _isPhotoImageDegraded;
-    UIImage *_photoImage;
-    double _photoTime;
-    BOOL _playerHidden;
-    AVAsset *_videoAsset;
+    UIButton * __commentButton;
+    BOOL  __isPerformingIrisPlayerChanges;
+    BOOL  __needsUpdatePlayerItem;
+    BOOL  __needsUpdateVitality;
+    ISLivePhotoPlayer * __player;
+    ISLivePhotoUIView * __playerView;
+    BOOL  __shouldHideCommentButton;
+    int  _commentCount;
+    UICollectionView * _containingCollectionView;
+    int  _currentImageRequestID;
+    BOOL  _isPhotoImageDegraded;
+    UIImage * _photoImage;
+    double  _photoTime;
+    BOOL  _playerHidden;
+    AVAsset * _videoAsset;
 }
 
 @property (setter=_setCommentButton:, nonatomic, retain) UIButton *_commentButton;
 @property (setter=_setPerformingIrisPlayerChanges:, nonatomic) BOOL _isPerformingIrisPlayerChanges;
 @property (setter=_setNeedsUpdatePlayerItem:, nonatomic) BOOL _needsUpdatePlayerItem;
 @property (setter=_setNeedsUpdateVitality:, nonatomic) BOOL _needsUpdateVitality;
-@property (nonatomic, readonly) ISPlayer *_player;
-@property (nonatomic, readonly) ISPlayerView *_playerView;
+@property (nonatomic, readonly) ISLivePhotoPlayer *_player;
+@property (nonatomic, readonly) ISLivePhotoUIView *_playerView;
 @property (setter=_setShouldHideCommentButton:, nonatomic) BOOL _shouldHideCommentButton;
 @property (nonatomic) int commentCount;
 @property (nonatomic) UICollectionView *containingCollectionView;
@@ -66,7 +66,7 @@
 - (int)commentCount;
 - (id)containingCollectionView;
 - (int)currentImageRequestID;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isPhotoImageDegraded;
 - (BOOL)isPlayerHidden;
 - (void)layoutSubviews;
@@ -77,7 +77,7 @@
 - (void)setCommentCount:(int)arg1;
 - (void)setContainingCollectionView:(id)arg1;
 - (void)setCurrentImageRequestID:(int)arg1;
-- (void)setParallaxOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setParallaxOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setPhotoImage:(id)arg1;
 - (void)setPhotoImageDegraded:(BOOL)arg1;
 - (void)setPhotoTime:(double)arg1;

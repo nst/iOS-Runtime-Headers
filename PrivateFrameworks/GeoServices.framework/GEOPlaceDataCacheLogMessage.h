@@ -3,8 +3,8 @@
  */
 
 @interface GEOPlaceDataCacheLogMessage : PBCodable <NSCopying> {
-    GEOPDPlaceRequest *_placeDataRequest;
-    NSString *_placeDataRequestingAppIdentifier;
+    GEOPDPlaceRequest * _placeDataRequest;
+    NSString * _placeDataRequestingAppIdentifier;
 }
 
 @property (nonatomic, readonly) BOOL hasPlaceDataRequest;

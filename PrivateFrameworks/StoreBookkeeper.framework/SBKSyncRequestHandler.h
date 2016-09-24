@@ -3,14 +3,14 @@
  */
 
 @interface SBKSyncRequestHandler : SBKRequestHandler <SBKSyncTransactionProcessing> {
-    NSString *_overrideResponseDomainVersion;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableArray *_responseConflictedKeys;
-    SBKSyncResponseData *_responseData;
-    NSMutableDictionary *_responseDataByKey;
-    NSMutableArray *_responseDeletedKeys;
-    NSMutableArray *_responseUpdatedKeys;
-    SBKTransactionController *_transactionController;
+    NSString * _overrideResponseDomainVersion;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableArray * _responseConflictedKeys;
+    SBKSyncResponseData * _responseData;
+    NSMutableDictionary * _responseDataByKey;
+    NSMutableArray * _responseDeletedKeys;
+    NSMutableArray * _responseUpdatedKeys;
+    SBKTransactionController * _transactionController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

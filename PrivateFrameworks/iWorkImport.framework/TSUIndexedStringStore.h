@@ -3,9 +3,9 @@
  */
 
 @interface TSUIndexedStringStore : NSObject {
-    NSMutableDictionary *_indexByString;
-    int _lock;
-    NSMutableArray *_stringByIndex;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSMutableDictionary * _indexByString;
+    NSMutableArray * _stringByIndex;
 }
 
 - (unsigned int)count;

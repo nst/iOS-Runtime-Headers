@@ -3,11 +3,11 @@
  */
 
 @interface TSTConcurrentMutableIndexSet : NSObject {
-    NSMutableIndexSet *mMutableIndexSet;
+    NSMutableIndexSet * mMutableIndexSet;
     struct _opaque_pthread_rwlock_t { 
         long __sig; 
         BOOL __opaque[124]; 
-    } mRWLock;
+    }  mRWLock;
 }
 
 - (void)addIndex:(unsigned int)arg1;

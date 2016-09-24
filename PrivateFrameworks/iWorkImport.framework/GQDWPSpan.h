@@ -3,7 +3,7 @@
  */
 
 @interface GQDWPSpan : GQDWPTextList {
-    GQDSStyle *mCharStyle;
+    GQDSStyle * mCharStyle;
 }
 
 - (id)characterStyle;

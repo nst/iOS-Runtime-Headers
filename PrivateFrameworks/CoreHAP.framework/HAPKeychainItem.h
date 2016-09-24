@@ -3,17 +3,17 @@
  */
 
 @interface HAPKeychainItem : NSObject {
-    NSString *_accessGroup;
-    NSString *_account;
-    NSData *_genericData;
-    BOOL _invisible;
-    NSString *_itemDescription;
-    NSString *_label;
-    void *_platformReference;
-    BOOL _syncable;
-    NSNumber *_type;
-    NSData *_valueData;
-    NSString *_viewHint;
+    NSString * _accessGroup;
+    NSString * _account;
+    NSData * _genericData;
+    BOOL  _invisible;
+    NSString * _itemDescription;
+    NSString * _label;
+    void * _platformReference;
+    BOOL  _syncable;
+    NSNumber * _type;
+    NSData * _valueData;
+    NSString * _viewHint;
 }
 
 @property (nonatomic, retain) NSString *accessGroup;
@@ -32,6 +32,7 @@
 - (id)accessGroup;
 - (id)account;
 - (void)dealloc;
+- (id)description;
 - (id)genericData;
 - (id)initWithQueryResult:(struct __CFDictionary { }*)arg1 shouldIncludeData:(BOOL)arg2;
 - (BOOL)isInvisible;

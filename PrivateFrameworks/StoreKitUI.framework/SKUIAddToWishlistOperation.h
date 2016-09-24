@@ -3,9 +3,9 @@
  */
 
 @interface SKUIAddToWishlistOperation : NSOperation {
-    long long _itemIdentifier;
-    int _reason;
-    NSMutableDictionary *_requestParameters;
+    int  _itemIdentifier;
+    int  _reason;
+    NSMutableDictionary * _requestParameters;
 }
 
 - (void).cxx_destruct;

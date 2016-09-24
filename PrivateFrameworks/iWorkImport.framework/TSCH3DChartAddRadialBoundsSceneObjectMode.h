@@ -3,10 +3,10 @@
  */
 
 @interface TSCH3DChartAddRadialBoundsSceneObjectMode : TSCH3DChartAddBoundsSceneObjectMode {
-    float mFactor;
+    double  mFactor;
 }
 
-@property (nonatomic) float factor;
+@property (nonatomic) double factor;
 
 - (float)factor;
 - (void)getBounds:(id)arg1;

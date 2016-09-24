@@ -3,9 +3,9 @@
  */
 
 @interface MSVSystemDialogTextField : NSObject {
-    int _keyboardType;
-    BOOL _secure;
-    NSString *_title;
+    int  _keyboardType;
+    BOOL  _secure;
+    NSString * _title;
 }
 
 @property (nonatomic) int keyboardType;

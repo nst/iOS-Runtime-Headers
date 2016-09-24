@@ -6,7 +6,7 @@
 @required
 
 - (<GEOTransitArtworkDataSource> *)artwork;
-- (unsigned long long)muid;
+- (unsigned int)muid;
 - (NSString *)name;
 
 @end

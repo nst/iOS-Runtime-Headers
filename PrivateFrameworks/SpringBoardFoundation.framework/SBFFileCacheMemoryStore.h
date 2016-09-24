@@ -3,7 +3,7 @@
  */
 
 @interface SBFFileCacheMemoryStore : NSObject <SBFFileCacheStore> {
-    NSMutableDictionary *_fileWrappers;
+    NSMutableDictionary * _fileWrappers;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,35 +3,35 @@
  */
 
 @interface MKScaleView : UIView {
-    UIColor *_borderColorRegular;
-    UIColor *_borderColorSatellite;
-    UIColor *_darkSegmentColorRegular;
-    UIColor *_darkSegmentColorSatellite;
-    UIView *_displayedOutline;
-    double _distanceInMeters;
-    NSString *_feetAbbreviation;
-    NSNumberFormatter *_floatNumberFormatter;
-    NSMutableDictionary *_formattedNumberCache;
-    int _grQuality;
-    NSString *_kilometersAbbreviation;
-    int _layoutCounter;
-    UIColor *_lightSegmentColorRegular;
-    UIColor *_lightSegmentColorSatellite;
-    double _magicNumbers;
-    NSString *_metersAbbreviation;
-    NSString *_milesAbbreviation;
-    int _oldNumberOfSegments;
-    UIView *_outlineViewA;
-    UIView *_outlineViewB;
-    double _resultSegmentLength;
-    double _resultSegmentLengthInMeters;
-    float _segmentLengthInPixels;
-    NSMutableArray *_segments;
-    _MKScaleUnitsView *_unitsView;
-    BOOL _useLightText;
-    BOOL _useMetric;
-    BOOL _useYardsForShortDistances;
-    NSString *_yardAbbreviation;
+    UIColor * _borderColorRegular;
+    UIColor * _borderColorSatellite;
+    UIColor * _darkSegmentColorRegular;
+    UIColor * _darkSegmentColorSatellite;
+    UIView * _displayedOutline;
+    double  _distanceInMeters;
+    NSString * _feetAbbreviation;
+    NSNumberFormatter * _floatNumberFormatter;
+    NSMutableDictionary * _formattedNumberCache;
+    int  _grQuality;
+    NSString * _kilometersAbbreviation;
+    int  _layoutCounter;
+    UIColor * _lightSegmentColorRegular;
+    UIColor * _lightSegmentColorSatellite;
+    double  _magicNumbers;
+    NSString * _metersAbbreviation;
+    NSString * _milesAbbreviation;
+    int  _oldNumberOfSegments;
+    UIView * _outlineViewA;
+    UIView * _outlineViewB;
+    double  _resultSegmentLength;
+    double  _resultSegmentLengthInMeters;
+    double  _segmentLengthInPixels;
+    NSMutableArray * _segments;
+    _MKScaleUnitsView * _unitsView;
+    BOOL  _useLightText;
+    BOOL  _useMetric;
+    BOOL  _useYardsForShortDistances;
+    NSString * _yardAbbreviation;
 }
 
 @property (nonatomic) double distanceInMeters;
@@ -51,7 +51,7 @@
 - (void)layoutSubviews;
 - (void)memoryWarning:(id)arg1;
 - (void)setDistanceInMeters:(double)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setUseLightText:(BOOL)arg1;
 - (void)updateLocale:(id)arg1;
 

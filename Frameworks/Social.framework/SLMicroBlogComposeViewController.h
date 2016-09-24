@@ -3,24 +3,24 @@
  */
 
 @interface SLMicroBlogComposeViewController : SLComposeServiceViewController <SLMicroBlogAccountsTableViewControllerDelegate, SLMicroBlogMentionsDelegate, SLSheetPlaceViewControllerDelegate, UITextViewDelegate> {
-    SLComposeSheetConfigurationItem *_accountConfigurationItem;
-    NSArray *_accountIdentifiers;
-    NSArray *_accountUserRecords;
-    SLMicroBlogAccountsTableViewController *_accountViewController;
-    SLPlace *_currentPlace;
-    BOOL _isPresentingPlaces;
-    SLComposeSheetConfigurationItem *_locationConfigurationItem;
-    int _maxURLLength;
-    BOOL _mentionPendingStart;
-    unsigned int _mentionStartLocation;
-    SLMicroBlogMentionsViewController *_mentionsViewController;
-    NSObject<SLMicroBlogSheetDelegate> *_microBlogSheetDelegate;
-    SLSheetPlaceViewController *_placeViewController;
-    BOOL _rotatedDuringAccountsPopover;
-    SLMicroBlogUserRecord *_selectedAccountUserRecord;
-    NSString *_serviceAccountTypeIdentifier;
-    int _shortenedURLCost;
-    BOOL _usingLocationOverride;
+    SLComposeSheetConfigurationItem * _accountConfigurationItem;
+    NSArray * _accountIdentifiers;
+    NSArray * _accountUserRecords;
+    SLMicroBlogAccountsTableViewController * _accountViewController;
+    SLPlace * _currentPlace;
+    BOOL  _isPresentingPlaces;
+    SLComposeSheetConfigurationItem * _locationConfigurationItem;
+    int  _maxURLLength;
+    BOOL  _mentionPendingStart;
+    unsigned int  _mentionStartLocation;
+    SLMicroBlogMentionsViewController * _mentionsViewController;
+    NSObject<SLMicroBlogSheetDelegate> * _microBlogSheetDelegate;
+    SLSheetPlaceViewController * _placeViewController;
+    BOOL  _rotatedDuringAccountsPopover;
+    SLMicroBlogUserRecord * _selectedAccountUserRecord;
+    NSString * _serviceAccountTypeIdentifier;
+    int  _shortenedURLCost;
+    BOOL  _usingLocationOverride;
 }
 
 @property (readonly, copy) NSString *debugDescription;

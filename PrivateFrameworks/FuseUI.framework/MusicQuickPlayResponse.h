@@ -3,10 +3,10 @@
  */
 
 @interface MusicQuickPlayResponse : NSObject {
-    NSString *_containerID;
-    int _containerType;
-    NSData *_recommendationData;
-    NSDictionary *_storePlatformDictionary;
+    NSString * _containerID;
+    int  _containerType;
+    NSData * _recommendationData;
+    NSDictionary * _storePlatformDictionary;
 }
 
 @property (nonatomic, retain) NSString *containerID;

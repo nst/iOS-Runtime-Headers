@@ -3,7 +3,7 @@
  */
 
 @interface WBUFormsMetadataProviderWK2 : NSObject <WBSFormsMetadataProvider> {
-    NSDictionary *_frameHandleToForms;
+    NSDictionary * _frameHandleToForms;
 }
 
 @property (readonly, copy) NSString *debugDescription;

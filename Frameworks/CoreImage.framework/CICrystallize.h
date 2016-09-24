@@ -3,9 +3,9 @@
  */
 
 @interface CICrystallize : CIFilter {
-    CIVector *inputCenter;
-    CIImage *inputImage;
-    NSNumber *inputRadius;
+    CIVector * inputCenter;
+    CIImage * inputImage;
+    NSNumber * inputRadius;
 }
 
 + (id)customAttributes;

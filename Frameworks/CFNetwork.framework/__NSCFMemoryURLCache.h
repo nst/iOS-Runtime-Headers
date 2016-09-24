@@ -3,12 +3,12 @@
  */
 
 @interface __NSCFMemoryURLCache : NSObject {
-    unsigned int _currentLength;
-    id _internal;
-    unsigned int _memoryCapacity;
-    NSObject<OS_dispatch_queue> *_memoryQueue;
-    NSMutableDictionary *_memoryStorage;
-    NSMutableArray *_memoryStorageLRU;
+    unsigned int  _currentLength;
+    id  _internal;
+    unsigned int  _memoryCapacity;
+    NSObject<OS_dispatch_queue> * _memoryQueue;
+    NSMutableDictionary * _memoryStorage;
+    NSMutableArray * _memoryStorageLRU;
 }
 
 + (void)initialize;

@@ -3,13 +3,13 @@
  */
 
 @interface AKURLDataTask : NSObject {
-    BOOL _canceledOrCompleted;
-    id /* block */ _completionHandler;
-    NSError *_lastRetryError;
-    NSMutableData *_receivedData;
-    NSURLRequest *_request;
-    unsigned int _retryCount;
-    NSURLSessionDataTask *_underlyingTask;
+    BOOL  _canceledOrCompleted;
+    id /* block */  _completionHandler;
+    NSError * _lastRetryError;
+    NSMutableData * _receivedData;
+    NSURLRequest * _request;
+    unsigned int  _retryCount;
+    NSURLSessionDataTask * _underlyingTask;
 }
 
 @property (nonatomic) BOOL canceledOrCompleted;

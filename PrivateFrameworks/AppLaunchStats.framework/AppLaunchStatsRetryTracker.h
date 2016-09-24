@@ -3,11 +3,11 @@
  */
 
 @interface AppLaunchStatsRetryTracker : NSObject {
-    unsigned int _maxRetry;
-    NSObject<OS_dispatch_queue> *_rTrackerQueue;
-    unsigned int _resetTime;
-    NSDate *_resetTrackerDate;
-    NSMutableDictionary *_tracker;
+    unsigned int  _maxRetry;
+    NSObject<OS_dispatch_queue> * _rTrackerQueue;
+    unsigned int  _resetTime;
+    NSDate * _resetTrackerDate;
+    NSMutableDictionary * _tracker;
 }
 
 - (void).cxx_destruct;

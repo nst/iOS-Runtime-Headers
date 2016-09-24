@@ -3,33 +3,60 @@
  */
 
 @interface LSApplicationRestrictionsManager : NSObject {
-    MCProfileConnection *_connection;
+    NSSet * _blacklistedBundleIDs;
+    MCProfileConnection * _connection;
+    NSNumber * _maximumRating;
+    NSMutableSet * _pendingChanges;
+    NSSet * _removedSystemApplications;
+    NSSet * _restrictedBundleIDs;
+    NSObject<OS_dispatch_queue> * _restrictionsAccessQueue;
+    NSNumber * _whitelistState;
+    NSSet * _whitelistedBundleIDs;
 }
 
+@property (getter=isAdTrackingEnabled, readonly) BOOL adTrackingEnabled;
 @property (readonly) NSSet *blacklistedBundleIDs;
-@property MCProfileConnection *connection;
-@property (readonly) BOOL isOpenInRestrictionInEffect;
+@property (readonly) NSNumber *maximumRating;
+@property (getter=isOpenInRestrictionInEffect, readonly) BOOL openInRestrictionInEffect;
 @property (readonly) NSSet *removedSystemApplications;
-@property (readonly) BOOL whitelistEnabled;
+@property (readonly) NSSet *restrictedBundleIDs;
+@property (getter=isWhitelistEnabled, readonly) BOOL whitelistEnabled;
 @property (readonly) NSSet *whitelistedBundleIDs;
 
 + (id)activeRestrictionIdentifiers;
 + (id)sharedInstance;
 
+- (id)_LSResolveIdentifiers:(id)arg1;
+- (void)addPendingChanges:(id)arg1;
 - (id)allowedOpenInAppBundleIDsAfterApplyingFilterToAppBundleIDs:(id)arg1 originatingAppBundleID:(id)arg2 originatingAccountIsManaged:(BOOL)arg3;
+- (void)beginListeningForChanges;
+- (id)blacklistedBundleID;
 - (id)blacklistedBundleIDs;
-- (id)connection;
+- (id)calculateSetDifference:(id)arg1 and:(id)arg2;
+- (void)clearAllValues;
+- (void)clearPendingChanges;
+- (void)dealloc;
+- (void)handleMCEffectiveSettingsChanged;
+- (void)handleMCRemovedSystemAppsChanged;
 - (id)init;
+- (BOOL)isAdTrackingEnabled;
+- (BOOL)isAppExtensionRestricted:(id)arg1;
 - (BOOL)isApplicationRemoved:(id)arg1;
 - (BOOL)isApplicationRestricted:(id)arg1;
 - (BOOL)isApplicationRestricted:(id)arg1 checkFeatureRestrictions:(BOOL)arg2;
 - (BOOL)isFeatureAllowed:(unsigned int)arg1;
 - (BOOL)isOpenInRestrictionInEffect;
+- (BOOL)isRatingAllowed:(id)arg1;
+- (BOOL)isWhitelistEnabled;
+- (id)maximumRating;
+- (id)pendingChanges;
 - (id)removedSystemApplications;
-- (void)removedSystemAppsChanged;
+- (id)restrictedBundleIDs;
 - (BOOL)setApplication:(id)arg1 removed:(BOOL)arg2;
-- (void)setConnection:(id)arg1;
-- (BOOL)whitelistEnabled;
+- (void)setBlacklistedBundleIDs:(id)arg1;
+- (void)setRemovedSystemApplications:(id)arg1;
+- (void)setRestrictedBundleIDs:(id)arg1;
+- (void)setWhitelistedBundleIDs:(id)arg1;
 - (id)whitelistedBundleIDs;
 
 @end

@@ -3,15 +3,15 @@
  */
 
 @interface GKVoiceChatSession : NSObject {
-    id opaqueSession;
+    id  opaqueSession;
 }
 
 @property (getter=isActiveSession) BOOL activeSession;
 @property <GKVoiceChatSessionDelegate> *delegate;
-@property (readonly) float inputMeter;
+@property (readonly) double inputMeter;
 @property (readonly) NSArray *peerList;
 @property (readonly) NSString *sessionName;
-@property float sessionVolume;
+@property double sessionVolume;
 
 - (void)dealloc;
 - (id)delegate;

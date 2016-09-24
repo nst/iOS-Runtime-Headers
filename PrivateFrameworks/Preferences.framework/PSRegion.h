@@ -3,8 +3,8 @@
  */
 
 @interface PSRegion : NSObject {
-    NSString *_regionCode;
-    NSString *_regionName;
+    NSString * _regionCode;
+    NSString * _regionName;
 }
 
 @property (nonatomic, retain) NSString *regionCode;

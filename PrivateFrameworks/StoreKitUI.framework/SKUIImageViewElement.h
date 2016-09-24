@@ -3,43 +3,43 @@
  */
 
 @interface SKUIImageViewElement : SKUIViewElement {
-    NSString *_alt;
-    BOOL _enabled;
-    NSString *_entityResourceName;
-    NSURL *_entityURL;
-    BOOL _hasValidEntityValues;
+    NSString * _alt;
+    BOOL  _enabled;
+    NSString * _entityResourceName;
+    NSURL * _entityURL;
+    BOOL  _hasValidEntityValues;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _layerShadowOffset;
-    float _layerShadowOpacity;
-    float _layerShadowRadius;
-    SKUIImageViewElementCacheKey *_resourceCacheKey;
-    NSString *_resourceName;
-    UIColor *_shadowColor;
+        double width; 
+        double height; 
+    }  _layerShadowOffset;
+    double  _layerShadowOpacity;
+    double  _layerShadowRadius;
+    SKUIImageViewElementCacheKey * _resourceCacheKey;
+    NSString * _resourceName;
+    UIColor * _shadowColor;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _shadowOffset;
-    float _shadowRadius;
+        double width; 
+        double height; 
+    }  _shadowOffset;
+    double  _shadowRadius;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _size;
-    SKUIImageViewElementCacheKey *_transientResourceCacheKey;
-    NSURL *_url;
+        double width; 
+        double height; 
+    }  _size;
+    SKUIImageViewElementCacheKey * _transientResourceCacheKey;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSURL *URL;
-@property (nonatomic) struct CGSize { float x1; float x2; } layerShadowOffset;
-@property (nonatomic) float layerShadowOpacity;
-@property (nonatomic) float layerShadowRadius;
+@property (nonatomic) struct CGSize { double x1; double x2; } layerShadowOffset;
+@property (nonatomic) double layerShadowOpacity;
+@property (nonatomic) double layerShadowRadius;
 @property (nonatomic, readonly) id resourceCacheKey;
 @property (nonatomic, readonly) NSString *resourceName;
 @property (nonatomic, retain) UIColor *shadowColor;
-@property (nonatomic) struct CGSize { float x1; float x2; } shadowOffset;
-@property (nonatomic) float shadowRadius;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic) struct CGSize { double x1; double x2; } shadowOffset;
+@property (nonatomic) double shadowRadius;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
 @property (nonatomic, readonly) id transientResourceCacheKey;
 
 - (void).cxx_destruct;
@@ -51,7 +51,7 @@
 - (void)entityValueProviderDidChange;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (BOOL)isEnabled;
-- (struct CGSize { float x1; float x2; })layerShadowOffset;
+- (struct CGSize { double x1; double x2; })layerShadowOffset;
 - (float)layerShadowOpacity;
 - (float)layerShadowRadius;
 - (int)pageComponentType;
@@ -59,16 +59,16 @@
 - (BOOL)rendersWithPerspective;
 - (id)resourceCacheKey;
 - (id)resourceName;
-- (void)setLayerShadowOffset:(struct CGSize { float x1; float x2; })arg1;
+- (void)setLayerShadowOffset:(struct CGSize { double x1; double x2; })arg1;
 - (void)setLayerShadowOpacity:(float)arg1;
 - (void)setLayerShadowRadius:(float)arg1;
 - (void)setShadowColor:(id)arg1;
-- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
+- (void)setShadowOffset:(struct CGSize { double x1; double x2; })arg1;
 - (void)setShadowRadius:(float)arg1;
 - (id)shadowColor;
-- (struct CGSize { float x1; float x2; })shadowOffset;
+- (struct CGSize { double x1; double x2; })shadowOffset;
 - (float)shadowRadius;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { double x1; double x2; })size;
 - (id)transientResourceCacheKey;
 - (id)uniquingMapKey;
 

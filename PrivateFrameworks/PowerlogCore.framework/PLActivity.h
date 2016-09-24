@@ -3,16 +3,16 @@
  */
 
 @interface PLActivity : NSObject <PLActivityCriterionDelegate> {
-    id /* block */ _activityBlock;
-    PLEntry *_activityEntry;
-    NSArray *_criteria;
-    BOOL _enabled;
-    NSString *_identifier;
-    id /* block */ _interruptBlock;
-    NSDate *_lastCompletedDate;
-    PLActivityCriterion *_mustRunCriterion;
-    NSObject<OS_dispatch_queue> *_queue;
-    int _state;
+    id /* block */  _activityBlock;
+    PLEntry * _activityEntry;
+    NSArray * _criteria;
+    BOOL  _enabled;
+    NSString * _identifier;
+    id /* block */  _interruptBlock;
+    NSDate * _lastCompletedDate;
+    PLActivityCriterion * _mustRunCriterion;
+    NSObject<OS_dispatch_queue> * _queue;
+    int  _state;
 }
 
 @property (copy) id /* block */ activityBlock;

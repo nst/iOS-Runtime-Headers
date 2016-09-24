@@ -3,11 +3,11 @@
  */
 
 @interface AVCaptureAudioChannel : NSObject {
-    AVCaptureAudioChannelInternal *_internal;
+    AVCaptureAudioChannelInternal * _internal;
 }
 
-@property (nonatomic, readonly) float averagePowerLevel;
-@property (nonatomic, readonly) float peakHoldLevel;
+@property (nonatomic, readonly) double averagePowerLevel;
+@property (nonatomic, readonly) double peakHoldLevel;
 
 - (float)averagePowerLevel;
 - (void)dealloc;

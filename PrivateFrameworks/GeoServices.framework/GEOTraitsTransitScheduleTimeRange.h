@@ -3,12 +3,12 @@
  */
 
 @interface GEOTraitsTransitScheduleTimeRange : PBCodable <NSCopying> {
-    double _duration;
+    double  _duration;
     struct { 
         unsigned int duration : 1; 
         unsigned int startTime : 1; 
-    } _has;
-    double _startTime;
+    }  _has;
+    double  _startTime;
 }
 
 @property (nonatomic) double duration;

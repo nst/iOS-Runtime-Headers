@@ -7,10 +7,10 @@
 // Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
 
 + (id)allProperties;
-+ (id)countingQueryForBaseQuery:(id)arg1 countProperty:(id)arg2 forIdentifier:(long long)arg3;
++ (id)countingQueryForBaseQuery:(id)arg1 countProperty:(id)arg2 forIdentifier:(int)arg3;
 + (id)databaseTable;
 + (id)defaultOrderingTerms;
-+ (BOOL)deleteFromLibrary:(id)arg1 deletionType:(int)arg2 persistentIDs:(const long long*)arg3 count:(unsigned int)arg4 usingConnection:(id)arg5;
++ (BOOL)deleteFromLibrary:(id)arg1 deletionType:(int)arg2 persistentIDs:(const int*)arg3 count:(unsigned int)arg4 usingConnection:(id)arg5;
 + (id)foreignPropertyForProperty:(id)arg1 entityClass:(Class)arg2;
 + (void)initialize;
 + (id)predisambiguatedProperties;
@@ -24,7 +24,6 @@
 
 - (id)multiverseIdentifier;
 - (id)protocolItem;
-- (void)updateRepresentativeItem:(id)arg1 inLibrary:(id)arg2;
 - (void)updateTrackValues:(id)arg1;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer

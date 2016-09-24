@@ -11,7 +11,7 @@
 + (id /* block */)bucketerWithMapping:(id /* block */)arg1;
 + (id)dedupe:(id)arg1 bucketer:(id /* block */)arg2 resolver:(id /* block */)arg3;
 + (id)dedupeContactDetails:(id)arg1;
-+ (id)nearDuplicateEKEventOfPseudoEventTitle:(id)arg1 inEKEventsWithSameStartTime:(id)arg2;
++ (void)enumerateEKEventsForPseudoEventBySimilarTitleAndStartTime:(id)arg1 store:(id)arg2 usingBlock:(id /* block */)arg3;
 + (id /* block */)resolveByPairs:(id /* block */)arg1;
 + (id /* block */)resolveByScoreBreakTiesArbitrarily:(id /* block */)arg1;
 + (id /* block */)resolveSGContactDetailsPreferringPhraseExtractionsAndLabels;

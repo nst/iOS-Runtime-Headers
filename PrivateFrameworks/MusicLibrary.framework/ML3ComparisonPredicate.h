@@ -3,11 +3,11 @@
  */
 
 @interface ML3ComparisonPredicate : ML3PropertyPredicate {
-    BOOL _caseInsensitive;
-    int _comparison;
-    NSString *_transformFunction;
-    NSString *_treatNullAsString;
-    id _value;
+    BOOL  _caseInsensitive;
+    int  _comparison;
+    NSString * _transformFunction;
+    NSString * _treatNullAsString;
+    id  _value;
 }
 
 @property (nonatomic) BOOL caseInsensitive;
@@ -17,7 +17,7 @@
 @property (nonatomic, copy) NSString *treatNullAsString;
 @property (nonatomic, retain) id value;
 
-+ (id)predicateWithProperty:(id)arg1 equalToInt64:(long long)arg2;
++ (id)predicateWithProperty:(id)arg1 equalToInt64:(int)arg2;
 + (id)predicateWithProperty:(id)arg1 equalToInteger:(int)arg2;
 + (id)predicateWithProperty:(id)arg1 equalToValue:(id)arg2;
 + (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(int)arg3;

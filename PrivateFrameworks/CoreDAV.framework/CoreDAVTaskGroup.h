@@ -3,18 +3,18 @@
  */
 
 @interface CoreDAVTaskGroup : NSObject <CoreDAVSubmittable> {
-    <CoreDAVAccountInfoProvider> *_accountInfoProvider;
-    id /* block */ _completionBlock;
-    id _context;
-    <CoreDAVTaskGroupDelegate> *_delegate;
-    NSError *_error;
-    BOOL _isCancelling;
-    BOOL _isFinished;
-    BOOL _isTearingDown;
-    NSMutableSet *_outstandingTasks;
-    id /* block */ _progressBlock;
-    <CoreDAVTaskManager> *_taskManager;
-    double _timeoutInterval;
+    <CoreDAVAccountInfoProvider> * _accountInfoProvider;
+    id /* block */  _completionBlock;
+    id  _context;
+    <CoreDAVTaskGroupDelegate> * _delegate;
+    NSError * _error;
+    BOOL  _isCancelling;
+    BOOL  _isFinished;
+    BOOL  _isTearingDown;
+    NSMutableSet * _outstandingTasks;
+    id /* block */  _progressBlock;
+    <CoreDAVTaskManager> * _taskManager;
+    double  _timeoutInterval;
 }
 
 @property (nonatomic) <CoreDAVAccountInfoProvider> *accountInfoProvider;
@@ -30,6 +30,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic) <CoreDAVTaskManager> *taskManager;
 @property (nonatomic) double timeoutInterval;
+
+// Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
 
 - (void)_tearDownAllTasks;
 - (id)accountInfoProvider;
@@ -60,5 +62,9 @@
 - (void)taskGroupWillCancelWithError:(id)arg1;
 - (id)taskManager;
 - (double)timeoutInterval;
+
+// Image: /System/Library/PrivateFrameworks/BookmarkDAV.framework/BookmarkDAV
+
+- (void)bdv_applyOverrideTimeoutIntervalIfNeeded;
 
 @end

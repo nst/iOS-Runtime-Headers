@@ -3,7 +3,7 @@
  */
 
 @interface BLTIDSDevice : NSObject <BLTAbstractIDSDevice> {
-    IDSDevice *_device;
+    IDSDevice * _device;
 }
 
 @property (readonly, copy) NSString *debugDescription;

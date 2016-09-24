@@ -3,8 +3,8 @@
  */
 
 @interface NRObjectUniquenessFactory : NSObject {
-    NSMutableDictionary *_uniqueObjects;
-    NSObject<OS_dispatch_queue> *_uniqueObjectsQueue;
+    NSMutableDictionary * _uniqueObjects;
+    NSObject<OS_dispatch_queue> * _uniqueObjectsQueue;
 }
 
 + (id)sharedInstance;

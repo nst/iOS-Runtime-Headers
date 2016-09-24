@@ -3,10 +3,10 @@
  */
 
 @interface MPPurchaseCommandEvent : MPRemoteCommandEvent {
-    NSString *_stationHash;
-    NSNumber *_stationID;
-    NSNumber *_trackID;
-    int _type;
+    NSString * _stationHash;
+    NSNumber * _stationID;
+    NSNumber * _trackID;
+    int  _type;
 }
 
 @property (nonatomic, readonly) NSString *stationHash;

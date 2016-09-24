@@ -3,18 +3,18 @@
  */
 
 @interface _GEOTransitRouteStepInfo : NSObject {
-    unsigned int _duration;
+    unsigned int  _duration;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _maneuverPointRange;
+    }  _maneuverPointRange;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _pointRange;
-    int _routeLegType;
-    GEOTransitStep *_transitStep;
-    GEOStep *_walkingStep;
+    }  _pointRange;
+    int  _routeLegType;
+    GEOTransitStep * _transitStep;
+    GEOStep * _walkingStep;
 }
 
 @property (nonatomic) unsigned int duration;

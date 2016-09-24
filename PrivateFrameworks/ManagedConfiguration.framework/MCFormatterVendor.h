@@ -3,8 +3,8 @@
  */
 
 @interface MCFormatterVendor : NSObject {
-    NSNumberFormatter *_numberFormatter;
-    NSObject<OS_dispatch_queue> *_syncQueue;
+    NSNumberFormatter * _numberFormatter;
+    NSObject<OS_dispatch_queue> * _syncQueue;
 }
 
 + (id)sharedInstance;

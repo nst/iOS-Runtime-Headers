@@ -3,7 +3,7 @@
  */
 
 @interface AUSetupCodeUIAlert : AUTextFieldUIAlert <UIAlertViewDelegate, UITextFieldDelegate> {
-    UITextRange *_selectionRange;
+    UITextRange * _selectionRange;
 }
 
 @property (readonly, copy) NSString *debugDescription;

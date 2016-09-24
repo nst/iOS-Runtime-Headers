@@ -3,29 +3,30 @@
  */
 
 @interface BRCItemToPathLookup : NSObject {
-    BOOL _cleanupFaults;
+    BOOL  _cleanupFaults;
     struct { 
         unsigned int byFileID : 1; 
         unsigned int byDocumentID : 1; 
         unsigned int byEnclosure : 1; 
         unsigned int byPath : 1; 
         unsigned int parent : 1; 
-    } _fetched;
-    BOOL _fileSystemIDMayStillExist;
-    BRCLocalItem *_item;
-    BRCRelativePath *_matchByDocumentID;
-    BRCRelativePath *_matchByEnclosure;
-    BRCRelativePath *_matchByFileID;
-    BRCRelativePath *_matchByPath;
-    unsigned long long _parentFileID;
-    BRCRelativePath *_parentPath;
-    BRCServerItem *_serverItem;
-    BRCServerZone *_serverZone;
+    }  _fetched;
+    BOOL  _fileSystemIDMayStillExist;
+    BRCLocalItem * _item;
+    BRCRelativePath * _matchByDocumentID;
+    BRCRelativePath * _matchByEnclosure;
+    BRCRelativePath * _matchByFileID;
+    BRCRelativePath * _matchByPath;
+    unsigned int  _parentFileID;
+    BRCRelativePath * _parentPath;
+    BRCServerItem * _serverItem;
+    BRCServerZone * _serverZone;
 }
 
 @property (nonatomic, readonly) BRCRelativePath *byFileSystemID;
 @property (nonatomic, readonly) BRCRelativePath *byPath;
 @property (nonatomic, readonly) NSURL *coordinatedReadURL;
+@property (nonatomic, readonly) BRCAppLibrary *coordinatedURLAppLibrary;
 @property (nonatomic, readonly) NSURL *coordinatedWriteURL;
 @property (nonatomic, readonly) BOOL fileSystemIDMayStillExist;
 @property (nonatomic, readonly) BRCRelativePath *parentPath;
@@ -46,6 +47,7 @@
 - (void)closePaths;
 - (BOOL)computeLogicalPath:(id*)arg1 physicalPath:(id*)arg2 isDirectory:(BOOL*)arg3;
 - (id)coordinatedReadURL;
+- (id)coordinatedURLAppLibrary;
 - (id)coordinatedWriteURL;
 - (void)dealloc;
 - (id)description;

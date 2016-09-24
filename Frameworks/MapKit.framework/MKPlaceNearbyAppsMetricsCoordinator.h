@@ -3,12 +3,12 @@
  */
 
 @interface MKPlaceNearbyAppsMetricsCoordinator : NSObject {
-    NSMutableArray *_callbacks;
-    BOOL _controllerReady;
-    SSMetricsController *_metricsController;
-    NSString *_pageContext;
-    NSString *_topic;
-    SSURLBag *_urlBag;
+    NSMutableArray * _callbacks;
+    BOOL  _controllerReady;
+    SSMetricsController * _metricsController;
+    NSString * _pageContext;
+    NSString * _topic;
+    SSURLBag * _urlBag;
 }
 
 @property (nonatomic, readonly) NSMutableArray *callbacks;

@@ -2,12 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
  */
 
-@interface MRRegisterGameControllerMessage : MRProtocolMessage
+@interface MRRegisterGameControllerMessage : MRProtocolMessage {
+    void * _properties;
+}
 
-@property (nonatomic, readonly) int profile;
+@property (nonatomic, readonly) void*properties;
 
-- (id)initWithProfile:(int)arg1;
-- (int)profile;
+- (void)dealloc;
+- (id)initWithProperties:(void*)arg1;
+- (void*)properties;
 - (unsigned int)type;
 
 @end

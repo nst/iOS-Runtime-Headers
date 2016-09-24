@@ -3,7 +3,7 @@
  */
 
 @interface FIUIDiscreteSizingLabel : UILabel {
-    <FIUIDiscreteSizingLabelDelegate> *_delegate;
+    <FIUIDiscreteSizingLabelDelegate> * _delegate;
 }
 
 @property (nonatomic) <FIUIDiscreteSizingLabelDelegate> *delegate;

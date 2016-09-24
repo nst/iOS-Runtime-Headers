@@ -3,8 +3,8 @@
  */
 
 @interface UICellHighlightingSupport : NSObject {
-    id _cell;
-    struct __CFDictionary { } *_unhighlightedStates;
+    id  _cell;
+    struct __CFDictionary { } * _unhighlightedStates;
 }
 
 - (void).cxx_destruct;

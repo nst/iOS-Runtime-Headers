@@ -3,21 +3,21 @@
  */
 
 @interface FMFHandle : NSObject <NSCopying, NSSecureCoding> {
-    NSString *__prettyNameInternal;
-    NSArray *_aliasServerIds;
-    NSNumber *_dsid;
-    NSDictionary *_expiresByGroupId;
-    NSNumber *_favoriteOrder;
-    NSString *_hashedDSID;
-    NSString *_identifier;
-    int _idsStatus;
-    NSArray *_invitationSentToIds;
-    BOOL _isFamilyMember;
-    BOOL _pending;
-    NSString *_qualifiedIdentifier;
-    BOOL _reachable;
-    NSString *_serverId;
-    NSNumber *_trackingTimestamp;
+    NSString * __prettyNameInternal;
+    NSArray * _aliasServerIds;
+    NSNumber * _dsid;
+    NSDictionary * _expiresByGroupId;
+    NSNumber * _favoriteOrder;
+    NSString * _hashedDSID;
+    NSString * _identifier;
+    int  _idsStatus;
+    NSArray * _invitationSentToIds;
+    BOOL  _isFamilyMember;
+    BOOL  _pending;
+    NSString * _qualifiedIdentifier;
+    BOOL  _reachable;
+    NSString * _serverId;
+    NSNumber * _trackingTimestamp;
 }
 
 @property (nonatomic, copy) NSString *_prettyNameInternal;
@@ -63,6 +63,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isFamilyMember;
 - (BOOL)isPending;
+- (BOOL)isPhoneNumber;
 - (BOOL)isSharingThroughGroupId:(id)arg1;
 - (id)prettyName;
 - (int)prettyNameCompare:(id)arg1;

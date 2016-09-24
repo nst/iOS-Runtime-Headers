@@ -3,9 +3,9 @@
  */
 
 @interface PBReaderHyperlinkInfo : NSObject {
-    NSString *mHyperlink1;
-    NSString *mHyperlink2;
-    NSString *mScreenTip;
+    NSString * mHyperlink1;
+    NSString * mHyperlink2;
+    NSString * mScreenTip;
 }
 
 @property (nonatomic, retain) NSString *hyperlink1;

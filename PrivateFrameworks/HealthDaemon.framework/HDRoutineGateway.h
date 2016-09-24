@@ -3,10 +3,10 @@
  */
 
 @interface HDRoutineGateway : NSObject <HDHealthDaemonReadyObserver> {
-    HDDaemon *_daemon;
-    NSHashTable *_observerTable;
-    NSObject<OS_dispatch_queue> *_queue;
-    RTRoutineManager *_routineManager;
+    HDDaemon * _daemon;
+    NSHashTable * _observerTable;
+    NSObject<OS_dispatch_queue> * _queue;
+    RTRoutineManager * _routineManager;
 }
 
 @property (readonly, copy) NSString *debugDescription;

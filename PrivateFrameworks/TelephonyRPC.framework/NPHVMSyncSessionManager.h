@@ -3,18 +3,20 @@
  */
 
 @interface NPHVMSyncSessionManager : NSObject <SYChangeSerializer, SYSessionDelegate> {
-    BOOL _cancel;
-    id /* block */ _completionCallback;
-    NSMutableArray *_deltaSyncChangeTypes;
-    NSMutableArray *_deltaSyncChanges;
-    unsigned int _deltaSyncCurrentIdx;
-    NSObject<NPHVMSessionDelegate> *_vmSessionDelegate;
-    id /* block */ _vmSessionProgressCallback;
+    BOOL  _cancel;
+    id /* block */  _completionCallback;
+    NSMutableArray * _deltaSyncChangeTypes;
+    NSMutableArray * _deltaSyncChanges;
+    unsigned int  _deltaSyncCurrentIdx;
+    BOOL  _sessionInvalidated;
+    NSObject<NPHVMSessionDelegate> * _vmSessionDelegate;
+    id /* block */  _vmSessionProgressCallback;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic) BOOL sessionInvalidated;
 @property (readonly) Class superclass;
 @property (nonatomic) NSObject<NPHVMSessionDelegate> *vmSessionDelegate;
 @property (nonatomic, copy) id /* block */ vmSessionProgressCallback;
@@ -27,6 +29,8 @@
 - (id)encodeSYChangeForBackwardCompatibility:(id)arg1 protocolVersion:(int)arg2;
 - (void)enqueueVoicemailChanges:(id)arg1 changeType:(int)arg2;
 - (id)init;
+- (BOOL)sessionInvalidated;
+- (void)setSessionInvalidated:(BOOL)arg1;
 - (void)setVmSessionDelegate:(id)arg1;
 - (void)setVmSessionProgressCallback:(id /* block */)arg1;
 - (void)syncSession:(id)arg1 applyChanges:(id)arg2 completion:(id /* block */)arg3;

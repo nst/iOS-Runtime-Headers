@@ -3,11 +3,11 @@
  */
 
 @interface NNMKProtoMoreMessagesRequest : PBRequest <NSCopying> {
-    NSData *_beforeDateReceived;
-    unsigned int _fullSyncVersion;
+    NSData * _beforeDateReceived;
+    unsigned int  _fullSyncVersion;
     struct { 
         unsigned int fullSyncVersion : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic, retain) NSData *beforeDateReceived;

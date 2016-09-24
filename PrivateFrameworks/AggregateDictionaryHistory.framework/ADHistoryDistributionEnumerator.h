@@ -3,7 +3,7 @@
  */
 
 @interface ADHistoryDistributionEnumerator : NSObject {
-    void *_iterator;
+    void * _iterator;
 }
 
 - (BOOL)getNextValue:(double*)arg1 secondsInDayOffset:(int*)arg2;

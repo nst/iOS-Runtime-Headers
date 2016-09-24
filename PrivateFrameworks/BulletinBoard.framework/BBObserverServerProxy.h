@@ -3,19 +3,23 @@
  */
 
 @interface BBObserverServerProxy : NSObject <BBObserverClientInterface, BBObserverServerInterface> {
-    NSXPCConnection *_connection;
-    BOOL _isEstablished;
-    BOOL _isValid;
-    BBZeroingWeakReference *_observerZWR;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> * _calloutQueue;
+    NSXPCConnection * _connection;
+    BOOL  _isEstablished;
+    BOOL  _isValid;
+    BBObserver * _observer;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *calloutQueue;
 @property (nonatomic, retain) NSXPCConnection *connection;
-@property (nonatomic, retain) BBZeroingWeakReference *observerZWR;
+@property (nonatomic) BBObserver *observer;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
 + (id)xpcInterface;
 
+- (void).cxx_destruct;
+- (id)calloutQueue;
 - (void)clearBulletinIDs:(id)arg1 inSection:(id)arg2;
 - (void)clearBulletinsFromDate:(id)arg1 toDate:(id)arg2 inSections:(id)arg3;
 - (void)clearSection:(id)arg1;
@@ -24,13 +28,15 @@
 - (BOOL)established;
 - (void)finishedWithBulletinID:(id)arg1 transactionID:(unsigned int)arg2;
 - (void)getActiveAlertBehaviorOverridesWithHandler:(id /* block */)arg1;
-- (void)getAttachmentAspectRatioForBulletinID:(id)arg1 withHandler:(id /* block */)arg2;
-- (void)getAttachmentPNGDataForBulletinID:(id)arg1 sizeConstraints:(id)arg2 withHandler:(id /* block */)arg3;
+- (void)getAspectRatioForAttachmentUUID:(id)arg1 bulletinID:(id)arg2 isPrimary:(BOOL)arg3 withHandler:(id /* block */)arg4;
 - (void)getBulletinsForPublisherMatchIDs:(id)arg1 sectionID:(id)arg2 withHandler:(id /* block */)arg3;
+- (void)getBulletinsPublishedAfterDate:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)getBulletinsWithHandler:(id /* block */)arg1;
+- (void)getDataForAttachmentUUID:(id)arg1 bulletinID:(id)arg2 isPrimary:(BOOL)arg3 withHandler:(id /* block */)arg4;
 - (void)getObserverDebugInfo:(id /* block */)arg1;
-- (void)getPrimaryAttachmentDataForBulletinID:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)getPNGDataForAttachmentUUID:(id)arg1 bulletinID:(id)arg2 isPrimary:(BOOL)arg3 sizeConstraints:(id)arg4 withHandler:(id /* block */)arg5;
 - (void)getPrivilegedSenderTypesWithHandler:(id /* block */)arg1;
+- (void)getPublisherMatchIDsOfBulletinsPublishedAfterDate:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)getSectionInfoForActiveSectionsWithHandler:(id /* block */)arg1;
 - (void)getSectionInfoForSectionIDs:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)getSectionInfoWithHandler:(id /* block */)arg1;
@@ -38,27 +44,27 @@
 - (void)getSectionParametersForSectionID:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)getSortDescriptorsForSectionID:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)getUniversalSectionIDForSectionID:(id)arg1 withHandler:(id /* block */)arg2;
-- (void)handleResponse:(id)arg1;
-- (id)initWithObserver:(id)arg1 queue:(id)arg2;
+- (void)handleResponse:(id)arg1 withCompletion:(id /* block */)arg2;
+- (id)initWithObserver:(id)arg1 calloutQueue:(id)arg2;
 - (void)invalidate;
 - (BOOL)isValid;
 - (void)noteAlertBehaviorOverrideStateChanged:(id)arg1;
 - (void)noteAlertBehaviorOverridesChanged:(id)arg1;
 - (void)noteServerReceivedResponseForBulletin:(id)arg1;
 - (id)observer;
-- (id)observerZWR;
 - (id)queue;
 - (void)removeBulletins:(id)arg1 inSection:(id)arg2 fromFeeds:(unsigned int)arg3;
-- (void)requestFutureBulletinsForSectionID:(id)arg1;
+- (void)removeSection:(id)arg1;
+- (void)requestNoticesBulletinsForAllSections;
 - (void)requestNoticesBulletinsForSectionID:(id)arg1;
-- (void)requestTodayBulletinsForSectionID:(id)arg1;
+- (void)setCalloutQueue:(id)arg1;
 - (void)setConnection:(id)arg1;
+- (void)setObserver:(id)arg1;
 - (void)setObserverFeed:(unsigned int)arg1 asLightsAndSirensGateway:(id)arg2 priority:(unsigned int)arg3;
 - (void)setObserverFeed:(unsigned int)arg1 attachToLightsAndSirensGateway:(id)arg2;
-- (void)setObserverZWR:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (void)updateBulletin:(id)arg1 forFeeds:(unsigned int)arg2;
-- (void)updateBulletin:(id)arg1 forFeeds:(unsigned int)arg2 withHandler:(id /* block */)arg3;
+- (void)updateBulletin:(id)arg1;
+- (void)updateBulletin:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)updateSectionInfo:(id)arg1;
 - (void)updateSectionOrder:(id)arg1;
 - (void)updateSectionOrderRule:(id)arg1;

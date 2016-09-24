@@ -3,8 +3,8 @@
  */
 
 @interface SCNSpriteKitEventHandler : NSObject {
-    SKScene *_scene;
-    NSMutableDictionary *_touchMap;
+    SKScene * _scene;
+    NSMutableDictionary * _touchMap;
 }
 
 @property (nonatomic, retain) SKScene *scene;

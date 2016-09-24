@@ -3,10 +3,10 @@
  */
 
 @interface NSPurgeableData : NSMutableData <NSDiscardableContent> {
-    int _accessCount;
-    unsigned int _length;
-    unsigned char _private;
-    void *_reserved;
+    int  _accessCount;
+    unsigned int  _length;
+    unsigned char  _private;
+    void * _reserved;
 }
 
 - (void)_destroyMemory;
@@ -16,7 +16,6 @@
 - (id)description;
 - (void)discardContentIfPossible;
 - (void)endContentAccess;
-- (void)finalize;
 - (id)init;
 - (id)initWithBytes:(void*)arg1 length:(unsigned int)arg2 copy:(BOOL)arg3 deallocator:(id /* block */)arg4;
 - (id)initWithCapacity:(unsigned int)arg1;

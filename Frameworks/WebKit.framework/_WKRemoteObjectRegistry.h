@@ -11,25 +11,34 @@
             unsigned int m_keyCount; 
             unsigned int m_deletedCount; 
         } m_impl; 
-    } _exportedObjects;
+    }  _exportedObjects;
+    struct HashMap<unsigned int, PendingReply, WTF::IntHash<unsigned int>, WTF::HashTraits<unsigned int>, WTF::HashTraits<PendingReply> > { 
+        struct HashTable<unsigned int, WTF::KeyValuePair<unsigned int, PendingReply>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned int, PendingReply> >, WTF::IntHash<unsigned int>, WTF::HashMap<unsigned int, PendingReply, WTF::IntHash<unsigned int>, WTF::HashTraits<unsigned int>, WTF::HashTraits<PendingReply> >::KeyValuePairTraits, WTF::HashTraits<unsigned int> > { 
+            struct KeyValuePair<unsigned int, PendingReply> {} *m_table; 
+            unsigned int m_tableSize; 
+            unsigned int m_tableSizeMask; 
+            unsigned int m_keyCount; 
+            unsigned int m_deletedCount; 
+        } m_impl; 
+    }  _pendingReplies;
     struct RetainPtr<NSMapTable> { 
         void *m_ptr; 
-    } _remoteObjectProxies;
+    }  _remoteObjectProxies;
     struct unique_ptr<WebKit::RemoteObjectRegistry, std::__1::default_delete<WebKit::RemoteObjectRegistry> > { 
         struct __compressed_pair<WebKit::RemoteObjectRegistry *, std::__1::default_delete<WebKit::RemoteObjectRegistry> > { 
             struct RemoteObjectRegistry {} *__first_; 
         } __ptr_; 
-    } _remoteObjectRegistry;
+    }  _remoteObjectRegistry;
 }
 
 @property (nonatomic, readonly) struct RemoteObjectRegistry { int (**x1)(); id x2; struct MessageSender {} x3; }*remoteObjectRegistry;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)_initWithMessageSender:(struct MessageSender { int (**x1)(); }*)arg1;
+- (void)_callReplyWithID:(unsigned int)arg1 blockInvocation:(const struct UserData { struct RefPtr<API::Object> { struct Object {} *x_1_1_1; } x1; }*)arg2;
+- (id)_initWithMessageSender:(struct MessageSender { }*)arg1;
 - (void)_invalidate;
-- (void)_invokeMessageWithInterfaceIdentifier:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1 encodedInvocation:(const struct Dictionary { int (**x1)(); id x2; /* Warning: Unrecognized filer type: 'H' using 'void*' */ void*x3; void*x4; short x5; void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; SEL x14; SEL x15; unsigned short x16; void*x17; const int x18; in void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; SEL x25; SEL x26; void*x27; void*x28; float x29; void*x30; void*x31; const void*x32; void*x33; unsigned int x34; SEL x35; SEL x36; bycopy unsigned int x37/* : ? */; void*x38; void*x39; BOOL x40; void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; SEL x48; SEL x49; unsigned short x50; void*x51; const int x52; in void*x53; void*x54; void*x55; short x56; void*x57; void*x58; void*x59; void*x60; void*x61; void*x62; SEL x63; SEL x64; void*x65; void*x66; short x67; void*x68; void*x69; const void*x70; int x71; void*x72; short x73; void*x74; void*x75; void*x76; void*x77; SEL x78; SEL x79; unsigned short x80; void*x81; const int x82; in void*x83; void*x84; void*x85; void*x86; void*x87; void*x88; void*x89; SEL x90; SEL x91; void*x92; void*x93; short x94; void*x95; void*x96; const void*x97; int x98; void*x99; short x100; void*x101; void*x102; void*x103; void*x104; SEL x105; SEL x106; void*x107; void*x108; float x109; void*x110; void*x111; const void*x112; void*x113; unsigned int x114; SEL x115; SEL x116; bycopy unsigned int x117/* : ? */; void*x118; void*x119; BOOL x120; void*x121; void*x122; void*x123; void*x124; void*x125; void*x126; void*x127; struct HashTable<WTF::String, WTF::KeyValuePair<WTF::String, WTF::RefPtr<API::Object> >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<WTF::String, WTF::RefPtr<API::Object> > >, WTF::StringHash, WTF::HashMap<WTF::String, WTF::RefPtr<API::Object>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::RefPtr<API::Object> > >::KeyValuePairTraits, WTF::HashTraits<WTF::String> > { struct KeyValuePair<WTF::String, WTF::RefPtr<API::Object> > {} *x_128_1_1; unsigned int x_128_1_2; unsigned int x_128_1_3; unsigned int x_128_1_4; unsigned int x_128_1_5; } x128; }*)arg2;
-- (BOOL)_invokeMethod:(const struct UserData { struct RefPtr<API::Object> { struct Object {} *x_1_1_1; } x1; }*)arg1;
+- (void)_invokeMethod:(const struct RemoteObjectInvocation { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; struct RefPtr<API::Dictionary> { struct Dictionary {} *x_2_1_1; } x2; struct unique_ptr<WebKit::RemoteObjectInvocation::ReplyInfo, std::__1::default_delete<WebKit::RemoteObjectInvocation::ReplyInfo> > { struct __compressed_pair<WebKit::RemoteObjectInvocation::ReplyInfo *, std::__1::default_delete<WebKit::RemoteObjectInvocation::ReplyInfo> > { struct ReplyInfo {} *x_1_2_1; } x_3_1_1; } x3; }*)arg1;
 - (void)_sendInvocation:(id)arg1 interface:(id)arg2;
 - (void)registerExportedObject:(id)arg1 interface:(id)arg2;
 - (id)remoteObjectProxyWithInterface:(id)arg1;

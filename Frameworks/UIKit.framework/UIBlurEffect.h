@@ -3,14 +3,24 @@
  */
 
 @interface UIBlurEffect : UIVisualEffect {
-    int _style;
+    BOOL  _invertAutomaticStyle;
+    int  _style;
+    UIColor * _tintColor;
 }
 
+@property (nonatomic, readonly) BOOL _invertAutomaticStyle;
 @property (nonatomic, readonly) int _style;
 
++ (id)_effectWithStyle:(int)arg1 invertAutomaticStyle:(BOOL)arg2;
++ (id)_effectWithStyle:(int)arg1 tintColor:(id)arg2 invertAutomaticStyle:(BOOL)arg3;
++ (id)_effectWithTintColor:(id)arg1;
 + (id)effectWithStyle:(int)arg1;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
+- (BOOL)_invertAutomaticStyle;
+- (BOOL)_isATVStyle;
+- (BOOL)_isAutomaticStyle;
 - (int)_style;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)effectForUserInterfaceStyle:(int)arg1;

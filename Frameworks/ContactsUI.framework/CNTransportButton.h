@@ -3,29 +3,32 @@
  */
 
 @interface CNTransportButton : UIButton {
-    UIColor *_glyphColor;
-    UIImage *_image;
-    int _transportType;
+    UIColor * _glyphColor;
+    UIImage * _image;
+    BOOL  _showBackgroundPlatter;
+    int  _transportType;
 }
 
 @property (nonatomic, retain) UIColor *glyphColor;
 @property (nonatomic, retain) UIImage *image;
+@property (nonatomic) BOOL showBackgroundPlatter;
 @property (nonatomic) int transportType;
 
 + (id)transportButton;
++ (id)transportButtonWithType:(int)arg1;
 
 - (void).cxx_destruct;
 - (void)_updateImageWithType:(int)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })backgroundRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)glyphColor;
 - (id)image;
 - (id)imageNameForType:(int)arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)setGlyphColor:(id)arg1;
 - (void)setImage:(id)arg1;
+- (void)setShowBackgroundPlatter:(BOOL)arg1;
 - (void)setTransportType:(int)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)showBackgroundPlatter;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)tintColorDidChange;
 - (int)transportType;
 

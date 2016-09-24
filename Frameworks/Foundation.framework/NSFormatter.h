@@ -25,4 +25,32 @@
 
 - (void)_gkUpdateLocale;
 
+// Image: /System/Library/PrivateFrameworks/Home.framework/Home
+
++ (id)_hf_airParticulateSizeFormatter;
++ (id)_hf_airQualityFormatter;
++ (id)_hf_contactStateStateFormatter;
++ (id)_hf_controlDescriptionForDetectionCharacteristicOfType:(id)arg1 withValue:(id)arg2;
++ (id)_hf_controlTitleForCharacteristicType:(id)arg1;
++ (id)_hf_currentSecuritySystemStateFormatter;
++ (id)_hf_customValueFormatterForCharacteristicType:(id)arg1 metadata:(id)arg2 options:(id)arg3;
++ (id)_hf_doorStateFormatter;
++ (id)_hf_heatingCoolingFormatter;
++ (id)_hf_lockMechanismLastKnownActionFormatter;
++ (id)_hf_lockMechanismStateFormatter;
++ (id)_hf_microgramsPerMeterSquaredFormatter;
++ (id)_hf_partsPerMillionFormatter;
++ (id)_hf_positionFormatterWithOptions:(id)arg1;
++ (id)_hf_positionStateFormatter;
++ (id)_hf_powerStateFormatter;
++ (id)_hf_rotationDirectionFormatter;
++ (id)_hf_targetSecuritySystemStateFormatter;
++ (id)_hf_temperatureUnitFormatter;
++ (id)_hf_valueFormatterForCharacteristicMetadata:(id)arg1 options:(id)arg2;
++ (id)_hf_valueSetFormatterForCharacteristicType:(id)arg1;
++ (id)hf_controlDescriptionFormatterForCharacteristic:(id)arg1 options:(id)arg2;
++ (id)hf_controlDescriptionFormatterForCharacteristicType:(id)arg1 withMetadata:(id)arg2 options:(id)arg3;
++ (id)hf_valueFormatterForCharacteristic:(id)arg1 options:(id)arg2;
++ (id)hf_valueFormatterForCharacteristicType:(id)arg1 withMetadata:(id)arg2 options:(id)arg3;
+
 @end

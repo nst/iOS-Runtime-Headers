@@ -3,8 +3,8 @@
  */
 
 @interface TCFontFamily : NSObject {
-    NSArray *_members;
-    NSDictionary *_namesByLanguage;
+    NSArray * _members;
+    NSDictionary * _namesByLanguage;
 }
 
 @property (nonatomic, readonly) NSArray *members;

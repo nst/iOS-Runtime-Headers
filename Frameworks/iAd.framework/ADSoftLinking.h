@@ -3,17 +3,17 @@
  */
 
 @interface ADSoftLinking : NSObject {
-    Class _MPMoviePlayerController;
-    NSString *_MPMoviePlayerDidEnterFullscreenNotification;
-    NSString *_MPMoviePlayerDidExitFullscreenNotification;
-    NSString *_MPMoviePlayerIsAirPlayVideoActiveDidChangeNotification;
-    Class _MPMoviePlayerViewController;
-    NSString *_MPMoviePlayerWillEnterFullscreenNotification;
-    NSString *_MPMoviePlayerWillExitFullscreenNotification;
-    Class _MPNetworkPlayabilityMonitor;
-    NSMutableDictionary *_boundSymbols;
-    NSObject<OS_dispatch_queue> *_loadQueue;
-    NSMutableDictionary *_loadedFrameworks;
+    Class  _MPMoviePlayerController;
+    NSString * _MPMoviePlayerDidEnterFullscreenNotification;
+    NSString * _MPMoviePlayerDidExitFullscreenNotification;
+    NSString * _MPMoviePlayerIsAirPlayVideoActiveDidChangeNotification;
+    Class  _MPMoviePlayerViewController;
+    NSString * _MPMoviePlayerWillEnterFullscreenNotification;
+    NSString * _MPMoviePlayerWillExitFullscreenNotification;
+    Class  _MPNetworkPlayabilityMonitor;
+    NSMutableDictionary * _boundSymbols;
+    NSObject<OS_dispatch_queue> * _loadQueue;
+    NSMutableDictionary * _loadedFrameworks;
 }
 
 @property (nonatomic, readonly) Class ABNewPersonViewController;
@@ -35,12 +35,14 @@
 @property (nonatomic, readonly) Class EKEventEditViewController;
 @property (nonatomic, readonly) Class EKReminderViewController;
 @property (nonatomic, readonly) int (*IOSurfaceCreate;
+@property (nonatomic, readonly) int (*IOSurfaceCreateXPCObject;
 @property (nonatomic, readonly) int (*IOSurfaceGetAllocSize;
 @property (nonatomic, readonly) int (*IOSurfaceGetBaseAddress;
 @property (nonatomic, readonly) int (*IOSurfaceGetBytesPerRow;
 @property (nonatomic, readonly) int (*IOSurfaceGetHeight;
 @property (nonatomic, readonly) int (*IOSurfaceGetWidth;
 @property (nonatomic, readonly) int (*IOSurfaceLock;
+@property (nonatomic, readonly) int (*IOSurfaceLookupFromXPCObject;
 @property (nonatomic, readonly) int (*IOSurfaceUnlock;
 @property (nonatomic, readonly) Class MFMailComposeViewController;
 @property (nonatomic, readonly) Class MFMessageComposeViewController;
@@ -72,8 +74,6 @@
 @property (nonatomic, readonly) Class SLService;
 @property (nonatomic, readonly) NSString *SLServiceTypeTwitter;
 @property (nonatomic, readonly) Class TLToneManager;
-@property (nonatomic, readonly) NSString *UIMoviePlayerControllerDidEnterFullscreenNotification;
-@property (nonatomic, readonly) NSString *UIMoviePlayerControllerDidExitFullscreenNotification;
 @property (nonatomic, readonly) int (*VTImageRotationSessionCreate;
 @property (nonatomic, readonly) int (*VTImageRotationSessionInvalidate;
 @property (nonatomic, readonly) int (*VTImageRotationSessionRelease;
@@ -115,12 +115,14 @@
 - (Class)EKEventEditViewController;
 - (Class)EKReminderViewController;
 - (int (*)IOSurfaceCreate;
+- (int (*)IOSurfaceCreateXPCObject;
 - (int (*)IOSurfaceGetAllocSize;
 - (int (*)IOSurfaceGetBaseAddress;
 - (int (*)IOSurfaceGetBytesPerRow;
 - (int (*)IOSurfaceGetHeight;
 - (int (*)IOSurfaceGetWidth;
 - (int (*)IOSurfaceLock;
+- (int (*)IOSurfaceLookupFromXPCObject;
 - (int (*)IOSurfaceUnlock;
 - (Class)MFMailComposeViewController;
 - (Class)MFMessageComposeViewController;
@@ -152,8 +154,6 @@
 - (Class)SLService;
 - (id)SLServiceTypeTwitter;
 - (Class)TLToneManager;
-- (id)UIMoviePlayerControllerDidEnterFullscreenNotification;
-- (id)UIMoviePlayerControllerDidExitFullscreenNotification;
 - (int (*)VTImageRotationSessionCreate;
 - (int (*)VTImageRotationSessionInvalidate;
 - (int (*)VTImageRotationSessionRelease;

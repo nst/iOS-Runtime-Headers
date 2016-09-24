@@ -3,10 +3,10 @@
  */
 
 @interface MPUApplicationDefaults : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSString *_applicationIdentifier;
-    NSDictionary *_defaultValues;
-    unsigned int _referenceCountForDefferringUpdates;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSString * _applicationIdentifier;
+    NSDictionary * _defaultValues;
+    unsigned int  _referenceCountForDefferringUpdates;
 }
 
 - (void).cxx_destruct;

@@ -3,10 +3,10 @@
  */
 
 @interface MRTextEditingSession : NSObject <NSMutableCopying> {
-    MRTextEditingAttributes *_attributes;
-    BOOL _editing;
-    NSString *_text;
-    unsigned int _uniqueIdentifier;
+    MRTextEditingAttributes * _attributes;
+    BOOL  _editing;
+    NSString * _text;
+    unsigned int  _uniqueIdentifier;
 }
 
 @property (nonatomic, readonly) MRTextEditingAttributes *attributes;

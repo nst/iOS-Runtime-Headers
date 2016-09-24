@@ -3,8 +3,8 @@
  */
 
 @interface _DKIdentifier : _DKObject <_DKHasComparableValue, _DKHasObjectType, _DKHasPrimaryValue> {
-    _DKIdentifierType *_identifierType;
-    NSString *_stringValue;
+    _DKIdentifierType * _identifierType;
+    NSString * _stringValue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,25 +14,26 @@
 @property (retain) NSString *stringValue;
 @property (readonly) Class superclass;
 
++ (id)_identifierFromManagedObject:(id)arg1 readMetadata:(BOOL)arg2 cache:(id)arg3;
 + (id)entityName;
 + (id)identifierWithString:(id)arg1 type:(id)arg2;
++ (id)objectFromManagedObject:(id)arg1 readMetadata:(BOOL)arg2 cache:(id)arg3;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (int)compareValue:(id)arg1;
-- (BOOL)copyFromManagedObject:(id)arg1 readMetadata:(BOOL)arg2;
 - (BOOL)copyToManagedObject:(id)arg1;
 - (id)description;
+- (double)doubleValue;
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifierType;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithString:(id)arg1 type:(id)arg2;
+- (int)integerValue;
 - (id)objectType;
 - (id)primaryValue;
 - (void)setIdentifierType:(id)arg1;
 - (void)setStringValue:(id)arg1;
 - (id)stringValue;
-- (double)valueDouble;
-- (long long)valueInteger;
 
 @end

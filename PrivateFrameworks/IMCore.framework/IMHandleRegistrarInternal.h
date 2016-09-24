@@ -3,13 +3,13 @@
  */
 
 @interface IMHandleRegistrarInternal : NSObject {
-    NSMutableDictionary *_accountSiblingsMap;
-    NSMutableArray *_allIMHandles;
-    BOOL _buildingChatSiblings;
-    NSMutableDictionary *_chatSiblingsMap;
-    NSMutableDictionary *_existingAccountSiblingsMap;
-    NSMutableDictionary *_existingChatSiblingsMap;
-    NSMutableDictionary *_siblingsMap;
+    NSMutableDictionary * _accountSiblingsMap;
+    NSMutableArray * _allIMHandles;
+    BOOL  _buildingChatSiblings;
+    NSMutableDictionary * _chatSiblingsMap;
+    NSMutableDictionary * _existingAccountSiblingsMap;
+    NSMutableDictionary * _existingChatSiblingsMap;
+    NSMutableDictionary * _siblingsMap;
 }
 
 - (void)dealloc;

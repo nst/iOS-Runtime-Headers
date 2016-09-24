@@ -3,8 +3,8 @@
  */
 
 @interface GQDBGPlaceholder : GQDDrawable {
-    BOOL mIsVisible;
-    GQDSStyle *mStyle;
+    BOOL  mIsVisible;
+    GQDSStyle * mStyle;
 }
 
 - (void)dealloc;

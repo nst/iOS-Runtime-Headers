@@ -3,8 +3,8 @@
  */
 
 @interface ICLocalFileWrapper : NSFileWrapper <NSSecureCoding> {
-    NSData *_cachedData;
-    NSURL *_localURL;
+    NSData * _cachedData;
+    NSURL * _localURL;
 }
 
 @property (nonatomic, retain) NSData *cachedData;

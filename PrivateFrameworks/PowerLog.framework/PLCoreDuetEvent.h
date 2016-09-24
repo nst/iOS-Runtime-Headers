@@ -3,11 +3,11 @@
  */
 
 @interface PLCoreDuetEvent : NSObject {
-    NSString *_bundleID;
-    NSDictionary *_childBundleIDToWeight;
-    NSArray *_eventIntervals;
-    NSString *_processName;
-    unsigned char _updateType;
+    NSString * _bundleID;
+    NSDictionary * _childBundleIDToWeight;
+    NSArray * _eventIntervals;
+    NSString * _processName;
+    unsigned char  _updateType;
 }
 
 @property (retain) NSString *bundleID;

@@ -3,21 +3,22 @@
  */
 
 @interface TDRenditionKeySpec : NSManagedObject <TDElementAttributes> {
-    unsigned int _dimension1;
-    unsigned int _dimension2;
-    unsigned int _memoryClass;
-    unsigned int _nameIdentifier;
-    unsigned int _scaleFactor;
-    struct _renditionkeytoken { unsigned short x1; unsigned short x2; } *_scratchKey;
+    unsigned int  _dimension1;
+    unsigned int  _dimension2;
+    unsigned int  _memoryClass;
+    unsigned int  _nameIdentifier;
+    unsigned int  _scaleFactor;
+    struct _renditionkeytoken { unsigned short x1; unsigned short x2; } * _scratchKey;
     struct _renditionkeytoken { 
         unsigned short identifier; 
         unsigned short value; 
-    } _stackScratchKey;
-    unsigned int _subtype;
+    }  _stackScratchKey;
+    unsigned int  _subtype;
 }
 
 @property (nonatomic, retain) TDThemeDirection *direction;
 @property (nonatomic, retain) TDThemeElement *element;
+@property (nonatomic, retain) TDThemeDisplayGamut *gamut;
 @property (nonatomic, retain) TDThemeGraphicsFeatureSetClass *graphicsFeatureSetClass;
 @property (nonatomic, retain) TDThemeIdiom *idiom;
 @property (nonatomic, retain) TDThemeDrawingLayer *layer;
@@ -29,6 +30,7 @@
 @property (nonatomic, retain) TDThemeUISizeClass *sizeClassHorizontal;
 @property (nonatomic, retain) TDThemeUISizeClass *sizeClassVertical;
 @property (nonatomic, retain) TDThemeState *state;
+@property (nonatomic, retain) TDThemeDeploymentTarget *target;
 @property (nonatomic, retain) TDThemeValue *value;
 
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;

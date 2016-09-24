@@ -3,7 +3,7 @@
  */
 
 @interface SCNActionReference : SCNActionGroup {
-    NSString *referenceName;
+    NSString * referenceName;
 }
 
 @property (nonatomic, copy) NSString *referenceName;

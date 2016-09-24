@@ -3,10 +3,10 @@
  */
 
 @interface PHPhotosPickerViewController : UIViewController {
-    id /* block */ _completionHandler;
-    PHPhotosPickerOptions *_options;
-    PUPhotosPickerViewController *_photosPickerViewController;
-    PUPhotosPickerViewControllerSpec *_spec;
+    id /* block */  _completionHandler;
+    PHPhotosPickerOptions * _options;
+    PUPhotosPickerViewController * _photosPickerViewController;
+    PUPhotosPickerViewControllerSpec * _spec;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;

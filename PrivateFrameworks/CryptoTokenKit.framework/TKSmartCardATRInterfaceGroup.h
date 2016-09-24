@@ -3,8 +3,8 @@
  */
 
 @interface TKSmartCardATRInterfaceGroup : NSObject {
-    NSNumber *_ABC;
-    NSNumber *_protocol;
+    NSNumber * _ABC;
+    NSNumber * _protocol;
 }
 
 @property (nonatomic, readonly) NSNumber *TA;

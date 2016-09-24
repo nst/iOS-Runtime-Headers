@@ -3,10 +3,10 @@
  */
 
 @interface CNAutocompleteQueryResponsePreparer : NSObject {
-    <CNAutocompleteFetchDelegate> *_delegate;
-    <CNPromise> *_matchingPriorityResultsPromise;
-    NSMutableOrderedSet *_previouslyReturnedResults;
-    <CNFuture> *_priorityResultsFuture;
+    <CNAutocompleteFetchDelegate> * _delegate;
+    <CNPromise> * _matchingPriorityResultsPromise;
+    NSMutableOrderedSet * _previouslyReturnedResults;
+    <CNFuture> * _priorityResultsFuture;
 }
 
 @property (nonatomic, readonly) <CNAutocompleteFetchDelegate> *delegate;

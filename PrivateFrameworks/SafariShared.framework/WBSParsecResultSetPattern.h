@@ -3,7 +3,7 @@
  */
 
 @interface WBSParsecResultSetPattern : NSObject {
-    NSRegularExpression *_regularExpression;
+    NSRegularExpression * _regularExpression;
 }
 
 + (id)_nextTokenInResultSetPattern:(id)arg1;

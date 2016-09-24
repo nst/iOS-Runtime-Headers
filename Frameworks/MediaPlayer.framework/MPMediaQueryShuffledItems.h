@@ -3,20 +3,20 @@
  */
 
 @interface MPMediaQueryShuffledItems : NSObject <NSCopying, NSSecureCoding> {
-    unsigned int _activeShuffleType;
-    BOOL _dirty;
+    int  _activeShuffleType;
+    BOOL  _dirty;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _focusedRange;
-    NSMutableArray *_orderedArray;
-    MPMediaQuery *_sourceMediaQuery;
-    NSArray *_sourceMediaQueryItems;
+    }  _focusedRange;
+    NSMutableArray * _orderedArray;
+    MPMediaQuery * _sourceMediaQuery;
+    NSArray * _sourceMediaQueryItems;
 }
 
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } focusedRange;
 @property (nonatomic, readonly, copy) NSArray *items;
-@property (nonatomic, readonly) unsigned int realShuffleType;
+@property (nonatomic, readonly) int realShuffleType;
 @property (nonatomic, readonly) MPMediaQuery *sourceMediaQuery;
 
 + (BOOL)supportsSecureCoding;
@@ -33,17 +33,17 @@
 - (unsigned int)count;
 - (void)encodeWithCoder:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })focusedRange;
-- (unsigned int)indexOfItemWithPersistentID:(unsigned long long)arg1;
-- (unsigned int)indexOfItemWithPersistentID:(unsigned long long)arg1 greaterThanOrEqualToIndex:(unsigned int)arg2;
+- (unsigned int)indexOfItemWithPersistentID:(unsigned int)arg1;
+- (unsigned int)indexOfItemWithPersistentID:(unsigned int)arg1 greaterThanOrEqualToIndex:(unsigned int)arg2;
 - (unsigned int)indexOfObject:(id)arg1;
 - (unsigned int)indexOfObject:(id)arg1 greaterThanOrEqualToIndex:(unsigned int)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSourceMediaQuery:(id)arg1;
-- (id)initWithSourceMediaQuery:(id)arg1 orderedItems:(id)arg2 shuffleType:(unsigned int)arg3;
+- (id)initWithSourceMediaQuery:(id)arg1 orderedItems:(id)arg2 shuffleType:(int)arg3;
 - (void)invalidateSourceMediaQueryAndLoadItems;
 - (id)items;
 - (id)objectAtIndex:(unsigned int)arg1;
-- (unsigned int)realShuffleType;
+- (int)realShuffleType;
 - (void)setFocusedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)shuffleAlbumsWithInitialIndex:(unsigned int)arg1;
 - (void)shuffleItemsWithInitialIndex:(unsigned int)arg1;

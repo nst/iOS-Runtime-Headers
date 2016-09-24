@@ -3,7 +3,7 @@
  */
 
 @interface PLCloudSharedUpdateAlbumMetadataJob : PLCloudSharingJob {
-    NSDictionary *_metadata;
+    NSDictionary * _metadata;
 }
 
 @property (nonatomic, retain) NSDictionary *metadata;
@@ -12,7 +12,7 @@
 
 - (id)_argumentsDictionaryAsData:(id)arg1;
 - (id)_argumentsDictionaryFromXPCEvent:(id)arg1;
-- (long long)daemonOperation;
+- (int)daemonOperation;
 - (void)dealloc;
 - (id)description;
 - (void)encodeToXPCObject:(id)arg1;

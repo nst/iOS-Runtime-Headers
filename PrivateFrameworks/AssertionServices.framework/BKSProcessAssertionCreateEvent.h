@@ -3,9 +3,9 @@
  */
 
 @interface BKSProcessAssertionCreateEvent : BKSProcessAssertionUpdateEvent <BSXPCCoding> {
-    unsigned int _reason;
-    NSString *_targetBundleIdentifier;
-    int _targetPID;
+    unsigned int  _reason;
+    NSString * _targetBundleIdentifier;
+    int  _targetPID;
 }
 
 @property (readonly, copy) NSString *debugDescription;

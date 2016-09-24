@@ -6,7 +6,6 @@
 
 @property (nonatomic) BOOL allowReachability;
 @property (nonatomic, readonly) BOOL reallyDisableReachability;
-@property (getter=isTTYEnabled, nonatomic, readonly) BOOL ttyEnabled;
 
 - (void)_bindAndRegisterDefaults;
 

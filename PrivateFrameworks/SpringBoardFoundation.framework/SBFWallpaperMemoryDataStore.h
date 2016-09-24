@@ -3,12 +3,12 @@
  */
 
 @interface SBFWallpaperMemoryDataStore : NSObject <BSDescriptionProviding, SBFWallpaperDataStore> {
-    NSMutableDictionary *_images;
-    NSMutableDictionary *_originalImages;
-    NSMutableDictionary *_proceduralInfo;
-    NSMutableDictionary *_thumbnails;
-    NSMutableDictionary *_videoURLs;
-    NSMutableDictionary *_wallpaperOptions;
+    NSMutableDictionary * _images;
+    NSMutableDictionary * _originalImages;
+    NSMutableDictionary * _proceduralInfo;
+    NSMutableDictionary * _thumbnails;
+    NSMutableDictionary * _videoURLs;
+    NSMutableDictionary * _wallpaperOptions;
 }
 
 @property (readonly, copy) NSString *debugDescription;

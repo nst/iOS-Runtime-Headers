@@ -3,7 +3,7 @@
  */
 
 @interface GQDTComputedFormatSpec : NSObject {
-    id mFormat;
+    id  mFormat;
 }
 
 - (void)dealloc;

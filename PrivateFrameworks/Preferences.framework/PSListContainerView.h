@@ -3,7 +3,7 @@
  */
 
 @interface PSListContainerView : UIView {
-    PSListController *_delegate;
+    PSListController * _delegate;
 }
 
 @property (nonatomic) PSListController *delegate;

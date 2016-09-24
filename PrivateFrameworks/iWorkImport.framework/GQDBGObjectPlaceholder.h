@@ -3,8 +3,8 @@
  */
 
 @interface GQDBGObjectPlaceholder : GQDBGPlaceholder <GQDNameMappable> {
-    char *mContentType;
-    GQDDrawable *mDrawable;
+    char * mContentType;
+    GQDDrawable * mDrawable;
 }
 
 @property (readonly, copy) NSString *debugDescription;

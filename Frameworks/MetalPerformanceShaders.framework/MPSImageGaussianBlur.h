@@ -3,25 +3,26 @@
  */
 
 @interface MPSImageGaussianBlur : MPSUnaryImageKernel {
-    BOOL _cheesyBlur;
-    unsigned int _numSteps;
-    const double *_plan;
-    int _planSteps;
-    float _scale;
-    float _sigma;
-    MPSImageConvolution *smallConv;
+    BOOL  _cheesyBlur;
+    unsigned int  _numSteps;
+    const double * _plan;
+    int  _planSteps;
+    double  _scale;
+    double  _sigma;
+    MPSImageConvolution * smallConv;
 }
 
-@property (nonatomic, readonly) float sigma;
+@property (nonatomic, readonly) double sigma;
+
++ (const struct MPSLibraryInfo { int x1; unsigned int x2; char *x3; struct MPSKernelInfo {} *x4; struct MPSKernelInfo {} *x5; struct MPSKernelInfo {} *x6; struct MPSKernelInfo {} *x7; struct MPSKernelInfo {} *x8; struct MPSKernelInfo {} *x9; struct MPSKernelInfo {} *x10; struct MPSKernelInfo {} *x11; struct MPSKernelInfo {} *x12; struct MPSKernelInfo {} *x13; struct MPSKernelInfo {} *x14; }*)libraryInfo;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1 device:(id)arg2;
 - (void)dealloc;
 - (id)debugDescription;
-- (long)encodeWithComputeEncoder:(id)arg1 commandBuffer:(id)arg2 sourceTexture:(id)arg3 destinationTexture:(id)arg4 callInfo:(const struct { struct MIPixelInfo {} *x1; struct MIPixelInfo {} *x2; struct { struct { unsigned int x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; } x_3_1_1; struct { unsigned int x_2_2_1; unsigned int x_2_2_2; unsigned int x_2_2_3; } x_3_1_2; } x3; }*)arg5;
 - (id)initWithDevice:(id)arg1;
 - (id)initWithDevice:(id)arg1 sigma:(float)arg2;
 - (float)sigma;
-- (struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; })sourceRegionForDestinationSize:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg1;
+- (struct MPSRegion { struct MPSOrigin { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct MPSSize { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; })sourceRegionForDestinationSize:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg1;
 - (void)toggleCheesyBlur;
 
 @end

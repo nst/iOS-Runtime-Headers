@@ -3,23 +3,23 @@
  */
 
 @interface AboutDataSource : PSSpecifierDataSource {
-    BOOL _accessory;
-    PSSpecifier *_accessoryDividerSpecifier;
-    BOOL _cancel;
-    int _carrierCellState;
-    NSString *_deviceNameToIgnoreOnce;
-    BOOL _hasLoadedSpecifiers;
-    PSSpecifier *_headsetSpecifier;
-    BOOL _isGeneratingNotifications;
-    BOOL _loaded;
-    NSString *_loading;
-    NSLock *_lock;
-    NSMutableDictionary *_mediaDict;
-    <NSObject> *_photoVideoNotificationToken;
-    NSTimer *_reloadTimer;
-    NSString *_serviceProviderNameForSPN;
-    int _simCellState;
-    BOOL _threadRunning;
+    BOOL  _accessory;
+    PSSpecifier * _accessoryDividerSpecifier;
+    BOOL  _cancel;
+    int  _carrierCellState;
+    NSString * _deviceNameToIgnoreOnce;
+    BOOL  _hasLoadedSpecifiers;
+    PSSpecifier * _headsetSpecifier;
+    BOOL  _isGeneratingNotifications;
+    BOOL  _loaded;
+    NSString * _loading;
+    NSLock * _lock;
+    NSMutableDictionary * _mediaDict;
+    <NSObject> * _photoVideoNotificationToken;
+    NSTimer * _reloadTimer;
+    NSString * _serviceProviderNameForSPN;
+    int  _simCellState;
+    BOOL  _threadRunning;
 }
 
 @property (nonatomic, retain) NSString *deviceNameToIgnoreOnce;

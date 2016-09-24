@@ -15,7 +15,7 @@
 
 @optional
 
-- (<MMCSAsset> *)MMCSEngine:(MMCSEngine *)arg1 didRequestAssetWithItemID:(unsigned long long)arg2;
+- (<MMCSAsset> *)MMCSEngine:(MMCSEngine *)arg1 didRequestAssetWithItemID:(unsigned int)arg2;
 - (void)MMCSEngine:(MMCSEngine *)arg1 logMessage:(NSString *)arg2 logLevel:(int)arg3;
 - (void)MMCSEngine:(MMCSEngine *)arg1 logPerformanceMetrics:(NSString *)arg2;
 - (BOOL)MMCSEngine:(MMCSEngine *)arg1 shouldLogAtLogLevel:(int)arg2;

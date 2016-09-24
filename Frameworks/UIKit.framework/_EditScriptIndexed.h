@@ -3,7 +3,7 @@
  */
 
 @interface _EditScriptIndexed : _EditScript {
-    _EditScriptIndexedAtom *_currentScriptAtom;
+    _EditScriptIndexedAtom * _currentScriptAtom;
 }
 
 + (id)editScriptFromArray:(id)arg1 toArray:(id)arg2;

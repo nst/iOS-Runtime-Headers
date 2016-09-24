@@ -3,7 +3,7 @@
  */
 
 @interface NNMKProtoInitialAccountsSync : PBCodable <NSCopying> {
-    NSMutableArray *_initialAccounts;
+    NSMutableArray * _initialAccounts;
 }
 
 @property (nonatomic, retain) NSMutableArray *initialAccounts;

@@ -3,20 +3,29 @@
  */
 
 @interface CKShareParticipant : NSObject <NSCopying, NSSecureCoding> {
-    int _acceptanceStatus;
-    BOOL _isCurrentUser;
-    int _originalAcceptanceStatus;
-    int _originalParticipantType;
-    int _originalPermission;
-    CKUserIdentity *_originalUserIdentity;
-    NSString *_participantID;
-    int _permission;
-    CKShareID *_shareID;
-    int _type;
-    CKUserIdentity *_userIdentity;
+    int  _acceptanceStatus;
+    BOOL  _acceptedInProcess;
+    BOOL  _createdInProcess;
+    NSData * _encryptedPersonalInfo;
+    NSString * _inviterID;
+    BOOL  _isCurrentUser;
+    int  _originalAcceptanceStatus;
+    int  _originalParticipantType;
+    int  _originalPermission;
+    CKUserIdentity * _originalUserIdentity;
+    NSString * _participantID;
+    int  _permission;
+    NSData * _protectionInfo;
+    CKRecordID * _shareRecordID;
+    int  _type;
+    CKUserIdentity * _userIdentity;
 }
 
 @property (nonatomic) int acceptanceStatus;
+@property (nonatomic) BOOL acceptedInProcess;
+@property (nonatomic) BOOL createdInProcess;
+@property (nonatomic, retain) NSData *encryptedPersonalInfo;
+@property (nonatomic, retain) NSString *inviterID;
 @property (nonatomic) BOOL isCurrentUser;
 @property (nonatomic) int originalAcceptanceStatus;
 @property (nonatomic) int originalParticipantType;
@@ -24,32 +33,44 @@
 @property (nonatomic, retain) CKUserIdentity *originalUserIdentity;
 @property (nonatomic, retain) NSString *participantID;
 @property (nonatomic) int permission;
-@property (nonatomic, retain) CKShareID *shareID;
+@property (nonatomic, retain) NSData *protectionInfo;
+@property (nonatomic, retain) CKRecordID *shareRecordID;
 @property (nonatomic) int type;
 @property (nonatomic, retain) CKUserIdentity *userIdentity;
+
+// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)CKPropertiesDescription;
+- (id)CKPropertiesToDescribe:(BOOL)arg1;
+- (id)_initWithUserIdentity:(id)arg1;
+- (void)_stripPersonalInfo;
 - (int)acceptanceStatus;
+- (BOOL)acceptedInProcess;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (BOOL)createdInProcess;
 - (id)debugDescription;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (id)encryptedPersonalInfo;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithUserIdentity:(id)arg1;
+- (id)inviterID;
 - (BOOL)isCurrentUser;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isEquivalentToParticipant:(id)arg1;
 - (int)originalAcceptanceStatus;
 - (int)originalParticipantType;
 - (int)originalPermission;
 - (id)originalUserIdentity;
 - (id)participantID;
 - (int)permission;
+- (id)protectionInfo;
 - (void)setAcceptanceStatus:(int)arg1;
+- (void)setAcceptedInProcess:(BOOL)arg1;
+- (void)setCreatedInProcess:(BOOL)arg1;
+- (void)setEncryptedPersonalInfo:(id)arg1;
+- (void)setInviterID:(id)arg1;
 - (void)setIsCurrentUser:(BOOL)arg1;
 - (void)setOriginalAcceptanceStatus:(int)arg1;
 - (void)setOriginalParticipantType:(int)arg1;
@@ -57,11 +78,19 @@
 - (void)setOriginalUserIdentity:(id)arg1;
 - (void)setParticipantID:(id)arg1;
 - (void)setPermission:(int)arg1;
-- (void)setShareID:(id)arg1;
+- (void)setProtectionInfo:(id)arg1;
+- (void)setShareRecordID:(id)arg1;
 - (void)setType:(int)arg1;
 - (void)setUserIdentity:(id)arg1;
-- (id)shareID;
+- (id)shareRecordID;
 - (int)type;
+- (id)unifiedContactsInStore:(id)arg1 keysToFetch:(id)arg2 error:(id*)arg3;
 - (id)userIdentity;
+
+// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
+
+- (void)_decryptPersonalInfoWithPCSBlob:(struct _OpaquePCSShareProtection { }*)arg1 pcsManager:(id)arg2;
+- (void)_encryptPersonalInfoWithPCSBlob:(struct _OpaquePCSShareProtection { }*)arg1 pcsManager:(id)arg2;
+- (BOOL)hasEncryptedPersonalInfo;
 
 @end

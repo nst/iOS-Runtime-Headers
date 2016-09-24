@@ -2,17 +2,22 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUAssetReference : NSObject <NSCopying> {
-    <PUDisplayAsset> *_asset;
-    <PUDisplayAssetCollection> *_assetCollection;
-    NSString *_dataSourceIdentifier;
-    NSIndexPath *_indexPath;
+@interface PUAssetReference : NSObject <NSCopying, PXAssetReferenceProtocol> {
+    <PUDisplayAsset> * _asset;
+    <PUDisplayAssetCollection> * _assetCollection;
+    NSString * _dataSourceIdentifier;
+    NSIndexPath * _indexPath;
 }
 
 @property (nonatomic, readonly) <PUDisplayAsset> *asset;
 @property (nonatomic, readonly) <PUDisplayAssetCollection> *assetCollection;
 @property (nonatomic, readonly) NSString *dataSourceIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSIndexPath *indexPath;
+@property (nonatomic, readonly) struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; } simpleIndexPath;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)asset;
@@ -25,5 +30,6 @@
 - (id)init;
 - (id)initWithAsset:(id)arg1 assetCollection:(id)arg2 indexPath:(id)arg3 dataSourceIdentifier:(id)arg4;
 - (BOOL)isEqual:(id)arg1;
+- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })simpleIndexPath;
 
 @end

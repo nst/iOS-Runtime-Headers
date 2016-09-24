@@ -3,9 +3,9 @@
  */
 
 @interface MusicContextualLibraryUpdateAlertAction : MusicContextualAlertAction {
-    BOOL _isAddAction;
-    BOOL _isKeepLocalAction;
-    BOOL _isRemoveAction;
+    BOOL  _isAddAction;
+    BOOL  _isKeepLocalAction;
+    BOOL  _isRemoveAction;
 }
 
 @property (nonatomic, readonly) BOOL isAddAction;

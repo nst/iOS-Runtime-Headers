@@ -3,9 +3,11 @@
  */
 
 @interface _UICAPackageView : UIView {
-    CAPackage *_package;
-    NSArray *_rootViews;
+    CAPackage * _package;
+    NSArray * _rootViews;
 }
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)_newViewHierarchyFrom:(id)arg1 publishedObjectViewClassMap:(id)arg2 into:(id)arg3;
 + (BOOL)_shouldCatchDecodingExceptions;
@@ -18,5 +20,11 @@
 - (id)initWithData:(id)arg1 publishedObjectViewClassMap:(id)arg2;
 - (id)publishedObjectWithName:(id)arg1;
 - (id)publishedViewWithName:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Widgets.framework/Widgets
+
+- (id)sb_debugLabel;
+- (void)wg_setShowsDebugLabel:(BOOL)arg1;
+- (BOOL)wg_showsDebugLabel;
 
 @end

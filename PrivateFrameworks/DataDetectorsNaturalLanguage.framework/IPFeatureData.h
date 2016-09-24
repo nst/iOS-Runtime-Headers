@@ -3,9 +3,9 @@
  */
 
 @interface IPFeatureData : IPFeature {
-    NSMutableDictionary *_contextDictionary;
-    unsigned int _type;
-    id _value;
+    NSMutableDictionary * _contextDictionary;
+    unsigned int  _type;
+    id  _value;
 }
 
 @property (readonly) NSMutableDictionary *contextDictionary;

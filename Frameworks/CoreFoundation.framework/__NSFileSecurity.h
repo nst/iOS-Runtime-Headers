@@ -3,7 +3,7 @@
  */
 
 @interface __NSFileSecurity : NSFileSecurity <NSCoding, NSCopying> {
-    struct _filesec { } *_filesec;
+    struct _filesec { } * _filesec;
 }
 
 + (id)__new:(struct _filesec { }*)arg1;
@@ -17,7 +17,6 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (void)finalize;
 - (BOOL)getGroup:(unsigned int*)arg1;
 - (BOOL)getGroupUUID:(unsigned char*)arg1;
 - (BOOL)getMode:(unsigned short*)arg1;

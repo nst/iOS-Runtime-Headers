@@ -3,15 +3,15 @@
  */
 
 @interface SLTwitterRequest : NSObject {
-    ACAccount *_account;
-    NSString *_applicationID;
-    int _callingPID;
-    OACredential *_credential;
-    NSMutableArray *_multiParts;
-    NSMutableDictionary *_parameters;
-    int _requestMethod;
-    NSObject<SLTimestampSkewStorageDelegate> *_timestampSkewStorageDelegate;
-    NSURL *_url;
+    ACAccount * _account;
+    NSString * _applicationID;
+    int  _callingPID;
+    OACredential * _credential;
+    NSMutableArray * _multiParts;
+    NSMutableDictionary * _parameters;
+    int  _requestMethod;
+    NSObject<SLTimestampSkewStorageDelegate> * _timestampSkewStorageDelegate;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

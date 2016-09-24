@@ -3,18 +3,18 @@
  */
 
 @interface HDCoachingDiagnosticSubmittableMetrics : NSObject {
-    HKActivitySummary *_activitySummary;
-    NSNumber *_biologicalSex;
-    NSDate *_dateOfBirth;
-    NSArray *_diagnosticData;
-    HKQuantitySample *_heightSample;
-    NSDate *_startOfDay;
-    HKQuantitySample *_weightSample;
+    HKActivitySummary * _activitySummary;
+    NSNumber * _biologicalSex;
+    NSDateComponents * _dateOfBirth;
+    NSArray * _diagnosticData;
+    HKQuantitySample * _heightSample;
+    NSDate * _startOfDay;
+    HKQuantitySample * _weightSample;
 }
 
 @property (nonatomic, retain) HKActivitySummary *activitySummary;
 @property (nonatomic, retain) NSNumber *biologicalSex;
-@property (nonatomic, retain) NSDate *dateOfBirth;
+@property (nonatomic, retain) NSDateComponents *dateOfBirth;
 @property (nonatomic, readonly) NSArray *diagnosticData;
 @property (nonatomic, retain) HKQuantitySample *heightSample;
 @property (nonatomic, retain) NSDate *startOfDay;

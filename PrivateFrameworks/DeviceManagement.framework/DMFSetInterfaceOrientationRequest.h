@@ -3,8 +3,8 @@
  */
 
 @interface DMFSetInterfaceOrientationRequest : CATTaskRequest {
-    int _interfaceOrientation;
-    BOOL _lockOrientation;
+    int  _interfaceOrientation;
+    BOOL  _lockOrientation;
 }
 
 @property (nonatomic) int interfaceOrientation;

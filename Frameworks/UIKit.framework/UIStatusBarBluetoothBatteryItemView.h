@@ -3,7 +3,7 @@
  */
 
 @interface UIStatusBarBluetoothBatteryItemView : UIStatusBarItemView {
-    int _capacity;
+    int  _capacity;
 }
 
 - (id)contentsImage;

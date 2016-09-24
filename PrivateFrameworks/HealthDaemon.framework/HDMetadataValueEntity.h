@@ -9,13 +9,13 @@
 + (id)_predicateForEntityWithKeyID:(id)arg1;
 + (id)_predicateForEntityWithObjectID:(id)arg1;
 + (id)columnsDefinition;
-+ (id)createNonUniqueIndicesForColumns;
 + (id)databaseTable;
 + (id)deleteStatementForObjectMetadataWithDatabase:(id)arg1;
++ (id)indices;
 + (id)insertMetadataValueWithKeyID:(id)arg1 objectID:(id)arg2 value:(id)arg3 healthDatabase:(id)arg4 error:(id*)arg5;
 + (id)metadataValueStatementWithDatabase:(id)arg1;
 + (int)protectionClass;
 
-- (id)valueWithDatabase:(id)arg1;
+- (id)valueWithDatabase:(id)arg1 error:(id*)arg2;
 
 @end

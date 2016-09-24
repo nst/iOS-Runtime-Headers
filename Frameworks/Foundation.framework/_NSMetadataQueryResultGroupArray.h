@@ -3,13 +3,12 @@
  */
 
 @interface _NSMetadataQueryResultGroupArray : NSArray {
-    id _group;
+    id  _group;
 }
 
 - (id)_init:(id)arg1;
 - (unsigned int)count;
 - (void)dealloc;
-- (void)finalize;
 - (id)objectAtIndex:(unsigned int)arg1;
 
 @end

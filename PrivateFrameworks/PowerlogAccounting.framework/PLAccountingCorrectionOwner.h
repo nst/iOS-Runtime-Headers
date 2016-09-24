@@ -3,7 +3,7 @@
  */
 
 @interface PLAccountingCorrectionOwner : PLAccountingOwner {
-    PLAccountingEnergyEstimateEventEntry *_rootEnergyEstimate;
+    PLAccountingEnergyEstimateEventEntry * _rootEnergyEstimate;
 }
 
 @property <PLAccountingCorrectionOwnerManager> *manager;

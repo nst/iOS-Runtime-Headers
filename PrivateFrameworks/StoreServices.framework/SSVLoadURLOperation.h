@@ -2,39 +2,41 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSVLoadURLOperation : NSOperation <NSURLConnectionDelegate> {
-    AKAppleIDSession *_authKitSession;
-    NSMutableData *_dataBuffer;
-    SSVURLDataConsumer *_dataConsumer;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    BOOL _iTunesStoreRequest;
-    NSData *_inputData;
-    int _machineDataRetryCount;
-    int _machineDataStyle;
-    SSMetricsPageEvent *_metricsPageEvent;
-    id /* block */ _outputBlock;
-    id /* block */ _prepareRequestBlock;
-    NSMutableSet *_protocolRedirectURLs;
-    BOOL _recordsMetrics;
-    NSURL *_redirectURL;
-    NSString *_referrerApplicationName;
-    NSString *_referrerURLString;
-    NSHTTPURLResponse *_response;
-    NSRunLoop *_runLoop;
-    SSVFairPlaySAPSession *_sapSession;
-    SSVSAPSignaturePolicy *_sapSignaturePolicy;
-    BOOL _shouldRetry;
-    BOOL _stopped;
-    NSString *_storeFrontSuffix;
-    SSURLBag *_urlBag;
-    SSVURLBagInterpreter *_urlBagInterpreter;
-    NSURLRequest *_urlRequest;
+@interface SSVLoadURLOperation : NSOperation <SSURLSessionManagerDelegate> {
+    AKAppleIDSession * _authKitSession;
+    NSMutableData * _dataBuffer;
+    SSVURLDataConsumer * _dataConsumer;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    BOOL  _iTunesStoreRequest;
+    NSData * _inputData;
+    int  _machineDataRetryCount;
+    int  _machineDataStyle;
+    SSMetricsPageEvent * _metricsPageEvent;
+    id /* block */  _outputBlock;
+    id /* block */  _prepareRequestBlock;
+    NSMutableSet * _protocolRedirectURLs;
+    BOOL  _recordsMetrics;
+    NSURL * _redirectURL;
+    NSString * _referrerApplicationName;
+    NSString * _referrerURLString;
+    NSHTTPURLResponse * _response;
+    NSRunLoop * _runLoop;
+    SSVFairPlaySAPSession * _sapSession;
+    SSVSAPSignaturePolicy * _sapSignaturePolicy;
+    BOOL  _shouldRetry;
+    BOOL  _stopped;
+    NSString * _storeFrontSuffix;
+    SSURLBag * _urlBag;
+    SSVURLBagInterpreter * _urlBagInterpreter;
+    NSURLRequest * _urlRequest;
 }
 
 @property (getter=isITunesStoreRequest) BOOL ITunesStoreRequest;
 @property (retain) SSVFairPlaySAPSession *SAPSession;
 @property (copy) SSVSAPSignaturePolicy *SAPSignaturePolicy;
 @property (readonly) NSURL *URL;
+@property (nonatomic, readonly) NSURLCache *URLCache;
+@property (nonatomic, readonly) NSString *URLCacheID;
 @property (readonly) NSURLRequest *URLRequest;
 @property (readonly) NSHTTPURLResponse *URLResponse;
 @property (readonly) NSCachedURLResponse *cachedURLResponse;
@@ -50,8 +52,15 @@
 @property BOOL recordsMetrics;
 @property (copy) NSString *referrerApplicationName;
 @property (copy) NSString *referrerURLString;
+@property (nonatomic, readonly) BOOL shouldDisableCellular;
+@property (nonatomic, readonly) BOOL shouldRequireCellular;
+@property (nonatomic, readonly) BOOL shouldSetCookies;
+@property (nonatomic, readonly) NSData *sourceAppAuditTokenData;
+@property (nonatomic, readonly) NSString *sourceAppBundleID;
 @property (copy) NSString *storeFrontSuffix;
 @property (readonly) Class superclass;
+
++ (id)_sessionManager;
 
 - (void).cxx_destruct;
 - (id)SAPSession;
@@ -59,6 +68,11 @@
 - (id)URL;
 - (id)URLRequest;
 - (id)URLResponse;
+- (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
+- (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithEvent:(id)arg3 error:(id)arg4;
+- (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)URLSession:(id)arg1 task:(id)arg2 willPerformHTTPRedirection:(id)arg3 newRequest:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)_addMachineDataHeadersToRequest:(id)arg1 withAccountIdentifier:(id)arg2;
 - (void)_addSAPSignatureToRequest:(id)arg1;
 - (void)_applyResponseToMetrics:(id)arg1;
@@ -82,12 +96,6 @@
 - (void)cancel;
 - (void)configureWithURLBag:(id)arg1;
 - (void)configureWithURLBagDictionary:(id)arg1;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
-- (void)connection:(id)arg1 willSendRequestForAuthenticationChallenge:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
 - (id)dataConsumer;
 - (void)dispatchAsync:(id /* block */)arg1;
 - (void)dispatchSync:(id /* block */)arg1;

@@ -3,9 +3,9 @@
  */
 
 @interface AKLineStylesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    AKController *_controller;
-    NSArray *_lineWidthTags;
-    UITableView *_tableView;
+    AKController * _controller;
+    NSArray * _lineWidthTags;
+    UITableView * _tableView;
 }
 
 @property (nonatomic) AKController *controller;

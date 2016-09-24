@@ -3,17 +3,17 @@
  */
 
 @interface NACVolumeValueMessage : PBCodable <NSCopying> {
-    NSString *_category;
+    NSString * _category;
     struct { 
         unsigned int volumeValue : 1; 
-    } _has;
-    float _volumeValue;
+    }  _has;
+    double  _volumeValue;
 }
 
 @property (nonatomic, retain) NSString *category;
 @property (nonatomic, readonly) BOOL hasCategory;
 @property (nonatomic) BOOL hasVolumeValue;
-@property (nonatomic) float volumeValue;
+@property (nonatomic) double volumeValue;
 
 - (void).cxx_destruct;
 - (id)category;

@@ -2,21 +2,21 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNBuildChunk : TSPObject <KNInspectableAnimation, NSCopying> {
-    BOOL _automatic;
-    KNBuildChunkIdentifier *_buildChunkIdentifier;
-    NSUUID *_buildId;
-    TSPLazyReference *_buildReference;
-    unsigned int _cachedActiveIndexOnSlide;
-    unsigned int _cachedIndexInBuild;
-    unsigned int _cachedIndexOnSlide;
-    double _delay;
-    double _duration;
-    BOOL _needsAutomaticFromBuildAttributes;
-    BOOL _needsDelayFromBuildAttributes;
-    BOOL _needsDurationFromBuildAttributes;
-    BOOL _needsReferentFromBuildAttributes;
-    unsigned int _referent;
+@interface KNBuildChunk : TSPObject <KNInspectableAnimation, NSCopying, TSKModel> {
+    BOOL  _automatic;
+    KNBuildChunkIdentifier * _buildChunkIdentifier;
+    NSUUID * _buildId;
+    TSPLazyReference * _buildReference;
+    unsigned int  _cachedActiveIndexOnSlide;
+    unsigned int  _cachedIndexInBuild;
+    unsigned int  _cachedIndexOnSlide;
+    double  _delay;
+    double  _duration;
+    BOOL  _needsAutomaticFromBuildAttributes;
+    BOOL  _needsDelayFromBuildAttributes;
+    BOOL  _needsDurationFromBuildAttributes;
+    BOOL  _needsReferentFromBuildAttributes;
+    unsigned int  _referent;
 }
 
 @property (getter=isActive, nonatomic, readonly) BOOL active;
@@ -28,11 +28,15 @@
 @property (nonatomic, readonly) KNBuild *build;
 @property (nonatomic, readonly) BOOL canEditAnimations;
 @property (nonatomic, readonly) KNBuildChunkIdentifier *chunkIdentifier;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) double delay;
 @property (nonatomic, readonly) unsigned int deliveryGroupIndex;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) double duration;
 @property (nonatomic, readonly) unsigned int eventTrigger;
 @property (nonatomic, readonly) BOOL hasComplement;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) KNBuild *i_buildFromReference;
 @property (nonatomic, readonly) NSUUID *i_buildId;
 @property (nonatomic, readonly) unsigned int indexInBuild;
 @property (nonatomic, readonly) unsigned int indexOnSlide;
@@ -42,9 +46,12 @@
 @property (nonatomic, readonly) BOOL isFirstOnSlide;
 @property (nonatomic) unsigned int referent;
 @property (nonatomic, readonly) KNSlide *slide;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) BOOL supportsWithStart;
 @property (nonatomic, readonly) NSString *title;
 
++ (void)i_repairChunkToBuildReferencesFromUUIDsForChunks:(id)arg1 builds:(id)arg2 context:(id)arg3;
++ (void)i_validateBuildReferencesForChunks:(id)arg1;
 + (BOOL)needsObjectUUID;
 
 - (unsigned int)activeIndexOnSlide;
@@ -62,12 +69,13 @@
 - (double)duration;
 - (unsigned int)eventTrigger;
 - (BOOL)hasComplement;
+- (id)i_buildFromReference;
 - (id)i_buildId;
 - (void)i_clearChunkIdentifier;
 - (void)i_didLoadBuild:(id)arg1;
-- (void)i_invalidateChunkIndexInBuildCache;
+- (void)i_invalidateCaches;
 - (void)i_setBuildId:(id)arg1;
-- (void)i_setBuildPointer:(id)arg1;
+- (void)i_setBuildPointer:(id)arg1 forUnarchive:(BOOL)arg2;
 - (void)i_setChunkIdentifier:(id)arg1;
 - (void)i_updateChunkUUIDReferencesToBuild:(id)arg1;
 - (unsigned int)indexInBuild;

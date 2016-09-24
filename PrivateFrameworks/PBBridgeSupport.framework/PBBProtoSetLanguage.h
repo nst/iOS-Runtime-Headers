@@ -3,7 +3,7 @@
  */
 
 @interface PBBProtoSetLanguage : PBCodable <NSCopying> {
-    NSString *_language;
+    NSString * _language;
 }
 
 @property (nonatomic, retain) NSString *language;

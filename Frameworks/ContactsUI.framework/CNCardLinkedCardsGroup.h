@@ -3,7 +3,7 @@
  */
 
 @interface CNCardLinkedCardsGroup : CNCardGroup {
-    NSArray *_linkedContacts;
+    NSArray * _linkedContacts;
 }
 
 @property (nonatomic, retain) NSArray *linkedContacts;

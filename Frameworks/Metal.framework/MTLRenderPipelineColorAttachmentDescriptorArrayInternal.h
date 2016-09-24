@@ -3,7 +3,7 @@
  */
 
 @interface MTLRenderPipelineColorAttachmentDescriptorArrayInternal : MTLRenderPipelineColorAttachmentDescriptorArray {
-    MTLRenderPipelineColorAttachmentDescriptorInternal *_descriptors;
+    MTLRenderPipelineColorAttachmentDescriptorInternal * _descriptors;
 }
 
 - (id)_descriptorAtIndex:(unsigned int)arg1;

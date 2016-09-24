@@ -3,7 +3,7 @@
  */
 
 @interface CADOperationGroup : NSObject {
-    ClientConnection *_conn;
+    ClientConnection * _conn;
 }
 
 @property (nonatomic, readonly) ClientConnection *conn;

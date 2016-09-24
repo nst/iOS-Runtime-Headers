@@ -3,9 +3,9 @@
  */
 
 @interface ICSearchIndexableNoteContextIdentifier : NSObject <ICPropertyListSerializable, NSCopying> {
-    NSString *_contextIdentifierString;
-    BOOL _forAnyContext;
-    BOOL _isMainContext;
+    NSString * _contextIdentifierString;
+    BOOL  _forAnyContext;
+    BOOL  _isMainContext;
 }
 
 @property (nonatomic, readonly) NSString *contextIdentifierString;
@@ -22,7 +22,7 @@
 - (unsigned int)hash;
 - (id)initForAnyContext;
 - (id)initWithContextIdentifierString:(id)arg1 isMainContext:(BOOL)arg2;
-- (id)initWithPropertyListObjectRepresentation:(id)arg1 version:(long long)arg2;
+- (id)initWithPropertyListObjectRepresentation:(id)arg1 version:(int)arg2;
 - (BOOL)isCompatibleWithContextIdentifier:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isMainContext;

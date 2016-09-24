@@ -11,7 +11,6 @@
 
 - (id)cssText;
 - (void)dealloc;
-- (void)finalize;
 - (id)parentRule;
 - (id)parentStyleSheet;
 - (void)setCssText:(id)arg1;

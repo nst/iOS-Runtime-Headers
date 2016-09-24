@@ -3,7 +3,7 @@
  */
 
 @interface PLRotatedImage : UIImage {
-    BOOL _wasRotated;
+    BOOL  _wasRotated;
 }
 
 @property (nonatomic) BOOL wasRotated;

@@ -3,8 +3,8 @@
  */
 
 @interface TSPUnknownFieldMessage : TSPUnknownField {
-    NSArray *_datas;
-    TSPLazyReferenceArray *_objects;
+    NSArray * _datas;
+    TSPLazyReferenceArray * _objects;
 }
 
 - (void).cxx_destruct;

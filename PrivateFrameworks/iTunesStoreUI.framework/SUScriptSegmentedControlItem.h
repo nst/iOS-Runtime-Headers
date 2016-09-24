@@ -3,12 +3,12 @@
  */
 
 @interface SUScriptSegmentedControlItem : SUScriptObject {
-    SUScriptCanvasContext *_canvas;
-    NSString *_identifier;
-    UIImage *_image;
-    NSString *_imageURLString;
-    NSString *_title;
-    id _userInfo;
+    SUScriptCanvasContext * _canvas;
+    NSString * _identifier;
+    UIImage * _image;
+    NSString * _imageURLString;
+    NSString * _title;
+    id  _userInfo;
 }
 
 @property (retain) SUScriptCanvasContext *canvas;

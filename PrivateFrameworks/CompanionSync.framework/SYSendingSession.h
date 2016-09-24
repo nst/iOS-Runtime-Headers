@@ -3,11 +3,11 @@
  */
 
 @interface SYSendingSession : SYSession {
-    NSMutableIndexSet *_ackedBatchIndices;
-    unsigned long long _activity;
-    unsigned long long _batchIndex;
-    _SYCountedSemaphore *_changeConcurrencySemaphore;
-    NSObject<OS_dispatch_queue> *_changeFetcherQueue;
+    NSMutableIndexSet * _ackedBatchIndices;
+    unsigned int  _batchIndex;
+    _SYCountedSemaphore * _changeConcurrencySemaphore;
+    NSObject<OS_dispatch_queue> * _changeFetcherQueue;
+    NSObject<OS_os_activity> * _changeWaitActivity;
     struct { 
         unsigned int state : 4; 
         unsigned int canRestart : 1; 
@@ -21,16 +21,21 @@
         unsigned int remoteEndSent : 1; 
         unsigned int remoteEndConfirmed : 1; 
         unsigned int localErrorOccurred : 1; 
-    } _flags;
-    int _flagsLock;
-    NSObject<OS_dispatch_source> *_messageTimer;
-    NSObject<OS_dispatch_source> *_sessionTimer;
-    NSObject<OS_dispatch_source> *_stateUpdateSource;
+    }  _flags;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _flagsLock;
+    NSObject<OS_dispatch_source> * _messageTimer;
+    NSObject<OS_os_activity> * _sessionActivity;
+    double  _sessionStartTime;
+    NSObject<OS_dispatch_source> * _sessionTimer;
+    NSObject<OS_dispatch_source> * _stateUpdateSource;
 }
 
 - (void).cxx_destruct;
 - (void)_confirmedEnd;
 - (void)_confirmedStart;
+- (void)_continue;
 - (void)_fetchNextBatch;
 - (void)_handleEndSession:(id)arg1 response:(id)arg2 completion:(id /* block */)arg3;
 - (BOOL)_handleEndSessionResponse:(id)arg1 error:(id*)arg2;
@@ -69,10 +74,11 @@
 - (void)_waitForMessageWindow;
 - (BOOL)canRestart;
 - (BOOL)canRollback;
-- (void)cancel;
+- (void)cancelWithError:(id)arg1;
 - (id)initWithService:(id)arg1 isReset:(BOOL)arg2;
 - (BOOL)isResetSync;
 - (BOOL)isSending;
+- (double)remainingSessionTime;
 - (void)setCanRestart:(BOOL)arg1;
 - (void)setCanRollback:(BOOL)arg1;
 - (void)setState:(int)arg1;

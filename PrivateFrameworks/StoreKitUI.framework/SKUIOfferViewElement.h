@@ -4,9 +4,11 @@
 
 @interface SKUIOfferViewElement : SKUIViewElement
 
+@property (getter=isCompactModeEnabled, nonatomic, readonly) BOOL compactModeEnabled;
 @property (getter=isSimpleOffer, nonatomic, readonly) BOOL simpleOffer;
 
 - (void)enumerateChildrenUsingBlock:(id /* block */)arg1;
+- (BOOL)isCompactModeEnabled;
 - (BOOL)isSimpleOffer;
 - (int)pageComponentType;
 

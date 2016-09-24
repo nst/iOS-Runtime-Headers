@@ -3,9 +3,9 @@
  */
 
 @interface WeatherCloudPreferences : NSObject <WeatherCloudPersistenceDelegate> {
-    <WeatherPreferencesPersistence> *_cloudStore;
-    WeatherPreferences *_localPreferences;
-    <SynchronizedDefaultsDelegate> *_syncDelegate;
+    <WeatherPreferencesPersistence> * _cloudStore;
+    WeatherPreferences * _localPreferences;
+    <SynchronizedDefaultsDelegate> * _syncDelegate;
 }
 
 @property (retain) <WeatherPreferencesPersistence> *cloudStore;

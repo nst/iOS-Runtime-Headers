@@ -3,16 +3,16 @@
  */
 
 @interface AssetCollectionInfo : NSObject <NSSecureCoding> {
-    NSString *_GUID;
-    NSNumber *_height;
-    BOOL _isDeletable;
-    BOOL _isMine;
-    BOOL _isPhotoIris;
-    BOOL _isVideo;
-    NSDictionary *_metaData;
-    NSString *_personID;
-    NSDate *_timestamp;
-    NSNumber *_width;
+    NSString * _GUID;
+    NSNumber * _height;
+    BOOL  _isDeletable;
+    BOOL  _isMine;
+    BOOL  _isPhotoIris;
+    BOOL  _isVideo;
+    NSDictionary * _metaData;
+    NSString * _personID;
+    NSDate * _timestamp;
+    NSNumber * _width;
 }
 
 @property (nonatomic, readonly, retain) NSString *GUID;

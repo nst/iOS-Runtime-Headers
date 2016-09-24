@@ -3,8 +3,8 @@
  */
 
 @interface EDTableStylesCollection : EDCollection {
-    NSString *mDefaultPivotStyleName;
-    NSString *mDefaultTableStyleName;
+    NSString * mDefaultPivotStyleName;
+    NSString * mDefaultTableStyleName;
 }
 
 - (void)dealloc;

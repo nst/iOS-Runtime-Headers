@@ -3,10 +3,10 @@
  */
 
 @interface STGenericIntentHelper : NSObject {
-    NSMutableDictionary *_handlers;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_queue> *_siriResponseQueue;
-    NSObject<OS_dispatch_semaphore> *_waitForIntentCompleteSemaphore;
+    NSMutableDictionary * _handlers;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_queue> * _siriResponseQueue;
+    NSObject<OS_dispatch_semaphore> * _waitForIntentCompleteSemaphore;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *handlers;
@@ -16,7 +16,6 @@
 + (id)sharedHelper;
 
 - (void).cxx_destruct;
-- (id)_intentSlotNameForIntentMap:(id)arg1;
 - (BOOL)doIntent:(id)arg1;
 - (void)finishedLaunching:(BOOL)arg1;
 - (void)forIntent:(id)arg1 registerHandler:(id /* block */)arg2;

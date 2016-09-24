@@ -3,11 +3,11 @@
  */
 
 @interface AAGrandSlamSigner : NSObject {
-    NSString *_appTokenID;
-    ACAccount *_appleAccount;
-    ACAccount *_grandSlamAccount;
-    ACAccountStore *_store;
-    BOOL _useAltDSID;
+    NSString * _appTokenID;
+    ACAccount * _appleAccount;
+    ACAccount * _grandSlamAccount;
+    ACAccountStore * _store;
+    BOOL  _useAltDSID;
 }
 
 @property (nonatomic, readonly) ACAccountStore *accountStore;

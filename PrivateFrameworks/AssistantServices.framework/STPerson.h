@@ -3,8 +3,8 @@
  */
 
 @interface STPerson : STSiriModelObject <AFTranscriptionType> {
-    NSSet *_contactHandles;
-    NSString *_fullName;
+    NSSet * _contactHandles;
+    NSString * _fullName;
 }
 
 @property (nonatomic, copy) NSSet *contactHandles;

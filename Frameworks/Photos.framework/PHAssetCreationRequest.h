@@ -3,13 +3,13 @@
  */
 
 @interface PHAssetCreationRequest : PHAssetChangeRequest <PHInsertChangeRequest> {
-    PHAssetCreationPhotoStreamPublishingRequest *__photoStreamPublishingRequest;
-    PHAssetResourceBag *_assetResourceBag;
-    NSMutableArray *_assetResources;
-    BOOL _duplicateAllowsPrivateMetadata;
-    NSString *_duplicateAssetIdentifier;
-    BOOL _duplicateLivePhotoAsStill;
-    NSMutableDictionary *_movedFiles;
+    PHAssetCreationPhotoStreamPublishingRequest * __photoStreamPublishingRequest;
+    PHAssetResourceBag * _assetResourceBag;
+    NSMutableArray * _assetResources;
+    BOOL  _duplicateAllowsPrivateMetadata;
+    NSString * _duplicateAssetIdentifier;
+    BOOL  _duplicateLivePhotoAsStill;
+    NSMutableDictionary * _movedFiles;
 }
 
 @property (nonatomic, readonly) NSDictionary *_movedFiles;
@@ -48,10 +48,11 @@
 - (BOOL)_createAssetAsAdjusted:(id)arg1 fromValidatedResources:(id)arg2 error:(id*)arg3;
 - (BOOL)_createAssetAsPhotoIris:(id)arg1 fromValidatedResources:(id)arg2 error:(id*)arg3;
 - (BOOL)_createAssetFromValidatedResources:(id)arg1 uuid:(id)arg2 photoLibrary:(id)arg3 error:(id*)arg4;
+- (BOOL)_createRAWSidecarForAsset:(id)arg1 fromValidatedResources:(id)arg2 photoLibrary:(id)arg3 error:(id*)arg4;
 - (void)_didMoveFileFromURL:(id)arg1 toURL:(id)arg2;
 - (id)_duplicatedAssetResourcesFromAsset:(id)arg1 flattenLivePhotoIntoStillPhoto:(BOOL)arg2 error:(id*)arg3;
 - (id)_exifPropertiesFromSourceImageDataExifProperties:(id)arg1;
-- (id)_managedAssetFromData:(id)arg1 photoLibrary:(id)arg2 getImageSource:(struct CGImageSource {}**)arg3 imageData:(id*)arg4;
+- (id)_managedAssetFromData:(id)arg1 imageUTIType:(id)arg2 photoLibrary:(id)arg3 getImageSource:(struct CGImageSource {}**)arg4 imageData:(id*)arg5;
 - (int)_mediaTypeForCreatedAsset;
 - (id)_movedFiles;
 - (id)_photoStreamPublishingRequest;
@@ -76,7 +77,7 @@
 - (id)initForNewObject;
 - (id)initForNewObjectWithUUID:(id)arg1;
 - (id)initWithHelper:(id)arg1;
-- (id)initWithXPCDict:(id)arg1 clientEntitled:(BOOL)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
+- (id)initWithXPCDict:(id)arg1 clientEntitlements:(id)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
 - (BOOL)isNew;
 - (void)performTransactionCompletionHandlingInPhotoLibrary:(id)arg1;
 - (id)placeholderForCreatedAsset;

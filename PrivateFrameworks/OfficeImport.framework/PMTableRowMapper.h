@@ -3,9 +3,9 @@
  */
 
 @interface PMTableRowMapper : CMMapper {
-    OADTableRow *mRow;
-    unsigned int mRowIndex;
-    OADTable *mTable;
+    OADTableRow * mRow;
+    unsigned int  mRowIndex;
+    OADTable * mTable;
 }
 
 - (unsigned int)cellCount;

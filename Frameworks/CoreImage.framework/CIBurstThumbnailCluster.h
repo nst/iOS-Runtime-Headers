@@ -3,11 +3,11 @@
  */
 
 @interface CIBurstThumbnailCluster : NSObject {
-    struct __IOSurface { } *_fullsizeJpegData;
-    NSMutableArray *burstImages;
-    id /* block */ completionBlock;
-    CIBurstYUVImage *image;
-    NSMutableDictionary *imageProps;
+    struct __IOSurface { } * _fullsizeJpegData;
+    NSMutableArray * burstImages;
+    id /* block */  completionBlock;
+    CIBurstYUVImage * image;
+    NSMutableDictionary * imageProps;
 }
 
 @property NSMutableArray *burstImages;

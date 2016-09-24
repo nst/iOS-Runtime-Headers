@@ -3,15 +3,15 @@
  */
 
 @interface TSCEFunctionSpec : NSObject {
-    NSArray *mArguments;
-    int mFunctionIndex;
-    NSString *mFunctionName;
-    BOOL mIsOperator;
-    short mMaxArguments;
-    short mMinArguments;
-    NSArray *mRepeatingArguments;
-    short mRepeatingGroupSize;
-    int mShipVersion;
+    NSArray * mArguments;
+    int  mFunctionIndex;
+    NSString * mFunctionName;
+    BOOL  mIsOperator;
+    short  mMaxArguments;
+    short  mMinArguments;
+    NSArray * mRepeatingArguments;
+    short  mRepeatingGroupSize;
+    int  mShipVersion;
 }
 
 @property (nonatomic, readonly) NSArray *arguments;

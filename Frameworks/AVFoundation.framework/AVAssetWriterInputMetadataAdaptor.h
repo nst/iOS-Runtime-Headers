@@ -3,7 +3,7 @@
  */
 
 @interface AVAssetWriterInputMetadataAdaptor : NSObject {
-    AVAssetWriterInputMetadataAdaptorInternal *_internal;
+    AVAssetWriterInputMetadataAdaptorInternal * _internal;
 }
 
 @property (nonatomic, readonly) AVAssetWriterInput *assetWriterInput;

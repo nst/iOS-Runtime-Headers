@@ -3,7 +3,7 @@
  */
 
 @interface UIPDFAnnotationView : UIView {
-    UIPDFAnnotation *_annotation;
+    UIPDFAnnotation * _annotation;
 }
 
 @property (nonatomic) UIPDFAnnotation *annotation;

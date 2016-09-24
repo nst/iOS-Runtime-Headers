@@ -3,17 +3,17 @@
  */
 
 @interface PUDuplicateActionController : NSObject {
-    NSDictionary *__assetsByAssetCollection;
-    BOOL __canDuplicate;
-    BOOL __canExtractStill;
-    BOOL __didCheckDuplicateCapabilities;
-    NSProgress *__downloadingProgress;
-    NSProgress *__duplicatingProgress;
-    id /* block */ __onFinishDownloadCompletionHandler;
-    NSProgress *__overallProgress;
-    PUActivityProgressController *__progressController;
-    int _itemCount;
-    NSMutableArray *_resourceDownloadRequests;
+    NSDictionary * __assetsByAssetCollection;
+    BOOL  __canDuplicate;
+    BOOL  __canExtractStill;
+    BOOL  __didCheckDuplicateCapabilities;
+    NSProgress * __downloadingProgress;
+    NSProgress * __duplicatingProgress;
+    id /* block */  __onFinishDownloadCompletionHandler;
+    NSProgress * __overallProgress;
+    PUActivityProgressController * __progressController;
+    int  _itemCount;
+    NSMutableArray * _resourceDownloadRequests;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *_assetsByAssetCollection;

@@ -3,8 +3,8 @@
  */
 
 @interface CoreDAVCurrentUserPrincipalItem : CoreDAVItem {
-    CoreDAVHrefItem *_href;
-    CoreDAVItemWithNoChildren *_unauthenticated;
+    CoreDAVHrefItem * _href;
+    CoreDAVItemWithNoChildren * _unauthenticated;
 }
 
 @property (nonatomic, retain) CoreDAVHrefItem *href;

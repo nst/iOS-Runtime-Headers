@@ -3,9 +3,9 @@
  */
 
 @interface SKUIDeveloperInfoViewController : SKUIViewController {
-    SKUIDeveloperInfo *_developerInfo;
-    SKUIDeveloperInfoView *_infoView;
-    UIScrollView *_scrollView;
+    SKUIDeveloperInfo * _developerInfo;
+    SKUIDeveloperInfoView * _infoView;
+    UIScrollView * _scrollView;
 }
 
 @property (nonatomic, readonly) SKUIDeveloperInfo *developerInfo;

@@ -3,8 +3,8 @@
  */
 
 @interface TSTTableSortRule : NSObject <NSCopying> {
-    unsigned char mColumnIndex;
-    int mDirection;
+    unsigned char  mColumnIndex;
+    int  mDirection;
 }
 
 @property (nonatomic, readonly) unsigned char columnIndex;

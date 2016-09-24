@@ -3,9 +3,9 @@
  */
 
 @interface PGPictureInPictureProxy : NSObject <PGPictureInPictureExportedInterface> {
-    NSXPCConnection *_connection;
-    int _controlsStyle;
-    <PGPictureInPictureProxyDelegate> *_delegate;
+    NSXPCConnection * _connection;
+    int  _controlsStyle;
+    <PGPictureInPictureProxyDelegate> * _delegate;
     struct { 
         unsigned int pictureInPictureProxyViewFrameForTransitionAnimation : 1; 
         unsigned int pictureInPictureProxy_willStartPictureInPictureWithAnimationType : 1; 
@@ -16,30 +16,27 @@
         unsigned int pictureInPictureProxy_didStopPictureInPictureWithAnimationType_reason : 1; 
         unsigned int pictureInPictureProxyPictureInPictureInterruptionBegan : 1; 
         unsigned int pictureInPictureProxyPictureInPictureInterruptionEnded : 1; 
-        unsigned int pictureInPictureProxyWillStartPictureInPicture : 1; 
-        unsigned int pictureInPictureProxyDidStartPictureInPicture : 1; 
-        unsigned int pictureInPictureProxyFailedToStartPictureInPicture_withError : 1; 
-        unsigned int pictureInPictureProxyWillStopPictureInPicture : 1; 
-        unsigned int pictureInPictureProxyDidStopPictureInPicture : 1; 
-        unsigned int pictureInPictureProxyWillCancelPictureInPicture : 1; 
-        unsigned int pictureInPictureProxyDidCancelPictureInPicture : 1; 
-    } _delegateRespondsTo;
-    PGHostedWindow *_hostedWindow;
-    unsigned int _isHostedWindowSizeChangeDuringPinchGesture;
-    unsigned int _isPictureInPictureActive;
-    unsigned int _isPictureInPicturePossible;
-    unsigned int _isPictureInPictureSuspended;
-    unsigned int _isStartingStoppingOrCancellingPictureInPicture;
-    unsigned int _pictureInPictureShouldStartWhenEnteringBackground;
-    unsigned int _pictureInPictureWasStartedWhenEnteringBackground;
-    PGPlaybackProgressIndicator *_playbackProgressIndicator;
+    }  _delegateRespondsTo;
+    PGHostedWindow * _hostedWindow;
+    BOOL  _isHostedWindowSizeChangeDuringPinchGesture;
+    BOOL  _isPictureInPictureActive;
+    BOOL  _isPictureInPicturePossible;
+    BOOL  _isPictureInPictureSuspended;
+    BOOL  _isStartingStoppingOrCancellingPictureInPicture;
+    NSArray * _loadedTimeRanges;
+    PGSetterThrottler * _loadedTimeRangesSetterThrottler;
+    BOOL  _pictureInPictureShouldStartWhenEnteringBackground;
+    BOOL  _pictureInPictureWasStartedWhenEnteringBackground;
+    double  _playbackProgress;
+    PGSetterThrottler * _playbackProgressSetterThrottler;
+    double  _playbackRate;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _preferredContentSize;
-    NSObject<OS_dispatch_queue> *_queue;
-    UIViewController *_rootViewController;
-    UIViewController<PGPictureInPictureViewController> *_viewController;
+        double width; 
+        double height; 
+    }  _preferredContentSize;
+    NSObject<OS_dispatch_queue> * _queue;
+    UIViewController * _rootViewController;
+    UIViewController<PGPictureInPictureViewController> * _viewController;
 }
 
 @property (nonatomic, readonly) int controlsStyle;
@@ -52,12 +49,10 @@
 @property (nonatomic) BOOL pictureInPictureShouldStartWhenEnteringBackground;
 @property (getter=isPictureInPictureSuspended, nonatomic, readonly) BOOL pictureInPictureSuspended;
 @property (nonatomic, readonly) BOOL pictureInPictureWasStartedWhenEnteringBackground;
-@property (nonatomic) BOOL shouldStartPictureInPictureEnteringBackground;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIViewController<PGPictureInPictureViewController> *viewController;
 
 + (void)_updatePictureInPictureActive:(BOOL)arg1;
-+ (void)initialize;
 + (BOOL)isPictureInPictureActive;
 + (BOOL)isPictureInPictureSupported;
 + (id)pictureInPictureProxyWithControlsStyle:(int)arg1 viewController:(id)arg2;
@@ -65,11 +60,9 @@
 - (void).cxx_destruct;
 - (void)_startPictureInPictureAnimated:(BOOL)arg1 enteringBackground:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)_stopPictureInPictureAnimated:(BOOL)arg1 activateApplicationIfNeededAndRestoreUserInterface:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_viewFrameForTransitionAnimationAssumeApplicationActive:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_viewFrameForTransitionAnimationAssumeApplicationActive:(BOOL)arg1;
 - (oneway void)actionButtonTapped;
-- (void)cancelPictureInPicture;
 - (int)controlsStyle;
-- (oneway void)controlsVisibilityChanged:(BOOL)arg1 animated:(BOOL)arg2 synchronizationFence:(id)arg3;
 - (void)dealloc;
 - (id)delegate;
 - (oneway void)hostedWindowSizeChangeBegan;
@@ -92,18 +85,16 @@
 - (oneway void)pictureInPictureSuspended;
 - (BOOL)pictureInPictureWasStartedWhenEnteringBackground;
 - (double)playbackProgress;
+- (double)playbackRate;
 - (void)preferredContentSizeDidChangeForViewController;
 - (void)rotateContentContainer:(int)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setLoadedTimeRanges:(id)arg1;
 - (void)setPictureInPictureShouldStartWhenEnteringBackground:(BOOL)arg1;
-- (void)setPlaybackProgress:(double)arg1;
-- (void)setShouldStartPictureInPictureEnteringBackground:(BOOL)arg1;
-- (BOOL)shouldStartPictureInPictureEnteringBackground;
+- (void)setPlaybackProgress:(double)arg1 playbackRate:(double)arg2;
 - (void)startPictureInPicture;
-- (void)stopPictureInPicture;
 - (void)stopPictureInPictureAndRestoreUserInterface:(BOOL)arg1;
-- (oneway void)updateHostedWindowSize:(struct CGSize { float x1; float x2; })arg1 animationType:(int)arg2 initialSpringVelocity:(float)arg3 synchronizationFence:(id)arg4;
+- (oneway void)updateHostedWindowSize:(struct CGSize { double x1; double x2; })arg1 animationType:(int)arg2 initialSpringVelocity:(float)arg3 synchronizationFence:(id)arg4;
 - (oneway void)updatePictureInPicturePossible:(BOOL)arg1;
 - (id)viewController;
 

@@ -3,15 +3,15 @@
  */
 
 @interface _MRSendCommandResultMessageProtobuf : PBCodable <NSCopying> {
-    unsigned int _errorCode;
+    unsigned int  _errorCode;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _handlerReturnStatus;
+    }  _handlerReturnStatus;
     struct { 
         unsigned int errorCode : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic) unsigned int errorCode;

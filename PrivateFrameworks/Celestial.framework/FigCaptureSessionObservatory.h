@@ -3,10 +3,10 @@
  */
 
 @interface FigCaptureSessionObservatory : NSObject {
-    NSMapTable *_captureSessionsStorage;
-    long long _lastRunningIdentifier;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSHashTable *_registeredObservers;
+    NSMapTable * _captureSessionsStorage;
+    int  _lastRunningIdentifier;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSHashTable * _registeredObservers;
 }
 
 + (void)initialize;

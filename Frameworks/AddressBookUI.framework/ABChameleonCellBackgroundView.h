@@ -3,8 +3,8 @@
  */
 
 @interface ABChameleonCellBackgroundView : UIView {
-    int _abCellStyle;
-    int _sectionLocation;
+    int  _abCellStyle;
+    int  _sectionLocation;
 }
 
 @property (nonatomic) int abCellStyle;

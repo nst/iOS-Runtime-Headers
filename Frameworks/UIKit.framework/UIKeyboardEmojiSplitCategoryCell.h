@@ -3,9 +3,9 @@
  */
 
 @interface UIKeyboardEmojiSplitCategoryCell : UITableViewCell {
-    UIView *_selectedCircle;
-    UIImageView *_symbol;
-    UILabel *_title;
+    UIView * _selectedCircle;
+    UIImageView * _symbol;
+    UILabel * _title;
 }
 
 @property (nonatomic, retain) UIView *selectedCircle;

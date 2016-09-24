@@ -3,8 +3,8 @@
  */
 
 @interface _NMRClient : NSObject {
-    NSXPCConnection *_serverConnection;
-    NSObject<OS_dispatch_queue> *_serverConnectionQueue;
+    NSXPCConnection * _serverConnection;
+    NSObject<OS_dispatch_queue> * _serverConnectionQueue;
 }
 
 + (id)sharedClient;
@@ -13,6 +13,7 @@
 - (id)_proxy;
 - (void)fetchCompanionCloudAvailabilityWithCompletionHandler:(id /* block */)arg1;
 - (void)fetchCompanionSpecializedQueueInfoWithCompletionHandler:(id /* block */)arg1;
+- (void)fetchTrackAssetAvailabilityForTrackPID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)init;
 - (void)prewarmCompanionSystemMusicApp;
 - (void)refreshMediaRemoteStateIfNecessary;

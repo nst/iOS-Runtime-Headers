@@ -3,7 +3,7 @@
  */
 
 @interface SKUIInfoListViewElement : SKUIViewElement {
-    int _infoListType;
+    int  _infoListType;
 }
 
 @property (nonatomic, readonly) int infoListType;

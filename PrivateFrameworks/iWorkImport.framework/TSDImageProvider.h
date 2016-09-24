@@ -3,30 +3,40 @@
  */
 
 @interface TSDImageProvider : NSObject {
-    TSUFlushingManager *mFlushingManager;
-    TSPData *mImageData;
-    int mInterest;
-    int mLoadState;
-    int mOwnerCount;
-    int mRetainCount;
+    TSUFlushingManager * mFlushingManager;
+    TSPData * mImageData;
+    int  mInterest;
+    int  mLoadState;
+    int  mOwnerCount;
+    int  mRetainCount;
 }
+
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } dpiAdjustedNaturalSize;
+@property (nonatomic) int i_loadState;
+@property (nonatomic, readonly, retain) TSPData *imageData;
+@property (nonatomic, readonly) unsigned int imageGamut;
+@property (nonatomic, readonly) BOOL isError;
+@property (nonatomic, readonly) BOOL isValid;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } naturalSize;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (void)addInterest;
 - (void)addOwner;
 - (void)dealloc;
-- (struct CGSize { float x1; float x2; })dpiAdjustedNaturalSize;
-- (void)drawImageInContext:(struct CGContext { }*)arg1 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (struct CGSize { double x1; double x2; })dpiAdjustedNaturalSize;
+- (void)drawImageInContext:(struct CGContext { }*)arg1 rect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (void)flush;
 - (BOOL)hasFlushableContent;
 - (void)i_commonInit;
+- (int)i_loadState;
 - (id)imageData;
+- (unsigned int)imageGamut;
 - (id)initWithImageData:(id)arg1;
 - (int)interest;
 - (BOOL)isError;
 - (BOOL)isValid;
-- (struct CGSize { float x1; float x2; })naturalSize;
+- (struct CGSize { double x1; double x2; })naturalSize;
 - (void)ownerAccess;
 - (oneway void)release;
 - (void)removeInterest;
@@ -34,5 +44,6 @@
 - (id)retain;
 - (unsigned int)retainCount;
 - (void)setFlushingManager:(id)arg1;
+- (void)setI_loadState:(int)arg1;
 
 @end

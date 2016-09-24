@@ -3,13 +3,13 @@
  */
 
 @interface NNMKProtoMoreMessagesForConversation : PBCodable <NSCopying> {
-    NSMutableArray *_addedMessages;
-    NSString *_conversationId;
-    NSData *_dateSynced;
-    unsigned int _fullSyncVersion;
+    NSMutableArray * _addedMessages;
+    NSString * _conversationId;
+    NSData * _dateSynced;
+    unsigned int  _fullSyncVersion;
     struct { 
         unsigned int fullSyncVersion : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic, retain) NSMutableArray *addedMessages;

@@ -3,36 +3,36 @@
  */
 
 @interface TPDocumentSettings : TSPObject {
-    BOOL _annotationsVisible;
-    NSString *_bibliographyFormat;
-    BOOL _changeBarsVisible;
-    BOOL _copyAssets;
-    BOOL _copyMovies;
-    NSString *_creationDate;
-    NSString *_creationLocale;
-    long _ctBubblesVisibility;
-    NSString *_decimalTab;
-    BOOL _documentIsRTL;
-    int _footnoteFormat;
-    int _footnoteGap;
-    int _footnoteKind;
-    int _footnoteNumbering;
-    BOOL _formatChangesVisible;
-    BOOL _hasBody;
-    BOOL _hasFooters;
-    BOOL _hasHeaders;
-    BOOL _hyphenation;
-    NSString *_hyphenationLanguage;
-    NSString *_language;
-    BOOL _ligatures;
-    BOOL _linksEnabled;
-    NSString *_originalTemplate;
-    BOOL _placeholderAuthoring;
-    BOOL _qlPreview;
-    BOOL _sectionAuthoring;
-    BOOL _showCTDeletions;
-    BOOL _showCTMarkup;
-    BOOL _tocLinksEnabled;
+    BOOL  _annotationsVisible;
+    NSString * _bibliographyFormat;
+    BOOL  _changeBarsVisible;
+    BOOL  _copyAssets;
+    BOOL  _copyMovies;
+    NSString * _creationDate;
+    NSString * _creationLocale;
+    long  _ctBubblesVisibility;
+    NSString * _decimalTab;
+    BOOL  _documentIsRTL;
+    int  _footnoteFormat;
+    int  _footnoteGap;
+    int  _footnoteKind;
+    int  _footnoteNumbering;
+    BOOL  _formatChangesVisible;
+    BOOL  _hasBody;
+    BOOL  _hasFooters;
+    BOOL  _hasHeaders;
+    BOOL  _hyphenation;
+    NSString * _hyphenationLanguage;
+    NSString * _language;
+    BOOL  _ligatures;
+    BOOL  _linksEnabled;
+    NSString * _originalTemplate;
+    BOOL  _placeholderAuthoring;
+    BOOL  _qlPreview;
+    BOOL  _sectionAuthoring;
+    BOOL  _showCTDeletions;
+    BOOL  _showCTMarkup;
+    BOOL  _tocLinksEnabled;
 }
 
 @property (nonatomic) BOOL annotationsVisible;

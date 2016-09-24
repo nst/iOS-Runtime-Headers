@@ -3,8 +3,8 @@
  */
 
 @interface FBSWorkspaceSceneClientSettingsChangedEvent : FBSWorkspaceSceneEvent {
-    FBSSceneClientSettingsDiff *_clientSettings;
-    FBSSceneTransitionContext *_transition;
+    FBSSceneClientSettingsDiff * _clientSettings;
+    FBSSceneTransitionContext * _transition;
 }
 
 @property (nonatomic, retain) FBSSceneClientSettingsDiff *clientSettingsDiff;

@@ -3,12 +3,12 @@
  */
 
 @interface SULockoutView : UIView {
-    UIImageView *_backgroundImageView;
-    UILabel *_bodyLabel;
-    UIImageView *_glowImageView;
-    UIImageView *_imageView;
-    int _layoutPreset;
-    UILabel *_titleLabel;
+    UIImageView * _backgroundImageView;
+    UILabel * _bodyLabel;
+    UIImageView * _glowImageView;
+    UIImageView * _imageView;
+    int  _layoutPreset;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) UIImage *backgroundImage;

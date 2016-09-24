@@ -3,31 +3,31 @@
  */
 
 @interface OISFUFileDataRepresentation : OISFUDataRepresentation {
-    OISFUCryptoKey *mCryptoKey;
-    BOOL mDeleteFileWhenDone;
-    long long mFileLength;
-    unsigned long mFileType;
-    BOOL mHasFileAttributes;
-    <SFUInputStream> *mInputStream;
-    NSString *mPath;
-    long long mPlaintextDataLength;
-    int mSharedFd;
+    OISFUCryptoKey * mCryptoKey;
+    BOOL  mDeleteFileWhenDone;
+    int  mFileLength;
+    unsigned long  mFileType;
+    BOOL  mHasFileAttributes;
+    <SFUInputStream> * mInputStream;
+    NSString * mPath;
+    int  mPlaintextDataLength;
+    int  mSharedFd;
 }
 
-- (long long)dataLength;
+- (int)dataLength;
 - (void)dealloc;
 - (void)deleteFileWhenDone;
 - (id)description;
-- (long long)encodedLength;
+- (int)encodedLength;
 - (unsigned long)fileType;
 - (BOOL)hasSameLocationAs:(id)arg1;
 - (id)initWithCopyOfData:(id)arg1 path:(id)arg2;
 - (id)initWithCopyOfData:(id)arg1 path:(id)arg2 cryptoKey:(id)arg3;
-- (id)initWithInputStream:(id)arg1 cryptoKey:(id)arg2 dataLength:(long long)arg3;
+- (id)initWithInputStream:(id)arg1 cryptoKey:(id)arg2 dataLength:(int)arg3;
 - (id)initWithPath:(id)arg1;
-- (id)initWithPath:(id)arg1 cryptoKey:(id)arg2 dataLength:(long long)arg3;
+- (id)initWithPath:(id)arg1 cryptoKey:(id)arg2 dataLength:(int)arg3;
 - (id)initWithPath:(id)arg1 sharedFileDescriptor:(int)arg2;
-- (id)initWithPath:(id)arg1 sharedFileDescriptor:(int)arg2 cryptoKey:(id)arg3 dataLength:(long long)arg4;
+- (id)initWithPath:(id)arg1 sharedFileDescriptor:(int)arg2 cryptoKey:(id)arg3 dataLength:(int)arg4;
 - (id)inputStream;
 - (BOOL)isCryptoKeyIdenticalToKey:(id)arg1;
 - (BOOL)isEncrypted;

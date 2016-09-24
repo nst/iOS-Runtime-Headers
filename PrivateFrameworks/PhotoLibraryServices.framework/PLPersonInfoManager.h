@@ -3,8 +3,8 @@
  */
 
 @interface PLPersonInfoManager : NSObject {
-    NSMutableDictionary *_personDictsForPersonID;
-    NSString *_plistPath;
+    NSMutableDictionary * _personDictsForPersonID;
+    NSString * _plistPath;
 }
 
 + (id)sharedManager;

@@ -2,23 +2,29 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@interface CKDPCSData : NSObject <NSSecureCoding> {
-    NSString *_etag;
-    struct _OpaquePCSShareProtection { } *_pcs;
-    NSData *_pcsData;
+@interface CKDPCSData : NSObject <NSSecureCoding, PQLValuable> {
+    NSString * _etag;
+    struct _OpaquePCSShareProtection { } * _pcs;
+    NSData * _pcsData;
+    NSString * _pcsKeyID;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *etag;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) <NSSecureCoding> *itemID;
 @property (nonatomic) struct _OpaquePCSShareProtection { }*pcs;
 @property (nonatomic, copy) NSData *pcsData;
+@property (nonatomic, retain) NSString *pcsKeyID;
+@property (readonly) Class superclass;
 
++ (id)newFromSqliteValue:(struct Mem { }*)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (void)dealloc;
-- (BOOL)decryptPCSDataWithManager:(id)arg1 error:(id*)arg2;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)etag;
@@ -27,8 +33,11 @@
 - (id)itemID;
 - (struct _OpaquePCSShareProtection { }*)pcs;
 - (id)pcsData;
+- (id)pcsKeyID;
 - (void)setEtag:(id)arg1;
 - (void)setPcs:(struct _OpaquePCSShareProtection { }*)arg1;
 - (void)setPcsData:(id)arg1;
+- (void)setPcsKeyID:(id)arg1;
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 
 @end

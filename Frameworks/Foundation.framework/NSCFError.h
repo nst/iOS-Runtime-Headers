@@ -10,7 +10,6 @@
 - (Class)classForCoder;
 - (int)code;
 - (id)domain;
-- (void)finalize;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (oneway void)release;

@@ -3,12 +3,12 @@
  */
 
 @interface CAMBuffer : NSObject {
-    NSObject<OS_dispatch_queue> *__bufferQueue;
-    NSMutableArray *__bufferQueueBufferedValues;
-    NSMutableArray *__bufferQueueObservances;
-    NSMutableDictionary *__bufferQueueObservers;
-    <NSCopying> *_bufferQueueCurrentValue;
-    BOOL _bufferQueueEnabled;
+    NSObject<OS_dispatch_queue> * __bufferQueue;
+    NSMutableArray * __bufferQueueBufferedValues;
+    NSMutableArray * __bufferQueueObservances;
+    NSMutableDictionary * __bufferQueueObservers;
+    <NSCopying> * _bufferQueueCurrentValue;
+    BOOL  _bufferQueueEnabled;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_bufferQueue;

@@ -3,14 +3,14 @@
  */
 
 @interface SUOperationProgress : NSObject <NSCopying, NSSecureCoding> {
-    float _normalizedPercentComplete;
-    float _percentComplete;
-    NSString *_phase;
-    double _timeRemaining;
+    double  _normalizedPercentComplete;
+    double  _percentComplete;
+    NSString * _phase;
+    double  _timeRemaining;
 }
 
-@property (nonatomic) float normalizedPercentComplete;
-@property (nonatomic) float percentComplete;
+@property (nonatomic) double normalizedPercentComplete;
+@property (nonatomic) double percentComplete;
 @property (nonatomic, retain) NSString *phase;
 @property (nonatomic) double timeRemaining;
 

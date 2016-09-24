@@ -3,7 +3,7 @@
  */
 
 @interface CKComparisonOptionsValidator : CKPredicateValidatorInstance {
-    unsigned int _options;
+    unsigned int  _options;
 }
 
 @property (nonatomic) unsigned int options;

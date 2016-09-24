@@ -3,7 +3,7 @@
  */
 
 @interface PSSystemConfiguration : NSObject {
-    struct __SCPreferences { } *_prefs;
+    struct __SCPreferences { } * _prefs;
 }
 
 + (void)releaseSharedInstance;

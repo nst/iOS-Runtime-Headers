@@ -3,11 +3,11 @@
  */
 
 @interface CTCarrier : NSObject {
-    BOOL _allowsVOIP;
-    NSString *_carrierName;
-    NSString *_isoCountryCode;
-    NSString *_mobileCountryCode;
-    NSString *_mobileNetworkCode;
+    BOOL  _allowsVOIP;
+    NSString * _carrierName;
+    NSString * _isoCountryCode;
+    NSString * _mobileCountryCode;
+    NSString * _mobileNetworkCode;
 }
 
 @property (nonatomic) BOOL allowsVOIP;

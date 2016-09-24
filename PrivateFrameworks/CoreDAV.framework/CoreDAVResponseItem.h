@@ -3,14 +3,14 @@
  */
 
 @interface CoreDAVResponseItem : CoreDAVItem {
-    CoreDAVErrorItem *_errorItem;
-    NSMutableArray *_hrefs;
-    CoreDAVItemWithHrefChildItem *_location;
-    CoreDAVMatchResultsItem *_matchResults;
-    NSMutableSet *_propStats;
-    CoreDAVLeafItem *_responseDescription;
-    CoreDAVLeafItem *_serverUID;
-    CoreDAVLeafItem *_status;
+    CoreDAVErrorItem * _errorItem;
+    NSMutableArray * _hrefs;
+    CoreDAVItemWithHrefChildItem * _location;
+    CoreDAVMatchResultsItem * _matchResults;
+    NSMutableSet * _propStats;
+    CoreDAVLeafItem * _responseDescription;
+    CoreDAVLeafItem * _serverUID;
+    CoreDAVLeafItem * _status;
 }
 
 @property (nonatomic, retain) CoreDAVErrorItem *errorItem;

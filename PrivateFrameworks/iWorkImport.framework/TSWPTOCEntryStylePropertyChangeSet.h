@@ -3,10 +3,10 @@
  */
 
 @interface TSWPTOCEntryStylePropertyChangeSet : TSWPParagraphStylePropertyChangeSet {
-    BOOL _definedTocPageNumberStyle;
-    BOOL _definedTocShowPageNumber;
-    TSWPSpecCharacterStyle *_tocPageNumberStyle;
-    TSSSpecBool *_tocShowPageNumber;
+    BOOL  _definedTocPageNumberStyle;
+    BOOL  _definedTocShowPageNumber;
+    TSWPSpecCharacterStyle * _tocPageNumberStyle;
+    TSSSpecBool * _tocShowPageNumber;
 }
 
 - (void)enumerateDefinedPropertiesWithBlock:(id /* block */)arg1;

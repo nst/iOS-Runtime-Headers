@@ -3,8 +3,8 @@
  */
 
 @interface CAMModeSwitchTestHarness : CAMPerformanceTestHarness {
-    int _desiredMode;
-    CAMViewfinderViewController *_viewfinder;
+    int  _desiredMode;
+    CAMViewfinderViewController * _viewfinder;
 }
 
 + (id)harnessWithTestName:(id)arg1 viewfinder:(id)arg2 mode:(int)arg3;

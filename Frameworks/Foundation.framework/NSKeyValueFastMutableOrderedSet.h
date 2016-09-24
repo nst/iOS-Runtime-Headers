@@ -3,7 +3,7 @@
  */
 
 @interface NSKeyValueFastMutableOrderedSet : NSKeyValueMutableOrderedSet {
-    NSKeyValueMutatingOrderedSetMethodSet *_mutatingMethods;
+    NSKeyValueMutatingOrderedSetMethodSet * _mutatingMethods;
 }
 
 - (id)_proxyInitWithContainer:(id)arg1 getter:(id)arg2;

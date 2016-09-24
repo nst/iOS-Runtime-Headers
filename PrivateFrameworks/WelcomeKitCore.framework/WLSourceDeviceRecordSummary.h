@@ -3,16 +3,16 @@
  */
 
 @interface WLSourceDeviceRecordSummary : NSObject {
-    WLSourceDeviceAccount *_account;
-    NSString *_dataFilePath;
-    unsigned int _downloadSegmentCount;
-    NSString *_identifier;
-    unsigned int _itemSize;
-    NSDictionary *_metadata;
-    NSDate *_modifiedDate;
-    NSString *_relativePath;
-    unsigned int _sqlID;
-    BOOL _storeDataAsFile;
+    WLSourceDeviceAccount * _account;
+    NSString * _dataFilePath;
+    unsigned int  _downloadSegmentCount;
+    NSString * _identifier;
+    unsigned int  _itemSize;
+    NSDictionary * _metadata;
+    NSDate * _modifiedDate;
+    NSString * _relativePath;
+    unsigned int  _sqlID;
+    BOOL  _storeDataAsFile;
 }
 
 @property (nonatomic, retain) WLSourceDeviceAccount *account;

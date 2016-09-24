@@ -5,14 +5,16 @@
 @interface CKDPRecordRetrieveVersionsResponse : PBCodable <NSCopying> {
     struct { 
         unsigned int isDeleted : 1; 
-    } _has;
-    BOOL _isDeleted;
-    NSMutableArray *_recordVersions;
+    }  _has;
+    BOOL  _isDeleted;
+    NSMutableArray * _recordVersions;
 }
 
 @property (nonatomic) BOOL hasIsDeleted;
 @property (nonatomic) BOOL isDeleted;
 @property (nonatomic, retain) NSMutableArray *recordVersions;
+
++ (Class)recordVersionsType;
 
 - (void).cxx_destruct;
 - (void)addRecordVersions:(id)arg1;

@@ -3,11 +3,11 @@
  */
 
 @interface NNMKProtoMessageDeletion : PBCodable <NSCopying> {
-    unsigned int _deletionState;
+    unsigned int  _deletionState;
     struct { 
         unsigned int deletionState : 1; 
-    } _has;
-    NSString *_messageId;
+    }  _has;
+    NSString * _messageId;
 }
 
 @property (nonatomic) unsigned int deletionState;

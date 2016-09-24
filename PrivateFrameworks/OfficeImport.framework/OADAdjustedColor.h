@@ -3,12 +3,12 @@
  */
 
 @interface OADAdjustedColor : OADColor {
-    unsigned char mAdjustmentParam;
-    int mAdjustmentType;
-    OADColor *mBaseColor;
-    BOOL mGray;
-    BOOL mInvert;
-    BOOL mInvert128;
+    unsigned char  mAdjustmentParam;
+    int  mAdjustmentType;
+    OADColor * mBaseColor;
+    BOOL  mGray;
+    BOOL  mInvert;
+    BOOL  mInvert128;
 }
 
 - (unsigned char)adjustmentParam;

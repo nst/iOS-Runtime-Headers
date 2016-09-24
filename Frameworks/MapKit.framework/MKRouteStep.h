@@ -3,10 +3,10 @@
  */
 
 @interface MKRouteStep : NSObject {
-    GEOComposedRouteStep *_geoComposedRouteStep;
-    NSString *_instructions;
-    MKRouteStepPolyline *_polyline;
-    unsigned int _transportType;
+    GEOComposedRouteStep * _geoComposedRouteStep;
+    NSString * _instructions;
+    MKRouteStepPolyline * _polyline;
+    unsigned int  _transportType;
 }
 
 @property (nonatomic, readonly) double distance;

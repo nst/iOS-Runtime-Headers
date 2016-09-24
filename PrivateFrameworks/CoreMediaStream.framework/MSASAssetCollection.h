@@ -3,24 +3,24 @@
  */
 
 @interface MSASAssetCollection : NSObject <NSCopying> {
-    NSString *_GUID;
-    NSString *_albumGUID;
-    NSArray *_assets;
-    NSString *_ctag;
-    NSString *_email;
-    NSString *_fileName;
-    NSString *_firstName;
-    NSString *_fullName;
-    BOOL _hasComments;
-    BOOL _isDeletable;
-    BOOL _isMine;
-    NSString *_lastName;
-    NSDictionary *_metadata;
-    NSString *_path;
-    NSString *_personID;
-    long long _photoNumber;
-    NSDate *_timestamp;
-    <NSCoding> *_userInfo;
+    NSString * _GUID;
+    NSString * _albumGUID;
+    NSArray * _assets;
+    NSString * _ctag;
+    NSString * _email;
+    NSString * _fileName;
+    NSString * _firstName;
+    NSString * _fullName;
+    BOOL  _hasComments;
+    BOOL  _isDeletable;
+    BOOL  _isMine;
+    NSString * _lastName;
+    NSDictionary * _metadata;
+    NSString * _path;
+    NSString * _personID;
+    int  _photoNumber;
+    NSDate * _timestamp;
+    <NSCoding> * _userInfo;
 }
 
 @property (nonatomic, retain) NSString *GUID;
@@ -38,7 +38,7 @@
 @property (nonatomic, retain) NSDictionary *metadata;
 @property (nonatomic, retain) NSString *path;
 @property (nonatomic, retain) NSString *personID;
-@property (nonatomic) long long photoNumber;
+@property (nonatomic) int photoNumber;
 @property (nonatomic, retain) NSDate *timestamp;
 @property (nonatomic, retain) <NSCoding> *userInfo;
 
@@ -74,7 +74,7 @@
 - (id)metadata;
 - (id)path;
 - (id)personID;
-- (long long)photoNumber;
+- (int)photoNumber;
 - (void)setAlbumGUID:(id)arg1;
 - (void)setAssets:(id)arg1;
 - (void)setCtag:(id)arg1;
@@ -91,7 +91,7 @@
 - (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
 - (void)setPath:(id)arg1;
 - (void)setPersonID:(id)arg1;
-- (void)setPhotoNumber:(long long)arg1;
+- (void)setPhotoNumber:(int)arg1;
 - (void)setTimestamp:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (id)timestamp;

@@ -3,17 +3,17 @@
  */
 
 @interface MCSCEPPayload : MCCertificatePayload {
-    NSArray *_CACaps;
-    NSData *_CAFingerprint;
-    NSString *_CAInstanceName;
-    NSString *_URLString;
-    NSString *_challenge;
-    unsigned int _keySize;
-    unsigned int _retries;
-    unsigned int _retryDelay;
-    NSArray *_subject;
-    NSDictionary *_subjectAltName;
-    int _usageFlags;
+    NSArray * _CACaps;
+    NSData * _CAFingerprint;
+    NSString * _CAInstanceName;
+    NSString * _URLString;
+    NSString * _challenge;
+    unsigned int  _keySize;
+    unsigned int  _retries;
+    unsigned int  _retryDelay;
+    NSArray * _subject;
+    NSDictionary * _subjectAltName;
+    int  _usageFlags;
 }
 
 @property (nonatomic, readonly, retain) NSArray *CACaps;

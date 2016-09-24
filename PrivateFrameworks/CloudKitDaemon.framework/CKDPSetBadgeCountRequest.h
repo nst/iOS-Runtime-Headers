@@ -3,12 +3,12 @@
  */
 
 @interface CKDPSetBadgeCountRequest : PBRequest <NSCopying> {
-    unsigned int _badgeCount;
-    BOOL _forDevice;
+    unsigned int  _badgeCount;
+    BOOL  _forDevice;
     struct { 
         unsigned int badgeCount : 1; 
         unsigned int forDevice : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic) unsigned int badgeCount;
@@ -30,6 +30,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (unsigned int)requestTypeCode;
+- (Class)responseClass;
 - (void)setBadgeCount:(unsigned int)arg1;
 - (void)setForDevice:(BOOL)arg1;
 - (void)setHasBadgeCount:(BOOL)arg1;

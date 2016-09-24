@@ -3,11 +3,11 @@
  */
 
 @interface TSWPFont : NSObject {
-    NSString *_compatibilityName;
-    NSString *_displayName;
-    NSString *_familyName;
-    NSString *_fontName;
-    unsigned int _hash;
+    NSString * _compatibilityName;
+    NSString * _displayName;
+    NSString * _familyName;
+    NSString * _fontName;
+    unsigned int  _hash;
 }
 
 @property (nonatomic, copy) NSString *compatibilityName;

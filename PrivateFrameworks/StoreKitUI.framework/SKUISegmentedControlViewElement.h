@@ -3,8 +3,8 @@
  */
 
 @interface SKUISegmentedControlViewElement : SKUIViewElement {
-    int _maximumNumberOfVisibleItems;
-    NSString *_moreListTitle;
+    int  _maximumNumberOfVisibleItems;
+    NSString * _moreListTitle;
 }
 
 @property (nonatomic, readonly) SKUIDividerViewElement *bottomDivider;

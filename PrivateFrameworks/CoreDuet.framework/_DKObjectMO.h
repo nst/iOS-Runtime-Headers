@@ -11,6 +11,6 @@
 @property (nonatomic, retain) NSSet *relationSubject;
 @property (nonatomic, retain) _DKSourceMO *source;
 @property (nonatomic, retain) NSString *uuid;
-@property (nonatomic) long long uuidHash;
+@property (nonatomic) int uuidHash;
 
 @end

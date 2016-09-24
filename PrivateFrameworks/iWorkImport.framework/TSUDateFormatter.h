@@ -3,9 +3,9 @@
  */
 
 @interface TSUDateFormatter : NSObject {
-    NSString *mDateOnlyFormatString;
-    struct __CFDateFormatter { } *mFullDateFormatter;
-    NSString *mTimeOnlyFormatString;
+    NSString * mDateOnlyFormatString;
+    struct __CFDateFormatter { } * mFullDateFormatter;
+    NSString * mTimeOnlyFormatString;
 }
 
 + (id)dateFormatStringSpecialSymbols;

@@ -3,8 +3,8 @@
  */
 
 @interface _FBSqlitePreparedSimpleStatement : FBSqlitePreparedStatement {
-    struct sqlite3_stmt { } *_statement;
-    BSZeroingWeakReference *_weak_dbConnection;
+    struct sqlite3_stmt { } * _statement;
+    BSZeroingWeakReference * _weak_dbConnection;
 }
 
 - (int)_bindKey:(id)arg1 value:(id)arg2;

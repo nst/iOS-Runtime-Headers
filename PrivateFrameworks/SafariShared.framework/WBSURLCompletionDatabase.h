@@ -3,23 +3,23 @@
  */
 
 @interface WBSURLCompletionDatabase : NSObject {
-    <WBSURLCompletionDataSource> *_dataSource;
+    <WBSURLCompletionDataSource> * _dataSource;
     /* Warning: unhandled struct encoding: '{Vector<id<WBSURLCompletionMatchData>, 0, WTF::CrashOnOverflow, 16>="m_buffer"^@"m_capacity"I"m_size"I}' */ struct Vector<id<WBSURLCompletionMatchData>, 0, WTF::CrashOnOverflow, 16> { 
         m_capacity **m_buffer; 
-    } _fullTextBookmarkMatchesCache;
-    NSString *_fullTextBookmarkMatchesCacheString;
+    }  _fullTextBookmarkMatchesCache;
+    NSString * _fullTextBookmarkMatchesCacheString;
     /* Warning: unhandled struct encoding: '{Vector<id<WBSURLCompletionMatchData>, 0, WTF::CrashOnOverflow, 16>="m_buffer"^@"m_capacity"I"m_size"I}' */ struct Vector<id<WBSURLCompletionMatchData>, 0, WTF::CrashOnOverflow, 16> { 
         m_capacity **m_buffer; 
-    } _fullTextHistoryMatchesCache;
-    NSString *_fullTextHistoryMatchesCacheString;
+    }  _fullTextHistoryMatchesCache;
+    NSString * _fullTextHistoryMatchesCacheString;
     /* Warning: unhandled struct encoding: '{Vector<id<WBSURLCompletionMatchData>, 0, WTF::CrashOnOverflow, 16>="m_buffer"^@"m_capacity"I"m_size"I}' */ struct Vector<id<WBSURLCompletionMatchData>, 0, WTF::CrashOnOverflow, 16> { 
         m_capacity **m_buffer; 
-    } _prefixBookmarkMatchesCache;
-    NSString *_prefixBookmarkMatchesCacheString;
+    }  _prefixBookmarkMatchesCache;
+    NSString * _prefixBookmarkMatchesCacheString;
     /* Warning: unhandled struct encoding: '{Vector<id<WBSURLCompletionMatchData>, 0, WTF::CrashOnOverflow, 16>="m_buffer"^@"m_capacity"I"m_size"I}' */ struct Vector<id<WBSURLCompletionMatchData>, 0, WTF::CrashOnOverflow, 16> { 
         m_capacity **m_buffer; 
-    } _prefixHistoryMatchesCache;
-    NSString *_prefixHistoryMatchesCacheString;
+    }  _prefixHistoryMatchesCache;
+    NSString * _prefixHistoryMatchesCacheString;
 }
 
 @property (nonatomic) <WBSURLCompletionDataSource> *dataSource;

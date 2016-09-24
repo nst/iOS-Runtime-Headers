@@ -3,12 +3,12 @@
  */
 
 @interface ABHighlightingTextField : UITextField {
-    UIColor *_highlightedTextColor;
-    BOOL _isHighlighted;
-    BOOL _isHighlightingEnabled;
-    <ABResponderDelegate> *_responderDelegate;
-    UIColor *_savedTextColor;
-    BOOL _showsClearButtonWhenEmpty;
+    UIColor * _highlightedTextColor;
+    BOOL  _isHighlighted;
+    BOOL  _isHighlightingEnabled;
+    <ABResponderDelegate> * _responderDelegate;
+    UIColor * _savedTextColor;
+    BOOL  _showsClearButtonWhenEmpty;
 }
 
 @property (setter=abSetHighlightedTextColor:, nonatomic, retain) UIColor *abHighlightedTextColor;

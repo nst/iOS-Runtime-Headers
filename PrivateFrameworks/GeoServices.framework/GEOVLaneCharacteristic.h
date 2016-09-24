@@ -5,11 +5,11 @@
 @interface GEOVLaneCharacteristic : PBCodable <NSCopying> {
     struct { 
         unsigned int roadLaneCount : 1; 
-    } _has;
-    NSMutableArray *_laneDirections;
-    NSMutableArray *_laneDividers;
-    NSMutableArray *_laneTypes;
-    unsigned int _roadLaneCount;
+    }  _has;
+    NSMutableArray * _laneDirections;
+    NSMutableArray * _laneDividers;
+    NSMutableArray * _laneTypes;
+    unsigned int  _roadLaneCount;
 }
 
 @property (nonatomic) BOOL hasRoadLaneCount;

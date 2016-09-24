@@ -3,8 +3,8 @@
  */
 
 @interface SBUIEmergencyCallServiceViewController : UIViewController <SBUIEmergencyCallServiceInterface> {
-    int _backgroundStyle;
-    UIColor *_tintColor;
+    int  _backgroundStyle;
+    UIColor * _tintColor;
 }
 
 @property (nonatomic) int backgroundStyle;

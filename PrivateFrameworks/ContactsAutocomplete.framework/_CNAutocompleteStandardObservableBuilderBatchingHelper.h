@@ -3,7 +3,7 @@
  */
 
 @interface _CNAutocompleteStandardObservableBuilderBatchingHelper : NSObject <CNAutocompleteObservableBuilderBatchingHelper> {
-    _CNAutocompleteObservableBuilderBatchingHelper *_helper;
+    _CNAutocompleteObservableBuilderBatchingHelper * _helper;
 }
 
 @property (readonly, copy) NSString *debugDescription;

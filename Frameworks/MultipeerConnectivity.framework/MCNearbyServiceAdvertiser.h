@@ -3,21 +3,23 @@
  */
 
 @interface MCNearbyServiceAdvertiser : NSObject <NSNetServiceDelegate> {
-    NSData *_TXTRecordData;
-    <MCNearbyServiceAdvertiserDelegate> *_delegate;
-    NSDictionary *_discoveryInfo;
-    NSString *_formattedServiceType;
-    NSMutableDictionary *_invites;
-    BOOL _isAdvertising;
-    MCPeerID *_myPeerID;
-    NSNetService *_networkServer;
-    int _outgoingInviteID;
-    NSMutableDictionary *_peers;
-    NSString *_serviceType;
-    NSObject<OS_dispatch_queue> *_syncQueue;
-    BOOL _wasAdvertising;
+    BOOL  _AWDLDisabled;
+    NSData * _TXTRecordData;
+    <MCNearbyServiceAdvertiserDelegate> * _delegate;
+    NSDictionary * _discoveryInfo;
+    NSString * _formattedServiceType;
+    NSMutableDictionary * _invites;
+    BOOL  _isAdvertising;
+    MCPeerID * _myPeerID;
+    NSNetService * _networkServer;
+    int  _outgoingInviteID;
+    NSMutableDictionary * _peers;
+    NSString * _serviceType;
+    NSObject<OS_dispatch_queue> * _syncQueue;
+    BOOL  _wasAdvertising;
 }
 
+@property (getter=isAWDLDisabled, nonatomic) BOOL AWDLDisabled;
 @property (nonatomic, retain) NSData *TXTRecordData;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MCNearbyServiceAdvertiserDelegate> *delegate;
@@ -48,6 +50,7 @@
 - (id)init;
 - (id)initWithPeer:(id)arg1 discoveryInfo:(id)arg2 serviceType:(id)arg3;
 - (id)invites;
+- (BOOL)isAWDLDisabled;
 - (BOOL)isAdvertising;
 - (id)makeTXTRecordDataWithDiscoveryInfo:(id)arg1;
 - (id)myPeerID;
@@ -60,6 +63,7 @@
 - (void)parseIDString:(id*)arg1 displayName:(id*)arg2 fromIdentifier:(id)arg3;
 - (id)peers;
 - (id)serviceType;
+- (void)setAWDLDisabled:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDiscoveryInfo:(id)arg1;
 - (void)setFormattedServiceType:(id)arg1;

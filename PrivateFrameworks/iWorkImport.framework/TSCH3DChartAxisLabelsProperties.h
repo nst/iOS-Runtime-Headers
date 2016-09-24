@@ -3,16 +3,16 @@
  */
 
 @interface TSCH3DChartAxisLabelsProperties : NSObject {
-    float mCachedTextFactor;
-    TSULRUCache *mCategoryStridingCache;
-    BOOL mHidden;
-    TSCHChartInfo *mInfo;
-    TSCH3DLabelResources *mLabels;
-    TSCHSelectionPath *mSelectionPath;
-    unsigned int mStyleIndex;
+    double  mCachedTextFactor;
+    TSULRUCache * mCategoryStridingCache;
+    BOOL  mHidden;
+    TSCHChartInfo * mInfo;
+    TSCH3DLabelResources * mLabels;
+    TSCHSelectionPath * mSelectionPath;
+    unsigned int  mStyleIndex;
 }
 
-@property (nonatomic) float cachedTextFactor;
+@property (nonatomic) double cachedTextFactor;
 @property (nonatomic, readonly) TSULRUCache *categoryStridingCache;
 @property (nonatomic) BOOL hidden;
 @property (nonatomic, readonly) TSCHChartInfo *info;

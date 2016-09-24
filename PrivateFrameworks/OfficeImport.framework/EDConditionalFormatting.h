@@ -3,9 +3,9 @@
  */
 
 @interface EDConditionalFormatting : NSObject {
-    bool mApplyToDate;
-    EDReferenceCollection *mRanges;
-    NSMutableArray *mRules;
+    bool  mApplyToDate;
+    EDReferenceCollection * mRanges;
+    NSMutableArray * mRules;
 }
 
 + (id)conditionalFormatting;

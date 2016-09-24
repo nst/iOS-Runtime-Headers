@@ -3,13 +3,14 @@
  */
 
 @interface BBSystemStateProvider : NSObject {
-    NSXPCConnection *_connection;
-    unsigned int _currentState;
+    NSXPCConnection * _connection;
+    unsigned int  _currentState;
 }
 
 + (id)clientInterface;
 + (id)serverInterface;
 
+- (void).cxx_destruct;
 - (void)_sendState:(unsigned int)arg1 value:(BOOL)arg2;
 - (void)dealloc;
 - (id)init;

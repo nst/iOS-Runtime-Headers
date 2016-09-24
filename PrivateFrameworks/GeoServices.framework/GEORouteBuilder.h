@@ -3,13 +3,13 @@
  */
 
 @interface GEORouteBuilder : NSObject {
-    GEOMapRegion *_boundingMapRegion;
-    NSMutableArray *_legs;
-    NSMutableArray *_pointSections;
-    NSData *_pointsData;
-    GEORoute *_route;
-    NSMutableArray *_steps;
-    BOOL _usesZilch;
+    GEOMapRegion * _boundingMapRegion;
+    NSMutableArray * _legs;
+    NSMutableArray * _pointSections;
+    NSData * _pointsData;
+    GEORoute * _route;
+    NSMutableArray * _steps;
+    BOOL  _usesZilch;
 }
 
 - (void)_buildPointSectionsForRoute:(id)arg1;

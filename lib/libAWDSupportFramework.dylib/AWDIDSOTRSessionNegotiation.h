@@ -3,17 +3,17 @@
  */
 
 @interface AWDIDSOTRSessionNegotiation : PBCodable <NSCopying> {
-    unsigned long long _duration;
+    unsigned long long  _duration;
     struct { 
         unsigned int duration : 1; 
         unsigned int priority : 1; 
         unsigned int timestamp : 1; 
         unsigned int result : 1; 
-    } _has;
-    unsigned long long _priority;
-    unsigned int _result;
-    NSString *_service;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _priority;
+    unsigned int  _result;
+    NSString * _service;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned long long duration;

@@ -3,10 +3,10 @@
  */
 
 @interface MSVCallback : NSObject {
-    id /* block */ _block;
-    NSObject<OS_dispatch_queue> *_queue;
-    SEL _selector;
-    id _target;
+    id /* block */  _block;
+    NSObject<OS_dispatch_queue> * _queue;
+    SEL  _selector;
+    id  _target;
 }
 
 @property (nonatomic, copy) id /* block */ block;

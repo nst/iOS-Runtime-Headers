@@ -3,7 +3,7 @@
  */
 
 @interface CalDAVPostCalendarItemTask : CoreDAVPostTask {
-    NSString *_previousScheduleTag;
+    NSString * _previousScheduleTag;
 }
 
 @property (nonatomic) <CalDAVPostCalendarItemTaskDelegate> *delegate;

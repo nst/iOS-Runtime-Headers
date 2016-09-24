@@ -3,9 +3,9 @@
  */
 
 @interface ABDelayedNotificationSender : NSObject {
-    struct __CFDictionary { } *_delayedNotificationInfos;
-    NSMutableArray *_delayedNotifications;
-    struct __CFArray { } *_delegatesForDelayedNotification;
+    struct __CFDictionary { } * _delayedNotificationInfos;
+    NSMutableArray * _delayedNotifications;
+    struct __CFArray { } * _delegatesForDelayedNotification;
 }
 
 - (void)addDelayedNotification:(id)arg1;

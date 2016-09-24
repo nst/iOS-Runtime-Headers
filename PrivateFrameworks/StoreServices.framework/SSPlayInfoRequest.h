@@ -3,8 +3,8 @@
  */
 
 @interface SSPlayInfoRequest : SSRequest <SSXPCCoding> {
-    SSPlayInfoRequestContext *_context;
-    SSPlayInfoResponse *_response;
+    SSPlayInfoRequestContext * _context;
+    SSPlayInfoResponse * _response;
 }
 
 @property (readonly, copy) NSString *debugDescription;

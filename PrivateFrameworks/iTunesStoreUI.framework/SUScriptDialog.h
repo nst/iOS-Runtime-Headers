@@ -3,12 +3,12 @@
  */
 
 @interface SUScriptDialog : SUScriptObject {
-    NSString *_body;
-    id _buttons;
-    NSNumber *_cancelButtonIndex;
-    NSNumber *_destructiveButtonIndex;
-    id _textFields;
-    NSString *_title;
+    NSString * _body;
+    id  _buttons;
+    NSNumber * _cancelButtonIndex;
+    NSNumber * _destructiveButtonIndex;
+    id  _textFields;
+    NSString * _title;
 }
 
 @property (retain) NSString *body;

@@ -3,9 +3,9 @@
  */
 
 @interface _UIRelationshipTraitStorageRecord : NSObject <NSCoding> {
-    NSSet *_addedObjects;
-    NSSet *_removedObjects;
-    UITraitCollection *_traitCollection;
+    NSSet * _addedObjects;
+    NSSet * _removedObjects;
+    UITraitCollection * _traitCollection;
 }
 
 @property (nonatomic, readonly) NSSet *addedObjects;

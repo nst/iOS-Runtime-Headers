@@ -10,7 +10,7 @@
 - (id)_carrierSUProperties;
 - (int)_integerForKey:(id)arg1 defaultValue:(int)arg2;
 - (BOOL)_isValidHour:(int)arg1;
-- (long long)_longLongForKey:(id)arg1 defaultValue:(long long)arg2;
+- (int)_longLongForKey:(id)arg1 defaultValue:(int)arg2;
 - (id)_numberForKey:(id)arg1;
 - (unsigned int)_unsignedIntegerForKey:(id)arg1 defaultValue:(int)arg2;
 - (void)encodeWithCoder:(id)arg1;
@@ -19,7 +19,7 @@
 - (BOOL)isDownloadAllowable;
 - (BOOL)isDownloadAllowableOver2G;
 - (BOOL)isDownloadFree;
-- (long long)maximumDownloadSizeInBytes;
+- (int)maximumDownloadSizeInBytes;
 - (unsigned int)numberOfDaysToWaitForCellularAutoDownload;
 - (int)peakEndHour;
 - (int)peakStartHour;

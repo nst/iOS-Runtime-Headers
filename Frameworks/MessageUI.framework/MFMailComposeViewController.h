@@ -3,10 +3,10 @@
  */
 
 @interface MFMailComposeViewController : UINavigationController {
-    BOOL _didChangeStatusBarStyle;
-    id _internal;
-    int _savedStatusBarStyle;
-    id /* block */ _setupAnimationBlock;
+    BOOL  _didChangeStatusBarStyle;
+    id  _internal;
+    int  _savedStatusBarStyle;
+    id /* block */  _setupAnimationBlock;
 }
 
 @property (nonatomic) <MFMailComposeViewControllerDelegate> *mailComposeDelegate;
@@ -14,6 +14,7 @@
 + (BOOL)canSendMail;
 + (BOOL)canSendMailSourceAccountManagement:(int)arg1;
 + (BOOL)hasAutosavedMessageWithIdentifier:(id)arg1;
++ (BOOL)isMailDropConfigured;
 + (unsigned int)maximumAttachmentSize;
 + (void)removeAutosavedMessageWithIdentifier:(id)arg1;
 

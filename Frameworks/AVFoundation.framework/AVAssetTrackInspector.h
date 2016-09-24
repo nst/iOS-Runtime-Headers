@@ -3,17 +3,18 @@
  */
 
 @interface AVAssetTrackInspector : AVFigObjectInspector <AVAsynchronousKeyValueLoading> {
-    NSArray *_cachedMediaCharacteristics;
-    long _synthesizeMediaCharacteristicsOnce;
-    AVWeakReference *_weakReference;
+    NSArray * _cachedMediaCharacteristics;
+    long  _synthesizeMediaCharacteristicsOnce;
+    AVWeakReference * _weakReference;
 }
 
 @property (nonatomic, readonly) int alternateGroupID;
 @property (nonatomic, readonly) NSArray *availableMetadataFormats;
 @property (nonatomic, readonly) NSArray *commonMetadata;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } dimensions;
+@property (nonatomic, readonly) int defaultAlternateGroupID;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } dimensions;
 @property (getter=isEnabled, nonatomic, readonly) BOOL enabled;
-@property (nonatomic, readonly) float estimatedDataRate;
+@property (nonatomic, readonly) double estimatedDataRate;
 @property (getter=isExcludedFromAutoselectionInTrackGroup, nonatomic, readonly) BOOL excludedFromAutoselectionInTrackGroup;
 @property (nonatomic, readonly) NSString *extendedLanguageTag;
 @property (getter=_figAssetTrack, nonatomic, readonly) struct OpaqueFigAssetTrack { }*figAssetTrack;
@@ -26,22 +27,23 @@
 @property (nonatomic, readonly) NSLocale *locale;
 @property (nonatomic, readonly) NSDictionary *loudnessInfo;
 @property (nonatomic, readonly) NSArray *mediaCharacteristics;
-@property (nonatomic, readonly) struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } mediaDecodeTimeRange;
-@property (nonatomic, readonly) struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } mediaPresentationTimeRange;
+@property (nonatomic, readonly) struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; } mediaDecodeTimeRange;
+@property (nonatomic, readonly) struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; } mediaPresentationTimeRange;
 @property (nonatomic, readonly) NSString *mediaType;
-@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } minSampleDuration;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } naturalSize;
+@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } minSampleDuration;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } naturalSize;
 @property (nonatomic, readonly) int naturalTimeScale;
-@property (nonatomic, readonly) float nominalFrameRate;
+@property (nonatomic, readonly) double nominalFrameRate;
 @property (nonatomic, readonly) long playabilityValidationResult;
 @property (getter=isPlayable, nonatomic, readonly) BOOL playable;
-@property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
-@property (nonatomic, readonly) float preferredVolume;
+@property (nonatomic, readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } preferredTransform;
+@property (nonatomic, readonly) double preferredVolume;
+@property (nonatomic, readonly) int provisionalAlternateGroupID;
 @property (nonatomic, readonly) BOOL requiresFrameReordering;
 @property (nonatomic, readonly, copy) NSArray *segments;
 @property (getter=isSelfContained, nonatomic, readonly) BOOL selfContained;
-@property (nonatomic, readonly) struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } timeRange;
-@property (nonatomic, readonly) long long totalSampleDataLength;
+@property (nonatomic, readonly) struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; } timeRange;
+@property (nonatomic, readonly) int totalSampleDataLength;
 @property (nonatomic, readonly) int trackID;
 @property (getter=_trackReferences, nonatomic, readonly) NSDictionary *trackReferences;
 
@@ -60,7 +62,8 @@
 - (id)commonMetadata;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (struct CGSize { float x1; float x2; })dimensions;
+- (int)defaultAlternateGroupID;
+- (struct CGSize { double x1; double x2; })dimensions;
 - (float)estimatedDataRate;
 - (id)extendedLanguageTag;
 - (id)formatDescriptions;
@@ -76,24 +79,25 @@
 - (id)locale;
 - (id)loudnessInfo;
 - (id)mediaCharacteristics;
-- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })mediaDecodeTimeRange;
-- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })mediaPresentationTimeRange;
+- (struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })mediaDecodeTimeRange;
+- (struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })mediaPresentationTimeRange;
 - (id)mediaType;
 - (id)metadataForFormat:(id)arg1;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })minSampleDuration;
-- (struct CGSize { float x1; float x2; })naturalSize;
+- (struct { int x1; int x2; unsigned int x3; int x4; })minSampleDuration;
+- (struct CGSize { double x1; double x2; })naturalSize;
 - (int)naturalTimeScale;
 - (float)nominalFrameRate;
 - (long)playabilityValidationResult;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })preferredTransform;
 - (float)preferredVolume;
+- (int)provisionalAlternateGroupID;
 - (BOOL)requiresFrameReordering;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })samplePresentationTimeForTrackTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (id)segmentForTrackTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (struct { int x1; int x2; unsigned int x3; int x4; })samplePresentationTimeForTrackTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (id)segmentForTrackTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
 - (id)segments;
 - (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
-- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
-- (long long)totalSampleDataLength;
+- (struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })timeRange;
+- (int)totalSampleDataLength;
 - (int)trackID;
 
 @end

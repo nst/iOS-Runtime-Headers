@@ -3,7 +3,7 @@
  */
 
 @interface NSRecursiveLock : NSObject <NSLocking> {
-    void *_priv;
+    void * _priv;
 }
 
 @property (copy) NSString *name;
@@ -12,7 +12,6 @@
 
 - (void)dealloc;
 - (id)description;
-- (void)finalize;
 - (id)init;
 - (BOOL)isLocking;
 - (void)lock;

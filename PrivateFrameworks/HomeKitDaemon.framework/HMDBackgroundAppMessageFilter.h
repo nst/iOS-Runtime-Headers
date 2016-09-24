@@ -3,7 +3,7 @@
  */
 
 @interface HMDBackgroundAppMessageFilter : HMDMessageFilter {
-    NSMutableSet *_pidOfAppsRunningInBackground;
+    NSMutableSet * _pidOfAppsRunningInBackground;
 }
 
 @property (nonatomic, retain) NSMutableSet *pidOfAppsRunningInBackground;

@@ -3,23 +3,36 @@
  */
 
 @interface MPAVRoute : NSObject {
-    NSDictionary *_avRouteDescription;
-    int _displayRouteType;
-    int _pickableRouteType;
-    BOOL _picked;
-    BOOL _requiresPassword;
-    NSString *_routeName;
-    int _routeSubtype;
-    int _routeType;
-    NSString *_routeUID;
-    MPAVRoute *_wirelessDisplayRoute;
+    NSArray * _auxiliaryDevices;
+    NSDictionary * _avRouteDescription;
+    MPAVBatteryLevel * _batteryLevel;
+    int  _displayRouteType;
+    int  _pickableRouteType;
+    BOOL  _picked;
+    BOOL  _pickedOnPairedDevice;
+    BOOL  _playingOnPairedDevice;
+    BOOL  _requiresPassword;
+    NSString * _routeName;
+    int  _routeSubtype;
+    int  _routeType;
+    NSString * _routeUID;
+    MPAVRoute * _wirelessDisplayRoute;
 }
 
+@property (getter=isAirpodsRoute, nonatomic, readonly) BOOL airpodsRoute;
+@property (nonatomic, readonly) NSArray *auxiliaryDevices;
+@property (nonatomic, readonly) MPAVBatteryLevel *batteryLevel;
+@property (getter=isBeatsSoloRoute, nonatomic, readonly) BOOL beatsSoloRoute;
+@property (getter=isBeatsXRoute, nonatomic, readonly) BOOL beatsXRoute;
 @property (nonatomic, readonly) BOOL displayIsPicked;
 @property (nonatomic, readonly) int displayRouteType;
+@property (nonatomic, readonly) BOOL isDeviceRoute;
 @property (nonatomic, readonly) int passwordType;
 @property (nonatomic, readonly) int pickableRouteType;
 @property (getter=isPicked, nonatomic, readonly) BOOL picked;
+@property (getter=isPickedOnPairedDevice, nonatomic, readonly) BOOL pickedOnPairedDevice;
+@property (getter=isPlayingOnPairedDevice, nonatomic, readonly) BOOL playingOnPairedDevice;
+@property (getter=isPowerbeatsRoute, nonatomic, readonly) BOOL powerbeatsRoute;
 @property (nonatomic, readonly) BOOL requiresPassword;
 @property (nonatomic, readonly) NSString *routeName;
 @property (nonatomic, readonly) int routeSubtype;
@@ -31,15 +44,25 @@
 
 - (void).cxx_destruct;
 - (id)_initWithAVRouteDescription:(id)arg1;
+- (id)_productIdentifier;
 - (void)_routingControllerPickedRouteNotification:(id)arg1;
+- (id)auxiliaryDevices;
 - (id)avRouteDescription;
+- (id)batteryLevel;
 - (void)dealloc;
 - (id)description;
 - (BOOL)displayIsPicked;
 - (int)displayRouteType;
 - (unsigned int)hash;
+- (BOOL)isAirpodsRoute;
+- (BOOL)isBeatsSoloRoute;
+- (BOOL)isBeatsXRoute;
+- (BOOL)isDeviceRoute;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isPicked;
+- (BOOL)isPickedOnPairedDevice;
+- (BOOL)isPlayingOnPairedDevice;
+- (BOOL)isPowerbeatsRoute;
 - (int)passwordType;
 - (int)pickableRouteType;
 - (BOOL)requiresPassword;

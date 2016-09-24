@@ -3,9 +3,9 @@
  */
 
 @interface GKNearbyPlayersDataSource : GKBasicCollectionViewDataSource {
-    BOOL _browsingForNearbyPlayers;
-    <GKNearbyBrowserDelegate> *_nearbyDelegate;
-    NSMutableArray *_nearbyPlayers;
+    BOOL  _browsingForNearbyPlayers;
+    <GKNearbyBrowserDelegate> * _nearbyDelegate;
+    NSMutableArray * _nearbyPlayers;
 }
 
 @property (nonatomic) BOOL browsingForNearbyPlayers;

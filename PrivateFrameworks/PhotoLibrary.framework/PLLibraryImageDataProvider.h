@@ -3,9 +3,9 @@
  */
 
 @interface PLLibraryImageDataProvider : NSObject {
-    PLImageCache *_imageCache;
-    PLImageLoadingQueue *_imageLoadingQueue;
-    NSMutableDictionary *_imageSources;
+    PLImageCache * _imageCache;
+    PLImageLoadingQueue * _imageLoadingQueue;
+    NSMutableDictionary * _imageSources;
 }
 
 - (id)_imageSourceForFormat:(int)arg1;

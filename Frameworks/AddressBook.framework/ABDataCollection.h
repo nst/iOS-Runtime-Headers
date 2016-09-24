@@ -3,21 +3,21 @@
  */
 
 @interface ABDataCollection : NSObject {
-    void *_addressBook;
-    bool _isLocalSourceOnly;
-    bool _isLocalSourceRemaining;
-    bool _isMeCardHomeAddressSet;
-    bool _isMeCardSet;
-    bool _isMeCardWorkAddressSet;
-    NSMutableDictionary *_propertyCountForRecordID;
-    bool _runningUnitTests;
-    NSCountedSet *_sourceTypeScalarKeys;
-    int _totalContacts;
-    int _totalContactsWithAnniversaries;
-    int _totalContactsWithBirthdays;
-    int _totalContactsWithPhotos;
-    int _totalContactsWithYearOnBirthday;
-    int _totalGroups;
+    void * _addressBook;
+    bool  _isLocalSourceOnly;
+    bool  _isLocalSourceRemaining;
+    bool  _isMeCardHomeAddressSet;
+    bool  _isMeCardSet;
+    bool  _isMeCardWorkAddressSet;
+    NSMutableDictionary * _propertyCountForRecordID;
+    bool  _runningUnitTests;
+    NSCountedSet * _sourceTypeScalarKeys;
+    int  _totalContacts;
+    int  _totalContactsWithAnniversaries;
+    int  _totalContactsWithBirthdays;
+    int  _totalContactsWithPhotos;
+    int  _totalContactsWithYearOnBirthday;
+    int  _totalGroups;
 }
 
 @property (nonatomic) bool isLocalSourceOnly;
@@ -36,8 +36,8 @@
 @property (nonatomic) int totalGroups;
 
 + (BOOL)isEnabled;
-+ (void)logContactCreation:(long long)arg1;
-+ (void)logContactUpdate:(long long)arg1;
++ (void)logContactCreation:(int)arg1;
++ (void)logContactUpdate:(int)arg1;
 + (void)logPropertyAdded:(int)arg1 forContact:(void*)arg2;
 
 - (id)_sourceTypeAsString:(int)arg1;

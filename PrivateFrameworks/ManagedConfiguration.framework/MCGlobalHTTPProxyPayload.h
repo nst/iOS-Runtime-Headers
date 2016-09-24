@@ -3,17 +3,17 @@
  */
 
 @interface MCGlobalHTTPProxyPayload : MCPayload {
-    NSString *_credentialUUID;
-    BOOL _proxyCaptiveLoginAllowed;
-    NSNumber *_proxyCaptiveLoginAllowedNum;
-    BOOL _proxyPACFallbackAllowed;
-    NSNumber *_proxyPACFallbackAllowedNum;
-    NSString *_proxyPACURLString;
-    NSString *_proxyPassword;
-    NSString *_proxyServer;
-    NSNumber *_proxyServerPort;
-    int _proxyType;
-    NSString *_proxyUsername;
+    NSString * _credentialUUID;
+    BOOL  _proxyCaptiveLoginAllowed;
+    NSNumber * _proxyCaptiveLoginAllowedNum;
+    BOOL  _proxyPACFallbackAllowed;
+    NSNumber * _proxyPACFallbackAllowedNum;
+    NSString * _proxyPACURLString;
+    NSString * _proxyPassword;
+    NSString * _proxyServer;
+    NSNumber * _proxyServerPort;
+    int  _proxyType;
+    NSString * _proxyUsername;
 }
 
 @property (nonatomic, retain) NSString *credentialUUID;

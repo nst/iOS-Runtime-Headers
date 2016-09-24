@@ -3,36 +3,36 @@
  */
 
 @interface IMPerson : NSObject {
-    CNContact *_cnContact;
-    int _recordID;
-    BOOL _registered;
+    CNContact * _cnContact;
+    int  _recordID;
+    BOOL  _registered;
 }
 
 @property (nonatomic, readonly) int _recordID;
 @property (nonatomic, readonly) void*_recordRef;
 @property (nonatomic, readonly) BOOL _registered;
-@property (nonatomic, readonly, retain) NSString *abbreviatedName;
+@property (nonatomic, readonly) NSString *abbreviatedName;
 @property (nonatomic, readonly) NSArray *allEmails;
 @property (nonatomic, retain) CNContact *cnContact;
 @property (nonatomic, readonly, copy) NSString *cnContactID;
 @property (nonatomic, readonly) NSString *companyName;
-@property (nonatomic, readonly, retain) NSString *displayName;
+@property (nonatomic, readonly) NSString *displayName;
 @property (nonatomic, copy) NSArray *emails;
 @property (nonatomic, copy) NSString *firstName;
-@property (nonatomic, readonly, retain) NSString *fullName;
-@property (nonatomic, readonly, retain) NSArray *groups;
+@property (nonatomic, readonly) NSString *fullName;
+@property (nonatomic, readonly) NSArray *groups;
 @property (nonatomic, retain) NSData *imageData;
 @property (nonatomic, readonly) NSData *imageDataWithoutLoading;
 @property (nonatomic, readonly) BOOL isCompany;
 @property (nonatomic, readonly) BOOL isInAddressBook;
 @property (nonatomic, copy) NSString *lastName;
 @property (nonatomic, readonly) NSArray *mobileNumbers;
-@property (nonatomic, readonly, retain) NSString *name;
+@property (nonatomic, readonly) NSString *name;
 @property (nonatomic, copy) NSString *nickname;
-@property (nonatomic) NSArray *phoneNumbers;
+@property (nonatomic, retain) NSArray *phoneNumbers;
 @property (nonatomic, readonly) int recordID;
 @property (nonatomic, readonly) unsigned int status;
-@property (nonatomic, readonly, retain) NSString *uniqueID;
+@property (nonatomic, readonly) NSString *uniqueID;
 
 + (id)_cachedRecordResultForQuery:(id)arg1 addressBook:(void*)arg2;
 + (void)_setCachedQueriesEnabled:(BOOL)arg1;
@@ -48,6 +48,7 @@
 + (id)existingABPersonWithFirstName:(id)arg1 lastName:(id)arg2;
 + (id)existingABPersonWithInstantMessageAddress:(id)arg1 onServices:(id)arg2 allowSubstringMatch:(BOOL)arg3;
 
+- (void).cxx_destruct;
 - (void)_abPersonChanged:(id)arg1;
 - (int)_recordID;
 - (void*)_recordRef;

@@ -3,22 +3,18 @@
  */
 
 @interface ISURLBagCache : NSObject {
-    NSMutableDictionary *_cachedBags;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
+    SSLRUCache * _cachedBags;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
 }
 
 + (id)URLWithBagContext:(id)arg1;
 + (id)sharedCache;
 
+- (void).cxx_destruct;
 - (id)URLBagForContext:(id)arg1;
 - (id)URLBagForContext:(id)arg1 withOptions:(int)arg2;
-- (id)_URLBagForContext:(id)arg1 withOptions:(int)arg2;
-- (id)_cachedResponseForRequest:(id)arg1;
-- (id)_fallbackContextWithContext:(id)arg1;
 - (id)_newRequestWithURLBagContext:(id)arg1;
-- (BOOL)_shouldFallbackForContext:(id)arg1 options:(int)arg2;
 - (void)_storeFrontChangedNotification:(id)arg1;
-- (id)_storeFrontIdentifierForResponse:(id)arg1;
 - (void)addURLBag:(id)arg1;
 - (void)dealloc;
 - (id)init;

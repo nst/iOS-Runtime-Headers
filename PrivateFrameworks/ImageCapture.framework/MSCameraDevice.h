@@ -3,7 +3,7 @@
  */
 
 @interface MSCameraDevice : ICCameraDevice {
-    void *_msCameraProperties;
+    void * _msCameraProperties;
 }
 
 - (void)dealloc;

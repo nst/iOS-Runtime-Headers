@@ -3,10 +3,10 @@
  */
 
 @interface _SFLinkPreviewHeader : UIView <_SFFluidProgressViewDelegate> {
-    NSString *_domain;
-    UILabel *_domainLabel;
-    UIView *_hairline;
-    _SFFluidProgressView *_progressView;
+    NSString * _domain;
+    UILabel * _domainLabel;
+    UIView * _hairline;
+    _SFFluidProgressView * _progressView;
 }
 
 @property (nonatomic, copy) NSString *domain;
@@ -19,7 +19,7 @@
 - (id)domain;
 - (void)fluidProgressViewDidShowProgress:(id)arg1;
 - (void)fluidProgressViewWillShowProgress:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)progressView;
 - (void)setDomain:(id)arg1;

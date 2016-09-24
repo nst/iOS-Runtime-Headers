@@ -3,8 +3,8 @@
  */
 
 @interface fetchDenyEntry : NSObject {
-    NSDate *_when;
-    int _why;
+    NSDate * _when;
+    int  _why;
 }
 
 @property (retain) NSDate *when;

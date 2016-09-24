@@ -3,9 +3,9 @@
  */
 
 @interface MPMediaQuerySectionInfo : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
-    BOOL _hasUnknownSection;
-    NSArray *_sectionIndexTitles;
-    NSArray *_sections;
+    BOOL  _hasUnknownSection;
+    NSArray * _sectionIndexTitles;
+    NSArray * _sections;
 }
 
 @property (nonatomic, readonly) unsigned int count;

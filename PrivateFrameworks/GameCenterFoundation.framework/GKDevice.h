@@ -3,13 +3,13 @@
  */
 
 @interface GKDevice : NSObject {
-    NSString *_buildVersion;
-    NSString *_deviceName;
-    GKEventEmitter<GKLockStatusObserver> *_emitter;
-    BOOL _gameKitAvailable;
-    NSString *_gameKitVersion;
-    NSString *_osVersion;
-    NSString *_udid;
+    NSString * _buildVersion;
+    NSString * _deviceName;
+    GKEventEmitter<GKLockStatusObserver> * _emitter;
+    BOOL  _gameKitAvailable;
+    NSString * _gameKitVersion;
+    NSString * _osVersion;
+    NSString * _udid;
 }
 
 @property (nonatomic, readonly) NSString *buildVersion;

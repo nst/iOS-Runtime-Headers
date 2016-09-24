@@ -3,7 +3,7 @@
  */
 
 @interface HSUpdateRequest : HSRequest {
-    int _connectionType;
+    int  _connectionType;
 }
 
 + (id)requestWithDatabaseRevision:(unsigned int)arg1 sessionID:(unsigned int)arg2 connectionType:(int)arg3;

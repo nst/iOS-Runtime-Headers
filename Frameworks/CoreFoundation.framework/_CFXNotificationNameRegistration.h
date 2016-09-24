@@ -3,7 +3,7 @@
  */
 
 @interface _CFXNotificationNameRegistration : _CFXNotificationRegistrationContainer {
-    struct __CFString { } *_name;
+    struct __CFString { } * _name;
 }
 
 @property (readonly) struct __CFString { }*name;
@@ -14,7 +14,6 @@
 - (id)acquireObject:(void*)arg1;
 - (void)dealloc;
 - (BOOL)enumerate:(id /* block */)arg1;
-- (void)finalize;
 - (void)find:(void*)arg1 observer:(void*)arg2 matching:(struct { struct { id *x_1_1_1; unsigned int x_1_1_2; BOOL x_1_1_3; } x1; struct { id *x_2_1_1; unsigned int x_2_1_2; BOOL x_2_1_3; } x2; }*)arg3;
 - (id)initWithName:(struct __CFString { }*)arg1 options:(unsigned long)arg2 parent:(id)arg3;
 - (void*)key;

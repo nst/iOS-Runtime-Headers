@@ -5,6 +5,5 @@
 @interface CNStarkUtilities : NSObject
 
 + (BOOL)activeInterfaceMechanismIsHardware;
-+ (id)starkScreen;
 
 @end

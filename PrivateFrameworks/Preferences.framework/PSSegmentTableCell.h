@@ -3,8 +3,8 @@
  */
 
 @interface PSSegmentTableCell : PSControlTableCell {
-    NSDictionary *_titleDict;
-    NSArray *_values;
+    NSDictionary * _titleDict;
+    NSArray * _values;
 }
 
 - (void).cxx_destruct;

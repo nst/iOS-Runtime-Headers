@@ -3,10 +3,10 @@
  */
 
 @interface GEOUsageCollectionRequest : PBRequest <NSCopying> {
-    NSMutableArray *_abExperimentAssignments;
-    GEOABExperimentAssignment *_tilesAbExperimentAssignment;
-    NSMutableArray *_timeToLeaveHypothesisFeedbackCollections;
-    NSMutableArray *_timeToLeaveInitialTravelTimeFeedbackCollections;
+    NSMutableArray * _abExperimentAssignments;
+    GEOABExperimentAssignment * _tilesAbExperimentAssignment;
+    NSMutableArray * _timeToLeaveHypothesisFeedbackCollections;
+    NSMutableArray * _timeToLeaveInitialTravelTimeFeedbackCollections;
 }
 
 @property (nonatomic, retain) NSMutableArray *abExperimentAssignments;
@@ -14,6 +14,10 @@
 @property (nonatomic, retain) GEOABExperimentAssignment *tilesAbExperimentAssignment;
 @property (nonatomic, retain) NSMutableArray *timeToLeaveHypothesisFeedbackCollections;
 @property (nonatomic, retain) NSMutableArray *timeToLeaveInitialTravelTimeFeedbackCollections;
+
++ (Class)abExperimentAssignmentType;
++ (Class)timeToLeaveHypothesisFeedbackCollectionType;
++ (Class)timeToLeaveInitialTravelTimeFeedbackCollectionType;
 
 - (id)abExperimentAssignmentAtIndex:(unsigned int)arg1;
 - (id)abExperimentAssignments;

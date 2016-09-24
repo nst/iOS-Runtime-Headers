@@ -3,7 +3,7 @@
  */
 
 @interface _HKAppleWatchSampleFilter : _HKFilter {
-    BOOL _matchAppleWatchSamples;
+    BOOL  _matchAppleWatchSamples;
 }
 
 @property (nonatomic, readonly) BOOL matchAppleWatchSamples;
@@ -23,6 +23,6 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
-- (id)predicateWithHealthDaemon:(id)arg1;
+- (id)predicateWithProfile:(id)arg1;
 
 @end

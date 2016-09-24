@@ -3,12 +3,12 @@
  */
 
 @interface StockNewsItem : NSObject {
-    NSDate *_date;
-    NSString *_headline;
-    NSURL *_link;
-    NSString *_localizedDateString;
-    NSString *_source;
-    NSString *_summary;
+    NSDate * _date;
+    NSString * _headline;
+    NSURL * _link;
+    NSString * _localizedDateString;
+    NSString * _source;
+    NSString * _summary;
 }
 
 @property (nonatomic, retain) NSDate *date;

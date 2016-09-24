@@ -3,7 +3,7 @@
  */
 
 @interface MCWAPIIdentityCertificatePayload : MCCertificatePayload {
-    NSData *_pemData;
+    NSData * _pemData;
 }
 
 @property (nonatomic, readonly, retain) NSData *pemData;

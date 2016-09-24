@@ -3,12 +3,12 @@
  */
 
 @interface FlickrPhotoSetResponse : NSObject <NSXMLParserDelegate> {
-    FlickrPhotoSet *_currentPhotoSet;
-    NSMutableString *_dataString;
-    NSString *_errorDescription;
-    NSMutableArray *_photoSets;
-    int _stage;
-    BOOL _success;
+    FlickrPhotoSet * _currentPhotoSet;
+    NSMutableString * _dataString;
+    NSString * _errorDescription;
+    NSMutableArray * _photoSets;
+    int  _stage;
+    BOOL  _success;
 }
 
 @property (readonly, copy) NSString *debugDescription;

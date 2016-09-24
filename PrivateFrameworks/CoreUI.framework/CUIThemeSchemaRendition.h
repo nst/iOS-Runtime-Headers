@@ -3,51 +3,51 @@
  */
 
 @interface CUIThemeSchemaRendition : CUIThemeRendition {
-    int _columnSlices;
+    int  _columnSlices;
     struct { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _contentInsets;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _contentInsets;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _elementRect;
-    CUIPSDGradient *_gradient;
-    struct CGImage {} *_image;
+    }  _elementRect;
+    CUIPSDGradient * _gradient;
+    struct CGImage {} * _image;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _intrinsicSize;
+        double width; 
+        double height; 
+    }  _intrinsicSize;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _layoutRects;
-    unsigned long _nimages;
-    int _rowSlices;
-    NSDictionary *cuiInfo;
+    }  _layoutRects;
+    unsigned long  _nimages;
+    int  _rowSlices;
+    NSDictionary * cuiInfo;
 }
 
 @property (nonatomic, readonly) CUIPSDGradient *gradient;
 @property (nonatomic, readonly) unsigned long numberOfSlices;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*sliceRects;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*sliceRects;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentRectangle;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alignmentRectangle;
 - (int)columnSlices;
-- (struct { float x1; float x2; float x3; float x4; })contentInsets;
+- (struct { double x1; double x2; double x3; double x4; })contentInsets;
 - (id)coreUIOptions;
 - (void)dealloc;
 - (id)defaultTemplateName;
@@ -60,7 +60,7 @@
 - (id)directionLocalizedString;
 - (unsigned short)drawingLayer;
 - (id)drawingLayerLocalizedString;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })edgeInsets:(BOOL)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })edgeInsets:(BOOL)arg1;
 - (id)gradient;
 - (unsigned short)identifier;
 - (id)initWithCoreUIOptions:(id)arg1 forKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg2;
@@ -77,13 +77,13 @@
 - (unsigned short)previousValue;
 - (id)previousValueLocalizedString;
 - (id)referenceImage;
-- (struct CGPoint { float x1; float x2; })renditionCoordinatesForPartFeatures:(int)arg1;
+- (struct CGPoint { double x1; double x2; })renditionCoordinatesForPartFeatures:(int)arg1;
 - (int)rowSlices;
 - (float)scale;
 - (id)scaleLocalizedString;
 - (unsigned short)size;
 - (id)sizeLocalizedString;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)sliceRects;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)sliceRects;
 - (id)slices;
 - (unsigned short)state;
 - (id)stateLocalizedString;

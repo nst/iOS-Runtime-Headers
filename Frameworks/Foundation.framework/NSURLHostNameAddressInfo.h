@@ -3,8 +3,8 @@
  */
 
 @interface NSURLHostNameAddressInfo : NSObject {
-    struct addrinfo { int x1; int x2; int x3; int x4; unsigned int x5; char *x6; struct sockaddr {} *x7; struct addrinfo {} *x8; } *addressInfo;
-    double timestamp;
+    struct addrinfo { int x1; int x2; int x3; int x4; unsigned int x5; char *x6; struct sockaddr {} *x7; struct addrinfo {} *x8; } * addressInfo;
+    double  timestamp;
 }
 
 + (id)addressInfoForHost:(id)arg1;
@@ -14,6 +14,5 @@
 - (double)_timestamp;
 - (struct addrinfo { int x1; int x2; int x3; int x4; unsigned int x5; char *x6; struct sockaddr {} *x7; struct addrinfo {} *x8; }*)addrinfo;
 - (void)dealloc;
-- (void)finalize;
 
 @end

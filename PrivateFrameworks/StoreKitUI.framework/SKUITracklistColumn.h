@@ -3,24 +3,24 @@
  */
 
 @interface SKUITracklistColumn : NSObject <NSCopying> {
-    int _columnIdentifier;
-    int _contentAlignment;
-    int _headerAlignment;
-    float _maximumWidthFraction;
-    float _preferredWidth;
-    BOOL _showsPreviewControl;
-    BOOL _sizesToFit;
-    float _width;
+    int  _columnIdentifier;
+    int  _contentAlignment;
+    int  _headerAlignment;
+    double  _maximumWidthFraction;
+    double  _preferredWidth;
+    BOOL  _showsPreviewControl;
+    BOOL  _sizesToFit;
+    double  _width;
 }
 
 @property (nonatomic) int columnIdentifier;
 @property (nonatomic) int contentAlignment;
 @property (nonatomic) int headerAlignment;
-@property (nonatomic) float maximumWidthFraction;
-@property (nonatomic) float preferredWidth;
+@property (nonatomic) double maximumWidthFraction;
+@property (nonatomic) double preferredWidth;
 @property (nonatomic) BOOL showsPreviewControl;
 @property (nonatomic) BOOL sizesToFit;
-@property (nonatomic) float width;
+@property (nonatomic) double width;
 
 - (int)columnIdentifier;
 - (int)contentAlignment;

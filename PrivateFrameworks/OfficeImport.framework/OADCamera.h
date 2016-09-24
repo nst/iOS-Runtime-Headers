@@ -3,10 +3,10 @@
  */
 
 @interface OADCamera : NSObject <NSCopying> {
-    int mCameraType;
-    float mFieldOfView;
-    OADRotation3D *mRotation;
-    float mZoom;
+    int  mCameraType;
+    double  mFieldOfView;
+    OADRotation3D * mRotation;
+    double  mZoom;
 }
 
 - (int)cameraType;

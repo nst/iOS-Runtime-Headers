@@ -3,15 +3,15 @@
  */
 
 @interface SKUIMenuBarTemplateShelfPageSectionConfiguration : SKUIShelfPageSectionConfiguration {
-    id _fixedElementsCollectionViewCell;
-    int _focusedIndex;
-    unsigned int _numberOfIterations;
+    id  _fixedElementsCollectionViewCell;
+    int  _focusedIndex;
+    unsigned int  _numberOfIterations;
 }
 
 - (void).cxx_destruct;
 - (id)_focusedViewElement;
 - (id)cellForShelfViewElement:(id)arg1 indexPath:(id)arg2;
-- (struct CGSize { float x1; float x2; })cellSizeForShelfViewElement:(id)arg1 indexPath:(id)arg2 numberOfShelfItems:(int)arg3;
+- (struct CGSize { double x1; double x2; })cellSizeForShelfViewElement:(id)arg1 indexPath:(id)arg2 numberOfShelfItems:(int)arg3;
 - (void)collectionViewWillApplyLayoutAttributes:(id)arg1;
 - (id)effectiveViewElementForShelfItemViewElement:(id)arg1;
 - (id)init;

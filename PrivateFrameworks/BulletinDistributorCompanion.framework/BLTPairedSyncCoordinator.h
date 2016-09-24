@@ -3,10 +3,10 @@
  */
 
 @interface BLTPairedSyncCoordinator : NSObject <PSYInitialSyncStateObserverDelegate, PSYSyncCoordinatorDelegate, PSYSyncSessionObserverDelegate> {
-    BOOL _clientSyncComplete;
-    PSYInitialSyncStateObserver *_pairedInitialSyncObserver;
-    PSYSyncCoordinator *_pairedSyncCoordinator;
-    PSYSyncSessionObserver *_pairedSyncObserver;
+    BOOL  _clientSyncComplete;
+    PSYInitialSyncStateObserver * _pairedInitialSyncObserver;
+    PSYSyncCoordinator * _pairedSyncCoordinator;
+    PSYSyncSessionObserver * _pairedSyncObserver;
 }
 
 @property (nonatomic) BOOL clientSyncComplete;

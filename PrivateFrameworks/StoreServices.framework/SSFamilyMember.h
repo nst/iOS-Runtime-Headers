@@ -3,13 +3,13 @@
  */
 
 @interface SSFamilyMember : NSObject <SSXPCCoding> {
-    NSString *_firstName;
-    NSString *_iCloudAccountName;
-    NSNumber *_iCloudIdentifier;
-    NSNumber *_iTunesIdentifier;
-    NSString *_lastName;
-    BOOL _me;
-    BOOL _sharingPurchases;
+    NSString * _firstName;
+    NSString * _iCloudAccountName;
+    NSNumber * _iCloudIdentifier;
+    NSNumber * _iTunesIdentifier;
+    NSString * _lastName;
+    BOOL  _me;
+    BOOL  _sharingPurchases;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -24,6 +24,7 @@
 @property (getter=isSharingPurchases, nonatomic) BOOL sharingPurchases;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)copyXPCEncoding;
 - (id)description;
 - (id)firstName;

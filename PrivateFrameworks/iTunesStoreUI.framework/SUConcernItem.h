@@ -3,9 +3,9 @@
  */
 
 @interface SUConcernItem : NSObject {
-    BOOL _default;
-    NSString *_identifier;
-    NSString *_title;
+    BOOL  _default;
+    NSString * _identifier;
+    NSString * _title;
 }
 
 @property (getter=isDefaultConcern, nonatomic) BOOL defaultConcern;

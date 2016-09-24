@@ -3,10 +3,10 @@
  */
 
 @interface CalDAVCalendarItemData : CoreDAVLeafDataPayload <CalDAVCalendarItemProtocol> {
-    CalDAVUpdateOwnerItem *_createdBy;
-    CalDAVCalendarServerScheduleChangesItem *_scheduleChanges;
-    NSString *_scheduleTag;
-    CalDAVUpdateOwnerItem *_updatedBy;
+    CalDAVUpdateOwnerItem * _createdBy;
+    CalDAVCalendarServerScheduleChangesItem * _scheduleChanges;
+    NSString * _scheduleTag;
+    CalDAVUpdateOwnerItem * _updatedBy;
 }
 
 @property (nonatomic, retain) CalDAVUpdateOwnerItem *createdBy;

@@ -3,21 +3,21 @@
  */
 
 @interface TSTLocalAccumulator : NSObject {
-    unsigned int mCount;
-    struct { 
+    unsigned int  mCount;
+    struct TSUCellCoord { 
         unsigned short row; 
         unsigned char column; 
         unsigned char reserved; 
-    } mIdOfFirstOccurence;
+    }  mIdOfFirstOccurence;
 }
 
 @property unsigned int count;
-@property struct { unsigned short x1; unsigned char x2; unsigned char x3; } idOfFirstOccurence;
+@property struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; } idOfFirstOccurence;
 
 - (unsigned int)count;
 - (id)description;
-- (struct { unsigned short x1; unsigned char x2; unsigned char x3; })idOfFirstOccurence;
+- (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })idOfFirstOccurence;
 - (void)setCount:(unsigned int)arg1;
-- (void)setIdOfFirstOccurence:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (void)setIdOfFirstOccurence:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 
 @end

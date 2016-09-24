@@ -3,9 +3,9 @@
  */
 
 @interface CNContactPropertyTransaction : NSObject <NSSecureCoding> {
-    NSString *_property;
-    int _type;
-    id _value;
+    NSString * _property;
+    int  _type;
+    id  _value;
 }
 
 @property (nonatomic, retain) NSString *property;

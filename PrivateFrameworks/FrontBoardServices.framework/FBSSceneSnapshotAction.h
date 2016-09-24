@@ -3,13 +3,15 @@
  */
 
 @interface FBSSceneSnapshotAction : FBSSceneAction <FBSSceneSnapshotRequestDelegate> {
-    id /* block */ _completionHandler;
-    int _expired;
-    FBSSceneSnapshotRequestHandle *_outgoingRequestHandle;
-    id /* block */ _requestHandler;
-    NSMutableArray *_requests;
+    BSSettings * _clientExtendedData;
+    id /* block */  _completionHandler;
+    int  _expired;
+    FBSSceneSnapshotRequestHandle * _outgoingRequestHandle;
+    id /* block */  _requestHandler;
+    NSMutableArray * _requests;
 }
 
+@property (nonatomic, copy) BSSettings *clientExtendedData;
 @property (nonatomic, copy) id /* block */ completionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -22,6 +24,7 @@
 - (void)_executeNextRequest;
 - (void)_finishAllRequests;
 - (BOOL)_remainsActionable;
+- (id)clientExtendedData;
 - (id /* block */)completionHandler;
 - (void)dealloc;
 - (void)encodeWithXPCDictionary:(id)arg1;
@@ -32,6 +35,7 @@
 - (id)initWithXPCDictionary:(id)arg1;
 - (BOOL)isExpired;
 - (id /* block */)requestHandler;
+- (void)setClientExtendedData:(id)arg1;
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setExpired:(BOOL)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;

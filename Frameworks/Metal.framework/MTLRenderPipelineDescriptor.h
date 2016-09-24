@@ -2,17 +2,27 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@interface MTLRenderPipelineDescriptor : NSObject <NSCopying>
+@interface MTLRenderPipelineDescriptor : NSObject <NSCopying> {
+    unsigned int  _inputPrimitiveTopology;
+}
 
 @property (getter=isAlphaToCoverageEnabled, nonatomic) BOOL alphaToCoverageEnabled;
 @property (getter=isAlphaToOneEnabled, nonatomic) BOOL alphaToOneEnabled;
 @property (readonly) MTLRenderPipelineColorAttachmentDescriptorArray *colorAttachments;
 @property (nonatomic) unsigned int depthAttachmentPixelFormat;
 @property (nonatomic, retain) <MTLFunction> *fragmentFunction;
+@property (nonatomic) unsigned int inputPrimitiveTopology;
 @property (nonatomic, copy) NSString *label;
+@property (nonatomic) unsigned int maxTessellationFactor;
 @property (getter=isRasterizationEnabled, nonatomic) BOOL rasterizationEnabled;
 @property (nonatomic) unsigned int sampleCount;
 @property (nonatomic) unsigned int stencilAttachmentPixelFormat;
+@property (nonatomic) unsigned int tessellationControlPointIndexType;
+@property (nonatomic) unsigned int tessellationFactorFormat;
+@property (getter=isTessellationFactorScaleEnabled, nonatomic) BOOL tessellationFactorScaleEnabled;
+@property (nonatomic) unsigned int tessellationFactorStepFunction;
+@property (nonatomic) unsigned int tessellationOutputWindingOrder;
+@property (nonatomic) unsigned int tessellationPartitionMode;
 @property (nonatomic, copy) MTLVertexDescriptor *vertexDescriptor;
 @property (nonatomic, retain) <MTLFunction> *vertexFunction;
 
@@ -20,6 +30,8 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned int)inputPrimitiveTopology;
 - (void)reset;
+- (void)setInputPrimitiveTopology:(unsigned int)arg1;
 
 @end

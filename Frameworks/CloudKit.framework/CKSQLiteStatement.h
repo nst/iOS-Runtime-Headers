@@ -3,16 +3,18 @@
  */
 
 @interface CKSQLiteStatement : NSObject {
-    NSString *_SQL;
-    CKSQLite *_SQLite;
-    struct sqlite3_stmt { } *_handle;
-    BOOL _reset;
+    NSString * _SQL;
+    CKSQLite * _SQLite;
+    struct sqlite3_stmt { } * _handle;
+    BOOL  _reset;
+    NSMutableArray * _temporaryBoundObjects;
 }
 
 @property (nonatomic, readonly) NSString *SQL;
 @property (nonatomic, readonly) CKSQLite *SQLite;
 @property (nonatomic, readonly) struct sqlite3_stmt { }*handle;
 @property (getter=isReset, nonatomic) BOOL reset;
+@property (nonatomic, retain) NSMutableArray *temporaryBoundObjects;
 
 - (void).cxx_destruct;
 - (id)SQL;
@@ -21,7 +23,7 @@
 - (id)allObjectsByColumnName;
 - (void)bindBlob:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)bindDouble:(double)arg1 atIndex:(unsigned int)arg2;
-- (void)bindInt64:(long long)arg1 atIndex:(unsigned int)arg2;
+- (void)bindInt64:(int)arg1 atIndex:(unsigned int)arg2;
 - (void)bindInt:(long)arg1 atIndex:(unsigned int)arg2;
 - (void)bindNullAtIndex:(unsigned int)arg1;
 - (void)bindText:(id)arg1 atIndex:(unsigned int)arg2;
@@ -35,13 +37,17 @@
 - (void)finalizeStatement;
 - (struct sqlite3_stmt { }*)handle;
 - (id)initWithSQLite:(id)arg1 SQL:(id)arg2 handle:(struct sqlite3_stmt { }*)arg3;
-- (long long)int64AtIndex:(unsigned int)arg1;
+- (int)int64AtIndex:(unsigned int)arg1;
 - (long)intAtIndex:(unsigned int)arg1;
 - (BOOL)isReset;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (void)reset;
+- (void)resetAfterStepError;
+- (id)retainedTemporaryBoundObject:(id)arg1;
 - (void)setReset:(BOOL)arg1;
+- (void)setTemporaryBoundObjects:(id)arg1;
 - (BOOL)step;
+- (id)temporaryBoundObjects;
 - (id)textAtIndex:(unsigned int)arg1;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface PSAppListController : PSListController {
-    PSSystemPolicyForApp *_systemPolicy;
+    PSSystemPolicyForApp * _systemPolicy;
 }
 
 @property (nonatomic, retain) PSSystemPolicyForApp *systemPolicy;

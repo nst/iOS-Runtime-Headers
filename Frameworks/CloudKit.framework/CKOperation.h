@@ -2,39 +2,44 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@interface CKOperation : NSOperation {
-    unsigned long long _activityID;
-    NSDictionary *_additionalRequestHTTPHeaders;
-    BOOL _allowsBackgroundNetworking;
-    BOOL _allowsCellularAccess;
-    NSString *_authPromptReason;
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    CKContainer *_container;
-    id _context;
-    NSString *_deviceIdentifier;
-    NSError *_error;
-    BOOL _isDiscretionary;
-    NSObject<OS_os_transaction> *_isExecuting;
-    BOOL _isFinished;
-    BOOL _isOutstandingOperation;
-    BOOL _longLived;
-    id /* block */ _longLivedOperationWasPersistedBlock;
-    CKOperationMetrics *_metrics;
-    NSString *_operationID;
-    NSString *_parentSectionID;
-    CKPlaceholderOperation *_placeholderOperation;
-    BOOL _preferAnonymousRequests;
-    NSArray *_requestUUIDs;
-    NSDictionary *_responseHTTPHeadersByRequestUUID;
-    NSString *_sectionID;
-    NSString *_sourceApplicationBundleIdentifier;
-    NSString *_sourceApplicationSecondaryIdentifier;
-    CKTimeLogger *_timeLogger;
-    NSObject<OS_dispatch_source> *_timeoutSource;
-    int _usesBackgroundSessionOverride;
-    NSDictionary *_w3cNavigationTimingByRequestUUID;
+@interface CKOperation : NSOperation <ICLoggable> {
+    NSDictionary * _MMCSRequestOptions;
+    NSDictionary * _additionalRequestHTTPHeaders;
+    BOOL  _allowsBackgroundNetworking;
+    BOOL  _allowsCellularAccess;
+    NSString * _authPromptReason;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    NSObject<OS_voucher> * _clientVoucher;
+    CKContainer * _container;
+    id  _context;
+    NSString * _deviceIdentifier;
+    NSError * _error;
+    BOOL  _isDiscretionary;
+    NSObject<OS_os_transaction> * _isExecuting;
+    BOOL  _isFinished;
+    BOOL  _isOutstandingOperation;
+    BOOL  _longLived;
+    id /* block */  _longLivedOperationWasPersistedBlock;
+    CKOperationMetrics * _metrics;
+    NSString * _operationID;
+    NSObject<OS_os_activity> * _osActivity;
+    NSString * _parentSectionID;
+    CKPlaceholderOperation * _placeholderOperation;
+    BOOL  _preferAnonymousRequests;
+    NSArray * _requestUUIDs;
+    NSDictionary * _responseHTTPHeadersByRequestUUID;
+    NSString * _sectionID;
+    NSString * _sourceApplicationBundleIdentifier;
+    NSString * _sourceApplicationSecondaryIdentifier;
+    CKTimeLogger * _timeLogger;
+    double  _timeoutIntervalForRequest;
+    double  _timeoutIntervalForResource;
+    NSObject<OS_dispatch_source> * _timeoutSource;
+    int  _usesBackgroundSessionOverride;
+    NSDictionary * _w3cNavigationTimingByRequestUUID;
 }
 
+@property (nonatomic, retain) NSDictionary *MMCSRequestOptions;
 @property (nonatomic, retain) NSDictionary *additionalRequestHTTPHeaders;
 @property (nonatomic) BOOL allowsBackgroundNetworking;
 @property (nonatomic) BOOL allowsCellularAccess;
@@ -42,8 +47,11 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
 @property (nonatomic, retain) CKContainer *container;
 @property (nonatomic, readonly) id context;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSString *deviceIdentifier;
 @property (nonatomic, retain) NSError *error;
+@property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isDiscretionary;
 @property (nonatomic) BOOL isExecuting;
 @property (nonatomic) BOOL isFinished;
@@ -61,7 +69,10 @@
 @property (nonatomic, retain) NSString *sectionID;
 @property (nonatomic, retain) NSString *sourceApplicationBundleIdentifier;
 @property (nonatomic, retain) NSString *sourceApplicationSecondaryIdentifier;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) CKTimeLogger *timeLogger;
+@property (nonatomic) double timeoutIntervalForRequest;
+@property (nonatomic) double timeoutIntervalForResource;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *timeoutSource;
 @property (nonatomic) BOOL usesBackgroundSession;
 @property (nonatomic) int usesBackgroundSessionOverride;
@@ -72,6 +83,7 @@
 - (void).cxx_destruct;
 - (BOOL)CKOperationShouldRun:(id*)arg1;
 - (id)CKPropertiesDescription;
+- (id)MMCSRequestOptions;
 - (void)_finishInternalOnCallbackQueueWithError:(id)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleCheckpointCallback:(id)arg1;
@@ -80,7 +92,7 @@
 - (void)_installTimeoutSource;
 - (void)_start;
 - (void)_uninstallTimeoutSource;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (id)additionalRequestHTTPHeaders;
 - (BOOL)allowsBackgroundNetworking;
 - (BOOL)allowsCellularAccess;
@@ -112,6 +124,7 @@
 - (id)operationID;
 - (id)operationInfo;
 - (Class)operationInfoClass;
+- (id)osActivity;
 - (id)parentSectionID;
 - (void)performCKOperation;
 - (id)placeholderOperation;
@@ -134,6 +147,7 @@
 - (void)setIsOutstandingOperation:(BOOL)arg1;
 - (void)setLongLived:(BOOL)arg1;
 - (void)setLongLivedOperationWasPersistedBlock:(id /* block */)arg1;
+- (void)setMMCSRequestOptions:(id)arg1;
 - (void)setMetrics:(id)arg1;
 - (void)setOperationID:(id)arg1;
 - (void)setPlaceholderOperation:(id)arg1;
@@ -144,6 +158,8 @@
 - (void)setSourceApplicationBundleIdentifier:(id)arg1;
 - (void)setSourceApplicationSecondaryIdentifier:(id)arg1;
 - (void)setTimeLogger:(id)arg1;
+- (void)setTimeoutIntervalForRequest:(double)arg1;
+- (void)setTimeoutIntervalForResource:(double)arg1;
 - (void)setTimeoutSource:(id)arg1;
 - (void)setUsesBackgroundSession:(BOOL)arg1;
 - (void)setUsesBackgroundSessionOverride:(int)arg1;
@@ -152,6 +168,8 @@
 - (id)sourceApplicationSecondaryIdentifier;
 - (void)start;
 - (id)timeLogger;
+- (double)timeoutIntervalForRequest;
+- (double)timeoutIntervalForResource;
 - (id)timeoutSource;
 - (BOOL)usesBackgroundSession;
 - (int)usesBackgroundSessionOverride;
@@ -159,6 +177,8 @@
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
+- (id)ic_loggingIdentifier;
+- (id)ic_loggingValues;
 - (void)ic_removeAllCompletionBlocks;
 
 @end

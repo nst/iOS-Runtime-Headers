@@ -3,12 +3,12 @@
  */
 
 @interface _MFDAMSBasicConsumer : MFBufferedQueue {
-    MFError *error;
-    MFMailMessageLibrary *library;
-    MFDAMailbox *mailbox;
-    MFActivityMonitor *monitor;
-    unsigned int numNewMessages;
-    MFDAMessageStore *store;
+    MFError * error;
+    MFMailMessageLibrary * library;
+    MFDAMailbox * mailbox;
+    MFActivityMonitor * monitor;
+    unsigned int  numNewMessages;
+    MFDAMessageStore * store;
 }
 
 @property (nonatomic, retain) MFError *error;

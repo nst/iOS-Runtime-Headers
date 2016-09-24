@@ -2,21 +2,30 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEORequester : PBRequester {
-    BOOL _canceled;
-    NSString *_debugRequestName;
-    BOOL _disableReplay;
-    BOOL _finished;
-    int _symptomsAlternateAdviceToken;
-    NSThread *_thread;
-    NSString *_throttleKey;
-    BOOL _useBackgroundConnection;
-    BOOL _usePersistentConnection;
+@interface GEORequester : GEOPBSessionRequester {
+    BOOL  _canceled;
+    struct { 
+        unsigned int workLoad; 
+        double timeWindowStartTime; 
+        unsigned int timeWindowDuration; 
+    }  _conditionalConnectionProperties;
+    NSString * _debugRequestName;
+    BOOL  _disableReplay;
+    BOOL  _finished;
+    BOOL  _hasConditionalConnectionProperties;
+    int  _symptomsAlternateAdviceToken;
+    NSThread * _thread;
+    NSString * _throttleKey;
+    BOOL  _useBackgroundConnection;
+    BOOL  _usePersistentConnection;
 }
 
+@property (nonatomic) struct { unsigned int x1; double x2; unsigned int x3; } conditionalConnectionProperties;
 @property (nonatomic, retain) NSString *debugRequestName;
 @property BOOL disableReplay;
 @property (nonatomic, copy) NSString *throttleKey;
+
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
 
 + (id)_logRequestResponseDirectory;
 + (void)enablePersistentConnection;
@@ -37,6 +46,7 @@
 - (void)_logResponsesIfNecessary:(id)arg1;
 - (void)_tryRerequest;
 - (void)cancel;
+- (struct { unsigned int x1; double x2; unsigned int x3; })conditionalConnectionProperties;
 - (void)dealloc;
 - (id)debugRequestName;
 - (BOOL)disableReplay;
@@ -44,10 +54,12 @@
 - (id)initWithURL:(id)arg1 andDelegate:(id)arg2 useBackgroundConnection:(BOOL)arg3;
 - (id)logRequestToFile;
 - (id)logResponseToFile;
-- (struct _CFURLRequest { }*)newCFMutableURLRequestWithURL:(id)arg1;
-- (id)newConnectionWithCFURLRequest:(struct _CFURLRequest { }*)arg1 delegate:(id)arg2;
-- (id)persistentConnectionSession;
+- (id)newMutableURLRequestWithURL:(id)arg1;
+- (id)newSessionWithDelegate:(id)arg1 delegateQueue:(id)arg2;
+- (id)newSessionWithDelegate:(id)arg1 delegateQueue:(id)arg2 connectionProperties:(id)arg3;
+- (id)persistentSessionConfig;
 - (id)requestPreamble;
+- (void)setConditionalConnectionProperties:(struct { unsigned int x1; double x2; unsigned int x3; })arg1;
 - (void)setDebugRequestName:(id)arg1;
 - (void)setDisableReplay:(BOOL)arg1;
 - (void)setNeedsCancel;
@@ -55,5 +67,9 @@
 - (void)start;
 - (void)startWithConnectionProperties:(id)arg1;
 - (id)throttleKey;
+
+// Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/Frameworks/MediaMiningKit.framework/MediaMiningKit
+
+- (void)_logResponsesIfNecessary:(id)arg1;
 
 @end

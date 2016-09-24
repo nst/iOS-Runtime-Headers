@@ -3,11 +3,12 @@
  */
 
 @interface ICLetterpressImageCache : NSObject {
-    NSMutableDictionary *_imageCache;
+    NSMutableDictionary * _imageCache;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *imageCache;
 
++ (id)letterpressedImageForImage:(id)arg1 tintColor:(id)arg2 scale:(float)arg3;
 + (id)sharedCache;
 
 - (void).cxx_destruct;

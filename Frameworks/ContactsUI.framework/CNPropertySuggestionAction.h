@@ -3,8 +3,8 @@
  */
 
 @interface CNPropertySuggestionAction : CNPropertyAction {
-    int _selectedChoice;
-    CNContactSuggestionViewController *_suggestionViewController;
+    int  _selectedChoice;
+    CNContactSuggestionViewController * _suggestionViewController;
 }
 
 @property (nonatomic) int selectedChoice;

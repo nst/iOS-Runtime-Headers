@@ -3,7 +3,7 @@
  */
 
 @interface _UISlotIdWrapper : NSObject {
-    unsigned int _slotId;
+    unsigned int  _slotId;
 }
 
 - (void)dealloc;

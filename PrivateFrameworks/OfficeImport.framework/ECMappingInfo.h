@@ -3,7 +3,7 @@
  */
 
 @interface ECMappingInfo : NSObject {
-    NSString *mSheetName;
+    NSString * mSheetName;
 }
 
 @property (nonatomic, readonly) int columnOffset;

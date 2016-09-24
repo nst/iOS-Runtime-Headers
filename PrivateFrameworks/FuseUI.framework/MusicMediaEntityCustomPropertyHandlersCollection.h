@@ -3,8 +3,8 @@
  */
 
 @interface MusicMediaEntityCustomPropertyHandlersCollection : NSObject {
-    NSMutableSet *_customProperties;
-    NSMutableDictionary *_customPropertyValueHandlers;
+    NSMutableSet * _customProperties;
+    NSMutableDictionary * _customPropertyValueHandlers;
 }
 
 @property (nonatomic, readonly) NSSet *customProperties;

@@ -3,10 +3,10 @@
  */
 
 @interface SKUIProductPageTableLinksSection : SKUIProductPageTableSection {
-    NSMutableArray *_actions;
-    SKUIColorScheme *_colorScheme;
-    SKUIProductPageItem *_item;
-    NSMutableArray *_titles;
+    NSMutableArray * _actions;
+    SKUIColorScheme * _colorScheme;
+    SKUIProductPageItem * _item;
+    NSMutableArray * _titles;
 }
 
 @property (nonatomic, retain) SKUIColorScheme *colorScheme;

@@ -3,8 +3,8 @@
  */
 
 @interface CMDiagramPointChevronMapper : CMDiagramPointMapper {
-    BOOL mHomePlate;
-    BOOL mPlaceholder;
+    BOOL  mHomePlate;
+    BOOL  mPlaceholder;
 }
 
 - (void)mapAt:(id)arg1 withState:(id)arg2;

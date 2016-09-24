@@ -3,11 +3,11 @@
  */
 
 @interface MLULookupItemContent : NSObject {
-    unsigned int _commitType;
-    NSURL *_commitURL;
-    UIViewController *_commitViewController;
-    UIViewController *_previewViewController;
-    BOOL _valid;
+    unsigned int  _commitType;
+    NSURL * _commitURL;
+    UIViewController * _commitViewController;
+    UIViewController * _previewViewController;
+    BOOL  _valid;
 }
 
 @property (nonatomic) unsigned int commitType;
@@ -17,6 +17,7 @@
 @property (nonatomic, retain) UIViewController *previewViewController;
 @property BOOL valid;
 
++ (id)contentWithAttachments:(id)arg1 currentAttachmentIndex:(unsigned int)arg2;
 + (id)contentWithText:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 + (id)contentWithURL:(id)arg1 result:(struct __DDResult { }*)arg2 documentProperties:(id)arg3;
 

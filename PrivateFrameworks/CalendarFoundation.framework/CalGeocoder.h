@@ -3,9 +3,9 @@
  */
 
 @interface CalGeocoder : NSObject {
-    id /* block */ _completionBlock;
-    NSString *_locationString;
-    MKLocalSearch *_search;
+    id /* block */  _completionBlock;
+    NSString * _locationString;
+    MKLocalSearch * _search;
 }
 
 @property (nonatomic, copy) id /* block */ completionBlock;

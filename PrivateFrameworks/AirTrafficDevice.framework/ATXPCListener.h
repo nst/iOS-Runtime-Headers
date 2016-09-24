@@ -3,9 +3,9 @@
  */
 
 @interface ATXPCListener : NSObject <NSXPCListenerDelegate> {
-    NSMutableArray *_connections;
-    NSMapTable *_proxyMap;
-    NSXPCListener *_xpcListener;
+    NSMutableArray * _connections;
+    NSMapTable * _proxyMap;
+    NSXPCListener * _xpcListener;
 }
 
 @property (readonly, copy) NSString *debugDescription;

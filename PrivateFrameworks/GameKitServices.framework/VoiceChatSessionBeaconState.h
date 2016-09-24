@@ -3,11 +3,11 @@
  */
 
 @interface VoiceChatSessionBeaconState : NSObject {
-    struct tagVoiceChatBeacon { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; } *lastReceivedBeacon;
-    BOOL needsSend;
-    unsigned int receivedState;
-    unsigned int sentState;
-    unsigned int typeToSend;
+    struct tagVoiceChatBeacon { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; } * lastReceivedBeacon;
+    BOOL  needsSend;
+    unsigned int  receivedState;
+    unsigned int  sentState;
+    unsigned int  typeToSend;
 }
 
 @property (nonatomic) BOOL needsSend;

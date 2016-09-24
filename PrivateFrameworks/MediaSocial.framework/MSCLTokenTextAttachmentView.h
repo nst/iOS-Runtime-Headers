@@ -3,7 +3,7 @@
  */
 
 @interface MSCLTokenTextAttachmentView : UIView {
-    BOOL _selected;
+    BOOL  _selected;
 }
 
 @property (getter=isSelected, nonatomic) BOOL selected;

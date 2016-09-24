@@ -3,14 +3,12 @@
  */
 
 @interface NFAWDTSMEnd : NSObject <NFAWDEventProtocol> {
-    AWDNFCTSMEndEvent *_metric;
-    NSData *aid;
-    BOOL authEnabled;
-    NSData *discretionaryData;
-    unsigned int lifeCycleState;
-    BOOL mfdEnabled;
-    BOOL restrictedModeExit;
-    unsigned int status;
+    BOOL  _authEnabled;
+    unsigned int  _lifeCycleState;
+    AWDNFCTSMEndEvent * _metric;
+    BOOL  _mfdEnabled;
+    BOOL  _restrictedModeExit;
+    unsigned int  _status;
 }
 
 @property (nonatomic, retain) NSData *aid;

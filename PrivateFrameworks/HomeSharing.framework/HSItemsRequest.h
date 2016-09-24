@@ -3,8 +3,8 @@
  */
 
 @interface HSItemsRequest : HSRequest {
-    BOOL _includeHiddenItems;
-    BOOL _shouldParseResponse;
+    BOOL  _includeHiddenItems;
+    BOOL  _shouldParseResponse;
 }
 
 @property (nonatomic) BOOL includeHiddenItems;

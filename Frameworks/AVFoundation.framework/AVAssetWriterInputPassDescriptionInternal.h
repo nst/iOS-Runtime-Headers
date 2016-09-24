@@ -3,7 +3,7 @@
  */
 
 @interface AVAssetWriterInputPassDescriptionInternal : NSObject {
-    NSArray *timeRanges;
+    NSArray * timeRanges;
 }
 
 @end

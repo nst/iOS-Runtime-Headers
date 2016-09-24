@@ -3,9 +3,9 @@
  */
 
 @interface MSCLFacebookAccountsRequest : NSObject {
-    MSCLAccountStore *_accountStore;
-    id /* block */ _responseBlock;
-    NSMutableDictionary *_services;
+    MSCLAccountStore * _accountStore;
+    id /* block */  _responseBlock;
+    NSMutableDictionary * _services;
 }
 
 - (void).cxx_destruct;

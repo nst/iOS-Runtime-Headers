@@ -3,16 +3,16 @@
  */
 
 @interface GKLocalPlayerAuthenticator : NSObject {
-    BOOL _authenticated;
-    BOOL _authenticating;
-    BOOL _forceAuthentication;
-    GKLocalPlayer *_inputLocalPlayer;
-    NSDate *_lastAuthDate;
-    NSString *_lastAuthPlayerID;
-    NSString *_password;
-    UIViewController *_presentingViewController;
-    GKLocalPlayer *_resultantLocalPlayer;
-    NSString *_username;
+    BOOL  _authenticated;
+    BOOL  _authenticating;
+    BOOL  _forceAuthentication;
+    GKLocalPlayer * _inputLocalPlayer;
+    NSDate * _lastAuthDate;
+    NSString * _lastAuthPlayerID;
+    NSString * _password;
+    UIViewController * _presentingViewController;
+    GKLocalPlayer * _resultantLocalPlayer;
+    NSString * _username;
 }
 
 @property (getter=isAuthenticated) BOOL authenticated;

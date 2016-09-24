@@ -3,9 +3,9 @@
  */
 
 @interface WLDaemonController : NSObject {
-    NSXPCConnection *_daemonConn;
-    NSLock *_daemonLock;
-    id /* block */ _interruptionHandler;
+    NSXPCConnection * _daemonConn;
+    NSLock * _daemonLock;
+    id /* block */  _interruptionHandler;
 }
 
 @property (nonatomic, copy) id /* block */ interruptionHandler;

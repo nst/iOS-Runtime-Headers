@@ -3,9 +3,9 @@
  */
 
 @interface ANNotificationAction : NSObject <NSSecureCoding> {
-    BOOL _isInternalURL;
-    NSDictionary *_options;
-    NSURL *_url;
+    BOOL  _isInternalURL;
+    NSDictionary * _options;
+    NSURL * _url;
 }
 
 @property (nonatomic) BOOL isInternalURL;

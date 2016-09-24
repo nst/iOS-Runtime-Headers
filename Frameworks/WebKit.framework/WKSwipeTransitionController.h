@@ -5,14 +5,14 @@
 @interface WKSwipeTransitionController : NSObject <_UINavigationInteractiveTransitionBaseDelegate> {
     struct RetainPtr<_UINavigationInteractiveTransitionBase> { 
         void *m_ptr; 
-    } _backTransitionController;
+    }  _backTransitionController;
     struct RetainPtr<_UINavigationInteractiveTransitionBase> { 
         void *m_ptr; 
-    } _forwardTransitionController;
-    struct ViewGestureController { int (**x1)(); struct WebPageProxy {} *x2; int x3; struct Timer<WebKit::ViewGestureController> { int (**x_4_1_1)(); struct RunLoop {} *x_4_1_2; struct RetainPtr<__CFRunLoopTimer *> { void *x_3_2_1; } x_4_1_3; struct ViewGestureController {} *x_4_1_4; } x4; struct Timer<WebKit::ViewGestureController> { int (**x_5_1_1)(); struct RunLoop {} *x_5_1_2; struct RetainPtr<__CFRunLoopTimer *> { void *x_3_2_1; } x_5_1_3; struct ViewGestureController {} *x_5_1_4; } x5; struct Color { unsigned int x_6_1_1; bool x_6_1_2; } x6; id x7; /* Warning: Unrecognized filer type: 'R' using 'void*' */ void*x8; void*x9; void*x10; void*x11; int x12; in void*x13; void*x14; const void*x15; void*x16; unsigned int x17; oneway int x18; void*x19; void*x20; void*x21; void*x22; void *x23; } *_gestureController;
+    }  _forwardTransitionController;
+    struct ViewGestureController { int (**x1)(); struct WebPageProxy {} *x2; int x3; struct Timer<WebKit::ViewGestureController> { int (**x_4_1_1)(); struct RunLoop {} *x_4_1_2; struct RetainPtr<__CFRunLoopTimer *> { void *x_3_2_1; } x_4_1_3; struct ViewGestureController {} *x_4_1_4; } x4; struct Color { unsigned int x_5_1_1; bool x_5_1_2; } x5; id x6; /* Warning: Unrecognized filer type: 'R' using 'void*' */ void*x7; void*x8; void*x9; void*x10; int x11; in void*x12; void*x13; const void*x14; void*x15; unsigned int x16; oneway int x17; void*x18; void*x19; void*x20; void*x21; void *x22; } * _gestureController;
     /* Warning: unhandled struct encoding: '{WeakObjCPtr<UIView>="m_weakReference"@}' */ struct WeakObjCPtr<UIView> { 
         id m_weakReference; 
-    } _gestureRecognizerView;
+    }  _gestureRecognizerView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -24,7 +24,7 @@
 - (void).cxx_destruct;
 - (int)directionForTransition:(id)arg1;
 - (id)gestureRecognizerForInteractiveTransition:(id)arg1 WithTarget:(id)arg2 action:(SEL)arg3;
-- (id)initWithViewGestureController:(struct ViewGestureController { int (**x1)(); struct WebPageProxy {} *x2; int x3; struct Timer<WebKit::ViewGestureController> { int (**x_4_1_1)(); struct RunLoop {} *x_4_1_2; struct RetainPtr<__CFRunLoopTimer *> { void *x_3_2_1; } x_4_1_3; struct ViewGestureController {} *x_4_1_4; } x4; struct Timer<WebKit::ViewGestureController> { int (**x_5_1_1)(); struct RunLoop {} *x_5_1_2; struct RetainPtr<__CFRunLoopTimer *> { void *x_3_2_1; } x_5_1_3; struct ViewGestureController {} *x_5_1_4; } x5; struct Color { unsigned int x_6_1_1; bool x_6_1_2; } x6; id x7; /* Warning: Unrecognized filer type: 'R' using 'void*' */ void*x8; void*x9; void*x10; void*x11; int x12; in void*x13; void*x14; const void*x15; void*x16; unsigned int x17; oneway int x18; void*x19; void*x20; void*x21; void*x22; void *x23; }*)arg1 gestureRecognizerView:(id)arg2;
+- (id)initWithViewGestureController:(struct ViewGestureController { int (**x1)(); struct WebPageProxy {} *x2; int x3; struct Timer<WebKit::ViewGestureController> { int (**x_4_1_1)(); struct RunLoop {} *x_4_1_2; struct RetainPtr<__CFRunLoopTimer *> { void *x_3_2_1; } x_4_1_3; struct ViewGestureController {} *x_4_1_4; } x4; struct Color { unsigned int x_5_1_1; bool x_5_1_2; } x5; id x6; /* Warning: Unrecognized filer type: 'R' using 'void*' */ void*x7; void*x8; void*x9; void*x10; int x11; in void*x12; void*x13; const void*x14; void*x15; unsigned int x16; oneway int x17; void*x18; void*x19; void*x20; void*x21; void *x22; }*)arg1 gestureRecognizerView:(id)arg2;
 - (BOOL)interactiveTransition:(id)arg1 gestureRecognizer:(id)arg2 shouldReceiveTouch:(id)arg3;
 - (BOOL)interactiveTransition:(id)arg1 gestureRecognizer:(id)arg2 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg3;
 - (void)invalidate;

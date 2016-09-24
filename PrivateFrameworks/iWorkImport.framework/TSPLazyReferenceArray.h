@@ -3,8 +3,8 @@
  */
 
 @interface TSPLazyReferenceArray : NSMutableArray {
-    unsigned long _mutations;
-    NSMutableArray *_references;
+    unsigned long  _mutations;
+    NSMutableArray * _references;
 }
 
 @property (nonatomic, readonly) NSArray *references;

@@ -3,8 +3,8 @@
  */
 
 @interface GEOUser : PBCodable <NSCopying> {
-    GEOPhoto *_image;
-    NSString *_name;
+    GEOPhoto * _image;
+    NSString * _name;
 }
 
 @property (nonatomic, readonly) BOOL hasImage;

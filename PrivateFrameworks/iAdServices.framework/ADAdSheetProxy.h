@@ -3,15 +3,15 @@
  */
 
 @interface ADAdSheetProxy : NSObject {
-    <ADAdSheetProxyDelegate> *_delegate;
-    double _lastLaunchTimestamp;
-    NSMutableSet *_launchAssertions;
-    double _nextScheduledLaunch;
-    BOOL _openApplicationInProgress;
-    NSObject<OS_dispatch_queue> *_proxyQueue;
-    BOOL _serviceLaunchThrottled;
-    int _unexpectedTerminationCount;
-    BOOL _waitingForAdSheet;
+    <ADAdSheetProxyDelegate> * _delegate;
+    double  _lastLaunchTimestamp;
+    NSMutableSet * _launchAssertions;
+    double  _nextScheduledLaunch;
+    BOOL  _openApplicationInProgress;
+    NSObject<OS_dispatch_queue> * _proxyQueue;
+    BOOL  _serviceLaunchThrottled;
+    int  _unexpectedTerminationCount;
+    BOOL  _waitingForAdSheet;
 }
 
 @property (nonatomic) <ADAdSheetProxyDelegate> *delegate;

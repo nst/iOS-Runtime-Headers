@@ -3,8 +3,8 @@
  */
 
 @interface CKDPLocation : PBCodable <NSCopying> {
-    CKDPLocationBound *_bounds;
-    CKDPLocationCoordinate *_coordinate;
+    CKDPLocationBound * _bounds;
+    CKDPLocationCoordinate * _coordinate;
 }
 
 @property (nonatomic, retain) CKDPLocationBound *bounds;

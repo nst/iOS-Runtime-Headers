@@ -3,22 +3,22 @@
  */
 
 @interface AAFamilyMember : NSObject {
-    NSString *_appleID;
-    BOOL _areParentalControlsEnabled;
-    NSString *_firstName;
-    NSString *_iTunesNotLinkedMessage;
-    BOOL _isAskToBuyEnabled;
-    BOOL _isChild;
-    BOOL _isMe;
-    BOOL _isOrganizer;
-    BOOL _isSharingPurchases;
-    NSDate *_joinDate;
-    NSString *_lastName;
-    NSString *_linkediTunesAppleID;
-    NSNumber *_linkediTunesDSID;
-    NSNumber *_personID;
-    NSString *_personIDHash;
-    NSString *_title;
+    NSString * _appleID;
+    BOOL  _areParentalControlsEnabled;
+    NSString * _firstName;
+    NSString * _iTunesNotLinkedMessage;
+    BOOL  _isAskToBuyEnabled;
+    BOOL  _isChild;
+    BOOL  _isMe;
+    BOOL  _isOrganizer;
+    BOOL  _isSharingPurchases;
+    NSDate * _joinDate;
+    NSString * _lastName;
+    NSString * _linkediTunesAppleID;
+    NSNumber * _linkediTunesDSID;
+    NSNumber * _personID;
+    NSString * _personIDHash;
+    NSString * _title;
 }
 
 @property (nonatomic, copy) NSString *appleID;

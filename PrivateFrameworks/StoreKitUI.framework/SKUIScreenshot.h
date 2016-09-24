@@ -3,10 +3,11 @@
  */
 
 @interface SKUIScreenshot : NSObject <NSCopying, SKUICacheCoding> {
-    NSString *_orientation;
-    NSMutableDictionary *_sizes;
-    long long _uniqueIdentifier;
-    NSMutableDictionary *_urls;
+    NSString * _orientation;
+    NSMutableDictionary * _sizes;
+    int  _uniqueIdentifier;
+    NSString * _urlTemplate;
+    NSMutableDictionary * _urls;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *cacheRepresentation;
@@ -16,7 +17,7 @@
 @property (nonatomic, readonly) int numberOfVariants;
 @property (nonatomic, readonly) NSString *orientationString;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) long long uniqueIdentifier;
+@property (nonatomic, readonly) int uniqueIdentifier;
 
 - (void).cxx_destruct;
 - (id)URLForVariant:(id)arg1;
@@ -31,7 +32,7 @@
 - (int)numberOfVariants;
 - (id)orientationString;
 - (void)setArtwork:(id)arg1 forVariant:(id)arg2;
-- (struct CGSize { float x1; float x2; })sizeForVariant:(id)arg1;
-- (long long)uniqueIdentifier;
+- (struct CGSize { double x1; double x2; })sizeForVariant:(id)arg1;
+- (int)uniqueIdentifier;
 
 @end

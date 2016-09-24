@@ -3,8 +3,8 @@
  */
 
 @interface CKDPrivacyManager : NSObject {
-    NSObject<OS_dispatch_queue> *_privacyManagerQueue;
-    NSMutableSet *_requests;
+    NSObject<OS_dispatch_queue> * _privacyManagerQueue;
+    NSMutableSet * _requests;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *privacyManagerQueue;

@@ -3,8 +3,8 @@
  */
 
 @interface PGTimer : NSObject {
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_source> *_timer;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_source> * _timer;
 }
 
 - (void).cxx_destruct;

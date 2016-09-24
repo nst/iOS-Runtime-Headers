@@ -3,7 +3,7 @@
  */
 
 @interface TSWPArchivedSelection : TSPObject <TSKArchivedSelection> {
-    TSWPSelection *_selection;
+    TSWPSelection * _selection;
 }
 
 @property (readonly, copy) NSString *debugDescription;

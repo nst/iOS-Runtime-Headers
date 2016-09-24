@@ -3,22 +3,22 @@
  */
 
 @interface RMSDAAPNowPlayingManager : NSObject {
-    NSURLSessionDataTask *_artworkRequest;
-    int _artworkRequestBackoffInterval;
-    NSObject<OS_dispatch_source> *_artworkRetryTimer;
-    NSURLSessionDataTask *_audioRoutesRequest;
-    RMSControlInterface *_controlInterface;
-    NSString *_currentArtworkIdentifier;
-    NSArray *_currentAudioRoutes;
-    RMSNowPlayingInfo *_currentNowPlayingInfo;
-    <RMSDAAPNowPlayingManagerDelegate> *_delegate;
-    BOOL _isObserving;
-    NSNumber *_lastVolume;
-    NSURLSessionDataTask *_nowPlayingInfoRequest;
-    BOOL _observing;
-    int _requestBackoffInterval;
-    RMSDAAPRequestManager *_requestManager;
-    NSURLSessionDataTask *_volumeRequest;
+    NSURLSessionDataTask * _artworkRequest;
+    int  _artworkRequestBackoffInterval;
+    NSObject<OS_dispatch_source> * _artworkRetryTimer;
+    NSURLSessionDataTask * _audioRoutesRequest;
+    RMSControlInterface * _controlInterface;
+    NSString * _currentArtworkIdentifier;
+    NSArray * _currentAudioRoutes;
+    RMSNowPlayingInfo * _currentNowPlayingInfo;
+    <RMSDAAPNowPlayingManagerDelegate> * _delegate;
+    BOOL  _isObserving;
+    NSNumber * _lastVolume;
+    NSURLSessionDataTask * _nowPlayingInfoRequest;
+    BOOL  _observing;
+    int  _requestBackoffInterval;
+    RMSDAAPRequestManager * _requestManager;
+    NSURLSessionDataTask * _volumeRequest;
 }
 
 @property (nonatomic, retain) RMSControlInterface *controlInterface;

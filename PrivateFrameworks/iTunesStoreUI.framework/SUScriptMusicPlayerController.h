@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptMusicPlayerController : SUScriptObject {
-    NSString *_playerType;
+    NSString * _playerType;
 }
 
 @property (readonly) double currentPlaybackTime;

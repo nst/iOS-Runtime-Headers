@@ -3,8 +3,8 @@
  */
 
 @interface NCViewServiceDescriptor : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_bundleIdentifier;
-    NSString *_viewControllerClassName;
+    NSString * _bundleIdentifier;
+    NSString * _viewControllerClassName;
 }
 
 @property (nonatomic, readonly, copy) NSString *bundleIdentifier;
@@ -13,9 +13,9 @@
 + (id)descriptorWithViewControllerClassName:(id)arg1 bundleIdentifier:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)bundleIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;

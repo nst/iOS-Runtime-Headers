@@ -3,7 +3,7 @@
  */
 
 @interface NSSQLLimitIntermediate : NSSQLIntermediate {
-    unsigned int _limit;
+    unsigned int  _limit;
 }
 
 - (id)generateSQLStringInContext:(id)arg1;

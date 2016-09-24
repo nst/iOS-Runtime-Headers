@@ -3,7 +3,7 @@
  */
 
 @interface MusicNavigationController : SKUIScrollingTabNavigationController {
-    unsigned int _searchOptions;
+    unsigned int  _searchOptions;
 }
 
 @property (nonatomic) unsigned int searchOptions;

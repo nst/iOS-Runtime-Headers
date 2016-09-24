@@ -3,8 +3,8 @@
  */
 
 @interface ISUniqueOperationContext : NSObject {
-    NSMutableSet *_operations;
-    NSMutableDictionary *_uniqueOperations;
+    NSMutableSet * _operations;
+    NSMutableDictionary * _uniqueOperations;
 }
 
 - (void)addOperation:(id)arg1;

@@ -3,19 +3,19 @@
  */
 
 @interface CalDAVAddManagedAttachmentsTaskGroup : CoreDAVTaskGroup {
-    NSDictionary *_attachments;
-    NSDictionary *_contentTypes;
-    NSMutableDictionary *_filenamesToServerLocation;
-    BOOL _hadPreconditionFailure;
-    NSDictionary *_postFailureSizes;
-    NSURL *_postURLWithQuery;
-    NSString *_previousETag;
-    NSString *_previousScheduleTag;
-    NSURL *_resourceURL;
-    int _state;
-    NSString *_updatedETag;
-    NSData *_updatedResourcePayload;
-    NSString *_updatedScheduleTag;
+    NSDictionary * _attachments;
+    NSDictionary * _contentTypes;
+    NSMutableDictionary * _filenamesToServerLocation;
+    BOOL  _hadPreconditionFailure;
+    NSDictionary * _postFailureSizes;
+    NSURL * _postURLWithQuery;
+    NSString * _previousETag;
+    NSString * _previousScheduleTag;
+    NSURL * _resourceURL;
+    int  _state;
+    NSString * _updatedETag;
+    NSData * _updatedResourcePayload;
+    NSString * _updatedScheduleTag;
 }
 
 @property (nonatomic, retain) NSDictionary *attachments;

@@ -3,8 +3,8 @@
  */
 
 @interface VUFileUpload : NSObject {
-    NSData *_data;
-    NSString *_name;
+    NSData * _data;
+    NSString * _name;
 }
 
 @property (nonatomic, retain) NSData *data;

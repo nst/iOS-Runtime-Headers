@@ -3,8 +3,8 @@
  */
 
 @interface GEOLocalizationRegionsInfo : NSObject {
-    NSDictionary *_regions;
-    NSLock *_regionsLock;
+    NSDictionary * _regions;
+    NSLock * _regionsLock;
 }
 
 - (void)dealloc;

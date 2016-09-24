@@ -3,12 +3,12 @@
  */
 
 @interface CNAccountsAndGroupsDataSource : NSObject {
-    CNContactStoreFilter *_filter;
-    BOOL _hidesSearchableSources;
-    CNAccountsAndGroupsItem *_rootItem;
-    NSArray *_sections;
-    CNContactStoreFilter *_serverFilter;
-    CNContactStore *_store;
+    CNContactStoreFilter * _filter;
+    BOOL  _hidesSearchableSources;
+    CNAccountsAndGroupsItem * _rootItem;
+    NSArray * _sections;
+    CNContactStoreFilter * _serverFilter;
+    CNContactStore * _store;
 }
 
 @property (nonatomic, copy) CNContactStoreFilter *filter;

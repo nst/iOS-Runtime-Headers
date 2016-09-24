@@ -3,10 +3,10 @@
  */
 
 @interface AXThreadTimerTask : NSObject {
-    id /* block */ _block;
-    BOOL active;
-    BOOL cancel;
-    BOOL finished;
+    id /* block */  _block;
+    BOOL  active;
+    BOOL  cancel;
+    BOOL  finished;
 }
 
 @property (getter=isActive, nonatomic) BOOL active;

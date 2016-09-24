@@ -3,7 +3,7 @@
  */
 
 @interface PDOrientationOptions : PDTransitionOptions {
-    int mOrientation;
+    int  mOrientation;
 }
 
 - (int)orientation;

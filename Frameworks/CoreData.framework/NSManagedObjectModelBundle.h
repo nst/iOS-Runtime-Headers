@@ -3,8 +3,8 @@
  */
 
 @interface NSManagedObjectModelBundle : NSObject {
-    NSBundle *_bundle;
-    NSDictionary *_versionInfoDictionary;
+    NSBundle * _bundle;
+    NSDictionary * _versionInfoDictionary;
 }
 
 - (id)_modelForVersionHashes:(id)arg1;

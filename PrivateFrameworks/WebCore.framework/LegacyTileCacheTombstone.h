@@ -3,7 +3,7 @@
  */
 
 @interface LegacyTileCacheTombstone : NSObject {
-    BOOL dead;
+    BOOL  dead;
 }
 
 @property (getter=isDead) BOOL dead;

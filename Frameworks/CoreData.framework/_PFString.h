@@ -3,11 +3,11 @@
  */
 
 @interface _PFString : NSString {
-    int _cd_rc;
-    unsigned int _length;
-    int _reserved1;
-    int _reserved2;
-    id _sourceData;
+    int  _cd_rc;
+    unsigned int  _length;
+    int  _reserved1;
+    int  _reserved2;
+    id  _sourceData;
 }
 
 + (BOOL)accessInstanceVariablesDirectly;

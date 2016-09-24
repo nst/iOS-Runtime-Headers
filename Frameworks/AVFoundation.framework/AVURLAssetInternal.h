@@ -3,15 +3,17 @@
  */
 
 @interface AVURLAssetInternal : NSObject {
-    NSURL *URL;
-    AVAssetClientURLRequestHelper *URLRequestHelper;
-    BOOL hasInstanceIdentifierMapping;
-    NSDictionary *initializationOptions;
-    AVAssetInspectorLoader *loader;
-    long makeOneResourceLoaderOnly;
-    AVAssetResourceLoader *resourceLoader;
-    NSArray *tracks;
-    NSObject<OS_dispatch_queue> *tracksAccessQueue;
+    NSURL * URL;
+    AVAssetClientURLRequestHelper * URLRequestHelper;
+    AVAssetCache * assetCache;
+    BOOL  hasInstanceIdentifierMapping;
+    NSDictionary * initializationOptions;
+    AVAssetInspectorLoader * loader;
+    long  makeOneAssetDownloadCacheOnly;
+    long  makeOneResourceLoaderOnly;
+    AVAssetResourceLoader * resourceLoader;
+    NSArray * tracks;
+    NSObject<OS_dispatch_queue> * tracksAccessQueue;
 }
 
 @end

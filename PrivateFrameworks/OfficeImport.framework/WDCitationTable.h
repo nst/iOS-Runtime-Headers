@@ -3,8 +3,8 @@
  */
 
 @interface WDCitationTable : NSObject {
-    NSMutableDictionary *mCitations;
-    WDDocument *mDocument;
+    NSMutableDictionary * mCitations;
+    WDDocument * mDocument;
 }
 
 - (void)addCitation:(id)arg1 forID:(id)arg2;

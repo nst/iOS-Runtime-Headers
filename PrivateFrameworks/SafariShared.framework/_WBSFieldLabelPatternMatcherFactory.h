@@ -3,7 +3,7 @@
  */
 
 @interface _WBSFieldLabelPatternMatcherFactory : NSObject {
-    NSMutableDictionary *_trie;
+    NSMutableDictionary * _trie;
 }
 
 + (struct __WBSFieldLabelPatternMatcherArray { }*)createFieldLabelPatternMatcherArrayFromWordArrays:(id)arg1 allowingEndOfWordMatches:(BOOL)arg2;

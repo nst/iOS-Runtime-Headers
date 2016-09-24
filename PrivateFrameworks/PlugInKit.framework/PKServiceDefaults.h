@@ -3,7 +3,7 @@
  */
 
 @interface PKServiceDefaults : NSUserDefaults {
-    PKServicePersonality *_personality;
+    PKServicePersonality * _personality;
 }
 
 @property PKServicePersonality *personality;

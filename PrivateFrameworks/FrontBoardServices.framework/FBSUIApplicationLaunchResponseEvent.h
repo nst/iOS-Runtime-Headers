@@ -3,7 +3,7 @@
  */
 
 @interface FBSUIApplicationLaunchResponseEvent : FBSWorkspaceEvent {
-    FBSUIApplicationLaunchResponse *_response;
+    FBSUIApplicationLaunchResponse * _response;
 }
 
 @property (nonatomic, retain) FBSUIApplicationLaunchResponse *response;

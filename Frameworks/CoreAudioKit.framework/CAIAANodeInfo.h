@@ -3,8 +3,8 @@
  */
 
 @interface CAIAANodeInfo : NSObject {
-    UIColor *labelColor;
-    NSMutableArray *nodeList;
+    UIColor * labelColor;
+    NSMutableArray * nodeList;
 }
 
 @property (retain) UIColor *labelColor;

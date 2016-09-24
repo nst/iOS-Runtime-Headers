@@ -3,7 +3,7 @@
  */
 
 @interface IDSSocketPairHandshake : IDSSocketPairMessage {
-    unsigned int _versionNumber;
+    unsigned int  _versionNumber;
 }
 
 @property (nonatomic, readonly) unsigned int versionNumber;

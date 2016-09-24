@@ -2,11 +2,24 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUIVibrantLabel : UILabel
+@interface SearchUIVibrantLabel : UILabel {
+    unsigned int  _style;
+}
 
+@property unsigned int style;
+
++ (id)condenseWhitespaceForText:(id)arg1 keepNewlinesAndTabs:(BOOL)arg2;
++ (BOOL)richTextOverridesAsyncLoader:(id)arg1;
++ (id)stripUnnecessaryCharactersInString:(id)arg1;
++ (id)textColorForStyle:(unsigned int)arg1;
 + (id)vibrantTextColorForStyle:(unsigned int)arg1;
 
+- (id)attributedStringForRichText:(id)arg1 keepWhitespace:(BOOL)arg2;
 - (id)initWithStyle:(unsigned int)arg1;
+- (void)setStyle:(unsigned int)arg1;
+- (void)setVibrancyEnabled:(BOOL)arg1;
+- (unsigned int)style;
+- (void)updateWithRichText:(id)arg1 keepWhitespace:(BOOL)arg2;
 - (void)willMoveToSuperview:(id)arg1;
 
 @end

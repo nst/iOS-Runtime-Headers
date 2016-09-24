@@ -3,7 +3,7 @@
  */
 
 @interface AVAssetTrackGroup : NSObject <NSCopying> {
-    AVAssetTrackGroupInternal *_assetTrackGroup;
+    AVAssetTrackGroupInternal * _assetTrackGroup;
 }
 
 @property (nonatomic, readonly) NSArray *trackIDs;

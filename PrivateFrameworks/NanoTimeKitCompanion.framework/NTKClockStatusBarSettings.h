@@ -3,9 +3,9 @@
  */
 
 @interface NTKClockStatusBarSettings : NSObject {
-    BOOL _notificationsIndicatorEnabled;
-    NPSManager *_npsManager;
-    NSObject<OS_dispatch_queue> *_prefsQueue;
+    BOOL  _notificationsIndicatorEnabled;
+    NPSManager * _npsManager;
+    NSObject<OS_dispatch_queue> * _prefsQueue;
 }
 
 + (id)sharedInstance;

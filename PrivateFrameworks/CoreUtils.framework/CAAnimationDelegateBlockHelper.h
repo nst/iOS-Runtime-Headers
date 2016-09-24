@@ -2,14 +2,19 @@
    Image: /System/Library/PrivateFrameworks/CoreUtils.framework/CoreUtils
  */
 
-@interface CAAnimationDelegateBlockHelper : NSObject {
-    id /* block */ _animationDidStartBlock;
-    id /* block */ _animationDidStopBlock;
+@interface CAAnimationDelegateBlockHelper : NSObject <CAAnimationDelegate> {
+    id /* block */  _animationDidStartBlock;
+    id /* block */  _animationDidStopBlock;
 }
 
 @property (nonatomic, copy) id /* block */ animationDidStartBlock;
 @property (nonatomic, copy) id /* block */ animationDidStopBlock;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)animationDidStart:(id)arg1;
 - (id /* block */)animationDidStartBlock;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;

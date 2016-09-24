@@ -4,17 +4,19 @@
 
 @interface CKUIBehaviorPad : CKUIBehavior
 
-- (struct CGSize { float x1; float x2; })attachmentBrowserDefaultSizeForSquare;
+- (struct CGSize { double x1; double x2; })attachmentBrowserDefaultSizeForSquare;
 - (float)attachmentBrowserGridInterItemSpacing;
 - (BOOL)canPresentOverKeyboard;
 - (BOOL)canShowContactPhotosInConversationList;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contactPhotoTranscriptInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contactPhotoTranscriptInsets;
 - (float)conversationListMinimumWidthForHiddenContactImage;
 - (unsigned int)defaultConversationViewingMessageCount;
-- (struct CGSize { float x1; float x2; })documentIconSize;
+- (struct CGSize { double x1; double x2; })documentIconSize;
+- (float)entryViewMaxHandWritingPluginShelfHeight;
+- (id)fullscreenPickerActionLayoutAxisPrioritiesForWidth:(float)arg1;
 - (BOOL)lowClearanceInLandscape;
 - (float)maxPrimaryColumnWidthForInterfaceOrientation:(int)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })minTranscriptMarginInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })minTranscriptMarginInsets;
 - (unsigned int)numberOfButtonsInPhotoPicker;
 - (float)photoPickerMaxPopoverPhotoHeight;
 - (float)photoPickerPopoverWidth;
@@ -22,10 +24,10 @@
 - (BOOL)presentForwardingUIModally;
 - (BOOL)presentsFullscreenInViewService;
 - (BOOL)presentsQuickLookController;
-- (BOOL)presentsReaderController;
 - (double)resumeToConversationListTimeInterval;
 - (BOOL)shouldAlignRecipientGlyphsWithMargins;
 - (BOOL)shouldOnlyResumeToConversationListAfterTimeout;
+- (BOOL)shouldPopoverSuggestionsBanner;
 - (BOOL)shouldRefreshAlternateAddressesSheet;
 - (BOOL)shouldShowDisclosureChevronInRecipientAtoms;
 - (BOOL)shouldSuppressRotationInNewCompose;

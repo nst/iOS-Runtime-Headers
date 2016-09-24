@@ -3,9 +3,9 @@
  */
 
 @interface SKUILocalizedStringTable : NSObject {
-    NSBundle *_bundle;
-    NSDictionary *_strings;
-    NSString *_tableName;
+    NSBundle * _bundle;
+    NSDictionary * _strings;
+    NSString * _tableName;
 }
 
 @property (nonatomic, readonly) NSBundle *bundle;

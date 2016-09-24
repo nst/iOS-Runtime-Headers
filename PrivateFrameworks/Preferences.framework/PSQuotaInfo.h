@@ -3,21 +3,21 @@
  */
 
 @interface PSQuotaInfo : NSObject {
-    NSMutableDictionary *_mediaKindDict;
-    unsigned long long _totalStorage;
-    unsigned long long _usedStorage;
+    NSMutableDictionary * _mediaKindDict;
+    unsigned int  _totalStorage;
+    unsigned int  _usedStorage;
 }
 
-@property (nonatomic) unsigned long long totalStorage;
-@property (nonatomic) unsigned long long usedStorage;
+@property (nonatomic) unsigned int totalStorage;
+@property (nonatomic) unsigned int usedStorage;
 
 - (void).cxx_destruct;
 - (id)init;
 - (void)setStorageInUse:(unsigned int)arg1 forMediaKind:(int)arg2;
-- (void)setTotalStorage:(unsigned long long)arg1;
-- (void)setUsedStorage:(unsigned long long)arg1;
+- (void)setTotalStorage:(unsigned int)arg1;
+- (void)setUsedStorage:(unsigned int)arg1;
 - (unsigned int)storageInUseForMediaKind:(int)arg1;
-- (unsigned long long)totalStorage;
-- (unsigned long long)usedStorage;
+- (unsigned int)totalStorage;
+- (unsigned int)usedStorage;
 
 @end

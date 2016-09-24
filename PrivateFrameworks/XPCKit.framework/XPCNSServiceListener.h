@@ -3,8 +3,8 @@
  */
 
 @interface XPCNSServiceListener : NSObject <XPCServiceListenerDelegate> {
-    <XPCNSServiceListenerDelegate> *_delegate;
-    XPCServiceListener *_serviceListener;
+    <XPCNSServiceListenerDelegate> * _delegate;
+    XPCServiceListener * _serviceListener;
 }
 
 @property (readonly, copy) NSString *debugDescription;

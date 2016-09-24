@@ -3,8 +3,8 @@
  */
 
 @interface MSMSPlatform : NSObject <MSPlatform> {
-    BOOL _isPerfLoggingEnabled;
-    NSData *_pushToken;
+    BOOL  _isPerfLoggingEnabled;
+    NSData * _pushToken;
 }
 
 @property (readonly, copy) NSString *debugDescription;

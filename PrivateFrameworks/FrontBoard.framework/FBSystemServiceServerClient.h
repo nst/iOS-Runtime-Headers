@@ -3,13 +3,13 @@
  */
 
 @interface FBSystemServiceServerClient : BSBasicServerClient <FBSystemServiceClient> {
-    NSString *_bundleID;
-    NSString *_bundlePath;
-    BOOL _extension;
-    NSString *_facilityID;
-    <FBSystemServiceFacilityClient> *_facilityclient;
-    BOOL _suspended;
-    BOOL _uiApp;
+    NSString * _bundleID;
+    NSString * _bundlePath;
+    BOOL  _extension;
+    <FBSystemServiceFacilityClient> * _facilityClient;
+    NSString * _facilityID;
+    BOOL  _suspended;
+    BOOL  _uiApp;
 }
 
 @property (getter=isUIApp, nonatomic) BOOL UIApp;

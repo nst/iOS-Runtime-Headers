@@ -3,11 +3,11 @@
  */
 
 @interface AFSiriTaskmaster : NSObject <AFSiriRequestFailureHandling, AFSiriRequestHandling, AFSiriUsageResultHandling, NSXPCListenerDelegate> {
-    <AFSiriTaskmasterDelegate> *_delegate;
-    NSMapTable *_executorForRequest;
-    NSObject<OS_dispatch_queue> *_queue;
-    <AFSiriTaskDelivering> *_taskDeliverer;
-    NSXPCListener *_usageResultListener;
+    <AFSiriTaskmasterDelegate> * _delegate;
+    NSMapTable * _executorForRequest;
+    NSObject<OS_dispatch_queue> * _queue;
+    <AFSiriTaskDelivering> * _taskDeliverer;
+    NSXPCListener * _usageResultListener;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -21,11 +21,11 @@
 + (id)taskmasterForUIApplicationWithBundleIdentifier:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_handleFailureOfRequest:(id)arg1 error:(id)arg2;
+- (void)_handleFailureOfRequest:(id)arg1 error:(id)arg2 atTime:(unsigned int)arg3;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
-- (void)handleFailureOfRequest:(id)arg1 error:(id)arg2;
+- (void)handleFailureOfRequest:(id)arg1 error:(id)arg2 atTime:(unsigned int)arg3;
 - (void)handleSiriRequest:(id)arg1 deliveryHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
 - (void)handleSiriTaskUsageResult:(id)arg1 fromRequest:(id)arg2;
 - (id)initWithTaskDeliverer:(id)arg1;

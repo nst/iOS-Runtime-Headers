@@ -3,8 +3,8 @@
  */
 
 @interface _NACRoutesObserverRecord : NSObject {
-    MPAVRoutingController *_routingController;
-    NACRunAssertion *_runAssertion;
+    MPAVRoutingController * _routingController;
+    NACRunAssertion * _runAssertion;
 }
 
 @property (nonatomic, retain) MPAVRoutingController *routingController;

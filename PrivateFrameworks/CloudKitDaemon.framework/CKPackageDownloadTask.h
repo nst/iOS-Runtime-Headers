@@ -3,16 +3,16 @@
  */
 
 @interface CKPackageDownloadTask : NSObject <CKDCancelling> {
-    CKDMMCSRequestOptions *_MMCSRequestOptions;
-    CKDCancelTokenGroup *_cancelTokens;
-    NSError *_error;
-    NSObject<OS_dispatch_group> *_group;
-    id _itemIndices;
-    CKAsset *_manifestAsset;
-    CKPackage *_package;
-    CKDProgressTracker *_progressTracker;
-    NSArray *_sectionAssets;
-    NSIndexSet *_sectionIndices;
+    CKDMMCSRequestOptions * _MMCSRequestOptions;
+    CKDCancelTokenGroup * _cancelTokens;
+    NSError * _error;
+    NSObject<OS_dispatch_group> * _group;
+    id  _itemIndices;
+    CKAsset * _manifestAsset;
+    CKPackage * _package;
+    CKDProgressTracker * _progressTracker;
+    NSArray * _sectionAssets;
+    NSIndexSet * _sectionIndices;
 }
 
 @property (nonatomic, retain) CKDMMCSRequestOptions *MMCSRequestOptions;

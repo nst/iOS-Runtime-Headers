@@ -3,16 +3,16 @@
  */
 
 @interface CIPageCurlWithShadowTransition : CIFilter {
-    NSNumber *inputAngle;
-    CIImage *inputBacksideImage;
-    CIVector *inputExtent;
-    CIImage *inputImage;
-    NSNumber *inputRadius;
-    NSNumber *inputShadowAmount;
-    CIVector *inputShadowExtent;
-    NSNumber *inputShadowSize;
-    CIImage *inputTargetImage;
-    NSNumber *inputTime;
+    NSNumber * inputAngle;
+    CIImage * inputBacksideImage;
+    CIVector * inputExtent;
+    CIImage * inputImage;
+    NSNumber * inputRadius;
+    NSNumber * inputShadowAmount;
+    CIVector * inputShadowExtent;
+    NSNumber * inputShadowSize;
+    CIImage * inputTargetImage;
+    NSNumber * inputTime;
 }
 
 + (id)customAttributes;

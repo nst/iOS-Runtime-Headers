@@ -3,13 +3,13 @@
  */
 
 @interface DEExtension : NSObject {
-    BOOL _allowUserAttachmentSelection;
-    NSString *_attachmentsName;
-    DEExtensionHostContext *_context;
-    NSExtension *_extension;
-    NSString *_identifier;
-    BOOL _isLoggingEnabled;
-    NSString *_loggingConsent;
+    BOOL  _allowUserAttachmentSelection;
+    NSString * _attachmentsName;
+    DEExtensionHostContext * _context;
+    NSExtension * _extension;
+    NSString * _identifier;
+    BOOL  _isLoggingEnabled;
+    NSString * _loggingConsent;
 }
 
 @property (nonatomic) BOOL allowUserAttachmentSelection;

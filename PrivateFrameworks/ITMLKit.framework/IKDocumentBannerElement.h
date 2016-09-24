@@ -3,7 +3,7 @@
  */
 
 @interface IKDocumentBannerElement : IKViewElement {
-    BOOL _fixed;
+    BOOL  _fixed;
 }
 
 @property (nonatomic, readonly, retain) IKBackgroundElement *background;

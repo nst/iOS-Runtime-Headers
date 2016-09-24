@@ -3,11 +3,11 @@
  */
 
 @interface NPKProtoConfigurationDataResponse : PBCodable <NSCopying> {
-    NSData *_configurationDataBytes;
+    NSData * _configurationDataBytes;
     struct { 
         unsigned int pending : 1; 
-    } _has;
-    BOOL _pending;
+    }  _has;
+    BOOL  _pending;
 }
 
 @property (nonatomic, retain) NSData *configurationDataBytes;

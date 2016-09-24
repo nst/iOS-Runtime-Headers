@@ -3,9 +3,9 @@
  */
 
 @interface _MPStoreDownloadBlockObserver : NSObject <MPStoreDownloadManagerObserver> {
-    id /* block */ _didFinishDownloadHandler;
-    id /* block */ _didFinishPurchaseHandler;
-    MPStoreDownload *_download;
+    id /* block */  _didFinishDownloadHandler;
+    id /* block */  _didFinishPurchaseHandler;
+    MPStoreDownload * _download;
 }
 
 @property (readonly, copy) NSString *debugDescription;

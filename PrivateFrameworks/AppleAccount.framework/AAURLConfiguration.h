@@ -3,7 +3,7 @@
  */
 
 @interface AAURLConfiguration : NSObject {
-    NSDictionary *_urlDictionary;
+    NSDictionary * _urlDictionary;
 }
 
 @property (nonatomic, readonly) NSString *aboutURL;

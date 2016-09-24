@@ -3,19 +3,17 @@
  */
 
 @interface TKToneClassicsTableViewController : UITableViewController <TKTonePickerTableViewLayoutMarginsObserver, TKTonePickerTableViewSeparatorObserver> {
-    TKTonePickerItem *_classicTonesHeaderItem;
-    <TKTonePickerTableViewControllerHelper> *_tonePickerTableViewControllerHelper;
+    TKTonePickerItem * _classicTonesHeaderItem;
+    <TKTonePickerTableViewControllerHelper> * _tonePickerTableViewControllerHelper;
 }
 
-@property (setter=_setClassicTonesHeaderItem:, nonatomic, retain) TKTonePickerItem *_classicTonesHeaderItem;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 @property (nonatomic) <TKTonePickerTableViewControllerHelper> *tonePickerTableViewControllerHelper;
 
-- (id)_classicTonesHeaderItem;
-- (void)_setClassicTonesHeaderItem:(id)arg1;
+- (void).cxx_destruct;
 - (void)dealloc;
 - (void)didReloadTones;
 - (void)didUpdateCheckedStatus:(BOOL)arg1 ofToneClassicsPickerItem:(id)arg2;

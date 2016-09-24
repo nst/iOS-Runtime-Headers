@@ -3,18 +3,18 @@
  */
 
 @interface PSUIColorScheduleController : PSListController <PSUIDateTimePickerCellDelegate> {
-    CBClient *_brightnessClient;
-    PSSpecifier *_endTimePickerSpecifier;
-    PSSpecifier *_endTimeSpecifier;
-    PSSpecifier *_radioGroup;
-    PSSpecifier *_scheduleRadioSpecifier;
-    PSSpecifier *_selectedTimeSpecifier;
-    BOOL _showingScheduleSpecifiers;
-    PSSpecifier *_startTimePickerSpecifier;
-    PSSpecifier *_startTimeSpecifier;
-    PSSpecifier *_sunsetToSunriseRadioSpecifier;
-    NSDateFormatter *_timeFormatter;
-    PSSpecifier *_timeGroup;
+    CBClient * _brightnessClient;
+    PSSpecifier * _endTimePickerSpecifier;
+    PSSpecifier * _endTimeSpecifier;
+    PSSpecifier * _radioGroup;
+    PSSpecifier * _scheduleRadioSpecifier;
+    PSSpecifier * _selectedTimeSpecifier;
+    BOOL  _showingScheduleSpecifiers;
+    PSSpecifier * _startTimePickerSpecifier;
+    PSSpecifier * _startTimeSpecifier;
+    PSSpecifier * _sunsetToSunriseRadioSpecifier;
+    NSDateFormatter * _timeFormatter;
+    PSSpecifier * _timeGroup;
 }
 
 - (void).cxx_destruct;

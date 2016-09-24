@@ -3,7 +3,7 @@
  */
 
 @interface BRCPackageChecksummer : NSObject {
-    BRCChecksummingOutputStream *_stream;
+    BRCChecksummingOutputStream * _stream;
 }
 
 @property (nonatomic, readonly) NSData *signature;

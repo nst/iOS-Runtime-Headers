@@ -3,12 +3,12 @@
  */
 
 @interface WBSCloudTabCloseRequest : NSObject <NSCopying> {
-    NSUUID *_destinationDeviceUUID;
-    NSDate *_lastModified;
-    NSUUID *_requestUUID;
-    NSUUID *_sourceDeviceUUID;
-    NSUUID *_tabUUID;
-    NSURL *_url;
+    NSUUID * _destinationDeviceUUID;
+    NSDate * _lastModified;
+    NSUUID * _requestUUID;
+    NSUUID * _sourceDeviceUUID;
+    NSUUID * _tabUUID;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSUUID *destinationDeviceUUID;

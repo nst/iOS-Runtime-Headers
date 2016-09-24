@@ -3,9 +3,9 @@
  */
 
 @interface _MFSearchProcessResultsOperation : NSOperation {
-    id /* block */ _completionBlock;
-    <_MFSearchResultsConsumer> *_consumer;
-    unsigned int _type;
+    id /* block */  _completionBlock;
+    <_MFSearchResultsConsumer> * _consumer;
+    unsigned int  _type;
 }
 
 + (id)operationWithResultsOfType:(unsigned int)arg1 completion:(id /* block */)arg2 consumer:(id)arg3;

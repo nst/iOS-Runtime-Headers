@@ -3,10 +3,10 @@
  */
 
 @interface DCRemoteDocumentManager : NSObject {
-    NSURLSessionDownloadTask *_fetchUpdateRequest;
-    DCService *_service;
-    id /* block */ _updatedVersionIdentifierHandler;
-    NSDictionary *_watchedDocumentIdentifiersAndVersionIdentifiers;
+    NSURLSessionDownloadTask * _fetchUpdateRequest;
+    DCService * _service;
+    id /* block */  _updatedVersionIdentifierHandler;
+    NSDictionary * _watchedDocumentIdentifiersAndVersionIdentifiers;
 }
 
 @property (readonly, retain) DCService *service;

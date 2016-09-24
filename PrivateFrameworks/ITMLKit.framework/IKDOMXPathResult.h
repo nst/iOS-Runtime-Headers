@@ -3,8 +3,8 @@
  */
 
 @interface IKDOMXPathResult : IKJSObject <IKJSDOMXPathResult> {
-    NSArray *_nodes;
-    int _type;
+    NSArray * _nodes;
+    int  _type;
 }
 
 @property (nonatomic, readonly) BOOL booleanValue;

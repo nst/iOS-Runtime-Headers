@@ -3,20 +3,21 @@
  */
 
 @interface PLDelayedSaveActions : NSObject {
-    PLClientServerTransaction *_clientTransaction;
-    NSMutableSet *_delayedAlbumCountUpdates;
-    NSMutableSet *_delayedAssetsForFileSystemPersistency;
-    NSMutableArray *_delayedCloudFeedAlbumUpdates;
-    NSMutableArray *_delayedCloudFeedAssetInserts;
-    NSMutableArray *_delayedCloudFeedAssetUpdates;
-    NSMutableArray *_delayedCloudFeedCommentInserts;
-    NSMutableSet *_delayedCloudFeedDeletionEntries;
-    NSMutableArray *_delayedCloudFeedInvitationRecordUpdates;
-    NSMutableArray *_delayedDupeAnalysisCloudInserts;
-    NSMutableArray *_delayedDupeAnalysisNormalInserts;
-    NSMapTable *_delayedMomentAssetDeletions;
-    NSMutableArray *_delayedMomentAssetUpdates;
-    NSMutableDictionary *_delayedSearchIndexUpdateUUIDs;
+    PLClientServerTransaction * _clientTransaction;
+    NSMutableSet * _delayedAlbumCountUpdates;
+    NSMutableSet * _delayedAssetsForFileSystemPersistency;
+    NSMutableArray * _delayedCloudFeedAlbumUpdates;
+    NSMutableArray * _delayedCloudFeedAssetInserts;
+    NSMutableArray * _delayedCloudFeedAssetUpdates;
+    NSMutableArray * _delayedCloudFeedCommentInserts;
+    NSMutableSet * _delayedCloudFeedDeletionEntries;
+    NSMutableArray * _delayedCloudFeedInvitationRecordUpdates;
+    NSMutableArray * _delayedDupeAnalysisCloudInserts;
+    NSMutableArray * _delayedDupeAnalysisNormalInserts;
+    NSMapTable * _delayedMomentAssetDeletions;
+    NSMutableArray * _delayedMomentAssetUpdates;
+    NSMutableDictionary * _delayedSearchIndexUpdateUUIDs;
+    NSMutableDictionary * _delayedWorkerTypesToAnalyzeByAssetUUID;
 }
 
 @property (nonatomic, readonly, retain) PLClientServerTransaction *clientTransaction;
@@ -29,6 +30,7 @@
 + (void)delayedSearchIndexUpdatesFromChangeHubEvent:(id)arg1 updates:(id*)arg2;
 
 - (void)_recordAlbumUUIDForSearchIndexUpdate:(id)arg1 isInsert:(BOOL)arg2;
+- (void)_recordAssetForSearchIndexUpdate:(id)arg1;
 - (void)_recordAssetUUIDForSearchIndexUpdate:(id)arg1 isInsert:(BOOL)arg2;
 - (void)_recordDelayedAlbumCountUpdate:(id)arg1;
 - (void)_recordDelayedCloudFeedAlbumUpdate:(id)arg1;
@@ -39,8 +41,11 @@
 - (void)_recordDelayedCloudFeedInvitationRecordUpdate:(id)arg1;
 - (void)_recordDelayedMomentAssetDeletionsDictionary:(id)arg1 forKey:(id)arg2;
 - (void)_recordDelayedMomentAssetUpdates:(id)arg1;
+- (void)_recordDetectedFaceUUIDInsertForSearchIndexUpdate:(id)arg1;
 - (void)_recordManagedObjectUUID:(id)arg1 forSearchIndexUpdateKey:(id)arg2;
+- (void)_recordMemoryUUIDForSearchIndexUpdate:(id)arg1 isInsert:(BOOL)arg2;
 - (void)_recordNormalAssetForDupeAnalysis:(id)arg1;
+- (void)_recordPersonUUIDInsertForSearchIndexUpdate:(id)arg1;
 - (void)_recordStreamAssetForDupeAnalysis:(id)arg1;
 - (void)appendDelayedAlbumCountUpdatesToXPCMessage:(id)arg1;
 - (void)appendDelayedAssetsForFileSystemPersistencyUpdate:(id)arg1;
@@ -53,6 +58,7 @@
 - (id)initWithClientTransaction:(id)arg1;
 - (void)persistDelayedActionsScope:(id)arg1;
 - (void)popDelayedAlbumCountUpdates:(id*)arg1;
+- (void)popDelayedAssetsForAnalysis:(id*)arg1;
 - (void)popDelayedAssetsForFilesystemPersistencyUpdates:(id*)arg1;
 - (void)popDelayedCloudFeedAlbumUpdates:(id*)arg1 assetInserts:(id*)arg2 assetUpdates:(id*)arg3 commentInserts:(id*)arg4 invitationRecordUpdates:(id*)arg5 deletionEntries:(id*)arg6;
 - (void)popDelayedDupeAnalysisNormalInserts:(id*)arg1 cloudInserts:(id*)arg2;
@@ -63,13 +69,16 @@
 - (void)recordAlbumForCloudFeedUpdate:(id)arg1;
 - (void)recordAlbumForSearchIndexUpdate:(id)arg1;
 - (void)recordAssetForAlbumCountUpdate:(id)arg1;
+- (void)recordAssetForAnalysis:(id)arg1 workerFlags:(int)arg2 workerType:(short)arg3;
 - (void)recordAssetForCloudFeedUpdate:(id)arg1;
 - (void)recordAssetForDupeAnalysis:(id)arg1;
 - (void)recordAssetForFileSystemPersistencyUpdate:(id)arg1;
 - (void)recordAssetForMomentUpdate:(id)arg1;
 - (void)recordAssetForSearchIndexUpdate:(id)arg1;
 - (void)recordCommentForCloudFeedUpdate:(id)arg1;
+- (void)recordDetectedFaceForSearchIndexUpdate:(id)arg1;
 - (void)recordInvitationRecordForCloudFeedUpdate:(id)arg1;
+- (void)recordMemoryForSearchIndexUpdate:(id)arg1;
 - (void)recordPersonForSearchIndexUpdate:(id)arg1;
 - (void)recordPersonReferenceForSearchIndexUpdate:(id)arg1;
 

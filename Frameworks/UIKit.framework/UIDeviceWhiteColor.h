@@ -3,14 +3,14 @@
  */
 
 @interface UIDeviceWhiteColor : UIColor {
-    float alphaComponent;
-    struct CGColor { } *cachedColor;
-    long cachedColorOnceToken;
-    float whiteComponent;
+    struct CGColor { } * _cachedColor;
+    double  alphaComponent;
+    double  whiteComponent;
 }
 
 - (struct CGColor { }*)CGColor;
 - (struct CGColor { }*)_createCGColorWithAlpha:(float)arg1;
+- (BOOL)_isDeepColor;
 - (float)alphaComponent;
 - (id)colorSpaceName;
 - (id)colorWithAlphaComponent:(float)arg1;

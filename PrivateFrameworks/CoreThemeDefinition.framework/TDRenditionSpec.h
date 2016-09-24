@@ -10,7 +10,7 @@
 @property (nonatomic, retain) TDRenditionKeySpec *keySpec;
 @property (nonatomic) BOOL monochrome;
 @property (nonatomic) BOOL opaque;
-@property (nonatomic) struct CGPoint { float x1; float x2; } packedPoint;
+@property (nonatomic) struct CGPoint { double x1; double x2; } packedPoint;
 @property (nonatomic) int packedPointX;
 @property (nonatomic) int packedPointY;
 @property (nonatomic, retain) NSSet *packedRenditions;
@@ -23,10 +23,10 @@
 - (BOOL)canBePackedWithDocument:(id)arg1;
 - (id)createCSIRepresentationWithCompression:(BOOL)arg1 colorSpaceID:(unsigned int)arg2 document:(id)arg3;
 - (void)drawPackableRenditionInContext:(struct CGContext { }*)arg1 withDocument:(id)arg2;
-- (struct CGPoint { float x1; float x2; })packedPoint;
+- (struct CGPoint { double x1; double x2; })packedPoint;
 - (id)renditionType;
 - (void)resetToBaseKeySpec;
-- (void)setPackedPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setPackedPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setRenditionType:(id)arg1;
 - (void)updatePackingPropertiesWithDocument:(id)arg1;
 

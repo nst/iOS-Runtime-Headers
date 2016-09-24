@@ -3,12 +3,12 @@
  */
 
 @interface UIWebOverflowScrollView : UIScrollView {
-    BOOL _beingRemoved;
-    DOMNode *_node;
-    UIWebOverflowContentView *_overflowContentView;
-    UIWebOverflowScrollListener *_scrollListener;
-    UIWebBrowserView *_webBrowserView;
-    CALayer *_webLayer;
+    BOOL  _beingRemoved;
+    DOMNode * _node;
+    UIWebOverflowContentView * _overflowContentView;
+    UIWebOverflowScrollListener * _scrollListener;
+    UIWebBrowserView * _webBrowserView;
+    CALayer * _webLayer;
 }
 
 @property (getter=isBeingRemoved, nonatomic) BOOL beingRemoved;
@@ -27,7 +27,7 @@
 - (void)replaceLayer:(id)arg1;
 - (id)scrollListener;
 - (void)setBeingRemoved:(BOOL)arg1;
-- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setNode:(id)arg1;
 - (void)setOverflowContentView:(id)arg1;
 - (void)setScrollListener:(id)arg1;

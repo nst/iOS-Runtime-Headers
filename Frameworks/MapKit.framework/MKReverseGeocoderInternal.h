@@ -3,14 +3,14 @@
  */
 
 @interface MKReverseGeocoderInternal : NSObject {
-    struct { 
+    struct CLLocationCoordinate2D { 
         double latitude; 
         double longitude; 
-    } coordinate;
-    <MKReverseGeocoderDelegate> *delegate;
-    MKMapItem *mapItem;
-    BOOL querying;
-    <MKMapServiceTicket> *ticket;
+    }  coordinate;
+    <MKReverseGeocoderDelegate> * delegate;
+    MKMapItem * mapItem;
+    BOOL  querying;
+    <MKMapServiceTicket> * ticket;
 }
 
 - (void).cxx_destruct;

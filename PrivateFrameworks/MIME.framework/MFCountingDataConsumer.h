@@ -3,7 +3,7 @@
  */
 
 @interface MFCountingDataConsumer : MFNullDataConsumer {
-    unsigned int _count;
+    unsigned int  _count;
 }
 
 @property (nonatomic, readonly) unsigned int count;

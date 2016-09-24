@@ -3,8 +3,8 @@
  */
 
 @interface _HKCorrelationQueryServerDataObject : _HKQueryServerDataObject {
-    NSDictionary *_filterDictionary;
-    int _version;
+    NSDictionary * _filterDictionary;
+    int  _version;
 }
 
 @property (nonatomic, retain) NSDictionary *filterDictionary;

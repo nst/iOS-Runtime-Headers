@@ -3,10 +3,10 @@
  */
 
 @interface MFHardwareJPEGScaler : NSObject {
-    BOOL _canHardwareScaleImage;
-    NSData *_imageData;
-    struct __CFDictionary { } *_imageProperties;
-    struct __IOSurface { } *_ioSurfaceRef;
+    BOOL  _canHardwareScaleImage;
+    NSData * _imageData;
+    struct __CFDictionary { } * _imageProperties;
+    struct __IOSurface { } * _ioSurfaceRef;
 }
 
 - (BOOL)_decodeImageToIOSurface;

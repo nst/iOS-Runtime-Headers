@@ -3,9 +3,9 @@
  */
 
 @interface SSDownloadPolicy : NSObject <NSCoding, NSCopying, SSXPCCoding> {
-    int _bagType;
-    NSString *_downloadKind;
-    NSMutableArray *_policyRules;
+    int  _bagType;
+    NSString * _downloadKind;
+    NSMutableArray * _policyRules;
 }
 
 @property (nonatomic, readonly) int URLBagType;
@@ -17,7 +17,7 @@
 @property (readonly) Class superclass;
 
 - (int)URLBagType;
-- (id)_policyRuleForSizeLimit:(long long)arg1;
+- (id)_policyRuleForSizeLimit:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
 - (void)dealloc;

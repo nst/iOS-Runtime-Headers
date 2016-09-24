@@ -3,7 +3,7 @@
  */
 
 @interface UITableViewLabel : UILabel {
-    UITableViewCell *_tableCell;
+    UITableViewCell * _tableCell;
 }
 
 @property (nonatomic) UITableViewCell *tableCell;

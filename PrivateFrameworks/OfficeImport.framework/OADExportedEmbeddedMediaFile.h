@@ -3,8 +3,8 @@
  */
 
 @interface OADExportedEmbeddedMediaFile : OADEmbeddedMediaFile {
-    TSPData *_tspData;
-    BOOL isAudioOnly;
+    TSPData * _tspData;
+    BOOL  isAudioOnly;
 }
 
 @property (nonatomic, retain) TSPData *tspData;

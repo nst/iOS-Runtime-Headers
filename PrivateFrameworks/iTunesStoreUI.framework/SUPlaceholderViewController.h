@@ -3,11 +3,11 @@
  */
 
 @interface SUPlaceholderViewController : SUViewController {
-    SUGradient *_backgroundGradient;
-    SUGradient *_defaultBackgroundGradient;
-    SUGradientView *_gradientView;
-    BOOL _hideLoadingView;
-    SULoadingView *_loadingView;
+    SUGradient * _backgroundGradient;
+    SUGradient * _defaultBackgroundGradient;
+    SUGradientView * _gradientView;
+    BOOL  _hideLoadingView;
+    SULoadingView * _loadingView;
 }
 
 @property (nonatomic, copy) SUGradient *backgroundGradient;
@@ -31,9 +31,9 @@
 - (void)parentViewControllerHierarchyDidChange;
 - (void)setBackgroundGradient:(id)arg1;
 - (void)setDefaultBackgroundGradient:(id)arg1;
-- (void)setLoading:(BOOL)arg1;
 - (void)setScriptProperties:(id)arg1;
 - (void)setShouldShowLoadingView:(BOOL)arg1;
+- (void)setSkLoading:(BOOL)arg1;
 - (BOOL)shouldShowLoadingView;
 
 @end

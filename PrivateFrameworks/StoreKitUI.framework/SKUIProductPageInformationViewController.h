@@ -3,12 +3,12 @@
  */
 
 @interface SKUIProductPageInformationViewController : UIViewController <SKUIContentRatingArtworkLoaderObserver> {
-    SKUIClientContext *_clientContext;
-    SKUIContentRatingArtworkResourceLoader *_contentRatingArtworkLoader;
-    SKUIProductInformationView *_informationView;
-    SKUIProductPageItem *_item;
-    NSOperationQueue *_operationQueue;
-    SKUIProductPageProductInfo *_productInfo;
+    SKUIClientContext * _clientContext;
+    SKUIContentRatingArtworkResourceLoader * _contentRatingArtworkLoader;
+    SKUIProductInformationView * _informationView;
+    SKUIProductPageItem * _item;
+    NSOperationQueue * _operationQueue;
+    SKUIProductPageProductInfo * _productInfo;
 }
 
 @property (nonatomic, readonly) SKUIClientContext *clientContext;

@@ -2,14 +2,18 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
  */
 
-@interface SBSApplicationClient : FBSSystemServiceFacilityClient
+@interface SBSApplicationClient : SBSServiceFacilityClient
 
-- (void)fetchDynamicApplicationShortcutItemsForBundleIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)fetchRemovabilityForBundleIdentifier:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)fetchWhitePointAdaptivityStyleForDisplayId:(unsigned int)arg1 withCompletion:(id /* block */)arg2;
-- (id)initWithCalloutQueue:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 calloutQueue:(id)arg2;
-- (void)setRemovalAllowed:(BOOL)arg1 forBundleIdentifier:(id)arg2 withCompletion:(id /* block */)arg3;
++ (id)serviceFacilityIdentifier;
+
+- (void)fetchApplicationShortcutItemsOfTypes:(unsigned int)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)fetchCarApplicationInformationForBundleIdentifier:(id)arg1 inVehicle:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)fetchIconStateForVehicleId:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)fetchRemovabilityForBundleIdentifier:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)fetchWhitePointAdaptivityStyleForDisplayId:(unsigned int)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)resetIconStateForVehicleId:(id)arg1;
+- (void)setIconState:(id)arg1 hiddenIcons:(id)arg2 forVehicleId:(id)arg3;
+- (void)setRemovalAllowed:(BOOL)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)updateDynamicApplicationShortcutItems:(id)arg1 bundleIdentifier:(id)arg2;
 
 @end

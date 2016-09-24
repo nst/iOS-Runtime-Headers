@@ -3,8 +3,8 @@
  */
 
 @interface SUDelayedQuitController : NSObject {
-    int _delayTerminateCount;
-    NSMutableArray *_longLivedViewControllers;
+    int  _delayTerminateCount;
+    NSMutableArray * _longLivedViewControllers;
 }
 
 + (void)beginDelayingTerminate;

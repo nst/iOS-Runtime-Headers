@@ -3,9 +3,9 @@
  */
 
 @interface EKObjectID : NSObject <NSCopying, NSSecureCoding> {
-    int _entityType;
-    int _rowID;
-    BOOL _temporary;
+    int  _entityType;
+    int  _rowID;
+    BOOL  _temporary;
 }
 
 + (id)objectIDWithCADObjectID:(struct { int x1; int x2; })arg1;

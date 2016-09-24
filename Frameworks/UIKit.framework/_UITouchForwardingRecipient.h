@@ -3,10 +3,10 @@
  */
 
 @interface _UITouchForwardingRecipient : NSObject {
-    int autocompletedPhase;
-    UIResponder *fromResponder;
-    int recordedPhase;
-    UIResponder *responder;
+    int  autocompletedPhase;
+    UIResponder * fromResponder;
+    int  recordedPhase;
+    UIResponder * responder;
 }
 
 @property (nonatomic) int autocompletedPhase;

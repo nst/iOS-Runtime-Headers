@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOSimpleTileRequester : GEOTileRequester <NSURLConnectionDelegate> {
-    BOOL _cancelled;
-    NSMutableArray *_errors;
-    GEOTileKeyMap *_keysToBaseOps;
-    NSMutableSet *_running;
-    BOOL _subclassImplementsTileEdition;
-    NSMutableArray *_waiting;
+@interface GEOSimpleTileRequester : GEOTileRequester <NSURLSessionDataDelegate> {
+    BOOL  _cancelled;
+    NSOperationQueue * _delegateQueue;
+    NSMutableArray * _errors;
+    GEOTileKeyMap * _keysToBaseOps;
+    NSMutableSet * _running;
+    BOOL  _subclassImplementsTileEdition;
+    NSMutableArray * _waiting;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -18,11 +19,16 @@
 
 + (int)eTagType;
 
+- (void)_cancel;
+- (void)_cancelKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })arg1;
 - (void)_cleanup;
+- (id)_delegateGCDQueue;
 - (void)_doWorkOrFinish;
 - (id)_nextPendingOperation;
 - (void)_operationFailed:(id)arg1 error:(id)arg2;
 - (void)_operationFinished:(id)arg1;
+- (void)_releaseEverything;
+- (void)_reprioritizeKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })arg1 newPriority:(unsigned int)arg2;
 - (void)_startNextPendingOperation:(id)arg1;
 - (BOOL)_verifyDataIntegrity:(id)arg1 checksumMethod:(int)arg2;
 - (BOOL)allowsCookies;

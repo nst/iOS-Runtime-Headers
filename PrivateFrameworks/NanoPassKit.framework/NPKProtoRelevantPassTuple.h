@@ -3,8 +3,8 @@
  */
 
 @interface NPKProtoRelevantPassTuple : PBCodable <NSCopying> {
-    NSString *_passID;
-    NSString *_relevantText;
+    NSString * _passID;
+    NSString * _relevantText;
 }
 
 @property (nonatomic, readonly) BOOL hasRelevantText;

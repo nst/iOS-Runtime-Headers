@@ -3,9 +3,9 @@
  */
 
 @interface AVMediaFileType : NSObject <NSCopying> {
-    BOOL _supportsSampleReferences;
-    long _supportsSampleReferencesOnce;
-    NSString *_uti;
+    BOOL  _supportsSampleReferences;
+    long  _supportsSampleReferencesOnce;
+    NSString * _uti;
 }
 
 @property (nonatomic, readonly) NSString *UTI;

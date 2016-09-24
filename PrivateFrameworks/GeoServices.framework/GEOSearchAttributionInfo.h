@@ -3,11 +3,11 @@
  */
 
 @interface GEOSearchAttributionInfo : NSObject <NSSecureCoding> {
-    unsigned int _attributionRequirementsMask;
-    NSString *_displayName;
-    NSArray *_logoPaths;
-    NSArray *_snippetLogoPaths;
-    GEOSearchAttributionSource *_source;
+    unsigned int  _attributionRequirementsMask;
+    NSString * _displayName;
+    NSArray * _logoPaths;
+    NSArray * _snippetLogoPaths;
+    GEOSearchAttributionSource * _source;
 }
 
 @property (nonatomic, readonly) NSArray *attributionApps;

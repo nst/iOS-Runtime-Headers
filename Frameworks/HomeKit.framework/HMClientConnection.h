@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMClientConnection : NSObject <HMMessageReceiver> {
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    HMMessageDispatcher *_msgDispatcher;
-    NSUUID *_uuid;
-    HMXpcClient *_xpcClient;
+@interface HMClientConnection : NSObject <HMFMessageReceiver> {
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    HMFMessageDispatcher * _msgDispatcher;
+    NSUUID * _uuid;
+    HMXpcClient * _xpcClient;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
@@ -15,7 +15,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
-@property (nonatomic, retain) HMMessageDispatcher *msgDispatcher;
+@property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSUUID *uuid;
 @property (nonatomic, retain) HMXpcClient *xpcClient;
@@ -31,6 +31,7 @@
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
 - (id)msgDispatcher;
+- (void)requestSiriSyncDataWithValidity:(id)arg1 completion:(id /* block */)arg2;
 - (void)sendSiriCommand:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setUuid:(id)arg1;

@@ -3,10 +3,10 @@
  */
 
 @interface EKCalendarEditItem : NSObject {
-    EKCalendar *_calendar;
-    <EKCalendarEditItemDelegate> *_delegate;
-    EKEventStore *_store;
-    <EKStyleProvider> *_styleProvider;
+    EKCalendar * _calendar;
+    <EKCalendarEditItemDelegate> * _delegate;
+    EKEventStore * _store;
+    <EKStyleProvider> * _styleProvider;
 }
 
 @property (nonatomic, readonly) EKCalendar *calendar;

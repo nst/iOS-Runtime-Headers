@@ -3,9 +3,9 @@
  */
 
 @interface CUIThemeSchemaEffectRendition : CUIThemeRendition {
-    NSDictionary *_cuiInfo;
-    CUIShapeEffectPreset *_effectPreset;
-    CUIImage *_referenceImage;
+    NSDictionary * _cuiInfo;
+    CUIShapeEffectPreset * _effectPreset;
+    CUIImage * _referenceImage;
 }
 
 - (BOOL)_generateReferenceImage;

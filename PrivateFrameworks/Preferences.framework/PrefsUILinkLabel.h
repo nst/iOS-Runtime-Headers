@@ -3,11 +3,11 @@
  */
 
 @interface PrefsUILinkLabel : UILabel {
-    NSURL *_URL;
-    SEL _action;
-    id _target;
-    BOOL _touchingURL;
-    NSURL *_url;
+    NSURL * _URL;
+    SEL  _action;
+    id  _target;
+    BOOL  _touchingURL;
+    NSURL * _url;
 }
 
 @property (nonatomic, retain) NSURL *URL;
@@ -18,7 +18,7 @@
 - (id)URL;
 - (SEL)action;
 - (id)color:(id)arg1 byMultiplyingSubComponentsBy:(float)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)openURL:(id)arg1;
 - (void)setAction:(SEL)arg1;
 - (void)setTarget:(id)arg1;

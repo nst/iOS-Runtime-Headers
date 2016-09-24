@@ -3,8 +3,8 @@
  */
 
 @interface CMKHDRButton : CMKExpandableMenuButton {
-    UIImageView *__glyphView;
-    BOOL _allowsAutomaticHDR;
+    UIImageView * __glyphView;
+    BOOL  _allowsAutomaticHDR;
 }
 
 @property (nonatomic) int HDRMode;

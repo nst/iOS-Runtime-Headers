@@ -3,9 +3,9 @@
  */
 
 @interface GQDTTable : GQDGraphic <GQDNameMappable> {
-    BOOL mIsStreamed;
-    GQDTTableModel *mModel;
-    GQDSStyle *mStyle;
+    BOOL  mIsStreamed;
+    GQDTTableModel * mModel;
+    GQDSStyle * mStyle;
 }
 
 @property (readonly, copy) NSString *debugDescription;

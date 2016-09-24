@@ -3,7 +3,7 @@
  */
 
 @interface MCNumber : NSObject <NSSecureCoding> {
-    NSNumber *_number;
+    NSNumber * _number;
 }
 
 @property (nonatomic, retain) NSNumber *number;

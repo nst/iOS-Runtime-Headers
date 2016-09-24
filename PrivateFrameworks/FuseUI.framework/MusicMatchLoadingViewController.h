@@ -3,9 +3,9 @@
  */
 
 @interface MusicMatchLoadingViewController : UIViewController {
-    NSString *_loadingTitle;
-    MusicMatchLoadingView *_matchLoadingView;
-    NSObject<OS_dispatch_source> *_updateTimerSource;
+    NSString * _loadingTitle;
+    MusicMatchLoadingView * _matchLoadingView;
+    NSObject<OS_dispatch_source> * _updateTimerSource;
 }
 
 @property (nonatomic, retain) NSString *loadingTitle;

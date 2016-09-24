@@ -3,9 +3,9 @@
  */
 
 @interface NSAttributeStoreMapping : NSPropertyStoreMapping {
-    unsigned int _externalPrecision;
-    int _externalScale;
-    int _externalType;
+    unsigned int  _externalPrecision;
+    int  _externalScale;
+    int  _externalType;
 }
 
 - (id)attribute;

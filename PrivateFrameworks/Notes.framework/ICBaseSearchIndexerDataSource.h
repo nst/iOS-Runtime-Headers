@@ -3,18 +3,17 @@
  */
 
 @interface ICBaseSearchIndexerDataSource : NSObject <ICSearchIndexerDataSource> {
-    NSHashTable *_contextsToObserve;
-    NSMutableDictionary *_identifiersByObjectID;
-    BOOL _needsReindexing;
-    NSMutableSet *_objectIDsBeingProcessed;
-    NSMutableDictionary *_objectIDsByIdentifier;
-    NSMutableSet *_objectIDsToProcess;
-    BOOL _observingChanges;
-    NSObject<OS_dispatch_queue> *_processingQueue;
-    BOOL _reindexing;
+    NSMutableDictionary * _identifiersByObjectID;
+    BOOL  _needsReindexing;
+    NSMutableSet * _objectIDsBeingProcessed;
+    NSMutableDictionary * _objectIDsByIdentifier;
+    NSMutableSet * _objectIDsToIgnore;
+    NSMutableSet * _objectIDsToProcess;
+    BOOL  _observingChanges;
+    NSObject<OS_dispatch_queue> * _processingQueue;
+    BOOL  _reindexing;
 }
 
-@property (nonatomic, retain) NSHashTable *contextsToObserve;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -22,6 +21,7 @@
 @property BOOL needsReindexing;
 @property (nonatomic, retain) NSMutableSet *objectIDsBeingProcessed;
 @property (nonatomic, retain) NSMutableDictionary *objectIDsByIdentifier;
+@property (nonatomic, retain) NSMutableSet *objectIDsToIgnore;
 @property (nonatomic, retain) NSMutableSet *objectIDsToProcess;
 @property (getter=isObservingChanges, nonatomic) BOOL observingChanges;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *processingQueue;
@@ -29,15 +29,14 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)addContextToObserve:(id)arg1;
 - (id)allSearchableItems;
 - (void)contextWillSave:(id)arg1;
-- (id)contextsToObserve;
 - (id)dataSourceIdentifier;
 - (id)identifiersByObjectID;
 - (id)init;
 - (BOOL)isObservingChanges;
 - (BOOL)isReindexing;
+- (void)loadObjectIDsToIgnore;
 - (void)loadState;
 - (BOOL)needsReindexing;
 - (id)objectForSearchableItem:(id)arg1 context:(id)arg2;
@@ -45,11 +44,13 @@
 - (id)objectIDsBeingProcessed;
 - (id)objectIDsByIdentifier;
 - (id)objectIDsFromSearchableItems:(id)arg1;
+- (id)objectIDsToIgnore;
+- (id)objectIDsToIgnoreDefaultsKey;
 - (id)objectIDsToProcess;
 - (id)persistentStoreCoordinator;
 - (id)processingQueue;
-- (void)removeContextToObserve:(id)arg1;
 - (void)resetContextObservers;
+- (void)saveObjectIDsToIgnore;
 - (void)saveState;
 - (void)searchIndexerDidFinishDeletingSearchableItemsWithIdentifiers:(id)arg1 error:(id)arg2;
 - (void)searchIndexerDidFinishIndexingItems:(id)arg1 error:(id)arg2;
@@ -62,11 +63,11 @@
 - (id)searchableItemsForObjects:(id)arg1;
 - (id)searchableItemsNeedingIndexing;
 - (id)searchableItemsWithIdentifiers:(id)arg1;
-- (void)setContextsToObserve:(id)arg1;
 - (void)setIdentifiersByObjectID:(id)arg1;
 - (void)setNeedsReindexing:(BOOL)arg1;
 - (void)setObjectIDsBeingProcessed:(id)arg1;
 - (void)setObjectIDsByIdentifier:(id)arg1;
+- (void)setObjectIDsToIgnore:(id)arg1;
 - (void)setObjectIDsToProcess:(id)arg1;
 - (void)setObservingChanges:(BOOL)arg1;
 - (void)setProcessingQueue:(id)arg1;

@@ -7,13 +7,13 @@
         unsigned int timestamp : 1; 
         unsigned int result : 1; 
         unsigned int type : 1; 
-    } _has;
-    NSString *_peerId;
-    unsigned int _result;
-    NSString *_resultString;
-    NSString *_sessionId;
-    unsigned long long _timestamp;
-    int _type;
+    }  _has;
+    NSString * _peerId;
+    unsigned int  _result;
+    NSString * _resultString;
+    NSString * _sessionId;
+    unsigned long long  _timestamp;
+    int  _type;
 }
 
 @property (nonatomic, readonly) BOOL hasPeerId;

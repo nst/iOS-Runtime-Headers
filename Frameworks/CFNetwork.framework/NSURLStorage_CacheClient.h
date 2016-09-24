@@ -6,14 +6,13 @@
     struct weak_ptr<__CFURLCache> { 
         struct __CFURLCache {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _cfWeakCacheCpp;
-    NSXPCInterface *_netStoreInterface;
-    NSXPCConnection *_networkStorageConnection;
-    BOOL _networkStorageConnectionInterrupted;
-    NSString *_path;
-    NSData *_sandboxExtensionToken;
-    int _storageSize;
-    NSString *_taskManagerIdentifier;
+    }  _cfWeakCacheCpp;
+    NSXPCInterface * _netStoreInterface;
+    NSXPCConnection * _networkStorageConnection;
+    BOOL  _networkStorageConnectionInterrupted;
+    NSString * _path;
+    NSData * _sandboxExtensionToken;
+    int  _storageSize;
 }
 
 @property BOOL networkStorageConnectionInterrupted;
@@ -22,12 +21,10 @@
 - (void).cxx_destruct;
 - (void)_invalidateNSXPCConnection;
 - (void)_reconnectWithStorageServer;
-- (void)addCachedResponse:(id)arg1 key:(id)arg2;
 - (void)addCachedResponseWithDictionary:(id)arg1 key:(id)arg2;
-- (void)cachedResponseDictionaryForKey:(id)arg1 handler:(id /* block */)arg2;
 - (void)copyAllPartitionNamesWithCompletionHandler:(id /* block */)arg1;
 - (void)copyHostNamesForOptionalPartition:(id)arg1 handler:(id /* block */)arg2;
-- (BOOL)createStorageTaskManagerForPath:(id)arg1 maxSize:(int)arg2 extension:(id)arg3 withIdentifier:(id)arg4;
+- (BOOL)createStorageTaskManagerForPath:(id)arg1 maxSize:(int)arg2 extension:(id)arg3;
 - (int)currentDiskUsage;
 - (void)dealloc;
 - (void)deleteAllHostNames:(id)arg1 forOptionalPartition:(id)arg2;

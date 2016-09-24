@@ -3,12 +3,13 @@
  */
 
 @interface GEOPDRoadAccessInfo : PBCodable <NSCopying> {
-    NSMutableArray *_roadAccessPoints;
+    NSMutableArray * _roadAccessPoints;
 }
 
 @property (nonatomic, retain) NSMutableArray *roadAccessPoints;
 
 + (id)roadAccessInfoForPlaceData:(id)arg1;
++ (Class)roadAccessPointType;
 
 - (void)addRoadAccessPoint:(id)arg1;
 - (void)clearRoadAccessPoints;

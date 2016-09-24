@@ -3,16 +3,16 @@
  */
 
 @interface MKPopoverBasedAnnotationCalloutController : MKAnnotationCalloutController <MKSmallCalloutViewControllerDelegate, UIPopoverControllerDelegate, UIPopoverControllerDelegatePrivate, _MKPopoverEmbeddingViewWindowDelegate, _UIPopoverControllerMapsTransitionDelegate> {
-    id /* block */ _afterMoveToWindowBlock;
-    BOOL _allowsPopoverWhenNotInWindow;
-    BOOL _animatingIn;
-    MKSmallCalloutViewController *_calloutViewController;
-    _MKPopoverEmbeddingView *_embeddingView;
-    BOOL _isCalloutExpanded;
-    BOOL _isHidingForImplementationReasons;
-    BOOL _isShowingPopover;
-    UIView *_layoutConstraintsView;
-    UIPopoverController *_popoverController;
+    id /* block */  _afterMoveToWindowBlock;
+    BOOL  _allowsPopoverWhenNotInWindow;
+    BOOL  _animatingIn;
+    MKSmallCalloutViewController * _calloutViewController;
+    _MKPopoverEmbeddingView * _embeddingView;
+    BOOL  _isCalloutExpanded;
+    BOOL  _isHidingForImplementationReasons;
+    BOOL  _isShowingPopover;
+    UIView * _layoutConstraintsView;
+    UIPopoverController * _popoverController;
 }
 
 @property (nonatomic) BOOL allowsPopoverWhenNotInWindow;
@@ -22,7 +22,7 @@
 @property (nonatomic, readonly) UIPopoverController *popoverController;
 @property (readonly) Class superclass;
 
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })popoverTargetRectForAnnotationView:(id)arg1 inView:(id)arg2;
++ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })popoverTargetRectForAnnotationView:(id)arg1 inView:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
@@ -34,13 +34,13 @@
 - (void)_setRightAccessoryView:(id)arg1 animated:(BOOL)arg2;
 - (void)_setSubtitle:(id)arg1 animated:(BOOL)arg2;
 - (void)_setTitle:(id)arg1;
-- (void)_showCalloutAnimated:(BOOL)arg1 scrollToFit:(BOOL)arg2 avoid:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (void)_showCalloutAnimated:(BOOL)arg1 scrollToFit:(BOOL)arg2 avoid:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (void)_snapLayoutConstraintsViewToContainerBounds;
 - (id)_subtitle;
 - (void)_updateCalloutAnimated:(BOOL)arg1;
 - (void)_updatePopoverContentSize:(BOOL)arg1;
 - (BOOL)allowsPopoverWhenNotInWindow;
-- (BOOL)calloutContainsPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)calloutContainsPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)dealloc;
 - (void)embeddingView:(id)arg1 didMoveToWindow:(id)arg2;
 - (void)embeddingView:(id)arg1 willMoveToWindow:(id)arg2;
@@ -50,8 +50,8 @@
 - (id)popoverController;
 - (void)popoverController:(id)arg1 animationCompleted:(int)arg2;
 - (void)setAllowsPopoverWhenNotInWindow:(BOOL)arg1;
-- (void)setMapDisplayStyle:(struct { unsigned char x1; unsigned char x2; unsigned char x3; })arg1;
-- (void)showCalloutForAnnotationView:(id)arg1 animated:(BOOL)arg2 scrollToFit:(BOOL)arg3 avoid:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
+- (void)setMapDisplayStyle:(struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; BOOL x5; })arg1;
+- (void)showCalloutForAnnotationView:(id)arg1 animated:(BOOL)arg2 scrollToFit:(BOOL)arg3 avoid:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
 - (void)smallCalloutViewControllerDidAppear:(id)arg1;
 
 @end

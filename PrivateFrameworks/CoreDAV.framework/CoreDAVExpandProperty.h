@@ -3,9 +3,9 @@
  */
 
 @interface CoreDAVExpandProperty : NSObject {
-    NSString *_expandedName;
-    NSString *_expandedNameSpace;
-    NSSet *_propertiesToFind;
+    NSString * _expandedName;
+    NSString * _expandedNameSpace;
+    NSSet * _propertiesToFind;
 }
 
 @property (nonatomic, retain) NSString *expandedName;

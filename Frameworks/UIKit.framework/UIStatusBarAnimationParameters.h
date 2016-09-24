@@ -3,11 +3,11 @@
  */
 
 @interface UIStatusBarAnimationParameters : NSObject {
-    <_UIBasicAnimationFactory> *_animationFactory;
-    int _curve;
-    double _delay;
-    double _duration;
-    double _startTime;
+    <_UIBasicAnimationFactory> * _animationFactory;
+    int  _curve;
+    double  _delay;
+    double  _duration;
+    double  _startTime;
 }
 
 @property (nonatomic, retain) <_UIBasicAnimationFactory> *animationFactory;

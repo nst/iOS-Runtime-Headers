@@ -3,9 +3,9 @@
  */
 
 @interface GKPreferences : NSObject {
-    NSDictionary *_overrideValues;
-    BOOL _shouldSynchronizeOnNextRead;
-    BOOL _webKitInspectElementEnabled;
+    NSDictionary * _overrideValues;
+    BOOL  _shouldSynchronizeOnNextRead;
+    BOOL  _webKitInspectElementEnabled;
 }
 
 @property (nonatomic, readonly) BOOL HTTPShouldUsePipelining;
@@ -36,6 +36,8 @@
 @property (nonatomic) unsigned int maxPlayersHosted;
 @property (nonatomic) unsigned int maxPlayersP2P;
 @property (nonatomic) unsigned int maxPlayersTurnBased;
+@property (nonatomic) unsigned int maxRecentPlayersCount;
+@property (nonatomic) double maxRecentPlayersTime;
 @property (nonatomic) unsigned int mescalSetupRetries;
 @property (nonatomic) double minimumCacheTTL;
 @property (getter=isMultiplayerGamingRestricted, nonatomic, readonly) BOOL multiplayerGamingRestricted;
@@ -52,7 +54,6 @@
 @property (nonatomic) <GKPreferencesDelegate> *preferencesDelegate;
 @property (nonatomic) int pushEnvironment;
 @property (nonatomic) BOOL shouldAddPlayerInfoToAddressBook;
-@property (nonatomic) BOOL shouldAllowGameInvites;
 @property (nonatomic) BOOL shouldAllowNearbyMultiplayer;
 @property (nonatomic) BOOL shouldAnnotateImageUsage;
 @property (nonatomic, readonly) BOOL shouldDisallowInvitesFromStrangers;
@@ -117,6 +118,8 @@
 - (unsigned int)maxPlayersHosted;
 - (unsigned int)maxPlayersP2P;
 - (unsigned int)maxPlayersTurnBased;
+- (unsigned int)maxRecentPlayersCount;
+- (double)maxRecentPlayersTime;
 - (unsigned int)mescalSetupRetries;
 - (double)minimumCacheTTL;
 - (BOOL)notificationAlertsEnabled;
@@ -152,6 +155,8 @@
 - (void)setMaxPlayersHosted:(unsigned int)arg1;
 - (void)setMaxPlayersP2P:(unsigned int)arg1;
 - (void)setMaxPlayersTurnBased:(unsigned int)arg1;
+- (void)setMaxRecentPlayersCount:(unsigned int)arg1;
+- (void)setMaxRecentPlayersTime:(double)arg1;
 - (void)setMescalSetupRetries:(unsigned int)arg1;
 - (void)setMinimumCacheTTL:(double)arg1;
 - (void)setNotificationAlertsEnabled:(BOOL)arg1;
@@ -167,7 +172,6 @@
 - (void)setPreferencesDelegate:(id)arg1;
 - (void)setPushEnvironment:(int)arg1;
 - (void)setShouldAddPlayerInfoToAddressBook:(BOOL)arg1;
-- (void)setShouldAllowGameInvites:(BOOL)arg1;
 - (void)setShouldAllowNearbyMultiplayer:(BOOL)arg1;
 - (void)setShouldAnnotateImageUsage:(BOOL)arg1;
 - (void)setShouldLinkPlayerToFacebook:(BOOL)arg1;
@@ -187,7 +191,6 @@
 - (void)setWebKitInspectElementEnabled:(BOOL)arg1;
 - (void)set_shouldSynchronizeOnNextRead:(BOOL)arg1;
 - (BOOL)shouldAddPlayerInfoToAddressBook;
-- (BOOL)shouldAllowGameInvites;
 - (BOOL)shouldAllowNearbyMultiplayer;
 - (BOOL)shouldAnnotateImageUsage;
 - (BOOL)shouldDisallowInvitesFromStrangers;

@@ -3,15 +3,13 @@
  */
 
 @interface NFAWDVASGetData : NSObject <NFAWDEventProtocol> {
-    AWDNFCHCEVASGetData *_metric;
-    unsigned int filterType;
-    unsigned int filterValue;
-    NSData *merchantID;
-    NSString *merchantURL;
-    BOOL signupOnly;
-    unsigned int swStatus;
-    unsigned int terminalCapabilities;
-    unsigned int version;
+    unsigned int  _filterType;
+    unsigned int  _filterValue;
+    AWDNFCHCEVASGetData * _metric;
+    BOOL  _signupOnly;
+    unsigned int  _swStatus;
+    unsigned int  _terminalCapabilities;
+    unsigned int  _version;
 }
 
 @property (readonly, copy) NSString *debugDescription;

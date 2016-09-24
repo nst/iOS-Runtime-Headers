@@ -3,8 +3,8 @@
  */
 
 @interface CNPropertySimpleCell : CNPropertyCell {
-    UILabel *_labelLabel;
-    UILabel *_valueLabel;
+    UILabel * _labelLabel;
+    UILabel * _valueLabel;
 }
 
 @property (nonatomic, readonly) UILabel *labelLabel;

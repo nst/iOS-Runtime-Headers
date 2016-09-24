@@ -3,8 +3,8 @@
  */
 
 @interface BBDataProvider : NSObject <BBSectionIdentity> {
-    BBDataProviderIdentity *__identity;
-    NSObject<OS_dispatch_queue> *_identityQueue;
+    BBDataProviderIdentity * __identity;
+    NSObject<OS_dispatch_queue> * _identityQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -13,8 +13,7 @@
 @property (retain) BBDataProviderIdentity *identity;
 @property (readonly) Class superclass;
 
-- (void)attachmentAspectRatioForRecordID:(id)arg1 completion:(id /* block */)arg2;
-- (void)attachmentPNGDataForRecordID:(id)arg1 sizeConstraints:(id)arg2 completion:(id /* block */)arg3;
+- (void).cxx_destruct;
 - (void)bulletinsWithRequestParameters:(id)arg1 lastCleared:(id)arg2 completion:(id /* block */)arg3;
 - (BOOL)canClearAllBulletins;
 - (BOOL)canClearBulletinsByDate;
@@ -23,16 +22,18 @@
 - (void)clearedInfoForClearingAllBulletinsWithLastClearedInfo:(id)arg1 completion:(id /* block */)arg2;
 - (void)clearedInfoForClearingBulletinsFromDate:(id)arg1 toDate:(id)arg2 lastClearedInfo:(id)arg3 completion:(id /* block */)arg4;
 - (void)dataProviderDidLoad;
-- (void)dealloc;
 - (id)debugDescription;
 - (id)debugDescriptionWithChildren:(unsigned int)arg1;
 - (id)defaultSectionInfo;
 - (id)defaultSubsectionInfos;
 - (void)deliverMessageWithName:(id)arg1 userInfo:(id)arg2;
-- (void)deliverResponse:(id)arg1 forBulletinRequest:(id)arg2;
+- (void)deliverResponse:(id)arg1 forBulletinRequest:(id)arg2 withCompletion:(id /* block */)arg3;
 - (id)description;
 - (id)displayNameForFilterID:(id)arg1;
 - (id)displayNameForSubsectionID:(id)arg1;
+- (void)getAspectRatioForAttachmentUUID:(id)arg1 recordID:(id)arg2 isPrimary:(BOOL)arg3 withHandler:(id /* block */)arg4;
+- (void)getDataForAttachmentUUID:(id)arg1 recordID:(id)arg2 isPrimary:(BOOL)arg3 withHandler:(id /* block */)arg4;
+- (void)getPNGDataForAttachmentUUID:(id)arg1 recordID:(id)arg2 isPrimary:(BOOL)arg3 sizeConstraints:(id)arg4 withHandler:(id /* block */)arg5;
 - (id)identity;
 - (id)init;
 - (BOOL)initialized;
@@ -41,7 +42,6 @@
 - (BOOL)migrateSectionInfo:(id)arg1 oldSectionInfo:(id)arg2;
 - (void)noteSectionInfoDidChange:(id)arg1;
 - (id)parentSectionIdentifier;
-- (void)primaryAttachmentDataForRecordID:(id)arg1 completion:(id /* block */)arg2;
 - (void)reloadIdentityWithCompletion:(id /* block */)arg1;
 - (id)sectionDisplayName;
 - (id)sectionIcon;

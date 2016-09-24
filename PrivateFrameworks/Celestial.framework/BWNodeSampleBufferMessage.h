@@ -3,9 +3,9 @@
  */
 
 @interface BWNodeSampleBufferMessage : BWNodeMessage {
-    FigCaptureRecordingSettings *_recordingSettings;
-    struct opaqueCMSampleBuffer { } *_sampleBuffer;
-    FigCaptureStillImageSettings *_stillImageSettings;
+    FigCaptureRecordingSettings * _recordingSettings;
+    struct opaqueCMSampleBuffer { } * _sampleBuffer;
+    FigCaptureStillImageSettings * _stillImageSettings;
 }
 
 @property (readonly) FigCaptureRecordingSettings *recordingSettings;

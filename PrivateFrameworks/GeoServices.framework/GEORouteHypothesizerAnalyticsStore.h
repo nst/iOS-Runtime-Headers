@@ -3,15 +3,15 @@
  */
 
 @interface GEORouteHypothesizerAnalyticsStore : NSObject <NSSecureCoding> {
-    unsigned int _etaUpdatesAfterEventStart;
-    BOOL _etaUpdatesWereReported;
-    unsigned int _hypothesisCount;
-    unsigned int _hypothesizerRerouteCount;
-    NSDate *_lastGenerationDate;
-    double _observedEarlyDeltaFromRequiredTimeToLeave;
-    double _observedLateDeltaFromRequiredTimeToLeave;
-    BOOL _stopped;
-    unsigned int _uiNotificationType;
+    unsigned int  _etaUpdatesAfterEventStart;
+    BOOL  _etaUpdatesWereReported;
+    unsigned int  _hypothesisCount;
+    unsigned int  _hypothesizerRerouteCount;
+    NSDate * _lastGenerationDate;
+    double  _observedEarlyDeltaFromRequiredTimeToLeave;
+    double  _observedLateDeltaFromRequiredTimeToLeave;
+    BOOL  _stopped;
+    unsigned int  _uiNotificationType;
 }
 
 @property (nonatomic) unsigned int etaUpdatesAfterEventStart;

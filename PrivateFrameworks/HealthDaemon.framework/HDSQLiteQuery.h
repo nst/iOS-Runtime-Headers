@@ -3,9 +3,9 @@
  */
 
 @interface HDSQLiteQuery : NSObject {
-    HDSQLiteDatabase *_database;
-    HDSQLiteQueryDescriptor *_descriptor;
-    HDSQLiteQueryDescriptor *_queryDescriptor;
+    HDSQLiteDatabase * _database;
+    HDSQLiteQueryDescriptor * _descriptor;
+    HDSQLiteQueryDescriptor * _queryDescriptor;
 }
 
 @property (readonly) HDSQLiteDatabase *database;

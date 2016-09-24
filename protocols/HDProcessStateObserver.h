@@ -9,5 +9,6 @@
 - (void)processDidEnterForeground:(NSString *)arg1;
 - (void)processResumed:(NSString *)arg1;
 - (void)processSuspended:(NSString *)arg1;
+- (void)processTerminated:(NSString *)arg1;
 
 @end

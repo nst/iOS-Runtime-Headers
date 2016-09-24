@@ -3,7 +3,7 @@
  */
 
 @interface MPAVErrorResolver : NSObject {
-    <MPAVErrorResolverDelegate> *_delegate;
+    <MPAVErrorResolverDelegate> * _delegate;
 }
 
 @property (nonatomic) <MPAVErrorResolverDelegate> *delegate;

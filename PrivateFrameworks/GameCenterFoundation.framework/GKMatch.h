@@ -3,31 +3,31 @@
  */
 
 @interface GKMatch : NSObject <GKSessionDelegate, GKSessionPrivateDelegate> {
-    id /* block */ _chooseHostCompletion;
-    NSMutableSet *_connectedPlayerIDs;
-    GKConnection *_connection;
-    <GKMatchDelegate> *_delegateWeak;
-    unsigned int _expectedPlayerCount;
-    NSMutableDictionary *_guestConnections;
-    NSMutableDictionary *_guestSessions;
-    BOOL _hostScoreForQuery;
-    NSMutableDictionary *_hostScores;
-    <GKMatchDelegate> *_inviteDelegateWeak;
-    BOOL _needHostScore;
-    NSDictionary *_networkStatistics;
-    NSMutableArray *_opponentIDs;
-    unsigned int _packetSequenceNumber;
-    NSMutableDictionary *_playerEventQueues;
-    NSMutableDictionary *_playerPushTokens;
-    GKThreadsafeDictionary *_playersByIdentifier;
-    BOOL _recentlyBecameActive;
-    NSMutableArray *_reinvitedPlayers;
-    int _rematchCount;
-    NSString *_rematchID;
-    NSData *_selfBlob;
-    GKSession *_session;
-    NSObject<OS_dispatch_queue> *_stateChangeQueue;
-    unsigned char _version;
+    id /* block */  _chooseHostCompletion;
+    NSMutableSet * _connectedPlayerIDs;
+    GKConnection * _connection;
+    <GKMatchDelegate> * _delegateWeak;
+    unsigned int  _expectedPlayerCount;
+    NSMutableDictionary * _guestConnections;
+    NSMutableDictionary * _guestSessions;
+    BOOL  _hostScoreForQuery;
+    NSMutableDictionary * _hostScores;
+    <GKMatchDelegate> * _inviteDelegateWeak;
+    BOOL  _needHostScore;
+    NSDictionary * _networkStatistics;
+    NSMutableArray * _opponentIDs;
+    unsigned int  _packetSequenceNumber;
+    NSMutableDictionary * _playerEventQueues;
+    NSMutableDictionary * _playerPushTokens;
+    GKThreadsafeDictionary * _playersByIdentifier;
+    BOOL  _recentlyBecameActive;
+    NSMutableArray * _reinvitedPlayers;
+    int  _rematchCount;
+    NSString * _rematchID;
+    NSData * _selfBlob;
+    GKSession * _session;
+    NSObject<OS_dispatch_queue> * _stateChangeQueue;
+    unsigned char  _version;
 }
 
 @property (nonatomic, copy) id /* block */ chooseHostCompletion;

@@ -3,7 +3,7 @@
  */
 
 @interface CMStringProperty : CMProperty {
-    NSString *wdValue;
+    NSString * wdValue;
 }
 
 - (id)cssStringForName:(id)arg1;

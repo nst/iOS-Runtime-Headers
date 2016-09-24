@@ -3,9 +3,9 @@
  */
 
 @interface CAMPriorityNotificationCenterEntry : NSObject {
-    id _object;
-    id _observer;
-    SEL _selector;
+    id  _object;
+    id  _observer;
+    SEL  _selector;
 }
 
 @property (nonatomic, retain) id object;

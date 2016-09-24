@@ -3,9 +3,9 @@
  */
 
 @interface AAAvailabilityResponse : AAResponse {
-    NSString *_eta;
-    NSString *_feature;
-    NSString *_status;
+    NSString * _eta;
+    NSString * _feature;
+    NSString * _status;
 }
 
 @property (nonatomic, readonly) NSString *eta;

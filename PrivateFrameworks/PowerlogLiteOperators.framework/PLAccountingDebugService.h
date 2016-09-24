@@ -3,7 +3,7 @@
  */
 
 @interface PLAccountingDebugService : PLService {
-    NSArray *_testNames;
+    NSArray * _testNames;
 }
 
 @property (nonatomic, retain) NSArray *testNames;
@@ -23,6 +23,7 @@
 - (void)testCorrection3;
 - (void)testCorrection4;
 - (void)testCorrectionInMemory;
+- (void)testCurrentDistributionEventForward;
 - (void)testDistribution1;
 - (void)testDistribution2;
 - (void)testDistribution3;
@@ -33,6 +34,7 @@
 - (void)testPowerEventIntervalOverlap;
 - (void)testQualification1;
 - (void)testQualification2;
+- (void)testQualification3;
 - (void)testReloadAfter1;
 - (void)testReloadAfter2;
 - (void)testReloadBefore1;

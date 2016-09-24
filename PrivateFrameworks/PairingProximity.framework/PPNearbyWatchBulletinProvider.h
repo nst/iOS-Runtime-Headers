@@ -3,9 +3,9 @@
  */
 
 @interface PPNearbyWatchBulletinProvider : NSObject <BBRemoteDataProvider> {
-    NSMutableDictionary *_bulletins;
-    <PPNearbyWatchBulletinProviderDelegate> *_delegate;
-    BBDataProviderProxy *_proxy;
+    NSMutableDictionary * _bulletins;
+    <PPNearbyWatchBulletinProviderDelegate> * _delegate;
+    BBDataProviderProxy * _proxy;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *bulletins;

@@ -3,15 +3,15 @@
  */
 
 @interface CNAutocompleteResultTracing : NSObject {
-    unsigned int _countOfContactsResults;
-    unsigned int _countOfRecentsResults;
-    unsigned int _countOfServerResults;
-    double _localLatency;
-    double _serverLatency;
-    double _startTime;
-    BOOL _waitingForContactsResults;
-    BOOL _waitingForRecentsResults;
-    BOOL _waitingForServerResults;
+    unsigned int  _countOfContactsResults;
+    unsigned int  _countOfRecentsResults;
+    unsigned int  _countOfServerResults;
+    double  _localLatency;
+    double  _serverLatency;
+    double  _startTime;
+    BOOL  _waitingForContactsResults;
+    BOOL  _waitingForRecentsResults;
+    BOOL  _waitingForServerResults;
 }
 
 @property unsigned int countOfContactsResults;

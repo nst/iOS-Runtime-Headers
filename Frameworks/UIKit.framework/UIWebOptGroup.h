@@ -3,9 +3,9 @@
  */
 
 @interface UIWebOptGroup : NSObject {
-    <UIWebSelectedItemPrivate> *_group;
-    int _offset;
-    NSArray *_options;
+    <UIWebSelectedItemPrivate> * _group;
+    int  _offset;
+    NSArray * _options;
 }
 
 @property (nonatomic, retain) <UIWebSelectedItemPrivate> *group;

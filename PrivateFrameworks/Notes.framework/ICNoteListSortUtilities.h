@@ -14,5 +14,6 @@
 + (id)sortDescriptorsForICSearchResultsForType:(int)arg1;
 + (id)sortDescriptorsForType:(int)arg1;
 + (int)sortTypeForTag:(int)arg1;
++ (int)tagForSortType:(int)arg1;
 
 @end

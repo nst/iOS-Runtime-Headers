@@ -3,12 +3,12 @@
  */
 
 @interface PUAirPlayRouteObserverRegistry : NSObject {
-    BOOL __discoveryAllowed;
-    AVOutputDeviceDiscoverySession *__discoverySession;
-    NSObject<OS_dispatch_queue> *__discoverySessionIsolationQueue;
-    NSHashTable *__routeObservers;
-    <PUAirPlayRouteObserverRegistryDelegate> *_delegate;
-    unsigned int _routeAvailability;
+    BOOL  __discoveryAllowed;
+    AVOutputDeviceDiscoverySession * __discoverySession;
+    NSObject<OS_dispatch_queue> * __discoverySessionIsolationQueue;
+    NSHashTable * __routeObservers;
+    <PUAirPlayRouteObserverRegistryDelegate> * _delegate;
+    unsigned int  _routeAvailability;
 }
 
 @property (getter=_isDiscoveryAllowed, setter=_setDiscoveryAllowed:, nonatomic) BOOL _discoveryAllowed;
@@ -16,7 +16,7 @@
 @property (setter=_setDiscoverySessionIsolationQueue:, nonatomic, retain) NSObject<OS_dispatch_queue> *_discoverySessionIsolationQueue;
 @property (setter=_setRouteObservers:, nonatomic, retain) NSHashTable *_routeObservers;
 @property (nonatomic) <PUAirPlayRouteObserverRegistryDelegate> *delegate;
-@property (nonatomic) unsigned int routeAvailability;
+@property (setter=_setRouteAvailability:, nonatomic) unsigned int routeAvailability;
 
 - (void).cxx_destruct;
 - (void)_appEnteredBackground:(id)arg1;

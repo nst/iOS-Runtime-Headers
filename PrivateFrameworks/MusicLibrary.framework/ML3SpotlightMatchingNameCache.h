@@ -3,34 +3,34 @@
  */
 
 @interface ML3SpotlightMatchingNameCache : NSObject {
-    BOOL _idle;
-    ML3MusicLibrary *_library;
-    NSString *_matchString;
-    struct unordered_set<long long, std::__1::hash<long long>, std::__1::equal_to<long long>, std::__1::allocator<long long> > { 
-        struct __hash_table<long long, std::__1::hash<long long>, std::__1::equal_to<long long>, std::__1::allocator<long long> > { 
-            struct unique_ptr<std::__1::__hash_node<long long, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<long long, void *> *> > > { 
-                struct __compressed_pair<std::__1::__hash_node<long long, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<long long, void *> *> > > { 
-                    struct __hash_node<long long, void *> {} **__first_; 
-                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<long long, void *> *> > { 
-                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<long long, void *> *> > { 
+    BOOL  _idle;
+    ML3MusicLibrary * _library;
+    NSString * _matchString;
+    struct unordered_set<int, std::__1::hash<int>, std::__1::equal_to<int>, std::__1::allocator<int> > { 
+        struct __hash_table<int, std::__1::hash<int>, std::__1::equal_to<int>, std::__1::allocator<int> > { 
+            struct unique_ptr<std::__1::__hash_node<int, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<int, void *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node<int, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<int, void *> *> > > { 
+                    struct __hash_node<int, void *> {} **__first_; 
+                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<int, void *> *> > { 
+                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<int, void *> *> > { 
                             unsigned long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
             } __bucket_list_; 
-            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<long long, void *> *>, std::__1::allocator<std::__1::__hash_node<long long, void *> > > { 
-                struct __hash_node_base<std::__1::__hash_node<long long, void *> *> { 
-                    struct __hash_node<long long, void *> {} *__next_; 
+            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<int, void *> *>, std::__1::allocator<std::__1::__hash_node<int, void *> > > { 
+                struct __hash_node_base<std::__1::__hash_node<int, void *> *> { 
+                    struct __hash_node<int, void *> {} *__next_; 
                 } __first_; 
             } __p1_; 
-            struct __compressed_pair<unsigned long, std::__1::hash<long long> > { 
+            struct __compressed_pair<unsigned long, std::__1::hash<int> > { 
                 unsigned long __first_; 
             } __p2_; 
-            struct __compressed_pair<float, std::__1::equal_to<long long> > { 
-                float __first_; 
+            struct __compressed_pair<float, std::__1::equal_to<int> > { 
+                double __first_; 
             } __p3_; 
         } __table_; 
-    } _matchingSet;
+    }  _matchingSet;
 }
 
 + (void)initialize;

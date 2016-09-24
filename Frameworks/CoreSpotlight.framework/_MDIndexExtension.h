@@ -3,12 +3,12 @@
  */
 
 @interface _MDIndexExtension : NSObject {
-    NSString *_containerID;
-    NSString *_containerPath;
-    BOOL _entitlementVerified;
-    NSExtension *_extension;
-    NSString *_extensionID;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSString * _containerID;
+    NSString * _containerPath;
+    BOOL  _entitlementVerified;
+    NSExtension * _extension;
+    NSString * _extensionID;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, retain) NSString *containerID;

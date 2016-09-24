@@ -3,12 +3,12 @@
  */
 
 @interface ICSearchQueryOperation : NSOperation <MDSearchQueryDelegate> {
-    NSError *_error;
-    NSPredicate *_predicate;
-    NSString *_queryString;
-    NSArray *_results;
-    MDSearchQuery *_searchQuery;
-    NSObject<OS_dispatch_semaphore> *_semaphore;
+    NSError * _error;
+    NSPredicate * _predicate;
+    NSString * _queryString;
+    NSArray * _results;
+    MDSearchQuery * _searchQuery;
+    NSObject<OS_dispatch_semaphore> * _semaphore;
 }
 
 @property (readonly, copy) NSString *debugDescription;

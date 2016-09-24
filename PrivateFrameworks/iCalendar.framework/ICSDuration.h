@@ -3,7 +3,7 @@
  */
 
 @interface ICSDuration : NSObject <NSCoding> {
-    double _duration;
+    double  _duration;
 }
 
 + (id)durationFromICSString:(id)arg1;

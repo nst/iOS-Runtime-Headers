@@ -5,6 +5,6 @@
 
 @required
 
-- (void)handleFailureOfRequest:(AFSiriRequest *)arg1 error:(NSError *)arg2;
+- (void)handleFailureOfRequest:(AFSiriRequest *)arg1 error:(NSError *)arg2 atTime:(unsigned int)arg3;
 
 @end

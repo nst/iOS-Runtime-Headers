@@ -3,10 +3,10 @@
  */
 
 @interface DAAccountLoader : NSObject {
-    NSMutableDictionary *_acAccountTypeToAccountDaemonBundleSubpath;
-    NSMutableDictionary *_acAccountTypeToAccountFrameworkSubpath;
-    NSMutableDictionary *_acAccountTypeToClassNames;
-    NSMutableDictionary *_acParentAccountTypeToChildAccountTypes;
+    NSMutableDictionary * _acAccountTypeToAccountDaemonBundleSubpath;
+    NSMutableDictionary * _acAccountTypeToAccountFrameworkSubpath;
+    NSMutableDictionary * _acAccountTypeToClassNames;
+    NSMutableDictionary * _acParentAccountTypeToChildAccountTypes;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *acAccountTypeToAccountDaemonBundleSubpath;

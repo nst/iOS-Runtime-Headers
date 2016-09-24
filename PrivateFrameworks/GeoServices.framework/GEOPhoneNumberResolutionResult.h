@@ -3,7 +3,7 @@
  */
 
 @interface GEOPhoneNumberResolutionResult : NSObject {
-    NSString *_locationName;
+    NSString * _locationName;
 }
 
 @property (readonly) NSString *locationName;

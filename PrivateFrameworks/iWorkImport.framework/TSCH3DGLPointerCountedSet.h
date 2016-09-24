@@ -3,9 +3,9 @@
  */
 
 @interface TSCH3DGLPointerCountedSet : NSObject {
-    unsigned int mByteCount;
-    unsigned int mCount;
-    TSUPointerKeyDictionary *mSet;
+    unsigned int  mByteCount;
+    unsigned int  mCount;
+    TSUPointerKeyDictionary * mSet;
 }
 
 @property (nonatomic, readonly) unsigned int count;

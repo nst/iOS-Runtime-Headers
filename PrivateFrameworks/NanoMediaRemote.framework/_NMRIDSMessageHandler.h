@@ -3,9 +3,9 @@
  */
 
 @interface _NMRIDSMessageHandler : NSObject {
-    SEL _action;
-    unsigned short _messageType;
-    id _target;
+    SEL  _action;
+    unsigned short  _messageType;
+    id  _target;
 }
 
 @property (nonatomic) SEL action;

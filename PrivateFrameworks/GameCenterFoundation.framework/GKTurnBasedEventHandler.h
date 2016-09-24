@@ -3,9 +3,9 @@
  */
 
 @interface GKTurnBasedEventHandler : NSObject {
-    NSObject<GKTurnBasedEventHandlerDelegate> *_delegateWeak;
-    BOOL _didBecomeActive;
-    NSObject<OS_dispatch_queue> *_lookForEventQueue;
+    NSObject<GKTurnBasedEventHandlerDelegate> * _delegateWeak;
+    BOOL  _didBecomeActive;
+    NSObject<OS_dispatch_queue> * _lookForEventQueue;
 }
 
 @property (nonatomic) NSObject<GKTurnBasedEventHandlerDelegate> *delegate;

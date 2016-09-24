@@ -3,30 +3,30 @@
  */
 
 @interface UIDateLabel : UILabel {
-    BOOL _boldForAllLocales;
-    NSCalendar *_calendar;
-    NSDate *_date;
-    BOOL _forceTimeOnly;
-    NSDate *_noon;
-    float _paddingFromTimeToDesignator;
-    NSDate *_previousWeek;
-    BOOL _shouldRecomputeText;
-    UIFont *_timeDesignatorFont;
-    NSDate *_today;
-    NSDate *_tomorrow;
-    NSDate *_yesterday;
+    BOOL  _boldForAllLocales;
+    NSCalendar * _calendar;
+    NSDate * _date;
+    BOOL  _forceTimeOnly;
+    NSDate * _noon;
+    double  _paddingFromTimeToDesignator;
+    NSDate * _previousWeek;
+    BOOL  _shouldRecomputeText;
+    UIFont * _timeDesignatorFont;
+    NSDate * _today;
+    NSDate * _tomorrow;
+    NSDate * _yesterday;
 }
 
 @property (nonatomic) BOOL boldForAllLocales;
 @property (nonatomic, retain) NSDate *date;
 @property (getter=_dateString, nonatomic, readonly) NSString *dateString;
 @property (nonatomic) BOOL forceTimeOnly;
-@property (nonatomic) float paddingFromTimeToDesignator;
+@property (nonatomic) double paddingFromTimeToDesignator;
 @property (nonatomic) BOOL shouldRecomputeText;
 @property (nonatomic, readonly) NSString *timeDesignator;
 @property (nonatomic, readonly) BOOL timeDesignatorAppearsBeforeTime;
 @property (nonatomic, readonly) UIFont *timeDesignatorFont;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } timeDesignatorSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } timeDesignatorSize;
 @property (nonatomic) double timeInterval;
 @property (nonatomic, readonly) BOOL use24HourTime;
 
@@ -43,7 +43,7 @@
 - (id)_dateString;
 - (id)_dateWithDayDiffFromToday:(int)arg1;
 - (void)_didUpdateDate;
-- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })_intrinsicSizeWithinSize:(struct CGSize { double x1; double x2; })arg1;
 - (double)_lastWeek;
 - (double)_noon;
 - (void)_recomputeTextIfNecessary;
@@ -55,11 +55,11 @@
 - (BOOL)boldForAllLocales;
 - (id)date;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)drawTextInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawTextInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)font;
 - (BOOL)forceTimeOnly;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)invalidate;
 - (float)paddingFromTimeToDesignator;
 - (void)setBoldForAllLocales:(BOOL)arg1;
@@ -69,12 +69,12 @@
 - (void)setShouldRecomputeText:(BOOL)arg1;
 - (void)setTimeInterval:(double)arg1;
 - (BOOL)shouldRecomputeText;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)text;
 - (id)timeDesignator;
 - (BOOL)timeDesignatorAppearsBeforeTime;
 - (id)timeDesignatorFont;
-- (struct CGSize { float x1; float x2; })timeDesignatorSize;
+- (struct CGSize { double x1; double x2; })timeDesignatorSize;
 - (double)timeInterval;
 - (BOOL)use24HourTime;
 

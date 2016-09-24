@@ -3,17 +3,17 @@
  */
 
 @interface TSULinearRegressionModel : TSURegressionModel {
-    BOOL mAffine;
-    double *mCoefficients;
-    double *mCoefficientsStandardErrors;
-    double mDegreesFreedom;
-    double mErrorSumSquares;
-    double mFStatistic;
-    double mIntercept;
-    int mNumCoefficients;
-    double mRSquared;
-    double mRegressionSumSquares;
-    double mStandardError;
+    BOOL  mAffine;
+    double * mCoefficients;
+    double * mCoefficientsStandardErrors;
+    double  mDegreesFreedom;
+    double  mErrorSumSquares;
+    double  mFStatistic;
+    double  mIntercept;
+    int  mNumCoefficients;
+    double  mRSquared;
+    double  mRegressionSumSquares;
+    double  mStandardError;
 }
 
 - (double)coefficientAtIndex:(int)arg1;

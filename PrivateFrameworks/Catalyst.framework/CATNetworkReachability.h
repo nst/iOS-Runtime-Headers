@@ -3,15 +3,15 @@
  */
 
 @interface CATNetworkReachability : NSObject {
-    CATAddress *_address;
-    <CATNetworkReachabilityDelegate> *_delegate;
-    unsigned int _flags;
-    struct __SCNetworkReachability { } *mReachabilityRef;
+    CATAddress * _address;
+    <CATNetworkReachabilityDelegate> * _delegate;
+    unsigned int  _flags;
+    struct __SCNetworkReachability { } * mReachabilityRef;
 }
 
 @property (nonatomic, readonly) CATAddress *address;
 @property (nonatomic) <CATNetworkReachabilityDelegate> *delegate;
-@property unsigned int flags;
+@property (nonatomic) unsigned int flags;
 @property (getter=isReachable, nonatomic, readonly) BOOL reachable;
 
 + (BOOL)isReachableForLocalWiFiWithFlags:(unsigned int)arg1;

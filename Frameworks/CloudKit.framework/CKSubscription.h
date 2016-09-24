@@ -3,13 +3,13 @@
  */
 
 @interface CKSubscription : NSObject <NSCopying, NSSecureCoding> {
-    CKNotificationInfo *_notificationInfo;
-    NSPredicate *_predicate;
-    NSString *_recordType;
-    NSString *_subscriptionID;
-    unsigned int _subscriptionOptions;
-    int _subscriptionType;
-    CKRecordZoneID *_zoneID;
+    CKNotificationInfo * _notificationInfo;
+    NSPredicate * _predicate;
+    NSString * _recordType;
+    NSString * _subscriptionID;
+    unsigned int  _subscriptionOptions;
+    int  _subscriptionType;
+    CKRecordZoneID * _zoneID;
 }
 
 @property (nonatomic, copy) CKNotificationInfo *notificationInfo;
@@ -25,7 +25,10 @@
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (id)_initBare;
+- (id)_initWithRecordType:(id)arg1 predicate:(id)arg2 subscriptionID:(id)arg3 options:(unsigned int)arg4;
 - (id)_initWithSubscriptionType:(int)arg1 subscriptionID:(id)arg2 options:(unsigned int)arg3;
+- (id)_initWithZoneID:(id)arg1 subscriptionID:(id)arg2 options:(unsigned int)arg3;
+- (unsigned int)_subscriptionOptions;
 - (void)_validateSubscriptionOptions:(unsigned int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)debugDescription;

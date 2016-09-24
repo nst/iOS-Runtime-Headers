@@ -3,10 +3,10 @@
  */
 
 @interface NotesMigrationMapping : NSObject {
-    NSString *_descriptionString;
-    NSManagedObjectModel *_destinationModel;
-    NSArray *_sourceModels;
-    int _type;
+    NSString * _descriptionString;
+    NSManagedObjectModel * _destinationModel;
+    NSArray * _sourceModels;
+    int  _type;
 }
 
 @property (copy) NSString *descriptionString;

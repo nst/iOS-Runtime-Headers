@@ -3,8 +3,8 @@
  */
 
 @interface MPMovieThumbnailRequest : NSObject {
-    int _timeOption;
-    NSArray *_times;
+    int  _timeOption;
+    NSArray * _times;
 }
 
 @property (nonatomic) int timeOption;

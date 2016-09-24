@@ -3,11 +3,11 @@
  */
 
 @interface TSDCAAnimationContextCache : NSObject <TSDCAAnimationContextCacheProtocol> {
-    double _beginTime;
-    double _duration;
-    NSString *_fillMode;
-    double _timeOffset;
-    CAMediaTimingFunction *_timingFunction;
+    double  _beginTime;
+    double  _duration;
+    NSString * _fillMode;
+    double  _timeOffset;
+    CAMediaTimingFunction * _timingFunction;
 }
 
 @property (nonatomic, readonly) double beginTime;

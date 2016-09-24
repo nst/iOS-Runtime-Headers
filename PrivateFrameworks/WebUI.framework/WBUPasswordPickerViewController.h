@@ -3,8 +3,8 @@
  */
 
 @interface WBUPasswordPickerViewController : UINavigationController {
-    id /* block */ _completionHandler;
-    NSString *_prompt;
+    id /* block */  _completionHandler;
+    NSString * _prompt;
 }
 
 @property (nonatomic, readonly, copy) NSString *prompt;

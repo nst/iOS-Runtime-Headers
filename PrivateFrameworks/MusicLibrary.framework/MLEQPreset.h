@@ -3,9 +3,9 @@
  */
 
 @interface MLEQPreset : NSObject {
-    int _builtInPresetType;
-    NSString *_localizedName;
-    NSString *_name;
+    int  _builtInPresetType;
+    NSString * _localizedName;
+    NSString * _name;
 }
 
 + (id)eqPresetForBuiltInPresetType:(int)arg1;

@@ -3,28 +3,28 @@
  */
 
 @interface PBSqueezeFilter : PBFilter {
-    float _inputAmount;
-    bool firstTime;
+    double  _inputAmount;
+    bool  firstTime;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } inputPoint;
-    float lastInputRadius;
-    float lastInputScale;
-    float lastInputX;
-    float lastInputY;
+        double x; 
+        double y; 
+    }  inputPoint;
+    double  lastInputRadius;
+    double  lastInputScale;
+    double  lastInputX;
+    double  lastInputY;
 }
 
-@property float inputAmount;
-@property struct CGPoint { float x1; float x2; } inputPoint;
+@property double inputAmount;
+@property struct CGPoint { double x1; double x2; } inputPoint;
 
-- (void)applyParametersToCIFilter:(BOOL)arg1 extent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)applyParametersToCIFilter:(BOOL)arg1 extent:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (id)ciFilterName;
 - (float)inputAmount;
-- (struct CGPoint { float x1; float x2; })inputPoint;
+- (struct CGPoint { double x1; double x2; })inputPoint;
 - (BOOL)needsWrapMirror;
 - (void)setDefaults;
 - (void)setInputAmount:(float)arg1;
-- (void)setInputPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setInputPoint:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface CRKFetchInstructorEndpointResultObject : CATTaskResultObject {
-    NSXPCListenerEndpoint *_endpoint;
+    NSXPCListenerEndpoint * _endpoint;
 }
 
 @property (nonatomic, retain) NSXPCListenerEndpoint *endpoint;
@@ -11,7 +11,6 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endpoint;
 - (id)initWithCoder:(id)arg1;

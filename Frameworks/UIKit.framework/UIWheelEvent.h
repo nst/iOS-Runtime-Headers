@@ -3,9 +3,9 @@
  */
 
 @interface UIWheelEvent : UIEvent {
-    int _recentScrollDistance;
-    NSMutableArray *_recentScrollEvents;
-    int lastSubtype;
+    int  _recentScrollDistance;
+    NSMutableArray * _recentScrollEvents;
+    int  lastSubtype;
 }
 
 - (void).cxx_destruct;

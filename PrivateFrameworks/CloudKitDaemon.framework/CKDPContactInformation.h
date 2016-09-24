@@ -3,10 +3,11 @@
  */
 
 @interface CKDPContactInformation : PBCodable <NSCopying> {
-    NSString *_containerScopedUserId;
-    NSString *_emailAddress;
-    NSString *_firstName;
-    NSString *_lastName;
+    NSString * _containerScopedUserId;
+    NSString * _emailAddress;
+    NSString * _firstName;
+    NSString * _lastName;
+    NSString * _phoneNumber;
 }
 
 @property (nonatomic, retain) NSString *containerScopedUserId;
@@ -16,7 +17,9 @@
 @property (nonatomic, readonly) BOOL hasEmailAddress;
 @property (nonatomic, readonly) BOOL hasFirstName;
 @property (nonatomic, readonly) BOOL hasLastName;
+@property (nonatomic, readonly) BOOL hasPhoneNumber;
 @property (nonatomic, retain) NSString *lastName;
+@property (nonatomic, retain) NSString *phoneNumber;
 
 - (void).cxx_destruct;
 - (id)containerScopedUserId;
@@ -30,15 +33,18 @@
 - (BOOL)hasEmailAddress;
 - (BOOL)hasFirstName;
 - (BOOL)hasLastName;
+- (BOOL)hasPhoneNumber;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)lastName;
 - (void)mergeFrom:(id)arg1;
+- (id)phoneNumber;
 - (BOOL)readFrom:(id)arg1;
 - (void)setContainerScopedUserId:(id)arg1;
 - (void)setEmailAddress:(id)arg1;
 - (void)setFirstName:(id)arg1;
 - (void)setLastName:(id)arg1;
+- (void)setPhoneNumber:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

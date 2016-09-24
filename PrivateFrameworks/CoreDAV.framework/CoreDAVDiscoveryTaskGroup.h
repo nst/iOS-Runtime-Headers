@@ -3,17 +3,17 @@
  */
 
 @interface CoreDAVDiscoveryTaskGroup : CoreDAVTaskGroup <CoreDAVOptionsTaskDelegate, CoreDAVPropFindTaskDelegate> {
-    BOOL _didReceiveAuthenticationError;
-    <CoreDAVAccountInfoProvider> *_discoveredAccountInfo;
-    NSMutableArray *_discoveries;
-    NSArray *_httpPorts;
-    NSString *_httpServiceString;
-    NSArray *_httpsPorts;
-    NSString *_httpsServiceString;
-    NSArray *_potentialContextPaths;
-    NSString *_requiredComplianceClass;
-    BOOL _shouldBailEarly;
-    NSString *_wellKnownPath;
+    BOOL  _didReceiveAuthenticationError;
+    <CoreDAVAccountInfoProvider> * _discoveredAccountInfo;
+    NSMutableArray * _discoveries;
+    NSArray * _httpPorts;
+    NSString * _httpServiceString;
+    NSArray * _httpsPorts;
+    NSString * _httpsServiceString;
+    NSArray * _potentialContextPaths;
+    NSString * _requiredComplianceClass;
+    BOOL  _shouldBailEarly;
+    NSString * _wellKnownPath;
 }
 
 @property (readonly, copy) NSString *debugDescription;

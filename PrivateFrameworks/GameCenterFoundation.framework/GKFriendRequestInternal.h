@@ -3,8 +3,8 @@
  */
 
 @interface GKFriendRequestInternal : GKFamiliarPlayerInternal {
-    NSDate *_date;
-    NSString *_message;
+    NSDate * _date;
+    NSString * _message;
 }
 
 @property (nonatomic, retain) NSDate *date;

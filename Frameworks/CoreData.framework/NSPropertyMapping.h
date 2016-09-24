@@ -3,16 +3,16 @@
  */
 
 @interface NSPropertyMapping : NSObject {
-    NSString *_name;
+    NSString * _name;
     struct __propertyMappingFlags { 
         unsigned int _isInUse : 1; 
         unsigned int _reservedPropertyMapping : 31; 
-    } _propertyMappingFlags;
-    NSArray *_propertyTransforms;
-    void *_reserved;
-    NSArray *_transformValidations;
-    NSDictionary *_userInfo;
-    NSExpression *_valueExpression;
+    }  _propertyMappingFlags;
+    NSArray * _propertyTransforms;
+    void * _reserved;
+    NSArray * _transformValidations;
+    NSDictionary * _userInfo;
+    NSExpression * _valueExpression;
 }
 
 @property (copy) NSString *name;

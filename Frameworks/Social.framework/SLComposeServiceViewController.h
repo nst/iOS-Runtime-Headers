@@ -3,45 +3,45 @@
  */
 
 @interface SLComposeServiceViewController : UIViewController <UINavigationControllerDelegate, UITextViewDelegate> {
-    UIAlertController *_alertController;
-    NSMutableArray *_attachments;
-    UIViewController *_autoCompletionViewController;
-    BOOL _autoCompletionViewControllerAffectsSheetSize;
-    NSNumber *_charactersRemaining;
-    NSMutableArray *_constraints;
-    SLSheetContentView *_contentView;
-    BOOL _didCallPresentSheet;
-    BOOL _didFirstSheetActionLoad;
-    BOOL _hasPresentedSheet;
-    NSObject<SLSheetViewHostProtocol> *_hostProxy;
-    BOOL _inPostButtonTapped;
-    BOOL _isPresentingActionViewController;
-    BOOL _isShowingLocationDeniedAlert;
-    UIView *_maskView;
-    unsigned long _maxImageAttachmentSize;
-    SLSheetNavigationController *_navigationController;
-    NSString *_placeholder;
-    BOOL _preventSheetPositionChanges;
-    SLSheetPreviewImageSource *_previewImageSource;
-    UIImage *_serviceIconImage;
+    UIAlertController * _alertController;
+    NSMutableArray * _attachments;
+    UIViewController * _autoCompletionViewController;
+    BOOL  _autoCompletionViewControllerAffectsSheetSize;
+    NSNumber * _charactersRemaining;
+    NSMutableArray * _constraints;
+    SLSheetContentView * _contentView;
+    BOOL  _didCallPresentSheet;
+    BOOL  _didFirstSheetActionLoad;
+    BOOL  _hasPresentedSheet;
+    NSObject<SLSheetViewHostProtocol> * _hostProxy;
+    BOOL  _inPostButtonTapped;
+    BOOL  _isPresentingActionViewController;
+    BOOL  _isShowingLocationDeniedAlert;
+    UIView * _maskView;
+    unsigned long  _maxImageAttachmentSize;
+    SLSheetNavigationController * _navigationController;
+    NSString * _placeholder;
+    BOOL  _preventSheetPositionChanges;
+    SLSheetPreviewImageSource * _previewImageSource;
+    UIImage * _serviceIconImage;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _sheetFrameStartingRotation;
-    SLSheetRootViewController *_sheetRootViewController;
-    BOOL _suppressKeyboard;
-    BOOL _triggerPresentationAnimationOnKeyboard;
-    unsigned int _unfulfilledItemProviderRepresentations;
-    UIViewController *_viewControllerForTrackingSheetSize;
-    SLSheetMasklayer *_vignetteLayer;
-    BOOL _waitingForAnimateAlongsideTransitionBlock;
-    BOOL _wasPresented;
+    }  _sheetFrameStartingRotation;
+    SLSheetRootViewController * _sheetRootViewController;
+    BOOL  _suppressKeyboard;
+    BOOL  _triggerPresentationAnimationOnKeyboard;
+    unsigned int  _unfulfilledItemProviderRepresentations;
+    UIViewController * _viewControllerForTrackingSheetSize;
+    SLSheetMasklayer * _vignetteLayer;
+    BOOL  _waitingForAnimateAlongsideTransitionBlock;
+    BOOL  _wasPresented;
 }
 
 @property (nonatomic, retain) UIViewController *autoCompletionViewController;
@@ -74,18 +74,18 @@
 - (void)_animateCardSendFinished;
 - (void)_animateSheetCancelFinished;
 - (void)_animateSheetPresentationFinished;
-- (void)_animateVignetteMaskFromSheetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toSheetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 duration:(double)arg3;
+- (void)_animateVignetteMaskFromSheetFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toSheetFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 duration:(double)arg3;
 - (BOOL)_areAttachmentsReady;
 - (void)_convertExtensionItemProvidersToAttachments:(id)arg1;
 - (void)_downsampleImageAttachment:(id)arg1;
 - (void)_imageAttachmentDataDidLoad:(id)arg1;
-- (struct CGSize { float x1; float x2; })_intrinsicSheetSize;
+- (struct CGSize { double x1; double x2; })_intrinsicSheetSize;
 - (void)_loadImageAttachmentData:(id)arg1;
 - (void)_loadPreviewView;
 - (void)_performCommonInitialization:(id)arg1;
 - (void)_positionSheetViewAnimatedForViewController:(id)arg1;
 - (void)_positionSheetViewForViewController:(id)arg1;
-- (void)_positionVignetteForSheetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_positionVignetteForSheetFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_presentSheet;
 - (void)_presentedViewControllerContentSizeDidChange;
 - (int)_previewDisplayFormat;
@@ -154,13 +154,13 @@
 - (void)setPostButtonTitle:(id)arg1;
 - (void)setPreventSheetPositionChanges:(BOOL)arg1;
 - (void)setServiceIconImage:(id)arg1;
-- (void)setSheetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setSheetFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setSheetRootViewController:(id)arg1;
 - (void)setSuppressKeyboard:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
 - (id)sheetActions;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sheetFrameForViewController:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sheetFrameForViewController:(id)arg1 topSpaceProportion:(float)arg2 topSpaceOffset:(float)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })sheetFrameForViewController:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })sheetFrameForViewController:(id)arg1 topSpaceProportion:(float)arg2 topSpaceOffset:(float)arg3;
 - (id)sheetRootViewController;
 - (id)sheetView;
 - (BOOL)shouldAutorotate;
@@ -182,7 +182,7 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (BOOL)wasPresented;
 
 @end

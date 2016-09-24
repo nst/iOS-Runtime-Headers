@@ -3,9 +3,9 @@
  */
 
 @interface PSUsageSizeHeader : UIView <PSHeaderFooterView> {
-    float _height;
-    UILabel *_sizeLabel;
-    UILabel *_titleLabel;
+    double  _height;
+    UILabel * _sizeLabel;
+    UILabel * _titleLabel;
 }
 
 - (void).cxx_destruct;

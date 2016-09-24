@@ -5,39 +5,39 @@
 @interface CMDrawableMapper : CMMapper {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } mBox;
-    OADDrawable *mDrawable;
-    NSString *mExtension;
-    NSData *mImageBinaryData;
-    BOOL mIsCropped;
-    BOOL mIsSupported;
-    NSString *mName;
-    OADOrientedBounds *mOrientedBounds;
-    int mResourceType;
-    float mRotation;
-    NSString *mSourcePath;
-    CMDrawableStyle *mStyle;
+    }  mBox;
+    OADDrawable * mDrawable;
+    NSString * mExtension;
+    NSData * mImageBinaryData;
+    BOOL  mIsCropped;
+    BOOL  mIsSupported;
+    NSString * mName;
+    OADOrientedBounds * mOrientedBounds;
+    int  mResourceType;
+    double  mRotation;
+    NSString * mSourcePath;
+    CMDrawableStyle * mStyle;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } mUncroppedBox;
+    }  mUncroppedBox;
 }
 
 - (id)blipAtIndex:(unsigned int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })box;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })box;
 - (void)calculateUncroppedBox:(id)arg1;
 - (id)convertMetafileToPdf;
 - (void)dealloc;
@@ -54,7 +54,7 @@
 - (void)setBoundingBox;
 - (void)setRotation:(float)arg1;
 - (void)setWithOadImage:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })shapeTextBoxRect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })uncroppedBox;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })shapeTextBoxRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })uncroppedBox;
 
 @end

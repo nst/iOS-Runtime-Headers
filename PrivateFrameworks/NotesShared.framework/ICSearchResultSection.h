@@ -3,9 +3,9 @@
  */
 
 @interface ICSearchResultSection : NSObject {
-    NSMutableDictionary *_hiddenSearchResults;
-    NSMutableDictionary *_identifierToSearchResult;
-    NSMutableOrderedSet *_searchResults;
+    NSMutableDictionary * _hiddenSearchResults;
+    NSMutableDictionary * _identifierToSearchResult;
+    NSMutableOrderedSet * _searchResults;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *hiddenSearchResults;

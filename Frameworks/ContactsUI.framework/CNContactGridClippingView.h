@@ -3,8 +3,8 @@
  */
 
 @interface CNContactGridClippingView : UIView {
-    CAShapeLayer *_actionsMaskLayer;
-    CNAvatarView *_avatarView;
+    CAShapeLayer * _actionsMaskLayer;
+    CNAvatarView * _avatarView;
 }
 
 @property (nonatomic, retain) CAShapeLayer *actionsMaskLayer;

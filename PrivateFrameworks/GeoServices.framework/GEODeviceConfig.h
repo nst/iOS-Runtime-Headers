@@ -3,8 +3,8 @@
  */
 
 @interface GEODeviceConfig : PBCodable <NSCopying> {
-    NSString *_deviceHwIdentifier;
-    NSString *_deviceOsVersion;
+    NSString * _deviceHwIdentifier;
+    NSString * _deviceOsVersion;
 }
 
 @property (nonatomic, retain) NSString *deviceHwIdentifier;

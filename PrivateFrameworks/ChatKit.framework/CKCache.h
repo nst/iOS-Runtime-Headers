@@ -3,7 +3,7 @@
  */
 
 @interface CKCache : NSObject <CKCache> {
-    NSMutableDictionary *_dictionary;
+    NSMutableDictionary * _dictionary;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,6 +12,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)dictionary;
 - (id)init;

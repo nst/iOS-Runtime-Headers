@@ -5,9 +5,9 @@
 @interface PBBProtoDidEndPasscodeCreation : PBCodable <NSCopying> {
     struct { 
         unsigned int isLong : 1; 
-    } _has;
-    BOOL _isLong;
-    BOOL _success;
+    }  _has;
+    BOOL  _isLong;
+    BOOL  _success;
 }
 
 @property (nonatomic) BOOL hasIsLong;

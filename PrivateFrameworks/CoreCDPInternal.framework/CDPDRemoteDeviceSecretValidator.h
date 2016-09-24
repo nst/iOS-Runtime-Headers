@@ -2,41 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CoreCDPInternal.framework/CoreCDPInternal
  */
 
-@interface CDPDRemoteDeviceSecretValidator : NSObject <CDPRemoteDeviceSecretValidatorProtocol> {
-    CDPContext *_context;
-    <CDPDRemoteDeviceSecretValidatorDelegate> *_delegate;
-    unsigned int _failedAttempts;
-    NSMutableDictionary *_failedSecrets;
-    BOOL _isAttemptingRecovery;
-    BOOL _isUsingMultipleICSC;
-    BOOL _isWaitingForRemoteApproval;
-    NSString *_localSecret;
-    unsigned int _localSecretType;
-    id /* block */ _requestToJoinCompletion;
-    id /* block */ _validSecretHandler;
+@interface CDPDRemoteDeviceSecretValidator : CDPDDeviceSecretValidator {
+    BOOL  _isWaitingForRemoteApproval;
+    id /* block */  _requestToJoinCompletion;
 }
 
-@property (nonatomic) BOOL isUsingMultipleICSC;
-@property (nonatomic, copy) NSString *localSecret;
-@property (nonatomic) unsigned int localSecretType;
-@property (nonatomic, copy) id /* block */ validSecretHandler;
-
 - (void).cxx_destruct;
-- (BOOL)_isInvalidICSCError:(id)arg1;
+- (id)_decoratedDelegate;
 - (void)approveFromAnotherDeviceWithCompletion:(id /* block */)arg1;
 - (void)cancelApproveFromAnotherDevice;
-- (void)cancelValidationWithError:(id)arg1;
-- (id)init;
-- (id)initWithContext:(id)arg1 delegate:(id)arg2;
-- (BOOL)isUsingMultipleICSC;
-- (id)localSecret;
-- (unsigned int)localSecretType;
 - (void)resetAccountCDPState;
-- (void)setIsUsingMultipleICSC:(BOOL)arg1;
-- (void)setLocalSecret:(id)arg1;
-- (void)setLocalSecretType:(unsigned int)arg1;
 - (void)setValidSecretHandler:(id /* block */)arg1;
-- (id /* block */)validSecretHandler;
-- (void)validateSecret:(id)arg1 devices:(id)arg2 type:(unsigned int)arg3 withCompletion:(id /* block */)arg4;
+- (void)supportedEscapeOfferMaskCompletion:(id /* block */)arg1;
 
 @end

@@ -3,10 +3,10 @@
  */
 
 @interface GKChallengeEventHandler : NSObject {
-    <GKChallengeEventHandlerDelegate> *_delegateWeak;
-    GKChallengeInternal *_pendingCompletedChallenge;
-    GKChallengeInternal *_pendingReceivedChallenge;
-    <GKChallengeEventHandlerUIDelegate> *_uiDelegate;
+    <GKChallengeEventHandlerDelegate> * _delegateWeak;
+    GKChallengeInternal * _pendingCompletedChallenge;
+    GKChallengeInternal * _pendingReceivedChallenge;
+    <GKChallengeEventHandlerUIDelegate> * _uiDelegate;
 }
 
 @property (nonatomic) <GKChallengeEventHandlerDelegate> *delegate;

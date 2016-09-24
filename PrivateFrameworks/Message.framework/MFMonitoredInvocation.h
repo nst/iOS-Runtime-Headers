@@ -3,10 +3,10 @@
  */
 
 @interface MFMonitoredInvocation : NSInvocation {
-    BOOL _isLowPriority;
-    MFActivityMonitor *_monitor;
-    NSString *_powerAssertionId;
-    BOOL _shouldLogInvocation;
+    BOOL  _isLowPriority;
+    MFActivityMonitor * _monitor;
+    NSString * _powerAssertionId;
+    BOOL  _shouldLogInvocation;
 }
 
 @property (nonatomic) BOOL isLowPriority;

@@ -3,8 +3,8 @@
  */
 
 @interface KNEmptyMovieFileGenerator : NSObject {
-    double mDuration;
-    NSURL *mGeneratedFileURL;
+    double  mDuration;
+    NSURL * mGeneratedFileURL;
 }
 
 @property (nonatomic, readonly) NSURL *generatedFileURL;

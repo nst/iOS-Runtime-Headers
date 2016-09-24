@@ -3,7 +3,7 @@
  */
 
 @interface OADPointTextSpacing : OADTextSpacing {
-    int mPoints;
+    int  mPoints;
 }
 
 - (unsigned int)hash;

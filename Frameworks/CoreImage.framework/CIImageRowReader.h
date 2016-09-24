@@ -3,15 +3,15 @@
  */
 
 @interface CIImageRowReader : NSObject <ImageRowReading> {
-    short alpha;
-    short blue;
-    unsigned long bpr;
-    struct CGColorSpace { } *cs;
-    void *data;
-    short green;
-    unsigned long height;
-    short red;
-    unsigned long width;
+    short  alpha;
+    short  blue;
+    unsigned long  bpr;
+    struct CGColorSpace { } * cs;
+    void * data;
+    short  green;
+    unsigned long  height;
+    short  red;
+    unsigned long  width;
 }
 
 + (id)forImage:(id)arg1 downscaleToMax:(unsigned int)arg2;

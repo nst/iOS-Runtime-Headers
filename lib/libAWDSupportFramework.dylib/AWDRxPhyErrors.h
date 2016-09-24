@@ -3,14 +3,14 @@
  */
 
 @interface AWDRxPhyErrors : PBCodable <NSCopying> {
-    unsigned long long _bphyBadplcp;
-    unsigned long long _bphyRxcrsglitch;
+    unsigned long long  _bphyBadplcp;
+    unsigned long long  _bphyRxcrsglitch;
     struct { 
         unsigned int bphyBadplcp : 1; 
         unsigned int bphyRxcrsglitch : 1; 
         unsigned int rfdisable : 1; 
-    } _has;
-    unsigned long long _rfdisable;
+    }  _has;
+    unsigned long long  _rfdisable;
 }
 
 @property (nonatomic) unsigned long long bphyBadplcp;

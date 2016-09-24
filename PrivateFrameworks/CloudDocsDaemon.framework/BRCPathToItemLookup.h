@@ -11,16 +11,16 @@
         unsigned int serverItem : 1; 
         unsigned int serverByPath : 1; 
         unsigned int packageItem : 1; 
-    } _fetched;
-    BRCDocumentItem *_matchByDocumentID;
-    BRCLocalItem *_matchByFileID;
-    BRCLocalItem *_matchByPath;
-    BRCPackageItem *_packageItem;
-    BRCItemID *_parentID;
-    BRCRelativePath *_pathOfItem;
-    BRCRelativePath *_relpathOfFSEvent;
-    BRCServerItem *_serverByPath;
-    BRCServerItem *_serverItem;
+    }  _fetched;
+    BRCDocumentItem * _matchByDocumentID;
+    BRCLocalItem * _matchByFileID;
+    BRCLocalItem * _matchByPath;
+    BRCPackageItem * _packageItem;
+    BRCItemID * _parentID;
+    BRCRelativePath * _pathOfItem;
+    BRCRelativePath * _relpathOfFSEvent;
+    BRCServerItem * _serverByPath;
+    BRCServerItem * _serverItem;
 }
 
 @property (nonatomic, retain) BRCDocumentItem *byDocumentID;

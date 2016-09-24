@@ -3,22 +3,22 @@
  */
 
 @interface NoteContext : NSObject <ICLegacyContext> {
-    AccountUtilities *_accountUtilities;
-    BOOL _hasPriorityInSaveConflicts;
-    BOOL _inMigrator;
-    BOOL _indexInBatches;
-    BOOL _isMainContext;
-    NoteAccountObject *_localAccount;
-    NoteStoreObject *_localStore;
-    BOOL _logChanges;
-    NSManagedObjectContext *_managedObjectContext;
-    NSNumber *_nextId;
-    NSManagedObjectContext *_nextIdContext;
-    CPExclusiveLock *_nextIdLock;
-    NSMutableDictionary *_notePropertyObjectsRealized;
-    unsigned int _notificationCount;
-    CPExclusiveLock *_objectCreationLock;
-    BOOL _usePrivateQueue;
+    AccountUtilities * _accountUtilities;
+    BOOL  _hasPriorityInSaveConflicts;
+    BOOL  _inMigrator;
+    BOOL  _indexInBatches;
+    BOOL  _isMainContext;
+    NoteAccountObject * _localAccount;
+    NoteStoreObject * _localStore;
+    BOOL  _logChanges;
+    NSManagedObjectContext * _managedObjectContext;
+    NSNumber * _nextId;
+    NSManagedObjectContext * _nextIdContext;
+    CPExclusiveLock * _nextIdLock;
+    NSMutableDictionary * _notePropertyObjectsRealized;
+    unsigned int  _notificationCount;
+    CPExclusiveLock * _objectCreationLock;
+    BOOL  _usePrivateQueue;
 }
 
 @property (nonatomic, retain) AccountUtilities *accountUtilities;
@@ -30,6 +30,7 @@
 
 + (id)allVisibleNotesMatchingPredicate:(id)arg1 context:(id)arg2;
 + (id)allVisibleNotesMatchingPredicate:(id)arg1 sorted:(BOOL)arg2 context:(id)arg3;
++ (id)allVisibleNotesMatchingPredicate:(id)arg1 sorted:(BOOL)arg2 context:(id)arg3 fetchLimit:(unsigned int)arg4;
 + (void)clearTestsNotesRootPath;
 + (BOOL)databaseIsCorrupt:(id)arg1;
 + (id)defaultNotesSortDescriptors;

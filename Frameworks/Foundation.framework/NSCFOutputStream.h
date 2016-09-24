@@ -13,7 +13,6 @@
 - (BOOL)allowsWeakReference;
 - (void)close;
 - (id)delegate;
-- (void)finalize;
 - (BOOL)hasSpaceAvailable;
 - (unsigned int)hash;
 - (id)initToBuffer:(char *)arg1 capacity:(unsigned int)arg2;

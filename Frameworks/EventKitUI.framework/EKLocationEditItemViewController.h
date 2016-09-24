@@ -3,21 +3,22 @@
  */
 
 @interface EKLocationEditItemViewController : EKEditItemViewController <EKUILocationSearchModelDelegate, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate> {
-    EKCalendarItem *_calendarItem;
-    BOOL _needsSave;
-    BOOL _onlyDisplayMapLocations;
-    _UINavigationControllerPalette *_palette;
+    EKCalendarItem * _calendarItem;
+    BOOL  _needsSave;
+    BOOL  _onlyDisplayMapLocations;
+    _UINavigationControllerPalette * _palette;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _preferredContentSize;
-    UISearchBar *_searchBar;
-    EKUILocationSearchModel *_searchModel;
-    EKUIConferenceRoom *_selectedConferenceRoom;
-    EKStructuredLocation *_selectedLocation;
-    EKStructuredLocation *_structuredLocation;
-    BOOL _supportsStructuredLocations;
-    UITableView *_tableView;
+        double width; 
+        double height; 
+    }  _preferredContentSize;
+    UISearchBar * _searchBar;
+    EKUILocationSearchModel * _searchModel;
+    EKUIConferenceRoom * _selectedConferenceRoom;
+    EKStructuredLocation * _selectedLocation;
+    EKStructuredLocation * _structuredLocation;
+    BOOL  _supportsStructuredLocations;
+    BOOL  _tableConstraintsInstalled;
+    UITableView * _tableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -43,8 +44,8 @@
 - (void)eventsSearchUpdated:(id)arg1;
 - (void)frequentsSearchUpdated:(id)arg1;
 - (id)greyPinImage;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2 calendarItem:(id)arg3 eventStore:(id)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 styleProvider:(id)arg2 calendarItem:(id)arg3 eventStore:(id)arg4;
 - (id)itemAtIndexPath:(id)arg1;
 - (void)loadView;
 - (id)locationArrowImage;
@@ -53,7 +54,7 @@
 - (BOOL)needsSave;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (BOOL)onlyDisplayMapLocations;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (BOOL)presentModally;
 - (void)recentsSearchUpdated:(id)arg1;
 - (id)redPinImage;
@@ -63,7 +64,7 @@
 - (id)selectedLocation;
 - (void)setNeedsSave:(BOOL)arg1;
 - (void)setOnlyDisplayMapLocations:(BOOL)arg1;
-- (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setSelectedConferenceRoom:(id)arg1;
 - (void)setSelectedLocation:(id)arg1;
 - (void)setStructuredLocation:(id)arg1;
@@ -71,12 +72,15 @@
 - (BOOL)showingTextRow;
 - (id)structuredLocation;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (BOOL)tableView:(id)arg1 wantsHeaderForSection:(int)arg2;
 - (id)title;
+- (void)updateViewConstraints;
 - (void)useAsString:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;

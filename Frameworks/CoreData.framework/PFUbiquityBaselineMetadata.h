@@ -3,13 +3,13 @@
  */
 
 @interface PFUbiquityBaselineMetadata : NSObject <NSCoding> {
-    NSString *_authorPeerID;
-    PFUbiquityKnowledgeVector *_kv;
-    NSString *_modelVersionHash;
-    PFUbiquityKnowledgeVector *_pKV;
-    NSMutableDictionary *_peerRanges;
-    PFUbiquityLocation *_rootLocation;
-    NSString *_storeName;
+    NSString * _authorPeerID;
+    PFUbiquityKnowledgeVector * _kv;
+    NSString * _modelVersionHash;
+    PFUbiquityKnowledgeVector * _pKV;
+    NSMutableDictionary * _peerRanges;
+    PFUbiquityLocation * _rootLocation;
+    NSString * _storeName;
 }
 
 @property (readonly) NSString *authorPeerID;

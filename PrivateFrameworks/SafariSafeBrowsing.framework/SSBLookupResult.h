@@ -7,13 +7,14 @@
         struct OptionSet<Backend::LookupResult::Type> { 
             unsigned int m_storage; 
         } type; 
-    } _lookupResult;
+    }  _lookupResult;
 }
 
 @property (nonatomic, readonly) BOOL URLContainsUserInfo;
 @property (getter=isKnownToBeUnsafe, nonatomic, readonly) BOOL knownToBeUnsafe;
 @property (getter=isMalware, nonatomic, readonly) BOOL malware;
 @property (getter=isPhishing, nonatomic, readonly) BOOL phishing;
+@property (getter=isUnwantedSoftware, nonatomic, readonly) BOOL unwantedSoftware;
 
 + (BOOL)supportsSecureCoding;
 
@@ -26,5 +27,6 @@
 - (BOOL)isKnownToBeUnsafe;
 - (BOOL)isMalware;
 - (BOOL)isPhishing;
+- (BOOL)isUnwantedSoftware;
 
 @end

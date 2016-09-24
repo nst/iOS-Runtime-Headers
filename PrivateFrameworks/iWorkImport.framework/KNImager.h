@@ -3,21 +3,30 @@
  */
 
 @interface KNImager : TSDImager <TSDConnectedInfoReplacing> {
-    BOOL mShouldShowInstructionalText;
-    KNAbstractSlide *mSlide;
-    unsigned int mSlideNumber;
+    KNBodyPlaceholderInfo * mReplacementBodyPlaceholder;
+    KNTitlePlaceholderInfo * mReplacementTitlePlaceholder;
+    BOOL  mShouldShowInstructionalText;
+    KNAbstractSlide * mSlide;
+    unsigned int  mSlideNumber;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) KNBodyPlaceholderInfo *replacementBodyPlaceholder;
+@property (nonatomic, retain) KNTitlePlaceholderInfo *replacementTitlePlaceholder;
 @property (nonatomic) BOOL shouldShowInstructionalText;
 @property (nonatomic) KNAbstractSlide *slide;
 @property (nonatomic) unsigned int slideNumber;
 @property (readonly) Class superclass;
 
+- (void)dealloc;
 - (id)infoToConnectToForConnectionLineConnectedToInfo:(id)arg1;
 - (id)initWithDocumentRoot:(id)arg1;
+- (id)replacementBodyPlaceholder;
+- (id)replacementTitlePlaceholder;
+- (void)setReplacementBodyPlaceholder:(id)arg1;
+- (void)setReplacementTitlePlaceholder:(id)arg1;
 - (void)setShouldShowInstructionalText:(BOOL)arg1;
 - (void)setSlide:(id)arg1;
 - (void)setSlideNumber:(unsigned int)arg1;

@@ -2,30 +2,39 @@
    Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
  */
 
-@interface HKAuthorizationSettingsViewController : UITableViewController <HKSwitchTableViewCellDelegate> {
-    UIBarButtonItem *_cancelButtonItem;
-    HKDataCategoryController *_dataCategoryController;
-    <HKAuthorizationSettingsViewControllerDelegate> *_delegate;
-    UIBarButtonItem *_doneButtonItem;
-    HKHealthStore *_healthStore;
-    NSString *_shareDescription;
-    HKSource *_source;
-    HKSourceAuthorizationController *_sourceAuthorizationController;
-    int _style;
-    NSSet *_typesToRead;
-    NSSet *_typesToShare;
-    NSString *_updateDescription;
+@interface HKAuthorizationSettingsViewController : HKTableViewController <HKDocumentPickerViewControllerDelegate, HKSwitchTableViewCellDelegate> {
+    NSArray * _actualSections;
+    UIBarButtonItem * _cancelButtonItem;
+    HKDataCategoryController * _dataCategoryController;
+    <HKAuthorizationSettingsViewControllerDelegate> * _delegate;
+    NSArray * _documents;
+    UIBarButtonItem * _doneButtonItem;
+    HKHealthStore * _healthStore;
+    NSArray * _readingTypeOrdering;
+    NSString * _shareDescription;
+    HKSource * _source;
+    HKSourceAuthorizationController * _sourceAuthorizationController;
+    int  _style;
+    NSSet * _typesToRead;
+    NSSet * _typesToShare;
+    NSString * _updateDescription;
 }
 
+@property (retain) NSArray *actualSections;
 @property (nonatomic, retain) UIBarButtonItem *cancelButtonItem;
 @property (nonatomic, retain) HKDataCategoryController *dataCategoryController;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HKAuthorizationSettingsViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIBarButtonItem *doneButtonItem;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) HKHealthStore *healthStore;
+@property (readonly) BOOL isPrompting;
 @property (nonatomic, copy) NSString *shareDescription;
 @property (nonatomic, retain) HKSource *source;
 @property (nonatomic, retain) HKSourceAuthorizationController *sourceAuthorizationController;
 @property (nonatomic, readonly) int style;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) NSSet *typesToRead;
 @property (nonatomic, retain) NSSet *typesToShare;
 @property (nonatomic, copy) NSString *updateDescription;
@@ -33,25 +42,33 @@
 - (void).cxx_destruct;
 - (void)_addCancelAndDoneButtons;
 - (void)_addHeaderView;
-- (int)_authorizationSectionForSection:(int)arg1;
 - (id)_authorizationSettingCellForRowAtIndexPath:(id)arg1;
 - (void)_configurationFailedWithError:(id)arg1;
 - (void)_done:(id)arg1;
 - (void)_finishWithError:(id)arg1;
-- (BOOL)_isPrompting;
 - (BOOL)_isTypeEnabledAtIndexPath:(id)arg1;
+- (id)_localizedNameForSection:(int)arg1 type:(id)arg2;
+- (BOOL)_shouldDisplayHealthRecordsRequests;
 - (BOOL)_shouldDisplayReadingSection;
 - (BOOL)_shouldDisplaySharingSection;
+- (id)_specialCellWithIdentifier:(id)arg1;
+- (id)_toggleAllCell;
 - (id)_typeForIndexPath:(id)arg1 section:(int*)arg2;
+- (id)actualSections;
+- (int)authorizationSectionForSection:(int)arg1;
 - (id)cancelButtonItem;
 - (id)dataCategoryController;
 - (id)delegate;
+- (void)documentPickerViewControllerDidFinish:(id)arg1 error:(id)arg2;
 - (id)doneButtonItem;
 - (id)healthStore;
 - (id)init;
 - (id)initWithHealthStore:(id)arg1 style:(int)arg2;
+- (BOOL)isPrompting;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)reloadAuthorizationSettings;
+- (id)sectionsForAuthController:(id)arg1;
+- (void)setActualSections:(id)arg1;
 - (void)setCancelButtonItem:(id)arg1;
 - (void)setDataCategoryController:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -77,5 +94,6 @@
 - (void)updateAllowButtonEnabledState;
 - (id)updateDescription;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface DELogMover : NSObject {
-    NSObject<OS_xpc_object> *_conn;
-    NSString *_serviceName;
+    NSObject<OS_xpc_object> * _conn;
+    NSString * _serviceName;
 }
 
 @property (nonatomic, readonly) NSString *serviceName;

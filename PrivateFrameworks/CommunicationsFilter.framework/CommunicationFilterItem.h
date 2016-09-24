@@ -3,8 +3,8 @@
  */
 
 @interface CommunicationFilterItem : NSObject {
-    NSString *_emailAddress;
-    struct __CFPhoneNumber { } *_phoneNumber;
+    NSString * _emailAddress;
+    struct __CFPhoneNumber { } * _phoneNumber;
 }
 
 @property (nonatomic, readonly) NSString *emailAddress;

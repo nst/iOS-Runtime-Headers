@@ -3,10 +3,10 @@
  */
 
 @interface SKUIPassbookLoader : NSObject <PKAddPassesViewControllerDelegate> {
-    SKUIClientContext *_clientContext;
-    <SKUIPassbookLoaderDelegate> *_delegate;
-    int _loadCount;
-    NSOperationQueue *_operationQueue;
+    SKUIClientContext * _clientContext;
+    <SKUIPassbookLoaderDelegate> * _delegate;
+    int  _loadCount;
+    NSOperationQueue * _operationQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

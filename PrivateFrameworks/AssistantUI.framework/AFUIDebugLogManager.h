@@ -3,7 +3,7 @@
  */
 
 @interface AFUIDebugLogManager : NSObject {
-    NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (getter=_baseLogDirectoryURL, nonatomic, readonly, copy) NSURL *baseLogDirectoryURL;

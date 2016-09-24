@@ -3,10 +3,10 @@
  */
 
 @interface CalendarEventEditedByCell : EKUIConstrainedFontsTableViewCell {
-    <EKCellShortener> *_shortener;
-    UILabel *_titleLabel2;
-    UILabel *_valueLabel2;
-    unsigned int _valuePlaceholder;
+    <EKCellShortener> * _shortener;
+    UILabel * _titleLabel2;
+    UILabel * _valueLabel2;
+    unsigned int  _valuePlaceholder;
 }
 
 @property (nonatomic, readonly, retain) UILabel *detailTextLabel2;

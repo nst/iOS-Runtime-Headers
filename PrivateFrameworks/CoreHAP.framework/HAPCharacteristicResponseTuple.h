@@ -3,8 +3,8 @@
  */
 
 @interface HAPCharacteristicResponseTuple : NSObject {
-    HAPCharacteristic *_characteristic;
-    NSError *_error;
+    HAPCharacteristic * _characteristic;
+    NSError * _error;
 }
 
 @property (nonatomic, retain) HAPCharacteristic *characteristic;

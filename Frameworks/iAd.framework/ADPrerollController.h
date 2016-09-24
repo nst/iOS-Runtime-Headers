@@ -3,14 +3,14 @@
  */
 
 @interface ADPrerollController : NSObject <ADPlayerDelegate, ADPrerollViewDelegate> {
-    ADPlayer *_adPlayer;
-    AVPlayerViewController *_avPlayerViewController;
-    id /* block */ _completionHandler;
-    BOOL _isObservingThirdPartyAVPlayer;
-    MPMoviePlayerController *_moviePlayerController;
-    BOOL _setupInProgress;
-    unsigned int _type;
-    ADPrerollView *_view;
+    ADPlayer * _adPlayer;
+    AVPlayerViewController * _avPlayerViewController;
+    id /* block */  _completionHandler;
+    BOOL  _isObservingThirdPartyAVPlayer;
+    MPMoviePlayerController * _moviePlayerController;
+    BOOL  _setupInProgress;
+    unsigned int  _type;
+    ADPrerollView * _view;
 }
 
 @property (nonatomic, retain) ADPlayer *adPlayer;
@@ -26,6 +26,7 @@
 @property (nonatomic, readonly) unsigned int type;
 @property (nonatomic, retain) ADPrerollView *view;
 
+- (void)_addAccessibilityIdentifier:(id)arg1;
 - (id)_advertisementView;
 - (void)_appWillResignActive;
 - (BOOL)_beginPlayback;
@@ -56,6 +57,7 @@
 - (void)playButtonPressed;
 - (void)playPrerollAdWithCompletion:(id /* block */)arg1;
 - (BOOL)prerollViewRequestsEmbeddedStatus;
+- (void)privacyButtonPressed;
 - (void)setAdPlayer:(id)arg1;
 - (void)setAvPlayerViewController:(id)arg1;
 - (void)setCompletionHandler:(id /* block */)arg1;

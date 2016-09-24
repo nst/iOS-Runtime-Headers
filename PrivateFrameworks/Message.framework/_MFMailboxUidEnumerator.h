@@ -3,8 +3,8 @@
  */
 
 @interface _MFMailboxUidEnumerator : NSEnumerator {
-    unsigned int _index;
-    NSMutableArray *_mailboxes;
+    unsigned int  _index;
+    NSMutableArray * _mailboxes;
 }
 
 - (void)dealloc;

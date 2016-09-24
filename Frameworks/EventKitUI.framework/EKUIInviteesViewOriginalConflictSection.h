@@ -3,21 +3,23 @@
  */
 
 @interface EKUIInviteesViewOriginalConflictSection : NSObject <EKUIInviteesViewConflictResolutionSection> {
-    EKUIInviteeAlternativeTimeSearcher *_availabilitySearcher;
-    NSArray *_busyParticipants;
-    NSString *_cachedCellReuseIdentifier;
-    BOOL _checked;
-    BOOL _conflictFound;
-    NSDate *_endDate;
-    id /* block */ _newTimeChosen;
-    unsigned int _reuseIdentifierVersion;
-    NSMutableSet *_rowsShowingAllParticipants;
-    id /* block */ _showPreviewOfEventAtTime;
-    NSDate *_startDate;
-    id /* block */ _tableViewCellHook;
+    EKInviteeAlternativeTimeSearcher * _availabilitySearcher;
+    NSArray * _busyParticipants;
+    NSString * _cachedCellReuseIdentifier;
+    BOOL  _checked;
+    BOOL  _conflictFound;
+    NSDate * _endDate;
+    id /* block */  _newTimeChosen;
+    unsigned int  _reuseIdentifierVersion;
+    NSMutableSet * _rowsShowingAllParticipants;
+    id /* block */  _showPreviewOfEventAtTime;
+    NSDate * _startDate;
+    id /* block */  _tableViewCellHook;
+    NSTimeZone * _timeZone;
+    NSString * _title;
 }
 
-@property (nonatomic, retain) EKUIInviteeAlternativeTimeSearcher *availabilitySearcher;
+@property (nonatomic, retain) EKInviteeAlternativeTimeSearcher *availabilitySearcher;
 @property (nonatomic, retain) NSArray *busyParticipants;
 @property (nonatomic, retain) NSString *cachedCellReuseIdentifier;
 @property (nonatomic) BOOL checked;
@@ -33,6 +35,8 @@
 @property (nonatomic, retain) NSDate *startDate;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) id /* block */ tableViewCellHook;
+@property (nonatomic, retain) NSTimeZone *timeZone;
+@property (nonatomic, retain) NSString *title;
 
 - (void).cxx_destruct;
 - (BOOL)_isValidRow:(int)arg1;
@@ -75,9 +79,13 @@
 - (void)setShowPreviewOfEventAtTime:(id /* block */)arg1;
 - (void)setStartDate:(id)arg1;
 - (void)setTableViewCellHook:(id /* block */)arg1;
+- (void)setTimeZone:(id)arg1;
+- (void)setTitle:(id)arg1;
 - (id /* block */)showPreviewOfEventAtTime;
 - (id)startDate;
 - (id /* block */)tableViewCellHook;
+- (id)timeZone;
+- (id)title;
 - (id)titleForDeleteConfirmationButtonForRow:(id)arg1;
 
 @end

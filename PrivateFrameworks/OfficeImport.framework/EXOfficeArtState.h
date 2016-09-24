@@ -3,7 +3,7 @@
  */
 
 @interface EXOfficeArtState : OAXDrawingState {
-    EXReadState *mExcelState;
+    EXReadState * mExcelState;
 }
 
 - (id)excelState;

@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptNavigationController : SUScriptViewController {
-    UINavigationController *_navController;
+    UINavigationController * _navController;
 }
 
 @property (readonly) SUScriptNavigationBar *navigationBar;

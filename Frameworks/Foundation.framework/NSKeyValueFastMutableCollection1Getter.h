@@ -3,8 +3,8 @@
  */
 
 @interface NSKeyValueFastMutableCollection1Getter : NSKeyValueProxyGetter {
-    NSKeyValueMutatingCollectionMethodSet *_mutatingMethods;
-    NSKeyValueNonmutatingCollectionMethodSet *_nonmutatingMethods;
+    NSKeyValueMutatingCollectionMethodSet * _mutatingMethods;
+    NSKeyValueNonmutatingCollectionMethodSet * _nonmutatingMethods;
 }
 
 - (void)dealloc;

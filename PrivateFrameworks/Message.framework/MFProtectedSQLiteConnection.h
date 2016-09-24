@@ -3,10 +3,10 @@
  */
 
 @interface MFProtectedSQLiteConnection : MFSQLiteConnection {
-    BOOL _attached;
-    NSString *_protectedName;
-    NSString *_vfsName;
-    long _vfsOnce;
+    BOOL  _attached;
+    NSString * _protectedName;
+    NSString * _vfsName;
+    long  _vfsOnce;
 }
 
 @property (nonatomic, readonly) BOOL isProtectedDatabaseAttached;

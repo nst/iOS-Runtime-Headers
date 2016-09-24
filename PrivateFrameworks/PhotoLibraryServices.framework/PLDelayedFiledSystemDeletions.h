@@ -3,7 +3,7 @@
  */
 
 @interface PLDelayedFiledSystemDeletions : NSObject {
-    NSMutableArray *_deletionInfos;
+    NSMutableArray * _deletionInfos;
 }
 
 + (void)appendDescriptionForEvent:(id)arg1 toComponents:(id)arg2;

@@ -3,7 +3,7 @@
  */
 
 @interface FBBasicSystemServiceFacilityClient : NSObject <FBSystemServiceFacilityClient> {
-    <FBSystemServiceClient> *_systemServiceClient;
+    <FBSystemServiceClient> * _systemServiceClient;
 }
 
 @property (readonly, copy) NSString *debugDescription;

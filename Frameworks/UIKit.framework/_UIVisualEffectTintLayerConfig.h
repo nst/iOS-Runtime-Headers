@@ -3,7 +3,7 @@
  */
 
 @interface _UIVisualEffectTintLayerConfig : _UIVisualEffectLayerConfig {
-    UIColor *_tintColor;
+    UIColor * _tintColor;
 }
 
 @property (nonatomic, readonly) UIColor *tintColor;

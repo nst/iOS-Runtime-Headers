@@ -3,15 +3,15 @@
  */
 
 @interface PBBProtoWarrantySentinel : PBCodable <NSCopying> {
-    NSMutableArray *_appleLanguages;
-    NSString *_appleLocale;
-    NSString *_deviceName;
+    NSMutableArray * _appleLanguages;
+    NSString * _appleLocale;
+    NSString * _deviceName;
     struct { 
         unsigned int removeSentinel : 1; 
         unsigned int sentinelExists : 1; 
-    } _has;
-    BOOL _removeSentinel;
-    BOOL _sentinelExists;
+    }  _has;
+    BOOL  _removeSentinel;
+    BOOL  _sentinelExists;
 }
 
 @property (nonatomic, retain) NSMutableArray *appleLanguages;

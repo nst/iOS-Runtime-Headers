@@ -3,7 +3,7 @@
  */
 
 @interface AFUIDebugCrashMoverService : NSObject {
-    NSObject<OS_xpc_object> *_connection;
+    NSObject<OS_xpc_object> * _connection;
 }
 
 @property (getter=_connection, nonatomic, readonly) NSObject<OS_xpc_object> *connection;

@@ -3,7 +3,7 @@
  */
 
 @interface NSSQLStoreMappingGenerator : NSObject {
-    NSMutableDictionary *_names;
+    NSMutableDictionary * _names;
 }
 
 + (id)defaultMappingGenerator;

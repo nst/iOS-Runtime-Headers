@@ -3,18 +3,18 @@
  */
 
 @interface _DKCoreDataStorage : NSObject {
-    _DKDataProtectionStateMonitor *_dataProtectionMonitor;
-    NSString *_databaseName;
-    NSString *_directory;
-    NSFileManager *_fm;
-    NSMutableDictionary *_managedObjectContexts;
-    NSManagedObjectModel *_managedObjectModel;
-    NSURL *_modelURL;
-    NSMutableDictionary *_paths;
-    NSMutableDictionary *_persistentStoreCoordinators;
-    NSObject<OS_dispatch_queue> *_queueMOC;
-    NSObject<OS_dispatch_queue> *_queuePSC;
-    BOOL _readOnly;
+    _DKDataProtectionStateMonitor * _dataProtectionMonitor;
+    NSString * _databaseName;
+    NSString * _directory;
+    NSFileManager * _fm;
+    NSMutableDictionary * _managedObjectContexts;
+    NSManagedObjectModel * _managedObjectModel;
+    NSURL * _modelURL;
+    NSMutableDictionary * _paths;
+    NSMutableDictionary * _persistentStoreCoordinators;
+    NSObject<OS_dispatch_queue> * _queueMOC;
+    NSObject<OS_dispatch_queue> * _queuePSC;
+    BOOL  _readOnly;
 }
 
 @property (readonly) NSString *databaseName;
@@ -34,12 +34,14 @@
 
 - (void).cxx_destruct;
 - (BOOL)_deleteDatabaseFiles:(id)arg1;
+- (void)closeStorageForProtectionClass:(id)arg1;
 - (id)copyStorageFor:(id)arg1 toDirectory:(id)arg2;
 - (id)databaseName;
 - (id)databasePathFor:(id)arg1;
 - (BOOL)deleteStorageFor:(id)arg1;
 - (id)directory;
 - (void)handleDataProtectionChangeFor:(id)arg1 willBeAvailable:(BOOL)arg2;
+- (void)handleDatabaseErrors:(id)arg1 forProtectionClass:(id)arg2;
 - (id)init;
 - (id)initWithDirectory:(id)arg1 databaseName:(id)arg2 modelURL:(id)arg3 readOnly:(BOOL)arg4;
 - (void)invalidateManagedObjectContextFor:(id)arg1;

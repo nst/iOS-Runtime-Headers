@@ -3,12 +3,12 @@
  */
 
 @interface STUpdateWatchListRequest : AFSiriRequest {
-    NSArray *_contentIdentifiersToAdd;
-    NSArray *_contentIdentifiersToRemove;
+    NSArray * _contentIdentifiersToAdd;
+    NSArray * _contentIdentifiersToRemove;
 }
 
-@property (nonatomic, copy) NSArray *contentIdentifiersToAdd;
-@property (nonatomic, copy) NSArray *contentIdentifiersToRemove;
+@property (setter=_setContentIdentifiersToAdd:, nonatomic, copy) NSArray *contentIdentifiersToAdd;
+@property (setter=_setContentIdentifiersToRemove:, nonatomic, copy) NSArray *contentIdentifiersToRemove;
 
 + (BOOL)supportsSecureCoding;
 

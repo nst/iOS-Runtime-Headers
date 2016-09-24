@@ -3,7 +3,7 @@
  */
 
 @interface STStream : STSStgObject {
-    struct _Stream { } *m_pCStream;
+    struct _Stream { } * m_pCStream;
 }
 
 @property (nonatomic, readonly) struct _Stream { }*cStream;
@@ -25,7 +25,7 @@
 - (id)readString16:(unsigned int)arg1;
 - (unsigned short)readUInt16;
 - (unsigned int)readUInt32;
-- (unsigned long long)readUInt64;
+- (unsigned int)readUInt64;
 - (unsigned char)readUInt8;
 - (void)releaseCStream;
 - (void)seek:(int)arg1 fromOrigin:(int)arg2;

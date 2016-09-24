@@ -3,9 +3,9 @@
  */
 
 @interface AFUIDebugLog : NSObject {
-    NSData *_data;
-    NSString *_mimeType;
-    NSString *_name;
+    NSData * _data;
+    NSString * _mimeType;
+    NSString * _name;
 }
 
 @property (nonatomic, readonly, copy) NSData *data;

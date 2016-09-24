@@ -3,8 +3,8 @@
  */
 
 @interface ATPRequest : PBRequest <NSCopying> {
-    NSString *_command;
-    NSString *_dataClass;
+    NSString * _command;
+    NSString * _dataClass;
 }
 
 @property (nonatomic, retain) NSString *command;

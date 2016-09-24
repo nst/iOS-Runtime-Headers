@@ -3,7 +3,7 @@
  */
 
 @interface ACDAccountStoreFilter : NSObject <ACDAccountStoreProtocol> {
-    ACDAccountStore *_backingAccountStore;
+    ACDAccountStore * _backingAccountStore;
 }
 
 @property (nonatomic, retain) ACDAccountStore *backingAccountStore;
@@ -31,6 +31,7 @@
 - (void)accountTypeWithIdentifier:(id)arg1 handler:(id /* block */)arg2;
 - (void)accountTypesWithHandler:(id /* block */)arg1;
 - (void)accountWithIdentifier:(id)arg1 handler:(id /* block */)arg2;
+- (void)accountsOnPairedDeviceWithAccountType:(id)arg1 handler:(id /* block */)arg2;
 - (void)accountsWithAccountType:(id)arg1 handler:(id /* block */)arg2;
 - (void)accountsWithAccountTypeIdentifiers:(id)arg1 preloadedProperties:(id)arg2 completion:(id /* block */)arg3;
 - (void)accountsWithHandler:(id /* block */)arg1;
@@ -86,6 +87,7 @@
 - (void)supportedDataclassesForAccountType:(id)arg1 handler:(id /* block */)arg2;
 - (void)syncableDataclassesForAccountType:(id)arg1 handler:(id /* block */)arg2;
 - (void)tetheredSyncSourceTypeForDataclass:(id)arg1 completion:(id /* block */)arg2;
+- (void)triggerKeychainMigrationIfNecessary:(id /* block */)arg1;
 - (void)typeIdentifierForDomain:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)updateExistenceCacheOfAccountWithTypeIdentifier:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)verifyCredentialsForAccount:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;

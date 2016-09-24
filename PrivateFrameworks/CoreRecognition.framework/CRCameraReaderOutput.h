@@ -3,7 +3,7 @@
  */
 
 @interface CRCameraReaderOutput : NSObject {
-    CRCameraReaderOutputInternal *_objectInternal;
+    CRCameraReaderOutputInternal * _objectInternal;
 }
 
 @property (readonly) NSString *formattedStringValue;

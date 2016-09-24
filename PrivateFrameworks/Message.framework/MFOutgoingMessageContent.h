@@ -3,8 +3,8 @@
  */
 
 @interface MFOutgoingMessageContent : NSObject {
-    MFMutableMessageHeaders *_headers;
-    NSArray *_placeholders;
+    MFMutableMessageHeaders * _headers;
+    NSArray * _placeholders;
 }
 
 @property (nonatomic, retain) MFMutableMessageHeaders *headers;

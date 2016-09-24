@@ -6,15 +6,15 @@
     struct { 
         unsigned int timestamp : 1; 
         unsigned int reportReason : 1; 
-    } _has;
-    AWDLibnetcoreMbufStatsReport *_mbufStatisticsReport;
-    AWDLibnetcoreNetworkdStatsReport *_networkdStatisticsReport;
-    unsigned int _reportReason;
-    NSMutableArray *_tcpECNInterfaceReports;
-    AWDLibnetcoreTCPECNStatsReport *_tcpECNStatisticsReport;
-    AWDLibnetcoreTCPStatsReport *_tcpStatisticsReport;
-    AWDLibnetcoreTCPTFOStatsReport *_tcpTFOStatisticsReport;
-    unsigned long long _timestamp;
+    }  _has;
+    AWDLibnetcoreMbufStatsReport * _mbufStatisticsReport;
+    AWDLibnetcoreNetworkdStatsReport * _networkdStatisticsReport;
+    unsigned int  _reportReason;
+    NSMutableArray * _tcpECNInterfaceReports;
+    AWDLibnetcoreTCPECNStatsReport * _tcpECNStatisticsReport;
+    AWDLibnetcoreTCPStatsReport * _tcpStatisticsReport;
+    AWDLibnetcoreTCPTFOStatsReport * _tcpTFOStatisticsReport;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic, readonly) BOOL hasMbufStatisticsReport;

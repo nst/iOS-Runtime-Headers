@@ -3,9 +3,9 @@
  */
 
 @interface NSTernaryExpression : NSExpression {
-    NSExpression *_falseExpression;
-    NSPredicate *_predicate;
-    NSExpression *_trueExpression;
+    NSExpression * _falseExpression;
+    NSPredicate * _predicate;
+    NSExpression * _trueExpression;
 }
 
 + (BOOL)supportsSecureCoding;

@@ -3,10 +3,10 @@
  */
 
 @interface TSWPTypesetterAttachmentMap : NSObject {
-    TSWPAttachment *_attachment;
-    TSDLayout *_layout;
-    BOOL _layoutNeedsRevalidation;
-    struct __CTLine { } *_lineRef;
+    TSWPAttachment * _attachment;
+    TSDLayout * _layout;
+    BOOL  _layoutNeedsRevalidation;
+    struct __CTLine { } * _lineRef;
 }
 
 @property (nonatomic) TSWPAttachment *attachment;

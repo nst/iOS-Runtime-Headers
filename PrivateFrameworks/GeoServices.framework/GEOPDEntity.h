@@ -3,33 +3,40 @@
  */
 
 @interface GEOPDEntity : PBCodable <NSCopying> {
-    NSMutableArray *_altFaxs;
-    NSMutableArray *_altTelephones;
-    NSMutableArray *_altUrls;
-    NSString *_fax;
+    NSMutableArray * _altFaxs;
+    BOOL  _altTelephoneAdsOptOut;
+    NSMutableArray * _altTelephones;
+    NSMutableArray * _altUrls;
+    NSString * _fax;
     struct { 
         unsigned int type : 1; 
+        unsigned int altTelephoneAdsOptOut : 1; 
         unsigned int isDisputed : 1; 
         unsigned int isPermanentlyClosed : 1; 
-    } _has;
-    BOOL _isDisputed;
-    BOOL _isPermanentlyClosed;
-    NSMutableArray *_localizedCategorys;
-    NSMutableArray *_names;
-    NSMutableArray *_spokenNames;
-    NSString *_telephone;
-    int _type;
-    NSString *_url;
+        unsigned int telephoneAdsOptOut : 1; 
+    }  _has;
+    BOOL  _isDisputed;
+    BOOL  _isPermanentlyClosed;
+    NSMutableArray * _localizedCategorys;
+    NSMutableArray * _names;
+    NSMutableArray * _spokenNames;
+    NSString * _telephone;
+    BOOL  _telephoneAdsOptOut;
+    int  _type;
+    NSString * _url;
 }
 
 @property (nonatomic, retain) NSMutableArray *altFaxs;
+@property (nonatomic) BOOL altTelephoneAdsOptOut;
 @property (nonatomic, retain) NSMutableArray *altTelephones;
 @property (nonatomic, retain) NSMutableArray *altUrls;
 @property (nonatomic, retain) NSString *fax;
+@property (nonatomic) BOOL hasAltTelephoneAdsOptOut;
 @property (nonatomic, readonly) BOOL hasFax;
 @property (nonatomic) BOOL hasIsDisputed;
 @property (nonatomic) BOOL hasIsPermanentlyClosed;
 @property (nonatomic, readonly) BOOL hasTelephone;
+@property (nonatomic) BOOL hasTelephoneAdsOptOut;
 @property (nonatomic) BOOL hasType;
 @property (nonatomic, readonly) BOOL hasUrl;
 @property (nonatomic) BOOL isDisputed;
@@ -38,11 +45,19 @@
 @property (nonatomic, retain) NSMutableArray *names;
 @property (nonatomic, retain) NSMutableArray *spokenNames;
 @property (nonatomic, retain) NSString *telephone;
+@property (nonatomic) BOOL telephoneAdsOptOut;
 @property (nonatomic) int type;
 @property (nonatomic, retain) NSString *url;
 
++ (Class)altFaxType;
++ (Class)altTelephoneType;
++ (Class)altUrlType;
 + (id)entityForPlaceData:(id)arg1;
++ (Class)localizedCategoryType;
++ (Class)nameType;
++ (Class)spokenNameType;
 
+- (int)StringAsType:(id)arg1;
 - (void)addAltFax:(id)arg1;
 - (void)addAltTelephone:(id)arg1;
 - (void)addAltUrl:(id)arg1;
@@ -52,6 +67,7 @@
 - (id)altFaxAtIndex:(unsigned int)arg1;
 - (id)altFaxs;
 - (unsigned int)altFaxsCount;
+- (BOOL)altTelephoneAdsOptOut;
 - (id)altTelephoneAtIndex:(unsigned int)arg1;
 - (id)altTelephones;
 - (unsigned int)altTelephonesCount;
@@ -71,10 +87,12 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)fax;
+- (BOOL)hasAltTelephoneAdsOptOut;
 - (BOOL)hasFax;
 - (BOOL)hasIsDisputed;
 - (BOOL)hasIsPermanentlyClosed;
 - (BOOL)hasTelephone;
+- (BOOL)hasTelephoneAdsOptOut;
 - (BOOL)hasType;
 - (BOOL)hasUrl;
 - (unsigned int)hash;
@@ -90,11 +108,14 @@
 - (unsigned int)namesCount;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAltFaxs:(id)arg1;
+- (void)setAltTelephoneAdsOptOut:(BOOL)arg1;
 - (void)setAltTelephones:(id)arg1;
 - (void)setAltUrls:(id)arg1;
 - (void)setFax:(id)arg1;
+- (void)setHasAltTelephoneAdsOptOut:(BOOL)arg1;
 - (void)setHasIsDisputed:(BOOL)arg1;
 - (void)setHasIsPermanentlyClosed:(BOOL)arg1;
+- (void)setHasTelephoneAdsOptOut:(BOOL)arg1;
 - (void)setHasType:(BOOL)arg1;
 - (void)setIsDisputed:(BOOL)arg1;
 - (void)setIsPermanentlyClosed:(BOOL)arg1;
@@ -102,13 +123,16 @@
 - (void)setNames:(id)arg1;
 - (void)setSpokenNames:(id)arg1;
 - (void)setTelephone:(id)arg1;
+- (void)setTelephoneAdsOptOut:(BOOL)arg1;
 - (void)setType:(int)arg1;
 - (void)setUrl:(id)arg1;
 - (id)spokenNameAtIndex:(unsigned int)arg1;
 - (id)spokenNames;
 - (unsigned int)spokenNamesCount;
 - (id)telephone;
+- (BOOL)telephoneAdsOptOut;
 - (int)type;
+- (id)typeAsString:(int)arg1;
 - (id)url;
 - (void)writeTo:(id)arg1;
 

@@ -3,7 +3,7 @@
  */
 
 @interface OADBlipCollection : NSObject {
-    NSMutableArray *mBlips;
+    NSMutableArray * mBlips;
 }
 
 @property (nonatomic, retain) NSMutableArray *blips;

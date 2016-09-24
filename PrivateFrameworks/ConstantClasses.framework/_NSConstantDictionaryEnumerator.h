@@ -3,9 +3,9 @@
  */
 
 @interface _NSConstantDictionaryEnumerator : NSEnumerator {
-    unsigned int capacity;
-    id *currentKey;
-    unsigned int keyIndex;
+    unsigned int  capacity;
+    id * currentKey;
+    unsigned int  keyIndex;
 }
 
 - (id)allObjects;

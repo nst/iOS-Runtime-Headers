@@ -3,7 +3,7 @@
  */
 
 @interface UIStatusBarMapsCompassItemView : UIStatusBarItemView {
-    MKStarkCompassView *_compassView;
+    MKStarkCompassView * _compassView;
 }
 
 - (void).cxx_destruct;

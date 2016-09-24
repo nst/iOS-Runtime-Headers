@@ -3,21 +3,25 @@
  */
 
 @interface _BRCFrameworkOperation : _BRCOperation <BRCancellable> {
-    NSObject<BROperationClient> *_remoteClientProxy;
-    BOOL _startedFinish;
+    BOOL  _ignoreMissingRemoteClientProxy;
+    NSObject<BROperationClient> * _remoteClientProxy;
+    BOOL  _startedFinish;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic) BOOL ignoreMissingRemoteClientProxy;
 @property (nonatomic, retain) NSObject<BROperationClient> *remoteClientProxy;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)descriptionAdditionalStringWithContext:(id)arg1;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
+- (BOOL)ignoreMissingRemoteClientProxy;
 - (oneway void)invalidate;
 - (id)remoteClientProxy;
+- (void)setIgnoreMissingRemoteClientProxy:(BOOL)arg1;
 - (void)setRemoteClientProxy:(id)arg1;
 - (void)start;
 

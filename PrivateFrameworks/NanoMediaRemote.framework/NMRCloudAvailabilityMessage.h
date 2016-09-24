@@ -3,7 +3,7 @@
  */
 
 @interface NMRCloudAvailabilityMessage : NSObject <NMRMediaRemoteProtobufCodable> {
-    _NMRCloudAvailabilityProtobuf *_protobuf;
+    _NMRCloudAvailabilityProtobuf * _protobuf;
 }
 
 @property (nonatomic) BOOL canShowCloudMusic;

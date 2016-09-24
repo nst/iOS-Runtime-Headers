@@ -3,7 +3,7 @@
  */
 
 @interface CHDBar3DSeries : CHDSeries {
-    int mShapeType;
+    int  mShapeType;
 }
 
 - (id)init;

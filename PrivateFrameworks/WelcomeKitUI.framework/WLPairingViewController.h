@@ -3,13 +3,13 @@
  */
 
 @interface WLPairingViewController : WLWelcomeGroupViewController {
-    UILabel *_explanationView;
-    NSString *_pairingCode;
-    UILabel *_pairingCodeView;
-    WLSourceDevicesController *_sourceDevicesController;
-    NSString *_ssid;
-    UIButton *_wifiInfoButton;
-    NSString *_wifiPSK;
+    UILabel * _explanationView;
+    NSString * _pairingCode;
+    UILabel * _pairingCodeView;
+    WLSourceDevicesController * _sourceDevicesController;
+    NSString * _ssid;
+    UIButton * _wifiInfoButton;
+    NSString * _wifiPSK;
 }
 
 - (void).cxx_destruct;

@@ -16,7 +16,6 @@
 - (int)clientX;
 - (int)clientY;
 - (void)dealloc;
-- (void)finalize;
 - (double)force;
 - (unsigned int)identifier;
 - (int)pageX;

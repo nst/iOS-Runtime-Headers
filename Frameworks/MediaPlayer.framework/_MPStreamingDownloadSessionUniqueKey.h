@@ -3,19 +3,19 @@
  */
 
 @interface _MPStreamingDownloadSessionUniqueKey : NSObject {
-    NSString *_buyParameters;
-    long long _storeAdamID;
+    NSString * _buyParameters;
+    int  _storeAdamID;
 }
 
 @property (nonatomic, copy) NSString *buyParameters;
-@property (nonatomic) long long storeAdamID;
+@property (nonatomic) int storeAdamID;
 
 - (void).cxx_destruct;
 - (id)buyParameters;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)setBuyParameters:(id)arg1;
-- (void)setStoreAdamID:(long long)arg1;
-- (long long)storeAdamID;
+- (void)setStoreAdamID:(int)arg1;
+- (int)storeAdamID;
 
 @end

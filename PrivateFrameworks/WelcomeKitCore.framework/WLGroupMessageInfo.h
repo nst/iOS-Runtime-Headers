@@ -3,11 +3,11 @@
  */
 
 @interface WLGroupMessageInfo : NSObject {
-    NSString *_groupID;
-    BOOL _handleIDsAreComplete;
-    NSString *_roomName;
-    NSArray *_sortedHandleIDs;
-    NSString *_sourceThreadID;
+    NSString * _groupID;
+    BOOL  _handleIDsAreComplete;
+    NSString * _roomName;
+    NSArray * _sortedHandleIDs;
+    NSString * _sourceThreadID;
 }
 
 @property (nonatomic, readonly) NSString *groupID;

@@ -3,7 +3,7 @@
  */
 
 @interface _VKTileSetBackedTileSourceTimerTarget : NSObject {
-    VKTileSetBackedTileSource *_tileSource;
+    VKTileSetBackedTileSource * _tileSource;
 }
 
 @property (nonatomic) VKTileSetBackedTileSource *tileSource;

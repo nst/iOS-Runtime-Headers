@@ -3,7 +3,7 @@
  */
 
 @interface PUContentTileProvider : NSObject {
-    PUMediaProvider *_mediaProvider;
+    PUMediaProvider * _mediaProvider;
 }
 
 @property (nonatomic, readonly) PUMediaProvider *mediaProvider;

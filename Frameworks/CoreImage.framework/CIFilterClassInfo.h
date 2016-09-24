@@ -3,9 +3,9 @@
  */
 
 @interface CIFilterClassInfo : NSObject {
-    NSArray *inputClasses;
-    NSArray *inputKeys;
-    NSArray *outputKeys;
+    NSArray * inputClasses;
+    NSArray * inputKeys;
+    NSArray * outputKeys;
 }
 
 + (id)classInfoForClass:(Class)arg1;

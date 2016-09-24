@@ -18,6 +18,7 @@
 
 @optional
 
+- (void)navigationBar:(_SFNavigationBar *)arg1 backDropWillApplySettings:(_UIBackdropViewSettings *)arg2;
 - (void)navigationBar:(_SFNavigationBar *)arg1 didPasteText:(NSString *)arg2;
 - (void)navigationBarDoneButtonWasTapped:(_SFNavigationBar *)arg1;
 

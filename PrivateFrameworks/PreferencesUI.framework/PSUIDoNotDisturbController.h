@@ -3,9 +3,9 @@
  */
 
 @interface PSUIDoNotDisturbController : PSListController {
-    BOOL _dateRangePopoverShouldBePresent;
-    NSIndexPath *_setDateRangeIndexPath;
-    UIPopoverController *_setDateRangePopoverController;
+    BOOL  _dateRangePopoverShouldBePresent;
+    NSIndexPath * _setDateRangeIndexPath;
+    UIPopoverController * _setDateRangePopoverController;
 }
 
 - (void).cxx_destruct;

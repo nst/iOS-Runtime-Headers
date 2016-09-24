@@ -3,7 +3,7 @@
  */
 
 @interface ATStatusObserverListener : NSObject <NSXPCListenerDelegate> {
-    NSXPCListener *_listener;
+    NSXPCListener * _listener;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,19 +3,19 @@
  */
 
 @interface AWDNetworkUsage : PBCodable <NSCopying> {
-    NSString *_bundleName;
-    unsigned long long _cellIn;
-    unsigned long long _cellOut;
+    NSString * _bundleName;
+    unsigned long long  _cellIn;
+    unsigned long long  _cellOut;
     struct { 
         unsigned int cellIn : 1; 
         unsigned int cellOut : 1; 
         unsigned int wifiIn : 1; 
         unsigned int wifiOut : 1; 
         unsigned int numConnections : 1; 
-    } _has;
-    unsigned int _numConnections;
-    unsigned long long _wifiIn;
-    unsigned long long _wifiOut;
+    }  _has;
+    unsigned int  _numConnections;
+    unsigned long long  _wifiIn;
+    unsigned long long  _wifiOut;
 }
 
 @property (nonatomic, retain) NSString *bundleName;

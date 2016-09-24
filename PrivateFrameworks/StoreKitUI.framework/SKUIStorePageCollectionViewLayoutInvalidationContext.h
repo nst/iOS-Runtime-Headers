@@ -3,7 +3,7 @@
  */
 
 @interface SKUIStorePageCollectionViewLayoutInvalidationContext : UICollectionViewFlowLayoutInvalidationContext {
-    BOOL _invalidateItemPinningLayoutInformation;
+    BOOL  _invalidateItemPinningLayoutInformation;
 }
 
 @property (nonatomic) BOOL invalidateItemPinningLayoutInformation;

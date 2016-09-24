@@ -3,32 +3,32 @@
  */
 
 @interface SKUIEditorDocumentViewController : SKUIViewController <SKUIDocumentViewController, SKUIEditorTemplateViewDelegate> {
-    SKUIButtonViewElement *_doneButtonElement;
-    SKUIEditorTemplateView *_editorView;
-    BOOL _isTextChanged;
+    SKUIButtonViewElement * _doneButtonElement;
+    SKUIEditorTemplateView * _editorView;
+    BOOL  _isTextChanged;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _keyboardFrame;
-    SKUIViewElementLayoutContext *_layoutContext;
-    SKUIButtonViewElement *_resetButtonElement;
-    SKUIEditorTemplateViewElement *_templateElement;
+    }  _keyboardFrame;
+    SKUIViewElementLayoutContext * _layoutContext;
+    SKUIButtonViewElement * _resetButtonElement;
+    SKUIEditorTemplateViewElement * _templateElement;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _toolbarFrame;
+    }  _toolbarFrame;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -62,6 +62,6 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

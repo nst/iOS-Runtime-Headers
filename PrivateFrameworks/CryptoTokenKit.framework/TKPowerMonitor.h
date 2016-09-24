@@ -3,11 +3,11 @@
  */
 
 @interface TKPowerMonitor : NSObject {
-    BOOL _awaken;
-    unsigned int _handle;
-    unsigned int _kernelPort;
-    struct IONotificationPort { } *_portRef;
-    NSObject<OS_dispatch_queue> *_queue;
+    BOOL  _awaken;
+    unsigned int  _handle;
+    unsigned int  _kernelPort;
+    struct IONotificationPort { } * _portRef;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property BOOL awaken;

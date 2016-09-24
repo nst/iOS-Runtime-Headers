@@ -3,8 +3,8 @@
  */
 
 @interface PLAccessibilityAgent : PLAgent {
-    PLCFNotificationOperatorComposition *_notificationBackgroundContrastChanged;
-    PLCFNotificationOperatorComposition *_notificationReduceMotionChanged;
+    PLCFNotificationOperatorComposition * _notificationBackgroundContrastChanged;
+    PLCFNotificationOperatorComposition * _notificationReduceMotionChanged;
 }
 
 @property (readonly) PLCFNotificationOperatorComposition *notificationBackgroundContrastChanged;

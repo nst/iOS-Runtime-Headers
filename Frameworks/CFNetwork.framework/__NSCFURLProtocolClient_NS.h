@@ -3,10 +3,10 @@
  */
 
 @interface __NSCFURLProtocolClient_NS : NSObject <NSURLProtocolClient> {
-    struct URLProtocolClient { int (**x1)(); } *_cf;
-    struct _CFURLAuthChallenge { } *_cfChallenge;
-    NSURLAuthenticationChallenge *_challenge;
-    struct URLProtocol { int (**x1)(); int (**x2)(); int (**x3)(); struct CoreSchedulingSet {} *x4; double x5; unsigned char x6; unsigned char x7; unsigned char x8; unsigned char x9; unsigned char x10; unsigned char x11; unsigned char x12; unsigned char x13; int x14; int x15; struct Throttler {} *x16; id x17; struct _CFURLRequest {} x18; struct URLProtocolClient {} *x19; struct _CFCachedURLResponse {} *x20; } *_prot;
+    struct URLProtocolClient { int (**x1)(); } * _cf;
+    struct _CFURLAuthChallenge { } * _cfChallenge;
+    NSURLAuthenticationChallenge * _challenge;
+    struct URLProtocol { int (**x1)(); int (**x2)(); int (**x3)(); struct CoreSchedulingSet {} *x4; double x5; unsigned char x6; unsigned char x7; unsigned char x8; unsigned char x9; unsigned char x10; unsigned char x11; unsigned char x12; unsigned char x13; int x14; int x15; struct Throttler {} *x16; id x17; struct _CFURLRequest {} x18; struct URLProtocolClient {} *x19; struct _CFCachedURLResponse {} *x20; } * _prot;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -27,5 +27,6 @@
 - (void)dealloc;
 - (id)initWithCFClient:(struct URLProtocolClient { int (**x1)(); }*)arg1 prot:(struct URLProtocol { int (**x1)(); int (**x2)(); int (**x3)(); struct CoreSchedulingSet {} *x4; double x5; unsigned char x6; unsigned char x7; unsigned char x8; unsigned char x9; unsigned char x10; unsigned char x11; unsigned char x12; unsigned char x13; int x14; int x15; struct Throttler {} *x16; id x17; struct _CFURLRequest {} x18; struct URLProtocolClient {} *x19; struct _CFCachedURLResponse {} *x20; }*)arg2;
 - (void)teardown;
+- (void)withCustomProtocolScheduling:(id /* block */)arg1;
 
 @end

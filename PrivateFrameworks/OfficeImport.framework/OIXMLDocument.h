@@ -3,9 +3,9 @@
  */
 
 @interface OIXMLDocument : OIXMLNode {
-    NSString *_encoding;
-    OIXMLElement *_rootElement;
-    NSString *_version;
+    NSString * _encoding;
+    OIXMLElement * _rootElement;
+    NSString * _version;
 }
 
 - (id)XMLString;

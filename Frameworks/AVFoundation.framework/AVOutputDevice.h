@@ -3,10 +3,15 @@
  */
 
 @interface AVOutputDevice : NSObject {
-    AVOutputDeviceInternal *_outputDevice;
+    AVOutputDeviceInternal * _outputDevice;
 }
 
 @property (nonatomic, readonly) NSString *ID;
+@property (nonatomic, readonly) double batteryLevel;
+@property (nonatomic, readonly) int deviceType;
+@property (nonatomic, readonly) BOOL hasBatteryLevel;
+@property (nonatomic, readonly) NSString *modelID;
+@property (nonatomic, readonly) NSDictionary *modelSpecificInformation;
 @property (nonatomic, readonly) NSString *name;
 
 + (id)sharedLocalDevice;
@@ -14,14 +19,20 @@
 - (id)ID;
 - (id)_figEndpointPropertyValueForKey:(struct __CFString { }*)arg1;
 - (id)_weakReference;
+- (float)batteryLevel;
 - (void)dealloc;
+- (id)description;
+- (int)deviceType;
 - (struct OpaqueFigEndpoint { }*)figEndpoint;
 - (void)finalize;
 - (double)frecencyScore;
+- (BOOL)hasBatteryLevel;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithFigEndpoint:(struct OpaqueFigEndpoint { }*)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (id)modelID;
+- (id)modelSpecificInformation;
 - (id)name;
 - (void)setSecondDisplayEnabled:(BOOL)arg1;
 - (void)updateFrecencyScore;

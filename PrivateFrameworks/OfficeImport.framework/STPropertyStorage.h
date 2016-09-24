@@ -3,7 +3,7 @@
  */
 
 @interface STPropertyStorage : NSObject {
-    struct _SsrwPropertyStorage { } *m_pPropertyStorage;
+    struct _SsrwPropertyStorage { } * m_pPropertyStorage;
 }
 
 - (void)close;

@@ -4,47 +4,47 @@
 
 @interface SCNActionTargetState : NSObject {
     struct SCNVector3 { 
-        float x; 
-        float y; 
-        float z; 
-    } euler;
-    float opacity;
+        double x; 
+        double y; 
+        double z; 
+    }  euler;
+    double  opacity;
     struct SCNVector3 { 
-        float x; 
-        float y; 
-        float z; 
-    } position;
+        double x; 
+        double y; 
+        double z; 
+    }  position;
     struct SCNVector4 { 
-        float x; 
-        float y; 
-        float z; 
-        float w; 
-    } rotation;
+        double x; 
+        double y; 
+        double z; 
+        double w; 
+    }  rotation;
     struct SCNVector3 { 
-        float x; 
-        float y; 
-        float z; 
-    } scale;
-    BOOL usesEuler;
+        double x; 
+        double y; 
+        double z; 
+    }  scale;
+    BOOL  usesEuler;
 }
 
-@property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } euler;
-@property (nonatomic) float opacity;
-@property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } position;
-@property (nonatomic) struct SCNVector4 { float x1; float x2; float x3; float x4; } rotation;
-@property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } scale;
+@property (nonatomic) struct SCNVector3 { double x1; double x2; double x3; } euler;
+@property (nonatomic) double opacity;
+@property (nonatomic) struct SCNVector3 { double x1; double x2; double x3; } position;
+@property (nonatomic) struct SCNVector4 { double x1; double x2; double x3; double x4; } rotation;
+@property (nonatomic) struct SCNVector3 { double x1; double x2; double x3; } scale;
 @property (nonatomic) BOOL usesEuler;
 
-- (struct SCNVector3 { float x1; float x2; float x3; })euler;
+- (struct SCNVector3 { double x1; double x2; double x3; })euler;
 - (float)opacity;
-- (struct SCNVector3 { float x1; float x2; float x3; })position;
-- (struct SCNVector4 { float x1; float x2; float x3; float x4; })rotation;
-- (struct SCNVector3 { float x1; float x2; float x3; })scale;
-- (void)setEuler:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
+- (struct SCNVector3 { double x1; double x2; double x3; })position;
+- (struct SCNVector4 { double x1; double x2; double x3; double x4; })rotation;
+- (struct SCNVector3 { double x1; double x2; double x3; })scale;
+- (void)setEuler:(struct SCNVector3 { double x1; double x2; double x3; })arg1;
 - (void)setOpacity:(float)arg1;
-- (void)setPosition:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
-- (void)setRotation:(struct SCNVector4 { float x1; float x2; float x3; float x4; })arg1;
-- (void)setScale:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
+- (void)setPosition:(struct SCNVector3 { double x1; double x2; double x3; })arg1;
+- (void)setRotation:(struct SCNVector4 { double x1; double x2; double x3; double x4; })arg1;
+- (void)setScale:(struct SCNVector3 { double x1; double x2; double x3; })arg1;
 - (void)setUsesEuler:(BOOL)arg1;
 - (BOOL)usesEuler;
 

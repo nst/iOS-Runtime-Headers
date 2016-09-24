@@ -3,15 +3,15 @@
  */
 
 @interface WBSURLCompletionMatchSnapshot : NSObject <NSSecureCoding, _SSURLCompletionMatch> {
-    NSDate *_lastVisitTime;
-    int _matchLocation;
-    BOOL _synthesizedTopHit;
-    NSString *_title;
-    BOOL _topHit;
-    BOOL _topHitDueToTriggerMatch;
-    NSURL *_url;
-    NSString *_userVisibleURLString;
-    int _visitCount;
+    NSDate * _lastVisitTime;
+    int  _matchLocation;
+    BOOL  _synthesizedTopHit;
+    NSString * _title;
+    BOOL  _topHit;
+    BOOL  _topHitDueToTriggerMatch;
+    NSURL * _url;
+    NSString * _userVisibleURLString;
+    int  _visitCount;
 }
 
 @property (readonly, copy) NSString *debugDescription;

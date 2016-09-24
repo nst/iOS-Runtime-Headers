@@ -3,10 +3,10 @@
  */
 
 @interface _UIBackgroundTaskInfo : NSObject {
-    int _count;
-    id /* block */ _expireHandler;
-    BKSProcessAssertion *_processAssertion;
-    unsigned int _taskId;
+    int  _count;
+    id /* block */  _expireHandler;
+    BKSProcessAssertion * _processAssertion;
+    unsigned int  _taskId;
 }
 
 + (id)backgroundTaskAssertionQueue;

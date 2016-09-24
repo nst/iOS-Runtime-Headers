@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptWindowContext : NSObject {
-    int _tag;
+    int  _tag;
 }
 
 @property (readonly) int tag;

@@ -3,8 +3,8 @@
  */
 
 @interface MFStringAccumulator : NSObject {
-    NSString *_immutable;
-    NSMutableString *_mutable;
+    NSString * _immutable;
+    NSMutableString * _mutable;
 }
 
 - (void)appendString:(id)arg1;

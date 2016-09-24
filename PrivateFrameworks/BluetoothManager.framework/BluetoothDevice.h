@@ -3,9 +3,9 @@
  */
 
 @interface BluetoothDevice : NSObject {
-    NSString *_address;
-    struct BTDeviceImpl { } *_device;
-    NSString *_name;
+    NSString * _address;
+    struct BTDeviceImpl { } * _device;
+    NSString * _name;
 }
 
 - (void)_clearName;
@@ -25,22 +25,32 @@
 - (id)description;
 - (struct BTDeviceImpl { }*)device;
 - (void)disconnect;
+- (unsigned int)doubleTapAction;
 - (void)endVoiceCommand;
 - (id)getServiceSetting:(unsigned int)arg1 key:(id)arg2;
+- (BOOL)inEarDetectEnabled;
 - (id)initWithDevice:(struct BTDeviceImpl { }*)arg1 address:(id)arg2;
 - (BOOL)isAccessory;
+- (BOOL)isAppleAudioDevice;
 - (BOOL)isServiceSupported:(unsigned int)arg1;
+- (BOOL)magicPaired;
+- (BOOL)magicPairedDeviceNameUpdated;
 - (unsigned int)majorClass;
+- (unsigned int)micMode;
 - (unsigned int)minorClass;
 - (id)name;
 - (BOOL)paired;
 - (unsigned int)productId;
 - (id)scoUID;
 - (void)setDevice:(struct BTDeviceImpl { }*)arg1;
+- (BOOL)setDoubleTapAction:(unsigned int)arg1;
+- (BOOL)setInEarDetectEnabled:(BOOL)arg1;
+- (BOOL)setMicMode:(unsigned int)arg1;
 - (void)setPIN:(id)arg1;
 - (void)setServiceSetting:(unsigned int)arg1 key:(id)arg2 value:(id)arg3;
 - (void)setSyncGroup:(int)arg1 enabled:(BOOL)arg2;
 - (void)setSyncSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; })arg1;
+- (BOOL)setUserName:(id)arg1;
 - (void)startVoiceCommand;
 - (BOOL)supportsBatteryLevel;
 - (id)syncGroups;

@@ -3,8 +3,8 @@
  */
 
 @interface MRAudioBuffer : NSObject {
-    AVAudioCompressedBuffer *_buffer;
-    NSDictionary *_formatSettings;
+    AVAudioCompressedBuffer * _buffer;
+    NSDictionary * _formatSettings;
 }
 
 @property (nonatomic, readonly) AVAudioCompressedBuffer *buffer;

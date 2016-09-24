@@ -3,12 +3,12 @@
  */
 
 @interface SYStoreSessionOwner : NSObject <SYSessionDelegate> {
-    NSDictionary *_context;
-    id /* block */ _errorCallback;
-    NSDictionary *_idsOptions;
-    id /* block */ _onComplete;
-    SYSession *_session;
-    SYStore *_store;
+    NSDictionary * _context;
+    id /* block */  _errorCallback;
+    NSDictionary * _idsOptions;
+    id /* block */  _onComplete;
+    SYSession * _session;
+    SYStore * _store;
 }
 
 @property (nonatomic, copy) NSDictionary *context;

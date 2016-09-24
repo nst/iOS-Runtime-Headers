@@ -3,13 +3,13 @@
  */
 
 @interface SFAirDropPayload : NSObject {
-    NSURL *_URL;
-    NSData *_data;
-    int _identifer;
-    NSString *_payloadDescription;
-    UIImage *_previewImage;
-    NSString *_type;
-    BOOL _wasString;
+    NSURL * _URL;
+    NSData * _data;
+    int  _identifer;
+    NSString * _payloadDescription;
+    UIImage * _previewImage;
+    NSString * _type;
+    BOOL  _wasString;
 }
 
 @property (nonatomic, copy) NSURL *URL;

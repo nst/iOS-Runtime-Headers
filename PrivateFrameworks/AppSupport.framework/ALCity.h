@@ -3,29 +3,29 @@
  */
 
 @interface ALCity : NSObject {
-    NSString *_countryName;
-    NSString *_countryOverride;
-    int _identifier;
-    NSString *_identifierForCPCity;
-    float _latitude;
-    NSString *_localeCode;
-    BOOL _localizationAttempted;
-    float _longitude;
-    NSString *_name;
-    NSString *_timeZone;
-    NSString *_unlocalizedCountryName;
-    NSString *_unlocalizedCountryOverride;
-    NSString *_unlocalizedName;
-    NSString *_yahooCode;
+    NSString * _countryName;
+    NSString * _countryOverride;
+    int  _identifier;
+    NSString * _identifierForCPCity;
+    double  _latitude;
+    NSString * _localeCode;
+    BOOL  _localizationAttempted;
+    double  _longitude;
+    NSString * _name;
+    NSString * _timeZone;
+    NSString * _unlocalizedCountryName;
+    NSString * _unlocalizedCountryOverride;
+    NSString * _unlocalizedName;
+    NSString * _yahooCode;
 }
 
 @property (nonatomic, readonly) NSString *classicIdentifier;
 @property (nonatomic, retain) NSString *countryName;
 @property (nonatomic, retain) NSString *countryOverride;
 @property (nonatomic) int identifier;
-@property (nonatomic) float latitude;
+@property (nonatomic) double latitude;
 @property (nonatomic, retain) NSString *localeCode;
-@property (nonatomic) float longitude;
+@property (nonatomic) double longitude;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, readonly) NSDictionary *properties;
 @property (nonatomic, retain) NSString *timeZone;

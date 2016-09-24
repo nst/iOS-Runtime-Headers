@@ -3,8 +3,8 @@
  */
 
 @interface SCNActionRunBlock : SCNAction {
-    id /* block */ _block;
-    NSObject<OS_dispatch_queue> *_queue;
+    id /* block */  _block;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 + (id)runBlock:(id /* block */)arg1 queue:(id)arg2;

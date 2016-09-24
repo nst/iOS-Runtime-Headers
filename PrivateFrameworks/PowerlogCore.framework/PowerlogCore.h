@@ -3,12 +3,12 @@
  */
 
 @interface PowerlogCore : NSObject {
-    PLAccountingOperator *_accounting;
-    PLCoreAgent *_agents;
-    NSObject<OS_dispatch_source> *_fVMPressureSource;
-    NSDate *_launchDate;
-    PLCoreService *_services;
-    PLCoreStorage *_storage;
+    PLAccountingOperator * _accounting;
+    PLCoreAgent * _agents;
+    NSObject<OS_dispatch_source> * _fVMPressureSource;
+    NSDate * _launchDate;
+    PLCoreService * _services;
+    PLCoreStorage * _storage;
 }
 
 @property (readonly) PLAccountingOperator *accounting;
@@ -19,6 +19,7 @@
 
 + (BOOL)allowRun;
 + (BOOL)isDebugEnabled;
++ (void)setupCore;
 + (id)sharedCore;
 + (BOOL)sharedCoreStarted;
 

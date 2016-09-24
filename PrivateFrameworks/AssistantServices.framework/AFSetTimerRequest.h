@@ -3,7 +3,7 @@
  */
 
 @interface AFSetTimerRequest : AFSiriRequest {
-    STTimer *_timer;
+    STTimer * _timer;
 }
 
 @property (nonatomic, retain) STTimer *timer;

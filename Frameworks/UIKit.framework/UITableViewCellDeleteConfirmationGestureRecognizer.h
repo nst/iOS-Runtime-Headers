@@ -3,7 +3,7 @@
  */
 
 @interface UITableViewCellDeleteConfirmationGestureRecognizer : UIGestureRecognizer {
-    UIView *_excludedView;
+    UIView * _excludedView;
 }
 
 - (void).cxx_destruct;

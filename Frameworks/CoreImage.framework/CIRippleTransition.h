@@ -3,14 +3,14 @@
  */
 
 @interface CIRippleTransition : CIFilter {
-    CIVector *inputCenter;
-    CIVector *inputExtent;
-    CIImage *inputImage;
-    NSNumber *inputScale;
-    CIImage *inputShadingImage;
-    CIImage *inputTargetImage;
-    NSNumber *inputTime;
-    NSNumber *inputWidth;
+    CIVector * inputCenter;
+    CIVector * inputExtent;
+    CIImage * inputImage;
+    NSNumber * inputScale;
+    CIImage * inputShadingImage;
+    CIImage * inputTargetImage;
+    NSNumber * inputTime;
+    NSNumber * inputWidth;
 }
 
 + (id)customAttributes;

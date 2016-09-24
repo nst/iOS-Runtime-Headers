@@ -3,10 +3,10 @@
  */
 
 @interface HDSQLiteMigrationStep : NSObject {
-    int _finalSchemaVersion;
-    id /* block */ _migrationHandler;
-    BOOL _shouldDisableForeignKeys;
-    int _startingSchemaVersion;
+    int  _finalSchemaVersion;
+    id /* block */  _migrationHandler;
+    BOOL  _shouldDisableForeignKeys;
+    int  _startingSchemaVersion;
 }
 
 @property (nonatomic, readonly) int finalSchemaVersion;

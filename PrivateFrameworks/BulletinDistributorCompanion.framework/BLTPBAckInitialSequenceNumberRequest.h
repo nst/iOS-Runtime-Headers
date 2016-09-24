@@ -3,13 +3,13 @@
  */
 
 @interface BLTPBAckInitialSequenceNumberRequest : PBRequest <NSCopying> {
-    BOOL _assert;
+    BOOL  _assert;
     struct { 
         unsigned int sessionState : 1; 
         unsigned int assert : 1; 
-    } _has;
-    NSData *_sessionIdentifier;
-    unsigned int _sessionState;
+    }  _has;
+    NSData * _sessionIdentifier;
+    unsigned int  _sessionState;
 }
 
 @property (nonatomic) BOOL assert;

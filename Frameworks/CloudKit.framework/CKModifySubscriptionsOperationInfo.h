@@ -3,8 +3,8 @@
  */
 
 @interface CKModifySubscriptionsOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    NSArray *_subscriptionIDsToDelete;
-    NSArray *_subscriptionsToSave;
+    NSArray * _subscriptionIDsToDelete;
+    NSArray * _subscriptionsToSave;
 }
 
 @property (nonatomic, retain) NSArray *subscriptionIDsToDelete;

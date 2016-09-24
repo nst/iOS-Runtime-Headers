@@ -3,12 +3,12 @@
  */
 
 @interface SSErrorHandler : NSObject {
-    SSXPCConnection *_controlConnection;
-    <SSErrorHandlerDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    NSArray *_failureTypes;
-    SSXPCConnection *_observerConnection;
+    SSXPCConnection * _controlConnection;
+    <SSErrorHandlerDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    NSArray * _failureTypes;
+    SSXPCConnection * _observerConnection;
 }
 
 @property <SSErrorHandlerDelegate> *delegate;

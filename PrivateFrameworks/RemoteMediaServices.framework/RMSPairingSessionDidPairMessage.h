@@ -5,10 +5,10 @@
 @interface RMSPairingSessionDidPairMessage : PBCodable <NSCopying> {
     struct { 
         unsigned int sessionIdentifier : 1; 
-    } _has;
-    NSString *_pairingGUID;
-    NSString *_serviceNetworkName;
-    int _sessionIdentifier;
+    }  _has;
+    NSString * _pairingGUID;
+    NSString * _serviceNetworkName;
+    int  _sessionIdentifier;
 }
 
 @property (nonatomic, readonly) BOOL hasPairingGUID;

@@ -3,29 +3,31 @@
  */
 
 @interface UIKeyboardCandidateGridLayout : UICollectionViewLayout {
-    NSArray *_candidateGroups;
-    int _candidatesVisualStyle;
-    NSMutableArray *_cellAttributes;
-    unsigned int _columnsCount;
+    NSArray * _candidateGroups;
+    int  _candidatesVisualStyle;
+    NSMutableArray * _cellAttributes;
+    unsigned int  _columnsCount;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _contentSize;
-    NSSet *_emphasizedCandidates;
-    BOOL _expanded;
-    BOOL _hasSecondaryCandidates;
-    float _headerViewHeight;
-    BOOL _needsLayout;
-    BOOL _needsPaddingForIndexScrubber;
-    NSMutableDictionary *_supplementaryAttributes;
-    BOOL _supportsNumberKeySelection;
+        double width; 
+        double height; 
+    }  _contentSize;
+    NSSet * _emphasizedCandidates;
+    BOOL  _expanded;
+    BOOL  _hasExtensionCandidates;
+    BOOL  _hasSecondaryCandidates;
+    double  _headerViewHeight;
+    BOOL  _needsLayout;
+    BOOL  _needsPaddingForIndexScrubber;
+    BOOL  _padInlineFloatingCanExpand;
+    NSMutableDictionary * _supplementaryAttributes;
+    BOOL  _supportsNumberKeySelection;
     struct { 
         unsigned int idiom : 6; 
         unsigned int landscape : 1; 
         unsigned int split : 1; 
         unsigned int appearance : 8; 
         unsigned int rendering : 16; 
-    } _visualStyling;
+    }  _visualStyling;
 }
 
 @property (nonatomic, retain) NSArray *candidateGroups;
@@ -34,12 +36,14 @@
 @property (nonatomic) unsigned int columnsCount;
 @property (nonatomic, retain) NSSet *emphasizedCandidates;
 @property (nonatomic) BOOL expanded;
-@property (nonatomic, readonly) float groupBarWidth;
+@property (nonatomic, readonly) double groupBarWidth;
+@property (nonatomic) BOOL hasExtensionCandidates;
 @property (nonatomic) BOOL hasSecondaryCandidates;
-@property (nonatomic) float headerViewHeight;
+@property (nonatomic) double headerViewHeight;
 @property (nonatomic) BOOL needsLayout;
 @property (nonatomic) BOOL needsPaddingForIndexScrubber;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } rowSize;
+@property (nonatomic) BOOL padInlineFloatingCanExpand;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } rowSize;
 @property (nonatomic, retain) NSMutableDictionary *supplementaryAttributes;
 @property (nonatomic) BOOL supportsNumberKeySelection;
 @property (nonatomic) struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
@@ -48,24 +52,25 @@
 + (id)layout;
 + (Class)layoutAttributesClass;
 
-- (id)attributesWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)attributesWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)candidateGroups;
 - (int)candidatesVisualStyle;
 - (id)cellAttributes;
-- (struct CGSize { float x1; float x2; })collectionViewContentSize;
+- (struct CGSize { double x1; double x2; })collectionViewContentSize;
 - (unsigned int)columnsCount;
 - (void)dealloc;
 - (id)emphasizedCandidates;
 - (BOOL)expanded;
-- (void)finishLayoutForRowWithAttributes:(id)arg1 minimumCellWidth:(float)arg2 remainingWidth:(float)arg3 rowOrigin:(struct CGPoint { float x1; float x2; })arg4 isFirstRow:(BOOL)arg5 isLastRow:(BOOL)arg6 zIndex:(int)arg7;
+- (void)finishLayoutForRowWithAttributes:(id)arg1 minimumCellWidth:(float)arg2 remainingWidth:(float)arg3 rowOrigin:(struct CGPoint { double x1; double x2; })arg4 isFirstRow:(BOOL)arg5 isLastRow:(BOOL)arg6 zIndex:(int)arg7;
 - (void)getGroupBarWidth:(float*)arg1 headerAttributes:(id*)arg2;
 - (float)groupBarWidth;
+- (BOOL)hasExtensionCandidates;
 - (BOOL)hasSecondaryCandidates;
 - (float)headerViewHeight;
 - (id)init;
 - (void)invalidateLayout;
 - (id)layoutAttributesForCandidateIndexPath:(id)arg1;
-- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (BOOL)needsLayout;
@@ -74,23 +79,26 @@
 - (unsigned int)numberOfCandidateSections;
 - (unsigned int)numberOfItemsInSection:(int)arg1;
 - (unsigned int)numberOfSections;
+- (BOOL)padInlineFloatingCanExpand;
 - (void)prepareLayout;
 - (id)previousCandidateIndexPathFromIndexPath:(id)arg1;
-- (struct CGSize { float x1; float x2; })rowSize;
+- (struct CGSize { double x1; double x2; })rowSize;
 - (void)setCandidateGroups:(id)arg1;
 - (void)setCandidatesVisualStyle:(int)arg1;
 - (void)setCellAttributes:(id)arg1;
 - (void)setColumnsCount:(unsigned int)arg1;
 - (void)setEmphasizedCandidates:(id)arg1;
 - (void)setExpanded:(BOOL)arg1;
+- (void)setHasExtensionCandidates:(BOOL)arg1;
 - (void)setHasSecondaryCandidates:(BOOL)arg1;
 - (void)setHeaderViewHeight:(float)arg1;
 - (void)setNeedsLayout:(BOOL)arg1;
 - (void)setNeedsPaddingForIndexScrubber:(BOOL)arg1;
+- (void)setPadInlineFloatingCanExpand:(BOOL)arg1;
 - (void)setSupplementaryAttributes:(id)arg1;
 - (void)setSupportsNumberKeySelection:(BOOL)arg1;
 - (void)setVisualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1;
-- (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)supplementaryAttributes;
 - (BOOL)supportsNumberKeySelection;
 - (struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })visualStyling;

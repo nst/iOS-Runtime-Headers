@@ -3,9 +3,9 @@
  */
 
 @interface _SKUIViewElementTextLayoutCacheBestGuessCacheKey : NSObject {
-    UIFont *_font;
-    NSString *_text;
-    int _width;
+    UIFont * _font;
+    NSString * _text;
+    int  _width;
 }
 
 @property (nonatomic, retain) UIFont *font;

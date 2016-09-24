@@ -4,8 +4,13 @@
 
 @interface TSUAssertionHandler : NSObject
 
-+ (void)handleFailureInFunction:(id)arg1 file:(id)arg2 lineNumber:(int)arg3 description:(id)arg4;
++ (int)_atomicIncrementAssertCount;
++ (void)handleFailureInFunction:(id)arg1 file:(id)arg2 lineNumber:(int)arg3 isFatal:(BOOL)arg4 description:(const char *)arg5;
 + (void)logBacktrace;
++ (void)logBacktraceThrottled;
++ (id)p_performBlockIgnoringAssertions:(id /* block */)arg1 onlyFatal:(BOOL)arg2;
 + (id)performBlockIgnoringAssertions:(id /* block */)arg1;
++ (id)performBlockIgnoringFatalAssertions:(id /* block */)arg1;
++ (void)simulateCrashWithMessage:(id)arg1;
 
 @end

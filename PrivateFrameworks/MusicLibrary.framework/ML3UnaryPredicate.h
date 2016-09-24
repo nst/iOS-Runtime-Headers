@@ -3,7 +3,7 @@
  */
 
 @interface ML3UnaryPredicate : ML3Predicate {
-    ML3Predicate *_predicate;
+    ML3Predicate * _predicate;
 }
 
 @property (nonatomic, retain) ML3Predicate *predicate;

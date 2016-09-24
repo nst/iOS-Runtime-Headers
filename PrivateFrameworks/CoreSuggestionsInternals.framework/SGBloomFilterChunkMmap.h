@@ -3,10 +3,11 @@
  */
 
 @interface SGBloomFilterChunkMmap : NSObject <SGBloomFilterChunk> {
-    char *_buf;
-    unsigned int *_countPtr;
-    int _fd;
-    NSString *_path;
+    char * _buf;
+    unsigned int * _countPtr;
+    int  _fd;
+    unsigned int  _mask;
+    NSString * _path;
 }
 
 @property (nonatomic, readonly) unsigned int count;
@@ -17,11 +18,11 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)add:(union { unsigned long long x1; union { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })arg1;
+- (void)add:(union { unsigned int x1; union { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })arg1;
 - (void)close;
 - (unsigned int)count;
 - (void)dealloc;
-- (BOOL)exists:(union { unsigned long long x1; union { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })arg1;
+- (BOOL)exists:(union { unsigned int x1; union { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })arg1;
 - (id)init;
 - (id)initWithPath:(id)arg1;
 - (id)path;

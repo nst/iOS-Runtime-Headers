@@ -3,14 +3,14 @@
  */
 
 @interface ICSearchIndexer : NSObject <CSSearchableIndexDelegate> {
-    ICSelectorDelayer *_changeProcessingDelayer;
-    NSDictionary *_dataSourcesByIdentifier;
-    NSObject<OS_dispatch_queue> *_indexingQueue;
-    BOOL _observingChanges;
-    NSOperationQueue *_operationQueue;
-    BOOL _retryOnErrors;
-    NSMutableDictionary *_retryTimers;
-    CSSearchableIndex *_searchableIndex;
+    ICSelectorDelayer * _changeProcessingDelayer;
+    NSDictionary * _dataSourcesByIdentifier;
+    NSObject<OS_dispatch_queue> * _indexingQueue;
+    BOOL  _observingChanges;
+    NSOperationQueue * _operationQueue;
+    BOOL  _retryOnErrors;
+    NSMutableDictionary * _retryTimers;
+    CSSearchableIndex * _searchableIndex;
 }
 
 @property (nonatomic, retain) ICSelectorDelayer *changeProcessingDelayer;

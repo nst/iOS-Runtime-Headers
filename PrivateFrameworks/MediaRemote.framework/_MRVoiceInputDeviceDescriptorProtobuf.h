@@ -3,13 +3,15 @@
  */
 
 @interface _MRVoiceInputDeviceDescriptorProtobuf : PBCodable <NSCopying> {
-    _MRAudioFormatSettingsProtobuf *_defaultFormat;
-    NSMutableArray *_supportedFormats;
+    _MRAudioFormatSettingsProtobuf * _defaultFormat;
+    NSMutableArray * _supportedFormats;
 }
 
 @property (nonatomic, retain) _MRAudioFormatSettingsProtobuf *defaultFormat;
 @property (nonatomic, readonly) BOOL hasDefaultFormat;
 @property (nonatomic, retain) NSMutableArray *supportedFormats;
+
++ (Class)supportedFormatsType;
 
 - (void)addSupportedFormats:(id)arg1;
 - (void)clearSupportedFormats;

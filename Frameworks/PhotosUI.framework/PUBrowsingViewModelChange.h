@@ -3,38 +3,36 @@
  */
 
 @interface PUBrowsingViewModelChange : PUViewModelChange {
-    BOOL _assetsDataSourceDidChange;
-    BOOL _browsingSpeedRegimeDidChange;
-    BOOL _chromeVisibilityDidChange;
-    BOOL _commentsVisibilityDidChange;
-    BOOL _currentAssetDidChange;
-    BOOL _currentAssetTransitionProgressDidChange;
-    BOOL _isAnimatingAnyTransitionDidChange;
-    BOOL _isScrollingDidChange;
-    BOOL _isScrubbingDidChange;
-    NSMapTable *_mutableSharedViewModelChangesByAsset;
-    NSMutableDictionary *_mutableViewModelChangesByAssetReference;
-    BOOL _presentingOverOneUpDidChange;
-    BOOL _secondScreenSizeDidChange;
-    BOOL _transitionDriverIdentifierDidChange;
+    BOOL  _assetsDataSourceDidChange;
+    BOOL  _browsingSpeedRegimeDidChange;
+    BOOL  _chromeVisibilityDidChange;
+    BOOL  _currentAssetDidChange;
+    BOOL  _currentAssetTransitionProgressDidChange;
+    BOOL  _isAnimatingAnyTransitionDidChange;
+    BOOL  _isScrollingDidChange;
+    BOOL  _isScrubbingDidChange;
+    NSMapTable * _mutableSharedViewModelChangesByAsset;
+    NSMutableDictionary * _mutableViewModelChangesByAssetReference;
+    BOOL  _presentingOverOneUpDidChange;
+    BOOL  _secondScreenSizeDidChange;
+    BOOL  _transitionDriverIdentifierDidChange;
 }
 
 @property (nonatomic, readonly) NSMapTable *_mutableSharedViewModelChangesByAsset;
 @property (nonatomic, readonly) NSMutableDictionary *_mutableViewModelChangesByAssetReference;
 @property (nonatomic, readonly) NSMapTable *assetSharedViewModelChangesByAsset;
 @property (nonatomic, readonly) NSDictionary *assetViewModelChangesByAssetReference;
-@property (nonatomic) BOOL assetsDataSourceDidChange;
-@property (nonatomic) BOOL browsingSpeedRegimeDidChange;
-@property (nonatomic) BOOL chromeVisibilityDidChange;
-@property (nonatomic) BOOL commentsVisibilityDidChange;
-@property (nonatomic) BOOL currentAssetDidChange;
-@property (nonatomic) BOOL currentAssetTransitionProgressDidChange;
-@property (nonatomic) BOOL isAnimatingAnyTransitionDidChange;
-@property (nonatomic) BOOL isScrollingDidChange;
-@property (nonatomic) BOOL isScrubbingDidChange;
-@property (nonatomic) BOOL presentingOverOneUpDidChange;
-@property (nonatomic) BOOL secondScreenSizeDidChange;
-@property (nonatomic) BOOL transitionDriverIdentifierDidChange;
+@property (setter=_setAssetsDataSourceDidChange:, nonatomic) BOOL assetsDataSourceDidChange;
+@property (setter=_setBrowsingSpeedRegimeDidChange:, nonatomic) BOOL browsingSpeedRegimeDidChange;
+@property (setter=_setChromeVisibilityDidChange:, nonatomic) BOOL chromeVisibilityDidChange;
+@property (setter=_setCurrentAssetDidChange:, nonatomic) BOOL currentAssetDidChange;
+@property (setter=_setCurrentAssetTransitionProgressDidChange:, nonatomic) BOOL currentAssetTransitionProgressDidChange;
+@property (setter=_setAnimatingAnyTransitionDidChange:, nonatomic) BOOL isAnimatingAnyTransitionDidChange;
+@property (setter=_setIsScrollingDidChange:, nonatomic) BOOL isScrollingDidChange;
+@property (setter=_setIsScrubbingDidChange:, nonatomic) BOOL isScrubbingDidChange;
+@property (setter=_setPresentingOverOneUpDidChange:, nonatomic) BOOL presentingOverOneUpDidChange;
+@property (setter=_setSecondScreenSizeDidChange:, nonatomic) BOOL secondScreenSizeDidChange;
+@property (setter=_setTransitionDriverIdentifierDidChange:, nonatomic) BOOL transitionDriverIdentifierDidChange;
 
 - (void).cxx_destruct;
 - (id)_mutableSharedViewModelChangesByAsset;
@@ -43,7 +41,6 @@
 - (void)_setAssetsDataSourceDidChange:(BOOL)arg1;
 - (void)_setBrowsingSpeedRegimeDidChange:(BOOL)arg1;
 - (void)_setChromeVisibilityDidChange:(BOOL)arg1;
-- (void)_setCommentsVisibilityDidChange:(BOOL)arg1;
 - (void)_setCurrentAssetDidChange:(BOOL)arg1;
 - (void)_setCurrentAssetTransitionProgressDidChange:(BOOL)arg1;
 - (void)_setIsScrollingDidChange:(BOOL)arg1;
@@ -56,7 +53,6 @@
 - (BOOL)assetsDataSourceDidChange;
 - (BOOL)browsingSpeedRegimeDidChange;
 - (BOOL)chromeVisibilityDidChange;
-- (BOOL)commentsVisibilityDidChange;
 - (BOOL)currentAssetDidChange;
 - (BOOL)currentAssetTransitionProgressDidChange;
 - (BOOL)hasChanges;

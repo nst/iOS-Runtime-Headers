@@ -15,7 +15,7 @@
 - (BOOL)_remapRecord:(id)arg1 inBatch:(id)arg2 error:(id*)arg3;
 - (BOOL)addRecord:(id)arg1 isFinal:(BOOL)arg2 error:(id*)arg3;
 - (id)allRecordsIsFinal:(BOOL)arg1;
-- (BOOL)applyBatch:(id)arg1 isFinal:(BOOL)arg2 withError:(id*)arg3;
+- (BOOL)applyBatch:(id)arg1 isFinal:(BOOL)arg2 direction:(unsigned int)arg3 withError:(id*)arg4;
 - (Class)classOfRecordsForInitialQuery;
 - (id)cloudChangeBatchFromBatch:(id)arg1 usingMapping:(id)arg2 isFinal:(BOOL)arg3 withError:(id*)arg4;
 - (BOOL)commitStagedChangesWithError:(id*)arg1;

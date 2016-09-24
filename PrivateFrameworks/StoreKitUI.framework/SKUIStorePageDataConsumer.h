@@ -3,7 +3,7 @@
  */
 
 @interface SKUIStorePageDataConsumer : SSVURLDataConsumer {
-    Class _storePageClass;
+    Class  _storePageClass;
 }
 
 @property (nonatomic) Class storePageClass;

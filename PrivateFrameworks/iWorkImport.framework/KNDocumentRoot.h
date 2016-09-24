@@ -3,12 +3,12 @@
  */
 
 @interface KNDocumentRoot : TSADocumentRoot <TSKModel, TSTResolverContainerNameProvider> {
-    BOOL _isShowcastAllowed;
-    BOOL mIsObservingRecording;
-    KNRecordingSyncMaintainer *mRecordingSyncMaintainer;
-    KNShow *mShow;
-    KNSlidePreviewManager *mSlidePreviewManager;
-    KNThumbnailManager *mThumbnailManager;
+    BOOL  _isShowcastAllowed;
+    BOOL  mIsObservingRecording;
+    KNRecordingSyncMaintainer * mRecordingSyncMaintainer;
+    KNShow * mShow;
+    KNSlidePreviewManager * mSlidePreviewManager;
+    KNThumbnailManager * mThumbnailManager;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -24,7 +24,7 @@
 
 - (id)UIStateForChart:(id)arg1;
 - (unsigned int)applicationType;
-- (void)changeShowSizeTo:(struct CGSize { float x1; float x2; })arg1;
+- (void)changeShowSizeTo:(struct CGSize { double x1; double x2; })arg1;
 - (id)childEnumerator;
 - (int)compareLocationSortingInfo:(id)arg1 toSortingInfo:(id)arg2;
 - (id)createViewStateRootForContinuation:(BOOL)arg1;

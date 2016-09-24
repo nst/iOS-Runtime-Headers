@@ -3,14 +3,14 @@
  */
 
 @interface MPMusicPlayerControllerServerInternal : MPServerObject <MPMusicPlayerController> {
-    int _activeClientPID;
-    NSMutableArray *_clientPorts;
-    NSMutableDictionary *_clientPortsForPIDs;
-    NSMutableDictionary *_clientStateForPIDs;
-    <MPMusicPlayerControllerServerDelegate> *_delegate;
-    MPMusicPlayerControllerServer *_musicPlayerServer;
-    unsigned int _queuePrepared;
-    MPVideoViewController *_videoViewController;
+    int  _activeClientPID;
+    NSMutableArray * _clientPorts;
+    NSMutableDictionary * _clientPortsForPIDs;
+    NSMutableDictionary * _clientStateForPIDs;
+    <MPMusicPlayerControllerServerDelegate> * _delegate;
+    MPMusicPlayerControllerServer * _musicPlayerServer;
+    unsigned int  _queuePrepared;
+    MPVideoViewController * _videoViewController;
 }
 
 + (BOOL)_canSeedGeniusWithItem:(id)arg1;
@@ -84,6 +84,7 @@
 - (void)setShuffleMode:(id)arg1;
 - (void)setUseApplicationSpecificQueue:(id)arg1;
 - (void)setUserQueueModificationsDisabled:(id)arg1;
+- (BOOL)shouldDelayInvocation:(id)arg1;
 - (void)shuffle;
 - (id)shuffleMode;
 - (id)skipInDirection:(id)arg1;

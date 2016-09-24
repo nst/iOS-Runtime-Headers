@@ -3,11 +3,11 @@
  */
 
 @interface MusicCloudGeniusMixPlaybackContext : MusicQueryPlaybackContext <MPShuffleControllerDataSource, MusicGeniusMixQueueFeederDataSource> {
-    BOOL _hasValidQueryItems;
-    MPMediaPlaylist *_mixPlaylist;
-    NSArray *_queryItems;
-    MPMediaItem *_requiredInitialMediaItem;
-    MPShuffleController *_shuffleController;
+    BOOL  _hasValidQueryItems;
+    MPMediaPlaylist * _mixPlaylist;
+    NSArray * _queryItems;
+    MPMediaItem * _requiredInitialMediaItem;
+    MPShuffleController * _shuffleController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

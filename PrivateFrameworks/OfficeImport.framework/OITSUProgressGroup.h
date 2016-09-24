@@ -3,9 +3,9 @@
  */
 
 @interface OITSUProgressGroup : OITSUProgress {
-    NSArray *mChildren;
-    NSArray *mChildrenProgressObservers;
-    NSObject<OS_dispatch_queue> *mChildrenProgressObserversQueue;
+    NSArray * mChildren;
+    NSArray * mChildrenProgressObservers;
+    NSObject<OS_dispatch_queue> * mChildrenProgressObserversQueue;
 }
 
 - (id)addProgressObserverWithValueInterval:(double)arg1 queue:(id)arg2 handler:(id /* block */)arg3;

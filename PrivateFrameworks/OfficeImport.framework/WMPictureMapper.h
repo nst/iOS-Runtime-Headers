@@ -3,7 +3,7 @@
  */
 
 @interface WMPictureMapper : CMDrawableMapper {
-    WDPicture *wdPicture;
+    WDPicture * wdPicture;
 }
 
 - (id)initWithWDPicture:(id)arg1 parent:(id)arg2;

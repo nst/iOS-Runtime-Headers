@@ -3,10 +3,10 @@
  */
 
 @interface SSVMediaSocialPostExternalDestination : NSObject <NSCopying, SSXPCCoding> {
-    NSString *_accessToken;
-    NSString *_pageAccessToken;
-    NSString *_pageIdentifier;
-    NSString *_serviceIdentifier;
+    NSString * _accessToken;
+    NSString * _pageAccessToken;
+    NSString * _pageIdentifier;
+    NSString * _serviceIdentifier;
 }
 
 @property (nonatomic, copy) NSString *accessToken;

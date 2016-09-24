@@ -10,18 +10,25 @@
 @optional
 
 - (NSIndexSet *)PINEntrySeparatorIndexes;
+- (BOOL)acceptsDictationSearchResults;
 - (BOOL)acceptsEmoji;
 - (BOOL)acceptsFloatingKeyboard;
 - (BOOL)acceptsSplitKeyboard;
 - (NSString *)autocorrectionContext;
 - (BOOL)contentsIsSingleValue;
 - (BOOL)deferBecomingResponder;
+- (BOOL)disableInputBars;
 - (BOOL)disablePrediction;
 - (BOOL)displaySecureEditsUsingPlainText;
 - (BOOL)displaySecureTextUsingPlainText;
 - (int)emptyContentReturnKeyType;
 - (BOOL)enablesReturnKeyOnNonWhiteSpaceContent;
+- (BOOL)forceDefaultDictationInfo;
+- (int)forceDictationKeyboardType;
+- (BOOL)forceDisableDictation;
 - (BOOL)forceEnableDictation;
+- (BOOL)hasDefaultContents;
+- (UIInputContextHistory *)inputContextHistory;
 - (UIColor *)insertionPointColor;
 - (unsigned int)insertionPointWidth;
 - (BOOL)isCarPlayIdiom;
@@ -33,18 +40,25 @@
 - (UIColor *)selectionBarColor;
 - (UIImage *)selectionDragDotImage;
 - (UIColor *)selectionHighlightColor;
+- (void)setAcceptsDictationSearchResults:(BOOL)arg1;
 - (void)setAcceptsEmoji:(BOOL)arg1;
 - (void)setAcceptsFloatingKeyboard:(BOOL)arg1;
 - (void)setAcceptsSplitKeyboard:(BOOL)arg1;
 - (void)setAutocorrectionContext:(NSString *)arg1;
 - (void)setContentsIsSingleValue:(BOOL)arg1;
 - (void)setDeferBecomingResponder:(BOOL)arg1;
+- (void)setDisableInputBars:(BOOL)arg1;
 - (void)setDisablePrediction:(BOOL)arg1;
 - (void)setDisplaySecureEditsUsingPlainText:(BOOL)arg1;
 - (void)setDisplaySecureTextUsingPlainText:(BOOL)arg1;
 - (void)setEmptyContentReturnKeyType:(int)arg1;
 - (void)setEnablesReturnKeyOnNonWhiteSpaceContent:(BOOL)arg1;
+- (void)setForceDefaultDictationInfo:(BOOL)arg1;
+- (void)setForceDictationKeyboardType:(int)arg1;
+- (void)setForceDisableDictation:(BOOL)arg1;
 - (void)setForceEnableDictation:(BOOL)arg1;
+- (void)setHasDefaultContents:(BOOL)arg1;
+- (void)setInputContextHistory:(UIInputContextHistory *)arg1;
 - (void)setInsertionPointColor:(UIColor *)arg1;
 - (void)setInsertionPointWidth:(unsigned int)arg1;
 - (void)setIsCarPlayIdiom:(BOOL)arg1;
@@ -60,6 +74,7 @@
 - (void)setShortcutConversionType:(int)arg1;
 - (void)setSuppressReturnKeyStyling:(BOOL)arg1;
 - (void)setTextLoupeVisibility:(int)arg1;
+- (void)setTextScriptType:(int)arg1;
 - (void)setTextSelectionBehavior:(int)arg1;
 - (void)setTextSuggestionDelegate:(id)arg1;
 - (void)setTextTrimmingSet:(struct __CFCharacterSet { }*)arg1;
@@ -68,6 +83,7 @@
 - (int)shortcutConversionType;
 - (BOOL)suppressReturnKeyStyling;
 - (int)textLoupeVisibility;
+- (int)textScriptType;
 - (int)textSelectionBehavior;
 - (id)textSuggestionDelegate;
 - (struct __CFCharacterSet { }*)textTrimmingSet;

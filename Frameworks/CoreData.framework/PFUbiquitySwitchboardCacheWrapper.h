@@ -3,19 +3,19 @@
  */
 
 @interface PFUbiquitySwitchboardCacheWrapper : NSObject {
-    BOOL _allowSchedulingOfReceiptFileWrites;
-    PFUbiquityKnowledgeVector *_baselineKV;
-    PFUbiquityGlobalObjectIDCache *_globalIDCache;
-    PFUbiquityKnowledgeVector *_kv;
-    NSString *_localPeerID;
-    PFUbiquityPeerRangeCache *_peerRangeCache;
-    PFUbiquityPeerReceipt *_peerReceipt;
-    BOOL _pendingReceiptWrite;
-    NSLock *_receiptFileLock;
-    NSString *_storeName;
-    PFUbiquityTransactionHistoryCache *_transactionHistoryCache;
-    PFUbiquityTransactionLogCache *_transactionLogCache;
-    PFUbiquityLocation *_ubiquityRootLocation;
+    BOOL  _allowSchedulingOfReceiptFileWrites;
+    PFUbiquityKnowledgeVector * _baselineKV;
+    PFUbiquityGlobalObjectIDCache * _globalIDCache;
+    PFUbiquityKnowledgeVector * _kv;
+    NSString * _localPeerID;
+    PFUbiquityPeerRangeCache * _peerRangeCache;
+    PFUbiquityPeerReceipt * _peerReceipt;
+    BOOL  _pendingReceiptWrite;
+    NSLock * _receiptFileLock;
+    NSString * _storeName;
+    PFUbiquityTransactionHistoryCache * _transactionHistoryCache;
+    PFUbiquityTransactionLogCache * _transactionLogCache;
+    PFUbiquityLocation * _ubiquityRootLocation;
 }
 
 @property (retain) PFUbiquityKnowledgeVector *baselineKV;

@@ -3,8 +3,8 @@
  */
 
 @interface TPSectionHint : NSObject {
-    unsigned int _documentStartPageIndex;
-    NSMutableArray *_pageHints;
+    unsigned int  _documentStartPageIndex;
+    NSMutableArray * _pageHints;
 }
 
 @property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } documentPageRange;

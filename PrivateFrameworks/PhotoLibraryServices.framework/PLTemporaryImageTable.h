@@ -3,11 +3,11 @@
  */
 
 @interface PLTemporaryImageTable : NSObject {
-    int _imageFormat;
-    PLImageTable *_imageTable;
-    NSString *_imageTablePath;
-    NSMutableArray *_itemIndexToThumbEntryMapping;
-    unsigned int _nextTableEntryIndex;
+    int  _imageFormat;
+    PLImageTable * _imageTable;
+    NSString * _imageTablePath;
+    NSMutableArray * _itemIndexToThumbEntryMapping;
+    unsigned int  _nextTableEntryIndex;
 }
 
 - (void)_cleanup;

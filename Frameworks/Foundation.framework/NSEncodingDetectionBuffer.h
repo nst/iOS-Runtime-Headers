@@ -3,13 +3,13 @@
  */
 
 @interface NSEncodingDetectionBuffer : NSObject {
-    char *_bytes;
-    BOOL _bytesAllocated;
-    unsigned long _bytesIndex;
-    unsigned long _bytesLength;
-    unsigned long _cfEncoding;
-    unsigned int _nsEncoding;
-    NSEncodingDetectionPlaceholder *_placeholder;
+    char * _bytes;
+    BOOL  _bytesAllocated;
+    unsigned long  _bytesIndex;
+    unsigned long  _bytesLength;
+    unsigned long  _cfEncoding;
+    unsigned int  _nsEncoding;
+    NSEncodingDetectionPlaceholder * _placeholder;
 }
 
 - (BOOL)_growBufferIfNeededToAccomodateByteCount:(unsigned long)arg1;
@@ -22,7 +22,6 @@
 - (void)appendUTF16Char:(unsigned short)arg1;
 - (void)appendUTF32Char:(unsigned long)arg1;
 - (void)dealloc;
-- (void)finalize;
 - (id)initWithNSStringEncoding:(unsigned int)arg1 CFStringEncoding:(unsigned long)arg2 stackBuffer:(char *)arg3 bufferLength:(unsigned long)arg4 placeholder:(id)arg5;
 - (id)stringWithLossySubsitutionString:(id)arg1;
 

@@ -3,7 +3,7 @@
  */
 
 @interface CATTaskMessageStart : CATTaskMessage {
-    CATTaskRequest *_request;
+    CATTaskRequest * _request;
 }
 
 @property (nonatomic, retain) CATTaskRequest *request;

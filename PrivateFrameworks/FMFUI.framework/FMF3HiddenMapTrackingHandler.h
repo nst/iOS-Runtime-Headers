@@ -3,8 +3,8 @@
  */
 
 @interface FMF3HiddenMapTrackingHandler : NSObject <MKMapViewDelegate> {
-    <FMF3HiddenMapTrackingHandlerDelegate> *_delegate;
-    MKMapView *_hiddenMapView;
+    <FMF3HiddenMapTrackingHandlerDelegate> * _delegate;
+    MKMapView * _hiddenMapView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

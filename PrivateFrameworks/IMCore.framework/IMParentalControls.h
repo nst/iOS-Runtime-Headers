@@ -3,16 +3,16 @@
  */
 
 @interface IMParentalControls : NSObject {
-    BOOL _active;
-    BOOL _disableAV;
-    BOOL _forceChatLogging;
-    NSMutableDictionary *_parentalControls;
-    BOOL _shouldPostNotifications;
+    BOOL  _active;
+    BOOL  _disableAV;
+    BOOL  _forceChatLogging;
+    NSMutableDictionary * _parentalControls;
+    BOOL  _shouldPostNotifications;
 }
 
 @property (nonatomic, readonly) BOOL _disableAV;
 @property (nonatomic, readonly) BOOL _forceChatLogging;
-@property (nonatomic, readonly, retain) NSMutableDictionary *_parentalControls;
+@property (nonatomic, readonly) NSMutableDictionary *_parentalControls;
 @property (nonatomic, readonly) BOOL active;
 @property (nonatomic, readonly) BOOL disableAV;
 @property (nonatomic, readonly) BOOL forceChatLogging;
@@ -21,6 +21,7 @@
 + (id)objectForKey:(id)arg1;
 + (id)standardControls;
 
+- (void).cxx_destruct;
 - (BOOL)_disableAV;
 - (BOOL)_forceChatLogging;
 - (void)_managedPrefsNotification:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface SSSoftwareLibrary : NSObject {
-    SSXPCConnection *_connection;
+    SSXPCConnection * _connection;
 }
 
 - (void).cxx_destruct;
@@ -15,6 +15,7 @@
 - (void)getRemovableSytemApplicationsWithCompletionBlock:(id /* block */)arg1;
 - (void)hasDemotedApplicationsWithCompletionBlock:(id /* block */)arg1;
 - (id)init;
+- (void)isInstalledApplicationWithBundleIdentifier:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)isRemovedSystemApplicationWithBundleIdentifier:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)refreshReceiptsWithCompletionBlock:(id /* block */)arg1;
 - (void)restoreAllDemotedApplicationsWithOptions:(id)arg1 completionBlock:(id /* block */)arg2;

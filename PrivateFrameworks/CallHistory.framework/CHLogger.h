@@ -3,46 +3,10 @@
  */
 
 @interface CHLogger : NSObject <CHLoggerProtocol> {
-    struct StaticLogger { 
-        struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { 
-            struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { 
-                struct __rep { 
-                    union { 
-                        struct __long { 
-                            unsigned int __cap_; 
-                            unsigned int __size_; 
-                            char *__data_; 
-                        } __l; 
-                        struct __short { 
-                            union { 
-                                unsigned char __size_; 
-                                BOOL __lx; 
-                            } ; 
-                            BOOL __data_[11]; 
-                        } __s; 
-                        struct __raw { 
-                            unsigned long __words[3]; 
-                        } __r; 
-                    } ; 
-                } __first_; 
-            } __r_; 
-        } fLogDomain; 
-        unsigned char fLogLevel; 
-        unsigned char fParentLevel; 
-        struct shared_ptr<ctu::LogServer> { 
-            struct LogServer {} *__ptr_; 
-            struct __shared_weak_count {} *__cntrl_; 
-        } fServer; 
-    } _logger;
+    struct os_log_s { } * _logHandle;
 }
 
-+ (void)logWithLevel:(unsigned char)arg1 logger:(struct LoggerBase<std::__1::shared_ptr<ctu::LogServer> > { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_1_1_1; } x1; unsigned char x2; unsigned char x3; struct shared_ptr<ctu::LogServer> { struct LogServer {} *x_4_1_1; struct __shared_weak_count {} *x_4_1_2; } x4; }*)arg2 format:(id)arg3 argList:(void*)arg4;
-
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (id)initWithDomain:(id)arg1;
-- (void)logWithLevel:(unsigned int)arg1 withFormat:(id)arg2;
-- (void)logWithLevel:(unsigned int)arg1 withFormat:(id)arg2 withArgs:(void*)arg3;
-- (BOOL)shouldLogForLevel:(unsigned int)arg1;
+- (id)initWithDomain:(const char *)arg1;
+- (struct os_log_s { }*)logHandle;
 
 @end

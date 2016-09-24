@@ -3,14 +3,15 @@
  */
 
 @interface PLArchiveEntry : PLEntry {
-    BOOL _systemTimeOffsetModified;
+    NSString * _crPath;
+    BOOL  _systemTimeOffsetModified;
 }
 
 @property (nonatomic, readonly) NSString *compressedPath;
 @property (nonatomic, readonly) NSString *crPath;
 @property (readonly) NSDate *endDate;
 @property (readonly) BOOL fullMode;
-@property (nonatomic) long long mainDBSizeAtStart;
+@property (nonatomic) int mainDBSizeAtStart;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic) unsigned int numAttempts;
 @property (nonatomic, readonly) NSString *path;
@@ -28,6 +29,7 @@
 + (void)load;
 + (id)storageQueue;
 
+- (void).cxx_destruct;
 - (id)compressedPath;
 - (id)crPath;
 - (id)endDate;
@@ -35,15 +37,14 @@
 - (id)initEntryWithRawData:(id)arg1;
 - (id)initWithMetadata:(id)arg1;
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2 andUUID:(id)arg3;
-- (void)linkToCR;
 - (void)log;
-- (long long)mainDBSizeAtStart;
+- (int)mainDBSizeAtStart;
 - (id)name;
 - (unsigned int)numAttempts;
 - (id)path;
 - (BOOL)removed;
 - (id)removedDate;
-- (void)setMainDBSizeAtStart:(long long)arg1;
+- (void)setMainDBSizeAtStart:(int)arg1;
 - (void)setNumAttempts:(unsigned int)arg1;
 - (void)setRemovedDate:(id)arg1;
 - (void)setStage:(int)arg1;

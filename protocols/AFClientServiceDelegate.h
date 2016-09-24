@@ -8,6 +8,10 @@
 - (oneway void)aceConnectionWillRetryOnError:(NSError *)arg1;
 - (oneway void)acousticIDRequestDidFinishWithSuccess:(BOOL)arg1;
 - (oneway void)acousticIDRequestWillStart;
+- (oneway void)audioSessionDidBeginInterruption;
+- (oneway void)audioSessionDidEndInterruption:(BOOL)arg1;
+- (oneway void)audioSessionIDChanged:(unsigned int)arg1;
+- (oneway void)cacheImage:(INImage *)arg1;
 - (oneway void)getBulletinContext:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, void*
 - (oneway void)invalidateCurrentUserActivity;
 - (oneway void)musicWasDetected;
@@ -21,13 +25,19 @@
 - (oneway void)shouldSpeakChanged:(BOOL)arg1;
 - (oneway void)speechRecognitionDidFail:(NSError *)arg1;
 - (oneway void)speechRecognized:(SASSpeechRecognized *)arg1;
+- (oneway void)speechRecognizedAdditionalInterpretation:(AFSpeechInterpretation *)arg1 refId:(NSString *)arg2;
 - (oneway void)speechRecognizedPartialResult:(SASSpeechPartialResult *)arg1;
 - (oneway void)speechRecordingDidBeginOnAVRecordRoute:(NSString *)arg1;
 - (oneway void)speechRecordingDidCancel;
 - (oneway void)speechRecordingDidChangeAVRecordRoute:(NSString *)arg1;
 - (oneway void)speechRecordingDidEnd;
 - (oneway void)speechRecordingDidFail:(NSError *)arg1;
+- (oneway void)speechRecordingDidFinishRecognitionUpdateWithError:(NSError *)arg1;
+- (oneway void)speechRecordingDidRecognizePhrases:(NSArray *)arg1 utterances:(NSArray *)arg2;
+- (oneway void)speechRecordingDidUpdateRecognitionPhrases:(NSArray *)arg1 utterances:(NSArray *)arg2 refId:(NSString *)arg3;
+- (oneway void)speechRecordingPerformTwoShotPromptWithType:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 9: int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, double, double, NSError *, void*
 - (oneway void)speechRecordingStartpointDetected;
+- (oneway void)speechRecordingWillBeginRecognitionUpdateForTask:(NSString *)arg1;
 - (oneway void)speechRecordingWillBeginWithLevelsSharedMem:(AFXPCWrapper *)arg1;
 
 @end

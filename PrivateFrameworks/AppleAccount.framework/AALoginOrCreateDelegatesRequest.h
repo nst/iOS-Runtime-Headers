@@ -3,9 +3,9 @@
  */
 
 @interface AALoginOrCreateDelegatesRequest : AARequest {
-    ACAccount *_account;
-    NSDictionary *_parameters;
-    AASigningSession *_signingSession;
+    ACAccount * _account;
+    NSDictionary * _parameters;
+    AASigningSession * _signingSession;
 }
 
 + (Class)responseClass;

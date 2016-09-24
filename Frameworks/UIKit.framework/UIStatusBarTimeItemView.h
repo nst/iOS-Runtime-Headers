@@ -3,13 +3,21 @@
  */
 
 @interface UIStatusBarTimeItemView : UIStatusBarItemView {
-    NSString *_timeString;
+    NSString * _timeString;
+    BOOL  _useCustomFadeAnimation;
 }
+
+@property (nonatomic) BOOL useCustomFadeAnimation;
 
 - (void).cxx_destruct;
 - (id)contentsImage;
+- (float)extraLeftPadding;
 - (float)extraRightPadding;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setUseCustomFadeAnimation:(BOOL)arg1;
+- (void)setVisible:(BOOL)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 duration:(double)arg3;
 - (int)textStyle;
 - (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (BOOL)useCustomFadeAnimation;
 
 @end

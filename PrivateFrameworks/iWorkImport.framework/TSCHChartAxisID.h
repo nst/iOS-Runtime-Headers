@@ -3,8 +3,8 @@
  */
 
 @interface TSCHChartAxisID : NSObject <NSCopying> {
-    unsigned int mOrdinal;
-    int mType;
+    unsigned int  mOrdinal;
+    int  mType;
 }
 
 @property (readonly) unsigned int ordinal;

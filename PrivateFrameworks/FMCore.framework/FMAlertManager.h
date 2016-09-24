@@ -3,8 +3,8 @@
  */
 
 @interface FMAlertManager : NSObject {
-    NSMutableDictionary *_activeAlerts;
-    NSMutableDictionary *_activeCFNotificationsByCategory;
+    NSMutableDictionary * _activeAlerts;
+    NSMutableDictionary * _activeCFNotificationsByCategory;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *activeAlerts;

@@ -3,11 +3,11 @@
  */
 
 @interface CTCellularPlanManager : NSObject <CTCellularPlanClientDelegate> {
-    NSXPCConnection *_connection;
-    NSData *_cookieData;
-    NSString *_lastSessionId;
-    struct dispatch_queue_s { } *_queue;
-    NSMutableArray *_subscriptionCompletions;
+    NSXPCConnection * _connection;
+    NSData * _cookieData;
+    NSString * _lastSessionId;
+    struct dispatch_queue_s { } * _queue;
+    NSMutableArray * _subscriptionCompletions;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -24,11 +24,13 @@
 - (void)carrierHandoffToken:(id /* block */)arg1;
 - (void)connectionSettings:(id /* block */)arg1;
 - (void)dealloc;
+- (void)didProvisionEsimWithIccid:(id)arg1;
 - (void)didPurchasePlanWithIccid:(id)arg1 downloadProfile:(BOOL)arg2;
 - (void)didSelectPlanItem:(id)arg1 completion:(id /* block */)arg2;
 - (void)expirePlan;
 - (void)getCurrentPlanType:(id /* block */)arg1;
 - (void)getDeviceInfo:(id /* block */)arg1;
+- (void)getESimServerURL:(id /* block */)arg1;
 - (void)getIMEIPrefix:(id /* block */)arg1;
 - (void)getSelectedEnv:(id /* block */)arg1;
 - (void)getSelectedProxy:(id /* block */)arg1;
@@ -51,6 +53,7 @@
 - (void)plansWithProgress:(id /* block */)arg1 andCompletion:(id /* block */)arg2;
 - (void)plansWithProgress:(id /* block */)arg1 andCompletion:(id /* block */)arg2 additionalParameters:(id)arg3;
 - (void)setActivePlan:(id)arg1 completion:(id /* block */)arg2;
+- (void)setESimServerURL:(id)arg1;
 - (void)setIMEIPrefix:(id)arg1;
 - (void)setLatitude:(id)arg1 andLongitude:(id)arg2;
 - (void)setMcc:(int)arg1 andMnc:(int)arg2;

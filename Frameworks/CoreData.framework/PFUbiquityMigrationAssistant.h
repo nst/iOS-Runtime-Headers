@@ -3,15 +3,15 @@
  */
 
 @interface PFUbiquityMigrationAssistant : NSObject {
-    NSMutableDictionary *_baselineLocationsByVersionHash;
-    NSString *_currentModelVersionHash;
-    NSString *_localPeerID;
-    NSMutableDictionary *_logLocationsByVersionHash;
-    NSMutableArray *_orderedReceipts;
-    NSString *_previousModelVersionHash;
-    NSMutableArray *_receiptLocations;
-    NSString *_ubiquityName;
-    PFUbiquityLocation *_ubiquityRootLocation;
+    NSMutableDictionary * _baselineLocationsByVersionHash;
+    NSString * _currentModelVersionHash;
+    NSString * _localPeerID;
+    NSMutableDictionary * _logLocationsByVersionHash;
+    NSMutableArray * _orderedReceipts;
+    NSString * _previousModelVersionHash;
+    NSMutableArray * _receiptLocations;
+    NSString * _ubiquityName;
+    PFUbiquityLocation * _ubiquityRootLocation;
 }
 
 @property (nonatomic, readonly) NSString *currentModelVersionHash;

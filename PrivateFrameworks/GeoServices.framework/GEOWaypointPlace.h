@@ -3,13 +3,15 @@
  */
 
 @interface GEOWaypointPlace : PBCodable <NSCopying> {
-    GEOLatLng *_center;
-    NSMutableArray *_roadAccessPoints;
+    GEOLatLng * _center;
+    NSMutableArray * _roadAccessPoints;
 }
 
 @property (nonatomic, retain) GEOLatLng *center;
 @property (nonatomic, readonly) BOOL hasCenter;
 @property (nonatomic, retain) NSMutableArray *roadAccessPoints;
+
++ (Class)roadAccessPointType;
 
 - (void)addRoadAccessPoint:(id)arg1;
 - (id)center;

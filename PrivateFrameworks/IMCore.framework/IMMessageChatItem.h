@@ -9,10 +9,10 @@
 @property (nonatomic, readonly) BOOL failed;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isFromMe;
-@property (nonatomic, readonly, retain) IMMessage *message;
-@property (nonatomic, readonly, retain) IMHandle *sender;
+@property (nonatomic, readonly) IMMessage *message;
+@property (nonatomic, readonly) IMHandle *sender;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly, retain) NSDate *time;
+@property (nonatomic, readonly) NSDate *time;
 
 - (BOOL)failed;
 - (BOOL)isFromMe;

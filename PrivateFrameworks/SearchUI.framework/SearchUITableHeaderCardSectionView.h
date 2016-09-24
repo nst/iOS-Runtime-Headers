@@ -3,9 +3,9 @@
  */
 
 @interface SearchUITableHeaderCardSectionView : SearchUITableRowCardSectionView {
-    int _firstTrailingIndex;
-    BOOL _headerIsVibrant;
-    BOOL _isCompactTable;
+    int  _firstTrailingIndex;
+    BOOL  _headerIsVibrant;
+    BOOL  _isCompactTable;
 }
 
 @property int firstTrailingIndex;

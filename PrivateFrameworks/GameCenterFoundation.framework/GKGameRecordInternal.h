@@ -3,15 +3,15 @@
  */
 
 @interface GKGameRecordInternal : GKGameInternal {
-    short _achievementPoints;
-    unsigned short _achievements;
-    unsigned short _friendRank;
-    NSDate *_lastPlayedDate;
-    unsigned short _maxFriendRank;
-    unsigned int _maxRank;
-    NSDate *_purchaseDate;
-    unsigned int _rank;
-    GKScoreInternal *_score;
+    short  _achievementPoints;
+    unsigned short  _achievements;
+    unsigned short  _friendRank;
+    NSDate * _lastPlayedDate;
+    unsigned short  _maxFriendRank;
+    unsigned int  _maxRank;
+    NSDate * _purchaseDate;
+    unsigned int  _rank;
+    GKScoreInternal * _score;
 }
 
 @property (nonatomic) short achievementPoints;

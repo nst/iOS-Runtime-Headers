@@ -3,13 +3,13 @@
  */
 
 @interface TSCEReference : NSObject {
-    NSString *mOverrideText;
-    NSString *mOverrideTextAsTyped;
+    NSString * mOverrideText;
+    NSString * mOverrideTextAsTyped;
     struct TSCECReference { 
-        int referenceType; 
+        unsigned short referenceType; 
         union { 
             struct { 
-                struct { 
+                struct TSUCellCoord { 
                     unsigned short row; 
                     unsigned char column; 
                     unsigned char reserved; 
@@ -18,12 +18,12 @@
             } cellReference; 
             struct { 
                 struct TSCERangeCoordinate { 
-                    struct { 
+                    struct TSUCellCoord { 
                         unsigned short row; 
                         unsigned char column; 
                         unsigned char reserved; 
                     } mTopLeft; 
-                    struct { 
+                    struct TSUCellCoord { 
                         unsigned short row; 
                         unsigned char column; 
                         unsigned char reserved; 
@@ -34,12 +34,12 @@
             struct { 
                 struct { 
                     struct TSCERangeCoordinate { 
-                        struct { 
+                        struct TSUCellCoord { 
                             unsigned short row; 
                             unsigned char column; 
                             unsigned char reserved; 
                         } mTopLeft; 
-                        struct { 
+                        struct TSUCellCoord { 
                             unsigned short row; 
                             unsigned char column; 
                             unsigned char reserved; 
@@ -47,28 +47,28 @@
                     } range; 
                     struct __CFUUID {} *tableID; 
                 } rangeReference; 
-                int rangeContext; 
+                unsigned char rangeContext; 
             } spanningRangeReference; 
             struct __CFUUID {} *tableID; 
             struct { 
-                unsigned long long uuidLower; 
-                unsigned long long uuidUpper; 
+                unsigned int uuidLower; 
+                unsigned int uuidUpper; 
             } uuidValue; 
         } referenceUnion; 
-    } mRef;
-    unsigned char mStickyBits;
-    BOOL mWasConstructedViaNames;
+    }  mRef;
+    unsigned char  mStickyBits;
+    BOOL  mWasConstructedViaNames;
 }
 
-- (struct TSCECReference { int x1; union { struct { struct { unsigned short x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_1_2_1; struct __CFUUID {} *x_1_2_2; } x_2_1_1; struct { struct TSCERangeCoordinate { struct { unsigned short x_1_4_1; unsigned char x_1_4_2; unsigned char x_1_4_3; } x_1_3_1; struct { unsigned short x_2_4_1; unsigned char x_2_4_2; unsigned char x_2_4_3; } x_1_3_2; } x_2_2_1; struct __CFUUID {} *x_2_2_2; } x_2_1_2; struct { struct { struct TSCERangeCoordinate { struct { unsigned short x_1_5_1; unsigned char x_1_5_2; unsigned char x_1_5_3; } x_1_4_1; struct { unsigned short x_2_5_1; unsigned char x_2_5_2; unsigned char x_2_5_3; } x_1_4_2; } x_1_3_1; struct __CFUUID {} *x_1_3_2; } x_3_2_1; int x_3_2_2; } x_2_1_3; struct __CFUUID {} *x_2_1_4; struct { unsigned long long x_5_2_1; unsigned long long x_5_2_2; } x_2_1_5; } x2; })cReference;
+- (struct TSCECReference { unsigned short x1; union { struct { struct TSUCellCoord { unsigned short x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_1_2_1; struct __CFUUID {} *x_1_2_2; } x_2_1_1; struct { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_4_1; unsigned char x_1_4_2; unsigned char x_1_4_3; } x_1_3_1; struct TSUCellCoord { unsigned short x_2_4_1; unsigned char x_2_4_2; unsigned char x_2_4_3; } x_1_3_2; } x_2_2_1; struct __CFUUID {} *x_2_2_2; } x_2_1_2; struct { struct { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_5_1; unsigned char x_1_5_2; unsigned char x_1_5_3; } x_1_4_1; struct TSUCellCoord { unsigned short x_2_5_1; unsigned char x_2_5_2; unsigned char x_2_5_3; } x_1_4_2; } x_1_3_1; struct __CFUUID {} *x_1_3_2; } x_3_2_1; unsigned char x_3_2_2; } x_2_1_3; struct __CFUUID {} *x_2_1_4; struct { unsigned int x_5_2_1; unsigned int x_5_2_2; } x_2_1_5; } x2; })cReference;
 - (void)dealloc;
-- (id)initWithCellReference:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; })arg1;
-- (id)initWithRangeReference:(struct { struct TSCERangeCoordinate { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg1;
+- (id)initWithCellReference:(struct { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; })arg1;
+- (id)initWithRangeReference:(struct { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct TSUCellCoord { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)overrideText;
 - (id)overrideTextAsTyped;
 - (id)p_stringByUnescapingQuotedStringWithPossibleDollarPrefix:(id)arg1 partial:(BOOL)arg2;
-- (struct { struct TSCERangeCoordinate { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })rangeReference;
+- (struct { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct TSUCellCoord { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })rangeReference;
 - (id)referenceTextForAutocompleteWithCalculationEngine:(id)arg1 contextSheetName:(id)arg2 stickyBits:(unsigned char)arg3 inputString:(id)arg4 inputStringIsComplete:(BOOL)arg5;
 - (id)referenceTextForAutocompleteWithCalculationEngine:(id)arg1 hostTableID:(struct __CFUUID { }*)arg2 stickyBits:(unsigned char)arg3 inputString:(id)arg4 inputStringIsComplete:(BOOL)arg5;
 - (id)referenceTextWithCalculationEngine:(id)arg1 contextSheetName:(id)arg2;

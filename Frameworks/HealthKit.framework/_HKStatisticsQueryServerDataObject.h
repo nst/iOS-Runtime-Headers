@@ -3,19 +3,24 @@
  */
 
 @interface _HKStatisticsQueryServerDataObject : _HKQueryServerDataObject {
-    unsigned int _mergeStrategy;
-    unsigned int _options;
+    NSDateInterval * _dateInterval;
+    unsigned int  _mergeStrategy;
+    unsigned int  _options;
 }
 
+@property (nonatomic, retain) NSDateInterval *dateInterval;
 @property (nonatomic) unsigned int mergeStrategy;
 @property (nonatomic) unsigned int options;
 
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
+- (id)dateInterval;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned int)mergeStrategy;
 - (unsigned int)options;
+- (void)setDateInterval:(id)arg1;
 - (void)setMergeStrategy:(unsigned int)arg1;
 - (void)setOptions:(unsigned int)arg1;
 

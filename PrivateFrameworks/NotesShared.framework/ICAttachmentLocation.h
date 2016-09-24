@@ -12,6 +12,7 @@
 @property (nonatomic) BOOL placeUpdated;
 @property (readonly) Class superclass;
 
+- (id)authorsExcludingCurrentUser;
 - (id)formattedAddressWithoutAttachmentTitle;
 - (id)targetSearchIndexable;
 

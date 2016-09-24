@@ -3,12 +3,12 @@
  */
 
 @interface NewsUpdater : YQLRequest {
-    <NewsUpdaterDelegate> *_delegate;
-    BOOL _firstLoad;
-    StockNewsItemCollection *_lastNewsItemCollection;
-    double _lastResponseTimestamp;
-    Stock *_stock;
-    id /* block */ _updateCompletionHandler;
+    <NewsUpdaterDelegate> * _delegate;
+    BOOL  _firstLoad;
+    StockNewsItemCollection * _lastNewsItemCollection;
+    double  _lastResponseTimestamp;
+    Stock * _stock;
+    id /* block */  _updateCompletionHandler;
 }
 
 @property (nonatomic) <NewsUpdaterDelegate> *delegate;

@@ -3,9 +3,9 @@
  */
 
 @interface WBSFeedMetadata : NSObject <NSSecureCoding> {
-    NSURL *_homepageURL;
-    NSURL *_imageURL;
-    NSString *_title;
+    NSURL * _homepageURL;
+    NSURL * _imageURL;
+    NSString * _title;
 }
 
 @property (nonatomic, readonly) NSURL *homepageURL;

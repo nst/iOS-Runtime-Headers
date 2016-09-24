@@ -3,12 +3,12 @@
  */
 
 @interface UIRuntimeAccessibilityConfiguration : NSObject {
-    NSString *accessibilityConfigurationHint;
-    NSString *accessibilityConfigurationIdentifier;
-    NSString *accessibilityConfigurationLabel;
-    NSNumber *accessibilityConfigurationTraits;
-    NSNumber *isAccessibilityConfigurationElement;
-    NSObject *object;
+    NSString * accessibilityConfigurationHint;
+    NSString * accessibilityConfigurationIdentifier;
+    NSString * accessibilityConfigurationLabel;
+    NSNumber * accessibilityConfigurationTraits;
+    NSNumber * isAccessibilityConfigurationElement;
+    NSObject * object;
 }
 
 @property (nonatomic, retain) NSString *accessibilityConfigurationHint;

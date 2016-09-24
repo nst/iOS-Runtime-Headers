@@ -3,9 +3,9 @@
  */
 
 @interface NSISPlaybackOperation : NSObject <NSISVariableDelegate> {
-    NSMutableDictionary *oldIdentsToNewVariables;
-    NSMutableSet *userObservableVariables;
-    NSMutableSet *variablesToIntegralize;
+    NSMutableDictionary * oldIdentsToNewVariables;
+    NSMutableSet * userObservableVariables;
+    NSMutableSet * variablesToIntegralize;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,6 +14,7 @@
 @property (readonly) Class superclass;
 
 - (void)dealloc;
+- (id)firstAnchor;
 - (id)firstItem;
 - (id)init;
 - (double)nsis_allowedMagnitudeForIntegralizationAdjustmentOfConstraintWithMarker:(id)arg1;
@@ -22,6 +23,7 @@
 - (void)nsis_valueOfVariable:(id)arg1 didChangeInEngine:(id)arg2;
 - (BOOL)nsis_valueOfVariableIsUserObservable:(id)arg1;
 - (void)playbackOneAction:(id)arg1 onEngine:(id)arg2;
+- (id)secondAnchor;
 - (id)secondItem;
 - (id)unwrapLinearExpression:(id)arg1;
 - (id)unwrapVariable:(id)arg1;

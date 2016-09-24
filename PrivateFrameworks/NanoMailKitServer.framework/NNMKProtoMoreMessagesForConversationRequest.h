@@ -3,12 +3,12 @@
  */
 
 @interface NNMKProtoMoreMessagesForConversationRequest : PBRequest <NSCopying> {
-    NSData *_beforeDateReceived;
-    NSString *_conversationId;
-    unsigned int _fullSyncVersion;
+    NSData * _beforeDateReceived;
+    NSString * _conversationId;
+    unsigned int  _fullSyncVersion;
     struct { 
         unsigned int fullSyncVersion : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic, retain) NSData *beforeDateReceived;

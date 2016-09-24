@@ -3,7 +3,7 @@
  */
 
 @interface HMDHAPMetadataUnit : NSObject <NSSecureCoding> {
-    HAPMetadataUnit *_hapUnitMetadata;
+    HAPMetadataUnit * _hapUnitMetadata;
 }
 
 @property (nonatomic, retain) HAPMetadataUnit *hapUnitMetadata;

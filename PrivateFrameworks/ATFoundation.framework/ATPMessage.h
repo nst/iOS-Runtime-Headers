@@ -3,23 +3,23 @@
  */
 
 @interface ATPMessage : PBCodable <NSCopying> {
-    BOOL _additionalPayload;
+    BOOL  _additionalPayload;
     struct { 
         unsigned int messageID : 1; 
         unsigned int messageType : 1; 
         unsigned int sessionID : 1; 
         unsigned int additionalPayload : 1; 
-    } _has;
-    unsigned int _messageID;
-    int _messageType;
-    NSData *_parameters;
-    NSData *_paramsSignature;
-    NSData *_payload;
-    NSData *_payloadSignature;
-    ATPRequest *_request;
-    ATPResponse *_response;
-    unsigned int _sessionID;
-    ATPError *_streamError;
+    }  _has;
+    unsigned int  _messageID;
+    int  _messageType;
+    NSData * _parameters;
+    NSData * _paramsSignature;
+    NSData * _payload;
+    NSData * _payloadSignature;
+    ATPRequest * _request;
+    ATPResponse * _response;
+    unsigned int  _sessionID;
+    ATPError * _streamError;
 }
 
 @property (nonatomic) BOOL additionalPayload;

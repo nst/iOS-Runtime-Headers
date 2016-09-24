@@ -3,8 +3,8 @@
  */
 
 @interface ATRequest : ATMessage <NSSecureCoding> {
-    NSString *_command;
-    NSString *_dataClass;
+    NSString * _command;
+    NSString * _dataClass;
 }
 
 @property (nonatomic, copy) NSString *command;

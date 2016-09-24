@@ -3,46 +3,46 @@
  */
 
 @interface AVVideoCompositionRenderContextInternal : NSObject {
-    NSDictionary *_basisProperties;
-    struct __CFDictionary { } *_cleanApertureDict;
-    NSDictionary *_clientRequiredPixelBufferAttributes;
-    NSDictionary *_destinationDesiredPixelBufferAttributes;
-    NSString *_destinationDesiredPixelBufferColorPrimaries;
-    NSString *_destinationDesiredPixelBufferTransferFunction;
-    NSString *_destinationDesiredPixelBufferYCbCrMatrix;
+    NSDictionary * _basisProperties;
+    struct __CFDictionary { } * _cleanApertureDict;
+    NSDictionary * _clientRequiredPixelBufferAttributes;
+    NSDictionary * _destinationDesiredPixelBufferAttributes;
+    NSString * _destinationDesiredPixelBufferColorPrimaries;
+    NSString * _destinationDesiredPixelBufferTransferFunction;
+    NSString * _destinationDesiredPixelBufferYCbCrMatrix;
     struct { 
         int width; 
         int height; 
-    } _destinationPixelBufferDimensions;
+    }  _destinationPixelBufferDimensions;
     struct { 
-        float left; 
-        float top; 
-        float right; 
-        float bottom; 
-    } _edgeWidths;
-    BOOL _highQualityRendering;
+        double left; 
+        double top; 
+        double right; 
+        double bottom; 
+    }  _edgeWidths;
+    BOOL  _highQualityRendering;
     struct { 
         int horizontalSpacing; 
         int verticalSpacing; 
-    } _pixelAspectRatio;
-    struct __CFDictionary { } *_pixelAspectRatioDict;
-    struct __CVPixelBufferPool { } *_pixelBufferPool;
-    NSObject<OS_dispatch_queue> *_pixelBufferPoolQ;
-    float _renderScale;
+    }  _pixelAspectRatio;
+    struct __CFDictionary { } * _pixelAspectRatioDict;
+    struct __CVPixelBufferPool { } * _pixelBufferPool;
+    NSObject<OS_dispatch_queue> * _pixelBufferPoolQ;
+    double  _renderScale;
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    } _renderTransform;
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
+    }  _renderTransform;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _size;
-    AVVideoComposition *_videoComposition;
-    int pixelFormatFamily;
+        double width; 
+        double height; 
+    }  _size;
+    AVVideoComposition * _videoComposition;
+    int  pixelFormatFamily;
 }
 
 - (void)_willDeallocOrFinalize;

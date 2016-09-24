@@ -3,10 +3,9 @@
  */
 
 @interface CIColorCube : CIFilter {
-    CIImage *_cubeImage;
-    NSData *inputCubeData;
-    NSNumber *inputCubeDimension;
-    CIImage *inputImage;
+    NSData * inputCubeData;
+    NSNumber * inputCubeDimension;
+    CIImage * inputImage;
 }
 
 @property (nonatomic, copy) NSData *inputCubeData;
@@ -19,7 +18,6 @@
 - (id)_kernel;
 - (id)_kernelOpaque;
 - (id)cubeImage;
-- (void)dealloc;
 - (id)inputCubeData;
 - (id)inputCubeDimension;
 - (id)inputImage;

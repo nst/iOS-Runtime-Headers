@@ -3,19 +3,19 @@
  */
 
 @interface TSCHConfiguration : NSObject {
-    BOOL mDisableHighQualityRenderingIfNecessary;
-    BOOL mExportsUsingSageKeynoteChartNonStyleDefaultsOverride;
-    Class mMultiDataChartOptionsControllerBuildSupportClass;
-    NSString *mSaveChartStyleHelpKey;
-    BOOL mShouldForceDiscreteGraphicsFor3D;
-    BOOL mShowMessageOnSelection;
-    BOOL mSupports3DFillDataEmbeddingRecovery;
-    BOOL mSupportsChartDataEditor;
-    BOOL mSupportsChartRangeEditingMode;
-    BOOL mSupportsNumberFormatSameAsSource;
-    BOOL mSupportsTextBackground;
-    BOOL mSupportsTextWrapping;
-    BOOL mUse3DFillFor3DChartFallback;
+    BOOL  mDisableHighQualityRenderingIfNecessary;
+    BOOL  mExportsUsingSageKeynoteChartNonStyleDefaultsOverride;
+    Class  mMultiDataChartOptionsControllerBuildSupportClass;
+    NSString * mSaveChartStyleHelpKey;
+    BOOL  mShouldForceDiscreteGraphicsFor3D;
+    BOOL  mShowMessageOnSelection;
+    BOOL  mSupports3DFillDataEmbeddingRecovery;
+    BOOL  mSupportsChartDataEditor;
+    BOOL  mSupportsChartRangeEditingMode;
+    BOOL  mSupportsNumberFormatSameAsSource;
+    BOOL  mSupportsTextBackground;
+    BOOL  mSupportsTextWrapping;
+    BOOL  mUse3DFillFor3DChartFallback;
 }
 
 @property (readonly) TSSPropertyMap *appSpecificPropertyOverrides;

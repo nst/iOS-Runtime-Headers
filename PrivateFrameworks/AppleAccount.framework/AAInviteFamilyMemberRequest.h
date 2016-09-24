@@ -3,9 +3,9 @@
  */
 
 @interface AAInviteFamilyMemberRequest : AAFamilyRequest {
-    NSString *_inviteeCompositeName;
-    NSString *_inviteeEmail;
-    NSString *_inviteeShortName;
+    NSString * _inviteeCompositeName;
+    NSString * _inviteeEmail;
+    NSString * _inviteeShortName;
 }
 
 @property (nonatomic, copy) NSString *inviteeCompositeName;

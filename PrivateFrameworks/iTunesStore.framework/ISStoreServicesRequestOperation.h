@@ -3,7 +3,7 @@
  */
 
 @interface ISStoreServicesRequestOperation : ISOperation {
-    SSRequest *_request;
+    SSRequest * _request;
 }
 
 @property (readonly) SSRequest *request;

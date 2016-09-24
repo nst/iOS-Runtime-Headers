@@ -3,7 +3,7 @@
  */
 
 @interface PUWarningHelper : NSObject {
-    NSArray *__assets;
+    NSArray * __assets;
 }
 
 @property (setter=_setAssets:, nonatomic, retain) NSArray *_assets;

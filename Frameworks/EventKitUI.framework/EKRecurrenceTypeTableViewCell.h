@@ -3,8 +3,8 @@
  */
 
 @interface EKRecurrenceTypeTableViewCell : EKUIConstrainedFontsTableViewCell {
-    BOOL _checked;
-    UIView *_checkmarkView;
+    BOOL  _checked;
+    UIView * _checkmarkView;
 }
 
 @property (getter=isChecked, nonatomic) BOOL checked;

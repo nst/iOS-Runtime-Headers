@@ -3,20 +3,21 @@
  */
 
 @interface QLThumbnailStoreRetrievalOperation : NSOperation {
-    unsigned long long _activity;
-    QLThumbnailAddition *_addition;
-    BOOL _allowsThumbnailGeneration;
-    NSURL *_destinationURL;
-    NSURL *_documentURL;
-    NSError *_error;
-    BOOL _executing;
-    BOOL _finished;
-    BOOL _generateThumbnailsAtBackgroundPriority;
-    unsigned long long _generationActivity;
-    <QLThumbnailGenerationRequest><NSXPCProxyCreating> *_thumbnailRequest;
-    BOOL _thumbnailWasJustAutomaticallyGenerated;
+    QLThumbnailAddition * _addition;
+    BOOL  _allowsThumbnailGeneration;
+    NSURL * _destinationURL;
+    NSURL * _documentURL;
+    NSError * _error;
+    BOOL  _executing;
+    BOOL  _finished;
+    BOOL  _generateThumbnailsAtBackgroundPriority;
+    NSObject<OS_os_activity> * _generationActivity;
+    NSObject<OS_os_activity> * _retrievalActivity;
+    <QLThumbnailGenerationRequest><NSXPCProxyCreating> * _thumbnailRequest;
+    BOOL  _thumbnailWasJustAutomaticallyGenerated;
 }
 
+@property (readonly) QLThumbnailAddition *addition;
 @property BOOL allowsThumbnailGeneration;
 @property (retain) NSError *error;
 @property (getter=isExecuting, nonatomic) BOOL executing;
@@ -35,6 +36,7 @@
 - (BOOL)_finishIfCancelled;
 - (void)_finishWithError:(id)arg1;
 - (void)_generateThumbnail;
+- (id)addition;
 - (void)afterThumbnailIsPutInGenstore;
 - (BOOL)allowsThumbnailGeneration;
 - (void)cancel;

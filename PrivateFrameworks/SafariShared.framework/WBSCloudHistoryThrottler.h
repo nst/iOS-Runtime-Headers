@@ -3,11 +3,11 @@
  */
 
 @interface WBSCloudHistoryThrottler : NSObject {
-    <WBSCloudHistoryThrottlerDataStore> *_dataStore;
-    unsigned int _maximumNumberOfOperationWithinMonitoredPeriod;
-    double _numberOfSecondsToMonitor;
-    NSMutableArray *_pastOperationsWithinMonitoredPeriod;
-    NSArray *_throttlingDistribution;
+    <WBSCloudHistoryThrottlerDataStore> * _dataStore;
+    unsigned int  _maximumNumberOfOperationWithinMonitoredPeriod;
+    double  _numberOfSecondsToMonitor;
+    NSMutableArray * _pastOperationsWithinMonitoredPeriod;
+    NSArray * _throttlingDistribution;
 }
 
 @property (nonatomic, retain) <WBSCloudHistoryThrottlerDataStore> *dataStore;

@@ -3,7 +3,7 @@
  */
 
 @interface ECTwoObjectKeyCache : NSObject {
-    NSMutableDictionary *mCache;
+    NSMutableDictionary * mCache;
 }
 
 - (void)dealloc;

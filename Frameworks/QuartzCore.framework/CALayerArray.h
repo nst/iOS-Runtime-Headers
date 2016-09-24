@@ -5,7 +5,7 @@
 @interface CALayerArray : NSArray {
     /* Warning: unhandled struct encoding: '{_CALayerArrayIvars="layers"^@"count"I"capacity"I"mutations"L"retained"c}' */ struct _CALayerArrayIvars { 
         count **layers; 
-    } _ivars;
+    }  _ivars;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

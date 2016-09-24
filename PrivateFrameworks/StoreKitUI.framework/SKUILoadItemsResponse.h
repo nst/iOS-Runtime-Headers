@@ -3,8 +3,8 @@
  */
 
 @interface SKUILoadItemsResponse : NSObject {
-    NSSet *_invalidItemIdentifiers;
-    NSDictionary *_loadedItems;
+    NSSet * _invalidItemIdentifiers;
+    NSDictionary * _loadedItems;
 }
 
 @property (nonatomic, copy) NSSet *invalidItemIdentifiers;

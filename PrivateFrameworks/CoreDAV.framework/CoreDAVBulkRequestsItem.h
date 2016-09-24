@@ -3,9 +3,9 @@
  */
 
 @interface CoreDAVBulkRequestsItem : CoreDAVItem {
-    CoreDAVLeafItem *_maxResourcesItem;
-    CoreDAVLeafItem *_maxSizeItem;
-    NSMutableSet *_supportedItems;
+    CoreDAVLeafItem * _maxResourcesItem;
+    CoreDAVLeafItem * _maxSizeItem;
+    NSMutableSet * _supportedItems;
 }
 
 @property (nonatomic, readonly) NSDictionary *dictRepresentation;

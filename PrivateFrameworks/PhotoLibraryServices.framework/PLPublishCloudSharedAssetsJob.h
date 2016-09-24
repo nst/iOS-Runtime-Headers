@@ -3,12 +3,12 @@
  */
 
 @interface PLPublishCloudSharedAssetsJob : PLCloudSharingJob {
-    NSString *_batchCommentText;
-    BOOL _isNewAlbum;
-    NSArray *_originalAssetUUIDs;
-    NSString *_publishAlbumCloudGUID;
-    NSArray *_stillImageOnlyAssetUUIDs;
-    NSDictionary *_trimmedVideoPathInfo;
+    NSString * _batchCommentText;
+    BOOL  _isNewAlbum;
+    NSArray * _originalAssetUUIDs;
+    NSString * _publishAlbumCloudGUID;
+    NSArray * _stillImageOnlyAssetUUIDs;
+    NSDictionary * _trimmedVideoPathInfo;
 }
 
 @property (nonatomic, retain) NSString *batchCommentText;
@@ -21,7 +21,7 @@
 + (void)publishBatchOfOriginalAssets:(id)arg1 toSharedAlbum:(id)arg2 withAssetsSharingInfos:(id)arg3 trimmedVideoPathInfo:(id)arg4 isNewAlbum:(BOOL)arg5 batchCommentText:(id)arg6;
 
 - (id)batchCommentText;
-- (long long)daemonOperation;
+- (int)daemonOperation;
 - (void)dealloc;
 - (id)description;
 - (void)encodeToXPCObject:(id)arg1;

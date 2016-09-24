@@ -3,10 +3,10 @@
  */
 
 @interface SGMicrodataParserStackItem : NSObject {
-    SGMicrodataDocument *_document;
-    NSArray *_itemScopes;
-    SGMicrodataParserStackItem *_parent;
-    NSArray *_textConsumers;
+    SGMicrodataDocument * _document;
+    NSArray * _itemScopes;
+    SGMicrodataParserStackItem * _parent;
+    NSArray * _textConsumers;
 }
 
 @property (readonly) SGMicrodataDocument *document;

@@ -3,10 +3,10 @@
  */
 
 @interface TKPickerRowItem : TKPickerItem {
-    int _row;
+    int  _row;
 }
 
-@property (nonatomic) int row;
+@property (setter=_setRow:, nonatomic) int row;
 
 - (void)_appendDescriptionOfAttributesToString:(id)arg1;
 - (void)_setRow:(int)arg1;

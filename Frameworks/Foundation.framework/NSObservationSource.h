@@ -3,7 +3,7 @@
  */
 
 @interface NSObservationSource : NSObject <NSObservable> {
-    id _observers;
+    id  _observers;
 }
 
 @property (readonly, copy) NSString *debugDescription;

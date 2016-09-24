@@ -3,16 +3,16 @@
  */
 
 @interface PSLocaleController : PSViewController <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate> {
-    UIView *_contentView;
-    PSRegion *_currentRegion;
-    NSArray *_filteredListContent;
-    BOOL _hideKeyboardInSearchMode;
-    PSLocaleSelector *_localeSelector;
-    NSArray *_regionsList;
-    UISearchBar *_searchBar;
-    BOOL _searchMode;
-    NSArray *_sections;
-    UITableView *_tableView;
+    UIView * _contentView;
+    PSRegion * _currentRegion;
+    NSArray * _filteredListContent;
+    BOOL  _hideKeyboardInSearchMode;
+    PSLocaleSelector * _localeSelector;
+    NSArray * _regionsList;
+    UISearchBar * _searchBar;
+    BOOL  _searchMode;
+    NSArray * _sections;
+    UITableView * _tableView;
 }
 
 @property (nonatomic, retain) PSRegion *currentRegion;

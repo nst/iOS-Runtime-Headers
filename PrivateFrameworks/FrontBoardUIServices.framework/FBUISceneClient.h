@@ -3,8 +3,8 @@
  */
 
 @interface FBUISceneClient : NSObject <FBUISceneClient> {
-    <FBUISceneHostProxy> *_hostProxy;
-    FBUISceneIdentity *_identity;
+    <FBUISceneHostProxy> * _hostProxy;
+    FBUISceneIdentity * _identity;
 }
 
 @property (readonly, copy) NSString *debugDescription;

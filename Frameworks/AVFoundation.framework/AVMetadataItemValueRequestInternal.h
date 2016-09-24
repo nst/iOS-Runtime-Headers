@@ -3,9 +3,9 @@
  */
 
 @interface AVMetadataItemValueRequestInternal : NSObject {
-    NSError *error;
-    <NSObject><NSCopying> *value;
-    AVWeakReference *weakReferenceToMetadataItem;
+    NSError * error;
+    <NSObject><NSCopying> * value;
+    AVWeakReference * weakReferenceToMetadataItem;
 }
 
 @end

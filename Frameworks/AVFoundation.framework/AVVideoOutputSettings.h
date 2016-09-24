@@ -4,14 +4,14 @@
 
 @interface AVVideoOutputSettings : AVOutputSettings
 
+@property (nonatomic, readonly) BOOL allowWideColor;
 @property (nonatomic, readonly) NSDictionary *cleanApertureDictionary;
 @property (nonatomic, readonly) BOOL dimensionsAreBoundingBox;
 @property (nonatomic, readonly) NSString *frameRateConversionAlgorithm;
 @property (nonatomic, readonly) int height;
-@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } minimumFrameDuration;
+@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } minimumFrameDuration;
 @property (nonatomic, readonly) NSDictionary *pixelAspectRatioDictionary;
 @property (nonatomic, readonly) NSDictionary *pixelTransferProperties;
-@property (nonatomic, readonly) NSDictionary *videoCompositionProcessorProperties;
 @property (nonatomic, readonly) NSDictionary *videoScalingProperties;
 @property (nonatomic, readonly) NSDictionary *videoSettingsDictionary;
 @property (nonatomic, readonly) int width;
@@ -24,17 +24,18 @@
 + (id)videoOutputSettingsWithTrustedVideoSettingsDictionary:(id)arg1;
 + (id)videoOutputSettingsWithVideoSettingsDictionary:(id)arg1;
 
+- (BOOL)allowWideColor;
 - (id)cleanApertureDictionary;
+- (void)colorPropertiesConsideringFormatDescriptions:(id)arg1 colorPrimaries:(id*)arg2 transferFunction:(id*)arg3 ycbcrMatrix:(id*)arg4;
 - (id)compatibleMediaTypes;
 - (BOOL)dimensionsAreBoundingBox;
 - (id)frameRateConversionAlgorithm;
 - (int)height;
 - (id)initWithVideoSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })minimumFrameDuration;
+- (struct { int x1; int x2; unsigned int x3; int x4; })minimumFrameDuration;
 - (id)pixelAspectRatioDictionary;
 - (id)pixelTransferProperties;
 - (BOOL)validateUsingOutputSettingsValidator:(id)arg1 reason:(id*)arg2;
-- (id)videoCompositionProcessorProperties;
 - (id)videoScalingProperties;
 - (id)videoSettingsDictionary;
 - (int)width;

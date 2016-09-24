@@ -3,23 +3,23 @@
  */
 
 @interface PTPTCPIPTransport : PTPTransport {
-    PTPTCPIPConnection *_cdConnection;
-    NSMutableData *_cdData;
-    unsigned long _connectionNumber;
-    id _connectionRequestResponse;
-    BOOL _delegateNeedsData;
-    PTPTCPIPConnection *_eventConnection;
-    NSMutableData *_eventData;
-    NSString *_hostGUID;
-    NSString *_hostName;
-    unsigned short _hostPort;
-    struct __CFSocket { } *_socket;
-    NSString *_targetAddress;
-    NSString *_targetGUID;
-    NSString *_targetName;
-    unsigned long _targetPort;
-    PTPTCPIPConnection *_tempConnection;
-    NSMutableData *_tempData;
+    PTPTCPIPConnection * _cdConnection;
+    NSMutableData * _cdData;
+    unsigned long  _connectionNumber;
+    id  _connectionRequestResponse;
+    BOOL  _delegateNeedsData;
+    PTPTCPIPConnection * _eventConnection;
+    NSMutableData * _eventData;
+    NSString * _hostGUID;
+    NSString * _hostName;
+    unsigned short  _hostPort;
+    struct __CFSocket { } * _socket;
+    NSString * _targetAddress;
+    NSString * _targetGUID;
+    NSString * _targetName;
+    unsigned long  _targetPort;
+    PTPTCPIPConnection * _tempConnection;
+    NSMutableData * _tempData;
 }
 
 - (void)acceptConnectionFromSocket:(int)arg1;

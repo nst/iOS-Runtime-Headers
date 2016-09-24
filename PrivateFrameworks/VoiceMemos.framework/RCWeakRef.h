@@ -3,9 +3,9 @@
  */
 
 @interface RCWeakRef : NSObject {
-    BOOL _useWeakStorage;
-    id _weakPointer;
-    id _weakStorage;
+    BOOL  _useWeakStorage;
+    id  _weakPointer;
+    id  _weakStorage;
 }
 
 + (id)weakRefWithObject:(id)arg1;

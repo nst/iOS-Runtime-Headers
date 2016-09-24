@@ -3,8 +3,8 @@
  */
 
 @interface SKUIBadgeImageRequest : NSObject {
-    unsigned int _requestIdentifier;
-    SKUIAttributedStringLayout *_stringLayout;
+    unsigned int  _requestIdentifier;
+    SKUIAttributedStringLayout * _stringLayout;
 }
 
 - (void).cxx_destruct;

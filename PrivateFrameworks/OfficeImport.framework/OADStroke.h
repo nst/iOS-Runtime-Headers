@@ -3,21 +3,21 @@
  */
 
 @interface OADStroke : OADProperties <NSCopying> {
-    unsigned char mCap;
-    OADColor *mColor;
-    unsigned char mCompoundType;
-    OADDash *mDash;
-    OADFill *mFill;
-    OADLineEnd *mHead;
-    unsigned int mIsCapOverridden;
-    unsigned int mIsColorOverridden;
-    unsigned int mIsCompoundTypeOverridden;
-    unsigned int mIsPenAlignmentOverridden;
-    unsigned int mIsWidthOverridden;
-    OADLineJoin *mJoin;
-    int mPenAlignment;
-    OADLineEnd *mTail;
-    float mWidth;
+    unsigned char  mCap;
+    OADColor * mColor;
+    unsigned char  mCompoundType;
+    OADDash * mDash;
+    OADFill * mFill;
+    OADLineEnd * mHead;
+    unsigned int  mIsCapOverridden;
+    unsigned int  mIsColorOverridden;
+    unsigned int  mIsCompoundTypeOverridden;
+    unsigned int  mIsPenAlignmentOverridden;
+    unsigned int  mIsWidthOverridden;
+    OADLineJoin * mJoin;
+    int  mPenAlignment;
+    OADLineEnd * mTail;
+    double  mWidth;
 }
 
 @property (nonatomic, retain) OADLineEnd *head;

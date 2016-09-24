@@ -3,9 +3,9 @@
  */
 
 @interface CDGlanceLingerEvent : NSObject {
-    NSString *_bundle;
-    NSDate *_endDate;
-    NSDate *_startDate;
+    NSString * _bundle;
+    NSDate * _endDate;
+    NSDate * _startDate;
 }
 
 @property (retain) NSString *bundle;

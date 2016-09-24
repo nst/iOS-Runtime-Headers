@@ -3,8 +3,8 @@
  */
 
 @interface ABPropertyGroupIdentifier : NSObject <NSCopying> {
-    void *_context;
-    int _property;
+    void * _context;
+    int  _property;
 }
 
 @property (nonatomic, readonly) void*context;

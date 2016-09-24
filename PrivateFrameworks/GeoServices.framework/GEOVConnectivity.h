@@ -3,7 +3,7 @@
  */
 
 @interface GEOVConnectivity : PBCodable <NSCopying> {
-    NSMutableArray *_junctions;
+    NSMutableArray * _junctions;
 }
 
 @property (nonatomic, retain) NSMutableArray *junctions;

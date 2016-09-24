@@ -3,7 +3,7 @@
  */
 
 @interface LKClasses : NSObject <LKClassProviding> {
-    NSArray *_classes;
+    NSArray * _classes;
 }
 
 @property (nonatomic, readonly, copy) NSArray *classes;
@@ -15,5 +15,7 @@
 - (void).cxx_destruct;
 - (id)classes;
 - (id)initWithClassArray:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToLKClasses:(id)arg1;
 
 @end

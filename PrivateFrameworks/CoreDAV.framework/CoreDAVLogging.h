@@ -3,8 +3,8 @@
  */
 
 @interface CoreDAVLogging : NSObject {
-    NSObject<OS_dispatch_queue> *_delegateMuckingQueue;
-    struct __CFDictionary { } *_logDelegates;
+    NSObject<OS_dispatch_queue> * _delegateMuckingQueue;
+    struct __CFDictionary { } * _logDelegates;
 }
 
 + (id)sharedLogging;

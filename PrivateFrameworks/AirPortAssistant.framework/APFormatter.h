@@ -3,9 +3,9 @@
  */
 
 @interface APFormatter : NSFormatter {
-    NSCharacterSet *_characterSet;
-    NSCharacterSet *_invertedCharacterSet;
-    unsigned int _maxLength;
+    NSCharacterSet * _characterSet;
+    NSCharacterSet * _invertedCharacterSet;
+    unsigned int  _maxLength;
 }
 
 @property (nonatomic) unsigned int maxLength;

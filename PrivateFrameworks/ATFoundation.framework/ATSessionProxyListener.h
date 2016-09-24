@@ -3,10 +3,10 @@
  */
 
 @interface ATSessionProxyListener : NSObject <ATSessionObserver, NSXPCListenerDelegate> {
-    NSMutableArray *_connections;
-    NSXPCListener *_listener;
-    NSObject<OS_dispatch_queue> *_queue;
-    ATSession *_session;
+    NSMutableArray * _connections;
+    NSXPCListener * _listener;
+    NSObject<OS_dispatch_queue> * _queue;
+    ATSession * _session;
 }
 
 @property (readonly, copy) NSString *debugDescription;

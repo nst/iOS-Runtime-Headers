@@ -3,7 +3,7 @@
  */
 
 @interface SKUIScrollingTabNavigationController : SKUINavigationController <SKUIObservableNavigationStack, SKUIScrollingTabBarBottomInsetAwareContent> {
-    <SKUINavigationStackObserver> *_navigationStackObserver;
+    <SKUINavigationStackObserver> * _navigationStackObserver;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,9 +3,9 @@
  */
 
 @interface NSEnergyFormatter : NSFormatter <NSObservable, NSObserver> {
-    void *_formatter;
-    BOOL _isForFoodEnergyUse;
-    void *_reserved;
+    void * _formatter;
+    BOOL  _isForFoodEnergyUse;
+    void * _reserved;
 }
 
 @property (readonly, copy) NSString *debugDescription;

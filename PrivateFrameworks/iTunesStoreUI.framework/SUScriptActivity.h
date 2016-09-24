@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptActivity : SUScriptObject {
-    SUScriptFunction *_actionFunction;
+    SUScriptFunction * _actionFunction;
 }
 
 @property (retain) WebScriptObject *actionFunction;

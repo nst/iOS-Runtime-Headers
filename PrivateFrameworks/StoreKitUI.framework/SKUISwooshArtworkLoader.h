@@ -3,12 +3,12 @@
  */
 
 @interface SKUISwooshArtworkLoader : NSObject <SKUIArtworkRequestDelegate> {
-    SKUIResourceLoader *_artworkLoader;
-    NSMapTable *_artworkRequestIDs;
-    SKUIImageDataConsumer *_imageDataConsumer;
-    NSMutableIndexSet *_outstandingRequestIDs;
-    UIImage *_placeholderImage;
-    SKUISwooshViewController *_swooshViewController;
+    SKUIResourceLoader * _artworkLoader;
+    NSMapTable * _artworkRequestIDs;
+    SKUIImageDataConsumer * _imageDataConsumer;
+    NSMutableIndexSet * _outstandingRequestIDs;
+    UIImage * _placeholderImage;
+    SKUISwooshViewController * _swooshViewController;
 }
 
 @property (nonatomic, readonly) SKUIResourceLoader *artworkLoader;
@@ -26,6 +26,7 @@
 - (unsigned int)artworkRequestIdentifierForObject:(id)arg1;
 - (id)cachedImageForObject:(id)arg1;
 - (void)cancelImageLoading;
+- (void)deprioritizePendingImageLoads;
 - (id)imageDataConsumer;
 - (id)initWithArtworkLoader:(id)arg1 swoosh:(id)arg2;
 - (BOOL)loadImageForObject:(id)arg1 URL:(id)arg2 reason:(int)arg3;

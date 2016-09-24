@@ -3,7 +3,7 @@
  */
 
 @interface IKJSPlaylist : IKJSObject <IKJSPlaylist> {
-    IKAppPlaylistBridge *_bridge;
+    IKAppPlaylistBridge * _bridge;
 }
 
 @property (nonatomic, readonly) IKAppPlaylistBridge *bridge;
@@ -12,6 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)bridge;
+- (void)dealloc;
 - (int)endAction;
 - (id)init;
 - (id)item:(int)arg1;

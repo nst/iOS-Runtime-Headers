@@ -3,13 +3,13 @@
  */
 
 @interface SKUICardLayout : NSObject {
-    SKUICardViewElement *_cardViewElement;
-    BOOL _hasBackground;
-    SKUIViewElementLayoutContext *_layoutContext;
+    SKUICardViewElement * _cardViewElement;
+    BOOL  _hasBackground;
+    SKUIViewElementLayoutContext * _layoutContext;
 }
 
 @property (nonatomic, readonly) SKUICardViewElement *cardViewElement;
-@property (nonatomic, readonly) float horizontalContentInset;
+@property (nonatomic, readonly) double horizontalContentInset;
 @property (nonatomic, readonly) SKUIViewElementLayoutContext *layoutContext;
 @property (nonatomic, readonly) int layoutStyle;
 
@@ -24,7 +24,7 @@
 - (float)horizontalContentInset;
 - (id)layoutContext;
 - (int)layoutStyle;
-- (struct CGSize { float x1; float x2; })sizeForViewElement:(id)arg1 width:(float)arg2;
+- (struct CGSize { double x1; double x2; })sizeForViewElement:(id)arg1 width:(float)arg2;
 - (float)topInsetForViewElement:(id)arg1 previousViewElement:(id)arg2 width:(float)arg3;
 
 @end

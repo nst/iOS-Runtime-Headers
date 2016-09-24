@@ -3,7 +3,7 @@
  */
 
 @interface ABCardContentPluginManager : NSObject {
-    NSString *_pluginsDirectory;
+    NSString * _pluginsDirectory;
 }
 
 @property (nonatomic, readonly) NSString *pluginsDirectory;

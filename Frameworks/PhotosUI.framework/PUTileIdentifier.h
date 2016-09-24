@@ -3,10 +3,10 @@
  */
 
 @interface PUTileIdentifier : NSObject <NSCopying> {
-    NSString *_dataSourceIdentifier;
-    unsigned int _hash;
-    NSIndexPath *_indexPath;
-    NSString *_tileKind;
+    NSString * _dataSourceIdentifier;
+    unsigned int  _hash;
+    NSIndexPath * _indexPath;
+    NSString * _tileKind;
 }
 
 @property (nonatomic, readonly) NSString *dataSourceIdentifier;

@@ -3,7 +3,7 @@
  */
 
 @interface PSUIAllowTCCRestrictionsController : PSUITCCAccessController {
-    PSSpecifier *_allowedGroup;
+    PSSpecifier * _allowedGroup;
 }
 
 - (void).cxx_destruct;

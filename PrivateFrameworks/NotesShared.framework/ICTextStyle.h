@@ -3,9 +3,9 @@
  */
 
 @interface ICTextStyle : NSObject {
-    NSDictionary *_attributes;
-    NSString *_name;
-    unsigned int _ttStyle;
+    NSDictionary * _attributes;
+    NSString * _name;
+    unsigned int  _ttStyle;
 }
 
 @property (retain) NSDictionary *attributes;
@@ -13,8 +13,10 @@
 @property (retain) NSString *name;
 @property unsigned int ttStyle;
 
++ (BOOL)autoListInsertionEnabled;
 + (id)defaultTextStyles;
 + (unsigned int)noteDefaultNamedStyle;
++ (void)setAutoListInsertionEnabled:(BOOL)arg1;
 + (void)setNoteDefaultNamedStyle:(unsigned int)arg1;
 + (id)titleForNamedStyle:(unsigned int)arg1;
 + (unsigned int)validatedNamedStyle:(unsigned int)arg1;

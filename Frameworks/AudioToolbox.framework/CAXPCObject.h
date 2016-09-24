@@ -3,7 +3,7 @@
  */
 
 @interface CAXPCObject : NSObject <NSSecureCoding> {
-    NSObject<OS_xpc_object> *_object;
+    NSObject<OS_xpc_object> * _object;
 }
 
 @property (nonatomic) NSObject<OS_xpc_object> *object;

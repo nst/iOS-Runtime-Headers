@@ -5,7 +5,7 @@
 
 @required
 
-- (FBUISceneParameters *)configureWithSceneIdentity:(FBUISceneIdentity *)arg1;
+- (FBSSceneParameters *)configureWithSceneIdentity:(FBUISceneIdentity *)arg1;
 - (void)registerSceneUpdater:(id <FBUISceneUpdater>)arg1;
 
 @end

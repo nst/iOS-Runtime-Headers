@@ -3,10 +3,10 @@
  */
 
 @interface MBRestoreInfo : NSObject <NSCoding, NSCopying> {
-    NSString *_backupBuildVersion;
-    NSDate *_date;
-    NSString *_deviceBuildVersion;
-    BOOL _wasCloudRestore;
+    NSString * _backupBuildVersion;
+    NSDate * _date;
+    NSString * _deviceBuildVersion;
+    BOOL  _wasCloudRestore;
 }
 
 @property (readonly) NSString *backupBuildVersion;

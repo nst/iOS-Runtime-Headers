@@ -3,10 +3,10 @@
  */
 
 @interface SKUIProfileSettingDescription : SKUISettingDescription {
-    NSString *_handle;
-    NSString *_name;
-    NSOperationQueue *_operationQueue;
-    UIImage *_photo;
+    NSString * _handle;
+    NSString * _name;
+    NSOperationQueue * _operationQueue;
+    UIImage * _photo;
 }
 
 @property (nonatomic, readonly) NSString *handle;

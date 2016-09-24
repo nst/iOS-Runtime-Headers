@@ -3,8 +3,8 @@
  */
 
 @interface NFAWDCRSAuthInit : NSObject <NFAWDEventProtocol> {
-    AWDNFCSECRSAuthInit *_metric;
-    unsigned int status;
+    AWDNFCSECRSAuthInit * _metric;
+    unsigned int  _status;
 }
 
 @property (readonly, copy) NSString *debugDescription;

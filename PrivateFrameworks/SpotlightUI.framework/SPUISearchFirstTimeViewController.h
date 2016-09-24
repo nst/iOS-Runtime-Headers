@@ -2,28 +2,20 @@
    Image: /System/Library/PrivateFrameworks/SpotlightUI.framework/SpotlightUI
  */
 
-@interface SPUISearchFirstTimeViewController : UIViewController <UITextViewDelegate> {
-    NSString *_continueLinkString;
-    <SPUISearchFirstTimeViewControllerDelegate> *_delegate;
-    NSString *_fteString;
-    NSString *_learnMoreLinkString;
+@interface SPUISearchFirstTimeViewController : SearchUIFirstTimeExperienceViewController {
+    BOOL  _hasBeenDisplayed;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) <SPUISearchFirstTimeViewControllerDelegate> *delegate;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) UIScrollView *scrollView;
-@property (readonly) Class superclass;
+@property BOOL hasBeenDisplayed;
 
-- (void).cxx_destruct;
-- (void)_configureFTEViews;
-- (id)_vibrantTextViewWithText:(id)arg1 linkAttributes:(id)arg2;
-- (id)delegate;
-- (void)loadView;
-- (id)scrollView;
-- (void)setDelegate:(id)arg1;
-- (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (void)updateWithFTEString:(id)arg1 learnMoreLinkString:(id)arg2 continueLinkString:(id)arg3;
++ (BOOL)needsDisplay;
++ (void)updateViewCountToCount:(int)arg1;
++ (int)viewCount;
+
+- (void)dismissForever;
+- (BOOL)hasBeenDisplayed;
+- (id)initWithSupportedDomains:(unsigned int)arg1 explanationText:(id)arg2 learnMoreText:(id)arg3 continueButtonTitle:(id)arg4;
+- (void)setHasBeenDisplayed:(BOOL)arg1;
+- (void)updateViewCount;
 
 @end

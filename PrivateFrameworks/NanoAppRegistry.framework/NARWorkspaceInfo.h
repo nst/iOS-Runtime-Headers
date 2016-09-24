@@ -3,10 +3,10 @@
  */
 
 @interface NARWorkspaceInfo : NSObject <NSSecureCoding> {
-    NSUUID *_UUID;
-    NSArray *_applications;
-    NSNumber *_sequenceNumber;
-    NSArray *_standaloneGlances;
+    NSUUID * _UUID;
+    NSArray * _applications;
+    NSNumber * _sequenceNumber;
+    NSArray * _standaloneGlances;
 }
 
 @property (nonatomic, readonly) NSUUID *UUID;

@@ -3,7 +3,7 @@
  */
 
 @interface WBSParsecSearchNewsResult : WBSParsecSearchResult {
-    NSString *_subscript;
+    NSString * _subscript;
 }
 
 @property (nonatomic, readonly) NSString *subscript;

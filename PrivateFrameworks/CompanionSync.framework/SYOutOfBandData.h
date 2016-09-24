@@ -3,7 +3,7 @@
  */
 
 @interface SYOutOfBandData : PBCodable <NSCopying> {
-    NSData *_payload;
+    NSData * _payload;
 }
 
 @property (nonatomic, retain) NSData *payload;

@@ -3,14 +3,14 @@
  */
 
 @interface MKTransitIncidentSummaryCell : MKTableViewCell {
-    UIImageView *_iconImageView;
-    NSDate *_startDate;
-    UILabel *_startedLabel;
-    NSLayoutConstraint *_startedToSummaryConstraint;
-    UILabel *_summaryLabel;
-    NSLayoutConstraint *_summaryToTitleConstraint;
-    UILabel *_titleLabel;
-    NSLayoutConstraint *_titleToTopConstraint;
+    UIImageView * _iconImageView;
+    NSDate * _startDate;
+    _MKUILabel * _startedLabel;
+    NSLayoutConstraint * _startedToSummaryConstraint;
+    _MKUILabel * _summaryLabel;
+    NSLayoutConstraint * _summaryToTitleConstraint;
+    _MKUILabel * _titleLabel;
+    NSLayoutConstraint * _titleToTopConstraint;
 }
 
 @property (nonatomic, retain) UIImage *icon;

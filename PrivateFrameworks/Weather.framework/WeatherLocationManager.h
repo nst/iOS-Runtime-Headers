@@ -3,24 +3,26 @@
  */
 
 @interface WeatherLocationManager : NSObject <CLLocationManagerDelegate> {
-    NSTimer *_accuracyFallbackTimer;
-    int _authorizationStatus;
-    NSTimer *_delayedUpdateTimer;
-    <CLLocationManagerDelegate> *_delegate;
-    BOOL _isInternalBuild;
-    float _lastLocationAccuracy;
-    struct { 
+    NSTimer * _accuracyFallbackTimer;
+    int  _authorizationStatus;
+    NSTimer * _delayedUpdateTimer;
+    <CLLocationManagerDelegate> * _delegate;
+    NSString * _effectiveBundleIdentifier;
+    BOOL  _isInternalBuild;
+    double  _lastLocationAccuracy;
+    struct CLLocationCoordinate2D { 
         double latitude; 
         double longitude; 
-    } _lastLocationCoord;
-    NSDate *_lastLocationTimeStamp;
-    double _lastLocationUpdateTime;
-    CLLocationManager *_locationManager;
-    BOOL _locationTrackingIsReady;
-    BOOL _locationUpdatesEnabled;
-    double _nextPlannedUpdate;
-    double _oldestAllowedUpdateTime;
-    unsigned int _updateInterval;
+    }  _lastLocationCoord;
+    NSDate * _lastLocationTimeStamp;
+    double  _lastLocationUpdateTime;
+    CLLocationManager * _locationManager;
+    BOOL  _locationTrackingIsReady;
+    BOOL  _locationUpdatesEnabled;
+    double  _nextPlannedUpdate;
+    double  _oldestAllowedUpdateTime;
+    WeatherPreferences * _preferences;
+    unsigned int  _updateInterval;
 }
 
 @property (nonatomic, retain) NSTimer *accuracyFallbackTimer;
@@ -29,10 +31,12 @@
 @property (nonatomic, retain) NSTimer *delayedUpdateTimer;
 @property (nonatomic) <CLLocationManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) double distanceFilter;
+@property (nonatomic, readonly, copy) NSString *effectiveBundleIdentifier;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isInternalBuild;
-@property (nonatomic) float lastLocationAccuracy;
-@property (nonatomic) struct { double x1; double x2; } lastLocationCoord;
+@property (nonatomic) double lastLocationAccuracy;
+@property (nonatomic) struct CLLocationCoordinate2D { double x1; double x2; } lastLocationCoord;
 @property (nonatomic, copy) NSDate *lastLocationTimeStamp;
 @property (nonatomic) double lastLocationUpdateTime;
 @property (nonatomic, retain) CLLocationManager *locationManager;
@@ -40,10 +44,12 @@
 @property (nonatomic) BOOL locationUpdatesEnabled;
 @property (nonatomic) double nextPlannedUpdate;
 @property (nonatomic) double oldestAllowedUpdateTime;
+@property (nonatomic, retain) WeatherPreferences *preferences;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned int updateInterval;
 
 + (void)clearSharedLocationManager;
++ (int)locationManagerAuthorizationWithEffectiveBundleId:(id)arg1;
 + (id)sharedWeatherLocationManager;
 
 - (void).cxx_destruct;
@@ -59,25 +65,31 @@
 - (id)delayedUpdateTimer;
 - (void)delayedUpdateTimerDidFire:(id)arg1;
 - (id)delegate;
+- (double)distanceFilter;
+- (id)effectiveBundleIdentifier;
 - (int)forceLoadingAuthorizationStatus;
 - (void)forceLocationUpdate;
 - (id)init;
+- (id)initWithPreferences:(id)arg1;
+- (id)initWithPreferences:(id)arg1 effectiveBundleIdentifier:(id)arg2;
 - (BOOL)isInternalBuild;
 - (BOOL)isLocalStaleOrOutOfDate;
 - (float)lastLocationAccuracy;
-- (struct { double x1; double x2; })lastLocationCoord;
+- (struct CLLocationCoordinate2D { double x1; double x2; })lastLocationCoord;
 - (id)lastLocationTimeStamp;
 - (double)lastLocationUpdateTime;
 - (BOOL)localWeatherAuthorized;
 - (id)location;
 - (id)locationManager;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
+- (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (BOOL)locationTrackingIsReady;
 - (BOOL)locationUpdatesEnabled;
 - (void)monitorLocationAuthorization;
 - (double)nextPlannedUpdate;
 - (double)oldestAllowedUpdateTime;
+- (id)preferences;
 - (void)scheduleDelayedUpdate:(double)arg1;
 - (void)setAccuracyFallbackTimer:(id)arg1;
 - (void)setAuthorizationStatus:(int)arg1;
@@ -85,7 +97,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setIsInternalBuild:(BOOL)arg1;
 - (void)setLastLocationAccuracy:(float)arg1;
-- (void)setLastLocationCoord:(struct { double x1; double x2; })arg1;
+- (void)setLastLocationCoord:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
 - (void)setLastLocationTimeStamp:(id)arg1;
 - (void)setLastLocationUpdateTime:(double)arg1;
 - (void)setLocationManager:(id)arg1;
@@ -96,6 +108,7 @@
 - (void)setLocationUpdatesEnabled:(BOOL)arg1;
 - (void)setNextPlannedUpdate:(double)arg1;
 - (void)setOldestAllowedUpdateTime:(double)arg1;
+- (void)setPreferences:(id)arg1;
 - (void)setUpdateInterval:(unsigned int)arg1;
 - (unsigned int)updateInterval;
 - (void)updateLocation:(id)arg1;

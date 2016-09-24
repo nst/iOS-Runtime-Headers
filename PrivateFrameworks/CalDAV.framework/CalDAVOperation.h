@@ -3,9 +3,9 @@
  */
 
 @interface CalDAVOperation : CoreDAVTaskGroup {
-    BOOL _isCancellingTaskGroups;
-    NSMutableSet *_outstandingTaskGroups;
-    <CalDAVPrincipal> *_principal;
+    BOOL  _isCancellingTaskGroups;
+    NSMutableSet * _outstandingTaskGroups;
+    <CalDAVPrincipal> * _principal;
 }
 
 @property (nonatomic, retain) NSMutableSet *outstandingTaskGroups;

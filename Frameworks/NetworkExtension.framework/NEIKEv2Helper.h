@@ -12,8 +12,8 @@
 + (id)createRouteArrayFromTunnelConfig:(id)arg1 childConfig:(id)arg2 gatewayAddress:(id)arg3 isIPv4:(BOOL)arg4;
 + (id)getAddressFromTunnelConfig:(id)arg1 key:(id)arg2 valueType:(id)arg3 outputArray:(id)arg4;
 + (BOOL)getBoolFromTunnelConfig:(id)arg1 key:(id)arg2;
-+ (BOOL)getDPDAttributesForMode:(int)arg1 isWakeUp:(BOOL)arg2 isNAT:(BOOL)arg3 retry:(unsigned int*)arg4 timeout:(unsigned long long*)arg5 frequency:(unsigned int*)arg6;
++ (BOOL)getDPDAttributesForMode:(int)arg1 isWakeUp:(BOOL)arg2 isNAT:(BOOL)arg3 retry:(unsigned int*)arg4 timeout:(unsigned int*)arg5 frequency:(unsigned int*)arg6;
 + (id)getIdentifierType:(id)arg1;
-+ (BOOL)getStatusFromNotification:(unsigned int)arg1 status:(int*)arg2 isConfig:(BOOL*)arg3 isRedirected:(BOOL*)arg4 isSocketError:(BOOL*)arg5;
++ (BOOL)getStatusFromNotification:(unsigned int)arg1 status:(int*)arg2 isConfig:(BOOL*)arg3 isRedirected:(BOOL*)arg4 isSocketError:(BOOL*)arg5 isAdditionalServerAddresses:(BOOL*)arg6;
 
 @end

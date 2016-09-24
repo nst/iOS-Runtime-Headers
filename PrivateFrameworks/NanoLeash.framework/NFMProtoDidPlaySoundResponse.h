@@ -3,7 +3,7 @@
  */
 
 @interface NFMProtoDidPlaySoundResponse : PBCodable <NSCopying> {
-    BOOL _didPlay;
+    BOOL  _didPlay;
 }
 
 @property (nonatomic) BOOL didPlay;

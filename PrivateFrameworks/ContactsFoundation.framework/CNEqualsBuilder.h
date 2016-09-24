@@ -6,11 +6,13 @@
 
 + (BOOL)evaluateBuilderBlock:(id /* block */)arg1 remainingBlocks:(void*)arg2;
 + (BOOL)isBool:(BOOL)arg1 equalToOther:(BOOL)arg2;
++ (BOOL)isDouble:(double)arg1 equalToOther:(double)arg2 withAccuracy:(double)arg3;
 + (BOOL)isInteger:(int)arg1 equalToOther:(int)arg2;
 + (BOOL)isObject:(id)arg1 equalToOther:(id)arg2;
 + (BOOL)isObject:(id)arg1 equalToOther:(id)arg2 withBlocks:(id /* block */)arg3;
 + (BOOL)isObject:(id)arg1 kindOfClass:(Class)arg2 andEqualToObject:(id)arg3 withBlocks:(id /* block */)arg4;
 + (BOOL)isObject:(id)arg1 memberOfClass:(Class)arg2 andEqualToObject:(id)arg3 withBlocks:(id /* block */)arg4;
 + (BOOL)isObject:(id)arg1 memberOfSameClassAndEqualTo:(id)arg2 withBlocks:(id /* block */)arg3;
++ (BOOL)isString:(id)arg1 localizedCaseInsensitiveEqualToOther:(id)arg2;
 
 @end

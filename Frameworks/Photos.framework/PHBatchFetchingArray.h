@@ -3,17 +3,17 @@
  */
 
 @interface PHBatchFetchingArray : NSArray <NSCacheDelegate> {
-    unsigned int _batchSize;
-    NSCache *_cache;
-    unsigned int _count;
-    <PHBatchFetchingArrayDataSource> *_dataSource;
-    NSArray *_firstBatch;
-    unsigned int _firstBatchIndex;
-    NSObject<OS_dispatch_queue> *_firstBatchQueue;
-    NSArray *_oids;
-    NSSet *_oidsSet;
-    unsigned int _propertyHint;
-    NSMutableDictionary *_uuidsByOIDs;
+    unsigned int  _batchSize;
+    NSCache * _cache;
+    unsigned int  _count;
+    <PHBatchFetchingArrayDataSource> * _dataSource;
+    NSArray * _firstBatch;
+    unsigned int  _firstBatchIndex;
+    NSObject<OS_dispatch_queue> * _firstBatchQueue;
+    NSArray * _oids;
+    NSSet * _oidsSet;
+    unsigned int  _propertyHint;
+    NSMutableDictionary * _uuidsByOIDs;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -36,6 +36,7 @@
 - (void)_rememberUUIDsForBatch:(id)arg1;
 - (unsigned int)batchSize;
 - (void)cache:(id)arg1 willEvictObject:(id)arg2;
+- (BOOL)containsObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
@@ -46,7 +47,6 @@
 - (unsigned int)indexOfObject:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)initWithOIDs:(id)arg1 options:(id)arg2 dataSource:(id)arg3;
 - (id)initWithOIDs:(id)arg1 options:(id)arg2 photoLibrary:(id)arg3;
-- (void)min:(id*)arg1 andMax:(id*)arg2 forKeypath:(id)arg3;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (id)oids;

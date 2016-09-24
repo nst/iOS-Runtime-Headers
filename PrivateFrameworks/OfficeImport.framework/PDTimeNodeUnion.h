@@ -3,18 +3,18 @@
  */
 
 @interface PDTimeNodeUnion : NSObject {
-    PDAudioNode *mAudio;
-    PDCmdBehavior *mCmdBehavior;
-    PDAnimateColorBehavior *mColorBehavior;
-    PDAnimateEffectBehavior *mEffectBehavior;
-    PDAnimateMotionBehavior *mMotionBehavior;
-    PDParallelTimeNode *mParallelTimeNodeGroup;
-    PDAnimateRotateBehavior *mRotateBehavior;
-    PDAnimateScaleBehavior *mScaleBehavior;
-    PDSequentialTimeNode *mSequentialTimeNodeGroup;
-    PDSetBehavior *mSetBehavior;
-    PDAnimateTimeBehavior *mTimeBehavior;
-    PDVideoNode *mVideo;
+    PDAudioNode * mAudio;
+    PDCmdBehavior * mCmdBehavior;
+    PDAnimateColorBehavior * mColorBehavior;
+    PDAnimateEffectBehavior * mEffectBehavior;
+    PDAnimateMotionBehavior * mMotionBehavior;
+    PDParallelTimeNode * mParallelTimeNodeGroup;
+    PDAnimateRotateBehavior * mRotateBehavior;
+    PDAnimateScaleBehavior * mScaleBehavior;
+    PDSequentialTimeNode * mSequentialTimeNodeGroup;
+    PDSetBehavior * mSetBehavior;
+    PDAnimateTimeBehavior * mTimeBehavior;
+    PDVideoNode * mVideo;
 }
 
 - (id)audio;

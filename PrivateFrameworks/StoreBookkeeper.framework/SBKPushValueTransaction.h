@@ -3,15 +3,15 @@
  */
 
 @interface SBKPushValueTransaction : SBKTransaction {
-    <SBKKeyValuePayloadPair> *_clientItemPayloadPair;
-    NSString *_clientItemVersionAnchor;
-    BOOL _isRechedulable;
-    <SBKKeyValuePayloadPair> *_requestItemPayloadPair;
-    NSString *_requestItemVersionAnchor;
-    NSString *_resultDomainVersion;
-    <SBKKeyValuePayloadPair> *_resultItemPayloadPair;
-    NSString *_resultItemVersionAnchor;
-    BOOL _success;
+    <SBKKeyValuePayloadPair> * _clientItemPayloadPair;
+    NSString * _clientItemVersionAnchor;
+    BOOL  _isRechedulable;
+    <SBKKeyValuePayloadPair> * _requestItemPayloadPair;
+    NSString * _requestItemVersionAnchor;
+    NSString * _resultDomainVersion;
+    <SBKKeyValuePayloadPair> * _resultItemPayloadPair;
+    NSString * _resultItemVersionAnchor;
+    BOOL  _success;
 }
 
 @property (readonly) <SBKKeyValuePayloadPair> *clientItemPayloadPair;

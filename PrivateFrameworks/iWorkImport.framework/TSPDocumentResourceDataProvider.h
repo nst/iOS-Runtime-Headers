@@ -3,21 +3,21 @@
  */
 
 @interface TSPDocumentResourceDataProvider : NSObject <TSPDocumentResourceDownloadNotificationProtocol, TSPDocumentResourceDownloader> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    TSPObjectContext *_context;
-    BOOL _didCancelDownloads;
-    BOOL _didNotifyObjectContext;
-    NSMutableArray *_downloadItems;
-    long long _estimatedDownloadSize;
-    NSMutableSet *_infosToDownload;
-    BOOL _isEstimatedDownloadSizePrecise;
-    TSPDocumentResourceManager *_manager;
-    NSHashTable *_storagesCache;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    TSPObjectContext * _context;
+    BOOL  _didCancelDownloads;
+    BOOL  _didNotifyObjectContext;
+    NSMutableArray * _downloadItems;
+    int  _estimatedDownloadSize;
+    NSMutableSet * _infosToDownload;
+    BOOL  _isEstimatedDownloadSizePrecise;
+    TSPDocumentResourceManager * _manager;
+    NSHashTable * _storagesCache;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) long long estimatedDownloadSize;
+@property (nonatomic, readonly) int estimatedDownloadSize;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isEstimatedDownloadSizePrecise;
 @property (nonatomic, readonly) BOOL needsDownload;
@@ -35,7 +35,7 @@
 - (id)dataStorageForDigestString:(id)arg1 locator:(id)arg2 extension:(id)arg3 needsDownload:(BOOL*)arg4;
 - (id)dataStorageForSageLocator:(id)arg1;
 - (id)downloadWithDelegate:(id)arg1 description:(id)arg2;
-- (long long)estimatedDownloadSize;
+- (int)estimatedDownloadSize;
 - (id)init;
 - (id)initWithManager:(id)arg1 context:(id)arg2;
 - (BOOL)isEstimatedDownloadSizePrecise;

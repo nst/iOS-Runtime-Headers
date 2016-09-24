@@ -3,24 +3,24 @@
  */
 
 @interface ABPersonTableAction : NSObject <ABStyleProviding> {
-    UIButton *_FMFButton;
-    BOOL _allowDifferentiationSheet;
-    UIButton *_button;
-    UIView *_customContentView;
-    <ABPersonTableActionDelegate> *_delegate;
-    NSString *_detailText;
-    NSString *_differentiationSheetTitle;
-    BOOL _displaysShortTitle;
-    int _grouping;
-    BOOL _indicatesFaceTimeHistory;
-    int _ordering;
-    struct __CFArray { } *_properties;
-    int _property;
-    SEL _selector;
-    NSString *_shortTitle;
-    int _style;
-    id _target;
-    NSString *_title;
+    UIButton * _FMFButton;
+    BOOL  _allowDifferentiationSheet;
+    UIButton * _button;
+    UIView * _customContentView;
+    <ABPersonTableActionDelegate> * _delegate;
+    NSString * _detailText;
+    NSString * _differentiationSheetTitle;
+    BOOL  _displaysShortTitle;
+    int  _grouping;
+    BOOL  _indicatesFaceTimeHistory;
+    int  _ordering;
+    struct __CFArray { } * _properties;
+    int  _property;
+    SEL  _selector;
+    NSString * _shortTitle;
+    int  _style;
+    id  _target;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) UIView *actionContentView;

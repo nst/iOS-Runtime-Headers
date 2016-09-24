@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIControl : UIView {
+@interface UIControl : UIView <SKUIAdvertisingPrivacyControlProtocol> {
     struct { 
         unsigned int disabled : 1; 
         unsigned int tracking : 1; 
@@ -19,21 +19,28 @@
         unsigned int horizontalAlignment : 2; 
         unsigned int wasLastHighlightSuccessful : 1; 
         unsigned int touchHasHighlighted : 1; 
-    } _controlFlags;
-    double _downTime;
+    }  _controlFlags;
+    double  _downTime;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _previousPoint;
-    NSMutableArray *_targetActions;
+        double x; 
+        double y; 
+    }  _previousPoint;
+    NSMutableArray * _targetActions;
 }
 
+@property (nonatomic, retain) NSString *adPrivacyData;
+@property (nonatomic, readonly) unsigned int allControlEvents;
+@property (nonatomic, readonly) NSSet *allTargets;
 @property (nonatomic) int contentHorizontalAlignment;
 @property (nonatomic) int contentVerticalAlignment;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (readonly) unsigned int hash;
 @property (getter=isHighlighted, nonatomic) BOOL highlighted;
 @property (getter=isSelected, nonatomic) BOOL selected;
 @property (nonatomic, readonly) unsigned int state;
+@property (readonly) Class superclass;
 @property (getter=isTouchInside, nonatomic, readonly) BOOL touchInside;
 @property (getter=isTracking, nonatomic, readonly) BOOL tracking;
 
@@ -47,7 +54,7 @@
 - (id)__scalarStatisticsForUserValueChangedEvent;
 - (void)_beginInteractionDurationStatisticMeasurements;
 - (void)_cancelDelayedActions;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_clippedHighlightBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_clippedHighlightBounds;
 - (void)_commitInteractionDurationStatisticMeasurements;
 - (void)_connectInterfaceBuilderEventConnection:(id)arg1;
 - (unsigned int)_controlEventsForActionTriggered;
@@ -88,16 +95,16 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)hasOneOrMoreTargets;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isEnabled;
 - (BOOL)isHighlighted;
 - (BOOL)isSelected;
 - (BOOL)isTouchInside;
 - (BOOL)isTracking;
-- (BOOL)pointMostlyInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointMostlyInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)removeTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned int)arg3;
 - (void)removeTarget:(id)arg1 forEvents:(int)arg2;
 - (BOOL)requiresDisplayOnTracking;
@@ -123,8 +130,17 @@
 
 - (void)_cnui_super_touchesCancelled:(id)arg1 withEvent:(id)arg2;
 
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (void)_mapkit_setTarget:(id)arg1 action:(SEL)arg2;
+
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 
 - (void)music_configureControlWithTextDescriptor:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
+
+- (id)adPrivacyData;
+- (void)setAdPrivacyData:(id)arg1;
 
 @end

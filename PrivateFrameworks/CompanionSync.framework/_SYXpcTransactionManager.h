@@ -3,13 +3,16 @@
  */
 
 @interface _SYXpcTransactionManager : NSObject {
-    NSObject<OS_dispatch_queue> *_syncQ;
-    NSMutableDictionary *_table;
+    NSMutableSet * _errorsForStateDump;
+    unsigned int  _stateHandle;
+    NSObject<OS_dispatch_queue> * _syncQ;
+    NSMutableDictionary * _table;
 }
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
+- (void)_logBacktraceForStateDump:(id)arg1 name:(id)arg2 message:(id)arg3;
 - (void)beginTransactionWithName:(id)arg1 file:(id)arg2 line:(int)arg3 andFunction:(id)arg4;
 - (void)dealloc;
 - (void)endTransactionWithName:(id)arg1 file:(id)arg2 line:(int)arg3 andFunction:(id)arg4;

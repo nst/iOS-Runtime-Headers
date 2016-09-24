@@ -3,7 +3,7 @@
  */
 
 @interface AVArrayQueueFeeder : AVQueueFeeder {
-    NSMutableArray *_items;
+    NSMutableArray * _items;
 }
 
 - (void)dealloc;

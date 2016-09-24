@@ -3,7 +3,7 @@
  */
 
 @interface CalDAVNotificationContainerSyncTaskGroup : CoreDAVContainerSyncTaskGroup {
-    NSSet *_notificationTypeNamesToFetch;
+    NSSet * _notificationTypeNamesToFetch;
 }
 
 @property (nonatomic, retain) NSSet *notificationTypeNamesToFetch;

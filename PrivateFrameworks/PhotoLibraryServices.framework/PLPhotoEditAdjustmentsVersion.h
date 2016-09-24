@@ -3,9 +3,9 @@
  */
 
 @interface PLPhotoEditAdjustmentsVersion : NSObject {
-    unsigned int _majorVersion;
-    unsigned int _minorVersion;
-    NSString *_platform;
+    unsigned int  _majorVersion;
+    unsigned int  _minorVersion;
+    NSString * _platform;
 }
 
 @property (nonatomic, readonly) unsigned int majorVersion;

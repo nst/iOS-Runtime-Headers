@@ -3,7 +3,7 @@
  */
 
 @interface CNDispatchSource : NSObject <CNCancelable> {
-    NSObject<OS_dispatch_source> *_source;
+    NSObject<OS_dispatch_source> * _source;
 }
 
 @property (readonly, copy) NSString *debugDescription;

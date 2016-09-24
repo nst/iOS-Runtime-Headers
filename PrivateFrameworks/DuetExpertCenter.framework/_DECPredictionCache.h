@@ -3,9 +3,9 @@
  */
 
 @interface _DECPredictionCache : NSObject {
-    NSMutableDictionary *_cache;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSString *_restorationPath;
+    NSMutableDictionary * _cache;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSString * _restorationPath;
 }
 
 + (id)diskBackedCacheWithPath:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface WMEnumProperty : CMProperty {
-    unsigned int wdValue;
+    unsigned int  wdValue;
 }
 
 - (id)cssStringForName:(id)arg1;

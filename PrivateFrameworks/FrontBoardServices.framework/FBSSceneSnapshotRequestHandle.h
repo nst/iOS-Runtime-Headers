@@ -3,10 +3,10 @@
  */
 
 @interface FBSSceneSnapshotRequestHandle : NSObject {
-    FBSSceneSnapshotRequestAction *_action;
-    BOOL _canceled;
-    FBSSceneSnapshotContext *_context;
-    unsigned int _type;
+    FBSSceneSnapshotRequestAction * _action;
+    BOOL  _canceled;
+    FBSSceneSnapshotContext * _context;
+    unsigned int  _type;
 }
 
 + (id)handleForRequestType:(unsigned int)arg1 context:(id)arg2;

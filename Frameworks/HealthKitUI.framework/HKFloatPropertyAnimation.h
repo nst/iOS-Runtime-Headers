@@ -3,14 +3,14 @@
  */
 
 @interface HKFloatPropertyAnimation : HKAnimatableObjectPropertyAnimation {
-    float _currentValue;
-    float _endValue;
-    float _startValue;
+    double  _currentValue;
+    double  _endValue;
+    double  _startValue;
 }
 
-@property (nonatomic, readonly) float currentValue;
-@property (nonatomic, readonly) float endValue;
-@property (nonatomic, readonly) float startValue;
+@property (nonatomic, readonly) double currentValue;
+@property (nonatomic, readonly) double endValue;
+@property (nonatomic, readonly) double startValue;
 
 + (id)animationWithEndingFloatValue:(float)arg1 duration:(double)arg2 customTimingFunction:(id /* block */)arg3 completion:(id /* block */)arg4;
 + (id)animationWithEndingFloatValue:(float)arg1 duration:(double)arg2 timingFunction:(id)arg3 completion:(id /* block */)arg4;

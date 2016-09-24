@@ -3,24 +3,24 @@
  */
 
 @interface GEOVTile : PBCodable <NSCopying> {
-    NSMutableArray *_coastlines;
-    GEOVConnectivity *_connectivity;
+    NSMutableArray * _coastlines;
+    GEOVConnectivity * _connectivity;
     struct { 
         unsigned int minZ : 1; 
         unsigned int sectionDeltaLengthBits : 1; 
         unsigned int vertexBits : 1; 
         unsigned int zBits : 1; 
-    } _has;
-    NSMutableArray *_labelLanguages;
-    NSData *_labels;
-    NSMutableArray *_lines;
-    int _minZ;
-    NSMutableArray *_points;
-    NSMutableArray *_polygons;
-    unsigned int _sectionDeltaLengthBits;
-    unsigned int _vertexBits;
-    NSData *_vertices;
-    int _zBits;
+    }  _has;
+    NSMutableArray * _labelLanguages;
+    NSData * _labels;
+    NSMutableArray * _lines;
+    int  _minZ;
+    NSMutableArray * _points;
+    NSMutableArray * _polygons;
+    unsigned int  _sectionDeltaLengthBits;
+    unsigned int  _vertexBits;
+    NSData * _vertices;
+    int  _zBits;
 }
 
 @property (nonatomic, retain) NSMutableArray *coastlines;

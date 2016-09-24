@@ -3,12 +3,12 @@
  */
 
 @interface SUMediaItemCellContext : SUItemCellContext {
-    float _artworkWidth;
-    int _hiddenMediaIconTypes;
-    BOOL _itemsHaveArtwork;
+    double  _artworkWidth;
+    int  _hiddenMediaIconTypes;
+    BOOL  _itemsHaveArtwork;
 }
 
-@property (nonatomic) float artworkWidth;
+@property (nonatomic) double artworkWidth;
 @property (nonatomic) int hiddenMediaIconTypes;
 @property (nonatomic) BOOL itemsHaveArtwork;
 

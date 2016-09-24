@@ -12,5 +12,10 @@
 - (void)setDisabled:(BOOL)arg1;
 - (void)updateCollectionInterval:(double)arg1 forType:(HKObjectType *)arg2;
 - (void)updateHistoricalData;
+- (void)updateHistoricalDataWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
+
+@optional
+
+- (BOOL)shouldCollectForObserverState:(HDDataCollectionObserverState *)arg1;
 
 @end

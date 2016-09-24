@@ -3,14 +3,15 @@
  */
 
 @interface UIScrollToDismissSupport : UIKeyboardMotionSupport <UIScrollViewIntersectionDelegate> {
-    UIScrollView *_scrollViewForTransition;
-    UIInputViewSetNotificationInfo *_scrollViewNotificationInfo;
-    BOOL _scrollViewShowsHorizontalScrollIndicator;
-    BOOL _scrollViewTransitionFinishing;
+    BOOL  _disableInterfaceAutorotation;
+    UIScrollView * _scrollViewForTransition;
+    UIInputViewSetNotificationInfo * _scrollViewNotificationInfo;
+    BOOL  _scrollViewShowsHorizontalScrollIndicator;
+    BOOL  _scrollViewTransitionFinishing;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _scrollViewTransitionPreviousPoint;
+        double x; 
+        double y; 
+    }  _scrollViewTransitionPreviousPoint;
 }
 
 - (id)cancelNotificationsForMode:(unsigned int)arg1;

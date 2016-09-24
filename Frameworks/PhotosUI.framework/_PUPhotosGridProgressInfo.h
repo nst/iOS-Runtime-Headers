@@ -3,18 +3,18 @@
  */
 
 @interface _PUPhotosGridProgressInfo : NSObject {
-    PHAsset *_asset;
-    NSIndexPath *_cachedIndexPath;
-    PHAssetCollection *_collection;
-    NSString *_identifier;
-    float _progress;
+    PHAsset * _asset;
+    NSIndexPath * _cachedIndexPath;
+    PHAssetCollection * _collection;
+    NSString * _identifier;
+    double  _progress;
 }
 
 @property (nonatomic, retain) PHAsset *asset;
 @property (nonatomic, retain) NSIndexPath *cachedIndexPath;
 @property (nonatomic, retain) PHAssetCollection *collection;
 @property (nonatomic, retain) NSString *identifier;
-@property (nonatomic) float progress;
+@property (nonatomic) double progress;
 
 - (void).cxx_destruct;
 - (id)asset;

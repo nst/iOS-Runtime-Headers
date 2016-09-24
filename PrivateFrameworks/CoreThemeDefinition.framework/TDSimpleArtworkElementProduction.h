@@ -4,6 +4,8 @@
 
 @interface TDSimpleArtworkElementProduction : TDElementProduction
 
+@property (nonatomic) BOOL isFlippable;
+@property (nonatomic) BOOL optOutOfThinning;
 @property (nonatomic, retain) TDTemplateRenderingMode *templateRenderingMode;
 
 - (id)associatedFileModificationDateWithDocument:(id)arg1;

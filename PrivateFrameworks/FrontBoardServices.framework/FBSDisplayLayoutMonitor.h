@@ -3,16 +3,16 @@
  */
 
 @interface FBSDisplayLayoutMonitor : NSObject <FBSDisplayLayoutMonitorClientDelegate> {
-    NSObject<OS_dispatch_queue> *_calloutQueue;
-    unsigned int _displayType;
-    unsigned int _qualityOfService;
-    NSObject<OS_dispatch_queue> *_queue;
-    FBSDisplayLayoutMonitorClient *_queue_client;
-    FBSDisplayLayout *_queue_currentLayout;
-    id /* block */ _queue_handler;
-    BOOL _queue_invalidated;
-    NSHashTable *_queue_observers;
-    BOOL _sharedInstance;
+    NSObject<OS_dispatch_queue> * _calloutQueue;
+    unsigned int  _displayType;
+    unsigned int  _qualityOfService;
+    NSObject<OS_dispatch_queue> * _queue;
+    FBSDisplayLayoutMonitorClient * _queue_client;
+    FBSDisplayLayout * _queue_currentLayout;
+    id /* block */  _queue_handler;
+    BOOL  _queue_invalidated;
+    NSHashTable * _queue_observers;
+    BOOL  _sharedInstance;
 }
 
 @property (nonatomic, readonly, retain) FBSDisplayLayout *currentLayout;

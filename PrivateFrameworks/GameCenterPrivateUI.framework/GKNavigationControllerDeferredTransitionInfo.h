@@ -3,9 +3,9 @@
  */
 
 @interface GKNavigationControllerDeferredTransitionInfo : NSObject {
-    BOOL _animated;
-    int _type;
-    UIViewController *_viewController;
+    BOOL  _animated;
+    int  _type;
+    UIViewController * _viewController;
 }
 
 @property (nonatomic) BOOL animated;
@@ -13,6 +13,7 @@
 @property (nonatomic, retain) UIViewController *viewController;
 
 - (BOOL)animated;
+- (void)dealloc;
 - (void)setAnimated:(BOOL)arg1;
 - (void)setType:(int)arg1;
 - (void)setViewController:(id)arg1;

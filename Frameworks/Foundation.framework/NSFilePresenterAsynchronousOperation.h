@@ -3,9 +3,9 @@
  */
 
 @interface NSFilePresenterAsynchronousOperation : NSOperation {
-    id /* block */ _block;
-    BOOL _isExecuting;
-    BOOL _isFinished;
+    id /* block */  _block;
+    BOOL  _isExecuting;
+    BOOL  _isFinished;
 }
 
 + (id)operationWithBlock:(id /* block */)arg1;

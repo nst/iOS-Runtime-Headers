@@ -3,8 +3,8 @@
  */
 
 @interface HLPHelpLocale : NSObject {
-    NSArray *_isoCodes;
-    NSString *_path;
+    NSArray * _isoCodes;
+    NSString * _path;
 }
 
 @property (nonatomic, copy) NSArray *isoCodes;

@@ -3,10 +3,10 @@
  */
 
 @interface OADDuotoneEffect : OADBlipEffect {
-    OADColor *mColor1;
-    OADColor *mColor2;
-    int mTransferMode1;
-    int mTransferMode2;
+    OADColor * mColor1;
+    OADColor * mColor2;
+    int  mTransferMode1;
+    int  mTransferMode2;
 }
 
 - (id)color1;

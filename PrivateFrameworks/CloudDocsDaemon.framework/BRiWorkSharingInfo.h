@@ -3,7 +3,7 @@
  */
 
 @interface BRiWorkSharingInfo : NSObject <NSSecureCoding> {
-    BOOL _options;
+    BOOL  _options;
 }
 
 @property (nonatomic, readonly) BOOL options;

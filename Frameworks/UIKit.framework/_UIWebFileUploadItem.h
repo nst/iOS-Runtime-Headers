@@ -3,7 +3,7 @@
  */
 
 @interface _UIWebFileUploadItem : NSObject {
-    NSString *_filePath;
+    NSString * _filePath;
 }
 
 @property (nonatomic, retain) NSString *filePath;

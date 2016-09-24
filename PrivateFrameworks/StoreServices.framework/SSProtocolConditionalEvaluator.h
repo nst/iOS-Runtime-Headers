@@ -3,8 +3,8 @@
  */
 
 @interface SSProtocolConditionalEvaluator : NSObject {
-    SSProtocolConditionalContext *_context;
-    NSDictionary *_dictionary;
+    SSProtocolConditionalContext * _context;
+    NSDictionary * _dictionary;
 }
 
 + (id)defaultConditionalContext;

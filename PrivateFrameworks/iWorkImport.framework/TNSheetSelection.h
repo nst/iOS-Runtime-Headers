@@ -3,8 +3,8 @@
  */
 
 @interface TNSheetSelection : TSKSelection {
-    BOOL mIsPaginated;
-    TNSheet *mSheet;
+    BOOL  mIsPaginated;
+    TNSheet * mSheet;
 }
 
 @property (getter=isPaginated, nonatomic, readonly) BOOL paginated;
@@ -13,7 +13,9 @@
 + (Class)archivedSelectionClass;
 + (id)selectionForSheet:(id)arg1 paginated:(BOOL)arg2;
 
+- (id)UUIDDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)description;
 - (id)initWithSheet:(id)arg1 paginated:(BOOL)arg2;
 - (BOOL)isEqual:(id)arg1;

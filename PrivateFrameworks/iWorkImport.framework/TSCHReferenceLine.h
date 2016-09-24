@@ -3,12 +3,12 @@
  */
 
 @interface TSCHReferenceLine : NSObject <TSCHPropertyMapsGeneratedProtocol, TSCHStyleOwnerCollaborationSupport, TSCHStyleOwning, TSCHUnretainedParent> {
-    TSCHChartAxisID *mAxisID;
-    TSCHChartModel *mModel;
-    TSCHReferenceLineNonStyle *mNonStyle;
-    TSCHReferenceLineStyle *mStyle;
-    unsigned int mStyleSwapIndex;
-    NSUUID *mUUID;
+    TSCHChartAxisID * mAxisID;
+    TSCHChartModel * mModel;
+    TSCHReferenceLineNonStyle * mNonStyle;
+    TSCHReferenceLineStyle * mStyle;
+    unsigned int  mStyleSwapIndex;
+    NSUUID * mUUID;
 }
 
 @property (nonatomic, readonly) TSCHChartAxis *axis;

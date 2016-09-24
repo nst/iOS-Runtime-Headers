@@ -3,10 +3,10 @@
  */
 
 @interface HAPBTLEControlPacket : NSObject {
-    BOOL _continuationPacket;
-    NSData *_payload;
-    HAPBTLETransactionIdentifier *_transactionIdentifier;
-    unsigned char _type;
+    BOOL  _continuationPacket;
+    NSData * _payload;
+    HAPBTLETransactionIdentifier * _transactionIdentifier;
+    unsigned char  _type;
 }
 
 @property (getter=isContinuationPacket, nonatomic, readonly) BOOL continuationPacket;

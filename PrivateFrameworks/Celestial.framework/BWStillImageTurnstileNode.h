@@ -3,7 +3,7 @@
  */
 
 @interface BWStillImageTurnstileNode : BWNode {
-    BWStillImageCoordinatorNode *_stillImageCoordinator;
+    BWStillImageCoordinatorNode * _stillImageCoordinator;
 }
 
 + (void)initialize;

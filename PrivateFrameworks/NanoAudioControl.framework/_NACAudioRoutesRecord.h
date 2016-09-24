@@ -3,10 +3,10 @@
  */
 
 @interface _NACAudioRoutesRecord : NSObject {
-    NSArray *_audioRoutes;
-    NSArray *_deferredAudioRoutes;
-    NSMutableSet *_observers;
-    double _timestamp;
+    NSArray * _audioRoutes;
+    NSArray * _deferredAudioRoutes;
+    NSMutableSet * _observers;
+    double  _timestamp;
 }
 
 @property (nonatomic, retain) NSArray *audioRoutes;

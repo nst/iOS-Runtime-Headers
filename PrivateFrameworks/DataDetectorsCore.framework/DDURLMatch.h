@@ -6,8 +6,8 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
-    NSString *_url;
+    }  _range;
+    NSString * _url;
 }
 
 - (int)compare:(id)arg1;

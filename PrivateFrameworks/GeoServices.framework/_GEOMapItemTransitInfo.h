@@ -3,17 +3,17 @@
  */
 
 @interface _GEOMapItemTransitInfo : NSObject <GEOMapItemTransitInfo> {
-    NSArray *_connections;
-    NSArray *_departureSequences;
-    NSString *_displayName;
-    BOOL _hasTransitIncidentComponent;
-    NSDate *_incidentExpirationDate;
-    NSArray *_incidents;
-    NSArray *_lines;
-    NSArray *_systems;
-    NSTimeZone *_timeZone;
-    GEOPDTransitInfo *_transitInfo;
-    GEOPDTransitSchedule *_transitSchedule;
+    NSArray * _connections;
+    NSArray * _departureSequences;
+    NSString * _displayName;
+    BOOL  _hasTransitIncidentComponent;
+    NSDate * _incidentExpirationDate;
+    NSArray * _incidents;
+    NSArray * _lines;
+    NSArray * _systems;
+    NSTimeZone * _timeZone;
+    GEOPDTransitInfo * _transitInfo;
+    GEOPDTransitSchedule * _transitSchedule;
 }
 
 @property (nonatomic, readonly) NSArray *connections;
@@ -29,7 +29,6 @@
 @property (nonatomic, readonly) NSDate *lastFullScheduleValidDate;
 @property (nonatomic, readonly) NSArray *lines;
 @property (nonatomic, readonly) unsigned int linesCount;
-@property (nonatomic, readonly) unsigned int numAdditionalDepartures;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSArray *systems;
 @property (nonatomic, readonly) unsigned int systemsCount;
@@ -52,7 +51,7 @@
 - (id)lines;
 - (unsigned int)linesCount;
 - (id)linesForSystem:(id)arg1;
-- (unsigned int)numAdditionalDepartures;
+- (unsigned int)numAdditionalDeparturesForSequence:(id)arg1;
 - (id)sequencesForSystem:(id)arg1 excludingIncidentEntities:(id)arg2 direction:(id)arg3 validForDateFromBlock:(id /* block */)arg4;
 - (id)serviceResumesDateForLine:(id)arg1 excludingIncidentEntities:(id)arg2 afterDate:(id)arg3 blocked:(out BOOL*)arg4;
 - (id)systems;

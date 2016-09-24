@@ -3,12 +3,12 @@
  */
 
 @interface CLPlacemarkInternal : NSObject {
-    NSDictionary *addressDictionary;
-    NSArray *areasOfInterest;
-    GEOMapItemStorage *geoMapItemStorage;
-    CLLocation *location;
-    CLRegion *region;
-    NSTimeZone *timeZone;
+    NSDictionary * addressDictionary;
+    NSArray * areasOfInterest;
+    GEOMapItemStorage * geoMapItemStorage;
+    CLLocation * location;
+    CLRegion * region;
+    NSTimeZone * timeZone;
 }
 
 @end

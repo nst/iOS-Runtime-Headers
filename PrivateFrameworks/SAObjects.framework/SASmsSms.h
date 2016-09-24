@@ -4,10 +4,13 @@
 
 @interface SASmsSms : SADomainObject
 
+@property (nonatomic, retain) SAAppInfo *appInfo;
 @property (nonatomic, copy) NSURL *attachment;
+@property (nonatomic, copy) NSArray *attachments;
 @property (nonatomic, copy) NSString *chatIdentifier;
 @property (nonatomic, copy) NSDate *dateLastMessageReadInThread;
 @property (nonatomic, copy) NSDate *dateSent;
+@property (nonatomic, copy) NSString *effect;
 @property (nonatomic, copy) NSString *groupName;
 @property (nonatomic, copy) NSString *groupNameId;
 @property (nonatomic) BOOL hasGroupName;
@@ -26,10 +29,13 @@
 + (id)sms;
 + (id)smsWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)appInfo;
 - (id)attachment;
+- (id)attachments;
 - (id)chatIdentifier;
 - (id)dateLastMessageReadInThread;
 - (id)dateSent;
+- (id)effect;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)groupName;
@@ -42,10 +48,13 @@
 - (id)outgoing;
 - (id)recipients;
 - (id)sender;
+- (void)setAppInfo:(id)arg1;
 - (void)setAttachment:(id)arg1;
+- (void)setAttachments:(id)arg1;
 - (void)setChatIdentifier:(id)arg1;
 - (void)setDateLastMessageReadInThread:(id)arg1;
 - (void)setDateSent:(id)arg1;
+- (void)setEffect:(id)arg1;
 - (void)setGroupName:(id)arg1;
 - (void)setGroupNameId:(id)arg1;
 - (void)setHasGroupName:(BOOL)arg1;

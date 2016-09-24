@@ -3,10 +3,10 @@
  */
 
 @interface CNContactChangesObserverProxy : NSObject {
-    CNContact *_contactSnapshot;
-    NSArray *_keysToFetch;
-    <CNContactChangesObserver> *_observer;
-    BOOL _unify;
+    CNContact * _contactSnapshot;
+    NSArray * _keysToFetch;
+    <CNContactChangesObserver> * _observer;
+    BOOL  _unify;
 }
 
 @property (nonatomic, retain) CNContact *contactSnapshot;

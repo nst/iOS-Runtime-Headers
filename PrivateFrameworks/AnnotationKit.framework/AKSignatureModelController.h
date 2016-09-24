@@ -3,11 +3,11 @@
  */
 
 @interface AKSignatureModelController : NSObject {
-    AKController *_controller;
-    int _nextUID;
-    AKSignature *_selectedSignature;
-    NSMutableArray *_signatures;
-    BOOL _signaturesDecryptionAttempted;
+    AKController * _controller;
+    int  _nextUID;
+    AKSignature * _selectedSignature;
+    NSMutableArray * _signatures;
+    BOOL  _signaturesDecryptionAttempted;
 }
 
 @property AKController *controller;

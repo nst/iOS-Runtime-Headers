@@ -3,22 +3,22 @@
  */
 
 @interface CoreDAVErrorItem : CoreDAVItem {
-    CoreDAVItemWithNoChildren *_ctagOkay;
-    CoreDAVItemWithNoChildren *_imageError;
-    CoreDAVItemWithNoChildren *_invalidImageType;
-    CoreDAVItemWithNoChildren *_maxAttendees;
-    CoreDAVItemWithNoChildren *_maxImageSize;
-    CoreDAVItemWithNoChildren *_maxResourceSize;
-    CoreDAVItemWithNoChildren *_maxResources;
-    CoreDAVItemWithNoChildren *_noUIDConflict;
-    CoreDAVItemWithNoChildren *_numberOfMatchesWithinLimits;
-    CoreDAVItemWithNoChildren *_quotaExceeded;
-    CoreDAVLeafItem *_status;
-    CoreDAVItemWithNoChildren *_uid;
-    CoreDAVItemWithNoChildren *_validAddressData;
-    CoreDAVItemWithNoChildren *_validSplit;
-    CoreDAVItemWithNoChildren *_validSyncToken;
-    CoreDAVItemWithNoChildren *_validTimezone;
+    CoreDAVItemWithNoChildren * _ctagOkay;
+    CoreDAVItemWithNoChildren * _imageError;
+    CoreDAVItemWithNoChildren * _invalidImageType;
+    CoreDAVItemWithNoChildren * _maxAttendees;
+    CoreDAVItemWithNoChildren * _maxImageSize;
+    CoreDAVItemWithNoChildren * _maxResourceSize;
+    CoreDAVItemWithNoChildren * _maxResources;
+    CoreDAVItemWithNoChildren * _noUIDConflict;
+    CoreDAVItemWithNoChildren * _numberOfMatchesWithinLimits;
+    CoreDAVItemWithNoChildren * _quotaExceeded;
+    CoreDAVLeafItem * _status;
+    CoreDAVItemWithNoChildren * _uid;
+    CoreDAVItemWithNoChildren * _validAddressData;
+    CoreDAVItemWithNoChildren * _validSplit;
+    CoreDAVItemWithNoChildren * _validSyncToken;
+    CoreDAVItemWithNoChildren * _validTimezone;
 }
 
 @property (nonatomic, retain) CoreDAVItemWithNoChildren *ctagOkay;

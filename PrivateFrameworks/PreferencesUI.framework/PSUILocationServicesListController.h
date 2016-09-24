@@ -3,19 +3,19 @@
  */
 
 @interface PSUILocationServicesListController : PSListController <FMFSessionDelegate> {
-    ACAccountStore *_accountStore;
-    NSMutableDictionary *_coalesceAppKeys;
-    NSMutableArray *_coalescedSystemServices;
-    BOOL _deferredRefreshDueToConfirm;
-    NSArray *_ignoredLocationEntities;
-    NSDictionary *_locationEntitiesDetails;
-    BOOL _locationNotificationsEnabled;
-    FMFDevice *_locationSharingDevice;
-    NSNumber *_locationSharingEnabled;
-    NSOperationQueue *_locationSharingOperationQueue;
-    FMFSession *_locationSharingSession;
-    ACAccount *_primaryAccount;
-    NSDate *_twentyFourHoursAgo;
+    ACAccountStore * _accountStore;
+    NSMutableDictionary * _coalesceAppKeys;
+    NSMutableArray * _coalescedSystemServices;
+    BOOL  _deferredRefreshDueToConfirm;
+    NSArray * _ignoredLocationEntities;
+    NSDictionary * _locationEntitiesDetails;
+    BOOL  _locationNotificationsEnabled;
+    FMFDevice * _locationSharingDevice;
+    NSNumber * _locationSharingEnabled;
+    NSOperationQueue * _locationSharingOperationQueue;
+    FMFSession * _locationSharingSession;
+    ACAccount * _primaryAccount;
+    NSDate * _twentyFourHoursAgo;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -53,7 +53,7 @@
 - (id)locationSharingOperationQueue;
 - (id)locationSharingSession;
 - (id)locationSharingSpecifiers;
-- (unsigned long long)locationSharingTimeout;
+- (unsigned int)locationSharingTimeout;
 - (int)locationUsageBasedOnDetails:(id)arg1;
 - (int)locationUsageForEntity:(id)arg1;
 - (void)mainThreadConnectionError:(id)arg1;

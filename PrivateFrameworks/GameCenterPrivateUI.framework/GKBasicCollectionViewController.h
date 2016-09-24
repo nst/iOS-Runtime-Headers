@@ -3,9 +3,9 @@
  */
 
 @interface GKBasicCollectionViewController : GKCollectionViewController {
-    GKCollectionViewDataSource *_initialDataSource;
-    NSArray *_metricsForSections;
-    id _target;
+    GKCollectionViewDataSource * _initialDataSource;
+    NSArray * _metricsForSections;
+    id  _target;
 }
 
 @property (nonatomic, retain) GKCollectionViewDataSource *initialDataSource;
@@ -18,7 +18,7 @@
 - (id)initWithDataSource:(id)arg1 title:(id)arg2;
 - (id)initialDataSource;
 - (id)metricsForSections;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)setDataSource:(id)arg1;
 - (void)setInitialDataSource:(id)arg1;
 - (void)setMetricsForSections:(id)arg1;

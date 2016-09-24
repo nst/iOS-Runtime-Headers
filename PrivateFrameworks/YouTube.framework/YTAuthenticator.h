@@ -3,9 +3,9 @@
  */
 
 @interface YTAuthenticator : NSObject {
-    int _accountAuthState;
-    NSMutableArray *_deferredRequests;
-    <YTAuthenticatorDelegate> *_delegate;
+    int  _accountAuthState;
+    NSMutableArray * _deferredRequests;
+    <YTAuthenticatorDelegate> * _delegate;
 }
 
 + (id)authenticationDialogWithTarget:(id)arg1 action:(SEL)arg2;

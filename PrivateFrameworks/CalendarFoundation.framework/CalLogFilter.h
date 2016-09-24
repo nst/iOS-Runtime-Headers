@@ -3,12 +3,12 @@
  */
 
 @interface CalLogFilter : NSObject {
-    NSArray *_excludes;
-    NSArray *_excludesAsRegexes;
-    NSArray *_includes;
-    NSArray *_includesAsRegexes;
-    NSSet *_includesRegardlessOfLevel;
-    int _minimumLevel;
+    NSArray * _excludes;
+    NSArray * _excludesAsRegexes;
+    NSArray * _includes;
+    NSArray * _includesAsRegexes;
+    NSSet * _includesRegardlessOfLevel;
+    int  _minimumLevel;
 }
 
 @property (nonatomic, copy) NSArray *excludes;

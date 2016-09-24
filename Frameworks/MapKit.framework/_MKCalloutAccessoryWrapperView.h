@@ -3,7 +3,7 @@
  */
 
 @interface _MKCalloutAccessoryWrapperView : UIView <_MKCalloutAccessoryView> {
-    UIView<_MKCalloutAccessoryView> *_view;
+    UIView<_MKCalloutAccessoryView> * _view;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -19,6 +19,6 @@
 - (void)_mapkit_setCalloutBackgroundColor:(id)arg1;
 - (void)_mapkit_setCalloutTextColor:(id)arg1;
 - (id)initWithView:(id)arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 
 @end

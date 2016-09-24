@@ -3,7 +3,7 @@
  */
 
 @interface SFSafeBrowsingJSController : NSObject <SFSafeBrowsingJSControllerMethods> {
-    _SFWebProcessPlugInPageSafeBrowsingController *_safeBrowsingController;
+    _SFWebProcessPlugInPageSafeBrowsingController * _safeBrowsingController;
 }
 
 - (void).cxx_destruct;

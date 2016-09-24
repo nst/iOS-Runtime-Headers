@@ -3,11 +3,11 @@
  */
 
 @interface CKPhotoPickerController : CKAlertController <CKPhotoPickerCollectionViewDelegate> {
-    UIAlertAction *_bottomAlertAction;
-    NSString *_captureLabelText;
-    <CKPhotoPickerControllerDelegate> *_delegate;
-    CKPhotoPickerCollectionViewController *_photosCollectionView;
-    UIAlertAction *_topAlertAction;
+    UIAlertAction * _bottomAlertAction;
+    NSString * _captureLabelText;
+    <CKPhotoPickerControllerDelegate> * _delegate;
+    CKPhotoPickerCollectionViewController * _photosCollectionView;
+    UIAlertAction * _topAlertAction;
 }
 
 @property (nonatomic, retain) UIAlertAction *bottomAlertAction;
@@ -20,6 +20,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIAlertAction *topAlertAction;
 
+- (void).cxx_destruct;
 - (void)_bottomAlertActionHandler;
 - (void)_cancelButtonPressed;
 - (BOOL)_shouldAlignToKeyboard;

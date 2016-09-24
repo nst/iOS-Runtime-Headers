@@ -3,12 +3,12 @@
  */
 
 @interface CNAutocompleteAggdUsageMonitorProbe : NSObject <CNAutocompleteUsageMonitorProbe> {
-    CNAutocompleteAggdProbe *_aggdProbe;
-    NSNumber *_lengthOfSearchString;
-    NSNumber *_returnedDuetResults;
-    NSNumber *_selectedIndex;
-    NSNumber *_selectedPredictionIndex;
-    NSNumber *_sourceType;
+    CNAutocompleteAggdProbe * _aggdProbe;
+    NSNumber * _lengthOfSearchString;
+    NSNumber * _returnedDuetResults;
+    NSNumber * _selectedIndex;
+    NSNumber * _selectedPredictionIndex;
+    NSNumber * _sourceType;
 }
 
 @property (nonatomic, retain) CNAutocompleteAggdProbe *aggdProbe;

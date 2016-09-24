@@ -3,11 +3,11 @@
  */
 
 @interface WKInterfaceObject : NSObject {
-    NSString *_interfaceProperty;
-    NSString *_propertyIndex;
-    int _rowIndex;
-    int _tableIndex;
-    NSString *_viewControllerID;
+    NSString * _interfaceProperty;
+    NSString * _propertyIndex;
+    int  _rowIndex;
+    int  _tableIndex;
+    NSString * _viewControllerID;
 }
 
 @property (nonatomic, copy) NSString *interfaceProperty;
@@ -32,7 +32,7 @@
 - (void)setAccessibilityIdentifier:(id)arg1;
 - (void)setAccessibilityImageRegions:(id)arg1;
 - (void)setAccessibilityLabel:(id)arg1;
-- (void)setAccessibilityTraits:(unsigned long long)arg1;
+- (void)setAccessibilityTraits:(unsigned int)arg1;
 - (void)setAccessibilityValue:(id)arg1;
 - (void)setAlpha:(float)arg1;
 - (void)setHeight:(float)arg1;

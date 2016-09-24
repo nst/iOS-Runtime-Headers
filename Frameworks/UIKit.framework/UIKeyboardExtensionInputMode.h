@@ -3,7 +3,7 @@
  */
 
 @interface UIKeyboardExtensionInputMode : UIKeyboardInputMode {
-    NSExtension *_extension;
+    NSExtension * _extension;
 }
 
 @property (nonatomic, retain) NSExtension *extension;

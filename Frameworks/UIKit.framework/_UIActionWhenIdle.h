@@ -3,7 +3,7 @@
  */
 
 @interface _UIActionWhenIdle : NSObject {
-    NSInvocation *_invocation;
+    NSInvocation * _invocation;
 }
 
 @property (nonatomic, retain) NSInvocation *invocation;

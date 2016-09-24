@@ -3,10 +3,10 @@
  */
 
 @interface MFContactsSearchTaskContext : NSObject {
-    <MFContactsSearchConsumer> *_consumer;
-    NSMutableSet *_operations;
-    NSMutableSet *_searchQueries;
-    NSString *_text;
+    <MFContactsSearchConsumer> * _consumer;
+    NSMutableSet * _operations;
+    NSMutableSet * _searchQueries;
+    NSString * _text;
 }
 
 @property (nonatomic, readonly) <MFContactsSearchConsumer> *consumer;

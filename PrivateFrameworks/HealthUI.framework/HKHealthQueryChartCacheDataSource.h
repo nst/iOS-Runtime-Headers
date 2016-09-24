@@ -3,9 +3,9 @@
  */
 
 @interface HKHealthQueryChartCacheDataSource : NSObject <HKChartCacheDataSource> {
-    HKDataUnit *_dataUnit;
-    HKHealthStore *_healthStore;
-    id /* block */ _mappingFunction;
+    HKDataUnit * _dataUnit;
+    HKHealthStore * _healthStore;
+    id /* block */  _mappingFunction;
 }
 
 @property (nonatomic, readonly) HKDataUnit *dataUnit;

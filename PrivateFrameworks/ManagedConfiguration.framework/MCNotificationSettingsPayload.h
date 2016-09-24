@@ -3,7 +3,7 @@
  */
 
 @interface MCNotificationSettingsPayload : MCPayload {
-    NSArray *_notificationSettings;
+    NSArray * _notificationSettings;
 }
 
 @property (nonatomic, retain) NSArray *notificationSettings;

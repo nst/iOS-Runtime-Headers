@@ -3,13 +3,13 @@
  */
 
 @interface FBSSerialQueue : NSObject {
-    NSMutableArray *_blocks;
-    NSMutableSet *_enqueueSemaphores;
-    NSArray *_mainRunLoopModes;
-    NSObject<OS_dispatch_queue> *_queue;
-    struct __CFRunLoopSource { } *_runLoopSource;
-    BOOL _runLoopSourceHandlingBlock;
-    NSObject<OS_dispatch_queue> *_targetQueue;
+    NSMutableArray * _blocks;
+    NSMutableSet * _enqueueSemaphores;
+    NSArray * _mainRunLoopModes;
+    NSObject<OS_dispatch_queue> * _queue;
+    struct __CFRunLoopSource { } * _runLoopSource;
+    BOOL  _runLoopSourceHandlingBlock;
+    NSObject<OS_dispatch_queue> * _targetQueue;
 }
 
 + (id)queueWithDispatchQueue:(id)arg1;

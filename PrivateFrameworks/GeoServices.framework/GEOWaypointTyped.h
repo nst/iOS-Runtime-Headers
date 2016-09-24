@@ -6,12 +6,12 @@
     struct { 
         unsigned int waypointType : 1; 
         unsigned int isCurrentLocation : 1; 
-    } _has;
-    BOOL _isCurrentLocation;
-    GEOWaypointID *_waypointId;
-    GEOWaypointLocation *_waypointLocation;
-    GEOWaypointPlace *_waypointPlace;
-    int _waypointType;
+    }  _has;
+    BOOL  _isCurrentLocation;
+    GEOWaypointID * _waypointId;
+    GEOWaypointLocation * _waypointLocation;
+    GEOWaypointPlace * _waypointPlace;
+    int  _waypointType;
 }
 
 @property (nonatomic) BOOL hasIsCurrentLocation;
@@ -25,6 +25,7 @@
 @property (nonatomic, retain) GEOWaypointPlace *waypointPlace;
 @property (nonatomic) int waypointType;
 
+- (int)StringAsWaypointType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -52,6 +53,7 @@
 - (id)waypointLocation;
 - (id)waypointPlace;
 - (int)waypointType;
+- (id)waypointTypeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -3,9 +3,9 @@
  */
 
 @interface PLAggregateAlbumListChangeNotification : PLAssetContainerListChangeNotification {
-    PLAggregateAlbumList *_albumList;
-    unsigned int _indexOffet;
-    PLAssetContainerListChangeNotification *_note;
+    PLAggregateAlbumList * _albumList;
+    unsigned int  _indexOffet;
+    PLAssetContainerListChangeNotification * _note;
 }
 
 + (id)notificationForAggregateAlbumList:(id)arg1 fromAlbumListChangeNotification:(id)arg2 indexOffset:(unsigned int)arg3;

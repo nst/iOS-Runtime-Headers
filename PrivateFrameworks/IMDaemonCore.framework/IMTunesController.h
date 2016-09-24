@@ -3,16 +3,16 @@
  */
 
 @interface IMTunesController : NSObject {
-    NSDate *_lastChange;
-    NSDictionary *_lastInfo;
-    NSMutableArray *_listeners;
-    NSString *_messageFormat;
-    NSMutableDictionary *_playerInfo;
+    NSDate * _lastChange;
+    NSDictionary * _lastInfo;
+    NSMutableArray * _listeners;
+    NSString * _messageFormat;
+    NSMutableDictionary * _playerInfo;
 }
 
 @property (nonatomic, readonly) BOOL isEnabled;
 @property (nonatomic, readonly) NSString *messageFormat;
-@property (nonatomic) NSDictionary *playerInfo;
+@property (nonatomic) NSMutableDictionary *playerInfo;
 
 + (id)sharedTunesController;
 

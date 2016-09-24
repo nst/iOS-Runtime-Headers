@@ -3,12 +3,12 @@
  */
 
 @interface UIWebSelectSinglePicker : UIPickerView <UIPickerViewDataSource, UIPickerViewDelegate, UIWebFormControl> {
-    int _indexToSelectWhenDone;
-    NSArray *_optionItems;
-    <UIWebSelectedItemPrivate> *_optionToSelectWhenDone;
-    DOMHTMLSelectElement *_selectNode;
-    int _selectedIndex;
-    <UIWebSelectedItemPrivate> *_selectedOptionItem;
+    int  _indexToSelectWhenDone;
+    NSArray * _optionItems;
+    <UIWebSelectedItemPrivate> * _optionToSelectWhenDone;
+    DOMHTMLSelectElement * _selectNode;
+    int  _selectedIndex;
+    <UIWebSelectedItemPrivate> * _selectedOptionItem;
 }
 
 @property (readonly, copy) NSString *debugDescription;

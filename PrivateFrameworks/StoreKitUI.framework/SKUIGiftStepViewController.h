@@ -3,10 +3,10 @@
  */
 
 @interface SKUIGiftStepViewController : UIViewController {
-    SKUIGift *_gift;
-    SKUIGiftConfiguration *_giftConfiguration;
-    SSVLoadURLOperation *_loadOperation;
-    NSOperationQueue *_operationQueue;
+    SKUIGift * _gift;
+    SKUIGiftConfiguration * _giftConfiguration;
+    SSVLoadURLOperation * _loadOperation;
+    NSOperationQueue * _operationQueue;
 }
 
 @property (nonatomic, readonly) SKUIGift *gift;

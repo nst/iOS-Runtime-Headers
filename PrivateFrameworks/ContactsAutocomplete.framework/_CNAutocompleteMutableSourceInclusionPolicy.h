@@ -3,13 +3,13 @@
  */
 
 @interface _CNAutocompleteMutableSourceInclusionPolicy : NSObject <CNAutocompleteSourceInclusionPolicy> {
-    BOOL _includeCalendarServers;
-    BOOL _includeContacts;
-    BOOL _includeDirectoryServers;
-    BOOL _includePredictions;
-    BOOL _includeRecents;
-    BOOL _includeSuggestions;
-    BOOL _includeSupplementalResults;
+    BOOL  _includeCalendarServers;
+    BOOL  _includeContacts;
+    BOOL  _includeDirectoryServers;
+    BOOL  _includePredictions;
+    BOOL  _includeRecents;
+    BOOL  _includeSuggestions;
+    BOOL  _includeSupplementalResults;
 }
 
 @property (readonly, copy) NSString *debugDescription;

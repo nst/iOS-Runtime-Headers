@@ -3,8 +3,8 @@
  */
 
 @interface PUActivityAssetItem : NSObject {
-    PHAsset *_asset;
-    BOOL _useStillImage;
+    PHAsset * _asset;
+    BOOL  _useStillImage;
 }
 
 @property (nonatomic, readonly) PHAsset *asset;

@@ -3,12 +3,12 @@
  */
 
 @interface EKCalendarItemEditItem : NSObject <EKEditItemViewControllerDelegate> {
-    EKCalendarItem *_calendarItem;
-    <EKCalendarItemEditItemDelegate> *_delegate;
-    UIResponder *_selectedResponder;
-    EKEventStore *_store;
-    <EKStyleProvider> *_styleProvider;
-    UIViewController<EKEditItemViewControllerProtocol> *_viewController;
+    EKCalendarItem * _calendarItem;
+    <EKCalendarItemEditItemDelegate> * _delegate;
+    UIResponder * _selectedResponder;
+    EKEventStore * _store;
+    <EKStyleProvider> * _styleProvider;
+    UIViewController<EKEditItemViewControllerProtocol> * _viewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -29,7 +29,7 @@
 - (BOOL)configureForCalendarConstraints:(id)arg1;
 - (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
 - (id)delegate;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned int)arg2;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned int)arg2;
 - (void)editItemViewController:(id)arg1 didCompleteWithAction:(int)arg2;
 - (BOOL)editItemViewControllerSave:(id)arg1;
 - (BOOL)editItemViewControllerShouldShowDetachAlert;
@@ -49,7 +49,8 @@
 - (BOOL)forceRefreshLocationItemOnSave;
 - (BOOL)forceRefreshStartAndEndDatesOnSave;
 - (BOOL)forceTableReloadOnSave;
-- (id)injectableViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned int)arg2;
+- (id)headerTitle;
+- (id)injectableViewControllerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned int)arg2;
 - (BOOL)isInline;
 - (void)notifyDidEndEditing;
 - (void)notifyDidStartEditing;
@@ -69,7 +70,6 @@
 - (BOOL)shouldAppearWithVisibility:(int)arg1;
 - (BOOL)shouldPinKeyboard;
 - (id)styleProvider;
-- (id)titleForHeader;
 - (BOOL)usesDetailViewControllerForSubitem:(unsigned int)arg1;
 - (id)viewForActionSheet;
 

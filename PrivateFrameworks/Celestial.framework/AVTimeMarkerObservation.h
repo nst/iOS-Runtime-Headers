@@ -3,10 +3,10 @@
  */
 
 @interface AVTimeMarkerObservation : NSObject {
-    id _context;
-    int _currentIndex;
-    id _observer;
-    NSArray *_times;
+    id  _context;
+    int  _currentIndex;
+    id  _observer;
+    NSArray * _times;
 }
 
 - (id)context;

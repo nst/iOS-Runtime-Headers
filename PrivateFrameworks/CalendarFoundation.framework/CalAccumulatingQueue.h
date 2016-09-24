@@ -3,11 +3,11 @@
  */
 
 @interface CalAccumulatingQueue : NSObject {
-    id /* block */ _block;
-    NSMutableDictionary *_context;
-    float _delay;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableSet *_tags;
+    id /* block */  _block;
+    NSMutableDictionary * _context;
+    double  _delay;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableSet * _tags;
 }
 
 - (void).cxx_destruct;

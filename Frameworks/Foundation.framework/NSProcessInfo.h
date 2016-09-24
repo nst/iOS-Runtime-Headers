@@ -3,26 +3,28 @@
  */
 
 @interface NSProcessInfo : NSObject {
-    NSArray *arguments;
-    int automaticTerminationOptOutCounter;
-    NSDictionary *environment;
-    NSString *hostName;
-    NSString *name;
+    NSArray * arguments;
+    int  automaticTerminationOptOutCounter;
+    NSDictionary * environment;
+    NSString * hostName;
+    NSString * name;
 }
 
 @property (readonly) unsigned int activeProcessorCount;
 @property (readonly, copy) NSArray *arguments;
 @property BOOL automaticTerminationSupportEnabled;
 @property (readonly, copy) NSDictionary *environment;
+@property (readonly, copy) NSString *fullUserName;
 @property (readonly, copy) NSString *globallyUniqueString;
 @property (readonly, copy) NSString *hostName;
 @property (readonly) struct { int x1; int x2; int x3; } operatingSystemVersion;
 @property (readonly, copy) NSString *operatingSystemVersionString;
-@property (readonly) unsigned long long physicalMemory;
+@property (readonly) unsigned int physicalMemory;
 @property (readonly) int processIdentifier;
 @property (copy) NSString *processName;
 @property (readonly) unsigned int processorCount;
 @property (readonly) double systemUptime;
+@property (readonly, copy) NSString *userName;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
@@ -38,8 +40,8 @@
 - (unsigned int)activeProcessorCount;
 - (id)arguments;
 - (BOOL)automaticTerminationSupportEnabled;
-- (id)beginActivityWithOptions:(unsigned long long)arg1 reason:(id)arg2;
-- (id)beginSuspensionOfSystemBehaviors:(unsigned long long)arg1 reason:(id)arg2;
+- (id)beginActivityWithOptions:(unsigned int)arg1 reason:(id)arg2;
+- (id)beginSuspensionOfSystemBehaviors:(unsigned int)arg1 reason:(id)arg2;
 - (void)dealloc;
 - (void)disableAutomaticTermination:(id)arg1;
 - (void)disableSuddenTermination;
@@ -57,10 +59,10 @@
 - (id)operatingSystemName;
 - (struct { int x1; int x2; int x3; })operatingSystemVersion;
 - (id)operatingSystemVersionString;
-- (void)performActivityWithOptions:(unsigned long long)arg1 reason:(id)arg2 block:(id /* block */)arg3;
-- (void)performActivityWithOptions:(unsigned long long)arg1 reason:(id)arg2 usingBlock:(id /* block */)arg3;
+- (void)performActivityWithOptions:(unsigned int)arg1 reason:(id)arg2 block:(id /* block */)arg3;
+- (void)performActivityWithOptions:(unsigned int)arg1 reason:(id)arg2 usingBlock:(id /* block */)arg3;
 - (void)performExpiringActivityWithReason:(id)arg1 usingBlock:(id /* block */)arg2;
-- (unsigned long long)physicalMemory;
+- (unsigned int)physicalMemory;
 - (int)processIdentifier;
 - (id)processName;
 - (unsigned int)processorCount;

@@ -3,31 +3,31 @@
  */
 
 @interface CalibrationViewController : UIViewController {
-    double _angleOfAwesome;
-    double _angleToRim;
-    CalibrationBallView *_ballView;
-    NSMutableArray *_calibrationConstraints;
-    UIButton *_cancelButton;
-    CompassBackgroundView *_compassBackgroundView;
-    CAShapeLayer *_compassBackgroundViewMask;
+    double  _angleOfAwesome;
+    double  _angleToRim;
+    CalibrationBallView * _ballView;
+    NSMutableArray * _calibrationConstraints;
+    UIButton * _cancelButton;
+    CompassBackgroundView * _compassBackgroundView;
+    CAShapeLayer * _compassBackgroundViewMask;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _compassOriginPoint;
-    float _compassRadius;
-    BOOL _ignoreMotionUpdates;
-    UILabel *_instructionLabel;
-    unsigned int _numCompleteTics;
+        double x; 
+        double y; 
+    }  _compassOriginPoint;
+    double  _compassRadius;
+    BOOL  _ignoreMotionUpdates;
+    UILabel * _instructionLabel;
+    unsigned int  _numCompleteTics;
     struct Matrix<double, 3, 1> { 
         double _e[3]; 
-    } _previousGravity;
-    double _previousHorizontalAngle;
-    double _previousTimestamp;
-    int _quantizationType;
-    BOOL _shouldCompleteTics;
-    double _startTicAngle;
-    float *_ticsShowingArray;
-    UILabel *_titleLabel;
+    }  _previousGravity;
+    double  _previousHorizontalAngle;
+    double  _previousTimestamp;
+    int  _quantizationType;
+    BOOL  _shouldCompleteTics;
+    double  _startTicAngle;
+    double * _ticsShowingArray;
+    UILabel * _titleLabel;
 }
 
 - (id).cxx_construct;
@@ -41,7 +41,7 @@
 - (void)dealloc;
 - (void)hideAllTics;
 - (id)init;
-- (id)initWithOriginPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)initWithOriginPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (BOOL)prefersStatusBarHidden;
 - (float)quantizedPercentage:(double)arg1 forAngle:(double)arg2;
 - (void)reset;

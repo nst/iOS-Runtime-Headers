@@ -3,19 +3,64 @@
  */
 
 @interface TKTokenSession : NSObject {
-    NSData *_ACMContext;
-    LAContext *_LAContext;
-    BOOL _allowUI;
+    LAContext * _LAContext;
+    NSNumber * _callerPID;
+    NSObject<OS_xpc_object> * _clientConnection;
+    <TKTokenSessionDelegate> * _delegate;
+    NSDictionary * _parameters;
+    TKToken * _token;
 }
 
-@property (nonatomic, readonly) NSData *ACMContext;
-@property (nonatomic, readonly) LAContext *LAContext;
-@property (nonatomic, readonly) BOOL allowUI;
+@property (retain) LAContext *LAContext;
+@property (retain) NSNumber *callerPID;
+@property (readonly) NSObject<OS_xpc_object> *clientConnection;
+@property <TKTokenSessionDelegate> *delegate;
+@property (retain) NSDictionary *parameters;
+@property (readonly) <TKTokenSessionPrivateDelegate> *privateDelegate;
+@property (readonly) TKToken *token;
 
 - (void).cxx_destruct;
-- (id)ACMContext;
 - (id)LAContext;
-- (BOOL)allowUI;
-- (void)processAttributes:(id)arg1;
+- (void)assignClientConnection:(id)arg1;
+- (void)beginAuthForOperation:(int)arg1 constraint:(id)arg2 reply:(id /* block */)arg3;
+- (BOOL)beginRequest:(int)arg1 error:(id*)arg2;
+- (id)callerPID;
+- (void)checkOperation:(int)arg1 usingKey:(id)arg2 algorithm:(id)arg3 reply:(id /* block */)arg4;
+- (id)clientConnection;
+- (void)completeReply:(id)arg1 objectID:(id)arg2 attributes:(id)arg3 error:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)controlWithAttributes:(id)arg1 reply:(id /* block */)arg2;
+- (void)createObjectWithAttributes:(id)arg1 reply:(id /* block */)arg2;
+- (void)decryptData:(id)arg1 usingKey:(id)arg2 algorithm:(id)arg3 reply:(id /* block */)arg4;
+- (id)delegate;
+- (void)deleteObject:(id)arg1 reply:(id /* block */)arg2;
+- (void)endRequest;
+- (void)evaluateAuthOperation:(id)arg1 reply:(id /* block */)arg2;
+- (void)finalizeAuthOperation:(id)arg1 evaluatedAuthOperation:(id)arg2 reply:(id /* block */)arg3;
+- (void)getAccessControlOfObject:(id)arg1 reply:(id /* block */)arg2;
+- (void)getDataOfObject:(id)arg1 reply:(id /* block */)arg2;
+- (void)getPublicKeyDataOfObject:(id)arg1 reply:(id /* block */)arg2;
+- (BOOL)handleControlEvent:(id)arg1 reply:(id)arg2 attributes:(id)arg3 completionHandler:(id /* block */)arg4;
+- (BOOL)handleCopyIdentitiesEvent:(id)arg1 reply:(id)arg2 completionHandler:(id /* block */)arg3;
+- (BOOL)handleCreateObjectEvent:(id)arg1 reply:(id)arg2 attributes:(id)arg3 completionHandler:(id /* block */)arg4;
+- (BOOL)handleDeleteObjectEvent:(id)arg1 reply:(id)arg2 objectID:(id)arg3 completionHandler:(id /* block */)arg4;
+- (BOOL)handleEvaluateAccessControlEvent:(id)arg1 reply:(id)arg2 completionHandler:(id /* block */)arg3;
+- (BOOL)handleGetObjectAccessControlEvent:(id)arg1 reply:(id)arg2 objectID:(id)arg3 completionHandler:(id /* block */)arg4;
+- (BOOL)handleGetPublicKeyEvent:(id)arg1 reply:(id)arg2 objectID:(id)arg3 completionHandler:(id /* block */)arg4;
+- (BOOL)handleOperation:(int)arg1 event:(id)arg2 reply:(id)arg3 completionHandler:(id /* block */)arg4;
+- (BOOL)handlePerformOperationEvent:(id)arg1 reply:(id)arg2 objectID:(id)arg3 completionHandler:(id /* block */)arg4;
+- (BOOL)handleReadDataEvent:(id)arg1 reply:(id)arg2 objectID:(id)arg3 completionHandler:(id /* block */)arg4;
+- (BOOL)handleUpdateObjectEvent:(id)arg1 reply:(id)arg2 objectID:(id)arg3 attributes:(id)arg4 completionHandler:(id /* block */)arg5;
+- (id)initWithToken:(id)arg1;
+- (id)parameters;
+- (void)performKeyExchangeWithPublicKey:(id)arg1 usingKey:(id)arg2 algorithm:(id)arg3 parameters:(id)arg4 reply:(id /* block */)arg5;
+- (id)privateDelegate;
+- (void)setCallerPID:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setLAContext:(id)arg1;
+- (void)setParameters:(id)arg1;
+- (void)signData:(id)arg1 usingKey:(id)arg2 algorithm:(id)arg3 reply:(id /* block */)arg4;
+- (void)terminate;
+- (id)token;
+- (void)updateObject:(id)arg1 attributes:(id)arg2 reply:(id /* block */)arg3;
 
 @end

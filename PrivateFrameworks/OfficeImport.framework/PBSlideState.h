@@ -3,8 +3,8 @@
  */
 
 @interface PBSlideState : NSObject {
-    NSMutableDictionary *mBuildOrderMap;
-    unsigned int mCurrentGroupId;
+    NSMutableDictionary * mBuildOrderMap;
+    unsigned int  mCurrentGroupId;
 }
 
 - (void)addBuild:(id)arg1 order:(unsigned int)arg2;

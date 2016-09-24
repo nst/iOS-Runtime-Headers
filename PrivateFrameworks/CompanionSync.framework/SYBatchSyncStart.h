@@ -3,12 +3,12 @@
  */
 
 @interface SYBatchSyncStart : PBCodable <NSCopying> {
-    unsigned int _estimatedChangeCount;
+    unsigned int  _estimatedChangeCount;
     struct { 
         unsigned int estimatedChangeCount : 1; 
-    } _has;
-    SYMessageHeader *_header;
-    NSString *_syncID;
+    }  _has;
+    SYMessageHeader * _header;
+    NSString * _syncID;
 }
 
 @property (nonatomic) unsigned int estimatedChangeCount;

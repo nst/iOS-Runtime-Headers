@@ -3,7 +3,7 @@
  */
 
 @interface AVCaptureDeviceInput : AVCaptureInput {
-    AVCaptureDeviceInputInternal *_internal;
+    AVCaptureDeviceInputInternal * _internal;
 }
 
 @property (nonatomic, readonly) AVCaptureDevice *device;

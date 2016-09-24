@@ -3,11 +3,11 @@
  */
 
 @interface BSActionListenerController : NSObject {
-    BSActionListener *_listener;
-    unsigned int _listenerCount;
-    unsigned int _listenerTearDownToken;
-    NSObject<OS_dispatch_queue> *_queue;
-    unsigned int _transactionCount;
+    BSActionListener * _listener;
+    unsigned int  _listenerCount;
+    unsigned int  _listenerTearDownToken;
+    NSObject<OS_dispatch_queue> * _queue;
+    unsigned int  _transactionCount;
 }
 
 + (id)sharedInstance;

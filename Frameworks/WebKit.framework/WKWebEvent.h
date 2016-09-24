@@ -3,7 +3,7 @@
  */
 
 @interface WKWebEvent : WebEvent {
-    UIEvent *_uiEvent;
+    UIEvent * _uiEvent;
 }
 
 @property (nonatomic, retain) UIEvent *uiEvent;

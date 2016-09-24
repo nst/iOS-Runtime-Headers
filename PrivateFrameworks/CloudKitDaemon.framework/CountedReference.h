@@ -3,10 +3,10 @@
  */
 
 @interface CountedReference : NSObject {
-    BOOL _didScheduleDealloc;
-    NSString *_name;
-    unsigned int _referenceCount;
-    id _referencedObject;
+    BOOL  _didScheduleDealloc;
+    NSString * _name;
+    unsigned int  _referenceCount;
+    id  _referencedObject;
 }
 
 @property (nonatomic) BOOL didScheduleDealloc;

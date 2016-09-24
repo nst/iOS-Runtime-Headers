@@ -3,18 +3,18 @@
  */
 
 @interface SLFacebookPost : NSObject <NSSecureCoding> {
-    SLFacebookAlbum *_album;
-    NSMutableArray *_imageAssetURLs;
-    NSMutableArray *_imageData;
-    NSURL *_link;
-    NSString *_maskedApplicationID;
-    SLFacebookPlace *_place;
-    SLFacebookPostPrivacySetting *_privacySetting;
-    NSArray *_taggedUserIDs;
-    NSString *_text;
-    NSMutableArray *_videoAssetURLs;
-    NSMutableArray *_videoData;
-    NSString *_videoExportPreset;
+    SLFacebookAlbum * _album;
+    NSMutableArray * _imageAssetURLs;
+    NSMutableArray * _imageData;
+    NSURL * _link;
+    NSString * _maskedApplicationID;
+    SLFacebookPlace * _place;
+    SLFacebookPostPrivacySetting * _privacySetting;
+    NSArray * _taggedUserIDs;
+    NSString * _text;
+    NSMutableArray * _videoAssetURLs;
+    NSMutableArray * _videoData;
+    NSString * _videoExportPreset;
 }
 
 @property (retain) SLFacebookAlbum *album;

@@ -3,8 +3,8 @@
  */
 
 @interface AAFamilyMemberDetailsUIRequest : AAFamilyRequest {
-    NSNumber *_memberDSID;
-    NSString *_memberEmail;
+    NSNumber * _memberDSID;
+    NSString * _memberEmail;
 }
 
 @property (nonatomic, copy) NSNumber *memberDSID;

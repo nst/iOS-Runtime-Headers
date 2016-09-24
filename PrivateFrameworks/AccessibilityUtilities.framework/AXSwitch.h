@@ -3,17 +3,20 @@
  */
 
 @interface AXSwitch : NSObject <NSSecureCoding> {
-    int _action;
-    int _buttonNumber;
-    int _headSwitch;
-    unsigned short _keyCode;
-    int _longPressAction;
-    NSString *_manufacturerName;
-    NSString *_name;
-    NSString *_productName;
-    struct NSString { Class x1; } *_source;
-    struct NSString { Class x1; } *_type;
-    NSUUID *_uuid;
+    int  _action;
+    int  _buttonNumber;
+    int  _headSwitch;
+    unsigned short  _keyCode;
+    int  _longPressAction;
+    NSString * _manufacturerName;
+    NSString * _name;
+    NSString * _productName;
+    NSString * _remoteDeviceIdentifier;
+    NSString * _remoteDeviceName;
+    NSString * _remoteSwitchIdentifier;
+    struct NSString { Class x1; } * _source;
+    struct NSString { Class x1; } * _type;
+    NSUUID * _uuid;
 }
 
 @property (nonatomic) int action;
@@ -25,6 +28,9 @@
 @property (nonatomic, copy) NSString *manufacturerName;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *productName;
+@property (nonatomic, copy) NSString *remoteDeviceIdentifier;
+@property (nonatomic, copy) NSString *remoteDeviceName;
+@property (nonatomic, copy) NSString *remoteSwitchIdentifier;
 @property (nonatomic, retain) NSString *source;
 @property (nonatomic, readonly) BOOL supportsLongPress;
 @property (nonatomic, retain) NSString *type;
@@ -49,6 +55,9 @@
 - (id)manufacturerName;
 - (id)name;
 - (id)productName;
+- (id)remoteDeviceIdentifier;
+- (id)remoteDeviceName;
+- (id)remoteSwitchIdentifier;
 - (void)setAction:(int)arg1;
 - (void)setButtonNumber:(int)arg1;
 - (void)setHeadSwitch:(int)arg1;
@@ -57,6 +66,9 @@
 - (void)setManufacturerName:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setProductName:(id)arg1;
+- (void)setRemoteDeviceIdentifier:(id)arg1;
+- (void)setRemoteDeviceName:(id)arg1;
+- (void)setRemoteSwitchIdentifier:(id)arg1;
 - (void)setSource:(struct NSString { Class x1; }*)arg1;
 - (void)setType:(struct NSString { Class x1; }*)arg1;
 - (void)setUuid:(id)arg1;

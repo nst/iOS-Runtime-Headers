@@ -3,16 +3,16 @@
  */
 
 @interface UINibCoderValue : NSObject {
-    NSString *key;
-    unsigned long length;
-    unsigned int scope;
-    BOOL type;
+    NSString * key;
+    unsigned long  length;
+    unsigned int  scope;
+    BOOL  type;
     union { 
-        float floatValue; 
+        double floatValue; 
         double doubleValue; 
-        unsigned long long integerValue; 
+        unsigned int integerValue; 
         void *bytesValue; 
-    } value;
+    }  value;
 }
 
 + (id)nibValueForBoolean:(BOOL)arg1 key:(id)arg2 scope:(unsigned int)arg3;
@@ -21,10 +21,10 @@
 + (id)nibValueForFloat:(float)arg1 key:(id)arg2 scope:(unsigned int)arg3;
 + (id)nibValueForInt16:(unsigned short)arg1 key:(id)arg2 scope:(unsigned int)arg3;
 + (id)nibValueForInt32:(unsigned int)arg1 key:(id)arg2 scope:(unsigned int)arg3;
-+ (id)nibValueForInt64:(unsigned long long)arg1 key:(id)arg2 scope:(unsigned int)arg3;
++ (id)nibValueForInt64:(unsigned int)arg1 key:(id)arg2 scope:(unsigned int)arg3;
 + (id)nibValueForInt8:(unsigned char)arg1 key:(id)arg2 scope:(unsigned int)arg3;
-+ (id)nibValueForInteger:(unsigned long long)arg1 key:(id)arg2 scope:(unsigned int)arg3;
-+ (id)nibValueForObjectReference:(long long)arg1 key:(id)arg2 scope:(unsigned int)arg3;
++ (id)nibValueForInteger:(unsigned int)arg1 key:(id)arg2 scope:(unsigned int)arg3;
++ (id)nibValueForObjectReference:(int)arg1 key:(id)arg2 scope:(unsigned int)arg3;
 + (id)nibValueRepresentingNilReferenceForKey:(id)arg1 scope:(unsigned int)arg2;
 
 - (unsigned long)byteLength;

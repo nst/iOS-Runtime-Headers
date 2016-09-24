@@ -3,8 +3,8 @@
  */
 
 @interface _CDPSimpleModelParameterManager : NSObject <_CDSocialInteractionAdvisorTuningDelegate> {
-    _CDPSimpleModelParameterManagerAccountState *_accountState;
-    NSString *_accountStateKey;
+    _CDPSimpleModelParameterManagerAccountState * _accountState;
+    NSString * _accountStateKey;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,8 +3,8 @@
  */
 
 @interface RUINavigationController : UINavigationController {
-    id /* block */ _menuDismissalHandler;
-    unsigned int _ruiSupportedInterfaceOrientations;
+    id /* block */  _menuDismissalHandler;
+    unsigned int  _ruiSupportedInterfaceOrientations;
 }
 
 @property (nonatomic, copy) id /* block */ menuDismissalHandler;

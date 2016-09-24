@@ -3,7 +3,7 @@
  */
 
 @interface CMSedentaryTimer : NSObject {
-    CMSedentaryTimer_Internal *_internal;
+    CMSedentaryTimer_Internal * _internal;
 }
 
 @property (nonatomic, readonly) CMSedentaryTimer_Internal *_internal;

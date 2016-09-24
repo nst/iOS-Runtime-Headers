@@ -3,9 +3,9 @@
  */
 
 @interface DCConfiguration : NSObject {
-    NSDate *_expiry;
-    NSDate *_fetchDate;
-    BOOL _hasValidSignature;
+    NSDate * _expiry;
+    NSDate * _fetchDate;
+    BOOL  _hasValidSignature;
 }
 
 @property (nonatomic, copy) NSDate *expiry;

@@ -3,9 +3,9 @@
  */
 
 @interface ABContentController : NSObject <ABContentControllerProtocol> {
-    void *_addressBook;
-    id _contentControllerDelegate;
-    UIView *_contentLayer;
+    void * _addressBook;
+    id  _contentControllerDelegate;
+    UIView * _contentLayer;
 }
 
 @property (nonatomic) void*addressBook;

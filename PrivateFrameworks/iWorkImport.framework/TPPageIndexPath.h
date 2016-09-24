@@ -3,8 +3,8 @@
  */
 
 @interface TPPageIndexPath : NSObject <NSCopying> {
-    unsigned int _pageIndex;
-    unsigned int _sectionIndex;
+    unsigned int  _pageIndex;
+    unsigned int  _sectionIndex;
 }
 
 @property (nonatomic) unsigned int pageIndex;

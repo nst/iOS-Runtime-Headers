@@ -3,8 +3,8 @@
  */
 
 @interface WeatherCloudPersistence : NSObject <WeatherPreferencesPersistence> {
-    NSUbiquitousKeyValueStore *_cloudStore;
-    <WeatherCloudPersistenceDelegate> *_delegate;
+    NSUbiquitousKeyValueStore * _cloudStore;
+    <WeatherCloudPersistenceDelegate> * _delegate;
 }
 
 @property (retain) NSUbiquitousKeyValueStore *cloudStore;
@@ -28,11 +28,12 @@
 - (id)initWithDelegate:(id)arg1;
 - (BOOL)isInitialSyncNotification:(id)arg1;
 - (id)objectForKey:(id)arg1;
+- (void)removeObjectForKey:(id)arg1;
 - (void)setBool:(BOOL)arg1 forKey:(id)arg2;
 - (void)setCloudStore:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)stringForKey:(id)arg1;
-- (void)synchronize;
+- (BOOL)synchronize;
 
 @end

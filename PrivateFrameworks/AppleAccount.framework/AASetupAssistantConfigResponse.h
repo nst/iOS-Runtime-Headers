@@ -3,7 +3,7 @@
  */
 
 @interface AASetupAssistantConfigResponse : AAResponse {
-    NSDictionary *_urls;
+    NSDictionary * _urls;
 }
 
 @property (nonatomic, readonly) NSString *aboutURL;

@@ -3,8 +3,8 @@
  */
 
 @interface MSVSystemDialogResponse : NSObject {
-    int _buttonIdentifier;
-    NSArray *_textFieldValues;
+    int  _buttonIdentifier;
+    NSArray * _textFieldValues;
 }
 
 @property (nonatomic, readonly) int buttonIdentifier;

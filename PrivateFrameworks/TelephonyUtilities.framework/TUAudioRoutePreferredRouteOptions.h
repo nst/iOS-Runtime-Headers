@@ -3,7 +3,7 @@
  */
 
 @interface TUAudioRoutePreferredRouteOptions : NSObject {
-    BOOL _active;
+    BOOL  _active;
 }
 
 @property (getter=isActive, nonatomic) BOOL active;

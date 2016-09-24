@@ -3,14 +3,14 @@
  */
 
 @interface UIReferenceLibraryViewController : UIViewController <UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
-    UINavigationController *_baseNavController;
-    NSArray *_definitionValues;
-    id /* block */ _dismissCompletionHandler;
-    UIViewController *_longDefViewController;
-    UITableViewController *_multiDefViewController;
-    int _oldPopoverStyle;
-    UIWindow *_rotationDecider;
-    NSString *_term;
+    UINavigationController * _baseNavController;
+    NSArray * _definitionValues;
+    id /* block */  _dismissCompletionHandler;
+    UIViewController * _longDefViewController;
+    UITableViewController * _multiDefViewController;
+    int  _oldPopoverStyle;
+    UIWindow * _rotationDecider;
+    NSString * _term;
 }
 
 @property (setter=_setRotationDecider:, nonatomic, retain) UIWindow *_rotationDecider;

@@ -3,26 +3,26 @@
  */
 
 @interface SKUIGiftConfiguration : NSObject {
-    NSArray *_charities;
-    NSMutableDictionary *_charityImages;
-    SKUIClientContext *_clientContext;
-    NSString *_currencySymbol;
-    int _currencySymbolPosition;
-    NSArray *_fixedGiftAmountLabels;
-    NSArray *_fixedGiftAmountValues;
+    NSArray * _charities;
+    NSMutableDictionary * _charityImages;
+    SKUIClientContext * _clientContext;
+    NSString * _currencySymbol;
+    int  _currencySymbolPosition;
+    NSArray * _fixedGiftAmountLabels;
+    NSArray * _fixedGiftAmountValues;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _giftAmountRange;
-    NSURL *_giftPurchaseURL;
-    NSURL *_giftValidationURL;
-    int _maximumMessageLength;
-    NSHashTable *_observers;
-    NSOperationQueue *_operationQueue;
-    NSString *_senderEmailAddress;
-    NSString *_senderName;
-    NSString *_storeFrontName;
-    NSArray *_themes;
+    }  _giftAmountRange;
+    NSURL * _giftPurchaseURL;
+    NSURL * _giftValidationURL;
+    int  _maximumMessageLength;
+    NSHashTable * _observers;
+    NSOperationQueue * _operationQueue;
+    NSString * _senderEmailAddress;
+    NSString * _senderName;
+    NSString * _storeFrontName;
+    NSArray * _themes;
 }
 
 @property (nonatomic, readonly) SKUIClientContext *clientContext;

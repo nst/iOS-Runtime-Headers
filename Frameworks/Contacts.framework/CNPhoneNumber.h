@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/Contacts.framework/Contacts
  */
 
-@interface CNPhoneNumber : NSObject <CNObjectValidation, NSCopying, NSSecureCoding> {
-    struct __CFPhoneNumber { } *_phoneNumberRef;
-    NSString *_stringValue;
+@interface CNPhoneNumber : NSObject <CNObjectValidation, CNUIURLDestinationID, NSCopying, NSSecureCoding> {
+    struct __CFPhoneNumber { } * _phoneNumberRef;
+    NSString * _stringValue;
 }
 
 @property (nonatomic, readonly, copy) NSString *countryCode;
@@ -46,6 +46,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isLikePhoneNumber:(id)arg1;
 - (BOOL)isValid:(id*)arg1;
+- (id)lastFourDigits;
 - (struct __CFPhoneNumber { }*)phoneNumberRef;
 - (id)stringValue;
 - (id)unformattedInternationalStringValue;
@@ -53,5 +54,9 @@
 // Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
 
 - (id)normalizedStringValue;
+
+// Image: /System/Library/PrivateFrameworks/ContactsUICore.framework/ContactsUICore
+
+- (id)_cnui_URLDestinationID;
 
 @end

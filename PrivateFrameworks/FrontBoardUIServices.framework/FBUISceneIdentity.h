@@ -3,8 +3,8 @@
  */
 
 @interface FBUISceneIdentity : NSObject <FBUISceneIdentity, NSCopying> {
-    FBSDisplay *_display;
-    NSString *_identifier;
+    FBSDisplay * _display;
+    NSString * _identifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;

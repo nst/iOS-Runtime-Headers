@@ -5,9 +5,9 @@
 @interface NPKProtoProvisioningDataResponse : PBCodable <NSCopying> {
     struct { 
         unsigned int pending : 1; 
-    } _has;
-    BOOL _pending;
-    NSData *_provisioningDataBytes;
+    }  _has;
+    BOOL  _pending;
+    NSData * _provisioningDataBytes;
 }
 
 @property (nonatomic) BOOL hasPending;

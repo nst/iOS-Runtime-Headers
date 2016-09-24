@@ -3,14 +3,14 @@
  */
 
 @interface PHAssetResourceRequest : NSOperation {
-    PHInternalAssetResource *_assetResource;
-    NSObject<OS_dispatch_semaphore> *_cloudResourceDownloadWaitSemaphore;
-    int _cloudResourceRequestID;
-    id /* block */ _dataHandler;
-    NSError *_error;
-    PHAssetResourceRequestOptions *_options;
-    NSObject<OS_dispatch_queue> *_queue;
-    int _requestID;
+    PHInternalAssetResource * _assetResource;
+    NSObject<OS_dispatch_semaphore> * _cloudResourceDownloadWaitSemaphore;
+    int  _cloudResourceRequestID;
+    id /* block */  _dataHandler;
+    NSError * _error;
+    PHAssetResourceRequestOptions * _options;
+    NSObject<OS_dispatch_queue> * _queue;
+    int  _requestID;
 }
 
 @property (nonatomic, readonly) NSError *error;

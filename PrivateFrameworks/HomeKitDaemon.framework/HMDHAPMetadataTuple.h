@@ -3,7 +3,7 @@
  */
 
 @interface HMDHAPMetadataTuple : NSObject <NSSecureCoding> {
-    HAPMetadataTuple *_hapMetadataTuple;
+    HAPMetadataTuple * _hapMetadataTuple;
 }
 
 @property (nonatomic, retain) HAPMetadataTuple *hapMetadataTuple;

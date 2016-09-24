@@ -3,11 +3,11 @@
  */
 
 @interface MLITChapterTOC : MLChapterTOC {
-    struct ChapterData { } *_chapterDataRef;
-    unsigned int *_nameCookieIndexMap;
-    unsigned int *_picCookieIndexMap;
-    unsigned int _totalTimeInMS;
-    unsigned int *_urlCookieIndexMap;
+    struct ChapterData { } * _chapterDataRef;
+    unsigned int * _nameCookieIndexMap;
+    unsigned int * _picCookieIndexMap;
+    unsigned int  _totalTimeInMS;
+    unsigned int * _urlCookieIndexMap;
 }
 
 + (unsigned int**)_chapterDataCookieIndexMapForProperty:(int)arg1 ofChapterTOC:(id)arg2;

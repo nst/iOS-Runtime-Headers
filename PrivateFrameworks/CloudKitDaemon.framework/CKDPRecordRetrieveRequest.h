@@ -3,12 +3,12 @@
  */
 
 @interface CKDPRecordRetrieveRequest : PBRequest <NSCopying> {
-    CKDPAssetsToDownload *_assetsToDownload;
-    NSString *_clientVersionETag;
-    CKDPRecordRetrieveRequestRetrieveAssetURL *_getAssetURL;
-    CKDPRecordIdentifier *_recordIdentifier;
-    CKDPRequestedFields *_requestedFields;
-    NSString *_versionETag;
+    CKDPAssetsToDownload * _assetsToDownload;
+    NSString * _clientVersionETag;
+    CKDPRecordRetrieveRequestRetrieveAssetURL * _getAssetURL;
+    CKDPRecordIdentifier * _recordIdentifier;
+    CKDPRequestedFields * _requestedFields;
+    NSString * _versionETag;
 }
 
 @property (nonatomic, retain) CKDPAssetsToDownload *assetsToDownload;

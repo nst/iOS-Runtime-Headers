@@ -3,7 +3,7 @@
  */
 
 @interface AVVideoCompositionCoreAnimationTool : NSObject {
-    AVVideoCompositionCoreAnimationToolInternal *_videoCompositionTool;
+    AVVideoCompositionCoreAnimationToolInternal * _videoCompositionTool;
 }
 
 + (id)videoCompositionCoreAnimationToolWithAdditionalLayer:(id)arg1 asTrackID:(int)arg2;

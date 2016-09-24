@@ -3,8 +3,8 @@
  */
 
 @interface CIExposureAdjust : CIFilter {
-    NSNumber *inputEV;
-    CIImage *inputImage;
+    NSNumber * inputEV;
+    CIImage * inputImage;
 }
 
 @property (nonatomic, retain) NSNumber *inputEV;

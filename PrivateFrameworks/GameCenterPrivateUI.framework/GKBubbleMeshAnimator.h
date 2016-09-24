@@ -3,9 +3,9 @@
  */
 
 @interface GKBubbleMeshAnimator : NSObject {
-    NSMutableSet *_animatingViews;
-    CADisplayLink *_displayLink;
-    double _lastUpdateTime;
+    NSMutableSet * _animatingViews;
+    CADisplayLink * _displayLink;
+    double  _lastUpdateTime;
 }
 
 @property (nonatomic, retain) NSMutableSet *animatingViews;

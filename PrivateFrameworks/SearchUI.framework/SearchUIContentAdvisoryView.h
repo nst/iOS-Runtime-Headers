@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUIContentAdvisoryView : UIView {
-    NSString *_advisoryString;
-}
+@interface SearchUIContentAdvisoryView : SearchUIVibrantLabel
 
-@property (retain) NSString *advisoryString;
-
-- (void).cxx_destruct;
-- (id)advisoryString;
-- (id)initWithString:(id)arg1 style:(unsigned int)arg2 large:(BOOL)arg3;
-- (void)setAdvisoryString:(id)arg1;
+- (id)initWithStyle:(unsigned int)arg1 large:(BOOL)arg2;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct CGSize { double x1; double x2; })makeLabelInsets:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)updateAdvisoryString:(id)arg1;
 
 @end

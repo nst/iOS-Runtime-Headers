@@ -3,17 +3,17 @@
  */
 
 @interface MFMutableData : NSMutableData <NSCopying, NSMutableCopying> {
-    void *_bytes;
-    unsigned int _capacity;
-    int _fd;
-    BOOL _flush;
-    unsigned int _flushFrom;
-    BOOL _immutable;
-    unsigned int _length;
-    unsigned int _mappedLength;
-    char *_path;
-    unsigned int _threshold;
-    BOOL _vm;
+    void * _bytes;
+    unsigned int  _capacity;
+    int  _fd;
+    BOOL  _flush;
+    unsigned int  _flushFrom;
+    BOOL  _immutable;
+    unsigned int  _length;
+    unsigned int  _mappedLength;
+    char * _path;
+    unsigned int  _threshold;
+    BOOL  _vm;
 }
 
 - (void)_flushToDisk:(unsigned int)arg1 capacity:(unsigned int)arg2;

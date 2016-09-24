@@ -3,10 +3,10 @@
  */
 
 @interface TPPageMaster : TSPObject <TPMasterDrawableProvider, TSKDocumentObject, TSKModel, TSPCopying, TSWPHeaderFooterProvider> {
-    TPDocumentRoot *_documentRoot;
-    TSWPStorage *_headerFooters;
-    NSMutableArray *_masterDrawables;
-    TPSection *_section;
+    TPDocumentRoot * _documentRoot;
+    TSWPStorage * _headerFooters;
+    NSMutableArray * _masterDrawables;
+    TPSection * _section;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -34,7 +34,7 @@
 - (int)headerFragmentIndexForModel:(id)arg1;
 - (float)headerHeight;
 - (void)i_addMasterDrawable:(id)arg1;
-- (void)i_copyHeadersAndFootersFrom:(id)arg1 dolcContext:(id)arg2;
+- (void)i_copyHeadersAndFootersFrom:(id)arg1 dolcContext:(id)arg2 withBlock:(id /* block */)arg3;
 - (void)i_createHeadersFooters:(int)arg1 stylesheet:(id)arg2 paragraphStyle:(id)arg3 context:(id)arg4 mayAlreadyExist:(BOOL)arg5;
 - (void)i_ensureHeaderFooterStoragesExistWithStylesheet:(id)arg1 paragraphStyle:(id)arg2 context:(id)arg3;
 - (void)i_importHeaderFooter:(id)arg1 headerType:(int)arg2 dolcContext:(id)arg3 splitHeaders:(BOOL)arg4;

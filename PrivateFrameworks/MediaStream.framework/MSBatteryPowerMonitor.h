@@ -3,15 +3,15 @@
  */
 
 @interface MSBatteryPowerMonitor : NSObject {
-    struct IONotificationPort { } *_batteryIONotifyPort;
-    unsigned int _batteryNotificationRef;
-    struct __CFRunLoopSource { } *_batteryRunLoopSource;
-    double _currentLevel;
-    BOOL _isExteralPowerConnected;
+    struct IONotificationPort { } * _batteryIONotifyPort;
+    unsigned int  _batteryNotificationRef;
+    struct __CFRunLoopSource { } * _batteryRunLoopSource;
+    double  _currentLevel;
+    BOOL  _isExteralPowerConnected;
 }
 
 @property (nonatomic) double currentLevel;
-@property (nonatomic) BOOL isExternalPowerConnected;
+@property (setter=setExternalPowerConnected:, nonatomic) BOOL isExternalPowerConnected;
 
 + (id)defaultMonitor;
 

@@ -3,11 +3,11 @@
  */
 
 @interface RCAVPlayer : AVPlayer {
-    AVPlayerItem *_AVPlayerItemBeingObserved;
-    <RCAVPlayerDelegate> *_delegate;
-    id _periodicTimeObserverToken;
-    double _updateRate;
-    BOOL _valid;
+    AVPlayerItem * _AVPlayerItemBeingObserved;
+    <RCAVPlayerDelegate> * _delegate;
+    id  _periodicTimeObserverToken;
+    double  _updateRate;
+    BOOL  _valid;
 }
 
 @property (nonatomic) <RCAVPlayerDelegate> *delegate;

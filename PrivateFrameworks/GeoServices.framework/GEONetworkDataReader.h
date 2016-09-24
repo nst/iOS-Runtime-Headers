@@ -3,11 +3,11 @@
  */
 
 @interface GEONetworkDataReader : NSObject {
-    unsigned int _bookmarkOffset;
-    const void *_bytes;
-    NSMutableData *_data;
-    unsigned int _dataLength;
-    unsigned int _offset;
+    unsigned int  _bookmarkOffset;
+    const void * _bytes;
+    NSMutableData * _data;
+    unsigned int  _dataLength;
+    unsigned int  _offset;
 }
 
 - (id)allData;

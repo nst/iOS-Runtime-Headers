@@ -3,15 +3,15 @@
  */
 
 @interface MKPointAnnotation : MKShape {
-    struct { 
+    struct CLLocationCoordinate2D { 
         double latitude; 
         double longitude; 
-    } _coordinate;
+    }  _coordinate;
 }
 
-@property (nonatomic) struct { double x1; double x2; } coordinate;
+@property (nonatomic) struct CLLocationCoordinate2D { double x1; double x2; } coordinate;
 
-- (struct { double x1; double x2; })coordinate;
-- (void)setCoordinate:(struct { double x1; double x2; })arg1;
+- (struct CLLocationCoordinate2D { double x1; double x2; })coordinate;
+- (void)setCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
 
 @end

@@ -3,10 +3,10 @@
  */
 
 @interface MTLIOAccelDebugCommandEncoder : _MTLDebugCommandEncoder {
-    MTLResourceList *_api_resourceList;
-    void *_kernelCommandBufferCurrent;
-    void *_kernelCommandBufferEnd;
-    struct IOAccelResourceList { unsigned short x1[256]; struct IOAccelSegmentResourceDescriptorGroup {} *x2; unsigned long long x3; unsigned long long x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; int (*x12)(); void *x13; } *_resourceList;
+    MTLResourceList * _api_resourceList;
+    void * _kernelCommandBufferCurrent;
+    void * _kernelCommandBufferEnd;
+    struct IOAccelResourceList { unsigned short x1[256]; struct IOAccelSegmentResourceDescriptorGroup {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; int (*x12)(); void *x13; } * _resourceList;
 }
 
 - (void)IOLogBytes:(const char *)arg1 length:(unsigned long)arg2;

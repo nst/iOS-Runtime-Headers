@@ -3,8 +3,8 @@
  */
 
 @interface CDPLocalDeviceSecretHandler : NSObject {
-    CDPContext *_context;
-    <CDPLocalDeviceSecretHandlerProtocol> *_handlerProxy;
+    CDPContext * _context;
+    <CDPLocalDeviceSecretHandlerProtocol> * _handlerProxy;
 }
 
 @property (nonatomic, readonly) CDPContext *context;

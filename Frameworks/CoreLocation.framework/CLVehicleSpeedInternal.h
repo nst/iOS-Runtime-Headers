@@ -6,7 +6,7 @@
     struct { 
         double speed; 
         double timestamp; 
-    } fSpeed;
+    }  fSpeed;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

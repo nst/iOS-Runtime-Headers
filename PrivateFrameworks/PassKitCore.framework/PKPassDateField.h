@@ -3,10 +3,10 @@
  */
 
 @interface PKPassDateField : PKPassField {
-    int _dateStyle;
-    BOOL _ignoresTimeZone;
-    BOOL _isRelative;
-    int _timeStyle;
+    int  _dateStyle;
+    BOOL  _ignoresTimeZone;
+    BOOL  _isRelative;
+    int  _timeStyle;
 }
 
 @property (nonatomic) int dateStyle;

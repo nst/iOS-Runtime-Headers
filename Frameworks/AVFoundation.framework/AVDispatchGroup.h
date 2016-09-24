@@ -3,9 +3,9 @@
  */
 
 @interface AVDispatchGroup : NSObject {
-    NSObject<OS_dispatch_queue> *_ivarAccessQueue;
-    NSArray *_notifyBlocks;
-    int _outstandingOperations;
+    NSObject<OS_dispatch_queue> * _ivarAccessQueue;
+    NSArray * _notifyBlocks;
+    int  _outstandingOperations;
 }
 
 - (void)dealloc;

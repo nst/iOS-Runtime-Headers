@@ -3,8 +3,8 @@
  */
 
 @interface ICDebugTimer : NSObject {
-    double _elapsedTime;
-    NSDate *_startingDate;
+    double  _elapsedTime;
+    NSDate * _startingDate;
 }
 
 @property double elapsedTime;

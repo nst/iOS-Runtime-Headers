@@ -3,8 +3,8 @@
  */
 
 @interface SCRCMathFencedExpression : SCRCMathRowExpression {
-    NSString *_closeString;
-    NSString *_openString;
+    NSString * _closeString;
+    NSString * _openString;
 }
 
 @property (nonatomic, copy) NSString *closeString;

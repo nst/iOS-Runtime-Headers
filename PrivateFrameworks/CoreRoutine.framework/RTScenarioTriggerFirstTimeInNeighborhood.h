@@ -3,7 +3,7 @@
  */
 
 @interface RTScenarioTriggerFirstTimeInNeighborhood : RTScenarioTrigger {
-    NSString *_neighborhood;
+    NSString * _neighborhood;
 }
 
 @property (nonatomic, readonly) NSString *neighborhood;

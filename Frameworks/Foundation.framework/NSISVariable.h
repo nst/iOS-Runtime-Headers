@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSISVariable : NSObject {
-    <NSISVariableDelegate> *_delegate;
-    unsigned int _ident;
-    int _refCount;
+@interface NSISVariable : NSObject <NSCoding> {
+    <NSISVariableDelegate> * _delegate;
+    unsigned int  _ident;
+    int  _refCount;
 }
 
 @property <NSISVariableDelegate> *delegate;
@@ -15,14 +15,17 @@
 + (id)variableMarkingConstraint:(id)arg1 valueRestriction:(int)arg2 shouldBeMinimized:(BOOL)arg3;
 + (id)variableWithDelegate:(id)arg1 valueRestriction:(int)arg2 shouldBeMinimized:(BOOL)arg3;
 + (id)variableWithName:(id)arg1 valueRestriction:(int)arg2 shouldBeMinimized:(BOOL)arg3;
++ (id)variableWithName:(id)arg1 valueRestriction:(int)arg2 shouldBeMinimized:(BOOL)arg3 valueIsUserObservable:(BOOL)arg4;
 
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
 - (float)allowedMagnitudeForIntegralizationAdjustmentOfMarkedConstraint;
 - (id)delegate;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)markedConstraint;
 - (BOOL)markedConstraintIsEligibleForIntegralizationAdjustment;
 - (oneway void)release;

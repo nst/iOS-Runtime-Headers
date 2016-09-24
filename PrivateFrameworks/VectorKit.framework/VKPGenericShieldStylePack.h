@@ -3,8 +3,8 @@
  */
 
 @interface VKPGenericShieldStylePack : PBCodable <NSCopying> {
-    NSMutableArray *_genericShields;
-    NSMutableArray *_textureAtlas;
+    NSMutableArray * _genericShields;
+    NSMutableArray * _textureAtlas;
 }
 
 @property (nonatomic, retain) NSMutableArray *genericShields;

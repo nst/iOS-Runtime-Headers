@@ -3,8 +3,8 @@
  */
 
 @interface TCTracingManager : NSObject {
-    TSMTraceBuffer *mBuffer;
-    unsigned int mCount;
+    TSMTraceBuffer * mBuffer;
+    unsigned int  mCount;
 }
 
 + (id)_singletonAlloc;

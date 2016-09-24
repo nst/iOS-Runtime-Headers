@@ -3,10 +3,10 @@
  */
 
 @interface SLFacebookVideoOptionsViewController : UITableViewController {
-    <SLFacebookVideoOptionsDelegate> *_delegate;
-    NSArray *_qualityOptions;
-    SLVideoQualityOption *_selectedOption;
-    NSURL *_videoAssetURL;
+    <SLFacebookVideoOptionsDelegate> * _delegate;
+    NSArray * _qualityOptions;
+    SLVideoQualityOption * _selectedOption;
+    NSURL * _videoAssetURL;
 }
 
 @property (nonatomic) <SLFacebookVideoOptionsDelegate> *delegate;

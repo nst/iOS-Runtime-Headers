@@ -3,9 +3,9 @@
  */
 
 @interface HMDBulletinProvider : NSObject <BBRemoteDataProvider, NSSecureCoding> {
-    NSMutableDictionary *_bulletins;
-    HMDHomeManager *_homeManager;
-    BBDataProviderProxy *_proxy;
+    NSMutableDictionary * _bulletins;
+    HMDHomeManager * _homeManager;
+    BBDataProviderProxy * _proxy;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *bulletins;
@@ -19,6 +19,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)attachmentPNGDataForRecordID:(id)arg1 sizeConstraints:(id)arg2;
 - (id)bulletins;
 - (id)bulletinsWithRequestParameters:(id)arg1 lastCleared:(id)arg2;
 - (id)clearedInfoForBulletins:(id)arg1 lastClearedInfo:(id)arg2;
@@ -26,15 +27,12 @@
 - (void)configureHomeManager:(id)arg1;
 - (void)cullBulletinsToCount:(unsigned int)arg1;
 - (id)defaultSectionInfo;
-- (id)defaultSubsectionInfos;
-- (id)displayNameForFilterID:(id)arg1;
-- (id)displayNameForSubsectionID:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (void)handleBulletinActionResponse:(id)arg1;
 - (id)homeManager;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (void)insertBulletinWithTitle:(id)arg1 message:(id)arg2 recordID:(id)arg3;
-- (void)insertBulletinWithTitle:(id)arg1 message:(id)arg2 recordID:(id)arg3 context:(struct NSDictionary { Class x1; }*)arg4;
+- (void)insertBulletinWithTitle:(id)arg1 imageURL:(id)arg2 message:(id)arg3 recordID:(id)arg4 bulletinType:(unsigned int)arg5 actionURL:(id)arg6 bulletinContext:(struct NSDictionary { Class x1; }*)arg7 actionContext:(struct NSDictionary { Class x1; }*)arg8;
 - (id)proxy;
 - (void)reloadDefaultSectionInfo;
 - (void)removeBulletin:(id)arg1;

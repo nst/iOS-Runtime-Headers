@@ -3,10 +3,10 @@
  */
 
 @interface SBKPullValueResponse : SBKResponse {
-    NSString *_domainVersion;
-    NSString *_itemKey;
-    NSData *_itemValuePayload;
-    NSString *_itemVersion;
+    NSString * _domainVersion;
+    NSString * _itemKey;
+    NSData * _itemValuePayload;
+    NSString * _itemVersion;
 }
 
 @property (readonly) NSString *domainVersion;

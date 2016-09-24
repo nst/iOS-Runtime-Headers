@@ -4,9 +4,10 @@
 
 @interface HDStepDataCollector : HDPedometerDataCollector
 
++ (double)defaultCollectionInterval;
 + (id)domain;
 + (id)observedType;
 
-- (id)quantitySampleFromPedometerData:(id)arg1 toPedometerData:(id)arg2 startDate:(id)arg3 endDate:(id)arg4;
+- (id)quantitySamplesFromPedometerData:(id)arg1 toPedometerData:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 containsWorkoutSamples:(BOOL)arg5;
 
 @end

@@ -3,14 +3,14 @@
  */
 
 @interface MFInvocationQueue : NSObject <MFDiagnosticsGenerator> {
-    BOOL _isForeground;
-    NSMutableArray *_items;
-    NSConditionLock *_lock;
-    struct __CFSet { } *_lowPriorityThreads;
-    unsigned int _maxThreads;
-    unsigned int _numThreads;
-    int _threadPriorityTrigger;
-    double _threadRecycleTimeout;
+    BOOL  _isForeground;
+    NSMutableArray * _items;
+    NSConditionLock * _lock;
+    struct __CFDictionary { } * _lowPriorityThreads;
+    unsigned int  _maxThreads;
+    unsigned int  _numThreads;
+    int  _threadPriorityTrigger;
+    double  _threadRecycleTimeout;
 }
 
 @property (readonly, copy) NSString *debugDescription;

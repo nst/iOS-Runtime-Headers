@@ -3,8 +3,8 @@
  */
 
 @interface PDBuildMapKey : NSObject <NSCopying> {
-    NSValue *mDrawableValue;
-    NSString *mGroupId;
+    NSValue * mDrawableValue;
+    NSString * mGroupId;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

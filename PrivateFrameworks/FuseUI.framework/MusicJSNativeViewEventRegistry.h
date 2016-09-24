@@ -3,10 +3,10 @@
  */
 
 @interface MusicJSNativeViewEventRegistry : IKJSObject <MusicJSNativeViewEventRegistry> {
-    NSMapTable *_accessBlockQueuesMap;
-    NSMutableDictionary *_eventListenersMap;
-    NSMapTable *_eventRequestQueuesMap;
-    NSMutableSet *_viewControllersBeingRegistered;
+    NSMapTable * _accessBlockQueuesMap;
+    NSMutableDictionary * _eventListenersMap;
+    NSMapTable * _eventRequestQueuesMap;
+    NSMutableSet * _viewControllersBeingRegistered;
 }
 
 - (void).cxx_destruct;

@@ -3,11 +3,12 @@
  */
 
 @interface CAMPanoramaViewController : UIViewController <CAMPanoramaConfigurationDelegate, CAMPanoramaViewDelegate> {
-    CUCaptureController *__captureController;
-    int __captureOrientation;
-    UITapGestureRecognizer *__directionChangeGestureRecognizer;
-    CMMotionManager *__motionManager;
-    BOOL _painting;
+    CUCaptureController * __captureController;
+    int  __captureOrientation;
+    UITapGestureRecognizer * __directionChangeGestureRecognizer;
+    CMMotionManager * __motionManager;
+    int  _layoutStyle;
+    BOOL  _painting;
 }
 
 @property (nonatomic, readonly) CUCaptureController *_captureController;
@@ -17,7 +18,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (getter=isPainting, nonatomic) BOOL painting;
+@property (nonatomic) int layoutStyle;
+@property (getter=isPainting, setter=_setPainting:, nonatomic) BOOL painting;
 @property (nonatomic, readonly) CAMPanoramaView *panoramaView;
 @property (readonly) Class superclass;
 
@@ -36,13 +38,15 @@
 - (void)didChangeToCaptureOrientation:(int)arg1;
 - (void)didChangeToMode:(int)arg1 device:(int)arg2;
 - (void)finishedProcessingPanorama;
-- (id)initWithCaptureController:(id)arg1;
+- (id)initWithCaptureController:(id)arg1 layoutStyle:(int)arg2;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isPainting;
+- (int)layoutStyle;
 - (void)loadView;
 - (void)panoramaConfigurationDidChangeWithDirection:(int)arg1;
 - (id)panoramaView;
 - (void)panoramaViewDidRequestSynchronizedDirectionChange:(id)arg1 toDirection:(int)arg2;
+- (void)setLayoutStyle:(int)arg1;
 - (void)startPainting;
 - (void)startProcessingPanorama;
 - (void)stopPainting;

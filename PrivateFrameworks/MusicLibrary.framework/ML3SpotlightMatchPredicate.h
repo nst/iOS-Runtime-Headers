@@ -3,9 +3,9 @@
  */
 
 @interface ML3SpotlightMatchPredicate : ML3Predicate {
-    ML3SpotlightNameCache *_names;
-    NSArray *_searchProperties;
-    NSString *_searchString;
+    ML3SpotlightNameCache * _names;
+    NSArray * _searchProperties;
+    NSString * _searchString;
 }
 
 @property (nonatomic, readonly) NSString *searchString;

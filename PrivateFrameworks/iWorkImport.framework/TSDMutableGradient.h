@@ -12,7 +12,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isAdvancedGradient;
 @property (nonatomic, retain) TSUColor *lastColor;
-@property (nonatomic) float opacity;
+@property (nonatomic) double opacity;
 @property (readonly) Class superclass;
 
 - (void)evenlyDistributeStops;
@@ -29,7 +29,9 @@
 - (void)setGradientStops:(id)arg1;
 - (void)setGradientType:(unsigned int)arg1;
 - (void)setInflectionOfStopAtIndex:(unsigned int)arg1 toInflection:(float)arg2;
+- (void)setIsAdvancedGradient:(BOOL)arg1;
 - (void)setLastColor:(id)arg1;
+- (void)setOpacity:(float)arg1;
 - (void)swapStopAtIndex:(unsigned int)arg1 withStopAtIndex:(unsigned int)arg2;
 
 @end

@@ -3,11 +3,11 @@
  */
 
 @interface CPLResource : NSObject <NSCopying, NSSecureCoding> {
-    BOOL _canGenerateDerivative;
-    BOOL _generateDerivative;
-    CPLResourceIdentity *_identity;
-    NSString *_itemIdentifier;
-    unsigned int _resourceType;
+    BOOL  _canGenerateDerivative;
+    BOOL  _generateDerivative;
+    CPLResourceIdentity * _identity;
+    NSString * _itemIdentifier;
+    unsigned int  _resourceType;
 }
 
 @property (nonatomic) BOOL canGenerateDerivative;

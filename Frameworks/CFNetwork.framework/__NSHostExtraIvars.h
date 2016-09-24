@@ -3,12 +3,12 @@
  */
 
 @interface __NSHostExtraIvars : NSObject {
-    NSObject<OS_dispatch_queue> *cacheAccessQueue;
-    NSObject<OS_dispatch_queue> *callbackQueue;
-    NSObject<OS_dispatch_queue> *resolveQueue;
-    int resolveType;
-    BOOL startedResolving;
-    NSString *thingToResolve;
+    NSObject<OS_dispatch_queue> * cacheAccessQueue;
+    NSObject<OS_dispatch_queue> * callbackQueue;
+    NSObject<OS_dispatch_queue> * resolveQueue;
+    int  resolveType;
+    BOOL  startedResolving;
+    NSString * thingToResolve;
 }
 
 @property (nonatomic, readonly, retain) NSObject<OS_dispatch_queue> *cacheAccessQueue;

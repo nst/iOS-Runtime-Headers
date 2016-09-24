@@ -3,7 +3,7 @@
  */
 
 @interface SKUIZoomingShelfCollectionViewLayoutInvalidationContext : UICollectionViewLayoutInvalidationContext {
-    BOOL _invalidateGeometryOnlyOfExistingLayoutAttributes;
+    BOOL  _invalidateGeometryOnlyOfExistingLayoutAttributes;
 }
 
 @property (nonatomic) BOOL invalidateGeometryOnlyOfExistingLayoutAttributes;

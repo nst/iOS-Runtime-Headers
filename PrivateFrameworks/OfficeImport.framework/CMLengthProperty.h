@@ -3,8 +3,8 @@
  */
 
 @interface CMLengthProperty : CMProperty {
-    int unitType;
-    double value;
+    int  unitType;
+    double  value;
 }
 
 + (double)convertToPoints:(double)arg1 unit:(int)arg2;

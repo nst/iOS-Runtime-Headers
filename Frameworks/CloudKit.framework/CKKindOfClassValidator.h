@@ -3,7 +3,7 @@
  */
 
 @interface CKKindOfClassValidator : CKPredicateValidatorInstance {
-    Class _parentClass;
+    Class  _parentClass;
 }
 
 @property (nonatomic, retain) Class parentClass;

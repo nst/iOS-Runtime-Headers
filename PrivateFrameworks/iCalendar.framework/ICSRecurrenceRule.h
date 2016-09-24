@@ -3,8 +3,8 @@
  */
 
 @interface ICSRecurrenceRule : NSObject <ICSWriting, NSCoding> {
-    int _freq;
-    NSMutableDictionary *_parameters;
+    int  _freq;
+    NSMutableDictionary * _parameters;
 }
 
 @property (nonatomic, retain) NSArray *byday;

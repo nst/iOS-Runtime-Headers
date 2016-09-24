@@ -3,10 +3,10 @@
  */
 
 @interface CITriangleTile : CIFilter {
-    NSNumber *inputAngle;
-    CIVector *inputCenter;
-    CIImage *inputImage;
-    NSNumber *inputWidth;
+    NSNumber * inputAngle;
+    CIVector * inputCenter;
+    CIImage * inputImage;
+    NSNumber * inputWidth;
 }
 
 + (id)customAttributes;

@@ -3,8 +3,8 @@
  */
 
 @interface SKUINavigationStackEnsureConsistencyRequest : NSObject <NSCopying> {
-    int _navigationControllerOperation;
-    BOOL _operationDidComplete;
+    int  _navigationControllerOperation;
+    BOOL  _operationDidComplete;
 }
 
 @property (nonatomic, readonly) int navigationControllerOperation;

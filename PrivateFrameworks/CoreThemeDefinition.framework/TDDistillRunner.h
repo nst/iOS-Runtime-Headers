@@ -3,13 +3,13 @@
  */
 
 @interface TDDistillRunner : NSObject {
-    int _assetStoreVersionNumber;
-    NSString *_assetStoreVersionString;
-    NSURL *_carScratchURL;
-    TDDistiller *_distiller;
-    TDLogger *_logger;
-    NSURL *_outputURL;
-    BOOL _packDocument;
+    int  _assetStoreVersionNumber;
+    NSString * _assetStoreVersionString;
+    NSURL * _carScratchURL;
+    TDDistiller * _distiller;
+    TDLogger * _logger;
+    NSURL * _outputURL;
+    BOOL  _packDocument;
 }
 
 @property int assetStoreVersionNumber;

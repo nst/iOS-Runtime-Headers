@@ -3,8 +3,8 @@
  */
 
 @interface GEORouteHypothesisIncident : NSObject <NSSecureCoding> {
-    int _routeIncidentSignificance;
-    int _routeIncidentType;
+    int  _routeIncidentSignificance;
+    int  _routeIncidentType;
 }
 
 @property (nonatomic, readonly) int routeIncidentSignificance;

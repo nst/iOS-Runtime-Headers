@@ -5,15 +5,15 @@
 @interface WKReloadFrameErrorRecoveryAttempter : NSObject <_WKErrorRecoveryAttempting> {
     struct RetainPtr<_WKFrameHandle> { 
         void *m_ptr; 
-    } _frameHandle;
+    }  _frameHandle;
     struct String { 
         struct RefPtr<WTF::StringImpl> { 
             struct StringImpl {} *m_ptr; 
         } m_impl; 
-    } _urlString;
+    }  _urlString;
     /* Warning: unhandled struct encoding: '{WeakObjCPtr<WKWebView>="m_weakReference"@}' */ struct WeakObjCPtr<WKWebView> { 
         id m_weakReference; 
-    } _webView;
+    }  _webView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

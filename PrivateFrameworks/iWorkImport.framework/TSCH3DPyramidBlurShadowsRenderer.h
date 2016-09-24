@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DPyramidBlurShadowsRenderer : NSObject <TSCH3DShadowsRenderer> {
-    TSCH3DPyramidBlurFBOResource *mFinalShadowResource;
+    TSCH3DPyramidBlurFBOResource * mFinalShadowResource;
     struct tvec2<int> { 
         union { 
             int x; 
@@ -15,10 +15,10 @@
             int g; 
             int t; 
         } ; 
-    } mInitialSize;
-    NSArray *mPyramidResources;
-    int mRequestedSize;
-    float mTargetRadiusFactor;
+    }  mInitialSize;
+    NSArray * mPyramidResources;
+    int  mRequestedSize;
+    double  mTargetRadiusFactor;
 }
 
 - (id).cxx_construct;

@@ -3,11 +3,11 @@
  */
 
 @interface HDLiveDataCollectorBuffer : NSObject {
-    NSMutableArray *_buffer;
-    double _bufferAggregationInterval;
-    <HDSensorDatum> *_lastProcessedDatum;
-    id /* block */ _objectCreationBlock;
-    id /* block */ _sensorDatumComparisonBlock;
+    NSMutableArray * _buffer;
+    double  _bufferAggregationInterval;
+    <HDSensorDatum> * _lastProcessedDatum;
+    id /* block */  _objectCreationBlock;
+    id /* block */  _sensorDatumComparisonBlock;
 }
 
 @property (nonatomic) double bufferAggregationInterval;

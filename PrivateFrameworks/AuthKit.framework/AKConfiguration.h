@@ -3,12 +3,15 @@
  */
 
 @interface AKConfiguration : NSObject {
-    NSMutableDictionary *_cachedSettings;
-    int _notificationToken;
-    NSObject<OS_dispatch_queue> *_settingsQueue;
+    NSMutableDictionary * _cachedSettings;
+    int  _notificationToken;
+    NSObject<OS_dispatch_queue> * _settingsQueue;
 }
 
+@property (nonatomic, copy) NSDate *lastCheckInAttemptDate;
+@property (nonatomic, copy) NSDate *lastCheckInSuccessDate;
 @property (nonatomic) int shouldDisablePETs;
+@property (nonatomic) int shouldDisablePiggybacking;
 @property (nonatomic) int shouldFakeAuthSuccess;
 
 + (id)sharedConfiguration;
@@ -17,10 +20,16 @@
 - (id)configurationValueForKey:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)lastCheckInAttemptDate;
+- (id)lastCheckInSuccessDate;
 - (void)setConfigurationValue:(id)arg1 forKey:(id)arg2;
+- (void)setLastCheckInAttemptDate:(id)arg1;
+- (void)setLastCheckInSuccessDate:(id)arg1;
 - (void)setShouldDisablePETs:(int)arg1;
+- (void)setShouldDisablePiggybacking:(int)arg1;
 - (void)setShouldFakeAuthSuccess:(int)arg1;
 - (int)shouldDisablePETs;
+- (int)shouldDisablePiggybacking;
 - (int)shouldFakeAuthSuccess;
 
 @end

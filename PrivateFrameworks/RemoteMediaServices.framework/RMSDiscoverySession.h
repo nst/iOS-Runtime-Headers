@@ -3,13 +3,13 @@
  */
 
 @interface RMSDiscoverySession : NSObject <RMSDiscoverySession, RMSServiceProviderDelegate> {
-    NSMutableSet *_availableServices;
-    <RMSDiscoverySessionDelegate> *_delegate;
-    int _discoveryTypes;
-    BOOL _networkAvailable;
-    NSArray *_pairedNetworkNames;
-    NSArray *_providers;
-    Reachability *_reachability;
+    NSMutableSet * _availableServices;
+    <RMSDiscoverySessionDelegate> * _delegate;
+    int  _discoveryTypes;
+    BOOL  _networkAvailable;
+    NSArray * _pairedNetworkNames;
+    NSArray * _providers;
+    Reachability * _reachability;
 }
 
 @property (nonatomic, readonly) NSArray *availableServices;

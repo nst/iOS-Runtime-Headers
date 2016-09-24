@@ -3,7 +3,7 @@
  */
 
 @interface GEOTestTileRequester : GEOTileRequester {
-    NSTimer *_timer;
+    NSTimer * _timer;
 }
 
 + (unsigned char)tileProviderIdentifier;

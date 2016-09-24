@@ -5,7 +5,6 @@
 
 @required
 
-- (void)handleReport:(unsigned int)arg1 data:(NSData *)arg2;
 - (id)initWithController:(GCController *)arg1;
 - (GCControllerElement *)inputForElement:(struct __IOHIDElement { }*)arg1;
 - (NSString *)name;

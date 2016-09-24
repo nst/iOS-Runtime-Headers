@@ -4,6 +4,15 @@
 
 @interface _DECAggregateKeys : NSObject
 
++ (id)abGroupNilString;
++ (id)abGroupProperty;
++ (id)categoryProperty;
++ (id)consumerProperty;
++ (id)consumerSubtypeProperty;
++ (id)eventActionProperty;
++ (id)eventPositionProperty;
++ (id)expertProperty;
++ (id)featureIdentifier;
 + (id)keyForExpert:(id)arg1;
 + (id)keyForExpert:(id)arg1 prefix:(id)arg2;
 + (id)keyForExpert:(id)arg1 subkey:(id)arg2;
@@ -16,6 +25,11 @@
 + (id)keyWithExpertIdentifier:(id)arg1 subkey:(id)arg2;
 + (id)keyWithExpertIdentifier:(id)arg1 subkey:(id)arg2 suffix:(id)arg3;
 + (id)keyWithSubkey:(id)arg1;
++ (id)outcomeProperty;
++ (id)qpFeatureIdentifier;
++ (id)reasonProperty;
++ (id)resultActionProperty;
++ (id)sourceProperty;
 + (id)timingKeyForExpert:(id)arg1 subkey:(id)arg2;
 + (id)timingKeyWithExpertIdentifier:(id)arg1 subkey:(id)arg2;
 

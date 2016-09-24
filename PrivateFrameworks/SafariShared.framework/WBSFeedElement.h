@@ -3,11 +3,11 @@
  */
 
 @interface WBSFeedElement : NSObject {
-    NSDictionary *_attributes;
-    NSMutableDictionary *_children;
-    NSMutableString *_content;
-    NSString *_name;
-    NSString *_namespaceURI;
+    NSDictionary * _attributes;
+    NSMutableDictionary * _children;
+    NSMutableString * _content;
+    NSString * _name;
+    NSString * _namespaceURI;
 }
 
 @property (nonatomic, copy) NSDictionary *attributes;

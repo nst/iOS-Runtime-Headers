@@ -3,12 +3,12 @@
  */
 
 @interface GSStagingPrefix : NSObject {
-    int _deviceID;
-    NSData *_extension;
-    NSString *_path;
-    NSArray *_pathComponents;
-    long long _sandboxHandle;
-    unsigned char _volumeUUID;
+    int  _deviceID;
+    NSData * _extension;
+    NSString * _path;
+    NSArray * _pathComponents;
+    int  _sandboxHandle;
+    unsigned char  _volumeUUID;
 }
 
 - (void)_connectionWithDaemonWasLost;

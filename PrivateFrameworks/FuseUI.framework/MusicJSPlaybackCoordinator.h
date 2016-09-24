@@ -3,7 +3,7 @@
  */
 
 @interface MusicJSPlaybackCoordinator : IKJSObject <MusicJSPlaybackCoordinator> {
-    MusicAVPlayer *_player;
+    MusicAVPlayer * _player;
 }
 
 @property (nonatomic, retain) MusicAVPlayer *player;

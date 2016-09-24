@@ -3,11 +3,11 @@
  */
 
 @interface WBSParsecMovieCardSection : WBSParsecCardSection {
-    NSArray *_buyButtonSections;
-    WBSParsecImageRepresentation *_imageRepresentation;
-    WBSParsecImageRepresentation *_rottenTomatoesGlyphRepresentation;
-    NSString *_rottenTomatoesText;
-    NSArray *_sections;
+    NSArray * _buyButtonSections;
+    WBSParsecImageRepresentation * _imageRepresentation;
+    WBSParsecImageRepresentation * _rottenTomatoesGlyphRepresentation;
+    NSString * _rottenTomatoesText;
+    NSArray * _sections;
 }
 
 @property (nonatomic, readonly, copy) NSArray *buyButtonSections;

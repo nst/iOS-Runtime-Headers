@@ -3,9 +3,9 @@
  */
 
 @interface PTSButton : UIButton <PTSHUDControl, _UISettingsKeyPathObserver> {
-    int _alignment;
-    _UISettings *_settings;
-    NSString *_valueKeyPath;
+    int  _alignment;
+    _UISettings * _settings;
+    NSString * _valueKeyPath;
 }
 
 @property (nonatomic) int alignment;
@@ -19,7 +19,7 @@
 
 + (id)addSettingsButton;
 + (id)button;
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultFrame;
++ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })defaultFrame;
 + (id)editSavedModeTableButton;
 + (id)hideHUDButton;
 + (id)restoreDefaultValuesButton;

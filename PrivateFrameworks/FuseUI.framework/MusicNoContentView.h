@@ -3,16 +3,16 @@
  */
 
 @interface MusicNoContentView : UIView {
-    UIButton *_actionButton;
-    _UIBackdropView *_backdropView;
-    UIImage *_buttonBackgroundImage;
-    NSString *_buttonTitle;
-    UIView *_containerView;
-    <MusicNoContentViewDelegate> *_delegate;
-    NSString *_message;
-    UILabel *_messageLabel;
-    NSString *_title;
-    UILabel *_titleLabel;
+    UIButton * _actionButton;
+    _UIBackdropView * _backdropView;
+    UIImage * _buttonBackgroundImage;
+    NSString * _buttonTitle;
+    UIView * _containerView;
+    <MusicNoContentViewDelegate> * _delegate;
+    NSString * _message;
+    UILabel * _messageLabel;
+    NSString * _title;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, copy) NSString *buttonTitle;
@@ -33,7 +33,7 @@
 - (id)buttonTitle;
 - (id)delegate;
 - (void)didMoveToWindow;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)message;
 - (void)setButtonTitle:(id)arg1;

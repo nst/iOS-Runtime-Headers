@@ -3,22 +3,22 @@
  */
 
 @interface OITSUFlushingManager : NSObject {
-    unsigned int _activeBgThreadTask;
-    BOOL _alwaysFlushing;
-    unsigned int _backgroundTransitionTaskId;
-    NSThread *_bgThread;
-    unsigned long _clock;
-    NSCondition *_cond;
-    <TSUFlushable> *_flushingObject;
-    OITSUPointerKeyDictionary *_inactiveObjects;
-    BOOL _isFlushing;
-    NSCondition *_isFlushingCond;
-    OITSUMemoryWatcher *_memoryWatcher;
-    OITSURetainedPointerKeyDictionary *_objects;
-    struct set<TSUFlushableObjectInfo *, TSUFlushableObjectInfoPointerTimeStampLess, std::__1::allocator<TSUFlushableObjectInfo *> > { struct __tree<TSUFlushableObjectInfo *, TSUFlushableObjectInfoPointerTimeStampLess, std::__1::allocator<TSUFlushableObjectInfo *> > { struct __tree_node<TSUFlushableObjectInfo *, void *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<TSUFlushableObjectInfo *, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, TSUFlushableObjectInfoPointerTimeStampLess> { unsigned long x_3_2_1; } x_1_1_3; } x1; } *_sortedNewObjects;
-    struct set<TSUFlushableObjectInfo *, TSUFlushableObjectInfoPointerFlushingOrderLess, std::__1::allocator<TSUFlushableObjectInfo *> > { struct __tree<TSUFlushableObjectInfo *, TSUFlushableObjectInfoPointerFlushingOrderLess, std::__1::allocator<TSUFlushableObjectInfo *> > { struct __tree_node<TSUFlushableObjectInfo *, void *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<TSUFlushableObjectInfo *, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, TSUFlushableObjectInfoPointerFlushingOrderLess> { unsigned long x_3_2_1; } x_1_1_3; } x1; } *_sortedObjects;
-    BOOL _stopFlushing;
-    BOOL _stopFlushingWhenQueueEmpty;
+    unsigned int  _activeBgThreadTask;
+    BOOL  _alwaysFlushing;
+    unsigned int  _backgroundTransitionTaskId;
+    NSThread * _bgThread;
+    unsigned long  _clock;
+    NSCondition * _cond;
+    <TSUFlushable> * _flushingObject;
+    OITSUPointerKeyDictionary * _inactiveObjects;
+    BOOL  _isFlushing;
+    NSCondition * _isFlushingCond;
+    OITSUMemoryWatcher * _memoryWatcher;
+    OITSURetainedPointerKeyDictionary * _objects;
+    struct set<TSUFlushableObjectInfo *, TSUFlushableObjectInfoPointerTimeStampLess, std::__1::allocator<TSUFlushableObjectInfo *> > { struct __tree<TSUFlushableObjectInfo *, TSUFlushableObjectInfoPointerTimeStampLess, std::__1::allocator<TSUFlushableObjectInfo *> > { struct __tree_node<TSUFlushableObjectInfo *, void *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<TSUFlushableObjectInfo *, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, TSUFlushableObjectInfoPointerTimeStampLess> { unsigned long x_3_2_1; } x_1_1_3; } x1; } * _sortedNewObjects;
+    struct set<TSUFlushableObjectInfo *, TSUFlushableObjectInfoPointerFlushingOrderLess, std::__1::allocator<TSUFlushableObjectInfo *> > { struct __tree<TSUFlushableObjectInfo *, TSUFlushableObjectInfoPointerFlushingOrderLess, std::__1::allocator<TSUFlushableObjectInfo *> > { struct __tree_node<TSUFlushableObjectInfo *, void *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<TSUFlushableObjectInfo *, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, TSUFlushableObjectInfoPointerFlushingOrderLess> { unsigned long x_3_2_1; } x_1_1_3; } x1; } * _sortedObjects;
+    BOOL  _stopFlushing;
+    BOOL  _stopFlushingWhenQueueEmpty;
 }
 
 + (id)_singletonAlloc;

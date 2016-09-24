@@ -13,7 +13,7 @@
 - (void)didEndGesture;
 - (BOOL)hasMarkedText;
 - (void)setTwoFingerTapTimestamp:(double)arg1;
-- (BOOL)shouldAllowSelectionGestures:(BOOL)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 toBegin:(BOOL)arg3;
+- (BOOL)shouldAllowSelectionGestures:(BOOL)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 toBegin:(BOOL)arg3;
 - (double)timestampOfLastTouchesEnded;
 - (BOOL)transitionInProgress;
 - (void)willBeginGesture;

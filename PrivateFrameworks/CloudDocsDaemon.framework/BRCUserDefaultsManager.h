@@ -3,12 +3,14 @@
  */
 
 @interface BRCUserDefaultsManager : NSObject <NSURLSessionDownloadDelegate> {
-    id /* block */ _configurationPlistDidUpdateBlock;
-    NSOperationQueue *_downloadQueue;
-    NSDictionary *_serverConfigurationDict;
-    NSURL *_serverConfigurationURL;
-    NSURLSession *_urlSession;
-    NSMutableDictionary *_userDefaultsCache;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    id /* block */  _configurationPlistDidUpdateBlock;
+    NSOperationQueue * _downloadQueue;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSDictionary * _serverConfigurationDict;
+    NSURL * _serverConfigurationURL;
+    NSURLSession * _urlSession;
+    NSMutableDictionary * _userDefaultsCache;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -23,9 +25,12 @@
 - (void)_loadCachedServerConfigurationDictionaryFromDB:(id)arg1;
 - (void)_loadServerConfigurationDictionary;
 - (void)_parsePlistWithURL:(id)arg1;
-- (void)_prepopulateGlobalContainerUserDefaults;
+- (void)_prepopulateGlobalUserDefaults;
+- (void)_reset;
 - (void)_saveServerConfigurationDictionaryToDB:(id)arg1;
-- (id)defaultsForContainerIdentifier:(id)arg1;
+- (void)_setServerConfigurationURL:(id)arg1 whenLoaded:(id /* block */)arg2;
+- (id)defaultsForAppLibraryIdentifier:(id)arg1;
+- (id)defaultsForAppLibraryName:(id)arg1;
 - (id)init;
 - (void)reset;
 - (void)setServerConfigurationURL:(id)arg1 whenLoaded:(id /* block */)arg2;

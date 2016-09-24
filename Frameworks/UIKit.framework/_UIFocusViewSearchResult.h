@@ -3,8 +3,8 @@
  */
 
 @interface _UIFocusViewSearchResult : NSObject {
-    UIFocusUpdateContext *_focusCandidate;
-    BOOL _hasSpeedBump;
+    UIFocusUpdateContext * _focusCandidate;
+    BOOL  _hasSpeedBump;
 }
 
 @property (nonatomic, retain) UIFocusUpdateContext *focusCandidate;

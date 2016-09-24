@@ -3,13 +3,13 @@
  */
 
 @interface AWDWiFiMetricNetworkPrefs : PBCodable <NSCopying> {
-    unsigned int _adhocNetsCount;
-    unsigned int _applePersHotspotNetsCount;
-    unsigned int _atjCanceledCount;
-    BOOL _atjEnabled;
-    unsigned int _atjUsedCount;
-    unsigned int _captiveNetsCount;
-    unsigned int _eapNetsCount;
+    unsigned int  _adhocNetsCount;
+    unsigned int  _applePersHotspotNetsCount;
+    unsigned int  _atjCanceledCount;
+    BOOL  _atjEnabled;
+    unsigned int  _atjUsedCount;
+    unsigned int  _captiveNetsCount;
+    unsigned int  _eapNetsCount;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int adhocNetsCount : 1; 
@@ -26,16 +26,16 @@
         unsigned int wepNetsCount : 1; 
         unsigned int wpaNetsCount : 1; 
         unsigned int atjEnabled : 1; 
-    } _has;
-    unsigned int _hiddenNetsCount;
-    unsigned int _mostUsedCount;
-    NSMutableArray *_mostUsedNetworks;
-    unsigned int _openNonCaptiveNetsCount;
-    unsigned int _prefNetsCount;
-    unsigned long long _timestamp;
-    unsigned int _wapiNetsCount;
-    unsigned int _wepNetsCount;
-    unsigned int _wpaNetsCount;
+    }  _has;
+    unsigned int  _hiddenNetsCount;
+    unsigned int  _mostUsedCount;
+    NSMutableArray * _mostUsedNetworks;
+    unsigned int  _openNonCaptiveNetsCount;
+    unsigned int  _prefNetsCount;
+    unsigned long long  _timestamp;
+    unsigned int  _wapiNetsCount;
+    unsigned int  _wepNetsCount;
+    unsigned int  _wpaNetsCount;
 }
 
 @property (nonatomic) unsigned int adhocNetsCount;

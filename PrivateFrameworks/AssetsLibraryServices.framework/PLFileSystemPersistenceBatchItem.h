@@ -3,8 +3,8 @@
  */
 
 @interface PLFileSystemPersistenceBatchItem : NSObject {
-    NSMutableDictionary *_attributes;
-    NSURL *_fileURL;
+    NSMutableDictionary * _attributes;
+    NSURL * _fileURL;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *attributes;

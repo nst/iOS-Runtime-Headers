@@ -3,23 +3,23 @@
  */
 
 @interface CoreDAVDiscoveryAccountInfo : NSObject <CoreDAVAccountInfoProvider> {
-    NSString *_accountID;
-    <CoreDAVAccountInfoProvider> *_backingAccountInfoProvider;
-    NSError *_error;
-    NSString *_host;
-    NSData *_identityPersist;
-    NSString *_password;
-    int _port;
-    NSURL *_principalURL;
-    NSString *_scheme;
-    NSSet *_serverComplianceClasses;
-    NSDictionary *_serverHeaders;
-    NSString *_serverRoot;
-    BOOL _shouldFailAllTasks;
-    BOOL _started;
-    BOOL _success;
-    NSString *_user;
-    NSString *_userAgentHeader;
+    NSString * _accountID;
+    <CoreDAVAccountInfoProvider> * _backingAccountInfoProvider;
+    NSError * _error;
+    NSString * _host;
+    NSData * _identityPersist;
+    NSString * _password;
+    int  _port;
+    NSURL * _principalURL;
+    NSString * _scheme;
+    NSSet * _serverComplianceClasses;
+    NSDictionary * _serverHeaders;
+    NSString * _serverRoot;
+    BOOL  _shouldFailAllTasks;
+    BOOL  _started;
+    BOOL  _success;
+    NSString * _user;
+    NSString * _userAgentHeader;
 }
 
 @property (nonatomic, retain) NSString *accountID;

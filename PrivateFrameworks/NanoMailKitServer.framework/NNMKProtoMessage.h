@@ -3,21 +3,23 @@
  */
 
 @interface NNMKProtoMessage : PBCodable <NSCopying> {
-    NSString *_accountId;
-    NSMutableArray *_bccs;
-    NSMutableArray *_ccs;
-    NSString *_conversationId;
-    NSData *_dateReceived;
-    NSData *_dateSent;
-    NSString *_from;
+    NSString * _accountId;
+    NSMutableArray * _bccs;
+    NSMutableArray * _ccs;
+    NSString * _conversationId;
+    NSData * _dateReceived;
+    NSData * _dateSent;
+    NSString * _from;
     struct { 
         unsigned int status : 1; 
-    } _has;
-    NSString *_messageId;
-    NSString *_messageIdHeader;
-    unsigned int _status;
-    NSString *_subject;
-    NSMutableArray *_tos;
+    }  _has;
+    NSString * _messageId;
+    NSString * _messageIdHeader;
+    NSString * _notificationMessageId;
+    NSString * _remoteId;
+    unsigned int  _status;
+    NSString * _subject;
+    NSMutableArray * _tos;
 }
 
 @property (nonatomic, retain) NSString *accountId;
@@ -34,10 +36,14 @@
 @property (nonatomic, readonly) BOOL hasFrom;
 @property (nonatomic, readonly) BOOL hasMessageId;
 @property (nonatomic, readonly) BOOL hasMessageIdHeader;
+@property (nonatomic, readonly) BOOL hasNotificationMessageId;
+@property (nonatomic, readonly) BOOL hasRemoteId;
 @property (nonatomic) BOOL hasStatus;
 @property (nonatomic, readonly) BOOL hasSubject;
 @property (nonatomic, retain) NSString *messageId;
 @property (nonatomic, retain) NSString *messageIdHeader;
+@property (nonatomic, retain) NSString *notificationMessageId;
+@property (nonatomic, retain) NSString *remoteId;
 @property (nonatomic) unsigned int status;
 @property (nonatomic, retain) NSString *subject;
 @property (nonatomic, retain) NSMutableArray *tos;
@@ -71,6 +77,8 @@
 - (BOOL)hasFrom;
 - (BOOL)hasMessageId;
 - (BOOL)hasMessageIdHeader;
+- (BOOL)hasNotificationMessageId;
+- (BOOL)hasRemoteId;
 - (BOOL)hasStatus;
 - (BOOL)hasSubject;
 - (unsigned int)hash;
@@ -78,7 +86,9 @@
 - (void)mergeFrom:(id)arg1;
 - (id)messageId;
 - (id)messageIdHeader;
+- (id)notificationMessageId;
 - (BOOL)readFrom:(id)arg1;
+- (id)remoteId;
 - (void)setAccountId:(id)arg1;
 - (void)setBccs:(id)arg1;
 - (void)setCcs:(id)arg1;
@@ -89,6 +99,8 @@
 - (void)setHasStatus:(BOOL)arg1;
 - (void)setMessageId:(id)arg1;
 - (void)setMessageIdHeader:(id)arg1;
+- (void)setNotificationMessageId:(id)arg1;
+- (void)setRemoteId:(id)arg1;
 - (void)setStatus:(unsigned int)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setTos:(id)arg1;

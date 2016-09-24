@@ -3,12 +3,12 @@
  */
 
 @interface LocationIndicatorExplanationView : UIView <PSHeaderFooterView> {
-    UIImageView *_activeIcon;
-    UILabel *_activeLabel;
-    UIImageView *_geofenceIcon;
-    UILabel *_geofenceLabel;
-    UIImageView *_recentIcon;
-    UILabel *_recentLabel;
+    UIImageView * _activeIcon;
+    UILabel * _activeLabel;
+    UIImageView * _geofenceIcon;
+    UILabel * _geofenceLabel;
+    UIImageView * _recentIcon;
+    UILabel * _recentLabel;
 }
 
 - (void).cxx_destruct;

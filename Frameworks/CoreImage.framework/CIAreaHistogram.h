@@ -3,11 +3,11 @@
  */
 
 @interface CIAreaHistogram : CIFilter {
-    CIContext *_context;
-    NSNumber *inputCount;
-    CIVector *inputExtent;
-    CIImage *inputImage;
-    NSNumber *inputScale;
+    CIContext * _context;
+    NSNumber * inputCount;
+    CIVector * inputExtent;
+    CIImage * inputImage;
+    NSNumber * inputScale;
 }
 
 @property (nonatomic, retain) NSNumber *inputCount;
@@ -18,7 +18,7 @@
 + (id)customAttributes;
 
 - (bool)_inputsAreOK;
-- (struct IRect { struct IPoint { long long x_1_1_1; long long x_1_1_2; } x1; struct ISize { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })_netExtent;
+- (struct IRect { struct IPoint { int x_1_1_1; int x_1_1_2; } x1; struct ISize { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })_netExtent;
 - (id)_outputData:(BOOL)arg1;
 - (void)dealloc;
 - (id)inputCount;

@@ -3,7 +3,7 @@
  */
 
 @interface SKUIBrowseItemViewElement : SKUIItemViewElement {
-    BOOL _expands;
+    BOOL  _expands;
 }
 
 @property (nonatomic, readonly) SKUIImageViewElement *decorationImage;

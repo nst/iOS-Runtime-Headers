@@ -3,10 +3,10 @@
  */
 
 @interface _DECFeedback : NSObject <NSSecureCoding> {
-    _DECItem *_itemSelected;
-    NSArray *_itemsShown;
-    _DECLaunchInfo *_launchInfo;
-    _DECPrediction *_prediction;
+    _DECItem * _itemSelected;
+    NSArray * _itemsShown;
+    _DECLaunchInfo * _launchInfo;
+    _DECPrediction * _prediction;
 }
 
 @property (nonatomic, retain) _DECItem *itemSelected;

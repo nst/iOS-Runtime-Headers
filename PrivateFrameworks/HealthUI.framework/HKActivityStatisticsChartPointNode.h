@@ -3,9 +3,9 @@
  */
 
 @interface HKActivityStatisticsChartPointNode : NSObject {
-    HKValueRange *_dateRange;
-    int _type;
-    NSNumber *_value;
+    HKValueRange * _dateRange;
+    int  _type;
+    NSNumber * _value;
 }
 
 @property (nonatomic, readonly) HKValueRange *dateRange;

@@ -3,7 +3,7 @@
  */
 
 @interface ATServiceProxy : ATService <ATServiceObserver> {
-    NSXPCConnection *_connection;
+    NSXPCConnection * _connection;
 }
 
 @property (nonatomic, retain) NSXPCConnection *connection;

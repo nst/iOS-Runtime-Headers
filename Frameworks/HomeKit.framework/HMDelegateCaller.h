@@ -3,7 +3,7 @@
  */
 
 @interface HMDelegateCaller : NSObject {
-    NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
@@ -11,8 +11,10 @@
 - (void).cxx_destruct;
 - (id)_localizedError:(id)arg1;
 - (void)callCompletion:(id /* block */)arg1 actionSet:(id)arg2 error:(id)arg3;
+- (void)callCompletion:(id /* block */)arg1 array:(id)arg2;
 - (void)callCompletion:(id /* block */)arg1 error:(id)arg2;
 - (void)callCompletion:(id /* block */)arg1 error:(id)arg2 array:(id)arg3;
+- (void)callCompletion:(id /* block */)arg1 error:(id)arg2 boolValue:(BOOL)arg3 array:(id)arg4;
 - (void)callCompletion:(id /* block */)arg1 error:(id)arg2 dictionary:(id)arg3;
 - (void)callCompletion:(id /* block */)arg1 error:(id)arg2 obj:(id)arg3;
 - (void)callCompletion:(id /* block */)arg1 errorString:(id)arg2;

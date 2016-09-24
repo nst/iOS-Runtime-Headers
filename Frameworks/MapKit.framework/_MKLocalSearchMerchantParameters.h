@@ -3,11 +3,11 @@
  */
 
 @interface _MKLocalSearchMerchantParameters : NSObject <NSCopying> {
-    NSString *_merchantCode;
-    NSString *_paymentNetwork;
-    NSString *_rawMerchantCode;
-    NSDate *_transactionDate;
-    CLLocation *_transactionLocation;
+    NSString * _merchantCode;
+    NSString * _paymentNetwork;
+    NSString * _rawMerchantCode;
+    NSDate * _transactionDate;
+    CLLocation * _transactionLocation;
 }
 
 @property (nonatomic, copy) NSString *merchantCode;

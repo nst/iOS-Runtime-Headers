@@ -3,7 +3,7 @@
  */
 
 @interface NSDataAsset : NSObject <NSCopying> {
-    CUINamedData *_namedData;
+    CUINamedData * _namedData;
 }
 
 @property (nonatomic, readonly, copy) NSData *data;

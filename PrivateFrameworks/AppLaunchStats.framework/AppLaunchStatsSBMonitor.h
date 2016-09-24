@@ -3,17 +3,17 @@
  */
 
 @interface AppLaunchStatsSBMonitor : NSObject <DuetLoggerProtocol, DuetSaveAndRestore> {
-    BOOL _enableAppSwitcherCheck;
-    BOOL _enableWasRecentlyLaunched;
-    AppLaunchStatsState *aplsState;
-    BKSApplicationStateMonitor *appStateMonitor;
-    NSMutableDictionary *blackListed;
-    id /* block */ callback;
-    NSMutableSet *foreGroundApps;
-    NSMutableDictionary *recentList;
-    AppLaunchStatsSaveAndRestore *saveAndRestoreContext;
-    NSObject<OS_dispatch_queue> *sbMonitorQueue;
-    NSMutableDictionary *trendList;
+    BOOL  _enableAppSwitcherCheck;
+    BOOL  _enableWasRecentlyLaunched;
+    AppLaunchStatsState * aplsState;
+    BKSApplicationStateMonitor * appStateMonitor;
+    NSMutableDictionary * blackListed;
+    id /* block */  callback;
+    NSMutableSet * foreGroundApps;
+    NSMutableDictionary * recentList;
+    AppLaunchStatsSaveAndRestore * saveAndRestoreContext;
+    NSObject<OS_dispatch_queue> * sbMonitorQueue;
+    NSMutableDictionary * trendList;
 }
 
 @property (nonatomic, readonly) BOOL enableAppSwitcherCheck;
@@ -22,6 +22,7 @@
 
 - (void).cxx_destruct;
 - (void)addToBlackList:(id)arg1;
+- (id)allAppsLaunchedAfterDate:(id)arg1;
 - (void)appSuspendedTriggerExternalEvent:(id)arg1;
 - (void)appSwitchedObserver:(id)arg1;
 - (void)clearTrendingCache;

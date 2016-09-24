@@ -3,11 +3,11 @@
  */
 
 @interface TSUDatabase : NSObject {
-    struct sqlite3_stmt { } *_beginTransactionStatement;
-    struct sqlite3_stmt { } *_commitTransactionStatement;
-    struct sqlite3 { } *_db;
-    BOOL _readonly;
-    struct sqlite3_stmt { } *_rollbackTransactionStatement;
+    struct sqlite3_stmt { } * _beginTransactionStatement;
+    struct sqlite3_stmt { } * _commitTransactionStatement;
+    struct sqlite3 { } * _db;
+    BOOL  _readonly;
+    struct sqlite3_stmt { } * _rollbackTransactionStatement;
 }
 
 @property (nonatomic, readonly) struct sqlite3 { }*_sqliteDatabase;

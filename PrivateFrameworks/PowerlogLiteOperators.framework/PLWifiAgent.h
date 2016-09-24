@@ -3,30 +3,30 @@
  */
 
 @interface PLWifiAgent : PLAgent {
-    unsigned int _autoJoinScanDuration;
-    PLEntryNotificationOperatorComposition *_batteryLevelChanged;
-    PLEntryNotificationOperatorComposition *_deviceWake;
-    unsigned int _lastLoggedTimestamp;
-    unsigned int _locationScanDuration;
-    PLCFNotificationOperatorComposition *_notificationWiFiChanged;
-    unsigned int _pipelineScanDuration;
-    unsigned int _remainingAllowedRSSIEntryCount;
-    PLEntryNotificationOperatorComposition *_sbcLevelChanged;
-    unsigned int _setupScanDuration;
-    unsigned int _unknownScanDuration;
-    struct __WiFiDeviceClient { } *_wifiAwdlDevice;
-    NSString *_wifiChipset;
-    struct __WiFiDeviceClient { } *_wifiDevice;
-    struct __WiFiManagerClient { } *_wifiManager;
-    NSString *_wifiManufacturer;
-    NSDate *_wifi_segment_date;
-    NSDate *_wifi_segment_lastWrittenDate;
-    double _wifi_segment_lastWrittenTimestamp;
-    double _wifi_segment_power_data;
-    double _wifi_segment_power_idle;
-    double _wifi_segment_power_location;
-    double _wifi_segment_power_pipeline;
-    double _wifi_segment_timestamp;
+    unsigned int  _autoJoinScanDuration;
+    PLEntryNotificationOperatorComposition * _batteryLevelChanged;
+    PLEntryNotificationOperatorComposition * _deviceWake;
+    unsigned int  _lastLoggedTimestamp;
+    unsigned int  _locationScanDuration;
+    PLCFNotificationOperatorComposition * _notificationWiFiChanged;
+    unsigned int  _pipelineScanDuration;
+    unsigned int  _remainingAllowedRSSIEntryCount;
+    PLEntryNotificationOperatorComposition * _sbcLevelChanged;
+    unsigned int  _setupScanDuration;
+    unsigned int  _unknownScanDuration;
+    struct __WiFiDeviceClient { } * _wifiAwdlDevice;
+    NSString * _wifiChipset;
+    struct __WiFiDeviceClient { } * _wifiDevice;
+    struct __WiFiManagerClient { } * _wifiManager;
+    NSString * _wifiManufacturer;
+    NSDate * _wifi_segment_date;
+    NSDate * _wifi_segment_lastWrittenDate;
+    double  _wifi_segment_lastWrittenTimestamp;
+    double  _wifi_segment_power_data;
+    double  _wifi_segment_power_idle;
+    double  _wifi_segment_power_location;
+    double  _wifi_segment_power_pipeline;
+    double  _wifi_segment_timestamp;
 }
 
 @property unsigned int autoJoinScanDuration;
@@ -59,7 +59,6 @@
 + (id)entryEventBackwardDefinitionUserScan;
 + (id)entryEventBackwardDefinitions;
 + (id)entryEventForwardDefinitionAWDLState;
-+ (id)entryEventForwardDefinitionAvailability;
 + (id)entryEventForwardDefinitionModuleInfo;
 + (id)entryEventForwardDefinitionRSSI;
 + (id)entryEventForwardDefinitions;
@@ -90,15 +89,14 @@
 - (void)logEventBackwardWifiProperties:(BOOL)arg1;
 - (void)logEventBackwardWifiProperties:(id)arg1 withNetworkProperties:(id)arg2 shallModelPower:(BOOL)arg3;
 - (void)logEventForwardAWDLState:(id)arg1;
-- (void)logEventForwardAvailability:(id)arg1;
 - (void)logEventForwardModuleInfo;
 - (void)logEventForwardRSSI:(id)arg1;
 - (void)logEventPointWake;
 - (void)logEventPointWakeDataFrame:(id)arg1 withParams:(id)arg2 toEntry:(id)arg3;
 - (void)logEventPointWakeLink:(id)arg1 withParams:(id)arg2 toEntry:(id)arg3;
 - (void)logEventPointWakePNO:(id)arg1 withParams:(id)arg2 toEntry:(id)arg3;
+- (void)logFromLinkChangeCallback:(id)arg1 withStats:(id)arg2;
 - (void)logFromWiFiNoAvailableCallback:(id)arg1 withAvailability:(BOOL)arg2;
-- (void)logonAPSleep;
 - (void)modelWiFiPower:(id)arg1;
 - (void)modelWiFiSegmentPower:(id)arg1 withDataPower:(double)arg2 withIdlePower:(double)arg3 withLocationPower:(double)arg4 withPipelinePower:(double)arg5 withTotalDuration:(double)arg6;
 - (id)notificationWiFiChanged;

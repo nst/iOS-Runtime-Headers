@@ -3,16 +3,16 @@
  */
 
 @interface GEOSignificantLocation : PBCodable <NSCopying> {
-    double _confidence;
+    double  _confidence;
     struct { 
         unsigned int confidence : 1; 
         unsigned int locationIndex : 1; 
         unsigned int numberOfVisitsBucket : 1; 
-    } _has;
-    NSString *_identifier;
-    GEOLocation *_location;
-    unsigned int _locationIndex;
-    unsigned int _numberOfVisitsBucket;
+    }  _has;
+    NSString * _identifier;
+    GEOLocation * _location;
+    unsigned int  _locationIndex;
+    unsigned int  _numberOfVisitsBucket;
 }
 
 @property (nonatomic) double confidence;

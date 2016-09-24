@@ -3,18 +3,18 @@
  */
 
 @interface FBRemoteSceneClientWorkspace : NSObject <FBApplicationProcessLaunchTransactionObserver, FBSceneClientProvider, FBUISceneClientDelegate, FBUISceneClientWorkspace> {
-    FBUISceneClientIdentity *_clientIdentity;
-    NSMutableDictionary *_clientsByIdentity;
-    NSMutableDictionary *_handlerByIdentity;
-    NSMutableDictionary *_hostsByIdentifer;
-    BOOL _invalidated;
-    FBSceneClientProviderInvalidationAction *_invalidationAction;
-    FBApplicationProcessLaunchTransaction *_launchTransaction;
-    FBWorkspace *_processWorkspace;
+    FBUISceneClientIdentity * _clientIdentity;
+    NSMutableDictionary * _clientsByIdentity;
+    NSMutableDictionary * _handlerByIdentity;
+    NSMutableDictionary * _hostsByIdentifer;
+    BOOL  _invalidated;
+    FBSceneClientProviderInvalidationAction * _invalidationAction;
+    FBApplicationProcessLaunchTransaction * _launchTransaction;
+    FBWorkspace * _processWorkspace;
 }
 
 @property (nonatomic, readonly, copy) FBUISceneClientIdentity *clientIdentity;
-@property (nonatomic, readonly, retain) <FBUIProcess> *clientProcess;
+@property (nonatomic, readonly, retain) FBProcess<FBUIProcess> *clientProcess;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;

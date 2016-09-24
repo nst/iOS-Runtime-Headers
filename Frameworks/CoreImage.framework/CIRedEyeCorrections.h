@@ -3,9 +3,9 @@
  */
 
 @interface CIRedEyeCorrections : CIFilter <_CIFilterProperties> {
-    NSString *inputCameraModel;
-    NSArray *inputCorrectionInfo;
-    CIImage *inputImage;
+    NSString * inputCameraModel;
+    NSArray * inputCorrectionInfo;
+    CIImage * inputImage;
 }
 
 @property (nonatomic, copy) NSString *inputCameraModel;

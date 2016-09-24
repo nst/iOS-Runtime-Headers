@@ -3,9 +3,9 @@
  */
 
 @interface CTMessageStatus : NSObject {
-    unsigned int _messageId;
-    int _messageType;
-    int _result;
+    unsigned int  _messageId;
+    int  _messageType;
+    int  _result;
 }
 
 @property (readonly) unsigned int messageId;

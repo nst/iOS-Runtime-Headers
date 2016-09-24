@@ -3,23 +3,23 @@
  */
 
 @interface PUCropOverlayView : UIView {
-    UIView *__cropWindowView;
-    NSArray *__maskViews;
-    NSArray *__oneNinthCropLines;
-    NSArray *__oneThirdCropLines;
-    BOOL _cropGridVisible;
+    UIView * __cropWindowView;
+    NSArray * __maskViews;
+    NSArray * __oneNinthCropLines;
+    NSArray * __oneThirdCropLines;
+    BOOL  _cropGridVisible;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _cropRect;
-    BOOL _maskedContentVisible;
-    BOOL _straightenGridVisible;
+    }  _cropRect;
+    BOOL  _maskedContentVisible;
+    BOOL  _straightenGridVisible;
 }
 
 @property (setter=_setCropWindowView:, nonatomic, retain) UIView *_cropWindowView;
@@ -27,7 +27,7 @@
 @property (setter=_setOneNinethLines:, nonatomic, retain) NSArray *_oneNinthCropLines;
 @property (setter=_setOneThirdLines:, nonatomic, retain) NSArray *_oneThirdCropLines;
 @property (getter=isCropGridVisible, nonatomic) BOOL cropGridVisible;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cropRect;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } cropRect;
 @property (nonatomic, readonly) id layoutReferenceItem;
 @property (getter=isMaskedContentVisible, nonatomic) BOOL maskedContentVisible;
 @property (getter=isStraightenGridVisible, nonatomic) BOOL straightenGridVisible;
@@ -47,15 +47,15 @@
 - (void)_setOneNinethLines:(id)arg1;
 - (void)_setOneThirdLines:(id)arg1;
 - (unsigned int)_subviewIndexForLineForCount:(unsigned int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cropRect;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRect;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isCropGridVisible;
 - (BOOL)isMaskedContentVisible;
 - (BOOL)isStraightenGridVisible;
 - (id)layoutReferenceItem;
 - (void)setCropGridVisible:(BOOL)arg1;
 - (void)setCropGridVisible:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setMaskedContentVisible:(BOOL)arg1;
 - (void)setMaskedContentVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setStraightenGridVisible:(BOOL)arg1;

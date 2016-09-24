@@ -5,28 +5,17 @@
 @interface SCNOffscreenRenderer : SCNRenderer
 
 @property (nonatomic) unsigned int antialiasingMode;
-@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic) struct CGSize { double x1; double x2; } size;
 @property (nonatomic, readonly) unsigned int textureID;
 
-+ (id)offscreenRendererWithContext:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
-+ (id)offscreenRendererWithDevice:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
++ (id)offscreenRendererWithContext:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
++ (id)offscreenRendererWithDevice:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 
-- (id)MTLTexture;
-- (void)_bindFramebuffer:(BOOL)arg1;
-- (void)_createFramebufferIfNeeded;
-- (void)_deleteFramebuffer;
-- (id)_initOffscreenRendererWithOptions:(id)arg1 isPrivateRenderer:(BOOL)arg2 privateRendererOwner:(id)arg3 clearsOnDraw:(BOOL)arg4 size:(struct CGSize { float x1; float x2; })arg5 context:(void*)arg6 renderingAPI:(unsigned int)arg7;
-- (void)_render;
-- (void)_resolveAndDiscard;
-- (void)_unbindFramebuffer;
 - (unsigned int)antialiasingMode;
-- (struct CGImage { }*)copySnapshotWithSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGImage { }*)createCGImageSnapshot:(double)arg1;
 - (void)setAntialiasingMode:(unsigned int)arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })size;
 - (id)snapshot;
-- (id)snapshotAtTime:(double)arg1;
 - (unsigned int)textureID;
 
 @end

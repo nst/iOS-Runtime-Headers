@@ -3,21 +3,16 @@
  */
 
 @interface TSTCellStateForLayout : NSObject {
-    TSTCell *mCell;
-    id mCellContents;
-    BOOL mCellPropsRowHeight;
-    BOOL mCellWraps;
-    BOOL mForDrawing;
-    BOOL mInDynamicLayout;
-    TSTLayoutContentCachedKey *mKeyVal;
-    int mLayoutCacheFlags;
-    struct CGSize { 
-        float width; 
-        float height; 
-    } mMaxSize;
-    float mMaxWidthForChildren;
-    struct TSUColumnRowRect { 
-        struct { 
+    TSTCell * mCell;
+    id  mCellContents;
+    BOOL  mCellPropsRowHeight;
+    BOOL  mCellWraps;
+    BOOL  mForDrawing;
+    BOOL  mInDynamicLayout;
+    TSTLayoutContentCachedKey * mKeyVal;
+    int  mLayoutCacheFlags;
+    struct TSUCellRect { 
+        struct TSUCellCoord { 
             unsigned short row; 
             unsigned char column; 
             unsigned char reserved; 
@@ -26,26 +21,31 @@
             unsigned short numberOfColumns; 
             unsigned short numberOfRows; 
         } size; 
-    } mMergedRange;
+    }  mLayoutMergeRange;
     struct CGSize { 
-        float width; 
-        float height; 
-    } mMinSize;
-    struct { 
+        double width; 
+        double height; 
+    }  mMaxSize;
+    double  mMaxWidthForChildren;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  mMinSize;
+    struct TSUCellCoord { 
         unsigned short row; 
         unsigned char column; 
         unsigned char reserved; 
-    } mModelCellID;
+    }  mModelCellID;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } mPaddingInsets;
-    unsigned int mPageCount;
-    unsigned int mPageNumber;
-    int mVerticalAlignment;
-    TSWPColumn *mWPColumn;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  mPaddingInsets;
+    unsigned int  mPageCount;
+    unsigned int  mPageNumber;
+    int  mVerticalAlignment;
+    TSWPColumn * mWPColumn;
 }
 
 @property (nonatomic, copy) TSTCell *cell;
@@ -57,12 +57,12 @@
 @property (nonatomic) BOOL inDynamicLayout;
 @property (nonatomic, retain) TSTLayoutContentCachedKey *keyVal;
 @property (nonatomic) int layoutCacheFlags;
-@property (nonatomic) struct CGSize { float x1; float x2; } maxSize;
-@property (nonatomic) float maxWidthForChildren;
-@property (nonatomic) struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } mergedRange;
-@property (nonatomic) struct CGSize { float x1; float x2; } minSize;
-@property (nonatomic) struct { unsigned short x1; unsigned char x2; unsigned char x3; } modelCellID;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } paddingInsets;
+@property (nonatomic) struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } layoutMergeRange;
+@property (nonatomic) struct CGSize { double x1; double x2; } maxSize;
+@property (nonatomic) double maxWidthForChildren;
+@property (nonatomic) struct CGSize { double x1; double x2; } minSize;
+@property (nonatomic) struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; } modelCellID;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } paddingInsets;
 @property (nonatomic) unsigned int pageCount;
 @property (nonatomic) unsigned int pageNumber;
 @property (nonatomic) int verticalAlignment;
@@ -79,12 +79,12 @@
 - (id)init;
 - (id)keyVal;
 - (int)layoutCacheFlags;
-- (struct CGSize { float x1; float x2; })maxSize;
+- (struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })layoutMergeRange;
+- (struct CGSize { double x1; double x2; })maxSize;
 - (float)maxWidthForChildren;
-- (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })mergedRange;
-- (struct CGSize { float x1; float x2; })minSize;
-- (struct { unsigned short x1; unsigned char x2; unsigned char x3; })modelCellID;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })paddingInsets;
+- (struct CGSize { double x1; double x2; })minSize;
+- (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })modelCellID;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })paddingInsets;
 - (unsigned int)pageCount;
 - (unsigned int)pageNumber;
 - (void)setCell:(id)arg1;
@@ -95,12 +95,12 @@
 - (void)setInDynamicLayout:(BOOL)arg1;
 - (void)setKeyVal:(id)arg1;
 - (void)setLayoutCacheFlags:(int)arg1;
-- (void)setMaxSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setLayoutMergeRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (void)setMaxSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setMaxWidthForChildren:(float)arg1;
-- (void)setMergedRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
-- (void)setMinSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setModelCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
-- (void)setPaddingInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setMinSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setModelCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (void)setPaddingInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setPageCount:(unsigned int)arg1;
 - (void)setPageNumber:(unsigned int)arg1;
 - (void)setVerticalAlignment:(int)arg1;

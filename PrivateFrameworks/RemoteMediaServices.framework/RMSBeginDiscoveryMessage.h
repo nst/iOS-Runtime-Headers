@@ -3,13 +3,13 @@
  */
 
 @interface RMSBeginDiscoveryMessage : PBCodable <NSCopying> {
-    int _discoveryTypes;
+    int  _discoveryTypes;
     struct { 
         unsigned int discoveryTypes : 1; 
         unsigned int hasPairedNetworkNames : 1; 
-    } _has;
-    BOOL _hasPairedNetworkNames;
-    NSMutableArray *_pairedNetworkNames;
+    }  _has;
+    BOOL  _hasPairedNetworkNames;
+    NSMutableArray * _pairedNetworkNames;
 }
 
 @property (nonatomic) int discoveryTypes;

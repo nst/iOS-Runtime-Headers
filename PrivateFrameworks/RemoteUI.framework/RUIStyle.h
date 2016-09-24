@@ -3,28 +3,77 @@
  */
 
 @interface RUIStyle : NSObject {
-    UIColor *_backgroundColor;
-    UIColor *_buttonRowTextColor;
-    UIColor *_radioGroupSelectedColor;
-    UIColor *_selectPageDetailTextColor;
+    UIColor * _backgroundColor;
+    UIColor * _buttonRowTextColor;
+    UIColor * _detailHeaderLabelTextColor;
+    int  _footerLabelAlignment;
+    UIColor * _footerLabelTextColor;
+    int  _footerLinkAlignment;
+    int  _headerLabelAlignment;
+    UIColor * _headerLabelTextColor;
+    int  _labelRowTextAlignment;
+    UIColor * _labelRowTextColor;
+    UIColor * _radioGroupSelectedColor;
+    UIColor * _selectPageDetailTextColor;
+    int  _subHeaderLabelAlignment;
+    UIColor * _subHeaderLabelTextColor;
 }
 
-@property (nonatomic, readonly) UIColor *backgroundColor;
-@property (nonatomic, readonly) UIColor *buttonRowTextColor;
-@property (nonatomic, readonly) UIColor *radioGroupSelectedColor;
-@property (nonatomic, readonly) UIColor *selectPageDetailTextColor;
+@property (nonatomic, retain) UIColor *backgroundColor;
+@property (nonatomic, retain) UIColor *buttonRowTextColor;
+@property (nonatomic, retain) UIColor *detailHeaderLabelTextColor;
+@property (nonatomic) int footerLabelAlignment;
+@property (nonatomic, retain) UIColor *footerLabelTextColor;
+@property (nonatomic) int footerLinkAlignment;
+@property (nonatomic) int headerLabelAlignment;
+@property (nonatomic, retain) UIColor *headerLabelTextColor;
+@property (nonatomic) int labelRowTextAlignment;
+@property (nonatomic, retain) UIColor *labelRowTextColor;
+@property (nonatomic, readonly) int navBarActivityIndicatorStyle;
+@property (nonatomic, retain) UIColor *radioGroupSelectedColor;
+@property (nonatomic, retain) UIColor *selectPageDetailTextColor;
+@property (nonatomic) int subHeaderLabelAlignment;
+@property (nonatomic, retain) UIColor *subHeaderLabelTextColor;
 
 + (id)defaultStyle;
 + (id)frontRowStyle;
 + (id)setupAssistantModalStyle;
 + (id)setupAssistantStyle;
++ (id)sharedInstance;
 
 - (void).cxx_destruct;
+- (void)applyToLabel:(id)arg1;
+- (void)applyToNavigationController:(id)arg1;
 - (void)applyToObjectModel:(id)arg1;
 - (id)backgroundColor;
 - (id)buttonRowTextColor;
+- (id)detailHeaderLabelTextColor;
+- (int)footerLabelAlignment;
+- (id)footerLabelTextColor;
+- (int)footerLinkAlignment;
+- (int)headerLabelAlignment;
+- (id)headerLabelTextColor;
 - (id)init;
+- (int)labelRowTextAlignment;
+- (id)labelRowTextColor;
+- (int)navBarActivityIndicatorStyle;
 - (id)radioGroupSelectedColor;
 - (id)selectPageDetailTextColor;
+- (void)setBackgroundColor:(id)arg1;
+- (void)setButtonRowTextColor:(id)arg1;
+- (void)setDetailHeaderLabelTextColor:(id)arg1;
+- (void)setFooterLabelAlignment:(int)arg1;
+- (void)setFooterLabelTextColor:(id)arg1;
+- (void)setFooterLinkAlignment:(int)arg1;
+- (void)setHeaderLabelAlignment:(int)arg1;
+- (void)setHeaderLabelTextColor:(id)arg1;
+- (void)setLabelRowTextAlignment:(int)arg1;
+- (void)setLabelRowTextColor:(id)arg1;
+- (void)setRadioGroupSelectedColor:(id)arg1;
+- (void)setSelectPageDetailTextColor:(id)arg1;
+- (void)setSubHeaderLabelAlignment:(int)arg1;
+- (void)setSubHeaderLabelTextColor:(id)arg1;
+- (int)subHeaderLabelAlignment;
+- (id)subHeaderLabelTextColor;
 
 @end

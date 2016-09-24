@@ -3,14 +3,14 @@
  */
 
 @interface _GEOPlaceSearchCompletionItem : NSObject <GEOCompletionItemPrivate> {
-    GEOSearchCategory *_category;
-    NSArray *_displayLines;
-    GEOPDAutocompleteEntry *_entry;
-    int _entryIndex;
-    int _entryListIndex;
-    NSArray *_lineHighlights;
-    <GEOMapItem> *_mapItem;
-    GEOMapServiceTraits *_traits;
+    GEOSearchCategory * _category;
+    NSArray * _displayLines;
+    GEOPDAutocompleteEntry * _entry;
+    int  _entryIndex;
+    int  _entryListIndex;
+    NSArray * _lineHighlights;
+    <GEOMapItem> * _mapItem;
+    GEOMapServiceTraits * _traits;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -24,6 +24,7 @@
 @property (getter=_placeDataAutocompleteEntry, nonatomic, readonly) GEOPDAutocompleteEntry *placeDataAutocompleteEntry;
 @property (nonatomic, readonly) GEOSearchCategory *searchCategory;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) int type;
 
 - (id)_placeDataAutocompleteEntry;
 - (id)calloutTitle;
@@ -41,5 +42,6 @@
 - (id)queryLine;
 - (id)searchCategory;
 - (void)sendFeedback;
+- (int)type;
 
 @end

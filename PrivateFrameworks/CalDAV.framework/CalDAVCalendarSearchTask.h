@@ -3,10 +3,10 @@
  */
 
 @interface CalDAVCalendarSearchTask : CoreDAVTask {
-    NSString *_calendarType;
-    NSArray *_languages;
-    NSString *_location;
-    NSDictionary *_urlsToResults;
+    NSString * _calendarType;
+    NSArray * _languages;
+    NSString * _location;
+    NSDictionary * _urlsToResults;
 }
 
 @property (nonatomic, readonly, retain) NSDictionary *urlsToResults;

@@ -3,7 +3,7 @@
  */
 
 @interface MPNowPlayingInfoLanguageOption : NSObject {
-    void *_mrLanguageOption;
+    void * _mrLanguageOption;
 }
 
 @property (nonatomic, readonly) NSString *displayName;

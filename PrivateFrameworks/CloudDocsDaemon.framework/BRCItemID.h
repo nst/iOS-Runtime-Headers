@@ -3,48 +3,67 @@
  */
 
 @interface BRCItemID : NSObject <NSCopying, NSSecureCoding, PQLValuable> {
-    unsigned char _kind;
-    unsigned char _uuid;
+    BRCALRowID * _appLibraryRowID;
+    unsigned char  _kind;
+    unsigned char  _uuid;
 }
 
 @property (nonatomic, readonly) const char *UTF8String;
+@property (nonatomic, readonly) BRCALRowID *appLibraryRowID;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) NSString *debugItemIDString;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isDocuments;
-@property (nonatomic, readonly) BOOL isRoot;
+@property (nonatomic, readonly) BOOL isNonDesktopAppLibraryRoot;
 @property (nonatomic, readonly) NSString *itemIDString;
-@property (nonatomic, readonly) NSString *shortItemIDString;
 @property (readonly) Class superclass;
 
-+ (id)documentsItemID;
-+ (void)initialize;
++ (id)documentsItemIDWithAppLibraryRowID:(id)arg1;
++ (BOOL)isDocumentsItemIDWithSQLiteValue:(struct Mem { }*)arg1;
++ (BOOL)isRootItemIDWithSQLiteValue:(struct Mem { }*)arg1;
++ (BOOL)migrateItemIDsToVersion5WithDB:(id)arg1 serverTruth:(BOOL)arg2;
 + (id)newFromSqliteValue:(struct Mem { }*)arg1;
-+ (id)newItemIDFromEnclosureUUID:(id)arg1;
-+ (id)parseMangledItemID:(id)arg1 mangledContainerID:(id*)arg2 etag:(id*)arg3;
-+ (id)rootItemID;
++ (id)newItemIDFromEnclosureUUID:(id)arg1 libraryRowID:(id)arg2;
++ (id)parseMangledItemID:(id)arg1 mangledContainerID:(id*)arg2 etag:(id*)arg3 session:(id)arg4;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (const char *)UTF8String;
+- (id)_directoryRecordName;
+- (id)_initAsLibraryRootWithAppLibraryRowID:(id)arg1 enclosureUUID:(id)arg2;
+- (id)appLibraryRowID;
 - (id)contentsRecordIDInZoneID:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)derivedAliasItemIDWithOwnerName:(id)arg1;
+- (id)debugItemIDString;
+- (id)derivedAliasItemIDWithOwnerName:(id)arg1 libraryRowID:(id)arg2;
 - (id)description;
+- (id)directoryReferenceInZoneID:(id)arg1 action:(unsigned int)arg2;
+- (id)directoryStructureRecordIDInZoneID:(id)arg1;
+- (id)documentStructureRecordIDInZoneID:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)init;
+- (id)initAsDocumentsWithAppLibraryRowID:(id)arg1;
+- (id)initWithAliasUUID:(id)arg1 aliasLibraryRowID:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithItemID:(id)arg1;
-- (id)initWithKind:(unsigned char)arg1 bytes:(const void*)arg2 length:(unsigned int)arg3;
-- (id)initWithString:(id)arg1;
+- (id)initWithRootObject:(struct RootItemObject { unsigned char x1; unsigned int x2; }*)arg1;
+- (id)initWithSharedUUIDString:(id)arg1 libraryRowID:(id)arg2;
+- (id)initWithString:(id)arg1 libraryRowID:(id)arg2;
+- (id)initWithUUID:(const char *)arg1;
+- (id)initWithUUIDObject:(struct UUIDItemObject { unsigned char x1; unsigned int x2; unsigned char x3[16]; }*)arg1;
+- (id)initWithUUIDString:(id)arg1;
 - (BOOL)isDocuments;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToItemID:(id)arg1;
-- (BOOL)isRoot;
+- (BOOL)isNonDesktopAppLibraryRoot;
 - (id)itemIDString;
 - (id)itemUUIDString;
-- (id)shortItemIDString;
+- (id)pcsChainDocumentStructureReferenceInZoneID:(id)arg1;
+- (id)pcsChainParentReferenceInZoneID:(id)arg1;
 - (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
+- (id)structureRecordIDForItemType:(BOOL)arg1 appLibrary:(id)arg2 aliasTargetZone:(id)arg3;
 - (id)validatingDirectoryReferenceInZoneID:(id)arg1;
 
 @end

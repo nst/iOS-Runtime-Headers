@@ -3,28 +3,28 @@
  */
 
 @interface ABMembersController : ABContentController <ABMembersDataSourceDelegate, ABSearchOperationDelegate, UISearchBarDelegate, UISearchControllerDelegate, UISearchDisplayDelegate, UISearchResultsUpdating, UITextFieldDelegate> {
-    unsigned int _cellsCreated;
-    _UIContentUnavailableView *_contentUnavailableView;
-    int _initiallyVisibleRow;
-    unsigned int _memberCount;
-    <ABMembersControllerDelegate> *_membersControllerDelegate;
-    ABMembersDataSource *_membersDataSource;
-    BOOL _needToClearOldResults;
-    NSOperationQueue *_operationQueue;
-    UIViewController *_parentViewController;
-    <ABMembersControllerSearchCompletionDelegate> *_searchCompletionDelegate;
-    UISearchController *_searchController;
-    ABMembersFilteredDataSource *_searchDataSource;
-    UISearchDisplayController *_searchDisplayController;
-    BOOL _searchEnabled;
-    _UINavigationControllerPalette *_searchPalette;
-    UITableViewController *_searchResultsController;
-    unsigned int _searchSequenceNumber;
-    NSIndexPath *_selectedIndexPath;
-    BOOL _shouldDeactivateSearch;
-    BOOL _showingCardFromSearch;
-    <ABStyleProvider> *_styleProvider;
-    UITableView *_tableView;
+    unsigned int  _cellsCreated;
+    _UIContentUnavailableView * _contentUnavailableView;
+    int  _initiallyVisibleRow;
+    unsigned int  _memberCount;
+    <ABMembersControllerDelegate> * _membersControllerDelegate;
+    ABMembersDataSource * _membersDataSource;
+    BOOL  _needToClearOldResults;
+    NSOperationQueue * _operationQueue;
+    UIViewController * _parentViewController;
+    <ABMembersControllerSearchCompletionDelegate> * _searchCompletionDelegate;
+    UISearchController * _searchController;
+    ABMembersFilteredDataSource * _searchDataSource;
+    UISearchDisplayController * _searchDisplayController;
+    BOOL  _searchEnabled;
+    _UINavigationControllerPalette * _searchPalette;
+    UITableViewController * _searchResultsController;
+    unsigned int  _searchSequenceNumber;
+    NSIndexPath * _selectedIndexPath;
+    BOOL  _shouldDeactivateSearch;
+    BOOL  _showingCardFromSearch;
+    <ABStyleProvider> * _styleProvider;
+    UITableView * _tableView;
 }
 
 @property (nonatomic, readonly) NSString *currentSearchText;

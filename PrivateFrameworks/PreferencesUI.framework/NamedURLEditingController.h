@@ -3,8 +3,8 @@
  */
 
 @interface NamedURLEditingController : URLEditingController {
-    PSUIWebRestrictionsController *_URLSaveController;
-    BOOL _saved;
+    PSUIWebRestrictionsController * _URLSaveController;
+    BOOL  _saved;
 }
 
 @property (nonatomic, retain) PSUIWebRestrictionsController *URLSaveController;

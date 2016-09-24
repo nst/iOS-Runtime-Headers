@@ -3,24 +3,24 @@
  */
 
 @interface IDSServerBag : NSObject {
-    BOOL _allowSelfSignedCertificates;
-    BOOL _allowUnsignedBags;
-    NSString *_apsEnvironmentName;
-    NSDictionary *_bag;
-    NSObject<OS_dispatch_queue> *_bagQueue;
-    NSURL *_bagURL;
-    NSNumber *_cacheTime;
-    NSDictionary *_cachedBag;
-    NSString *_cachedHash;
-    NSString *_cachedURLString;
-    NSData *_certData;
-    IMConnectionMonitor *_connectionMonitor;
-    unsigned long long _hasPairedDeviceState;
-    NSDate *_loadDate;
-    IDSRemoteURLConnection *_remoteURLConnection;
-    int _token;
-    int _trustStatus;
-    NSMutableURLRequest *_urlRequest;
+    BOOL  _allowSelfSignedCertificates;
+    BOOL  _allowUnsignedBags;
+    NSString * _apsEnvironmentName;
+    NSDictionary * _bag;
+    NSObject<OS_dispatch_queue> * _bagQueue;
+    NSURL * _bagURL;
+    NSNumber * _cacheTime;
+    NSDictionary * _cachedBag;
+    NSString * _cachedHash;
+    NSString * _cachedURLString;
+    NSData * _certData;
+    IMConnectionMonitor * _connectionMonitor;
+    unsigned int  _hasPairedDeviceState;
+    NSDate * _loadDate;
+    IDSRemoteURLConnection * _remoteURLConnection;
+    int  _token;
+    int  _trustStatus;
+    NSMutableURLRequest * _urlRequest;
 }
 
 @property (setter=_setBag:, retain) NSDictionary *_bag;
@@ -39,7 +39,7 @@
 @property BOOL allowUnsignedBags;
 @property (retain) NSString *apsEnvironmentName;
 @property (retain) NSURL *bagURL;
-@property unsigned long long hasPairedDeviceState;
+@property unsigned int hasPairedDeviceState;
 @property (readonly) BOOL isInDebilitatedMode;
 @property (readonly) BOOL isLoaded;
 @property (readonly) BOOL isLoading;
@@ -93,7 +93,7 @@
 - (void)connectionMonitorDidUpdate:(id)arg1;
 - (void)dealloc;
 - (void)forceBagLoad;
-- (unsigned long long)hasPairedDeviceState;
+- (unsigned int)hasPairedDeviceState;
 - (BOOL)isInDebilitatedMode;
 - (BOOL)isLoaded;
 - (BOOL)isLoading;
@@ -103,7 +103,7 @@
 - (void)setAllowUnsignedBags:(BOOL)arg1;
 - (void)setApsEnvironmentName:(id)arg1;
 - (void)setBagURL:(id)arg1;
-- (void)setHasPairedDeviceState:(unsigned long long)arg1;
+- (void)setHasPairedDeviceState:(unsigned int)arg1;
 - (void)setToken:(int)arg1;
 - (void)set_bagQueue:(id)arg1;
 - (void)set_cacheTime:(id)arg1;

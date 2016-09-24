@@ -3,8 +3,8 @@
  */
 
 @interface RadioGetTrackEventsRequest : RadioRequest {
-    SSURLConnectionRequest *_request;
-    NSArray *_stationTrackIDs;
+    SSURLConnectionRequest * _request;
+    NSArray * _stationTrackIDs;
 }
 
 - (void).cxx_destruct;

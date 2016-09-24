@@ -3,7 +3,7 @@
  */
 
 @interface AVPixelBufferAttributeMediator : NSObject {
-    struct OpaqueVTPixelBufferAttributesMediator { } *_mediator;
+    struct OpaqueVTPixelBufferAttributesMediator { } * _mediator;
 }
 
 - (void)dealloc;

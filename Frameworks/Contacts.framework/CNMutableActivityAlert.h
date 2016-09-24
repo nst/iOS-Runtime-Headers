@@ -4,6 +4,7 @@
 
 @interface CNMutableActivityAlert : CNActivityAlert
 
+@property (nonatomic) BOOL ignoreMute;
 @property (nonatomic, copy) NSString *sound;
 @property (nonatomic, copy) NSDictionary *userInfo;
 @property (nonatomic, copy) NSString *vibration;

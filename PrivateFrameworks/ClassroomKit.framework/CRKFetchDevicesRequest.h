@@ -3,7 +3,7 @@
  */
 
 @interface CRKFetchDevicesRequest : CATTaskRequest {
-    NSArray *_deviceIdentifiers;
+    NSArray * _deviceIdentifiers;
 }
 
 @property (nonatomic, copy) NSArray *deviceIdentifiers;

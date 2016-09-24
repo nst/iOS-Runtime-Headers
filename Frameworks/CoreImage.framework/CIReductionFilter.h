@@ -3,8 +3,8 @@
  */
 
 @interface CIReductionFilter : CIFilter {
-    CIVector *inputExtent;
-    CIImage *inputImage;
+    CIVector * inputExtent;
+    CIImage * inputImage;
 }
 
 @property (nonatomic, retain) CIVector *inputExtent;

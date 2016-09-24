@@ -4,7 +4,7 @@
 
 @interface TSDMutableFrame : TSDFrame
 
-@property (nonatomic) float assetScale;
+@property (nonatomic) double assetScale;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setAssetScale:(float)arg1;

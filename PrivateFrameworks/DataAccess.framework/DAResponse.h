@@ -3,7 +3,7 @@
  */
 
 @interface DAResponse : DAAction {
-    int _status;
+    int  _status;
 }
 
 @property (nonatomic) int status;

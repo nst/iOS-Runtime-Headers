@@ -3,7 +3,7 @@
  */
 
 @interface UIWebSelectPopover : UIWebFormRotatingAccessoryPopover <UIWebFormControl> {
-    UIWebSelectTableViewController *_tableViewController;
+    UIWebSelectTableViewController * _tableViewController;
 }
 
 @property (nonatomic, retain) UIWebSelectTableViewController *_tableViewController;

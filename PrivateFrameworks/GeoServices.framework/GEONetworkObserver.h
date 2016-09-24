@@ -3,12 +3,12 @@
  */
 
 @interface GEONetworkObserver : NSObject {
-    NSLock *_lock;
-    BOOL _networkNotified;
-    struct __CFDictionary { } *_networkObservers;
-    struct __SCNetworkReachability { } *_networkReach;
-    unsigned int _networkReachability;
-    BOOL _networkReachable;
+    BOOL  _initialized;
+    NSLock * _lock;
+    BOOL  _networkNotified;
+    struct __SCNetworkReachability { } * _networkReach;
+    unsigned int  _networkReachability;
+    BOOL  _networkReachable;
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

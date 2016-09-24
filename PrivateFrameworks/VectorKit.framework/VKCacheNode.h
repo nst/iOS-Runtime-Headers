@@ -8,10 +8,10 @@
         unsigned int b; 
         unsigned int c; 
         unsigned int d; 
-    } _key;
-    VKCacheNode *_next;
-    VKCacheNode *_previous;
-    id _value;
+    }  _key;
+    VKCacheNode * _next;
+    VKCacheNode * _previous;
+    id  _value;
 }
 
 @property (nonatomic) struct VKCacheKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; } key;

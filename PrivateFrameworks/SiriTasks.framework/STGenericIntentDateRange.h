@@ -3,9 +3,9 @@
  */
 
 @interface STGenericIntentDateRange : NSObject <NSCoding> {
-    NSDate *_endDate;
-    NSString *_name;
-    NSDate *_startDate;
+    NSDate * _endDate;
+    NSString * _name;
+    NSDate * _startDate;
 }
 
 @property (nonatomic, readonly, copy) NSDate *endDate;

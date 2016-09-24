@@ -3,13 +3,13 @@
  */
 
 @interface UISwappableImageView : UIImageView {
-    UIImage *_alternateImage;
-    int _barButtonItemStyle;
-    BOOL _bezel;
-    int _bezelStyle;
-    UIImage *_image;
-    BOOL _showAlternate;
-    BOOL _updateImage;
+    UIImage * _alternateImage;
+    int  _barButtonItemStyle;
+    BOOL  _bezel;
+    int  _bezelStyle;
+    UIImage * _image;
+    BOOL  _showAlternate;
+    BOOL  _updateImage;
 }
 
 - (void).cxx_destruct;

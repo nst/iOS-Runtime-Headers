@@ -3,8 +3,8 @@
  */
 
 @interface CAMCaptureCommand : NSObject <NSCoding, NSCopying> {
-    NSString *_reason;
-    NSArray *_subcommands;
+    NSString * _reason;
+    NSArray * _subcommands;
 }
 
 @property (nonatomic, copy) NSString *reason;

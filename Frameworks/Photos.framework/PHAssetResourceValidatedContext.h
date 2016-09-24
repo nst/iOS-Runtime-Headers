@@ -3,9 +3,9 @@
  */
 
 @interface PHAssetResourceValidatedContext : NSObject {
-    PHExternalAssetResource *_resource;
-    NSData *_validatedData;
-    NSURL *_validatedURL;
+    PHExternalAssetResource * _resource;
+    NSData * _validatedData;
+    NSURL * _validatedURL;
 }
 
 @property (nonatomic, readonly) PHExternalAssetResource *resource;

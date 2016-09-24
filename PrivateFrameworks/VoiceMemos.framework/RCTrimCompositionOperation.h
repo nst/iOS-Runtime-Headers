@@ -3,17 +3,17 @@
  */
 
 @interface RCTrimCompositionOperation : RCTrimTimeRangeOperation {
-    NSURL *_destinationComposedAVURL;
-    double _durationOfFragmentsBeingTrimmed;
-    NSError *_error;
-    double _exportedDuration;
-    double _lastPostedProgress;
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    RCComposition *_sourceComposition;
-    NSOperationQueue *_subOperationQueue;
-    double _subTaskProgressAmounts;
-    BOOL _success;
-    RCTrimAudioFileOperation *_trimAudioFileSubOperation;
+    NSURL * _destinationComposedAVURL;
+    double  _durationOfFragmentsBeingTrimmed;
+    NSError * _error;
+    double  _exportedDuration;
+    double  _lastPostedProgress;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    RCComposition * _sourceComposition;
+    NSOperationQueue * _subOperationQueue;
+    double  _subTaskProgressAmounts;
+    BOOL  _success;
+    RCTrimAudioFileOperation * _trimAudioFileSubOperation;
 }
 
 @property (nonatomic, readonly, copy) NSURL *destinationComposedAVURL;

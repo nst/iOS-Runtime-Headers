@@ -2,20 +2,20 @@
    Image: /System/Library/Frameworks/GameplayKit.framework/GameplayKit
  */
 
-@interface GKQuadTree : NSObject {
-    struct GKCQuadTree<NSObject> { int (**x1)(); struct GKCQuadTreeNode<NSObject> {} *x2; } *_cQuadTree;
+@interface GKQuadtree : NSObject {
+    struct GKCQuadTree<NSObject> { int (**x1)(); struct GKCQuadTreeNode<NSObject> {} *x2; } * _cQuadTree;
 }
 
-+ (id)quadTreeWithMinPosition:(void *)arg1 maxPosition:(void *)arg2 minCellSize:(void *)arg3; // needs 3 arg types, found 1: float
++ (id)quadtreeWithBoundingQuad:(struct GKQuad { })arg1 minimumCellSize:(float)arg2;
 
-- (id)addDataWithPoint:(void *)arg1 point:(void *)arg2; // needs 2 arg types, found 1: id
-- (id)addDataWithQuad:(void *)arg1 quadOrigin:(void *)arg2 quadSize:(void *)arg3; // needs 3 arg types, found 1: id
+- (id)addElement:(void *)arg1 withPoint:(void *)arg2; // needs 2 arg types, found 1: id
+- (id)addElement:(id)arg1 withQuad:(struct GKQuad { })arg2;
 - (void)dealloc;
+- (id)elementsAtPoint;
+- (id)elementsInQuad:(struct GKQuad { })arg1;
 - (id)init;
-- (id)initWithMinPosition:(void *)arg1 maxPosition:(void *)arg2 minCellSize:(void *)arg3; // needs 3 arg types, found 1: float
-- (id)queryDataForPoint;
-- (id)queryDataForQuadquadSize;
-- (BOOL)removeData:(id)arg1;
-- (BOOL)removeData:(id)arg1 withNode:(id)arg2;
+- (id)initWithBoundingQuad:(struct GKQuad { })arg1 minimumCellSize:(float)arg2;
+- (BOOL)removeElement:(id)arg1;
+- (BOOL)removeElement:(id)arg1 withNode:(id)arg2;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface NSKeyValueCollectionGetter : NSKeyValueProxyGetter {
-    NSKeyValueNonmutatingCollectionMethodSet *_methods;
+    NSKeyValueNonmutatingCollectionMethodSet * _methods;
 }
 
 - (void)dealloc;

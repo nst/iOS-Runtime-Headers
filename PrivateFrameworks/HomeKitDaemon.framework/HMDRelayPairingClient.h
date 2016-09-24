@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDRelayPairingClient : HAPRelayPairingClient <HMDRelayManagerDelegate> {
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    HMDRelayManager *_relayManager;
+@interface HMDRelayPairingClient : HAPRelayPairingClient <HMDRelayManagerDelegate, HMFLogging> {
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    HMDRelayManager * _relayManager;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
@@ -15,6 +15,7 @@
 @property (readonly) Class superclass;
 
 + (id)accessoryBagURL;
++ (id)logCategory;
 
 - (void).cxx_destruct;
 - (void)_closeWithError:(id)arg1;
@@ -22,6 +23,7 @@
 - (id)clientQueue;
 - (void)close;
 - (id)initWithRelayManager:(id)arg1;
+- (id)logIdentifier;
 - (void)open;
 - (id)relayManager;
 - (void)relayManager:(id)arg1 didUpdateControllerIdentifier:(id)arg2;

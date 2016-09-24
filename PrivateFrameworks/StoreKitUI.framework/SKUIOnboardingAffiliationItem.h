@@ -3,13 +3,13 @@
  */
 
 @interface SKUIOnboardingAffiliationItem : NSObject <NSCopying> {
-    UIColor *_fillColor;
-    NSString *_identifier;
-    NSString *_imageName;
-    NSString *_imageTreatment;
-    NSURL *_imageURL;
-    NSString *_title;
-    int _userAffinityCount;
+    UIColor * _fillColor;
+    NSString * _identifier;
+    NSString * _imageName;
+    NSString * _imageTreatment;
+    NSURL * _imageURL;
+    NSString * _title;
+    int  _userAffinityCount;
 }
 
 @property (nonatomic, copy) UIColor *fillColor;

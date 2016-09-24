@@ -3,37 +3,41 @@
  */
 
 @interface UISystemInputViewController : UIViewController <UIRecentsInputViewControllerDelegate> {
-    NSMutableDictionary *_accessoryConstraints;
-    NSMutableDictionary *_accessoryViewControllers;
-    int _blurEffectStyle;
-    UILexicon *_cachedRecents;
-    UIView *_containingView;
-    UIView *_contentLayoutView;
-    BOOL _didDisplayRecents;
-    UIButton *_doneButton;
-    NSArray *_editorConstraints;
-    UIKBSystemLayoutViewController *_editorVC;
-    NSLayoutConstraint *_horizontalAlignment;
-    UIViewController *_inputVC;
-    BOOL _isAutomaticResponderTransition;
-    BOOL _isVisible;
-    UIKeyboard *_keyboard;
-    NSArray *_keyboardConstraints;
-    UICompatibilityInputViewController *_keyboardVC;
-    BOOL _needsSetupAgain;
-    UIResponder<UITextInput> *_nextInputDelegate;
-    UIResponder<UITextInput> *_persistentDelegate;
-    UIRecentsInputViewController *_recentsVC;
-    BOOL _supportsRecentInputsIntegration;
-    BOOL _supportsTouchInput;
-    <UISystemInputViewControllerDelegate> *_systemInputViewControllerDelegate;
-    UITextInputTraits *_textInputTraits;
-    NSLayoutConstraint *_verticalAlignment;
-    BOOL _willPresentFullscreen;
+    NSMutableDictionary * _accessoryConstraints;
+    NSMutableDictionary * _accessoryViewControllers;
+    int  _blurEffectStyle;
+    UILexicon * _cachedRecents;
+    UITraitCollection * _containingResponderTraitCollection;
+    UIView * _containingView;
+    UIView * _contentLayoutView;
+    BOOL  _didDisplayRecents;
+    UIButton * _doneButton;
+    NSArray * _editorConstraints;
+    UIKBSystemLayoutViewController * _editorVC;
+    NSLayoutConstraint * _horizontalAlignment;
+    UIViewController * _inputVC;
+    BOOL  _isAutomaticResponderTransition;
+    BOOL  _isVisible;
+    UIKeyboard * _keyboard;
+    NSArray * _keyboardConstraints;
+    UICompatibilityInputViewController * _keyboardVC;
+    BOOL  _needsSetupAgain;
+    UIResponder<UITextInput> * _nextInputDelegate;
+    UIResponder<UITextInput> * _persistentDelegate;
+    UILabel * _promptLabel;
+    UIRecentsInputViewController * _recentsVC;
+    BOOL  _supportsRecentInputsIntegration;
+    BOOL  _supportsTouchInput;
+    <UISystemInputViewControllerDelegate> * _systemInputViewControllerDelegate;
+    UITextInputTraits * _textInputTraits;
+    NSLayoutConstraint * _verticalAlignment;
+    BOOL  _willPresentFullscreen;
 }
 
+@property (nonatomic, retain) UILabel *_promptLabel;
 @property (nonatomic) int blurEffectStyle;
 @property (nonatomic, retain) UILexicon *cachedRecents;
+@property (nonatomic, retain) UITraitCollection *containingResponderTraitCollection;
 @property (nonatomic, retain) UIView *containingView;
 @property (nonatomic, retain) UIView *contentLayoutView;
 @property (readonly, copy) NSString *debugDescription;
@@ -57,10 +61,11 @@
 @property (nonatomic) BOOL supportsTouchInput;
 @property (nonatomic) <UISystemInputViewControllerDelegate> *systemInputViewControllerDelegate;
 @property (nonatomic, retain) UITextInputTraits *textInputTraits;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } unfocusedFocusGuideOutsets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } unfocusedFocusGuideOutsets;
 @property (nonatomic, retain) NSLayoutConstraint *verticalAlignment;
 @property (nonatomic) BOOL willPresentFullscreen;
 
++ (id)_canonicalTraitsForResponder:(id)arg1;
 + (BOOL)canUseSystemInputViewControllerForResponder:(id)arg1;
 + (id)systemInputViewControllerForResponder:(id)arg1 editorView:(id)arg2;
 + (id)systemInputViewControllerForResponder:(id)arg1 editorView:(id)arg2 containingResponder:(id)arg3;
@@ -68,14 +73,20 @@
 - (id)_accessoryViewControllerForEdge:(int)arg1;
 - (void)_addAccessoryViewController:(id)arg1;
 - (void)_addChildInputViewController;
+- (void)_clearCursorLocationIfNotFirstResponder;
 - (void)_createKeyboardIfNecessary;
 - (void)_didSuspend:(id)arg1;
 - (BOOL)_disableAutomaticKeyboardBehavior;
 - (void)_dismissSystemInputViewController;
+- (id)_effectView;
 - (unsigned int)_horizontalLayoutTypeForEdge:(int)arg1;
+- (id)_promptLabel;
 - (void)_removeAccessoryViewController:(id)arg1;
+- (void)_resetDelegate;
 - (void)_returnButtonPressed;
 - (void)_setNonInputViewVisibility:(BOOL)arg1;
+- (id)_traitCollectionForUserInterfaceStyle;
+- (void)_updateRemoteTextEditingSession;
 - (unsigned int)_verticalLayoutTypeForEdge:(int)arg1;
 - (void)_willResume:(id)arg1;
 - (id)accessoryViewControllerForEdge:(int)arg1;
@@ -85,11 +96,13 @@
 - (void)configureRecentsVCIfNecessary;
 - (id)constraintFromView:(id)arg1 attribute:(int)arg2 toView:(id)arg3 attribute:(int)arg4;
 - (id)constraintsForEdge:(int)arg1;
+- (id)containingResponderTraitCollection;
 - (id)containingView;
 - (id)contentLayoutView;
 - (void)dealloc;
 - (BOOL)didDisplayRecents;
 - (void)didSelectRecentInput;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)doneButton;
 - (id)doneButtonStringForCurrentInputDelegate;
 - (id)editorConstraints;
@@ -107,7 +120,7 @@
 - (void)notifyDelegateWithAccessoryVisibility:(BOOL)arg1;
 - (id)persistentDelegate;
 - (void)populateCoreHierarchy;
-- (id)preferredFocusedItem;
+- (id)preferredFocusEnvironments;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
@@ -118,6 +131,7 @@
 - (void)setBlurEffectStyle:(int)arg1;
 - (void)setCachedRecents:(id)arg1;
 - (void)setConstraints:(id)arg1 forEdge:(int)arg2;
+- (void)setContainingResponderTraitCollection:(id)arg1;
 - (void)setContainingView:(id)arg1;
 - (void)setContentLayoutView:(id)arg1;
 - (void)setDidDisplayRecents:(BOOL)arg1;
@@ -137,16 +151,19 @@
 - (void)setSupportsTouchInput:(BOOL)arg1;
 - (void)setSystemInputViewControllerDelegate:(id)arg1;
 - (void)setTextInputTraits:(id)arg1;
-- (void)setUnfocusedFocusGuideOutsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setUnfocusedFocusGuideOutsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setVerticalAlignment:(id)arg1;
 - (void)setWillPresentFullscreen:(BOOL)arg1;
+- (void)set_promptLabel:(id)arg1;
 - (void)setupKeyboard;
 - (BOOL)supportsRecentInputsIntegration;
 - (BOOL)supportsTouchInput;
 - (void)switchToKeyboard;
 - (id)systemInputViewControllerDelegate;
 - (id)textInputTraits;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })unfocusedFocusGuideOutsets;
+- (id)traitCollection;
+- (void)traitCollectionDidChange:(id)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })unfocusedFocusGuideOutsets;
 - (void)updateAlignmentConstraints;
 - (void)updateViewConstraints;
 - (id)verticalAlignment;
@@ -155,5 +172,6 @@
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
 - (BOOL)willPresentFullscreen;
+- (BOOL)willShowRecentsList;
 
 @end

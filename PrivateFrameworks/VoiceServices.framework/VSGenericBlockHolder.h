@@ -3,7 +3,7 @@
  */
 
 @interface VSGenericBlockHolder : NSObject <VSGenericUpdate> {
-    id /* block */ _block;
+    id /* block */  _block;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,12 +3,12 @@
  */
 
 @interface RMSPairingSession : NSObject <NSNetServiceDelegate, RMSPairingServerDelegate, RMSPairingSession> {
-    NSString *_advertisedAppName;
-    NSString *_advertisedDeviceModel;
-    NSString *_advertisedDeviceName;
-    <RMSPairingSessionDelegate> *_delegate;
-    RMSPairingServer *_pairingServer;
-    NSString *_passcode;
+    NSString * _advertisedAppName;
+    NSString * _advertisedDeviceModel;
+    NSString * _advertisedDeviceName;
+    <RMSPairingSessionDelegate> * _delegate;
+    RMSPairingServer * _pairingServer;
+    NSString * _passcode;
 }
 
 @property (nonatomic, retain) NSString *advertisedAppName;

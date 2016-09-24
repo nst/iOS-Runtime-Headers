@@ -3,13 +3,13 @@
  */
 
 @interface CPParagraphMaker : NSObject {
-    NSMutableArray *avail;
-    NSMutableArray *compoundedShapesOnPage;
-    float currentSpacing;
-    CPPage *page;
-    NSMutableArray *paragraphs;
-    CPZone *parent;
-    BOOL spacingSet;
+    NSMutableArray * avail;
+    NSMutableArray * compoundedShapesOnPage;
+    double  currentSpacing;
+    CPPage * page;
+    NSMutableArray * paragraphs;
+    CPZone * parent;
+    BOOL  spacingSet;
 }
 
 + (BOOL)line:(id)arg1 alignsWith:(id)arg2;

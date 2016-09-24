@@ -3,7 +3,7 @@
  */
 
 @interface GKThemeBrush : GKBrush {
-    GKUITheme *_theme;
+    GKUITheme * _theme;
 }
 
 @property (nonatomic, retain) GKUITheme *theme;

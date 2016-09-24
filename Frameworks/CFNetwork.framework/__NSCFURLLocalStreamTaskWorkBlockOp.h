@@ -3,7 +3,7 @@
  */
 
 @interface __NSCFURLLocalStreamTaskWorkBlockOp : __NSCFURLLocalStreamTaskWork {
-    id /* block */ _block;
+    id /* block */  _block;
 }
 
 + (id)opWithBlock:(id /* block */)arg1 description:(const char *)arg2;

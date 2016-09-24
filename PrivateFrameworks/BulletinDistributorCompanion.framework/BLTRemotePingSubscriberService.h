@@ -3,11 +3,11 @@
  */
 
 @interface BLTRemotePingSubscriberService : NSObject <BLTPingService, NSXPCListenerDelegate> {
-    NSXPCConnection *_connectionFromServer;
-    NSXPCConnection *_connectionToServer;
-    <BLTPingSubscribing> *_delegate;
-    NSXPCListener *_listener;
-    NSString *_machServiceName;
+    NSXPCConnection * _connectionFromServer;
+    NSXPCConnection * _connectionToServer;
+    <BLTPingSubscribing> * _delegate;
+    NSXPCListener * _listener;
+    NSString * _machServiceName;
 }
 
 @property (nonatomic, retain) NSXPCConnection *connectionFromServer;
@@ -35,15 +35,16 @@
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)machServiceName;
 - (void)pingWithBulletin:(id)arg1;
+- (void)pingWithBulletin:(id)arg1 ack:(id /* block */)arg2;
 - (void)pingWithRecordID:(id)arg1 forSectionID:(id)arg2;
+- (void)pingWithRecordID:(id)arg1 forSectionID:(id)arg2 ack:(id /* block */)arg3;
 - (void)sendBulletinSummary:(id)arg1;
 - (void)setConnectionFromServer:(id)arg1;
 - (void)setConnectionToServer:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setListener:(id)arg1;
 - (void)setMachServiceName:(id)arg1;
-- (void)subscribeToSectionID:(id)arg1;
-- (void)subscribeToSectionID:(id)arg1 forFullBulletins:(BOOL)arg2;
+- (void)subscribeToSectionID:(id)arg1 forFullBulletins:(BOOL)arg2 withAck:(BOOL)arg3;
 - (void)subscribeWithMachServiceName:(id)arg1;
 - (void)unsubscribeFromSectionID:(id)arg1;
 

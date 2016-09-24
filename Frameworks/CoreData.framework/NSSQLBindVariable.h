@@ -3,29 +3,32 @@
  */
 
 @interface NSSQLBindVariable : NSObject {
-    NSAttributeDescription *_attributeDescription;
-    int _cd_rc;
-    unsigned int _index;
-    long long _int64;
-    unsigned int _sqlType;
-    id _value;
+    NSAttributeDescription * _attributeDescription;
+    int  _cd_rc;
+    unsigned int  _flags;
+    unsigned int  _index;
+    int  _int64;
+    unsigned int  _sqlType;
+    id  _value;
 }
 
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
+- (BOOL)allowsCoercion;
 - (id)attributeDescription;
 - (void)dealloc;
 - (BOOL)hasObjectValue;
 - (unsigned int)index;
-- (id)initWithInt64:(long long)arg1 sqlType:(unsigned int)arg2;
+- (id)initWithInt64:(int)arg1 sqlType:(unsigned int)arg2;
 - (id)initWithUnsignedInt:(unsigned int)arg1 sqlType:(unsigned int)arg2;
 - (id)initWithValue:(id)arg1 sqlType:(unsigned int)arg2 attributeDescription:(id)arg3;
-- (long long)int64;
+- (id)initWithValue:(id)arg1 sqlType:(unsigned int)arg2 attributeDescription:(id)arg3 allowCoercion:(BOOL)arg4;
+- (int)int64;
 - (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
 - (void)setIndex:(unsigned int)arg1;
-- (void)setInt64:(long long)arg1;
+- (void)setInt64:(int)arg1;
 - (void)setUnsignedInt:(unsigned int)arg1;
 - (void)setValue:(id)arg1;
 - (unsigned int)sqlType;

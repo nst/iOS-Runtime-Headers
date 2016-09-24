@@ -3,10 +3,10 @@
  */
 
 @interface TSCH3DResource : NSObject <NSCopying> {
-    TSCH3DDataBuffer *mCache;
-    BOOL mCached;
-    int mCaching;
-    BOOL mChanged;
+    TSCH3DDataBuffer * mCache;
+    BOOL  mCached;
+    int  mCaching;
+    BOOL  mChanged;
     struct DataBufferInfo { 
         int componentType; 
         unsigned int components; 
@@ -14,9 +14,9 @@
         unsigned int byteSize; 
         unsigned int componentByteSize; 
         unsigned int elementByteSize; 
-    } mDataBufferInfo;
-    unsigned long long mUniqueIdentifier;
-    int mUpdate;
+    }  mDataBufferInfo;
+    unsigned int  mUniqueIdentifier;
+    int  mUpdate;
 }
 
 @property (nonatomic, readonly) TSCH3DDataBuffer *buffer;
@@ -24,11 +24,11 @@
 @property (nonatomic) int caching;
 @property (nonatomic) BOOL changed;
 @property (nonatomic, readonly) BOOL isTexturable;
-@property (nonatomic, readonly) unsigned long long uniqueIdentifier;
+@property (nonatomic, readonly) unsigned int uniqueIdentifier;
 @property (nonatomic) int update;
 
-+ (unsigned long long)allocateResourceUniqueIdentifier;
-+ (void)deallocateResourceUniqueIdentifier:(unsigned long long)arg1;
++ (unsigned int)allocateResourceUniqueIdentifier;
++ (void)deallocateResourceUniqueIdentifier:(unsigned int)arg1;
 + (id)resource;
 + (id)resourceWithCaching:(int)arg1;
 
@@ -49,7 +49,7 @@
 - (void)setCaching:(int)arg1;
 - (void)setChanged:(BOOL)arg1;
 - (void)setUpdate:(int)arg1;
-- (unsigned long long)uniqueIdentifier;
+- (unsigned int)uniqueIdentifier;
 - (int)update;
 - (void)updateBufferInfoFromBuffer:(id)arg1;
 

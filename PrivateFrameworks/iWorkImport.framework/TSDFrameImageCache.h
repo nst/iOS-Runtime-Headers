@@ -3,16 +3,16 @@
  */
 
 @interface TSDFrameImageCache : NSObject {
-    NSMutableArray *mEntries;
+    NSMutableArray * mEntries;
 }
 
 + (id)sharedFrameImageCache;
 
 - (void)dealloc;
 - (id)init;
-- (struct CGImage { }*)newCachedImageForFrame:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 viewScale:(float)arg3 forCALayer:(BOOL)arg4 mask:(BOOL)arg5;
+- (struct CGImage { }*)newCachedImageForFrame:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 viewScale:(float)arg3 forCALayer:(BOOL)arg4 mask:(BOOL)arg5;
 - (void)p_didReceiveMemoryWarning:(id)arg1;
-- (id)p_newEntryForFrame:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 viewScale:(float)arg3 createIfNeeded:(BOOL)arg4;
-- (struct CGImage { }*)setCachedImage:(struct CGImage { }*)arg1 forFrame:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3 viewScale:(float)arg4 forCALayer:(BOOL)arg5 mask:(BOOL)arg6;
+- (id)p_newEntryForFrame:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 viewScale:(float)arg3 createIfNeeded:(BOOL)arg4;
+- (struct CGImage { }*)setCachedImage:(struct CGImage { }*)arg1 forFrame:(id)arg2 size:(struct CGSize { double x1; double x2; })arg3 viewScale:(float)arg4 forCALayer:(BOOL)arg5 mask:(BOOL)arg6;
 
 @end

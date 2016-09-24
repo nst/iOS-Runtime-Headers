@@ -3,8 +3,8 @@
  */
 
 @interface GEOPlaceDataCacheFeedback : PBCodable <NSCopying> {
-    NSString *_bundleIdentifier;
-    GEOPDPlaceRequest *_request;
+    NSString * _bundleIdentifier;
+    GEOPDPlaceRequest * _request;
 }
 
 @property (nonatomic, retain) NSString *bundleIdentifier;

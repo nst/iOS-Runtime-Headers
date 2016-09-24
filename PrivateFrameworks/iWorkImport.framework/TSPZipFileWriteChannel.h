@@ -3,8 +3,9 @@
  */
 
 @interface TSPZipFileWriteChannel : NSObject <TSUStreamWriteChannel> {
-    TSUZipFileWriter *_archiveWriter;
-    BOOL _isClosed;
+    TSUZipFileWriter * _archiveWriter;
+    BOOL  _isClosed;
+    NSObject<OS_dispatch_queue> * _writerQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,6 +21,6 @@
 - (id)initWithArchiveWriter:(id)arg1;
 - (BOOL)isValid;
 - (void)setLowWater:(unsigned long)arg1;
-- (void)writeData:(id)arg1 queue:(id)arg2 handler:(id /* block */)arg3;
+- (void)writeData:(id)arg1 handler:(id /* block */)arg2;
 
 @end

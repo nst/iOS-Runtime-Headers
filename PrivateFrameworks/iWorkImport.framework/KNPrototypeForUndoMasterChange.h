@@ -3,13 +3,13 @@
  */
 
 @interface KNPrototypeForUndoMasterChange : TSPObject <TSSPropertySource> {
-    NSArray *_childInfos;
-    NSArray *_drawableInfoIdList;
-    NSUUID *_masterSlideId;
-    NSArray *_placeholderTagsList;
-    NSArray *_placeholders;
-    NSDictionary *_placeholdersForTags;
-    KNSlideStyle *_style;
+    NSArray * _childInfos;
+    NSArray * _drawableInfoIdList;
+    NSUUID * _masterSlideId;
+    NSArray * _placeholderTagsList;
+    NSArray * _placeholders;
+    NSDictionary * _placeholdersForTags;
+    KNSlideStyle * _style;
 }
 
 @property (nonatomic, readonly) NSArray *childInfos;

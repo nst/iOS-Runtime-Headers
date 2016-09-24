@@ -3,9 +3,9 @@
  */
 
 @interface PUDefaultFrameChangeTileTransitionCoordinator : PUDefaultTileTransitionCoordinator {
-    NSSet *__invisibleTileControllers;
-    BOOL _shouldCrossFadeTiles;
-    PUTilingView *_tilingView;
+    NSSet * __invisibleTileControllers;
+    BOOL  _shouldCrossFadeTiles;
+    PUTilingView * _tilingView;
 }
 
 @property (setter=_setInvisibleTileControllers:, nonatomic, copy) NSSet *_invisibleTileControllers;

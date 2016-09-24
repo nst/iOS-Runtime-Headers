@@ -3,45 +3,46 @@
  */
 
 @interface CKAudioAnalyzer : NSObject <Endpointer> {
-    struct OpaqueAudioComponentInstance { } *_audioUnitEPVAD;
-    float _decoderLatency;
-    BOOL _detectedMusic;
-    double _endWaitTime;
-    int _endpointMode;
-    NSMutableData *_floatSampleBuffer;
+    struct OpaqueAudioComponentInstance { } * _audioUnitEPVAD;
+    double  _decoderLatency;
+    BOOL  _detectedMusic;
+    double  _endWaitTime;
+    int  _endpointMode;
+    NSMutableData * _floatSampleBuffer;
     struct { 
-        float rms; 
+        double rms; 
         unsigned int zc; 
-    } _frameAnalysisArray;
-    unsigned long _frameRate;
-    unsigned int _framesSeen;
-    float _heuristicTransitionRatio;
-    float _heuristicWindowSec;
-    unsigned long _inMaxSamplesPerBuffer;
-    double _interspeechWaitTime;
-    NSDictionary *_modelDict;
-    double _sampleRate;
-    double _samplesSeen;
-    float _speechPaddingFactor;
-    double _startWaitTime;
+    }  _frameAnalysisArray;
+    unsigned long  _frameRate;
+    unsigned int  _framesSeen;
+    double  _heuristicTransitionRatio;
+    double  _heuristicWindowSec;
+    unsigned long  _inMaxSamplesPerBuffer;
+    double  _interspeechWaitTime;
+    NSDictionary * _modelDict;
+    double  _sampleRate;
+    double  _samplesSeen;
+    double  _speechPaddingFactor;
+    double  _startWaitTime;
 }
 
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) float decoderLatency;
+@property (nonatomic) double decoderLatency;
 @property (readonly, copy) NSString *description;
 @property double endWaitTime;
 @property int endpointMode;
 @property (readonly) unsigned int hash;
-@property (nonatomic) float heuristicTransitionRatio;
-@property (nonatomic) float heuristicWindowSec;
+@property (nonatomic) double heuristicTransitionRatio;
+@property (nonatomic) double heuristicWindowSec;
 @property (nonatomic) unsigned long inMaxSamplesPerBuffer;
 @property double interspeechWaitTime;
-@property (nonatomic) float speechPaddingFactor;
+@property (nonatomic) double speechPaddingFactor;
 @property double startWaitTime;
 @property (readonly) Class superclass;
 
 + (void)initialize;
 
+- (void).cxx_destruct;
 - (BOOL)configureWithSampleRate:(double)arg1 andFrameRate:(unsigned long)arg2;
 - (void)dealloc;
 - (float)decoderLatency;

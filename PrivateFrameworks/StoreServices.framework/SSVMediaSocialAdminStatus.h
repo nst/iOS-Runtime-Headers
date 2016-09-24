@@ -3,8 +3,8 @@
  */
 
 @interface SSVMediaSocialAdminStatus : NSObject <NSSecureCoding> {
-    BOOL _admin;
-    NSDate *_dateUpdated;
+    BOOL  _admin;
+    NSDate * _dateUpdated;
 }
 
 @property (getter=isAdmin, nonatomic, readonly) BOOL admin;

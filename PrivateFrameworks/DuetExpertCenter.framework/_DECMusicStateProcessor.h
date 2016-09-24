@@ -3,10 +3,10 @@
  */
 
 @interface _DECMusicStateProcessor : NSObject {
-    BOOL _inCar;
-    _DECMusicContainer *_lastPlayed;
-    _DECMusicContainer *_lastPlayedInCar;
-    NSObject<OS_dispatch_queue> *_queue;
+    BOOL  _inCar;
+    _DECMusicContainer * _lastPlayed;
+    _DECMusicContainer * _lastPlayedInCar;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic) BOOL inCar;

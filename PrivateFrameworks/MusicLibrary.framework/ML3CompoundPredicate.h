@@ -3,7 +3,7 @@
  */
 
 @interface ML3CompoundPredicate : ML3Predicate {
-    NSArray *_predicates;
+    NSArray * _predicates;
 }
 
 @property (nonatomic, readonly, copy) NSString *compoundOperatorJoiner;

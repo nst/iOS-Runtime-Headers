@@ -3,18 +3,18 @@
  */
 
 @interface CoreDAVBulkChangeTask : CoreDAVTask {
-    NSString *_appSpecificDataProp;
-    NSString *_appSpecificNamespace;
-    NSMutableSet *_bulkChangeResponses;
-    NSString *_checkCTag;
-    NSDictionary *_hrefsToModDeleteActions;
-    NSString *_nextCTag;
-    NSData *_pushedData;
-    NSString *_requestDataContentType;
-    BOOL _returnChangedData;
-    BOOL _simple;
-    NSDictionary *_uuidsToAddActions;
-    BOOL _validCTag;
+    NSString * _appSpecificDataProp;
+    NSString * _appSpecificNamespace;
+    NSMutableSet * _bulkChangeResponses;
+    NSString * _checkCTag;
+    NSDictionary * _hrefsToModDeleteActions;
+    NSString * _nextCTag;
+    NSData * _pushedData;
+    NSString * _requestDataContentType;
+    BOOL  _returnChangedData;
+    BOOL  _simple;
+    NSDictionary * _uuidsToAddActions;
+    BOOL  _validCTag;
 }
 
 @property (nonatomic, readonly) NSSet *bulkChangeResponses;

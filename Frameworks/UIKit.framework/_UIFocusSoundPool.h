@@ -3,9 +3,9 @@
  */
 
 @interface _UIFocusSoundPool : NSObject {
-    int _index;
-    unsigned long _originalID;
-    NSArray *_queue;
+    int  _index;
+    unsigned long  _originalID;
+    NSArray * _queue;
 }
 
 - (void).cxx_destruct;

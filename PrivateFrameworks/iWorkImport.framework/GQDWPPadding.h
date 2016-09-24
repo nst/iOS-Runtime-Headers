@@ -3,10 +3,10 @@
  */
 
 @interface GQDWPPadding : NSObject <GQDNameMappable> {
-    float mBottom;
-    float mLeft;
-    float mRight;
-    float mTop;
+    double  mBottom;
+    double  mLeft;
+    double  mRight;
+    double  mTop;
 }
 
 @property (readonly, copy) NSString *debugDescription;

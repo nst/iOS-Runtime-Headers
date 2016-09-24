@@ -3,22 +3,22 @@
  */
 
 @interface SKUIIndexBarControlController : NSObject <SKUIIndexBarControlDataSource, SKUIIndexBarControlDelegate> {
-    SKUIIndexBarEntryDescriptor *_combinedEntryDescriptor;
-    <SKUIIndexBarControlControllerDataSource> *_dataSource;
+    SKUIIndexBarEntryDescriptor * _combinedEntryDescriptor;
+    <SKUIIndexBarControlControllerDataSource> * _dataSource;
     struct { 
         unsigned int dataSourceRespondsToCombinedEntry : 1; 
         unsigned int dataSourceRespondsToNumberOfSections : 1; 
         unsigned int delegateRespondsToDidSelectEntryAtIndexPath : 1; 
         unsigned int delegateRespondsToDidSelectBeyondBottom : 1; 
         unsigned int delegateRespondsToDidSelectBeyondTop : 1; 
-    } _dataSourceDelegateFlags;
-    <SKUIIndexBarControlControllerDelegate> *_delegate;
-    NSMapTable *_entryDescriptorToCachedEntry;
-    BOOL _hasValidCombinedEntryDescriptor;
-    SKUIIndexBarControl *_indexBarControl;
-    NSMapTable *_indexPathToEntryDescriptor;
-    NSMapTable *_requestIDToDescriptors;
-    SKUIResourceLoader *_resourceLoader;
+    }  _dataSourceDelegateFlags;
+    <SKUIIndexBarControlControllerDelegate> * _delegate;
+    NSMapTable * _entryDescriptorToCachedEntry;
+    BOOL  _hasValidCombinedEntryDescriptor;
+    SKUIIndexBarControl * _indexBarControl;
+    NSMapTable * _indexPathToEntryDescriptor;
+    NSMapTable * _requestIDToDescriptors;
+    SKUIResourceLoader * _resourceLoader;
 }
 
 @property (nonatomic) <SKUIIndexBarControlControllerDataSource> *dataSource;

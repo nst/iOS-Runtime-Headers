@@ -3,10 +3,10 @@
  */
 
 @interface MCDomainsCacheEntry : NSObject {
-    NSString *_domain;
-    NSString *_path;
-    NSNumber *_port;
-    BOOL _subdomainsMatch;
+    NSString * _domain;
+    NSString * _path;
+    NSNumber * _port;
+    BOOL  _subdomainsMatch;
 }
 
 @property (nonatomic, retain) NSString *domain;

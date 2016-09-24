@@ -3,8 +3,8 @@
  */
 
 @interface SKUICountLimitViewElement : SKUILimitViewElement {
-    NSString *_entityTypeString;
-    int _limitValue;
+    NSString * _entityTypeString;
+    int  _limitValue;
 }
 
 @property (nonatomic, readonly, copy) NSString *entityTypeString;

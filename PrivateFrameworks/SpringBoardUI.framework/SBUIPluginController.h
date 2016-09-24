@@ -3,11 +3,15 @@
  */
 
 @interface SBUIPluginController : NSObject <SBPluginBundleController> {
-    <SBUIPluginControllerHost> *_host;
-    BOOL _isVisible;
+    <SBUIPluginControllerHost> * _host;
+    BOOL  _isVisible;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic) <SBUIPluginControllerHost> *host;
+@property (readonly) Class superclass;
 @property (getter=isVisible, nonatomic) BOOL visible;
 
 - (void).cxx_destruct;

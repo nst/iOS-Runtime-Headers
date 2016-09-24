@@ -3,9 +3,9 @@
  */
 
 @interface MPAudioRoutingPicker : UIAlertView <MPAVRoutingControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
-    BOOL _ignoringInteractionEvents;
-    NSArray *_routes;
-    MPAVRoutingController *_routingController;
+    BOOL  _ignoringInteractionEvents;
+    NSArray * _routes;
+    MPAVRoutingController * _routingController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

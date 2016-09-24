@@ -3,9 +3,9 @@
  */
 
 @interface SKUISettingsDescriptionUpdate : NSObject {
-    NSArray *_indexPaths;
-    NSIndexSet *_indexSet;
-    int _updateType;
+    NSArray * _indexPaths;
+    NSIndexSet * _indexSet;
+    int  _updateType;
 }
 
 @property (nonatomic, retain) NSArray *indexPaths;

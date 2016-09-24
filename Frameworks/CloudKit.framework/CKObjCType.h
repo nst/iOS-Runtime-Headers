@@ -3,12 +3,12 @@
  */
 
 @interface CKObjCType : NSObject {
-    NSString *_className;
-    int _code;
-    NSString *_encoding;
-    unsigned int _flags;
-    NSString *_name;
-    unsigned int _size;
+    NSString * _className;
+    int  _code;
+    NSString * _encoding;
+    unsigned int  _flags;
+    NSString * _name;
+    unsigned int  _size;
 }
 
 @property (nonatomic, readonly) NSString *className;

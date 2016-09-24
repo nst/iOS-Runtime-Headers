@@ -3,21 +3,21 @@
  */
 
 @interface HKGradientFillStyle : HKFillStyle {
-    int _fillDirection;
-    float _fillPercentage;
-    UIColor *_firstColor;
-    float _gradientSize;
-    UIColor *_secondColor;
+    int  _fillDirection;
+    double  _fillPercentage;
+    UIColor * _firstColor;
+    double  _gradientSize;
+    UIColor * _secondColor;
 }
 
 @property (nonatomic) int fillDirection;
-@property (nonatomic) float fillPercentage;
+@property (nonatomic) double fillPercentage;
 @property (nonatomic, retain) UIColor *firstColor;
-@property (nonatomic) float gradientSize;
+@property (nonatomic) double gradientSize;
 @property (nonatomic, retain) UIColor *secondColor;
 
 - (void).cxx_destruct;
-- (void)_renderInContext:(struct CGContext { }*)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (void)_renderInContext:(struct CGContext { }*)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 - (BOOL)_useReversedFillDirection;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)fillDirection;

@@ -3,9 +3,9 @@
  */
 
 @interface ATMessageLinkProxyConnection : NSObject <ATMessageLinkObserver, ATMessageLinkProxyConnection, ATMessageLinkRequestHandler, NSStreamDelegate> {
-    NSXPCConnection *_connection;
-    ATMessageLink *_messageLink;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSXPCConnection * _connection;
+    ATMessageLink * _messageLink;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, retain) NSXPCConnection *connection;

@@ -3,32 +3,32 @@
  */
 
 @interface TSCH3DSceneRenderPipeline : TSCH3DRenderPipeline {
-    TSCH3DCamera *mCamera;
-    TSCH3DGLFramebuffer *mFramebuffer;
-    TSCH3DSceneRenderPipeline *mOriginal;
-    NSNumber *mPreserveFramebufferContent;
-    NSNumber *mSamples;
-    NSNumber *mScale;
-    TSCH3DScene *mScene;
-    TSCH3DSceneRenderSetup *mSetup;
-    NSNumber *mSuperSamples;
+    TSCH3DCamera * mCamera;
+    TSCH3DGLFramebuffer * mFramebuffer;
+    TSCH3DSceneRenderPipeline * mOriginal;
+    NSNumber * mPreserveFramebufferContent;
+    NSNumber * mSamples;
+    NSNumber * mScale;
+    TSCH3DScene * mScene;
+    TSCH3DSceneRenderSetup * mSetup;
+    NSNumber * mSuperSamples;
 }
 
 @property (nonatomic, readonly) TSCH3DCamera *camera;
 @property (nonatomic, retain) TSCH3DGLFramebuffer *framebuffer;
 @property (nonatomic, retain) TSCH3DSceneRenderPipeline *original;
 @property (nonatomic) BOOL preserveFramebufferContent;
-@property (nonatomic, readonly) float renderScale;
-@property (nonatomic) float samples;
-@property (nonatomic) float scale;
+@property (nonatomic, readonly) double renderScale;
+@property (nonatomic) double samples;
+@property (nonatomic) double scale;
 @property (nonatomic, retain) TSCH3DScene *scene;
 @property (nonatomic, retain) TSCH3DSceneRenderSetup *setup;
-@property (nonatomic) float superSamples;
+@property (nonatomic) double superSamples;
 
 + (id)pipelineWithProcessor:(id)arg1 session:(id)arg2 scene:(id)arg3;
 
 - (BOOL)activateFramebuffer:(id)arg1;
-- (struct tvec4<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; union { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; })backgroundClearColor;
+- (struct tvec4<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; union { double x_4_1_1; double x_4_1_2; double x_4_1_3; } x4; })backgroundClearColor;
 - (id)baseRecloneWithProcessor:(id)arg1 scene:(id)arg2;
 - (id)baseRecloneWithRetargetProcessor:(id)arg1 scene:(id)arg2;
 - (id)camera;

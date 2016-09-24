@@ -3,12 +3,12 @@
  */
 
 @interface FAFamilyNotifier : NSObject <FAFamilyNotifierRemoteObjectProtocol, NSXPCListenerDelegate> {
-    NSXPCConnection *_conn;
-    NSLock *_connLock;
-    <FAFamilyNotificationDelegate> *_delegate;
-    NSString *_identifier;
-    NSXPCListener *_listener;
-    NSString *_serviceName;
+    NSXPCConnection * _conn;
+    NSLock * _connLock;
+    <FAFamilyNotificationDelegate> * _delegate;
+    NSString * _identifier;
+    NSXPCListener * _listener;
+    NSString * _serviceName;
 }
 
 @property (readonly, copy) NSString *debugDescription;

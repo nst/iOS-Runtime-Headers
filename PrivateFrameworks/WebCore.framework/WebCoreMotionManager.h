@@ -11,7 +11,7 @@
             unsigned int m_keyCount; 
             unsigned int m_deletedCount; 
         } m_impl; 
-    } m_deviceMotionClients;
+    }  m_deviceMotionClients;
     struct HashSet<WebCore::DeviceOrientationClientIOS *, WTF::PtrHash<WebCore::DeviceOrientationClientIOS *>, WTF::HashTraits<WebCore::DeviceOrientationClientIOS *> > { 
         struct HashTable<WebCore::DeviceOrientationClientIOS *, WebCore::DeviceOrientationClientIOS *, WTF::IdentityExtractor, WTF::PtrHash<WebCore::DeviceOrientationClientIOS *>, WTF::HashTraits<WebCore::DeviceOrientationClientIOS *>, WTF::HashTraits<WebCore::DeviceOrientationClientIOS *> > { 
             struct DeviceOrientationClientIOS {} **m_table; 
@@ -20,12 +20,13 @@
             unsigned int m_keyCount; 
             unsigned int m_deletedCount; 
         } m_impl; 
-    } m_deviceOrientationClients;
-    BOOL m_gyroAvailable;
-    BOOL m_headingAvailable;
-    CLLocationManager *m_locationManager;
-    CMMotionManager *m_motionManager;
-    NSTimer *m_updateTimer;
+    }  m_deviceOrientationClients;
+    BOOL  m_gyroAvailable;
+    BOOL  m_headingAvailable;
+    BOOL  m_initialized;
+    CLLocationManager * m_locationManager;
+    CMMotionManager * m_motionManager;
+    NSTimer * m_updateTimer;
 }
 
 + (id)sharedManager;

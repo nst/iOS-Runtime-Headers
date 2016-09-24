@@ -3,8 +3,8 @@
  */
 
 @interface EKRecurrenceMonthDayChooserController : EKRecurrenceGridChooserController {
-    NSMutableSet *_daysOfTheMonthSet;
-    BOOL _prohibitsMultipleDaysInMonthlyRecurrence;
+    NSMutableSet * _daysOfTheMonthSet;
+    BOOL  _prohibitsMultipleDaysInMonthlyRecurrence;
 }
 
 @property (nonatomic) BOOL prohibitsMultipleDaysInMonthlyRecurrence;

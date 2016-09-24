@@ -3,11 +3,11 @@
  */
 
 @interface _CDPSimpleDataPoint : NSObject <_CDPDataPoint> {
-    NSArray *_peopleIdentifiers;
-    NSDate *_timestamp;
-    NSString *_title;
-    BOOL _userIsSender;
-    BOOL _userIsThreadInitiator;
+    NSArray * _peopleIdentifiers;
+    NSDate * _timestamp;
+    NSString * _title;
+    BOOL  _userIsSender;
+    BOOL  _userIsThreadInitiator;
 }
 
 @property (readonly, copy) NSString *debugDescription;

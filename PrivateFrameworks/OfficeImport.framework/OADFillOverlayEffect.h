@@ -3,8 +3,8 @@
  */
 
 @interface OADFillOverlayEffect : OADEffect {
-    int mBlendMode;
-    OADFill *mFill;
+    int  mBlendMode;
+    OADFill * mFill;
 }
 
 - (int)blendMode;

@@ -3,10 +3,10 @@
  */
 
 @interface CNAutocompleteLocalQuery : NSObject <CNCancelable> {
-    CNContactStore *_contactFetcherStore;
-    CNContactStore *_contactStore;
-    <CNAutocompleteLocalQueryDelegate> *_delegate;
-    CNAutocompleteFetchRequest *_request;
+    CNContactStore * _contactFetcherStore;
+    CNContactStore * _contactStore;
+    <CNAutocompleteLocalQueryDelegate> * _delegate;
+    CNAutocompleteFetchRequest * _request;
 }
 
 @property (retain) CNContactStore *contactFetcherStore;

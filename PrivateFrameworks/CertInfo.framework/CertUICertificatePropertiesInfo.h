@@ -3,8 +3,8 @@
  */
 
 @interface CertUICertificatePropertiesInfo : NSObject {
-    NSArray *_sectionTitles;
-    NSArray *_sections;
+    NSArray * _sectionTitles;
+    NSArray * _sections;
 }
 
 @property (nonatomic, retain) NSArray *sectionTitles;

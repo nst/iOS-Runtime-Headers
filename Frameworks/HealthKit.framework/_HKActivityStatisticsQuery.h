@@ -3,14 +3,14 @@
  */
 
 @interface _HKActivityStatisticsQuery : HKQuery {
-    BOOL _deliveredInitial;
-    NSDate *_endDate;
-    id /* block */ _initialResultsHandler;
-    NSDateComponents *_intervalComponents;
-    NSMutableArray *_results;
-    NSDate *_startDate;
-    id /* block */ _updateHandler;
-    double _updateInterval;
+    BOOL  _deliveredInitial;
+    NSDate * _endDate;
+    NSDateComponents * _exerciseIntervalComponents;
+    id /* block */  _initialResultsHandler;
+    NSDateComponents * _moveIntervalComponents;
+    NSDate * _startDate;
+    id /* block */  _updateHandler;
+    double  _updateInterval;
 }
 
 @property (nonatomic, copy) id /* block */ initialResultsHandler;
@@ -24,16 +24,18 @@
 - (void).cxx_destruct;
 - (void)_queue_cleanupAfterDeactivation;
 - (void)_queue_configureQueryServerDataObject:(id)arg1;
-- (void)_queue_deliverActivityStatisticsObjects:(id)arg1 queryUUID:(id)arg2;
+- (void)_queue_deliverActivityMoveStatistics:(id)arg1 exerciseStatistics:(id)arg2 standHoursInfo:(id)arg3 workoutInfo:(id)arg4 forQuery:(id)arg5;
 - (void)_queue_deliverError:(id)arg1;
 - (id /* block */)_queue_errorHandler;
 - (BOOL)_queue_shouldStayAliveAfterInitialResults;
 - (void)_queue_validate;
+- (void)_queue_validateIntervalComponents:(id)arg1;
 - (void)_queue_validateParams;
+- (BOOL)_requiresValidSampleType;
 - (void)_setUpdateInterval:(double)arg1;
 - (double)_updateInterval;
-- (void)deliverActivityStatisticsObjects:(id)arg1 forQuery:(id)arg2;
-- (id)initWithSampleType:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 intervalComponents:(id)arg4 initialResultsHandler:(id /* block */)arg5;
+- (void)deliverActivityMoveStatistics:(id)arg1 exerciseStatistics:(id)arg2 standHoursInfo:(id)arg3 workouts:(id)arg4 forQuery:(id)arg5;
+- (id)initWithStartDate:(id)arg1 endDate:(id)arg2 moveIntervalComponents:(id)arg3 exerciseIntervalComponents:(id)arg4 initialResultsHandler:(id /* block */)arg5;
 - (id /* block */)initialResultsHandler;
 - (void)setInitialResultsHandler:(id /* block */)arg1;
 - (void)setUpdateHandler:(id /* block */)arg1;

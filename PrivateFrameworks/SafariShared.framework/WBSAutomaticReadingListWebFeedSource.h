@@ -3,17 +3,17 @@
  */
 
 @interface WBSAutomaticReadingListWebFeedSource : WBSAutomaticReadingListSocialSource {
-    BOOL _canFetchFeeds;
-    BOOL _cloudSyncEnabled;
-    NSMutableSet *_feedURLs;
-    BOOL _hasStartedFetchingFeeds;
-    NSMutableDictionary *_posts;
-    NSMutableSet *_potentialFeedSubscriptions;
-    NSMutableSet *_subscribedFeeds;
-    NSMutableSet *_subscribedFeedsAddedWhenSyncWasOff;
-    WBSEncryptedCloudKeyValueStore *_subscriptionsKeyValueStore;
-    NSXPCConnection *_webFeedParserConnection;
-    NSObject<OS_dispatch_queue> *_webFeedSourceDataSynchronizationQueue;
+    BOOL  _canFetchFeeds;
+    BOOL  _cloudSyncEnabled;
+    NSMutableSet * _feedURLs;
+    BOOL  _hasStartedFetchingFeeds;
+    NSMutableDictionary * _posts;
+    NSMutableSet * _potentialFeedSubscriptions;
+    NSMutableSet * _subscribedFeeds;
+    NSMutableSet * _subscribedFeedsAddedWhenSyncWasOff;
+    WBSEncryptedCloudKeyValueStore * _subscriptionsKeyValueStore;
+    NSXPCConnection * _webFeedParserConnection;
+    NSObject<OS_dispatch_queue> * _webFeedSourceDataSynchronizationQueue;
 }
 
 @property (nonatomic) BOOL cloudSyncEnabled;

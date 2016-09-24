@@ -3,15 +3,15 @@
  */
 
 @interface SPProtoAudioFilePlayerAssetUpdateMetaData : PBCodable <NSCopying> {
-    NSString *_albumTitle;
-    NSString *_artist;
-    double _duration;
+    NSString * _albumTitle;
+    NSString * _artist;
+    double  _duration;
     struct { 
         unsigned int duration : 1; 
-    } _has;
-    NSString *_identifier;
-    NSString *_title;
-    NSString *_uRL;
+    }  _has;
+    NSString * _identifier;
+    NSString * _title;
+    NSString * _uRL;
 }
 
 @property (nonatomic, retain) NSString *albumTitle;

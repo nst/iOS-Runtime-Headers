@@ -3,34 +3,34 @@
  */
 
 @interface AppEntry : NSObject {
-    unsigned long long _admissions;
-    unsigned long long _negativeHits;
-    unsigned long long _positiveHits;
-    unsigned long long _rejections;
-    unsigned long long _type1Errors;
-    unsigned long long _type2Errors;
+    unsigned int  _admissions;
+    unsigned int  _negativeHits;
+    unsigned int  _positiveHits;
+    unsigned int  _rejections;
+    unsigned int  _type1Errors;
+    unsigned int  _type2Errors;
 }
 
-@property unsigned long long admissions;
-@property unsigned long long negativeHits;
-@property unsigned long long positiveHits;
-@property unsigned long long rejections;
-@property unsigned long long type1Errors;
-@property unsigned long long type2Errors;
+@property unsigned int admissions;
+@property unsigned int negativeHits;
+@property unsigned int positiveHits;
+@property unsigned int rejections;
+@property unsigned int type1Errors;
+@property unsigned int type2Errors;
 
-- (unsigned long long)admissions;
+- (unsigned int)admissions;
 - (id)init;
-- (id)initWithStatistics:(unsigned long long)arg1 negativeHits:(unsigned long long)arg2 type1Errors:(unsigned long long)arg3 type2Errors:(unsigned long long)arg4 admissions:(unsigned long long)arg5 rejections:(unsigned long long)arg6;
-- (unsigned long long)negativeHits;
-- (unsigned long long)positiveHits;
-- (unsigned long long)rejections;
-- (void)setAdmissions:(unsigned long long)arg1;
-- (void)setNegativeHits:(unsigned long long)arg1;
-- (void)setPositiveHits:(unsigned long long)arg1;
-- (void)setRejections:(unsigned long long)arg1;
-- (void)setType1Errors:(unsigned long long)arg1;
-- (void)setType2Errors:(unsigned long long)arg1;
-- (unsigned long long)type1Errors;
-- (unsigned long long)type2Errors;
+- (id)initWithStatistics:(unsigned int)arg1 negativeHits:(unsigned int)arg2 type1Errors:(unsigned int)arg3 type2Errors:(unsigned int)arg4 admissions:(unsigned int)arg5 rejections:(unsigned int)arg6;
+- (unsigned int)negativeHits;
+- (unsigned int)positiveHits;
+- (unsigned int)rejections;
+- (void)setAdmissions:(unsigned int)arg1;
+- (void)setNegativeHits:(unsigned int)arg1;
+- (void)setPositiveHits:(unsigned int)arg1;
+- (void)setRejections:(unsigned int)arg1;
+- (void)setType1Errors:(unsigned int)arg1;
+- (void)setType2Errors:(unsigned int)arg1;
+- (unsigned int)type1Errors;
+- (unsigned int)type2Errors;
 
 @end

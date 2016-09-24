@@ -3,9 +3,9 @@
  */
 
 @interface EKEventDeleteButtonEditItem : EKEventEditItem {
-    UITableViewCell *_cell;
-    SEL _deleteButtonAction;
-    id _deleteButtonTarget;
+    UITableViewCell * _cell;
+    SEL  _deleteButtonAction;
+    id  _deleteButtonTarget;
 }
 
 - (void).cxx_destruct;

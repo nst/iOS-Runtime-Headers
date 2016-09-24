@@ -3,12 +3,12 @@
  */
 
 @interface MCNearbyDiscoveryPeer : NSObject {
-    MCNearbyDiscoveryPeerConnection *_connection;
-    NSNetService *_netService;
-    MCPeerID *_peerID;
-    NSMutableArray *_sendDataBuffer;
-    int _state;
-    MCNearbyDiscoveryPeerConnection *_trialConnection;
+    MCNearbyDiscoveryPeerConnection * _connection;
+    NSNetService * _netService;
+    MCPeerID * _peerID;
+    NSMutableArray * _sendDataBuffer;
+    int  _state;
+    MCNearbyDiscoveryPeerConnection * _trialConnection;
 }
 
 @property (nonatomic, retain) MCNearbyDiscoveryPeerConnection *connection;

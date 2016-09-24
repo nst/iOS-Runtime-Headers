@@ -3,8 +3,8 @@
  */
 
 @interface MFComposeRecipientOriginContext : NSObject {
-    unsigned int _resultType;
-    NSString *_searchTerm;
+    unsigned int  _resultType;
+    NSString * _searchTerm;
 }
 
 @property (nonatomic, readonly) unsigned int resultType;

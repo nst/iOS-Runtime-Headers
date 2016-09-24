@@ -3,7 +3,7 @@
  */
 
 @interface NSURLConnection : NSObject <NSURLAuthenticationChallengeSender> {
-    NSURLConnectionInternal *_internal;
+    NSURLConnectionInternal * _internal;
 }
 
 @property (readonly, copy) NSURLRequest *currentRequest;
@@ -33,7 +33,7 @@
 
 - (id)_cfInternal;
 - (id)_dlInternal;
-- (id)_initWithRequest:(id)arg1 delegate:(id)arg2 usesCache:(BOOL)arg3 maxContentLength:(long long)arg4 startImmediately:(BOOL)arg5 connectionProperties:(id)arg6;
+- (id)_initWithRequest:(id)arg1 delegate:(id)arg2 usesCache:(BOOL)arg3 maxContentLength:(int)arg4 startImmediately:(BOOL)arg5 connectionProperties:(id)arg6;
 - (void)_reportTimingDataToAWD;
 - (void)_resumeLoading;
 - (void)_suspendLoading;
@@ -62,16 +62,6 @@
 // Image: /System/Library/Frameworks/NewsstandKit.framework/NewsstandKit
 
 - (id)newsstandAssetDownload;
-
-// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
-
-+ (void)_geo_sendAsynchronousRequest:(id)arg1 connectionProperties:(id)arg2 completionHandler:(id /* block */)arg3;
-+ (void)_geo_sendAsynchronousRequest:(id)arg1 queue:(id)arg2 connectionProperties:(id)arg3 completionHandler:(id /* block */)arg4;
-+ (void)_geo_sendAttributedAsynchronousRequest:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
-+ (id)_geo_sendAttributedSynchronousRequest:(id)arg1 returningResponse:(id*)arg2 error:(id*)arg3;
-+ (id)_geo_sendSynchronousRequest:(id)arg1 connectionProperties:(id)arg2 returningResponse:(id*)arg3 error:(id*)arg4;
-
-- (id)_geo_initWithAttributedRequest:(id)arg1 delegate:(id)arg2 startImmediately:(BOOL)arg3;
 
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 

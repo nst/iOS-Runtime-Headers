@@ -3,9 +3,9 @@
  */
 
 @interface SKUICollectionDOMFeature : NSObject <SKUIDOMFeature, SKUIJSDOMFeatureCollectionAppBridge> {
-    IKAppContext *_appContext;
-    <SKUICollectionDOMFeatureTargetting> *_collectionTarget;
-    NSString *_featureName;
+    IKAppContext * _appContext;
+    <SKUICollectionDOMFeatureTargetting> * _collectionTarget;
+    NSString * _featureName;
 }
 
 @property (nonatomic, readonly) IKAppContext *appContext;

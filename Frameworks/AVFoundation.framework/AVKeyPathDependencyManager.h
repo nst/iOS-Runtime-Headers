@@ -3,9 +3,9 @@
  */
 
 @interface AVKeyPathDependencyManager : NSObject <AVKeyPathDependencyRegistration> {
-    AVWeakObservableCallbackCancellationHelper *_callbackCancellationHelper;
-    NSMutableSet *_keyPathDependencies;
-    AVWeakReference *_weakReferenceToDependencyHost;
+    AVWeakObservableCallbackCancellationHelper * _callbackCancellationHelper;
+    NSMutableSet * _keyPathDependencies;
+    AVWeakReference * _weakReferenceToDependencyHost;
 }
 
 - (void)addCallbackToCancel:(id)arg1;

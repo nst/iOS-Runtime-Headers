@@ -3,19 +3,32 @@
  */
 
 @interface SGDatabaseJournal : NSObject {
-    NSString *_directoryPath;
-    NSObject<OS_dispatch_queue> *_journalQueue;
-    unsigned long long _serialNumber;
-    NSString *_uuid;
+    SGDatabaseJournalFile * _currentFile;
+    NSString * _directoryPath;
+    BOOL  _inMemory;
+    BOOL  _journaling;
+    NSObject<OS_dispatch_queue> * _queue;
+    unsigned int  _serialNumber;
+    NSString * _uuid;
 }
 
-+ (id /* block */)binderForDictionary:(id)arg1;
+@property (nonatomic, readonly) BOOL journaling;
+
++ (id /* block */)_binderForDictionary:(id)arg1;
++ (id)journalForInMemoryDb;
 + (id)journalWithName:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_executeFile:(id)arg1 onDb:(id)arg2;
+- (void)_addCurrentFileToLog;
+- (void)_clearCurrentFile;
+- (void)_closeCurrentFile;
+- (BOOL)_executeFile:(id)arg1 onDb:(id)arg2 becameLocked:(BOOL*)arg3;
+- (id)_getCurrentFile;
 - (BOOL)deleteAllJournaledQueries;
-- (BOOL)executeQueriesFromAllJournalFilesOnDatabase:(id)arg1;
-- (void)writeQuery:(id)arg1 values:(id)arg2;
+- (BOOL)executeQueriesOnDatabase:(id)arg1;
+- (BOOL)journaling;
+- (void)runQuery:(id)arg1 values:(id)arg2 onDb:(id)arg3;
+- (BOOL)startJournaling;
+- (BOOL)stopJournaling;
 
 @end

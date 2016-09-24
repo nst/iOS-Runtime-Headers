@@ -6,11 +6,11 @@
     struct { 
         unsigned int speed : 1; 
         unsigned int width : 1; 
-    } _has;
-    int _speed;
-    int _vertexCount;
-    int _vertexOffset;
-    int _width;
+    }  _has;
+    int  _speed;
+    int  _vertexCount;
+    int  _vertexOffset;
+    int  _width;
 }
 
 @property (nonatomic) BOOL hasSpeed;
@@ -20,6 +20,7 @@
 @property (nonatomic) int vertexOffset;
 @property (nonatomic) int width;
 
+- (int)StringAsSpeed:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -37,6 +38,7 @@
 - (void)setVertexOffset:(int)arg1;
 - (void)setWidth:(int)arg1;
 - (int)speed;
+- (id)speedAsString:(int)arg1;
 - (int)vertexCount;
 - (int)vertexOffset;
 - (int)width;

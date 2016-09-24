@@ -3,22 +3,22 @@
  */
 
 @interface PLAVPlayerView : UIView {
-    unsigned int _scaleMode;
+    int  _scaleMode;
 }
 
 @property (nonatomic, readonly, retain) AVPlayerLayer *layer;
 @property (nonatomic, retain) AVPlayer *player;
-@property (nonatomic) unsigned int scaleMode;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } videoRect;
+@property (nonatomic) int scaleMode;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } videoRect;
 
 + (Class)layerClass;
 
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)player;
-- (unsigned int)scaleMode;
+- (int)scaleMode;
 - (void)setPlayer:(id)arg1;
-- (void)setScaleMode:(unsigned int)arg1;
-- (void)setScaleMode:(unsigned int)arg1 duration:(double)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })videoRect;
+- (void)setScaleMode:(int)arg1;
+- (void)setScaleMode:(int)arg1 duration:(double)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })videoRect;
 
 @end

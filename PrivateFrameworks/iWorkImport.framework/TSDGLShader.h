@@ -3,12 +3,12 @@
  */
 
 @interface TSDGLShader : NSObject {
-    NSMutableDictionary *_attributeLocations;
-    BOOL _isActive;
-    NSString *_name;
-    unsigned int _programObject;
-    NSMutableDictionary *_uniforms;
-    NSMutableSet *_uniformsNeedingUpdate;
+    NSMutableDictionary * _attributeLocations;
+    BOOL  _isActive;
+    NSString * _name;
+    unsigned int  _programObject;
+    NSMutableDictionary * _uniforms;
+    NSMutableSet * _uniformsNeedingUpdate;
 }
 
 @property (nonatomic, readonly) BOOL isActive;
@@ -19,6 +19,7 @@
 - (void)deactivate;
 - (void)dealloc;
 - (id)description;
+- (id)init;
 - (id)initWithDefaultHorizontalBlurShader;
 - (id)initWithDefaultRandomColorShader;
 - (id)initWithDefaultRandomColorTextureShader;
@@ -47,25 +48,25 @@
 - (void)p_updateUniformsAndAttributesFromShader;
 - (unsigned int)programObject;
 - (void)setCGFloat:(float)arg1 forUniform:(id)arg2;
-- (void)setColor:(struct { float x1; float x2; float x3; float x4; })arg1 forUniform:(id)arg2;
+- (void)setColor:(struct { double x1; double x2; double x3; double x4; })arg1 forUniform:(id)arg2;
 - (void)setGLFloat:(float)arg1 forShaderQualifier:(id)arg2;
 - (void)setGLFloat:(float)arg1 forUniform:(id)arg2;
 - (void)setGLint:(int)arg1 forShaderQualifier:(id)arg2;
 - (void)setGLint:(int)arg1 forUniform:(id)arg2;
 - (void)setInteger:(int)arg1 forShaderQualifier:(id)arg2;
 - (void)setInteger:(int)arg1 forUniform:(id)arg2;
-- (void)setLifeSpan:(struct { float x1; float x2; })arg1 forUniform:(id)arg2;
-- (void)setMat3WithAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 forShaderQualifier:(id)arg2;
-- (void)setMat3WithAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 forUniform:(id)arg2;
-- (void)setMat4WithTransform3D:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg1 forShaderQualifier:(id)arg2;
-- (void)setMat4WithTransform3D:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg1 forUniform:(id)arg2;
+- (void)setLifeSpan:(struct { double x1; double x2; })arg1 forUniform:(id)arg2;
+- (void)setMat3WithAffineTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 forShaderQualifier:(id)arg2;
+- (void)setMat3WithAffineTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 forUniform:(id)arg2;
+- (void)setMat4WithTransform3D:(struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })arg1 forShaderQualifier:(id)arg2;
+- (void)setMat4WithTransform3D:(struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })arg1 forUniform:(id)arg2;
 - (void)setName:(id)arg1;
-- (void)setPoint2D:(struct { float x1; float x2; })arg1 forShaderQualifier:(id)arg2;
-- (void)setPoint2D:(struct { float x1; float x2; })arg1 forUniform:(id)arg2;
-- (void)setPoint3D:(struct { float x1; float x2; float x3; })arg1 forShaderQualifier:(id)arg2;
-- (void)setPoint3D:(struct { float x1; float x2; float x3; })arg1 forUniform:(id)arg2;
-- (void)setPoint4D:(struct { float x1; float x2; float x3; float x4; })arg1 forShaderQualifier:(id)arg2;
-- (void)setPoint4D:(struct { float x1; float x2; float x3; float x4; })arg1 forUniform:(id)arg2;
+- (void)setPoint2D:(struct { double x1; double x2; })arg1 forShaderQualifier:(id)arg2;
+- (void)setPoint2D:(struct { double x1; double x2; })arg1 forUniform:(id)arg2;
+- (void)setPoint3D:(struct { double x1; double x2; double x3; })arg1 forShaderQualifier:(id)arg2;
+- (void)setPoint3D:(struct { double x1; double x2; double x3; })arg1 forUniform:(id)arg2;
+- (void)setPoint4D:(struct { double x1; double x2; double x3; double x4; })arg1 forShaderQualifier:(id)arg2;
+- (void)setPoint4D:(struct { double x1; double x2; double x3; double x4; })arg1 forUniform:(id)arg2;
 - (id)shaderQualifierForUniform:(id)arg1 type:(int)arg2;
 - (void)teardown;
 - (BOOL)validateUniforms;

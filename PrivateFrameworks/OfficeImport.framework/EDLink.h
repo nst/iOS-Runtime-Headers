@@ -3,8 +3,8 @@
  */
 
 @interface EDLink : NSObject {
-    EDCollection *mExternalNames;
-    int mType;
+    EDCollection * mExternalNames;
+    int  mType;
 }
 
 + (id)linkWithType:(int)arg1;

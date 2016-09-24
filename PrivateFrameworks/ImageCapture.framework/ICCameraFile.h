@@ -3,7 +3,7 @@
  */
 
 @interface ICCameraFile : ICCameraItem {
-    void *_fileProperties;
+    void * _fileProperties;
 }
 
 @property (readonly) BOOL burstFavorite;
@@ -11,7 +11,7 @@
 @property (readonly) NSString *burstUUID;
 @property BOOL fetchingMetadata;
 @property BOOL fetchingThumbnail;
-@property long long fileSize;
+@property int fileSize;
 @property (readonly) BOOL hasOverriddenOrientation;
 @property (readonly) BOOL highFramerate;
 @property (retain) NSMutableDictionary *metadata_hidden;
@@ -29,11 +29,11 @@
 - (double)duration;
 - (BOOL)fetchingMetadata;
 - (BOOL)fetchingThumbnail;
-- (long long)fileSize;
+- (int)fileSize;
 - (void)finalize;
 - (void)flushMetadataCache;
 - (void)flushThumbnailCache;
-- (void)handleCommandCompletionNotification:(id)arg1;
+- (id)handleCommandCompletionNotification:(id)arg1;
 - (BOOL)hasMetadata;
 - (BOOL)hasOverriddenOrientation;
 - (BOOL)hasThumbnail;
@@ -48,7 +48,7 @@
 - (void)requestThumbnail;
 - (void)setFetchingMetadata:(BOOL)arg1;
 - (void)setFetchingThumbnail:(BOOL)arg1;
-- (void)setFileSize:(long long)arg1;
+- (void)setFileSize:(int)arg1;
 - (void)setHasMetadata:(BOOL)arg1;
 - (void)setHasThumbnail:(BOOL)arg1;
 - (void)setKeywordPropertiesFromMetadata;

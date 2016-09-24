@@ -3,9 +3,9 @@
  */
 
 @interface OADPatternFill : OADFill {
-    OADColor *mBgColor;
-    OADColor *mFgColor;
-    OADPattern *mPattern;
+    OADColor * mBgColor;
+    OADColor * mFgColor;
+    OADPattern * mPattern;
 }
 
 + (id)defaultProperties;

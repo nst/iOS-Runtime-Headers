@@ -19,7 +19,7 @@
 - (id)uiWebView:(UIWebView *)arg1 identifierForInitialRequest:(NSURLRequest *)arg2 fromDataSource:(WebDataSource *)arg3;
 - (NSArray *)uiWebView:(UIWebView *)arg1 presentationRectsForPreview:(UIViewController *)arg2;
 - (UIImage *)uiWebView:(UIWebView *)arg1 presentationSnapshotForPreview:(UIViewController *)arg2;
-- (BOOL)uiWebView:(UIWebView *)arg1 previewIsAllowedForPosition:(struct CGPoint { float x1; float x2; })arg2;
+- (BOOL)uiWebView:(UIWebView *)arg1 previewIsAllowedForPosition:(struct CGPoint { double x1; double x2; })arg2;
 - (UIViewController *)uiWebView:(UIWebView *)arg1 previewViewControllerForURL:(NSURL *)arg2;
 - (void)uiWebView:(UIWebView *)arg1 printFrameView:(WebFrameView *)arg2;
 - (BOOL)uiWebView:(UIWebView *)arg1 resource:(id)arg2 canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)arg3 forDataSource:(WebDataSource *)arg4;

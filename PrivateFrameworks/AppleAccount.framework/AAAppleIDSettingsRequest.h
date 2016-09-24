@@ -3,9 +3,9 @@
  */
 
 @interface AAAppleIDSettingsRequest : AARequest {
-    ACAccount *_appleAccount;
-    ACAccount *_grandSlamAccount;
-    ACAccountStore *_store;
+    ACAccount * _appleAccount;
+    ACAccount * _grandSlamAccount;
+    ACAccountStore * _store;
 }
 
 + (Class)responseClass;

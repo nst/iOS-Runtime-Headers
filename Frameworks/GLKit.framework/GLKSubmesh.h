@@ -3,12 +3,12 @@
  */
 
 @interface GLKSubmesh : NSObject {
-    GLKMeshBuffer *_elementBuffer;
-    int _elementCount;
-    GLKMesh *_mesh;
-    unsigned int _mode;
-    NSString *_name;
-    unsigned int _type;
+    GLKMeshBuffer * _elementBuffer;
+    int  _elementCount;
+    GLKMesh * _mesh;
+    unsigned int  _mode;
+    NSString * _name;
+    unsigned int  _type;
 }
 
 @property (nonatomic, readonly) GLKMeshBuffer *elementBuffer;

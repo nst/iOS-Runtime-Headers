@@ -3,8 +3,8 @@
  */
 
 @interface GKSplittingDataSource : GKCollectionViewDataSource {
-    NSMutableDictionary *_sectionToSectionInfo;
-    GKBasicCollectionViewDataSource *_underlyingDataSource;
+    NSMutableDictionary * _sectionToSectionInfo;
+    GKBasicCollectionViewDataSource * _underlyingDataSource;
 }
 
 @property (nonatomic, readonly) int sectionCount;

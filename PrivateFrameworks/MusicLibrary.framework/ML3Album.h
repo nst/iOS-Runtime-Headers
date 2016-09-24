@@ -8,7 +8,7 @@
 
 + (id)_albumArtistProtocolItemWithTrackProperties:(id)arg1 inLibrary:(id)arg2;
 + (id)allProperties;
-+ (id)countingQueryForBaseQuery:(id)arg1 countProperty:(id)arg2 forIdentifier:(long long)arg3;
++ (id)countingQueryForBaseQuery:(id)arg1 countProperty:(id)arg2 forIdentifier:(int)arg3;
 + (id)databaseTable;
 + (id)defaultOrderingTerms;
 + (id)foreignPropertyForProperty:(id)arg1 entityClass:(Class)arg2;
@@ -24,7 +24,6 @@
 
 - (id)multiverseIdentifier;
 - (id)protocolItem;
-- (void)updateRepresentativeItem:(id)arg1 inLibrary:(id)arg2;
 - (void)updateTrackValues:(id)arg1;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer

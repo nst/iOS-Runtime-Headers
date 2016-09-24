@@ -3,22 +3,24 @@
  */
 
 @interface AXLanguageManager : NSObject {
-    NSCharacterSet *_commonCharacters;
-    AXDialectMap *_dialectForCurrentLocale;
-    AXDialectMap *_dialectForSystemLanguage;
-    NSArray *_langMaps;
-    NSLocale *_userLocale;
+    NSCharacterSet * _commonCharacters;
+    AXDialectMap * _dialectForCurrentLocale;
+    AXDialectMap * _dialectForSystemLanguage;
+    NSArray * _langMaps;
+    NSLocale * _userLocale;
 }
 
 @property (nonatomic, retain) NSCharacterSet *commonCharacters;
 @property (nonatomic) AXDialectMap *dialectForCurrentLocale;
 @property (nonatomic) AXDialectMap *dialectForSystemLanguage;
+@property (nonatomic, readonly) AXDialectMap *dialectForUserLocale;
 @property (nonatomic, retain) NSArray *langMaps;
 @property (nonatomic, readonly) NSString *systemLanguageID;
 @property (nonatomic, copy) NSLocale *userLocale;
 
 + (id)commonPunctuationCharacters;
 + (id)dialectForAlternativeVoiceIdentifier:(id)arg1;
++ (id)doNotTranslateWords;
 + (id)nameForAlternativeVoiceIdentifier:(id)arg1;
 + (id)nonlocalizedNameForLanguage:(id)arg1;
 + (id)sharedInstance;
@@ -39,6 +41,7 @@
 - (id)dialectForCurrentLocale;
 - (id)dialectForLanguageID:(id)arg1;
 - (id)dialectForSystemLanguage;
+- (id)dialectForUserLocale;
 - (id)dialectThatCanSpeakCharacter:(unsigned short)arg1;
 - (id)dialectsThatCanSpeakCharacter:(unsigned short)arg1;
 - (id)init;

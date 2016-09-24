@@ -3,8 +3,8 @@
  */
 
 @interface MPPlayableContentCallbackContext : NSObject {
-    NSIndexPath *_indexPath;
-    BOOL _serviced;
+    NSIndexPath * _indexPath;
+    BOOL  _serviced;
 }
 
 @property (nonatomic, readonly) NSIndexPath *indexPath;

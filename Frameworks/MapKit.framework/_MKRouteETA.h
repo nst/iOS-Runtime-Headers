@@ -3,24 +3,29 @@
  */
 
 @interface _MKRouteETA : NSObject {
-    double _distance;
-    double _responseTime;
-    unsigned int _transportType;
-    double _travelTime;
+    double  _distance;
+    double  _responseTime;
+    int  _status;
+    unsigned int  _transportType;
+    double  _travelTime;
 }
 
 @property (nonatomic) double distance;
 @property (nonatomic, readonly) double responseTime;
+@property (nonatomic) int status;
 @property (nonatomic) unsigned int transportType;
 @property (nonatomic) double travelTime;
 
 + (id)routeETAWithDistance:(double)arg1 travelTime:(double)arg2 transportType:(unsigned int)arg3;
++ (id)routeETAWithDistance:(double)arg1 travelTime:(double)arg2 transportType:(unsigned int)arg3 status:(int)arg4;
 
 - (double)distance;
 - (double)responseTime;
 - (void)setDistance:(double)arg1;
+- (void)setStatus:(int)arg1;
 - (void)setTransportType:(unsigned int)arg1;
 - (void)setTravelTime:(double)arg1;
+- (int)status;
 - (unsigned int)transportType;
 - (double)travelTime;
 

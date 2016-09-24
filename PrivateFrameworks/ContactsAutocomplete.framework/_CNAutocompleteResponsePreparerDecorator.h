@@ -3,7 +3,7 @@
  */
 
 @interface _CNAutocompleteResponsePreparerDecorator : CNAutocompleteQueryResponsePreparer {
-    CNAutocompleteQueryResponsePreparer *_preparer;
+    CNAutocompleteQueryResponsePreparer * _preparer;
 }
 
 @property (readonly) CNAutocompleteQueryResponsePreparer *preparer;

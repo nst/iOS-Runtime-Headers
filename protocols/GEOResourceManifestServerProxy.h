@@ -5,15 +5,20 @@
 
 @required
 
+- (void)activateResourceScale:(int)arg1;
+- (void)activateResourceScenario:(int)arg1;
 - (GEOActiveTileGroup *)activeTileGroup;
 - (NSString *)authToken;
 - (void)closeConnection;
 - (GEOResourceManifestConfiguration *)configuration;
+- (void)deactivateResourceScale:(int)arg1;
+- (void)deactivateResourceScenario:(int)arg1;
 - (<GEOResourceManifestServerProxyDelegate> *)delegate;
 - (void)forceUpdate:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)getResourceManifestWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, GEOResourceManifestDownload *, NSError *, void*
 - (id)initWithDelegate:(id <GEOResourceManifestServerProxyDelegate>)arg1 configuration:(GEOResourceManifestConfiguration *)arg2;
 - (void)openConnection;
+- (void)performOpportunisticResourceLoading;
 - (oneway void)resetActiveTileGroup;
 - (NSObject<OS_dispatch_queue> *)serverQueue;
 - (oneway void)setActiveTileGroupIdentifier:(NSNumber *)arg1;

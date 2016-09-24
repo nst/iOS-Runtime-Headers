@@ -3,10 +3,10 @@
  */
 
 @interface NSMachPort : NSPort {
-    id _delegate;
-    unsigned int _flags;
-    unsigned int _machPort;
-    unsigned int _reserved;
+    id  _delegate;
+    unsigned int  _flags;
+    unsigned int  _machPort;
+    unsigned int  _reserved;
 }
 
 @property (readonly) unsigned int machPort;
@@ -21,9 +21,7 @@
 - (unsigned long)_cfTypeID;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
-- (void)dealloc;
 - (id)delegate;
-- (void)finalize;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithMachPort:(unsigned int)arg1;

@@ -3,14 +3,14 @@
  */
 
 @interface RadioRequest : NSObject {
-    BOOL _asynchronousBackgroundRequest;
-    BOOL _cachedResponse;
-    int _errorCode;
-    NSObject<OS_dispatch_queue> *_queue;
-    RadioRequestContext *_requestContext;
-    double _retryInterval;
-    int _status;
-    NSDictionary *_unparsedResponseDictionary;
+    BOOL  _asynchronousBackgroundRequest;
+    BOOL  _cachedResponse;
+    int  _errorCode;
+    NSObject<OS_dispatch_queue> * _queue;
+    RadioRequestContext * _requestContext;
+    double  _retryInterval;
+    int  _status;
+    NSDictionary * _unparsedResponseDictionary;
 }
 
 @property (getter=isAsynchronousBackgroundRequest, nonatomic) BOOL asynchronousBackgroundRequest;

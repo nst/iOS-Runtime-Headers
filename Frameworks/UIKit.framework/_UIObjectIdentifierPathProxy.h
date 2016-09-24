@@ -3,7 +3,7 @@
  */
 
 @interface _UIObjectIdentifierPathProxy : NSObject {
-    NSString *_identifierPath;
+    NSString * _identifierPath;
 }
 
 - (void)dealloc;

@@ -3,7 +3,7 @@
  */
 
 @interface HDCodableRoutineLocationResponse : PBCodable <NSCopying> {
-    HDCodableRoutineLocation *_locationOfInterest;
+    HDCodableRoutineLocation * _locationOfInterest;
 }
 
 @property (nonatomic, readonly) BOOL hasLocationOfInterest;

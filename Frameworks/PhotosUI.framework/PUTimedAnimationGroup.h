@@ -3,9 +3,9 @@
  */
 
 @interface PUTimedAnimationGroup : PUAnimationGroup {
-    BOOL _areAnimationsPaused;
-    double _beginTime;
-    double _pausedElapsedTime;
+    BOOL  _areAnimationsPaused;
+    double  _beginTime;
+    double  _pausedElapsedTime;
 }
 
 @property (nonatomic) double beginTime;

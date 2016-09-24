@@ -15,5 +15,6 @@
 - (NSString *)queryLine;
 - (GEOSearchCategory *)searchCategory;
 - (void)sendFeedback;
+- (int)type;
 
 @end

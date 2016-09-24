@@ -3,18 +3,18 @@
  */
 
 @interface GKTurnBasedMatchDetailHeaderView : UICollectionReusableView {
-    GKTextBubbleControl *_actionBubble;
-    SEL _bubbleAction;
-    id _bubbleTarget;
-    NSLayoutConstraint *_bubbleToLastConstraint;
-    BOOL _compactHeight;
-    GKLabel *_infoLabel;
-    NSString *_infoText;
-    GKLabel *_lastTurnLabel;
-    GKTurnBasedMatch *_match;
-    NSLayoutConstraint *_playingToTopConstraint;
-    GKLabel *_playingWithLabel;
-    GKLabel *_startedLabel;
+    GKTextBubbleControl * _actionBubble;
+    SEL  _bubbleAction;
+    id  _bubbleTarget;
+    NSLayoutConstraint * _bubbleToLastConstraint;
+    BOOL  _compactHeight;
+    GKLabel * _infoLabel;
+    NSString * _infoText;
+    GKLabel * _lastTurnLabel;
+    GKTurnBasedMatch * _match;
+    NSLayoutConstraint * _playingToTopConstraint;
+    GKLabel * _playingWithLabel;
+    GKLabel * _startedLabel;
 }
 
 @property (nonatomic, retain) GKTextBubbleControl *actionBubble;
@@ -48,7 +48,7 @@
 - (void)establishConstraints;
 - (id)infoLabel;
 - (id)infoText;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)lastTurnLabel;
 - (id)match;
 - (id)playingToTopConstraint;

@@ -3,10 +3,10 @@
  */
 
 @interface NSAutoreleasePool : NSObject {
-    void *_reserved;
-    void *_reserved2;
-    void *_reserved3;
-    void *_token;
+    void * _reserved;
+    void * _reserved2;
+    void * _reserved3;
+    void * _token;
 }
 
 + (void)addObject:(id)arg1;

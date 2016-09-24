@@ -3,9 +3,9 @@
  */
 
 @interface CoreDAVItemParserMapping : NSObject {
-    NSString *_name;
-    NSString *_nameSpace;
-    Class _parseClass;
+    NSString * _name;
+    NSString * _nameSpace;
+    Class  _parseClass;
 }
 
 @property (nonatomic, retain) NSString *name;

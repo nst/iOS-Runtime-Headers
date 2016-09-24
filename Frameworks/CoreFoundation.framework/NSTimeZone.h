@@ -66,11 +66,26 @@
 - (id)initWithCoder:(id)arg1;
 - (id)replacementObjectForPortCoder:(id)arg1;
 
+// Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
+
++ (BOOL)vs_isTimeZoneSet;
+
 // Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
 
 - (id)descriptionForDate:(id)arg1;
 - (BOOL)isEquivalentTo:(id)arg1;
 - (BOOL)isUTC;
+
+// Image: /System/Library/PrivateFrameworks/ClockKit.framework/ClockKit
+
+- (id)JSONObjectRepresentation;
+- (id)initWithJSONObjectRepresentation:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
+
+- (BOOL)_navigation_hasSameOffsetFromGMTAsTimeZone:(id)arg1;
+- (BOOL)_navigation_isEquivalentToTimeZone:(id)arg1 forDate:(id)arg2;
+- (BOOL)_navigation_isEquivalentToTimeZone:(id)arg1 forDates:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
 

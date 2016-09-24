@@ -2,21 +2,27 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIImageViewExtendedStorage : NSObject {
-    double _animationDuration;
-    NSArray *_animationImages;
-    int _animationRepeatCount;
-    int _defaultRenderingMode;
-    UIImage *_displayedHighlightedImage;
-    UIImage *_displayedImage;
-    int _drawMode;
-    BOOL _highlighted;
-    NSArray *_highlightedAnimationImages;
-    UIImage *_highlightedImage;
-    UIImage *_image;
-    BOOL _masksTemplateImages;
-    unsigned int _templateImageRenderingEffects;
+@interface _UIImageViewExtendedStorage : NSObject <CAAnimationDelegate> {
+    CIContext * _CIContext;
+    double  _animationDuration;
+    NSArray * _animationImages;
+    int  _animationRepeatCount;
+    int  _defaultRenderingMode;
+    UIImage * _displayedHighlightedImage;
+    UIImage * _displayedImage;
+    int  _drawMode;
+    BOOL  _highlighted;
+    NSArray * _highlightedAnimationImages;
+    UIImage * _highlightedImage;
+    UIImage * _image;
+    BOOL  _masksTemplateImages;
+    unsigned int  _templateImageRenderingEffects;
 }
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;

@@ -3,13 +3,13 @@
  */
 
 @interface XBApplicationLaunchCompatibilityInfo : NSObject <BSXPCCoding, NSCoding> {
-    NSString *_bundleContainerPath;
-    NSString *_bundleIdentifier;
-    NSString *_bundlePath;
-    XBLaunchInterface *_defaultInterface;
-    NSArray *_launchInterfaces;
-    BOOL _launchesOpaque;
-    NSString *_sandboxPath;
+    NSString * _bundleContainerPath;
+    NSString * _bundleIdentifier;
+    NSString * _bundlePath;
+    XBLaunchInterface * _defaultInterface;
+    NSArray * _launchInterfaces;
+    BOOL  _launchesOpaque;
+    NSString * _sandboxPath;
 }
 
 @property (nonatomic, readonly) BOOL allowsSavingLaunchImages;
@@ -17,7 +17,7 @@
 @property (nonatomic, copy) NSString *bundleIdentifier;
 @property (nonatomic, copy) NSString *bundlePath;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, readonly) XBLaunchInterface *defaultLaunchInterface;
+@property (nonatomic, readonly, copy) XBLaunchInterface *defaultLaunchInterface;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly, copy) NSArray *launchInterfaces;
@@ -25,25 +25,17 @@
 @property (nonatomic, copy) NSString *sandboxPath;
 @property (readonly) Class superclass;
 
-+ (id)_compatibilityInfoForAppInfo:(id)arg1;
-+ (id)_snapshotPredicateForRequest:(id)arg1;
-+ (void)removeCompatibilityInfoForBundleIdentifier:(id)arg1;
++ (id)compatibilityInfoForAppInfo:(id)arg1;
 
-- (void)_generateLaunchImageForRequest:(id)arg1 remoteContextID:(unsigned int)arg2 snapshotProvider:(id /* block */)arg3 completion:(id /* block */)arg4;
-- (void)_writeOutChanges;
-- (void)addLaunchImageForRequest:(id)arg1 remoteContextID:(unsigned int)arg2 withCompletion:(id /* block */)arg3;
 - (BOOL)allowsSavingLaunchImages;
 - (id)bundleContainerPath;
 - (id)bundleIdentifier;
 - (id)bundlePath;
-- (void)configureSnapshot:(id)arg1 forLaunchRequest:(id)arg2;
-- (void)configureSnapshot:(id)arg1 withLaunchImageForRequest:(id)arg2 remoteContextID:(unsigned int)arg3 completion:(id /* block */)arg4;
 - (void)dealloc;
 - (id)defaultLaunchInterface;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (id)existingLaunchImageForRequest:(id)arg1;
 - (id)initWithBundle:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;

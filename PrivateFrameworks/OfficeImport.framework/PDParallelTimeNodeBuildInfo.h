@@ -3,11 +3,11 @@
  */
 
 @interface PDParallelTimeNodeBuildInfo : NSObject {
-    double mDelay;
-    double mDuration;
-    int mIterateType;
-    PDAnimationTarget *mTarget;
-    id mValue;
+    double  mDelay;
+    double  mDuration;
+    int  mIterateType;
+    PDAnimationTarget * mTarget;
+    id  mValue;
 }
 
 @property double delay;

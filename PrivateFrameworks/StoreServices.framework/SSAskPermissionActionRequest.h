@@ -3,7 +3,7 @@
  */
 
 @interface SSAskPermissionActionRequest : SSRequest <SSXPCCoding> {
-    NSURL *_url;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

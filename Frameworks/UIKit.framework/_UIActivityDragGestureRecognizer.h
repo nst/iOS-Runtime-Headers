@@ -3,20 +3,20 @@
  */
 
 @interface _UIActivityDragGestureRecognizer : UILongPressGestureRecognizer <UIAutoscrollDelegate, _UIScrollNotification> {
-    UIAutoscroll *_autoscroll;
+    UIAutoscroll * _autoscroll;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _draggingInsets;
-    UIScrollView *_targetScrollView;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _draggingInsets;
+    UIScrollView * _targetScrollView;
 }
 
 @property (nonatomic, retain) UIAutoscroll *autoscroll;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } draggingInsets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } draggingInsets;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIScrollView *targetScrollView;
@@ -25,15 +25,15 @@
 - (void)_didScroll;
 - (void)_updateBackdropMaskViewsInScrollView:(id)arg1;
 - (id)autoscroll;
-- (int)autoscrollDirectionsForPoint:(struct CGPoint { float x1; float x2; })arg1 inView:(id)arg2;
+- (int)autoscrollDirectionsForPoint:(struct CGPoint { double x1; double x2; })arg1 inView:(id)arg2;
 - (void)autoscrollWillNotStart;
 - (void)beginAutoscrollAndUpdateDirectionIfNeeded;
 - (void)cancelAutoscroll;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })draggingInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })draggingInsets;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)reset;
 - (void)setAutoscroll:(id)arg1;
-- (void)setDraggingInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setDraggingInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setState:(int)arg1;
 - (void)setTargetScrollView:(id)arg1;
 - (id)targetScrollView;

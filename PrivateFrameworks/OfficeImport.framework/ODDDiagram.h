@@ -3,9 +3,9 @@
  */
 
 @interface ODDDiagram : OADDrawable {
-    ODDColorTransform *mColorTransform;
-    ODDNodePoint *mDocumentPoint;
-    ODDStyleDefinition *mStyleDefinition;
+    ODDColorTransform * mColorTransform;
+    ODDNodePoint * mDocumentPoint;
+    ODDStyleDefinition * mStyleDefinition;
 }
 
 - (id)colorTransform;

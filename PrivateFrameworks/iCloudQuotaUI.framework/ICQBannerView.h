@@ -3,13 +3,13 @@
  */
 
 @interface ICQBannerView : UIView <UITextViewDelegate> {
-    NSArray *_activeConstraints;
-    <ICQBannerViewDelegate> *_delegate;
-    UIButton *_dismissButton;
-    BOOL _hasDismissButton;
-    ICQOffer *_offer;
-    _ICQTextView *_textView;
-    NSLayoutConstraint *_textViewHeightConstraint;
+    NSArray * _activeConstraints;
+    <ICQBannerViewDelegate> * _delegate;
+    UIButton * _dismissButton;
+    BOOL  _hasDismissButton;
+    ICQOffer * _offer;
+    _ICQTextView * _textView;
+    NSLayoutConstraint * _textViewHeightConstraint;
 }
 
 @property (nonatomic, retain) NSArray *activeConstraints;
@@ -33,14 +33,14 @@
 - (id)dismissButton;
 - (BOOL)hasDismissButton;
 - (BOOL)hasTitle;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isRTL;
 - (void)layoutSubviews;
 - (id)messageAttributes;
 - (id)offer;
 - (int)semanticContentAttribute;
 - (void)setActiveConstraints:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHasDismissButton:(BOOL)arg1;
 - (void)setOffer:(id)arg1;

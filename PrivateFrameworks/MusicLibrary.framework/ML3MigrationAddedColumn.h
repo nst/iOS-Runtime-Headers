@@ -3,10 +3,10 @@
  */
 
 @interface ML3MigrationAddedColumn : NSObject {
-    NSString *_columnName;
-    NSString *_foreignColumnName;
-    NSString *_foreignTableName;
-    NSString *_joinColumnName;
+    NSString * _columnName;
+    NSString * _foreignColumnName;
+    NSString * _foreignTableName;
+    NSString * _joinColumnName;
 }
 
 @property (nonatomic, readonly) NSString *columnName;

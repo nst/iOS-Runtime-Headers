@@ -3,10 +3,10 @@
  */
 
 @interface CoreDAVValidatePrincipalsTaskGroup : CoreDAVTaskGroup <CoreDAVTaskDelegate> {
-    BOOL _authError;
-    NSMutableSet *_principalURLs;
-    NSURL *_urlBeingExamined;
-    NSMutableSet *_urlsToExamine;
+    BOOL  _authError;
+    NSMutableSet * _principalURLs;
+    NSURL * _urlBeingExamined;
+    NSMutableSet * _urlsToExamine;
 }
 
 @property (readonly, copy) NSString *debugDescription;

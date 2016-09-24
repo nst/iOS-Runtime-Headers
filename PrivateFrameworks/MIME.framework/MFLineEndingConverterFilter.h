@@ -3,7 +3,7 @@
  */
 
 @interface MFLineEndingConverterFilter : MFBaseFilterDataConsumer {
-    BOOL _lastCR;
+    BOOL  _lastCR;
 }
 
 - (int)appendData:(id)arg1;

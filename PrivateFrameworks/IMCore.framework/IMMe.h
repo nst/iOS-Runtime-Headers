@@ -3,14 +3,14 @@
  */
 
 @interface IMMe : NSObject {
-    NSArray *_abEmails;
-    NSString *_abFirstName;
-    NSString *_abFullName;
-    NSMutableArray *_abIMHandles;
-    NSString *_abLastName;
-    NSString *_abNickname;
-    NSMutableArray *_loginIMHandles;
-    IMPerson *_person;
+    NSArray * _abEmails;
+    NSString * _abFirstName;
+    NSString * _abFullName;
+    NSMutableArray * _abIMHandles;
+    NSString * _abLastName;
+    NSString * _abNickname;
+    NSMutableArray * _loginIMHandles;
+    IMPerson * _person;
 }
 
 @property (nonatomic, readonly) IMHandle *bestIMHandle;
@@ -28,11 +28,11 @@
 + (id)imHandleForService:(id)arg1;
 + (id)me;
 
+- (void).cxx_destruct;
 - (id)_imHandlesWithIDs:(id)arg1 onAccount:(id)arg2;
 - (BOOL)addIMHandle:(id)arg1;
 - (BOOL)addLoginIMHandle:(id)arg1;
 - (id)bestIMHandle;
-- (void)dealloc;
 - (id)description;
 - (id)email;
 - (id)emails;

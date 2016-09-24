@@ -3,9 +3,9 @@
  */
 
 @interface SKUISettingsObjectStore : NSObject {
-    NSMutableOrderedSet *_allObjects;
-    BOOL _dirty;
-    NSMutableOrderedSet *_visibleObjects;
+    NSMutableOrderedSet * _allObjects;
+    BOOL  _dirty;
+    NSMutableOrderedSet * _visibleObjects;
 }
 
 - (void).cxx_destruct;

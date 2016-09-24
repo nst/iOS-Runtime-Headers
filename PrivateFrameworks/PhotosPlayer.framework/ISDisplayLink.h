@@ -3,9 +3,9 @@
  */
 
 @interface ISDisplayLink : NSObject {
-    id /* block */ _completionHandler;
-    CADisplayLink *_displayLink;
-    id /* block */ _updateHandler;
+    id /* block */  _completionHandler;
+    CADisplayLink * _displayLink;
+    id /* block */  _updateHandler;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;

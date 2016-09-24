@@ -3,11 +3,11 @@
  */
 
 @interface BSDispatchSource : NSObject {
-    id /* block */ _cancelHandler;
-    id /* block */ _eventHandler;
-    BOOL _invalidated;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_source> *_source;
+    id /* block */  _cancelHandler;
+    id /* block */  _eventHandler;
+    BOOL  _invalidated;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_source> * _source;
 }
 
 @property (nonatomic, copy) id /* block */ cancelHandler;

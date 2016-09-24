@@ -3,8 +3,8 @@
  */
 
 @interface OADSolidFill : OADFill {
-    OADColor *mColor;
-    BOOL mIsColorOverridden;
+    OADColor * mColor;
+    BOOL  mIsColorOverridden;
 }
 
 + (id)blackFill;

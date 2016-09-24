@@ -3,18 +3,18 @@
  */
 
 @interface PLWallpaperImageViewController : PLUIEditImageViewController <SBFLegibilitySettingsProviderDelegate> {
-    BOOL __statusBarHidden;
-    int __statusBarStyle;
-    unsigned int _didSetImageMode;
-    BOOL _isWallpaperEdit;
-    PLWallpaperNavigationItem *_navItem;
-    NSArray *_navigationToolbarItems;
-    int _previewType;
-    int _previewVariant;
-    BOOL _saveWallpaperData;
-    int _wallpaperMode;
-    SBSUIWallpaperPreviewViewController *_wallpaperPreviewViewController;
-    NSString *_wallpaperTitle;
+    BOOL  __statusBarHidden;
+    int  __statusBarStyle;
+    unsigned int  _didSetImageMode;
+    BOOL  _isWallpaperEdit;
+    PLWallpaperNavigationItem * _navItem;
+    NSArray * _navigationToolbarItems;
+    int  _previewType;
+    int  _previewVariant;
+    BOOL  _saveWallpaperData;
+    int  _wallpaperMode;
+    SBSUIWallpaperPreviewViewController * _wallpaperPreviewViewController;
+    NSString * _wallpaperTitle;
 }
 
 @property (setter=_setStatusBarHidden:, nonatomic) BOOL _statusBarHidden;
@@ -43,7 +43,7 @@
 - (unsigned int)_tileAutoresizingMask;
 - (void)_updatePreviewFrame:(id)arg1;
 - (void)_updateTitles;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_viewFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_viewFrame;
 - (BOOL)clientIsWallpaper;
 - (int)cropOverlayMode;
 - (void)cropOverlayWasCancelled:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface ISDeferredDealloc : NSObject {
-    NSObject<OS_dispatch_queue> *_deferredDeallocQueue;
+    NSObject<OS_dispatch_queue> * _deferredDeallocQueue;
 }
 
 + (id)sharedInstance;

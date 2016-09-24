@@ -3,8 +3,8 @@
  */
 
 @interface SUScriptModalDialogResponse : NSObject {
-    int _buttonIndex;
-    NSString *_textFieldValue;
+    int  _buttonIndex;
+    NSString * _textFieldValue;
 }
 
 @property (nonatomic) int buttonIndex;

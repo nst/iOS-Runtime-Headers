@@ -7,15 +7,18 @@
 + (id)avalanchePathExtension;
 + (id)defaultFileExtensionForAssetType:(short)arg1;
 + (id)diagnosticPathExtension;
++ (id)filteredVideoPathForRecordedLivePhotoVideoPath:(id)arg1;
 + (id)incomingAssetFilenameDelimiter;
 + (id)incomingDirectoryPath;
 + (id)incomingDirectoryPathForPhotoStream;
++ (BOOL)isLivePhotoFilteredVideoPath:(id)arg1;
 + (id)largeThumbnailInflightPathExtension;
 + (id)preferredFileExtensionForType:(id)arg1;
++ (id)recordedVideoPathForFilteredLivePhotoVideoPath:(id)arg1;
 + (id)sharedDCIMWriter;
 + (id)uniqueIncomingPathForAssetWithUUID:(id)arg1 andExtension:(id)arg2 isPhotoStream:(BOOL)arg3;
 + (void)writeableDataForImage:(id)arg1 previewImage:(id)arg2 imageData:(id)arg3 imageUTIType:(struct __CFString { }*)arg4 exifProperties:(id)arg5 imageOrientation:(int)arg6 thumbnailDataOut:(id*)arg7 imageUTITypeOut:(id*)arg8 exifPropertiesOut:(id*)arg9 isJPEGOut:(BOOL*)arg10 imageDataOut:(id*)arg11;
-+ (void)writeableDataForImageData:(id)arg1 thumbnailDataOut:(id*)arg2 imageUTITypeOut:(id*)arg3 exifPropertiesOut:(id*)arg4 isJPEGOut:(BOOL*)arg5 imageDataOut:(id*)arg6;
++ (void)writeableDataForImageData:(id)arg1 imageUTIType:(struct __CFString { }*)arg2 thumbnailDataOut:(id*)arg3 imageUTITypeOut:(id*)arg4 exifPropertiesOut:(id*)arg5 isJPEGOut:(BOOL*)arg6 imageDataOut:(id*)arg7;
 
 - (id)_cameraAssetExtensionForType:(short)arg1;
 - (void)_writeJPEGFromIOSurface:(struct __IOSurface { }*)arg1 toPath:(id)arg2 orientation:(int)arg3;

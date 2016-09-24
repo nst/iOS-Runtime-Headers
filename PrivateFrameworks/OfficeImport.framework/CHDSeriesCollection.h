@@ -3,7 +3,7 @@
  */
 
 @interface CHDSeriesCollection : EDSortedCollection {
-    CHDChart *mChart;
+    CHDChart * mChart;
 }
 
 + (id)seriesCollectionWithChart:(id)arg1;

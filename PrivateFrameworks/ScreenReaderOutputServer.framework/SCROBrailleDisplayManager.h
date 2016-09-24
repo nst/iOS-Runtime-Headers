@@ -3,43 +3,44 @@
  */
 
 @interface SCROBrailleDisplayManager : NSObject <SCROBrailleDisplayDelegate> {
-    int _alertPriority;
-    double _alertTimeout;
-    struct __CFRunLoopTimer { } *_alertTimer;
-    BOOL _automaticBrailleTranslation;
-    NSAttributedString *_blankUIString;
-    SCRODBluetoothBrailleDisplay *_bluetoothBrailleDisplay;
-    NSLock *_contentLock;
-    int _contractionMode;
-    SCROBrailleFormatter *_currentBrailleFormatter;
-    <SCROSBrailleDisplayManagerDelegate> *_delegate;
-    NSMutableDictionary *_detectedIOElementsDict;
-    struct __CFDictionary { } *_displayConfigurationDict;
-    NSMutableArray *_displayModeStack;
-    SCROBrailleEventDispatcher *_eventDispatcher;
-    SCROBrailleDisplayHistory *_history;
-    int _inputAccessMode;
-    int _inputContractionMode;
-    BOOL _inputEightDot;
-    BOOL _isValid;
-    BOOL _lineDescriptorDisplayCallbackEnabled;
-    NSAttributedString *_lineString;
-    NSMutableSet *_loadedIOElements;
-    NSAttributedString *_mainString;
-    SCROBrailleDisplayManagedQueue *_managedDisplayQueue;
-    struct __CFRunLoop { } *_runLoop;
-    BOOL _shouldBatchUpdates;
-    BOOL _showDotsSevenAndEight;
-    BOOL _showEightDot;
+    int  _alertPriority;
+    double  _alertTimeout;
+    struct __CFRunLoopTimer { } * _alertTimer;
+    BOOL  _automaticBrailleTranslation;
+    NSAttributedString * _blankUIString;
+    SCRODBluetoothBrailleDisplay * _bluetoothBrailleDisplay;
+    NSLock * _contentLock;
+    int  _contractionMode;
+    SCROBrailleFormatter * _currentBrailleFormatter;
+    <SCROSBrailleDisplayManagerDelegate> * _delegate;
+    NSMutableDictionary * _detectedIOElementsDict;
+    struct __CFDictionary { } * _displayConfigurationDict;
+    NSMutableArray * _displayModeStack;
+    SCROBrailleEventDispatcher * _eventDispatcher;
+    SCROBrailleDisplayHistory * _history;
+    int  _inputAccessMode;
+    int  _inputContractionMode;
+    BOOL  _inputEightDot;
+    BOOL  _isValid;
+    BOOL  _lineDescriptorDisplayCallbackEnabled;
+    NSAttributedString * _lineString;
+    NSMutableSet * _loadedIOElements;
+    NSAttributedString * _mainString;
+    SCROBrailleDisplayManagedQueue * _managedDisplayQueue;
+    struct __CFRunLoop { } * _runLoop;
+    BOOL  _shouldBatchUpdates;
+    BOOL  _showDotsSevenAndEight;
+    BOOL  _showEightDot;
     struct { 
         NSData *aggregatedData; 
         int virtualAlignment; 
         int masterStatusCellIndex; 
         BOOL currentAnnouncementUnread; 
         BOOL anyUnreadAnnouncements; 
-    } _status;
-    NSAttributedString *_statusString;
-    SCROBrailleDisplay *_stealthBrailleDisplay;
+    }  _status;
+    NSAttributedString * _statusString;
+    SCROBrailleDisplay * _stealthBrailleDisplay;
+    int  _uiStringCachedLineOffset;
 }
 
 @property (readonly, copy) NSString *debugDescription;

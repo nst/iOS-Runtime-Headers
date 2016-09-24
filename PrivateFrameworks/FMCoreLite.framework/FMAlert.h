@@ -3,19 +3,19 @@
  */
 
 @interface FMAlert : NSObject <NSSecureCoding> {
-    NSDictionary *_additionalSettings;
-    NSUUID *_alertId;
-    id /* block */ _alternateButtonAction;
-    NSString *_alternateButtonTitle;
-    unsigned int _category;
-    id /* block */ _defaultButtonAction;
-    NSString *_defaultButtonTitle;
-    BOOL _dismissMsgOnLock;
-    BOOL _dismissMsgOnUnlock;
-    NSString *_msgText;
-    NSString *_msgTitle;
-    BOOL _showMsgInLockScreen;
-    double _timeout;
+    NSDictionary * _additionalSettings;
+    NSUUID * _alertId;
+    id /* block */  _alternateButtonAction;
+    NSString * _alternateButtonTitle;
+    unsigned int  _category;
+    id /* block */  _defaultButtonAction;
+    NSString * _defaultButtonTitle;
+    BOOL  _dismissMsgOnLock;
+    BOOL  _dismissMsgOnUnlock;
+    NSString * _msgText;
+    NSString * _msgTitle;
+    BOOL  _showMsgInLockScreen;
+    double  _timeout;
 }
 
 @property (nonatomic, retain) NSDictionary *additionalSettings;

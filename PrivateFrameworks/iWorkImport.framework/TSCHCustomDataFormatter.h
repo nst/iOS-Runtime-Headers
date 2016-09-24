@@ -3,9 +3,9 @@
  */
 
 @interface TSCHCustomDataFormatter : NSObject <TSCHDataFormatter, TSCHDataFormatterPersistableStyleObject> {
-    TSUCustomFormat *mCustomFormat;
-    NSUUID *mCustomFormatListKey;
-    int mFormatType;
+    TSUCustomFormat * mCustomFormat;
+    NSUUID * mCustomFormatListKey;
+    int  mFormatType;
 }
 
 @property (nonatomic, readonly) TSUCustomFormat *customFormat;

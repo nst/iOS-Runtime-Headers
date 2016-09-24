@@ -2,17 +2,17 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDTimeInformationMonitor : NSObject <HAPTimerDelegate> {
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    NSHashTable *_delegates;
-    HAPTimer *_expirationTimer;
+@interface HMDTimeInformationMonitor : NSObject <HMFTimerDelegate> {
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    NSHashTable * _delegates;
+    HMFTimer * _expirationTimer;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) NSHashTable *delegates;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) HAPTimer *expirationTimer;
+@property (nonatomic, readonly) HMFTimer *expirationTimer;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 

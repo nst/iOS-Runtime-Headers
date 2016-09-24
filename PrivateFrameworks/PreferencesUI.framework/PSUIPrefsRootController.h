@@ -3,7 +3,7 @@
  */
 
 @interface PSUIPrefsRootController : PSRootController {
-    PSUIPrefsListController *_rootListController;
+    PSUIPrefsListController * _rootListController;
 }
 
 + (void)playRingtoneWithIdentifier:(id)arg1 loop:(BOOL)arg2;

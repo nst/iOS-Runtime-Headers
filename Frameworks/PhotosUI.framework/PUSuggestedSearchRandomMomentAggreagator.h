@@ -3,8 +3,8 @@
  */
 
 @interface PUSuggestedSearchRandomMomentAggreagator : PUSuggestedSearch {
-    PLSearchIndexDateFormatter *_dateFormatter;
-    NSMapTable *_searches;
+    PLSearchIndexDateFormatter * _dateFormatter;
+    NSMapTable * _searches;
 }
 
 - (void).cxx_destruct;

@@ -3,16 +3,18 @@
  */
 
 @interface CKSQLitePool : NSObject {
-    NSMutableArray *_dbs;
-    BOOL _drainScheduled;
-    id /* block */ _factory;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableArray * _dbs;
+    BOOL  _drainScheduled;
+    id /* block */  _factory;
+    NSObject<OS_dispatch_queue> * _queue;
+    BOOL  _traced;
 }
 
 @property (nonatomic, retain) NSMutableArray *dbs;
 @property (nonatomic) BOOL drainScheduled;
 @property (nonatomic, readonly) id /* block */ factory;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic) BOOL traced;
 
 - (void).cxx_destruct;
 - (id)_acquireDatabaseWithError:(id*)arg1;
@@ -21,6 +23,7 @@
 - (id)_openDatabaseWithError:(id*)arg1;
 - (void)_scheduleDrain;
 - (id)acquireDatabase:(BOOL)arg1;
+- (id)acquireDatabaseWithError:(id*)arg1;
 - (void)closeAll;
 - (id)dbs;
 - (BOOL)drainScheduled;
@@ -34,5 +37,7 @@
 - (void)setDbs:(id)arg1;
 - (void)setDrainScheduled:(BOOL)arg1;
 - (void)setQueue:(id)arg1;
+- (void)setTraced:(BOOL)arg1;
+- (BOOL)traced;
 
 @end

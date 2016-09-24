@@ -2,6 +2,14 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicForYouRecommendationsResponse : MPUModelResponse
+@interface MusicForYouRecommendationsResponse : MPModelResponse {
+    MPChangeDetails * _changeDetails;
+}
+
+@property (nonatomic, retain) MPChangeDetails *changeDetails;
+
+- (void).cxx_destruct;
+- (id)changeDetails;
+- (void)setChangeDetails:(id)arg1;
 
 @end

@@ -3,16 +3,16 @@
  */
 
 @interface WDStyleSheet : NSObject {
-    WDCharacterProperties *mDefaultCharacterProperties;
-    WDStyle *mDefaultCharacterStyle;
-    WDStyle *mDefaultListStyle;
-    WDParagraphProperties *mDefaultParagraphProperties;
-    WDStyle *mDefaultParagraphStyle;
-    WDStyle *mDefaultTableStyle;
-    WDDocument *mDocument;
-    NSMutableDictionary *mIdDictionaryForName;
-    NSMutableDictionary *mStyleDictionary;
-    NSMutableArray *mStylesInOrder;
+    WDCharacterProperties * mDefaultCharacterProperties;
+    WDStyle * mDefaultCharacterStyle;
+    WDStyle * mDefaultListStyle;
+    WDParagraphProperties * mDefaultParagraphProperties;
+    WDStyle * mDefaultParagraphStyle;
+    WDStyle * mDefaultTableStyle;
+    WDDocument * mDocument;
+    NSMutableDictionary * mIdDictionaryForName;
+    NSMutableDictionary * mStyleDictionary;
+    NSMutableArray * mStylesInOrder;
 }
 
 - (void)addStyle:(id)arg1 name:(id)arg2;

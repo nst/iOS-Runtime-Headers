@@ -3,12 +3,12 @@
  */
 
 @interface _BSDefaultObserver : NSObject <BSDefaultObserver> {
-    int _debounceCounter;
-    BSAbstractDefaultDomain *_defaults;
-    NSArray *_defaultsToObserve;
-    id /* block */ _fireBlock;
-    BOOL _invalidated;
-    NSObject<OS_dispatch_queue> *_queue;
+    unsigned int  _debounceCounter;
+    BSAbstractDefaultDomain * _defaults;
+    NSArray * _defaultsToObserve;
+    id /* block */  _fireBlock;
+    BOOL  _invalidated;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

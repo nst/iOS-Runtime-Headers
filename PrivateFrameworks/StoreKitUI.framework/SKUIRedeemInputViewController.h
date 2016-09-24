@@ -3,12 +3,12 @@
  */
 
 @interface SKUIRedeemInputViewController : SKUIRedeemStepViewController <UITextFieldDelegate> {
-    int _category;
-    SKUIRedeemTextField *_field;
-    UIImageView *_imageView;
-    NSString *_initialCode;
-    SKUIRedeemITunesPassLockup *_passbookLockup;
-    UIBarButtonItem *_redeemButton;
+    int  _category;
+    SKUIRedeemTextField * _field;
+    UIImageView * _imageView;
+    NSString * _initialCode;
+    SKUIRedeemITunesPassLockup * _passbookLockup;
+    UIBarButtonItem * _redeemButton;
 }
 
 @property (nonatomic, readonly) int category;

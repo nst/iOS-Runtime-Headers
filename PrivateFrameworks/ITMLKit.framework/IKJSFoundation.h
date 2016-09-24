@@ -3,10 +3,10 @@
  */
 
 @interface IKJSFoundation : NSObject {
-    IKAppContext *_appContext;
-    NSMutableDictionary *_dateFormatterCache;
-    <IKAppDeviceConfig> *_deviceConfig;
-    NSMutableDictionary *_jsTimers;
+    IKAppContext * _appContext;
+    NSMutableDictionary * _dateFormatterCache;
+    <IKAppDeviceConfig> * _deviceConfig;
+    NSMutableDictionary * _jsTimers;
 }
 
 @property (nonatomic) IKAppContext *appContext;

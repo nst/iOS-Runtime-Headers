@@ -12,15 +12,15 @@
         unsigned int mbufMemReleased : 1; 
         unsigned int sockAtMBLimit : 1; 
         unsigned int sockMBcnt : 1; 
-    } _has;
-    unsigned long long _mbuf16KBTotal;
-    unsigned long long _mbuf256BTotal;
-    unsigned long long _mbuf2KBTotal;
-    unsigned long long _mbuf4KBTotal;
-    unsigned long long _mbufDrainCount;
-    unsigned long long _mbufMemReleased;
-    unsigned long long _sockAtMBLimit;
-    unsigned long long _sockMBcnt;
+    }  _has;
+    unsigned long long  _mbuf16KBTotal;
+    unsigned long long  _mbuf256BTotal;
+    unsigned long long  _mbuf2KBTotal;
+    unsigned long long  _mbuf4KBTotal;
+    unsigned long long  _mbufDrainCount;
+    unsigned long long  _mbufMemReleased;
+    unsigned long long  _sockAtMBLimit;
+    unsigned long long  _sockMBcnt;
 }
 
 @property (nonatomic) BOOL hasMbuf16KBTotal;

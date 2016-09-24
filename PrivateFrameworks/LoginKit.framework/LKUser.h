@@ -2,27 +2,38 @@
    Image: /System/Library/PrivateFrameworks/LoginKit.framework/LoginKit
  */
 
-@interface LKUser : UMMutableUser <NSSecureCoding> {
-    NSString *_identifier;
-    NSURL *_largeImageURL;
-    NSDate *_lastOnlineAuth;
-    NSURL *_mediumImageURL;
-    NSMutableDictionary *_namingSimilarityInfoByClassID;
-    NSString *_passwordType;
+@interface LKUser : UMMutableUser <NSCopying, NSSecureCoding> {
+    NSString * _identifier;
+    NSURL * _largeImageURL;
+    NSDate * _lastOnlineAuth;
+    NSURL * _localLargeImageURL;
+    NSURL * _localMediumImageURL;
+    NSURL * _mediumImageURL;
+    NSMutableDictionary * _namingSimilarityInfoByClassID;
+    NSString * _passwordType;
+    int  _retryCount;
+    BOOL  mAttemptedPhoneticTranscription;
+    NSString * mPhoneticName;
 }
 
 @property (retain) NSString *identifier;
 @property (retain) NSURL *largeImageURL;
 @property (retain) NSDate *lastOnlineAuth;
+@property (nonatomic, retain) NSURL *localLargeImageURL;
+@property (nonatomic, retain) NSURL *localMediumImageURL;
 @property (retain) NSURL *mediumImageURL;
 @property (retain) NSMutableDictionary *namingSimilarityInfoByClassID;
 @property (retain) NSString *passwordType;
+@property (nonatomic, retain) NSString *phoneticName;
+@property (nonatomic) int retryCount;
 
++ (void)setAutogeneratesPhoneticNameWithLocale:(id)arg1;
 + (BOOL)supportsSecureCoding;
 + (id)userFromDictionary:(id)arg1;
 + (id)userFromUMUser:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)identifier;
@@ -31,14 +42,23 @@
 - (BOOL)isEqualToLKUser:(id)arg1;
 - (id)largeImageURL;
 - (id)lastOnlineAuth;
+- (id)localLargeImageURL;
+- (id)localMediumImageURL;
 - (id)mediumImageURL;
 - (id)namingSimilarityInfoByClassID;
 - (id)passwordType;
+- (id)phoneticName;
+- (int)retryCount;
+- (void)setDiffUMUserPropertiesFromUMUser:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setLargeImageURL:(id)arg1;
 - (void)setLastOnlineAuth:(id)arg1;
+- (void)setLocalLargeImageURL:(id)arg1;
+- (void)setLocalMediumImageURL:(id)arg1;
 - (void)setMediumImageURL:(id)arg1;
 - (void)setNamingSimilarityInfoByClassID:(id)arg1;
 - (void)setPasswordType:(id)arg1;
+- (void)setPhoneticName:(id)arg1;
+- (void)setRetryCount:(int)arg1;
 
 @end

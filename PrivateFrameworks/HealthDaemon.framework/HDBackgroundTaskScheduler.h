@@ -3,10 +3,10 @@
  */
 
 @interface HDBackgroundTaskScheduler : NSObject {
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    NSMutableDictionary *_clients;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_tasksQueuedForDelivery;
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    NSMutableDictionary * _clients;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableDictionary * _tasksQueuedForDelivery;
 }
 
 - (void).cxx_destruct;

@@ -9,8 +9,8 @@
         unsigned int framebufferWidth; 
         unsigned int framebufferHeight; 
         BOOL ditherEnabled; 
-        BOOL expandedClipRange; 
-    } _private;
+        BOOL openGLModeEnabled; 
+    }  _private;
 }
 
 + (id)renderPassDescriptor;
@@ -21,16 +21,18 @@
 - (void)dealloc;
 - (id)depthAttachment;
 - (id)description;
-- (BOOL)expandedClipRange;
 - (unsigned int)framebufferHeight;
 - (unsigned int)framebufferWidth;
 - (unsigned int)hash;
 - (id)init;
+- (BOOL)isDitherEnabled;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)openGLModeEnabled;
 - (void)setDepthAttachment:(id)arg1;
-- (void)setExpandedClipRange:(BOOL)arg1;
+- (void)setDitherEnabled:(BOOL)arg1;
 - (void)setFramebufferHeight:(unsigned int)arg1;
 - (void)setFramebufferWidth:(unsigned int)arg1;
+- (void)setOpenGLModeEnabled:(BOOL)arg1;
 - (void)setStencilAttachment:(id)arg1;
 - (void)setVisibilityResultBuffer:(id)arg1;
 - (id)stencilAttachment;

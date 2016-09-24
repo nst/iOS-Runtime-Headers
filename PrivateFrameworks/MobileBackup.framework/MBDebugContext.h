@@ -3,7 +3,7 @@
  */
 
 @interface MBDebugContext : NSObject {
-    NSMutableDictionary *_dictionary;
+    NSMutableDictionary * _dictionary;
 }
 
 @property (nonatomic, retain) NSDate *simulatedDate;

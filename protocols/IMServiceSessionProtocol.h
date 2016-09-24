@@ -11,7 +11,7 @@
 - (void)autoLogin;
 - (void)autoReconnect;
 - (void)autoReconnectWithAccount:(IMDAccount *)arg1;
-- (void)cancelVCRequestWithPerson:(NSString *)arg1 properties:(NSDictionary *)arg2 conference:(NSString *)arg3;
+- (void)cancelVCRequestWithPerson:(NSString *)arg1 properties:(NSDictionary *)arg2 conference:(NSString *)arg3 reason:(NSNumber *)arg4;
 - (void)changeGroup:(NSString *)arg1 changes:(NSDictionary *)arg2;
 - (void)changeGroups:(NSDictionary *)arg1;
 - (void)declineInvitationToChatID:(NSString *)arg1 identifier:(NSString *)arg2 style:(unsigned char)arg3;

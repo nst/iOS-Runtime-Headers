@@ -3,7 +3,7 @@
  */
 
 @interface ODDStyleDefinition : NSObject {
-    NSMutableDictionary *mStyleLabels;
+    NSMutableDictionary * mStyleLabels;
 }
 
 - (void)dealloc;

@@ -3,12 +3,12 @@
  */
 
 @interface AVChapter : NSObject <NSCopying> {
-    double _duration;
-    UIImage *_image;
-    id /* block */ _imageBlock;
-    unsigned int _number;
-    double _startTime;
-    NSString *_title;
+    double  _duration;
+    UIImage * _image;
+    id /* block */  _imageBlock;
+    unsigned int  _number;
+    double  _startTime;
+    NSString * _title;
 }
 
 @property (readonly) double duration;

@@ -3,7 +3,7 @@
  */
 
 @interface PSUIToneController : PSViewController <TKTonePickerViewControllerDelegate, TKVibrationPickerViewControllerDelegate> {
-    TKTonePickerViewController *_tonePickerViewController;
+    TKTonePickerViewController * _tonePickerViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

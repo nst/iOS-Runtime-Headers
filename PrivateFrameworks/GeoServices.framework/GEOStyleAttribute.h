@@ -6,9 +6,9 @@
     struct { 
         unsigned int key : 1; 
         unsigned int value : 1; 
-    } _has;
-    unsigned int _key;
-    unsigned int _value;
+    }  _has;
+    unsigned int  _key;
+    unsigned int  _value;
 }
 
 @property (nonatomic) BOOL hasKey;

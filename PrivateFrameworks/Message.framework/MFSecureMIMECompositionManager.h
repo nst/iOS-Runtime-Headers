@@ -3,25 +3,25 @@
  */
 
 @interface MFSecureMIMECompositionManager : NSObject {
-    NSMutableDictionary *_certificatesByRecipient;
-    <MFSecureMIMECompositionManagerDelegate> *_delegate;
-    struct __SecIdentity { } *_encryptionIdentity;
-    MFError *_encryptionIdentityError;
-    int _encryptionPolicy;
-    int _encryptionStatus;
-    unsigned int _encryptionStatusSemaphore;
-    NSMutableDictionary *_errorsByRecipient;
-    BOOL _invalidated;
-    NSLock *_lock;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableSet *_recipients;
-    MailAccount *_sendingAccount;
-    NSString *_sendingAddress;
-    struct __SecIdentity { } *_signingIdentity;
-    MFError *_signingIdentityError;
-    int _signingPolicy;
-    int _signingStatus;
-    unsigned int _signingStatusSemaphore;
+    NSMutableDictionary * _certificatesByRecipient;
+    <MFSecureMIMECompositionManagerDelegate> * _delegate;
+    struct __SecIdentity { } * _encryptionIdentity;
+    MFError * _encryptionIdentityError;
+    int  _encryptionPolicy;
+    int  _encryptionStatus;
+    unsigned int  _encryptionStatusSemaphore;
+    NSMutableDictionary * _errorsByRecipient;
+    BOOL  _invalidated;
+    NSLock * _lock;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableSet * _recipients;
+    MailAccount * _sendingAccount;
+    NSString * _sendingAddress;
+    struct __SecIdentity { } * _signingIdentity;
+    MFError * _signingIdentityError;
+    int  _signingPolicy;
+    int  _signingStatus;
+    unsigned int  _signingStatusSemaphore;
 }
 
 @property <MFSecureMIMECompositionManagerDelegate> *delegate;

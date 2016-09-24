@@ -3,7 +3,7 @@
  */
 
 @interface AVExternalProtectionMonitor : NSObject {
-    AVExternalProtectionMonitorInternal *_monitor;
+    AVExternalProtectionMonitorInternal * _monitor;
 }
 
 @property (nonatomic, readonly) int externalProtectionState;

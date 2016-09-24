@@ -3,23 +3,23 @@
  */
 
 @interface PUAlbumPickerViewController : UIViewController <PUSessionInfoObserver> {
-    PUAlbumListViewController *__albumListViewController;
-    PUAlbumPickerSessionInfo *_albumPickerSessionInfo;
-    PHCollectionList *_collectionList;
-    id /* block */ _completionHandler;
-    UINavigationController *_contentNavigationController;
-    PUAlbumPickerViewControllerSpec *_spec;
+    PUAlbumListViewController * __albumListViewController;
+    PUAlbumPickerSessionInfo * _albumPickerSessionInfo;
+    PHCollectionList * _collectionList;
+    id /* block */  _completionHandler;
+    UINavigationController * _contentNavigationController;
+    PUAlbumPickerViewControllerSpec * _spec;
 }
 
 @property (setter=_setAlbumListViewController:, nonatomic, retain) PUAlbumListViewController *_albumListViewController;
-@property (nonatomic, retain) PUAlbumPickerSessionInfo *albumPickerSessionInfo;
+@property (setter=_setSessionInfo:, nonatomic, retain) PUAlbumPickerSessionInfo *albumPickerSessionInfo;
 @property (nonatomic, retain) PHCollectionList *collectionList;
 @property (nonatomic, copy) id /* block */ completionHandler;
-@property (nonatomic, retain) UINavigationController *contentNavigationController;
+@property (setter=_setContentNavigationController:, nonatomic, retain) UINavigationController *contentNavigationController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, retain) PUAlbumPickerViewControllerSpec *spec;
+@property (setter=_setSpec:, nonatomic, retain) PUAlbumPickerViewControllerSpec *spec;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

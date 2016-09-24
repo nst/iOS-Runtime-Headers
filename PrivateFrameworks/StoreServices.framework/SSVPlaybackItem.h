@@ -3,7 +3,7 @@
  */
 
 @interface SSVPlaybackItem : NSObject {
-    NSDictionary *_itemDictionary;
+    NSDictionary * _itemDictionary;
 }
 
 @property (nonatomic, readonly) NSArray *assets;

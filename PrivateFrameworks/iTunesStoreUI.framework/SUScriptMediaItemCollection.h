@@ -3,9 +3,9 @@
  */
 
 @interface SUScriptMediaItemCollection : SUScriptObject {
-    NSArray *_items;
-    SUScriptMediaItem *_representativeItem;
-    BOOL _watchingLibrary;
+    NSArray * _items;
+    SUScriptMediaItem * _representativeItem;
+    BOOL  _watchingLibrary;
 }
 
 @property (readonly) int count;

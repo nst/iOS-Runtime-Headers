@@ -3,8 +3,8 @@
  */
 
 @interface GKScoreChallengeInternal : GKChallengeInternal {
-    GKLeaderboardInternal *_leaderboard;
-    GKScoreInternal *_score;
+    GKLeaderboardInternal * _leaderboard;
+    GKScoreInternal * _score;
 }
 
 @property (nonatomic, retain) GKLeaderboardInternal *leaderboard;

@@ -3,20 +3,22 @@
  */
 
 @interface MCNearbyServiceBrowser : NSObject <NSNetServiceBrowserDelegate, NSNetServiceDelegate> {
-    <MCNearbyServiceBrowserDelegate> *_delegate;
-    NSString *_formattedServiceType;
-    NSMutableDictionary *_invites;
-    BOOL _isBrowsing;
-    MCPeerID *_myPeerID;
-    NSMutableDictionary *_netServices;
-    NSNetServiceBrowser *_networkBrowser;
-    int _outgoingInviteID;
-    NSMutableDictionary *_peers;
-    NSString *_serviceType;
-    NSObject<OS_dispatch_queue> *_syncQueue;
-    BOOL _wasBrowsing;
+    BOOL  _AWDLDisabled;
+    <MCNearbyServiceBrowserDelegate> * _delegate;
+    NSString * _formattedServiceType;
+    NSMutableDictionary * _invites;
+    BOOL  _isBrowsing;
+    MCPeerID * _myPeerID;
+    NSMutableDictionary * _netServices;
+    NSNetServiceBrowser * _networkBrowser;
+    int  _outgoingInviteID;
+    NSMutableDictionary * _peers;
+    NSString * _serviceType;
+    NSObject<OS_dispatch_queue> * _syncQueue;
+    BOOL  _wasBrowsing;
 }
 
+@property (getter=isAWDLDisabled, nonatomic) BOOL AWDLDisabled;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MCNearbyServiceBrowserDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -45,6 +47,7 @@
 - (id)initWithPeer:(id)arg1 serviceType:(id)arg2;
 - (void)invitePeer:(id)arg1 toSession:(id)arg2 withContext:(id)arg3 timeout:(double)arg4;
 - (id)invites;
+- (BOOL)isAWDLDisabled;
 - (BOOL)isBrowsing;
 - (id)myPeerID;
 - (void)netService:(id)arg1 didUpdateTXTRecordData:(id)arg2;
@@ -62,6 +65,7 @@
 - (id)peers;
 - (id)rebuildUserDiscoveryInfoFromTXTRecordDictionary:(id)arg1;
 - (id)serviceType;
+- (void)setAWDLDisabled:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFormattedServiceType:(id)arg1;
 - (void)setInvites:(id)arg1;

@@ -3,9 +3,9 @@
  */
 
 @interface PUWallpaperActivity : PUActivity {
-    BOOL __needsUpdateWallpaperModificationAllowed;
-    BOOL __wallpaperModificationAllowed;
-    UIViewController *_wallpaperActivityViewController;
+    BOOL  __needsUpdateWallpaperModificationAllowed;
+    BOOL  __wallpaperModificationAllowed;
+    UIViewController * _wallpaperActivityViewController;
 }
 
 @property (setter=_setNeedsUpdateWallpaperModificationAllowed:, nonatomic) BOOL _needsUpdateWallpaperModificationAllowed;

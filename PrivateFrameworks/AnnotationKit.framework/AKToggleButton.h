@@ -3,10 +3,10 @@
  */
 
 @interface AKToggleButton : UIButton {
-    UIColor *_selectedColor;
-    BOOL _shouldTintNormalImage;
-    BOOL _showsBackgroundColor;
-    UIImage *_templateImage;
+    UIColor * _selectedColor;
+    BOOL  _shouldTintNormalImage;
+    BOOL  _showsBackgroundColor;
+    UIImage * _templateImage;
 }
 
 @property (nonatomic, retain) UIColor *selectedColor;
@@ -21,7 +21,7 @@
 - (void)_setSelectedStateColorImage;
 - (void)_touchCommitted:(id)arg1;
 - (void)_updateSelectionColorsAnimated:(BOOL)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 templateImage:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 templateImage:(id)arg2;
 - (id)selectedColor;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setImage:(id)arg1 forState:(unsigned int)arg2;

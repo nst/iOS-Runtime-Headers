@@ -3,9 +3,9 @@
  */
 
 @interface PSUIAdvertisingRestrictionsController : PSUIAdvertisingController {
-    PSSpecifier *_allowedGroup;
-    id _effectiveSettingsChangedObserver;
-    id _restrictionsChangedObserver;
+    PSSpecifier * _allowedGroup;
+    id  _effectiveSettingsChangedObserver;
+    id  _restrictionsChangedObserver;
 }
 
 @property (nonatomic, retain) id effectiveSettingsChangedObserver;

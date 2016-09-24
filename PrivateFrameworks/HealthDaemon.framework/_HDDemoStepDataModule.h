@@ -3,9 +3,9 @@
  */
 
 @interface _HDDemoStepDataModule : _HDDemoDataModule {
-    double _nextDistance;
-    double _nextFireInterval;
-    unsigned int _nextStepCount;
+    double  _nextDistance;
+    double  _nextFireInterval;
+    unsigned int  _nextStepCount;
 }
 
 - (void)_getDelayBeforeNextStepData:(double*)arg1 stepCount:(unsigned int*)arg2 distance:(double*)arg3;

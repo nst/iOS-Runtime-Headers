@@ -3,14 +3,14 @@
  */
 
 @interface MusicSearchHintsViewController : UITableViewController <MusicClientContextConsuming> {
-    BOOL _appendRadioTabParameter;
-    NSString *_baseHintsURLString;
-    MusicClientContext *_clientContext;
-    SKUICompletionList *_completionList;
-    <MusicSearchHintsViewControllerDelegate> *_delegate;
-    SSVLoadURLOperation *_loadOperation;
-    NSOperationQueue *_operationQueue;
-    UISearchBar *_searchBar;
+    BOOL  _appendRadioTabParameter;
+    NSString * _baseHintsURLString;
+    MusicClientContext * _clientContext;
+    SKUICompletionList * _completionList;
+    <MusicSearchHintsViewControllerDelegate> * _delegate;
+    SSVLoadURLOperation * _loadOperation;
+    NSOperationQueue * _operationQueue;
+    UISearchBar * _searchBar;
 }
 
 @property (nonatomic) BOOL appendRadioTabParameter;

@@ -3,9 +3,9 @@
  */
 
 @interface MRPendingMessageQueue : NSObject {
-    unsigned int _lowPriorityMessagesCount;
-    unsigned int _maxLowPriorityMessagesAllowed;
-    NSMutableArray *_messages;
+    unsigned int  _lowPriorityMessagesCount;
+    unsigned int  _maxLowPriorityMessagesAllowed;
+    NSMutableArray * _messages;
 }
 
 - (void)_purge;

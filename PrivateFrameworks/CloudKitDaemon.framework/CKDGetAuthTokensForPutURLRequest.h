@@ -3,9 +3,9 @@
  */
 
 @interface CKDGetAuthTokensForPutURLRequest : CKDURLRequest {
-    NSMapTable *_MMCSItemsByRecordIDs;
-    NSMapTable *_recordIDsByRequestIDs;
-    BOOL _useEncryption;
+    NSMapTable * _MMCSItemsByRecordIDs;
+    NSMapTable * _recordIDsByRequestIDs;
+    BOOL  _useEncryption;
 }
 
 @property (nonatomic, readonly) NSMapTable *MMCSItemsByRecordIDs;

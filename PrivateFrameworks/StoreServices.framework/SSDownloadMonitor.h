@@ -3,10 +3,10 @@
  */
 
 @interface SSDownloadMonitor : NSObject {
-    SSXPCConnection *_connection;
-    <SSDownloadMonitorDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
+    SSXPCConnection * _connection;
+    <SSDownloadMonitorDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
 }
 
 @property <SSDownloadMonitorDelegate> *delegate;

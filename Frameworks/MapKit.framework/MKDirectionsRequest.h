@@ -3,22 +3,22 @@
  */
 
 @interface MKDirectionsRequest : NSObject <NSCopying> {
-    NSArray *_additionalTransportTypesRequested;
-    NSDate *_arrivalDate;
-    GEOAutomobileOptions *_automobileOptions;
-    NSDate *_departureDate;
-    MKMapItem *_destination;
-    BOOL _includeBasicRoutePoints;
-    BOOL _includeDistanceInETA;
-    BOOL _includeEntryPoints;
-    BOOL _includeTrafficIncidents;
-    BOOL _includeTravelTimes;
-    BOOL _includeZilchRoutePoints;
-    BOOL _requestsAlternateRoutes;
-    MKMapItem *_source;
-    GEOTransitOptions *_transitOptions;
-    unsigned int _transportType;
-    GEOWalkingOptions *_walkingOptions;
+    NSArray * _additionalTransportTypesRequested;
+    NSDate * _arrivalDate;
+    GEOAutomobileOptions * _automobileOptions;
+    NSDate * _departureDate;
+    MKMapItem * _destination;
+    BOOL  _includeBasicRoutePoints;
+    BOOL  _includeDistanceInETA;
+    BOOL  _includeEntryPoints;
+    BOOL  _includeTrafficIncidents;
+    BOOL  _includeTravelTimes;
+    BOOL  _includeZilchRoutePoints;
+    BOOL  _requestsAlternateRoutes;
+    MKMapItem * _source;
+    GEOTransitOptions * _transitOptions;
+    unsigned int  _transportType;
+    GEOWalkingOptions * _walkingOptions;
 }
 
 @property (nonatomic, readonly) BOOL _includeBasicRoutePoints;
@@ -51,6 +51,7 @@
 - (BOOL)_includeZilchRoutePoints;
 - (id)_mapkit_initWithAllTransportTypesSource:(id)arg1 destination:(id)arg2 arrivalDate:(id)arg3;
 - (id)_mapkit_initWithAllTransportTypesSource:(id)arg1 destination:(id)arg2 departureDate:(id)arg3;
+- (id)_mapkit_initWithDictionaryRepresentation:(id)arg1;
 - (id)_mapkit_initWithSource:(id)arg1 destination:(id)arg2 transportType:(unsigned int)arg3 arrivalDate:(id)arg4;
 - (id)_mapkit_initWithSource:(id)arg1 destination:(id)arg2 transportType:(unsigned int)arg3 arrivalDate:(id)arg4 includeTravelTimes:(BOOL)arg5 includeTrafficIncidents:(BOOL)arg6 includeEntryPoints:(BOOL)arg7 includeRoutePoints:(BOOL)arg8;
 - (id)_mapkit_initWithSource:(id)arg1 destination:(id)arg2 transportType:(unsigned int)arg3 departureDate:(id)arg4;

@@ -3,8 +3,8 @@
  */
 
 @interface BKSProcessAssertionUpdateEvent : BKSProcessAssertionEvent {
-    unsigned int _flags;
-    NSString *_name;
+    unsigned int  _flags;
+    NSString * _name;
 }
 
 @property (nonatomic) unsigned int flags;

@@ -3,8 +3,8 @@
  */
 
 @interface MSInvitationStrings : NSObject {
-    NSString *_body;
-    NSString *_title;
+    NSString * _body;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) NSString *body;

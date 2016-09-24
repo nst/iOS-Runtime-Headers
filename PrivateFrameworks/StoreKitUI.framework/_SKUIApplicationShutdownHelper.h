@@ -3,8 +3,8 @@
  */
 
 @interface _SKUIApplicationShutdownHelper : NSObject {
-    SKUIApplicationController *_applicationController;
-    unsigned int _taskID;
+    SKUIApplicationController * _applicationController;
+    unsigned int  _taskID;
 }
 
 - (void).cxx_destruct;

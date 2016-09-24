@@ -3,7 +3,7 @@
  */
 
 @interface SFUMemoryOutputStream : NSObject <SFUOutputStream> {
-    NSMutableData *mData;
+    NSMutableData * mData;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -18,8 +18,8 @@
 - (void)dealloc;
 - (id)initWithData:(id)arg1;
 - (id)inputStream;
-- (long long)offset;
-- (void)seekToOffset:(long long)arg1 whence:(int)arg2;
+- (int)offset;
+- (void)seekToOffset:(int)arg1 whence:(int)arg2;
 - (void)writeBuffer:(const char *)arg1 size:(unsigned long)arg2;
 
 @end

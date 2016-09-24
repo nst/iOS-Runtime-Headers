@@ -3,9 +3,9 @@
  */
 
 @interface CRKBookmark : NSObject <NSSecureCoding> {
-    NSArray *_childBookmarks;
-    NSString *_name;
-    NSString *_urlString;
+    NSArray * _childBookmarks;
+    NSString * _name;
+    NSString * _urlString;
 }
 
 @property (nonatomic, retain) NSArray *childBookmarks;

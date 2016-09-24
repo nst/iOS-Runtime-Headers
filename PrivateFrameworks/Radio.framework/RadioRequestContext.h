@@ -3,8 +3,8 @@
  */
 
 @interface RadioRequestContext : NSObject <NSCopying> {
-    SSVFairPlaySAPSession *_SAPSession;
-    BOOL _usesLocalNetworking;
+    SSVFairPlaySAPSession * _SAPSession;
+    BOOL  _usesLocalNetworking;
 }
 
 @property (nonatomic, retain) SSVFairPlaySAPSession *SAPSession;

@@ -3,7 +3,7 @@
  */
 
 @interface InvocationTrampoline : NSObject {
-    id _target;
+    id  _target;
 }
 
 @property (retain) id target;

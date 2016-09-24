@@ -3,8 +3,8 @@
  */
 
 @interface AWDIMessageReceivedMessage : PBCodable <NSCopying> {
-    int _fzError;
-    NSString *_guid;
+    int  _fzError;
+    NSString * _guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int fzError : 1; 
@@ -14,14 +14,14 @@
         unsigned int isGroupMessage : 1; 
         unsigned int isTypingIndicator : 1; 
         unsigned int messageError : 1; 
-    } _has;
-    unsigned int _hasAttachments;
-    unsigned int _isFromEmail;
-    unsigned int _isFromPhoneNumber;
-    unsigned int _isGroupMessage;
-    unsigned int _isTypingIndicator;
-    unsigned int _messageError;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned int  _hasAttachments;
+    unsigned int  _isFromEmail;
+    unsigned int  _isFromPhoneNumber;
+    unsigned int  _isGroupMessage;
+    unsigned int  _isTypingIndicator;
+    unsigned int  _messageError;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) int fzError;

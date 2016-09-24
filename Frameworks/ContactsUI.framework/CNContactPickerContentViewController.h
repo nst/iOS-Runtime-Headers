@@ -3,28 +3,28 @@
  */
 
 @interface CNContactPickerContentViewController : UIViewController <CNContactNavigationControllerDelegate, CNContactPickerContentViewController> {
-    BOOL _allowsCancel;
-    BOOL _allowsEditing;
-    NSString *_bannerTitle;
-    NSString *_bannerValue;
-    int _cardActions;
-    BOOL _clientHasContactsAccess;
-    BOOL _clientWantsMultipleContacts;
-    BOOL _clientWantsMultipleProperties;
-    BOOL _clientWantsSingleContact;
-    BOOL _clientWantsSingleProperty;
-    CNContactNavigationController *_contactNavigationController;
-    NSMutableArray *_contactProperties;
-    CNContactStoreDataSource *_dataSource;
-    <CNContactPickerContentDelegate> *_delegate;
-    NSArray *_displayedPropertyKeys;
-    BOOL _hidesPromptInLandscape;
-    BOOL _hidesSearchableSources;
-    BOOL _onlyRealContacts;
-    NSPredicate *_predicateForEnablingContact;
-    NSPredicate *_predicateForSelectionOfContact;
-    NSPredicate *_predicateForSelectionOfProperty;
-    NSString *_prompt;
+    BOOL  _allowsCancel;
+    BOOL  _allowsEditing;
+    NSString * _bannerTitle;
+    NSString * _bannerValue;
+    int  _cardActions;
+    BOOL  _clientHasContactsAccess;
+    BOOL  _clientWantsMultipleContacts;
+    BOOL  _clientWantsMultipleProperties;
+    BOOL  _clientWantsSingleContact;
+    BOOL  _clientWantsSingleProperty;
+    CNContactNavigationController * _contactNavigationController;
+    NSMutableArray * _contactProperties;
+    CNContactStoreDataSource * _dataSource;
+    <CNContactPickerContentDelegate> * _delegate;
+    NSArray * _displayedPropertyKeys;
+    BOOL  _hidesPromptInLandscape;
+    BOOL  _hidesSearchableSources;
+    BOOL  _onlyRealContacts;
+    NSPredicate * _predicateForEnablingContact;
+    NSPredicate * _predicateForSelectionOfContact;
+    NSPredicate * _predicateForSelectionOfProperty;
+    NSString * _prompt;
 }
 
 @property (nonatomic) BOOL allowsCancel;
@@ -55,12 +55,14 @@
 @property (nonatomic, copy) NSString *prompt;
 @property (readonly) Class superclass;
 
++ (id)descriptorForContactPropertiesSupportingPredicateEvaluation;
+
 - (void).cxx_destruct;
 - (void)_selectedContact:(id)arg1;
 - (void)_selectedContacts:(id)arg1;
 - (void)_selectedProperties:(id)arg1;
 - (void)_selectedProperty:(id)arg1;
-- (void)_updatePromptWithViewSize:(struct CGSize { float x1; float x2; })arg1 transitionCoordinator:(id)arg2;
+- (void)_updatePromptWithViewSize:(struct CGSize { double x1; double x2; })arg1 transitionCoordinator:(id)arg2;
 - (id)_validatePredicatesWithError:(id*)arg1;
 - (BOOL)allowsCancel;
 - (BOOL)allowsEditing;
@@ -74,15 +76,17 @@
 - (BOOL)clientWantsSingleProperty;
 - (id)contactNavigationController;
 - (BOOL)contactNavigationController:(id)arg1 canSelectContact:(id)arg2;
-- (BOOL)contactNavigationController:(id)arg1 presentContactViewController:(id)arg2 animated:(BOOL)arg3;
+- (BOOL)contactNavigationController:(id)arg1 presentViewController:(id)arg2 animated:(BOOL)arg3;
 - (BOOL)contactNavigationController:(id)arg1 shouldPerformDefaultActionForContactProperty:(id)arg2;
 - (BOOL)contactNavigationController:(id)arg1 shouldSelectContact:(id)arg2 atIndexPath:(id)arg3;
 - (BOOL)contactNavigationController:(id)arg1 shouldShowCardForContact:(id)arg2;
 - (void)contactNavigationControllerDidCancel:(id)arg1;
 - (void)contactNavigationControllerDidComplete:(id)arg1;
+- (BOOL)contactNavigationControllerShouldShowContactsOnKeyCommands:(id)arg1;
 - (id)contactProperties;
 - (id)dataSource;
 - (id)delegate;
+- (id)descriptorsForKeysRequiredByDelegate;
 - (id)displayedPropertyKeys;
 - (BOOL)hidesPromptInLandscape;
 - (BOOL)hidesSearchableSources;
@@ -118,6 +122,6 @@
 - (void)setPredicateForSelectionOfProperty:(id)arg1;
 - (void)setPrompt:(id)arg1;
 - (void)setupWithOptions:(id)arg1 readyBlock:(id /* block */)arg2;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

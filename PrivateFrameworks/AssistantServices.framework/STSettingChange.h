@@ -3,9 +3,9 @@
  */
 
 @interface STSettingChange : STSiriModelObject {
-    int _settingType;
-    id _valueAfterUpdate;
-    id _valueBeforeUpdate;
+    int  _settingType;
+    id  _valueAfterUpdate;
+    id  _valueBeforeUpdate;
 }
 
 + (BOOL)supportsSecureCoding;

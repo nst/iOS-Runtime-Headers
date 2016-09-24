@@ -3,16 +3,16 @@
  */
 
 @interface PUFilmstripMediaProvider : PUMediaProvider {
-    NSMutableDictionary *__completionHandlersByRequestNumber;
-    NSCache *__imageCache;
-    AVAssetImageGenerator *__imageGenerator;
-    NSMutableArray *__pendingResults;
-    int __requestNumber;
-    NSMutableDictionary *__resultsByRequestNumber;
-    AVAsset *_asset;
-    BOOL _deliversImagesInOrder;
-    UIImage *_placeholderImage;
-    double _timeTolerance;
+    NSMutableDictionary * __completionHandlersByRequestNumber;
+    NSCache * __imageCache;
+    AVAssetImageGenerator * __imageGenerator;
+    NSMutableArray * __pendingResults;
+    int  __requestNumber;
+    NSMutableDictionary * __resultsByRequestNumber;
+    AVAsset * _asset;
+    BOOL  _deliversImagesInOrder;
+    UIImage * _placeholderImage;
+    double  _timeTolerance;
 }
 
 @property (setter=_setCompletionHandlersByRequestNumber:, nonatomic, retain) NSMutableDictionary *_completionHandlersByRequestNumber;
@@ -31,7 +31,7 @@
 - (void)_deliverPendingResults;
 - (void)_deliverPlaceholderImage;
 - (void)_deliverResult:(id)arg1;
-- (void)_didGenerateImage:(struct CGImage { }*)arg1 generatorResult:(int)arg2 error:(id)arg3 requestedTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4 actualTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg5 forResult:(id)arg6;
+- (void)_didGenerateImage:(struct CGImage { }*)arg1 generatorResult:(int)arg2 error:(id)arg3 requestedTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg4 actualTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg5 forResult:(id)arg6;
 - (void)_generateImageForResult:(id)arg1;
 - (id)_imageCache;
 - (id)_imageGenerator;
@@ -52,7 +52,7 @@
 - (id)init;
 - (id)initWithAVAsset:(id)arg1;
 - (id)placeholderImage;
-- (int)requestImageForAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 contentMode:(int)arg3 options:(id)arg4 resultHandler:(id /* block */)arg5;
+- (int)requestImageForAsset:(id)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2 contentMode:(int)arg3 options:(id)arg4 resultHandler:(id /* block */)arg5;
 - (void)setDeliversImagesInOrder:(BOOL)arg1;
 - (void)setPlaceholderImage:(id)arg1;
 - (void)setTimeTolerance:(double)arg1;

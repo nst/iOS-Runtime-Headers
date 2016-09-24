@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptFacebookFriend : SUScriptObject {
-    NSDictionary *_dictionary;
+    NSDictionary * _dictionary;
 }
 
 @property (readonly) NSString *identifier;

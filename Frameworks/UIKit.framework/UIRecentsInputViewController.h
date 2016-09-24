@@ -3,14 +3,14 @@
  */
 
 @interface UIRecentsInputViewController : UITableViewController {
-    NSString *_addNewString;
-    NSString *_clearAllString;
-    int _containingEffectStyle;
-    NSLayoutConstraint *_heightConstraint;
-    NSString *_previouslyUsedString;
-    <UIRecentsInputViewControllerDelegate> *_recentInputDelegate;
-    UILexicon *_recentInputs;
-    NSLayoutConstraint *_widthConstraint;
+    NSString * _addNewString;
+    NSString * _clearAllString;
+    int  _containingEffectStyle;
+    NSLayoutConstraint * _heightConstraint;
+    NSString * _previouslyUsedString;
+    <UIRecentsInputViewControllerDelegate> * _recentInputDelegate;
+    UILexicon * _recentInputs;
+    NSLayoutConstraint * _widthConstraint;
 }
 
 @property (nonatomic, retain) NSString *addNewString;
@@ -23,6 +23,9 @@
 @property (nonatomic, retain) NSLayoutConstraint *widthConstraint;
 
 - (void).cxx_destruct;
+- (id)_uiktest_FocusedCellLabel;
+- (id)_uiktest_UnfocusedCellBackgroundView;
+- (id)_uiktest_UnfocusedCellLabel;
 - (id)addNewString;
 - (id)clearAllString;
 - (int)containingEffectStyle;

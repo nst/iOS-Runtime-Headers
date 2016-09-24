@@ -3,18 +3,18 @@
  */
 
 @interface SLFacebookPlaceManager : NSObject <CLLocationManagerDelegate, SLPlaceDataSource> {
-    ACAccount *_account;
-    CLLocation *_currentLocation;
-    NSObject<SLPlaceDataSourceDelegate> *_delegate;
-    BOOL _disableTimeout;
-    BOOL _isCanceled;
-    BOOL _isUpdatingLocation;
-    CLLocationManager *_locationManager;
-    NSMutableData *_placeData;
-    id /* block */ _queuedSearchRequest;
-    double _timeout;
-    NSURLConnection *_urlConnection;
-    NSHTTPURLResponse *_urlResponse;
+    ACAccount * _account;
+    CLLocation * _currentLocation;
+    NSObject<SLPlaceDataSourceDelegate> * _delegate;
+    BOOL  _disableTimeout;
+    BOOL  _isCanceled;
+    BOOL  _isUpdatingLocation;
+    CLLocationManager * _locationManager;
+    NSMutableData * _placeData;
+    id /* block */  _queuedSearchRequest;
+    double  _timeout;
+    NSURLConnection * _urlConnection;
+    NSHTTPURLResponse * _urlResponse;
 }
 
 @property (retain) ACAccount *account;

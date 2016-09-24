@@ -3,7 +3,7 @@
  */
 
 @interface MPSeekCommandEvent : MPRemoteCommandEvent {
-    unsigned int _type;
+    unsigned int  _type;
 }
 
 @property (nonatomic, readonly) unsigned int type;

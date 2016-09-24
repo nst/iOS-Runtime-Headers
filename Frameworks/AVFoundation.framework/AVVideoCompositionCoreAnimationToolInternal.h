@@ -3,10 +3,10 @@
  */
 
 @interface AVVideoCompositionCoreAnimationToolInternal : NSObject {
-    CALayer *animationLayer;
-    int auxiliaryTrackID;
-    NSArray *postProcessingVideoLayers;
-    int way;
+    CALayer * animationLayer;
+    int  auxiliaryTrackID;
+    NSArray * postProcessingVideoLayers;
+    int  way;
 }
 
 @end

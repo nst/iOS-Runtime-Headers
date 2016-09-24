@@ -3,15 +3,15 @@
  */
 
 @interface MPMediaChapter : NSObject {
-    MPMediaLibraryArtworkDataSource *_artworkDataSource;
-    MPMediaLibraryArtworkRequest *_artworkRequest;
-    int _chapterType;
-    unsigned int _indexInChaptersWithAnyType;
-    unsigned int _indexInChaptersWithSameType;
-    double _playbackDuration;
-    double _playbackTime;
-    id _value;
-    id /* block */ _valueLoader;
+    MPMediaLibraryArtworkDataSource * _artworkDataSource;
+    MPMediaLibraryArtworkRequest * _artworkRequest;
+    int  _chapterType;
+    unsigned int  _indexInChaptersWithAnyType;
+    unsigned int  _indexInChaptersWithSameType;
+    double  _playbackDuration;
+    double  _playbackTime;
+    id  _value;
+    id /* block */  _valueLoader;
 }
 
 @property (nonatomic) MPMediaLibraryArtworkDataSource *artworkDataSource;

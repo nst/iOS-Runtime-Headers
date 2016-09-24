@@ -3,10 +3,10 @@
  */
 
 @interface NSPropertyDescription : NSObject <NSCoding, NSCopying> {
-    NSEntityDescription *_entity;
-    long _entitysReferenceIDForProperty;
-    void *_extraIvars;
-    NSString *_name;
+    NSEntityDescription * _entity;
+    long  _entitysReferenceIDForProperty;
+    void * _extraIvars;
+    NSString * _name;
     struct __propertyDescriptionFlags { 
         unsigned int _isReadOnly : 1; 
         unsigned int _isTransient : 1; 
@@ -18,13 +18,13 @@
         unsigned int _extraIvarsAreInDataBlob : 1; 
         unsigned int _isOrdered : 1; 
         unsigned int _reservedPropertyDescription : 23; 
-    } _propertyDescriptionFlags;
-    id _underlyingProperty;
-    NSMutableDictionary *_userInfo;
-    NSArray *_validationPredicates;
-    NSArray *_validationWarnings;
-    NSData *_versionHash;
-    NSString *_versionHashModifier;
+    }  _propertyDescriptionFlags;
+    id  _underlyingProperty;
+    NSMutableDictionary * _userInfo;
+    NSArray * _validationPredicates;
+    NSArray * _validationWarnings;
+    NSData * _versionHash;
+    NSString * _versionHashModifier;
 }
 
 @property (nonatomic, readonly) NSEntityDescription *entity;
@@ -47,7 +47,8 @@
 - (BOOL)_comparePredicatesAndWarnings:(id)arg1;
 - (void)_createCachesAndOptimizeState;
 - (long)_entitysReferenceID;
-- (struct _NSExtraPropertyIVars { id x1; long long x2; }*)_extraIVars;
+- (BOOL)_epsilonEquals:(id)arg1 rhs:(id)arg2 withFlags:(int)arg3;
+- (struct _NSExtraPropertyIVars { id x1; int x2; }*)_extraIVars;
 - (id)_initWithName:(id)arg1;
 - (void)_initializeExtraIVars;
 - (BOOL)_isEditable;

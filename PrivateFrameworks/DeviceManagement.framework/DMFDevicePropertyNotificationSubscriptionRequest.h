@@ -3,7 +3,7 @@
  */
 
 @interface DMFDevicePropertyNotificationSubscriptionRequest : CATTaskRequest {
-    NSArray *_propertyKeys;
+    NSArray * _propertyKeys;
 }
 
 @property (nonatomic, copy) NSArray *propertyKeys;

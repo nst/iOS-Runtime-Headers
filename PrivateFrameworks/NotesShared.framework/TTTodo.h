@@ -3,8 +3,8 @@
  */
 
 @interface TTTodo : NSObject <NSCopying> {
-    BOOL _done;
-    NSUUID *_uuid;
+    BOOL  _done;
+    NSUUID * _uuid;
 }
 
 @property (nonatomic, readonly) BOOL done;

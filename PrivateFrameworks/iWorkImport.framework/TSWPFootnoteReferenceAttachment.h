@@ -3,8 +3,8 @@
  */
 
 @interface TSWPFootnoteReferenceAttachment : TSWPTextualAttachment {
-    TSWPStorage *_containedStorage;
-    NSString *_customMarkString;
+    TSWPStorage * _containedStorage;
+    NSString * _customMarkString;
 }
 
 @property (nonatomic, retain) TSWPStorage *containedStorage;
@@ -13,6 +13,7 @@
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 - (void)applyMark;
 - (void)checkDebug;
+- (id)childEnumerator;
 - (id)containedStorage;
 - (id)copyWithContext:(id)arg1;
 - (id)customMarkString;

@@ -3,10 +3,10 @@
  */
 
 @interface AUV2BridgeBus : AUAudioUnitBus {
-    struct OpaqueAudioComponentInstance { } *_audioUnit;
-    unsigned long _element;
-    AUAudioUnitV2Bridge *_owner;
-    unsigned long _scope;
+    struct OpaqueAudioComponentInstance { } * _audioUnit;
+    unsigned long  _element;
+    AUAudioUnitV2Bridge * _owner;
+    unsigned long  _scope;
 }
 
 - (id)format;

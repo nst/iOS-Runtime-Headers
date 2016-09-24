@@ -3,8 +3,8 @@
  */
 
 @interface DBMigrationResult : NSObject {
-    int _dbVersion;
-    int _errorCode;
+    int  _dbVersion;
+    int  _errorCode;
 }
 
 @property (nonatomic) int dbVersion;

@@ -3,16 +3,16 @@
  */
 
 @interface MCWebContentFilterPayload : MCPayload {
-    BOOL _autoFilterEnabled;
-    NSArray *_blacklistedURLStrings;
-    BOOL _filterBrowsers;
-    BOOL _filterSockets;
-    NSString *_filterType;
-    NSString *_name;
-    NSArray *_permittedURLStrings;
-    NSString *_pluginBundleID;
-    NSDictionary *_pluginConfiguration;
-    NSArray *_whitelistedBookmarks;
+    BOOL  _autoFilterEnabled;
+    NSArray * _blacklistedURLStrings;
+    BOOL  _filterBrowsers;
+    BOOL  _filterSockets;
+    NSString * _filterType;
+    NSString * _name;
+    NSArray * _permittedURLStrings;
+    NSString * _pluginBundleID;
+    NSDictionary * _pluginConfiguration;
+    NSArray * _whitelistedBookmarks;
 }
 
 @property (nonatomic) BOOL autoFilterEnabled;

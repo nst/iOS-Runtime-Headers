@@ -3,12 +3,12 @@
  */
 
 @interface MPStoreDownloadExpectationController : NSObject <MPStoreDownloadManagerObserver> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    id /* block */ _completionHandler;
-    NSObject<OS_dispatch_source> *_dispatchSource;
-    unsigned int _downloadManagerMonitorCount;
-    id /* block */ _searchBlock;
-    double _timeout;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    id /* block */  _completionHandler;
+    NSObject<OS_dispatch_source> * _dispatchSource;
+    unsigned int  _downloadManagerMonitorCount;
+    id /* block */  _searchBlock;
+    double  _timeout;
 }
 
 @property (readonly, copy) NSString *debugDescription;

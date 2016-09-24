@@ -3,10 +3,10 @@
  */
 
 @interface SGRealtimeEvent : NSObject <NSCopying, NSSecureCoding> {
-    SGEvent *_event;
-    NSString *_eventIdentifier;
-    BOOL _isHarvested;
-    int _state;
+    SGEvent * _event;
+    NSString * _eventIdentifier;
+    BOOL  _isHarvested;
+    int  _state;
 }
 
 @property (nonatomic, readonly) SGEvent *event;

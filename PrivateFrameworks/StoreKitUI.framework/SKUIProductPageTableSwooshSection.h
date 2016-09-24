@@ -3,12 +3,12 @@
  */
 
 @interface SKUIProductPageTableSwooshSection : SKUIProductPageTableSection <SKUIMissingItemDelegate, SKUISwooshViewControllerDelegate> {
-    id /* block */ _actionBlock;
-    SKUILockupSwooshArtworkLoader *_artworkLoader;
-    SKUIMissingItemLoader *_missingItemLoader;
-    SKUIResourceLoader *_resourceLoader;
-    SKUISwooshPageComponent *_swooshComponent;
-    SKUILockupSwooshViewController *_swooshViewController;
+    id /* block */  _actionBlock;
+    SKUILockupSwooshArtworkLoader * _artworkLoader;
+    SKUIMissingItemLoader * _missingItemLoader;
+    SKUIResourceLoader * _resourceLoader;
+    SKUISwooshPageComponent * _swooshComponent;
+    SKUILockupSwooshViewController * _swooshViewController;
 }
 
 @property (nonatomic, copy) id /* block */ actionBlock;

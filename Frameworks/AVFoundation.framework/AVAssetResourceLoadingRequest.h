@@ -3,7 +3,7 @@
  */
 
 @interface AVAssetResourceLoadingRequest : NSObject <AVAssetResourceLoaderRequest> {
-    AVAssetResourceLoadingRequestInternal *_loadingRequest;
+    AVAssetResourceLoadingRequestInternal * _loadingRequest;
 }
 
 @property (getter=isCancelled, nonatomic, readonly) BOOL cancelled;

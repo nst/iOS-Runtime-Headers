@@ -3,25 +3,27 @@
  */
 
 @interface NEPolicyCondition : NSObject <NEPrettyDescription> {
-    NSString *_accountIdentifier;
-    NSUUID *_applicationUUID;
-    int _conditionType;
-    NSString *_domain;
-    NWAddressEndpoint *_endAddress;
-    NSString *_interfaceName;
-    unsigned short _ipProtocol;
-    BOOL _negative;
-    int _pid;
-    unsigned char _prefix;
-    NWAddressEndpoint *_startAddress;
-    unsigned int _trafficClassEnd;
-    unsigned int _trafficClassStart;
-    unsigned int _uid;
+    NSString * _accountIdentifier;
+    NSUUID * _applicationUUID;
+    int  _conditionType;
+    NSString * _customEntitlement;
+    NSString * _domain;
+    NWAddressEndpoint * _endAddress;
+    NSString * _interfaceName;
+    unsigned short  _ipProtocol;
+    BOOL  _negative;
+    int  _pid;
+    unsigned char  _prefix;
+    NWAddressEndpoint * _startAddress;
+    unsigned int  _trafficClassEnd;
+    unsigned int  _trafficClassStart;
+    unsigned int  _uid;
 }
 
 @property (copy) NSString *accountIdentifier;
 @property (copy) NSUUID *applicationUUID;
 @property int conditionType;
+@property (retain) NSString *customEntitlement;
 @property (copy) NSString *domain;
 @property (retain) NWAddressEndpoint *endAddress;
 @property (copy) NSString *interfaceName;
@@ -36,6 +38,7 @@
 
 + (id)accountIdentifier:(id)arg1;
 + (id)allInterfaces;
++ (id)customEntitlement:(id)arg1;
 + (id)domain:(id)arg1;
 + (id)effectiveApplication:(id)arg1;
 + (id)effectivePID:(int)arg1;
@@ -57,6 +60,7 @@
 - (int)conditionType;
 - (id)conditionTypeString;
 - (unsigned char)conditionTypeValue;
+- (id)customEntitlement;
 - (id)description;
 - (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
 - (id)domain;
@@ -71,6 +75,7 @@
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setApplicationUUID:(id)arg1;
 - (void)setConditionType:(int)arg1;
+- (void)setCustomEntitlement:(id)arg1;
 - (void)setDomain:(id)arg1;
 - (void)setEndAddress:(id)arg1;
 - (void)setInterfaceName:(id)arg1;

@@ -3,15 +3,21 @@
  */
 
 @interface VMUProcessObjectGraph : VMUObjectGraph <VMUCommonGraphInterface> {
-    unsigned int _kernPageSize;
-    unsigned long long _machAbsolute;
-    int _pid;
-    NSString *_procDescription;
-    NSString *_procName;
-    unsigned int _regionCount;
-    id /* block */ _regionProvider;
-    NSMutableArray *_regions;
-    NSArray *_zoneNames;
+    VMURangeToStringMap * _binarySectionNameRanges;
+    BOOL  _hasDerivedObjcClassStructureRanges;
+    unsigned int  _kernPageSize;
+    unsigned int  _machAbsolute;
+    VMUNodeToStringMap * _nodeLabels;
+    int  _pid;
+    NSString * _procDescription;
+    NSString * _procName;
+    NSDictionary * _pthreadOffsets;
+    unsigned int  _regionCount;
+    VMURangeToStringMap * _regionSymbolNameRanges;
+    NSArray * _regions;
+    VMURangeToStringMap * _threadNameRanges;
+    void * _userMarked;
+    NSArray * _zoneNames;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -24,31 +30,56 @@
 @property (nonatomic, copy) NSString *processName;
 @property (nonatomic, readonly) VMUClassInfoMap *realizedClasses;
 @property (nonatomic, readonly) unsigned int regionCount;
-@property (nonatomic) unsigned long long snapshotMachTime;
+@property (nonatomic) unsigned int snapshotMachTime;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *toolHeaderDescription;
 @property (nonatomic, readonly) unsigned int vmPageSize;
 @property (nonatomic, readonly) unsigned int zoneCount;
 
-- (unsigned int)activeRegionCount;
+- (void)_deriveObjcClassStructureRanges;
+- (id)_descriptionForRegionAddress:(unsigned int)arg1 withOffset:(unsigned int)arg2 showSegment:(BOOL)arg3;
+- (id)_detailedNodeOffsetDescription:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg1 withSourceNode:(unsigned int)arg2 destinationNode:(unsigned int)arg3 alignmentSpacing:(unsigned int)arg4;
+- (void)_renameWithNodeMap:(unsigned int*)arg1 nodeNamespace:(unsigned int)arg2 edgeMap:(unsigned int*)arg3 edgeNamespace:(unsigned int)arg4;
 - (void)archiveDictionaryRepresentation:(id)arg1 options:(unsigned int)arg2;
+- (id)binarySectionNameForAddress:(unsigned int)arg1;
+- (struct _VMURange { unsigned int x1; unsigned int x2; })binarySectionRangeContainingAddress:(unsigned int)arg1;
+- (void*)contentForNode:(unsigned int)arg1;
+- (void*)copyUserMarked;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (unsigned int)enumerateRegionsWithBlock:(id /* block */)arg1;
-- (id)initWithArchived:(id)arg1 options:(unsigned int)arg2;
-- (id)initWithNodes:(unsigned int)arg1 pid:(int)arg2 zoneNames:(id)arg3 classInfoMap:(id)arg4 regionCount:(unsigned int)arg5 nodeProvider:(id /* block */)arg6 regionProvider:(id /* block */)arg7;
-- (void)internalizeNodes;
+- (id)initWithArchived:(id)arg1 version:(int)arg2 options:(unsigned int)arg3;
+- (id)initWithPid:(int)arg1 nodes:(struct _VMUBlockNode { unsigned int x1; unsigned int x2 : 3; unsigned int x3 : 2; unsigned int x4 : 36; unsigned int x5 : 23; }*)arg2 nodeCount:(unsigned int)arg3 zoneNames:(id)arg4 classInfoMap:(id)arg5 regions:(id)arg6 pthreadOffsets:(id)arg7 userMarked:(void*)arg8;
 - (BOOL)is64bit;
 - (id)labelForNode:(unsigned int)arg1;
+- (void)markReachableNodesFromRoots:(void*)arg1 inMap:(void*)arg2;
+- (id)nodeDescription:(unsigned int)arg1;
+- (id)nodeDescription:(unsigned int)arg1 withDestinationNode:(unsigned int)arg2 referenceInfo:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg3;
+- (id)nodeDescription:(unsigned int)arg1 withOffset:(unsigned int)arg2;
+- (id)nodeOffsetDescription:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg1 withSourceNode:(unsigned int)arg2 destinationNode:(unsigned int)arg3;
 - (int)pid;
 - (id)processName;
 - (id)realizedClasses;
+- (id)referenceDescription:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg1 withSourceNode:(unsigned int)arg2 destinationNode:(unsigned int)arg3 alignmentSpacing:(unsigned int)arg4;
+- (void)refineEdges:(unsigned int)arg1 withOptions:(unsigned int)arg2 markingInvalid:(void*)arg3;
+- (void)refineTypesWithOverlay:(id)arg1;
 - (unsigned int)regionCount;
+- (id)regionSymbolNameForAddress:(unsigned int)arg1;
+- (struct _VMURange { unsigned int x1; unsigned int x2; })regionSymbolRangeContainingAddress:(unsigned int)arg1;
+- (void)setBinarySectionName:(id)arg1 forRange:(struct _VMURange { unsigned int x1; unsigned int x2; })arg2;
+- (void)setLabel:(id)arg1 forNode:(unsigned int)arg2;
 - (void)setProcessName:(id)arg1;
-- (void)setSnapshotMachTime:(unsigned long long)arg1;
+- (void)setRegionSymbolName:(id)arg1 forRange:(struct _VMURange { unsigned int x1; unsigned int x2; })arg2;
+- (void)setSnapshotMachTime:(unsigned int)arg1;
+- (void)setThreadName:(id)arg1 forRange:(struct _VMURange { unsigned int x1; unsigned int x2; })arg2;
 - (void)setToolHeaderDescription:(id)arg1;
-- (unsigned long long)snapshotMachTime;
+- (id)shortLabelForMallocNode:(unsigned int)arg1;
+- (id)shortNodeDescription:(unsigned int)arg1;
+- (unsigned int)snapshotMachTime;
+- (id)threadNameForAddress:(unsigned int)arg1;
 - (id)toolHeaderDescription;
 - (unsigned int)vmPageSize;
+- (id)vmuVMRegionForNode:(unsigned int)arg1;
 - (unsigned int)zoneCount;
 - (id)zoneNameForIndex:(unsigned int)arg1;
 

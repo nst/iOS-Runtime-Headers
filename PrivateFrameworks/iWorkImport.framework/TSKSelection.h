@@ -6,6 +6,7 @@
 
 + (Class)archivedSelectionClass;
 
+- (id)UUIDDescription;
 - (id)archivedSelectionWithContext:(id)arg1;
 - (int)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -3,13 +3,13 @@
  */
 
 @interface AWDDataFrames : PBCodable <NSCopying> {
-    unsigned long long _cFack;
-    unsigned long long _cFackCFpoll;
-    unsigned long long _cFpoll;
-    unsigned long long _dataCFack;
-    unsigned long long _dataCFackCFpoll;
-    unsigned long long _dataCFpoll;
-    unsigned long long _dataFrames;
+    unsigned long long  _cFack;
+    unsigned long long  _cFackCFpoll;
+    unsigned long long  _cFpoll;
+    unsigned long long  _dataCFack;
+    unsigned long long  _dataCFackCFpoll;
+    unsigned long long  _dataCFpoll;
+    unsigned long long  _dataFrames;
     struct { 
         unsigned int cFack : 1; 
         unsigned int cFackCFpoll : 1; 
@@ -25,14 +25,14 @@
         unsigned int qoSnodataCFack : 1; 
         unsigned int qoSnodataCFpoll : 1; 
         unsigned int qoSnull : 1; 
-    } _has;
-    unsigned long long _null;
-    unsigned long long _qoSdata;
-    unsigned long long _qoSdataCFack;
-    unsigned long long _qoSdataCFackCFpoll;
-    unsigned long long _qoSnodataCFack;
-    unsigned long long _qoSnodataCFpoll;
-    unsigned long long _qoSnull;
+    }  _has;
+    unsigned long long  _null;
+    unsigned long long  _qoSdata;
+    unsigned long long  _qoSdataCFack;
+    unsigned long long  _qoSdataCFackCFpoll;
+    unsigned long long  _qoSnodataCFack;
+    unsigned long long  _qoSnodataCFpoll;
+    unsigned long long  _qoSnull;
 }
 
 @property (nonatomic) unsigned long long cFack;

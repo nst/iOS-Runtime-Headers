@@ -3,7 +3,7 @@
  */
 
 @interface AVAudioMixInternal : NSObject {
-    NSArray *inputParameters;
+    NSArray * inputParameters;
 }
 
 @end

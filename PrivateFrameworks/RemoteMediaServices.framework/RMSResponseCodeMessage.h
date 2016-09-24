@@ -5,8 +5,8 @@
 @interface RMSResponseCodeMessage : PBCodable <NSCopying> {
     struct { 
         unsigned int responseCode : 1; 
-    } _has;
-    int _responseCode;
+    }  _has;
+    int  _responseCode;
 }
 
 @property (nonatomic) BOOL hasResponseCode;

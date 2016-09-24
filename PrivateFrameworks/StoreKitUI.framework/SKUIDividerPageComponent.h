@@ -3,7 +3,7 @@
  */
 
 @interface SKUIDividerPageComponent : SKUIPageComponent {
-    NSString *_title;
+    NSString * _title;
 }
 
 @property (nonatomic, readonly) NSString *dividerTitle;

@@ -3,10 +3,10 @@
  */
 
 @interface UIViewAnimationContext : NSObject {
-    int _animationCount;
-    id _completionHandler;
-    UITableViewCell *_swipeToDeleteCell;
-    NSArray *_viewAnimations;
+    int  _animationCount;
+    id  _completionHandler;
+    UITableViewCell * _swipeToDeleteCell;
+    NSArray * _viewAnimations;
 }
 
 @property (nonatomic) int animationCount;

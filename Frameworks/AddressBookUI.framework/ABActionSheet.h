@@ -3,11 +3,11 @@
  */
 
 @interface ABActionSheet : UIActionSheet {
-    void *_ab_context;
-    struct __CFArray { } *_tag2s;
-    struct __CFArray { } *_tag3s;
-    struct __CFArray { } *_tag4s;
-    struct __CFArray { } *_tags;
+    void * _ab_context;
+    struct __CFArray { } * _tag2s;
+    struct __CFArray { } * _tag3s;
+    struct __CFArray { } * _tag4s;
+    struct __CFArray { } * _tags;
 }
 
 @property (nonatomic) void*ab_context;

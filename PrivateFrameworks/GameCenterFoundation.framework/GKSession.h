@@ -3,7 +3,7 @@
  */
 
 @interface GKSession : NSObject {
-    id _session;
+    id  _session;
 }
 
 @property (getter=isAvailable) BOOL available;

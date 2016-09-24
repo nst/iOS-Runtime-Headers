@@ -3,16 +3,16 @@
  */
 
 @interface TIKeyboardBehaviorState : NSObject {
-    BOOL _hasAutocorrection;
-    BOOL _showsCandidatesInLayout;
-    BOOL followsZhuyin;
-    BOOL hardwareKeyboardMode;
-    BOOL hasCandidateSelected;
-    BOOL hasCandidates;
-    BOOL hasInput;
-    BOOL hasNextPage;
-    BOOL showsExtendedList;
-    BOOL spaceConfirmation;
+    BOOL  _hasAutocorrection;
+    BOOL  _showsCandidatesInLayout;
+    BOOL  followsZhuyin;
+    BOOL  hardwareKeyboardMode;
+    BOOL  hasCandidateSelected;
+    BOOL  hasCandidates;
+    BOOL  hasInput;
+    BOOL  hasNextPage;
+    BOOL  showsExtendedList;
+    BOOL  spaceConfirmation;
 }
 
 @property (nonatomic) BOOL followsZhuyin;

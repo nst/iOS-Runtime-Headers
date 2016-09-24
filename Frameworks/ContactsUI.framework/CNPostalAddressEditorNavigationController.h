@@ -3,7 +3,7 @@
  */
 
 @interface CNPostalAddressEditorNavigationController : UINavigationController {
-    <CNPostalAddressEditorDelegate> *_addressEditorDelegate;
+    <CNPostalAddressEditorDelegate> * _addressEditorDelegate;
 }
 
 @property (nonatomic) <CNPostalAddressEditorDelegate> *addressEditorDelegate;

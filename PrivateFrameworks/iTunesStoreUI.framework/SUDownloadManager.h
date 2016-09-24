@@ -3,11 +3,11 @@
  */
 
 @interface SUDownloadManager : NSObject {
-    NSArray *_cachedDownloads;
-    SUClientInterface *_clientInterface;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    SSDownloadManager *_downloadManager;
-    NSMutableDictionary *_downloadsByID;
+    NSArray * _cachedDownloads;
+    SUClientInterface * _clientInterface;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    SSDownloadManager * _downloadManager;
+    NSMutableDictionary * _downloadsByID;
 }
 
 @property (nonatomic, readonly) SSDownloadManager *downloadManager;
@@ -18,7 +18,7 @@
 - (void)_removeObject:(id)arg1 fromArray:(id*)arg2;
 - (void)dealloc;
 - (BOOL)deleteDownload:(id)arg1;
-- (id)downloadForDownloadIdentifier:(long long)arg1;
+- (id)downloadForDownloadIdentifier:(int)arg1;
 - (id)downloadManager;
 - (id)downloads;
 - (id)initWithDownloadManager:(id)arg1;

@@ -3,10 +3,10 @@
  */
 
 @interface HKFetchOperation : NSObject {
-    NSUUID *_UUID;
-    int _clientPriority;
-    <HKFetchOperationDelegate> *_delegate;
-    int _operationPriority;
+    NSUUID * _UUID;
+    int  _clientPriority;
+    <HKFetchOperationDelegate> * _delegate;
+    int  _operationPriority;
 }
 
 @property (nonatomic, readonly) NSUUID *UUID;

@@ -3,12 +3,12 @@
  */
 
 @interface IDSSocketPairMessage : NSObject {
-    BOOL _cancelled;
-    unsigned char _command;
-    <NSObject> *_context;
-    NSString *_topic;
-    NSData *_underlyingData;
-    BOOL _useDynamicServiceName;
+    BOOL  _cancelled;
+    unsigned char  _command;
+    <NSObject> * _context;
+    NSString * _topic;
+    NSData * _underlyingData;
+    BOOL  _useDynamicServiceName;
 }
 
 @property (nonatomic) BOOL cancelled;

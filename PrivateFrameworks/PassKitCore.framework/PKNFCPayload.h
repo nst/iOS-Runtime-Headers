@@ -3,9 +3,9 @@
  */
 
 @interface PKNFCPayload : NSObject <NSCopying, NSSecureCoding> {
-    NSData *_encryptionPublicKeyData;
-    NSString *_message;
-    BOOL _requiresCertificate;
+    NSData * _encryptionPublicKeyData;
+    NSString * _message;
+    BOOL  _requiresCertificate;
 }
 
 @property (nonatomic, copy) NSData *encryptionPublicKeyData;
@@ -14,8 +14,8 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)encryptionPublicKeyData;

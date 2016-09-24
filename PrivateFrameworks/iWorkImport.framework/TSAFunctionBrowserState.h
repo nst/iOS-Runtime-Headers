@@ -3,10 +3,10 @@
  */
 
 @interface TSAFunctionBrowserState : TSPObject {
-    NSMutableArray *mBackFunctions;
-    int mCurrentFunction;
-    NSMutableArray *mForwardFunctions;
-    NSMutableArray *mRecentFunctions;
+    NSMutableArray * mBackFunctions;
+    int  mCurrentFunction;
+    NSMutableArray * mForwardFunctions;
+    NSMutableArray * mRecentFunctions;
 }
 
 - (id)allBackFunctions;

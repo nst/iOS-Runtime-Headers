@@ -3,12 +3,12 @@
  */
 
 @interface MPArtworkColorAnalysis : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
-    UIColor *_backgroundColor;
-    BOOL _backgroundColorLight;
-    UIColor *_primaryTextColor;
-    BOOL _primaryTextColorLight;
-    UIColor *_secondaryTextColor;
-    BOOL _secondaryTextColorLight;
+    UIColor * _backgroundColor;
+    BOOL  _backgroundColorLight;
+    UIColor * _primaryTextColor;
+    BOOL  _primaryTextColorLight;
+    UIColor * _secondaryTextColor;
+    BOOL  _secondaryTextColorLight;
 }
 
 @property (nonatomic, readonly) UIColor *backgroundColor;

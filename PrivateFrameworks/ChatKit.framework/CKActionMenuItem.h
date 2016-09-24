@@ -3,13 +3,13 @@
  */
 
 @interface CKActionMenuItem : NSObject {
-    SEL _action;
-    BOOL _enabled;
-    BOOL _highlighted;
-    UILabel<CKActionMenuItemView> *_label;
-    BOOL _selected;
-    id _target;
-    UIView<CKActionMenuItemView> *_view;
+    SEL  _action;
+    BOOL  _enabled;
+    BOOL  _highlighted;
+    UILabel<CKActionMenuItemView> * _label;
+    BOOL  _selected;
+    id  _target;
+    UIView<CKActionMenuItemView> * _view;
 }
 
 @property (nonatomic) SEL action;
@@ -17,14 +17,14 @@
 @property (getter=isHighlighted, nonatomic) BOOL highlighted;
 @property (nonatomic, retain) UILabel<CKActionMenuItemView> *label;
 @property (getter=isSelected, nonatomic) BOOL selected;
-@property (nonatomic) id target;
+@property (nonatomic, retain) id target;
 @property (nonatomic, retain) UIView<CKActionMenuItemView> *view;
 
 + (void)animate:(id /* block */)arg1 completion:(id /* block */)arg2;
 + (id)itemWithImageTemplate:(id)arg1 tintColor:(id)arg2 highlightedTintColor:(id)arg3 target:(id)arg4 action:(SEL)arg5;
 
+- (void).cxx_destruct;
 - (SEL)action;
-- (void)dealloc;
 - (id)description;
 - (id)init;
 - (id)initWithView:(id)arg1 label:(id)arg2 target:(id)arg3 action:(SEL)arg4;

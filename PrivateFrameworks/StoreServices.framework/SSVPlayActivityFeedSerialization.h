@@ -3,7 +3,7 @@
  */
 
 @interface SSVPlayActivityFeedSerialization : NSObject {
-    NSString *_currentStoreFrontID;
+    NSString * _currentStoreFrontID;
 }
 
 @property (nonatomic, copy) NSString *currentStoreFrontID;

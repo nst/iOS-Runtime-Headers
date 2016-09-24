@@ -3,22 +3,23 @@
  */
 
 @interface TSDDrawableLayout : TSDLayout <TSDWrappable> {
-    TSUBezierPath *mCachedExternalWrapPath;
-    TSUBezierPath *mCachedWrapPath;
-    TSDWrapSegments *mCachedWrapSegments;
+    TSUBezierPath * mCachedExternalWrapPath;
+    TSUBezierPath * mCachedWrapPath;
+    TSDWrapSegments * mCachedWrapSegments;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, copy) TSDLayoutGeometry *geometry;
 @property (nonatomic, readonly) BOOL hasAlpha;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
 - (BOOL)allowsConnections;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsInRoot;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsInfluencingExteriorWrap;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsInRoot;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsInfluencingExteriorWrap;
 - (void)dealloc;
-- (void)dragBy:(struct CGPoint { float x1; float x2; })arg1;
+- (void)dragBy:(struct CGPoint { double x1; double x2; })arg1;
 - (BOOL)hasAlpha;
 - (id)i_computeWrapPath;
 - (id)i_computeWrapPathClosed:(BOOL)arg1;
@@ -29,6 +30,7 @@
 - (void)invalidateExteriorWrap;
 - (void)invalidateParentForWrap;
 - (BOOL)isHTMLWrap;
+- (unsigned int)pageCountForAttachment:(id)arg1;
 - (unsigned int)pageNumber;
 - (unsigned int)pageNumberForAttachment:(id)arg1;
 - (void)parentDidChange;

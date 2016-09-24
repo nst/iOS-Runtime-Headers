@@ -3,21 +3,21 @@
  */
 
 @interface CoreDAVContainer : NSObject {
-    NSURL *_addMemberURL;
-    NSDictionary *_bulkRequests;
-    NSString *_containerTitle;
-    BOOL _isUnauthenticated;
-    NSURL *_owner;
-    NSSet *_privileges;
-    NSString *_pushKey;
-    NSDictionary *_pushTransports;
-    NSString *_quotaAvailable;
-    NSString *_quotaUsed;
-    NSURL *_resourceID;
-    CoreDAVResourceTypeItem *_resourceType;
-    CoreDAVSupportedReportSetItem *_supportedReportSetItem;
-    NSString *_syncToken;
-    NSURL *_url;
+    NSURL * _addMemberURL;
+    NSDictionary * _bulkRequests;
+    NSString * _containerTitle;
+    BOOL  _isUnauthenticated;
+    NSURL * _owner;
+    NSSet * _privileges;
+    NSString * _pushKey;
+    NSDictionary * _pushTransports;
+    NSString * _quotaAvailable;
+    NSString * _quotaUsed;
+    NSURL * _resourceID;
+    CoreDAVResourceTypeItem * _resourceType;
+    CoreDAVSupportedReportSetItem * _supportedReportSetItem;
+    NSString * _syncToken;
+    NSURL * _url;
 }
 
 @property (nonatomic, retain) NSURL *addMemberURL;

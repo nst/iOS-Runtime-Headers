@@ -3,15 +3,15 @@
  */
 
 @interface CKDPQueryRetrieveRequest : PBRequest <NSCopying> {
-    CKDPAssetsToDownload *_assetsToDownload;
-    NSData *_continuationMarker;
+    CKDPAssetsToDownload * _assetsToDownload;
+    NSData * _continuationMarker;
     struct { 
         unsigned int limit : 1; 
-    } _has;
-    unsigned int _limit;
-    CKDPQuery *_query;
-    CKDPRequestedFields *_requestedFields;
-    CKDPRecordZoneIdentifier *_zoneIdentifier;
+    }  _has;
+    unsigned int  _limit;
+    CKDPQuery * _query;
+    CKDPRequestedFields * _requestedFields;
+    CKDPRecordZoneIdentifier * _zoneIdentifier;
 }
 
 @property (nonatomic, retain) CKDPAssetsToDownload *assetsToDownload;

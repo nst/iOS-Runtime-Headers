@@ -3,16 +3,18 @@
  */
 
 @interface SYBatchSyncChunk : PBCodable <NSCopying> {
-    unsigned int _chunkIndex;
-    SYMessageHeader *_header;
-    NSMutableArray *_objects;
-    NSString *_syncID;
+    unsigned int  _chunkIndex;
+    SYMessageHeader * _header;
+    NSMutableArray * _objects;
+    NSString * _syncID;
 }
 
 @property (nonatomic) unsigned int chunkIndex;
 @property (nonatomic, retain) SYMessageHeader *header;
 @property (nonatomic, retain) NSMutableArray *objects;
 @property (nonatomic, retain) NSString *syncID;
+
++ (Class)objectsType;
 
 - (void).cxx_destruct;
 - (void)addObjects:(id)arg1;

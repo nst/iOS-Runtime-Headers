@@ -3,7 +3,7 @@
  */
 
 @interface BLModalPresenterRootViewController : UIViewController {
-    UIImageView *_background;
+    UIImageView * _background;
 }
 
 - (void).cxx_destruct;

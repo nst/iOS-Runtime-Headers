@@ -2,19 +2,21 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@interface BRCDaemonContainerHelper : NSObject <BRContainerHelper>
+@interface BRCDaemonContainerHelper : NSObject <BRContainerHelper> {
+    NSSet * _disabledBundleIDs;
+    NSSet * _knownBundleIDs;
+}
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)cloudSyncTCCDisabledForContainerMeta:(id)arg1;
-+ (BOOL)cloudSyncTCCDisabledForContainerMeta:(id)arg1 disabledBundleURLs:(id)arg2;
-+ (id)disabledBundleURLs;
-
+- (void).cxx_destruct;
 - (BOOL)canFetchAllContainersByID;
-- (id)fetchAllContainersByID;
+- (BOOL)cloudSyncTCCDisabledForContainerMeta:(id)arg1;
+- (id)fetchAllContainersByIDWithError:(id*)arg1;
 - (id)fetchContainerForURL:(id)arg1;
+- (id)init;
 
 @end

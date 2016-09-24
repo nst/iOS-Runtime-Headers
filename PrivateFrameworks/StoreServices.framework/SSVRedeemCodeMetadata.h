@@ -3,8 +3,8 @@
  */
 
 @interface SSVRedeemCodeMetadata : NSObject <NSCopying> {
-    NSDictionary *_dictionary;
-    NSString *_inputCode;
+    NSDictionary * _dictionary;
+    NSString * _inputCode;
 }
 
 @property (nonatomic, readonly) NSString *code;

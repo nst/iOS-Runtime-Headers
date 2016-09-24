@@ -3,17 +3,17 @@
  */
 
 @interface MPSImageTransform : NSObject {
-    BOOL _channelsAreIndependent;
-    unsigned int _inputChannels;
-    unsigned int _outputChannels;
-    unsigned int maxTempChannels;
-    unsigned int nodeCount;
-    struct ConversionNode { int (**x1)(); long x2; struct ConversionNode {} *x3; unsigned char x4; unsigned char x5; unsigned char x6; } *nodeList;
+    BOOL  _channelsAreIndependent;
+    unsigned int  _inputChannels;
+    unsigned int  _outputChannels;
+    unsigned int  maxTempChannels;
+    unsigned int  nodeCount;
+    struct ConversionNode { int (**x1)(); long x2; struct ConversionNode {} *x3; unsigned char x4; unsigned char x5; unsigned char x6; } * nodeList;
 }
 
-@property (readonly) BOOL channelsAreIndependent;
-@property (readonly) unsigned int inputChannels;
-@property (readonly) unsigned int outputChannels;
+@property (nonatomic, readonly) BOOL channelsAreIndependent;
+@property (nonatomic, readonly) unsigned int inputChannels;
+@property (nonatomic, readonly) unsigned int outputChannels;
 
 - (BOOL)channelsAreIndependent;
 - (void)dealloc;

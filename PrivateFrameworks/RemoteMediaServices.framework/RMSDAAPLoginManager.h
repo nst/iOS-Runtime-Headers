@@ -3,9 +3,9 @@
  */
 
 @interface RMSDAAPLoginManager : NSObject {
-    RMSFairPlaySession *_fairPlaySession;
-    BOOL _isFairPlayRequired;
-    RMSDAAPRequestManager *_requestManager;
+    RMSFairPlaySession * _fairPlaySession;
+    BOOL  _isFairPlayRequired;
+    RMSDAAPRequestManager * _requestManager;
 }
 
 - (void).cxx_destruct;

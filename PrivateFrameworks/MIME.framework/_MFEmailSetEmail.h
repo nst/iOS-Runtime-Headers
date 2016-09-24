@@ -3,9 +3,9 @@
  */
 
 @interface _MFEmailSetEmail : NSObject {
-    NSString *_comment;
-    NSString *_encodedAddress;
-    unsigned long _hash;
+    NSString * _comment;
+    NSString * _encodedAddress;
+    unsigned long  _hash;
 }
 
 @property (nonatomic, retain) NSString *address;

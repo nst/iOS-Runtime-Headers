@@ -3,7 +3,7 @@
  */
 
 @interface PTSDuplicateRowsActivity : UICopyToPasteboardActivity {
-    NSMutableArray *_rows;
+    NSMutableArray * _rows;
 }
 
 - (void).cxx_destruct;

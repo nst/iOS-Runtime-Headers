@@ -3,10 +3,10 @@
  */
 
 @interface HMDHAPMetadataCategory : NSObject <NSSecureCoding> {
-    NSString *_catDescription;
-    NSNumber *_identifier;
-    NSString *_name;
-    NSString *_uuidStr;
+    NSString * _catDescription;
+    NSNumber * _identifier;
+    NSString * _name;
+    NSString * _uuidStr;
 }
 
 @property (nonatomic, retain) NSString *catDescription;

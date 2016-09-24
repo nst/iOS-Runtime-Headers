@@ -3,7 +3,7 @@
  */
 
 @interface IKTextFieldElement : IKTextElement {
-    IKAppKeyboard *_keyboard;
+    IKAppKeyboard * _keyboard;
 }
 
 @property (nonatomic, readonly) IKAppKeyboard *keyboard;

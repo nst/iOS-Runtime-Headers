@@ -4,9 +4,20 @@
 
 @interface IKDOMLSParser : IKJSObject <IKJSDOMLSParser>
 
+@property (getter=appendAsChildrenAction, readonly) int ACTION_APPEND_AS_CHILDREN;
+@property (getter=insertAfterAction, readonly) int ACTION_INSERT_AFTER;
+@property (getter=insertBeforeAction, readonly) int ACTION_INSERT_BEFORE;
+@property (getter=replaceAction, readonly) int ACTION_REPLACE;
+@property (getter=replaceChildrenAction, readonly) int ACTION_REPLACE_CHILDREN;
+
 + (id)_dataFromInput:(id)arg1;
 
+- (int)appendAsChildrenAction;
+- (int)insertAfterAction;
+- (int)insertBeforeAction;
 - (id)parse:(id)arg1;
 - (id)parseWithContext:(id)arg1 :(id)arg2 :(int)arg3;
+- (int)replaceAction;
+- (int)replaceChildrenAction;
 
 @end

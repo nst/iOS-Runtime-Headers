@@ -3,7 +3,7 @@
  */
 
 @interface ALAssetsGroup : NSObject {
-    id _internal;
+    id  _internal;
 }
 
 @property (getter=isEditable, nonatomic, readonly) BOOL editable;

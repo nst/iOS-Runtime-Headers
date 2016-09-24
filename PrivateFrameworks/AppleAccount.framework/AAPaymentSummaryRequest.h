@@ -3,7 +3,7 @@
  */
 
 @interface AAPaymentSummaryRequest : AAAppleIDSettingsRequest {
-    NSString *_secondaryAuthToken;
+    NSString * _secondaryAuthToken;
 }
 
 @property (nonatomic, copy) NSString *secondaryAuthToken;

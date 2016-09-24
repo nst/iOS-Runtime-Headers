@@ -3,14 +3,15 @@
  */
 
 @interface TUAudioRoute : NSObject {
-    TUAudioRoutePreferredRouteOptions *_preferredRouteOptions;
-    NSDictionary *_route;
+    TUAudioRoutePreferredRouteOptions * _preferredRouteOptions;
+    NSDictionary * _route;
 }
 
 @property (getter=isAirTunes, nonatomic, readonly) BOOL airTunes;
 @property (getter=isBluetooth, nonatomic, readonly) BOOL bluetooth;
 @property (nonatomic, readonly) int bluetoothEndpointType;
 @property (getter=isCarAudio, nonatomic, readonly) BOOL carAudio;
+@property (getter=isCurrentlyPicked, nonatomic, readonly) BOOL currentlyPicked;
 @property (nonatomic, readonly) NSArray *identifiersOfOtherConnectedDevices;
 @property (getter=isPreferred, nonatomic, readonly) BOOL preferred;
 @property (nonatomic, retain) TUAudioRoutePreferredRouteOptions *preferredRouteOptions;
@@ -30,6 +31,7 @@
 - (BOOL)isAirTunes;
 - (BOOL)isBluetooth;
 - (BOOL)isCarAudio;
+- (BOOL)isCurrentlyPicked;
 - (BOOL)isPreferred;
 - (BOOL)isReceiver;
 - (BOOL)isSpeaker;

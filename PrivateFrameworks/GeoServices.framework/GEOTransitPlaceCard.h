@@ -5,11 +5,11 @@
 @interface GEOTransitPlaceCard : PBCodable <NSCopying> {
     struct { 
         unsigned int transitCategory : 1; 
-    } _has;
-    NSString *_incidentType;
-    int _transitCategory;
-    GEOTransitDepartureSequenceUsage *_transitDepartureSequenceUsage;
-    NSString *_transitSystemName;
+    }  _has;
+    NSString * _incidentType;
+    int  _transitCategory;
+    GEOTransitDepartureSequenceUsage * _transitDepartureSequenceUsage;
+    NSString * _transitSystemName;
 }
 
 @property (nonatomic, readonly) BOOL hasIncidentType;
@@ -21,6 +21,7 @@
 @property (nonatomic, retain) GEOTransitDepartureSequenceUsage *transitDepartureSequenceUsage;
 @property (nonatomic, retain) NSString *transitSystemName;
 
+- (int)StringAsTransitCategory:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -41,6 +42,7 @@
 - (void)setTransitDepartureSequenceUsage:(id)arg1;
 - (void)setTransitSystemName:(id)arg1;
 - (int)transitCategory;
+- (id)transitCategoryAsString:(int)arg1;
 - (id)transitDepartureSequenceUsage;
 - (id)transitSystemName;
 - (void)writeTo:(id)arg1;

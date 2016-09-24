@@ -3,15 +3,15 @@
  */
 
 @interface YTDeviceAuthenticator : NSObject <NSURLConnectionDelegate> {
-    NSURLConnection *_connection;
-    NSData *_hmac;
-    int _phase;
-    NSData *_r1;
-    NSData *_r1Hash;
-    NSData *_r2;
-    NSMutableData *_responseData;
-    double _timeTokenGranted;
-    NSString *_token;
+    NSURLConnection * _connection;
+    NSData * _hmac;
+    int  _phase;
+    NSData * _r1;
+    NSData * _r1Hash;
+    NSData * _r2;
+    NSMutableData * _responseData;
+    double  _timeTokenGranted;
+    NSString * _token;
 }
 
 @property (readonly, copy) NSString *debugDescription;

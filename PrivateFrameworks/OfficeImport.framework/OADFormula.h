@@ -6,9 +6,9 @@
     struct OADFormulaArg { 
         int type; 
         int value; 
-    } mArgs;
-    NSString *mName;
-    int mType;
+    }  mArgs;
+    NSString * mName;
+    int  mType;
 }
 
 - (struct OADFormulaArg { int x1; int x2; })argAtIndex:(unsigned int)arg1;

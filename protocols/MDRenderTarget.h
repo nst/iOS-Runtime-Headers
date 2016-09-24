@@ -6,8 +6,12 @@
 @required
 
 - (float)contentScale;
-- (struct CGSize { float x1; float x2; })size;
-- (struct CGSize { float x1; float x2; })sizeInPixels;
+- (struct Device { int x1; struct shared_ptr<ggl::Device> { struct Device {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; struct unique_ptr<md::SharedDeviceResources, std::__1::default_delete<md::SharedDeviceResources> > { struct __compressed_pair<md::SharedDeviceResources *, std::__1::default_delete<md::SharedDeviceResources> > { struct SharedDeviceResources {} *x_1_2_1; } x_3_1_1; } x3; }*)device;
+- (const struct RenderTargetFormat { int x1[4]; unsigned int x2; unsigned int x3; int x4; }*)format;
+- (BOOL)multiSample;
+- (BOOL)shouldRasterize;
+- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { double x1; double x2; })sizeInPixels;
 
 @optional
 

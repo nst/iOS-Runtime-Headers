@@ -3,33 +3,33 @@
  */
 
 @interface PLBBPowerToolService : PLService {
-    double _armUtilityThresholdVal;
-    PLEntryNotificationOperatorComposition *_audioEventCallback;
-    PLEntryNotificationOperatorComposition *_bbHwOtherCallback;
-    PLTelephonyConnection *_connection;
-    PLNSNotificationOperatorComposition *_dailyTaskNotification;
-    PLEntryNotificationOperatorComposition *_displayEventCallback;
-    BOOL _doesCurrPackageHasProblem;
-    BOOL _doesPrevPackageHasProblem;
-    double _elapsedDenumerator;
-    NSMutableArray *_endExclusionPeriods;
-    unsigned char _exclusionMask;
-    double _gArmUtil;
-    int _gPerepherialMax;
-    PLEntryNotificationOperatorComposition *_hotspotEventCallback;
-    BOOL _isUIAlertEnabled;
-    PLEntryNotificationOperatorComposition *_lteRRCCallback;
-    double _magicDeltaThresholdVal;
-    PLEntryNotificationOperatorComposition *_msgLiteCallback;
-    NSDate *_notToRemoveDate;
-    double _oosDurationVal;
-    double _rrcDisconnectedVal;
-    BOOL _sendAWD;
-    NSMutableArray *_startExclusionPeriods;
-    NSDate *_startSamplingDate;
-    PLEntryNotificationOperatorComposition *_telActivityCallback;
-    double _totalNormalARMUtility;
-    PLEntryNotificationOperatorComposition *_wcdmaRRCCallback;
+    double  _armUtilityThresholdVal;
+    PLEntryNotificationOperatorComposition * _audioEventCallback;
+    PLEntryNotificationOperatorComposition * _bbHwOtherCallback;
+    PLTelephonyConnection * _connection;
+    PLNSNotificationOperatorComposition * _dailyTaskNotification;
+    PLEntryNotificationOperatorComposition * _displayEventCallback;
+    BOOL  _doesCurrPackageHasProblem;
+    BOOL  _doesPrevPackageHasProblem;
+    double  _elapsedDenumerator;
+    NSMutableArray * _endExclusionPeriods;
+    unsigned char  _exclusionMask;
+    double  _gArmUtil;
+    int  _gPerepherialMax;
+    PLEntryNotificationOperatorComposition * _hotspotEventCallback;
+    BOOL  _isUIAlertEnabled;
+    PLEntryNotificationOperatorComposition * _lteRRCCallback;
+    double  _magicDeltaThresholdVal;
+    PLEntryNotificationOperatorComposition * _msgLiteCallback;
+    NSDate * _notToRemoveDate;
+    double  _oosDurationVal;
+    double  _rrcDisconnectedVal;
+    BOOL  _sendAWD;
+    NSMutableArray * _startExclusionPeriods;
+    NSDate * _startSamplingDate;
+    PLEntryNotificationOperatorComposition * _telActivityCallback;
+    double  _totalNormalARMUtility;
+    PLEntryNotificationOperatorComposition * _wcdmaRRCCallback;
 }
 
 @property double armUtilityThresholdVal;

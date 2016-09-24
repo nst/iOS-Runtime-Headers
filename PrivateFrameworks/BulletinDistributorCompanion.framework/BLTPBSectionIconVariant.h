@@ -3,12 +3,12 @@
  */
 
 @interface BLTPBSectionIconVariant : PBCodable <NSCopying> {
-    unsigned int _format;
+    unsigned int  _format;
     struct { 
         unsigned int precomposed : 1; 
-    } _has;
-    NSData *_imageData;
-    BOOL _precomposed;
+    }  _has;
+    NSData * _imageData;
+    BOOL  _precomposed;
 }
 
 @property (nonatomic) unsigned int format;

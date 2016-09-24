@@ -3,12 +3,12 @@
  */
 
 @interface CPMLBestBadgeShim : CPMLBestShim {
-    CDAttribute *cdBundleIdAttribute;
-    CDSession *cdSession;
-    NSDictionary *configPList;
-    NSMutableDictionary *hysteresis;
-    NSMutableDictionary *learnedWeights;
-    NSMutableString *weightsPath;
+    CDAttribute * cdBundleIdAttribute;
+    CDSession * cdSession;
+    NSDictionary * configPList;
+    NSMutableDictionary * hysteresis;
+    NSMutableDictionary * learnedWeights;
+    NSMutableString * weightsPath;
 }
 
 @property (retain) CDAttribute *cdBundleIdAttribute;

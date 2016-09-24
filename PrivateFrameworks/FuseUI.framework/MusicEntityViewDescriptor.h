@@ -3,17 +3,17 @@
  */
 
 @interface MusicEntityViewDescriptor : NSObject <NSCopying> {
-    BOOL _defaultAllowsSectionHeaders;
-    MusicEntityViewContentDescriptor *_defaultContentDescriptor;
-    MusicEntityViewContentDescriptor *_defaultSectionHeaderContentDescriptor;
-    <MusicEntityProviding> *_entityProvider;
-    int _scrollIndicatorStyle;
-    int _sectionHeaderHairlineStyleForNonFloatingState;
-    UIColor *_sectionHeaderTextColorForNonFloatingState;
-    float _sectionHeaderTopContentInset;
-    BOOL _sectionHeaderViewsFloat;
-    BOOL _trailingSeparatorInsetFollowsLayoutInsets;
-    BOOL _usesUppercaseLettersForSectionHeaderTitles;
+    BOOL  _defaultAllowsSectionHeaders;
+    MusicEntityViewContentDescriptor * _defaultContentDescriptor;
+    MusicEntityViewContentDescriptor * _defaultSectionHeaderContentDescriptor;
+    <MusicEntityProviding> * _entityProvider;
+    int  _scrollIndicatorStyle;
+    int  _sectionHeaderHairlineStyleForNonFloatingState;
+    UIColor * _sectionHeaderTextColorForNonFloatingState;
+    double  _sectionHeaderTopContentInset;
+    BOOL  _sectionHeaderViewsFloat;
+    BOOL  _trailingSeparatorInsetFollowsLayoutInsets;
+    BOOL  _usesUppercaseLettersForSectionHeaderTitles;
 }
 
 @property (nonatomic) BOOL defaultAllowsSectionHeaders;
@@ -23,7 +23,7 @@
 @property (nonatomic) int scrollIndicatorStyle;
 @property (nonatomic) int sectionHeaderHairlineStyleForNonFloatingState;
 @property (nonatomic, retain) UIColor *sectionHeaderTextColorForNonFloatingState;
-@property (nonatomic) float sectionHeaderTopContentInset;
+@property (nonatomic) double sectionHeaderTopContentInset;
 @property (nonatomic) BOOL sectionHeaderViewsFloat;
 @property (nonatomic) BOOL trailingSeparatorInsetFollowsLayoutInsets;
 @property (nonatomic) BOOL usesUppercaseLettersForSectionHeaderTitles;

@@ -3,10 +3,10 @@
  */
 
 @interface PUTilingViewUpdateItem : NSObject {
-    int _action;
-    PUTilingDataSource *_dataSource;
-    NSIndexPath *_indexPathAfterUpdate;
-    NSIndexPath *_indexPathBeforeUpdate;
+    int  _action;
+    PUTilingDataSource * _dataSource;
+    NSIndexPath * _indexPathAfterUpdate;
+    NSIndexPath * _indexPathBeforeUpdate;
 }
 
 @property (nonatomic, readonly) int action;

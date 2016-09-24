@@ -3,7 +3,7 @@
  */
 
 @interface CNTonePickerController : UINavigationController {
-    TKTonePickerViewController *_tonePicker;
+    TKTonePickerViewController * _tonePicker;
 }
 
 @property (nonatomic) <CNPickerControllerDelegate> *delegate;
@@ -12,7 +12,7 @@
 - (void).cxx_destruct;
 - (void)cancelButton:(id)arg1;
 - (void)doneButton:(id)arg1;
-- (id)initWithAlertType:(int)arg1 selectedToneIdentifier:(id)arg2 selectedVibrationIdentifier:(id)arg3;
+- (id)initWithAlertType:(int)arg1 activityAlert:(id)arg2;
 - (void)setTonePicker:(id)arg1;
 - (id)tonePicker;
 

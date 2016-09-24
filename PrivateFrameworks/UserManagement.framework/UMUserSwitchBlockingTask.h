@@ -4,7 +4,4 @@
 
 @interface UMUserSwitchBlockingTask : UMTask
 
-- (void)begin;
-- (void)end;
-
 @end

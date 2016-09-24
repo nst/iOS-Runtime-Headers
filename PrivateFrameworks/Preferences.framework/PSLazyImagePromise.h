@@ -3,12 +3,12 @@
  */
 
 @interface PSLazyImagePromise : NSObject {
-    UIImage *_image;
-    NSBundle *_imageBundle;
-    BOOL _imageLoaded;
-    NSString *_imageName;
-    NSString *_imagePath;
-    id /* block */ _loadBlock;
+    UIImage * _image;
+    NSBundle * _imageBundle;
+    BOOL  _imageLoaded;
+    NSString * _imageName;
+    NSString * _imagePath;
+    id /* block */  _loadBlock;
 }
 
 @property (nonatomic, readonly) UIImage *image;

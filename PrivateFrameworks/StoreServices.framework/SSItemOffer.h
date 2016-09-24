@@ -3,10 +3,10 @@
  */
 
 @interface SSItemOffer : NSObject <NSCopying> {
-    SSItem *_item;
-    NSMutableDictionary *_offerDictionary;
-    NSString *_offerIdentifier;
-    NSArray *_supportedDevices;
+    SSItem * _item;
+    NSMutableDictionary * _offerDictionary;
+    NSString * _offerIdentifier;
+    NSArray * _supportedDevices;
 }
 
 @property (getter=_offerItem, setter=_setOfferItem:, nonatomic) SSItem *_offerItem;
@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) NSString *actionType;
 @property (nonatomic, readonly) NSString *buyParameters;
 @property (nonatomic, readonly) SSDialog *confirmationDialog;
-@property (nonatomic, readonly) long long estimatedDiskSpaceNeeded;
+@property (nonatomic, readonly) int estimatedDiskSpaceNeeded;
 @property (nonatomic, readonly) SSNetworkConstraints *networkConstraints;
 @property (nonatomic, readonly) NSString *offerIdentifier;
 @property (nonatomic, readonly) SSItemMedia *offerMedia;
@@ -43,7 +43,7 @@
 - (id)documentCannotOpenDialog;
 - (id)documentRequiredHandlers;
 - (id)documentUTI;
-- (long long)estimatedDiskSpaceNeeded;
+- (int)estimatedDiskSpaceNeeded;
 - (id)init;
 - (id)initWithOfferIdentifier:(id)arg1 dictionary:(id)arg2;
 - (BOOL)isOneTapOffer;

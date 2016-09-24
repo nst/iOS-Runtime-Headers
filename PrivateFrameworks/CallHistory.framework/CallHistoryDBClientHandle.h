@@ -3,10 +3,10 @@
  */
 
 @interface CallHistoryDBClientHandle : CHSynchronizedLoggable {
-    id _observerCallRecordRef;
-    id _observerCallTimersRef;
-    NSObject<OS_dispatch_queue> *_recentCallQueue;
-    CallHistoryDBHandle *dbStoreHandle;
+    id  _observerCallRecordRef;
+    id  _observerCallTimersRef;
+    NSObject<OS_dispatch_queue> * _recentCallQueue;
+    CallHistoryDBHandle * dbStoreHandle;
 }
 
 @property (nonatomic, readonly) CallHistoryDBHandle *dbStoreHandle;
@@ -44,7 +44,7 @@
 - (id)init;
 - (id)init:(BOOL)arg1;
 - (id)manager;
-- (BOOL)moveCallRecordsFromDatabaseAtURL:(id)arg1 withVersion:(int)arg2;
+- (BOOL)moveCallRecordsFromDatabaseAtURL:(id)arg1;
 - (void)parseCallStatus_sync:(unsigned int)arg1 isAnswered:(BOOL*)arg2 isOriginated:(BOOL*)arg3;
 - (id)recentCallQueue;
 - (void)registerForNotifications;

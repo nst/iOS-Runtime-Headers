@@ -3,11 +3,11 @@
  */
 
 @interface MPStoreCompletionOfferingController : NSObject <MCProfileConnectionObserver> {
-    NSMutableDictionary *_lookupItemsByStoreLookupID;
-    NSMutableDictionary *_lookupItemsByTokenID;
-    unsigned int _nextTokenID;
-    NSCache *_offeringCache;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableDictionary * _lookupItemsByStoreLookupID;
+    NSMutableDictionary * _lookupItemsByTokenID;
+    unsigned int  _nextTokenID;
+    NSCache * _offeringCache;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

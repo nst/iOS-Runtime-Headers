@@ -3,9 +3,9 @@
  */
 
 @interface GKRandomDistribution : NSObject <GKRandom> {
-    int _highest;
-    int _lowest;
-    <GKRandom> *_source;
+    int  _highest;
+    int  _lowest;
+    <GKRandom> * _source;
 }
 
 @property (nonatomic, readonly) int highestValue;

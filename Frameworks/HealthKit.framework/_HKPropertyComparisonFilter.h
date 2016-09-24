@@ -3,9 +3,9 @@
  */
 
 @interface _HKPropertyComparisonFilter : _HKFilter {
-    NSString *_lhPropertyName;
-    unsigned int _operatorType;
-    NSString *_rhPropertyName;
+    NSString * _lhPropertyName;
+    unsigned int  _operatorType;
+    NSString * _rhPropertyName;
 }
 
 @property (nonatomic, readonly) NSString *lhPropertyName;
@@ -28,6 +28,6 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
-- (id)predicateWithHealthDaemon:(id)arg1;
+- (id)predicateWithProfile:(id)arg1;
 
 @end

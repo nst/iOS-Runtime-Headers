@@ -3,11 +3,11 @@
  */
 
 @interface HDServiceConnectionManager : NSObject <HDDatabaseProtectedDataObserver, HDDiagnosticObject, HDHealthDaemonReadyObserver> {
-    BOOL _BTLEEnabled;
-    NSMutableDictionary *_activeServices;
-    BOOL _connecting;
-    HDDaemon *_daemon;
-    NSObject<OS_dispatch_queue> *_deviceQueue;
+    BOOL  _BTLEEnabled;
+    NSMutableDictionary * _activeServices;
+    BOOL  _connecting;
+    HDDaemon * _daemon;
+    NSObject<OS_dispatch_queue> * _deviceQueue;
 }
 
 @property (nonatomic) HDDaemon *daemon;

@@ -3,13 +3,13 @@
  */
 
 @interface HMDPowerManager : NSObject {
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    BOOL _networkAccessRequired;
-    BOOL _networkInterfaceActive;
-    unsigned int _powerAssertion;
-    void *_scContext;
-    struct __SCDynamicStore { } *_scStore;
-    BOOL _started;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    BOOL  _networkAccessRequired;
+    BOOL  _networkInterfaceActive;
+    unsigned int  _powerAssertion;
+    void * _scContext;
+    struct __SCDynamicStore { } * _scStore;
+    BOOL  _started;
 }
 
 @property (getter=isNetworkAccessRequired, nonatomic) BOOL networkAccessRequired;

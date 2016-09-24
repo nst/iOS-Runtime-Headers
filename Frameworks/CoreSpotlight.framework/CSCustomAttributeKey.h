@@ -3,11 +3,11 @@
  */
 
 @interface CSCustomAttributeKey : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_keyName;
-    BOOL _multiValued;
-    BOOL _searchable;
-    BOOL _searchableByDefault;
-    BOOL _unique;
+    NSString * _keyName;
+    BOOL  _multiValued;
+    BOOL  _searchable;
+    BOOL  _searchableByDefault;
+    BOOL  _unique;
 }
 
 @property (retain) NSString *keyName;
@@ -24,6 +24,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithKeyName:(id)arg1;
 - (id)initWithKeyName:(id)arg1 searchable:(BOOL)arg2 searchableByDefault:(BOOL)arg3 unique:(BOOL)arg4 multiValued:(BOOL)arg5;

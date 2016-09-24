@@ -3,10 +3,10 @@
  */
 
 @interface MFPColorLUTEffect : MFPEffect {
-    unsigned char mLutA;
-    unsigned char mLutB;
-    unsigned char mLutG;
-    unsigned char mLutR;
+    unsigned char  mLutA;
+    unsigned char  mLutB;
+    unsigned char  mLutG;
+    unsigned char  mLutR;
 }
 
 + (id)GUID;

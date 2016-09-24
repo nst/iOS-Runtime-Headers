@@ -3,9 +3,9 @@
  */
 
 @interface CoreCECDeviceProvider : CoreCECDevice {
-    unsigned short _deckStatusRequestMask;
-    unsigned char _sendFromAddress;
-    unsigned int _userControlFollowerSafetyTimeoutGeneration;
+    unsigned short  _deckStatusRequestMask;
+    unsigned char  _sendFromAddress;
+    unsigned int  _userControlFollowerSafetyTimeoutGeneration;
     struct { 
         CoreCECDevice *sender; 
         struct CECUserControl { 
@@ -25,8 +25,8 @@
             } operand; 
         } control; 
         BOOL isValid; 
-    } _userControlFollowerState;
-    unsigned int _userControlInitiatorRepetitionTimeoutGeneration;
+    }  _userControlFollowerState;
+    unsigned int  _userControlInitiatorRepetitionTimeoutGeneration;
     struct { 
         unsigned char destination; 
         struct CECUserControl { 
@@ -46,7 +46,7 @@
             } operand; 
         } control; 
         BOOL isValid; 
-    } _userControlInitiatorState;
+    }  _userControlInitiatorState;
 }
 
 @property (nonatomic, readonly) unsigned short deckStatusRequestMask;

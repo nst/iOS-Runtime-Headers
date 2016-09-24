@@ -3,8 +3,8 @@
  */
 
 @interface TSCHChartGridCountAdapter : TSCHChartGridAdapter {
-    BOOL mCountFromOne;
-    unsigned int mIndexFactor;
+    BOOL  mCountFromOne;
+    unsigned int  mIndexFactor;
 }
 
 @property (nonatomic) BOOL countFromOne;

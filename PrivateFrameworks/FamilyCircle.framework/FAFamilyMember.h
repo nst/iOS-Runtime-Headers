@@ -3,7 +3,7 @@
  */
 
 @interface FAFamilyMember : NSObject <NSSecureCoding> {
-    NSDictionary *_dictionary;
+    NSDictionary * _dictionary;
 }
 
 @property (nonatomic, readonly) unsigned int age;

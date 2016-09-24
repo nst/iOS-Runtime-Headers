@@ -3,9 +3,9 @@
  */
 
 @interface _CNForkJoinProgressiveResultObservationStrategy : NSObject <CNForkJoinResultReportingStrategy> {
-    unsigned int _activeObservableIdx;
-    NSMutableIndexSet *_finishedObservables;
-    NSArray *_results;
+    unsigned int  _activeObservableIdx;
+    NSMutableIndexSet * _finishedObservables;
+    NSArray * _results;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -13,7 +13,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithCapacity:(unsigned int)arg1;
 - (void)observableAtIndex:(unsigned int)arg1 didCompleteForObserver:(id)arg2;
 - (void)receiveResult:(id)arg1 fromObservableAtIndex:(unsigned int)arg2 observer:(id)arg3;

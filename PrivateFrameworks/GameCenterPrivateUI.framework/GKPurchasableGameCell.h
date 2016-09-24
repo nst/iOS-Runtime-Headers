@@ -3,15 +3,15 @@
  */
 
 @interface GKPurchasableGameCell : GKBaseGameCell {
-    float _capturedRating;
-    UILabel *_developerLabel;
-    UILabel *_numberRatings;
-    UILabel *_priceLabel;
-    GKRatingView *_ratingStarsView;
-    GKStoreItemInternal *_storeItem;
+    double  _capturedRating;
+    UILabel * _developerLabel;
+    UILabel * _numberRatings;
+    UILabel * _priceLabel;
+    GKRatingView * _ratingStarsView;
+    GKStoreItemInternal * _storeItem;
 }
 
-@property (nonatomic) float capturedRating;
+@property (nonatomic) double capturedRating;
 @property (nonatomic, retain) UILabel *developerLabel;
 @property (nonatomic, retain) UILabel *numberRatings;
 @property (nonatomic, retain) UILabel *priceLabel;
@@ -24,7 +24,7 @@
 - (id)developerLabel;
 - (void)didUpdateModel;
 - (void)establishConstraints;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)numberRatings;
 - (void)prepareForReuse;
 - (id)priceLabel;

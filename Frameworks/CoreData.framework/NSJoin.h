@@ -3,8 +3,8 @@
  */
 
 @interface NSJoin : NSObject <NSCoding, NSCopying> {
-    NSString *_destinationAttributeName;
-    NSString *_sourceAttributeName;
+    NSString * _destinationAttributeName;
+    NSString * _sourceAttributeName;
 }
 
 + (id)joinWithSourceAttributeName:(id)arg1 destinationAttributeName:(id)arg2;

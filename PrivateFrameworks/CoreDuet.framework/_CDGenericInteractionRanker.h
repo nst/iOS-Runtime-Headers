@@ -3,30 +3,30 @@
  */
 
 @interface _CDGenericInteractionRanker : NSObject <_CDInteractionRanking> {
-    NSSet *_allowedIdentifiers;
-    NSSet *_allowedPersonIdType;
-    NSSet *_allowedPersonIds;
-    double _c;
-    double _contactNameKeywordMatchWeight;
-    NSString *_contactPrefix;
-    double _diffWeekPeriodWeight;
-    double _keywordWeight;
-    double _locationWeight;
-    double _outgoingWeight;
-    unsigned int _rankAggregationMethod;
-    NSDate *_referenceDate;
-    NSSet *_referenceKeywords;
-    NSString *_referenceLocationUUID;
-    BOOL _requireAllSeedContacts;
-    double _sameWeekPeriodWeight;
-    NSArray *_seedContacts;
-    double _socialWeight;
-    double _timeHalfLife;
-    double _timeOfDayHalfLife;
-    double _timeOfDayWeight;
-    double _timeOfWeekHalfLife;
-    double _timeOfWeekWeight;
-    double _timeWeight;
+    NSSet * _allowedIdentifiers;
+    NSSet * _allowedPersonIdType;
+    NSSet * _allowedPersonIds;
+    double  _c;
+    double  _contactNameKeywordMatchWeight;
+    NSString * _contactPrefix;
+    double  _diffWeekPeriodWeight;
+    double  _keywordWeight;
+    double  _locationWeight;
+    double  _outgoingWeight;
+    unsigned int  _rankAggregationMethod;
+    NSDate * _referenceDate;
+    NSSet * _referenceKeywords;
+    NSString * _referenceLocationUUID;
+    BOOL  _requireAllSeedContacts;
+    double  _sameWeekPeriodWeight;
+    NSArray * _seedContacts;
+    double  _socialWeight;
+    double  _timeHalfLife;
+    double  _timeOfDayHalfLife;
+    double  _timeOfDayWeight;
+    double  _timeOfWeekHalfLife;
+    double  _timeOfWeekWeight;
+    double  _timeWeight;
 }
 
 @property (retain) NSSet *allowedIdentifiers;

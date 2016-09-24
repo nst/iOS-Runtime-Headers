@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@interface _MTLDepthStencilState : NSObject <MTLDepthStencilState> {
-    <MTLDevice> *_device;
-    NSString *_label;
+@interface _MTLDepthStencilState : NSObject <MTLDepthStencilStateSPI> {
+    <MTLDevice> * _device;
+    NSString * _label;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,12 +12,20 @@
 @property (readonly) <MTLDevice> *device;
 @property (readonly) unsigned int hash;
 @property (readonly) NSString *label;
+@property (readonly) BOOL readsDepth;
+@property (readonly) BOOL readsStencil;
 @property (readonly) Class superclass;
+@property (readonly) BOOL writesDepth;
+@property (readonly) BOOL writesStencil;
 
 - (void)dealloc;
 - (id)description;
 - (id)device;
 - (id)initWithDevice:(id)arg1 depthStencilDescriptor:(id)arg2;
 - (id)label;
+- (BOOL)readsDepth;
+- (BOOL)readsStencil;
+- (BOOL)writesDepth;
+- (BOOL)writesStencil;
 
 @end

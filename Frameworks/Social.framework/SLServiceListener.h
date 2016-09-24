@@ -3,14 +3,14 @@
  */
 
 @interface SLServiceListener : NSObject <NSXPCListenerDelegate> {
-    NSArray *_allowedEntitlements;
-    NSXPCInterface *_clientInterface;
-    NSXPCListener *_listener;
-    NSString *_managedObjectModelPath;
-    NSString *_persistentStoreName;
-    NSString *_serviceName;
-    Protocol *_serviceProtocol;
-    Class _sessionClass;
+    NSArray * _allowedEntitlements;
+    NSXPCInterface * _clientInterface;
+    NSXPCListener * _listener;
+    NSString * _managedObjectModelPath;
+    NSString * _persistentStoreName;
+    NSString * _serviceName;
+    Protocol * _serviceProtocol;
+    Class  _sessionClass;
 }
 
 @property (retain) NSXPCInterface *clientInterface;

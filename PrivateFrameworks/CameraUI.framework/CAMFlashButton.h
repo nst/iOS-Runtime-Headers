@@ -3,10 +3,10 @@
  */
 
 @interface CAMFlashButton : CAMExpandableMenuButton {
-    UIImageView *__glyphView;
-    UIImageView *__warningIndicatorView;
-    BOOL _allowsAutomaticFlash;
-    BOOL _unavailable;
+    UIImageView * __glyphView;
+    UIImageView * __warningIndicatorView;
+    BOOL  _allowsAutomaticFlash;
+    BOOL  _unavailable;
 }
 
 @property (nonatomic, readonly) UIImageView *_glyphView;
@@ -28,16 +28,16 @@
 - (float)collapsedSelectedLabelHorizontalMargin;
 - (int)flashMode;
 - (id)headerView;
-- (id)hiddenIndexesWhileCollapsed;
 - (int)indexForMode:(int)arg1;
-- (id)initWithExpansionOrientation:(int)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithLayoutStyle:(int)arg1;
 - (BOOL)isUnavailable;
 - (int)modeForIndex:(int)arg1;
 - (int)numberOfMenuItems;
+- (float)padHeaderViewContentInsetLeft;
 - (void)prepareHeaderViewForExpanding:(BOOL)arg1;
 - (void)reloadData;
 - (void)setAllowsAutomaticFlash:(BOOL)arg1;
-- (void)setExpansionOrientation:(int)arg1;
 - (void)setFlashMode:(int)arg1;
 - (void)setUnavailable:(BOOL)arg1;
 - (BOOL)shouldIgnoreMenuInteraction;

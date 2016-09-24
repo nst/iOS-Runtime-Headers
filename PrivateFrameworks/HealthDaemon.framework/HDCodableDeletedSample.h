@@ -3,7 +3,7 @@
  */
 
 @interface HDCodableDeletedSample : PBCodable <NSCopying> {
-    HDCodableSample *_sample;
+    HDCodableSample * _sample;
 }
 
 @property (nonatomic, readonly) BOOL hasSample;

@@ -3,8 +3,8 @@
  */
 
 @interface GKApplicationProxy : NSObject {
-    LSApplicationProxy *_lsProxy;
-    NSDictionary *_metadata;
+    LSApplicationProxy * _lsProxy;
+    NSDictionary * _metadata;
 }
 
 @property (nonatomic, readonly, retain) NSNumber *adamID;

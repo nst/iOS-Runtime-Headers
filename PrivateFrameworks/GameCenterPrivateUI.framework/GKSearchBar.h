@@ -3,8 +3,8 @@
  */
 
 @interface GKSearchBar : UISearchBar {
-    GKCollectionViewDataSource *_dataSource;
-    int _sectionIndex;
+    GKCollectionViewDataSource * _dataSource;
+    int  _sectionIndex;
 }
 
 @property (nonatomic, retain) GKCollectionViewDataSource *dataSource;

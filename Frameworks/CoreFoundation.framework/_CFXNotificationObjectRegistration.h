@@ -3,7 +3,7 @@
  */
 
 @interface _CFXNotificationObjectRegistration : _CFXNotificationRegistrationContainer {
-    void *_object;
+    void * _object;
 }
 
 @property (readonly) void*object;

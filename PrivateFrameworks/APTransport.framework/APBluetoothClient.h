@@ -3,17 +3,17 @@
  */
 
 @interface APBluetoothClient : NSObject <WPAirPlaySoloDelegate> {
-    <APBluetoothClientDelegate> *_delegate;
-    BOOL _isFirstCycle;
-    BOOL _isSourcePresenceAdvertising;
-    BOOL _isStartAdvertisingPending;
-    BOOL _isStopAdvertisingPending;
-    NSMutableDictionary *_nearbyDevices;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSDictionary *_sourcePresenceAdvertisingData;
-    NSObject<OS_dispatch_source> *_sourcePresenceAdvertisingTimer;
-    NSObject<OS_dispatch_source> *_sourcePresenceWaitingTimer;
-    WPAirPlaySolo *_wpAirPlaySolo;
+    <APBluetoothClientDelegate> * _delegate;
+    BOOL  _isFirstCycle;
+    BOOL  _isSourcePresenceAdvertising;
+    BOOL  _isStartAdvertisingPending;
+    BOOL  _isStopAdvertisingPending;
+    NSMutableDictionary * _nearbyDevices;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSDictionary * _sourcePresenceAdvertisingData;
+    NSObject<OS_dispatch_source> * _sourcePresenceAdvertisingTimer;
+    NSObject<OS_dispatch_source> * _sourcePresenceWaitingTimer;
+    WPAirPlaySolo * _wpAirPlaySolo;
 }
 
 @property (readonly, copy) NSString *debugDescription;

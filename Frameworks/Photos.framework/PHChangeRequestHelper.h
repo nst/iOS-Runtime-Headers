@@ -3,14 +3,14 @@
  */
 
 @interface PHChangeRequestHelper : NSObject {
-    id _changeRequest;
-    BOOL _didRequestUUID;
-    BOOL _isMutated;
-    BOOL _isNew;
-    NSMutableDictionary *_mutations;
-    NSManagedObjectID *_objectID;
-    NSString *_uuid;
-    NSString *_uuidSaveToken;
+    id  _changeRequest;
+    BOOL  _didRequestUUID;
+    BOOL  _isMutated;
+    BOOL  _isNew;
+    NSMutableDictionary * _mutations;
+    NSManagedObjectID * _objectID;
+    NSString * _uuid;
+    NSString * _uuidSaveToken;
 }
 
 @property (nonatomic) id changeRequest;
@@ -22,7 +22,7 @@
 @property (nonatomic, readonly) NSString *uuidSaveToken;
 
 + (id)changeRequestForObject:(id)arg1;
-+ (id)changeRequestWithXPCDict:(id)arg1 clientEntitled:(BOOL)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
++ (id)changeRequestWithXPCDict:(id)arg1 clientEntitlements:(id)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
 
 - (void).cxx_destruct;
 - (BOOL)allowMutationToManagedObject:(id)arg1 propertyKey:(id)arg2 error:(id*)arg3;

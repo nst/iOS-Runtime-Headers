@@ -3,10 +3,10 @@
  */
 
 @interface MusicSocialRequestFollowingOperation : MusicSocialAbstractOperation {
-    NSNumber *_dsid;
-    NSString *_entityType;
-    BOOL _requestEntity;
-    NSNumber *_storeEntityID;
+    NSNumber * _dsid;
+    NSString * _entityType;
+    BOOL  _requestEntity;
+    NSNumber * _storeEntityID;
 }
 
 @property (nonatomic, copy) NSNumber *storeEntityID;

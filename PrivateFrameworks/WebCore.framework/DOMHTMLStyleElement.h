@@ -11,8 +11,10 @@
 
 - (BOOL)disabled;
 - (id)media;
+- (id)nonce;
 - (void)setDisabled:(BOOL)arg1;
 - (void)setMedia:(id)arg1;
+- (void)setNonce:(id)arg1;
 - (void)setType:(id)arg1;
 - (id)sheet;
 - (id)type;

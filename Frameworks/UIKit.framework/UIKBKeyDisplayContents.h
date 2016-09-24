@@ -3,18 +3,18 @@
  */
 
 @interface UIKBKeyDisplayContents : NSObject {
-    int _displayPathType;
-    NSString *_displayString;
-    NSString *_displayStringImage;
-    UIKBKeyDisplayContents *_fallbackContents;
-    BOOL _fillPath;
-    BOOL _flipImageHorizontally;
-    BOOL _force1xImages;
-    NSArray *_highlightedVariantsList;
-    NSArray *_secondaryDisplayStringImages;
-    NSArray *_secondaryDisplayStrings;
-    BOOL _stringKeycapOverImage;
-    NSArray *_variantDisplayContents;
+    int  _displayPathType;
+    NSString * _displayString;
+    NSString * _displayStringImage;
+    UIKBKeyDisplayContents * _fallbackContents;
+    BOOL  _fillPath;
+    BOOL  _flipImageHorizontally;
+    BOOL  _force1xImages;
+    NSArray * _highlightedVariantsList;
+    NSArray * _secondaryDisplayStringImages;
+    NSArray * _secondaryDisplayStrings;
+    BOOL  _stringKeycapOverImage;
+    NSArray * _variantDisplayContents;
 }
 
 @property (nonatomic) int displayPathType;

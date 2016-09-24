@@ -3,8 +3,8 @@
  */
 
 @interface PLPhotoEditImportProperties : NSObject {
-    double _baseDuration;
-    int _baseEXIFOrientation;
+    double  _baseDuration;
+    int  _baseEXIFOrientation;
 }
 
 @property (nonatomic, readonly) double baseDuration;

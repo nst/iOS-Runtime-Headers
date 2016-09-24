@@ -3,21 +3,21 @@
  */
 
 @interface AWDLibnetcoreTCPConnectionReport : PBCodable <NSCopying> {
-    AWDLibnetcoreCellularFallbackReport *_cellularFallbackReport;
-    NSString *_clientIdentifier;
-    NSMutableArray *_connectionAttemptStatisticsReports;
-    AWDLibnetcoreConnectionStatisticsReport *_connectionStatisticsReport;
-    BOOL _delegated;
+    AWDLibnetcoreCellularFallbackReport * _cellularFallbackReport;
+    NSString * _clientIdentifier;
+    NSMutableArray * _connectionAttemptStatisticsReports;
+    AWDLibnetcoreConnectionStatisticsReport * _connectionStatisticsReport;
+    BOOL  _delegated;
     struct { 
         unsigned int iPAddressAttemptCount : 1; 
         unsigned int timestamp : 1; 
         unsigned int reportReason : 1; 
         unsigned int delegated : 1; 
-    } _has;
-    unsigned long long _iPAddressAttemptCount;
-    int _reportReason;
-    NSString *_sourceAppIdentifier;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _iPAddressAttemptCount;
+    int  _reportReason;
+    NSString * _sourceAppIdentifier;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic, retain) AWDLibnetcoreCellularFallbackReport *cellularFallbackReport;

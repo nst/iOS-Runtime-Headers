@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DSelectionPath : TSCHSelectionPath {
-    Class mSceneObjectClass;
-    unsigned int mStyleIndex;
+    Class  mSceneObjectClass;
+    unsigned int  mStyleIndex;
 }
 
 @property (nonatomic, readonly) Class sceneObjectClass;

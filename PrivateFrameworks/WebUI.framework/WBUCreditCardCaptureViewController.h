@@ -3,8 +3,8 @@
  */
 
 @interface WBUCreditCardCaptureViewController : UINavigationController <CRCameraReaderDelegate> {
-    CRCameraReader *_reader;
-    WBSCreditCardData *_receivedCardData;
+    CRCameraReader * _reader;
+    WBSCreditCardData * _receivedCardData;
 }
 
 @property (readonly, copy) NSString *debugDescription;

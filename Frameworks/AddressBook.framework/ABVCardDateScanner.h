@@ -3,8 +3,8 @@
  */
 
 @interface ABVCardDateScanner : NSObject {
-    unsigned int _position;
-    NSString *_string;
+    unsigned int  _position;
+    NSString * _string;
 }
 
 @property (readonly) unsigned int position;

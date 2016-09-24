@@ -3,9 +3,9 @@
  */
 
 @interface NSConcreteSetChanges : NSSetChanges {
-    NSSet *_backing;
-    BOOL _backingIsMutable;
-    NSMutableArray *_changes;
+    NSSet * _backing;
+    BOOL  _backingIsMutable;
+    NSMutableArray * _changes;
 }
 
 - (void)_fault;

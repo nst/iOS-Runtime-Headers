@@ -3,13 +3,13 @@
  */
 
 @interface SKDownloadChangeset : NSObject <NSCopying> {
-    NSNumber *_contentLength;
-    NSURL *_contentURL;
-    NSNumber *_downloadID;
-    NSNumber *_downloadState;
-    NSError *_error;
-    NSNumber *_progress;
-    NSNumber *_timeRemaining;
+    NSNumber * _contentLength;
+    NSURL * _contentURL;
+    NSNumber * _downloadID;
+    NSNumber * _downloadState;
+    NSError * _error;
+    NSNumber * _progress;
+    NSNumber * _timeRemaining;
 }
 
 @property (nonatomic, copy) NSNumber *contentLength;

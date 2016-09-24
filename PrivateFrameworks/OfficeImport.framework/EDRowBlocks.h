@@ -3,14 +3,14 @@
  */
 
 @interface EDRowBlocks : NSObject <TSUFlushable> {
-    NSString *mFileName;
-    EDCollection *mFormulas;
-    int mLockCount;
-    unsigned int mMaxPopulatedColumn;
-    unsigned int mMaxPopulatedRow;
-    NSMutableArray *mRowBlocks;
-    NSRecursiveLock *mSaveLoadLock;
-    EDWorksheet *mWorksheet;
+    NSString * mFileName;
+    EDCollection * mFormulas;
+    int  mLockCount;
+    unsigned int  mMaxPopulatedColumn;
+    unsigned int  mMaxPopulatedRow;
+    NSMutableArray * mRowBlocks;
+    NSRecursiveLock * mSaveLoadLock;
+    EDWorksheet * mWorksheet;
 }
 
 @property (readonly, copy) NSString *debugDescription;

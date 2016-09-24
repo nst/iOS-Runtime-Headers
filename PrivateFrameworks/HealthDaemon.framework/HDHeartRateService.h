@@ -3,8 +3,8 @@
  */
 
 @interface HDHeartRateService : HDHealthService {
-    BOOL _deliverData;
-    int _preferredSensorLocation;
+    BOOL  _deliverData;
+    int  _preferredSensorLocation;
 }
 
 @property (nonatomic) int preferredSensorLocation;

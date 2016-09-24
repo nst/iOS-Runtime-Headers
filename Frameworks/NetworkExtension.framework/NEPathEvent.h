@@ -3,8 +3,8 @@
  */
 
 @interface NEPathEvent : NSObject {
-    NSString *_bundleID;
-    int _type;
+    NSString * _bundleID;
+    int  _type;
 }
 
 @property (readonly) NSString *bundleID;

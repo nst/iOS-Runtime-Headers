@@ -3,18 +3,18 @@
  */
 
 @interface UIKeyCommand : NSObject <NSCopying, NSSecureCoding> {
-    SEL _action;
-    int _buttonType;
-    UIViewController *_controllerForSegue;
-    NSString *_discoverabilityTitle;
-    NSString *_input;
-    NSIndexSet *_keyCodes;
-    int _modifierFlags;
-    UIResponder *_originatingResponder;
-    BOOL _repeatable;
-    NSString *_segueIdentifier;
-    UIEvent *_triggeringEvent;
-    SEL _upAction;
+    SEL  _action;
+    int  _buttonType;
+    UIViewController * _controllerForSegue;
+    NSString * _discoverabilityTitle;
+    NSString * _input;
+    NSIndexSet * _keyCodes;
+    int  _modifierFlags;
+    UIResponder * _originatingResponder;
+    BOOL  _repeatable;
+    NSString * _segueIdentifier;
+    UIEvent * _triggeringEvent;
+    SEL  _upAction;
 }
 
 @property (nonatomic, copy) NSString *discoverabilityTitle;

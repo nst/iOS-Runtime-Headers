@@ -3,7 +3,7 @@
  */
 
 @interface MusicNavigationBar : SKUIScrollingTabNavigationBar {
-    UINavigationController *_musicNavigationController;
+    UINavigationController * _musicNavigationController;
 }
 
 @property (nonatomic) UINavigationController *musicNavigationController;

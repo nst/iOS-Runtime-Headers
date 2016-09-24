@@ -3,17 +3,17 @@
  */
 
 @interface RadioAddStationRequest : RadioSyncRequest {
-    NSDictionary *_matchDictionary;
-    long long _persistentID;
-    NSMutableDictionary *_stationDictionary;
-    NSString *_stationHashForSkipHistoryCopying;
+    NSDictionary * _matchDictionary;
+    int  _persistentID;
+    NSMutableDictionary * _stationDictionary;
+    NSString * _stationHashForSkipHistoryCopying;
 }
 
 - (void).cxx_destruct;
 - (id)changeList;
 - (id)init;
 - (id)initWithLibraryTrackDictionary:(id)arg1 useArtist:(BOOL)arg2;
-- (id)initWithQueryTerm:(id)arg1 queryID:(long long)arg2;
+- (id)initWithQueryTerm:(id)arg1 queryID:(int)arg2;
 - (id)initWithRadioTrackDictionary:(id)arg1 useArtist:(BOOL)arg2;
 - (id)initWithStation:(id)arg1;
 - (id)initWithStationDictionary:(id)arg1;

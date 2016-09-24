@@ -3,7 +3,7 @@
  */
 
 @interface TSTHiddenStateIndexSet : NSObject {
-    NSMutableIndexSet *_visibleIndexSet;
+    NSMutableIndexSet * _visibleIndexSet;
 }
 
 @property (nonatomic, retain) NSMutableIndexSet *visibleIndexSet;

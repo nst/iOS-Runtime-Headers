@@ -3,11 +3,11 @@
  */
 
 @interface MFAddressConcatenator : NSObject {
-    NSString *_andNMoreFormat;
-    NSString *_andNMoreNoEllipsisFormat;
-    NSString *_nAddressesFormat;
-    NSString *_oneAddressFormat;
-    NSString *_truncatedAddressFormat;
+    NSString * _andNMoreFormat;
+    NSString * _andNMoreNoEllipsisFormat;
+    NSString * _nAddressesFormat;
+    NSString * _oneAddressFormat;
+    NSString * _truncatedAddressFormat;
 }
 
 @property (nonatomic, retain) NSString *andNMoreFormat;

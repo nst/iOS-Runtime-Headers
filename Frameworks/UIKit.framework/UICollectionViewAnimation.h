@@ -3,31 +3,31 @@
  */
 
 @interface UICollectionViewAnimation : NSObject {
-    id /* block */ _animationBlock;
+    id /* block */  _animationBlock;
     struct { 
         unsigned int animateFromCurrentPosition : 1; 
         unsigned int deleteAfterAnimation : 1; 
         unsigned int rasterizeAfterAnimation : 1; 
         unsigned int resetRasterizationAfterAnimation : 1; 
         unsigned int updateZIndexAfterAnimation : 1; 
-    } _collectionViewAnimationFlags;
-    NSMutableArray *_completionHandlers;
-    float _endFraction;
-    UICollectionViewLayoutAttributes *_finalLayoutAttributes;
-    float _startFraction;
-    NSMutableArray *_startupHandlers;
-    BOOL _updateZIndexAfterAnimation;
-    UICollectionReusableView *_view;
-    int _viewType;
+    }  _collectionViewAnimationFlags;
+    NSMutableArray * _completionHandlers;
+    double  _endFraction;
+    UICollectionViewLayoutAttributes * _finalLayoutAttributes;
+    double  _startFraction;
+    NSMutableArray * _startupHandlers;
+    BOOL  _updateZIndexAfterAnimation;
+    UICollectionReusableView * _view;
+    int  _viewType;
 }
 
 @property (nonatomic, readonly) BOOL animateFromCurrentPosition;
 @property (nonatomic, readonly) BOOL deleteAfterAnimation;
-@property (nonatomic, readonly) float endFraction;
+@property (nonatomic, readonly) double endFraction;
 @property (nonatomic, readonly) UICollectionViewLayoutAttributes *finalLayoutAttributes;
 @property (nonatomic) BOOL rasterizeAfterAnimation;
 @property (nonatomic) BOOL resetRasterizationAfterAnimation;
-@property (nonatomic, readonly) float startFraction;
+@property (nonatomic, readonly) double startFraction;
 @property (nonatomic, readonly) BOOL updateZIndexAfterAnimation;
 @property (nonatomic, readonly) UICollectionReusableView *view;
 @property (nonatomic, readonly) int viewType;
@@ -47,6 +47,7 @@
 - (void)setResetRasterizationAfterAnimation:(BOOL)arg1;
 - (void)start;
 - (float)startFraction;
+- (void)startWithAnimator:(id)arg1;
 - (BOOL)updateZIndexAfterAnimation;
 - (id)view;
 - (int)viewType;

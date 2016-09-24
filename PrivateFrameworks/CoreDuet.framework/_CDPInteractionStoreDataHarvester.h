@@ -3,10 +3,10 @@
  */
 
 @interface _CDPInteractionStoreDataHarvester : NSObject <_CDPDataHarvester> {
-    NSMutableDictionary *_identifierToContactMap;
-    NSArray *_interactions;
-    NSPredicate *_predicate;
-    _CDInteractionStore *_store;
+    NSMutableDictionary * _identifierToContactMap;
+    NSArray * _interactions;
+    NSPredicate * _predicate;
+    _CDInteractionStore * _store;
 }
 
 @property (readonly, copy) NSString *debugDescription;

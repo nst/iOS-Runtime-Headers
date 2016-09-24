@@ -3,8 +3,8 @@
  */
 
 @interface BBParentSectionDataProviderFactory : NSObject <BBSectionIdentity, NSSecureCoding> {
-    BBSectionInfo *_sectionInfo;
-    NSString *_universalSectionIdentifier;
+    BBSectionInfo * _sectionInfo;
+    NSString * _universalSectionIdentifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -17,8 +17,8 @@
 + (id)factoryFromSectionInfo:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)dataProviders;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSectionInfo:(id)arg1;

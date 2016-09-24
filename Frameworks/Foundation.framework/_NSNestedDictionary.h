@@ -3,8 +3,8 @@
  */
 
 @interface _NSNestedDictionary : NSMutableDictionary {
-    id _bindings;
-    id _locals;
+    id  _bindings;
+    id  _locals;
 }
 
 - (id)_recursiveAllKeys;

@@ -3,8 +3,8 @@
  */
 
 @interface _GEOTransitRoutingIncidentMessage : NSObject <GEOTransitRoutingIncidentMessage> {
-    GEOPBTransitRoutingIncidentMessage *_routingIncidentMessage;
-    NSArray *_transitIncidents;
+    GEOPBTransitRoutingIncidentMessage * _routingIncidentMessage;
+    NSArray * _transitIncidents;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,20 +3,20 @@
  */
 
 @interface MMCSRequestorContext : NSObject {
-    char **_authTokens;
-    unsigned long _count;
-    MMCSEngine *_engine;
-    unsigned int *_itemFlags;
-    unsigned long long *_itemIDs;
-    char **_signatures;
-    int _type;
+    char ** _authTokens;
+    unsigned long  _count;
+    MMCSEngine * _engine;
+    unsigned int * _itemFlags;
+    unsigned int * _itemIDs;
+    char ** _signatures;
+    int  _type;
 }
 
 @property (nonatomic) char **authTokens;
 @property (nonatomic) unsigned long count;
 @property (nonatomic) MMCSEngine *engine;
 @property (nonatomic) unsigned int*itemFlags;
-@property (nonatomic) unsigned long long*itemIDs;
+@property (nonatomic) unsigned int*itemIDs;
 @property (nonatomic) char **signatures;
 @property (nonatomic) int type;
 
@@ -30,12 +30,12 @@
 - (id)initWithEngine:(id)arg1 type:(int)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int*)itemFlags;
-- (unsigned long long*)itemIDs;
+- (unsigned int*)itemIDs;
 - (void)setAuthTokens:(char **)arg1;
 - (void)setCount:(unsigned long)arg1;
 - (void)setEngine:(id)arg1;
 - (void)setItemFlags:(unsigned int*)arg1;
-- (void)setItemIDs:(unsigned long long*)arg1;
+- (void)setItemIDs:(unsigned int*)arg1;
 - (void)setSignatures:(char **)arg1;
 - (void)setType:(int)arg1;
 - (char **)signatures;

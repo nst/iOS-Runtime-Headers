@@ -3,7 +3,7 @@
  */
 
 @interface SiriUIPersonPickerViewController : SiriUIObjectPickerViewController <ABPeoplePickerNavigationControllerDelegate> {
-    UIViewController *_presentingViewController;
+    UIViewController * _presentingViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

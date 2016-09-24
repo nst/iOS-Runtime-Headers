@@ -3,7 +3,7 @@
  */
 
 @interface BWReverseBreadthFirstEnumerator : BWNodeEnumerator {
-    NSMutableArray *_queue;
+    NSMutableArray * _queue;
 }
 
 - (void)dealloc;

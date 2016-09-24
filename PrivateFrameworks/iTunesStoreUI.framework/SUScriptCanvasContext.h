@@ -3,35 +3,35 @@
  */
 
 @interface SUScriptCanvasContext : SUScriptObject {
-    struct CGContext { } *_context;
-    struct CGPath { } *_contextPath;
-    id _fillStyle;
-    int _fillStyleType;
-    float _height;
-    float _scale;
-    float _shadowBlur;
-    SUScriptColor *_shadowColor;
-    float _shadowOffsetX;
-    float _shadowOffsetY;
-    id _strokeStyle;
-    int _strokeStyleType;
-    float _width;
+    struct CGContext { } * _context;
+    struct CGPath { } * _contextPath;
+    id  _fillStyle;
+    int  _fillStyleType;
+    double  _height;
+    double  _scale;
+    double  _shadowBlur;
+    SUScriptColor * _shadowColor;
+    double  _shadowOffsetX;
+    double  _shadowOffsetY;
+    id  _strokeStyle;
+    int  _strokeStyleType;
+    double  _width;
 }
 
 @property (retain) id fillStyle;
-@property float globalAlpha;
+@property double globalAlpha;
 @property (retain) NSString *globalCompositeOperation;
-@property (readonly) float height;
+@property (readonly) double height;
 @property (retain) id lineCap;
 @property (retain) id lineJoin;
-@property float lineWidth;
-@property float miterLimit;
-@property float shadowBlur;
+@property double lineWidth;
+@property double miterLimit;
+@property double shadowBlur;
 @property (retain) id shadowColor;
-@property float shadowOffsetX;
-@property float shadowOffsetY;
+@property double shadowOffsetX;
+@property double shadowOffsetY;
 @property (retain) id strokeStyle;
-@property (readonly) float width;
+@property (readonly) double width;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface SGSimpleNamedEmailAddress : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_emailAddress;
-    NSString *_name;
+    NSString * _emailAddress;
+    NSString * _name;
 }
 
 @property (nonatomic, readonly) NSString *emailAddress;

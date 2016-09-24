@@ -3,25 +3,25 @@
  */
 
 @interface TSWPTOCLayout : TSWPShapeLayout {
-    TSWPTOCLayoutHint *_hint;
-    unsigned int _initialCharIndex;
+    TSWPTOCLayoutHint * _hint;
+    unsigned int  _initialCharIndex;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _maxSize;
-    unsigned int _storageChangeCount;
+        double width; 
+        double height; 
+    }  _maxSize;
+    unsigned int  _storageChangeCount;
 }
 
 @property (nonatomic, readonly) TSWPTOCLayoutHint *hint;
 @property (nonatomic, readonly) unsigned int initialCharIndex;
 @property (getter=isLastLayoutInTOC, nonatomic, readonly) BOOL lastLayoutInTOC;
-@property (nonatomic) struct CGSize { float x1; float x2; } maxSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } maxSize;
 
-- (struct CGSize { float x1; float x2; })adjustedInsetsForTarget:(id)arg1;
+- (struct CGSize { double x1; double x2; })adjustedInsetsForTarget:(id)arg1;
 - (BOOL)alwaysStartsNewTarget;
 - (unsigned int)autosizeFlagsForTextLayout:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })autosizedFrameForTextLayout:(id)arg1 textSize:(struct CGSize { float x1; float x2; })arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForStandardKnobs;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })autosizedFrameForTextLayout:(id)arg1 textSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsForStandardKnobs;
 - (id)childSearchTargets;
 - (unsigned int)columnCount;
 - (id)computeLayoutGeometry;
@@ -29,21 +29,21 @@
 - (float)gapForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2;
 - (id)hint;
 - (id)initWithInfo:(id)arg1;
-- (id)initWithInfo:(id)arg1 initialCharIndex:(unsigned int)arg2 maxSize:(struct CGSize { float x1; float x2; })arg3;
+- (id)initWithInfo:(id)arg1 initialCharIndex:(unsigned int)arg2 maxSize:(struct CGSize { double x1; double x2; })arg3;
 - (unsigned int)initialCharIndex;
 - (void)invalidateForAutosizingTextLayout:(id)arg1;
 - (BOOL)isDraggable;
 - (BOOL)isLastLayoutInTOC;
-- (BOOL)isSelectable;
 - (id)layoutMargins;
 - (void)layoutSearchForString:(id)arg1 options:(unsigned int)arg2 hitBlock:(id /* block */)arg3;
 - (float)maxAutoGrowHeightForTextLayout:(id)arg1;
-- (struct CGSize { float x1; float x2; })maxSize;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })nonAutosizedFrameForTextLayout:(id)arg1;
+- (struct CGSize { double x1; double x2; })maxSize;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })nonAutosizedFrameForTextLayout:(id)arg1;
 - (float)positionForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2 target:(id)arg3 outWidth:(float*)arg4 outGap:(float*)arg5;
 - (Class)repClassForTextLayout:(id)arg1;
-- (void)setMaxSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setMaxSize:(struct CGSize { double x1; double x2; })arg1;
 - (BOOL)shrinkTextToFit;
+- (BOOL)textLayoutShouldWrapAroundExternalDrawables:(id)arg1;
 - (int)verticalAlignmentForTextLayout:(id)arg1;
 - (float)widthForColumnIndex:(unsigned int)arg1 bodyWidth:(float)arg2;
 

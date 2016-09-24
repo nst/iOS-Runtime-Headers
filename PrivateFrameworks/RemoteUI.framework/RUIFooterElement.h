@@ -2,19 +2,10 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@interface RUIFooterElement : RUIElement {
-    NSURL *_linkURL;
-    NSString *_text;
-}
+@interface RUIFooterElement : RUIElement
 
-@property (nonatomic, copy) NSURL *linkURL;
-@property (nonatomic, copy) NSString *text;
-
-- (void).cxx_destruct;
 - (void)configureView:(id)arg1;
+- (int)labelAlignment;
 - (id)linkURL;
-- (void)setLinkURL:(id)arg1;
-- (void)setText:(id)arg1;
-- (id)text;
 
 @end

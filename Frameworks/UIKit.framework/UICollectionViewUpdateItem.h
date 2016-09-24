@@ -3,14 +3,12 @@
  */
 
 @interface UICollectionViewUpdateItem : NSObject {
-    NSIndexPath *_finalIndexPath;
-    UICollectionViewUpdateGap *_gap;
-    NSIndexPath *_initialIndexPath;
-    int _updateAction;
+    NSIndexPath * _finalIndexPath;
+    NSIndexPath * _initialIndexPath;
+    int  _updateAction;
 }
 
 @property (getter=_action, nonatomic, readonly) int action;
-@property (getter=_gap, setter=_setGap:, nonatomic) id gap;
 @property (getter=_indexPath, nonatomic, readonly) NSIndexPath *indexPath;
 @property (nonatomic, readonly) NSIndexPath *indexPathAfterUpdate;
 @property (nonatomic, readonly) NSIndexPath *indexPathBeforeUpdate;
@@ -20,11 +18,9 @@
 
 - (void).cxx_destruct;
 - (int)_action;
-- (id)_gap;
 - (id)_indexPath;
 - (BOOL)_isSectionOperation;
 - (id)_newIndexPath;
-- (void)_setGap:(id)arg1;
 - (void)_setNewIndexPath:(id)arg1;
 - (int)compareIndexPaths:(id)arg1;
 - (id)description;

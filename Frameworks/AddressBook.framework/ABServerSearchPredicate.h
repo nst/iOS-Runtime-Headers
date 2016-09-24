@@ -3,17 +3,17 @@
  */
 
 @interface ABServerSearchPredicate : ABPredicate <DASearchQueryConsumer> {
-    NSString *_accountIdentifier;
-    DADConnection *_connection;
-    <ABPredicateDelegate> *_delegate;
-    NSConditionLock *_doneLock;
-    int _error;
-    BOOL _includePhotosInResults;
-    BOOL _includeSourceInResults;
-    DAContactsSearchQuery *_searchQuery;
-    NSMutableArray *_searchResults;
-    NSString *_searchString;
-    void *_source;
+    NSString * _accountIdentifier;
+    DADConnection * _connection;
+    <ABPredicateDelegate> * _delegate;
+    NSConditionLock * _doneLock;
+    int  _error;
+    BOOL  _includePhotosInResults;
+    BOOL  _includeSourceInResults;
+    DAContactsSearchQuery * _searchQuery;
+    NSMutableArray * _searchResults;
+    NSString * _searchString;
+    void * _source;
 }
 
 @property (nonatomic, copy) NSString *accountIdentifier;

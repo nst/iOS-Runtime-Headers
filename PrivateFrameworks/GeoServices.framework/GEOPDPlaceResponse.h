@@ -3,22 +3,30 @@
  */
 
 @interface GEOPDPlaceResponse : PBCodable <NSCopying> {
-    NSMutableArray *_displayLanguages;
-    NSString *_displayRegion;
-    GEOPDPlaceGlobalResult *_globalResult;
+    NSString * _debugApiKey;
+    unsigned int  _debugLatencyMs;
+    NSMutableArray * _displayLanguages;
+    NSString * _displayRegion;
+    GEOPDPlaceGlobalResult * _globalResult;
     struct { 
+        unsigned int debugLatencyMs : 1; 
         unsigned int requestType : 1; 
         unsigned int status : 1; 
-    } _has;
-    NSMutableArray *_placeResults;
-    int _requestType;
-    NSMutableArray *_spokenLanguages;
-    int _status;
+    }  _has;
+    NSMutableArray * _placeResults;
+    int  _requestType;
+    NSMutableArray * _spokenLanguages;
+    int  _status;
+    PBUnknownFields * _unknownFields;
 }
 
+@property (nonatomic, retain) NSString *debugApiKey;
+@property (nonatomic) unsigned int debugLatencyMs;
 @property (nonatomic, retain) NSMutableArray *displayLanguages;
 @property (nonatomic, retain) NSString *displayRegion;
 @property (nonatomic, retain) GEOPDPlaceGlobalResult *globalResult;
+@property (nonatomic, readonly) BOOL hasDebugApiKey;
+@property (nonatomic) BOOL hasDebugLatencyMs;
 @property (nonatomic, readonly) BOOL hasDisplayRegion;
 @property (nonatomic, readonly) BOOL hasGlobalResult;
 @property (nonatomic) BOOL hasRequestType;
@@ -27,7 +35,14 @@
 @property (nonatomic) int requestType;
 @property (nonatomic, retain) NSMutableArray *spokenLanguages;
 @property (nonatomic) int status;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
++ (Class)displayLanguageType;
++ (Class)placeResultType;
++ (Class)spokenLanguageType;
+
+- (int)StringAsRequestType:(id)arg1;
+- (int)StringAsStatus:(id)arg1;
 - (id)_disambiguationLabels;
 - (void)addDisplayLanguage:(id)arg1;
 - (void)addPlaceResult:(id)arg1;
@@ -38,6 +53,8 @@
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)debugApiKey;
+- (unsigned int)debugLatencyMs;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)displayLanguageAtIndex:(unsigned int)arg1;
@@ -45,6 +62,8 @@
 - (unsigned int)displayLanguagesCount;
 - (id)displayRegion;
 - (id)globalResult;
+- (BOOL)hasDebugApiKey;
+- (BOOL)hasDebugLatencyMs;
 - (BOOL)hasDisplayRegion;
 - (BOOL)hasGlobalResult;
 - (BOOL)hasRequestType;
@@ -58,9 +77,13 @@
 - (unsigned int)placeResultsCount;
 - (BOOL)readFrom:(id)arg1;
 - (int)requestType;
+- (id)requestTypeAsString:(int)arg1;
+- (void)setDebugApiKey:(id)arg1;
+- (void)setDebugLatencyMs:(unsigned int)arg1;
 - (void)setDisplayLanguages:(id)arg1;
 - (void)setDisplayRegion:(id)arg1;
 - (void)setGlobalResult:(id)arg1;
+- (void)setHasDebugLatencyMs:(BOOL)arg1;
 - (void)setHasRequestType:(BOOL)arg1;
 - (void)setHasStatus:(BOOL)arg1;
 - (void)setPlaceResults:(id)arg1;
@@ -71,6 +94,8 @@
 - (id)spokenLanguages;
 - (unsigned int)spokenLanguagesCount;
 - (int)status;
+- (id)statusAsString:(int)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

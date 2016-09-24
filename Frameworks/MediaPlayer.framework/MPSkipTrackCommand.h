@@ -7,7 +7,7 @@
         int numberOfAvailableSkips; 
         int skipFrequency; 
         double skipInterval; 
-    } _skipLimit;
+    }  _skipLimit;
 }
 
 @property (nonatomic) struct { int x1; int x2; double x3; } skipLimit;

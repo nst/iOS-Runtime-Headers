@@ -3,8 +3,8 @@
  */
 
 @interface MMCSGetFile : MMCSSimpleFile {
-    id /* block */ _block;
-    id /* block */ _updateBlock;
+    id /* block */  _block;
+    id /* block */  _updateBlock;
 }
 
 @property (copy) id /* block */ completionBlock;

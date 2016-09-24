@@ -3,7 +3,7 @@
  */
 
 @interface SCNSpriteKitSource : SCNImageSource {
-    SKScene *_scene;
+    SKScene * _scene;
 }
 
 @property (nonatomic, retain) SKScene *scene;

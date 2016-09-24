@@ -3,9 +3,9 @@
  */
 
 @interface MSCLTwitterAuthenticationRequest : NSObject {
-    NSString *_password;
-    id /* block */ _responseBlock;
-    NSString *_username;
+    NSString * _password;
+    id /* block */  _responseBlock;
+    NSString * _username;
 }
 
 - (void).cxx_destruct;

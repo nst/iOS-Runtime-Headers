@@ -3,7 +3,7 @@
  */
 
 @interface _DKPrivacyPolicyEnforcer : NSObject {
-    NSDictionary *_eventStreamPrivacyPolicy;
+    NSDictionary * _eventStreamPrivacyPolicy;
 }
 
 + (id)privacyPolicyEnforcer;

@@ -3,11 +3,11 @@
  */
 
 @interface FAFamilySettings : FAFamilyCircleRequest <AAUIFamilySetupPrompterDelegate> {
-    SSAccount *_iTunesAccount;
-    BOOL _isFirstRun;
-    UIViewController *_presentingViewController;
-    AAUIFamilySetupPrompter *_prompter;
-    FAFamilySettings *_retainedSelf;
+    SSAccount * _iTunesAccount;
+    BOOL  _isFirstRun;
+    UIViewController * _presentingViewController;
+    AAUIFamilySetupPrompter * _prompter;
+    FAFamilySettings * _retainedSelf;
 }
 
 @property (readonly, copy) NSString *debugDescription;

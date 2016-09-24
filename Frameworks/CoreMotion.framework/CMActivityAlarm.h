@@ -3,12 +3,12 @@
  */
 
 @interface CMActivityAlarm : NSObject {
-    double _duration;
-    unsigned int _trigger;
-    id /* block */ fHandler;
-    BOOL fIsValid;
-    NSObject<OS_dispatch_queue> *fQueue;
-    struct __CFRunLoop { } *fRunLoop;
+    double  _duration;
+    unsigned int  _trigger;
+    id /* block */  fHandler;
+    BOOL  fIsValid;
+    NSObject<OS_dispatch_queue> * fQueue;
+    struct __CFRunLoop { } * fRunLoop;
 }
 
 @property (nonatomic) double duration;

@@ -3,13 +3,13 @@
  */
 
 @interface WebCascadeList : NSArray {
-    int _character;
-    unsigned int _count;
+    int  _character;
+    unsigned int  _count;
     struct WeakPtr<WebCore::FontCascade> { 
         struct Ref<WTF::WeakReference<WebCore::FontCascade> > { 
             struct WeakReference<WebCore::FontCascade> {} *m_ptr; 
         } m_ref; 
-    } _font;
+    }  _font;
     struct Vector<WTF::RetainPtr<const __CTFontDescriptor *>, 16, WTF::CrashOnOverflow, 16> { 
         struct RetainPtr<const __CTFontDescriptor *> {} *m_buffer; 
         unsigned int m_capacity; 
@@ -17,13 +17,13 @@
         struct type { 
             unsigned char __lx[4]; 
         } m_inlineBuffer[16]; 
-    } _fontDescriptors;
+    }  _fontDescriptors;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (unsigned int)count;
-- (id)initWithFont:(const struct FontCascade { struct FontDescription { struct RefCountedArray<WTF::AtomicString> { struct AtomicString {} *x_1_2_1; } x_1_1_1; struct FontFeatureSettings { struct Vector<WebCore::FontFeature, 0, WTF::CrashOnOverflow, 16> { struct FontFeature {} *x_1_3_1; unsigned int x_1_3_2; unsigned int x_1_3_3; } x_2_2_1; } x_1_1_2; float x_1_1_3; float x_1_1_4; unsigned int x_1_1_5 : 1; unsigned int x_1_1_6 : 1; unsigned int x_1_1_7 : 2; unsigned int x_1_1_8 : 1; unsigned int x_1_1_9 : 1; unsigned int x_1_1_10 : 8; unsigned int x_1_1_11 : 1; unsigned int x_1_1_12 : 2; unsigned int x_1_1_13 : 4; unsigned int x_1_1_14 : 2; unsigned int x_1_1_15 : 2; unsigned int x_1_1_16 : 1; unsigned int x_1_1_17 : 7; unsigned int x_1_1_18 : 2; unsigned int x_1_1_19 : 2; unsigned int x_1_1_20 : 2; unsigned int x_1_1_21 : 2; unsigned int x_1_1_22 : 2; unsigned int x_1_1_23 : 2; unsigned int x_1_1_24 : 3; unsigned int x_1_1_25 : 2; unsigned int x_1_1_26 : 2; unsigned int x_1_1_27 : 2; unsigned int x_1_1_28 : 1; unsigned int x_1_1_29 : 1; unsigned int x_1_1_30 : 1; unsigned int x_1_1_31 : 3; unsigned int x_1_1_32 : 2; unsigned int x_1_1_33 : 1; } x1; struct RefPtr<WebCore::FontCascadeFonts> { struct FontCascadeFonts {} *x_2_1_1; } x2; struct WeakPtrFactory<WebCore::FontCascade> { struct Ref<WTF::WeakReference<WebCore::FontCascade> > { struct WeakReference<WebCore::FontCascade> {} *x_1_2_1; } x_3_1_1; } x3; float x4; float x5; bool x6; unsigned int x7 : 1; unsigned int x8 : 1; }*)arg1 character:(int)arg2;
+- (id)initWithFont:(const struct FontCascade { struct FontCascadeDescription { struct FontFeatureSettings { struct Vector<WebCore::FontFeature, 0, WTF::CrashOnOverflow, 16> { struct FontFeature {} *x_1_3_1; unsigned int x_1_3_2; unsigned int x_1_3_3; } x_1_2_1; } x_1_1_1; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_2_2_1; } x_1_1_2; double x_1_1_3; unsigned int x_1_1_4 : 1; unsigned int x_1_1_5 : 1; unsigned int x_1_1_6 : 2; unsigned int x_1_1_7 : 1; unsigned int x_1_1_8 : 8; unsigned int x_1_1_9 : 1; unsigned int x_1_1_10 : 2; unsigned int x_1_1_11 : 7; unsigned int x_1_1_12 : 2; unsigned int x_1_1_13 : 2; unsigned int x_1_1_14 : 2; unsigned int x_1_1_15 : 2; unsigned int x_1_1_16 : 2; unsigned int x_1_1_17 : 2; unsigned int x_1_1_18 : 3; unsigned int x_1_1_19 : 2; unsigned int x_1_1_20 : 2; unsigned int x_1_1_21 : 2; unsigned int x_1_1_22 : 1; unsigned int x_1_1_23 : 1; unsigned int x_1_1_24 : 1; unsigned int x_1_1_25 : 3; unsigned int x_1_1_26 : 2; unsigned int x_1_1_27 : 1; struct RefCountedArray<WTF::AtomicString> { struct AtomicString {} *x_28_2_1; } x_1_1_28; } x1; }*)arg1 character:(int)arg2;
 - (id)objectAtIndex:(unsigned int)arg1;
 
 @end

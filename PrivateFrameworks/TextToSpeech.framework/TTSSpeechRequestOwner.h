@@ -3,9 +3,9 @@
  */
 
 @interface TTSSpeechRequestOwner : NSObject <TTSSpeechRequestDelegate> {
-    <TTSSpeechConnectionDelegate> *_delegate;
-    TTSSpeechRequest *_request;
-    <TTSSpeechService> *_speechService;
+    <TTSSpeechConnectionDelegate> * _delegate;
+    TTSSpeechRequest * _request;
+    <TTSSpeechService> * _speechService;
 }
 
 @property (readonly, copy) NSString *debugDescription;

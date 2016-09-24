@@ -3,10 +3,10 @@
  */
 
 @interface _GEORegionalResourcesTileLoader : NSObject {
-    NSLock *_lock;
-    GEOResourceManifestConfiguration *_manifestConfiguration;
-    GEOResourceLoader *_resourceLoader;
-    GEORegionalResourceTileData *_tile;
+    NSLock * _lock;
+    GEOResourceManifestConfiguration * _manifestConfiguration;
+    GEOResourceLoader * _resourceLoader;
+    GEORegionalResourceTileData * _tile;
 }
 
 - (void)cancel;

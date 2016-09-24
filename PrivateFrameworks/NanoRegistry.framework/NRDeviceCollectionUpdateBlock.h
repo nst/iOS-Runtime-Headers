@@ -3,9 +3,9 @@
  */
 
 @interface NRDeviceCollectionUpdateBlock : NSObject {
-    id /* block */ _block;
-    NSNumber *_desiredIndex;
-    NSObject<OS_dispatch_queue> *_queue;
+    id /* block */  _block;
+    NSNumber * _desiredIndex;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, copy) id /* block */ block;

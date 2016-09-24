@@ -3,12 +3,12 @@
  */
 
 @interface CSLUIPBUIPluginTriggerRequest : PBRequest <NSCopying> {
-    NSMutableArray *_dictionarys;
+    NSMutableArray * _dictionarys;
     struct { 
         unsigned int reason : 1; 
-    } _has;
-    NSString *_name;
-    int _reason;
+    }  _has;
+    NSString * _name;
+    int  _reason;
 }
 
 @property (nonatomic, retain) NSMutableArray *dictionarys;

@@ -3,14 +3,15 @@
  */
 
 @interface TSPCGDataConsumer : NSObject {
-    NSError *_error;
-    <TSUStreamWriteChannel> *_writeChannel;
-    NSObject<OS_dispatch_queue> *_writeQueue;
+    NSError * _error;
+    <TSUStreamWriteChannel> * _writeChannel;
+    NSObject<OS_dispatch_queue> * _writeQueue;
 }
 
 + (struct CGDataConsumer { }*)newCGDataConsumerForWriteChannel:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)_close;
 - (void)close;
 - (id)init;
 - (id)initWithWriteChannel:(id)arg1;

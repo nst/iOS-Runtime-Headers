@@ -8,6 +8,7 @@
 - (void)_setUserTrackingMode:(int)arg1 animated:(BOOL)arg2 fromTrackingButton:(BOOL)arg3;
 - (BOOL)canRotateForHeading;
 - (BOOL)hasUserLocation;
+- (BOOL)isCurrentlyRotated;
 - (int)userTrackingMode;
 
 @optional

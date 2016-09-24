@@ -3,22 +3,22 @@
  */
 
 @interface PULayoutSampledSectioning : PULayoutSectioning {
-    BOOL _hasSomeSampling;
-    int _lastHitRangeIndex;
-    int _lastHitRealSectionIndex;
-    int _lastHitVisualSectionIndex;
-    int *_maximumNumberOfVisibleItemsForVisualSection;
-    int *_numberOfItemsForRealSection;
-    int *_numberOfRealItemsForVisualSection;
-    int _numberOfRealSections;
-    int _numberOfVisualSections;
-    NSArray *_realSectionIndexesForVisualSection;
-    BOOL _samplingIsValid;
-    id *_sectionSamplers;
-    BOOL _sectioningIsValid;
-    int *_startIndexInVisualSectionForRealSection;
-    BOOL _supportsSamplingAndSectionGrouping;
-    int *_visualSectionForRealSection;
+    BOOL  _hasSomeSampling;
+    int  _lastHitRangeIndex;
+    int  _lastHitRealSectionIndex;
+    int  _lastHitVisualSectionIndex;
+    int * _maximumNumberOfVisibleItemsForVisualSection;
+    int * _numberOfItemsForRealSection;
+    int * _numberOfRealItemsForVisualSection;
+    int  _numberOfRealSections;
+    int  _numberOfVisualSections;
+    NSArray * _realSectionIndexesForVisualSection;
+    BOOL  _samplingIsValid;
+    id * _sectionSamplers;
+    BOOL  _sectioningIsValid;
+    int * _startIndexInVisualSectionForRealSection;
+    BOOL  _supportsSamplingAndSectionGrouping;
+    int * _visualSectionForRealSection;
 }
 
 @property (nonatomic) BOOL supportsSamplingAndSectionGrouping;

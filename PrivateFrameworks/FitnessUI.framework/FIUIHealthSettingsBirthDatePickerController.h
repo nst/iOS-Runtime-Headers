@@ -3,8 +3,8 @@
  */
 
 @interface FIUIHealthSettingsBirthDatePickerController : NSObject <FIUIHealthSettingsForceUpdatable> {
-    id /* block */ _dateOfBirthUpdateHandler;
-    FIUIHealthSettingsDatePicker *_datePickerView;
+    id /* block */  _dateOfBirthUpdateHandler;
+    FIUIHealthSettingsDatePicker * _datePickerView;
 }
 
 @property (nonatomic, copy) id /* block */ dateOfBirthUpdateHandler;

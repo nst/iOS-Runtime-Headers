@@ -5,9 +5,7 @@
 
 @optional
 
-- (void)placeCardReviewsController:(MKPlaceReviewsViewController *)arg1 didSelectViewReview:(id <MKMapItemReview>)arg2;
-- (void)placeCardReviewsControllerDidSelectCheckIn:(MKPlaceReviewsViewController *)arg1;
+- (void)placeCardReviewsController:(MKPlaceReviewsViewController *)arg1 didSelectViewReview:(id <MKMapItemProviderRatingSnippet>)arg2;
 - (void)placeCardReviewsControllerDidSelectViewAllReviews:(MKPlaceReviewsViewController *)arg1;
-- (void)placeCardReviewsControllerDidSelectWriteReview:(MKPlaceReviewsViewController *)arg1;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface MTLToolsBuffer : MTLToolsResource <MTLBuffer> {
-    MTLToolsPointerArray *_textures;
+    MTLToolsPointerArray * _textures;
 }
 
 @property (readonly) unsigned int cpuCacheMode;
@@ -11,6 +11,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) <MTLDevice> *device;
 @property (readonly) unsigned int hash;
+@property (readonly) <MTLHeap> *heap;
 @property (copy) NSString *label;
 @property (readonly) unsigned int length;
 @property (readonly) unsigned int storageMode;
@@ -19,11 +20,15 @@
 
 - (void).cxx_destruct;
 - (void)acceptVisitor:(id)arg1;
+- (void)addDebugMarker:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void*)contents;
 - (void)didModifyRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
+- (struct __IOSurface { }*)iosurface;
 - (unsigned int)length;
+- (void)newLinearTextureWithDescriptor:(id)arg1 offset:(unsigned int)arg2 bytesPerRow:(unsigned int)arg3 bytesPerImage:(unsigned int)arg4;
 - (id)newTextureWithDescriptor:(id)arg1 offset:(unsigned int)arg2 bytesPerRow:(unsigned int)arg3;
+- (void)removeAllDebugMarkers;
 - (id)textures;
 
 @end

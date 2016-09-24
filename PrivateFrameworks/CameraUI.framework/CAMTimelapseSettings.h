@@ -3,9 +3,9 @@
  */
 
 @interface CAMTimelapseSettings : NSObject {
-    double _initialCaptureTimeInterval;
-    double _maxOutputFPS;
-    double _maxOutputLength;
+    double  _initialCaptureTimeInterval;
+    double  _maxOutputFPS;
+    double  _maxOutputLength;
 }
 
 @property (nonatomic, readonly) double initialCaptureTimeInterval;
@@ -21,12 +21,12 @@
 - (id)init;
 - (double)initialCaptureTimeInterval;
 - (int)maxFailedStateReadAttempts;
-- (long long)maxMovieFileLengthForWidth:(int)arg1 height:(int)arg2;
+- (int)maxMovieFileLengthForWidth:(int)arg1 height:(int)arg2;
 - (int)maxMovieWriteAttempts;
 - (double)maxOutputFPS;
 - (int)maxOutputFrames;
 - (double)maxOutputLength;
-- (long long)minAvailableBytesNeededForCaptureForWidth:(int)arg1 height:(int)arg2;
+- (int)minAvailableBytesNeededForCaptureForWidth:(int)arg1 height:(int)arg2;
 - (double)outputFPSForFrameCount:(int)arg1;
 - (id)outputSettingsPresetForWidth:(int)arg1 height:(int)arg2;
 - (double)waitTimeBeforeNextWriteForNumberOfPreviousAttempts:(int)arg1;

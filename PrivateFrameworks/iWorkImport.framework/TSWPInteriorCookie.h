@@ -3,8 +3,8 @@
  */
 
 @interface TSWPInteriorCookie : NSObject {
-    TSWPColumn *_column;
-    TSWPShapeLayout *_shapeLayout;
+    TSWPColumn * _column;
+    TSWPShapeLayout * _shapeLayout;
 }
 
 @property (nonatomic) TSWPColumn *column;

@@ -3,8 +3,8 @@
  */
 
 @interface GKGameRecommendationInternal : GKGameInternal {
-    NSString *_engineID;
-    NSString *_reason;
+    NSString * _engineID;
+    NSString * _reason;
 }
 
 @property (nonatomic, retain) NSString *engineID;

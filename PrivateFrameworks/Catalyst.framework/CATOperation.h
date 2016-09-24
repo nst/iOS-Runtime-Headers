@@ -3,22 +3,22 @@
  */
 
 @interface CATOperation : NSOperation {
-    NSUUID *_UUID;
-    BOOL _canCancel;
-    int _completedUnitCount;
-    NSDate *_createdDate;
-    NSDate *_enqueuedDate;
-    NSError *_error;
-    NSDate *_finishedDate;
-    unsigned int _phase;
-    id _resultObject;
-    NSDate *_startedDate;
-    int _totalUnitCount;
-    NSDictionary *_userInfo;
-    NSArray *mCallStackSymbols;
-    NSLock *mLock;
-    _CATObserverManager *mObserverManager;
-    int mState;
+    NSUUID * _UUID;
+    BOOL  _canCancel;
+    int  _completedUnitCount;
+    NSDate * _createdDate;
+    NSDate * _enqueuedDate;
+    NSError * _error;
+    NSDate * _finishedDate;
+    unsigned int  _phase;
+    id  _resultObject;
+    NSDate * _startedDate;
+    int  _totalUnitCount;
+    NSDictionary * _userInfo;
+    NSArray * mCallStackSymbols;
+    NSLock * mLock;
+    _CATObserverManager * mObserverManager;
+    int  mState;
 }
 
 @property (retain) NSUUID *UUID;
@@ -49,7 +49,9 @@
 - (void)addDependency:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)addTarget:(id)arg1 selector:(SEL)arg2 forOperationEvents:(unsigned int)arg3;
+- (void)addTarget:(id)arg1 selector:(SEL)arg2 forOperationEvents:(unsigned int)arg3 delegateQueue:(id)arg4;
 - (void)addTarget:(id)arg1 selector:(SEL)arg2 forOperationEvents:(unsigned int)arg3 userInfo:(id)arg4;
+- (void)addTarget:(id)arg1 selector:(SEL)arg2 forOperationEvents:(unsigned int)arg3 userInfo:(id)arg4 delegateQueue:(id)arg5;
 - (BOOL)canCancel;
 - (void)cancel;
 - (int)completedUnitCount;
@@ -92,5 +94,6 @@
 - (int)totalUnitCount;
 - (id)userInfo;
 - (void)waitUntilFinished;
+- (BOOL)whenStateIs:(int)arg1 atomicallySwapWith:(int)arg2;
 
 @end

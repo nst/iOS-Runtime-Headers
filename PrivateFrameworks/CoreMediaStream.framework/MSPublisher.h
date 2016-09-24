@@ -3,25 +3,25 @@
  */
 
 @interface MSPublisher : MSCupidStateMachine <MSPublishStorageProtocolDelegate, MSPublishStreamsProtocolDelegate, MSPublisher> {
-    MSMediaStreamDaemon *_daemon;
-    <MSPublisherDelegate> *_delegate;
-    MSObjectQueue *_derivativesQueue;
-    NSMutableDictionary *_fileHashToAssetMap;
-    int _maxErrorCount;
-    NSMutableDictionary *_maxSizeByUTI;
-    NSArray *_pendingDerivativesQueue;
-    MSPublishStreamsProtocol *_protocol;
-    int _publishBatchSize;
-    long long _publishTargetByteCount;
-    MSObjectQueue *_quarantinedQueue;
-    NSMutableArray *_requestAuthQueue;
-    NSMutableArray *_sendingQueue;
-    unsigned int _sendingQueueCount;
-    int _state;
-    <MSPublishStorageProtocol> *_storageProtocol;
-    NSURL *_storageProtocolURL;
-    NSMutableArray *_tempFiles;
-    MSObjectQueue *_uploadQueue;
+    MSMediaStreamDaemon * _daemon;
+    <MSPublisherDelegate> * _delegate;
+    MSObjectQueue * _derivativesQueue;
+    NSMutableDictionary * _fileHashToAssetMap;
+    int  _maxErrorCount;
+    NSMutableDictionary * _maxSizeByUTI;
+    NSArray * _pendingDerivativesQueue;
+    MSPublishStreamsProtocol * _protocol;
+    int  _publishBatchSize;
+    int  _publishTargetByteCount;
+    MSObjectQueue * _quarantinedQueue;
+    NSMutableArray * _requestAuthQueue;
+    NSMutableArray * _sendingQueue;
+    unsigned int  _sendingQueueCount;
+    int  _state;
+    <MSPublishStorageProtocol> * _storageProtocol;
+    NSURL * _storageProtocolURL;
+    NSMutableArray * _tempFiles;
+    MSObjectQueue * _uploadQueue;
 }
 
 @property (nonatomic) MSMediaStreamDaemon *daemon;
@@ -30,7 +30,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic) int publishBatchSize;
-@property (nonatomic) long long publishTargetByteCount;
+@property (nonatomic) int publishTargetByteCount;
 @property (nonatomic, retain) NSURL *storageProtocolURL;
 @property (readonly) Class superclass;
 
@@ -90,12 +90,12 @@
 - (void)publishStreamsProtocol:(id)arg1 didFinishSendingUploadCompleteError:(id)arg2;
 - (void)publishStreamsProtocol:(id)arg1 didFinishUploadingMetadataResponse:(id)arg2 error:(id)arg3;
 - (void)publishStreamsProtocol:(id)arg1 didReceiveAuthenticationError:(id)arg2;
-- (long long)publishTargetByteCount;
+- (int)publishTargetByteCount;
 - (void)reenqueueQuarantinedAssetCollections;
 - (void)setDaemon:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPublishBatchSize:(int)arg1;
-- (void)setPublishTargetByteCount:(long long)arg1;
+- (void)setPublishTargetByteCount:(int)arg1;
 - (void)setStorageProtocolURL:(id)arg1;
 - (void)stop;
 - (id)storageProtocolURL;

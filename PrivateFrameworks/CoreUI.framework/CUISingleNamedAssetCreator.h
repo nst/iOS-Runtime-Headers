@@ -3,23 +3,24 @@
  */
 
 @interface CUISingleNamedAssetCreator : NSObject {
-    float _flattenedCompressionQuality;
-    NSMutableArray *_generators;
-    float _layersCompressionQuality;
-    NSMutableArray *_names;
-    unsigned int _primaryIndex;
-    NSString *_primaryName;
-    float _radiosityCompressionQuaility;
-    CUIMutableCommonAssetStorage *_store;
+    int  _compressionType;
+    double  _flattenedCompressionQuality;
+    NSMutableArray * _generators;
+    double  _layersCompressionQuality;
+    NSMutableArray * _names;
+    unsigned int  _primaryIndex;
+    NSString * _primaryName;
+    double  _radiosityCompressionQuaility;
+    CUIMutableCommonAssetStorage * _store;
 }
 
 @property (retain) NSMutableArray *generators;
 @property (retain) NSMutableArray *names;
 @property unsigned int primaryIndex;
 @property (retain) NSString *primaryName;
-@property CUIMutableCommonAssetStorage *store;
+@property (retain) CUIMutableCommonAssetStorage *store;
 
-- (void)_addImage:(struct CGImage { }*)arg1 withBaseKey:(id)arg2 name:(id)arg3;
+- (id)_addImage:(struct CGImage { }*)arg1 withBaseKey:(id)arg2 name:(id)arg3;
 - (void)_addImageAsJPEG:(struct CGImage { }*)arg1 withBaseKey:(id)arg2 withName:(id)arg3;
 - (void)_configureDefaultStorageParameters;
 - (id)_defaultBaseKey;
@@ -36,8 +37,9 @@
 - (void)addImage:(struct CGImage { }*)arg1 withName:(id)arg2;
 - (void)addImageAsJPEG:(struct CGImage { }*)arg1 withName:(id)arg2;
 - (void)addLayerReference:(id)arg1 forImage:(struct CGImage { }*)arg2 toLayerStackWithName:(id)arg3;
-- (void)addLayerStackWithSize:(struct CGSize { float x1; float x2; })arg1 stackData:(id)arg2 name:(id)arg3;
+- (void)addLayerStackWithSize:(struct CGSize { double x1; double x2; })arg1 stackData:(id)arg2 name:(id)arg3;
 - (float)compressionQuality;
+- (int)compressionType;
 - (void)dealloc;
 - (BOOL)distillAndSave:(id*)arg1;
 - (float)flattenedLossyCompressionQuality;
@@ -45,10 +47,12 @@
 - (id)initWithOutputURL:(id)arg1 versionString:(id)arg2;
 - (float)layersLossyCompressionQuality;
 - (id)names;
+- (id)path;
 - (unsigned int)primaryIndex;
 - (id)primaryName;
 - (float)radiosityLossyCompressionQuality;
 - (void)setCompressionQuality:(float)arg1;
+- (void)setCompressionType:(int)arg1;
 - (void)setFlattenedLossyCompressionQuality:(float)arg1;
 - (void)setGenerators:(id)arg1;
 - (void)setLayersLossyCompressionQuality:(float)arg1;

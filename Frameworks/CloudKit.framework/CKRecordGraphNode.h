@@ -3,24 +3,27 @@
  */
 
 @interface CKRecordGraphNode : NSObject {
-    NSMutableSet *_edges;
-    int _indegree;
-    CKRecord *_record;
+    NSMutableSet * _edges;
+    NSMutableSet * _indegrees;
+    CKRecord * _record;
 }
 
 @property (nonatomic, copy) NSMutableSet *edges;
-@property (nonatomic) int indegree;
+@property (nonatomic, readonly) unsigned int indegree;
+@property (nonatomic, readonly, copy) NSMutableSet *indegrees;
 @property (nonatomic, retain) CKRecord *record;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (id)description;
 - (id)edges;
-- (int)indegree;
+- (unsigned int)hash;
+- (unsigned int)indegree;
+- (id)indegrees;
 - (id)init;
+- (BOOL)isEqual:(id)arg1;
 - (id)record;
 - (void)setEdges:(id)arg1;
-- (void)setIndegree:(int)arg1;
 - (void)setRecord:(id)arg1;
 
 @end

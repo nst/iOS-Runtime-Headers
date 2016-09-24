@@ -6,6 +6,7 @@
 @optional
 
 - (void*)annotationABRecordForHandle:(FMFHandle *)arg1;
+- (CNContact *)annotationContactForHandle:(FMFHandle *)arg1;
 - (UIImage *)annotationImageForHandle:(FMFHandle *)arg1;
 - (BOOL)canSelectAnnotation:(id <MKAnnotation>)arg1;
 - (void)fmfMapViewController:(FMFMapViewController *)arg1 didDeselectHandle:(FMFHandle *)arg2;

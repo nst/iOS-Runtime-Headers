@@ -3,25 +3,25 @@
  */
 
 @interface ACUIDataclassConfigurationViewController : ACUIViewController {
-    ACAccount *_account;
-    NSString *_accountIdentifier;
-    PSSpecifier *_accountSummaryCellSpecifier;
-    NSMutableDictionary *_allDesiredDataclassActions;
-    id /* block */ _configurationCompletion;
-    PSSpecifier *_dataclassGroupSpecifier;
-    NSArray *_dataclassSpecifiers;
-    PSSpecifier *_deleteButtonSpecifier;
-    BOOL _didShowDataclassActionPickerDuringRemoval;
-    NSMutableArray *_dirtyDataclassCells;
-    BOOL _firstTimeSetup;
-    BOOL _forceMailSetup;
-    BOOL _isMailSetupForced;
-    BOOL _isMergingSyncData;
-    NSArray *_otherSpecifiers;
-    NSArray *_preEnabledDataclasses;
-    BOOL _shouldEnableAccountSummaryCell;
-    BOOL _shouldEnableDeleteAccountButton;
-    BOOL _shouldShowDeleteAccountButton;
+    ACAccount * _account;
+    NSString * _accountIdentifier;
+    PSSpecifier * _accountSummaryCellSpecifier;
+    NSMutableDictionary * _allDesiredDataclassActions;
+    id /* block */  _configurationCompletion;
+    PSSpecifier * _dataclassGroupSpecifier;
+    NSArray * _dataclassSpecifiers;
+    PSSpecifier * _deleteButtonSpecifier;
+    BOOL  _didShowDataclassActionPickerDuringRemoval;
+    NSMutableArray * _dirtyDataclassCells;
+    BOOL  _firstTimeSetup;
+    BOOL  _forceMailSetup;
+    BOOL  _isMailSetupForced;
+    BOOL  _isMergingSyncData;
+    NSArray * _otherSpecifiers;
+    NSArray * _preEnabledDataclasses;
+    BOOL  _shouldEnableAccountSummaryCell;
+    BOOL  _shouldEnableDeleteAccountButton;
+    BOOL  _shouldShowDeleteAccountButton;
 }
 
 @property (nonatomic, retain) ACAccount *account;
@@ -42,6 +42,7 @@
 - (id)_activityInProgressTextForDataclass:(id)arg1 isBeingEnabled:(BOOL)arg2;
 - (BOOL)_confirmDeleteLocalDataForDataclasses:(id)arg1;
 - (BOOL)_confirmKeepLocalDataForDataclasses:(id)arg1;
+- (BOOL)_confirmSyncDelete;
 - (void)_enableAllProvisionedDataclassesWithoutRequringUserInteraction;
 - (BOOL)_isShowingDeleteAccountButton;
 - (void)_markDataclassSwitchCellAsDirty:(id)arg1;
@@ -49,6 +50,7 @@
 - (void)_notifyOfAccountSetupCompletion;
 - (id)_orderDataclassList:(id)arg1;
 - (BOOL)_promptUserToConfirmAccountDeletion;
+- (int)_promptUserToConfirmAccountSyncDeletion;
 - (void)_setDataclass:(id)arg1 enabled:(BOOL)arg2;
 - (void)_showDelayedActivityInProgressUIWithMessage:(id)arg1;
 - (id)_specifiersForDataclasses:(id)arg1;
@@ -63,12 +65,14 @@
 - (int)deleteButtonIndex;
 - (id)deleteButtonSpecifier;
 - (void)deleteButtonTapped:(id)arg1;
+- (id)deviceMessage;
 - (id)displayedAccountTypeString;
 - (id)displayedShortAccountTypeString;
 - (void)doneButtonTapped:(id)arg1;
 - (void)forceMailSetup;
 - (void)hideActivityInProgressUIWithDelay:(double)arg1;
 - (id)init;
+- (BOOL)isAppleMailAccount:(id)arg1;
 - (BOOL)isFirstTimeSetup;
 - (BOOL)isMailSetupForced;
 - (id)messageForAccountDeletionProgressUI;
@@ -76,6 +80,7 @@
 - (void)operationsHelper:(id)arg1 didRemoveAccount:(id)arg2 withSuccess:(BOOL)arg3 error:(id)arg4;
 - (void)operationsHelper:(id)arg1 didSaveAccount:(id)arg2 withSuccess:(BOOL)arg3 error:(id)arg4;
 - (BOOL)operationsHelper:(id)arg1 shouldRemoveAccount:(id)arg2;
+- (int)operationsHelper:(id)arg1 shouldRemoveOrDisableAccount:(id)arg2;
 - (void)operationsHelper:(id)arg1 willRemoveAccount:(id)arg2;
 - (void)operationsHelper:(id)arg1 willSaveAccount:(id)arg2;
 - (id)otherSpecifiers;

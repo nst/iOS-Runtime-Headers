@@ -3,14 +3,14 @@
  */
 
 @interface AFUIStateMachine : NSObject {
-    <AFUIStateMachineDelegate> *_delegate;
-    NSMutableDictionary *_endStatesByEventByStartState;
-    int _state;
+    <AFUIStateMachineDelegate> * _delegate;
+    NSMutableDictionary * _endStatesByEventByStartState;
+    int  _state;
 }
 
 @property (nonatomic) <AFUIStateMachineDelegate> *delegate;
 @property (getter=_endStatesByEventByStartState, nonatomic, retain) NSMutableDictionary *endStatesByEventByStartState;
-@property (nonatomic) int state;
+@property (setter=_setState:, nonatomic) int state;
 
 - (void).cxx_destruct;
 - (id)_descriptionForEvent:(int)arg1;

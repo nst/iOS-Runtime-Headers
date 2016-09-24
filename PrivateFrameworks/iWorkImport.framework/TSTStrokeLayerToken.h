@@ -3,13 +3,13 @@
  */
 
 @interface TSTStrokeLayerToken : NSObject <TSTStrokeLayerStrokeAndRange> {
-    int _order;
-    unsigned int _position;
+    int  _order;
+    unsigned int  _position;
     struct TSTSimpleRange { 
         int origin; 
         unsigned int length; 
-    } _range;
-    TSDStroke *_stroke;
+    }  _range;
+    TSDStroke * _stroke;
 }
 
 @property (readonly, copy) NSString *debugDescription;

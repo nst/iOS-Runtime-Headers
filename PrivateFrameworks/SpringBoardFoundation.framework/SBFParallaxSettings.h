@@ -3,20 +3,20 @@
  */
 
 @interface SBFParallaxSettings : _UISettings {
-    int _distanceFromScreen;
-    BOOL _increaseEnabled;
-    int _slideDirectionX;
-    int _slideDirectionY;
-    BOOL _slideEnabled;
-    float _slideIncreaseX;
-    float _slideIncreaseY;
-    float _slidePixelsX;
-    float _slidePixelsY;
-    float _tiltDegreesX;
-    float _tiltDegreesY;
-    int _tiltDirectionX;
-    int _tiltDirectionY;
-    BOOL _tiltEnabled;
+    int  _distanceFromScreen;
+    BOOL  _increaseEnabled;
+    int  _slideDirectionX;
+    int  _slideDirectionY;
+    BOOL  _slideEnabled;
+    double  _slideIncreaseX;
+    double  _slideIncreaseY;
+    double  _slidePixelsX;
+    double  _slidePixelsY;
+    double  _tiltDegreesX;
+    double  _tiltDegreesY;
+    int  _tiltDirectionX;
+    int  _tiltDirectionY;
+    BOOL  _tiltEnabled;
 }
 
 @property int distanceFromScreen;
@@ -24,12 +24,12 @@
 @property int slideDirectionX;
 @property int slideDirectionY;
 @property BOOL slideEnabled;
-@property float slideIncreaseX;
-@property float slideIncreaseY;
-@property float slidePixelsX;
-@property float slidePixelsY;
-@property float tiltDegreesX;
-@property float tiltDegreesY;
+@property double slideIncreaseX;
+@property double slideIncreaseY;
+@property double slidePixelsX;
+@property double slidePixelsY;
+@property double tiltDegreesX;
+@property double tiltDegreesY;
 @property int tiltDirectionX;
 @property int tiltDirectionY;
 @property BOOL tiltEnabled;

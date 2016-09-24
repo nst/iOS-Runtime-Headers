@@ -3,13 +3,13 @@
  */
 
 @interface IMDDController : NSObject {
-    NSObject<OS_dispatch_queue> *_scannerQueue;
+    NSObject<OS_dispatch_queue> * _scannerQueue;
 }
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (BOOL)_scanMessageUsingScanner:(id)arg1 attributedString:(id)arg2;
-- (void)dealloc;
 - (id)init;
 - (void)scanMessage:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)scanMessage:(id)arg1 waitUntilDone:(BOOL)arg2 completionBlock:(id /* block */)arg3;

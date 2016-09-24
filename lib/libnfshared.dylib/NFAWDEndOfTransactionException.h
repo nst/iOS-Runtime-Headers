@@ -3,7 +3,7 @@
  */
 
 @interface NFAWDEndOfTransactionException : NSObject <NFAWDEventProtocol> {
-    AWDNFCHCIEndOfTransactionExceptionEvent *_metric;
+    AWDNFCHCIEndOfTransactionExceptionEvent * _metric;
 }
 
 @property (readonly, copy) NSString *debugDescription;

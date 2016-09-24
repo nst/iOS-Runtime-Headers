@@ -3,12 +3,12 @@
  */
 
 @interface MSCLSocialServiceSetupTableViewSection : NSObject {
-    MSCLAccountStore *_accountStore;
-    SKUIClientContext *_clientContext;
-    NSArray *_facebookPages;
-    UIImage *_image;
-    NSOperationQueue *_operationQueue;
-    MSCLSocialService *_service;
+    MSCLAccountStore * _accountStore;
+    SKUIClientContext * _clientContext;
+    NSArray * _facebookPages;
+    UIImage * _image;
+    NSOperationQueue * _operationQueue;
+    MSCLSocialService * _service;
 }
 
 @property (nonatomic, readonly) MSCLAccountStore *accountStore;

@@ -3,8 +3,8 @@
  */
 
 @interface MSInvitationResponse : NSObject {
-    BOOL _accept;
-    MSShare *_invitation;
+    BOOL  _accept;
+    MSShare * _invitation;
 }
 
 @property (nonatomic) BOOL accept;

@@ -3,14 +3,14 @@
  */
 
 @interface SUAutoInstallOperation : NSObject <SUAutoInstallOperationClientHandler> {
-    int _agreementStatus;
-    BOOL _canceled;
-    SUManagerClient *_client;
-    <SUAutoInstallOperationDelegate> *_delegate;
-    BOOL _expired;
-    SUAutoInstallForecast *_forecast;
-    NSUUID *_id;
-    SUAutoInstallForecast *forecast;
+    int  _agreementStatus;
+    BOOL  _canceled;
+    SUManagerClient * _client;
+    <SUAutoInstallOperationDelegate> * _delegate;
+    BOOL  _expired;
+    SUAutoInstallForecast * _forecast;
+    NSUUID * _id;
+    SUAutoInstallForecast * forecast;
 }
 
 @property (nonatomic) int agreementStatus;

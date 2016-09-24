@@ -3,7 +3,7 @@
  */
 
 @interface PKPassLibraryDefaultDataProvider : NSObject <PKPassLibraryDataProvider> {
-    PKPassLibrary *_library;
+    PKPassLibrary * _library;
 }
 
 @property (nonatomic, readonly) BOOL canAddPaymentPass;
@@ -12,8 +12,8 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (BOOL)canAddPaymentPass;
-- (void)dealloc;
 - (id)init;
 - (id)passWithPassTypeIdentifier:(id)arg1 serialNumber:(id)arg2;
 - (id)passWithUniqueID:(id)arg1;

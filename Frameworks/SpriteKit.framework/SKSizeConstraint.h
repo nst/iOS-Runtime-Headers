@@ -3,8 +3,8 @@
  */
 
 @interface SKSizeConstraint : SKConstraint {
-    SKRange *_heightRange;
-    SKRange *_widthRange;
+    SKRange * _heightRange;
+    SKRange * _widthRange;
 }
 
 @property (copy) SKRange *heightRange;

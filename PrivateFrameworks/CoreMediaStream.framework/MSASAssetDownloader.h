@@ -3,17 +3,17 @@
  */
 
 @interface MSASAssetDownloader : MSASAssetTransferer {
-    NSMutableDictionary *_assetToItemInFlightMap;
-    NSString *_currentFocusAlbumGUID;
-    NSString *_currentFocusAssetCollectionGUID;
-    BOOL _didEncounterNetworkConditionError;
-    NSString *_downloadBatchPerfGUID;
-    NSMutableArray *_finishedAssets;
-    BOOL _isDownloadingThumbnails;
-    BOOL _isWaitingForFirstDownloadEvent;
-    NSMutableArray *_itemsInFlight;
-    NSString *_objectGUID;
-    int _state;
+    NSMutableDictionary * _assetToItemInFlightMap;
+    NSString * _currentFocusAlbumGUID;
+    NSString * _currentFocusAssetCollectionGUID;
+    BOOL  _didEncounterNetworkConditionError;
+    NSString * _downloadBatchPerfGUID;
+    NSMutableArray * _finishedAssets;
+    BOOL  _isDownloadingThumbnails;
+    BOOL  _isWaitingForFirstDownloadEvent;
+    NSMutableArray * _itemsInFlight;
+    NSString * _objectGUID;
+    int  _state;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *assetToItemInFlightMap;

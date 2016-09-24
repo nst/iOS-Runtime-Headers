@@ -2,31 +2,34 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-@interface WeatherPreferences : NSObject <NSURLConnectionDelegate> {
-    NSString *_UUID;
-    NSObject<OS_dispatch_queue> *_celsiusQueue;
-    WeatherCloudPreferences *_cloudPreferences;
-    BOOL _isCelsius;
-    NSArray *_lastUbiquitousWrittenDefaults;
-    <WeatherPreferencesPersistence> *_persistence;
-    BOOL _serviceDebugging;
-    NSString *_serviceHost;
-    <SynchronizedDefaultsDelegate> *_syncDelegate;
-    BOOL _userGroupPrefsLockedWhenInit;
+@interface WeatherPreferences : NSObject <NSURLConnectionDelegate, WFTemperatureUnitObserver> {
+    NSString * _UUID;
+    NSString * _cacheDirectoryPath;
+    WeatherCloudPreferences * _cloudPreferences;
+    NSArray * _lastUbiquitousWrittenDefaults;
+    BOOL  _logUnitsAndLocale;
+    <WeatherPreferencesPersistence> * _persistence;
+    BOOL  _serviceDebugging;
+    NSString * _serviceHost;
+    <SynchronizedDefaultsDelegate> * _syncDelegate;
+    BOOL  _userGroupPrefsLockedWhenInit;
 }
 
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *celsiusQueue;
 @property (retain) WeatherCloudPreferences *cloudPreferences;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (getter=isLocalWeatherEnabled, setter=setLocalWeatherEnabled:, nonatomic) BOOL isLocalWeatherEnabled;
+@property (nonatomic, readonly) City *localWeatherCity;
 @property (readonly) Class superclass;
 @property (nonatomic) <SynchronizedDefaultsDelegate> *syncDelegate;
 @property (nonatomic) BOOL userGroupPrefsLockedWhenInit;
+@property (readonly) int userTemperatureUnit;
 
 + (id)_getGroupDefaultsFromURLInApp:(id)arg1;
-+ (void)clearSharedPreferences;
++ (BOOL)performUpgradeOfPersistence:(id)arg1 fileManager:(id)arg2 error:(id*)arg3;
 + (id)preferencesWithPersistence:(id)arg1;
++ (id)readInternalDefaultValueForKey:(id)arg1;
 + (id)serviceDebuggingPath;
 + (id)sharedPreferences;
 + (id)userDefaultsPersistence;
@@ -34,24 +37,18 @@
 - (void).cxx_destruct;
 - (id)UUID;
 - (id)_cacheDirectoryPath;
-- (BOOL)_checkAndPerformMigrationIfNeeded;
 - (void)_clearCachedObjects;
 - (id)_defaultCities;
 - (BOOL)_defaultsAreValid;
 - (BOOL)_defaultsCurrent;
-- (BOOL)_ensurePrefsLoaded;
 - (void)adjustPrefsForLocalWeatherEnabled:(BOOL)arg1;
 - (BOOL)areCitiesDefault:(id)arg1;
-- (id)celsiusQueue;
 - (id)citiesByConsolidatingDuplicates:(id)arg1 originalOrder:(id)arg2;
 - (id)citiesByConsolidatingDuplicatesInBucket:(id)arg1;
-- (BOOL)cityDictionaryHasValidCoordinates:(id)arg1;
 - (id)cityFromPreferencesDictionary:(id)arg1;
 - (id)cloudPreferences;
-- (void)dealloc;
 - (BOOL)ensureValidSelectedCityID;
 - (id)init;
-- (void)initOnPrefLoadWithPersistence:(id)arg1;
 - (id)initWithPersistence:(id)arg1;
 - (BOOL)isCelsius;
 - (BOOL)isLocalWeatherEnabled;
@@ -60,7 +57,6 @@
 - (id)loadDefaultSelectedCityID;
 - (id)loadSavedCities;
 - (id)localWeatherCity;
-- (BOOL)performMigration;
 - (id)preferencesDictionaryForCity:(id)arg1;
 - (id)readDefaultValueForKey:(id)arg1;
 - (id)readInternalDefaultValueForKey:(id)arg1;
@@ -76,7 +72,6 @@
 - (id)serviceHost;
 - (void)setActiveCity:(unsigned int)arg1;
 - (void)setCelsius:(BOOL)arg1;
-- (void)setCelsiusQueue:(id)arg1;
 - (void)setCloudPreferences:(id)arg1;
 - (void)setDefaultCities:(id)arg1;
 - (void)setDefaultSelectedCity:(unsigned int)arg1;
@@ -84,16 +79,15 @@
 - (void)setLocalWeatherEnabled:(BOOL)arg1;
 - (void)setSyncDelegate:(id)arg1;
 - (void)setUserGroupPrefsLockedWhenInit:(BOOL)arg1;
-- (void)setYahooWeatherURLString:(id)arg1;
 - (void)setupUbiquitousStoreIfNeeded;
 - (id)syncDelegate;
 - (void)synchronizeStateToDisk;
 - (void)synchronizeStateToDiskDoNotify:(BOOL)arg1;
+- (void)temperatureUnitObserver:(id)arg1 didChangeTemperatureUnitTo:(int)arg2;
 - (id)twcLogoURL;
 - (id)twcLogoURL:(id)arg1;
-- (void)updateUnitsFromNotification;
 - (BOOL)userGroupPrefsLockedWhenInit;
+- (int)userTemperatureUnit;
 - (void)writeDefaultValue:(id)arg1 forKey:(id)arg2;
-- (id)yahooWeatherURLString;
 
 @end

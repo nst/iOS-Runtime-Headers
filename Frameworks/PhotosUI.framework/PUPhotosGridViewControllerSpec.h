@@ -3,22 +3,22 @@
  */
 
 @interface PUPhotosGridViewControllerSpec : NSObject {
-    PUAlbumPickerViewControllerSpec *_albumPickerViewControllerSpec;
+    PUAlbumPickerViewControllerSpec * _albumPickerViewControllerSpec;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _baseInterItemSpacing;
-    BOOL _canDisplayEditActionsInNavigationBar;
-    BOOL _canDisplayOptionsInPopover;
-    BOOL _canDisplaySlideshowButton;
-    int _layoutVariant;
-    float _maxSearchBarWidth;
-    PUPhotosPickerViewControllerSpec *_photosPickerViewControllerSpec;
-    BOOL _usesStackPopTransition;
+        double width; 
+        double height; 
+    }  _baseInterItemSpacing;
+    BOOL  _canDisplayEditActionsInNavigationBar;
+    BOOL  _canDisplayOptionsInPopover;
+    BOOL  _canDisplaySlideshowButton;
+    int  _layoutVariant;
+    double  _maxSearchBarWidth;
+    PUPhotosPickerViewControllerSpec * _photosPickerViewControllerSpec;
+    BOOL  _usesStackPopTransition;
 }
 
 @property (nonatomic, readonly) PUAlbumPickerViewControllerSpec *albumPickerViewControllerSpec;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } baseInterItemSpacing;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } baseInterItemSpacing;
 @property (nonatomic, readonly) BOOL canCommitPreview;
 @property (nonatomic, readonly) BOOL canDisplayEditActionsInNavigationBar;
 @property (nonatomic, readonly) BOOL canDisplayOptionsInPopover;
@@ -26,14 +26,14 @@
 @property (nonatomic, readonly) BOOL canDisplaySlideshowButton;
 @property (nonatomic, readonly) int cellBannerTextAlignment;
 @property (nonatomic, readonly) int cellFillMode;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } contentSizeForViewInPopover;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } contentSizeForViewInPopover;
 @property (nonatomic, readonly) BOOL displaysAvalancheStacks;
 @property (nonatomic, readonly) int forceLoadInitialSectionCount;
-@property (nonatomic, readonly) float globalFooterHeight;
+@property (nonatomic, readonly) double globalFooterHeight;
 @property (nonatomic, readonly) int layoutVariant;
-@property (nonatomic, readonly) float maxSearchBarWidth;
+@property (nonatomic, readonly) double maxSearchBarWidth;
 @property (nonatomic, readonly) PUPhotosPickerViewControllerSpec *photosPickerViewControllerSpec;
-@property (nonatomic, readonly) float sectionHeaderHeight;
+@property (nonatomic, readonly) double sectionHeaderHeight;
 @property (nonatomic, readonly) int sectionHeaderStyle;
 @property (nonatomic, readonly) BOOL shouldPlaceDeleteInCenterToolbarPosition;
 @property (nonatomic, readonly) BOOL shouldPlaceSelectAllButtonInRightNavigationBar;
@@ -44,7 +44,7 @@
 
 - (void).cxx_destruct;
 - (id)albumPickerViewControllerSpec;
-- (struct CGSize { float x1; float x2; })baseInterItemSpacing;
+- (struct CGSize { double x1; double x2; })baseInterItemSpacing;
 - (BOOL)canCommitPreview;
 - (BOOL)canDisplayEditActionsInNavigationBar;
 - (BOOL)canDisplayOptionsInPopover;
@@ -53,14 +53,13 @@
 - (int)cellBannerTextAlignment;
 - (int)cellFillMode;
 - (void)configureCollectionViewGridLayout:(id)arg1 forWidth:(float)arg2;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
+- (struct CGSize { double x1; double x2; })contentSizeForViewInPopover;
 - (BOOL)displaysAvalancheStacks;
 - (int)forceLoadInitialSectionCount;
 - (float)globalFooterHeight;
 - (id)init;
 - (int)layoutVariant;
 - (float)maxSearchBarWidth;
-- (id)photoBrowserSpec;
 - (id)photosPickerViewControllerSpec;
 - (float)sectionHeaderHeight;
 - (int)sectionHeaderStyle;

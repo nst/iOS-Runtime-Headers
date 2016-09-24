@@ -3,46 +3,54 @@
  */
 
 @interface SSPurchaseRequest : SSRequest <SSPurchaseManagerDelegate, SSXPCCoding> {
-    id /* block */ _completionBlock;
-    BOOL _createsDownloads;
-    BOOL _isBackgroundRequest;
-    BOOL _needsAuthentication;
-    NSMutableSet *_openPurchaseIdentifiers;
-    id /* block */ _purchaseBlock;
-    SSPurchaseManager *_purchaseManager;
-    id /* block */ _purchaseResponseBlock;
-    NSArray *_purchases;
-    BOOL _shouldValidatePurchases;
+    id /* block */  _completionBlock;
+    BOOL  _createsDownloads;
+    BOOL  _createsJobs;
+    BOOL  _isBackgroundRequest;
+    BOOL  _needsAuthentication;
+    NSMutableSet * _openPurchaseIdentifiers;
+    BOOL  _playbackRequest;
+    id /* block */  _purchaseBlock;
+    SSPurchaseManager * _purchaseManager;
+    id /* block */  _purchaseResponseBlock;
+    NSArray * _purchases;
+    BOOL  _shouldValidatePurchases;
 }
 
 @property (getter=isBackgroundRequest, nonatomic) BOOL backgroundRequest;
 @property (nonatomic) BOOL createsDownloads;
+@property (nonatomic) BOOL createsJobs;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SSPurchaseRequestDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL needsAuthentication;
+@property (getter=isPlaybackRequest, nonatomic) BOOL playbackRequest;
 @property (readonly) NSArray *purchases;
 @property (nonatomic) BOOL shouldValidatePurchases;
 @property (readonly) Class superclass;
 
 - (void)_addPurchasesToManager;
 - (void)_finishPurchasesWithResponses:(id)arg1;
-- (id)_purchaseForUniqueIdentifier:(long long)arg1;
+- (id)_purchaseForUniqueIdentifier:(int)arg1;
 - (void)cancel;
 - (id)copyXPCEncoding;
 - (BOOL)createsDownloads;
+- (BOOL)createsJobs;
 - (void)dealloc;
 - (id)init;
 - (id)initWithPurchases:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isBackgroundRequest;
+- (BOOL)isPlaybackRequest;
 - (BOOL)needsAuthentication;
 - (void)purchaseManager:(id)arg1 didFinishPurchasesWithResponses:(id)arg2;
 - (id)purchases;
 - (void)setBackgroundRequest:(BOOL)arg1;
 - (void)setCreatesDownloads:(BOOL)arg1;
+- (void)setCreatesJobs:(BOOL)arg1;
 - (void)setNeedsAuthentication:(BOOL)arg1;
+- (void)setPlaybackRequest:(BOOL)arg1;
 - (void)setShouldValidatePurchases:(BOOL)arg1;
 - (BOOL)shouldValidatePurchases;
 - (BOOL)start;

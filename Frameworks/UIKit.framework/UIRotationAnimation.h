@@ -3,8 +3,8 @@
  */
 
 @interface UIRotationAnimation : UIAnimation {
-    float _endAngle;
-    float _startAngle;
+    double  _endAngle;
+    double  _startAngle;
 }
 
 - (void)setEndRotationAngle:(float)arg1;

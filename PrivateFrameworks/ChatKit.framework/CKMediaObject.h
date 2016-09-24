@@ -3,10 +3,11 @@
  */
 
 @interface CKMediaObject : NSObject <QLPreviewItem> {
-    <CKFileTransfer> *_transfer;
+    <CKFileTransfer> * _transfer;
 }
 
 @property (nonatomic, readonly, copy) NSString *UTIType;
+@property (nonatomic, readonly) BOOL canShareItem;
 @property (nonatomic, readonly, copy) NSData *data;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -15,6 +16,8 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) int mediaType;
 @property (nonatomic, readonly, copy) NSString *mimeType;
+@property (nonatomic, readonly) BOOL needsAnimation;
+@property (nonatomic, readonly, copy) NSString *previewFilenameExtension;
 @property (nonatomic, readonly) NSString *previewItemTitle;
 @property (nonatomic, readonly) NSURL *previewItemURL;
 @property (readonly) Class superclass;
@@ -28,17 +31,21 @@
 + (id)fallbackFilenamePrefix;
 + (id)iconCache;
 + (BOOL)isPreviewable;
++ (id)mediaClasses;
 + (BOOL)shouldScaleUpPreview;
 + (BOOL)shouldShadePreview;
 
+- (void).cxx_destruct;
+- (id)ASTCDataFromImage:(id)arg1;
 - (id)JPEGDataFromImage:(id)arg1;
 - (id)UTIType;
-- (void)_sampleImageEdges:(id)arg1 usingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 forMostlyWhitePixels:(unsigned int*)arg3 otherPixels:(unsigned int*)arg4;
+- (void)_sampleImageEdges:(id)arg1 usingRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 forMostlyWhitePixels:(unsigned int*)arg3 otherPixels:(unsigned int*)arg4;
 - (Class)balloonViewClassForWidth:(float)arg1 orientation:(BOOL)arg2;
-- (id)bbPreviewFillToSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })bbSize;
+- (id)bbPreviewFillToSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })bbSize;
 - (void)cacheAndPersistPreview:(id)arg1 orientation:(BOOL)arg2;
 - (BOOL)canExport;
+- (BOOL)canShareItem;
 - (Class)coloredBalloonViewClass;
 - (id)composeImagesForEntryContentViewWidth:(float)arg1;
 - (id)data;
@@ -52,28 +59,30 @@
 - (id)fileURL;
 - (id)filename;
 - (id)generatePreviewFromThumbnail:(id)arg1 width:(float)arg2 orientation:(BOOL)arg3;
-- (id)generateThumbnailFillToSize:(struct CGSize { float x1; float x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
+- (id)generateThumbnailFillToSize:(struct CGSize { double x1; double x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 - (id)generateThumbnailForWidth:(float)arg1 orientation:(BOOL)arg2;
 - (id)icon;
 - (id)initWithTransfer:(id)arg1;
+- (Class)inlineStickerBalloonViewClass;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isPreviewable;
 - (BOOL)isPromisedItem;
 - (id)location;
 - (int)mediaType;
 - (id)mimeType;
+- (BOOL)needsAnimation;
 - (id)pasteboardItem;
 - (Class)previewBalloonViewClass;
 - (id)previewCacheKeyWithOrientation:(BOOL)arg1;
 - (id)previewCachesFileURLWithOrientation:(BOOL)arg1 extension:(id)arg2;
 - (id)previewDispatchCache;
+- (id)previewFilenameExtension;
 - (id)previewForWidth:(float)arg1 orientation:(BOOL)arg2;
 - (id)previewItemURL;
 - (void)savePreview:(id)arg1 toURL:(id)arg2 forOrientation:(BOOL)arg3;
 - (id)savedPreviewFromURL:(id)arg1 forOrientation:(BOOL)arg2;
 - (void)setTransfer:(id)arg1;
 - (BOOL)shouldBeQuickLooked;
-- (BOOL)shouldBeQuickLookedFromEntryView;
 - (BOOL)shouldShowDisclosure;
 - (BOOL)shouldShowViewer;
 - (id)subtitle;

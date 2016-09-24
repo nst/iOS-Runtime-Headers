@@ -7,6 +7,7 @@
 
 - (NSArray *)departuresValidForDate:(NSDate *)arg1;
 - (NSString *)direction;
+- (int)displayStyle;
 - (<GEOTransitDeparture> *)firstDepartureAfterDate:(NSDate *)arg1;
 - (<GEOTransitDepartureFrequency> *)firstDepartureFrequencyOnOrAfterDate:(NSDate *)arg1;
 - (<GEOTransitDeparture> *)firstDepartureOnOrAfterDate:(NSDate *)arg1;

@@ -6,7 +6,9 @@
 @required
 
 - (NSString *)accountName;
+- (BOOL)canBeSharedViaICloud;
 - (BOOL)isDeleted;
+- (ICAccount *)noteContainerAccount;
 - (BOOL)noteIsVisible:(ICNote *)arg1;
 - (<ICNoteVisibilityTesting> *)noteVisibilityTestingForSearchingAccount;
 - (NSPredicate *)predicateForVisibleNotes;

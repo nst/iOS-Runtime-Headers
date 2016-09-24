@@ -3,13 +3,13 @@
  */
 
 @interface PKPaymentDeprovisionRequest : PKPaymentWebServiceRequest {
-    PKPaymentPass *_pass;
+    PKPaymentPass * _pass;
 }
 
 @property (nonatomic, retain) PKPaymentPass *pass;
 
+- (void).cxx_destruct;
 - (id)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 account:(id)arg3;
-- (void)dealloc;
 - (id)initWithPaymentPass:(id)arg1;
 - (id)pass;
 - (void)setPass:(id)arg1;

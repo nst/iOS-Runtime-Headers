@@ -3,26 +3,30 @@
  */
 
 @interface GEOTransitSuggestedRoute : PBCodable <NSCopying> {
-    unsigned int _absEndTime;
-    unsigned int _absStartTime;
-    GEOTransitRouteDisplayStrings *_displayStrings;
+    unsigned int  _absEndTime;
+    unsigned int  _absStartTime;
+    GEOTransitRouteDisplayStrings * _displayStrings;
     struct { 
         unsigned int absEndTime : 1; 
         unsigned int absStartTime : 1; 
         unsigned int rank : 1; 
-    } _has;
-    unsigned int _rank;
+        unsigned int travelTimeAggressiveEstimate : 1; 
+        unsigned int travelTimeConservativeEstimate : 1; 
+    }  _has;
+    unsigned int  _rank;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _routeBadges;
-    NSData *_routeHandle;
-    NSMutableArray *_routePlanningArtworks;
-    NSMutableArray *_sectionOptions;
-    NSMutableArray *_sections;
-    NSMutableArray *_steps;
-    GEOPBTransitRoutingIncidentMessage *_transitIncidentMessage;
+    }  _routeBadges;
+    NSData * _routeHandle;
+    NSMutableArray * _routePlanningArtworks;
+    NSMutableArray * _sectionOptions;
+    NSMutableArray * _sections;
+    NSMutableArray * _steps;
+    GEOPBTransitRoutingIncidentMessage * _transitIncidentMessage;
+    unsigned int  _travelTimeAggressiveEstimate;
+    unsigned int  _travelTimeConservativeEstimate;
 }
 
 @property (nonatomic) unsigned int absEndTime;
@@ -34,6 +38,8 @@
 @property (nonatomic) BOOL hasRank;
 @property (nonatomic, readonly) BOOL hasRouteHandle;
 @property (nonatomic, readonly) BOOL hasTransitIncidentMessage;
+@property (nonatomic) BOOL hasTravelTimeAggressiveEstimate;
+@property (nonatomic) BOOL hasTravelTimeConservativeEstimate;
 @property (nonatomic) unsigned int rank;
 @property (nonatomic, readonly) int*routeBadges;
 @property (nonatomic, readonly) unsigned int routeBadgesCount;
@@ -43,7 +49,15 @@
 @property (nonatomic, retain) NSMutableArray *sections;
 @property (nonatomic, retain) NSMutableArray *steps;
 @property (nonatomic, retain) GEOPBTransitRoutingIncidentMessage *transitIncidentMessage;
+@property (nonatomic) unsigned int travelTimeAggressiveEstimate;
+@property (nonatomic) unsigned int travelTimeConservativeEstimate;
 
++ (Class)routePlanningArtworkType;
++ (Class)sectionOptionType;
++ (Class)sectionType;
++ (Class)stepsType;
+
+- (int)StringAsRouteBadges:(id)arg1;
 - (unsigned int)absEndTime;
 - (unsigned int)absStartTime;
 - (void)addRouteBadge:(int)arg1;
@@ -68,13 +82,17 @@
 - (BOOL)hasRank;
 - (BOOL)hasRouteHandle;
 - (BOOL)hasTransitIncidentMessage;
+- (BOOL)hasTravelTimeAggressiveEstimate;
+- (BOOL)hasTravelTimeConservativeEstimate;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isWalkingOnlyRoute;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)rank;
 - (BOOL)readFrom:(id)arg1;
 - (int)routeBadgeAtIndex:(unsigned int)arg1;
 - (int*)routeBadges;
+- (id)routeBadgesAsString:(int)arg1;
 - (unsigned int)routeBadgesCount;
 - (id)routeHandle;
 - (id)routePlanningArtworkAtIndex:(unsigned int)arg1;
@@ -92,6 +110,8 @@
 - (void)setHasAbsEndTime:(BOOL)arg1;
 - (void)setHasAbsStartTime:(BOOL)arg1;
 - (void)setHasRank:(BOOL)arg1;
+- (void)setHasTravelTimeAggressiveEstimate:(BOOL)arg1;
+- (void)setHasTravelTimeConservativeEstimate:(BOOL)arg1;
 - (void)setRank:(unsigned int)arg1;
 - (void)setRouteBadges:(int*)arg1 count:(unsigned int)arg2;
 - (void)setRouteHandle:(id)arg1;
@@ -100,10 +120,14 @@
 - (void)setSections:(id)arg1;
 - (void)setSteps:(id)arg1;
 - (void)setTransitIncidentMessage:(id)arg1;
+- (void)setTravelTimeAggressiveEstimate:(unsigned int)arg1;
+- (void)setTravelTimeConservativeEstimate:(unsigned int)arg1;
 - (id)steps;
 - (id)stepsAtIndex:(unsigned int)arg1;
 - (unsigned int)stepsCount;
 - (id)transitIncidentMessage;
+- (unsigned int)travelTimeAggressiveEstimate;
+- (unsigned int)travelTimeConservativeEstimate;
 - (void)writeTo:(id)arg1;
 
 @end

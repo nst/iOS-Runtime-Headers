@@ -3,10 +3,10 @@
  */
 
 @interface MPChangePlaybackRateCommandEvent : MPRemoteCommandEvent {
-    float _playbackRate;
+    double  _playbackRate;
 }
 
-@property (nonatomic, readonly) float playbackRate;
+@property (nonatomic, readonly) double playbackRate;
 
 - (id)initWithCommand:(id)arg1 mediaRemoteType:(unsigned int)arg2 options:(id)arg3;
 - (float)playbackRate;

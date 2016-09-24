@@ -3,12 +3,12 @@
  */
 
 @interface MPUDataSourceController : NSObject {
-    MPUDataSource *_dataSource;
-    <MPUDataSourceControllerDelegate> *_delegate;
-    MPUNotificationObserver *_didInvalidateObserver;
-    BOOL _shouldReloadWhenViewControllerIsVisible;
-    BOOL _viewControllerIsVisible;
-    MPUNotificationObserver *_willInvalidateObserver;
+    MPUDataSource * _dataSource;
+    <MPUDataSourceControllerDelegate> * _delegate;
+    MPUNotificationObserver * _didInvalidateObserver;
+    BOOL  _shouldReloadWhenViewControllerIsVisible;
+    BOOL  _viewControllerIsVisible;
+    MPUNotificationObserver * _willInvalidateObserver;
 }
 
 @property (nonatomic, readonly) MPUDataSource *dataSource;

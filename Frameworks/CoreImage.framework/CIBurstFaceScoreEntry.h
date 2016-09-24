@@ -3,15 +3,15 @@
  */
 
 @interface CIBurstFaceScoreEntry : NSObject {
-    float maxScore;
-    float minScore;
-    int numScores;
-    float sumScores;
-    float sumSqScores;
+    double  maxScore;
+    double  minScore;
+    int  numScores;
+    double  sumScores;
+    double  sumSqScores;
 }
 
-@property float maxScore;
-@property float minScore;
+@property double maxScore;
+@property double minScore;
 @property int numScores;
 
 - (void)addScore:(float)arg1;

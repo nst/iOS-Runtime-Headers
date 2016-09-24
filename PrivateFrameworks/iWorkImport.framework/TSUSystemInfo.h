@@ -4,8 +4,10 @@
 
 @interface TSUSystemInfo : NSObject
 
++ (id)hwModel;
 + (id)macAddress;
 + (id)operatingSystemName;
++ (id)osVersion;
 + (id)processorName;
 + (id)systemVersion;
 

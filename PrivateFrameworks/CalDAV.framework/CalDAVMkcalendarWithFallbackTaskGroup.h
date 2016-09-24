@@ -3,13 +3,13 @@
  */
 
 @interface CalDAVMkcalendarWithFallbackTaskGroup : CoreDAVTaskGroup {
-    NSSet *_fallbackElements;
-    NSDictionary *_headersToOverride;
-    NSSet *_primaryElements;
-    NSDictionary *_responseHeaders;
-    BOOL _shouldSupportVEVENT;
-    BOOL _shouldSupportVTODO;
-    NSURL *_url;
+    NSSet * _fallbackElements;
+    NSDictionary * _headersToOverride;
+    NSSet * _primaryElements;
+    NSDictionary * _responseHeaders;
+    BOOL  _shouldSupportVEVENT;
+    BOOL  _shouldSupportVTODO;
+    NSURL * _url;
 }
 
 @property (nonatomic, retain) NSSet *fallbackElements;

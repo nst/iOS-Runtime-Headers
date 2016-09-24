@@ -3,17 +3,17 @@
  */
 
 @interface _CDAutoSuConfig : NSObject {
-    BOOL _allowUnlockBeforeNow;
-    BOOL _alwaysFallBackToDefault;
-    BOOL _alwaysReturnUnlockNow;
-    double _endThreshold;
-    int _restrictionEndInSlot;
-    int _restrictionStartInSlot;
-    double _startThreshold;
-    int _suEndDefaultTimeOffsetFromSuStart;
-    int _suStartDefaultTime;
-    int _unlockMarginInSlot;
-    double _unlockThreshold;
+    BOOL  _allowUnlockBeforeNow;
+    BOOL  _alwaysFallBackToDefault;
+    BOOL  _alwaysReturnUnlockNow;
+    double  _endThreshold;
+    int  _restrictionEndInSlot;
+    int  _restrictionStartInSlot;
+    double  _startThreshold;
+    int  _suEndDefaultTimeOffsetFromSuStart;
+    int  _suStartDefaultTime;
+    int  _unlockMarginInSlot;
+    double  _unlockThreshold;
 }
 
 @property (nonatomic) BOOL allowUnlockBeforeNow;

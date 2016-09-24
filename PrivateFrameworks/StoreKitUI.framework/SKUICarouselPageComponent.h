@@ -3,9 +3,9 @@
  */
 
 @interface SKUICarouselPageComponent : SKUIPageComponent <SSMetricsEventFieldProvider> {
-    NSArray *_carouselItems;
-    double _cycleInterval;
-    int _missingItemCount;
+    NSArray * _carouselItems;
+    double  _cycleInterval;
+    int  _missingItemCount;
 }
 
 @property (nonatomic, readonly) NSArray *carouselItems;

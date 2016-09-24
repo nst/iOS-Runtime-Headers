@@ -3,10 +3,10 @@
  */
 
 @interface GKPlayerPhotoView : UIImageView <GKPlayerPhotoContainer> {
-    UIImage *_actualImage;
-    int _onAdaptiveBackground;
-    GKPlayer *_player;
-    BOOL _selected;
+    UIImage * _actualImage;
+    int  _onAdaptiveBackground;
+    GKPlayer * _player;
+    BOOL  _selected;
 }
 
 @property (nonatomic, retain) UIImage *actualImage;

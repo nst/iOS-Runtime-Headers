@@ -3,8 +3,8 @@
  */
 
 @interface GEOLocalizedString : PBCodable <NSCopying> {
-    NSString *_locale;
-    NSString *_stringValue;
+    NSString * _locale;
+    NSString * _stringValue;
 }
 
 @property (nonatomic, readonly) BOOL hasLocale;

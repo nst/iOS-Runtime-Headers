@@ -3,9 +3,9 @@
  */
 
 @interface TSPDeepCopyWriteAssistant : NSObject <TSPEncoderWriteCoordinatorDelegate> {
-    TSPObjectContext *_context;
-    TSPDeepCopyObjectMap *_objectMap;
-    BOOL _resetObjectUUIDs;
+    TSPObjectContext * _context;
+    TSPDeepCopyObjectMap * _objectMap;
+    BOOL  _resetObjectUUIDs;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -19,6 +19,7 @@
 - (void)encodeDeepCopyOfObject:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;
 - (id)init;
 - (id)initWithContext:(id)arg1 objectMap:(id)arg2;
+- (unsigned int)objectTargetType;
 - (BOOL)skipMetadataObjectSerialization;
 
 @end

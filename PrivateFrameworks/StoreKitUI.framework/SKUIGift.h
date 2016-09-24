@@ -3,17 +3,17 @@
  */
 
 @interface SKUIGift : NSObject <NSCopying> {
-    int _category;
-    NSDate *_deliveryDate;
-    int _giftAmount;
-    NSString *_giftAmountString;
-    SKUIItem *_item;
-    NSString *_message;
-    NSArray *_recipientAddresses;
-    NSString *_senderEmailAddress;
-    NSString *_senderName;
-    SKUIGiftTheme *_theme;
-    NSString *_totalGiftAmountString;
+    int  _category;
+    NSDate * _deliveryDate;
+    int  _giftAmount;
+    NSString * _giftAmountString;
+    SKUIItem * _item;
+    NSString * _message;
+    NSArray * _recipientAddresses;
+    NSString * _senderEmailAddress;
+    NSString * _senderName;
+    SKUIGiftTheme * _theme;
+    NSString * _totalGiftAmountString;
 }
 
 @property (nonatomic, copy) NSDate *deliveryDate;

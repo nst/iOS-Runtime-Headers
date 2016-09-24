@@ -3,8 +3,8 @@
  */
 
 @interface PHAssetCreationPhotoStreamPublishingRequest : NSObject {
-    PLManagedAsset *_asset;
-    NSURL *_fileURL;
+    PLManagedAsset * _asset;
+    NSURL * _fileURL;
 }
 
 @property (nonatomic, retain) PLManagedAsset *asset;

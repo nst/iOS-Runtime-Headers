@@ -5,8 +5,8 @@
 @interface NPKProtoQueueTSMConnectionResponse : PBCodable <NSCopying> {
     struct { 
         unsigned int pending : 1; 
-    } _has;
-    BOOL _pending;
+    }  _has;
+    BOOL  _pending;
 }
 
 @property (nonatomic) BOOL hasPending;

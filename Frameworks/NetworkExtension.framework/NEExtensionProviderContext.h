@@ -3,17 +3,16 @@
  */
 
 @interface NEExtensionProviderContext : NSExtensionContext <NEExtensionProviderHostProtocol, NEExtensionProviderProtocol> {
-    NEConfiguration *_configuration;
-    NSString *_description;
-    <NEExtensionProviderHostProtocol> *_hostContext;
-    id /* block */ _stopCompletionHandler;
+    NEConfiguration * _configuration;
+    NSString * _description;
+    <NEExtensionProviderHostProtocol> * _hostContext;
+    id /* block */  _stopCompletionHandler;
 }
 
 @property (retain) NEConfiguration *configuration;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (readonly) <NEExtensionProviderHostProtocol> *hostContext;
 @property (copy) id /* block */ stopCompletionHandler;
 @property (readonly) Class superclass;
 
@@ -25,6 +24,7 @@
 - (void)completeSession;
 - (id)configuration;
 - (id)description;
+- (void)displayMessage:(id)arg1 message:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)dispose;
 - (id)hostContext;
 - (int)neStopReasonToProviderStopReason:(int)arg1;

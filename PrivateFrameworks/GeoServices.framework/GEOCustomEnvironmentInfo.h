@@ -3,8 +3,8 @@
  */
 
 @interface GEOCustomEnvironmentInfo : GEOEnvironmentInfo {
-    NSMapTable *_overrideURLs;
-    NSString *_uuid;
+    NSMapTable * _overrideURLs;
+    NSString * _uuid;
 }
 
 - (void)delete;

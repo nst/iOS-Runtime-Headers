@@ -3,9 +3,9 @@
  */
 
 @interface RadioStationMatchLibraryAlbumMetadata : RadioStationMatchMetadata {
-    NSString *_albumName;
-    NSNumber *_albumStoreID;
-    NSNumber *_representativeCloudID;
+    NSString * _albumName;
+    NSNumber * _albumStoreID;
+    NSNumber * _representativeCloudID;
 }
 
 @property (nonatomic, copy) NSString *albumName;

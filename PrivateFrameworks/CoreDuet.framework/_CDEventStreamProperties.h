@@ -3,30 +3,31 @@
  */
 
 @interface _CDEventStreamProperties : NSObject {
-    BOOL canBeShared;
-    BOOL canBeSpeculative;
-    BOOL canPersistOnStorage;
-    BOOL canSendToServer;
-    NSString *dataProtectionClass;
-    int deResolitionPolicy;
-    NSString *descriptionString;
-    int eventsPerPeriod;
-    BOOL futureEvent;
-    BOOL hasStats;
-    BOOL isHistorical;
-    BOOL isInstant;
-    NSString *knowledgeBaseName;
-    double maxLatency;
-    NSString *name;
-    double period;
-    int pollingPeriod;
-    BOOL setupOnDemand;
-    int sharingPolicy;
-    int statisticsType;
-    double temporalPrecision;
-    double timeToLive;
-    int totalSizeLimit;
-    int valueType;
+    NSString * _keyPathString;
+    BOOL  canBeShared;
+    BOOL  canBeSpeculative;
+    BOOL  canPersistOnStorage;
+    BOOL  canSendToServer;
+    NSString * dataProtectionClass;
+    int  deResolitionPolicy;
+    NSString * descriptionString;
+    int  eventsPerPeriod;
+    BOOL  futureEvent;
+    BOOL  hasStats;
+    BOOL  isHistorical;
+    BOOL  isInstant;
+    NSString * knowledgeBaseName;
+    double  maxLatency;
+    NSString * name;
+    double  period;
+    int  pollingPeriod;
+    BOOL  setupOnDemand;
+    int  sharingPolicy;
+    int  statisticsType;
+    double  temporalPrecision;
+    double  timeToLive;
+    int  totalSizeLimit;
+    int  valueType;
 }
 
 @property (nonatomic, readonly) BOOL canBeShared;
@@ -41,6 +42,7 @@
 @property (nonatomic, readonly) BOOL hasStats;
 @property (nonatomic, readonly) BOOL isHistorical;
 @property (nonatomic, readonly) BOOL isInstant;
+@property (nonatomic, readonly) NSString *keyPathString;
 @property (nonatomic, readonly) NSString *knowledgeBaseName;
 @property (nonatomic, readonly) double maxLatency;
 @property (nonatomic, readonly) NSString *name;
@@ -71,6 +73,7 @@
 - (id)initFromDictionary:(id)arg1;
 - (BOOL)isHistorical;
 - (BOOL)isInstant;
+- (id)keyPathString;
 - (id)knowledgeBaseName;
 - (double)maxLatency;
 - (id)name;

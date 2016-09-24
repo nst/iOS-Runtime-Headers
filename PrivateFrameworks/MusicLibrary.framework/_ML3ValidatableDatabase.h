@@ -3,10 +3,10 @@
  */
 
 @interface _ML3ValidatableDatabase : NSObject {
-    NSString *_databasePath;
-    unsigned long _queueID;
-    NSObject<OS_dispatch_queue> *_validationSerialQueue;
-    unsigned int _validationState;
+    NSString * _databasePath;
+    unsigned long  _queueID;
+    NSObject<OS_dispatch_queue> * _validationSerialQueue;
+    unsigned int  _validationState;
 }
 
 @property (nonatomic, copy) NSString *databasePath;

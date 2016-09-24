@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptDateFormatter : SUScriptObject {
-    NSDateFormatter *_dateFormatter;
+    NSDateFormatter * _dateFormatter;
 }
 
 @property (copy) NSString *dateFormat;

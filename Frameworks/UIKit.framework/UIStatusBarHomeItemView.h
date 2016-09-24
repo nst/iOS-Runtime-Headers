@@ -6,7 +6,9 @@
 
 - (int)buttonType;
 - (id)contentsImage;
+- (BOOL)extendsHitTestingFrame;
 - (float)extraRightPadding;
+- (id)highlightImage;
 - (BOOL)usesAdvancedActions;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface WebHistory : NSObject {
-    WebHistoryPrivate *_historyPrivate;
+    WebHistoryPrivate * _historyPrivate;
 }
 
 @property (nonatomic) int historyAgeInDaysLimit;
@@ -15,7 +15,7 @@
 + (id)optionalSharedHistory;
 + (void)setOptionalSharedHistory:(id)arg1;
 
-- (void)_addVisitedLinksToVisitedLinkStore:(struct WebVisitedLinkStore { int (**x1)(); unsigned int x2; struct HashSet<WebCore::Page *, WTF::PtrHash<WebCore::Page *>, WTF::HashTraits<WebCore::Page *> > { struct HashTable<WebCore::Page *, WebCore::Page *, WTF::IdentityExtractor, WTF::PtrHash<WebCore::Page *>, WTF::HashTraits<WebCore::Page *>, WTF::HashTraits<WebCore::Page *> > { struct Page {} **x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_3_1_1; } x3; struct HashSet<unsigned long long, WebCore::LinkHashHash, WTF::HashTraits<unsigned long long> > { struct HashTable<unsigned long long, unsigned long long, WTF::IdentityExtractor, WebCore::LinkHashHash, WTF::HashTraits<unsigned long long>, WTF::HashTraits<unsigned long long> > { unsigned long long *x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_4_1_1; } x4; bool x5; }*)arg1;
+- (void)_addVisitedLinksToVisitedLinkStore:(struct WebVisitedLinkStore { int (**x1)(); unsigned int x2; struct HashSet<WebCore::Page *, WTF::PtrHash<WebCore::Page *>, WTF::HashTraits<WebCore::Page *> > { struct HashTable<WebCore::Page *, WebCore::Page *, WTF::IdentityExtractor, WTF::PtrHash<WebCore::Page *>, WTF::HashTraits<WebCore::Page *>, WTF::HashTraits<WebCore::Page *> > { struct Page {} **x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_3_1_1; } x3; struct HashSet<unsigned int, WebCore::LinkHashHash, WTF::HashTraits<unsigned int> > { struct HashTable<unsigned int, unsigned int, WTF::IdentityExtractor, WebCore::LinkHashHash, WTF::HashTraits<unsigned int>, WTF::HashTraits<unsigned int> > { unsigned int *x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_4_1_1; } x4; bool x5; }*)arg1;
 - (id)_data;
 - (id)_itemForURLString:(id)arg1;
 - (void)_sendNotification:(id)arg1 entries:(id)arg2;
@@ -24,7 +24,6 @@
 - (id)allItems;
 - (BOOL)containsURL:(id)arg1;
 - (void)dealloc;
-- (void)finalize;
 - (int)historyAgeInDaysLimit;
 - (int)historyItemLimit;
 - (id)init;

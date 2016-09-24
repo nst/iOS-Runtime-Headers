@@ -3,15 +3,15 @@
  */
 
 @interface BLTPBAction : PBCodable <NSCopying> {
-    int _activationMode;
-    BLTPBAppearance *_appearance;
-    int _behavior;
-    NSData *_behaviorParameters;
+    int  _activationMode;
+    BLTPBAppearance * _appearance;
+    int  _behavior;
+    NSData * _behaviorParameters;
     struct { 
         unsigned int behavior : 1; 
-    } _has;
-    NSString *_identifier;
-    NSString *_launchURL;
+    }  _has;
+    NSString * _identifier;
+    NSString * _launchURL;
 }
 
 @property (nonatomic) int activationMode;

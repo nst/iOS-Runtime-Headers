@@ -3,8 +3,8 @@
  */
 
 @interface SUScriptOperationDelegate : NSObject <ISOperationDelegate> {
-    NSLock *_lock;
-    NSMutableArray *_operations;
+    NSLock * _lock;
+    NSMutableArray * _operations;
 }
 
 @property (readonly, copy) NSString *debugDescription;

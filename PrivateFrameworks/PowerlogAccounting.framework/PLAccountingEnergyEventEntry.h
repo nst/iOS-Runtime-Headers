@@ -3,7 +3,7 @@
  */
 
 @interface PLAccountingEnergyEventEntry : PLEntry {
-    PLAccountingRange *_range;
+    PLAccountingRange * _range;
 }
 
 @property (nonatomic, readonly) double energy;

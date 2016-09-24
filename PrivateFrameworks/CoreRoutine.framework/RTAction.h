@@ -3,8 +3,8 @@
  */
 
 @interface RTAction : NSObject <NSSecureCoding> {
-    NSDictionary *_options;
-    int _type;
+    NSDictionary * _options;
+    int  _type;
 }
 
 @property (nonatomic, readonly) NSDictionary *options;

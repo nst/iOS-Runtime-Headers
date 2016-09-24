@@ -3,8 +3,8 @@
  */
 
 @interface TSWPTextHostLayout : TSDDrawableLayout {
-    TSWPShapeInfo *_editingShapeInfo;
-    TSWPShapeLayout *_editingShapeLayout;
+    TSWPShapeInfo * _editingShapeInfo;
+    TSWPShapeLayout * _editingShapeLayout;
 }
 
 @property (nonatomic, readonly) TSWPShapeLayout *editingShapeLayout;

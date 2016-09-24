@@ -3,10 +3,10 @@
  */
 
 @interface CIBarcodeDetector : CIDetector {
-    float _height;
-    float _width;
-    CIContext *context;
-    NSMutableDictionary *featureOptions;
+    double  _height;
+    double  _width;
+    CIContext * context;
+    NSMutableDictionary * featureOptions;
 }
 
 @property (nonatomic, retain) CIContext *context;

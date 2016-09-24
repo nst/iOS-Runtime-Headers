@@ -3,9 +3,9 @@
  */
 
 @interface MFLibrarySearchableIndexUpdates : NSObject {
-    NSArray *_addedIndexItems;
-    NSArray *_removedDomainIdentifiers;
-    NSArray *_removedIdentifiers;
+    NSArray * _addedIndexItems;
+    NSArray * _removedDomainIdentifiers;
+    NSArray * _removedIdentifiers;
 }
 
 @property (nonatomic, copy) NSArray *addedIndexItems;

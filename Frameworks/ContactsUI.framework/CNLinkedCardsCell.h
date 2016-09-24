@@ -3,9 +3,9 @@
  */
 
 @interface CNLinkedCardsCell : CNLabeledCell {
-    <CNPropertyCellDelegate> *_delegate;
-    UILabel *_nameLabel;
-    UILabel *_sourceLabel;
+    <CNPropertyCellDelegate> * _delegate;
+    UILabel * _nameLabel;
+    UILabel * _sourceLabel;
 }
 
 @property (nonatomic) <CNPropertyCellDelegate> *delegate;

@@ -3,23 +3,23 @@
  */
 
 @interface MPMediaQueryQueueFeeder : MPQueueFeeder <MPAVRoutingControllerDelegate, MPShuffleControllerDataSource> {
-    MPMediaItem *_cloudDialogAllowedMediaItem;
-    MPMediaLibraryConnectionAssertion *_connectionAssertion;
-    unsigned int _currentInvalidationRevision;
-    unsigned long long _feederRevisionID;
-    BOOL _hasValidItems;
-    MPMutableBidirectionalDictionary *_indexToIdentifierCache;
-    BOOL _isPlaylistQueueFeeder;
-    struct vector<long long, std::__1::allocator<long long> > { 
-        long long *__begin_; 
-        long long *__end_; 
-        struct __compressed_pair<long long *, std::__1::allocator<long long> > { 
-            long long *__first_; 
+    MPMediaItem * _cloudDialogAllowedMediaItem;
+    MPMediaLibraryConnectionAssertion * _connectionAssertion;
+    unsigned int  _currentInvalidationRevision;
+    unsigned int  _feederRevisionID;
+    BOOL  _hasValidItems;
+    MPMutableBidirectionalDictionary * _indexToIdentifierCache;
+    BOOL  _isPlaylistQueueFeeder;
+    struct vector<int, std::__1::allocator<int> > { 
+        int *__begin_; 
+        int *__end_; 
+        struct __compressed_pair<int *, std::__1::allocator<int> > { 
+            int *__first_; 
         } __end_cap_; 
-    } _itemPIDs;
-    MPMediaQuery *_query;
-    NSArray *_queryItems;
-    MPShuffleController *_shuffleController;
+    }  _itemPIDs;
+    MPMediaQuery * _query;
+    NSArray * _queryItems;
+    MPShuffleController * _shuffleController;
 }
 
 @property (nonatomic, retain) MPMediaItem *cloudDialogAllowedMediaItem;
@@ -31,7 +31,7 @@
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
-+ (id)_itemsForQuery:(id)arg1 shuffleType:(unsigned int)arg2;
++ (id)_itemsForQuery:(id)arg1 shuffleType:(int)arg2;
 + (id)audioSessionModeForMediaType:(unsigned int)arg1;
 + (Class)playbackItemMetadataClass;
 
@@ -42,12 +42,12 @@
 - (id)_currentEmptyQueueError;
 - (void)_handleMediaLibraryDidChange;
 - (id)_identifierAtIndex:(unsigned int)arg1;
-- (unsigned int)_indexForPersistentID:(unsigned long long)arg1;
+- (unsigned int)_indexForPersistentID:(unsigned int)arg1;
 - (unsigned int)_indexForSongShuffledIndex:(unsigned int)arg1;
 - (void)_invalidateMediaLibraryValues;
 - (void)_libraryDidChangeNotification:(id)arg1;
-- (id)_mediaItemForPID:(unsigned long long)arg1;
-- (unsigned int)_playbackIndexByApplyShuffleType:(unsigned int)arg1 withStartIndex:(unsigned int)arg2 startIndexMediaItem:(id)arg3 shouldKeepConsistentQueueOrder:(BOOL)arg4;
+- (id)_mediaItemForPID:(unsigned int)arg1;
+- (unsigned int)_playbackIndexByApplyShuffleType:(int)arg1 withStartIndex:(unsigned int)arg2 startIndexMediaItem:(id)arg3 shouldKeepConsistentQueueOrder:(BOOL)arg4;
 - (void)_reloadQueryItems;
 - (void)_verifyQueueInvalidationCompletionHandler:(id /* block */)arg1;
 - (id)audioSessionModeForItemAtIndex:(unsigned int)arg1;
@@ -66,8 +66,9 @@
 - (unsigned int)itemCount;
 - (unsigned int)itemCountForShuffleController:(id)arg1;
 - (id)itemForIdentifier:(id)arg1;
-- (unsigned int)itemTypeForIndex:(unsigned int)arg1;
+- (int)itemTypeForIndex:(unsigned int)arg1;
 - (id)mediaItemAtIndex:(unsigned int)arg1;
+- (id)modelPlayEvent;
 - (id)pathAtIndex:(unsigned int)arg1;
 - (id)playbackInfoForIdentifier:(id)arg1;
 - (void)player:(id)arg1 currentItemWillChangeFromItem:(id)arg2;
@@ -85,7 +86,7 @@
 
 - (id)_musicEntityValueProviding_representativeCollection;
 - (id)entityUniqueIdentifier;
-- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { float x1; float x2; })arg2 destinationScale:(float)arg3;
+- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { double x1; double x2; })arg2 destinationScale:(float)arg3;
 - (id)valueForEntityProperty:(id)arg1;
 - (id)valuesForEntityProperties:(id)arg1;
 

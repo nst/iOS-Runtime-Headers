@@ -3,7 +3,7 @@
  */
 
 @interface MANetworkService : NSObject <NSURLSessionDataDelegate> {
-    BOOL _allowInvalidCert;
+    BOOL  _allowInvalidCert;
 }
 
 @property BOOL allowInvalidCert;

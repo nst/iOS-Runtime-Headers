@@ -3,7 +3,7 @@
  */
 
 @interface OADSystemColor : OADColor {
-    int mSystemColorID;
+    int  mSystemColorID;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

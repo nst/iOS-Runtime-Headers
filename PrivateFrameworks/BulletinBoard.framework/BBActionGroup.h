@@ -3,19 +3,21 @@
  */
 
 @interface BBActionGroup : BBAction {
-    NSArray *_actions;
+    NSArray * _actions;
 }
 
 @property (nonatomic, copy) NSArray *actions;
 
 + (id)actionGroupWithActions:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)actions;
-- (void)dealloc;
+- (id)awakeAfterUsingCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (id)replacementObjectForCoder:(id)arg1;
 - (void)setActions:(id)arg1;
 
 @end

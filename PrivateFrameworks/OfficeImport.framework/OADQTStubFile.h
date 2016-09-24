@@ -3,7 +3,7 @@
  */
 
 @interface OADQTStubFile : OADEmbeddedMediaFile {
-    BOOL isAudioOnly;
+    BOOL  isAudioOnly;
 }
 
 - (id)description;

@@ -3,7 +3,7 @@
  */
 
 @interface CalDAVCalendarInfoTaskGroup : CoreDAVContainerInfoTaskGroup {
-    BOOL _fetchSharees;
+    BOOL  _fetchSharees;
 }
 
 @property (nonatomic) BOOL fetchSharees;

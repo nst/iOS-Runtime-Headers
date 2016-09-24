@@ -3,12 +3,12 @@
  */
 
 @interface TRDeviceSetupPeripheral : NSObject {
-    NSString *_authenticatediTunesStoreID;
-    <TRDeviceSetupPeripheralDelegate> *_delegate;
-    id /* block */ _pendingSendDataHandler;
-    BOOL _performingSetup;
-    BOOL _preparingForSetup;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSString * _authenticatediTunesStoreID;
+    <TRDeviceSetupPeripheralDelegate> * _delegate;
+    id /* block */  _pendingSendDataHandler;
+    BOOL  _performingSetup;
+    BOOL  _preparingForSetup;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, copy) NSString *authenticatediTunesStoreID;
@@ -17,7 +17,6 @@
 
 - (void).cxx_destruct;
 - (void)_authenticateWithAction:(id)arg1 replyHandler:(id /* block */)arg2;
-- (BOOL)_canPerformSetupReturningHasWiFiNetwork:(BOOL*)arg1 ssid:(id*)arg2 password:(id*)arg3;
 - (void)_cancelAuthenticationWithReceivedAction:(id)arg1 replyHandler:(id /* block */)arg2;
 - (void)_cancelSetupWithAction:(id)arg1 replyHandler:(id /* block */)arg2;
 - (void)_didDisconnect;

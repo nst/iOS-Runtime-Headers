@@ -3,10 +3,10 @@
  */
 
 @interface CoreRCManager : NSObject {
-    NSMutableSet *_busesInternal;
-    <CoreRCManagerDelegate> *_delegate;
-    CoreIRLearningSession *_learningSessionInternal;
-    NSObject<OS_dispatch_queue> *_serialQueue;
+    NSMutableSet * _busesInternal;
+    <CoreRCManagerDelegate> * _delegate;
+    CoreIRLearningSession * _learningSessionInternal;
+    NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
 @property (nonatomic, readonly) NSSet *buses;

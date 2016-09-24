@@ -3,8 +3,8 @@
  */
 
 @interface RadioSearchResultAccessedRequest : RadioRequest {
-    SSURLConnectionRequest *_request;
-    NSArray *_searchResults;
+    SSURLConnectionRequest * _request;
+    NSArray * _searchResults;
 }
 
 - (void).cxx_destruct;

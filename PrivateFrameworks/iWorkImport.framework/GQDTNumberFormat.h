@@ -3,35 +3,35 @@
  */
 
 @interface GQDTNumberFormat : NSObject <GQDNameMappable> {
-    unsigned char mBase;
-    unsigned short mBasePlaces;
-    BOOL mBaseUsesMinusSign;
-    struct __CFString { } *mCurrencyCode;
-    long mDecimalPlaces;
-    unsigned char mDecimalWidth;
-    BOOL mFormatContainsIntegerToken;
-    BOOL mFormatContainsSpecialTokens;
-    struct __CFString { } *mFormatString;
-    BOOL mFormatStringRequiresSuppressionOfMinusSign;
-    int mFractionAccuracy;
-    BOOL mIgnoreDecimalPlacesForZeroValue;
-    unsigned short mIndexFromRightOfLastDigitPlaceholder;
-    NSIndexSet *mInterstitialStringInsertionIndexes;
-    NSArray *mInterstitialStrings;
-    BOOL mIsCustom;
-    BOOL mIsTextFormat;
-    unsigned char mMinimumIntegerWidth;
-    int mNegativeStyle;
-    unsigned char mNumberOfNonSpaceDecimalPlaceholderDigits;
-    unsigned char mNumberOfNonSpaceIntegerPlaceholderDigits;
-    BOOL mRequiresFractionReplacement;
-    double mScaleFactor;
-    BOOL mShowThousandsSeparator;
-    struct __CFString { } *mSuffixString;
-    char *mUid;
-    BOOL mUseAccountingStyle;
-    BOOL mUseScientificFormattingAutomatically;
-    int mValueType;
+    unsigned char  mBase;
+    unsigned short  mBasePlaces;
+    BOOL  mBaseUsesMinusSign;
+    struct __CFString { } * mCurrencyCode;
+    long  mDecimalPlaces;
+    unsigned char  mDecimalWidth;
+    BOOL  mFormatContainsIntegerToken;
+    BOOL  mFormatContainsSpecialTokens;
+    struct __CFString { } * mFormatString;
+    BOOL  mFormatStringRequiresSuppressionOfMinusSign;
+    int  mFractionAccuracy;
+    BOOL  mIgnoreDecimalPlacesForZeroValue;
+    unsigned short  mIndexFromRightOfLastDigitPlaceholder;
+    NSIndexSet * mInterstitialStringInsertionIndexes;
+    NSArray * mInterstitialStrings;
+    BOOL  mIsCustom;
+    BOOL  mIsTextFormat;
+    unsigned char  mMinimumIntegerWidth;
+    int  mNegativeStyle;
+    unsigned char  mNumberOfNonSpaceDecimalPlaceholderDigits;
+    unsigned char  mNumberOfNonSpaceIntegerPlaceholderDigits;
+    BOOL  mRequiresFractionReplacement;
+    double  mScaleFactor;
+    BOOL  mShowThousandsSeparator;
+    struct __CFString { } * mSuffixString;
+    char * mUid;
+    BOOL  mUseAccountingStyle;
+    BOOL  mUseScientificFormattingAutomatically;
+    int  mValueType;
 }
 
 @property (readonly, copy) NSString *debugDescription;

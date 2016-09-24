@@ -3,14 +3,14 @@
  */
 
 @interface GKFriendRequestComposeViewController : UINavigationController <GKExtensionParentViewControllerProtocol> {
-    UIAlertController *_alertController;
-    <GKFriendRequestComposeViewControllerDelegate> *_composeViewDelegateWeak;
-    NSMutableArray *_emailsToAddAsRecipients;
-    NSString *_message;
-    NSMutableArray *_playerInternalsToAddAsRecipients;
-    unsigned int _recipientCount;
-    GKFriendRequestHostViewController *_remoteViewController;
-    unsigned int _rid;
+    UIAlertController * _alertController;
+    <GKFriendRequestComposeViewControllerDelegate> * _composeViewDelegateWeak;
+    NSMutableArray * _emailsToAddAsRecipients;
+    NSString * _message;
+    NSMutableArray * _playerInternalsToAddAsRecipients;
+    unsigned int  _recipientCount;
+    GKFriendRequestHostViewController * _remoteViewController;
+    unsigned int  _rid;
 }
 
 @property (nonatomic, retain) UIAlertController *alertController;

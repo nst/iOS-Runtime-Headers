@@ -5,6 +5,6 @@
 
 @required
 
-- (void)didFinishWithPlayerInternals:(NSArray *)arg1 message:(NSString *)arg2;
+- (void)didFinishWithPlayerIDs:(NSArray *)arg1 message:(NSString *)arg2;
 
 @end

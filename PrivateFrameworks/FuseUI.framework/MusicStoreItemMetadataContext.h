@@ -3,15 +3,15 @@
  */
 
 @interface MusicStoreItemMetadataContext : NSObject <NSCopying, NSSecureCoding> {
-    NSDictionary *_JSDictionary;
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSMapTable *_adjustedOptionsToRepresentativeMediaEntity;
-    BOOL _hasCompleteStoreItemMetadata;
-    BOOL _hasOverrideChildrenMetadataContexts;
-    NSArray *_overrideChildrenMetadataContexts;
-    NSString *_storeID;
-    MPStoreItemMetadata *_storeItemMetadata;
-    BOOL _wantsRepresentativeMediaEntity;
+    NSDictionary * _JSDictionary;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSMapTable * _adjustedOptionsToRepresentativeMediaEntity;
+    BOOL  _hasCompleteStoreItemMetadata;
+    BOOL  _hasOverrideChildrenMetadataContexts;
+    NSArray * _overrideChildrenMetadataContexts;
+    NSString * _storeID;
+    MPStoreItemMetadata * _storeItemMetadata;
+    BOOL  _wantsRepresentativeMediaEntity;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *JSDictionary;

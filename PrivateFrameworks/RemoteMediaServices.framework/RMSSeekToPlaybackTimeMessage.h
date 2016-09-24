@@ -6,9 +6,9 @@
     struct { 
         unsigned int playbackTime : 1; 
         unsigned int sessionIdentifier : 1; 
-    } _has;
-    int _playbackTime;
-    int _sessionIdentifier;
+    }  _has;
+    int  _playbackTime;
+    int  _sessionIdentifier;
 }
 
 @property (nonatomic) BOOL hasPlaybackTime;

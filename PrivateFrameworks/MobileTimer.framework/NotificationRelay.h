@@ -3,7 +3,7 @@
  */
 
 @interface NotificationRelay : NSObject {
-    BOOL _refreshManagers;
+    BOOL  _refreshManagers;
 }
 
 @property (nonatomic) BOOL refreshManagers;

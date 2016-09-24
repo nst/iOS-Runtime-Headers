@@ -3,9 +3,9 @@
  */
 
 @interface PUTileHider : NSObject {
-    double __animationDuration;
-    NSMutableDictionary *__hiddenTileControllersByLayoutInfo;
-    PUTilingView *_tilingView;
+    double  __animationDuration;
+    NSMutableDictionary * __hiddenTileControllersByLayoutInfo;
+    PUTilingView * _tilingView;
 }
 
 @property (nonatomic, readonly) double _animationDuration;

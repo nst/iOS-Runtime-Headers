@@ -3,7 +3,7 @@
  */
 
 @interface STSiriModelObject : NSObject <NSSecureCoding> {
-    NSString *_identifier;
+    NSString * _identifier;
 }
 
 + (BOOL)supportsSecureCoding;

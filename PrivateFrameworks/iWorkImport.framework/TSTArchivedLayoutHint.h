@@ -3,7 +3,7 @@
  */
 
 @interface TSTArchivedLayoutHint : TSPObject <TSDArchivedHint> {
-    TSTLayoutHint *mHint;
+    TSTLayoutHint * mHint;
 }
 
 @property (readonly, copy) NSString *debugDescription;

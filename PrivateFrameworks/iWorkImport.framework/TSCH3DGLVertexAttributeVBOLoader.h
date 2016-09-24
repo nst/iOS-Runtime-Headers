@@ -7,8 +7,8 @@
         unsigned int stride; 
         unsigned int offset; 
         unsigned int components; 
-    } mAttributeSpecs;
-    int mLocation;
+    }  mAttributeSpecs;
+    int  mLocation;
 }
 
 + (int)attributeLocation:(id)arg1 shaderHandle:(id)arg2;

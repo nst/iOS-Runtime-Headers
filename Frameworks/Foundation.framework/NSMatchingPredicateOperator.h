@@ -3,14 +3,13 @@
  */
 
 @interface NSMatchingPredicateOperator : NSStringPredicateOperator {
-    int _contextLock;
-    struct { id x1; void x2; } *_regexContext;
+    int  _contextLock;
+    struct { id x1; void x2; } * _regexContext;
 }
 
 - (void)_clearContext;
 - (BOOL)_shouldEscapeForLike;
 - (void)dealloc;
-- (void)finalize;
 - (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 variant:(unsigned int)arg3;
 - (BOOL)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
 - (SEL)selector;

@@ -3,26 +3,32 @@
  */
 
 @interface GEOComposedTransitRouteStep : GEOComposedRouteStep {
-    unsigned int _duration;
-    int _maneuver;
-    <GEOTransitRoutingIncidentMessage> *_routeDetailsIncidentMessage;
-    NSArray *_routeDetailsPrimaryArtwork;
-    <GEOTransitArtworkDataSource> *_routeDetailsSecondaryArtwork;
-    unsigned int _startTime;
-    NSArray *_steppingArtwork;
-    <GEOTransitRoutingIncidentMessage> *_steppingIncidentMessage;
-    GEOTransitStep *_transitStep;
+    GEOPBTransitHall * _destinationHall;
+    GEOPBTransitStop * _destinationStop;
+    unsigned int  _duration;
+    int  _maneuver;
+    GEOPBTransitHall * _originHall;
+    GEOPBTransitStop * _originStop;
+    <GEOTransitRoutingIncidentMessage> * _routeDetailsIncidentMessage;
+    NSArray * _routeDetailsPrimaryArtwork;
+    <GEOTransitArtworkDataSource> * _routeDetailsSecondaryArtwork;
+    unsigned int  _startTime;
+    NSArray * _steppingArtwork;
+    <GEOTransitRoutingIncidentMessage> * _steppingIncidentMessage;
+    GEOTransitStep * _transitStep;
 }
 
+@property (nonatomic, readonly) GEOPBTransitHall *destinationHall;
 @property (nonatomic, readonly) GEOPBTransitStop *destinationStop;
 @property (nonatomic, readonly) NSString *destinationStopIntermediateListName;
-@property (nonatomic, readonly) unsigned long long destinationTransitEntityMuid;
+@property (nonatomic, readonly) unsigned int destinationTransitEntityMuid;
 @property (nonatomic, readonly) GEOInstructionSet *instructions;
 @property (nonatomic, readonly) int maneuver;
 @property (nonatomic, readonly) GEOComposedTransitRouteStep *nextTransitStep;
+@property (nonatomic, readonly) GEOPBTransitHall *originHall;
 @property (nonatomic, readonly) GEOPBTransitStop *originStop;
 @property (nonatomic, readonly) NSString *originStopIntermediateListName;
-@property (nonatomic, readonly) unsigned long long originTransitEntityMuid;
+@property (nonatomic, readonly) unsigned int originTransitEntityMuid;
 @property (nonatomic, readonly) GEOComposedTransitRouteStep *previousTransitStep;
 @property (nonatomic, readonly) <GEOTransitRoutingIncidentMessage> *routeDetailsIncidentMessage;
 @property (nonatomic, readonly) <GEOTransitRoutingIncidentMessage> *steppingIncidentMessage;
@@ -30,14 +36,15 @@
 
 - (id)_intermediateListNameForStop:(id)arg1;
 - (id)_largestEntityAtStop:(id)arg1 passingTest:(id /* block */)arg2;
-- (unsigned long long)_muidForStop:(id)arg1;
+- (unsigned int)_muidForStop:(id)arg1;
 - (void)_populateArtworksWithDecoderData:(id)arg1;
 - (void)_populateIncidentsWithDecoderData:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)destinationHall;
 - (id)destinationStop;
 - (id)destinationStopIntermediateListName;
-- (unsigned long long)destinationTransitEntityMuid;
+- (unsigned int)destinationTransitEntityMuid;
 - (unsigned int)distance;
 - (unsigned int)duration;
 - (struct { double x1; double x2; })endGeoCoordinate;
@@ -45,14 +52,16 @@
 - (BOOL)hasDuration;
 - (id)initWithComposedRoute:(id)arg1 routeLegType:(int)arg2 step:(id)arg3 stepIndex:(unsigned int)arg4 duration:(unsigned int)arg5 pointRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg6;
 - (id)instructions;
+- (BOOL)isArrivalStep;
 - (int)maneuver;
 - (id)nextAlightingStep;
 - (id)nextBoardingStep;
 - (id)nextStop;
 - (id)nextTransitStep;
+- (id)originHall;
 - (id)originStop;
 - (id)originStopIntermediateListName;
-- (unsigned long long)originTransitEntityMuid;
+- (unsigned int)originTransitEntityMuid;
 - (id)previousAlightingStep;
 - (id)previousBoardingStep;
 - (id)previousStop;

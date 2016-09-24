@@ -3,10 +3,10 @@
  */
 
 @interface ATMovingAverage : NSObject {
-    unsigned int _count;
-    unsigned int _index;
-    double *_values;
-    unsigned int _window;
+    unsigned int  _count;
+    unsigned int  _index;
+    double * _values;
+    unsigned int  _window;
 }
 
 @property (nonatomic, readonly) double average;

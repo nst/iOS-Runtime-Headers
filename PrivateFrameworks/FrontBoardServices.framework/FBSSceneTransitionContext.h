@@ -3,11 +3,11 @@
  */
 
 @interface FBSSceneTransitionContext : NSObject <BSDescriptionProviding, BSXPCCoding, NSCopying, NSMutableCopying> {
-    NSSet *_actions;
-    BKSAnimationFenceHandle *_animationFence;
-    BSAnimationSettings *_animationSettings;
-    BSMutableSettings *_otherSettings;
-    BSMutableSettings *_transientLocalClientSettings;
+    NSSet * _actions;
+    BKSAnimationFenceHandle * _animationFence;
+    BSAnimationSettings * _animationSettings;
+    BSMutableSettings * _otherSettings;
+    BSMutableSettings * _transientLocalClientSettings;
 }
 
 @property (nonatomic, copy) NSSet *actions;

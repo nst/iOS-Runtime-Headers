@@ -3,7 +3,7 @@
  */
 
 @interface NSFilterObservationTransformer : NSObservationTransformer {
-    id _predicate;
+    id  _predicate;
 }
 
 + (id)filterWithBlock:(id /* block */)arg1;

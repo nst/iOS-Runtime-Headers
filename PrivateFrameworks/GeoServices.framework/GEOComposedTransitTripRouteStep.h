@@ -3,19 +3,17 @@
  */
 
 @interface GEOComposedTransitTripRouteStep : GEOComposedTransitRouteStep {
-    NSArray *_arrivalTimes;
-    BOOL _canPreloadTiles;
-    double _departureTimeIntervalMax;
-    double _departureTimeIntervalMin;
-    NSArray *_departureTimes;
-    GEOPBTransitStop *_destinationStop;
-    BOOL _isBus;
-    BOOL _isRail;
-    GEOPBTransitStop *_originStop;
-    NSArray *_routeLineArtwork;
-    <GEOTransitLine> *_transitLine;
-    <GEOTransitSystem> *_transitSystem;
-    GEOTransitVehicleInfo *_transitVehicle;
+    NSArray * _arrivalTimes;
+    BOOL  _canPreloadTiles;
+    double  _departureTimeIntervalMax;
+    double  _departureTimeIntervalMin;
+    NSArray * _departureTimes;
+    BOOL  _isBus;
+    BOOL  _isRail;
+    NSArray * _routeLineArtwork;
+    <GEOTransitLine> * _transitLine;
+    <GEOTransitSystem> * _transitSystem;
+    GEOTransitVehicleInfo * _transitVehicle;
 }
 
 @property (nonatomic, readonly) NSDate *arrivalTime;
@@ -46,13 +44,11 @@
 - (id)departureTimeZone;
 - (id)departureTimes;
 - (id)description;
-- (id)destinationStop;
 - (unsigned int)duration;
 - (BOOL)hasDuration;
 - (id)initWithComposedRoute:(id)arg1 decoderData:(id)arg2 step:(id)arg3 stepIndex:(unsigned int)arg4 duration:(unsigned int)arg5 pointRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg6;
 - (BOOL)isBus;
 - (BOOL)isRail;
-- (id)originStop;
 - (id)routeLineArtwork;
 - (id)transitLine;
 - (id)transitSystem;

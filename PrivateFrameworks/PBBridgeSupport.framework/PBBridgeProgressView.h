@@ -3,23 +3,23 @@
  */
 
 @interface PBBridgeProgressView : UIView {
-    UIImageView *_appleLogo;
-    float _currentProgress;
-    unsigned int _style;
-    unsigned int _version;
+    UIImageView * _appleLogo;
+    double  _currentProgress;
+    unsigned int  _style;
+    unsigned int  _version;
 }
 
 @property (nonatomic, retain) UIImageView *appleLogo;
-@property (nonatomic) float currentProgress;
+@property (nonatomic) double currentProgress;
 @property (nonatomic) unsigned int style;
 @property (nonatomic) unsigned int version;
 
 - (void).cxx_destruct;
-- (struct CGSize { float x1; float x2; })_size;
+- (struct CGSize { double x1; double x2; })_size;
 - (float)_tickLength;
 - (id)appleLogo;
 - (float)currentProgress;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithStyle:(unsigned int)arg1;
 - (id)initWithStyle:(unsigned int)arg1 andVersion:(unsigned int)arg2;
 - (void)layoutSubviews;
@@ -27,7 +27,7 @@
 - (void)setCurrentProgress:(float)arg1;
 - (void)setStyle:(unsigned int)arg1;
 - (void)setVersion:(unsigned int)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (unsigned int)style;
 - (unsigned int)version;
 

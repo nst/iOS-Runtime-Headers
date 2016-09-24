@@ -3,10 +3,10 @@
  */
 
 @interface WBSURLSuffixChecker : NSObject {
-    NSMutableArray *_failedSuffixes;
-    unsigned int _maxLength;
-    struct { unsigned short x1[27]; } *_trie;
-    unsigned int _trieNodeCount;
+    NSMutableArray * _failedSuffixes;
+    unsigned int  _maxLength;
+    struct { unsigned short x1[27]; } * _trie;
+    unsigned int  _trieNodeCount;
 }
 
 - (void).cxx_destruct;

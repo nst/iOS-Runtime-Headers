@@ -3,7 +3,7 @@
  */
 
 @interface CNMultiValueReorderUpdate : CNMultiValueUpdate {
-    NSOrderedSet *_values;
+    NSOrderedSet * _values;
 }
 
 @property (nonatomic, readonly, copy) NSOrderedSet *values;

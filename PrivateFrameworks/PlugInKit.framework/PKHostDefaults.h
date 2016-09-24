@@ -3,8 +3,8 @@
  */
 
 @interface PKHostDefaults : NSUserDefaults {
-    PKHostPlugIn *_plugin;
-    NSObject<OS_dispatch_queue> *_queue;
+    PKHostPlugIn * _plugin;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property PKHostPlugIn *plugin;

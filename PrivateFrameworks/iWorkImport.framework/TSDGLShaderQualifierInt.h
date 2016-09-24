@@ -3,8 +3,8 @@
  */
 
 @interface TSDGLShaderQualifierInt : TSDGLShaderQualifier {
-    int _GLintValue;
-    int _proposedGLintValue;
+    int  _GLintValue;
+    int  _proposedGLintValue;
 }
 
 @property (nonatomic, readonly) int GLintValue;

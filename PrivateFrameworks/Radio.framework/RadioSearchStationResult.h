@@ -3,8 +3,8 @@
  */
 
 @interface RadioSearchStationResult : NSObject <NSCopying> {
-    NSDictionary *_highlightRanges;
-    NSDictionary *_stationDictionary;
+    NSDictionary * _highlightRanges;
+    NSDictionary * _stationDictionary;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *highlightRanges;

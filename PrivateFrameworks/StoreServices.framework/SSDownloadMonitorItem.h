@@ -3,12 +3,12 @@
  */
 
 @interface SSDownloadMonitorItem : NSObject <SSXPCCoding> {
-    NSString *_clientIdentifier;
-    int _itemState;
-    NSString *_representativeTitle;
-    NSString *_statusString;
-    int _totalNumberOfItems;
-    unsigned int _transferTypes;
+    NSString * _clientIdentifier;
+    int  _itemState;
+    NSString * _representativeTitle;
+    NSString * _statusString;
+    int  _totalNumberOfItems;
+    unsigned int  _transferTypes;
 }
 
 @property (nonatomic, copy) NSString *clientIdentifier;

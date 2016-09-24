@@ -13,6 +13,8 @@
 @property (nonatomic, copy) NSNumber *dividendYield;
 @property (nonatomic, copy) NSNumber *earningsPerShare;
 @property (nonatomic, copy) NSString *exchange;
+@property (nonatomic, copy) NSNumber *fiftyTwoWeekHigh;
+@property (nonatomic, copy) NSNumber *fiftyTwoWeekLow;
 @property (nonatomic, copy) NSNumber *high;
 @property (nonatomic, copy) NSString *link;
 @property (nonatomic, copy) NSNumber *low;
@@ -47,6 +49,8 @@
 - (id)earningsPerShare;
 - (id)encodedClassName;
 - (id)exchange;
+- (id)fiftyTwoWeekHigh;
+- (id)fiftyTwoWeekLow;
 - (id)groupIdentifier;
 - (id)high;
 - (id)link;
@@ -71,6 +75,8 @@
 - (void)setDividendYield:(id)arg1;
 - (void)setEarningsPerShare:(id)arg1;
 - (void)setExchange:(id)arg1;
+- (void)setFiftyTwoWeekHigh:(id)arg1;
+- (void)setFiftyTwoWeekLow:(id)arg1;
 - (void)setHigh:(id)arg1;
 - (void)setLink:(id)arg1;
 - (void)setLow:(id)arg1;

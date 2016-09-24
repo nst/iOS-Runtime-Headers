@@ -3,7 +3,7 @@
  */
 
 @interface OITSUCustomCallBackDictionary : NSMutableDictionary {
-    struct __CFDictionary { } *mDictionary;
+    struct __CFDictionary { } * mDictionary;
 }
 
 - (id)allKeys;

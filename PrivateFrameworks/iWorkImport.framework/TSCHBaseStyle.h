@@ -21,9 +21,12 @@
 
 - (id)allSpecificsForGeneric:(int)arg1;
 - (id)boxedDefaultValueForProperty:(int)arg1;
+- (id)customFormatKeys;
 - (float)defaultFloatValueForProperty:(int)arg1;
 - (int)defaultIntValueForProperty:(int)arg1;
 - (id)defaultValueForProperty:(int)arg1;
+- (void)enumerateFormatObjectsUsingBlock:(id /* block */)arg1;
+- (id)formatObjectPropertySet;
 - (id)g_gilliganPropertyStringFromProperty:(int)arg1;
 - (id)g_objectTypeForSpecific:(int)arg1;
 - (id)g_specificPropertyToOperationNameBimap;
@@ -34,9 +37,10 @@
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
 - (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (id)properties;
+- (void)remapCustomFormatKeysWithOldToNewKeyMap:(id)arg1;
 - (id)shortDescription;
+- (void)transformFormatObjectsUsingBlock:(id /* block */)arg1;
 - (void)updateAfterPasteForDocumentRoot:(id)arg1 pasteboardCustomFormatList:(id)arg2;
-- (void)updateAfterPasteForProperties:(id)arg1 documentRoot:(id)arg2 pasteboardCustomFormatList:(id)arg3;
 - (void)updateForCollaborationForProperties:(id)arg1 documentRoot:(id)arg2;
 - (void)upgradePreU2_0CustomFormatsForDocumentRoot:(id)arg1;
 

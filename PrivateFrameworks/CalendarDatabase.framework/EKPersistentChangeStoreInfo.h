@@ -3,16 +3,16 @@
  */
 
 @interface EKPersistentChangeStoreInfo : NSObject {
-    NSString *_minConsumedClientIdentifier;
-    int _minConsumedSequenceNumber;
-    int _secondMinConsumedSequenceNumber;
+    NSString * _minConsumedClientIdentifier;
+    int  _minConsumedSequenceNumber;
+    int  _secondMinConsumedSequenceNumber;
 }
 
 @property (nonatomic, retain) NSString *minConsumedClientIdentifier;
 @property (nonatomic) int minConsumedSequenceNumber;
 @property (nonatomic) int secondMinConsumedSequenceNumber;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)minConsumedClientIdentifier;
 - (int)minConsumedSequenceNumber;

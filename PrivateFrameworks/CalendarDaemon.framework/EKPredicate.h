@@ -3,14 +3,13 @@
  */
 
 @interface EKPredicate : CADPredicate <NSSecureCoding> {
-    NSArray *_calendars;
-    NSDate *_endDate;
-    NSSet *_restrictedCalendarRowIDs;
-    BOOL _shouldLoadDefaultProperties;
-    NSDate *_startDate;
-    NSTimeZone *_timeZone;
-    NSString *_title;
-    NSString *_uuid;
+    NSArray * _calendars;
+    NSDate * _endDate;
+    NSSet * _restrictedCalendarRowIDs;
+    NSDate * _startDate;
+    NSTimeZone * _timeZone;
+    NSString * _title;
+    NSString * _uuid;
 }
 
 @property (nonatomic, retain) NSArray *calendars;

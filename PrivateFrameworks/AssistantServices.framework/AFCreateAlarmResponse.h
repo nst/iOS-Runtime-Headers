@@ -3,7 +3,7 @@
  */
 
 @interface AFCreateAlarmResponse : AFSiriResponse {
-    NSString *_alarmIdentifier;
+    NSString * _alarmIdentifier;
 }
 
 @property (nonatomic, copy) NSString *alarmIdentifier;

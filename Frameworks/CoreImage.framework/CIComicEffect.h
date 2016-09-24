@@ -3,7 +3,7 @@
  */
 
 @interface CIComicEffect : CIFilter {
-    CIImage *inputImage;
+    CIImage * inputImage;
 }
 
 + (id)customAttributes;

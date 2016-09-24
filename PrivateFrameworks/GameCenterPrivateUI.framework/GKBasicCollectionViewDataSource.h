@@ -3,14 +3,14 @@
  */
 
 @interface GKBasicCollectionViewDataSource : GKCollectionViewDataSource <NSCopying> {
-    NSPredicate *_filterPredicate;
-    NSArray *_items;
-    unsigned int _pageSize;
+    NSPredicate * _filterPredicate;
+    NSArray * _items;
+    unsigned int  _pageSize;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _preloadedRange;
-    SEL _showAllAction;
+    }  _preloadedRange;
+    SEL  _showAllAction;
 }
 
 @property (nonatomic, retain) NSPredicate *filterPredicate;
@@ -28,7 +28,6 @@
 - (unsigned int)countOfItems;
 - (void)dealloc;
 - (id)filterPredicate;
-- (void)getItems:(id**)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)indexPathsForItem:(id)arg1;
 - (id)init;
 - (void)insertItems:(id)arg1 atIndexes:(id)arg2;

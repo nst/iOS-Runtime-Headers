@@ -3,8 +3,8 @@
  */
 
 @interface TSCECalendar : NSObject {
-    NSCalendar *mCalendar;
-    NSObject<OS_dispatch_semaphore> *mSem;
+    NSCalendar * mCalendar;
+    NSObject<OS_dispatch_semaphore> * mSem;
 }
 
 - (id)components:(unsigned int)arg1 fromDate:(id)arg2;

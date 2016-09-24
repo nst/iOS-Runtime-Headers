@@ -3,46 +3,46 @@
  */
 
 @interface PUImportViewController : UICollectionViewController <PLCameraImporterDelegate, PLConfigurableNavigationDisplayOptions, PUSectionedGridLayoutDelegate> {
-    id __cachedViewSizeTransitionContext;
+    id  __cachedViewSizeTransitionContext;
     struct CGSize { 
-        float width; 
-        float height; 
-    } __cachedViewSizeTransitionContextSize;
-    float __collectionViewLayoutReferenceWidth;
-    UIImage *__missingThumbnailPlaceholder;
-    id __pendingViewSizeTransitionContext;
-    _UIContentUnavailableView *__placeholderView;
-    PUPhotosGridViewControllerSpec *__spec;
-    int __thumbnailImageFormat;
-    BOOL _allowsSelection;
-    unsigned int _busyCount;
-    BOOL _canSkipDupCheckOnDelete;
-    BOOL _completedAnImport;
-    BOOL _containsMultiRepAssets;
-    NSString *_customTitle;
-    UIView *_customTitleView;
-    UIBarButtonItem *_deleteButtonItem;
-    NSTimer *_deletedItemsTimer;
-    PLEmptyAlbumView *_emptyAlbumView;
-    NSCache *_extensionPlaceholdersCache;
-    NSTimer *_icSleepPreventionTimer;
-    UIBarButtonItem *_importButtonItem;
-    struct __CFUserNotification { } *_importCompleteNotification;
-    PLImportSessionInfo *_importSessionInfo;
-    PLCameraImporter *_importer;
-    NSMutableIndexSet *_itemsAlreadyInLibraryIndexes;
-    UIView *_loadingIndicatorView;
-    id _mstreamd_pause_context;
-    BOOL _readingImportItems;
-    BOOL _skipDupCheckOnDelete;
-    UIBarButtonItem *_stopBarItem;
-    PLTemporaryImageTable *_thumbnailTable;
-    NSMutableIndexSet *_thumbnailsNotYetLoaded;
+        double width; 
+        double height; 
+    }  __cachedViewSizeTransitionContextSize;
+    double  __collectionViewLayoutReferenceWidth;
+    UIImage * __missingThumbnailPlaceholder;
+    id  __pendingViewSizeTransitionContext;
+    _UIContentUnavailableView * __placeholderView;
+    PUPhotosGridViewControllerSpec * __spec;
+    int  __thumbnailImageFormat;
+    BOOL  _allowsSelection;
+    unsigned int  _busyCount;
+    BOOL  _canSkipDupCheckOnDelete;
+    BOOL  _completedAnImport;
+    BOOL  _containsMultiRepAssets;
+    NSString * _customTitle;
+    UIView * _customTitleView;
+    UIBarButtonItem * _deleteButtonItem;
+    NSTimer * _deletedItemsTimer;
+    PLEmptyAlbumView * _emptyAlbumView;
+    NSCache * _extensionPlaceholdersCache;
+    NSTimer * _icSleepPreventionTimer;
+    UIBarButtonItem * _importButtonItem;
+    struct __CFUserNotification { } * _importCompleteNotification;
+    PLImportSessionInfo * _importSessionInfo;
+    PLCameraImporter * _importer;
+    NSMutableIndexSet * _itemsAlreadyInLibraryIndexes;
+    UIView * _loadingIndicatorView;
+    id  _mstreamd_pause_context;
+    BOOL  _readingImportItems;
+    BOOL  _skipDupCheckOnDelete;
+    UIBarButtonItem * _stopBarItem;
+    PLTemporaryImageTable * _thumbnailTable;
+    NSMutableIndexSet * _thumbnailsNotYetLoaded;
 }
 
 @property (setter=_setCachedViewSizeTransitionContext:, nonatomic, retain) id _cachedViewSizeTransitionContext;
-@property (setter=_setCachedViewSizeTransitionContextSize:, nonatomic) struct CGSize { float x1; float x2; } _cachedViewSizeTransitionContextSize;
-@property (setter=_setCollectionViewLayoutReferenceWidth:, nonatomic) float _collectionViewLayoutReferenceWidth;
+@property (setter=_setCachedViewSizeTransitionContextSize:, nonatomic) struct CGSize { double x1; double x2; } _cachedViewSizeTransitionContextSize;
+@property (setter=_setCollectionViewLayoutReferenceWidth:, nonatomic) double _collectionViewLayoutReferenceWidth;
 @property (nonatomic, readonly) UIImage *_missingThumbnailPlaceholder;
 @property (setter=_setPendingViewSizeTransitionContext:, nonatomic, retain) id _pendingViewSizeTransitionContext;
 @property (setter=_setPlaceholderView:, nonatomic, retain) _UIContentUnavailableView *_placeholderView;
@@ -65,7 +65,7 @@
 - (void)_beginUninterruptibleOperation;
 - (id)_bestReferenceItemIndexPath;
 - (id)_cachedViewSizeTransitionContext;
-- (struct CGSize { float x1; float x2; })_cachedViewSizeTransitionContextSize;
+- (struct CGSize { double x1; double x2; })_cachedViewSizeTransitionContextSize;
 - (void)_cancelAlerts;
 - (float)_collectionViewLayoutReferenceWidth;
 - (id)_deletableIndexesOfItemsAtIndexes:(id)arg1;
@@ -74,7 +74,7 @@
 - (void)_dismissPopupsAnimated:(BOOL)arg1;
 - (void)_endImport;
 - (void)_endUninterruptibleOperation;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; int x7; }*)arg1;
 - (id)_gridLayout;
 - (void)_icSleepPreventionTimerFired:(id)arg1;
 - (void)_importItems;
@@ -85,7 +85,7 @@
 - (id)_localizedCameraName;
 - (id)_missingThumbnailPlaceholder;
 - (id)_newEmptyPlaceholderView;
-- (id)_newGenericImageForItemWithExtension:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (id)_newGenericImageForItemWithExtension:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 - (id)_pendingViewSizeTransitionContext;
 - (void)_photosDatabaseHasChanged:(id)arg1;
 - (id)_placeholderForItem:(id)arg1;
@@ -96,7 +96,7 @@
 - (void)_scrollToCurrentImportIndex;
 - (id)_selectedIndexes;
 - (void)_setCachedViewSizeTransitionContext:(id)arg1;
-- (void)_setCachedViewSizeTransitionContextSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_setCachedViewSizeTransitionContextSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_setCollectionViewLayoutReferenceWidth:(float)arg1;
 - (void)_setPendingViewSizeTransitionContext:(id)arg1;
 - (void)_setPlaceholderView:(id)arg1;
@@ -156,6 +156,6 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

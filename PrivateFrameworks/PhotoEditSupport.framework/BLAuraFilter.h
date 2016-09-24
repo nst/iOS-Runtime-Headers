@@ -3,15 +3,15 @@
  */
 
 @interface BLAuraFilter : CIFilter {
-    CIFilter *_colorCubeFilter;
-    NSNumber *_inputAmount;
-    CIImage *_inputImage;
-    NSNumber *_inputSaturationHighPoint;
-    NSNumber *_inputVersion;
-    float _lastAmount;
-    float _lastSaturationHighPoint;
-    int _lastVersion;
-    BOOL _needsReprocess;
+    CIFilter * _colorCubeFilter;
+    NSNumber * _inputAmount;
+    CIImage * _inputImage;
+    NSNumber * _inputSaturationHighPoint;
+    NSNumber * _inputVersion;
+    double  _lastAmount;
+    double  _lastSaturationHighPoint;
+    int  _lastVersion;
+    BOOL  _needsReprocess;
 }
 
 @property (nonatomic, retain) CIFilter *colorCubeFilter;

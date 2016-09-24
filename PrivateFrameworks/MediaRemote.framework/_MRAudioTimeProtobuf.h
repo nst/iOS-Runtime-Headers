@@ -6,9 +6,9 @@
     struct { 
         unsigned int sampleRate : 1; 
         unsigned int timestamp : 1; 
-    } _has;
-    double _sampleRate;
-    double _timestamp;
+    }  _has;
+    double  _sampleRate;
+    double  _timestamp;
 }
 
 @property (nonatomic) BOOL hasSampleRate;

@@ -3,16 +3,16 @@
  */
 
 @interface MCDTableViewCell : UITableViewCell {
-    UIImageView *_artworkImageView;
-    float _originalLeadingInset;
+    BOOL  _explicitContent;
+    UIImageView * _explicitImageView;
 }
 
-@property (nonatomic, retain) UIImage *artworkImage;
+@property (getter=isExplicitContent, nonatomic) BOOL explicitContent;
 
 - (void).cxx_destruct;
-- (id)artworkImage;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (BOOL)isExplicitContent;
 - (void)layoutSubviews;
-- (void)setArtworkImage:(id)arg1;
+- (void)setExplicitContent:(BOOL)arg1;
 
 @end

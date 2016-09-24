@@ -3,30 +3,30 @@
  */
 
 @interface UIInputViewSet : NSObject {
-    UIInputViewController *_accessoryViewController;
-    UIResponder *_accessoryViewNextResponder;
-    UIInputViewController *_assistantViewController;
-    UIView *_inputAccessoryView;
-    UIView *_inputAssistantView;
+    UIInputViewController * _accessoryViewController;
+    UIResponder * _accessoryViewNextResponder;
+    UIInputViewController * _assistantViewController;
+    UIView * _inputAccessoryView;
+    UIView * _inputAssistantView;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _inputAssistantViewBounds;
-    UIView *_inputView;
-    UIInputViewController *_inputViewController;
-    BOOL _isCustomInputView;
-    BOOL _isNullInputView;
-    BOOL _isRemoteKeyboard;
-    BOOL _isSplit;
-    UIResponder *_restorableResponder;
-    BOOL _restoreUsingBecomeFirstResponder;
-    float _splitHeightDelta;
+    }  _inputAssistantViewBounds;
+    UIView * _inputView;
+    UIInputViewController * _inputViewController;
+    BOOL  _isCustomInputView;
+    BOOL  _isNullInputView;
+    BOOL  _isRemoteKeyboard;
+    BOOL  _isSplit;
+    UIResponder * _restorableResponder;
+    BOOL  _restoreUsingBecomeFirstResponder;
+    double  _splitHeightDelta;
 }
 
 @property (nonatomic, readonly) BOOL _inputViewIsSplit;
@@ -35,11 +35,11 @@
 @property (nonatomic, retain) UIInputViewController *assistantViewController;
 @property (getter=isEmpty, nonatomic, readonly) BOOL empty;
 @property (nonatomic, retain) UIView *inputAccessoryView;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } inputAccessoryViewBounds;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } inputAccessoryViewBounds;
 @property (nonatomic, retain) UIView *inputAssistantView;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } inputAssistantViewBounds;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } inputAssistantViewBounds;
 @property (nonatomic, retain) UIView *inputView;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } inputViewBounds;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } inputViewBounds;
 @property (nonatomic, retain) UIInputViewController *inputViewController;
 @property (nonatomic, readonly) BOOL inputViewKeyboardCanSplit;
 @property (nonatomic) BOOL isCustomInputView;
@@ -54,7 +54,7 @@
 @property (nonatomic) UIResponder *restorableResponder;
 @property (nonatomic) BOOL restoreUsingBecomeFirstResponder;
 @property (nonatomic, readonly) UIView *splitExemptSubview;
-@property (nonatomic) float splitHeightDelta;
+@property (nonatomic) double splitHeightDelta;
 @property (nonatomic, readonly) BOOL supportsSplit;
 
 + (id)emptyInputSet;
@@ -75,8 +75,8 @@
 - (BOOL)_inputViewSupportsSplit;
 - (BOOL)_isFullscreen;
 - (BOOL)_isKeyboard;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_leftInputViewSetFrame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rightInputViewSetFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_leftInputViewSetFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_rightInputViewSetFrame;
 - (void)_setRenderConfig:(id)arg1;
 - (void)_setSplitProgress:(float)arg1;
 - (id)_splittableInputAccessoryView;
@@ -90,15 +90,16 @@
 - (void)dealloc;
 - (id)description;
 - (BOOL)inSyncWithOrientation:(int)arg1 forKeyboard:(id)arg2;
+- (void)inheritNullState:(id)arg1;
 - (id)initWithInputView:(id)arg1 accessoryView:(id)arg2 assistantView:(id)arg3 isKeyboard:(BOOL)arg4;
 - (id)inputAccessoryView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })inputAccessoryViewBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })inputAccessoryViewBounds;
 - (id)inputAssistantView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })inputAssistantViewBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })inputAssistantViewBounds;
 - (id)inputSetWithInputAccessoryViewFromInputSet:(id)arg1;
 - (id)inputSetWithInputAccessoryViewOnly;
 - (id)inputView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })inputViewBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })inputViewBounds;
 - (id)inputViewController;
 - (BOOL)inputViewKeyboardCanSplit;
 - (BOOL)isCustomInputView;

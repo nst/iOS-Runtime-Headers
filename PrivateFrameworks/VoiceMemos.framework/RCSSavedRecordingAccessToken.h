@@ -3,11 +3,11 @@
  */
 
 @interface RCSSavedRecordingAccessToken : NSObject <NSCoding, NSCopying, NSSecureCoding> {
-    int _accessIntent;
-    NSString *_accessName;
-    NSURL *_compositionAVURL;
-    BOOL _exclusive;
-    NSUUID *_identifier;
+    int  _accessIntent;
+    NSString * _accessName;
+    NSURL * _compositionAVURL;
+    BOOL  _exclusive;
+    NSUUID * _identifier;
 }
 
 @property (nonatomic, readonly) int accessIntent;

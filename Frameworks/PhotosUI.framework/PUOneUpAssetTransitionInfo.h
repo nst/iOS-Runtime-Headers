@@ -3,26 +3,26 @@
  */
 
 @interface PUOneUpAssetTransitionInfo : NSObject {
-    UIImage *_image;
+    UIImage * _image;
     struct { 
-        long long value; 
+        int value; 
         int timescale; 
         unsigned int flags; 
-        long long epoch; 
-    } _seekTime;
+        int epoch; 
+    }  _seekTime;
 }
 
-@property (nonatomic, retain) UIImage *image;
-@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } seekTime;
+@property (setter=_setImage:, nonatomic, retain) UIImage *image;
+@property (setter=_setSeekTime:, nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } seekTime;
 
 + (id)oneUpAssetTransitionInfoWithImage:(id)arg1;
-+ (id)oneUpAssetTransitionInfoWithImage:(id)arg1 andSeekTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
++ (id)oneUpAssetTransitionInfoWithImage:(id)arg1 andSeekTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg2;
 
 - (void).cxx_destruct;
 - (void)_setImage:(id)arg1;
-- (void)_setSeekTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)_setSeekTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
 - (id)image;
 - (id)init;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })seekTime;
+- (struct { int x1; int x2; unsigned int x3; int x4; })seekTime;
 
 @end

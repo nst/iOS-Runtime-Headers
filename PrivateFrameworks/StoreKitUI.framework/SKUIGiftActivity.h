@@ -3,8 +3,8 @@
  */
 
 @interface SKUIGiftActivity : UIActivity <SKUIGiftViewControllerDelegate> {
-    SKUIClientContext *_clientContext;
-    SKUIProductPageItem *_item;
+    SKUIClientContext * _clientContext;
+    SKUIProductPageItem * _item;
 }
 
 @property (readonly, copy) NSString *debugDescription;

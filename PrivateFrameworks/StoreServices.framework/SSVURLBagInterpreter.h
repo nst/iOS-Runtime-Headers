@@ -3,10 +3,10 @@
  */
 
 @interface SSVURLBagInterpreter : NSObject <NSCopying> {
-    NSMutableDictionary *_cachedBagValues;
-    NSURL *_mescalPrimingURL;
-    SSVSAPSignaturePolicy *_subscriptionSignaturePolicy;
-    NSArray *_subscriptionSignedActions;
+    NSMutableDictionary * _cachedBagValues;
+    NSURL * _mescalPrimingURL;
+    SSVSAPSignaturePolicy * _subscriptionSignaturePolicy;
+    NSArray * _subscriptionSignedActions;
 }
 
 @property (nonatomic, readonly, copy) NSArray *AMDDomains;

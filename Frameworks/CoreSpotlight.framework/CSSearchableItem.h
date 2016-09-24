@@ -3,7 +3,7 @@
  */
 
 @interface CSSearchableItem : NSObject <CSIndexQueuableItem, NSCopying, NSSecureCoding> {
-    CSSearchableItemAttributeSet *_attributeSet;
+    CSSearchableItemAttributeSet * _attributeSet;
 }
 
 @property (retain) CSSearchableItemAttributeSet *attributeSet;
@@ -13,14 +13,15 @@
 @property BOOL isUpdate;
 @property BOOL noIndex;
 @property (copy) NSString *protection;
-@property BOOL representsDeepLink;
 @property (copy) NSString *uniqueIdentifier;
+
+// Image: /System/Library/Frameworks/CoreSpotlight.framework/CoreSpotlight
 
 + (id)searchableItemFromUserActivity:(id)arg1 bundleID:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_fixBrokenAuthors:(id)arg1;
+- (void)_fixBrokenAuthorNames:(id)arg1;
 - (BOOL)_hasAttributesOfType:(id)arg1;
 - (BOOL)_isFullyFormed;
 - (void)_populateMissingPeopleWithNames:(id)arg1 emailAddresses:(id)arg2 itemPersons:(id)arg3 personDictionary:(id)arg4 contactProperties:(id)arg5 nameKey:(id)arg6 emailKey:(id)arg7 contactIdentifierKey:(id)arg8 personKey:(id)arg9 attributeSet:(id)arg10;
@@ -48,7 +49,6 @@
 - (BOOL)isUpdate;
 - (BOOL)noIndex;
 - (id)protection;
-- (BOOL)representsDeepLink;
 - (id)searchableItem;
 - (void)setAttributeSet:(id)arg1;
 - (void)setAttributes:(id)arg1;
@@ -58,9 +58,12 @@
 - (void)setIsUpdate:(BOOL)arg1;
 - (void)setNoIndex:(BOOL)arg1;
 - (void)setProtection:(id)arg1;
-- (void)setRepresentsDeepLink:(BOOL)arg1;
 - (void)setUniqueIdentifier:(id)arg1;
 - (void)standardizeAttributes;
 - (id)uniqueIdentifier;
+
+// Image: /System/Library/PrivateFrameworks/ContactsUICore.framework/ContactsUICore
+
+- (id)_cnui_valueForAttribute:(id)arg1;
 
 @end

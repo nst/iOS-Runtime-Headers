@@ -3,10 +3,10 @@
  */
 
 @interface EKUIConferenceRoom : NSObject {
-    int _availability;
-    BOOL _availabilityRequestInProgress;
-    EKDirectoryLocation *_location;
-    BOOL _supportsAvailability;
+    int  _availability;
+    BOOL  _availabilityRequestInProgress;
+    EKDirectoryLocation * _location;
+    BOOL  _supportsAvailability;
 }
 
 @property (nonatomic) int availability;

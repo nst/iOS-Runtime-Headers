@@ -3,11 +3,11 @@
  */
 
 @interface AWDSiriNetworkAnalyzerRun : PBCodable <NSCopying> {
-    BOOL _analyzingSuccessfulRetry;
-    unsigned long long _gatewayPingDuration;
-    unsigned int _gatewayPingsDropped;
-    unsigned int _gatewayPingsSent;
-    int _gatewayStatus;
+    BOOL  _analyzingSuccessfulRetry;
+    unsigned long long  _gatewayPingDuration;
+    unsigned int  _gatewayPingsDropped;
+    unsigned int  _gatewayPingsSent;
+    int  _gatewayStatus;
     struct { 
         unsigned int gatewayPingDuration : 1; 
         unsigned int knownURLLoadDuration : 1; 
@@ -22,15 +22,15 @@
         unsigned int analyzingSuccessfulRetry : 1; 
         unsigned int isUserRequest : 1; 
         unsigned int wwanPreferred : 1; 
-    } _has;
-    int _interface;
-    BOOL _isUserRequest;
-    unsigned long long _knownURLLoadDuration;
-    int _sendBufferBytesRemaining;
-    unsigned long long _siriSaltURLLoadDuration;
-    unsigned long long _siriURLLoadDuration;
-    unsigned long long _timestamp;
-    BOOL _wwanPreferred;
+    }  _has;
+    int  _interface;
+    BOOL  _isUserRequest;
+    unsigned long long  _knownURLLoadDuration;
+    int  _sendBufferBytesRemaining;
+    unsigned long long  _siriSaltURLLoadDuration;
+    unsigned long long  _siriURLLoadDuration;
+    unsigned long long  _timestamp;
+    BOOL  _wwanPreferred;
 }
 
 @property (nonatomic) BOOL analyzingSuccessfulRetry;

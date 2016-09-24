@@ -3,16 +3,16 @@
  */
 
 @interface CMState : NSObject {
-    int _textLevel;
-    NSMutableDictionary *components;
-    NSMutableDictionary *htmlResource;
-    OADColorMap *mColorMap;
-    OADColorScheme *mColorScheme;
-    BOOL mIsOnPhone;
-    BOOL mIsThumbnail;
-    NSString *mResourceUrlPrefix;
-    id mResources;
-    int mSrcFormat;
+    int  _textLevel;
+    NSMutableDictionary * components;
+    NSMutableDictionary * htmlResource;
+    OADColorMap * mColorMap;
+    OADColorScheme * mColorScheme;
+    BOOL  mIsOnPhone;
+    BOOL  mIsThumbnail;
+    NSString * mResourceUrlPrefix;
+    id  mResources;
+    int  mSrcFormat;
 }
 
 - (id)colorMap;

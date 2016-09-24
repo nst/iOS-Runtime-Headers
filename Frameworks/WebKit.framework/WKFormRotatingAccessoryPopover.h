@@ -3,7 +3,7 @@
  */
 
 @interface WKFormRotatingAccessoryPopover : WKRotatingPopover <WKRotatingPopoverDelegate> {
-    WKContentView *_view;
+    WKContentView * _view;
 }
 
 - (void)accessoryDone;

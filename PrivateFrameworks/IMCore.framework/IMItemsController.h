@@ -3,12 +3,14 @@
  */
 
 @interface IMItemsController : NSObject {
-    unsigned int _capacity;
-    struct __CFArray { } *_items;
+    unsigned int  _capacity;
+    struct __CFArray { } * _items;
 }
 
 @property (nonatomic) unsigned int capacity;
 @property (nonatomic, readonly) BOOL isMoreToLoad;
+
++ (id)_charactersToIgnoreWhenParsingTextContent;
 
 - (void)_handleItem:(id)arg1;
 - (unsigned int)_indexOfItem:(id)arg1;
@@ -22,6 +24,7 @@
 - (id)_lastIncomingMessage;
 - (id)_lastMessage;
 - (id)_lastRelatedIncomingFinishedMessageTextContentWithLimit:(int)arg1;
+- (id)_lastSentMessage;
 - (id)_member:(id)arg1;
 - (void)_removeAllItems;
 - (void)_removeItem:(id)arg1;
@@ -30,7 +33,6 @@
 - (BOOL)_trimIfNeeded;
 - (id)_typingMessage;
 - (unsigned int)capacity;
-- (void)dealloc;
 - (id)init;
 - (BOOL)isMoreToLoad;
 - (void)setCapacity:(unsigned int)arg1;

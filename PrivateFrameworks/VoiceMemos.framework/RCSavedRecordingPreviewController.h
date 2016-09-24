@@ -3,13 +3,13 @@
  */
 
 @interface RCSavedRecordingPreviewController : RCPreviewController {
-    RCCompositionController *_compositionController;
-    BOOL _postPrepareShouldPlay;
-    double _postPrepareStartTime;
+    RCCompositionController * _compositionController;
+    BOOL  _postPrepareShouldPlay;
+    double  _postPrepareStartTime;
     struct { 
         double beginTime; 
         double endTime; 
-    } _postPrepareTimeRange;
+    }  _postPrepareTimeRange;
 }
 
 @property (nonatomic, retain) RCCompositionController *compositionController;

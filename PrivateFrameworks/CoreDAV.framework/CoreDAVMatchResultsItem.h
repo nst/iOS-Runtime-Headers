@@ -3,10 +3,10 @@
  */
 
 @interface CoreDAVMatchResultsItem : CoreDAVItem {
-    CoreDAVLeafItem *_calendarDescription;
-    CoreDAVLeafItem *_language;
-    CoreDAVLeafItem *_rank;
-    CoreDAVLeafItem *_region;
+    CoreDAVLeafItem * _calendarDescription;
+    CoreDAVLeafItem * _language;
+    CoreDAVLeafItem * _rank;
+    CoreDAVLeafItem * _region;
 }
 
 @property (nonatomic, retain) CoreDAVLeafItem *calendarDescription;

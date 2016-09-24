@@ -3,37 +3,37 @@
  */
 
 @interface UISearchBar : UIView <UIBarPositioning, UIStatusBarTinting, UITextInputTraits, UITextInputTraits_Private, _UIBarPositioningInternal> {
-    BOOL __forceCenteredPlaceholderLayout;
-    unsigned int __scopeBarPosition;
-    UISearchController *__searchController;
-    BOOL __transplanting;
-    UIBarButtonItem *_animatedAppearanceBarButtonItem;
-    id _appearanceStorage;
-    _UIBackdropView *_backdrop;
-    unsigned int _backdropStyle;
-    UIView *_background;
-    int _barPosition;
-    UIColor *_barTintColor;
-    UIBarButtonItem *_cancelBarButtonItem;
-    UIButton *_cancelButton;
-    NSString *_cancelButtonText;
+    BOOL  __forceCenteredPlaceholderLayout;
+    unsigned int  __scopeBarPosition;
+    UISearchController * __searchController;
+    BOOL  __transplanting;
+    UIBarButtonItem * _animatedAppearanceBarButtonItem;
+    id  _appearanceStorage;
+    _UIBackdropView * _backdrop;
+    unsigned int  _backdropStyle;
+    UIView * _background;
+    int  _barPosition;
+    UIColor * _barTintColor;
+    UIBarButtonItem * _cancelBarButtonItem;
+    UIButton * _cancelButton;
+    NSString * _cancelButtonText;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _contentInset;
-    id _controller;
-    <UISearchBarDelegate><UISearchBarDelegate_Private> *_delegate;
-    UIView *_inputAccessoryView;
-    UIButton *_leftButton;
-    UIView *_maskView;
-    _UISearchBarNavigationItem *_navigationItem;
-    UILabel *_promptLabel;
-    UIView *_scopeBar;
-    _UISearchBarScopeBarBackground *_scopeBarBackgroundView;
-    UIView *_scopeBarContainerView;
-    NSArray *_scopes;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _contentInset;
+    id  _controller;
+    <UISearchBarDelegate><UISearchBarDelegate_Private> * _delegate;
+    UIView * _inputAccessoryView;
+    UIButton * _leftButton;
+    UIView * _maskView;
+    _UISearchBarNavigationItem * _navigationItem;
+    UILabel * _promptLabel;
+    UIView * _scopeBar;
+    _UISearchBarScopeBarBackground * _scopeBarBackgroundView;
+    UIView * _scopeBarContainerView;
+    NSArray * _scopes;
     struct { 
         unsigned int barStyle : 3; 
         unsigned int showsBookmarkButton : 1; 
@@ -56,15 +56,15 @@
         unsigned int centerPlaceholder : 1; 
         unsigned int searchFieldLeftViewMode : 2; 
         unsigned int cancelButtonWantsLetterpress : 1; 
-    } _searchBarFlags;
-    unsigned int _searchBarStyle;
-    UISearchBarTextField *_searchField;
-    int _selectedScope;
-    UIImageView *_separator;
-    UIImageView *_shadowView;
-    UIColor *_statusBarTintColor;
-    UITapGestureRecognizer *_tapToActivateGestureRecognizer;
-    UITextInputTraits *_textInputTraits;
+    }  _searchBarFlags;
+    unsigned int  _searchBarStyle;
+    UISearchBarTextField * _searchField;
+    int  _selectedScope;
+    UIImageView * _separator;
+    UIImageView * _shadowView;
+    UIColor * _statusBarTintColor;
+    UITapGestureRecognizer * _tapToActivateGestureRecognizer;
+    UITextInputTraits * _textInputTraits;
 }
 
 @property (nonatomic, copy) NSIndexSet *PINEntrySeparatorIndexes;
@@ -74,6 +74,7 @@
 @property (setter=_setSearchController:, nonatomic) UISearchController *_searchController;
 @property (setter=_setStatusBarTintColor:, nonatomic, retain) UIColor *_statusBarTintColor;
 @property (setter=_setTransplanting:, nonatomic) BOOL _transplanting;
+@property (nonatomic) BOOL acceptsDictationSearchResults;
 @property (nonatomic) BOOL acceptsEmoji;
 @property (nonatomic) BOOL acceptsFloatingKeyboard;
 @property (nonatomic) BOOL acceptsSplitKeyboard;
@@ -89,16 +90,22 @@
 @property (nonatomic) BOOL deferBecomingResponder;
 @property (nonatomic) <UISearchBarDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL disableInputBars;
 @property (nonatomic) BOOL disablePrediction;
 @property (nonatomic) BOOL displaySecureEditsUsingPlainText;
 @property (nonatomic) BOOL displaySecureTextUsingPlainText;
 @property (nonatomic) int emptyContentReturnKeyType;
 @property (nonatomic) BOOL enablesReturnKeyAutomatically;
 @property (nonatomic) BOOL enablesReturnKeyOnNonWhiteSpaceContent;
+@property (nonatomic) BOOL forceDefaultDictationInfo;
+@property (nonatomic) int forceDictationKeyboardType;
+@property (nonatomic) BOOL forceDisableDictation;
 @property (nonatomic) BOOL forceEnableDictation;
+@property (nonatomic) BOOL hasDefaultContents;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIView *inputAccessoryView;
 @property (nonatomic, readonly) UITextInputAssistantItem *inputAssistantItem;
+@property (nonatomic, retain) UIInputContextHistory *inputContextHistory;
 @property (nonatomic, retain) UIColor *insertionPointColor;
 @property (nonatomic) unsigned int insertionPointWidth;
 @property (nonatomic) BOOL isCarPlayIdiom;
@@ -116,9 +123,9 @@
 @property (nonatomic, copy) NSArray *scopeButtonTitles;
 @property (nonatomic) unsigned int searchBarStyle;
 @property (getter=_searchBarTextField, nonatomic, readonly) UISearchBarTextField *searchBarTextField;
-@property (nonatomic) struct UIOffset { float x1; float x2; } searchFieldBackgroundPositionAdjustment;
+@property (nonatomic) struct UIOffset { double x1; double x2; } searchFieldBackgroundPositionAdjustment;
 @property (getter=isSearchResultsButtonSelected, nonatomic) BOOL searchResultsButtonSelected;
-@property (nonatomic) struct UIOffset { float x1; float x2; } searchTextPositionAdjustment;
+@property (nonatomic) struct UIOffset { double x1; double x2; } searchTextPositionAdjustment;
 @property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
 @property (nonatomic) int selectedScopeButtonIndex;
 @property (nonatomic, retain) UIColor *selectionBarColor;
@@ -133,7 +140,9 @@
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL suppressReturnKeyStyling;
 @property (nonatomic, copy) NSString *text;
+@property (nonatomic, copy) NSString *textContentType;
 @property (nonatomic) int textLoupeVisibility;
+@property (nonatomic) int textScriptType;
 @property (nonatomic) int textSelectionBehavior;
 @property (nonatomic) id textSuggestionDelegate;
 @property (nonatomic) struct __CFCharacterSet { }*textTrimmingSet;
@@ -153,7 +162,7 @@
 - (float)_autolayoutSpacingAtEdge:(int)arg1 inContainer:(id)arg2;
 - (float)_autolayoutSpacingAtEdge:(int)arg1 nextToNeighbor:(id)arg2;
 - (float)_availableBoundsWidth;
-- (float)_availableBoundsWidthForSize:(struct CGSize { float x1; float x2; })arg1;
+- (float)_availableBoundsWidthForSize:(struct CGSize { double x1; double x2; })arg1;
 - (unsigned int)_backdropStyle;
 - (id)_backgroundView;
 - (float)_barHeightForBarMetrics:(int)arg1;
@@ -204,7 +213,7 @@
 - (id)_scopeBarContainer;
 - (id)_scopeBarContainerView;
 - (float)_scopeBarHeight;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_scopeBarInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_scopeBarInsets;
 - (BOOL)_scopeBarIsVisible;
 - (unsigned int)_scopeBarPosition;
 - (void)_scopeChanged:(id)arg1;
@@ -228,7 +237,7 @@
 - (void)_setEnabled:(BOOL)arg1;
 - (void)_setEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setMaskActive:(BOOL)arg1;
-- (void)_setMaskBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_setMaskBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_setScopeBarHidden:(BOOL)arg1;
 - (void)_setScopeBarPosition:(unsigned int)arg1;
 - (void)_setScopeBarSegmentsEnabled:(BOOL)arg1;
@@ -253,7 +262,9 @@
 - (id)_statusBarTintColor;
 - (id)_textColor;
 - (BOOL)_textFieldShouldScrollToVisibleWhenBecomingFirstResponder:(id)arg1;
+- (int)_textInputSource;
 - (BOOL)_transplanting;
+- (id)_uiktest_placeholderLabelColor;
 - (void)_updateBackgroundToBackdropStyle:(int)arg1;
 - (void)_updateInsetsForTableView:(id)arg1;
 - (void)_updateMagnifyingGlassView;
@@ -264,7 +275,7 @@
 - (void)_updateScopeBarBackground;
 - (void)_updateSearchFieldArt;
 - (id)_viewForChildViews;
-- (BOOL)_wouldCombineLandscapeBarsForSize:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)_wouldCombineLandscapeBarsForSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)backgroundImage;
 - (id)backgroundImageForBarPosition:(int)arg1 barMetrics:(int)arg2;
 - (int)barPosition;
@@ -277,7 +288,7 @@
 - (id)cancelButton;
 - (BOOL)centerPlaceholder;
 - (BOOL)combinesLandscapeBars;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
 - (id)controller;
 - (void)dealloc;
 - (id)delegate;
@@ -288,14 +299,14 @@
 - (BOOL)drawsBackgroundInPalette;
 - (void)encodeWithCoder:(id)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)imageForSearchBarIcon:(int)arg1 state:(unsigned int)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)inputAccessoryView;
 - (id)inputAssistantItem;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isFirstResponder;
 - (BOOL)isSearchResultsButtonSelected;
@@ -303,7 +314,7 @@
 - (void)layoutSubviews;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)placeholder;
-- (struct UIOffset { float x1; float x2; })positionAdjustmentForSearchBarIcon:(int)arg1;
+- (struct UIOffset { double x1; double x2; })positionAdjustmentForSearchBarIcon:(int)arg1;
 - (id)preferredFocusedView;
 - (BOOL)pretendsIsInBar;
 - (id)prompt;
@@ -318,9 +329,9 @@
 - (unsigned int)searchBarStyle;
 - (id)searchField;
 - (id)searchFieldBackgroundImageForState:(unsigned int)arg1;
-- (struct UIOffset { float x1; float x2; })searchFieldBackgroundPositionAdjustment;
+- (struct UIOffset { double x1; double x2; })searchFieldBackgroundPositionAdjustment;
 - (int)searchFieldLeftViewMode;
-- (struct UIOffset { float x1; float x2; })searchTextPositionAdjustment;
+- (struct UIOffset { double x1; double x2; })searchTextPositionAdjustment;
 - (int)selectedScopeButtonIndex;
 - (void)sendSubviewToBack:(id)arg1;
 - (void)setBackgroundImage:(id)arg1;
@@ -328,21 +339,21 @@
 - (void)setBackgroundImage:(id)arg1 forBarPosition:(int)arg2 barMetrics:(int)arg3;
 - (void)setBarStyle:(int)arg1;
 - (void)setBarTintColor:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setCancelButton:(id)arg1;
 - (void)setCenterPlaceholder:(BOOL)arg1;
 - (void)setCombinesLandscapeBars:(BOOL)arg1;
-- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setController:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDrawsBackground:(BOOL)arg1;
 - (void)setDrawsBackgroundInPalette:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setImage:(id)arg1 forSearchBarIcon:(int)arg2 state:(unsigned int)arg3;
 - (void)setInputAccessoryView:(id)arg1;
 - (void)setKeyboardAppearance:(int)arg1;
 - (void)setPlaceholder:(id)arg1;
-- (void)setPositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forSearchBarIcon:(int)arg2;
+- (void)setPositionAdjustment:(struct UIOffset { double x1; double x2; })arg1 forSearchBarIcon:(int)arg2;
 - (void)setPretendsIsInBar:(BOOL)arg1;
 - (void)setPrompt:(id)arg1;
 - (void)setScopeBarBackgroundImage:(id)arg1;
@@ -352,11 +363,12 @@
 - (void)setScopeButtonTitles:(id)arg1;
 - (void)setSearchBarStyle:(unsigned int)arg1;
 - (void)setSearchFieldBackgroundImage:(id)arg1 forState:(unsigned int)arg2;
-- (void)setSearchFieldBackgroundPositionAdjustment:(struct UIOffset { float x1; float x2; })arg1;
+- (void)setSearchFieldBackgroundPositionAdjustment:(struct UIOffset { double x1; double x2; })arg1;
 - (void)setSearchFieldLeftViewMode:(int)arg1;
 - (void)setSearchResultsButtonSelected:(BOOL)arg1;
-- (void)setSearchTextPositionAdjustment:(struct UIOffset { float x1; float x2; })arg1;
+- (void)setSearchTextPositionAdjustment:(struct UIOffset { double x1; double x2; })arg1;
 - (void)setSelectedScopeButtonIndex:(int)arg1;
+- (void)setSemanticContentAttribute:(int)arg1;
 - (void)setShowsBookmarkButton:(BOOL)arg1;
 - (void)setShowsCancelButton:(BOOL)arg1;
 - (void)setShowsCancelButton:(BOOL)arg1 animated:(BOOL)arg2;
@@ -371,7 +383,7 @@
 - (BOOL)showsCancelButton;
 - (BOOL)showsScopeBar;
 - (BOOL)showsSearchResultsButton;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)takeTraitsFrom:(id)arg1;
 - (void)tappedSearchBar:(id)arg1;
 - (id)text;
@@ -388,9 +400,9 @@
 
 - (void)_cnui_applyContactStyle;
 
-// Image: /System/Library/Frameworks/PassKit.framework/PassKit
+// Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
 
-- (void)pk_applyAppearance:(struct _PKAppearanceSpecifier { BOOL x1; id x2; id x3; id x4; id x5; id x6; id x7; id x8; id x9; id x10; id x11; id x12; id x13; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void**x24; void*x25; void*x26; void*x27; const void*x28; void*x29; void*x30; void*x31; void*x32; void*x33; void x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; Class x41; short x42; void*x43; void*x44; const BOOL x45; void*x46; void*x47; int x48; void*x49; long x50; double x51; bool x52; void*x53; BOOL x54; void*x55; void*x56; const out void*x57; in double x58; unsigned int x59; void*x60; void*x61; void*x62; void*x63; void*x64; out const unsigned short x65; void*x66; void*x67; void*x68; void*x69; SEL x70; void*x71; void*x72; void*x73; void*x74; void*x75; void x76; void*x77; void*x78; void*x79; void*x80; void*x81; void*x82; void*x83; void*x84; void*x85; void*x86; void*x87; void*x88; void*x89; void*x90; void*x91; void*x92; void*x93; void*x94; void*x95; void*x96; void*x97; void*x98; void*x99; void*x100; void*x101; long doublex102; out BOOL x103; void*x104; void*x105; void*x106; in void*x107; unsigned int x108; in void*x109; void*x110; const void*x111; BOOL x112; void*x113; int x114; out in unsigned short x115; void*x116; short x117; short x118; int x119; out in void*x120; void*x121; void*x122; void*x123; void*x124; void*x125; void*x126; void*x127; void*x128; void*x129; void*x130; void*x131; void*x132; void*x133; id x134; void*x135; void*x136; void*x137; void*x138; void*x139; oneway void*x140; double x141; int x142; out void*x143; in void x144; int x145; const out in void*x146; void*x147; in void*x148; long doublex149; int x150; short x151; void*x152; void*x153; in BOOL x154; void*x155; void*x156; void*x157; void*x158; in void*x159; void*x160; void*x161; int x162; out in void*x163; void*x164; const void*x165; void*x166; void*x167; void*x168; void*x169; const short x170; void*x171; void*x172; void*x173; void*x174; void*x175; void*x176; void*x177; void*x178; void*x179; void*x180; void*x181; id x182; void*x183; void*x184; void*x185; void*x186; void*x187; unsigned char x188; void*x189; unsigned char x190; long x191; int x192; void*x193; in void*x194; void*x195; long x196; out void*x197; void*x198; void*x199; long long x200; void*x201; void*x202; short x203; void*x204; unsigned char x205; void*x206; long x207; long x208; unsigned int x209/* : ? */; void*x210; BOOL x211; void*x212; void*x213; void*x214; void*x215; void*x216; void*x217; void*x218; void*x219; void*x220; void*x221; void*x222; void*x223; void*x224; void*x225; id x226; void*x227; void*x228; id x229; void*x230; void*x231; void*x232; unsigned int x233; void*x234; const void*x235; float x236; void*x237; const void*x238; in BOOL x239; void*x240; short x241; void*x242; void*x243; void*x244; void*x245; void*x246; void*x247; void*x248; void*x249; void*x250; void*x251; void*x252; id x253; void*x254; void*x255; void*x256; void*x257; void*x258; void*x259; double x260; int x261; out void*x262; void*x263; void*x264; void*x265; unsigned int x266/* : ? */; long x267; void*x268; unsigned short x269; void*x270; void*x271; const BOOL x272; void*x273; void*x274; void*x275; short x276; void*x277; long x278; void*x279; unsigned char x280; void*x281; void*x282; void*x283; void*x284; out const void*x285; void*x286; void*x287; void*x288; void*x289; void*x290; void*x291; void*x292; void*x293; void*x294; void*x295; id x296; void*x297; in void*x298; void*x299; void*x300; void*x301; void*x302; int x303; in void*x304; unsigned long x305; void*x306; in double x307; short x308; BOOL x309; void*x310; void*x311; void*x312; void*x313; void*x314; long x315; out void*x316; unsigned char x317; long x318; out BOOL x319; void*x320; oneway int x321; void*x322; void*x323; void*x324; void*x325; void*x326; void*x327; void*x328; void*x329; void*x330; void*x331; void*x332; void*x333; void*x334; void*x335; id x336; void*x337; void*x338; void*x339; void*x340; void*x341; unsigned short x342; unsigned short x343; void*x344; void*x345; const BOOL x346; void*x347; void*x348; void*x349; short x350; void*x351; long x352; void*x353; short x354; unsigned short x355; void*x356; int x357; void*x358; BOOL x359; void*x360; unsigned char x361; void*x362; long x363; long x364; void*x365; void*x366; void*x367; void*x368; void*x369; void*x370; void*x371; void*x372; void*x373; void*x374; void*x375; void*x376; void*x377; void*x378; void*x379; void*x380; void*x381; id x382; void*x383; void x384; void*x385; void*x386; void*x387; void*x388; void*x389; unsigned char x390; void*x391; void*x392; const void*x393; void*x394; void*x395; void*x396; void*x397; void*x398; void*x399; void*x400; void*x401; void*x402; void*x403; void*x404; void*x405; void*x406; void*x407; void*x408; void*x409; void*x410; void*x411; id x412; void*x413; }*)arg1;
+- (void)pk_applyAppearance:(id)arg1;
 - (id)pk_childrenForAppearance;
 
 @end

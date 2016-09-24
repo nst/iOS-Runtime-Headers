@@ -3,9 +3,9 @@
  */
 
 @interface GEOTraitsTransitScheduleFilter : PBCodable <NSCopying> {
-    GEOTraitsTransitScheduleModeFilter *_highFrequencyFilter;
-    GEOTraitsTransitScheduleModeFilter *_lowFrequencyFilter;
-    GEOTraitsTransitScheduleTimeRange *_operatingHoursRange;
+    GEOTraitsTransitScheduleModeFilter * _highFrequencyFilter;
+    GEOTraitsTransitScheduleModeFilter * _lowFrequencyFilter;
+    GEOTraitsTransitScheduleTimeRange * _operatingHoursRange;
 }
 
 @property (nonatomic, readonly) BOOL hasHighFrequencyFilter;

@@ -3,16 +3,16 @@
  */
 
 @interface CoreDAVGetAccountPropertiesTaskGroup : CoreDAVTaskGroup <CoreDAVOptionsTaskDelegate, CoreDAVPrincipalSearchPropertySetTaskDelegate, CoreDAVPropFindTaskDelegate, CoreDAVTaskDelegate> {
-    NSSet *_collections;
-    NSString *_displayName;
-    NSSet *_emailAddresses;
-    BOOL _fetchPrincipalSearchProperties;
-    BOOL _isExpandPropertyReportSupported;
-    NSSet *_principalSearchProperties;
-    NSURL *_principalURL;
-    NSMutableSet *_redirectHistory;
-    NSURL *_resourceID;
-    BOOL _shouldIgnoreHomeSetOnDifferentHost;
+    NSSet * _collections;
+    NSString * _displayName;
+    NSSet * _emailAddresses;
+    BOOL  _fetchPrincipalSearchProperties;
+    BOOL  _isExpandPropertyReportSupported;
+    NSSet * _principalSearchProperties;
+    NSURL * _principalURL;
+    NSMutableSet * _redirectHistory;
+    NSURL * _resourceID;
+    BOOL  _shouldIgnoreHomeSetOnDifferentHost;
 }
 
 @property (nonatomic, readonly) NSSet *collections;

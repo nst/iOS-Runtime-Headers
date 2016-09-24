@@ -3,8 +3,8 @@
  */
 
 @interface SKUIShareTemplateActivity : UIActivity {
-    SKUIClientContext *_clientContext;
-    SKUIShareSheetActivityViewElement *_viewElement;
+    SKUIClientContext * _clientContext;
+    SKUIShareSheetActivityViewElement * _viewElement;
 }
 
 - (void).cxx_destruct;

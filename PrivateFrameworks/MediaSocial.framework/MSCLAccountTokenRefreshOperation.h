@@ -3,11 +3,11 @@
  */
 
 @interface MSCLAccountTokenRefreshOperation : NSOperation {
-    MSCLAccountStore *_accountStore;
-    SKUIMediaSocialAuthor *_author;
-    NSArray *_inputServices;
-    NSLock *_lock;
-    id /* block */ _outputBlock;
+    MSCLAccountStore * _accountStore;
+    SKUIMediaSocialAuthor * _author;
+    NSArray * _inputServices;
+    NSLock * _lock;
+    id /* block */  _outputBlock;
 }
 
 @property (retain) MSCLAccountStore *accountStore;

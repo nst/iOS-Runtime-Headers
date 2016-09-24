@@ -3,13 +3,15 @@
  */
 
 @interface TDPhotoshopElementProduction : TDElementProduction <TDElementAttributes> {
-    CUIImage *_baselineMetricsMask;
-    NSDate *_cachedImageDate;
-    BOOL _didCheckForMetricsMasks;
-    CUIImage *_edgeMetricsMask;
-    CUIImage *_textMetricsMask;
-    NSMutableAttributedString *log;
-    CUIPSDImageRef *psdImageRef;
+    CUIImage * _auxiliary1MetricsMask;
+    CUIImage * _auxiliary2MetricsMask;
+    CUIImage * _baselineMetricsMask;
+    NSDate * _cachedImageDate;
+    BOOL  _didCheckForMetricsMasks;
+    CUIImage * _edgeMetricsMask;
+    CUIImage * _textMetricsMask;
+    NSMutableAttributedString * log;
+    CUIPSDImageRef * psdImageRef;
 }
 
 @property (nonatomic, retain) TDPhotoshopAsset *asset;
@@ -22,6 +24,8 @@
 - (void)addDrawingLayerIndex:(id)arg1 themeLayer:(id)arg2 toIndices:(id)arg3 layers:(id)arg4 lowestIndex:(int*)arg5;
 - (void)appendToLog:(id)arg1;
 - (id)associatedFileURLWithDocument:(id)arg1;
+- (id)auxiliary1MetricsMaskWithDocument:(id)arg1;
+- (id)auxiliary2MetricsMaskWithDocument:(id)arg1;
 - (id)baseKeySpec;
 - (id)baselineMetricsMaskWithDocument:(id)arg1;
 - (id)columnCount;

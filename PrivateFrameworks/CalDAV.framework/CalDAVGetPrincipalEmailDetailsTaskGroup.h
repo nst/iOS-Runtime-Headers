@@ -3,8 +3,8 @@
  */
 
 @interface CalDAVGetPrincipalEmailDetailsTaskGroup : CoreDAVTaskGroup <CoreDAVTaskDelegate> {
-    CalDAVPrincipalEmailDetailsResult *_principalResult;
-    NSURL *_principalURL;
+    CalDAVPrincipalEmailDetailsResult * _principalResult;
+    NSURL * _principalURL;
 }
 
 @property (nonatomic, readonly, retain) NSSet *addresses;

@@ -3,13 +3,13 @@
  */
 
 @interface FBApplicationProcessWatchdogPolicy : NSObject <FBProcessWatchdogProviding> {
-    double _additionalFirstPartyScale;
-    int _daNotificationToken;
-    double _deviceLaunchScale;
-    double _deviceResumeScale;
-    BOOL _enableThirdPartyPre9;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSDictionary *_watchdogPolicyExceptions;
+    double  _additionalFirstPartyScale;
+    int  _daNotificationToken;
+    double  _deviceLaunchScale;
+    double  _deviceResumeScale;
+    BOOL  _enableThirdPartyPre9;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSDictionary * _watchdogPolicyExceptions;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -27,6 +27,6 @@
 - (double)_queue_watchdogScalingFactorForAppInfo:(id)arg1 isResume:(BOOL)arg2;
 - (void)dealloc;
 - (id)init;
-- (double)watchdogIntervalForProcess:(id)arg1 eventContext:(struct { int x1; id x2; })arg2;
+- (id)watchdogPolicyForProcess:(id)arg1 eventContext:(id)arg2;
 
 @end

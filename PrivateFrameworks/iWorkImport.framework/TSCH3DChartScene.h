@@ -14,13 +14,13 @@
             BOOL forceOmitAxisTitle; 
             BOOL enable3DTightBounds; 
             BOOL enable3DScaledDepthBounds; 
-            BOOL enable3DSageMaxDepthRatio; 
+            int maxDepthRatioType; 
             unsigned int max3DLimitingSeries; 
         } layoutSettings; 
-    } mSceneInfo;
+    }  mSceneInfo;
 }
 
-+ (void)addObjectsToSceneWithSceneInfo:(const struct ChartSceneInfo { id x1; id x2; struct { BOOL x_3_1_1; BOOL x_3_1_2; BOOL x_3_1_3; BOOL x_3_1_4; BOOL x_3_1_5; BOOL x_3_1_6; unsigned int x_3_1_7; } x3; }*)arg1;
++ (void)addObjectsToSceneWithSceneInfo:(const struct ChartSceneInfo { id x1; id x2; struct { BOOL x_3_1_1; BOOL x_3_1_2; BOOL x_3_1_3; BOOL x_3_1_4; BOOL x_3_1_5; int x_3_1_6; unsigned int x_3_1_7; } x3; }*)arg1;
 + (BOOL)supportsValueAxisLabelAlignmentCaching;
 
 - (void)addAllLabelsToScene;
@@ -32,8 +32,8 @@
 - (void)adjustSceneSettings;
 - (id)chartInfo;
 - (id)chartType;
-- (id)initWithSceneInfo:(const struct ChartSceneInfo { id x1; id x2; struct { BOOL x_3_1_1; BOOL x_3_1_2; BOOL x_3_1_3; BOOL x_3_1_4; BOOL x_3_1_5; BOOL x_3_1_6; unsigned int x_3_1_7; } x3; }*)arg1;
-- (const struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; unsigned int x7; }*)layoutSettings;
+- (id)initWithSceneInfo:(const struct ChartSceneInfo { id x1; id x2; struct { BOOL x_3_1_1; BOOL x_3_1_2; BOOL x_3_1_3; BOOL x_3_1_4; BOOL x_3_1_5; int x_3_1_6; unsigned int x_3_1_7; } x3; }*)arg1;
+- (const struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; int x6; unsigned int x7; }*)layoutSettings;
 - (id)scene;
 - (id)seriesType;
 

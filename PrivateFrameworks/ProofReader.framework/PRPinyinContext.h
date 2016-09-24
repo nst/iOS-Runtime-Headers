@@ -3,30 +3,31 @@
  */
 
 @interface PRPinyinContext : PRAutocorrectionContext {
-    unsigned int _abbreviatedSyllableCount;
-    NSMutableArray *_addedModifications;
-    NSMutableArray *_addedRemovedModifications;
-    char *_altBuffer;
-    char *_altBufferScores;
-    char *_buffer;
-    NSMutableArray *_completions;
-    void *_connection;
-    unsigned int _endIndex;
-    NSMutableArray *_geometryDataArray;
-    NSMutableArray *_guesses;
-    unsigned int _lastIndexes;
-    BOOL _lastSyllableIsPartial;
-    unsigned int _length;
-    unsigned int _lengthBeforeApostrophes;
-    NSMutableArray *_modifications;
-    unsigned int _nextIndexes;
-    NSMutableArray *_prefixes;
-    unsigned int _previouslyAnalyzedLength;
-    NSMutableArray *_removedModifications;
-    unsigned int _startIndex;
-    unsigned int _startingPoint;
-    unsigned int *_syllableLengthArray;
-    double _validSequenceCorrectionThreshold;
+    unsigned int  _abbreviatedSyllableCount;
+    NSMutableArray * _addedModifications;
+    NSMutableArray * _addedRemovedModifications;
+    char * _altBuffer;
+    char * _altBufferScores;
+    char * _buffer;
+    NSMutableArray * _completions;
+    void * _connection;
+    NSMutableArray * _corrections;
+    unsigned int  _endIndex;
+    NSMutableArray * _geometryDataArray;
+    NSMutableArray * _guesses;
+    unsigned int  _lastIndexes;
+    BOOL  _lastSyllableIsPartial;
+    unsigned int  _length;
+    unsigned int  _lengthBeforeApostrophes;
+    NSMutableArray * _modifications;
+    unsigned int  _nextIndexes;
+    NSMutableArray * _prefixes;
+    unsigned int  _previouslyAnalyzedLength;
+    NSMutableArray * _removedModifications;
+    unsigned int  _startIndex;
+    unsigned int  _startingPoint;
+    unsigned int * _syllableLengthArray;
+    double  _validSequenceCorrectionThreshold;
 }
 
 - (void)_addDeletions;
@@ -46,6 +47,7 @@
 - (void)addInputCharacter:(unsigned short)arg1 geometryModel:(void*)arg2 geometryData:(id)arg3;
 - (id)addedModifications;
 - (id)completions;
+- (id)correction;
 - (id)currentModifications;
 - (void)dealloc;
 - (id)description;

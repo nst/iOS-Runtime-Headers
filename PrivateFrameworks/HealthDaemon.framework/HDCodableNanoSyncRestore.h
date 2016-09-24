@@ -5,9 +5,9 @@
 @interface HDCodableNanoSyncRestore : PBCodable <HDNanoSyncDescription, HDSyncObjectCollection, NSCopying> {
     struct { 
         unsigned int objectType : 1; 
-    } _has;
-    NSMutableArray *_objectDatas;
-    int _objectType;
+    }  _has;
+    NSMutableArray * _objectDatas;
+    int  _objectType;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -17,8 +17,6 @@
 @property (nonatomic, retain) NSMutableArray *objectDatas;
 @property (nonatomic) int objectType;
 @property (readonly) Class superclass;
-
-+ (id)restoreWithNanoSyncEntityClass:(Class)arg1 protocolVersion:(int)arg2;
 
 - (void).cxx_destruct;
 - (void)addObjectData:(id)arg1;

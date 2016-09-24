@@ -3,12 +3,12 @@
  */
 
 @interface SKUISlideshowGalleryBarView : UIView {
-    <SKUISlideshowGalleryBarViewDelegate> *_delegate;
-    NSMutableArray *_imageViews;
-    UIView *_imageViewsContainer;
-    unsigned int _numberOfImages;
-    unsigned int _selectedImageIndex;
-    UIToolbar *_toolbarView;
+    <SKUISlideshowGalleryBarViewDelegate> * _delegate;
+    NSMutableArray * _imageViews;
+    UIView * _imageViewsContainer;
+    unsigned int  _numberOfImages;
+    unsigned int  _selectedImageIndex;
+    UIToolbar * _toolbarView;
 }
 
 @property (nonatomic) <SKUISlideshowGalleryBarViewDelegate> *delegate;
@@ -20,7 +20,7 @@
 - (id)_newImageView;
 - (id)delegate;
 - (id)imageAtIndex:(int)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (unsigned int)numberOfImages;
 - (unsigned int)selectedImageIndex;

@@ -3,8 +3,8 @@
  */
 
 @interface HAPCharacteristicReadCompletionTuple : NSObject {
-    NSObject<OS_dispatch_queue> *_completionQueue;
-    id /* block */ _handler;
+    NSObject<OS_dispatch_queue> * _completionQueue;
+    id /* block */  _handler;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *completionQueue;

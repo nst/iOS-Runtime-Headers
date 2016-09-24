@@ -3,8 +3,8 @@
  */
 
 @interface HSNowPlayingArtworkResponse : HSResponse {
-    NSData *_artworkData;
-    NSString *_artworkMIMEType;
+    NSData * _artworkData;
+    NSString * _artworkMIMEType;
 }
 
 @property (nonatomic, retain) NSData *artworkData;

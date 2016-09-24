@@ -3,7 +3,7 @@
  */
 
 @interface SSEventsTableBase : NSObject {
-    SSSQLiteDatabase *_database;
+    SSSQLiteDatabase * _database;
 }
 
 + (id)databasePath;

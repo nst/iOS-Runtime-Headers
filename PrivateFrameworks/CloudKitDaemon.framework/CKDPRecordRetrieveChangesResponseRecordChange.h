@@ -3,14 +3,14 @@
  */
 
 @interface CKDPRecordRetrieveChangesResponseRecordChange : PBCodable <NSCopying> {
-    NSString *_etag;
+    NSString * _etag;
     struct { 
         unsigned int type : 1; 
-    } _has;
-    CKDPRecord *_record;
-    CKDPRecordIdentifier *_recordIdentifier;
-    CKDPRecordType *_recordType;
-    int _type;
+    }  _has;
+    CKDPRecord * _record;
+    CKDPRecordIdentifier * _recordIdentifier;
+    CKDPRecordType * _recordType;
+    int  _type;
 }
 
 @property (nonatomic, retain) NSString *etag;
@@ -25,6 +25,7 @@
 @property (nonatomic) int type;
 
 - (void).cxx_destruct;
+- (int)StringAsType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -49,6 +50,7 @@
 - (void)setRecordType:(id)arg1;
 - (void)setType:(int)arg1;
 - (int)type;
+- (id)typeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

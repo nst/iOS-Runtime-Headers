@@ -3,14 +3,14 @@
  */
 
 @interface CoreDAVCalendarServerTransportItem : CoreDAVItem {
-    CoreDAVLeafItem *_apsBundleID;
-    CoreDAVLeafItem *_apsEnv;
-    CoreDAVLeafItem *_courierServer;
-    CoreDAVLeafItem *_refreshInterval;
-    CoreDAVItemWithHrefChildItem *_subscriptionURL;
-    CoreDAVItemWithHrefChildItem *_tokenURL;
-    CoreDAVLeafItem *_xmppServer;
-    CoreDAVLeafItem *_xmppURI;
+    CoreDAVLeafItem * _apsBundleID;
+    CoreDAVLeafItem * _apsEnv;
+    CoreDAVLeafItem * _courierServer;
+    CoreDAVLeafItem * _refreshInterval;
+    CoreDAVItemWithHrefChildItem * _subscriptionURL;
+    CoreDAVItemWithHrefChildItem * _tokenURL;
+    CoreDAVLeafItem * _xmppServer;
+    CoreDAVLeafItem * _xmppURI;
 }
 
 @property (nonatomic, retain) CoreDAVLeafItem *apsBundleID;

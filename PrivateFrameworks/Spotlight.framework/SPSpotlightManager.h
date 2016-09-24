@@ -3,7 +3,7 @@
  */
 
 @interface SPSpotlightManager : NSObject {
-    NSString *_displayID;
+    NSString * _displayID;
 }
 
 + (id)sharedManager;

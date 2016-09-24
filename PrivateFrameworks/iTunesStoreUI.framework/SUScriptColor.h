@@ -3,14 +3,14 @@
  */
 
 @interface SUScriptColor : SUScriptObject {
-    UIColor *_color;
+    UIColor * _color;
 }
 
-@property (readonly) float alpha;
-@property (readonly) float blue;
-@property (readonly) float green;
+@property (readonly) double alpha;
+@property (readonly) double blue;
+@property (readonly) double green;
 @property (readonly) UIColor *nativeColor;
-@property (readonly) float red;
+@property (readonly) double red;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

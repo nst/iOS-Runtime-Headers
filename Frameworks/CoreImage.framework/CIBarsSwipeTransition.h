@@ -3,12 +3,12 @@
  */
 
 @interface CIBarsSwipeTransition : CIFilter {
-    NSNumber *inputAngle;
-    NSNumber *inputBarOffset;
-    CIImage *inputImage;
-    CIImage *inputTargetImage;
-    NSNumber *inputTime;
-    NSNumber *inputWidth;
+    NSNumber * inputAngle;
+    NSNumber * inputBarOffset;
+    CIImage * inputImage;
+    CIImage * inputTargetImage;
+    NSNumber * inputTime;
+    NSNumber * inputWidth;
 }
 
 @property (nonatomic, retain) NSNumber *inputAngle;

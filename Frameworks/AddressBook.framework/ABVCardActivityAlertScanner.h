@@ -3,8 +3,8 @@
  */
 
 @interface ABVCardActivityAlertScanner : NSObject {
-    unsigned int _position;
-    NSString *_string;
+    unsigned int  _position;
+    NSString * _string;
 }
 
 + (BOOL)characterIsStringValueCharacter:(unsigned short)arg1;

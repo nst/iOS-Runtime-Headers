@@ -3,7 +3,7 @@
  */
 
 @interface FBSWorkspaceDestroySceneEvent : FBSWorkspaceSceneEvent {
-    FBSSceneTransitionContext *_transitionContext;
+    FBSSceneTransitionContext * _transitionContext;
 }
 
 @property (nonatomic, retain) FBSSceneTransitionContext *transitionContext;

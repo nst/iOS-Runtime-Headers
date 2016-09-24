@@ -3,8 +3,8 @@
  */
 
 @interface TSWPShapeRepStageChunk : NSObject {
-    int _stageIndex;
-    NSArray *_storageRanges;
+    int  _stageIndex;
+    NSArray * _storageRanges;
 }
 
 @property (nonatomic) int stageIndex;

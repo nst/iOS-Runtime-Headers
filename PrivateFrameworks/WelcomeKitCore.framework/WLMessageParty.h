@@ -3,11 +3,11 @@
  */
 
 @interface WLMessageParty : NSObject {
-    NSString *_address;
-    NSString *_ccAcNumber;
-    NSString *_icc;
-    BOOL _isPhoneNumber;
-    NSString *_np;
+    NSString * _address;
+    NSString * _ccAcNumber;
+    NSString * _icc;
+    BOOL  _isPhoneNumber;
+    NSString * _np;
 }
 
 @property (nonatomic, readonly) NSString *address;

@@ -3,17 +3,23 @@
  */
 
 @interface PLDuetService : PLService {
-    CDDClientConnection *_clientConnection;
-    CDAttribute *_cloudDocAttribute;
-    CDSession *_cloudDocSession;
-    PLXPCResponderOperatorComposition *_energyResponder;
-    PLXPCListenerOperatorComposition *_eventListener;
-    NSDate *_referenceDate;
+    CDDClientConnection * _clientConnection;
+    CDAttribute * _cloudDocAttribute;
+    CDSession * _cloudDocSession;
+    PLXPCListenerOperatorComposition * _dasActivityEventListener;
+    PLXPCListenerOperatorComposition * _dasInfoEventListener;
+    PLXPCListenerOperatorComposition * _dasPredictionEventListener;
+    PLXPCResponderOperatorComposition * _energyResponder;
+    PLXPCListenerOperatorComposition * _eventListener;
+    NSDate * _referenceDate;
 }
 
 @property (readonly) CDDClientConnection *clientConnection;
 @property (readonly) CDAttribute *cloudDocAttribute;
 @property (readonly) CDSession *cloudDocSession;
+@property (retain) PLXPCListenerOperatorComposition *dasActivityEventListener;
+@property (retain) PLXPCListenerOperatorComposition *dasInfoEventListener;
+@property (retain) PLXPCListenerOperatorComposition *dasPredictionEventListener;
 @property (retain) PLXPCResponderOperatorComposition *energyResponder;
 @property (retain) PLXPCListenerOperatorComposition *eventListener;
 @property (readonly) NSDate *referenceDate;
@@ -22,7 +28,13 @@
 + (id)entryAggregateDefinitions;
 + (id)entryEventForwardDefinitionBatterySaverMode;
 + (id)entryEventForwardDefinitions;
++ (id)entryEventForwardDefinitionsDASApplicationPrediction;
++ (id)entryEventForwardDefinitionsDASPrediction;
 + (id)entryEventIntervalDefinitions;
++ (id)entryEventNoneDefinitions;
++ (id)entryEventNoneDefinitionsDASActivity;
++ (id)entryEventNoneDefinitionsDASActivityDropCount;
++ (id)entryEventNoneDefinitionsDASInfo;
 + (id)eventIntervalDefinitionDuetEvents;
 + (void)load;
 + (id)mapBundleID:(id)arg1;
@@ -34,6 +46,12 @@
 - (id)cloudDocAttribute;
 - (id)cloudDocSession;
 - (void)createQualificationEventsWithEventTransitions:(id)arg1 withQualificationID:(int)arg2;
+- (id)dasActivityEventListener;
+- (id)dasInfoEventListener;
+- (id)dasPredictionEventListener;
+- (void)didReceiveDASActivityEventWithPayload:(id)arg1;
+- (void)didReceiveDASInfoEventWithPayload:(id)arg1;
+- (void)didReceiveDASPredictionEventWithPayload:(id)arg1;
 - (void)didReceiveEventWithPayload:(id)arg1;
 - (id)energyResponder;
 - (id)energyResponse;
@@ -43,6 +61,9 @@
 - (id)init;
 - (void)initOperatorDependancies;
 - (id)referenceDate;
+- (void)setDasActivityEventListener:(id)arg1;
+- (void)setDasInfoEventListener:(id)arg1;
+- (void)setDasPredictionEventListener:(id)arg1;
 - (void)setEnergyResponder:(id)arg1;
 - (void)setEventListener:(id)arg1;
 - (void)setupBatterySaverModeForNotification:(id)arg1;

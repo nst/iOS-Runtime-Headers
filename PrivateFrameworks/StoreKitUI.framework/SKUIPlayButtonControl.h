@@ -3,49 +3,49 @@
  */
 
 @interface SKUIPlayButtonControl : UIControl {
-    NSString *_backdropGroupName;
-    _UIBackdropView *_backdropView;
-    UIColor *_backgroundColor;
-    UIImage *_backgroundImageForBlurring;
-    int _backgroundType;
-    UIView *_backgroundView;
+    NSString * _backdropGroupName;
+    _UIBackdropView * _backdropView;
+    UIColor * _backgroundColor;
+    UIImage * _backgroundImageForBlurring;
+    int  _backgroundType;
+    UIView * _backgroundView;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _bigHitInsets;
-    SKUIPlayButtonShapeView *_borderLayer;
-    UIColor *_bufferProgressIndicatorColor;
-    id _bufferProgressIndicatorCompositingFilter;
-    UIColor *_controlForeGroundColor;
-    UIImage *_customPlayImage;
-    UIImage *_customToggleImage;
-    BOOL _didInitialHighlightForTouch;
-    BOOL _disabledButSelectable;
-    SKUIButtonViewElement *_element;
-    SKUIPlayButtonGradientView *_gradientBackgroundView;
-    NSArray *_gradientColors;
-    int _gradientType;
-    UIImageView *_imageView;
-    BOOL _indeterminate;
-    SKUIPlayButtonShapeView *_innerProgressLayer;
-    SKUIPlayButtonShapeView *_outerProgressLayer;
-    float _progress;
-    UIColor *_progressIndicatorColor;
-    id _progressIndicatorCompositingFilter;
-    SKUIPlayButtonShapeView *_selectedLayer;
-    BOOL _showBorder;
-    BOOL _showOuterBorder;
-    BOOL _showingPlayIndicator;
-    BOOL _showingProgress;
-    BOOL _usesBlurredBackground;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _bigHitInsets;
+    SKUIPlayButtonShapeView * _borderLayer;
+    UIColor * _bufferProgressIndicatorColor;
+    id  _bufferProgressIndicatorCompositingFilter;
+    UIColor * _controlForeGroundColor;
+    UIImage * _customPlayImage;
+    UIImage * _customToggleImage;
+    BOOL  _didInitialHighlightForTouch;
+    BOOL  _disabledButSelectable;
+    SKUIButtonViewElement * _element;
+    SKUIPlayButtonGradientView * _gradientBackgroundView;
+    NSArray * _gradientColors;
+    int  _gradientType;
+    UIImageView * _imageView;
+    BOOL  _indeterminate;
+    SKUIPlayButtonShapeView * _innerProgressLayer;
+    SKUIPlayButtonShapeView * _outerProgressLayer;
+    double  _progress;
+    UIColor * _progressIndicatorColor;
+    id  _progressIndicatorCompositingFilter;
+    SKUIPlayButtonShapeView * _selectedLayer;
+    BOOL  _showBorder;
+    BOOL  _showOuterBorder;
+    BOOL  _showingPlayIndicator;
+    BOOL  _showingProgress;
+    BOOL  _usesBlurredBackground;
 }
 
 @property (nonatomic, copy) NSString *backdropGroupName;
 @property (nonatomic) UIImage *backgroundImageForBlurring;
 @property (nonatomic, readonly) int backgroundType;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } bigHitInsets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } bigHitInsets;
 @property (nonatomic, readonly) UIColor *controlForeGroundColor;
 @property (nonatomic, retain) UIImage *customPlayImage;
 @property (nonatomic, retain) UIImage *customToggleImage;
@@ -53,15 +53,15 @@
 @property (nonatomic, retain) SKUIButtonViewElement *element;
 @property (nonatomic, retain) UIImageView *imageView;
 @property (getter=isIndeterminate, nonatomic, readonly) BOOL indeterminate;
-@property (nonatomic) float progress;
+@property (nonatomic) double progress;
 @property (nonatomic, copy) UIColor *progressIndicatorColor;
 @property (nonatomic) BOOL showOuterBorder;
 @property (nonatomic, readonly) BOOL showingPlayIndicator;
 @property (nonatomic, readonly) BOOL showingProgress;
 
-+ (struct { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; })_calculateStatistics:(struct CGImage { }*)arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
++ (struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; })_calculateStatistics:(struct CGImage { }*)arg1 withSize:(struct CGSize { double x1; double x2; })arg2;
 + (id)blurColorForColor:(id)arg1;
-+ (id)blurColorForImage:(id)arg1 forButtonSize:(struct CGSize { float x1; float x2; })arg2 withOffsetRight:(float)arg3 withOffsetBottom:(float)arg4;
++ (id)blurColorForImage:(id)arg1 forButtonSize:(struct CGSize { double x1; double x2; })arg2 withOffsetRight:(float)arg3 withOffsetBottom:(float)arg4;
 
 - (void).cxx_destruct;
 - (id)_backgroundView;
@@ -74,7 +74,7 @@
 - (id)_gradientBackgroundView;
 - (id)_imageView;
 - (id)_innerProgressLayer;
-- (id)_newShapeViewWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 lineWidth:(float)arg2;
+- (id)_newShapeViewWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 lineWidth:(float)arg2;
 - (id)_outerProgressLayer;
 - (id)_playImage;
 - (void)_prepareForReuse;
@@ -92,9 +92,9 @@
 - (id)backgroundImageForBlurring;
 - (int)backgroundType;
 - (void)beginIndeterminateAnimation;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })bigHitInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })bigHitInsets;
 - (float)buttonCornerRadius;
-- (struct CGSize { float x1; float x2; })buttonSize;
+- (struct CGSize { double x1; double x2; })buttonSize;
 - (id)cancelImage;
 - (id)controlForeGroundColor;
 - (id)customPlayImage;
@@ -103,10 +103,10 @@
 - (id)element;
 - (void)endIndeterminateAnimation;
 - (void)hideProgressAnimated:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hitRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })hitRect;
 - (id)imageView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (BOOL)isDisabledButSelectable;
 - (BOOL)isIndeterminate;
 - (void)layoutSubviews;
@@ -114,7 +114,7 @@
 - (float)playButtonDefaultAlpha;
 - (id)playImage;
 - (void)playIndicatorDidChange:(BOOL)arg1;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (float)progress;
 - (id)progressIndicatorColor;
 - (void)refresh;
@@ -123,7 +123,7 @@
 - (void)setBackgroundImageForBlurring:(id)arg1;
 - (void)setBackgroundImageForBlurring:(id)arg1 withOffsetRight:(float)arg2 withOffsetBottom:(float)arg3;
 - (void)setBackgroundType:(int)arg1;
-- (void)setBigHitInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setBigHitInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setBufferProgressIndicatorColor:(id)arg1 withCompositingFilter:(id)arg2;
 - (void)setControlColor:(id)arg1;
 - (void)setControlForegroundColor:(id)arg1;
@@ -146,7 +146,7 @@
 - (void)showPlayIndicator:(BOOL)arg1 force:(BOOL)arg2;
 - (BOOL)showingPlayIndicator;
 - (BOOL)showingProgress;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)tintColorDidChange;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

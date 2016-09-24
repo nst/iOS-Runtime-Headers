@@ -3,29 +3,28 @@
  */
 
 @interface PSUISettingsNetworkController : PSListController {
-    PSUIAppCellularUsageGroupController *_appUsageGroupController;
-    NSArray *_appUsageSpecifierCache;
-    CHManager *_callHistoryManager;
-    PSUICellularAccountListGroupController *_cellularAccountListGroupController;
-    PSUICellularAccountGroupController *_cellularGroupController;
-    PSSpecifier *_currentSpecifier;
-    BOOL _disabled;
-    PSSpecifier *_facetimeSetupButton;
-    PSSpecifier *_facetimeSetupGroup;
-    BOOL _ignoreNextEntitlementStatusChange;
-    PSSpecifier *_lastResetSpecifier;
-    PSSpecifier *_lifetimeSpecifier;
-    ProcessAnalytics *_processAnalytics;
-    NSNumber *_subscriberTag;
-    PSSpecifier *_viewAccount;
-    PSSpecifier *_viewAccountGroup;
-    AnalyticsWorkspace *_workspace;
+    PSUIAppCellularUsageGroupController * _appUsageGroupController;
+    NSArray * _appUsageSpecifierCache;
+    CHManager * _callHistoryManager;
+    PSUICellularAccountListGroupController * _cellularAccountListGroupController;
+    PSUICellularAccountGroupController * _cellularGroupController;
+    PSSpecifier * _currentSpecifier;
+    BOOL  _disabled;
+    PSSpecifier * _facetimeSetupButton;
+    PSSpecifier * _facetimeSetupGroup;
+    BOOL  _ignoreNextEntitlementStatusChange;
+    PSSpecifier * _lastResetSpecifier;
+    PSSpecifier * _lifetimeSpecifier;
+    PSSpecifier * _viewAccount;
+    PSSpecifier * _viewAccountGroup;
+    WirelessDataUsageWorkspace * _workspace;
 }
 
 @property (nonatomic, retain) PSUIAppCellularUsageGroupController *appUsageGroupController;
 @property (nonatomic, retain) CHManager *callHistoryManager;
 @property (nonatomic, retain) PSUICellularAccountListGroupController *cellularAccountListGroupController;
 @property (nonatomic, retain) PSUICellularAccountGroupController *cellularGroupController;
+@property (nonatomic, retain) WirelessDataUsageWorkspace *workspace;
 
 + (BOOL)isConnectedOverWiFi;
 
@@ -47,8 +46,6 @@
 - (void)cellularPlanChanged;
 - (void)clearStats:(id)arg1;
 - (void)dataRegistrationChangedWithUserInfo:(id)arg1;
-- (void)dataUsageInfoChanged;
-- (id)dataUsageWorkspaceInfo;
 - (void)dealloc;
 - (void)entitlementStatusChanged;
 - (void)handleCallTimersChanged;
@@ -63,6 +60,7 @@
 - (void)setCellularAccountListGroupController:(id)arg1;
 - (void)setCellularGroupController:(id)arg1;
 - (void)setMobileDataIsEnabled:(id)arg1 specifier:(id)arg2;
+- (void)setWorkspace:(id)arg1;
 - (void)setupCellularFaceTime:(id)arg1;
 - (BOOL)shouldShowFaceTimeSetup;
 - (BOOL)shouldShowViewAccount;
@@ -75,5 +73,7 @@
 - (void)updateAppUsageGroupEnabledState;
 - (void)updatePaneWithCellularDataState:(BOOL)arg1;
 - (void)viewAccountPressed:(id)arg1;
+- (void)wirelessDataUsageChangedNotification;
+- (id)workspace;
 
 @end

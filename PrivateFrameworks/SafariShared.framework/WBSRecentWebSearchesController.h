@@ -3,7 +3,7 @@
  */
 
 @interface WBSRecentWebSearchesController : NSObject {
-    NSMutableArray *_recentSearchEntries;
+    NSMutableArray * _recentSearchEntries;
 }
 
 + (id)_defaultsKey;

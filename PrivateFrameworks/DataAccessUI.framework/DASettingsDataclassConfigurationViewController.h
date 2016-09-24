@@ -3,8 +3,8 @@
  */
 
 @interface DASettingsDataclassConfigurationViewController : ACUIDataclassConfigurationViewController <UIModalViewDelegate> {
-    DAAccount *_daAccount;
-    BOOL _haveRegisteredForAccountsChanged;
+    DAAccount * _daAccount;
+    BOOL  _haveRegisteredForAccountsChanged;
 }
 
 @property (nonatomic, retain) DAAccount *daAccount;

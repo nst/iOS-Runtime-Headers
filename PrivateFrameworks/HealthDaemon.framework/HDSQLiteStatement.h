@@ -3,9 +3,9 @@
  */
 
 @interface HDSQLiteStatement : NSObject {
-    BOOL _cache;
-    HDSQLiteDatabase *_database;
-    NSString *_sql;
+    BOOL  _cache;
+    HDSQLiteDatabase * _database;
+    NSString * _sql;
 }
 
 @property (nonatomic, readonly) HDSQLiteDatabase *database;

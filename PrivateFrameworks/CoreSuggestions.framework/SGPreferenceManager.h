@@ -3,8 +3,8 @@
  */
 
 @interface SGPreferenceManager : NSObject {
-    NSObject<OS_dispatch_queue> *_settingsUpdateQueue;
-    NSUserDefaults *_suggestionsDefaults;
+    NSObject<OS_dispatch_queue> * _settingsUpdateQueue;
+    NSUserDefaults * _suggestionsDefaults;
 }
 
 + (id)defaultManager;

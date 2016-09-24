@@ -3,92 +3,58 @@
  */
 
 @interface GEOLogMessage : PBCodable <NSCopying> {
-    GEOAppConfig *_appConfig;
-    GEOAppState *_appState;
-    GEODebugLogMessage *_debugLogMessage;
-    GEODeviceConfig *_deviceConfig;
-    GEODeviceState *_deviceState;
     struct { 
         unsigned int logMessageSubType : 1; 
         unsigned int logMessageType : 1; 
-    } _has;
-    NSString *_logFacility;
-    NSString *_logMessageString;
-    int _logMessageSubType;
-    int _logMessageType;
-    GEOPerformanceLogMessage *_perfLogMessage;
-    GEOUsageLogMessage *_usageLogMessage;
+    }  _has;
+    int  _logMessageSubType;
+    int  _logMessageType;
+    NSMutableArray * _logMsgEvents;
 }
 
-@property (nonatomic, retain) GEOAppConfig *appConfig;
-@property (nonatomic, retain) GEOAppState *appState;
-@property (nonatomic, retain) GEODebugLogMessage *debugLogMessage;
-@property (nonatomic, retain) GEODeviceConfig *deviceConfig;
-@property (nonatomic, retain) GEODeviceState *deviceState;
-@property (nonatomic, readonly) BOOL hasAppConfig;
-@property (nonatomic, readonly) BOOL hasAppState;
-@property (nonatomic, readonly) BOOL hasDebugLogMessage;
-@property (nonatomic, readonly) BOOL hasDeviceConfig;
-@property (nonatomic, readonly) BOOL hasDeviceState;
-@property (nonatomic, readonly) BOOL hasLogFacility;
-@property (nonatomic, readonly) BOOL hasLogMessageString;
 @property (nonatomic) BOOL hasLogMessageSubType;
 @property (nonatomic) BOOL hasLogMessageType;
-@property (nonatomic, readonly) BOOL hasPerfLogMessage;
-@property (nonatomic, readonly) BOOL hasUsageLogMessage;
-@property (nonatomic, retain) NSString *logFacility;
-@property (nonatomic, retain) NSString *logMessageString;
 @property (nonatomic) int logMessageSubType;
 @property (nonatomic) int logMessageType;
-@property (nonatomic, retain) GEOPerformanceLogMessage *perfLogMessage;
-@property (nonatomic, retain) GEOUsageLogMessage *usageLogMessage;
+@property (nonatomic, retain) NSMutableArray *logMsgEvents;
 
-- (id)appConfig;
-- (id)appState;
++ (id)acceptedLogMsgEvents;
++ (id)acceptedLogMsgEventsForLogMessageType:(int)arg1;
++ (void)initializeAcceptedLogMsgEventTypes;
++ (BOOL)logMessageType:(int)arg1 acceptsLogMsgEventType:(int)arg2;
++ (id)logMessagesForEvent:(id)arg1;
++ (Class)logMsgEventType;
+
+- (int)StringAsLogMessageSubType:(id)arg1;
+- (int)StringAsLogMessageType:(id)arg1;
+- (BOOL)acceptsLogMsgEventType:(int)arg1;
+- (void)addLogMsgEvent:(id)arg1;
+- (void)clearLogMsgEvents;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)debugLogMessage;
 - (id)description;
-- (id)deviceConfig;
-- (id)deviceState;
 - (id)dictionaryRepresentation;
 - (id)groupIdentifier;
 - (unsigned int)groupSequenceNumber;
-- (BOOL)hasAppConfig;
-- (BOOL)hasAppState;
-- (BOOL)hasDebugLogMessage;
-- (BOOL)hasDeviceConfig;
-- (BOOL)hasDeviceState;
-- (BOOL)hasLogFacility;
-- (BOOL)hasLogMessageString;
 - (BOOL)hasLogMessageSubType;
 - (BOOL)hasLogMessageType;
-- (BOOL)hasPerfLogMessage;
-- (BOOL)hasUsageLogMessage;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (id)logFacility;
-- (id)logMessageString;
 - (int)logMessageSubType;
+- (id)logMessageSubTypeAsString:(int)arg1;
 - (int)logMessageType;
+- (id)logMessageTypeAsString:(int)arg1;
+- (id)logMsgEventAtIndex:(unsigned int)arg1;
+- (id)logMsgEvents;
+- (unsigned int)logMsgEventsCount;
 - (void)mergeFrom:(id)arg1;
-- (id)perfLogMessage;
 - (BOOL)readFrom:(id)arg1;
-- (void)setAppConfig:(id)arg1;
-- (void)setAppState:(id)arg1;
-- (void)setDebugLogMessage:(id)arg1;
-- (void)setDeviceConfig:(id)arg1;
-- (void)setDeviceState:(id)arg1;
 - (void)setHasLogMessageSubType:(BOOL)arg1;
 - (void)setHasLogMessageType:(BOOL)arg1;
-- (void)setLogFacility:(id)arg1;
-- (void)setLogMessageString:(id)arg1;
 - (void)setLogMessageSubType:(int)arg1;
 - (void)setLogMessageType:(int)arg1;
-- (void)setPerfLogMessage:(id)arg1;
-- (void)setUsageLogMessage:(id)arg1;
-- (id)usageLogMessage;
+- (void)setLogMsgEvents:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

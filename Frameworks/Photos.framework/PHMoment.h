@@ -3,19 +3,22 @@
  */
 
 @interface PHMoment : PHAssetCollection {
-    NSData *_approximateLocationData;
-    short _generationType;
-    NSDate *_representativeDate;
-    NSData *_reverseLocationData;
-    BOOL _reverseLocationDataIsValid;
+    NSData * _approximateLocationData;
+    short  _generationType;
+    NSDate * _modificationDate;
+    NSDate * _representativeDate;
+    NSData * _reverseLocationData;
+    BOOL  _reverseLocationDataIsValid;
 }
 
 @property (nonatomic, readonly) short generationType;
+@property (nonatomic, readonly) NSDate *modificationDate;
 @property (nonatomic, readonly) NSDate *representativeDate;
 
 + (id)_transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
 + (id)entityKeyForPropertyKey:(id)arg1;
 + (id)fetchPredicateFromComparisonPredicate:(id)arg1 options:(id)arg2;
++ (id)fetchType;
 + (id)identifierCode;
 + (id)managedEntityName;
 + (BOOL)managedObjectSupportsTrashedState;
@@ -34,6 +37,7 @@
 - (BOOL)isMeaningful;
 - (id)localizedLocationNames;
 - (id)localizedTitle;
+- (id)modificationDate;
 - (id)representativeDate;
 
 @end

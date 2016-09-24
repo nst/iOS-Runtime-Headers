@@ -3,13 +3,13 @@
  */
 
 @interface CKVoiceController : NSObject <AVVoiceControllerRecordDelegate> {
-    int __activationMode;
-    CKAudioAnalyzer *_audioAnalyzer;
-    <CKVoiceControllerDelegate> *_delegate;
-    NSObject<OS_dispatch_source> *_powerUpdateTimer;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSDictionary *_recordSettings;
-    AVVoiceController *_voiceController;
+    int  __activationMode;
+    CKAudioAnalyzer * _audioAnalyzer;
+    <CKVoiceControllerDelegate> * _delegate;
+    NSObject<OS_dispatch_source> * _powerUpdateTimer;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSDictionary * _recordSettings;
+    AVVoiceController * _voiceController;
 }
 
 @property (setter=_setActivationMode:, nonatomic) int _activationMode;
@@ -24,6 +24,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) AVVoiceController *voiceController;
 
+- (void).cxx_destruct;
 - (int)_activationMode;
 - (void)_setActivationMode:(int)arg1;
 - (id)audioAnalyzer;

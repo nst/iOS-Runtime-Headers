@@ -7,7 +7,7 @@
 @property (nonatomic, copy) id /* block */ connectedHandler;
 @property (nonatomic, copy) id /* block */ receiveDataHandler;
 @property (nonatomic, retain) id socketName;
-@property (nonatomic) NSObject<OS_dispatch_queue> *targetQueue;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *targetQueue;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 

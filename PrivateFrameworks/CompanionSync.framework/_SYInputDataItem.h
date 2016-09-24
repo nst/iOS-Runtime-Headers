@@ -3,9 +3,9 @@
  */
 
 @interface _SYInputDataItem : NSObject {
-    id /* block */ _callback;
-    NSMutableData *_data;
-    unsigned int _length;
+    id /* block */  _callback;
+    NSMutableData * _data;
+    unsigned int  _length;
 }
 
 @property (nonatomic, copy) id /* block */ callback;

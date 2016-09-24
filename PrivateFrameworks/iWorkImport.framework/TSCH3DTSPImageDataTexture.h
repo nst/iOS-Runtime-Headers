@@ -3,9 +3,9 @@
  */
 
 @interface TSCH3DTSPImageDataTexture : TSCH3DTexture {
-    NSNumber *mCachedHash;
-    TSCH3DTSPImageData *mData;
-    TSCH3DTSPMipmapData *mOptimizedMipmapData;
+    NSNumber * mCachedHash;
+    TSCH3DTSPImageData * mData;
+    TSCH3DTSPMipmapData * mOptimizedMipmapData;
 }
 
 @property (nonatomic, readonly) TSCH3DTSPImageData *data;

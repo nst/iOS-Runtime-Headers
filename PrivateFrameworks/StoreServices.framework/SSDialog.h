@@ -3,8 +3,8 @@
  */
 
 @interface SSDialog : NSObject {
-    NSArray *_buttons;
-    NSMutableDictionary *_dialogDictionary;
+    NSArray * _buttons;
+    NSMutableDictionary * _dialogDictionary;
 }
 
 @property (nonatomic, copy) NSArray *buttons;

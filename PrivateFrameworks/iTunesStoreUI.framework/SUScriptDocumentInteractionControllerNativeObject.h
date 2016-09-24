@@ -3,10 +3,10 @@
  */
 
 @interface SUScriptDocumentInteractionControllerNativeObject : SUScriptNativeObject <UIDocumentInteractionControllerDelegate> {
-    BOOL _didPickApplication;
-    BOOL _isVisible;
-    id /* block */ _presentationBlock;
-    BOOL _redisplayAfterRotation;
+    BOOL  _didPickApplication;
+    BOOL  _isVisible;
+    id /* block */  _presentationBlock;
+    BOOL  _redisplayAfterRotation;
 }
 
 @property (readonly, copy) NSString *debugDescription;

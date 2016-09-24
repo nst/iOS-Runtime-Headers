@@ -3,7 +3,7 @@
  */
 
 @interface IKDOMXPathExpression : IKJSObject <IKJSDOMXPathExpression> {
-    id /* block */ _evaluatingBlock;
+    id /* block */  _evaluatingBlock;
 }
 
 @property (nonatomic, copy) id /* block */ evaluatingBlock;

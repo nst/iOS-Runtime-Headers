@@ -3,41 +3,41 @@
  */
 
 @interface CLSensorRecorderAccelMeta : NSObject <NSSecureCoding> {
-    unsigned long long _dataIdentifier;
-    unsigned int _dataSize;
-    unsigned long long _identifier;
-    BOOL _movement;
-    unsigned int _offset;
-    double _startTime;
-    unsigned long long _timestamp;
+    unsigned int  _dataIdentifier;
+    unsigned int  _dataSize;
+    unsigned int  _identifier;
+    BOOL  _movement;
+    unsigned int  _offset;
+    double  _startTime;
+    unsigned int  _timestamp;
 }
 
-@property unsigned long long dataIdentifier;
+@property unsigned int dataIdentifier;
 @property unsigned int dataSize;
-@property unsigned long long identifier;
+@property unsigned int identifier;
 @property BOOL movement;
 @property unsigned int offset;
 @property double startTime;
-@property unsigned long long timestamp;
+@property unsigned int timestamp;
 
 + (BOOL)supportsSecureCoding;
 
-- (unsigned long long)dataIdentifier;
+- (unsigned int)dataIdentifier;
 - (unsigned int)dataSize;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)identifier;
+- (unsigned int)identifier;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)movement;
 - (unsigned int)offset;
-- (void)setDataIdentifier:(unsigned long long)arg1;
+- (void)setDataIdentifier:(unsigned int)arg1;
 - (void)setDataSize:(unsigned int)arg1;
-- (void)setIdentifier:(unsigned long long)arg1;
+- (void)setIdentifier:(unsigned int)arg1;
 - (void)setMovement:(BOOL)arg1;
 - (void)setOffset:(unsigned int)arg1;
 - (void)setStartTime:(double)arg1;
-- (void)setTimestamp:(unsigned long long)arg1;
+- (void)setTimestamp:(unsigned int)arg1;
 - (double)startTime;
-- (unsigned long long)timestamp;
+- (unsigned int)timestamp;
 
 @end

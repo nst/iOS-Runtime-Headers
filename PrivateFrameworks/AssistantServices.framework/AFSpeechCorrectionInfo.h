@@ -3,9 +3,9 @@
  */
 
 @interface AFSpeechCorrectionInfo : NSObject <NSSecureCoding> {
-    int _alternativeSelectionCount;
-    int _characterModificationCount;
-    NSString *_correctedText;
+    int  _alternativeSelectionCount;
+    int  _characterModificationCount;
+    NSString * _correctedText;
 }
 
 @property (nonatomic) int alternativeSelectionCount;

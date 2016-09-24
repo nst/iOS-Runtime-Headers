@@ -3,13 +3,13 @@
  */
 
 @interface MCSharedDeviceConfigurationPayload : MCPayload {
-    NSString *_assetTagInformation;
-    NSString *_ifLostReturnToMessage;
+    NSString * _assetTagInformation;
+    NSString * _lockScreenFootnote;
 }
 
-@property (nonatomic, retain) NSString *assetTagInformation;
+@property (nonatomic, readonly) NSString *assetTagInformation;
 @property (nonatomic, readonly) NSDictionary *configuration;
-@property (nonatomic, retain) NSString *ifLostReturnToMessage;
+@property (nonatomic, readonly) NSString *lockScreenFootnote;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
@@ -18,11 +18,9 @@
 - (void).cxx_destruct;
 - (id)assetTagInformation;
 - (id)configuration;
-- (id)ifLostReturnToMessage;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
+- (id)lockScreenFootnote;
 - (id)payloadDescriptionKeyValueSections;
-- (void)setAssetTagInformation:(id)arg1;
-- (void)setIfLostReturnToMessage:(id)arg1;
 - (id)stubDictionary;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface OADTablePartStyle : NSObject {
-    OADTableCellStyle *mCellStyle;
-    OADTableTextStyle *mTextStyle;
+    OADTableCellStyle * mCellStyle;
+    OADTableTextStyle * mTextStyle;
 }
 
 + (id)defaultStyle;

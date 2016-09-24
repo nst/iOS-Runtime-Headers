@@ -3,7 +3,7 @@
  */
 
 @interface GQDWPBlockList : NSObject {
-    struct __CFArray { } *mChildren;
+    struct __CFArray { } * mChildren;
 }
 
 - (struct __CFArray { }*)children;

@@ -3,16 +3,16 @@
  */
 
 @interface ODIHNodeInfo : NSObject {
-    BOOL mConnectToVerticalSide;
-    int mExtraRowsBetweenParentAndSelf;
-    int mRow;
-    int mTreeDepth;
-    float mXOffsetRelativeToParent;
+    BOOL  mConnectToVerticalSide;
+    int  mExtraRowsBetweenParentAndSelf;
+    int  mRow;
+    int  mTreeDepth;
+    double  mXOffsetRelativeToParent;
     struct ODIHRange { 
-        float mMid; 
-        float mLength; 
-    } mXRange;
-    struct ODIHRangeVector { struct ODIHRange {} *x1; struct ODIHRange {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; } *mXRanges;
+        double mMid; 
+        double mLength; 
+    }  mXRange;
+    struct ODIHRangeVector { struct ODIHRange {} *x1; struct ODIHRange {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; } * mXRanges;
 }
 
 - (void)addToXOffsetRelativeToParent:(float)arg1;
@@ -26,10 +26,10 @@
 - (void)setRow:(int)arg1;
 - (void)setTreeDepth:(int)arg1;
 - (void)setXOffsetRelativeToParent:(float)arg1;
-- (void)setXRange:(struct ODIHRange { float x1; float x2; })arg1;
+- (void)setXRange:(struct ODIHRange { double x1; double x2; })arg1;
 - (int)treeDepth;
 - (float)xOffsetRelativeToParent;
-- (struct ODIHRange { float x1; float x2; })xRange;
+- (struct ODIHRange { double x1; double x2; })xRange;
 - (struct ODIHRangeVector { struct ODIHRange {} *x1; struct ODIHRange {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)xRanges;
 
 @end

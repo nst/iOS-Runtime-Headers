@@ -3,8 +3,8 @@
  */
 
 @interface SBFCancelationToken : NSObject <SBFCancelable> {
-    NSMutableArray *_cancelationBlocks;
-    BOOL _isCanceled;
+    NSMutableArray * _cancelationBlocks;
+    BOOL  _isCanceled;
 }
 
 @property (readonly, copy) NSString *debugDescription;

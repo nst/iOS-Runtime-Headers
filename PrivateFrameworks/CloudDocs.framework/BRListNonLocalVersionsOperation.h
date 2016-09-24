@@ -3,16 +3,16 @@
  */
 
 @interface BRListNonLocalVersionsOperation : NSOperation <BRNonLocalVersionReceiving> {
-    NSURL *_documentURL;
-    BOOL _executing;
-    id /* block */ _fetchingVersionsDoneBlock;
-    BOOL _finished;
-    BOOL _includeCachedVersions;
-    <BRNonLocalVersionSending> *_sender;
-    BOOL _state;
-    NSMutableArray *_versions;
-    NSMutableDictionary *_versionsByEtag;
-    GSPermanentStorage *_versionsStore;
+    NSURL * _documentURL;
+    BOOL  _executing;
+    id /* block */  _fetchingVersionsDoneBlock;
+    BOOL  _finished;
+    BOOL  _includeCachedVersions;
+    <BRNonLocalVersionSending> * _sender;
+    BOOL  _state;
+    NSMutableArray * _versions;
+    NSMutableDictionary * _versionsByEtag;
+    GSPermanentStorage * _versionsStore;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -26,9 +26,10 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSMutableArray *versions;
 
+- (void).cxx_destruct;
 - (BOOL)__advanceToState:(BOOL)arg1 result:(id)arg2 error:(id)arg3;
 - (BOOL)__finishIfCancelled;
-- (void)_addVersion:(id)arg1 forEtag:(id)arg2;
+- (void)_addVersion:(id)arg1;
 - (BOOL)_advanceToState:(BOOL)arg1 result:(id)arg2 error:(id)arg3;
 - (void)_senderInvalidate;
 - (BOOL)_setVersionStoreForDocumentAtURL:(id)arg1 error:(id*)arg2;
@@ -42,8 +43,8 @@
 - (BOOL)isConcurrent;
 - (BOOL)isExecuting;
 - (BOOL)isFinished;
-- (oneway void)newCachedVersionAtURL:(id)arg1 size:(id)arg2 etag:(id)arg3 hasThumbnail:(BOOL)arg4 displayName:(id)arg5 lastEditorDeviceName:(id)arg6 lastEditorFormattedName:(id)arg7 modificationDate:(id)arg8;
-- (oneway void)newFaultVersionAtURL:(id)arg1 faultURL:(id)arg2 faultExtension:(id)arg3 etag:(id)arg4 hasThumbnail:(BOOL)arg5 displayName:(id)arg6 lastEditorDeviceName:(id)arg7 lastEditorFormattedName:(id)arg8 modificationDate:(id)arg9;
+- (oneway void)newCachedVersionAtURL:(id)arg1 size:(id)arg2 etag:(id)arg3 hasThumbnail:(BOOL)arg4 displayName:(id)arg5 lastEditorDeviceName:(id)arg6 lastEditorNameComponents:(id)arg7 modificationDate:(id)arg8;
+- (oneway void)newFaultVersionAtURL:(id)arg1 faultURL:(id)arg2 faultExtension:(id)arg3 etag:(id)arg4 hasThumbnail:(BOOL)arg5 displayName:(id)arg6 lastEditorDeviceName:(id)arg7 lastEditorNameComponents:(id)arg8 modificationDate:(id)arg9;
 - (oneway void)newThumbnailForVersionWithEtag:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setExecuting:(BOOL)arg1;

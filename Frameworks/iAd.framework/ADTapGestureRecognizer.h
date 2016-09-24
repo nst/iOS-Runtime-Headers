@@ -3,10 +3,10 @@
  */
 
 @interface ADTapGestureRecognizer : UIGestureRecognizer {
-    int _finalTrackingID;
-    id /* block */ _touchDownHandler;
-    id /* block */ _touchMovedHandler;
-    id /* block */ _touchUpHandler;
+    int  _finalTrackingID;
+    id /* block */  _touchDownHandler;
+    id /* block */  _touchMovedHandler;
+    id /* block */  _touchUpHandler;
 }
 
 @property (nonatomic) int finalTrackingID;

@@ -3,8 +3,8 @@
  */
 
 @interface CBUUID : NSObject <NSCopying> {
-    unsigned char _bytes;
-    BOOL _type;
+    unsigned char  _bytes;
+    BOOL  _type;
 }
 
 @property (nonatomic, readonly) NSString *UUIDString;

@@ -3,12 +3,12 @@
  */
 
 @interface SKUIGiftAmountControl : UIControl <UITextFieldDelegate> {
-    NSMutableArray *_amountButtons;
-    UIView *_customAmountBackgroundView;
-    UITextField *_customAmountField;
-    SKUIGiftConfiguration *_giftConfiguration;
-    int _selectedAmount;
-    int _trackingAmount;
+    NSMutableArray * _amountButtons;
+    UIView * _customAmountBackgroundView;
+    UITextField * _customAmountField;
+    SKUIGiftConfiguration * _giftConfiguration;
+    int  _selectedAmount;
+    int  _trackingAmount;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -29,7 +29,7 @@
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)dealloc;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)initWithGiftConfiguration:(id)arg1;
 - (void)layoutSubviews;
 - (int)selectedAmount;

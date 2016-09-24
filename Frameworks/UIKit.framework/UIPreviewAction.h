@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIPreviewAction : NSObject <NSCopying, UIPreviewActionItem> {
-    UIColor *_color;
-    id /* block */ _handler;
-    NSString *_identifier;
-    UIImage *_image;
-    int _style;
-    NSString *_title;
+@interface UIPreviewAction : NSObject <NSCopying, UIPreviewActionItem, UIPreviewActionItem_Internal> {
+    UIColor * _color;
+    id /* block */  _handler;
+    NSString * _identifier;
+    UIImage * _image;
+    int  _style;
+    NSString * _title;
 }
 
 @property (getter=_color, setter=_setColor:, nonatomic, retain) UIColor *color;
@@ -26,10 +26,13 @@
 + (id)_actionWithTitle:(id)arg1 color:(id)arg2 image:(id)arg3 handler:(id /* block */)arg4;
 + (id)_actionWithTitle:(id)arg1 style:(int)arg2 color:(id)arg3 image:(id)arg4 handler:(id /* block */)arg5;
 + (id)_actionWithTitle:(id)arg1 style:(int)arg2 image:(id)arg3 handler:(id /* block */)arg4;
++ (id)_checkmarkImage;
 + (id)actionWithTitle:(id)arg1 style:(int)arg2 handler:(id /* block */)arg3;
 
 - (void).cxx_destruct;
 - (id)_color;
+- (id)_effectiveColor;
+- (id)_effectiveImage;
 - (void)_setColor:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id /* block */)handler;

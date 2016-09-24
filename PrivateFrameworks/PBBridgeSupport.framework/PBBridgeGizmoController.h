@@ -3,20 +3,20 @@
  */
 
 @interface PBBridgeGizmoController : PBBridgeIDSServiceDelegate <IDSServiceDelegate, PBBridgeGizmoProtocol> {
-    id /* block */ _activationCompletion;
-    unsigned short _activationState;
-    NSTimer *_activationTimeout;
-    BOOL _canBeginActivation;
-    <PBBridgeConnectionDelegate> *_delegate;
-    id /* block */ _enableSiriCompletion;
-    NSString *_internalLastSendMessageID;
-    NSString *_languageIdentifer;
-    BOOL _readyToCreatePasscode;
-    NSString *_regionIdentifer;
-    id /* block */ _sessionCompletion;
-    id /* block */ _siriStateCompletion;
-    id /* block */ _updateLanguageCompletion;
-    id /* block */ _updateRegionCompletion;
+    id /* block */  _activationCompletion;
+    unsigned short  _activationState;
+    NSTimer * _activationTimeout;
+    BOOL  _canBeginActivation;
+    <PBBridgeConnectionDelegate> * _delegate;
+    id /* block */  _enableSiriCompletion;
+    NSString * _internalLastSendMessageID;
+    NSString * _languageIdentifer;
+    BOOL  _readyToCreatePasscode;
+    NSString * _regionIdentifer;
+    id /* block */  _sessionCompletion;
+    id /* block */  _siriStateCompletion;
+    id /* block */  _updateLanguageCompletion;
+    id /* block */  _updateRegionCompletion;
 }
 
 @property (nonatomic, copy) id /* block */ activationCompletion;
@@ -60,6 +60,7 @@
 - (void)enableSiriForGizmoWithCompletion:(id /* block */)arg1;
 - (void)enabledSiri:(id)arg1;
 - (void)endSetupTransaction;
+- (BOOL)getActivationDataAndHeadersForRequest:(id)arg1 withCompletion:(id /* block */)arg2;
 - (BOOL)getActivationDataForRequest:(id)arg1 withCompletion:(id /* block */)arg2;
 - (BOOL)getSessionDataForRequest:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)getSiriStateWithCompletion:(id /* block */)arg1;
@@ -76,6 +77,7 @@
 - (BOOL)readyToCreatePasscode;
 - (void)refreshTimeoutTimer;
 - (id)regionIdentifer;
+- (void)remoteRequestToKeepAlive:(id)arg1;
 - (void)retryActivation:(id)arg1;
 - (BOOL)sendCompanionPerformanceResults;
 - (id)serviceIdentifier;

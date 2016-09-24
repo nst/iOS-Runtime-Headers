@@ -3,10 +3,10 @@
  */
 
 @interface StepByStepUIViewController_Join_Config : StepByStepUIViewController_DevicePicker <StepByStepUIDevicePicker> {
-    int deviceKind;
-    NSString *personalizedBaseName;
-    unsigned int productID;
-    BOOL supportsSpruce;
+    int  deviceKind;
+    NSString * personalizedBaseName;
+    unsigned int  productID;
+    BOOL  supportsSpruce;
 }
 
 @property (nonatomic, retain) NSString *personalizedBaseName;

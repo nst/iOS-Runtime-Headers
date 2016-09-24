@@ -3,9 +3,9 @@
  */
 
 @interface HKMedicalIDEditorPickerCell : HKMedicalIDEditorCell <UIPickerViewDataSource, UIPickerViewDelegate> {
-    int _chosenValueIndex;
-    UIPickerView *_picker;
-    NSArray *_possibleValues;
+    int  _chosenValueIndex;
+    UIPickerView * _picker;
+    NSArray * _possibleValues;
 }
 
 @property (nonatomic) int chosenValueIndex;

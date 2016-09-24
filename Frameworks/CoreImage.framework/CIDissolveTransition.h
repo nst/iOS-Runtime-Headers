@@ -3,9 +3,9 @@
  */
 
 @interface CIDissolveTransition : CIFilter {
-    CIImage *inputImage;
-    CIImage *inputTargetImage;
-    NSNumber *inputTime;
+    CIImage * inputImage;
+    CIImage * inputTargetImage;
+    NSNumber * inputTime;
 }
 
 @property (nonatomic, retain) CIImage *inputImage;

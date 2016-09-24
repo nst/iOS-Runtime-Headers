@@ -3,8 +3,8 @@
  */
 
 @interface HLPHelpSearchResultTableViewController : UITableViewController {
-    UIView *_footerView;
-    NSArray *_searchResults;
+    UIView * _footerView;
+    NSArray * _searchResults;
 }
 
 @property (nonatomic, retain) UIView *footerView;

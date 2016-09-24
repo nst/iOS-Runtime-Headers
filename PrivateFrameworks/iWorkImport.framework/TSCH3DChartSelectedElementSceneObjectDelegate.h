@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DChartSelectedElementSceneObjectDelegate : NSObject <TSCH3DChartAllElementSceneObjectDelegate> {
-    unsigned int mSelectedSeriesIndex;
+    unsigned int  mSelectedSeriesIndex;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,8 +3,8 @@
  */
 
 @interface PUPhotoKitDuplicateActionPerformer : PUPhotoKitActionPerformer {
-    int _action;
-    PUDuplicateActionController *_duplicateActionController;
+    int  _action;
+    PUDuplicateActionController * _duplicateActionController;
 }
 
 @property (nonatomic) int action;

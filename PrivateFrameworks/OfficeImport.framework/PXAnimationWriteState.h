@@ -3,13 +3,11 @@
  */
 
 @interface PXAnimationWriteState : NSObject {
-    TCXmlPrefixStreamWriter *_file;
-    OCXWriteState *_writeState;
-    unsigned int mCommonTimeNodeDataId;
-    TCXmlPrefixStreamWriter *mFile;
-    BOOL mHasMainSeqTimeNodeId;
-    unsigned int mMainSeqTimeNodeId;
-    OCXWriteState *mWriteState;
+    unsigned int  mCommonTimeNodeDataId;
+    TCXmlPrefixStreamWriter * mFile;
+    BOOL  mHasMainSeqTimeNodeId;
+    unsigned int  mMainSeqTimeNodeId;
+    OCXWriteState * mWriteState;
 }
 
 @property (nonatomic, retain) TCXmlPrefixStreamWriter *file;

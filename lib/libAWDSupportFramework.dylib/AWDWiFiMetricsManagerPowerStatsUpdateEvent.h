@@ -3,7 +3,7 @@
  */
 
 @interface AWDWiFiMetricsManagerPowerStatsUpdateEvent : PBCodable <NSCopying> {
-    unsigned int _associatedSleepDur;
+    unsigned int  _associatedSleepDur;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int associatedSleepDur : 1; 
@@ -11,12 +11,12 @@
         unsigned int totalDur : 1; 
         unsigned int type : 1; 
         unsigned int unassociatedSleepDur : 1; 
-    } _has;
-    unsigned int _roamDur;
-    unsigned long long _timestamp;
-    unsigned int _totalDur;
-    unsigned int _type;
-    unsigned int _unassociatedSleepDur;
+    }  _has;
+    unsigned int  _roamDur;
+    unsigned long long  _timestamp;
+    unsigned int  _totalDur;
+    unsigned int  _type;
+    unsigned int  _unassociatedSleepDur;
 }
 
 @property (nonatomic) unsigned int associatedSleepDur;

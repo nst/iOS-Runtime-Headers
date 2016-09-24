@@ -3,8 +3,8 @@
  */
 
 @interface SKPositionConstraint : SKConstraint {
-    SKRange *_xRange;
-    SKRange *_yRange;
+    SKRange * _xRange;
+    SKRange * _yRange;
 }
 
 @property (copy) SKRange *xRange;

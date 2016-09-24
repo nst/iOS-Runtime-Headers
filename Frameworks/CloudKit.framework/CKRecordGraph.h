@@ -3,8 +3,8 @@
  */
 
 @interface CKRecordGraph : NSObject {
-    NSMutableSet *_nodes;
-    NSArray *_sortedRecords;
+    NSMutableSet * _nodes;
+    NSArray * _sortedRecords;
 }
 
 @property (nonatomic, copy) NSMutableSet *nodes;

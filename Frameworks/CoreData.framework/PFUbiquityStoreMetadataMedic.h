@@ -3,11 +3,11 @@
  */
 
 @interface PFUbiquityStoreMetadataMedic : NSObject {
-    NSSQLiteConnection *_connection;
-    NSString *_localPeerID;
-    NSPersistentStore *_store;
-    NSString *_storeName;
-    PFUbiquityLocation *_ubiquityRootLocation;
+    NSSQLiteConnection * _connection;
+    NSString * _localPeerID;
+    NSPersistentStore * _store;
+    NSString * _storeName;
+    PFUbiquityLocation * _ubiquityRootLocation;
 }
 
 @property (nonatomic, readonly) NSSQLiteConnection *connection;

@@ -3,7 +3,7 @@
  */
 
 @interface ACDQueueDictionary : NSObject {
-    NSMutableDictionary *_allQueuesByID;
+    NSMutableDictionary * _allQueuesByID;
 }
 
 - (void).cxx_destruct;

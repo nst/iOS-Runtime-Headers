@@ -3,16 +3,16 @@
  */
 
 @interface VimeoComposeViewController : SLComposeServiceViewController <VimeoComposeOptionViewDelegate> {
-    ACAccountStore *_accountStore;
-    SLComposeSheetConfigurationItem *_detailsConfigurationItem;
-    VimeoDetailsController *_detailsController;
-    UIImageView *_logoView;
-    NSString *_postDescription;
-    int _privacySettings;
-    VimeoUploadSession *_session;
-    NSArray *_tags;
-    int _videoSize;
-    ACAccount *_vimeoAccount;
+    ACAccountStore * _accountStore;
+    SLComposeSheetConfigurationItem * _detailsConfigurationItem;
+    VimeoDetailsController * _detailsController;
+    UIImageView * _logoView;
+    NSString * _postDescription;
+    int  _privacySettings;
+    VimeoUploadSession * _session;
+    NSArray * _tags;
+    int  _videoSize;
+    ACAccount * _vimeoAccount;
 }
 
 @property (nonatomic, retain) ACAccountStore *accountStore;

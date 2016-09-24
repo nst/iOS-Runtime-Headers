@@ -3,10 +3,10 @@
  */
 
 @interface WDTableRow : NSObject {
-    NSMutableArray *mCells;
-    unsigned int mIndex;
-    WDTableRowProperties *mProperties;
-    WDTable *mTable;
+    NSMutableArray * mCells;
+    unsigned int  mIndex;
+    WDTableRowProperties * mProperties;
+    WDTable * mTable;
 }
 
 - (id)addCell;

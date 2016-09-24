@@ -3,14 +3,14 @@
  */
 
 @interface BFFLocationController : NSObject {
-    NSDictionary *_aliasDict;
-    BOOL _fakeMode;
-    NSArray *_firstGuessedLanguages;
-    NSArray *_guessedCountries;
-    NSString *_guessedCountryFromTelephony;
-    NSSet *_validCountries;
-    struct __WiFiDeviceClient { } *fWifiDevice;
-    struct __WiFiManagerClient { } *fWifiManager;
+    NSDictionary * _aliasDict;
+    BOOL  _fakeMode;
+    NSArray * _firstGuessedLanguages;
+    NSArray * _guessedCountries;
+    NSString * _guessedCountryFromTelephony;
+    NSSet * _validCountries;
+    struct __WiFiDeviceClient { } * fWifiDevice;
+    struct __WiFiManagerClient { } * fWifiManager;
 }
 
 @property (nonatomic) BOOL fakeMode;

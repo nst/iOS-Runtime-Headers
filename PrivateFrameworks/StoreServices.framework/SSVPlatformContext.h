@@ -3,11 +3,11 @@
  */
 
 @interface SSVPlatformContext : NSObject <NSCopying> {
-    NSString *_lookupURLString;
-    <SSVSAPContext> *_sapContext;
-    NSArray *_signedHeaders;
-    NSArray *_signedQueryParameters;
-    NSString *_unpersonalizedLookupURLString;
+    NSString * _lookupURLString;
+    <SSVSAPContext> * _sapContext;
+    NSArray * _signedHeaders;
+    NSArray * _signedQueryParameters;
+    NSString * _unpersonalizedLookupURLString;
 }
 
 @property (nonatomic, retain) <SSVSAPContext> *SAPContext;

@@ -3,27 +3,28 @@
  */
 
 @interface RUITableViewRow : RUIElement <RUIWebContainerViewDelegate, UIPickerViewDelegate, UITextFieldDelegate> {
-    int _alignment;
-    float _cachedHeight;
-    BOOL _configured;
-    NSData *_data;
-    NSDate *_date;
-    NSDate *_dateMax;
-    NSDate *_dateMin;
-    int _datePickerMode;
-    <RUITableViewRowDelegate> *_delegate;
-    NSDictionary *_deleteAction;
-    float _height;
-    UIView *_pickerView;
-    BOOL _rowInvalid;
-    NSMutableArray *_selectOptions;
-    BOOL _selected;
-    int _selectedRow;
-    UISwitch *_switchControl;
-    BOOL _switchValue;
-    RemoteUITableViewCell *_tableCell;
-    <RUITextFieldChangeObserver> *_textFieldChangeObserver;
-    RUIWebContainerView *_webContainerView;
+    int  _alignment;
+    double  _cachedHeight;
+    BOOL  _configured;
+    NSData * _data;
+    NSDate * _date;
+    NSDate * _dateMax;
+    NSDate * _dateMin;
+    int  _datePickerMode;
+    <RUITableViewRowDelegate> * _delegate;
+    NSDictionary * _deleteAction;
+    double  _height;
+    RUIPage * _linkedPage;
+    UIView * _pickerView;
+    BOOL  _rowInvalid;
+    NSMutableArray * _selectOptions;
+    BOOL  _selected;
+    int  _selectedRow;
+    BOOL  _showingProgressIndicator;
+    UISwitch * _switchControl;
+    BOOL  _switchValue;
+    RemoteUITableViewCell * _tableCell;
+    <RUITextFieldChangeObserver> * _textFieldChangeObserver;
 }
 
 @property (nonatomic) int alignment;
@@ -39,11 +40,13 @@
 @property (nonatomic, retain) NSDictionary *deleteAction;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) float height;
+@property (nonatomic) double height;
+@property (nonatomic) RUIPage *linkedPage;
 @property (nonatomic, retain) UIView *pickerView;
 @property (nonatomic) BOOL rowInvalid;
 @property (getter=isSelected, nonatomic) BOOL selected;
 @property (nonatomic, readonly) int selectedRow;
+@property (getter=isShowingProgressIndicator, nonatomic) BOOL showingProgressIndicator;
 @property (readonly) Class superclass;
 @property (nonatomic) <RUITextFieldChangeObserver> *textFieldChangeObserver;
 
@@ -73,9 +76,12 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)deleteAction;
+- (id)description;
 - (void)detailLabelActivatedLinkFromCell:(id)arg1 completion:(id /* block */)arg2;
 - (float)height;
 - (BOOL)isSelected;
+- (BOOL)isShowingProgressIndicator;
+- (id)linkedPage;
 - (BOOL)loadAccessoryImage;
 - (int)numberOfComponentsInPickerView:(id)arg1;
 - (id)pickerView;
@@ -86,6 +92,7 @@
 - (id)radioGroupSelectedColor;
 - (float)rowHeightWithMax:(float)arg1 peggedHeight:(float)arg2 tableView:(id)arg3 indexPath:(id)arg4;
 - (BOOL)rowInvalid;
+- (BOOL)rowSupportsLoadingIndicator;
 - (id)selectOptions;
 - (int)selectedRow;
 - (void)setAlignment:(int)arg1;
@@ -97,13 +104,19 @@
 - (void)setDateMin:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDeleteAction:(id)arg1;
+- (void)setEditableTextFieldValue:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setHeight:(float)arg1;
 - (void)setImage:(id)arg1;
+- (void)setLinkedPage:(id)arg1;
 - (void)setPickerView:(id)arg1;
 - (void)setRowInvalid:(BOOL)arg1;
+- (BOOL)setSelectPageRowValue:(id)arg1;
+- (void)setSelectRowValue:(id)arg1;
 - (void)setSelected:(BOOL)arg1;
+- (void)setShowingProgressIndicator:(BOOL)arg1;
 - (void)setTextFieldChangeObserver:(id)arg1;
+- (void)setValueFromString:(id)arg1;
 - (id)sourceURL;
 - (BOOL)supportsAutomaticSelection;
 - (void)switchCanceled;

@@ -3,15 +3,15 @@
  */
 
 @interface CKDGlobalConfigurationOperation : CKDOperation {
-    CKDServerConfiguration *_configuration;
-    NSObject<OS_dispatch_group> *_configurationFetchedGroup;
+    CKDServerConfiguration * _configuration;
+    NSObject<OS_dispatch_group> * _configurationFetchedGroup;
 }
 
 @property (nonatomic, retain) CKDServerConfiguration *configuration;
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *configurationFetchedGroup;
 
 - (void).cxx_destruct;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (id)configuration;
 - (id)configurationFetchedGroup;
 - (void)main;

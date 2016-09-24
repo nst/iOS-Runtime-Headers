@@ -3,24 +3,24 @@
  */
 
 @interface UIMovieScrubberTrackView : UIView {
-    NSDictionary *_childThumbnailViews;
-    <UIMovieScrubberTrackViewDataSource> *_dataSource;
-    <UIMovieScrubberTrackViewDelegate> *_delegate;
-    double _duration;
-    double _endValue;
-    UIView *_maskContainerView;
-    UIMovieScrubberTrackOverlayView *_overlayView;
-    double _startValue;
-    NSArray *_summaryThumbnailChildTimestamps;
-    NSArray *_summaryThumbnailTimestamps;
-    NSArray *_summaryThumbnailViews;
+    NSDictionary * _childThumbnailViews;
+    <UIMovieScrubberTrackViewDataSource> * _dataSource;
+    <UIMovieScrubberTrackViewDelegate> * _delegate;
+    double  _duration;
+    double  _endValue;
+    UIView * _maskContainerView;
+    UIMovieScrubberTrackOverlayView * _overlayView;
+    double  _startValue;
+    NSArray * _summaryThumbnailChildTimestamps;
+    NSArray * _summaryThumbnailTimestamps;
+    NSArray * _summaryThumbnailViews;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _thumbnailSize;
-    NSDictionary *_thumbnailStartXValues;
-    NSMutableDictionary *_thumbnailViews;
-    NSArray *_timestamps;
+        double width; 
+        double height; 
+    }  _thumbnailSize;
+    NSDictionary * _thumbnailStartXValues;
+    NSMutableDictionary * _thumbnailViews;
+    NSArray * _timestamps;
     struct { 
         unsigned int delegateSizeOriginDelta : 1; 
         unsigned int delegateDidExpand : 1; 
@@ -33,12 +33,12 @@
         unsigned int editing : 1; 
         unsigned int editingHandle; 
         unsigned int zoomIsDisabled : 1; 
-    } _trackFlags;
-    float _unclampedZoomWidthDelta;
-    double _value;
-    float _zoomAnimationDuration;
-    float _zoomOriginXDelta;
-    float _zoomWidthDelta;
+    }  _trackFlags;
+    double  _unclampedZoomWidthDelta;
+    double  _value;
+    double  _zoomAnimationDuration;
+    double  _zoomOriginXDelta;
+    double  _zoomWidthDelta;
 }
 
 @property (nonatomic) <UIMovieScrubberTrackViewDataSource> *dataSource;
@@ -54,7 +54,7 @@
 - (void)clear;
 - (id)dataSource;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)reloadData;
 - (void)setDataSource:(id)arg1;
@@ -67,6 +67,6 @@
 - (void)setZoomAnimationDuration:(double)arg1;
 - (void)unzoom;
 - (double)zoomAnimationDuration;
-- (BOOL)zoomAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)zoomAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

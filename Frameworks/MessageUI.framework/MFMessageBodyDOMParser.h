@@ -3,7 +3,7 @@
  */
 
 @interface MFMessageBodyDOMParser : MFMessageBodyParser {
-    DOMDocument *_document;
+    DOMDocument * _document;
 }
 
 + (BOOL)documentContainsAnyQuotation:(id)arg1;

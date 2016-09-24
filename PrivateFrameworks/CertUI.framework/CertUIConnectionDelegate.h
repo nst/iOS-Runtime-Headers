@@ -3,13 +3,13 @@
  */
 
 @interface CertUIConnectionDelegate : NSObject {
-    NSString *_connectionDisplayName;
+    NSString * _connectionDisplayName;
     struct { 
         unsigned int canAuthenticateAgainstProtectionSpace : 1; 
         unsigned int didReceiveAuthenticationChallenge : 1; 
-    } _delegateRespondsTo;
-    id _forwardingDelegate;
-    CertUITrustManager *_trustManager;
+    }  _delegateRespondsTo;
+    id  _forwardingDelegate;
+    CertUITrustManager * _trustManager;
 }
 
 @property (nonatomic, copy) NSString *connectionDisplayName;

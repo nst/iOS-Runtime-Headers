@@ -3,23 +3,27 @@
  */
 
 @interface ML3ArtworkConfiguration : NSObject {
-    NSMutableDictionary *_artworkConfigurationDictionary;
-    float _mainScreenScale;
-    NSMutableDictionary *_supportedSizesCache;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSDictionary * _artworkConfigurationDictionary;
+    double  _mainScreenScale;
+    NSMutableDictionary * _supportedSizesCache;
 }
 
-@property (nonatomic, retain) NSMutableDictionary *artworkConfigurationDictionary;
-@property (nonatomic) float mainScreenScale;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *accessQueue;
+@property (nonatomic, retain) NSDictionary *artworkConfigurationDictionary;
+@property (nonatomic) double mainScreenScale;
 @property (nonatomic, retain) NSMutableDictionary *supportedSizesCache;
 
 + (id)systemConfiguration;
 
 - (void).cxx_destruct;
 - (id)_supportedSizeKeysForMediaType:(unsigned long)arg1 artworkType:(int)arg2;
+- (id)accessQueue;
 - (id)artworkConfigurationDictionary;
 - (id)description;
 - (id)initWithConfigurationDictionaries:(id)arg1;
 - (float)mainScreenScale;
+- (void)setAccessQueue:(id)arg1;
 - (void)setArtworkConfigurationDictionary:(id)arg1;
 - (void)setMainScreenScale:(float)arg1;
 - (void)setSupportedSizesCache:(id)arg1;

@@ -11,8 +11,8 @@
         } elements; 
         void *singleChildKey; 
         struct { /* ? */ } *callbacks; 
-    } _doubleWildcards;
-    unsigned long _options;
+    }  _doubleWildcards;
+    unsigned long  _options;
     struct { 
         union { 
             struct __CFNull {} *empty; 
@@ -21,7 +21,7 @@
         } elements; 
         void *singleChildKey; 
         struct { /* ? */ } *callbacks; 
-    } _wildcardNames;
+    }  _wildcardNames;
     struct { 
         union { 
             struct __CFNull {} *empty; 
@@ -30,7 +30,7 @@
         } elements; 
         void *singleChildKey; 
         struct { /* ? */ } *callbacks; 
-    } _wildcardObjects;
+    }  _wildcardObjects;
 }
 
 @property (readonly) BOOL isEmpty;
@@ -45,7 +45,7 @@
 - (void)add:(struct __CFString { }*)arg1 object:(void*)arg2 observer:(void*)arg3 tokenRegistration:(id)arg4;
 - (void)addChild:(id)arg1;
 - (void)enumerateRegistrations:(id /* block */)arg1;
-- (id)find:(unsigned long long)arg1;
+- (id)find:(unsigned int)arg1;
 - (void)find:(struct __CFString { }*)arg1 object:(void*)arg2 observer:(void*)arg3 enumerator:(id /* block */)arg4;
 - (id)init;
 - (id)initWithOptions:(unsigned long)arg1;
@@ -53,7 +53,7 @@
 - (BOOL)isEmpty;
 - (void)match:(struct __CFString { }*)arg1 object:(void*)arg2 observer:(void*)arg3 enumerator:(id /* block */)arg4;
 - (id)registrar;
-- (void)remove:(unsigned long long)arg1;
+- (void)remove:(unsigned int)arg1;
 - (void)removeChild:(id)arg1;
 
 @end

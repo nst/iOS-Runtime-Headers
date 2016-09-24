@@ -3,14 +3,14 @@
  */
 
 @interface DEAttachmentItem : NSObject <NSSecureCoding> {
-    NSURL *_attachedPath;
-    NSString *_attachmentType;
-    NSNumber *_deleteOnAttach;
-    NSString *_displayName;
-    NSNumber *_filesize;
-    NSDate *_modificationDate;
-    NSURL *_path;
-    NSNumber *_shouldCompress;
+    NSURL * _attachedPath;
+    NSString * _attachmentType;
+    NSNumber * _deleteOnAttach;
+    NSString * _displayName;
+    NSNumber * _filesize;
+    NSDate * _modificationDate;
+    NSURL * _path;
+    NSNumber * _shouldCompress;
 }
 
 @property (nonatomic, retain) NSURL *attachedPath;
@@ -54,6 +54,5 @@
 - (void)setPath:(id)arg1;
 - (void)setShouldCompress:(id)arg1;
 - (id)shouldCompress;
-- (id)writeAssetToDiskWithURL:(id)arg1 toDirectory:(id)arg2;
 
 @end

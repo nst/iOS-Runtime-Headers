@@ -2,12 +2,18 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSSQLKeypathExpressionIntermediate : NSSQLExpressionIntermediate
+@interface NSSQLKeypathExpressionIntermediate : NSSQLExpressionIntermediate {
+    BOOL  _substitutePK;
+}
+
+@property (nonatomic) BOOL substitutePK;
 
 - (id)_generateSQLForKeyPathExpression:(id)arg1 allowToMany:(BOOL)arg2 inContext:(id)arg3;
 - (id)_generateSQLForProperty:(id)arg1 startEntity:(id)arg2 startAlias:(id)arg3 keypath:(id)arg4 inContext:(id)arg5;
 - (id)_propertyDescriptionForKeypath:(id)arg1 startingAtEntity:(id)arg2 allowToMany:(BOOL)arg3 lastKeyVisited:(id*)arg4 inContext:(id)arg5;
 - (id)_propertyDescriptionsForKeypath:(id)arg1 rootedAtEntity:(id)arg2 allowToMany:(BOOL)arg3 lastKeyVisited:(id*)arg4 inContext:(id)arg5;
 - (id)generateSQLStringInContext:(id)arg1;
+- (void)setSubstitutePK:(BOOL)arg1;
+- (BOOL)substitutePK;
 
 @end

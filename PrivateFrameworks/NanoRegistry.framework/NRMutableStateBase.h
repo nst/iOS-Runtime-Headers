@@ -3,8 +3,8 @@
  */
 
 @interface NRMutableStateBase : NSObject <NRMutableStateProtocol> {
-    NSMutableSet *_observers;
-    <NRMutableStateParentDelegate> *_parentDelegate;
+    NSMutableSet * _observers;
+    <NRMutableStateParentDelegate> * _parentDelegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

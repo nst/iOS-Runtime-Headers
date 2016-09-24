@@ -3,9 +3,9 @@
  */
 
 @interface TSCH3DLightingModel : NSObject <NSCopying> {
-    TSCH3DEnvironmentPackage *_environment;
-    TSCH3DLightingPackage *_lightings;
-    TSCH3DMaterialPackage *_materials;
+    TSCH3DEnvironmentPackage * _environment;
+    TSCH3DLightingPackage * _lightings;
+    TSCH3DMaterialPackage * _materials;
 }
 
 @property (nonatomic, retain) TSCH3DEnvironmentPackage *environment;

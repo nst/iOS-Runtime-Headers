@@ -3,7 +3,7 @@
  */
 
 @interface CNMultiValueDiff : NSObject {
-    NSArray *_updates;
+    NSArray * _updates;
 }
 
 @property (nonatomic, readonly, copy) NSArray *updates;

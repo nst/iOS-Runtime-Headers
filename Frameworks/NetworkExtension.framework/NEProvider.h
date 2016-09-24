@@ -3,12 +3,14 @@
  */
 
 @interface NEProvider : NSObject <NSExtensionRequestHandling> {
-    NEExtensionProviderContext *_context;
-    NWPath *_defaultPath;
-    NWPathEvaluator *_defaultPathEvaluator;
-    NSString *_deviceIdentifier;
+    NSString * _appName;
+    NEExtensionProviderContext * _context;
+    NWPath * _defaultPath;
+    NWPathEvaluator * _defaultPathEvaluator;
+    NSString * _deviceIdentifier;
 }
 
+@property (retain) NSString *appName;
 @property (retain) NEExtensionProviderContext *context;
 @property (readonly, copy) NSString *debugDescription;
 @property (retain) NWPath *defaultPath;
@@ -22,17 +24,21 @@
 + (BOOL)isRunningInProvider;
 
 - (void).cxx_destruct;
+- (id)appName;
 - (void)beginRequestWithExtensionContext:(id)arg1;
 - (id)context;
 - (id)createTCPConnectionToEndpoint:(id)arg1 enableTFO:(BOOL)arg2 initialData:(id)arg3 enableMultipath:(BOOL)arg4 enableTLS:(BOOL)arg5 TLSParameters:(id)arg6 delegate:(id)arg7;
+- (id)createTCPConnectionToEndpoint:(id)arg1 enableTFO:(BOOL)arg2 initialData:(id)arg3 enableMultipath:(BOOL)arg4 enableTLS:(BOOL)arg5 TLSParameters:(id)arg6 delegate:(id)arg7 URL:(id)arg8;
 - (id)createTCPConnectionToEndpoint:(id)arg1 enableTLS:(BOOL)arg2 TLSParameters:(id)arg3 delegate:(id)arg4;
 - (id)createUDPSessionToEndpoint:(id)arg1 fromEndpoint:(id)arg2;
 - (void)dealloc;
 - (id)defaultPath;
 - (id)defaultPathEvaluator;
 - (id)deviceIdentifier;
+- (void)displayMessage:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)init;
 - (void)observerHelperHandler:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)setAppName:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDefaultPath:(id)arg1;
 - (void)setDefaultPathEvaluator:(id)arg1;

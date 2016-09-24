@@ -3,8 +3,8 @@
  */
 
 @interface NSEntityDescription : NSObject <NSCoding, NSCopying, NSFastEnumeration> {
-    int _cd_rc;
-    NSString *_classNameForEntity;
+    int  _cd_rc;
+    NSString * _classNameForEntity;
     struct __entityDescriptionFlags { 
         unsigned int _isAbstract : 1; 
         unsigned int _shouldValidateOnSave : 1; 
@@ -19,24 +19,24 @@
         unsigned int _hasUniqueProperties : 1; 
         unsigned int _validationUniqueProperties : 1; 
         unsigned int _reservedEntityDescription : 19; 
-    } _entityDescriptionFlags;
-    void *_extraIvars;
-    id _flattenedSubentities;
-    Class _instanceClass;
-    id **_kvcPropertyAccessors;
-    NSManagedObjectModel *_model;
-    long _modelsReferenceIDForEntity;
-    NSString *_name;
-    NSMutableDictionary *_properties;
-    id _propertyMapping;
-    struct _NSRange { unsigned int x1; unsigned int x2; } *_propertyRanges;
-    NSEntityDescription *_rootentity;
-    id _snapshotClass;
-    NSMutableDictionary *_subentities;
-    NSEntityDescription *_superentity;
-    NSMutableDictionary *_userInfo;
-    NSData *_versionHash;
-    NSString *_versionHashModifier;
+    }  _entityDescriptionFlags;
+    void * _extraIvars;
+    id  _flattenedSubentities;
+    Class  _instanceClass;
+    id ** _kvcPropertyAccessors;
+    NSManagedObjectModel * _model;
+    long  _modelsReferenceIDForEntity;
+    NSString * _name;
+    NSMutableDictionary * _properties;
+    id  _propertyMapping;
+    struct _NSRange { unsigned int x1; unsigned int x2; } * _propertyRanges;
+    NSEntityDescription * _rootentity;
+    id  _snapshotClass;
+    NSMutableDictionary * _subentities;
+    NSEntityDescription * _superentity;
+    NSMutableDictionary * _userInfo;
+    NSData * _versionHash;
+    NSString * _versionHashModifier;
 }
 
 @property (getter=isAbstract) BOOL abstract;
@@ -45,6 +45,7 @@
 @property (copy) NSString *managedObjectClassName;
 @property (readonly) NSManagedObjectModel *managedObjectModel;
 @property (copy) NSString *name;
+@property (readonly) NSEntityDescription *ph_baseEntity;
 @property (retain) NSArray *properties;
 @property (readonly, copy) NSDictionary *propertiesByName;
 @property (readonly, copy) NSDictionary *relationshipsByName;
@@ -57,6 +58,8 @@
 @property (readonly, copy) NSData *versionHash;
 @property (copy) NSString *versionHashModifier;
 
+// Image: /System/Library/Frameworks/CoreData.framework/CoreData
+
 + (id)_MOClassName;
 + (id)entityForName:(id)arg1 inManagedObjectContext:(id)arg2;
 + (void)initialize;
@@ -68,6 +71,7 @@
 - (id)_attributeNamed:(id)arg1;
 - (id)_checkForNonCascadeNoInverses;
 - (id)_collectSubentities;
+- (void)_commonCachesAndOptimizedState;
 - (id)_compoundIndexes;
 - (BOOL)_constraintIsExtension:(id)arg1;
 - (void)_createCachesAndOptimizeState;
@@ -180,5 +184,10 @@
 - (id)userInfo;
 - (id)versionHash;
 - (id)versionHashModifier;
+
+// Image: /System/Library/Frameworks/Photos.framework/Photos
+
+- (id)ph_baseEntity;
+- (id)ph_relationshipDescriptionsForKeyPath:(id)arg1;
 
 @end

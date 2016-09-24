@@ -3,7 +3,7 @@
  */
 
 @interface IKJSKeyboard : IKJSObject <IKJSKeyboard> {
-    <IKAppKeyboardBridge> *_appBridge;
+    <IKAppKeyboardBridge> * _appBridge;
 }
 
 @property (nonatomic, retain) <IKAppKeyboardBridge> *appBridge;

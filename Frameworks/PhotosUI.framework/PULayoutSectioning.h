@@ -3,10 +3,10 @@
  */
 
 @interface PULayoutSectioning : NSObject {
-    PULayoutSectioning *_baseSectioning;
-    <PULayoutSectioningDelegate> *_delegate;
-    BOOL _invalidatingSampling;
-    BOOL _invalidatingSections;
+    PULayoutSectioning * _baseSectioning;
+    <PULayoutSectioningDelegate> * _delegate;
+    BOOL  _invalidatingSampling;
+    BOOL  _invalidatingSections;
 }
 
 @property (nonatomic, retain) PULayoutSectioning *baseSectioning;

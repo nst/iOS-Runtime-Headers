@@ -3,16 +3,16 @@
  */
 
 @interface GKTurnBasedExchangeInternal : GKInternalRepresentation {
-    NSDate *_completionDate;
-    NSData *_data;
-    NSString *_exchangeID;
-    NSDictionary *_localizableMessage;
-    NSArray *_recipientIndexes;
-    NSArray *_replies;
-    NSDate *_sendDate;
-    unsigned char _senderIndex;
-    NSString *_statusString;
-    NSDate *_timeoutDate;
+    NSDate * _completionDate;
+    NSData * _data;
+    NSString * _exchangeID;
+    NSDictionary * _localizableMessage;
+    NSArray * _recipientIndexes;
+    NSArray * _replies;
+    NSDate * _sendDate;
+    unsigned char  _senderIndex;
+    NSString * _statusString;
+    NSDate * _timeoutDate;
 }
 
 @property (nonatomic, retain) NSDate *completionDate;

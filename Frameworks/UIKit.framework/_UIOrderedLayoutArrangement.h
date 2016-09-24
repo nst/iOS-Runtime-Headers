@@ -3,17 +3,17 @@
  */
 
 @interface _UIOrderedLayoutArrangement : _UILayoutArrangement <_UIOLAPropertySource> {
-    BOOL _baselineRelativeArrangement;
-    int _distribution;
-    NSMapTable *_edgeToEdgeConstraints;
-    NSMapTable *_hidingDimensionConstraints;
-    BOOL _itemFittingSizeChanged;
-    BOOL _itemOrderingChanged;
-    NSMapTable *_multilineTextWidthDisambiguationConstraints;
-    float _proportionalFillDenominator;
-    NSMapTable *_relatedDimensionConstraints;
-    float _spacing;
-    NSMapTable *_spacingOrCenteringGuides;
+    BOOL  _baselineRelativeArrangement;
+    int  _distribution;
+    NSMapTable * _edgeToEdgeConstraints;
+    NSMapTable * _hidingDimensionConstraints;
+    BOOL  _itemFittingSizeChanged;
+    BOOL  _itemOrderingChanged;
+    NSMapTable * _multilineTextWidthDisambiguationConstraints;
+    double  _proportionalFillDenominator;
+    NSMapTable * _relatedDimensionConstraints;
+    double  _spacing;
+    NSMapTable * _spacingOrCenteringGuides;
 }
 
 @property (setter=_setItemFittingSizeChanged:, nonatomic) BOOL _itemFittingSizeChanged;
@@ -28,7 +28,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL layoutFillsCanvas;
 @property (nonatomic) BOOL layoutUsesCanvasMarginsWhenFilling;
-@property (nonatomic) float spacing;
+@property (nonatomic) double spacing;
 @property (readonly) Class superclass;
 
 + (Class)_configurationHistoryClass;
@@ -59,7 +59,9 @@
 - (BOOL)_itemFittingSizeChanged;
 - (BOOL)_itemOrderingChanged;
 - (id)_lastVisibleItem;
+- (int)_maxAttributeForGapConstraintRespectingBaselineRelative:(BOOL)arg1;
 - (int)_minAttributeForGapConstraint;
+- (int)_minAttributeForGapConstraintRespectingBaselineRelative:(BOOL)arg1;
 - (BOOL)_monitorsSystemLayoutFittingSizeForItem:(id)arg1;
 - (void)_notifyCanvasesBaselineParametersDidChange;
 - (id)_orderedConfigurationHistory;

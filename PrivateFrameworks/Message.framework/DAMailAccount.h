@@ -3,50 +3,56 @@
  */
 
 @interface DAMailAccount : MailAccount {
-    NSObject<ASAccountActorMessages> *_accountConduit;
-    NSString *_cachedAccountID;
-    NSString *_cachedAccountPersistentUUID;
-    BOOL _cachedArchiveByDefault;
-    BOOL _cachedCalendarEnabled;
-    NSString *_cachedDisplayName;
-    NSString *_cachedEmailAddress;
-    NSArray *_cachedEmailAddresses;
-    NSString *_cachedIconString;
-    NSString *_cachedInboxFolderID;
-    BOOL _cachedIsActive;
-    BOOL _cachedIsHotmailAccount;
-    BOOL _cachedIsManaged;
-    NSString *_cachedJunkFolderID;
-    BOOL _cachedPerMessageEncryptionEnabled;
-    BOOL _cachedRestrictMessageTransfersToOtherAccounts;
-    BOOL _cachedRestrictSendingFromExternalProcesses;
-    BOOL _cachedRestrictSyncingRecents;
-    BOOL _cachedSecureMIMEEnabled;
-    BOOL _cachedSecureMIMEShouldEncrypt;
-    BOOL _cachedSecureMIMEShouldSign;
-    NSString *_cachedSentMessagesFolderID;
-    BOOL _cachedSourceIsManaged;
-    BOOL _cachedSupportsMailDrop;
-    NSString *_cachedTrashFolderID;
-    DAAccount *_daAccount;
-    unsigned int _daysToSync;
-    BOOL _doneInitialInboxCheck;
-    NSString *_folderTag;
-    BOOL _isNetworkReachable;
-    BOOL _loadedInitialMailboxList;
-    BOOL _observingPushedFoldersPrefsChanged;
-    MFDAOfflineCache *_offlineCache;
-    MFRecursiveLock *_offlineCacheLock;
-    BOOL _receivedInitialMailboxUpdate;
-    NSMutableDictionary *_requestQueuesByFolderID;
-    int _supportsConversations;
-    int _supportsMessageFlagging;
-    int _supportsServerSearch;
-    MFDAMailbox *_temporaryInbox;
-    NSCountedSet *_userFocusMailboxIds;
-    NSSet *_watchedFolderIds;
-    NSLock *_watchedFolderIdsLock;
+    NSObject<ASAccountActorMessages> * _accountConduit;
+    NSString * _cachedAccountID;
+    NSString * _cachedAccountPersistentUUID;
+    BOOL  _cachedArchiveByDefault;
+    BOOL  _cachedCalendarEnabled;
+    NSString * _cachedDisplayName;
+    NSString * _cachedDraftsFolderID;
+    NSString * _cachedEmailAddress;
+    NSArray * _cachedEmailAddresses;
+    NSString * _cachedIconString;
+    NSString * _cachedInboxFolderID;
+    BOOL  _cachedIsActive;
+    BOOL  _cachedIsHotmailAccount;
+    BOOL  _cachedIsManaged;
+    NSString * _cachedJunkFolderID;
+    BOOL  _cachedPerMessageEncryptionEnabled;
+    BOOL  _cachedRestrictMessageTransfersToOtherAccounts;
+    BOOL  _cachedRestrictSendingFromExternalProcesses;
+    BOOL  _cachedRestrictSyncingRecents;
+    BOOL  _cachedSecureMIMEEnabled;
+    BOOL  _cachedSecureMIMEShouldEncrypt;
+    BOOL  _cachedSecureMIMEShouldSign;
+    NSString * _cachedSentMessagesFolderID;
+    BOOL  _cachedSourceIsManaged;
+    BOOL  _cachedStoreDraftsOnServer;
+    BOOL  _cachedSupportsMailDrop;
+    NSString * _cachedTrashFolderID;
+    DAAccount * _daAccount;
+    unsigned int  _daysToSync;
+    BOOL  _doneInitialInboxCheck;
+    NSString * _folderTag;
+    BOOL  _isNetworkReachable;
+    BOOL  _loadedInitialMailboxList;
+    BOOL  _observingPushedFoldersPrefsChanged;
+    MFDAOfflineCache * _offlineCache;
+    MFRecursiveLock * _offlineCacheLock;
+    BOOL  _receivedInitialMailboxUpdate;
+    NSMutableDictionary * _requestQueuesByFolderID;
+    int  _supportsConversations;
+    int  _supportsMessageFlagging;
+    int  _supportsServerDrafts;
+    int  _supportsServerSearch;
+    MFDAMailbox * _temporaryInbox;
+    NSCountedSet * _userFocusMailboxIds;
+    MFMailboxUid * _virtualAllSearchMailbox;
+    NSSet * _watchedFolderIds;
+    NSLock * _watchedFolderIdsLock;
 }
+
+@property (nonatomic, retain) MFMailboxUid *virtualAllSearchMailbox;
 
 + (id)_URLScheme;
 + (Class)_accountConduitClass;
@@ -86,6 +92,7 @@
 - (void)addRequest:(id)arg1 mailbox:(id)arg2 consumer:(id)arg3;
 - (void)addRequests:(id)arg1 mailbox:(id)arg2 consumers:(id)arg3;
 - (void)addUserFocusMailbox:(id)arg1;
+- (id)allMailMailboxUid;
 - (id)allMailboxUids;
 - (BOOL)canGoOffline;
 - (BOOL)canReceiveNewMailNotifications;
@@ -142,6 +149,7 @@
 - (void)setEncryptionIdentityPersistentReference:(id)arg1 forAddress:(id)arg2;
 - (void)setSigningIdentityPersistentReference:(id)arg1 forAddress:(id)arg2;
 - (void)setSyncAnchor:(id)arg1 forFolderID:(id)arg2 mailbox:(id*)arg3;
+- (void)setVirtualAllSearchMailbox:(id)arg1;
 - (BOOL)shouldAppearInMailSettings;
 - (BOOL)shouldArchiveByDefault;
 - (BOOL)shouldDisplayHostnameInErrorMessages;
@@ -157,6 +165,7 @@
 - (BOOL)supportsMailboxEditing;
 - (BOOL)supportsMessageFlagging;
 - (BOOL)supportsRemoteAppend;
+- (BOOL)supportsServerDrafts;
 - (BOOL)supportsServerSearch;
 - (BOOL)supportsThreadOperations;
 - (BOOL)supportsUserPushedMailboxes;
@@ -167,5 +176,6 @@
 - (id)uniqueIdForPersistentConnection;
 - (id)unsupportedContinuationTypes;
 - (id)username;
+- (id)virtualAllSearchMailbox;
 
 @end

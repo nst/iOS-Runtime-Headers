@@ -3,53 +3,36 @@
  */
 
 @interface EKEvent : EKCalendarItem {
-    NSString *_birthdayPersonUniqueID;
-    EKCalendarDate *_occurrenceEndDate;
-    BOOL _occurrenceIsAllDay;
-    EKCalendarDate *_occurrenceStartDate;
-    EKCalendarDate *_originalOccurrenceEndDate;
-    NSNumber *_originalOccurrenceIsAllDay;
-    EKCalendarDate *_originalOccurrenceStartDate;
-    BOOL _requiresDetachDueToSnoozedAlarm;
+    NSString * _birthdayPersonUniqueID;
+    EKStructuredLocation * _cachedLocationPrediction;
+    NSDate * _cachedLocationPredictionExpirationDate;
+    BOOL  _locationPredictionFrozen;
+    EKCalendarDate * _occurrenceEndDate;
+    BOOL  _occurrenceIsAllDay;
+    EKCalendarDate * _occurrenceStartDate;
+    EKCalendarDate * _originalOccurrenceEndDate;
+    NSNumber * _originalOccurrenceIsAllDay;
+    EKCalendarDate * _originalOccurrenceStartDate;
+    BOOL  _requiresDetachDueToSnoozedAlarm;
 }
 
-@property (nonatomic, readonly) NSString *UUID;
 @property (getter=isAllDay, nonatomic) BOOL allDay;
-@property (nonatomic, readonly) BOOL allowsPrivacyLevelModifications;
-@property (nonatomic, readonly) NSArray *attachments;
-@property (nonatomic, readonly) BOOL attendeeReplyChanged;
-@property (nonatomic, readonly) BOOL automaticLocationGeocodingAllowed;
+@property (retain) NSArray *attachments;
 @property (nonatomic) int availability;
 @property (nonatomic, readonly) NSString *birthdayContactIdentifier;
 @property (nonatomic, readonly) int birthdayPersonID;
 @property (nonatomic, readonly) NSString *birthdayPersonUniqueID;
-@property (nonatomic, readonly) BOOL canBeRespondedTo;
-@property (nonatomic, readonly) BOOL canDetachSingleOccurrence;
-@property (nonatomic, readonly) BOOL canSetAvailability;
-@property (nonatomic, readonly) BOOL dateChanged;
-@property (nonatomic, readonly) double duration;
-@property (nonatomic, readonly) double durationIncludingTravel;
-@property (nonatomic, readonly) BOOL eligibleForTravelAdvisories;
-@property (nonatomic, readonly) EKCalendarDate *endCalendarDate;
 @property (nonatomic, copy) NSDate *endDate;
-@property (nonatomic, readonly) struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; } endDateGr;
 @property (nonatomic, readonly) NSString *eventIdentifier;
-@property (nonatomic, readonly) EKEventStore *eventStore;
-@property (nonatomic, readonly) NSURL *externalURL;
-@property (nonatomic, readonly, copy) NSDate *initialEndDate;
-@property (nonatomic, readonly, copy) NSDate *initialStartDate;
-@property (nonatomic) unsigned int invitationStatus;
+@property BOOL ipsos_allDayPrefered;
+@property (readonly) double ipsos_duration;
+@property (retain) IPEventClassificationType *ipsos_eventClassificationType;
 @property BOOL ipsos_isDateTimeTenseDependent;
+@property BOOL ipsos_isEndTimeApproximate;
+@property BOOL ipsos_isEventTimeOnlyAndReferrengingToSentDate;
 @property BOOL ipsos_isTimeApproximate;
-@property (nonatomic, readonly) BOOL isAllDayDirty;
+@property BOOL ipsos_usesDefaultClassificationTypeStartTime;
 @property (nonatomic, readonly) BOOL isDetached;
-@property (nonatomic, readonly) BOOL isEditable;
-@property (nonatomic, readonly) BOOL isEndDateDirty;
-@property (nonatomic, readonly) BOOL isStartDateDirty;
-@property (nonatomic, readonly) BOOL isStatusDirty;
-@property (nonatomic, readonly) BOOL isTravelTimeEditable;
-@property (nonatomic, readonly) BOOL locationChanged;
-@property (nonatomic, readonly) BOOL locationIsAConferenceRoom;
 @property (nonatomic, readonly) unsigned int modifiedProperties;
 @property (nonatomic, readonly) NSDate *occurrenceDate;
 @property (nonatomic, copy) EKCalendarDate *occurrenceEndDate;
@@ -59,62 +42,56 @@
 @property (nonatomic, copy) EKCalendarDate *originalOccurrenceEndDate;
 @property (nonatomic, copy) NSNumber *originalOccurrenceIsAllDay;
 @property (nonatomic, copy) EKCalendarDate *originalOccurrenceStartDate;
-@property (nonatomic) int participationStatus;
-@property (nonatomic, readonly) NSDate *participationStatusModifiedDate;
-@property (nonatomic, readonly) int pendingParticipationStatus;
-@property (nonatomic) int privacyLevel;
 @property (nonatomic) BOOL requiresDetachDueToSnoozedAlarm;
-@property (nonatomic, copy) NSString *responseComment;
-@property (nonatomic, readonly) BOOL responseMustApplyToAll;
-@property (nonatomic, readonly) EKCalendarDate *startCalendarDate;
-@property (nonatomic, readonly) EKCalendarDate *startCalendarDateIncludingTravelTime;
 @property (nonatomic, copy) NSDate *startDate;
-@property (nonatomic, readonly) struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; } startDateGr;
-@property (nonatomic, readonly) NSDate *startDateIncludingTravel;
 @property (nonatomic, readonly) int status;
 @property (nonatomic, copy) EKStructuredLocation *structuredLocation;
-@property (nonatomic, retain) EKSuggestedEventInfo *suggestionInfo;
-@property (nonatomic, readonly) BOOL timeChanged;
-@property (nonatomic, readonly) BOOL titleChanged;
-@property (nonatomic) int travelAdvisoryBehavior;
-@property (nonatomic, readonly) BOOL travelAdvisoryBehaviorIsEffectivelyEnabled;
-@property (nonatomic, readonly) int travelRoutingMode;
-@property (nonatomic) double travelTime;
-@property (nonatomic, readonly, copy) NSString *uniqueId;
 
 // Image: /System/Library/Frameworks/EventKit.framework/EventKit
 
++ (int)_eventAvailabilityForParticipantStatus:(int)arg1 supportedEventAvailabilities:(unsigned int)arg2 isAllDayEvent:(BOOL)arg3;
 + (id)eventWithEventStore:(id)arg1;
-+ (id)privacyLevelAsString:(int)arg1;
 
+- (void).cxx_destruct;
+- (void)_cancelDetachedEventsWithSpan:(int)arg1;
 - (BOOL)_cancelWithSpan:(int)arg1 error:(id*)arg2;
 - (BOOL)_checkStartDateConstraintAgainstDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 timeZone:(id)arg2 error:(id*)arg3;
+- (void)_clearLocationPredictionCacheIfNotFrozen;
 - (id)_dateForNextOccurrence;
 - (void)_deleteThisOccurrence;
 - (BOOL)_deleteWithSpan:(int)arg1 error:(id*)arg2;
 - (void)_detachWithStartDate:(id)arg1 newStartDate:(id)arg2 future:(BOOL)arg3;
 - (id)_effectiveTimeZone;
-- (BOOL)_eventIsTheOnlyRemainingRecurrence;
+- (BOOL)_eventIsTheOnlyRemainingOccurrence;
+- (BOOL)_fetchedEventIsConflict:(id)arg1 forStartDate:(id)arg2 endDate:(id)arg3;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })_gregorianDateCorrectedForTimeZoneFromCalendarDate:(id)arg1 orNSDate:(id)arg2;
 - (BOOL)_isAllDay;
 - (BOOL)_isInitialOccurrenceDate:(id)arg1;
 - (BOOL)_isSimpleRepeatingEvent;
+- (BOOL)_noRemainingEarlierOccurrences;
 - (BOOL)_occurrenceExistsOnDate:(double)arg1 timeZone:(id)arg2;
 - (int)_parentParticipationStatus;
 - (id)_persistentEvent;
 - (void)_sendModifiedNote;
+- (void)_setStartDate:(id)arg1 andClearProposedTimes:(BOOL)arg2;
 - (BOOL)_shouldCancelInsteadOfDeleteWithSpan:(int)arg1;
 - (BOOL)_shouldDeclineInsteadOfDelete;
 - (id)_suggestedEventInfoRelation;
 - (id)_travelTimeInternalDescription;
+- (void)_updatePredictedLocationCacheIfNeeded;
 - (BOOL)_validateAlarmIntervalConstrainedToRecurrenceInterval:(int)arg1;
 - (BOOL)_validateDatesAndRecurrencesGivenSpan:(int)arg1 error:(id*)arg2;
 - (BOOL)_validateDurationConstrainedToRecurrenceInterval;
+- (id)actualProposedStartDate;
 - (BOOL)allowsAlarmModifications;
+- (BOOL)allowsAttendeesModifications;
+- (BOOL)allowsAvailabilityModifications;
 - (BOOL)allowsCalendarModifications;
 - (BOOL)allowsPrivacyLevelModifications;
+- (BOOL)allowsProposedTimeModifications;
 - (BOOL)allowsRecurrenceModifications;
 - (BOOL)allowsSpansOtherThanThisEvent;
+- (BOOL)allowsTravelTimeModifications;
 - (BOOL)attendeeReplyChanged;
 - (BOOL)automaticLocationGeocodingAllowed;
 - (int)availability;
@@ -123,13 +100,14 @@
 - (id)birthdayPersonUniqueID;
 - (BOOL)canBeRespondedTo;
 - (BOOL)canDetachSingleOccurrence;
+- (BOOL)canForward;
 - (BOOL)canMoveToCalendar:(id)arg1 fromCalendar:(id)arg2 error:(id*)arg3;
-- (BOOL)canSetAvailability;
 - (BOOL)changingAllDayPropertyIsAllowed;
 - (void)clearInvitationStatus;
 - (BOOL)commitWithSpan:(int)arg1 error:(id*)arg2;
 - (id)committedValueForKey:(id)arg1;
 - (int)compareStartDateWithEvent:(id)arg1;
+- (void)confirmPredictedLocation:(id)arg1;
 - (BOOL)conformsToRecurrenceRules:(id)arg1;
 - (BOOL)dateChanged;
 - (void)dealloc;
@@ -145,9 +123,11 @@
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })endDatePinnedForAllDay;
 - (id)eventIdentifier;
 - (id)eventStore;
-- (id)exportToICS;
 - (id)externalURI;
 - (id)externalURL;
+- (BOOL)firedTTL;
+- (BOOL)hasAttendeeProposedTimes;
+- (BOOL)hasPredictedLocation;
 - (BOOL)hasSelfAttendee;
 - (unsigned int)hash;
 - (id)init;
@@ -163,12 +143,14 @@
 - (BOOL)isEditable;
 - (BOOL)isEndDateDirty;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isPredictedLocationFrozen;
 - (BOOL)isStartDateDirty;
 - (BOOL)isStatusDirty;
 - (BOOL)isTentative;
-- (BOOL)isTravelTimeEditable;
 - (BOOL)locationChanged;
 - (BOOL)locationIsAConferenceRoom;
+- (int)locationPredictionState;
+- (id)locationWithoutPrediction;
 - (unsigned int)modifiedProperties;
 - (BOOL)needsOccurrenceCacheUpdate;
 - (id)occurrenceDate;
@@ -178,23 +160,35 @@
 - (id)originalOccurrenceEndDate;
 - (id)originalOccurrenceIsAllDay;
 - (id)originalOccurrenceStartDate;
+- (void)overrideStartDate:(id)arg1;
 - (int)participationStatus;
 - (id)participationStatusModifiedDate;
 - (int)pendingParticipationStatus;
+- (id)preferredLocationWithoutPrediction;
 - (int)privacyLevel;
+- (id)privacyLevelString;
+- (id)proposedStartDate;
+- (void)rebaseWithOldPCI:(id)arg1 newPCI:(id)arg2;
 - (id)recurrenceRule;
 - (BOOL)refresh;
+- (void)rejectPredictedLocation;
 - (BOOL)removeWithSpan:(int)arg1 error:(id*)arg2;
 - (BOOL)requiresDetach;
 - (BOOL)requiresDetachDueToSnoozedAlarm;
+- (void)reset;
 - (id)responseComment;
 - (BOOL)responseMustApplyToAll;
 - (void)revert;
 - (void)rollback;
+- (id)scanForConflicts;
+- (BOOL)serverSupportedProposeNewTime;
 - (void)setAllDay:(BOOL)arg1;
 - (void)setAvailability:(int)arg1;
 - (void)setEndDate:(id)arg1;
+- (void)setFiredTTL:(BOOL)arg1;
 - (void)setInvitationStatus:(unsigned int)arg1;
+- (void)setLocation:(id)arg1;
+- (void)setLocationPredictionState:(int)arg1;
 - (void)setModifiedProperties:(unsigned int)arg1;
 - (void)setNeedsOccurrenceCacheUpdate:(BOOL)arg1;
 - (void)setOccurrenceEndDate:(id)arg1;
@@ -204,13 +198,17 @@
 - (void)setOriginalOccurrenceIsAllDay:(id)arg1;
 - (void)setOriginalOccurrenceStartDate:(id)arg1;
 - (void)setParticipationStatus:(int)arg1;
+- (void)setPredictedLocationFrozen:(BOOL)arg1;
 - (void)setPrivacyLevel:(int)arg1;
+- (void)setProposedStartDate:(id)arg1;
 - (void)setRecurrenceRule:(id)arg1;
 - (void)setRequiresDetachDueToSnoozedAlarm:(BOOL)arg1;
 - (void)setResponseComment:(id)arg1;
 - (void)setStartDate:(id)arg1;
+- (void)setStructuredLocation:(id)arg1;
 - (void)setSuggestionInfo:(id)arg1;
 - (void)setTimeZone:(id)arg1;
+- (void)setTitle:(id)arg1;
 - (void)setTravelAdvisoryBehavior:(int)arg1;
 - (void)setTravelTime:(double)arg1;
 - (void)snoozeAlarm:(id)arg1 withTimeIntervalFromNow:(double)arg2;
@@ -222,6 +220,8 @@
 - (id)startDateIncludingTravel;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })startDatePinnedForAllDay;
 - (int)status;
+- (id)structuredLocation;
+- (id)structuredLocationWithoutPrediction;
 - (id)suggestionInfo;
 - (BOOL)timeChanged;
 - (id)title;
@@ -237,6 +237,7 @@
 
 // Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
 
+- (id)_clockIconString;
 - (id)_commentIconString;
 - (id)_sortedEKParticipantsForSortingIgnoringNonHumans:(id)arg1;
 - (int)daySpan;
@@ -247,14 +248,30 @@
 
 // Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
 
-- (BOOL)sg_isCuratedEventFromSuggestionNewerThan:(double)arg1;
+- (BOOL)sg_isCuratedEventFromSuggestionNewerThan:(struct SGUnixTimestamp_ { double x1; })arg1;
 
 // Image: /System/Library/PrivateFrameworks/DataDetectorsNaturalLanguage.framework/DataDetectorsNaturalLanguage
 
+- (BOOL)ipsos_allDayPrefered;
 - (id)ipsos_betterDescription;
+- (double)ipsos_duration;
+- (id)ipsos_eventClassificationType;
 - (BOOL)ipsos_isDateTimeTenseDependent;
+- (BOOL)ipsos_isEndTimeApproximate;
+- (BOOL)ipsos_isEventTimeOnlyAndReferrengingToSentDate;
 - (BOOL)ipsos_isTimeApproximate;
+- (BOOL)ipsos_usesDefaultClassificationTypeStartTime;
+- (void)setIpsos_allDayPrefered:(BOOL)arg1;
+- (void)setIpsos_eventClassificationType:(id)arg1;
 - (void)setIpsos_isDateTimeTenseDependent:(BOOL)arg1;
+- (void)setIpsos_isEndTimeApproximate:(BOOL)arg1;
+- (void)setIpsos_isEventTimeOnlyAndReferrengingToSentDate:(BOOL)arg1;
 - (void)setIpsos_isTimeApproximate:(BOOL)arg1;
+- (void)setIpsos_usesDefaultClassificationTypeStartTime:(BOOL)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/Frameworks/MediaMiningKit.framework/MediaMiningKit
+
+- (BOOL)isBirthday;
+- (BOOL)organizedByMe;
 
 @end

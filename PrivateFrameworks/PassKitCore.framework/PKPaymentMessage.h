@@ -3,48 +3,54 @@
  */
 
 @interface PKPaymentMessage : NSObject <NSSecureCoding> {
-    BOOL _allowDeepLink;
-    NSString *_content;
-    NSDate *_expirationDate;
-    BOOL _expiresOnNextTransaction;
-    BOOL _hasAssociatedPaymentApplication;
-    NSString *_identifier;
-    NSDate *_messageDate;
-    NSString *_serviceIdentifier;
+    BOOL  _allowDeepLink;
+    BOOL  _archiveOnNextTransaction;
+    BOOL  _archived;
+    NSString * _content;
+    NSDate * _expirationDate;
+    BOOL  _hasAssociatedPaymentApplication;
+    NSString * _identifier;
+    NSDate * _messageDate;
+    NSString * _serviceIdentifier;
 }
 
 @property (nonatomic) BOOL allowDeepLink;
+@property (nonatomic) BOOL archiveOnNextTransaction;
+@property (getter=isArchived, nonatomic) BOOL archived;
 @property (nonatomic, copy) NSString *content;
 @property (nonatomic, copy) NSDate *expirationDate;
-@property (nonatomic) BOOL expiresOnNextTransaction;
 @property (nonatomic) BOOL hasAssociatedPaymentApplication;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSDate *messageDate;
 @property (nonatomic, copy) NSString *serviceIdentifier;
+@property (getter=isValid, nonatomic, readonly) BOOL valid;
 
 + (id)paymentMessageWithDictionary:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (BOOL)allowDeepLink;
+- (BOOL)archiveOnNextTransaction;
 - (id)content;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expirationDate;
-- (BOOL)expiresOnNextTransaction;
 - (BOOL)hasAssociatedPaymentApplication;
 - (unsigned int)hash;
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)isArchived;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToPaymentMessage:(id)arg1;
+- (BOOL)isValid;
 - (id)messageDate;
 - (id)serviceIdentifier;
 - (void)setAllowDeepLink:(BOOL)arg1;
+- (void)setArchiveOnNextTransaction:(BOOL)arg1;
+- (void)setArchived:(BOOL)arg1;
 - (void)setContent:(id)arg1;
 - (void)setExpirationDate:(id)arg1;
-- (void)setExpiresOnNextTransaction:(BOOL)arg1;
 - (void)setHasAssociatedPaymentApplication:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setMessageDate:(id)arg1;

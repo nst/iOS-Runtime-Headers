@@ -3,16 +3,16 @@
  */
 
 @interface __NSCFURLSession : NSURLSession {
-    NSDictionary *_atsState;
-    id /* block */ _connBlock;
-    <NSURLSessionDelegate> *_delegate;
-    NSOperationQueue *_delegateQueue;
-    BOOL _invalid;
-    BOOL _isSharedSession;
-    NSURLSessionConfiguration *_local_immutable_configuration;
-    NSString *_sessionDescription;
-    NSString *_uuid;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    NSDictionary * _atsState;
+    id /* block */  _connBlock;
+    <NSURLSessionDelegate> * _delegate;
+    NSOperationQueue * _delegateQueue;
+    BOOL  _invalid;
+    BOOL  _isSharedSession;
+    NSURLSessionConfiguration * _local_immutable_configuration;
+    NSString * _sessionDescription;
+    NSString * _uuid;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (readonly, copy) NSDictionary *delegateOptions;

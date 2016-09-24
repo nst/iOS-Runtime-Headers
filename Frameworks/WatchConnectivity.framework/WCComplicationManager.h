@@ -3,8 +3,8 @@
  */
 
 @interface WCComplicationManager : NSObject <WCPrivateXPCManagerDelegate> {
-    NSObject<WCComplicationManagerDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
+    NSObject<WCComplicationManagerDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

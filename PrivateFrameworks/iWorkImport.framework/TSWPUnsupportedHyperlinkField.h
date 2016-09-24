@@ -3,7 +3,7 @@
  */
 
 @interface TSWPUnsupportedHyperlinkField : TSWPPlaceholderSmartField {
-    NSString *_href;
+    NSString * _href;
 }
 
 @property (nonatomic, copy) NSString *href;

@@ -3,9 +3,9 @@
  */
 
 @interface PHAssetResourceCreationOptions : NSObject <NSCopying> {
-    NSString *_originalFilename;
-    BOOL _shouldMoveFile;
-    NSString *_uniformTypeIdentifier;
+    NSString * _originalFilename;
+    BOOL  _shouldMoveFile;
+    NSString * _uniformTypeIdentifier;
 }
 
 @property (nonatomic, copy) NSString *originalFilename;

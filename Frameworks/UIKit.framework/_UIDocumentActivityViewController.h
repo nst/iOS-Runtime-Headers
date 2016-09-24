@@ -3,9 +3,9 @@
  */
 
 @interface _UIDocumentActivityViewController : UIActivityViewController {
-    UIDocumentInteractionController *_documentInteractionController;
-    UIDocumentInteractionController *_documentInteractionControllerRetained;
-    BOOL _hideSystemActivities;
+    UIDocumentInteractionController * _documentInteractionController;
+    UIDocumentInteractionController * _documentInteractionControllerRetained;
+    BOOL  _hideSystemActivities;
 }
 
 @property (nonatomic) UIDocumentInteractionController *documentInteractionController;

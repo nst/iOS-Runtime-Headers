@@ -3,7 +3,7 @@
  */
 
 @interface _DECFeedbackLoggerManager : NSObject <_DECFeedbackLogger> {
-    NSArray *_loggers;
+    NSArray * _loggers;
 }
 
 @property (readonly, copy) NSString *debugDescription;

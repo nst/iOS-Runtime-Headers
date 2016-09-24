@@ -3,9 +3,9 @@
  */
 
 @interface PEPServiceConfiguration : NSObject {
-    NSString *_cacheFilePath;
-    double _cachedFileLastModifyDate;
-    BOOL _shouldDownloadNetworkConfigFile;
+    NSString * _cacheFilePath;
+    double  _cachedFileLastModifyDate;
+    BOOL  _shouldDownloadNetworkConfigFile;
 }
 
 + (id)sharedInstance;

@@ -3,10 +3,10 @@
  */
 
 @interface GEOPDExternalActionDetail : PBCodable <NSCopying> {
-    NSString *_actionLabel;
-    NSString *_actionUrlComponent;
-    NSString *_actionUrlVerb;
-    NSString *_logoId;
+    NSString * _actionLabel;
+    NSString * _actionUrlComponent;
+    NSString * _actionUrlVerb;
+    NSString * _logoId;
 }
 
 @property (nonatomic, retain) NSString *actionLabel;

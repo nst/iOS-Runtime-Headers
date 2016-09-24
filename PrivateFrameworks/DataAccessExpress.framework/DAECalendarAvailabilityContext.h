@@ -3,8 +3,8 @@
  */
 
 @interface DAECalendarAvailabilityContext : NSObject {
-    id /* block */ _completionBlock;
-    id /* block */ _resultsBlock;
+    id /* block */  _completionBlock;
+    id /* block */  _resultsBlock;
 }
 
 - (void).cxx_destruct;

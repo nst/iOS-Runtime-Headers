@@ -3,14 +3,14 @@
  */
 
 @interface BLVintageFilter : CIFilter {
-    CIFilter *_colorCubeFilter;
-    NSNumber *_inputAmount;
-    CIImage *_inputImage;
-    NSNumber *_inputStrength;
-    int _lastAmount;
-    float _lastStrength;
-    CIFilter *_maskFilter;
-    BOOL _needsReprocess;
+    CIFilter * _colorCubeFilter;
+    NSNumber * _inputAmount;
+    CIImage * _inputImage;
+    NSNumber * _inputStrength;
+    int  _lastAmount;
+    double  _lastStrength;
+    CIFilter * _maskFilter;
+    BOOL  _needsReprocess;
 }
 
 @property (nonatomic, retain) CIFilter *colorCubeFilter;

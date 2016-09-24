@@ -3,8 +3,8 @@
  */
 
 @interface __NSCFURLLocalStreamTaskWorkWrite : __NSCFURLLocalStreamTaskWork {
-    unsigned int _bytesToWrite;
-    id /* block */ _completion;
+    unsigned int  _bytesToWrite;
+    id /* block */  _completion;
 }
 
 - (void)dealloc;

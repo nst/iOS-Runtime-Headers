@@ -3,7 +3,7 @@
  */
 
 @interface CLFloor : NSObject <NSCopying, NSSecureCoding> {
-    int level;
+    int  level;
 }
 
 @property (nonatomic, readonly) int level;

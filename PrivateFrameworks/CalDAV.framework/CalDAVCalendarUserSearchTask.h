@@ -3,13 +3,13 @@
  */
 
 @interface CalDAVCalendarUserSearchTask : CoreDAVPropertyFindBaseTask {
-    BOOL _findAttendees;
-    BOOL _findGroups;
-    BOOL _findLocations;
-    BOOL _findResources;
-    BOOL _findUsers;
-    unsigned int _resultLimit;
-    NSSet *_searchStrings;
+    BOOL  _findAttendees;
+    BOOL  _findGroups;
+    BOOL  _findLocations;
+    BOOL  _findResources;
+    BOOL  _findUsers;
+    unsigned int  _resultLimit;
+    NSSet * _searchStrings;
 }
 
 @property (nonatomic) BOOL findAttendees;

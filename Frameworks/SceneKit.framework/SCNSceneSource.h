@@ -3,12 +3,12 @@
  */
 
 @interface SCNSceneSource : NSObject {
-    NSOperationQueue *_downloadingQueue;
-    struct __C3DScene { } *_lastLoadedScene;
-    NSDictionary *_lastOptions;
-    BOOL _sceneLoaded;
-    struct __C3DSceneSource { } *_sceneSource;
-    NSDictionary *_sceneSourceOptions;
+    NSOperationQueue * _downloadingQueue;
+    struct __C3DScene { } * _lastLoadedScene;
+    NSDictionary * _lastOptions;
+    BOOL  _sceneLoaded;
+    struct __C3DSceneSource { } * _sceneSource;
+    NSDictionary * _sceneSourceOptions;
 }
 
 @property (readonly) NSData *data;

@@ -3,9 +3,9 @@
  */
 
 @interface GEOUsageLogMessage : PBCodable <NSCopying> {
-    GEOLongSessionUsageLogMessage *_longSessionUsageLogMessage;
-    GEOSessionlessUsageLogMessage *_sessionlessUsageLogMessage;
-    GEOShortSessionUsageLogMessage *_shortSessionUsageLogMessage;
+    GEOLongSessionUsageLogMessage * _longSessionUsageLogMessage;
+    GEOSessionlessUsageLogMessage * _sessionlessUsageLogMessage;
+    GEOShortSessionUsageLogMessage * _shortSessionUsageLogMessage;
 }
 
 @property (nonatomic, readonly) BOOL hasLongSessionUsageLogMessage;

@@ -3,7 +3,7 @@
  */
 
 @interface SKUICommenterAction : UIAlertAction {
-    int _index;
+    int  _index;
 }
 
 @property (nonatomic) int index;

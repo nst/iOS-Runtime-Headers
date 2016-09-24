@@ -3,12 +3,12 @@
  */
 
 @interface PLCameraAgent : PLAgent {
-    PLXPCListenerOperatorComposition *_backCameraNotification;
-    NSDictionary *_backCameraPowerModel;
-    PLXPCListenerOperatorComposition *_frontCameraNotification;
-    NSDictionary *_frontCameraPowerModel;
-    PLXPCListenerOperatorComposition *_torchNotification;
-    NSDictionary *_torchPowerModel;
+    PLXPCListenerOperatorComposition * _backCameraNotification;
+    NSDictionary * _backCameraPowerModel;
+    PLXPCListenerOperatorComposition * _frontCameraNotification;
+    NSDictionary * _frontCameraPowerModel;
+    PLXPCListenerOperatorComposition * _torchNotification;
+    NSDictionary * _torchPowerModel;
 }
 
 @property (readonly) PLXPCListenerOperatorComposition *backCameraNotification;

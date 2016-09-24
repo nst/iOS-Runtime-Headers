@@ -3,8 +3,8 @@
  */
 
 @interface _SFReaderAppearanceViewController : UIViewController <UINavigationControllerDelegate> {
-    <SFReaderAppearanceViewControllerDelegate> *_delegate;
-    SFReaderAppearanceMainViewController *_mainViewController;
+    <SFReaderAppearanceViewControllerDelegate> * _delegate;
+    SFReaderAppearanceMainViewController * _mainViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

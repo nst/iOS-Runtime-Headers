@@ -3,10 +3,10 @@
  */
 
 @interface CNiOSPersonFetchRequest : NSObject {
-    unsigned int _options;
-    <CNiOSContactPredicate> *_predicate;
-    BOOL _shouldSort;
-    unsigned int _sortOrder;
+    unsigned int  _options;
+    <CNiOSContactPredicate> * _predicate;
+    BOOL  _shouldSort;
+    unsigned int  _sortOrder;
 }
 
 @property (readonly) unsigned int options;

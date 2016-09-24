@@ -3,10 +3,12 @@
  */
 
 @interface BRFieldFinderTags : PBCodable <NSCopying> {
-    NSMutableArray *_tags;
+    NSMutableArray * _tags;
 }
 
 @property (nonatomic, retain) NSMutableArray *tags;
+
++ (Class)tagsType;
 
 - (void).cxx_destruct;
 - (void)addTags:(id)arg1;

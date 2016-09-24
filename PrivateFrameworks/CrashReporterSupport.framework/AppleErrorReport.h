@@ -3,13 +3,14 @@
  */
 
 @interface AppleErrorReport : NSObject {
-    double _capture_time;
-    NSString *_deviceID;
-    NSString *_incidentID;
-    NSString *_logType;
-    NSMutableArray *_notes;
+    double  _capture_time;
+    NSString * _incidentID;
+    NSString * _logType;
+    NSString * _logfile;
+    NSMutableArray * _notes;
 }
 
+@property (nonatomic, readonly) NSString *logfile;
 @property (nonatomic, readonly) NSArray *notes;
 
 + (id)bootArgs;
@@ -19,11 +20,10 @@
 + (id)systemIDWithDescription:(BOOL)arg1;
 
 - (id)additionalIPSMetadata;
-- (id)appleCareCSVFieldsWithCount:(unsigned int)arg1;
+- (id)appleCareDetails;
 - (void)dealloc;
-- (id)deviceID;
 - (void)generateLogAtLevel:(BOOL)arg1 withBlock:(id /* block */)arg2;
-- (id)getSyslogForPid:(int)arg1 andOptionalSender:(const char *)arg2;
+- (id)getSyslogForPid:(int)arg1 andOptionalSenders:(id)arg2;
 - (id)hardwareModel;
 - (id)incidentID;
 - (id)init;
@@ -32,8 +32,8 @@
 - (BOOL)isCarrierInstall;
 - (BOOL)isInternalInstall;
 - (BOOL)isInternalOrCarrierInstall;
-- (void)logForAppleCareWithLogCount:(unsigned int)arg1;
 - (unsigned int)logLimit;
+- (id)logfile;
 - (id)notes;
 - (id)overrideFileExtension;
 - (id)problemType;

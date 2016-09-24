@@ -2,9 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UICollectionViewCellPromiseRegion : NSObject <_UIFocusRegion> {
-    UICollectionView *_collectionView;
-    UICollectionViewLayoutAttributes *_layoutAttributes;
+@interface _UICollectionViewCellPromiseRegion : NSObject <_UIFocusPromiseRegionDelegate, _UIFocusRegionContainer, _UILegacyFocusRegion> {
+    UICollectionView * _collectionView;
+    UICollectionViewLayoutAttributes * _layoutAttributes;
 }
 
 @property (nonatomic) UICollectionView *collectionView;
@@ -16,17 +16,20 @@
 
 - (void).cxx_destruct;
 - (id)_childFocusRegions;
-- (id)_childFocusRegionsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)_childFocusRegionsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)_focusDebugOverlayParentView;
 - (BOOL)_focusRegionCanBecomeFocused;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_focusRegionFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_focusRegionFrame;
 - (id)_focusRegionGuides;
 - (BOOL)_focusRegionIsEligibleForFocus;
 - (id)_focusRegionItem;
 - (id)_focusRegionView;
+- (id)_fulfillFocusPromiseRegion:(id)arg1;
 - (id)_fulfillPromisedFocusRegion;
 - (BOOL)_isPromiseFocusRegion;
 - (BOOL)_isTransparentFocusRegion;
+- (void)_searchForFocusRegionsInContext:(id)arg1;
+- (BOOL)_shouldSearchForFocusRegionsInContext:(id)arg1;
 - (id)collectionView;
 - (id)description;
 - (id)layoutAttributes;

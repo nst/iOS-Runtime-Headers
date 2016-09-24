@@ -3,12 +3,12 @@
  */
 
 @interface CKDPComment : PBCodable <NSCopying> {
-    CKDPCommentContent *_commentContent;
-    CKDPIdentifier *_commentId;
-    CKDPDate *_createdAt;
-    CKDPIdentifier *_from;
-    CKDPLikeInfo *_likeInfo;
-    NSString *_path;
+    CKDPCommentContent * _commentContent;
+    CKDPIdentifier * _commentId;
+    CKDPDate * _createdAt;
+    CKDPIdentifier * _from;
+    CKDPLikeInfo * _likeInfo;
+    NSString * _path;
 }
 
 @property (nonatomic, retain) CKDPCommentContent *commentContent;

@@ -3,7 +3,7 @@
  */
 
 @interface AVExternalDeviceHID : NSObject {
-    AVExternalDeviceHIDInternal *_externalDeviceHID;
+    AVExternalDeviceHIDInternal * _externalDeviceHID;
 }
 
 @property (nonatomic, readonly) NSString *UUID;

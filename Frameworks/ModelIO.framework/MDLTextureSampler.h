@@ -3,9 +3,9 @@
  */
 
 @interface MDLTextureSampler : NSObject {
-    MDLTextureFilter *hardwareFilter;
-    MDLTexture *texture;
-    MDLTransform *transform;
+    MDLTextureFilter * hardwareFilter;
+    MDLTexture * texture;
+    MDLTransform * transform;
 }
 
 @property (nonatomic, retain) MDLTextureFilter *hardwareFilter;

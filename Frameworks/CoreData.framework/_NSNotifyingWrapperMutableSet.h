@@ -3,9 +3,9 @@
  */
 
 @interface _NSNotifyingWrapperMutableSet : NSMutableSet {
-    NSManagedObject *_container;
-    NSString *_key;
-    NSMutableSet *_mutableSet;
+    NSManagedObject * _container;
+    NSString * _key;
+    NSMutableSet * _mutableSet;
 }
 
 - (void)addObject:(id)arg1;

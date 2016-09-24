@@ -3,13 +3,13 @@
  */
 
 @interface CKDPSubscriptionNotificationAlert : PBCodable <NSCopying> {
-    NSString *_actionLocKey;
-    NSString *_category;
-    NSString *_launchImage;
-    NSMutableArray *_localizedArguments;
-    NSString *_localizedKey;
-    NSString *_soundName;
-    NSString *_text;
+    NSString * _actionLocKey;
+    NSString * _category;
+    NSString * _launchImage;
+    NSMutableArray * _localizedArguments;
+    NSString * _localizedKey;
+    NSString * _soundName;
+    NSString * _text;
 }
 
 @property (nonatomic, retain) NSString *actionLocKey;
@@ -25,6 +25,8 @@
 @property (nonatomic, retain) NSString *localizedKey;
 @property (nonatomic, retain) NSString *soundName;
 @property (nonatomic, retain) NSString *text;
+
++ (Class)localizedArgumentsType;
 
 - (void).cxx_destruct;
 - (id)actionLocKey;

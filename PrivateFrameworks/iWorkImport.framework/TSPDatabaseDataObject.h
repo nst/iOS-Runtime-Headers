@@ -3,7 +3,7 @@
  */
 
 @interface TSPDatabaseDataObject : TSPObject {
-    TSPData *_data;
+    TSPData * _data;
 }
 
 @property (nonatomic, readonly) TSPData *data;

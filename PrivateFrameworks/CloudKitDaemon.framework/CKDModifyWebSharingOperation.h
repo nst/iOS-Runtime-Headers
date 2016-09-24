@@ -3,14 +3,14 @@
  */
 
 @interface CKDModifyWebSharingOperation : CKDDatabaseOperation {
-    NSMutableSet *_fetchedRecordIDs;
-    int _numSaveAttempts;
-    NSArray *_recordIDsToShare;
-    NSArray *_recordIDsToShareReadWrite;
-    NSArray *_recordIDsToUnshare;
-    id /* block */ _recordWebSharedBlock;
-    id /* block */ _recordWebUnsharedBlock;
-    NSMutableDictionary *_recordsToSaveByID;
+    NSMutableSet * _fetchedRecordIDs;
+    int  _numSaveAttempts;
+    NSArray * _recordIDsToShare;
+    NSArray * _recordIDsToShareReadWrite;
+    NSArray * _recordIDsToUnshare;
+    id /* block */  _recordWebSharedBlock;
+    id /* block */  _recordWebUnsharedBlock;
+    NSMutableDictionary * _recordsToSaveByID;
 }
 
 @property (nonatomic, retain) NSMutableSet *fetchedRecordIDs;
@@ -29,7 +29,7 @@
 - (void)_handleRecordFetched:(id)arg1 recordID:(id)arg2 error:(id)arg3;
 - (void)_handleRecordSaved:(id)arg1 error:(id)arg2;
 - (void)_saveRecords;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (id)fetchedRecordIDs;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;

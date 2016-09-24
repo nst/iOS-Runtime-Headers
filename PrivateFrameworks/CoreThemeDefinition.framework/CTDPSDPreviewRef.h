@@ -3,7 +3,7 @@
  */
 
 @interface CTDPSDPreviewRef : CUIPSDImageRef {
-    int _columnWidth;
+    int  _columnWidth;
     struct _PSDImageInfo { 
         unsigned int width; 
         unsigned int height; 
@@ -11,14 +11,14 @@
         unsigned short bitsPerSample; 
         unsigned short samplesPerPixel; 
         int isDrawable; 
-    } _imageInfo;
-    int _layerCount;
-    NSArray *_layerIndexLayout;
-    int _rowHeight;
-    int _sliceColumnCount;
-    int _sliceCount;
-    NSArray *_sliceRects;
-    int _sliceRowCount;
+    }  _imageInfo;
+    int  _layerCount;
+    NSArray * _layerIndexLayout;
+    int  _rowHeight;
+    int  _sliceColumnCount;
+    int  _sliceCount;
+    NSArray * _sliceRects;
+    int  _sliceRowCount;
 }
 
 - (void)dealloc;

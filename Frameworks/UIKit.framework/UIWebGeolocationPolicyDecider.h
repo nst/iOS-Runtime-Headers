@@ -3,9 +3,9 @@
  */
 
 @interface UIWebGeolocationPolicyDecider : NSObject {
-    NSMapTable *_activeChallenges;
-    NSMutableArray *_challenges;
-    NSMutableDictionary *_sites;
+    NSMapTable * _activeChallenges;
+    NSMutableArray * _challenges;
+    NSMutableDictionary * _sites;
 }
 
 + (void)initialize;

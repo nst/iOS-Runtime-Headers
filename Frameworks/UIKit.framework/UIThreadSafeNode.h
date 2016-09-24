@@ -3,7 +3,7 @@
  */
 
 @interface UIThreadSafeNode : NSObject {
-    DOMNode *_node;
+    DOMNode * _node;
 }
 
 + (id)threadSafeNodeWithNode:(id)arg1;

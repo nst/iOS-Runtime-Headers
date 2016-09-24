@@ -3,8 +3,8 @@
  */
 
 @interface CKDFetchWebAuthTokenURLRequest : CKDURLRequest {
-    NSString *_APIToken;
-    id /* block */ _tokenFetchedBlock;
+    NSString * _APIToken;
+    id /* block */  _tokenFetchedBlock;
 }
 
 @property (nonatomic, copy) NSString *APIToken;

@@ -5,9 +5,9 @@
 @interface CKDPGetLikesRequest : PBRequest <NSCopying> {
     struct { 
         unsigned int limit : 1; 
-    } _has;
-    CKDPLikedId *_identifier;
-    unsigned int _limit;
+    }  _has;
+    CKDPLikedId * _identifier;
+    unsigned int  _limit;
 }
 
 @property (nonatomic, readonly) BOOL hasIdentifier;

@@ -3,9 +3,9 @@
  */
 
 @interface BWFigCaptureDeviceClient : NSObject {
-    int _clientID;
-    id /* block */ _deviceAvailabilityChangedHandler;
-    int _pid;
+    int  _clientID;
+    id /* block */  _deviceAvailabilityChangedHandler;
+    int  _pid;
 }
 
 @property (nonatomic, readonly) int clientID;

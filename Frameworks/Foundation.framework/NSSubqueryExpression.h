@@ -3,9 +3,9 @@
  */
 
 @interface NSSubqueryExpression : NSExpression {
-    NSExpression *_collection;
-    NSPredicate *_subpredicate;
-    NSExpression *_variableExpression;
+    NSExpression * _collection;
+    NSPredicate * _subpredicate;
+    NSExpression * _variableExpression;
 }
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation

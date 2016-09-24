@@ -3,11 +3,11 @@
  */
 
 @interface CTMessagePart : NSObject {
-    NSString *_contentId;
-    NSString *_contentLocation;
-    NSString *_contentType;
-    NSMutableDictionary *_contentTypeParams;
-    NSData *_data;
+    NSString * _contentId;
+    NSString * _contentLocation;
+    NSString * _contentType;
+    NSMutableDictionary * _contentTypeParams;
+    NSData * _data;
 }
 
 @property (nonatomic, copy) NSString *contentId;

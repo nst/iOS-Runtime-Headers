@@ -3,7 +3,7 @@
  */
 
 @interface IMScheduledUpdater : IMManualUpdater {
-    NSCountedSet *_holdingUpdatesKeys;
+    NSCountedSet * _holdingUpdatesKeys;
 }
 
 @property (nonatomic, retain) NSCountedSet *holdingUpdatesKeys;

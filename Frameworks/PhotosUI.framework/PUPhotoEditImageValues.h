@@ -3,19 +3,19 @@
  */
 
 @interface PUPhotoEditImageValues : NSObject {
-    BOOL _complete;
-    NSDictionary *_smartBlackAndWhiteStatistics;
-    float _smartColorAutoSuggestion;
-    NSDictionary *_smartColorStatistics;
-    float _smartToneAutoSuggestion;
-    NSDictionary *_smartToneStatistics;
+    BOOL  _complete;
+    NSDictionary * _smartBlackAndWhiteStatistics;
+    double  _smartColorAutoSuggestion;
+    NSDictionary * _smartColorStatistics;
+    double  _smartToneAutoSuggestion;
+    NSDictionary * _smartToneStatistics;
 }
 
 @property (getter=isComplete) BOOL complete;
 @property (copy) NSDictionary *smartBlackAndWhiteStatistics;
-@property float smartColorAutoSuggestion;
+@property double smartColorAutoSuggestion;
 @property (copy) NSDictionary *smartColorStatistics;
-@property float smartToneAutoSuggestion;
+@property double smartToneAutoSuggestion;
 @property (copy) NSDictionary *smartToneStatistics;
 
 - (void).cxx_destruct;

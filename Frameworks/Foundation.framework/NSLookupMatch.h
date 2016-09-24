@@ -3,14 +3,14 @@
  */
 
 @interface NSLookupMatch : NSObject {
-    NSTextCheckingResult *_dataDetectorResult;
-    NSString *_languageIdentifier;
-    unsigned int _matchType;
+    NSTextCheckingResult * _dataDetectorResult;
+    NSString * _languageIdentifier;
+    unsigned int  _matchType;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
-    double _score;
+    }  _range;
+    double  _score;
 }
 
 @property (retain) NSTextCheckingResult *dataDetectorResult;

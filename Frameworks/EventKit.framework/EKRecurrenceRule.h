@@ -3,8 +3,8 @@
  */
 
 @interface EKRecurrenceRule : EKObject <NSCopying> {
-    EKRecurrenceEnd *_cachedEnd;
-    BOOL _usesEndDate;
+    EKRecurrenceEnd * _cachedEnd;
+    BOOL  _usesEndDate;
 }
 
 @property (nonatomic, readonly) NSString *UUID;
@@ -32,6 +32,7 @@
 + (id)iCalendarValueFromRecurrenceType:(int)arg1;
 + (id)recurrenceRuleWithType:(int)arg1 interval:(unsigned int)arg2 end:(id)arg3;
 
+- (void).cxx_destruct;
 - (id)UUID;
 - (id)_persistentRule;
 - (id)cachedEnd;
@@ -41,7 +42,6 @@
 - (id)daysOfTheMonth;
 - (id)daysOfTheWeek;
 - (id)daysOfTheYear;
-- (void)dealloc;
 - (id)description;
 - (BOOL)dirtyStateMayAffectExceptionDates;
 - (int)firstDayOfTheWeek;

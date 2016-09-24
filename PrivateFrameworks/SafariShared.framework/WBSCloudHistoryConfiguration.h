@@ -3,13 +3,13 @@
  */
 
 @interface WBSCloudHistoryConfiguration : NSObject {
-    unsigned int _maximumRequestCharacterCount;
-    NSString *_multipleDeviceFetchChangesThrottlingPolicyString;
-    NSString *_multipleDeviceSaveChangesThrottlingPolicyString;
-    NSString *_singleDeviceFetchChangesThrottlingPolicyString;
-    NSString *_singleDeviceSaveChangesThrottlingPolicyString;
-    NSString *_syncCircleSizeRetrievalThrottlingPolicyString;
-    double _syncWindow;
+    unsigned int  _maximumRequestCharacterCount;
+    NSString * _multipleDeviceFetchChangesThrottlingPolicyString;
+    NSString * _multipleDeviceSaveChangesThrottlingPolicyString;
+    NSString * _singleDeviceFetchChangesThrottlingPolicyString;
+    NSString * _singleDeviceSaveChangesThrottlingPolicyString;
+    NSString * _syncCircleSizeRetrievalThrottlingPolicyString;
+    double  _syncWindow;
 }
 
 @property unsigned int maximumRequestCharacterCount;

@@ -3,9 +3,9 @@
  */
 
 @interface CalDAVMultiMoveWithFallbackTaskGroup : CoreDAVMultiMoveWithFallbackTaskGroup {
-    NSMutableDictionary *_destinationEntityScheduleTags;
-    BOOL _isAutoScheduleSupported;
-    NSDictionary *_sourceEntityScheduleTags;
+    NSMutableDictionary * _destinationEntityScheduleTags;
+    BOOL  _isAutoScheduleSupported;
+    NSDictionary * _sourceEntityScheduleTags;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *destinationEntityScheduleTags;

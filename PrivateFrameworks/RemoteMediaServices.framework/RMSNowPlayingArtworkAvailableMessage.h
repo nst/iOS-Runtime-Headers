@@ -3,11 +3,11 @@
  */
 
 @interface RMSNowPlayingArtworkAvailableMessage : PBCodable <NSCopying> {
-    NSString *_artworkIdentifier;
+    NSString * _artworkIdentifier;
     struct { 
         unsigned int sessionIdentifier : 1; 
-    } _has;
-    int _sessionIdentifier;
+    }  _has;
+    int  _sessionIdentifier;
 }
 
 @property (nonatomic, retain) NSString *artworkIdentifier;

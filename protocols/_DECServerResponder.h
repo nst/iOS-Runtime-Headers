@@ -6,7 +6,6 @@
 @required
 
 - (void)addServer:(id <_DECServer>)arg1;
-- (void)initializeCaches;
 - (void)removeServer:(id <_DECServer>)arg1;
 - (void)restoreModels;
 - (void)saveModels;

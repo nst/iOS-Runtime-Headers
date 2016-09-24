@@ -3,12 +3,12 @@
  */
 
 @interface _UIAlertControllerVisualStyleAlertTVBackgroundView : UIView {
-    _UIBackdropView *_backdropView;
-    UIImageView *_noiseView;
+    _UIBackdropView * _backdropView;
+    UIView * _noiseView;
 }
 
 @property (nonatomic, retain) _UIBackdropView *backdropView;
-@property (nonatomic, retain) UIImageView *noiseView;
+@property (nonatomic, retain) UIView *noiseView;
 
 - (void).cxx_destruct;
 - (id)backdropView;

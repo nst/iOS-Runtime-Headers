@@ -3,12 +3,12 @@
  */
 
 @interface AWDIDSLocalMessageTimedOut : PBCodable <NSCopying> {
-    long long _expirationDate;
+    long long  _expirationDate;
     struct { 
         unsigned int expirationDate : 1; 
         unsigned int timestamp : 1; 
-    } _has;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) long long expirationDate;

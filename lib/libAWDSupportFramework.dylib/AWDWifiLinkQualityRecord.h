@@ -3,18 +3,18 @@
  */
 
 @interface AWDWifiLinkQualityRecord : PBCodable <NSCopying> {
-    unsigned int _arpFailureCount;
-    unsigned int _bcnPerSign;
-    unsigned int _bcnRcvs;
-    unsigned int _bcnSched;
-    unsigned int _dnsServersImpacted;
-    unsigned int _dnsServersTotal;
-    unsigned int _fwTxFail;
-    unsigned int _fwTxFrames;
-    unsigned int _fwTxPerSign;
-    unsigned int _fwTxRetrans;
-    double _gateOpenTime;
-    unsigned int _gwArpExpiry;
+    unsigned int  _arpFailureCount;
+    unsigned int  _bcnPerSign;
+    unsigned int  _bcnRcvs;
+    unsigned int  _bcnSched;
+    unsigned int  _dnsServersImpacted;
+    unsigned int  _dnsServersTotal;
+    unsigned int  _fwTxFail;
+    unsigned int  _fwTxFrames;
+    unsigned int  _fwTxPerSign;
+    unsigned int  _fwTxRetrans;
+    double  _gateOpenTime;
+    unsigned int  _gwArpExpiry;
     struct { 
         unsigned int gateOpenTime : 1; 
         unsigned int trafficWatchDuration : 1; 
@@ -44,23 +44,23 @@
         unsigned int usrImpact : 1; 
         unsigned int usrInput : 1; 
         unsigned int validState : 1; 
-    } _has;
-    unsigned int _netScore;
-    int _rssi;
-    unsigned int _rxFrames;
-    unsigned int _sympAwdCode;
-    unsigned int _sympSign;
-    double _trafficWatchDuration;
-    unsigned int _trafficWatchRx;
-    double _trafficWatchTime;
-    unsigned int _trgDisc;
-    unsigned int _txFail;
-    unsigned int _txFrames;
-    unsigned int _txPerSign;
-    unsigned int _txRetrans;
-    unsigned int _usrImpact;
-    unsigned int _usrInput;
-    unsigned int _validState;
+    }  _has;
+    unsigned int  _netScore;
+    int  _rssi;
+    unsigned int  _rxFrames;
+    unsigned int  _sympAwdCode;
+    unsigned int  _sympSign;
+    double  _trafficWatchDuration;
+    unsigned int  _trafficWatchRx;
+    double  _trafficWatchTime;
+    unsigned int  _trgDisc;
+    unsigned int  _txFail;
+    unsigned int  _txFrames;
+    unsigned int  _txPerSign;
+    unsigned int  _txRetrans;
+    unsigned int  _usrImpact;
+    unsigned int  _usrInput;
+    unsigned int  _validState;
 }
 
 @property (nonatomic) unsigned int arpFailureCount;

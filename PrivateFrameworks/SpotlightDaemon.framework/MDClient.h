@@ -3,11 +3,11 @@
  */
 
 @interface MDClient : NSObject {
-    NSString *_bundleID;
-    <NSXPCProxyCreating> *_clientLink;
-    NSXPCConnection *_connection;
-    NSNumber *_processID;
-    NSString *_processName;
+    NSString * _bundleID;
+    <NSXPCProxyCreating> * _clientLink;
+    NSXPCConnection * _connection;
+    NSNumber * _processID;
+    NSString * _processName;
 }
 
 @property (retain) NSString *bundleID;

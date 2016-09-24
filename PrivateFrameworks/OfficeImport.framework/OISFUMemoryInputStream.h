@@ -3,10 +3,10 @@
  */
 
 @interface OISFUMemoryInputStream : NSObject <OISFUBufferedInputStream> {
-    const char *mCurrent;
-    NSData *mData;
-    const char *mEnd;
-    const char *mStart;
+    const char * mCurrent;
+    NSData * mData;
+    const char * mEnd;
+    const char * mStart;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -22,10 +22,10 @@
 - (void)enableSystemCaching;
 - (id)initWithData:(id)arg1;
 - (id)initWithData:(id)arg1 offset:(unsigned long)arg2 length:(unsigned long)arg3;
-- (long long)offset;
+- (int)offset;
 - (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
 - (unsigned long)readToOwnBuffer:(const char **)arg1 size:(unsigned long)arg2;
-- (void)seekToOffset:(long long)arg1;
-- (BOOL)seekWithinBufferToOffset:(long long)arg1;
+- (void)seekToOffset:(int)arg1;
+- (BOOL)seekWithinBufferToOffset:(int)arg1;
 
 @end

@@ -3,9 +3,9 @@
  */
 
 @interface NPSDomainAccessor : NSObject {
-    NSObject<OS_dispatch_queue> *_externalQueue;
-    NPSDomainAccessorInternal *_internalAccessor;
-    NSObject<OS_dispatch_queue> *_invalidationQueue;
+    NSObject<OS_dispatch_queue> * _externalQueue;
+    NPSDomainAccessorInternal * _internalAccessor;
+    NSObject<OS_dispatch_queue> * _invalidationQueue;
 }
 
 @property (nonatomic, readonly) NSString *domain;
@@ -14,8 +14,11 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *invalidationQueue;
 @property (nonatomic, readonly) NSUUID *pairingID;
 
+// Image: /System/Library/PrivateFrameworks/NanoPreferencesSync.framework/NanoPreferencesSync
+
 + (id)copyDomainList;
 + (id)copyDomainListForPairingID:(id)arg1 pairingDataStore:(id)arg2;
++ (void)initialize;
 + (void)resolveActivePairedDevicePairingID:(id*)arg1 pairingDataStore:(id*)arg2;
 
 - (void).cxx_destruct;
@@ -45,8 +48,8 @@
 - (id)internalAccessor;
 - (void)invalidate;
 - (id)invalidationQueue;
-- (long long)longForKey:(id)arg1;
-- (long long)longForKey:(id)arg1 keyExistsAndHasValidFormat:(BOOL*)arg2;
+- (int)longForKey:(id)arg1;
+- (int)longForKey:(id)arg1 keyExistsAndHasValidFormat:(BOOL*)arg2;
 - (id)objectForKey:(id)arg1;
 - (void)objectForKey:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)pairingID;
@@ -66,5 +69,9 @@
 - (id)stringForKey:(id)arg1;
 - (id)synchronize;
 - (void)synchronizeWithCompletionHandler:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NanoPhotosUICompanion.framework/NanoPhotosUICompanion
+
++ (id)_npto_sharedDomain;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface FMDynamicTypeLabel : UILabel {
-    BOOL _isAccessibilitySizesPrevented;
-    id _token;
+    BOOL  _isAccessibilitySizesPrevented;
+    id  _token;
 }
 
 @property (nonatomic) BOOL isAccessibilitySizesPrevented;

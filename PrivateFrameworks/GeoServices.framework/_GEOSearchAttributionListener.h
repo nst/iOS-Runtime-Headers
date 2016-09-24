@@ -3,10 +3,10 @@
  */
 
 @interface _GEOSearchAttributionListener : NSObject {
-    NSMutableArray *_completionHandlers;
-    NSMutableArray *_errorHandlers;
-    NSString *_identifier;
-    unsigned int _version;
+    NSMutableArray * _completionHandlers;
+    NSMutableArray * _errorHandlers;
+    NSString * _identifier;
+    unsigned int  _version;
 }
 
 @property (nonatomic, readonly) NSString *identifier;

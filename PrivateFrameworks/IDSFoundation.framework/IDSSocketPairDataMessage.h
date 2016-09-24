@@ -3,17 +3,17 @@
  */
 
 @interface IDSSocketPairDataMessage : IDSSocketPairMessage {
-    BOOL _compressed;
-    NSData *_data;
-    BOOL _expectsPeerResponse;
-    NSDate *_expiryDate;
-    NSString *_messageUUID;
-    unsigned int _payloadLength;
-    unsigned int _payloadOffset;
-    NSString *_peerResponseIdentifier;
-    unsigned int _sequenceNumber;
-    unsigned short _streamID;
-    BOOL _wantsAppAck;
+    BOOL  _compressed;
+    NSData * _data;
+    BOOL  _expectsPeerResponse;
+    NSDate * _expiryDate;
+    NSString * _messageUUID;
+    unsigned int  _payloadLength;
+    unsigned int  _payloadOffset;
+    NSString * _peerResponseIdentifier;
+    unsigned int  _sequenceNumber;
+    unsigned short  _streamID;
+    BOOL  _wantsAppAck;
 }
 
 @property (nonatomic) BOOL compressed;

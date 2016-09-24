@@ -5,15 +5,24 @@
 @interface GEOPDReverseGeocodingParameters : PBCodable <NSCopying> {
     struct { 
         unsigned int placeTypeLimit : 1; 
-    } _has;
-    NSMutableArray *_locations;
-    int _placeTypeLimit;
+        unsigned int preserveOriginalLocation : 1; 
+    }  _has;
+    NSMutableArray * _locations;
+    int  _placeTypeLimit;
+    BOOL  _preserveOriginalLocation;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic) BOOL hasPlaceTypeLimit;
+@property (nonatomic) BOOL hasPreserveOriginalLocation;
 @property (nonatomic, retain) NSMutableArray *locations;
 @property (nonatomic) int placeTypeLimit;
+@property (nonatomic) BOOL preserveOriginalLocation;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
++ (Class)locationType;
+
+- (int)StringAsPlaceTypeLimit:(id)arg1;
 - (void)addLocation:(id)arg1;
 - (void)clearLocations;
 - (void)copyTo:(id)arg1;
@@ -22,6 +31,7 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasPlaceTypeLimit;
+- (BOOL)hasPreserveOriginalLocation;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)locationAtIndex:(unsigned int)arg1;
@@ -29,10 +39,15 @@
 - (unsigned int)locationsCount;
 - (void)mergeFrom:(id)arg1;
 - (int)placeTypeLimit;
+- (id)placeTypeLimitAsString:(int)arg1;
+- (BOOL)preserveOriginalLocation;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasPlaceTypeLimit:(BOOL)arg1;
+- (void)setHasPreserveOriginalLocation:(BOOL)arg1;
 - (void)setLocations:(id)arg1;
 - (void)setPlaceTypeLimit:(int)arg1;
+- (void)setPreserveOriginalLocation:(BOOL)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

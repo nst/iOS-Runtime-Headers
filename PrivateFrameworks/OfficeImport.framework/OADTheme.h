@@ -3,9 +3,9 @@
  */
 
 @interface OADTheme : NSObject {
-    OADBaseStyles *mBaseStyles;
-    OADDrawableDefaults *mDrawableDefaults;
-    NSString *mName;
+    OADBaseStyles * mBaseStyles;
+    OADDrawableDefaults * mDrawableDefaults;
+    NSString * mName;
 }
 
 @property (nonatomic, retain) OADBaseStyles *baseStyles;

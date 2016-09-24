@@ -3,9 +3,9 @@
  */
 
 @interface _UIKeyboardArbiter_ForSpringBoard : NSObject <_UIKeyboardArbiterLink> {
-    SBUIScene *_scene;
-    SBUIWorkspace *_workspace;
-    _UIKeyboardArbiter *owner;
+    SBUIScene * _scene;
+    SBUIWorkspace * _workspace;
+    _UIKeyboardArbiter * owner;
 }
 
 @property (readonly, copy) NSString *debugDescription;

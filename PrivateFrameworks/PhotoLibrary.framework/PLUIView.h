@@ -3,7 +3,7 @@
  */
 
 @interface PLUIView : UIView {
-    BOOL _disableViewInPopoverRule;
+    BOOL  _disableViewInPopoverRule;
 }
 
 @property (nonatomic) BOOL disableViewInPopoverRule;

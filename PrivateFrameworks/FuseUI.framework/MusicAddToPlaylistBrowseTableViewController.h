@@ -3,10 +3,10 @@
  */
 
 @interface MusicAddToPlaylistBrowseTableViewController : MusicLibraryBrowseTableViewController <MusicNoContentViewDelegate> {
-    MusicNoContentView *_noContentView;
-    NSOperationQueue *_platformLookupQueue;
-    MusicEntityValueContext *_prepopulatedItemsEntityValueContext;
-    NSArray *_prepopulatedMediaItems;
+    MusicNoContentView * _noContentView;
+    NSOperationQueue * _platformLookupQueue;
+    MusicEntityValueContext * _prepopulatedItemsEntityValueContext;
+    NSArray * _prepopulatedMediaItems;
 }
 
 @property (readonly, copy) NSString *debugDescription;

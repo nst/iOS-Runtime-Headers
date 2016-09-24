@@ -3,9 +3,9 @@
  */
 
 @interface CLIndoorTileEvictionPolicy : NSObject <NSSecureCoding> {
-    NSObject<OS_xpc_object> *_activity;
-    BOOL _forceClean;
-    double _maxModifiedAge;
+    NSObject<OS_xpc_object> * _activity;
+    BOOL  _forceClean;
+    double  _maxModifiedAge;
 }
 
 @property (nonatomic, retain) NSObject<OS_xpc_object> *activity;

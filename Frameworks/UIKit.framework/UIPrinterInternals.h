@@ -3,7 +3,7 @@
  */
 
 @interface UIPrinterInternals : NSObject {
-    PKPrinter *_printer;
+    PKPrinter * _printer;
 }
 
 - (void).cxx_destruct;

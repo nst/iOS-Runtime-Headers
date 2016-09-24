@@ -3,15 +3,16 @@
  */
 
 @interface ADPrerollView : UIView <ADPrerollBottomBarDelegate, ADPrerollTopBarDelegate, UIGestureRecognizerDelegate> {
-    double _accumulatedViewingTime;
-    BOOL _barsVisible;
-    ADPrerollBottomBar *_bottomBar;
-    <ADPrerollViewDelegate> *_delegate;
-    BOOL _hasAction;
-    NSTimer *_passiveWatchingTimer;
-    BOOL _skipButtonCountingDown;
-    UIImageView *_swooshView;
-    ADPrerollTopBar *_topBar;
+    double  _accumulatedViewingTime;
+    BOOL  _barsVisible;
+    ADPrerollBottomBar * _bottomBar;
+    <ADPrerollViewDelegate> * _delegate;
+    BOOL  _hasAction;
+    NSTimer * _passiveWatchingTimer;
+    ADPrivacyButton * _privacyButton;
+    BOOL  _skipButtonCountingDown;
+    UIImageView * _swooshView;
+    ADPrerollTopBar * _topBar;
 }
 
 @property (nonatomic) double accumulatedViewingTime;
@@ -23,6 +24,7 @@
 @property (nonatomic) BOOL hasAction;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSTimer *passiveWatchingTimer;
+@property (nonatomic, retain) ADPrivacyButton *privacyButton;
 @property (nonatomic) BOOL skipButtonCountingDown;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIImageView *swooshView;
@@ -32,6 +34,7 @@
 
 - (void)_firePassiveWatchingTimer:(id)arg1;
 - (BOOL)_layoutForExpandedSize;
+- (void)_privacyButtonWasTapped;
 - (void)_restartPassiveWatchingTimer;
 - (void)_singleTapGestureRecognized:(id)arg1;
 - (BOOL)accessibilityPerformEscape;
@@ -47,13 +50,15 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)displayAsPaused:(BOOL)arg1;
+- (void)enablePrivacyButton;
 - (void)fadeToBlackWithCompletion:(id /* block */)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)hasAction;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)passiveWatchingTimer;
+- (id)privacyButton;
 - (void)setAccumulatedViewingTime:(double)arg1;
 - (void)setBarsVisible:(BOOL)arg1;
 - (void)setBottomBar:(id)arg1;
@@ -61,6 +66,7 @@
 - (void)setElapsedTime:(double)arg1 totalTime:(double)arg2;
 - (void)setHasAction:(BOOL)arg1;
 - (void)setPassiveWatchingTimer:(id)arg1;
+- (void)setPrivacyButton:(id)arg1;
 - (void)setSkipButtonCountingDown:(BOOL)arg1;
 - (void)setSwooshView:(id)arg1;
 - (void)setTopBar:(id)arg1;

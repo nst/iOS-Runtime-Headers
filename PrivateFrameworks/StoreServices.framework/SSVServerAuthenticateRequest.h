@@ -3,8 +3,8 @@
  */
 
 @interface SSVServerAuthenticateRequest : SSRequest <SSXPCCoding> {
-    SSAuthenticationContext *_authenticationContext;
-    NSObject<OS_xpc_object> *_dialog;
+    SSAuthenticationContext * _authenticationContext;
+    NSObject<OS_xpc_object> * _dialog;
 }
 
 @property (nonatomic, copy) SSAuthenticationContext *authenticationContext;

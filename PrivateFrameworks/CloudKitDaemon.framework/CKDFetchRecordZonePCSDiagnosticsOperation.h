@@ -3,11 +3,11 @@
  */
 
 @interface CKDFetchRecordZonePCSDiagnosticsOperation : CKDDatabaseOperation {
-    NSString *_identityStatus;
-    NSDictionary *_invalidPCSByZoneID;
-    CKPCSDiagnosticInformation *_pcsDiagnosticInfo;
-    NSArray *_recordZoneIDs;
-    NSDictionary *_validPCSByZoneID;
+    NSString * _identityStatus;
+    NSDictionary * _invalidPCSByZoneID;
+    CKPCSDiagnosticInformation * _pcsDiagnosticInfo;
+    NSArray * _recordZoneIDs;
+    NSDictionary * _validPCSByZoneID;
 }
 
 @property (nonatomic, retain) NSString *identityStatus;
@@ -18,7 +18,7 @@
 
 - (void).cxx_destruct;
 - (void)_handleRecordZoneFetch:(id)arg1 zoneID:(id)arg2 responseCode:(id)arg3;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (id)identityStatus;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (id)invalidPCSByZoneID;

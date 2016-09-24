@@ -3,8 +3,8 @@
  */
 
 @interface PGPictureInPictureApplication : NSObject {
-    NSString *_bundleIdentifier;
-    int _processIdentifier;
+    NSString * _bundleIdentifier;
+    int  _processIdentifier;
 }
 
 @property (nonatomic, readonly) NSString *bundleIdentifier;

@@ -3,28 +3,28 @@
  */
 
 @interface AUUIAlert : NSObject <UIAlertViewDelegate> {
-    id alert;
-    UIAlertAction *alternateAction;
-    int alternateButtonIndex;
-    NSString *alternateButtonTitle;
-    UIAlertAction *cancelAction;
-    int cancelButtonIndex;
-    NSString *cancelButtonTitle;
-    id context;
-    <AUUIAlertDelegate> *delegate;
-    UIAlertAction *destructiveAction;
-    int destructiveButtonIndex;
-    NSString *destructiveButtonTitle;
-    NSString *message;
-    BOOL modernAlerts;
-    UIAlertAction *okAction;
-    int okButtonIndex;
-    NSString *okButtonTitle;
-    BOOL prepared;
-    BOOL stackButtons;
-    int tag;
-    NSString *title;
-    id viewController;
+    id  alert;
+    UIAlertAction * alternateAction;
+    int  alternateButtonIndex;
+    NSString * alternateButtonTitle;
+    UIAlertAction * cancelAction;
+    int  cancelButtonIndex;
+    NSString * cancelButtonTitle;
+    id  context;
+    <AUUIAlertDelegate> * delegate;
+    UIAlertAction * destructiveAction;
+    int  destructiveButtonIndex;
+    NSString * destructiveButtonTitle;
+    NSString * message;
+    BOOL  modernAlerts;
+    UIAlertAction * okAction;
+    int  okButtonIndex;
+    NSString * okButtonTitle;
+    BOOL  prepared;
+    BOOL  stackButtons;
+    int  tag;
+    NSString * title;
+    id  viewController;
 }
 
 @property (nonatomic, retain) id alert;

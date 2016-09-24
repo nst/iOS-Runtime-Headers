@@ -3,19 +3,19 @@
  */
 
 @interface __NSCFTCPIOStreamTask : __NSCFURLSessionTask {
-    NSData *_TCPConnectionMetadata;
-    NSError *_cancelError;
-    unsigned char _captureStreamsUponCompletion;
-    id /* block */ _disavow;
+    NSData * __TCPConnectionMetadata;
+    NSError * _cancelError;
+    unsigned char  _captureStreamsUponCompletion;
+    id /* block */  _disavow;
     struct shared_ptr<TCPIO_EstablishBase> { 
         struct TCPIO_EstablishBase {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _establish;
+    }  _establish;
     struct shared_ptr<TCPIOConnectionObjCPP> { 
         struct TCPIOConnectionObjCPP {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _ios;
-    unsigned char _secure;
+    }  _ios;
+    unsigned char  _secure;
 }
 
 @property (copy) NSData *_TCPConnectionMetadata;

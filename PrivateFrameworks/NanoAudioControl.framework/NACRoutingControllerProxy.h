@@ -3,12 +3,12 @@
  */
 
 @interface NACRoutingControllerProxy : NSObject <NACRoutingController> {
-    NSArray *_availableAudioRoutes;
-    NSString *_category;
-    <NACRoutingControllerDelegate> *_delegate;
-    BOOL _isObserving;
-    NACAudioRoute *_pickedRoute;
-    NACXPCClient *_xpcClient;
+    NSArray * _availableAudioRoutes;
+    NSString * _category;
+    <NACRoutingControllerDelegate> * _delegate;
+    BOOL  _isObserving;
+    NACAudioRoute * _pickedRoute;
+    NACXPCClient * _xpcClient;
 }
 
 @property (nonatomic, readonly) NSArray *availableAudioRoutes;

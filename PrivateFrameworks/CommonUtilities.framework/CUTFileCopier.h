@@ -3,15 +3,15 @@
  */
 
 @interface CUTFileCopier : NSObject {
-    void *_BOMCopier;
-    <CUTFileCopierDelegate> *_delegate;
-    BOOL _didErrorOccur;
-    id _identifier;
-    BOOL _inProgress;
-    NSURL *_inputURL;
-    unsigned int _operation;
-    NSURL *_outputURL;
-    BOOL _shouldCancel;
+    void * _BOMCopier;
+    <CUTFileCopierDelegate> * _delegate;
+    BOOL  _didErrorOccur;
+    id  _identifier;
+    BOOL  _inProgress;
+    NSURL * _inputURL;
+    unsigned int  _operation;
+    NSURL * _outputURL;
+    BOOL  _shouldCancel;
 }
 
 @property void*_BOMCopier;

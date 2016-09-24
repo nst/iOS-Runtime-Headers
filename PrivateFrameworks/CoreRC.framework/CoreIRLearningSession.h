@@ -3,10 +3,10 @@
  */
 
 @interface CoreIRLearningSession : NSObject <NSCopying, NSSecureCoding> {
-    <CoreIRLearningSessionBridgeDelegate> *_bridgeDelegate;
-    <CoreIRLearningSessionDelegate> *_delegate;
-    CoreIRDevice *_owningDevice;
-    unsigned int _reason;
+    <CoreIRLearningSessionBridgeDelegate> * _bridgeDelegate;
+    <CoreIRLearningSessionDelegate> * _delegate;
+    CoreIRDevice * _owningDevice;
+    unsigned int  _reason;
 }
 
 @property (nonatomic) <CoreIRLearningSessionBridgeDelegate> *bridgeDelegate;

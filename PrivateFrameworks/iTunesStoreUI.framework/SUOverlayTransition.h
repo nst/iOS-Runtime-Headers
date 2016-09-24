@@ -3,9 +3,9 @@
  */
 
 @interface SUOverlayTransition : NSObject <NSCoding, NSCopying> {
-    double _duration;
-    SUDOMElement *_sourceElement;
-    int _type;
+    double  _duration;
+    SUDOMElement * _sourceElement;
+    int  _type;
 }
 
 @property (nonatomic) double duration;

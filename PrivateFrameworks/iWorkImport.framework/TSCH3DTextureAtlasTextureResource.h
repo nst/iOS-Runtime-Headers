@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DTextureAtlasTextureResource : TSCH3DResource <TSCHUnretainedParent> {
-    TSCH3DTextureAtlasTexture *mParent;
+    TSCH3DTextureAtlasTexture * mParent;
 }
 
 - (void)clearParent;

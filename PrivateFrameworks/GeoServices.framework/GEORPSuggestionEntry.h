@@ -3,15 +3,15 @@
  */
 
 @interface GEORPSuggestionEntry : PBCodable <NSCopying> {
-    NSMutableArray *_displayLines;
+    NSMutableArray * _displayLines;
     struct { 
         unsigned int serverSearchCompletionEntryIndex : 1; 
         unsigned int serverSearchCompletionSectionIndex : 1; 
         unsigned int type : 1; 
-    } _has;
-    unsigned int _serverSearchCompletionEntryIndex;
-    unsigned int _serverSearchCompletionSectionIndex;
-    int _type;
+    }  _has;
+    unsigned int  _serverSearchCompletionEntryIndex;
+    unsigned int  _serverSearchCompletionSectionIndex;
+    int  _type;
 }
 
 @property (nonatomic, retain) NSMutableArray *displayLines;
@@ -22,6 +22,9 @@
 @property (nonatomic) unsigned int serverSearchCompletionSectionIndex;
 @property (nonatomic) int type;
 
++ (Class)displayLineType;
+
+- (int)StringAsType:(id)arg1;
 - (void)addDisplayLine:(id)arg1;
 - (void)clearDisplayLines;
 - (void)copyTo:(id)arg1;
@@ -49,6 +52,7 @@
 - (void)setServerSearchCompletionSectionIndex:(unsigned int)arg1;
 - (void)setType:(int)arg1;
 - (int)type;
+- (id)typeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

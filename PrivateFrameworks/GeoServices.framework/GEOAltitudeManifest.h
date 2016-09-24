@@ -3,7 +3,7 @@
  */
 
 @interface GEOAltitudeManifest : NSObject <GEOResourceManifestTileGroupObserver, NSXMLParserDelegate> {
-    GEOAltitudeManifestReserved *_reserved;
+    GEOAltitudeManifestReserved * _reserved;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -21,7 +21,7 @@
 - (BOOL)hasDataVersionForRegion:(unsigned int)arg1;
 - (id)init;
 - (id)initWithoutObserver;
-- (BOOL)isValidTourId:(unsigned long long)arg1;
+- (BOOL)isValidTourId:(unsigned int)arg1;
 - (id)nameForRegion:(unsigned int)arg1;
 - (void)parseManifest:(id)arg1;
 - (BOOL)parseXml:(id)arg1;

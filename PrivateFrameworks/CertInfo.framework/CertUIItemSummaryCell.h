@@ -3,10 +3,10 @@
  */
 
 @interface CertUIItemSummaryCell : UITableViewCell {
-    UIImageView *_itemImageView;
-    UILabel *_itemSubtitleLabel;
-    UILabel *_itemTitleLabel;
-    UIView *_itemTitleView;
+    UIImageView * _itemImageView;
+    UILabel * _itemSubtitleLabel;
+    UILabel * _itemTitleLabel;
+    UIView * _itemTitleView;
 }
 
 @property (nonatomic, retain) UIImageView *itemImageView;

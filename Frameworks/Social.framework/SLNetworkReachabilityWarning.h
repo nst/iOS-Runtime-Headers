@@ -3,8 +3,8 @@
  */
 
 @interface SLNetworkReachabilityWarning : NSObject {
-    id /* block */ _completionHandler;
-    NSString *_serviceType;
+    id /* block */  _completionHandler;
+    NSString * _serviceType;
 }
 
 - (void).cxx_destruct;

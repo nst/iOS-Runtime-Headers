@@ -3,11 +3,11 @@
  */
 
 @interface _HDHealthServiceDiscoveryInfo : NSObject {
-    id /* block */ _discoveryHandler;
-    unsigned int _discoveryIdentifier;
-    NSMutableSet *_peripheralsUUIDs;
-    CBUUID *_serviceUUID;
-    NSObject<OS_dispatch_source> *_timeoutTimer;
+    id /* block */  _discoveryHandler;
+    unsigned int  _discoveryIdentifier;
+    NSMutableSet * _peripheralsUUIDs;
+    CBUUID * _serviceUUID;
+    NSObject<OS_dispatch_source> * _timeoutTimer;
 }
 
 @property (nonatomic, readonly) id /* block */ discoveryHandler;

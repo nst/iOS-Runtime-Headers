@@ -3,7 +3,7 @@
  */
 
 @interface CoreDAVMkcolResponseItem : CoreDAVItem {
-    NSMutableSet *_propStats;
+    NSMutableSet * _propStats;
 }
 
 @property (nonatomic, retain) NSMutableSet *propStats;

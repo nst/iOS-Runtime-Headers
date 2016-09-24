@@ -3,11 +3,11 @@
  */
 
 @interface PLNSNotificationOperatorComposition : NSObject {
-    NSArray *_notificationNames;
-    NSMutableArray *_notificationObservers;
-    PLOperator *_operator;
-    id /* block */ _operatorBlock;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    NSArray * _notificationNames;
+    NSMutableArray * _notificationObservers;
+    PLOperator * _operator;
+    id /* block */  _operatorBlock;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (readonly) NSString *notificationName;

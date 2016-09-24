@@ -3,9 +3,9 @@
  */
 
 @interface SKUIBrickSwooshPageSection : SKUIStorePageSection <SKUIMissingItemDelegate, SKUISwooshViewControllerDelegate> {
-    SKUIBrickSwooshArtworkLoader *_artworkLoader;
-    SKUIMissingItemLoader *_missingItemLoader;
-    SKUIBrickSwooshViewController *_swooshViewController;
+    SKUIBrickSwooshArtworkLoader * _artworkLoader;
+    SKUIMissingItemLoader * _missingItemLoader;
+    SKUIBrickSwooshViewController * _swooshViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -22,7 +22,7 @@
 - (id)_swooshViewController;
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
 - (id)cellForIndexPath:(id)arg1;
-- (struct CGSize { float x1; float x2; })cellSizeForIndexPath:(id)arg1;
+- (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
 - (void)collectionViewDidEndDisplayingCellForItemAtIndexPath:(id)arg1;
 - (void)dealloc;
 - (id)initWithPageComponent:(id)arg1;

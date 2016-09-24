@@ -3,8 +3,8 @@
  */
 
 @interface SKUIMenuBarViewElement : SKUIViewElement <SKUIMenuBarViewElement, _SKUIMenuBarViewElementConfigurationReloadDelegate> {
-    SKUIMenuBarViewElementConfiguration *_configuration;
-    NSArray *_titleViewElements;
+    SKUIMenuBarViewElementConfiguration * _configuration;
+    NSArray * _titleViewElements;
 }
 
 @property (nonatomic, retain) SKUIMenuBarViewElementConfiguration *configuration;

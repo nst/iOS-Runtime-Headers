@@ -3,20 +3,21 @@
  */
 
 @interface HDIDSMessageCenter : NSObject <IDSServiceDelegate> {
-    HDDaemon *_daemon;
-    <HDIDSMessageCenterDelegate> *_delegate;
-    NSMutableDictionary *_errorHandlers;
-    NSObject<OS_dispatch_source> *_expireTimer;
-    double _nextExpireTimerFireDate;
-    NSUUID *_pairingUUID;
-    NSMutableDictionary *_pbMapping;
-    HDIDSPersistentDictionary *_persistentContextStore;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_requestHandlers;
-    NSMutableDictionary *_responseHandlers;
-    IDSService *_service;
-    NSString *_serviceIdentifier;
-    NSString *_shortServiceIdentifier;
+    HDDaemon * _daemon;
+    <HDIDSMessageCenterDelegate> * _delegate;
+    NSMutableDictionary * _errorHandlers;
+    NSObject<OS_dispatch_source> * _expireTimer;
+    BOOL  _invalidated;
+    double  _nextExpireTimerFireDate;
+    NSUUID * _pairingUUID;
+    NSMutableDictionary * _pbMapping;
+    HDIDSPersistentDictionary * _persistentContextStore;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableDictionary * _requestHandlers;
+    NSMutableDictionary * _responseHandlers;
+    IDSService * _service;
+    NSString * _serviceIdentifier;
+    NSString * _shortServiceIdentifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -47,6 +48,7 @@
 - (id)deviceForFromID:(id)arg1;
 - (id)idsService;
 - (id)initWithIDSServiceIdentifier:(id)arg1 persistentDictionary:(id)arg2 queue:(id)arg3 daemon:(id)arg4;
+- (void)invalidate;
 - (void)mapPBRequest:(Class)arg1 toResponse:(Class)arg2 messageID:(unsigned short)arg3;
 - (id)nanoSyncDevices;
 - (id)queue;

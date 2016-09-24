@@ -3,8 +3,8 @@
  */
 
 @interface _GEOPlaceSearchCompletionGroup : NSObject <GEOCompletionGroup> {
-    NSArray *_items;
-    NSString *_localizedSectionHeader;
+    NSArray * _items;
+    NSString * _localizedSectionHeader;
 }
 
 @property (readonly, copy) NSString *debugDescription;

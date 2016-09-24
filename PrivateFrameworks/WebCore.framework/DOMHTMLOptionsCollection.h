@@ -9,7 +9,6 @@
 
 - (void)add:(id)arg1 index:(unsigned int)arg2;
 - (void)dealloc;
-- (void)finalize;
 - (id)item:(unsigned int)arg1;
 - (unsigned int)length;
 - (id)namedItem:(id)arg1;

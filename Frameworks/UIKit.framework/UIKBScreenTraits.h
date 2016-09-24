@@ -3,18 +3,18 @@
  */
 
 @interface UIKBScreenTraits : NSObject {
-    BOOL _isKeyboardMinorEdgeWidth;
-    float _keyboardWidth;
-    BOOL _knobInput;
-    int _orientation;
-    UIScreen *_screen;
-    BOOL _touchInput;
-    BOOL _touchpadInput;
+    BOOL  _isKeyboardMinorEdgeWidth;
+    double  _keyboardWidth;
+    BOOL  _knobInput;
+    int  _orientation;
+    UIScreen * _screen;
+    BOOL  _touchInput;
+    BOOL  _touchpadInput;
 }
 
 @property (nonatomic, readonly) int idiom;
 @property (nonatomic, readonly) BOOL isKeyboardMinorEdgeWidth;
-@property (nonatomic) float keyboardWidth;
+@property (nonatomic) double keyboardWidth;
 @property (nonatomic, readonly) BOOL knobInput;
 @property (nonatomic) int orientation;
 @property (nonatomic, readonly) UIScreen *screen;

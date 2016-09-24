@@ -2,20 +2,21 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUOverOneUpPresentationSession : NSObject <PLDismissableViewController, PUAvalancheReviewControllerDelegate, PUCollectionViewLayoutProvider, PUOneUpPhotosSharingTransitionDelegate, PUPhotoEditViewControllerDelegate, PUPhotosSharingViewControllerDelegate, PUPresentingPhotoBrowserController, PUSlideshowViewControllerDelegate, PUVideoEditViewControllerDelegate> {
-    PUAvalancheReviewController *__avalancheReviewController;
-    PUEditViewController *__editViewController;
-    BOOL __needsUpdatePresentedViewControllers;
-    struct NSHashTable { Class x1; } *__presentedViewControllers;
-    PUPhotosSharingViewController *__sharingViewController;
-    PUSlideshowViewController *__slideshowViewController;
-    PUAssetReference *__stashedAssetReference;
-    <PUOverOneUpPresentationSessionBarsDelegate> *_barsDelegate;
+@interface PUOverOneUpPresentationSession : NSObject <PLDismissableViewController, PUAvalancheReviewControllerDelegate, PUCollectionViewLayoutProvider, PUOneUpPhotosSharingTransitionDelegate, PUPhotoEditViewControllerPresentationDelegate, PUPhotoMarkupViewControllerObserver, PUPhotosSharingViewControllerDelegate, PUSlideshowViewControllerDelegate, PUVideoEditViewControllerPresentationDelegate> {
+    PUAvalancheReviewController * __avalancheReviewController;
+    PUEditViewController * __editViewController;
+    BOOL  __needsUpdatePresentedViewControllers;
+    PUPhotoMarkupViewController * __photoMarkupViewController;
+    struct NSHashTable { Class x1; } * __presentedViewControllers;
+    PUPhotosSharingViewController * __sharingViewController;
+    PUSlideshowViewController * __slideshowViewController;
+    PUAssetReference * __stashedAssetReference;
+    <PUOverOneUpPresentationSessionBarsDelegate> * _barsDelegate;
     struct { 
         BOOL respondsToActivities; 
         BOOL respondsToBarButtonItem; 
-    } _barsDelegateFlags;
-    <PUOverOneUpPresentationSessionDelegate> *_delegate;
+    }  _barsDelegateFlags;
+    <PUOverOneUpPresentationSessionDelegate> * _delegate;
     struct { 
         BOOL respondsToTilingView; 
         BOOL respondsToViewController; 
@@ -23,19 +24,18 @@
         BOOL respondsToDidPresent; 
         BOOL respondsToDidFinish; 
         BOOL respondsToIsReady; 
-    } _delegateFlags;
+    }  _delegateFlags;
 }
 
 @property (setter=_setAvalancheReviewController:, nonatomic, retain) PUAvalancheReviewController *_avalancheReviewController;
 @property (setter=_setEditViewController:, nonatomic, retain) PUEditViewController *_editViewController;
 @property (setter=_setNeedsUpdatePresentedViewControllers:, nonatomic) BOOL _needsUpdatePresentedViewControllers;
+@property (setter=_setPhotoMarkupViewController:, nonatomic, retain) PUPhotoMarkupViewController *_photoMarkupViewController;
 @property (setter=_setPresentedViewControllers:, nonatomic, retain) NSHashTable *_presentedViewControllers;
 @property (setter=_setSharingViewController:, nonatomic, retain) PUPhotosSharingViewController *_sharingViewController;
 @property (setter=_setSlideshowViewController:, nonatomic, retain) PUSlideshowViewController *_slideshowViewController;
 @property (setter=_setStashedAssetReference:, nonatomic, copy) PUAssetReference *_stashedAssetReference;
 @property (nonatomic) <PUOverOneUpPresentationSessionBarsDelegate> *barsDelegate;
-@property (nonatomic) PHAsset *currentAsset;
-@property (nonatomic, readonly) PLPhotoTileViewController *currentTile;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUOverOneUpPresentationSessionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -51,14 +51,15 @@
 - (id)_currentTileController;
 - (BOOL)_dismissAvalancheReviewController:(id)arg1 animated:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (BOOL)_dismissEditViewController:(id)arg1 animated:(BOOL)arg2 completionHandler:(id /* block */)arg3;
+- (BOOL)_dismissPhotoMarkupViewController:(id)arg1 animated:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (BOOL)_dismissPhotosSharingViewController:(id)arg1 animated:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (BOOL)_dismissSlideshowViewController:(id)arg1 animated:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (id)_editViewController;
 - (void)_finalizeAvalancheReviewControllerDismiss;
 - (void)_finalizeSharingViewControllerDismiss;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameAtIndexPath:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForAssetReference:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForItemAtIndexPath:(id)arg1 inAssetCollectionsDataSource:(id)arg2 allowZoom:(BOOL)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameAtIndexPath:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForAssetReference:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForItemAtIndexPath:(id)arg1 inAssetCollectionsDataSource:(id)arg2 allowZoom:(BOOL)arg3;
 - (int)_globalIndexForAssetReference:(id)arg1;
 - (int)_globalIndexForIndexPath:(id)arg1;
 - (id)_indexPathForGlobalIndex:(int)arg1;
@@ -66,9 +67,11 @@
 - (BOOL)_needsUpdatePresentedViewControllers;
 - (int)_numberOfItems;
 - (void)_performNavigationRequestForAssetDisplayDescriptor:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)_photoMarkupViewController;
 - (void)_prepareForSharingViewControllerDismiss:(id)arg1 withAsset:(id)arg2 completionHandler:(id /* block */)arg3;
 - (BOOL)_presentAvalancheReviewController:(id)arg1;
 - (BOOL)_presentEditViewController:(id)arg1;
+- (BOOL)_presentPhotoMarkupViewController:(id)arg1;
 - (BOOL)_presentPhotosSharingViewController:(id)arg1;
 - (BOOL)_presentScreenRoutePickerViewController:(id)arg1;
 - (BOOL)_presentSlideshowViewController:(id)arg1;
@@ -76,6 +79,7 @@
 - (void)_setAvalancheReviewController:(id)arg1;
 - (void)_setEditViewController:(id)arg1;
 - (void)_setNeedsUpdatePresentedViewControllers:(BOOL)arg1;
+- (void)_setPhotoMarkupViewController:(id)arg1;
 - (void)_setPresentedViewControllers:(struct NSHashTable { Class x1; }*)arg1;
 - (void)_setSharingViewController:(id)arg1;
 - (void)_setSlideshowViewController:(id)arg1;
@@ -90,17 +94,17 @@
 - (void)avalancheReviewControllerDidComplete:(id)arg1 animated:(BOOL)arg2;
 - (void)avalancheReviewControllerDidComplete:(id)arg1 withAsset:(id)arg2 animated:(BOOL)arg3;
 - (id)barsDelegate;
-- (struct CGSize { float x1; float x2; })collectionViewContentSize;
-- (id)currentTile;
+- (struct CGSize { double x1; double x2; })collectionViewContentSize;
 - (id)delegate;
 - (void)dismissViewController:(id)arg1 animated:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (void)finishOverOneUpPresentationSessionDismissForced:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)isPresentingAnOverOneUpViewController;
-- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
-- (void)photoEditController:(id)arg1 didFinishWithSavedChanges:(BOOL)arg2 asset:(id)arg3 modificationDate:(id)arg4;
-- (struct CGPoint { float x1; float x2; })photosSharingTransition:(id)arg1 contentOffsetForAssetReference:(id)arg2;
+- (void)photoEditController:(id)arg1 didFinishPreparingForTransitionAfterEditingAsset:(id)arg2;
+- (void)photoMarkupController:(id)arg1 didFinishWithSavedAsset:(id)arg2;
+- (struct CGPoint { double x1; double x2; })photosSharingTransition:(id)arg1 contentOffsetForAssetReference:(id)arg2;
 - (id)photosSharingTransition:(id)arg1 layoutForAssetReference:(id)arg2;
 - (void)photosSharingTransition:(id)arg1 setVisibility:(BOOL)arg2 forAssetReference:(id)arg3;
 - (id)photosSharingTransitionTransitioningView:(id)arg1;
@@ -118,11 +122,9 @@
 - (BOOL)prepareForDismissingForced:(BOOL)arg1;
 - (BOOL)presentViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)setBarsDelegate:(id)arg1;
-- (void)setCurrentAsset:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)slideshowViewControllerDidFinish:(id)arg1 withVisibleAssets:(id)arg2;
-- (void)updateOverlaysAnimated:(BOOL)arg1;
-- (void)videoEditViewController:(id)arg1 didFinishWithSavedChanges:(BOOL)arg2 videoAsset:(id)arg3 modificationDate:(id)arg4 seekTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg5;
+- (void)videoEditViewController:(id)arg1 didFinishPreparingForTransitionAfterEditingAsset:(id)arg2 modificationDate:(id)arg3 seekTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg4;
 - (id)viewController;
 
 @end

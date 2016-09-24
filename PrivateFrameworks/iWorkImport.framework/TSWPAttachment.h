@@ -2,8 +2,8 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSWPAttachment : TSPObject <TSDOwningAttachment, TSKDocumentObject, TSPCopying> {
-    TSWPStorage *_parentStorage;
+@interface TSWPAttachment : TSPObject <TSDOwningAttachment, TSKDocumentObject, TSKModel, TSPCopying> {
+    TSWPStorage * _parentStorage;
 }
 
 @property (readonly, copy) NSString *debugDescription;

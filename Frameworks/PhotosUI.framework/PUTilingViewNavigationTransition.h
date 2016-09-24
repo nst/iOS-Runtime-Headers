@@ -3,7 +3,7 @@
  */
 
 @interface PUTilingViewNavigationTransition : PUNavigationTransition <PUTilingViewControllerTransition> {
-    PUTilingViewTransitionHelper *__tilingViewTransitionHelper;
+    PUTilingViewTransitionHelper * __tilingViewTransitionHelper;
 }
 
 @property (nonatomic, readonly) PUTilingViewTransitionHelper *_tilingViewTransitionHelper;

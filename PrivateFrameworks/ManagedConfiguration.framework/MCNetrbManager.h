@@ -3,13 +3,13 @@
  */
 
 @interface MCNetrbManager : NSObject {
-    BOOL _needStateUpdate;
-    struct NETRBClient { } *_netClient;
-    RadiosPreferences *_radioPrefs;
-    int _reason;
-    struct __SCDynamicStore { } *_scDynamicStore;
-    struct __CFRunLoopSource { } *_scRunLoopSource;
-    int _state;
+    BOOL  _needStateUpdate;
+    struct NETRBClient { } * _netClient;
+    RadiosPreferences * _radioPrefs;
+    int  _reason;
+    struct __SCDynamicStore { } * _scDynamicStore;
+    struct __CFRunLoopSource { } * _scRunLoopSource;
+    int  _state;
 }
 
 + (id)sharedManager;

@@ -3,10 +3,10 @@
  */
 
 @interface SKUIArtworkRequest : SKUIResourceRequest <NSCopying> {
-    SSVURLDataConsumer *_dataConsumer;
-    <SKUIArtworkRequestDelegate> *_delegate;
-    NSString *_imageName;
-    NSURL *_url;
+    SSVURLDataConsumer * _dataConsumer;
+    <SKUIArtworkRequestDelegate> * _delegate;
+    NSString * _imageName;
+    NSURL * _url;
 }
 
 @property (nonatomic, copy) NSURL *URL;
@@ -20,6 +20,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataConsumer;
 - (id)delegate;
+- (id)description;
 - (void)finishWithResource:(id)arg1;
 - (id)imageName;
 - (id)newLoadOperation;

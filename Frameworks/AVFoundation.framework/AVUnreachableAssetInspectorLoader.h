@@ -3,8 +3,8 @@
  */
 
 @interface AVUnreachableAssetInspectorLoader : AVAssetInspectorLoader {
-    long _figError;
-    NSDictionary *_figErrorUserInfo;
+    long  _figError;
+    NSDictionary * _figErrorUserInfo;
 }
 
 - (Class)_classForTrackInspectors;

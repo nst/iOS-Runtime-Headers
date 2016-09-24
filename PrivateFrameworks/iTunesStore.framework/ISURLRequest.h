@@ -3,8 +3,8 @@
  */
 
 @interface ISURLRequest : NSObject <NSCoding, NSCopying> {
-    NSLock *_lock;
-    SSMutableURLRequestProperties *_properties;
+    NSLock * _lock;
+    SSMutableURLRequestProperties * _properties;
 }
 
 @property (retain) NSData *HTTPBody;
@@ -16,13 +16,14 @@
 @property (retain) NSString *appleClientApplication;
 @property unsigned int cachePolicy;
 @property (retain) NSDictionary *customHeaders;
-@property long long expectedContentLength;
+@property int expectedContentLength;
 @property (readonly) NSURL *primaryURL;
 @property (retain) NSDictionary *queryStringDictionary;
 @property double timeoutInterval;
 
 + (id)requestWithURL:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)HTTPBody;
 - (id)HTTPBodyStream;
 - (id)HTTPMethod;
@@ -34,9 +35,8 @@
 - (unsigned int)cachePolicy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)customHeaders;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (long long)expectedContentLength;
+- (int)expectedContentLength;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRequestProperties:(id)arg1;
@@ -50,7 +50,7 @@
 - (void)setAppleClientApplication:(id)arg1;
 - (void)setCachePolicy:(unsigned int)arg1;
 - (void)setCustomHeaders:(id)arg1;
-- (void)setExpectedContentLength:(long long)arg1;
+- (void)setExpectedContentLength:(int)arg1;
 - (void)setHTTPBody:(id)arg1;
 - (void)setHTTPBodyStream:(id)arg1;
 - (void)setHTTPMethod:(id)arg1;

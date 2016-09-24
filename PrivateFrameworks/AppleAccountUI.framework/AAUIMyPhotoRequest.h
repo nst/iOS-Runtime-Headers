@@ -3,9 +3,9 @@
  */
 
 @interface AAUIMyPhotoRequest : AARequest {
-    ACAccount *_account;
-    SSAccount *_iTunesAccount;
-    NSString *_serverCacheTag;
+    ACAccount * _account;
+    SSAccount * _iTunesAccount;
+    NSString * _serverCacheTag;
 }
 
 @property (setter=setiTunesAccount:, nonatomic, retain) SSAccount *iTunesAccount;

@@ -3,13 +3,13 @@
  */
 
 @interface SKUINavigationControllerAssistant : NSObject {
-    UIView *_childPaletteView;
-    SKUIClientContext *_clientContext;
-    BOOL _hidesShadow;
-    UINavigationController *_navigationController;
-    _UINavigationControllerPalette *_paletteBackgroundView;
-    <SKUIStatusOverlayProvider> *_statusOverlayProvider;
-    UIViewController *_statusOverlayViewController;
+    UIView * _childPaletteView;
+    SKUIClientContext * _clientContext;
+    BOOL  _hidesShadow;
+    UINavigationController * _navigationController;
+    _UINavigationControllerPalette * _paletteBackgroundView;
+    <SKUIStatusOverlayProvider> * _statusOverlayProvider;
+    UIViewController * _statusOverlayViewController;
 }
 
 @property (nonatomic, retain) UIView *childPaletteView;

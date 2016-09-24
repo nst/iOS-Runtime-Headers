@@ -3,24 +3,24 @@
  */
 
 @interface SKPhysicsContact : NSObject {
-    SKPhysicsBody *_bodyA;
-    SKPhysicsBody *_bodyB;
-    float _collisionImpulse;
+    SKPhysicsBody * _bodyA;
+    SKPhysicsBody * _bodyB;
+    double  _collisionImpulse;
     struct CGVector { 
-        float dx; 
-        float dy; 
-    } _contactNormal;
+        double dx; 
+        double dy; 
+    }  _contactNormal;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _contactPoint;
+        double x; 
+        double y; 
+    }  _contactPoint;
 }
 
 @property (nonatomic, readonly) SKPhysicsBody *bodyA;
 @property (nonatomic, readonly) SKPhysicsBody *bodyB;
-@property (nonatomic, readonly) float collisionImpulse;
-@property (nonatomic, readonly) struct CGVector { float x1; float x2; } contactNormal;
-@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } contactPoint;
+@property (nonatomic, readonly) double collisionImpulse;
+@property (nonatomic, readonly) struct CGVector { double x1; double x2; } contactNormal;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } contactPoint;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -29,7 +29,7 @@
 - (id)bodyA;
 - (id)bodyB;
 - (float)collisionImpulse;
-- (struct CGVector { float x1; float x2; })contactNormal;
-- (struct CGPoint { float x1; float x2; })contactPoint;
+- (struct CGVector { double x1; double x2; })contactNormal;
+- (struct CGPoint { double x1; double x2; })contactPoint;
 
 @end

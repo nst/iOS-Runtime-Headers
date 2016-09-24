@@ -3,12 +3,12 @@
  */
 
 @interface SBUIPasscodeLockViewSIMLockKeypad : SBUIPasscodeLockViewLongNumericKeypad {
-    UIView *_entryFieldFiller;
-    BOOL _isShowingStatus;
-    UIView *_statusSpringView;
-    UIView *_statusSpringViewParent;
-    UILabel *_statusSubtitleView;
-    float _targetEntryFieldFillerAlpha;
+    UIView * _entryFieldFiller;
+    BOOL  _isShowingStatus;
+    UIView * _statusSpringView;
+    UIView * _statusSpringViewParent;
+    UILabel * _statusSubtitleView;
+    double  _targetEntryFieldFillerAlpha;
 }
 
 @property (nonatomic, copy) NSString *statusSubtitle;
@@ -20,7 +20,6 @@
 - (float)_expectedDistanceBetweenTitleAndSubtitleBaselines;
 - (float)_expectedYOffsetBetweenTitleAndSubtitleViews;
 - (void)_layoutStatusView;
-- (BOOL)_needsToHideTextFieldForStatus;
 - (void)_setHasInput:(BOOL)arg1;
 - (void)_setText:(id)arg1 onLabel:(id)arg2;
 - (void)_shakeStatus;
@@ -32,7 +31,6 @@
 - (void)forceShowStatus:(BOOL)arg1;
 - (id)initWithLightStyle:(BOOL)arg1;
 - (void)layoutSubviews;
-- (void)resetForFailedPasscode;
 - (void)setBackgroundAlpha:(float)arg1;
 - (void)setCustomBackgroundColor:(id)arg1;
 - (void)setStatusSubtitle:(id)arg1;

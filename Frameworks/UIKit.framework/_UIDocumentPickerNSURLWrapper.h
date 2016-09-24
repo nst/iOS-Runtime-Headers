@@ -3,10 +3,10 @@
  */
 
 @interface _UIDocumentPickerNSURLWrapper : NSObject <NSSecureCoding> {
-    BOOL _createSandbox;
-    NSData *_promiseScope;
-    NSData *_scope;
-    NSURL *_url;
+    BOOL  _createSandbox;
+    NSData * _promiseScope;
+    NSData * _scope;
+    NSURL * _url;
 }
 
 @property (nonatomic) BOOL createSandbox;

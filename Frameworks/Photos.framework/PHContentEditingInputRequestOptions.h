@@ -3,9 +3,9 @@
  */
 
 @interface PHContentEditingInputRequestOptions : NSObject {
-    id /* block */ _canHandleAdjustmentData;
-    BOOL _networkAccessAllowed;
-    id /* block */ _progressHandler;
+    id /* block */  _canHandleAdjustmentData;
+    BOOL  _networkAccessAllowed;
+    id /* block */  _progressHandler;
 }
 
 @property (nonatomic, copy) id /* block */ canHandleAdjustmentData;

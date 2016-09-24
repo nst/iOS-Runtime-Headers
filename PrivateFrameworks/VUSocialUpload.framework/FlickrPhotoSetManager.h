@@ -3,9 +3,9 @@
  */
 
 @interface FlickrPhotoSetManager : FlickrRequest {
-    <FlickrComposeOptionViewDelegate> *_delegate;
-    NSArray *_photoSets;
-    <FlickrPhotoSetTableDelegate> *_tableDelegate;
+    <FlickrComposeOptionViewDelegate> * _delegate;
+    NSArray * _photoSets;
+    <FlickrPhotoSetTableDelegate> * _tableDelegate;
 }
 
 @property (nonatomic) <FlickrComposeOptionViewDelegate> *delegate;

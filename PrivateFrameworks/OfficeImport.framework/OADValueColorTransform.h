@@ -3,7 +3,7 @@
  */
 
 @interface OADValueColorTransform : OADColorTransform {
-    float mValue;
+    double  mValue;
 }
 
 - (unsigned int)hash;

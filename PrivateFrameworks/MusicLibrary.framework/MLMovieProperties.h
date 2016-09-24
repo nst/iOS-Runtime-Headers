@@ -3,7 +3,7 @@
  */
 
 @interface MLMovieProperties : NSObject <NSCopying> {
-    NSMutableDictionary *_dictionary;
+    NSMutableDictionary * _dictionary;
 }
 
 @property (nonatomic, copy) NSArray *castMembers;

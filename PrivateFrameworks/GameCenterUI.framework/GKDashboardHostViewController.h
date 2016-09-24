@@ -3,8 +3,8 @@
  */
 
 @interface GKDashboardHostViewController : GKUIRemoteViewController <GKGameCenterDashboardServiceProtocol> {
-    NSObject *_dashboardAssetController;
-    GKGameCenterViewController *_delegateWeak;
+    NSObject * _dashboardAssetController;
+    GKGameCenterViewController * _delegateWeak;
 }
 
 @property (nonatomic, retain) NSObject *dashboardAssetController;

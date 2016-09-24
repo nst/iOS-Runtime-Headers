@@ -3,8 +3,8 @@
  */
 
 @interface TSPObjectContextObserver : NSObject {
-    SEL _action;
-    id _target;
+    SEL  _action;
+    id  _target;
 }
 
 @property (nonatomic, readonly) SEL action;

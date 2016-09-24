@@ -3,8 +3,8 @@
  */
 
 @interface CKDPRecordField : PBCodable <NSCopying> {
-    CKDPRecordFieldIdentifier *_identifier;
-    CKDPRecordFieldValue *_value;
+    CKDPRecordFieldIdentifier * _identifier;
+    CKDPRecordFieldValue * _value;
 }
 
 @property (nonatomic, readonly) BOOL hasIdentifier;

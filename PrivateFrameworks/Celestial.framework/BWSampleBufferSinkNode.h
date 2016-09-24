@@ -3,7 +3,7 @@
  */
 
 @interface BWSampleBufferSinkNode : BWSinkNode {
-    id /* block */ _sampleBufferAvailableHandler;
+    id /* block */  _sampleBufferAvailableHandler;
 }
 
 @property (nonatomic, copy) id /* block */ sampleBufferAvailableHandler;

@@ -3,11 +3,11 @@
  */
 
 @interface SCNShadableHelper : NSObject <NSSecureCoding> {
-    id _owner;
-    SCNProgram *_program;
-    NSDictionary *_shaderModifiers;
-    NSDictionary *_symbolToBinder;
-    NSDictionary *_symbolToUnbinder;
+    id  _owner;
+    SCNProgram * _program;
+    NSDictionary * _shaderModifiers;
+    NSDictionary * _symbolToBinder;
+    NSDictionary * _symbolToUnbinder;
 }
 
 @property (nonatomic, readonly) id owner;
@@ -16,7 +16,7 @@
 
 + (BOOL)supportsSecureCoding;
 
-- (void*)__CFObject;
+- (const void*)__CFObject;
 - (BOOL)_bindValueForSymbol:(id)arg1 atLocation:(unsigned int)arg2 programID:(unsigned int)arg3 node:(id)arg4 renderer:(id)arg5;
 - (void)_customDecodingOfSCNShadableHelper:(id)arg1;
 - (void)_customEncodingOfSCNShadableHelper:(id)arg1;

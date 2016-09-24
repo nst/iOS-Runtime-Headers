@@ -5,8 +5,8 @@
 @interface CKDPLocationBound : PBCodable <NSCopying> {
     struct { 
         unsigned int radius : 1; 
-    } _has;
-    double _radius;
+    }  _has;
+    double  _radius;
 }
 
 @property (nonatomic) BOOL hasRadius;

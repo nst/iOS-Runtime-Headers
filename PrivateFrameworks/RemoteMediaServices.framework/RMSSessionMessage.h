@@ -5,8 +5,8 @@
 @interface RMSSessionMessage : PBCodable <NSCopying> {
     struct { 
         unsigned int sessionIdentifier : 1; 
-    } _has;
-    int _sessionIdentifier;
+    }  _has;
+    int  _sessionIdentifier;
 }
 
 @property (nonatomic) BOOL hasSessionIdentifier;

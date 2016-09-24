@@ -5,10 +5,10 @@
 @interface GEOAddressCorrectionInitRequest : PBRequest <NSCopying> {
     struct { 
         unsigned int supportsMultipleAddresses : 1; 
-    } _has;
-    NSString *_personID;
-    BOOL _supportsMultipleAddresses;
-    NSString *_token;
+    }  _has;
+    NSString * _personID;
+    BOOL  _supportsMultipleAddresses;
+    NSString * _token;
 }
 
 @property (nonatomic, readonly) BOOL hasPersonID;

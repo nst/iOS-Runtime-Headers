@@ -3,13 +3,13 @@
  */
 
 @interface SSPreorderManager : NSObject {
-    SSXPCConnection *_connection;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    NSArray *_itemKinds;
-    SSXPCConnection *_observerConnection;
-    NSObject<OS_dispatch_queue> *_observerQueue;
-    struct __CFArray { } *_observers;
-    NSArray *_preorders;
+    SSXPCConnection * _connection;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    NSArray * _itemKinds;
+    SSXPCConnection * _observerConnection;
+    NSObject<OS_dispatch_queue> * _observerQueue;
+    struct __CFArray { } * _observers;
+    NSArray * _preorders;
 }
 
 @property (readonly) NSArray *itemKinds;

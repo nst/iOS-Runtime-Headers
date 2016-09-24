@@ -3,8 +3,8 @@
  */
 
 @interface CATEvent : NSObject {
-    id _context;
-    id _trigger;
+    id  _context;
+    id  _trigger;
 }
 
 @property (nonatomic, readonly) id context;

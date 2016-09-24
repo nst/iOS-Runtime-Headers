@@ -3,10 +3,10 @@
  */
 
 @interface OCXRelationships : NSObject {
-    unsigned int mNextId;
-    NSString *mPath;
-    NSMutableDictionary *mRelationshipMap;
-    NSMutableArray *mRelationships;
+    unsigned int  mNextId;
+    NSString * mPath;
+    NSMutableDictionary * mRelationshipMap;
+    NSMutableArray * mRelationships;
 }
 
 - (id)addRelationshipForKey:(id)arg1 type:(id)arg2 target:(id)arg3;

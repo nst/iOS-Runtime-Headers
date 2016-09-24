@@ -3,16 +3,18 @@
  */
 
 @interface IKStyleList : NSObject {
-    IKStyleList *_baseStyleList;
-    NSString *_classSelector;
-    BOOL _requiresMediaQueryEvaluation;
-    IKViewElementStyle *_resolvedStyle;
-    NSArray *_styles;
+    IKStyleList * _baseStyleList;
+    NSString * _classSelector;
+    BOOL  _requiresMediaQueryEvaluation;
+    BOOL  _resolutionDone;
+    IKViewElementStyle * _resolvedStyle;
+    NSArray * _styles;
 }
 
 @property (nonatomic, readonly, retain) IKStyleList *baseStyleList;
 @property (nonatomic, readonly, copy) NSString *classSelector;
 @property (nonatomic, readonly) BOOL requiresMediaQueryEvaluation;
+@property (getter=isResolutionDone, nonatomic) BOOL resolutionDone;
 @property (nonatomic, retain) IKViewElementStyle *resolvedStyle;
 @property (nonatomic, readonly, copy) NSArray *styles;
 
@@ -21,10 +23,12 @@
 - (id)baseStyleList;
 - (id)classSelector;
 - (id)initWithClassSelector:(id)arg1 styles:(id)arg2 baseStyleList:(id)arg3;
+- (BOOL)isResolutionDone;
 - (BOOL)requiresMediaQueryEvaluation;
 - (id)resolvedStyle;
 - (id)resolvedStyleWithMediaQueryEvaluator:(id)arg1;
 - (void)setNeedsReresolution;
+- (void)setResolutionDone:(BOOL)arg1;
 - (void)setResolvedStyle:(id)arg1;
 - (id)styles;
 

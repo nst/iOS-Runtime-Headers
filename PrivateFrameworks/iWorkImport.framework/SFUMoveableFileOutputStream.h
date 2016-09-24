@@ -3,8 +3,8 @@
  */
 
 @interface SFUMoveableFileOutputStream : NSObject <SFUOutputStream> {
-    int mFd;
-    NSString *mPath;
+    int  mFd;
+    NSString * mPath;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -22,10 +22,10 @@
 - (id)initWithTemporaryFile:(id)arg1;
 - (id)inputStream;
 - (BOOL)moveToPath:(id)arg1;
-- (long long)offset;
+- (int)offset;
 - (id)path;
-- (void)seekToOffset:(long long)arg1 whence:(int)arg2;
-- (void)truncateToLength:(long long)arg1;
+- (void)seekToOffset:(int)arg1 whence:(int)arg2;
+- (void)truncateToLength:(int)arg1;
 - (void)writeBuffer:(const char *)arg1 size:(unsigned long)arg2;
 
 @end

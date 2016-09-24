@@ -3,21 +3,22 @@
  */
 
 @interface CNQuickActionsManager : NSObject <CNQuickContactActionDelegate> {
-    NSOrderedSet *_actions;
-    NSMutableDictionary *_actionsByCategories;
-    BOOL _bypassActionValidation;
-    NSArray *_categories;
-    NSArray *_contacts;
-    <CNQuickActionsManagerDelegate> *_delegate;
-    unsigned int _desiredNumberOfActions;
-    CNQuickFaceTimeAction *_faceTimeAudioAction;
-    CNQuickFaceTimeAction *_faceTimeVideoAction;
-    NSDictionary *_groups;
-    int _mode;
-    NSMutableSet *_requests;
-    NSArray *_subManagers;
-    NSMutableArray *_updateBlocks;
-    CNQuickActionsUsageManager *_usageManager;
+    NSOrderedSet * _actions;
+    NSMutableDictionary * _actionsByCategories;
+    BOOL  _bypassActionValidation;
+    NSArray * _categories;
+    NSArray * _contacts;
+    <CNQuickActionsManagerDelegate> * _delegate;
+    unsigned int  _desiredNumberOfActions;
+    CNQuickFaceTimeAction * _faceTimeAudioAction;
+    CNQuickFaceTimeAction * _faceTimeVideoAction;
+    NSDictionary * _groups;
+    int  _mode;
+    NSMutableSet * _requests;
+    NSArray * _subManagers;
+    NSMutableArray * _updateBlocks;
+    CNQuickActionsUsageManager * _usageManager;
+    BOOL  _useDuetIfAvailable;
 }
 
 @property (nonatomic, readonly) NSArray *actions;
@@ -39,6 +40,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSMutableArray *updateBlocks;
 @property (nonatomic, retain) CNQuickActionsUsageManager *usageManager;
+@property (nonatomic) BOOL useDuetIfAvailable;
 
 + (id)actionsManagerForContacts:(id)arg1;
 + (id)defaultCategories;
@@ -95,11 +97,13 @@
 - (void)setSubManagers:(id)arg1;
 - (void)setUpdateBlocks:(id)arg1;
 - (void)setUsageManager:(id)arg1;
+- (void)setUseDuetIfAvailable:(BOOL)arg1;
 - (BOOL)sortsWithDuet;
 - (void)stopUpdatingActions;
 - (id)subManagers;
 - (void)updateActionsWithBlock:(id /* block */)arg1;
 - (id)updateBlocks;
 - (id)usageManager;
+- (BOOL)useDuetIfAvailable;
 
 @end

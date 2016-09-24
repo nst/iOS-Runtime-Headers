@@ -3,9 +3,9 @@
  */
 
 @interface WebApplication : UIApplication <UIApplicationDelegate> {
-    NSURL *_lastActiveWebClipURL;
-    BOOL _wasSuspendedUnderLock;
-    id _webApp;
+    NSURL * _lastActiveWebClipURL;
+    BOOL  _wasSuspendedUnderLock;
+    WebAppController * _webApp;
 }
 
 @property (readonly, copy) NSString *debugDescription;

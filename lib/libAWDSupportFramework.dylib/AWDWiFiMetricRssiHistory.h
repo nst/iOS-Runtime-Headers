@@ -7,43 +7,43 @@
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _bcnFrmsHistorys;
+    }  _bcnFrmsHistorys;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _bcnPerHistorys;
+    }  _bcnPerHistorys;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _fwTxFrmsHistorys;
+    }  _fwTxFrmsHistorys;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _fwTxPerHistorys;
-    unsigned int _gatewayARPHistory;
+    }  _fwTxPerHistorys;
+    unsigned int  _gatewayARPHistory;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int gatewayARPHistory : 1; 
-    } _has;
+    }  _has;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _rssiHistorys;
-    unsigned long long _timestamp;
+    }  _rssiHistorys;
+    unsigned long long  _timestamp;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _txFrmsHistorys;
+    }  _txFrmsHistorys;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _txPerHistorys;
+    }  _txPerHistorys;
 }
 
 @property (nonatomic, readonly) int*bcnFrmsHistorys;

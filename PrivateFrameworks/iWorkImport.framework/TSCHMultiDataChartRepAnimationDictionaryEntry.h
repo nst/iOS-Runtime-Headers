@@ -3,8 +3,8 @@
  */
 
 @interface TSCHMultiDataChartRepAnimationDictionaryEntry : NSObject {
-    TSCHMultiDataLayerAnimationInfo *mAnimationInfo;
-    NSMutableArray *mAnimations;
+    TSCHMultiDataLayerAnimationInfo * mAnimationInfo;
+    NSMutableArray * mAnimations;
 }
 
 + (id)entry;

@@ -3,25 +3,25 @@
  */
 
 @interface PSSearchEntry : NSObject {
-    PSSpecifierAction *_action;
-    NSArray *_additionalDetailTextComponents;
-    NSString *_bundleName;
-    NSMutableSet *_childEntries;
-    NSString *_groupName;
-    PSSpecifier *_groupSpecifier;
-    BOOL _hasDetailController;
-    BOOL _hasListController;
-    NSString *_identifier;
-    BOOL _isRootURL;
-    BOOL _isSection;
-    NSMutableArray *_keywords;
-    NSString *_manifestBundleName;
-    NSString *_name;
-    PSSearchEntry *_parentEntry;
-    NSString *_plistName;
-    NSString *_sectionIdentifier;
-    PSSpecifier *_specifier;
-    NSURL *_url;
+    PSSpecifierAction * _action;
+    NSArray * _additionalDetailTextComponents;
+    NSString * _bundleName;
+    NSMutableSet * _childEntries;
+    NSString * _groupName;
+    PSSpecifier * _groupSpecifier;
+    BOOL  _hasDetailController;
+    BOOL  _hasListController;
+    NSString * _identifier;
+    BOOL  _isRootURL;
+    BOOL  _isSection;
+    NSMutableArray * _keywords;
+    NSString * _manifestBundleName;
+    NSString * _name;
+    PSSearchEntry * _parentEntry;
+    NSString * _plistName;
+    NSString * _sectionIdentifier;
+    PSSpecifier * _specifier;
+    NSURL * _url;
 }
 
 @property (nonatomic, retain) PSSpecifierAction *action;
@@ -39,6 +39,9 @@
 @property (nonatomic, readonly, copy) NSString *sectionIdentifier;
 @property (nonatomic, readonly) PSSpecifier *specifier;
 @property (nonatomic, readonly, copy) NSURL *url;
+
++ (id)schemeNameOverride;
++ (void)setSchemeNameOverride:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_prefsURLIsRoot:(BOOL*)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface AFMachServiceSiriTaskDeliverer : NSObject <AFSiriTaskDelivering> {
-    NSString *_machServiceName;
+    NSString * _machServiceName;
 }
 
 @property (readonly, copy) NSString *debugDescription;

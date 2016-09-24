@@ -3,11 +3,11 @@
  */
 
 @interface AppLaunchStatsAppWorkSpace : NSObject <DuetLoggerProtocol, DuetSaveAndRestore, LSApplicationWorkspaceObserverProtocol> {
-    LSApplicationWorkspace *appWorkSpace;
-    id /* block */ callback;
-    AppLaunchStatsSaveAndRestore *saveAndRestoreContext;
-    NSMutableDictionary *uninstalledApps;
-    NSObject<OS_dispatch_queue> *wsQueue;
+    LSApplicationWorkspace * appWorkSpace;
+    id /* block */  callback;
+    AppLaunchStatsSaveAndRestore * saveAndRestoreContext;
+    NSMutableDictionary * uninstalledApps;
+    NSObject<OS_dispatch_queue> * wsQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

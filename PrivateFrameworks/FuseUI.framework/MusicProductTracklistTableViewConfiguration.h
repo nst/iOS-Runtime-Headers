@@ -3,20 +3,20 @@
  */
 
 @interface MusicProductTracklistTableViewConfiguration : MusicLibraryBrowseTableViewConfiguration {
-    NSString *_completeOfferLocalizedTitle;
-    MusicCompositeEntityViewDescriptor *_compositeEntityViewDescriptor;
-    MusicEntityViewDescriptor *_copyrightEntityViewDescriptor;
-    <MusicEntityProviding> *_copyrightSourceEntityProvider;
-    <MusicEntityProviding> *_entityProvider;
-    MusicMediaDetailTintInformation *_mediaDetailTintInformation;
-    long long _prominentTrackStoreID;
-    MusicEntityViewDescriptor *_showCompleteOfferEntityViewDescriptor;
-    MusicEntityViewDescriptor *_shuffleEntityViewDescriptor;
-    MusicMediaProductTracklistTableViewDescriptor *_tracklistTableViewDescriptor;
-    BOOL _wantsArtistName;
-    BOOL _wantsArtwork;
-    BOOL _wantsCompleteOffer;
-    BOOL _wantsCopyrightText;
+    NSString * _completeOfferLocalizedTitle;
+    MusicCompositeEntityViewDescriptor * _compositeEntityViewDescriptor;
+    MusicEntityViewDescriptor * _copyrightEntityViewDescriptor;
+    <MusicEntityProviding> * _copyrightSourceEntityProvider;
+    <MusicEntityProviding> * _entityProvider;
+    MusicMediaDetailTintInformation * _mediaDetailTintInformation;
+    int  _prominentTrackStoreID;
+    MusicEntityViewDescriptor * _showCompleteOfferEntityViewDescriptor;
+    MusicEntityViewDescriptor * _shuffleEntityViewDescriptor;
+    MusicMediaProductTracklistTableViewDescriptor * _tracklistTableViewDescriptor;
+    BOOL  _wantsArtistName;
+    BOOL  _wantsArtwork;
+    BOOL  _wantsCompleteOffer;
+    BOOL  _wantsCopyrightText;
 }
 
 @property (nonatomic, readonly) MusicCompositeEntityViewDescriptor *_compositeEntityViewDescriptor;
@@ -28,7 +28,7 @@
 @property (nonatomic, retain) <MusicEntityProviding> *copyrightSourceEntityProvider;
 @property (nonatomic, readonly) <MusicEntityProviding> *entityProvider;
 @property (nonatomic, copy) MusicMediaDetailTintInformation *mediaDetailTintInformation;
-@property (nonatomic) long long prominentTrackStoreID;
+@property (nonatomic) int prominentTrackStoreID;
 @property (nonatomic, readonly) MusicMediaProductTracklistTableViewDescriptor *tracklistTableViewDescriptor;
 @property (nonatomic) BOOL wantsArtistName;
 @property (nonatomic) BOOL wantsArtwork;
@@ -55,18 +55,17 @@
 - (id)copyrightSourceEntityProvider;
 - (id)entityProvider;
 - (int)handleSelectionOfEntityValueContext:(id)arg1 fromViewController:(id)arg2;
-- (int)handleSelectionOfUnplayableEntityValueContext:(id)arg1 withPlayabilityResult:(unsigned int)arg2 fromViewController:(id)arg3;
 - (id)init;
 - (id)initWithEntityProvider:(id)arg1;
 - (id)loadEntityViewDescriptor;
 - (id)mediaDetailTintInformation;
 - (id)newSelectionEntityValueContext;
 - (id)newViewController;
-- (long long)prominentTrackStoreID;
+- (int)prominentTrackStoreID;
 - (void)setCompleteOfferLocalizedTitle:(id)arg1;
 - (void)setCopyrightSourceEntityProvider:(id)arg1;
 - (void)setMediaDetailTintInformation:(id)arg1;
-- (void)setProminentTrackStoreID:(long long)arg1;
+- (void)setProminentTrackStoreID:(int)arg1;
 - (void)setWantsArtistName:(BOOL)arg1;
 - (void)setWantsArtwork:(BOOL)arg1;
 - (void)setWantsCompleteOffer:(BOOL)arg1;

@@ -3,9 +3,9 @@
  */
 
 @interface AssistantDiagsUsageStatsUIViewController : AssistantSubUIViewController <TableViewManagerDelegate, TextLinkButtonDelegate, UINavigationControllerDelegate> {
-    UIView *_linkContainerView;
-    TextLinkButton *linkButton;
-    id previousNavDelegate;
+    UIView * _linkContainerView;
+    TextLinkButton * linkButton;
+    id  previousNavDelegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,9 +3,9 @@
  */
 
 @interface HKHealthServiceDiscovery : NSObject {
-    id /* block */ _discoveryHandler;
-    unsigned int _discoveryIdentifier;
-    int _serviceType;
+    id /* block */  _discoveryHandler;
+    unsigned int  _discoveryIdentifier;
+    int  _serviceType;
 }
 
 @property (nonatomic, copy) id /* block */ discoveryHandler;

@@ -3,7 +3,7 @@
  */
 
 @interface AVCaptureMetadataInput : AVCaptureInput {
-    AVCaptureMetadataInputInternal *_internal;
+    AVCaptureMetadataInputInternal * _internal;
 }
 
 + (id)metadataInputWithFormatDescription:(struct opaqueCMFormatDescription { }*)arg1 clock:(struct OpaqueCMClock { }*)arg2;

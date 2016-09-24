@@ -3,10 +3,10 @@
  */
 
 @interface _NSPersonNameComponentsStyleFormatterShort : _NSPersonNameComponentsStyleFormatter {
-    BOOL _forceShortNameEnabled;
-    int _shortNameFormat;
-    _NSPersonNameComponentsStyleFormatter *_subFormatter;
-    _NSPersonNameComponentsStyleFormatterShortVariantGeneral *_variantFormatter;
+    BOOL  _forceShortNameEnabled;
+    int  _shortNameFormat;
+    _NSPersonNameComponentsStyleFormatter * _subFormatter;
+    _NSPersonNameComponentsStyleFormatterShortVariantGeneral * _variantFormatter;
 }
 
 @property BOOL forceShortNameEnabled;
@@ -15,7 +15,7 @@
 @property (readonly) _NSPersonNameComponentsStyleFormatterShortVariantGeneral *variantFormatter;
 
 - (id)_formattedStringFromOrderedKeys:(id)arg1 components:(id)arg2 attributesByRange:(id)arg3;
-- (id)alterations;
+- (id)abbreviatedKeys;
 - (void)dealloc;
 - (id)fallbackStyleFormatter;
 - (BOOL)forceShortNameEnabled;
@@ -27,7 +27,6 @@
 - (void)setShortNameFormat:(int)arg1;
 - (void)setSubFormatter:(id)arg1;
 - (int)shortNameFormat;
-- (BOOL)shouldFallBack;
 - (id)subFormatter;
 - (id)variantFormatter;
 

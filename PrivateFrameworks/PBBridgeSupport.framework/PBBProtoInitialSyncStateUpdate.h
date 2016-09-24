@@ -6,9 +6,9 @@
     struct { 
         unsigned int progress : 1; 
         unsigned int state : 1; 
-    } _has;
-    double _progress;
-    unsigned int _state;
+    }  _has;
+    double  _progress;
+    unsigned int  _state;
 }
 
 @property (nonatomic) BOOL hasProgress;

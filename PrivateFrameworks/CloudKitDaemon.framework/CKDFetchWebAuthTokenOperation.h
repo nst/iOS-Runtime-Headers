@@ -3,8 +3,8 @@
  */
 
 @interface CKDFetchWebAuthTokenOperation : CKDDatabaseOperation {
-    NSString *_APIToken;
-    NSString *_webAuthToken;
+    NSString * _APIToken;
+    NSString * _webAuthToken;
 }
 
 @property (nonatomic, copy) NSString *APIToken;
@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)APIToken;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (void)fillOutOperationResult:(id)arg1;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;

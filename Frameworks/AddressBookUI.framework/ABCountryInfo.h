@@ -3,9 +3,9 @@
  */
 
 @interface ABCountryInfo : NSObject {
-    NSString *_countryCode;
-    NSString *_countryName;
-    NSString *_phoneticCountryName;
+    NSString * _countryCode;
+    NSString * _countryName;
+    NSString * _phoneticCountryName;
 }
 
 @property (nonatomic, copy) NSString *countryCode;

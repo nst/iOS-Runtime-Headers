@@ -3,18 +3,20 @@
  */
 
 @interface CAMSnapshotView : UIView {
-    UIView *__dimmingView;
-    UIView *__lowQualityBlurView;
-    BOOL __supportsBlur;
-    BOOL _blurred;
-    BOOL _dimmed;
-    UIView *_snapshotView;
+    UIView * __dimmingView;
+    UIView * __lowQualityBlurView;
+    BOOL  __supportsBlur;
+    BOOL  _blurred;
+    int  _desiredAspectRatio;
+    BOOL  _dimmed;
+    UIView * _snapshotView;
 }
 
 @property (nonatomic, readonly) UIView *_dimmingView;
 @property (nonatomic, readonly) UIView *_lowQualityBlurView;
 @property (nonatomic, readonly) BOOL _supportsBlur;
 @property (nonatomic) BOOL blurred;
+@property (nonatomic, readonly) int desiredAspectRatio;
 @property (nonatomic) BOOL dimmed;
 @property (nonatomic, readonly) UIView *snapshotView;
 
@@ -26,6 +28,7 @@
 - (id)_lowQualityBlurView;
 - (void)_prepareForApplyingBlurForStyle:(int)arg1 applying:(BOOL)arg2 inputRadiusAmount:(float*)arg3 inputRadiusDuration:(double*)arg4 inputRadiusDelay:(double*)arg5 inputRadiusTimingFunction:(id*)arg6 opacityAmount:(float*)arg7 opacityDuration:(double*)arg8 opacityDelay:(double*)arg9 opacityTimingFunction:(id*)arg10;
 - (void)_prepareForApplyingLowQualityBlurForStyle:(int)arg1 applying:(BOOL)arg2 opacityAmount:(float*)arg3 opacityDuration:(double*)arg4 opacityDelay:(double*)arg5 opacityTimingFunction:(id*)arg6 targetView:(id*)arg7;
+- (void)_removeAnimationOnView:(id)arg1 forKey:(id)arg2;
 - (void)_removeLowQualityBlurForStyle:(int)arg1 animated:(BOOL)arg2 withCompletionBlock:(id /* block */)arg3;
 - (void)_removeSnapshotBlurForStyle:(int)arg1 animated:(BOOL)arg2 withCompletionBlock:(id /* block */)arg3;
 - (void)_removeSnapshotDimAnimated:(BOOL)arg1 withCompletionBlock:(id /* block */)arg2;
@@ -34,13 +37,14 @@
 - (void)_setupLowQualityBlurOnSnapshot;
 - (BOOL)_supportsBlur;
 - (BOOL)blurred;
+- (int)desiredAspectRatio;
 - (BOOL)dimmed;
-- (id)initWithView:(id)arg1;
+- (id)initWithView:(id)arg1 desiredAspectRatio:(int)arg2;
+- (void)removeInflightBlurAnimations;
 - (void)setBlurred:(BOOL)arg1;
 - (void)setBlurred:(BOOL)arg1 animated:(BOOL)arg2 style:(int)arg3 withCompletionBlock:(id /* block */)arg4;
 - (void)setDimmed:(BOOL)arg1;
 - (void)setDimmed:(BOOL)arg1 animated:(BOOL)arg2 withCompletionBlock:(id /* block */)arg3;
 - (id)snapshotView;
-- (void)updateToMatchLayoutOfView:(id)arg1;
 
 @end

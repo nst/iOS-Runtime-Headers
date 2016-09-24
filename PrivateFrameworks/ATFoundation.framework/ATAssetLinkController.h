@@ -3,13 +3,13 @@
  */
 
 @interface ATAssetLinkController : NSObject <ATAssetLinkDelegate> {
-    NSMutableOrderedSet *_assetLinks;
-    NSMutableOrderedSet *_assetQueue;
-    NSMapTable *_assetsToFailedLinks;
-    NSMapTable *_assetsToLinks;
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    NSHashTable *_observers;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableOrderedSet * _assetLinks;
+    NSMutableOrderedSet * _assetQueue;
+    NSMapTable * _assetsToFailedLinks;
+    NSMapTable * _assetsToLinks;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    NSHashTable * _observers;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -31,13 +31,16 @@
 - (void)addObserver:(id)arg1;
 - (id)allAssetLinks;
 - (id)allAssets;
+- (BOOL)assetIsEnqueued:(id)arg1;
 - (void)assetLink:(id)arg1 didCloseWithOutstandingAssets:(id)arg2;
 - (void)assetLink:(id)arg1 didFinishAsset:(id)arg2 error:(id)arg3 retryable:(BOOL)arg4;
 - (void)assetLink:(id)arg1 didOpenWithPendingAssets:(id)arg2;
+- (void)assetLink:(id)arg1 didTransitionAssetStates:(id)arg2;
 - (void)assetLink:(id)arg1 didUpdateAsset:(id)arg2 progress:(double)arg3;
 - (void)assetLinkDidChange:(id)arg1;
 - (void)cancelAllAssetsMatchingPredicate:(id)arg1;
 - (void)cancelAssets:(id)arg1;
+- (void)dispatchBlockOnControllerQueue:(id /* block */)arg1;
 - (void)enqueueAssets:(id)arg1;
 - (void)enqueueAssets:(id)arg1 progress:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (id)init;

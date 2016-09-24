@@ -3,9 +3,9 @@
  */
 
 @interface UISystemNavigationActionDestinationContext : NSObject <BSXPCCoding> {
-    NSURL *_URL;
-    NSString *_bundleId;
-    NSString *_title;
+    NSURL * _URL;
+    NSString * _bundleId;
+    NSString * _title;
 }
 
 @property (nonatomic, copy) NSURL *URL;

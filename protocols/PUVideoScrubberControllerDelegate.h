@@ -5,7 +5,7 @@
 
 @optional
 
-- (void)videoScrubberController:(PUVideoScrubberController *)arg1 desiredSeekTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
+- (void)videoScrubberController:(PUVideoScrubberController *)arg1 desiredSeekTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg2;
 - (float)videoScrubberController:(PUVideoScrubberController *)arg1 lengthForDuration:(double)arg2;
 - (void)videoScrubberControllerDidUpdate:(PUVideoScrubberController *)arg1;
 

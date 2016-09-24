@@ -3,7 +3,7 @@
  */
 
 @interface AVMutableDateRangeMetadataGroup : AVDateRangeMetadataGroup {
-    AVDateRangeMetadataGroupInternal *_mutablePriv;
+    AVDateRangeMetadataGroupInternal * _mutablePriv;
 }
 
 @property (nonatomic, copy) NSDate *endDate;

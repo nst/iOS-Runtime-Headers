@@ -3,18 +3,21 @@
  */
 
 @interface MRKeyboardMessage : MRProtocolMessage {
-    MRTextEditingAttributes *_attributes;
+    MRTextEditingAttributes * _attributes;
 }
 
 @property (nonatomic, readonly) MRTextEditingAttributes *attributes;
+@property (nonatomic, readonly) NSData *encryptedTextCyphertext;
 @property (nonatomic, readonly) unsigned int state;
-@property (nonatomic, readonly) NSString *text;
+
++ (id)encryptedMessageWithState:(unsigned int)arg1 text:(id)arg2 attributes:(id)arg3 usingCryptoSession:(id)arg4;
 
 - (id)attributes;
 - (void)dealloc;
-- (id)initWithState:(unsigned int)arg1 text:(id)arg2 attributes:(id)arg3;
+- (id)decryptedTextUsingCryptoSession:(id)arg1;
+- (id)encryptedTextCyphertext;
+- (id)initWithState:(unsigned int)arg1 encryptedTextCyphertext:(id)arg2 attributes:(id)arg3;
 - (unsigned int)state;
-- (id)text;
 - (unsigned int)type;
 
 @end

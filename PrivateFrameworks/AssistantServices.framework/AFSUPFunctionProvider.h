@@ -3,9 +3,8 @@
  */
 
 @interface AFSUPFunctionProvider : AFSpeakableUtteranceParser <AFSpeakableNamespaceProvider> {
-    NSDateFormatter *_dateFormatter;
-    NSDateFormatter *_timeFormatter;
-    BOOL _useSpeechMode;
+    NSDateFormatter * _dateFormatter;
+    NSDateFormatter * _timeFormatter;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -24,10 +23,11 @@
 - (id)_dateFormattedWithFormatter:(id)arg1 arguments:(id)arg2;
 - (id)_deviceModel;
 - (id)_lowercaseString:(id)arg1;
+- (id)_siriUsageDescription:(id)arg1;
+- (id)_speechRecognitionUsageDescription:(id)arg1;
 - (id)_tempInWeatherUnits:(id)arg1;
 - (id)init;
 - (id)initWithLocale:(id)arg1;
 - (id)stringForExpression:(id)arg1;
-- (void)useSpeechMode:(BOOL)arg1;
 
 @end

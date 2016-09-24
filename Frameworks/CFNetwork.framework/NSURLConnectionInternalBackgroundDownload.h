@@ -3,15 +3,15 @@
  */
 
 @interface NSURLConnectionInternalBackgroundDownload : NSURLConnectionInternal <NSURLConnectionRequired, SSDownloadHandlerDelegate, SSDownloadManagerObserver> {
-    long long _ctLast;
-    NSTimer *_deferredStartTimer;
-    long long _downloadIdent;
-    SSDownloadHandler *_handler;
-    NSAsyncSSDownloadManager *_manager;
-    NSMutableArray *_pendingOps;
-    NSCountedSet *_runloops;
-    struct __CFRunLoopSource { } *_source;
-    BOOL _terminated;
+    int  _ctLast;
+    NSTimer * _deferredStartTimer;
+    int  _downloadIdent;
+    SSDownloadHandler * _handler;
+    NSAsyncSSDownloadManager * _manager;
+    NSMutableArray * _pendingOps;
+    NSCountedSet * _runloops;
+    struct __CFRunLoopSource { } * _source;
+    BOOL  _terminated;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -23,7 +23,7 @@
 + (id)sharedDownloadManagerForMediaKind:(id)arg1 persistenceIdentifier:(id)arg2;
 
 - (void)_createNewDownload;
-- (long long)_getDownloadIdent;
+- (int)_getDownloadIdent;
 - (void)_invalidate;
 - (void)_invokeInvocation:(id)arg1 withConnection:(id)arg2;
 - (void)_managerFailedToStartInTime;
@@ -43,7 +43,7 @@
 - (void)downloadHandler:(id)arg1 handleAuthenticationSession:(id)arg2;
 - (BOOL)downloadHandler:(id)arg1 pauseSession:(id)arg2;
 - (void)downloadHandlerDidDisconnect:(id)arg1;
-- (id)initWithInfo:(const struct InternalInit { id x1; id x2; BOOL x3; long long x4; }*)arg1;
+- (id)initWithInfo:(const struct InternalInit { id x1; id x2; BOOL x3; int x4; }*)arg1;
 - (void)invokeForDelegate:(id /* block */)arg1;
 - (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
 - (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;

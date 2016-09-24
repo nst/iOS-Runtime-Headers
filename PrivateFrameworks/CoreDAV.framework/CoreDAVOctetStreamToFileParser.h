@@ -3,7 +3,7 @@
  */
 
 @interface CoreDAVOctetStreamToFileParser : CoreDAVOctetStreamParser {
-    NSFileHandle *_fileHandle;
+    NSFileHandle * _fileHandle;
 }
 
 @property (nonatomic, retain) NSFileHandle *fileHandle;

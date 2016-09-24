@@ -3,18 +3,18 @@
  */
 
 @interface SKUIItemCellLayout : SKUICellLayout <SKUIItemOfferButtonDelegate> {
-    BOOL _hidesItemOfferButton;
-    BOOL _highlighted;
-    BOOL _iconImageHidden;
-    SKUICellImageView *_iconImageView;
-    SKUIItemOffer *_itemOffer;
-    SKUIItemOfferButton *_itemOfferButton;
-    SKUIItemOfferButtonAppearance *_itemOfferButtonAppearance;
-    UILabel *_itemOfferNoticeLabel;
-    SKUIItemState *_itemState;
-    UIView *_removeControlView;
-    BOOL _restricted;
-    BOOL _selected;
+    BOOL  _hidesItemOfferButton;
+    BOOL  _highlighted;
+    BOOL  _iconImageHidden;
+    SKUICellImageView * _iconImageView;
+    SKUIItemOffer * _itemOffer;
+    SKUIItemOfferButton * _itemOfferButton;
+    SKUIItemOfferButtonAppearance * _itemOfferButtonAppearance;
+    UILabel * _itemOfferNoticeLabel;
+    SKUIItemState * _itemState;
+    UIView * _removeControlView;
+    BOOL  _restricted;
+    BOOL  _selected;
 }
 
 @property (readonly, copy) NSString *debugDescription;

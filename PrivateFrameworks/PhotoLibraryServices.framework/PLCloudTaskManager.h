@@ -3,10 +3,10 @@
  */
 
 @interface PLCloudTaskManager : NSObject {
-    NSMutableDictionary *_highPriorityResourceToTaskIdentifierMap;
-    NSMutableDictionary *_lowPriorityResourceToTaskIdentifierMap;
-    NSMutableDictionary *_pendingTaskForTaskIdentifier;
-    NSMutableDictionary *_resourceForTaskIdentifier;
+    NSMutableDictionary * _highPriorityResourceToTaskIdentifierMap;
+    NSMutableDictionary * _lowPriorityResourceToTaskIdentifierMap;
+    NSMutableDictionary * _pendingTaskForTaskIdentifier;
+    NSMutableDictionary * _resourceForTaskIdentifier;
 }
 
 - (id)_identifierForResource:(id)arg1;

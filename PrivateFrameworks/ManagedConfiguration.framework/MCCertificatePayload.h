@@ -3,8 +3,8 @@
  */
 
 @interface MCCertificatePayload : MCPayload {
-    NSData *_certificatePersistentID;
-    NSString *_installedOnDeviceID;
+    NSData * _certificatePersistentID;
+    NSString * _installedOnDeviceID;
 }
 
 @property (nonatomic, retain) NSData *certificatePersistentID;

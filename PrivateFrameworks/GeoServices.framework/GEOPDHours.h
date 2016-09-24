@@ -7,29 +7,33 @@
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _days;
-    struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } *_timeRanges;
-    unsigned int _timeRangesCount;
-    unsigned int _timeRangesSpace;
+    }  _days;
+    struct GEOPDLocalTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } * _timeRanges;
+    unsigned int  _timeRangesCount;
+    unsigned int  _timeRangesSpace;
 }
 
 @property (nonatomic, readonly) int*days;
 @property (nonatomic, readonly) unsigned int daysCount;
-@property (nonatomic, readonly) struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*timeRanges;
+@property (nonatomic, readonly) struct GEOPDLocalTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*timeRanges;
 @property (nonatomic, readonly) unsigned int timeRangesCount;
 
++ (id)_allHoursForPlaceData:(id)arg1;
++ (id)completeOperatingHoursForPlaceData:(id)arg1 withTimeZone:(id)arg2;
 + (BOOL)currentOperatingHoursAvailableForPlaceData:(id)arg1 withTimeZone:(id)arg2;
 + (id)currentOperatingHoursForPlaceData:(id)arg1 withTimeZone:(id)arg2;
 + (BOOL)operatingHoursAvailableForPlaceData:(id)arg1;
 
+- (int)StringAsDays:(id)arg1;
 - (void)addDay:(int)arg1;
-- (void)addTimeRange:(struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
+- (void)addTimeRange:(struct GEOPDLocalTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
 - (void)clearDays;
 - (void)clearTimeRanges;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)dayAtIndex:(unsigned int)arg1;
 - (int*)days;
+- (id)daysAsString:(int)arg1;
 - (unsigned int)daysCount;
 - (void)dealloc;
 - (id)description;
@@ -39,9 +43,9 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setDays:(int*)arg1 count:(unsigned int)arg2;
-- (void)setTimeRanges:(struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg1 count:(unsigned int)arg2;
-- (struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })timeRangeAtIndex:(unsigned int)arg1;
-- (struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)timeRanges;
+- (void)setTimeRanges:(struct GEOPDLocalTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg1 count:(unsigned int)arg2;
+- (struct GEOPDLocalTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })timeRangeAtIndex:(unsigned int)arg1;
+- (struct GEOPDLocalTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)timeRanges;
 - (unsigned int)timeRangesCount;
 - (void)writeTo:(id)arg1;
 

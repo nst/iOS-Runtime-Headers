@@ -3,17 +3,17 @@
  */
 
 @interface MSCLVideoCoverImageSelectionView : UIView {
-    UIView *_backgroundView;
-    SKUIClientContext *_clientContext;
-    double _duration;
-    UILabel *_explanationLabel;
-    CAGradientLayer *_gradientOverlayLayer;
-    double _initialPlayerTime;
-    BOOL _isTracking;
-    AVPlayer *_player;
-    AVPlayerItem *_playerItem;
-    AVPlayerLayer *_playerLayer;
-    MSCLVideoScrubberControl *_scrubber;
+    UIView * _backgroundView;
+    SKUIClientContext * _clientContext;
+    double  _duration;
+    UILabel * _explanationLabel;
+    CAGradientLayer * _gradientOverlayLayer;
+    double  _initialPlayerTime;
+    BOOL  _isTracking;
+    AVPlayer * _player;
+    AVPlayerItem * _playerItem;
+    AVPlayerLayer * _playerLayer;
+    MSCLVideoScrubberControl * _scrubber;
 }
 
 @property (nonatomic, readonly) UIImage *coverImage;

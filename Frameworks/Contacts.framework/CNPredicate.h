@@ -3,9 +3,9 @@
  */
 
 @interface CNPredicate : NSPredicate <NSCopying> {
-    BOOL _augmentMainStoreResults;
-    NSPredicate *_cn_predicate;
-    NSArray *_mainStoreContactIdentifiers;
+    BOOL  _augmentMainStoreResults;
+    NSPredicate * _cn_predicate;
+    NSArray * _mainStoreContactIdentifiers;
 }
 
 @property (nonatomic) BOOL augmentMainStoreResults;
@@ -18,9 +18,11 @@
 - (id)cn_predicate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (BOOL)evaluateWithObject:(id)arg1;
 - (BOOL)evaluateWithObject:(id)arg1 substitutionVariables:(id)arg2;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithPredicate:(id)arg1;
 - (id)mainStoreContactIdentifiers;
 - (void)mainStoreDidFetchContacts:(id)arg1 unifiedFetch:(BOOL)arg2;

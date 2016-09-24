@@ -3,8 +3,8 @@
  */
 
 @interface ESDMetafileBlipContext : ESDBlipContext {
-    unsigned long defaultHeaderSize;
-    unsigned long mCb;
+    unsigned long  defaultHeaderSize;
+    unsigned long  mCb;
 }
 
 @property unsigned long defaultHeaderSize;

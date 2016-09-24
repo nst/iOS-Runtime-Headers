@@ -5,13 +5,14 @@
 @interface GEOTimeToLeaveInitialTravelTimeLogMessage : PBCodable <NSCopying> {
     struct { 
         unsigned int travelTime : 1; 
-    } _has;
-    int _travelTime;
+    }  _has;
+    int  _travelTime;
 }
 
 @property (nonatomic) BOOL hasTravelTime;
 @property (nonatomic) int travelTime;
 
+- (int)StringAsTravelTime:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -24,6 +25,7 @@
 - (void)setHasTravelTime:(BOOL)arg1;
 - (void)setTravelTime:(int)arg1;
 - (int)travelTime;
+- (id)travelTimeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

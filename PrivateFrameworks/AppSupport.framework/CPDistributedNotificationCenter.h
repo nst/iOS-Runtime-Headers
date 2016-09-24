@@ -3,13 +3,13 @@
  */
 
 @interface CPDistributedNotificationCenter : NSObject {
-    NSString *_centerName;
-    BOOL _isServer;
-    NSLock *_lock;
-    NSObject<OS_dispatch_queue> *_queue;
-    struct __CFRunLoopSource { } *_receiveNotificationSource;
-    struct __CFDictionary { } *_sendPorts;
-    unsigned int _startCount;
+    NSString * _centerName;
+    BOOL  _isServer;
+    NSLock * _lock;
+    NSObject<OS_dispatch_queue> * _queue;
+    struct __CFRunLoopSource { } * _receiveNotificationSource;
+    struct __CFDictionary { } * _sendPorts;
+    unsigned int  _startCount;
 }
 
 + (struct __CFDictionary { }*)_serverPortToNotificationCenterMap;

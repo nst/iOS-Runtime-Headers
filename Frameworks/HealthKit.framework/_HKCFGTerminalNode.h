@@ -3,7 +3,7 @@
  */
 
 @interface _HKCFGTerminalNode : _HKCFGNode {
-    id _value;
+    id  _value;
 }
 
 + (id)nodeWithValue:(id)arg1 rangeOfString:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;

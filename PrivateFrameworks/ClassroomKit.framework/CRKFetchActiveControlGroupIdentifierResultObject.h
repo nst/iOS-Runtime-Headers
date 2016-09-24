@@ -3,7 +3,7 @@
  */
 
 @interface CRKFetchActiveControlGroupIdentifierResultObject : CATTaskResultObject {
-    DMFControlGroupIdentifier *_groupIdentifier;
+    DMFControlGroupIdentifier * _groupIdentifier;
 }
 
 @property (nonatomic, retain) DMFControlGroupIdentifier *groupIdentifier;
@@ -11,7 +11,6 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)groupIdentifier;
 - (id)initWithCoder:(id)arg1;

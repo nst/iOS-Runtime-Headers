@@ -3,26 +3,26 @@
  */
 
 @interface SLRequestBodyInputStream : NSInputStream {
-    int (*_clientCallback;
+    int (* _clientCallback;
     struct { 
         int version; 
         void *info; 
         int (*retain)(); 
         int (*release)(); 
         int (*copyDescription)(); 
-    } _clientContext;
-    unsigned int _currentIndex;
-    unsigned int _currentLength;
-    unsigned int _currentOffset;
-    SLRequestMultiPartInputStream *_currentStream;
-    unsigned int _dataLength;
-    unsigned int _dataOffset;
-    <NSStreamDelegate> *_delegate;
-    NSArray *_inputStreams;
-    BOOL _openEventSent;
-    struct __CFRunLoopSource { } *_rls;
-    SLRequestBodyInputStream *_selfReferenceDuringStreamEventTrigger;
-    unsigned int _streamStatus;
+    }  _clientContext;
+    unsigned int  _currentIndex;
+    unsigned int  _currentLength;
+    unsigned int  _currentOffset;
+    SLRequestMultiPartInputStream * _currentStream;
+    unsigned int  _dataLength;
+    unsigned int  _dataOffset;
+    <NSStreamDelegate> * _delegate;
+    NSArray * _inputStreams;
+    BOOL  _openEventSent;
+    struct __CFRunLoopSource { } * _rls;
+    SLRequestBodyInputStream * _selfReferenceDuringStreamEventTrigger;
+    unsigned int  _streamStatus;
 }
 
 @property (nonatomic) <NSStreamDelegate> *delegate;

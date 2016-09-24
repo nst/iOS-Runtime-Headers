@@ -3,11 +3,11 @@
  */
 
 @interface IDSQuickSwitchAcknowledgementTracker : NSObject {
-    NSMutableSet *_delegateIdentifiers;
+    NSMutableSet * _delegateIdentifiers;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _delegateIdentifiersMutex;
+    }  _delegateIdentifiersMutex;
 }
 
 @property (nonatomic, readonly) BOOL isAwaitingAcknowledgement;

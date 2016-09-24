@@ -3,23 +3,23 @@
  */
 
 @interface _GEOTimeRange : NSObject <GEOTransitTimeRange> {
-    struct { 
+    struct GEOPBTransitTimeRange { 
         unsigned int _duration; 
         unsigned int _startTime; 
         struct { 
             unsigned int duration : 1; 
             unsigned int startTime : 1; 
         } _has; 
-    } _pbTimeRange;
-    struct { 
+    }  _pbTimeRange;
+    struct GEOPDTimeRange { 
         unsigned int _duration; 
         unsigned int _startTime; 
         struct { 
             unsigned int duration : 1; 
             unsigned int startTime : 1; 
         } _has; 
-    } _pdTimeRange;
-    BOOL _usePB;
+    }  _pdTimeRange;
+    BOOL  _usePB;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -34,8 +34,8 @@
 - (BOOL)contains:(id)arg1;
 - (double)duration;
 - (id)endDate;
-- (id)initWithPBTimeRange:(struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
-- (id)initWithPDTimeRange:(struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
+- (id)initWithPBTimeRange:(struct GEOPBTransitTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
+- (id)initWithPDTimeRange:(struct GEOPDTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
 - (id)startDate;
 - (double)startTime;
 

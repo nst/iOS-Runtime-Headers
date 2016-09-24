@@ -4,6 +4,7 @@
 
 @interface SAMPLoadPredefinedQueue : SADomainCommand
 
+@property (nonatomic, copy) NSString *airplayRouteUID;
 @property (nonatomic) int mediaItemType;
 @property (nonatomic) BOOL shouldShuffle;
 @property (nonatomic, copy) NSNumber *startPlaying;
@@ -11,10 +12,12 @@
 + (id)loadPredefinedQueue;
 + (id)loadPredefinedQueueWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)airplayRouteUID;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (int)mediaItemType;
 - (BOOL)requiresResponse;
+- (void)setAirplayRouteUID:(id)arg1;
 - (void)setMediaItemType:(int)arg1;
 - (void)setShouldShuffle:(BOOL)arg1;
 - (void)setStartPlaying:(id)arg1;

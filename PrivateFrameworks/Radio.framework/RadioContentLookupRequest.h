@@ -3,8 +3,8 @@
  */
 
 @interface RadioContentLookupRequest : RadioRequest {
-    SSURLConnectionRequest *_request;
-    NSArray *_trackStoreIDs;
+    SSURLConnectionRequest * _request;
+    NSArray * _trackStoreIDs;
 }
 
 - (void).cxx_destruct;

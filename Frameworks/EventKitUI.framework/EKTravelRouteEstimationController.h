@@ -3,17 +3,17 @@
  */
 
 @interface EKTravelRouteEstimationController : NSObject {
-    NSDate *_arrivalDate;
-    <EKTravelRouteEstimationControllerDelegate> *_delegate;
-    EKStructuredLocation *_destinationStructuredLocation;
-    EKStructuredLocation *_evaluatedOriginLocation;
-    EKEventStore *_eventStore;
-    BOOL _isEstimating;
-    EKStructuredLocation *_originStructuredLocation;
-    NSMutableArray *_rows;
-    <EKStyleProvider> *_styleProvider;
-    NSDictionary *_travelTimeEstimatedValues;
-    NSDictionary *_travelTimeLookupErrors;
+    NSDate * _arrivalDate;
+    <EKTravelRouteEstimationControllerDelegate> * _delegate;
+    EKStructuredLocation * _destinationStructuredLocation;
+    EKStructuredLocation * _evaluatedOriginLocation;
+    EKEventStore * _eventStore;
+    BOOL  _isEstimating;
+    EKStructuredLocation * _originStructuredLocation;
+    NSMutableArray * _rows;
+    <EKStyleProvider> * _styleProvider;
+    NSDictionary * _travelTimeEstimatedValues;
+    NSDictionary * _travelTimeLookupErrors;
 }
 
 @property (retain) NSDate *arrivalDate;
@@ -26,9 +26,15 @@
 @property (retain) NSDictionary *travelTimeEstimatedValues;
 @property (retain) NSDictionary *travelTimeLookupErrors;
 
++ (id)_basedOnLocationLocalizedString;
+
 - (void).cxx_destruct;
 - (void)_beginOriginLocationEstimationCoreRoutineLookup;
 - (void)_beginOriginLocationEstimationEventKitLookup;
+- (int)_estimatedTravelTimeRoutingModeAtRowIndex:(unsigned int)arg1;
+- (id)_estimatedTravelTimeRowErrorAtRowIndex:(unsigned int)arg1;
+- (BOOL)_estimatedTravelTimeRowHasErrorAtRowIndex:(unsigned int)arg1;
+- (double)_estimatedTravelTimeValueAtRowIndex:(unsigned int)arg1;
 - (id)_imageForCellAtIndex:(unsigned int)arg1;
 - (void)_lookupTimedOut;
 - (void)_originLocationEstimationCompletedCoreRoutineLookup;

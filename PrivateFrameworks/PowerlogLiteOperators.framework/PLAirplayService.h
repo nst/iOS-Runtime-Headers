@@ -3,12 +3,12 @@
  */
 
 @interface PLAirplayService : PLService {
-    BOOL _airplayMirroringOn;
-    PLEntryNotificationOperatorComposition *_audioAppCallback;
-    NSString *_entryKeyPLScreenStateAgentScreenState;
-    NSSet *_excludedAccountingEvents;
-    NSArray *_screenLayoutEntries;
-    PLEntryNotificationOperatorComposition *_screenstateCallback;
+    BOOL  _airplayMirroringOn;
+    PLEntryNotificationOperatorComposition * _audioAppCallback;
+    NSString * _entryKeyPLScreenStateAgentScreenState;
+    NSSet * _excludedAccountingEvents;
+    NSArray * _screenLayoutEntries;
+    PLEntryNotificationOperatorComposition * _screenstateCallback;
 }
 
 @property BOOL airplayMirroringOn;

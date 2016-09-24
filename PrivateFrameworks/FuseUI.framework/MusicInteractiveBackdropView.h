@@ -3,14 +3,14 @@
  */
 
 @interface MusicInteractiveBackdropView : _UIBackdropView {
-    float _factor;
-    float _finalScale;
-    float _scale;
-    float _transitionProgress;
+    double  _factor;
+    double  _finalScale;
+    double  _scale;
+    double  _transitionProgress;
 }
 
-@property (nonatomic) float factor;
-@property (nonatomic) float scale;
+@property (nonatomic) double factor;
+@property (nonatomic) double scale;
 
 - (void)_updateInputBounds;
 - (void)applySettings:(id)arg1;

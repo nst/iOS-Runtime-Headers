@@ -3,10 +3,10 @@
  */
 
 @interface _ATXScoreInterpreterCtx : NSObject {
-    NSDictionary *inputScores;
-    double stack;
-    int stackLen;
-    NSMutableDictionary *subscores;
+    NSDictionary * inputScores;
+    double  stack;
+    int  stackLen;
+    NSMutableDictionary * subscores;
 }
 
 - (void).cxx_destruct;

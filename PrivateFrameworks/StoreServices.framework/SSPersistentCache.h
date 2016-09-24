@@ -3,12 +3,12 @@
  */
 
 @interface SSPersistentCache : NSObject {
-    NSString *_cacheName;
-    NSFileManager *_fm;
-    NSString *_identifier;
-    NSString *_path;
-    BOOL _safeKeys;
-    NSObject<OS_dispatch_queue> *_serialQueue;
+    NSString * _cacheName;
+    NSFileManager * _fm;
+    NSString * _identifier;
+    NSString * _path;
+    BOOL  _safeKeys;
+    NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
 + (id)safeKeyForKey:(id)arg1;

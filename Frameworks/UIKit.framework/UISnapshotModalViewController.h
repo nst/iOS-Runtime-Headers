@@ -3,9 +3,9 @@
  */
 
 @interface UISnapshotModalViewController : UIViewController {
-    UIViewController *_disappearingViewController;
-    int _interfaceOrientation;
-    UINavigationController *_parentController;
+    UIViewController * _disappearingViewController;
+    int  _interfaceOrientation;
+    UINavigationController * _parentController;
 }
 
 @property (nonatomic, retain) UIViewController *disappearingViewController;

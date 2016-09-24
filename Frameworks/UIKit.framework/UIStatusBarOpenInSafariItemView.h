@@ -3,8 +3,8 @@
  */
 
 @interface UIStatusBarOpenInSafariItemView : UIStatusBarSystemNavigationItemView {
-    NSString *_destinationText;
-    UISystemNavigationAction *_systemNavigationAction;
+    NSString * _destinationText;
+    UISystemNavigationAction * _systemNavigationAction;
 }
 
 @property (nonatomic, retain) NSString *destinationText;

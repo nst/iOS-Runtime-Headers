@@ -3,8 +3,8 @@
  */
 
 @interface DCFullPath : NSObject {
-    DCService *_service;
-    NSString *_string;
+    DCService * _service;
+    NSString * _string;
 }
 
 @property (readonly, retain) NSData *documentIdentifier;

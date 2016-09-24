@@ -3,30 +3,30 @@
  */
 
 @interface SSVSubscriptionStatus : NSObject <NSCopying, SSXPCCoding> {
-    unsigned long long _acceptedStoreTermsVersion;
-    NSNumber *_accountIdentifier;
-    NSArray *_accountPermissions;
-    int _accountStatus;
-    int _carrierBundlingStatus;
-    NSString *_cellularOperatorName;
-    BOOL _discoveryModeEligible;
-    BOOL _familyOrganizer;
-    BOOL _familySubscription;
-    BOOL _freeTrialIneligible;
-    BOOL _hasFamily;
-    BOOL _hasFamilyMembers;
-    BOOL _hasOfflineSlot;
-    BOOL _hasOfflineSlots;
-    unsigned long long _latestStoreTermsVersion;
-    NSString *_phoneNumber;
-    NSDictionary *_rawResponseData;
-    NSString *_sessionIdentifier;
-    double _subscriptionExpirationTime;
-    BOOL _subscriptionPurchaser;
+    unsigned int  _acceptedStoreTermsVersion;
+    NSNumber * _accountIdentifier;
+    NSArray * _accountPermissions;
+    int  _accountStatus;
+    int  _carrierBundlingStatus;
+    NSString * _cellularOperatorName;
+    BOOL  _discoveryModeEligible;
+    BOOL  _familyOrganizer;
+    BOOL  _familySubscription;
+    BOOL  _freeTrialIneligible;
+    BOOL  _hasFamily;
+    BOOL  _hasFamilyMembers;
+    BOOL  _hasOfflineSlot;
+    BOOL  _hasOfflineSlots;
+    unsigned int  _latestStoreTermsVersion;
+    NSString * _phoneNumber;
+    NSDictionary * _rawResponseData;
+    NSString * _sessionIdentifier;
+    double  _subscriptionExpirationTime;
+    BOOL  _subscriptionPurchaser;
 }
 
-@property (nonatomic, readonly) unsigned long long MP_capabilities;
-@property (nonatomic) unsigned long long acceptedStoreTermsVersion;
+@property (nonatomic, readonly) unsigned int MP_capabilities;
+@property (nonatomic) unsigned int acceptedStoreTermsVersion;
 @property (nonatomic, copy) NSNumber *accountIdentifier;
 @property (nonatomic, copy) NSArray *accountPermissions;
 @property (nonatomic) int accountStatus;
@@ -43,7 +43,7 @@
 @property (nonatomic, readonly) BOOL hasOfflineSlot;
 @property (nonatomic) BOOL hasOfflineSlots;
 @property (readonly) unsigned int hash;
-@property (nonatomic) unsigned long long latestStoreTermsVersion;
+@property (nonatomic) unsigned int latestStoreTermsVersion;
 @property (nonatomic, copy) NSString *phoneNumber;
 @property (nonatomic, copy) NSDictionary *rawResponseData;
 @property (nonatomic, copy) NSString *sessionIdentifier;
@@ -56,7 +56,7 @@
 
 - (void).cxx_destruct;
 - (void)_setSubscribed:(BOOL)arg1;
-- (unsigned long long)acceptedStoreTermsVersion;
+- (unsigned int)acceptedStoreTermsVersion;
 - (id)accountIdentifier;
 - (id)accountPermissions;
 - (int)accountStatus;
@@ -78,13 +78,13 @@
 - (BOOL)isFreeTrialIneligible;
 - (BOOL)isSubscribed;
 - (BOOL)isSubscriptionPurchaser;
-- (unsigned long long)latestStoreTermsVersion;
+- (unsigned int)latestStoreTermsVersion;
 - (id)phoneNumber;
 - (id)rawResponseData;
 - (void)resetAccountBasedProperties;
 - (void)resetCarrierBundlingProperties;
 - (id)sessionIdentifier;
-- (void)setAcceptedStoreTermsVersion:(unsigned long long)arg1;
+- (void)setAcceptedStoreTermsVersion:(unsigned int)arg1;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setAccountPermissions:(id)arg1;
 - (void)setAccountStatus:(int)arg1;
@@ -97,7 +97,7 @@
 - (void)setHasFamily:(BOOL)arg1;
 - (void)setHasFamilyMembers:(BOOL)arg1;
 - (void)setHasOfflineSlots:(BOOL)arg1;
-- (void)setLatestStoreTermsVersion:(unsigned long long)arg1;
+- (void)setLatestStoreTermsVersion:(unsigned int)arg1;
 - (void)setPhoneNumber:(id)arg1;
 - (void)setRawResponseData:(id)arg1;
 - (void)setSessionIdentifier:(id)arg1;
@@ -109,6 +109,6 @@
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
-- (unsigned long long)MP_capabilities;
+- (unsigned int)MP_capabilities;
 
 @end

@@ -2,19 +2,23 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPPairingKey : NSObject {
-    NSData *_data;
+@interface HAPPairingKey : NSObject <NSSecureCoding> {
+    NSData * _data;
 }
 
 @property (nonatomic, readonly, copy) NSData *data;
+
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)data;
 - (id)debugDescription;
 - (id)description;
 - (id)descriptionWithPointer:(BOOL)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithPairingKeyData:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)shortDescription;

@@ -3,9 +3,9 @@
  */
 
 @interface CNiOSContactFetcher : NSObject {
-    void *_addressBook;
-    CNContactFetchRequest *_fetchRequest;
-    id /* block */ _personToContact;
+    void * _addressBook;
+    CNContactFetchRequest * _fetchRequest;
+    id /* block */  _personToContact;
 }
 
 + (id)contactsForFetchRequest:(id)arg1 matchInfos:(id*)arg2 inAddressBook:(void*)arg3 error:(id*)arg4;

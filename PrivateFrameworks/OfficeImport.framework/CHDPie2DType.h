@@ -3,10 +3,10 @@
  */
 
 @interface CHDPie2DType : CHDChartType {
-    bool mBarOfPieType;
-    bool mDoughnutType;
-    int mFirstSliceAngle;
-    bool mPieOfPieType;
+    bool  mBarOfPieType;
+    bool  mDoughnutType;
+    int  mFirstSliceAngle;
+    bool  mPieOfPieType;
 }
 
 - (id)contentFormat;

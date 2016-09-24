@@ -3,11 +3,11 @@
  */
 
 @interface NWStatisticsDelegateBlockWrapper : NSObject <NWStatisticsManagerDelegate, NWStatisticsSourceDelegate> {
-    id /* block */ _addedBlock;
-    id /* block */ _countsBlock;
-    id /* block */ _descriptionBlock;
-    id /* block */ _eventsBlock;
-    id /* block */ _removedBlock;
+    id /* block */  _addedBlock;
+    id /* block */  _countsBlock;
+    id /* block */  _descriptionBlock;
+    id /* block */  _eventsBlock;
+    id /* block */  _removedBlock;
 }
 
 @property (copy) id /* block */ addedBlock;

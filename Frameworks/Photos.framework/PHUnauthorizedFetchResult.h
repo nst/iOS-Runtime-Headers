@@ -3,11 +3,11 @@
  */
 
 @interface PHUnauthorizedFetchResult : PHFetchResult {
-    id /* block */ _fetchBlock;
-    NSString *_identifier;
-    NSOrderedSet *_objectIDs;
-    NSArray *_objects;
-    PHFetchOptions *_options;
+    id /* block */  _fetchBlock;
+    NSString * _identifier;
+    NSOrderedSet * _objectIDs;
+    NSArray * _objects;
+    PHFetchOptions * _options;
 }
 
 @property (readonly) id /* block */ fetchBlock;

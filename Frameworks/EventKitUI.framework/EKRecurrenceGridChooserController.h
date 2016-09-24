@@ -3,7 +3,7 @@
  */
 
 @interface EKRecurrenceGridChooserController : EKRecurrenceChooserController <EKUIDividedGridViewControllerDelegate> {
-    EKUIDividedGridViewTableViewCell *_tableViewCell;
+    EKUIDividedGridViewTableViewCell * _tableViewCell;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -6,5 +6,6 @@
 @required
 
 - (void)imageQueueSinkNode:(BWImageQueueSinkNode *)arg1 didEnqueuePreviewSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2;
+- (void)imageQueueSinkNodeDidDisplayFirstFrame:(BWImageQueueSinkNode *)arg1;
 
 @end

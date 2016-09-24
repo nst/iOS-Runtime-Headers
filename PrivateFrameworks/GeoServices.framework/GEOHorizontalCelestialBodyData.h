@@ -3,8 +3,8 @@
  */
 
 @interface GEOHorizontalCelestialBodyData : NSObject {
-    double _altitude;
-    double _azimuth;
+    double  _altitude;
+    double  _azimuth;
 }
 
 @property (nonatomic, readonly) double altitude;

@@ -3,7 +3,7 @@
  */
 
 @interface EKPersistentReminder : EKPersistentCalendarItem {
-    EKObjectID *_parentID;
+    EKObjectID * _parentID;
 }
 
 @property (getter=isCompleted, nonatomic) BOOL completed;
@@ -17,10 +17,10 @@
 
 + (id)generateUniqueIDWithReminder:(id)arg1 calendar:(id)arg2;
 
+- (void).cxx_destruct;
 - (void)_sendModifiedNote;
 - (id)completionDate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (unsigned int)displayOrder;
 - (id)dueDate;

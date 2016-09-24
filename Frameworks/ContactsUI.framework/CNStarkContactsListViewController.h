@@ -3,9 +3,9 @@
  */
 
 @interface CNStarkContactsListViewController : CNContactListViewController <CNContactContentViewControllerDelegate, CNContactListViewControllerDelegate> {
-    AVExternalDevice *_externalDevice;
-    BOOL _limitedUI;
-    CNStarkNoContentBannerView *_overlayView;
+    AVExternalDevice * _externalDevice;
+    BOOL  _limitedUI;
+    CNStarkNoContentBannerView * _overlayView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

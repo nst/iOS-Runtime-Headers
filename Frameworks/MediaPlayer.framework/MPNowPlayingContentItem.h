@@ -6,12 +6,14 @@
 
 @property (nonatomic, copy) NSString *albumArtistName;
 @property (nonatomic, copy) NSString *albumName;
+@property (nonatomic, copy) NSString *collectionIdentifier;
 @property (nonatomic, copy) NSString *directorName;
 @property (nonatomic) double duration;
 @property (nonatomic) int episodeNumber;
 @property (getter=isExplicitItem, nonatomic) BOOL explicitItem;
 @property (nonatomic, copy) NSString *localizedContentRating;
 @property (nonatomic) int playCount;
+@property (nonatomic, copy) NSString *profileIdentifier;
 @property (nonatomic, copy) NSDate *releaseDate;
 @property (nonatomic) int seasonNumber;
 @property (nonatomic, copy) NSString *trackArtistName;
@@ -22,6 +24,7 @@
 - (int)_convertToRadioStationType:(int)arg1;
 - (id)albumArtistName;
 - (id)albumName;
+- (id)collectionIdentifier;
 - (id)directorName;
 - (double)duration;
 - (int)episodeNumber;
@@ -29,11 +32,13 @@
 - (id)localizedContentRating;
 - (int)playCount;
 - (int)playlistType;
+- (id)profileIdentifier;
 - (int)radioStationType;
 - (id)releaseDate;
 - (int)seasonNumber;
 - (void)setAlbumArtistName:(id)arg1;
 - (void)setAlbumName:(id)arg1;
+- (void)setCollectionIdentifier:(id)arg1;
 - (void)setDirectorName:(id)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setEpisodeNumber:(int)arg1;
@@ -41,6 +46,7 @@
 - (void)setLocalizedContentRating:(id)arg1;
 - (void)setPlayCount:(int)arg1;
 - (void)setPlaylistType:(int)arg1;
+- (void)setProfileIdentifier:(id)arg1;
 - (void)setRadioStationType:(int)arg1;
 - (void)setReleaseDate:(id)arg1;
 - (void)setSeasonNumber:(int)arg1;

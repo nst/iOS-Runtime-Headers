@@ -3,9 +3,9 @@
  */
 
 @interface WBSParsecSportsImage : WBSParsecModel {
-    int _alignment;
-    WBSParsecImageRepresentation *_imageRepresentation;
-    NSString *_label;
+    int  _alignment;
+    WBSParsecImageRepresentation * _imageRepresentation;
+    NSString * _label;
 }
 
 @property (nonatomic, readonly) int alignment;

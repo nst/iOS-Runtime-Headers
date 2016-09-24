@@ -3,22 +3,22 @@
  */
 
 @interface PLMav4BasebandHardwareMessage : PLBasebandHardwareMessage {
-    struct _PLMav4BasebandHWOnOffComponentStats { unsigned int x1[2]; } *_mav4_adm;
-    struct _PLMav4BasebandHWStatsARMPerf { unsigned int x1[8]; } *_mav4_armPerf;
-    unsigned int _mav4_duration;
-    struct _PLMav4BasebandHWOnOffComponentStats { unsigned int x1[2]; } *_mav4_gps;
-    struct _PLMav4BasebandHWStatsHeader { unsigned short x1; unsigned short x2; unsigned short x3; unsigned short x4; unsigned int x5; unsigned int x6; unsigned int x7; } *_mav4_header;
-    struct _PLMav4BasebandHWOnOffComponentStats { unsigned int x1[2]; } *_mav4_mdm;
-    struct _PLMav4BasebandHWStatsMDSP { unsigned int x1[5]; } *_mav4_mdsp;
-    struct _PLMav4BasebandHWStatsQDSP { unsigned int x1[5]; } *_mav4_qdsp;
-    struct _PLMav4BasebandHWStatsRX { unsigned int x1[5][4]; unsigned int x2[5][13]; unsigned int x3[5][13]; } *_mav4_rx;
-    struct _PLMav4BasebandHWSleepVeto { unsigned char x1[4][13]; } *_mav4_sleep_arm;
-    struct _PLMav4BasebandHWSleepVeto { unsigned char x1[4][13]; } *_mav4_sleep_qdsp;
-    struct _PLMav4BasebandHWOnOffComponentStats { unsigned int x1[2]; } *_mav4_spi;
-    struct _PLMav4BasebandHWStatsSystem { unsigned int x1[3]; } *_mav4_system;
-    struct _PLMav4BasebandHWStatsTX { unsigned int x1[5][12]; } *_mav4_tx;
-    struct _PLMav4BasebandHWOnOffComponentStats { unsigned int x1[2]; } *_mav4_uart;
-    struct _PLMav4BasebandHWOnOffComponentStats { unsigned int x1[2]; } *_mav4_usb;
+    struct _PLMav4BasebandHWOnOffComponentStats { unsigned int x1[2]; } * _mav4_adm;
+    struct _PLMav4BasebandHWStatsARMPerf { unsigned int x1[8]; } * _mav4_armPerf;
+    unsigned int  _mav4_duration;
+    struct _PLMav4BasebandHWOnOffComponentStats { unsigned int x1[2]; } * _mav4_gps;
+    struct _PLMav4BasebandHWStatsHeader { unsigned short x1; unsigned short x2; unsigned short x3; unsigned short x4; unsigned int x5; unsigned int x6; unsigned int x7; } * _mav4_header;
+    struct _PLMav4BasebandHWOnOffComponentStats { unsigned int x1[2]; } * _mav4_mdm;
+    struct _PLMav4BasebandHWStatsMDSP { unsigned int x1[5]; } * _mav4_mdsp;
+    struct _PLMav4BasebandHWStatsQDSP { unsigned int x1[5]; } * _mav4_qdsp;
+    struct _PLMav4BasebandHWStatsRX { unsigned int x1[5][4]; unsigned int x2[5][13]; unsigned int x3[5][13]; } * _mav4_rx;
+    struct _PLMav4BasebandHWSleepVeto { unsigned char x1[4][13]; } * _mav4_sleep_arm;
+    struct _PLMav4BasebandHWSleepVeto { unsigned char x1[4][13]; } * _mav4_sleep_qdsp;
+    struct _PLMav4BasebandHWOnOffComponentStats { unsigned int x1[2]; } * _mav4_spi;
+    struct _PLMav4BasebandHWStatsSystem { unsigned int x1[3]; } * _mav4_system;
+    struct _PLMav4BasebandHWStatsTX { unsigned int x1[5][12]; } * _mav4_tx;
+    struct _PLMav4BasebandHWOnOffComponentStats { unsigned int x1[2]; } * _mav4_uart;
+    struct _PLMav4BasebandHWOnOffComponentStats { unsigned int x1[2]; } * _mav4_usb;
 }
 
 @property (nonatomic) struct _PLMav4BasebandHWOnOffComponentStats { unsigned int x1[2]; }*adm;

@@ -3,15 +3,15 @@
  */
 
 @interface _HDSQLiteDatabaseWrapper : NSObject {
-    HDSQLiteDatabase *_database;
-    unsigned int _generation;
-    unsigned long long _threadID;
-    int _type;
+    HDSQLiteDatabase * _database;
+    unsigned int  _generation;
+    unsigned int  _threadID;
+    int  _type;
 }
 
 @property (nonatomic, readonly) HDSQLiteDatabase *database;
 @property (nonatomic, readonly) unsigned int generation;
-@property (nonatomic, readonly) unsigned long long threadID;
+@property (nonatomic, readonly) unsigned int threadID;
 @property (nonatomic) int type;
 
 - (void).cxx_destruct;
@@ -20,7 +20,7 @@
 - (unsigned int)generation;
 - (id)initWithDatabase:(id)arg1 generation:(unsigned int)arg2;
 - (void)setType:(int)arg1;
-- (unsigned long long)threadID;
+- (unsigned int)threadID;
 - (int)type;
 - (id)typeString;
 

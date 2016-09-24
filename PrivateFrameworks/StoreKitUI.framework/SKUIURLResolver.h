@@ -3,11 +3,11 @@
  */
 
 @interface SKUIURLResolver : NSObject <SKUIPassbookLoaderDelegate> {
-    SKUIClientContext *_clientContext;
-    <SKUIURLResolverDelegate> *_delegate;
-    <UINavigationControllerDelegate> *_navigationControllerDelegate;
-    NSOperationQueue *_operationQueue;
-    SKUIPassbookLoader *_passbookLoader;
+    SKUIClientContext * _clientContext;
+    <SKUIURLResolverDelegate> * _delegate;
+    <UINavigationControllerDelegate> * _navigationControllerDelegate;
+    NSOperationQueue * _operationQueue;
+    SKUIPassbookLoader * _passbookLoader;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,17 +3,17 @@
  */
 
 @interface HKMedicalIDEditorMultilineStringCell : HKMedicalIDEditorCell <UITextViewDelegate> {
-    <HKMedicalIDEditorCellHeightChangeDelegate> *_heightChangeDelegate;
-    UILabel *_labelLabel;
-    float _lastSeenTextViewContentHeight;
-    UILabel *_placeholderLabel;
-    UITextView *_textView;
+    <HKMedicalIDEditorCellHeightChangeDelegate> * _heightChangeDelegate;
+    UILabel * _labelLabel;
+    double  _lastSeenTextViewContentHeight;
+    UILabel * _placeholderLabel;
+    UITextView * _textView;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _textViewExtraMargins;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _textViewExtraMargins;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -24,7 +24,7 @@
 @property (nonatomic, retain) NSString *stringValue;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UITextView *textView;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } textViewExtraMargins;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } textViewExtraMargins;
 
 + (BOOL)showsLabelAndValue;
 
@@ -42,13 +42,14 @@
 - (void)setLabel:(id)arg1;
 - (void)setPlaceholder:(id)arg1;
 - (void)setStringValue:(id)arg1;
-- (void)setTextViewExtraMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setTextViewExtraMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)stringValue;
 - (id)textView;
 - (void)textViewDidBeginEditing:(id)arg1;
 - (void)textViewDidChange:(id)arg1;
+- (void)textViewDidChangeSelection:(id)arg1;
 - (void)textViewDidEndEditing:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textViewExtraMargins;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })textViewExtraMargins;
 
 @end

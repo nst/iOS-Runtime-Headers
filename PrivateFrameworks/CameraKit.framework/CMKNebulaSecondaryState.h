@@ -3,11 +3,11 @@
  */
 
 @interface CMKNebulaSecondaryState : NSObject <NSCoding> {
-    int _failedStateReadAttemptsCount;
-    NSDate *_lastMovieWriteAttemptTime;
-    int _movieWriteAttemptsCount;
-    int _stopReasons;
-    NSDate *_stopTime;
+    int  _failedStateReadAttemptsCount;
+    NSDate * _lastMovieWriteAttemptTime;
+    int  _movieWriteAttemptsCount;
+    int  _stopReasons;
+    NSDate * _stopTime;
 }
 
 @property (nonatomic) int failedStateReadAttemptsCount;

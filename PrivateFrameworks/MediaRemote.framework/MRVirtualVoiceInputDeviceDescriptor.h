@@ -3,8 +3,8 @@
  */
 
 @interface MRVirtualVoiceInputDeviceDescriptor : NSObject <NSMutableCopying> {
-    NSDictionary *_defaultFormat;
-    NSArray *_supportedFormats;
+    NSDictionary * _defaultFormat;
+    NSArray * _supportedFormats;
 }
 
 @property (nonatomic, readonly) NSData *data;

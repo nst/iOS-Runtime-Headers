@@ -3,14 +3,16 @@
  */
 
 @interface GEOSearchAttribution : PBCodable <NSCopying> {
-    NSMutableArray *_attributionURLs;
-    NSString *_sourceIdentifier;
-    unsigned int _sourceVersion;
+    NSMutableArray * _attributionURLs;
+    NSString * _sourceIdentifier;
+    unsigned int  _sourceVersion;
 }
 
 @property (nonatomic, retain) NSMutableArray *attributionURLs;
 @property (nonatomic, retain) NSString *sourceIdentifier;
 @property (nonatomic) unsigned int sourceVersion;
+
++ (Class)attributionURLsType;
 
 - (void)addAttributionURLs:(id)arg1;
 - (id)attributionURLs;

@@ -3,50 +3,43 @@
  */
 
 @interface RUIPage : UIViewController <UIWebViewDelegate> {
-    NSString *_backButtonTitle;
-    NSMutableArray *_childPages;
-    UIView *_containerView;
+    NSString * _backButtonTitle;
+    NSMutableArray * _childPages;
+    UIView * _containerView;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _customEdgeInsets;
-    float _customMargin;
-    NSMutableArray *_didAppearCallbacks;
-    BOOL _hidesBackButton;
-    UIBarButtonItem *_leftFlexSpace;
-    RUIBarButtonItem *_leftNavigationBarButtonItem;
-    RUIBarButtonItem *_leftToolbarButtonItem;
-    UIBarButtonItem *_leftToolbarItem;
-    BOOL _loading;
-    int _loadingIndicatorStyle;
-    NSString *_loadingTitle;
-    UIBarButtonItem *_middleFlexSpace;
-    RUIBarButtonItem *_middleToolbarButtonItem;
-    UIBarButtonItem *_middleToolbarItem;
-    NSString *_navTitle;
-    RUIObjectModel *_objectModel;
-    NSString *_pageID;
-    RUIPage *_parentPage;
-    RUIPasscodeView *_passcodeViewOM;
-    RUIElement<RUITopLevelPageElement> *_primaryElement;
-    RUIBarButtonItem *_rightNavigationBarButtonItem;
-    RUIBarButtonItem *_rightToolbarButtonItem;
-    UIBarButtonItem *_rightToolbarItem;
-    BOOL _showsTitlesAsHeaderViews;
-    RUISpinnerView *_spinnerViewOM;
-    RUIStyle *_style;
-    RUITableView *_tableViewOM;
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _titleLabelPadding;
-    UIToolbar *_toolbar;
-    NSString *_validationFunction;
-    RUIWebView *_webViewOM;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _customEdgeInsets;
+    double  _customMargin;
+    NSMutableArray * _didAppearCallbacks;
+    BOOL  _hidesBackButton;
+    UIBarButtonItem * _leftFlexSpace;
+    RUIBarButtonItem * _leftNavigationBarButtonItem;
+    RUIBarButtonItem * _leftToolbarButtonItem;
+    UIBarButtonItem * _leftToolbarItem;
+    BOOL  _loading;
+    NSString * _loadingTitle;
+    UIBarButtonItem * _middleFlexSpace;
+    RUIBarButtonItem * _middleToolbarButtonItem;
+    UIBarButtonItem * _middleToolbarItem;
+    NSString * _navTitle;
+    RUIObjectModel * _objectModel;
+    NSString * _pageID;
+    RUIPage * _parentPage;
+    RUIPasscodeView * _passcodeViewOM;
+    RUIElement<RUITopLevelPageElement> * _primaryElement;
+    RUIBarButtonItem * _rightNavigationBarButtonItem;
+    RUIBarButtonItem * _rightToolbarButtonItem;
+    UIBarButtonItem * _rightToolbarItem;
+    BOOL  _showsTitlesAsHeaderViews;
+    RUISpinnerView * _spinnerViewOM;
+    RUIStyle * _style;
+    RUITableView * _tableViewOM;
+    UIToolbar * _toolbar;
+    NSString * _validationFunction;
+    RUIWebView * _webViewOM;
 }
 
 @property (nonatomic, readonly) NSArray *accessoryViews;
@@ -55,8 +48,8 @@
 @property (nonatomic, readonly) NSArray *buttons;
 @property (nonatomic, readonly) NSArray *childPages;
 @property (nonatomic, readonly) UIView *containerView;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } customEdgeInsets;
-@property (nonatomic) float customMargin;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } customEdgeInsets;
+@property (nonatomic) double customMargin;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -67,7 +60,6 @@
 @property (nonatomic, retain) RUIBarButtonItem *leftToolbarButtonItem;
 @property (nonatomic, retain) UIBarButtonItem *leftToolbarItem;
 @property (getter=isLoading, nonatomic) BOOL loading;
-@property (nonatomic) int loadingIndicatorStyle;
 @property (nonatomic, copy) NSString *loadingTitle;
 @property (nonatomic, retain) NSDictionary *middleToolbarButton;
 @property (nonatomic, retain) RUIBarButtonItem *middleToolbarButtonItem;
@@ -89,7 +81,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) RUITableView *tableViewOM;
 @property (nonatomic, readonly) UILabel *titleLabel;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } titleLabelPadding;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } titleLabelPadding;
 @property (nonatomic, readonly) UIToolbar *toolbar;
 @property (nonatomic, copy) NSString *validationFunction;
 @property (nonatomic, readonly) RUIWebView *webViewOM;
@@ -118,13 +110,13 @@
 - (id)buttons;
 - (id)childPages;
 - (id)containerView;
-- (id)contentScrollView;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })customEdgeInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })customEdgeInsets;
 - (float)customMargin;
 - (void)dealloc;
 - (id)description;
 - (id)elementsWithName:(id)arg1;
 - (id)flexibleSpace;
+- (BOOL)hasChoiceView;
 - (BOOL)hasPasscodeView;
 - (BOOL)hasSpinnerView;
 - (BOOL)hasTableView;
@@ -138,7 +130,6 @@
 - (id)leftToolbarButtonItem;
 - (id)leftToolbarItem;
 - (void)loadView;
-- (int)loadingIndicatorStyle;
 - (id)loadingTitle;
 - (id)middleToolbarButton;
 - (id)middleToolbarButtonItem;
@@ -150,7 +141,7 @@
 - (id)parentPage;
 - (id)passcodeViewOM;
 - (void)populatePostbackDictionary:(id)arg1;
-- (id)preferredFocusedView;
+- (id)preferredFocusEnvironments;
 - (id)primaryElement;
 - (id)rightNavigationBarButton;
 - (id)rightNavigationBarButtonItem;
@@ -159,7 +150,7 @@
 - (id)rightToolbarItem;
 - (void)setBackButtonTitle:(id)arg1;
 - (void)setButton:(id)arg1 enabled:(BOOL)arg2;
-- (void)setCustomEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setCustomEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setCustomMargin:(float)arg1;
 - (void)setHasToolbar;
 - (void)setHidesBackButton:(BOOL)arg1;
@@ -170,7 +161,6 @@
 - (void)setLeftToolbarButtonItem:(id)arg1;
 - (void)setLeftToolbarItem:(id)arg1;
 - (void)setLoading:(BOOL)arg1;
-- (void)setLoadingIndicatorStyle:(int)arg1;
 - (void)setLoadingTitle:(id)arg1;
 - (void)setMiddleToolbarButton:(id)arg1;
 - (void)setMiddleToolbarButtonItem:(id)arg1;
@@ -187,7 +177,7 @@
 - (void)setRightToolbarItem:(id)arg1;
 - (void)setShowsTitlesAsHeaderViews:(BOOL)arg1;
 - (void)setStyle:(id)arg1;
-- (void)setTitleLabelPadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setTitleLabelPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setValidationFunction:(id)arg1;
 - (BOOL)showsTitlesAsHeaderViews;
 - (id)spinnerViewOM;
@@ -195,7 +185,7 @@
 - (unsigned int)supportedInterfaceOrientations;
 - (id)tableViewOM;
 - (id)titleLabel;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })titleLabelPadding;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })titleLabelPadding;
 - (id)toolbar;
 - (id)validationFunction;
 - (void)viewDidAppear:(BOOL)arg1;
@@ -204,6 +194,7 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillLayoutSubviews;
 - (id)webViewOM;
 
 @end

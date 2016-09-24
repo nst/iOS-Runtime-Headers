@@ -3,13 +3,13 @@
  */
 
 @interface NETunnelProviderProtocol : NEVPNProtocol {
-    int _authenticationMethod;
-    NSString *_authenticationPluginType;
-    NSString *_pluginType;
-    NSString *_providerBundleIdentifier;
-    NSDictionary *_providerConfiguration;
-    int _reassertTimeout;
-    NSDictionary *_vendorInfo;
+    int  _authenticationMethod;
+    NSString * _authenticationPluginType;
+    NSString * _pluginType;
+    NSString * _providerBundleIdentifier;
+    NSDictionary * _providerConfiguration;
+    int  _reassertTimeout;
+    NSDictionary * _vendorInfo;
 }
 
 @property int authenticationMethod;

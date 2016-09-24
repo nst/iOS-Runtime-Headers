@@ -3,10 +3,10 @@
  */
 
 @interface MIPPodcast : PBCodable <NSCopying> {
-    MIPArtist *_artist;
-    NSString *_externalGuid;
-    NSString *_feedUrl;
-    MIPSeries *_series;
+    MIPArtist * _artist;
+    NSString * _externalGuid;
+    NSString * _feedUrl;
+    MIPSeries * _series;
 }
 
 @property (nonatomic, retain) MIPArtist *artist;

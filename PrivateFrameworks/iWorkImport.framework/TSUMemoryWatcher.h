@@ -3,9 +3,9 @@
  */
 
 @interface TSUMemoryWatcher : NSObject {
-    TSUFlushingManager *_flushingManager;
-    BOOL _going;
-    BOOL _stop;
+    TSUFlushingManager * _flushingManager;
+    BOOL  _going;
+    BOOL  _stop;
 }
 
 - (void)_periodicallySimulateMemoryWarning:(id)arg1;

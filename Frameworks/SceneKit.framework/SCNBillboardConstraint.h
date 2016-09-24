@@ -3,7 +3,7 @@
  */
 
 @interface SCNBillboardConstraint : SCNConstraint {
-    unsigned int _freeAxes;
+    unsigned int  _freeAxes;
 }
 
 @property (nonatomic) unsigned int freeAxes;

@@ -3,9 +3,9 @@
  */
 
 @interface TKSmartCardUserInteraction : NSObject <NSSecureCoding> {
-    <TKSmartCardUserInteractionDelegate> *_delegate;
-    double _initialTimeout;
-    double _interactionTimeout;
+    <TKSmartCardUserInteractionDelegate> * _delegate;
+    double  _initialTimeout;
+    double  _interactionTimeout;
 }
 
 @property <TKSmartCardUserInteractionDelegate> *delegate;

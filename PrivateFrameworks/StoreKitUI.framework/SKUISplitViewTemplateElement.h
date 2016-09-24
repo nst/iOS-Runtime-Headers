@@ -3,9 +3,9 @@
  */
 
 @interface SKUISplitViewTemplateElement : SKUIViewElement {
-    SKUIJSDOMFeatureNavigationDocument *_leftNavigationDocument;
-    int _preferredDisplayMode;
-    SKUIJSDOMFeatureNavigationDocument *_rightNavigationDocument;
+    SKUIJSDOMFeatureNavigationDocument * _leftNavigationDocument;
+    int  _preferredDisplayMode;
+    SKUIJSDOMFeatureNavigationDocument * _rightNavigationDocument;
 }
 
 @property (readonly) SKUIJSDOMFeatureNavigationDocument *leftNavigationDocument;

@@ -3,7 +3,7 @@
  */
 
 @interface CalDAVPrincipalSearchPropertySet : NSObject {
-    NSSet *_stringProperties;
+    NSSet * _stringProperties;
 }
 
 @property (nonatomic, retain) NSSet *stringProperties;

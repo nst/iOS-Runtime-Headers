@@ -3,9 +3,9 @@
  */
 
 @interface MKYelpDeal : NSObject <MKMapItemVendorDeal> {
-    NSString *identifier;
-    NSString *title;
-    NSString *urlString;
+    NSString * identifier;
+    NSString * title;
+    NSString * urlString;
 }
 
 @property (readonly, copy) NSString *debugDescription;

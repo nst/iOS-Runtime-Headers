@@ -3,9 +3,9 @@
  */
 
 @interface ODDShape : ODDLayoutObject {
-    NSMutableArray *mAdjustments;
-    int mPresetType;
-    int mType;
+    NSMutableArray * mAdjustments;
+    int  mPresetType;
+    int  mType;
 }
 
 - (void)addAdjustment:(id)arg1;

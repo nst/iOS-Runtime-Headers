@@ -3,13 +3,13 @@
  */
 
 @interface GKRemoteViewController : _UIRemoteViewController <GKServiceViewControllerDelegate> {
-    id /* block */ _blockToPerformAfterViewDidAppear;
-    BOOL _didSetRemoteGame;
-    NSMutableDictionary *_dirtyProperties;
-    GKGame *_game;
-    GKHostedViewController *_managingViewControllerWeak;
-    UIColor *_previousStatusBarColor;
-    BOOL _viewDidAppear;
+    id /* block */  _blockToPerformAfterViewDidAppear;
+    BOOL  _didSetRemoteGame;
+    NSMutableDictionary * _dirtyProperties;
+    GKGame * _game;
+    GKHostedViewController * _managingViewControllerWeak;
+    UIColor * _previousStatusBarColor;
+    BOOL  _viewDidAppear;
 }
 
 @property (nonatomic, copy) id /* block */ blockToPerformAfterViewDidAppear;

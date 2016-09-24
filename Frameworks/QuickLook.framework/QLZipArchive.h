@@ -3,12 +3,13 @@
  */
 
 @interface QLZipArchive : NSObject {
-    struct archive { } *_archive;
-    NSData *_data;
-    NSFileWrapper *_fileWrapper;
-    NSURL *_url;
+    struct archive { } * _archive;
+    NSData * _data;
+    NSFileWrapper * _fileWrapper;
+    NSURL * _url;
 }
 
+- (void).cxx_destruct;
 - (BOOL)_reopenWithError:(id*)arg1;
 - (void)dealloc;
 - (void)enumerateEntriesWithHandler:(id /* block */)arg1;

@@ -3,9 +3,9 @@
  */
 
 @interface _MFDAResolveRecipientsConsumer : NSObject <DAResolveRecipientsConsumer> {
-    MFConditionLock *_conditionLock;
-    NSError *_error;
-    NSDictionary *_resolvedRecipientsByEmailAddress;
+    MFConditionLock * _conditionLock;
+    NSError * _error;
+    NSDictionary * _resolvedRecipientsByEmailAddress;
 }
 
 @property (readonly) NSError *error;

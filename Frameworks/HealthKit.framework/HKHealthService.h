@@ -3,11 +3,11 @@
  */
 
 @interface HKHealthService : NSObject <NSCopying, NSSecureCoding> {
-    NSUUID *_identifier;
-    double _lastConnection;
-    NSString *_name;
-    NSString *_serviceId;
-    int _type;
+    NSUUID * _identifier;
+    double  _lastConnection;
+    NSString * _name;
+    NSString * _serviceId;
+    int  _type;
 }
 
 @property (nonatomic, readonly) NSUUID *identifier;

@@ -3,22 +3,22 @@
  */
 
 @interface UIDynamicsDebug : NSObject <GLKViewDelegate> {
-    UIDynamicAnimator *_animator;
-    EAGLContext *_ctx;
-    GLKView *_debugView;
-    GLKBaseEffect *_effect;
-    BOOL _enabled;
-    BOOL _showFields;
-    BOOL _showOutlineInterior;
-    BOOL _showPhysics;
-    unsigned int _vertexBuffer;
+    UIDynamicAnimator * _animator;
+    EAGLContext * _ctx;
+    GLKView * _debugView;
+    GLKBaseEffect * _effect;
+    BOOL  _enabled;
+    BOOL  _showFields;
+    BOOL  _showOutlineInterior;
+    BOOL  _showPhysics;
+    unsigned int  _vertexBuffer;
     struct { 
         struct { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } position; 
         /* Warning: Unrecognized filer type: '}' using 'void*' */ void*color; 
-    } _vertices;
+    }  _vertices;
 }
 
 @property (nonatomic) UIDynamicAnimator *animator;
@@ -40,7 +40,7 @@
 - (void)dealloc;
 - (id)debugView;
 - (BOOL)enabled;
-- (void)glkView:(id)arg1 drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)glkView:(id)arg1 drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (id)init;
 - (id)initWithAnimator:(id)arg1;
 - (void)setAnimator:(id)arg1;

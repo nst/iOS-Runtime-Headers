@@ -3,9 +3,9 @@
  */
 
 @interface CPLPlatform : NSObject {
-    NSMapTable *_abstractClassToImplementation;
-    NSObject<OS_dispatch_queue> *_lock;
-    NSString *_suffix;
+    NSMapTable * _abstractClassToImplementation;
+    NSObject<OS_dispatch_queue> * _lock;
+    NSString * _suffix;
 }
 
 @property (nonatomic, copy) NSString *suffix;

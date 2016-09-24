@@ -3,28 +3,28 @@
  */
 
 @interface GKTurnBasedMatchInternal : GKInternalRepresentation {
-    NSString *_bundleID;
-    NSString *_bundleVersion;
-    NSDate *_creationDate;
-    BOOL _currentParticipant;
-    GKPlayerInternal *_currentPlayer;
-    NSDate *_deletionDate;
-    NSArray *_exchanges;
-    GKGameInternal *_game;
-    NSDate *_lastTurnDate;
-    NSString *_lastTurnPlayerID;
-    NSDictionary *_localizableMessage;
-    NSData *_matchData;
-    NSString *_matchDataVersion;
-    NSString *_matchID;
-    unsigned char _maxPlayers;
-    NSString *_message;
-    unsigned char _minPlayers;
-    NSArray *_participants;
-    NSString *_reason;
-    unsigned int _state;
-    NSString *_status;
-    unsigned int _turnNumber;
+    NSString * _bundleID;
+    NSString * _bundleVersion;
+    NSDate * _creationDate;
+    BOOL  _currentParticipant;
+    GKPlayerInternal * _currentPlayer;
+    NSDate * _deletionDate;
+    NSArray * _exchanges;
+    GKGameInternal * _game;
+    NSDate * _lastTurnDate;
+    NSString * _lastTurnPlayerID;
+    NSDictionary * _localizableMessage;
+    NSData * _matchData;
+    NSString * _matchDataVersion;
+    NSString * _matchID;
+    unsigned char  _maxPlayers;
+    NSString * _message;
+    unsigned char  _minPlayers;
+    NSArray * _participants;
+    NSString * _reason;
+    unsigned int  _state;
+    NSString * _status;
+    unsigned int  _turnNumber;
 }
 
 @property (nonatomic, retain) NSString *bundleID;

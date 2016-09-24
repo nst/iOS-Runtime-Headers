@@ -6,7 +6,7 @@
 
 @property (nonatomic) int progressIndicatorStyle;
 
-+ (struct CGSize { float x1; float x2; })size;
++ (struct CGSize { double x1; double x2; })size;
 
 - (int)progressIndicatorStyle;
 - (void)setAnimating:(BOOL)arg1;

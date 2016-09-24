@@ -3,7 +3,7 @@
  */
 
 @interface FLPreferencesFollowUpItemListViewController : PSListController {
-    FLPreferencesController *_controller;
+    FLPreferencesController * _controller;
 }
 
 - (void).cxx_destruct;

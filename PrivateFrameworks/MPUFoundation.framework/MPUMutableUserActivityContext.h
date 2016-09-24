@@ -3,7 +3,7 @@
  */
 
 @interface MPUMutableUserActivityContext : MPUUserActivityContext {
-    NSMutableArray *_containerItems;
+    NSMutableArray * _containerItems;
 }
 
 @property (nonatomic, copy) NSArray *containerItems;

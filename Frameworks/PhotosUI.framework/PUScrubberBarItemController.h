@@ -3,9 +3,9 @@
  */
 
 @interface PUScrubberBarItemController : NSObject {
-    PUBrowsingSession *_browsingSession;
-    UIBarButtonItem *_scrubberBarButtonItem;
-    PUScrubberView *_scrubberView;
+    PUBrowsingSession * _browsingSession;
+    UIBarButtonItem * _scrubberBarButtonItem;
+    PUScrubberView * _scrubberView;
 }
 
 @property (nonatomic, retain) PUBrowsingSession *browsingSession;

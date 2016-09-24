@@ -3,7 +3,7 @@
  */
 
 @interface _UIDatePickerChineseCalendar : NSCalendar {
-    NSCalendar *realCalendar;
+    NSCalendar * realCalendar;
 }
 
 @property NSCalendar *realCalendar;

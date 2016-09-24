@@ -3,7 +3,7 @@
  */
 
 @interface AVVideoPerformanceMetricsInternal : NSObject {
-    NSDictionary *_metricsDictionary;
+    NSDictionary * _metricsDictionary;
 }
 
 @end

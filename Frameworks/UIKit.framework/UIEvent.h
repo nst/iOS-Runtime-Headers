@@ -3,17 +3,19 @@
  */
 
 @interface UIEvent : NSObject {
-    struct __GSEvent { } *_gsEvent;
-    struct __IOHIDEvent { } *_hidEvent;
-    double _timestamp;
+    struct __GSEvent { } * _gsEvent;
+    struct __IOHIDEvent { } * _hidEvent;
+    double  _timestamp;
 }
 
+@property (nonatomic, readonly) NSSet *allTouches;
 @property (nonatomic, readonly) int subtype;
 @property (nonatomic, readonly) double timestamp;
 @property (nonatomic, readonly) int type;
 
-- (struct CGPoint { float x1; float x2; })_digitizerLocation;
+- (struct CGPoint { double x1; double x2; })_digitizerLocation;
 - (unsigned int)_focusHeading;
+- (id)_gestureRecognizersForWindow:(id)arg1;
 - (struct __GSEvent { }*)_gsEvent;
 - (struct __IOHIDEvent { }*)_hidEvent;
 - (id)_init;

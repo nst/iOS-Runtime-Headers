@@ -3,10 +3,10 @@
  */
 
 @interface SCRCMathFractionExpression : SCRCMathExpression {
-    SCRCMathExpression *_denominator;
-    double _lineThickness;
-    SCRCMathExpression *_numerator;
-    SCRCMathExpression *_operator;
+    SCRCMathExpression * _denominator;
+    double  _lineThickness;
+    SCRCMathExpression * _numerator;
+    SCRCMathExpression * _operator;
 }
 
 @property (nonatomic, retain) SCRCMathExpression *denominator;

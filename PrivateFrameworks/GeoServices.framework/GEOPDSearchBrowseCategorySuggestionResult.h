@@ -3,10 +3,14 @@
  */
 
 @interface GEOPDSearchBrowseCategorySuggestionResult : PBCodable <NSCopying> {
-    NSMutableArray *_categorys;
+    NSMutableArray * _categorys;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSMutableArray *categorys;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+
++ (Class)categoryType;
 
 - (void)addCategory:(id)arg1;
 - (id)categoryAtIndex:(unsigned int)arg1;
@@ -23,6 +27,7 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setCategorys:(id)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

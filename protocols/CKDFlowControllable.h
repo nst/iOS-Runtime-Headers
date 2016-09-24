@@ -6,6 +6,5 @@
 @required
 
 - (NSString *)flowControlKey;
-- (NSString *)sectionID;
 
 @end

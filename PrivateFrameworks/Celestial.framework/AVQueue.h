@@ -3,10 +3,10 @@
  */
 
 @interface AVQueue : NSObject {
-    int _isBeingModifiedCount;
-    NSMutableArray *_items;
-    NSRecursiveLock *_mutex;
-    void *_reserved;
+    int  _isBeingModifiedCount;
+    NSMutableArray * _items;
+    NSRecursiveLock * _mutex;
+    void * _reserved;
 }
 
 + (id)avQueue;

@@ -3,17 +3,17 @@
  */
 
 @interface _IDSIDQueryController : NSObject <IDSDaemonListenerProtocol> {
-    NSObject<OS_xpc_object> *_connection;
-    NSObject<OS_dispatch_queue> *_connectionQueue;
-    id _delegateContext;
-    NSMapTable *_delegateToInfo;
-    NSMutableDictionary *_idStatusCache;
-    NSMutableDictionary *_listenerIDToServicesMap;
-    NSMutableDictionary *_listeners;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSString *_rerouteService;
-    NSString *_serviceToken;
-    NSMutableDictionary *_transactionIDToBlockMap;
+    NSObject<OS_xpc_object> * _connection;
+    NSObject<OS_dispatch_queue> * _connectionQueue;
+    id  _delegateContext;
+    NSMapTable * _delegateToInfo;
+    NSMutableDictionary * _idStatusCache;
+    NSMutableDictionary * _listenerIDToServicesMap;
+    NSMutableDictionary * _listeners;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSString * _rerouteService;
+    NSString * _serviceToken;
+    NSMutableDictionary * _transactionIDToBlockMap;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -56,7 +56,7 @@
 - (void)daemonDisconnected;
 - (void)dealloc;
 - (id)init;
-- (id)initWithDelegateContext:(id)arg1 queue:(id)arg2;
+- (id)initWithDelegateContext:(id)arg1 queueController:(id)arg2;
 - (BOOL)refreshIDStatusForDestination:(id)arg1 service:(id)arg2 listenerID:(id)arg3 queue:(id)arg4 completionBlock:(id /* block */)arg5;
 - (BOOL)refreshIDStatusForDestinations:(id)arg1 service:(id)arg2 listenerID:(id)arg3 queue:(id)arg4 completionBlock:(id /* block */)arg5;
 - (void)removeDelegate:(id)arg1;

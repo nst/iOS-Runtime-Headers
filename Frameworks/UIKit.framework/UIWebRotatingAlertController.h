@@ -3,8 +3,8 @@
  */
 
 @interface UIWebRotatingAlertController : _UIRotatingAlertController {
-    BOOL _wasDeferringCallbacks;
-    UIWebDocumentView *_webBrowserView;
+    BOOL  _wasDeferringCallbacks;
+    UIWebDocumentView * _webBrowserView;
 }
 
 - (void).cxx_destruct;

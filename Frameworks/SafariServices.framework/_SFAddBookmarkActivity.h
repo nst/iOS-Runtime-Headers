@@ -2,20 +2,22 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@interface _SFAddBookmarkActivity : UIActivity {
-    <_SFAddBookmarkActivityDelegate> *_delegate;
+@interface _SFAddBookmarkActivity : _SFActivity <_SFSingleBookmarkNavigationControllerDelegate> {
+    _SFSingleBookmarkNavigationController * _bookmarkNavigationController;
 }
 
-@property (nonatomic) <_SFAddBookmarkActivityDelegate> *delegate;
+@property (nonatomic, readonly) _SFSingleBookmarkNavigationController *bookmarkNavigationController;
 
 - (void).cxx_destruct;
 - (id)_beforeActivity;
-- (void)activityDidFinish:(BOOL)arg1;
+- (id)_embeddedActivityViewController;
 - (id)activityImage;
 - (id)activityTitle;
 - (id)activityType;
+- (id)activityViewController;
+- (void)addBookmarkNavController:(id)arg1 didFinishWithResult:(BOOL)arg2;
+- (BOOL)addBookmarkNavControllerCanSaveBookmarkChanges:(id)arg1;
+- (id)bookmarkNavigationController;
 - (BOOL)canPerformWithActivityItems:(id)arg1;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
 
 @end

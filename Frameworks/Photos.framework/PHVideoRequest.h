@@ -3,8 +3,8 @@
  */
 
 @interface PHVideoRequest : PHImageManagerRequest {
-    PHVideoRequestOptions *_options;
-    id /* block */ _resultHandler;
+    PHVideoRequestOptions * _options;
+    id /* block */  _resultHandler;
 }
 
 @property (nonatomic, readonly) PHVideoRequestOptions *options;

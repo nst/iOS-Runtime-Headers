@@ -3,12 +3,14 @@
  */
 
 @interface HKStatisticsQuery : HKQuery {
-    id /* block */ _completionHandler;
-    unsigned int _mergeStrategy;
-    unsigned int _options;
+    id /* block */  _completionHandler;
+    NSDateInterval * _dateInterval;
+    unsigned int  _mergeStrategy;
+    unsigned int  _options;
 }
 
 @property (nonatomic, readonly) id /* block */ completionHandler;
+@property (getter=_dateInterval, setter=_setDateInterval:, nonatomic, retain) NSDateInterval *dateInterval;
 @property (nonatomic) unsigned int mergeStrategy;
 @property (nonatomic, readonly) unsigned int options;
 
@@ -17,10 +19,14 @@
 + (Class)_queryServerDataObjectClass;
 
 - (void).cxx_destruct;
+- (id)_dateInterval;
+- (id)_filter;
+- (id)_filterForDateInterval:(id)arg1;
 - (void)_queue_cleanupAfterDeactivation;
 - (void)_queue_configureQueryServerDataObject:(id)arg1;
 - (id /* block */)_queue_errorHandler;
 - (void)_queue_validate;
+- (void)_setDateInterval:(id)arg1;
 - (id /* block */)completionHandler;
 - (void)deliverStatistics:(id)arg1 forQuery:(id)arg2;
 - (id)initWithQuantityType:(id)arg1 quantitySamplePredicate:(id)arg2 options:(unsigned int)arg3 completionHandler:(id /* block */)arg4;

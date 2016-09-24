@@ -3,14 +3,14 @@
  */
 
 @interface TSDMediaStylePropertyChangeSet : TSSStylePropertyChangeSet {
-    BOOL _definedOpacity;
-    BOOL _definedReflection;
-    BOOL _definedShadow;
-    BOOL _definedStroke;
-    TSSSpecDouble *_opacity;
-    TSDSpecReflection *_reflection;
-    TSDSpecShadow *_shadow;
-    TSDSpecStroke *_stroke;
+    BOOL  _definedOpacity;
+    BOOL  _definedReflection;
+    BOOL  _definedShadow;
+    BOOL  _definedStroke;
+    TSSSpecDouble * _opacity;
+    TSDSpecReflection * _reflection;
+    TSDSpecShadow * _shadow;
+    TSDSpecStroke * _stroke;
 }
 
 - (void)enumerateDefinedPropertiesWithBlock:(id /* block */)arg1;

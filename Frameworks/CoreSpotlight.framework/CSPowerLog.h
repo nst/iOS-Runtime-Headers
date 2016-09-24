@@ -3,9 +3,9 @@
  */
 
 @interface CSPowerLog : NSObject {
-    unsigned int _cachedCount;
-    NSDate *_lastFlushDate;
-    NSMutableDictionary *_operationsByBundleID;
+    unsigned int  _cachedCount;
+    NSDate * _lastFlushDate;
+    NSMutableDictionary * _operationsByBundleID;
 }
 
 @property (nonatomic) unsigned int cachedCount;

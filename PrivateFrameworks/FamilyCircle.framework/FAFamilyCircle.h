@@ -3,9 +3,9 @@
  */
 
 @interface FAFamilyCircle : NSObject <NSSecureCoding> {
-    NSDictionary *__serverResponse;
-    FAFamilyCloudKitProperties *_cloudKitProperties;
-    NSArray *_members;
+    NSDictionary * __serverResponse;
+    FAFamilyCloudKitProperties * _cloudKitProperties;
+    NSArray * _members;
 }
 
 @property (readonly) NSDictionary *_serverResponse;

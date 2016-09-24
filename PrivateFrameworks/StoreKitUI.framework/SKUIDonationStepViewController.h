@@ -3,9 +3,9 @@
  */
 
 @interface SKUIDonationStepViewController : UIViewController {
-    SKUIGiftCharity *_charity;
-    SKUIDonationConfiguration *_configuration;
-    NSOperationQueue *_operationQueue;
+    SKUIGiftCharity * _charity;
+    SKUIDonationConfiguration * _configuration;
+    NSOperationQueue * _operationQueue;
 }
 
 @property (nonatomic, readonly) SKUIGiftCharity *charity;

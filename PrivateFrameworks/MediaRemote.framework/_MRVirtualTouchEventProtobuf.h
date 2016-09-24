@@ -3,16 +3,20 @@
  */
 
 @interface _MRVirtualTouchEventProtobuf : PBCodable <NSCopying> {
+    int  _finger;
     struct { 
         unsigned int x : 1; 
         unsigned int y : 1; 
+        unsigned int finger : 1; 
         unsigned int phase : 1; 
-    } _has;
-    int _phase;
-    double _x;
-    double _y;
+    }  _has;
+    int  _phase;
+    double  _x;
+    double  _y;
 }
 
+@property (nonatomic) int finger;
+@property (nonatomic) BOOL hasFinger;
 @property (nonatomic) BOOL hasPhase;
 @property (nonatomic) BOOL hasX;
 @property (nonatomic) BOOL hasY;
@@ -20,10 +24,13 @@
 @property (nonatomic) double x;
 @property (nonatomic) double y;
 
+- (int)StringAsPhase:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (int)finger;
+- (BOOL)hasFinger;
 - (BOOL)hasPhase;
 - (BOOL)hasX;
 - (BOOL)hasY;
@@ -31,7 +38,10 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)phase;
+- (id)phaseAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)setFinger:(int)arg1;
+- (void)setHasFinger:(BOOL)arg1;
 - (void)setHasPhase:(BOOL)arg1;
 - (void)setHasX:(BOOL)arg1;
 - (void)setHasY:(BOOL)arg1;

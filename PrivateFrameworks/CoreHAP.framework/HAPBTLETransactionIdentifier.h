@@ -3,7 +3,7 @@
  */
 
 @interface HAPBTLETransactionIdentifier : NSObject {
-    unsigned char _unsignedCharValue;
+    unsigned char  _unsignedCharValue;
 }
 
 @property (nonatomic, readonly) unsigned char unsignedCharValue;

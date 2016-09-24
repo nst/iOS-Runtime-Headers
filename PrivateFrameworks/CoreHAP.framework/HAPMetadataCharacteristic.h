@@ -3,13 +3,13 @@
  */
 
 @interface HAPMetadataCharacteristic : NSObject {
-    NSString *_chrDescription;
-    NSString *_format;
-    NSString *_name;
-    NSNumber *_properties;
-    NSString *_units;
-    NSString *_uuidStr;
-    HAPMetadataCharacteristicValue *_valueMetadata;
+    NSString * _chrDescription;
+    NSString * _format;
+    NSString * _name;
+    NSNumber * _properties;
+    NSString * _units;
+    NSString * _uuidStr;
+    HAPMetadataCharacteristicValue * _valueMetadata;
 }
 
 @property (nonatomic, retain) NSString *chrDescription;

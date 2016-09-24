@@ -3,22 +3,24 @@
  */
 
 @interface PKSecureElementConsistencyChecker : NSObject {
-    <PKSecureElementConsistencyCheckerDelegate> *_delegate;
-    PKPaymentWebService *_paymentWebService;
-    NSObject<OS_dispatch_queue> *_processingQueue;
+    <PKSecureElementConsistencyCheckerDelegate> * _delegate;
+    PKPaymentWebService * _paymentWebService;
+    NSObject<OS_dispatch_queue> * _processingQueue;
 }
 
 @property (nonatomic) <PKSecureElementConsistencyCheckerDelegate> *delegate;
 @property (nonatomic, retain) PKPaymentWebService *paymentWebService;
 
++ (BOOL)isCheckingConsistencyForSecureElementID:(id)arg1;
+
+- (void).cxx_destruct;
 - (BOOL)_downloadPasses;
 - (void)_rescheduleWithBackoff;
 - (void)checkConsistencyWithPaymentApplications:(id)arg1 secureElementApplets:(id)arg2 completion:(id /* block */)arg3;
-- (void)dealloc;
 - (id)delegate;
 - (id)initWithPaymentWebService:(id)arg1 delegate:(id)arg2;
 - (id)paymentWebService;
-- (void)queue_checkConsistencyWithPaymentApplications:(id)arg1 secureElementApplets:(id)arg2 completion:(id /* block */)arg3;
+- (void)queue_checkConsistencyWithPaymentApplications:(id)arg1 secureElementApplets:(id)arg2 registeredRegions:(id)arg3 completion:(id /* block */)arg4;
 - (void)queue_startWithCompletion:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPaymentWebService:(id)arg1;

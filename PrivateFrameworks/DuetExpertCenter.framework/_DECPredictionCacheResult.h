@@ -3,9 +3,9 @@
  */
 
 @interface _DECPredictionCacheResult : NSObject {
-    unsigned int _hits;
-    unsigned int _misses;
-    NSDictionary *_predictions;
+    unsigned int  _hits;
+    unsigned int  _misses;
+    NSDictionary * _predictions;
 }
 
 @property (nonatomic, readonly) unsigned int hits;

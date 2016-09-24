@@ -3,13 +3,13 @@
  */
 
 @interface SSVFairPlaySAPContext : NSObject {
-    BOOL _complete;
-    struct FPSAPContextOpaque_ { } *_context;
+    BOOL  _complete;
+    struct FPSAPContextOpaque_ { } * _context;
     struct FairPlayHWInfo_ { 
         unsigned int IDLength; 
         unsigned char ID[20]; 
-    } _hardwareInfo;
-    int _version;
+    }  _hardwareInfo;
+    int  _version;
 }
 
 @property (getter=isComplete, nonatomic, readonly) BOOL complete;

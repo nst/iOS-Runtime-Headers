@@ -3,14 +3,14 @@
  */
 
 @interface SKUIIncompatibleAppViewController : SKUIViewController <SKUIProductPageChildViewController> {
-    SKUIItemArtworkContext *_artworkContext;
-    <SKUIProductPageChildViewControllerDelegate> *_delegate;
-    SKUIProductPageHeaderViewController *_headerViewController;
-    UIImage *_iconImage;
-    SKUIProductPageItem *_incompatibleItem;
-    SKUIIncompatibleAppView *_incompatibleView;
-    SSVLoadURLOperation *_loadIconOperation;
-    NSOperationQueue *_operationQueue;
+    SKUIItemArtworkContext * _artworkContext;
+    <SKUIProductPageChildViewControllerDelegate> * _delegate;
+    SKUIProductPageHeaderViewController * _headerViewController;
+    UIImage * _iconImage;
+    SKUIProductPageItem * _incompatibleItem;
+    SKUIIncompatibleAppView * _incompatibleView;
+    SSVLoadURLOperation * _loadIconOperation;
+    NSOperationQueue * _operationQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

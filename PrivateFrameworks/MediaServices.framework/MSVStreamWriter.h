@@ -3,21 +3,21 @@
  */
 
 @interface MSVStreamWriter : NSObject <NSStreamDelegate> {
-    unsigned long long _bytesWritten;
-    id /* block */ _canWriteDataBlock;
-    BOOL _closeOnStop;
-    BOOL _compressed;
-    id /* block */ _didEncounterErrorBlock;
-    id /* block */ _didFinishWritingBlock;
-    NSInputStream *_inputStream;
-    unsigned int _maximumBufferSize;
-    NSOutputStream *_outputStream;
-    NSObject<OS_dispatch_queue> *_queue;
-    double _timestamp;
-    struct z_stream_s { char *x1; unsigned int x2; unsigned int x3; char *x4; unsigned int x5; unsigned int x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned int x13; unsigned int x14; } *_zstreamp;
+    unsigned int  _bytesWritten;
+    id /* block */  _canWriteDataBlock;
+    BOOL  _closeOnStop;
+    BOOL  _compressed;
+    id /* block */  _didEncounterErrorBlock;
+    id /* block */  _didFinishWritingBlock;
+    NSInputStream * _inputStream;
+    unsigned int  _maximumBufferSize;
+    NSOutputStream * _outputStream;
+    NSObject<OS_dispatch_queue> * _queue;
+    double  _timestamp;
+    struct z_stream_s { char *x1; unsigned int x2; unsigned int x3; char *x4; unsigned int x5; unsigned int x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned int x13; unsigned int x14; } * _zstreamp;
 }
 
-@property (nonatomic) unsigned long long bytesWritten;
+@property (nonatomic) unsigned int bytesWritten;
 @property (nonatomic, copy) id /* block */ canWriteDataBlock;
 @property (getter=isCompressed, nonatomic) BOOL compressed;
 @property (readonly, copy) NSString *debugDescription;
@@ -34,7 +34,7 @@
 
 - (void).cxx_destruct;
 - (id)_decompressData:(id)arg1;
-- (unsigned long long)bytesWritten;
+- (unsigned int)bytesWritten;
 - (id /* block */)canWriteDataBlock;
 - (void)dealloc;
 - (id /* block */)didEncounterErrorBlock;
@@ -47,7 +47,7 @@
 - (unsigned int)maximumBufferSize;
 - (id)outputStream;
 - (id)queue;
-- (void)setBytesWritten:(unsigned long long)arg1;
+- (void)setBytesWritten:(unsigned int)arg1;
 - (void)setCanWriteDataBlock:(id /* block */)arg1;
 - (void)setCompressed:(BOOL)arg1;
 - (void)setDidEncounterErrorBlock:(id /* block */)arg1;

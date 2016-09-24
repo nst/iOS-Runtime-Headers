@@ -3,14 +3,14 @@
  */
 
 @interface WLDeviceDiscoverySocketHandler : WLSocketHandler <NSXMLParserDelegate> {
-    <WLDeviceDiscoverySocketHandlerDelegate> *_delegate;
-    BOOL _handshakeDataSent;
-    NSObject<OS_dispatch_source> *_readSource;
-    int _sockfd;
-    WLSourceDevice *_sourceDevice;
-    NSString *_srpPassword;
-    unsigned int _state;
-    NSObject<OS_dispatch_queue> *_writeQueue;
+    <WLDeviceDiscoverySocketHandlerDelegate> * _delegate;
+    BOOL  _handshakeDataSent;
+    NSObject<OS_dispatch_source> * _readSource;
+    int  _sockfd;
+    WLSourceDevice * _sourceDevice;
+    NSString * _srpPassword;
+    unsigned int  _state;
+    NSObject<OS_dispatch_queue> * _writeQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

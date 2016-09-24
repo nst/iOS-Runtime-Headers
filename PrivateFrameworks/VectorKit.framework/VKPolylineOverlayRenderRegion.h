@@ -3,39 +3,41 @@
  */
 
 @interface VKPolylineOverlayRenderRegion : NSObject {
-    struct vector<VKRect, std::__1::allocator<VKRect> > { 
-        struct { /* ? */ } *__begin_; 
-        struct { /* ? */ } *__end_; 
-        struct __compressed_pair<VKRect *, std::__1::allocator<VKRect> > { 
-            struct { /* ? */ } *__first_; 
+    struct vector<gm::Box<double, 2>, std::__1::allocator<gm::Box<double, 2> > > { 
+        struct Box<double, 2> {} *__begin_; 
+        struct Box<double, 2> {} *__end_; 
+        struct __compressed_pair<gm::Box<double, 2> *, std::__1::allocator<gm::Box<double, 2> > > { 
+            struct Box<double, 2> {} *__first_; 
         } __end_cap_; 
-    } _rectsForSnapping;
+    }  _rectsForSnapping;
     struct vector<VKTileKey, std::__1::allocator<VKTileKey> > { 
         struct VKTileKey {} *__begin_; 
         struct VKTileKey {} *__end_; 
         struct __compressed_pair<VKTileKey *, std::__1::allocator<VKTileKey> > { 
             struct VKTileKey {} *__first_; 
         } __end_cap_; 
-    } _snappedTileKeys;
-    NSSet *_tiles;
-    struct { 
-        double x0; 
-        double x1; 
-        double y0; 
-        double y1; 
-    } _visibleRect;
+    }  _snappedTileKeys;
+    NSSet * _tiles;
+    struct Box<double, 2> { 
+        struct Matrix<double, 2, 1> { 
+            double _e[2]; 
+        } _minimum; 
+        struct Matrix<double, 2, 1> { 
+            double _e[2]; 
+        } _maximum; 
+    }  _visibleRect;
 }
 
 @property (nonatomic, readonly) NSSet *tiles;
-@property (nonatomic, readonly) struct { double x1; double x2; double x3; double x4; } visibleRect;
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Box<double' */ struct  visibleRect; /* unknown property attribute:  1>=[2d]}} */
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)initForKeysInView:(id)arg1 tiles:(id)arg2 allowsSnapping:(BOOL)arg3;
 - (BOOL)isEquivalentToNewRegion:(id)arg1;
-- (const struct vector<VKRect, std::__1::allocator<VKRect> > { struct { /* ? */ } *x1; struct { /* ? */ } *x2; struct __compressed_pair<VKRect *, std::__1::allocator<VKRect> > { struct { /* ? */ } *x_3_1_1; } x3; }*)rectsForSnapping;
+- (const struct vector<gm::Box<double, 2>, std::__1::allocator<gm::Box<double, 2> > > { struct Box<double, 2> {} *x1; struct Box<double, 2> {} *x2; struct __compressed_pair<gm::Box<double, 2> *, std::__1::allocator<gm::Box<double, 2> > > { struct Box<double, 2> {} *x_3_1_1; } x3; }*)rectsForSnapping;
 - (id)tiles;
-- (struct { double x1; double x2; double x3; double x4; })visibleRect;
+- (struct Box<double, 2> { struct Matrix<double, 2, 1> { double x_1_1_1[2]; } x1; struct Matrix<double, 2, 1> { double x_2_1_1[2]; } x2; })visibleRect;
 
 @end

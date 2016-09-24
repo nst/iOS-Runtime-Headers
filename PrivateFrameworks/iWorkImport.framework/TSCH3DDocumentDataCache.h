@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DDocumentDataCache : NSObject {
-    TSKDocumentRoot *mDocumentRoot;
+    TSKDocumentRoot * mDocumentRoot;
 }
 
 + (id)dataCacheWithDocumentRoot:(id)arg1;

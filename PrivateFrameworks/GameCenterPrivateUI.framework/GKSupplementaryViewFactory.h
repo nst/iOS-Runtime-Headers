@@ -3,10 +3,10 @@
  */
 
 @interface GKSupplementaryViewFactory : NSObject {
-    SEL _configurator;
-    Class _reusableViewClass;
-    SEL _selector;
-    id _target;
+    SEL  _configurator;
+    Class  _reusableViewClass;
+    SEL  _selector;
+    id  _target;
 }
 
 @property (nonatomic, readonly) SEL configurator;

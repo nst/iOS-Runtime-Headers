@@ -3,8 +3,8 @@
  */
 
 @interface NSSQLiteIntarrayTable : NSObject {
-    struct sqlite3_intarray { } *_intarrayTable;
-    NSString *_intarrayTableName;
+    struct sqlite3_intarray { } * _intarrayTable;
+    NSString * _intarrayTableName;
 }
 
 @property struct sqlite3_intarray { }*intarrayTable;

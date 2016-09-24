@@ -3,8 +3,8 @@
  */
 
 @interface TSKAddedToDocumentContext_Pasting : TSKAddedToDocumentContext {
-    NSMutableArray *mAddedDrawables;
-    <TSKMultiTableRemapping> *mMultiTableRemapper;
+    NSMutableArray * mAddedDrawables;
+    <TSKMultiTableRemapping> * mMultiTableRemapper;
 }
 
 - (void)addDrawable:(id)arg1;

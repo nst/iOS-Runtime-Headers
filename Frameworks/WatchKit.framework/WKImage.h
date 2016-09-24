@@ -3,9 +3,9 @@
  */
 
 @interface WKImage : NSObject <NSCopying, NSSecureCoding> {
-    UIImage *_image;
-    NSData *_imageData;
-    NSString *_imageName;
+    UIImage * _image;
+    NSData * _imageData;
+    NSString * _imageName;
 }
 
 @property (retain) UIImage *image;

@@ -3,7 +3,7 @@
  */
 
 @interface CKConversationListFilterCell : UITableViewCell {
-    UISegmentedControl *_filterControl;
+    UISegmentedControl * _filterControl;
 }
 
 @property (nonatomic, retain) UISegmentedControl *filterControl;
@@ -11,7 +11,7 @@
 + (float)defaultHeight;
 + (id)identifier;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)filterControl;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;

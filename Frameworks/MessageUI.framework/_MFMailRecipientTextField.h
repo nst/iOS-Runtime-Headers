@@ -3,7 +3,7 @@
  */
 
 @interface _MFMailRecipientTextField : UITextField {
-    BOOL _isShowingDictationPlaceholder;
+    BOOL  _isShowingDictationPlaceholder;
 }
 
 @property (nonatomic, readonly) BOOL isShowingDictationPlaceholder;

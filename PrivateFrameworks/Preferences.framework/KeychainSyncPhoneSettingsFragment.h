@@ -3,14 +3,14 @@
  */
 
 @interface KeychainSyncPhoneSettingsFragment : NSObject {
-    KeychainSyncCountryInfo *_countryInfo;
-    PSSpecifier *_countrySpecifier;
-    <KeychainSyncPhoneSettingsFragmentDelegate> *_delegate;
-    PSListController *_listController;
-    NSString *_phoneNumber;
-    PSPhoneNumberSpecifier *_phoneNumberSpecifier;
-    NSArray *_specifiers;
-    NSString *_title;
+    KeychainSyncCountryInfo * _countryInfo;
+    PSSpecifier * _countrySpecifier;
+    <KeychainSyncPhoneSettingsFragmentDelegate> * _delegate;
+    PSListController * _listController;
+    NSString * _phoneNumber;
+    PSPhoneNumberSpecifier * _phoneNumberSpecifier;
+    NSArray * _specifiers;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) KeychainSyncCountryInfo *countryInfo;

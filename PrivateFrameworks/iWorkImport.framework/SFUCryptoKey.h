@@ -3,11 +3,11 @@
  */
 
 @interface SFUCryptoKey : NSObject <TSPMutableCryptoInfo> {
-    NSString *_passphrase;
-    unsigned int mIterationCount;
-    char *mKey;
-    unsigned long mKeyLength;
-    NSData *mSaltData;
+    NSString * _passphrase;
+    unsigned int  mIterationCount;
+    char * mKey;
+    unsigned long  mKeyLength;
+    NSData * mSaltData;
 }
 
 @property (nonatomic, readonly) NSArray *blockInfos;
@@ -15,6 +15,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) unsigned long decodedLength;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL hasDecodedLength;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSString *passphrase;
 @property (nonatomic, readonly) unsigned long preferredBlockSize;
@@ -25,6 +26,7 @@
 - (id)cryptoKey;
 - (void)dealloc;
 - (unsigned long)decodedLength;
+- (BOOL)hasDecodedLength;
 - (void)incrementDecodedLengthBy:(unsigned long)arg1;
 - (id)initAes128Key:(const char *)arg1 length:(unsigned int)arg2 iterationCount:(unsigned int)arg3;
 - (id)initAes128KeyFromPassphrase:(id)arg1 iterationCount:(unsigned int)arg2;

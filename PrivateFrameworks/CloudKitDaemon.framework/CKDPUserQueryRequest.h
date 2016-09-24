@@ -3,18 +3,25 @@
  */
 
 @interface CKDPUserQueryRequest : PBRequest <NSCopying> {
-    CKDPUserAlias *_alias;
-    NSString *_pcsServiceType;
-    NSMutableArray *_sortedBys;
+    CKDPUserAlias * _alias;
+    struct { 
+        unsigned int publicKeyRequested : 1; 
+    }  _has;
+    NSString * _oBSOLETEPcsServiceType;
+    BOOL  _publicKeyRequested;
+    NSMutableArray * _sortedBys;
 }
 
 @property (nonatomic, retain) CKDPUserAlias *alias;
 @property (nonatomic, readonly) BOOL hasAlias;
-@property (nonatomic, readonly) BOOL hasPcsServiceType;
-@property (nonatomic, retain) NSString *pcsServiceType;
+@property (nonatomic, readonly) BOOL hasOBSOLETEPcsServiceType;
+@property (nonatomic) BOOL hasPublicKeyRequested;
+@property (nonatomic, retain) NSString *oBSOLETEPcsServiceType;
+@property (nonatomic) BOOL publicKeyRequested;
 @property (nonatomic, retain) NSMutableArray *sortedBys;
 
 + (id)options;
++ (Class)sortedByType;
 
 - (void).cxx_destruct;
 - (void)addSortedBy:(id)arg1;
@@ -25,16 +32,20 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasAlias;
-- (BOOL)hasPcsServiceType;
+- (BOOL)hasOBSOLETEPcsServiceType;
+- (BOOL)hasPublicKeyRequested;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (id)pcsServiceType;
+- (id)oBSOLETEPcsServiceType;
+- (BOOL)publicKeyRequested;
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setAlias:(id)arg1;
-- (void)setPcsServiceType:(id)arg1;
+- (void)setHasPublicKeyRequested:(BOOL)arg1;
+- (void)setOBSOLETEPcsServiceType:(id)arg1;
+- (void)setPublicKeyRequested:(BOOL)arg1;
 - (void)setSortedBys:(id)arg1;
 - (id)sortedByAtIndex:(unsigned int)arg1;
 - (id)sortedBys;

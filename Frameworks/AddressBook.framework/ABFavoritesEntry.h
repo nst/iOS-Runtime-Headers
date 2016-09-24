@@ -3,16 +3,16 @@
  */
 
 @interface ABFavoritesEntry : NSObject {
-    NSString *_abDatabaseUUID;
-    int _abIdentifier;
-    int _abUid;
-    void *_addressBook;
-    unsigned int _dirty;
-    NSString *_label;
-    NSString *_name;
-    int _property;
-    int _type;
-    NSString *_value;
+    NSString * _abDatabaseUUID;
+    int  _abIdentifier;
+    int  _abUid;
+    void * _addressBook;
+    unsigned int  _dirty;
+    NSString * _label;
+    NSString * _name;
+    int  _property;
+    int  _type;
+    NSString * _value;
 }
 
 + (void)_runLookup;

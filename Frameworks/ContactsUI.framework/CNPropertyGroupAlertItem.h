@@ -2,20 +2,12 @@
    Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
  */
 
-@interface CNPropertyGroupAlertItem : CNPropertyGroupItem {
-    int _alertKind;
-}
-
-@property (nonatomic, readonly) NSString *alertIdentifier;
-@property (nonatomic) int alertKind;
+@interface CNPropertyGroupAlertItem : CNPropertyGroupItem
 
 + (id)emptyValueForLabel:(id)arg1;
 
 - (id)_toneManager;
 - (id)_vibrationManager;
-- (id)activityAlertKey;
-- (id)alertIdentifier;
-- (int)alertKind;
 - (BOOL)canRemove;
 - (id)description;
 - (id)displayLabel;
@@ -23,8 +15,7 @@
 - (BOOL)isEquivalentToItem:(id)arg1 whenEditing:(BOOL)arg2;
 - (BOOL)isValidValue:(id)arg1;
 - (id)labeledValue;
-- (void)setAlertKind:(int)arg1;
+- (id)replacementForInvalidValue:(id)arg1;
 - (void)setLabeledValue:(id)arg1;
-- (void)updateLabeledValueWithValue:(id)arg1;
 
 @end

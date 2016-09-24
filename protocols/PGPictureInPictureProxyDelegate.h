@@ -11,15 +11,8 @@
 - (void)pictureInPictureProxy:(void *)arg1 restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:(void *)arg2; // needs 2 arg types, found 7: PGPictureInPictureProxy *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
 - (void)pictureInPictureProxy:(PGPictureInPictureProxy *)arg1 willStartPictureInPictureWithAnimationType:(int)arg2;
 - (void)pictureInPictureProxy:(PGPictureInPictureProxy *)arg1 willStopPictureInPictureWithAnimationType:(int)arg2 reason:(int)arg3;
-- (void)pictureInPictureProxyDidCancelPictureInPicture:(PGPictureInPictureProxy *)arg1;
-- (void)pictureInPictureProxyDidStartPictureInPicture:(PGPictureInPictureProxy *)arg1;
-- (void)pictureInPictureProxyDidStopPictureInPicture:(PGPictureInPictureProxy *)arg1;
-- (void)pictureInPictureProxyFailedToStartPictureInPicture:(PGPictureInPictureProxy *)arg1 withError:(NSError *)arg2;
 - (void)pictureInPictureProxyPictureInPictureInterruptionBegan:(PGPictureInPictureProxy *)arg1;
 - (void)pictureInPictureProxyPictureInPictureInterruptionEnded:(PGPictureInPictureProxy *)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pictureInPictureProxyViewFrameForTransitionAnimation:(PGPictureInPictureProxy *)arg1;
-- (void)pictureInPictureProxyWillCancelPictureInPicture:(PGPictureInPictureProxy *)arg1;
-- (void)pictureInPictureProxyWillStartPictureInPicture:(PGPictureInPictureProxy *)arg1;
-- (void)pictureInPictureProxyWillStopPictureInPicture:(PGPictureInPictureProxy *)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })pictureInPictureProxyViewFrameForTransitionAnimation:(PGPictureInPictureProxy *)arg1;
 
 @end

@@ -3,9 +3,9 @@
  */
 
 @interface TSDCABasicAnimationContextCache : TSDCAPropertyAnimationContextCache {
-    id _fromValue;
-    BOOL _isObjectTypeCGColor;
-    id _toValue;
+    id  _fromValue;
+    BOOL  _isObjectTypeCGColor;
+    id  _toValue;
 }
 
 @property (nonatomic, readonly) id fromValue;

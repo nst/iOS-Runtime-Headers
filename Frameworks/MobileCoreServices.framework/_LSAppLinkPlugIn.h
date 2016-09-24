@@ -3,13 +3,13 @@
  */
 
 @interface _LSAppLinkPlugIn : NSObject {
-    NSURLComponents *_URLComponents;
-    NSObject<OS_xpc_object> *_XPCConnection;
-    NSError *_previousPlugInError;
+    NSURLComponents * _URLComponents;
+    NSXPCConnection * _XPCConnection;
+    NSError * _previousPlugInError;
 }
 
 @property (retain) NSURLComponents *URLComponents;
-@property (retain) NSObject<OS_xpc_object> *XPCConnection;
+@property (retain) NSXPCConnection *XPCConnection;
 @property (retain) NSError *previousPlugInError;
 
 + (BOOL)canHandleURLComponents:(id)arg1;

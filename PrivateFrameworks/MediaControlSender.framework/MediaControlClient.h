@@ -3,10 +3,10 @@
  */
 
 @interface MediaControlClient : NSObject {
-    struct MediaControlClientImp { } *_client;
-    id /* block */ _eventHandlerBlock;
-    NSObject<OS_dispatch_queue> *_eventHandlerQueue;
-    NSObject<OS_dispatch_queue> *_queue;
+    struct MediaControlClientImp { } * _client;
+    id /* block */  _eventHandlerBlock;
+    NSObject<OS_dispatch_queue> * _eventHandlerQueue;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 - (void)checkAuthentication;

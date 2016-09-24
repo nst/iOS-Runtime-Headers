@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DTSPImageData : NSObject <TSCHUnretainedParent> {
-    TSPData *mData;
-    TSCH3DTSPImageDataTexture *mParent;
+    TSPData * mData;
+    TSCH3DTSPImageDataTexture * mParent;
 }
 
 @property (nonatomic, retain) TSPData *data;

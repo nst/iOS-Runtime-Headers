@@ -3,7 +3,7 @@
  */
 
 @interface WBSAddressBookMatchMarker : WBSFormAutoFillItem {
-    NSArray *_array;
+    NSArray * _array;
 }
 
 @property (nonatomic, readonly) NSArray *array;

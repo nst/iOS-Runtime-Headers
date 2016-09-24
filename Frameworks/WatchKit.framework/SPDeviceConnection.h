@@ -3,10 +3,10 @@
  */
 
 @interface SPDeviceConnection : NSObject <SPLocalApplicationProtocol> {
-    NSObject<OS_dispatch_queue> *_connectionQueue;
-    <SPDeviceConnectionDelegate> *_delegate;
-    NSHashTable *_observers;
-    NSXPCConnection *_serverConnection;
+    NSObject<OS_dispatch_queue> * _connectionQueue;
+    <SPDeviceConnectionDelegate> * _delegate;
+    NSHashTable * _observers;
+    NSXPCConnection * _serverConnection;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *connectionQueue;
@@ -56,7 +56,6 @@
 - (void)fetchWatchAppBundleURLWithinCompanionAppWithWatchAppIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)getAlwaysInstallForPairedDevice:(id)arg1 completion:(id /* block */)arg2;
 - (void)getAlwaysInstallWithCompletion:(id /* block */)arg1;
-- (BOOL)hasEntitlement:(id /* block */)arg1 caller:(const char *)arg2;
 - (void)hideUserNotification;
 - (id)init;
 - (void)installAllApplications;

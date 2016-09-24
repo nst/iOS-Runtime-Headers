@@ -3,8 +3,8 @@
  */
 
 @interface MFMessageHeaders : NSObject <NSCopying, SGHeaderCollection> {
-    NSData *_data;
-    unsigned long _preferredEncoding;
+    NSData * _data;
+    unsigned long  _preferredEncoding;
 }
 
 @property (nonatomic, retain) NSData *data;
@@ -25,6 +25,7 @@
 + (id)uniqueHeaderKeyStringForString:(id)arg1;
 
 - (id)_capitalizedKeyForKey:(id)arg1;
+- (id)_commaSeparatedValuesForKey:(id)arg1 includeAngleBracket:(BOOL)arg2;
 - (unsigned long)_contentTypeEncoding;
 - (id)_copyAddressListForKey:(id)arg1;
 - (id)_copyHeaderValueForKey:(id)arg1;
@@ -59,7 +60,9 @@
 - (id)headersDictionary;
 - (id)headersForKey:(id)arg1;
 - (id)init;
+- (id)initWithASCIIHeaderString:(id)arg1;
 - (id)initWithHeaderData:(id)arg1 encoding:(unsigned long)arg2;
+- (id)listUnsubscribeCommands;
 - (BOOL)messageIsFromEntourage;
 - (id)mutableCopy;
 - (unsigned long)preferredEncoding;

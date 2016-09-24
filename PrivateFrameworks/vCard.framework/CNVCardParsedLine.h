@@ -3,11 +3,11 @@
  */
 
 @interface CNVCardParsedLine : NSObject {
-    NSString *_grouping;
-    BOOL _isPrimary;
-    NSString *_name;
-    NSArray *_parameters;
-    id _value;
+    NSString * _grouping;
+    BOOL  _isPrimary;
+    NSString * _name;
+    NSArray * _parameters;
+    id  _value;
 }
 
 @property (copy) NSString *grouping;
@@ -16,7 +16,7 @@
 @property (copy) NSArray *parameters;
 @property (retain) id value;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)grouping;
 - (id)initWithName:(id)arg1;

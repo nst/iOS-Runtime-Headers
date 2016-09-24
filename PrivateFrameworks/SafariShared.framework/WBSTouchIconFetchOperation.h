@@ -2,50 +2,43 @@
    Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
  */
 
-@interface WBSTouchIconFetchOperation : WBSSiteMetadataFetchOperation <WBSTouchIconObserver, WKNavigationDelegate> {
-    id /* block */ _completionHandler;
-    NSTimer *_loadingTimeoutTimer;
-    NSArray *_pendingTouchIconURLs;
-    WKProcessPool *_processPool;
-    int _state;
-    _WKRemoteObjectInterface *_touchIconObserverInterface;
-    WKWebView *_webView;
+@interface WBSTouchIconFetchOperation : WBSWebViewMetadataFetchOperation <WBSTouchIconObserver> {
+    id /* block */  _completionHandler;
+    NSTimer * _loadingTimeoutTimer;
+    NSArray * _pendingTouchIconURLs;
+    int  _state;
+    _WKRemoteObjectInterface * _touchIconObserverInterface;
+    NSSet * _touchIconURLs;
 }
 
 @property (nonatomic, readonly, copy) id /* block */ completionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) WKProcessPool *processPool;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) WKWebView *webView;
 
 - (void).cxx_destruct;
-- (void)_clearWebView;
 - (void)_downloadFirstValidImageWithURLs:(id)arg1 failureHandler:(id /* block */)arg2;
 - (void)_downloadPendingTouchIconURLs;
 - (void)_scheduleTimeoutWithTimeInterval:(double)arg1;
-- (void)_startOffscreenTouchIconRequest;
-- (void)_webViewWebProcessDidCrash:(id)arg1;
-- (void)cancel;
+- (void)_setUpRemoteObjectProxies;
+- (void)_tearDownRemoteObjectProxies;
+- (void)clearWebView;
 - (id /* block */)completionHandler;
-- (void)dealloc;
 - (id)description;
-- (void)didCompleteWithIcon:(id)arg1 requestDidSucceed:(BOOL)arg2;
-- (void)didFetchIconURLs:(id)arg1 forURL:(id)arg2;
+- (void)didCompleteWithResult:(id)arg1;
+- (void)didCreateWebView;
+- (void)didFailFetch;
+- (void)didFetchTouchIconURLs:(id)arg1 andFaviconURLs:(id)arg2 forURL:(id)arg3;
+- (unsigned int)hash;
 - (id)initWithRequest:(id)arg1;
-- (id)initWithRequest:(id)arg1 processPool:(id)arg2 completionHandler:(id /* block */)arg3;
-- (id)preferences;
-- (id)processPool;
+- (id)initWithRequest:(id)arg1 completionHandler:(id /* block */)arg2;
+- (BOOL)isEqual:(id)arg1;
+- (void)loadRequest;
 - (void)resetState;
-- (void)setUpRemoteObjectProxies;
-- (void)start;
-- (void)tearDownRemoveObjectProxies;
-- (id)webView;
+- (void)startOffscreenFetching;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(id /* block */)arg3;
-- (void)webView:(id)arg1 didFailNavigation:(id)arg2 withError:(id)arg3;
-- (void)webView:(id)arg1 didFailProvisionalNavigation:(id)arg2 withError:(id)arg3;
 - (id)webViewConfiguration;
-- (void)willBeginLoading;
+- (void)willClearWebView;
 
 @end

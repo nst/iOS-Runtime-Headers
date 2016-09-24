@@ -3,7 +3,7 @@
  */
 
 @interface NSSubstringPredicateOperator : NSStringPredicateOperator {
-    unsigned int _position;
+    unsigned int  _position;
 }
 
 + (BOOL)supportsSecureCoding;

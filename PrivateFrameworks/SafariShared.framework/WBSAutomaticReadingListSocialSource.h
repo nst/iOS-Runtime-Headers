@@ -3,16 +3,16 @@
  */
 
 @interface WBSAutomaticReadingListSocialSource : NSObject {
-    NSArray *_accounts;
-    NSMutableDictionary *_accountsToNumberOfRequestsInProgressForOlderItems;
-    NSDictionary *_accountsToTrackedRecordsInfoMap;
-    NSArray *_activeAccounts;
-    Class _fallbackIconProviderClass;
-    NSTimer *_minimumTimeBetweenRequestsTimer;
-    unsigned int _numberOfRequestsInProgressForNewerItems;
-    WBSAutomaticReadingListTrackedRecordsInfo *_recordsInfo;
-    id _serviceImage;
-    NSXPCConnection *_socialHelperConnection;
+    NSArray * _accounts;
+    NSMutableDictionary * _accountsToNumberOfRequestsInProgressForOlderItems;
+    NSDictionary * _accountsToTrackedRecordsInfoMap;
+    NSArray * _activeAccounts;
+    Class  _fallbackIconProviderClass;
+    NSTimer * _minimumTimeBetweenRequestsTimer;
+    unsigned int  _numberOfRequestsInProgressForNewerItems;
+    WBSAutomaticReadingListTrackedRecordsInfo * _recordsInfo;
+    id  _serviceImage;
+    NSXPCConnection * _socialHelperConnection;
 }
 
 @property (nonatomic, readonly) NSString *accountTypeIdentifier;

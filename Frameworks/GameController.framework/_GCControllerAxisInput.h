@@ -3,13 +3,13 @@
  */
 
 @interface _GCControllerAxisInput : GCControllerAxisInput {
-    GCControllerElement *_collection;
-    BOOL _digital;
-    BOOL _flipped;
-    GCControllerButtonInput *_negative;
-    GCControllerButtonInput *_positive;
-    float _value;
-    id /* block */ _valueChangedHandler;
+    GCControllerElement * _collection;
+    BOOL  _digital;
+    BOOL  _flipped;
+    GCControllerButtonInput * _negative;
+    GCControllerButtonInput * _positive;
+    double  _value;
+    id /* block */  _valueChangedHandler;
 }
 
 - (void).cxx_destruct;

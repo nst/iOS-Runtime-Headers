@@ -3,24 +3,26 @@
  */
 
 @interface HSCloudAvailabilityController : NSObject <HSCloudAvailability, RadiosPreferencesDelegate> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    BOOL _canShowCloudDownloadButtons;
-    BOOL _canShowCloudMusic;
-    BOOL _canShowCloudVideo;
-    BOOL _isAirplaneModeActive;
-    BOOL _isAutoDownloadOnCellularAllowed;
-    BOOL _isCellularDataActive;
-    BOOL _isNetworkReachable;
-    BOOL _isShowingAllMusic;
-    BOOL _isShowingAllVideo;
-    BOOL _isUpdateInProgress;
-    BOOL _isWiFiEnabled;
-    unsigned int _networkReachabilityObservationCount;
-    int _networkType;
-    int _preferencesChangedNotifyToken;
-    BOOL _preferencesChangedNotifyTokenIsValid;
-    RadiosPreferences *_radiosPreferences;
-    struct __SCNetworkReachability { } *_reachabilityRef;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    BOOL  _canShowCloudDownloadButtons;
+    BOOL  _canShowCloudMusic;
+    BOOL  _canShowCloudVideo;
+    struct __CTServerConnection { } * _ctServerConnection;
+    BOOL  _hasProperNetworkConditionsToShowCloudMedia;
+    BOOL  _isAirplaneModeActive;
+    BOOL  _isAutoDownloadOnCellularAllowed;
+    BOOL  _isCellularDataActive;
+    BOOL  _isNetworkReachable;
+    BOOL  _isShowingAllMusic;
+    BOOL  _isShowingAllVideo;
+    BOOL  _isUpdateInProgress;
+    BOOL  _isWiFiEnabled;
+    unsigned int  _networkReachabilityObservationCount;
+    int  _networkType;
+    int  _preferencesChangedNotifyToken;
+    BOOL  _preferencesChangedNotifyTokenIsValid;
+    RadiosPreferences * _radiosPreferences;
+    struct __SCNetworkReachability { } * _reachabilityRef;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -31,8 +33,8 @@
 + (id)sharedController;
 
 - (void).cxx_destruct;
+- (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_cellularNetworkAllowedDidChangeNotification:(id)arg1;
-- (void)_handleTelephonyNotificationWithName:(id)arg1 userInfo:(id)arg2;
 - (BOOL)_hasCellularCapability;
 - (BOOL)_hasWiFiCapability;
 - (BOOL)_isAutoDownloadOnCellularAllowed;
@@ -54,9 +56,16 @@
 - (void)dealloc;
 - (void)endObservingNetworkReachability;
 - (BOOL)hasProperNetworkConditionsToPlayMedia;
+- (BOOL)hasProperNetworkConditionsToShowCloudMedia;
 - (id)init;
 - (BOOL)isCellularDataRestricted;
+- (BOOL)isCellularDataRestrictedForMusic;
+- (BOOL)isCellularDataRestrictedForStoreApps;
+- (BOOL)isCellularDataRestrictedForVideos;
 - (BOOL)isNetworkReachable;
 - (BOOL)shouldProhibitActionsForCurrentNetworkConditions;
+- (BOOL)shouldProhibitMusicActionForCurrentNetworkConditions;
+- (BOOL)shouldProhibitStoreAppsActionForCurrentNetworkConditions;
+- (BOOL)shouldProhibitVideosActionForCurrentNetworkConditions;
 
 @end

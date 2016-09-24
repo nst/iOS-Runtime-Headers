@@ -3,7 +3,7 @@
  */
 
 @interface TSDImageAdjuster : NSObject {
-    TSDImageAdjustments *mImageAdjustments;
+    TSDImageAdjustments * mImageAdjustments;
 }
 
 - (void)dealloc;

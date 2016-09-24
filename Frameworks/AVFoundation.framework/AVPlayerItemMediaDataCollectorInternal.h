@@ -3,7 +3,7 @@
  */
 
 @interface AVPlayerItemMediaDataCollectorInternal : NSObject {
-    AVWeakReference *weakReference;
+    AVWeakReference * weakReference;
 }
 
 @end

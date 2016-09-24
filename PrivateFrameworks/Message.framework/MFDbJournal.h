@@ -3,15 +3,15 @@
  */
 
 @interface MFDbJournal : NSObject {
-    NSMutableData *_buffer;
-    id /* block */ _checkpointBlock;
-    int _fd;
+    NSMutableData * _buffer;
+    id /* block */  _checkpointBlock;
+    int  _fd;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _lock;
-    NSString *_path;
-    id /* block */ _rollbackBlock;
+    }  _lock;
+    NSString * _path;
+    id /* block */  _rollbackBlock;
 }
 
 @property (nonatomic, copy) id /* block */ checkpointBlock;

@@ -3,9 +3,9 @@
  */
 
 @interface PBHandshake : NSObject {
-    unsigned int _position;
-    unsigned int _state;
-    unsigned int _version;
+    unsigned int  _position;
+    unsigned int  _state;
+    unsigned int  _version;
 }
 
 @property (nonatomic) unsigned int position;

@@ -3,7 +3,7 @@
  */
 
 @interface SKUIJSMediaSocialAuthor : NSObject <SKUIJSMediaSocialAuthor> {
-    SKUIMediaSocialAuthor *_mediaSocialAuthor;
+    SKUIMediaSocialAuthor * _mediaSocialAuthor;
 }
 
 @property (nonatomic, readonly) NSString *dsId;

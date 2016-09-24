@@ -3,16 +3,16 @@
  */
 
 @interface VKRasterMapTileRequest : NSObject <NSCopying> {
-    NSLocale *_locale;
-    GEOResourceManifestConfiguration *_manifestConfiguration;
-    int _mapType;
-    unsigned int _scale;
+    NSLocale * _locale;
+    GEOResourceManifestConfiguration * _manifestConfiguration;
+    int  _mapType;
+    unsigned int  _scale;
     struct VKRasterTileKey { 
         unsigned int x; 
         unsigned int y; 
         unsigned int z; 
         unsigned int pointSize; 
-    } _tileKey;
+    }  _tileKey;
 }
 
 @property (nonatomic, readonly) BOOL isInvalid;
@@ -25,6 +25,7 @@
 @property (nonatomic, readonly) struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; } tk;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)description;
 - (unsigned int)hash;
 - (id)init;

@@ -3,10 +3,11 @@
  */
 
 @interface IMMessageItemChatContext : IMItemChatContext {
-    BOOL _invitation;
-    IMMessage *_message;
+    BOOL  _invitation;
+    IMMessage * _message;
 }
 
+- (void).cxx_destruct;
 - (void)dealloc;
 
 @end

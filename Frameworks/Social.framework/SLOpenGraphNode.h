@@ -3,12 +3,12 @@
  */
 
 @interface SLOpenGraphNode : NSObject {
-    NSURL *_URL;
-    int _fetchState;
-    NSArray *_likedByFriends;
-    BOOL _likedByMe;
-    unsigned int _numberOfFriendLikes;
-    unsigned int _numberOfLikes;
+    NSURL * _URL;
+    int  _fetchState;
+    NSArray * _likedByFriends;
+    BOOL  _likedByMe;
+    unsigned int  _numberOfFriendLikes;
+    unsigned int  _numberOfLikes;
 }
 
 @property (readonly) NSURL *URL;

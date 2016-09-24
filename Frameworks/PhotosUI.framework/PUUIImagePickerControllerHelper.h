@@ -3,8 +3,8 @@
  */
 
 @interface PUUIImagePickerControllerHelper : NSObject {
-    PUPhotosGridDownloadHelper *_downloadHelper;
-    PUPhotosGridViewController *_gridViewController;
+    PUPhotosGridDownloadHelper * _downloadHelper;
+    PUPhotosGridViewController * _gridViewController;
 }
 
 @property (nonatomic, readonly) PUPhotosGridViewController *gridViewController;
@@ -22,6 +22,7 @@
 - (void)_pushImageViewControllerForAsset:(id)arg1 allowEditing:(BOOL)arg2 expectsLivePhoto:(BOOL)arg3;
 - (void)_selectAsset:(id)arg1 withHintCollection:(id)arg2 hintIndexPath:(id)arg3;
 - (void)cancelCurrentAssetDownload;
+- (BOOL)clientSuppressesForchTouch;
 - (id)gridViewController;
 - (void)handleSelectionOfAsset:(id)arg1 inCollection:(id)arg2;
 - (void)handleToggleSelectionOfItemAtIndexPath:(id)arg1;

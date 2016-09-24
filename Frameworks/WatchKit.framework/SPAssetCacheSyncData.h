@@ -3,9 +3,9 @@
  */
 
 @interface SPAssetCacheSyncData : NSObject {
-    NSString *_cacheIdentifier;
-    SPAssetCacheAssets *_permanentCache;
-    SPAssetCacheAssets *_transientCache;
+    NSString * _cacheIdentifier;
+    SPAssetCacheAssets * _permanentCache;
+    SPAssetCacheAssets * _transientCache;
 }
 
 @property (nonatomic, retain) NSString *cacheIdentifier;

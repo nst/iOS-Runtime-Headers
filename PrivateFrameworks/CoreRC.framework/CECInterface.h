@@ -3,18 +3,20 @@
  */
 
 @interface CECInterface : CoreRCInterface {
-    unsigned short _addressMask;
-    <CECInterfaceDelegate> *_delegate;
+    unsigned short  _addressMask;
+    <CECInterfaceDelegate> * _delegate;
+    BOOL  _hibernating;
     struct CECFrame { 
         unsigned char blocks[16]; 
         unsigned int length : 5; 
         unsigned int reserved : 3; 
-    } _lastReceivedFrame;
-    BOOL _promiscMode;
+    }  _lastReceivedFrame;
+    BOOL  _promiscMode;
 }
 
 @property (nonatomic, readonly) unsigned short addressMask;
 @property (nonatomic) <CECInterfaceDelegate> *delegate;
+@property (nonatomic, readonly) BOOL hibernating;
 @property (nonatomic, readonly) BOOL isValid;
 @property (nonatomic, readonly) struct CECFrame { unsigned char x1[16]; unsigned int x2 : 5; unsigned int x3 : 3; } lastReceivedFrame;
 @property (nonatomic, readonly) BOOL promiscMode;
@@ -26,6 +28,7 @@
 - (id)delegate;
 - (void)didChangeProperties;
 - (BOOL)errorIsNack:(id)arg1;
+- (BOOL)hibernating;
 - (void)hibernationChanged:(BOOL)arg1;
 - (id)init;
 - (BOOL)isValid;

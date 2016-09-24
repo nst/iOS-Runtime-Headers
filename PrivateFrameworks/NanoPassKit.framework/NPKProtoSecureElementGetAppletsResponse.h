@@ -7,18 +7,18 @@
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _activationStates;
-    NSMutableArray *_appletsBytes;
-    NSMutableArray *_cardAIDs;
+    }  _activationStates;
+    NSMutableArray * _appletsBytes;
+    NSMutableArray * _cardAIDs;
     struct { 
         unsigned int pending : 1; 
-    } _has;
+    }  _has;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _lifecycleStates;
-    BOOL _pending;
+    }  _lifecycleStates;
+    BOOL  _pending;
 }
 
 @property (nonatomic, readonly) unsigned int*activationStates;
@@ -29,6 +29,9 @@
 @property (nonatomic, readonly) unsigned int*lifecycleStates;
 @property (nonatomic, readonly) unsigned int lifecycleStatesCount;
 @property (nonatomic) BOOL pending;
+
++ (Class)appletsBytesType;
++ (Class)cardAIDsType;
 
 - (void).cxx_destruct;
 - (unsigned int*)activationStates;

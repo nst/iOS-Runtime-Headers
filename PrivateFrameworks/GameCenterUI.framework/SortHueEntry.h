@@ -3,8 +3,8 @@
  */
 
 @interface SortHueEntry : NSObject {
-    int _count;
-    int _hue;
+    int  _count;
+    int  _hue;
 }
 
 @property (nonatomic) int count;

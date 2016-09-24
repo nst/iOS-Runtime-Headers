@@ -3,21 +3,21 @@
  */
 
 @interface NNMKSyncedMessage : NSObject {
-    NSMutableSet *_attachmentsContentIdsNotYetSynced;
-    BOOL _contentRequestedByUser;
-    unsigned int _contentResendInterval;
-    BOOL _contentSynced;
-    BOOL _contentSyncedBecauseUserRequested;
-    BOOL _contentSyncedUsingNotificationPriority;
-    NSString *_conversationId;
-    NSDate *_dateReceived;
-    NSString *_messageId;
-    unsigned int _resendInterval;
-    BOOL _resendRequested;
-    unsigned int _status;
-    unsigned int _statusVersion;
-    BOOL _usedNotificationPriorityForMessageSync;
-    BOOL _usedProtectedChannelForMessageSync;
+    NSMutableSet * _attachmentsContentIdsNotYetSynced;
+    BOOL  _contentRequestedByUser;
+    unsigned int  _contentResendInterval;
+    BOOL  _contentSynced;
+    BOOL  _contentSyncedBecauseUserRequested;
+    BOOL  _contentSyncedUsingNotificationPriority;
+    NSString * _conversationId;
+    NSDate * _dateReceived;
+    NSString * _messageId;
+    unsigned int  _resendInterval;
+    BOOL  _resendRequested;
+    unsigned int  _status;
+    unsigned int  _statusVersion;
+    BOOL  _usedNotificationPriorityForMessageSync;
+    BOOL  _usedProtectedChannelForMessageSync;
 }
 
 @property (nonatomic, retain) NSMutableSet *attachmentsContentIdsNotYetSynced;

@@ -3,36 +3,37 @@
  */
 
 @interface PLPhotoEditRenderer : NSObject {
-    NSObject<OS_dispatch_queue> *__renderingQueue;
-    NSDictionary *__smartBWAdjustments;
-    NSDictionary *__smartColorAdjustments;
-    NSDictionary *__smartToneAdjustments;
-    CIImage *_cachedEditedImage;
-    CIContext *_drawingCIContext;
-    CIFilter *_effectFilter;
-    CIFilter *_faceBalanceFilter;
-    CIContext *_generatingCIContext;
-    EAGLContext *_lastUsedEAGLContext;
-    CIImage *_originalImage;
-    PLPhotoEditModel *_photoEditModel;
-    PLPhotoEditModel *_photoEditModelInCachedEditedImage;
-    CIFilter *_redEyeFilter;
-    unsigned int _renderMode;
-    CIFilter *_smartBWFilter;
-    float _smartBWLevelInCachedAdjustments;
-    NSDictionary *_smartBWStatisticsInCachedAdjustments;
-    CIFilter *_smartColorFilter;
-    float _smartColorLevelInCachedAdjustments;
-    NSDictionary *_smartColorStatisticsInCachedAdjustments;
-    int _smartFiltersCubeSize;
-    CIFilter *_smartToneFilter;
-    float _smartToneLevelInCachedAdjustments;
-    NSDictionary *_smartToneStatisticsInCachedAdjustments;
+    NSObject<OS_dispatch_queue> * __renderingQueue;
+    NSDictionary * __smartBWAdjustments;
+    NSDictionary * __smartColorAdjustments;
+    NSDictionary * __smartToneAdjustments;
+    CIImage * _cachedEditedImage;
+    CIContext * _drawingCIContext;
+    CIFilter * _effectFilter;
+    CIFilter * _faceBalanceFilter;
+    CIContext * _generatingCIContext;
+    EAGLContext * _lastUsedEAGLContext;
+    CIFilter * _localLightFilter;
+    CIImage * _originalImage;
+    PLPhotoEditModel * _photoEditModel;
+    PLPhotoEditModel * _photoEditModelInCachedEditedImage;
+    CIFilter * _redEyeFilter;
+    unsigned int  _renderMode;
+    CIFilter * _smartBWFilter;
+    double  _smartBWLevelInCachedAdjustments;
+    NSDictionary * _smartBWStatisticsInCachedAdjustments;
+    CIFilter * _smartColorFilter;
+    double  _smartColorLevelInCachedAdjustments;
+    NSDictionary * _smartColorStatisticsInCachedAdjustments;
+    int  _smartFiltersCubeSize;
+    CIFilter * _smartToneFilter;
+    double  _smartToneLevelInCachedAdjustments;
+    NSDictionary * _smartToneStatisticsInCachedAdjustments;
 }
 
 @property (nonatomic, retain) CIImage *originalImage;
 @property (nonatomic, readonly, retain) CIImage *outputImage;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } outputImageSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } outputImageSize;
 @property (nonatomic, retain) PLPhotoEditModel *photoEditModel;
 @property (nonatomic) unsigned int renderMode;
 @property (nonatomic, readonly) double smartBWBaseGrain;
@@ -49,13 +50,18 @@
 @property (nonatomic, readonly) double smartToneBaseContrast;
 @property (nonatomic, readonly) double smartToneBaseExposure;
 @property (nonatomic, readonly) double smartToneBaseHighlights;
+@property (nonatomic, readonly) double smartToneBaseLocalLight;
 @property (nonatomic, readonly) double smartToneBaseShadows;
 
 + (id)_editedImagePropertiesFromOriginalImageProperties:(id)arg1 preserveRegions:(BOOL)arg2;
++ (BOOL)currentDeviceShouldAllowLocalLight;
 + (id)newImageDataFromCGImage:(struct CGImage { }*)arg1 withCompressionQuality:(float)arg2 metadataSourceImageURL:(id)arg3 preserveRegionsInMetadata:(BOOL)arg4;
 
 - (id)_editedGeometryImageWithBaseImage:(id)arg1;
 - (id)_editedImage;
+- (void)_handleAssetDidLoadForVideoComposition:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (id)_imageByApplyingEdits:(id)arg1 toImage:(id)arg2 randomSeed:(unsigned int)arg3 isVideoFrame:(BOOL)arg4;
+- (id)_imageByApplyingEditsToImage:(id)arg1;
 - (void)_invalidateCachedFilters;
 - (BOOL)_isOrientationMirrored;
 - (struct CGImage { }*)_newCGImageFromEditedCIImage:(id)arg1;
@@ -65,16 +71,18 @@
 - (double)_smartBWBaseValueForKey:(id)arg1 defaultValue:(double)arg2;
 - (id)_smartColorAdjustments;
 - (id)_smartToneAdjustments;
+- (id)_videoEditModel;
 - (void)createEditedImageWithCompletion:(id /* block */)arg1;
 - (void)dealloc;
-- (void)drawEditedImageInContext:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 viewportWidth:(int)arg3 viewportHeight:(int)arg4;
+- (void)drawEditedImageInContext:(id)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 viewportWidth:(int)arg3 viewportHeight:(int)arg4;
 - (void)generateEditedImageDataWithCompressionQuality:(float)arg1 metadataSourceImageURL:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)init;
 - (struct CGImage { }*)newEditedImage;
 - (id)originalImage;
 - (id)outputImage;
-- (struct CGSize { float x1; float x2; })outputImageSize;
+- (struct CGSize { double x1; double x2; })outputImageSize;
 - (id)photoEditModel;
+- (void)prepareVideoCompositionForAsset:(id)arg1 completionHandler:(id /* block */)arg2;
 - (unsigned int)renderMode;
 - (void)setOriginalImage:(id)arg1;
 - (void)setPhotoEditModel:(id)arg1;
@@ -94,6 +102,7 @@
 - (double)smartToneBaseContrast;
 - (double)smartToneBaseExposure;
 - (double)smartToneBaseHighlights;
+- (double)smartToneBaseLocalLight;
 - (double)smartToneBaseShadows;
 
 @end

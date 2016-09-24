@@ -3,12 +3,12 @@
  */
 
 @interface AKOverlayView : UIView {
-    BOOL _deferWasMovedToSuperviewUntilMoveToWindow;
-    BOOL _isObserving;
-    AKMainEventHandler *_mainEventHandler;
-    UIScrollView *_observedScrollView;
-    AKPageController *_pageController;
-    BOOL _scrollViewIsInLiveMagnify;
+    BOOL  _deferWasMovedToSuperviewUntilMoveToWindow;
+    BOOL  _isObserving;
+    AKMainEventHandler * _mainEventHandler;
+    UIScrollView * _observedScrollView;
+    AKPageController * _pageController;
+    BOOL  _scrollViewIsInLiveMagnify;
 }
 
 @property BOOL deferWasMovedToSuperviewUntilMoveToWindow;

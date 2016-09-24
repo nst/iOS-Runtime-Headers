@@ -3,9 +3,9 @@
  */
 
 @interface _PFEncodedArray : NSArray {
-    int _cd_rc;
-    unsigned int _count;
-    NSData *_sourceData;
+    int  _cd_rc;
+    unsigned int  _count;
+    NSData * _sourceData;
 }
 
 - (BOOL)_isDeallocating;

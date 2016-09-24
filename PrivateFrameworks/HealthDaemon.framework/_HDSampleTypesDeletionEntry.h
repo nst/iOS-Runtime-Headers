@@ -3,15 +3,14 @@
  */
 
 @interface _HDSampleTypesDeletionEntry : HDJournalEntry {
-    NSNumber *_sourceID;
-    NSSet *_types;
+    NSNumber * _sourceID;
+    NSSet * _types;
 }
 
 @property (nonatomic, copy) NSNumber *sourceID;
 @property (nonatomic, retain) NSSet *types;
 
-+ (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
-+ (int)behavior;
++ (void)applyEntries:(id)arg1 withProfile:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;

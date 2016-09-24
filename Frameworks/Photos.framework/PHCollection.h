@@ -3,18 +3,22 @@
  */
 
 @interface PHCollection : PHObject {
-    BOOL _customSortAscending;
-    int _customSortKey;
-    unsigned int _estimatedPhotosCount;
-    unsigned int _estimatedVideosCount;
+    NSDate * _creationDate;
+    BOOL  _customSortAscending;
+    int  _customSortKey;
+    unsigned int  _estimatedPhotosCount;
+    unsigned int  _estimatedVideosCount;
+    NSString * _localizedSubtitle;
 }
 
 @property (nonatomic, readonly) BOOL canContainAssets;
 @property (nonatomic, readonly) BOOL canContainCollections;
+@property (nonatomic, readonly) NSDate *creationDate;
 @property (nonatomic, readonly) BOOL customSortAscending;
 @property (nonatomic, readonly) int customSortKey;
 @property (nonatomic, readonly) unsigned int estimatedPhotosCount;
 @property (nonatomic, readonly) unsigned int estimatedVideosCount;
+@property (nonatomic, readonly) NSString *localizedSubtitle;
 @property (nonatomic, readonly) NSString *localizedTitle;
 
 + (id)_transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
@@ -23,20 +27,24 @@
 + (id)fetchMomentsForAssetsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)fetchPredicateFromComparisonPredicate:(id)arg1 options:(id)arg2;
 + (id)fetchTopLevelUserCollectionsWithOptions:(id)arg1;
++ (id)fetchType;
 + (id)managedEntityName;
 + (BOOL)managedObjectSupportsTrashedState;
 
+- (void).cxx_destruct;
 - (BOOL)canContainAssets;
 - (BOOL)canContainCollections;
 - (BOOL)canPerformEditOperation:(int)arg1;
-- (BOOL)collectionCanBePinned;
+- (unsigned int)collectionFixedOrderPriority;
 - (BOOL)collectionHasFixedOrder;
+- (id)creationDate;
 - (BOOL)customSortAscending;
 - (int)customSortKey;
 - (id)description;
 - (unsigned int)estimatedPhotosCount;
 - (unsigned int)estimatedVideosCount;
 - (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;
+- (id)localizedSubtitle;
 - (id)localizedTitle;
 
 @end

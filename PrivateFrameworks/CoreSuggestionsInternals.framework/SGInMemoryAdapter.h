@@ -3,8 +3,8 @@
  */
 
 @interface SGInMemoryAdapter : NSObject <SGJournalCalendarObserver, SGJournalContactsObserver> {
-    NSMutableDictionary *_contacts;
-    NSMutableArray *_events;
+    NSMutableDictionary * _contacts;
+    NSMutableArray * _events;
 }
 
 @property (nonatomic, readonly) NSArray *contacts;

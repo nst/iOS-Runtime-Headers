@@ -3,25 +3,34 @@
  */
 
 @interface MCDPlayModeControlView : UIView {
-    BOOL _creatingGenius;
-    MCDLikeButton *_likeButton;
-    MCDRepeatButton *_repeatButton;
-    MCDPlayModeButton *_shuffleButton;
+    NSArray * _activeButtonLayoutConstraints;
+    MCDPlayModeButton * _addToLibraryButton;
+    BOOL  _fuseSubscriberLayout;
+    MCDPlayModeButton * _moreButton;
+    MCDRepeatButton * _repeatButton;
+    MCDPlayModeButton * _shuffleButton;
 }
 
-@property (nonatomic) BOOL creatingGenius;
-@property (nonatomic, readonly) MCDLikeButton *likeButton;
+@property (nonatomic, retain) NSArray *activeButtonLayoutConstraints;
+@property (nonatomic, readonly) MCDPlayModeButton *addToLibraryButton;
+@property (nonatomic) BOOL fuseSubscriberLayout;
+@property (nonatomic, readonly) MCDPlayModeButton *moreButton;
 @property (nonatomic, readonly) MCDRepeatButton *repeatButton;
 @property (nonatomic, readonly) MCDPlayModeButton *shuffleButton;
 
 - (void).cxx_destruct;
 - (void)_addConstraints;
-- (BOOL)creatingGenius;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (id)likeButton;
+- (void)_updateButtonLayouts;
+- (id)activeButtonLayoutConstraints;
+- (id)addToLibraryButton;
+- (BOOL)fuseSubscriberLayout;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (void)layoutSubviews;
+- (id)moreButton;
 - (id)repeatButton;
-- (void)setCreatingGenius:(BOOL)arg1;
+- (void)setActiveButtonLayoutConstraints:(id)arg1;
+- (void)setFuseSubscriberLayout:(BOOL)arg1;
 - (id)shuffleButton;
 
 @end

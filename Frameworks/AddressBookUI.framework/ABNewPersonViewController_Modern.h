@@ -3,24 +3,21 @@
  */
 
 @interface ABNewPersonViewController_Modern : UIViewController <ABContactViewControllerDelegate, CNContactViewControllerPrivateDelegate> {
-    _UIAccessDeniedView *_accessDeniedView;
-    void *_addressBook;
-    CNContactViewController *_cnContactViewController;
-    ABContactViewController *_contactViewController;
-    ABPersonTableViewDataSource *_dataSource;
-    void *_displayedPerson;
-    ABPersonViewControllerHelper *_helper;
-    BOOL _isRealViewLoaded;
-    CNContact *_mergeContact;
-    <ABNewPersonViewControllerDelegate> *_newPersonViewDelegate;
-    ABContactsFilter *_parentContactsFilter;
-    const void *_parentGroup;
-    void *_parentSource;
-    <CNPresenterDelegate> *_presentingDelegate;
-    <ABStyleProvider> *_styleProvider;
+    void * _addressBook;
+    CNContactViewController * _cnContactViewController;
+    ABContactViewController * _contactViewController;
+    ABPersonTableViewDataSource * _dataSource;
+    void * _displayedPerson;
+    ABPersonViewControllerHelper * _helper;
+    CNContact * _mergeContact;
+    <ABNewPersonViewControllerDelegate> * _newPersonViewDelegate;
+    ABContactsFilter * _parentContactsFilter;
+    const void * _parentGroup;
+    void * _parentSource;
+    <CNPresenterDelegate> * _presentingDelegate;
+    <ABStyleProvider> * _styleProvider;
 }
 
-@property (nonatomic, readonly) _UIAccessDeniedView *accessDeniedView;
 @property (nonatomic) const void*addressBook;
 @property (nonatomic, retain) CNContactViewController *cnContactViewController;
 @property (nonatomic, readonly) ABContactViewController *contactViewController;
@@ -30,7 +27,6 @@
 @property (nonatomic) const void*displayedPerson;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) ABPersonViewControllerHelper *helper;
-@property (nonatomic) BOOL isRealViewLoaded;
 @property (nonatomic, retain) CNContact *mergeContact;
 @property (nonatomic) <ABNewPersonViewControllerDelegate> *newPersonViewDelegate;
 @property (nonatomic, retain) ABContactsFilter *parentContactsFilter;
@@ -42,8 +38,6 @@
 @property (nonatomic, retain) <ABStyleProvider> *styleProvider;
 @property (readonly) Class superclass;
 
-- (void)accessChanged;
-- (id)accessDeniedView;
 - (const void*)addressBook;
 - (id)cnContactViewController;
 - (id)contactViewController;
@@ -58,16 +52,14 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 style:(int)arg3;
 - (id)initWithStyle:(int)arg1;
 - (BOOL)isKindOfClass:(Class)arg1;
-- (BOOL)isRealViewLoaded;
 - (void)loadContactViewController;
-- (void)loadRealView;
 - (void)loadView;
 - (id)mergeContact;
 - (id)newPersonViewDelegate;
 - (id)parentContactsFilter;
 - (const void*)parentGroup;
 - (void*)parentSource;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (id)presentingDelegate;
 - (void)save:(id)arg1;
 - (BOOL)savesNewContactOnSuspend;
@@ -75,7 +67,6 @@
 - (void)setCnContactViewController:(id)arg1;
 - (void)setDisplayedPerson:(void*)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setIsRealViewLoaded:(BOOL)arg1;
 - (void)setMergeContact:(id)arg1;
 - (void)setNewPersonViewDelegate:(id)arg1;
 - (void)setParentContactsFilter:(id)arg1;

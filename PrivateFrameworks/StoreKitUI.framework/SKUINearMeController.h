@@ -3,17 +3,17 @@
  */
 
 @interface SKUINearMeController : NSObject <CLLocationManagerDelegate, SKUIItemStateCenterObserver> {
-    int _authorizationStatus;
-    SKUIClientContext *_clientContext;
-    BOOL _isMonitoring;
-    NSArray *_items;
-    CLLocationManager *_locationManager;
-    int _locationTimeoutCount;
-    NSObject<OS_dispatch_source> *_locationTimeoutTimer;
-    SSLookupRequest *_lookupRequest;
-    NSObject<OS_dispatch_source> *_refreshTimer;
-    NSDictionary *_responseDictionary;
-    int _status;
+    int  _authorizationStatus;
+    SKUIClientContext * _clientContext;
+    BOOL  _isMonitoring;
+    NSArray * _items;
+    CLLocationManager * _locationManager;
+    int  _locationTimeoutCount;
+    NSObject<OS_dispatch_source> * _locationTimeoutTimer;
+    SSLookupRequest * _lookupRequest;
+    NSObject<OS_dispatch_source> * _refreshTimer;
+    NSDictionary * _responseDictionary;
+    int  _status;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
@@ -43,6 +43,7 @@
 - (void)disable;
 - (void)getItems;
 - (id)init;
+- (BOOL)isNearMeLocationStatusEnabled;
 - (void)itemStateCenterRestrictionsChanged:(id)arg1;
 - (id)items;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;

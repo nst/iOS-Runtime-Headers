@@ -3,10 +3,10 @@
  */
 
 @interface SSRedeemCodesRequest : SSRequest <SSXPCCoding> {
-    SSAuthenticationContext *_authenticationContext;
-    BOOL _cameraRecognized;
-    BOOL _headless;
-    NSArray *_redeemCodes;
+    SSAuthenticationContext * _authenticationContext;
+    BOOL  _cameraRecognized;
+    BOOL  _headless;
+    NSArray * _redeemCodes;
 }
 
 @property (copy) SSAuthenticationContext *authenticationContext;

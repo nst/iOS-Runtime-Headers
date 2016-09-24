@@ -3,12 +3,12 @@
  */
 
 @interface CNAutocompleteResultValue : NSObject {
-    NSString *_address;
-    int _addressType;
-    NSString *_identifier;
-    NSString *_instantMessageAddressService;
-    NSString *_label;
-    NSString *_stringForHashingMemo;
+    NSString * _address;
+    int  _addressType;
+    NSString * _identifier;
+    NSString * _instantMessageAddressService;
+    NSString * _label;
+    NSString * _stringForHashingMemo;
 }
 
 @property (copy) NSString *address;

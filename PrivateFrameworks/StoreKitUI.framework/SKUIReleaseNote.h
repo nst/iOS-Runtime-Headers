@@ -3,9 +3,9 @@
  */
 
 @interface SKUIReleaseNote : NSObject {
-    NSString *_changeNotes;
-    NSDate *_date;
-    NSString *_versionString;
+    NSString * _changeNotes;
+    NSDate * _date;
+    NSString * _versionString;
 }
 
 @property (nonatomic, readonly) NSString *changeNotes;

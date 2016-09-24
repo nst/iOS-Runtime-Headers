@@ -3,8 +3,8 @@
  */
 
 @interface AAUpdateProvisioningRequest : AARequest {
-    ACAccount *_account;
-    NSString *_authToken;
+    ACAccount * _account;
+    NSString * _authToken;
 }
 
 @property (nonatomic, retain) ACAccount *account;

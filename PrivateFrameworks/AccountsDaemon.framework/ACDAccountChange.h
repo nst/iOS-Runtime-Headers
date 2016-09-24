@@ -3,9 +3,9 @@
  */
 
 @interface ACDAccountChange : NSObject {
-    ACAccount *_account;
-    int _changeType;
-    ACAccount *_oldAccount;
+    ACAccount * _account;
+    int  _changeType;
+    ACAccount * _oldAccount;
 }
 
 @property (nonatomic, retain) ACAccount *account;

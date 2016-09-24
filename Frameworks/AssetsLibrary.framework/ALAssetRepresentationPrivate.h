@@ -3,12 +3,12 @@
  */
 
 @interface ALAssetRepresentationPrivate : NSObject <ALAssetsLibraryAsset> {
-    NSString *_extension;
-    BOOL _isValid;
-    ALAssetsLibrary *_library;
-    PLManagedAsset *_photo;
-    PLPhotoLibrary *_photoLibrary;
-    PLSidecarFile *_sidecar;
+    NSString * _extension;
+    BOOL  _isValid;
+    ALAssetsLibrary * _library;
+    PLManagedAsset * _photo;
+    PLPhotoLibrary * _photoLibrary;
+    PLSidecarFile * _sidecar;
 }
 
 @property (nonatomic, retain) PLPhotoLibrary *_photoLibrary;
@@ -27,6 +27,7 @@
 + (void)_setupFileDescriptorQueue;
 + (int)_updateFileDescriptor:(int)arg1 forPersistentURL:(id)arg2;
 
+- (void).cxx_destruct;
 - (BOOL)_isImage;
 - (BOOL)_isVideo;
 - (void)_performBlockAndWait:(id /* block */)arg1;

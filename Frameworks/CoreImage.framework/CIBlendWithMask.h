@@ -3,9 +3,9 @@
  */
 
 @interface CIBlendWithMask : CIFilter {
-    CIImage *inputBackgroundImage;
-    CIImage *inputImage;
-    CIImage *inputMaskImage;
+    CIImage * inputBackgroundImage;
+    CIImage * inputImage;
+    CIImage * inputMaskImage;
 }
 
 @property (nonatomic, retain) CIImage *inputBackgroundImage;

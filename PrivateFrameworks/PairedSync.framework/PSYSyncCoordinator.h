@@ -3,22 +3,22 @@
  */
 
 @interface PSYSyncCoordinator : NSObject <NSXPCListenerDelegate, PSYActivity, PSYServiceSyncSessionDelegate> {
-    PSYServiceSyncSession *_activeSyncSession;
-    NSXPCConnection *_connection;
-    <PSYSyncCoordinatorDelegate> *_delegate;
+    PSYServiceSyncSession * _activeSyncSession;
+    NSXPCConnection * _connection;
+    <PSYSyncCoordinatorDelegate> * _delegate;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _delegateLock;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    BOOL _hasStartedListening;
-    NSXPCListener *_listener;
-    id /* block */ _pendingCompletion;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSString *_serviceName;
-    unsigned long long _syncIDOfStartedSync;
-    unsigned int _syncRestriction;
-    int _syncSwitchIDToken;
+    }  _delegateLock;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    BOOL  _hasStartedListening;
+    NSXPCListener * _listener;
+    id /* block */  _pendingCompletion;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSString * _serviceName;
+    unsigned int  _syncIDOfStartedSync;
+    unsigned int  _syncRestriction;
+    int  _syncSwitchIDToken;
 }
 
 @property (nonatomic, readonly) PSYServiceSyncSession *activeSyncSession;
@@ -52,7 +52,7 @@
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)performDelegateBlock:(id /* block */)arg1;
 - (id)progressHandler;
-- (unsigned long long)readNotifyToken:(int)arg1;
+- (unsigned int)readNotifyToken:(int)arg1;
 - (void)registerForDeviceChangeNotifications;
 - (int)registerNotifyTokenWithName:(id)arg1 withBlock:(id /* block */)arg2;
 - (int)registerNotifyTokenWithName:(id)arg1 withQueue:(id)arg2 withBlock:(id /* block */)arg3;

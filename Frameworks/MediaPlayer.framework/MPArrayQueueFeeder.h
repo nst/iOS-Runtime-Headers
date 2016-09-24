@@ -3,7 +3,7 @@
  */
 
 @interface MPArrayQueueFeeder : MPQueueFeeder {
-    NSArray *_queueItems;
+    NSArray * _queueItems;
 }
 
 @property (nonatomic, readonly) NSArray *items;

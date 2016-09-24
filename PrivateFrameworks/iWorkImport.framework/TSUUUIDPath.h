@@ -3,7 +3,7 @@
  */
 
 @interface TSUUUIDPath : NSObject <NSCopying, NSFastEnumeration> {
-    NSArray *_uuids;
+    NSArray * _uuids;
 }
 
 @property (nonatomic, readonly) NSString *UUIDPathString;

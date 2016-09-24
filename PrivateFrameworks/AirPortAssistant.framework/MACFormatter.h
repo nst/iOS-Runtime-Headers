@@ -3,9 +3,9 @@
  */
 
 @interface MACFormatter : APFormatter {
-    NSCharacterSet *_possibleSeparators;
-    NSCharacterSet *_possibleSeparatorsInvertedSet;
-    NSString *_userPreferredSeparator;
+    NSCharacterSet * _possibleSeparators;
+    NSCharacterSet * _possibleSeparatorsInvertedSet;
+    NSString * _userPreferredSeparator;
 }
 
 + (id)macAddressSet;

@@ -3,9 +3,9 @@
  */
 
 @interface SBUIBannerTargetManager : NSObject {
-    NSMapTable *_implementationToProxyMap;
-    NSHashTable *_observers;
-    NSHashTable *_proxies;
+    NSMapTable * _implementationToProxyMap;
+    NSHashTable * _observers;
+    NSHashTable * _proxies;
 }
 
 @property (nonatomic, readonly) NSArray *targets;

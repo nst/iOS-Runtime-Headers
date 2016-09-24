@@ -3,8 +3,8 @@
  */
 
 @interface SSWeakReference : NSObject {
-    id _object;
-    unsigned int _objectAddress;
+    id  _object;
+    unsigned int  _objectAddress;
 }
 
 @property (nonatomic, readonly) id object;

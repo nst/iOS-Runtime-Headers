@@ -3,8 +3,8 @@
  */
 
 @interface ML3DatabaseValidationClient : NSObject {
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    NSMutableDictionary *_validatableDatabases;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    NSMutableDictionary * _validatableDatabases;
 }
 
 + (id)sharedClient;

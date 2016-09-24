@@ -3,8 +3,8 @@
  */
 
 @interface NSReduceObservationTransformer : NSObservationTransformer {
-    id _accumulator;
-    id /* block */ _reducer;
+    id  _accumulator;
+    id /* block */  _reducer;
 }
 
 + (id)reduceValue:(id)arg1 withReducer:(id /* block */)arg2;

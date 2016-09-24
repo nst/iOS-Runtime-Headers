@@ -3,14 +3,14 @@
  */
 
 @interface NSUndoManager : NSObject {
-    unsigned long long _NSUndoManagerPrivate1;
-    void *_NSUndoManagerPrivate2;
-    void *_NSUndoManagerPrivate3;
-    id _proxy;
-    id _redoStack;
-    NSArray *_runLoopModes;
-    id _target;
-    id _undoStack;
+    unsigned int  _NSUndoManagerPrivate1;
+    void * _NSUndoManagerPrivate2;
+    void * _NSUndoManagerPrivate3;
+    id  _proxy;
+    id  _redoStack;
+    NSArray * _runLoopModes;
+    id  _target;
+    id  _undoStack;
 }
 
 @property (readonly) BOOL canRedo;

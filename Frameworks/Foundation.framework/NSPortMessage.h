@@ -3,12 +3,12 @@
  */
 
 @interface NSPortMessage : NSObject {
-    NSMutableArray *components;
-    NSPort *localPort;
-    unsigned int msgid;
-    NSPort *remotePort;
-    void *reserved;
-    void *reserved2;
+    NSMutableArray * components;
+    NSPort * localPort;
+    unsigned int  msgid;
+    NSPort * remotePort;
+    void * reserved;
+    void * reserved2;
 }
 
 @property (readonly, copy) NSArray *components;

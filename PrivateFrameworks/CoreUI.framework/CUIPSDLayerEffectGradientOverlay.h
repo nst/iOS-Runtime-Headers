@@ -3,7 +3,7 @@
  */
 
 @interface CUIPSDLayerEffectGradientOverlay : CUIPSDLayerEffectComponent {
-    CUIPSDGradient *_gradient;
+    CUIPSDGradient * _gradient;
 }
 
 @property (retain) CUIPSDGradient *gradient;

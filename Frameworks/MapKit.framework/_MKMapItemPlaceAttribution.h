@@ -3,7 +3,7 @@
  */
 
 @interface _MKMapItemPlaceAttribution : _MKMapItemAttribution {
-    GEOMapItemPlaceAttribution *_geoPlaceAttribution;
+    GEOMapItemPlaceAttribution * _geoPlaceAttribution;
 }
 
 @property (nonatomic, readonly) NSArray *checkInURLs;

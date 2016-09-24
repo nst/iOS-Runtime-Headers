@@ -2,23 +2,26 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicForYouRecommendationItem : MPUModelObject {
-    MPUModelAlbum *_album;
-    unsigned int _itemType;
-    MPUModelPlaylist *_playlist;
+@interface MusicForYouRecommendationItem : MPModelObject {
+    MPModelAlbum * _album;
+    unsigned int  _itemType;
+    MPModelPlaylist * _playlist;
 }
 
-@property (nonatomic, retain) MPUModelAlbum *album;
+@property (nonatomic, retain) MPModelAlbum *album;
 @property (nonatomic) unsigned int itemType;
-@property (nonatomic, retain) MPUModelPlaylist *playlist;
+@property (nonatomic, retain) MPModelPlaylist *playlist;
 
++ (id)__MusicForYouRecommendationItemPropertyItemType__PROPERTY;
++ (id)__MusicForYouRecommendationItemRelationshipAlbum__PROPERTY;
++ (id)__MusicForYouRecommendationItemRelationshipPlaylist__PROPERTY;
 + (id)__album__KEY;
 + (id)__itemType__KEY;
 + (id)__playlist__KEY;
 
 - (void).cxx_destruct;
 - (id)album;
-- (id)descriptionWithType:(unsigned int)arg1;
+- (id)descriptionWithType:(int)arg1;
 - (unsigned int)itemType;
 - (id)playlist;
 - (void)setAlbum:(id)arg1;

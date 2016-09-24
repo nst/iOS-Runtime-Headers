@@ -3,11 +3,11 @@
  */
 
 @interface WBSParsecTableRowCardSection : WBSParsecCardSection {
-    WBSParsecTableAlignmentSchema *_alignmentSchema;
-    BOOL _hideDivider;
-    int _rowType;
-    NSString *_tableID;
-    NSArray *_values;
+    WBSParsecTableAlignmentSchema * _alignmentSchema;
+    BOOL  _hideDivider;
+    int  _rowType;
+    NSString * _tableID;
+    NSArray * _values;
 }
 
 @property (nonatomic, readonly) WBSParsecTableAlignmentSchema *alignmentSchema;

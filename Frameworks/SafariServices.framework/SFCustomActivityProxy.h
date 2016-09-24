@@ -3,10 +3,10 @@
  */
 
 @interface SFCustomActivityProxy : NSObject <NSCopying, NSSecureCoding> {
-    UIImage *_activityImage;
-    unsigned int _activityProxyID;
-    NSString *_activityTitle;
-    NSString *_activityType;
+    UIImage * _activityImage;
+    unsigned int  _activityProxyID;
+    NSString * _activityTitle;
+    NSString * _activityType;
 }
 
 @property (nonatomic, readonly) UIImage *activityImage;

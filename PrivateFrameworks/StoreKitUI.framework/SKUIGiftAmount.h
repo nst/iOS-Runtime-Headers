@@ -3,9 +3,9 @@
  */
 
 @interface SKUIGiftAmount : NSObject <NSCopying> {
-    NSString *_displayLabel;
-    NSString *_partNumber;
-    NSNumber *_value;
+    NSString * _displayLabel;
+    NSString * _partNumber;
+    NSNumber * _value;
 }
 
 @property (nonatomic, copy) NSString *displayLabel;

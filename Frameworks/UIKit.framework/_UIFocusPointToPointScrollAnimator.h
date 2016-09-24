@@ -3,12 +3,12 @@
  */
 
 @interface _UIFocusPointToPointScrollAnimator : NSObject <_UIFocusScrollAnimator> {
-    float _defaultConvergenceRate;
-    CAMediaTimingFunction *_fancyTimingFunction;
+    double  _defaultConvergenceRate;
+    CAMediaTimingFunction * _fancyTimingFunction;
 }
 
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) float defaultConvergenceRate;
+@property (nonatomic) double defaultConvergenceRate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL requiresExtendingScrollViewVisibleBounds;
@@ -23,9 +23,9 @@
 - (BOOL)isAnimatingScrollView:(id)arg1;
 - (BOOL)requiresExtendingScrollViewVisibleBounds;
 - (void)setDefaultConvergenceRate:(float)arg1;
-- (void)setPeekOffsetAdjustment:(struct CGPoint { float x1; float x2; })arg1 forScrollView:(id)arg2;
-- (void)setTargetContentOffset:(struct CGPoint { float x1; float x2; })arg1 forScrollView:(id)arg2 convergenceRate:(float)arg3 completion:(id /* block */)arg4;
-- (struct CGPoint { float x1; float x2; })targetContentOffsetForScrollView:(id)arg1;
-- (struct CGPoint { float x1; float x2; })velocityToScrollFromOffset:(struct CGPoint { float x1; float x2; })arg1 toOffset:(struct CGPoint { float x1; float x2; })arg2;
+- (void)setPeekOffsetAdjustment:(struct CGPoint { double x1; double x2; })arg1 forScrollView:(id)arg2;
+- (void)setTargetContentOffset:(struct CGPoint { double x1; double x2; })arg1 forScrollView:(id)arg2 convergenceRate:(float)arg3 completion:(id /* block */)arg4;
+- (struct CGPoint { double x1; double x2; })targetContentOffsetForScrollView:(id)arg1;
+- (struct CGPoint { double x1; double x2; })velocityToScrollFromOffset:(struct CGPoint { double x1; double x2; })arg1 toOffset:(struct CGPoint { double x1; double x2; })arg2;
 
 @end

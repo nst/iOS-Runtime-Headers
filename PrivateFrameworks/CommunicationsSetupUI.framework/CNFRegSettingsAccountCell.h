@@ -4,7 +4,6 @@
 
 @interface CNFRegSettingsAccountCell : PSTableCell
 
-- (void)_updateLabelColors;
 - (BOOL)canReload;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (void)layoutSubviews;

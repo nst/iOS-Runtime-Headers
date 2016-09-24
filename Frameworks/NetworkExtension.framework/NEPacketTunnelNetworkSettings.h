@@ -3,10 +3,10 @@
  */
 
 @interface NEPacketTunnelNetworkSettings : NETunnelNetworkSettings {
-    NEIPv4Settings *_IPv4Settings;
-    NEIPv6Settings *_IPv6Settings;
-    NSNumber *_MTU;
-    NSNumber *_tunnelOverheadBytes;
+    NEIPv4Settings * _IPv4Settings;
+    NEIPv6Settings * _IPv6Settings;
+    NSNumber * _MTU;
+    NSNumber * _tunnelOverheadBytes;
 }
 
 @property (copy) NEIPv4Settings *IPv4Settings;

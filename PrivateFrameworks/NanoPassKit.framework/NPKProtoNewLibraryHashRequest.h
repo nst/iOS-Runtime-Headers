@@ -6,10 +6,10 @@
     struct { 
         unsigned int lastKnownResyncID : 1; 
         unsigned int resyncID : 1; 
-    } _has;
-    unsigned int _lastKnownResyncID;
-    NPKProtoHash *_libraryHash;
-    unsigned int _resyncID;
+    }  _has;
+    unsigned int  _lastKnownResyncID;
+    NPKProtoHash * _libraryHash;
+    unsigned int  _resyncID;
 }
 
 @property (nonatomic) BOOL hasLastKnownResyncID;

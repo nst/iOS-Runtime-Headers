@@ -3,14 +3,14 @@
  */
 
 @interface ICCloudConfiguration : NSObject {
-    NSTimer *_downloadTimer;
-    unsigned int _maxAttachmentsPerNote;
-    unsigned int _maxInlineAssetSizeBytes;
-    NSNumber *_maximumAttachmentSizeMB;
-    NSString *_minimumClientVersion;
-    double _pollingInterval;
-    unsigned int _resultsLimitPerSyncOperation;
-    ICCloudThrottlingPolicy *_throttlingPolicy;
+    NSTimer * _downloadTimer;
+    unsigned int  _maxAttachmentsPerNote;
+    unsigned int  _maxInlineAssetSizeBytes;
+    NSNumber * _maximumAttachmentSizeMB;
+    NSString * _minimumClientVersion;
+    double  _pollingInterval;
+    unsigned int  _resultsLimitPerSyncOperation;
+    ICCloudThrottlingPolicy * _throttlingPolicy;
 }
 
 @property (nonatomic, retain) NSTimer *downloadTimer;
@@ -23,7 +23,9 @@
 @property (nonatomic, retain) ICCloudThrottlingPolicy *throttlingPolicy;
 
 + (id)availableConfigurationURLs;
++ (id)cachedConfigurationURL;
 + (id)defaultConfigurationURL;
++ (BOOL)isConfigurationValid:(id)arg1;
 + (void)setDefaultConfigurationURL:(id)arg1;
 + (id)sharedConfiguration;
 

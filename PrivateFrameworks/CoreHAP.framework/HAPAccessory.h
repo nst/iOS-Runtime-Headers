@@ -3,25 +3,25 @@
  */
 
 @interface HAPAccessory : NSObject {
-    NSNumber *_category;
-    <HAPAccessoryDelegate> *_delegate;
-    NSString *_firmwareVersion;
-    NSString *_identifier;
-    NSNumber *_instanceID;
-    int _linkType;
-    NSString *_manufacturer;
-    NSString *_model;
-    NSString *_name;
-    BOOL _primary;
-    BOOL _reachable;
-    NSString *_serialNumber;
-    HAPAccessoryServer *_server;
-    NSString *_serverIdentifier;
-    NSArray *_services;
-    BOOL _supportsBridgeConfiguration;
-    BOOL _supportsRelay;
-    NSString *_uniqueIdentifier;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    NSNumber * _category;
+    <HAPAccessoryDelegate> * _delegate;
+    NSString * _firmwareVersion;
+    NSString * _identifier;
+    NSNumber * _instanceID;
+    int  _linkType;
+    NSString * _manufacturer;
+    NSString * _model;
+    NSString * _name;
+    BOOL  _primary;
+    BOOL  _reachable;
+    NSString * _serialNumber;
+    HAPAccessoryServer * _server;
+    NSString * _serverIdentifier;
+    NSArray * _services;
+    BOOL  _supportsBridgeConfiguration;
+    BOOL  _supportsRelay;
+    NSString * _uniqueIdentifier;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic, copy) NSNumber *category;

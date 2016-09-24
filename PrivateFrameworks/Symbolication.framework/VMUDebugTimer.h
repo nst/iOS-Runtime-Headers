@@ -3,9 +3,9 @@
  */
 
 @interface VMUDebugTimer : NSObject {
-    NSString *_eventMessage;
-    NSDate *_eventStartTime;
-    NSDate *_programStartTime;
+    NSString * _eventMessage;
+    NSDate * _eventStartTime;
+    NSDate * _programStartTime;
 }
 
 - (void)dealloc;

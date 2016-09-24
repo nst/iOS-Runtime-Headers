@@ -3,11 +3,11 @@
  */
 
 @interface UIDebuggingInformationValue : NSObject {
-    NSValue *_defaultValue;
-    NSString *_key;
-    NSValue *_maximumValue;
-    NSValue *_minimumValue;
-    int _type;
+    NSValue * _defaultValue;
+    NSString * _key;
+    NSValue * _maximumValue;
+    NSValue * _minimumValue;
+    int  _type;
 }
 
 @property (nonatomic, retain) NSValue *defaultValue;

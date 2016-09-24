@@ -3,21 +3,21 @@
  */
 
 @interface SBKPlaybackPositionSyncRequestHandler : SBKSyncRequestHandler <SBKSyncTransactionProcessing, SBKTransactionControllerDelegate> {
-    BOOL _canceled;
-    SBKSyncTransaction *_currentKVSTransaction;
-    <SBKUniversalPlaybackPositionDataSource> *_dataSource;
-    <SBKUniversalPlaybackPositionTransactionContext> *_dataSourceTransactionContext;
-    NSError *_fatalSyncError;
-    SBKTransactionController *_kvsController;
-    NSMutableDictionary *_metadataItemsFromDataSource;
-    NSDictionary *_metadataItemsToCommitToDataSource;
-    NSDictionary *_metadataItemsToCommitToKVSStorage;
-    NSString *_overrideSyncAnchor;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_responseMetadataItemsMergedToCommitBackToKVSStorage;
-    NSMutableDictionary *_responseMetadataItemsToCommitToDataSource;
-    BOOL _syncInProgress;
-    NSObject<OS_dispatch_queue> *_syncOperationQueue;
+    BOOL  _canceled;
+    SBKSyncTransaction * _currentKVSTransaction;
+    <SBKUniversalPlaybackPositionDataSource> * _dataSource;
+    <SBKUniversalPlaybackPositionTransactionContext> * _dataSourceTransactionContext;
+    NSError * _fatalSyncError;
+    SBKTransactionController * _kvsController;
+    NSMutableDictionary * _metadataItemsFromDataSource;
+    NSDictionary * _metadataItemsToCommitToDataSource;
+    NSDictionary * _metadataItemsToCommitToKVSStorage;
+    NSString * _overrideSyncAnchor;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableDictionary * _responseMetadataItemsMergedToCommitBackToKVSStorage;
+    NSMutableDictionary * _responseMetadataItemsToCommitToDataSource;
+    BOOL  _syncInProgress;
+    NSObject<OS_dispatch_queue> * _syncOperationQueue;
 }
 
 @property BOOL canceled;

@@ -37,7 +37,6 @@
 @property (getter=isPublished, nonatomic) BOOL published;
 @property (nonatomic, copy) NSString *publishedURL;
 @property (nonatomic, copy) NSString *pushKey;
-@property (nonatomic) BOOL schedulingProhibited;
 @property (nonatomic, copy) NSURL *selfIdentityAddress;
 @property (nonatomic, copy) NSString *selfIdentityDisplayName;
 @property (nonatomic, copy) NSString *selfIdentityEmail;
@@ -104,7 +103,6 @@
 - (id)pushKey;
 - (void)removeAlarm:(id)arg1;
 - (void)removeSharee:(id)arg1;
-- (BOOL)schedulingProhibited;
 - (id)selfIdentityAddress;
 - (id)selfIdentityDisplayName;
 - (id)selfIdentityEmail;
@@ -142,7 +140,6 @@
 - (void)setPublished:(BOOL)arg1;
 - (void)setPublishedURL:(id)arg1;
 - (void)setPushKey:(id)arg1;
-- (void)setSchedulingProhibited:(BOOL)arg1;
 - (void)setSelfIdentityAddress:(id)arg1;
 - (void)setSelfIdentityDisplayName:(id)arg1;
 - (void)setSelfIdentityEmail:(id)arg1;

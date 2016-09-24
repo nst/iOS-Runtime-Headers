@@ -3,7 +3,7 @@
  */
 
 @interface TSDPathManipulation : NSObject {
-    TSDPathManipulation *mPrecedingManipulation;
+    TSDPathManipulation * mPrecedingManipulation;
 }
 
 - (BOOL)canDecomposeRectIntoParts;

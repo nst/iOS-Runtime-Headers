@@ -3,8 +3,8 @@
  */
 
 @interface MusicLibraryAlbumsViewConfiguration : MusicLibraryAdaptiveViewConfiguration {
-    MusicLibraryAlbumsCollectionViewConfiguration *_collectionViewConfiguration;
-    BOOL _shouldForwardBasePropertyValues;
+    MusicLibraryAlbumsCollectionViewConfiguration * _collectionViewConfiguration;
+    BOOL  _shouldForwardBasePropertyValues;
 }
 
 - (void).cxx_destruct;
@@ -19,7 +19,7 @@
 - (id)loadCompactWidthConfiguration;
 - (id)loadRegularWidthConfiguration;
 - (id)previewViewControllerForEntityValueContext:(id)arg1 fromViewController:(id)arg2;
-- (BOOL)pushAlbumViewWithAlbumPersistentID:(unsigned long long)arg1 fromViewController:(id)arg2;
+- (BOOL)pushAlbumViewWithAlbumPersistentID:(unsigned int)arg1 fromViewController:(id)arg2;
 - (void)setIconName:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setTitle:(id)arg1;

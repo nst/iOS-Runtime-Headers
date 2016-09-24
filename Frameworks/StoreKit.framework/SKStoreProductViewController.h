@@ -3,24 +3,24 @@
  */
 
 @interface SKStoreProductViewController : UIViewController {
-    NSString *_additionalBuyParameters;
-    NSString *_affiliateIdentifier;
-    BOOL _askToBuy;
-    BOOL _automaticallyDismisses;
-    NSString *_cancelButtonTitle;
-    _UIAsyncInvocation *_cancelRequest;
-    NSString *_clientIdentifier;
-    <SKStoreProductViewControllerDelegatePrivate> *_delegate;
-    id /* block */ _loadBlock;
-    int _originalStatusBarStyle;
-    int _productPageStyle;
-    NSString *_promptString;
-    SKRemoteProductViewController *_remoteViewController;
-    NSString *_rightBarButtonTitle;
-    NSDictionary *_scriptContextDictionary;
-    SKInvocationQueueProxy<SKUIServiceProductPageViewController> *_serviceProxy;
-    BOOL _showsRightBarButton;
-    BOOL _showsStoreButton;
+    NSString * _additionalBuyParameters;
+    NSString * _affiliateIdentifier;
+    BOOL  _askToBuy;
+    BOOL  _automaticallyDismisses;
+    NSString * _cancelButtonTitle;
+    _UIAsyncInvocation * _cancelRequest;
+    NSString * _clientIdentifier;
+    <SKStoreProductViewControllerDelegatePrivate> * _delegate;
+    id /* block */  _loadBlock;
+    int  _originalStatusBarStyle;
+    int  _productPageStyle;
+    NSString * _promptString;
+    SKRemoteProductViewController * _remoteViewController;
+    NSString * _rightBarButtonTitle;
+    NSDictionary * _scriptContextDictionary;
+    SKInvocationQueueProxy<SKUIServiceProductPageViewController> * _serviceProxy;
+    BOOL  _showsRightBarButton;
+    BOOL  _showsStoreButton;
 }
 
 @property (nonatomic, copy) id /* block */ _gkCompletionHandler;
@@ -51,6 +51,7 @@
 - (void)_didFinishWithResult:(int)arg1;
 - (void)_fireLoadBlockBeforeFinishing;
 - (void)_forceOrientationBackToSupportedOrientation;
+- (BOOL)_isPeeking;
 - (void)_loadDidFinishWithResult:(BOOL)arg1 error:(id)arg2;
 - (void)_presentPageWithRequest:(id)arg1 animated:(BOOL)arg2;
 - (void)_requestRemoteViewController;
@@ -97,6 +98,7 @@
 - (BOOL)showsStoreButton;
 - (unsigned int)supportedInterfaceOrientations;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)willMoveToParentViewController:(id)arg1;

@@ -3,24 +3,24 @@
  */
 
 @interface VoiceChatSessionRoster : NSObject {
-    unsigned int _chosenFocusRating;
-    NSMutableArray *_connectedPeers;
-    unsigned int _deviceRating;
-    unsigned int _focusID;
-    unsigned int _focusRating;
-    GKSessionInternal *_gkSession;
-    GKVoiceChatSessionInternal *_gkvs;
-    BOOL _hasFocus;
-    BOOL _isBeaconUp;
-    BOOL _needsUpdateBeaconList;
-    NSString *_peerID;
-    NSMutableDictionary *_peerStateTable;
-    NSObject<OS_dispatch_queue> *_sendQueue;
-    BOOL _waitingToCalculateFocus;
+    unsigned int  _chosenFocusRating;
+    NSMutableArray * _connectedPeers;
+    unsigned int  _deviceRating;
+    unsigned int  _focusID;
+    unsigned int  _focusRating;
+    GKSessionInternal * _gkSession;
+    GKVoiceChatSessionInternal * _gkvs;
+    BOOL  _hasFocus;
+    BOOL  _isBeaconUp;
+    BOOL  _needsUpdateBeaconList;
+    NSString * _peerID;
+    NSMutableDictionary * _peerStateTable;
+    NSObject<OS_dispatch_queue> * _sendQueue;
+    BOOL  _waitingToCalculateFocus;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } resMutex;
+    }  resMutex;
 }
 
 - (void)calculateFocus:(id)arg1;

@@ -3,9 +3,9 @@
  */
 
 @interface StepByStepController : AssistantCallbackController <AutoGuessSetup, StepByStepUIDelegateResult> {
-    id _delegate;
-    NSDictionary *_restoreRecommendation;
-    struct StepByStepContext { } *_stepByStepContext;
+    id  _delegate;
+    NSDictionary * _restoreRecommendation;
+    struct StepByStepContext { } * _stepByStepContext;
 }
 
 @property <StepByStepUIDelegate> *delegate;

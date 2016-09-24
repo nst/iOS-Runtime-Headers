@@ -3,7 +3,7 @@
  */
 
 @interface SUStructuredPageGroupedViewController : SUStructuredPageViewController {
-    SULoadingView *_loadingView;
+    SULoadingView * _loadingView;
 }
 
 - (BOOL)_addPurchaseBatch:(id)arg1 forIndexPath:(id)arg2;
@@ -14,6 +14,6 @@
 - (id)newNoItemsOverlayLabel;
 - (BOOL)openDocumentForItemAtIndexPath:(id)arg1 withApplication:(id)arg2;
 - (BOOL)purchaseItemAtIndexPath:(id)arg1;
-- (void)setLoading:(BOOL)arg1;
+- (void)setSkLoading:(BOOL)arg1;
 
 @end

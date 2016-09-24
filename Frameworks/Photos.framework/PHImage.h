@@ -3,16 +3,16 @@
  */
 
 @interface PHImage : NSObject {
-    unsigned int _bytesPerRow;
-    NSData *_data;
-    unsigned int _dataHeight;
-    unsigned int _dataOffset;
-    unsigned int _dataWidth;
-    int _format;
-    unsigned int _height;
-    BOOL _isPlaceholder;
-    UIImage *_uiImage;
-    unsigned int _width;
+    unsigned int  _bytesPerRow;
+    NSData * _data;
+    unsigned int  _dataHeight;
+    unsigned int  _dataOffset;
+    unsigned int  _dataWidth;
+    int  _format;
+    unsigned int  _height;
+    BOOL  _isPlaceholder;
+    UIImage * _uiImage;
+    unsigned int  _width;
 }
 
 @property (nonatomic, readonly) unsigned int bytesPerRow;

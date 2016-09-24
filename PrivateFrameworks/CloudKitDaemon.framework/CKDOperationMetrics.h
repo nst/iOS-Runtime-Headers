@@ -2,16 +2,16 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@interface CKDOperationMetrics : NSObject <MMCSOperationMetric> {
-    unsigned int _bytesDownloaded;
-    unsigned int _bytesUploaded;
-    unsigned int _connections;
-    unsigned int _connectionsCreated;
-    double _duration;
-    double _executing;
-    double _queueing;
-    NSMutableArray *_ranges;
-    NSDate *_startDate;
+@interface CKDOperationMetrics : NSObject <MMCSOperationMetric, NSCopying> {
+    unsigned int  _bytesDownloaded;
+    unsigned int  _bytesUploaded;
+    unsigned int  _connections;
+    unsigned int  _connectionsCreated;
+    double  _duration;
+    double  _executing;
+    double  _queueing;
+    NSMutableArray * _ranges;
+    NSDate * _startDate;
 }
 
 @property unsigned int bytesDownloaded;
@@ -31,11 +31,13 @@
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
+- (id)_initWithStartDate:(id)arg1;
 - (void)addRange:(id)arg1;
 - (unsigned int)bytesDownloaded;
 - (unsigned int)bytesUploaded;
 - (unsigned int)connections;
 - (unsigned int)connectionsCreated;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (double)duration;
 - (double)executing;

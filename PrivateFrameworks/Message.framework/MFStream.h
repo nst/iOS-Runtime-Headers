@@ -2,22 +2,23 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFStream : NSObject <NSStreamDelegate> {
-    char *_buffer;
-    unsigned int _bytesRead;
-    unsigned int _bytesWritten;
-    id /* block */ _callback;
-    unsigned long _capacity;
-    BOOL _dispatchedBytesAvailable;
-    BOOL _enableThroughputMonitoring;
-    NSError *_error;
-    unsigned long _length;
-    NSObject<OS_dispatch_queue> *_location;
-    NSMutableDictionary *_properties;
-    NSInputStream *_rStream;
-    BOOL _streamCanRead;
-    BOOL _streamCanWrite;
-    NSOutputStream *_wStream;
+@interface MFStream : NSObject <NSStreamDelegate, NSURLSessionDelegate> {
+    char * _buffer;
+    unsigned int  _bytesRead;
+    unsigned int  _bytesWritten;
+    id /* block */  _callback;
+    unsigned long  _capacity;
+    NSCondition * _condition;
+    BOOL  _dispatchedBytesAvailable;
+    BOOL  _enableThroughputMonitoring;
+    NSError * _error;
+    unsigned long  _length;
+    NSObject<OS_dispatch_queue> * _location;
+    NSMutableDictionary * _properties;
+    NSInputStream * _rStream;
+    BOOL  _streamCanRead;
+    BOOL  _streamCanWrite;
+    NSOutputStream * _wStream;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -33,6 +34,7 @@
 
 - (void)_closeAndReleaseStream:(id)arg1 logMessage:(id)arg2;
 - (id)_copyPropertyForKey:(id)arg1;
+- (void)_createPairWithSocketToHostName:(id)arg1 port:(int)arg2;
 - (void)_readBytesFromStream;
 - (void)close;
 - (void)dealloc;

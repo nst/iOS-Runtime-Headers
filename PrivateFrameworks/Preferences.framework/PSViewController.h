@@ -3,9 +3,9 @@
  */
 
 @interface PSViewController : UIViewController <PSController> {
-    UIViewController<PSController> *_parentController;
-    PSRootController *_rootController;
-    PSSpecifier *_specifier;
+    UIViewController<PSController> * _parentController;
+    PSRootController * _rootController;
+    PSSpecifier * _specifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;

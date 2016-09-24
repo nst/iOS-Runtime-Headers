@@ -3,10 +3,10 @@
  */
 
 @interface NNMKSyncEndpoint : NSObject {
-    NSMutableDictionary *_datesForIDSIdentifiersScheduledToBeResent;
-    NSObject<OS_dispatch_queue> *_endpointQueue;
-    NSMutableDictionary *_lastResendIntervalKeyedByIDSIdentifier;
-    NSObject<OS_dispatch_queue> *_resendingQueue;
+    NSMutableDictionary * _datesForIDSIdentifiersScheduledToBeResent;
+    NSObject<OS_dispatch_queue> * _endpointQueue;
+    NSMutableDictionary * _lastResendIntervalKeyedByIDSIdentifier;
+    NSObject<OS_dispatch_queue> * _resendingQueue;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *datesForIDSIdentifiersScheduledToBeResent;

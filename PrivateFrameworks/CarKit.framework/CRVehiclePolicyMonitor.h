@@ -3,10 +3,10 @@
  */
 
 @interface CRVehiclePolicyMonitor : NSObject <CRCarKitMonitoringClientService> {
-    <CRVehiclePolicyMonitoring> *_delegate;
-    BOOL _monitoring;
-    NSXPCConnection *_serviceConnection;
-    NSData *_vehicleCertificateSerial;
+    <CRVehiclePolicyMonitoring> * _delegate;
+    BOOL  _monitoring;
+    NSXPCConnection * _serviceConnection;
+    NSData * _vehicleCertificateSerial;
 }
 
 @property (nonatomic) <CRVehiclePolicyMonitoring> *delegate;

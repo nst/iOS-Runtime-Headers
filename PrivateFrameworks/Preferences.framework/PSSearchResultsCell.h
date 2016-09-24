@@ -3,8 +3,8 @@
  */
 
 @interface PSSearchResultsCell : UITableViewCell {
-    BOOL _shouldIndentContent;
-    BOOL _shouldIndentSeparator;
+    BOOL  _shouldIndentContent;
+    BOOL  _shouldIndentSeparator;
 }
 
 @property (nonatomic) BOOL shouldIndentContent;

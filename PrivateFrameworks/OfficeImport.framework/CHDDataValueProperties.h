@@ -3,10 +3,10 @@
  */
 
 @interface CHDDataValueProperties : NSObject <EDKeyedObject> {
-    CHDDataLabel *mDataLabel;
-    unsigned int mDataValueIndex;
-    OADGraphicProperties *mGraphicProperties;
-    CHDMarker *mMarker;
+    CHDDataLabel * mDataLabel;
+    unsigned int  mDataValueIndex;
+    OADGraphicProperties * mGraphicProperties;
+    CHDMarker * mMarker;
 }
 
 @property (readonly, copy) NSString *debugDescription;

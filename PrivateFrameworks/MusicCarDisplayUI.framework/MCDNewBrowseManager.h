@@ -3,22 +3,22 @@
  */
 
 @interface MCDNewBrowseManager : NSObject {
-    MPUOperationQueue *_operationQueue;
+    NSOperationQueue * _operationQueue;
 }
 
-@property (nonatomic, retain) MPUOperationQueue *operationQueue;
+@property (nonatomic, retain) NSOperationQueue *operationQueue;
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (void)additionalRequestForParentSection:(id)arg1 completion:(id /* block */)arg2;
 - (void)additionalRequestForRadioGenresForParentSection:(id)arg1 completion:(id /* block */)arg2;
+- (id)createRequest;
 - (id)init;
-- (void)loadCuratedPlaylistStoreAdamID:(unsigned long long)arg1 requestWithCompletion:(id /* block */)arg2;
+- (void)loadCuratedPlaylistStoreAdamID:(unsigned int)arg1 requestWithCompletion:(id /* block */)arg2;
 - (void)loadRequestForRadioGenresWithCompletion:(id /* block */)arg1;
 - (void)loadRequestWithCompletion:(id /* block */)arg1;
 - (id)operationQueue;
-- (id)request;
 - (void)setOperationQueue:(id)arg1;
 
 @end

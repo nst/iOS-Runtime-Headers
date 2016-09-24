@@ -3,7 +3,7 @@
  */
 
 @interface NCSSettingsManager : NCSInternalSettingsManager {
-    <NCSSettingsManagerDelegate> *_delegate;
+    <NCSSettingsManagerDelegate> * _delegate;
 }
 
 @property (nonatomic) <NCSSettingsManagerDelegate> *delegate;

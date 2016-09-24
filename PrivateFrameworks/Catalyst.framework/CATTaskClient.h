@@ -2,20 +2,21 @@
    Image: /System/Library/PrivateFrameworks/Catalyst.framework/Catalyst
  */
 
-@interface CATTaskClient : NSObject <CATTransportDelegate> {
-    <CATTaskClientDelegate> *_delegate;
-    NSDictionary *_serverUserInfo;
-    NSUUID *_sessionUUID;
-    NSDictionary *_userInfo;
-    NSMutableSet *mActiveRemoteTaskOperations;
-    NSMutableArray *mEnqueuedMessages;
-    NSMutableArray *mEnqueuedTaskUUIDs;
-    CATStateMachine *mFSM;
-    NSHashTable *mOrphanedTransports;
-    NSMapTable *mRemoteTaskByUUID;
-    NSObject<OS_dispatch_group> *mSessionDidInvalidateGroup;
-    CATTaskClient *mStrongSelf;
-    CATTransport *mTransport;
+@interface CATTaskClient : NSObject <CATTaskOperationNotificationDelegate, CATTransportDelegate> {
+    <CATTaskClientDelegate> * _delegate;
+    NSDictionary * _serverUserInfo;
+    NSUUID * _sessionUUID;
+    NSDictionary * _userInfo;
+    NSMutableSet * mActiveRemoteTaskOperations;
+    NSMutableArray * mEnqueuedMessages;
+    NSMutableArray * mEnqueuedTaskUUIDs;
+    CATStateMachine * mFSM;
+    BOOL  mIsStarting;
+    NSHashTable * mOrphanedTransports;
+    NSMapTable * mRemoteTaskByUUID;
+    NSObject<OS_dispatch_group> * mSessionDidInvalidateGroup;
+    CATTaskClient * mStrongSelf;
+    CATTransport * mTransport;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -44,7 +45,7 @@
 - (void)delegateDidInvalidateAndFinalize;
 - (void)delegateWillInvalidate;
 - (void)delegateWillInvalidateAndInvalidateSessionWithError:(id)arg1;
-- (void)delegatedidReceiveNotificationWithName:(id)arg1;
+- (void)delegatedidReceiveNotificationWithName:(id)arg1 userInfo:(id)arg2;
 - (id)description;
 - (void)didPrepareTaskOperation:(id)arg1;
 - (void)disconnect;
@@ -73,7 +74,7 @@
 - (void)setServerUserInfo:(id)arg1;
 - (void)setSessionUUID:(id)arg1;
 - (void)setUserInfo:(id)arg1;
-- (void)startInvalidatingTransport;
+- (void)taskOperation:(id)arg1 didPostNotificationWithName:(id)arg2 userInfo:(id)arg3;
 - (void)taskOperationDidFailWithInvalidTaskClient:(id)arg1;
 - (void)trackTaskOperation:(id)arg1;
 - (id)transport;

@@ -3,9 +3,9 @@
  */
 
 @interface NACRoutingControllerLocal : NSObject <MPAVRoutingControllerDelegate, NACRoutingController> {
-    NSString *_audioCategory;
-    <NACRoutingControllerDelegate> *_delegate;
-    MPAVRoutingController *_routingController;
+    NSString * _audioCategory;
+    <NACRoutingControllerDelegate> * _delegate;
+    MPAVRoutingController * _routingController;
 }
 
 @property (nonatomic, readonly) NSArray *availableAudioRoutes;

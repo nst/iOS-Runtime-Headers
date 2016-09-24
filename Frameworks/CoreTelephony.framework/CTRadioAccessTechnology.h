@@ -3,7 +3,7 @@
  */
 
 @interface CTRadioAccessTechnology : NSObject {
-    CTTelephonyNetworkInfo *_networkInfo;
+    CTTelephonyNetworkInfo * _networkInfo;
 }
 
 @property (readonly) NSString *radioAccessTechnology;

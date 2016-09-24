@@ -3,14 +3,14 @@
  */
 
 @interface PUPhotoKitMediaProviderImageDataDownloadSimulation : PUPhotoKitMediaProviderDownloadSimulation {
-    NSString *__resultDataUTI;
-    NSData *__resultImageData;
-    NSDictionary *__resultInfo;
-    int __resultOrientaton;
-    id /* block */ _externalProgressHandler;
-    id /* block */ _externalResultHandler;
-    id /* block */ _internalProgressHandler;
-    id /* block */ _internalResultHandler;
+    NSString * __resultDataUTI;
+    NSData * __resultImageData;
+    NSDictionary * __resultInfo;
+    int  __resultOrientaton;
+    id /* block */  _externalProgressHandler;
+    id /* block */  _externalResultHandler;
+    id /* block */  _internalProgressHandler;
+    id /* block */  _internalResultHandler;
 }
 
 @property (setter=_setResultDataUTI:, nonatomic, retain) NSString *_resultDataUTI;

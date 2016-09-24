@@ -3,8 +3,8 @@
  */
 
 @interface CalLimitingQueue : NSObject {
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_source> *_source;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_source> * _source;
 }
 
 - (void).cxx_destruct;

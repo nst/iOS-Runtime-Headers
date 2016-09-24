@@ -3,21 +3,21 @@
  */
 
 @interface HDCodableRoutineLocation : PBCodable <NSCopying> {
-    double _confidence;
-    NSData *_geoData;
+    double  _confidence;
+    NSData * _geoData;
     struct { 
         unsigned int confidence : 1; 
         unsigned int latitude : 1; 
         unsigned int longitude : 1; 
         unsigned int uncertainty : 1; 
         unsigned int locationOfInterestType : 1; 
-    } _has;
-    double _latitude;
-    int _locationOfInterestType;
-    double _longitude;
-    double _uncertainty;
-    NSString *_uuid;
-    NSMutableArray *_visits;
+    }  _has;
+    double  _latitude;
+    int  _locationOfInterestType;
+    double  _longitude;
+    double  _uncertainty;
+    NSString * _uuid;
+    NSMutableArray * _visits;
 }
 
 @property (nonatomic) double confidence;

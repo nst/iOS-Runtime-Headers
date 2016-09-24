@@ -3,15 +3,15 @@
  */
 
 @interface CPLAdjustments : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_adjustmentCompoundVersion;
-    NSString *_adjustmentCreatorCode;
-    CPLResource *_adjustmentData;
-    unsigned int _adjustmentSourceType;
-    NSString *_adjustmentType;
-    NSString *_creatorCode;
-    NSString *_otherAdjustmentsFingerprint;
-    NSString *_similarToOriginalAdjustmentsFingerprint;
-    NSData *_simpleAdjustmentData;
+    NSString * _adjustmentCompoundVersion;
+    NSString * _adjustmentCreatorCode;
+    CPLResource * _adjustmentData;
+    unsigned int  _adjustmentSourceType;
+    NSString * _adjustmentType;
+    NSString * _creatorCode;
+    NSString * _otherAdjustmentsFingerprint;
+    NSString * _similarToOriginalAdjustmentsFingerprint;
+    NSData * _simpleAdjustmentData;
 }
 
 @property (nonatomic, copy) NSString *adjustmentCompoundVersion;

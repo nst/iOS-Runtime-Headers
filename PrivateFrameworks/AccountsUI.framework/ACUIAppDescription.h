@@ -3,11 +3,11 @@
  */
 
 @interface ACUIAppDescription : NSObject {
-    NSString *_bundleID;
-    UIImage *_icon;
-    NSString *_name;
-    NSString *_persistentID;
-    NSString *_publisher;
+    NSString * _bundleID;
+    UIImage * _icon;
+    NSString * _name;
+    NSString * _persistentID;
+    NSString * _publisher;
 }
 
 @property (nonatomic, copy) NSString *bundleID;

@@ -3,8 +3,8 @@
  */
 
 @interface PSSpecifierStub : NSObject {
-    BluetoothDevice *_device;
-    id _userInfo;
+    BluetoothDevice * _device;
+    id  _userInfo;
 }
 
 @property (nonatomic, retain) BluetoothDevice *device;

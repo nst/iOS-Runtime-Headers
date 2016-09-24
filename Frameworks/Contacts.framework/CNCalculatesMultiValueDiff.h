@@ -3,15 +3,15 @@
  */
 
 @interface CNCalculatesMultiValueDiff : NSObject {
-    NSMutableOrderedSet *_addedIdentifiers;
-    NSMutableOrderedSet *_calculatedFinalIdentifiers;
-    NSOrderedSet *_finalIdentifiers;
-    NSArray *_multiValue1;
-    NSArray *_multiValue2;
-    NSOrderedSet *_originalIdentifiers;
-    NSMutableOrderedSet *_removedIdentifiers;
-    NSMutableOrderedSet *_sameIdentifiers;
-    NSMutableArray *_updates;
+    NSMutableOrderedSet * _addedIdentifiers;
+    NSMutableOrderedSet * _calculatedFinalIdentifiers;
+    NSOrderedSet * _finalIdentifiers;
+    NSArray * _multiValue1;
+    NSArray * _multiValue2;
+    NSOrderedSet * _originalIdentifiers;
+    NSMutableOrderedSet * _removedIdentifiers;
+    NSMutableOrderedSet * _sameIdentifiers;
+    NSMutableArray * _updates;
 }
 
 + (id)diffMultiValue:(id)arg1 toMultiValue:(id)arg2;

@@ -3,9 +3,9 @@
  */
 
 @interface TSWPObjectPlacement : NSObject {
-    int _index;
-    NSObject *_object;
-    TSUUUIDPath *_uuidPath;
+    int  _index;
+    NSObject * _object;
+    TSUUUIDPath * _uuidPath;
 }
 
 @property (nonatomic) int index;

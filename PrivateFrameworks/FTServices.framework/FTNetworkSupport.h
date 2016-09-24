@@ -3,11 +3,11 @@
  */
 
 @interface FTNetworkSupport : NSObject {
-    Class _APSConnectionClass;
-    APSConnection *_apsConnection;
-    BOOL _criticalReliabilityEnabledState;
-    BOOL _enableCriticalReliability;
-    NSTimer *_reliabilityAttemptTimer;
+    Class  _APSConnectionClass;
+    APSConnection * _apsConnection;
+    BOOL  _criticalReliabilityEnabledState;
+    BOOL  _enableCriticalReliability;
+    NSTimer * _reliabilityAttemptTimer;
 }
 
 @property (nonatomic, readonly) BOOL allowAnyNetwork;
@@ -37,9 +37,13 @@
 - (BOOL)networkReachable;
 - (void)setEnableCriticalReliability:(BOOL)arg1;
 - (BOOL)validNetworkActive;
+- (BOOL)validNetworkActiveForBundleId:(id)arg1;
 - (BOOL)validNetworkEnabled;
+- (BOOL)validNetworkEnabledForBundleId:(id)arg1;
 - (BOOL)validNetworkReachable;
+- (BOOL)validNetworkReachableForBundleId:(id)arg1;
 - (BOOL)wiFiActiveAndReachable;
 - (BOOL)willSearchForNetwork;
+- (BOOL)willSearchForNetworkForBundleId:(id)arg1;
 
 @end

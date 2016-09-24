@@ -3,18 +3,18 @@
  */
 
 @interface LSUserActivityDebuggingManager : NSObject {
-    int _additionalLogFile;
-    struct __asl_object_s { } *_client;
-    unsigned long long _lastLogRotationTime;
-    NSString *_logFileDirectoryPath;
-    NSString *_logFilePath;
-    NSObject<OS_dispatch_source> *_logRotationTimerSource;
-    NSUserDefaults *_userDefaults;
+    int  _additionalLogFile;
+    struct __asl_object_s { } * _client;
+    unsigned int  _lastLogRotationTime;
+    NSString * _logFileDirectoryPath;
+    NSString * _logFilePath;
+    NSObject<OS_dispatch_source> * _logRotationTimerSource;
+    NSUserDefaults * _userDefaults;
 }
 
 @property int additionalLogFile;
 @property struct __asl_object_s { }*client;
-@property unsigned long long lastLogRotationTime;
+@property unsigned int lastLogRotationTime;
 @property (copy) NSString *logFileDirectoryPath;
 @property (readonly) BOOL logFileEnabled;
 @property (copy) NSString *logFilePath;
@@ -31,7 +31,7 @@
 - (void)deleteExtraLogFiles;
 - (void)doRotateLogFiles;
 - (id)init;
-- (unsigned long long)lastLogRotationTime;
+- (unsigned int)lastLogRotationTime;
 - (void)log:(int)arg1 common:(BOOL)arg2 format:(id)arg3 args:(void*)arg4 file:(const char *)arg5 line:(long)arg6;
 - (void)log:(int)arg1 file:(const char *)arg2 line:(long)arg3 format:(id)arg4;
 - (void)log:(int)arg1 format:(id)arg2;
@@ -49,7 +49,7 @@
 - (void)rotateLogFiles;
 - (void)setAdditionalLogFile:(int)arg1;
 - (void)setClient:(struct __asl_object_s { }*)arg1;
-- (void)setLastLogRotationTime:(unsigned long long)arg1;
+- (void)setLastLogRotationTime:(unsigned int)arg1;
 - (void)setLogFileDirectoryPath:(id)arg1;
 - (void)setLogFilePath:(id)arg1;
 - (void)setLogRotationTimerSource:(id)arg1;

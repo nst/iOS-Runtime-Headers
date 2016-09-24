@@ -3,13 +3,13 @@
  */
 
 @interface SKAction : NSObject <NSCoding, NSCopying> {
-    struct SKCAction { int (**x1)(); unsigned int x2; float x3; id /* block */ x4; id x5; double x6; double x7; float x8; float x9; double x10; bool x11; bool x12; id /* block */ x13; int x14; float x15; float x16; float x17; float x18; } *_caction;
+    struct SKCAction { int (**x1)(); unsigned int x2; double x3; id /* block */ x4; id x5; double x6; double x7; double x8; double x9; double x10; bool x11; bool x12; id /* block */ x13; int x14; double x15; double x16; double x17; double x18; } * _caction;
 }
 
 @property (nonatomic) double duration;
 @property (nonatomic) BOOL finished;
-@property (nonatomic) float speed;
-@property (nonatomic) id /* block */ timingFunction;
+@property (nonatomic) double speed;
+@property (nonatomic, copy) id /* block */ timingFunction;
 @property (nonatomic) int timingMode;
 
 + (id)actionNamed:(id)arg1;
@@ -21,11 +21,13 @@
 + (id)animateWithNormalTextures:(id)arg1 timePerFrame:(double)arg2 resize:(BOOL)arg3 restore:(BOOL)arg4;
 + (id)animateWithTextures:(id)arg1 timePerFrame:(double)arg2;
 + (id)animateWithTextures:(id)arg1 timePerFrame:(double)arg2 resize:(BOOL)arg3 restore:(BOOL)arg4;
++ (id)animateWithWarps:(id)arg1 times:(id)arg2;
++ (id)animateWithWarps:(id)arg1 times:(id)arg2 restore:(BOOL)arg3;
 + (id)applyAngularImpulse:(float)arg1 duration:(double)arg2;
-+ (id)applyForce:(struct CGVector { float x1; float x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 duration:(double)arg3;
-+ (id)applyForce:(struct CGVector { float x1; float x2; })arg1 duration:(double)arg2;
-+ (id)applyImpulse:(struct CGVector { float x1; float x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 duration:(double)arg3;
-+ (id)applyImpulse:(struct CGVector { float x1; float x2; })arg1 duration:(double)arg2;
++ (id)applyForce:(struct CGVector { double x1; double x2; })arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 duration:(double)arg3;
++ (id)applyForce:(struct CGVector { double x1; double x2; })arg1 duration:(double)arg2;
++ (id)applyImpulse:(struct CGVector { double x1; double x2; })arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 duration:(double)arg3;
++ (id)applyImpulse:(struct CGVector { double x1; double x2; })arg1 duration:(double)arg2;
 + (id)applyTorque:(float)arg1 duration:(double)arg2;
 + (id)changeChargeBy:(float)arg1 duration:(double)arg2;
 + (id)changeChargeTo:(float)arg1 duration:(double)arg2;
@@ -60,20 +62,20 @@
 + (id)group:(id)arg1;
 + (id)hide;
 + (id)javaScriptActionWithDuration:(double)arg1 script:(id)arg2;
-+ (id)moveBY:(struct CGVector { float x1; float x2; })arg1 duration:(double)arg2;
-+ (id)moveBy:(struct CGVector { float x1; float x2; })arg1 duration:(double)arg2;
++ (id)moveBY:(struct CGVector { double x1; double x2; })arg1 duration:(double)arg2;
++ (id)moveBy:(struct CGVector { double x1; double x2; })arg1 duration:(double)arg2;
 + (id)moveByX:(float)arg1 y:(float)arg2 duration:(double)arg3;
-+ (id)moveTo:(struct CGPoint { float x1; float x2; })arg1 duration:(double)arg2;
++ (id)moveTo:(struct CGPoint { double x1; double x2; })arg1 duration:(double)arg2;
 + (id)moveToX:(float)arg1 duration:(double)arg2;
 + (id)moveToY:(float)arg1 duration:(double)arg2;
 + (id)pause;
 + (id)performSelector:(SEL)arg1 onTarget:(id)arg2;
 + (id)play;
 + (id)playSoundFileNamed:(id)arg1;
-+ (id)playSoundFileNamed:(id)arg1 atPosition:(struct CGPoint { float x1; float x2; })arg2 waitForCompletion:(BOOL)arg3;
++ (id)playSoundFileNamed:(id)arg1 atPosition:(struct CGPoint { double x1; double x2; })arg2 waitForCompletion:(BOOL)arg3;
 + (id)playSoundFileNamed:(id)arg1 waitForCompletion:(BOOL)arg2;
-+ (id)reachTo:(struct CGPoint { float x1; float x2; })arg1 rootNode:(id)arg2 duration:(double)arg3;
-+ (id)reachTo:(struct CGPoint { float x1; float x2; })arg1 rootNode:(id)arg2 velocity:(float)arg3;
++ (id)reachTo:(struct CGPoint { double x1; double x2; })arg1 rootNode:(id)arg2 duration:(double)arg3;
++ (id)reachTo:(struct CGPoint { double x1; double x2; })arg1 rootNode:(id)arg2 velocity:(float)arg3;
 + (id)reachToNode:(id)arg1 rootNode:(id)arg2 duration:(double)arg3;
 + (id)reachToNode:(id)arg1 rootNode:(id)arg2 velocity:(float)arg3;
 + (id)recursivePathsForResourcesOfType:(id)arg1 inDirectory:(id)arg2;
@@ -92,6 +94,7 @@
 + (id)runBlock:(id /* block */)arg1 queue:(id)arg2;
 + (id)scaleBy:(float)arg1 duration:(double)arg2;
 + (id)scaleTo:(float)arg1 duration:(double)arg2;
++ (id)scaleToSize:(struct CGSize { double x1; double x2; })arg1 duration:(double)arg2;
 + (id)scaleXBy:(float)arg1 y:(float)arg2 duration:(double)arg3;
 + (id)scaleXTo:(float)arg1 duration:(double)arg2;
 + (id)scaleXTo:(float)arg1 y:(float)arg2 duration:(double)arg3;
@@ -112,8 +115,9 @@
 + (id)unhide;
 + (id)waitForDuration:(double)arg1;
 + (id)waitForDuration:(double)arg1 withRange:(double)arg2;
++ (id)warpTo:(id)arg1 duration:(double)arg2;
 
-- (struct SKCAction { int (**x1)(); unsigned int x2; float x3; id /* block */ x4; id x5; double x6; double x7; float x8; float x9; double x10; bool x11; bool x12; id /* block */ x13; int x14; float x15; float x16; float x17; float x18; }*)caction;
+- (struct SKCAction { int (**x1)(); unsigned int x2; double x3; id /* block */ x4; id x5; double x6; double x7; double x8; double x9; double x10; bool x11; bool x12; id /* block */ x13; int x14; double x15; double x16; double x17; double x18; }*)caction;
 - (void)commonInit;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

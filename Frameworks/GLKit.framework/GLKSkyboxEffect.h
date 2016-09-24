@@ -5,39 +5,39 @@
 @interface GLKSkyboxEffect : NSObject <GLKNamedEffect> {
     union _GLKVector3 { 
         struct { 
-            float x; 
-            float y; 
-            float z; 
+            double x; 
+            double y; 
+            double z; 
         } ; 
         struct { 
-            float r; 
-            float g; 
-            float b; 
+            double r; 
+            double g; 
+            double b; 
         } ; 
         struct { 
-            float s; 
-            float t; 
-            float p; 
+            double s; 
+            double t; 
+            double p; 
         } ; 
-        float v[3]; 
-    } _center;
-    unsigned char _centerChanged;
-    GLKEffect *_effect;
-    unsigned char _effectStale;
-    NSString *_label;
-    unsigned int _positionVBO;
-    unsigned int _programName;
-    NSMutableArray *_propertyArray;
-    unsigned int _texCoordVBO;
-    GLKEffectPropertyTexture *_textureCubeMap;
-    GLKEffectPropertyTransform *_transform;
-    unsigned int _vao;
-    float _xSize;
-    float _ySize;
-    float _zSize;
+        double v[3]; 
+    }  _center;
+    unsigned char  _centerChanged;
+    GLKEffect * _effect;
+    unsigned char  _effectStale;
+    NSString * _label;
+    unsigned int  _positionVBO;
+    unsigned int  _programName;
+    NSMutableArray * _propertyArray;
+    unsigned int  _texCoordVBO;
+    GLKEffectPropertyTexture * _textureCubeMap;
+    GLKEffectPropertyTransform * _transform;
+    unsigned int  _vao;
+    double  _xSize;
+    double  _ySize;
+    double  _zSize;
 }
 
-@property (nonatomic) union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; } center;
+@property (nonatomic) union _GLKVector3 { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; struct { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; double x4[3]; } center;
 @property (nonatomic) unsigned char centerChanged;
 @property (nonatomic) GLKEffect *effect;
 @property (nonatomic) unsigned char effectStale;
@@ -49,11 +49,11 @@
 @property (nonatomic, readonly) GLKEffectPropertyTexture *textureCubeMap;
 @property (nonatomic, readonly) GLKEffectPropertyTransform *transform;
 @property (nonatomic) unsigned int vao;
-@property (nonatomic) float xSize;
-@property (nonatomic) float ySize;
-@property (nonatomic) float zSize;
+@property (nonatomic) double xSize;
+@property (nonatomic) double ySize;
+@property (nonatomic) double zSize;
 
-- (union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })center;
+- (union _GLKVector3 { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; struct { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; double x4[3]; })center;
 - (unsigned char)centerChanged;
 - (void)createAndBindVAOWithPositions:(float*)arg1 texCoords:(float*)arg2;
 - (void)dealloc;
@@ -67,7 +67,7 @@
 - (void)prepareToDraw;
 - (unsigned int)programName;
 - (id)propertyArray;
-- (void)setCenter:(union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })arg1;
+- (void)setCenter:(union _GLKVector3 { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; struct { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; double x4[3]; })arg1;
 - (void)setCenterChanged:(unsigned char)arg1;
 - (void)setEffect:(id)arg1;
 - (void)setEffectStale:(unsigned char)arg1;

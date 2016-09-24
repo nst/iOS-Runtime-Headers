@@ -3,7 +3,7 @@
  */
 
 @interface TUSuggestionsMetadataCacheDataProvider : TUMetadataCacheDataProvider {
-    NSObject<OS_dispatch_semaphore> *_suggestionsServiceThrottleSemaphore;
+    NSObject<OS_dispatch_semaphore> * _suggestionsServiceThrottleSemaphore;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_semaphore> *suggestionsServiceThrottleSemaphore;

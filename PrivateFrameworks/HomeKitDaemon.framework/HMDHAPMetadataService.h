@@ -3,9 +3,9 @@
  */
 
 @interface HMDHAPMetadataService : NSObject <NSSecureCoding> {
-    HAPMetadataService *_hapServiceMetadata;
-    NSArray *_mandatoryCharacteristics;
-    NSArray *_optionalCharacteristics;
+    HAPMetadataService * _hapServiceMetadata;
+    NSArray * _mandatoryCharacteristics;
+    NSArray * _optionalCharacteristics;
 }
 
 @property (nonatomic, retain) HAPMetadataService *hapServiceMetadata;

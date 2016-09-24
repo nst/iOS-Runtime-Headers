@@ -3,12 +3,12 @@
  */
 
 @interface GEOCluster : PBCodable <NSCopying> {
-    GEOPlaceResult *_container;
+    GEOPlaceResult * _container;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _indexs;
+    }  _indexs;
 }
 
 @property (nonatomic, retain) GEOPlaceResult *container;

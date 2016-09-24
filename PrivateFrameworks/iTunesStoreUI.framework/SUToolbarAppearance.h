@@ -3,9 +3,9 @@
  */
 
 @interface SUToolbarAppearance : NSObject <NSCopying> {
-    NSMutableDictionary *_backgroundImages;
-    NSMutableDictionary *_shadowImages;
-    UIColor *_tintColor;
+    NSMutableDictionary * _backgroundImages;
+    NSMutableDictionary * _shadowImages;
+    UIColor * _tintColor;
 }
 
 @property (nonatomic, retain) UIColor *tintColor;

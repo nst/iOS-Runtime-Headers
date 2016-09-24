@@ -3,16 +3,16 @@
  */
 
 @interface CNFRegEditableTableCell : PSEditableTableCell {
-    UIImage *_customCheckmarkImage;
-    UIImage *_customCheckmarkImageSelected;
-    SEL _didBeginEditingSelector;
-    SEL _didEndEditingSelector;
-    SEL _emptyStateSelector;
-    UIImage *_shadowImage;
-    CNFRegShadowView *_shadowView;
-    BOOL _skipDelegateCallback;
-    id _textChangeObserver;
-    BOOL _textFieldIsEmpty;
+    UIImage * _customCheckmarkImage;
+    UIImage * _customCheckmarkImageSelected;
+    SEL  _didBeginEditingSelector;
+    SEL  _didEndEditingSelector;
+    SEL  _emptyStateSelector;
+    UIImage * _shadowImage;
+    CNFRegShadowView * _shadowView;
+    BOOL  _skipDelegateCallback;
+    id  _textChangeObserver;
+    BOOL  _textFieldIsEmpty;
 }
 
 @property (nonatomic, retain) UIImage *customCheckmarkImage;

@@ -3,12 +3,12 @@
  */
 
 @interface _MFDataCollector : NSObject <MFGuaranteedCollectingDataConsumer> {
-    MFBufferedDataConsumer *_consumer;
-    BOOL _incomplete;
-    MFMailMessageLibrary *_library;
-    MFLibraryMessage *_message;
-    NSString *_part;
-    BOOL _partial;
+    MFBufferedDataConsumer * _consumer;
+    BOOL  _incomplete;
+    MFMailMessageLibrary * _library;
+    MFLibraryMessage * _message;
+    NSString * _part;
+    BOOL  _partial;
 }
 
 @property (readonly, copy) NSString *debugDescription;

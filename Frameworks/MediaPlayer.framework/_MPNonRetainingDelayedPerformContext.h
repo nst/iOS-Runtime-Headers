@@ -3,13 +3,13 @@
  */
 
 @interface _MPNonRetainingDelayedPerformContext : NSObject {
-    id argument;
-    struct __CFRunLoopTimer { } *dperf;
-    struct __CFArray { } *dperfs;
-    NSArray *modes;
-    NSRunLoop *rl;
-    SEL selector;
-    id target;
+    id  argument;
+    struct __CFRunLoopTimer { } * dperf;
+    struct __CFArray { } * dperfs;
+    NSArray * modes;
+    NSRunLoop * rl;
+    SEL  selector;
+    id  target;
 }
 
 @end

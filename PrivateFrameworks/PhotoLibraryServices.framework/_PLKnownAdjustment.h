@@ -3,10 +3,10 @@
  */
 
 @interface _PLKnownAdjustment : NSObject {
-    NSString *_identifier;
-    id /* block */ _settingsExtractionBlock;
-    int _supportLevel;
-    NSIndexSet *_supportedVersions;
+    NSString * _identifier;
+    id /* block */  _settingsExtractionBlock;
+    int  _supportLevel;
+    NSIndexSet * _supportedVersions;
 }
 
 @property (nonatomic, copy) NSString *identifier;

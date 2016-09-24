@@ -3,20 +3,19 @@
  */
 
 @interface TSTTableHeaderStorageBucket : TSPObject <TSTTableHeaderStorage> {
-    float mHorizontalScaleFactor;
-    struct map<unsigned long, SFUtility::ObjcSharedPtr<NSObject>, std::__1::less<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, SFUtility::ObjcSharedPtr<NSObject> > > > { struct __tree<std::__1::__value_type<unsigned long, SFUtility::ObjcSharedPtr<NSObject> >, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, SFUtility::ObjcSharedPtr<NSObject> >, std::__1::less<unsigned long>, true>, std::__1::allocator<std::__1::__value_type<unsigned long, SFUtility::ObjcSharedPtr<NSObject> > > > { struct __tree_node<std::__1::__value_type<unsigned long, SFUtility::ObjcSharedPtr<NSObject> >, void *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned long, SFUtility::ObjcSharedPtr<NSObject> >, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, SFUtility::ObjcSharedPtr<NSObject> >, std::__1::less<unsigned long>, true> > { unsigned long x_3_2_1; } x_1_1_3; } x1; } *mMap;
+    double  mHorizontalScaleFactor;
+    struct map<unsigned long, SFUtility::ObjcSharedPtr<NSObject>, std::__1::less<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, SFUtility::ObjcSharedPtr<NSObject> > > > { struct __tree<std::__1::__value_type<unsigned long, SFUtility::ObjcSharedPtr<NSObject> >, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, SFUtility::ObjcSharedPtr<NSObject> >, std::__1::less<unsigned long>, true>, std::__1::allocator<std::__1::__value_type<unsigned long, SFUtility::ObjcSharedPtr<NSObject> > > > { struct __tree_node<std::__1::__value_type<unsigned long, SFUtility::ObjcSharedPtr<NSObject> >, void *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned long, SFUtility::ObjcSharedPtr<NSObject> >, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, SFUtility::ObjcSharedPtr<NSObject> >, std::__1::less<unsigned long>, true> > { unsigned long x_3_2_1; } x_1_1_3; } x1; } * mMap;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) float horizontalScaleFactor;
+@property (nonatomic) double horizontalScaleFactor;
 @property (readonly) Class superclass;
 
 - (int)count;
 - (void)dealloc;
 - (void)enumerateHeadersWithBlock:(id /* block */)arg1;
-- (unsigned long)flushableSize;
 - (id)headerForKey:(unsigned long)arg1 willModify:(BOOL)arg2;
 - (id)headerForKey:(unsigned long)arg1 willModify:(BOOL)arg2 createIfNotThere:(BOOL)arg3;
 - (float)horizontalScaleFactor;

@@ -3,13 +3,13 @@
  */
 
 @interface CNCardGroup : NSObject <NSCopying> {
-    NSArray *_actionItems;
-    NSMutableArray *_actions;
-    BOOL _addSpacerFromPreviousGroup;
-    CNContact *_contact;
-    NSMutableArray *_items;
-    NSString *_title;
-    BOOL _useSplitActions;
+    NSArray * _actionItems;
+    NSMutableArray * _actions;
+    BOOL  _addSpacerFromPreviousGroup;
+    CNContact * _contact;
+    NSMutableArray * _items;
+    NSString * _title;
+    BOOL  _useSplitActions;
 }
 
 @property (nonatomic, readonly) NSArray *actionItems;

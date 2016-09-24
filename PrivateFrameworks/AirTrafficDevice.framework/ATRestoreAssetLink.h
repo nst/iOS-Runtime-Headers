@@ -3,16 +3,19 @@
  */
 
 @interface ATRestoreAssetLink : NSObject <ATAssetLink, ATEnvironmentMonitorObserver, MBManagerDelegate> {
-    ATAsset *_activeAsset;
-    NSArray *_allowedDataClasses;
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    <ATAssetLinkDelegate> *_delegate;
-    BOOL _didEnqueueAsset;
-    MBManager *_mbManager;
-    BOOL _open;
-    NSObject<OS_dispatch_queue> *_queue;
-    <ATRestoreAssetLinkDelegate> *_restoreDelegate;
-    int _restoreState;
+    NSMutableArray * _activeAssets;
+    NSArray * _allowedDataClasses;
+    unsigned int  _batchSize;
+    BOOL  _batchingIsSupported;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    <ATAssetLinkDelegate> * _delegate;
+    MBManager * _mbManager;
+    BOOL  _open;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableArray * _queuedAssets;
+    <ATRestoreAssetLinkDelegate> * _restoreDelegate;
+    int  _restoreState;
+    BOOL  _singleAssetMode;
 }
 
 @property (nonatomic, copy) NSArray *allowedDataClasses;
@@ -26,7 +29,8 @@
 
 - (void).cxx_destruct;
 - (id)_atErrorFromMBError:(id)arg1;
-- (void)_enqueueAsset:(id)arg1;
+- (BOOL)_hasConnectivity;
+- (void)_processQueuedAssets;
 - (id)allowedDataClasses;
 - (BOOL)canEnqueueAsset:(id)arg1;
 - (void)cancelAssets:(id)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface UITextRangeImpl : UITextRange {
-    int _affinityIfCollapsed;
-    DOMRange *_domRange;
+    int  _affinityIfCollapsed;
+    DOMRange * _domRange;
 }
 
 @property (nonatomic) int affinity;

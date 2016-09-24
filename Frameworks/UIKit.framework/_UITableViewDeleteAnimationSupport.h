@@ -3,10 +3,10 @@
  */
 
 @interface _UITableViewDeleteAnimationSupport : NSObject {
-    NSMutableArray *_cellsToDeleteAfterAnimation;
-    int _deleteCount;
-    unsigned int _enabledStateBeforeDeleteAnimation;
-    unsigned int _reserved;
+    NSMutableArray * _cellsToDeleteAfterAnimation;
+    int  _deleteCount;
+    unsigned int  _enabledStateBeforeDeleteAnimation;
+    unsigned int  _reserved;
 }
 
 - (void).cxx_destruct;

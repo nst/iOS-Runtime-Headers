@@ -3,9 +3,9 @@
  */
 
 @interface VUPublishAgent : PLPublishingAgent <VUPublishPostDelegate, VUPublishViewControllerDelegate> {
-    UINavigationController *_navigationController;
-    VUPublishPost *_publishPost;
-    VUPublishViewController *_publishViewController;
+    UINavigationController * _navigationController;
+    VUPublishPost * _publishPost;
+    VUPublishViewController * _publishViewController;
 }
 
 - (void).cxx_destruct;

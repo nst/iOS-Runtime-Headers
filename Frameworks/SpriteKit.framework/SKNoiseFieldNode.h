@@ -4,8 +4,8 @@
 
 @interface SKNoiseFieldNode : SKFieldNode
 
-@property (nonatomic) float animationSpeed;
-@property (nonatomic) float smoothness;
+@property (nonatomic) double animationSpeed;
+@property (nonatomic) double smoothness;
 
 - (id)_descriptionClassName;
 - (void)_initialize;

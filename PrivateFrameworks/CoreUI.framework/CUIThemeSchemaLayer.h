@@ -3,9 +3,9 @@
  */
 
 @interface CUIThemeSchemaLayer : NSObject {
-    unsigned int _index;
-    NSString *_name;
-    NSArray *_renditions;
+    unsigned int  _index;
+    NSString * _name;
+    NSArray * _renditions;
 }
 
 @property (nonatomic) unsigned int index;
@@ -14,7 +14,8 @@
 
 + (id)layerWithRenditions:(id)arg1 name:(id)arg2 index:(unsigned int)arg3;
 
-- (void)calculateColumLefts:(id*)arg1 rowTops:(id*)arg2 totalSize:(struct CGSize { float x1; float x2; }*)arg3 forPartFeatures:(unsigned int)arg4;
+- (void)calculateColumLefts:(id*)arg1 rowTops:(id*)arg2 totalSize:(struct CGSize { double x1; double x2; }*)arg3 forPartFeatures:(unsigned int)arg4;
+- (void)dealloc;
 - (unsigned int)index;
 - (id)initWithRenditions:(id)arg1 name:(id)arg2 index:(unsigned int)arg3;
 - (id)name;

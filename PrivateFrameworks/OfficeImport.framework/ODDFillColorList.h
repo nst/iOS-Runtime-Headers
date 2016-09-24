@@ -3,9 +3,9 @@
  */
 
 @interface ODDFillColorList : NSObject {
-    NSArray *mColors;
-    int mHueDirection;
-    int mMethod;
+    NSArray * mColors;
+    int  mHueDirection;
+    int  mMethod;
 }
 
 - (id)colorAtIndex:(unsigned int)arg1 count:(unsigned int)arg2 state:(id)arg3;

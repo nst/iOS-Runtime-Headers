@@ -3,7 +3,7 @@
  */
 
 @interface ATUserDefaults : NSObject {
-    NSMutableDictionary *_defaults;
+    NSMutableDictionary * _defaults;
 }
 
 @property (nonatomic, retain) NSDictionary *diskUsageInfo;

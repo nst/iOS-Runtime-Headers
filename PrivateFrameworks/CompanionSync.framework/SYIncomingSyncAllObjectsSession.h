@@ -3,10 +3,10 @@
  */
 
 @interface SYIncomingSyncAllObjectsSession : SYIncomingFullSyncSession {
-    NSMutableArray *_allObjectsAsData;
-    id /* block */ _completion;
-    BOOL canRestart;
-    BOOL canRollback;
+    NSMutableArray * _allObjectsAsData;
+    id /* block */  _completion;
+    BOOL  canRestart;
+    BOOL  canRollback;
 }
 
 - (void).cxx_destruct;

@@ -3,11 +3,11 @@
  */
 
 @interface PUViewControllerSpecChange : NSObject {
-    BOOL _layoutReferenceSizeChanged;
-    BOOL _layoutStyleChanged;
-    BOOL _presentedForSecondScreenChanged;
-    BOOL _secondScreenSizeChanged;
-    BOOL _traitCollectionChanged;
+    BOOL  _layoutReferenceSizeChanged;
+    BOOL  _layoutStyleChanged;
+    BOOL  _presentedForSecondScreenChanged;
+    BOOL  _secondScreenSizeChanged;
+    BOOL  _traitCollectionChanged;
 }
 
 @property (nonatomic, readonly) BOOL changed;

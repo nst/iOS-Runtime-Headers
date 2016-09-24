@@ -3,7 +3,7 @@
  */
 
 @interface CNAvatarCardContactCell : CNAvatarCardActionCell {
-    UIImageView *_contactImageView;
+    UIImageView * _contactImageView;
 }
 
 @property (nonatomic, retain) UIImageView *contactImageView;

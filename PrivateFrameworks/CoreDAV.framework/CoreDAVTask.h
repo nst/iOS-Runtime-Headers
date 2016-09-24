@@ -3,50 +3,50 @@
  */
 
 @interface CoreDAVTask : NSObject <CoreDAVSubmittable> {
-    <CoreDAVAccountInfoProvider> *_accountInfoProvider;
-    BOOL _allowAutomaticRedirects;
-    id /* block */ _completionBlock;
-    BOOL _compressedRequestFailed;
-    NSURLConnection *_connection;
-    id _context;
-    NSDate *_dateConnectionWentOut;
-    <CoreDAVTaskDelegate> *_delegate;
-    int _depth;
-    BOOL _didCancel;
-    BOOL _didFailWithError;
-    BOOL _didFinishLoading;
-    BOOL _didReceiveData;
-    BOOL _didReceiveResponse;
-    BOOL _didRetryWithClientToken;
-    BOOL _didSendRequest;
-    NSError *_error;
-    BOOL _everTriedTokenAuth;
-    NSData *_fakeResponseData;
-    BOOL _finished;
-    CoreDAVErrorItem *_forbiddenErrorItem;
-    BOOL _haveParsedFakeResponseData;
-    BOOL _justTriedTokenAuth;
-    CoreDAVRequestLogger *_logger;
-    int _numDownloadedElements;
-    NSMutableDictionary *_overriddenHeaders;
-    NSError *_passwordNotificationError;
-    BOOL _receivedBadPasswordResponse;
-    NSMutableArray *_redirectHistory;
-    NSURLRequest *_request;
-    BOOL _requestIsCompressed;
-    id /* block */ _requestProgressBlock;
-    NSDictionary *_requestProperties;
-    NSHTTPURLResponse *_response;
-    <CoreDAVResponseBodyParser> *_responseBodyParser;
-    id /* block */ _responseProgressBlock;
-    int _responseStatusCode;
-    BOOL _shouldRetryWithClientToken;
-    <CoreDAVTaskManager> *_taskManager;
-    double _timeoutInterval;
-    unsigned int _totalBytesReceived;
-    BOOL _triedRenewingCredential;
-    NSString *_uniqueID;
-    NSURL *_url;
+    <CoreDAVAccountInfoProvider> * _accountInfoProvider;
+    BOOL  _allowAutomaticRedirects;
+    id /* block */  _completionBlock;
+    BOOL  _compressedRequestFailed;
+    NSURLConnection * _connection;
+    id  _context;
+    NSDate * _dateConnectionWentOut;
+    <CoreDAVTaskDelegate> * _delegate;
+    int  _depth;
+    BOOL  _didCancel;
+    BOOL  _didFailWithError;
+    BOOL  _didFinishLoading;
+    BOOL  _didReceiveData;
+    BOOL  _didReceiveResponse;
+    BOOL  _didRetryWithClientToken;
+    BOOL  _didSendRequest;
+    NSError * _error;
+    BOOL  _everTriedTokenAuth;
+    NSData * _fakeResponseData;
+    BOOL  _finished;
+    CoreDAVErrorItem * _forbiddenErrorItem;
+    BOOL  _haveParsedFakeResponseData;
+    BOOL  _justTriedTokenAuth;
+    CoreDAVRequestLogger * _logger;
+    int  _numDownloadedElements;
+    NSMutableDictionary * _overriddenHeaders;
+    NSError * _passwordNotificationError;
+    BOOL  _receivedBadPasswordResponse;
+    NSMutableArray * _redirectHistory;
+    NSURLRequest * _request;
+    BOOL  _requestIsCompressed;
+    id /* block */  _requestProgressBlock;
+    NSDictionary * _requestProperties;
+    NSHTTPURLResponse * _response;
+    <CoreDAVResponseBodyParser> * _responseBodyParser;
+    id /* block */  _responseProgressBlock;
+    int  _responseStatusCode;
+    BOOL  _shouldRetryWithClientToken;
+    <CoreDAVTaskManager> * _taskManager;
+    double  _timeoutInterval;
+    unsigned int  _totalBytesReceived;
+    BOOL  _triedRenewingCredential;
+    NSString * _uniqueID;
+    NSURL * _url;
 }
 
 @property (nonatomic) <CoreDAVAccountInfoProvider> *accountInfoProvider;
@@ -72,6 +72,8 @@
 @property (nonatomic) unsigned int totalBytesReceived;
 @property (nonatomic, readonly) NSURL *url;
 
+// Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
+
 + (id)stringFromDepth:(int)arg1;
 + (unsigned int)uniqueQueryID;
 
@@ -84,8 +86,10 @@
 - (void)_handleBadPasswordResponse;
 - (BOOL)_handleUnauthorizedAccessError:(id)arg1;
 - (BOOL)_includeGeneralHeaders;
+- (id)_osLogDescription;
 - (id)_requestForLogging;
 - (void)_sendTimeSpentInNetworkingToProvider;
+- (BOOL)_shouldCreateCredentialForBasicOrDigestAuthChallenge:(id)arg1;
 - (BOOL)_shouldHandleStatusCode:(int)arg1;
 - (id)accountInfoProvider;
 - (id)additionalHeaderValues;
@@ -158,5 +162,11 @@
 - (unsigned int)totalBytesReceived;
 - (id)url;
 - (BOOL)validate:(id*)arg1;
+
+// Image: /System/Library/PrivateFrameworks/BookmarkDAV.framework/BookmarkDAV
+
++ (double)bdv_overrideTimeoutInterval;
+
+- (void)bdv_applyOverrideTimeoutIntervalIfNeeded;
 
 @end

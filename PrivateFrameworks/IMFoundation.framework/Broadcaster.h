@@ -3,11 +3,11 @@
  */
 
 @interface Broadcaster : NSProxy {
-    int _curXPCMessagePriority;
-    IMMessageContext *_messageContext;
-    IMRemoteObjectBroadcaster *_parent;
-    Protocol *_protocol;
-    NSArray *_targets;
+    int  _curXPCMessagePriority;
+    IMMessageContext * _messageContext;
+    IMRemoteObjectBroadcaster * _parent;
+    Protocol * _protocol;
+    NSArray * _targets;
 }
 
 @property (nonatomic) int curXPCMessagePriority;

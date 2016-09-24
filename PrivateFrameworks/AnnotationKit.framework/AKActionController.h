@@ -3,16 +3,20 @@
  */
 
 @interface AKActionController : NSObject {
-    AKController *_controller;
+    AKController * _controller;
 }
 
 @property AKController *controller;
 
 - (void).cxx_destruct;
+- (BOOL)_isSenderEnabled:(id)arg1 segment:(int)arg2;
 - (id)controller;
 - (id)initWithController:(id)arg1;
+- (BOOL)isSenderEnabled:(id)arg1;
 - (void)performActionForSender:(id)arg1;
+- (void)performActionForSender:(id)arg1 segment:(int)arg2;
 - (void)setController:(id)arg1;
 - (BOOL)validateSender:(id)arg1;
+- (BOOL)validateSender:(id)arg1 segment:(int)arg2;
 
 @end

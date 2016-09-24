@@ -3,7 +3,7 @@
  */
 
 @interface TSTArchivedCellSelection : TSPObject <TSKArchivedSelection> {
-    TSTCellSelection *mCellSelection;
+    TSTCellSelection * mCellSelection;
 }
 
 @property (readonly, copy) NSString *debugDescription;

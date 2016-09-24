@@ -3,7 +3,7 @@
  */
 
 @interface MRPlaybackQueueContext : NSObject <NSSecureCoding> {
-    NSString *_revision;
+    NSString * _revision;
 }
 
 @property (nonatomic, readonly) NSString *revision;

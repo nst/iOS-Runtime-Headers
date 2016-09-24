@@ -3,7 +3,7 @@
  */
 
 @interface PUPhotoEditTaskManager : NSObject {
-    NSMutableDictionary *_pendingRequestsByAsset;
+    NSMutableDictionary * _pendingRequestsByAsset;
 }
 
 + (id)sharedManager;

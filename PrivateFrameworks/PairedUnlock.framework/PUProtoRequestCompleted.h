@@ -3,9 +3,9 @@
  */
 
 @interface PUProtoRequestCompleted : PBCodable <NSCopying> {
-    NSData *_errorData;
-    unsigned int _messageID;
-    BOOL _success;
+    NSData * _errorData;
+    unsigned int  _messageID;
+    BOOL  _success;
 }
 
 @property (nonatomic, retain) NSData *errorData;

@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptAppleAccountCredential : SUScriptObject {
-    ACAccountCredential *_credential;
+    ACAccountCredential * _credential;
 }
 
 @property (readonly) NSString *oauthToken;

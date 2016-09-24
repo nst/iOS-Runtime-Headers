@@ -3,7 +3,7 @@
  */
 
 @interface MFDAMailbox : MFMailboxUid {
-    NSString *_folderID;
+    NSString * _folderID;
 }
 
 @property (copy) NSString *folderID;

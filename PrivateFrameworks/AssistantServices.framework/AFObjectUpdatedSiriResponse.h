@@ -3,7 +3,7 @@
  */
 
 @interface AFObjectUpdatedSiriResponse : AFSiriResponse {
-    NSURL *_objectIdentifier;
+    NSURL * _objectIdentifier;
 }
 
 + (BOOL)supportsSecureCoding;

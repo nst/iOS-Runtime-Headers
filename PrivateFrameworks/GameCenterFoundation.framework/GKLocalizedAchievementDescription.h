@@ -3,8 +3,8 @@
  */
 
 @interface GKLocalizedAchievementDescription : GKAchievementDescription {
-    GKGame *_game;
-    NSString *_iconImageName;
+    GKGame * _game;
+    NSString * _iconImageName;
 }
 
 @property (retain) GKGame *game;

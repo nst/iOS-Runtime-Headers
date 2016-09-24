@@ -3,8 +3,8 @@
  */
 
 @interface XBApplicationSnapshotImage : UIImage {
-    int _interfaceOrientation;
-    XBApplicationSnapshot *_snapshot;
+    int  _interfaceOrientation;
+    XBApplicationSnapshot * _snapshot;
 }
 
 @property (nonatomic, readonly) int interfaceOrientation;

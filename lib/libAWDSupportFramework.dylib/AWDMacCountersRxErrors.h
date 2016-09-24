@@ -11,14 +11,14 @@
         unsigned int rxfrmtooshrt : 1; 
         unsigned int rxinvmachdr : 1; 
         unsigned int rxstrt : 1; 
-    } _has;
-    unsigned long long _rxbadfcs;
-    unsigned long long _rxbadplcp;
-    unsigned long long _rxcrsglitch;
-    unsigned long long _rxfrmtoolong;
-    unsigned long long _rxfrmtooshrt;
-    unsigned long long _rxinvmachdr;
-    unsigned long long _rxstrt;
+    }  _has;
+    unsigned long long  _rxbadfcs;
+    unsigned long long  _rxbadplcp;
+    unsigned long long  _rxcrsglitch;
+    unsigned long long  _rxfrmtoolong;
+    unsigned long long  _rxfrmtooshrt;
+    unsigned long long  _rxinvmachdr;
+    unsigned long long  _rxstrt;
 }
 
 @property (nonatomic) BOOL hasRxbadfcs;

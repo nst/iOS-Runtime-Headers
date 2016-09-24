@@ -6,9 +6,9 @@
     struct { 
         unsigned int playbackCommand : 1; 
         unsigned int sessionIdentifier : 1; 
-    } _has;
-    int _playbackCommand;
-    int _sessionIdentifier;
+    }  _has;
+    int  _playbackCommand;
+    int  _sessionIdentifier;
 }
 
 @property (nonatomic) BOOL hasPlaybackCommand;

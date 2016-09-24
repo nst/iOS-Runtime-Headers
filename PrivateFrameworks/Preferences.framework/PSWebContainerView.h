@@ -3,8 +3,8 @@
  */
 
 @interface PSWebContainerView : UIView <UIWebViewDelegate> {
-    NSData *_content;
-    UIWebView *_webView;
+    NSData * _content;
+    UIWebView * _webView;
 }
 
 @property (nonatomic, retain) NSData *content;
@@ -21,7 +21,7 @@
 - (void)layoutSubviews;
 - (void)setContent:(id)arg1;
 - (void)setUserStyleSheet:(id)arg1;
-- (BOOL)uiWebView:(id)arg1 previewIsAllowedForPosition:(struct CGPoint { float x1; float x2; })arg2;
+- (BOOL)uiWebView:(id)arg1 previewIsAllowedForPosition:(struct CGPoint { double x1; double x2; })arg2;
 - (id)webView;
 - (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
 

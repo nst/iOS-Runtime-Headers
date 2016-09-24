@@ -3,12 +3,12 @@
  */
 
 @interface FAFetchFamilyCircleRequest : FAFamilyCircleRequest {
-    BOOL _doNotFetchFromServer;
-    NSArray *_expectedDSIDs;
-    BOOL _forceServerFetch;
-    BOOL _promptUserToResolveAuthenticatonFailure;
-    NSDictionary *_serverResponse;
-    BOOL _signedInAccountShouldBeApprover;
+    BOOL  _doNotFetchFromServer;
+    NSArray * _expectedDSIDs;
+    BOOL  _forceServerFetch;
+    BOOL  _promptUserToResolveAuthenticatonFailure;
+    NSDictionary * _serverResponse;
+    BOOL  _signedInAccountShouldBeApprover;
 }
 
 @property BOOL doNotFetchFromServer;

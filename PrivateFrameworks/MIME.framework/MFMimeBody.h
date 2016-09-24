@@ -3,9 +3,9 @@
  */
 
 @interface MFMimeBody : MFMessageBody {
-    unsigned int _numAlternatives;
-    unsigned int _preferredAlternative;
-    MFMimePart *_topLevelPart;
+    unsigned int  _numAlternatives;
+    unsigned int  _preferredAlternative;
+    MFMimePart * _topLevelPart;
 }
 
 + (id)copyNewMimeBoundary;

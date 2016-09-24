@@ -3,18 +3,18 @@
  */
 
 @interface _CUIKeyTestOrganizer : NSObject {
-    unsigned int chooseCount;
-    unsigned int flexAttributesCount;
-    NSArray *orderedNonZeroFlexibleAttributes;
+    unsigned int  chooseCount;
+    unsigned int  flexAttributesCount;
+    NSArray * orderedNonZeroFlexibleAttributes;
     struct _renditionkeytoken { 
         unsigned short identifier; 
         unsigned short value; 
-    } originalKey;
-    unsigned int subchooseCount;
+    }  originalKey;
+    unsigned int  subchooseCount;
     struct _renditionkeytoken { 
         unsigned short identifier; 
         unsigned short value; 
-    } testKey;
+    }  testKey;
 }
 
 - (unsigned int)_attributeToBumpIndex;

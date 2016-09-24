@@ -3,9 +3,9 @@
  */
 
 @interface CKDModifyShareTokenURLRequest : CKDURLRequest {
-    NSArray *_shareTokenInfos;
-    NSMutableDictionary *_shareTokenInfosByRequestID;
-    id /* block */ _shareTokenModifiedBlock;
+    NSArray * _shareTokenInfos;
+    NSMutableDictionary * _shareTokenInfosByRequestID;
+    id /* block */  _shareTokenModifiedBlock;
 }
 
 @property (nonatomic, retain) NSArray *shareTokenInfos;

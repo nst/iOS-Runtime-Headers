@@ -3,8 +3,8 @@
  */
 
 @interface EDHeaderFooter : NSObject {
-    NSString *mFooterString;
-    NSString *mHeaderString;
+    NSString * mFooterString;
+    NSString * mHeaderString;
 }
 
 + (id)headerFooter;

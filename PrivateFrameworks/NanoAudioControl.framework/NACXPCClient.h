@@ -3,10 +3,10 @@
  */
 
 @interface NACXPCClient : NSObject <NACXPCInterface> {
-    BOOL _isObservingVolume;
-    NSMutableSet *_routeObservingCategories;
-    NSXPCConnection *_xpcConnection;
-    NSObject<OS_dispatch_queue> *_xpcConnectionQueue;
+    BOOL  _isObservingVolume;
+    NSMutableSet * _routeObservingCategories;
+    NSXPCConnection * _xpcConnection;
+    NSObject<OS_dispatch_queue> * _xpcConnectionQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -32,8 +32,11 @@
 - (void)mutedStateForCategory:(id)arg1 result:(id /* block */)arg2;
 - (void)pickAudioRouteWithIdentifier:(id)arg1 category:(id)arg2;
 - (void)playAudioAndHapticPreview;
+- (void)playProminentHapticPreview;
+- (void)prominentHapticEnabled:(id /* block */)arg1;
 - (void)setHapticIntensity:(float)arg1;
 - (void)setMuted:(BOOL)arg1 category:(id)arg2;
+- (void)setProminentHapticEnabled:(BOOL)arg1;
 - (void)setSystemMuted:(BOOL)arg1;
 - (void)setVolumeValue:(float)arg1 category:(id)arg2;
 - (void)systemMutedState:(id /* block */)arg1;

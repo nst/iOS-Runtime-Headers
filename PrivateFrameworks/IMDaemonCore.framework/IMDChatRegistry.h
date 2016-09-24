@@ -3,10 +3,10 @@
  */
 
 @interface IMDChatRegistry : NSObject {
-    NSMutableDictionary *_chats;
-    NSRecursiveLock *_chatsLock;
-    BOOL _doneLoadingAfterMerge;
-    BOOL _isLoading;
+    NSMutableDictionary * _chats;
+    NSRecursiveLock * _chatsLock;
+    BOOL  _doneLoadingAfterMerge;
+    BOOL  _isLoading;
 }
 
 @property (nonatomic, readonly) NSArray *chats;

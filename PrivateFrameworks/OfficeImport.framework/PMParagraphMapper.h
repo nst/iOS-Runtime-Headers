@@ -3,7 +3,7 @@
  */
 
 @interface PMParagraphMapper : CMMapper {
-    OADParagraph *mParagraph;
+    OADParagraph * mParagraph;
 }
 
 - (void)addEndCharacterStyleToStyle:(id)arg1;

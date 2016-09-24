@@ -3,9 +3,9 @@
  */
 
 @interface HTSHTTPMessage : NSObject {
-    NSData *_body;
-    NSMutableDictionary *_headers;
-    NSString *_versionString;
+    NSData * _body;
+    NSMutableDictionary * _headers;
+    NSString * _versionString;
 }
 
 @property (nonatomic, retain) NSData *body;

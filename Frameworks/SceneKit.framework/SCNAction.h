@@ -3,11 +3,11 @@
  */
 
 @interface SCNAction : NSObject <NSCopying, NSSecureCoding> {
-    struct SCNCAction { int (**x1)(); float x2; id /* block */ x3; id x4; double x5; double x6; float x7; float x8; double x9; bool x10; bool x11; id /* block */ x12; struct __CFString {} *x13; int x14; float x15; float x16; float x17; float x18; } *_caction;
+    struct SCNCAction { int (**x1)(); double x2; id /* block */ x3; id x4; double x5; double x6; double x7; double x8; double x9; bool x10; bool x11; id /* block */ x12; struct __CFString {} *x13; int x14; double x15; double x16; double x17; double x18; } * _caction;
 }
 
 @property (nonatomic) double duration;
-@property (nonatomic) float speed;
+@property (nonatomic) double speed;
 @property (nonatomic) id /* block */ timingFunction;
 @property (nonatomic) int timingMode;
 
@@ -21,17 +21,17 @@
 + (id)group:(id)arg1;
 + (id)hide;
 + (id)javaScriptActionWithScript:(id)arg1 duration:(double)arg2;
-+ (id)moveBy:(struct SCNVector3 { float x1; float x2; float x3; })arg1 duration:(double)arg2;
++ (id)moveBy:(struct SCNVector3 { double x1; double x2; double x3; })arg1 duration:(double)arg2;
 + (id)moveByX:(float)arg1 y:(float)arg2 z:(float)arg3 duration:(double)arg4;
-+ (id)moveTo:(struct SCNVector3 { float x1; float x2; float x3; })arg1 duration:(double)arg2;
++ (id)moveTo:(struct SCNVector3 { double x1; double x2; double x3; })arg1 duration:(double)arg2;
 + (id)performSelector:(SEL)arg1 onTarget:(id)arg2;
 + (id)playAudioSource:(id)arg1 waitForCompletion:(BOOL)arg2;
 + (id)removeFromParentNode;
 + (id)repeatAction:(id)arg1 count:(unsigned int)arg2;
 + (id)repeatActionForever:(id)arg1;
-+ (id)rotateByAngle:(float)arg1 aroundAxis:(struct SCNVector3 { float x1; float x2; float x3; })arg2 duration:(double)arg3;
++ (id)rotateByAngle:(float)arg1 aroundAxis:(struct SCNVector3 { double x1; double x2; double x3; })arg2 duration:(double)arg3;
 + (id)rotateByX:(float)arg1 y:(float)arg2 z:(float)arg3 duration:(double)arg4;
-+ (id)rotateToAxisAngle:(struct SCNVector4 { float x1; float x2; float x3; float x4; })arg1 duration:(double)arg2;
++ (id)rotateToAxisAngle:(struct SCNVector4 { double x1; double x2; double x3; double x4; })arg1 duration:(double)arg2;
 + (id)rotateToX:(float)arg1 y:(float)arg2 z:(float)arg3 duration:(double)arg4;
 + (id)rotateToX:(float)arg1 y:(float)arg2 z:(float)arg3 duration:(double)arg4 shortestUnitArc:(BOOL)arg5;
 + (id)runAction:(id)arg1 onChildNodeWithName:(id)arg2;
@@ -46,7 +46,7 @@
 + (id)waitForDuration:(double)arg1;
 + (id)waitForDuration:(double)arg1 withRange:(double)arg2;
 
-- (struct SCNCAction { int (**x1)(); float x2; id /* block */ x3; id x4; double x5; double x6; float x7; float x8; double x9; bool x10; bool x11; id /* block */ x12; struct __CFString {} *x13; int x14; float x15; float x16; float x17; float x18; }*)caction;
+- (struct SCNCAction { int (**x1)(); double x2; id /* block */ x3; id x4; double x5; double x6; double x7; double x8; double x9; bool x10; bool x11; id /* block */ x12; struct __CFString {} *x13; int x14; double x15; double x16; double x17; double x18; }*)caction;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

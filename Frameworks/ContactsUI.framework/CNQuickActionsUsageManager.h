@@ -3,12 +3,12 @@
  */
 
 @interface CNQuickActionsUsageManager : NSObject {
-    NSCountedSet *_actionsUsageSet;
-    NSArray *_cachedInteractions;
-    NSDate *_cachedInteractionsDate;
-    CNContact *_contact;
-    NSMutableSet *_enabledActionIdentifiers;
-    BOOL _sortsWithDuet;
+    NSCountedSet * _actionsUsageSet;
+    NSArray * _cachedInteractions;
+    NSDate * _cachedInteractionsDate;
+    CNContact * _contact;
+    NSMutableSet * _enabledActionIdentifiers;
+    BOOL  _sortsWithDuet;
 }
 
 @property (nonatomic, retain) NSCountedSet *actionsUsageSet;

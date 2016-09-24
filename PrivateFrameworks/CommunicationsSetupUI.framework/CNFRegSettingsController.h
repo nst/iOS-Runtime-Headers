@@ -3,27 +3,27 @@
  */
 
 @interface CNFRegSettingsController : CNFRegListController <AKAppleIDAuthenticationDelegate, CNFRegFirstRunDelegate, CNFRegViewAccountControllerDelegate, CNFRegWizardControllerDelegate> {
-    NSArray *_accountGroupSpecifiers;
-    PSSpecifier *_addAddressButtonSpecifier;
-    NSMutableArray *_addresses;
-    NSArray *_aliasGroupSpecifiers;
-    NSArray *_blacklistGroupSpecifiers;
-    PSSpecifier *_blankAddressSpecifier;
-    NSArray *_callerIdGroupSpecifiers;
-    NSNumber *_delayedRefreshAnimatedFlag;
-    PSSpecifier *_faceTimeEnabledGroupSpecifier;
-    PSSpecifier *_faceTimeEnabledSpecifier;
-    NSString *_pendingAddress;
-    NSArray *_receiveRelayCallsGroupSpecifiers;
-    NSArray *_replyWithMessageGroupSpecifiers;
+    NSArray * _accountGroupSpecifiers;
+    PSSpecifier * _addAddressButtonSpecifier;
+    NSMutableArray * _addresses;
+    NSArray * _aliasGroupSpecifiers;
+    NSArray * _blacklistGroupSpecifiers;
+    PSSpecifier * _blankAddressSpecifier;
+    NSArray * _callerIdGroupSpecifiers;
+    NSNumber * _delayedRefreshAnimatedFlag;
+    PSSpecifier * _faceTimeEnabledGroupSpecifier;
+    PSSpecifier * _faceTimeEnabledSpecifier;
+    NSString * _pendingAddress;
+    NSArray * _receiveRelayCallsGroupSpecifiers;
+    NSArray * _replyWithMessageGroupSpecifiers;
     struct { 
         unsigned int listeningForFinishedEditingEvents : 1; 
         unsigned int appeared : 1; 
         unsigned int ignoringTextFieldChanges : 1; 
         unsigned int showEnableSwitch : 1; 
         unsigned int refreshingCallerIdValues : 1; 
-    } _settingsFlags;
-    BOOL _showReceiveRelayCalls;
+    }  _settingsFlags;
+    BOOL  _showReceiveRelayCalls;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -48,12 +48,12 @@
 - (void)_handleDeactivation:(id)arg1;
 - (void)_handleFaceTimeCTRegistrationStatusChanged;
 - (void)_handleFaceTimeEntitlementStatusChanged;
-- (void)_handleFaceTimeStateChanged;
 - (void)_handleFailedAccountReactivation:(id)arg1 error:(id)arg2;
 - (void)_handleOutgoingRelayCallerIDChanged;
 - (void)_handleRelayCapabilitiesChanged;
 - (void)_handleSuccessfulAccountReactivation:(id)arg1;
 - (void)_handleThumperCapabilitiesChanged;
+- (BOOL)_hasActiveFaceTimeCall;
 - (void)_hideLocaleChooser;
 - (id)_localeChooserForAccount:(id)arg1;
 - (id)_operationalAccounts;
@@ -66,6 +66,7 @@
 - (void)_setupAccountHandlersForDisabling;
 - (void)_setupAccountHandlersForNormalOperation;
 - (void)_setupAllListeners;
+- (BOOL)_shouldDisableAccountConfigurationUI;
 - (BOOL)_shouldShowAliasInfo;
 - (BOOL)_shouldUseDisabledHandlers;
 - (void)_showAccountAlertForAccount:(id)arg1;
@@ -110,11 +111,13 @@
 - (id)getReceiveRelayedCallsEnabledForSpecifier:(id)arg1;
 - (int)groupIdForSpecifier:(id)arg1;
 - (int)groupIdForSpecifierId:(id)arg1;
+- (void)handleCallStatusChanged;
 - (int)indexOfLastSpecifierInGroup:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)isShowingAddButton;
 - (BOOL)isShowingBlankAlias;
 - (void)keyboardDismissed:(id)arg1;
+- (id)loadSpecifiersFromPlistName:(id)arg1 target:(id)arg2 bundle:(id)arg3;
 - (id)logName;
 - (id)pendingAddress;
 - (id)pendingAddressForSpecifier:(id)arg1;
@@ -143,6 +146,8 @@
 - (void)setShowEnableSwitch:(BOOL)arg1;
 - (BOOL)shouldReloadSpecifiersOnResume;
 - (BOOL)shouldShowBlacklistSettings;
+- (BOOL)shouldShowCallDirectorySettingsBundleSpecifiers;
+- (BOOL)shouldShowICSSettingsBundleSpecifiers;
 - (BOOL)shouldShowReceiveRelayCalls;
 - (BOOL)shouldShowReceiveThumperCalls;
 - (BOOL)shouldShowReplyWithMessage;
@@ -180,6 +185,6 @@
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

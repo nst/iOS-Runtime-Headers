@@ -3,15 +3,15 @@
  */
 
 @interface NSDecimalNumberHandler : NSObject <NSCoding, NSDecimalNumberBehaviors> {
-    unsigned int _raiseOnDivideByZero;
-    unsigned int _raiseOnExactness;
-    unsigned int _raiseOnOverflow;
-    unsigned int _raiseOnUnderflow;
-    void *_reserved;
-    void *_reserved2;
-    unsigned int _roundingMode;
-    unsigned int _scale;
-    unsigned int _unused;
+    unsigned int  _raiseOnDivideByZero;
+    unsigned int  _raiseOnExactness;
+    unsigned int  _raiseOnOverflow;
+    unsigned int  _raiseOnUnderflow;
+    void * _reserved;
+    void * _reserved2;
+    unsigned int  _roundingMode;
+    unsigned int  _scale;
+    unsigned int  _unused;
 }
 
 + (id)decimalNumberHandlerWithRoundingMode:(unsigned int)arg1 scale:(short)arg2 raiseOnExactness:(BOOL)arg3 raiseOnOverflow:(BOOL)arg4 raiseOnUnderflow:(BOOL)arg5 raiseOnDivideByZero:(BOOL)arg6;

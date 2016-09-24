@@ -32,11 +32,12 @@
 + (id)serializeMetadata:(id)arg1;
 + (id)unarchiveBlacklistedBundles;
 + (id)unarchiveBulletinBoard;
-+ (id)unarchiveHomeData:(id*)arg1;
++ (id)unarchiveHomeData:(id*)arg1 decryptionFailed:(BOOL*)arg2;
 + (id)unarchiveIDSDataSyncJournal;
 + (id)unarchiveMetadata:(id*)arg1;
 + (id)unarchiveServerTokenData:(BOOL*)arg1;
 + (id)unarchiveTransactionJournal;
 + (id)unarchiveVendorStore;
++ (id)writeData:(id)arg1 toStorePath:(id)arg2 dataLabel:(id)arg3;
 
 @end

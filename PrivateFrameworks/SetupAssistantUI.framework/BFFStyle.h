@@ -16,11 +16,15 @@
 - (void)applyThemeToTitleLabel:(id)arg1;
 - (id)backgroundColor;
 - (float)baselineInsetForHeaderTitle;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsetsForHeaderView:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsetsForTable:(id)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsetsForHeaderView:(id)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsetsForTable:(id)arg1;
 - (float)headerIconBaselineOffset;
+- (float)headerIconBaselineOffsetForView:(id)arg1;
+- (float)headerSubheaderBaselineSpacingForView:(id)arg1;
+- (float)headerTitleBaselineOffsetForView:(id)arg1 hasIcon:(BOOL)arg2;
 - (float)headerTitleBaselineOffsetHasIcon:(BOOL)arg1;
 - (id)headerTitleFont;
+- (float)horizontalMarginForView:(id)arg1;
 - (float)nonTableHorizontalMargin;
 - (float)singleLineCellHeightForTable:(id)arg1;
 - (id)tableCellFont;

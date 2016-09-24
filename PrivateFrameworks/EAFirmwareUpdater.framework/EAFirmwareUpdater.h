@@ -3,27 +3,28 @@
  */
 
 @interface EAFirmwareUpdater : MobileAssetUpdater <EAAccessoryDelegate, NSStreamDelegate, iAUPServerDelegate> {
-    EAAccessory *_accessory;
-    NSString *_appProtocol;
-    id /* block */ _applyCompletion;
-    NSString *_bootloaderProtocol;
-    NSObject<OS_dispatch_queue> *_eaNotificationDispatchQueue;
-    NSString *_firmwareBundleFilename;
-    NSURL *_firmwareBundleURL;
-    BOOL _firmwareUpdateComplete;
-    unsigned int _firmwareVersionMajor;
-    unsigned int _firmwareVersionMinor;
-    unsigned int _firmwareVersionRelease;
-    iAUPServer *_iAUPServer;
-    BOOL _isExpectingReconnect;
-    NSMutableData *_outputData;
-    unsigned int _productIDCode;
-    id /* block */ _progressHandler;
-    NSString *_protocolString;
-    NSTimer *_reconnectTimer;
-    EASession *_session;
-    NSString *_updateBundleFilename;
-    NSURL *_updateBundleURL;
+    EAAccessory * _accessory;
+    NSString * _appProtocol;
+    id /* block */  _applyCompletion;
+    NSString * _bootloaderProtocol;
+    NSObject<OS_dispatch_queue> * _eaNotificationDispatchQueue;
+    NSString * _firmwareBundleFilename;
+    NSURL * _firmwareBundleURL;
+    BOOL  _firmwareUpdateComplete;
+    unsigned int  _firmwareVersionMajor;
+    unsigned int  _firmwareVersionMinor;
+    unsigned int  _firmwareVersionRelease;
+    BOOL  _forceSilentUpdate;
+    iAUPServer * _iAUPServer;
+    BOOL  _isExpectingReconnect;
+    NSMutableData * _outputData;
+    unsigned int  _productIDCode;
+    id /* block */  _progressHandler;
+    NSString * _protocolString;
+    NSTimer * _reconnectTimer;
+    EASession * _session;
+    NSString * _updateBundleFilename;
+    NSURL * _updateBundleURL;
 }
 
 @property (nonatomic, retain) EAAccessory *accessory;
@@ -34,6 +35,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSString *firmwareBundleFilename;
 @property (nonatomic, retain) NSURL *firmwareBundleURL;
+@property (nonatomic) BOOL forceSilentUpdate;
 @property (readonly) unsigned int hash;
 @property (nonatomic) unsigned int productIDCode;
 @property (nonatomic, retain) NSString *protocolString;
@@ -60,6 +62,7 @@
 - (id)firmwareBundleURL;
 - (void)firmwareUpdateComplete:(id)arg1;
 - (id)flushOutput;
+- (BOOL)forceSilentUpdate;
 - (void)handleInputData;
 - (id)initWithProductIDCode:(unsigned int)arg1 assetType:(id)arg2;
 - (void)logStatusString:(id)arg1;
@@ -77,6 +80,7 @@
 - (void)setBootloaderProtocol:(id)arg1;
 - (void)setFirmwareBundleFilename:(id)arg1;
 - (void)setFirmwareBundleURL:(id)arg1;
+- (void)setForceSilentUpdate:(BOOL)arg1;
 - (void)setProductIDCode:(unsigned int)arg1;
 - (void)setProtocolString:(id)arg1;
 - (void)setServer:(id)arg1;

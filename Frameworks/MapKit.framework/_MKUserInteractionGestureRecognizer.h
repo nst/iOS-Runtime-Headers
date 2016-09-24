@@ -3,8 +3,8 @@
  */
 
 @interface _MKUserInteractionGestureRecognizer : UIGestureRecognizer {
-    NSMutableSet *_activeTouches;
-    <_MKUserInteractionGestureRecognizerTouchObserver> *_touchObserver;
+    NSMutableSet * _activeTouches;
+    <_MKUserInteractionGestureRecognizerTouchObserver> * _touchObserver;
 }
 
 @property (nonatomic) <_MKUserInteractionGestureRecognizerTouchObserver> *touchObserver;

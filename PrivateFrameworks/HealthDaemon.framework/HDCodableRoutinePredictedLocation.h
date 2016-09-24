@@ -3,18 +3,18 @@
  */
 
 @interface HDCodableRoutinePredictedLocation : PBCodable <NSCopying> {
-    double _confidence;
-    NSData *_geoData;
+    double  _confidence;
+    NSData * _geoData;
     struct { 
         unsigned int confidence : 1; 
         unsigned int nextEntryTime : 1; 
         unsigned int modeOfTransportation : 1; 
         unsigned int sourceType : 1; 
-    } _has;
-    HDCodableRoutineLocation *_locationOfInterest;
-    int _modeOfTransportation;
-    double _nextEntryTime;
-    int _sourceType;
+    }  _has;
+    HDCodableRoutineLocation * _locationOfInterest;
+    int  _modeOfTransportation;
+    double  _nextEntryTime;
+    int  _sourceType;
 }
 
 @property (nonatomic) double confidence;

@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUStructuredPageViewController : SUItemTableViewController <ISURLOperationDelegate> {
-    Class _dataSourceClass;
-    UILabel *_noItemsLabel;
-    SUStructuredPage *_structuredPage;
+@interface SUStructuredPageViewController : SUItemTableViewController <ISURLOperationDelegate, SUTermsAndConditionsViewDelegate> {
+    Class  _dataSourceClass;
+    UILabel * _noItemsLabel;
+    SUStructuredPage * _structuredPage;
 }
 
 @property (nonatomic, retain) Class dataSourceClass;
@@ -26,7 +26,7 @@
 - (BOOL)canSelectRowAtIndexPath:(id)arg1;
 - (Class)dataSourceClass;
 - (void)dealloc;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })documentBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })documentBounds;
 - (BOOL)handleSelectionForIndexPath:(id)arg1 tapCount:(int)arg2;
 - (BOOL)hasDisplayableContent;
 - (id)init;
@@ -39,10 +39,11 @@
 - (void)reloadData;
 - (void)reloadWithStorePage:(id)arg1 forURL:(id)arg2;
 - (void)setDataSourceClass:(Class)arg1;
-- (void)setLoading:(BOOL)arg1;
+- (void)setSkLoading:(BOOL)arg1;
 - (void)setStructuredPage:(id)arg1;
 - (id)storePageProtocol;
 - (id)structuredPage;
+- (id)viewControllerForPresentingAccountAlertControllerFromTermsAndConditionsView:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 

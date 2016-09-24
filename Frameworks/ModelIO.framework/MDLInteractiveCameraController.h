@@ -3,25 +3,25 @@
  */
 
 @interface MDLInteractiveCameraController : NSObject {
-    MDLStereoscopicCamera *_camera;
-    void_clickPoint;
-    void_dragPoint;
-    void_dragVector;
+    MDLStereoscopicCamera * _camera;
+    void _clickPoint;
+    void _dragPoint;
+    void _dragVector;
     struct MDLAABB { 
         /* Warning: Unrecognized filer type: '"' using 'void*' */ void*maxBounds; 
-    } _framingBounds;
-    void_lookAt;
-    unsigned int _mode;
-    float _pitch;
-    float _targetDistance;
-    float _targetElevation;
-    float _trackSpeed;
-    void_trackVector;
-    float _tumbleSpeed;
-    void_viewSize;
-    float _yaw;
-    float _zoom;
-    float _zoomSpeed;
+    }  _framingBounds;
+    void _lookAt;
+    unsigned int  _mode;
+    double  _pitch;
+    double  _targetDistance;
+    double  _targetElevation;
+    double  _trackSpeed;
+    void _trackVector;
+    double  _tumbleSpeed;
+    void _viewSize;
+    double  _yaw;
+    double  _zoom;
+    double  _zoomSpeed;
 }
 
 @property (nonatomic, copy) MDLStereoscopicCamera *camera;
@@ -30,14 +30,14 @@
 @property (nonatomic) struct MDLAABB { } framingBounds;
 @property (nonatomic) unsigned int mode;
 @property (nonatomic) void position;
-@property (nonatomic) float targetDistance;
+@property (nonatomic) double targetDistance;
 @property (nonatomic) void targetPosition;
-@property (nonatomic) float trackSpeed;
+@property (nonatomic) double trackSpeed;
 @property (nonatomic) void trackVector;
-@property (nonatomic) float tumbleSpeed;
+@property (nonatomic) double tumbleSpeed;
 @property (nonatomic) void viewSize;
-@property (nonatomic) float zoom;
-@property (nonatomic) float zoomSpeed;
+@property (nonatomic) double zoom;
+@property (nonatomic) double zoomSpeed;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

@@ -3,29 +3,29 @@
  */
 
 @interface NEFilterSocketFlow : NEFilterFlow <NSCopying, NSSecureCoding> {
-    int _epid;
-    unsigned char _euuid;
+    int  _epid;
+    unsigned char  _euuid;
     struct sockaddr_storage { 
         unsigned char ss_len; 
         unsigned char ss_family; 
         BOOL __ss_pad1[6]; 
-        long long __ss_align; 
+        int __ss_align; 
         BOOL __ss_pad2[112]; 
-    } _lastLocalAddress;
+    }  _lastLocalAddress;
     struct sockaddr_storage { 
         unsigned char ss_len; 
         unsigned char ss_family; 
         BOOL __ss_pad1[6]; 
-        long long __ss_align; 
+        int __ss_align; 
         BOOL __ss_pad2[112]; 
-    } _lastRemoteAddress;
-    NWEndpoint *_localEndpoint;
-    int _pid;
-    NWEndpoint *_remoteEndpoint;
-    int _socketFamily;
-    int _socketProtocol;
-    int _socketType;
-    unsigned char _uuid;
+    }  _lastRemoteAddress;
+    NWEndpoint * _localEndpoint;
+    int  _pid;
+    NWEndpoint * _remoteEndpoint;
+    int  _socketFamily;
+    int  _socketProtocol;
+    int  _socketType;
+    unsigned char  _uuid;
 }
 
 @property int epid;

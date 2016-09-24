@@ -3,34 +3,34 @@
  */
 
 @interface UIKBSplitRow : NSObject {
-    UIKBTree *_attrlistLeft;
-    UIKBTree *_attrlistRight;
+    UIKBTree * _attrlistLeft;
+    UIKBTree * _attrlistRight;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _defaultKeySize;
-    UIKBTree *_geolistLeft;
-    UIKBTree *_geolistRight;
-    NSDictionary *_hints;
-    UIKBTree *_keylistLeft;
-    UIKBTree *_keylistRight;
-    NSMutableArray *_keys;
-    unsigned char _rowIndex;
-    float _rowOffset;
-    float _rowWidth;
-    NSMutableArray *_vacancies;
+        double width; 
+        double height; 
+    }  _defaultKeySize;
+    UIKBTree * _geolistLeft;
+    UIKBTree * _geolistRight;
+    NSDictionary * _hints;
+    UIKBTree * _keylistLeft;
+    UIKBTree * _keylistRight;
+    NSMutableArray * _keys;
+    unsigned char  _rowIndex;
+    double  _rowOffset;
+    double  _rowWidth;
+    NSMutableArray * _vacancies;
 }
 
-@property struct CGSize { float x1; float x2; } defaultKeySize;
+@property struct CGSize { double x1; double x2; } defaultKeySize;
 @property (retain) NSDictionary *hints;
 @property (readonly) NSMutableArray *keys;
 @property (nonatomic) unsigned char rowIndex;
-@property float rowOffset;
-@property float rowWidth;
+@property double rowOffset;
+@property double rowWidth;
 
 - (void)addKey:(id)arg1;
 - (void)dealloc;
-- (struct CGSize { float x1; float x2; })defaultKeySize;
+- (struct CGSize { double x1; double x2; })defaultKeySize;
 - (id)description;
 - (id)hints;
 - (id)init;
@@ -40,7 +40,7 @@
 - (unsigned char)rowIndex;
 - (float)rowOffset;
 - (float)rowWidth;
-- (void)setDefaultKeySize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setDefaultKeySize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setHints:(id)arg1;
 - (void)setRowIndex:(unsigned char)arg1;
 - (void)setRowOffset:(float)arg1;

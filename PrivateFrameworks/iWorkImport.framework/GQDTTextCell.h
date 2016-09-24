@@ -3,8 +3,8 @@
  */
 
 @interface GQDTTextCell : GQDTCell {
-    GQDWPLayoutStorage *mLayoutStorage;
-    struct __CFString { } *mStringValue;
+    GQDWPLayoutStorage * mLayoutStorage;
+    struct __CFString { } * mStringValue;
 }
 
 - (void)dealloc;

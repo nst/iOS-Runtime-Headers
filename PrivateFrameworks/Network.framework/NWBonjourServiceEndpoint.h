@@ -4,10 +4,11 @@
 
 @interface NWBonjourServiceEndpoint : NWEndpoint
 
-@property (readonly) NSString *domain;
-@property (readonly) NSString *name;
-@property (readonly) NSString *type;
+@property (nonatomic, readonly) NSString *domain;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSString *type;
 
++ (unsigned int)endpointType;
 + (id)endpointWithName:(id)arg1 type:(id)arg2 domain:(id)arg3;
 
 - (id)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;

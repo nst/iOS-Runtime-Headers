@@ -8,6 +8,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) GEOStorageRouteRequestStorage *routeRequestStorage;
+@property (nonatomic, readonly) NSUUID *storageIdentifier;
 @property (readonly) Class superclass;
 
 + (Class)immutableObjectClass;
@@ -20,7 +21,7 @@
 - (id)routeRequestStorage;
 - (void)setRouteRequestStorage:(id)arg1;
 - (id)startWaypoint;
-- (id)transferToImmutableWithError:(out id*)arg1;
+- (id)transferToImmutableIfValidWithError:(out id*)arg1;
 - (int)transportType;
 
 @end

@@ -4,6 +4,8 @@
 
 @interface CATransaction : NSObject
 
+// Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
+
 + (id)_implicitAnimationForLayer:(id)arg1 keyPath:(id)arg2;
 + (void)activate;
 + (void)activateBackground:(BOOL)arg1;
@@ -19,7 +21,9 @@
 + (id /* block */)completionBlock;
 + (unsigned int)currentState;
 + (BOOL)disableActions;
++ (BOOL)disableRunLoopObserverCommits;
 + (void)flush;
++ (unsigned int)generateSeed;
 + (double)inputTime;
 + (void)lock;
 + (BOOL)lowLatency;
@@ -32,11 +36,17 @@
 + (void)setCommitTime:(double)arg1;
 + (void)setCompletionBlock:(id /* block */)arg1;
 + (void)setDisableActions:(BOOL)arg1;
++ (void)setDisableRunLoopObserverCommits:(BOOL)arg1;
 + (void)setInputTime:(double)arg1;
 + (void)setLowLatency:(BOOL)arg1;
++ (void)setPresentationHandler:(id /* block */)arg1 queue:(id)arg2;
 + (void)setValue:(id)arg1 forKey:(id)arg2;
 + (void)synchronize;
 + (void)unlock;
 + (id)valueForKey:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
+
++ (void)hk_performWithoutAnimations:(id /* block */)arg1;
 
 @end

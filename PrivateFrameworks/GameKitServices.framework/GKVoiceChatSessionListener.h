@@ -3,9 +3,9 @@
  */
 
 @interface GKVoiceChatSessionListener : NSObject {
-    NSMutableArray *_conferenceList;
-    GKSessionInternal *_gkSession;
-    GKRWLock *_rwlock;
+    NSMutableArray * _conferenceList;
+    GKSessionInternal * _gkSession;
+    GKRWLock * _rwlock;
 }
 
 - (id)currentSessions;

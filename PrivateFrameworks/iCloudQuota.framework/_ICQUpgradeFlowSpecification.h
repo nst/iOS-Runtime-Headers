@@ -3,7 +3,7 @@
  */
 
 @interface _ICQUpgradeFlowSpecification : _ICQFlowSpecification {
-    NSDictionary *_serverDict;
+    NSDictionary * _serverDict;
 }
 
 @property (nonatomic, readonly) NSDictionary *serverDict;

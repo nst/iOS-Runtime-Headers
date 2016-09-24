@@ -3,15 +3,15 @@
  */
 
 @interface LKClass : NSObject <LKStudentProviding, NSSecureCoding> {
-    NSMutableDictionary *_avatarNameSimilarityDictionary;
-    NSString *_classDescription;
-    NSNumber *_classID;
-    NSString *_classImageURL;
-    NSString *_className;
-    NSMutableDictionary *_givenNameSimilarityDictionary;
-    NSArray *_instructors;
-    NSString *_sortDescriptor;
-    NSArray *_students;
+    NSMutableDictionary * _avatarNameSimilarityDictionary;
+    NSString * _classDescription;
+    NSNumber * _classID;
+    NSString * _classImageURL;
+    NSString * _className;
+    NSMutableDictionary * _givenNameSimilarityDictionary;
+    NSArray * _instructors;
+    NSString * _sortDescriptor;
+    NSArray * _students;
 }
 
 @property (retain) NSString *classDescription;
@@ -23,7 +23,7 @@
 @property (readonly) unsigned int hash;
 @property (retain) NSArray *instructors;
 @property (retain) NSString *sortDescriptor;
-@property (nonatomic, readonly, copy) NSArray *students;
+@property (nonatomic, copy) NSArray *students;
 @property (readonly) Class superclass;
 
 + (BOOL)supportsSecureCoding;
@@ -38,6 +38,7 @@
 - (unsigned int)hash;
 - (id)initWithClassDictionary:(id)arg1 usersByUserIdentifier:(id)arg2;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithStudents:(id)arg1 instructors:(id)arg2 className:(id)arg3 classID:(id)arg4;
 - (id)instructors;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToLKClass:(id)arg1;
@@ -47,6 +48,7 @@
 - (void)setClassName:(id)arg1;
 - (void)setInstructors:(id)arg1;
 - (void)setSortDescriptor:(id)arg1;
+- (void)setStudents:(id)arg1;
 - (id)sortDescriptor;
 - (id)sortUsers:(id)arg1;
 - (id)students;

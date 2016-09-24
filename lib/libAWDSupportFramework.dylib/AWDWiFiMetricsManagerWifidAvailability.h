@@ -7,10 +7,10 @@
         unsigned int timestamp : 1; 
         unsigned int wifidBootTimeDiff : 1; 
         unsigned int pid : 1; 
-    } _has;
-    unsigned int _pid;
-    unsigned long long _timestamp;
-    double _wifidBootTimeDiff;
+    }  _has;
+    unsigned int  _pid;
+    unsigned long long  _timestamp;
+    double  _wifidBootTimeDiff;
 }
 
 @property (nonatomic) BOOL hasPid;

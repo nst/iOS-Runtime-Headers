@@ -3,9 +3,9 @@
  */
 
 @interface NEIPv4Route : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
-    NSString *_destinationAddress;
-    NSString *_destinationSubnetMask;
-    NSString *_gatewayAddress;
+    NSString * _destinationAddress;
+    NSString * _destinationSubnetMask;
+    NSString * _gatewayAddress;
 }
 
 @property (readonly) NSString *destinationAddress;

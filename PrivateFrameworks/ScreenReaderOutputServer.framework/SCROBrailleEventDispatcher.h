@@ -3,13 +3,13 @@
  */
 
 @interface SCROBrailleEventDispatcher : NSObject {
-    NSMutableArray *_brailleEventQueue;
-    BOOL _isValid;
-    struct __CFArray { } *_queue;
-    NSLock *_queueLock;
-    struct __CFRunLoopSource { } *_queueSource;
-    struct __CFRunLoop { } *_runLoop;
-    id _target;
+    NSMutableArray * _brailleEventQueue;
+    BOOL  _isValid;
+    struct __CFArray { } * _queue;
+    NSLock * _queueLock;
+    struct __CFRunLoopSource { } * _queueSource;
+    struct __CFRunLoop { } * _runLoop;
+    id  _target;
 }
 
 - (void)_processQueue;

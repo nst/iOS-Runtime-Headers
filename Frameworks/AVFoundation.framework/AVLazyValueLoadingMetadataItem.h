@@ -3,7 +3,7 @@
  */
 
 @interface AVLazyValueLoadingMetadataItem : AVMetadataItem {
-    AVLazyValueLoadingMetadataItemInternal *_lazyMetadataItem;
+    AVLazyValueLoadingMetadataItemInternal * _lazyMetadataItem;
 }
 
 + (id)metadataItemWithPropertiesOfMetadataItem:(id)arg1 valueLoadingHandler:(id /* block */)arg2;

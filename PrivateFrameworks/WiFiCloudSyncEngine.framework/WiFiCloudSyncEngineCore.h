@@ -3,11 +3,11 @@
  */
 
 @interface WiFiCloudSyncEngineCore : NSObject {
-    int (*callback;
-    NSThread *clientThread;
-    void *context;
-    BOOL iCloudSyncingEnabled;
-    NSUbiquitousKeyValueStore *keyValueStore;
+    int (* callback;
+    NSThread * clientThread;
+    void * context;
+    BOOL  iCloudSyncingEnabled;
+    NSUbiquitousKeyValueStore * keyValueStore;
 }
 
 @property int (*callback;
@@ -17,7 +17,6 @@
 @property (retain) NSUbiquitousKeyValueStore *keyValueStore;
 
 - (void)addToKVStore:(id)arg1;
-- (void)asyncCircleStatusCheck;
 - (int (*)callback;
 - (void)clearKVS;
 - (id)clientThread;
@@ -27,14 +26,14 @@
 - (void)enableIcloudSyncing:(BOOL)arg1 ForBundleId:(id)arg2;
 - (BOOL)iCloudSyncingEnabled;
 - (void)initWithCallback:(int (*)arg1 callbackContext:(void*)arg2;
-- (void)isLastDeviceInCircleAsync;
 - (id)keyValueStore;
 - (void)printCompleteKVStore;
+- (void)queryKeychainSyncState;
 - (id)readCompleteKVStore;
 - (void)readStoreValueForKey:(id)arg1;
-- (void)relayCircleStatusCheck:(id)arg1;
 - (void)relayCloudCleanUpEvent;
 - (void)relayCloudEvent:(id)arg1;
+- (void)relayKeychainSyncState:(id)arg1;
 - (void)relayMergeNetworks:(id)arg1;
 - (void)relayReadStoreValueAction:(id)arg1;
 - (void)removeFromKVStore:(id)arg1;
@@ -47,6 +46,6 @@
 - (void)synchronizeAndCallMergeNetworks;
 - (void)synchronizeKVS;
 - (void)ubiquitousKeyValueStoreDidChange:(id)arg1;
-- (void)unSubscribeKVStoreNotfications:(id)arg1;
+- (void)unSubscribeKVStoreNotfications;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface PLCloudSharedAlbum : PLManagedAlbum <PLCloudSharedAlbumProtocol> {
-    BOOL _deleteFromDBOnly;
+    BOOL  _deleteFromDBOnly;
 }
 
 @property (nonatomic, readonly) unsigned int approximateCount;

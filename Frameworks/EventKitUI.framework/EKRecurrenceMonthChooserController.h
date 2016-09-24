@@ -3,8 +3,8 @@
  */
 
 @interface EKRecurrenceMonthChooserController : EKRecurrenceGridChooserController {
-    NSMutableSet *_monthsOfTheYearSet;
-    BOOL _prohibitsMultipleMonthsInYearlyRecurrence;
+    NSMutableSet * _monthsOfTheYearSet;
+    BOOL  _prohibitsMultipleMonthsInYearlyRecurrence;
 }
 
 @property (nonatomic, retain) NSArray *monthsOfTheYear;

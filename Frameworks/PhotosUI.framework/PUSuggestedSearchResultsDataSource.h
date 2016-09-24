@@ -3,14 +3,14 @@
  */
 
 @interface PUSuggestedSearchResultsDataSource : NSObject <PUSuggestedSearchDelegate> {
-    <PUSuggestedSearchResultsDelegate> *_delegate;
-    PLPhotoLibrary *_photoLibrary;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSArray *_recentSearches;
-    PSIDatabase *_searchIndex;
-    BOOL _shouldReloadRecentSearchChanges;
-    PUSuggestedSearchLastYear *_suggestedSearchLastYear;
-    NSArray *_suggestedSearches;
+    <PUSuggestedSearchResultsDelegate> * _delegate;
+    PLPhotoLibrary * _photoLibrary;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSArray * _recentSearches;
+    PSIDatabase * _searchIndex;
+    BOOL  _shouldReloadRecentSearchChanges;
+    PUSuggestedSearchLastYear * _suggestedSearchLastYear;
+    NSArray * _suggestedSearches;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -23,7 +23,7 @@
 + (void)_clearRecentSearches;
 + (id)_recentSearchObjects;
 + (id)_recentSearches;
-+ (BOOL)saveRecentSearch:(id)arg1 albumUUID:(id)arg2 searchString:(id)arg3 displayTitle:(id)arg4 uuids:(id)arg5;
++ (BOOL)saveRecentSearch:(id)arg1 albumUUID:(id)arg2 memoryUUID:(id)arg3 searchString:(id)arg4 displayTitle:(id)arg5 displaySubtitle:(id)arg6 uuids:(id)arg7;
 
 - (void).cxx_destruct;
 - (void)_reloadRecentSearches;
@@ -40,7 +40,7 @@
 - (unsigned int)numberOfSuggestedSearches;
 - (id)recentSearchAtIndex:(unsigned int)arg1;
 - (id)recentSearches;
-- (void)saveRecentSearch:(id)arg1 albumUUID:(id)arg2 searchString:(id)arg3 displayTitle:(id)arg4 uuids:(id)arg5;
+- (void)saveRecentSearch:(id)arg1 albumUUID:(id)arg2 memoryUUID:(id)arg3 searchString:(id)arg4 displayTitle:(id)arg5 displaySubtitle:(id)arg6 uuids:(id)arg7;
 - (id)searchIndex;
 - (void)setDelegate:(id)arg1;
 - (void)setSearchIndex:(id)arg1;

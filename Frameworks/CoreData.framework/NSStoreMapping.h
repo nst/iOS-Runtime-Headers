@@ -3,7 +3,7 @@
  */
 
 @interface NSStoreMapping : NSObject {
-    NSString *_externalName;
+    NSString * _externalName;
 }
 
 - (void)copyValuesForReadOnlyFetch:(id)arg1;

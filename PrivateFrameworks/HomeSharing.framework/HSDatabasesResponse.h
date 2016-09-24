@@ -3,7 +3,7 @@
  */
 
 @interface HSDatabasesResponse : HSResponse {
-    NSArray *_databases;
+    NSArray * _databases;
 }
 
 @property (nonatomic, copy) NSArray *databases;

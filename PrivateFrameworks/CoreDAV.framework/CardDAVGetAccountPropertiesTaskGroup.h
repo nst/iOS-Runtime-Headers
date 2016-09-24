@@ -3,8 +3,8 @@
  */
 
 @interface CardDAVGetAccountPropertiesTaskGroup : CoreDAVGetAccountPropertiesTaskGroup {
-    NSSet *_addressBookHomes;
-    NSSet *_directoryGatewayURLs;
+    NSSet * _addressBookHomes;
+    NSSet * _directoryGatewayURLs;
 }
 
 @property (nonatomic, readonly) NSSet *addressBookHomes;

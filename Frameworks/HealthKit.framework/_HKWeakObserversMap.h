@@ -3,7 +3,7 @@
  */
 
 @interface _HKWeakObserversMap : NSObject {
-    NSMutableDictionary *_observers;
+    NSMutableDictionary * _observers;
 }
 
 - (void).cxx_destruct;

@@ -3,14 +3,14 @@
  */
 
 @interface TSKShuffleMapping : NSObject <NSCopying> {
-    unsigned short mDestinationIndexForMove;
-    unsigned short mEndIndex;
-    unsigned short mFirstMovedIndex;
-    BOOL mIsMoveOperation;
-    BOOL mIsVertical;
-    unsigned short *mMapping;
-    unsigned short mNumberOfIndicesMoved;
-    unsigned short mStartIndex;
+    unsigned short  mDestinationIndexForMove;
+    unsigned short  mEndIndex;
+    unsigned short  mFirstMovedIndex;
+    BOOL  mIsMoveOperation;
+    BOOL  mIsVertical;
+    unsigned short * mMapping;
+    unsigned short  mNumberOfIndicesMoved;
+    unsigned short  mStartIndex;
 }
 
 @property (nonatomic, readonly) unsigned short endIndex;
@@ -32,12 +32,12 @@
 - (BOOL)isIdentityMapping;
 - (BOOL)isMove;
 - (BOOL)isVertical;
-- (struct { unsigned short x1; unsigned char x2; unsigned char x3; })mapCoordinate:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })mapCoordinate:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (unsigned short)mapIndex:(unsigned short)arg1;
 - (unsigned short*)mapping;
 - (unsigned short)mappingSize;
 - (void)remove:(unsigned short)arg1 indicesAtIndex:(unsigned short)arg2;
-- (struct { unsigned short x1; unsigned char x2; unsigned char x3; })reverseMapCoordinate:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })reverseMapCoordinate:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (unsigned short)reverseMapIndex:(unsigned short)arg1;
 - (void)saveToArchive:(struct ShuffleMappingArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned int x5; unsigned int x6; struct RepeatedPtrField<TSK::ShuffleMappingArchive_Entry> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; bool x8; bool x9; unsigned int x10; unsigned int x11; unsigned int x12; }*)arg1;
 - (unsigned short)startIndex;

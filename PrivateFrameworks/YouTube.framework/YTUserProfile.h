@@ -3,9 +3,9 @@
  */
 
 @interface YTUserProfile : NSObject {
-    int _age;
-    int _maxUploadDuration;
-    NSString *_username;
+    int  _age;
+    int  _maxUploadDuration;
+    NSString * _username;
 }
 
 @property (nonatomic, readonly) int age;

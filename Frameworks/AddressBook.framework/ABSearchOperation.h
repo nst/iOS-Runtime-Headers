@@ -3,15 +3,15 @@
  */
 
 @interface ABSearchOperation : NSOperation {
-    void *_addressBook;
-    void *_context;
-    <ABSearchOperationDelegate> *_delegate;
-    void *_internalSearchAddressBook;
-    NSPredicate *_predicate;
-    NSArray *_prefetchProperties;
-    id /* block */ _progressBlock;
-    NSThread *_progressBlockThread;
-    unsigned int _sortOrdering;
+    void * _addressBook;
+    void * _context;
+    <ABSearchOperationDelegate> * _delegate;
+    void * _internalSearchAddressBook;
+    NSPredicate * _predicate;
+    NSArray * _prefetchProperties;
+    id /* block */  _progressBlock;
+    NSThread * _progressBlockThread;
+    unsigned int  _sortOrdering;
 }
 
 @property (nonatomic) void*addressBook;

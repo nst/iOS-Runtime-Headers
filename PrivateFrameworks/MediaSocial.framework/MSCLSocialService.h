@@ -3,9 +3,9 @@
  */
 
 @interface MSCLSocialService : NSObject <NSCopying> {
-    NSString *_identifier;
-    int _maximumNumberOfCharacters;
-    NSString *_storeItemIdentifier;
+    NSString * _identifier;
+    int  _maximumNumberOfCharacters;
+    NSString * _storeItemIdentifier;
 }
 
 @property (nonatomic, copy) NSString *identifier;

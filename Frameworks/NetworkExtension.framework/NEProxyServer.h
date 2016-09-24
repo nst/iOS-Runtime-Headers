@@ -3,12 +3,12 @@
  */
 
 @interface NEProxyServer : NSObject <NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
-    NSString *_address;
-    BOOL _authenticationRequired;
-    NSString *_password;
-    int _port;
-    int _type;
-    NSString *_username;
+    NSString * _address;
+    BOOL  _authenticationRequired;
+    NSString * _password;
+    int  _port;
+    int  _type;
+    NSString * _username;
 }
 
 @property (readonly) NSString *address;
@@ -32,6 +32,7 @@
 - (id)initWithAddress:(id)arg1 port:(int)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithType:(int)arg1 address:(id)arg2 port:(int)arg3;
+- (BOOL)needToUpdateKeychain;
 - (id)password;
 - (int)port;
 - (void)removeFromKeychain;

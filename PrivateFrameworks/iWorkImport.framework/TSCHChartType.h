@@ -3,8 +3,10 @@
  */
 
 @interface TSCHChartType : NSObject <TSDMixing> {
-    TSCHChartFeature *mFeature;
+    TSCHChartFeature * mFeature;
 }
+
+@property (nonatomic, readonly) BOOL is3D;
 
 + (id)allChartTypes;
 + (id)areaChart;
@@ -16,6 +18,7 @@
 + (id)columnChart;
 + (id)columnChart3D;
 + (id)constantDepthInfoChartScaleForInfoChartScale:(id)arg1 chartType:(id)arg2 barShape:(int)arg3;
++ (struct CGSize { double x1; double x2; })fallbackMinimumChartBodySize;
 + (id)lineChart;
 + (id)lineChart3D;
 + (id)mixedChart;
@@ -67,19 +70,21 @@
 - (id)g_genericToSpecificPropertyMapTwoAxis;
 - (id)genericToSpecificPropertyMap;
 - (unsigned int)gridOffsetToSeriesForScatterFormat:(int)arg1;
-- (id)imageWithPreset:(id)arg1 target:(int)arg2 imageSize:(struct CGSize { float x1; float x2; })arg3 imageScale:(float)arg4 swatchFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 documentRoot:(id)arg6 shouldCache:(BOOL*)arg7;
+- (id)imageWithPreset:(id)arg1 target:(int)arg2 imageSize:(struct CGSize { double x1; double x2; })arg3 imageScale:(float)arg4 swatchFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg5 documentRoot:(id)arg6 shouldCache:(BOOL*)arg7;
 - (id)init;
 - (id)initWithFeatureClass:(Class)arg1;
+- (BOOL)is3D;
 - (BOOL)isHorizontal;
 - (BOOL)isMultiData;
 - (BOOL)isPie;
 - (Class)layoutClass;
 - (BOOL)layoutFrameShouldEncloseInfoGeometry;
 - (unsigned int)maxCellsToCheckForGridValueType;
-- (struct CGSize { float x1; float x2; })minimumChartBodySize;
+- (struct CGSize { double x1; double x2; })minimumChartBodySize;
+- (struct CGSize { double x1; double x2; })minimumChartBodySizeForTransformingGeometry;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
 - (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
-- (struct CGSize { float x1; float x2; })mungeBodySize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })mungeBodySize:(struct CGSize { double x1; double x2; })arg1;
 - (id)otherDimensionChartType;
 - (id)p_debugDescription;
 - (unsigned int)presentationDimension;
@@ -89,7 +94,7 @@
 - (BOOL)requiresSeparateLabelsRenderPass;
 - (BOOL)requiresYAxisOrdinal;
 - (BOOL)reverseSingleColumnLegendOrder;
-- (struct TSCH3DChartRotationLimit { float x1; float x2; float x3; float x4; })rotation3DLimit;
+- (struct TSCH3DChartRotationLimit { double x1; double x2; double x3; double x4; })rotation3DLimit;
 - (float)rotation3DMaxX;
 - (float)rotation3DMaxY;
 - (float)rotation3DMinX;
@@ -139,7 +144,7 @@
 - (BOOL)supportsTrendLines;
 - (BOOL)supportsValueAxisLabelsPosition;
 - (BOOL)supportsValueLabels;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })swatchImageEdgeInsetsForSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })swatchImageEdgeInsetsForSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)titlePositionerWithInfo:(id)arg1 scene:(id)arg2;
 - (void)updateTitlesForExportingModel:(id)arg1 info:(id)arg2;
 - (id)userInterfaceName;

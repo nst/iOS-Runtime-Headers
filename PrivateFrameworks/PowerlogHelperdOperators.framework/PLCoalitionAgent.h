@@ -3,15 +3,15 @@
  */
 
 @interface PLCoalitionAgent : PLAgent {
-    PLEntryNotificationOperatorComposition *_batteryLevelChanged;
-    NSMutableDictionary *_coalitionIDToCoalitionNameMapping;
-    PLXPCListenerOperatorComposition *_coalitionReapNotification;
-    NSDate *_currentDate;
-    NSDictionary *_lastCoalitionDictionary;
-    NSDictionary *_lastCoalitionObjectDictionary;
-    NSDate *_lastDate;
-    PLEntryNotificationOperatorComposition *_processmonitorCallback;
-    NSMutableDictionary *_reapedCoalitions;
+    PLEntryNotificationOperatorComposition * _batteryLevelChanged;
+    NSMutableDictionary * _coalitionIDToCoalitionNameMapping;
+    PLXPCListenerOperatorComposition * _coalitionReapNotification;
+    NSDate * _currentDate;
+    NSDictionary * _lastCoalitionDictionary;
+    NSDictionary * _lastCoalitionObjectDictionary;
+    NSDate * _lastDate;
+    PLEntryNotificationOperatorComposition * _processmonitorCallback;
+    NSMutableDictionary * _reapedCoalitions;
 }
 
 @property (retain) PLEntryNotificationOperatorComposition *batteryLevelChanged;
@@ -34,9 +34,9 @@
 - (void).cxx_destruct;
 - (void)addAccountingEventsFromCoalitions:(id)arg1;
 - (id)batteryLevelChanged;
-- (id)buildPLCoalitionDataObject:(struct coalition_resource_usage { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned long long x11; unsigned long long x12; unsigned long long x13; unsigned long long x14; unsigned long long x15; }*)arg1 withBundleId:(id)arg2 withLaunchdName:(id)arg3 withDate:(id)arg4 withCoalitionId:(unsigned long long)arg5;
+- (id)buildPLCoalitionDataObject:(struct coalition_resource_usage { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; }*)arg1 withBundleId:(id)arg2 withLaunchdName:(id)arg3 withDate:(id)arg4 withCoalitionId:(unsigned int)arg5;
 - (id)buildPLCoalitionDataObjectFromReapedNotification:(id)arg1;
-- (id)buildPLEntry:(struct coalition_resource_usage { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned long long x11; unsigned long long x12; unsigned long long x13; unsigned long long x14; unsigned long long x15; }*)arg1 withBundleId:(id)arg2 withLaunchdName:(id)arg3 withDate:(id)arg4 withCoalitionId:(unsigned long long)arg5;
+- (id)buildPLEntry:(struct coalition_resource_usage { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; }*)arg1 withBundleId:(id)arg2 withLaunchdName:(id)arg3 withDate:(id)arg4 withCoalitionId:(unsigned int)arg5;
 - (id)buildPLEntryDiffWithStartEntry:(id)arg1 withEndEntry:(id)arg2 withLastDate:(id)arg3;
 - (id)buildPLEntryDiffWithStartObject:(id)arg1 withEndObject:(id)arg2 withStartDate:(id)arg3 withEndDate:(id)arg4;
 - (id)coalitionIDToCoalitionNameMapping;
@@ -58,8 +58,8 @@
 - (void)logCoalitionObjectDifference:(id)arg1;
 - (void)logCoalitionObjectSnapshot:(id)arg1;
 - (void)logCoalitionSnapshot:(id)arg1;
-- (void)logEventIntervalUsage;
-- (void)printCoalitionResourceUsage:(struct coalition_resource_usage { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned long long x11; unsigned long long x12; unsigned long long x13; unsigned long long x14; unsigned long long x15; }*)arg1 withBundleId:(id)arg2 withLaunchdName:(id)arg3;
+- (void)logEventIntervalCoalitionInterval;
+- (void)printCoalitionResourceUsage:(struct coalition_resource_usage { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; }*)arg1 withBundleId:(id)arg2 withLaunchdName:(id)arg3;
 - (id)processmonitorCallback;
 - (id)reapedCoalitions;
 - (id)reapedCoalitionsPLEntryDiff;

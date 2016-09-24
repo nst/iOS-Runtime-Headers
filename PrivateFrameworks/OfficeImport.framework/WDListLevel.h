@@ -3,21 +3,21 @@
  */
 
 @interface WDListLevel : NSObject {
-    WDCharacterProperties *mCharacterProperties;
-    WDDocument *mDocument;
-    WDOfficeArt *mImage;
-    int mJustification;
-    BOOL mLegacy;
-    long mLegacyIndent;
-    long mLegacySpace;
-    BOOL mLegal;
-    int mNumberFormat;
-    WDParagraphProperties *mParagraphProperties;
-    long mRestartLevel;
-    BOOL mRestartNumbering;
-    long mStartNumber;
-    int mSuffix;
-    NSMutableString *mText;
+    WDCharacterProperties * mCharacterProperties;
+    WDDocument * mDocument;
+    WDOfficeArt * mImage;
+    int  mJustification;
+    BOOL  mLegacy;
+    long  mLegacyIndent;
+    long  mLegacySpace;
+    BOOL  mLegal;
+    int  mNumberFormat;
+    WDParagraphProperties * mParagraphProperties;
+    long  mRestartLevel;
+    BOOL  mRestartNumbering;
+    long  mStartNumber;
+    int  mSuffix;
+    NSMutableString * mText;
 }
 
 - (id)characterProperties;

@@ -3,12 +3,13 @@
  */
 
 @interface MKTransitArtwork : NSObject <GEOTransitArtworkDataSource> {
-    NSString *_accessibilityText;
-    int _artworkSourceType;
-    int _artworkUseType;
-    BOOL _hasRoutingIncidentBadge;
-    <GEOTransitIconDataSource> *_iconDataSource;
-    <GEOTransitShieldDataSource> *_shieldDataSource;
+    NSString * _accessibilityText;
+    int  _artworkSourceType;
+    int  _artworkUseType;
+    BOOL  _hasRoutingIncidentBadge;
+    <GEOTransitIconDataSource> * _iconDataSource;
+    <GEOTransitShieldDataSource> * _iconFallbackShieldDataSource;
+    <GEOTransitShieldDataSource> * _shieldDataSource;
 }
 
 @property (nonatomic, readonly) NSString *accessibilityText;
@@ -19,6 +20,7 @@
 @property (nonatomic, readonly) BOOL hasRoutingIncidentBadge;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) <GEOTransitIconDataSource> *iconDataSource;
+@property (nonatomic, readonly) <GEOTransitShieldDataSource> *iconFallbackShieldDataSource;
 @property (nonatomic, readonly) <GEOTransitShieldDataSource> *shieldDataSource;
 @property (readonly) Class superclass;
 
@@ -31,7 +33,9 @@
 - (int)artworkUseType;
 - (BOOL)hasRoutingIncidentBadge;
 - (id)iconDataSource;
+- (id)iconFallbackShieldDataSource;
 - (id)initWithIcon:(id)arg1 accessibilityText:(id)arg2;
+- (id)initWithIcon:(id)arg1 fallbackShield:(id)arg2 accessibilityText:(id)arg3;
 - (id)initWithShield:(id)arg1 accessibilityText:(id)arg2;
 - (id)shieldDataSource;
 

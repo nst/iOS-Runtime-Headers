@@ -3,10 +3,10 @@
  */
 
 @interface ABPropertyPickerViewController : ABPickerViewController <ABCardPropertyPickerDelegate> {
-    void *_addressBook;
-    ABUIPerson *_person;
-    NSArray *_policies;
-    struct __CFArray { } *_properties;
+    void * _addressBook;
+    ABUIPerson * _person;
+    NSArray * _policies;
+    struct __CFArray { } * _properties;
 }
 
 @property (nonatomic) void*addressBook;
@@ -14,7 +14,7 @@
 @property (nonatomic, retain) NSArray *policies;
 @property (nonatomic) struct __CFArray { }*properties;
 
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; int x7; }*)arg1;
 - (float)ab_heightToFitForViewInPopoverView;
 - (void*)addressBook;
 - (void)dealloc;

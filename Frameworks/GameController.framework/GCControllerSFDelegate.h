@@ -3,8 +3,8 @@
  */
 
 @interface GCControllerSFDelegate : NSObject <NSUserActivityDelegate> {
-    NSUserActivity *_activity;
-    id /* block */ _completionHandler;
+    NSUserActivity * _activity;
+    id /* block */  _completionHandler;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;

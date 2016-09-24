@@ -3,9 +3,9 @@
  */
 
 @interface SKUIFacebookLikeStatus : NSObject <NSCopying> {
-    NSArray *_friends;
-    NSURL *_url;
-    BOOL _userLiked;
+    NSArray * _friends;
+    NSURL * _url;
+    BOOL  _userLiked;
 }
 
 @property (nonatomic, copy) NSURL *URL;

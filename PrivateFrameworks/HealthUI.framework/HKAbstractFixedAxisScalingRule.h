@@ -3,9 +3,10 @@
  */
 
 @interface HKAbstractFixedAxisScalingRule : NSObject <HKInteractiveChartsAxisScalingRule> {
-    NSDictionary *_axisBoundsOverrides;
-    HKValueRange *_defaultAxisBounds;
-    BOOL _shouldExpandBoundsForOutliers;
+    NSDictionary * _axisBoundsOverrides;
+    HKValueRange * _defaultAxisBounds;
+    int  _portraitPrettyNumberRule;
+    BOOL  _shouldExpandBoundsForOutliers;
 }
 
 @property (nonatomic, readonly) NSDictionary *axisBoundsOverrides;
@@ -13,6 +14,7 @@
 @property (nonatomic, readonly) HKValueRange *defaultAxisBounds;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic) int portraitPrettyNumberRule;
 @property (nonatomic) BOOL shouldExpandBoundsForOutliers;
 @property (readonly) Class superclass;
 
@@ -21,7 +23,9 @@
 - (id)axisBoundsOverrides;
 - (id)defaultAxisBounds;
 - (id)init;
+- (int)portraitPrettyNumberRule;
 - (id)portraitYValueRangeForRange:(id)arg1 zoomLevel:(int)arg2 allowedDecimalPrecision:(int)arg3;
+- (void)setPortraitPrettyNumberRule:(int)arg1;
 - (void)setShouldExpandBoundsForOutliers:(BOOL)arg1;
 - (BOOL)shouldExpandBoundsForOutliers;
 - (id)yValueRangeForRange:(id)arg1 zoomLevel:(int)arg2;

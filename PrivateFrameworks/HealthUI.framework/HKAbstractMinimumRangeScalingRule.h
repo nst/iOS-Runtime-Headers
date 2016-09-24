@@ -3,22 +3,31 @@
  */
 
 @interface HKAbstractMinimumRangeScalingRule : NSObject <HKInteractiveChartsAxisScalingRule> {
-    NSDictionary *_axisRangeOverrides;
-    double _defaultYAxisRange;
+    HKValueRange * _axisBounds;
+    NSDictionary * _axisRangeOverrides;
+    double  _defaultYAxisRange;
+    int  _portraitPrettyNumberRule;
 }
 
+@property (nonatomic, retain) HKValueRange *axisBounds;
 @property (nonatomic, readonly) NSDictionary *axisRangeOverrides;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) double defaultYAxisRange;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic) int portraitPrettyNumberRule;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (double)_rangeForZoomLevel:(int)arg1;
+- (id)axisBounds;
 - (id)axisRangeOverrides;
 - (double)defaultYAxisRange;
+- (id)init;
+- (int)portraitPrettyNumberRule;
 - (id)portraitYValueRangeForRange:(id)arg1 zoomLevel:(int)arg2 allowedDecimalPrecision:(int)arg3;
+- (void)setAxisBounds:(id)arg1;
+- (void)setPortraitPrettyNumberRule:(int)arg1;
 - (id)yValueRangeForRange:(id)arg1 zoomLevel:(int)arg2;
 
 @end

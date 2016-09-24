@@ -3,8 +3,8 @@
  */
 
 @interface NSURLFileTypeMappingsInternal : NSObject {
-    NSDictionary *MIMETypeToExtensionList;
-    NSDictionary *extensionToMIMEType;
+    NSDictionary * MIMETypeToExtensionList;
+    NSDictionary * extensionToMIMEType;
 }
 
 - (id)init;

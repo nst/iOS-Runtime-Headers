@@ -3,7 +3,7 @@
  */
 
 @interface _NSUndoInvocation : _NSUndoObject {
-    NSInvocation *_invocation;
+    NSInvocation * _invocation;
 }
 
 - (void)dealloc;

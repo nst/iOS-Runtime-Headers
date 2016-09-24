@@ -10,18 +10,19 @@
         } _unknown_fields_; 
         unsigned int _has_bits_[1]; 
         int _cached_size_; 
-        unsigned long long identifier_; 
+        unsigned int identifier_; 
         struct RepeatedPtrField<TSP::MessageInfo> { 
             void **elements_; 
             int current_size_; 
             int allocated_size_; 
             int total_size_; 
         } message_infos_; 
-    } _archiveInfo;
-    unsigned int _archiveInfoLength;
-    <TSPComponentParserDelegate> *_delegate;
-    unsigned int _messagesLength;
-    unsigned int _state;
+        bool should_merge_; 
+    }  _archiveInfo;
+    unsigned int  _archiveInfoLength;
+    <TSPComponentParserDelegate> * _delegate;
+    unsigned int  _messagesLength;
+    unsigned int  _state;
 }
 
 - (id).cxx_construct;

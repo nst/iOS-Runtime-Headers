@@ -3,9 +3,9 @@
  */
 
 @interface TSCH3DFillSetIdentifier : NSObject {
-    int _fillPropertyType;
-    int _seriesIndex;
-    NSString *_textureSetID;
+    int  _fillPropertyType;
+    int  _seriesIndex;
+    NSString * _textureSetID;
 }
 
 @property (nonatomic, readonly) unsigned int seriesIndex;

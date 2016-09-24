@@ -3,10 +3,10 @@
  */
 
 @interface GEORPSuggestionList : PBCodable <NSCopying> {
-    GEOPDPlaceRequest *_autocompleteRequest;
-    GEOPDPlaceResponse *_autocompleteResponse;
-    NSMutableArray *_entrys;
-    NSString *_query;
+    GEOPDPlaceRequest * _autocompleteRequest;
+    GEOPDPlaceResponse * _autocompleteResponse;
+    NSMutableArray * _entrys;
+    NSString * _query;
 }
 
 @property (nonatomic, retain) GEOPDPlaceRequest *autocompleteRequest;
@@ -16,6 +16,8 @@
 @property (nonatomic, readonly) BOOL hasAutocompleteResponse;
 @property (nonatomic, readonly) BOOL hasQuery;
 @property (nonatomic, retain) NSString *query;
+
++ (Class)entryType;
 
 - (void)addEntry:(id)arg1;
 - (id)autocompleteRequest;

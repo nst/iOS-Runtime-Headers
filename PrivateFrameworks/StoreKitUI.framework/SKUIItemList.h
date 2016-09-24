@@ -3,11 +3,11 @@
  */
 
 @interface SKUIItemList : NSObject <NSCopying, SKUICacheCoding> {
-    NSMutableArray *_items;
-    NSString *_seeAllTitle;
-    NSString *_seeAllURLString;
-    NSString *_title;
-    NSSet *_unavailableItemIdentifiers;
+    NSMutableArray * _items;
+    NSString * _seeAllTitle;
+    NSString * _seeAllURLString;
+    NSString * _title;
+    NSSet * _unavailableItemIdentifiers;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *cacheRepresentation;

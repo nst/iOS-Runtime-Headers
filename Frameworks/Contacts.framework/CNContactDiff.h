@@ -3,14 +3,14 @@
  */
 
 @interface CNContactDiff : NSObject {
-    NSArray *_updates;
+    NSArray * _updates;
 }
 
 @property (readonly, copy) NSArray *updates;
 
-+ (id)diffContact:(id)arg1 to:(id)arg2;
++ (id)diffContact:(id)arg1 to:(id)arg2 error:(id*)arg3;
 
-- (BOOL)applyToABPerson:(void*)arg1 withSaveContext:(id)arg2 error:(id*)arg3;
+- (BOOL)applyToABPerson:(void*)arg1 error:(id*)arg2;
 - (void)applyToMutableContact:(id)arg1 withIdentifierMap:(id)arg2;
 - (void)applyToMutableContacts:(id)arg1 withIdentifierMap:(id)arg2;
 - (id)contactByApplyingUpdatesToContact:(id)arg1;

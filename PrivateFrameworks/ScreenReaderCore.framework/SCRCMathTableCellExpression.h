@@ -3,11 +3,11 @@
  */
 
 @interface SCRCMathTableCellExpression : SCRCMathRowExpression {
-    unsigned int _columnIndex;
-    BOOL _didGetTablePosition;
-    unsigned int _rowIndex;
-    unsigned int _tableColumnCount;
-    unsigned int _tableRowCount;
+    unsigned int  _columnIndex;
+    BOOL  _didGetTablePosition;
+    unsigned int  _rowIndex;
+    unsigned int  _tableColumnCount;
+    unsigned int  _tableRowCount;
 }
 
 - (void)_getTableDataIfNecessary;

@@ -3,14 +3,16 @@
  */
 
 @interface UIScrollViewDelayedTouchesBeganGestureRecognizer : UIGestureRecognizer {
+    UIView<UIScrollViewDelayedTouchesBeganGestureRecognizerClient> * _client;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _startSceneReferenceLocation;
-    UIDelayedAction *_touchDelay;
+        double x; 
+        double y; 
+    }  _startSceneReferenceLocation;
+    UIDelayedAction * _touchDelay;
 }
 
 - (void).cxx_destruct;
+- (id)_clientView;
 - (void)_resetGestureRecognizer;
 - (void)clearTimer;
 - (void)dealloc;

@@ -3,10 +3,10 @@
  */
 
 @interface UIStatusBarSignalStrengthItemView : UIStatusBarItemView {
-    BOOL _enableRSSI;
-    BOOL _showRSSI;
-    int _signalStrengthBars;
-    int _signalStrengthRaw;
+    BOOL  _enableRSSI;
+    BOOL  _showRSSI;
+    int  _signalStrengthBars;
+    int  _signalStrengthRaw;
 }
 
 - (id)_stringForRSSI;

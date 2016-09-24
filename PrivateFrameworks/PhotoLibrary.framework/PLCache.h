@@ -3,19 +3,19 @@
  */
 
 @interface PLCache : NSObject {
-    NSMutableDictionary *_cacheEntries;
-    int _countLimit;
-    int _currentCost;
-    int _currentCount;
+    NSMutableDictionary * _cacheEntries;
+    int  _countLimit;
+    int  _currentCost;
+    int  _currentCount;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _lock;
+    }  _lock;
     struct entryList { 
         struct lruEntry {} *tqh_first; 
         struct lruEntry {} **tqh_last; 
-    } _lru;
-    int _totalCostLimit;
+    }  _lru;
+    int  _totalCostLimit;
 }
 
 - (void)dealloc;

@@ -3,8 +3,8 @@
  */
 
 @interface ISPersonalizeOffersRequest : NSObject <NSCopying> {
-    NSNumber *_accountIdentifier;
-    NSMutableDictionary *_itemIDsByType;
+    NSNumber * _accountIdentifier;
+    NSMutableDictionary * _itemIDsByType;
 }
 
 @property (nonatomic, retain) NSNumber *accountIdentifier;

@@ -3,16 +3,16 @@
  */
 
 @interface MCWebClipPayload : MCPayload {
-    NSURL *_URL;
-    BOOL _fullScreen;
-    NSNumber *_fullScreenNum;
-    NSData *_iconData;
-    BOOL _isRemovable;
-    NSNumber *_isRemovableNum;
-    NSString *_label;
-    BOOL _precomposed;
-    NSNumber *_precomposedNum;
-    NSString *_savedIdentifier;
+    NSURL * _URL;
+    BOOL  _fullScreen;
+    NSNumber * _fullScreenNum;
+    NSData * _iconData;
+    BOOL  _isRemovable;
+    NSNumber * _isRemovableNum;
+    NSString * _label;
+    BOOL  _precomposed;
+    NSNumber * _precomposedNum;
+    NSString * _savedIdentifier;
 }
 
 @property (nonatomic, readonly, retain) NSURL *URL;

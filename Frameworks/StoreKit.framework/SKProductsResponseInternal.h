@@ -3,8 +3,8 @@
  */
 
 @interface SKProductsResponseInternal : NSObject {
-    NSArray *_invalidIdentifiers;
-    NSArray *_products;
+    NSArray * _invalidIdentifiers;
+    NSArray * _products;
 }
 
 - (void)dealloc;

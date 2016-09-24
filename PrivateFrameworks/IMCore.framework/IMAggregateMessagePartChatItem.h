@@ -3,16 +3,16 @@
  */
 
 @interface IMAggregateMessagePartChatItem : IMTextMessagePartChatItem {
-    NSArray *_subparts;
+    NSArray * _subparts;
 }
 
 @property (nonatomic, readonly, copy) NSArray *subparts;
 
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
-- (id)_initWithItem:(id)arg1 subparts:(id)arg2;
+- (void).cxx_destruct;
+- (id)_initWithItem:(id)arg1 messagePartRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 subparts:(id)arg3;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)subparts;
 

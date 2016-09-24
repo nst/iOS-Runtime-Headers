@@ -3,11 +3,11 @@
  */
 
 @interface AKStrokedAnnotation : AKAnnotation <AKStrokedAnnotationProtocol> {
-    int _brushStyle;
-    BOOL _dashed;
-    BOOL _hasShadow;
-    UIColor *_strokeColor;
-    float _strokeWidth;
+    int  _brushStyle;
+    BOOL  _dashed;
+    BOOL  _hasShadow;
+    UIColor * _strokeColor;
+    double  _strokeWidth;
 }
 
 @property int brushStyle;
@@ -17,7 +17,7 @@
 @property BOOL hasShadow;
 @property (readonly) unsigned int hash;
 @property (retain) UIColor *strokeColor;
-@property float strokeWidth;
+@property double strokeWidth;
 @property (readonly) Class superclass;
 
 + (id)displayNameForUndoablePropertyChangeWithKey:(id)arg1;

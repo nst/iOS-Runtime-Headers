@@ -3,22 +3,22 @@
  */
 
 @interface FBSceneManagerObserver : BSZeroingWeakReference <BSDescriptionProviding, FBSceneManagerDelegate, FBSceneManagerInternalObserver> {
-    BOOL _amendSettings;
-    BOOL _createDefaultTransitionContext;
-    BOOL _delegate;
-    BOOL _didCommit;
-    BOOL _didCommitDEPRECATED;
-    BOOL _didCreateScene;
-    BOOL _didDestroy;
-    BOOL _didReceiveActions;
-    BOOL _didSynchronize;
-    BOOL _didUpdateClientSettings;
-    BOOL _hostingPolicyForScene;
-    BOOL _internalObserver;
-    BOOL _willCommit;
-    BOOL _willDestroy;
-    BOOL _willSynchronize;
-    BOOL _willUpdateScene;
+    BOOL  _amendSettings;
+    BOOL  _createDefaultTransitionContext;
+    BOOL  _delegate;
+    BOOL  _didCommit;
+    BOOL  _didCommitDEPRECATED;
+    BOOL  _didCreateScene;
+    BOOL  _didDestroy;
+    BOOL  _didReceiveActions;
+    BOOL  _didSynchronize;
+    BOOL  _didUpdateClientSettings;
+    BOOL  _hostingPolicyForScene;
+    BOOL  _internalObserver;
+    BOOL  _willCommit;
+    BOOL  _willDestroy;
+    BOOL  _willSynchronize;
+    BOOL  _willUpdateScene;
 }
 
 @property (readonly, copy) NSString *debugDescription;

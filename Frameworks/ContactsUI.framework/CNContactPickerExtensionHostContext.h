@@ -3,7 +3,7 @@
  */
 
 @interface CNContactPickerExtensionHostContext : NSExtensionContext <CNContactPickerHostProtocol, CNContactPickerServiceProtocol> {
-    CNContactPickerHostViewController *_viewController;
+    CNContactPickerHostViewController * _viewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

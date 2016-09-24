@@ -3,13 +3,13 @@
  */
 
 @interface _MFSecCMSDecoder : NSObject <MFCollectingDataConsumer> {
-    long _SecCMSError;
-    struct SecCmsDigestContextStr { } *_digest;
-    struct SecCmsEnvelopedDataStr { } *_envelopedData;
-    BOOL _isEncrypted;
-    struct SecCmsMessageStr { } *_message;
-    struct SecCmsSignedDataStr { } *_signedData;
-    NSArray *_signers;
+    long  _SecCMSError;
+    struct SecCmsDigestContextStr { } * _digest;
+    struct SecCmsEnvelopedDataStr { } * _envelopedData;
+    BOOL  _isEncrypted;
+    struct SecCmsMessageStr { } * _message;
+    struct SecCmsSignedDataStr { } * _signedData;
+    NSArray * _signers;
 }
 
 @property (readonly, copy) NSString *debugDescription;

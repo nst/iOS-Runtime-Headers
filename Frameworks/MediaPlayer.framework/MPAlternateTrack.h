@@ -3,11 +3,11 @@
  */
 
 @interface MPAlternateTrack : NSObject {
-    NSString *_canonicalLanguageIdentifier;
-    NSString *_displayName;
-    BOOL _isDVS;
-    BOOL _isMainProgram;
-    AVMediaSelectionOption *_option;
+    NSString * _canonicalLanguageIdentifier;
+    NSString * _displayName;
+    BOOL  _isDVS;
+    BOOL  _isMainProgram;
+    AVMediaSelectionOption * _option;
 }
 
 @property (nonatomic, readonly) NSString *canonicalLanguageIdentifier;

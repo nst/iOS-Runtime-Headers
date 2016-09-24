@@ -3,7 +3,7 @@
  */
 
 @interface SUContinuation : NSObject {
-    <SUContinuationDelegate> *_delegate;
+    <SUContinuationDelegate> * _delegate;
 }
 
 @property (nonatomic) <SUContinuationDelegate> *delegate;

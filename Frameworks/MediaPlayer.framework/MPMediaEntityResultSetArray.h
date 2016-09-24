@@ -3,14 +3,14 @@
  */
 
 @interface MPMediaEntityResultSetArray : MPMediaArray <NSCopying> {
-    NSMutableArray *_entities;
-    NSObject<OS_dispatch_queue> *_entitiesQueue;
-    Class _entityClass;
-    MPWeakRef *_libraryWeakRef;
-    MPMediaQueryCriteria *_queryCriteria;
-    <MPMediaLibraryResultSet> *_resultSet;
-    long long _revision;
-    MPMediaQuerySectionInfo *_sectionInfo;
+    NSMutableArray * _entities;
+    NSObject<OS_dispatch_queue> * _entitiesQueue;
+    Class  _entityClass;
+    MPWeakRef * _libraryWeakRef;
+    MPMediaQueryCriteria * _queryCriteria;
+    <MPMediaLibraryResultSet> * _resultSet;
+    int  _revision;
+    MPMediaQuerySectionInfo * _sectionInfo;
 }
 
 @property (nonatomic, readonly) <MPMediaLibraryResultSet> *resultSet;

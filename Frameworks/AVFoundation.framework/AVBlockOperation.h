@@ -3,7 +3,7 @@
  */
 
 @interface AVBlockOperation : AVOperation {
-    id /* block */ _block;
+    id /* block */  _block;
 }
 
 - (void)cancel;

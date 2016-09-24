@@ -3,14 +3,16 @@
  */
 
 @interface MSCLAttachmentAlertController : UIAlertController <MSCLPhotoPickerDelegate> {
-    <MSCLAttachmentAlertDelegate> *_MSCLDelegate;
-    UIAlertAction *_action0;
-    SKUIClientContext *_clientContext;
-    MSCLConfiguration *_configuration;
-    MSCLPhotoPickerShelfViewController *_photoPickerViewController;
+    <MSCLAttachmentAlertDelegate> * _MSCLDelegate;
+    UIAlertAction * _action0;
+    BOOL  _allowsCameraAndMicrophonePicker;
+    SKUIClientContext * _clientContext;
+    MSCLConfiguration * _configuration;
+    MSCLPhotoPickerShelfViewController * _photoPickerViewController;
 }
 
 @property (nonatomic) <MSCLAttachmentAlertDelegate> *MSCLDelegate;
+@property (nonatomic) BOOL allowsCameraAndMicrophonePicker;
 @property (nonatomic, readonly) SKUIClientContext *clientContext;
 @property (nonatomic, readonly, copy) MSCLConfiguration *configuration;
 @property (readonly, copy) NSString *debugDescription;
@@ -30,11 +32,13 @@
 - (id)_photoLibraryButtonTitle;
 - (id)_recordAudioTitle;
 - (id)_uploadAudioTitle;
+- (BOOL)allowsCameraAndMicrophonePicker;
 - (id)clientContext;
 - (id)configuration;
 - (void)dealloc;
 - (id)initWithConfiguration:(id)arg1 clientContext:(id)arg2;
 - (id)selectedAttachments;
+- (void)setAllowsCameraAndMicrophonePicker:(BOOL)arg1;
 - (void)setMSCLDelegate:(id)arg1;
 
 @end

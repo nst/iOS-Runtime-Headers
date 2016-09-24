@@ -7,9 +7,9 @@
         unsigned char ss_len; 
         unsigned char ss_family; 
         BOOL __ss_pad1[6]; 
-        long long __ss_align; 
+        int __ss_align; 
         BOOL __ss_pad2[112]; 
-    } _sa;
+    }  _sa;
 }
 
 @property (nonatomic, readonly) const struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*sa;

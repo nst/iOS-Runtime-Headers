@@ -3,15 +3,15 @@
  */
 
 @interface SLRemoteSessionProxy : NSObject {
-    NSXPCConnection *_connection;
-    id /* block */ _connectionResetBlock;
-    NSXPCInterface *_exportedInterface;
-    NSObject *_exportedObject;
-    NSMutableArray *_guaranteedRemoteCalls;
-    NSLock *_guaranteedRemoteCallsLock;
-    NSXPCInterface *_remoteInterface;
-    id _remoteProxy;
-    NSString *_serviceName;
+    NSXPCConnection * _connection;
+    id /* block */  _connectionResetBlock;
+    NSXPCInterface * _exportedInterface;
+    NSObject * _exportedObject;
+    NSMutableArray * _guaranteedRemoteCalls;
+    NSLock * _guaranteedRemoteCallsLock;
+    NSXPCInterface * _remoteInterface;
+    id  _remoteProxy;
+    NSString * _serviceName;
 }
 
 @property (copy) id /* block */ connectionResetBlock;

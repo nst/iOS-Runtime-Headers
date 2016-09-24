@@ -3,16 +3,16 @@
  */
 
 @interface _GEOTransitRoutePreloaderData : NSObject {
-    _GEOTransitPreloadCamera *_camera;
-    unsigned int _currentBatchGeneration;
-    BOOL _isSufficientlyLoaded;
-    NSMutableSet *_placecardsLoadingOrLoaded;
-    NSMutableSet *_placecardsMissed;
-    NSMutableSet *_placecardsReceived;
-    NSMutableArray *_preloadBatches;
-    GEOTileKeyList *_tilesLoadingOrLoaded;
-    GEOTileKeyList *_tilesMissed;
-    GEOTileKeyList *_tilesReceived;
+    _GEOTransitPreloadCamera * _camera;
+    unsigned int  _currentBatchGeneration;
+    BOOL  _isSufficientlyLoaded;
+    NSMutableSet * _placecardsLoadingOrLoaded;
+    NSMutableSet * _placecardsMissed;
+    NSMutableSet * _placecardsReceived;
+    NSMutableArray * _preloadBatches;
+    GEOTileKeyList * _tilesLoadingOrLoaded;
+    GEOTileKeyList * _tilesMissed;
+    GEOTileKeyList * _tilesReceived;
 }
 
 @property (nonatomic, retain) _GEOTransitPreloadCamera *camera;

@@ -3,7 +3,7 @@
  */
 
 @interface CoreDAVItemWithHrefChildItem : CoreDAVItem {
-    CoreDAVHrefItem *_href;
+    CoreDAVHrefItem * _href;
 }
 
 @property (nonatomic, retain) CoreDAVHrefItem *href;

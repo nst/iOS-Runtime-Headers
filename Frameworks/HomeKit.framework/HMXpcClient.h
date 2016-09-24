@@ -2,15 +2,15 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMXpcClient : NSObject <HMMessageTransport> {
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    BOOL _connectionValid;
-    HMMessageDispatcher *_messageDispatcher;
-    int _notifyRegisterToken;
-    BOOL _notifyRegistered;
-    id /* block */ _reconnectionHandler;
-    BOOL _requiresCheckin;
-    NSXPCConnection *_xpcConnection;
+@interface HMXpcClient : HMFMessageTransport <HMXPCMessageTransport> {
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    BOOL  _connectionValid;
+    HMFMessageDispatcher * _messageDispatcher;
+    int  _notifyRegisterToken;
+    BOOL  _notifyRegistered;
+    id /* block */  _reconnectionHandler;
+    BOOL  _requiresCheckin;
+    NSXPCConnection * _xpcConnection;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
@@ -18,7 +18,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) HMMessageDispatcher *messageDispatcher;
+@property (nonatomic, readonly) HMFMessageDispatcher *messageDispatcher;
 @property (nonatomic) int notifyRegisterToken;
 @property (nonatomic) BOOL notifyRegistered;
 @property (nonatomic, copy) id /* block */ reconnectionHandler;
@@ -41,6 +41,7 @@
 - (id /* block */)reconnectionHandler;
 - (void)registerReconnectionHandler:(id /* block */)arg1;
 - (BOOL)requiresCheckin;
+- (void)sendMessage:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setCallbackQueue:(id)arg1;
 - (void)setConnectionValid:(BOOL)arg1;
 - (void)setNotifyRegisterToken:(int)arg1;

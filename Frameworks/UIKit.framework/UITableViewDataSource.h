@@ -3,7 +3,7 @@
  */
 
 @interface UITableViewDataSource : NSObject <NSCoding, UITableViewDataSource, UITableViewDelegate> {
-    NSArray *_sections;
+    NSArray * _sections;
 }
 
 @property (readonly, copy) NSString *debugDescription;

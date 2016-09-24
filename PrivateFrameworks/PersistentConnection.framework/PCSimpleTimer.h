@@ -3,27 +3,27 @@
  */
 
 @interface PCSimpleTimer : NSObject <PCLoggingDelegate> {
-    BOOL _disableSystemWaking;
-    double _earlyFireDelta;
-    double _fireTime;
-    PCDispatchTimer *_fireTimer;
-    double _lastUpdateTime;
-    unsigned int _powerAssertionID;
-    PCDispatchTimer *_preventSleepTimer;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSDate *_scheduledWakeDate;
-    SEL _selector;
-    NSString *_serviceIdentifier;
-    int _significantTimeChangeToken;
-    BOOL _sleepIsImminent;
-    double _startTime;
-    id _target;
-    id _timeChangeSource;
-    NSString *_timerMode;
-    NSRunLoop *_timerRunLoop;
-    BOOL _triggerOnGMTChange;
-    id _userInfo;
-    BOOL _userVisible;
+    BOOL  _disableSystemWaking;
+    double  _earlyFireDelta;
+    double  _fireTime;
+    PCDispatchTimer * _fireTimer;
+    double  _lastUpdateTime;
+    unsigned int  _powerAssertionID;
+    PCDispatchTimer * _preventSleepTimer;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSDate * _scheduledWakeDate;
+    SEL  _selector;
+    NSString * _serviceIdentifier;
+    int  _significantTimeChangeToken;
+    BOOL  _sleepIsImminent;
+    double  _startTime;
+    id  _target;
+    id  _timeChangeSource;
+    NSString * _timerMode;
+    NSRunLoop * _timerRunLoop;
+    BOOL  _triggerOnGMTChange;
+    id  _userInfo;
+    BOOL  _userVisible;
 }
 
 @property (readonly, copy) NSString *debugDescription;

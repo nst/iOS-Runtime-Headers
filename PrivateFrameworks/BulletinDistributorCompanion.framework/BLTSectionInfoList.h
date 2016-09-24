@@ -3,17 +3,17 @@
  */
 
 @interface BLTSectionInfoList : NSObject <BLTSectionInfoListProviderDelegate> {
-    <BLTSectionInfoListDelegate> *_delegate;
-    BOOL _loaded;
-    BOOL _loading;
-    NSMutableArray *_loadingCompletionHandlers;
+    <BLTSectionInfoListDelegate> * _delegate;
+    BOOL  _loaded;
+    BOOL  _loading;
+    NSMutableArray * _loadingCompletionHandlers;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _lock;
-    <BLTSectionInfoListProvider> *_overrideProvider;
-    NSMutableDictionary *_sectionInfoListItemsBySectionID;
-    <BLTSectionInfoListProvider> *_sectionInfoProvider;
+    }  _lock;
+    <BLTSectionInfoListProvider> * _overrideProvider;
+    NSMutableDictionary * _sectionInfoListItemsBySectionID;
+    <BLTSectionInfoListProvider> * _sectionInfoProvider;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -38,8 +38,8 @@
 - (id)overrideProvider;
 - (id)overrides;
 - (void)reloadWithCompletion:(id /* block */)arg1;
+- (void)removedSectionWithSectionID:(id)arg1;
 - (id)sectionIDs;
-- (id)sectionInfoForSectionID:(id)arg1;
 - (id)sectionInfoProvider;
 - (void)setDelegate:(id)arg1;
 - (void)setOverrideProvider:(id)arg1;

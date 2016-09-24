@@ -3,8 +3,8 @@
  */
 
 @interface SUArtworkCellConfiguration : SUArrayCellConfiguration <ISStoreURLOperationDelegate> {
-    NSMutableDictionary *_artworkByURL;
-    NSMutableArray *_artworkLoadOperations;
+    NSMutableDictionary * _artworkByURL;
+    NSMutableArray * _artworkLoadOperations;
 }
 
 @property (readonly, copy) NSString *debugDescription;

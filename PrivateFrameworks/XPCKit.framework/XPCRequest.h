@@ -3,10 +3,10 @@
  */
 
 @interface XPCRequest : NSObject {
-    id /* block */ _handler;
-    NSObject<OS_xpc_object> *_message;
-    NSObject<OS_xpc_object> *_reply;
-    unsigned long _sequence;
+    id /* block */  _handler;
+    NSObject<OS_xpc_object> * _message;
+    NSObject<OS_xpc_object> * _reply;
+    unsigned long  _sequence;
 }
 
 @property (nonatomic, readonly) NSObject<OS_xpc_object> *message;

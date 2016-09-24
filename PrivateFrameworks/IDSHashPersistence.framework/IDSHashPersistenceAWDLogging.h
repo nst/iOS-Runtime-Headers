@@ -3,8 +3,8 @@
  */
 
 @interface IDSHashPersistenceAWDLogging : NSObject {
-    AWDServerConnection *_AWDServerConnection;
-    NSObject<OS_dispatch_queue> *_queue;
+    AWDServerConnection * _AWDServerConnection;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 + (id)sharedInstance;

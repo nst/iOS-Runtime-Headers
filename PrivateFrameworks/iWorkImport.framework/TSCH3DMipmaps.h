@@ -3,10 +3,10 @@
  */
 
 @interface TSCH3DMipmaps : NSObject {
-    unsigned int mComponents;
-    NSData *mData;
-    int mHeight;
-    int mWidth;
+    unsigned int  mComponents;
+    NSData * mData;
+    int  mHeight;
+    int  mWidth;
 }
 
 @property (nonatomic, readonly) unsigned int components;
@@ -15,10 +15,10 @@
 @property (nonatomic, readonly) int width;
 
 + (id)mipmapPathFromPath:(id)arg1;
-+ (struct CGSize { float x1; float x2; })mipmapSizeForTexturableSize:(struct CGSize { float x1; float x2; })arg1;
++ (struct CGSize { double x1; double x2; })mipmapSizeForTexturableSize:(struct CGSize { double x1; double x2; })arg1;
 + (id)mipmapsFromData:(id)arg1;
 + (id)mipmapsWithWidth:(int)arg1 height:(int)arg2 components:(unsigned int)arg3 mipmapData:(id)arg4;
-+ (struct CGSize { float x1; float x2; })optimizedMipmapLevel0Size;
++ (struct CGSize { double x1; double x2; })optimizedMipmapLevel0Size;
 
 - (unsigned int)components;
 - (id)data;

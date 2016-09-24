@@ -3,9 +3,9 @@
  */
 
 @interface TSUDateFormatCategoryEntry : NSObject {
-    NSMutableSet *mFormatStrings;
-    struct __CFArray { } *mFormatters;
-    unsigned short mSeparator;
+    NSMutableSet * mFormatStrings;
+    struct __CFArray { } * mFormatters;
+    unsigned short  mSeparator;
 }
 
 - (void)addFormat:(id)arg1 locale:(struct __CFLocale { }*)arg2;

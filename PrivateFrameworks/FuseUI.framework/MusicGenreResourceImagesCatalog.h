@@ -3,8 +3,8 @@
  */
 
 @interface MusicGenreResourceImagesCatalog : NSObject {
-    NSDictionary *_genreMappings;
-    NSMutableSet *_unknownGenres;
+    NSDictionary * _genreMappings;
+    NSMutableSet * _unknownGenres;
 }
 
 + (id)sharedGenreResourceImagesCatalog;

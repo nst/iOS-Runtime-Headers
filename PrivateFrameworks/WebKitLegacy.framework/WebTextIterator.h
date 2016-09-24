@@ -3,7 +3,7 @@
  */
 
 @interface WebTextIterator : NSObject {
-    WebTextIteratorPrivate *_private;
+    WebTextIteratorPrivate * _private;
 }
 
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy

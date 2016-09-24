@@ -3,14 +3,11 @@
  */
 
 @interface SKUIRedeemItem : SKUIItem {
-    SKUIArtworkList *artworks;
-    long long itemIdentifier;
-    int itemKind;
-    NSString *title;
+    <SKUIArtworkProviding> * _artworks;
 }
 
-@property (nonatomic, retain) SKUIArtworkList *artworks;
-@property (nonatomic) long long itemIdentifier;
+@property (nonatomic, retain) <SKUIArtworkProviding> *artworks;
+@property (nonatomic) int itemIdentifier;
 @property (nonatomic) int itemKind;
 @property (nonatomic, retain) NSString *title;
 
@@ -18,13 +15,7 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })ageBandRange;
 - (id)artworkURLForSize:(int)arg1;
 - (id)artworks;
-- (long long)itemIdentifier;
-- (int)itemKind;
 - (id)largestArtworkURL;
 - (void)setArtworks:(id)arg1;
-- (void)setItemIdentifier:(long long)arg1;
-- (void)setItemKind:(int)arg1;
-- (void)setTitle:(id)arg1;
-- (id)title;
 
 @end

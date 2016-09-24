@@ -3,15 +3,15 @@
  */
 
 @interface ODIHierarchy : NSObject {
-    int mMaxMappableTreeDepth;
-    NSMutableDictionary *mNodeInfoMap;
-    ODIState *mState;
-    int mType;
+    int  mMaxMappableTreeDepth;
+    NSMutableDictionary * mNodeInfoMap;
+    ODIState * mState;
+    int  mType;
 }
 
 + (BOOL)mapIdentifier:(id)arg1 state:(id)arg2;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsOfNode:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsOfNode:(id)arg1;
 - (void)createInfoForNode:(id)arg1 depth:(int)arg2;
 - (void)dealloc;
 - (id)infoForNode:(id)arg1;

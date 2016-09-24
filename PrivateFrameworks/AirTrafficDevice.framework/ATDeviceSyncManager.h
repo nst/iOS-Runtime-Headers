@@ -3,9 +3,9 @@
  */
 
 @interface ATDeviceSyncManager : NSObject <ATMessageLinkObserver, ATMessageLinkRequestHandler, ATSessionObserver> {
-    NSMutableDictionary *_activeSessionsForLinkIDAndDataClass;
-    NSObject<OS_dispatch_queue> *_queue;
-    ATDeviceSettings *_settings;
+    NSMutableDictionary * _activeSessionsForLinkIDAndDataClass;
+    NSObject<OS_dispatch_queue> * _queue;
+    ATDeviceSettings * _settings;
 }
 
 @property (readonly, copy) NSString *debugDescription;

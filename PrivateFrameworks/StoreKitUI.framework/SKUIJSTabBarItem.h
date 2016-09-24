@@ -3,10 +3,10 @@
  */
 
 @interface SKUIJSTabBarItem : IKJSObject <SKUIJSTabBarItem> {
-    JSManagedValue *_managedNavigationDocument;
-    IKJSNavigationDocument *_navigationDocument;
-    IKJSObject *_owner;
-    SKUITabBarItem *_tabBarItem;
+    JSManagedValue * _managedNavigationDocument;
+    IKJSNavigationDocument * _navigationDocument;
+    IKJSObject * _owner;
+    SKUITabBarItem * _tabBarItem;
 }
 
 @property (nonatomic, retain) NSString *badgeValue;

@@ -3,7 +3,7 @@
  */
 
 @interface UITableViewVisibleCells : NSMutableArray {
-    NSMutableArray *_array;
+    NSMutableArray * _array;
 }
 
 - (void).cxx_destruct;

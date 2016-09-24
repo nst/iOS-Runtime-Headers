@@ -3,7 +3,7 @@
  */
 
 @interface GKLeaderboardScorePlayersRequest : GKLeaderboardScoreRequest {
-    NSArray *_playerInternals;
+    NSArray * _playerInternals;
 }
 
 @property (nonatomic, copy) NSArray *playerInternals;

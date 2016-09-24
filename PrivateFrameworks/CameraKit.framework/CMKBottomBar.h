@@ -3,30 +3,30 @@
  */
 
 @interface CMKBottomBar : UIView <CMKExpandableMenuButtonDelegate> {
-    CMKHDRButton *_HDRButton;
-    UIView *__elapsedTimeViewCenteringLayoutSpacer;
-    CMKExpandableMenuButton *__expandedMenuButton;
-    UIView *__filterButtonBottomLayoutSpacer;
-    UIView *__hdrButtonCenteringLayoutSpacer;
-    UIView *__imageWellBottomLayoutSpacer;
-    UIView *__shutterButtomBottomLayoutSpacer;
-    UIView *__slalomIndicatorBottomLayoutSpacer;
-    UIView *__stillDuringVideoButtonBottomLayoutSpacer;
-    int _backgroundStyle;
-    UIView *_backgroundView;
-    UIButton *_cancelButton;
-    <CMKBottomBarDelegate> *_delegate;
-    CMKElapsedTimeView *_elapsedTimeView;
-    CMKFilterButton *_filterButton;
-    CMKFlashButton *_flashButton;
-    CMKFlipButton *_flipButton;
-    CMKImageWell *_imageWell;
-    CMKModeDial *_modeDial;
-    int _orientation;
-    CMKShutterButton *_shutterButton;
-    CMKSlalomIndicatorView *_slalomIndicatorView;
-    CMKShutterButton *_stillDuringVideoButton;
-    CMKTimerButton *_timerButton;
+    CMKHDRButton * _HDRButton;
+    UIView * __elapsedTimeViewCenteringLayoutSpacer;
+    CMKExpandableMenuButton * __expandedMenuButton;
+    UIView * __filterButtonBottomLayoutSpacer;
+    UIView * __hdrButtonCenteringLayoutSpacer;
+    UIView * __imageWellBottomLayoutSpacer;
+    UIView * __shutterButtomBottomLayoutSpacer;
+    UIView * __slalomIndicatorBottomLayoutSpacer;
+    UIView * __stillDuringVideoButtonBottomLayoutSpacer;
+    int  _backgroundStyle;
+    UIView * _backgroundView;
+    UIButton * _cancelButton;
+    <CMKBottomBarDelegate> * _delegate;
+    CMKElapsedTimeView * _elapsedTimeView;
+    CMKFilterButton * _filterButton;
+    CMKFlashButton * _flashButton;
+    CMKFlipButton * _flipButton;
+    CMKImageWell * _imageWell;
+    CMKModeDial * _modeDial;
+    int  _orientation;
+    CMKShutterButton * _shutterButton;
+    CMKSlalomIndicatorView * _slalomIndicatorView;
+    CMKShutterButton * _stillDuringVideoButton;
+    CMKTimerButton * _timerButton;
 }
 
 @property (nonatomic, retain) CMKHDRButton *HDRButton;
@@ -67,7 +67,7 @@
 - (id)_imageWellBottomLayoutSpacer;
 - (void)_layoutForHorizontalOrientation;
 - (void)_layoutForVerticalOrientation;
-- (void)_layoutMenuButtons:(id)arg1 apply:(BOOL)arg2 withExpandedMenuButton:(id)arg3 collapsingMenuButton:(id)arg4 collapsingFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg5;
+- (void)_layoutMenuButtons:(id)arg1 apply:(BOOL)arg2 withExpandedMenuButton:(id)arg3 collapsingMenuButton:(id)arg4 collapsingFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg5;
 - (void)_removeAllConstraints;
 - (void)_setExpandedMenuButton:(id)arg1;
 - (void)_setupHorizontalBackgroundViewConstraints;
@@ -102,17 +102,17 @@
 - (id)backgroundView;
 - (id)cancelButton;
 - (void)collapseMenuButton:(id)arg1 animated:(BOOL)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })collapsedFrameForMenuButton:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })collapsedFrameForMenuButton:(id)arg1;
 - (id)delegate;
 - (id)elapsedTimeView;
 - (void)expandMenuButton:(id)arg1 animated:(BOOL)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })expandedFrameForMenuButton:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })expandedFrameForMenuButton:(id)arg1;
 - (id)filterButton;
 - (id)flashButton;
 - (id)flipButton;
 - (id)imageWell;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithOrientation:(int)arg1;
 - (void)layoutSubviews;
 - (id)modeDial;
@@ -134,7 +134,7 @@
 - (void)setStillDuringVideoButton:(id)arg1;
 - (void)setTimerButton:(id)arg1;
 - (id)shutterButton;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)slalomIndicatorView;
 - (id)stillDuringVideoButton;
 - (id)timerButton;

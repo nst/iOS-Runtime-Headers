@@ -3,8 +3,8 @@
  */
 
 @interface GKLinkedList : NSObject {
-    GKListNode *_headNode;
-    GKListNode *_tailNode;
+    GKListNode * _headNode;
+    GKListNode * _tailNode;
 }
 
 @property (nonatomic) GKListNode *headNode;

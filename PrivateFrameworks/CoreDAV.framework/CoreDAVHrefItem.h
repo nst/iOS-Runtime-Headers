@@ -3,8 +3,8 @@
  */
 
 @interface CoreDAVHrefItem : CoreDAVLeafItem {
-    NSURL *_baseURL;
-    int _writeStyle;
+    NSURL * _baseURL;
+    int  _writeStyle;
 }
 
 @property (nonatomic, retain) NSURL *baseURL;

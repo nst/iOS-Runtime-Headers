@@ -3,8 +3,8 @@
  */
 
 @interface MSASPersonInfoManager : NSObject {
-    NSString *_pathForPersonInfoDictionary;
-    NSMutableDictionary *_personIDToPersonInfoDictionary;
+    NSString * _pathForPersonInfoDictionary;
+    NSMutableDictionary * _personIDToPersonInfoDictionary;
 }
 
 @property (nonatomic, retain) NSString *pathForPersonInfoDictionary;

@@ -3,7 +3,7 @@
  */
 
 @interface ExchangeManager : NSObject {
-    NSMutableDictionary *_exchangesByName;
+    NSMutableDictionary * _exchangesByName;
 }
 
 + (id)sharedManager;

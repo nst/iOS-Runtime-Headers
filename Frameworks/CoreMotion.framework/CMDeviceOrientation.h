@@ -3,7 +3,7 @@
  */
 
 @interface CMDeviceOrientation : CMLogItem {
-    int fOrientation;
+    int  fOrientation;
 }
 
 @property (nonatomic, readonly) int orientation;

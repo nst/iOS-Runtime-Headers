@@ -3,8 +3,8 @@
  */
 
 @interface SKUIURLResolverResponse : NSObject {
-    NSData *_data;
-    NSHTTPURLResponse *_response;
+    NSData * _data;
+    NSHTTPURLResponse * _response;
 }
 
 @property (nonatomic, readonly) NSHTTPURLResponse *URLResponse;

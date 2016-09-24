@@ -3,8 +3,8 @@
  */
 
 @interface STShowMessageRequest : AFSiriRequest {
-    STSiriMessage *_message;
-    BOOL _showAsDraft;
+    STSiriMessage * _message;
+    BOOL  _showAsDraft;
 }
 
 + (BOOL)supportsSecureCoding;

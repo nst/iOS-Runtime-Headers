@@ -3,8 +3,8 @@
  */
 
 @interface NFAWDSERemoved : NSObject <NFAWDEventProtocol> {
-    AWDNFCSERemovedEvent *_metric;
-    unsigned int reason;
+    AWDNFCSERemovedEvent * _metric;
+    unsigned int  _reason;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,7 +3,7 @@
  */
 
 @interface _BSUIAnimationAttributesFactory : BSUIAnimationFactory {
-    _UIViewAnimationAttributes *_attributes;
+    _UIViewAnimationAttributes * _attributes;
 }
 
 - (void)_animateWithAdditionalDelay:(double)arg1 options:(unsigned int)arg2 actions:(id /* block */)arg3 completion:(id /* block */)arg4;

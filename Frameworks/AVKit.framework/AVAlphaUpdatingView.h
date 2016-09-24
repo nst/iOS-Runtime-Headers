@@ -3,7 +3,7 @@
  */
 
 @interface AVAlphaUpdatingView : UIView {
-    id /* block */ _alphaUpdatingBlock;
+    id /* block */  _alphaUpdatingBlock;
 }
 
 @property (nonatomic, copy) id /* block */ alphaUpdatingBlock;

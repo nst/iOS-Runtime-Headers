@@ -3,21 +3,24 @@
  */
 
 @interface MusicPlayerServerDelegate : NSObject <MPMusicPlayerControllerServerDelegate> {
-    MusicAVPlayer *_applicationPlayer;
-    MPMediaItem *_firstItem;
-    MPNowPlayingObserver *_nowPlayingObserver;
-    int _playbackShuffleMode;
-    id /* block */ _repeatChangeHandler;
-    MPAVController *_repeatChangeHandlerPlayer;
-    int _repeatMode;
-    id /* block */ _shuffleChangeHandler;
-    MPAVController *_shuffleChangeHandlerPlayer;
-    int _shuffleMode;
+    MPAVController * _applicationPlayer;
+    MPMediaItem * _firstItem;
+    MPNowPlayingObserver * _nowPlayingObserver;
+    int  _playbackShuffleMode;
+    MPAVController * _player;
+    id /* block */  _repeatChangeHandler;
+    MPAVController * _repeatChangeHandlerPlayer;
+    int  _repeatMode;
+    id /* block */  _shuffleChangeHandler;
+    MPAVController * _shuffleChangeHandlerPlayer;
+    int  _shuffleMode;
+    MPAVController * _systemPlayer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) MPAVController *player;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -27,6 +30,7 @@
 - (void)dealloc;
 - (unsigned int)indexOfNowPlayingItemForMusicPlayerServer:(id)arg1;
 - (id)init;
+- (id)initWithSystemPlayer:(id)arg1;
 - (BOOL)isNowPlayingItemFromGeniusMixForMusicPlayerServer:(id)arg1;
 - (void)musicPlayerServer:(id)arg1 prepareQueueWithGeniusMixPlaylist:(id)arg2;
 - (void)musicPlayerServer:(id)arg1 prepareQueueWithQuery:(id)arg2;
@@ -41,6 +45,7 @@
 - (void)musicPlayerServer:(id)arg1 setUserQueueModificationsDisabled:(BOOL)arg2;
 - (id)nowPlayingItemForMusicPlayerServer:(id)arg1;
 - (int)playbackSpeedForMusicPlayerServer:(id)arg1;
+- (id)player;
 - (id)playerForMusicPlayerServer:(id)arg1 usingApplicationSpecificQueue:(BOOL)arg2;
 - (unsigned int)unshuffledIndexOfNowPlayingItemForMusicPlayerServer:(id)arg1;
 - (BOOL)userQueueModificationsDisabledForMusicPlayerServer:(id)arg1;

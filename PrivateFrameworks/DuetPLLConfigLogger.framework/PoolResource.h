@@ -3,17 +3,17 @@
  */
 
 @interface PoolResource : NSObject {
-    long long currentItemPoolDiff;
-    long long currentItemPoolValue;
+    int  currentItemPoolDiff;
+    int  currentItemPoolValue;
 }
 
-@property (nonatomic) long long currentItemPoolDiff;
-@property (nonatomic) long long currentItemPoolValue;
+@property (nonatomic) int currentItemPoolDiff;
+@property (nonatomic) int currentItemPoolValue;
 
-- (long long)currentItemPoolDiff;
-- (long long)currentItemPoolValue;
-- (id)initWith:(long long)arg1;
-- (void)setCurrentItemPoolDiff:(long long)arg1;
-- (void)setCurrentItemPoolValue:(long long)arg1;
+- (int)currentItemPoolDiff;
+- (int)currentItemPoolValue;
+- (id)initWith:(int)arg1;
+- (void)setCurrentItemPoolDiff:(int)arg1;
+- (void)setCurrentItemPoolValue:(int)arg1;
 
 @end

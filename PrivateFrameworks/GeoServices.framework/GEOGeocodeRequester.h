@@ -3,8 +3,8 @@
  */
 
 @interface GEOGeocodeRequester : NSObject {
-    NSMapTable *_pendingBatchGeocodes;
-    NSLock *_pendingGeocodesLock;
+    NSMapTable * _pendingBatchGeocodes;
+    NSLock * _pendingGeocodesLock;
 }
 
 + (id)sharedGeocodeRequester;

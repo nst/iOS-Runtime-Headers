@@ -3,9 +3,9 @@
  */
 
 @interface AWDDuetExpertCenterZKWOutcome : PBCodable <NSCopying> {
-    unsigned long long _egress;
-    BOOL _engaged;
-    unsigned long long _expert;
+    unsigned long long  _egress;
+    BOOL  _engaged;
+    unsigned long long  _expert;
     struct { 
         unsigned int egress : 1; 
         unsigned int expert : 1; 
@@ -15,12 +15,12 @@
         unsigned int itemSelected : 1; 
         unsigned int sameCategorySelected : 1; 
         unsigned int typedQuery : 1; 
-    } _has;
-    BOOL _itemSelected;
-    unsigned int _itemsShown;
-    BOOL _sameCategorySelected;
-    unsigned long long _timestamp;
-    BOOL _typedQuery;
+    }  _has;
+    BOOL  _itemSelected;
+    unsigned int  _itemsShown;
+    BOOL  _sameCategorySelected;
+    unsigned long long  _timestamp;
+    BOOL  _typedQuery;
 }
 
 @property (nonatomic) unsigned long long egress;

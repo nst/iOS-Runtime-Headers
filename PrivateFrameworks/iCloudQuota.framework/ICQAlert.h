@@ -3,14 +3,14 @@
  */
 
 @interface ICQAlert : NSObject {
-    NSLock *_alertLock;
-    NSObject<OS_dispatch_queue> *_alertQueue;
-    NSObject<OS_dispatch_semaphore> *_alertSema;
-    int _alertState;
-    struct __CFUserNotification { } *_cfAlert;
-    BOOL _handleActionsBeforeCallingCompletionHandler;
-    ICQOffer *_offer;
-    BOOL _showOnlyInSpringboard;
+    NSLock * _alertLock;
+    NSObject<OS_dispatch_queue> * _alertQueue;
+    NSObject<OS_dispatch_semaphore> * _alertSema;
+    int  _alertState;
+    struct __CFUserNotification { } * _cfAlert;
+    BOOL  _handleActionsBeforeCallingCompletionHandler;
+    ICQOffer * _offer;
+    BOOL  _showOnlyInSpringboard;
 }
 
 @property (nonatomic) BOOL handleActionsBeforeCallingCompletionHandler;

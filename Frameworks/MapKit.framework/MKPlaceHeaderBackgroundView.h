@@ -3,10 +3,10 @@
  */
 
 @interface MKPlaceHeaderBackgroundView : UIView <MKPlaceHeaderViewCinematics> {
-    int _backgroundType;
-    <MKPlaceHeaderBackgroundViewDelegate> *_delegate;
-    MKMapItem *_mapItem;
-    int _preparationState;
+    int  _backgroundType;
+    <MKPlaceHeaderBackgroundViewDelegate> * _delegate;
+    MKMapItem * _mapItem;
+    int  _preparationState;
 }
 
 @property (nonatomic) int backgroundType;
@@ -26,8 +26,8 @@
 - (void).cxx_destruct;
 - (int)backgroundType;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 mapItem:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 mapItem:(id)arg2;
 - (id)mapItem;
 - (void)pause;
 - (int)preparationState;

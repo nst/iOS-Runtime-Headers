@@ -3,8 +3,8 @@
  */
 
 @interface OADTableCellStyle : NSObject {
-    OADTableCellBorderStyle *mBorderStyle;
-    OADFill *mFill;
+    OADTableCellBorderStyle * mBorderStyle;
+    OADFill * mFill;
 }
 
 + (id)defaultFill;

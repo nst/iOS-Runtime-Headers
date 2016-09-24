@@ -3,10 +3,10 @@
  */
 
 @interface CalDescriptionBuilder : NSObject {
-    NSMutableDictionary *_descriptionUnderConstruction;
-    NSString *_keyDelimiter;
-    BOOL _sortedByKey;
-    NSString *_superclassDescription;
+    NSMutableDictionary * _descriptionUnderConstruction;
+    NSString * _keyDelimiter;
+    BOOL  _sortedByKey;
+    NSString * _superclassDescription;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *descriptionUnderConstruction;
@@ -37,7 +37,7 @@
 - (void)setKey:(id)arg1 withInt:(int)arg2;
 - (void)setKey:(id)arg1 withInteger:(int)arg2;
 - (void)setKey:(id)arg1 withLong:(long)arg2;
-- (void)setKey:(id)arg1 withLongLong:(long long)arg2;
+- (void)setKey:(id)arg1 withLongLong:(int)arg2;
 - (void)setKey:(id)arg1 withMachPort:(unsigned int)arg2;
 - (void)setKey:(id)arg1 withObject:(id)arg2;
 - (void)setKey:(id)arg1 withPointerAddress:(const void*)arg2;
@@ -52,7 +52,7 @@
 - (void)setKey:(id)arg1 withUnsignedInt:(unsigned int)arg2;
 - (void)setKey:(id)arg1 withUnsignedInteger:(unsigned int)arg2;
 - (void)setKey:(id)arg1 withUnsignedLong:(unsigned long)arg2;
-- (void)setKey:(id)arg1 withUnsignedLongLong:(unsigned long long)arg2;
+- (void)setKey:(id)arg1 withUnsignedLongLong:(unsigned int)arg2;
 - (void)setKey:(id)arg1 withUnsignedShort:(unsigned short)arg2;
 - (void)setKeyDelimiter:(id)arg1;
 - (void)setSortedByKey:(BOOL)arg1;

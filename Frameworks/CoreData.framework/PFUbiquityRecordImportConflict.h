@@ -3,18 +3,18 @@
  */
 
 @interface PFUbiquityRecordImportConflict : NSObject {
-    NSDate *_conflictLogDate;
-    NSDictionary *_conflictingLogContent;
-    PFUbiquityKnowledgeVector *_conflictingLogKnowledgeVector;
-    NSNumber *_conflictingLogTransactionNumber;
-    int _conflictingLogTransactionType;
-    NSString *_conflictingObjectGlobalIDStr;
-    PFUbiquityKnowledgeVector *_currentKnowledgeVector;
-    NSDictionary *_globalIDIndexToLocalIDURIMap;
-    PFUbiquityImportContext *_importContext;
-    NSMutableDictionary *_relationshipsToObjectIDsToCheck;
-    NSManagedObject *_sourceObject;
-    NSArray *_transactionHistory;
+    NSDate * _conflictLogDate;
+    NSDictionary * _conflictingLogContent;
+    PFUbiquityKnowledgeVector * _conflictingLogKnowledgeVector;
+    NSNumber * _conflictingLogTransactionNumber;
+    int  _conflictingLogTransactionType;
+    NSString * _conflictingObjectGlobalIDStr;
+    PFUbiquityKnowledgeVector * _currentKnowledgeVector;
+    NSDictionary * _globalIDIndexToLocalIDURIMap;
+    PFUbiquityImportContext * _importContext;
+    NSMutableDictionary * _relationshipsToObjectIDsToCheck;
+    NSManagedObject * _sourceObject;
+    NSArray * _transactionHistory;
 }
 
 @property (nonatomic, retain) NSDate *conflictLogDate;

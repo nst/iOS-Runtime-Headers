@@ -3,7 +3,7 @@
  */
 
 @interface _HKContainsMetadataFilter : _HKMetadataFilter {
-    NSSet *_allowedValues;
+    NSSet * _allowedValues;
 }
 
 @property (nonatomic, readonly) NSSet *allowedValues;
@@ -25,6 +25,7 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
-- (id)predicateWithHealthDaemon:(id)arg1;
+- (id)_filterIgnoringPrivateMetadata;
+- (id)predicateWithProfile:(id)arg1;
 
 @end

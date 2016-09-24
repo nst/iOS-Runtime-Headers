@@ -3,8 +3,8 @@
  */
 
 @interface GKChallengesPickerViewController : GKPlayerPickerViewController {
-    GKChallenge *_challenge;
-    GKChallengesPickerDataSource *_challengesPickerDataSource;
+    GKChallenge * _challenge;
+    GKChallengesPickerDataSource * _challengesPickerDataSource;
 }
 
 @property (nonatomic, retain) GKChallenge *challenge;

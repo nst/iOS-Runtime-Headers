@@ -3,12 +3,12 @@
  */
 
 @interface HMObjectMergeCollection : NSObject {
-    NSMapTable *_commonObjectsMaps;
-    NSMutableArray *_currentAddedObjects;
-    NSMutableArray *_currentExistingObjects;
-    NSMutableArray *_currentModifiedObjects;
-    HMObjectMergeOperations *_currentOperations;
-    NSMutableArray *_currentRemovedObjects;
+    NSMapTable * _commonObjectsMaps;
+    NSMutableArray * _currentAddedObjects;
+    NSMutableArray * _currentExistingObjects;
+    NSMutableArray * _currentModifiedObjects;
+    HMObjectMergeOperations * _currentOperations;
+    NSMutableArray * _currentRemovedObjects;
 }
 
 @property (nonatomic, readonly) NSArray *addedObjects;
@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSMutableArray *currentAddedObjects;
 @property (nonatomic, retain) NSMutableArray *currentExistingObjects;
 @property (nonatomic, retain) NSMutableArray *currentModifiedObjects;
-@property (nonatomic, retain) HMObjectMergeOperations *currentOperations;
+@property (nonatomic) HMObjectMergeOperations *currentOperations;
 @property (nonatomic, retain) NSMutableArray *currentRemovedObjects;
 @property (nonatomic, readonly) NSArray *existingObjects;
 @property (getter=isModified, nonatomic, readonly) BOOL modified;

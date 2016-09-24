@@ -3,7 +3,7 @@
  */
 
 @interface _FBSqliteDeferredPreparedSimpleStatement : _FBSqlitePreparedSimpleStatement {
-    NSString *_deferredSql;
+    NSString * _deferredSql;
 }
 
 - (void)dealloc;

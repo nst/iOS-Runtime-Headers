@@ -3,8 +3,8 @@
  */
 
 @interface GCKEventItem : NSObject {
-    struct { int x1; char *x2; int x3; unsigned int x4; } *_event;
-    unsigned int _pid;
+    struct { int x1; char *x2; int x3; unsigned int x4; } * _event;
+    unsigned int  _pid;
 }
 
 @property struct { int x1; char *x2; int x3; unsigned int x4; }*event;

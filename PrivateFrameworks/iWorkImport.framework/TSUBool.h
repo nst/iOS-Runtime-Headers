@@ -3,7 +3,7 @@
  */
 
 @interface TSUBool : NSObject {
-    BOOL _value;
+    BOOL  _value;
 }
 
 @property (nonatomic) BOOL value;

@@ -3,18 +3,16 @@
  */
 
 @interface MFFileArchive : NSObject {
-    MFFileArchiveDirectory *_archiveDirectory;
-    NSData *_inputData;
+    NSData * _inputData;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _inputRange;
-    NSMutableData *_outputData;
-    id /* block */ _readerBlock;
-    id /* block */ _writerBlock;
+    }  _inputRange;
+    NSMutableData * _outputData;
+    id /* block */  _readerBlock;
+    id /* block */  _writerBlock;
 }
 
-@property (retain) MFFileArchiveDirectory *archiveDirectory;
 @property (nonatomic, retain) NSData *inputData;
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } inputRange;
 @property (nonatomic, retain) NSMutableData *outputData;
@@ -38,7 +36,6 @@
 - (struct archive { }*)_decompressionArchive;
 - (int)_decompressionCompleteForArchive:(struct archive { }*)arg1 error:(id*)arg2;
 - (id)_errorForArchiveStatus:(int)arg1;
-- (id)archiveDirectory;
 - (void)compressContents:(id)arg1 completion:(id /* block */)arg2;
 - (void)dealloc;
 - (void)decompressContents:(id)arg1 completion:(id /* block */)arg2;
@@ -49,7 +46,6 @@
 - (id)outputData;
 - (id /* block */)readerBlock;
 - (void)registerBlocks:(id /* block */)arg1 writer:(id /* block */)arg2;
-- (void)setArchiveDirectory:(id)arg1;
 - (void)setInputData:(id)arg1;
 - (void)setInputRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setOutputData:(id)arg1;

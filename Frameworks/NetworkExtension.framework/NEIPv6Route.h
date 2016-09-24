@@ -3,9 +3,9 @@
  */
 
 @interface NEIPv6Route : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
-    NSString *_destinationAddress;
-    NSNumber *_destinationNetworkPrefixLength;
-    NSString *_gatewayAddress;
+    NSString * _destinationAddress;
+    NSNumber * _destinationNetworkPrefixLength;
+    NSString * _gatewayAddress;
 }
 
 @property (readonly) NSString *destinationAddress;

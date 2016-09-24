@@ -3,8 +3,8 @@
  */
 
 @interface NSKeyValueProperty : NSObject <NSCopying> {
-    NSKeyValueContainerClass *_containerClass;
-    NSString *_keyPath;
+    NSKeyValueContainerClass * _containerClass;
+    NSString * _keyPath;
 }
 
 - (id)_initWithContainerClass:(id)arg1 keyPath:(id)arg2 propertiesBeingInitialized:(struct __CFSet { }*)arg3;

@@ -3,27 +3,41 @@
  */
 
 @interface EKDebugPreferences : NSObject {
-    CalPreferences *_preferences;
+    CalPreferences * _preferences;
 }
 
 @property (nonatomic) double availabilityFreshnessWindow;
 @property (nonatomic) BOOL forceDisplayOfNewTravelAdvisoryHypotheses;
+@property (nonatomic) double overriddenTravelAdvisoryHypothesisAggressiveTravelTime;
+@property (nonatomic) double overriddenTravelAdvisoryHypothesisConservativeTravelTime;
 @property (nonatomic, retain) NSString *overriddenTravelAdvisoryHypothesisCurrentTrafficDensity;
 @property (nonatomic) double overriddenTravelAdvisoryHypothesisEstimatedTravelTime;
+@property (nonatomic, retain) NSString *overriddenTravelAdvisoryHypothesisRouteName;
+@property (nonatomic) BOOL overriddenTravelAdvisoryHypothesisSupportsLiveTraffic;
 @property (nonatomic, retain) NSString *overriddenTravelAdvisoryHypothesisTransportType;
 @property (nonatomic, retain) NSString *overriddenTravelAdvisoryHypothesisTravelState;
 @property (nonatomic) BOOL overrideTravelAdvisoryHypothesis;
 @property (nonatomic) BOOL performAgendaEntryEqualityChecksInTravelEngine;
 @property (nonatomic) BOOL preventMarkingTravelAdvisoryEntriesAsDismissed;
 @property (nonatomic) BOOL saveGeocodedLocationsInTravelEngine;
+@property (nonatomic) BOOL shouldBypassTravelEngineThrottle;
+@property (nonatomic) BOOL showDepartureDateForTransitTimeToLeave;
+@property (nonatomic) BOOL showVerboseMessagesForTimeToLeave;
+@property (nonatomic) BOOL useAverageETAForTimeToLeave;
+@property (nonatomic) BOOL verifyIntegrityOfAvailabilityTimeSearchTimelines;
 
 + (id)shared;
 
+- (void).cxx_destruct;
 - (double)availabilityFreshnessWindow;
 - (BOOL)forceDisplayOfNewTravelAdvisoryHypotheses;
 - (id)init;
+- (double)overriddenTravelAdvisoryHypothesisAggressiveTravelTime;
+- (double)overriddenTravelAdvisoryHypothesisConservativeTravelTime;
 - (id)overriddenTravelAdvisoryHypothesisCurrentTrafficDensity;
 - (double)overriddenTravelAdvisoryHypothesisEstimatedTravelTime;
+- (id)overriddenTravelAdvisoryHypothesisRouteName;
+- (BOOL)overriddenTravelAdvisoryHypothesisSupportsLiveTraffic;
 - (id)overriddenTravelAdvisoryHypothesisTransportType;
 - (id)overriddenTravelAdvisoryHypothesisTravelState;
 - (BOOL)overrideTravelAdvisoryHypothesis;
@@ -32,13 +46,27 @@
 - (BOOL)saveGeocodedLocationsInTravelEngine;
 - (void)setAvailabilityFreshnessWindow:(double)arg1;
 - (void)setForceDisplayOfNewTravelAdvisoryHypotheses:(BOOL)arg1;
+- (void)setOverriddenTravelAdvisoryHypothesisAggressiveTravelTime:(double)arg1;
+- (void)setOverriddenTravelAdvisoryHypothesisConservativeTravelTime:(double)arg1;
 - (void)setOverriddenTravelAdvisoryHypothesisCurrentTrafficDensity:(id)arg1;
 - (void)setOverriddenTravelAdvisoryHypothesisEstimatedTravelTime:(double)arg1;
+- (void)setOverriddenTravelAdvisoryHypothesisRouteName:(id)arg1;
+- (void)setOverriddenTravelAdvisoryHypothesisSupportsLiveTraffic:(BOOL)arg1;
 - (void)setOverriddenTravelAdvisoryHypothesisTransportType:(id)arg1;
 - (void)setOverriddenTravelAdvisoryHypothesisTravelState:(id)arg1;
 - (void)setOverrideTravelAdvisoryHypothesis:(BOOL)arg1;
 - (void)setPerformAgendaEntryEqualityChecksInTravelEngine:(BOOL)arg1;
 - (void)setPreventMarkingTravelAdvisoryEntriesAsDismissed:(BOOL)arg1;
 - (void)setSaveGeocodedLocationsInTravelEngine:(BOOL)arg1;
+- (void)setShouldBypassTravelEngineThrottle:(BOOL)arg1;
+- (void)setShowDepartureDateForTransitTimeToLeave:(BOOL)arg1;
+- (void)setShowVerboseMessagesForTimeToLeave:(BOOL)arg1;
+- (void)setUseAverageETAForTimeToLeave:(BOOL)arg1;
+- (void)setVerifyIntegrityOfAvailabilityTimeSearchTimelines:(BOOL)arg1;
+- (BOOL)shouldBypassTravelEngineThrottle;
+- (BOOL)showDepartureDateForTransitTimeToLeave;
+- (BOOL)showVerboseMessagesForTimeToLeave;
+- (BOOL)useAverageETAForTimeToLeave;
+- (BOOL)verifyIntegrityOfAvailabilityTimeSearchTimelines;
 
 @end

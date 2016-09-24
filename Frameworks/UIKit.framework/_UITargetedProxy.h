@@ -3,7 +3,7 @@
  */
 
 @interface _UITargetedProxy : NSProxy {
-    id __target;
+    id  __target;
 }
 
 @property (setter=_setTarget:, nonatomic, retain) id _target;

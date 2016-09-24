@@ -3,14 +3,14 @@
  */
 
 @interface SSSQLiteQueryDescriptor : NSObject <NSCopying> {
-    Class _entityClass;
-    int _limitCount;
-    Class _memoryEntityClass;
-    NSString *_orderingClause;
-    NSArray *_orderingDirections;
-    NSArray *_orderingProperties;
-    SSSQLitePredicate *_predicate;
-    BOOL _returnsDistinctEntities;
+    Class  _entityClass;
+    int  _limitCount;
+    Class  _memoryEntityClass;
+    NSString * _orderingClause;
+    NSArray * _orderingDirections;
+    NSArray * _orderingProperties;
+    SSSQLitePredicate * _predicate;
+    BOOL  _returnsDistinctEntities;
 }
 
 @property (nonatomic) Class entityClass;

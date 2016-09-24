@@ -3,10 +3,10 @@
  */
 
 @interface TSPDataStorageWriteResult : NSObject {
-    BOOL _didCopyDataToPackage;
-    <TSPCryptoInfo> *_encryptionInfo;
-    NSString *_filename;
-    BOOL _isMissingData;
+    BOOL  _didCopyDataToPackage;
+    <TSPCryptoInfo> * _encryptionInfo;
+    NSString * _filename;
+    BOOL  _isMissingData;
 }
 
 @property (nonatomic, readonly) BOOL didCopyDataToPackage;
@@ -18,6 +18,7 @@
 - (BOOL)didCopyDataToPackage;
 - (id)encryptionInfo;
 - (id)filename;
+- (id)init;
 - (id)initWithFilename:(id)arg1 encryptionInfo:(id)arg2 didCopyDataToPackage:(BOOL)arg3 isMissingData:(BOOL)arg4;
 - (BOOL)isMissingData;
 

@@ -3,17 +3,17 @@
  */
 
 @interface OCDDocument : NSObject {
-    OADBlipCollection *mBlips;
-    NSMutableArray *mCharts;
-    OADTextListStyle *mDefaultTextStyle;
-    OADTheme *mDocumentTheme;
-    OITSUPointerKeyDictionary *mDualDrawableMap;
-    NSData *mEncryptionInfo;
-    OADGraphicStyleCache *mGraphicStyleCache;
-    OCDReader *mReader;
-    OCDSummary *mSummary;
-    OADTableStyleCollection *mTableStyles;
-    OCDWriter *mWriter;
+    OADBlipCollection * mBlips;
+    NSMutableArray * mCharts;
+    OADTextListStyle * mDefaultTextStyle;
+    OADTheme * mDocumentTheme;
+    OITSUPointerKeyDictionary * mDualDrawableMap;
+    NSData * mEncryptionInfo;
+    OADGraphicStyleCache * mGraphicStyleCache;
+    OCDReader * mReader;
+    OCDSummary * mSummary;
+    OADTableStyleCollection * mTableStyles;
+    OCDWriter * mWriter;
 }
 
 @property (nonatomic, readonly) OADBlipCollection *blips;

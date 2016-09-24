@@ -3,18 +3,18 @@
  */
 
 @interface CLLocationMatchInfoInternal : NSObject <NSCopying> {
-    struct { 
+    struct CLLocationCoordinate2D { 
         double latitude; 
         double longitude; 
-    } fMatchCoordinate;
-    double fMatchCourse;
-    int fMatchFormOfWay;
-    int fMatchQuality;
-    int fMatchRoadClass;
-    BOOL fMatchShifted;
+    }  fMatchCoordinate;
+    double  fMatchCourse;
+    int  fMatchFormOfWay;
+    int  fMatchQuality;
+    int  fMatchRoadClass;
+    BOOL  fMatchShifted;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithMatchQuality:(int)arg1 matchCoordinate:(struct { double x1; double x2; })arg2 matchCourse:(double)arg3 matchFormOfWay:(int)arg4 matchRoadClass:(int)arg5 matchShifted:(BOOL)arg6;
+- (id)initWithMatchQuality:(int)arg1 matchCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg2 matchCourse:(double)arg3 matchFormOfWay:(int)arg4 matchRoadClass:(int)arg5 matchShifted:(BOOL)arg6;
 
 @end

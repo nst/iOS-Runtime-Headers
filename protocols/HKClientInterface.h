@@ -5,14 +5,11 @@
 
 @required
 
-- (void)deliverBluetoothStatus:(int)arg1 withError:(NSError *)arg2;
-- (void)deliverDiscoveryHealthService:(HKHealthService *)arg1 toClient:(unsigned int)arg2 finished:(BOOL)arg3 withError:(NSError *)arg4;
-- (void)deliverSessionCharacteristics:(NSArray *)arg1 forService:(NSString *)arg2 toClient:(unsigned int)arg3 withError:(NSError *)arg4;
-- (void)deliverSessionHealthServiceStatus:(int)arg1 toClient:(unsigned int)arg2 finished:(BOOL)arg3 withError:(NSError *)arg4;
-- (void)deliverSessionTransitoryData:(NSDictionary *)arg1 toClient:(unsigned int)arg2 withError:(NSError *)arg3;
-- (void)deliverWorkoutSessionChangedToState:(int)arg1 fromState:(int)arg2 date:(NSDate *)arg3 forSessionUUID:(NSUUID *)arg4;
-- (void)deliverWorkoutSessionError:(NSError *)arg1 forSessionUUID:(NSUUID *)arg2;
-- (void)presentAuthorizationWithRequestRecord:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: HKAuthorizationRequestRecord *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
-- (void)unitPreferencesDidUpdate;
+- (void)clientRemote_deliverWorkoutEvent:(_HKWorkoutEvent *)arg1 forSessionUUID:(NSUUID *)arg2;
+- (void)clientRemote_deliverWorkoutSessionChangedToState:(int)arg1 fromState:(int)arg2 date:(NSDate *)arg3 forSessionUUID:(NSUUID *)arg4;
+- (void)clientRemote_deliverWorkoutSessionError:(NSError *)arg1 forSessionUUID:(NSUUID *)arg2;
+- (void)clientRemote_presentAuthorizationWithRequestRecord:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: HKAuthorizationRequestRecord *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
+- (void)clientRemote_presentAuthorizationWithSession:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: HKObjectAuthorizationPromptSession *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
+- (void)clientRemote_unitPreferencesDidUpdate;
 
 @end

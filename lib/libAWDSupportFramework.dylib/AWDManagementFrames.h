@@ -3,14 +3,14 @@
  */
 
 @interface AWDManagementFrames : PBCodable <NSCopying> {
-    unsigned long long _aTIM;
-    unsigned long long _action;
-    unsigned long long _assocRequest;
-    unsigned long long _assocResponse;
-    unsigned long long _auth;
-    unsigned long long _beacon;
-    unsigned long long _deauth;
-    unsigned long long _disassoc;
+    unsigned long long  _aTIM;
+    unsigned long long  _action;
+    unsigned long long  _assocRequest;
+    unsigned long long  _assocResponse;
+    unsigned long long  _auth;
+    unsigned long long  _beacon;
+    unsigned long long  _deauth;
+    unsigned long long  _disassoc;
     struct { 
         unsigned int aTIM : 1; 
         unsigned int action : 1; 
@@ -24,11 +24,11 @@
         unsigned int probeResponse : 1; 
         unsigned int reassocRequest : 1; 
         unsigned int reassocResponse : 1; 
-    } _has;
-    unsigned long long _probeRequest;
-    unsigned long long _probeResponse;
-    unsigned long long _reassocRequest;
-    unsigned long long _reassocResponse;
+    }  _has;
+    unsigned long long  _probeRequest;
+    unsigned long long  _probeResponse;
+    unsigned long long  _reassocRequest;
+    unsigned long long  _reassocResponse;
 }
 
 @property (nonatomic) unsigned long long aTIM;

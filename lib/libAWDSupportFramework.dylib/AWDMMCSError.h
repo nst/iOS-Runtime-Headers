@@ -3,12 +3,12 @@
  */
 
 @interface AWDMMCSError : PBCodable <NSCopying> {
-    int _code;
-    NSString *_domain;
+    int  _code;
+    NSString * _domain;
     struct { 
         unsigned int code : 1; 
-    } _has;
-    NSMutableArray *_underlyingErrors;
+    }  _has;
+    NSMutableArray * _underlyingErrors;
 }
 
 @property (nonatomic) int code;

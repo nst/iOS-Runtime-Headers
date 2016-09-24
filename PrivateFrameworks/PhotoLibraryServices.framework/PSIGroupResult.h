@@ -2,21 +2,24 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PSIGroupResult : NSObject {
-    struct __CFArray { } *_assetIds;
-    NSMutableArray *_assetUUIDs;
-    struct __CFArray { } *_categories;
-    NSArray *_contentStrings;
-    BOOL _didFetchOwningContentString;
-    PSIDatabase *_heldIdx;
-    PSIDatabase *_idx;
-    NSArray *_matchRanges;
-    NSString *_owningContentString;
-    struct __CFArray { } *_owningGroupIds;
-    NSObject<OS_dispatch_queue> *_queue;
-    float _score;
+@interface PSIGroupResult : NSObject <NSCopying> {
+    PSIGroupResult * _additionalGroupResult;
+    struct __CFArray { } * _assetIds;
+    NSMutableArray * _assetUUIDs;
+    struct __CFArray { } * _categories;
+    NSArray * _contentStrings;
+    BOOL  _didFetchOwningContentString;
+    PSIDatabase * _heldIdx;
+    PSIDatabase * _idx;
+    NSArray * _matchRanges;
+    NSString * _owningContentString;
+    struct __CFArray { } * _owningGroupIds;
+    NSObject<OS_dispatch_queue> * _queue;
+    double  _score;
+    NSArray * _searchTokens;
 }
 
+@property (nonatomic, retain) PSIGroupResult *additionalGroupResult;
 @property (nonatomic, retain) struct __CFArray { }*assetIds;
 @property (readonly) NSArray *assetUUIDs;
 @property (nonatomic, retain) struct __CFArray { }*categories;
@@ -26,13 +29,17 @@
 @property (nonatomic, retain) NSArray *matchRanges;
 @property (readonly) NSString *owningContentString;
 @property (nonatomic, retain) struct __CFArray { }*owningGroupIds;
-@property (nonatomic) float score;
+@property (nonatomic) double score;
+@property (nonatomic, retain) NSArray *searchTokens;
 
+- (void).cxx_destruct;
 - (id)_prepareForFetchWithCount:(unsigned int)arg1 outRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 outFetchOwningContentString:(BOOL*)arg3;
+- (id)additionalGroupResult;
 - (struct __CFArray { }*)assetIds;
 - (id)assetUUIDs;
 - (struct __CFArray { }*)categories;
 - (id)contentStrings;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)fetchNextAssetUUIDs:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
@@ -43,6 +50,8 @@
 - (id)owningContentString;
 - (struct __CFArray { }*)owningGroupIds;
 - (float)score;
+- (id)searchTokens;
+- (void)setAdditionalGroupResult:(id)arg1;
 - (void)setAssetIds:(struct __CFArray { }*)arg1;
 - (void)setCategories:(struct __CFArray { }*)arg1;
 - (void)setContentStrings:(id)arg1;
@@ -50,6 +59,7 @@
 - (void)setMatchRanges:(id)arg1;
 - (void)setOwningGroupIds:(struct __CFArray { }*)arg1;
 - (void)setScore:(float)arg1;
+- (void)setSearchTokens:(id)arg1;
 - (id)unitTestDescription;
 
 @end

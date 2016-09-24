@@ -3,13 +3,13 @@
  */
 
 @interface HDRoutineLocationOfInterest : NSObject {
-    double _confidence;
-    NSUUID *_identifier;
-    double _latitude;
-    double _longitude;
-    int _type;
-    double _uncertainty;
-    NSArray *_visits;
+    double  _confidence;
+    NSUUID * _identifier;
+    double  _latitude;
+    double  _longitude;
+    int  _type;
+    double  _uncertainty;
+    NSArray * _visits;
 }
 
 @property (nonatomic) double confidence;

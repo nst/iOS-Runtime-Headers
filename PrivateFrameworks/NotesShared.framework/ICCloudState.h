@@ -5,9 +5,9 @@
 @interface ICCloudState : NSManagedObject
 
 @property (nonatomic, retain) ICCloudSyncingObject *cloudSyncingObject;
-@property (nonatomic) long long currentLocalVersion;
+@property (nonatomic) int currentLocalVersion;
 @property (nonatomic) BOOL inCloud;
-@property (nonatomic) long long latestVersionSyncedToCloud;
+@property (nonatomic) int latestVersionSyncedToCloud;
 @property (nonatomic, retain) NSDate *localVersionDate;
 
 - (BOOL)isInCloud;

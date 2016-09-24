@@ -3,10 +3,10 @@
  */
 
 @interface ISReuseQueue : NSObject {
-    NSMutableDictionary *__objectCreationBlocksByReuseIdentifier;
-    NSMutableDictionary *__reusableObjectsByReuseIdentifier;
-    id /* block */ _objectBecomeReusableHandler;
-    BOOL _reuseEnabled;
+    NSMutableDictionary * __objectCreationBlocksByReuseIdentifier;
+    NSMutableDictionary * __reusableObjectsByReuseIdentifier;
+    id /* block */  _objectBecomeReusableHandler;
+    BOOL  _reuseEnabled;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *_objectCreationBlocksByReuseIdentifier;

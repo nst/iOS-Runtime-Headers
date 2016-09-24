@@ -3,13 +3,16 @@
  */
 
 @interface ICNoteData : NSManagedObject {
-    BOOL needsToBeSaved;
-    BOOL settingNoteData;
+    BOOL  needsToBeSaved;
+    BOOL  settingNoteData;
 }
 
+@property (nonatomic, retain) NSData *cryptoInitializationVector;
+@property (nonatomic, retain) NSData *cryptoTag;
 @property (nonatomic, retain) NSData *data;
 @property BOOL needsToBeSaved;
 @property (nonatomic, retain) ICNote *note;
+@property (nonatomic, readonly) NSData *primitiveData;
 @property (getter=isSettingNoteData, nonatomic) BOOL settingNoteData;
 
 - (BOOL)isSettingNoteData;

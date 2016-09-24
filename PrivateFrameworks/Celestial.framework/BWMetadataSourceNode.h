@@ -3,10 +3,10 @@
  */
 
 @interface BWMetadataSourceNode : BWSourceNode {
-    struct OpaqueCMClock { } *_clock;
-    NSObject<OS_dispatch_queue> *_emitSamplesDispatchQueue;
-    struct opaqueCMFormatDescription { } *_formatDescription;
-    BOOL _running;
+    struct OpaqueCMClock { } * _clock;
+    NSObject<OS_dispatch_queue> * _emitSamplesDispatchQueue;
+    struct opaqueCMFormatDescription { } * _formatDescription;
+    BOOL  _running;
 }
 
 @property (nonatomic, readonly) struct opaqueCMFormatDescription { }*formatDescription;

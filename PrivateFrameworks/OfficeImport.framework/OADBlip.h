@@ -3,9 +3,9 @@
  */
 
 @interface OADBlip : NSObject {
-    OADSubBlip *mAltSubBlip;
-    OADSubBlip *mMainSubBlip;
-    unsigned long mReferenceCount;
+    OADSubBlip * mAltSubBlip;
+    OADSubBlip * mMainSubBlip;
+    unsigned long  mReferenceCount;
 }
 
 + (id)pathExtensionForBlipType:(int)arg1;

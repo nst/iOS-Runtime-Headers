@@ -3,8 +3,8 @@
  */
 
 @interface PLFilteredShuffledAlbum : PLShuffledAlbum {
-    int _filter;
-    NSPredicate *_filterPredicate;
+    int  _filter;
+    NSPredicate * _filterPredicate;
 }
 
 @property (nonatomic, readonly) int filter;

@@ -3,7 +3,7 @@
  */
 
 @interface UIKeyboardSliceStore : NSObject {
-    NSMutableDictionary *_store;
+    NSMutableDictionary * _store;
 }
 
 + (void)archiveSet:(id)arg1;

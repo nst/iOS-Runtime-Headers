@@ -3,18 +3,18 @@
  */
 
 @interface SKUIBrickSwooshViewController : SKUISwooshViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
-    NSArray *_bricks;
-    UICollectionView *_collectionView;
-    BOOL _delegateWantsWillDisplay;
-    NSMutableIndexSet *_hiddenImageIndexSet;
+    NSArray * _bricks;
+    UICollectionView * _collectionView;
+    BOOL  _delegateWantsWillDisplay;
+    NSMutableIndexSet * _hiddenImageIndexSet;
     struct { 
-        float cellHeight; 
-        float cellWidth; 
-        float interItemSpacing; 
-    } _metrics;
-    BOOL _showBrickTitles;
-    NSString *_swooshTitle;
-    SKUISwooshView *_swooshView;
+        double cellHeight; 
+        double cellWidth; 
+        double interItemSpacing; 
+    }  _metrics;
+    BOOL  _showBrickTitles;
+    NSString * _swooshTitle;
+    SKUISwooshView * _swooshView;
 }
 
 @property (nonatomic, copy) NSArray *bricks;
@@ -24,16 +24,16 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (struct { float x1; float x2; float x3; })_brickSwooshMetrics;
+- (struct { double x1; double x2; double x3; })_brickSwooshMetrics;
 - (id)bricks;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
-- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (void)dealloc;
 - (void)deselectAllItems;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForItemAtIndex:(int)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForItemAtIndex:(int)arg1;
 - (id)indexPathsForVisibleItems;
 - (id)initWithSwoosh:(id)arg1;
 - (void)loadView;

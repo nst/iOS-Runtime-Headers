@@ -3,16 +3,16 @@
  */
 
 @interface CNAutocompleteFetchContext : NSObject <NSCopying> {
-    NSArray *_bundleIdentifiers;
-    NSDate *_date;
-    NSString *_domainIdentifier;
-    NSString *_locationUUID;
-    NSArray *_otherAddressesAlreadyChosen;
-    BOOL _predictsBasedOnOutgoingInteraction;
-    NSArray *_relatedContacts;
-    NSString *_sendingAddress;
-    NSString *_sendingAddressAccountIdentifier;
-    NSString *_title;
+    NSArray * _bundleIdentifiers;
+    NSDate * _date;
+    NSString * _domainIdentifier;
+    NSString * _locationUUID;
+    NSArray * _otherAddressesAlreadyChosen;
+    BOOL  _predictsBasedOnOutgoingInteraction;
+    NSArray * _relatedContacts;
+    NSString * _sendingAddress;
+    NSString * _sendingAddressAccountIdentifier;
+    NSString * _title;
 }
 
 @property (copy) NSArray *bundleIdentifiers;
@@ -34,6 +34,7 @@
 - (id)domainIdentifier;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isValid:(id*)arg1;
 - (id)locationUUID;
 - (id)otherAddressesAlreadyChosen;
 - (BOOL)predictsBasedOnOutgoingInteraction;

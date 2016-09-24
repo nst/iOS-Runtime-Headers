@@ -3,8 +3,8 @@
  */
 
 @interface IKCSSRule : NSObject {
-    IKCSSDeclarationList *_declarationList;
-    IKCSSSelectorList *_selectorList;
+    IKCSSDeclarationList * _declarationList;
+    IKCSSSelectorList * _selectorList;
 }
 
 @property (nonatomic, retain) IKCSSDeclarationList *declarationList;

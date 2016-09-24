@@ -3,24 +3,30 @@
  */
 
 @interface _MKRightImageButton : UIControl {
-    UIImageView *_imageView;
-    UILabel *_titleLabel;
+    UITapGestureRecognizer * _gestureRecognizer;
+    UIImageView * _imageView;
+    NSArray * _titleAndImageConstraints;
+    BOOL  _titleConstraintsAdded;
+    _MKUILabel * _titleLabel;
+    NSArray * _titleOnlyConstraints;
 }
 
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic, readonly) UIImageView *imageView;
 @property (nonatomic, retain) NSString *title;
-@property (nonatomic, readonly) UILabel *titleLabel;
+@property (nonatomic, readonly) _MKUILabel *titleLabel;
 
 - (void).cxx_destruct;
 - (id)image;
 - (id)imageView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)setImage:(id)arg1;
+- (void)setTarget:(id)arg1 action:(SEL)arg2;
 - (void)setTitle:(id)arg1;
-- (void)tintColorDidChange;
 - (id)title;
 - (id)titleLabel;
+- (void)updateConstraints;
 - (id)viewForLastBaselineLayout;
 
 @end

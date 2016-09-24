@@ -3,10 +3,10 @@
  */
 
 @interface _HKBaseDimension : _HKDimension <_HKFactor> {
-    NSString *_name;
-    HKUnit *_reducedUnit;
-    HKBaseUnit *_reducibleBaseUnit;
-    double _reductionCoefficient;
+    NSString * _name;
+    HKUnit * _reducedUnit;
+    HKBaseUnit * _reducibleBaseUnit;
+    double  _reductionCoefficient;
 }
 
 @property (readonly, copy) NSString *debugDescription;

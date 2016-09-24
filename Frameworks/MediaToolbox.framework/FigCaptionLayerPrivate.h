@@ -3,10 +3,10 @@
  */
 
 @interface FigCaptionLayerPrivate : NSObject {
-    NSMutableArray *captionElementLayers;
-    struct OpaqueFigReentrantMutex { } *layoutSublayersMutex;
-    struct OpaqueFigSimpleMutex { } *renderMutex;
-    struct OpaqueFigCFCaptionRenderer { } *renderer;
+    NSMutableArray * captionElementLayers;
+    struct OpaqueFigReentrantMutex { } * layoutSublayersMutex;
+    struct OpaqueFigSimpleMutex { } * renderMutex;
+    struct OpaqueFigCFCaptionRenderer { } * renderer;
 }
 
 @end

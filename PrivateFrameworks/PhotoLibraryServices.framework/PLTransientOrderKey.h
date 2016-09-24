@@ -3,24 +3,24 @@
  */
 
 @interface PLTransientOrderKey : NSObject {
-    NSManagedObjectContext *_moc;
-    NSManagedObjectID *_objectID;
-    long long _orderValue;
+    NSManagedObjectContext * _moc;
+    NSManagedObjectID * _objectID;
+    int  _orderValue;
 }
 
 @property (nonatomic, retain) NSManagedObjectContext *moc;
 @property (nonatomic, retain) NSManagedObjectID *objectID;
-@property (nonatomic) long long orderValue;
+@property (nonatomic) int orderValue;
 
 - (id)childManagedObject;
 - (void)dealloc;
 - (id)description;
 - (id)moc;
 - (id)objectID;
-- (long long)orderValue;
+- (int)orderValue;
 - (id)secondaryOrderSortKey;
 - (void)setMoc:(id)arg1;
 - (void)setObjectID:(id)arg1;
-- (void)setOrderValue:(long long)arg1;
+- (void)setOrderValue:(int)arg1;
 
 @end

@@ -3,14 +3,14 @@
  */
 
 @interface ABActionsController : NSObject {
-    struct __CFArray { } *_actionsForProperty;
-    void *_context;
-    int _lastPropertyForActions;
-    int _multiValueIdentifier;
-    ABUIPerson *_person;
-    int _property;
-    NSString *_stringValue;
-    id _value;
+    struct __CFArray { } * _actionsForProperty;
+    void * _context;
+    int  _lastPropertyForActions;
+    int  _multiValueIdentifier;
+    ABUIPerson * _person;
+    int  _property;
+    NSString * _stringValue;
+    id  _value;
 }
 
 @property (nonatomic, retain) ABUIPerson *person;

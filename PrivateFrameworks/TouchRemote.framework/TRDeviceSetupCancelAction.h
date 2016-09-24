@@ -3,7 +3,7 @@
  */
 
 @interface TRDeviceSetupCancelAction : TRDeviceSetupAction {
-    NSError *_error;
+    NSError * _error;
 }
 
 @property (nonatomic, readonly) NSError *error;

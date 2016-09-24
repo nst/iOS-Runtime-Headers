@@ -3,9 +3,9 @@
  */
 
 @interface CILanczosScaleTransform : CIFilter {
-    NSNumber *inputAspectRatio;
-    CIImage *inputImage;
-    NSNumber *inputScale;
+    NSNumber * inputAspectRatio;
+    CIImage * inputImage;
+    NSNumber * inputScale;
 }
 
 @property (nonatomic, retain) NSNumber *inputAspectRatio;

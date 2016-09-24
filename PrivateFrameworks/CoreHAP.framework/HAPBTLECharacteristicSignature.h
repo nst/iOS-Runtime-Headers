@@ -3,12 +3,12 @@
  */
 
 @interface HAPBTLECharacteristicSignature : NSObject {
-    BOOL _authenticated;
-    HAPCharacteristicMetadata *_characteristicMetadata;
-    unsigned int _characteristicProperties;
-    NSUUID *_characteristicType;
-    NSNumber *_serviceInstanceID;
-    NSUUID *_serviceType;
+    BOOL  _authenticated;
+    HAPCharacteristicMetadata * _characteristicMetadata;
+    unsigned int  _characteristicProperties;
+    NSUUID * _characteristicType;
+    NSNumber * _serviceInstanceID;
+    NSUUID * _serviceType;
 }
 
 @property (getter=isAuthenticated, nonatomic, readonly) BOOL authenticated;

@@ -3,11 +3,11 @@
  */
 
 @interface TSCH3DGridlineResource : TSCH3DResource {
-    TSCH3DAxisGridEnumerator *mAxis;
+    TSCH3DAxisGridEnumerator * mAxis;
 }
 
 @property (nonatomic, readonly) BOOL enabled;
-@property (nonatomic, readonly) float opacity;
+@property (nonatomic, readonly) double opacity;
 @property (nonatomic, readonly) TSDStroke *stroke;
 
 + (id)resourceWithAxisEnumerator:(id)arg1;

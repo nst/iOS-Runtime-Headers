@@ -3,8 +3,8 @@
  */
 
 @interface AAUIFamilySetupBuddyMLRequest : AAFamilyRequest {
-    SSAccount *_iTunesAccount;
-    NSString *_inviteCode;
+    SSAccount * _iTunesAccount;
+    NSString * _inviteCode;
 }
 
 @property (setter=setiTunesAccount:, nonatomic, retain) SSAccount *iTunesAccount;

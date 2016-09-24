@@ -3,8 +3,8 @@
  */
 
 @interface WMBookmarkMapper : CMMapper {
-    int mBookmarkType;
-    NSString *mName;
+    int  mBookmarkType;
+    NSString * mName;
 }
 
 - (id)initWithWDBookmark:(id)arg1 parent:(id)arg2;

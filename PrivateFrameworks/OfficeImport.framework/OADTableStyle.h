@@ -3,22 +3,22 @@
  */
 
 @interface OADTableStyle : NSObject {
-    OADTableBackground *mBackground;
-    OADTablePartStyle *mBand1HorzStyle;
-    OADTablePartStyle *mBand1VertStyle;
-    OADTablePartStyle *mBand2HorzStyle;
-    OADTablePartStyle *mBand2VertStyle;
-    OADTablePartStyle *mFirstColumnStyle;
-    OADTablePartStyle *mFirstRowStyle;
-    NSString *mId;
-    OADTablePartStyle *mLastColumnStyle;
-    OADTablePartStyle *mLastRowStyle;
-    NSString *mName;
-    OADTablePartStyle *mNorthEastStyle;
-    OADTablePartStyle *mNorthWestStyle;
-    OADTablePartStyle *mSouthEastStyle;
-    OADTablePartStyle *mSouthWestStyle;
-    OADTablePartStyle *mWholeTableStyle;
+    OADTableBackground * mBackground;
+    OADTablePartStyle * mBand1HorzStyle;
+    OADTablePartStyle * mBand1VertStyle;
+    OADTablePartStyle * mBand2HorzStyle;
+    OADTablePartStyle * mBand2VertStyle;
+    OADTablePartStyle * mFirstColumnStyle;
+    OADTablePartStyle * mFirstRowStyle;
+    NSString * mId;
+    OADTablePartStyle * mLastColumnStyle;
+    OADTablePartStyle * mLastRowStyle;
+    NSString * mName;
+    OADTablePartStyle * mNorthEastStyle;
+    OADTablePartStyle * mNorthWestStyle;
+    OADTablePartStyle * mSouthEastStyle;
+    OADTablePartStyle * mSouthWestStyle;
+    OADTablePartStyle * mWholeTableStyle;
 }
 
 - (id)background;

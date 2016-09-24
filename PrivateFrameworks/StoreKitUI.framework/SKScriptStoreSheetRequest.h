@@ -3,9 +3,9 @@
  */
 
 @interface SKScriptStoreSheetRequest : SUScriptObject {
-    int _pageStyle;
-    WebScriptObject *_productParameters;
-    NSString *_productURL;
+    int  _pageStyle;
+    WebScriptObject * _productParameters;
+    NSString * _productURL;
 }
 
 @property int productPageStyle;

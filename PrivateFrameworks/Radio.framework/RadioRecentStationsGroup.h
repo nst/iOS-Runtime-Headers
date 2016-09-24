@@ -3,9 +3,9 @@
  */
 
 @interface RadioRecentStationsGroup : NSObject <NSCopying, NSMutableCopying> {
-    BOOL _active;
-    NSString *_localizedTitle;
-    NSArray *_stations;
+    BOOL  _active;
+    NSString * _localizedTitle;
+    NSArray * _stations;
 }
 
 @property (getter=isActive, nonatomic, readonly) BOOL active;

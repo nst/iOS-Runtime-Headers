@@ -3,8 +3,8 @@
  */
 
 @interface HSPlayStatusUpdateRequest : HSRequest {
-    unsigned int _interfaceID;
-    unsigned int _revisionID;
+    unsigned int  _interfaceID;
+    unsigned int  _revisionID;
 }
 
 @property (nonatomic, readonly) unsigned int interfaceID;

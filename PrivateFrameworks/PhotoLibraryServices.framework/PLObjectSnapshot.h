@@ -3,9 +3,9 @@
  */
 
 @interface PLObjectSnapshot : NSObject {
-    struct __CFDictionary { } *_indexMaps;
-    PLManagedObject *_managedObject;
-    NSKnownKeysDictionary *_snapshotValues;
+    struct __CFDictionary { } * _indexMaps;
+    PLManagedObject * _managedObject;
+    NSKnownKeysDictionary * _snapshotValues;
 }
 
 @property (nonatomic, readonly, retain) PLManagedObject *managedObject;

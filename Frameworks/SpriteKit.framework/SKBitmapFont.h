@@ -3,7 +3,7 @@
  */
 
 @interface SKBitmapFont : NSObject <NSCoding> {
-    float _baseLine;
+    double  _baseLine;
     struct map<unsigned short, float, std::__1::less<unsigned short>, std::__1::allocator<std::__1::pair<const unsigned short, float> > > { 
         struct __tree<std::__1::__value_type<unsigned short, float>, std::__1::__map_value_compare<unsigned short, std::__1::__value_type<unsigned short, float>, std::__1::less<unsigned short>, true>, std::__1::allocator<std::__1::__value_type<unsigned short, float> > > { 
             struct __tree_node<std::__1::__value_type<unsigned short, float>, void *> {} *__begin_node_; 
@@ -16,7 +16,7 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    } _characterAdvanceByChar;
+    }  _characterAdvanceByChar;
     struct map<unsigned int, float, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, float> > > { 
         struct __tree<std::__1::__value_type<unsigned int, float>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, float>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, float> > > { 
             struct __tree_node<std::__1::__value_type<unsigned int, float>, void *> {} *__begin_node_; 
@@ -29,7 +29,7 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    } _characterKerningByCharPair;
+    }  _characterKerningByCharPair;
     struct map<unsigned short, SKSpriteNode *, std::__1::less<unsigned short>, std::__1::allocator<std::__1::pair<const unsigned short, SKSpriteNode *> > > { 
         struct __tree<std::__1::__value_type<unsigned short, SKSpriteNode *>, std::__1::__map_value_compare<unsigned short, std::__1::__value_type<unsigned short, SKSpriteNode *>, std::__1::less<unsigned short>, true>, std::__1::allocator<std::__1::__value_type<unsigned short, SKSpriteNode *> > > { 
             struct __tree_node<std::__1::__value_type<unsigned short, SKSpriteNode *>, void *> {} *__begin_node_; 
@@ -42,13 +42,13 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    } _characterSpriteByChar;
-    NSArray *_characterSprites;
-    NSString *_fileName;
-    NSString *_filePath;
-    NSString *_fontName;
-    BOOL _internal;
-    float _lineHeight;
+    }  _characterSpriteByChar;
+    NSArray * _characterSprites;
+    NSString * _fileName;
+    NSString * _filePath;
+    NSString * _fontName;
+    BOOL  _internal;
+    double  _lineHeight;
 }
 
 + (id)_fontForFileNamed:(id)arg1;

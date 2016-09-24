@@ -2,10 +2,15 @@
    Image: /System/Library/Frameworks/AVKit.framework/AVKit
  */
 
-@interface _AVViewSublayerAnimationDelegateProxy : NSObject {
-    CALayer *_proxyLayer;
-    UIView *_view;
+@interface _AVViewSublayerAnimationDelegateProxy : NSObject <CALayerDelegate> {
+    CALayer * _proxyLayer;
+    UIView * _view;
 }
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;

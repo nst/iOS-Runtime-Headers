@@ -3,18 +3,18 @@
  */
 
 @interface SBKRequest : NSObject {
-    NSString *_action;
-    NSDictionary *_arguments;
-    int _bodyContentType;
-    NSData *_bodyData;
-    BOOL _concurrent;
-    NSDictionary *_headers;
-    BOOL _includeDeviceGUID;
-    int _method;
-    NSURL *_requestURL;
-    ISDataProvider *_responseDataProvider;
-    BOOL _shouldAuthenticate;
-    SBKTransaction *_transaction;
+    NSString * _action;
+    NSDictionary * _arguments;
+    int  _bodyContentType;
+    NSData * _bodyData;
+    BOOL  _concurrent;
+    NSDictionary * _headers;
+    BOOL  _includeDeviceGUID;
+    int  _method;
+    NSURL * _requestURL;
+    ISDataProvider * _responseDataProvider;
+    BOOL  _shouldAuthenticate;
+    SBKTransaction * _transaction;
 }
 
 @property (nonatomic, retain) NSData *bodyData;

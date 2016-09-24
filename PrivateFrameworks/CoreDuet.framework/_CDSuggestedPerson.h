@@ -3,11 +3,11 @@
  */
 
 @interface _CDSuggestedPerson : NSObject {
-    _CDContact *_contact;
-    CNContactProperty *_contactProperty;
-    NSArray *_interactions;
-    double _rank;
-    double _score;
+    _CDContact * _contact;
+    CNContactProperty * _contactProperty;
+    NSArray * _interactions;
+    double  _rank;
+    double  _score;
 }
 
 @property (retain) _CDContact *contact;

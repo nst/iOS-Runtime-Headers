@@ -3,13 +3,13 @@
  */
 
 @interface _MRVoiceInputDevice : PBCodable <NSCopying> {
-    _MRVoiceInputDeviceDescriptorProtobuf *_descriptor;
-    unsigned int _deviceID;
+    _MRVoiceInputDeviceDescriptorProtobuf * _descriptor;
+    unsigned int  _deviceID;
     struct { 
         unsigned int deviceID : 1; 
         unsigned int recordingState : 1; 
-    } _has;
-    int _recordingState;
+    }  _has;
+    int  _recordingState;
 }
 
 @property (nonatomic, retain) _MRVoiceInputDeviceDescriptorProtobuf *descriptor;
@@ -19,6 +19,7 @@
 @property (nonatomic) BOOL hasRecordingState;
 @property (nonatomic) int recordingState;
 
+- (int)StringAsRecordingState:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -34,6 +35,7 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (int)recordingState;
+- (id)recordingStateAsString:(int)arg1;
 - (void)setDescriptor:(id)arg1;
 - (void)setDeviceID:(unsigned int)arg1;
 - (void)setHasDeviceID:(BOOL)arg1;

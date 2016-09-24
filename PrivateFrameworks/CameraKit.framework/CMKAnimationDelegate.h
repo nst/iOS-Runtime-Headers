@@ -2,13 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@interface CMKAnimationDelegate : NSObject {
-    id /* block */ _completion;
-    id /* block */ _start;
+@interface CMKAnimationDelegate : NSObject <CAAnimationDelegate> {
+    id /* block */  _completion;
+    id /* block */  _start;
 }
 
 @property (nonatomic, copy) id /* block */ completion;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic, copy) id /* block */ start;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)animationDidStart:(id)arg1;

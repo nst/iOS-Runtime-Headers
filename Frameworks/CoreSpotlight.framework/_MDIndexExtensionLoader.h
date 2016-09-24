@@ -3,24 +3,27 @@
  */
 
 @interface _MDIndexExtensionLoader : NSObject {
-    id _extensionMatchingContext;
-    NSDictionary *_indexExtensionsByBundleID;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSDictionary * _extensionsByBundleId;
+    id  _matchingContext;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
-@property (nonatomic, retain) id extensionMatchingContext;
-@property (nonatomic, retain) NSDictionary *indexExtensionsByBundleID;
+@property (nonatomic, retain) NSDictionary *extensionsByBundleId;
+@property (nonatomic, retain) id matchingContext;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
++ (id)_matchDictionary;
+
 - (void).cxx_destruct;
+- (id)_filterIndexExtensions:(id)arg1;
 - (id)_loadExtensionsSynchronously;
-- (id)_matchingDictionary;
-- (id)extensionMatchingContext;
-- (id)indexExtensionsByBundleID;
+- (id)extensionsByBundleId;
+- (void)findExtensionsWithCompletionBlock:(id /* block */)arg1;
 - (id)init;
+- (id)matchingContext;
 - (id)queue;
-- (void)setExtensionMatchingContext:(id)arg1;
-- (void)setIndexExtensionsByBundleID:(id)arg1;
+- (void)setExtensionsByBundleId:(id)arg1;
+- (void)setMatchingContext:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)startLookingForExtensionsWithMatchUpdateHandler:(id /* block */)arg1;
 - (void)stopLookingForExtensions;

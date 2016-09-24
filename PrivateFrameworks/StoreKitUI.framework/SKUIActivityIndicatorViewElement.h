@@ -3,7 +3,7 @@
  */
 
 @interface SKUIActivityIndicatorViewElement : SKUIViewElement {
-    double _period;
+    double  _period;
 }
 
 @property (nonatomic, readonly) SKUIImageViewElement *image;

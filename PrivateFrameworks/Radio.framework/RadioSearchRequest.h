@@ -3,15 +3,15 @@
  */
 
 @interface RadioSearchRequest : RadioRequest {
-    BOOL _excludeFeaturedStations;
-    SSMetricsConfiguration *_metricsConfiguration;
-    SSMetricsPageEvent *_metricsPageEvent;
-    unsigned int _numberOfSearchResults;
-    SSURLConnectionRequest *_request;
-    int _searchCategory;
-    unsigned int _searchResultsOffset;
-    NSString *_searchTerm;
-    BOOL _shouldProcessCategories;
+    BOOL  _excludeFeaturedStations;
+    SSMetricsConfiguration * _metricsConfiguration;
+    SSMetricsPageEvent * _metricsPageEvent;
+    unsigned int  _numberOfSearchResults;
+    SSURLConnectionRequest * _request;
+    int  _searchCategory;
+    unsigned int  _searchResultsOffset;
+    NSString * _searchTerm;
+    BOOL  _shouldProcessCategories;
 }
 
 @property (nonatomic) BOOL excludeFeaturedStations;

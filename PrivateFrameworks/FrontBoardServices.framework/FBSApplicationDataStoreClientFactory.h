@@ -3,10 +3,14 @@
  */
 
 @interface FBSApplicationDataStoreClientFactory : NSObject {
-    unsigned long long _count;
-    NSObject<OS_dispatch_queue> *_queue;
-    FBSApplicationDataStoreRepositoryClient *_sharedClient;
+    unsigned int  _count;
+    Class  _dataStoreClientClass;
+    NSArray * _prefetchedKeys;
+    NSObject<OS_dispatch_queue> * _queue;
+    <FBSApplicationDataStoreRepositoryClient> * _sharedClient;
 }
+
+@property (nonatomic, retain) NSArray *prefetchedKeys;
 
 + (id)sharedInstance;
 
@@ -14,5 +18,8 @@
 - (id)checkout;
 - (void)dealloc;
 - (id)init;
+- (id)prefetchedKeys;
+- (void)registerClientClass:(Class)arg1;
+- (void)setPrefetchedKeys:(id)arg1;
 
 @end

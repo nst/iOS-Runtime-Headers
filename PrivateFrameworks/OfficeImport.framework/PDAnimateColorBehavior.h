@@ -3,16 +3,16 @@
  */
 
 @interface PDAnimateColorBehavior : PDAnimateBehavior {
-    double mBy;
-    int mColorSpace;
-    int mDirection;
-    OADColor *mFrom;
-    BOOL mHasBy;
-    BOOL mHasColorDirection;
-    BOOL mHasColorSpace;
-    BOOL mHasFrom;
-    BOOL mHasTo;
-    OADColor *mTo;
+    double  mBy;
+    int  mColorSpace;
+    int  mDirection;
+    OADColor * mFrom;
+    BOOL  mHasBy;
+    BOOL  mHasColorDirection;
+    BOOL  mHasColorSpace;
+    BOOL  mHasFrom;
+    BOOL  mHasTo;
+    OADColor * mTo;
 }
 
 - (double*)by;

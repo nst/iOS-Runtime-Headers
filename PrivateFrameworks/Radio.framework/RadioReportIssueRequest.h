@@ -3,10 +3,10 @@
  */
 
 @interface RadioReportIssueRequest : RadioRequest {
-    NSData *_data;
-    NSString *_description;
-    int _issueType;
-    SSURLConnectionRequest *_request;
+    NSData * _data;
+    NSString * _description;
+    int  _issueType;
+    SSURLConnectionRequest * _request;
 }
 
 - (void).cxx_destruct;

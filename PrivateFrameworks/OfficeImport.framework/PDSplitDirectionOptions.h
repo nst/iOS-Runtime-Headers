@@ -3,8 +3,8 @@
  */
 
 @interface PDSplitDirectionOptions : PDTransitionOptions {
-    int mInOut;
-    int mOrientation;
+    int  mInOut;
+    int  mOrientation;
 }
 
 - (int)inOut;

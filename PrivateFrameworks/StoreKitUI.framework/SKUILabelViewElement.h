@@ -3,19 +3,19 @@
  */
 
 @interface SKUILabelViewElement : SKUIViewElement <SKUILinkHandler> {
-    int _badgePlacement;
-    NSArray *_badges;
-    BOOL _containsLinks;
-    NSMutableDictionary *_domObjectsToViewElements;
-    int _labelViewStyle;
-    int _linkCounter;
-    <SKUILinkHandler> *_linkDelegate;
-    NSMutableDictionary *_linkToViewButtonElements;
-    NSString *_moreButtonTitle;
-    int _numberOfLines;
-    SKUIViewElementText *_text;
-    NSArray *_trailingBadges;
-    IKDOMElement *_xml;
+    int  _badgePlacement;
+    NSArray * _badges;
+    BOOL  _containsLinks;
+    NSMutableDictionary * _domObjectsToViewElements;
+    int  _labelViewStyle;
+    int  _linkCounter;
+    <SKUILinkHandler> * _linkDelegate;
+    NSMutableDictionary * _linkToViewButtonElements;
+    NSString * _moreButtonTitle;
+    int  _numberOfLines;
+    SKUIViewElementText * _text;
+    NSArray * _trailingBadges;
+    IKDOMElement * _xml;
 }
 
 @property (nonatomic, readonly) int badgePlacement;

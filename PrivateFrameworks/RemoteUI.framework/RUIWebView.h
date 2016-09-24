@@ -3,10 +3,10 @@
  */
 
 @interface RUIWebView : RUIElement <UIWebViewDelegate> {
-    NSURL *_baseURL;
-    id _delegate;
-    NSString *_html;
-    UIWebView *_webView;
+    NSURL * _baseURL;
+    id  _delegate;
+    NSString * _html;
+    UIWebView * _webView;
 }
 
 @property (nonatomic, retain) NSURL *baseURL;

@@ -2,10 +2,32 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@interface CoreIRBus : CoreRCBus
+@interface CoreIRBus : CoreRCBus {
+    CoreIRDevice * _lastAppleRemote;
+    CoreIRDevice * _pairedAppleRemote;
+}
+
+@property (nonatomic, retain) CoreIRDevice *lastAppleRemote;
+@property (nonatomic, retain) CoreIRDevice *pairedAppleRemote;
+
++ (BOOL)supportsSecureCoding;
 
 - (id)addDeviceWithType:(unsigned int)arg1 matching:(id)arg2 error:(id*)arg3;
 - (id)addDeviceWithType:(unsigned int)arg1 matching:(id)arg2 learningSession:(id)arg3 error:(id*)arg4;
+- (void)dealloc;
 - (BOOL)deleteDevice:(id)arg1 error:(id*)arg2;
+- (id)description;
+- (void)didDispatchCommandFromAppleRemote:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)init;
+- (id)initWithBus:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)lastAppleRemote;
+- (id)mergeProperties;
+- (id)pairedAppleRemote;
+- (void)setLastAppleRemote:(id)arg1;
+- (void)setPairedAppleRemote:(id)arg1;
+- (BOOL)setPairedAppleRemote:(id)arg1 error:(id*)arg2;
+- (void)willRemoveDevice:(id)arg1;
 
 @end

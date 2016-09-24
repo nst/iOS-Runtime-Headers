@@ -3,11 +3,11 @@
  */
 
 @interface GEOVPointOnRoad : PBCodable <NSCopying> {
-    int _featureIndex;
+    int  _featureIndex;
     struct { 
         unsigned int vertexIndex : 1; 
-    } _has;
-    int _vertexIndex;
+    }  _has;
+    int  _vertexIndex;
 }
 
 @property (nonatomic) int featureIndex;

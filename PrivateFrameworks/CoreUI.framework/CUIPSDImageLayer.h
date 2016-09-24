@@ -3,7 +3,7 @@
  */
 
 @interface CUIPSDImageLayer : CUIPSDLayer {
-    CUIImage *_image;
+    CUIImage * _image;
 }
 
 @property (nonatomic, readonly) struct CGImage { }*cgImageRef;

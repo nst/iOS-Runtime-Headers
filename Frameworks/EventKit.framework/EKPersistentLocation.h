@@ -6,6 +6,7 @@
 
 @property (nonatomic, copy) NSString *address;
 @property (nonatomic, copy) NSString *addressBookEntityID;
+@property (nonatomic, copy) NSString *derivedFrom;
 @property (nonatomic, copy) NSNumber *latitude;
 @property (nonatomic, copy) NSNumber *longitude;
 @property (nonatomic, copy) NSData *mapKitHandle;
@@ -22,6 +23,7 @@
 - (id)alarmOwner;
 - (id)calendarItemOwner;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)derivedFrom;
 - (id)description;
 - (int)entityType;
 - (id)init;
@@ -35,6 +37,7 @@
 - (void)setAddressBookEntityID:(id)arg1;
 - (void)setAlarmOwner:(id)arg1;
 - (void)setCalendarItemOwner:(id)arg1;
+- (void)setDerivedFrom:(id)arg1;
 - (void)setLatitude:(id)arg1;
 - (void)setLongitude:(id)arg1;
 - (void)setMapKitHandle:(id)arg1;

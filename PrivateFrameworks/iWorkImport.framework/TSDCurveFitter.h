@@ -3,8 +3,8 @@
  */
 
 @interface TSDCurveFitter : NSObject {
-    double mErrorDistance;
-    int mErrorIterations;
+    double  mErrorDistance;
+    int  mErrorIterations;
 }
 
 @property (nonatomic) double errorDistance;

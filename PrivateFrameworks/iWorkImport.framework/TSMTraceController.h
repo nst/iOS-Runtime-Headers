@@ -3,12 +3,12 @@
  */
 
 @interface TSMTraceController : NSObject {
-    NSMutableArray *mBuffers;
-    NSDictionary *mBuildInfo;
-    unsigned long mFilterCache;
-    long mLastBufferID;
-    int mModuleCache;
-    NSString *mTraceDirectory;
+    NSMutableArray * mBuffers;
+    NSDictionary * mBuildInfo;
+    unsigned long  mFilterCache;
+    long  mLastBufferID;
+    int  mModuleCache;
+    NSString * mTraceDirectory;
 }
 
 @property (nonatomic, readonly) NSString *traceDirectory;

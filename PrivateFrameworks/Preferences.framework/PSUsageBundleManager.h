@@ -3,9 +3,9 @@
  */
 
 @interface PSUsageBundleManager : NSObject {
-    NSDictionary *_bundleMap;
-    NSMutableArray *_storageReporters;
-    NSArray *_usageBundleApps;
+    NSDictionary * _bundleMap;
+    NSMutableArray * _storageReporters;
+    NSArray * _usageBundleApps;
 }
 
 - (void).cxx_destruct;

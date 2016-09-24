@@ -3,17 +3,17 @@
  */
 
 @interface PLJPEGPreheatItem : PLPreheatItem {
-    UIImage *_cachedImage;
-    BOOL _cachedImageCancelled;
-    unsigned int _cancelled;
-    BOOL _dataIsLoading;
-    unsigned int _hasCachedImage;
-    NSString *_imagePath;
-    unsigned int _loadingOptions;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_group> *_requestGroup;
-    unsigned long _requestID;
-    NSObject<OS_dispatch_group> *_waitGroup;
+    UIImage * _cachedImage;
+    BOOL  _cachedImageCancelled;
+    unsigned int  _cancelled;
+    BOOL  _dataIsLoading;
+    unsigned int  _hasCachedImage;
+    NSString * _imagePath;
+    unsigned int  _loadingOptions;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_group> * _requestGroup;
+    unsigned long  _requestID;
+    NSObject<OS_dispatch_group> * _waitGroup;
 }
 
 @property (setter=_setHasCachedImage:) BOOL _hasCachedImage;
@@ -36,7 +36,7 @@
 - (void)dealloc;
 - (struct __CFDictionary { }*)decodeSessionOptions;
 - (id)imagePath;
-- (id)initWithImagePath:(id)arg1 format:(int)arg2 imageType:(int)arg3 optimalSourcePixelSize:(struct CGSize { float x1; float x2; })arg4 options:(unsigned int)arg5;
+- (id)initWithImagePath:(id)arg1 format:(int)arg2 imageType:(int)arg3 optimalSourcePixelSize:(struct CGSize { double x1; double x2; })arg4 options:(unsigned int)arg5;
 - (id)initialDecodeSessionOptions;
 - (BOOL)isCancelled;
 - (void)loadPreheatDataWithHandler:(id /* block */)arg1;

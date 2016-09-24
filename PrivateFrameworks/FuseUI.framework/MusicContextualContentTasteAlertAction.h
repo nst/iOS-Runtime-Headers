@@ -3,13 +3,13 @@
  */
 
 @interface MusicContextualContentTasteAlertAction : MusicContextualAlertAction {
-    unsigned int _currentTasteType;
+    int  _currentTasteType;
 }
 
-@property (nonatomic, readonly) unsigned int currentTasteType;
+@property (nonatomic, readonly) int currentTasteType;
 
 + (id)contextualLoveAlertActionWithEntityValueContext:(id)arg1 didDismissHandler:(id /* block */)arg2;
 
-- (unsigned int)currentTasteType;
+- (int)currentTasteType;
 
 @end

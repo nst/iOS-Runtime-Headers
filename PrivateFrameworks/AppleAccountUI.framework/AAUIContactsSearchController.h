@@ -3,12 +3,12 @@
  */
 
 @interface AAUIContactsSearchController : NSObject <MFContactsSearchConsumer> {
-    int _countOfPendingResultBatches;
-    <AAUIContactsSearchDelegate> *_delegate;
-    BOOL _didFindResults;
-    MFContactsSearchManager *_searchManager;
-    MFContactsSearchResultsModel *_searchResultsModel;
-    NSNumber *_searchTaskID;
+    int  _countOfPendingResultBatches;
+    <AAUIContactsSearchDelegate> * _delegate;
+    BOOL  _didFindResults;
+    MFContactsSearchManager * _searchManager;
+    MFContactsSearchResultsModel * _searchResultsModel;
+    NSNumber * _searchTaskID;
 }
 
 @property (readonly, copy) NSString *debugDescription;

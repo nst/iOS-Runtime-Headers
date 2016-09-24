@@ -3,9 +3,9 @@
  */
 
 @interface SCNAssetCatalog : NSObject {
-    NSMutableDictionary *_cache;
-    NSURL *_catalogURL;
-    NSDictionary *_db;
+    NSMutableDictionary * _cache;
+    NSURL * _catalogURL;
+    NSDictionary * _db;
 }
 
 @property (nonatomic, readonly) NSURL *catalogURL;

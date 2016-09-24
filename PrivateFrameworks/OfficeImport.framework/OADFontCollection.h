@@ -3,7 +3,7 @@
  */
 
 @interface OADFontCollection : OADBaseFontCollection {
-    NSMutableDictionary *_scriptToFontMap;
+    NSMutableDictionary * _scriptToFontMap;
 }
 
 - (void)dealloc;

@@ -3,17 +3,17 @@
  */
 
 @interface SKUIIPadCustomerReviewsHeaderView : UIControl <SKUIMenuViewControllerDelegate, UIPopoverControllerDelegate> {
-    UIButton *_appSupportButton;
-    SKUIClientContext *_clientContext;
-    SKUIColorScheme *_colorScheme;
-    int _selectedSortIndex;
-    UIView *_separatorView;
-    UIButton *_sortButton;
-    UILabel *_sortLabel;
-    UIPopoverController *_sortPopoverController;
-    NSArray *_sortTitles;
-    UILabel *_titleLabel;
-    UIButton *_writeAReviewButton;
+    UIButton * _appSupportButton;
+    SKUIClientContext * _clientContext;
+    SKUIColorScheme * _colorScheme;
+    int  _selectedSortIndex;
+    UIView * _separatorView;
+    UIButton * _sortButton;
+    UILabel * _sortLabel;
+    UIPopoverController * _sortPopoverController;
+    NSArray * _sortTitles;
+    UILabel * _titleLabel;
+    UIButton * _writeAReviewButton;
 }
 
 @property (nonatomic, readonly) UIControl *appSupportButton;
@@ -33,7 +33,7 @@
 - (id)appSupportButton;
 - (id)colorScheme;
 - (void)dealloc;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)initWithClientContext:(id)arg1;
 - (void)layoutSubviews;
 - (void)menuViewController:(id)arg1 didSelectItemAtIndex:(int)arg2;
@@ -43,7 +43,7 @@
 - (void)setColorScheme:(id)arg1;
 - (void)setSelectedSortIndex:(int)arg1;
 - (void)setSortTitles:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)sortTitles;
 - (id)writeAReviewButton;
 

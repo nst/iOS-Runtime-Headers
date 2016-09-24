@@ -3,9 +3,9 @@
  */
 
 @interface TSWPChangeSession : TSPObject {
-    TSKAnnotationAuthor *_author;
-    NSDate *_date;
-    unsigned long _sessionUID;
+    TSKAnnotationAuthor * _author;
+    NSDate * _date;
+    unsigned long  _sessionUID;
 }
 
 @property (nonatomic, retain) TSKAnnotationAuthor *author;

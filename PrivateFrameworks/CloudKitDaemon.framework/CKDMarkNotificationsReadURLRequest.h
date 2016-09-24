@@ -3,9 +3,9 @@
  */
 
 @interface CKDMarkNotificationsReadURLRequest : CKDURLRequest {
-    NSArray *_notificationIDs;
-    NSMutableDictionary *_notificationIDsByRequestID;
-    id /* block */ _notificationMarkedReadProgressBlock;
+    NSArray * _notificationIDs;
+    NSMutableDictionary * _notificationIDsByRequestID;
+    id /* block */  _notificationMarkedReadProgressBlock;
 }
 
 @property (nonatomic, retain) NSArray *notificationIDs;

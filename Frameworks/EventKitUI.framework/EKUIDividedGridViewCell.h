@@ -3,11 +3,11 @@
  */
 
 @interface EKUIDividedGridViewCell : UIView {
-    UIColor *_bgColor;
-    UITextLabel *_label;
-    BOOL _selected;
-    EKUIDividedGridViewController *_viewController;
-    NSLayoutConstraint *_widthConstraint;
+    UIColor * _bgColor;
+    UITextLabel * _label;
+    BOOL  _selected;
+    EKUIDividedGridViewController * _viewController;
+    NSLayoutConstraint * _widthConstraint;
 }
 
 @property (retain) UITextLabel *label;

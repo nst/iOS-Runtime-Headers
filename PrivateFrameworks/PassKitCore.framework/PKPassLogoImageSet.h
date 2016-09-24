@@ -3,15 +3,16 @@
  */
 
 @interface PKPassLogoImageSet : PKPassImageSet {
-    PKImage *_backgroundImage;
-    PKImage *_bankLogoImage;
-    PKImage *_cardBackgroundCombinedImage;
-    PKImage *_cardBackgroundImage;
-    PKImage *_cobrandLogoImage;
-    PKImage *_footerImage;
-    PKImage *_logoImage;
-    PKImage *_networkLogoImage;
-    PKImage *_stripImage;
+    PKImage * _backgroundImage;
+    PKImage * _bankLogoImage;
+    PKImage * _cardBackgroundCombinedImage;
+    PKImage * _cardBackgroundImage;
+    PKImage * _cobrandLogoImage;
+    PKImage * _footerImage;
+    PKImage * _logoImage;
+    PKImage * _networkLogoImage;
+    PKImage * _stripImage;
+    PKImage * _thumbnailImage;
 }
 
 @property (nonatomic, retain) PKImage *backgroundImage;
@@ -23,6 +24,7 @@
 @property (nonatomic, retain) PKImage *logoImage;
 @property (nonatomic, retain) PKImage *networkLogoImage;
 @property (nonatomic, retain) PKImage *stripImage;
+@property (nonatomic, retain) PKImage *thumbnailImage;
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
@@ -30,12 +32,12 @@
 + (BOOL)shouldCache;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)backgroundImage;
 - (id)bankLogoImage;
 - (id)cardBackgroundCombinedImage;
 - (id)cardBackgroundImage;
 - (id)cobrandLogoImage;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)footerImage;
 - (unsigned int)hash;
@@ -54,11 +56,13 @@
 - (void)setLogoImage:(id)arg1;
 - (void)setNetworkLogoImage:(id)arg1;
 - (void)setStripImage:(id)arg1;
+- (void)setThumbnailImage:(id)arg1;
 - (id)stripImage;
+- (id)thumbnailImage;
 
 // Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
 
 - (void)loadPDFArtFromBundle:(id)arg1;
-- (void)resizeWithScreenSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)resizeWithScreenSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

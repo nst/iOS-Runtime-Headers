@@ -3,8 +3,8 @@
  */
 
 @interface CoreDAVGetTask : CoreDAVTask {
-    id _appSpecificDataItemResult;
-    BOOL _forceNoCache;
+    id  _appSpecificDataItemResult;
+    BOOL  _forceNoCache;
 }
 
 @property (nonatomic, retain) id appSpecificDataItemResult;

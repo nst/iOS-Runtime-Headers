@@ -3,36 +3,40 @@
  */
 
 @interface ICPasswordUtilities : ICSharedPasswordUtilities {
-    BOOL _authenticationInProgress;
-    UIAlertController *_displayedAlertController;
-    NSString *_divergedSharedPassword;
-    UIWindow *_mainWindow;
+    BOOL  _authenticationInProgress;
+    UIAlertController * _displayedAlertController;
+    NSString * _divergedSharedPassword;
 }
 
 @property (nonatomic) BOOL authenticationInProgress;
 @property (nonatomic) UIAlertController *displayedAlertController;
 @property (nonatomic, retain) NSString *divergedSharedPassword;
-@property (nonatomic) UIWindow *mainWindow;
 
 + (BOOL)authenticateDevicePasscodeIfNecessaryWithReason:(id)arg1;
-+ (void)authenticateiCloudPasswordFromRootViewController:(id)arg1 confirmButtonTitle:(id)arg2 completionHandler:(id /* block */)arg3;
++ (void)authenticateiCloudPasswordFromRootViewController:(id)arg1 confirmButtonTitle:(id)arg2 reason:(id)arg3 completionHandler:(id /* block */)arg4;
++ (BOOL)deviceHasPasscode;
 + (struct UIImage { Class x1; }*)imageForCurrentDecryptedStatusForNote:(id)arg1;
-+ (id)mainWindow;
 + (void)setTouchIDEnabledForSharedPassword:(BOOL)arg1;
 + (id)sharedInstance;
-+ (void)showFirstTimePasswordProtectNoteAlert;
++ (void)showFirstTimePasswordProtectNoteAlertForDisplayWindow:(id)arg1;
 + (BOOL)touchIDEnabledForSharedPassword;
 + (BOOL)touchIDHardwareIsAvailable;
 + (BOOL)touchIDIsEnrolled;
 
 - (void).cxx_destruct;
-- (void)_authenticatePasswordWithIntent:(unsigned int)arg1 note:(id)arg2 incorrectAttempts:(int)arg3 passwordDiverged:(BOOL)arg4 completionHandler:(id /* block */)arg5;
+- (void)_authenticatePasswordForDeletingNotes:(id)arg1 incorrectAttempts:(int)arg2 displayWindow:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)_authenticatePasswordWithIntent:(unsigned int)arg1 note:(id)arg2 incorrectAttempts:(int)arg3 passwordDiverged:(BOOL)arg4 displayWindow:(id)arg5 completionHandler:(id /* block */)arg6;
 - (BOOL)_keychainContainsValidItemForSyncingObject:(id)arg1;
 - (void)accessibilityAnnounceAuthSuccessForIntent:(unsigned int)arg1 withNote:(id)arg2;
 - (void)addTitleAndMessageToAlert:(id)arg1 intent:(unsigned int)arg2 note:(id)arg3 incorrectAttempts:(int)arg4 passwordDiverged:(BOOL)arg5;
 - (void)applicationDidEnterBackground:(id)arg1;
-- (void)authenticatePasswordWithIntent:(unsigned int)arg1 note:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)authenticateWithTouchIDWithReason:(id)arg1 intent:(unsigned int)arg2 note:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)authenticateForDeletingNotes:(id)arg1 displayWindow:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)authenticateIfNecessaryForDeletingNotes:(id)arg1 displayWindow:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)authenticatePasswordForDeletingNotes:(id)arg1 displayWindow:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)authenticatePasswordWithIntent:(unsigned int)arg1 note:(id)arg2 displayWindow:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)authenticateUsingAlternateMethodForDeletingNotes:(id)arg1 displayWindow:(struct UIWindow { Class x1; }*)arg2 completionHandler:(id /* block */)arg3;
+- (void)authenticateWithTouchIDForDeletingNotes:(id)arg1 displayWindow:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)authenticateWithTouchIDWithReason:(id)arg1 intent:(unsigned int)arg2 note:(id)arg3 displayWindow:(id)arg4 completionHandler:(id /* block */)arg5;
 - (BOOL)authenticationInProgress;
 - (void)dealloc;
 - (id)displayedAlertController;
@@ -40,14 +44,12 @@
 - (id)init;
 - (BOOL)keychainContainsValidItemForAccount:(id)arg1;
 - (BOOL)keychainContainsValidItemForNote:(id)arg1;
-- (id)mainWindow;
 - (void)setAuthenticationInProgress:(BOOL)arg1;
 - (void)setDisplayedAlertController:(id)arg1;
 - (void)setDivergedSharedPassword:(id)arg1;
-- (void)setMainWindow:(id)arg1;
-- (void)showChangePasswordDialogueWithCompletionHandler:(id /* block */)arg1;
-- (void)showPasswordEntrySheetWithIntent:(unsigned int)arg1 note:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)showPasswordSetUpSheetForAccount:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)showUpdateDivergedPasswordForSharedPassword:(id)arg1 oldPassword:(id)arg2;
+- (void)showChangePasswordDialogueFromDisplayWindow:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)showPasswordEntrySheetWithIntent:(unsigned int)arg1 note:(id)arg2 displayWindow:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)showPasswordSetUpSheetForAccount:(id)arg1 displayWindow:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)showUpdateDivergedPasswordForSharedPassword:(id)arg1 oldPassword:(id)arg2 displayWindow:(id)arg3;
 
 @end

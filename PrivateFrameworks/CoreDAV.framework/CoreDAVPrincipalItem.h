@@ -3,12 +3,12 @@
  */
 
 @interface CoreDAVPrincipalItem : CoreDAVItem {
-    CoreDAVItemWithNoChildren *_all;
-    CoreDAVItemWithNoChildren *_authenticated;
-    CoreDAVHrefItem *_href;
-    CoreDAVItem *_property;
-    CoreDAVItemWithNoChildren *_selfItem;
-    CoreDAVItemWithNoChildren *_unauthenticated;
+    CoreDAVItemWithNoChildren * _all;
+    CoreDAVItemWithNoChildren * _authenticated;
+    CoreDAVHrefItem * _href;
+    CoreDAVItem * _property;
+    CoreDAVItemWithNoChildren * _selfItem;
+    CoreDAVItemWithNoChildren * _unauthenticated;
 }
 
 @property (nonatomic, retain) CoreDAVItemWithNoChildren *all;

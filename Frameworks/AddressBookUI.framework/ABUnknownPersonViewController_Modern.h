@@ -3,33 +3,33 @@
  */
 
 @interface ABUnknownPersonViewController_Modern : UIViewController <ABContactViewControllerDelegate, CNContactViewControllerPrivateDelegate, UIActionSheetDelegate, UITableViewDataSource, UITableViewDelegate> {
-    ABPersonTableViewActionsDelegate *_actionsDelegate;
-    void *_addressBook;
-    BOOL _allowsActions;
-    BOOL _allowsAddingToAddressBook;
-    BOOL _allowsConferencing;
-    BOOL _allowsContactBlocking;
-    BOOL _allowsSharing;
-    NSString *_alternateName;
-    CNContactViewController *_cnContactViewController;
-    ABContactViewController *_contactViewController;
-    ABPersonTableViewDataSource *_dataSource;
-    void *_displayedPerson;
-    NSArray *_displayedProperties;
-    ABUIPerson *_displayedUIPerson;
-    ABPersonViewControllerHelper *_helper;
-    NSString *_message;
-    UIView *_personHeaderView;
-    NSString *_primaryCNProperty;
-    NSString *_primaryCountryCode;
-    ABPersonTableViewSharingDelegate *_sharingDelegate;
-    int _style;
-    <ABStyleProvider> *_styleProvider;
-    <ABUnknownPersonViewControllerDelegate> *_unknownPersonViewDelegate;
-    NSMutableArray *_unmergedRecords;
-    UITableView *_vCardTableView;
-    NSArray *_vCards;
-    NSArray *_vCardsProperties;
+    ABPersonTableViewActionsDelegate * _actionsDelegate;
+    void * _addressBook;
+    BOOL  _allowsActions;
+    BOOL  _allowsAddingToAddressBook;
+    BOOL  _allowsConferencing;
+    BOOL  _allowsContactBlocking;
+    BOOL  _allowsSharing;
+    NSString * _alternateName;
+    CNContactViewController * _cnContactViewController;
+    ABContactViewController * _contactViewController;
+    ABPersonTableViewDataSource * _dataSource;
+    void * _displayedPerson;
+    NSArray * _displayedProperties;
+    ABUIPerson * _displayedUIPerson;
+    ABPersonViewControllerHelper * _helper;
+    NSString * _message;
+    UIView * _personHeaderView;
+    NSString * _primaryCNProperty;
+    NSString * _primaryCountryCode;
+    ABPersonTableViewSharingDelegate * _sharingDelegate;
+    int  _style;
+    <ABStyleProvider> * _styleProvider;
+    <ABUnknownPersonViewControllerDelegate> * _unknownPersonViewDelegate;
+    NSMutableArray * _unmergedRecords;
+    UITableView * _vCardTableView;
+    NSArray * _vCards;
+    NSArray * _vCardsProperties;
 }
 
 @property (nonatomic, readonly) ABPersonTableViewActionsDelegate *actionsDelegate;
@@ -135,7 +135,7 @@
 - (id)newActionButton;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)personHeaderView;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)presentAddToContactsSheet;
 - (void)presentNewContactViewControllerForAddToContacts;
 - (void)presentPeoplePickerNavigationControllerForMergeToContact;

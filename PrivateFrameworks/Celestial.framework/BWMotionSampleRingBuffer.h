@@ -3,9 +3,9 @@
  */
 
 @interface BWMotionSampleRingBuffer : NSObject <NSFastEnumeration> {
-    int _maxCount;
-    double _maxDuration;
-    BWRingBuffer *_ringBuffer;
+    int  _maxCount;
+    double  _maxDuration;
+    BWRingBuffer * _ringBuffer;
 }
 
 - (void)addMotionDataToRingBuffer:(struct { bool x1; double x2; struct { double x_3_1_1; double x_3_1_2; double x_3_1_3; double x_3_1_4; } x3; }*)arg1 withSampleCount:(int)arg2;

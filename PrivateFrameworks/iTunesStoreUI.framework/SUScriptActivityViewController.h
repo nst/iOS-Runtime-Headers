@@ -3,8 +3,8 @@
  */
 
 @interface SUScriptActivityViewController : SUScriptViewController {
-    NSArray *_applicationActivities;
-    NSArray *_providers;
+    NSArray * _applicationActivities;
+    NSArray * _providers;
 }
 
 @property (readonly) NSString *activityTypeAddToReadingList;

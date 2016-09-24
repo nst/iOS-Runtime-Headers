@@ -3,10 +3,10 @@
  */
 
 @interface SFWebProcessPlugInPageExtensionController : NSObject {
-    WKWebProcessPlugInBrowserContextController *_browserContextController;
-    _WKRemoteObjectInterface *_extensionControllerInterface;
-    NSMutableDictionary *_extensionToScriptWorldMap;
-    <SFSafariExtensionEventsListener> *_safariExtensionEventsListener;
+    WKWebProcessPlugInBrowserContextController * _browserContextController;
+    _WKRemoteObjectInterface * _extensionControllerInterface;
+    NSMutableDictionary * _extensionToScriptWorldMap;
+    <SFSafariExtensionEventsListener> * _safariExtensionEventsListener;
 }
 
 - (void).cxx_destruct;

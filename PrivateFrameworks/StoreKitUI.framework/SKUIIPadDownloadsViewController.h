@@ -3,12 +3,12 @@
  */
 
 @interface SKUIIPadDownloadsViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
-    SKUIClientContext *_clientContext;
-    UICollectionView *_collectionView;
-    <SKUIDownloadsChildViewControllerDelegate> *_delegate;
-    NSArray *_downloads;
-    BOOL _editing;
-    _UIContentUnavailableView *_noContentView;
+    SKUIClientContext * _clientContext;
+    UICollectionView * _collectionView;
+    <SKUIDownloadsChildViewControllerDelegate> * _delegate;
+    NSArray * _downloads;
+    BOOL  _editing;
+    _UIContentUnavailableView * _noContentView;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

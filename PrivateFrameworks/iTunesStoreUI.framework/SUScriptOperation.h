@@ -3,8 +3,8 @@
  */
 
 @interface SUScriptOperation : ISOperation {
-    id _options;
-    ISOperation *_wrappedOperation;
+    id  _options;
+    ISOperation * _wrappedOperation;
 }
 
 + (Class)postOperationClassForType:(id)arg1;

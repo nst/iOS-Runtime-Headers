@@ -3,10 +3,10 @@
  */
 
 @interface MFData : NSData <NSCopying, NSMutableCopying> {
-    NSData *_internal;
-    NSData *_parent;
-    NSString *_path;
-    BOOL _subdata;
+    NSData * _internal;
+    NSData * _parent;
+    NSString * _path;
+    BOOL  _subdata;
 }
 
 + (void)setDefaultMappingThresholdInBytes:(unsigned int)arg1;

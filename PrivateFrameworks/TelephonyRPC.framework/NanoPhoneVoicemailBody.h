@@ -3,12 +3,12 @@
  */
 
 @interface NanoPhoneVoicemailBody : PBCodable <NSCopying> {
-    long long _voicemailNumber;
-    NSData *_voicemailRecording;
+    int  _voicemailNumber;
+    NSData * _voicemailRecording;
 }
 
 @property (nonatomic, readonly) BOOL hasVoicemailRecording;
-@property (nonatomic) long long voicemailNumber;
+@property (nonatomic) int voicemailNumber;
 @property (nonatomic, retain) NSData *voicemailRecording;
 
 - (void).cxx_destruct;
@@ -21,9 +21,9 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setVoicemailNumber:(long long)arg1;
+- (void)setVoicemailNumber:(int)arg1;
 - (void)setVoicemailRecording:(id)arg1;
-- (long long)voicemailNumber;
+- (int)voicemailNumber;
 - (id)voicemailRecording;
 - (void)writeTo:(id)arg1;
 

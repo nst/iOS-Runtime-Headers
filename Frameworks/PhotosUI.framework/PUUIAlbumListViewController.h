@@ -3,10 +3,10 @@
  */
 
 @interface PUUIAlbumListViewController : PUAlbumListViewController {
-    unsigned int __imagePickerAssetTypes;
-    NSArray *__imagePickerMediaTypes;
-    BOOL _collectionsFetchResultIsValid;
-    UIBarButtonItem *_imagePickerCancelButton;
+    unsigned int  __imagePickerAssetTypes;
+    NSArray * __imagePickerMediaTypes;
+    BOOL  _collectionsFetchResultIsValid;
+    UIBarButtonItem * _imagePickerCancelButton;
 }
 
 @property (setter=_setImagePickerAssetTypes:, nonatomic) unsigned int _imagePickerAssetTypes;
@@ -21,7 +21,7 @@
 - (void)_setImagePickerMediaTypes:(id)arg1;
 - (void)_updateCollectionsFetchResultIfNeeded;
 - (id)assetsFilterPredicate;
-- (int)estimatedCountForAssetCollection:(id)arg1;
+- (int)filteringAssetTypes;
 - (id)init;
 - (void)loadView;
 - (id)newGridViewControllerForAllPhotos;

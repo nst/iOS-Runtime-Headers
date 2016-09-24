@@ -3,16 +3,16 @@
  */
 
 @interface EKRecurrenceEndEditItemViewController : EKEditItemViewController <EKCellShortener, UITableViewDataSource, UITableViewDelegate> {
-    NSDate *_bestInitialDate;
-    PreferencesValueCell *_dateCell;
-    UIDatePicker *_datePicker;
-    UITableViewCell *_datePickerCell;
-    NSDate *_minimumEndDate;
-    NSDate *_preNeverEndDate;
-    NSDate *_repeatEndDate;
-    int _shorteningStatus;
-    UITableView *_table;
-    unsigned int _updatingPicker;
+    NSDate * _bestInitialDate;
+    PreferencesValueCell * _dateCell;
+    UIDatePicker * _datePicker;
+    UITableViewCell * _datePickerCell;
+    NSDate * _minimumEndDate;
+    NSDate * _preNeverEndDate;
+    NSDate * _repeatEndDate;
+    int  _shorteningStatus;
+    UITableView * _table;
+    unsigned int  _updatingPicker;
 }
 
 @property (nonatomic, copy) NSDate *bestInitialDate;
@@ -21,6 +21,8 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSDate *repeatEndDate;
 @property (readonly) Class superclass;
+
++ (id)_neverLocalizedString;
 
 - (void).cxx_destruct;
 - (id)_cellForRow:(int)arg1;
@@ -33,7 +35,7 @@
 - (void)datePickerChanged:(id)arg1;
 - (void)dealloc;
 - (BOOL)fitsPopoverWhenKeyboardActive;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
 - (void)loadView;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)repeatEndDate;

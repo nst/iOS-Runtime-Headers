@@ -3,10 +3,10 @@
  */
 
 @interface GEOTransitVehicleTime : PBCodable <NSCopying> {
-    unsigned int _absTime;
+    unsigned int  _absTime;
     struct { 
         unsigned int absTime : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic) unsigned int absTime;

@@ -3,15 +3,15 @@
  */
 
 @interface NSRelationshipDescription : NSPropertyDescription {
-    unsigned int _deleteRule;
-    NSEntityDescription *_destinationEntity;
-    NSRelationshipDescription *_inverseRelationship;
-    NSString *_lazyDestinationEntityName;
-    NSString *_lazyInverseRelationshipName;
-    unsigned long _maxCount;
-    unsigned long _minCount;
-    void *_reserved5;
-    void *_reserved6;
+    unsigned int  _deleteRule;
+    NSEntityDescription * _destinationEntity;
+    NSRelationshipDescription * _inverseRelationship;
+    NSString * _lazyDestinationEntityName;
+    NSString * _lazyInverseRelationshipName;
+    unsigned long  _maxCount;
+    unsigned long  _minCount;
+    void * _reserved5;
+    void * _reserved6;
 }
 
 @property unsigned int deleteRule;

@@ -3,17 +3,17 @@
  */
 
 @interface NEFilterProviderConfiguration : NSObject <NSCopying, NSSecureCoding> {
-    BOOL _controlProviderInitialized;
-    BOOL _filterBrowsers;
-    BOOL _filterSockets;
-    NSData *_identityReference;
-    NSString *_keychainAccessGroup;
-    NSString *_organization;
-    NSData *_passwordReference;
-    NSString *_pluginType;
-    NSString *_serverAddress;
-    NSString *_username;
-    NSDictionary *_vendorConfiguration;
+    BOOL  _controlProviderInitialized;
+    BOOL  _filterBrowsers;
+    BOOL  _filterSockets;
+    NSData * _identityReference;
+    NSString * _keychainAccessGroup;
+    NSString * _organization;
+    NSData * _passwordReference;
+    NSString * _pluginType;
+    NSString * _serverAddress;
+    NSString * _username;
+    NSDictionary * _vendorConfiguration;
 }
 
 @property BOOL controlProviderInitialized;

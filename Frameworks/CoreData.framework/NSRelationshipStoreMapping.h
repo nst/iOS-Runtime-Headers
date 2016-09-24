@@ -3,10 +3,10 @@
  */
 
 @interface NSRelationshipStoreMapping : NSPropertyStoreMapping {
-    NSString *_destinationEntityExternalName;
-    NSArray *_foreignKeys;
-    unsigned int _joinSemantic;
-    NSArray *_joins;
+    NSString * _destinationEntityExternalName;
+    NSArray * _foreignKeys;
+    unsigned int  _joinSemantic;
+    NSArray * _joins;
 }
 
 - (id)columnDefinitions;

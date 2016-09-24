@@ -3,7 +3,7 @@
  */
 
 @interface _LSInstallationManager : NSObject {
-    NSXPCConnection *_connection;
+    NSXPCConnection * _connection;
 }
 
 @property (readonly) NSXPCConnection *connection;

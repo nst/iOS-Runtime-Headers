@@ -3,10 +3,10 @@
  */
 
 @interface MusicShowCompleteCollectionEntityProvider : NSObject <MusicEntityProviding> {
-    MusicCompleteOfferEntityProvider *_completeOfferEntityProvider;
-    NSString *_localizedTitle;
-    BOOL _shouldIncludeShowCompleteButton;
-    MusicShowCompleteCollectionEntityValueProvider *_showCompleteCollectionEntityValueProvider;
+    MusicCompleteOfferEntityProvider * _completeOfferEntityProvider;
+    NSString * _localizedTitle;
+    BOOL  _shouldIncludeShowCompleteButton;
+    MusicShowCompleteCollectionEntityValueProvider * _showCompleteCollectionEntityValueProvider;
 }
 
 @property (nonatomic, readonly) MusicCompleteOfferEntityProvider *completeOfferEntityProvider;

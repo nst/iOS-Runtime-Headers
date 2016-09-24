@@ -3,8 +3,8 @@
  */
 
 @interface AVCaptureDeviceControlRequestQueue : NSObject {
-    NSMutableArray *_mutableArray;
-    NSObject<OS_dispatch_queue> *_serialQueue;
+    NSMutableArray * _mutableArray;
+    NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
 - (void)dealloc;

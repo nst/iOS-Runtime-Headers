@@ -3,12 +3,12 @@
  */
 
 @interface CoreRCDevice : NSObject <NSCopying, NSSecureCoding> {
-    NSUUID *_busUniqueID;
-    <CoreRCDeviceDelegate> *_delegate;
-    BOOL _isLocalDevice;
-    CoreRCManager *_manager;
-    unsigned int _owningClients;
-    NSUUID *_uniqueID;
+    NSUUID * _busUniqueID;
+    <CoreRCDeviceDelegate> * _delegate;
+    BOOL  _isLocalDevice;
+    CoreRCManager * _manager;
+    unsigned int  _owningClients;
+    NSUUID * _uniqueID;
 }
 
 @property (nonatomic, readonly) NSUUID *busUniqueID;

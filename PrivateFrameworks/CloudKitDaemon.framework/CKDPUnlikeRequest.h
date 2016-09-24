@@ -3,7 +3,7 @@
  */
 
 @interface CKDPUnlikeRequest : PBRequest <NSCopying> {
-    CKDPLikedId *_identifier;
+    CKDPLikedId * _identifier;
 }
 
 @property (nonatomic, readonly) BOOL hasIdentifier;

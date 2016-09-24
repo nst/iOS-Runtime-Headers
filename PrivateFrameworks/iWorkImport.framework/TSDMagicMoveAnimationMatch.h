@@ -3,20 +3,20 @@
  */
 
 @interface TSDMagicMoveAnimationMatch : NSObject {
-    BOOL _didUseMorphTexture;
-    BOOL _hasBeenTornDown;
-    TSDTextureSet *_incomingTexture;
-    BOOL _isMorphMatch;
-    BOOL _isTextStyleIdenticalExceptSize;
-    BOOL _isUsingMorphTexture;
-    int _matchType;
-    TSDTextureSet *_morphQueuedForDeletionTexture;
-    TSDTextureSet *_morphQueuedTexture;
-    TSDTextureSet *_morphTexture;
-    NSLock *_morphTextureUpdateLock;
-    TSDTextureSet *_outgoingTexture;
-    float _outgoingTextureActionBuildFinalAngle;
-    BOOL _shouldDisableTextMorphing;
+    BOOL  _didUseMorphTexture;
+    BOOL  _hasBeenTornDown;
+    TSDTextureSet * _incomingTexture;
+    BOOL  _isMorphMatch;
+    BOOL  _isTextStyleIdenticalExceptSize;
+    BOOL  _isUsingMorphTexture;
+    int  _matchType;
+    TSDTextureSet * _morphQueuedForDeletionTexture;
+    TSDTextureSet * _morphQueuedTexture;
+    TSDTextureSet * _morphTexture;
+    NSLock * _morphTextureUpdateLock;
+    TSDTextureSet * _outgoingTexture;
+    NSDictionary * _outgoingTextureActionBuildFinalAttributes;
+    BOOL  _shouldDisableTextMorphing;
 }
 
 @property (nonatomic, retain) TSDTextureSet *incomingTexture;
@@ -25,7 +25,7 @@
 @property (nonatomic) BOOL isTextStyleIdenticalExceptSize;
 @property (nonatomic) int matchType;
 @property (nonatomic, retain) TSDTextureSet *outgoingTexture;
-@property (nonatomic) float outgoingTextureActionBuildFinalAngle;
+@property (nonatomic, retain) NSDictionary *outgoingTextureActionBuildFinalAttributes;
 @property (nonatomic) BOOL shouldDisableTextMorphing;
 
 + (unsigned int)magicMoveMorphTexturesPerSecond;
@@ -34,6 +34,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)incomingTexture;
+- (id)init;
 - (id)initWithMatchType:(int)arg1 outgoingTexture:(id)arg2 incomingTexture:(id)arg3;
 - (BOOL)isMatched;
 - (BOOL)isMorphMatch;
@@ -41,13 +42,13 @@
 - (id)lockCurrentMorphTexture;
 - (int)matchType;
 - (id)outgoingTexture;
-- (float)outgoingTextureActionBuildFinalAngle;
+- (id)outgoingTextureActionBuildFinalAttributes;
 - (void)setIncomingTexture:(id)arg1;
 - (void)setIsMorphMatch:(BOOL)arg1;
 - (void)setIsTextStyleIdenticalExceptSize:(BOOL)arg1;
 - (void)setMatchType:(int)arg1;
 - (void)setOutgoingTexture:(id)arg1;
-- (void)setOutgoingTextureActionBuildFinalAngle:(float)arg1;
+- (void)setOutgoingTextureActionBuildFinalAttributes:(id)arg1;
 - (void)setShouldDisableTextMorphing:(BOOL)arg1;
 - (BOOL)shouldDisableTextMorphing;
 - (void)teardown;

@@ -5,6 +5,6 @@
 
 @required
 
-- (void)sizeObservingView:(SBUISizeObservingView *)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)sizeObservingView:(SBUISizeObservingView *)arg1 didChangeSize:(struct CGSize { double x1; double x2; })arg2;
 
 @end

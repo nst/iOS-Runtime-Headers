@@ -6,7 +6,7 @@
 @required
 
 - (void)extensionWithIdentifier:(NSString *)arg1 gotUnknownInterfaceController:(NSString *)arg2;
-- (void)fetchNotificationForNotificationID:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 9: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, NSData *, NSError *, void*
+- (void)fetchNotificationForNotificationID:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 10: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, NSData *, NSData *, NSError *, void*
 - (void)launchCompanionAppForGizmoAppWithIdentifier:(void *)arg1 withUserInfoData:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 11: NSString *, NSData *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, NSError *, int, NSString *, void*
 - (void)remoteInterfaceDidDeactivate:(NSString *)arg1;
 - (void)requestTimingData:(NSString *)arg1 timingMetaData:(NSDictionary *)arg2;

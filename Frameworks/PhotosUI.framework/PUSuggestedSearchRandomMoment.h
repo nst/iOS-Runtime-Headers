@@ -3,7 +3,7 @@
  */
 
 @interface PUSuggestedSearchRandomMoment : PUSuggestedSearch {
-    PUSuggestedSearchRandomMomentAggreagator *_aggregator;
+    PUSuggestedSearchRandomMomentAggreagator * _aggregator;
 }
 
 - (void).cxx_destruct;

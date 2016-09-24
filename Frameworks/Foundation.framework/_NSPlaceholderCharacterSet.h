@@ -8,9 +8,9 @@
         unsigned int _builtin : 1; 
         unsigned int _isCF : 1; 
         unsigned int _reserved : 29; 
-    } _flags;
-    NSCharacterSet *_invertedSet;
-    NSCharacterSet *_original;
+    }  _flags;
+    NSCharacterSet * _invertedSet;
+    NSCharacterSet * _original;
 }
 
 - (void)_expandInverted;

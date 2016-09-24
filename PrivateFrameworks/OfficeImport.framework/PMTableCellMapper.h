@@ -3,11 +3,11 @@
  */
 
 @interface PMTableCellMapper : CMMapper {
-    OADTableCell *mCell;
-    int mColIndex;
-    unsigned int mRowIndex;
-    CMStyle *mStyle;
-    float mWidth;
+    OADTableCell * mCell;
+    int  mColIndex;
+    unsigned int  mRowIndex;
+    CMStyle * mStyle;
+    double  mWidth;
 }
 
 - (void)dealloc;

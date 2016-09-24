@@ -3,7 +3,7 @@
  */
 
 @interface IMDChatStore : NSObject {
-    NSString *_lastModificationStamp;
+    NSString * _lastModificationStamp;
 }
 
 @property (retain) NSString *modificationStamp;

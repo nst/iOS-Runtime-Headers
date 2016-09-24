@@ -3,17 +3,17 @@
  */
 
 @interface PUResourceDownloadRequest : NSObject <NSProgressReporting> {
-    NSMutableArray *__activeAssetResourcesRequest;
-    NSArray *__assetResources;
-    BOOL __downloadCanceled;
-    PHAsset *_asset;
-    id /* block */ _downloadCompletionHandler;
-    NSProgress *_progress;
-    NSMutableDictionary *_progressByRequestIdentifier;
-    id /* block */ _progressChangeHandler;
-    double _progressFraction;
-    int _requestType;
-    BOOL _shouldTreatLivePhotosAsStills;
+    NSMutableArray * __activeAssetResourcesRequest;
+    NSArray * __assetResources;
+    BOOL  __downloadCanceled;
+    PHAsset * _asset;
+    id /* block */  _downloadCompletionHandler;
+    NSProgress * _progress;
+    NSMutableDictionary * _progressByRequestIdentifier;
+    id /* block */  _progressChangeHandler;
+    double  _progressFraction;
+    int  _requestType;
+    BOOL  _shouldTreatLivePhotosAsStills;
 }
 
 @property (nonatomic, readonly) NSMutableArray *_activeAssetResourcesRequest;
@@ -25,7 +25,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) NSProgress *progress;
 @property (nonatomic, copy) id /* block */ progressChangeHandler;
-@property (nonatomic) double progressFraction;
+@property (setter=_setProgressFraction:, nonatomic) double progressFraction;
 @property (readonly) int requestType;
 @property (nonatomic) BOOL shouldTreatLivePhotosAsStills;
 @property (readonly) Class superclass;

@@ -3,7 +3,7 @@
  */
 
 @interface GateKeeper : CHLogger {
-    BOOL _hasDeviceBeenUnlockedSinceBoot;
+    BOOL  _hasDeviceBeenUnlockedSinceBoot;
 }
 
 @property BOOL hasDeviceBeenUnlockedSinceBoot;

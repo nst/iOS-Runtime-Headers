@@ -2,21 +2,20 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPStoreDownloadManager : NSObject <SSDownloadManagerObserver, SSPurchaseManagerDelegate, UIAlertViewDelegate> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSArray *_activeDownloads;
-    NSMutableArray *_blockObservers;
-    NSObject<OS_dispatch_queue> *_calloutSerialQueue;
-    UIAlertView *_cellularDownloadAlertView;
-    NSMutableArray *_cellularDownloadRequestCompletionHandlers;
-    NSMapTable *_downloadIdentifiersToDownloads;
-    SSDownloadManager *_downloadManager;
-    NSMutableArray *_downloads;
-    NSMapTable *_downloadsToObservers;
-    NSMapTable *_libraryIdentifiersToDownloads;
-    NSHashTable *_observersForAllDownloads;
-    SSPurchaseManager *_purchaseManager;
-    NSMapTable *_storeIdentifiersToDownloads;
+@interface MPStoreDownloadManager : NSObject <SSDownloadHandlerDelegate, SSDownloadManagerObserver, SSPurchaseManagerDelegate, UIAlertViewDelegate> {
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSArray * _activeDownloads;
+    NSMutableArray * _blockObservers;
+    NSObject<OS_dispatch_queue> * _calloutSerialQueue;
+    NSMutableDictionary * _downloadHandlers;
+    NSMapTable * _downloadIdentifiersToDownloads;
+    SSDownloadManager * _downloadManager;
+    NSMutableArray * _downloads;
+    NSMapTable * _downloadsToObservers;
+    NSMapTable * _libraryIdentifiersToDownloads;
+    NSHashTable * _observersForAllDownloads;
+    SSPurchaseManager * _purchaseManager;
+    NSMapTable * _storeIdentifiersToDownloads;
 }
 
 @property (nonatomic, readonly) NSArray *activeDownloads;
@@ -31,12 +30,9 @@
 
 - (void).cxx_destruct;
 - (void)_addPurchaseFinishedHandler:(id /* block */)arg1 forDownloads:(id)arg2;
-- (void)_dismissAndCleanupCellularDownloadAlertViewWithResult:(int)arg1;
+- (void)_addStoreDownloadForRedownloadProductItem:(id)arg1;
 - (id)_existingDownloadForSSDownload:(id)arg1;
 - (id)_init;
-- (void)_matchCellularRestrictedDidChangeNotification:(id)arg1;
-- (void)_musicCellularNetworkingAllowedDidChangeNotification:(id)arg1;
-- (void)_networkTypeDidChangeNotification:(id)arg1;
 - (id)_observersForAllDownloads;
 - (id)_observersForDownload:(id)arg1;
 - (void)_onQueue_addDownloadToMapTables:(id)arg1;
@@ -53,20 +49,20 @@
 - (void)_updateActiveDownloadsWithChangedActiveDownloads:(id)arg1 inactiveDownloads:(id)arg2;
 - (void)_updateDownloadsWithAdditions:(id)arg1 removals:(id)arg2;
 - (void)_updateMediaItemPropertiesForFinishedStoreDownload:(id)arg1 SSDownload:(id)arg2;
-- (id)activeDownloadForMediaItemPersistentID:(unsigned long long)arg1;
-- (id)activeDownloadForStoreID:(long long)arg1;
+- (id)activeDownloadForMediaItemPersistentID:(unsigned int)arg1;
+- (id)activeDownloadForStoreID:(int)arg1;
 - (id)activeDownloads;
 - (id)addDownloads:(id)arg1;
 - (void)addFinishHandler:(id /* block */)arg1 forDownloads:(id)arg2;
 - (void)addObserver:(id)arg1 forDownloads:(id)arg2;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)cancelDownloads:(id)arg1;
 - (void)dealloc;
-- (id)downloadForDownloadPersistentIdentifier:(long long)arg1;
+- (id)downloadForDownloadPersistentIdentifier:(int)arg1;
 - (id)downloadForMediaItem:(id)arg1;
-- (id)downloadForMediaItemPersistentID:(unsigned long long)arg1;
+- (id)downloadForMediaItemPersistentID:(unsigned int)arg1;
 - (id)downloadForMediaPlaybackItemMetadata:(id)arg1;
-- (id)downloadForStoreID:(long long)arg1;
+- (id)downloadForStoreID:(int)arg1;
+- (void)downloadHandler:(id)arg1 handleSession:(id)arg2;
 - (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (void)downloadManagerNetworkUsageDidChange:(id)arg1;
 - (id)downloads;

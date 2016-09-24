@@ -3,8 +3,8 @@
  */
 
 @interface BLTReachabilityManager : NSObject {
-    Reachability *_reachability;
-    int _reachabilityStatus;
+    Reachability * _reachability;
+    int  _reachabilityStatus;
 }
 
 @property int reachabilityStatus;

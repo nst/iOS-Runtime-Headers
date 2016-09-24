@@ -3,9 +3,9 @@
  */
 
 @interface _DECPredictionExpiry : NSObject <NSCopying, NSSecureCoding> {
-    NSDate *_date;
-    unsigned int _type;
-    int _value;
+    NSDate * _date;
+    unsigned int  _type;
+    int  _value;
 }
 
 @property (nonatomic, readonly) NSDate *date;

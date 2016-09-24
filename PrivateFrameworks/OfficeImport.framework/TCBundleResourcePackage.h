@@ -3,8 +3,8 @@
  */
 
 @interface TCBundleResourcePackage : NSObject {
-    NSMutableDictionary *mEntryMap;
-    OISFUZipArchive *mZipArchive;
+    NSMutableDictionary * mEntryMap;
+    OISFUZipArchive * mZipArchive;
 }
 
 - (void)dealloc;

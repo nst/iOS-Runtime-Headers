@@ -3,9 +3,9 @@
  */
 
 @interface CKDPZoneSaveRequest : PBRequest <NSCopying> {
-    NSString *_etag;
-    CKDPZone *_recordZone;
-    NSString *_zoneProtectionInfoTag;
+    NSString * _etag;
+    CKDPZone * _recordZone;
+    NSString * _zoneProtectionInfoTag;
 }
 
 @property (nonatomic, retain) NSString *etag;

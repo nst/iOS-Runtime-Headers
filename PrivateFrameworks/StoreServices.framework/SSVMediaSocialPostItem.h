@@ -3,8 +3,8 @@
  */
 
 @interface SSVMediaSocialPostItem : NSObject <NSCopying, SSXPCCoding> {
-    NSString *_identifier;
-    NSString *_type;
+    NSString * _identifier;
+    NSString * _type;
 }
 
 @property (readonly, copy) NSString *debugDescription;

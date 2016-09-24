@@ -3,10 +3,10 @@
  */
 
 @interface SSVSAPSignatureDataSource : NSObject {
-    NSData *_bodyData;
-    NSURLRequest *_request;
-    SSURLRequestProperties *_requestProperties;
-    NSHTTPURLResponse *_response;
+    NSData * _bodyData;
+    NSURLRequest * _request;
+    SSURLRequestProperties * _requestProperties;
+    NSHTTPURLResponse * _response;
 }
 
 @property (nonatomic, readonly) NSData *HTTPBody;

@@ -4,18 +4,18 @@
 
 @interface SKUIOnboardingInstructionsView : UIView {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _contentInset;
-    int _contentPosition;
-    UILabel *_explanationLabel;
-    NSMutableArray *_labelsStack;
-    UILabel *_titleLabel;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _contentInset;
+    int  _contentPosition;
+    UILabel * _explanationLabel;
+    NSMutableArray * _labelsStack;
+    UILabel * _titleLabel;
 }
 
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
 @property (nonatomic) int contentPosition;
 @property (nonatomic, readonly) UILabel *explanationLabel;
 @property (nonatomic, readonly) UILabel *titleLabel;
@@ -26,15 +26,15 @@
 - (void).cxx_destruct;
 - (id)_newExplanationLabel;
 - (id)_newTitleLabel;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
 - (int)contentPosition;
 - (id)explanationLabel;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)popLabelState;
 - (void)pushLabelState;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setContentPosition:(int)arg1;
 - (void)setContentPosition:(int)arg1 animated:(BOOL)arg2 completionBlock:(id /* block */)arg3;
 - (id)titleLabel;

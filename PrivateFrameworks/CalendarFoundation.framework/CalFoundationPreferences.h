@@ -3,7 +3,7 @@
  */
 
 @interface CalFoundationPreferences : NSObject {
-    CalPreferences *_preferences;
+    CalPreferences * _preferences;
 }
 
 @property (nonatomic, readonly) BOOL logAutoFlush;

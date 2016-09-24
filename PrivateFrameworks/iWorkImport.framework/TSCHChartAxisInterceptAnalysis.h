@@ -3,8 +3,8 @@
  */
 
 @interface TSCHChartAxisInterceptAnalysis : NSObject {
-    double _axisInterceptPosition;
-    int _gridValueType;
+    double  _axisInterceptPosition;
+    int  _gridValueType;
 }
 
 @property (nonatomic) double axisInterceptPosition;

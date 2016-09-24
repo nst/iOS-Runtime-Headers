@@ -3,13 +3,13 @@
  */
 
 @interface PLApplicationAgent : PLAgent {
-    BKSApplicationStateMonitor *_appStateMonitor;
-    NSSet *_currentDisplayIdentifiers;
-    NSMutableSet *_keyboardPlugins;
-    PLNSNotificationOperatorComposition *_notificationSBApplicationStateChanged;
-    PLTimer *_runTimeAggregatorTimer;
-    NSDate *_startDateForOverAllBackGroundActivity;
-    NSMutableSet *_widgetPlugins;
+    BKSApplicationStateMonitor * _appStateMonitor;
+    NSSet * _currentDisplayIdentifiers;
+    NSMutableSet * _keyboardPlugins;
+    PLNSNotificationOperatorComposition * _notificationSBApplicationStateChanged;
+    PLTimer * _runTimeAggregatorTimer;
+    NSDate * _startDateForOverAllBackGroundActivity;
+    NSMutableSet * _widgetPlugins;
 }
 
 @property (retain) BKSApplicationStateMonitor *appStateMonitor;
@@ -29,7 +29,6 @@
 + (id)entryEventForwardDefinitions;
 + (id)entryEventNoneAllApps;
 + (id)entryEventNoneAllPlugins;
-+ (id)entryEventNoneDefinitionApplicationMetadata;
 + (id)entryEventNoneDefinitions;
 + (id)entryEventPointDefinitions;
 + (id)installedPlugins;
@@ -51,8 +50,7 @@
 - (void)logEventPointApplication;
 - (void)logEventPointApplicationForDisplayID:(id)arg1;
 - (void)logEventPointApplicationForDisplayID:(id)arg1 withPid:(int)arg2 withState:(id)arg3 withReasons:(id)arg4;
-- (void)logEventPointApplicationMetaDataForDisplayID:(id)arg1 withPid:(int)arg2;
-- (void)logInstalledApp:(id)arg1;
+- (void)logInstalledAppWithProxy:(id)arg1 withBundleID:(id)arg2;
 - (void)logInstalledPlugin:(id)arg1;
 - (void)logUninstalledApp:(id)arg1;
 - (id)notificationSBApplicationStateChanged;

@@ -3,8 +3,8 @@
  */
 
 @interface SKUIProductPageTableSection : SKUITableViewSection {
-    SKUIClientContext *_clientContext;
-    BOOL _expanded;
+    SKUIClientContext * _clientContext;
+    BOOL  _expanded;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

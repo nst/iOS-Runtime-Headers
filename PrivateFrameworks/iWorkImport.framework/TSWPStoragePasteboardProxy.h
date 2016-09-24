@@ -6,9 +6,9 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
-    TSWPStorage *_storage;
-    <TSWPStyleProvider> *_styleProvider;
+    }  _range;
+    TSWPStorage * _storage;
+    <TSWPStyleProvider> * _styleProvider;
 }
 
 @property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } storageRange;

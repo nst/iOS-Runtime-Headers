@@ -3,16 +3,16 @@
  */
 
 @interface MSCLCompositionContainerViewController : SKUIViewController <MSCLComposePostViewControllerDelegate, SKUIModalDocumentViewController> {
-    UIBarButtonItem *_cancelButtonItem;
-    MSCLComposePostViewController *_composePostViewController;
-    MSCLConfiguration *_configuration;
-    <MSCLComposePostDelegate> *_delegate;
-    MSCLStoreItem *_item;
-    MSCLLoadConfigurationOperation *_loadConfigurationOperation;
-    <SKUIModalDocumentController> *_modalDocumentController;
-    UINavigationController *_navigationController;
-    NSMutableArray *_pendingAttachments;
-    UIBarButtonItem *_shareButtonItem;
+    UIBarButtonItem * _cancelButtonItem;
+    MSCLComposePostViewController * _composePostViewController;
+    MSCLConfiguration * _configuration;
+    <MSCLComposePostDelegate> * _delegate;
+    MSCLStoreItem * _item;
+    MSCLLoadConfigurationOperation * _loadConfigurationOperation;
+    <SKUIModalDocumentController> * _modalDocumentController;
+    UINavigationController * _navigationController;
+    NSMutableArray * _pendingAttachments;
+    UIBarButtonItem * _shareButtonItem;
 }
 
 @property (nonatomic, readonly, copy) MSCLConfiguration *configuration;
@@ -20,6 +20,7 @@
 @property (nonatomic) <MSCLComposePostDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, copy) MSCLStoreItem *item;
 @property (nonatomic) <SKUIModalDocumentController> *modalDocumentController;
 @property (nonatomic, readonly) BOOL needsNavigationDocument;
 @property (readonly) Class superclass;
@@ -40,14 +41,15 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithConfiguration:(id)arg1;
-- (id)initWithDocument:(id)arg1 options:(id)arg2;
 - (id)initWithItem:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)item;
 - (void)loadView;
 - (id)modalDocumentController;
 - (BOOL)needsNavigationDocument;
 - (int)preferredStatusBarStyle;
 - (void)setDelegate:(id)arg1;
+- (void)setItem:(id)arg1;
 - (void)setModalDocumentController:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 

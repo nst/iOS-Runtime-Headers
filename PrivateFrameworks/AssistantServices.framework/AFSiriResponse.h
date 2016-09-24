@@ -3,7 +3,7 @@
  */
 
 @interface AFSiriResponse : NSObject <NSSecureCoding> {
-    NSUUID *_requestIdentifier;
+    NSUUID * _requestIdentifier;
 }
 
 + (BOOL)supportsSecureCoding;

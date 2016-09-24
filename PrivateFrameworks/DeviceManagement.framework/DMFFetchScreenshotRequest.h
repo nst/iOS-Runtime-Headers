@@ -3,8 +3,8 @@
  */
 
 @interface DMFFetchScreenshotRequest : CATTaskRequest {
-    unsigned int _maxHeight;
-    unsigned int _maxWidth;
+    unsigned int  _maxHeight;
+    unsigned int  _maxWidth;
 }
 
 @property (nonatomic) unsigned int maxHeight;

@@ -3,17 +3,17 @@
  */
 
 @interface BLDuotoneFilter : CIFilter {
-    CIFilter *_colorCubeFilter;
-    NSNumber *_inputAddColor;
-    NSNumber *_inputAmount;
-    CIImage *_inputImage;
-    NSNumber *_inputStrength;
-    NSNumber *_inputVersion;
-    BOOL _lastAddColor;
-    float _lastAmount;
-    float _lastStrength;
-    int _lastVersion;
-    BOOL _needsReprocess;
+    CIFilter * _colorCubeFilter;
+    NSNumber * _inputAddColor;
+    NSNumber * _inputAmount;
+    CIImage * _inputImage;
+    NSNumber * _inputStrength;
+    NSNumber * _inputVersion;
+    BOOL  _lastAddColor;
+    double  _lastAmount;
+    double  _lastStrength;
+    int  _lastVersion;
+    BOOL  _needsReprocess;
 }
 
 @property (nonatomic, retain) CIFilter *colorCubeFilter;

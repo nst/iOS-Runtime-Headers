@@ -3,10 +3,10 @@
  */
 
 @interface GKGridLayoutInvalidationContext : UICollectionViewLayoutInvalidationContext {
-    BOOL _invalidateBoundsChange;
-    BOOL _invalidateIncrementalReveal;
-    BOOL _invalidatePinnableAreas;
-    BOOL _invalidatePlaceholderVisibility;
+    BOOL  _invalidateBoundsChange;
+    BOOL  _invalidateIncrementalReveal;
+    BOOL  _invalidatePinnableAreas;
+    BOOL  _invalidatePlaceholderVisibility;
 }
 
 @property (nonatomic) BOOL invalidateBoundsChange;

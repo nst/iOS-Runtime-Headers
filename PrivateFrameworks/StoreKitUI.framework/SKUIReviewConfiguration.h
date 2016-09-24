@@ -3,10 +3,10 @@
  */
 
 @interface SKUIReviewConfiguration : NSObject {
-    NSString *_allVersionsURLString;
-    NSString *_currentVersionURLString;
-    NSString *_pageNumberQueryParameter;
-    NSString *_ratingURLString;
+    NSString * _allVersionsURLString;
+    NSString * _currentVersionURLString;
+    NSString * _pageNumberQueryParameter;
+    NSString * _ratingURLString;
 }
 
 @property (nonatomic, readonly) NSString *allVersionsURLString;

@@ -3,12 +3,12 @@
  */
 
 @interface SKUIRowComponent : SKUIPageComponent {
-    UIColor *_backgroundColor;
-    NSArray *_childComponents;
-    NSArray *_columnWidths;
-    int _missingItemCount;
-    int _numberOfColumns;
-    BOOL _shouldAutoFlow;
+    UIColor * _backgroundColor;
+    NSArray * _childComponents;
+    NSArray * _columnWidths;
+    int  _missingItemCount;
+    int  _numberOfColumns;
+    BOOL  _shouldAutoFlow;
 }
 
 @property (nonatomic, readonly) UIColor *backgroundColor;

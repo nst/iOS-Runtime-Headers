@@ -3,13 +3,13 @@
  */
 
 @interface TSUDispatchData : NSObject {
-    BOOL _alwaysDefragmentData;
-    NSObject<OS_dispatch_data> *_data;
-    NSObject<OS_dispatch_data> *_defragmentedData;
-    NSObject<OS_dispatch_data> *_fragmentedData;
-    unsigned int _fragmentsCount;
-    unsigned int _maxFragmentsCount;
-    unsigned long _size;
+    BOOL  _alwaysDefragmentData;
+    NSObject<OS_dispatch_data> * _data;
+    NSObject<OS_dispatch_data> * _defragmentedData;
+    NSObject<OS_dispatch_data> * _fragmentedData;
+    unsigned int  _fragmentsCount;
+    unsigned int  _maxFragmentsCount;
+    unsigned long  _size;
 }
 
 @property (nonatomic) BOOL alwaysDefragmentData;

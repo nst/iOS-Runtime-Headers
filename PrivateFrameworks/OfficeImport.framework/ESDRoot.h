@@ -3,7 +3,7 @@
  */
 
 @interface ESDRoot : ESDObject {
-    NSMutableArray *mChildren;
+    NSMutableArray * mChildren;
 }
 
 - (void)addChild:(id)arg1;

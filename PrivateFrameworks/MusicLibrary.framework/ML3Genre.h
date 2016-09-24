@@ -7,7 +7,7 @@
 // Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
 
 + (id)allProperties;
-+ (id)countingQueryForBaseQuery:(id)arg1 countProperty:(id)arg2 forIdentifier:(long long)arg3;
++ (id)countingQueryForBaseQuery:(id)arg1 countProperty:(id)arg2 forIdentifier:(int)arg3;
 + (id)databaseTable;
 + (id)defaultOrderingTerms;
 + (id)foreignPropertyForProperty:(id)arg1 entityClass:(Class)arg2;

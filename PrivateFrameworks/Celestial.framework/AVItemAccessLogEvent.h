@@ -3,13 +3,13 @@
  */
 
 @interface AVItemAccessLogEvent : NSObject <NSCopying> {
-    AVItemAccessLogEventInternal *_playerItemAccessLogEvent;
+    AVItemAccessLogEventInternal * _playerItemAccessLogEvent;
 }
 
 @property (nonatomic, readonly) NSString *URI;
 @property (nonatomic, readonly) double durationWatched;
 @property (nonatomic, readonly) double indicatedBitrate;
-@property (nonatomic, readonly) long long numberOfBytesTransferred;
+@property (nonatomic, readonly) int numberOfBytesTransferred;
 @property (nonatomic, readonly) int numberOfDroppedVideoFrames;
 @property (nonatomic, readonly) int numberOfSegmentsDownloaded;
 @property (nonatomic, readonly) int numberOfServerAddressChanges;
@@ -22,6 +22,8 @@
 @property (nonatomic, readonly) NSString *serverAddress;
 
 - (id)URI;
+- (double)averageAudioBitrate;
+- (double)averageVideoBitrate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (double)durationWatched;
@@ -29,7 +31,7 @@
 - (double)indicatedBitrate;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
-- (long long)numberOfBytesTransferred;
+- (int)numberOfBytesTransferred;
 - (int)numberOfDroppedVideoFrames;
 - (int)numberOfSegmentsDownloaded;
 - (int)numberOfServerAddressChanges;

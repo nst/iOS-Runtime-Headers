@@ -3,10 +3,10 @@
  */
 
 @interface OACredential : NSObject {
-    NSString *_consumerKey;
-    NSString *_consumerSecret;
-    NSString *_oauthToken;
-    NSString *_oauthTokenSecret;
+    NSString * _consumerKey;
+    NSString * _consumerSecret;
+    NSString * _oauthToken;
+    NSString * _oauthTokenSecret;
 }
 
 @property (nonatomic, copy) NSString *consumerKey;

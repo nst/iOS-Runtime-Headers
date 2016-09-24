@@ -3,7 +3,7 @@
  */
 
 @interface PUPerformanceDiagnosticsSettings : PUSettings {
-    BOOL _shouldTracePerformance;
+    BOOL  _shouldTracePerformance;
 }
 
 @property (nonatomic) BOOL shouldTracePerformance;

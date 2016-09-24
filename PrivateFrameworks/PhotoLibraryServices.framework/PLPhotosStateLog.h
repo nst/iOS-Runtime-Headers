@@ -3,8 +3,8 @@
  */
 
 @interface PLPhotosStateLog : NSObject {
-    NSObject<OS_dispatch_group> *_group;
-    PLPhotoLibrary *_photoLibrary;
+    NSObject<OS_dispatch_group> * _group;
+    PLPhotoLibrary * _photoLibrary;
 }
 
 @property (nonatomic, readonly, retain) NSObject<OS_dispatch_group> *group;

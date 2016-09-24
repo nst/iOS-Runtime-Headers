@@ -3,7 +3,7 @@
  */
 
 @interface CAPackage : NSObject {
-    struct _CAPackageData { id x1; id x2; bool x3; id x4; } *_data;
+    struct _CAPackageData { id x1; id x2; bool x3; id x4; } * _data;
 }
 
 @property (getter=isGeometryFlipped, readonly) BOOL geometryFlipped;

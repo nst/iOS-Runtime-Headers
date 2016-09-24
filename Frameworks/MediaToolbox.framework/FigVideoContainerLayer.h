@@ -3,8 +3,8 @@
  */
 
 @interface FigVideoContainerLayer : FigBaseCALayer {
-    BOOL _shouldResizeVideoLayer;
-    CALayer *_videoLayer;
+    BOOL  _shouldResizeVideoLayer;
+    CALayer * _videoLayer;
 }
 
 @property (nonatomic) BOOL shouldResizeVideoLayer;

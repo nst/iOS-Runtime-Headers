@@ -3,8 +3,8 @@
  */
 
 @interface _GEOPlaceDataReview : NSObject <GEOMapItemReview> {
-    GEOPDPlace *_placeData;
-    GEOPDReview *_review;
+    GEOPDPlace * _placeData;
+    GEOPDReview * _review;
 }
 
 @property (getter=_date, nonatomic, readonly) NSDate *date;

@@ -3,24 +3,24 @@
  */
 
 @interface PUAdjustmentsToolController : PUPhotoEditToolController <PUAdjustmentsModeBarDataSource, PUAdjustmentsModeBarDelegate, PUPhotoEditVisualLevelSliderDataSource, UIGestureRecognizerDelegate, UIScrollViewDelegate> {
-    NSArray *__allAvailableModes;
-    PUSnappingController *__snappingController;
-    UIScrollView *_adjustmentScrollView;
-    NSArray *_adjustmentScrollViewConstraints;
-    PUAdjustmentsModeBar *_adjustmentsModeBar;
-    NSArray *_adjustmentsModeBarConstraints;
-    NSMutableSet *_cleanSliderThumbnailsModes;
-    float _currentModeLevelSliderOffset;
+    NSArray * __allAvailableModes;
+    PUSnappingController * __snappingController;
+    UIScrollView * _adjustmentScrollView;
+    NSArray * _adjustmentScrollViewConstraints;
+    PUAdjustmentsModeBar * _adjustmentsModeBar;
+    NSArray * _adjustmentsModeBarConstraints;
+    NSMutableSet * _cleanSliderThumbnailsModes;
+    double  _currentModeLevelSliderOffset;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _interactionInitialScrollOffset;
-    int _interactionMode;
-    float _interactiveModeTransitionStartOffset;
-    PUAdjustmentsMode *_lastUsedMode;
-    NSMapTable *_levelSlidersByMode;
-    float _scrollViewModeSwitchSideOriginOffset;
-    NSMapTable *_sliderThumbnailsByModeAndIntensity;
+        double x; 
+        double y; 
+    }  _interactionInitialScrollOffset;
+    int  _interactionMode;
+    double  _interactiveModeTransitionStartOffset;
+    PUAdjustmentsMode * _lastUsedMode;
+    NSMapTable * _levelSlidersByMode;
+    double  _scrollViewModeSwitchSideOriginOffset;
+    NSMapTable * _sliderThumbnailsByModeAndIntensity;
 }
 
 @property (setter=_setSnappingController:, nonatomic, retain) PUSnappingController *_snappingController;
@@ -63,22 +63,24 @@
 - (id)adjustmentsModeBar:(id)arg1 levelSliderForMode:(id)arg2;
 - (void)adjustmentsModeBarDidChangeModeListExpandedState:(id)arg1;
 - (void)adjustmentsModeBarDidChangeSelectedMode:(id)arg1;
+- (void)basePhotoInvalidated;
 - (BOOL)canResetToDefaultValue;
 - (void)didBecomeActiveTool;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (BOOL)installLivePhotoPlaybackGestureRecognizer:(id)arg1;
 - (BOOL)installTogglePreviewGestureRecognizer:(id)arg1;
 - (void)loadView;
 - (id)localizedName;
 - (id)localizedResetToolActionTitle;
 - (void)photoEditModelDidChange;
 - (id)preferredPreviewBackgroundColor;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })preferredPreviewViewInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })preferredPreviewViewInsets;
 - (void)resetToDefaultValueAnimated:(BOOL)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
 - (id)selectedToolbarIcon;
 - (void)setLayoutOrientation:(int)arg1;
 - (void)setLayoutOrientation:(int)arg1 withTransitionCoordinator:(id)arg2;

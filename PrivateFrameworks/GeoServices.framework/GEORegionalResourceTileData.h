@@ -3,12 +3,15 @@
  */
 
 @interface GEORegionalResourceTileData : PBCodable <NSCopying> {
-    NSMutableArray *_attributions;
-    NSMutableArray *_icons;
+    NSMutableArray * _attributions;
+    NSMutableArray * _icons;
 }
 
 @property (nonatomic, retain) NSMutableArray *attributions;
 @property (nonatomic, retain) NSMutableArray *icons;
+
++ (Class)attributionType;
++ (Class)iconType;
 
 - (void)addAttribution:(id)arg1;
 - (void)addIcon:(id)arg1;

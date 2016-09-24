@@ -3,11 +3,11 @@
  */
 
 @interface NSKeyValueContainerClass : NSObject {
-    int (*_cachedObservationInfoImplementation;
-    int (*_cachedSetObservationInfoImplementation;
-    BOOL _cachedSetObservationInfoTakesAnObject;
-    struct { Class x1; Class x2; struct __CFSet {} *x3; struct __CFDictionary {} *x4; struct _opaque_pthread_mutex_t { long x_5_1_1; BOOL x_5_1_2[40]; } x5; BOOL x6; } *_notifyingInfo;
-    Class _originalClass;
+    int (* _cachedObservationInfoImplementation;
+    int (* _cachedSetObservationInfoImplementation;
+    BOOL  _cachedSetObservationInfoTakesAnObject;
+    struct { Class x1; Class x2; struct __CFSet {} *x3; struct __CFDictionary {} *x4; struct _opaque_pthread_mutex_t { long x_5_1_1; BOOL x_5_1_2[40]; } x5; BOOL x6; } * _notifyingInfo;
+    Class  _originalClass;
 }
 
 - (id)description;

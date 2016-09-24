@@ -33,6 +33,7 @@
 // Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (id)autoupdatingCurrentCalendar;
 + (id)calendarWithIdentifier:(id)arg1;
 + (id)currentCalendar;
 + (void)initialize;
@@ -130,32 +131,28 @@
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
-+ (id)autoupdatingCurrentCalendar;
-
 - (Class)classForCoder;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
++ (id)hk_canonicalDateOfBirthDateComponentsWithDate:(id)arg1;
++ (id)hk_gregorianCalendar;
 + (id)hk_gregorianCalendarWithUTCTimeZone;
 
 - (id)hk_activitySummaryDateComponentsFromDate:(id)arg1;
+- (id)hk_dateByShiftingFromGregorianCalendarWithUTCTimeZone:(id)arg1;
+- (id)hk_dateByShiftingToGregorianCalendarWithUTCTimeZone:(id)arg1;
 - (id)hk_dateBySubtractingDays:(unsigned int)arg1 fromDate:(id)arg2;
+- (id)hk_dateFromComponentsWithYear:(int)arg1 month:(int)arg2 day:(int)arg3 hour:(int)arg4;
+- (id)hk_dateOfBirthDateComponentsWithDate:(id)arg1;
 - (id)hk_startOfDateByAddingDays:(int)arg1 toDate:(id)arg2;
 - (id)hk_startOfDateBySubtractingDays:(int)arg1 fromDate:(id)arg2;
 - (id)hk_startOfFitnessWeekBeforeDate:(id)arg1;
+- (id)hk_startOfSleepDayForDate:(id)arg1;
 - (id)hk_startOfWeekWithFirstWeekday:(int)arg1 beforeDate:(id)arg2;
 - (id)hk_weekendDays;
-
-// Image: /System/Library/Frameworks/MapKit.framework/MapKit
-
-- (id)_maps_dateStringForDate:(id)arg1 withStyle:(unsigned int)arg2 useRelativeFormatting:(BOOL)arg3 inTimeZone:(id)arg4;
-- (BOOL)_maps_isDateInToday:(id)arg1 inTimeZone:(id)arg2;
-- (BOOL)_maps_isDateInTomorrow:(id)arg1 inTimeZone:(id)arg2;
-- (id)_maps_offsetDate:(id)arg1 toTimeZone:(id)arg2;
-- (id)_maps_relativeDateStringForDate:(id)arg1 context:(int)arg2 inTimeZone:(id)arg3;
-- (id)_maps_transitRelativeDateStringForDate:(id)arg1 context:(int)arg2 inTimeZone:(id)arg3;
 
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 
@@ -195,10 +192,6 @@
 
 - (unsigned int)__ck_unitOfDisambiguityFromDate:(id)arg1 toDate:(id)arg2;
 
-// Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
-
-- (int)_cd_daysFromDate:(id)arg1 toDate:(id)arg2;
-
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 - (id)hd_predicateForDeletedObjectsCreatedBeforeDate:(id)arg1 minusDays:(unsigned int)arg2;
@@ -212,5 +205,14 @@
 - (id)hk_startOfMonthForDate:(id)arg1;
 - (id)hk_startOfTomorrowForDate:(id)arg1;
 - (id)hk_yesterdayAtNoonForDate:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
+
+- (id)_navigation_dateStringForDate:(id)arg1 withStyle:(unsigned int)arg2 useRelativeFormatting:(BOOL)arg3 inTimeZone:(id)arg4;
+- (BOOL)_navigation_isDateInToday:(id)arg1 inTimeZone:(id)arg2;
+- (BOOL)_navigation_isDateInTomorrow:(id)arg1 inTimeZone:(id)arg2;
+- (id)_navigation_offsetDate:(id)arg1 toTimeZone:(id)arg2;
+- (id)_navigation_relativeDateStringForDate:(id)arg1 context:(int)arg2 inTimeZone:(id)arg3;
+- (id)_navigation_transitRelativeDateStringForDate:(id)arg1 context:(int)arg2 inTimeZone:(id)arg3;
 
 @end

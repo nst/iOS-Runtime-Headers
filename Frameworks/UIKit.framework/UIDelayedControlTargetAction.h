@@ -3,7 +3,7 @@
  */
 
 @interface UIDelayedControlTargetAction : UIControlTargetAction {
-    UIEvent *_event;
+    UIEvent * _event;
 }
 
 @property (nonatomic, retain) UIEvent *event;

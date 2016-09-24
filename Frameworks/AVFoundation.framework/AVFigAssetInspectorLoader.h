@@ -3,18 +3,24 @@
  */
 
 @interface AVFigAssetInspectorLoader : AVAssetInspectorLoader {
-    NSURL *_URL;
-    AVAssetInspector *_assetInspector;
-    long _assetInspectorOnce;
-    NSObject<OS_dispatch_queue> *_completionHandlerQueue;
-    struct OpaqueFigAsset { } *_figAsset;
-    long _figAssetCreationStatus;
-    int _fragmentMinderAssociationCount;
-    NSMutableArray *_loadingBatches;
-    BOOL _loadingCanceled;
-    struct OpaqueFigSimpleMutex { } *_loadingMutex;
-    BOOL _registeredForFigAssetNotifications;
-    AVWeakReference *_weakReferenceToAsset;
+    NSURL * _URL;
+    BOOL  _URLSessionDataDelegateAvailable;
+    BOOL  _URLSessionOperationQueueAvailable;
+    AVAssetInspector * _assetInspector;
+    long  _assetInspectorOnce;
+    NSObject<OS_dispatch_queue> * _completionHandlerQueue;
+    BOOL  _didPostDidCompleteURLSessionSetUpNotification;
+    BOOL  _didPostDidFailToCompleteURLSessionSetUpNotification;
+    struct OpaqueFigAsset { } * _figAsset;
+    long  _figAssetCreationStatus;
+    int  _fragmentMinderAssociationCount;
+    BOOL  _isRespondingToFigAssetPropertyLoading;
+    NSMutableArray * _loadingBatches;
+    BOOL  _loadingCanceled;
+    struct OpaqueFigSimpleMutex { } * _loadingMutex;
+    BOOL  _registeredForFigAssetNotifications;
+    BOOL  _shouldRespondToFigAssetPropertyLoading;
+    AVWeakReference * _weakReferenceToAsset;
 }
 
 + (id)_figAssetPropertiesForKeys;
@@ -22,6 +28,8 @@
 + (void)_mapAssetKeys:(id)arg1 toFigAssetPropertySet:(id)arg2 figAssetTrackPropertySet:(id)arg3 callerName:(id)arg4;
 
 - (id)URL;
+- (id)_URLSessionDataDelegate;
+- (id)_URLSessionOperationQueue;
 - (void)_addFigAssetNotifications;
 - (Class)_classForTrackInspectors;
 - (id)_completionHandlerQueue;
@@ -34,20 +42,25 @@
 - (int)_loadStatusForProperty:(id)arg1 figAsset:(struct OpaqueFigAsset { }*)arg2 error:(id*)arg3;
 - (id)_loadingBatches;
 - (struct OpaqueFigSimpleMutex { }*)_loadingMutex;
+- (void)_postDidFailToCompleteURLSessionSetUpNotificationIfAppropriate;
+- (void)_postURLSessionSetUpDidCompleteNotificationIfAppropriate;
 - (void)_removeFigAssetNotifications;
 - (void)_setFragmentMindingInterval:(double)arg1;
 - (void)_setIsAssociatedWithFragmentMinder:(BOOL)arg1;
+- (void)_setURLSessionDataDelegateAvailable:(BOOL)arg1;
+- (void)_setURLSessionOperationQueueAvailable:(BOOL)arg1;
+- (id)asset;
 - (id)assetInspector;
 - (void)cancelLoading;
 - (void)dealloc;
-- (unsigned long long)downloadToken;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
+- (unsigned int)downloadToken;
+- (struct { int x1; int x2; unsigned int x3; int x4; })duration;
 - (id)figChapterGroupInfo;
 - (id)figChapters;
 - (void)finalize;
 - (BOOL)hasProtectedContent;
 - (id)initWithFigAsset:(struct OpaqueFigAsset { }*)arg1 forAsset:(id)arg2;
-- (id)initWithURL:(id)arg1 figAssetCreationFlags:(unsigned long long)arg2 figAssetCreationOptions:(id)arg3 forAsset:(id)arg4;
+- (id)initWithURL:(id)arg1 figAssetCreationFlags:(unsigned int)arg2 figAssetCreationOptions:(id)arg3 forAsset:(id)arg4;
 - (BOOL)isAssociatedWithFragmentMinder;
 - (BOOL)isCompatibleWithSavedPhotosAlbum;
 - (BOOL)isComposable;

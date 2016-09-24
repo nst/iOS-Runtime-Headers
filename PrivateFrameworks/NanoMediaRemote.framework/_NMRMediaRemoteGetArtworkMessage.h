@@ -5,8 +5,8 @@
 @interface _NMRMediaRemoteGetArtworkMessage : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
-    } _has;
-    double _timestamp;
+    }  _has;
+    double  _timestamp;
 }
 
 @property (nonatomic) BOOL hasTimestamp;

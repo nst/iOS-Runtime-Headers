@@ -3,9 +3,9 @@
  */
 
 @interface HSControlPromptUpdateResponse : HSResponse {
-    unsigned int _nextPromptID;
-    HSControlPrompt *_prompt;
-    NSDictionary *_promptDictionary;
+    unsigned int  _nextPromptID;
+    HSControlPrompt * _prompt;
+    NSDictionary * _promptDictionary;
 }
 
 @property (nonatomic) unsigned int nextPromptID;

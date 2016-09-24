@@ -3,8 +3,8 @@
  */
 
 @interface MPUEmphasizedText : NSObject <NSCopying, NSSecureCoding> {
-    NSMutableSet *_emphasisRangesSet;
-    NSString *_string;
+    NSMutableSet * _emphasisRangesSet;
+    NSString * _string;
 }
 
 @property (nonatomic, readonly, copy) NSArray *emphasisRanges;

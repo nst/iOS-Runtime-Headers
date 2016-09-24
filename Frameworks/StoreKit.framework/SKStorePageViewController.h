@@ -3,11 +3,11 @@
  */
 
 @interface SKStorePageViewController : UIViewController <SKStoreProductViewControllerDelegate> {
-    _UIAsyncInvocation *_cancelRequest;
-    id /* block */ _loadBlock;
-    SKStoreProductViewController *_productPageViewController;
-    SKRemoteStorePageViewController *_remoteViewController;
-    SKInvocationQueueProxy<SKUIServiceStorePageViewController> *_serviceProxy;
+    _UIAsyncInvocation * _cancelRequest;
+    id /* block */  _loadBlock;
+    SKStoreProductViewController * _productPageViewController;
+    SKRemoteStorePageViewController * _remoteViewController;
+    SKInvocationQueueProxy<SKUIServiceStorePageViewController> * _serviceProxy;
 }
 
 @property (readonly, copy) NSString *debugDescription;

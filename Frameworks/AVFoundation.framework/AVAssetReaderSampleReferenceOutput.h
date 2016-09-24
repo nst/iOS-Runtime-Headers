@@ -3,7 +3,7 @@
  */
 
 @interface AVAssetReaderSampleReferenceOutput : AVAssetReaderOutput {
-    AVAssetReaderSampleReferenceOutputInternal *_sampleReferenceOutputInternal;
+    AVAssetReaderSampleReferenceOutputInternal * _sampleReferenceOutputInternal;
 }
 
 @property (nonatomic, readonly) AVAssetTrack *track;

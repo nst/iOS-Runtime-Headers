@@ -3,7 +3,7 @@
  */
 
 @interface HDBackgroundTaskClient : NSObject {
-    id /* block */ _taskHandler;
+    id /* block */  _taskHandler;
 }
 
 - (void).cxx_destruct;

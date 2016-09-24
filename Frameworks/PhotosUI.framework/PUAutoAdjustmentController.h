@@ -3,16 +3,16 @@
  */
 
 @interface PUAutoAdjustmentController : NSObject {
-    BOOL _busy;
-    NSArray *_cachedRedEyeCorrections;
-    float _cachedSmartColorLevel;
-    float _cachedSmartToneLevel;
-    BOOL _cachedValuesAreValid;
-    NSDictionary *_cachedWhiteBalanceSettings;
-    PLPhotoEditModel *_stashedPreviousManualModel;
+    BOOL  _busy;
+    NSArray * _cachedRedEyeCorrections;
+    double  _cachedSmartColorLevel;
+    double  _cachedSmartToneLevel;
+    BOOL  _cachedValuesAreValid;
+    NSDictionary * _cachedWhiteBalanceSettings;
+    PLPhotoEditModel * _stashedPreviousManualModel;
 }
 
-@property (getter=isBusy, nonatomic) BOOL busy;
+@property (getter=isBusy, setter=_setBusy:, nonatomic) BOOL busy;
 
 - (void).cxx_destruct;
 - (void)_applyAutoValuesOnModel:(id)arg1 whiteBalanceSettings:(id)arg2 redEyeCorrections:(id)arg3 smartToneLevel:(float)arg4 smartColorLevel:(float)arg5 valuesCalculator:(id)arg6 animated:(BOOL)arg7;

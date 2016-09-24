@@ -3,8 +3,8 @@
  */
 
 @interface CDPServiceViewController : UIViewController <CDPServiceInterface> {
-    UIViewController *_contentViewController;
-    BOOL _inlineMode;
+    UIViewController * _contentViewController;
+    BOOL  _inlineMode;
 }
 
 + (id)_exportedInterface;

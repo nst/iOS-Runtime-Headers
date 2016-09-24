@@ -3,9 +3,9 @@
  */
 
 @interface PKCatalogGroup : NSObject <NSCopying, NSSecureCoding> {
-    NSNumber *_groupID;
-    BOOL _isUbiquitous;
-    NSMutableArray *_uniqueIDs;
+    NSNumber * _groupID;
+    BOOL  _isUbiquitous;
+    NSMutableArray * _uniqueIDs;
 }
 
 @property (nonatomic, retain) NSNumber *groupID;
@@ -14,8 +14,8 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)groupID;

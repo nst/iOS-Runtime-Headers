@@ -3,9 +3,9 @@
  */
 
 @interface PSNavBarSpinnerManager : NSObject {
-    NSMutableDictionary *_navigationItems;
-    NSMutableDictionary *_savedLeftItems;
-    NSMutableDictionary *_savedRightItems;
+    NSMutableDictionary * _navigationItems;
+    NSMutableDictionary * _savedLeftItems;
+    NSMutableDictionary * _savedRightItems;
 }
 
 + (id)sharedSpinnerManager;

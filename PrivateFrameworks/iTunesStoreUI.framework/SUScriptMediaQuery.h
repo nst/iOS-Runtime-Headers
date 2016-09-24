@@ -3,10 +3,10 @@
  */
 
 @interface SUScriptMediaQuery : SUScriptObject {
-    NSArray *_collections;
-    NSArray *_filterPredicates;
-    NSArray *_items;
-    BOOL _watchingLibrary;
+    NSArray * _collections;
+    NSArray * _filterPredicates;
+    NSArray * _items;
+    BOOL  _watchingLibrary;
 }
 
 @property (readonly) NSArray *collections;

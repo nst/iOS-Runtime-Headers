@@ -3,13 +3,13 @@
  */
 
 @interface AWDIMessageDeliveredMessage : PBCodable <NSCopying> {
-    unsigned int _deliveryDuration;
-    NSString *_guid;
+    unsigned int  _deliveryDuration;
+    NSString * _guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int deliveryDuration : 1; 
-    } _has;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int deliveryDuration;

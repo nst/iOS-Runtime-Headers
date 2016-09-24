@@ -5,14 +5,14 @@
 @interface GEOPhotoOptions : PBCodable <NSCopying> {
     struct { 
         unsigned int photoType : 1; 
-    } _has;
-    int _maxPhotos;
+    }  _has;
+    int  _maxPhotos;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _photoSizes;
-    int _photoType;
+    }  _photoSizes;
+    int  _photoType;
 }
 
 @property (nonatomic) BOOL hasPhotoType;
@@ -21,6 +21,8 @@
 @property (nonatomic, readonly) unsigned int photoSizesCount;
 @property (nonatomic) int photoType;
 
+- (int)StringAsPhotoSizes:(id)arg1;
+- (int)StringAsPhotoType:(id)arg1;
 - (void)addPhotoSize:(int)arg1;
 - (void)clearPhotoSizes;
 - (void)copyTo:(id)arg1;
@@ -35,8 +37,10 @@
 - (void)mergeFrom:(id)arg1;
 - (int)photoSizeAtIndex:(unsigned int)arg1;
 - (int*)photoSizes;
+- (id)photoSizesAsString:(int)arg1;
 - (unsigned int)photoSizesCount;
 - (int)photoType;
+- (id)photoTypeAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasPhotoType:(BOOL)arg1;
 - (void)setMaxPhotos:(int)arg1;

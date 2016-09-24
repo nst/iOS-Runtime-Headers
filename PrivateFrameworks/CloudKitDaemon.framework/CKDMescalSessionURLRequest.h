@@ -3,8 +3,8 @@
  */
 
 @interface CKDMescalSessionURLRequest : CKDURLRequest {
-    NSData *_mescalData;
-    NSData *_sessionData;
+    NSData * _mescalData;
+    NSData * _sessionData;
 }
 
 @property (nonatomic, retain) NSData *mescalData;

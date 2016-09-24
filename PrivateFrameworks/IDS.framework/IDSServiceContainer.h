@@ -3,8 +3,8 @@
  */
 
 @interface IDSServiceContainer : NSObject {
-    NSMutableSet *_listeners;
-    IDSServiceMonitor *_monitor;
+    NSMutableSet * _listeners;
+    IDSServiceMonitor * _monitor;
 }
 
 @property (nonatomic, readonly, retain) NSMutableSet *listeners;

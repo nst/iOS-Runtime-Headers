@@ -3,8 +3,8 @@
  */
 
 @interface WDDateTime : WDRun {
-    NSDate *mDate;
-    WDCharacterProperties *mProperties;
+    NSDate * mDate;
+    WDCharacterProperties * mProperties;
 }
 
 - (void)clearProperties;

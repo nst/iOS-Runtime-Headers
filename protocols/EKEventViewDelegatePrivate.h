@@ -11,6 +11,7 @@
 - (void)eventViewController:(EKEventViewController *)arg1 willDismissEditViewController:(EKEventEditViewController *)arg2 deleted:(BOOL)arg3;
 - (void)eventViewControllerDidBeginEditingEventWithEditViewController:(EKEventEditViewController *)arg1;
 - (void)eventViewControllerDidRequestAddToCalendar:(EKEventViewController *)arg1;
+- (BOOL)eventViewControllerEditButtonTemporarilyDisabled:(EKEventViewController *)arg1;
 - (void)eventViewControllerInlineEditButtonWasTapped:(EKEventViewController *)arg1;
 - (BOOL)eventViewControllerPresentationWantsHiddenNavBarForSingleController;
 - (BOOL)eventViewControllerShouldAlwaysShowNavBar:(EKEventViewController *)arg1;

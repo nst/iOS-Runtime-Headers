@@ -3,11 +3,11 @@
  */
 
 @interface PUPublishingActivity : PUActivity {
-    PLPublishingMedia *__publishingMedia;
-    PLPublishingAgent *_currentAgent;
-    double _endTime;
-    UIViewController *_referenceViewController;
-    double _startTime;
+    PLPublishingMedia * __publishingMedia;
+    PLPublishingAgent * _currentAgent;
+    double  _endTime;
+    UIViewController * _referenceViewController;
+    double  _startTime;
 }
 
 @property (setter=_setPublishingMedia:, nonatomic, retain) PLPublishingMedia *_publishingMedia;

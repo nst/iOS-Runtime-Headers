@@ -3,16 +3,16 @@
  */
 
 @interface CKDPRecordRetrieveChangesRequest : PBRequest <NSCopying> {
-    CKDPAssetsToDownload *_assetsToDownload;
+    CKDPAssetsToDownload * _assetsToDownload;
     struct { 
         unsigned int maxChanges : 1; 
         unsigned int requestedChangeTypes : 1; 
-    } _has;
-    unsigned int _maxChanges;
-    int _requestedChangeTypes;
-    CKDPRequestedFields *_requestedFields;
-    NSData *_syncContinuationToken;
-    CKDPRecordZoneIdentifier *_zoneIdentifier;
+    }  _has;
+    unsigned int  _maxChanges;
+    int  _requestedChangeTypes;
+    CKDPRequestedFields * _requestedFields;
+    NSData * _syncContinuationToken;
+    CKDPRecordZoneIdentifier * _zoneIdentifier;
 }
 
 @property (nonatomic, retain) CKDPAssetsToDownload *assetsToDownload;
@@ -31,6 +31,7 @@
 + (id)options;
 
 - (void).cxx_destruct;
+- (int)StringAsRequestedChangeTypes:(id)arg1;
 - (id)assetsToDownload;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -49,6 +50,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (int)requestedChangeTypes;
+- (id)requestedChangeTypesAsString:(int)arg1;
 - (id)requestedFields;
 - (Class)responseClass;
 - (void)setAssetsToDownload:(id)arg1;

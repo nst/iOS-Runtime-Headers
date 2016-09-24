@@ -3,9 +3,9 @@
  */
 
 @interface FigBWNodeRenderObserver : NSObject <BWNodeRenderDelegate> {
-    id /* block */ _formatDidBecomeLiveHandler;
-    BWNode *_node;
-    id /* block */ _willRenderSampleBufferHandler;
+    id /* block */  _formatDidBecomeLiveHandler;
+    BWNode * _node;
+    id /* block */  _willRenderSampleBufferHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,12 +3,12 @@
  */
 
 @interface WBSAsynchronousRequestHelper : NSObject <NSURLConnectionDelegate, WBSAsynchronousRequest> {
-    NSURLConnection *_connection;
-    NSMutableData *_data;
-    id /* block */ _handler;
-    id _lifetimeExtender;
-    NSOperationQueue *_queue;
-    NSURLResponse *_response;
+    NSURLConnection * _connection;
+    NSMutableData * _data;
+    id /* block */  _handler;
+    id  _lifetimeExtender;
+    NSOperationQueue * _queue;
+    NSURLResponse * _response;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,10 +3,10 @@
  */
 
 @interface STWeatherCurrentConditions : STSiriModelObject {
-    int _conditionCode;
-    NSNumber *_highTemperature;
-    NSNumber *_lowTemperature;
-    NSNumber *_temperature;
+    int  _conditionCode;
+    NSNumber * _highTemperature;
+    NSNumber * _lowTemperature;
+    NSNumber * _temperature;
 }
 
 + (BOOL)supportsSecureCoding;

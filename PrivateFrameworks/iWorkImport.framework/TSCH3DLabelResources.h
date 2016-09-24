@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DLabelResources : TSCH3DStringIndexedResources {
-    TSCH3DTextureAtlas *mAtlas;
-    NSMutableDictionary *mCache;
+    TSCH3DTextureAtlas * mAtlas;
+    NSMutableDictionary * mCache;
 }
 
 @property (nonatomic, readonly) TSCH3DTextureAtlas *atlas;

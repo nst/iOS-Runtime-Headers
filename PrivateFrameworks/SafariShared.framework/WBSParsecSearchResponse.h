@@ -3,10 +3,10 @@
  */
 
 @interface WBSParsecSearchResponse : NSObject {
-    WBSParsecSearchCompletionResultSet *_bestResultSet;
-    NSArray *_completionResultSets;
-    double _maxAge;
-    unsigned int _sizeInBytes;
+    WBSParsecSearchCompletionResultSet * _bestResultSet;
+    NSArray * _completionResultSets;
+    double  _maxAge;
+    unsigned int  _sizeInBytes;
 }
 
 @property (nonatomic, readonly) WBSParsecSearchCompletionResultSet *bestCompletionResultSet;

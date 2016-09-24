@@ -3,8 +3,8 @@
  */
 
 @interface MPTVOutWindow : UIWindow {
-    MPMovieTVHUDView *_hudView;
-    MPVideoView *_videoView;
+    MPMovieTVHUDView * _hudView;
+    MPVideoView * _videoView;
 }
 
 - (void).cxx_destruct;

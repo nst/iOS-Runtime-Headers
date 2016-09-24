@@ -3,8 +3,8 @@
  */
 
 @interface RTLocationOfInterestVisit : NSObject <NSCopying, NSSecureCoding> {
-    NSDate *_entryTime;
-    NSDate *_exitTime;
+    NSDate * _entryTime;
+    NSDate * _exitTime;
 }
 
 @property (nonatomic, readonly) NSDate *entryTime;
@@ -15,6 +15,7 @@
 - (void).cxx_destruct;
 - (BOOL)_enteredAndExitedOnSameDay;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)entryTime;
 - (id)exitTime;

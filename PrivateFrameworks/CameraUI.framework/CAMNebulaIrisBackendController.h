@@ -2,21 +2,20 @@
    Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
  */
 
-@interface CAMNebulaIrisBackendController : NSObject <CAMNebulaDaemonIrisProtocol, CAMStillImageCaptureRequestDelegate> {
-    BOOL __IOWorkSuspended;
-    AVAssetExportSession *__activeExportSession;
-    BKSApplicationStateMonitor *__applicationStateMonitor;
-    NSObject<OS_dispatch_queue> *__coordinationQueue;
-    BOOL __crashRecoveryNeeded;
-    CAMNebulaKeepAliveController *__keepAliveController;
-    NSObject<OS_dispatch_queue> *__linkWorkQueue;
-    NSMutableDictionary *__masterVideoInfoByURL;
-    int __notifyRegisterTokenResumeIO;
-    int __notifyRegisterTokenSuspendIO;
-    NSMutableArray *__pendingExportVideoJobs;
-    NSMutableDictionary *__pendingOrInFlightJobsByVideoURL;
-    CAMPersistenceController *__persistenceController;
-    BOOL __shouldCheckMarkerFileForIOWorkSuspension;
+@interface CAMNebulaIrisBackendController : NSObject <CAMNebulaDaemonIrisProtocol, CAMPersistenceResultDelegate, CAMStillImageCaptureRequestDelegate> {
+    BOOL  __IOWorkSuspended;
+    AVAssetExportSession * __activeExportSession;
+    BKSApplicationStateMonitor * __applicationStateMonitor;
+    NSObject<OS_dispatch_queue> * __coordinationQueue;
+    BOOL  __crashRecoveryNeeded;
+    CAMNebulaKeepAliveController * __keepAliveController;
+    NSObject<OS_dispatch_queue> * __linkWorkQueue;
+    int  __notifyRegisterTokenResumeIO;
+    int  __notifyRegisterTokenSuspendIO;
+    NSMutableArray * __pendingExportVideoJobs;
+    NSMutableDictionary * __pendingOrInFlightJobsByUniqueIdentifier;
+    CAMPersistenceController * __persistenceController;
+    BOOL  __shouldCheckMarkerFileForIOWorkSuspension;
 }
 
 @property (getter=_coordinationQueue_isIOWorkSuspended, setter=_coordinationQueue_setIOWorkSuspended:, nonatomic) BOOL _IOWorkSuspended;
@@ -26,11 +25,10 @@
 @property (getter=_coordinationQueue_isCrashRecoveryNeeded, setter=_coordinationQueue_setCrashRecoveryNeeded:, nonatomic) BOOL _crashRecoveryNeeded;
 @property (nonatomic, readonly) CAMNebulaKeepAliveController *_keepAliveController;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_linkWorkQueue;
-@property (nonatomic, readonly) NSMutableDictionary *_masterVideoInfoByURL;
 @property (nonatomic, readonly) int _notifyRegisterTokenResumeIO;
 @property (nonatomic, readonly) int _notifyRegisterTokenSuspendIO;
 @property (nonatomic, readonly) NSMutableArray *_pendingExportVideoJobs;
-@property (nonatomic, readonly) NSMutableDictionary *_pendingOrInFlightJobsByVideoURL;
+@property (nonatomic, readonly) NSMutableDictionary *_pendingOrInFlightJobsByUniqueIdentifier;
 @property (nonatomic, readonly) CAMPersistenceController *_persistenceController;
 @property (getter=_coordinationQueue_shouldCheckMarkerFileForIOWorkSuspension, setter=_coordinationQueue_setShouldCheckMarkerFileForIOWorkSuspension:, nonatomic) BOOL _shouldCheckMarkerFileForIOWorkSuspension;
 @property (readonly, copy) NSString *debugDescription;
@@ -42,7 +40,6 @@
 - (id)_activeExportSession;
 - (id)_applicationStateMonitor;
 - (id)_coordinationQueue;
-- (BOOL)_coordinationQueue_consolidateMasterVideoIfNecessary:(id)arg1;
 - (void)_coordinationQueue_createJobsForCrashRecoveryIfNeeded;
 - (void)_coordinationQueue_destroyApplicationStateMonitor;
 - (void)_coordinationQueue_didCompleteExportJob:(id)arg1;
@@ -53,7 +50,6 @@
 - (unsigned int)_coordinationQueue_failureCountForVideoURL:(id)arg1;
 - (BOOL)_coordinationQueue_isCrashRecoveryNeeded;
 - (BOOL)_coordinationQueue_isIOWorkSuspended;
-- (void)_coordinationQueue_permanentlyFailAllJobsForMasterVideoURL:(id)arg1;
 - (void)_coordinationQueue_setCrashRecoveryNeeded:(BOOL)arg1;
 - (void)_coordinationQueue_setFailureCount:(unsigned int)arg1 forVideoURL:(id)arg2;
 - (void)_coordinationQueue_setIOWorkSuspended:(BOOL)arg1;
@@ -67,20 +63,20 @@
 - (void)_dispatchToMainQueueWithBlock:(id /* block */)arg1;
 - (void)_dispatchToQueue:(id)arg1 afterDelay:(double)arg2 withBlock:(id /* block */)arg3;
 - (void)_dispatchToQueue:(id)arg1 withBlock:(id /* block */)arg2;
-- (BOOL)_extractIrisPropertiesFromAVAsset:(id)arg1 shouldCheckForMasterVideoURL:(BOOL)arg2 masterVideoURL:(id*)arg3 stillImageDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg4 irisIdentifier:(id*)arg5;
+- (BOOL)_extractIrisPropertiesFromAVAsset:(id)arg1 stillImageDisplayTime:(struct { int x1; int x2; unsigned int x3; int x4; }*)arg2 irisIdentifier:(id*)arg3;
 - (id)_keepAliveController;
 - (id)_linkWorkQueue;
 - (void)_linkWorkQueue_linkAndPersistSelfContainedVideo:(id)arg1;
-- (id)_masterVideoInfoByURL;
 - (int)_notifyRegisterTokenResumeIO;
 - (int)_notifyRegisterTokenSuspendIO;
 - (id)_pendingExportVideoJobs;
-- (id)_pendingOrInFlightJobsByVideoURL;
+- (id)_pendingOrInFlightJobsByUniqueIdentifier;
 - (id)_persistenceController;
 - (BOOL)_removeItemAtURL:(id)arg1;
 - (BOOL)_removeItemAtURL:(id)arg1 maxAttempts:(int)arg2;
 - (void)_setActiveExportSession:(id)arg1;
-- (id)_videoJobFromURL:(id)arg1 shouldCheckForMasterVideoURL:(BOOL)arg2;
+- (id)_uniqueIdentifierForJob:(id)arg1;
+- (id)_videoJobFromURL:(id)arg1;
 - (void)dealloc;
 - (void)enqueueIrisVideoJobs:(id)arg1;
 - (void)handleClientConnection:(id)arg1;
@@ -89,6 +85,7 @@
 - (id)initWithPersistenceController:(id)arg1 keepAliveController:(id)arg2;
 - (void)performIrisCrashRecovery;
 - (void)performIrisCrashRecoveryForceFileSystemCheck:(BOOL)arg1;
+- (void)persistenceController:(id)arg1 didGenerateVideoLocalPersistenceResult:(id)arg2 forCaptureResult:(id)arg3 fromRequest:(id)arg4;
 - (void)stillImageRequestDidCompleteVideoRemotePersistence:(id)arg1 withResponse:(id)arg2 error:(id)arg3;
 
 @end

@@ -3,9 +3,9 @@
  */
 
 @interface SKUniformInfo : NSObject {
-    unsigned int seed;
-    unsigned int textureTarget;
-    SKUniform *uniform;
+    unsigned int  seed;
+    unsigned int  textureTarget;
+    SKUniform * uniform;
 }
 
 @property unsigned int seed;

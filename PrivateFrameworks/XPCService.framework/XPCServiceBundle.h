@@ -3,21 +3,21 @@
  */
 
 @interface XPCServiceBundle : NSObject <XPCServiceArchiver> {
-    NSBundle *_bundle;
-    NSString *_executablePath;
-    long _executablePathPredicate;
-    NSDictionary *_launchdJobDictionary;
-    long _launchdJobDictionaryPredicate;
-    NSString *_realExecutablePath;
-    long _realExecutablePathPredicate;
-    NSDictionary *_serviceDictionary;
-    long _serviceDictionaryPredicate;
-    NSString *_serviceIdentifier;
-    long _serviceIdentifierPredicate;
-    int _serviceType;
-    long _serviceTypePredicate;
-    NSObject<OS_xpc_object> *_xpcJobData;
-    long _xpcJobDataPredicate;
+    NSBundle * _bundle;
+    NSString * _executablePath;
+    long  _executablePathPredicate;
+    NSDictionary * _launchdJobDictionary;
+    long  _launchdJobDictionaryPredicate;
+    NSString * _realExecutablePath;
+    long  _realExecutablePathPredicate;
+    NSDictionary * _serviceDictionary;
+    long  _serviceDictionaryPredicate;
+    NSString * _serviceIdentifier;
+    long  _serviceIdentifierPredicate;
+    int  _serviceType;
+    long  _serviceTypePredicate;
+    NSObject<OS_xpc_object> * _xpcJobData;
+    long  _xpcJobDataPredicate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

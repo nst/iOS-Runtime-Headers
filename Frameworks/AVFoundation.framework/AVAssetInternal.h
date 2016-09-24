@@ -3,13 +3,13 @@
  */
 
 @interface AVAssetInternal : NSObject {
-    NSString *anchorChapterType;
-    NSArray *availableCanonicalizedChapterLanguages;
-    NSArray *availableChapterLanguages;
-    NSArray *availableChapterLocales;
-    NSArray *chapterGroupInfo;
-    long loadChapterInfoOnce;
-    AVWeakReference *weakReference;
+    NSString * anchorChapterType;
+    NSArray * availableCanonicalizedChapterLanguages;
+    NSArray * availableChapterLanguages;
+    NSArray * availableChapterLocales;
+    NSArray * chapterGroupInfo;
+    long  loadChapterInfoOnce;
+    AVWeakReference * weakReference;
 }
 
 @end

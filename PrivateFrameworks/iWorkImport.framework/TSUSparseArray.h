@@ -3,9 +3,9 @@
  */
 
 @interface TSUSparseArray : NSObject <NSCopying> {
-    unsigned int _depth;
-    unsigned int _nonNilCount;
-    struct tsuSaPage { int (**x1)(); } *_topPage;
+    unsigned int  _depth;
+    unsigned int  _nonNilCount;
+    struct tsuSaPage { int (**x1)(); } * _topPage;
 }
 
 @property (readonly) unsigned int count;

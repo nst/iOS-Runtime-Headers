@@ -3,9 +3,9 @@
  */
 
 @interface FBSApplicationDataStore : NSObject {
-    NSString *_bundleId;
-    FBSApplicationDataStoreRepositoryClient *_client;
-    BOOL _clientNeedsCheckin;
+    NSString * _bundleId;
+    <FBSApplicationDataStoreRepositoryClient> * _client;
+    BOOL  _clientNeedsCheckin;
 }
 
 @property (nonatomic, readonly, retain) NSString *bundleID;
@@ -16,6 +16,7 @@
 + (void)setPrefetchedKeys:(id)arg1;
 + (id)storeForApplication:(id)arg1;
 + (void)synchronize;
++ (void)synchronizeWithCompletion:(id /* block */)arg1;
 
 - (id)_initWithBundleId:(id)arg1 client:(id)arg2;
 - (id)_makeSafe:(id)arg1 forType:(Class)arg2;

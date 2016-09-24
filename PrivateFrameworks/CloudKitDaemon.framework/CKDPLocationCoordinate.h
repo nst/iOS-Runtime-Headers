@@ -3,8 +3,8 @@
  */
 
 @interface CKDPLocationCoordinate : PBCodable <NSCopying> {
-    double _altitude;
-    double _course;
+    double  _altitude;
+    double  _course;
     struct { 
         unsigned int altitude : 1; 
         unsigned int course : 1; 
@@ -13,13 +13,13 @@
         unsigned int longitude : 1; 
         unsigned int speed : 1; 
         unsigned int verticalAccuracy : 1; 
-    } _has;
-    double _horizontalAccuracy;
-    double _latitude;
-    double _longitude;
-    double _speed;
-    CKDPDate *_timestamp;
-    double _verticalAccuracy;
+    }  _has;
+    double  _horizontalAccuracy;
+    double  _latitude;
+    double  _longitude;
+    double  _speed;
+    CKDPDate * _timestamp;
+    double  _verticalAccuracy;
 }
 
 @property (nonatomic) double altitude;

@@ -3,33 +3,34 @@
  */
 
 @interface RUIObjectModel : NSObject <RUIAlertViewDelegate, RUIPageDelegate, RUIPasscodeViewDelegate, RUITableViewDelegate, RUIWebViewDelegate, RemoteUIWebViewControllerDelegate> {
-    NSDictionary *_alert;
-    NSString *_authPasswordEquivalent;
-    NSString *_authPasswordFieldID;
-    NSDictionary *_clientInfo;
-    struct OpaqueJSContext { } *_ctx;
-    int _currentPage;
-    NSMutableArray *_defaultPages;
-    <RUIObjectModelDelegate> *_delegate;
-    NSMutableArray *_displayedPages;
-    NSMutableDictionary *_httpHeaders;
-    NSString *_identifier;
-    NSString *_identifierMarkingStackRemovalAfterPush;
-    NSString *_inlineScript;
-    NSString *_name;
-    NSMutableDictionary *_namedAlerts;
-    NSMutableDictionary *_namedPages;
-    int _nextButtonStyle;
-    RUIAlertView *_primaryAlert;
-    int _refreshDelay;
-    NSTimer *_refreshTimer;
-    NSString *_refreshURL;
-    NSURL *_scriptURL;
-    NSDictionary *_serverInfo;
-    NSURL *_sourceURL;
-    RUIStyle *_style;
-    NSDictionary *_updateInfo;
-    NSString *_validationFunction;
+    NSDictionary * _alert;
+    NSString * _authPasswordEquivalent;
+    NSString * _authPasswordFieldID;
+    NSDictionary * _clientInfo;
+    struct OpaqueJSContext { } * _ctx;
+    int  _currentPage;
+    NSMutableArray * _defaultPages;
+    <RUIObjectModelDelegate> * _delegate;
+    NSMutableArray * _displayedPages;
+    NSMutableDictionary * _httpHeaders;
+    NSString * _identifier;
+    NSString * _identifierMarkingStackRemovalAfterPush;
+    NSString * _inlineScript;
+    NSString * _name;
+    NSMutableDictionary * _namedAlerts;
+    NSMutableDictionary * _namedPages;
+    int  _nextButtonStyle;
+    BOOL  _parseFinished;
+    RUIAlertView * _primaryAlert;
+    int  _refreshDelay;
+    NSTimer * _refreshTimer;
+    NSString * _refreshURL;
+    NSURL * _scriptURL;
+    NSDictionary * _serverInfo;
+    NSURL * _sourceURL;
+    RUIStyle * _style;
+    NSDictionary * _updateInfo;
+    NSString * _validationFunction;
 }
 
 @property (nonatomic, retain) NSDictionary *alert;
@@ -62,26 +63,32 @@
 
 // Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
 
++ (void)_enableTestMode;
 + (id)objectModelForXMLNamed:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)RUIPage:(id)arg1 pressedNavBarButton:(id)arg2;
 - (void)RUIPage:(id)arg1 toggledEditing:(BOOL)arg2;
+- (void)_displayNamedPage:(id)arg1 animated:(BOOL)arg2;
 - (void)_displaySupplementalPage:(id)arg1;
 - (id)_firstPageForPresentation;
 - (void)_handleElementChange:(id)arg1 completion:(id /* block */)arg2;
 - (void)_handleLinkPress:(id)arg1 attributes:(id)arg2 completion:(id /* block */)arg3;
 - (void)_navigateBackWithPop:(BOOL)arg1 fromViewController:(id)arg2;
-- (void)_nextPage;
+- (void)_navigateToNextPageAnimated;
 - (id)_pageContainingTableView:(id)arg1;
+- (id)_parentNavigationController;
 - (id)_parentViewController;
 - (void)_populatePageNavItem:(id)arg1 withNextButton:(BOOL)arg2;
 - (void)_populateRequest:(id)arg1;
 - (void)_presentConfirmationWithAttributes:(id)arg1 completion:(id /* block */)arg2;
 - (void)_presentSecondConfirmationWithAttributes:(id)arg1 completion:(id /* block */)arg2;
+- (BOOL)_shouldDisplayNamedElement:(id)arg1 page:(id)arg2;
 - (void)_startNavigationBarSpinnerIfNeededForAttributes:(id)arg1;
 - (void)_stopNavigationBarSpinnerIfNeededForAttributes:(id)arg1;
-- (id)_viewControllerFromNavigatingBackWithinDisplayedPages;
+- (void)_unsafe_setPages:(id)arg1;
+- (id)_viewControllerFromNavigatingBackWithinDisplayedPagesAnimated:(BOOL)arg1;
+- (void)activateElement:(id)arg1 completion:(id /* block */)arg2;
 - (void)addAlertElement:(id)arg1;
 - (id)alert;
 - (id)alertController;
@@ -104,6 +111,7 @@
 - (id)displayedPages;
 - (id)elementsWithName:(id)arg1;
 - (BOOL)goBack;
+- (BOOL)goBack:(BOOL)arg1;
 - (void)handleAppleIDAuthenticationIfNeededForAttributes:(id)arg1 completion:(id /* block */)arg2;
 - (void)handleElementChange:(id)arg1 action:(int)arg2 completion:(id /* block */)arg3;
 - (BOOL)hasAttributeOrAttributeFunctionNamed:(id)arg1 withAttributes:(id)arg2;
@@ -116,11 +124,13 @@
 - (id)invokeScriptFunction:(id)arg1 withArguments:(id)arg2;
 - (id)name;
 - (id)namedPages;
+- (void)navigateToNextPageAnimated:(BOOL)arg1;
 - (id)newNavigationControllerForPresentation;
 - (int)nextButtonStyle;
 - (id)objectForJSValue:(struct OpaqueJSValue { }*)arg1;
 - (void)pageDidDisappear:(id)arg1;
 - (id)pages;
+- (void)parseDidFinish;
 - (void)passcodeViewOM:(id)arg1 activatedElement:(id)arg2 completion:(id /* block */)arg3;
 - (void)populatePostbackDictionary:(id)arg1;
 - (id)postbackData;
@@ -129,11 +139,13 @@
 - (void)presentConfirmationIfNeededForElement:(id)arg1 completion:(id /* block */)arg2;
 - (void)presentInParentViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)presentInParentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
+- (void)presentPage:(id)arg1 inViewController:(id)arg2 animated:(BOOL)arg3 completion:(id /* block */)arg4;
 - (void)presentWithBlock:(id /* block */)arg1;
 - (id)primaryAlert;
 - (int)refreshDelay;
 - (void)refreshTimeout;
 - (id)refreshURL;
+- (void)refreshWithObjectModel:(id)arg1;
 - (id)relativeURLWithString:(id)arg1;
 - (void)remoteUIWebViewControllerDonePressed:(id)arg1;
 - (id)rowForFormField:(id)arg1;
@@ -159,6 +171,8 @@
 - (void)setUpdateInfo:(id)arg1;
 - (void)setValidationFunction:(id)arg1;
 - (id)sourceURL;
+- (void)startNavigationBarSpinnerWithTitle:(id)arg1;
+- (void)stopNavigationBarSpinner;
 - (id)stringForAttributeName:(id)arg1 withAttributes:(id)arg2;
 - (id)style;
 - (unsigned int)supportedInterfaceOrientationsForRUIPage:(id)arg1;
@@ -175,9 +189,9 @@
 - (id)visiblePage;
 - (BOOL)webViewOM:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
 
-// Image: /System/Library/Frameworks/PassKit.framework/PassKit
+// Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
 
-- (void)pk_applyAppearance:(struct _PKAppearanceSpecifier { BOOL x1; id x2; id x3; id x4; id x5; id x6; id x7; id x8; id x9; id x10; id x11; id x12; id x13; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; unsigned char x28; void*x29; unsigned char x30; void*x31; long x32; long x33; void*x34; void*x35; bycopy void*x36; void*x37; void*x38; long x39; void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; void*x50; void*x51; void*x52; void*x53; void*x54; void*x55; void*x56; void*x57; void*x58; void*x59; void*x60; void*x61; void*x62; void*x63; void*x64; void*x65; void*x66; void*x67; void*x68; id x69; void*x70; const void*x71; void*x72; void*x73; void*x74; void*x75; void*x76; void*x77; void*x78; void*x79; void*x80; void*x81; void*x82; void*x83; void*x84; void*x85; void*x86; void*x87; void*x88; void*x89; void*x90; void*x91; void*x92; void*x93; void*x94; void*x95; void*x96; void*x97; void*x98; id x99; void*x100; void*x101; unsigned long long x102; void*x103; void*x104; void*x105; void*x106; void*x107; void*x108; void*x109; void*x110; void*x111; void*x112; void*x113; void*x114; void*x115; void*x116; void*x117; void*x118; void*x119; void*x120; void*x121; void*x122; void*x123; void*x124; void*x125; void*x126; void*x127; void*x128; void*x129; id x130; void*x131; }*)arg1;
+- (void)pk_applyAppearance:(id)arg1;
 - (id)pk_childrenForAppearance;
 
 @end

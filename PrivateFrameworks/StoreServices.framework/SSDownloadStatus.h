@@ -3,11 +3,11 @@
  */
 
 @interface SSDownloadStatus : NSObject <NSCopying, SSXPCCoding> {
-    SSDownloadPhase *_activePhase;
-    BOOL _contentRestricted;
-    NSError *_error;
-    BOOL _failed;
-    BOOL _paused;
+    SSDownloadPhase * _activePhase;
+    BOOL  _contentRestricted;
+    NSError * _error;
+    BOOL  _failed;
+    BOOL  _paused;
 }
 
 @property (nonatomic, readonly) SSDownloadPhase *activePhase;
@@ -20,7 +20,7 @@
 @property (readonly) unsigned int hash;
 @property (getter=isPausable, nonatomic) BOOL pausable;
 @property (getter=isPaused, nonatomic) BOOL paused;
-@property (nonatomic, readonly) float percentComplete;
+@property (nonatomic, readonly) double percentComplete;
 @property (readonly) Class superclass;
 
 - (id)activePhase;

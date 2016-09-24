@@ -3,17 +3,17 @@
  */
 
 @interface WDTableStyleOverride : NSObject <NSCopying> {
-    WDCharacterProperties *mCharacterProperties;
-    unsigned int mCharacterPropertiesOverridden;
-    WDDocument *mDocument;
-    WDParagraphProperties *mParagraphProperties;
-    unsigned int mParagraphPropertiesOverridden;
-    int mPart;
-    WDStyle *mStyle;
-    WDTableCellProperties *mTableCellStyleProperties;
-    unsigned int mTableCellStylePropertiesOverridden;
-    WDTableRowProperties *mTableRowProperties;
-    unsigned int mTableRowPropertiesOverridden;
+    WDCharacterProperties * mCharacterProperties;
+    unsigned int  mCharacterPropertiesOverridden;
+    WDDocument * mDocument;
+    WDParagraphProperties * mParagraphProperties;
+    unsigned int  mParagraphPropertiesOverridden;
+    int  mPart;
+    WDStyle * mStyle;
+    WDTableCellProperties * mTableCellStyleProperties;
+    unsigned int  mTableCellStylePropertiesOverridden;
+    WDTableRowProperties * mTableRowProperties;
+    unsigned int  mTableRowPropertiesOverridden;
 }
 
 - (id)characterProperties;

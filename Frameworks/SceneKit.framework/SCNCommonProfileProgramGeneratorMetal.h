@@ -3,8 +3,8 @@
  */
 
 @interface SCNCommonProfileProgramGeneratorMetal : SCNCommonProfileProgramGenerator {
-    NSArray *_injectionPointRanges;
-    NSString *_originalSourceCode;
+    NSArray * _injectionPointRanges;
+    NSString * _originalSourceCode;
 }
 
 - (struct __C3DFXProgram { }*)_programWithHashCode:(struct __C3DRendererElementProgramHashCode { }*)arg1 introspectionDataPtr:(void*)arg2;

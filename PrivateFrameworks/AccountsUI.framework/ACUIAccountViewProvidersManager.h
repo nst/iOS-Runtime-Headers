@@ -3,8 +3,8 @@
  */
 
 @interface ACUIAccountViewProvidersManager : NSObject {
-    NSDictionary *_accountTypeToPluginNameMap;
-    NSMutableDictionary *_pluginCache;
+    NSDictionary * _accountTypeToPluginNameMap;
+    NSMutableDictionary * _pluginCache;
 }
 
 + (id)sharedInstance;

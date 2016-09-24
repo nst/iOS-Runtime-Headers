@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptPassbookPass : SUScriptObject {
-    PKPass *_pass;
+    PKPass * _pass;
 }
 
 @property (readonly) NSString *passTypeIdentifier;

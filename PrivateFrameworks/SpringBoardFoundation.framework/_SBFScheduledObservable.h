@@ -3,8 +3,8 @@
  */
 
 @interface _SBFScheduledObservable : SBFObservable {
-    <SBFObservable> *_observable;
-    <SBFScheduler> *_scheduler;
+    <SBFObservable> * _observable;
+    <SBFScheduler> * _scheduler;
 }
 
 - (void).cxx_destruct;

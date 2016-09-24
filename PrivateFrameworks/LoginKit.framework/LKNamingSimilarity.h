@@ -3,7 +3,7 @@
  */
 
 @interface LKNamingSimilarity : NSObject <NSSecureCoding> {
-    unsigned int _similarity;
+    unsigned int  _similarity;
 }
 
 @property (nonatomic) unsigned int similarity;

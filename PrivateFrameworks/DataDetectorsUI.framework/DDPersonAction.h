@@ -3,10 +3,10 @@
  */
 
 @interface DDPersonAction : DDPreviewAction <CNAvatarCardControllerDelegate> {
-    CNAvatarCardController *_avatar;
-    CNContact *_contact;
-    UIViewController *_presentingViewController;
-    CNContactStore *_store;
+    CNAvatarCardController * _avatar;
+    CNContact * _contact;
+    UIViewController * _presentingViewController;
+    CNContactStore * _store;
 }
 
 @property (retain) CNAvatarCardController *avatar;

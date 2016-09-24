@@ -3,9 +3,9 @@
  */
 
 @interface HMDLaunchHandler : NSObject {
-    int _beingConfigured;
-    NSObject<OS_dispatch_queue> *_handlerQueue;
-    NSMutableSet *_relaunchTriggeringClients;
+    int  _beingConfigured;
+    NSObject<OS_dispatch_queue> * _handlerQueue;
+    NSMutableSet * _relaunchTriggeringClients;
 }
 
 @property (nonatomic) int beingConfigured;

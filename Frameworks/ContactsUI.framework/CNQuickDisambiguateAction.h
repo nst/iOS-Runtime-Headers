@@ -3,9 +3,9 @@
  */
 
 @interface CNQuickDisambiguateAction : CNQuickPropertyAction {
-    NSOrderedSet *_actions;
-    BOOL _ignoreMainAction;
-    CNQuickAction *_mainAction;
+    NSOrderedSet * _actions;
+    BOOL  _ignoreMainAction;
+    CNQuickAction * _mainAction;
 }
 
 @property (nonatomic, retain) NSOrderedSet *actions;

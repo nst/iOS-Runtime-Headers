@@ -3,11 +3,11 @@
  */
 
 @interface SearchUISimpleMultiResultTableViewCell : SearchUITableViewCell {
-    SearchUIIconViewContainer *_bottomContainer;
-    NSLayoutConstraint *_doubleRowConstraint;
-    NSArray *_results;
-    NSLayoutConstraint *_singleRowConstraint;
-    SearchUIIconViewContainer *_topContainer;
+    SearchUIIconViewContainer * _bottomContainer;
+    NSLayoutConstraint * _doubleRowConstraint;
+    NSArray * _results;
+    NSLayoutConstraint * _singleRowConstraint;
+    SearchUIIconViewContainer * _topContainer;
 }
 
 @property (retain) SearchUIIconViewContainer *bottomContainer;
@@ -21,13 +21,13 @@
 - (void).cxx_destruct;
 - (id)bottomContainer;
 - (id)doubleRowConstraint;
-- (id)initWithResults:(id)arg1 style:(unsigned int)arg2;
+- (id)iconContainers;
+- (id)initWithResults:(id)arg1 style:(unsigned int)arg2 feedbackDelegate:(id)arg3;
 - (BOOL)isExpandable;
 - (void)layoutSubviews;
 - (unsigned int)numberOfVisibleColumns;
 - (unsigned int)numberOfVisibleResults;
 - (id)results;
-- (BOOL)resultsSupportExpansion;
 - (void)setBottomContainer:(id)arg1;
 - (void)setDoubleRowConstraint:(id)arg1;
 - (void)setResults:(id)arg1;
@@ -35,8 +35,10 @@
 - (void)setTopContainer:(id)arg1;
 - (id)singleRowConstraint;
 - (id)topContainer;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)updateExpanded:(BOOL)arg1;
 - (void)updateNumberOfColumns;
+- (void)updateSpacerWidthsForPlatterInsets;
 - (void)updateWithResults:(id)arg1;
 
 @end

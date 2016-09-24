@@ -3,8 +3,8 @@
  */
 
 @interface MFMailMessageRelationshipAnalyzer : NSObject {
-    NSArray *_messages;
-    NSArray *_relationships;
+    NSArray * _messages;
+    NSArray * _relationships;
 }
 
 + (id)analysisOfConversation:(id)arg1;

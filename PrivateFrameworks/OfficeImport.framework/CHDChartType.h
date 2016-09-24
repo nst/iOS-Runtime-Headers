@@ -3,11 +3,11 @@
  */
 
 @interface CHDChartType : NSObject {
-    EDCollection *mAxisIds;
-    CHDChart *mChart;
-    CHDDataLabel *mDefaultDataLabel;
-    CHDSeriesCollection *mSeries;
-    bool mVaryColors;
+    EDCollection * mAxisIds;
+    CHDChart * mChart;
+    CHDDataLabel * mDefaultDataLabel;
+    CHDSeriesCollection * mSeries;
+    bool  mVaryColors;
 }
 
 + (id)chartTypeWithChart:(id)arg1;

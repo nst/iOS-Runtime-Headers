@@ -3,7 +3,7 @@
  */
 
 @interface OITSUAggregateEnumerator : NSEnumerator {
-    NSMutableArray *_objects;
+    NSMutableArray * _objects;
 }
 
 + (id)aggregateEnumeratorWithObjects:(id)arg1;

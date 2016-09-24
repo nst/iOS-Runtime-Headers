@@ -3,11 +3,11 @@
  */
 
 @interface CITorusLensDistortion : CIFilter {
-    CIVector *inputCenter;
-    CIImage *inputImage;
-    NSNumber *inputRadius;
-    NSNumber *inputRefraction;
-    NSNumber *inputWidth;
+    CIVector * inputCenter;
+    CIImage * inputImage;
+    NSNumber * inputRadius;
+    NSNumber * inputRefraction;
+    NSNumber * inputWidth;
 }
 
 + (id)customAttributes;

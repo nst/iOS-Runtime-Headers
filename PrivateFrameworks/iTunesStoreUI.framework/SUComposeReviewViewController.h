@@ -3,8 +3,8 @@
  */
 
 @interface SUComposeReviewViewController : SUViewController <SKComposeReviewDelegate> {
-    NSURL *_compositionURL;
-    SKComposeReviewViewController *_remoteViewController;
+    NSURL * _compositionURL;
+    SKComposeReviewViewController * _remoteViewController;
 }
 
 @property (nonatomic, readonly) NSURL *compositionURL;

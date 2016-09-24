@@ -3,21 +3,21 @@
  */
 
 @interface HDNanoSyncRestoreSession : NSObject {
-    NSCalendar *_calendar;
-    NSMutableArray *_completionHandlers;
-    BOOL _finished;
-    HDNanoSyncStore *_nanoSyncStore;
-    long long _sequenceNumber;
-    NSUUID *_sessionUUID;
-    NSDate *_startDate;
-    _HKExpiringCompletionTimer *_timer;
+    NSCalendar * _calendar;
+    NSMutableArray * _completionHandlers;
+    BOOL  _finished;
+    HDNanoSyncStore * _nanoSyncStore;
+    int  _sequenceNumber;
+    NSUUID * _sessionUUID;
+    NSDate * _startDate;
+    _HKExpiringCompletionTimer * _timer;
 }
 
 @property (nonatomic, readonly) NSCalendar *calendar;
 @property (nonatomic, retain) NSMutableArray *completionHandlers;
 @property (getter=isFinished, nonatomic, readonly) BOOL finished;
 @property (nonatomic, readonly) HDNanoSyncStore *nanoSyncStore;
-@property (nonatomic) long long sequenceNumber;
+@property (nonatomic) int sequenceNumber;
 @property (nonatomic, readonly) NSUUID *sessionUUID;
 @property (nonatomic, readonly) NSDate *startDate;
 @property (nonatomic, retain) _HKExpiringCompletionTimer *timer;
@@ -33,10 +33,10 @@
 - (BOOL)isFinished;
 - (id)nanoSyncStore;
 - (void)scheduleTimeoutWithInterval:(double)arg1 handler:(id /* block */)arg2;
-- (long long)sequenceNumber;
+- (int)sequenceNumber;
 - (id)sessionUUID;
 - (void)setCompletionHandlers:(id)arg1;
-- (void)setSequenceNumber:(long long)arg1;
+- (void)setSequenceNumber:(int)arg1;
 - (void)setTimer:(id)arg1;
 - (id)startDate;
 - (id)timer;

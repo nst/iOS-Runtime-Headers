@@ -3,10 +3,10 @@
  */
 
 @interface CKBlockingAsyncQueue : NSObject {
-    unsigned int _qosClass;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_semaphore> *_queueSema;
-    unsigned int _width;
+    unsigned int  _qosClass;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_semaphore> * _queueSema;
+    unsigned int  _width;
 }
 
 @property (nonatomic) unsigned int qosClass;

@@ -25,8 +25,8 @@
         int (*finishedCallback)(); 
         int (*authFailedCallback)(); 
         int (*didReceiveServerSideConfigurationVersionCallback)(); 
-    } _UCContext;
-    NSArray *_assetCollectionsInFlight;
+    }  _UCContext;
+    NSArray * _assetCollectionsInFlight;
     struct __MSPSPCContext { 
         struct __MSSPCContext { 
             void *owner; 
@@ -50,7 +50,7 @@
         int (*authFailedCallback)(); 
         int (*didReceiveServerSideConfigurationVersionCallback)(); 
         int (*didReceiveRetryAfterCallback)(); 
-    } _context;
+    }  _context;
 }
 
 - (void).cxx_destruct;

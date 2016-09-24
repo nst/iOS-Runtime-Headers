@@ -3,9 +3,9 @@
  */
 
 @interface NSPageData : NSData {
-    NSDate *_originalFileModDate;
-    NSString *_originalFilePath;
-    NSData *data;
+    NSDate * _originalFileModDate;
+    NSString * _originalFilePath;
+    NSData * data;
 }
 
 + (int)_umask;

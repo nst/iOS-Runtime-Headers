@@ -3,7 +3,7 @@
  */
 
 @interface TWRequest : NSObject {
-    SLTwitterRequest *_request;
+    SLTwitterRequest * _request;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

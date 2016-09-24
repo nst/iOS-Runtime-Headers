@@ -3,12 +3,14 @@
  */
 
 @interface PSYSyncSessionObserver : NSObject <PSYSyncSessionObserverInterface> {
-    NSXPCConnection *_connection;
-    PSYSyncSession *_currentSyncSession;
-    <PSYSyncSessionObserverDelegate> *_delegate;
-    PSYSyncSessionObserverExportedObject *_exportedObject;
-    NSObject<OS_dispatch_queue> *_queue;
-    BOOL _shouldCheckinAfterInvalidationHandler;
+    NSXPCConnection * _connection;
+    PSYSyncSession * _currentSyncSession;
+    int  _daemonDidLaunchNotifyToken;
+    <PSYSyncSessionObserverDelegate> * _delegate;
+    PSYSyncSessionObserverExportedObject * _exportedObject;
+    NSObject<OS_dispatch_queue> * _queue;
+    BOOL  _resignedActive;
+    BOOL  _shouldCheckinAfterInvalidationHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -22,17 +24,22 @@
 - (void).cxx_destruct;
 - (void)_checkin:(BOOL)arg1;
 - (void)_connectionInvalidated;
+- (void)_disconnectFromPairedSync;
 - (void)_handleDaemonStarted;
 - (void)_queue_invalidateSyncSession:(id)arg1;
 - (void)_queue_loadConnectionIfNeeded;
+- (void)_reconnectToPairedSync;
 - (void)dealloc;
 - (id)delegate;
+- (void)didBecomeActive:(id)arg1;
 - (id)init;
 - (oneway void)invalidateSyncSession:(id)arg1;
 - (id)providerWithErrorHandler:(id /* block */)arg1;
+- (void)setCurrentSyncSession:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)startObservingSyncSessionsWithCompletion:(id /* block */)arg1;
 - (oneway void)syncSessionWillStart:(id)arg1;
 - (oneway void)updateSyncSession:(id)arg1;
+- (void)willResignActive:(id)arg1;
 
 @end

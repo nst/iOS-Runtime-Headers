@@ -3,10 +3,12 @@
  */
 
 @interface GEOMapQueryCollectionRequest : PBRequest <NSCopying> {
-    NSMutableArray *_requestElements;
+    NSMutableArray * _requestElements;
 }
 
 @property (nonatomic, retain) NSMutableArray *requestElements;
+
++ (Class)requestElementsType;
 
 - (void)addRequestElements:(id)arg1;
 - (void)clearRequestElements;

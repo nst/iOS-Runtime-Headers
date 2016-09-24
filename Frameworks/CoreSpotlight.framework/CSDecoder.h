@@ -3,15 +3,15 @@
  */
 
 @interface CSDecoder : NSObject <CSCoderData> {
-    const struct __CFAllocator { } *_contentDeallocator;
-    NSData *_data;
+    const struct __CFAllocator { } * _contentDeallocator;
+    NSData * _data;
     struct { 
         char *containerBytes; 
         struct { 
             unsigned int embeddedReference; 
             unsigned char type; 
         } reference; 
-    } _obj;
+    }  _obj;
 }
 
 @property (nonatomic, readonly) const struct __CFAllocator { }*contentDeallocator;

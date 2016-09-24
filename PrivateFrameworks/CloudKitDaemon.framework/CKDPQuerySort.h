@@ -3,12 +3,12 @@
  */
 
 @interface CKDPQuerySort : PBCodable <NSCopying> {
-    CKDPLocationCoordinate *_coordinate;
-    CKDPRecordFieldIdentifier *_fieldName;
+    CKDPLocationCoordinate * _coordinate;
+    CKDPRecordFieldIdentifier * _fieldName;
     struct { 
         unsigned int order : 1; 
-    } _has;
-    int _order;
+    }  _has;
+    int  _order;
 }
 
 @property (nonatomic, retain) CKDPLocationCoordinate *coordinate;
@@ -19,6 +19,7 @@
 @property (nonatomic) int order;
 
 - (void).cxx_destruct;
+- (int)StringAsOrder:(id)arg1;
 - (id)coordinate;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -32,6 +33,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)order;
+- (id)orderAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setCoordinate:(id)arg1;
 - (void)setFieldName:(id)arg1;

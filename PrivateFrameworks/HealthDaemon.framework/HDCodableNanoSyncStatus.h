@@ -3,11 +3,11 @@
  */
 
 @interface HDCodableNanoSyncStatus : PBCodable <HDNanoSyncDescription, HDNanoSyncPersistentUserInfoCopying, HDSyncAnchorMap, NSCopying> {
-    NSMutableArray *_anchors;
+    NSMutableArray * _anchors;
     struct { 
         unsigned int statusCode : 1; 
-    } _has;
-    int _statusCode;
+    }  _has;
+    int  _statusCode;
 }
 
 @property (nonatomic, retain) NSMutableArray *anchors;
@@ -26,7 +26,7 @@
 - (void)addAnchors:(id)arg1;
 - (void)addToPersistentUserInfo:(id)arg1;
 - (unsigned int)anchorCount;
-- (long long)anchorForSyncEntityClass:(Class)arg1;
+- (int)anchorForSyncEntityClass:(Class)arg1;
 - (id)anchors;
 - (id)anchorsAtIndex:(unsigned int)arg1;
 - (unsigned int)anchorsCount;
@@ -43,7 +43,7 @@
 - (void)mergeFrom:(id)arg1;
 - (id)nanoSyncDescription;
 - (BOOL)readFrom:(id)arg1;
-- (void)setAnchor:(long long)arg1 forSyncEntity:(Class)arg2;
+- (void)setAnchor:(int)arg1 forSyncEntity:(Class)arg2;
 - (void)setAnchors:(id)arg1;
 - (void)setHasStatusCode:(BOOL)arg1;
 - (void)setStatusCode:(int)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface TSUTemporaryDirectoryManager : NSObject {
-    NSURL *_baseDirectoryURL;
+    NSURL * _baseDirectoryURL;
 }
 
 + (id)baseDirectoryURL;

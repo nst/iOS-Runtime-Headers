@@ -3,11 +3,11 @@
  */
 
 @interface ICSearchAsyncQueryAdaptor : NSObject {
-    BOOL _cancelled;
-    <ICSearchAsyncQueryDelegate> *_delegate;
-    <ICSearchAsyncQueryable> *_owner;
-    id _query;
-    <ICSearchQueryable> *_searchQueryable;
+    BOOL  _cancelled;
+    <ICSearchAsyncQueryDelegate> * _delegate;
+    <ICSearchAsyncQueryable> * _owner;
+    id  _query;
+    <ICSearchQueryable> * _searchQueryable;
 }
 
 @property BOOL cancelled;

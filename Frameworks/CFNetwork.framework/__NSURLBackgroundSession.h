@@ -3,21 +3,23 @@
  */
 
 @interface __NSURLBackgroundSession : __NSCFURLSession <NDBackgroundSessionClient, NSURLSessionSubclass> {
-    NSString *_appWakeUUID;
-    BOOL _companionAvailable;
-    NSURL *_downloadDirectory;
-    unsigned int _identSeed;
-    id /* block */ _invalidateCallback;
-    NSObject<OS_dispatch_queue> *_invalidateQueue;
-    NSError *_invalidationError;
-    BOOL _isInvalid;
-    BOOL _isPrivileged;
-    <NDBackgroundSessionProtocol> *_remoteSession;
-    NSMutableArray *_taskIDsToFailOnReconnection;
-    NSMutableDictionary *_tasks;
-    BOOL _tryToReconnect;
-    unsigned int _wifiRetainCount;
-    NSXPCConnection *_xpcConn;
+    NSString * _appWakeUUID;
+    NSURL * _assetDownloadDirectory;
+    BOOL  _companionAvailable;
+    NSURL * _downloadDirectory;
+    unsigned int  _identSeed;
+    id /* block */  _invalidateCallback;
+    NSObject<OS_dispatch_queue> * _invalidateQueue;
+    NSError * _invalidationError;
+    BOOL  _isInvalid;
+    BOOL  _isPrivileged;
+    int  _notifyToken;
+    <NDBackgroundSessionProtocol> * _remoteSession;
+    NSMutableArray * _taskIDsToFailOnReconnection;
+    NSMutableDictionary * _tasks;
+    BOOL  _tryToReconnect;
+    unsigned int  _wifiRetainCount;
+    NSXPCConnection * _xpcConn;
 }
 
 @property (copy) NSString *appWakeUUID;
@@ -27,11 +29,12 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (id)AVAssetDownloadTaskForURLAsset:(id)arg1 assetTitle:(id)arg2 assetArtworkData:(id)arg3 options:(id)arg4;
 - (id)AVAssetDownloadTaskForURLAsset:(id)arg1 destinationURL:(id)arg2 options:(id)arg3;
 - (id)_AVAssetDownloadTaskForURL:(id)arg1 destinationURL:(id)arg2 options:(id)arg3;
 - (id)_downloadTaskForRequest:(id)arg1;
 - (id)_downloadTaskForResumeData:(id)arg1;
-- (id)_onqueue_AVAssetDownloadTaskForURLAsset:(id)arg1 URL:(id)arg2 destinationURL:(id)arg3 options:(id)arg4;
+- (id)_onqueue_AVAssetDownloadTaskForURLAsset:(id)arg1 URL:(id)arg2 destinationURL:(id)arg3 assetTitle:(id)arg4 assetArtworkData:(id)arg5 options:(id)arg6;
 - (void)_onqueue_completeInvalidation:(BOOL)arg1;
 - (id)_onqueue_dataTaskForRequest:(id)arg1 completion:(id /* block */)arg2;
 - (void)_onqueue_disavowTask:(id)arg1;
@@ -45,29 +48,31 @@
 - (void)_onqueue_retryDataTaskWithIdentifier:(unsigned int)arg1;
 - (id)_onqueue_uploadTaskForRequest:(id)arg1 uploadFile:(id)arg2 bodyData:(id)arg3 completion:(id /* block */)arg4;
 - (id)appWakeUUID;
+- (void)appWasLaunchedForBackgroundSession:(id)arg1;
 - (void)backgroundAVAssetDownloadTask:(unsigned int)arg1 didLoadTimeRange:(id)arg2 totalTimeRangesLoaded:(id)arg3 timeRangeExpectedToLoad:(id)arg4;
-- (void)backgroundAVAssetDownloadTask:(unsigned int)arg1 didReceiveDownloadToken:(unsigned long long)arg2;
+- (void)backgroundAVAssetDownloadTask:(unsigned int)arg1 didReceiveDownloadToken:(unsigned int)arg2;
 - (void)backgroundAVAssetDownloadTask:(unsigned int)arg1 didResolveMediaSelectionProperyList:(id)arg2;
-- (void)backgroundAVAssetDownloadTaskDidUpdateProgress:(unsigned int)arg1 totalBytesWritten:(unsigned long long)arg2 totalBytesExpectedToWrite:(unsigned long long)arg3;
+- (void)backgroundAVAssetDownloadTaskDidUpdateProgress:(unsigned int)arg1 totalBytesWritten:(unsigned int)arg2 totalBytesExpectedToWrite:(unsigned int)arg3;
 - (void)backgroundDataTask:(unsigned int)arg1 didReceiveData:(id)arg2 withReply:(id /* block */)arg3;
 - (void)backgroundDataTaskDidBecomeDownloadTask:(unsigned int)arg1;
 - (void)backgroundDownloadTask:(unsigned int)arg1 didFinishDownloadingToURL:(id)arg2 reply:(id /* block */)arg3;
-- (void)backgroundDownloadTask:(unsigned int)arg1 didResumeAtOffset:(long long)arg2 expectedTotalBytes:(long long)arg3;
-- (void)backgroundDownloadTask:(unsigned int)arg1 didWriteData:(long long)arg2 totalBytesWritten:(long long)arg3 totalBytesExpectedToWrite:(long long)arg4;
+- (void)backgroundDownloadTask:(unsigned int)arg1 didResumeAtOffset:(int)arg2 expectedTotalBytes:(int)arg3;
+- (void)backgroundDownloadTask:(unsigned int)arg1 didWriteData:(int)arg2 totalBytesWritten:(int)arg3 totalBytesExpectedToWrite:(int)arg4;
 - (id)backgroundDownloadsDirectory;
 - (id)backgroundResumeDataFromClientResumeData:(id)arg1;
 - (id)backgroundResumeDataFromLegacyClientResumeData:(id)arg1;
 - (void)backgroundSessionDidFinishAppWake:(id)arg1 reply:(id /* block */)arg2;
 - (void)backgroundSessionDidStartAppWake:(id)arg1 reply:(id /* block */)arg2;
 - (void)backgroundTask:(unsigned int)arg1 _willSendRequestForEstablishedConnection:(id)arg2 reply:(id /* block */)arg3;
-- (void)backgroundTask:(unsigned int)arg1 didCompleteWithError:(id)arg2 timingData:(id)arg3 reply:(id /* block */)arg4;
+- (void)backgroundTask:(unsigned int)arg1 didCompleteWithError:(id)arg2 info:(id)arg3 reply:(id /* block */)arg4;
+- (void)backgroundTask:(unsigned int)arg1 didFinishCollectingMetrics:(id)arg2 reply:(id /* block */)arg3;
 - (void)backgroundTask:(unsigned int)arg1 didReceiveChallenge:(id)arg2 reply:(id /* block */)arg3;
 - (void)backgroundTask:(unsigned int)arg1 didReceiveResponse:(id)arg2 timingData:(id)arg3;
 - (void)backgroundTask:(unsigned int)arg1 didReceiveResponse:(id)arg2 timingData:(id)arg3 reply:(id /* block */)arg4;
-- (void)backgroundTask:(unsigned int)arg1 didSendBodyData:(long long)arg2 totalBytesSent:(long long)arg3 totalBytesExpectedToSend:(long long)arg4;
+- (void)backgroundTask:(unsigned int)arg1 didSendBodyData:(int)arg2 totalBytesSent:(int)arg3 totalBytesExpectedToSend:(int)arg4;
 - (void)backgroundTask:(unsigned int)arg1 getAuthHeadersForResponse:(id)arg2 reply:(id /* block */)arg3;
 - (void)backgroundTask:(unsigned int)arg1 hasConnectionWaitingWithError:(id)arg2;
-- (void)backgroundTask:(unsigned int)arg1 hasConnectionWaitingWithReason:(long long)arg2;
+- (void)backgroundTask:(unsigned int)arg1 hasConnectionWaitingWithReason:(int)arg2;
 - (void)backgroundTask:(unsigned int)arg1 needNewBodyStream:(BOOL)arg2 withReply:(id /* block */)arg3;
 - (void)backgroundTask:(unsigned int)arg1 willPerformHTTPRedirection:(id)arg2 withNewRequest:(id)arg3 reply:(id /* block */)arg4;
 - (void)backgroundTaskDidResume:(unsigned int)arg1;
@@ -89,6 +94,7 @@
 - (void)dealloc;
 - (id)disconnectedErrorWithURL:(id)arg1;
 - (id)downloadTaskForRequest:(id)arg1 downloadFilePath:(id)arg2 resumeData:(id)arg3 completion:(id /* block */)arg4;
+- (id)ensureRemoteSession;
 - (void)failDisconnectedTasks;
 - (id)initWithConfiguration:(id)arg1 delegate:(id)arg2 delegateQueue:(id)arg3;
 - (BOOL)isCompanionAvailable;
@@ -103,7 +109,8 @@
 - (void)sendInvalidationRequest;
 - (void)setAppWakeUUID:(id)arg1;
 - (void)setCompanionAvailable:(BOOL)arg1;
-- (void)setCookiesFromResponse:(id)arg1 forOriginalRequest:(id)arg2;
+- (void)setCookiesFromResponse:(id)arg1 forOriginalRequest:(id)arg2 partitionIdentifier:(id)arg3;
+- (void)setPropertyOnStreamWithIdentifier:(unsigned int)arg1 propDict:(id)arg2 propKey:(id)arg3;
 - (void)setupBackgroundSession;
 - (void)setupXPCConnection;
 - (id)taskForIdentifier:(unsigned int)arg1;

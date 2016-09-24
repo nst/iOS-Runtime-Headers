@@ -3,14 +3,14 @@
  */
 
 @interface SUDelayedNavigationItem : SUNavigationItem {
-    id _delayedBackButtonTitle;
-    id _delayedLeftBarButtonItems;
-    NSNumber *_delayedLeftItemsSupplementBackButton;
-    id _delayedRightBarButtonItems;
-    id _delayedTitle;
-    id _delayedTitleView;
-    BOOL _shouldDelayChanges;
-    SUNavigationItem *_wrappedNavigationItem;
+    id  _delayedBackButtonTitle;
+    id  _delayedLeftBarButtonItems;
+    NSNumber * _delayedLeftItemsSupplementBackButton;
+    id  _delayedRightBarButtonItems;
+    id  _delayedTitle;
+    id  _delayedTitleView;
+    BOOL  _shouldDelayChanges;
+    SUNavigationItem * _wrappedNavigationItem;
 }
 
 @property (nonatomic) BOOL shouldDelayChanges;

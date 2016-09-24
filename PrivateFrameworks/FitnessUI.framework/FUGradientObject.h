@@ -3,8 +3,8 @@
  */
 
 @interface FUGradientObject : NSObject {
-    NSArray *_colors;
-    NSArray *_locations;
+    NSArray * _colors;
+    NSArray * _locations;
 }
 
 @property (nonatomic, readonly) NSArray *colors;

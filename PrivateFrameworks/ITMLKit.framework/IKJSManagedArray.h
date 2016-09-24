@@ -3,8 +3,8 @@
  */
 
 @interface IKJSManagedArray : NSObject {
-    NSArray *_managedArray;
-    id _ownerObject;
+    NSArray * _managedArray;
+    id  _ownerObject;
 }
 
 @property (nonatomic, retain) NSArray *managedArray;

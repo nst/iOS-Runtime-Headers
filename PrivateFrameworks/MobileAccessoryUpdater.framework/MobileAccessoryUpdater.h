@@ -3,16 +3,16 @@
  */
 
 @interface MobileAccessoryUpdater : NSObject {
-    NSString *_activeFilter;
-    NSString *_bundleIdentifier;
-    char *_cClientIdentifier;
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    NSString *_clientIdentifier;
-    <FudConnection> *_connection;
-    <MobileAccessoryUpdaterDelegate> *_delegate;
-    BOOL _didUnregister;
-    BOOL _isInternalClient;
-    NSObject<OS_dispatch_queue> *_sessionQueue;
+    NSString * _activeFilter;
+    NSString * _bundleIdentifier;
+    char * _cClientIdentifier;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    NSString * _clientIdentifier;
+    <FudConnection> * _connection;
+    <MobileAccessoryUpdaterDelegate> * _delegate;
+    BOOL  _didUnregister;
+    BOOL  _isInternalClient;
+    NSObject<OS_dispatch_queue> * _sessionQueue;
 }
 
 - (id)activeFilter;

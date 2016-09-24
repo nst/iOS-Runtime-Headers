@@ -11,6 +11,7 @@
 @property (nonatomic, copy) CNContainer *snapshot;
 @property (nonatomic) int type;
 
+- (void)adoptValuesFromAndSetSnaphot:(id)arg1;
 - (id)copy;
 - (id)freeze;
 - (id)freezeWithSelfAsSnapshot;

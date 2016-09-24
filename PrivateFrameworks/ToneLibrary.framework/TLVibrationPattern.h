@@ -3,17 +3,12 @@
  */
 
 @interface TLVibrationPattern : NSObject {
-    id _complexPatternDescription;
-    id _contextObject;
-    double _duration;
-    id _propertyListRepresentation;
+    NSMutableArray * _complexPatternDescription;
+    id  _contextObject;
+    NSDictionary * _propertyListRepresentation;
 }
 
 @property (nonatomic, readonly) id _artificiallyRepeatingPropertyListRepresentation;
-@property (setter=_setComplexPatternDescription:, nonatomic, retain) id _complexPatternDescription;
-@property (nonatomic, readonly) double _computedDuration;
-@property (setter=_setDuration:, nonatomic) double _duration;
-@property (setter=_setPropertyListRepresentation:, nonatomic, retain) id _propertyListRepresentation;
 @property (nonatomic, retain) id contextObject;
 @property (nonatomic, readonly) id propertyListRepresentation;
 
@@ -22,18 +17,12 @@
 + (id)noneVibrationPattern;
 + (id)simpleVibrationPatternWithVibrationDuration:(double)arg1 pauseDuration:(double)arg2;
 
+- (void).cxx_destruct;
 - (id)_artificiallyRepeatingPropertyListRepresentation;
-- (id)_complexPatternDescription;
 - (double)_computedDuration;
-- (double)_duration;
 - (id)_initWithPropertyListRepresentation:(id)arg1 skipValidation:(BOOL)arg2;
-- (id)_propertyListRepresentation;
-- (void)_setComplexPatternDescription:(id)arg1;
-- (void)_setDuration:(double)arg1;
-- (void)_setPropertyListRepresentation:(id)arg1;
 - (void)appendVibrationComponentWithDuration:(double)arg1 isPause:(BOOL)arg2;
 - (id)contextObject;
-- (void)dealloc;
 - (id)init;
 - (id)initWithPropertyListRepresentation:(id)arg1;
 - (id)propertyListRepresentation;

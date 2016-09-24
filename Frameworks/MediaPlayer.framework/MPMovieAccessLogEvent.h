@@ -3,13 +3,13 @@
  */
 
 @interface MPMovieAccessLogEvent : NSObject <NSCopying> {
-    AVPlayerItemAccessLogEvent *_event;
+    AVPlayerItemAccessLogEvent * _event;
 }
 
 @property (nonatomic, readonly) NSString *URI;
 @property (nonatomic, readonly) double durationWatched;
 @property (nonatomic, readonly) double indicatedBitrate;
-@property (nonatomic, readonly) long long numberOfBytesTransferred;
+@property (nonatomic, readonly) int numberOfBytesTransferred;
 @property (nonatomic, readonly) int numberOfDroppedVideoFrames;
 @property (nonatomic, readonly) unsigned int numberOfSegmentsDownloaded;
 @property (nonatomic, readonly) unsigned int numberOfServerAddressChanges;
@@ -27,7 +27,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)durationWatched;
 - (double)indicatedBitrate;
-- (long long)numberOfBytesTransferred;
+- (int)numberOfBytesTransferred;
 - (int)numberOfDroppedVideoFrames;
 - (unsigned int)numberOfSegmentsDownloaded;
 - (unsigned int)numberOfServerAddressChanges;

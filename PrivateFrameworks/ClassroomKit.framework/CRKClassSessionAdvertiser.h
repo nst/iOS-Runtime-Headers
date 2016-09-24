@@ -3,13 +3,13 @@
  */
 
 @interface CRKClassSessionAdvertiser : NSObject <NSNetServiceDelegate> {
-    DMFControlSessionIdentifier *_classSessionIdentifier;
-    <CRKClassSessionAdvertiserDelegate> *_delegate;
-    BOOL _includeNearbyStudents;
-    NSTimer *mBeaconToggleTimer;
-    NSNetService *mNetService;
-    NSString *mServiceType;
-    CRKClassSessionBeacon *mSessionBeacon;
+    DMFControlSessionIdentifier * _classSessionIdentifier;
+    <CRKClassSessionAdvertiserDelegate> * _delegate;
+    BOOL  _includeNearbyStudents;
+    NSTimer * mBeaconToggleTimer;
+    NSNetService * mNetService;
+    NSString * mServiceType;
+    CRKClassSessionBeacon * mSessionBeacon;
 }
 
 @property (nonatomic, copy) DMFControlSessionIdentifier *classSessionIdentifier;
@@ -27,9 +27,11 @@
 - (BOOL)includeNearbyStudents;
 - (id)init;
 - (id)initWithServiceType:(id)arg1;
+- (id)instructorSocketOptions;
 - (BOOL)isAdvertising;
 - (void)netService:(id)arg1 didAcceptConnectionWithInputStream:(id)arg2 outputStream:(id)arg3;
 - (void)netService:(id)arg1 didNotPublish:(id)arg2;
+- (void)registerDefaults;
 - (void)scheduleBeaconToggle:(id)arg1;
 - (void)setClassSessionIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;

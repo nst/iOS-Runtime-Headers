@@ -3,26 +3,26 @@
  */
 
 @interface BWNoiseReducerNode : BWNode {
-    NSDictionary *_cameraTuningOptions;
-    struct NoiseReductionCtx_s { } *_context;
-    int _contextSynchronization;
-    int _gpuPriority;
-    NSDictionary *_noiseReductionOptions;
-    struct opaqueCMFormatDescription { } *_outputFormatDescription;
-    BOOL _processLuma;
-    BOOL _quadraHighResStillImageCaptureEnabled;
-    struct opaqueCMFormatDescription { } *_quadraResampledIntermediaBufferFormatDescription;
-    struct __CVBuffer { } *_quadraResampledIntermediateBuffer;
-    struct OpaqueVTPixelTransferSession { } *_quadraResampledTransferSession;
-    BOOL _threaded;
-    BOOL _useInPlaceAlgorithm;
+    NSDictionary * _cameraTuningOptions;
+    struct NoiseReductionCtx_s { } * _context;
+    int  _contextSynchronization;
+    int  _gpuPriority;
+    NSDictionary * _noiseReductionOptions;
+    struct opaqueCMFormatDescription { } * _outputFormatDescription;
+    BOOL  _processLuma;
+    BOOL  _quadraHighResStillImageCaptureEnabled;
+    struct opaqueCMFormatDescription { } * _quadraResampledIntermediaBufferFormatDescription;
+    struct __CVBuffer { } * _quadraResampledIntermediateBuffer;
+    struct OpaqueVTPixelTransferSession { } * _quadraResampledTransferSession;
+    BOOL  _threaded;
+    BOOL  _useInPlaceAlgorithm;
 }
 
 + (void)initialize;
 
 - (struct opaqueCMSampleBuffer { }*)_newQuadraResampledSampleBufferFromSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 outputPixelBuffer:(struct __CVBuffer { }*)arg2;
 - (id)_outputRequirementsForInputFormat:(id)arg1;
-- (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
+- (void)configurationWithID:(int)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;

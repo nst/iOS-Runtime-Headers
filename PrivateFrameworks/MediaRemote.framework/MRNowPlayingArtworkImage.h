@@ -3,8 +3,8 @@
  */
 
 @interface MRNowPlayingArtworkImage : MRNowPlayingArtwork {
-    NSData *_imageData;
-    NSString *_mimeType;
+    NSData * _imageData;
+    NSString * _mimeType;
 }
 
 @property (nonatomic, readonly, copy) NSData *imageData;

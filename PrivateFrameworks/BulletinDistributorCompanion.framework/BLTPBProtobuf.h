@@ -3,10 +3,10 @@
  */
 
 @interface BLTPBProtobuf : IDSProtobuf {
-    IDSProtobuf *_idsProtobuf;
-    PBCodable *_protobuf;
-    int _sequenceNumberError;
-    unsigned int _sessionState;
+    IDSProtobuf * _idsProtobuf;
+    PBCodable * _protobuf;
+    int  _sequenceNumberError;
+    unsigned int  _sessionState;
 }
 
 @property (nonatomic, retain) IDSProtobuf *idsProtobuf;

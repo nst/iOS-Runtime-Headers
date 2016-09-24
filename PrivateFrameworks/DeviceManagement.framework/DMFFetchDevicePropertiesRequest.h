@@ -3,7 +3,7 @@
  */
 
 @interface DMFFetchDevicePropertiesRequest : CATTaskRequest {
-    NSArray *_propertyKeys;
+    NSArray * _propertyKeys;
 }
 
 @property (retain) NSArray *propertyKeys;

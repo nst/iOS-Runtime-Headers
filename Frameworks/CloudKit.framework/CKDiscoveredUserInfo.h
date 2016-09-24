@@ -3,8 +3,8 @@
  */
 
 @interface CKDiscoveredUserInfo : NSObject <NSCopying, NSSecureCoding> {
-    CNContact *_displayContact;
-    CKRecordID *_userRecordID;
+    CNContact * _displayContact;
+    CKRecordID * _userRecordID;
 }
 
 @property (nonatomic, readonly, copy) CNContact *displayContact;

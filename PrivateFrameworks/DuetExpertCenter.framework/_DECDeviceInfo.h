@@ -3,7 +3,7 @@
  */
 
 @interface _DECDeviceInfo : NSObject {
-    int _batterySaverModeToken;
+    int  _batterySaverModeToken;
 }
 
 + (BOOL)isBatterySaverEnabled;

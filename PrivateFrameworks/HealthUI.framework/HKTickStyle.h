@@ -3,14 +3,14 @@
  */
 
 @interface HKTickStyle : HKStrokeStyle {
-    BOOL _shouldRenderMajorTickMarks;
-    int _tickDirection;
-    float _tickLength;
+    BOOL  _shouldRenderMajorTickMarks;
+    int  _tickDirection;
+    double  _tickLength;
 }
 
 @property (nonatomic) BOOL shouldRenderMajorTickMarks;
 @property (nonatomic) int tickDirection;
-@property (nonatomic) float tickLength;
+@property (nonatomic) double tickLength;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setShouldRenderMajorTickMarks:(BOOL)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface CAIOSurfaceCodingProxy : CACodingProxy {
-    struct __IOSurface { } *_surface;
+    struct __IOSurface { } * _surface;
 }
 
 - (void)dealloc;

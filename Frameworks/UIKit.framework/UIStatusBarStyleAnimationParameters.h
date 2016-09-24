@@ -3,7 +3,7 @@
  */
 
 @interface UIStatusBarStyleAnimationParameters : UIStatusBarAnimationParameters {
-    int _styleAnimation;
+    int  _styleAnimation;
 }
 
 @property (nonatomic) int styleAnimation;

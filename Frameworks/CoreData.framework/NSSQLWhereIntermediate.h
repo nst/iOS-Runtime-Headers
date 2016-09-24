@@ -3,7 +3,7 @@
  */
 
 @interface NSSQLWhereIntermediate : NSSQLIntermediate {
-    NSPredicate *_predicate;
+    NSPredicate * _predicate;
 }
 
 - (id)initWithPredicate:(id)arg1 inScope:(id)arg2;

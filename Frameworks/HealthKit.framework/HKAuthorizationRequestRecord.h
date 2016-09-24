@@ -3,10 +3,10 @@
  */
 
 @interface HKAuthorizationRequestRecord : NSObject <NSSecureCoding> {
-    NSString *_appBundleIdentifier;
-    NSUUID *_sessionIdentifier;
-    NSSet *_typesRequiringReadAuthorization;
-    NSSet *_typesRequiringShareAuthorization;
+    NSString * _appBundleIdentifier;
+    NSUUID * _sessionIdentifier;
+    NSSet * _typesRequiringReadAuthorization;
+    NSSet * _typesRequiringShareAuthorization;
 }
 
 @property (nonatomic, readonly, copy) NSString *appBundleIdentifier;

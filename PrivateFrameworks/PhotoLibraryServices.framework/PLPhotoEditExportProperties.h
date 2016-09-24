@@ -3,10 +3,10 @@
  */
 
 @interface PLPhotoEditExportProperties : NSObject {
-    double _baseDuration;
-    int _baseEXIFOrientation;
-    unsigned int _imageHeight;
-    unsigned int _imageWidth;
+    double  _baseDuration;
+    int  _baseEXIFOrientation;
+    unsigned int  _imageHeight;
+    unsigned int  _imageWidth;
 }
 
 @property (nonatomic, readonly) double baseDuration;

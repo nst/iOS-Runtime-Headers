@@ -3,9 +3,11 @@
  */
 
 @interface TSWPChangeDetails : NSObject <TSDAnnotationHosting> {
-    TSWPChange *_change;
-    NSString *mChangeTrackingContentString;
-    NSString *mChangeTrackingTitleString;
+    TSWPChange * _change;
+    NSString * _changeTrackingContentString;
+    NSString * _changeTrackingTitleString;
+    NSDate * _dateForLastChangeStringUpdate;
+    NSString * _formattedString;
 }
 
 @property (nonatomic, readonly) int annotationDisplayStringType;
@@ -13,13 +15,15 @@
 @property (nonatomic, readonly) TSKAnnotationAuthor *author;
 @property (nonatomic, retain) TSWPChange *change;
 @property (nonatomic, readonly) NSString *changeTrackingContentFormatString;
-@property (nonatomic, readonly) NSString *changeTrackingContentString;
-@property (nonatomic, readonly) NSString *changeTrackingTitleString;
+@property (nonatomic, retain) NSString *changeTrackingContentString;
+@property (nonatomic, retain) NSString *changeTrackingTitleString;
 @property (nonatomic, readonly) NSDate *date;
+@property (nonatomic, retain) NSDate *dateForLastChangeStringUpdate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSString *formattedString;
 @property (readonly) unsigned int hash;
-@property (nonatomic) <TSKModel> *hostingModel;
+@property (nonatomic, readonly) TSPObject *hostingModel;
 @property (nonatomic, copy) TSDCommentStorage *storage;
 @property (readonly) Class superclass;
 
@@ -33,17 +37,23 @@
 - (void)commentWillBeAddedToDocumentRoot;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
+- (id)dateForLastChangeStringUpdate;
 - (void)dealloc;
 - (id)description;
+- (id)formattedString;
 - (unsigned int)hash;
 - (id)hostingModel;
 - (id)initWithChange:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToChangeDetails:(id)arg1;
+- (BOOL)isEquivalentToObject:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })p_rangeInStorage;
 - (void)p_updateChangeStrings;
 - (void)setAuthor:(id)arg1;
 - (void)setChange:(id)arg1;
-- (void)setHostingModel:(id)arg1;
+- (void)setChangeTrackingContentString:(id)arg1;
+- (void)setChangeTrackingTitleString:(id)arg1;
+- (void)setDateForLastChangeStringUpdate:(id)arg1;
+- (void)setFormattedString:(id)arg1;
 
 @end

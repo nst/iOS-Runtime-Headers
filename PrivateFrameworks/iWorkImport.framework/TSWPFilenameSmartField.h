@@ -3,7 +3,7 @@
  */
 
 @interface TSWPFilenameSmartField : TSWPPlaceholderSmartField {
-    unsigned int _displayFlags;
+    unsigned int  _displayFlags;
 }
 
 @property (nonatomic) unsigned int displayFlags;

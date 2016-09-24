@@ -3,8 +3,8 @@
  */
 
 @interface ISStoreAuthenticateOperation : ISOperation <SSAuthenticateRequestDelegate> {
-    NSNumber *_authenticatedDSID;
-    SSMutableAuthenticationContext *_authenticationContext;
+    NSNumber * _authenticatedDSID;
+    SSMutableAuthenticationContext * _authenticationContext;
 }
 
 @property (readonly) SSAuthenticationContext *authenticationContext;

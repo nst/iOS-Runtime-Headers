@@ -3,7 +3,7 @@
  */
 
 @interface FBUISceneEventResponse : NSObject {
-    NSError *_error;
+    NSError * _error;
 }
 
 @property (nonatomic, retain) NSError *error;

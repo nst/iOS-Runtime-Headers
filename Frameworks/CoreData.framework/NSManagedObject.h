@@ -2,34 +2,41 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSManagedObject : NSObject {
-    id _cd_entity;
-    unsigned long _cd_extraFlags;
-    unsigned long _cd_lockingInfo;
-    NSManagedObjectContext *_cd_managedObjectContext;
-    NSManagedObjectID *_cd_objectID;
-    id _cd_observationInfo;
-    id _cd_queueReference;
-    id _cd_rawData;
-    int _cd_rc;
-    id *_cd_snapshots;
-    unsigned long _cd_stateFlags;
+@interface NSManagedObject : NSObject <NSFetchRequestResult, _KSTIUserDictionaryEntry> {
+    id  _cd_entity;
+    unsigned long  _cd_extraFlags;
+    unsigned long  _cd_lockingInfo;
+    NSManagedObjectContext * _cd_managedObjectContext;
+    NSManagedObjectID * _cd_objectID;
+    id  _cd_observationInfo;
+    id  _cd_queueReference;
+    id  _cd_rawData;
+    int  _cd_rc;
+    id * _cd_snapshots;
+    unsigned long  _cd_stateFlags;
 }
 
+@property (readonly, copy) NSString *debugDescription;
 @property (getter=isDeleted, nonatomic, readonly) BOOL deleted;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSEntityDescription *entity;
 @property (getter=isFault, nonatomic, readonly) BOOL fault;
 @property (nonatomic, readonly) unsigned int faultingState;
 @property (nonatomic, readonly) BOOL hasChanges;
 @property (nonatomic, readonly) BOOL hasPersistentChangedValues;
+@property (readonly) unsigned int hash;
 @property (getter=isInserted, nonatomic, readonly) BOOL inserted;
 @property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, readonly) NSManagedObjectID *objectID;
+@property (nonatomic, copy) NSString *phrase;
+@property (nonatomic, copy) NSString *shortcut;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSDate *timestamp;
 @property (getter=isUpdated, nonatomic, readonly) BOOL updated;
 
 // Image: /System/Library/Frameworks/CoreData.framework/CoreData
 
-+ (struct { int x1; void *x2; unsigned long x3; unsigned char x4; unsigned int x5; void *x6; id x7; struct _moFactoryClassFlags { unsigned int x_8_1_1 : 1; unsigned int x_8_1_2 : 1; unsigned int x_8_1_3 : 1; unsigned int x_8_1_4 : 1; unsigned int x_8_1_5 : 1; unsigned int x_8_1_6 : 1; unsigned int x_8_1_7 : 26; } x8; }*)_PFMOClassFactoryData;
++ (struct { int x1; void *x2; id x3; unsigned char x4; unsigned int x5; void *x6; id x7; struct _moFactoryClassFlags { unsigned int x_8_1_1 : 1; unsigned int x_8_1_2 : 1; unsigned int x_8_1_3 : 1; unsigned int x_8_1_4 : 1; unsigned int x_8_1_5 : 1; unsigned int x_8_1_6 : 1; unsigned int x_8_1_7 : 26; } x8; }*)_PFMOClassFactoryData;
 + (id)_PFPlaceHolderSingleton;
 + (id)_PFPlaceHolderSingleton_core;
 + (void)_entityDeallocated;
@@ -52,6 +59,9 @@
 + (id)batchAllocateWithEntity:(id)arg1 insertIntoManagedObjectContext:(id)arg2 count:(unsigned int)arg3;
 + (Class)classForEntity:(id)arg1;
 + (BOOL)contextShouldIgnoreUnmodeledPropertyChanges;
++ (id)entity;
++ (id)entityName;
++ (id)fetchRequest;
 + (void)initialize;
 + (void)release;
 + (BOOL)resolveClassMethod:(SEL)arg1;
@@ -166,13 +176,13 @@
 - (void)diffOrderedSets:(id)arg1 :(id)arg2 :(id*)arg3 :(id*)arg4 :(id*)arg5 :(id*)arg6 :(id*)arg7;
 - (id)entity;
 - (unsigned int)faultingState;
-- (void)finalize;
 - (BOOL)hasChanges;
 - (BOOL)hasFaultForRelationshipNamed:(id)arg1;
 - (BOOL)hasPersistentChangedValues;
 - (unsigned int)hash;
 - (BOOL)implementsSelector:(SEL)arg1;
 - (id)init;
+- (id)initWithContext:(id)arg1;
 - (id)initWithEntity:(id)arg1 insertIntoManagedObjectContext:(id)arg2;
 - (BOOL)isDeleted;
 - (BOOL)isEqual:(id)arg1;
@@ -228,11 +238,26 @@
 
 + (BOOL)isTracked;
 
+// Image: /System/Library/PrivateFrameworks/CourseKit.framework/CourseKit
+
+- (BOOL)updateKey:(id)arg1 withValue:(id)arg2 condition:(id /* block */)arg3;
+
+// Image: /System/Library/PrivateFrameworks/KeyboardServices.framework/KeyboardServices
+
+- (void)_copyAttributeValuesFromObject:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
 + (id)objectFromObjectID:(id)arg1 context:(id)arg2;
++ (id)objectIDsFromObjects:(id)arg1;
++ (id)objectsFromObjectIDs:(id)arg1 context:(id)arg2;
++ (id)objectsMatchingPredicate:(id)arg1 context:(id)arg2;
++ (id)objectsMatchingPredicate:(id)arg1 sortDescriptors:(id)arg2 context:(id)arg3;
++ (id)permanentObjectIDsFromObjects:(id)arg1;
 
-- (void)obtainPermanentObjectIDIfNecessary;
+- (BOOL)obtainPermanentObjectIDIfNecessary;
+- (id)permanentObjectID;
+- (void)postNotificationOnMainThreadAfterSaveWithName:(id)arg1;
 - (void)postNotificationOnMainThreadWithName:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation

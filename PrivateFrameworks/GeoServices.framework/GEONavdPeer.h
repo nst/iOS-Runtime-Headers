@@ -3,10 +3,10 @@
  */
 
 @interface GEONavdPeer : NSObject {
-    GEONavdClientInfo *_clientInfo;
-    NSXPCConnection *_connection;
-    NSMutableDictionary *_entitlementCache;
-    BOOL _expectingUpdates;
+    GEONavdClientInfo * _clientInfo;
+    NSXPCConnection * _connection;
+    NSMutableDictionary * _entitlementCache;
+    BOOL  _expectingUpdates;
 }
 
 @property (nonatomic, readonly) GEONavdClientInfo *clientInfo;

@@ -5,7 +5,7 @@
 
 @required
 
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })navigationBarInsetsForRecipientSelectionController:(CKRecipientSelectionController *)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })navigationBarInsetsForRecipientSelectionController:(CKRecipientSelectionController *)arg1;
 - (void)recipientSelectionController:(CKRecipientSelectionController *)arg1 didFinishAvailaiblityLookupForRecipient:(MFComposeRecipient *)arg2;
 - (void)recipientSelectionController:(CKRecipientSelectionController *)arg1 textDidChange:(NSString *)arg2;
 - (void)recipientSelectionControllerDidChangeSize:(CKRecipientSelectionController *)arg1;

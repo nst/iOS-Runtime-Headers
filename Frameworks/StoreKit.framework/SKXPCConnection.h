@@ -3,10 +3,10 @@
  */
 
 @interface SKXPCConnection : NSObject {
-    NSObject<OS_xpc_object> *_connection;
-    id /* block */ _disconnectBlock;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    id /* block */ _messageBlock;
+    NSObject<OS_xpc_object> * _connection;
+    id /* block */  _disconnectBlock;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    id /* block */  _messageBlock;
 }
 
 @property (copy) id /* block */ disconnectBlock;

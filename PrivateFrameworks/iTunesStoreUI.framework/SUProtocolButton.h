@@ -3,7 +3,7 @@
  */
 
 @interface SUProtocolButton : NSObject <NSCopying> {
-    NSDictionary *_buttonDictionary;
+    NSDictionary * _buttonDictionary;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

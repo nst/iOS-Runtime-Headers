@@ -3,7 +3,7 @@
  */
 
 @interface ATMessageLinkListener : NSObject {
-    <ATMessageLinkListenerDelegate> *_delegate;
+    <ATMessageLinkListenerDelegate> * _delegate;
 }
 
 @property (nonatomic) <ATMessageLinkListenerDelegate> *delegate;

@@ -3,14 +3,14 @@
  */
 
 @interface SLGoogleWebAuthController : UIViewController <UIWebViewDelegate> {
-    ACAccount *_account;
-    ACAccountStore *_accountStore;
-    id /* block */ _completion;
-    NSExtension *_extension;
-    NSError *_extensionCancellationError;
-    BOOL _extensionRequestDidComplete;
-    id /* block */ _presentationBlock;
-    UIViewController *_serviceViewController;
+    ACAccount * _account;
+    ACAccountStore * _accountStore;
+    id /* block */  _completion;
+    NSExtension * _extension;
+    NSError * _extensionCancellationError;
+    BOOL  _extensionRequestDidComplete;
+    id /* block */  _presentationBlock;
+    UIViewController * _serviceViewController;
 }
 
 @property (nonatomic, copy) id /* block */ completion;

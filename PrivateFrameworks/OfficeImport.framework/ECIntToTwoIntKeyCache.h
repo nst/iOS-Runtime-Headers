@@ -3,7 +3,7 @@
  */
 
 @interface ECIntToTwoIntKeyCache : NSObject {
-    ECIntTwoIntKeyDictionary *mCache;
+    ECIntTwoIntKeyDictionary * mCache;
 }
 
 - (void)dealloc;

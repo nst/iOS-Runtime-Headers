@@ -3,15 +3,15 @@
  */
 
 @interface PRRequest : NSObject <NSSecureCoding> {
-    NSString *_ask;
-    NSString *_clientIdentifier;
-    NSDate *_dateAddedToLocalCache;
-    NSString *_requestID;
-    NSDictionary *_requestInfo;
-    unsigned int _requestStatus;
-    BOOL _requestedOnThisDevice;
-    NSNumber *_requesterDSID;
-    NSNumber *_responderDSID;
+    NSString * _ask;
+    NSString * _clientIdentifier;
+    NSDate * _dateAddedToLocalCache;
+    NSString * _requestID;
+    NSDictionary * _requestInfo;
+    unsigned int  _requestStatus;
+    BOOL  _requestedOnThisDevice;
+    NSNumber * _requesterDSID;
+    NSNumber * _responderDSID;
 }
 
 @property (copy) NSString *ask;

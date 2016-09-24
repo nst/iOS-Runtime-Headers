@@ -3,9 +3,9 @@
  */
 
 @interface OADFontScheme : NSObject {
-    OADFontCollection *_majorFont;
-    OADFontCollection *_minorFont;
-    NSString *_name;
+    OADFontCollection * _majorFont;
+    OADFontCollection * _minorFont;
+    NSString * _name;
 }
 
 @property (nonatomic, readonly) OADFontCollection *majorFont;

@@ -3,7 +3,7 @@
  */
 
 @interface PSYTestInput : NSObject <NSSecureCoding> {
-    int _action;
+    int  _action;
 }
 
 @property (nonatomic) int action;

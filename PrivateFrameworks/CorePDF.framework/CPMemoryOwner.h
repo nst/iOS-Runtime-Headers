@@ -3,7 +3,7 @@
  */
 
 @interface CPMemoryOwner : NSObject <CPDisposable> {
-    void *memory;
+    void * memory;
 }
 
 - (void)dealloc;

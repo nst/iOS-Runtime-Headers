@@ -3,9 +3,9 @@
  */
 
 @interface CalAccountsProvider : NSObject {
-    ACAccountStore *_accountStore;
-    NSMutableArray *_accountsWhenRunningUnitTests;
-    BOOL _runningUnitTests;
+    ACAccountStore * _accountStore;
+    NSMutableArray * _accountsWhenRunningUnitTests;
+    BOOL  _runningUnitTests;
 }
 
 @property (nonatomic, retain) ACAccountStore *accountStore;
@@ -19,7 +19,6 @@
 + (id)_existingAccountForAccount:(id)arg1 inStore:(id)arg2;
 + (id)_uniqueStringsForUsername:(id)arg1;
 + (BOOL)accountIsDuplicate:(id)arg1 inStore:(id)arg2;
-+ (id)calDAVChildForParentAccount:(id)arg1;
 + (id)defaultProvider;
 + (id)uniqueStringsForHostname:(id)arg1;
 + (id)uniqueStringsForPrincipalPath:(id)arg1;

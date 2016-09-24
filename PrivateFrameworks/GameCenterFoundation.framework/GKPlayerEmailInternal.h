@@ -3,10 +3,10 @@
  */
 
 @interface GKPlayerEmailInternal : GKInternalRepresentation {
-    NSString *_address;
-    NSString *_addressPrefix;
-    NSString *_addressSHA1;
-    BOOL _verified;
+    NSString * _address;
+    NSString * _addressPrefix;
+    NSString * _addressSHA1;
+    BOOL  _verified;
 }
 
 @property (nonatomic, retain) NSString *address;

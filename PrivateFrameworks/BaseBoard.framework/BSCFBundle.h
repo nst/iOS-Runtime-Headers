@@ -3,7 +3,7 @@
  */
 
 @interface BSCFBundle : NSObject {
-    struct __CFBundle { } *_cfBundle;
+    struct __CFBundle { } * _cfBundle;
 }
 
 - (id)_pathsForResource:(id)arg1 ofType:(id)arg2 inDirectory:(id)arg3;

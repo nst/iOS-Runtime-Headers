@@ -3,14 +3,14 @@
  */
 
 @interface FMDUIFMIPiCloudSettingsViewController : PSListController {
-    ACAccount *_account;
-    BOOL _activityInProgress;
-    BOOL _firstTimeSetup;
-    PSSpecifier *_fmipSpecifier;
-    UIProgressHUD *_hud;
-    RemoteUIController *_ruiController;
-    PSSpecifier *_sendLastLocationSpecifier;
-    BOOL _togglingFMIPSwitch;
+    ACAccount * _account;
+    BOOL  _activityInProgress;
+    BOOL  _firstTimeSetup;
+    PSSpecifier * _fmipSpecifier;
+    UIProgressHUD * _hud;
+    RemoteUIController * _ruiController;
+    PSSpecifier * _sendLastLocationSpecifier;
+    BOOL  _togglingFMIPSwitch;
 }
 
 @property (nonatomic, retain) ACAccount *account;
@@ -45,7 +45,6 @@
 - (void)hideActivityInProgressUI;
 - (void)hideActivityInProgressUIWithDelay:(double)arg1;
 - (id)hud;
-- (id)init;
 - (BOOL)isShowingActivityInProgressUI;
 - (id)ruiController;
 - (id)sendLastLocationSpecifier;

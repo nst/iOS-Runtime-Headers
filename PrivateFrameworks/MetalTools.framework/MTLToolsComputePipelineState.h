@@ -3,7 +3,7 @@
  */
 
 @interface MTLToolsComputePipelineState : MTLToolsObject <MTLComputePipelineStateSPI> {
-    <MTLFunction> *_function;
+    <MTLFunction> * _function;
 }
 
 @property (readonly, copy) NSString *debugDescription;

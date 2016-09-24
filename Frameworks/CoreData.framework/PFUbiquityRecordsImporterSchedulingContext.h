@@ -3,12 +3,12 @@
  */
 
 @interface PFUbiquityRecordsImporterSchedulingContext : NSObject {
-    NSMutableSet *_failedLogLocations;
-    NSMutableSet *_ignoredLogLocations;
-    int _lock;
-    NSMutableDictionary *_logLocationsToEncounteredErrors;
-    NSMutableSet *_pendingLogLocations;
-    NSMutableSet *_scheduledLogLocations;
+    NSMutableSet * _failedLogLocations;
+    NSMutableSet * _ignoredLogLocations;
+    int  _lock;
+    NSMutableDictionary * _logLocationsToEncounteredErrors;
+    NSMutableSet * _pendingLogLocations;
+    NSMutableSet * _scheduledLogLocations;
 }
 
 @property (nonatomic, readonly) NSSet *failedLogLocations;

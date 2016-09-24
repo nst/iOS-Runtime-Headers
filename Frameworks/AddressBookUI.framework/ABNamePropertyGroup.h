@@ -3,11 +3,11 @@
  */
 
 @interface ABNamePropertyGroup : ABAbstractPropertyGroup {
-    <ABPrimaryValueDelegate> *_delegate;
-    ABUIPerson *_preferredPerson;
-    NSMutableArray *_properties;
-    NSMutableSet *_propertiesWithMultipleValuePlaceholders;
-    NSMutableDictionary *_valuesByPersonByProperty;
+    <ABPrimaryValueDelegate> * _delegate;
+    ABUIPerson * _preferredPerson;
+    NSMutableArray * _properties;
+    NSMutableSet * _propertiesWithMultipleValuePlaceholders;
+    NSMutableDictionary * _valuesByPersonByProperty;
 }
 
 @property (nonatomic) <ABPrimaryValueDelegate> *delegate;

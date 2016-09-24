@@ -3,9 +3,9 @@
  */
 
 @interface BSSerializedRequestQueue : NSObject {
-    id /* block */ _conditionBlock;
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    id /* block */  _conditionBlock;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic, readonly, retain) NSObject<OS_dispatch_queue> *serialQueue;

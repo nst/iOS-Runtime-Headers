@@ -3,9 +3,9 @@
  */
 
 @interface NSNetService : NSObject {
-    id _delegate;
-    id _netService;
-    id _reserved;
+    id  _delegate;
+    id  _netService;
+    id  _reserved;
 }
 
 @property (readonly, copy) NSArray *addresses;

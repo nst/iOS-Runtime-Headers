@@ -3,10 +3,10 @@
  */
 
 @interface AWDPairedSyncSyncReport : PBCodable <NSCopying> {
-    NSString *_activityName;
-    unsigned int _defaultByteCount;
-    NSString *_gizmoBuild;
-    NSString *_gizmoHardware;
+    NSString * _activityName;
+    unsigned int  _defaultByteCount;
+    NSString * _gizmoBuild;
+    NSString * _gizmoHardware;
     struct { 
         unsigned int syncDuration : 1; 
         unsigned int timestamp : 1; 
@@ -18,16 +18,18 @@
         unsigned int timeoutCount : 1; 
         unsigned int urgentByteCount : 1; 
         unsigned int isAutomated : 1; 
-    } _has;
-    BOOL _isAutomated;
-    unsigned int _recordCount;
-    unsigned int _syncByteCount;
-    unsigned long long _syncDuration;
-    unsigned int _syncErrorCode;
-    unsigned int _syncType;
-    unsigned int _timeoutCount;
-    unsigned long long _timestamp;
-    unsigned int _urgentByteCount;
+        unsigned int sawADropout : 1; 
+    }  _has;
+    BOOL  _isAutomated;
+    unsigned int  _recordCount;
+    BOOL  _sawADropout;
+    unsigned int  _syncByteCount;
+    unsigned long long  _syncDuration;
+    unsigned int  _syncErrorCode;
+    unsigned int  _syncType;
+    unsigned int  _timeoutCount;
+    unsigned long long  _timestamp;
+    unsigned int  _urgentByteCount;
 }
 
 @property (nonatomic, retain) NSString *activityName;
@@ -40,6 +42,7 @@
 @property (nonatomic, readonly) BOOL hasGizmoHardware;
 @property (nonatomic) BOOL hasIsAutomated;
 @property (nonatomic) BOOL hasRecordCount;
+@property (nonatomic) BOOL hasSawADropout;
 @property (nonatomic) BOOL hasSyncByteCount;
 @property (nonatomic) BOOL hasSyncDuration;
 @property (nonatomic) BOOL hasSyncErrorCode;
@@ -49,6 +52,7 @@
 @property (nonatomic) BOOL hasUrgentByteCount;
 @property (nonatomic) BOOL isAutomated;
 @property (nonatomic) unsigned int recordCount;
+@property (nonatomic) BOOL sawADropout;
 @property (nonatomic) unsigned int syncByteCount;
 @property (nonatomic) unsigned long long syncDuration;
 @property (nonatomic) unsigned int syncErrorCode;
@@ -72,6 +76,7 @@
 - (BOOL)hasGizmoHardware;
 - (BOOL)hasIsAutomated;
 - (BOOL)hasRecordCount;
+- (BOOL)hasSawADropout;
 - (BOOL)hasSyncByteCount;
 - (BOOL)hasSyncDuration;
 - (BOOL)hasSyncErrorCode;
@@ -85,6 +90,7 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)recordCount;
+- (BOOL)sawADropout;
 - (void)setActivityName:(id)arg1;
 - (void)setDefaultByteCount:(unsigned int)arg1;
 - (void)setGizmoBuild:(id)arg1;
@@ -92,6 +98,7 @@
 - (void)setHasDefaultByteCount:(BOOL)arg1;
 - (void)setHasIsAutomated:(BOOL)arg1;
 - (void)setHasRecordCount:(BOOL)arg1;
+- (void)setHasSawADropout:(BOOL)arg1;
 - (void)setHasSyncByteCount:(BOOL)arg1;
 - (void)setHasSyncDuration:(BOOL)arg1;
 - (void)setHasSyncErrorCode:(BOOL)arg1;
@@ -101,6 +108,7 @@
 - (void)setHasUrgentByteCount:(BOOL)arg1;
 - (void)setIsAutomated:(BOOL)arg1;
 - (void)setRecordCount:(unsigned int)arg1;
+- (void)setSawADropout:(BOOL)arg1;
 - (void)setSyncByteCount:(unsigned int)arg1;
 - (void)setSyncDuration:(unsigned long long)arg1;
 - (void)setSyncErrorCode:(unsigned int)arg1;

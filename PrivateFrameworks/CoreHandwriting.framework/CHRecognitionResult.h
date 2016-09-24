@@ -3,7 +3,7 @@
  */
 
 @interface CHRecognitionResult : NSObject {
-    double _score;
+    double  _score;
 }
 
 @property double score;

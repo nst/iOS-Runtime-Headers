@@ -3,24 +3,24 @@
  */
 
 @interface _GEORouteMatchUpdater_EnterBoard : _GEORouteMatchUpdater {
-    GEOComposedRouteStep *_boardVehicleStep;
-    GEOComposedRouteStep *_enterStationStep;
+    GEOComposedRouteStep * _boardVehicleStep;
+    GEOComposedRouteStep * _enterStationStep;
     struct { 
         double latitude; 
         double longitude; 
-    } _entranceCoordinate;
-    BOOL _hasEnteredStation;
-    GEOComposedTransitTripRouteStep *_rideStep;
+    }  _entranceCoordinate;
+    BOOL  _hasEnteredStation;
+    GEOComposedTransitTripRouteStep * _rideStep;
     struct PolylineCoordinate { 
         unsigned int index; 
-        float offset; 
-    } _routeCoordinateApproaching;
+        double offset; 
+    }  _routeCoordinateApproaching;
     struct PolylineCoordinate { 
         unsigned int index; 
-        float offset; 
-    } _routeCoordinateAtStation;
-    GEOPBTransitStation *_transitStation;
-    GEOPBTransitStop *_transitStop;
+        double offset; 
+    }  _routeCoordinateAtStation;
+    GEOPBTransitStation * _transitStation;
+    GEOPBTransitStop * _transitStop;
 }
 
 - (id).cxx_construct;

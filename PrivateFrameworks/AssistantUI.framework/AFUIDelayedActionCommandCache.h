@@ -3,9 +3,9 @@
  */
 
 @interface AFUIDelayedActionCommandCache : NSObject {
-    NSMutableDictionary *_delayedActionTimersByIdentifier;
-    <AFUIDelayedActionCommandCacheDelegate> *_delegate;
-    NSMutableDictionary *_dismissalDelayedActionCommandsByIdentifier;
+    NSMutableDictionary * _delayedActionTimersByIdentifier;
+    <AFUIDelayedActionCommandCacheDelegate> * _delegate;
+    NSMutableDictionary * _dismissalDelayedActionCommandsByIdentifier;
 }
 
 @property (nonatomic) <AFUIDelayedActionCommandCacheDelegate> *delegate;
@@ -16,8 +16,8 @@
 - (void)_performDelayedActionCommandTimerAction:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)handleDelayedActionCancelCommand:(id)arg1;
-- (void)handleDelayedActionCommand:(id)arg1;
+- (void)handleDelayedActionCancelCommand:(id)arg1 completion:(id /* block */)arg2;
+- (void)handleDelayedActionCommand:(id)arg1 completion:(id /* block */)arg2;
 - (BOOL)hasPendingCommands;
 - (id)initWithDelegate:(id)arg1;
 - (void)invalidatePendingCommands;

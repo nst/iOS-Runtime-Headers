@@ -3,8 +3,8 @@
  */
 
 @interface AKCropAdornmentLayer : AKAdornmentLayer {
-    CAShapeLayer *_guideLayer;
-    CAShapeLayer *_handlesLayer;
+    CAShapeLayer * _guideLayer;
+    CAShapeLayer * _handlesLayer;
 }
 
 @property (retain) CAShapeLayer *guideLayer;

@@ -3,8 +3,8 @@
  */
 
 @interface APSMultiUserFS : NSObject {
-    BOOL _isMultiUser;
-    NSString *_systemPathCache;
+    BOOL  _isMultiUser;
+    NSString * _systemPathCache;
 }
 
 @property (readonly) BOOL isMultiUser;

@@ -3,10 +3,10 @@
  */
 
 @interface CICircularWrap : CIFilter {
-    NSNumber *inputAngle;
-    CIVector *inputCenter;
-    CIImage *inputImage;
-    NSNumber *inputRadius;
+    NSNumber * inputAngle;
+    CIVector * inputCenter;
+    CIImage * inputImage;
+    NSNumber * inputRadius;
 }
 
 + (id)customAttributes;

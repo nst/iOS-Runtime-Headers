@@ -3,7 +3,8 @@
  */
 
 @interface IDSIDQueryController : NSObject {
-    _IDSIDQueryController *_internal;
+    _IDSIDQueryController * _internal;
+    IDSInternalQueueController * _queueController;
 }
 
 // Image: /System/Library/PrivateFrameworks/IDS.framework/IDS

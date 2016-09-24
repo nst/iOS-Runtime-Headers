@@ -3,7 +3,7 @@
  */
 
 @interface AVAssetReaderOutput : NSObject {
-    AVAssetReaderOutputInternal *_internal;
+    AVAssetReaderOutputInternal * _internal;
 }
 
 @property (nonatomic) BOOL alwaysCopiesSampleData;
@@ -13,6 +13,7 @@
 @property (getter=_trimsSampleDurations, nonatomic, readonly) BOOL trimsSampleDurations;
 @property (getter=_weakReferenceToAssetReader, nonatomic, readonly) AVWeakReference *weakReferenceToAssetReader;
 
++ (id)_figAssetReaderVideoScalingPropertiesFromVideoSettings:(id)arg1 withFormatDescription:(id)arg2;
 + (void)initialize;
 
 - (id)_asset;

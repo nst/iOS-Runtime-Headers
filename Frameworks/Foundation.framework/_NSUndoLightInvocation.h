@@ -3,8 +3,8 @@
  */
 
 @interface _NSUndoLightInvocation : _NSUndoObject {
-    id _arg;
-    SEL _selector;
+    id  _arg;
+    SEL  _selector;
 }
 
 - (id)_argument;

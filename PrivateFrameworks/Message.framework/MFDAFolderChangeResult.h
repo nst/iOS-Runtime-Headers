@@ -3,10 +3,10 @@
  */
 
 @interface MFDAFolderChangeResult : NSObject {
-    NSError *_error;
-    NSString *_folderID;
-    NSString *_folderName;
-    int _statusCode;
+    NSError * _error;
+    NSString * _folderID;
+    NSString * _folderName;
+    int  _statusCode;
 }
 
 @property (readonly) NSError *error;

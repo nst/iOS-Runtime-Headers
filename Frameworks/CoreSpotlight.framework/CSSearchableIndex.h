@@ -3,22 +3,22 @@
  */
 
 @interface CSSearchableIndex : NSObject {
-    CSIndexingQueue *_activityQueue;
-    int _awakeNotifyToken;
-    BOOL _batchOpen;
-    NSMutableArray *_batchedItemIdentifiersToDelete;
-    NSMutableArray *_batchedItemsToIndex;
-    NSString *_bundleIdentifier;
-    NSXPCConnection *_connection;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    <CSSearchableIndexDelegate> *_indexDelegate;
-    NSString *_name;
-    int _options;
-    NSString *_protectionClass;
-    <CSSearchableIndexInterface><NSXPCProxyCreating> *_testProxy;
+    CSIndexingQueue * _activityQueue;
+    int  _awakeNotifyToken;
+    BOOL  _batchOpen;
+    NSMutableArray * _batchedItemIdentifiersToDelete;
+    NSMutableArray * _batchedItemsToIndex;
+    NSString * _bundleIdentifier;
+    NSXPCConnection * _connection;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    <CSSearchableIndexDelegate> * _indexDelegate;
+    NSString * _name;
+    int  _options;
+    NSString * _protectionClass;
+    <CSSearchableIndexInterface><NSXPCProxyCreating> * _testProxy;
 }
 
-@property (nonatomic, retain) CSIndexingQueue *activityQueue;
+@property (nonatomic, readonly) CSIndexingQueue *activityQueue;
 @property (nonatomic) int awakeNotifyToken;
 @property (nonatomic) BOOL batchOpen;
 @property (nonatomic, retain) NSMutableArray *batchedItemIdentifiersToDelete;
@@ -32,6 +32,7 @@
 @property (nonatomic, copy) NSString *protectionClass;
 @property (nonatomic, retain) <CSSearchableIndexInterface><NSXPCProxyCreating> *testProxy;
 
++ (id)_requestQueueAttribute;
 + (void)_setLastUpdateTime;
 + (BOOL)activityShouldBeIndexed:(id)arg1 bundleID:(id)arg2;
 + (id)defaultSearchableIndex;
@@ -41,7 +42,6 @@
 + (id)mainBundleID;
 + (id)mainBundleLocalizedString;
 + (void)notifyIndexDelegates;
-+ (id)requestBundleID;
 
 - (void).cxx_destruct;
 - (void)_cancelAwakeNotifyToken;
@@ -50,10 +50,11 @@
 - (void)_commonInit;
 - (void)_didInterruptConnection;
 - (void)_didInvalidateConnection;
-- (void)_indexActivities:(id)arg1;
+- (void)_indexActivities:(id)arg1 flush:(BOOL)arg2;
 - (id)_initWithName:(id)arg1 protectionClass:(id)arg2 bundleIdentifier:(id)arg3 options:(int)arg4;
 - (void)_issueCommand:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)_itemsBySanitizingItemsForSpotlight:(id)arg1;
+- (void)_makeActivityQueueIfNecessary;
 - (void)_performIndexJob:(id)arg1 acknowledgementHandler:(id /* block */)arg2;
 - (void)_registerAwakeNotifyToken;
 - (void)_setMailMessageAttributes:(id)arg1;
@@ -65,6 +66,8 @@
 - (id)_validateOperationWithItems:(id)arg1;
 - (id)_validateOperationWithItems:(id)arg1 identifiers:(id)arg2;
 - (id)activityQueue;
+- (void)addInteraction:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)addInteraction:(id)arg1 completionHandler:(id /* block */)arg2;
 - (int)awakeNotifyToken;
 - (BOOL)batchOpen;
 - (id)batchedItemIdentifiersToDelete;
@@ -75,9 +78,15 @@
 - (id)connection;
 - (void)dealloc;
 - (id)delegateQueue;
+- (void)deleteAllInteractionsWithBundleID:(id)arg1 protectionClass:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)deleteAllInteractionsWithCompletionHandler:(id /* block */)arg1;
 - (void)deleteAllSearchableItemsForBundleID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)deleteAllSearchableItemsWithCompletionHandler:(id /* block */)arg1;
 - (void)deleteAllSearchableItemsWithProtectionClass:(id)arg1 forBundleID:(id)arg2 options:(int)arg3 completionHandler:(id /* block */)arg4;
+- (void)deleteInteractionsWithGroupIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)deleteInteractionsWithGroupIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)deleteInteractionsWithIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)deleteInteractionsWithIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)deleteSearchableItemsSinceDate:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)deleteSearchableItemsSinceDate:(id)arg1 protectionClass:(id)arg2 forBundleID:(id)arg3 options:(int)arg4 completionHandler:(id /* block */)arg5;
 - (void)deleteSearchableItemsWithDomainIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -87,6 +96,7 @@
 - (void)endIndexBatchWithClientState:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)fetchLastClientStateWithCompletionHandler:(id /* block */)arg1;
 - (void)fetchLastClientStateWithProtectionClass:(id)arg1 forBundleID:(id)arg2 clientStateName:(id)arg3 options:(int)arg4 completionHandler:(id /* block */)arg5;
+- (void)flushUserActivities;
 - (id)indexDelegate;
 - (void)indexSearchableItems:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)indexSearchableItems:(id)arg1 deleteSearchableItemsWithIdentifiers:(id)arg2 clientState:(id)arg3 clientStateName:(id)arg4 protectionClass:(id)arg5 forBundleID:(id)arg6 options:(int)arg7 completionHandler:(id /* block */)arg8;
@@ -109,7 +119,6 @@
 - (id)protectionClass;
 - (id)remoteProxyWithErrorHandler:(id /* block */)arg1;
 - (id)requestQueue;
-- (void)setActivityQueue:(id)arg1;
 - (void)setAwakeNotifyToken:(int)arg1;
 - (void)setBatchOpen:(BOOL)arg1;
 - (void)setBatchedItemIdentifiersToDelete:(id)arg1;

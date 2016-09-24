@@ -3,10 +3,10 @@
  */
 
 @interface _CNAutocompleteUserSessionDisplayedResults : NSObject {
-    BOOL _containsDuetResults;
-    NSMutableDictionary *_datesByBatchIndexes;
-    BOOL _ignored;
-    CNAutocompleteFetchRequest *_request;
+    BOOL  _containsDuetResults;
+    NSMutableDictionary * _datesByBatchIndexes;
+    BOOL  _ignored;
+    CNAutocompleteFetchRequest * _request;
 }
 
 @property (nonatomic) BOOL containsDuetResults;

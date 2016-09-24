@@ -3,7 +3,7 @@
  */
 
 @interface OITSUPointerSet : NSSet {
-    struct __CFSet { } *mSet;
+    struct __CFSet { } * mSet;
 }
 
 + (Class)privateMutableClass;

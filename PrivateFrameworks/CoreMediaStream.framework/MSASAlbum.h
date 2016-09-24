@@ -3,21 +3,21 @@
  */
 
 @interface MSASAlbum : NSObject <NSCopying> {
-    NSString *_GUID;
-    NSString *_URLString;
-    id _context;
-    NSString *_ctag;
-    NSString *_foreignCtag;
-    BOOL _isFamilySharedAlbum;
-    NSDictionary *_metadata;
-    NSString *_ownerEmail;
-    NSString *_ownerFirstName;
-    NSString *_ownerFullName;
-    NSString *_ownerLastName;
-    NSString *_ownerPersonID;
-    NSString *_publicURLString;
-    int _relationshipState;
-    NSDate *_subscriptionDate;
+    NSString * _GUID;
+    NSString * _URLString;
+    id  _context;
+    NSString * _ctag;
+    NSString * _foreignCtag;
+    BOOL  _isFamilySharedAlbum;
+    NSDictionary * _metadata;
+    NSString * _ownerEmail;
+    NSString * _ownerFirstName;
+    NSString * _ownerFullName;
+    NSString * _ownerLastName;
+    NSString * _ownerPersonID;
+    NSString * _publicURLString;
+    int  _relationshipState;
+    NSDate * _subscriptionDate;
 }
 
 @property (nonatomic, retain) NSString *GUID;

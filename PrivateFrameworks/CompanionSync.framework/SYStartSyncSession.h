@@ -3,13 +3,13 @@
  */
 
 @interface SYStartSyncSession : PBCodable <NSCopying> {
-    BOOL _expectsRestartSupport;
-    BOOL _expectsRollbackSupport;
-    SYMessageHeader *_header;
-    BOOL _isResetSync;
-    NSData *_metadata;
-    NSString *_sessionID;
-    double _sessionTimeout;
+    BOOL  _expectsRestartSupport;
+    BOOL  _expectsRollbackSupport;
+    SYMessageHeader * _header;
+    BOOL  _isResetSync;
+    NSData * _metadata;
+    NSString * _sessionID;
+    double  _sessionTimeout;
 }
 
 @property (nonatomic) BOOL expectsRestartSupport;

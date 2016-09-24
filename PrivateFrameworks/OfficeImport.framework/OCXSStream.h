@@ -3,7 +3,7 @@
  */
 
 @interface OCXSStream : NSObject {
-    NSMutableArray *mLevelStack;
+    NSMutableArray * mLevelStack;
 }
 
 - (int)currentContextChildDepth;

@@ -82,9 +82,22 @@
 - (id)string;
 - (id)user;
 
+// Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
+
+- (id)parsec_normalizedURLStringForDeepLinkIngest;
+- (id)parsec_normalizedURLStringForDeepLinkWhitelist;
+- (id)parsec_normalizedURLStringForLDAModel;
+- (id)parsec_normalizedURLStringForTLDFeatures;
+- (id)parsec_normalizedURLStringWithOptions:(unsigned int)arg1;
+
 // Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
 
 - (id)rms_componentsByAddingQueryParameters:(id)arg1;
 - (id)rms_componentsByAddingQueryParameters:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
+
+- (BOOL)containsQueryItemWithName:(id)arg1;
+- (id)firstQueryItemWithName:(id)arg1;
 
 @end

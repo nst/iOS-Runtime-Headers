@@ -3,10 +3,10 @@
  */
 
 @interface HDSampleQueryServer : HDQueryServer {
-    NSObject<OS_dispatch_queue> *_batchQueue;
-    unsigned int _maxResults;
-    NSArray *_sortDescriptors;
-    BOOL _suspended;
+    NSObject<OS_dispatch_queue> * _batchQueue;
+    unsigned int  _maxResults;
+    NSArray * _sortDescriptors;
+    BOOL  _suspended;
 }
 
 @property (nonatomic, readonly) unsigned int maxResults;
@@ -14,7 +14,7 @@
 
 - (void).cxx_destruct;
 - (void)_queue_start;
-- (id)initWithQueryUUID:(id)arg1 dataObject:(id)arg2 clientProxy:(id)arg3 client:(id)arg4 delegate:(id)arg5 healthDaemon:(id)arg6;
+- (id)initWithQueryUUID:(id)arg1 dataObject:(id)arg2 clientProxy:(id)arg3 client:(id)arg4 delegate:(id)arg5 profile:(id)arg6;
 - (unsigned int)maxResults;
 - (id)sortDescriptors;
 

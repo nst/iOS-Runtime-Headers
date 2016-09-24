@@ -3,10 +3,10 @@
  */
 
 @interface UIStoryboardPopoverSegueTemplate : UIStoryboardSegueTemplate {
-    UIBarButtonItem *_anchorBarButtonItem;
-    UIView *_anchorView;
-    NSArray *_passthroughViews;
-    unsigned int _permittedArrowDirections;
+    UIBarButtonItem * _anchorBarButtonItem;
+    UIView * _anchorView;
+    NSArray * _passthroughViews;
+    unsigned int  _permittedArrowDirections;
 }
 
 @property (nonatomic, retain) UIBarButtonItem *anchorBarButtonItem;

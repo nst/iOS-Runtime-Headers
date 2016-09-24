@@ -6,6 +6,6 @@
 @required
 
 - (NSURL *)webui_URL;
-- (NSArray *)webui_certificateChain;
+- (struct __SecTrust { }*)webui_serverTrust;
 
 @end

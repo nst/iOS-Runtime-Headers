@@ -3,8 +3,8 @@
  */
 
 @interface NSConcreteMapTableValueEnumerator : NSEnumerator {
-    unsigned int counter;
-    NSConcreteMapTable *mapTable;
+    unsigned int  counter;
+    NSConcreteMapTable * mapTable;
 }
 
 + (id)enumeratorWithMapTable:(id)arg1;

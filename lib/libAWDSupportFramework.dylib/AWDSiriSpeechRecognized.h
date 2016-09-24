@@ -3,14 +3,14 @@
  */
 
 @interface AWDSiriSpeechRecognized : PBCodable <NSCopying> {
-    unsigned long long _durationFromVoiceRecordingEnd;
-    unsigned long long _durationFromVoiceSendEnd;
+    unsigned long long  _durationFromVoiceRecordingEnd;
+    unsigned long long  _durationFromVoiceSendEnd;
     struct { 
         unsigned int durationFromVoiceRecordingEnd : 1; 
         unsigned int durationFromVoiceSendEnd : 1; 
         unsigned int timestamp : 1; 
-    } _has;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned long long durationFromVoiceRecordingEnd;

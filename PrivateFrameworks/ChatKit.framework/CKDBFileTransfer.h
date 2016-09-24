@@ -3,15 +3,20 @@
  */
 
 @interface CKDBFileTransfer : NSObject <CKFileTransfer> {
-    NSURL *_fileURL;
-    NSString *_filename;
-    NSString *_guid;
-    NSDictionary *_transcoderUserInfo;
-    int _transferState;
+    NSDictionary * _attributionInfo;
+    NSURL * _fileURL;
+    NSString * _filename;
+    NSString * _guid;
+    BOOL  _hideAttachment;
+    BOOL  _isSticker;
+    NSDictionary * _stickerUserInfo;
+    NSDictionary * _transcoderUserInfo;
+    int  _transferState;
 }
 
 @property (nonatomic, retain) IMMessage *IMMessage;
-@property (nonatomic, readonly) unsigned long long currentBytes;
+@property (nonatomic, copy) NSDictionary *attributionInfo;
+@property (nonatomic, readonly) unsigned int currentBytes;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (getter=isDownloadable, nonatomic, readonly) BOOL downloadable;
@@ -23,31 +28,39 @@
 @property (nonatomic, copy) NSString *filename;
 @property (nonatomic, readonly, copy) NSString *guid;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL hideAttachment;
+@property (nonatomic, readonly) BOOL isSticker;
 @property (getter=isRestoring, nonatomic, readonly) BOOL restoring;
+@property (nonatomic, readonly, copy) NSDictionary *stickerUserInfo;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) unsigned long long totalBytes;
+@property (nonatomic, readonly) unsigned int totalBytes;
 @property (nonatomic, readonly, copy) NSDictionary *transcoderUserInfo;
 @property (nonatomic) int transferState;
 
-- (unsigned long long)currentBytes;
-- (void)dealloc;
+- (void).cxx_destruct;
+- (id)attributionInfo;
+- (unsigned int)currentBytes;
 - (id)description;
 - (id)error;
 - (id)fileURL;
 - (id)filename;
 - (id)guid;
-- (id)initWithFileURL:(id)arg1 transcoderUserInfo:(id)arg2;
+- (BOOL)hideAttachment;
+- (id)initWithFileURL:(id)arg1 transcoderUserInfo:(id)arg2 attributionInfo:(id)arg3 hideAttachment:(BOOL)arg4;
 - (id)initWithTransferGUID:(id)arg1 imMessage:(id)arg2;
 - (BOOL)isDownloadable;
 - (BOOL)isDownloading;
 - (BOOL)isFileDataReady;
 - (BOOL)isFileURLFinalized;
 - (BOOL)isRestoring;
+- (BOOL)isSticker;
 - (void)mediaObjectAdded;
 - (void)mediaObjectRemoved;
+- (void)setAttributionInfo:(id)arg1;
 - (void)setFilename:(id)arg1;
 - (void)setTransferState:(int)arg1;
-- (unsigned long long)totalBytes;
+- (id)stickerUserInfo;
+- (unsigned int)totalBytes;
 - (id)transcoderUserInfo;
 - (int)transferState;
 

@@ -3,10 +3,10 @@
  */
 
 @interface MFPlaceholderMessageRewriter : NSObject <MFComposeTypeFactoryDelegate> {
-    MFOutgoingMessageContent *_originalMessageContent;
-    <MFMessageRewriterPlaceholderResolver> *_placeholderResolver;
-    NSMutableArray *_placeholders;
-    MFOutgoingMessageContent *_rewrittenMessageContent;
+    MFOutgoingMessageContent * _originalMessageContent;
+    <MFMessageRewriterPlaceholderResolver> * _placeholderResolver;
+    NSMutableArray * _placeholders;
+    MFOutgoingMessageContent * _rewrittenMessageContent;
 }
 
 @property (readonly, copy) NSString *debugDescription;

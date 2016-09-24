@@ -3,8 +3,8 @@
  */
 
 @interface SKUIExpandPageComponent : SKUIPageComponent {
-    NSMutableArray *_childComponents;
-    SKUIExpandViewElement *_viewElement;
+    NSMutableArray * _childComponents;
+    SKUIExpandViewElement * _viewElement;
 }
 
 @property (nonatomic, readonly) SKUIExpandViewElement *viewElement;

@@ -3,7 +3,7 @@
  */
 
 @interface TRUserNotificationManager : NSObject {
-    _TRUserNotification *_activeUserNotification;
+    _TRUserNotification * _activeUserNotification;
 }
 
 @property (nonatomic, retain) _TRUserNotification *activeUserNotification;

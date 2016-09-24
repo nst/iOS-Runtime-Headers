@@ -3,13 +3,13 @@
  */
 
 @interface SPInterfaceList : SPInterfaceObject {
-    <SPInterfaceController> *_controller;
-    NSArray *_rowControllerProperties;
-    NSArray *_rowControllers;
-    NSDictionary *_rowDescriptions;
+    WKInterfaceController * _controller;
+    NSArray * _rowControllerProperties;
+    NSArray * _rowControllers;
+    NSDictionary * _rowDescriptions;
 }
 
-@property (nonatomic) <SPInterfaceController> *controller;
+@property (nonatomic) WKInterfaceController *controller;
 @property (nonatomic, readonly) int numberOfRows;
 @property (nonatomic, retain) NSArray *rowControllerProperties;
 @property (nonatomic, copy) NSArray *rowControllers;

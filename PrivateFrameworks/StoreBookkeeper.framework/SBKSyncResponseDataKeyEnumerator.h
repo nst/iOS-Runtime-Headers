@@ -3,13 +3,13 @@
  */
 
 @interface SBKSyncResponseDataKeyEnumerator : NSObject {
-    id /* block */ _completionBlock;
-    NSEnumerator *_conflictedKeysEnumerator;
-    NSEnumerator *_deletedKeysEnumerator;
-    BOOL _resolvedConflictsNeedSyncToServer;
-    SBKSyncResponseData *_responseData;
-    SBKSyncTransaction *_transaction;
-    NSEnumerator *_updatedKeysEnumerator;
+    id /* block */  _completionBlock;
+    NSEnumerator * _conflictedKeysEnumerator;
+    NSEnumerator * _deletedKeysEnumerator;
+    BOOL  _resolvedConflictsNeedSyncToServer;
+    SBKSyncResponseData * _responseData;
+    SBKSyncTransaction * _transaction;
+    NSEnumerator * _updatedKeysEnumerator;
 }
 
 @property (copy) id /* block */ completionBlock;

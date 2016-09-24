@@ -3,10 +3,10 @@
  */
 
 @interface SULoadSectionsOperation : ISOperation <ISURLOperationDelegate> {
-    NSString *_activeSectionVersionString;
-    SUClientInterface *_clientInterface;
-    SUSectionsResponse *_sectionsResponse;
-    BOOL _shouldUseCache;
+    NSString * _activeSectionVersionString;
+    SUClientInterface * _clientInterface;
+    SUSectionsResponse * _sectionsResponse;
+    BOOL  _shouldUseCache;
 }
 
 @property (copy) NSString *activeSectionVersionString;

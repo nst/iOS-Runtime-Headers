@@ -3,10 +3,10 @@
  */
 
 @interface SKUIJSAnalyzedImageColors : IKJSObject <SKUIJSAnalyzedImageColors> {
-    SKUIJSColor *_backgroundColor;
-    BOOL _isBackgroundLight;
-    SKUIJSColor *_textPrimaryColor;
-    SKUIJSColor *_textSecondaryColor;
+    SKUIJSColor * _backgroundColor;
+    BOOL  _isBackgroundLight;
+    SKUIJSColor * _textPrimaryColor;
+    SKUIJSColor * _textSecondaryColor;
 }
 
 @property (nonatomic, readonly) SKUIJSColor *backgroundColor;

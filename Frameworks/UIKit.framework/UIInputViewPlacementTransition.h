@@ -3,15 +3,15 @@
  */
 
 @interface UIInputViewPlacementTransition : NSObject {
-    <NSObject> *animationContext;
-    <UIInputViewAnimationController> *animationController;
-    int animationState;
-    UIInputViewAnimationStyle *animationStyle;
-    BOOL cancelled;
-    UIInputViewSetPlacement *fromPlacement;
-    UIInputViewSetNotificationInfo *notificationInfo;
-    unsigned int notifications;
-    UIInputViewSetPlacement *toPlacement;
+    <NSObject> * animationContext;
+    <UIInputViewAnimationController> * animationController;
+    int  animationState;
+    UIInputViewAnimationStyle * animationStyle;
+    BOOL  cancelled;
+    UIInputViewSetPlacement * fromPlacement;
+    UIInputViewSetNotificationInfo * notificationInfo;
+    unsigned int  notifications;
+    UIInputViewSetPlacement * toPlacement;
 }
 
 @property (nonatomic, retain) <NSObject> *animationContext;

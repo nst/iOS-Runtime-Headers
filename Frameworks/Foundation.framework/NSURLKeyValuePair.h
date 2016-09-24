@@ -3,9 +3,9 @@
  */
 
 @interface NSURLKeyValuePair : NSObject {
-    unsigned int hash;
-    id key;
-    id value;
+    unsigned int  hash;
+    id  key;
+    id  value;
 }
 
 + (id)pair;

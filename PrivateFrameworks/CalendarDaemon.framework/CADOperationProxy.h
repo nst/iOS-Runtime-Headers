@@ -3,13 +3,13 @@
  */
 
 @interface CADOperationProxy : NSObject {
-    ClientConnection *_conn;
-    NSMutableDictionary *_operationGroups;
+    ClientConnection * _conn;
+    NSMutableDictionary * _operationGroups;
 }
 
 + (Class)_operationGroupClassFromSelector:(SEL)arg1;
 + (id)allOperationGroupClasses;
-+ (Class)operationProxyClassForClientWithBundleIdentifier:(id)arg1 eventAccess:(BOOL)arg2 reminderAccess:(BOOL)arg3;
++ (Class)operationProxyClassForClientWithConnection:(id)arg1;
 
 - (void)_callReplyHandler:(id)arg1 ofInvocation:(id)arg2 withError:(int)arg3;
 - (id)_copyReplyBlockFromInvocation:(id)arg1;

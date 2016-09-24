@@ -3,10 +3,10 @@
  */
 
 @interface PHMomentList : PHCollectionList {
-    short _generationType;
-    short _granularityLevel;
-    NSDate *_representativeDate;
-    int _sortIndex;
+    short  _generationType;
+    short  _granularityLevel;
+    NSDate * _representativeDate;
+    int  _sortIndex;
 }
 
 @property (nonatomic, readonly) short generationType;
@@ -17,6 +17,7 @@
 + (id)_transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
 + (id)entityKeyForPropertyKey:(id)arg1;
 + (id)fetchPredicateFromComparisonPredicate:(id)arg1 options:(id)arg2;
++ (id)fetchType;
 + (id)identifierCode;
 + (id)managedEntityName;
 + (BOOL)managedObjectSupportsTrashedState;

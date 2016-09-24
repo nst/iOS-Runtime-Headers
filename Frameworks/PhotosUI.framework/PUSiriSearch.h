@@ -3,7 +3,7 @@
  */
 
 @interface PUSiriSearch : NSObject {
-    STGenericIntent *_siriIntent;
+    STGenericIntent * _siriIntent;
 }
 
 @property (nonatomic, readonly) STGenericIntent *siriIntent;

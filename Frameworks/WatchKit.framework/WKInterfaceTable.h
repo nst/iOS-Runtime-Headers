@@ -3,10 +3,10 @@
  */
 
 @interface WKInterfaceTable : WKInterfaceObject {
-    WKInterfaceController *_controller;
-    NSMutableArray *_rowControllerProperties;
-    NSMutableArray *_rowControllers;
-    NSDictionary *_rowDescriptions;
+    WKInterfaceController * _controller;
+    NSMutableArray * _rowControllerProperties;
+    NSMutableArray * _rowControllers;
+    NSDictionary * _rowDescriptions;
 }
 
 @property (nonatomic) WKInterfaceController *controller;
@@ -21,6 +21,7 @@
 - (id)controller;
 - (void)insertRowsAtIndexes:(id)arg1 withRowType:(id)arg2;
 - (int)numberOfRows;
+- (void)performSegueForRow:(int)arg1;
 - (void)removeRowsAtIndexes:(id)arg1;
 - (void)resequenceRowControllerPropertyIndexes;
 - (id)rowControllerAtIndex:(int)arg1;

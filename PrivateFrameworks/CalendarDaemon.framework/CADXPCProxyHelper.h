@@ -3,8 +3,8 @@
  */
 
 @interface CADXPCProxyHelper : NSObject {
-    NSXPCConnection *_connection;
-    Protocol *_protocol;
+    NSXPCConnection * _connection;
+    Protocol * _protocol;
 }
 
 - (void)_callReplyHandler:(id)arg1 ofInvocation:(id)arg2 withError:(id)arg3;

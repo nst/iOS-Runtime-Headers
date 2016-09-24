@@ -3,7 +3,7 @@
  */
 
 @interface NEAppProxyUDPFlow : NEAppProxyFlow {
-    NWEndpoint *_localEndpoint;
+    NWEndpoint * _localEndpoint;
 }
 
 @property (readonly) NWEndpoint *localEndpoint;

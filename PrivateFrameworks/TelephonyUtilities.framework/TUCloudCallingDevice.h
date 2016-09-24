@@ -3,11 +3,11 @@
  */
 
 @interface TUCloudCallingDevice : NSObject <NSCopying, NSSecureCoding> {
-    BOOL _defaultPairedDevice;
-    NSString *_modelIdentifier;
-    NSString *_name;
-    NSString *_phoneNumberURI;
-    NSString *_uniqueID;
+    BOOL  _defaultPairedDevice;
+    NSString * _modelIdentifier;
+    NSString * _name;
+    NSString * _phoneNumberURI;
+    NSString * _uniqueID;
 }
 
 @property (getter=isDefaultPairedDevice, nonatomic) BOOL defaultPairedDevice;

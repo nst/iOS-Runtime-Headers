@@ -3,17 +3,17 @@
  */
 
 @interface OADGroup : OADDrawable <OADDrawableContainer> {
-    NSMutableArray *mChildren;
+    NSMutableArray * mChildren;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } mLogicalBounds;
+    }  mLogicalBounds;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -31,11 +31,11 @@
 - (id)description;
 - (id)groupProperties;
 - (id)init;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })logicalBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })logicalBounds;
 - (void)removeChild:(id)arg1;
 - (void)removeUnnecessaryOverrides;
 - (void)replaceChild:(id)arg1 with:(id)arg2;
-- (void)setLogicalBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setLogicalBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setParentTextListStyle:(id)arg1;
 
 @end

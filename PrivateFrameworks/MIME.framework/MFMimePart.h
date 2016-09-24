@@ -3,23 +3,23 @@
  */
 
 @interface MFMimePart : NSObject {
-    MFWeakReferenceHolder *_body;
-    NSMutableDictionary *_bodyParameters;
-    NSString *_contentTransferEncoding;
-    MFWeakReferenceHolder *_decodedData;
-    NSData *_fullData;
-    MFMimePart *_nextPart;
-    NSMutableDictionary *_otherIvars;
-    MFWeakReferenceHolder *_parent;
-    NSURL *_parentPartURL;
-    NSURL *_partURL;
-    MFPartialNetworkDataConsumer *_partialDataConsumer;
+    MFWeakReferenceHolder * _body;
+    NSMutableDictionary * _bodyParameters;
+    NSString * _contentTransferEncoding;
+    MFWeakReferenceHolder * _decodedData;
+    NSData * _fullData;
+    MFMimePart * _nextPart;
+    NSMutableDictionary * _otherIvars;
+    MFWeakReferenceHolder * _parent;
+    NSURL * _parentPartURL;
+    NSURL * _partURL;
+    MFPartialNetworkDataConsumer * _partialDataConsumer;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
-    NSString *_subtype;
-    NSString *_type;
+    }  _range;
+    NSString * _subtype;
+    NSString * _type;
 }
 
 // Image: /System/Library/PrivateFrameworks/MIME.framework/MIME

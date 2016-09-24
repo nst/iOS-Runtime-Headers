@@ -3,11 +3,11 @@
  */
 
 @interface RadioGetFeaturedStationsRequest : RadioRequest {
-    NSObject<OS_dispatch_queue> *_artworkQueue;
-    BOOL _disableArtworkLoading;
-    BOOL _disableCachedResponses;
-    SSURLConnectionRequest *_request;
-    unsigned int _stationCount;
+    NSObject<OS_dispatch_queue> * _artworkQueue;
+    BOOL  _disableArtworkLoading;
+    BOOL  _disableCachedResponses;
+    SSURLConnectionRequest * _request;
+    unsigned int  _stationCount;
 }
 
 @property (nonatomic) BOOL disableArtworkLoading;

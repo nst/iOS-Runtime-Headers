@@ -3,23 +3,23 @@
  */
 
 @interface _MFSocket : NSObject {
-    NSString *_accountIdentifier;
-    BOOL _allowsTrustPrompt;
-    NSArray *_clientCertificates;
-    NSCondition *_condition;
-    struct __CFString { } *_connectionServiceType;
-    BOOL _disableEphemeralDiffieHellmanCiphers;
-    NSInvocation *_eventHandler;
-    NSString *_host;
-    int _lowThroughputCounter;
-    int _numTimeoutSecs;
-    NSString *_protocol;
-    NSString *_service;
-    BOOL _socketCanRead;
-    BOOL _socketCanWrite;
-    NSString *_sourceApplicationBundleIdentifier;
-    MFStream *_stream;
-    BOOL _usesOpportunisticSockets;
+    NSString * _accountIdentifier;
+    BOOL  _allowsTrustPrompt;
+    NSArray * _clientCertificates;
+    NSCondition * _condition;
+    struct __CFString { } * _connectionServiceType;
+    BOOL  _disableEphemeralDiffieHellmanCiphers;
+    NSInvocation * _eventHandler;
+    NSString * _host;
+    int  _lowThroughputCounter;
+    int  _numTimeoutSecs;
+    NSString * _protocol;
+    NSString * _service;
+    BOOL  _socketCanRead;
+    BOOL  _socketCanWrite;
+    NSString * _sourceApplicationBundleIdentifier;
+    MFStream * _stream;
+    BOOL  _usesOpportunisticSockets;
 }
 
 @property (nonatomic, copy) NSString *accountIdentifier;
@@ -39,7 +39,11 @@
 @property (nonatomic) BOOL usesOpportunisticSockets;
 
 - (unsigned int)_bufferedByteCount;
+- (BOOL)_certificateIsTrustedForAccount:(id)arg1;
+- (BOOL)_evaluateTrust:(struct __SecTrust { }*)arg1 errorPtr:(id*)arg2;
+- (void)_setCertificateIsTrusted:(BOOL)arg1 forAccount:(id)arg2;
 - (BOOL)_startSSLHandshakeWithProtocol:(id)arg1 disableSSL2:(BOOL)arg2 errorPtr:(id*)arg3;
+- (BOOL)_waitForSocketOpenAndFlag:(BOOL*)arg1;
 - (void)abort;
 - (id)accountIdentifier;
 - (BOOL)allowsTrustPrompt;

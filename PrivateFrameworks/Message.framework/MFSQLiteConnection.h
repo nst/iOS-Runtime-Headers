@@ -3,17 +3,18 @@
  */
 
 @interface MFSQLiteConnection : NSObject {
-    void *_CPSearchContext;
-    void *_ICUSearchContext;
-    NSString *_databaseName;
-    struct sqlite3 { } *_db;
-    NSString *_path;
-    MFWeakReferenceHolder *_poolHolder;
-    struct __CFDictionary { } *_statementCache;
-    unsigned int _transactionCount;
-    int _transactionType;
+    void * _CPSearchContext;
+    void * _ICUSearchContext;
+    NSString * _databaseName;
+    struct sqlite3 { } * _db;
+    NSString * _path;
+    MFWeakReferenceHolder * _poolHolder;
+    struct __CFDictionary { } * _statementCache;
+    unsigned int  _transactionCount;
+    int  _transactionType;
 }
 
+@property (nonatomic, readonly) NSString *databaseName;
 @property (nonatomic, readonly) struct sqlite3 { }*db;
 @property (nonatomic) MFSQLiteConnectionPool *pool;
 
@@ -22,6 +23,7 @@
 - (int)beginTransactionWithType:(int)arg1;
 - (void)close;
 - (int)commitTransaction;
+- (id)databaseName;
 - (struct sqlite3 { }*)db;
 - (void)dealloc;
 - (void)flush;

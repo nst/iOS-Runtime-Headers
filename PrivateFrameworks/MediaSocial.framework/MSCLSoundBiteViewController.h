@@ -3,20 +3,20 @@
  */
 
 @interface MSCLSoundBiteViewController : UIViewController <MSCLAudioPlayerDelegate, MSCLSoundBiteViewDelegate, MSCLVoiceRecorderDelegate> {
-    MSCLAttachment *_attachment;
-    MSCLAudioPlayer *_audioPlayer;
-    SKUIClientContext *_clientContext;
-    MSCLConfiguration *_configuration;
-    <MSCLSoundBiteViewControllerDelegate> *_delegate;
-    BOOL _isExplicit;
-    NSNumberFormatter *_leadingZeroFormatter;
-    NSNumberFormatter *_numberFormatter;
-    int _recordingActivationMode;
-    NSString *_recordingFilePath;
-    double _recordingStartTime;
-    MSCLSoundBiteView *_soundBiteView;
-    MSCLVoiceRecorder *_voiceRecorder;
-    MSCLWaveformImageProducer *_waveformImageProducer;
+    MSCLAttachment * _attachment;
+    MSCLAudioPlayer * _audioPlayer;
+    SKUIClientContext * _clientContext;
+    MSCLConfiguration * _configuration;
+    <MSCLSoundBiteViewControllerDelegate> * _delegate;
+    BOOL  _isExplicit;
+    NSNumberFormatter * _leadingZeroFormatter;
+    NSNumberFormatter * _numberFormatter;
+    int  _recordingActivationMode;
+    NSString * _recordingFilePath;
+    double  _recordingStartTime;
+    MSCLSoundBiteView * _soundBiteView;
+    MSCLVoiceRecorder * _voiceRecorder;
+    MSCLWaveformImageProducer * _waveformImageProducer;
 }
 
 @property (nonatomic, readonly) MSCLAttachment *attachment;

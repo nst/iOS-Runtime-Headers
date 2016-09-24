@@ -3,12 +3,12 @@
  */
 
 @interface EKRecurrenceMonthlyChooserController : EKRecurrenceChooserController {
-    <EKRecurrenceChooserControllerDelegate> *_delegate;
-    EKRecurrenceMonthDayChooserController *_monthDayChooser;
-    UITableViewCell *_onEachCell;
-    UITableViewCell *_onTheCell;
-    EKRecurrenceOrdinalChooserController *_ordinalChooser;
-    int _selectedRow;
+    <EKRecurrenceChooserControllerDelegate> * _delegate;
+    EKRecurrenceMonthDayChooserController * _monthDayChooser;
+    UITableViewCell * _onEachCell;
+    UITableViewCell * _onTheCell;
+    EKRecurrenceOrdinalChooserController * _ordinalChooser;
+    int  _selectedRow;
 }
 
 @property (nonatomic) BOOL prohibitsMultipleDaysInMonthlyRecurrence;

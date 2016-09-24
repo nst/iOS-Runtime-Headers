@@ -3,15 +3,15 @@
  */
 
 @interface MPPMediaPredicate : PBCodable <NSCopying> {
-    MPPCompoundPredicate *_compoundPredicate;
-    MPPConditionalPredicate *_conditionalPredicate;
+    MPPCompoundPredicate * _compoundPredicate;
+    MPPConditionalPredicate * _conditionalPredicate;
     struct { 
         unsigned int type : 1; 
-    } _has;
-    MPPPersistentIDsPredicate *_persistentIDsPredicate;
-    MPPPropertyPredicate *_propertyPredicate;
-    MPPSearchStringPredicate *_searchStringPredicate;
-    int _type;
+    }  _has;
+    MPPPersistentIDsPredicate * _persistentIDsPredicate;
+    MPPPropertyPredicate * _propertyPredicate;
+    MPPSearchStringPredicate * _searchStringPredicate;
+    int  _type;
 }
 
 @property (nonatomic, retain) MPPCompoundPredicate *compoundPredicate;

@@ -3,8 +3,8 @@
  */
 
 @interface TSWPImageBulletProvider : NSObject {
-    NSMutableArray *_filenames;
-    NSMutableArray *_images;
+    NSMutableArray * _filenames;
+    NSMutableArray * _images;
 }
 
 @property (nonatomic, readonly) NSArray *predefinedImages;

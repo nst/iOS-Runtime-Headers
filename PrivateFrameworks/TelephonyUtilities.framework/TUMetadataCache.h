@@ -3,14 +3,15 @@
  */
 
 @interface TUMetadataCache : NSObject {
-    NSObject<OS_dispatch_queue> *_cache_queue;
-    NSArray *_providers;
+    NSObject<OS_dispatch_queue> * _cache_queue;
+    NSArray * _providers;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *cache_queue;
 @property (nonatomic, retain) NSArray *providers;
 
 - (void).cxx_destruct;
+- (void)_updateCacheWithDestinationIDs:(id)arg1 onlyEmptyProviders:(BOOL)arg2;
 - (id)cache_queue;
 - (id)description;
 - (id)init;
@@ -21,6 +22,7 @@
 - (void)removeDestinationIDFromCache:(id)arg1;
 - (void)setCache_queue:(id)arg1;
 - (void)setProviders:(id)arg1;
+- (void)updateCacheForEmptyDataProvidersWithDestinationIDs:(id)arg1;
 - (void)updateCacheWithDestinationIDs:(id)arg1;
 
 @end

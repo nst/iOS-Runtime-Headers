@@ -3,9 +3,9 @@
  */
 
 @interface AWDWiFiMetricActiveProbeStats : PBCodable <NSCopying> {
-    unsigned int _avgRTTLargePktSize;
-    unsigned int _avgRTTMediumPktSize;
-    unsigned int _avgRTTSmallPktSize;
+    unsigned int  _avgRTTLargePktSize;
+    unsigned int  _avgRTTMediumPktSize;
+    unsigned int  _avgRTTSmallPktSize;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int avgRTTLargePktSize : 1; 
@@ -20,17 +20,17 @@
         unsigned int perLargePktSize : 1; 
         unsigned int perMediumPktSize : 1; 
         unsigned int perSmallPktSize : 1; 
-    } _has;
-    unsigned int _maxRTTLargePktSize;
-    unsigned int _maxRTTMediumPktSize;
-    unsigned int _maxRTTSmallPktSize;
-    unsigned int _minRTTLargePktSize;
-    unsigned int _minRTTMediumPktSize;
-    unsigned int _minRTTSmallPktSize;
-    unsigned int _perLargePktSize;
-    unsigned int _perMediumPktSize;
-    unsigned int _perSmallPktSize;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned int  _maxRTTLargePktSize;
+    unsigned int  _maxRTTMediumPktSize;
+    unsigned int  _maxRTTSmallPktSize;
+    unsigned int  _minRTTLargePktSize;
+    unsigned int  _minRTTMediumPktSize;
+    unsigned int  _minRTTSmallPktSize;
+    unsigned int  _perLargePktSize;
+    unsigned int  _perMediumPktSize;
+    unsigned int  _perSmallPktSize;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int avgRTTLargePktSize;

@@ -3,15 +3,15 @@
  */
 
 @interface MCRestrictionManager : NSObject {
-    NSObject<OS_dispatch_queue> *_memberQueue;
-    NSMutableDictionary *_memberQueueEffectiveUserSettings;
-    NSMutableDictionary *_memberQueueRestrictions;
-    NSMutableDictionary *_memberQueueSystemClientRestrictions;
-    NSMutableDictionary *_memberQueueSystemProfileRestrictions;
-    NSMutableDictionary *_memberQueueSystemUserSettings;
-    NSMutableDictionary *_memberQueueUserClientRestrictions;
-    NSMutableDictionary *_memberQueueUserProfileRestrictions;
-    NSMutableDictionary *_memberQueueUserUserSettings;
+    NSObject<OS_dispatch_queue> * _memberQueue;
+    NSMutableDictionary * _memberQueueEffectiveUserSettings;
+    NSMutableDictionary * _memberQueueRestrictions;
+    NSMutableDictionary * _memberQueueSystemClientRestrictions;
+    NSMutableDictionary * _memberQueueSystemProfileRestrictions;
+    NSMutableDictionary * _memberQueueSystemUserSettings;
+    NSMutableDictionary * _memberQueueUserClientRestrictions;
+    NSMutableDictionary * _memberQueueUserProfileRestrictions;
+    NSMutableDictionary * _memberQueueUserUserSettings;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *combinedProfileRestrictions;
@@ -90,6 +90,7 @@
 - (BOOL)_isBoolSettingLockedDown:(id)arg1;
 - (BOOL)_isValueSettingLockedDown:(id)arg1 effectiveSetting:(id)arg2;
 - (id)allClientUUIDsForClientType:(id)arg1;
+- (BOOL)allowedToRunAppWithBundleID:(id)arg1;
 - (int)appWhitelistState;
 - (int)boolSettingForFeature:(id)arg1;
 - (id)clientRestrictionsForClientUUID:(id)arg1;
@@ -98,6 +99,8 @@
 - (id)defaultRestrictions;
 - (id)defaultSettings;
 - (id)description;
+- (id)effectiveBlacklistedAppBundleIDs;
+- (id)effectiveBlacklistedAppBundleIDsExcludingRemovedSystemApps:(BOOL)arg1;
 - (id)effectiveIntersectedValuesForSetting:(id)arg1;
 - (id)effectiveParametersForBoolSetting:(id)arg1;
 - (id)effectiveParametersForIntersectedSetting:(id)arg1;
@@ -107,6 +110,8 @@
 - (id)effectiveUnionValuesForSetting:(id)arg1;
 - (id)effectiveUserSettings;
 - (id)effectiveValueForSetting:(id)arg1;
+- (id)effectiveWhitelistedAppBundleIDs;
+- (id)effectiveWhitelistedAppsAndOptions;
 - (id)exchangeUUIDsRestrictingSettings:(id)arg1;
 - (id)init;
 - (id)intersectedValuesForFeature:(id)arg1;
@@ -114,6 +119,7 @@
 - (void)invalidateRestrictions;
 - (void)invalidateSettings;
 - (BOOL)isBoolSettingLockedDownByRestrictions:(id)arg1;
+- (BOOL)isInSingleAppMode;
 - (BOOL)isIntersectionSettingLockedDownByRestrictions:(id)arg1;
 - (BOOL)isSettingLockedDownByRestrictions:(id)arg1;
 - (BOOL)isUnionSettingLockedDownByRestrictions:(id)arg1;
@@ -123,7 +129,6 @@
 - (id)memberQueueClientRestrictionsForClientUUID:(id)arg1;
 - (id)memberQueueClientTypeForClientUUID:(id)arg1;
 - (id)memberQueueCombinedProfileRestrictions;
-- (void)memberQueueCommitUserSettingsToDisk;
 - (id)memberQueueEffectiveUserSettings;
 - (id)memberQueueRestrictions;
 - (id)memberQueueSystemClientRestrictions;
@@ -134,9 +139,16 @@
 - (id)memberQueueUserProfileRestrictions;
 - (id)memberQueueUserUserSettings;
 - (id)objectForFeature:(id)arg1;
+- (id)parentalControlsBlacklistedAppBundleIDs;
+- (id)parentalControlsWhitelistedAppBundleIDs;
 - (id)potentialRestrictionsAfterApplyingRestrictionsDictionary:(id)arg1 outChangeDetected:(BOOL*)arg2 outError:(id*)arg3;
 - (id)profileIdentifiersRestrictingSettings:(id)arg1;
+- (id)restrictedAppBundleIDs;
+- (id)restrictedAppBundleIDsExcludingRemovedSystemApps:(BOOL)arg1;
 - (int)restrictedBoolForFeature:(id)arg1;
+- (id)restrictionEnforcedBlacklistedAppBundleIDs;
+- (id)restrictionEnforcedBlacklistedAppBundleIDsExcludingRemovedSystemApps:(BOOL)arg1;
+- (id)restrictionEnforcedWhitelistedAppBundleIDs;
 - (void)setMemberQueue:(id)arg1;
 - (void)setMemberQueueEffectiveUserSettings:(id)arg1;
 - (void)setMemberQueueRestrictions:(id)arg1;
@@ -146,6 +158,7 @@
 - (void)setMemberQueueUserClientRestrictions:(id)arg1;
 - (void)setMemberQueueUserProfileRestrictions:(id)arg1;
 - (void)setMemberQueueUserUserSettings:(id)arg1;
+- (id)singleAppModeBundleID;
 - (id)systemClientRestrictions;
 - (id)systemProfileRestrictions;
 - (id)systemUserSettings;

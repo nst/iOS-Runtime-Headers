@@ -3,7 +3,7 @@
  */
 
 @interface SGMicrodataItemScope : NSObject {
-    NSMutableArray *_itemProps;
+    NSMutableArray * _itemProps;
 }
 
 @property (nonatomic, readonly) NSArray *itemProps;

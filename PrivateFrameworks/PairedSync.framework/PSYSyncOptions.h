@@ -3,12 +3,12 @@
  */
 
 @interface PSYSyncOptions : NSObject <NSSecureCoding> {
-    BOOL _dryRun;
-    NSUUID *_pairingIdentifier;
-    NSUUID *_sessionIdentifier;
-    unsigned int _syncSessionType;
-    BOOL _terminateDuringDryRun;
-    PSYTestInput *_testInput;
+    BOOL  _dryRun;
+    NSUUID * _pairingIdentifier;
+    NSUUID * _sessionIdentifier;
+    unsigned int  _syncSessionType;
+    BOOL  _terminateDuringDryRun;
+    PSYTestInput * _testInput;
 }
 
 @property (nonatomic) BOOL dryRun;

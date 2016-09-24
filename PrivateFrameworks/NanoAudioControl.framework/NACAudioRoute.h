@@ -3,12 +3,12 @@
  */
 
 @interface NACAudioRoute : NSObject {
-    BOOL _picked;
-    NSString *_routeName;
-    int _routeSubtype;
-    int _routeType;
-    BOOL _supportsVolumeControl;
-    NSString *_uniqueIdentifier;
+    BOOL  _picked;
+    NSString * _routeName;
+    int  _routeSubtype;
+    int  _routeType;
+    BOOL  _supportsVolumeControl;
+    NSString * _uniqueIdentifier;
 }
 
 @property (getter=isPicked, nonatomic, readonly) BOOL picked;

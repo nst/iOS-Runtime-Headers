@@ -3,8 +3,8 @@
  */
 
 @interface AVAssetTrackGroupInternal : NSObject {
-    id assetComparisonToken;
-    NSArray *trackIDs;
+    id  assetComparisonToken;
+    NSArray * trackIDs;
 }
 
 @end

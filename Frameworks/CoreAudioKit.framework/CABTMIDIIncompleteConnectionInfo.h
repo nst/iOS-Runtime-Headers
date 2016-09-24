@@ -3,9 +3,9 @@
  */
 
 @interface CABTMIDIIncompleteConnectionInfo : NSObject {
-    BOOL _connecting;
-    AMSBTLEPeripheral *_peripheral;
-    unsigned int _timeOutInterval;
+    BOOL  _connecting;
+    AMSBTLEPeripheral * _peripheral;
+    unsigned int  _timeOutInterval;
 }
 
 @property (getter=isConnecting) BOOL connecting;

@@ -3,10 +3,10 @@
  */
 
 @interface OITSUReadWriteQueue : NSObject {
-    NSObject<OS_dispatch_semaphore> *mCanEnqueueReaders;
-    NSObject<OS_dispatch_queue> *mGlobalQueue;
-    NSObject<OS_dispatch_group> *mInFlightReaders;
-    NSObject<OS_dispatch_group> *mInFlightWriters;
+    NSObject<OS_dispatch_semaphore> * mCanEnqueueReaders;
+    NSObject<OS_dispatch_queue> * mGlobalQueue;
+    NSObject<OS_dispatch_group> * mInFlightReaders;
+    NSObject<OS_dispatch_group> * mInFlightWriters;
 }
 
 - (void)dealloc;

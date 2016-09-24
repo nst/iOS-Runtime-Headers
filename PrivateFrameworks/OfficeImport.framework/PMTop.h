@@ -3,10 +3,10 @@
  */
 
 @interface PMTop : CMTop <OIProgressiveReaderDelegate> {
-    CMArchiveManager *_archiver;
-    PMPresentationMapper *_mapper;
-    PMState *_state;
-    BOOL _xml;
+    CMArchiveManager * _archiver;
+    PMPresentationMapper * _mapper;
+    PMState * _state;
+    BOOL  _xml;
 }
 
 + (void)fillHTMLArchiveForPowerPointData:(id)arg1 fileName:(id)arg2 xmlFlag:(BOOL)arg3 archiver:(id)arg4;

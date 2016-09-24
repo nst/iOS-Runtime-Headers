@@ -3,29 +3,29 @@
  */
 
 @interface VimeoPost : NSObject {
-    unsigned int _accessType;
-    ACAccount *_account;
-    ALAsset *_asset;
-    NSData *_assetData;
-    NSURL *_assetURL;
-    ALAssetsLibrary *_assetsLibrary;
-    NSURL *_baseURL;
-    BOOL _canUploadOverCellular;
-    BOOL _continuingUpload;
-    unsigned int _countOfBytesStored;
-    VUDataReader *_dataReader;
-    <VimeoPostDelegate> *_delegate;
-    NSURL *_exportedVideoURL;
-    NSString *_postDescription;
-    int _privacySettings;
-    int _retryCount;
-    NSArray *_tags;
-    NSString *_ticketID;
-    NSString *_title;
-    NSURL *_uploadEndpoint;
-    int _uploadState;
-    NSString *_videoID;
-    int _videoSize;
+    unsigned int  _accessType;
+    ACAccount * _account;
+    ALAsset * _asset;
+    NSData * _assetData;
+    NSURL * _assetURL;
+    ALAssetsLibrary * _assetsLibrary;
+    NSURL * _baseURL;
+    BOOL  _canUploadOverCellular;
+    BOOL  _continuingUpload;
+    unsigned int  _countOfBytesStored;
+    VUDataReader * _dataReader;
+    <VimeoPostDelegate> * _delegate;
+    NSURL * _exportedVideoURL;
+    NSString * _postDescription;
+    int  _privacySettings;
+    int  _retryCount;
+    NSArray * _tags;
+    NSString * _ticketID;
+    NSString * _title;
+    NSURL * _uploadEndpoint;
+    int  _uploadState;
+    NSString * _videoID;
+    int  _videoSize;
 }
 
 @property (nonatomic) unsigned int accessType;
@@ -73,7 +73,7 @@
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
 - (id)postDescription;
-- (unsigned long long)postSize;
+- (unsigned int)postSize;
 - (int)privacySettings;
 - (id)serializedDictionary;
 - (void)setAccessType:(unsigned int)arg1;

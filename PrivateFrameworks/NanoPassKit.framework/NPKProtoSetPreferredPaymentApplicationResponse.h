@@ -3,8 +3,8 @@
  */
 
 @interface NPKProtoSetPreferredPaymentApplicationResponse : PBCodable <NSCopying> {
-    NSString *_passID;
-    NSString *_preferredApplicationAID;
+    NSString * _passID;
+    NSString * _preferredApplicationAID;
 }
 
 @property (nonatomic, readonly) BOOL hasPassID;

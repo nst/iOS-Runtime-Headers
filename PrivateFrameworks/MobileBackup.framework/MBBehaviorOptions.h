@@ -3,11 +3,12 @@
  */
 
 @interface MBBehaviorOptions : NSObject {
-    NSMutableDictionary *_cachedPrefs;
-    NSObject<OS_dispatch_queue> *_cachedPrefsQueue;
-    MBConnection *_conn;
+    NSMutableDictionary * _cachedPrefs;
+    NSObject<OS_dispatch_queue> * _cachedPrefsQueue;
+    MBConnection * _conn;
 }
 
+@property (nonatomic) BOOL backupFromLocalSnapshot;
 @property (nonatomic, retain) NSMutableDictionary *cachedPrefs;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *cachedPrefsQueue;
 @property (nonatomic, copy) NSString *cloudKitContainerName;
@@ -39,6 +40,7 @@
 - (id)_getStringOptionLockedForKey:(id)arg1 defaultValue:(id)arg2;
 - (void)_setPref:(id)arg1 forKey:(id)arg2;
 - (void)_startListeningForNotifications;
+- (BOOL)backupFromLocalSnapshot;
 - (id)cachedPrefs;
 - (id)cachedPrefsQueue;
 - (id)cloudKitContainerName;
@@ -52,6 +54,7 @@
 - (int)maxDomainsToBackup;
 - (id)minimumBuildVersionForFullBackup;
 - (int)recordSaveAttempts;
+- (void)setBackupFromLocalSnapshot:(BOOL)arg1;
 - (void)setCachedPrefs:(id)arg1;
 - (void)setCachedPrefsQueue:(id)arg1;
 - (void)setCloudKitContainerName:(id)arg1;

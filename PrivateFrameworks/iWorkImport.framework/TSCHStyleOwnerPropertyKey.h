@@ -3,8 +3,8 @@
  */
 
 @interface TSCHStyleOwnerPropertyKey : NSObject <NSCopying> {
-    int mProperty;
-    TSCHStyleOwnerPath *mStyleOwnerPath;
+    int  mProperty;
+    TSCHStyleOwnerPath * mStyleOwnerPath;
 }
 
 @property (nonatomic, readonly) int property;

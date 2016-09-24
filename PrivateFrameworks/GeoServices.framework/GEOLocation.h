@@ -3,56 +3,74 @@
  */
 
 @interface GEOLocation : PBCodable <NSCopying> {
-    int _altitude;
-    double _course;
-    double _courseAccuracy;
+    int  _altitude;
+    double  _course;
+    double  _courseAccuracy;
+    int  _formOfWay;
     struct { 
         unsigned int course : 1; 
         unsigned int courseAccuracy : 1; 
         unsigned int heading : 1; 
         unsigned int horizontalAccuracy : 1; 
+        unsigned int rawCourse : 1; 
         unsigned int speed : 1; 
         unsigned int speedAccuracy : 1; 
         unsigned int timestamp : 1; 
         unsigned int transitID : 1; 
         unsigned int verticalAccuracy : 1; 
         unsigned int altitude : 1; 
+        unsigned int formOfWay : 1; 
+        unsigned int matchQuality : 1; 
         unsigned int referenceFrame : 1; 
+        unsigned int roadClass : 1; 
+        unsigned int transportType : 1; 
         unsigned int type : 1; 
         unsigned int isMatchedLocation : 1; 
         unsigned int isShifted : 1; 
-    } _has;
-    double _heading;
-    double _horizontalAccuracy;
-    BOOL _isMatchedLocation;
-    BOOL _isShifted;
-    GEOLatLng *_latLng;
-    int _referenceFrame;
-    double _speed;
-    double _speedAccuracy;
-    double _timestamp;
-    unsigned long long _transitID;
-    int _type;
-    double _verticalAccuracy;
+    }  _has;
+    double  _heading;
+    double  _horizontalAccuracy;
+    BOOL  _isMatchedLocation;
+    BOOL  _isShifted;
+    GEOLatLng * _latLng;
+    int  _matchQuality;
+    GEOLatLng * _rawCoordinate;
+    double  _rawCourse;
+    int  _referenceFrame;
+    int  _roadClass;
+    double  _speed;
+    double  _speedAccuracy;
+    double  _timestamp;
+    unsigned int  _transitID;
+    int  _transportType;
+    int  _type;
+    double  _verticalAccuracy;
 }
 
 @property (nonatomic) int altitude;
 @property (nonatomic, readonly) struct { double x1; double x2; } coordinate;
 @property (nonatomic) double course;
 @property (nonatomic) double courseAccuracy;
+@property (nonatomic) int formOfWay;
 @property (nonatomic, readonly) BOOL hasAccurateCourse;
 @property (nonatomic) BOOL hasAltitude;
 @property (nonatomic) BOOL hasCourse;
 @property (nonatomic) BOOL hasCourseAccuracy;
+@property (nonatomic) BOOL hasFormOfWay;
 @property (nonatomic) BOOL hasHeading;
 @property (nonatomic) BOOL hasHorizontalAccuracy;
 @property (nonatomic) BOOL hasIsMatchedLocation;
 @property (nonatomic) BOOL hasIsShifted;
+@property (nonatomic) BOOL hasMatchQuality;
+@property (nonatomic, readonly) BOOL hasRawCoordinate;
+@property (nonatomic) BOOL hasRawCourse;
 @property (nonatomic) BOOL hasReferenceFrame;
+@property (nonatomic) BOOL hasRoadClass;
 @property (nonatomic) BOOL hasSpeed;
 @property (nonatomic) BOOL hasSpeedAccuracy;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) BOOL hasTransitID;
+@property (nonatomic) BOOL hasTransportType;
 @property (nonatomic) BOOL hasType;
 @property (nonatomic) BOOL hasVerticalAccuracy;
 @property (nonatomic) double heading;
@@ -60,16 +78,27 @@
 @property (nonatomic) BOOL isMatchedLocation;
 @property (nonatomic) BOOL isShifted;
 @property (nonatomic, retain) GEOLatLng *latLng;
+@property (nonatomic) int matchQuality;
+@property (nonatomic, retain) GEOLatLng *rawCoordinate;
+@property (nonatomic) double rawCourse;
 @property (nonatomic) int referenceFrame;
+@property (nonatomic) int roadClass;
 @property (nonatomic) double speed;
 @property (nonatomic) double speedAccuracy;
 @property (nonatomic) double timestamp;
-@property (nonatomic) unsigned long long transitID;
+@property (nonatomic) unsigned int transitID;
+@property (nonatomic) int transportType;
 @property (nonatomic) int type;
 @property (nonatomic) double verticalAccuracy;
 
 // Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
 
+- (int)StringAsFormOfWay:(id)arg1;
+- (int)StringAsMatchQuality:(id)arg1;
+- (int)StringAsReferenceFrame:(id)arg1;
+- (int)StringAsRoadClass:(id)arg1;
+- (int)StringAsTransportType:(id)arg1;
+- (int)StringAsType:(id)arg1;
 - (int)altitude;
 - (struct { double x1; double x2; })coordinate;
 - (void)copyTo:(id)arg1;
@@ -79,19 +108,27 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (int)formOfWay;
+- (id)formOfWayAsString:(int)arg1;
 - (BOOL)hasAccurateCourse;
 - (BOOL)hasAltitude;
 - (BOOL)hasCourse;
 - (BOOL)hasCourseAccuracy;
+- (BOOL)hasFormOfWay;
 - (BOOL)hasHeading;
 - (BOOL)hasHorizontalAccuracy;
 - (BOOL)hasIsMatchedLocation;
 - (BOOL)hasIsShifted;
+- (BOOL)hasMatchQuality;
+- (BOOL)hasRawCoordinate;
+- (BOOL)hasRawCourse;
 - (BOOL)hasReferenceFrame;
+- (BOOL)hasRoadClass;
 - (BOOL)hasSpeed;
 - (BOOL)hasSpeedAccuracy;
 - (BOOL)hasTimestamp;
 - (BOOL)hasTransitID;
+- (BOOL)hasTransportType;
 - (BOOL)hasType;
 - (BOOL)hasVerticalAccuracy;
 - (unsigned int)hash;
@@ -104,24 +141,37 @@
 - (BOOL)isMatchedLocation;
 - (BOOL)isShifted;
 - (id)latLng;
+- (int)matchQuality;
+- (id)matchQualityAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
+- (id)rawCoordinate;
+- (double)rawCourse;
 - (BOOL)readFrom:(id)arg1;
 - (int)referenceFrame;
+- (id)referenceFrameAsString:(int)arg1;
+- (int)roadClass;
+- (id)roadClassAsString:(int)arg1;
 - (void)setAltitude:(int)arg1;
 - (void)setCourse:(double)arg1;
 - (void)setCourseAccuracy:(double)arg1;
+- (void)setFormOfWay:(int)arg1;
 - (void)setHasAltitude:(BOOL)arg1;
 - (void)setHasCourse:(BOOL)arg1;
 - (void)setHasCourseAccuracy:(BOOL)arg1;
+- (void)setHasFormOfWay:(BOOL)arg1;
 - (void)setHasHeading:(BOOL)arg1;
 - (void)setHasHorizontalAccuracy:(BOOL)arg1;
 - (void)setHasIsMatchedLocation:(BOOL)arg1;
 - (void)setHasIsShifted:(BOOL)arg1;
+- (void)setHasMatchQuality:(BOOL)arg1;
+- (void)setHasRawCourse:(BOOL)arg1;
 - (void)setHasReferenceFrame:(BOOL)arg1;
+- (void)setHasRoadClass:(BOOL)arg1;
 - (void)setHasSpeed:(BOOL)arg1;
 - (void)setHasSpeedAccuracy:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setHasTransitID:(BOOL)arg1;
+- (void)setHasTransportType:(BOOL)arg1;
 - (void)setHasType:(BOOL)arg1;
 - (void)setHasVerticalAccuracy:(BOOL)arg1;
 - (void)setHeading:(double)arg1;
@@ -129,18 +179,26 @@
 - (void)setIsMatchedLocation:(BOOL)arg1;
 - (void)setIsShifted:(BOOL)arg1;
 - (void)setLatLng:(id)arg1;
+- (void)setMatchQuality:(int)arg1;
+- (void)setRawCoordinate:(id)arg1;
+- (void)setRawCourse:(double)arg1;
 - (void)setReferenceFrame:(int)arg1;
+- (void)setRoadClass:(int)arg1;
 - (void)setSpeed:(double)arg1;
 - (void)setSpeedAccuracy:(double)arg1;
 - (void)setTimestamp:(double)arg1;
-- (void)setTransitID:(unsigned long long)arg1;
+- (void)setTransitID:(unsigned int)arg1;
+- (void)setTransportType:(int)arg1;
 - (void)setType:(int)arg1;
 - (void)setVerticalAccuracy:(double)arg1;
 - (double)speed;
 - (double)speedAccuracy;
 - (double)timestamp;
-- (unsigned long long)transitID;
+- (unsigned int)transitID;
+- (int)transportType;
+- (id)transportTypeAsString:(int)arg1;
 - (int)type;
+- (id)typeAsString:(int)arg1;
 - (double)verticalAccuracy;
 - (void)writeTo:(id)arg1;
 
@@ -148,7 +206,7 @@
 
 - (id)_initWithCLClientLocation:(const struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; struct { double x_14_1_1; double x_14_1_2; } x14; double x15; int x16; unsigned int x17; int x18; }*)arg1;
 
-// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+// Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
 
 + (id)locationWithCLLocation:(id)arg1 course:(double)arg2;
 

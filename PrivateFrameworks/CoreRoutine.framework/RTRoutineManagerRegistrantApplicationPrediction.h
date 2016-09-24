@@ -3,9 +3,9 @@
  */
 
 @interface RTRoutineManagerRegistrantApplicationPrediction : RTRoutineManagerRegistrant {
-    NSPredicate *_applicationMonitoringPredicate;
-    id /* block */ _predictedApplicationHandler;
-    BOOL _registered;
+    NSPredicate * _applicationMonitoringPredicate;
+    id /* block */  _predictedApplicationHandler;
+    BOOL  _registered;
 }
 
 @property (nonatomic, retain) NSPredicate *applicationMonitoringPredicate;

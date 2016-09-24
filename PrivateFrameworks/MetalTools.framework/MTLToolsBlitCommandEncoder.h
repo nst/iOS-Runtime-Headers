@@ -21,5 +21,7 @@
 - (void)copyFromTexture:(id)arg1 sourceSlice:(unsigned int)arg2 sourceLevel:(unsigned int)arg3 sourceOrigin:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg4 sourceSize:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg5 toTexture:(id)arg6 destinationSlice:(unsigned int)arg7 destinationLevel:(unsigned int)arg8 destinationOrigin:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg9 options:(unsigned int)arg10;
 - (void)fillBuffer:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 value:(unsigned char)arg3;
 - (void)generateMipmapsForTexture:(id)arg1;
+- (void)updateFence:(id)arg1;
+- (void)waitForFence:(id)arg1;
 
 @end

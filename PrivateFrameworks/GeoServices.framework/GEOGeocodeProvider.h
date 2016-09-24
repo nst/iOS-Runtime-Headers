@@ -3,8 +3,8 @@
  */
 
 @interface GEOGeocodeProvider : NSObject {
-    id /* block */ _batchSuccessHandler;
-    id /* block */ _errorHandler;
+    id /* block */  _batchSuccessHandler;
+    id /* block */  _errorHandler;
 }
 
 @property (nonatomic, copy) id /* block */ batchSuccessHandler;

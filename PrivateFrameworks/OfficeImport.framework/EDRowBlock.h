@@ -3,8 +3,8 @@
  */
 
 @interface EDRowBlock : NSObject {
-    struct __CFData { } *mCellOffsets;
-    struct __CFData { } *mPackedData;
+    struct __CFData { } * mCellOffsets;
+    struct __CFData { } * mPackedData;
 }
 
 @property (nonatomic, readonly) unsigned int firstRowNumber;

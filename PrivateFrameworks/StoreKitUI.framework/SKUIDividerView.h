@@ -3,13 +3,13 @@
  */
 
 @interface SKUIDividerView : UIView {
-    int _dividerOrientation;
-    float _dividerSize;
+    int  _dividerOrientation;
+    double  _dividerSize;
 }
 
 @property (nonatomic, retain) UIColor *dividerColor;
 @property (nonatomic) int dividerOrientation;
-@property (nonatomic) float dividerSize;
+@property (nonatomic) double dividerSize;
 
 - (id)dividerColor;
 - (int)dividerOrientation;
@@ -18,6 +18,6 @@
 - (void)setDividerColor:(id)arg1;
 - (void)setDividerOrientation:(int)arg1;
 - (void)setDividerSize:(float)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

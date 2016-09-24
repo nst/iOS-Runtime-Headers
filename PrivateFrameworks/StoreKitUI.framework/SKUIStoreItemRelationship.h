@@ -3,8 +3,8 @@
  */
 
 @interface SKUIStoreItemRelationship : NSObject {
-    NSSet *_chidItems;
-    SKUIStoreIdentifier *_singleParent;
+    NSSet * _chidItems;
+    SKUIStoreIdentifier * _singleParent;
 }
 
 @property (nonatomic, readonly, copy) NSSet *chidItems;

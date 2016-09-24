@@ -3,18 +3,18 @@
  */
 
 @interface BKSProcess : BSBaseXPCClient {
-    NSString *_activationReason;
-    NSString *_bundlePath;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    BOOL _connectedToExternalAccessories;
-    <BKSProcessDelegate> *_delegate;
-    BOOL _nowPlayingWithAudio;
-    int _pid;
-    BOOL _recordingAudio;
-    int _taskState;
-    int _terminationReason;
-    int _visibility;
-    BOOL _workspaceLocked;
+    NSString * _activationReason;
+    NSString * _bundlePath;
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    BOOL  _connectedToExternalAccessories;
+    <BKSProcessDelegate> * _delegate;
+    BOOL  _nowPlayingWithAudio;
+    int  _pid;
+    BOOL  _recordingAudio;
+    int  _taskState;
+    int  _terminationReason;
+    int  _visibility;
+    BOOL  _workspaceLocked;
 }
 
 @property (nonatomic, copy) NSString *activationReason;

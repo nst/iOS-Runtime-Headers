@@ -3,10 +3,10 @@
  */
 
 @interface MFMailComposeCorecipientViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    MFMailComposeRecipientView *_recipientView;
-    NSMutableArray *_recipients;
-    NSMutableIndexSet *_selectedIndexes;
-    UITableView *_tableView;
+    MFMailComposeRecipientView * _recipientView;
+    NSMutableArray * _recipients;
+    NSMutableIndexSet * _selectedIndexes;
+    UITableView * _tableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -22,7 +22,7 @@
 - (id)initWithRecentComposeRecipients:(id)arg1;
 - (void)loadView;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (id)recipientView;
 - (id)recipients;
 - (void)setRecipientView:(id)arg1;

@@ -3,11 +3,11 @@
  */
 
 @interface YTNetworkController : NSObject {
-    BOOL _isCellular;
-    BOOL _isReachable;
-    int _networkType;
-    NSTimer *_notificationTimer;
-    BOOL _registered;
+    BOOL  _isCellular;
+    BOOL  _isReachable;
+    int  _networkType;
+    NSTimer * _notificationTimer;
+    BOOL  _registered;
 }
 
 + (id)sharedNetworkController;

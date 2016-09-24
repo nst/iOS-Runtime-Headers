@@ -3,15 +3,14 @@
  */
 
 @interface _HDDataInsertionJournalEntry : HDJournalEntry {
-    HKObject *_dataObject;
-    HDDataOriginProvenance *_provenance;
+    HKObject * _dataObject;
+    HDDataOriginProvenance * _provenance;
 }
 
 @property (nonatomic, readonly) HKObject *dataObject;
 @property (nonatomic, readonly) HDDataOriginProvenance *provenance;
 
-+ (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
-+ (int)behavior;
++ (void)applyEntries:(id)arg1 withProfile:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;

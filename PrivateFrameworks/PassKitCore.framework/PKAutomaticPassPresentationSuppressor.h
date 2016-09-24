@@ -3,20 +3,21 @@
  */
 
 @interface PKAutomaticPassPresentationSuppressor : NSObject {
-    NSDate *_backgroundedDate;
-    NSMutableIndexSet *_backgrounedSuppressionIdentifiers;
-    unsigned int _nextRequestToken;
-    NSMutableSet *_permissionRequestCompletionBlocks;
-    int _permissionState;
-    PKAssertion *_suppressionAssertion;
-    NSMutableIndexSet *_suppressionRequestTokens;
-    NSObject<OS_dispatch_queue> *_suppressorQueue;
+    NSDate * _backgroundedDate;
+    NSMutableIndexSet * _backgrounedSuppressionIdentifiers;
+    unsigned int  _nextRequestToken;
+    NSMutableSet * _permissionRequestCompletionBlocks;
+    int  _permissionState;
+    PKAssertion * _suppressionAssertion;
+    NSMutableIndexSet * _suppressionRequestTokens;
+    NSObject<OS_dispatch_queue> * _suppressorQueue;
 }
 
 @property (nonatomic, readonly) BOOL isSuppressing;
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (void)_acquireSuppressionAssertionIfNeededWithCompletion:(id /* block */)arg1;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;

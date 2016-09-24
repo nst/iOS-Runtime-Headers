@@ -3,9 +3,9 @@
  */
 
 @interface ATDeviceProvisioningHandler : NSObject <ATMessageLinkObserver, ATMessageLinkRequestHandler> {
-    ATGrappaSession *_grappaSession;
-    double _linkOpenTime;
-    ATDeviceSettings *_settings;
+    ATGrappaSession * _grappaSession;
+    double  _linkOpenTime;
+    ATDeviceSettings * _settings;
 }
 
 @property (readonly, copy) NSString *debugDescription;

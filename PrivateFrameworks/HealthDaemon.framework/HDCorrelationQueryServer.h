@@ -3,9 +3,9 @@
  */
 
 @interface HDCorrelationQueryServer : HDQueryServer {
-    int _behaviorVersion;
-    NSDictionary *_dataFilters;
-    BOOL _suspended;
+    int  _behaviorVersion;
+    NSDictionary * _dataFilters;
+    BOOL  _suspended;
 }
 
 @property (nonatomic, readonly) NSDictionary *dataFilters;
@@ -14,6 +14,6 @@
 - (void)_queue_start;
 - (BOOL)_queue_validateConfiguration:(id*)arg1;
 - (id)dataFilters;
-- (id)initWithQueryUUID:(id)arg1 dataObject:(id)arg2 clientProxy:(id)arg3 client:(id)arg4 delegate:(id)arg5 healthDaemon:(id)arg6;
+- (id)initWithQueryUUID:(id)arg1 dataObject:(id)arg2 clientProxy:(id)arg3 client:(id)arg4 delegate:(id)arg5 profile:(id)arg6;
 
 @end

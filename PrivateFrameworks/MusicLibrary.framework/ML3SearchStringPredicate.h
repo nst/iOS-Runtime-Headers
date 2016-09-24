@@ -3,8 +3,8 @@
  */
 
 @interface ML3SearchStringPredicate : ML3Predicate {
-    NSArray *_properties;
-    NSString *_searchString;
+    NSArray * _properties;
+    NSString * _searchString;
 }
 
 @property (nonatomic, copy) NSArray *properties;

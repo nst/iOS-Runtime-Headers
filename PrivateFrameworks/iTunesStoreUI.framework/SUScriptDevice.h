@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptDevice : SUScriptObject {
-    NSMutableArray *_scriptFunctions;
+    NSMutableArray * _scriptFunctions;
 }
 
 @property (readonly) NSString *UTIImage;
@@ -28,6 +28,7 @@
 @property (readonly) NSString *capabilityNameWiFi;
 @property (readonly) unsigned long deviceTypeIdentifier;
 @property (readonly) NSNumber *diskSpaceAvailable;
+@property (readonly) SUScriptDictionary *diskUsageDictionary;
 @property (readonly) int freeSpaceEffortLevelAutomaticOnly;
 @property (readonly) int freeSpaceEffortLevelDoNothing;
 @property (readonly) int freeSpaceEffortLevelManualSpaceManagement;
@@ -133,6 +134,7 @@
 - (void)dealloc;
 - (unsigned long)deviceTypeIdentifier;
 - (id)diskSpaceAvailable;
+- (id)diskUsageDictionary;
 - (int)freeSpaceEffortLevelAutomaticOnly;
 - (int)freeSpaceEffortLevelDoNothing;
 - (int)freeSpaceEffortLevelManualSpaceManagement;
@@ -207,6 +209,7 @@
 - (id)restrictionYouTubeAllowed;
 - (id)scriptAttributeKeys;
 - (void)setAutomaticDownloadKinds:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)setDiskUsageDictionary:(id)arg1;
 - (id)valueForRestriction:(id)arg1;
 
 @end

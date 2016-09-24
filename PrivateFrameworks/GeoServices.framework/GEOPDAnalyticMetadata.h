@@ -3,10 +3,10 @@
  */
 
 @interface GEOPDAnalyticMetadata : PBCodable <NSCopying> {
-    NSString *_appIdentifier;
-    NSString *_appMajorVersion;
-    NSString *_appMinorVersion;
-    NSString *_hardwareModel;
+    NSString * _appIdentifier;
+    NSString * _appMajorVersion;
+    NSString * _appMinorVersion;
+    NSString * _hardwareModel;
     struct { 
         unsigned int sessionId : 1; 
         unsigned int requestSource : 1; 
@@ -14,19 +14,21 @@
         unsigned int isFromApi : 1; 
         unsigned int isInternalInstall : 1; 
         unsigned int isInternalTool : 1; 
-    } _has;
-    BOOL _isFromApi;
-    BOOL _isInternalInstall;
-    BOOL _isInternalTool;
-    NSString *_osVersion;
-    NSString *_productName;
-    int _requestSource;
-    unsigned int _sequenceNumber;
-    NSMutableArray *_serviceTags;
-    struct { 
-        unsigned long long _high; 
-        unsigned long long _low; 
-    } _sessionId;
+    }  _has;
+    BOOL  _isFromApi;
+    BOOL  _isInternalInstall;
+    BOOL  _isInternalTool;
+    NSString * _loggedAbExperiment;
+    NSString * _osVersion;
+    NSString * _productName;
+    int  _requestSource;
+    unsigned int  _sequenceNumber;
+    NSMutableArray * _serviceTags;
+    struct GEOSessionID { 
+        unsigned int _high; 
+        unsigned int _low; 
+    }  _sessionId;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSString *appIdentifier;
@@ -40,6 +42,7 @@
 @property (nonatomic) BOOL hasIsFromApi;
 @property (nonatomic) BOOL hasIsInternalInstall;
 @property (nonatomic) BOOL hasIsInternalTool;
+@property (nonatomic, readonly) BOOL hasLoggedAbExperiment;
 @property (nonatomic, readonly) BOOL hasOsVersion;
 @property (nonatomic, readonly) BOOL hasProductName;
 @property (nonatomic) BOOL hasRequestSource;
@@ -48,13 +51,18 @@
 @property (nonatomic) BOOL isFromApi;
 @property (nonatomic) BOOL isInternalInstall;
 @property (nonatomic) BOOL isInternalTool;
+@property (nonatomic, retain) NSString *loggedAbExperiment;
 @property (nonatomic, retain) NSString *osVersion;
 @property (nonatomic, retain) NSString *productName;
 @property (nonatomic) int requestSource;
 @property (nonatomic) unsigned int sequenceNumber;
 @property (nonatomic, retain) NSMutableArray *serviceTags;
-@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; } sessionId;
+@property (nonatomic) struct GEOSessionID { unsigned int x1; unsigned int x2; } sessionId;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
++ (Class)serviceTagType;
+
+- (int)StringAsRequestSource:(id)arg1;
 - (void)addServiceTag:(id)arg1;
 - (id)appIdentifier;
 - (id)appMajorVersion;
@@ -73,6 +81,7 @@
 - (BOOL)hasIsFromApi;
 - (BOOL)hasIsInternalInstall;
 - (BOOL)hasIsInternalTool;
+- (BOOL)hasLoggedAbExperiment;
 - (BOOL)hasOsVersion;
 - (BOOL)hasProductName;
 - (BOOL)hasRequestSource;
@@ -84,16 +93,18 @@
 - (BOOL)isFromApi;
 - (BOOL)isInternalInstall;
 - (BOOL)isInternalTool;
+- (id)loggedAbExperiment;
 - (void)mergeFrom:(id)arg1;
 - (id)osVersion;
 - (id)productName;
 - (BOOL)readFrom:(id)arg1;
 - (int)requestSource;
+- (id)requestSourceAsString:(int)arg1;
 - (unsigned int)sequenceNumber;
 - (id)serviceTagAtIndex:(unsigned int)arg1;
 - (id)serviceTags;
 - (unsigned int)serviceTagsCount;
-- (struct { unsigned long long x1; unsigned long long x2; })sessionId;
+- (struct GEOSessionID { unsigned int x1; unsigned int x2; })sessionId;
 - (void)setAppIdentifier:(id)arg1;
 - (void)setAppMajorVersion:(id)arg1;
 - (void)setAppMinorVersion:(id)arg1;
@@ -107,12 +118,14 @@
 - (void)setIsFromApi:(BOOL)arg1;
 - (void)setIsInternalInstall:(BOOL)arg1;
 - (void)setIsInternalTool:(BOOL)arg1;
+- (void)setLoggedAbExperiment:(id)arg1;
 - (void)setOsVersion:(id)arg1;
 - (void)setProductName:(id)arg1;
 - (void)setRequestSource:(int)arg1;
 - (void)setSequenceNumber:(unsigned int)arg1;
 - (void)setServiceTags:(id)arg1;
-- (void)setSessionId:(struct { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setSessionId:(struct GEOSessionID { unsigned int x1; unsigned int x2; })arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

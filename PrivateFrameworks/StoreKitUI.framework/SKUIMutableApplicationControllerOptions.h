@@ -4,11 +4,17 @@
 
 @interface SKUIMutableApplicationControllerOptions : SKUIApplicationControllerOptions
 
+@property (getter=isBootstrapScriptFallbackEnabled, nonatomic) BOOL bootstrapScriptFallbackEnabled;
+@property (nonatomic) double bootstrapScriptFallbackMaximumAge;
+@property (nonatomic) double bootstrapScriptTimeoutInterval;
 @property (nonatomic) BOOL requiresLocalBootstrapScript;
 @property (nonatomic) BOOL supportsFullApplicationReload;
 @property (nonatomic) int tabBarControllerStyle;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)setBootstrapScriptFallbackEnabled:(BOOL)arg1;
+- (void)setBootstrapScriptFallbackMaximumAge:(double)arg1;
+- (void)setBootstrapScriptTimeoutInterval:(double)arg1;
 - (void)setRequiresLocalBootstrapScript:(BOOL)arg1;
 - (void)setSupportsFullApplicationReload:(BOOL)arg1;
 - (void)setTabBarControllerStyle:(int)arg1;

@@ -3,17 +3,17 @@
  */
 
 @interface GKOpenGraphNode : NSObject {
-    NSError *_error;
-    BOOL _liked;
-    unsigned int _numberOfFriendLikes;
-    unsigned int _numberOfLikes;
-    NSURL *_url;
+    NSError * _error;
+    BOOL  _liked;
+    unsigned int  _numberOfFriendLikes;
+    unsigned int  _numberOfLikes;
+    NSURL * _url;
 }
 
-@property (retain) NSError *error;
-@property BOOL liked;
-@property unsigned int numberOfFriendLikes;
-@property unsigned int numberOfLikes;
+@property (nonatomic, retain) NSError *error;
+@property (nonatomic) BOOL liked;
+@property (nonatomic) unsigned int numberOfFriendLikes;
+@property (nonatomic) unsigned int numberOfLikes;
 @property (readonly) NSURL *url;
 
 + (id)openGraphNodeAccessQueue;

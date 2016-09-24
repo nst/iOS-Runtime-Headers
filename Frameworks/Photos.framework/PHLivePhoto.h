@@ -3,36 +3,39 @@
  */
 
 @interface PHLivePhoto : NSObject <NSCopying, NSSecureCoding> {
-    PHAsset *_asset;
-    NSString *_assetLocalIdentifier;
-    int _contentMode;
-    UIImage *_image;
-    PHImageManager *_imageManager;
-    NSURL *_imageURL;
-    PHSandboxExtensionWrapper *_imageURLSandboxExtensionWrapper;
-    unsigned int _options;
+    PHAsset * _asset;
+    NSString * _assetLocalIdentifier;
+    double  _audioVolume;
+    int  _contentMode;
+    UIImage * _image;
+    PHImageManager * _imageManager;
+    NSURL * _imageURL;
+    PHSandboxExtensionWrapper * _imageURLSandboxExtensionWrapper;
+    unsigned int  _options;
     struct { 
-        long long value; 
+        int value; 
         int timescale; 
         unsigned int flags; 
-        long long epoch; 
-    } _photoTime;
+        int epoch; 
+    }  _photoTime;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _size;
+        double width; 
+        double height; 
+    }  _size;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _targetSize;
-    NSString *_uniqueIdentifier;
-    AVAsset *_videoAsset;
-    NSURL *_videoURL;
-    PHSandboxExtensionWrapper *_videoURLSandboxExtensionWrapper;
+        double width; 
+        double height; 
+    }  _targetSize;
+    NSString * _uniqueIdentifier;
+    AVAsset * _videoAsset;
+    AVVideoComposition * _videoComposition;
+    NSURL * _videoURL;
+    PHSandboxExtensionWrapper * _videoURLSandboxExtensionWrapper;
 }
 
 @property (nonatomic) PHAsset *asset;
 @property (nonatomic, readonly, copy) NSString *assetLocalIdentifier;
+@property (nonatomic) double audioVolume;
 @property (nonatomic, readonly) int contentMode;
 @property (nonatomic, readonly) UIImage *image;
 @property (nonatomic, readonly) id /* block */ imageFileLoader;
@@ -42,34 +45,36 @@
 @property (nonatomic, readonly) PHSandboxExtensionWrapper *imageURLSandboxExtensionWrapper;
 @property (nonatomic, readonly) unsigned int options;
 @property (nonatomic, readonly) NSString *originalFilename;
-@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } photoTime;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } targetSize;
+@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } photoTime;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } targetSize;
 @property (readonly) NSString *uniqueIdentifier;
 @property (nonatomic, readonly) AVAsset *videoAsset;
+@property (nonatomic, readonly, copy) AVVideoComposition *videoComposition;
 @property (nonatomic, readonly) id /* block */ videoFileLoader;
 @property (nonatomic, readonly) NSString *videoTypeIdentifier;
 @property (nonatomic, readonly) NSURL *videoURL;
 @property (nonatomic, readonly) PHSandboxExtensionWrapper *videoURLSandboxExtensionWrapper;
 
 + (BOOL)_canCreateLivePhotoWithURLs:(id)arg1 outError:(id*)arg2;
-+ (void)_identifyResourceURLs:(id)arg1 outError:(id*)arg2 outImageURL:(id*)arg3 outVideoURL:(id*)arg4;
-+ (struct { long long x1; int x2; unsigned int x3; long long x4; })_photoTimeForLivePhotoWithImageURL:(id)arg1 videoURL:(id)arg2;
++ (BOOL)_identifyResourceURLs:(id)arg1 outImageURL:(id*)arg2 outVideoURL:(id*)arg3 error:(id*)arg4;
++ (struct { int x1; int x2; unsigned int x3; int x4; })_photoTimeForLivePhotoWithImageURL:(id)arg1 videoURL:(id)arg2;
 + (void)cancelLivePhotoRequestWithRequestID:(int)arg1;
 + (id)livePhotoWithResourceFileURLs:(id)arg1 error:(id*)arg2;
-+ (id)livePhotoWithResourceFileURLs:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 contentMode:(int)arg3 error:(id*)arg4;
-+ (int)requestLivePhotoWithResourceFileURLs:(id)arg1 placeholderImage:(id)arg2 targetSize:(struct CGSize { float x1; float x2; })arg3 contentMode:(int)arg4 resultHandler:(id /* block */)arg5;
++ (id)livePhotoWithResourceFileURLs:(id)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2 contentMode:(int)arg3 error:(id*)arg4;
++ (int)requestLivePhotoWithResourceFileURLs:(id)arg1 placeholderImage:(id)arg2 targetSize:(struct CGSize { double x1; double x2; })arg3 contentMode:(int)arg4 resultHandler:(id /* block */)arg5;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_asset;
 - (void)_ensureConstituentData;
 - (id)_imageManager;
-- (id)_initWithImageURL:(id)arg1 videoURL:(id)arg2 targetSize:(struct CGSize { float x1; float x2; })arg3 contentMode:(int)arg4;
+- (id)_initWithImageURL:(id)arg1 videoURL:(id)arg2 targetSize:(struct CGSize { double x1; double x2; })arg3 contentMode:(int)arg4;
 - (void)_loadConstituentURLsWithNetworkAccessAllowed:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)_synchronouslyLoadImageURL:(id*)arg1 videoURL:(id*)arg2 error:(id*)arg3;
 - (id)asset;
 - (id)assetLocalIdentifier;
+- (float)audioVolume;
 - (int)contentMode;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -81,19 +86,22 @@
 - (id)imageURL;
 - (id)imageURLSandboxExtensionWrapper;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithImage:(id)arg1 videoAsset:(id)arg2 photoTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 assetLocalIdentifier:(id)arg4;
-- (id)initWithImage:(id)arg1 videoAsset:(id)arg2 photoTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 assetLocalIdentifier:(id)arg4 options:(unsigned int)arg5;
+- (id)initWithImage:(id)arg1 videoAsset:(id)arg2 photoTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg3 assetLocalIdentifier:(id)arg4;
+- (id)initWithImage:(id)arg1 videoAsset:(id)arg2 photoTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg3 assetLocalIdentifier:(id)arg4 options:(unsigned int)arg5;
+- (id)initWithImage:(id)arg1 videoAsset:(id)arg2 photoTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg3 assetLocalIdentifier:(id)arg4 options:(unsigned int)arg5 videoComposition:(id)arg6;
 - (unsigned int)options;
 - (id)originalFilename;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })photoTime;
+- (struct { int x1; int x2; unsigned int x3; int x4; })photoTime;
 - (void)saveToPhotoLibraryWithCompletionHandler:(id /* block */)arg1;
 - (void)setAsset:(id)arg1;
+- (void)setAudioVolume:(float)arg1;
 - (void)setImageManager:(id)arg1;
-- (struct CGSize { float x1; float x2; })size;
-- (struct CGSize { float x1; float x2; })targetSize;
+- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { double x1; double x2; })targetSize;
 - (id)uniqueIdentifier;
 - (id)videoAsset;
 - (id)videoComplement;
+- (id)videoComposition;
 - (id /* block */)videoFileLoader;
 - (id)videoTypeIdentifier;
 - (id)videoURL;

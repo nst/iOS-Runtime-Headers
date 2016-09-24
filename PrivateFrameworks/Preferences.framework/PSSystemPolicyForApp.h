@@ -2,20 +2,24 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PSSystemPolicyForApp : NSObject {
-    NSString *_bundleIdentifier;
-    BOOL _forcePolicyOptions;
-    unsigned int _policyOptions;
+@interface PSSystemPolicyForApp : NSObject <PSUIWirelessDataOptionsDelegate> {
+    NSString * _bundleIdentifier;
+    BOOL  _forcePolicyOptions;
+    unsigned int  _policyOptions;
 }
 
 @property (nonatomic, copy) NSString *bundleIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (BOOL)isServiceRestricted:(id)arg1;
 
 - (void).cxx_destruct;
 - (BOOL)_isBackgroundAppRefreshAllowed;
-- (BOOL)_isCellularDataRestricted;
 - (BOOL)_isLocationServicesRestricted;
+- (BOOL)_isWirelessDataRestricted;
 - (id)_privacyAccessForService:(struct __CFString { }*)arg1;
 - (id)_sectionInfo;
 - (BOOL)_supportsBackgroundAppRefresh;
@@ -23,7 +27,6 @@
 - (id)authLevelStringForStatus:(int)arg1;
 - (id)backgroundAppRefreshSpecifier;
 - (id)bundleIdentifier;
-- (id)cellularSpecifier;
 - (struct __CFBundle { }*)copyTCCBundleForService:(struct __CFString { }*)arg1;
 - (id)dataUsageWorkspaceInfo;
 - (id)initWithBundleIdentifier:(id)arg1;
@@ -41,5 +44,6 @@
 - (void)setPrivacyAccess:(id)arg1 forSpecifier:(id)arg2;
 - (id)specifiers;
 - (id)specifiersForPolicyOptions:(unsigned int)arg1 force:(BOOL)arg2;
+- (id)wirelessDataSpecifierWithAppName:(id)arg1;
 
 @end

@@ -3,15 +3,15 @@
  */
 
 @interface CATSocket : NSObject {
-    <CATSocketDelegate> *_delegate;
-    CATEndPoint *_localEndPoint;
-    int _nativeSocket;
-    CATEndPoint *_remoteEndPoint;
-    NSObject<OS_dispatch_queue> *_socketQueue;
-    NSObject<OS_dispatch_source> *_socketSource;
-    NSObject<OS_dispatch_queue> *_userQueue;
-    BOOL mIsInvalid;
-    int mState;
+    <CATSocketDelegate> * _delegate;
+    CATEndPoint * _localEndPoint;
+    int  _nativeSocket;
+    CATEndPoint * _remoteEndPoint;
+    NSObject<OS_dispatch_queue> * _socketQueue;
+    NSObject<OS_dispatch_source> * _socketSource;
+    NSObject<OS_dispatch_queue> * _userQueue;
+    BOOL  mIsInvalid;
+    int  mState;
 }
 
 @property (nonatomic) <CATSocketDelegate> *delegate;

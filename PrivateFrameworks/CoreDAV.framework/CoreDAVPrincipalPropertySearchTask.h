@@ -3,9 +3,9 @@
  */
 
 @interface CoreDAVPrincipalPropertySearchTask : CoreDAVPropertyFindBaseTask {
-    BOOL _applyToPrincipalCollectionSet;
-    NSDictionary *_extraAttributes;
-    NSSet *_searchItems;
+    BOOL  _applyToPrincipalCollectionSet;
+    NSDictionary * _extraAttributes;
+    NSSet * _searchItems;
 }
 
 @property (nonatomic) BOOL applyToPrincipalCollectionSet;

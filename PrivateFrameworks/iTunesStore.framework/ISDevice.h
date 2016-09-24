@@ -3,10 +3,10 @@
  */
 
 @interface ISDevice : NSObject <ISSingleton> {
-    unsigned int _daemonLaunchCount;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    NSString *_guid;
-    double _lastFreeSpaceRequest;
+    unsigned int  _daemonLaunchCount;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    NSString * _guid;
+    double  _lastFreeSpaceRequest;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -31,7 +31,7 @@
 - (id)hardwareName;
 - (id)init;
 - (BOOL)releasePowerAssertion:(id)arg1;
-- (void)requestFreeSpace:(unsigned long long)arg1 atPath:(id)arg2 withOptions:(id)arg3 completionBlock:(id /* block */)arg4;
+- (void)requestFreeSpace:(unsigned int)arg1 atPath:(id)arg2 withOptions:(id)arg3 completionBlock:(id /* block */)arg4;
 - (void)resetLocationAndPrivacy;
 - (id)serialNumber;
 - (id)supportedOfferDeviceForDevices:(id)arg1;

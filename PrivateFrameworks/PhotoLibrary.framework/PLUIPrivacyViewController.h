@@ -3,8 +3,8 @@
  */
 
 @interface PLUIPrivacyViewController : UIViewController {
-    _UIAccessDeniedView *_accessDeniedView;
-    BOOL _showingAccessDeniedView;
+    _UIAccessDeniedView * _accessDeniedView;
+    BOOL  _showingAccessDeniedView;
 }
 
 - (void)_cancelButtonClicked:(id)arg1;

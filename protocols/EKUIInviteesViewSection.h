@@ -21,4 +21,8 @@
 - (void)setTableViewCellHook:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, UITableViewCell *, id /* block */, unsigned int, void*
 - (NSString *)titleForDeleteConfirmationButtonForRow:(NSIndexPath *)arg1;
 
+@optional
+
+- (BOOL)hideDivderLineForindexPath:(NSIndexPath *)arg1;
+
 @end

@@ -3,13 +3,12 @@
  */
 
 @interface LSDatabaseBuilder : NSObject {
-    NSObject<OS_dispatch_queue> *_dbQueue;
-    NSObject<OS_dispatch_queue> *_ioQueue;
+    NSObject<OS_dispatch_queue> * _ioQueue;
 }
 
 - (void)createAndSeedLocalDatabase:(BOOL*)arg1;
 - (void)dealloc;
-- (id)initWithIOQueue:(id)arg1 registrationQueue:(id)arg2;
+- (id)initWithIOQueue:(id)arg1;
 - (void)setSeedingComplete:(BOOL)arg1;
 
 @end

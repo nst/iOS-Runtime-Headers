@@ -3,10 +3,10 @@
  */
 
 @interface SKUIMediaQueryEvaluator : NSObject {
-    NSMapTable *_cachedFeatureResults;
-    <SKUIMediaQueryDelegate> *_delegate;
-    NSMutableSet *_observedNotificationNames;
-    NSObject<OS_dispatch_source> *_reloadTimer;
+    NSMapTable * _cachedFeatureResults;
+    <SKUIMediaQueryDelegate> * _delegate;
+    NSMutableSet * _observedNotificationNames;
+    NSObject<OS_dispatch_source> * _reloadTimer;
 }
 
 @property (nonatomic) <SKUIMediaQueryDelegate> *delegate;

@@ -3,24 +3,24 @@
  */
 
 @interface MPVolumeController : NSObject {
-    float _EUVolumeLimit;
-    BOOL _debugVolumeWarning;
-    <MPVolumeControllerDelegate> *_delegate;
-    MPAVController *_player;
-    NSString *_volumeAudioCategory;
-    float _volumeValue;
-    BOOL _volumeWarningBlinking;
-    BOOL _volumeWarningEnabled;
-    int _volumeWarningState;
-    UIImage *_volumeWarningTrackImage;
+    double  _EUVolumeLimit;
+    BOOL  _debugVolumeWarning;
+    <MPVolumeControllerDelegate> * _delegate;
+    MPAVController * _player;
+    NSString * _volumeAudioCategory;
+    double  _volumeValue;
+    BOOL  _volumeWarningBlinking;
+    BOOL  _volumeWarningEnabled;
+    int  _volumeWarningState;
+    UIImage * _volumeWarningTrackImage;
 }
 
-@property (nonatomic, readonly) float EUVolumeLimit;
+@property (nonatomic, readonly) double EUVolumeLimit;
 @property (nonatomic) <MPVolumeControllerDelegate> *delegate;
 @property (nonatomic) BOOL muted;
 @property (nonatomic, retain) MPAVController *player;
 @property (nonatomic, copy) NSString *volumeAudioCategory;
-@property (nonatomic, readonly) float volumeValue;
+@property (nonatomic, readonly) double volumeValue;
 @property (nonatomic, readonly) BOOL volumeWarningEnabled;
 @property (nonatomic, readonly) int volumeWarningState;
 

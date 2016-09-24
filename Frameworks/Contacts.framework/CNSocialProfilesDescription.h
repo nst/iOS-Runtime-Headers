@@ -23,5 +23,6 @@
 - (BOOL)isValue:(id)arg1 equivalentToValue:(id)arg2;
 - (Class)labeledValueClass;
 - (void)setCNValue:(id)arg1 onContact:(id)arg2;
+- (id)summarizationKeys;
 
 @end

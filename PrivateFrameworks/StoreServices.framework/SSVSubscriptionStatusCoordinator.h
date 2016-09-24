@@ -3,14 +3,14 @@
  */
 
 @interface SSVSubscriptionStatusCoordinator : NSObject {
-    SSVSubscriptionStatusRequest *_activeRequest;
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    BOOL _didReset;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    SSVSubscriptionStatus *_lastKnownStatus;
-    NSDate *_lastStatusDate;
-    int _notificationToken;
-    NSMutableArray *_statusBlocks;
+    SSVSubscriptionStatusRequest * _activeRequest;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    BOOL  _didReset;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    SSVSubscriptionStatus * _lastKnownStatus;
+    NSDate * _lastStatusDate;
+    int  _notificationToken;
+    NSMutableArray * _statusBlocks;
 }
 
 @property (readonly, copy) SSVSubscriptionStatus *lastKnownStatus;

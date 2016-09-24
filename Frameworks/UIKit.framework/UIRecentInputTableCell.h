@@ -3,8 +3,8 @@
  */
 
 @interface UIRecentInputTableCell : UITableViewCell {
-    int _blurEffectStyle;
-    UILabel *_floatingLabel;
+    int  _blurEffectStyle;
+    UILabel * _floatingLabel;
 }
 
 @property (nonatomic) int blurEffectStyle;
@@ -16,7 +16,8 @@
 + (id)unfocusedTextColorForBlurEffectStyle:(int)arg1;
 
 - (void).cxx_destruct;
-- (void)_setupSelectedBackgroundView;
+- (BOOL)_tvIsDarkMode;
+- (void)_updateAppearance;
 - (int)blurEffectStyle;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)floatingLabel;
@@ -25,6 +26,7 @@
 - (void)setFloatingLabel:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setInputText:(id)arg1 withBlurStyle:(int)arg2;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)tvFloatingView;
 
 @end

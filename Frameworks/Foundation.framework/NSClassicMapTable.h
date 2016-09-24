@@ -3,7 +3,7 @@
  */
 
 @interface NSClassicMapTable : NSMapTable {
-    struct __CFBasicHash { } *_ht;
+    struct __CFBasicHash { } * _ht;
     struct { 
         int (*hash)(); 
         int (*isEqual)(); 
@@ -11,12 +11,12 @@
         int (*release)(); 
         int (*describe)(); 
         void *notAKeyMarker; 
-    } _keyCallBacks;
+    }  _keyCallBacks;
     struct { 
         int (*retain)(); 
         int (*release)(); 
         int (*describe)(); 
-    } _valueCallBacks;
+    }  _valueCallBacks;
 }
 
 - (id)allKeys;

@@ -3,8 +3,8 @@
  */
 
 @interface WDArrayIterator : WDIterator {
-    NSArray *mArray;
-    unsigned int mNextIndex;
+    NSArray * mArray;
+    unsigned int  mNextIndex;
 }
 
 - (BOOL)hasNext;

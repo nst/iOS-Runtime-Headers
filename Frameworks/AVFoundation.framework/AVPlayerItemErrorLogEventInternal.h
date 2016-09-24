@@ -3,7 +3,7 @@
  */
 
 @interface AVPlayerItemErrorLogEventInternal : NSObject {
-    NSDictionary *dict;
+    NSDictionary * dict;
 }
 
 @end

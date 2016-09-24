@@ -3,13 +3,14 @@
  */
 
 @interface CKIMDBMessage : CKDBMessage {
-    int _personID;
-    NSString *_personName;
+    int  _personID;
+    NSString * _personName;
 }
 
 @property (nonatomic) int personID;
 @property (nonatomic, retain) NSString *personName;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithRecordID:(int)arg1;
 - (void)markAsRead;

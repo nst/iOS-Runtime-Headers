@@ -3,11 +3,11 @@
  */
 
 @interface TSPAVAssetResourceLoaderDelegate : NSObject <AVAssetResourceLoaderDelegate> {
-    TSPData *_data;
-    long long _dataLength;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    <TSUReadChannel> *_readChannel;
-    NSObject<OS_dispatch_queue> *_requestHandlingQueue;
+    TSPData * _data;
+    int  _dataLength;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    <TSUReadChannel> * _readChannel;
+    NSObject<OS_dispatch_queue> * _requestHandlingQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -21,7 +21,9 @@
 - (void)_provideNextDataBlockToLoadingRequest:(id)arg1 completion:(id /* block */)arg2;
 - (void)dealloc;
 - (id)delegateQueue;
+- (id)init;
 - (id)initWithData:(id)arg1;
+- (void)resourceLoader:(id)arg1 didCancelLoadingRequest:(id)arg2;
 - (BOOL)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
 
 @end

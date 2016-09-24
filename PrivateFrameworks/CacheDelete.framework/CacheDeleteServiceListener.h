@@ -3,38 +3,52 @@
  */
 
 @interface CacheDeleteServiceListener : CacheDeleteListener <CacheDeleteServiceProtocol, NSXPCListenerDelegate> {
-    id /* block */ _callback;
-    id /* block */ _cancel;
-    NSXPCListenerEndpoint *_endpoint;
-    id /* block */ _notify;
-    id /* block */ _periodic;
-    id /* block */ _purge;
-    id /* block */ _purgeable;
+    BOOL  _anonymous;
+    id /* block */  _callback;
+    id /* block */  _cancel;
+    NSXPCListenerEndpoint * _endpoint;
+    BOOL  _legacyCallbacks;
+    id /* block */  _notify;
+    id /* block */  _periodic;
+    id /* block */  _purge;
+    id /* block */  _purgeable;
+    NSObject<OS_dispatch_queue> * _queue;
+    CacheDeleteServiceInfo * _serviceInfo;
 }
 
+@property (readonly) BOOL anonymous;
 @property (nonatomic, copy) id /* block */ callback;
 @property (nonatomic, copy) id /* block */ cancel;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) NSXPCListenerEndpoint *endpoint;
 @property (readonly) unsigned int hash;
+@property (readonly) BOOL legacyCallbacks;
 @property (nonatomic, copy) id /* block */ notify;
 @property (nonatomic, copy) id /* block */ periodic;
 @property (nonatomic, copy) id /* block */ purge;
 @property (nonatomic, copy) id /* block */ purgeable;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, readonly) CacheDeleteServiceInfo *serviceInfo;
 @property (readonly) Class superclass;
 
++ (id)cacheDeleteServiceListener:(id)arg1 options:(id)arg2;
+
 - (void).cxx_destruct;
+- (BOOL)anonymous;
 - (id /* block */)callback;
 - (id /* block */)cancel;
 - (id)endpoint;
-- (id)initWithName:(id)arg1 anonymous:(BOOL)arg2;
+- (id)initWithName:(id)arg1 options:(id)arg2;
+- (BOOL)legacyCallbacks;
 - (id /* block */)notify;
 - (id /* block */)periodic;
 - (id /* block */)purge;
 - (id /* block */)purgeable;
+- (id)queue;
 - (void)serviceCallback:(id)arg1 replyBlock:(id /* block */)arg2;
 - (void)serviceCancelPurge:(id /* block */)arg1;
+- (id)serviceInfo;
 - (void)serviceNotify:(id)arg1 replyBlock:(id /* block */)arg2;
 - (void)servicePeriodic:(int)arg1 info:(id)arg2 replyBlock:(id /* block */)arg3;
 - (void)servicePing:(id /* block */)arg1;
@@ -47,5 +61,6 @@
 - (void)setPeriodic:(id /* block */)arg1;
 - (void)setPurge:(id /* block */)arg1;
 - (void)setPurgeable:(id /* block */)arg1;
+- (void)setQueue:(id)arg1;
 
 @end

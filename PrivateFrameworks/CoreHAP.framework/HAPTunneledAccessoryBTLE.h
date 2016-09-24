@@ -2,33 +2,33 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPTunneledAccessoryBTLE : HAPAccessory <HAPAccessoryServerInternalDelegate, HAPBTLEControlOutputStreamDelegate, HAPSecuritySessionDelegate, HAPTimerDelegate> {
-    HAPCharacteristic *_advertisingCharacteristic;
-    NSOperationQueue *_clientOperationQueue;
-    HAPTimer *_connectionIdleTimer;
-    <HAPKeyStore> *_keyStore;
-    HAPCharacteristic *_pairVerifyCharacteristic;
-    NSOperationQueue *_pairVerifyOperationQueue;
-    HAPService *_pairingService;
-    HAPCharacteristic *_pairingsCharacteristic;
-    NSMutableArray *_pendingRequests;
-    NSMutableArray *_pendingResponses;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
-    NSOperationQueue *_requestOperationQueue;
-    HAPSecuritySession *_securitySession;
-    BOOL _securitySessionOpen;
-    BOOL _securitySessionOpening;
-    NSNumber *_sessionLifetimeTimeout;
-    NSNumber *_stateNumber;
-    HAPService *_tunneledBTLEAccessoryService;
-    HAPExponentialBackoffTimer *_verificationBackoffTimer;
-    BOOL _verified;
-    BOOL _verifying;
+@interface HAPTunneledAccessoryBTLE : HAPAccessory <HAPAccessoryServerInternalDelegate, HAPBTLEControlOutputStreamDelegate, HAPSecuritySessionDelegate, HMFTimerDelegate> {
+    HAPCharacteristic * _advertisingCharacteristic;
+    NSOperationQueue * _clientOperationQueue;
+    HMFTimer * _connectionIdleTimer;
+    <HAPKeyStore> * _keyStore;
+    HAPCharacteristic * _pairVerifyCharacteristic;
+    NSOperationQueue * _pairVerifyOperationQueue;
+    HAPService * _pairingService;
+    HAPCharacteristic * _pairingsCharacteristic;
+    NSMutableArray * _pendingRequests;
+    NSMutableArray * _pendingResponses;
+    NSObject<OS_dispatch_queue> * _propertyQueue;
+    NSOperationQueue * _requestOperationQueue;
+    HAPSecuritySession * _securitySession;
+    BOOL  _securitySessionOpen;
+    BOOL  _securitySessionOpening;
+    NSNumber * _sessionLifetimeTimeout;
+    NSNumber * _stateNumber;
+    HAPService * _tunneledBTLEAccessoryService;
+    HMFExponentialBackoffTimer * _verificationBackoffTimer;
+    BOOL  _verified;
+    BOOL  _verifying;
 }
 
 @property (nonatomic) HAPCharacteristic *advertisingCharacteristic;
 @property (nonatomic, readonly) NSOperationQueue *clientOperationQueue;
-@property (nonatomic, retain) HAPTimer *connectionIdleTimer;
+@property (nonatomic, retain) HMFTimer *connectionIdleTimer;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -48,7 +48,7 @@
 @property (nonatomic, copy) NSNumber *stateNumber;
 @property (readonly) Class superclass;
 @property (nonatomic) HAPService *tunneledBTLEAccessoryService;
-@property (nonatomic, retain) HAPExponentialBackoffTimer *verificationBackoffTimer;
+@property (nonatomic, retain) HMFExponentialBackoffTimer *verificationBackoffTimer;
 @property (getter=isVerified, nonatomic) BOOL verified;
 @property (getter=isVerifying, nonatomic) BOOL verifying;
 
@@ -90,6 +90,7 @@
 - (void)_tearDownSessionWithError:(id)arg1;
 - (void)_updateOnStateNumberChange;
 - (void)_verifyCharacteristicSignature:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_verifyServiceSignature:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_writeValue:(id)arg1 toCharacteristic:(id)arg2 authorizationData:(id)arg3 options:(int)arg4 completionHandler:(id /* block */)arg5;
 - (void)accessoryServer:(id)arg1 didUpdateValueForCharacteristic:(id)arg2;
 - (void)addPairingWithIdentifier:(id)arg1 publicKey:(id)arg2 admin:(BOOL)arg3 completionQueue:(id)arg4 completionHandler:(id /* block */)arg5;

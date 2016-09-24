@@ -3,15 +3,14 @@
  */
 
 @interface _HDDataBatchInsertionJournalEntry : HDJournalEntry {
-    HDCodableObjectCollection *_collection;
-    HDDataOriginProvenance *_provenance;
+    HDCodableObjectCollection * _collection;
+    HDDataOriginProvenance * _provenance;
 }
 
 @property (nonatomic, readonly) HDCodableObjectCollection *collection;
 @property (nonatomic, readonly) HDDataOriginProvenance *provenance;
 
-+ (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
-+ (int)behavior;
++ (void)applyEntries:(id)arg1 withProfile:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;

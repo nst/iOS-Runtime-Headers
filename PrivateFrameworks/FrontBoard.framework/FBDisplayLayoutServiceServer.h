@@ -3,10 +3,10 @@
  */
 
 @interface FBDisplayLayoutServiceServer : FBSystemServiceFacility {
-    NSMutableDictionary *_calloutQueuesByQOS;
-    NSMutableDictionary *_defaultQOSClientsByDisplayType;
-    <FBDisplayLayoutServiceServerDelegate> *_delegate;
-    NSMutableDictionary *_utilityQOSClientsByDisplayType;
+    NSMutableDictionary * _calloutQueuesByQOS;
+    NSMutableDictionary * _defaultQOSClientsByDisplayType;
+    <FBDisplayLayoutServiceServerDelegate> * _delegate;
+    NSMutableDictionary * _utilityQOSClientsByDisplayType;
 }
 
 @property (nonatomic) <FBDisplayLayoutServiceServerDelegate> *delegate;
@@ -20,7 +20,7 @@
 - (id)initWithIdentifier:(id)arg1 queue:(id)arg2 clientAuthenticator:(id)arg3;
 - (void)noteClientDidConnect:(id)arg1 withMessage:(id)arg2;
 - (void)noteClientDidDisconnect:(id)arg1;
-- (void)noteDidReceiveMessage:(id)arg1 withType:(long long)arg2 fromClient:(id)arg3;
+- (void)noteDidReceiveMessage:(id)arg1 withType:(int)arg2 fromClient:(id)arg3;
 - (id)prerequisiteMilestones;
 - (void)publishDisplayLayout:(id)arg1;
 - (void)setDelegate:(id)arg1;

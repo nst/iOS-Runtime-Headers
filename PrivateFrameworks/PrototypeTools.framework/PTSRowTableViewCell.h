@@ -3,8 +3,8 @@
  */
 
 @interface PTSRowTableViewCell : UITableViewCell <PTSRowObserver> {
-    <PTSRowTableViewCellDelegate> *_delegate;
-    PTSRow *_row;
+    <PTSRowTableViewCellDelegate> * _delegate;
+    PTSRow * _row;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,7 +3,7 @@
  */
 
 @interface CLVehicleSpeed : NSObject <NSCopying, NSSecureCoding> {
-    id _internal;
+    id  _internal;
 }
 
 @property (nonatomic, readonly) double speed;

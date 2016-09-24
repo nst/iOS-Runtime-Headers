@@ -3,13 +3,13 @@
  */
 
 @interface AVAssetMakeReadyForInspectionLoader : AVAssetInspectorLoader {
-    NSURL *_URL;
-    AVAssetInspector *_assetInspector;
-    long _basicInspectionFailureCode;
-    struct OpaqueFigFormatReader { } *_formatReader;
-    NSMutableArray *_keysAwaitingCompletion;
-    struct OpaqueFigSimpleMutex { } *_loadingMutex;
-    int _status;
+    NSURL * _URL;
+    AVAssetInspector * _assetInspector;
+    long  _basicInspectionFailureCode;
+    struct OpaqueFigFormatReader { } * _formatReader;
+    NSMutableArray * _keysAwaitingCompletion;
+    struct OpaqueFigSimpleMutex { } * _loadingMutex;
+    int  _status;
 }
 
 - (id)URL;
@@ -36,7 +36,7 @@
 - (void)cancelLoading;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
+- (struct { int x1; int x2; unsigned int x3; int x4; })duration;
 - (id)figChapterGroupInfo;
 - (void)finalize;
 - (BOOL)hasProtectedContent;

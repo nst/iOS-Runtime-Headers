@@ -4,7 +4,7 @@
 
 @interface _NSPersonNameComponentsStyleFormatterNicknameVariant : _NSPersonNameComponentsStyleFormatter
 
-- (id)alterations;
+- (id)abbreviatedKeys;
 - (id)keysOfInterest;
 - (id)orderedTemplate;
 

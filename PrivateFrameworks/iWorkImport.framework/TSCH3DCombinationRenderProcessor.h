@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DCombinationRenderProcessor : TSCH3DRetargetRenderProcessor {
-    TSCH3DShaderEffects *mEffects;
-    NSIndexSet *mEnabled;
+    TSCH3DShaderEffects * mEffects;
+    NSIndexSet * mEnabled;
     struct StateStack<TSCH3D::ObjectState, 6> { 
         unsigned int mIndex; 
         struct ObjectState { 
@@ -93,85 +93,85 @@
                 } __elems_[8]; 
             } mTextureAttributes; 
         } mStack[6]; 
-    } mObjectStateStack;
+    }  mObjectStateStack;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
-                float x; 
-                float r; 
-                float s; 
+                double x; 
+                double r; 
+                double s; 
             } ; 
             union { 
-                float y; 
-                float g; 
-                float t; 
+                double y; 
+                double g; 
+                double t; 
             } ; 
             union { 
-                float z; 
-                float b; 
-                float p; 
+                double z; 
+                double b; 
+                double p; 
             } ; 
             union { 
-                float w; 
-                float a; 
-                float q; 
+                double w; 
+                double a; 
+                double q; 
             } ; 
         } value[4]; 
-    } mProjection;
-    BOOL mProjectionChanged;
-    TSCH3DShaderEffectsStates *mShaderEffectsStates;
-    BOOL mTransformChanged;
+    }  mProjection;
+    BOOL  mProjectionChanged;
+    TSCH3DShaderEffectsStates * mShaderEffectsStates;
+    BOOL  mTransformChanged;
     struct StateStack<glm::detail::tmat4x4<float>, 8> { 
         unsigned int mIndex; 
         struct tmat4x4<float> { 
             struct tvec4<float> { 
                 union { 
-                    float x; 
-                    float r; 
-                    float s; 
+                    double x; 
+                    double r; 
+                    double s; 
                 } ; 
                 union { 
-                    float y; 
-                    float g; 
-                    float t; 
+                    double y; 
+                    double g; 
+                    double t; 
                 } ; 
                 union { 
-                    float z; 
-                    float b; 
-                    float p; 
+                    double z; 
+                    double b; 
+                    double p; 
                 } ; 
                 union { 
-                    float w; 
-                    float a; 
-                    float q; 
+                    double w; 
+                    double a; 
+                    double q; 
                 } ; 
             } value[4]; 
         } mCurrent; 
         struct tmat4x4<float> { 
             struct tvec4<float> { 
                 union { 
-                    float x; 
-                    float r; 
-                    float s; 
+                    double x; 
+                    double r; 
+                    double s; 
                 } ; 
                 union { 
-                    float y; 
-                    float g; 
-                    float t; 
+                    double y; 
+                    double g; 
+                    double t; 
                 } ; 
                 union { 
-                    float z; 
-                    float b; 
-                    float p; 
+                    double z; 
+                    double b; 
+                    double p; 
                 } ; 
                 union { 
-                    float w; 
-                    float a; 
-                    float q; 
+                    double w; 
+                    double a; 
+                    double q; 
                 } ; 
             } value[4]; 
         } mStack[8]; 
-    } mTransformStack;
+    }  mTransformStack;
 }
 
 @property (nonatomic, readonly) BOOL projectionChanged;
@@ -181,31 +181,31 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)copyProjectionInto:(struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; }*)arg1;
-- (void)copyTransformInto:(struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; }*)arg1;
-- (struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; }*)currentTransform;
+- (void)copyProjectionInto:(struct tmat4x4<float> { struct tvec4<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; union { double x_4_2_1; double x_4_2_2; double x_4_2_3; } x_1_1_4; } x1[4]; }*)arg1;
+- (void)copyTransformInto:(struct tmat4x4<float> { struct tvec4<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; union { double x_4_2_1; double x_4_2_2; double x_4_2_3; } x_1_1_4; } x1[4]; }*)arg1;
+- (struct tmat4x4<float> { struct tvec4<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; union { double x_4_2_1; double x_4_2_2; double x_4_2_3; } x_1_1_4; } x1[4]; }*)currentTransform;
 - (void)dealloc;
 - (id)effects;
 - (id)effectsStates;
 - (id)initWithOriginal:(id)arg1;
 - (id)initWithOriginal:(id)arg1 enableTypes:(id)arg2;
 - (BOOL)matrixEnabled;
-- (void)multiply:(struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; }*)arg1;
+- (void)multiply:(struct tmat4x4<float> { struct tvec4<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; union { double x_4_2_1; double x_4_2_2; double x_4_2_3; } x_1_1_4; } x1[4]; }*)arg1;
 - (BOOL)objectStateEnabled;
-- (struct StateStack<TSCH3D::ObjectState, 6> { unsigned int x1; struct ObjectState { struct ObjcSharedPtr<NSSet> { id x_1_2_1; struct vector<TSCH3D::ObjectState::Lookup, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_2_3_1; struct Lookup {} *x_2_3_2; struct __compressed_pair<TSCH3D::ObjectState::Lookup *, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_3_4_1; } x_2_3_3; } x_1_2_2; struct array<SFUtility::ObjcSharedPtr<NSObject>, 8> { struct ObjcSharedPtr<NSObject> { id x_1_4_1; /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_1_4_2; } x_3_3_1[8]; } x_1_2_3; } x_2_1_1; struct ObjectState { struct ObjcSharedPtr<NSSet> { id x_1_3_1; struct vector<TSCH3D::ObjectState::Lookup, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_2_4_1; struct Lookup {} *x_2_4_2; struct __compressed_pair<TSCH3D::ObjectState::Lookup *, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_3_5_1; } x_2_4_3; } x_1_3_2; struct array<SFUtility::ObjcSharedPtr<NSObject>, 8> { struct ObjcSharedPtr<NSObject> { id x_1_5_1; void*x_1_5_2; } x_3_4_1[8]; } x_1_3_3; } x_2_2_1; void*x_2_2_2; } x_2_1_2[6]; void*x_2_1_3; void*x_2_1_4; void*x_2_1_5; void*x_2_1_6; void*x_2_1_7; void*x_2_1_8; void*x_2_1_9; void*x_2_1_10; void*x_2_1_11; void*x_2_1_12; void*x_2_1_13; void*x_2_1_14; void*x_2_1_15; void*x_2_1_16; void*x_2_1_17; void*x_2_1_18; void*x_2_1_19; void*x_2_1_20; void*x_2_1_21; void*x_2_1_22; void*x_2_1_23; void*x_2_1_24; void*x_2_1_25; void*x_2_1_26; void*x_2_1_27; void*x_2_1_28; void*x_2_1_29; void*x_2_1_30; void*x_2_1_31; void*x_2_1_32; void x_2_1_33; void*x_2_1_34; out void*x_2_1_35; int x_2_1_36; void*x_2_1_37; double x_2_1_38; void*x_2_1_39; char *x_2_1_40; void*x_2_1_41; void*x_2_1_42; void*x_2_1_43; void*x_2_1_44; void*x_2_1_45; void*x_2_1_46; void*x_2_1_47; void*x_2_1_48; void*x_2_1_49; void*x_2_1_50; void*x_2_1_51; void*x_2_1_52; void*x_2_1_53; void*x_2_1_54; void*x_2_1_55; void*x_2_1_56; void*x_2_1_57; void*x_2_1_58; void*x_2_1_59; void*x_2_1_60; void*x_2_1_61; void x_2_1_62; void*x_2_1_63; out void*x_2_1_64; int x_2_1_65; void*x_2_1_66; double x_2_1_67; void*x_2_1_68; char *x_2_1_69; void*x_2_1_70; void*x_2_1_71; void*x_2_1_72; void*x_2_1_73; void*x_2_1_74; void*x_2_1_75; void*x_2_1_76; void x_2_1_77; void*x_2_1_78; void*x_2_1_79; void*x_2_1_80; BOOL x_2_1_81; void*x_2_1_82; void*x_2_1_83; void*x_2_1_84; out void*x_2_1_85; const void*x_2_1_86; void*x_2_1_87; void*x_2_1_88; void*x_2_1_89; void*x_2_1_90; unsigned short x_2_1_91; void*x_2_1_92; unsigned char x_2_1_93; void*x_2_1_94; void*x_2_1_95; void*x_2_1_96; void*x_2_1_97; void*x_2_1_98; long doublex_2_1_99; void*x_2_1_100; SEL x_2_1_101; void*x_2_1_102; SEL x_2_1_103; void*x_2_1_104; bycopy void*x_2_1_105; unsigned int x_2_1_106/* : ? */; void*x_2_1_107; void*x_2_1_108; void*x_2_1_109; void*x_2_1_110; void*x_2_1_111; BOOL x_2_1_112; void*x_2_1_113; void*x_2_1_114; void*x_2_1_115; unsigned short x_2_1_116; void*x_2_1_117; void*x_2_1_118; void*x_2_1_119; void*x_2_1_120; void*x_2_1_121; void*x_2_1_122; void*x_2_1_123; void*x_2_1_124; void*x_2_1_125; SEL x_2_1_126; void*x_2_1_127; SEL x_2_1_128; void*x_2_1_129; unsigned long x_2_1_130; void*x_2_1_131; out void*x_2_1_132; out void*x_2_1_133; void*x_2_1_134; void*x_2_1_135; void*x_2_1_136; void*x_2_1_137; void*x_2_1_138; void*x_2_1_139; void*x_2_1_140; void*x_2_1_141; void*x_2_1_142; void*x_2_1_143; short x_2_1_144; void*x_2_1_145; void*x_2_1_146; void*x_2_1_147; double x_2_1_148; void*x_2_1_149; SEL x_2_1_150; void*x_2_1_151; SEL x_2_1_152; void*x_2_1_153; void*x_2_1_154; void*x_2_1_155; void*x_2_1_156; void*x_2_1_157; void*x_2_1_158; void*x_2_1_159; SEL x_2_1_160; void*x_2_1_161; SEL x_2_1_162; void*x_2_1_163; void*x_2_1_164; void*x_2_1_165; long x_2_1_166; void*x_2_1_167; long x_2_1_168; void*x_2_1_169; out void*x_2_1_170; BOOL x_2_1_171; void*x_2_1_172; void*x_2_1_173; void*x_2_1_174; void*x_2_1_175; void*x_2_1_176; out void*x_2_1_177; const void*x_2_1_178; void*x_2_1_179; void*x_2_1_180; void*x_2_1_181; void*x_2_1_182; unsigned short x_2_1_183; void*x_2_1_184; unsigned char x_2_1_185; void*x_2_1_186; void*x_2_1_187; void*x_2_1_188; void*x_2_1_189; void*x_2_1_190; long doublex_2_1_191; void*x_2_1_192; SEL x_2_1_193; void*x_2_1_194; SEL x_2_1_195; void*x_2_1_196; bycopy void*x_2_1_197; unsigned int x_2_1_198/* : ? */; void*x_2_1_199; void*x_2_1_200; void*x_2_1_201; void*x_2_1_202; void*x_2_1_203; BOOL x_2_1_204; void*x_2_1_205; void*x_2_1_206; void*x_2_1_207; unsigned short x_2_1_208; void*x_2_1_209; void*x_2_1_210; void*x_2_1_211; void*x_2_1_212; void*x_2_1_213; void*x_2_1_214; void*x_2_1_215; void*x_2_1_216; void*x_2_1_217; SEL x_2_1_218; void*x_2_1_219; SEL x_2_1_220; void*x_2_1_221; unsigned long x_2_1_222; void*x_2_1_223; out void*x_2_1_224; out void*x_2_1_225; void*x_2_1_226; void*x_2_1_227; void*x_2_1_228; void*x_2_1_229; void*x_2_1_230; void*x_2_1_231; void*x_2_1_232; void*x_2_1_233; void*x_2_1_234; void*x_2_1_235; void*x_2_1_236; void*x_2_1_237; void*x_2_1_238; void*x_2_1_239; struct x_2_1_240; void*x_2_1_241; void*x_2_1_242; void*x_2_1_243; short x_2_1_244; void*x_2_1_245; void*x_2_1_246; void*x_2_1_247; const void*x_2_1_248; void*x_2_1_249; void*x_2_1_250; BOOL x_2_1_251; void*x_2_1_252; void*x_2_1_253; void*x_2_1_254; void*x_2_1_255; void*x_2_1_256; unsigned long x_2_1_257; void*x_2_1_258; out void*x_2_1_259; out void*x_2_1_260; void*x_2_1_261; void*x_2_1_262; void*x_2_1_263; void*x_2_1_264; void*x_2_1_265; void*x_2_1_266; void*x_2_1_267; void*x_2_1_268; struct x_2_1_269; void*x_2_1_270; } x2; void*x3; void*x4; void*x5; char *x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; short x26; void*x27; void*x28; void*x29; const void*x30; void*x31; void*x32; BOOL x33; void*x34; void*x35; void*x36; void*x37; void*x38; unsigned long x39; void*x40; out void*x41; out void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; void*x50; struct x51; void*x52; }*)objectStateStack;
+- (struct StateStack<TSCH3D::ObjectState, 6> { unsigned int x1; struct ObjectState { struct ObjcSharedPtr<NSSet> { id x_1_2_1; struct vector<TSCH3D::ObjectState::Lookup, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_2_3_1; struct Lookup {} *x_2_3_2; struct __compressed_pair<TSCH3D::ObjectState::Lookup *, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_3_4_1; } x_2_3_3; } x_1_2_2; struct array<SFUtility::ObjcSharedPtr<NSObject>, 8> { struct ObjcSharedPtr<NSObject> { id x_1_4_1; /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_1_4_2; } x_3_3_1[8]; } x_1_2_3; } x_2_1_1; struct ObjectState { struct ObjcSharedPtr<NSSet> { id x_1_3_1; struct vector<TSCH3D::ObjectState::Lookup, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_2_4_1; struct Lookup {} *x_2_4_2; struct __compressed_pair<TSCH3D::ObjectState::Lookup *, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_3_5_1; } x_2_4_3; } x_1_3_2; struct array<SFUtility::ObjcSharedPtr<NSObject>, 8> { struct ObjcSharedPtr<NSObject> { id x_1_5_1; void*x_1_5_2; } x_3_4_1[8]; } x_1_3_3; } x_2_2_1; void*x_2_2_2; } x_2_1_2[6]; } x2; }*)objectStateStack;
 - (void)popMatrix;
 - (void)popState;
-- (void)projection:(struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; }*)arg1;
+- (void)projection:(struct tmat4x4<float> { struct tvec4<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; union { double x_4_2_1; double x_4_2_2; double x_4_2_3; } x_1_1_4; } x1[4]; }*)arg1;
 - (BOOL)projectionChanged;
-- (struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; }*)projectionTransform;
+- (struct tmat4x4<float> { struct tvec4<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; union { double x_4_2_1; double x_4_2_2; double x_4_2_3; } x_1_1_4; } x1[4]; }*)projectionTransform;
 - (void)pushMatrix;
 - (void)pushState;
-- (void)replace:(struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; }*)arg1;
+- (void)replace:(struct tmat4x4<float> { struct tvec4<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; union { double x_4_2_1; double x_4_2_2; double x_4_2_3; } x_1_1_4; } x1[4]; }*)arg1;
 - (void)resetBuffers;
 - (void)resetTransformChangeFlags;
-- (void)scale:(struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; }*)arg1;
+- (void)scale:(struct tvec3<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; }*)arg1;
 - (BOOL)shaderEnabled;
 - (BOOL)transformChanged;
-- (void)translate:(struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; }*)arg1;
+- (void)translate:(struct tvec3<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; }*)arg1;
 
 @end

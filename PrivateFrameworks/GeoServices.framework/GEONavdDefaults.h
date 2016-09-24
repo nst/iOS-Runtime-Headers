@@ -5,9 +5,11 @@
 @interface GEONavdDefaults : NSObject
 
 @property (nonatomic, readonly) unsigned int accessValueThresholdToUpdateCacheEntries;
+@property (nonatomic, readonly) double ageForRefresh;
 @property (nonatomic, readonly) double averageWalkingSpeed;
 @property (nonatomic, readonly) double defaultExpirationOffset;
 @property (nonatomic, readonly) double exitRegionSize;
+@property (nonatomic, readonly) double extraLocationWaitTimeInterval;
 @property (nonatomic, readonly) double fastWalkingSpeed;
 @property (nonatomic, readonly) double hypothesisResponseStaleToPurgeFromDiskThresholdInSeconds;
 @property (nonatomic, readonly) double hypothesisResponseStaleToRefreshThresholdInSeconds;
@@ -15,6 +17,7 @@
 @property (nonatomic, readonly) unsigned int initialClientInitiatedHypothesisCacheAccessValue;
 @property (nonatomic, readonly) unsigned int initialSelfInitiatedHypothesisCacheAccessValue;
 @property (nonatomic, readonly) double locationFreshnessThreshold;
+@property (nonatomic, readonly) double locationReuseThreshold;
 @property (nonatomic, readonly) double locationUpdateTimerInterval;
 @property (nonatomic, readonly) double locationUpdatesDesiredAccuracyForDriving;
 @property (nonatomic, readonly) double locationUpdatesDesiredAccuracyForWalking;
@@ -22,31 +25,42 @@
 @property (nonatomic, readonly) double locationUpdatesDesiredAccuracyWhileStationaryForWalking;
 @property (nonatomic, readonly) int maximumNumberOfDestinationsToMonitor;
 @property (nonatomic, readonly) unsigned int maximumNumberOfEntriesInTheCacheUnderMemoryPressure;
+@property (nonatomic, readonly) unsigned int maximumNumberOfLeechedLocations;
 @property (nonatomic, readonly) unsigned int maximumNumberOfProcessingLoopRepeats;
 @property (nonatomic, readonly) double maximumRefreshIntervalLeeway;
 @property (nonatomic, readonly) double maximumTimeBetweenConsecutiveHypothesisUpdatesInSeconds;
+@property (nonatomic, readonly) double maximumUserRoutingPreferencesAge;
 @property (nonatomic, readonly) double minimumDistanceToCompareAgainstLocationAccuracy;
 @property (nonatomic, readonly) double minimumDistanceToGetLocationUpdatesInMeters;
 @property (nonatomic, readonly) double minimumExpirationOffset;
 @property (nonatomic, readonly) double minimumTimeBetweenConsecutiveLocationUpdatesInSeconds;
 @property (nonatomic, readonly) double minimumTimerTimeStampFudge;
+@property (nonatomic, readonly) double pendingStopTimeToLive;
 @property (nonatomic, readonly) double predictionsWatchdogInterval;
-@property (nonatomic, readonly) unsigned int refreshEquationConstA;
-@property (nonatomic, readonly) unsigned int refreshEquationConstB;
-@property (nonatomic, readonly) unsigned int refreshEquationConstC;
+@property (nonatomic, readonly) unsigned int refreshEquationHighestFrequency;
+@property (nonatomic, readonly) unsigned int refreshEquationLowestFrequency;
+@property (nonatomic, readonly) unsigned int refreshEquationLowestFrequencyTransit;
 @property (nonatomic, readonly) double refreshTimeIntervalBackoffBase;
 @property (nonatomic, readonly) double refreshTimeIntervalBackoffMax;
 @property (nonatomic, readonly) double refreshTimeIntervalToUseIfError;
+@property (nonatomic, readonly) BOOL shouldLazyLoadRoutes;
+@property (nonatomic, readonly) BOOL shouldRunLegacyNavigation;
+@property (nonatomic, readonly) BOOL shouldRunNavigationInDaemon;
 @property (nonatomic, readonly) BOOL shouldUseServerSideETAs;
 @property (nonatomic, readonly) double slowWalkingSpeed;
 @property (nonatomic, readonly) double staleLocationUseTimerInterval;
+@property (nonatomic, readonly) BOOL transitTTLSupported;
+@property (nonatomic, readonly) double updateTimeout;
+@property (nonatomic, readonly) BOOL useConservativeDepartureForRefreshTimer;
 
 + (id)sharedInstance;
 
 - (unsigned int)accessValueThresholdToUpdateCacheEntries;
+- (double)ageForRefresh;
 - (double)averageWalkingSpeed;
 - (double)defaultExpirationOffset;
 - (double)exitRegionSize;
+- (double)extraLocationWaitTimeInterval;
 - (double)fastWalkingSpeed;
 - (double)hypothesisResponseStaleToPurgeFromDiskThresholdInSeconds;
 - (double)hypothesisResponseStaleToRefreshThresholdInSeconds;
@@ -54,6 +68,7 @@
 - (unsigned int)initialClientInitiatedHypothesisCacheAccessValue;
 - (unsigned int)initialSelfInitiatedHypothesisCacheAccessValue;
 - (double)locationFreshnessThreshold;
+- (double)locationReuseThreshold;
 - (double)locationUpdateTimerInterval;
 - (double)locationUpdatesDesiredAccuracyForDriving;
 - (double)locationUpdatesDesiredAccuracyForWalking;
@@ -61,23 +76,32 @@
 - (double)locationUpdatesDesiredAccuracyWhileStationaryForWalking;
 - (int)maximumNumberOfDestinationsToMonitor;
 - (unsigned int)maximumNumberOfEntriesInTheCacheUnderMemoryPressure;
+- (unsigned int)maximumNumberOfLeechedLocations;
 - (unsigned int)maximumNumberOfProcessingLoopRepeats;
 - (double)maximumRefreshIntervalLeeway;
 - (double)maximumTimeBetweenConsecutiveHypothesisUpdatesInSeconds;
+- (double)maximumUserRoutingPreferencesAge;
 - (double)minimumDistanceToCompareAgainstLocationAccuracy;
 - (double)minimumDistanceToGetLocationUpdatesInMeters;
 - (double)minimumExpirationOffset;
 - (double)minimumTimeBetweenConsecutiveLocationUpdatesInSeconds;
 - (double)minimumTimerTimeStampFudge;
+- (double)pendingStopTimeToLive;
 - (double)predictionsWatchdogInterval;
-- (unsigned int)refreshEquationConstA;
-- (unsigned int)refreshEquationConstB;
-- (unsigned int)refreshEquationConstC;
+- (unsigned int)refreshEquationHighestFrequency;
+- (unsigned int)refreshEquationLowestFrequency;
+- (unsigned int)refreshEquationLowestFrequencyTransit;
 - (double)refreshTimeIntervalBackoffBase;
 - (double)refreshTimeIntervalBackoffMax;
 - (double)refreshTimeIntervalToUseIfError;
+- (BOOL)shouldLazyLoadRoutes;
+- (BOOL)shouldRunLegacyNavigation;
+- (BOOL)shouldRunNavigationInDaemon;
 - (BOOL)shouldUseServerSideETAs;
 - (double)slowWalkingSpeed;
 - (double)staleLocationUseTimerInterval;
+- (BOOL)transitTTLSupported;
+- (double)updateTimeout;
+- (BOOL)useConservativeDepartureForRefreshTimer;
 
 @end

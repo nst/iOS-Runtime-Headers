@@ -3,11 +3,11 @@
  */
 
 @interface CTCellularPlan : NSObject <NSCopying, NSSecureCoding> {
-    BOOL _isHomePlan;
-    NSString *_phoneNumber;
-    CTCellularPlanProfile *_profile;
-    CTCellularPlanSubscription *_subscription;
-    NSNumber *_subscriptionStatusOverride;
+    BOOL  _isHomePlan;
+    NSString * _phoneNumber;
+    CTCellularPlanProfile * _profile;
+    CTCellularPlanSubscription * _subscription;
+    NSNumber * _subscriptionStatusOverride;
 }
 
 @property (nonatomic, readonly) int accountStatus;

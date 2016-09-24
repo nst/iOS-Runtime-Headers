@@ -3,14 +3,19 @@
  */
 
 @interface EMCellNumberMapper : CMMapper {
-    EDStyle *edStyle;
-    double edValue;
-    EDWorkbook *workbook;
+    double  _columnWidth;
+    EDStyle * edStyle;
+    double  edValue;
+    EDWorkbook * workbook;
 }
 
+@property double columnWidth;
+
+- (double)columnWidth;
 - (id)formatValueAsNumber;
-- (id)initWithDoubleValue:(double)arg1 style:(id)arg2 workbook:(id)arg3 parent:(id)arg4;
+- (id)initWithDoubleValue:(double)arg1 style:(id)arg2 columnWidth:(double)arg3 workbook:(id)arg4 parent:(id)arg5;
 - (id)insertRedSpanIfNegativeAt:(id)arg1;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
+- (void)setColumnWidth:(double)arg1;
 
 @end

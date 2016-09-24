@@ -3,27 +3,41 @@
  */
 
 @interface GEOETATrafficUpdateResponse : PBCodable <NSCopying> {
+    unsigned int  _debugServerLatencyMs;
+    GEOETAServiceResponseSummary * _etaServiceSummary;
     struct { 
+        unsigned int debugServerLatencyMs : 1; 
         unsigned int status : 1; 
-    } _has;
-    NSMutableArray *_routes;
-    NSData *_sessionState;
-    int _status;
+    }  _has;
+    NSMutableArray * _routes;
+    NSData * _sessionState;
+    int  _status;
 }
 
+@property (nonatomic) unsigned int debugServerLatencyMs;
+@property (nonatomic, retain) GEOETAServiceResponseSummary *etaServiceSummary;
+@property (nonatomic) BOOL hasDebugServerLatencyMs;
+@property (nonatomic, readonly) BOOL hasEtaServiceSummary;
 @property (nonatomic, readonly) BOOL hasSessionState;
 @property (nonatomic) BOOL hasStatus;
 @property (nonatomic, retain) NSMutableArray *routes;
 @property (nonatomic, retain) NSData *sessionState;
 @property (nonatomic) int status;
 
++ (Class)routeType;
+
+- (int)StringAsStatus:(id)arg1;
 - (void)addRoute:(id)arg1;
 - (void)clearRoutes;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (unsigned int)debugServerLatencyMs;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)etaServiceSummary;
+- (BOOL)hasDebugServerLatencyMs;
+- (BOOL)hasEtaServiceSummary;
 - (BOOL)hasSessionState;
 - (BOOL)hasStatus;
 - (unsigned int)hash;
@@ -34,11 +48,15 @@
 - (id)routes;
 - (unsigned int)routesCount;
 - (id)sessionState;
+- (void)setDebugServerLatencyMs:(unsigned int)arg1;
+- (void)setEtaServiceSummary:(id)arg1;
+- (void)setHasDebugServerLatencyMs:(BOOL)arg1;
 - (void)setHasStatus:(BOOL)arg1;
 - (void)setRoutes:(id)arg1;
 - (void)setSessionState:(id)arg1;
 - (void)setStatus:(int)arg1;
 - (int)status;
+- (id)statusAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

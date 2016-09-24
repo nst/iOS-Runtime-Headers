@@ -3,7 +3,7 @@
  */
 
 @interface CKVideoCancelActionMenuItem : CKActionMenuItem {
-    unsigned int _touchDownCount;
+    unsigned int  _touchDownCount;
 }
 
 @property (nonatomic) unsigned int touchDownCount;

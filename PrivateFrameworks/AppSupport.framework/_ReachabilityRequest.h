@@ -3,13 +3,13 @@
  */
 
 @interface _ReachabilityRequest : NSObject {
-    unsigned int _flags;
-    NSString *_hostname;
-    BOOL _isReachable;
-    NSLock *_lock;
-    struct __CFDictionary { } *_observers;
-    struct __SCNetworkReachability { } *_reachability;
-    BOOL _receivedAtLeastOneCallback;
+    unsigned int  _flags;
+    NSString * _hostname;
+    BOOL  _isReachable;
+    NSLock * _lock;
+    struct __CFDictionary { } * _observers;
+    struct __SCNetworkReachability { } * _reachability;
+    BOOL  _receivedAtLeastOneCallback;
 }
 
 @property (nonatomic) NSString *hostname;

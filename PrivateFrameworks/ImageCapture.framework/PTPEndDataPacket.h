@@ -3,9 +3,9 @@
  */
 
 @interface PTPEndDataPacket : NSObject {
-    NSData *_data;
-    unsigned short _operationCode;
-    unsigned long _transactionID;
+    NSData * _data;
+    unsigned short  _operationCode;
+    unsigned long  _transactionID;
 }
 
 - (id)contentForTCP;

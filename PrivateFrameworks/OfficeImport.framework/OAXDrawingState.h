@@ -3,33 +3,33 @@
  */
 
 @interface OAXDrawingState : OCXReadState {
-    id /* block */ _clientChartGraphicPropertyDefaultsBlock;
-    OAXClient *mClient;
-    OADColorMap *mColorMap;
-    OADColorScheme *mColorScheme;
-    id mDocumentState;
-    NSMutableDictionary *mDrawableIdToVmlShapeIdMap;
-    OADFontScheme *mFontScheme;
-    NSMutableArray *mGroupStack;
-    CXNamespace *mOAXChart2012Namespace;
-    CXNamespace *mOAXChartDrawingNamespace;
-    CXNamespace *mOAXChartNamespace;
-    CXNamespace *mOAXCompatNamespace;
-    CXNamespace *mOAXDrawing2010Namespace;
-    CXNamespace *mOAXLockedCanvasNamespace;
-    CXNamespace *mOAXMainNamespace;
-    CXNamespace *mOAXPictureNamespace;
-    CXNamespace *mOAXTableNamespace;
-    CXNamespace *mOAXWordProcessingMLNamespace;
-    OAVReadState *mOavState;
-    OCPPackagePart *mPackagePart;
-    NSMutableDictionary *mShapeIdMap;
-    NSMutableDictionary *mSrcURLToTgtBlipIndexMap;
-    NSMutableDictionary *mSrcURLToTgtBulletBlipIndexMap;
-    OADStyleMatrix *mStyleMatrix;
-    OAXTableStyleCache *mTableStyleCache;
-    OADBlipCollection *mTgtBlipCollection;
-    NSMutableArray *mTgtBulletBlips;
+    id /* block */  _clientChartGraphicPropertyDefaultsBlock;
+    OAXClient * mClient;
+    OADColorMap * mColorMap;
+    OADColorScheme * mColorScheme;
+    id  mDocumentState;
+    NSMutableDictionary * mDrawableIdToVmlShapeIdMap;
+    OADFontScheme * mFontScheme;
+    NSMutableArray * mGroupStack;
+    CXNamespace * mOAXChart2012Namespace;
+    CXNamespace * mOAXChartDrawingNamespace;
+    CXNamespace * mOAXChartNamespace;
+    CXNamespace * mOAXCompatNamespace;
+    CXNamespace * mOAXDrawing2010Namespace;
+    CXNamespace * mOAXLockedCanvasNamespace;
+    CXNamespace * mOAXMainNamespace;
+    CXNamespace * mOAXPictureNamespace;
+    CXNamespace * mOAXTableNamespace;
+    CXNamespace * mOAXWordProcessingMLNamespace;
+    OAVReadState * mOavState;
+    OCPPackagePart * mPackagePart;
+    NSMutableDictionary * mShapeIdMap;
+    NSMutableDictionary * mSrcURLToTgtBlipIndexMap;
+    NSMutableDictionary * mSrcURLToTgtBulletBlipIndexMap;
+    OADStyleMatrix * mStyleMatrix;
+    OAXTableStyleCache * mTableStyleCache;
+    OADBlipCollection * mTgtBlipCollection;
+    NSMutableArray * mTgtBulletBlips;
 }
 
 @property (nonatomic, retain) CXNamespace *OAXChart2012Namespace;

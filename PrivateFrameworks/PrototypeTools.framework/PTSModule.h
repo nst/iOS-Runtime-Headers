@@ -3,11 +3,11 @@
  */
 
 @interface PTSModule : NSObject <PTSSectionObserver, _UISettingsKeyPathObserver> {
-    NSMutableArray *_allSections;
-    NSMutableArray *_enabledSections;
-    NSHashTable *_observers;
-    _UISettings *_settings;
-    NSString *_title;
+    NSMutableArray * _allSections;
+    NSMutableArray * _enabledSections;
+    NSHashTable * _observers;
+    _UISettings * _settings;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) NSMutableArray *allSections;
@@ -18,6 +18,8 @@
 @property (nonatomic, retain) _UISettings *settings;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *title;
+
+// Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
 
 + (id)moduleWithSettings:(id)arg1;
 + (id)moduleWithTitle:(id)arg1 contents:(id)arg2;
@@ -59,5 +61,9 @@
 - (id)settings;
 - (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
 - (id)title;
+
+// Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
+
++ (id)px_restoreDefaultsModule;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface SBUIExternalPreferences : NSObject {
-    BOOL _keyboardPlaysSounds;
-    NSUserDefaults *_soundDefaults;
+    BOOL  _keyboardPlaysSounds;
+    NSUserDefaults * _soundDefaults;
 }
 
 @property (nonatomic) BOOL keyboardPlaysSounds;

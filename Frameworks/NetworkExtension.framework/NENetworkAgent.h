@@ -3,32 +3,35 @@
  */
 
 @interface NENetworkAgent : NSObject <NWNetworkAgent> {
-    NSString *_configurationName;
-    int _internalSessionType;
-    id /* block */ _internalStartHandler;
-    NSUUID *_internalUUID;
-    BOOL active;
-    NSString *agentDescription;
-    NSUUID *agentUUID;
-    BOOL kernelActivated;
-    BOOL userActivated;
-    BOOL voluntary;
+    NSString * _configurationName;
+    int  _internalSessionType;
+    id /* block */  _internalStartHandler;
+    NSUUID * _internalUUID;
+    int  _lastStatus;
+    BOOL  active;
+    NSString * agentDescription;
+    NSUUID * agentUUID;
+    BOOL  kernelActivated;
+    BOOL  userActivated;
+    BOOL  voluntary;
 }
 
-@property (getter=isActive) BOOL active;
-@property (copy) NSString *agentDescription;
-@property (copy) NSUUID *agentUUID;
+@property (getter=isActive, nonatomic) BOOL active;
+@property (nonatomic, copy) NSString *agentDescription;
+@property (nonatomic, copy) NSUUID *agentUUID;
 @property (copy) NSString *configurationName;
 @property (readonly, copy) NSUUID *configurationUUID;
 @property int internalSessionType;
 @property (copy) id /* block */ internalStartHandler;
 @property (copy) NSUUID *internalUUID;
-@property (getter=isKernelActivated) BOOL kernelActivated;
-@property (getter=isNetworkProvider) BOOL networkProvider;
+@property (getter=isKernelActivated, nonatomic) BOOL kernelActivated;
+@property int lastStatus;
+@property (getter=isNetworkProvider, nonatomic) BOOL networkProvider;
+@property (getter=isNexusProvider, nonatomic) BOOL nexusProvider;
 @property (readonly) int sessionType;
-@property (getter=isSpecificUseOnly) BOOL specificUseOnly;
-@property (getter=isUserActivated) BOOL userActivated;
-@property (getter=isVoluntary) BOOL voluntary;
+@property (getter=isSpecificUseOnly, nonatomic) BOOL specificUseOnly;
+@property (getter=isUserActivated, nonatomic) BOOL userActivated;
+@property (getter=isVoluntary, nonatomic) BOOL voluntary;
 
 + (id)agentDomain;
 + (id)agentFromData:(id)arg1;
@@ -48,6 +51,7 @@
 - (BOOL)isKernelActivated;
 - (BOOL)isUserActivated;
 - (BOOL)isVoluntary;
+- (int)lastStatus;
 - (int)sessionType;
 - (void)setActive:(BOOL)arg1;
 - (void)setAgentDescription:(id)arg1;
@@ -57,6 +61,7 @@
 - (void)setInternalStartHandler:(id /* block */)arg1;
 - (void)setInternalUUID:(id)arg1;
 - (void)setKernelActivated:(BOOL)arg1;
+- (void)setLastStatus:(int)arg1;
 - (void)setStartHandler:(id /* block */)arg1;
 - (void)setUserActivated:(BOOL)arg1;
 - (void)setVoluntary:(BOOL)arg1;

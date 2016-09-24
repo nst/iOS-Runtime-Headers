@@ -3,8 +3,8 @@
  */
 
 @interface AVCompositionTrackSegmentInternal : NSObject {
-    int editAssetTrackID;
-    NSURL *editAssetURL;
+    int  editAssetTrackID;
+    NSURL * editAssetURL;
 }
 
 @end

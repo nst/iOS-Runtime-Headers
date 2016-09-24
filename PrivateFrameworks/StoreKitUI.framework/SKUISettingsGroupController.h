@@ -3,9 +3,9 @@
  */
 
 @interface SKUISettingsGroupController : NSObject {
-    <SKUISettingsGroupControllerDelegate> *_delegate;
-    NSMutableArray *_settingDescriptions;
-    SKUISettingsGroupDescription *_settingsGroupDescription;
+    <SKUISettingsGroupControllerDelegate> * _delegate;
+    NSMutableArray * _settingDescriptions;
+    SKUISettingsGroupDescription * _settingsGroupDescription;
 }
 
 @property (nonatomic) <SKUISettingsGroupControllerDelegate> *delegate;

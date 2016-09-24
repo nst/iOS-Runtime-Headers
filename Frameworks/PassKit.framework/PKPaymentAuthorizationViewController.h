@@ -2,24 +2,28 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKPaymentAuthorizationViewController : UIViewController <PKPaymentAuthorizationControllerDelegate, PKPaymentAuthorizationControllerPrivateDelegate> {
-    <PKPaymentAuthorizationViewControllerDelegate> *_delegate;
-    PKPaymentAuthorizationController *_paymentController;
-    <PKPaymentAuthorizationViewControllerPrivateDelegate> *_privateDelegate;
+@interface PKPaymentAuthorizationViewController : UIViewController <PKPaymentAuthorizationCoordinatorDelegate, PKPaymentAuthorizationCoordinatorPrivateDelegate> {
+    <PKPaymentAuthorizationViewControllerDelegate> * _delegate;
+    PKPaymentAuthorizationCoordinator * _paymentCoordinator;
+    <PKPaymentAuthorizationViewControllerPrivateDelegate> * _privateDelegate;
+    BOOL  _viewHasAppeared;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKPaymentAuthorizationViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, retain) PKPaymentAuthorizationController *paymentController;
+@property (nonatomic, retain) PKPaymentAuthorizationCoordinator *paymentCoordinator;
 @property (nonatomic) <PKPaymentAuthorizationViewControllerPrivateDelegate> *privateDelegate;
 @property (readonly) Class superclass;
+@property (nonatomic) BOOL viewHasAppeared;
 
 + (BOOL)canMakePayments;
 + (BOOL)canMakePaymentsUsingNetworks:(id)arg1;
 + (BOOL)canMakePaymentsUsingNetworks:(id)arg1 capabilities:(unsigned int)arg2;
++ (void)paymentServicesMerchantURL:(id /* block */)arg1;
 
+- (void).cxx_destruct;
 - (void)_addDeactivationReason:(id)arg1;
 - (void)_registerForApplicationLifeCycleNotifications;
 - (void)_removeDeactivationReason:(id)arg1;
@@ -30,19 +34,23 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithPaymentRequest:(id)arg1;
 - (int)modalPresentationStyle;
-- (void)paymentAuthorizationController:(id)arg1 didAuthorizePayment:(id)arg2 completion:(id /* block */)arg3;
-- (void)paymentAuthorizationController:(id)arg1 didSelectPaymentMethod:(id)arg2 completion:(id /* block */)arg3;
-- (void)paymentAuthorizationController:(id)arg1 didSelectShippingAddress:(id)arg2 completion:(id /* block */)arg3;
-- (void)paymentAuthorizationController:(id)arg1 didSelectShippingMethod:(id)arg2 completion:(id /* block */)arg3;
-- (void)paymentAuthorizationController:(id)arg1 willFinishWithError:(id)arg2;
-- (void)paymentAuthorizationControllerDidFinish:(id)arg1;
-- (void)paymentAuthorizationControllerWillAuthorizePayment:(id)arg1;
-- (id)paymentController;
+- (void)paymentAuthorizationCoordinator:(id)arg1 didAuthorizePayment:(id)arg2 completion:(id /* block */)arg3;
+- (void)paymentAuthorizationCoordinator:(id)arg1 didRequestMerchantSession:(id /* block */)arg2;
+- (void)paymentAuthorizationCoordinator:(id)arg1 didSelectPaymentMethod:(id)arg2 completion:(id /* block */)arg3;
+- (void)paymentAuthorizationCoordinator:(id)arg1 didSelectShippingAddress:(id)arg2 completion:(id /* block */)arg3;
+- (void)paymentAuthorizationCoordinator:(id)arg1 didSelectShippingMethod:(id)arg2 completion:(id /* block */)arg3;
+- (void)paymentAuthorizationCoordinator:(id)arg1 willFinishWithError:(id)arg2;
+- (void)paymentAuthorizationCoordinatorDidFinish:(id)arg1;
+- (void)paymentAuthorizationCoordinatorWillAuthorizePayment:(id)arg1;
+- (id)paymentCoordinator;
 - (id)privateDelegate;
 - (void)setDelegate:(id)arg1;
-- (void)setPaymentController:(id)arg1;
+- (void)setPaymentCoordinator:(id)arg1;
 - (void)setPrivateDelegate:(id)arg1;
+- (void)setViewHasAppeared:(BOOL)arg1;
 - (unsigned int)supportedInterfaceOrientations;
+- (BOOL)viewHasAppeared;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 
 @end

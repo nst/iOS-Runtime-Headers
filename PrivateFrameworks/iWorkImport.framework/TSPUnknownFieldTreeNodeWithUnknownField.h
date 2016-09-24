@@ -3,7 +3,7 @@
  */
 
 @interface TSPUnknownFieldTreeNodeWithUnknownField : TSPUnknownFieldTreeNode {
-    TSPUnknownField *_unknownField;
+    TSPUnknownField * _unknownField;
 }
 
 @property (nonatomic, retain) TSPUnknownField *unknownField;

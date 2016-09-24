@@ -3,15 +3,20 @@
  */
 
 @interface TSPCryptoComponentWriteChannel : NSObject <TSPComponentWriteChannel> {
-    char *_buffer;
+    char * _buffer;
+    NSObject<OS_dispatch_data> * _bufferDispatchData;
+    unsigned long  _bufferPosition;
+    NSObject<OS_dispatch_semaphore> * _bufferSemaphore;
+    unsigned long  _bufferSize;
     struct { 
         unsigned int ctx[96]; 
-    } _ccHmacContext;
-    struct _CCCryptor { } *_cryptor;
-    unsigned long _decryptedBlockLength;
-    unsigned long _encodedBlockLength;
-    <TSPMutableCryptoInfo> *_encryptionInfo;
-    <TSPComponentWriteChannel> *_writeChannel;
+    }  _ccHmacContext;
+    struct _CCCryptor { } * _cryptor;
+    unsigned long  _decryptedBlockLength;
+    unsigned long  _encodedBlockLength;
+    <TSPMutableCryptoInfo> * _encryptionInfo;
+    unsigned long  _remainingBufferSize;
+    <TSPComponentWriteChannel> * _writeChannel;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -22,10 +27,13 @@
 - (void).cxx_destruct;
 - (BOOL)_finalizeBlockForClosing:(BOOL)arg1;
 - (BOOL)_initializeBlock;
+- (BOOL)_resetBuffer;
 - (void)_writeData:(id)arg1 isDecryptedData:(BOOL)arg2;
 - (void)close;
 - (void)dealloc;
+- (id)init;
 - (id)initWithWriteChannel:(id)arg1 encryptionInfo:(id)arg2;
+- (id)initWithWriteChannel:(id)arg1 encryptionInfo:(id)arg2 bufferSize:(unsigned long)arg3;
 - (void)writeData:(id)arg1;
 
 @end

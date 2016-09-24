@@ -3,9 +3,9 @@
  */
 
 @interface WBSRemoteHistorySession : NSObject <NSSecureCoding> {
-    NSDate *_endDate;
-    NSArray *_items;
-    NSDate *_startDate;
+    NSDate * _endDate;
+    NSArray * _items;
+    NSDate * _startDate;
 }
 
 @property (getter=isCurrentSession, readonly) BOOL currentSession;

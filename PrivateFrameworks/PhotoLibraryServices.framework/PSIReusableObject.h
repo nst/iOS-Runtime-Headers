@@ -3,9 +3,9 @@
  */
 
 @interface PSIReusableObject : NSObject {
-    BOOL _isPreparedForReuse;
-    BOOL _isPreparedFromStatement;
-    BOOL _isPreparingFromStatement;
+    BOOL  _isPreparedForReuse;
+    BOOL  _isPreparedFromStatement;
+    BOOL  _isPreparingFromStatement;
 }
 
 @property (nonatomic, readonly) BOOL isPreparedFromStatement;

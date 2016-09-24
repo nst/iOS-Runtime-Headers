@@ -3,12 +3,12 @@
  */
 
 @interface NEFilterBlockPage : NSObject {
-    NSString *_formActionURL;
-    NSString *_organization;
-    NSURL *_pageTemplateURL;
-    NSString *_remediationButtonText;
-    NSString *_unblockStyle;
-    NSString *_userURL;
+    NSString * _formActionURL;
+    NSString * _organization;
+    NSURL * _pageTemplateURL;
+    NSString * _remediationButtonText;
+    NSString * _unblockStyle;
+    NSString * _userURL;
 }
 
 @property (copy) NSString *formActionURL;

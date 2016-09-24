@@ -3,10 +3,10 @@
  */
 
 @interface TKToneClassicsPickerItem : TKTonePickerItem {
-    int _classicToneIndex;
+    int  _classicToneIndex;
 }
 
-@property (nonatomic) int classicToneIndex;
+@property (setter=_setClassicToneIndex:, nonatomic) int classicToneIndex;
 @property (nonatomic, readonly) TKTonePickerItem *parentItem;
 
 - (void)_appendDescriptionOfAttributesToString:(id)arg1;

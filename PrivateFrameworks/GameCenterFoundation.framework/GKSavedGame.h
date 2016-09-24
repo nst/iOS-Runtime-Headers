@@ -3,10 +3,10 @@
  */
 
 @interface GKSavedGame : NSObject <NSCopying> {
-    NSString *_deviceName;
-    NSURL *_fileURL;
-    NSDate *_modificationDate;
-    NSString *_name;
+    NSString * _deviceName;
+    NSURL * _fileURL;
+    NSDate * _modificationDate;
+    NSString * _name;
 }
 
 @property (retain) NSString *deviceName;

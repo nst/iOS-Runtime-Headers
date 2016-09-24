@@ -3,8 +3,8 @@
  */
 
 @interface _PFGarbageManager : NSObject {
-    NSMutableDictionary *_filesToCleanUp;
-    NSMutableDictionary *_storeLinksDirs;
+    NSMutableDictionary * _filesToCleanUp;
+    NSMutableDictionary * _storeLinksDirs;
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

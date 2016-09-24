@@ -3,7 +3,7 @@
  */
 
 @interface SKUIMenuBarSectionsViewController : SKUIStorePageSectionsViewController {
-    unsigned int _numberOfIterationsForShelfPageSections;
+    unsigned int  _numberOfIterationsForShelfPageSections;
 }
 
 @property (nonatomic) unsigned int numberOfIterationsForShelfPageSections;

@@ -3,14 +3,14 @@
  */
 
 @interface KNAnimationRenderer : NSObject {
-    <KNAnimationPluginContext> *_pluginContext;
-    KNAnimatedSlideView *mASV;
-    BOOL mAreAnimationsPaused;
-    unsigned int mDirection;
-    double mDuration;
-    id mPlugin;
-    Class mPluginClass;
-    KNPlaybackSession *mSession;
+    <KNAnimationPluginContext> * _pluginContext;
+    KNAnimatedSlideView * mASV;
+    BOOL  mAreAnimationsPaused;
+    unsigned int  mDirection;
+    double  mDuration;
+    id  mPlugin;
+    Class  mPluginClass;
+    KNPlaybackSession * mSession;
 }
 
 @property (nonatomic) unsigned int direction;

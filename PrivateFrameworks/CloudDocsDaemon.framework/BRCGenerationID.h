@@ -3,8 +3,8 @@
  */
 
 @interface BRCGenerationID : NSObject <NSCopying, NSSecureCoding, PQLValuable> {
-    unsigned int _generationID;
-    NSData *_signature;
+    unsigned int  _generationID;
+    NSData * _signature;
 }
 
 @property (nonatomic, readonly) const char *UTF8String;

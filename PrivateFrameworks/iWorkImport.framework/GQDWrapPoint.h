@@ -3,14 +3,14 @@
  */
 
 @interface GQDWrapPoint : NSObject {
-    float mDistance;
-    GQDDrawable *mDrawable;
-    int mFlowType;
+    double  mDistance;
+    GQDDrawable * mDrawable;
+    int  mFlowType;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } mPoint;
-    int mZIndex;
+        double x; 
+        double y; 
+    }  mPoint;
+    int  mZIndex;
 }
 
 - (int)comparePoint:(id)arg1;

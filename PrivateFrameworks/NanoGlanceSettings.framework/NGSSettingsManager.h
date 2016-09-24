@@ -3,7 +3,7 @@
  */
 
 @interface NGSSettingsManager : NGSInternalSettingsManager <SPDeviceConnectionDelegate> {
-    <NGSSettingsManagerDelegate> *_delegate;
+    <NGSSettingsManagerDelegate> * _delegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

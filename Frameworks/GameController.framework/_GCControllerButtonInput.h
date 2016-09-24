@@ -3,10 +3,10 @@
  */
 
 @interface _GCControllerButtonInput : GCControllerButtonInput {
-    NSString *_descriptionName;
-    id /* block */ _pressedChangedHandler;
-    float _value;
-    id /* block */ _valueChangedHandler;
+    NSString * _descriptionName;
+    id /* block */  _pressedChangedHandler;
+    double  _value;
+    id /* block */  _valueChangedHandler;
 }
 
 - (void).cxx_destruct;

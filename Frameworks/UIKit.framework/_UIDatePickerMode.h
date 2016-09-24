@@ -3,39 +3,39 @@
  */
 
 @interface _UIDatePickerMode : NSObject {
-    UIFont *_amPmFont;
-    NSString *_amString;
-    NSDate *_baseDate;
-    NSDateComponents *_baseDateComponents;
-    NSArray *_dateFormatters;
-    _UIDatePickerView *_datePickerView;
-    UIFont *_defaultTimeFont;
-    unsigned int *_elements;
-    UIFont *_font;
-    NSNumberFormatter *_formatter;
-    BOOL _isUsingJapaneseCalendar;
-    NSString *_localizedFormatString;
+    UIFont * _amPmFont;
+    NSString * _amString;
+    NSDate * _baseDate;
+    NSDateComponents * _baseDateComponents;
+    NSArray * _dateFormatters;
+    _UIDatePickerView * _datePickerView;
+    UIFont * _defaultTimeFont;
+    unsigned int * _elements;
+    UIFont * _font;
+    NSNumberFormatter * _formatter;
+    BOOL  _isUsingJapaneseCalendar;
+    NSString * _localizedFormatString;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _maxDayRange;
+    }  _maxDayRange;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _maxMonthRange;
-    NSDate *_maximumDate;
-    NSDateComponents *_maximumDateComponents;
-    NSDate *_minimumDate;
-    NSDateComponents *_minimumDateComponents;
-    int _minuteInterval;
-    unsigned int _numberOfComponents;
-    NSDate *_originatingDate;
-    NSString *_pmString;
-    NSDateComponents *_selectedDateComponents;
-    NSDateComponents *_todayDateComponents;
-    double _todaySinceReferenceDate;
-    UIColor *_todayTextColor;
-    int _yearsSinceBaseDate;
+    }  _maxMonthRange;
+    NSDate * _maximumDate;
+    NSDateComponents * _maximumDateComponents;
+    NSDate * _minimumDate;
+    NSDateComponents * _minimumDateComponents;
+    int  _minuteInterval;
+    unsigned int  _numberOfComponents;
+    NSDate * _originatingDate;
+    NSString * _pmString;
+    NSDateComponents * _selectedDateComponents;
+    NSDateComponents * _todayDateComponents;
+    double  _todaySinceReferenceDate;
+    UIColor * _todayTextColor;
+    int  _yearsSinceBaseDate;
 }
 
 @property (nonatomic, readonly) UIFont *amPmFont;
@@ -59,13 +59,13 @@
 @property (nonatomic) unsigned int numberOfComponents;
 @property (nonatomic, retain) NSDate *originatingDate;
 @property (nonatomic, readonly) NSString *pmString;
-@property (nonatomic, readonly) float rowHeight;
+@property (nonatomic, readonly) double rowHeight;
 @property (nonatomic, retain) NSDateComponents *selectedDateComponents;
 @property (nonatomic, readonly) UIFont *sizedFont;
 @property (nonatomic, retain) NSDateComponents *todayDateComponents;
 @property (nonatomic) double todaySinceReferenceDate;
 @property (nonatomic, readonly) UIColor *todayTextColor;
-@property (nonatomic, readonly) float totalComponentWidth;
+@property (nonatomic, readonly) double totalComponentWidth;
 @property (nonatomic) int yearsSinceBaseDate;
 
 + (id)_datePickerModeWithFormatString:(id)arg1 datePickerView:(id)arg2;

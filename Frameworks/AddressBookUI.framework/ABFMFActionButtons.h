@@ -3,10 +3,10 @@
  */
 
 @interface ABFMFActionButtons : NSObject <ABFMFActionButtonsDelegate> {
-    UIButton *_callButton;
-    UIButton *_facetimeButton;
-    UIButton *_messageButton;
-    ABUnknownPersonViewController *_upvc;
+    UIButton * _callButton;
+    UIButton * _facetimeButton;
+    UIButton * _messageButton;
+    ABUnknownPersonViewController * _upvc;
 }
 
 @property (readonly, copy) NSString *debugDescription;

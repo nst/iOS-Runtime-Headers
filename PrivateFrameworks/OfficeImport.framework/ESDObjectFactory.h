@@ -3,8 +3,8 @@
  */
 
 @interface ESDObjectFactory : NSObject {
-    struct EshObjectFactory { int (**x1)(); bool x2; } *eshObjectFactory;
-    NSMutableArray *eshObjectFactoryStack;
+    struct EshObjectFactory { int (**x1)(); bool x2; } * eshObjectFactory;
+    NSMutableArray * eshObjectFactoryStack;
 }
 
 + (id)threadLocalFactory;

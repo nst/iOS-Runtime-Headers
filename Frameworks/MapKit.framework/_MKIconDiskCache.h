@@ -3,9 +3,9 @@
  */
 
 @interface _MKIconDiskCache : NSObject <GEOResourceManifestTileGroupObserver> {
-    NSURL *_directoryURL;
-    NSMutableArray *_inProgressUUIDs;
-    NSLock *_lock;
+    NSURL * _directoryURL;
+    NSMutableArray * _inProgressUUIDs;
+    NSLock * _lock;
 }
 
 @property (readonly, copy) NSString *debugDescription;

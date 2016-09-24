@@ -3,14 +3,14 @@
  */
 
 @interface MSCLAttributionSelectionViewController : SKUIViewController <SKUIArtworkRequestDelegate, UITableViewDataSource, UITableViewDelegate> {
-    NSArray *_authors;
-    SKUIMediaSocialAuthor *_destinationAuthor;
-    SKUIStyledImageDataConsumer *_imageDataConsumer;
-    UIImage *_placeholderImage;
-    SKUIResourceLoader *_resourceLoader;
-    int _selectedAuthorIndex;
-    id /* block */ _selectionBlock;
-    UITableView *_tableView;
+    NSArray * _authors;
+    SKUIMediaSocialAuthor * _destinationAuthor;
+    SKUIStyledImageDataConsumer * _imageDataConsumer;
+    UIImage * _placeholderImage;
+    SKUIResourceLoader * _resourceLoader;
+    int  _selectedAuthorIndex;
+    id /* block */  _selectionBlock;
+    UITableView * _tableView;
 }
 
 @property (nonatomic, copy) NSArray *authors;

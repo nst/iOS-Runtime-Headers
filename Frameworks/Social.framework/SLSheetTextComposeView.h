@@ -3,19 +3,19 @@
  */
 
 @interface SLSheetTextComposeView : UIView {
-    UILabel *_placeholderLabel;
-    float _textRightInset;
-    UITextView *_textView;
+    UILabel * _placeholderLabel;
+    double  _textRightInset;
+    UITextView * _textView;
 }
 
 @property (nonatomic, retain) UILabel *placeholderLabel;
-@property (nonatomic) float textRightInset;
+@property (nonatomic) double textRightInset;
 @property (nonatomic, retain) UITextView *textView;
 
 - (void).cxx_destruct;
 - (void)_assembleView;
 - (BOOL)becomeFirstResponder;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)placeholderLabel;
 - (BOOL)resignFirstResponder;

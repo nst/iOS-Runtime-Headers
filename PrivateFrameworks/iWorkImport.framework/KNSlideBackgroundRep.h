@@ -3,9 +3,9 @@
  */
 
 @interface KNSlideBackgroundRep : TSDRep <TSDMagicMoveMatching> {
-    CALayer *mBlackBackgroundLayer;
-    BOOL mFillCanApplyToCALayer;
-    BOOL mLayerNeedsUpdate;
+    CALayer * mBlackBackgroundLayer;
+    BOOL  mFillCanApplyToCALayer;
+    BOOL  mLayerNeedsUpdate;
 }
 
 @property (readonly) KNSlideBackgroundInfo *slideBackgroundInfo;

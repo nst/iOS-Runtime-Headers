@@ -3,16 +3,16 @@
  */
 
 @interface PLMomentCluster : NSObject {
-    CLLocation *__approximateLocation;
-    NSDate *__endingDate;
-    NSCountedSet *__mergeTags;
-    NSMutableArray *__mutableNodes;
-    NSMutableSet *__nodesWithLocation;
-    NSObject<NSCopying> *__objectID;
-    NSCountedSet *__splitTags;
-    NSDate *__startingDate;
-    NSString *__title;
-    short _generationType;
+    CLLocation * __approximateLocation;
+    NSDate * __endingDate;
+    NSCountedSet * __mergeTags;
+    NSMutableArray * __mutableNodes;
+    NSMutableSet * __nodesWithLocation;
+    NSObject<NSCopying> * __objectID;
+    NSCountedSet * __splitTags;
+    NSDate * __startingDate;
+    NSString * __title;
+    short  _generationType;
 }
 
 @property (setter=_setMergeTags:, nonatomic, retain) NSCountedSet *_mergeTags;
@@ -20,11 +20,11 @@
 @property (nonatomic, readonly) NSMutableSet *_nodesWithLocation;
 @property (setter=_setSplitTags:, nonatomic, retain) NSCountedSet *_splitTags;
 @property (nonatomic, readonly) CLLocation *approximateLocation;
-@property (nonatomic, retain) NSDate *endingDate;
+@property (setter=_setEndingDate:, nonatomic, retain) NSDate *endingDate;
 @property (nonatomic) short generationType;
 @property (nonatomic, readonly, copy) NSArray *nodes;
 @property (nonatomic, readonly) NSObject<NSCopying> *objectID;
-@property (nonatomic, retain) NSDate *startingDate;
+@property (setter=_setStartingDate:, nonatomic, retain) NSDate *startingDate;
 @property (nonatomic, retain) NSString *title;
 
 + (double)nameOccurrenceCutoff;

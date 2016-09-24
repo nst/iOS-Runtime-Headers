@@ -3,8 +3,8 @@
  */
 
 @interface _GCControllerAxisButtonInput : _GCControllerButtonInput {
-    _GCControllerAxisInput *_axis;
-    BOOL _positive;
+    _GCControllerAxisInput * _axis;
+    BOOL  _positive;
 }
 
 @property (nonatomic) _GCControllerAxisInput *axis;

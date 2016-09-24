@@ -3,26 +3,26 @@
  */
 
 @interface DAConvertCRtoCRLFStream : NSInputStream {
-    int (*_clientCallback;
+    int (* _clientCallback;
     struct { 
         int version; 
         void *info; 
         int (*retain)(); 
         int (*release)(); 
         int (*copyDescription)(); 
-    } _clientContext;
-    id _delegate;
-    BOOL _intendToStream;
-    BOOL _lastByteCopiedWasCR;
-    NSData *_mimeData;
-    BOOL _openEventSent;
-    NSData *_postflightData;
-    NSData *_preflightData;
-    unsigned int _readOffset;
-    struct __CFRunLoopSource { } *_rls;
-    unsigned int _streamStatus;
-    unsigned int _totalLength;
-    ASTrafficLogger *_trafficLogger;
+    }  _clientContext;
+    id  _delegate;
+    BOOL  _intendToStream;
+    BOOL  _lastByteCopiedWasCR;
+    NSData * _mimeData;
+    BOOL  _openEventSent;
+    NSData * _postflightData;
+    NSData * _preflightData;
+    unsigned int  _readOffset;
+    struct __CFRunLoopSource { } * _rls;
+    unsigned int  _streamStatus;
+    unsigned int  _totalLength;
+    ASTrafficLogger * _trafficLogger;
 }
 
 - (void).cxx_destruct;

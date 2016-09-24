@@ -3,7 +3,7 @@
  */
 
 @interface AVExternalDeviceController : NSObject {
-    AVExternalDeviceControllerInternal *_externalDeviceController;
+    AVExternalDeviceControllerInternal * _externalDeviceController;
 }
 
 @property (nonatomic, readonly, copy) NSArray *availableExternalDevices;

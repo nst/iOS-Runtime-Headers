@@ -2,25 +2,29 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@interface SYSession : NSObject <SYChangeSerializer> {
-    double _birthDate;
-    <SYSessionDelegate> *_delegate;
-    NSError *_error;
-    double _fullSessionTimeout;
-    NSString *_identifier;
-    int _inTransaction;
-    BOOL _isSending;
-    int _maxConcurrentMessages;
-    NSDictionary *_options;
-    NSMutableSet *_pendingMessageIDs;
-    double _perMessageTimeout;
-    int _priority;
-    NSObject<OS_dispatch_queue> *_queue;
-    <SYChangeSerializer> *_serializer;
-    SYService *_service;
-    NSDictionary *_sessionMetadata;
-    NSObject<OS_dispatch_queue> *_targetQueue;
-    NSDictionary *_userContext;
+@interface SYSession : NSObject <SYChangeSerializer, SYStateLoggable> {
+    double  _birthDate;
+    <SYSessionDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    NSError * _error;
+    double  _fullSessionTimeout;
+    NSString * _identifier;
+    bool  _inTransaction;
+    BOOL  _isSending;
+    int  _maxConcurrentMessages;
+    NSDictionary * _options;
+    NSMutableDictionary * _peerGenerationIDs;
+    NSMutableSet * _pendingMessageIDs;
+    double  _perMessageTimeout;
+    int  _priority;
+    NSObject<OS_dispatch_queue> * _queue;
+    BOOL  _rejectedNewSessionFromSamePeer;
+    <SYChangeSerializer> * _serializer;
+    SYService * _service;
+    NSDictionary * _sessionMetadata;
+    unsigned int  _sessionSignpost;
+    BOOL  _sessionStarted;
+    NSDictionary * _userContext;
 }
 
 @property (nonatomic) double birthDate;
@@ -37,14 +41,18 @@
 @property (nonatomic, readonly) BOOL isSending;
 @property (nonatomic) int maxConcurrentMessages;
 @property (nonatomic, copy) NSDictionary *options;
+@property (nonatomic, copy) NSMutableDictionary *peerGenerationIDs;
 @property (nonatomic) double perMessageTimeout;
 @property (nonatomic) int priority;
 @property (nonatomic, readonly) unsigned int protocolVersion;
 @property (readonly) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, readonly) double remainingSessionTime;
 @property (nonatomic, retain) <SYChangeSerializer> *serializer;
 @property (nonatomic, readonly) SYService *service;
 @property (nonatomic, copy) NSDictionary *sessionMetadata;
+@property (nonatomic) unsigned int sessionSignpost;
 @property int state;
+@property (nonatomic, readonly) PBCodable *stateForLogging;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *targetQueue;
 @property (nonatomic, retain) NSDictionary *userContext;
@@ -54,6 +62,7 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (void).cxx_destruct;
+- (id)CPObfuscatedDescription;
 - (BOOL)_beginTransaction;
 - (id)_cancelPendingMessagesReturningFailures;
 - (void)_clearOutgoingMessageUUID:(id)arg1;
@@ -69,17 +78,21 @@
 - (BOOL)_handleSyncBatchResponse:(id)arg1 error:(id*)arg2;
 - (void)_pause;
 - (void)_peerProcessedMessageWithIdentifier:(id)arg1 userInfo:(id)arg2;
+- (BOOL)_readyToProcessIncomingMessages;
 - (void)_recordOutgoingMessageUUID:(id)arg1;
 - (void)_resolvedIdentifier:(id)arg1 forResponse:(id)arg2;
 - (void)_resolvedIdentifierForRequest:(id)arg1;
 - (void)_sentMessageWithIdentifier:(id)arg1 userInfo:(id)arg2;
 - (void)_setStateQuietly:(int)arg1;
 - (void)_supercededWithSession:(id)arg1;
+- (BOOL)_willAcquiesceToNewSessionFromPeer:(id)arg1;
 - (double)birthDate;
 - (BOOL)canRestart;
 - (BOOL)canRollback;
 - (void)cancel;
+- (void)cancelWithError:(id)arg1;
 - (id)changeFromData:(id)arg1 ofType:(int)arg2;
+- (id)combinedEngineOptions:(id)arg1;
 - (id)dataFromChange:(id)arg1;
 - (void)dealloc;
 - (id)decodeChangeData:(id)arg1 fromProtocolVersion:(int)arg2 ofType:(int)arg3;
@@ -95,13 +108,16 @@
 - (BOOL)isSending;
 - (int)maxConcurrentMessages;
 - (id)options;
+- (id)peerGenerationIDs;
 - (double)perMessageTimeout;
 - (int)priority;
 - (unsigned int)protocolVersion;
 - (id)queue;
+- (double)remainingSessionTime;
 - (id)serializer;
 - (id)service;
 - (id)sessionMetadata;
+- (unsigned int)sessionSignpost;
 - (void)setBirthDate:(double)arg1;
 - (void)setCanRestart:(BOOL)arg1;
 - (void)setCanRollback:(BOOL)arg1;
@@ -111,15 +127,18 @@
 - (void)setIdentifier:(id)arg1;
 - (void)setMaxConcurrentMessages:(int)arg1;
 - (void)setOptions:(id)arg1;
+- (void)setPeerGenerationIDs:(id)arg1;
 - (void)setPerMessageTimeout:(double)arg1;
 - (void)setPriority:(int)arg1;
 - (void)setSerializer:(id)arg1;
 - (void)setSessionMetadata:(id)arg1;
+- (void)setSessionSignpost:(unsigned int)arg1;
 - (void)setState:(int)arg1;
 - (void)setTargetQueue:(id)arg1;
 - (void)setUserContext:(id)arg1;
 - (void)start:(id /* block */)arg1;
 - (int)state;
+- (id)stateForLogging;
 - (id)targetQueue;
 - (id)userContext;
 - (BOOL)wasCancelled;

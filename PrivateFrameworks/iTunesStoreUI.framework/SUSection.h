@@ -3,14 +3,14 @@
  */
 
 @interface SUSection : NSObject {
-    SUClientInterface *_clientInterface;
-    NSMutableDictionary *_dictionary;
-    UIImage *_image;
-    UIImage *_moreListImage;
-    SUSearchFieldConfiguration *_searchFieldConfiguration;
-    NSMutableDictionary *_sectionButtonImages;
-    UIImage *_selectedImage;
-    UIImage *_selectedMoreListImage;
+    SUClientInterface * _clientInterface;
+    NSMutableDictionary * _dictionary;
+    UIImage * _image;
+    UIImage * _moreListImage;
+    SUSearchFieldConfiguration * _searchFieldConfiguration;
+    NSMutableDictionary * _sectionButtonImages;
+    UIImage * _selectedImage;
+    UIImage * _selectedMoreListImage;
 }
 
 @property (nonatomic, readonly) SUGradient *backgroundGradient;

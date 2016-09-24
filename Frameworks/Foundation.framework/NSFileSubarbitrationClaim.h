@@ -3,38 +3,45 @@
  */
 
 @interface NSFileSubarbitrationClaim : NSFileAccessClaim {
-    NSMutableSet *_forwardedClaimIDs;
-    id /* block */ _messageSender;
-    BOOL _nullified;
-    NSMutableDictionary *_readRelinquishmentsByPresenterID;
-    NSArray *_readingLocations;
-    unsigned int _readingOptions;
-    NSArray *_readingURLs;
-    NSFileAccessNode *_rootNode;
-    NSMutableDictionary *_writeRelinquishmentsByPresenterID;
-    NSArray *_writingLocations;
-    unsigned int _writingOptions;
-    NSArray *_writingURLs;
+    NSMutableSet * _forwardedClaimIDs;
+    BOOL  _nullified;
+    NSMutableDictionary * _readRelinquishmentsByPresenterID;
+    NSArray * _readingLocations;
+    unsigned int  _readingOptions;
+    NSArray * _readingURLs;
+    NSFileAccessNode * _rootNode;
+    NSXPCConnection * _subarbiterConnection;
+    NSMutableDictionary * _writeRelinquishmentsByPresenterID;
+    NSArray * _writingLocations;
+    unsigned int  _writingOptions;
+    NSArray * _writingURLs;
 }
 
+@property (retain) NSXPCConnection *subarbiterConnection;
+
++ (BOOL)supportsSecureCoding;
+
 - (void)dealloc;
+- (id)descriptionWithIndenting:(id)arg1;
 - (void)devalueOldClaim:(id)arg1;
 - (void)devalueSelf;
+- (void)encodeWithCoder:(id)arg1;
 - (void)evaluateNewClaim:(id)arg1;
 - (BOOL)evaluateSelfWithRootNode:(id)arg1 checkSubarbitrability:(BOOL)arg2;
-- (void)forwardReacquisitionMessageWithKind:(id)arg1 parameters:(id)arg2 toPresenterForID:(id)arg3 usingReplySender:(id /* block */)arg4;
-- (void)forwardRelinquishmentMessageWithKind:(id)arg1 parameters:(id)arg2 toPresenter:(id)arg3 usingReplySender:(id /* block */)arg4;
-- (void)forwardUsingMessageSender:(id /* block */)arg1 crashHandler:(id /* block */)arg2;
+- (void)forwardReacquisitionForWritingClaim:(BOOL)arg1 withID:(in id)arg2 toPresenterForID:(id)arg3 usingReplySender:(id /* block */)arg4;
+- (void)forwardRelinquishmentForWritingClaim:(BOOL)arg1 withID:(id)arg2 options:(unsigned int)arg3 purposeID:(id)arg4 subitemURL:(id)arg5 toPresenter:(id)arg6 usingReplySender:(id /* block */)arg7;
+- (void)forwardUsingConnection:(id)arg1 crashHandler:(id /* block */)arg2;
+- (void)forwardUsingConnection:(id)arg1 withServer:(id)arg2 crashHandler:(id /* block */)arg3;
 - (void)granted;
-- (id)initWithClient:(id)arg1 messageParameters:(id)arg2 arbiterQueue:(id)arg3 replySender:(id /* block */)arg4;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithReadingURLs:(id)arg1 options:(unsigned int)arg2 writingURLs:(id)arg3 options:(unsigned int)arg4 claimer:(id /* block */)arg5;
 - (void)invokeClaimer;
 - (BOOL)isBlockedByReadingItemAtLocation:(id)arg1 options:(unsigned int)arg2;
 - (BOOL)isBlockedByWritingItemAtLocation:(id)arg1 options:(unsigned int)arg2;
 - (void)itemAtLocation:(id)arg1 wasReplacedByItemAtLocation:(id)arg2;
-- (id /* block */)messageSender;
-- (id)relinquishmentForMessageOfKind:(id)arg1 toPresenterForID:(id)arg2;
+- (id)relinquishmentForWrite:(BOOL)arg1 toPresenterForID:(id)arg2;
 - (void)revoked;
-- (void)setMessageSender:(id /* block */)arg1;
+- (void)setSubarbiterConnection:(id)arg1;
+- (id)subarbiterConnection;
 
 @end

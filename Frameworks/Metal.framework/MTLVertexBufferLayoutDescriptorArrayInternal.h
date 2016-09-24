@@ -3,7 +3,7 @@
  */
 
 @interface MTLVertexBufferLayoutDescriptorArrayInternal : MTLVertexBufferLayoutDescriptorArray {
-    MTLVertexBufferLayoutDescriptorInternal *_descriptors;
+    MTLVertexBufferLayoutDescriptorInternal * _descriptors;
 }
 
 - (void)dealloc;

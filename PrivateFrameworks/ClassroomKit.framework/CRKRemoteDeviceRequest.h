@@ -3,8 +3,8 @@
  */
 
 @interface CRKRemoteDeviceRequest : CATTaskRequest {
-    NSString *_deviceIdentifier;
-    CATTaskRequest *_remoteRequest;
+    NSString * _deviceIdentifier;
+    CATTaskRequest * _remoteRequest;
 }
 
 @property (nonatomic, copy) NSString *deviceIdentifier;

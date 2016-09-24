@@ -3,21 +3,26 @@
  */
 
 @interface PHDerivativeAssetResource : PHAssetResource {
-    PLImageFormat *_format;
-    BOOL _tableFormat;
+    unsigned int  _cplResourceType;
+    PLImageFormat * _format;
+    BOOL  _tableFormat;
 }
 
+@property (nonatomic, readonly) unsigned int cplResourceType;
 @property (getter=isCroppedToSquare, nonatomic, readonly) BOOL croppedToSquare;
 @property (nonatomic, retain) PLImageFormat *format;
 @property (getter=isTableFormat, nonatomic, readonly) BOOL tableFormat;
 @property (getter=isThumbnail, nonatomic, readonly) BOOL thumbnail;
+@property (getter=isVideo, nonatomic, readonly) BOOL video;
 
-+ (id)CPLDerivativeAssetResourcesForAsset:(id)arg1 usingLibrary:(id)arg2;
++ (id)CPLDerivativeAssetResourcesForAsset:(id)arg1 managedAsset:(id)arg2;
 + (id)assetResourceForAsset:(id)arg1 qualityClass:(id)arg2;
 + (id)tableThumbnailDataForAsset:(id)arg1 resource:(id)arg2 dataSpecification:(id*)arg3;
 + (id)thumbnailDerivativeAssetResourcesForAsset:(id)arg1;
 
 - (void).cxx_destruct;
+- (int)analysisType;
+- (unsigned int)cplResourceType;
 - (id)description;
 - (id)format;
 - (id)initWithCloudResource:(id)arg1 forAsset:(id)arg2;
@@ -27,6 +32,7 @@
 - (BOOL)isTableFormat;
 - (BOOL)isTableThumbnail;
 - (BOOL)isThumbnail;
+- (BOOL)isVideo;
 - (void)setFormat:(id)arg1;
 
 @end

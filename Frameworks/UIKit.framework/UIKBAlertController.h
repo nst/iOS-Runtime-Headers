@@ -3,7 +3,7 @@
  */
 
 @interface UIKBAlertController : UIAlertController {
-    <UIKBAlertControllerDelegate> *_kbDelegate;
+    <UIKBAlertControllerDelegate> * _kbDelegate;
 }
 
 @property (nonatomic) <UIKBAlertControllerDelegate> *kbDelegate;

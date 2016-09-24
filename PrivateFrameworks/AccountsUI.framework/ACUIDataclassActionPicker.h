@@ -3,9 +3,9 @@
  */
 
 @interface ACUIDataclassActionPicker : NSObject {
-    NSArray *_actions;
-    ACAccount *_affectedAccount;
-    NSMutableArray *_affectedDataclasses;
+    NSArray * _actions;
+    ACAccount * _affectedAccount;
+    NSMutableArray * _affectedDataclasses;
 }
 
 @property (nonatomic, readonly) NSArray *actions;
@@ -16,6 +16,7 @@
 @property (nonatomic, readonly) int priorityIndex;
 
 - (void).cxx_destruct;
+- (id)_stringForMessage:(id)arg1 withAccountType:(id)arg2 dataclassDescription:(id)arg3;
 - (id)actionOfType:(int)arg1;
 - (id)actions;
 - (void)addAffectedDataclass:(id)arg1;

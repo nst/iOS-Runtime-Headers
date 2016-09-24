@@ -3,12 +3,12 @@
  */
 
 @interface HMDRelayAccessToken : NSObject <NSSecureCoding> {
-    NSData *_accessToken;
-    HMDAccessory *_accessory;
-    NSUUID *_accessoryIdentifier;
-    NSUUID *_identifier;
-    HMDUser *_user;
-    NSUUID *_userIdentifier;
+    NSData * _accessToken;
+    HMDAccessory * _accessory;
+    NSUUID * _accessoryIdentifier;
+    NSUUID * _identifier;
+    HMDUser * _user;
+    NSUUID * _userIdentifier;
 }
 
 @property (nonatomic, readonly, copy) NSData *accessToken;

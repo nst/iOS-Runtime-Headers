@@ -3,7 +3,7 @@
  */
 
 @interface VSRecognitionURLAction : VSRecognitionAction {
-    NSURL *_url;
+    NSURL * _url;
 }
 
 - (id)URL;

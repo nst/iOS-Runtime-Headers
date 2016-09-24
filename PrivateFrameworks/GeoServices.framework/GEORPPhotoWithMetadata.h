@@ -3,16 +3,16 @@
  */
 
 @interface GEORPPhotoWithMetadata : PBCodable <NSCopying> {
-    double _creationDate;
-    NSData *_data;
-    GEOLatLng *_geotagCoordinate;
-    double _geotagHorizontalAccuracy;
-    double _geotagTimestamp;
+    double  _creationDate;
+    NSData * _data;
+    GEOLatLng * _geotagCoordinate;
+    double  _geotagHorizontalAccuracy;
+    double  _geotagTimestamp;
     struct { 
         unsigned int creationDate : 1; 
         unsigned int geotagHorizontalAccuracy : 1; 
         unsigned int geotagTimestamp : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic) double creationDate;

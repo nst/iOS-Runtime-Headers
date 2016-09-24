@@ -2,45 +2,51 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFActivityMonitor : MFPriorityDesignator {
-    NSMutableSet *_associatedProgresses;
-    unsigned int _bytesRead;
-    unsigned int _bytesWritten;
-    unsigned int _canCancel;
-    unsigned int _changeCount;
-    unsigned int _currentCount;
-    double _currentItemPercentDone;
-    id _delegate;
-    NSString *_descriptionString;
-    NSString *_displayName;
-    MFError *_error;
-    unsigned int _expectedLength;
-    unsigned int _gotNewMessagesState;
-    unsigned int _isActive;
-    unsigned int _key;
-    double _lastTime;
-    MFMailboxUid *_mailbox;
-    unsigned int _maxCount;
-    MFInvocationQueue *_ourQueue;
-    double _percentDone;
-    NSMutableSet *_reasons;
-    NSThread *_runningThread;
-    unsigned int _shouldCancel;
-    double _startTime;
-    NSString *_statusMessage;
-    unsigned int _supportsPerItemProgress;
-    id _target;
-    NSString *_taskName;
+@interface MFActivityMonitor : MFPriorityDesignator <MFCancelable> {
+    NSMutableSet * _associatedCancelables;
+    unsigned int  _bytesRead;
+    unsigned int  _bytesWritten;
+    unsigned int  _canCancel;
+    unsigned int  _changeCount;
+    unsigned int  _currentCount;
+    double  _currentItemPercentDone;
+    id  _delegate;
+    NSString * _descriptionString;
+    NSString * _displayName;
+    MFError * _error;
+    unsigned int  _expectedLength;
+    unsigned int  _gotNewMessagesState;
+    unsigned int  _isActive;
+    BOOL  _isRemoteSearch;
+    unsigned int  _key;
+    double  _lastTime;
+    MFMailboxUid * _mailbox;
+    unsigned int  _maxCount;
+    MFInvocationQueue * _ourQueue;
+    double  _percentDone;
+    NSMutableSet * _reasons;
+    NSThread * _runningThread;
+    unsigned int  _shouldCancel;
+    double  _startTime;
+    NSString * _statusMessage;
+    unsigned int  _supportsPerItemProgress;
+    id  _target;
+    NSString * _taskName;
 }
 
 @property (nonatomic) BOOL canBeCancelled;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isRemoteSearch;
 @property (retain) MFMailboxUid *mailbox;
 @property (nonatomic) BOOL shouldCancel;
+@property (readonly) Class superclass;
 
 + (id)currentMonitor;
 + (void)destroyMonitor;
 
-- (void)_cancelAssociatedProgresses;
+- (void)_cancelAssociatedCancelables;
 - (void)_didChange;
 - (BOOL)_lockedAddActivityTarget:(id)arg1;
 - (id)_ntsThrottledUserInfoDict;
@@ -49,8 +55,8 @@
 - (id)activityTargets;
 - (void)addActivityTarget:(id)arg1;
 - (void)addActivityTargets:(id)arg1;
+- (void)addCancelable:(id)arg1;
 - (void)addReason:(id)arg1;
-- (void)associateProgress:(id)arg1;
 - (unsigned int)bytesRead;
 - (unsigned int)bytesWritten;
 - (BOOL)canBeCancelled;
@@ -60,7 +66,6 @@
 - (void)dealloc;
 - (id)description;
 - (id)displayName;
-- (void)dissociateProgress:(id)arg1;
 - (id)error;
 - (unsigned int)expectedLength;
 - (void)finishedActivity:(id)arg1;
@@ -68,6 +73,7 @@
 - (BOOL)hasReason:(id)arg1;
 - (id)init;
 - (BOOL)isActive;
+- (BOOL)isRemoteSearch;
 - (id)mailbox;
 - (void)notifyConnectionEstablished;
 - (double)percentDone;
@@ -80,6 +86,7 @@
 - (void)recordBytesWritten:(unsigned int)arg1;
 - (void)relinquishExclusiveAccessKey:(int)arg1;
 - (void)removeActivityTarget:(id)arg1;
+- (void)removeCancelable:(id)arg1;
 - (void)reset;
 - (void)resetConnectionStats;
 - (void)setActivityTarget:(id)arg1;
@@ -92,6 +99,7 @@
 - (void)setExpectedLength:(unsigned int)arg1;
 - (void)setGotNewMessagesState:(unsigned int)arg1;
 - (void)setInvocationQueue:(id)arg1;
+- (void)setIsRemoteSearch:(BOOL)arg1;
 - (void)setMailbox:(id)arg1;
 - (void)setMaxCount:(unsigned int)arg1;
 - (void)setPercentDone:(double)arg1;

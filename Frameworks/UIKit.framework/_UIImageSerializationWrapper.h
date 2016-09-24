@@ -3,7 +3,7 @@
  */
 
 @interface _UIImageSerializationWrapper : NSObject <NSCoding> {
-    UIImage *_image;
+    UIImage * _image;
 }
 
 - (void).cxx_destruct;

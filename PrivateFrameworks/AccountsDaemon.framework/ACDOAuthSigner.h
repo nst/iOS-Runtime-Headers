@@ -3,10 +3,10 @@
  */
 
 @interface ACDOAuthSigner : NSObject <ACDOAuthSignerProtocol> {
-    ACDClientAuthorizationManager *_authorizationManager;
-    ACDClient *_client;
-    ACDDatabase *_database;
-    BOOL _shouldIncludeAppIdInRequest;
+    ACDClientAuthorizationManager * _authorizationManager;
+    ACDClient * _client;
+    ACDDatabase * _database;
+    BOOL  _shouldIncludeAppIdInRequest;
 }
 
 @property (readonly, copy) NSString *debugDescription;

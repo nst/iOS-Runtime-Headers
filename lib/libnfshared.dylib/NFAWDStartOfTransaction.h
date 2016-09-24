@@ -3,9 +3,9 @@
  */
 
 @interface NFAWDStartOfTransaction : NSObject <NFAWDEventProtocol> {
-    AWDNFCHCIStartOfTransactionEvent *_metric;
-    unsigned int status;
-    unsigned int version;
+    AWDNFCHCIStartOfTransactionEvent * _metric;
+    unsigned int  _status;
+    unsigned int  _version;
 }
 
 @property (readonly, copy) NSString *debugDescription;

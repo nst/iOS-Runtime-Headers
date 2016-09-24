@@ -3,12 +3,12 @@
  */
 
 @interface ICPTPIPClientProperties : NSObject {
-    struct __CFFileDescriptor { } *_fdref;
-    int _pid;
-    BOOL _registered;
-    int _remoteAddress;
-    struct __CFMessagePort { } *_remotePort;
-    int _serverFD;
+    struct __CFFileDescriptor { } * _fdref;
+    int  _pid;
+    BOOL  _registered;
+    int  _remoteAddress;
+    struct __CFMessagePort { } * _remotePort;
+    int  _serverFD;
 }
 
 @property struct __CFFileDescriptor { }*fdref;

@@ -3,7 +3,7 @@
  */
 
 @interface SPRemoteInterfaceKeyedArchiverDelegate : NSObject <NSKeyedArchiverDelegate> {
-    BOOL _imageIsNamed;
+    BOOL  _imageIsNamed;
 }
 
 @property (readonly, copy) NSString *debugDescription;

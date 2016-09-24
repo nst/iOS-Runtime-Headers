@@ -3,9 +3,9 @@
  */
 
 @interface BFFCapabilities : NSObject {
-    NSObject<OS_dispatch_queue> *_fetchQueue;
-    BOOL _regionSupportsPaymentRegistration;
-    BOOL _regionSupportsPaymentRegistrationInitialized;
+    NSObject<OS_dispatch_queue> * _fetchQueue;
+    BOOL  _regionSupportsPaymentRegistration;
+    BOOL  _regionSupportsPaymentRegistrationInitialized;
 }
 
 + (id)sharedCapabilities;

@@ -2,11 +2,15 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKPlaceLocVCardActivityProvider : MKPlaceActivityProvider {
-    CNContact *_contact;
+@interface MKPlaceLocVCardActivityProvider : MKPlaceActivityProvider <MKActivityItemSource> {
+    CNContact * _contact;
 }
 
 @property (nonatomic, retain) CNContact *contact;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_setRecord:(void*)arg1 property:(int)arg2 stringValue:(id)arg3 label:(id)arg4;

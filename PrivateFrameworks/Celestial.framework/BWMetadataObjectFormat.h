@@ -3,7 +3,7 @@
  */
 
 @interface BWMetadataObjectFormat : BWFormat {
-    NSArray *_metadataIdentifiers;
+    NSArray * _metadataIdentifiers;
 }
 
 + (id)formatWithMetadataIdentifiers:(id)arg1;

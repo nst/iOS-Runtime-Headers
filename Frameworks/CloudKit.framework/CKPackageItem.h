@@ -3,29 +3,29 @@
  */
 
 @interface CKPackageItem : NSObject {
-    NSNumber *_deviceID;
-    NSNumber *_fileID;
-    NSURL *_fileURL;
-    NSNumber *_generationID;
-    unsigned long long _itemID;
-    long long _offset;
-    int _packageIndex;
-    long _sectionIndex;
-    NSData *_signature;
-    long long _size;
-    NSData *_wrappedAssetKey;
+    NSNumber * _deviceID;
+    NSNumber * _fileID;
+    NSURL * _fileURL;
+    NSNumber * _generationID;
+    unsigned int  _itemID;
+    int  _offset;
+    int  _packageIndex;
+    long  _sectionIndex;
+    NSData * _signature;
+    int  _size;
+    NSData * _wrappedAssetKey;
 }
 
 @property (nonatomic, retain) NSNumber *deviceID;
 @property (nonatomic, retain) NSNumber *fileID;
 @property (nonatomic, retain) NSURL *fileURL;
 @property (nonatomic, retain) NSNumber *generationID;
-@property (nonatomic) unsigned long long itemID;
-@property (nonatomic) long long offset;
+@property (nonatomic) unsigned int itemID;
+@property (nonatomic) int offset;
 @property (nonatomic) int packageIndex;
 @property (nonatomic) long sectionIndex;
 @property (nonatomic, retain) NSData *signature;
-@property (nonatomic) long long size;
+@property (nonatomic) int size;
 @property (nonatomic, retain) NSData *wrappedAssetKey;
 
 - (void).cxx_destruct;
@@ -37,23 +37,23 @@
 - (id)generationID;
 - (id)initWithDeviceID:(id)arg1 fileID:(id)arg2 generationID:(id)arg3;
 - (id)initWithFileURL:(id)arg1;
-- (unsigned long long)itemID;
-- (long long)offset;
+- (unsigned int)itemID;
+- (int)offset;
 - (int)packageIndex;
 - (long)sectionIndex;
 - (void)setDeviceID:(id)arg1;
 - (void)setFileID:(id)arg1;
 - (void)setFileURL:(id)arg1;
 - (void)setGenerationID:(id)arg1;
-- (void)setItemID:(unsigned long long)arg1;
-- (void)setOffset:(long long)arg1;
+- (void)setItemID:(unsigned int)arg1;
+- (void)setOffset:(int)arg1;
 - (void)setPackageIndex:(int)arg1;
 - (void)setSectionIndex:(long)arg1;
 - (void)setSignature:(id)arg1;
-- (void)setSize:(long long)arg1;
+- (void)setSize:(int)arg1;
 - (void)setWrappedAssetKey:(id)arg1;
 - (id)signature;
-- (long long)size;
+- (int)size;
 - (id)wrappedAssetKey;
 
 @end

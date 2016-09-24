@@ -3,10 +3,10 @@
  */
 
 @interface _EditScriptIndexedAtom : NSObject {
-    int _editOperation;
-    unsigned int _indexInArrayB;
-    unsigned int _indexToEdit;
-    NSString *_replacementText;
+    int  _editOperation;
+    unsigned int  _indexInArrayB;
+    unsigned int  _indexToEdit;
+    NSString * _replacementText;
 }
 
 @property (nonatomic) int editOperation;

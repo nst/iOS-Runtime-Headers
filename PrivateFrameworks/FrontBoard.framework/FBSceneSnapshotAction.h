@@ -3,8 +3,8 @@
  */
 
 @interface FBSceneSnapshotAction : FBSSceneSnapshotAction {
-    BKSProcessAssertion *_assertion;
-    NSString *_sceneID;
+    BKSProcessAssertion * _assertion;
+    NSString * _sceneID;
 }
 
 @property (nonatomic, readonly, retain) NSString *sceneID;

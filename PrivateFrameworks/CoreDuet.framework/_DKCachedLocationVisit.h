@@ -3,9 +3,9 @@
  */
 
 @interface _DKCachedLocationVisit : NSObject {
-    double _entryTime;
-    double _exitTime;
-    NSString *_locationId;
+    double  _entryTime;
+    double  _exitTime;
+    NSString * _locationId;
 }
 
 @property (nonatomic) double entryTime;

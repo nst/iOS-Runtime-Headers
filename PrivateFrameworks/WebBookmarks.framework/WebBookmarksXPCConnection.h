@@ -3,10 +3,10 @@
  */
 
 @interface WebBookmarksXPCConnection : NSObject {
-    NSObject<OS_xpc_object> *_connection;
-    <WebBookmarksXPCConnectionDelegate> *_delegate;
-    NSMutableDictionary *_entitlementLookupCache;
-    NSMutableDictionary *_messageHandlers;
+    NSObject<OS_xpc_object> * _connection;
+    <WebBookmarksXPCConnectionDelegate> * _delegate;
+    NSMutableDictionary * _entitlementLookupCache;
+    NSMutableDictionary * _messageHandlers;
 }
 
 @property (nonatomic, readonly) NSObject<OS_xpc_object> *connection;

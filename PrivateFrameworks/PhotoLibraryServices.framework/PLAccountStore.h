@@ -3,8 +3,8 @@
  */
 
 @interface PLAccountStore : ACAccountStore {
-    ACAccount *_cachedPrimaryAppleAccount;
-    NSObject<OS_dispatch_queue> *_queue;
+    ACAccount * _cachedPrimaryAppleAccount;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly) ACAccount *cachedPrimaryAppleAccount;

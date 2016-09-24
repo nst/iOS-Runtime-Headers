@@ -3,9 +3,9 @@
  */
 
 @interface TSPMemoryComponentWriteChannel : NSObject <TSPComponentWriteChannel> {
-    BOOL _isClosed;
-    TSUDispatchData *_streamData;
-    NSObject<OS_dispatch_queue> *_streamQueue;
+    BOOL  _isClosed;
+    TSUDispatchData * _streamData;
+    NSObject<OS_dispatch_queue> * _streamQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,7 +14,9 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_close;
 - (void)close;
+- (id)init;
 - (id)initWithAlwaysDefragmentData:(BOOL)arg1;
 - (id)serializedData;
 - (void)writeData:(id)arg1;

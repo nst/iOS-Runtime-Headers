@@ -11,8 +11,4 @@
 - (void)scalablePipeManager:(CBScalablePipeManager *)arg1 pipeDidDisconnect:(CBScalablePipe *)arg2 error:(NSError *)arg3;
 - (void)scalablePipeManagerDidUpdateState:(CBScalablePipeManager *)arg1;
 
-@optional
-
-- (void)scalablePipeManager:(void *)arg1 pipeClogged:(void *)arg2 cleanedCompletionHandler:(void *)arg3; // needs 3 arg types, found 7: CBScalablePipeManager *, CBScalablePipe *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
-
 @end

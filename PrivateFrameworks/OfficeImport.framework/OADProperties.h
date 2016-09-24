@@ -3,9 +3,9 @@
  */
 
 @interface OADProperties : NSObject {
-    unsigned int mIsMerged;
-    unsigned int mIsMergedWithParent;
-    OADProperties *mParent;
+    unsigned int  mIsMerged;
+    unsigned int  mIsMergedWithParent;
+    OADProperties * mParent;
 }
 
 + (id)defaultProperties;

@@ -3,55 +3,59 @@
  */
 
 @interface UIWebPDFViewHandler : NSObject <UIDocumentPasswordViewDelegate, UIWebPDFViewDelegate, UIWebPDFViewPrivateDelegate, _UIRotatingAlertControllerDelegate, _UIWebDoubleTapDelegate, _UIWebRotationDelegate> {
-    UIColor *_backgroundColorForUnRenderedContent;
-    BOOL _cachedScrollViewShadowsState;
-    UIAlertView *_currentAlert;
-    BOOL _hideActivityIndicatorForUnRenderedContent;
-    BOOL _hidePageViewsUntilReadyToRender;
-    float _initialZoomScale;
-    WebPDFNSNumberFormatter *_labelViewFormatter;
-    NSDictionary *_linkActionInfo;
-    _UIRotatingAlertController *_linkActionSheet;
-    NSArray *_linkActions;
-    _UIHighlightView *_linkHighlightView;
-    UIWebPDFLabelView *_pageLabelView;
-    UIDocumentPasswordView *_passwordEntryView;
-    NSObject<UIWebPDFViewHandlerDelegate> *_pdfHandlerDelegate;
-    UIWebPDFView *_pdfView;
+    UIColor * _backgroundColorForUnRenderedContent;
+    BOOL  _cachedScrollViewShadowsState;
+    UIAlertView * _currentAlert;
+    BOOL  _hideActivityIndicatorForUnRenderedContent;
+    BOOL  _hidePageViewsUntilReadyToRender;
+    double  _initialZoomScale;
+    WebPDFNSNumberFormatter * _labelViewFormatter;
+    NSDictionary * _linkActionInfo;
+    _UIRotatingAlertController * _linkActionSheet;
+    NSArray * _linkActions;
+    _UIHighlightView * _linkHighlightView;
+    UIWebPDFLabelView * _pageLabelView;
+    UIDocumentPasswordView * _passwordEntryView;
+    NSObject<UIWebPDFViewHandlerDelegate> * _pdfHandlerDelegate;
+    UIWebPDFView * _pdfView;
     struct _PDFHistoryItem { 
         BOOL restorePending; 
         BOOL isInitialScale; 
-        float zoomScale; 
+        double zoomScale; 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } contentOffset; 
-    } _pendingHistoryItemRestore;
+    }  _pendingHistoryItemRestore;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _rectOfInterest;
-    BOOL _rectOfInterestConsidersHeight;
-    BOOL _scalesPageToFit;
-    NSMapTable *_searchControllers;
-    BOOL _showPageLabels;
-    BOOL _showsShadowsForHTMLContent;
+    }  _rectOfInterest;
+    BOOL  _rectOfInterestConsidersHeight;
+    BOOL  _scalesPageToFit;
+    NSMapTable * _searchControllers;
+    BOOL  _showPageLabels;
+    BOOL  _showsShadowsForHTMLContent;
 }
 
 @property (nonatomic, retain) UIColor *backgroundColorForUnRenderedContent;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) UIView *frontView;
+@property (readonly) unsigned int hash;
 @property (nonatomic) BOOL hideActivityIndicatorForUnRenderedContent;
 @property (nonatomic) BOOL hidePageViewsUntilReadyToRender;
 @property (nonatomic) NSObject<UIWebPDFViewHandlerDelegate> *pdfHandlerDelegate;
 @property (nonatomic, readonly) UIWebPDFView *pdfView;
 @property (nonatomic) BOOL scalesPageToFit;
 @property (nonatomic) BOOL showPageLabels;
+@property (readonly) Class superclass;
 
 - (id)_absoluteUrlRelativeToDocumentURL:(id)arg1;
 - (id)_actionForType:(int)arg1;
@@ -63,7 +67,7 @@
 - (void)_completeLinkClickWithURLString:(id)arg1;
 - (void)_createPDFViewIfNeeded:(id)arg1;
 - (void)_ensurePDFViewInHierarchyForWebDocView:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForDocumentBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForDocumentBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)_getLabelViewFormatter;
 - (id)_getPDFDocumentViewForWebView:(id)arg1;
 - (void)_keyboardDidShow:(id)arg1;
@@ -71,8 +75,8 @@
 - (void)_notifyDelegateWillClickLink:(id)arg1;
 - (float)_pinValueForVerticalEdge:(unsigned int)arg1 inScrollView:(id)arg2;
 - (void)_postdidDetermineDocumentBounds;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rectForPasswordView:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rectForPdfView:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_rectForPasswordView:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_rectForPdfView:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_removePDFViewIfWebDocViewIsNotPDF:(id)arg1;
 - (void)_removePDFViewIfWebDocViewIsNotSamePDF:(id)arg1;
 - (void)_replacePDFViewIfPresentWithWebDocView:(id)arg1;
@@ -84,7 +88,7 @@
 - (void)_showPasswordErrorAlert;
 - (void)_updateViewHierarchyForDocumentView:(id)arg1 ignoreIfSame:(BOOL)arg2;
 - (unsigned int)_verticalEdgeForContentOffsetInScrollView:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })activeRectForRectOfInterest:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })activeRectForRectOfInterest:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)adjustZoomScalesForScrollView;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)backgroundColorForUnRenderedContent;
@@ -105,39 +109,39 @@
 - (void)didEndEditingPassword:(id)arg1 inView:(id)arg2;
 - (void)didReceiveMemoryWarning:(id)arg1;
 - (void)didScroll:(id)arg1;
-- (struct { float x1; float x2; float x3; })doubleTapScalesForSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct { double x1; double x2; double x3; })doubleTapScalesForSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)enclosingScrollView;
 - (void)ensureCorrectPagesAreInstalled:(BOOL)arg1;
 - (id)findOnPageHighlighter;
 - (id)frontView;
-- (void)handleLinkClick:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)handleLongPressOnLink:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 contentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
+- (void)handleLinkClick:(id)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)handleLongPressOnLink:(id)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 contentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
 - (void)handleScrollToAnchor:(id)arg1;
 - (float)heightToKeepVisible;
 - (BOOL)hideActivityIndicatorForUnRenderedContent;
 - (BOOL)hidePageViewsUntilReadyToRender;
-- (void)highlightRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)highlightRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)hostViewForSheet:(id)arg1;
 - (id)init;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })initialPresentationRectInHostViewForSheet:(id)arg1;
-- (float)minimumScaleForSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })initialPresentationRectInHostViewForSheet:(id)arg1;
+- (float)minimumScaleForSize:(struct CGSize { double x1; double x2; })arg1;
 - (float)minimumVerticalContentOffset;
 - (id)passwordForPDFView:(id)arg1;
 - (id)pdfHandlerDelegate;
 - (id)pdfView;
-- (void)pdfView:(id)arg1 zoomToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 forPoint:(struct CGPoint { float x1; float x2; })arg3 considerHeight:(BOOL)arg4;
+- (void)pdfView:(id)arg1 zoomToRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 forPoint:(struct CGPoint { double x1; double x2; })arg3 considerHeight:(BOOL)arg4;
 - (void)performAction:(id)arg1 fromAlertController:(id)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })presentationRectInHostViewForSheet:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectOfInterestForPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectOfInterestForRotation;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })presentationRectInHostViewForSheet:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectOfInterestForPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectOfInterestForRotation;
 - (void)removeViewFromSuperview;
 - (void)resetZoom:(id)arg1;
 - (void)restoreStateFromHistoryItem:(id)arg1 forWebView:(id)arg2;
 - (void)restoreStateFromPendingHistoryItem;
 - (void)revealSearchResult:(id)arg1 andZoomIn:(BOOL)arg2;
-- (void)rotateEnclosingScrollViewToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)rotateEnclosingScrollViewToFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)saveStateToHistoryItem:(id)arg1 forWebView:(id)arg2;
-- (struct { float x1; float x2; float x3; })scalesForContainerSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct { double x1; double x2; double x3; })scalesForContainerSize:(struct CGSize { double x1; double x2; })arg1;
 - (BOOL)scalesPageToFit;
 - (void)scrollToPageNumber:(int)arg1 animate:(BOOL)arg2;
 - (id)searchControllerForHighlighter:(id)arg1;
@@ -148,16 +152,16 @@
 - (void)setScalesPageToFit:(BOOL)arg1;
 - (void)setShowPageLabels:(BOOL)arg1;
 - (BOOL)showPageLabels;
-- (void)updateBoundariesOfScrollView:(id)arg1 withScales:(struct { float x1; float x2; float x3; })arg2;
+- (void)updateBoundariesOfScrollView:(id)arg1 withScales:(struct { double x1; double x2; double x3; })arg2;
 - (void)updatePageNumberLabelWithUserScrolling:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)updateViewHierarchyForDocumentViewLoadComplete:(id)arg1;
 - (void)updateViewHierarchyForDocumentViewNewLoad:(id)arg1;
 - (void)updateViewHierarchyForDocumentViewTabSwitch:(id)arg1;
-- (void)updateViewHierarchyForDocumentViewTabSwitch:(id)arg1 restoringZoomScale:(float)arg2 andScrollPt:(struct CGPoint { float x1; float x2; })arg3;
+- (void)updateViewHierarchyForDocumentViewTabSwitch:(id)arg1 restoringZoomScale:(float)arg2 andScrollPt:(struct CGPoint { double x1; double x2; })arg3;
 - (void)updateViewHierarchyForFirstNonEmptyLayoutInFrame:(id)arg1;
 - (void)updateViewSettings;
 - (void)userDidEnterPassword:(id)arg1 forPasswordView:(id)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleContentRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleContentRect;
 - (float)zoomedDocumentScale;
 
 @end

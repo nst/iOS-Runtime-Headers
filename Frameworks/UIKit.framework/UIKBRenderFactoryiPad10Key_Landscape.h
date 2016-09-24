@@ -6,6 +6,7 @@
 
 - (float)controlColumnWidthFactor;
 - (float)keyCornerRadius;
+- (id)messagesWriteboardKeyImageName;
 - (id)multitapCompleteKeyImageName;
 - (id)muttitapReverseKeyImageName;
 

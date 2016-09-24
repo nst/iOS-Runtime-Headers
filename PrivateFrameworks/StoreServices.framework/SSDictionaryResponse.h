@@ -3,7 +3,7 @@
  */
 
 @interface SSDictionaryResponse : NSObject <NSCopying> {
-    NSDictionary *_dictionary;
+    NSDictionary * _dictionary;
 }
 
 @property (nonatomic, readonly) NSArray *actions;

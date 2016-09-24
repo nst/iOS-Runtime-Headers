@@ -3,10 +3,10 @@
  */
 
 @interface TSKFidgetResolver : NSObject {
-    double _fidgetThreshold;
-    unsigned int _head;
-    double *_times;
-    id *_values;
+    double  _fidgetThreshold;
+    unsigned int  _head;
+    double * _times;
+    id * _values;
 }
 
 @property (nonatomic) double fidgetThreshold;

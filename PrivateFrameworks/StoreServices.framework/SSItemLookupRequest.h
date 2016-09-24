@@ -3,7 +3,7 @@
  */
 
 @interface SSItemLookupRequest : SSRequest <SSXPCCoding> {
-    NSMutableDictionary *_parameters;
+    NSMutableDictionary * _parameters;
 }
 
 @property (readonly, copy) NSString *debugDescription;

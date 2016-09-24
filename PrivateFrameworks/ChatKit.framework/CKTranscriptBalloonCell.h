@@ -2,43 +2,27 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKTranscriptBalloonCell : CKPhoneTranscriptMessageCell {
-    CKBalloonView *_balloonView;
-    UILabel *_drawerLabel;
-    NSAttributedString *_drawerText;
-    BOOL _drawerTextChanged;
-    struct CGSize { 
-        float width; 
-        float height; 
-    } _drawerTextSize;
-    BOOL _drawerWasVisible;
+@interface CKTranscriptBalloonCell : CKTranscriptMessageContentCell {
+    CKBalloonView * _balloonView;
+    BOOL  _mayReparentPluginViews;
 }
 
 @property (nonatomic, retain) CKBalloonView *balloonView;
-@property (nonatomic, retain) UILabel *drawerLabel;
-@property (nonatomic, copy) NSAttributedString *drawerText;
-@property (nonatomic) BOOL drawerTextChanged;
-@property (nonatomic) struct CGSize { float x1; float x2; } drawerTextSize;
-@property (nonatomic) BOOL drawerWasVisible;
+@property (nonatomic) BOOL mayReparentPluginViews;
 
+- (void).cxx_destruct;
+- (void)addFilter:(id)arg1;
 - (id)balloonView;
+- (void)clearFilters;
 - (void)configureForChatItem:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (id)drawerLabel;
-- (id)drawerText;
-- (BOOL)drawerTextChanged;
-- (struct CGSize { float x1; float x2; })drawerTextSize;
-- (BOOL)drawerWasVisible;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)layoutSubviewsForAlignmentContents;
-- (void)layoutSubviewsForDrawer;
+- (id)init;
+- (BOOL)mayReparentPluginViews;
+- (id)messageDisplayView;
 - (void)setBalloonView:(id)arg1;
-- (void)setDrawerLabel:(id)arg1;
-- (void)setDrawerText:(id)arg1;
-- (void)setDrawerTextChanged:(BOOL)arg1;
-- (void)setDrawerTextSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setDrawerWasVisible:(BOOL)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setMayReparentPluginViews:(BOOL)arg1;
+- (void)willLayoutDrawerLabelFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1;
 
 @end

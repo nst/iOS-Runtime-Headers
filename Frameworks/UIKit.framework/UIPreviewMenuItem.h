@@ -3,13 +3,13 @@
  */
 
 @interface UIPreviewMenuItem : NSObject <NSCopying> {
-    NSArray *__subitems;
-    UIColor *_color;
-    id /* block */ _handler;
-    UIImage *_image;
-    int _style;
-    NSString *_title;
-    NSString *identifier;
+    NSArray * __subitems;
+    UIColor * _color;
+    id /* block */  _handler;
+    UIImage * _image;
+    int  _style;
+    NSString * _title;
+    NSString * identifier;
 }
 
 @property (getter=_subitems, setter=_setSubitems:, nonatomic, copy) NSArray *_subitems;
@@ -25,7 +25,6 @@
 + (id)itemWithTitle:(id)arg1 style:(int)arg2 handler:(id /* block */)arg3;
 + (id)itemWithTitle:(id)arg1 style:(int)arg2 items:(id)arg3;
 + (id)itemWithViewControllerPreviewAction:(id)arg1;
-+ (id)itemWithViewControllerQuickAction:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_color;

@@ -3,7 +3,7 @@
  */
 
 @interface FMDynamicTypeButton : UIButton {
-    id _token;
+    id  _token;
 }
 
 @property (nonatomic, retain) id token;

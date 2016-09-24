@@ -3,11 +3,11 @@
  */
 
 @interface HMDApplicationInfo : NSObject {
-    NSMutableDictionary *_activeProcesses;
-    NSString *_bundleIdentifier;
-    NSString *_companionAppBundleIdentifier;
-    BOOL _spiClient;
-    NSString *_teamIdentifier;
+    NSMutableDictionary * _activeProcesses;
+    NSString * _bundleIdentifier;
+    NSString * _companionAppBundleIdentifier;
+    BOOL  _spiClient;
+    NSString * _teamIdentifier;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *activeProcesses;

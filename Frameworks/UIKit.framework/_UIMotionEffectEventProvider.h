@@ -3,7 +3,7 @@
  */
 
 @interface _UIMotionEffectEventProvider : NSObject {
-    <_UIMotionEffectEventConsumer> *_consumer;
+    <_UIMotionEffectEventConsumer> * _consumer;
 }
 
 @property <_UIMotionEffectEventConsumer> *consumer;

@@ -3,23 +3,35 @@
  */
 
 @interface PKPaymentProvisioningRequest : PKPaymentOverlayableRequest {
-    NSData *_activationData;
-    NSString *_cardSecurityCode;
-    PKPaymentEligibilityResponse *_eligibilityResponse;
+    NSData * _activationData;
+    NSString * _cardSecurityCode;
+    NSString * _cardholderName;
+    NSData * _deviceScore;
+    PKPaymentEligibilityResponse * _eligibilityResponse;
+    NSString * _nonce;
 }
 
 @property (nonatomic, copy) NSData *activationData;
 @property (nonatomic, copy) NSString *cardSecurityCode;
+@property (nonatomic, copy) NSString *cardholderName;
+@property (nonatomic, copy) NSData *deviceScore;
 @property (nonatomic, retain) PKPaymentEligibilityResponse *eligibilityResponse;
+@property (nonatomic, copy) NSString *nonce;
 
-- (id)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 account:(id)arg3 certChain:(id)arg4 devSigned:(BOOL)arg5 deviceData:(id)arg6;
+- (void).cxx_destruct;
+- (void)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 account:(id)arg3 certChain:(id)arg4 devSigned:(BOOL)arg5 deviceData:(id)arg6 webService:(id)arg7 completion:(id /* block */)arg8;
 - (id)activationData;
 - (id)cardSecurityCode;
-- (void)dealloc;
+- (id)cardholderName;
+- (id)deviceScore;
 - (id)eligibilityResponse;
 - (id)initWithEligibilityResponse:(id)arg1;
+- (id)nonce;
 - (void)setActivationData:(id)arg1;
 - (void)setCardSecurityCode:(id)arg1;
+- (void)setCardholderName:(id)arg1;
+- (void)setDeviceScore:(id)arg1;
 - (void)setEligibilityResponse:(id)arg1;
+- (void)setNonce:(id)arg1;
 
 @end

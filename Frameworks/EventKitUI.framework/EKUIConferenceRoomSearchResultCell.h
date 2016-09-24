@@ -3,9 +3,9 @@
  */
 
 @interface EKUIConferenceRoomSearchResultCell : UITableViewCell {
-    UIImageView *_image;
-    UIActivityIndicatorView *_spinner;
-    UILabel *_title;
+    UIImageView * _image;
+    UIActivityIndicatorView * _spinner;
+    UILabel * _title;
 }
 
 - (void).cxx_destruct;

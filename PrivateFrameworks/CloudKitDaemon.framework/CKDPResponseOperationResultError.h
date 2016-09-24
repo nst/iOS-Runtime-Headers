@@ -3,16 +3,16 @@
  */
 
 @interface CKDPResponseOperationResultError : PBCodable <NSCopying> {
-    CKDPResponseOperationResultErrorClient *_clientError;
-    NSString *_errorDescription;
-    NSString *_errorInternal;
-    NSString *_errorKey;
-    CKDPResponseOperationResultErrorExtension *_extensionError;
+    CKDPResponseOperationResultErrorClient * _clientError;
+    NSString * _errorDescription;
+    NSString * _errorInternal;
+    NSString * _errorKey;
+    CKDPResponseOperationResultErrorExtension * _extensionError;
     struct { 
         unsigned int retryAfterSeconds : 1; 
-    } _has;
-    int _retryAfterSeconds;
-    CKDPResponseOperationResultErrorServer *_serverError;
+    }  _has;
+    int  _retryAfterSeconds;
+    CKDPResponseOperationResultErrorServer * _serverError;
 }
 
 @property (nonatomic, retain) CKDPResponseOperationResultErrorClient *clientError;

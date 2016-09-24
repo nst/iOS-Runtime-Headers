@@ -3,18 +3,18 @@
  */
 
 @interface UIKBTextEditingTraits : NSObject {
-    BOOL _canCopy;
-    BOOL _canCut;
-    BOOL _canMoveCursorLeft;
-    BOOL _canMoveCursorRight;
-    BOOL _canPaste;
-    BOOL _canToggleBoldface;
-    BOOL _canToggleItalics;
-    BOOL _canToggleUnderline;
-    BOOL _isBold;
-    BOOL _isItalicized;
-    BOOL _isUnderlined;
-    BOOL _supportStyling;
+    BOOL  _canCopy;
+    BOOL  _canCut;
+    BOOL  _canMoveCursorLeft;
+    BOOL  _canMoveCursorRight;
+    BOOL  _canPaste;
+    BOOL  _canToggleBoldface;
+    BOOL  _canToggleItalics;
+    BOOL  _canToggleUnderline;
+    BOOL  _isBold;
+    BOOL  _isItalicized;
+    BOOL  _isUnderlined;
+    BOOL  _supportStyling;
 }
 
 @property (nonatomic, readonly) BOOL canCopy;

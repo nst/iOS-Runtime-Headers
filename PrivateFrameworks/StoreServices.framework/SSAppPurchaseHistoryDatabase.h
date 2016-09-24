@@ -3,7 +3,7 @@
  */
 
 @interface SSAppPurchaseHistoryDatabase : NSObject {
-    SSSQLiteDatabase *_database;
+    SSSQLiteDatabase * _database;
 }
 
 + (void)_createDatabaseDirectory;

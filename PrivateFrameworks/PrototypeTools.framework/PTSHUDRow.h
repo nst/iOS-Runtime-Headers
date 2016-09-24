@@ -3,12 +3,12 @@
  */
 
 @interface PTSHUDRow : NSObject {
-    NSArray *_controls;
-    float _height;
+    NSArray * _controls;
+    double  _height;
 }
 
 @property (nonatomic, retain) NSArray *controls;
-@property (nonatomic) float height;
+@property (nonatomic) double height;
 
 + (id)controlsModeFooterRow;
 + (id)controlsModeHeaderRow;

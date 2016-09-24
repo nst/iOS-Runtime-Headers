@@ -3,7 +3,7 @@
  */
 
 @interface AVScheduledAudioParametersInternal : NSObject {
-    NSMutableArray *ramps;
+    NSMutableArray * ramps;
 }
 
 @end

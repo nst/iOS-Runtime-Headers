@@ -3,13 +3,15 @@
  */
 
 @interface GEOURLPresent : PBCodable <NSCopying> {
-    NSMutableArray *_items;
-    GEOURLOptions *_options;
+    NSMutableArray * _items;
+    GEOURLOptions * _options;
 }
 
 @property (nonatomic, readonly) BOOL hasOptions;
 @property (nonatomic, retain) NSMutableArray *items;
 @property (nonatomic, retain) GEOURLOptions *options;
+
++ (Class)itemType;
 
 - (void)addItem:(id)arg1;
 - (void)clearItems;

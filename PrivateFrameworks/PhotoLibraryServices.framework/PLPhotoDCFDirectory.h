@@ -3,11 +3,11 @@
  */
 
 @interface PLPhotoDCFDirectory : PLPhotoDCFObject {
-    BOOL _considerInvalidFileGroups;
-    PLPhotoDCIMDirectory *_dcimDirectory;
-    struct __CFDictionary { } *_fileGroupsByNumber;
-    int _lastUsedFileGroupNumber;
-    int _maxFileGroupNumber;
+    BOOL  _considerInvalidFileGroups;
+    PLPhotoDCIMDirectory * _dcimDirectory;
+    struct __CFDictionary { } * _fileGroupsByNumber;
+    int  _lastUsedFileGroupNumber;
+    int  _maxFileGroupNumber;
 }
 
 @property BOOL considerInvalidFileGroups;

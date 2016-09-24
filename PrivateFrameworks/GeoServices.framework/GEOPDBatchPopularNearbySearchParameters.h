@@ -6,11 +6,12 @@
     struct { 
         unsigned int requestLocalTimestamp : 1; 
         unsigned int maxResults : 1; 
-    } _has;
-    unsigned int _maxResults;
-    double _requestLocalTimestamp;
-    NSMutableArray *_suggestionEntryMetadatas;
-    GEOPDViewportInfo *_viewportInfo;
+    }  _has;
+    unsigned int  _maxResults;
+    double  _requestLocalTimestamp;
+    NSMutableArray * _suggestionEntryMetadatas;
+    PBUnknownFields * _unknownFields;
+    GEOPDViewportInfo * _viewportInfo;
 }
 
 @property (nonatomic) BOOL hasMaxResults;
@@ -19,7 +20,10 @@
 @property (nonatomic) unsigned int maxResults;
 @property (nonatomic) double requestLocalTimestamp;
 @property (nonatomic, retain) NSMutableArray *suggestionEntryMetadatas;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) GEOPDViewportInfo *viewportInfo;
+
++ (Class)suggestionEntryMetadataType;
 
 - (void)addSuggestionEntryMetadata:(id)arg1;
 - (void)clearSuggestionEntryMetadatas;
@@ -46,6 +50,7 @@
 - (id)suggestionEntryMetadataAtIndex:(unsigned int)arg1;
 - (id)suggestionEntryMetadatas;
 - (unsigned int)suggestionEntryMetadatasCount;
+- (id)unknownFields;
 - (id)viewportInfo;
 - (void)writeTo:(id)arg1;
 

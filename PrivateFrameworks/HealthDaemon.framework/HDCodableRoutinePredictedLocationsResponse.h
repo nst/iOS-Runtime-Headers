@@ -3,7 +3,7 @@
  */
 
 @interface HDCodableRoutinePredictedLocationsResponse : PBCodable <NSCopying> {
-    NSMutableArray *_predictedLocationsOfInterests;
+    NSMutableArray * _predictedLocationsOfInterests;
 }
 
 @property (nonatomic, retain) NSMutableArray *predictedLocationsOfInterests;

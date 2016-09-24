@@ -3,21 +3,21 @@
  */
 
 @interface SSMetricsEventController : SSMetricsController {
-    SSMetricsEventTable *_table;
+    SSMetricsEventTable * _table;
 }
 
-- (id)_collectUnreportedPIDsFromDatabase:(id)arg1 matchingReportURLString:(id)arg2 since:(long long)arg3;
+- (id)_collectUnreportedPIDsFromDatabase:(id)arg1 matchingReportURLString:(id)arg2 since:(int)arg3;
 - (int)_maximumUnreportedToSelect;
 - (void)_serialQueueInsertEvents:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)dealloc;
-- (BOOL)deleteEventsInsertedBefore:(long long)arg1;
+- (BOOL)deleteEventsInsertedBefore:(int)arg1;
 - (BOOL)deleteReportedEvents;
 - (void)flushUnreportedEventsWithCompletionHandler:(id /* block */)arg1;
 - (id)init;
 - (BOOL)insertEventSummaries:(id)arg1 error:(id*)arg2;
 - (BOOL)markEventsAsReported:(id)arg1;
-- (id)newReportingSessionForURL:(id)arg1 since:(long long)arg2;
-- (id)unreportedEventURLsSince:(long long)arg1;
-- (id)unreportedEventsForURL:(id)arg1 since:(long long)arg2;
+- (id)newReportingSessionForURL:(id)arg1 since:(int)arg2;
+- (id)unreportedEventURLsSince:(int)arg1;
+- (id)unreportedEventsForURL:(id)arg1 since:(int)arg2;
 
 @end

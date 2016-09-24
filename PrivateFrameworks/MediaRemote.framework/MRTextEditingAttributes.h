@@ -17,9 +17,9 @@
         bool secureTextEntry; 
         long PINEntrySeparatorIndexes[10]; 
         unsigned int PINEntrySeparatorIndexesCount; 
-    } _inputTraits;
-    NSString *_prompt;
-    NSString *_title;
+    }  _inputTraits;
+    NSString * _prompt;
+    NSString * _title;
 }
 
 @property (nonatomic, readonly) struct _MRTextInputTraits { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { int x_6_1_1; int x_6_1_2; } x6; bool x7; bool x8; long x9[10]; unsigned int x10; } inputTraits;

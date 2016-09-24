@@ -3,7 +3,7 @@
  */
 
 @interface WCMessageResponse : WCMessage <NSSecureCoding> {
-    NSError *_error;
+    NSError * _error;
 }
 
 @property (retain) NSError *error;

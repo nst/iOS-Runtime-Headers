@@ -3,11 +3,11 @@
  */
 
 @interface CIPerspectiveCorrection : CIFilter {
-    CIVector *inputBottomLeft;
-    CIVector *inputBottomRight;
-    CIImage *inputImage;
-    CIVector *inputTopLeft;
-    CIVector *inputTopRight;
+    CIVector * inputBottomLeft;
+    CIVector * inputBottomRight;
+    CIImage * inputImage;
+    CIVector * inputTopLeft;
+    CIVector * inputTopRight;
 }
 
 @property (nonatomic, retain) CIVector *inputBottomLeft;

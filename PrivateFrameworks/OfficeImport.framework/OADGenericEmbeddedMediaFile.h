@@ -3,7 +3,7 @@
  */
 
 @interface OADGenericEmbeddedMediaFile : OADEmbeddedMediaFile {
-    BOOL isAudioOnly;
+    BOOL  isAudioOnly;
 }
 
 - (BOOL)isAudioOnly;

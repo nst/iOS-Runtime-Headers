@@ -3,12 +3,12 @@
  */
 
 @interface MCDRadioStationListViewController : MCD_OLD_TableViewController {
-    UIActivityIndicatorView *_activityIndicator;
-    RadioStation *_currentlyPlayingStation;
-    UINavigationController *_nowPlayingNavigationController;
-    NSIndexPath *_selectedIndexPath;
-    NSMutableDictionary *_stationArtworkRequests;
-    NSArray *_stations;
+    UIActivityIndicatorView * _activityIndicator;
+    RadioStation * _currentlyPlayingStation;
+    UINavigationController * _nowPlayingNavigationController;
+    NSIndexPath * _selectedIndexPath;
+    NSMutableDictionary * _stationArtworkRequests;
+    NSArray * _stations;
 }
 
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;

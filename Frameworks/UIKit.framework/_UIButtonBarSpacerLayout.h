@@ -3,13 +3,13 @@
  */
 
 @interface _UIButtonBarSpacerLayout : _UIButtonBarLayout {
-    NSLayoutConstraint *_equalSize;
-    bool _flexible;
-    UIBarButtonItem *_item;
-    NSLayoutConstraint *_minimumSize;
-    NSLayoutConstraint *_requestedSize;
-    UIView *_spacer;
-    int _spacerType;
+    NSLayoutConstraint * _equalSize;
+    bool  _flexible;
+    UIBarButtonItem * _item;
+    NSLayoutConstraint * _minimumSize;
+    NSLayoutConstraint * _requestedSize;
+    UIView * _spacer;
+    int  _spacerType;
 }
 
 @property (nonatomic, readonly) int spacerType;

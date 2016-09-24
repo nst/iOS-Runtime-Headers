@@ -3,8 +3,8 @@
  */
 
 @interface PTPInitCommandRequestPacket : NSObject {
-    NSString *_initiatorFriendlyName;
-    unsigned char _initiatorGUID;
+    NSString * _initiatorFriendlyName;
+    unsigned char  _initiatorGUID;
 }
 
 - (id)contentForTCP;

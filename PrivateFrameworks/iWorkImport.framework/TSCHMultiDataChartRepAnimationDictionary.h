@@ -3,7 +3,7 @@
  */
 
 @interface TSCHMultiDataChartRepAnimationDictionary : NSObject {
-    TSURetainedPointerKeyDictionary *mEntries;
+    TSURetainedPointerKeyDictionary * mEntries;
 }
 
 + (id)dictionary;

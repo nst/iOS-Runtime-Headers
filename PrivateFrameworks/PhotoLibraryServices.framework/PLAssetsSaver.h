@@ -3,7 +3,7 @@
  */
 
 @interface PLAssetsSaver : NSObject {
-    NSMutableArray *__pendingSaveAssetJobs;
+    NSMutableArray * __pendingSaveAssetJobs;
 }
 
 @property (nonatomic, retain) NSMutableArray *_pendingSaveAssetJobs;

@@ -3,14 +3,14 @@
  */
 
 @interface PUBadgeInfo : NSObject <NSCopying> {
-    id /* block */ __numberOfPhotosProvider;
-    int _numberOfPhotos;
-    int _style;
+    id /* block */  __numberOfPhotosProvider;
+    int  _numberOfPhotos;
+    int  _style;
 }
 
 @property (setter=_setNumberOfPhotosProvider:, nonatomic, copy) id /* block */ _numberOfPhotosProvider;
-@property (nonatomic) int numberOfPhotos;
-@property (nonatomic) int style;
+@property (setter=_setNumberOfPhotos:, nonatomic) int numberOfPhotos;
+@property (setter=_setStyle:, nonatomic) int style;
 
 + (id)badgeInfoWithBurstStyleNumberOfPhotos:(int)arg1;
 + (id)badgeInfoWithBurstStyleNumberOfPhotosProvider:(id /* block */)arg1;

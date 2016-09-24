@@ -3,9 +3,9 @@
  */
 
 @interface YTSearchSuggestionsRequest : YTXMLHTTPRequest {
-    id _delegate;
-    NSString *_query;
-    NSMutableArray *_suggestions;
+    id  _delegate;
+    NSString * _query;
+    NSMutableArray * _suggestions;
 }
 
 - (id)_suggestionsURLForQuery:(id)arg1;

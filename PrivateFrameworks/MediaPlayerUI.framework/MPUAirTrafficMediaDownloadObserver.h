@@ -3,8 +3,8 @@
  */
 
 @interface MPUAirTrafficMediaDownloadObserver : MPUMediaDownloadObserver {
-    NSString *_assetIdentifier;
-    double _lastDownloadProgress;
+    NSString * _assetIdentifier;
+    double  _lastDownloadProgress;
 }
 
 + (void)connection:(id)arg1 updatedProgress:(id)arg2;

@@ -3,10 +3,10 @@
  */
 
 @interface PTSToggleButton : PTSButton <PTSHUDControl, _UISettingsKeyPathObserver> {
-    NSString *_titleForOffState;
-    NSString *_titleForOnState;
-    id _valueForOffState;
-    id _valueForOnState;
+    NSString * _titleForOffState;
+    NSString * _titleForOnState;
+    id  _valueForOffState;
+    id  _valueForOnState;
 }
 
 @property (nonatomic) int alignment;

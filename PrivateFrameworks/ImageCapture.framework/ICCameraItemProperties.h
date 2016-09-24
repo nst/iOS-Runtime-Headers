@@ -3,14 +3,14 @@
  */
 
 @interface ICCameraItemProperties : NSObject {
-    NSString *_UTI;
-    NSDate *_creationDate;
-    ICCameraDevice *_device;
-    BOOL _locked;
-    NSDate *_modificationDate;
-    NSString *_name;
-    ICCameraFolder *_parentFolder;
-    NSMutableDictionary *_userData;
+    NSString * _UTI;
+    NSDate * _creationDate;
+    ICCameraDevice * _device;
+    BOOL  _locked;
+    NSDate * _modificationDate;
+    NSString * _name;
+    ICCameraFolder * _parentFolder;
+    NSMutableDictionary * _userData;
 }
 
 @property (retain) NSString *UTI;

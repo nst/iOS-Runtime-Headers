@@ -3,19 +3,19 @@
  */
 
 @interface DuetLogger : NSObject {
-    NSString *binaryName;
-    bool canWriteToFile;
-    NSMutableArray *duetLoggerSource;
-    int fd;
-    NSFileManager *fileMgr;
-    NSString *fileName;
-    NSString *filePath;
-    bool firstTime;
-    NSString *homeDir;
-    NSObject<OS_dispatch_queue> *logQueue;
-    NSString *logState;
-    struct __asl_object_s { } *log_client;
-    struct __asl_object_s { } *log_msg;
+    NSString * binaryName;
+    bool  canWriteToFile;
+    NSMutableArray * duetLoggerSource;
+    int  fd;
+    NSFileManager * fileMgr;
+    NSString * fileName;
+    NSString * filePath;
+    bool  firstTime;
+    NSString * homeDir;
+    NSObject<OS_dispatch_queue> * logQueue;
+    NSString * logState;
+    struct __asl_object_s { } * log_client;
+    struct __asl_object_s { } * log_msg;
 }
 
 @property (nonatomic, readonly) bool canWriteToFile;

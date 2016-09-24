@@ -3,15 +3,15 @@
  */
 
 @interface GEOCMTicketStatusResponse : PBCodable <NSCopying> {
-    GEORPDetails *_details;
+    GEORPDetails * _details;
     struct { 
         unsigned int submissionDate : 1; 
         unsigned int ticketState : 1; 
-    } _has;
-    GEORPNotification *_notification;
-    double _submissionDate;
-    NSString *_ticketId;
-    int _ticketState;
+    }  _has;
+    GEORPNotification * _notification;
+    double  _submissionDate;
+    NSString * _ticketId;
+    int  _ticketState;
 }
 
 @property (nonatomic, retain) GEORPDetails *details;
@@ -25,6 +25,7 @@
 @property (nonatomic, retain) NSString *ticketId;
 @property (nonatomic) int ticketState;
 
+- (int)StringAsTicketState:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -51,6 +52,7 @@
 - (double)submissionDate;
 - (id)ticketId;
 - (int)ticketState;
+- (id)ticketStateAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

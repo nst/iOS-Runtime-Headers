@@ -3,27 +3,26 @@
  */
 
 @interface CAMCaptureRequest : NSObject <CAMDistinctPersistenceCopying, NSCopying> {
-    NSMutableDictionary *__parameterStorage;
-    unsigned int _assertionIdentifier;
-    int _captureDevice;
-    int _captureMode;
-    int _captureOrientation;
-    BOOL _capturedFromPhotoBooth;
-    unsigned int _deferredPersistenceOptions;
-    NSURL *_localDestinationURL;
-    CLLocation *_location;
-    int _persistenceOptions;
-    NSString *_persistenceUUID;
-    int _physicalButtonType;
-    unsigned short _sessionIdentifier;
-    BOOL _shouldDelayRemotePersistence;
-    BOOL _shouldExtractDiagnosticsFromMetadata;
-    BOOL _shouldPersistDiagnosticsToSidecar;
-    int _type;
+    unsigned int  _assertionIdentifier;
+    int  _captureDevice;
+    int  _captureMode;
+    int  _captureOrientation;
+    BOOL  _capturedFromPhotoBooth;
+    unsigned int  _deferredPersistenceOptions;
+    NSURL * _localDestinationURL;
+    CLLocation * _location;
+    int  _origin;
+    int  _persistenceOptions;
+    NSString * _persistenceUUID;
+    int  _physicalButtonType;
+    unsigned short  _sessionIdentifier;
+    BOOL  _shouldDelayRemotePersistence;
+    BOOL  _shouldExtractDiagnosticsFromMetadata;
+    BOOL  _shouldPersistDiagnosticsToSidecar;
+    int  _temporaryPersistenceOptions;
+    int  _type;
 }
 
-@property (nonatomic, readonly, copy) NSDictionary *_customParameterStorage;
-@property (nonatomic, readonly) NSMutableDictionary *_parameterStorage;
 @property (nonatomic, readonly) unsigned int assertionIdentifier;
 @property (nonatomic, readonly) int captureDevice;
 @property (nonatomic, readonly) int captureMode;
@@ -35,6 +34,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly, copy) NSURL *localDestinationURL;
 @property (nonatomic, readonly) CLLocation *location;
+@property (nonatomic, readonly) int origin;
 @property (nonatomic, readonly) int persistenceOptions;
 @property (nonatomic, readonly, copy) NSString *persistenceUUID;
 @property (nonatomic, readonly) int physicalButtonType;
@@ -43,11 +43,10 @@
 @property (nonatomic, readonly) BOOL shouldExtractDiagnosticsFromMetadata;
 @property (nonatomic, readonly) BOOL shouldPersistDiagnosticsToSidecar;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) int temporaryPersistenceOptions;
 @property (nonatomic, readonly) int type;
 
 - (void).cxx_destruct;
-- (id)_customParameterStorage;
-- (id)_parameterStorage;
 - (unsigned int)assertionIdentifier;
 - (int)captureDevice;
 - (int)captureMode;
@@ -61,7 +60,7 @@
 - (id)initWithType:(int)arg1;
 - (id)localDestinationURL;
 - (id)location;
-- (id)parameterForKey:(id)arg1;
+- (int)origin;
 - (int)persistenceOptions;
 - (id)persistenceUUID;
 - (int)physicalButtonType;
@@ -69,6 +68,9 @@
 - (BOOL)shouldDelayRemotePersistence;
 - (BOOL)shouldExtractDiagnosticsFromMetadata;
 - (BOOL)shouldPersistDiagnosticsToSidecar;
+- (BOOL)shouldPersistToIncomingDirectory;
+- (BOOL)shouldProtectPersistence;
+- (int)temporaryPersistenceOptions;
 - (int)type;
 
 @end

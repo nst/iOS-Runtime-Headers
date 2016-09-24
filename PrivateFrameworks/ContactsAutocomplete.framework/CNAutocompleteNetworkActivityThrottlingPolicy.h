@@ -3,7 +3,7 @@
  */
 
 @interface CNAutocompleteNetworkActivityThrottlingPolicy : NSObject <CNAutocompleteNetworkActivityPolicy> {
-    unsigned int _lengthOfString;
+    unsigned int  _lengthOfString;
 }
 
 @property (readonly, copy) NSString *debugDescription;

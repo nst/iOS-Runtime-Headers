@@ -3,7 +3,7 @@
  */
 
 @interface SFBrowserRemoteViewController : _UIRemoteViewController <SFRemoteViewControllerProtocol> {
-    <SFBrowserRemoveViewControllerDelegate> *_delegate;
+    <SFBrowserRemoveViewControllerDelegate> * _delegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -26,6 +26,7 @@
 - (void)setRemoteSwipeGestureEnabled:(BOOL)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)willDismissServiceViewController;
+- (void)willOpenURLInHostApplication:(id)arg1;
 - (void)willUpdateStatusBarStyle:(id)arg1;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface MFDAFolderChangeConsumer : NSObject <DAFolderChangeConsumer> {
-    MFConditionLock *_conditionLock;
-    MFDAFolderChangeResult *_result;
+    MFConditionLock * _conditionLock;
+    MFDAFolderChangeResult * _result;
 }
 
 - (void)dealloc;

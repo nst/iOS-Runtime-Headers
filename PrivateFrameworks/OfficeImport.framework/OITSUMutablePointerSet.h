@@ -3,7 +3,7 @@
  */
 
 @interface OITSUMutablePointerSet : NSMutableSet {
-    struct __CFSet { } *mSet;
+    struct __CFSet { } * mSet;
 }
 
 + (Class)privateMutableClass;

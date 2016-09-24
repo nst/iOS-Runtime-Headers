@@ -3,23 +3,23 @@
  */
 
 @interface SKUICarouselPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIMissingItemDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
-    UICollectionView *_carouselCollectionView;
-    int _cellCount;
-    SKUIViewElementLayoutContext *_cellLayoutContext;
-    NSObject<OS_dispatch_source> *_cycleTimer;
+    UICollectionView * _carouselCollectionView;
+    int  _cellCount;
+    SKUIViewElementLayoutContext * _cellLayoutContext;
+    NSObject<OS_dispatch_source> * _cycleTimer;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _itemSize;
-    float _itemSpacing;
-    float _itemWidth;
-    SKUIMissingItemLoader *_missingItemLoader;
-    NSArray *_modelObjects;
-    BOOL _needsHeightCalculation;
-    BOOL _needsReload;
-    int _progressIndicatorCellIndex;
-    SKUIProgressIndicatorViewElement *_progressIndicatorElement;
-    NSIndexPath *_reloadIndexPath;
+        double width; 
+        double height; 
+    }  _itemSize;
+    double  _itemSpacing;
+    double  _itemWidth;
+    SKUIMissingItemLoader * _missingItemLoader;
+    NSArray * _modelObjects;
+    BOOL  _needsHeightCalculation;
+    BOOL  _needsReload;
+    int  _progressIndicatorCellIndex;
+    SKUIProgressIndicatorViewElement * _progressIndicatorElement;
+    NSIndexPath * _reloadIndexPath;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -41,7 +41,7 @@
 - (void)_fireCycleTimer;
 - (BOOL)_indexPathIsProgressIndicator:(id)arg1;
 - (BOOL)_isItemEnabledAtIndexPath:(id)arg1;
-- (struct CGSize { float x1; float x2; })_legacyItemSize;
+- (struct CGSize { double x1; double x2; })_legacyItemSize;
 - (float)_legacyItemSpacing;
 - (void)_loadMissingItemsFromIndex:(int)arg1 withReason:(int)arg2;
 - (id)_missingItemLoader;
@@ -54,7 +54,7 @@
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (id)backgroundColorForIndexPath:(id)arg1;
 - (id)cellForIndexPath:(id)arg1;
-- (struct CGSize { float x1; float x2; })cellSizeForIndexPath:(id)arg1;
+- (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
 - (void)collectionView:(id)arg1 carouselLayout:(id)arg2 willApplyLayoutAttributes:(id)arg3;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
@@ -76,8 +76,8 @@
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionContentInset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionContentInset;
 - (void)willAppearInContext:(id)arg1;
-- (void)willTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)willTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

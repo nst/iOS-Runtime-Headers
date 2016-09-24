@@ -3,18 +3,18 @@
  */
 
 @interface SKUIMediaComponent : SKUIPageComponent <SSMetricsEventFieldProvider> {
-    NSString *_accessibilityLabel;
-    int _alignment;
-    double _duration;
-    SKUILink *_link;
-    int _mediaAppearance;
-    long long _mediaIdentifier;
-    int _mediaType;
-    NSString *_mediaURLString;
-    SKUIArtworkList *_thumbnailArtworkList;
-    NSString *_title;
-    float _titleFontSize;
-    int _titleFontWeight;
+    NSString * _accessibilityLabel;
+    int  _alignment;
+    double  _duration;
+    SKUILink * _link;
+    int  _mediaAppearance;
+    int  _mediaIdentifier;
+    int  _mediaType;
+    NSString * _mediaURLString;
+    <SKUIArtworkProviding> * _thumbnailArtworkProvider;
+    NSString * _title;
+    double  _titleFontSize;
+    int  _titleFontWeight;
 }
 
 @property (nonatomic, readonly) NSString *accessibilityLabel;
@@ -25,13 +25,13 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) SKUILink *link;
 @property (nonatomic, readonly) int mediaAppearance;
-@property (nonatomic, readonly) long long mediaIdentifier;
+@property (nonatomic, readonly) int mediaIdentifier;
 @property (nonatomic, readonly) int mediaType;
 @property (nonatomic, readonly) NSString *mediaURLString;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) SKUIArtworkList *thumbnailArtworkList;
+@property (nonatomic, readonly) <SKUIArtworkProviding> *thumbnailArtworkProvider;
 @property (nonatomic, readonly) NSString *title;
-@property (nonatomic, readonly) float titleFontSize;
+@property (nonatomic, readonly) double titleFontSize;
 @property (nonatomic, readonly) int titleFontWeight;
 
 - (void).cxx_destruct;
@@ -42,17 +42,17 @@
 - (int)componentType;
 - (double)duration;
 - (id)initWithArtwork:(id)arg1;
-- (id)initWithArtworkList:(id)arg1;
-- (id)initWithArtworkList:(id)arg1 appearance:(int)arg2;
+- (id)initWithArtworkProvider:(id)arg1;
+- (id)initWithArtworkProvider:(id)arg1 appearance:(int)arg2;
 - (id)initWithCustomPageContext:(id)arg1;
 - (id)initWithFeaturedContentContext:(id)arg1 kind:(int)arg2;
 - (id)link;
 - (int)mediaAppearance;
-- (long long)mediaIdentifier;
+- (int)mediaIdentifier;
 - (int)mediaType;
 - (id)mediaURLString;
 - (id)metricsElementName;
-- (id)thumbnailArtworkList;
+- (id)thumbnailArtworkProvider;
 - (id)title;
 - (float)titleFontSize;
 - (int)titleFontWeight;

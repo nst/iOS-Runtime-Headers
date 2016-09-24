@@ -3,10 +3,10 @@
  */
 
 @interface SCRDFileReader : NSObject {
-    <SCRDFileReaderDelegate> *_delegate;
-    NSFileHandle *_fileHandle;
-    NSThread *_readerThread;
-    int _threadStartCount;
+    <SCRDFileReaderDelegate> * _delegate;
+    NSFileHandle * _fileHandle;
+    NSThread * _readerThread;
+    int  _threadStartCount;
 }
 
 - (void)_readHandler:(id)arg1;

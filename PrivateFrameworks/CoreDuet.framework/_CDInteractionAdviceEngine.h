@@ -3,10 +3,10 @@
  */
 
 @interface _CDInteractionAdviceEngine : NSObject <_CDInteractionAdvising> {
-    _CDQueryInteractionAdvisor *_queryAdvisor;
-    _CDSocialInteractionAdvisor *_socialAdvisor;
-    _CDInteractionStore *_store;
-    _CDTemporalInteractionAdvisor *_temporalAdvisor;
+    _CDQueryInteractionAdvisor * _queryAdvisor;
+    _CDSocialInteractionAdvisor * _socialAdvisor;
+    _CDInteractionStore * _store;
+    _CDTemporalInteractionAdvisor * _temporalAdvisor;
 }
 
 @property (nonatomic, readonly) _CDSocialInteractionAdvisor *socialAdvisor;

@@ -3,7 +3,7 @@
  */
 
 @interface PFUbiquityMergeConflict : NSMergeConflict {
-    NSDictionary *_ancestorSnapshot;
+    NSDictionary * _ancestorSnapshot;
 }
 
 @property (retain) NSDictionary *ancestorSnapshot;

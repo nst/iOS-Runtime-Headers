@@ -3,21 +3,21 @@
  */
 
 @interface AWDWifiAssociation : PBCodable <NSCopying> {
-    NSData *_bssidOui;
-    int _channel;
-    int _deauthReason;
-    NSData *_deauthSourceOui;
-    unsigned int _error;
+    NSData * _bssidOui;
+    int  _channel;
+    int  _deauthReason;
+    NSData * _deauthSourceOui;
+    unsigned int  _error;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int channel : 1; 
         unsigned int deauthReason : 1; 
         unsigned int error : 1; 
         unsigned int signal : 1; 
-    } _has;
-    NSString *_security;
-    int _signal;
-    unsigned long long _timestamp;
+    }  _has;
+    NSString * _security;
+    int  _signal;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic, retain) NSData *bssidOui;

@@ -3,11 +3,11 @@
  */
 
 @interface WMFReader : NSObject <MFReader> {
-    unsigned int m_cursor;
-    unsigned int m_length;
-    const char *m_pBuffer;
-    WMFPlayer *m_player;
-    int m_recordsRead;
+    unsigned int  m_cursor;
+    unsigned int  m_length;
+    const char * m_pBuffer;
+    WMFPlayer * m_player;
+    int  m_recordsRead;
 }
 
 @property (readonly, copy) NSString *debugDescription;

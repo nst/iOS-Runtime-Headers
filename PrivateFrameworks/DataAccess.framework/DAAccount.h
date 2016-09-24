@@ -3,23 +3,24 @@
  */
 
 @interface DAAccount : NSObject {
-    NSArray *_appIdsForPasswordPrompt;
-    ACAccount *_backingAccountInfo;
-    NSString *_clientToken;
-    NSMapTable *_consumers;
-    NSMutableDictionary *_dataclassPropertyURLsByDataclass;
-    BOOL _hasInitted;
-    BOOL _isValidating;
-    unsigned long long _lastQueryStartedTime;
-    NSMutableArray *_pendingQueries;
-    NSObject<OS_dispatch_queue> *_pendingQueryQueue;
-    BOOL _shouldFailAllTasks;
-    BOOL _shouldUseOpportunisticSockets;
-    DAStatusReport *_statusReport;
-    struct __CFURLStorageSession { } *_storageSession;
-    DATaskManager *_taskManager;
-    DATrustHandler *_trustHandler;
-    BOOL _wasUserInitiated;
+    NSArray * _appIdsForPasswordPrompt;
+    ACAccount * _backingAccountInfo;
+    NSString * _clientToken;
+    NSMapTable * _consumers;
+    NSMutableDictionary * _dataclassPropertyURLsByDataclass;
+    BOOL  _hasInitted;
+    BOOL  _isValidating;
+    unsigned int  _lastQueryStartedTime;
+    NSMutableArray * _pendingQueries;
+    NSObject<OS_dispatch_queue> * _pendingQueryQueue;
+    BOOL  _shouldFailAllTasks;
+    BOOL  _shouldUseOpportunisticSockets;
+    NSString * _sourceApplicationBundleIdentifier;
+    DAStatusReport * _statusReport;
+    struct __CFURLStorageSession { } * _storageSession;
+    DATaskManager * _taskManager;
+    DATrustHandler * _trustHandler;
+    BOOL  _wasUserInitiated;
 }
 
 @property (nonatomic, copy) NSString *accountDescription;
@@ -39,7 +40,7 @@
 @property (nonatomic, readonly) BOOL isChildAccount;
 @property (nonatomic) BOOL isValidating;
 @property (nonatomic, readonly) int keychainAccessibilityType;
-@property (nonatomic) unsigned long long lastQueryStartedTime;
+@property (nonatomic) unsigned int lastQueryStartedTime;
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, retain) NSMutableArray *pendingQueries;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *pendingQueryQueue;
@@ -56,6 +57,7 @@
 @property (nonatomic, readonly) BOOL shouldFailAllTasks;
 @property (nonatomic) BOOL shouldUseOpportunisticSockets;
 @property (nonatomic, retain) NSData *signingIdentityPersistentReference;
+@property (nonatomic, copy) NSString *sourceApplicationBundleIdentifier;
 @property (nonatomic, retain) DAStatusReport *statusReport;
 @property (nonatomic, readonly) DATaskManager *taskManager;
 @property (nonatomic, retain) DATrustHandler *trustHandler;
@@ -162,7 +164,7 @@
 - (BOOL)isSubscribedCalendarAccount;
 - (BOOL)isValidating;
 - (int)keychainAccessibilityType;
-- (unsigned long long)lastQueryStartedTime;
+- (unsigned int)lastQueryStartedTime;
 - (id)localizedIdenticalAccountFailureMessage;
 - (id)localizedInvalidPasswordMessage;
 - (BOOL)monitorFolderWithID:(id)arg1;
@@ -223,7 +225,7 @@
 - (void)setHost:(id)arg1;
 - (void)setIdentityCertificatePersistentID:(id)arg1 managedByProfile:(BOOL)arg2;
 - (void)setIsValidating:(BOOL)arg1;
-- (void)setLastQueryStartedTime:(unsigned long long)arg1;
+- (void)setLastQueryStartedTime:(unsigned int)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (void)setPassword:(id)arg1;
 - (void)setPendingQueries:(id)arg1;
@@ -234,6 +236,7 @@
 - (void)setShouldDoInitialAutodiscovery:(BOOL)arg1;
 - (void)setShouldUseOpportunisticSockets:(BOOL)arg1;
 - (oneway void)setSigningIdentityPersistentReference:(id)arg1;
+- (void)setSourceApplicationBundleIdentifier:(id)arg1;
 - (void)setStatusReport:(id)arg1;
 - (void)setToDosNumberOfPastDaysToSync:(int)arg1;
 - (void)setTrustHandler:(id)arg1;
@@ -248,6 +251,7 @@
 - (BOOL)shouldUseOpportunisticSockets;
 - (void)shutdown;
 - (id)signingIdentityPersistentReference;
+- (id)sourceApplicationBundleIdentifier;
 - (id)spinnerIdentifiers;
 - (id)stateString;
 - (id)statusReport;
@@ -269,6 +273,7 @@
 - (int)toDosNumberOfPastDaysToSync;
 - (id)trustHandler;
 - (id)unactionableICSRepresentationForMetaData:(id)arg1 inFolderWithId:(id)arg2 outSummary:(id*)arg3;
+- (void)updateExistingAccountProperties;
 - (void)updateOofSettingsWithParams:(id)arg1 consumer:(id)arg2;
 - (BOOL)upgradeAccount;
 - (id)urlFromDataclassPropertiesForDataclass:(id)arg1;

@@ -3,15 +3,15 @@
  */
 
 @interface PUAggregateDictionaryTracer : NSObject {
-    int __assetPlayCount;
-    NSMapTable *__browsingViewModelTracers;
-    NSDate *__lastPlayStartDate;
-    <PUDisplayAsset> *__lastPlayedAsset;
-    <PUDisplayAsset> *__lastViewedAsset;
-    <PUDisplayAsset> *__streamedVideo;
-    double __streamedVideoBeginTime;
-    BOOL __streamedVideoDidStartPlaying;
-    int __streamedVideoStallCount;
+    int  __assetPlayCount;
+    NSMapTable * __browsingViewModelTracers;
+    NSDate * __lastPlayStartDate;
+    <PUDisplayAsset> * __lastPlayedAsset;
+    <PUDisplayAsset> * __lastViewedAsset;
+    <PUDisplayAsset> * __streamedVideo;
+    double  __streamedVideoBeginTime;
+    BOOL  __streamedVideoDidStartPlaying;
+    int  __streamedVideoStallCount;
 }
 
 @property (setter=_setAssetPlayCount:, nonatomic) int _assetPlayCount;

@@ -3,12 +3,12 @@
  */
 
 @interface MCProfileInfo : NSObject <NSSecureCoding> {
-    NSString *_UUID;
-    NSDate *_expiryDate;
-    NSString *_friendlyName;
-    NSString *_identifier;
-    NSString *_organization;
-    NSString *_profileDescription;
+    NSString * _UUID;
+    NSDate * _expiryDate;
+    NSString * _friendlyName;
+    NSString * _identifier;
+    NSString * _organization;
+    NSString * _profileDescription;
 }
 
 @property (nonatomic, retain) NSString *UUID;

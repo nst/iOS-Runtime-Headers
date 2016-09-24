@@ -3,7 +3,7 @@
  */
 
 @interface MusicCompositeEntityViewDescriptor : MusicEntityViewDescriptor {
-    NSArray *_entityViewDescriptors;
+    NSArray * _entityViewDescriptors;
 }
 
 @property (nonatomic, copy) NSArray *entityViewDescriptors;

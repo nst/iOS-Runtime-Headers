@@ -3,7 +3,7 @@
  */
 
 @interface CNiOSABGroupsInGroupPredicate : CNPredicate <CNiOSGroupPredicate> {
-    NSString *_parentGroupIdentifier;
+    NSString * _parentGroupIdentifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;

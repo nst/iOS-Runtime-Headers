@@ -3,9 +3,9 @@
  */
 
 @interface TSDGLLayerContext : NSObject <TSDGLLayerContext> {
-    EAGLContext *mContext;
-    unsigned int mFramebuffer;
-    unsigned int mRenderbuffer;
+    EAGLContext * mContext;
+    unsigned int  mFramebuffer;
+    unsigned int  mRenderbuffer;
 }
 
 @property (readonly, copy) NSString *debugDescription;

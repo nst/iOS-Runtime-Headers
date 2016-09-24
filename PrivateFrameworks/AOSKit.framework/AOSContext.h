@@ -3,11 +3,11 @@
  */
 
 @interface AOSContext : NSObject <NSPortDelegate> {
-    struct AOSAccount { } *_account;
-    int (*_callback;
-    NSThread *_callbackThread;
-    id _info;
-    struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id /* block */ x7; id x8; void x9; id x10; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x11; int (*x12)(); } *_transaction;
+    struct AOSAccount { } * _account;
+    int (* _callback;
+    NSThread * _callbackThread;
+    id  _info;
+    struct AOSTransactionC { Class x1; unsigned char x2; unsigned char x3; void *x4; struct __CFError {} *x5; int (*x6)(); id /* block */ x7; id x8; void x9; id x10; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x11; int (*x12)(); } * _transaction;
 }
 
 @property (readonly, copy) NSString *debugDescription;

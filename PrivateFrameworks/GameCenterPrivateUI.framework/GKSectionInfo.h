@@ -3,11 +3,11 @@
  */
 
 @interface GKSectionInfo : NSObject {
-    NSArray *_items;
-    NSPredicate *_predicate;
-    int _section;
-    NSArray *_sortDescriptors;
-    NSString *_title;
+    NSArray * _items;
+    NSPredicate * _predicate;
+    int  _section;
+    NSArray * _sortDescriptors;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) NSArray *items;

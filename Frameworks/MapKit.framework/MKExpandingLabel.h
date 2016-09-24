@@ -3,21 +3,25 @@
  */
 
 @interface MKExpandingLabel : UIView <UIGestureRecognizerDelegate> {
-    BOOL _constraintsAdded;
-    unsigned int _expansionMode;
-    UIFont *_font;
-    id /* block */ _labelResizedBlock;
-    unsigned int _numberOfLinesWhenCollapsed;
-    UILabel *_showMoreLabel;
-    UITapGestureRecognizer *_showMoreTapRecognizer;
-    int _textAlignment;
-    UIColor *_textColor;
-    NSTextContainer *_textContainer;
-    NSLayoutManager *_textLayoutManager;
-    NSTextStorage *_textStorage;
-    UITextView *_textView;
+    BOOL  _constraintsAdded;
+    unsigned int  _expansionMode;
+    UIFont * _font;
+    BOOL  _isPerformingLayout;
+    id /* block */  _labelResizedBlock;
+    unsigned int  _numberOfLinesWhenCollapsed;
+    _MKUILabel * _showMoreLabel;
+    UITapGestureRecognizer * _showMoreTapRecognizer;
+    UIColor * _showMoreTextColor;
+    int  _textAlignment;
+    UIColor * _textColor;
+    NSTextContainer * _textContainer;
+    NSLayoutManager * _textLayoutManager;
+    NSTextStorage * _textStorage;
+    UITextView * _textView;
+    BOOL  _useAttributedText;
 }
 
+@property (nonatomic, copy) NSAttributedString *attributedText;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (getter=isExpanded, nonatomic) BOOL expanded;
@@ -33,24 +37,29 @@
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic) int textAlignment;
 @property (nonatomic, retain) UIColor *textColor;
+@property (nonatomic, retain) UITextView *textView;
 
 - (void).cxx_destruct;
 - (BOOL)_canShowAllText;
 - (void)_expand;
 - (void)_mkExpandingLabelComonInit;
 - (void)_setExpansionMode:(unsigned int)arg1;
+- (void)_setTextExclusionPath;
 - (void)_updateTextAttributes;
+- (id)attributedText;
 - (id)font;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (void)infoCardThemeChanged:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isExpanded;
 - (BOOL)isShowingExpanded;
 - (id /* block */)labelResizedBlock;
 - (void)layoutSubviews;
 - (int)lineBreakMode;
 - (unsigned int)numberOfLinesWhenCollapsed;
+- (void)setAttributedText:(id)arg1;
 - (void)setExpanded:(BOOL)arg1;
 - (void)setFont:(id)arg1;
 - (void)setLabelResizedBlock:(id /* block */)arg1;
@@ -62,12 +71,16 @@
 - (void)setText:(id)arg1;
 - (void)setTextAlignment:(int)arg1;
 - (void)setTextColor:(id)arg1;
+- (void)setTextView:(id)arg1;
 - (id)showMoreFont;
 - (id)showMoreText;
 - (id)showMoreTextColor;
 - (id)text;
 - (int)textAlignment;
 - (id)textColor;
+- (id)textView;
 - (void)updateConstraints;
+- (id)viewForFirstBaselineLayout;
+- (id)viewForLastBaselineLayout;
 
 @end

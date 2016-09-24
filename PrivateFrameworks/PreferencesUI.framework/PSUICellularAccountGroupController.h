@@ -3,8 +3,8 @@
  */
 
 @interface PSUICellularAccountGroupController : NSObject <PSSpecifierGroupController> {
-    PSSpecifier *_groupSpecifier;
-    PSListController *_listController;
+    PSSpecifier * _groupSpecifier;
+    PSListController * _listController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

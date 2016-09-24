@@ -3,20 +3,20 @@
  */
 
 @interface NSTextStorage : NSMutableAttributedString {
-    int _editedDelta;
+    int  _editedDelta;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _editedRange;
+    }  _editedRange;
     struct { 
         unsigned int editedMask : 8; 
         unsigned int postWillProcess : 1; 
         unsigned int postDidProcess : 1; 
         unsigned int  : 6; 
         unsigned int disabled : 16; 
-    } _flags;
-    NSMutableArray *_layoutManagers;
-    id _sideData;
+    }  _flags;
+    NSMutableArray * _layoutManagers;
+    id  _sideData;
 }
 
 @property (nonatomic, readonly) int changeInLength;
@@ -74,7 +74,6 @@
 - (void)removeLayoutManager:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEditedMask:(unsigned int)arg1;
-- (void)setEditedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 

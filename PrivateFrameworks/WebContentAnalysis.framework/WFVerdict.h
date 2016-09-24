@@ -3,11 +3,11 @@
  */
 
 @interface WFVerdict : NSObject {
-    WFLSMResult *LSMEvaluationResult;
-    NSString *URL;
-    int evidence;
-    NSString *message;
-    BOOL restricted;
+    WFLSMResult * LSMEvaluationResult;
+    NSString * URL;
+    int  evidence;
+    NSString * message;
+    BOOL  restricted;
 }
 
 + (id)verdictWithRestriction:(BOOL)arg1 URL:(id)arg2 evidence:(int)arg3 LSMEvaluationResult:(id)arg4 message:(id)arg5;

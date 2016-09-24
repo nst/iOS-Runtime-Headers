@@ -5,57 +5,62 @@
 @interface QLThumbnailCreationOperation : NSOperation {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _contentRect;
-    NSURL *_documentURL;
-    NSError *_error;
-    BOOL _executing;
-    BOOL _finished;
-    UIImage *_image;
-    float _maximumDimension;
-    float _scaleFactor;
-    unsigned int _useMode;
+    }  _contentRect;
+    NSURL * _documentURL;
+    NSError * _error;
+    BOOL  _executing;
+    BOOL  _finished;
+    BOOL  _generateIfNeeded;
+    UIImage * _image;
+    double  _maximumDimension;
+    double  _scaleFactor;
+    unsigned int  _useMode;
 }
 
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentRect;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } contentRect;
 @property (retain) NSURL *documentURL;
 @property (retain) NSError *error;
+@property BOOL generateIfNeeded;
 @property (retain) UIImage *image;
-@property float maximumDimension;
-@property float scaleFactor;
+@property double maximumDimension;
+@property double scaleFactor;
 @property unsigned int useMode;
 
+- (void).cxx_destruct;
 - (void)_finish;
 - (BOOL)_finishIfCancelled;
-- (void)checkIfThumbnailExistsAtPhysicalURL:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRect;
-- (void)dealloc;
+- (void)_finishWithError:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentRect;
 - (id)documentURL;
 - (id)error;
+- (BOOL)generateIfNeeded;
 - (id)image;
 - (BOOL)isConcurrent;
 - (BOOL)isExecuting;
 - (BOOL)isFinished;
 - (void)main;
 - (float)maximumDimension;
-- (void)retrieveThumbnailForPhysicalURL:(id)arg1 hasThumbnailInIndex:(BOOL)arg2;
+- (void)retrieveThumbnailForTaggedLogicalURL:(id)arg1;
 - (float)scaleFactor;
-- (void)setContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setDocumentURL:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setExecuting:(BOOL)arg1;
 - (void)setFinished:(BOOL)arg1;
+- (void)setGenerateIfNeeded:(BOOL)arg1;
 - (void)setImage:(id)arg1;
 - (void)setMaximumDimension:(float)arg1;
 - (void)setScaleFactor:(float)arg1;
 - (void)setUseMode:(unsigned int)arg1;
 - (void)start;
+- (void)updateLastHitDateOfAddition:(id)arg1 onPhysicalURL:(id)arg2;
 - (unsigned int)useMode;
 
 @end

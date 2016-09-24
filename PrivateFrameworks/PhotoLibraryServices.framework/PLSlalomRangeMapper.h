@@ -3,9 +3,9 @@
  */
 
 @interface PLSlalomRangeMapper : NSObject {
-    NSMutableArray *_originalLengths;
-    NSMutableArray *_scaledLengths;
-    NSMutableArray *_scaledRegions;
+    NSMutableArray * _originalLengths;
+    NSMutableArray * _scaledLengths;
+    NSMutableArray * _scaledRegions;
 }
 
 - (float)_mapTime:(float)arg1 fromLengths:(id)arg2 toLengths:(id)arg3;

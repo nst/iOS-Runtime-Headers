@@ -3,13 +3,13 @@
  */
 
 @interface CAMCaptureRequestIntervalometer : NSObject {
-    CAMPreciseTimer *__timer;
-    double _delay;
-    <CAMCaptureRequestIntervalometerDelegate> *_delegate;
-    double _interval;
-    int _maximumCount;
-    CAMCaptureRequest *_prototypeRequest;
-    int _remaining;
+    CAMPreciseTimer * __timer;
+    double  _delay;
+    <CAMCaptureRequestIntervalometerDelegate> * _delegate;
+    double  _interval;
+    int  _maximumCount;
+    CAMCaptureRequest * _prototypeRequest;
+    int  _remaining;
 }
 
 @property (nonatomic, readonly) CAMPreciseTimer *_timer;

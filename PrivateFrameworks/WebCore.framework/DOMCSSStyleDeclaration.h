@@ -6,8 +6,8 @@
 
 @property (copy) NSString *cssText;
 @property (readonly) unsigned int length;
-@property (readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } mf_margin;
-@property (readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } mf_padding;
+@property (readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } mf_margin;
+@property (readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } mf_padding;
 @property (readonly) DOMCSSRule *parentRule;
 
 // Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
@@ -62,7 +62,6 @@
 - (id)display;
 - (id)elevation;
 - (id)emptyCells;
-- (void)finalize;
 - (id)font;
 - (id)fontFamily;
 - (id)fontSize;
@@ -276,7 +275,7 @@
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })mf_margin;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })mf_padding;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })mf_margin;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })mf_padding;
 
 @end

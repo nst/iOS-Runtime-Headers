@@ -3,8 +3,8 @@
  */
 
 @interface GraphRenderer : NSObject {
-    BOOL _cancelled;
-    NSObject<OS_dispatch_queue> *_queue;
+    BOOL  _cancelled;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 + (void)clearSharedRenderer;

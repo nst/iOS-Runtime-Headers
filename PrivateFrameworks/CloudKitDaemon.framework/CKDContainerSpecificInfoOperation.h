@@ -3,9 +3,9 @@
  */
 
 @interface CKDContainerSpecificInfoOperation : CKDOperation {
-    CKDContainerInfo *_containerInfo;
-    NSObject<OS_dispatch_group> *_infoFetchedGroup;
-    BOOL _needUserID;
+    CKDContainerInfo * _containerInfo;
+    NSObject<OS_dispatch_group> * _infoFetchedGroup;
+    BOOL  _needUserID;
 }
 
 @property (nonatomic, copy) CKDContainerInfo *containerInfo;
@@ -13,7 +13,7 @@
 @property (nonatomic) BOOL needUserID;
 
 - (void).cxx_destruct;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (id)containerInfo;
 - (id)infoFetchedGroup;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;

@@ -3,12 +3,12 @@
  */
 
 @interface WBSFeedSource : NSObject {
-    NSURL *_feedURL;
-    NSArray *_siteIconURLs;
-    NSURL *_sourceURL;
-    int _state;
-    BOOL _subscribedWhenSyncWasOff;
-    NSString *_title;
+    NSURL * _feedURL;
+    NSArray * _siteIconURLs;
+    NSURL * _sourceURL;
+    int  _state;
+    BOOL  _subscribedWhenSyncWasOff;
+    NSString * _title;
 }
 
 @property (nonatomic, readonly) NSString *displayName;

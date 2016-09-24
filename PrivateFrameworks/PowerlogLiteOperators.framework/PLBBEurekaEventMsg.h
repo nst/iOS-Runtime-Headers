@@ -3,12 +3,12 @@
  */
 
 @interface PLBBEurekaEventMsg : PLBasebandMessage {
-    NSMutableDictionary *_commonInfo;
-    unsigned char _inited;
-    NSMutableDictionary *_kvPairs;
-    NSMutableString *_sdAct;
-    NSMutableString *_sdEvent;
-    NSMutableString *_sdState;
+    NSMutableDictionary * _commonInfo;
+    unsigned char  _inited;
+    NSMutableDictionary * _kvPairs;
+    NSMutableString * _sdAct;
+    NSMutableString * _sdEvent;
+    NSMutableString * _sdState;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *commonInfo;

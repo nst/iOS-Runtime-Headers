@@ -3,11 +3,11 @@
  */
 
 @interface NSNotificationQueue : NSObject {
-    id _asapObs;
-    id _asapQueue;
-    id _idleObs;
-    id _idleQueue;
-    id _notificationCenter;
+    id  _asapObs;
+    id  _asapQueue;
+    id  _idleObs;
+    id  _idleQueue;
+    id  _notificationCenter;
 }
 
 + (id)defaultQueue;

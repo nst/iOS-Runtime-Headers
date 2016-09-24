@@ -3,24 +3,27 @@
  */
 
 @interface SGRe2 : NSObject {
-    BOOL _isTrivial;
-    long _isTrivialOnceToken;
+    unsigned char  _isTrivial;
 }
 
-+ (id)convertPerlStyleLiteralToRegexpString:(id)arg1;
 + (id)re2WithRegexp:(id)arg1;
++ (id)re2WithRegexpData:(id)arg1;
++ (id)re2WithRegexpDataLazy:(id)arg1;
 + (id)re2WithRegexpLazy:(id)arg1;
 + (id)re2WithSubregexps:(id)arg1;
 + (id)re2WithSubregexps:(id)arg1 prefilter:(id)arg2;
 + (void)setCacheLimitForTesting:(unsigned int)arg1;
 
-- (BOOL)_enumerateMatchesInUtf8:(const char *)arg1 fromString:(id)arg2 ngroups:(unsigned int)arg3 block:(id /* block */)arg4;
+- (int)_enumerateMatchesInUtf8:(const char *)arg1 fromString:(id)arg2 ngroups:(unsigned int)arg3 block:(id /* block */)arg4;
 - (void)enumerateMatchesInString:(id)arg1 ngroups:(unsigned int)arg2 block:(id /* block */)arg3;
+- (void)enumerateMatchesInString:(id)arg1 ngroups:(unsigned int)arg2 blockWithSubregexp:(id /* block */)arg3;
 - (void)enumerateMatchesInUtf8:(const char *)arg1 fromString:(id)arg2 ngroups:(unsigned int)arg3 block:(id /* block */)arg4;
-- (BOOL)existsInString:(id)arg1;
-- (BOOL)existsInUtf8:(const char *)arg1;
+- (void)enumerateMatchesInUtf8:(const char *)arg1 fromString:(id)arg2 ngroups:(unsigned int)arg3 blockWithSubregexp:(id /* block */)arg4;
+- (id)existsInString:(id)arg1;
+- (id)existsInUtf8:(const char *)arg1;
+- (id)hashId;
 - (BOOL)isTrivial;
-- (BOOL)matchesString:(id)arg1;
-- (BOOL)matchesUtf8:(const char *)arg1;
+- (id)matchesString:(id)arg1;
+- (id)matchesUtf8:(const char *)arg1;
 
 @end

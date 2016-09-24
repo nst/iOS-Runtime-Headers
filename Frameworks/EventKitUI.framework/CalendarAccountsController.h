@@ -3,9 +3,9 @@
  */
 
 @interface CalendarAccountsController : NSObject {
-    ACAccountStore *_accountStore;
-    NSMutableDictionary *_lastStoreListingRefreshDates;
-    NSObject<OS_dispatch_queue> *_refreshQueue;
+    ACAccountStore * _accountStore;
+    NSMutableDictionary * _lastStoreListingRefreshDates;
+    NSObject<OS_dispatch_queue> * _refreshQueue;
 }
 
 + (void)initialize;

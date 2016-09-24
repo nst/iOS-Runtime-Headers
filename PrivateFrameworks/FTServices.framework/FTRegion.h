@@ -3,9 +3,9 @@
  */
 
 @interface FTRegion : NSObject {
-    NSDictionary *_dictionary;
-    FTRegion *_parentRegion;
-    NSArray *_subRegions;
+    NSDictionary * _dictionary;
+    FTRegion * _parentRegion;
+    NSArray * _subRegions;
 }
 
 @property (retain) NSDictionary *_dictionary;

@@ -3,7 +3,7 @@
  */
 
 @interface IKCSSDeclarationInteger : IKCSSDeclaration {
-    int _value;
+    int  _value;
 }
 
 @property int value;

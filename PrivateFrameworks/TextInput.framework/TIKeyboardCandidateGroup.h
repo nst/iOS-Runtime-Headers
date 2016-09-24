@@ -3,8 +3,8 @@
  */
 
 @interface TIKeyboardCandidateGroup : NSObject <NSCopying, NSSecureCoding> {
-    NSOrderedSet *_candidates;
-    NSString *_title;
+    NSOrderedSet * _candidates;
+    NSString * _title;
 }
 
 @property (copy) NSOrderedSet *candidates;

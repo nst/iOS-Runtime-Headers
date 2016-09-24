@@ -3,11 +3,11 @@
  */
 
 @interface CPLEngineDerivativesCache : NSObject {
-    NSURL *_cacheMappingURL;
-    NSURL *_cacheURL;
-    Class _derivativeGeneratorClass;
-    NSObject<OS_dispatch_queue> *_queue;
-    BOOL _tryCreatingCacheFolder;
+    NSURL * _cacheMappingURL;
+    NSURL * _cacheURL;
+    Class  _derivativeGeneratorClass;
+    NSObject<OS_dispatch_queue> * _queue;
+    BOOL  _tryCreatingCacheFolder;
 }
 
 @property (nonatomic, readonly, copy) NSURL *cacheURL;

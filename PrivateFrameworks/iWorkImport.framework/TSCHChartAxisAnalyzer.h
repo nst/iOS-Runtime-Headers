@@ -3,16 +3,16 @@
  */
 
 @interface TSCHChartAxisAnalyzer : NSObject {
-    TSCHChartAxis *mAxis;
-    BOOL mDidCalculateMedian;
-    BOOL mFirstValue;
-    double mMax;
-    double mMedian;
-    double mMin;
-    unsigned int mNumValues;
-    BOOL mShouldCalculateMedian;
-    double mSumOfValues;
-    NSMutableArray *mValues;
+    TSCHChartAxis * mAxis;
+    BOOL  mDidCalculateMedian;
+    BOOL  mFirstValue;
+    double  mMax;
+    double  mMedian;
+    double  mMin;
+    unsigned int  mNumValues;
+    BOOL  mShouldCalculateMedian;
+    double  mSumOfValues;
+    NSMutableArray * mValues;
 }
 
 + (id)analyzerForAxis:(id)arg1 needsMedian:(BOOL)arg2;

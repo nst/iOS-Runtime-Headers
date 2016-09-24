@@ -3,10 +3,10 @@
  */
 
 @interface _CDCachedPeopleSuggestion : NSObject {
-    _CDPeopleSuggesterContext *_context;
-    NSDate *_date;
-    _CDPeopleSuggesterSettings *_settings;
-    NSArray *_suggestions;
+    _CDPeopleSuggesterContext * _context;
+    NSDate * _date;
+    _CDPeopleSuggesterSettings * _settings;
+    NSArray * _suggestions;
 }
 
 @property (retain) _CDPeopleSuggesterContext *context;

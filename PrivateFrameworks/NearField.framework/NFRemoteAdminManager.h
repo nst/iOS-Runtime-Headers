@@ -3,9 +3,9 @@
  */
 
 @interface NFRemoteAdminManager : NSObject <NFRemoteAdminManagerCallbacks, NSXPCConnectionDelegate> {
-    NSXPCConnection *_connection;
-    NSMutableSet *_eventListeners;
-    BOOL _hasEventListener;
+    NSXPCConnection * _connection;
+    NSMutableSet * _eventListeners;
+    BOOL  _hasEventListener;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,18 +15,29 @@
 
 + (id)sharedRemoteAdminManager;
 
-- (void)_checkForConnectionReset;
+- (void)_connectIfNeeded;
+- (BOOL)cancelCardIngestion;
 - (void)connectToServer:(id)arg1 callback:(id /* block */)arg2;
 - (void)dealloc;
-- (void)didCloseXPCConnection:(id)arg1;
+- (void)didInterruptXPCConnection:(id)arg1;
+- (void)didInvalidateXPCConnection:(id)arg1;
+- (id)getAPNPublicToken;
+- (void)getSELDInfoForBroker:(id /* block */)arg1;
+- (BOOL)ingestCard:(id)arg1 uri:(id)arg2 cardSessionToken:(id)arg3;
+- (void)ingestCard:(id)arg1 uri:(id)arg2 cardSessionToken:(id)arg3 withCompletionHandler:(id /* block */)arg4;
 - (id)init;
 - (id)nextRequestForServer:(id)arg1;
+- (id)primaryRegionTopic;
 - (BOOL)queueServerConnection:(id)arg1;
 - (BOOL)queueServerConnectionForApplets:(id)arg1;
+- (void)readerModeCardIngestionStatus:(unsigned int)arg1;
+- (void)readerModeCardSessionToken:(id)arg1;
 - (void)registerEventListener:(id)arg1;
 - (id)registrationInfo;
 - (void)remoteAdminCleanupProgress:(double)arg1;
+- (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (BOOL)setRegistrationInfo:(id)arg1;
+- (BOOL)setRegistrationInfo:(id)arg1 primaryRegionTopic:(id)arg2;
 - (void)unregisterEventListener:(id)arg1;
 
 @end

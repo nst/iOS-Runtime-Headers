@@ -3,10 +3,10 @@
  */
 
 @interface PSSpecifierUpdateOperation : NSObject <NSCopying> {
-    NSNumber *_index;
-    int _operation;
-    PSSpecifier *_specifier;
-    NSNumber *_toIndex;
+    NSNumber * _index;
+    int  _operation;
+    PSSpecifier * _specifier;
+    NSNumber * _toIndex;
 }
 
 @property (nonatomic, retain) NSNumber *index;

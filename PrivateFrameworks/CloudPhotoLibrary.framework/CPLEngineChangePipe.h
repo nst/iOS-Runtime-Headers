@@ -16,6 +16,8 @@
 - (BOOL)compactChangeBatchesWithError:(id*)arg1;
 - (unsigned int)countOfQueuedBatches;
 - (BOOL)deleteAllChangeBatchesWithError:(id*)arg1;
+- (BOOL)hasQueuedBatches;
+- (BOOL)hasSomeChangeWithIdentifier:(id)arg1;
 - (id)initWithEngineStore:(id)arg1 name:(id)arg2;
 - (BOOL)isLocked;
 - (BOOL)markChangesWithIdentifier:(id)arg1 withAlterationType:(unsigned int)arg2 error:(id*)arg3;

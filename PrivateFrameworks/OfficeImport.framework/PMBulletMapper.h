@@ -3,9 +3,9 @@
  */
 
 @interface PMBulletMapper : CMMapper {
-    int mFontSize;
-    OADParagraphProperties *mProperties;
-    CMStyle *mStyle;
+    int  mFontSize;
+    OADParagraphProperties * mProperties;
+    CMStyle * mStyle;
 }
 
 + (id)stringForIndex:(unsigned int)arg1 withFormat:(int)arg2;

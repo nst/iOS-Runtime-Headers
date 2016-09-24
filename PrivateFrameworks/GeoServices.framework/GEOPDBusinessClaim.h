@@ -3,13 +3,13 @@
  */
 
 @interface GEOPDBusinessClaim : PBCodable <NSCopying> {
-    BOOL _buttonEnabled;
-    NSString *_buttonLabel;
-    NSString *_descriptionText;
+    BOOL  _buttonEnabled;
+    NSString * _buttonLabel;
+    NSString * _descriptionText;
     struct { 
         unsigned int buttonEnabled : 1; 
-    } _has;
-    NSString *_titleText;
+    }  _has;
+    NSString * _titleText;
 }
 
 @property (nonatomic) BOOL buttonEnabled;

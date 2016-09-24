@@ -3,14 +3,14 @@
  */
 
 @interface TSWPMergeSmartField : TSWPPlaceholderSmartField {
-    int _category;
-    NSString *_guid;
-    NSString *_key;
-    NSString *_label;
-    NSString *_property;
-    BOOL _requiresFollowingWhitespace;
-    NSString *_tableField;
-    NSString *_whitespace;
+    int  _category;
+    NSString * _guid;
+    NSString * _key;
+    NSString * _label;
+    NSString * _property;
+    BOOL  _requiresFollowingWhitespace;
+    NSString * _tableField;
+    NSString * _whitespace;
 }
 
 @property (nonatomic) int category;

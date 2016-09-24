@@ -3,7 +3,7 @@
  */
 
 @interface CKComparisonModifierValidator : CKPredicateValidatorInstance {
-    unsigned int _modifier;
+    unsigned int  _modifier;
 }
 
 @property (nonatomic) unsigned int modifier;

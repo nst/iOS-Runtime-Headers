@@ -3,8 +3,8 @@
  */
 
 @interface TSCHStyleOwnerUUIDEncoder : NSObject {
-    unsigned int mIndex;
-    unsigned char mUUID;
+    unsigned int  mIndex;
+    unsigned char  mUUID;
 }
 
 + (id)UUIDEncoder;
@@ -13,7 +13,7 @@
 + (id)styleOwnerBaseUUIDString;
 
 - (void)encodeByte:(unsigned char)arg1;
-- (void)encodeUInt64:(unsigned long long)arg1;
+- (void)encodeUInt64:(unsigned int)arg1;
 - (void)encodeUInt64FromNSUInteger:(unsigned int)arg1;
 - (id)encodedUUID;
 - (BOOL)hasSpaceToEncodeNumberOfBytes:(unsigned int)arg1;

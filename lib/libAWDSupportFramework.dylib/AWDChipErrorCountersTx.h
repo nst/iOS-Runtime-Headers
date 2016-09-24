@@ -9,12 +9,12 @@
         unsigned int txphycrs : 1; 
         unsigned int txphyerr : 1; 
         unsigned int txuflo : 1; 
-    } _has;
-    unsigned long long _txchanrej;
-    unsigned long long _txexptime;
-    unsigned long long _txphycrs;
-    unsigned long long _txphyerr;
-    unsigned long long _txuflo;
+    }  _has;
+    unsigned long long  _txchanrej;
+    unsigned long long  _txexptime;
+    unsigned long long  _txphycrs;
+    unsigned long long  _txphyerr;
+    unsigned long long  _txuflo;
 }
 
 @property (nonatomic) BOOL hasTxchanrej;

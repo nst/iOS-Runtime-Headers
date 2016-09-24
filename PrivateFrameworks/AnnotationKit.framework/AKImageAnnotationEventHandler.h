@@ -5,7 +5,7 @@
 @interface AKImageAnnotationEventHandler : AKRectangularAnnotationEventHandler
 
 - (BOOL)lockAspectRatioByDefault;
-- (struct CGSize { float x1; float x2; })naturalSizeForAnnotation;
-- (void)updateModelWithCurrentPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })naturalSizeForAnnotation;
+- (void)updateModelWithCurrentPoint:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

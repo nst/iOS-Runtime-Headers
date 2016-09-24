@@ -3,39 +3,37 @@
  */
 
 @interface UIPageController : UIViewController {
-    <UIPageControllerDelegate> *_delegate;
-    int _notificationState;
-    UIPageControl *_pageControl;
+    <UIPageControllerDelegate> * _delegate;
+    int  _notificationState;
+    UIPageControl * _pageControl;
     struct { 
         unsigned int delegateViewControllerAtIndex : 1; 
         unsigned int delegateWillBeginPaging : 1; 
         unsigned int delegateDidEndPaging : 1; 
         unsigned int displaysPageControl : 1; 
         unsigned int wraps : 1; 
-    } _pageControllerFlags;
-    int _pageCount;
-    int _pageSpacing;
-    UIScrollView *_scrollView;
-    NSMutableArray *_viewControllers;
-    int _visibleIndex;
-    UIView *_wrapperViews;
+    }  _pageControllerFlags;
+    int  _pageCount;
+    int  _pageSpacing;
+    UIScrollView * _scrollView;
+    NSMutableArray * _viewControllers;
+    int  _visibleIndex;
+    UIView * _wrapperViews;
 }
 
 @property (nonatomic) <UIPageControllerDelegate> *delegate;
 @property (nonatomic) BOOL displaysPageControl;
 @property (nonatomic) int pageCount;
-@property (nonatomic) float pageSpacing;
+@property (nonatomic) double pageSpacing;
 @property (nonatomic) int visibleIndex;
 @property (nonatomic, readonly, retain) UIViewController *visibleViewController;
 @property (nonatomic) BOOL wraps;
-
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (void)_adjustScrollViewContentInsets;
 - (BOOL)_allowsAutorotation;
 - (void)_createPageControl;
 - (BOOL)_doesVisibleViewControllerSupportInterfaceOrientation:(int)arg1;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; int x7; }*)arg1;
 - (BOOL)_hasNextViewController;
 - (BOOL)_hasPreviousViewController;
 - (BOOL)_hasVisibleViewController;
@@ -59,10 +57,10 @@
 - (int)_previousViewControllerNotificationState;
 - (void)_replaceViewControllerAtIndex:(int)arg1 withViewController:(id)arg2;
 - (id)_scrollView;
-- (void)_scrollView:(id)arg1 boundsDidChangeToSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)_scrollView:(id)arg1 boundsDidChangeToSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)_scrollViewDidEndPaging;
 - (void)_scrollViewDidScroll:(id)arg1 forceUpdate:(BOOL)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_scrollViewFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_scrollViewFrame;
 - (void)_scrollViewWillBeginPaging;
 - (void)_setNextViewController:(id)arg1;
 - (void)_setNextViewControllerNotificationState:(int)arg1;
@@ -106,9 +104,5 @@
 - (void)willAnimateSecondHalfOfRotationFromInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (BOOL)wraps;
-
-// Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
-
-- (id)pl_existingViewControllerAtIndex:(unsigned int)arg1;
 
 @end

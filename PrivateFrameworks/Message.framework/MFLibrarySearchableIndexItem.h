@@ -3,10 +3,10 @@
  */
 
 @interface MFLibrarySearchableIndexItem : NSObject {
-    NSData *_bodyData;
-    BOOL _hasCompleteBodyData;
-    NSString *_identifier;
-    MFMailMessage *_message;
+    NSData * _bodyData;
+    BOOL  _hasCompleteBodyData;
+    NSString * _identifier;
+    MFMailMessage * _message;
 }
 
 @property (nonatomic, retain) NSData *bodyData;
@@ -20,10 +20,12 @@
 + (id)transactionAttributeKey;
 
 - (BOOL)_isMessagePartOfExistingThreadWithHeaders:(id)arg1;
+- (BOOL)_shouldAutoDownloadAttachment:(id)arg1;
 - (id)bodyData;
 - (int)compare:(id)arg1;
 - (void)dealloc;
 - (id)domainIdentifier;
+- (id)fetchIndexableAttachments;
 - (BOOL)hasCompleteBodyData;
 - (id)identifier;
 - (id)init;
@@ -34,5 +36,6 @@
 - (id)searchableItemWithClientState:(id)arg1;
 - (void)setBodyData:(id)arg1;
 - (void)setHasCompleteBodyData:(BOOL)arg1;
+- (BOOL)shouldExcludeFromIndex;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface TPPageLayoutNotifier : NSObject <TPPageControllerLayoutObserver> {
-    TPPageController *_pageController;
+    TPPageController * _pageController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

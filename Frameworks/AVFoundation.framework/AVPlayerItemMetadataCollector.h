@@ -3,7 +3,7 @@
  */
 
 @interface AVPlayerItemMetadataCollector : AVPlayerItemMediaDataCollector {
-    AVPlayerItemMetadataCollectorInternal *_metadataCollectorInternal;
+    AVPlayerItemMetadataCollectorInternal * _metadataCollectorInternal;
 }
 
 @property (nonatomic, readonly) <AVPlayerItemMetadataCollectorPushDelegate> *delegate;

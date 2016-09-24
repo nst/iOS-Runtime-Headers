@@ -3,13 +3,13 @@
  */
 
 @interface SBUIBannerAction : NSObject {
-    id /* block */ _actionBlock;
-    unsigned int _activationMode;
-    unsigned int _behavior;
-    NSString *_identifier;
-    NSDictionary *_parameters;
-    NSString *_remoteServiceBundleIdentifier;
-    NSString *_remoteViewControllerClassName;
+    id /* block */  _actionBlock;
+    unsigned int  _activationMode;
+    unsigned int  _behavior;
+    NSString * _identifier;
+    NSDictionary * _parameters;
+    NSString * _remoteServiceBundleIdentifier;
+    NSString * _remoteViewControllerClassName;
 }
 
 @property (nonatomic, copy) id /* block */ actionBlock;

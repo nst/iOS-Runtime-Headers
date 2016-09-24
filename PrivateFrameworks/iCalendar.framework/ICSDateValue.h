@@ -3,9 +3,9 @@
  */
 
 @interface ICSDateValue : NSObject <NSCoding> {
-    int _day;
-    int _month;
-    int _year;
+    int  _day;
+    int  _month;
+    int  _year;
 }
 
 @property (readonly) int day;

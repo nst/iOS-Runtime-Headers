@@ -3,7 +3,7 @@
  */
 
 @interface IKCSSDeclarationURL : IKCSSDeclaration {
-    NSURL *_value;
+    NSURL * _value;
 }
 
 @property (nonatomic, retain) NSURL *value;

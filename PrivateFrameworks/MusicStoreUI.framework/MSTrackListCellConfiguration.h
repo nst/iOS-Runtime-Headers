@@ -8,7 +8,7 @@
         unsigned int localCount; 
         unsigned int globalIndex; 
         unsigned int globalCount; 
-    } _position;
+    }  _position;
 }
 
 @property (nonatomic) struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; } position;

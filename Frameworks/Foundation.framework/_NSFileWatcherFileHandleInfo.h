@@ -3,8 +3,8 @@
  */
 
 @interface _NSFileWatcherFileHandleInfo : NSObject {
-    BOOL closed;
-    int fileHandle;
+    BOOL  closed;
+    int  fileHandle;
 }
 
 @property (readonly) BOOL isDirectory;
@@ -15,5 +15,6 @@
 - (void)dealloc;
 - (id)description;
 - (BOOL)isDirectory;
+- (BOOL)verifyAccessByProcessIdentifier:(int)arg1;
 
 @end

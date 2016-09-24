@@ -3,11 +3,11 @@
  */
 
 @interface MSCLAttachmentDownloadOperation : NSOperation <MPStoreDownloadManagerObserver> {
-    MSCLAttachment *_attachment;
-    MPStoreDownload *_download;
-    double _downloadProgress;
-    BOOL _executing;
-    BOOL _finished;
+    MSCLAttachment * _attachment;
+    MPStoreDownload * _download;
+    double  _downloadProgress;
+    BOOL  _executing;
+    BOOL  _finished;
 }
 
 @property (nonatomic, copy) MSCLAttachment *attachment;

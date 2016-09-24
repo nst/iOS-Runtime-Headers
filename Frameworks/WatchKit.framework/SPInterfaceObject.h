@@ -3,11 +3,11 @@
  */
 
 @interface SPInterfaceObject : NSObject {
-    NSString *_interfaceProperty;
-    NSString *_propertyIndex;
-    int _rowIndex;
-    int _tableIndex;
-    NSString *_viewControllerID;
+    NSString * _interfaceProperty;
+    NSString * _propertyIndex;
+    int  _rowIndex;
+    int  _tableIndex;
+    NSString * _viewControllerID;
 }
 
 @property (nonatomic, copy) NSString *interfaceProperty;

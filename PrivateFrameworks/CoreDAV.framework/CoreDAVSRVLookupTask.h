@@ -3,9 +3,9 @@
  */
 
 @interface CoreDAVSRVLookupTask : CoreDAVTask {
-    NSArray *_fetchedRecords;
-    struct __CFHost { } *_host;
-    NSString *_serviceString;
+    NSArray * _fetchedRecords;
+    struct __CFHost { } * _host;
+    NSString * _serviceString;
 }
 
 @property (nonatomic, retain) NSArray *fetchedRecords;

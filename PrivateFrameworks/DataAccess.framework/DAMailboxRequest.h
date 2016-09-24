@@ -3,9 +3,9 @@
  */
 
 @interface DAMailboxRequest : NSObject {
-    int _bodyFormat;
-    NSString *_messageID;
-    int _requestType;
+    int  _bodyFormat;
+    NSString * _messageID;
+    int  _requestType;
 }
 
 @property (nonatomic) int bodyFormat;

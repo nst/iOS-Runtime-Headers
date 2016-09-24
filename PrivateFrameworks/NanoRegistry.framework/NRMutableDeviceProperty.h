@@ -3,7 +3,7 @@
  */
 
 @interface NRMutableDeviceProperty : NRMutableStateBase {
-    <NSObject><NSCopying> *_value;
+    <NSObject><NSCopying> * _value;
 }
 
 @property (nonatomic, retain) <NSObject><NSCopying> *value;

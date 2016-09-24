@@ -3,10 +3,10 @@
  */
 
 @interface ICDrawingUndoCommand : NSObject {
-    NSString *_actionName;
-    ICDrawingUndoCheckPoint *_checkPoint;
-    NSArray *_commands;
-    BOOL _hide;
+    NSString * _actionName;
+    ICDrawingUndoCheckPoint * _checkPoint;
+    NSArray * _commands;
+    BOOL  _hide;
 }
 
 @property (nonatomic, retain) NSString *actionName;
@@ -25,6 +25,7 @@
 - (void)setCheckPoint:(id)arg1;
 - (void)setCommands:(id)arg1;
 - (void)setHide:(BOOL)arg1;
+- (id)undoCommandHidden:(BOOL)arg1;
 - (id)visibleCommands;
 
 @end

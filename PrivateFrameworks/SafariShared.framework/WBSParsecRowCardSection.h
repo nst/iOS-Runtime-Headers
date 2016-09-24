@@ -3,14 +3,14 @@
  */
 
 @interface WBSParsecRowCardSection : WBSParsecCardSection {
-    NSString *_key;
-    BOOL _keyCanWrap;
-    NSNumber *_keyWeight;
-    NSString *_value;
-    BOOL _valueCanWrap;
-    WBSParsecImageRepresentation *_valueImage;
-    int _valueImageAlignment;
-    NSNumber *_valueWeight;
+    NSString * _key;
+    BOOL  _keyCanWrap;
+    NSNumber * _keyWeight;
+    NSString * _value;
+    BOOL  _valueCanWrap;
+    WBSParsecImageRepresentation * _valueImage;
+    int  _valueImageAlignment;
+    NSNumber * _valueWeight;
 }
 
 @property (nonatomic, readonly, copy) NSString *key;

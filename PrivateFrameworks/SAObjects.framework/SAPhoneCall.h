@@ -8,6 +8,7 @@
 @property (nonatomic, copy) NSNumber *emergencyCall;
 @property (nonatomic) BOOL faceTime;
 @property (nonatomic) BOOL faceTimeAudio;
+@property (nonatomic) BOOL handsFreeCall;
 @property (nonatomic) BOOL speakerphoneCall;
 
 + (id)call;
@@ -19,11 +20,13 @@
 - (BOOL)faceTime;
 - (BOOL)faceTimeAudio;
 - (id)groupIdentifier;
+- (BOOL)handsFreeCall;
 - (BOOL)requiresResponse;
 - (void)setCallRecipient:(id)arg1;
 - (void)setEmergencyCall:(id)arg1;
 - (void)setFaceTime:(BOOL)arg1;
 - (void)setFaceTimeAudio:(BOOL)arg1;
+- (void)setHandsFreeCall:(BOOL)arg1;
 - (void)setSpeakerphoneCall:(BOOL)arg1;
 - (BOOL)speakerphoneCall;
 

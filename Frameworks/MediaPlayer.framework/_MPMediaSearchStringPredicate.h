@@ -3,8 +3,8 @@
  */
 
 @interface _MPMediaSearchStringPredicate : MPMediaPredicate <MPPProtobufferCoding> {
-    NSSet *_properties;
-    NSString *_searchString;
+    NSSet * _properties;
+    NSString * _searchString;
 }
 
 @property (readonly, copy) NSString *debugDescription;

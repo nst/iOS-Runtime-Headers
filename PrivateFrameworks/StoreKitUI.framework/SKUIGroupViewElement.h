@@ -3,7 +3,7 @@
  */
 
 @interface SKUIGroupViewElement : SKUIViewElement {
-    NSString *_type;
+    NSString * _type;
 }
 
 @property (nonatomic, readonly) NSString *type;

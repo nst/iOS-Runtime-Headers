@@ -3,14 +3,14 @@
  */
 
 @interface AVChapterMetadataItem : AVMetadataItem {
-    AVChapterMetadataItemInternal *_privChapter;
+    AVChapterMetadataItemInternal * _privChapter;
 }
 
 - (void)_addFigAssetNotifications;
 - (long)_chapterGroupIndex;
 - (long)_chapterIndex;
 - (void)_ensureValueLoadedSync;
-- (id)_initWithAsset:(id)arg1 chapterGroupIndex:(long)arg2 chapterIndex:(long)arg3 chapterType:(id)arg4 extendedLanguageTag:(id)arg5 languageCode:(id)arg6 chapterDataType:(id)arg7 time:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg8 duration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg9;
+- (id)_initWithAsset:(id)arg1 chapterGroupIndex:(long)arg2 chapterIndex:(long)arg3 chapterType:(id)arg4 extendedLanguageTag:(id)arg5 languageCode:(id)arg6 chapterDataType:(id)arg7 time:(struct { int x1; int x2; unsigned int x3; int x4; })arg8 duration:(struct { int x1; int x2; unsigned int x3; int x4; })arg9;
 - (void)_removeFigAssetNotifications;
 - (void)_setValueStatus:(int)arg1 figErrorCode:(long)arg2;
 - (void)_takeValueFrom:(id)arg1;
@@ -22,7 +22,7 @@
 - (id)dataType;
 - (void)dealloc;
 - (id)description;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
+- (struct { int x1; int x2; unsigned int x3; int x4; })duration;
 - (id)extendedLanguageTag;
 - (id)extraAttributes;
 - (void)finalize;
@@ -35,7 +35,7 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)startDate;
 - (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })time;
+- (struct { int x1; int x2; unsigned int x3; int x4; })time;
 - (id)value;
 
 @end

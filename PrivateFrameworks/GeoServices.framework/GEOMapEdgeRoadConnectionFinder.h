@@ -6,5 +6,6 @@
 
 - (void)_findConnectedEdges:(id /* block */)arg1 incoming:(BOOL)arg2;
 - (void)_findConnections:(id /* block */)arg1 incoming:(BOOL)arg2;
+- (BOOL)_isRoadEdgeEqual:(const struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }*)arg1 other:(const struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }*)arg2;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface MKRouteActivityProvider : MKPlaceActivityProvider {
-    MKMapItem *_sourceMapItem;
-    unsigned int _transportType;
+    MKMapItem * _sourceMapItem;
+    unsigned int  _transportType;
 }
 
 @property (nonatomic, retain) MKMapItem *destinationMapItem;

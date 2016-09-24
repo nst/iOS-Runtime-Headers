@@ -7,15 +7,16 @@
         unsigned int position : 1; 
         unsigned int timestamp : 1; 
         unsigned int type : 1; 
-    } _has;
-    NSString *_identifier;
-    MSPPlaceBookmark *_placeBookmark;
-    double _position;
-    MSPRegionBookmark *_regionBookmark;
-    MSPRouteBookmark *_routeBookmark;
-    double _timestamp;
-    int _type;
-    PBUnknownFields *_unknownFields;
+    }  _has;
+    NSString * _identifier;
+    MSPPlaceBookmark * _placeBookmark;
+    double  _position;
+    MSPRegionBookmark * _regionBookmark;
+    MSPRouteBookmark * _routeBookmark;
+    double  _timestamp;
+    MSPTransitLineBookmark * _transitLineBookmark;
+    int  _type;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, readonly) BOOL hasIdentifier;
@@ -24,6 +25,7 @@
 @property (nonatomic, readonly) BOOL hasRegionBookmark;
 @property (nonatomic, readonly) BOOL hasRouteBookmark;
 @property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) BOOL hasTransitLineBookmark;
 @property (nonatomic) BOOL hasType;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) MSPPlaceBookmark *placeBookmark;
@@ -31,10 +33,15 @@
 @property (nonatomic, retain) MSPRegionBookmark *regionBookmark;
 @property (nonatomic, retain) MSPRouteBookmark *routeBookmark;
 @property (nonatomic) double timestamp;
+@property (nonatomic, retain) MSPTransitLineBookmark *transitLineBookmark;
 @property (nonatomic) int type;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
++ (id)__test_newBookmarkStorageForLine;
++ (id)__test_newBookmarkStorageForLineWithMuid:(unsigned int)arg1;
+
 - (void).cxx_destruct;
+- (int)StringAsType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -45,6 +52,7 @@
 - (BOOL)hasRegionBookmark;
 - (BOOL)hasRouteBookmark;
 - (BOOL)hasTimestamp;
+- (BOOL)hasTransitLineBookmark;
 - (BOOL)hasType;
 - (unsigned int)hash;
 - (id)identifier;
@@ -64,9 +72,12 @@
 - (void)setRegionBookmark:(id)arg1;
 - (void)setRouteBookmark:(id)arg1;
 - (void)setTimestamp:(double)arg1;
+- (void)setTransitLineBookmark:(id)arg1;
 - (void)setType:(int)arg1;
 - (double)timestamp;
+- (id)transitLineBookmark;
 - (int)type;
+- (id)typeAsString:(int)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
 

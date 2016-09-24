@@ -3,19 +3,14 @@
  */
 
 @interface CLBeacon : NSObject <NSCopying, NSSecureCoding> {
-    double _accuracy;
-    NSNumber *_major;
-    NSNumber *_minor;
-    int _proximity;
-    NSUUID *_proximityUUID;
-    int _rssi;
+    CLBeaconInternal * _internal;
 }
 
 @property (nonatomic, readonly) double accuracy;
-@property (nonatomic, readonly) NSNumber *major;
-@property (nonatomic, readonly) NSNumber *minor;
+@property (nonatomic, readonly, copy) NSNumber *major;
+@property (nonatomic, readonly, copy) NSNumber *minor;
 @property (nonatomic, readonly) int proximity;
-@property (nonatomic, readonly) NSUUID *proximityUUID;
+@property (nonatomic, readonly, copy) NSUUID *proximityUUID;
 @property (nonatomic, readonly) int rssi;
 
 + (BOOL)supportsSecureCoding;

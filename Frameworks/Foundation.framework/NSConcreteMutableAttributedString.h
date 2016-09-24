@@ -6,9 +6,9 @@
     struct { 
         unsigned int attributeFixingDisabled : 8; 
         unsigned int  : 24; 
-    } fields;
-    NSMutableRLEArray *mutableAttributes;
-    NSMutableString *mutableString;
+    }  fields;
+    NSMutableRLEArray * mutableAttributes;
+    NSMutableString * mutableString;
 }
 
 + (Class)_mutableStringClass;
@@ -22,7 +22,6 @@
 - (Class)classForCoder;
 - (void)dealloc;
 - (void)edited:(unsigned int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 changeInLength:(int)arg3;
-- (void)finalize;
 - (id)init;
 - (id)initWithAttributedString:(id)arg1;
 - (id)initWithCoder:(id)arg1;

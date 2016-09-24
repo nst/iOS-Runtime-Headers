@@ -3,15 +3,15 @@
  */
 
 @interface BookmarkDAVBulkPostTask : CoreDAVPostTask {
-    NSString *_checkCTag;
-    NSURL *_checkCTagURL;
-    NSMutableDictionary *_folderURLToChildrenURLOrder;
-    NSString *_nextRootCTag;
-    NSString *_nextRootSyncToken;
-    NSMutableArray *_parsedBookmarks;
-    NSMutableDictionary *_parsedBookmarksByURL;
-    NSMutableArray *_parsedFolders;
-    NSMutableDictionary *_parsedFoldersByURL;
+    NSString * _checkCTag;
+    NSURL * _checkCTagURL;
+    NSMutableDictionary * _folderURLToChildrenURLOrder;
+    NSString * _nextRootCTag;
+    NSString * _nextRootSyncToken;
+    NSMutableArray * _parsedBookmarks;
+    NSMutableDictionary * _parsedBookmarksByURL;
+    NSMutableArray * _parsedFolders;
+    NSMutableDictionary * _parsedFoldersByURL;
 }
 
 @property (nonatomic, readonly) NSDictionary *folderURLToChildrenURLOrder;

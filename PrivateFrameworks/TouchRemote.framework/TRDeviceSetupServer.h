@@ -3,17 +3,17 @@
  */
 
 @interface TRDeviceSetupServer : NSObject <TRTransferServerDelegate> {
-    NSMutableArray *_accountsToAuthenticate;
-    NSMutableDictionary *_cachedAuthInfo;
-    BOOL _cancelledSetupInProgress;
-    NSData *_dataToSend;
-    NSObject<OS_dispatch_semaphore> *_dataToSendSemaphore;
-    <TRDeviceSetupServerDelegate> *_delegate;
-    int _notifyToken;
-    BOOL _notifyTokenIsValid;
-    BOOL _setupInProgress;
-    BOOL _started;
-    TRTransferServer *_transferServer;
+    NSMutableArray * _accountsToAuthenticate;
+    NSMutableDictionary * _cachedAuthInfo;
+    BOOL  _cancelledSetupInProgress;
+    NSData * _dataToSend;
+    NSObject<OS_dispatch_semaphore> * _dataToSendSemaphore;
+    <TRDeviceSetupServerDelegate> * _delegate;
+    int  _notifyToken;
+    BOOL  _notifyTokenIsValid;
+    BOOL  _setupInProgress;
+    BOOL  _started;
+    TRTransferServer * _transferServer;
 }
 
 @property (nonatomic, retain) NSMutableArray *accountsToAuthenticate;

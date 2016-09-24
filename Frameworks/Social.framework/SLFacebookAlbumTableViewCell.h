@@ -3,7 +3,7 @@
  */
 
 @interface SLFacebookAlbumTableViewCell : UITableViewCell {
-    NSString *_albumIdentifier;
+    NSString * _albumIdentifier;
 }
 
 @property (retain) NSString *albumIdentifier;

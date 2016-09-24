@@ -3,7 +3,7 @@
  */
 
 @interface HMDKeyedXPCArchiver : NSObject {
-    NSKeyedArchiver *_archiver;
+    NSKeyedArchiver * _archiver;
 }
 
 @property (nonatomic, retain) NSKeyedArchiver *archiver;

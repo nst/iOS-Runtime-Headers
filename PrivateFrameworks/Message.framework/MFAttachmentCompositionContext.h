@@ -3,8 +3,8 @@
  */
 
 @interface MFAttachmentCompositionContext : NSObject {
-    NSURL *_attachmentsBaseURL;
-    NSString *_contextID;
+    NSURL * _attachmentsBaseURL;
+    NSString * _contextID;
 }
 
 @property (nonatomic, readonly) NSArray *attachments;

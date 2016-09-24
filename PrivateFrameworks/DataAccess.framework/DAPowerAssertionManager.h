@@ -3,12 +3,12 @@
  */
 
 @interface DAPowerAssertionManager : NSObject {
-    NSMapTable *_contextToGroupIdentifier;
-    NSMapTable *_contextToPowerAssertionRef;
-    NSCountedSet *_contexts;
-    NSMapTable *_groupIdentifierToContexts;
-    NSCountedSet *_heldAsideContexts;
-    NSMutableSet *_heldAsideGroupIdentifiers;
+    NSMapTable * _contextToGroupIdentifier;
+    NSMapTable * _contextToPowerAssertionRef;
+    NSCountedSet * _contexts;
+    NSMapTable * _groupIdentifierToContexts;
+    NSCountedSet * _heldAsideContexts;
+    NSMutableSet * _heldAsideGroupIdentifiers;
 }
 
 @property (nonatomic, retain) NSMapTable *contextToGroupIdentifier;

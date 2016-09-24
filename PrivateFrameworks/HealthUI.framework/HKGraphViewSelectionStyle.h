@@ -3,14 +3,14 @@
  */
 
 @interface HKGraphViewSelectionStyle : NSObject {
-    HKStrokeStyle *_selectedPointLineStrokeStyle;
-    HKStrokeStyle *_touchPointLineStrokeStyle;
-    float _unselectedSeriesAlpha;
+    HKStrokeStyle * _selectedPointLineStrokeStyle;
+    HKStrokeStyle * _touchPointLineStrokeStyle;
+    double  _unselectedSeriesAlpha;
 }
 
 @property (nonatomic, retain) HKStrokeStyle *selectedPointLineStrokeStyle;
 @property (nonatomic, retain) HKStrokeStyle *touchPointLineStrokeStyle;
-@property (nonatomic) float unselectedSeriesAlpha;
+@property (nonatomic) double unselectedSeriesAlpha;
 
 - (void).cxx_destruct;
 - (id)selectedPointLineStrokeStyle;

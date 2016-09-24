@@ -3,9 +3,10 @@
  */
 
 @interface SGCuratedChangeNotificationsAddressBookListener : SGCuratedChangeNotificationsBaseListener {
-    void *_addressBook;
+    <NSObject> * _notificationCenterToken;
 }
 
+- (void).cxx_destruct;
 - (void)startListening;
 - (void)stopListening;
 

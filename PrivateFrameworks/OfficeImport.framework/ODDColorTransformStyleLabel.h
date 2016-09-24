@@ -3,12 +3,12 @@
  */
 
 @interface ODDColorTransformStyleLabel : NSObject {
-    ODDFillColorList *mEffectColors;
-    ODDFillColorList *mFillColors;
-    ODDFillColorList *mLineColors;
-    ODDFillColorList *mTextEffectColors;
-    ODDFillColorList *mTextFillColors;
-    ODDFillColorList *mTextLineColors;
+    ODDFillColorList * mEffectColors;
+    ODDFillColorList * mFillColors;
+    ODDFillColorList * mLineColors;
+    ODDFillColorList * mTextEffectColors;
+    ODDFillColorList * mTextFillColors;
+    ODDFillColorList * mTextLineColors;
 }
 
 - (void)applyToShapeStyle:(id)arg1 index:(unsigned int)arg2 count:(unsigned int)arg3 state:(id)arg4;

@@ -3,11 +3,11 @@
  */
 
 @interface MFBufferedQueue : NSObject {
-    unsigned int _currentSize;
-    double _maximumLatency;
-    unsigned int _maximumSize;
-    NSMutableArray *_queue;
-    double _timeOfLastFlush;
+    unsigned int  _currentSize;
+    double  _maximumLatency;
+    unsigned int  _maximumSize;
+    NSMutableArray * _queue;
+    double  _timeOfLastFlush;
 }
 
 @property (nonatomic) double maximumLatency;

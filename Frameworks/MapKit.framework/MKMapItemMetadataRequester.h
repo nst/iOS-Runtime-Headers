@@ -3,14 +3,14 @@
  */
 
 @interface MKMapItemMetadataRequester : NSObject <NSURLSessionDataDelegate, NSURLSessionDelegate, NSURLSessionTaskDelegate> {
-    ACAccountStore *_accountStore;
-    NSMapTable *_dataForTasks;
-    BOOL _hasCheckedYelpAccountCredentials;
-    NSMapTable *_requestsForURLs;
-    NSURLSession *_session;
-    OAURLRequestSigner *_signer;
-    NSMapTable *_tasksForURLs;
-    ACAccountCredential *_yelpAccountCredentials;
+    ACAccountStore * _accountStore;
+    NSMapTable * _dataForTasks;
+    BOOL  _hasCheckedYelpAccountCredentials;
+    NSMapTable * _requestsForURLs;
+    NSURLSession * _session;
+    OAURLRequestSigner * _signer;
+    NSMapTable * _tasksForURLs;
+    ACAccountCredential * _yelpAccountCredentials;
 }
 
 @property (readonly, copy) NSString *debugDescription;

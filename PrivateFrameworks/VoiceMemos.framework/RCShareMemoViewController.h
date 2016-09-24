@@ -3,7 +3,7 @@
  */
 
 @interface RCShareMemoViewController : UIActivityViewController {
-    RCCompositionController *_compositionController;
+    RCCompositionController * _compositionController;
 }
 
 @property (nonatomic, readonly) RCCompositionController *compositionController;

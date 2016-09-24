@@ -3,7 +3,7 @@
  */
 
 @interface CoreDAVPutTask : CoreDAVPostOrPutTask {
-    NSString *_nextETag;
+    NSString * _nextETag;
 }
 
 @property (nonatomic) <CoreDAVTaskDelegate> *delegate;

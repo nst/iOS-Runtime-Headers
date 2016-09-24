@@ -3,12 +3,12 @@
  */
 
 @interface AAAutoAccountVerifier : NSObject <MSSearchDelegate> {
-    ACAccount *_account;
-    int _attempts;
-    BOOL _canceled;
-    id /* block */ _handler;
-    NSOperationQueue *_requesterQueue;
-    MSSearch *_search;
+    ACAccount * _account;
+    int  _attempts;
+    BOOL  _canceled;
+    id /* block */  _handler;
+    NSOperationQueue * _requesterQueue;
+    MSSearch * _search;
 }
 
 @property (nonatomic, retain) ACAccount *account;

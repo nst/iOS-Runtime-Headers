@@ -3,22 +3,17 @@
  */
 
 @interface NFAWDEndOfTransaction : NSObject <NFAWDEventProtocol> {
-    unsigned long long _iad;
-    AWDNFCHCIEndOfTransactionEvent *_metric;
-    NSData *aid;
-    unsigned long long amount;
-    NSData *cdi;
-    unsigned int command;
-    unsigned int currencyCode;
-    unsigned int informative;
-    NSData *maid;
-    NSData *mcii;
-    unsigned int mobileCVMResult;
-    unsigned int msc;
-    unsigned int status;
-    NSData *transactionId;
-    unsigned int transactionStatus;
-    unsigned int version;
+    unsigned long long  _amount;
+    unsigned int  _command;
+    unsigned int  _currencyCode;
+    unsigned long long  _iad;
+    unsigned int  _informative;
+    AWDNFCHCIEndOfTransactionEvent * _metric;
+    unsigned int  _mobileCVMResult;
+    unsigned int  _msc;
+    unsigned int  _status;
+    unsigned int  _transactionStatus;
+    unsigned int  _version;
 }
 
 @property (nonatomic, retain) NSData *aid;

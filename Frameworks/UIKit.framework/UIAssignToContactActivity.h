@@ -3,10 +3,10 @@
  */
 
 @interface UIAssignToContactActivity : UIActivity <CNContactPickerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
-    UIImage *_image;
-    UIImagePickerController *_imagePickerController;
-    CNContactPickerViewController *_peoplePicker;
-    CNContact *_person;
+    UIImage * _image;
+    UIImagePickerController * _imagePickerController;
+    CNContactPickerViewController * _peoplePicker;
+    CNContact * _person;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -7,12 +7,14 @@
 
 - (unsigned int)numberOfMediaItemsInTonePickerController:(TKTonePickerController *)arg1;
 - (void)tonePickerController:(TKTonePickerController *)arg1 didSelectMediaItemAtIndex:(unsigned int)arg2 selectionDidChange:(BOOL)arg3;
+- (void)tonePickerController:(TKTonePickerController *)arg1 didUpdateIgnoreMute:(BOOL)arg2 forTonePickerItem:(TKTonePickerItem *)arg3 atIndexPath:(NSIndexPath *)arg4;
 - (NSNumber *)tonePickerController:(TKTonePickerController *)arg1 identifierOfMediaItemAtIndex:(unsigned int)arg2;
 - (unsigned int)tonePickerController:(TKTonePickerController *)arg1 indexOfMediaItemWithIdentifier:(NSNumber *)arg2;
 - (void)tonePickerController:(TKTonePickerController *)arg1 requestsPresentingAlertWithTitle:(NSString *)arg2 message:(NSString *)arg3;
 - (void)tonePickerController:(TKTonePickerController *)arg1 requestsPresentingToneClassicsPickerForItem:(TKTonePickerItem *)arg2;
 - (void)tonePickerController:(TKTonePickerController *)arg1 selectedMediaItemWithIdentifier:(NSNumber *)arg2;
 - (NSString *)tonePickerController:(TKTonePickerController *)arg1 titleOfMediaItemAtIndex:(unsigned int)arg2;
+- (void)tonePickerController:(TKTonePickerController *)arg1 willBeginPlaybackOfToneWithIdentifier:(NSString *)arg2;
 - (void)tonePickerControllerDidStopPlaying:(TKTonePickerController *)arg1 withFadeOutDuration:(double)arg2;
 - (void)tonePickerControllerRequestsMediaItemsRefresh:(TKTonePickerController *)arg1;
 - (void)tonePickerControllerRequestsPresentingMediaItemPicker:(TKTonePickerController *)arg1;

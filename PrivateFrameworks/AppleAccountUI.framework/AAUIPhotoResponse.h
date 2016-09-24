@@ -3,9 +3,9 @@
  */
 
 @interface AAUIPhotoResponse : AAResponse {
-    NSValue *_cropRect;
-    NSData *_photoData;
-    NSString *_serverCacheTag;
+    NSValue * _cropRect;
+    NSData * _photoData;
+    NSString * _serverCacheTag;
 }
 
 @property (nonatomic, readonly) NSValue *cropRect;

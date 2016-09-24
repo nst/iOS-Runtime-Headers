@@ -3,11 +3,11 @@
  */
 
 @interface CKDiscoverUserInfosOperation : CKOperation {
-    id /* block */ _discoverUserInfosCompletionBlock;
-    NSArray *_emailAddresses;
-    NSMutableDictionary *_emailsToUserInfos;
-    NSArray *_userRecordIDs;
-    NSMutableDictionary *_userRecordIDsToUserInfos;
+    id /* block */  _discoverUserInfosCompletionBlock;
+    NSArray * _emailAddresses;
+    NSMutableDictionary * _emailsToUserInfos;
+    NSArray * _userRecordIDs;
+    NSMutableDictionary * _userRecordIDsToUserInfos;
 }
 
 @property (nonatomic, copy) id /* block */ discoverUserInfosCompletionBlock;
@@ -28,10 +28,12 @@
 - (BOOL)hasCKOperationCallbacksSet;
 - (id)init;
 - (id)initWithEmailAddresses:(id)arg1 userRecordIDs:(id)arg2;
+- (Class)operationInfoClass;
 - (void)performCKOperation;
 - (void)setDiscoverUserInfosCompletionBlock:(id /* block */)arg1;
 - (void)setEmailAddresses:(id)arg1;
 - (void)setEmailsToUserInfos:(id)arg1;
+- (void)setLongLived:(BOOL)arg1;
 - (void)setUserRecordIDs:(id)arg1;
 - (void)setUserRecordIDsToUserInfos:(id)arg1;
 - (id)userRecordIDs;

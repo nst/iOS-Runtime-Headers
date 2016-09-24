@@ -3,9 +3,9 @@
  */
 
 @interface MFMessageDataContainer : NSObject {
-    NSData *_data;
-    BOOL _incomplete;
-    BOOL _partial;
+    NSData * _data;
+    BOOL  _incomplete;
+    BOOL  _partial;
 }
 
 - (id)data;

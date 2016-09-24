@@ -3,18 +3,18 @@
  */
 
 @interface _TDLayerStackFilterHelper : NSObject {
-    NSMutableArray *_excludedDirections;
-    NSMutableArray *_excludedHorizontalSizeClasses;
-    NSMutableArray *_excludedIdioms;
-    NSMutableArray *_excludedLayers;
-    NSMutableArray *_excludedPresentationStates;
-    NSMutableArray *_excludedScaleFactors;
-    NSMutableArray *_excludedSizes;
-    NSMutableArray *_excludedStates;
-    NSMutableArray *_excludedSubtypes;
-    NSMutableArray *_excludedValues;
-    NSMutableArray *_excludedVerticalSizeClasses;
-    TDLayerStackRenditionSpec *_layerStackRendition;
+    NSMutableArray * _excludedDirections;
+    NSMutableArray * _excludedHorizontalSizeClasses;
+    NSMutableArray * _excludedIdioms;
+    NSMutableArray * _excludedLayers;
+    NSMutableArray * _excludedPresentationStates;
+    NSMutableArray * _excludedScaleFactors;
+    NSMutableArray * _excludedSizes;
+    NSMutableArray * _excludedStates;
+    NSMutableArray * _excludedSubtypes;
+    NSMutableArray * _excludedValues;
+    NSMutableArray * _excludedVerticalSizeClasses;
+    TDLayerStackRenditionSpec * _layerStackRendition;
 }
 
 @property (nonatomic, retain) NSMutableArray *excludedDirections;

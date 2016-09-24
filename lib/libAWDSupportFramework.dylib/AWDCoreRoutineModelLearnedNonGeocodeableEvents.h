@@ -8,11 +8,11 @@
         unsigned int learnedNongeocodableEvents : 1; 
         unsigned int nongeocodableEvents : 1; 
         unsigned int unlearnedNongeocodableEvents : 1; 
-    } _has;
-    int _learnedNongeocodableEvents;
-    int _nongeocodableEvents;
-    unsigned long long _timestamp;
-    int _unlearnedNongeocodableEvents;
+    }  _has;
+    int  _learnedNongeocodableEvents;
+    int  _nongeocodableEvents;
+    unsigned long long  _timestamp;
+    int  _unlearnedNongeocodableEvents;
 }
 
 @property (nonatomic) BOOL hasLearnedNongeocodableEvents;

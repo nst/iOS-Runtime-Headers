@@ -3,10 +3,10 @@
  */
 
 @interface CNiOSABStringMatchContactPredicate : CNPredicate <CNiOSContactPredicate> {
-    NSString *_accountIdentifier;
-    NSString *_containerIdentifier;
-    NSString *_groupIdentifier;
-    NSString *_searchString;
+    NSString * _accountIdentifier;
+    NSString * _containerIdentifier;
+    NSString * _groupIdentifier;
+    NSString * _searchString;
 }
 
 @property (nonatomic, readonly, copy) NSString *accountIdentifier;
@@ -18,13 +18,17 @@
 @property (nonatomic, readonly, copy) NSString *searchString;
 @property (readonly) Class superclass;
 
++ (BOOL)supportsSecureCoding;
+
 - (id)accountIdentifier;
 - (struct __CFArray { }*)cn_copyPeopleInAddressBook:(void*)arg1 withSortOrder:(unsigned int)arg2 matchInfos:(id*)arg3 options:(unsigned int)arg4 error:(struct __CFError {}**)arg5;
 - (BOOL)cn_supportsNativeSorting;
 - (id)containerIdentifier;
 - (void)dealloc;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (id)groupIdentifier;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithSearchString:(id)arg1 accountIdentifier:(id)arg2 containerIdentifier:(id)arg3 groupIdentifier:(id)arg4;
 - (id)searchString;
 

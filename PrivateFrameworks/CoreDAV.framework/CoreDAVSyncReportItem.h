@@ -3,7 +3,7 @@
  */
 
 @interface CoreDAVSyncReportItem : CoreDAVMultiStatusItem {
-    NSString *_syncToken;
+    NSString * _syncToken;
 }
 
 @property (nonatomic, readonly) NSString *syncToken;

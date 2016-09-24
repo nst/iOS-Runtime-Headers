@@ -4,20 +4,20 @@
 
 @interface SKUIComposeTextFieldConfiguration : NSObject {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _borderInsets;
-    int _columnIndex;
-    BOOL _isRequired;
-    NSString *_label;
-    unsigned int _maxLength;
-    NSString *_placeholder;
-    NSString *_value;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _borderInsets;
+    int  _columnIndex;
+    BOOL  _isRequired;
+    NSString * _label;
+    unsigned int  _maxLength;
+    NSString * _placeholder;
+    NSString * _value;
 }
 
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } borderInsets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } borderInsets;
 @property (nonatomic) int columnIndex;
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic) unsigned int maxLength;
@@ -26,13 +26,13 @@
 @property (nonatomic, copy) NSString *value;
 
 - (void).cxx_destruct;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })borderInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })borderInsets;
 - (int)columnIndex;
 - (BOOL)isRequired;
 - (id)label;
 - (unsigned int)maxLength;
 - (id)placeholder;
-- (void)setBorderInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setBorderInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setColumnIndex:(int)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setMaxLength:(unsigned int)arg1;

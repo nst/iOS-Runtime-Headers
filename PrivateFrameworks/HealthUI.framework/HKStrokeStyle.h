@@ -3,15 +3,15 @@
  */
 
 @interface HKStrokeStyle : NSObject <NSCopying> {
-    int _lineCap;
-    int _lineJoin;
-    float _lineWidth;
-    UIColor *_strokeColor;
+    int  _lineCap;
+    int  _lineJoin;
+    double  _lineWidth;
+    UIColor * _strokeColor;
 }
 
 @property (nonatomic) int lineCap;
 @property (nonatomic) int lineJoin;
-@property (nonatomic) float lineWidth;
+@property (nonatomic) double lineWidth;
 @property (nonatomic, copy) UIColor *strokeColor;
 
 + (id)strokeStyleWithColor:(id)arg1 lineWidth:(float)arg2;

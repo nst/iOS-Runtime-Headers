@@ -3,8 +3,8 @@
  */
 
 @interface NEFilterControlProvider : NEFilterProvider <NSExtensionRequestHandling> {
-    NSDictionary *_URLAppendStringMap;
-    NSDictionary *_remediationMap;
+    NSDictionary * _URLAppendStringMap;
+    NSDictionary * _remediationMap;
 }
 
 @property (copy) NSDictionary *URLAppendStringMap;

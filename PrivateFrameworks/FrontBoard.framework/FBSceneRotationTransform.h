@@ -3,12 +3,12 @@
  */
 
 @interface FBSceneRotationTransform : FBSceneTransform {
-    int _degrees;
-    float _radians;
+    int  _degrees;
+    double  _radians;
 }
 
 @property (nonatomic) int degrees;
-@property (nonatomic) float radians;
+@property (nonatomic) double radians;
 
 - (void)_updateTransform;
 - (int)degrees;

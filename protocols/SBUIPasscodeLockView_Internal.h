@@ -3,6 +3,10 @@
 
 @protocol SBUIPasscodeLockView_Internal <SBUIPasscodeLockView>
 
+@required
+
+- (void)_overrideBiometricMatchingEnabled:(BOOL)arg1 forReason:(NSString *)arg2;
+
 @optional
 
 - (void)_noteAppearingForSmartCoverUnlock:(BOOL)arg1;

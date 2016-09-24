@@ -3,10 +3,10 @@
  */
 
 @interface HKOutstandingFetchOperationManager : NSObject <HKFetchOperationDelegate> {
-    NSMutableArray *_activeFetchOperations;
-    int _maxConcurrentFetchOperations;
-    BOOL _needsRebalanceFetchOperations;
-    NSMutableArray *_pendingFetchOperations;
+    NSMutableArray * _activeFetchOperations;
+    int  _maxConcurrentFetchOperations;
+    BOOL  _needsRebalanceFetchOperations;
+    NSMutableArray * _pendingFetchOperations;
 }
 
 @property (readonly, copy) NSString *debugDescription;

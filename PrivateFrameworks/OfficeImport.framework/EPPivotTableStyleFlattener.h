@@ -3,13 +3,13 @@
  */
 
 @interface EPPivotTableStyleFlattener : EPStyleFlattener {
-    unsigned int mColumnFieldsCount;
-    long mFirstDataColumn;
-    long mFirstDataRow;
-    long mFirstHeaderRow;
-    unsigned int mPageFieldsCount;
-    EDPivotTable *mPivotTable;
-    unsigned int mRowFieldsCount;
+    unsigned int  mColumnFieldsCount;
+    long  mFirstDataColumn;
+    long  mFirstDataRow;
+    long  mFirstHeaderRow;
+    unsigned int  mPageFieldsCount;
+    EDPivotTable * mPivotTable;
+    unsigned int  mRowFieldsCount;
 }
 
 - (void)addColumnSubheadingLevel:(unsigned int)arg1 to:(id)arg2;

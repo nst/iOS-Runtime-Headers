@@ -3,8 +3,8 @@
  */
 
 @interface EKPersistentRecurrenceRule : EKPersistentObject <NSCopying> {
-    id _helper;
-    EKRecurrenceEnd *_recurrenceEnd;
+    id  _helper;
+    EKRecurrenceEnd * _recurrenceEnd;
 }
 
 @property (nonatomic, readonly) NSString *UUID;
@@ -27,6 +27,7 @@
 + (id)defaultPropertiesToLoad;
 + (id)relations;
 
+- (void).cxx_destruct;
 - (id)UUID;
 - (id)_helper;
 - (id)cachedEndDate;
@@ -36,7 +37,6 @@
 - (id)daysOfTheMonth;
 - (id)daysOfTheWeek;
 - (id)daysOfTheYear;
-- (void)dealloc;
 - (id)description;
 - (id)endDate;
 - (int)entityType;

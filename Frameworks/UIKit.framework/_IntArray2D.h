@@ -3,10 +3,10 @@
  */
 
 @interface _IntArray2D : NSObject {
-    int *_arrayData;
-    unsigned int _iSize;
-    unsigned int _jSize;
-    BOOL _shouldBoundsCheck;
+    int * _arrayData;
+    unsigned int  _iSize;
+    unsigned int  _jSize;
+    BOOL  _shouldBoundsCheck;
 }
 
 @property (nonatomic, readonly) unsigned int iSize;

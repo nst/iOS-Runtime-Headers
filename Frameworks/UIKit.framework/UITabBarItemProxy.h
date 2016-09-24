@@ -3,11 +3,11 @@
  */
 
 @interface UITabBarItemProxy : NSObject {
-    UITabBarItem *_item;
-    UIView *_view;
+    UITabBarItem * _item;
+    UITabBarButton * _view;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithItem:(id)arg1 inTabBar:(id)arg2;
 - (id)item;
 - (void)setSelected:(BOOL)arg1;

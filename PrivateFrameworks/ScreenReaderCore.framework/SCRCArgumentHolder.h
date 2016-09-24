@@ -3,7 +3,7 @@
  */
 
 @interface SCRCArgumentHolder : NSObject {
-    SCRCArgumentHolderPrivate *_private;
+    SCRCArgumentHolderPrivate * _private;
 }
 
 - (SEL)action;

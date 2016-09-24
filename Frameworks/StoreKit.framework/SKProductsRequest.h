@@ -3,7 +3,7 @@
  */
 
 @interface SKProductsRequest : SKRequest {
-    id _productsRequestInternal;
+    id  _productsRequestInternal;
 }
 
 @property (nonatomic) <SKProductsRequestDelegate> *delegate;

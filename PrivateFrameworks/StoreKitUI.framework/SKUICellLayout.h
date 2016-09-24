@@ -3,10 +3,10 @@
  */
 
 @interface SKUICellLayout : NSObject {
-    UIView *_cell;
-    SKUIClientContext *_clientContext;
-    UIView *_contentView;
-    BOOL _parentWantsCellNeedsLayout;
+    UIView * _cell;
+    SKUIClientContext * _clientContext;
+    UIView * _contentView;
+    BOOL  _parentWantsCellNeedsLayout;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

@@ -3,10 +3,10 @@
  */
 
 @interface SULoadNetworkSectionsOperation : ISOperation {
-    ISStoreURLOperation *_baseOperation;
-    SUClientInterface *_clientInterface;
-    NSString *_expectedVersionString;
-    SUSectionsResponse *_sectionsResponse;
+    ISStoreURLOperation * _baseOperation;
+    SUClientInterface * _clientInterface;
+    NSString * _expectedVersionString;
+    SUSectionsResponse * _sectionsResponse;
 }
 
 @property (retain) ISStoreURLOperation *baseOperation;

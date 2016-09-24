@@ -3,9 +3,9 @@
  */
 
 @interface GEOAlmanac : NSObject {
-    GEOAlmanacRiseTransitSet *_currentRiseTransitSet;
-    GEOAlmanacRiseTransitSet *_nextRiseTransitSet;
-    GEOAlmanacRiseTransitSet *_previousRiseTransitSet;
+    GEOAlmanacRiseTransitSet * _currentRiseTransitSet;
+    GEOAlmanacRiseTransitSet * _nextRiseTransitSet;
+    GEOAlmanacRiseTransitSet * _previousRiseTransitSet;
 }
 
 @property (nonatomic, readonly) BOOL isDayLight;

@@ -3,13 +3,13 @@
  */
 
 @interface SYFileTransferInfo : PBCodable <NSCopying> {
-    unsigned long long _decompressedFileSize;
-    NSString *_endAnchor;
-    SYMessageHeader *_header;
-    NSString *_startAnchor;
+    unsigned int  _decompressedFileSize;
+    NSString * _endAnchor;
+    SYMessageHeader * _header;
+    NSString * _startAnchor;
 }
 
-@property (nonatomic) unsigned long long decompressedFileSize;
+@property (nonatomic) unsigned int decompressedFileSize;
 @property (nonatomic, retain) NSString *endAnchor;
 @property (nonatomic, readonly) BOOL hasEndAnchor;
 @property (nonatomic, readonly) BOOL hasStartAnchor;
@@ -19,7 +19,7 @@
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned long long)decompressedFileSize;
+- (unsigned int)decompressedFileSize;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)endAnchor;
@@ -30,7 +30,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setDecompressedFileSize:(unsigned long long)arg1;
+- (void)setDecompressedFileSize:(unsigned int)arg1;
 - (void)setEndAnchor:(id)arg1;
 - (void)setHeader:(id)arg1;
 - (void)setStartAnchor:(id)arg1;

@@ -3,11 +3,12 @@
  */
 
 @interface IKDOMElement : IKDOMNode <IKJDOMParsingElement, IKJSDOMElement, IKJSDOMParentNode, IKStyleableElement, JSExport> {
-    NSMutableDictionary *_metadataDict;
-    <IKStyleableElement> *parentStyleableElement;
-    IKViewElementStyleComposer *styleComposer;
+    NSMutableDictionary * _metadataDict;
+    <IKStyleableElement> * parentStyleableElement;
+    IKViewElementStyleComposer * styleComposer;
 }
 
+@property (nonatomic, readonly, copy) IKDOMNamedNodeMap *attributes;
 @property (nonatomic, readonly) unsigned long childElementCount;
 @property (nonatomic, readonly) IKDOMHTMLCollection *children;
 @property (nonatomic, readonly, copy) NSString *elementName;
@@ -20,6 +21,7 @@
 @property (nonatomic, readonly, retain) NSString *tagName;
 
 - (void).cxx_destruct;
+- (id)_attributes;
 - (id)attributes;
 - (id)childElementByTagName:(id)arg1;
 - (unsigned long)childElementCount;
@@ -31,6 +33,7 @@
 - (id)getAttribute:(id)arg1;
 - (id)getElementsByTagName:(id)arg1;
 - (BOOL)hasAttribute:(id)arg1;
+- (BOOL)hasAttributes;
 - (id)innerHTML;
 - (void)insertAdjacentHTML:(id)arg1 :(id)arg2;
 - (id)lastElementChild;

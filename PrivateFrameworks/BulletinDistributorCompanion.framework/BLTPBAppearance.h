@@ -3,12 +3,12 @@
  */
 
 @interface BLTPBAppearance : PBCodable <NSCopying> {
-    BOOL _destructive;
+    BOOL  _destructive;
     struct { 
         unsigned int destructive : 1; 
-    } _has;
-    BLTPBImage *_image;
-    NSString *_title;
+    }  _has;
+    BLTPBImage * _image;
+    NSString * _title;
 }
 
 @property (nonatomic) BOOL destructive;

@@ -3,11 +3,11 @@
  */
 
 @interface PDMediaNode : PDTimeNode {
-    BOOL mIsMuted;
-    BOOL mIsShowWhenStopped;
-    long mNumberOfSlides;
-    PDAnimationTarget *mTarget;
-    long mVolume;
+    BOOL  mIsMuted;
+    BOOL  mIsShowWhenStopped;
+    long  mNumberOfSlides;
+    PDAnimationTarget * mTarget;
+    long  mVolume;
 }
 
 - (void)dealloc;

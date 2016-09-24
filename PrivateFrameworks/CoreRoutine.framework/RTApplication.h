@@ -3,15 +3,16 @@
  */
 
 @interface RTApplication : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_bundleId;
-    int _capabilities;
-    NSString *_localizedDisplayName;
+    NSString * _bundleId;
+    int  _capabilities;
+    NSString * _localizedDisplayName;
 }
 
 @property (nonatomic, readonly) NSString *bundleId;
 @property (nonatomic) int capabilities;
 @property (nonatomic, readonly) NSString *localizedDisplayName;
 
++ (id)allowedKeys;
 + (id)capabilitiesToString:(int)arg1;
 + (BOOL)supportsSecureCoding;
 

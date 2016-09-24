@@ -3,7 +3,7 @@
  */
 
 @interface MPMediaEntity : NSObject <MusicEntityValueProviding, NSCopying, NSSecureCoding> {
-    MIPMultiverseIdentifier *_multiverseIdentifier;
+    MIPMultiverseIdentifier * _multiverseIdentifier;
 }
 
 @property (nonatomic, readonly) MPUContentItemIdentifierCollection *MPU_contentItemIdentifierCollection;
@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) BOOL isPurchasableStoreOffer;
 @property (nonatomic, readonly) MPMediaLibrary *mediaLibrary;
 @property (nonatomic, readonly) MIPMultiverseIdentifier *multiverseIdentifier;
-@property (nonatomic, readonly) unsigned long long persistentID;
+@property (nonatomic, readonly) unsigned int persistentID;
 @property (nonatomic, readonly) int preferredStoreOfferVariant;
 @property (nonatomic, readonly) MPMediaItem *representativeItem;
 @property (readonly) Class superclass;
@@ -33,6 +33,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateValuesForProperties:(id)arg1 usingBlock:(id /* block */)arg2;
+- (id)genericModelObjectWithRequestedProperties:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMultiverseIdentifier:(id)arg1;
@@ -44,7 +45,7 @@
 - (id)mediaLibrary;
 - (id)multiverseIdentifier;
 - (id)objectForKeyedSubscript:(id)arg1;
-- (unsigned long long)persistentID;
+- (unsigned int)persistentID;
 - (int)preferredStoreOfferVariant;
 - (id)representativeItem;
 - (id)valueForProperty:(id)arg1;
@@ -58,7 +59,7 @@
 
 - (id)_valuesForRegularEntityProperties:(id)arg1;
 - (id)entityUniqueIdentifier;
-- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { float x1; float x2; })arg2 destinationScale:(float)arg3;
+- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { double x1; double x2; })arg2 destinationScale:(float)arg3;
 - (id)valueForEntityProperty:(id)arg1;
 - (id)valuesForEntityProperties:(id)arg1;
 

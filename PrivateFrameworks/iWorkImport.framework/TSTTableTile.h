@@ -3,12 +3,12 @@
  */
 
 @interface TSTTableTile : TSPObject {
-    unsigned char mMaxColumn;
-    unsigned short mMaxRow;
-    unsigned short mNumCells;
-    unsigned short mNumRows;
-    NSMutableArray *mRowInfos;
-    unsigned char mStorageVersion;
+    unsigned char  mMaxColumn;
+    unsigned short  mMaxRow;
+    unsigned short  mNumCells;
+    unsigned short  mNumRows;
+    NSMutableArray * mRowInfos;
+    unsigned char  mStorageVersion;
 }
 
 @property (nonatomic, readonly) unsigned char maxColumn;
@@ -21,7 +21,6 @@
 - (void)debugDump;
 - (void)debugListRows;
 - (id)description;
-- (unsigned long)flushableSize;
 - (void)i_upgradeTileRowInfosWithDataStore:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;

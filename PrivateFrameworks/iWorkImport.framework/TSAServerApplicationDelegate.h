@@ -3,7 +3,7 @@
  */
 
 @interface TSAServerApplicationDelegate : NSObject {
-    TSABaseApplicationDelegate *_baseApplicationDelegate;
+    TSABaseApplicationDelegate * _baseApplicationDelegate;
 }
 
 @property (nonatomic, retain) TSABaseApplicationDelegate *baseApplicationDelegate;
@@ -11,6 +11,7 @@
 + (id)sharedDelegate;
 
 - (id)baseApplicationDelegate;
+- (void)dealloc;
 - (id)init;
 - (id)initWithBaseApplicationDelegate:(id)arg1;
 - (void)setBaseApplicationDelegate:(id)arg1;

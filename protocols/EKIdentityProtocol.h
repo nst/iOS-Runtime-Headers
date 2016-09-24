@@ -13,5 +13,6 @@
 @optional
 
 - (NSURL *)URL;
+- (NSPredicate *)contactPredicate;
 
 @end

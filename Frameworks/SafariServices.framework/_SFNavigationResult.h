@@ -3,13 +3,15 @@
  */
 
 @interface _SFNavigationResult : NSObject {
-    NSURL *_URL;
-    LSApplicationProxy *_externalApplication;
-    int _type;
+    NSURL * _URL;
+    LSApplicationProxy * _externalApplication;
+    int  _externalApplicationCategory;
+    int  _type;
 }
 
 @property (nonatomic, readonly) NSURL *URL;
 @property (nonatomic, readonly) LSApplicationProxy *externalApplication;
+@property (nonatomic, readonly) int externalApplicationCategory;
 @property (nonatomic, readonly) int type;
 
 + (id)resultOfLoadingRequest:(id)arg1 isMainFrame:(BOOL)arg2 disallowRedirectToExternalApps:(BOOL)arg3;
@@ -20,6 +22,7 @@
 - (id)URL;
 - (id)_initWithType:(int)arg1 URL:(id)arg2 externalApplication:(id)arg3;
 - (id)externalApplication;
+- (int)externalApplicationCategory;
 - (int)type;
 
 @end

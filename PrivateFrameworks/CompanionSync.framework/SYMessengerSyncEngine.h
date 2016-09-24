@@ -3,13 +3,14 @@
  */
 
 @interface SYMessengerSyncEngine : SYSyncEngine <NMSMessageCenterDelegate> {
-    SYDevice *_activeDevice;
-    struct NSMapTable { Class x1; } *_callbackLookup;
-    NSDictionary *_customIDSOptions;
-    NSObject<OS_dispatch_queue> *_idsQueue;
-    NMSMessageCenter *_messageCenter;
-    struct NSMapTable { Class x1; } *_requestLookup;
-    NSString *_sessionDeviceID;
+    SYDevice * _activeDevice;
+    struct NSMapTable { Class x1; } * _callbackLookup;
+    NSDictionary * _customIDSOptions;
+    NSObject<OS_dispatch_queue> * _idsQueue;
+    NSObject<OS_dispatch_semaphore> * _lookupLock;
+    NMSMessageCenter * _messageCenter;
+    struct NSMapTable { Class x1; } * _requestLookup;
+    NSString * _sessionDeviceID;
 }
 
 @property (nonatomic, copy) NSDictionary *customIDSOptions;
@@ -50,6 +51,7 @@
 - (id)outputStreamWithMetadata:(id)arg1 priority:(int)arg2 options:(id)arg3 context:(id)arg4 error:(id*)arg5;
 - (BOOL)resume:(id*)arg1;
 - (void)setCustomIDSOptions:(id)arg1;
+- (id)stateForLogging;
 - (void)suspend;
 
 @end

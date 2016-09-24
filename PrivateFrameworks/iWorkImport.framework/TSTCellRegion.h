@@ -3,8 +3,8 @@
  */
 
 @interface TSTCellRegion : NSObject <NSCopying> {
-    struct TSUColumnRowRect { 
-        struct { 
+    struct TSUCellRect { 
+        struct TSUCellCoord { 
             unsigned short row; 
             unsigned char column; 
             unsigned char reserved; 
@@ -13,65 +13,67 @@
             unsigned short numberOfColumns; 
             unsigned short numberOfRows; 
         } size; 
-    } mBoundingCellRange;
-    unsigned int mCellCount;
-    struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } *mCellRanges;
-    unsigned int mCellRangesCount;
-    struct { 
+    }  mBoundingCellRange;
+    unsigned int  mCellCount;
+    struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } * mCellRanges;
+    unsigned int  mCellRangesCount;
+    struct TSUCellCoord { 
         unsigned short row; 
         unsigned char column; 
         unsigned char reserved; 
-    } mFirstCellID;
-    NSIndexSet *mIntersectingColumnsIndexSet;
-    NSIndexSet *mIntersectingRowsIndexSet;
-    struct { 
+    }  mFirstCellID;
+    NSIndexSet * mIntersectingColumnsIndexSet;
+    NSIndexSet * mIntersectingRowsIndexSet;
+    struct TSUCellCoord { 
         unsigned short row; 
         unsigned char column; 
         unsigned char reserved; 
-    } mLastCellID;
+    }  mLastCellID;
 }
 
-@property (nonatomic, readonly) struct { unsigned short x1; unsigned char x2; unsigned char x3; } boundingBottomRightCellID;
-@property (nonatomic, readonly) struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } boundingCellRange;
-@property (nonatomic, readonly) struct { unsigned short x1; unsigned char x2; unsigned char x3; } boundingTopLeftCellID;
+@property (nonatomic, readonly) struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; } boundingBottomRightCellID;
+@property (nonatomic, readonly) struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } boundingCellRange;
+@property (nonatomic, readonly) struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; } boundingTopLeftCellID;
 @property (nonatomic, readonly) unsigned int cellCount;
-@property (nonatomic, readonly) struct { unsigned short x1; unsigned char x2; unsigned char x3; } firstCellID;
+@property (nonatomic, readonly) struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; } firstCellID;
 @property (nonatomic, readonly) BOOL isEmpty;
 @property (nonatomic, readonly) BOOL isRectangle;
-@property (nonatomic, readonly) struct { unsigned short x1; unsigned char x2; unsigned char x3; } lastCellID;
+@property (nonatomic, readonly) struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; } lastCellID;
 @property (nonatomic, readonly) unsigned short numberOfIntersectingColumns;
 @property (nonatomic, readonly) unsigned short numberOfIntersectingRows;
 
 + (id)invalidRegion;
-+ (id)region:(id)arg1 addingRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
++ (id)region:(id)arg1 addingRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
 + (id)region:(id)arg1 addingRegion:(id)arg2;
-+ (id)region:(id)arg1 intersectingRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
++ (id)region:(id)arg1 intersectingRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
 + (id)region:(id)arg1 intersectingRegion:(id)arg2;
-+ (id)region:(id)arg1 subtractingRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
++ (id)region:(id)arg1 subtractingRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
 + (id)region:(id)arg1 subtractingRegion:(id)arg2;
 + (id)regionFillingColumnsFromRegion:(id)arg1;
 + (id)regionFillingRowsFromRegion:(id)arg1;
 + (id)regionFromCellDiffMap:(id)arg1 withTableInfo:(id)arg2;
-+ (id)regionFromCellIDVector:(const struct vector<TSUColumnRowCoordinate, std::__1::allocator<TSUColumnRowCoordinate> > { struct { /* ? */ } *x1; struct { /* ? */ } *x2; struct __compressed_pair<TSUColumnRowCoordinate *, std::__1::allocator<TSUColumnRowCoordinate> > { struct { /* ? */ } *x_3_1_1; } x3; }*)arg1;
++ (id)regionFromCellIDVector:(const struct vector<TSUCellCoord, std::__1::allocator<TSUCellCoord> > { struct TSUCellCoord {} *x1; struct TSUCellCoord {} *x2; struct __compressed_pair<TSUCellCoord *, std::__1::allocator<TSUCellCoord> > { struct TSUCellCoord {} *x_3_1_1; } x3; }*)arg1;
 + (id)regionFromCellMap:(id)arg1 withTableInfo:(id)arg2;
 + (id)regionFromCellMap:(id)arg1 withTableInfo:(id)arg2 passingTest:(id /* block */)arg3;
 + (id)regionFromColumnIndexes:(id)arg1 rowIndexes:(id)arg2;
 + (id)regionFromColumnIndices:(id)arg1;
++ (id)regionFromColumnIndices:(id)arg1 rowRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 + (id)regionFromMergeActionArray:(id)arg1 withTableInfo:(id)arg2;
-+ (id)regionFromMergeList:(const struct vector<TSUColumnRowRect, std::__1::allocator<TSUColumnRowRect> > { struct TSUColumnRowRect {} *x1; struct TSUColumnRowRect {} *x2; struct __compressed_pair<TSUColumnRowRect *, std::__1::allocator<TSUColumnRowRect> > { struct TSUColumnRowRect {} *x_3_1_1; } x3; }*)arg1;
++ (id)regionFromMergeList:(const struct vector<TSUCellRect, std::__1::allocator<TSUCellRect> > { struct TSUCellRect {} *x1; struct TSUCellRect {} *x2; struct __compressed_pair<TSUCellRect *, std::__1::allocator<TSUCellRect> > { struct TSUCellRect {} *x_3_1_1; } x3; }*)arg1;
 + (id)regionFromMergeMap:(id)arg1;
 + (id)regionFromPropertyListRepresentation:(id)arg1;
-+ (id)regionFromRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
++ (id)regionFromRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 + (id)regionFromRowIndices:(id)arg1;
-+ (id)unionEveryRangeInRegion:(id)arg1 withRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
++ (id)regionFromRowIndices:(id)arg1 columnRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
++ (id)unionEveryRangeInRegion:(id)arg1 withRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
 
-- (struct { unsigned short x1; unsigned char x2; unsigned char x3; })boundingBottomRightCellID;
-- (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })boundingCellRange;
-- (struct { unsigned short x1; unsigned char x2; unsigned char x3; })boundingTopLeftCellID;
+- (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })boundingBottomRightCellID;
+- (struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })boundingCellRange;
+- (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })boundingTopLeftCellID;
 - (unsigned int)cellCount;
-- (struct vector<TSUColumnRowRect, std::__1::allocator<TSUColumnRowRect> > { struct TSUColumnRowRect {} *x1; struct TSUColumnRowRect {} *x2; struct __compressed_pair<TSUColumnRowRect *, std::__1::allocator<TSUColumnRowRect> > { struct TSUColumnRowRect {} *x_3_1_1; } x3; })cellRanges;
-- (BOOL)containsCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
-- (BOOL)containsCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (struct vector<TSUCellRect, std::__1::allocator<TSUCellRect> > { struct TSUCellRect {} *x1; struct TSUCellRect {} *x2; struct __compressed_pair<TSUCellRect *, std::__1::allocator<TSUCellRect> > { struct TSUCellRect {} *x_3_1_1; } x3; })cellRanges;
+- (BOOL)containsCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (BOOL)containsCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (BOOL)containsCellRegion:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -79,40 +81,43 @@
 - (void)enumerateCellIDsUsingBlock:(id /* block */)arg1;
 - (void)enumerateCellRangesUsingBlock:(id /* block */)arg1;
 - (void)enumerateCellsInTable:(id)arg1 usingBlock:(id /* block */)arg2;
-- (void)enumerateCellsInTable:(id)arg1 withFlags:(unsigned long)arg2 usingBlock:(id /* block */)arg3;
+- (void)enumerateCellsInTable:(id)arg1 withFlags:(unsigned int)arg2 usingBlock:(id /* block */)arg3;
 - (void)enumerateColumnRangesInReverseUsingBlock:(id /* block */)arg1;
 - (void)enumerateColumnRangesUsingBlock:(id /* block */)arg1;
 - (void)enumerateColumnsInReverseUsingBlock:(id /* block */)arg1;
-- (void)enumerateColumnsIntersectingCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateColumnsIntersectingCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 usingBlock:(id /* block */)arg2;
 - (void)enumerateColumnsUsingBlock:(id /* block */)arg1;
 - (void)enumerateGridColumnsUsingBlock:(id /* block */)arg1;
 - (void)enumerateGridRowsUsingBlock:(id /* block */)arg1;
 - (void)enumerateInDirection:(int)arg1 usingBlock:(id /* block */)arg2;
-- (void)enumerateMissingColumnsIntersectingCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 usingBlock:(id /* block */)arg2;
-- (void)enumerateMissingRowsIntersectingCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateMissingColumnsIntersectingCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateMissingRowsIntersectingCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 usingBlock:(id /* block */)arg2;
 - (void)enumerateRowRangesInReverseUsingBlock:(id /* block */)arg1;
 - (void)enumerateRowRangesUsingBlock:(id /* block */)arg1;
 - (void)enumerateRowsInReverseUsingBlock:(id /* block */)arg1;
-- (void)enumerateRowsIntersectingCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateRowsIntersectingCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 usingBlock:(id /* block */)arg2;
 - (void)enumerateRowsUsingBlock:(id /* block */)arg1;
-- (BOOL)equalsCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (BOOL)equalsCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (BOOL)equalsCellRegion:(id)arg1;
-- (void)fillCellRangeColMajorSet:(struct set<TSUColumnRowRect, TSTCellRangeColumnMajorLess, std::__1::allocator<TSUColumnRowRect> > { struct __tree<TSUColumnRowRect, TSTCellRangeColumnMajorLess, std::__1::allocator<TSUColumnRowRect> > { struct __tree_node<TSUColumnRowRect, void *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<TSUColumnRowRect, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, TSTCellRangeColumnMajorLess> { unsigned long x_3_2_1; } x_1_1_3; } x1; }*)arg1 leftToRight:(BOOL)arg2;
-- (void)fillCellRangeRowMajorSet:(struct set<TSUColumnRowRect, TSTCellRangeRowMajorLess, std::__1::allocator<TSUColumnRowRect> > { struct __tree<TSUColumnRowRect, TSTCellRangeRowMajorLess, std::__1::allocator<TSUColumnRowRect> > { struct __tree_node<TSUColumnRowRect, void *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<TSUColumnRowRect, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, TSTCellRangeRowMajorLess> { unsigned long x_3_2_1; } x_1_1_3; } x1; }*)arg1 leftToRight:(BOOL)arg2;
-- (struct { unsigned short x1; unsigned char x2; unsigned char x3; })firstCellID;
+- (void)fillCellRangeColMajorSet:(struct set<TSUCellRect, TSTCellRangeColumnMajorLess, std::__1::allocator<TSUCellRect> > { struct __tree<TSUCellRect, TSTCellRangeColumnMajorLess, std::__1::allocator<TSUCellRect> > { struct __tree_node<TSUCellRect, void *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<TSUCellRect, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, TSTCellRangeColumnMajorLess> { unsigned long x_3_2_1; } x_1_1_3; } x1; }*)arg1 leftToRight:(BOOL)arg2;
+- (void)fillCellRangeRowMajorSet:(struct set<TSUCellRect, TSTCellRangeRowMajorLess, std::__1::allocator<TSUCellRect> > { struct __tree<TSUCellRect, TSTCellRangeRowMajorLess, std::__1::allocator<TSUCellRect> > { struct __tree_node<TSUCellRect, void *> {} *x_1_1_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<TSUCellRect, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, TSTCellRangeRowMajorLess> { unsigned long x_3_2_1; } x_1_1_3; } x1; }*)arg1 leftToRight:(BOOL)arg2;
+- (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })firstCellID;
 - (id)init;
 - (id)initFromMessage:(const struct CellRegion { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TST::CellRange> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg1;
+- (id)intersectingColumnsInRow:(unsigned short)arg1;
 - (id)intersectingColumnsIndexSet;
 - (id)intersectingRowsIndexSet;
-- (BOOL)intersectsCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (BOOL)intersectsCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (BOOL)intersectsColumn:(unsigned char)arg1;
 - (BOOL)intersectsRow:(unsigned short)arg1;
 - (BOOL)isEmpty;
 - (BOOL)isRectangle;
 - (BOOL)isValid;
-- (struct NSObject { Class x1; }*)iterator;
-- (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })largestRangeContainingCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
-- (struct { unsigned short x1; unsigned char x2; unsigned char x3; })lastCellID;
+- (struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })largestRangeContainingCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })lastCellID;
+- (struct NSObject { Class x1; }*)newIterator;
+- (struct NSObject { Class x1; }*)newRightToLeftIterator;
+- (struct NSObject { Class x1; }*)newTopToBottomIterator;
 - (unsigned short)numberOfIntersectingColumns;
 - (unsigned short)numberOfIntersectingRows;
 - (void)p_calculateAncillaryInformation;
@@ -120,36 +125,36 @@
 - (void)p_calculateIntersectingRows;
 - (void)p_calculateUpperLeftAndBottomRightCellIDAndBoundingCellRange;
 - (id)p_copy;
-- (void)p_insertRangeIntoRegion:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
-- (BOOL)partiallyIntersectsCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (void)p_insertRangeIntoRegion:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (BOOL)partiallyIntersectsCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (id)propertyListRepresentation;
 - (id)regionAfterColumnIndex:(unsigned char)arg1;
 - (id)regionAfterColumnIndexRtoL:(unsigned char)arg1;
 - (id)regionAfterRowIndex:(unsigned short)arg1;
 - (id)regionByAddingColumns:(id)arg1;
-- (id)regionByAddingRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (id)regionByAddingRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (id)regionByAddingRegion:(id)arg1;
 - (id)regionByAddingRows:(id)arg1;
 - (id)regionByApplyingRowMapping:(id)arg1;
 - (id)regionByIntersectingColumnIndices:(id)arg1;
-- (id)regionByIntersectingRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (id)regionByIntersectingRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (id)regionByIntersectingRegion:(id)arg1;
 - (id)regionByIntersectingRowIndices:(id)arg1;
 - (id)regionByMovingColumnsFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 toIndex:(unsigned char)arg2;
 - (id)regionByMovingRowsFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 toIndex:(unsigned short)arg2;
 - (id)regionByRemovingColumns:(id)arg1;
 - (id)regionByRemovingRows:(id)arg1;
-- (id)regionBySubtractingRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (id)regionBySubtractingRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (id)regionBySubtractingRegion:(id)arg1;
-- (id)regionByUnioningEveryRangeInRegionWithRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (id)regionByTrimmingAroundColumnIndices:(id)arg1;
+- (id)regionByTrimmingAroundRowIndices:(id)arg1;
+- (id)regionByUnioningEveryRangeInRegionWithRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (id)regionOffsetBy:(struct { int x1; int x2; })arg1;
 - (id)regionUpToColumnIndex:(unsigned char)arg1;
 - (id)regionUpToColumnIndexRtoL:(unsigned char)arg1 maxColumnIndex:(unsigned char)arg2;
 - (id)regionUpToRowIndex:(unsigned short)arg1;
-- (struct NSObject { Class x1; }*)rightToLeftIterator;
 - (void)saveToMessage:(struct CellRegion { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TST::CellRange> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg1;
-- (struct { unsigned short x1; unsigned char x2; unsigned char x3; })suitableAnchor;
-- (struct { unsigned short x1; unsigned char x2; unsigned char x3; })suitableCursor;
-- (struct NSObject { Class x1; }*)topToBottomIterator;
+- (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })suitableAnchor;
+- (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })suitableCursor;
 
 @end

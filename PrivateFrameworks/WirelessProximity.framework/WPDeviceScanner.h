@@ -2,44 +2,40 @@
    Image: /System/Library/PrivateFrameworks/WirelessProximity.framework/WirelessProximity
  */
 
-@interface WPDeviceScanner : NSObject <XPCClientDelegate> {
-    NSMutableDictionary *_activeScans;
-    <WPDeviceScannerDelegate> *_delegate;
-    NSMutableArray *_liveDevices;
-    NSObject<OS_dispatch_queue> *_queue;
-    int _state;
-    XPCClient *_xpcClient;
+@interface WPDeviceScanner : WPClient {
+    NSMutableDictionary * _activeScans;
+    <WPDeviceScannerDelegate> * _delegate;
+    NSMutableArray * _liveDevices;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *activeScans;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (nonatomic) <WPDeviceScannerDelegate> *delegate;
 @property (nonatomic, retain) NSMutableArray *liveDevices;
-@property (retain) NSObject<OS_dispatch_queue> *queue;
-@property int state;
-@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)activeScans;
-- (void)changeState:(int)arg1;
-- (void)connectionDied;
-- (void)connectionInterrupted;
-- (void)dealloc;
+- (void)addPuckType:(id)arg1 toDictionary:(id)arg2;
+- (id)clientAsString;
+- (id)delegate;
 - (id)description;
+- (void)deviceDiscovered:(id)arg1;
 - (id)initWithDelegate:(id)arg1;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
+- (void)invalidate;
 - (id)liveDevices;
-- (void)messageArrived:(id)arg1;
+- (void)parseAirPrint:(char *)arg1 forSize:(int)arg2 intoDictionary:(id)arg3;
+- (void)parseCompanyData:(char *)arg1 forSize:(int)arg2 intoDictionary:(id)arg3;
+- (BOOL)parseType:(unsigned char)arg1 atOffset:(char *)arg2 withSize:(int)arg3 intoDictionary:(id)arg4;
 - (void)postDevice:(id)arg1;
 - (void)postDevices:(id)arg1;
-- (id)queue;
 - (void)registerForDevicesMatching:(id)arg1 options:(id)arg2;
+- (void)scanningFailedToStart:(id)arg1 ofType:(unsigned char)arg2;
+- (void)scanningStartedOfType:(unsigned char)arg1;
+- (void)scanningStoppedOfType:(unsigned char)arg1;
 - (void)setActiveScans:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setLiveDevices:(id)arg1;
-- (void)setQueue:(id)arg1;
-- (void)setState:(int)arg1;
-- (int)state;
+- (void)stateDidChange:(int)arg1;
 - (void)timerFinished:(id)arg1;
 - (void)unregisterAllDeviceChanges;
 - (void)unregisterForDevices:(id)arg1;

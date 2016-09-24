@@ -3,11 +3,11 @@
  */
 
 @interface MCAPNInfo : NSObject {
-    NSString *_apnName;
-    NSString *_password;
-    NSString *_proxy;
-    NSNumber *_proxyPort;
-    NSString *_username;
+    NSString * _apnName;
+    NSString * _password;
+    NSString * _proxy;
+    NSNumber * _proxyPort;
+    NSString * _username;
 }
 
 @property (nonatomic, retain) NSString *apnName;

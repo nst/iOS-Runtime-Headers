@@ -3,14 +3,14 @@
  */
 
 @interface SFUCryptor : NSObject {
-    unsigned long mBlockSize;
-    struct _CCCryptor { } *mCryptor;
-    char *mDecryptionInputBuffer;
-    BOOL mFinished;
-    int mOperation;
-    char *mOutputBuffer;
-    unsigned long mOutputBufferAvailable;
-    char *mOutputBufferPos;
+    unsigned long  mBlockSize;
+    struct _CCCryptor { } * mCryptor;
+    char * mDecryptionInputBuffer;
+    BOOL  mFinished;
+    int  mOperation;
+    char * mOutputBuffer;
+    unsigned long  mOutputBufferAvailable;
+    char * mOutputBufferPos;
 }
 
 - (BOOL)cryptDataFromBuffer:(const char *)arg1 length:(unsigned long)arg2 toStream:(id)arg3 finished:(BOOL)arg4 crc32:(unsigned int*)arg5 error:(id*)arg6;

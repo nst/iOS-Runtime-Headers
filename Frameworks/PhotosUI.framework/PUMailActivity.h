@@ -3,17 +3,17 @@
  */
 
 @interface PUMailActivity : UIMailActivity <MFMailComposeViewControllerDelegate, PUActivity> {
-    PLManagedAsset *_currentVideo;
-    PUActivityItemSource *_currentVideoItemSource;
-    BOOL _didCheckMailDropAvailable;
-    PLUIEditVideoViewController *_editVideoViewController;
-    BOOL _isMailDropAvailable;
-    BOOL _isSharingSingleVideo;
-    PUActivityItemSourceController *_itemSourceController;
-    MFMailComposeViewController *_mailComposeController;
-    UIViewController *_referenceViewController;
-    PLProgressView *_remakerProgressView;
-    id _strongSelf;
+    PLManagedAsset * _currentVideo;
+    PUActivityItemSource * _currentVideoItemSource;
+    BOOL  _didCheckMailDropAvailable;
+    PLUIEditVideoViewController * _editVideoViewController;
+    BOOL  _isMailDropAvailable;
+    BOOL  _isSharingSingleVideo;
+    PUActivityItemSourceController * _itemSourceController;
+    MFMailComposeViewController * _mailComposeController;
+    UIViewController * _referenceViewController;
+    PLProgressView * _remakerProgressView;
+    id  _strongSelf;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -21,6 +21,9 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) PUActivityItemSourceController *itemSourceController;
 @property (readonly) Class superclass;
+
++ (BOOL)allowedToModifyEmailAccounts;
++ (void)openEmailAccountPrefs;
 
 - (void).cxx_destruct;
 - (void)_composeMailForVideo:(id)arg1 trimmedFilePath:(id)arg2;

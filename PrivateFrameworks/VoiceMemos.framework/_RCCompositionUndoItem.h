@@ -3,8 +3,8 @@
  */
 
 @interface _RCCompositionUndoItem : NSObject {
-    RCComposition *_composition;
-    NSString *_reasonAccessTokenName;
+    RCComposition * _composition;
+    NSString * _reasonAccessTokenName;
 }
 
 @property (nonatomic, copy) RCComposition *composition;

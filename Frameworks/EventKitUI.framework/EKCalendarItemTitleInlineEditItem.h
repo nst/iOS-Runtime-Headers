@@ -3,59 +3,40 @@
  */
 
 @interface EKCalendarItemTitleInlineEditItem : EKCalendarItemEditItem <EKCalendarItemInlineEditItem, EKEditItemViewControllerDelegate, UITextFieldDelegate> {
-    EKRequestAvailabilityOperation *_availabilityRequest;
-    NSArray *_availabilitySpansForLocation;
-    UIView *_clearButtonView;
-    EKUILocationEditItemCell *_conferenceLocationCell;
-    EKParticipant *_conferenceRoom;
-    int _conferenceRoomAvailabilityType;
-    UITableViewCell *_mapCell;
-    int _mostRecentStringLengthDelta;
-    UITableViewCell *_nonConferenceLocationCell;
-    BOOL _showsLocation;
-    BOOL _sourceSupportsAvailabilityRequests;
-    UITableViewCell *_titleCell;
+    BOOL  _drawsOwnRowSeparators;
+    UITableViewCell * _titleCell;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL drawsOwnRowSeparators;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) UITextField *titleTextField;
 
 - (void).cxx_destruct;
-- (void)_clearButtonTapped;
-- (id)_clearButtonView;
 - (void)_contentSizeCategoryChanged:(id)arg1;
 - (id)_makeCell:(unsigned int)arg1;
-- (void)_refreshConferenceRoomCell;
-- (void)_setNewStructuredLocation:(id)arg1;
-- (BOOL)_showConferenceLocationCell;
-- (BOOL)_showsMap;
-- (void)_updateAvailabilityInformation;
-- (void)_updateLocationWithConferenceRoom:(id)arg1;
-- (void)_updateLocationWithStructuredLocation:(id)arg1;
+- (void)_setDrawsOwnRowSeparatorsForCell:(id)arg1;
 - (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(unsigned int)arg2;
 - (id)cellForSubitemAtIndex:(unsigned int)arg1;
 - (void)dealloc;
 - (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned int)arg2;
-- (BOOL)editItemViewControllerSave:(id)arg1;
-- (BOOL)forceRefreshStartAndEndDatesOnSave;
+- (BOOL)drawsOwnRowSeparators;
 - (id)init;
-- (id)initWithLocation:(BOOL)arg1;
 - (BOOL)isInline;
 - (BOOL)isSaveable;
-- (BOOL)isSubitemAtIndexSaveable:(unsigned int)arg1;
 - (unsigned int)numberOfSubitems;
-- (void)refreshFromCalendarItemAndStore;
 - (void)reset;
 - (BOOL)saveAndDismissWithForce:(BOOL)arg1;
-- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
+- (id)searchStringForEventAutocomplete;
+- (void)setDrawsOwnRowSeparators:(BOOL)arg1;
 - (void)textFieldDidBeginEditing:(id)arg1;
 - (void)textFieldDidChange:(id)arg1;
 - (void)textFieldDidEndEditing:(id)arg1;
 - (BOOL)textFieldShouldClear:(id)arg1;
 - (BOOL)textFieldShouldReturn:(id)arg1;
+- (id)titleTextField;
 - (BOOL)usesDetailViewControllerForSubitem:(unsigned int)arg1;
 
 @end

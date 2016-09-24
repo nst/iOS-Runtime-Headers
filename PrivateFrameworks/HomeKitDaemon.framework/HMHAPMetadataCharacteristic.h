@@ -3,12 +3,12 @@
  */
 
 @interface HMHAPMetadataCharacteristic : NSObject <NSSecureCoding> {
-    NSString *_chrDescription;
-    NSString *_format;
-    NSString *_localizedDescription;
-    NSString *_name;
-    NSString *_type;
-    NSString *_unit;
+    NSString * _chrDescription;
+    NSString * _format;
+    NSString * _localizedDescription;
+    NSString * _name;
+    NSString * _type;
+    NSString * _unit;
 }
 
 @property (nonatomic, retain) NSString *chrDescription;

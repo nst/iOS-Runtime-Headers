@@ -3,8 +3,8 @@
  */
 
 @interface AASecondaryAuthenticationRequest : AARequest {
-    NSString *_dsid;
-    NSString *_primaryToken;
+    NSString * _dsid;
+    NSString * _primaryToken;
 }
 
 + (Class)responseClass;

@@ -3,7 +3,7 @@
  */
 
 @interface AVSafePerformOnMainThreadTargetDict : NSObject {
-    NSMutableDictionary *_obj;
+    NSMutableDictionary * _obj;
 }
 
 + (id)dict;

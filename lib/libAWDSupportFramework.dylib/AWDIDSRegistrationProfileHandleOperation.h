@@ -3,9 +3,9 @@
  */
 
 @interface AWDIDSRegistrationProfileHandleOperation : PBCodable <NSCopying> {
-    unsigned int _connectionType;
-    int _genericError;
-    NSString *_guid;
+    unsigned int  _connectionType;
+    int  _genericError;
+    NSString * _guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int connectionType : 1; 
@@ -16,14 +16,14 @@
         unsigned int success : 1; 
         unsigned int uRLError : 1; 
         unsigned int vettingStatus : 1; 
-    } _has;
-    int _pOSIXError;
-    unsigned int _registrationError;
-    unsigned int _resultCode;
-    unsigned int _success;
-    unsigned long long _timestamp;
-    int _uRLError;
-    unsigned int _vettingStatus;
+    }  _has;
+    int  _pOSIXError;
+    unsigned int  _registrationError;
+    unsigned int  _resultCode;
+    unsigned int  _success;
+    unsigned long long  _timestamp;
+    int  _uRLError;
+    unsigned int  _vettingStatus;
 }
 
 @property (nonatomic) unsigned int connectionType;

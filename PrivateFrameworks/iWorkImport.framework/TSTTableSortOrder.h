@@ -3,9 +3,9 @@
  */
 
 @interface TSTTableSortOrder : NSObject <NSCopying> {
-    NSIndexSet *mCachedIndices;
-    NSArray *mRules;
-    int mType;
+    NSIndexSet * mCachedIndices;
+    NSArray * mRules;
+    int  mType;
 }
 
 @property (nonatomic, readonly) NSIndexSet *columnIndices;

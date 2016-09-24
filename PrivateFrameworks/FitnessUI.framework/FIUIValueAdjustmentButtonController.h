@@ -3,18 +3,18 @@
  */
 
 @interface FIUIValueAdjustmentButtonController : NSObject {
-    id /* block */ _buttonStateUpdateHandler;
-    UIButton *_decrementButton;
-    BOOL _didUserUpdatevalue;
-    UIButton *_incrementButton;
-    double _maxValue;
-    double _minValue;
-    double _minumumStepValueIncrement;
-    int _plusMinusActionRepeatCount;
-    NSTimer *_plusMinusActionTimer;
-    double _value;
-    double _valueStepIncremement;
-    id /* block */ _valueUpdateHandler;
+    id /* block */  _buttonStateUpdateHandler;
+    UIButton * _decrementButton;
+    BOOL  _didUserUpdatevalue;
+    UIButton * _incrementButton;
+    double  _maxValue;
+    double  _minValue;
+    double  _minumumStepValueIncrement;
+    int  _plusMinusActionRepeatCount;
+    NSTimer * _plusMinusActionTimer;
+    double  _value;
+    double  _valueStepIncremement;
+    id /* block */  _valueUpdateHandler;
 }
 
 @property (nonatomic, copy) id /* block */ buttonStateUpdateHandler;

@@ -3,11 +3,11 @@
  */
 
 @interface SCNPhysicsShape : NSObject <NSCopying, NSSecureCoding> {
-    void *_cachedObject;
-    struct btCollisionShape { int (**x1)(); int x2; void *x3; } *_collisionShape;
-    NSDictionary *_options;
-    id _referenceObject;
-    NSArray *_transforms;
+    void * _cachedObject;
+    struct btCollisionShape { int (**x1)(); int x2; void *x3; } * _collisionShape;
+    NSDictionary * _options;
+    id  _referenceObject;
+    NSArray * _transforms;
 }
 
 @property (nonatomic, readonly) NSDictionary *options;

@@ -3,25 +3,25 @@
  */
 
 @interface GQNumberFormatter : NSObject {
-    struct __CFString { } *mAdditionalCurrencyCode;
-    struct __CFArray { } *mAdditionalCurrencyCodeFormatters;
-    NSMutableDictionary *mCurrencyCodeToHalfWidthSymbolMap;
-    NSMutableDictionary *mCurrencyCodeToSymbolMap;
-    struct __CFArray { } *mCurrencyFormatters;
-    NSString *mCurrencyString;
-    struct __CFArray { } *mDecimalFormatters;
-    NSString *mDecimalString;
-    struct __CFNumberFormatter { } *mFractionFormatter;
-    struct __CFLocale { } *mLocale;
-    NSString *mPercentSymbol;
-    struct __CFArray { } *mPercentageFormatters;
-    NSString *mPercentageString;
-    struct __CFArray { } *mScientificFormatters;
-    NSString *mScientificString;
-    NSMutableArray *mTransformedCurrencyStrings;
-    NSMutableArray *mTransformedDecimalStrings;
-    NSMutableArray *mTransformedPercentageStrings;
-    NSMutableArray *mTransformedScientificStrings;
+    struct __CFString { } * mAdditionalCurrencyCode;
+    struct __CFArray { } * mAdditionalCurrencyCodeFormatters;
+    NSMutableDictionary * mCurrencyCodeToHalfWidthSymbolMap;
+    NSMutableDictionary * mCurrencyCodeToSymbolMap;
+    struct __CFArray { } * mCurrencyFormatters;
+    NSString * mCurrencyString;
+    struct __CFArray { } * mDecimalFormatters;
+    NSString * mDecimalString;
+    struct __CFNumberFormatter { } * mFractionFormatter;
+    struct __CFLocale { } * mLocale;
+    NSString * mPercentSymbol;
+    struct __CFArray { } * mPercentageFormatters;
+    NSString * mPercentageString;
+    struct __CFArray { } * mScientificFormatters;
+    NSString * mScientificString;
+    NSMutableArray * mTransformedCurrencyStrings;
+    NSMutableArray * mTransformedDecimalStrings;
+    NSMutableArray * mTransformedPercentageStrings;
+    NSMutableArray * mTransformedScientificStrings;
 }
 
 + (id)availableCurrencyCodes;

@@ -3,9 +3,9 @@
  */
 
 @interface SLFacebookFriendList : NSObject {
-    NSString *_identifier;
-    NSString *_name;
-    NSString *_type;
+    NSString * _identifier;
+    NSString * _name;
+    NSString * _type;
 }
 
 @property (retain) NSString *identifier;

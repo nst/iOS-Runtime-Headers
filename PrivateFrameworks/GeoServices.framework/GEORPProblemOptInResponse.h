@@ -5,13 +5,14 @@
 @interface GEORPProblemOptInResponse : PBCodable <NSCopying> {
     struct { 
         unsigned int statusCode : 1; 
-    } _has;
-    int _statusCode;
+    }  _has;
+    int  _statusCode;
 }
 
 @property (nonatomic) BOOL hasStatusCode;
 @property (nonatomic) int statusCode;
 
+- (int)StringAsStatusCode:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -24,6 +25,7 @@
 - (void)setHasStatusCode:(BOOL)arg1;
 - (void)setStatusCode:(int)arg1;
 - (int)statusCode;
+- (id)statusCodeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -3,16 +3,16 @@
  */
 
 @interface SKUIStorePageSection : NSObject <SKUIProductPageOverlayDelegate> {
-    IKColor *_backgroundColorForSection;
-    BOOL _bottomSection;
-    SKUIPageComponent *_component;
-    SKUIStorePageSectionContext *_context;
-    BOOL _hasValidRelevantEntityProviders;
-    NSArray *_indexPathsForBackgroundItems;
-    SKUIProductPageOverlayController *_overlayController;
-    NSSet *_relevantEntityProviders;
-    int _sectionIndex;
-    BOOL _topSection;
+    IKColor * _backgroundColorForSection;
+    BOOL  _bottomSection;
+    SKUIPageComponent * _component;
+    SKUIStorePageSectionContext * _context;
+    BOOL  _hasValidRelevantEntityProviders;
+    NSArray * _indexPathsForBackgroundItems;
+    SKUIProductPageOverlayController * _overlayController;
+    NSSet * _relevantEntityProviders;
+    int  _sectionIndex;
+    BOOL  _topSection;
 }
 
 @property (nonatomic, readonly) IKColor *backgroundColorForSection;
@@ -28,9 +28,9 @@
 @property (nonatomic, readonly) NSArray *indexPathsForPinningItems;
 @property (nonatomic, readonly) int numberOfCells;
 @property (nonatomic, readonly) SKUIPageComponent *pageComponent;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } preferredContentSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } preferredContentSize;
 @property (nonatomic, readonly, copy) NSSet *relevantEntityProviders;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } sectionContentInset;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } sectionContentInset;
 @property (nonatomic) int sectionIndex;
 @property (readonly) Class superclass;
 @property (getter=isTopSection, nonatomic) BOOL topSection;
@@ -46,11 +46,11 @@
 - (id)backgroundColorForIndexPath:(id)arg1;
 - (id)backgroundColorForSection;
 - (id)cellForIndexPath:(id)arg1;
-- (struct CGSize { float x1; float x2; })cellSizeForIndexPath:(id)arg1;
+- (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
 - (id)clickEventWithItem:(id)arg1 elementName:(id)arg2 index:(int)arg3;
 - (id)clickEventWithLink:(id)arg1 elementName:(id)arg2 index:(int)arg3;
 - (id)clickEventWithMedia:(id)arg1 elementName:(id)arg2 index:(int)arg3;
-- (void)collectionViewDidConfirmButtonElement:(id)arg1 forItemAtIndexPath:(id)arg2;
+- (void)collectionViewDidConfirmButtonElement:(id)arg1 withClickInfo:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionViewDidConfirmItemOfferAtIndexPath:(id)arg1;
 - (void)collectionViewDidEndDisplayingCellForItemAtIndexPath:(id)arg1;
 - (void)collectionViewDidLongPressItemAtIndexPath:(id)arg1;
@@ -60,7 +60,7 @@
 - (BOOL)collectionViewShouldSelectItemAtIndexPath:(id)arg1;
 - (void)collectionViewWillApplyLayoutAttributes:(id)arg1;
 - (void)collectionViewWillDisplayCellForItemAtIndexPath:(id)arg1;
-- (void)collectionViewWillScrollToOffset:(struct CGPoint { float x1; float x2; })arg1 visibleRange:(struct SKUIIndexPathRange { int x1; int x2; int x3; int x4; })arg2;
+- (void)collectionViewWillScrollToOffset:(struct CGPoint { double x1; double x2; })arg1 visibleRange:(struct SKUIIndexPathRange { int x1; int x2; int x3; int x4; })arg2;
 - (BOOL)containsElementWithIndexBarEntryID:(id)arg1;
 - (float)contentInsetAdjustmentForCollectionView:(id)arg1;
 - (id)context;
@@ -85,20 +85,20 @@
 - (id)pageComponent;
 - (BOOL)performDefaultActionForViewElement:(id)arg1;
 - (id)performItemOfferActionForItem:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })pinningContentInsetForItemAtIndexPath:(id)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })pinningContentInsetForItemAtIndexPath:(id)arg1;
 - (int)pinningStyleForItemAtIndexPath:(id)arg1;
 - (int)pinningTransitionStyleForItemAtIndexPath:(id)arg1;
 - (void)playVideoForElement:(id)arg1;
 - (void)playVideoWithURL:(id)arg1;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)prefetchResourcesWithReason:(int)arg1;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { double x1; double x2; })arg2;
 - (void)productPageOverlayDidDismiss:(id)arg1;
 - (id)relevantEntityProviders;
 - (void)reloadCellWithIndexPath:(id)arg1 reason:(int)arg2;
 - (void)reloadVisibleCellsWithReason:(int)arg1;
 - (BOOL)requestLayoutWithReloadReason:(int)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionContentInset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionContentInset;
 - (int)sectionIndex;
 - (void)sendXEventWithItem:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)sendXEventWithLink:(id)arg1 completionBlock:(id /* block */)arg2;
@@ -112,7 +112,7 @@
 - (int)updateWithContext:(id)arg1 pageComponent:(id)arg2;
 - (void)willAppearInContext:(id)arg1;
 - (void)willHideInContext:(id)arg1;
-- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
-- (void)willTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { double x1; double x2; })arg2 inSourceView:(id)arg3;
+- (void)willTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

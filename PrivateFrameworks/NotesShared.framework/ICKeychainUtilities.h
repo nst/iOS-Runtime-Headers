@@ -13,7 +13,7 @@
 + (id)getItemForIdentifier:(id)arg1 alertTextForAuthentication:(id)arg2 error:(id*)arg3;
 + (BOOL)looselyAuthenticateWithDevicePasscodeWithAlertText:(id)arg1;
 + (BOOL)removeItemForIdentifier:(id)arg1 error:(id*)arg2;
-+ (id)secAccessControlObjectWithCreationFlag:(long)arg1 error:(id*)arg2;
++ (id)secAccessControlObjectWithCreationFlag:(unsigned long)arg1 error:(id*)arg2;
 + (BOOL)touchIDIsEnrolled;
 
 @end

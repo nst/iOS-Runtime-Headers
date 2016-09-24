@@ -3,8 +3,8 @@
  */
 
 @interface CKDMescalSessionOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    int _serverVersion;
-    CKDMescalSession *_session;
+    int  _serverVersion;
+    CKDMescalSession * _session;
 }
 
 @property (nonatomic) int serverVersion;

@@ -3,16 +3,16 @@
  */
 
 @interface GKNotificationBannerView : UIView {
-    UILabel *_actionLabel;
-    UIView *_centeringView;
-    id /* block */ _completionHandler;
-    double _duration;
-    UIImageView *_imageView;
-    UILabel *_messageLabel;
-    UILabel *_messageLabel2;
-    float _preferredWidthPad;
-    UILabel *_titleLabel;
-    id /* block */ _touchHandler;
+    UILabel * _actionLabel;
+    UIView * _centeringView;
+    id /* block */  _completionHandler;
+    double  _duration;
+    UIImageView * _imageView;
+    UILabel * _messageLabel;
+    UILabel * _messageLabel2;
+    double  _preferredWidthPad;
+    UILabel * _titleLabel;
+    id /* block */  _touchHandler;
 }
 
 @property (nonatomic, retain) UILabel *actionLabel;
@@ -22,7 +22,7 @@
 @property (nonatomic, retain) UIImageView *imageView;
 @property (nonatomic, retain) UILabel *messageLabel;
 @property (nonatomic, retain) UILabel *messageLabel2;
-@property (nonatomic, readonly) float preferredWidthPad;
+@property (nonatomic, readonly) double preferredWidthPad;
 @property (nonatomic, retain) UILabel *titleLabel;
 @property (nonatomic, copy) id /* block */ touchHandler;
 

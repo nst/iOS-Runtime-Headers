@@ -3,19 +3,19 @@
  */
 
 @interface PKEntitlementWhitelist : NSObject {
-    BOOL _addSilently;
-    NSString *_applicationID;
-    BOOL _inAppPayments;
-    BOOL _inAppPaymentsPrivate;
-    NSArray *_merchantIdentifiers;
-    BOOL _passPresentationSuppression;
-    NSArray *_passTypeIDs;
-    BOOL _passesAddSilently;
-    BOOL _passesAllAccess;
-    BOOL _paymentAllAccess;
-    BOOL _paymentConfiguration;
-    BOOL _paymentPresentation;
-    NSArray *_teamIDs;
+    BOOL  _addSilently;
+    NSString * _applicationID;
+    BOOL  _inAppPayments;
+    BOOL  _inAppPaymentsPrivate;
+    NSArray * _merchantIdentifiers;
+    BOOL  _passPresentationSuppression;
+    NSArray * _passTypeIDs;
+    BOOL  _passesAddSilently;
+    BOOL  _passesAllAccess;
+    BOOL  _paymentAllAccess;
+    BOOL  _paymentConfiguration;
+    BOOL  _paymentPresentation;
+    NSArray * _teamIDs;
 }
 
 @property BOOL addSilently;
@@ -35,11 +35,11 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (void)_probeEntitlementsWithConnection:(id)arg1;
 - (BOOL)addSilently;
 - (BOOL)allAccess;
 - (id)applicationID;
-- (void)dealloc;
 - (BOOL)inAppPayments;
 - (BOOL)inAppPaymentsPrivate;
 - (id)initWithConnection:(id)arg1;

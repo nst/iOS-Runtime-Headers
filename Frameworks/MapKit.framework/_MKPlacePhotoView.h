@@ -3,17 +3,17 @@
  */
 
 @interface _MKPlacePhotoView : UIScrollView <UIScrollViewDelegate> {
-    UIActivityIndicatorView *_activity;
-    UILabel *_descriptionLabel;
-    BOOL _hasLoadedFullPhoto;
-    UIImageView *_imageView;
-    BOOL _isZoomed;
-    UILabel *_licenseLabel;
-    <GEOMapItemPhoto> *_photo;
-    NSTimer *_tapTimer;
-    NSURLSessionTask *_task;
-    UIImage *_thumbnail;
-    MKPlacePhotosView *_viewer;
+    UIActivityIndicatorView * _activity;
+    UILabel * _descriptionLabel;
+    BOOL  _hasLoadedFullPhoto;
+    UIImageView * _imageView;
+    BOOL  _isZoomed;
+    UILabel * _licenseLabel;
+    <GEOMapItemPhoto> * _photo;
+    NSTimer * _tapTimer;
+    NSURLSessionTask * _task;
+    UIImage * _thumbnail;
+    MKPlacePhotosView * _viewer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -28,10 +28,10 @@
 - (void)dealloc;
 - (BOOL)hasLoadedFullPhoto;
 - (id)imageView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 photo:(id)arg2 viewer:(id)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 photo:(id)arg2 viewer:(id)arg3;
 - (void)loadFullPhoto;
 - (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(float)arg3;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setHasLoadedFullPhoto:(BOOL)arg1;
 - (void)setThumbnail:(id)arg1;
 - (id)thumbnail;

@@ -3,11 +3,11 @@
  */
 
 @interface PHObjectDeleteRequest : NSObject <PHDeleteChangeRequest> {
-    BOOL _clientEntitled;
-    NSString *_clientName;
-    int _clientProcessID;
-    NSManagedObjectID *_objectID;
-    NSString *_uuid;
+    BOOL  _clientEntitled;
+    NSString * _clientName;
+    int  _clientProcessID;
+    NSManagedObjectID * _objectID;
+    NSString * _uuid;
 }
 
 @property (getter=isClientEntitled, nonatomic, readonly) BOOL clientEntitled;
@@ -31,7 +31,7 @@
 - (id)init;
 - (id)initForNewObject;
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2;
-- (id)initWithXPCDict:(id)arg1 clientEntitled:(BOOL)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
+- (id)initWithXPCDict:(id)arg1 clientEntitlements:(id)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
 - (BOOL)isClientEntitled;
 - (id)managedEntityName;
 - (id)objectID;

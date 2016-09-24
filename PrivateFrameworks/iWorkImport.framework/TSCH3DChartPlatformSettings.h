@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DChartPlatformSettings : NSObject {
-    NSDictionary *mSettings;
+    NSDictionary * mSettings;
 }
 
 + (id)p_defaultSettingsDictionary;

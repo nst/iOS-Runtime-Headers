@@ -3,8 +3,8 @@
  */
 
 @interface UIMoveEvent : UIEvent {
-    unsigned int _focusHeading;
-    int _moveDirection;
+    unsigned int  _focusHeading;
+    int  _moveDirection;
 }
 
 @property (setter=_setFocusHeading:, nonatomic) unsigned int _focusHeading;

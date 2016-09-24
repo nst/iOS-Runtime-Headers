@@ -3,7 +3,7 @@
  */
 
 @interface SPStockListComplicationData : SPComplicationData <NSSecureCoding> {
-    NSArray *_stockList;
+    NSArray * _stockList;
 }
 
 @property (nonatomic, retain) NSArray *stockList;

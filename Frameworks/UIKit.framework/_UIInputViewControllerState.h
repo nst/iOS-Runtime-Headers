@@ -3,10 +3,12 @@
  */
 
 @interface _UIInputViewControllerState : NSObject <NSCopying, NSSecureCoding> {
-    TIDocumentState *_documentState;
-    TITextInputTraits *_textInputTraits;
+    UITextInputMode * _documentInputMode;
+    TIDocumentState * _documentState;
+    TITextInputTraits * _textInputTraits;
 }
 
+@property (nonatomic, retain) UITextInputMode *documentInputMode;
 @property (nonatomic, retain) TIDocumentState *documentState;
 @property (nonatomic, retain) TITextInputTraits *textInputTraits;
 
@@ -17,10 +19,12 @@
 - (void)createDocumentStateIfNecessary;
 - (void)dealloc;
 - (id)description;
+- (id)documentInputMode;
 - (id)documentState;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (void)setDocumentInputMode:(id)arg1;
 - (void)setDocumentState:(id)arg1;
 - (void)setTextInputTraits:(id)arg1;
 - (id)textInputTraits;

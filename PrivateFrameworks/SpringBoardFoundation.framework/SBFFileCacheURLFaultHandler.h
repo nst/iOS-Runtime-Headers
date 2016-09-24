@@ -3,8 +3,8 @@
  */
 
 @interface SBFFileCacheURLFaultHandler : NSObject <SBFFileCacheFaultHandler> {
-    NSArray *_retryIntervals;
-    NSURLSession *_urlSession;
+    NSArray * _retryIntervals;
+    NSURLSession * _urlSession;
 }
 
 @property (readonly, copy) NSString *debugDescription;

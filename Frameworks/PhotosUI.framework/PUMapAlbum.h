@@ -3,11 +3,11 @@
  */
 
 @interface PUMapAlbum : NSObject <PLAlbumProtocol> {
-    <PUMapAnnotationAnimatable> *_annotation;
-    NSMutableOrderedSet *_assets;
-    unsigned int _photosCount;
-    BOOL _setKindCounts;
-    unsigned int _videosCount;
+    <PUMapAnnotationAnimatable> * _annotation;
+    NSMutableOrderedSet * _assets;
+    unsigned int  _photosCount;
+    BOOL  _setKindCounts;
+    unsigned int  _videosCount;
 }
 
 @property (nonatomic, readonly, retain) <PUMapAnnotationAnimatable> *annotation;

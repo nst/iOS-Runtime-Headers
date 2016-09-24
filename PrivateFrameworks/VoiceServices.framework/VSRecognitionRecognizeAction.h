@@ -3,20 +3,20 @@
  */
 
 @interface VSRecognitionRecognizeAction : VSRecognitionAction {
-    NSString *_audioInputPath;
-    NSString *_debugDumpPath;
-    NSArray *_keywords;
-    double _levelInterval;
-    NSString *_modelIdentifier;
-    void *_recognition;
+    NSString * _audioInputPath;
+    NSString * _debugDumpPath;
+    NSArray * _keywords;
+    double  _levelInterval;
+    NSString * _modelIdentifier;
+    void * _recognition;
     struct { 
         unsigned int debugDumpEnabled : 1; 
         unsigned int preferredEngine : 2; 
         unsigned int resetEngine : 1; 
         unsigned int bluetoothAllowed : 1; 
         unsigned int hasStarted : 1; 
-    } _recognizeFlags;
-    NSArray *_results;
+    }  _recognizeFlags;
+    NSArray * _results;
 }
 
 - (id)_actionForEmptyResults;

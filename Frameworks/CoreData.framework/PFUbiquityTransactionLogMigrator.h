@@ -3,13 +3,13 @@
  */
 
 @interface PFUbiquityTransactionLogMigrator : NSObject {
-    NSManagedObjectModel *_dstModel;
-    NSString *_localPeerID;
-    NSMappingModel *_mappingModel;
-    NSDictionary *_mappingsByEntityName;
-    NSSet *_removedEntities;
-    NSManagedObjectModel *_srcModel;
-    BOOL _throttleLogs;
+    NSManagedObjectModel * _dstModel;
+    NSString * _localPeerID;
+    NSMappingModel * _mappingModel;
+    NSDictionary * _mappingsByEntityName;
+    NSSet * _removedEntities;
+    NSManagedObjectModel * _srcModel;
+    BOOL  _throttleLogs;
 }
 
 @property (readonly) BOOL throttleLogs;

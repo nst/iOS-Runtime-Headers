@@ -3,7 +3,7 @@
  */
 
 @interface CHDArea3DType : CHDArea2DType {
-    int mGapDepth;
+    int  mGapDepth;
 }
 
 + (bool)is3DType;

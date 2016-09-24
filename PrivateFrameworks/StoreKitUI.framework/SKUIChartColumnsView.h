@@ -3,29 +3,29 @@
  */
 
 @interface SKUIChartColumnsView : UIView <SKUIFlexibleSegmentedControlDelegate> {
-    NSArray *_allViewControllers;
-    int _animatingToNumberOfVisibleColumns;
-    _UIBackdropView *_backdropView;
-    UIView *_borderView0;
-    UIView *_borderView1;
-    int _columnChangeAnimationCount;
-    NSArray *_columnViews;
+    NSArray * _allViewControllers;
+    int  _animatingToNumberOfVisibleColumns;
+    _UIBackdropView * _backdropView;
+    UIView * _borderView0;
+    UIView * _borderView1;
+    int  _columnChangeAnimationCount;
+    NSArray * _columnViews;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _contentInset;
-    UIView *_headerBackgroundBottomBorder;
-    UIView *_headerBackgroundView;
-    NSArray *_headerViews;
-    int _numberOfVisibleColumns;
-    SKUIFlexibleSegmentedControl *_segmentedControl;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _contentInset;
+    UIView * _headerBackgroundBottomBorder;
+    UIView * _headerBackgroundView;
+    NSArray * _headerViews;
+    int  _numberOfVisibleColumns;
+    SKUIFlexibleSegmentedControl * _segmentedControl;
 }
 
 @property (nonatomic, readonly) _UIBackdropView *backdropView;
 @property (nonatomic, copy) NSArray *chartViewControllers;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -39,15 +39,15 @@
 - (id)backdropView;
 - (void)beginColumnChangeAnimationToNumberOfVisibleColumns:(int)arg1;
 - (id)chartViewControllers;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
 - (void)dealloc;
 - (void)endColumnChangeAnimation;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (int)numberOfVisibleColumns;
 - (void)segmentedControl:(id)arg1 didSelectSegmentIndex:(int)arg2;
 - (void)setChartViewControllers:(id)arg1;
-- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setNumberOfVisibleColumns:(int)arg1;
 
 @end

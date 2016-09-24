@@ -3,22 +3,22 @@
  */
 
 @interface HDHealthService : NSObject <CBPeripheralDelegate, HDHSCharacteristicsDelegate> {
-    BOOL _characteristicsDiscovered;
-    NSObject<OS_dispatch_queue> *_dataQueue;
-    BOOL _deliverData;
-    HDDeviceEntity *_deviceEntity;
-    HKDevice *_deviceInformation;
-    int _deviceInformationLoaded;
-    <HDHealthDaemon> *_healthDaemon;
-    NSMutableArray *_pendingObjectBuffer;
-    NSMutableArray *_pendingWrites;
-    CBPeripheral *_peripheral;
-    NSString *_peripheralName;
-    NSUUID *_peripheralUUID;
-    NSString *_serviceId;
-    HDHealthServiceManager *_serviceManager;
-    CBCharacteristic *_writableCharacteristic;
-    NSObject<OS_dispatch_queue> *_writeQueue;
+    BOOL  _characteristicsDiscovered;
+    NSObject<OS_dispatch_queue> * _dataQueue;
+    BOOL  _deliverData;
+    HDDeviceEntity * _deviceEntity;
+    HKDevice * _deviceInformation;
+    int  _deviceInformationLoaded;
+    <HDHealthDaemon> * _healthDaemon;
+    NSMutableArray * _pendingObjectBuffer;
+    NSMutableArray * _pendingWrites;
+    CBPeripheral * _peripheral;
+    NSString * _peripheralName;
+    NSUUID * _peripheralUUID;
+    NSString * _serviceId;
+    HDHealthServiceManager * _serviceManager;
+    CBCharacteristic * _writableCharacteristic;
+    NSObject<OS_dispatch_queue> * _writeQueue;
 }
 
 @property (nonatomic, readonly) BOOL characteristicsDiscovered;

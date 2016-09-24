@@ -3,12 +3,12 @@
  */
 
 @interface UMTask : NSObject {
-    NSString *_bundleID;
-    BOOL _isFinished;
-    NSString *_name;
-    int _pid;
-    NSString *_reason;
-    NSUUID *_uuid;
+    NSString * _bundleID;
+    BOOL  _isFinished;
+    NSString * _name;
+    int  _pid;
+    NSString * _reason;
+    NSUUID * _uuid;
 }
 
 @property (nonatomic, copy) NSString *bundleID;
@@ -18,7 +18,6 @@
 @property (nonatomic, copy) NSString *reason;
 @property (nonatomic, copy) NSUUID *uuid;
 
-+ (id)taskFromDictionaryRepresentation:(id)arg1;
 + (id)taskWithName:(id)arg1 reason:(id)arg2;
 + (id)taskWithName:(id)arg1 reason:(id)arg2 forBundleID:(id)arg3;
 
@@ -26,7 +25,6 @@
 - (void)begin;
 - (id)bundleID;
 - (id)description;
-- (id)dictionaryRepresentation;
 - (void)end;
 - (id)init;
 - (BOOL)isFinished;

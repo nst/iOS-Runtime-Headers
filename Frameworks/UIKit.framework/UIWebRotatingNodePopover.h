@@ -3,14 +3,14 @@
  */
 
 @interface UIWebRotatingNodePopover : NSObject <UIPopoverControllerDelegate> {
-    <UIWebRotatingNodePopoverDelegate> *_dismissDelegate;
-    BOOL _isRotating;
-    DOMNode *_node;
-    UIPopoverController *_popoverController;
+    <UIWebRotatingNodePopoverDelegate> * _dismissDelegate;
+    BOOL  _isRotating;
+    DOMNode * _node;
+    UIPopoverController * _popoverController;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _presentationPoint;
+        double x; 
+        double y; 
+    }  _presentationPoint;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -19,7 +19,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) DOMNode *node;
 @property (nonatomic, retain) UIPopoverController *popoverController;
-@property (nonatomic) struct CGPoint { float x1; float x2; } presentationPoint;
+@property (nonatomic) struct CGPoint { double x1; double x2; } presentationPoint;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -33,11 +33,11 @@
 - (id)popoverController;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)presentPopoverAnimated:(BOOL)arg1;
-- (struct CGPoint { float x1; float x2; })presentationPoint;
+- (struct CGPoint { double x1; double x2; })presentationPoint;
 - (void)setDismissDelegate:(id)arg1;
 - (void)setNode:(id)arg1;
 - (void)setPopoverController:(id)arg1;
-- (void)setPresentationPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setPresentationPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)willRotate:(id)arg1;
 
 @end

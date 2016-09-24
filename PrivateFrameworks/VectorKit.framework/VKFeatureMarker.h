@@ -3,15 +3,25 @@
  */
 
 @interface VKFeatureMarker : NSObject {
-    struct { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned long long x7; BOOL x8; unsigned long long x9; float x10; unsigned long long x11; id x12; } *_feature;
+    struct shared_ptr<md::FeatureMarker> { 
+        struct FeatureMarker {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    }  _actualFeatureMarker;
 }
 
-@property (nonatomic, readonly) unsigned long long featureId;
+@property (readonly) const struct shared_ptr<md::FeatureMarker> { struct FeatureMarker {} *x1; struct __shared_weak_count {} *x2; }*actualFeatureMarker;
+@property (nonatomic, readonly) unsigned int featureID;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) GEOFeatureStyleAttributes *styleAttributes;
 
-- (unsigned long long)featureId;
-- (id)initWithFeature:(struct { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned long long x7; BOOL x8; unsigned long long x9; float x10; unsigned long long x11; id x12; }*)arg1;
++ (id)markerWithFeatureMarker:(const struct shared_ptr<md::FeatureMarker> { struct FeatureMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
+
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (const struct shared_ptr<md::FeatureMarker> { struct FeatureMarker {} *x1; struct __shared_weak_count {} *x2; }*)actualFeatureMarker;
+- (void)dealloc;
+- (unsigned int)featureID;
+- (id)initWithFeatureMarkerPtr:(const struct shared_ptr<md::FeatureMarker> { struct FeatureMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
 - (id)name;
 - (id)styleAttributes;
 

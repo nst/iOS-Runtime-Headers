@@ -3,9 +3,9 @@
  */
 
 @interface CKDPPostCommentRequest : PBRequest <NSCopying> {
-    CKDPCommentContent *_commentContent;
-    CKDPCommentedOnId *_identifier;
-    NSString *_path;
+    CKDPCommentContent * _commentContent;
+    CKDPCommentedOnId * _identifier;
+    NSString * _path;
 }
 
 @property (nonatomic, retain) CKDPCommentContent *commentContent;

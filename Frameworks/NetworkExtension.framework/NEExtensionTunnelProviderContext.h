@@ -3,8 +3,8 @@
  */
 
 @interface NEExtensionTunnelProviderContext : NEExtensionProviderContext <NEExtensionTunnelProviderHostProtocol, NEExtensionTunnelProviderProtocol> {
-    NEIPC *_ipc;
-    NSObject<OS_dispatch_source> *_ipcIdleTimer;
+    NEIPC * _ipc;
+    NSObject<OS_dispatch_source> * _ipcIdleTimer;
 }
 
 @property (readonly, copy) NSString *debugDescription;

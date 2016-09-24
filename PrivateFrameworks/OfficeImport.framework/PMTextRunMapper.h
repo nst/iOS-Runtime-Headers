@@ -3,7 +3,7 @@
  */
 
 @interface PMTextRunMapper : CMMapper {
-    OADTextRun *mTextRun;
+    OADTextRun * mTextRun;
 }
 
 - (BOOL)_isDefaultFill:(id)arg1;

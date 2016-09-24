@@ -3,7 +3,7 @@
  */
 
 @interface ICAccountProxy : NSObject <ICNoteContainer> {
-    ICAccount *_account;
+    ICAccount * _account;
 }
 
 @property (retain) ICAccount *account;
@@ -17,10 +17,12 @@
 - (void).cxx_destruct;
 - (id)account;
 - (id)accountName;
+- (BOOL)canBeSharedViaICloud;
 - (int)compare:(id)arg1;
 - (id)initWithAccount:(id)arg1;
 - (BOOL)isDeleted;
 - (BOOL)isLeaf;
+- (id)noteContainerAccount;
 - (BOOL)noteIsVisible:(id)arg1;
 - (id)noteVisibilityTestingForSearchingAccount;
 - (id)predicateForSearchableAttachments;

@@ -3,10 +3,10 @@
  */
 
 @interface EDContentFormat : NSObject <EDKeyedObject, NSCopying> {
-    bool mBuiltIn;
-    unsigned int mFormatId;
-    EDString *mFormatString;
-    bool mReferenced;
+    bool  mBuiltIn;
+    unsigned int  mFormatId;
+    EDString * mFormatString;
+    bool  mReferenced;
 }
 
 @property (readonly, copy) NSString *debugDescription;

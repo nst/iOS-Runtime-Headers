@@ -3,7 +3,7 @@
  */
 
 @interface DDCreateEventAction : DDAction <EKEventEditViewDelegate> {
-    DDRemoteActionViewController *viewController;
+    DDRemoteActionViewController * viewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,6 +12,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) DDRemoteActionViewController *viewController;
 
+- (void).cxx_destruct;
 - (void)eventEditViewController:(id)arg1 didCompleteWithAction:(int)arg2;
 - (int)interactionType;
 - (void)invalidate;

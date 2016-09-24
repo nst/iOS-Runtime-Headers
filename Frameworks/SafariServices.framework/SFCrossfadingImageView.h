@@ -3,13 +3,13 @@
  */
 
 @interface SFCrossfadingImageView : UIView {
-    UIImage *_fromImage;
-    float _progress;
-    UIImage *_toImage;
+    UIImage * _fromImage;
+    double  _progress;
+    UIImage * _toImage;
 }
 
 @property (nonatomic, retain) UIImage *fromImage;
-@property (nonatomic) float progress;
+@property (nonatomic) double progress;
 @property (nonatomic, retain) UIImage *toImage;
 
 - (void).cxx_destruct;

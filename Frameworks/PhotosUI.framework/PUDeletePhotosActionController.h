@@ -3,16 +3,16 @@
  */
 
 @interface PUDeletePhotosActionController : NSObject {
-    NSArray *__additionalAssetsToDelete;
-    NSArray *__assets;
-    UIAlertController *__mainAlertController;
-    UIAlertController *__oneTimeConfirmationAlertController;
-    UIAlertController *__overQuotaConfirmationAlertController;
-    int _action;
-    id /* block */ _completionHandler;
-    <PUDeletePhotosActionControllerDelegate> *_delegate;
-    BOOL _shouldSkipDeleteConfirmation;
-    id /* block */ _willDeleteHandler;
+    NSArray * __additionalAssetsToDelete;
+    NSArray * __assets;
+    UIAlertController * __mainAlertController;
+    UIAlertController * __oneTimeConfirmationAlertController;
+    UIAlertController * __overQuotaConfirmationAlertController;
+    int  _action;
+    id /* block */  _completionHandler;
+    <PUDeletePhotosActionControllerDelegate> * _delegate;
+    BOOL  _shouldSkipDeleteConfirmation;
+    id /* block */  _willDeleteHandler;
 }
 
 @property (nonatomic, readonly, copy) NSArray *_additionalAssetsToDelete;

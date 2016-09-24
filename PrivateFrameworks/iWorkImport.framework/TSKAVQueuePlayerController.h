@@ -3,7 +3,7 @@
  */
 
 @interface TSKAVQueuePlayerController : TSKAVPlayerController {
-    NSArray *mAssets;
+    NSArray * mAssets;
 }
 
 - (void)dealloc;

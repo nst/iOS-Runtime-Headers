@@ -3,7 +3,7 @@
  */
 
 @interface CAMQueryTimelapseDimensionsCommand : CAMCaptureCommand {
-    id /* block */ __completionBlock;
+    id /* block */  __completionBlock;
 }
 
 @property (setter=_setCompletionBlock:, nonatomic, copy) id /* block */ _completionBlock;

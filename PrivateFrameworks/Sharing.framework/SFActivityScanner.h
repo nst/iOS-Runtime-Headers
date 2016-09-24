@@ -3,33 +3,29 @@
  */
 
 @interface SFActivityScanner : NSObject <SFContinuityScanManagerObserver> {
-    <SFActivityScannerDelegate> *_delegate;
-    NSUUID *_identifier;
-    BOOL _receiving;
+    <SFActivityScannerDelegate> * _delegate;
+    NSUUID * _identifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;
-@property <SFActivityScannerDelegate> *delegate;
+@property (readonly) <SFActivityScannerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (retain) NSUUID *identifier;
-@property BOOL receiving;
 @property (readonly) Class superclass;
 
-- (void)activityPayloadFromDevice:(id)arg1 forAdvertisementPayload:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void).cxx_destruct;
+- (void)activityPayloadFromDevice:(id)arg1 forAdvertisementPayload:(id)arg2 command:(id)arg3 withCompletionHandler:(id /* block */)arg4;
 - (void)dealloc;
 - (id)delegate;
 - (id)identifier;
 - (id)init;
-- (BOOL)receiving;
+- (id)initWithDelegate:(id)arg1;
+- (void)scanForTypes:(unsigned int)arg1;
 - (void)scanManager:(id)arg1 foundDeviceWithDevice:(id)arg2;
 - (void)scanManager:(id)arg1 lostDeviceWithDevice:(id)arg2;
+- (void)scanManager:(id)arg1 pairedDevicesChanged:(id)arg2;
 - (void)scanManager:(id)arg1 receivedAdvertisement:(id)arg2;
-- (void)setDelegate:(id)arg1;
-- (void)setForceScanningEnabled:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setReceiving:(BOOL)arg1;
-- (void)start;
-- (void)stop;
 
 @end

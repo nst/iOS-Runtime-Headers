@@ -3,10 +3,10 @@
  */
 
 @interface SUItemLink : NSObject <NSCopying> {
-    int _linkTarget;
-    int _linkType;
-    NSString *_title;
-    NSURL *_url;
+    int  _linkTarget;
+    int  _linkType;
+    NSString * _title;
+    NSURL * _url;
 }
 
 @property (nonatomic, retain) NSURL *URL;

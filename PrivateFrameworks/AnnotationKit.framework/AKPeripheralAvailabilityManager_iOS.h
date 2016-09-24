@@ -3,8 +3,8 @@
  */
 
 @interface AKPeripheralAvailabilityManager_iOS : NSObject {
-    unsigned int _currentAvailability;
-    struct __IOHIDManager { } *stylusHidManager;
+    unsigned int  _currentAvailability;
+    struct __IOHIDManager { } * stylusHidManager;
 }
 
 @property unsigned int currentAvailability;

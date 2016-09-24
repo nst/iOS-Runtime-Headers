@@ -3,9 +3,9 @@
  */
 
 @interface SGPseudoEventKey : NSObject <SGEntityKey> {
-    NSString *_domain;
-    NSString *_groupId;
-    NSString *_serialized;
+    NSString * _domain;
+    NSString * _groupId;
+    NSString * _serialized;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,7 +15,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)isSupportedEntityType:(long long)arg1;
++ (BOOL)isSupportedEntityType:(int)arg1;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

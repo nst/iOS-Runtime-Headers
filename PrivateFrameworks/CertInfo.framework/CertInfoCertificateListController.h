@@ -3,7 +3,7 @@
  */
 
 @interface CertInfoCertificateListController : UITableViewController {
-    <CertInfoTrustDescription> *_description;
+    <CertInfoTrustDescription> * _description;
 }
 
 - (void).cxx_destruct;

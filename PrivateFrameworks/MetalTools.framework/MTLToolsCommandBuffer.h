@@ -3,13 +3,15 @@
  */
 
 @interface MTLToolsCommandBuffer : MTLToolsObject <MTLCommandBufferSPI> {
-    MTLToolsPointerArray *_blitCommandEncoders;
-    MTLToolsPointerArray *_computeCommandEncoders;
-    MTLToolsPointerArray *_fragmentRenderCommandEncoders;
-    MTLToolsPointerArray *_parallelRenderCommandEncoders;
-    MTLToolsPointerArray *_renderCommandEncoders;
+    MTLToolsPointerArray * _blitCommandEncoders;
+    MTLToolsPointerArray * _computeCommandEncoders;
+    MTLToolsPointerArray * _fragmentRenderCommandEncoders;
+    MTLToolsPointerArray * _parallelRenderCommandEncoders;
+    MTLToolsPointerArray * _renderCommandEncoders;
 }
 
+@property (readonly) double GPUEndTime;
+@property (readonly) double GPUStartTime;
 @property (nonatomic, readonly) MTLToolsPointerArray *blitCommandEncoders;
 @property (readonly) <MTLCommandQueue> *commandQueue;
 @property (nonatomic, readonly) MTLToolsPointerArray *computeCommandEncoders;
@@ -19,7 +21,10 @@
 @property (readonly) NSError *error;
 @property (nonatomic, readonly) MTLToolsPointerArray *fragmentRenderCommandEncoders;
 @property (readonly) unsigned int hash;
+@property (readonly) double kernelEndTime;
+@property (readonly) double kernelStartTime;
 @property (copy) NSString *label;
+@property (getter=getListIndex, nonatomic) unsigned int listIndex;
 @property (nonatomic, readonly) MTLToolsPointerArray *parallelRenderCommandEncoders;
 @property (getter=isProfilingEnabled) BOOL profilingEnabled;
 @property (readonly) NSDictionary *profilingResults;
@@ -30,6 +35,8 @@
 @property (nonatomic, readonly) NSMutableDictionary *userDictionary;
 
 - (void).cxx_destruct;
+- (double)GPUEndTime;
+- (double)GPUStartTime;
 - (void)acceptVisitor:(id)arg1;
 - (void)addCompletedHandler:(id /* block */)arg1;
 - (void)addScheduledHandler:(id /* block */)arg1;
@@ -46,6 +53,8 @@
 - (id)fragmentRenderCommandEncoders;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
 - (BOOL)isProfilingEnabled;
+- (double)kernelEndTime;
+- (double)kernelStartTime;
 - (id)label;
 - (id)parallelRenderCommandEncoderWithDescriptor:(id)arg1;
 - (id)parallelRenderCommandEncoders;
@@ -55,8 +64,9 @@
 - (id)renderCommandEncoderWithDescriptor:(id)arg1;
 - (id)renderCommandEncoders;
 - (BOOL)retainedReferences;
-- (id)sampledComputeCommandEncoderWithProgramInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned long long x4; unsigned long long x5; }*)arg1 capacity:(unsigned int)arg2;
-- (id)sampledRenderCommandEncoderWithFramebuffer:(id)arg1 programInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned long long x4; unsigned long long x5; }*)arg2 capacity:(unsigned int)arg3;
+- (id)sampledComputeCommandEncoderWithProgramInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1 capacity:(unsigned int)arg2;
+- (id)sampledFragmentRenderCommandEncoderWithDescriptor:(id)arg1 programInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg2 capacity:(unsigned int)arg3;
+- (id)sampledRenderCommandEncoderWithDescriptor:(id)arg1 programInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg2 capacity:(unsigned int)arg3;
 - (void)setLabel:(id)arg1;
 - (void)setProfilingEnabled:(BOOL)arg1;
 - (unsigned int)status;

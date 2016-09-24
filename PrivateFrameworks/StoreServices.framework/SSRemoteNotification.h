@@ -3,7 +3,7 @@
  */
 
 @interface SSRemoteNotification : NSObject <SSXPCCoding> {
-    NSDictionary *_userInfo;
+    NSDictionary * _userInfo;
 }
 
 @property (nonatomic, readonly) int actionType;

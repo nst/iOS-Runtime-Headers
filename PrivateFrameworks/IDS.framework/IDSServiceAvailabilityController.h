@@ -3,7 +3,7 @@
  */
 
 @interface IDSServiceAvailabilityController : NSObject {
-    NSMutableDictionary *_availabilityHandlers;
+    NSMutableDictionary * _availabilityHandlers;
 }
 
 + (id)sharedInstance;

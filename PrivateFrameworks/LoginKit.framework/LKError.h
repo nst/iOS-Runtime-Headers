@@ -5,6 +5,6 @@
 @interface LKError : NSObject
 
 + (id)errorWithCode:(unsigned int)arg1;
-+ (id)errorWithVerificationFailureCode:(int)arg1 inFailureObject:(id)arg2;
++ (id)errorWithCode:(unsigned int)arg1 userInfo:(id)arg2;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface __NSOrderedSetI : NSOrderedSet {
-    unsigned int _szidx;
-    unsigned int _used;
+    unsigned int  _szidx;
+    unsigned int  _used;
 }
 
 + (id)__new:(const id*)arg1 :(unsigned int)arg2 :(BOOL)arg3;
@@ -16,7 +16,6 @@
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
-- (void)finalize;
 - (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (unsigned int)indexOfObject:(id)arg1;
 - (id)objectAtIndex:(unsigned int)arg1;

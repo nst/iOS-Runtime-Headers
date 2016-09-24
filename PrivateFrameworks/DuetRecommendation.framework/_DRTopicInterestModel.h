@@ -3,8 +3,8 @@
  */
 
 @interface _DRTopicInterestModel : NSObject <_DRTopicInterestModeling> {
-    _DKKnowledgeStorage *_storage;
-    NSObject<OS_dispatch_queue> *_syncQueue;
+    _DKKnowledgeStorage * _storage;
+    NSObject<OS_dispatch_queue> * _syncQueue;
 }
 
 @property (retain) _DKKnowledgeStorage *storage;

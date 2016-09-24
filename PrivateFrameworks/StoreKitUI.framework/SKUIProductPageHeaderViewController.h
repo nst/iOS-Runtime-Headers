@@ -3,27 +3,27 @@
  */
 
 @interface SKUIProductPageHeaderViewController : UIViewController <SKUIItemStateCenterObserver, UIPopoverControllerDelegate> {
-    UIPopoverController *_activityPopoverController;
-    SKUIItemArtworkContext *_artworkContext;
-    BOOL _askPermission;
-    SKUIClientContext *_clientContext;
-    SKUIContentRatingArtworkResourceLoader *_contentRatingArtworkLoader;
-    <SKUIProductPageHeaderViewDelegate> *_delegate;
-    SKUIProductPageHeaderFloatingView *_floatingView;
-    SKUIProductPageHeaderView *_headerView;
-    UIImage *_iconImage;
-    SKUIItem *_item;
-    long long _itemIdentifier;
-    SSVLoadURLOperation *_loadIconOperation;
-    SSVLoadURLOperation *_loadUberOperation;
-    NSOperationQueue *_operationQueue;
-    BOOL _performArtistActionOnLoad;
-    int _personalizationState;
-    SKUIItemOffer *_personalizedOffer;
-    UIImage *_placeholderImage;
-    SKUIProductPage *_productPage;
-    UIImage *_uberImage;
-    BOOL _wantsActivityViewController;
+    UIPopoverController * _activityPopoverController;
+    SKUIItemArtworkContext * _artworkContext;
+    BOOL  _askPermission;
+    SKUIClientContext * _clientContext;
+    SKUIContentRatingArtworkResourceLoader * _contentRatingArtworkLoader;
+    <SKUIProductPageHeaderViewDelegate> * _delegate;
+    SKUIProductPageHeaderFloatingView * _floatingView;
+    SKUIProductPageHeaderView * _headerView;
+    UIImage * _iconImage;
+    SKUIItem * _item;
+    int  _itemIdentifier;
+    SSVLoadURLOperation * _loadIconOperation;
+    SSVLoadURLOperation * _loadUberOperation;
+    NSOperationQueue * _operationQueue;
+    BOOL  _performArtistActionOnLoad;
+    int  _personalizationState;
+    SKUIItemOffer * _personalizedOffer;
+    UIImage * _placeholderImage;
+    SKUIProductPage * _productPage;
+    UIImage * _uberImage;
+    BOOL  _wantsActivityViewController;
 }
 
 @property (nonatomic) BOOL askPermission;

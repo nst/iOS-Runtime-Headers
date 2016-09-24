@@ -3,8 +3,8 @@
  */
 
 @interface WBSParsecTitleCardSection : WBSParsecCardSection {
-    NSString *_subtitleText;
-    NSString *_titleText;
+    NSString * _subtitleText;
+    NSString * _titleText;
 }
 
 @property (nonatomic, readonly, copy) NSString *subtitleText;

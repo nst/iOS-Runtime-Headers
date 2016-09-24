@@ -3,8 +3,8 @@
  */
 
 @interface TNPageInfoContainer : NSObject <TSDContainerInfo> {
-    TNPageController *_pageController;
-    unsigned int _pageIndex;
+    TNPageController * _pageController;
+    unsigned int  _pageIndex;
 }
 
 @property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;
@@ -32,6 +32,7 @@
 - (BOOL)isAttachedToBodyText;
 - (BOOL)isFloatingAboveText;
 - (BOOL)isInlineWithText;
+- (BOOL)isSelectable;
 - (BOOL)isThemeContent;
 - (Class)layoutClass;
 - (id)owningAttachment;

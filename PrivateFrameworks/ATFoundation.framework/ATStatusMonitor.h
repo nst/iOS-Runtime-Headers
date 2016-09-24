@@ -3,11 +3,11 @@
  */
 
 @interface ATStatusMonitor : NSObject {
-    NSMapTable *_observerDataClasses;
-    NSMutableDictionary *_statusDictionary;
-    NSHashTable *_statusObservers;
-    NSObject<OS_dispatch_queue> *_statusQueue;
-    NSMutableSet *_statuses;
+    NSMapTable * _observerDataClasses;
+    NSMutableDictionary * _statusDictionary;
+    NSHashTable * _statusObservers;
+    NSObject<OS_dispatch_queue> * _statusQueue;
+    NSMutableSet * _statuses;
 }
 
 + (id)sharedMonitor;

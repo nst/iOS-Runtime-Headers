@@ -3,9 +3,9 @@
  */
 
 @interface MusicControlTargetAction : NSObject {
-    SEL _action;
-    unsigned int _controlEvents;
-    id _target;
+    SEL  _action;
+    unsigned int  _controlEvents;
+    id  _target;
 }
 
 @property (nonatomic) SEL action;

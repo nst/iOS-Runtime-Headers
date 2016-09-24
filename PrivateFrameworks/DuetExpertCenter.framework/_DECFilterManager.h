@@ -3,7 +3,7 @@
  */
 
 @interface _DECFilterManager : NSObject <_DECFilter> {
-    NSArray *_filters;
+    NSArray * _filters;
 }
 
 @property (readonly, copy) NSString *debugDescription;

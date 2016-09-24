@@ -3,8 +3,8 @@
  */
 
 @interface PUAirPlayActivity : PUActivity <PHAirPlayControllerRouteObserver> {
-    BOOL __needsUpdateRouteAvailable;
-    BOOL __routeAvailable;
+    BOOL  __needsUpdateRouteAvailable;
+    BOOL  __routeAvailable;
 }
 
 @property (setter=_setNeedsUpdateRouteAvailable:, nonatomic) BOOL _needsUpdateRouteAvailable;

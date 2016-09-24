@@ -3,24 +3,24 @@
  */
 
 @interface SSDownloadPolicyRule : NSObject <NSCoding, NSCopying, SSXPCCoding> {
-    NSSet *_applicationStates;
-    float _batteryLevel;
-    int _cellularDataStates;
-    long long _downloadSizeLimit;
-    NSSet *_networkTypes;
-    int _powerStates;
-    int _registrationStates;
-    int _timeLimitStates;
-    NSSet *_userDefaultStates;
+    NSSet * _applicationStates;
+    double  _batteryLevel;
+    int  _cellularDataStates;
+    int  _downloadSizeLimit;
+    NSSet * _networkTypes;
+    int  _powerStates;
+    int  _registrationStates;
+    int  _timeLimitStates;
+    NSSet * _userDefaultStates;
 }
 
 @property (nonatomic, copy) NSSet *applicationStates;
-@property (nonatomic) float batteryLevel;
+@property (nonatomic) double batteryLevel;
 @property (getter=isCellularAllowed, nonatomic, readonly) BOOL cellularAllowed;
 @property (nonatomic) int cellularDataStates;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) long long downloadSizeLimit;
+@property (nonatomic) int downloadSizeLimit;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSSet *networkTypes;
 @property (nonatomic) int powerStates;
@@ -39,7 +39,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
 - (void)dealloc;
-- (long long)downloadSizeLimit;
+- (int)downloadSizeLimit;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)init;
@@ -54,7 +54,7 @@
 - (void)setApplicationStates:(id)arg1;
 - (void)setBatteryLevel:(float)arg1;
 - (void)setCellularDataStates:(int)arg1;
-- (void)setDownloadSizeLimit:(long long)arg1;
+- (void)setDownloadSizeLimit:(int)arg1;
 - (void)setNetworkTypes:(id)arg1;
 - (void)setPowerStates:(int)arg1;
 - (void)setRegistrationStates:(int)arg1;

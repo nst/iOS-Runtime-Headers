@@ -6,6 +6,7 @@
 
 + (BOOL)_migrateEmergencyContactsToVersion2:(id)arg1;
 + (BOOL)_migrateEmergencyContactsToVersion3:(id)arg1;
++ (BOOL)_migrateFromVersion3ToVersion4:(id)arg1;
 + (BOOL)_migrateFromVersionNoneTo1:(id)arg1;
 + (BOOL)migrateMedicalIDDataIfNeeded:(id)arg1;
 

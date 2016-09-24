@@ -4,7 +4,7 @@
 
 @interface HDMetadataValueStatement : HDSQLiteStatement
 
-- (BOOL)enumerateResultsForObjectID:(long long)arg1 withError:(id*)arg2 block:(id /* block */)arg3;
+- (BOOL)enumerateResultsForObjectID:(int)arg1 error:(id*)arg2 block:(id /* block */)arg3;
 - (id)initWithDatabase:(id)arg1;
 
 @end

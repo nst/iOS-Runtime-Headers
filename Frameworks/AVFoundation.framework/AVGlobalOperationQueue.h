@@ -3,7 +3,7 @@
  */
 
 @interface AVGlobalOperationQueue : NSObject {
-    NSOperationQueue *_operationQueue;
+    NSOperationQueue * _operationQueue;
 }
 
 @property (readonly, copy) NSArray *unfinishedOperations;

@@ -3,7 +3,7 @@
  */
 
 @interface PTPCameraDevice : ICCameraDevice {
-    void *_ptpCameraProperties;
+    void * _ptpCameraProperties;
 }
 
 @property (readonly) PTPInitiator *initiator;

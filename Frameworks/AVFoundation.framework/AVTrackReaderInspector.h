@@ -3,11 +3,11 @@
  */
 
 @interface AVTrackReaderInspector : AVAssetTrackInspector {
-    struct OpaqueFigFormatReader { } *_formatReader;
-    unsigned long _mediaType;
-    int _trackID;
-    struct OpaqueFigTrackReader { } *_trackReader;
-    AVWeakReference *_weakReferenceToAsset;
+    struct OpaqueFigFormatReader { } * _formatReader;
+    unsigned long  _mediaType;
+    int  _trackID;
+    struct OpaqueFigTrackReader { } * _trackReader;
+    AVWeakReference * _weakReferenceToAsset;
 }
 
 - (unsigned long)_figMediaType;
@@ -20,7 +20,8 @@
 - (id)availableMetadataFormats;
 - (id)commonMetadata;
 - (void)dealloc;
-- (struct CGSize { float x1; float x2; })dimensions;
+- (int)defaultAlternateGroupID;
+- (struct CGSize { double x1; double x2; })dimensions;
 - (float)estimatedDataRate;
 - (id)extendedLanguageTag;
 - (void)finalize;
@@ -37,18 +38,19 @@
 - (id)mediaCharacteristics;
 - (id)mediaType;
 - (id)metadataForFormat:(id)arg1;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })minSampleDuration;
-- (struct CGSize { float x1; float x2; })naturalSize;
+- (struct { int x1; int x2; unsigned int x3; int x4; })minSampleDuration;
+- (struct CGSize { double x1; double x2; })naturalSize;
 - (int)naturalTimeScale;
 - (float)nominalFrameRate;
 - (long)playabilityValidationResult;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })preferredTransform;
 - (float)preferredVolume;
+- (int)provisionalAlternateGroupID;
 - (BOOL)requiresFrameReordering;
-- (id)segmentForTrackTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (id)segmentForTrackTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
 - (id)segments;
-- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
-- (long long)totalSampleDataLength;
+- (struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })timeRange;
+- (int)totalSampleDataLength;
 - (int)trackID;
 
 @end

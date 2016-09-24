@@ -3,8 +3,8 @@
  */
 
 @interface NSFileCoordinatorAccessorBlockCompletion : NSObject {
-    id /* block */ block;
-    int count;
+    id /* block */  block;
+    int  count;
 }
 
 + (id)completionWithBlock:(id /* block */)arg1;

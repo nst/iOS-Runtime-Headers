@@ -3,14 +3,14 @@
  */
 
 @interface GSTemporaryAddtionEnumerator : NSEnumerator <GSAdditionEnumerating> {
-    NSArray *_array;
-    NSDirectoryEnumerator *_enumerator;
-    NSError *_error;
-    NSString *_nameSpace;
-    unsigned int _pos;
-    GSTemporaryStorage *_storage;
-    unsigned long long _withOptions;
-    unsigned long long _withoutOption;
+    NSArray * _array;
+    NSDirectoryEnumerator * _enumerator;
+    NSError * _error;
+    NSString * _nameSpace;
+    unsigned int  _pos;
+    GSTemporaryStorage * _storage;
+    unsigned int  _withOptions;
+    unsigned int  _withoutOption;
 }
 
 @property (nonatomic, readonly) NSError *error;
@@ -18,7 +18,7 @@
 - (id)_nextURL;
 - (void)dealloc;
 - (id)error;
-- (id)initWithStorage:(id)arg1 nameSpace:(id)arg2 withOptions:(unsigned long long)arg3 withoutOptions:(unsigned long long)arg4 ordering:(int)arg5;
+- (id)initWithStorage:(id)arg1 nameSpace:(id)arg2 withOptions:(unsigned int)arg3 withoutOptions:(unsigned int)arg4 ordering:(int)arg5;
 - (id)nextObject;
 
 @end

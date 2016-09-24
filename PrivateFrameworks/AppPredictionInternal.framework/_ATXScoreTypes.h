@@ -5,6 +5,7 @@
 @interface _ATXScoreTypes : NSObject
 
 + (id)aggdStringForScoreInput:(unsigned int)arg1;
++ (id)scoreInputsToNames;
 + (id)stringForScoreInput:(unsigned int)arg1;
 
 @end

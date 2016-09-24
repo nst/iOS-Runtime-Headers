@@ -3,9 +3,9 @@
  */
 
 @interface WXOAVReadState : OAVReadState {
-    NSMutableDictionary *mNextVmlShapeIdToTextBoxMap;
-    WDParagraph *mParagraph;
-    WXReadState *mWxState;
+    NSMutableDictionary * mNextVmlShapeIdToTextBoxMap;
+    WDParagraph * mParagraph;
+    WXReadState * mWxState;
 }
 
 - (id)currentParagraph;

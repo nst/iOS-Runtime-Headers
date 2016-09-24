@@ -3,7 +3,7 @@
  */
 
 @interface UIStoryboardEmbedSegueTemplate : UIStoryboardSegueTemplate {
-    UIView *_containerView;
+    UIView * _containerView;
 }
 
 @property (nonatomic, retain) UIView *containerView;

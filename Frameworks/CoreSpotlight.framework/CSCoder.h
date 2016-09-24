@@ -3,9 +3,9 @@
  */
 
 @interface CSCoder : NSObject <CSCoderData> {
-    struct _MDPlistContainer { } *_container;
-    NSData *_data;
-    BOOL _finalized;
+    struct _MDPlistContainer { } * _container;
+    NSData * _data;
+    BOOL  _finalized;
 }
 
 @property (nonatomic, readonly) struct _MDPlistContainer { }*container;
@@ -22,7 +22,7 @@
 - (void)encodeBool:(BOOL)arg1;
 - (void)encodeData:(const void*)arg1 length:(int)arg2;
 - (void)encodeInt32:(int)arg1;
-- (void)encodeInt64:(long long)arg1;
+- (void)encodeInt64:(int)arg1;
 - (void)encodeMDPlistObject:(struct { char *x1; struct { unsigned int x_2_1_1; unsigned char x_2_1_2; } x2; })arg1;
 - (void)encodeNSString:(id)arg1;
 - (void)encodeObject:(id)arg1;

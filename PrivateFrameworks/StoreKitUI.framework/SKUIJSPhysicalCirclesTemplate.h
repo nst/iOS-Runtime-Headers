@@ -3,7 +3,7 @@
  */
 
 @interface SKUIJSPhysicalCirclesTemplate : IKJSObject <SKUIJSPhysicalCirclesTemplate> {
-    SKUIPhysicalCirclesTemplateDOMFeature *_feature;
+    SKUIPhysicalCirclesTemplateDOMFeature * _feature;
 }
 
 - (void).cxx_destruct;

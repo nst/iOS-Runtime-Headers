@@ -3,7 +3,7 @@
  */
 
 @interface SUCellConfigurationContext : NSObject {
-    int _tableViewStyle;
+    int  _tableViewStyle;
 }
 
 @property (nonatomic) int tableViewStyle;

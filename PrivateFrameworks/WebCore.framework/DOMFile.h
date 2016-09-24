@@ -6,7 +6,7 @@
 
 @property (readonly, copy) NSString *name;
 
-- (double)lastModifiedDate;
+- (int)lastModified;
 - (id)name;
 
 @end

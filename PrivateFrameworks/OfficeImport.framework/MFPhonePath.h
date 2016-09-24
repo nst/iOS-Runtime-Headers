@@ -3,8 +3,8 @@
  */
 
 @interface MFPhonePath : MFPath {
-    TSUBezierPath *m_path;
-    int m_state;
+    OITSUBezierPath * m_path;
+    int  m_state;
 }
 
 - (int)abort;
@@ -12,7 +12,7 @@
 - (int)begin;
 - (int)closeFigure;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (struct CGPoint { float x1; float x2; })currentPoint;
+- (struct CGPoint { double x1; double x2; })currentPoint;
 - (void)dealloc;
 - (int)end;
 - (int)fill:(id)arg1;

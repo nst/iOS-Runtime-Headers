@@ -3,12 +3,12 @@
  */
 
 @interface PLBasebandEurekaMessage : PLBasebandMessage {
-    struct _PLBasebandEventHeader { struct _PLBasebandMessageHeader { unsigned char x_1_1_1; } x1; unsigned int x2; unsigned char x3[8]; unsigned char x4; } *_header;
-    NSData *_payload;
-    unsigned char _skip;
-    char *_ssaction;
-    struct _PLBasebandSystemSelectionEvent { unsigned short x1; } *_ssevent;
-    char *_ssstate;
+    struct _PLBasebandEventHeader { struct _PLBasebandMessageHeader { unsigned char x_1_1_1; } x1; unsigned int x2; unsigned char x3[8]; unsigned char x4; } * _header;
+    NSData * _payload;
+    unsigned char  _skip;
+    char * _ssaction;
+    struct _PLBasebandSystemSelectionEvent { unsigned short x1; } * _ssevent;
+    char * _ssstate;
 }
 
 @property (readonly) unsigned int eventCode;

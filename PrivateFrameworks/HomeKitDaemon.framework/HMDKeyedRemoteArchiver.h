@@ -3,8 +3,8 @@
  */
 
 @interface HMDKeyedRemoteArchiver : NSObject {
-    NSKeyedArchiver *_archiver;
-    NSString *_transportType;
+    NSKeyedArchiver * _archiver;
+    NSString * _transportType;
 }
 
 @property (nonatomic, retain) NSKeyedArchiver *archiver;
@@ -15,8 +15,7 @@
 - (void)dealloc;
 - (void)encodeObject:(id)arg1 forKey:(id)arg2;
 - (void)finishEncoding;
-- (id)initForWritingWithMutableData:(id)arg1 remoteDeviceIsOnSameAccount:(BOOL)arg2;
-- (id)initForWritingWithMutableData:(id)arg1 remoteDeviceIsOnSameAccount:(BOOL)arg2 remoteGateway:(BOOL)arg3;
+- (id)initForWritingWithMutableData:(id)arg1 remoteDeviceIsOnSameAccount:(BOOL)arg2 remoteGateway:(BOOL)arg3 remoteUserIsAdministrator:(BOOL)arg4;
 - (void)setArchiver:(id)arg1;
 - (void)setTransportType:(id)arg1;
 - (id)transportType;

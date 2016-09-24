@@ -3,10 +3,10 @@
  */
 
 @interface _CDDailyProgressForecast : NSObject {
-    double _averageVar;
-    NSArray *_mean;
-    double _temporalResolution;
-    NSArray *_var;
+    double  _averageVar;
+    NSArray * _mean;
+    double  _temporalResolution;
+    NSArray * _var;
 }
 
 @property double averageVar;

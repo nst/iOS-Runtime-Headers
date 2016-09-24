@@ -3,16 +3,16 @@
  */
 
 @interface SKUIAccountButtonsView : UIView {
-    UILabel *_accountCreditsLabel;
-    SKUIRoundedRectButton *_appleIDButton;
-    SKUIClientContext *_clientContext;
-    SKUILinkButton *_ecommerceButton;
-    BOOL _ecommerceVisibilityHidden;
-    SKUIRoundedRectButton *_giftingButton;
-    BOOL _giftingVisibilityHidden;
-    UIButton *_redeemButton;
-    UIButton *_termsAndConditionsButton;
-    SKUIRoundedRectButton *_usernameButton;
+    UILabel * _accountCreditsLabel;
+    SKUIRoundedRectButton * _appleIDButton;
+    SKUIClientContext * _clientContext;
+    SKUILinkButton * _ecommerceButton;
+    BOOL  _ecommerceVisibilityHidden;
+    SKUIRoundedRectButton * _giftingButton;
+    BOOL  _giftingVisibilityHidden;
+    UIButton * _redeemButton;
+    UIButton * _termsAndConditionsButton;
+    SKUIRoundedRectButton * _usernameButton;
 }
 
 @property (nonatomic, readonly) UIControl *ECommerceButton;
@@ -47,7 +47,7 @@
 - (void)setECommerceLinkTitle:(id)arg1;
 - (void)setGiftingHidden:(BOOL)arg1;
 - (void)setTermsAndConditionsHidden:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)termsAndConditionsButton;
 - (void)tintColorDidChange;
 

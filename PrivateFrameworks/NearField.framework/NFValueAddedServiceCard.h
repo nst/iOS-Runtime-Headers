@@ -3,11 +3,11 @@
  */
 
 @interface NFValueAddedServiceCard : NSObject <NSSecureCoding> {
-    NSData *_data;
-    NSData *_identifier;
-    NSData *_token;
-    int _type;
-    BOOL _userInterventionRequired;
+    NSData * _data;
+    NSData * _identifier;
+    NSData * _token;
+    int  _type;
+    BOOL  _userInterventionRequired;
 }
 
 @property (retain) NSData *data;

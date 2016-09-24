@@ -3,17 +3,17 @@
  */
 
 @interface MusicTermsAgreementViewController : UIViewController {
-    BOOL _accepting;
-    UIBarButtonItem *_acceptingBarButtonItem;
-    UIBarButtonItem *_agreeBarButtonItem;
-    UIBarButtonItem *_cancelBarButtonItem;
-    <MusicTermsAgreementViewControllerDelegate> *_delegate;
-    BOOL _loading;
-    UIActivityIndicatorView *_loadingActivityIndicatorView;
-    UILabel *_loadingLabel;
-    UIBarButtonItem *_sendEmailBarButtonItem;
-    NSString *_termsText;
-    UITextView *_termsTextView;
+    BOOL  _accepting;
+    UIBarButtonItem * _acceptingBarButtonItem;
+    UIBarButtonItem * _agreeBarButtonItem;
+    UIBarButtonItem * _cancelBarButtonItem;
+    <MusicTermsAgreementViewControllerDelegate> * _delegate;
+    BOOL  _loading;
+    UIActivityIndicatorView * _loadingActivityIndicatorView;
+    UILabel * _loadingLabel;
+    UIBarButtonItem * _sendEmailBarButtonItem;
+    NSString * _termsText;
+    UITextView * _termsTextView;
 }
 
 @property (getter=isAccepting, nonatomic) BOOL accepting;

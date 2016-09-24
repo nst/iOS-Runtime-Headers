@@ -3,8 +3,8 @@
  */
 
 @interface __NSCFSS : NSObject {
-    id /* block */ _capturedStreams;
-    int (*_trustEval;
+    id /* block */  _capturedStreams;
+    int (* _trustEval;
 }
 
 - (void)completeWithError:(id)arg1;

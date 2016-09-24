@@ -2,18 +2,18 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@interface GKRemoteUIHeaderView : UIView <RemoteUITableHeader> {
-    float _bottomMargin;
-    float _height;
-    BOOL _isFirstSection;
-    GKLabel *_textLabel;
+@interface GKRemoteUIHeaderView : UIView <RUIHeader> {
+    double  _bottomMargin;
+    double  _height;
+    BOOL  _isFirstSection;
+    GKLabel * _textLabel;
 }
 
-@property (nonatomic) float bottomMargin;
+@property (nonatomic) double bottomMargin;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) float height;
+@property (nonatomic) double height;
 @property (nonatomic) BOOL isFirstSection;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) GKLabel *textLabel;

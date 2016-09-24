@@ -2,11 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
  */
 
-@interface WBSCloudTabStore : NSObject {
-    NSMutableDictionary *_deviceUUIDsToCloseRequests;
-    NSMutableArray *_syncedCloudTabDevices;
+@interface WBSCloudTabStore : NSObject <WBSCloudTabDeviceProvider> {
+    NSMutableDictionary * _deviceUUIDsToCloseRequests;
+    NSMutableArray * _syncedCloudTabDevices;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSArray *syncedCloudTabDevices;
 
 - (void).cxx_destruct;

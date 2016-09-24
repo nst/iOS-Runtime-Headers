@@ -3,11 +3,11 @@
  */
 
 @interface FigCaptureConnectionConfiguration : NSObject <FigXPCCoding, NSCopying> {
-    NSString *_connectionID;
-    BOOL _enabled;
-    unsigned long _mediaType;
-    FigCaptureSinkConfiguration *_sinkConfiguration;
-    FigCaptureSourceConfiguration *_sourceConfiguration;
+    NSString * _connectionID;
+    BOOL  _enabled;
+    unsigned long  _mediaType;
+    FigCaptureSinkConfiguration * _sinkConfiguration;
+    FigCaptureSourceConfiguration * _sourceConfiguration;
 }
 
 @property (nonatomic, copy) NSString *connectionID;

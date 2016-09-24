@@ -3,9 +3,9 @@
  */
 
 @interface TSCHSelectionPath : NSObject <NSCopying> {
-    NSArray *mArguments;
-    TSCHSelectionPathType *mPathType;
-    TSCHSelectionPath *mSubSelection;
+    NSArray * mArguments;
+    TSCHSelectionPathType * mPathType;
+    TSCHSelectionPath * mSubSelection;
 }
 
 @property (nonatomic, readonly) TSCHSelectionPathType *pathType;

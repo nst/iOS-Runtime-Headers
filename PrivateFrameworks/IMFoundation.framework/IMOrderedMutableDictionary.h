@@ -3,8 +3,8 @@
  */
 
 @interface IMOrderedMutableDictionary : NSObject {
-    NSMutableDictionary *_dictionary;
-    IMDoubleLinkedList *_linkedList;
+    NSMutableDictionary * _dictionary;
+    IMDoubleLinkedList * _linkedList;
 }
 
 - (BOOL)containsKey:(id)arg1;

@@ -3,25 +3,25 @@
  */
 
 @interface VTUITickMarkView : UIView {
-    int _animState;
-    id /* block */ _completionBlock;
-    BOOL _completionCalled;
-    NSLock *_completionLock;
-    int _currentFrame;
-    int _currentFrameInterval60thPerSec;
-    CADisplayLink *_displayLink;
-    int _fadeInFrames;
-    int _fadeOutFrames;
-    int _pauseFrames;
-    NSTimer *_safetyTimer;
-    BOOL _shown;
+    int  _animState;
+    id /* block */  _completionBlock;
+    BOOL  _completionCalled;
+    NSLock * _completionLock;
+    int  _currentFrame;
+    int  _currentPreferredFrameRate;
+    CADisplayLink * _displayLink;
+    int  _fadeInFrames;
+    int  _fadeOutFrames;
+    int  _pauseFrames;
+    NSTimer * _safetyTimer;
+    BOOL  _shown;
 }
 
 + (void)initialize;
 
 - (void).cxx_destruct;
 - (void)didMoveToSuperview;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)handleSafetyTimer:(id)arg1;
 - (struct CGImage { }*)imageMask:(BOOL)arg1;
 - (id)init;

@@ -3,15 +3,18 @@
  */
 
 @interface GEOMapsServerMetadata : PBCodable <NSCopying> {
-    NSMutableArray *_mapsSearchResults;
-    NSMutableArray *_suggestionEntryMetadataDisplayeds;
-    NSData *_suggestionEntryMetadataTappedOn;
+    NSMutableArray * _mapsSearchResults;
+    NSMutableArray * _suggestionEntryMetadataDisplayeds;
+    NSData * _suggestionEntryMetadataTappedOn;
 }
 
 @property (nonatomic, readonly) BOOL hasSuggestionEntryMetadataTappedOn;
 @property (nonatomic, retain) NSMutableArray *mapsSearchResults;
 @property (nonatomic, retain) NSMutableArray *suggestionEntryMetadataDisplayeds;
 @property (nonatomic, retain) NSData *suggestionEntryMetadataTappedOn;
+
++ (Class)mapsSearchResultType;
++ (Class)suggestionEntryMetadataDisplayedType;
 
 - (void)addMapsSearchResult:(id)arg1;
 - (void)addSuggestionEntryMetadataDisplayed:(id)arg1;

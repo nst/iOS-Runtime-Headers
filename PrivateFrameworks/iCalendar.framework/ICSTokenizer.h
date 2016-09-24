@@ -3,15 +3,15 @@
  */
 
 @interface ICSTokenizer : NSObject {
-    int _cursor;
-    NSData *_data;
-    const char *_datastring;
-    int _expectedNextTokenType;
-    int _length;
-    int _logCount;
-    BOOL _printedICS;
-    char *_token;
-    int _tokenType;
+    int  _cursor;
+    NSData * _data;
+    const char * _datastring;
+    int  _expectedNextTokenType;
+    int  _length;
+    int  _logCount;
+    BOOL  _printedICS;
+    char * _token;
+    int  _tokenType;
 }
 
 @property int logCount;

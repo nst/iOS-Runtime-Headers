@@ -3,8 +3,8 @@
  */
 
 @interface _LSInstallationService : NSObject <LSInstalationServiceProtocol, NSXPCListenerDelegate> {
-    NSObject<OS_dispatch_queue> *_databaseQueue;
-    NSObject<OS_dispatch_queue> *_serialQueue;
+    NSObject<OS_dispatch_queue> * _databaseQueue;
+    NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
 @property (readonly) NSObject<OS_dispatch_queue> *databaseQueue;
@@ -13,6 +13,8 @@
 @property (readonly) unsigned int hash;
 @property (readonly) NSObject<OS_dispatch_queue> *serialQueue;
 @property (readonly) Class superclass;
+
++ (void)beginListening;
 
 - (id)databaseQueue;
 - (void)dealloc;

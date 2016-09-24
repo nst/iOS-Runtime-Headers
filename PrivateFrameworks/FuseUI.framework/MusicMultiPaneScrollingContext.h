@@ -4,65 +4,65 @@
 
 @interface MusicMultiPaneScrollingContext : NSObject {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _previousContentInsetAdditions;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _previousContentInsetAdditions;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _previousContentOffset;
+        double x; 
+        double y; 
+    }  _previousContentOffset;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _previousContentScrollInsetAdditions;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _previousContentScrollInsetAdditions;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _previousExternalContentInset;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _previousExternalContentInset;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _previousMaximumContentSizeScrollIndicatorInsetAdditions;
-    float _previousMaximumHeaderHeight;
-    float _previousStabilizingBottomAdditions;
-    int _snapDecelerationVeloctiyOverrideState;
-    float _snapDownContentOffset;
-    int _snapState;
-    float _snapUpContentOffset;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _previousMaximumContentSizeScrollIndicatorInsetAdditions;
+    double  _previousMaximumHeaderHeight;
+    double  _previousStabilizingBottomAdditions;
+    int  _snapDecelerationVeloctiyOverrideState;
+    double  _snapDownContentOffset;
+    int  _snapState;
+    double  _snapUpContentOffset;
 }
 
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } previousContentInsetAdditions;
-@property (nonatomic) struct CGPoint { float x1; float x2; } previousContentOffset;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } previousContentScrollInsetAdditions;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } previousExternalContentInset;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } previousMaximumContentSizeScrollIndicatorInsetAdditions;
-@property (nonatomic) float previousMaximumHeaderHeight;
-@property (nonatomic) float previousStabilizingBottomAdditions;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } previousContentInsetAdditions;
+@property (nonatomic) struct CGPoint { double x1; double x2; } previousContentOffset;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } previousContentScrollInsetAdditions;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } previousExternalContentInset;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } previousMaximumContentSizeScrollIndicatorInsetAdditions;
+@property (nonatomic) double previousMaximumHeaderHeight;
+@property (nonatomic) double previousStabilizingBottomAdditions;
 @property (nonatomic) int snapDecelerationVeloctiyOverrideState;
-@property (nonatomic) float snapDownContentOffset;
+@property (nonatomic) double snapDownContentOffset;
 @property (nonatomic) int snapState;
-@property (nonatomic) float snapUpContentOffset;
+@property (nonatomic) double snapUpContentOffset;
 
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })previousContentInsetAdditions;
-- (struct CGPoint { float x1; float x2; })previousContentOffset;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })previousContentScrollInsetAdditions;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })previousExternalContentInset;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })previousMaximumContentSizeScrollIndicatorInsetAdditions;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })previousContentInsetAdditions;
+- (struct CGPoint { double x1; double x2; })previousContentOffset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })previousContentScrollInsetAdditions;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })previousExternalContentInset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })previousMaximumContentSizeScrollIndicatorInsetAdditions;
 - (float)previousMaximumHeaderHeight;
 - (float)previousStabilizingBottomAdditions;
-- (void)setPreviousContentInsetAdditions:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setPreviousContentOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setPreviousContentScrollInsetAdditions:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setPreviousExternalContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setPreviousMaximumContentSizeScrollIndicatorInsetAdditions:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setPreviousContentInsetAdditions:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setPreviousContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setPreviousContentScrollInsetAdditions:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setPreviousExternalContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setPreviousMaximumContentSizeScrollIndicatorInsetAdditions:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setPreviousMaximumHeaderHeight:(float)arg1;
 - (void)setPreviousStabilizingBottomAdditions:(float)arg1;
 - (void)setSnapDecelerationVeloctiyOverrideState:(int)arg1;

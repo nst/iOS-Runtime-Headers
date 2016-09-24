@@ -3,9 +3,9 @@
  */
 
 @interface CUTPowerAssertion : NSObject {
-    unsigned int _assertion;
-    NSString *_identifier;
-    NSArray *_stack;
+    unsigned int  _assertion;
+    NSString * _identifier;
+    NSArray * _stack;
 }
 
 - (void)dealloc;

@@ -3,8 +3,8 @@
  */
 
 @interface SUItemValidator : NSObject {
-    NSMutableArray *_collectionTests;
-    NSMutableArray *_itemTests;
+    NSMutableArray * _collectionTests;
+    NSMutableArray * _itemTests;
 }
 
 @property (nonatomic, readonly) NSArray *validationTests;

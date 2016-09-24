@@ -5,6 +5,8 @@
 
 @required
 
+- (void)delegateMessageDeliveryComplete;
+- (void)enumerateAppDictionary:(NSDictionary *)arg1 error:(NSError *)arg2;
 - (void)reportProgress:(NSDictionary *)arg1;
 
 @end

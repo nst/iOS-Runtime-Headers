@@ -3,8 +3,8 @@
  */
 
 @interface UnauthHTTPSSessionDelegate : NSObject <NSURLSessionDataDelegate> {
-    unsigned int _pkiEvaluationResult;
-    BOOL _pkiIsTrusted;
+    unsigned int  _pkiEvaluationResult;
+    BOOL  _pkiIsTrusted;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DShaderEffectsStates : NSObject {
-    NSMutableDictionary *mObjects;
+    NSMutableDictionary * mObjects;
 }
 
 - (void)clear;

@@ -3,16 +3,18 @@
  */
 
 @interface AWDNanoRegistryPairingAttemptReport : PBCodable <NSCopying> {
-    NSString *_abortPairingReason;
-    unsigned int _attemptCounter;
-    unsigned int _finalDurationSeconds;
-    NSString *_finalScreenName;
-    NSString *_gizmoBuild;
-    NSString *_gizmoHardware;
+    NSString * _abortPairingReason;
+    unsigned int  _attemptCounter;
+    unsigned int  _finalDurationSeconds;
+    NSString * _finalScreenName;
+    NSString * _gizmoBuild;
+    NSString * _gizmoHardware;
+    unsigned int  _gizmoMaxPairingVersion;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int attemptCounter : 1; 
         unsigned int finalDurationSeconds : 1; 
+        unsigned int gizmoMaxPairingVersion : 1; 
         unsigned int incorrectPINcount : 1; 
         unsigned int pairedDeviceCount : 1; 
         unsigned int pairingType : 1; 
@@ -20,16 +22,16 @@
         unsigned int subreason : 1; 
         unsigned int switchCounter : 1; 
         unsigned int isAutomated : 1; 
-    } _has;
-    unsigned int _incorrectPINcount;
-    BOOL _isAutomated;
-    unsigned int _pairedDeviceCount;
-    unsigned int _pairingType;
-    NSString *_processName;
-    unsigned int _reason;
-    unsigned int _subreason;
-    unsigned int _switchCounter;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned int  _incorrectPINcount;
+    BOOL  _isAutomated;
+    unsigned int  _pairedDeviceCount;
+    unsigned int  _pairingType;
+    NSString * _processName;
+    unsigned int  _reason;
+    unsigned int  _subreason;
+    unsigned int  _switchCounter;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic, retain) NSString *abortPairingReason;
@@ -38,12 +40,14 @@
 @property (nonatomic, retain) NSString *finalScreenName;
 @property (nonatomic, retain) NSString *gizmoBuild;
 @property (nonatomic, retain) NSString *gizmoHardware;
+@property (nonatomic) unsigned int gizmoMaxPairingVersion;
 @property (nonatomic, readonly) BOOL hasAbortPairingReason;
 @property (nonatomic) BOOL hasAttemptCounter;
 @property (nonatomic) BOOL hasFinalDurationSeconds;
 @property (nonatomic, readonly) BOOL hasFinalScreenName;
 @property (nonatomic, readonly) BOOL hasGizmoBuild;
 @property (nonatomic, readonly) BOOL hasGizmoHardware;
+@property (nonatomic) BOOL hasGizmoMaxPairingVersion;
 @property (nonatomic) BOOL hasIncorrectPINcount;
 @property (nonatomic) BOOL hasIsAutomated;
 @property (nonatomic) BOOL hasPairedDeviceCount;
@@ -74,12 +78,14 @@
 - (id)finalScreenName;
 - (id)gizmoBuild;
 - (id)gizmoHardware;
+- (unsigned int)gizmoMaxPairingVersion;
 - (BOOL)hasAbortPairingReason;
 - (BOOL)hasAttemptCounter;
 - (BOOL)hasFinalDurationSeconds;
 - (BOOL)hasFinalScreenName;
 - (BOOL)hasGizmoBuild;
 - (BOOL)hasGizmoHardware;
+- (BOOL)hasGizmoMaxPairingVersion;
 - (BOOL)hasIncorrectPINcount;
 - (BOOL)hasIsAutomated;
 - (BOOL)hasPairedDeviceCount;
@@ -105,8 +111,10 @@
 - (void)setFinalScreenName:(id)arg1;
 - (void)setGizmoBuild:(id)arg1;
 - (void)setGizmoHardware:(id)arg1;
+- (void)setGizmoMaxPairingVersion:(unsigned int)arg1;
 - (void)setHasAttemptCounter:(BOOL)arg1;
 - (void)setHasFinalDurationSeconds:(BOOL)arg1;
+- (void)setHasGizmoMaxPairingVersion:(BOOL)arg1;
 - (void)setHasIncorrectPINcount:(BOOL)arg1;
 - (void)setHasIsAutomated:(BOOL)arg1;
 - (void)setHasPairedDeviceCount:(BOOL)arg1;

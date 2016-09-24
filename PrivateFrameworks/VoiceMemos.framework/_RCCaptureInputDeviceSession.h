@@ -3,12 +3,12 @@
  */
 
 @interface _RCCaptureInputDeviceSession : NSObject {
-    RCCaptureInputDevice *_captureInputDevice;
-    RCCaptureSession *_captureSession;
-    BOOL _captureSessionWasActivated;
-    NSMutableArray *_sessionFinishedBlocks;
-    id /* block */ _sessionPreparedBlock;
-    BOOL _useStartSoundEffect;
+    RCCaptureInputDevice * _captureInputDevice;
+    RCCaptureSession * _captureSession;
+    BOOL  _captureSessionWasActivated;
+    NSMutableArray * _sessionFinishedBlocks;
+    id /* block */  _sessionPreparedBlock;
+    BOOL  _useStartSoundEffect;
 }
 
 @property (nonatomic, readonly) RCCaptureInputDevice *captureInputDevice;

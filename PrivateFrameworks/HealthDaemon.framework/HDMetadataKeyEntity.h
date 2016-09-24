@@ -12,8 +12,5 @@
 + (id)entityForKey:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
 + (id)insertEntityWithKey:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
 + (int)protectionClass;
-+ (id)resultForKeyID:(id)arg1 healthDatabase:(id)arg2;
-
-- (id)resultWithDatabase:(id)arg1;
 
 @end

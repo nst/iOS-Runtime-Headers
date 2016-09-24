@@ -3,9 +3,9 @@
  */
 
 @interface _LSSharedWebCredentialsAppLinkPlugIn : _LSAppLinkPlugIn {
-    NSString *_SWCServiceName;
-    BOOL _requiresApproval;
-    BOOL _usesDetailsDictionary;
+    NSString * _SWCServiceName;
+    BOOL  _requiresApproval;
+    BOOL  _usesDetailsDictionary;
 }
 
 @property (copy) NSString *SWCServiceName;

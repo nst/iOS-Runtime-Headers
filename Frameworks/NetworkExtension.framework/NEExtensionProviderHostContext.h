@@ -3,9 +3,10 @@
  */
 
 @interface NEExtensionProviderHostContext : NSExtensionContext <NEExtensionProviderHostProtocol, NEExtensionProviderProtocol> {
-    <NEExtensionProviderHostDelegate> *_delegate;
-    NSString *_description;
-    <NEExtensionProviderProtocol> *_vendorContext;
+    <NEExtensionProviderHostDelegate> * _delegate;
+    NSString * _description;
+    NEUserNotification * _notification;
+    <NEExtensionProviderProtocol> * _vendorContext;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,7 +15,6 @@
 @property (readonly) unsigned int hash;
 @property (readonly) int pid;
 @property (readonly) Class superclass;
-@property (readonly) <NEExtensionProviderProtocol> *vendorContext;
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
@@ -23,6 +23,7 @@
 - (id)copyValueForEntitlement:(id)arg1;
 - (id)delegate;
 - (id)description;
+- (void)displayMessage:(id)arg1 message:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)dispose;
 - (int)pid;
 - (void)setConfiguration:(id)arg1 extensionIdentifier:(id)arg2 deviceIdentifier:(id)arg3;

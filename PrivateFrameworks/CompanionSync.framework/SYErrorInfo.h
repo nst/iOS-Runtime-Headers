@@ -3,9 +3,9 @@
  */
 
 @interface SYErrorInfo : PBCodable <NSCopying> {
-    int _code;
-    NSString *_domain;
-    NSData *_userInfo;
+    int  _code;
+    NSString * _domain;
+    NSData * _userInfo;
 }
 
 @property (nonatomic) int code;

@@ -3,11 +3,11 @@
  */
 
 @interface CNAutocompleteStoreQueryHelper : NSObject {
-    <CNAutocompleteFetchDelegate> *_delegate;
-    <CNAutocompleteProbeProvider> *_probeProvider;
-    <CNScheduler> *_scheduler;
-    <CNAutocompleteSearchProvider> *_searchProvider;
-    CNAutocompleteUserSession *_userSession;
+    <CNAutocompleteFetchDelegate> * _delegate;
+    <CNAutocompleteProbeProvider> * _probeProvider;
+    <CNScheduler> * _scheduler;
+    <CNAutocompleteSearchProvider> * _searchProvider;
+    CNAutocompleteUserSession * _userSession;
 }
 
 @property (nonatomic, readonly) <CNAutocompleteFetchDelegate> *delegate;

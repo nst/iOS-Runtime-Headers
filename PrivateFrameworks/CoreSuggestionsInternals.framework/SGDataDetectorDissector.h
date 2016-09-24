@@ -3,13 +3,13 @@
  */
 
 @interface SGDataDetectorDissector : SGPipelineDissector {
-    long _scannerOptions;
+    long  _scannerOptions;
 }
 
 + (void)initialize;
 + (BOOL)stringHasDatesOrTimes:(id)arg1;
 
-- (void)dissectInternal:(id)arg1;
+- (void)dissectInternal:(id)arg1 inContext:(id)arg2;
 - (id)init;
 - (id)initWithSigs:(BOOL)arg1;
 

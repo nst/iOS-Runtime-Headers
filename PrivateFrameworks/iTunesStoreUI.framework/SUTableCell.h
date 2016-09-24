@@ -3,18 +3,18 @@
  */
 
 @interface SUTableCell : UITableViewCell {
-    UIColor *_bottomBorderColor;
-    SUTableCellContentView *_configurationView;
-    int _editState;
-    unsigned int _hideHighlight;
-    SUItemOfferButton *_itemOfferButton;
+    UIColor * _bottomBorderColor;
+    SUTableCellContentView * _configurationView;
+    int  _editState;
+    unsigned int  _hideHighlight;
+    SUItemOfferButton * _itemOfferButton;
     struct { 
         unsigned int localIndex; 
         unsigned int localCount; 
         unsigned int globalIndex; 
         unsigned int globalCount; 
-    } _position;
-    UIColor *_topBorderColor;
+    }  _position;
+    UIColor * _topBorderColor;
 }
 
 @property (nonatomic, retain) UIColor *bottomBorderColor;
@@ -38,10 +38,10 @@
 - (id)copyPurchaseAnimationView;
 - (void)dealloc;
 - (BOOL)drawAsDisabled;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (int)editState;
 - (BOOL)highlightsOnlyContentView;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (id)itemOfferButton;
 - (void)layoutSubviews;

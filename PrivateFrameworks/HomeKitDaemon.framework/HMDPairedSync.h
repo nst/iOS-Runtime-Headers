@@ -3,10 +3,10 @@
  */
 
 @interface HMDPairedSync : NSObject <PSYSyncCoordinatorDelegate> {
-    PSYSyncCoordinator *_coordinator;
-    unsigned int _currentOperationCount;
-    <HMDPairedSyncDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    PSYSyncCoordinator * _coordinator;
+    unsigned int  _currentOperationCount;
+    <HMDPairedSyncDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic, readonly) PSYSyncCoordinator *coordinator;

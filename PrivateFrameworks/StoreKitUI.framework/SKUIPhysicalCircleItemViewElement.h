@@ -3,8 +3,8 @@
  */
 
 @interface SKUIPhysicalCircleItemViewElement : SKUIViewElement {
-    int _circleSize;
-    NSString *_itemIdentifier;
+    int  _circleSize;
+    NSString * _itemIdentifier;
 }
 
 @property (nonatomic, readonly) int circleSize;

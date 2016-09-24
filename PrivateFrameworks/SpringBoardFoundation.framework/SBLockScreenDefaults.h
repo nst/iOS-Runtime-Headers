@@ -5,9 +5,13 @@
 @interface SBLockScreenDefaults : SBAbstractSpringBoardDefaultDomain
 
 @property (nonatomic) BOOL limitFeaturesForRemoteLock;
-@property (getter=isLockScreenHintLoggingEnabled, nonatomic, readonly) BOOL lockScreenHintLoggingEnabled;
+@property (nonatomic, readonly) BOOL lostModeDisableDashBoard;
+@property (nonatomic) BOOL showAuthenticationEngineeringUI;
 @property (nonatomic, readonly) BOOL showLegalText;
+@property (nonatomic) BOOL useDashBoard;
 
 - (void)_bindAndRegisterDefaults;
+- (BOOL)lostModeDisableDashBoard;
+- (BOOL)useDashBoard;
 
 @end

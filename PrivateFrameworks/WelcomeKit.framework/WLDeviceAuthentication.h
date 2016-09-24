@@ -3,7 +3,7 @@
  */
 
 @interface WLDeviceAuthentication : NSObject <NSSecureCoding> {
-    NSString *_sessionUUID;
+    NSString * _sessionUUID;
 }
 
 @property (nonatomic, readonly) NSString *sessionUUID;

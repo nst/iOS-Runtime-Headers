@@ -3,11 +3,11 @@
  */
 
 @interface MSVSystemDialog : NSObject {
-    struct __CFRunLoopSource { } *_activeRunLoopSource;
-    MSVSystemDialogOptions *_options;
-    id /* block */ _pendingCompletion;
-    struct __CFUserNotification { } *_presentedUserNotification;
-    NSMutableArray *_textFields;
+    struct __CFRunLoopSource { } * _activeRunLoopSource;
+    MSVSystemDialogOptions * _options;
+    id /* block */  _pendingCompletion;
+    struct __CFUserNotification { } * _presentedUserNotification;
+    NSMutableArray * _textFields;
 }
 
 @property (nonatomic) struct __CFRunLoopSource { }*activeRunLoopSource;

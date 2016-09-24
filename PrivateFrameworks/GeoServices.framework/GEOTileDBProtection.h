@@ -3,8 +3,8 @@
  */
 
 @interface GEOTileDBProtection : NSObject {
-    int _currentState;
-    int _notifyToken;
+    int  _currentState;
+    int  _notifyToken;
 }
 
 + (id)sharedObject;

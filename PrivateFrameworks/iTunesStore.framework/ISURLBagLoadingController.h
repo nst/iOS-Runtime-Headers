@@ -3,13 +3,13 @@
  */
 
 @interface ISURLBagLoadingController : NSObject {
-    SSURLBag *_URLBag;
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSMutableArray *_bagAccessRequestBlocks;
-    NSDictionary *_bagDictionary;
-    NSError *_bagLoadingError;
-    NSHashTable *_bagObservers;
-    BOOL _hasSuccessfullyLoadedBag;
+    SSURLBag * _URLBag;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSMutableArray * _bagAccessRequestBlocks;
+    NSDictionary * _bagDictionary;
+    NSError * _bagLoadingError;
+    NSHashTable * _bagObservers;
+    BOOL  _hasSuccessfullyLoadedBag;
 }
 
 @property (nonatomic, readonly) NSDictionary *bagDictionary;

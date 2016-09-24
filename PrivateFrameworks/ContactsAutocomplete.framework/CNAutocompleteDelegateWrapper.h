@@ -3,13 +3,13 @@
  */
 
 @interface CNAutocompleteDelegateWrapper : NSObject <CNAutocompleteFetchDelegate, CNCancelable> {
-    CNCancelationToken *_cancelationToken;
-    <CNAutocompleteFetchDelegate> *_delegate;
-    CNAutocompleteFetchRequest *_fetchRequest;
-    unsigned int _openNetworkActivityCalls;
-    CNAutocompleteQueryResponsePreparer *_responsePreparer;
-    <CNScheduler> *_scheduler;
-    CNAutocompleteUserSession *_userSession;
+    CNCancelationToken * _cancelationToken;
+    <CNAutocompleteFetchDelegate> * _delegate;
+    CNAutocompleteFetchRequest * _fetchRequest;
+    unsigned int  _openNetworkActivityCalls;
+    CNAutocompleteQueryResponsePreparer * _responsePreparer;
+    <CNScheduler> * _scheduler;
+    CNAutocompleteUserSession * _userSession;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,8 +3,8 @@
  */
 
 @interface _DECInternalConsumer : NSObject {
-    unsigned int _category;
-    unsigned int _consumerType;
+    unsigned int  _category;
+    unsigned int  _consumerType;
 }
 
 @property (nonatomic) unsigned int category;

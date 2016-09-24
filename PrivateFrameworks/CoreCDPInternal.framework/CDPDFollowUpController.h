@@ -3,20 +3,31 @@
  */
 
 @interface CDPDFollowUpController : NSObject {
-    FLFollowUpController *_followUpController;
-    NSString *_networkObserverToken;
+    FLFollowUpController * _followUpController;
+    NSString * _networkObserverToken;
 }
 
++ (id)contextToIdentifierMap;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
+- (id)_followUpActionForRepair;
+- (id)_followUpForOfflineSecretChangeWithContext:(id)arg1;
+- (id)_followUpForRepairWithContext:(id)arg1;
+- (id)_followUpItemWithContext:(id)arg1;
+- (id)_launchActionArgsForPrefPaneWithCommandKey:(id)arg1;
+- (id)_localizedStringForKey:(id)arg1;
 - (void)_networkReachabilityDidChangeWithIsReachable:(BOOL)arg1;
 - (id)_offlineSecretChangeFollowUpAction;
-- (void)_postFollowUpItemForOfflineLocalSecretChangeWithNotification:(BOOL)arg1;
-- (void)_postOfflineLocalSecretChangeNotification;
+- (void)_postPendingFollowUpsForIdentifiers:(id)arg1;
+- (void)_postReminderNotifications;
+- (void)_processPendingItem:(id)arg1;
+- (void)clearFollowUpWithContext:(id)arg1;
+- (void)clearFollowUpWithContext:(id)arg1 completion:(id /* block */)arg2;
 - (void)deleteFollowUpItemForOfflineLocalSecretChange;
 - (id)init;
-- (void)postFollowUpItemForOfflineLocalSecretChange;
+- (void)postFollowUpItemForContext:(id)arg1;
+- (void)postFollowUpItemForContext:(id)arg1 completion:(id /* block */)arg2;
 - (void)start;
 
 @end

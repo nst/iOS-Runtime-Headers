@@ -3,20 +3,20 @@
  */
 
 @interface PLPersistedAlbumMetadata : NSObject {
-    BOOL _allowsOverwite;
-    NSMutableOrderedSet *_assetUUIDs;
-    NSString *_cloudGUID;
-    NSString *_customKeyAssetUUID;
-    BOOL _customSortAscending;
-    int _customSortKey;
-    PLGenericAlbum *_genericAlbum;
-    BOOL _inTrash;
-    BOOL _isFolder;
-    NSNumber *_kind;
-    NSURL *_metadataURL;
-    BOOL _pinned;
-    NSString *_title;
-    NSString *_uuid;
+    BOOL  _allowsOverwite;
+    NSMutableOrderedSet * _assetUUIDs;
+    NSString * _cloudGUID;
+    NSString * _customKeyAssetUUID;
+    BOOL  _customSortAscending;
+    int  _customSortKey;
+    PLGenericAlbum * _genericAlbum;
+    BOOL  _inTrash;
+    BOOL  _isFolder;
+    NSNumber * _kind;
+    NSURL * _metadataURL;
+    BOOL  _pinned;
+    NSString * _title;
+    NSString * _uuid;
 }
 
 @property (nonatomic) BOOL allowsOverwite;
@@ -54,7 +54,7 @@
 - (id)genericAlbum;
 - (id)init;
 - (id)initWithPLGenericAlbum:(id)arg1;
-- (id)initWithPersistedDataAtPath:(id)arg1;
+- (id)initWithPersistedDataAtURL:(id)arg1;
 - (id)initWithTitle:(id)arg1 uuid:(id)arg2 cloudGUID:(id)arg3 kind:(id)arg4 assetUUIDs:(id)arg5;
 - (id)insertAlbumFromDataInManagedObjectContext:(id)arg1;
 - (BOOL)isFolder;

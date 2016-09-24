@@ -3,7 +3,7 @@
  */
 
 @interface NFAWDTransactionEndOfOperation : NSObject <NFAWDEventProtocol> {
-    AWDNFCTransactionEndOfOperationEvent *_metric;
+    AWDNFCTransactionEndOfOperationEvent * _metric;
 }
 
 @property (readonly, copy) NSString *debugDescription;

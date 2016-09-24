@@ -3,9 +3,9 @@
  */
 
 @interface SKReferencedAction : SKAction {
-    struct SKCReferencedAction { int (**x1)(); unsigned int x2; float x3; id /* block */ x4; id x5; double x6; double x7; float x8; float x9; double x10; bool x11; bool x12; id /* block */ x13; int x14; float x15; float x16; float x17; float x18; struct SKCAction {} *x19; } *_mycaction;
-    SKAction *_referencedAction;
-    NSString *_referencedActionName;
+    struct SKCReferencedAction { int (**x1)(); unsigned int x2; double x3; id /* block */ x4; id x5; double x6; double x7; double x8; double x9; double x10; bool x11; bool x12; id /* block */ x13; int x14; double x15; double x16; double x17; double x18; struct SKCAction {} *x19; } * _mycaction;
+    SKAction * _referencedAction;
+    NSString * _referencedActionName;
 }
 
 + (id)referenceActionWithName:(id)arg1 duration:(double)arg2;

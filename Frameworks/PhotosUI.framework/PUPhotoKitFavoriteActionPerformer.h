@@ -3,7 +3,7 @@
  */
 
 @interface PUPhotoKitFavoriteActionPerformer : PUPhotoKitActionPerformer {
-    BOOL _favorite;
+    BOOL  _favorite;
 }
 
 @property (nonatomic) BOOL favorite;

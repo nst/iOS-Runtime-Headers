@@ -3,19 +3,20 @@
  */
 
 @interface BRCNonLocalVersionsSender : _BRCOperation <BRCOperationSubclass, BRNonLocalVersionSending> {
-    BRCXPCClient *_client;
-    NSString *_currentEtag;
-    BOOL _includeCachedVersions;
-    BRCItemID *_itemID;
-    NSURL *_logicalURL;
-    NSURL *_physicalURL;
-    <BRNonLocalVersionReceiving> *_receiver;
-    CKRecordID *_recordID;
-    id /* block */ _reply;
-    BRCServerZone *_serverZone;
-    BRCStatInfo *_st;
-    struct NSObject { Class x1; } *_storage;
-    NSString *_storagePathPrefix;
+    BRCAppLibrary * _appLibrary;
+    BRCXPCClient * _client;
+    NSString * _currentEtag;
+    BOOL  _includeCachedVersions;
+    BRCItemID * _itemID;
+    NSURL * _logicalURL;
+    NSURL * _physicalURL;
+    <BRNonLocalVersionReceiving> * _receiver;
+    CKRecordID * _recordID;
+    id /* block */  _reply;
+    BRCServerZone * _serverZone;
+    BRCStatInfo * _st;
+    struct NSObject { Class x1; } * _storage;
+    NSString * _storagePathPrefix;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -32,6 +33,7 @@
 - (id)_depsTrackingOperation;
 - (id)_fetchThumbnailOperationForVersionRecord:(id)arg1 physicalURL:(id)arg2;
 - (id)_fetchVersionsOperationWithDepsOp:(id)arg1;
+- (id)createActivity;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (BOOL)includeCachedVersions;
 - (id)initWithDocument:(id)arg1 serverItem:(id)arg2 relpath:(id)arg3 logicalURL:(id)arg4 client:(id)arg5 XPCReceiver:(id)arg6 error:(id*)arg7;
@@ -42,6 +44,5 @@
 - (id)physicalURL;
 - (void)setIncludeCachedVersions:(BOOL)arg1;
 - (BOOL)shouldRetryForError:(id)arg1;
-- (unsigned long long)startActivity;
 
 @end

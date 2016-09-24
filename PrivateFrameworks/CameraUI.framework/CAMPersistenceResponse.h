@@ -3,11 +3,11 @@
  */
 
 @interface CAMPersistenceResponse : NSObject {
-    NSDate *_creationDate;
-    NSURL *_persistenceURL;
-    NSString *_persistenceUUID;
-    UIImage *_scrubberImage;
-    unsigned short _sessionIdentifier;
+    NSDate * _creationDate;
+    NSURL * _persistenceURL;
+    NSString * _persistenceUUID;
+    UIImage * _scrubberImage;
+    unsigned short  _sessionIdentifier;
 }
 
 @property (nonatomic, readonly) NSDate *creationDate;

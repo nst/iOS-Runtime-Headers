@@ -3,39 +3,39 @@
  */
 
 @interface PUCameraPreviewPresentationController : PUPhotosPreviewPresentationController {
-    UIImageView *__customDotImageView;
-    UIView *__customSourceView;
+    UIImageView * __customDotImageView;
+    UIView * __customSourceView;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } __previewSourceRect;
+    }  __previewSourceRect;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } __revealFinalRect;
-    UIImage *__revealImage;
-    BOOL __shouldHideScrubber;
-    UIView *_customBackgroundView;
-    PUScrubberView *_presentationScrubberView;
-    UIView *_scrubberContainerView;
+    }  __revealFinalRect;
+    UIImage * __revealImage;
+    BOOL  __shouldHideScrubber;
+    UIView * _customBackgroundView;
+    PUScrubberView * _presentationScrubberView;
+    UIView * _scrubberContainerView;
 }
 
 @property (setter=_setCustomDotImageView:, nonatomic, retain) UIImageView *_customDotImageView;
 @property (setter=_setCustomSourceView:, nonatomic, retain) UIView *_customSourceView;
-@property (setter=_setPreviewSourceRect:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _previewSourceRect;
-@property (setter=_setRevealFinalRect:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _revealFinalRect;
+@property (setter=_setPreviewSourceRect:, nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _previewSourceRect;
+@property (setter=_setRevealFinalRect:, nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } _revealFinalRect;
 @property (setter=_setRevealImage:, nonatomic, retain) UIImage *_revealImage;
 @property (setter=_setShouldHideScrubber:, nonatomic) BOOL _shouldHideScrubber;
 @property (nonatomic, retain) UIView *customBackgroundView;
@@ -52,15 +52,15 @@
 - (void)_layoutForDismissTransition;
 - (void)_layoutForPreviewTransition;
 - (void)_layoutForRevealTransition;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_previewSourceRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_previewSourceRect;
 - (void)_previewTransitionDidComplete:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_revealFinalRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_revealFinalRect;
 - (id)_revealImage;
 - (void)_revealTransitionDidComplete:(BOOL)arg1;
 - (void)_setCustomDotImageView:(id)arg1;
 - (void)_setCustomSourceView:(id)arg1;
-- (void)_setPreviewSourceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_setRevealFinalRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_setPreviewSourceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_setRevealFinalRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_setRevealImage:(id)arg1;
 - (void)_setShouldHideScrubber:(BOOL)arg1;
 - (BOOL)_shouldHideScrubber;

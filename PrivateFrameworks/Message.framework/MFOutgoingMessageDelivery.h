@@ -3,30 +3,30 @@
  */
 
 @interface MFOutgoingMessageDelivery : NSObject {
-    MailAccount *_archiveAccount;
-    MFAttachmentCompositionContext *_attachmentContext;
-    NSArray *_charsets;
-    NSDictionary *_compositionSpecification;
-    unsigned long long _conversationFlags;
-    MFMailDelivery *_currentDeliveryObject;
-    <MFDeliveryDelegate> *_delegate;
-    DeliveryAccount *_deliveryAccount;
-    MFMutableMessageHeaders *_headers;
-    NSString *_htmlBody;
-    BOOL _isUserRequested;
-    MFMessage *_message;
-    NSArray *_mixedContent;
-    long long _originalConversationId;
-    NSArray *_otherHTMLAndAttachments;
-    MFPlainTextDocument *_plainTextAlternative;
-    BOOL _textPartsAreHTML;
+    MailAccount * _archiveAccount;
+    MFAttachmentCompositionContext * _attachmentContext;
+    NSArray * _charsets;
+    NSDictionary * _compositionSpecification;
+    unsigned int  _conversationFlags;
+    MFMailDelivery * _currentDeliveryObject;
+    <MFDeliveryDelegate> * _delegate;
+    DeliveryAccount * _deliveryAccount;
+    MFMutableMessageHeaders * _headers;
+    NSString * _htmlBody;
+    BOOL  _isUserRequested;
+    MFMessage * _message;
+    NSArray * _mixedContent;
+    int  _originalConversationId;
+    NSArray * _otherHTMLAndAttachments;
+    MFPlainTextDocument * _plainTextAlternative;
+    BOOL  _textPartsAreHTML;
 }
 
 @property (nonatomic, retain) MFAttachmentCompositionContext *attachmentContext;
 @property (nonatomic, retain) NSDictionary *compositionSpecification;
-@property (nonatomic) unsigned long long conversationFlags;
+@property (nonatomic) unsigned int conversationFlags;
 @property (nonatomic) BOOL isUserRequested;
-@property (nonatomic) long long originalConversationId;
+@property (nonatomic) int originalConversationId;
 
 + (id)newWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4 charsets:(id)arg5;
 + (id)newWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(BOOL)arg3;
@@ -38,7 +38,7 @@
 - (id)account;
 - (id)attachmentContext;
 - (id)compositionSpecification;
-- (unsigned long long)conversationFlags;
+- (unsigned int)conversationFlags;
 - (void)dealloc;
 - (id)deliverSynchronouslyWithCompletion:(id /* block */)arg1;
 - (int)deliveryStatus;
@@ -48,15 +48,15 @@
 - (id)initWithMessage:(id)arg1;
 - (BOOL)isUserRequested;
 - (id)message;
-- (long long)originalConversationId;
+- (int)originalConversationId;
 - (id)originalHeaders;
 - (void)setAccount:(id)arg1;
 - (void)setArchiveAccount:(id)arg1;
 - (void)setAttachmentContext:(id)arg1;
 - (void)setCompositionSpecification:(id)arg1;
-- (void)setConversationFlags:(unsigned long long)arg1;
+- (void)setConversationFlags:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIsUserRequested:(BOOL)arg1;
-- (void)setOriginalConversationId:(long long)arg1;
+- (void)setOriginalConversationId:(int)arg1;
 
 @end

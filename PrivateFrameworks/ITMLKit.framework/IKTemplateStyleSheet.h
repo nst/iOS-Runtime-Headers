@@ -3,9 +3,9 @@
  */
 
 @interface IKTemplateStyleSheet : NSObject {
-    NSMutableDictionary *_styleComposersByKeypath;
-    IKStyleFactory *_styleFactory;
-    NSDictionary *_templateTree;
+    NSMutableDictionary * _styleComposersByKeypath;
+    IKStyleFactory * _styleFactory;
+    NSDictionary * _templateTree;
 }
 
 @property (nonatomic, readonly, retain) NSMutableDictionary *styleComposersByKeypath;

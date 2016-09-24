@@ -3,8 +3,8 @@
  */
 
 @interface IMDInvocationForwarder : NSObject {
-    NSLock *_lock;
-    NSMutableArray *_targets;
+    NSLock * _lock;
+    NSMutableArray * _targets;
 }
 
 @property (nonatomic, retain) NSLock *_lock;

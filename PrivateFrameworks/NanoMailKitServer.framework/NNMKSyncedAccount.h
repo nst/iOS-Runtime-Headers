@@ -3,12 +3,12 @@
  */
 
 @interface NNMKSyncedAccount : NSObject {
-    NSString *_accountId;
-    NSString *_displayName;
-    NSArray *_emailAddresses;
-    unsigned int _resendInterval;
-    BOOL _resendRequested;
-    BOOL _shouldArchive;
+    NSString * _accountId;
+    NSString * _displayName;
+    NSArray * _emailAddresses;
+    unsigned int  _resendInterval;
+    BOOL  _resendRequested;
+    BOOL  _shouldArchive;
 }
 
 @property (nonatomic, retain) NSString *accountId;

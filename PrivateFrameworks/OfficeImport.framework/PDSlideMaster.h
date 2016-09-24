@@ -3,17 +3,17 @@
  */
 
 @interface PDSlideMaster : PDSlideBase {
-    OADTextListStyle *mBodyTextStyle;
-    OADColorMap *mColorMap;
-    BOOL mDateTimePlaceholderIsVisible;
-    BOOL mFooterPlaceholderIsVisible;
-    BOOL mHeaderPlaceholderIsVisible;
-    OADTextListStyle *mOtherTextStyle;
-    PDPresentation *mPresentation;
-    NSMutableArray *mSlideLayouts;
-    BOOL mSlideNumberPlaceholderIsVisible;
-    OADTheme *mTheme;
-    OADTextListStyle *mTitleTextStyle;
+    OADTextListStyle * mBodyTextStyle;
+    OADColorMap * mColorMap;
+    BOOL  mDateTimePlaceholderIsVisible;
+    BOOL  mFooterPlaceholderIsVisible;
+    BOOL  mHeaderPlaceholderIsVisible;
+    OADTextListStyle * mOtherTextStyle;
+    PDPresentation * mPresentation;
+    NSMutableArray * mSlideLayouts;
+    BOOL  mSlideNumberPlaceholderIsVisible;
+    OADTheme * mTheme;
+    OADTextListStyle * mTitleTextStyle;
 }
 
 @property (nonatomic) BOOL dateTimePlaceholderIsVisible;

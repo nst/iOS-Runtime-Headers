@@ -3,21 +3,21 @@
  */
 
 @interface _HKActivityCacheIndexFilter : _HKFilter {
-    long long _cacheIndex;
-    unsigned int _operatorType;
+    int  _cacheIndex;
+    unsigned int  _operatorType;
 }
 
-@property (nonatomic, readonly) long long cacheIndex;
+@property (nonatomic, readonly) int cacheIndex;
 @property (nonatomic, readonly) unsigned int operatorType;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned int)arg2 value:(id)arg3 dataTypes:(id)arg4;
-+ (id)filterWithOperatorType:(unsigned int)arg1 activityCacheIndex:(long long)arg2;
++ (id)filterWithOperatorType:(unsigned int)arg1 activityCacheIndex:(int)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (BOOL)acceptsDataObject:(id)arg1;
-- (long long)cacheIndex;
+- (int)cacheIndex;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -26,6 +26,6 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
-- (id)predicateWithHealthDaemon:(id)arg1;
+- (id)predicateWithProfile:(id)arg1;
 
 @end

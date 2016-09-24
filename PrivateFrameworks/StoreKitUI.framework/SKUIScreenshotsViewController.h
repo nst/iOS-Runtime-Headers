@@ -3,21 +3,21 @@
  */
 
 @interface SKUIScreenshotsViewController : UIViewController <SKUISlideshowViewControllerDataSource, SKUISlideshowViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate> {
-    SKUIClientContext *_clientContext;
-    UICollectionView *_collectionView;
-    SKUIScreenshotDataConsumer *_dataConsumer;
-    <SKUIScreenshotsDelegate> *_delegate;
-    NSOperationQueue *_operationQueue;
-    NSMutableArray *_screenshotImages;
+    SKUIClientContext * _clientContext;
+    UICollectionView * _collectionView;
+    SKUIScreenshotDataConsumer * _dataConsumer;
+    <SKUIScreenshotsDelegate> * _delegate;
+    NSOperationQueue * _operationQueue;
+    NSMutableArray * _screenshotImages;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _screenshotMaxSize;
-    NSMutableArray *_screenshotRawImages;
-    NSArray *_screenshots;
-    SKUIVideoImageDataConsumer *_trailerConsumer;
-    NSMutableArray *_trailerImages;
-    NSArray *_trailers;
+        double width; 
+        double height; 
+    }  _screenshotMaxSize;
+    NSMutableArray * _screenshotRawImages;
+    NSArray * _screenshots;
+    SKUIVideoImageDataConsumer * _trailerConsumer;
+    NSMutableArray * _trailerImages;
+    NSArray * _trailers;
 }
 
 @property (nonatomic, readonly) SKUIClientContext *clientContext;
@@ -34,7 +34,7 @@
 - (id)clientContext;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (id)delegate;
 - (id)initWithTrailers:(id)arg1 screenshots:(id)arg2 clientContext:(id)arg3;
@@ -46,8 +46,9 @@
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
-- (id)slideshowViewController:(id)arg1 imageAtIndex:(int)arg2;
-- (id)slideshowViewController:(id)arg1 imageURLAtIndex:(int)arg2 size:(struct CGSize { float x1; float x2; }*)arg3;
+- (id)slideshowViewController:(id)arg1 dataConsumerAtIndex:(int)arg2;
+- (id)slideshowViewController:(id)arg1 imageURLAtIndex:(int)arg2;
+- (id)slideshowViewController:(id)arg1 placeholderImageAtIndex:(int)arg2;
 - (id)slideshowViewController:(id)arg1 poppedImageViewAtIndex:(int)arg2;
 - (void)slideshowViewController:(id)arg1 scrollToImageAtIndex:(int)arg2;
 - (id)viewForZoomingInScrollView:(id)arg1;

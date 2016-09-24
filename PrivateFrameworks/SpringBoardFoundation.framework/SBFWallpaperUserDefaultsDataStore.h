@@ -3,8 +3,8 @@
  */
 
 @interface SBFWallpaperUserDefaultsDataStore : NSObject <BSDescriptionProviding, SBFWallpaperDataStore> {
-    SBWallpaperDefaults *_userDefaults;
-    SBFWallpaperDefaults *_wallpaperOptionsDefaults;
+    SBWallpaperDefaults * _userDefaults;
+    SBFWallpaperDefaults * _wallpaperOptionsDefaults;
 }
 
 @property (readonly, copy) NSString *debugDescription;

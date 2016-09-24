@@ -3,8 +3,8 @@
  */
 
 @interface PLRevGeoPlaceAnnotation : NSObject <NSCopying> {
-    int _placeLevel;
-    NSString *_placeName;
+    int  _placeLevel;
+    NSString * _placeName;
 }
 
 @property (nonatomic) int placeLevel;

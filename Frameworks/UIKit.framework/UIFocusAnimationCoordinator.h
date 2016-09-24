@@ -3,17 +3,18 @@
  */
 
 @interface UIFocusAnimationCoordinator : NSObject {
-    int _activeFocusAnimation;
-    NSMutableDictionary *_configurations;
-    NSMutableDictionary *_coordinatedAnimations;
-    NSMutableDictionary *_coordinatedCompletions;
-    UIFocusUpdateContext *_focusUpdateContext;
-    BOOL _locked;
+    int  _activeFocusAnimation;
+    NSMutableDictionary * _configurations;
+    NSMutableDictionary * _coordinatedAnimations;
+    NSMutableDictionary * _coordinatedCompletions;
+    UIFocusUpdateContext * _focusUpdateContext;
+    BOOL  _locked;
 }
 
 @property (getter=_activeAnimationDuration, nonatomic, readonly) double activeAnimationDuration;
 @property (getter=_activeConfiguration, nonatomic, readonly, copy) _UIFocusAnimationConfiguration *activeConfiguration;
 @property (nonatomic, readonly) int activeFocusAnimation;
+@property (getter=_animationDelay, nonatomic, readonly) double animationDelay;
 @property (getter=_animationOptions, nonatomic, readonly) unsigned int animationOptions;
 @property (getter=_configurations, nonatomic, readonly) NSMutableDictionary *configurations;
 @property (getter=_coordinatedAnimations, nonatomic, readonly) NSMutableDictionary *coordinatedAnimations;
@@ -33,6 +34,7 @@
 - (id)_activeConfiguration;
 - (void)_animate;
 - (void)_animateFocusAnimation:(int)arg1;
+- (double)_animationDelay;
 - (unsigned int)_animationOptions;
 - (void)_applyBlocks:(id)arg1 releaseBlocks:(id /* block */)arg2;
 - (void)_cancelFocusAnimation:(int)arg1;

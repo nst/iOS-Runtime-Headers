@@ -3,12 +3,12 @@
  */
 
 @interface NetTopoMiniStaticLayout : NSObject {
-    NSMutableArray *_connectionLayers;
-    CALayer *_containerLayer;
-    int _layoutOptions;
-    id _owningView;
-    NSMutableArray *_topoDeviceLayers;
-    NSArray *_topoDevicesDescriptor;
+    NSMutableArray * _connectionLayers;
+    CALayer * _containerLayer;
+    int  _layoutOptions;
+    id  _owningView;
+    NSMutableArray * _topoDeviceLayers;
+    NSArray * _topoDevicesDescriptor;
 }
 
 @property (nonatomic, retain) CALayer *containerLayer;

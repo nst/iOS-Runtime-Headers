@@ -3,22 +3,22 @@
  */
 
 @interface CKDPRecordFieldValue : PBCodable <NSCopying> {
-    CKDPAsset *_assetValue;
-    NSData *_bytesValue;
-    CKDPDate *_dateValue;
-    double _doubleValue;
+    CKDPAsset * _assetValue;
+    NSData * _bytesValue;
+    CKDPDate * _dateValue;
+    double  _doubleValue;
     struct { 
         unsigned int doubleValue : 1; 
         unsigned int signedValue : 1; 
         unsigned int type : 1; 
-    } _has;
-    NSMutableArray *_listValues;
-    CKDPLocationCoordinate *_locationValue;
-    CKDPPackage *_packageValue;
-    CKDPRecordReference *_referenceValue;
-    long long _signedValue;
-    NSString *_stringValue;
-    int _type;
+    }  _has;
+    NSMutableArray * _listValues;
+    CKDPLocationCoordinate * _locationValue;
+    CKDPPackage * _packageValue;
+    CKDPRecordReference * _referenceValue;
+    int  _signedValue;
+    NSString * _stringValue;
+    int  _type;
 }
 
 @property (nonatomic, retain) CKDPAsset *assetValue;
@@ -39,15 +39,15 @@
 @property (nonatomic, retain) CKDPLocationCoordinate *locationValue;
 @property (nonatomic, retain) CKDPPackage *packageValue;
 @property (nonatomic, retain) CKDPRecordReference *referenceValue;
-@property (nonatomic) long long signedValue;
+@property (nonatomic) int signedValue;
 @property (nonatomic, retain) NSString *stringValue;
 @property (nonatomic) int type;
 
++ (Class)listValueType;
+
 - (void).cxx_destruct;
+- (int)StringAsType:(id)arg1;
 - (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;
-- (id)_descriptionForType:(int)arg1;
-- (id)_prettyDictionaryRepresentation;
-- (id)_prettyRepresentationFromObject:(id)arg1;
 - (void)addListValue:(id)arg1;
 - (id)assetValue;
 - (id)bytesValue;
@@ -89,12 +89,13 @@
 - (void)setLocationValue:(id)arg1;
 - (void)setPackageValue:(id)arg1;
 - (void)setReferenceValue:(id)arg1;
-- (void)setSignedValue:(long long)arg1;
+- (void)setSignedValue:(int)arg1;
 - (void)setStringValue:(id)arg1;
 - (void)setType:(int)arg1;
-- (long long)signedValue;
+- (int)signedValue;
 - (id)stringValue;
 - (int)type;
+- (id)typeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

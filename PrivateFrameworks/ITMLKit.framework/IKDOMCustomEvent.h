@@ -3,7 +3,7 @@
  */
 
 @interface IKDOMCustomEvent : IKDOMEvent <IKJSDOMCustomEvent> {
-    IKJSObject *_detail;
+    IKJSObject * _detail;
 }
 
 @property (nonatomic, readonly) BOOL bubbles;

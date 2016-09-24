@@ -3,29 +3,61 @@
  */
 
 @interface CKDRecordPCSData : CKDPCSData {
-    CKRecordID *_recordID;
-    CKDPCSData *_sharePCSData;
-    CKDPCSData *_zonePCSData;
+    CKDChainPCSData * _chainPCSData;
+    NSData * _chainParentPublicKeyID;
+    CKEncryptedData * _encryptedPublicSharingKey;
+    CKRecordID * _parentID;
+    CKDRecordPCSData * _parentPCSData;
+    CKRecordID * _recordID;
+    NSString * _recordType;
+    CKRecordID * _shareID;
+    CKDSharePCSData * _sharePCSData;
+    CKRecordZoneID * _zoneID;
+    CKDZonePCSData * _zonePCSData;
 }
 
+@property (nonatomic, retain) CKDChainPCSData *chainPCSData;
+@property (nonatomic, retain) NSData *chainParentPublicKeyID;
+@property (nonatomic, retain) CKEncryptedData *encryptedPublicSharingKey;
+@property (nonatomic, retain) CKRecordID *parentID;
+@property (nonatomic, retain) CKDRecordPCSData *parentPCSData;
 @property (nonatomic, retain) CKRecordID *recordID;
-@property (nonatomic, retain) CKDPCSData *sharePCSData;
-@property (nonatomic, retain) CKDPCSData *zonePCSData;
+@property (nonatomic, readonly) NSString *recordType;
+@property (nonatomic, retain) CKRecordID *shareID;
+@property (nonatomic, retain) CKDSharePCSData *sharePCSData;
+@property (nonatomic, retain) CKRecordZoneID *zoneID;
+@property (nonatomic, retain) CKDZonePCSData *zonePCSData;
 
-+ (id)dataWithRecordID:(id)arg1 pcsData:(id)arg2;
++ (id)dataWithRecord:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)decryptPCSDataWithManager:(id)arg1 error:(id*)arg2;
+- (id)CKPropertiesDescription;
+- (id)chainPCSData;
+- (id)chainParentPublicKeyID;
 - (void)encodeWithCoder:(id)arg1;
+- (id)encryptedPublicSharingKey;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithRecordID:(id)arg1 pcsData:(id)arg2;
+- (id)initWithPCSData:(id)arg1 recordID:(id)arg2;
+- (id)initWithRecord:(id)arg1;
 - (id)itemID;
+- (id)parentID;
+- (id)parentPCSData;
 - (id)recordID;
+- (id)recordType;
+- (void)setChainPCSData:(id)arg1;
+- (void)setChainParentPublicKeyID:(id)arg1;
+- (void)setEncryptedPublicSharingKey:(id)arg1;
+- (void)setParentID:(id)arg1;
+- (void)setParentPCSData:(id)arg1;
 - (void)setRecordID:(id)arg1;
+- (void)setShareID:(id)arg1;
 - (void)setSharePCSData:(id)arg1;
+- (void)setZoneID:(id)arg1;
 - (void)setZonePCSData:(id)arg1;
+- (id)shareID;
 - (id)sharePCSData;
+- (id)zoneID;
 - (id)zonePCSData;
 
 @end

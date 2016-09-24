@@ -23,7 +23,6 @@
 - (BOOL)hasEntitiesNotInLibrary;
 - (BOOL)hasExplicitContent;
 - (BOOL)hasMultipleEntitiesIncludingStoreContent;
-- (MusicEntityProviderDownloadInformationController *)newDownloadInformationController;
 - (BOOL)setEditing:(BOOL)arg1;
 
 @end

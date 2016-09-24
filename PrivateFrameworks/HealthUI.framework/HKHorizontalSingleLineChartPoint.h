@@ -3,11 +3,11 @@
  */
 
 @interface HKHorizontalSingleLineChartPoint : NSObject <HKChartPoint> {
-    BOOL _groupToPrevious;
-    int _markStyle;
-    id _userInfo;
-    NSDate *_xValue;
-    NSNumber *_yValue;
+    BOOL  _groupToPrevious;
+    int  _markStyle;
+    id  _userInfo;
+    NSDate * _xValue;
+    NSNumber * _yValue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

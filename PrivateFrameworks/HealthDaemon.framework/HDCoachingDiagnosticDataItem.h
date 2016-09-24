@@ -3,16 +3,16 @@
  */
 
 @interface HDCoachingDiagnosticDataItem : NSObject {
-    double _activeCalories;
-    double _automotive;
-    double _briskMinutes;
-    double _cycling;
-    double _heartRate;
-    double _other;
-    double _running;
-    double _unknown;
-    double _walking;
-    double _workout;
+    double  _activeCalories;
+    double  _automotive;
+    double  _briskMinutes;
+    double  _cycling;
+    double  _heartRate;
+    double  _other;
+    double  _running;
+    double  _unknown;
+    double  _walking;
+    double  _workout;
 }
 
 @property (nonatomic) double activeCalories;

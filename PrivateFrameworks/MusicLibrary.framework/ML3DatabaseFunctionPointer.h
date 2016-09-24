@@ -3,8 +3,8 @@
  */
 
 @interface ML3DatabaseFunctionPointer : ML3DatabaseFunction {
-    int (*_functionPointer;
-    void *_userData;
+    int (* _functionPointer;
+    void * _userData;
 }
 
 @property (nonatomic) int (*functionPointer;

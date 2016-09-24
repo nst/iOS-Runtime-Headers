@@ -3,25 +3,22 @@
  */
 
 @interface LAClient : NSObject <LAContextCallbackXPC, LAContextXPC> {
-    NSMutableArray *_callInvalidationBlocks;
-    NSData *_connectToContext;
-    NSXPCConnection *_daemonConnection;
-    NSData *_externalizedContext;
-    NSError *_permanentError;
-    <LAContextXPC> *_remoteContext;
-    BOOL _shouldRecoverConnection;
-    <LAUIDelegate> *_uiDelegate;
+    LACachedExternalizedContext * _cachedExternalizedContext;
+    NSMutableArray * _callInvalidationBlocks;
+    NSData * _existingContext;
+    NSError * _permanentError;
+    <LAContextXPC> * _remoteContext;
+    NSXPCConnection * _serverConnection;
+    BOOL  _shouldRecoverConnection;
+    <LAUIDelegate> * _uiDelegate;
 }
 
-@property (nonatomic, retain) NSData *connectToContext;
-@property (readonly) NSData *externalizedContext;
+@property (nonatomic, readonly) NSData *externalizedContext;
 @property (nonatomic) <LAUIDelegate> *uiDelegate;
 
 + (void)_performInvalidationBlocks:(id)arg1;
 + (id)_queue;
 + (id)_recoveryQueue;
-+ (id)clientWithExternalizedContext:(id)arg1 uiDelegate:(id)arg2 error:(id*)arg3;
-+ (void)clientWithExternalizedContext:(id)arg1 uiDelegate:(id)arg2 reply:(id /* block */)arg3;
 
 - (void).cxx_destruct;
 - (void)_performCallBool:(id /* block */)arg1 finally:(id /* block */)arg2;
@@ -30,24 +27,27 @@
 - (void)_scheduleRecovery;
 - (BOOL)_setPermanentError:(id)arg1;
 - (id)_updateOptions:(id)arg1;
-- (id)connectToContext;
 - (void)dealloc;
-- (void)enterPassword:(id)arg1 reply:(id /* block */)arg2;
 - (void)evaluateACL:(id)arg1 operation:(int)arg2 options:(id)arg3 reply:(id /* block */)arg4;
+- (void)evaluateACL:(id)arg1 operation:(int)arg2 options:(id)arg3 uiDelegate:(id)arg4 reply:(id /* block */)arg5;
 - (void)evaluatePolicy:(int)arg1 options:(id)arg2 reply:(id /* block */)arg3;
+- (void)evaluatePolicy:(int)arg1 options:(id)arg2 uiDelegate:(id)arg3 reply:(id /* block */)arg4;
 - (id)externalizedContext;
+- (void)externalizedContextWithReply:(id /* block */)arg1;
 - (void)failProcessedEvent:(int)arg1 failureError:(id)arg2 reply:(id /* block */)arg3;
-- (void)invalidate;
+- (id)initWithExistingContext:(id)arg1;
+- (void)invalidateWithMessage:(id)arg1;
 - (void)invalidatedWithError:(id)arg1;
+- (void)isCredentialSet:(int)arg1 reply:(id /* block */)arg2;
 - (void)prearmTouchIdWithReply:(id /* block */)arg1;
+- (void)resetWithReply:(id /* block */)arg1;
 - (id)serverPropertyForOption:(int)arg1 error:(id*)arg2;
 - (void)serverPropertyForOption:(int)arg1 reply:(id /* block */)arg2;
-- (void)setConnectToContext:(id)arg1;
-- (void)setCredential:(id)arg1 type:(int)arg2 onlyGet:(BOOL)arg3 reply:(id /* block */)arg4;
+- (void)setCredential:(id)arg1 forProcessedEvent:(int)arg2 credentialType:(int)arg3 reply:(id /* block */)arg4;
+- (void)setCredential:(id)arg1 type:(int)arg2 reply:(id /* block */)arg3;
 - (BOOL)setServerPropertyForOption:(int)arg1 value:(id)arg2 error:(id*)arg3;
 - (void)setServerPropertyForOption:(int)arg1 value:(id)arg2 reply:(id /* block */)arg3;
 - (void)setUiDelegate:(id)arg1;
-- (void)setupDaemonConnection:(id)arg1 remoteContext:(id)arg2 constInfo:(id)arg3;
 - (id)uiDelegate;
 
 @end

@@ -3,11 +3,11 @@
  */
 
 @interface PLSemaphore : NSObject {
-    NSMutableSet *_interestedObjects;
-    NSString *_key;
-    NSMutableSet *_pendingDoneObjects;
-    NSObject<OS_dispatch_semaphore> *_semaphore;
-    double _timeout;
+    NSMutableSet * _interestedObjects;
+    NSString * _key;
+    NSMutableSet * _pendingDoneObjects;
+    NSObject<OS_dispatch_semaphore> * _semaphore;
+    double  _timeout;
 }
 
 @property (retain) NSMutableSet *interestedObjects;

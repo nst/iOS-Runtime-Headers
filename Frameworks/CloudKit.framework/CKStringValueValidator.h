@@ -3,7 +3,7 @@
  */
 
 @interface CKStringValueValidator : CKPredicateValidatorInstance {
-    NSString *_value;
+    NSString * _value;
 }
 
 @property (nonatomic, retain) NSString *value;

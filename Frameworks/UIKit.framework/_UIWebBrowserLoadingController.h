@@ -3,27 +3,27 @@
  */
 
 @interface _UIWebBrowserLoadingController : NSObject <WebFrameLoadDelegate> {
-    NSURL *_URL;
-    NSString *_URLString;
-    NSURL *_backURL;
-    UIWebBrowserView *_browserView;
-    BOOL _canGoBack;
-    BOOL _canGoForward;
-    WebDataSource *_dataSourceWithError;
-    <_UIWebBrowserLoadingControllerDelegate> *_delegate;
-    NSError *_errorThatCausedLoadToEnd;
-    float _estimatedProgress;
-    NSArray *_fallbackURLs;
-    NSURL *_forwardURL;
-    NSString *_lastSuccessfulURLString;
-    BOOL _loadEndedWithError;
-    BOOL _loadStoppedFromAPI;
-    BOOL _loading;
-    int _loadingState;
-    unsigned int _pendingFrameLoadMessages;
-    BOOL _securePageHasInsecureContent;
-    NSString *_title;
-    NSString *_userTypedAddress;
+    NSURL * _URL;
+    NSString * _URLString;
+    NSURL * _backURL;
+    UIWebBrowserView * _browserView;
+    BOOL  _canGoBack;
+    BOOL  _canGoForward;
+    WebDataSource * _dataSourceWithError;
+    <_UIWebBrowserLoadingControllerDelegate> * _delegate;
+    NSError * _errorThatCausedLoadToEnd;
+    double  _estimatedProgress;
+    NSArray * _fallbackURLs;
+    NSURL * _forwardURL;
+    NSString * _lastSuccessfulURLString;
+    BOOL  _loadEndedWithError;
+    BOOL  _loadStoppedFromAPI;
+    BOOL  _loading;
+    int  _loadingState;
+    unsigned int  _pendingFrameLoadMessages;
+    BOOL  _securePageHasInsecureContent;
+    NSString * _title;
+    NSString * _userTypedAddress;
 }
 
 @property (nonatomic, retain) NSURL *URL;
@@ -34,7 +34,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <_UIWebBrowserLoadingControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) float estimatedProgress;
+@property (nonatomic) double estimatedProgress;
 @property (readonly) unsigned int hash;
 @property (getter=isLoading, nonatomic, readonly) BOOL loading;
 @property (nonatomic) int loadingState;

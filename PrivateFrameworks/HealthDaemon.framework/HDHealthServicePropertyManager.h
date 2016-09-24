@@ -3,14 +3,14 @@
  */
 
 @interface HDHealthServicePropertyManager : NSObject <CBPeripheralDelegate> {
-    BOOL _discoveredServices;
-    <HDHealthDaemon> *_healthDaemon;
-    NSMutableArray *_pendingDeviceInformationLoadedBlocks;
-    HDHealthPeripheral *_peripheral;
-    NSUUID *_peripheralIndentifier;
-    NSMutableDictionary *_propertiesAwaiting;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_services;
+    BOOL  _discoveredServices;
+    <HDHealthDaemon> * _healthDaemon;
+    NSMutableArray * _pendingDeviceInformationLoadedBlocks;
+    HDHealthPeripheral * _peripheral;
+    NSUUID * _peripheralIndentifier;
+    NSMutableDictionary * _propertiesAwaiting;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableDictionary * _services;
 }
 
 @property (readonly, copy) NSString *debugDescription;

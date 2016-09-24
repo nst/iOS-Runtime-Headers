@@ -3,8 +3,8 @@
  */
 
 @interface TPBottomSingleButtonBar : TPBottomBar {
-    TPButton *_button;
-    id _delegate;
+    TPButton * _button;
+    id  _delegate;
 }
 
 + (id)_backgroundImage;

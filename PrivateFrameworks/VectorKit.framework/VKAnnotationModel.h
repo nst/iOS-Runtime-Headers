@@ -3,15 +3,13 @@
  */
 
 @interface VKAnnotationModel : VKModelObject <VKMapLayer, VKStyleManagerObserver> {
-    NSMutableSet *_animatingMarkers;
-    id /* block */ _annotationMarkerDeselectionCallback;
-    NSMutableArray *_annotationMarkers;
-    BOOL _didDragMarker;
-    VKAnnotationMarker *_draggingAnnotationMarker;
-    BOOL _hasEverDrawnSomething;
-    VKMapModel *_mapModel;
-    NSMutableArray *_markersToAnimate;
-    VKAnnotationMarker *_selectedAnnotationMarker;
+    NSMutableArray * _annotationMarkers;
+    struct unique_ptr<AnnotationPipelineStates, std::__1::default_delete<AnnotationPipelineStates> > { 
+        struct __compressed_pair<AnnotationPipelineStates *, std::__1::default_delete<AnnotationPipelineStates> > { 
+            struct AnnotationPipelineStates {} *__first_; 
+        } __ptr_; 
+    }  _annotationPipelineStates;
+    VKMapModel * _mapModel;
     struct { 
         int from; 
         int to; 
@@ -19,53 +17,51 @@
             unsigned char timePeriod; 
             unsigned char overlayType; 
             unsigned char applicationState; 
+            unsigned char searchResultsType; 
+            BOOL mapHasLabels; 
         } fromDisplayStyle; 
         struct { 
             unsigned char timePeriod; 
             unsigned char overlayType; 
             unsigned char applicationState; 
+            unsigned char searchResultsType; 
+            BOOL mapHasLabels; 
         } toDisplayStyle; 
-        float fraction; 
-    } _styleTransitionState;
+        double fraction; 
+    }  _styleTransitionState;
 }
 
-@property (nonatomic, copy) id /* block */ annotationMarkerDeselectionCallback;
 @property (nonatomic, readonly) NSArray *annotationMarkers;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic) VKMapModel *mapModel;
 @property (nonatomic, readonly) BOOL needsLayout;
-@property (nonatomic, readonly) VKAnnotationMarker *selectedAnnotationMarker;
-@property (nonatomic, readonly) struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; } styleManager;
-@property (nonatomic) struct { int x1; int x2; struct { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; } x3; struct { unsigned char x_4_1_1; unsigned char x_4_1_2; unsigned char x_4_1_3; } x4; float x5; } styleTransitionState;
+@property (nonatomic, readonly) const struct AnnotationPipelineStates { struct shared_ptr<ggl::TextureWithBrightness::MeshPipelineState> { struct MeshPipelineState {} *x_1_1_1; struct __shared_weak_count {} *x_1_1_2; } x1; struct shared_ptr<ggl::TextureAlphaMask::MeshPipelineState> { struct MeshPipelineState {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*pipelineStates;
+@property (nonatomic, readonly) struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { struct StylesheetManager<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; } styleManager;
+@property (nonatomic) struct { int x1; int x2; struct { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; unsigned char x_3_1_4; BOOL x_3_1_5; } x3; struct { unsigned char x_4_1_1; unsigned char x_4_1_2; unsigned char x_4_1_3; unsigned char x_4_1_4; BOOL x_4_1_5; } x4; double x5; } styleTransitionState;
 @property (readonly) Class superclass;
 
 + (BOOL)reloadOnStylesheetChange;
 
-- (void)addAnnotationMarker:(id)arg1 allowAnimation:(BOOL)arg2;
-- (void)anchorPositionChangedForMarker:(id)arg1;
-- (id /* block */)annotationCoordinateTest;
-- (id /* block */)annotationMarkerDeselectionCallback;
-- (id)annotationMarkerForSelectionAtPoint:(struct VKPoint { double x1; double x2; double x3; })arg1 avoidCurrent:(BOOL)arg2 canvasSize:(struct CGSize { float x1; float x2; })arg3;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)addAnnotationMarker:(id)arg1;
 - (id)annotationMarkers;
-- (id /* block */)annotationRectTest;
 - (void)dealloc;
-- (void)deselectAnnotationMarker:(id)arg1;
-- (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
+- (void)gglLayoutScene:(id)arg1 withContext:(struct LayoutContext { id x1; short x2; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x3; void*x4; const void*x5; double x6; void*x7; void*x8; void*x9; const void*x10; void*x11; double x12; SEL x13; SEL x14; oneway int x15; void*x16; void*x17; void*x18; const void*x19; in short x20; double x21; out const void*x22; void*x23; void*x24; struct ViewTransform {} *x25; struct __shared_weak_count {} *x26; }*)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
 - (id)init;
-- (unsigned long long)mapLayerPosition;
+- (id)initWithTarget:(id)arg1 sharedResources:(id)arg2;
+- (unsigned int)mapLayerPosition;
 - (id)mapModel;
 - (BOOL)needsLayout;
+- (const struct AnnotationPipelineStates { struct shared_ptr<ggl::TextureWithBrightness::MeshPipelineState> { struct MeshPipelineState {} *x_1_1_1; struct __shared_weak_count {} *x_1_1_2; } x1; struct shared_ptr<ggl::TextureAlphaMask::MeshPipelineState> { struct MeshPipelineState {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)pipelineStates;
 - (void)removeAnnotationMarker:(id)arg1;
-- (void)selectAnnotationMarker:(id)arg1;
-- (id)selectedAnnotationMarker;
-- (void)setAnnotationMarkerDeselectionCallback:(id /* block */)arg1;
 - (void)setMapModel:(id)arg1;
-- (void)setStyleTransitionState:(struct { int x1; int x2; struct { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; } x3; struct { unsigned char x_4_1_1; unsigned char x_4_1_2; unsigned char x_4_1_3; } x4; float x5; })arg1;
+- (void)setStyleTransitionState:(struct { int x1; int x2; struct { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; unsigned char x_3_1_4; BOOL x_3_1_5; } x3; struct { unsigned char x_4_1_1; unsigned char x_4_1_2; unsigned char x_4_1_3; unsigned char x_4_1_4; BOOL x_4_1_5; } x4; double x5; })arg1;
 - (BOOL)shouldLayoutWithoutStyleManager;
-- (struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; })styleManager;
-- (struct { int x1; int x2; struct { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; } x3; struct { unsigned char x_4_1_1; unsigned char x_4_1_2; unsigned char x_4_1_3; } x4; float x5; })styleTransitionState;
+- (struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { struct StylesheetManager<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; })styleManager;
+- (struct { int x1; int x2; struct { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; unsigned char x_3_1_4; BOOL x_3_1_5; } x3; struct { unsigned char x_4_1_1; unsigned char x_4_1_2; unsigned char x_4_1_3; unsigned char x_4_1_4; BOOL x_4_1_5; } x4; double x5; })styleTransitionState;
 - (void)stylesheetDidChange;
 
 @end

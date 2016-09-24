@@ -3,26 +3,35 @@
  */
 
 @interface AKAppleIDAuthenticationController : NSObject {
-    NSXPCConnection *_authenticationServiceConnection;
-    NSLock *_connectionLock;
-    _AKAppleIDAuthenticationContextManager *_contextManager;
-    NSObject<OS_dispatch_queue> *_replyHandlingQueue;
-    NSString *_serviceID;
+    NSXPCConnection * _authenticationServiceConnection;
+    NSLock * _connectionLock;
+    _AKAppleIDAuthenticationContextManager * _contextManager;
+    NSXPCListenerEndpoint * _daemonXPCEndpoint;
+    NSObject<OS_dispatch_queue> * _replyHandlingQueue;
+    NSString * _serviceID;
 }
 
 @property (nonatomic) <AKAppleIDAuthenticationDelegate> *delegate;
 
 - (void).cxx_destruct;
 - (id)_authenticationServiceConnection;
+- (id)activeLoginCode:(id*)arg1;
 - (void)authenticateWithContext:(id)arg1 completion:(id /* block */)arg2;
 - (void)checkInWithAuthenticationServerForAppleID:(id)arg1 completion:(id /* block */)arg2;
 - (void)checkSecurityUpgradeEligibilityForAppleID:(id)arg1 completion:(id /* block */)arg2;
 - (void)dealloc;
 - (id)delegate;
+- (id)emailsForAltDSID:(id)arg1;
 - (void)generateLoginCodeWithCompletion:(id /* block */)arg1;
 - (void)getServerUILoadDelegateForAltDSID:(id)arg1 completion:(id /* block */)arg2;
+- (void)getServerUILoadDelegateWithContext:(id)arg1 completion:(id /* block */)arg2;
 - (id)init;
+- (id)initWithDaemonXPCEndpoint:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 daemonXPCEndpoint:(id)arg2;
+- (BOOL)isDevicePasscodeProtected:(id*)arg1;
+- (void)performCircleRequestWithContext:(id)arg1 completion:(id /* block */)arg2;
+- (void)renewRecoveryTokenWithRecoveryInfo:(id)arg1 completion:(id /* block */)arg2;
 - (void)reportSignOutForAllAppleIDsWithCompletion:(id /* block */)arg1;
 - (void)reportSignOutForAppleID:(id)arg1 service:(int)arg2 completion:(id /* block */)arg3;
 - (void)setAppleIDWithAltDSID:(id)arg1 inUse:(BOOL)arg2 forService:(int)arg3;
@@ -30,6 +39,8 @@
 - (void)setConfigurationInfo:(id)arg1 forIdentifier:(id)arg2 forAltDSID:(id)arg3 completion:(id /* block */)arg4;
 - (void)setDelegate:(id)arg1;
 - (void)updateStateWithExternalAuthenticationResponse:(id)arg1 forAppleID:(id)arg2 completion:(id /* block */)arg3;
+- (void)updateStateWithExternalAuthenticationResponse:(id)arg1 forContext:(id)arg2 completion:(id /* block */)arg3;
 - (void)validateLoginCode:(unsigned int)arg1 forAppleID:(id)arg2 completion:(id /* block */)arg3;
+- (void)validateVettingToken:(id)arg1 forAltDSID:(id)arg2 completion:(id /* block */)arg3;
 
 @end

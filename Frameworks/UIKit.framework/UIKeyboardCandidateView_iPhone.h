@@ -3,7 +3,7 @@
  */
 
 @interface UIKeyboardCandidateView_iPhone : UIKeyboardCandidateView <UICollectionViewDelegate, UIGestureRecognizerDelegate> {
-    UIKeyboardCandidateGridHeader *_header;
+    UIKeyboardCandidateGridHeader * _header;
 }
 
 @property (readonly, copy) NSString *debugDescription;

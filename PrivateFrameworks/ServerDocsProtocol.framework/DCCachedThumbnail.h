@@ -3,7 +3,7 @@
  */
 
 @interface DCCachedThumbnail : DCCachedFile {
-    DCCachedItem *_underlyingItem;
+    DCCachedItem * _underlyingItem;
 }
 
 @property (readonly, retain) DCCachedItem *underlyingItem;

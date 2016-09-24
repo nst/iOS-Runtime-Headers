@@ -2,15 +2,9 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@interface RUIHeaderElement : RUIElement {
-    NSString *_text;
-}
+@interface RUIHeaderElement : RUIElement
 
-@property (nonatomic, copy) NSString *text;
-
-- (void).cxx_destruct;
 - (void)configureView:(id)arg1;
-- (void)setText:(id)arg1;
-- (id)text;
+- (int)labelAlignment;
 
 @end

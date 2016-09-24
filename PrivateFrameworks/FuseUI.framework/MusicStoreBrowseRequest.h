@@ -2,45 +2,39 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicStoreBrowseRequest : MusicStoreModelRequest {
-    BOOL _didInitializeTimeoutIntervalAdditions;
-    int _domain;
-    BOOL _errorReportingDisabled;
-    int _filteringPolicy;
-    MusicStoreBrowseRequest *_individualPendingNestedRequest;
-    NSObject<OS_dispatch_group> *_nestedRequestsGroup;
-    MPUOperationQueue *_nestedRequestsOperationQueue;
-    MusicStoreBrowseSection *_parentSection;
-    unsigned int _requestType;
-    NSMapTable *_sectionsToPendingNestedRequests;
-    double _timeoutIntervalAdditions;
+@interface MusicStoreBrowseRequest : MPStoreModelRequest {
+    int  _domain;
+    int  _filteringPolicy;
+    NSURL * _loadAdditionalContentURL;
+    MusicStoreBrowseResponse * _previousResponse;
+    MusicStoreBrowseResponse * _previousRetrievedNestedResponse;
 }
 
-@property int domain;
-@property int filteringPolicy;
-@property (retain) MusicStoreBrowseSection *parentSection;
+@property (nonatomic) int domain;
+@property (nonatomic) int filteringPolicy;
+@property (nonatomic, copy) NSURL *loadAdditionalContentURL;
 @property (nonatomic, retain) MusicStoreBrowseResponse *previousResponse;
-@property (nonatomic, copy) id /* block */ responseHandler;
+@property (nonatomic, retain) MusicStoreBrowseResponse *previousRetrievedNestedResponse;
 
 + (id)allSupportedItemProperties;
 + (id)allSupportedSectionProperties;
 
 - (void).cxx_destruct;
-- (id)_nestedRequestsOperationQueue;
-- (void)_produceCarPlayResponseWithParser:(id)arg1 withNestedRequestsForEmptyBrickSectionsInOperationQueue:(id)arg2 completion:(id /* block */)arg3;
-- (void)_produceRegularResponseWithParser:(id)arg1 completion:(id /* block */)arg2;
-- (void)_produceResponseWithParser:(id)arg1 results:(id)arg2 changeDetails:(id)arg3 completion:(id /* block */)arg4;
-- (double)adjustTimeoutInterval:(double)arg1;
-- (void)cancel;
-- (id)configurationForLoadingModelDataWithStoreBag:(id)arg1 error:(id*)arg2;
+- (void)configureWithParentSection:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)domain;
-- (void)execute;
+- (void)encodeWithCoder:(id)arg1;
 - (int)filteringPolicy;
 - (id)init;
-- (id)parentSection;
-- (void)produceResponseWithLoadedOutput:(id)arg1 completion:(id /* block */)arg2;
+- (id)initWithCoder:(id)arg1;
+- (id)loadAdditionalContentURL;
+- (id)newOperationWithResponseHandler:(id /* block */)arg1;
+- (id)previousResponse;
+- (id)previousRetrievedNestedResponse;
 - (void)setDomain:(int)arg1;
 - (void)setFilteringPolicy:(int)arg1;
-- (void)setParentSection:(id)arg1;
+- (void)setLoadAdditionalContentURL:(id)arg1;
+- (void)setPreviousResponse:(id)arg1;
+- (void)setPreviousRetrievedNestedResponse:(id)arg1;
 
 @end

@@ -3,10 +3,10 @@
  */
 
 @interface NNMKSQLJournal : NSObject {
-    NSMutableData *_currentFileData;
-    NSString *_directoryPath;
-    unsigned int _filesCount;
-    NSObject<OS_dispatch_queue> *_journalQueue;
+    NSMutableData * _currentFileData;
+    NSString * _directoryPath;
+    unsigned int  _filesCount;
+    NSObject<OS_dispatch_queue> * _journalQueue;
 }
 
 @property (nonatomic, retain) NSMutableData *currentFileData;

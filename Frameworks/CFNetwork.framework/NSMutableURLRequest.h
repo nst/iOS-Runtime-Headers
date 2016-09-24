@@ -32,7 +32,7 @@
 - (void)setBoundInterfaceIdentifier:(id)arg1;
 - (void)setCachePolicy:(unsigned int)arg1;
 - (void)setContentDispositionEncodingFallbackArray:(id)arg1;
-- (void)setExpectedWorkload:(unsigned long long)arg1;
+- (void)setExpectedWorkload:(unsigned int)arg1;
 - (void)setHTTPBody:(id)arg1;
 - (void)setHTTPBodyStream:(id)arg1;
 - (void)setHTTPContentType:(id)arg1;
@@ -84,6 +84,7 @@
 
 - (void)_setAuthorizationHeaderWithToken:(id)arg1 altDSID:(id)arg2 key:(id)arg3;
 - (void)ak_addAbsintheHeader;
+- (void)ak_addAcceptedSLAHeaderWithVersion:(unsigned int)arg1;
 - (void)ak_addAnisetteHeaders;
 - (void)ak_addAuthorizationHeaderWithHeartbeatToken:(id)arg1 forAltDSID:(id)arg2;
 - (void)ak_addAuthorizationHeaderWithIdentityToken:(id)arg1 forAltDSID:(id)arg2;
@@ -93,19 +94,33 @@
 - (void)ak_addContextHeaderForServiceType:(int)arg1;
 - (void)ak_addContinutationKeyHeader:(id)arg1;
 - (void)ak_addCountryHeader;
+- (void)ak_addDeviceMLBHeader;
+- (void)ak_addDeviceROMHeader;
+- (void)ak_addDeviceSerialNumberHeader;
 - (void)ak_addDeviceUDIDHeader;
 - (void)ak_addEphemeralAuthHeader;
+- (void)ak_addICSCIntentHeader;
+- (void)ak_addICSCRecoveryHeaderWithIdentityToken:(id)arg1 forAltDSID:(id)arg2;
+- (void)ak_addInternalBuildHeader;
+- (void)ak_addLocalUserHasAppleIDLoginHeader;
 - (void)ak_addPRKRequestHeader;
 - (void)ak_addPasswordResetKeyHeader:(id)arg1;
 - (void)ak_addProxiedAnisetteHeaders:(id)arg1;
 - (void)ak_addProxiedClientInfoHeader:(id)arg1;
 - (void)ak_addProxiedDeviceUDIDHeader:(id)arg1;
 - (void)ak_addShortLivedTokenHeaderWithIdentityToken:(id)arg1 forAltDSID:(id)arg2;
+- (void)ak_addStingrayDisableEligibilityHeader:(BOOL)arg1;
 - (void)ak_setBodyWithParameters:(id)arg1;
+- (void)ak_setJSONBodyWithParameters:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CaptiveNetwork.framework/CaptiveNetwork
 
 - (void)bindToCommand:(struct __CNPluginCommand { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFDictionary {} *x2; unsigned int x3; }*)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreCDPInternal.framework/CoreCDPInternal
+
+- (void)cdp_addAuthHeaderWithContext:(id)arg1;
+- (void)cdp_addClientInfoHeader;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 

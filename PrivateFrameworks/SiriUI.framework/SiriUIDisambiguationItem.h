@@ -3,17 +3,17 @@
  */
 
 @interface SiriUIDisambiguationItem : NSObject {
-    NSString *_extraDisambiguationSubText;
-    NSString *_extraDisambiguationText;
-    NSString *_headingText;
-    UIImageView *_imageView;
-    BOOL _showsFavoriteStar;
-    NSString *_subtitle;
-    NSString *_title;
+    NSString * _extraDisambiguationSubText;
+    NSString * _extraDisambiguationText;
+    NSString * _headingText;
+    UIImageView * _imageView;
+    BOOL  _showsFavoriteStar;
+    NSString * _subtitle;
+    NSString * _title;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _titleBoldedRange;
+    }  _titleBoldedRange;
 }
 
 @property (nonatomic, copy) NSString *extraDisambiguationSubText;

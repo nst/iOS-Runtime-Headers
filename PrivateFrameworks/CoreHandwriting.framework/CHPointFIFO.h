@@ -3,7 +3,7 @@
  */
 
 @interface CHPointFIFO : NSObject {
-    CHPointFIFO *_nextFIFO;
+    CHPointFIFO * _nextFIFO;
 }
 
 @property (nonatomic, retain) CHPointFIFO *nextFIFO;

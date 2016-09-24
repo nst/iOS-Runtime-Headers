@@ -3,13 +3,13 @@
  */
 
 @interface SMTPAccount : DeliveryAccount {
-    MFSMTPConnection *_connection;
-    Class _deliveryClass;
-    long _lastTimerSetTime;
-    unsigned int _supportsOutboxCopy;
-    unsigned int _supportsPipelining;
-    NSTimer *_timer;
-    unsigned int _useCellDataOnly;
+    MFSMTPConnection * _connection;
+    Class  _deliveryClass;
+    long  _lastTimerSetTime;
+    unsigned int  _supportsOutboxCopy;
+    unsigned int  _supportsPipelining;
+    NSTimer * _timer;
+    unsigned int  _useCellDataOnly;
 }
 
 + (id)accountTypeString;

@@ -6,21 +6,21 @@
     struct shared_ptr<ggl::BitmapDataBase> { 
         struct BitmapDataBase {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _bitmapData;
+    }  _bitmapData;
     struct VKTileKey { 
         unsigned int z; 
         int x; 
         int y; 
         unsigned int pointSize; 
-    } _finalTileKey;
-    struct CGImage { } *_image;
-    float _scale;
+    }  _finalTileKey;
+    struct CGImage { } * _image;
+    double  _scale;
     struct VKTileKey { 
         unsigned int z; 
         int x; 
         int y; 
         unsigned int pointSize; 
-    } _superTileKey;
+    }  _superTileKey;
 }
 
 @property (nonatomic, readonly) struct VKRasterTileKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; } tileKey;

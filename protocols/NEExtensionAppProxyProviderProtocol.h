@@ -7,5 +7,6 @@
 
 - (void)setDelegateInterface:(unsigned int)arg1;
 - (void)setInitialFlowDivertControlSocket:(NSFileHandle *)arg1;
+- (void)setInitialFlowDivertControlSocket:(NSFileHandle *)arg1 extraValidation:(BOOL)arg2;
 
 @end

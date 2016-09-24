@@ -3,7 +3,7 @@
  */
 
 @interface CMCatherineFeeder : NSObject {
-    CMCatherineFeederInternal *_internal;
+    CMCatherineFeederInternal * _internal;
 }
 
 @property (nonatomic, readonly) CMCatherineFeederInternal *internal;

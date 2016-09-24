@@ -3,9 +3,9 @@
  */
 
 @interface ML3OrderingTerm : NSObject <NSCoding, NSCopying> {
-    NSString *_collation;
-    int _direction;
-    NSString *_property;
+    NSString * _collation;
+    int  _direction;
+    NSString * _property;
 }
 
 @property (nonatomic, readonly) NSString *collation;

@@ -3,7 +3,7 @@
  */
 
 @interface SSMigrator : NSObject {
-    SSXPCConnection *_connection;
+    SSXPCConnection * _connection;
 }
 
 - (void).cxx_destruct;

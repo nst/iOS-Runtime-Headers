@@ -3,38 +3,31 @@
  */
 
 @interface BRFieldUserIdentity : PBCodable <NSCopying> {
-    NSString *_displayName;
-    NSString *_firstName;
-    NSString *_lastName;
+    NSData * _serializedNameComponents;
 }
 
-@property (nonatomic, retain) NSString *displayName;
-@property (nonatomic, retain) NSString *firstName;
-@property (nonatomic, readonly) BOOL hasDisplayName;
-@property (nonatomic, readonly) BOOL hasFirstName;
-@property (nonatomic, readonly) BOOL hasLastName;
-@property (nonatomic, retain) NSString *lastName;
+@property (nonatomic, readonly) BOOL hasSerializedNameComponents;
+@property (nonatomic, retain) NSPersonNameComponents *nameComponents;
+@property (nonatomic, retain) NSData *serializedNameComponents;
+
++ (id)unknownPersonNameComponents;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)displayName;
-- (id)firstName;
-- (BOOL)hasDisplayName;
-- (BOOL)hasFirstName;
-- (BOOL)hasLastName;
+- (BOOL)hasSerializedNameComponents;
 - (unsigned int)hash;
 - (id)initWithCKUserIdentity:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (id)lastName;
 - (void)mergeFrom:(id)arg1;
+- (id)nameComponents;
+- (id)nameComponentsAcceptUnknownUser:(BOOL)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setDisplayName:(id)arg1;
-- (void)setFirstName:(id)arg1;
-- (void)setLastName:(id)arg1;
-- (id)userFormattedName;
+- (id)serializedNameComponents;
+- (void)setNameComponents:(id)arg1;
+- (void)setSerializedNameComponents:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

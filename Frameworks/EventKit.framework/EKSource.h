@@ -3,11 +3,11 @@
  */
 
 @interface EKSource : EKObject {
-    EKAvailabilityCache *_availabilityCache;
-    NSString *_cachedHost;
-    NSSet *_cachedOwnerAddresses;
-    int _cachedPort;
-    NSDate *_timeOfLastExternalIdentificationCache;
+    EKAvailabilityCache * _availabilityCache;
+    NSString * _cachedHost;
+    NSSet * _cachedOwnerAddresses;
+    int  _cachedPort;
+    NSDate * _timeOfLastExternalIdentificationCache;
 }
 
 @property (nonatomic, readonly) NSSet *allCalendars;
@@ -31,12 +31,15 @@
 @property (nonatomic, readonly) NSString *sourceIdentifier;
 @property (nonatomic, readonly) int sourceType;
 @property (nonatomic, readonly) int strictestEventPrivateValue;
+@property (nonatomic, readonly) BOOL supportsCalendarCreation;
+@property (nonatomic, readonly) BOOL supportsReminderActions;
 @property (nonatomic, retain) NSDate *timeOfLastExternalIdentificationCache;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, readonly) BOOL wantsCommentPromptWhenDeclining;
 
 + (id)sourceWithEventStore:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_cacheExternalIdentificationIfNeeded;
 - (id)_persistentItem;
 - (id)allCalendars;
@@ -48,7 +51,6 @@
 - (id)calendarsForEntityType:(unsigned int)arg1;
 - (BOOL)commit:(id*)arg1;
 - (id)constraints;
-- (void)dealloc;
 - (id)defaultAlarmOffset;
 - (id)description;
 - (int)displayOrderForNewCalendar;
@@ -76,6 +78,8 @@
 - (id)sourceIdentifier;
 - (int)sourceType;
 - (int)strictestEventPrivateValue;
+- (BOOL)supportsCalendarCreation;
+- (BOOL)supportsReminderActions;
 - (id)timeOfLastExternalIdentificationCache;
 - (id)title;
 - (BOOL)wantsCommentPromptWhenDeclining;

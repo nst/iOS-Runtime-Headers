@@ -3,8 +3,8 @@
  */
 
 @interface CKDPDateStatistics : PBCodable <NSCopying> {
-    CKDPDate *_creation;
-    CKDPDate *_modification;
+    CKDPDate * _creation;
+    CKDPDate * _modification;
 }
 
 @property (nonatomic, retain) CKDPDate *creation;

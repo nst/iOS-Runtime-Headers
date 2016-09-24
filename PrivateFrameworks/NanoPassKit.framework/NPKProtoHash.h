@@ -3,7 +3,7 @@
  */
 
 @interface NPKProtoHash : PBCodable <NSCopying> {
-    NSData *_hashData;
+    NSData * _hashData;
 }
 
 @property (nonatomic, readonly) BOOL hasHashData;

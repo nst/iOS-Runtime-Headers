@@ -3,10 +3,10 @@
  */
 
 @interface CTCellularPlanProfile : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_iccid;
-    BOOL _isBootstrap;
-    BOOL _isSelected;
-    NSData *_profileId;
+    NSString * _iccid;
+    BOOL  _isBootstrap;
+    BOOL  _isSelected;
+    NSData * _profileId;
 }
 
 @property (nonatomic, copy) NSString *iccid;

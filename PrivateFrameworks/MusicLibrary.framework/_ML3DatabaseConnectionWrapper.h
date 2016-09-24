@@ -3,10 +3,10 @@
  */
 
 @interface _ML3DatabaseConnectionWrapper : NSObject {
-    NSThread *_borrowingThread;
-    ML3DatabaseConnection *_connection;
-    NSThread *_owningThread;
-    unsigned int _useCount;
+    NSThread * _borrowingThread;
+    ML3DatabaseConnection * _connection;
+    NSThread * _owningThread;
+    unsigned int  _useCount;
 }
 
 @property (nonatomic, retain) NSThread *borrowingThread;

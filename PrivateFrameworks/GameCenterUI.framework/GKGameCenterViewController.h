@@ -3,12 +3,12 @@
  */
 
 @interface GKGameCenterViewController : UINavigationController <GKExtensionParentViewControllerProtocol> {
-    UIAlertController *_alertController;
-    <GKGameCenterControllerDelegate> *_gameCenterDelegateWeak;
-    NSString *_leaderboardIdentifier;
-    int _leaderboardTimeScope;
-    GKDashboardHostViewController *_remoteViewController;
-    int _viewState;
+    UIAlertController * _alertController;
+    <GKGameCenterControllerDelegate> * _gameCenterDelegateWeak;
+    NSString * _leaderboardIdentifier;
+    int  _leaderboardTimeScope;
+    GKDashboardHostViewController * _remoteViewController;
+    int  _viewState;
 }
 
 @property (nonatomic, retain) UIAlertController *alertController;

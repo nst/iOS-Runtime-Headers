@@ -3,8 +3,8 @@
  */
 
 @interface AXCameraTorchManagerBackgroundAdapter : NSObject {
-    NSObject<OS_dispatch_queue> *_q;
-    <AXCameraTorchManager> *_synchronousManager;
+    NSObject<OS_dispatch_queue> * _q;
+    <AXCameraTorchManager> * _synchronousManager;
 }
 
 @property (nonatomic, readonly) <AXCameraTorchManager> *synchronousTorchManager;

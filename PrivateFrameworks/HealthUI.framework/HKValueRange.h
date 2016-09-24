@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
  */
 
-@interface HKValueRange : NSObject <HKTimePeriod, NSCopying> {
-    id _maxValue;
-    id _minValue;
+@interface HKValueRange : NSObject <NSCopying> {
+    id  _maxValue;
+    id  _minValue;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSDate *endDate;
 @property (nonatomic, copy) id maxValue;
 @property (nonatomic, copy) id minValue;
-@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSDate *startDate;
 
 + (id)valueRangeWithMinValue:(id)arg1 maxValue:(id)arg2;
 

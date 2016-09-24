@@ -3,11 +3,11 @@
  */
 
 @interface CKComparisonPredicateValidator : CKPredicateValidatorInstance {
-    <CKObjectValidating> *_leftExpressionValidator;
-    <CKObjectValidating> *_modifierValidator;
-    <CKObjectValidating> *_operatorValidator;
-    <CKObjectValidating> *_optionsValidator;
-    <CKObjectValidating> *_rightExpressionValidator;
+    <CKObjectValidating> * _leftExpressionValidator;
+    <CKObjectValidating> * _modifierValidator;
+    <CKObjectValidating> * _operatorValidator;
+    <CKObjectValidating> * _optionsValidator;
+    <CKObjectValidating> * _rightExpressionValidator;
 }
 
 @property (nonatomic, retain) <CKObjectValidating> *leftExpressionValidator;

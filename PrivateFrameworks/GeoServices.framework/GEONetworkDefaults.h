@@ -3,10 +3,10 @@
  */
 
 @interface GEONetworkDefaults : NSObject <_GEONetworkDefaultsServerProxyDelegate> {
-    NSMutableArray *_completionHandlers;
-    NSDictionary *_networkDefaults;
-    NSLock *_networkDefaultsLock;
-    <_GEONetworkDefaultsServerProxy> *_serverProxy;
+    NSMutableArray * _completionHandlers;
+    NSDictionary * _networkDefaults;
+    NSLock * _networkDefaultsLock;
+    <_GEONetworkDefaultsServerProxy> * _serverProxy;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,6 +14,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
++ (void)_ib_disableServerConnection;
 + (void)setUseLocalProxy:(BOOL)arg1;
 + (id)sharedNetworkDefaults;
 

@@ -3,8 +3,8 @@
  */
 
 @interface SUNativeScriptMenuViewController : SUMenuViewController {
-    SUScriptFunction *_action;
-    NSArray *_menuItems;
+    SUScriptFunction * _action;
+    NSArray * _menuItems;
 }
 
 @property (nonatomic, retain) SUScriptFunction *action;

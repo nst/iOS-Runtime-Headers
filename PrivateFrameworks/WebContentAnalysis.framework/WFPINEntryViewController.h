@@ -3,14 +3,14 @@
  */
 
 @interface WFPINEntryViewController : UIViewController <WFPINEntryViewControllerProtocol> {
-    NSURL *_URL;
-    id /* block */ _completion;
-    id /* block */ _dismissCompletionHandler;
-    _UIFallbackPresentationViewController *_fallbackPresentationVC;
-    NSString *_pageTitle;
-    WFRemotePINEntryViewController *_remoteViewController;
-    UIViewController *_rootViewControllerToUse;
-    NSArray *_windowsWithDisabledRotation;
+    NSURL * _URL;
+    id /* block */  _completion;
+    id /* block */  _dismissCompletionHandler;
+    _UIFallbackPresentationViewController * _fallbackPresentationVC;
+    NSString * _pageTitle;
+    WFRemotePINEntryViewController * _remoteViewController;
+    UIViewController * _rootViewControllerToUse;
+    NSArray * _windowsWithDisabledRotation;
 }
 
 @property (nonatomic, copy) id /* block */ dismissCompletionHandler;

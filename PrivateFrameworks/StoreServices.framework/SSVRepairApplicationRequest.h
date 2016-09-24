@@ -3,9 +3,9 @@
  */
 
 @interface SSVRepairApplicationRequest : SSRequest <SSXPCCoding> {
-    NSNumber *_accountDSID;
-    NSString *_bundleID;
-    int _claimStyle;
+    NSNumber * _accountDSID;
+    NSString * _bundleID;
+    int  _claimStyle;
 }
 
 @property (nonatomic, readonly) NSNumber *accountDSID;

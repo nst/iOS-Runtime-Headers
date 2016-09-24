@@ -3,8 +3,8 @@
  */
 
 @interface CNVCardParsedParameter : NSObject {
-    NSString *_name;
-    NSArray *_values;
+    NSString * _name;
+    NSArray * _values;
 }
 
 @property (readonly, copy) NSString *name;
@@ -12,7 +12,7 @@
 
 + (id)parameterWithName:(id)arg1 values:(id)arg2;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)initWithName:(id)arg1 values:(id)arg2;
 - (id)name;

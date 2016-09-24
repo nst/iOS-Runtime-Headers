@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
  */
 
-@interface CNAvatarCardHeaderView : CNContactHeaderDisplayView
+@interface CNAvatarCardHeaderView : CNContactOrbHeaderView
 
 - (float)photoLabelSpacing;
 

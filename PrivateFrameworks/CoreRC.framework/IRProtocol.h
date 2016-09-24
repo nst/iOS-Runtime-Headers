@@ -3,10 +3,10 @@
  */
 
 @interface IRProtocol : NSObject <NSSecureCoding> {
-    double _carrierFrequency;
-    unsigned char _options;
-    unsigned char _protocolID;
-    double _repeatInterval;
+    double  _carrierFrequency;
+    unsigned char  _options;
+    unsigned char  _protocolID;
+    double  _repeatInterval;
 }
 
 @property (nonatomic, readonly) double carrierFrequency;

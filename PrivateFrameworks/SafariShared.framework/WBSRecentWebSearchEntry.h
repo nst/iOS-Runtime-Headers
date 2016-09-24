@@ -3,8 +3,8 @@
  */
 
 @interface WBSRecentWebSearchEntry : NSObject {
-    NSDate *_date;
-    NSString *_searchString;
+    NSDate * _date;
+    NSString * _searchString;
 }
 
 @property (readonly) NSDate *date;

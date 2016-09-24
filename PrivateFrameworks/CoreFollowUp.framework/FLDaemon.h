@@ -3,8 +3,8 @@
  */
 
 @interface FLDaemon : NSObject {
-    NSXPCConnection *_conn;
-    NSLock *_connLock;
+    NSXPCConnection * _conn;
+    NSLock * _connLock;
 }
 
 + (id)daemonWithErrorHandler:(id /* block */)arg1;

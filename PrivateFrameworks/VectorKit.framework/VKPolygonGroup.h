@@ -2,87 +2,14 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKPolygonGroup : NSObject {
-    struct Box<float, 3> { 
-        struct Matrix<float, 3, 1> { 
-            float _e[3]; 
-        } _minimum; 
-        struct Matrix<float, 3, 1> { 
-            float _e[3]; 
-        } _maximum; 
-    } _boundingBox;
-    struct shared_ptr<gss::PolygonDrawStyle> { 
-        struct PolygonDrawStyle {} *__ptr_; 
+@interface VKPolygonGroup : VKPolygonalItemGroup {
+    bool  _needsTextureUpdate;
+    VKSharedResources * _sharedResources;
+    struct shared_ptr<ggl::Texture2D> { 
+        struct Texture2D {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _cachedPolygonStyle;
-    struct Matrix<float, 2, 1> { 
-        float _e[2]; 
-    } _centroid;
-    float _contentScale;
-    unsigned int _cullingMask;
-    struct vector<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > >, std::__1::allocator<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > > > { 
-        struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__begin_; 
-        struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__end_; 
-        struct __compressed_pair<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > *, std::__1::allocator<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > > > { 
-            struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__first_; 
-        } __end_cap_; 
-    } _extrusionFillCullingGroups;
-    struct vector<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > >, std::__1::allocator<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > > > { 
-        struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__begin_; 
-        struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__end_; 
-        struct __compressed_pair<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > *, std::__1::allocator<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > > > { 
-            struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__first_; 
-        } __end_cap_; 
-    } _extrusionFillCullingGroupsForPointyRoofs;
-    struct unique_ptr<ggl::MeshVendor<ggl::Building::BuildingMesh>, std::__1::default_delete<ggl::MeshVendor<ggl::Building::BuildingMesh> > > { 
-        struct __compressed_pair<ggl::MeshVendor<ggl::Building::BuildingMesh> *, std::__1::default_delete<ggl::MeshVendor<ggl::Building::BuildingMesh> > > { 
-            struct MeshVendor<ggl::Building::BuildingMesh> {} *__first_; 
-        } __ptr_; 
-    } _extrusionFillMeshVendor;
-    struct unique_ptr<ggl::MeshVendor<ggl::Building::BuildingMesh>, std::__1::default_delete<ggl::MeshVendor<ggl::Building::BuildingMesh> > > { 
-        struct __compressed_pair<ggl::MeshVendor<ggl::Building::BuildingMesh> *, std::__1::default_delete<ggl::MeshVendor<ggl::Building::BuildingMesh> > > { 
-            struct MeshVendor<ggl::Building::BuildingMesh> {} *__first_; 
-        } __ptr_; 
-    } _extrusionFillMeshVendorForPointyRoofs;
-    struct vector<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > >, std::__1::allocator<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > > > { 
-        struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__begin_; 
-        struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__end_; 
-        struct __compressed_pair<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > *, std::__1::allocator<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > > > { 
-            struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__first_; 
-        } __end_cap_; 
-    } _extrusionStrokeCullingGroups;
-    struct vector<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > >, std::__1::allocator<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > > > { 
-        struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__begin_; 
-        struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__end_; 
-        struct __compressed_pair<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > *, std::__1::allocator<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > > > { 
-            struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__first_; 
-        } __end_cap_; 
-    } _extrusionStrokeCullingGroupsForPointyRoofs;
-    struct unique_ptr<ggl::MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh>, std::__1::default_delete<ggl::MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh> > > { 
-        struct __compressed_pair<ggl::MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh> *, std::__1::default_delete<ggl::MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh> > > { 
-            struct MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh> {} *__first_; 
-        } __ptr_; 
-    } _extrusionStrokeMeshVendor;
-    struct unique_ptr<ggl::MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh>, std::__1::default_delete<ggl::MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh> > > { 
-        struct __compressed_pair<ggl::MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh> *, std::__1::default_delete<ggl::MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh> > > { 
-            struct MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh> {} *__first_; 
-        } __ptr_; 
-    } _extrusionStrokeMeshVendorForPointyRoofs;
-    struct vector<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > >, std::__1::allocator<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > > > { 
-        struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__begin_; 
-        struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__end_; 
-        struct __compressed_pair<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > *, std::__1::allocator<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > > > { 
-            struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__first_; 
-        } __end_cap_; 
-    } _fillCullingGroups;
-    struct vector<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > >, std::__1::allocator<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > > > { 
-        struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__begin_; 
-        struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__end_; 
-        struct __compressed_pair<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > *, std::__1::allocator<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > > > { 
-            struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__first_; 
-        } __end_cap_; 
-    } _fillCullingGroupsForPointyRoofs;
-    struct MeshSet<ggl::PolygonBase::CompressedMeshMesh, ggl::PolygonBase::CompressedVbo> { 
+    }  _sourceTexture;
+    struct MeshSet<ggl::PolygonCommonStroke::MeshMesh, ggl::PolygonCommonStroke::DefaultVbo> { 
         struct vector<std::__1::pair<unsigned short, unsigned int>, std::__1::allocator<std::__1::pair<unsigned short, unsigned int> > > { 
             struct pair<unsigned short, unsigned int> {} *__begin_; 
             struct pair<unsigned short, unsigned int> {} *__end_; 
@@ -90,177 +17,14 @@
                 struct pair<unsigned short, unsigned int> {} *__first_; 
             } __end_cap_; 
         } _vertexAndIndexCounts; 
-        struct vector<ggl::PolygonBase::CompressedMeshMesh, std::__1::allocator<ggl::PolygonBase::CompressedMeshMesh> > { 
-            struct CompressedMeshMesh {} *__begin_; 
-            struct CompressedMeshMesh {} *__end_; 
-            struct __compressed_pair<ggl::PolygonBase::CompressedMeshMesh *, std::__1::allocator<ggl::PolygonBase::CompressedMeshMesh> > { 
-                struct CompressedMeshMesh {} *__first_; 
-            } __end_cap_; 
-        } _meshes; 
-        struct DataWrite<ggl::PolygonBase::CompressedVbo> { 
-            struct BufferMemory { 
-                struct BufferData {} *_user; 
-                struct ResourceAccessor {} *_accessor; 
-                struct Range { 
-                    unsigned int _start; 
-                    unsigned int _count; 
-                } _range; 
-                int _access; 
-                int _sync; 
-                char *_data; 
-            } _memory; 
-        } _vertexDataWrite; 
-        struct DataWrite<unsigned short> { 
-            struct BufferMemory { 
-                struct BufferData {} *_user; 
-                struct ResourceAccessor {} *_accessor; 
-                struct Range { 
-                    unsigned int _start; 
-                    unsigned int _count; 
-                } _range; 
-                int _access; 
-                int _sync; 
-                char *_data; 
-            } _memory; 
-        } _indexDataWrite; 
-        unsigned char _meshIndex; 
-        unsigned short _meshVertexOffset; 
-        unsigned int _meshIndexOffset; 
-    } _fillMeshInfo;
-    struct MeshSet<ggl::PolygonBase::CompressedMeshMesh, ggl::PolygonBase::CompressedVbo> { 
-        struct vector<std::__1::pair<unsigned short, unsigned int>, std::__1::allocator<std::__1::pair<unsigned short, unsigned int> > > { 
-            struct pair<unsigned short, unsigned int> {} *__begin_; 
-            struct pair<unsigned short, unsigned int> {} *__end_; 
-            struct __compressed_pair<std::__1::pair<unsigned short, unsigned int> *, std::__1::allocator<std::__1::pair<unsigned short, unsigned int> > > { 
-                struct pair<unsigned short, unsigned int> {} *__first_; 
-            } __end_cap_; 
-        } _vertexAndIndexCounts; 
-        struct vector<ggl::PolygonBase::CompressedMeshMesh, std::__1::allocator<ggl::PolygonBase::CompressedMeshMesh> > { 
-            struct CompressedMeshMesh {} *__begin_; 
-            struct CompressedMeshMesh {} *__end_; 
-            struct __compressed_pair<ggl::PolygonBase::CompressedMeshMesh *, std::__1::allocator<ggl::PolygonBase::CompressedMeshMesh> > { 
-                struct CompressedMeshMesh {} *__first_; 
-            } __end_cap_; 
-        } _meshes; 
-        struct DataWrite<ggl::PolygonBase::CompressedVbo> { 
-            struct BufferMemory { 
-                struct BufferData {} *_user; 
-                struct ResourceAccessor {} *_accessor; 
-                struct Range { 
-                    unsigned int _start; 
-                    unsigned int _count; 
-                } _range; 
-                int _access; 
-                int _sync; 
-                char *_data; 
-            } _memory; 
-        } _vertexDataWrite; 
-        struct DataWrite<unsigned short> { 
-            struct BufferMemory { 
-                struct BufferData {} *_user; 
-                struct ResourceAccessor {} *_accessor; 
-                struct Range { 
-                    unsigned int _start; 
-                    unsigned int _count; 
-                } _range; 
-                int _access; 
-                int _sync; 
-                char *_data; 
-            } _memory; 
-        } _indexDataWrite; 
-        unsigned char _meshIndex; 
-        unsigned short _meshVertexOffset; 
-        unsigned int _meshIndexOffset; 
-    } _fillMeshInfoForPointyRoofs;
-    struct vector<ggl::RenderItemBatcher, std::__1::allocator<ggl::RenderItemBatcher> > { 
-        struct RenderItemBatcher {} *__begin_; 
-        struct RenderItemBatcher {} *__end_; 
-        struct __compressed_pair<ggl::RenderItemBatcher *, std::__1::allocator<ggl::RenderItemBatcher> > { 
-            struct RenderItemBatcher {} *__first_; 
-        } __end_cap_; 
-    } _fillRenderItemBatchers;
-    BOOL _isFixedSize;
-    struct FeatureAttributeSet { 
-        struct vector<gss::FeatureAttributePair, std::__1::allocator<gss::FeatureAttributePair> > { 
-            struct FeatureAttributePair {} *__begin_; 
-            struct FeatureAttributePair {} *__end_; 
-            struct __compressed_pair<gss::FeatureAttributePair *, std::__1::allocator<gss::FeatureAttributePair> > { 
-                struct FeatureAttributePair {} *__first_; 
-            } __end_cap_; 
-        } _attributes; 
-    } _originalFeatureAttributes;
-    struct vector<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > >, std::__1::allocator<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > > > { 
-        struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__begin_; 
-        struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__end_; 
-        struct __compressed_pair<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > *, std::__1::allocator<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > > > { 
-            struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__first_; 
-        } __end_cap_; 
-    } _pointyRoofFillCullingGroups;
-    struct unique_ptr<ggl::MeshVendor<ggl::BuildingPointyRoof::BuildingMesh>, std::__1::default_delete<ggl::MeshVendor<ggl::BuildingPointyRoof::BuildingMesh> > > { 
-        struct __compressed_pair<ggl::MeshVendor<ggl::BuildingPointyRoof::BuildingMesh> *, std::__1::default_delete<ggl::MeshVendor<ggl::BuildingPointyRoof::BuildingMesh> > > { 
-            struct MeshVendor<ggl::BuildingPointyRoof::BuildingMesh> {} *__first_; 
-        } __ptr_; 
-    } _pointyRoofFillMeshVendor;
-    struct vector<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > >, std::__1::allocator<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > > > { 
-        struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__begin_; 
-        struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__end_; 
-        struct __compressed_pair<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > *, std::__1::allocator<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > > > { 
-            struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__first_; 
-        } __end_cap_; 
-    } _pointyRoofStrokeCullingGroups;
-    struct unique_ptr<ggl::MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh>, std::__1::default_delete<ggl::MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh> > > { 
-        struct __compressed_pair<ggl::MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh> *, std::__1::default_delete<ggl::MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh> > > { 
-            struct MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh> {} *__first_; 
-        } __ptr_; 
-    } _pointyRoofStrokeMeshVendor;
-    struct unordered_map<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> >, std::__1::hash<SectionKey>, std::__1::equal_to<std::__1::pair<void *, unsigned long> >, std::__1::allocator<std::__1::pair<const std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > > > > { 
-        struct __hash_table<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, std::__1::__unordered_map_hasher<std::__1::pair<void *, unsigned long>, std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, std::__1::hash<SectionKey>, true>, std::__1::__unordered_map_equal<std::__1::pair<void *, unsigned long>, std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, std::__1::equal_to<std::__1::pair<void *, unsigned long> >, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > > > > { 
-            struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *> > > { 
-                struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *> > > { 
-                    struct __hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> {} **__first_; 
-                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *> > { 
-                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *> > { 
-                            unsigned long __first_; 
-                        } __data_; 
-                    } __second_; 
-                } __ptr_; 
-            } __bucket_list_; 
-            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> > > { 
-                struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> *> { 
-                    struct __hash_node<std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, void *> {} *__next_; 
-                } __first_; 
-            } __p1_; 
-            struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<std::__1::pair<void *, unsigned long>, std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, std::__1::hash<SectionKey>, true> > { 
-                unsigned long __first_; 
-            } __p2_; 
-            struct __compressed_pair<float, std::__1::__unordered_map_equal<std::__1::pair<void *, unsigned long>, std::__1::__hash_value_type<std::__1::pair<void *, unsigned long>, std::__1::vector<Edge, std::__1::allocator<Edge> > >, std::__1::equal_to<std::__1::pair<void *, unsigned long> >, true> > { 
-                float __first_; 
-            } __p3_; 
-        } __table_; 
-    } _polygonEdges;
-    struct vector<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > >, std::__1::allocator<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > > > { 
-        struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__begin_; 
-        struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__end_; 
-        struct __compressed_pair<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > *, std::__1::allocator<std::__1::vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > > > { 
-            struct vector<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> >, std::__1::allocator<std::__1::vector<ggl::Range, std::__1::allocator<ggl::Range> > > > {} *__first_; 
-        } __end_cap_; 
-    } _strokeCullingGroups;
-    struct MeshSet<ggl::PolygonMesh::MeshMesh, ggl::PolygonMesh::DefaultVbo> { 
-        struct vector<std::__1::pair<unsigned short, unsigned int>, std::__1::allocator<std::__1::pair<unsigned short, unsigned int> > > { 
-            struct pair<unsigned short, unsigned int> {} *__begin_; 
-            struct pair<unsigned short, unsigned int> {} *__end_; 
-            struct __compressed_pair<std::__1::pair<unsigned short, unsigned int> *, std::__1::allocator<std::__1::pair<unsigned short, unsigned int> > > { 
-                struct pair<unsigned short, unsigned int> {} *__first_; 
-            } __end_cap_; 
-        } _vertexAndIndexCounts; 
-        struct vector<ggl::PolygonMesh::MeshMesh, std::__1::allocator<ggl::PolygonMesh::MeshMesh> > { 
+        struct vector<ggl::PolygonCommonStroke::MeshMesh, std::__1::allocator<ggl::PolygonCommonStroke::MeshMesh> > { 
             struct MeshMesh {} *__begin_; 
             struct MeshMesh {} *__end_; 
-            struct __compressed_pair<ggl::PolygonMesh::MeshMesh *, std::__1::allocator<ggl::PolygonMesh::MeshMesh> > { 
+            struct __compressed_pair<ggl::PolygonCommonStroke::MeshMesh *, std::__1::allocator<ggl::PolygonCommonStroke::MeshMesh> > { 
                 struct MeshMesh {} *__first_; 
             } __end_cap_; 
         } _meshes; 
-        struct DataWrite<ggl::PolygonMesh::DefaultVbo> { 
+        struct DataWrite<ggl::PolygonCommonStroke::DefaultVbo> { 
             struct BufferMemory { 
                 struct BufferData {} *_user; 
                 struct ResourceAccessor {} *_accessor; 
@@ -289,77 +53,34 @@
         unsigned char _meshIndex; 
         unsigned short _meshVertexOffset; 
         unsigned int _meshIndexOffset; 
-    } _strokeMeshInfo;
-    struct vector<ggl::RenderItemBatcher, std::__1::allocator<ggl::RenderItemBatcher> > { 
-        struct RenderItemBatcher {} *__begin_; 
-        struct RenderItemBatcher {} *__end_; 
-        struct __compressed_pair<ggl::RenderItemBatcher *, std::__1::allocator<ggl::RenderItemBatcher> > { 
-            struct RenderItemBatcher {} *__first_; 
-        } __end_cap_; 
-    } _strokeRenderItemBatchers;
-    struct shared_ptr<gss::StyleQuery> { 
-        struct StyleQuery {} *__ptr_; 
+    }  _strokeMeshInfo;
+    struct shared_ptr<ggl::Texture2D> { 
+        struct Texture2D {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _styleQuery;
-    VKVectorTile *_tile;
+    }  _targetTexture;
 }
 
-@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  centroid; /* unknown property attribute:  1>=[2f]} */
-@property (nonatomic, readonly) unsigned int cullingMask;
-@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{MeshVendor<ggl::Building::BuildingMesh>={vector<ggl::Building::BuildingMesh *' */ struct *extrusionFillMeshVendor; /* unknown property attribute:  std::__1::allocator<ggl::Building::BuildingMesh *> >=^^{BuildingMesh}}}^{BuildingMesh}} */
-@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{MeshVendor<ggl::Building::BuildingMesh>={vector<ggl::Building::BuildingMesh *' */ struct *extrusionFillMeshVendorForPointyRoofs; /* unknown property attribute:  std::__1::allocator<ggl::Building::BuildingMesh *> >=^^{BuildingMesh}}}^{BuildingMesh}} */
-@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh>={vector<ggl::PrefilteredLine::PrefilteredLineMesh *' */ struct *extrusionStrokeMeshVendor; /* unknown property attribute:  std::__1::allocator<ggl::PrefilteredLine::PrefilteredLineMesh *> >=^^{PrefilteredLineMesh}}}^{PrefilteredLineMesh}} */
-@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh>={vector<ggl::PrefilteredLine::PrefilteredLineMesh *' */ struct *extrusionStrokeMeshVendorForPointyRoofs; /* unknown property attribute:  std::__1::allocator<ggl::PrefilteredLine::PrefilteredLineMesh *> >=^^{PrefilteredLineMesh}}}^{PrefilteredLineMesh}} */
-@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{vector<ggl::PolygonBase::CompressedMeshMesh' */ struct *fillMeshes; /* unknown property attribute:  std::__1::allocator<ggl::PolygonBase::CompressedMeshMesh> >=^{CompressedMeshMesh}}} */
-@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{vector<ggl::PolygonBase::CompressedMeshMesh' */ struct *fillMeshesForPointyRoofs; /* unknown property attribute:  std::__1::allocator<ggl::PolygonBase::CompressedMeshMesh> >=^{CompressedMeshMesh}}} */
-@property (nonatomic, readonly) BOOL isFixedSize;
-@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  origin; /* unknown property attribute:  1>=[3f]} */
-@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{MeshVendor<ggl::BuildingPointyRoof::BuildingMesh>={vector<ggl::BuildingPointyRoof::BuildingMesh *' */ struct *pointyRoofFillMeshVendor; /* unknown property attribute:  std::__1::allocator<ggl::BuildingPointyRoof::BuildingMesh *> >=^^{BuildingMesh}}}^{BuildingMesh}} */
-@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh>={vector<ggl::PrefilteredLine::PrefilteredLineMesh *' */ struct *pointyRoofStrokeMeshVendor; /* unknown property attribute:  std::__1::allocator<ggl::PrefilteredLine::PrefilteredLineMesh *> >=^^{PrefilteredLineMesh}}}^{PrefilteredLineMesh}} */
-@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  size; /* unknown property attribute:  1>=[3f]} */
-@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{vector<ggl::PolygonMesh::MeshMesh' */ struct *strokeMeshes; /* unknown property attribute:  std::__1::allocator<ggl::PolygonMesh::MeshMesh> >=^{MeshMesh}}} */
-@property (nonatomic, readonly) struct shared_ptr<gss::StyleQuery> { struct StyleQuery {} *x1; struct __shared_weak_count {} *x2; }*styleQuery;
-@property (nonatomic, readonly) float tileZoom;
+@property (nonatomic, readonly) struct Texture2D { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int (**x4)(); char *x5; int x6; int x7; int x8; int x9; unsigned int x10; struct shared_ptr<const ggl::TextureDataAbstract> { struct TextureDataAbstract {} *x_11_1_1; struct __shared_weak_count {} *x_11_1_2; } x11; bool x12; bool x13; unsigned int x14; unsigned int x15; bool x16; struct shared_ptr<ggl::SamplerState> { struct SamplerState {} *x_17_1_1; struct __shared_weak_count {} *x_17_1_2; } x17; }*sourceTexture;
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{vector<ggl::PolygonCommonStroke::MeshMesh' */ struct *strokeMeshes; /* unknown property attribute:  std::__1::allocator<ggl::PolygonCommonStroke::MeshMesh> >=^{MeshMesh}}} */
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{FeatureAttributeSet={vector<gss::FeatureAttributePair' */ struct  styleAttributes; /* unknown property attribute:  std::__1::allocator<gss::FeatureAttributePair> >=^{FeatureAttributePair}}}} */
+@property (nonatomic, readonly) struct Texture2D { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int (**x4)(); char *x5; int x6; int x7; int x8; int x9; unsigned int x10; struct shared_ptr<const ggl::TextureDataAbstract> { struct TextureDataAbstract {} *x_11_1_1; struct __shared_weak_count {} *x_11_1_2; } x11; bool x12; bool x13; unsigned int x14; unsigned int x15; bool x16; struct shared_ptr<ggl::SamplerState> { struct SamplerState {} *x_17_1_1; struct __shared_weak_count {} *x_17_1_2; } x17; }*targetTexture;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)addExtrusionForPolygon:(struct { struct { id x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned long long x_1_1_7; BOOL x_1_1_8; unsigned long long x_1_1_9; float x_1_1_10; unsigned long long x_1_1_11; id x_1_1_12; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_9_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; struct _NSRange { unsigned int x_13_1_1; unsigned int x_13_1_2; } x13; BOOL x14; }*)arg1 building:(struct { struct { struct { id x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; unsigned int x_1_2_6; unsigned long long x_1_2_7; BOOL x_1_2_8; unsigned long long x_1_2_9; float x_1_2_10; unsigned long long x_1_2_11; id x_1_2_12; } x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; int x_1_1_5; int x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; union { struct { struct { float x_1_4_1; float x_1_4_2; } x_1_3_1; struct { float x_2_4_1; float x_2_4_2; } x_1_3_2; } x_9_2_1; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_9_2_2; } x_1_1_9; struct { /* ? */ } *x_1_1_10; struct { unsigned short x_11_2_1[2]; unsigned short x_11_2_2[2]; } x_1_1_11; unsigned char x_1_1_12; struct _NSRange { unsigned int x_13_2_1; unsigned int x_13_2_2; } x_1_1_13; BOOL x_1_1_14; } x1; unsigned int x2; unsigned int x3; BOOL x4; BOOL x5; }*)arg2 index:(unsigned int)arg3 ofTotal:(unsigned int)arg4 hasNonWaterStyle:(BOOL)arg5 triangulator:(id)arg6 forRoofStyle:(int)arg7;
-- (BOOL)addPointyRoofForPolygon:(struct { struct { id x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned long long x_1_1_7; BOOL x_1_1_8; unsigned long long x_1_1_9; float x_1_1_10; unsigned long long x_1_1_11; id x_1_1_12; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_9_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; struct _NSRange { unsigned int x_13_1_1; unsigned int x_13_1_2; } x13; BOOL x14; }*)arg1 building:(struct { struct { struct { id x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; unsigned int x_1_2_6; unsigned long long x_1_2_7; BOOL x_1_2_8; unsigned long long x_1_2_9; float x_1_2_10; unsigned long long x_1_2_11; id x_1_2_12; } x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; int x_1_1_5; int x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; union { struct { struct { float x_1_4_1; float x_1_4_2; } x_1_3_1; struct { float x_2_4_1; float x_2_4_2; } x_1_3_2; } x_9_2_1; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_9_2_2; } x_1_1_9; struct { /* ? */ } *x_1_1_10; struct { unsigned short x_11_2_1[2]; unsigned short x_11_2_2[2]; } x_1_1_11; unsigned char x_1_1_12; struct _NSRange { unsigned int x_13_2_1; unsigned int x_13_2_2; } x_1_1_13; BOOL x_1_1_14; } x1; unsigned int x2; unsigned int x3; BOOL x4; BOOL x5; }*)arg2 buildingModel:(unsigned char)arg3 scaleThreshold:(float)arg4 styleIndex:(float)arg5;
-- (void)addPolygon:(struct { struct { id x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned long long x_1_1_7; BOOL x_1_1_8; unsigned long long x_1_1_9; float x_1_1_10; unsigned long long x_1_1_11; id x_1_1_12; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_9_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; struct _NSRange { unsigned int x_13_1_1; unsigned int x_13_1_2; } x13; BOOL x14; }*)arg1 building:(struct { struct { struct { id x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; unsigned int x_1_2_6; unsigned long long x_1_2_7; BOOL x_1_2_8; unsigned long long x_1_2_9; float x_1_2_10; unsigned long long x_1_2_11; id x_1_2_12; } x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; int x_1_1_5; int x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; union { struct { struct { float x_1_4_1; float x_1_4_2; } x_1_3_1; struct { float x_2_4_1; float x_2_4_2; } x_1_3_2; } x_9_2_1; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_9_2_2; } x_1_1_9; struct { /* ? */ } *x_1_1_10; struct { unsigned short x_11_2_1[2]; unsigned short x_11_2_2[2]; } x_1_1_11; unsigned char x_1_1_12; struct _NSRange { unsigned int x_13_2_1; unsigned int x_13_2_2; } x_1_1_13; BOOL x_1_1_14; } x1; unsigned int x2; unsigned int x3; BOOL x4; BOOL x5; }*)arg2 index:(unsigned int)arg3 ofTotal:(unsigned int)arg4 hasNonWaterStyle:(BOOL)arg5 accessor:(struct ResourceAccessor { int (**x1)(); }*)arg6 triangulator:(id)arg7 prepareExtrusion:(BOOL)arg8 forRoofStyle:(int)arg9 scaleThreshold:(float)arg10;
-- (void)addRangesToExtrusionFillRenderItemBatcher:(struct RenderItemBatcher { struct vector<ggl::Range, std::__1::allocator<ggl::Range> > { struct Range {} *x_1_1_1; struct Range {} *x_1_1_2; struct __compressed_pair<ggl::Range *, std::__1::allocator<ggl::Range> > { struct Range {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; struct vector<ggl::MultiRange, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_1_1; struct MultiRange {} *x_3_1_2; struct __compressed_pair<ggl::MultiRange *, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_2_1; } x_3_1_3; } x3; struct vector<ggl::Range, std::__1::allocator<ggl::Range> > { struct Range {} *x_4_1_1; struct Range {} *x_4_1_2; struct __compressed_pair<ggl::Range *, std::__1::allocator<ggl::Range> > { struct Range {} *x_3_2_1; } x_4_1_3; } x4; struct RenderItem {} *x5; struct Pool<ggl::RenderItem> { struct set<void *, std::__1::less<void *>, std::__1::allocator<void *> > { struct __tree<void *, std::__1::less<void *>, std::__1::allocator<void *> > { struct __tree_node<void *, void *> {} *x_1_3_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<void *, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_5_1; } x_2_4_1; } x_1_3_2; struct __compressed_pair<unsigned long, std::__1::less<void *> > { unsigned long x_3_4_1; } x_1_3_3; } x_1_2_1; } x_6_1_1; unsigned int x_6_1_2; unsigned int x_6_1_3; struct FreeList {} *x_6_1_4; } x6; unsigned int x7; struct vector<ggl::MultiRange, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_8_1_1; struct MultiRange {} *x_8_1_2; struct __compressed_pair<ggl::MultiRange *, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_2_1; } x_8_1_3; } x8; }*)arg1 forMeshAtIndex:(unsigned long)arg2 cullingMask:(unsigned int)arg3;
-- (void)addRangesToExtrusionStrokeRenderItemBatcher:(struct RenderItemBatcher { struct vector<ggl::Range, std::__1::allocator<ggl::Range> > { struct Range {} *x_1_1_1; struct Range {} *x_1_1_2; struct __compressed_pair<ggl::Range *, std::__1::allocator<ggl::Range> > { struct Range {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; struct vector<ggl::MultiRange, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_1_1; struct MultiRange {} *x_3_1_2; struct __compressed_pair<ggl::MultiRange *, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_2_1; } x_3_1_3; } x3; struct vector<ggl::Range, std::__1::allocator<ggl::Range> > { struct Range {} *x_4_1_1; struct Range {} *x_4_1_2; struct __compressed_pair<ggl::Range *, std::__1::allocator<ggl::Range> > { struct Range {} *x_3_2_1; } x_4_1_3; } x4; struct RenderItem {} *x5; struct Pool<ggl::RenderItem> { struct set<void *, std::__1::less<void *>, std::__1::allocator<void *> > { struct __tree<void *, std::__1::less<void *>, std::__1::allocator<void *> > { struct __tree_node<void *, void *> {} *x_1_3_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<void *, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_5_1; } x_2_4_1; } x_1_3_2; struct __compressed_pair<unsigned long, std::__1::less<void *> > { unsigned long x_3_4_1; } x_1_3_3; } x_1_2_1; } x_6_1_1; unsigned int x_6_1_2; unsigned int x_6_1_3; struct FreeList {} *x_6_1_4; } x6; unsigned int x7; struct vector<ggl::MultiRange, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_8_1_1; struct MultiRange {} *x_8_1_2; struct __compressed_pair<ggl::MultiRange *, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_2_1; } x_8_1_3; } x8; }*)arg1 forMeshAtIndex:(unsigned long)arg2 cullingMask:(unsigned int)arg3;
-- (void)addRangesToFillRenderItemBatcher:(struct RenderItemBatcher { struct vector<ggl::Range, std::__1::allocator<ggl::Range> > { struct Range {} *x_1_1_1; struct Range {} *x_1_1_2; struct __compressed_pair<ggl::Range *, std::__1::allocator<ggl::Range> > { struct Range {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; struct vector<ggl::MultiRange, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_1_1; struct MultiRange {} *x_3_1_2; struct __compressed_pair<ggl::MultiRange *, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_2_1; } x_3_1_3; } x3; struct vector<ggl::Range, std::__1::allocator<ggl::Range> > { struct Range {} *x_4_1_1; struct Range {} *x_4_1_2; struct __compressed_pair<ggl::Range *, std::__1::allocator<ggl::Range> > { struct Range {} *x_3_2_1; } x_4_1_3; } x4; struct RenderItem {} *x5; struct Pool<ggl::RenderItem> { struct set<void *, std::__1::less<void *>, std::__1::allocator<void *> > { struct __tree<void *, std::__1::less<void *>, std::__1::allocator<void *> > { struct __tree_node<void *, void *> {} *x_1_3_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<void *, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_5_1; } x_2_4_1; } x_1_3_2; struct __compressed_pair<unsigned long, std::__1::less<void *> > { unsigned long x_3_4_1; } x_1_3_3; } x_1_2_1; } x_6_1_1; unsigned int x_6_1_2; unsigned int x_6_1_3; struct FreeList {} *x_6_1_4; } x6; unsigned int x7; struct vector<ggl::MultiRange, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_8_1_1; struct MultiRange {} *x_8_1_2; struct __compressed_pair<ggl::MultiRange *, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_2_1; } x_8_1_3; } x8; }*)arg1 forMeshAtIndex:(unsigned long)arg2 cullingMask:(unsigned int)arg3;
-- (void)addRangesToPointyRoofExtrusionFillRenderItemBatcher:(struct RenderItemBatcher { struct vector<ggl::Range, std::__1::allocator<ggl::Range> > { struct Range {} *x_1_1_1; struct Range {} *x_1_1_2; struct __compressed_pair<ggl::Range *, std::__1::allocator<ggl::Range> > { struct Range {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; struct vector<ggl::MultiRange, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_1_1; struct MultiRange {} *x_3_1_2; struct __compressed_pair<ggl::MultiRange *, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_2_1; } x_3_1_3; } x3; struct vector<ggl::Range, std::__1::allocator<ggl::Range> > { struct Range {} *x_4_1_1; struct Range {} *x_4_1_2; struct __compressed_pair<ggl::Range *, std::__1::allocator<ggl::Range> > { struct Range {} *x_3_2_1; } x_4_1_3; } x4; struct RenderItem {} *x5; struct Pool<ggl::RenderItem> { struct set<void *, std::__1::less<void *>, std::__1::allocator<void *> > { struct __tree<void *, std::__1::less<void *>, std::__1::allocator<void *> > { struct __tree_node<void *, void *> {} *x_1_3_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<void *, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_5_1; } x_2_4_1; } x_1_3_2; struct __compressed_pair<unsigned long, std::__1::less<void *> > { unsigned long x_3_4_1; } x_1_3_3; } x_1_2_1; } x_6_1_1; unsigned int x_6_1_2; unsigned int x_6_1_3; struct FreeList {} *x_6_1_4; } x6; unsigned int x7; struct vector<ggl::MultiRange, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_8_1_1; struct MultiRange {} *x_8_1_2; struct __compressed_pair<ggl::MultiRange *, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_2_1; } x_8_1_3; } x8; }*)arg1 forMeshAtIndex:(unsigned long)arg2 cullingMask:(unsigned int)arg3;
-- (void)addRangesToPointyRoofExtrusionStrokeRenderItemBatcher:(struct RenderItemBatcher { struct vector<ggl::Range, std::__1::allocator<ggl::Range> > { struct Range {} *x_1_1_1; struct Range {} *x_1_1_2; struct __compressed_pair<ggl::Range *, std::__1::allocator<ggl::Range> > { struct Range {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; struct vector<ggl::MultiRange, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_1_1; struct MultiRange {} *x_3_1_2; struct __compressed_pair<ggl::MultiRange *, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_2_1; } x_3_1_3; } x3; struct vector<ggl::Range, std::__1::allocator<ggl::Range> > { struct Range {} *x_4_1_1; struct Range {} *x_4_1_2; struct __compressed_pair<ggl::Range *, std::__1::allocator<ggl::Range> > { struct Range {} *x_3_2_1; } x_4_1_3; } x4; struct RenderItem {} *x5; struct Pool<ggl::RenderItem> { struct set<void *, std::__1::less<void *>, std::__1::allocator<void *> > { struct __tree<void *, std::__1::less<void *>, std::__1::allocator<void *> > { struct __tree_node<void *, void *> {} *x_1_3_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<void *, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_5_1; } x_2_4_1; } x_1_3_2; struct __compressed_pair<unsigned long, std::__1::less<void *> > { unsigned long x_3_4_1; } x_1_3_3; } x_1_2_1; } x_6_1_1; unsigned int x_6_1_2; unsigned int x_6_1_3; struct FreeList {} *x_6_1_4; } x6; unsigned int x7; struct vector<ggl::MultiRange, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_8_1_1; struct MultiRange {} *x_8_1_2; struct __compressed_pair<ggl::MultiRange *, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_2_1; } x_8_1_3; } x8; }*)arg1 forMeshAtIndex:(unsigned long)arg2 cullingMask:(unsigned int)arg3;
-- (void)addRangesToPointyRoofFillRenderItemBatcher:(struct RenderItemBatcher { struct vector<ggl::Range, std::__1::allocator<ggl::Range> > { struct Range {} *x_1_1_1; struct Range {} *x_1_1_2; struct __compressed_pair<ggl::Range *, std::__1::allocator<ggl::Range> > { struct Range {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; struct vector<ggl::MultiRange, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_1_1; struct MultiRange {} *x_3_1_2; struct __compressed_pair<ggl::MultiRange *, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_2_1; } x_3_1_3; } x3; struct vector<ggl::Range, std::__1::allocator<ggl::Range> > { struct Range {} *x_4_1_1; struct Range {} *x_4_1_2; struct __compressed_pair<ggl::Range *, std::__1::allocator<ggl::Range> > { struct Range {} *x_3_2_1; } x_4_1_3; } x4; struct RenderItem {} *x5; struct Pool<ggl::RenderItem> { struct set<void *, std::__1::less<void *>, std::__1::allocator<void *> > { struct __tree<void *, std::__1::less<void *>, std::__1::allocator<void *> > { struct __tree_node<void *, void *> {} *x_1_3_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<void *, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_5_1; } x_2_4_1; } x_1_3_2; struct __compressed_pair<unsigned long, std::__1::less<void *> > { unsigned long x_3_4_1; } x_1_3_3; } x_1_2_1; } x_6_1_1; unsigned int x_6_1_2; unsigned int x_6_1_3; struct FreeList {} *x_6_1_4; } x6; unsigned int x7; struct vector<ggl::MultiRange, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_8_1_1; struct MultiRange {} *x_8_1_2; struct __compressed_pair<ggl::MultiRange *, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_2_1; } x_8_1_3; } x8; }*)arg1 forMeshAtIndex:(unsigned long)arg2 cullingMask:(unsigned int)arg3;
-- (void)addRangesToPointyRoofStrokeRenderItemBatcher:(struct RenderItemBatcher { struct vector<ggl::Range, std::__1::allocator<ggl::Range> > { struct Range {} *x_1_1_1; struct Range {} *x_1_1_2; struct __compressed_pair<ggl::Range *, std::__1::allocator<ggl::Range> > { struct Range {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; struct vector<ggl::MultiRange, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_1_1; struct MultiRange {} *x_3_1_2; struct __compressed_pair<ggl::MultiRange *, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_2_1; } x_3_1_3; } x3; struct vector<ggl::Range, std::__1::allocator<ggl::Range> > { struct Range {} *x_4_1_1; struct Range {} *x_4_1_2; struct __compressed_pair<ggl::Range *, std::__1::allocator<ggl::Range> > { struct Range {} *x_3_2_1; } x_4_1_3; } x4; struct RenderItem {} *x5; struct Pool<ggl::RenderItem> { struct set<void *, std::__1::less<void *>, std::__1::allocator<void *> > { struct __tree<void *, std::__1::less<void *>, std::__1::allocator<void *> > { struct __tree_node<void *, void *> {} *x_1_3_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<void *, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_5_1; } x_2_4_1; } x_1_3_2; struct __compressed_pair<unsigned long, std::__1::less<void *> > { unsigned long x_3_4_1; } x_1_3_3; } x_1_2_1; } x_6_1_1; unsigned int x_6_1_2; unsigned int x_6_1_3; struct FreeList {} *x_6_1_4; } x6; unsigned int x7; struct vector<ggl::MultiRange, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_8_1_1; struct MultiRange {} *x_8_1_2; struct __compressed_pair<ggl::MultiRange *, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_2_1; } x_8_1_3; } x8; }*)arg1 forMeshAtIndex:(unsigned long)arg2 cullingMask:(unsigned int)arg3;
-- (void)addRangesToPointyRoofTopRenderItemBatcher:(struct RenderItemBatcher { struct vector<ggl::Range, std::__1::allocator<ggl::Range> > { struct Range {} *x_1_1_1; struct Range {} *x_1_1_2; struct __compressed_pair<ggl::Range *, std::__1::allocator<ggl::Range> > { struct Range {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; struct vector<ggl::MultiRange, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_1_1; struct MultiRange {} *x_3_1_2; struct __compressed_pair<ggl::MultiRange *, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_2_1; } x_3_1_3; } x3; struct vector<ggl::Range, std::__1::allocator<ggl::Range> > { struct Range {} *x_4_1_1; struct Range {} *x_4_1_2; struct __compressed_pair<ggl::Range *, std::__1::allocator<ggl::Range> > { struct Range {} *x_3_2_1; } x_4_1_3; } x4; struct RenderItem {} *x5; struct Pool<ggl::RenderItem> { struct set<void *, std::__1::less<void *>, std::__1::allocator<void *> > { struct __tree<void *, std::__1::less<void *>, std::__1::allocator<void *> > { struct __tree_node<void *, void *> {} *x_1_3_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<void *, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_5_1; } x_2_4_1; } x_1_3_2; struct __compressed_pair<unsigned long, std::__1::less<void *> > { unsigned long x_3_4_1; } x_1_3_3; } x_1_2_1; } x_6_1_1; unsigned int x_6_1_2; unsigned int x_6_1_3; struct FreeList {} *x_6_1_4; } x6; unsigned int x7; struct vector<ggl::MultiRange, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_8_1_1; struct MultiRange {} *x_8_1_2; struct __compressed_pair<ggl::MultiRange *, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_2_1; } x_8_1_3; } x8; }*)arg1 forMeshAtIndex:(unsigned long)arg2 cullingMask:(unsigned int)arg3;
-- (void)addRangesToStrokeRenderItemBatcher:(struct RenderItemBatcher { struct vector<ggl::Range, std::__1::allocator<ggl::Range> > { struct Range {} *x_1_1_1; struct Range {} *x_1_1_2; struct __compressed_pair<ggl::Range *, std::__1::allocator<ggl::Range> > { struct Range {} *x_3_2_1; } x_1_1_3; } x1; unsigned int x2; struct vector<ggl::MultiRange, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_1_1; struct MultiRange {} *x_3_1_2; struct __compressed_pair<ggl::MultiRange *, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_2_1; } x_3_1_3; } x3; struct vector<ggl::Range, std::__1::allocator<ggl::Range> > { struct Range {} *x_4_1_1; struct Range {} *x_4_1_2; struct __compressed_pair<ggl::Range *, std::__1::allocator<ggl::Range> > { struct Range {} *x_3_2_1; } x_4_1_3; } x4; struct RenderItem {} *x5; struct Pool<ggl::RenderItem> { struct set<void *, std::__1::less<void *>, std::__1::allocator<void *> > { struct __tree<void *, std::__1::less<void *>, std::__1::allocator<void *> > { struct __tree_node<void *, void *> {} *x_1_3_1; struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<void *, void *> > > { struct __tree_end_node<std::__1::__tree_node_base<void *> *> { struct __tree_node_base<void *> {} *x_1_5_1; } x_2_4_1; } x_1_3_2; struct __compressed_pair<unsigned long, std::__1::less<void *> > { unsigned long x_3_4_1; } x_1_3_3; } x_1_2_1; } x_6_1_1; unsigned int x_6_1_2; unsigned int x_6_1_3; struct FreeList {} *x_6_1_4; } x6; unsigned int x7; struct vector<ggl::MultiRange, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_8_1_1; struct MultiRange {} *x_8_1_2; struct __compressed_pair<ggl::MultiRange *, std::__1::allocator<ggl::MultiRange> > { struct MultiRange {} *x_3_2_1; } x_8_1_3; } x8; }*)arg1 forMeshAtIndex:(unsigned long)arg2 cullingMask:(unsigned int)arg3;
-- (BOOL)canConstructPointyRoofForPolygon:(struct { struct { id x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned long long x_1_1_7; BOOL x_1_1_8; unsigned long long x_1_1_9; float x_1_1_10; unsigned long long x_1_1_11; id x_1_1_12; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_9_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; struct _NSRange { unsigned int x_13_1_1; unsigned int x_13_1_2; } x13; BOOL x14; }*)arg1 building:(struct { struct { struct { id x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; unsigned int x_1_2_6; unsigned long long x_1_2_7; BOOL x_1_2_8; unsigned long long x_1_2_9; float x_1_2_10; unsigned long long x_1_2_11; id x_1_2_12; } x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; int x_1_1_5; int x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; union { struct { struct { float x_1_4_1; float x_1_4_2; } x_1_3_1; struct { float x_2_4_1; float x_2_4_2; } x_1_3_2; } x_9_2_1; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_9_2_2; } x_1_1_9; struct { /* ? */ } *x_1_1_10; struct { unsigned short x_11_2_1[2]; unsigned short x_11_2_2[2]; } x_1_1_11; unsigned char x_1_1_12; struct _NSRange { unsigned int x_13_2_1; unsigned int x_13_2_2; } x_1_1_13; BOOL x_1_1_14; } x1; unsigned int x2; unsigned int x3; BOOL x4; BOOL x5; }*)arg2 buildingModel:(unsigned char)arg3 scaleThreshold:(float)arg4;
-- (struct Matrix<float, 2, 1> { float x1[2]; })centroid;
-- (void)clearRouteAttributes;
-- (unsigned int)cullingMask;
+- (struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; })_textureForName:(const struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_4_1; unsigned int x_1_4_2; char *x_1_4_3; } x_1_3_1; struct __short { union { unsigned char x_1_5_1; BOOL x_1_5_2; } x_2_4_1; BOOL x_2_4_2[11]; } x_1_3_2; struct __raw { unsigned long x_3_4_1[3]; } x_1_3_3; } x_1_2_1; } x_1_1_1; } x1; }*)arg1;
+- (void)addPolygon:(struct { struct { struct { id x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; unsigned int x_1_2_6; unsigned int x_1_2_7; BOOL x_1_2_8; unsigned int x_1_2_9; double x_1_2_10; unsigned int x_1_2_11; id x_1_2_12; } x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; int x_1_1_5; int x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; union { struct { struct { double x_1_4_1; double x_1_4_2; } x_1_3_1; struct { double x_2_4_1; double x_2_4_2; } x_1_3_2; } x_9_2_1; struct { double x_2_3_1; double x_2_3_2; double x_2_3_3; double x_2_3_4; } x_9_2_2; } x_1_1_9; struct { /* ? */ } *x_1_1_10; struct { unsigned short x_11_2_1[2]; unsigned short x_11_2_2[2]; } x_1_1_11; unsigned char x_1_1_12; BOOL x_1_1_13; unsigned char x_1_1_14; BOOL x_1_1_15; BOOL x_1_1_16; unsigned char x_1_1_17; BOOL x_1_1_18; unsigned char x_1_1_19; struct _NSRange { unsigned int x_20_2_1; unsigned int x_20_2_2; } x_1_1_20; BOOL x_1_1_21; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 hasNonWaterStyle:(BOOL)arg2 accessor:(struct ResourceAccessor { int (**x1)(); }*)arg3 triangulator:(id)arg4;
+- (int)createStrokePointStyleList:(struct { struct { struct { id x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; unsigned int x_1_2_6; unsigned int x_1_2_7; BOOL x_1_2_8; unsigned int x_1_2_9; double x_1_2_10; unsigned int x_1_2_11; id x_1_2_12; } x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; int x_1_1_5; int x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; union { struct { struct { double x_1_4_1; double x_1_4_2; } x_1_3_1; struct { double x_2_4_1; double x_2_4_2; } x_1_3_2; } x_9_2_1; struct { double x_2_3_1; double x_2_3_2; double x_2_3_3; double x_2_3_4; } x_9_2_2; } x_1_1_9; struct { /* ? */ } *x_1_1_10; struct { unsigned short x_11_2_1[2]; unsigned short x_11_2_2[2]; } x_1_1_11; unsigned char x_1_1_12; BOOL x_1_1_13; unsigned char x_1_1_14; BOOL x_1_1_15; BOOL x_1_1_16; unsigned char x_1_1_17; BOOL x_1_1_18; unsigned char x_1_1_19; struct _NSRange { unsigned int x_20_2_1; unsigned int x_20_2_2; } x_1_1_20; BOOL x_1_1_21; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 section:(unsigned int)arg2 outPointStyles:(struct vector<std::__1::pair<bool, GEOFeatureStylePair>, std::__1::allocator<std::__1::pair<bool, GEOFeatureStylePair> > > { struct pair<bool, GEOFeatureStylePair> {} *x1; struct pair<bool, GEOFeatureStylePair> {} *x2; struct __compressed_pair<std::__1::pair<bool, GEOFeatureStylePair> *, std::__1::allocator<std::__1::pair<bool, GEOFeatureStylePair> > > { struct pair<bool, GEOFeatureStylePair> {} *x_3_1_1; } x3; }*)arg3;
 - (void)dealloc;
 - (void)didFinishAddingData;
-- (const struct MeshVendor<ggl::Building::BuildingMesh> { struct vector<ggl::Building::BuildingMesh *, std::__1::allocator<ggl::Building::BuildingMesh *> > { struct BuildingMesh {} **x_1_1_1; struct BuildingMesh {} **x_1_1_2; struct __compressed_pair<ggl::Building::BuildingMesh **, std::__1::allocator<ggl::Building::BuildingMesh *> > { struct BuildingMesh {} **x_3_2_1; } x_1_1_3; } x1; struct BuildingMesh {} *x2; }*)extrusionFillMeshVendor;
-- (const struct MeshVendor<ggl::Building::BuildingMesh> { struct vector<ggl::Building::BuildingMesh *, std::__1::allocator<ggl::Building::BuildingMesh *> > { struct BuildingMesh {} **x_1_1_1; struct BuildingMesh {} **x_1_1_2; struct __compressed_pair<ggl::Building::BuildingMesh **, std::__1::allocator<ggl::Building::BuildingMesh *> > { struct BuildingMesh {} **x_3_2_1; } x_1_1_3; } x1; struct BuildingMesh {} *x2; }*)extrusionFillMeshVendorForPointyRoofs;
-- (const struct MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh> { struct vector<ggl::PrefilteredLine::PrefilteredLineMesh *, std::__1::allocator<ggl::PrefilteredLine::PrefilteredLineMesh *> > { struct PrefilteredLineMesh {} **x_1_1_1; struct PrefilteredLineMesh {} **x_1_1_2; struct __compressed_pair<ggl::PrefilteredLine::PrefilteredLineMesh **, std::__1::allocator<ggl::PrefilteredLine::PrefilteredLineMesh *> > { struct PrefilteredLineMesh {} **x_3_2_1; } x_1_1_3; } x1; struct PrefilteredLineMesh {} *x2; }*)extrusionStrokeMeshVendor;
-- (const struct MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh> { struct vector<ggl::PrefilteredLine::PrefilteredLineMesh *, std::__1::allocator<ggl::PrefilteredLine::PrefilteredLineMesh *> > { struct PrefilteredLineMesh {} **x_1_1_1; struct PrefilteredLineMesh {} **x_1_1_2; struct __compressed_pair<ggl::PrefilteredLine::PrefilteredLineMesh **, std::__1::allocator<ggl::PrefilteredLine::PrefilteredLineMesh *> > { struct PrefilteredLineMesh {} **x_3_2_1; } x_1_1_3; } x1; struct PrefilteredLineMesh {} *x2; }*)extrusionStrokeMeshVendorForPointyRoofs;
-- (struct vector<ggl::PolygonBase::CompressedMeshMesh, std::__1::allocator<ggl::PolygonBase::CompressedMeshMesh> > { struct CompressedMeshMesh {} *x1; struct CompressedMeshMesh {} *x2; struct __compressed_pair<ggl::PolygonBase::CompressedMeshMesh *, std::__1::allocator<ggl::PolygonBase::CompressedMeshMesh> > { struct CompressedMeshMesh {} *x_3_1_1; } x3; }*)fillMeshes;
-- (struct vector<ggl::PolygonBase::CompressedMeshMesh, std::__1::allocator<ggl::PolygonBase::CompressedMeshMesh> > { struct CompressedMeshMesh {} *x1; struct CompressedMeshMesh {} *x2; struct __compressed_pair<ggl::PolygonBase::CompressedMeshMesh *, std::__1::allocator<ggl::PolygonBase::CompressedMeshMesh> > { struct CompressedMeshMesh {} *x_3_1_1; } x3; }*)fillMeshesForPointyRoofs;
-- (unsigned char)indexForGeoFeatureAttributes:(id)arg1;
-- (id)initWithStyleQuery:(struct shared_ptr<gss::StyleQuery> { struct StyleQuery {} *x1; struct __shared_weak_count {} *x2; }*)arg1 tile:(id)arg2 fixedAroundCentroid:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg3 contentScale:(float)arg4;
-- (BOOL)isFixedSize;
-- (struct Matrix<float, 3, 1> { float x1[3]; })origin;
-- (const struct MeshVendor<ggl::BuildingPointyRoof::BuildingMesh> { struct vector<ggl::BuildingPointyRoof::BuildingMesh *, std::__1::allocator<ggl::BuildingPointyRoof::BuildingMesh *> > { struct BuildingMesh {} **x_1_1_1; struct BuildingMesh {} **x_1_1_2; struct __compressed_pair<ggl::BuildingPointyRoof::BuildingMesh **, std::__1::allocator<ggl::BuildingPointyRoof::BuildingMesh *> > { struct BuildingMesh {} **x_3_2_1; } x_1_1_3; } x1; struct BuildingMesh {} *x2; }*)pointyRoofFillMeshVendor;
-- (const struct MeshVendor<ggl::PrefilteredLine::PrefilteredLineMesh> { struct vector<ggl::PrefilteredLine::PrefilteredLineMesh *, std::__1::allocator<ggl::PrefilteredLine::PrefilteredLineMesh *> > { struct PrefilteredLineMesh {} **x_1_1_1; struct PrefilteredLineMesh {} **x_1_1_2; struct __compressed_pair<ggl::PrefilteredLine::PrefilteredLineMesh **, std::__1::allocator<ggl::PrefilteredLine::PrefilteredLineMesh *> > { struct PrefilteredLineMesh {} **x_3_2_1; } x_1_1_3; } x1; struct PrefilteredLineMesh {} *x2; }*)pointyRoofStrokeMeshVendor;
-- (void)prepareForPolygon:(struct { struct { id x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned long long x_1_1_7; BOOL x_1_1_8; unsigned long long x_1_1_9; float x_1_1_10; unsigned long long x_1_1_11; id x_1_1_12; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_9_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; struct _NSRange { unsigned int x_13_1_1; unsigned int x_13_1_2; } x13; BOOL x14; }*)arg1 building:(struct { struct { struct { id x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; unsigned int x_1_2_6; unsigned long long x_1_2_7; BOOL x_1_2_8; unsigned long long x_1_2_9; float x_1_2_10; unsigned long long x_1_2_11; id x_1_2_12; } x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; int x_1_1_5; int x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; union { struct { struct { float x_1_4_1; float x_1_4_2; } x_1_3_1; struct { float x_2_4_1; float x_2_4_2; } x_1_3_2; } x_9_2_1; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_9_2_2; } x_1_1_9; struct { /* ? */ } *x_1_1_10; struct { unsigned short x_11_2_1[2]; unsigned short x_11_2_2[2]; } x_1_1_11; unsigned char x_1_1_12; struct _NSRange { unsigned int x_13_2_1; unsigned int x_13_2_2; } x_1_1_13; BOOL x_1_1_14; } x1; unsigned int x2; unsigned int x3; BOOL x4; BOOL x5; }*)arg2 hasNonWaterStyle:(BOOL)arg3 forRoofStyle:(int)arg4 scaleThreshold:(float)arg5;
-- (void)setRouteAttributes:(const struct PolygonRouteAttributes { unsigned int x1; unsigned int x2; bool x3; }*)arg1;
-- (struct Matrix<float, 3, 1> { float x1[3]; })size;
-- (struct vector<ggl::PolygonMesh::MeshMesh, std::__1::allocator<ggl::PolygonMesh::MeshMesh> > { struct MeshMesh {} *x1; struct MeshMesh {} *x2; struct __compressed_pair<ggl::PolygonMesh::MeshMesh *, std::__1::allocator<ggl::PolygonMesh::MeshMesh> > { struct MeshMesh {} *x_3_1_1; } x3; }*)strokeMeshes;
-- (struct shared_ptr<gss::StyleQuery> { struct StyleQuery {} *x1; struct __shared_weak_count {} *x2; }*)styleQuery;
-- (float)tileZoom;
-- (void)updateCachedStyle;
+- (id)initWithStyleQuery:(struct shared_ptr<gss::StylesheetQuery<gss::PropertyID> > { struct StylesheetQuery<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; }*)arg1 tile:(id)arg2 fixedAroundCentroid:(const struct Matrix<float, 2, 1> { double x1[2]; }*)arg3 contentScale:(float)arg4 sharedResources:(id)arg5;
+- (void)prepareForPolygon:(struct { struct { struct { id x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; unsigned int x_1_2_6; unsigned int x_1_2_7; BOOL x_1_2_8; unsigned int x_1_2_9; double x_1_2_10; unsigned int x_1_2_11; id x_1_2_12; } x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; int x_1_1_5; int x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; union { struct { struct { double x_1_4_1; double x_1_4_2; } x_1_3_1; struct { double x_2_4_1; double x_2_4_2; } x_1_3_2; } x_9_2_1; struct { double x_2_3_1; double x_2_3_2; double x_2_3_3; double x_2_3_4; } x_9_2_2; } x_1_1_9; struct { /* ? */ } *x_1_1_10; struct { unsigned short x_11_2_1[2]; unsigned short x_11_2_2[2]; } x_1_1_11; unsigned char x_1_1_12; BOOL x_1_1_13; unsigned char x_1_1_14; BOOL x_1_1_15; BOOL x_1_1_16; unsigned char x_1_1_17; BOOL x_1_1_18; unsigned char x_1_1_19; struct _NSRange { unsigned int x_20_2_1; unsigned int x_20_2_2; } x_1_1_20; BOOL x_1_1_21; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 hasNonWaterStyle:(BOOL)arg2;
+- (void)setNeedsTextureUpdate;
+- (struct Texture2D { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int (**x4)(); char *x5; int x6; int x7; int x8; int x9; unsigned int x10; struct shared_ptr<const ggl::TextureDataAbstract> { struct TextureDataAbstract {} *x_11_1_1; struct __shared_weak_count {} *x_11_1_2; } x11; bool x12; bool x13; unsigned int x14; unsigned int x15; bool x16; struct shared_ptr<ggl::SamplerState> { struct SamplerState {} *x_17_1_1; struct __shared_weak_count {} *x_17_1_2; } x17; }*)sourceTexture;
+- (struct vector<ggl::PolygonCommonStroke::MeshMesh, std::__1::allocator<ggl::PolygonCommonStroke::MeshMesh> > { struct MeshMesh {} *x1; struct MeshMesh {} *x2; struct __compressed_pair<ggl::PolygonCommonStroke::MeshMesh *, std::__1::allocator<ggl::PolygonCommonStroke::MeshMesh> > { struct MeshMesh {} *x_3_1_1; } x3; }*)strokeMeshes;
+- (struct FeatureAttributeSet { struct vector<gss::FeatureAttributePair, std::__1::allocator<gss::FeatureAttributePair> > { struct FeatureAttributePair {} *x_1_1_1; struct FeatureAttributePair {} *x_1_1_2; struct __compressed_pair<gss::FeatureAttributePair *, std::__1::allocator<gss::FeatureAttributePair> > { struct FeatureAttributePair {} *x_3_2_1; } x_1_1_3; } x1; })styleAttributes;
+- (struct Texture2D { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int (**x4)(); char *x5; int x6; int x7; int x8; int x9; unsigned int x10; struct shared_ptr<const ggl::TextureDataAbstract> { struct TextureDataAbstract {} *x_11_1_1; struct __shared_weak_count {} *x_11_1_2; } x11; bool x12; bool x13; unsigned int x14; unsigned int x15; bool x16; struct shared_ptr<ggl::SamplerState> { struct SamplerState {} *x_17_1_1; struct __shared_weak_count {} *x_17_1_2; } x17; }*)targetTexture;
+- (void)updateTextures;
+- (void)updateTexturesIfNecessary;
 - (void)willAddDataWithAccessor:(struct ResourceAccessor { int (**x1)(); }*)arg1;
 
 @end

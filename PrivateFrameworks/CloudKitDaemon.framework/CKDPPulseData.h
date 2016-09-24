@@ -3,22 +3,22 @@
  */
 
 @interface CKDPPulseData : PBCodable <NSCopying> {
-    long long _customState;
+    int  _customState;
     struct { 
         unsigned int customState : 1; 
         unsigned int stateTTLMillis : 1; 
         unsigned int state : 1; 
-    } _has;
-    CKDPDate *_lastCustom;
-    CKDPDate *_lastEdited;
-    CKDPDate *_lastInvisible;
-    CKDPDate *_lastViewed;
-    int _state;
-    long long _stateTTLMillis;
-    CKDPIdentifier *_user;
+    }  _has;
+    CKDPDate * _lastCustom;
+    CKDPDate * _lastEdited;
+    CKDPDate * _lastInvisible;
+    CKDPDate * _lastViewed;
+    int  _state;
+    int  _stateTTLMillis;
+    CKDPIdentifier * _user;
 }
 
-@property (nonatomic) long long customState;
+@property (nonatomic) int customState;
 @property (nonatomic) BOOL hasCustomState;
 @property (nonatomic, readonly) BOOL hasLastCustom;
 @property (nonatomic, readonly) BOOL hasLastEdited;
@@ -32,13 +32,14 @@
 @property (nonatomic, retain) CKDPDate *lastInvisible;
 @property (nonatomic, retain) CKDPDate *lastViewed;
 @property (nonatomic) int state;
-@property (nonatomic) long long stateTTLMillis;
+@property (nonatomic) int stateTTLMillis;
 @property (nonatomic, retain) CKDPIdentifier *user;
 
 - (void).cxx_destruct;
+- (int)StringAsState:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (long long)customState;
+- (int)customState;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasCustomState;
@@ -57,7 +58,7 @@
 - (id)lastViewed;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setCustomState:(long long)arg1;
+- (void)setCustomState:(int)arg1;
 - (void)setHasCustomState:(BOOL)arg1;
 - (void)setHasState:(BOOL)arg1;
 - (void)setHasStateTTLMillis:(BOOL)arg1;
@@ -66,10 +67,11 @@
 - (void)setLastInvisible:(id)arg1;
 - (void)setLastViewed:(id)arg1;
 - (void)setState:(int)arg1;
-- (void)setStateTTLMillis:(long long)arg1;
+- (void)setStateTTLMillis:(int)arg1;
 - (void)setUser:(id)arg1;
 - (int)state;
-- (long long)stateTTLMillis;
+- (id)stateAsString:(int)arg1;
+- (int)stateTTLMillis;
 - (id)user;
 - (void)writeTo:(id)arg1;
 

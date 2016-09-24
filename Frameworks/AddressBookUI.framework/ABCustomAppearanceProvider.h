@@ -3,7 +3,7 @@
  */
 
 @interface ABCustomAppearanceProvider : NSObject {
-    ABStyleProvider *_styleProvider;
+    ABStyleProvider * _styleProvider;
 }
 
 - (Class)actionCellClass;

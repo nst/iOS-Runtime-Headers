@@ -3,9 +3,9 @@
  */
 
 @interface SCRCThreadedWeakLinkedObject : NSObject {
-    BOOL _calledDealloc;
-    int _referenceCount;
-    NSLock *_releaseLock;
+    BOOL  _calledDealloc;
+    int  _referenceCount;
+    NSLock * _releaseLock;
 }
 
 - (void)dealloc;

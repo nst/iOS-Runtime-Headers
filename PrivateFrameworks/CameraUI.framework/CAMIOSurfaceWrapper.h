@@ -3,7 +3,7 @@
  */
 
 @interface CAMIOSurfaceWrapper : NSObject {
-    void *_surface;
+    void * _surface;
 }
 
 @property (nonatomic, readonly) void*surface;

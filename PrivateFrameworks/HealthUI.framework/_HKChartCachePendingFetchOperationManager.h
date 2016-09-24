@@ -3,9 +3,9 @@
  */
 
 @interface _HKChartCachePendingFetchOperationManager : NSObject {
-    NSMutableDictionary *_fetchOperationsByIdentifier;
-    NSMutableDictionary *_fetchOperationsByUUID;
-    NSMutableDictionary *_retryCountByIdentifier;
+    NSMutableDictionary * _fetchOperationsByIdentifier;
+    NSMutableDictionary * _fetchOperationsByUUID;
+    NSMutableDictionary * _retryCountByIdentifier;
 }
 
 - (void).cxx_destruct;

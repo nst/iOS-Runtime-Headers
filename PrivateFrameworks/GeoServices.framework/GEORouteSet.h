@@ -3,19 +3,21 @@
  */
 
 @interface GEORouteSet : NSObject {
-    NSMutableArray *_advisoryNotices;
-    NSMutableArray *_incidentsOffRoute;
-    int _mainTransportType;
-    GEODirectionsRequest *_originalRequest;
-    NSMutableArray *_pages;
-    GEOComposedRoute *_preferredRoute;
-    NSMutableArray *_routes;
-    NSMutableArray *_routesAndContingencies;
-    NSMutableArray *_routesAndGaps;
-    NSSet *_supportedTransportTypesForSubsequentRequests;
-    BOOL _transitModePreferencesIgnored;
-    <GEOTransitRoutingIncidentMessage> *_transitRoutingIncidentMessage;
-    NSArray *_waypoints;
+    NSMutableArray * _advisoryNotices;
+    NSMutableArray * _incidentsOffRoute;
+    BOOL  _lazyLoad;
+    int  _mainTransportType;
+    GEODirectionsRequest * _originalRequest;
+    NSMutableArray * _pages;
+    GEOComposedRoute * _preferredRoute;
+    NSMutableArray * _routes;
+    NSMutableArray * _routesAndContingencies;
+    NSMutableArray * _routesAndGaps;
+    int  _selectedRouteIndex;
+    NSSet * _supportedTransportTypesForSubsequentRequests;
+    BOOL  _transitModePreferencesIgnored;
+    <GEOTransitRoutingIncidentMessage> * _transitRoutingIncidentMessage;
+    NSArray * _waypoints;
 }
 
 @property (nonatomic, readonly) BOOL allTransitRoutesBlockedByIncident;
@@ -31,24 +33,30 @@
 @property (nonatomic, readonly) <GEOTransitRoutingIncidentMessage> *transitRoutingIncidentMessage;
 @property (nonatomic, readonly) NSArray *waypoints;
 
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
 - (void)_appendNewPage:(id)arg1;
 - (void)_clearRoutes;
 - (void)_clearWeakReferences;
 - (id)_pageForRoute:(id)arg1;
 - (void)_prependNewPage:(id)arg1;
+- (void)_updatePage:(id)arg1;
+- (void)addRouteForReroute:(id)arg1 request:(id)arg2 response:(id)arg3;
 - (void)addRoutesForRequest:(id)arg1 response:(id)arg2;
-- (void)addRoutesForReroute:(id)arg1;
 - (BOOL)allTransitRoutesBlockedByIncident;
 - (id)alternateStartRoutesLookup:(id)arg1;
 - (void)dealloc;
 - (id)directionsResponseID:(id)arg1;
 - (id)displayHints:(id)arg1;
+- (id)fullRouteAtIndex:(unsigned int)arg1;
 - (id)incidentsOffRoute;
+- (unsigned int)indexOfRouteInLazyRoutes:(id)arg1;
 - (unsigned int)indexOfSuggestedRoute:(id)arg1;
-- (id)initWithWaypoints:(id)arg1 transport:(int)arg2;
+- (id)initWithWaypoints:(id)arg1 transport:(int)arg2 lazyLoad:(BOOL)arg3 selectedRouteIndex:(int)arg4;
 - (BOOL)isNavigable:(id)arg1;
 - (int)mainTransportType;
 - (id)originalRequest;
+- (id)partialRouteAtIndex:(unsigned int)arg1;
 - (id)preferredRoute;
 - (id)requestForRoute:(id)arg1;
 - (double)requestTime:(id)arg1;
@@ -63,5 +71,9 @@
 - (id)transitOptions:(id)arg1;
 - (id)transitRoutingIncidentMessage;
 - (id)waypoints;
+
+// Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
+
++ (id)routeSetWithActiveRouteDetailsData:(id)arg1 outActiveRouteIndex:(out unsigned int*)arg2;
 
 @end

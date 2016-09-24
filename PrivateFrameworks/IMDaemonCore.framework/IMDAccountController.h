@@ -3,10 +3,10 @@
  */
 
 @interface IMDAccountController : NSObject {
-    NSMutableDictionary *_accounts;
-    NSMutableDictionary *_activeAccounts;
-    BOOL _isFirstLoad;
-    BOOL _isLoading;
+    NSMutableDictionary * _accounts;
+    NSMutableDictionary * _activeAccounts;
+    BOOL  _isFirstLoad;
+    BOOL  _isLoading;
 }
 
 @property (nonatomic, readonly) NSArray *accounts;

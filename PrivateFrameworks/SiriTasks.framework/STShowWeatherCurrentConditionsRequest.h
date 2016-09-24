@@ -3,9 +3,9 @@
  */
 
 @interface STShowWeatherCurrentConditionsRequest : AFSiriRequest {
-    STCity *_city;
-    STWeatherCurrentConditions *_currentConditions;
-    STWeatherUnits *_units;
+    STCity * _city;
+    STWeatherCurrentConditions * _currentConditions;
+    STWeatherUnits * _units;
 }
 
 + (BOOL)supportsSecureCoding;

@@ -3,7 +3,7 @@
  */
 
 @interface RWIProtocolDOMStorageDomainEventDispatcher : NSObject {
-    struct AugmentableInspectorController { int (**x1)(); } *_controller;
+    struct AugmentableInspectorController { int (**x1)(); } * _controller;
 }
 
 - (void)domStorageItemAddedWithStorageId:(id)arg1 key:(id)arg2 newValue:(id)arg3;

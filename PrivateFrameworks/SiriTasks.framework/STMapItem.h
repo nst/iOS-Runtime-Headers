@@ -3,12 +3,12 @@
  */
 
 @interface STMapItem : STSiriModelObject {
-    NSNumber *_businessID;
-    BOOL _isCurrentLocation;
-    NSNumber *_localSearchProviderID;
-    CLLocation *_location;
-    NSData *_placeData;
-    NSString *_title;
+    NSNumber * _businessID;
+    BOOL  _isCurrentLocation;
+    NSNumber * _localSearchProviderID;
+    CLLocation * _location;
+    NSData * _placeData;
+    NSString * _title;
 }
 
 + (BOOL)supportsSecureCoding;

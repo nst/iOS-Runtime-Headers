@@ -3,8 +3,8 @@
  */
 
 @interface CAMBufferNotificationObservanceChange : CAMBufferObservanceChange {
-    NSString *_notification;
-    NSObject *_object;
+    NSString * _notification;
+    NSObject * _object;
 }
 
 @property (nonatomic, readonly, copy) NSString *notification;

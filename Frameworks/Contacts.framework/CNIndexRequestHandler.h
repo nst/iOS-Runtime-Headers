@@ -2,14 +2,18 @@
    Image: /System/Library/Frameworks/Contacts.framework/Contacts
  */
 
-@interface CNIndexRequestHandler : CSIndexExtensionRequestHandler {
-    void *_ab;
-    NSObject<OS_dispatch_queue> *_asyncQueue;
-    CSSearchableIndex *_index;
-    CNContactStore *_store;
+@interface CNIndexRequestHandler : NSObject <CSSearchableIndexDelegate> {
+    void * _ab;
+    NSObject<OS_dispatch_queue> * _asyncQueue;
+    CSSearchableIndex * _index;
+    CNContactStore * _store;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) CSSearchableIndex *index;
+@property (readonly) Class superclass;
 
 + (id)defaultSearchableItemsDomain;
 + (id)descriptorForRequiredKeysForSearchableItem;
@@ -20,6 +24,7 @@
 - (void).cxx_destruct;
 - (id)contactIdentifierFromPerson:(void*)arg1;
 - (void)dealloc;
+- (void)finishIndexingAllSearchableItemsIfNecessary;
 - (id)index;
 - (id)init;
 - (id)initWithAddressBook:(void*)arg1;

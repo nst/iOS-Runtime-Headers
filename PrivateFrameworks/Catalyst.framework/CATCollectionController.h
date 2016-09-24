@@ -3,25 +3,25 @@
  */
 
 @interface CATCollectionController : NSObject {
-    NSArray *_arrangedObjects;
-    BOOL _automaticallyRearrangesObjects;
-    <CATCollectionControllerDelegate> *_delegate;
-    NSPredicate *_filterPredicate;
-    NSIndexSet *_selectionIndexes;
-    NSArray *_sortDescriptors;
-    NSMutableIndexSet *mChangingSelection;
-    NSMutableSet *mContent;
-    BOOL mDelegateKnowsContentIsChanging;
-    NSString *mKeyPath;
-    NSSet *mKeysAffectingArrangement;
-    NSMutableSet *mObjectsToRearrange;
-    id mOriginalObjects;
-    NSMutableArray *mPendingArrangedObjects;
-    NSMutableArray *mPendingDeletedObjects;
-    NSMutableArray *mPendingInsertedObjects;
-    NSTimer *mRearrangeTimer;
-    id mTarget;
-    NSValueTransformer *mTransformer;
+    NSArray * _arrangedObjects;
+    BOOL  _automaticallyRearrangesObjects;
+    <CATCollectionControllerDelegate> * _delegate;
+    NSPredicate * _filterPredicate;
+    NSIndexSet * _selectionIndexes;
+    NSArray * _sortDescriptors;
+    NSMutableIndexSet * mChangingSelection;
+    NSMutableSet * mContent;
+    BOOL  mDelegateKnowsContentIsChanging;
+    NSString * mKeyPath;
+    NSSet * mKeysAffectingArrangement;
+    NSMutableSet * mObjectsToRearrange;
+    id  mOriginalObjects;
+    NSMutableArray * mPendingArrangedObjects;
+    NSMutableArray * mPendingDeletedObjects;
+    NSMutableArray * mPendingInsertedObjects;
+    NSTimer * mRearrangeTimer;
+    id  mTarget;
+    NSValueTransformer * mTransformer;
 }
 
 @property (retain) NSArray *arrangedObjects;

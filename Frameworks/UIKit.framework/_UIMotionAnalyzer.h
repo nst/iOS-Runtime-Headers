@@ -3,8 +3,8 @@
  */
 
 @interface _UIMotionAnalyzer : NSObject {
-    _UIMotionAnalyzerSettings *_settings;
-    _UIViewerRelativeDevicePose *_viewerRelativeDevicePose;
+    _UIMotionAnalyzerSettings * _settings;
+    _UIViewerRelativeDevicePose * _viewerRelativeDevicePose;
 }
 
 @property (nonatomic, readonly) _UIMotionAnalyzerSettings *settings;

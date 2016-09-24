@@ -3,7 +3,7 @@
  */
 
 @interface AVExternalDeviceTurnByTurnToken : NSObject {
-    AVExternalDevice *_externalDevice;
+    AVExternalDevice * _externalDevice;
 }
 
 - (void)dealloc;

@@ -3,7 +3,7 @@
  */
 
 @interface ABFavoritesList : NSObject {
-    ABFavoritesListManager *_favoritesListManager;
+    ABFavoritesListManager * _favoritesListManager;
 }
 
 + (id)sharedInstance;

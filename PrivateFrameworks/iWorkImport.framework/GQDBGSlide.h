@@ -3,8 +3,8 @@
  */
 
 @interface GQDBGSlide : GQDBGAbstractSlide {
-    GQDBGMasterSlide *mMaster;
-    GQDWPLayoutFrame *mNoteFrame;
+    GQDBGMasterSlide * mMaster;
+    GQDWPLayoutFrame * mNoteFrame;
 }
 
 - (void)dealloc;

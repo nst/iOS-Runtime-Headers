@@ -3,8 +3,8 @@
  */
 
 @interface SUPurchaseContinuation : SUContinuation {
-    id _purchase;
-    SUPurchaseManager *_purchaseManager;
+    id  _purchase;
+    SUPurchaseManager * _purchaseManager;
 }
 
 @property (nonatomic, readonly) id purchase;

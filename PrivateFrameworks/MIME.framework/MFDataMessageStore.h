@@ -3,9 +3,9 @@
  */
 
 @interface MFDataMessageStore : MFMessageStore {
-    NSData *_data;
-    Class _messageClass;
-    NSString *_storagePath;
+    NSData * _data;
+    Class  _messageClass;
+    NSString * _storagePath;
 }
 
 - (id)_cachedBodyDataForMessage:(id)arg1 valueIfNotPresent:(id)arg2;

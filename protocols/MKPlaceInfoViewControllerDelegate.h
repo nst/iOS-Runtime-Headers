@@ -5,9 +5,6 @@
 
 @required
 
-- (void)infoViewController:(MKPlaceInfoViewController *)arg1 didSelectDeal:(id <MKMapItemVendorDeal>)arg2;
-- (BOOL)shouldShowDirectionsForInfoViewController:(MKPlaceInfoViewController *)arg1;
-- (BOOL)shouldShowFlyoverTourForInfoViewController:(MKPlaceInfoViewController *)arg1;
-- (BOOL)shouldShowInlineMapForInfoViewController:(MKPlaceInfoViewController *)arg1;
+- (void)infoViewController:(MKPlaceInfoViewController *)arg1 didSelectShareFromView:(UIView *)arg2;
 
 @end

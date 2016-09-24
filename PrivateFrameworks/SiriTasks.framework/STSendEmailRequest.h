@@ -3,7 +3,7 @@
  */
 
 @interface STSendEmailRequest : AFSiriRequest {
-    STEmailMessage *_message;
+    STEmailMessage * _message;
 }
 
 + (BOOL)supportsSecureCoding;

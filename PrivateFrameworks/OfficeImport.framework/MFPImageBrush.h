@@ -3,8 +3,8 @@
  */
 
 @interface MFPImageBrush : MFPBrush {
-    OITSUImage *mPhoneImage;
-    OITSUColor *mPhonePatternColor;
+    OITSUImage * mPhoneImage;
+    OITSUColor * mPhonePatternColor;
 }
 
 - (id)color;

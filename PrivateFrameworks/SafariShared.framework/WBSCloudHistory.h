@@ -3,40 +3,40 @@
  */
 
 @interface WBSCloudHistory : NSObject <WBSCloudHistoryThrottlerDataStore> {
-    BOOL _cloudHistoryEnabled;
-    NSObject<OS_dispatch_queue> *_cloudHistoryQueue;
-    WBSCloudHistoryConfiguration *_configuration;
-    WBSCloudHistoryThrottler *_fetchChangesThrottler;
-    BOOL _fetchChangesWhenBackoffTimerFires;
-    BOOL _fetchChangesWhenHistoryLoads;
+    BOOL  _cloudHistoryEnabled;
+    NSObject<OS_dispatch_queue> * _cloudHistoryQueue;
+    WBSCloudHistoryConfiguration * _configuration;
+    WBSCloudHistoryThrottler * _fetchChangesThrottler;
+    BOOL  _fetchChangesWhenBackoffTimerFires;
+    BOOL  _fetchChangesWhenHistoryLoads;
     struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
         struct __compressed_pair<SafariShared::SuddenTerminationDisabler *, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
             struct SuddenTerminationDisabler {} *__first_; 
         } __ptr_; 
-    } _fetchOperationSuddenTerminationDisabler;
-    <NSObject> *_historyWasLoadedObserver;
-    unsigned int _numberOfDevicesInSyncCircle;
-    WBSCloudHistoryPushAgentProxy *_pushAgent;
-    NSTimer *_pushNotificationFetchTimer;
-    BOOL _removedHistoryItemsArePendingSave;
-    BOOL _replayLongLivedSaveOperationHasBeenPerformed;
+    }  _fetchOperationSuddenTerminationDisabler;
+    <NSObject> * _historyWasLoadedObserver;
+    unsigned int  _numberOfDevicesInSyncCircle;
+    WBSCloudHistoryPushAgentProxy * _pushAgent;
+    NSTimer * _pushNotificationFetchTimer;
+    BOOL  _removedHistoryItemsArePendingSave;
+    BOOL  _replayLongLivedSaveOperationHasBeenPerformed;
     struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
         struct __compressed_pair<SafariShared::SuddenTerminationDisabler *, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
             struct SuddenTerminationDisabler {} *__first_; 
         } __ptr_; 
-    } _replayLongLivedSaveOperationSuddenTerminationDisabler;
-    WBSCloudHistoryThrottler *_saveChangesThrottler;
-    BOOL _saveChangesWhenBackoffTimerFires;
-    BOOL _saveChangesWhenHistoryLoads;
+    }  _replayLongLivedSaveOperationSuddenTerminationDisabler;
+    WBSCloudHistoryThrottler * _saveChangesThrottler;
+    BOOL  _saveChangesWhenBackoffTimerFires;
+    BOOL  _saveChangesWhenHistoryLoads;
     struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
         struct __compressed_pair<SafariShared::SuddenTerminationDisabler *, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
             struct SuddenTerminationDisabler {} *__first_; 
         } __ptr_; 
-    } _saveOperationSuddenTerminationDisabler;
-    NSTimer *_serverBackoffTimer;
-    WBSCloudHistoryStore *_store;
-    NSMutableDictionary *_syncCircleSizeRetrievalCompletionHandlersByOperation;
-    WBSCloudHistoryThrottler *_syncCircleSizeRetrievalThrottler;
+    }  _saveOperationSuddenTerminationDisabler;
+    NSTimer * _serverBackoffTimer;
+    <WBSCloudHistoryDataStore> * _store;
+    NSMutableDictionary * _syncCircleSizeRetrievalCompletionHandlersByOperation;
+    WBSCloudHistoryThrottler * _syncCircleSizeRetrievalThrottler;
 }
 
 @property (getter=isCloudHistoryEnabled, nonatomic) BOOL cloudHistoryEnabled;
@@ -65,8 +65,8 @@
 - (void)_historyWasLoaded:(id)arg1;
 - (void)_initializePushNotificationSupport;
 - (void)_performBlockAsynchronouslyOnCloudHistoryQueueAfterHistoryHasLoaded:(id /* block */)arg1;
-- (void)_persistLongLivedSaveOperationDictionaryWithOperationID:(id)arg1 databaseGeneration:(long long)arg2;
-- (void)_persistedLongLivedSaveOperationID:(id*)arg1 databaseGeneration:(long long*)arg2;
+- (void)_persistLongLivedSaveOperationDictionaryWithOperationID:(id)arg1 databaseGeneration:(int)arg2;
+- (void)_persistedLongLivedSaveOperationID:(id*)arg1 databaseGeneration:(int*)arg2;
 - (void)_postSaveChangesAttemptCompletedNotificationWithAllPendingDataSaved:(BOOL)arg1;
 - (int)_priorityForSaveWithVisits:(id)arg1 tombstones:(id)arg2 bypassingThrottler:(BOOL)arg3;
 - (void)_processPendingPushNotifications;
@@ -88,6 +88,7 @@
 - (void)fetchAndMergeChanges;
 - (void)fetchAndMergeChangesBypassingThrottler;
 - (id)initWithConfiguration:(id)arg1;
+- (id)initWithConfiguration:(id)arg1 completionBlock:(id /* block */)arg2;
 - (BOOL)isCloudHistoryEnabled;
 - (unsigned int)numberOfDevicesInSyncCircle;
 - (id)recordOfPastOperationsForThrottler:(id)arg1;

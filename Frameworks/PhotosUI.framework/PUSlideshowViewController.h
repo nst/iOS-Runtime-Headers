@@ -3,22 +3,22 @@
  */
 
 @interface PUSlideshowViewController : UIViewController <OKPresentationViewControllerDelegate, PHAirPlayControllerContentProvider, PHAirPlayControllerRouteObserver, PUSlideshowDisplayContext, PUSlideshowSettingsViewControllerDelegate, PUSlideshowViewModelChangeObserver, PUViewControllerSpecChangeObserver, UIGestureRecognizerDelegate> {
-    BOOL __needsUpdateSpec;
-    PUSlideshowViewController *__secondScreenBrowser;
-    PUPlaceholderView *__slideshowPlaceholderView;
-    UIViewController *__slideshowSettingsViewController;
-    OKPresentationViewController *_currentPresentationController;
-    <PUSlideshowViewControllerDelegate> *_delegate;
-    unsigned int _mode;
-    unsigned int _playerStateButtonItemIndex;
-    PUSlideshowSession *_session;
-    PUSlideshowViewControllerSpec *_spec;
-    UITapGestureRecognizer *_tapGestureRecognizer;
+    BOOL  __needsUpdateSpec;
+    PUSlideshowViewController * __secondScreenBrowser;
+    PHPlaceholderView * __slideshowPlaceholderView;
+    UIViewController * __slideshowSettingsViewController;
+    OKPresentationViewController * _currentPresentationController;
+    <PUSlideshowViewControllerDelegate> * _delegate;
+    unsigned int  _mode;
+    unsigned int  _playerStateButtonItemIndex;
+    PUSlideshowSession * _session;
+    PUSlideshowViewControllerSpec * _spec;
+    UITapGestureRecognizer * _tapGestureRecognizer;
 }
 
 @property (setter=_setNeedsUpdateSpec:, nonatomic) BOOL _needsUpdateSpec;
 @property (setter=_setSecondScreenBrowser:, nonatomic, retain) PUSlideshowViewController *_secondScreenBrowser;
-@property (setter=_setSlideshowPlaceHolderView:, nonatomic, retain) PUPlaceholderView *_slideshowPlaceholderView;
+@property (setter=_setSlideshowPlaceHolderView:, nonatomic, retain) PHPlaceholderView *_slideshowPlaceholderView;
 @property (setter=_setSlideshowSettingsViewController:, nonatomic, retain) UIViewController *_slideshowSettingsViewController;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUSlideshowViewControllerDelegate> *delegate;

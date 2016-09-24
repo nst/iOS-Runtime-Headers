@@ -3,10 +3,10 @@
  */
 
 @interface GKUpdateGroupNotifier : NSObject {
-    NSError *_error;
-    GKUpdateGroup *_group;
-    NSLock *_lock;
-    NSMutableArray *_updateQueue;
+    NSError * _error;
+    GKUpdateGroup * _group;
+    NSLock * _lock;
+    NSMutableArray * _updateQueue;
 }
 
 @property (retain) NSError *error;

@@ -3,10 +3,10 @@
  */
 
 @interface MusicShuffleActionEntityProvider : NSObject <MusicEntityProviding> {
-    BOOL _editing;
-    BOOL _hasShuffleAction;
-    MusicShuffleActionEntityValueProvider *_shuffleActionEntityValueProvider;
-    <MusicEntityProviding> *_sourceEntityProvider;
+    BOOL  _editing;
+    BOOL  _hasShuffleAction;
+    MusicShuffleActionEntityValueProvider * _shuffleActionEntityValueProvider;
+    <MusicEntityProviding> * _sourceEntityProvider;
 }
 
 @property (readonly, copy) NSString *debugDescription;

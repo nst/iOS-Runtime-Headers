@@ -3,21 +3,21 @@
  */
 
 @interface BTDevicePicker : NSObject <UIAlertViewDelegate, UITableViewDataSource, UITableViewDelegate> {
-    UIAlertView *_alertView;
-    id _btAlert;
-    Class _btAlertClass;
-    BluetoothManager *_btManager;
-    id _btSSPAlert;
-    Class _btSSPRequestClass;
-    BOOL _checkingPaired;
-    PSSpecifierStub *_connectingSpec;
-    <BTDevicePickerDelegate> *_delegate;
-    NSMutableArray *_deviceList;
-    NSPredicate *_predicate;
-    unsigned int _service;
-    BOOL _showingAlert;
-    UITableView *_tableView;
-    NSString *_title;
+    UIAlertView * _alertView;
+    id  _btAlert;
+    Class  _btAlertClass;
+    BluetoothManager * _btManager;
+    id  _btSSPAlert;
+    Class  _btSSPRequestClass;
+    BOOL  _checkingPaired;
+    PSSpecifierStub * _connectingSpec;
+    <BTDevicePickerDelegate> * _delegate;
+    NSMutableArray * _deviceList;
+    NSPredicate * _predicate;
+    unsigned int  _service;
+    BOOL  _showingAlert;
+    UITableView * _tableView;
+    NSString * _title;
 }
 
 @property (readonly, copy) NSString *debugDescription;

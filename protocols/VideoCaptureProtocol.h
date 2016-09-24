@@ -10,7 +10,7 @@
 - (long)setWidth:(int)arg1 height:(int)arg2 frameRate:(int)arg3;
 - (long)startCaptureWithWidth:(int)arg1 height:(int)arg2 frameRate:(int)arg3;
 - (long)startPreview;
-- (long)stop:(bool)arg1;
+- (long)stop:(BOOL)arg1;
 
 @optional
 

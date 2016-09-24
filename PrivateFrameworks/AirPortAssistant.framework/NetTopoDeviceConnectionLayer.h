@@ -3,41 +3,41 @@
  */
 
 @interface NetTopoDeviceConnectionLayer : NetTopoObjectLayer {
-    struct CGPath { } *_arrowhead;
-    struct CGColor { } *_clearColor;
-    CAShapeLayer *_connectionLineLayer;
-    unsigned int _connectionMediumFallback;
-    unsigned int _connectionStyle;
+    struct CGPath { } * _arrowhead;
+    struct CGColor { } * _clearColor;
+    CAShapeLayer * _connectionLineLayer;
+    unsigned int  _connectionMediumFallback;
+    unsigned int  _connectionStyle;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _downstreamConnectionPoint;
-    struct CGPath { } *_hitTestPath;
-    struct CGColor { } *_lineColorActive;
-    struct CGColor { } *_lineColorEthernet;
-    struct CGColor { } *_lineColorInactive;
-    struct CGColor { } *_lineColorWiFi;
-    struct CGColor { } *_selectedLineColor;
+        double x; 
+        double y; 
+    }  _downstreamConnectionPoint;
+    struct CGPath { } * _hitTestPath;
+    struct CGColor { } * _lineColorActive;
+    struct CGColor { } * _lineColorEthernet;
+    struct CGColor { } * _lineColorInactive;
+    struct CGColor { } * _lineColorWiFi;
+    struct CGColor { } * _selectedLineColor;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _siblingMergePoint;
+        double x; 
+        double y; 
+    }  _siblingMergePoint;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _upstreamConnectionPoint;
-    unsigned int _upstreamConnectionSide;
-    unsigned int _upstreamDeviceSpatialRelationship;
-    struct CGColor { } *_whiteColor;
+        double x; 
+        double y; 
+    }  _upstreamConnectionPoint;
+    unsigned int  _upstreamConnectionSide;
+    unsigned int  _upstreamDeviceSpatialRelationship;
+    struct CGColor { } * _whiteColor;
 }
 
 @property (nonatomic, readonly) unsigned int connectionMedium;
 @property (nonatomic) unsigned int connectionMediumFallback;
 @property (nonatomic) unsigned int connectionStyle;
-@property (nonatomic) struct CGPoint { float x1; float x2; } downstreamConnectionPoint;
+@property (nonatomic) struct CGPoint { double x1; double x2; } downstreamConnectionPoint;
 @property (nonatomic, readonly) struct CGPath { }*hitTestPath;
-@property (nonatomic) struct CGPoint { float x1; float x2; } siblingMergePoint;
-@property (nonatomic) struct CGPoint { float x1; float x2; } upstreamConnectionPoint;
+@property (nonatomic) struct CGPoint { double x1; double x2; } siblingMergePoint;
+@property (nonatomic) struct CGPoint { double x1; double x2; } upstreamConnectionPoint;
 @property (nonatomic) unsigned int upstreamConnectionSide;
 @property (nonatomic) unsigned int upstreamDeviceSpatialRelationship;
 
@@ -50,9 +50,9 @@
 - (void)dealloc;
 - (id)debugDescription;
 - (id)describeOne:(id)arg1 uiLayer:(id)arg2 indent:(unsigned int)arg3;
-- (struct CGPoint { float x1; float x2; })downstreamConnectionPoint;
+- (struct CGPoint { double x1; double x2; })downstreamConnectionPoint;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })getUserInteractionBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })getUserInteractionBounds;
 - (struct CGPath { }*)hitTestPath;
 - (void)initNetTopoDeviceConnectionLayerCommonWithStyle:(int)arg1 andOwningView:(id)arg2;
 - (id)initWithUIStyle:(int)arg1 andOwningView:(id)arg2;
@@ -60,15 +60,15 @@
 - (struct CGPath { }*)newConnectionPathWithOffset:(float)arg1;
 - (void)setConnectionMediumFallback:(unsigned int)arg1;
 - (void)setConnectionStyle:(unsigned int)arg1;
-- (void)setDownstreamConnectionPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setDownstreamConnectionPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setNeedsDisplay;
 - (void)setSelected:(BOOL)arg1;
-- (void)setSiblingMergePoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setUpstreamConnectionPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setSiblingMergePoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setUpstreamConnectionPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setUpstreamConnectionSide:(unsigned int)arg1;
 - (void)setUpstreamDeviceSpatialRelationship:(unsigned int)arg1;
-- (struct CGPoint { float x1; float x2; })siblingMergePoint;
-- (struct CGPoint { float x1; float x2; })upstreamConnectionPoint;
+- (struct CGPoint { double x1; double x2; })siblingMergePoint;
+- (struct CGPoint { double x1; double x2; })upstreamConnectionPoint;
 - (unsigned int)upstreamConnectionSide;
 - (unsigned int)upstreamDeviceSpatialRelationship;
 

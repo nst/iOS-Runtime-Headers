@@ -3,13 +3,13 @@
  */
 
 @interface SSRestoreContentItem : NSObject {
-    NSNumber *_accountID;
-    NSString *_appleID;
-    NSString *_bundleID;
-    NSNumber *_cloudMatchStatus;
-    BOOL _isRestore;
-    NSNumber *_originalPurchaserAccountID;
-    NSMutableDictionary *_properties;
+    NSNumber * _accountID;
+    NSString * _appleID;
+    NSString * _bundleID;
+    NSNumber * _cloudMatchStatus;
+    BOOL  _isRestore;
+    NSNumber * _originalPurchaserAccountID;
+    NSMutableDictionary * _properties;
 }
 
 @property (getter=isDRMFree, nonatomic) BOOL DRMFree;
@@ -18,7 +18,6 @@
 @property (nonatomic, retain) NSNumber *cloudMatchStatus;
 @property (nonatomic, copy) NSString *downloadKind;
 @property (nonatomic, copy) NSString *podcastEpisodeGUID;
-@property (getter=isRestoreDownload, nonatomic) BOOL restoreDownload;
 @property (nonatomic, copy) NSString *storeAccountAppleID;
 @property (nonatomic, retain) NSNumber *storeAccountID;
 @property (nonatomic, copy) NSString *storeFlavor;
@@ -42,7 +41,6 @@
 - (id)initWithRestoreDownload:(id)arg1;
 - (BOOL)isDRMFree;
 - (BOOL)isEligibleForRestore:(id*)arg1;
-- (BOOL)isRestoreDownload;
 - (id)podcastEpisodeGUID;
 - (void)setBundleID:(id)arg1;
 - (void)setCloudItemID:(id)arg1;
@@ -50,7 +48,6 @@
 - (void)setDRMFree:(BOOL)arg1;
 - (void)setDownloadKind:(id)arg1;
 - (void)setPodcastEpisodeGUID:(id)arg1;
-- (void)setRestoreDownload:(BOOL)arg1;
 - (void)setStoreAccountAppleID:(id)arg1;
 - (void)setStoreAccountID:(id)arg1;
 - (void)setStoreFlavor:(id)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface MCRestrictionsPayload : MCPayload {
-    NSString *_iCloudPassword;
-    NSMutableDictionary *_restrictions;
+    NSString * _iCloudPassword;
+    NSMutableDictionary * _restrictions;
 }
 
 @property (nonatomic, retain) NSString *iCloudPassword;

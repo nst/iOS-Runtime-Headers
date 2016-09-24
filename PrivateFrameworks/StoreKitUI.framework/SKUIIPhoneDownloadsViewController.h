@@ -3,11 +3,11 @@
  */
 
 @interface SKUIIPhoneDownloadsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    SKUIClientContext *_clientContext;
-    <SKUIDownloadsChildViewControllerDelegate> *_delegate;
-    NSArray *_downloads;
-    _UIContentUnavailableView *_noContentView;
-    UITableView *_tableView;
+    SKUIClientContext * _clientContext;
+    <SKUIDownloadsChildViewControllerDelegate> * _delegate;
+    NSArray * _downloads;
+    _UIContentUnavailableView * _noContentView;
+    UITableView * _tableView;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

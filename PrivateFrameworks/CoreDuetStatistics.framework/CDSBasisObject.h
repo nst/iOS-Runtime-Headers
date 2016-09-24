@@ -3,48 +3,48 @@
  */
 
 @interface CDSBasisObject : NSObject {
-    unsigned long long _attributeId;
-    double _basisDoubleValue;
-    unsigned long long _basisUint64Value;
-    NSString *_basisValueString;
-    NSDate *_creationDate;
-    double _duration;
-    BOOL _fallingEdge;
-    unsigned long long _localTime;
-    BOOL _risingEdge;
-    int _type;
+    unsigned int  _attributeId;
+    double  _basisDoubleValue;
+    unsigned int  _basisUint64Value;
+    NSString * _basisValueString;
+    NSDate * _creationDate;
+    double  _duration;
+    BOOL  _fallingEdge;
+    unsigned int  _localTime;
+    BOOL  _risingEdge;
+    int  _type;
 }
 
-@property (nonatomic) unsigned long long attributeId;
+@property (nonatomic) unsigned int attributeId;
 @property (nonatomic) double basisDoubleValue;
-@property (nonatomic) unsigned long long basisUint64Value;
+@property (nonatomic) unsigned int basisUint64Value;
 @property (nonatomic, retain) NSString *basisValueString;
 @property (nonatomic, retain) NSDate *creationDate;
 @property (nonatomic) double duration;
 @property (nonatomic) BOOL fallingEdge;
-@property (nonatomic) unsigned long long localTime;
+@property (nonatomic) unsigned int localTime;
 @property (nonatomic) BOOL risingEdge;
 @property (nonatomic) int type;
 
 - (void).cxx_destruct;
-- (unsigned long long)attributeId;
+- (unsigned int)attributeId;
 - (double)basisDoubleValue;
-- (unsigned long long)basisUint64Value;
+- (unsigned int)basisUint64Value;
 - (id)basisValueString;
 - (id)creationDate;
 - (double)duration;
 - (BOOL)fallingEdge;
-- (id)initWithLocalTime:(unsigned long long)arg1 creationDate:(id)arg2 basisValueString:(id)arg3 basisUint64Value:(unsigned long long)arg4 basisDoubleValue:(double)arg5 risingEdge:(BOOL)arg6 fallingEdge:(BOOL)arg7 duration:(double)arg8 attributeId:(unsigned long long)arg9 type:(int)arg10;
-- (unsigned long long)localTime;
+- (id)initWithLocalTime:(unsigned int)arg1 creationDate:(id)arg2 basisValueString:(id)arg3 basisUint64Value:(unsigned int)arg4 basisDoubleValue:(double)arg5 risingEdge:(BOOL)arg6 fallingEdge:(BOOL)arg7 duration:(double)arg8 attributeId:(unsigned int)arg9 type:(int)arg10;
+- (unsigned int)localTime;
 - (BOOL)risingEdge;
-- (void)setAttributeId:(unsigned long long)arg1;
+- (void)setAttributeId:(unsigned int)arg1;
 - (void)setBasisDoubleValue:(double)arg1;
-- (void)setBasisUint64Value:(unsigned long long)arg1;
+- (void)setBasisUint64Value:(unsigned int)arg1;
 - (void)setBasisValueString:(id)arg1;
 - (void)setCreationDate:(id)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setFallingEdge:(BOOL)arg1;
-- (void)setLocalTime:(unsigned long long)arg1;
+- (void)setLocalTime:(unsigned int)arg1;
 - (void)setRisingEdge:(BOOL)arg1;
 - (void)setType:(int)arg1;
 - (int)type;

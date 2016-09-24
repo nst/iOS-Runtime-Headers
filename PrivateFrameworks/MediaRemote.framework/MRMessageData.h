@@ -3,22 +3,25 @@
  */
 
 @interface MRMessageData : NSObject {
-    MRProtocolMessage *_message;
-    int _readPosition;
-    NSDate *_timestamp;
+    NSData * _data;
+    id /* block */  _dataBlock;
+    MRProtocolMessage * _message;
+    int  _readPosition;
 }
 
+@property (nonatomic, readonly) BOOL canPurge;
+@property (nonatomic, readonly) NSData *data;
 @property (getter=isFinished, nonatomic, readonly) BOOL finished;
 @property (nonatomic, readonly) MRProtocolMessage *message;
 @property (nonatomic) int readPosition;
-@property (nonatomic, readonly) NSDate *timestamp;
 
+- (BOOL)canPurge;
+- (id)data;
 - (void)dealloc;
-- (id)initWithMessage:(id)arg1;
+- (id)initWithMessage:(id)arg1 createDataBlock:(id /* block */)arg2;
 - (BOOL)isFinished;
 - (id)message;
 - (int)readPosition;
 - (void)setReadPosition:(int)arg1;
-- (id)timestamp;
 
 @end

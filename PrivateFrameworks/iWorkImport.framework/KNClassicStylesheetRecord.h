@@ -3,7 +3,7 @@
  */
 
 @interface KNClassicStylesheetRecord : TSPObject {
-    NSDictionary *mIdentifierToStyleMap;
+    NSDictionary * mIdentifierToStyleMap;
 }
 
 @property (nonatomic, retain) NSDictionary *identifierToStyleMap;

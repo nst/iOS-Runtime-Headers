@@ -3,7 +3,7 @@
  */
 
 @interface VKMapSnapshotServer : NSObject {
-    NSObject<OS_dispatch_queue> *_homeQueue;
+    NSObject<OS_dispatch_queue> * _homeQueue;
 }
 
 - (void)_renderRequest:(id)arg1 completion:(id /* block */)arg2;

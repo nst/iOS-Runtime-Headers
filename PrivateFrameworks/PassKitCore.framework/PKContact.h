@@ -3,11 +3,11 @@
  */
 
 @interface PKContact : NSObject <NSSecureCoding> {
-    NSString *_emailAddress;
-    NSPersonNameComponents *_name;
-    CNPhoneNumber *_phoneNumber;
-    CNPostalAddress *_postalAddress;
-    NSString *_supplementarySubLocality;
+    NSString * _emailAddress;
+    NSPersonNameComponents * _name;
+    CNPhoneNumber * _phoneNumber;
+    CNPostalAddress * _postalAddress;
+    NSString * _supplementarySubLocality;
 }
 
 @property (nonatomic, retain) NSString *emailAddress;
@@ -17,14 +17,19 @@
 @property (nonatomic, retain) NSString *supplementarySubLocality;
 
 + (BOOL)supportsSecureCoding;
++ (int)version;
 
+- (void).cxx_destruct;
 - (id)cnMutableContact;
-- (void)dealloc;
+- (id)dictionaryRepresentation;
 - (id)emailAddress;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithCNContact:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithDictionary:(id)arg1 error:(id*)arg2;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToContact:(id)arg1;
 - (id)name;
 - (id)phoneNumber;
 - (id)postalAddress;

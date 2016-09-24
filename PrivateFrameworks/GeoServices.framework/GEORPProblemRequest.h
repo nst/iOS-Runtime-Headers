@@ -3,15 +3,15 @@
  */
 
 @interface GEORPProblemRequest : PBRequest <NSCopying> {
-    GEOPDAnalyticMetadata *_analyticMetadata;
-    GEORPClientCapabilities *_clientCapabilities;
-    GEOPDClientMetadata *_clientMetadata;
-    NSData *_devicePushToken;
-    NSString *_inputLanguage;
-    GEORPProblem *_problem;
-    NSString *_problemUuid;
-    GEORPUserCredentials *_userCredentials;
-    NSString *_userEmail;
+    GEOPDAnalyticMetadata * _analyticMetadata;
+    GEORPClientCapabilities * _clientCapabilities;
+    GEOPDClientMetadata * _clientMetadata;
+    NSData * _devicePushToken;
+    NSString * _inputLanguage;
+    GEORPProblem * _problem;
+    NSString * _problemUuid;
+    GEORPUserCredentials * _userCredentials;
+    NSString * _userEmail;
 }
 
 @property (nonatomic, retain) GEOPDAnalyticMetadata *analyticMetadata;

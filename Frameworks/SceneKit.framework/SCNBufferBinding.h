@@ -3,9 +3,9 @@
  */
 
 @interface SCNBufferBinding : NSObject {
-    id /* block */ _block;
-    int _frequency;
-    NSString *_name;
+    id /* block */  _block;
+    int  _frequency;
+    NSString * _name;
 }
 
 @property (nonatomic, copy) id /* block */ block;

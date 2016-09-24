@@ -3,8 +3,8 @@
  */
 
 @interface RadioPlayEventCollection : NSObject <NSCopying, NSMutableCopying> {
-    NSString *_deviceName;
-    NSMapTable *_stationInformationToPlayEvents;
+    NSString * _deviceName;
+    NSMapTable * _stationInformationToPlayEvents;
 }
 
 @property (nonatomic, readonly, copy) NSString *deviceName;

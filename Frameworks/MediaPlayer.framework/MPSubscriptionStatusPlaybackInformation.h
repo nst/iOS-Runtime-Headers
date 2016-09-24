@@ -3,13 +3,13 @@
  */
 
 @interface MPSubscriptionStatusPlaybackInformation : NSObject {
-    int _accountSubscriptionStatus;
-    int _carrierBundlingStatus;
-    BOOL _definitiveInformation;
-    BOOL _hasPlaybackCapability;
-    BOOL _requiresCarrierManualVerification;
-    BOOL _shouldUseAccountLessStreaming;
-    BOOL _shouldUseLease;
+    int  _accountSubscriptionStatus;
+    int  _carrierBundlingStatus;
+    BOOL  _definitiveInformation;
+    BOOL  _hasPlaybackCapability;
+    BOOL  _requiresCarrierManualVerification;
+    BOOL  _shouldUseAccountLessStreaming;
+    BOOL  _shouldUseLease;
 }
 
 @property (getter=isDefinitiveInformation, nonatomic, readonly) BOOL definitiveInformation;

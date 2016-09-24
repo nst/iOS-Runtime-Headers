@@ -3,9 +3,9 @@
  */
 
 @interface _UIPathLazyImageAsset : UIImageAsset {
-    BOOL _haveCGCacheImages;
-    NSArray *_imagePaths;
-    BOOL _imagesHaveBeenLoaded;
+    BOOL  _haveCGCacheImages;
+    NSArray * _imagePaths;
+    BOOL  _imagesHaveBeenLoaded;
 }
 
 @property (nonatomic) BOOL haveCGCacheImages;

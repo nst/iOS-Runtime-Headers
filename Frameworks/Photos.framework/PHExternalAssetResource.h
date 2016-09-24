@@ -3,12 +3,12 @@
  */
 
 @interface PHExternalAssetResource : PHAssetResource {
-    unsigned int _cplResourceType;
-    PHAssetResourceCreationOptions *_creationOptions;
-    NSData *_data;
-    BOOL _duplicateAllowsReadAccess;
-    BOOL _isLibraryAssetResource;
-    int _resourceType;
+    unsigned int  _cplResourceType;
+    PHAssetResourceCreationOptions * _creationOptions;
+    NSData * _data;
+    BOOL  _duplicateAllowsReadAccess;
+    BOOL  _isLibraryAssetResource;
+    int  _resourceType;
 }
 
 @property (nonatomic, readonly) unsigned int cplResourceType;

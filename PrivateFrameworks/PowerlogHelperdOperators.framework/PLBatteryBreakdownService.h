@@ -3,19 +3,20 @@
  */
 
 @interface PLBatteryBreakdownService : PLService {
-    NSSet *_deletedAppNames;
-    NSDictionary *_givenNameToMappedName;
-    NSDictionary *_gizmoDaemonToAppBundleID;
-    NSDictionary *_gizmoIDSTopicToAppBundleID;
-    NSDictionary *_installedBundleIDToDisplayName;
-    NSDictionary *_installedPluginBundleIDToPluginEntry;
-    NSSet *_intermediateRootNodes;
-    NSDictionary *_nodeIDToNodeName;
-    NSSet *_nonAppNames;
-    NSDictionary *_rootNodeNameToRootNodeEnergyKey;
-    NSSet *_rootNodeNames;
-    BOOL _showGizmoQualifier;
-    NSSet *_webAppNames;
+    NSSet * _deletedAppNames;
+    NSDictionary * _givenNameToMappedName;
+    NSDictionary * _gizmoDaemonToAppBundleID;
+    NSDictionary * _gizmoIDSTopicToAppBundleID;
+    NSDictionary * _installedBundleIDToDisplayName;
+    NSDictionary * _installedPluginBundleIDToPluginEntry;
+    NSSet * _intermediateRootNodes;
+    NSSet * _internalAppNames;
+    NSDictionary * _nodeIDToNodeName;
+    NSSet * _nonAppNames;
+    NSDictionary * _rootNodeNameToRootNodeEnergyKey;
+    NSSet * _rootNodeNames;
+    BOOL  _showGizmoQualifier;
+    NSSet * _webAppNames;
 }
 
 @property (nonatomic, retain) NSSet *deletedAppNames;
@@ -25,6 +26,7 @@
 @property (nonatomic, retain) NSDictionary *installedBundleIDToDisplayName;
 @property (nonatomic, retain) NSDictionary *installedPluginBundleIDToPluginEntry;
 @property (nonatomic, retain) NSSet *intermediateRootNodes;
+@property (nonatomic, retain) NSSet *internalAppNames;
 @property (nonatomic, retain) NSDictionary *nodeIDToNodeName;
 @property (nonatomic, retain) NSSet *nonAppNames;
 @property (nonatomic, retain) NSDictionary *rootNodeNameToRootNodeEnergyKey;
@@ -64,12 +66,15 @@
 - (id)installedBundleIDToDisplayName;
 - (id)installedPluginBundleIDToPluginEntry;
 - (id)intermediateRootNodes;
+- (id)internalAppNames;
+- (id)mapCloudDocsToAppsWithEnergyEntries:(id)arg1;
 - (id)mapDeletedAppsWithEnergyEntries:(id)arg1;
 - (id)mapGizmoToAppsWithEnergyEntries:(id)arg1;
 - (id)mapPluginsToAppsWithEnergyEntries:(id)arg1;
 - (int)minimumRequiredQueryTypeForAppType:(int)arg1;
 - (id)nodeIDToNodeName;
 - (id)nonAppNames;
+- (id)nonNullValue:(id)arg1 withKey:(id)arg2;
 - (id)populateBLDKeysWithEnergyEntries:(id)arg1;
 - (id)populateRootNodeEnergyKeysWithEnergyEntries:(id)arg1;
 - (id)qualifiersWithEnergyEntry:(id)arg1;
@@ -85,6 +90,7 @@
 - (void)setInstalledBundleIDToDisplayName:(id)arg1;
 - (void)setInstalledPluginBundleIDToPluginEntry:(id)arg1;
 - (void)setIntermediateRootNodes:(id)arg1;
+- (void)setInternalAppNames:(id)arg1;
 - (void)setNodeIDToNodeName:(id)arg1;
 - (void)setNonAppNames:(id)arg1;
 - (void)setRootNodeNameToRootNodeEnergyKey:(id)arg1;

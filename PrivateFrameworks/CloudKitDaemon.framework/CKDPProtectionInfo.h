@@ -3,8 +3,8 @@
  */
 
 @interface CKDPProtectionInfo : PBCodable <NSCopying> {
-    NSData *_protectionInfo;
-    NSString *_protectionInfoTag;
+    NSData * _protectionInfo;
+    NSString * _protectionInfoTag;
 }
 
 @property (nonatomic, readonly) BOOL hasProtectionInfo;

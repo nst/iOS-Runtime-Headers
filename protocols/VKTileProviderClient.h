@@ -6,7 +6,6 @@
 @required
 
 - (void)didStopLoadingTilesWithError:(NSError *)arg1;
-- (BOOL)tileProviderMayUseNetwork:(VKTileProvider *)arg1;
 - (void)tileProviderNeedsUpdate:(VKTileProvider *)arg1;
 - (void)willStartLoadingTiles;
 

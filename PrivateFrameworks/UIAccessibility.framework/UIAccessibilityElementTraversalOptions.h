@@ -3,17 +3,17 @@
  */
 
 @interface UIAccessibilityElementTraversalOptions : NSObject {
-    int _direction;
-    BOOL _forSpeakScreen;
-    BOOL _ignoreObscuresScreen;
-    BOOL _includeHiddenViews;
-    id /* block */ _leafNodePredicate;
-    BOOL _shouldIncludeKeyboardObscuredElements;
-    BOOL _shouldIncludeStatusBarWindow;
-    BOOL _shouldOnlyIncludeElementsWithVisibleFrame;
-    BOOL _shouldReturnScannerGroups;
-    BOOL _shouldUseAllSubviews;
-    BOOL _sorted;
+    int  _direction;
+    BOOL  _forSpeakScreen;
+    BOOL  _ignoreObscuresScreen;
+    BOOL  _includeHiddenViews;
+    id /* block */  _leafNodePredicate;
+    BOOL  _shouldIncludeKeyboardObscuredElements;
+    BOOL  _shouldIncludeStatusBarWindow;
+    BOOL  _shouldOnlyIncludeElementsWithVisibleFrame;
+    BOOL  _shouldReturnScannerGroups;
+    BOOL  _shouldUseAllSubviews;
+    BOOL  _sorted;
 }
 
 @property (nonatomic) int direction;

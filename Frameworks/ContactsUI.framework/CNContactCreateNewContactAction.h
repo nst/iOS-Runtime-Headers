@@ -3,8 +3,8 @@
  */
 
 @interface CNContactCreateNewContactAction : CNContactAction <CNContactViewControllerDelegate> {
-    CNContact *_createdContact;
-    UIViewController *_presentingViewController;
+    CNContact * _createdContact;
+    UIViewController * _presentingViewController;
 }
 
 @property (nonatomic, retain) CNContact *createdContact;

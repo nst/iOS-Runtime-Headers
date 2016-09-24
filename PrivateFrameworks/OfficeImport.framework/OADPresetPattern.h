@@ -3,8 +3,8 @@
  */
 
 @interface OADPresetPattern : OADPattern {
-    BOOL mIsTypeOverridden;
-    int mType;
+    BOOL  mIsTypeOverridden;
+    int  mType;
 }
 
 + (id)defaultProperties;

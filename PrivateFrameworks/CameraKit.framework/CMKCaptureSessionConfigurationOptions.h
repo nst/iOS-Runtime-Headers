@@ -3,10 +3,10 @@
  */
 
 @interface CMKCaptureSessionConfigurationOptions : NSObject {
-    BOOL _HDRDetectionEnabled;
-    BOOL _use60FPSVideo;
-    BOOL _useAlternateSlomoFront;
-    BOOL _useAlternateSlomoRear;
+    BOOL  _HDRDetectionEnabled;
+    BOOL  _use60FPSVideo;
+    BOOL  _useAlternateSlomoFront;
+    BOOL  _useAlternateSlomoRear;
 }
 
 @property (nonatomic, readonly) BOOL HDRDetectionEnabled;

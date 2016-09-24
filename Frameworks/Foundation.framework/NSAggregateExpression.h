@@ -3,7 +3,7 @@
  */
 
 @interface NSAggregateExpression : NSExpression {
-    id _collection;
+    id  _collection;
 }
 
 + (BOOL)supportsSecureCoding;

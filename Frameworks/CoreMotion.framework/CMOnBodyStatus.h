@@ -3,8 +3,8 @@
  */
 
 @interface CMOnBodyStatus : CMLogItem {
-    int fConfidence;
-    int fResult;
+    int  fConfidence;
+    int  fResult;
 }
 
 @property (nonatomic, readonly) int confidence;

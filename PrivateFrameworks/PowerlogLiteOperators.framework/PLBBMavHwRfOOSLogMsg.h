@@ -3,23 +3,23 @@
  */
 
 @interface PLBBMavHwRfOOSLogMsg : PLBasebandMessage {
-    NSMutableDictionary *_commonInfo;
-    NSString *_error;
-    unsigned char _inited;
-    NSMutableDictionary *_kvPairs;
-    NSNumber *_logDuration;
-    NSArray *_oosGsmPssiStatTicks;
-    NSArray *_oosGsmPssiTimes;
-    unsigned char _oosInProgress;
-    NSArray *_oosLtePssiStatTicks;
-    NSArray *_oosLtePssiTimes;
-    NSArray *_oosTdsPssiStatTicks;
-    NSArray *_oosTdsPssiTimes;
-    NSNumber *_oosTicks;
-    NSNumber *_oosTimes;
-    NSArray *_oosWcdmaPssiStatTicks;
-    NSArray *_oosWcdmaPssiTimes;
-    NSNumber *_pssiTicks;
+    NSMutableDictionary * _commonInfo;
+    NSString * _error;
+    unsigned char  _inited;
+    NSMutableDictionary * _kvPairs;
+    NSNumber * _logDuration;
+    NSArray * _oosGsmPssiStatTicks;
+    NSArray * _oosGsmPssiTimes;
+    unsigned char  _oosInProgress;
+    NSArray * _oosLtePssiStatTicks;
+    NSArray * _oosLtePssiTimes;
+    NSArray * _oosTdsPssiStatTicks;
+    NSArray * _oosTdsPssiTimes;
+    NSNumber * _oosTicks;
+    NSNumber * _oosTimes;
+    NSArray * _oosWcdmaPssiStatTicks;
+    NSArray * _oosWcdmaPssiTimes;
+    NSNumber * _pssiTicks;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *commonInfo;

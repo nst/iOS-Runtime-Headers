@@ -3,21 +3,18 @@
  */
 
 @interface _UIDocumentActivityItemProvider : UIActivityItemProvider {
-    UIDocumentInteractionController *_documentInteractionController;
-    BOOL _userCancelled;
+    UIDocumentInteractionController * _documentInteractionController;
 }
 
 @property UIDocumentInteractionController *documentInteractionController;
-@property BOOL userCancelled;
 
 - (void).cxx_destruct;
+- (BOOL)_activitySupportsPromiseURLs;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
 - (id)activityViewControllerPlaceholderItem:(id)arg1;
 - (id)documentInteractionController;
 - (id)item;
 - (void)main;
 - (void)setDocumentInteractionController:(id)arg1;
-- (void)setUserCancelled:(BOOL)arg1;
-- (BOOL)userCancelled;
 
 @end

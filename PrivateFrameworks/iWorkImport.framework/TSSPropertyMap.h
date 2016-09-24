@@ -3,7 +3,7 @@
  */
 
 @interface TSSPropertyMap : NSObject <NSCopying, TSSPropertySource> {
-    struct TSSPropertyStore { } *mStore;
+    struct TSSPropertyStore { } * mStore;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -43,6 +43,7 @@
 - (id)initWithPropertyMap:(id)arg1;
 - (int)intValueForProperty:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToPropertyMap:(id)arg1;
 - (void)minusPropertyMap:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectForProperty:(int)arg1;
@@ -52,7 +53,7 @@
 - (void)pSetArrayOfInts:(int)arg1 forProperty:(int)arg2;
 - (void)pSetArrayOfObjects:(/* Warning: unhandled array encoding: '[9@]' */ id)arg1 forProperty:(int)arg2;
 - (void)pSetRepeatedArrayOfBools:(const struct RepeatedField<bool> { bool *x1; int x2; int x3; }*)arg1 forProperty:(int)arg2 defaultValues:(bool)arg3 validator:(id)arg4;
-- (void)pSetRepeatedArrayOfFloats:(const struct RepeatedField<float> { float *x1; int x2; int x3; }*)arg1 forProperty:(int)arg2 defaultValues:(float)arg3 validator:(id)arg4;
+- (void)pSetRepeatedArrayOfFloats:(const struct RepeatedField<float> { double *x1; int x2; int x3; }*)arg1 forProperty:(int)arg2 defaultValues:(float)arg3 validator:(id)arg4;
 - (void)pSetRepeatedArrayOfInts:(const struct RepeatedField<int> { int *x1; int x2; int x3; }*)arg1 forProperty:(int)arg2 defaultValues:(int)arg3 min:(int)arg4 max:(int)arg5 validator:(id)arg6;
 - (void)pSetRepeatedArrayOfInts:(const struct RepeatedField<int> { int *x1; int x2; int x3; }*)arg1 forProperty:(int)arg2 defaultValues:(int)arg3 min:(int)arg4 max:(int)arg5 validator:(id)arg6 usePreviousValueOnDefault:(BOOL)arg7;
 - (void)p_getAllKeys:(int*)arg1;
@@ -66,6 +67,7 @@
 - (void)removeValuesFromPropertyMap:(id)arg1;
 - (void)setBoolValue:(BOOL)arg1 forProperty:(int)arg2;
 - (void)setBoxedObject:(id)arg1 forProperty:(int)arg2;
+- (void)setBoxedObjects:(id*)arg1 forProperties:(int*)arg2 withCount:(unsigned int)arg3;
 - (void)setCGFloatValue:(float)arg1 forProperty:(int)arg2;
 - (void)setDoubleValue:(double)arg1 forProperty:(int)arg2;
 - (void)setFloatValue:(float)arg1 forProperty:(int)arg2;

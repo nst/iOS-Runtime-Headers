@@ -3,11 +3,11 @@
  */
 
 @interface IKTemplateTreeNode : NSObject {
-    NSDictionary *_childNodes;
-    NSString *_nodeName;
-    IKTemplateTreeNode *_parentNode;
-    IKViewElementStyleComposer *_styleComposer;
-    IKViewElementStyle *_styleOverrides;
+    NSDictionary * _childNodes;
+    NSString * _nodeName;
+    IKTemplateTreeNode * _parentNode;
+    IKViewElementStyleComposer * _styleComposer;
+    IKViewElementStyle * _styleOverrides;
 }
 
 @property (nonatomic, copy) NSDictionary *childNodes;

@@ -3,14 +3,14 @@
  */
 
 @interface GEOMapItemBuilder : NSObject {
-    GEOAddress *_address;
+    GEOAddress * _address;
     struct { 
         unsigned int referenceFrame : 1; 
-    } _has;
-    GEOLatLng *_latlng;
-    GEOLocation *_location;
-    GEOMapRegion *_mapRegion;
-    int _referenceFrame;
+    }  _has;
+    GEOLatLng * _latlng;
+    GEOLocation * _location;
+    GEOMapRegion * _mapRegion;
+    int  _referenceFrame;
 }
 
 @property (nonatomic, retain) GEOAddress *address;

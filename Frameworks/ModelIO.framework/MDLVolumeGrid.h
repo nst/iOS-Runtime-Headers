@@ -3,33 +3,19 @@
  */
 
 @interface MDLVolumeGrid : NSObject {
-    struct unique_ptr<ModelIO::Octree, std::__1::default_delete<ModelIO::Octree> > { 
-        struct __compressed_pair<ModelIO::Octree *, std::__1::default_delete<ModelIO::Octree> > { 
-            struct Octree {} *__first_; 
+    struct unique_ptr<ModelIO::SCNOctree, std::__1::default_delete<ModelIO::SCNOctree> > { 
+        struct __compressed_pair<ModelIO::SCNOctree *, std::__1::default_delete<ModelIO::SCNOctree> > { 
+            struct SCNOctree {} *__first_; 
         } __ptr_; 
-    } _octree;
+    }  _octree;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)XYlayerAtZ:(float)arg1 forLevel:(int)arg2;
-- (id)XZlayerAtY:(float)arg1 forLevel:(int)arg2;
-- (id)YZlayerAtX:(float)arg1 forLevel:(int)arg2;
-- (void)contractBoundaryWithExteriorWidth:(float)arg1 interiorWidth:(float)arg2;
-- (id)createIndexBufferWithStyle:(unsigned int)arg1 quality:(float)arg2;
-- (id)createIndexBufferWithStyle:(unsigned int)arg1 quality:(float)arg2 exteriorWidth:(float)arg3 interiorWidth:(float)arg4;
-- (id)createVertexBufferWithStyle:(unsigned int)arg1 quality:(float)arg2;
-- (id)createVertexBufferWithStyle:(unsigned int)arg1 quality:(float)arg2 exteriorWidth:(float)arg3 interiorWidth:(float)arg4;
-- (void)expandBoundaryWithExteriorWidth:(float)arg1 interiorWidth:(float)arg2;
-- (void)filterBy:(id /* block */)arg1;
-- (void)gridCellExtent;
-- (void)gridExtent;
 - (id)initWithAsset:(id)arg1 divisions:(int)arg2;
 - (id)initWithAsset:(id)arg1 divisions:(int)arg2 interiorWidth:(float)arg3 exteriorWidth:(float)arg4 patchRadius:(float)arg5;
+- (id)initWithObject:(id)arg1 divisions:(int)arg2;
 - (id)meshWithStyle:(unsigned int)arg1;
-- (void)removeSelfIntersections;
-- (void)resampleGrid:(float)arg1;
-- (float)sampleAtIndex;
-- (void)setSampleAtIndex:(void *)arg1 value:(void *)arg2; // needs 2 arg types, found 1: float
+- (unsigned int*)trianglesIntersectingRayWithOrigin:(void *)arg1 direction:(void *)arg2 count:(void *)arg3; // needs 3 arg types, found 1: unsigned int*
 
 @end

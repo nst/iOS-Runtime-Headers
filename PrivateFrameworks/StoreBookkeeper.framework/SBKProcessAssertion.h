@@ -3,11 +3,11 @@
  */
 
 @interface SBKProcessAssertion : NSObject {
-    BKSProcessAssertion *_bkProcessAssertion;
-    id /* block */ _expirationBlock;
-    id _expirationObserver;
-    unsigned int _identifier;
-    NSObject<OS_dispatch_queue> *_queue;
+    BKSProcessAssertion * _bkProcessAssertion;
+    id /* block */  _expirationBlock;
+    id  _expirationObserver;
+    unsigned int  _identifier;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (retain) BKSProcessAssertion *bkProcessAssertion;

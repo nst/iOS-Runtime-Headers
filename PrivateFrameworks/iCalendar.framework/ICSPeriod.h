@@ -3,9 +3,9 @@
  */
 
 @interface ICSPeriod : NSObject <NSCoding> {
-    ICSDuration *_duration;
-    ICSDateValue *_end;
-    ICSDateValue *_start;
+    ICSDuration * _duration;
+    ICSDateValue * _end;
+    ICSDateValue * _start;
 }
 
 - (void).cxx_destruct;

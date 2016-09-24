@@ -3,7 +3,7 @@
  */
 
 @interface WebDeviceOrientationProviderMock : NSObject <WebDeviceOrientationProvider> {
-    WebDeviceOrientationProviderMockInternal *m_internal;
+    WebDeviceOrientationProviderMockInternal * m_internal;
 }
 
 @property (readonly, copy) NSString *debugDescription;

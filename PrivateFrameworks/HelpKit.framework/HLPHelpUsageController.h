@@ -3,8 +3,8 @@
  */
 
 @interface HLPHelpUsageController : NSObject {
-    NSString *_identifier;
-    NSString *_version;
+    NSString * _identifier;
+    NSString * _version;
 }
 
 - (void).cxx_destruct;

@@ -3,9 +3,9 @@
  */
 
 @interface ML3AggregateQuery : ML3Query {
-    Class _aggregateEntityClass;
-    NSString *_foreignPersistentIDProperty;
-    BOOL _isFastCountable;
+    Class  _aggregateEntityClass;
+    NSString * _foreignPersistentIDProperty;
+    BOOL  _isFastCountable;
 }
 
 @property (nonatomic, readonly) Class aggregateEntityClass;

@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@interface BLTSettingSyncServer : BLTRemoteObject <BLTSettingSyncing> {
-    <BLTSettingSyncing> *_delegate;
-    BLTPreviouslySentMessageStore *_sectionInfoPreviouslySentMessageStore;
-    BLTPreviouslySentMessageStore *_sectionSubtypeParametersIconsPreviouslySentMessageStore;
+@interface BLTSettingSyncServer : BLTRemoteObject <BLTSettingSyncing, BLTSettingsSendSerializerDelegate> {
+    <BLTSettingSyncing> * _delegate;
+    BLTPreviouslySentMessageStore * _sectionInfoPreviouslySentMessageStore;
+    BLTPreviouslySentMessageStore * _sectionSubtypeParametersIconsPreviouslySentMessageStore;
+    BLTSettingsSendSerializerPassthrough * _settingSendSerializer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,6 +21,8 @@
 - (void)_handleResponse:(id)arg1;
 - (void)clearSectionInfoSentCache;
 - (id)delegate;
+- (void)handleFileURL:(id)arg1 extraMetadata:(id)arg2;
+- (void)handleRemoveSectionRequest:(id)arg1;
 - (void)handleSetSectionInfoRequest:(id)arg1;
 - (void)handleSetSectionInfoResponse:(id)arg1;
 - (void)handleSetSectionSubtypeParametersIconRequest:(id)arg1;
@@ -27,15 +30,17 @@
 - (id)init;
 - (BOOL)isSectionInfoSentCacheEmpty;
 - (void)registerProtobufHandlers;
+- (void)removeSectionWithSectionID:(id)arg1;
 - (id)sectionInfoPreviouslySentMessageStore;
 - (id)sectionSubtypeParametersIconsPreviouslySentMessageStore;
+- (void)sendSpooledRequestsNowWithSent:(id /* block */)arg1 withAcknowledgement:(id /* block */)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setSectionInfo:(id)arg1 completion:(id /* block */)arg2;
-- (void)setSectionInfo:(id)arg1 withQueue:(id)arg2 withSent:(id /* block */)arg3 withAcknowledgement:(id /* block */)arg4;
+- (void)setSectionInfo:(id)arg1 withQueue:(id)arg2 withSent:(id /* block */)arg3 withAcknowledgement:(id /* block */)arg4 spoolToFile:(BOOL)arg5;
 - (void)setSectionInfoPreviouslySentMessageStore:(id)arg1;
 - (void)setSectionSubtypeParametersIcon:(id)arg1 forSectionID:(id)arg2 forSubtypeID:(int)arg3;
 - (void)setSectionSubtypeParametersIcon:(id)arg1 forSectionID:(id)arg2 forSubtypeID:(int)arg3 completion:(id /* block */)arg4;
-- (void)setSectionSubtypeParametersIcon:(id)arg1 forSectionID:(id)arg2 forSubtypeID:(int)arg3 withQueue:(id)arg4 withSent:(id /* block */)arg5 withAcknowledgement:(id /* block */)arg6;
+- (void)setSectionSubtypeParametersIcon:(id)arg1 forSectionID:(id)arg2 forSubtypeID:(int)arg3 withQueue:(id)arg4 withSent:(id /* block */)arg5 withAcknowledgement:(id /* block */)arg6 spoolToFile:(BOOL)arg7;
 - (void)setSectionSubtypeParametersIconsPreviouslySentMessageStore:(id)arg1;
 
 @end

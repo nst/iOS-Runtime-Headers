@@ -6,7 +6,7 @@
 
 @property (nonatomic, copy) NSSet *occlusions;
 @property (nonatomic) int preferredInterfaceOrientation;
-@property (nonatomic) float preferredLevel;
+@property (nonatomic) double preferredLevel;
 @property (nonatomic, copy) NSString *preferredSceneHostIdentifier;
 
 + (BOOL)_isMutable;

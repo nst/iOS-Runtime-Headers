@@ -3,13 +3,13 @@
  */
 
 @interface MPUSystemBuyButtonConfiguration : NSObject {
-    float _downloadProgress;
-    MPStoreItemOffer *_offer;
-    unsigned int _progressType;
-    BOOL _visible;
+    double  _downloadProgress;
+    MPStoreItemOffer * _offer;
+    unsigned int  _progressType;
+    BOOL  _visible;
 }
 
-@property (nonatomic) float downloadProgress;
+@property (nonatomic) double downloadProgress;
 @property (nonatomic, readonly) NSSet *interfacePerceptibleKeyPaths;
 @property (nonatomic, retain) MPStoreItemOffer *offer;
 @property (nonatomic) unsigned int progressType;

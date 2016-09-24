@@ -10,7 +10,6 @@
 - (unsigned long)_cfTypeID;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
-- (void)finalize;
 - (void)fire;
 - (id)fireDate;
 - (unsigned int)hash;

@@ -3,7 +3,7 @@
  */
 
 @interface VCPLogManager : NSObject {
-    int _logLevel;
+    int  _logLevel;
 }
 
 @property (readonly) int logLevel;

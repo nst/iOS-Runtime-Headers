@@ -3,8 +3,8 @@
  */
 
 @interface ODXState : OCXReadState {
-    CXNamespace *mODXDiagramNamespace;
-    OAXDrawingState *mOfficeArtState;
+    CXNamespace * mODXDiagramNamespace;
+    OAXDrawingState * mOfficeArtState;
 }
 
 @property (nonatomic, retain) CXNamespace *ODXDiagramNamespace;

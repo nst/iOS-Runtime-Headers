@@ -13,14 +13,15 @@
 + (id)imageFillProperties;
 + (int)muxDefaultPropertyForSpecificProperty:(int)arg1;
 + (id)properties;
++ (BOOL)shouldWarnWithPersistingWithoutStylesheet;
 
+- (id)formatObjectPropertySet;
 - (id)initFromPreUFFArchiveWithUnarchiver:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 name:(id)arg2 overridePropertyMap:(id)arg3 isVariation:(BOOL)arg4;
 - (id)overrideMapForSameAsSource;
 - (void)saveToArchiver:(id)arg1;
 - (void)setOverrideMapForSameAsSource:(id)arg1;
-- (void)updateAfterPasteForDocumentRoot:(id)arg1 pasteboardCustomFormatList:(id)arg2;
 - (void)upgradePreU2_0CustomFormatsForDocumentRoot:(id)arg1;
 
 @end

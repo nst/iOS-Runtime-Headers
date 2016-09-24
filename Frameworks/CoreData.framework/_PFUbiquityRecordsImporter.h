@@ -3,25 +3,25 @@
  */
 
 @interface _PFUbiquityRecordsImporter : NSObject <NSManagedObjectContextFaultingDelegate, PFUbiquityBaselineRecoveryOperationDelegate, PFUbiquityBaselineRollOperationDelegate, PFUbiquityBaselineRollResponseOperationDelegate, _PFUbiquityRecordImportOperationDelegate> {
-    BOOL _allowBaselineRoll;
-    BOOL _importOnlyActiveStores;
-    NSOperationQueue *_importQueue;
-    BOOL _isMonitoring;
-    NSString *_localPeerID;
-    NSObject<OS_dispatch_source> *_logRestartTimer;
-    NSString *_modelVersionHash;
-    unsigned int _numPendingNotifications;
-    unsigned int _pendingImportOperationsCount;
-    NSMutableDictionary *_pendingNotificationUserInfo;
-    NSPersistentStoreCoordinator *_privatePSC;
-    NSObject<OS_dispatch_queue> *_privateQueue;
-    NSSQLCore *_privateStore;
-    PFUbiquityRecordsImporterSchedulingContext *_schedulingContext;
-    NSRecursiveLock *_schedulingLock;
-    PFUbiquitySwitchboardCacheWrapper *_sideLoadCacheWrapper;
-    NSString *_storeName;
-    BOOL _throttleNotifications;
-    PFUbiquityLocation *_ubiquityRootLocation;
+    BOOL  _allowBaselineRoll;
+    BOOL  _importOnlyActiveStores;
+    NSOperationQueue * _importQueue;
+    BOOL  _isMonitoring;
+    NSString * _localPeerID;
+    NSObject<OS_dispatch_source> * _logRestartTimer;
+    NSString * _modelVersionHash;
+    unsigned int  _numPendingNotifications;
+    unsigned int  _pendingImportOperationsCount;
+    NSMutableDictionary * _pendingNotificationUserInfo;
+    NSPersistentStoreCoordinator * _privatePSC;
+    NSObject<OS_dispatch_queue> * _privateQueue;
+    NSSQLCore * _privateStore;
+    PFUbiquityRecordsImporterSchedulingContext * _schedulingContext;
+    NSRecursiveLock * _schedulingLock;
+    PFUbiquitySwitchboardCacheWrapper * _sideLoadCacheWrapper;
+    NSString * _storeName;
+    BOOL  _throttleNotifications;
+    PFUbiquityLocation * _ubiquityRootLocation;
 }
 
 @property BOOL allowBaselineRoll;

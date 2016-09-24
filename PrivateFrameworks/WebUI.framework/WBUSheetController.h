@@ -3,12 +3,11 @@
  */
 
 @interface WBUSheetController : NSObject <UITableViewDataSource, UITableViewDelegate> {
-    WebUIAlert *_alert;
-    UIAlertController *_alertController;
-    NSMutableArray *_alertInvocationQueue;
-    id _delegate;
-    BOOL _isDismissed;
-    UITableView *_tableView;
+    WebUIAlert * _alert;
+    UIAlertController * _alertController;
+    NSMutableArray * _alertInvocationQueue;
+    id  _delegate;
+    UITableView * _tableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

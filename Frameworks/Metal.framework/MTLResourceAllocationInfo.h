@@ -9,7 +9,7 @@
 @property (readonly) BOOL pageoffRequired;
 @property (readonly) BOOL purgeable;
 @property (readonly) unsigned int residentSize;
-@property (readonly) unsigned long long uniqueIdentifier;
+@property (readonly) unsigned int uniqueIdentifier;
 @property (readonly) unsigned int virtualSize;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

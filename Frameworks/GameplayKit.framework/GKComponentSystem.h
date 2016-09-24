@@ -3,8 +3,8 @@
  */
 
 @interface GKComponentSystem : NSObject <NSFastEnumeration> {
-    Class _componentClass;
-    NSMutableArray *_components;
+    Class  _componentClass;
+    NSMutableArray * _components;
 }
 
 @property (nonatomic, readonly) Class componentClass;
@@ -13,6 +13,7 @@
 - (void).cxx_destruct;
 - (void)addComponent:(id)arg1;
 - (void)addComponentWithEntity:(id)arg1;
+- (Class)classForGenericArgumentAtIndex:(unsigned int)arg1;
 - (Class)componentClass;
 - (id)components;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;

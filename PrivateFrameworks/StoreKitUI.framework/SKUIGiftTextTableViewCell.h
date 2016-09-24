@@ -3,12 +3,12 @@
  */
 
 @interface SKUIGiftTextTableViewCell : UITableViewCell <UITextViewDelegate> {
-    UIView *_bottomBorderView;
-    UILabel *_label;
-    int _maximumCharacterCount;
-    UILabel *_placeholderLabel;
-    UITextView *_textView;
-    UIView *_topBorderView;
+    UIView * _bottomBorderView;
+    UILabel * _label;
+    int  _maximumCharacterCount;
+    UILabel * _placeholderLabel;
+    UITextView * _textView;
+    UIView * _topBorderView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

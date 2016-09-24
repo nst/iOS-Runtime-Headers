@@ -3,8 +3,8 @@
  */
 
 @interface TSPDocumentResourceDownloadObserverManager : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSMutableDictionary *_downloadObserversMap;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSMutableDictionary * _downloadObserversMap;
 }
 
 + (id)sharedManager;

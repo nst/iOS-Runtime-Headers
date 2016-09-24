@@ -3,7 +3,7 @@
  */
 
 @interface AVMediaSelection : NSObject <NSCopying, NSMutableCopying> {
-    AVMediaSelectionInternal *_mediaSelection;
+    AVMediaSelectionInternal * _mediaSelection;
 }
 
 @property (nonatomic, readonly) AVAsset *asset;

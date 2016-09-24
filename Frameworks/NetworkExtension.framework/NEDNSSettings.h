@@ -3,11 +3,11 @@
  */
 
 @interface NEDNSSettings : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
-    NSString *_domainName;
-    NSArray *_matchDomains;
-    BOOL _matchDomainsNoSearch;
-    NSArray *_searchDomains;
-    NSArray *_servers;
+    NSString * _domainName;
+    NSArray * _matchDomains;
+    BOOL  _matchDomainsNoSearch;
+    NSArray * _searchDomains;
+    NSArray * _servers;
 }
 
 @property (copy) NSString *domainName;

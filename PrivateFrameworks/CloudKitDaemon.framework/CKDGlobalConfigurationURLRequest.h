@@ -3,7 +3,7 @@
  */
 
 @interface CKDGlobalConfigurationURLRequest : CKDURLRequest {
-    CKDServerConfiguration *_configuration;
+    CKDServerConfiguration * _configuration;
 }
 
 @property (nonatomic, retain) CKDServerConfiguration *configuration;
@@ -22,6 +22,8 @@
 - (BOOL)requiresSignature;
 - (int)serverType;
 - (void)setConfiguration:(id)arg1;
+- (id)sourceApplicationBundleIdentifier;
+- (id)sourceApplicationSecondaryIdentifier;
 - (id)url;
 
 @end

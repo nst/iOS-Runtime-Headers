@@ -19,12 +19,13 @@
 - (void)CADDatabaseImportICSData:(id)arg1 intoCalendarWithID:(int)arg2 optionsMask:(unsigned int)arg3 reply:(id /* block */)arg4;
 - (void)CADDatabaseIsAutomaticLocationGeocodingAllowed:(id /* block */)arg1;
 - (void)CADDatabaseMarkChangedObjectIDsConsumedUpToSequenceNumber:(int)arg1 reply:(id /* block */)arg2;
+- (void)CADDatabaseRebuildOccurrenceCacheWithReply:(id /* block */)arg1;
 - (void)CADDatabaseRegisterForDetailedChangeTracking:(id /* block */)arg1;
 - (void)CADDatabaseResetWithReply:(id /* block */)arg1;
 - (void)CADDatabaseRollbackWithReply:(id /* block */)arg1;
 - (void)CADDatabaseSaveWithReply:(id /* block */)arg1;
 - (void)CADDatabaseSetAutomaticLocationGeocodingAllowed:(BOOL)arg1 reply:(id /* block */)arg2;
-- (void)CADDatabaseSetPath:(id)arg1 andInitOptions:(int)arg2 reply:(id /* block */)arg3;
+- (void)CADDatabaseSetInitializationOptions:(int)arg1 reply:(id /* block */)arg2;
 - (void)CADDatabaseSetShowsDeclinedEvents:(BOOL)arg1 reply:(id /* block */)arg2;
 - (void)CADDatabaseSetSourceAccountManagement:(int)arg1 reply:(id /* block */)arg2;
 - (BOOL)_CADDatabaseCanModifyCalendarDatabase;

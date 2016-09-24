@@ -3,7 +3,7 @@
  */
 
 @interface ICSectionedSearchResults : NSObject {
-    NSMutableDictionary *_searchResultsBySection;
+    NSMutableDictionary * _searchResultsBySection;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *searchResultsBySection;
@@ -20,6 +20,7 @@
 - (id)description;
 - (void)filterSearchResultsUsingVisiblityTesting:(id)arg1;
 - (BOOL)hideSearchResultsForIdentifier:(id)arg1;
+- (BOOL)hideSearchResultsForObjects:(id)arg1;
 - (id)init;
 - (void)noteWillBeUndeletedOrUntrashed:(id)arg1;
 - (void)objectsDidChange:(id)arg1;
@@ -28,6 +29,7 @@
 - (BOOL)removeSearchResultWithIdentifier:(id)arg1 forHiding:(BOOL)arg2;
 - (BOOL)removeSearchResultWithIdentifier:(id)arg1 fromSection:(unsigned int)arg2 forHiding:(BOOL)arg3;
 - (unsigned int)removeSearchResultsWithIdentifiers:(id)arg1 forHiding:(BOOL)arg2;
+- (BOOL)replaceSearchResultObject:(id)arg1 withObject:(id)arg2;
 - (id)searchResultAtRow:(int)arg1 section:(unsigned int)arg2;
 - (id)searchResultObjectsInSection:(unsigned int)arg1;
 - (id)searchResultSectionForSectionIndex:(unsigned int)arg1;
@@ -37,5 +39,6 @@
 - (unsigned int)sectionForSearchResult:(id)arg1;
 - (void)setSearchResults:(id)arg1 forSection:(unsigned int)arg2;
 - (void)setSearchResultsBySection:(id)arg1;
+- (void)updateForSortTypeChange;
 
 @end

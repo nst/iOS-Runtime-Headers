@@ -3,11 +3,11 @@
  */
 
 @interface EDName : NSObject {
-    EDFormula *_formula;
-    NSString *_formulaString;
-    OITSUPointerKeyDictionary *_maxWorksheetReferences;
-    EDString *_nameString;
-    unsigned int _sheetIndex;
+    EDFormula * _formula;
+    NSString * _formulaString;
+    OITSUPointerKeyDictionary * _maxWorksheetReferences;
+    EDString * _nameString;
+    unsigned int  _sheetIndex;
 }
 
 @property (nonatomic, readonly) EDFormula *formula;

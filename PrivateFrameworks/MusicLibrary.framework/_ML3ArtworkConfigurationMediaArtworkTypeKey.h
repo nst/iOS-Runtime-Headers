@@ -3,8 +3,8 @@
  */
 
 @interface _ML3ArtworkConfigurationMediaArtworkTypeKey : NSObject <NSCopying> {
-    int _artworkType;
-    unsigned long _mediaType;
+    int  _artworkType;
+    unsigned long  _mediaType;
 }
 
 + (id)keyWithMediaType:(unsigned long)arg1 artworkType:(int)arg2;

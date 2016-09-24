@@ -3,8 +3,8 @@
  */
 
 @interface IKCSSParseObject : NSObject {
-    NSArray *_cssValue;
-    int _type;
+    NSArray * _cssValue;
+    int  _type;
 }
 
 @property (nonatomic, retain) NSArray *cssValue;

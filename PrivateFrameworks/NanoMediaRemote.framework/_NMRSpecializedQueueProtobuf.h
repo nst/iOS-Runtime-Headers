@@ -5,11 +5,11 @@
 @interface _NMRSpecializedQueueProtobuf : PBCodable <NSCopying> {
     struct { 
         unsigned int queueType : 1; 
-    } _has;
-    NSString *_identifier;
-    NSString *_localizedTitle;
-    unsigned int _queueType;
-    NSString *_radioStationID;
+    }  _has;
+    NSString * _identifier;
+    NSString * _localizedTitle;
+    unsigned int  _queueType;
+    NSString * _radioStationID;
 }
 
 @property (nonatomic, readonly) BOOL hasIdentifier;

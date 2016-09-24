@@ -3,9 +3,9 @@
  */
 
 @interface CITemperatureAndTint : CIFilter {
-    CIImage *inputImage;
-    CIVector *inputNeutral;
-    CIVector *inputTargetNeutral;
+    CIImage * inputImage;
+    CIVector * inputNeutral;
+    CIVector * inputTargetNeutral;
 }
 
 @property (nonatomic, retain) CIImage *inputImage;

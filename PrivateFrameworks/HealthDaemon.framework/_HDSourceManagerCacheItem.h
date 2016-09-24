@@ -3,9 +3,9 @@
  */
 
 @interface _HDSourceManagerCacheItem : NSObject {
-    NSArray *_sourceIDs;
-    NSArray *_sources;
-    BOOL _userOrdered;
+    NSArray * _sourceIDs;
+    NSArray * _sources;
+    BOOL  _userOrdered;
 }
 
 @property (nonatomic, retain) NSArray *sourceIDs;

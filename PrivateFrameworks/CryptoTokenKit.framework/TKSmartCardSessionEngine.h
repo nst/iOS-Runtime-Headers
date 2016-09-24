@@ -3,12 +3,12 @@
  */
 
 @interface TKSmartCardSessionEngine : NSObject <TKProtocolSmartCardSession> {
-    BOOL _active;
-    NSXPCConnection *_connection;
-    int _endPolicy;
-    TKSmartCardSlotEngine *_slot;
-    BOOL _transmitting;
-    BOOL _valid;
+    BOOL  _active;
+    NSXPCConnection * _connection;
+    int  _endPolicy;
+    TKSmartCardSlotEngine * _slot;
+    BOOL  _transmitting;
+    BOOL  _valid;
 }
 
 @property BOOL active;

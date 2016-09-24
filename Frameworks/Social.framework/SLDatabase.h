@@ -3,11 +3,11 @@
  */
 
 @interface SLDatabase : NSObject {
-    NSManagedObjectContext *_managedObjectContext;
-    NSManagedObjectModel *_managedObjectModel;
-    NSString *_modelPath;
-    NSPersistentStoreCoordinator *_persistentStoreCoordinator;
-    NSString *_storePath;
+    NSManagedObjectContext * _managedObjectContext;
+    NSManagedObjectModel * _managedObjectModel;
+    NSString * _modelPath;
+    NSPersistentStoreCoordinator * _persistentStoreCoordinator;
+    NSString * _storePath;
 }
 
 - (void).cxx_destruct;

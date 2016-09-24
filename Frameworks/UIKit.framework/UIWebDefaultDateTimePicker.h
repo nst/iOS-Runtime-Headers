@@ -3,11 +3,11 @@
  */
 
 @interface UIWebDefaultDateTimePicker : NSObject <UIWebFormControl> {
-    UIDatePicker *_datePicker;
-    NSString *_formatString;
-    DOMHTMLInputElement *_inputElement;
-    BOOL _isTimeInput;
-    BOOL _shouldRemoveTimeZoneInformation;
+    UIDatePicker * _datePicker;
+    NSString * _formatString;
+    DOMHTMLInputElement * _inputElement;
+    BOOL  _isTimeInput;
+    BOOL  _shouldRemoveTimeZoneInformation;
 }
 
 @property (nonatomic, retain) UIDatePicker *_datePicker;

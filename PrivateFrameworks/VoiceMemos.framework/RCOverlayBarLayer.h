@@ -3,10 +3,10 @@
  */
 
 @interface RCOverlayBarLayer : CALayer {
-    CALayer *_bar;
-    CALayer *_bottomKnob;
-    UIColor *_color;
-    CALayer *_topKnob;
+    CALayer * _bar;
+    CALayer * _bottomKnob;
+    UIColor * _color;
+    CALayer * _topKnob;
 }
 
 @property (nonatomic, retain) UIColor *color;

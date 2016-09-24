@@ -3,32 +3,32 @@
  */
 
 @interface ISDialog : NSObject <SSXPCCoding> {
-    BOOL _allowDuplicates;
-    BOOL _allowsBioAuthorization;
-    SSAuthenticationContext *_authenticationContext;
-    BOOL _authorizationIsForced;
-    NSArray *_buttons;
-    int _defaultButtonIndex;
-    BOOL _dismissOnHomeButton;
-    BOOL _dismissOnLock;
-    NSString *_displayCountKey;
-    BOOL _displaysOnLockscreen;
-    BOOL _expectsResponse;
-    BOOL _groupsTextFields;
-    int _kind;
-    NSLock *_lock;
-    int _maxDisplayCount;
-    NSString *_message;
-    BOOL _noDefaultButton;
-    BOOL _oneButtonPerLine;
-    BOOL _shouldDismissAfterUnlock;
-    BOOL _shouldDisplayAsTopMost;
-    BOOL _shouldPendInSetupIfNotAllowed;
-    NSArray *_textFields;
-    NSString *_title;
-    int _unlockActionButtonIndex;
-    NSMutableDictionary *_userInfo;
-    struct __CFDictionary { } *_userNotificationValues;
+    BOOL  _allowDuplicates;
+    BOOL  _allowsBioAuthorization;
+    SSAuthenticationContext * _authenticationContext;
+    BOOL  _authorizationIsForced;
+    NSArray * _buttons;
+    int  _defaultButtonIndex;
+    BOOL  _dismissOnHomeButton;
+    BOOL  _dismissOnLock;
+    NSString * _displayCountKey;
+    BOOL  _displaysOnLockscreen;
+    BOOL  _expectsResponse;
+    BOOL  _groupsTextFields;
+    int  _kind;
+    NSLock * _lock;
+    int  _maxDisplayCount;
+    NSString * _message;
+    BOOL  _noDefaultButton;
+    BOOL  _oneButtonPerLine;
+    BOOL  _shouldDismissAfterUnlock;
+    BOOL  _shouldDisplayAsTopMost;
+    BOOL  _shouldPendInSetupIfNotAllowed;
+    NSArray * _textFields;
+    NSString * _title;
+    int  _unlockActionButtonIndex;
+    NSMutableDictionary * _userInfo;
+    struct __CFDictionary { } * _userNotificationValues;
 }
 
 @property BOOL allowDuplicates;

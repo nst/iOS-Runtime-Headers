@@ -14,11 +14,9 @@
 + (NSString *)disambiguatedDatabaseTable;
 + (NSString *)disambiguatedSQLForProperty:(NSString *)arg1;
 + (Class)entityForProperty:(NSString *)arg1;
-+ (NSString *)foreignDatabaseColumnForProperty:(NSString *)arg1;
-+ (NSString *)foreignDatabaseTableForProperty:(NSString *)arg1;
-+ (NSSet *)foreignDatabaseTablesToDelete;
-+ (NSString *)foreignKeyColumnForTable:(NSString *)arg1;
++ (NSArray *)indices;
 + (NSSet *)joinClausesForProperty:(NSString *)arg1;
++ (NSArray *)privateSubEntities;
 + (NSArray *)tableAliases;
 
 - (NSUUID *)UUIDForProperty:(NSString *)arg1 database:(HDSQLiteDatabase *)arg2;

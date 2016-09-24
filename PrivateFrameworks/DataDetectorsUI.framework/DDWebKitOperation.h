@@ -3,10 +3,10 @@
  */
 
 @interface DDWebKitOperation : DDOperation {
-    DOMNode *_endNode;
-    int _endOffset;
-    DOMNode *_startNode;
-    int _startOffset;
+    DOMNode * _endNode;
+    int  _endOffset;
+    DOMNode * _startNode;
+    int  _startOffset;
 }
 
 @property (nonatomic, retain) WebFrame *container;
@@ -22,6 +22,7 @@
 - (void)_updateGenerationNumber;
 - (void)cleanup;
 - (BOOL)containerIsReady;
+- (void)dealloc;
 - (void)dispatchContainerModificationBlock:(id /* block */)arg1;
 - (BOOL)doURLificationOnDocument;
 - (id)endNode;

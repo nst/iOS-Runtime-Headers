@@ -3,12 +3,12 @@
  */
 
 @interface TCProgressStage : NSObject {
-    TCProgressContext *m_context;
-    double m_currentPosition;
-    NSString *m_name;
-    TCProgressStage *m_parentStage;
-    double m_stepsInParent;
-    double m_totalSteps;
+    TCProgressContext * m_context;
+    double  m_currentPosition;
+    NSString * m_name;
+    TCProgressStage * m_parentStage;
+    double  m_stepsInParent;
+    double  m_totalSteps;
 }
 
 - (void)advanceProgress:(double)arg1;

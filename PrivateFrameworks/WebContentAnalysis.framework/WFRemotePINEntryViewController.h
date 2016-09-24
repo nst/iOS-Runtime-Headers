@@ -3,7 +3,7 @@
  */
 
 @interface WFRemotePINEntryViewController : _UIRemoteViewController <WFPINEntryViewControllerProtocol> {
-    NSObject<WFPINEntryViewControllerProtocol> *_delegate;
+    NSObject<WFPINEntryViewControllerProtocol> * _delegate;
 }
 
 @property (nonatomic) NSObject<WFPINEntryViewControllerProtocol> *delegate;

@@ -3,8 +3,8 @@
  */
 
 @interface UIUserNotificationCategory : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
-    NSDictionary *_actionsByContext;
-    NSString *_identifier;
+    NSDictionary * _actionsByContext;
+    NSString * _identifier;
 }
 
 @property (nonatomic, copy) NSDictionary *actionsByContext;

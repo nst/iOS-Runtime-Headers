@@ -3,8 +3,8 @@
  */
 
 @interface TKSmartCardUserInteractionForStringEntry : TKSmartCardUserInteraction <NSSecureCoding> {
-    NSString *_result;
-    TKSmartCardSlot *_slot;
+    NSString * _result;
+    TKSmartCardSlot * _slot;
 }
 
 @property (retain) NSString *result;

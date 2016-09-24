@@ -6,6 +6,7 @@
 
 + (id)currentSunrise;
 + (id)currentSunset;
++ (id)isDaylight;
 + (id)nextSunrise;
 + (id)nextSunset;
 + (id)previousSunrise;

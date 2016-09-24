@@ -3,9 +3,9 @@
  */
 
 @interface BLTLightsAndSirensReplyInfoCache : NSObject {
-    NSMutableDictionary *_localReplyInfo;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSDate *_timeToCheck;
+    NSMutableDictionary * _localReplyInfo;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSDate * _timeToCheck;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *localReplyInfo;

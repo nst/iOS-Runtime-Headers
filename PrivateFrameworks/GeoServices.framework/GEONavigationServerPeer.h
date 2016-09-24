@@ -3,15 +3,18 @@
  */
 
 @interface GEONavigationServerPeer : GEONavdPeer {
-    GEONavigationServer *_delegate;
+    GEONavigationServer * _delegate;
 }
 
 @property (nonatomic) GEONavigationServer *delegate;
 
 - (void)dealloc;
 - (id)delegate;
+- (void)requestActiveRouteDetailsData;
 - (void)requestGuidanceState;
 - (void)requestRouteSummary;
+- (void)requestSelectedRideOption;
+- (void)requestStepIndex;
 - (void)requestTransitSummary;
 - (void)requestUpdates;
 - (void)setDelegate:(id)arg1;

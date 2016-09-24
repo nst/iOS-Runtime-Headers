@@ -3,8 +3,8 @@
  */
 
 @interface SGMicrodataItem : SGMicrodataItemScope {
-    NSMutableArray *_itemRef;
-    NSSet *_itemType;
+    NSMutableArray * _itemRef;
+    NSSet * _itemType;
 }
 
 @property (nonatomic, readonly) NSArray *itemRef;

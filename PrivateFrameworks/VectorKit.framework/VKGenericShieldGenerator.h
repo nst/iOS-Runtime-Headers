@@ -3,10 +3,10 @@
  */
 
 @interface VKGenericShieldGenerator : NSObject <GEOResourceManifestTileGroupObserver> {
-    VKPGenericShieldStyleInfo *_defaultStyle;
-    NSCache *_defaultStylePacks;
-    GEOResourceManifestConfiguration *_manifestConfiguration;
-    VKResourceManager *_resourceManager;
+    VKPGenericShieldStyleInfo * _defaultStyle;
+    NSCache * _defaultStylePacks;
+    GEOResourceManifestConfiguration * _manifestConfiguration;
+    VKResourceManager * _resourceManager;
 }
 
 @property (readonly, copy) NSString *debugDescription;

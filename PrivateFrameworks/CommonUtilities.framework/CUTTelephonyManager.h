@@ -3,11 +3,11 @@
  */
 
 @interface CUTTelephonyManager : NSObject {
-    NSMutableSet *_disableFastDormancyTokens;
-    NSRecursiveLock *_lock;
-    BOOL _registered;
-    struct __CTServerConnection { } *_serverConnection;
-    void *_suspendDormancyAssertion;
+    NSMutableSet * _disableFastDormancyTokens;
+    NSRecursiveLock * _lock;
+    BOOL  _registered;
+    struct __CTServerConnection { } * _serverConnection;
+    void * _suspendDormancyAssertion;
 }
 
 @property (nonatomic) struct __CTServerConnection { }*_serverConnection;

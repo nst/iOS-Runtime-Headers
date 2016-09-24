@@ -3,7 +3,7 @@
  */
 
 @interface CKPresentationControllerRootViewController : UIViewController {
-    BOOL _allowsRotation;
+    BOOL  _allowsRotation;
 }
 
 @property (nonatomic) BOOL allowsRotation;

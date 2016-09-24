@@ -3,8 +3,8 @@
  */
 
 @interface AVURLAuthenticationChallenge : NSURLAuthenticationChallenge <AVAssetResourceLoaderRequest> {
-    NSDictionary *_requestDictionary;
-    AVWeakReference *_weakReference;
+    NSDictionary * _requestDictionary;
+    AVWeakReference * _weakReference;
 }
 
 @property (readonly, copy) NSString *debugDescription;

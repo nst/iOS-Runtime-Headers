@@ -3,12 +3,12 @@
  */
 
 @interface IMNetworkConnectionMonitor : IMConnectionMonitor <IMReachabilityDelegate, IMSystemMonitorListener> {
-    unsigned int _hostFlags;
-    IMReachability *_hostReachability;
-    unsigned int _ipFlags;
-    IMReachability *_ipReachability;
-    BOOL _isConnected;
-    BOOL _isSleeping;
+    unsigned int  _hostFlags;
+    IMReachability * _hostReachability;
+    unsigned int  _ipFlags;
+    IMReachability * _ipReachability;
+    BOOL  _isConnected;
+    BOOL  _isSleeping;
 }
 
 @property (nonatomic) unsigned int _hostFlags;

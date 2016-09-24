@@ -3,7 +3,7 @@
  */
 
 @interface SSUpdatesDatabase : NSObject {
-    SSSQLiteDatabase *_database;
+    SSSQLiteDatabase * _database;
 }
 
 @property (readonly) BOOL requiresMigration;

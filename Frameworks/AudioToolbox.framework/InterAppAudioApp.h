@@ -3,14 +3,14 @@
  */
 
 @interface InterAppAudioApp : NSObject {
-    UIImage *_icon;
-    BOOL _isCurrentApp;
-    BOOL _isForeground;
-    BOOL _isHost;
-    int _key;
-    NSString *_name;
-    NSURL *_url;
-    BKSApplicationStateMonitor *appMonitor;
+    UIImage * _icon;
+    BOOL  _isCurrentApp;
+    BOOL  _isForeground;
+    BOOL  _isHost;
+    int  _key;
+    NSString * _name;
+    NSURL * _url;
+    BKSApplicationStateMonitor * appMonitor;
 }
 
 @property (nonatomic, readonly) UIImage *icon;

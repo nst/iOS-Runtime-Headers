@@ -3,8 +3,8 @@
  */
 
 @interface PUSlideshowViewModel : PUViewModel {
-    int _currentState;
-    BOOL _wantsChromeVisible;
+    int  _currentState;
+    BOOL  _wantsChromeVisible;
 }
 
 @property (nonatomic) int currentState;

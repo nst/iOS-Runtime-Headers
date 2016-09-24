@@ -3,7 +3,7 @@
  */
 
 @interface _UINavigationInteractiveTransition : _UINavigationInteractiveTransitionBase {
-    UIScreenEdgePanGestureRecognizer *_edgePanRecognizer;
+    UIScreenEdgePanGestureRecognizer * _edgePanRecognizer;
 }
 
 @property (nonatomic, readonly) UIScreenEdgePanGestureRecognizer *screenEdgePanGestureRecognizer;

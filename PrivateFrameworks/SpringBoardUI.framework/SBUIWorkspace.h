@@ -3,12 +3,12 @@
  */
 
 @interface SBUIWorkspace : NSObject <BSDescriptionProviding, FBSceneClientProvider> {
-    FBSSerialQueue *_clientQueue;
-    NSString *_identifier;
-    FBSceneClientProviderInvalidationAction *_invalidationAction;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_scenes;
-    BOOL _valid;
+    FBSSerialQueue * _clientQueue;
+    NSString * _identifier;
+    FBSceneClientProviderInvalidationAction * _invalidationAction;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableDictionary * _scenes;
+    BOOL  _valid;
 }
 
 @property (readonly, copy) NSString *debugDescription;

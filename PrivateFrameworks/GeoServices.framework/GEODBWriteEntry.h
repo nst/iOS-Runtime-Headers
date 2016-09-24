@@ -3,9 +3,9 @@
  */
 
 @interface GEODBWriteEntry : NSObject {
-    NSData *_data;
-    unsigned int _edition;
-    NSString *_etag;
+    NSData * _data;
+    unsigned int  _edition;
+    NSString * _etag;
     struct _GEOTileKey { 
         unsigned int z : 6; 
         unsigned int x : 26; 
@@ -17,9 +17,9 @@
         unsigned int expires : 1; 
         unsigned int reserved1 : 7; 
         unsigned char reserved2[4]; 
-    } _key;
-    unsigned int _provider;
-    unsigned int _set;
+    }  _key;
+    unsigned int  _provider;
+    unsigned int  _set;
 }
 
 @property (nonatomic, readonly) NSData *data;

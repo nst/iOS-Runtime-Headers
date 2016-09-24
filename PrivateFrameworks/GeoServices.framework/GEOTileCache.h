@@ -3,8 +3,8 @@
  */
 
 @interface GEOTileCache : NSObject {
-    NSObject<OS_dispatch_source> *_memoryNotificationEventSource;
-    GEOTileCacheReserved *_reserved;
+    NSObject<OS_dispatch_source> * _memoryNotificationEventSource;
+    GEOTileCacheReserved * _reserved;
 }
 
 @property (readonly) unsigned int currentCost;

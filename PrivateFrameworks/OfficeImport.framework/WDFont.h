@@ -3,11 +3,11 @@
  */
 
 @interface WDFont : NSObject <NSCopying> {
-    NSMutableArray *mAlternateNames;
-    int mCharacterSet;
-    int mFontFamily;
-    NSString *mName;
-    int mPitch;
+    NSMutableArray * mAlternateNames;
+    int  mCharacterSet;
+    int  mFontFamily;
+    NSString * mName;
+    int  mPitch;
 }
 
 + (int)cpFontClassFromWdFontFamily:(int)arg1;

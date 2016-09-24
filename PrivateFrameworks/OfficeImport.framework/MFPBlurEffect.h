@@ -3,8 +3,8 @@
  */
 
 @interface MFPBlurEffect : MFPEffect {
-    BOOL mExpandEdge;
-    float mRadius;
+    BOOL  mExpandEdge;
+    double  mRadius;
 }
 
 + (id)GUID;

@@ -3,7 +3,7 @@
  */
 
 @interface NFAWDFieldOff : NSObject <NFAWDEventProtocol> {
-    AWDNFCFieldOffEvent *_metric;
+    AWDNFCFieldOffEvent * _metric;
 }
 
 @property (readonly, copy) NSString *debugDescription;

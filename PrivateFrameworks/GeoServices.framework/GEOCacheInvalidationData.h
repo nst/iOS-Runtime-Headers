@@ -3,10 +3,10 @@
  */
 
 @interface GEOCacheInvalidationData : NSObject {
-    double _timestamp;
-    double _ttl;
-    unsigned int _version;
-    NSArray *_versionDomains;
+    double  _timestamp;
+    double  _ttl;
+    unsigned int  _version;
+    NSArray * _versionDomains;
 }
 
 @property (nonatomic, readonly) double timestamp;

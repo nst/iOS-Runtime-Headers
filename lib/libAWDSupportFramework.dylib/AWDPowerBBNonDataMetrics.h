@@ -3,7 +3,7 @@
  */
 
 @interface AWDPowerBBNonDataMetrics : PBCodable <NSCopying> {
-    unsigned int _aPWakeCacheFlushCnt;
+    unsigned int  _aPWakeCacheFlushCnt;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int aPWakeCacheFlushCnt : 1; 
@@ -12,13 +12,13 @@
         unsigned int registrationPowerMicroWatt : 1; 
         unsigned int scanPowerMicroWatt : 1; 
         unsigned int voicePowerMicroWatt : 1; 
-    } _has;
-    unsigned int _idlePowerMicroWatt;
-    unsigned int _oOSPowerMicroWatt;
-    unsigned int _registrationPowerMicroWatt;
-    unsigned int _scanPowerMicroWatt;
-    unsigned long long _timestamp;
-    unsigned int _voicePowerMicroWatt;
+    }  _has;
+    unsigned int  _idlePowerMicroWatt;
+    unsigned int  _oOSPowerMicroWatt;
+    unsigned int  _registrationPowerMicroWatt;
+    unsigned int  _scanPowerMicroWatt;
+    unsigned long long  _timestamp;
+    unsigned int  _voicePowerMicroWatt;
 }
 
 @property (nonatomic) unsigned int aPWakeCacheFlushCnt;

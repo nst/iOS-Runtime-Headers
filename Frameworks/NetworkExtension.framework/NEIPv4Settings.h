@@ -3,13 +3,13 @@
  */
 
 @interface NEIPv4Settings : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
-    NSArray *_addresses;
-    int _configMethod;
-    NSArray *_excludedRoutes;
-    NSArray *_includedRoutes;
-    BOOL _overridePrimary;
-    NSString *_router;
-    NSArray *_subnetMasks;
+    NSArray * _addresses;
+    int  _configMethod;
+    NSArray * _excludedRoutes;
+    NSArray * _includedRoutes;
+    BOOL  _overridePrimary;
+    NSString * _router;
+    NSArray * _subnetMasks;
 }
 
 @property (readonly) NSArray *addresses;

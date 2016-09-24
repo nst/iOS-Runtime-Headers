@@ -3,12 +3,13 @@
  */
 
 @interface MPStoreRedownloadProductOperation : NSOperation {
-    SSURLConnectionRequest *_URLConnectionRequest;
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSString *_buyParameters;
-    unsigned int _endpointType;
-    MPStoreRedownloadProductResponse *_redownloadProductResponse;
-    NSError *_responseError;
+    SSURLConnectionRequest * _URLConnectionRequest;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSString * _buyParameters;
+    unsigned int  _endpointType;
+    MPStoreRedownloadProductResponse * _redownloadProductResponse;
+    NSError * _responseError;
+    BOOL  _shouldUseStreamingRedownload;
 }
 
 @property (nonatomic, readonly, copy) NSString *buyParameters;
@@ -22,6 +23,7 @@
 - (unsigned int)endpointType;
 - (id)init;
 - (id)initWithBuyParameters:(id)arg1 endpointType:(unsigned int)arg2;
+- (id)initWithBuyParameters:(id)arg1 endpointType:(unsigned int)arg2 shouldUseStreamingRedownload:(BOOL)arg3;
 - (void)main;
 - (id)redownloadProductResponse;
 - (id)responseError;

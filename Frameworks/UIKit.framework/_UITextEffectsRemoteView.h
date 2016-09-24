@@ -3,7 +3,7 @@
  */
 
 @interface _UITextEffectsRemoteView : _UIRemoteView {
-    _UIRemoteViewController *_remoteViewController;
+    _UIRemoteViewController * _remoteViewController;
 }
 
 @property (nonatomic) _UIRemoteViewController *remoteViewController;

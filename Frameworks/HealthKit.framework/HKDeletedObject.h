@@ -3,7 +3,7 @@
  */
 
 @interface HKDeletedObject : NSObject <HDCoding, NSSecureCoding> {
-    NSUUID *_UUID;
+    NSUUID * _UUID;
 }
 
 @property (readonly) NSUUID *UUID;

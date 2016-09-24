@@ -5,7 +5,7 @@
 @interface PUPhotosGridViewControllerPadSpec : PUPhotosGridViewControllerSpec
 
 - (id)albumPickerViewControllerSpec;
-- (struct CGSize { float x1; float x2; })baseInterItemSpacing;
+- (struct CGSize { double x1; double x2; })baseInterItemSpacing;
 - (BOOL)canDisplayEditActionsInNavigationBar;
 - (BOOL)canDisplayOptionsInPopover;
 - (BOOL)canDisplaySearchActionInNavigationBar;
@@ -15,7 +15,6 @@
 - (void)configureCollectionViewGridLayout:(id)arg1 forWidth:(float)arg2;
 - (float)globalFooterHeight;
 - (float)maxSearchBarWidth;
-- (id)photoBrowserSpec;
 - (id)photosPickerViewControllerSpec;
 - (float)sectionHeaderHeight;
 - (int)sectionHeaderStyle;

@@ -3,18 +3,18 @@
  */
 
 @interface HDSyncSession : NSObject {
-    BOOL _attemptWhileLocking;
-    NSCalendar *_calendar;
-    HDDaemon *_daemon;
-    NSString *_reason;
-    NSUUID *_sessionUUID;
-    NSDate *_startDate;
-    <HDSyncStore> *_syncStore;
+    BOOL  _attemptWhileLocking;
+    NSCalendar * _calendar;
+    <HDSyncSessionDelegate> * _delegate;
+    NSString * _reason;
+    NSUUID * _sessionUUID;
+    NSDate * _startDate;
+    <HDSyncStore> * _syncStore;
 }
 
 @property (nonatomic, readonly) BOOL attemptWhileLocking;
 @property (nonatomic, readonly) NSCalendar *calendar;
-@property (nonatomic, readonly) HDDaemon *daemon;
+@property (nonatomic, readonly) <HDSyncSessionDelegate> *delegate;
 @property (nonatomic, readonly, copy) NSString *reason;
 @property (nonatomic, readonly) NSUUID *sessionUUID;
 @property (nonatomic, readonly) NSDate *startDate;
@@ -23,10 +23,11 @@
 - (void).cxx_destruct;
 - (BOOL)attemptWhileLocking;
 - (id)calendar;
-- (id)daemon;
+- (id)delegate;
 - (id)description;
 - (id)init;
-- (id)initWithDaemon:(id)arg1 syncStore:(id)arg2 attemptWhileLocking:(BOOL)arg3 reason:(id)arg4;
+- (id)initWithSyncStore:(id)arg1 attemptWhileLocking:(BOOL)arg2 reason:(id)arg3 delegate:(id)arg4;
+- (int)maxEncodedBytesPerMessageForSyncEntityClass:(Class)arg1;
 - (id)newChangeWithSyncEntityClass:(Class)arg1;
 - (id)predicateForSyncEntityClass:(Class)arg1;
 - (id)reason;

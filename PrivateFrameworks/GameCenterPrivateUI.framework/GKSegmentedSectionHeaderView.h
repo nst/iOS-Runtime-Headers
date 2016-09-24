@@ -3,7 +3,7 @@
  */
 
 @interface GKSegmentedSectionHeaderView : GKSegmentedSelectorView {
-    unsigned int _sectionIndex;
+    unsigned int  _sectionIndex;
 }
 
 @property (nonatomic) unsigned int sectionIndex;

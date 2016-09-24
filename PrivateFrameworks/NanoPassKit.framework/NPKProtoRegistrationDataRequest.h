@@ -3,7 +3,7 @@
  */
 
 @interface NPKProtoRegistrationDataRequest : PBRequest <NSCopying> {
-    NSString *_authToken;
+    NSString * _authToken;
 }
 
 @property (nonatomic, retain) NSString *authToken;

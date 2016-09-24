@@ -3,8 +3,8 @@
  */
 
 @interface TRDeviceSetupLegacyAuthenticationAction : TRDeviceSetupConnectAction {
-    NSString *_deviceGUID;
-    NSString *_userAgent;
+    NSString * _deviceGUID;
+    NSString * _userAgent;
 }
 
 @property (nonatomic, retain) NSString *deviceGUID;

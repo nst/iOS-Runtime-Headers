@@ -3,26 +3,37 @@
  */
 
 @interface BRCSyncContext : NSObject {
-    NSString *_admissionTicket;
-    BRCThrottleBase *_applyThrottle;
-    CKContainer *_ckContainer;
-    NSString *_contextIdentifier;
-    CDBudget *_dataBudget;
-    BRCTransferStream *_downloadStream;
-    BRCThrottleBase *_downloadThrottle;
-    CDAttribute *_duetAttribute;
-    CDBudget *_energyBudget;
-    BOOL _isCancelled;
-    BOOL _isShared;
-    BRCThrottleBase *_readerThrottle;
-    BRCAccountSession *_session;
-    BRCTransferStream *_uploadStream;
-    BRCThrottleBase *_uploadThrottle;
+    NSString * _admissionTicket;
+    BRCThrottleBase * _applyThrottle;
+    CKContainer * _ckContainer;
+    NSString * _contextIdentifier;
+    CDBudget * _dataBudget;
+    NSDate * _dateWhenLastForegroundClientLeft;
+    BRCTransferStream * _downloadStream;
+    BRCThrottleBase * _downloadThrottle;
+    CDAttribute * _duetAttribute;
+    NSObject<OS_dispatch_queue> * _duetSetupQueue;
+    CDBudget * _energyBudget;
+    NSMutableSet * _foregroundClients;
+    unsigned int  _foregroundState;
+    NSObject<OS_dispatch_queue> * _foregroundStateQueue;
+    BOOL  _isCancelled;
+    BOOL  _isShared;
+    NSString * _lastForegroundClientDescription;
+    int  _notifyTokenForFramework;
+    BRCThrottleBase * _readerThrottle;
+    BRCAccountSession * _session;
+    NSString * _sourceAppIdentifier;
+    NSObject<OS_dispatch_source> * _timerForForcedForegroundPeriod;
+    NSObject<OS_dispatch_source> * _timerForGraceForegroundPeriod;
+    BRCTransferStream * _uploadStream;
+    BRCThrottleBase * _uploadThrottle;
 }
 
 @property (nonatomic, readonly) NSString *admissionTicket;
 @property (nonatomic, readonly) BRCThrottleBase *applyThrottle;
 @property (nonatomic, readonly) CKContainer *ckContainer;
+@property (nonatomic, readonly) CKContainerID *ckContainerID;
 @property (nonatomic, readonly) NSString *contextIdentifier;
 @property (nonatomic, readonly) CDBudget *dataBudget;
 @property (nonatomic, readonly) BRCUserDefaults *defaults;
@@ -35,11 +46,18 @@
 @property (nonatomic, readonly) BRCTransferStream *uploadStream;
 @property (nonatomic, readonly) BRCThrottleBase *uploadThrottle;
 
-+ (id)contextIdentifierForZone:(id)arg1;
++ (id)_contextIdentifierForAppLibrary:(id)arg1;
++ (id)_contextIdentifierForZone:(id)arg1 metadata:(BOOL)arg2;
++ (id)_sourceAppIdentifierForZone:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)_armForegroundGraceTimerForClientDescription:(id)arg1;
 - (id)_database;
+- (void)_notifyContainerBeingNowForeground;
+- (void)_notifyFrameworkContainersMonitorWithState:(BOOL)arg1;
 - (void)_setupDuetIfNeeded;
+- (void)_setupDuetIfNeededInQueue;
+- (void)addForegroundClient:(id)arg1;
 - (void)addOperation:(id)arg1;
 - (void)addOperation:(id)arg1 allowsCellularAccess:(id)arg2;
 - (id)admissionTicket;
@@ -47,19 +65,26 @@
 - (id)applyThrottle;
 - (void)cancel;
 - (id)ckContainer;
+- (id)ckContainerID;
 - (void)close;
 - (id)contextIdentifier;
 - (id)dataBudget;
+- (void)dealloc;
 - (id)defaults;
 - (id)description;
+- (void)didReceiveHandoffRequest;
 - (id)downloadStream;
 - (id)downloadThrottle;
+- (void)dumpToContext:(id)arg1;
 - (id)energyBudget;
-- (id)initWithSession:(id)arg1 contextIdentifier:(id)arg2 isShared:(BOOL)arg3;
-- (id)initWithZone:(id)arg1;
+- (void)forceContainerForegroundForDuration:(double)arg1;
+- (id)foregroundClients;
+- (id)initWithSession:(id)arg1 contextIdentifier:(id)arg2 sourceAppIdentifier:(id)arg3 isShared:(BOOL)arg4;
+- (BOOL)isForeground;
 - (BOOL)isShared;
 - (void)notifyDuetFromAccessByBundleID:(id)arg1;
 - (id)readerThrottle;
+- (void)removeForegroundClient:(id)arg1;
 - (void)resume;
 - (id)session;
 - (void)setupIfNeeded;

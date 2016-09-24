@@ -3,24 +3,24 @@
  */
 
 @interface SSWatchMetricsEvent : NSObject <NSCopying> {
-    NSNumber *_adamId;
-    NSString *_appExtensionVersion;
-    NSNumber *_appExternalVersionID;
-    NSString *_bundleIdentifier;
-    NSString *_cohortID;
-    NSString *_downloadVarietyID;
-    unsigned int _eventType;
-    unsigned int _installType;
-    NSString *_model;
-    NSString *_osVersion;
-    NSNumber *_pid;
-    NSNumber *_purchaserDsid;
-    NSDate *_timestamp;
-    NSNumber *_userDsid;
-    NSString *_versionString;
-    NSString *_watchGuid;
-    NSString *_watchSerial;
-    NSString *_watchSize;
+    NSNumber * _adamId;
+    NSString * _appExtensionVersion;
+    NSNumber * _appExternalVersionID;
+    NSString * _bundleIdentifier;
+    NSString * _cohortID;
+    NSString * _downloadVarietyID;
+    unsigned int  _eventType;
+    unsigned int  _installType;
+    NSString * _model;
+    NSString * _osVersion;
+    NSNumber * _pid;
+    NSNumber * _purchaserDsid;
+    NSDate * _timestamp;
+    NSNumber * _userDsid;
+    NSString * _versionString;
+    NSString * _watchGuid;
+    NSString * _watchSerial;
+    NSString * _watchSize;
 }
 
 @property (nonatomic, copy) NSNumber *adamId;

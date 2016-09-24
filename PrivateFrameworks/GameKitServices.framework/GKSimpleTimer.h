@@ -3,15 +3,15 @@
  */
 
 @interface GKSimpleTimer : NSObject {
-    id _delegate;
-    double _interval;
+    id  _delegate;
+    double  _interval;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _lock;
-    double _startTime;
-    NSObject<OS_dispatch_source> *_timerSource;
-    BOOL _timerSourceSet;
+    }  _lock;
+    double  _startTime;
+    NSObject<OS_dispatch_source> * _timerSource;
+    BOOL  _timerSourceSet;
 }
 
 @property (nonatomic) <GKSimpleTimerDelegate> *delegate;

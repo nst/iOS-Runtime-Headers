@@ -3,10 +3,12 @@
  */
 
 @interface CKDPSubscriptionRetrieveResponse : PBCodable <NSCopying> {
-    NSMutableArray *_subscriptions;
+    NSMutableArray * _subscriptions;
 }
 
 @property (nonatomic, retain) NSMutableArray *subscriptions;
+
++ (Class)subscriptionsType;
 
 - (void).cxx_destruct;
 - (void)addSubscriptions:(id)arg1;

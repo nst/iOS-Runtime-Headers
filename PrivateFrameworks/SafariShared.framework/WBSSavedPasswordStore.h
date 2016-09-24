@@ -3,8 +3,8 @@
  */
 
 @interface WBSSavedPasswordStore : NSObject {
-    NSMutableDictionary *_domainToUsers;
-    NSArray *_savedPasswords;
+    NSMutableDictionary * _domainToUsers;
+    NSArray * _savedPasswords;
 }
 
 @property (nonatomic, readonly) NSArray *savedPasswords;

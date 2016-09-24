@@ -7,27 +7,30 @@
 
 - (void)addPersistenceWarnings:(NSSet *)arg1;
 - (NSDictionary *)additionalDocumentPropertiesForWrite;
+- (NSDictionary *)additionalDocumentSupportPropertiesForWrite;
 - (BOOL)areExternalReferencesToDataAllowedAtURL:(NSURL *)arg1;
 - (BOOL)areNewExternalReferencesToDataAllowed;
 - (NSUUID *)baseUUIDForObjectUUID;
 - (void)context:(TSPObjectContext *)arg1 didDownloadDocumentResources:(NSArray *)arg2 failedOrCancelledDocumentResources:(NSArray *)arg3 error:(NSError *)arg4;
 - (void)context:(TSPObjectContext *)arg1 didDownloadRemoteData:(TSPData *)arg2 error:(NSError *)arg3;
+- (void)context:(TSPObjectContext *)arg1 willFailToAutosaveDueToDuplicateUUIDs:(NSSet *)arg2 objectReferenceMap:(TSPObjectReferenceMap *)arg3;
 - (void)didLoadDocumentWrittenByPreviousVersion;
 - (NSString *)documentPasswordHintForWrite;
 - (<NSFilePresenter> *)filePresenter;
 - (void)gilligan_data:(TSPData *)arg1 didMoveFromPackageIdentifier:(unsigned char)arg2 packageLocator:(NSString *)arg3 toPackageIdentifier:(unsigned char)arg4 packageLocator:(NSString *)arg5;
 - (BOOL)gilligan_isRemoteData:(TSPData *)arg1;
 - (BOOL)ignoreDocumentSupport;
+- (BOOL)isDocumentSupportRequiredForContext:(TSPObjectContext *)arg1;
 - (BOOL)isDocumentSupportTemporary;
-- (BOOL)isInCollaborationMode;
-- (BOOL)isInReadOnlyMode;
-- (void)makeDocumentReadOnly;
+- (BOOL)isInCollaborationModeForContext:(TSPObjectContext *)arg1;
+- (BOOL)isInReadOnlyModeForContext:(TSPObjectContext *)arg1;
 - (NSDictionary *)packageDataForWrite;
 - (NSSet *)persistenceWarningsForData:(TSPData *)arg1 flags:(unsigned int)arg2;
 - (void)presentPersistenceError:(NSError *)arg1;
 - (BOOL)preserveDocumentRevisionIdentifierForSaveURL:(NSURL *)arg1;
-- (void)resumeAutosave;
+- (void)requestAutosave;
+- (void)resumeAutosaveWithReason:(NSString *)arg1;
 - (BOOL)retrievePassphraseWithConsumer:(id <TSPPassphraseConsumer>)arg1;
-- (void)suspendAutosave;
+- (void)suspendAutosaveWithReason:(NSString *)arg1;
 
 @end

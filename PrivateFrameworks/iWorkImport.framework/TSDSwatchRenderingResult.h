@@ -3,8 +3,8 @@
  */
 
 @interface TSDSwatchRenderingResult : NSObject {
-    struct CGImage { } *background;
-    struct CGImage { } *foreground;
+    struct CGImage { } * background;
+    struct CGImage { } * foreground;
 }
 
 @property (nonatomic, readonly) struct CGImage { }*background;

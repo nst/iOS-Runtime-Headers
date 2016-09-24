@@ -3,16 +3,16 @@
  */
 
 @interface EKCalendarEditor : UIViewController <EKCalendarEditItemDelegate> {
-    EKCalendar *_calendar;
-    <EKCalendarEditorDelegate> *_delegate;
-    NSArray *_editItems;
-    unsigned int _entityType;
-    EKEventStore *_eventStore;
-    BOOL _isNewCalendar;
-    EKCalendarShareesEditItem *_shareesEditItem;
-    EKSource *_source;
-    <EKStyleProvider> *_styleProvider;
-    UITableView *_tableView;
+    EKCalendar * _calendar;
+    <EKCalendarEditorDelegate> * _delegate;
+    NSArray * _editItems;
+    unsigned int  _entityType;
+    EKEventStore * _eventStore;
+    BOOL  _isNewCalendar;
+    EKCalendarShareesEditItem * _shareesEditItem;
+    EKSource * _source;
+    <EKStyleProvider> * _styleProvider;
+    UITableView * _tableView;
 }
 
 @property (nonatomic, retain) EKCalendar *calendar;
@@ -46,7 +46,7 @@
 - (void)loadView;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)owningNavigationController;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)scrollViewDidScroll:(id)arg1;
 - (int)sectionForCalendarEditItem:(id)arg1;
 - (void)setCalendar:(id)arg1;

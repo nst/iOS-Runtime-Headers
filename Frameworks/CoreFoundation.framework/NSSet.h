@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSSet : NSObject <NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable>
+@interface NSSet : NSObject <HFPrettyDescription, NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable>
 
 @property (readonly) unsigned int count;
 @property (readonly, copy) NSString *debugDescription;
@@ -124,6 +124,10 @@
 - (id)valueForKey:(id)arg1;
 - (id)valueForKeyPath:(id)arg1;
 
+// Image: /System/Library/Frameworks/Photos.framework/Photos
+
+- (void)ph_enumerateIntersectionWithSet:(id)arg1 usingBlock:(id /* block */)arg2;
+
 // Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
 
 - (id)CAMLType;
@@ -131,10 +135,10 @@
 
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 
+- (BOOL)bs_containsObjectPassingTest:(id /* block */)arg1;
 - (void)bs_each:(id /* block */)arg1;
 - (id)bs_filter:(id /* block */)arg1;
 - (id)bs_map:(id /* block */)arg1;
-- (id)bs_mapNoNulls:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
 
@@ -150,10 +154,30 @@
 // Image: /System/Library/PrivateFrameworks/ContactsFoundation.framework/ContactsFoundation
 
 - (BOOL)_cn_any:(id /* block */)arg1;
+- (id)_cn_firstObjectPassingTest:(id /* block */)arg1;
+- (id)_cn_indexBy:(id /* block */)arg1;
+- (id)_cn_map:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
 
 - (id)DACompactDescription;
+
+// Image: /System/Library/PrivateFrameworks/FMCoreLite.framework/FMCoreLite
+
++ (id)fm_setWithSafeObject:(id)arg1;
+
+- (BOOL)fm_any:(id /* block */)arg1;
+- (void)fm_each:(id /* block */)arg1;
+- (id)fm_filter:(id /* block */)arg1;
+- (id)fm_firstObjectPassingTest:(id /* block */)arg1;
+- (id)fm_map:(id /* block */)arg1;
+- (id)fm_setByFlattening;
+- (id)fm_setByIntersectingWithSet:(id)arg1;
+- (id)fm_setByRemovingObjectsFromSet:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/FriendKit.framework/FriendKit
+
+- (id)fkSanitizedDestinationSet;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
@@ -165,6 +189,14 @@
 - (id)_gkSetByRemovingObject:(id)arg1;
 - (id)_gkValuesForKeyPath:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
+
+- (id)shortDescription;
+
+// Image: /System/Library/PrivateFrameworks/Home.framework/Home
+
+- (id)hf_prettyDescription;
+
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
 - (void)__imForEach:(id /* block */)arg1;
@@ -172,7 +204,9 @@
 
 // Image: /System/Library/PrivateFrameworks/Message.framework/Message
 
+- (BOOL)mf_any:(id /* block */)arg1;
 - (id)mf_anyPassingTest:(id /* block */)arg1;
+- (unsigned int)mf_countObjectsPassingTest:(id /* block */)arg1;
 - (id)mf_filter:(id /* block */)arg1;
 - (id)mf_flatMap:(id /* block */)arg1;
 - (id)mf_flatten;
@@ -182,13 +216,38 @@
 
 - (id)npkComprehension:(id /* block */)arg1;
 
-// Image: /System/Library/PrivateFrameworks/NetAppsUtilitiesUI.framework/NetAppsUtilitiesUI
+// Image: /System/Library/PrivateFrameworks/NetAppsUtilities.framework/NetAppsUtilities
 
-- (BOOL)naui_any:(id /* block */)arg1;
-- (void)naui_each:(id /* block */)arg1;
-- (id)naui_filter:(id /* block */)arg1;
-- (id)naui_firstObjectPassingTest:(id /* block */)arg1;
-- (id)naui_map:(id /* block */)arg1;
++ (id)na_setWithSafeObject:(id)arg1;
+
+- (BOOL)na_all:(id /* block */)arg1;
+- (BOOL)na_any:(id /* block */)arg1;
+- (void)na_each:(id /* block */)arg1;
+- (id)na_filter:(id /* block */)arg1;
+- (id)na_firstObjectPassingTest:(id /* block */)arg1;
+- (id)na_map:(id /* block */)arg1;
+- (id)na_setByFlattening;
+- (id)na_setByIntersectingWithSet:(id)arg1;
+- (id)na_setByRemovingObjectsFromSet:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
++ (id)fc_set:(id /* block */)arg1;
+
+- (id)fc_arrayByTransformingWithBlock:(id /* block */)arg1;
+- (id)fc_arrayOfObjectsPassingTest:(id /* block */)arg1;
+- (BOOL)fc_containsAnyObjectInArray:(id)arg1;
+- (BOOL)fc_containsObjectPassingTest:(id /* block */)arg1;
+- (id)fc_dictionaryOfSortedSetsWithKeyBlock:(id /* block */)arg1;
+- (id)fc_diffAgainstSet:(id)arg1;
+- (id)fc_firstObjectPassingTest:(id /* block */)arg1;
+- (id)fc_mutableSetByTransformingWithBlock:(id /* block */)arg1;
+- (id)fc_onlyObject;
+- (id)fc_setByIntersectingSet:(id)arg1;
+- (id)fc_setByMinusingSet:(id)arg1;
+- (id)fc_setByTransformingWithBlock:(id /* block */)arg1;
+- (id)fc_setByUnioningSet:(id)arg1;
+- (id)fc_setOfObjectsPassingTest:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
@@ -212,6 +271,9 @@
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
 
+- (id)_pl_filter:(id /* block */)arg1;
+- (id)_pl_firstObjectPassingTest:(id /* block */)arg1;
+- (id)_pl_map:(id /* block */)arg1;
 - (unsigned int)pl_countOfObjectsPassingTest:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
@@ -222,8 +284,19 @@
 
 - (id)safari_arrayByMappingObjectsUsingBlock:(id /* block */)arg1;
 
+// Image: /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
+
+- (id)_swiftInitWithSet_NSSet:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
+
+- (id)setByIntersectingSet:(id)arg1;
+- (id)setByMinusingSet:(id)arg1;
+- (id)setByRemovingObject:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
++ (id)tsp_consolidateFeatureInfos:(id)arg1 andReturnReadVersion:(out unsigned int*)arg2 writeVersion:(out unsigned int*)arg3;
 + (id)tsu_intersectionOfSets:(id)arg1;
 + (BOOL)tsu_set:(id)arg1 isEqualToSet:(id)arg2;
 + (id)tsu_setWithSelectors:(SEL)arg1;
@@ -231,6 +304,8 @@
 - (BOOL)tss_containsStyleOrVariationOfStyle:(id)arg1;
 - (BOOL)tss_hasVariations;
 - (BOOL)tsu_containsObjectIdenticalTo:(id)arg1;
+- (BOOL)tsu_isHomogeneousForClass:(Class)arg1;
+- (id)tsu_onlyObject;
 - (id)tsu_setByMappingObjectsUsingBlock:(id /* block */)arg1;
 - (id)tsu_sortedArray;
 

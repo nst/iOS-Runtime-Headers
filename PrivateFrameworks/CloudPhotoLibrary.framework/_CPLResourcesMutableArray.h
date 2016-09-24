@@ -3,8 +3,8 @@
  */
 
 @interface _CPLResourcesMutableArray : NSObject {
-    NSMutableDictionary *_resourcesPerType;
-    NSMutableDictionary *_updatedResourcesPerType;
+    NSMutableDictionary * _resourcesPerType;
+    NSMutableDictionary * _updatedResourcesPerType;
 }
 
 - (void).cxx_destruct;

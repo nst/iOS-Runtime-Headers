@@ -3,8 +3,8 @@
  */
 
 @interface _UIAlignedLayoutArrangement : _UILayoutArrangement <_UIALAPropertySource> {
-    unsigned int _alignment;
-    NSMutableDictionary *_alignmentConstraints;
+    unsigned int  _alignment;
+    NSMutableDictionary * _alignmentConstraints;
 }
 
 @property (nonatomic, readonly) NSSet *_newlyHiddenItems;

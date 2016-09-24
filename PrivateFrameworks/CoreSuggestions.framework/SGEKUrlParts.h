@@ -3,18 +3,17 @@
  */
 
 @interface SGEKUrlParts : NSObject {
-    NSString *_messageId;
-    NSString *_opaqueKey;
-    NSDate *_sentAt;
+    NSString * _messageId;
+    NSString * _opaqueKey;
+    NSDate * _sentAt;
 }
 
 @property (nonatomic, readonly) NSString *messageId;
 @property (nonatomic, readonly) NSString *opaqueKey;
 @property (nonatomic, readonly) NSDate *sentAt;
 
-+ (id)parseFromURL:(id)arg1;
-
 - (void).cxx_destruct;
+- (id)init;
 - (id)initWithMessageId:(id)arg1 sentAt:(id)arg2 opaqueKey:(id)arg3;
 - (id)messageId;
 - (id)opaqueKey;

@@ -3,7 +3,7 @@
  */
 
 @interface AVOutputDeviceDiscoverySessionAvailableOutputDevices : NSObject {
-    AVOutputDeviceDiscoverySessionAvailableOutputDevicesInternal *_availableOutputDevices;
+    AVOutputDeviceDiscoverySessionAvailableOutputDevicesInternal * _availableOutputDevices;
 }
 
 @property (nonatomic, readonly) NSArray *otherDevices;

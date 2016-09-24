@@ -3,13 +3,13 @@
  */
 
 @interface asn1ReceiptToken : NSObject {
-    asn1Token *mContentToken;
-    unsigned int mType;
-    unsigned int mTypeVersion;
+    asn1Token * mContentToken;
+    unsigned int  mType;
+    unsigned int  mTypeVersion;
 }
 
 @property (readonly) asn1Token *contentToken;
-@property (readonly) unsigned long long integerValue;
+@property (readonly) unsigned int integerValue;
 @property (readonly) NSString *stringValue;
 @property (readonly) unsigned int type;
 @property (readonly) unsigned int typeVersion;
@@ -20,7 +20,7 @@
 - (id)contentToken;
 - (void)dealloc;
 - (id)description;
-- (unsigned long long)integerValue;
+- (unsigned int)integerValue;
 - (id)stringValue;
 - (unsigned int)type;
 - (unsigned int)typeVersion;

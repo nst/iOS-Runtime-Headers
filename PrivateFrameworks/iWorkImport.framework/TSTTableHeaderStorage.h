@@ -3,7 +3,7 @@
  */
 
 @interface TSTTableHeaderStorage : TSPContainedObject <TSTTableHeaderStorage> {
-    TSTTableHeaderStorageBucket *mBuckets;
+    TSTTableHeaderStorageBucket * mBuckets;
 }
 
 @property (readonly, copy) NSString *debugDescription;

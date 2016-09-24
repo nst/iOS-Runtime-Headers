@@ -3,11 +3,11 @@
  */
 
 @interface _UIAppearance : NSObject {
-    NSMutableArray *_appearanceInvocations;
-    NSArray *_containerList;
-    _UIAppearanceCustomizableClassInfo *_customizableClassInfo;
-    NSMapTable *_invocationSources;
-    NSMutableDictionary *_resettableInvocations;
+    NSMutableArray * _appearanceInvocations;
+    NSArray * _containerList;
+    _UIAppearanceCustomizableClassInfo * _customizableClassInfo;
+    NSMapTable * _invocationSources;
+    NSMutableDictionary * _resettableInvocations;
 }
 
 @property (nonatomic, readonly) _UIAppearanceCustomizableClassInfo *_customizableClassInfo;

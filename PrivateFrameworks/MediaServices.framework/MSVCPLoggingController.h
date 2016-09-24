@@ -3,14 +3,14 @@
  */
 
 @interface MSVCPLoggingController : NSObject {
-    NSMutableDictionary *_cachedLoggingLevelPairs;
-    BOOL _cachedPPTTestsAreInProgress;
-    NSObject<OS_dispatch_queue> *_configurationAccessQueue;
-    int _configurationChangeNotifyToken;
-    BOOL _masterLoggingSwitchEnabled;
-    BOOL _masterLoggingSwitchInitialized;
-    NSMutableArray *_registeredConfigurations;
-    NSObject<OS_dispatch_queue> *_serialLoggingQueue;
+    NSMutableDictionary * _cachedLoggingLevelPairs;
+    BOOL  _cachedPPTTestsAreInProgress;
+    NSObject<OS_dispatch_queue> * _configurationAccessQueue;
+    int  _configurationChangeNotifyToken;
+    BOOL  _masterLoggingSwitchEnabled;
+    BOOL  _masterLoggingSwitchInitialized;
+    NSMutableArray * _registeredConfigurations;
+    NSObject<OS_dispatch_queue> * _serialLoggingQueue;
 }
 
 @property (nonatomic, readonly, copy) NSString *defaultCategory;

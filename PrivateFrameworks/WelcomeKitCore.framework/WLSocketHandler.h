@@ -3,10 +3,10 @@
  */
 
 @interface WLSocketHandler : NSObject {
-    NSMutableArray *_dataCache;
-    NSObject<OS_dispatch_source> *_dataCacheReadSource;
-    NSObject<OS_dispatch_semaphore> *_dataCacheSema;
-    NSObject<OS_dispatch_queue> *_readQueue;
+    NSMutableArray * _dataCache;
+    NSObject<OS_dispatch_source> * _dataCacheReadSource;
+    NSObject<OS_dispatch_semaphore> * _dataCacheSema;
+    NSObject<OS_dispatch_queue> * _readQueue;
 }
 
 + (id)_commandStringWithData:(id)arg1;

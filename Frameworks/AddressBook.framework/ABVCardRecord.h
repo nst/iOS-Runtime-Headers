@@ -3,8 +3,8 @@
  */
 
 @interface ABVCardRecord : NSObject {
-    struct __CFArray { } *_properties;
-    void *_record;
+    struct __CFArray { } * _properties;
+    void * _record;
 }
 
 + (void)clearPrivateFields;
@@ -48,7 +48,7 @@
 - (void)appendLabel:(id)arg1 toVCardRep:(id)arg2 inGroup:(id)arg3;
 - (void*)copyValueForProperty:(unsigned int)arg1;
 - (id)dataForInstantMessageProperties;
-- (id)dataForSocialProfileProperty:(void*)arg1 groupCount:(int*)arg2;
+- (id)dataForSocialProfileProperty:(void*)arg1 groupCount:(int*)arg2 includePrivateData:(BOOL)arg3;
 - (id)dataForSoundProperty:(void*)arg1;
 - (void)dealloc;
 - (id)encodedDataForValue:(id)arg1 charsetName:(id*)arg2;
@@ -61,8 +61,8 @@
 - (id)propertyLineForGenericABProperty21:(unsigned int)arg1 vCardProperty:(id)arg2;
 - (id)propertyLineForGenericABProperty:(unsigned int)arg1 vCardProperty:(id)arg2 is21:(BOOL)arg3 groupCount:(int*)arg4;
 - (id)propertyLineForIMHandles:(id)arg1 labels:(id)arg2 vCardProperty:(id)arg3;
-- (id)propertyLineForIMPPProperty:(BOOL)arg1 groupCount:(int*)arg2;
-- (id)propertyLineForInstantMessageHandles:(BOOL)arg1 groupCount:(int*)arg2;
+- (id)propertyLineForIMPPProperty:(BOOL)arg1 groupCount:(int*)arg2 includePrivateData:(BOOL)arg3;
+- (id)propertyLineForInstantMessageHandles:(BOOL)arg1 groupCount:(int*)arg2 includePrivateData:(BOOL)arg3;
 - (void*)record;
 - (BOOL)setValue:(void*)arg1 forProperty:(unsigned int)arg2;
 - (id)stringForAlternateBirthdayComponent:(id)arg1 key:(id)arg2 format:(id)arg3;

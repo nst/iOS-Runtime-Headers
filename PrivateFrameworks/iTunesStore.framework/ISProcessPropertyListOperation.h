@@ -3,8 +3,8 @@
  */
 
 @interface ISProcessPropertyListOperation : ISOperation {
-    ISPropertyListProvider *_dataProvider;
-    NSDictionary *_propertyList;
+    ISPropertyListProvider * _dataProvider;
+    NSDictionary * _propertyList;
 }
 
 @property (retain) ISPropertyListProvider *dataProvider;

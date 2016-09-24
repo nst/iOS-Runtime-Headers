@@ -3,10 +3,10 @@
  */
 
 @interface _GCControllerDirectionPad : GCControllerDirectionPad {
-    NSString *_descriptionName;
-    id /* block */ _valueChangedHandler;
-    _GCControllerAxisInput *_xAxis;
-    _GCControllerAxisInput *_yAxis;
+    NSString * _descriptionName;
+    id /* block */  _valueChangedHandler;
+    _GCControllerAxisInput * _xAxis;
+    _GCControllerAxisInput * _yAxis;
 }
 
 - (void).cxx_destruct;

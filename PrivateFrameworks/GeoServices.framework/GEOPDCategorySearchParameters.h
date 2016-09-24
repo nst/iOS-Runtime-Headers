@@ -3,16 +3,20 @@
  */
 
 @interface GEOPDCategorySearchParameters : PBCodable <NSCopying> {
-    unsigned int _blurredHourOfDay;
-    unsigned int _dayOfWeek;
+    unsigned int  _blurredHourOfDay;
+    unsigned int  _dayOfWeek;
     struct { 
         unsigned int blurredHourOfDay : 1; 
         unsigned int dayOfWeek : 1; 
         unsigned int maxResults : 1; 
-    } _has;
-    unsigned int _maxResults;
-    NSData *_suggestionEntryMetadata;
-    GEOPDViewportInfo *_viewportInfo;
+        unsigned int searchType : 1; 
+    }  _has;
+    unsigned int  _maxResults;
+    GEOPDRecentRouteInfo * _recentRouteInfo;
+    int  _searchType;
+    NSData * _suggestionEntryMetadata;
+    PBUnknownFields * _unknownFields;
+    GEOPDViewportInfo * _viewportInfo;
 }
 
 @property (nonatomic) unsigned int blurredHourOfDay;
@@ -20,12 +24,18 @@
 @property (nonatomic) BOOL hasBlurredHourOfDay;
 @property (nonatomic) BOOL hasDayOfWeek;
 @property (nonatomic) BOOL hasMaxResults;
+@property (nonatomic, readonly) BOOL hasRecentRouteInfo;
+@property (nonatomic) BOOL hasSearchType;
 @property (nonatomic, readonly) BOOL hasSuggestionEntryMetadata;
 @property (nonatomic, readonly) BOOL hasViewportInfo;
 @property (nonatomic) unsigned int maxResults;
+@property (nonatomic, retain) GEOPDRecentRouteInfo *recentRouteInfo;
+@property (nonatomic) int searchType;
 @property (nonatomic, retain) NSData *suggestionEntryMetadata;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) GEOPDViewportInfo *viewportInfo;
 
+- (int)StringAsSearchType:(id)arg1;
 - (unsigned int)blurredHourOfDay;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -36,6 +46,8 @@
 - (BOOL)hasBlurredHourOfDay;
 - (BOOL)hasDayOfWeek;
 - (BOOL)hasMaxResults;
+- (BOOL)hasRecentRouteInfo;
+- (BOOL)hasSearchType;
 - (BOOL)hasSuggestionEntryMetadata;
 - (BOOL)hasViewportInfo;
 - (unsigned int)hash;
@@ -43,15 +55,22 @@
 - (unsigned int)maxResults;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (id)recentRouteInfo;
+- (int)searchType;
+- (id)searchTypeAsString:(int)arg1;
 - (void)setBlurredHourOfDay:(unsigned int)arg1;
 - (void)setDayOfWeek:(unsigned int)arg1;
 - (void)setHasBlurredHourOfDay:(BOOL)arg1;
 - (void)setHasDayOfWeek:(BOOL)arg1;
 - (void)setHasMaxResults:(BOOL)arg1;
+- (void)setHasSearchType:(BOOL)arg1;
 - (void)setMaxResults:(unsigned int)arg1;
+- (void)setRecentRouteInfo:(id)arg1;
+- (void)setSearchType:(int)arg1;
 - (void)setSuggestionEntryMetadata:(id)arg1;
 - (void)setViewportInfo:(id)arg1;
 - (id)suggestionEntryMetadata;
+- (id)unknownFields;
 - (id)viewportInfo;
 - (void)writeTo:(id)arg1;
 

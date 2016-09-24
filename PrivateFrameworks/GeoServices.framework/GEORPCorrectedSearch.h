@@ -3,17 +3,17 @@
  */
 
 @interface GEORPCorrectedSearch : PBCodable <NSCopying> {
-    unsigned int _correctedSearchResultIndex;
+    unsigned int  _correctedSearchResultIndex;
     struct { 
         unsigned int correctedSearchResultIndex : 1; 
         unsigned int originalSearchResultIndex : 1; 
-    } _has;
-    unsigned int _originalSearchResultIndex;
-    GEOPDPlaceRequest *_placeRequest;
-    GEOPDPlaceResponse *_placeResponse;
-    GEOPlaceSearchRequest *_placeSearchRequest;
-    GEOPlaceSearchResponse *_placeSearchResponse;
-    NSString *_preferredSearchDisplayLocation;
+    }  _has;
+    unsigned int  _originalSearchResultIndex;
+    GEOPDPlaceRequest * _placeRequest;
+    GEOPDPlaceResponse * _placeResponse;
+    GEOPlaceSearchRequest * _placeSearchRequest;
+    GEOPlaceSearchResponse * _placeSearchResponse;
+    NSString * _preferredSearchDisplayLocation;
 }
 
 @property (nonatomic) unsigned int correctedSearchResultIndex;

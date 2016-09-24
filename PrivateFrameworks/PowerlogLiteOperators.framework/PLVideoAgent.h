@@ -3,7 +3,7 @@
  */
 
 @interface PLVideoAgent : PLAgent {
-    PLXPCListenerOperatorComposition *_notification;
+    PLXPCListenerOperatorComposition * _notification;
 }
 
 @property (retain) PLXPCListenerOperatorComposition *notification;

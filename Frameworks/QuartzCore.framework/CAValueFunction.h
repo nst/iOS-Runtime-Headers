@@ -3,8 +3,8 @@
  */
 
 @interface CAValueFunction : NSObject <NSCoding> {
-    void *_impl;
-    NSString *_string;
+    void * _impl;
+    NSString * _string;
 }
 
 @property (readonly) NSString *name;

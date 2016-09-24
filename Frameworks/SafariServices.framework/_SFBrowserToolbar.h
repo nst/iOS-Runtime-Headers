@@ -3,12 +3,12 @@
  */
 
 @interface _SFBrowserToolbar : _SFToolbar {
-    UIBarButtonItem *_actionItem;
-    UIBarButtonItem *_backItem;
-    <_SFBrowserToolbarDelegate> *_browserDelegate;
-    <_SFBrowserToolbarDataSource> *_dataSource;
-    UIBarButtonItem *_forwardItem;
-    UIBarButtonItem *_openInSafariItem;
+    UIBarButtonItem * _actionItem;
+    UIBarButtonItem * _backItem;
+    <_SFBrowserToolbarDelegate> * _browserDelegate;
+    <_SFBrowserToolbarDataSource> * _dataSource;
+    UIBarButtonItem * _forwardItem;
+    UIBarButtonItem * _openInSafariItem;
 }
 
 @property (nonatomic, readonly) UIBarButtonItem *actionItem;
@@ -20,7 +20,6 @@
 - (id)_toolbarItems;
 - (void)actionButtonPressed;
 - (id)actionItem;
-- (void)addBookmarkButtonPressed;
 - (void)backButtonPressed;
 - (id)browserDelegate;
 - (id)dataSource;
@@ -28,7 +27,7 @@
 - (BOOL)isMinibar;
 - (void)layoutSubviews;
 - (void)openInSafariButtonPressed;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })popoverPresentationRectForButtonItem:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })popoverPresentationRectForButtonItem:(id)arg1;
 - (void)setBrowserDelegate:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)updateButtonStates;

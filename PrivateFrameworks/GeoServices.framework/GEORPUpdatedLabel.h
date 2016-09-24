@@ -3,8 +3,8 @@
  */
 
 @interface GEORPUpdatedLabel : PBCodable <NSCopying> {
-    GEOLatLng *_center;
-    NSString *_localizedText;
+    GEOLatLng * _center;
+    NSString * _localizedText;
 }
 
 @property (nonatomic, retain) GEOLatLng *center;

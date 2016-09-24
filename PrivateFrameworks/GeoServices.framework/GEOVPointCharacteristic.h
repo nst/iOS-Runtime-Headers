@@ -3,9 +3,9 @@
  */
 
 @interface GEOVPointCharacteristic : PBCodable <NSCopying> {
-    BOOL _brunnelEntry;
-    BOOL _castShadow;
-    BOOL _cropped;
+    BOOL  _brunnelEntry;
+    BOOL  _castShadow;
+    BOOL  _cropped;
     struct { 
         unsigned int roadLaneCount : 1; 
         unsigned int roadOffset : 1; 
@@ -16,14 +16,14 @@
         unsigned int castShadow : 1; 
         unsigned int cropped : 1; 
         unsigned int shouldDrawLanes : 1; 
-    } _has;
-    GEOVLaneCharacteristic *_laneCharacteristic;
-    int _roadLaneCount;
-    int _roadOffset;
-    int _sectionIndex;
-    BOOL _shouldDrawLanes;
-    int _vertexIndex;
-    int _zLevel;
+    }  _has;
+    GEOVLaneCharacteristic * _laneCharacteristic;
+    int  _roadLaneCount;
+    int  _roadOffset;
+    int  _sectionIndex;
+    BOOL  _shouldDrawLanes;
+    int  _vertexIndex;
+    int  _zLevel;
 }
 
 @property (nonatomic) BOOL brunnelEntry;

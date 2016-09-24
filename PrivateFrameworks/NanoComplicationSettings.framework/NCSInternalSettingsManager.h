@@ -3,11 +3,11 @@
  */
 
 @interface NCSInternalSettingsManager : NSObject {
-    NSMutableArray *_complicationDefinitions;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSString *_selectedComplicationIdentifier;
-    NSArray *_storedSettings;
-    NPSManager *_syncManager;
+    NSMutableArray * _complicationDefinitions;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSString * _selectedComplicationIdentifier;
+    NSArray * _storedSettings;
+    NPSManager * _syncManager;
 }
 
 @property (nonatomic, readonly) BOOL hasSettings;

@@ -3,20 +3,20 @@
  */
 
 @interface TSMTraceBuffer : NSObject {
-    BOOL mActive;
-    long mBufferID;
-    long mBufferSize;
-    TSMTraceController *mController;
-    long mCurrentIndex;
-    struct __CFData { } *mData;
-    NSFileHandle *mFileHandle;
-    unsigned long mFilters;
+    BOOL  mActive;
+    long  mBufferID;
+    long  mBufferSize;
+    TSMTraceController * mController;
+    long  mCurrentIndex;
+    struct __CFData { } * mData;
+    NSFileHandle * mFileHandle;
+    unsigned long  mFilters;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } mLock;
-    BOOL mSynchronizedAccess;
-    NSString *mTag;
+    }  mLock;
+    BOOL  mSynchronizedAccess;
+    NSString * mTag;
 }
 
 @property (nonatomic, readonly) BOOL active;

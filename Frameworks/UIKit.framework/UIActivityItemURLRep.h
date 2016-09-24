@@ -3,9 +3,9 @@
  */
 
 @interface UIActivityItemURLRep : NSObject {
-    NSURL *_URL;
-    int _attachmentURLType;
-    UIImage *_thumbnail;
+    NSURL * _URL;
+    int  _attachmentURLType;
+    UIImage * _thumbnail;
 }
 
 @property (nonatomic, retain) NSURL *URL;

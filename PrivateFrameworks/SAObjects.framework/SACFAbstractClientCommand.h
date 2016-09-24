@@ -5,8 +5,10 @@
 @interface SACFAbstractClientCommand : SADomainCommand
 
 @property (nonatomic, copy) NSString *domain;
+@property (nonatomic, copy) NSArray *jsLibraries;
 @property (nonatomic, copy) NSString *jsParameters;
 @property (nonatomic, copy) NSString *jsScript;
+@property (nonatomic) BOOL shouldCacheScript;
 
 + (id)abstractClientCommand;
 + (id)abstractClientCommandWithDictionary:(id)arg1 context:(id)arg2;
@@ -14,11 +16,15 @@
 - (id)domain;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (id)jsLibraries;
 - (id)jsParameters;
 - (id)jsScript;
 - (BOOL)requiresResponse;
 - (void)setDomain:(id)arg1;
+- (void)setJsLibraries:(id)arg1;
 - (void)setJsParameters:(id)arg1;
 - (void)setJsScript:(id)arg1;
+- (void)setShouldCacheScript:(BOOL)arg1;
+- (BOOL)shouldCacheScript;
 
 @end

@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDGLShaderQualifierFloat : TSDGLShaderQualifier {
-    float _GLfloatValue;
-    float _proposedGLfloatValue;
+@interface TSDGLShaderQualifierdouble : TSDGLShaderQualifier {
+    double  _GLfloatValue;
+    double  _proposedGLfloatValue;
 }
 
-@property (nonatomic, readonly) float GLfloatValue;
-@property (nonatomic) float proposedGLfloatValue;
+@property (nonatomic, readonly) double GLfloatValue;
+@property (nonatomic) double proposedGLfloatValue;
 
 - (float)GLfloatValue;
 - (id)description;

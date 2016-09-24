@@ -3,8 +3,8 @@
  */
 
 @interface MPTiledArtworkRepresentationToken : NSObject {
-    <NSCopying> *_revisionIdentifier;
-    NSArray *_tileArtworkVisualIdenticalityIdentifiers;
+    <NSCopying> * _revisionIdentifier;
+    NSArray * _tileArtworkVisualIdenticalityIdentifiers;
 }
 
 @property (nonatomic, copy) <NSCopying> *revisionIdentifier;

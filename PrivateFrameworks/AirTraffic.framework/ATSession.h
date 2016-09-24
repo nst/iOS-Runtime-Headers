@@ -3,27 +3,27 @@
  */
 
 @interface ATSession : NSObject <ATSessionConnection, NSSecureCoding> {
-    BOOL _cancelled;
-    NSXPCConnection *_connection;
-    NSString *_dataClass;
-    NSXPCListenerEndpoint *_endpoint;
-    NSError *_error;
-    double _finishTime;
-    BOOL _finished;
-    NSObject<OS_dispatch_group> *_group;
-    NSString *_localizedDescription;
-    <ATMessageLink> *_messageLink;
-    NSHashTable *_observers;
-    NSMutableSet *_observing;
-    double _progress;
-    NSObject<OS_dispatch_queue> *_queue;
-    BOOL _running;
-    NSString *_sessionIdentifier;
-    NSMutableArray *_sessionTasks;
-    NSMutableDictionary *_sessionTasksByIdentifier;
-    NSString *_sessionTypeIdentifier;
-    double _startTime;
-    BOOL _suspended;
+    BOOL  _cancelled;
+    NSXPCConnection * _connection;
+    NSString * _dataClass;
+    NSXPCListenerEndpoint * _endpoint;
+    NSError * _error;
+    double  _finishTime;
+    BOOL  _finished;
+    NSObject<OS_dispatch_group> * _group;
+    NSString * _localizedDescription;
+    <ATMessageLink> * _messageLink;
+    NSHashTable * _observers;
+    NSMutableSet * _observing;
+    double  _progress;
+    NSObject<OS_dispatch_queue> * _queue;
+    BOOL  _running;
+    NSString * _sessionIdentifier;
+    NSMutableArray * _sessionTasks;
+    NSMutableDictionary * _sessionTasksByIdentifier;
+    NSString * _sessionTypeIdentifier;
+    double  _startTime;
+    BOOL  _suspended;
 }
 
 @property (getter=isCancelled) BOOL cancelled;

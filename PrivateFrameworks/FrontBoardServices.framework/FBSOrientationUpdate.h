@@ -3,9 +3,9 @@
  */
 
 @interface FBSOrientationUpdate : NSObject {
-    double _duration;
-    int _orientation;
-    int _rotationDirection;
+    double  _duration;
+    int  _orientation;
+    int  _rotationDirection;
 }
 
 @property (nonatomic) double duration;

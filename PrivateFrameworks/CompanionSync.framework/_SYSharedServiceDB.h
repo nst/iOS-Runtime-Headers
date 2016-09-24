@@ -3,12 +3,12 @@
  */
 
 @interface _SYSharedServiceDB : NSObject {
-    struct sqlite3 { } *_db;
-    struct os_lock_handoff_s { 
-        struct _os_lock_type_handoff_s {} *osl_type; 
-        unsigned long _osl_handoff_opaque[1]; 
-    } _lock;
-    NSString *_name;
+    struct sqlite3 { } * _db;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
+    NSString * _name;
+    struct NSMutableDictionary { Class x1; } * _schemaSetupCallbacks;
 }
 
 @property (getter=_dbPath, nonatomic, readonly) NSString *dbPath;
@@ -19,13 +19,14 @@
 + (id)sharedInstanceForServiceName:(id)arg1;
 
 - (void).cxx_destruct;
+- (BOOL)_LOCKED_createOrOpenDBForServiceName:(id)arg1 error:(id*)arg2;
+- (BOOL)_LOCKED_ensureDBExists;
 - (void)_LOCKED_ensureSchemaVersionsTableInDB:(struct sqlite3 { }*)arg1;
 - (int)_LOCKED_getClientVersion:(id)arg1;
 - (BOOL)_LOCKED_hasSchemaVersionForClient:(id)arg1;
+- (void)_LOCKED_runSchemaUpdate:(id /* block */)arg1 forClientNamed:(id)arg2;
 - (void)_LOCKED_setVersion:(int)arg1 forClient:(id)arg2;
-- (BOOL)_createOrOpenDBForServiceName:(id)arg1 error:(id*)arg2;
 - (id)_dbPath;
-- (BOOL)_ensureDBExists;
 - (BOOL)_ensureParentExists:(id)arg1 error:(id*)arg2;
 - (void)_ensureSchemaVersionsTable;
 - (BOOL)_runTransactionBlock:(id /* block */)arg1 exclusive:(BOOL)arg2;

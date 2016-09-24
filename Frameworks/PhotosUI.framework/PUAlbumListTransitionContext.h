@@ -3,12 +3,12 @@
  */
 
 @interface PUAlbumListTransitionContext : NSObject {
-    <PLAssetContainer> *_collection;
-    NSIndexPath *_keyItemIndexPath;
-    PHCollection *_phCollection;
-    PUPhotoDecoration *_photoDecoration;
-    UICollectionViewTransitionLayout *_transitionLayout;
-    BOOL _usesContentOffsetAutoAdjust;
+    <PLAssetContainer> * _collection;
+    NSIndexPath * _keyItemIndexPath;
+    PHCollection * _phCollection;
+    PUPhotoDecoration * _photoDecoration;
+    UICollectionViewTransitionLayout * _transitionLayout;
+    BOOL  _usesContentOffsetAutoAdjust;
 }
 
 @property (nonatomic, retain) <PLAssetContainer> *collection;

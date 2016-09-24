@@ -3,17 +3,17 @@
  */
 
 @interface TSUZipArchive : NSObject {
-    NSMutableSet *_entries;
-    NSMutableDictionary *_entriesMap;
-    unsigned int _options;
+    NSMutableSet * _entries;
+    NSMutableDictionary * _entriesMap;
+    unsigned int  _options;
 }
 
-@property (nonatomic, readonly) unsigned long long archiveLength;
+@property (nonatomic, readonly) unsigned int archiveLength;
 @property (nonatomic, readonly) BOOL isValid;
 
 - (void).cxx_destruct;
 - (void)addEntry:(id)arg1;
-- (unsigned long long)archiveLength;
+- (unsigned int)archiveLength;
 - (void)collapseCommonRootDirectory;
 - (id)containedZipArchiveForEntry:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
 - (id)debugDescription;
@@ -23,23 +23,24 @@
 - (id)initWithOptions:(unsigned int)arg1;
 - (BOOL)isValid;
 - (id)newArchiveReadChannel;
+- (id)normalizeEntryName:(id)arg1;
 - (void)readArchiveWithQueue:(id)arg1 completion:(id /* block */)arg2;
 - (void)readCentralDirectoryData:(id)arg1 entryCount:(unsigned int)arg2 completion:(id /* block */)arg3;
-- (void)readCentralDirectoryWithEntryCount:(unsigned int)arg1 offset:(long long)arg2 size:(unsigned long)arg3 channel:(id)arg4 completion:(id /* block */)arg5;
+- (void)readCentralDirectoryWithEntryCount:(unsigned int)arg1 offset:(int)arg2 size:(unsigned long)arg3 channel:(id)arg4 completion:(id /* block */)arg5;
 - (BOOL)readCentralFileHeaderWithBuffer:(const void**)arg1 dataSize:(unsigned int*)arg2 error:(id*)arg3;
 - (id)readChannelForEntry:(id)arg1;
 - (id)readChannelForEntry:(id)arg1 validateCRC:(BOOL)arg2;
-- (void)readEndOfCentralDirectoryData:(id)arg1 eocdOffset:(long long)arg2 channel:(id)arg3 completion:(id /* block */)arg4;
+- (void)readEndOfCentralDirectoryData:(id)arg1 eocdOffset:(int)arg2 channel:(id)arg3 completion:(id /* block */)arg4;
 - (BOOL)readExtraFieldsFromBuffer:(const void**)arg1 extraFieldsLength:(unsigned short)arg2 entry:(id)arg3 dataSize:(unsigned int*)arg4 error:(id*)arg5;
 - (BOOL)readFileCommentFromBuffer:(const void**)arg1 fileCommentLength:(unsigned short)arg2 entry:(id)arg3 dataSize:(unsigned int*)arg4 error:(id*)arg5;
 - (BOOL)readFilenameFromBuffer:(const void**)arg1 nameLength:(unsigned short)arg2 entry:(id)arg3 dataSize:(unsigned int*)arg4 error:(id*)arg5;
-- (void)readLocalFileHeaderData:(id)arg1 atOffset:(long long)arg2 channel:(id)arg3 completion:(id /* block */)arg4;
-- (void)readLocalFileHeaderEntriesFromChannel:(id)arg1 offset:(long long)arg2 completion:(id /* block */)arg3;
+- (void)readLocalFileHeaderData:(id)arg1 atOffset:(int)arg2 channel:(id)arg3 completion:(id /* block */)arg4;
+- (void)readLocalFileHeaderEntriesFromChannel:(id)arg1 offset:(int)arg2 completion:(id /* block */)arg3;
 - (BOOL)readLocalFileHeaderFilenameAndExtraFieldsData:(id)arg1 forEntry:(id)arg2 error:(id*)arg3;
 - (void)readZip64EndOfCentralDirectoryData:(id)arg1 channel:(id)arg2 completion:(id /* block */)arg3;
 - (void)readZip64EndOfCentralDirectoryLocatorData:(id)arg1 channel:(id)arg2 completion:(id /* block */)arg3;
-- (void)readZip64EndOfCentralDirectoryLocatorWithChannel:(id)arg1 eocdOffset:(long long)arg2 completion:(id /* block */)arg3;
-- (void)readZip64EndOfCentralDirectoryWithChannel:(id)arg1 offset:(long long)arg2 completion:(id /* block */)arg3;
+- (void)readZip64EndOfCentralDirectoryLocatorWithChannel:(id)arg1 eocdOffset:(int)arg2 completion:(id /* block */)arg3;
+- (void)readZip64EndOfCentralDirectoryWithChannel:(id)arg1 offset:(int)arg2 completion:(id /* block */)arg3;
 - (BOOL)readZip64ExtraFieldFromBuffer:(const void*)arg1 dataLength:(unsigned short)arg2 entry:(id)arg3 error:(id*)arg4;
 - (id)streamReadChannelForEntry:(id)arg1;
 - (id)streamReadChannelForEntry:(id)arg1 validateCRC:(BOOL)arg2;

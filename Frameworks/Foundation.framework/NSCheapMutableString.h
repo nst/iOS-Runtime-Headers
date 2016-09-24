@@ -3,17 +3,17 @@
  */
 
 @interface NSCheapMutableString : NSMutableString {
-    void *_reserved;
+    void * _reserved;
     union { 
         unsigned short *fat; 
         char *thin; 
-    } contents;
+    }  contents;
     struct { 
         unsigned int isFat : 1; 
         unsigned int freeWhenDone : 1; 
         unsigned int refs : 30; 
-    } flags;
-    unsigned int numCharacters;
+    }  flags;
+    unsigned int  numCharacters;
 }
 
 - (const char *)cString;
@@ -21,7 +21,6 @@
 - (unsigned short)characterAtIndex:(unsigned int)arg1;
 - (void)dealloc;
 - (unsigned int)fastestEncoding;
-- (void)finalize;
 - (BOOL)getBytes:(void*)arg1 maxLength:(unsigned int)arg2 usedLength:(unsigned int*)arg3 encoding:(unsigned int)arg4 options:(unsigned int)arg5 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg6 remainingRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg7;
 - (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (unsigned int)length;

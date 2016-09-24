@@ -3,9 +3,9 @@
  */
 
 @interface SSSoftwareUpdatesContext : NSObject <NSCopying, NSMutableCopying, SSXPCCoding> {
-    NSString *_clientIdentifierHeader;
-    BOOL _forced;
-    NSArray *_softwareTypes;
+    NSString * _clientIdentifierHeader;
+    BOOL  _forced;
+    NSArray * _softwareTypes;
 }
 
 @property (nonatomic, readonly, copy) NSString *clientIdentifierHeader;

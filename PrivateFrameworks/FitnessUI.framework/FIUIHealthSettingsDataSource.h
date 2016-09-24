@@ -3,16 +3,19 @@
  */
 
 @interface FIUIHealthSettingsDataSource : NSObject <UITableViewDataSource> {
-    FIUIHealthSettingsTableViewCell *_biologicalSexCell;
-    FIUIHealthSettingsTableViewCell *_birthDateCell;
-    FIUIHealthSettingsBirthDatePickerController *_birthDatePickerController;
-    FIUIHealthSettingsTableViewCell *_heightCell;
-    FIUIHealthSettingsHeightPickerController *_heightPickerController;
-    FIUIActivitySettingsController *_preEditSettingsController;
-    FIUIActivitySettingsController *_settingsController;
-    FIUIHealthSettingsSexPickerController *_sexPickerController;
-    FIUIHealthSettingsTableViewCell *_weightCell;
-    FIUIHealthSettingsWeightPickerController *_weightPickerController;
+    FIUIHealthSettingsTableViewCell * _biologicalSexCell;
+    FIUIHealthSettingsTableViewCell * _birthDateCell;
+    FIUIHealthSettingsBirthDatePickerController * _birthDatePickerController;
+    FIUIHealthSettingsTableViewCell * _heightCell;
+    FIUIHealthSettingsHeightPickerController * _heightPickerController;
+    FIUIActivitySettingsController * _preEditSettingsController;
+    FIUIActivitySettingsController * _settingsController;
+    FIUIHealthSettingsSexPickerController * _sexPickerController;
+    BOOL  _showWheelchair;
+    FIUIHealthSettingsTableViewCell * _weightCell;
+    FIUIHealthSettingsWeightPickerController * _weightPickerController;
+    FIUIHealthSettingsTableViewCell * _wheelchairUseCell;
+    FIUIHealthSettingsWheelchairUsePickerController * _wheelchairUsePickerController;
 }
 
 @property (nonatomic, retain) FIUIHealthSettingsBirthDatePickerController *birthDatePickerController;
@@ -25,6 +28,7 @@
 @property (nonatomic, retain) FIUIHealthSettingsSexPickerController *sexPickerController;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) FIUIHealthSettingsWeightPickerController *weightPickerController;
+@property (nonatomic, retain) FIUIHealthSettingsWheelchairUsePickerController *wheelchairUsePickerController;
 
 - (void).cxx_destruct;
 - (void)_updateBiologicalSexCell;
@@ -32,6 +36,7 @@
 - (void)_updateCells;
 - (void)_updateHeightCell;
 - (void)_updateWeightCell;
+- (void)_updateWheelchairUseCell;
 - (id)biologicalSexCell;
 - (id)birthDateCell;
 - (id)birthDatePickerController;
@@ -41,12 +46,13 @@
 - (void)endEditingAndDiscardChanges:(BOOL)arg1;
 - (id)heightCell;
 - (id)heightPickerController;
-- (id)initWithActivitySettingsController:(id)arg1;
+- (id)initWithActivitySettingsController:(id)arg1 showWheelchair:(BOOL)arg2;
 - (void)setBirthDatePickerController:(id)arg1;
 - (void)setHeightPickerController:(id)arg1;
 - (void)setSettingsController:(id)arg1;
 - (void)setSexPickerController:(id)arg1;
 - (void)setWeightPickerController:(id)arg1;
+- (void)setWheelchairUsePickerController:(id)arg1;
 - (id)settingsController;
 - (id)sexPickerController;
 - (void)startEditing;
@@ -54,5 +60,7 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)weightCell;
 - (id)weightPickerController;
+- (id)wheelchairUseCell;
+- (id)wheelchairUsePickerController;
 
 @end

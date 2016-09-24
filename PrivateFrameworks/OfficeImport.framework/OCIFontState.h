@@ -3,7 +3,7 @@
  */
 
 @interface OCIFontState : NSObject {
-    NSMutableDictionary *_replacedFontMap;
+    NSMutableDictionary * _replacedFontMap;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *replacedFontMap;

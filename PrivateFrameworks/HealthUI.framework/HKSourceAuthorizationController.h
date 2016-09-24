@@ -3,19 +3,21 @@
  */
 
 @interface HKSourceAuthorizationController : NSObject {
-    HKHealthStore *_healthStore;
-    NSArray *_orderedTypesForReading;
-    NSArray *_orderedTypesForSharing;
-    NSSet *_requestedTypesForReading;
-    NSSet *_requestedTypesForSharing;
-    HKSource *_source;
-    NSMutableSet *_typesEnabledForReading;
-    NSMutableSet *_typesEnabledForSharing;
+    HKHealthStore * _healthStore;
+    NSArray * _orderedTypesForReading;
+    NSArray * _orderedTypesForSharing;
+    NSDictionary * _requestedDocumentAuths;
+    NSSet * _requestedTypesForReading;
+    NSSet * _requestedTypesForSharing;
+    HKSource * _source;
+    NSMutableSet * _typesEnabledForReading;
+    NSMutableSet * _typesEnabledForSharing;
 }
 
 @property (nonatomic, readonly) HKHealthStore *healthStore;
 @property (nonatomic, retain) NSArray *orderedTypesForReading;
 @property (nonatomic, retain) NSArray *orderedTypesForSharing;
+@property (nonatomic, retain) NSDictionary *requestedDocumentAuths;
 @property (nonatomic, retain) NSSet *requestedTypesForReading;
 @property (nonatomic, retain) NSSet *requestedTypesForSharing;
 @property (nonatomic, readonly) HKSource *source;
@@ -25,25 +27,32 @@
 - (void).cxx_destruct;
 - (int)_authorizationStatusWithType:(id)arg1;
 - (id)_enabledTypesInSection:(int)arg1;
-- (void)_reload;
+- (void)_reloadDocumentAuthorizationRecords;
+- (void)_reloadTypeAuthorizationRecords;
 - (void)_setAuthorizationStatuses:(id)arg1;
 - (void)_updateAuthorizationStatusWithTypes:(id)arg1;
 - (BOOL)allTypesEnabled;
 - (BOOL)anyTypeEnabled;
 - (void)commitAuthorizationStatuses;
+- (void)commitObjectAuthorizationStatuses:(id)arg1;
 - (unsigned int)countOfTypesInSection:(int)arg1;
 - (id)healthStore;
 - (id)initWithHealthStore:(id)arg1 source:(id)arg2 typesForSharing:(id)arg3 typesForReading:(id)arg4;
+- (BOOL)isRequestingDocumentAuthorization;
 - (BOOL)isTypeEnabled:(id)arg1 inSection:(int)arg2;
+- (id)objectAuthorizationStatusesForDocuments;
 - (id)orderedTypesForReading;
 - (id)orderedTypesForSharing;
 - (void)reload;
+- (id)requestedDocumentAuths;
 - (id)requestedTypesForReading;
 - (id)requestedTypesForSharing;
+- (void)resetObjectAuthorizationStatuses;
 - (void)setEnabled:(BOOL)arg1 forAllTypesInSection:(int)arg2 commit:(BOOL)arg3;
 - (void)setEnabled:(BOOL)arg1 forType:(id)arg2 inSection:(int)arg3 commit:(BOOL)arg4;
 - (void)setOrderedTypesForReading:(id)arg1;
 - (void)setOrderedTypesForSharing:(id)arg1;
+- (void)setRequestedDocumentAuths:(id)arg1;
 - (void)setRequestedTypesForReading:(id)arg1;
 - (void)setRequestedTypesForSharing:(id)arg1;
 - (void)setTypesEnabledForReading:(id)arg1;

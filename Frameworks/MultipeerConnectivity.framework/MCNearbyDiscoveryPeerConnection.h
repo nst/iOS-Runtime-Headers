@@ -3,24 +3,24 @@
  */
 
 @interface MCNearbyDiscoveryPeerConnection : NSObject <NSStreamDelegate> {
-    BOOL _connected;
-    id /* block */ _connectedHandler;
-    unsigned int _currentSequenceNumber;
-    NSMutableData *_dataReceived;
-    NSMutableData *_dataToSend;
-    NSMutableData *_dataToSendHoldingQueue;
-    NSInputStream *_inputStream;
-    NSString *_localServiceName;
-    NSMutableArray *_messageReceiptHandlerHoldingQueue;
-    NSMutableArray *_messageReceiptHandlerList;
-    NSOutputStream *_outputStream;
-    BOOL _readyToWrite;
-    id /* block */ _receiveDataHandler;
-    NSMutableArray *_receivedDataHoldingQueue;
-    NSString *_remoteServiceName;
-    BOOL _shouldSendHello;
-    NSObject<OS_dispatch_queue> *_syncQueue;
-    NSObject<OS_dispatch_queue> *_targetQueue;
+    BOOL  _connected;
+    id /* block */  _connectedHandler;
+    unsigned int  _currentSequenceNumber;
+    NSMutableData * _dataReceived;
+    NSMutableData * _dataToSend;
+    NSMutableData * _dataToSendHoldingQueue;
+    NSInputStream * _inputStream;
+    NSString * _localServiceName;
+    NSMutableArray * _messageReceiptHandlerHoldingQueue;
+    NSMutableArray * _messageReceiptHandlerList;
+    NSOutputStream * _outputStream;
+    BOOL  _readyToWrite;
+    id /* block */  _receiveDataHandler;
+    NSMutableArray * _receivedDataHoldingQueue;
+    NSString * _remoteServiceName;
+    BOOL  _shouldSendHello;
+    NSObject<OS_dispatch_queue> * _syncQueue;
+    NSObject<OS_dispatch_queue> * _targetQueue;
 }
 
 @property (nonatomic, copy) id /* block */ connectedHandler;
@@ -35,10 +35,6 @@
 @property (readonly) Class superclass;
 @property (nonatomic) NSObject<OS_dispatch_queue> *syncQueue;
 @property (nonatomic) NSObject<OS_dispatch_queue> *targetQueue;
-
-+ (void)checkConstants;
-+ (unsigned int)receiveDataLimit;
-+ (unsigned int)sendDataLimit;
 
 - (void)attachInputStream:(id)arg1 outputStream:(id)arg2;
 - (void)connectToNetService:(id)arg1;
@@ -62,6 +58,7 @@
 - (void)setTargetQueue:(id)arg1;
 - (void)setupInputStream:(id)arg1 outputStream:(id)arg2;
 - (BOOL)shouldDecideAboutConnection;
+- (int)socketForStream:(id)arg1;
 - (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
 - (id)stringForStreamEventCode:(unsigned int)arg1;
 - (void)syncAcceptedConnection;
@@ -69,6 +66,7 @@
 - (void)syncCloseConnectionNow;
 - (void)syncHandleInputStreamEvent:(unsigned int)arg1;
 - (void)syncHandleOutputStreamEvent:(unsigned int)arg1;
+- (void)syncHandleStreamEventOpenCompleted:(id)arg1;
 - (void)syncProcessMessage:(int)arg1 data:(id)arg2 sequenceNumber:(unsigned int)arg3;
 - (id)syncQueue;
 - (void)syncReadFromInputStream;

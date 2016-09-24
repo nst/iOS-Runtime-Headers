@@ -3,19 +3,23 @@
  */
 
 @interface CKRecordingElapsedTimeView : UIView {
-    UIView *__recordingDotView;
-    NSDate *__startTime;
-    UILabel *__timeLabel;
-    NSTimer *__updateTimer;
+    NSDateComponentsFormatter * __durationFormatter;
+    UIView * __recordingDotView;
+    NSDate * __startTime;
+    UILabel * __timeLabel;
+    NSTimer * __updateTimer;
 }
 
-@property (nonatomic, readonly, retain) UIView *_recordingDotView;
-@property (nonatomic, readonly, retain) NSDate *_startTime;
-@property (nonatomic, readonly, retain) UILabel *_timeLabel;
-@property (nonatomic, readonly, retain) NSTimer *_updateTimer;
+@property (nonatomic, readonly) NSDateComponentsFormatter *_durationFormatter;
+@property (nonatomic, readonly) UIView *_recordingDotView;
+@property (nonatomic, readonly) NSDate *_startTime;
+@property (nonatomic, readonly) UILabel *_timeLabel;
+@property (nonatomic, readonly) NSTimer *_updateTimer;
 
+- (void).cxx_destruct;
 - (void)_beginRecordingAnimation;
 - (void)_commonCAMElapsedTimeViewInitialization;
+- (id)_durationFormatter;
 - (void)_endRecordingAnimation;
 - (id)_recordingDotView;
 - (id)_startTime;
@@ -25,10 +29,10 @@
 - (void)dealloc;
 - (void)endTimer;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)resetTimer;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)startTimer;
 
 @end

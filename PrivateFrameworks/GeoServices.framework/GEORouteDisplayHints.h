@@ -7,37 +7,74 @@
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _availablePrioritizations;
+    }  _availablePaymentTypes;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    }  _availablePrioritizations;
+    NSMutableArray * _availableTransitSurcharges;
     struct { 
         unsigned int showTransitSchedules : 1; 
-    } _has;
-    BOOL _showTransitSchedules;
+    }  _has;
+    BOOL  _showTransitSchedules;
+    GEORequestOptions * _transitSurchargeOptions;
 }
 
+@property (nonatomic, readonly) int*availablePaymentTypes;
+@property (nonatomic, readonly) unsigned int availablePaymentTypesCount;
 @property (nonatomic, readonly) int*availablePrioritizations;
 @property (nonatomic, readonly) unsigned int availablePrioritizationsCount;
+@property (nonatomic, retain) NSMutableArray *availableTransitSurcharges;
 @property (nonatomic) BOOL hasShowTransitSchedules;
+@property (nonatomic, readonly) BOOL hasTransitSurchargeOptions;
+@property (nonatomic, readonly) NSArray *prioritizationOptions;
 @property (nonatomic) BOOL showTransitSchedules;
+@property (nonatomic, readonly) <GEOSurchargeOption> *surchargeOptions;
+@property (nonatomic, retain) GEORequestOptions *transitSurchargeOptions;
 
++ (Class)availableTransitSurchargeType;
+
+- (int)StringAsAvailablePaymentTypes:(id)arg1;
+- (int)StringAsAvailablePrioritizations:(id)arg1;
+- (void)addAvailablePaymentType:(int)arg1;
 - (void)addAvailablePrioritization:(int)arg1;
+- (void)addAvailableTransitSurcharge:(id)arg1;
+- (int)availablePaymentTypeAtIndex:(unsigned int)arg1;
+- (int*)availablePaymentTypes;
+- (id)availablePaymentTypesAsString:(int)arg1;
+- (unsigned int)availablePaymentTypesCount;
 - (int)availablePrioritizationAtIndex:(unsigned int)arg1;
 - (int*)availablePrioritizations;
+- (id)availablePrioritizationsAsString:(int)arg1;
 - (unsigned int)availablePrioritizationsCount;
+- (id)availableTransitSurchargeAtIndex:(unsigned int)arg1;
+- (id)availableTransitSurcharges;
+- (unsigned int)availableTransitSurchargesCount;
+- (void)clearAvailablePaymentTypes;
 - (void)clearAvailablePrioritizations;
+- (void)clearAvailableTransitSurcharges;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasShowTransitSchedules;
+- (BOOL)hasTransitSurchargeOptions;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (id)prioritizationOptions;
 - (BOOL)readFrom:(id)arg1;
+- (void)setAvailablePaymentTypes:(int*)arg1 count:(unsigned int)arg2;
 - (void)setAvailablePrioritizations:(int*)arg1 count:(unsigned int)arg2;
+- (void)setAvailableTransitSurcharges:(id)arg1;
 - (void)setHasShowTransitSchedules:(BOOL)arg1;
 - (void)setShowTransitSchedules:(BOOL)arg1;
+- (void)setTransitSurchargeOptions:(id)arg1;
 - (BOOL)showTransitSchedules;
+- (id)surchargeOptions;
+- (id)transitSurchargeOptions;
 - (void)writeTo:(id)arg1;
 
 @end

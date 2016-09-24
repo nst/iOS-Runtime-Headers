@@ -3,14 +3,14 @@
  */
 
 @interface SFCompanionManager : NSObject <SFCompanionServiceManagerClient, SFCompanionXPCManagerObserver> {
-    NSString *_deviceID;
-    NSString *_deviceIP;
-    NSString *_deviceName;
-    NSString *_identifier;
-    <SFCompanionServiceManagerProtocol> *_managerProxy;
-    NSObject<OS_dispatch_semaphore> *_managerSemaphore;
-    NSMutableDictionary *_services;
-    NSMutableDictionary *_streamHandlers;
+    NSString * _deviceID;
+    NSString * _deviceIP;
+    NSString * _deviceName;
+    NSString * _identifier;
+    <SFCompanionServiceManagerProtocol> * _managerProxy;
+    NSObject<OS_dispatch_semaphore> * _managerSemaphore;
+    NSMutableDictionary * _services;
+    NSMutableDictionary * _streamHandlers;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -21,13 +21,14 @@
 @property (readonly) unsigned int hash;
 @property (copy) NSString *identifier;
 @property (retain) <SFCompanionServiceManagerProtocol> *managerProxy;
-@property NSObject<OS_dispatch_semaphore> *managerSemaphore;
+@property (retain) NSObject<OS_dispatch_semaphore> *managerSemaphore;
 @property (retain) NSMutableDictionary *services;
 @property (retain) NSMutableDictionary *streamHandlers;
 @property (readonly) Class superclass;
 
 + (id)serviceManager;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)deviceID;
 - (id)deviceIP;

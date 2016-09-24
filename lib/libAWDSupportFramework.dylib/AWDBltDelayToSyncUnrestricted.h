@@ -3,12 +3,12 @@
  */
 
 @interface AWDBltDelayToSyncUnrestricted : PBCodable <NSCopying> {
-    unsigned int _delayMs;
+    unsigned int  _delayMs;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int delayMs : 1; 
-    } _has;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int delayMs;

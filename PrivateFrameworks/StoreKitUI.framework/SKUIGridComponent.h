@@ -3,28 +3,28 @@
  */
 
 @interface SKUIGridComponent : SKUIPageComponent {
-    NSMutableArray *_children;
+    NSMutableArray * _children;
     struct SKUIEditorialStyle { 
         int alignment; 
         int bodyFontWeight; 
-        float bodyFontSize; 
-        float linkSpacing; 
+        double bodyFontSize; 
+        double linkSpacing; 
         int titleFontWeight; 
-        float titleFontSize; 
-        float titleSpacing; 
-    } _editorialStyle;
-    int _gridType;
+        double titleFontSize; 
+        double titleSpacing; 
+    }  _editorialStyle;
+    int  _gridType;
     struct SKUILockupStyle { 
         int artworkSize; 
         int layoutStyle; 
         unsigned int visibleFields; 
-    } _lockupStyle;
-    int _missingItemCount;
-    BOOL _showsIndexNumbers;
+    }  _lockupStyle;
+    int  _missingItemCount;
+    BOOL  _showsIndexNumbers;
 }
 
 @property (nonatomic, readonly) NSArray *children;
-@property (nonatomic, readonly) struct SKUIEditorialStyle { int x1; int x2; float x3; float x4; int x5; float x6; float x7; } editorialStyle;
+@property (nonatomic, readonly) struct SKUIEditorialStyle { int x1; int x2; double x3; double x4; int x5; double x6; double x7; } editorialStyle;
 @property (nonatomic, readonly) int gridType;
 @property (nonatomic, readonly) struct SKUILockupStyle { int x1; int x2; unsigned int x3; } lockupStyle;
 @property (nonatomic, readonly) BOOL showsIndexNumbers;
@@ -38,7 +38,7 @@
 - (id)children;
 - (int)componentType;
 - (id)description;
-- (struct SKUIEditorialStyle { int x1; int x2; float x3; float x4; int x5; float x6; float x7; })editorialStyle;
+- (struct SKUIEditorialStyle { int x1; int x2; double x3; double x4; int x5; double x6; double x7; })editorialStyle;
 - (void)enumerateMissingItemIdentifiersFromIndex:(int)arg1 usingBlock:(id /* block */)arg2;
 - (int)gridType;
 - (id)initWithBrickItems:(id)arg1;

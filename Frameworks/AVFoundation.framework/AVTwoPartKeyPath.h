@@ -3,8 +3,8 @@
  */
 
 @interface AVTwoPartKeyPath : NSObject <AVKeyPath, NSCopying> {
-    NSString *_secondLevelKey;
-    NSString *_topLevelKey;
+    NSString * _secondLevelKey;
+    NSString * _topLevelKey;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,7 +3,7 @@
  */
 
 @interface AAUIFamilySetupOrganizerViewController : AAUIConfirmIdentityViewController <AAUIFamilySetupPage> {
-    <AAUIFamilySetupPageDelegate> *_delegate;
+    <AAUIFamilySetupPageDelegate> * _delegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

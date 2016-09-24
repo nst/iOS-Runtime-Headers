@@ -3,7 +3,7 @@
  */
 
 @interface GKTabBarTransitionAnimator : NSObject <UIViewControllerAnimatorTransitioning> {
-    _GKBubbleFlowTransitionInfo *_transitionInfo;
+    _GKBubbleFlowTransitionInfo * _transitionInfo;
 }
 
 @property (readonly, copy) NSString *debugDescription;

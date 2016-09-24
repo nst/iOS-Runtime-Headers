@@ -3,14 +3,14 @@
  */
 
 @interface FTRegConnectionHandler : NSObject {
-    unsigned int _caps;
+    unsigned int  _caps;
     struct { 
         unsigned int listeningForNotifications : 1; 
-    } _handlerFlags;
-    NSString *_listenerID;
-    NSString *_logName;
-    NSString *_name;
-    int _serviceType;
+    }  _handlerFlags;
+    NSString * _listenerID;
+    NSString * _logName;
+    NSString * _name;
+    int  _serviceType;
 }
 
 @property (setter=_setListenerID:, nonatomic, copy) NSString *_listenerID;

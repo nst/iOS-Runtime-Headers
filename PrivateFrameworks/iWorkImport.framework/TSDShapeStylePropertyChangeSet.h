@@ -3,20 +3,20 @@
  */
 
 @interface TSDShapeStylePropertyChangeSet : TSSStylePropertyChangeSet {
-    BOOL _definedFill;
-    BOOL _definedHeadLineEnd;
-    BOOL _definedOpacity;
-    BOOL _definedReflection;
-    BOOL _definedShadow;
-    BOOL _definedStroke;
-    BOOL _definedTailLineEnd;
-    TSDSpecFill *_fill;
-    TSDSpecLineEnd *_headLineEnd;
-    TSSSpecDouble *_opacity;
-    TSDSpecReflection *_reflection;
-    TSDSpecShadow *_shadow;
-    TSDSpecStroke *_stroke;
-    TSDSpecLineEnd *_tailLineEnd;
+    BOOL  _definedFill;
+    BOOL  _definedHeadLineEnd;
+    BOOL  _definedOpacity;
+    BOOL  _definedReflection;
+    BOOL  _definedShadow;
+    BOOL  _definedStroke;
+    BOOL  _definedTailLineEnd;
+    TSDSpecFill * _fill;
+    TSDSpecLineEnd * _headLineEnd;
+    TSSSpecDouble * _opacity;
+    TSDSpecReflection * _reflection;
+    TSDSpecShadow * _shadow;
+    TSDSpecStroke * _stroke;
+    TSDSpecLineEnd * _tailLineEnd;
 }
 
 - (void)enumerateDefinedPropertiesWithBlock:(id /* block */)arg1;

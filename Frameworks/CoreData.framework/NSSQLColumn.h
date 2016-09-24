@@ -3,13 +3,13 @@
  */
 
 @interface NSSQLColumn : NSSQLProperty {
-    unsigned int _allowAliasing;
-    NSString *_columnName;
-    unsigned int _fetchIndex;
-    unsigned int _precision;
-    int _scale;
-    unsigned int _slot;
-    int _sqlType;
+    unsigned int  _allowAliasing;
+    NSString * _columnName;
+    unsigned int  _fetchIndex;
+    unsigned int  _precision;
+    int  _scale;
+    unsigned int  _slot;
+    int  _sqlType;
 }
 
 - (void)_setColumnName:(id)arg1;

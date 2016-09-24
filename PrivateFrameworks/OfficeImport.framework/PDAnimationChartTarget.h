@@ -3,13 +3,13 @@
  */
 
 @interface PDAnimationChartTarget : PDAnimationShapeTarget {
-    int mBuildStep;
-    int mCatagoryIndex;
-    int mChartSubElementType;
-    BOOL mHasBuildStep;
-    BOOL mHasCatagoryIndex;
-    BOOL mHasSeriesIndex;
-    int mSeriesIndex;
+    int  mBuildStep;
+    int  mCatagoryIndex;
+    int  mChartSubElementType;
+    BOOL  mHasBuildStep;
+    BOOL  mHasCatagoryIndex;
+    BOOL  mHasSeriesIndex;
+    int  mSeriesIndex;
 }
 
 - (int)buildStep;

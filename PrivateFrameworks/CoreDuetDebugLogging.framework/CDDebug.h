@@ -3,7 +3,7 @@
  */
 
 @interface CDDebug : NSObject {
-    BOOL verboseMode;
+    BOOL  verboseMode;
 }
 
 - (void)error:(int)arg1;

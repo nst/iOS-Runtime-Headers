@@ -3,10 +3,10 @@
  */
 
 @interface SSLogFileOptions : NSObject <NSCopying> {
-    NSString *_directoryPath;
-    NSString *_fileName;
-    int _maxNumberOfLogFiles;
-    unsigned long _maxSizeInBytes;
+    NSString * _directoryPath;
+    NSString * _fileName;
+    int  _maxNumberOfLogFiles;
+    unsigned long  _maxSizeInBytes;
 }
 
 @property (nonatomic, copy) NSString *logDirectoryPath;

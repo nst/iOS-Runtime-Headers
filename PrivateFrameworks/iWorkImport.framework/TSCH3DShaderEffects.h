@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DShaderEffects : NSObject {
-    NSArray *mCacheList;
-    NSMutableArray *mSections;
+    NSArray * mCacheList;
+    NSMutableArray * mSections;
 }
 
 @property (nonatomic, readonly) NSSet *identifier;

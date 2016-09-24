@@ -3,7 +3,7 @@
  */
 
 @interface PDAnimationSoundTarget : PDAnimationShapeTarget {
-    NSString *mSoundFile;
+    NSString * mSoundFile;
 }
 
 - (void)dealloc;

@@ -3,8 +3,8 @@
  */
 
 @interface CMPocketStateQueueBlockPair : NSObject {
-    id /* block */ fQueryBlock;
-    NSObject<OS_dispatch_queue> *fQueryQueue;
+    id /* block */  fQueryBlock;
+    NSObject<OS_dispatch_queue> * fQueryQueue;
 }
 
 - (void)dealloc;

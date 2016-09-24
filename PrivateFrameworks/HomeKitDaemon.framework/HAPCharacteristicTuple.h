@@ -3,9 +3,9 @@
  */
 
 @interface HAPCharacteristicTuple : NSObject {
-    HAPCharacteristic *_hapCharacteristic;
-    int _linkType;
-    NSString *_serverIdentifier;
+    HAPCharacteristic * _hapCharacteristic;
+    int  _linkType;
+    NSString * _serverIdentifier;
 }
 
 @property (nonatomic, retain) HAPCharacteristic *hapCharacteristic;

@@ -5,7 +5,6 @@
 @interface SBWorkspaceDefaults : SBAbstractSpringBoardDefaultDomain
 
 @property (nonatomic, readonly) BOOL alwaysBreadcrumb;
-@property (getter=isLegacyWorkspaceLoggingEnabled, nonatomic, readonly) BOOL legacyWorkspaceLoggingEnabled;
 @property (getter=isMedusaEnabled, nonatomic, readonly) BOOL medusaEnabled;
 @property (nonatomic, readonly) BOOL neverBreadcrumb;
 @property (nonatomic, retain) NSDictionary *sideAppState;

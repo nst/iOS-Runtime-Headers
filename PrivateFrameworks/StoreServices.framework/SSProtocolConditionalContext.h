@@ -3,9 +3,9 @@
  */
 
 @interface SSProtocolConditionalContext : NSObject <NSCopying> {
-    id /* block */ _itemLookupBlock;
-    NSString *_platformName;
-    NSString *_systemVersion;
+    id /* block */  _itemLookupBlock;
+    NSString * _platformName;
+    NSString * _systemVersion;
 }
 
 @property (nonatomic, copy) id /* block */ itemLookupBlock;

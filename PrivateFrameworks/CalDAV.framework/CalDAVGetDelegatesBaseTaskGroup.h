@@ -3,13 +3,13 @@
  */
 
 @interface CalDAVGetDelegatesBaseTaskGroup : CoreDAVTaskGroup <CoreDAVTaskDelegate, CoreDAVTaskGroupDelegate> {
-    CalDAVGetPrincipalEmailDetailsTaskGroup *_getPrincipalEmailDetailsTaskGroup;
-    NSURL *_principalURL;
-    NSMutableSet *_readDetails;
-    NSMutableArray *_readPrincipalURLs;
-    BOOL _serverSupportsExpandPropertyReport;
-    NSMutableSet *_writeDetails;
-    NSMutableArray *_writePrincipalURLs;
+    CalDAVGetPrincipalEmailDetailsTaskGroup * _getPrincipalEmailDetailsTaskGroup;
+    NSURL * _principalURL;
+    NSMutableSet * _readDetails;
+    NSMutableArray * _readPrincipalURLs;
+    BOOL  _serverSupportsExpandPropertyReport;
+    NSMutableSet * _writeDetails;
+    NSMutableArray * _writePrincipalURLs;
 }
 
 @property (readonly, copy) NSString *debugDescription;

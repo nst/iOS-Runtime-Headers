@@ -3,7 +3,7 @@
  */
 
 @interface TDAsset : NSManagedObject {
-    unsigned int _scaleFactor;
+    unsigned int  _scaleFactor;
 }
 
 @property (nonatomic, readonly) NSString *baseName;

@@ -3,11 +3,11 @@
  */
 
 @interface __NSConcreteURLComponents : NSURLComponents <NSCopying> {
-    NSString *_fragmentComponent;
-    unsigned int _fragmentComponentValid;
-    NSString *_hostComponent;
-    unsigned int _hostComponentValid;
-    int _lock;
+    NSString * _fragmentComponent;
+    unsigned int  _fragmentComponentValid;
+    NSString * _hostComponent;
+    unsigned int  _hostComponentValid;
+    int  _lock;
     struct _URIParseInfo { 
         unsigned int userinfoNameOffset; 
         unsigned int userinfoPasswordOffset; 
@@ -27,20 +27,20 @@
         unsigned int paramExists : 1; 
         unsigned int queryExists : 1; 
         unsigned int fragmentExists : 1; 
-    } _parseInfo;
-    NSString *_passwordComponent;
-    unsigned int _passwordComponentValid;
-    NSString *_pathComponent;
-    unsigned int _pathComponentValid;
-    NSNumber *_portComponent;
-    unsigned int _portComponentValid;
-    NSString *_queryComponent;
-    unsigned int _queryComponentValid;
-    NSString *_schemeComponent;
-    unsigned int _schemeComponentValid;
-    NSString *_urlString;
-    NSString *_userComponent;
-    unsigned int _userComponentValid;
+    }  _parseInfo;
+    NSString * _passwordComponent;
+    unsigned int  _passwordComponentValid;
+    NSString * _pathComponent;
+    unsigned int  _pathComponentValid;
+    NSNumber * _portComponent;
+    unsigned int  _portComponentValid;
+    NSString * _queryComponent;
+    unsigned int  _queryComponentValid;
+    NSString * _schemeComponent;
+    unsigned int  _schemeComponentValid;
+    NSString * _urlString;
+    NSString * _userComponent;
+    unsigned int  _userComponentValid;
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
@@ -50,9 +50,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)finalize;
 - (id)fragment;
-- (void)freeIvars;
 - (unsigned int)hash;
 - (id)host;
 - (id)init;

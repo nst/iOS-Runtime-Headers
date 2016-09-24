@@ -3,8 +3,8 @@
  */
 
 @interface SKUIComposeReviewViewController : SUNavigationController <SKUIComposeReviewFormDelegate, UIAlertViewDelegate> {
-    SKUIComposeReviewFormViewController *_formViewController;
-    SUPlaceholderViewController *_placeholderViewController;
+    SKUIComposeReviewFormViewController * _formViewController;
+    SUPlaceholderViewController * _placeholderViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

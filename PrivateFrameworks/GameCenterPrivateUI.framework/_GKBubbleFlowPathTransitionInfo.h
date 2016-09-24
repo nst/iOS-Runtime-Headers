@@ -3,50 +3,50 @@
  */
 
 @interface _GKBubbleFlowPathTransitionInfo : NSObject {
-    NSDictionary *_auxiliaryInfo;
+    NSDictionary * _auxiliaryInfo;
     union _GLKVector3 { 
         struct { 
-            float x; 
-            float y; 
-            float z; 
+            double x; 
+            double y; 
+            double z; 
         } ; 
         struct { 
-            float r; 
-            float g; 
-            float b; 
+            double r; 
+            double g; 
+            double b; 
         } ; 
         struct { 
-            float s; 
-            float t; 
-            float p; 
+            double s; 
+            double t; 
+            double p; 
         } ; 
-        float v[3]; 
-    } _bubbleEndPositionsByType;
+        double v[3]; 
+    }  _bubbleEndPositionsByType;
     union _GLKVector3 { 
         struct { 
-            float x; 
-            float y; 
-            float z; 
+            double x; 
+            double y; 
+            double z; 
         } ; 
         struct { 
-            float r; 
-            float g; 
-            float b; 
+            double r; 
+            double g; 
+            double b; 
         } ; 
         struct { 
-            float s; 
-            float t; 
-            float p; 
+            double s; 
+            double t; 
+            double p; 
         } ; 
-        float v[3]; 
-    } _bubbleStartPositionsByType;
-    GKBubbleSet *_bubbles;
-    BOOL _couldUseFallbackAnimator;
-    double _duration;
-    UIView *_effectiveView;
-    int _focusBubbleType;
-    int _newlyVisibleBubbles;
-    double _startTime;
+        double v[3]; 
+    }  _bubbleStartPositionsByType;
+    GKBubbleSet * _bubbles;
+    BOOL  _couldUseFallbackAnimator;
+    double  _duration;
+    UIView * _effectiveView;
+    int  _focusBubbleType;
+    int  _newlyVisibleBubbles;
+    double  _startTime;
 }
 
 @property (nonatomic, retain) NSDictionary *auxiliaryInfo;

@@ -3,11 +3,11 @@
  */
 
 @interface SKUIBrowseItemComponent : SKUIPageComponent {
-    SKUIImageViewElement *_decorationImage;
-    int _index;
-    BOOL _showTopBorder;
-    NSString *_subtitle;
-    NSString *_title;
+    SKUIImageViewElement * _decorationImage;
+    int  _index;
+    BOOL  _showTopBorder;
+    NSString * _subtitle;
+    NSString * _title;
 }
 
 @property (nonatomic, readonly) SKUIImageViewElement *decorationImage;

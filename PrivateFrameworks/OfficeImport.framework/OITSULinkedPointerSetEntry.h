@@ -3,9 +3,9 @@
  */
 
 @interface OITSULinkedPointerSetEntry : NSObject {
-    OITSULinkedPointerSetEntry *mNext;
-    id mObject;
-    OITSULinkedPointerSetEntry *mPrevious;
+    OITSULinkedPointerSetEntry * mNext;
+    id  mObject;
+    OITSULinkedPointerSetEntry * mPrevious;
 }
 
 - (void)dealloc;

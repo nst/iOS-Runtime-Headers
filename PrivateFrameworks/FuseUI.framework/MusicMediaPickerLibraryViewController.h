@@ -3,13 +3,13 @@
  */
 
 @interface MusicMediaPickerLibraryViewController : UITableViewController <MusicClientContextConsuming, MusicMediaPickerSearchDelegate> {
-    NSArray *_allLibraryCategoriesConfigurations;
-    MusicClientContext *_clientContext;
-    BOOL _invokedForPlaylistEditing;
-    BOOL _showsOnlyStoreItems;
-    MPMediaPredicate *_storeItemsMediaLibraryPredicate;
-    NSArray *_usedDataSources;
-    NSArray *_usedLibraryCategoriesConfigurations;
+    NSArray * _allLibraryCategoriesConfigurations;
+    MusicClientContext * _clientContext;
+    BOOL  _invokedForPlaylistEditing;
+    BOOL  _showsOnlyStoreItems;
+    MPMediaPredicate * _storeItemsMediaLibraryPredicate;
+    NSArray * _usedDataSources;
+    NSArray * _usedLibraryCategoriesConfigurations;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

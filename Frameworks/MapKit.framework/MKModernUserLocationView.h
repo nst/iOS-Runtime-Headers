@@ -3,21 +3,24 @@
  */
 
 @interface MKModernUserLocationView : MKUserLocationView {
-    CALayer *_baseDimmingLayer;
-    CALayer *_baseLayer;
-    CALayer *_innerCircleLayer;
-    struct UIImage { Class x1; } *_innerImageMask;
-    BOOL _isShowingStaleColor;
-    BOOL _rotateInnerImageToMatchCourse;
-    BOOL _shouldInnerPulse;
+    CALayer * _baseDimmingLayer;
+    CALayer * _baseLayer;
+    CALayer * _innerCircleLayer;
+    UIImage * _innerImageMask;
+    BOOL  _isShowingStaleColor;
+    BOOL  _rotateInnerImageToMatchCourse;
+    BOOL  _shouldInnerPulse;
+    BOOL  _shouldShowOuterRing;
 }
 
 @property (nonatomic, retain) UIImage *innerImageMask;
 @property (nonatomic) BOOL rotateInnerImageToMatchCourse;
 @property (nonatomic) BOOL shouldInnerPulse;
+@property (nonatomic) BOOL shouldShowOuterRing;
 
 + (float)baseDiameter;
 + (float)innerDiameter;
++ (float)outerRingWidth;
 
 - (void).cxx_destruct;
 - (struct CGColor { }*)_accuracyFillColor;
@@ -25,12 +28,13 @@
 - (id)_baseDimmingLayer;
 - (id)_baseLayer;
 - (void)_dealloc;
+- (struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })_innerCircleLayerDefaultTransform;
 - (id)_innerPulseAnimation;
 - (id)_layerToMatchAccuracyRing;
 - (id)_pulseAnimation;
 - (id)_pulseLayer;
 - (void)_resetLayerToMatchAccuracyRing;
-- (void)_setMapDisplayStyle:(struct { unsigned char x1; unsigned char x2; unsigned char x3; })arg1;
+- (void)_setMapDisplayStyle:(struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; BOOL x5; })arg1;
 - (void)_setMapRotationRadians:(float)arg1;
 - (void)_setMapType:(unsigned int)arg1;
 - (void)_setPresentationCourse:(double)arg1;
@@ -48,10 +52,12 @@
 - (id)innerImageMask;
 - (BOOL)rotateInnerImageToMatchCourse;
 - (void)setEffectsEnabled:(BOOL)arg1;
-- (void)setInnerImageMask:(struct UIImage { Class x1; }*)arg1;
+- (void)setInnerImageMask:(id)arg1;
 - (void)setRotateInnerImageToMatchCourse:(BOOL)arg1;
 - (void)setShouldInnerPulse:(BOOL)arg1;
+- (void)setShouldShowOuterRing:(BOOL)arg1;
 - (BOOL)shouldInnerPulse;
+- (BOOL)shouldShowOuterRing;
 - (void)tintColorDidChange;
 
 @end

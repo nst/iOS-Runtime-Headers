@@ -3,10 +3,10 @@
  */
 
 @interface MusicGeniusMixPlaybackContext : MusicQueryPlaybackContext <MusicGeniusMixQueueFeederDataSource> {
-    BOOL _finite;
-    NSMutableArray *_indexedSubQueries;
-    MPMediaPlaylist *_mixPlaylist;
-    MPMediaItem *_requiredInitialMediaItem;
+    BOOL  _finite;
+    NSMutableArray * _indexedSubQueries;
+    MPMediaPlaylist * _mixPlaylist;
+    MPMediaItem * _requiredInitialMediaItem;
 }
 
 @property (readonly, copy) NSString *debugDescription;

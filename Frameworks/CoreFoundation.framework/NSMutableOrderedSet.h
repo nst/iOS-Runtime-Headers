@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSMutableOrderedSet : NSOrderedSet
+@interface NSMutableOrderedSet : NSOrderedSet <FCOrderedMutableCollectionAdditions>
 
 // Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
 
@@ -64,7 +64,6 @@
 - (void)replaceObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withObjectsFromOrderedSet:(id)arg2;
 - (void)replaceObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withObjectsFromOrderedSet:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (void)replaceObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withObjectsFromSet:(id)arg2;
-- (void)rollObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 by:(int)arg2;
 - (void)setArray:(id)arg1;
 - (void)setObject:(id)arg1;
 - (void)setObject:(id)arg1 atIndex:(unsigned int)arg2;
@@ -81,6 +80,13 @@
 
 - (void)filterUsingPredicate:(id)arg1;
 - (void)sortUsingDescriptors:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
+- (void)fc_insertObjects:(id)arg1 atIndex:(unsigned int)arg2;
+- (id)fc_mergeSortedOrderedCollection:(id)arg1 usingComparator:(id /* block */)arg2;
+- (id)fc_removeAndReturnObjectsPassingTest:(id /* block */)arg1;
+- (void)fc_transformWithBlock:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
 

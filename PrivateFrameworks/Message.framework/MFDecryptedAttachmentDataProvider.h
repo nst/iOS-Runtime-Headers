@@ -3,7 +3,7 @@
  */
 
 @interface MFDecryptedAttachmentDataProvider : NSObject <MFAttachmentDataProviderProtocol> {
-    MFMailMessage *_message;
+    MFMailMessage * _message;
 }
 
 @property (readonly, copy) NSString *debugDescription;

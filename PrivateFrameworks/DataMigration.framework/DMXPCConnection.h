@@ -3,11 +3,11 @@
  */
 
 @interface DMXPCConnection : NSObject {
-    NSObject<OS_xpc_object> *_connection;
-    id /* block */ _interruptionHandler;
-    id /* block */ _invalidationHandler;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_queue> *_replyQueue;
+    NSObject<OS_xpc_object> * _connection;
+    id /* block */  _interruptionHandler;
+    id /* block */  _invalidationHandler;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_queue> * _replyQueue;
 }
 
 @property (nonatomic, readonly) NSObject<OS_xpc_object> *connection;

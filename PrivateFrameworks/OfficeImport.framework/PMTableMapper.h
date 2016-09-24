@@ -3,10 +3,10 @@
  */
 
 @interface PMTableMapper : CMMapper {
-    OADOrientedBounds *mBounds;
-    CMTableGridInfo *mGrid;
-    CMDrawableStyle *mStyle;
-    OADTable *mTable;
+    OADOrientedBounds * mBounds;
+    CMTableGridInfo * mGrid;
+    CMDrawableStyle * mStyle;
+    OADTable * mTable;
 }
 
 - (id)cellStyle;

@@ -3,11 +3,9 @@
  */
 
 @interface MTLIOAccelDevice : _MTLDevice {
-    unsigned int _accelID;
-    unsigned int _acceleratorPort;
-    MTLResourceListPool *_akPrivateResourceListPool;
-    MTLResourceListPool *_akResourceListPool;
-    struct MTLIOAccelHeap { 
+    unsigned int  _accelID;
+    unsigned int  _acceleratorPort;
+    struct MTLIOAccelBufferHeap { 
         MTLIOAccelBuffer *buffers[64]; 
         struct MTLRangeAllocator { 
             struct MTLRangeAllocatorElement {} *elements; 
@@ -17,27 +15,36 @@
             unsigned int defaultAlignmentMask; 
         } allocators[64]; 
         unsigned int count; 
-    } _bufferHeaps;
-    struct MTLIOAccelCommandBufferStoragePool { struct storageQueue { struct MTLIOAccelCommandBufferStorage {} *x_1_1_1; struct MTLIOAccelCommandBufferStorage {} **x_1_1_2; } x1; int x2; int x3; int x4; id x5; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; id x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; void*x29; void*x30; void*x31; void*x32; } *_commandBufferStoragePool;
-    unsigned int _configBits;
-    unsigned int _deviceBits;
-    struct __IOAccelDevice { } *_deviceRef;
-    NSObject<OS_dispatch_queue> *_device_dispatch_queue;
-    unsigned int _hwResourcePoolCount;
-    id *_hwResourcePools;
-    MTLIOAccelDeviceShmemPool *_kernelCommandShmemPool;
-    int _numCommandBuffers;
-    unsigned long long _segmentByteThreshold;
-    MTLIOAccelDeviceShmemPool *_segmentListShmemPool;
-    struct __IOAccelShared { } *_sharedRef;
-    unsigned long long _textureRam;
-    unsigned long long _videoRam;
+    }  _bufferHeaps;
+    /* Warning: unhandled struct encoding: '{MTLIOAccelCommandBufferStoragePool={storageQueue=^{MTLIOAccelCommandBufferStorage}^^{MTLIOAccelCommandBufferStorage}}iii@}' */ struct MTLIOAccelCommandBufferStoragePool { struct storageQueue { struct MTLIOAccelCommandBufferStorage {} *x_1_1_1; struct MTLIOAccelCommandBufferStorage {} **x_1_1_2; } x1; int x2; int x3; int x4; id x5; } * _commandBufferStoragePool;
+    unsigned int  _configBits;
+    unsigned int  _deviceBits;
+    struct __IOAccelDevice { } * _deviceRef;
+    NSObject<OS_dispatch_queue> * _device_dispatch_queue;
+    unsigned int  _fenceAllocatedCount;
+    unsigned long * _fenceAllocationBitmap;
+    unsigned int  _fenceBitmapCount;
+    unsigned int  _fenceBitmapSearchStart;
+    unsigned int  _fenceMaximumCount;
+    int  _numCommandBuffers;
+    unsigned int  _segmentByteThreshold;
+    unsigned int  _sharedMemorySize;
+    struct __IOAccelShared { } * _sharedRef;
+    /* Warning: unhandled struct encoding: '{?="segmentListShmemPool"@"MTLIOAccelDeviceShmemPool""kernelCommandShmemPool"@"MTLIOAccelDeviceShmemPool""hwResourcePools"^@"hwResourcePoolCount"I"akResourceListPool"@"MTLResourceListPool""akPrivateResourceListPool"@"MTLResourceListPool"}' */ struct { 
+        MTLIOAccelDeviceShmemPool *segmentListShmemPool; 
+        MTLIOAccelDeviceShmemPool *kernelCommandShmemPool; 
+        hwResourcePoolCount **hwResourcePools; 
+    }  _storageCreateParams;
+    unsigned int  _textureRam;
+    unsigned int  _videoRam;
 }
 
 @property (readonly) unsigned int acceleratorPort;
+@property (readonly) unsigned int dedicatedMemorySize;
 @property (readonly) unsigned int hwResourcePoolCount;
 @property (readonly) id*hwResourcePools;
 @property (readonly) int numCommandBuffers;
+@property (readonly) unsigned int sharedMemorySize;
 
 + (void)registerDevices;
 
@@ -48,6 +55,7 @@
 - (id)allocBufferSubDataWithLength:(unsigned int)arg1 options:(unsigned int)arg2 alignment:(int)arg3 heapIndex:(short*)arg4 bufferIndex:(short*)arg5 bufferOffset:(int*)arg6;
 - (void)dealloc;
 - (void)deallocBufferSubData:(id)arg1 heapIndex:(short)arg2 bufferIndex:(short)arg3 bufferOffset:(int)arg4 length:(int)arg5;
+- (unsigned int)dedicatedMemorySize;
 - (struct __IOAccelDevice { }*)deviceRef;
 - (short)heapIndexWithOptions:(unsigned int)arg1;
 - (unsigned int)hwResourcePoolCount;
@@ -55,10 +63,16 @@
 - (id)initWithAcceleratorPort:(unsigned int)arg1;
 - (unsigned int)initialKernelCommandShmemSize;
 - (unsigned int)initialSegmentListShmemSize;
+- (id)newCommandQueueWithDescriptor:(id)arg1;
+- (id)newCommandQueueWithMaxCommandBufferCount:(unsigned int)arg1;
+- (id)newFence;
 - (int)numCommandBuffers;
+- (unsigned int)recommendedMaxWorkingSetSize;
+- (void)releaseFenceIndex:(unsigned int)arg1;
 - (void)setComputePipelineStateCommandShmemSize:(unsigned int)arg1;
 - (void)setHwResourcePool:(id*)arg1 count:(int)arg2;
 - (void)setSegmentListShmemSize:(unsigned int)arg1;
+- (unsigned int)sharedMemorySize;
 - (struct __IOAccelShared { }*)sharedRef;
 
 @end

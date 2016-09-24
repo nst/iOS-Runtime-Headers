@@ -6,6 +6,7 @@
 
 @property (nonatomic, retain) <MTLFunction> *computeFunction;
 @property (nonatomic, copy) NSString *label;
+@property (nonatomic, copy) MTLStageInputOutputDescriptor *stageInputDescriptor;
 @property (nonatomic) BOOL threadGroupSizeIsMultipleOfThreadExecutionWidth;
 
 + (id)alloc;

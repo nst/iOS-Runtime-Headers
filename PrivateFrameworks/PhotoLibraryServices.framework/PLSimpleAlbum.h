@@ -3,11 +3,11 @@
  */
 
 @interface PLSimpleAlbum : NSObject <PLAssetContainer> {
-    NSOrderedSet *_assets;
-    PLManagedAsset *_keyAsset;
-    PLManagedAsset *_secondaryKeyAsset;
-    PLManagedAsset *_tertiaryKeyAsset;
-    NSString *_title;
+    NSOrderedSet * _assets;
+    PLManagedAsset * _keyAsset;
+    PLManagedAsset * _secondaryKeyAsset;
+    PLManagedAsset * _tertiaryKeyAsset;
+    NSString * _title;
 }
 
 @property (nonatomic, readonly) unsigned int approximateCount;

@@ -3,10 +3,10 @@
  */
 
 @interface CalDAVPropPatchWithFallbackTaskGroup : CoreDAVTaskGroup {
-    NSSet *_fallbackElements;
-    NSSet *_primaryElements;
-    CoreDAVResponseItem *_responseItem;
-    NSURL *_url;
+    NSSet * _fallbackElements;
+    NSSet * _primaryElements;
+    CoreDAVResponseItem * _responseItem;
+    NSURL * _url;
 }
 
 @property (nonatomic, retain) CoreDAVResponseItem *responseItem;

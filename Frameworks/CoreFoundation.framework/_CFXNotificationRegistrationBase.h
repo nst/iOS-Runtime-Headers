@@ -6,8 +6,8 @@
     struct os_lock_handoff_s { 
         struct _os_lock_type_handoff_s {} *osl_type; 
         unsigned long _osl_handoff_opaque[1]; 
-    } _lock;
-    _CFXNotificationRegistrationContainer *_parent;
+    }  _lock;
+    _CFXNotificationRegistrationContainer * _parent;
 }
 
 @property (readonly) void*key;

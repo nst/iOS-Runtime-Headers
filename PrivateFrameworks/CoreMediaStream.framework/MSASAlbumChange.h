@@ -3,16 +3,16 @@
  */
 
 @interface MSASAlbumChange : NSObject {
-    NSString *_GUID;
-    NSString *_URLString;
-    MSASInvitation *_invitation;
-    NSString *_name;
-    NSString *_ownerEmail;
-    NSString *_ownerFirstName;
-    NSString *_ownerFullName;
-    NSString *_ownerLastName;
-    NSString *_ownerPersonID;
-    BOOL _wasDeleted;
+    NSString * _GUID;
+    NSString * _URLString;
+    MSASInvitation * _invitation;
+    NSString * _name;
+    NSString * _ownerEmail;
+    NSString * _ownerFirstName;
+    NSString * _ownerFullName;
+    NSString * _ownerLastName;
+    NSString * _ownerPersonID;
+    BOOL  _wasDeleted;
 }
 
 @property (nonatomic, retain) NSString *GUID;

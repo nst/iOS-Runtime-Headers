@@ -3,9 +3,9 @@
  */
 
 @interface UIDebuggingInformationValueView : UIView {
-    UIView *_contentView;
-    UIDebuggingInformationValue *_value;
-    <UIDebuggingInformationValueViewObserver> *_valueObserver;
+    UIView * _contentView;
+    UIDebuggingInformationValue * _value;
+    <UIDebuggingInformationValueViewObserver> * _valueObserver;
 }
 
 @property (nonatomic, retain) UIView *contentView;

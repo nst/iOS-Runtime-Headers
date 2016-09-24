@@ -3,21 +3,21 @@
  */
 
 @interface GEOSnappedRoutePath : NSObject {
-    GEOMapRequest *_edgeSearchRequest;
-    NSArray *_edges;
-    BOOL _hasCompletedMapMatching;
+    GEOMapRequest * _edgeSearchRequest;
+    NSArray * _edges;
+    BOOL  _hasCompletedMapMatching;
     struct unique_ptr<geo::RouteMapMatchingSection, std::__1::default_delete<geo::RouteMapMatchingSection> > { 
         struct __compressed_pair<geo::RouteMapMatchingSection *, std::__1::default_delete<geo::RouteMapMatchingSection> > { 
             struct RouteMapMatchingSection {} *__first_; 
         } __ptr_; 
-    } _mapMatchingSection;
-    struct __CFSet { } *_observers;
-    GEOComposedRoute *_route;
-    unsigned int _routeEndIndex;
-    unsigned int _routeStartIndex;
-    GEOComposedRouteSection *_section;
-    unsigned int _unsnappedPointCount;
-    struct { float x1; float x2; } *_unsnappedPoints;
+    }  _mapMatchingSection;
+    struct __CFSet { } * _observers;
+    GEOComposedRoute * _route;
+    unsigned int  _routeEndIndex;
+    unsigned int  _routeStartIndex;
+    GEOComposedRouteSection * _section;
+    unsigned int  _unsnappedPointCount;
+    struct { double x1; double x2; } * _unsnappedPoints;
 }
 
 @property (readonly) NSArray *edges;
@@ -31,7 +31,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (float)_calculateEdgeLengthFrom:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg1 to:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg2 startCoord:(const struct PolylineCoordinate { unsigned int x1; float x2; }*)arg3 endCoord:(const struct PolylineCoordinate { unsigned int x1; float x2; }*)arg4;
+- (float)_calculateEdgeLengthFrom:(const struct Matrix<float, 2, 1> { double x1[2]; }*)arg1 to:(const struct Matrix<float, 2, 1> { double x1[2]; }*)arg2 startCoord:(const struct PolylineCoordinate { unsigned int x1; double x2; }*)arg3 endCoord:(const struct PolylineCoordinate { unsigned int x1; double x2; }*)arg4;
 - (void)_debugPrintEdge:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)dealloc;

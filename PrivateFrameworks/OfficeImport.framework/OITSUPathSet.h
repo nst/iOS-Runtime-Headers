@@ -3,9 +3,9 @@
  */
 
 @interface OITSUPathSet : NSObject <NSCopying> {
-    NSMutableDictionary *mBasePathToNumberMap;
-    NSMutableSet *mPaths;
-    OITSUPathSet *mUnderlyingSet;
+    NSMutableDictionary * mBasePathToNumberMap;
+    NSMutableSet * mPaths;
+    OITSUPathSet * mUnderlyingSet;
 }
 
 + (id)parseNumberOutOfBasename:(id)arg1 hasNumber:(BOOL*)arg2 number:(unsigned int*)arg3;

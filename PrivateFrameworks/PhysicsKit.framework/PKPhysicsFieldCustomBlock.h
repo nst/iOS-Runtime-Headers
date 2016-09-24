@@ -3,8 +3,8 @@
  */
 
 @interface PKPhysicsFieldCustomBlock : PKPhysicsField {
-    id /* block */ _batchBlock;
-    id /* block */ _block;
+    id /* block */  _batchBlock;
+    id /* block */  _block;
 }
 
 + (id)fieldWithCustomBatchBlock:(id /* block */)arg1;

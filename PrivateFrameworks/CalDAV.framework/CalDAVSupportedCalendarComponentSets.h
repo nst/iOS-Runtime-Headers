@@ -3,7 +3,7 @@
  */
 
 @interface CalDAVSupportedCalendarComponentSets : CoreDAVItem {
-    NSMutableSet *_componentSets;
+    NSMutableSet * _componentSets;
 }
 
 + (BOOL)allowedCalendars:(id)arg1 contains:(id)arg2;

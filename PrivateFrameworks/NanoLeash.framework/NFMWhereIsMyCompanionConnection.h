@@ -3,9 +3,9 @@
  */
 
 @interface NFMWhereIsMyCompanionConnection : NSObject <NFMWhereIsMyCompanionConnectionProtocol> {
-    id /* block */ _playSoundAndLEDCompletion;
-    id /* block */ _playSoundCompletion;
-    NSXPCConnection *_serverConnection;
+    id /* block */  _playSoundAndLEDCompletion;
+    id /* block */  _playSoundCompletion;
+    NSXPCConnection * _serverConnection;
 }
 
 @property (readonly, copy) NSString *debugDescription;

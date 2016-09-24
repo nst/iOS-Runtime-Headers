@@ -3,20 +3,20 @@
  */
 
 @interface ATSessionTask : NSObject <NSCopying, NSSecureCoding> {
-    BOOL _cancelled;
-    unsigned int _completedItemCount;
-    NSArray *_currentItemDescriptions;
-    NSArray *_currentItems;
-    NSError *_error;
-    BOOL _finished;
-    NSString *_localizedDescription;
-    double _progress;
-    NSDictionary *_properties;
-    BOOL _running;
-    ATSession *_session;
-    NSString *_sessionGroupingKey;
-    NSString *_sessionTaskIdentifier;
-    unsigned int _totalItemCount;
+    BOOL  _cancelled;
+    unsigned int  _completedItemCount;
+    NSArray * _currentItemDescriptions;
+    NSArray * _currentItems;
+    NSError * _error;
+    BOOL  _finished;
+    NSString * _localizedDescription;
+    double  _progress;
+    NSDictionary * _properties;
+    BOOL  _running;
+    ATSession * _session;
+    NSString * _sessionGroupingKey;
+    NSString * _sessionTaskIdentifier;
+    unsigned int  _totalItemCount;
 }
 
 @property (getter=isCancelled) BOOL cancelled;

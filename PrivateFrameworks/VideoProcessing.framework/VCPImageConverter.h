@@ -3,14 +3,14 @@
  */
 
 @interface VCPImageConverter : NSObject {
-    struct CGContext { } *_cgContext;
-    int _height;
-    int _pixelFormat;
-    struct CGColorSpace { } *_rgbColorSpace;
-    struct __CVBuffer { } *_rgbFrame;
-    struct OpaqueVTPixelTransferSession { } *_rgbToYuv;
-    int _width;
-    struct __CVPixelBufferPool { } *_yuvFrames;
+    struct CGContext { } * _cgContext;
+    int  _height;
+    int  _pixelFormat;
+    struct CGColorSpace { } * _rgbColorSpace;
+    struct __CVBuffer { } * _rgbFrame;
+    struct OpaqueVTPixelTransferSession { } * _rgbToYuv;
+    int  _width;
+    struct __CVPixelBufferPool { } * _yuvFrames;
 }
 
 - (long)convertImage:(struct CGImage { }*)arg1 yuvFrame:(struct __CVBuffer {}**)arg2;

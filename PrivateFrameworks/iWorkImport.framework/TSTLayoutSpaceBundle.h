@@ -3,14 +3,14 @@
  */
 
 @interface TSTLayoutSpaceBundle : NSObject {
-    TSTLayoutSpace *mFrozenHeaderColumnsSpace;
-    TSTLayoutSpace *mFrozenHeaderCornerSpace;
-    TSTLayoutSpace *mFrozenHeaderRowsSpace;
-    TSTLayout *mLayout;
-    TSTLayoutSpace *mRepeatHeaderColumnsSpace;
-    TSTLayoutSpace *mRepeatHeaderCornerSpace;
-    TSTLayoutSpace *mRepeatHeaderRowsSpace;
-    TSTLayoutSpace *mSpace;
+    TSTLayoutSpace * mFrozenHeaderColumnsSpace;
+    TSTLayoutSpace * mFrozenHeaderCornerSpace;
+    TSTLayoutSpace * mFrozenHeaderRowsSpace;
+    TSTLayout * mLayout;
+    TSTLayoutSpace * mRepeatHeaderColumnsSpace;
+    TSTLayoutSpace * mRepeatHeaderCornerSpace;
+    TSTLayoutSpace * mRepeatHeaderRowsSpace;
+    TSTLayoutSpace * mSpace;
 }
 
 @property (nonatomic, retain) TSTLayoutSpace *frozenHeaderColumnsSpace;
@@ -23,14 +23,13 @@
 @property (nonatomic, retain) TSTLayoutSpace *space;
 
 - (void)dealloc;
-- (id)description;
 - (BOOL)enumerateFrozenLayoutSpacesUsingBlock:(id /* block */)arg1;
 - (void)enumerateLayoutSpacesUsingBlock:(id /* block */)arg1;
 - (BOOL)enumerateRepeatLayoutSpacesUsingBlock:(id /* block */)arg1;
 - (id)frozenHeaderColumnsSpace;
 - (id)frozenHeaderCornerSpace;
 - (id)frozenHeaderRowsSpace;
-- (id)getSpaceContainingCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (id)getSpaceContainingCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (id)initWithLayout:(id)arg1;
 - (void)invalidateCoordinates;
 - (void)invalidateCoordinatesAfterColumn:(unsigned char)arg1;

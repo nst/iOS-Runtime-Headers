@@ -3,9 +3,9 @@
  */
 
 @interface AVAssetProxyInternal : NSObject {
-    AVAssetInspectorLoader *loader;
-    long makeTracksArrayOnce;
-    NSArray *tracks;
+    AVAssetInspectorLoader * loader;
+    long  makeTracksArrayOnce;
+    NSArray * tracks;
 }
 
 @end

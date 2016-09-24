@@ -3,11 +3,11 @@
  */
 
 @interface CKModifyRecordZonesOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    BOOL _allowDefaultZoneSave;
-    BOOL _markZonesAsUserPurged;
-    int _maxZoneSaveAttempts;
-    NSArray *_recordZoneIDsToDelete;
-    NSArray *_recordZonesToSave;
+    BOOL  _allowDefaultZoneSave;
+    BOOL  _markZonesAsUserPurged;
+    int  _maxZoneSaveAttempts;
+    NSArray * _recordZoneIDsToDelete;
+    NSArray * _recordZonesToSave;
 }
 
 @property (nonatomic) BOOL allowDefaultZoneSave;

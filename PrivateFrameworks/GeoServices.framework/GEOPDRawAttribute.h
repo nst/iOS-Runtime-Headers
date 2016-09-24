@@ -3,8 +3,8 @@
  */
 
 @interface GEOPDRawAttribute : PBCodable <NSCopying> {
-    NSString *_key;
-    NSString *_value;
+    NSString * _key;
+    NSString * _value;
 }
 
 @property (nonatomic, readonly) BOOL hasKey;

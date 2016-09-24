@@ -3,14 +3,15 @@
  */
 
 @interface EAAccessoryManager : NSObject <EABluetoothAccessoryPickerDelegate> {
-    NSMutableArray *_connectedAccessories;
-    NSObject<OS_dispatch_queue> *_connectionQueue;
-    EABluetoothAccessoryPicker *_picker;
-    id /* block */ _pickerCompletion;
-    NSTimer *_pickerTimer;
-    NSString *_selectedBluetoothAddress;
-    BOOL _sequesterNewAccessories;
-    NSMutableArray *_sequesteredAccessories;
+    NSMutableArray * _connectedAccessories;
+    NSObject<OS_dispatch_queue> * _connectionQueue;
+    EABluetoothAccessoryPicker * _picker;
+    id /* block */  _pickerCompletion;
+    NSObject<OS_dispatch_queue> * _pickerQueue;
+    NSTimer * _pickerTimer;
+    NSString * _selectedBluetoothAddress;
+    BOOL  _sequesterNewAccessories;
+    NSMutableArray * _sequesteredAccessories;
 }
 
 @property (nonatomic, readonly) NSArray *connectedAccessories;
@@ -29,17 +30,19 @@
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_cameraInfoUpdated:(id)arg1;
-- (void)_checkForConnectedAccessories;
+- (void)_checkForConnectedAccessories:(BOOL)arg1;
 - (void)_cleanUpForTaskSuspend;
 - (id)_connectedAccessories;
 - (void)_ephemerisURLAvailable:(id)arg1;
 - (void)_externalAccessoryConnected:(id)arg1;
+- (void)_externalAccessoryConnectedNotificationHandler:(id)arg1;
 - (void)_externalAccessoryDisconnected:(id)arg1;
 - (void)_externalAccessoryReconnected:(id)arg1;
 - (void)_externalAccessoryUpdated:(id)arg1;
+- (id)_findExtraAccessoriesContainedOnlyInEA:(id)arg1;
+- (id)_findExtraAccessoriesContainedOnlyIniAP:(id)arg1;
 - (void)_gpsTimeRequested:(id)arg1;
 - (void)_handleAccessoryNotificationTimeout:(id)arg1;
-- (BOOL)_iAPAccessoriesMatchEAConnectedAccessoriesList:(id)arg1;
 - (void)_iapServerDied:(id)arg1;
 - (id)_initFromSingletonCreationMethod;
 - (void)_integrateSequesteredAccessories;
@@ -49,7 +52,6 @@
 - (void)_notifyObserversThatAccessoryDisconnectedWithUserInfo:(id)arg1;
 - (void)_pointOfInterestStatusReceived:(id)arg1;
 - (void)_removeAllAccessoriesFromArray:(id)arg1 notifyClients:(BOOL)arg2;
-- (BOOL)_shouldCheckForConnectedAccessories;
 - (void)_timeSyncInfoUpdated:(id)arg1;
 - (void)_vehicleDataUpdated:(id)arg1;
 - (void)accessibilityAction:(id)arg1;

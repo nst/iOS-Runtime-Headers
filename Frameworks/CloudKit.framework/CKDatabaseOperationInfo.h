@@ -3,14 +3,14 @@
  */
 
 @interface CKDatabaseOperationInfo : CKOperationInfo <NSSecureCoding> {
-    int _databaseScope;
+    int  _databaseScope;
 }
 
 @property (nonatomic) int databaseScope;
 
 + (BOOL)supportsSecureCoding;
 
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (int)databaseScope;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

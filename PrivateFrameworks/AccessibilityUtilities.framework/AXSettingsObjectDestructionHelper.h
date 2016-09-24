@@ -3,8 +3,8 @@
  */
 
 @interface AXSettingsObjectDestructionHelper : NSObject {
-    void *_listenerAddress;
-    NSMutableArray *_selectorKeys;
+    void * _listenerAddress;
+    NSMutableArray * _selectorKeys;
 }
 
 - (void)addSelectorKey:(SEL)arg1;

@@ -3,13 +3,13 @@
  */
 
 @interface SKUIProductPagePlaceholderViewController : UIViewController <SKUIProductPageChildViewController, UIScrollViewDelegate> {
-    SKUIClientContext *_clientContext;
-    SKUIColorScheme *_colorScheme;
-    <SKUIProductPageChildViewControllerDelegate> *_delegate;
-    SKUIProductPageHeaderViewController *_headerViewController;
-    UIActivityIndicatorView *_indicator;
-    SKUIProductPagePlaceholderScrollView *_scrollView;
-    int _style;
+    SKUIClientContext * _clientContext;
+    SKUIColorScheme * _colorScheme;
+    <SKUIProductPageChildViewControllerDelegate> * _delegate;
+    SKUIProductPageHeaderViewController * _headerViewController;
+    UIActivityIndicatorView * _indicator;
+    SKUIProductPagePlaceholderScrollView * _scrollView;
+    int  _style;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

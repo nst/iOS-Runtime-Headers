@@ -2,42 +2,46 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@interface PHAssetCollection : PHCollection <PUDisplayAssetCollection> {
-    unsigned int _approximateCount;
-    CLLocation *_approximateLocation;
-    unsigned int _approximatePhotosCount;
-    unsigned int _approximateVideosCount;
-    int _assetCollectionSubtype;
-    int _assetCollectionType;
-    NSArray *_assets;
-    BOOL _canContributeToCloudSharedAlbum;
-    BOOL _canShowCloudComments;
-    NSDate *_endDate;
-    NSURL *_groupURL;
-    BOOL _hasUnseenContentBoolValue;
-    NSString *_importSessionID;
-    BOOL _isCameraRoll;
-    BOOL _isCloudSharedAlbum;
-    BOOL _isLibrary;
-    BOOL _isMultipleContributorCloudSharedAlbum;
-    BOOL _isOwnedCloudSharedAlbum;
-    BOOL _isPanoramasCollection;
-    BOOL _isPendingPhotoStreamAlbum;
-    BOOL _isPhotoStreamCollection;
-    BOOL _isSmartCollection;
-    BOOL _isStandInCollection;
-    BOOL _isWallpaperCollection;
-    NSArray *_localizedLocationNames;
-    NSString *_localizedTitle;
-    int _pendingItemsCount;
-    int _pendingItemsType;
-    int _plAlbumKind;
-    PHQuery *_query;
-    BOOL _shouldDeleteWhenEmpty;
-    id /* block */ _sortingComparator;
-    NSDate *_startDate;
-    NSString *_title;
-    NSString *_transientIdentifier;
+@interface PHAssetCollection : PHCollection <PUDisplayAssetCollection, PXDisplayAssetCollection> {
+    unsigned int  _approximateCount;
+    CLLocation * _approximateLocation;
+    unsigned int  _approximatePhotosCount;
+    unsigned int  _approximateVideosCount;
+    int  _assetCollectionSubtype;
+    int  _assetCollectionType;
+    NSArray * _assetOids;
+    NSArray * _assets;
+    BOOL  _canContributeToCloudSharedAlbum;
+    BOOL  _canShowCloudComments;
+    NSString * _cloudGUID;
+    NSDate * _endDate;
+    NSURL * _groupURL;
+    BOOL  _hasUnseenContentBoolValue;
+    NSString * _importSessionID;
+    BOOL  _isCameraRoll;
+    BOOL  _isCloudSharedAlbum;
+    BOOL  _isLibrary;
+    BOOL  _isMultipleContributorCloudSharedAlbum;
+    BOOL  _isOwnedCloudSharedAlbum;
+    BOOL  _isPanoramasCollection;
+    BOOL  _isPendingPhotoStreamAlbum;
+    BOOL  _isPhotoStreamCollection;
+    BOOL  _isSmartCollection;
+    BOOL  _isStandInCollection;
+    BOOL  _isWallpaperCollection;
+    NSArray * _localizedLocationNames;
+    NSString * _localizedTitle;
+    int  _pendingItemsCount;
+    int  _pendingItemsType;
+    int  _plAlbumKind;
+    PHQuery * _query;
+    BOOL  _shouldDeleteWhenEmpty;
+    id /* block */  _sortingComparator;
+    NSDate * _startDate;
+    NSString * _title;
+    NSString * _titleFontName;
+    NSString * _transientIdentifier;
+    NSString * _transientSubtitle;
 }
 
 @property (getter=_canShowCloudComments, setter=_setCanShowCloudComments:, nonatomic) BOOL _canShowCloudComments;
@@ -47,14 +51,17 @@
 @property (nonatomic, readonly) unsigned int approximateVideosCount;
 @property (nonatomic, readonly) int assetCollectionSubtype;
 @property (nonatomic, readonly) int assetCollectionType;
+@property (nonatomic, readonly) NSArray *assetOids;
 @property (nonatomic, readonly) NSArray *assets;
 @property (nonatomic, readonly) BOOL canContainCustomKeyAssets;
 @property (nonatomic, readonly) BOOL canContributeToCloudSharedAlbum;
 @property (nonatomic, readonly) BOOL canShowAvalancheStacks;
 @property (nonatomic, readonly) BOOL canShowComments;
+@property (nonatomic, readonly) NSString *cloudGUID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSDate *endDate;
+@property (nonatomic, readonly) NSDateComponents *endDateComponents;
 @property (nonatomic, readonly) unsigned int estimatedAssetCount;
 @property (nonatomic, readonly) NSURL *groupURL;
 @property (nonatomic, readonly) BOOL hasUnseenContentBoolValue;
@@ -74,31 +81,53 @@
 @property (nonatomic, readonly) BOOL isTrashBin;
 @property (nonatomic, readonly) BOOL isWallpaperCollection;
 @property (nonatomic, readonly) BOOL keyAssetsAtEnd;
+@property (nonatomic, readonly) NSDate *localEndDate;
+@property (nonatomic, readonly) NSDate *localStartDate;
 @property (nonatomic, readonly) NSArray *localizedLocationNames;
+@property (nonatomic, readonly) NSString *localizedSubtitle;
 @property (nonatomic, readonly) NSString *localizedTitle;
 @property (nonatomic, readonly) int pendingItemsCount;
 @property (nonatomic, readonly) int pendingItemsType;
 @property (nonatomic, readonly) int plAlbumKind;
+@property (nonatomic, readonly) BOOL px_supportsFastCuration;
 @property (nonatomic, readonly) PHQuery *query;
 @property (nonatomic, readonly) BOOL shouldDeleteWhenEmpty;
 @property (nonatomic, readonly, copy) id /* block */ sortingComparator;
 @property (nonatomic, readonly) NSDate *startDate;
+@property (nonatomic, readonly) NSDateComponents *startDateComponents;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *title;
+@property (nonatomic, readonly) int titleCategory;
+@property (nonatomic, readonly) NSString *titleFontName;
+@property (nonatomic, readonly) unsigned int titleFontNameHash;
 @property (nonatomic, readonly) NSString *transientIdentifier;
+@property (nonatomic, readonly) NSString *transientSubtitle;
+@property (nonatomic, readonly) NSDate *universalEndDate;
+@property (nonatomic, readonly) NSDate *universalStartDate;
 
+// Image: /System/Library/Frameworks/Photos.framework/Photos
+
++ (id)_composePropertiesToFetchWithHint:(unsigned int)arg1;
 + (id)_transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
++ (id)corePropertiesToFetch;
++ (id)defaultTitleFontNames;
++ (id)descriptionOfTitleCategory:(int)arg1;
 + (id)entityKeyForPropertyKey:(id)arg1;
 + (id)fetchAssetCollectionsContainingAsset:(id)arg1 withType:(int)arg2 options:(id)arg3;
++ (id)fetchAssetCollectionsContainingAssets:(id)arg1 withType:(int)arg2 options:(id)arg3;
 + (id)fetchAssetCollectionsWithALAssetGroupURLs:(id)arg1 options:(id)arg2;
 + (id)fetchAssetCollectionsWithCloudIdentifiers:(id)arg1 options:(id)arg2;
 + (id)fetchAssetCollectionsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)fetchAssetCollectionsWithObjectIDs:(id)arg1 options:(id)arg2;
++ (id)fetchAssetCollectionsWithType:(int)arg1 localIdentifiers:(id)arg2 options:(id)arg3;
 + (id)fetchAssetCollectionsWithType:(int)arg1 subtype:(int)arg2 options:(id)arg3;
++ (id)fetchMomentsBackingMemory:(id)arg1 options:(id)arg2;
 + (id)fetchMomentsInMomentList:(id)arg1 options:(id)arg2;
 + (id)fetchMomentsWithOptions:(id)arg1;
 + (id)fetchPredicateFromComparisonPredicate:(id)arg1 options:(id)arg2;
++ (id)fetchType;
 + (id)fetchUserLibraryAlbumWithOptions:(id)arg1;
++ (id)graphOptionsForTransientAssetCollection:(id)arg1 needsCompleteMomentsInfo:(BOOL)arg2;
 + (id)identifierCode;
 + (id)managedEntityName;
 + (BOOL)managedObjectSupportsTrashedState;
@@ -106,9 +135,15 @@
 + (id)pl_PHAssetCollectionForAssetContainer:(id)arg1 includeTrash:(BOOL)arg2;
 + (id)posterImageForAssetCollection:(id)arg1;
 + (id)propertiesToFetchWithHint:(unsigned int)arg1;
++ (int)titleCategoryForTitleFontName:(id)arg1;
++ (id)titleFontNameForTitleCategory:(int)arg1;
++ (unsigned int)titleFontNameHashFromDate:(id)arg1;
++ (unsigned int)titleFontNameHashFromHash:(unsigned int)arg1 andHash:(unsigned int)arg2;
++ (unsigned int)titleFontNameHashFromString:(id)arg1;
 + (id)transientAssetCollectionWithAssetFetchResult:(id)arg1 subtype:(int)arg2;
 + (id)transientAssetCollectionWithAssetFetchResult:(id)arg1 title:(id)arg2;
 + (id)transientAssetCollectionWithAssetFetchResult:(id)arg1 title:(id)arg2 identifier:(id)arg3;
++ (id)transientAssetCollectionWithAssetFetchResult:(id)arg1 title:(id)arg2 subtitle:(id)arg3 titleFontName:(id)arg4;
 + (id)transientAssetCollectionWithAssets:(id)arg1 title:(id)arg2;
 + (id)transientAssetCollectionWithAssets:(id)arg1 title:(id)arg2 identifier:(id)arg3;
 
@@ -121,6 +156,7 @@
 - (unsigned int)approximateVideosCount;
 - (int)assetCollectionSubtype;
 - (int)assetCollectionType;
+- (id)assetOids;
 - (id)assets;
 - (BOOL)canContainAssets;
 - (BOOL)canContainCustomKeyAssets;
@@ -129,7 +165,8 @@
 - (BOOL)canShowAvalancheStacks;
 - (BOOL)canShowComments;
 - (Class)changeRequestClass;
-- (BOOL)collectionCanBePinned;
+- (id)cloudGUID;
+- (unsigned int)collectionFixedOrderPriority;
 - (BOOL)collectionHasFixedOrder;
 - (id)description;
 - (id)endDate;
@@ -142,6 +179,7 @@
 - (id)initTransientWithAssets:(id)arg1 orFetchResult:(id)arg2 title:(id)arg3 identifier:(id)arg4;
 - (id)initTransientWithAssets:(id)arg1 orFetchResult:(id)arg2 title:(id)arg3 identifier:(id)arg4 albumKind:(int)arg5;
 - (id)initTransientWithAssets:(id)arg1 orFetchResult:(id)arg2 title:(id)arg3 identifier:(id)arg4 albumKind:(int)arg5 subtype:(int)arg6;
+- (id)initTransientWithAssets:(id)arg1 orFetchResult:(id)arg2 title:(id)arg3 subtitle:(id)arg4 titleFontName:(id)arg5 identifier:(id)arg6 albumKind:(int)arg7 subtype:(int)arg8;
 - (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;
 - (BOOL)isCameraRoll;
 - (BOOL)isCloudSharedAlbum;
@@ -159,6 +197,7 @@
 - (BOOL)keyAssetsAtEnd;
 - (id)localizedLocationNames;
 - (id)localizedSharedByLabelAllowsEmail:(BOOL)arg1;
+- (id)localizedSubtitle;
 - (id)localizedTitle;
 - (int)pendingItemsCount;
 - (int)pendingItemsType;
@@ -170,6 +209,24 @@
 - (id /* block */)sortingComparator;
 - (id)startDate;
 - (id)title;
+- (int)titleCategory;
+- (id)titleFontName;
+- (unsigned int)titleFontNameHash;
 - (id)transientIdentifier;
+- (id)transientSubtitle;
+
+// Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/Frameworks/MediaMiningKit.framework/MediaMiningKit
+
+- (id)_getLocation;
+- (id)endDateComponents;
+- (id)localEndDate;
+- (id)localStartDate;
+- (id)startDateComponents;
+- (id)universalEndDate;
+- (id)universalStartDate;
+
+// Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
+
+- (BOOL)px_supportsFastCuration;
 
 @end

@@ -3,13 +3,13 @@
  */
 
 @interface CIDroste : CIFilter {
-    CIImage *inputImage;
-    CIVector *inputInsetPoint0;
-    CIVector *inputInsetPoint1;
-    NSNumber *inputPeriodicity;
-    NSNumber *inputRotation;
-    NSNumber *inputStrands;
-    NSNumber *inputZoom;
+    CIImage * inputImage;
+    CIVector * inputInsetPoint0;
+    CIVector * inputInsetPoint1;
+    NSNumber * inputPeriodicity;
+    NSNumber * inputRotation;
+    NSNumber * inputStrands;
+    NSNumber * inputZoom;
 }
 
 + (id)customAttributes;

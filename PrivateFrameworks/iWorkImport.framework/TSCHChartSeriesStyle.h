@@ -4,7 +4,7 @@
 
 @interface TSCHChartSeriesStyle : TSCHBaseStyle
 
-+ (id)bootstrappedSeriesStyleWithContext:(id)arg1 seriesIndex:(unsigned int)arg2;
++ (id)bootstrappedSeriesStyleWithContext:(id)arg1 seriesIndex:(unsigned int)arg2 presetIndex:(unsigned int)arg3;
 + (float)defaultFloatValueForProperty:(int)arg1;
 + (int)defaultIntValueForProperty:(int)arg1;
 + (id)defaultStyleWithContext:(id)arg1;

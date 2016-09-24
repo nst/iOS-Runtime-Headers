@@ -3,9 +3,9 @@
  */
 
 @interface ACDAuthenticationDialogManager : NSObject <ACDAuthenticationDialogManagerProtocol> {
-    NSString *_activeAccountID;
-    NSXPCListener *_authenticationDialogListener;
-    ACDQueueDictionary *_dialogRequestQueues;
+    NSString * _activeAccountID;
+    NSXPCListener * _authenticationDialogListener;
+    ACDQueueDictionary * _dialogRequestQueues;
 }
 
 @property (readonly, copy) NSString *debugDescription;

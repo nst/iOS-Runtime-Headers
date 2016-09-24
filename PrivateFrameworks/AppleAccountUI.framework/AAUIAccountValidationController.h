@@ -3,13 +3,13 @@
  */
 
 @interface AAUIAccountValidationController : NSObject <AAUIRemoteUIRepairFlowDelegate> {
-    ACAccount *_account;
-    AAUIAccountRepairRemoteUI *_accountRepairRemoteUI;
-    <AAUIAccountValidationControllerDelegate> *_delegate;
-    AAUIRemoteUIRepairFlow *_flow;
-    BOOL _inHSAVerification;
-    BOOL _isPresentedModally;
-    ACUIViewController *_presentingViewController;
+    ACAccount * _account;
+    AAUIAccountRepairRemoteUI * _accountRepairRemoteUI;
+    <AAUIAccountValidationControllerDelegate> * _delegate;
+    AAUIRemoteUIRepairFlow * _flow;
+    BOOL  _inHSAVerification;
+    BOOL  _isPresentedModally;
+    ACUIViewController * _presentingViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

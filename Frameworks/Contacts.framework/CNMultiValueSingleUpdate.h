@@ -3,7 +3,7 @@
  */
 
 @interface CNMultiValueSingleUpdate : CNMultiValueUpdate {
-    CNLabeledValue *_value;
+    CNLabeledValue * _value;
 }
 
 @property (nonatomic, readonly) CNLabeledValue *value;

@@ -3,11 +3,11 @@
  */
 
 @interface CIBumpDistortionLinear : CIFilter {
-    NSNumber *inputAngle;
-    CIVector *inputCenter;
-    CIImage *inputImage;
-    NSNumber *inputRadius;
-    NSNumber *inputScale;
+    NSNumber * inputAngle;
+    CIVector * inputCenter;
+    CIImage * inputImage;
+    NSNumber * inputRadius;
+    NSNumber * inputScale;
 }
 
 @property (nonatomic, retain) NSNumber *inputAngle;

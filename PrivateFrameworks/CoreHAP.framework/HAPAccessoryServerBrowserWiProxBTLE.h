@@ -3,14 +3,14 @@
  */
 
 @interface HAPAccessoryServerBrowserWiProxBTLE : NSObject <WPHomeKitDelegate> {
-    int _currentScanState;
-    <HAPAccessoryServerBrowserWiProxBTLEDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    BOOL _scanInBackground;
-    NSMutableSet *_trackedIdentifiers;
-    NSMutableSet *_trackedPeripherals;
-    NSObject<OS_dispatch_queue> *_workQueue;
-    WPHomeKit *_wpHomeKit;
+    int  _currentScanState;
+    <HAPAccessoryServerBrowserWiProxBTLEDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    BOOL  _scanInBackground;
+    NSMutableSet * _trackedIdentifiers;
+    NSMutableSet * _trackedPeripherals;
+    NSObject<OS_dispatch_queue> * _workQueue;
+    WPHomeKit * _wpHomeKit;
 }
 
 @property (nonatomic) int currentScanState;
@@ -39,9 +39,9 @@
 - (int)currentScanState;
 - (id)delegate;
 - (id)delegateQueue;
-- (void)homeKit:(id)arg1 allowDuplicate:(BOOL)arg2;
 - (void)homeKit:(id)arg1 failedToStartScanningWithError:(id)arg2;
 - (void)homeKit:(id)arg1 foundDevice:(id)arg2 withData:(id)arg3;
+- (void)homeKit:(id)arg1 foundDevice:(id)arg2 withData:(id)arg3 RSSI:(id)arg4;
 - (void)homeKitDidUpdateState:(id)arg1;
 - (void)homeKitStartedScanning:(id)arg1;
 - (void)homeKitStoppedScanning:(id)arg1;

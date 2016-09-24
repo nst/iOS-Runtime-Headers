@@ -3,8 +3,8 @@
  */
 
 @interface GQDWPAttachmentRef : GQDWPAttachment {
-    GQDRoot *mRoot;
-    char *mUID;
+    GQDRoot * mRoot;
+    char * mUID;
 }
 
 - (void)dealloc;

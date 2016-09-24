@@ -3,13 +3,13 @@
  */
 
 @interface EKCalendarAbstractSwitchEditItem : EKCalendarEditItem {
-    BOOL _allowEventAlerts;
-    NSMutableArray *_cells;
-    UILabel *_descriptionLabel;
-    UIView *_footerView;
-    BOOL _switchState;
-    UISwitch *_toggleSwitch;
-    BOOL _underlyingCalendarState;
+    BOOL  _allowEventAlerts;
+    NSMutableArray * _cells;
+    UILabel * _descriptionLabel;
+    UIView * _footerView;
+    BOOL  _switchState;
+    UISwitch * _toggleSwitch;
+    BOOL  _underlyingCalendarState;
 }
 
 @property (nonatomic) BOOL allowEventAlerts;

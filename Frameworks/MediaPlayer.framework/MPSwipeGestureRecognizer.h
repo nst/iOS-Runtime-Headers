@@ -4,12 +4,12 @@
 
 @interface MPSwipeGestureRecognizer : UIGestureRecognizer {
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _startLocation;
-    double _startTime;
-    int _swipeDirection;
-    UITouch *_trackingTouch;
+        double x; 
+        double y; 
+    }  _startLocation;
+    double  _startTime;
+    int  _swipeDirection;
+    UITouch * _trackingTouch;
 }
 
 @property (nonatomic, readonly) int swipeDirection;

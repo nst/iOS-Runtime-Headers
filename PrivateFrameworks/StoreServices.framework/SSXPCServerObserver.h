@@ -3,8 +3,8 @@
  */
 
 @interface SSXPCServerObserver : NSObject {
-    id _observer;
-    SEL _selector;
+    id  _observer;
+    SEL  _selector;
 }
 
 @property (nonatomic) id observer;

@@ -3,8 +3,8 @@
  */
 
 @interface HKPersonHeightFormatter : NSObject {
-    NSLengthFormatter *_heightFormatter;
-    NSNumber *_usesImperialUnits;
+    NSLengthFormatter * _heightFormatter;
+    NSNumber * _usesImperialUnits;
 }
 
 @property (nonatomic, readonly) BOOL usesImperialUnits;
@@ -18,7 +18,7 @@
 - (id)formattedValueForCentimeters:(double)arg1;
 - (id)formattedValueForFeet:(double)arg1;
 - (id)formattedValueForInches:(double)arg1;
-- (void)getFeet:(double*)arg1 inches:(double*)arg2 fromCentimeters:(double)arg3;
+- (void)getFeet:(int*)arg1 inches:(int*)arg2 fromCentimeters:(double)arg3;
 - (id)init;
 - (id)localizedStringFromHeightInCentimeters:(id)arg1;
 - (BOOL)usesImperialUnits;

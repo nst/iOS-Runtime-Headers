@@ -3,9 +3,9 @@
  */
 
 @interface HMDWatchSyncState : NSObject {
-    NSString *_deviceId;
-    HMDPairedSync *_pairedSync;
-    NSMutableArray *_syncs;
+    NSString * _deviceId;
+    HMDPairedSync * _pairedSync;
+    NSMutableArray * _syncs;
 }
 
 @property (nonatomic, readonly) HMDWatchSync *currentSync;

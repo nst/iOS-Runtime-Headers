@@ -3,8 +3,8 @@
  */
 
 @interface MusicGeniusIndexedSubQuery : NSObject {
-    unsigned int _index;
-    MPMediaQuery *_itemsQuery;
+    unsigned int  _index;
+    MPMediaQuery * _itemsQuery;
 }
 
 @property (nonatomic, readonly) unsigned int index;

@@ -3,15 +3,15 @@
  */
 
 @interface SUScriptObject : NSObject {
-    unsigned int _checkOutWhenHidden;
-    NSString *_className;
-    NSMutableArray *_eventListeners;
-    SUScriptObjectInvocationBatch *_invocationBatch;
-    unsigned int _isVisible;
-    NSLock *_lock;
-    SUScriptNativeObject *_nativeObject;
-    SUScriptObject *_parentScriptObject;
-    NSMutableSet *_scriptObjects;
+    unsigned int  _checkOutWhenHidden;
+    NSString * _className;
+    NSMutableArray * _eventListeners;
+    SUScriptObjectInvocationBatch * _invocationBatch;
+    unsigned int  _isVisible;
+    NSLock * _lock;
+    SUScriptNativeObject * _nativeObject;
+    SUScriptObject * _parentScriptObject;
+    NSMutableSet * _scriptObjects;
 }
 
 @property (getter=_className, readonly) NSString *className;

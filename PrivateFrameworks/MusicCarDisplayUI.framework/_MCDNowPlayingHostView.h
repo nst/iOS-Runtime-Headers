@@ -3,7 +3,7 @@
  */
 
 @interface _MCDNowPlayingHostView : UIView {
-    NSArray *_responderViews;
+    NSArray * _responderViews;
 }
 
 @property (nonatomic, retain) NSArray *responderViews;

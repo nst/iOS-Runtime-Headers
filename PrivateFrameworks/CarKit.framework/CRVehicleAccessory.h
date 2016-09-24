@@ -3,15 +3,15 @@
  */
 
 @interface CRVehicleAccessory : NSObject {
-    EAAccessory *_accessory;
-    NSArray *_accessoryProtocols;
-    NSString *_bluetoothAddress;
-    NSData *_certificateSerialNumber;
-    NSNumber *_connectionID;
-    BOOL _supportsUSBCarPlay;
-    BOOL _supportsWiredBluetoothPairing;
-    BOOL _supportsWirelessCarPlay;
-    NSString *_vehicleName;
+    EAAccessory * _accessory;
+    NSArray * _accessoryProtocols;
+    NSString * _bluetoothAddress;
+    NSData * _certificateSerialNumber;
+    NSNumber * _connectionID;
+    BOOL  _supportsUSBCarPlay;
+    BOOL  _supportsWiredBluetoothPairing;
+    BOOL  _supportsWirelessCarPlay;
+    NSString * _vehicleName;
 }
 
 @property (nonatomic) EAAccessory *accessory;
@@ -34,8 +34,9 @@
 - (id)connectionID;
 - (id)description;
 - (id)displayName;
-- (BOOL)isConnectedWirelessly;
+- (BOOL)isBluetoothConnected;
 - (void)requestWiFiCredentials;
+- (void)sendDeviceTransportIdentifiers;
 - (void)setAccessory:(id)arg1;
 - (void)setAccessoryProtocols:(id)arg1;
 - (void)setBluetoothAddress:(id)arg1;

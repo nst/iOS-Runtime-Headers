@@ -3,8 +3,8 @@
  */
 
 @interface PreferencesDoubleTwoPartValueCell : PreferencesTwoPartValueCell {
-    UILabel *_textLabel2;
-    TwoPartTextLabel *_twoPartLabel2;
+    UILabel * _textLabel2;
+    TwoPartTextLabel * _twoPartLabel2;
 }
 
 @property (nonatomic, readonly, retain) UILabel *textLabel2;

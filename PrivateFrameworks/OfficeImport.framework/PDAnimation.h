@@ -3,8 +3,8 @@
  */
 
 @interface PDAnimation : NSObject {
-    OITSUNoCopyDictionary *mBuildMap;
-    PDRootTimeNode *mRootTimeNode;
+    OITSUNoCopyDictionary * mBuildMap;
+    PDRootTimeNode * mRootTimeNode;
 }
 
 + (void)initialize;

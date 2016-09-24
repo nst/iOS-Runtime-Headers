@@ -3,8 +3,8 @@
  */
 
 @interface STMapViewportVertex : NSObject <NSSecureCoding> {
-    double _latitude;
-    double _longitude;
+    double  _latitude;
+    double  _longitude;
 }
 
 @property (nonatomic) double latitude;

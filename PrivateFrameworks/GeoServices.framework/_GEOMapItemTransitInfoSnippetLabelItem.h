@@ -3,9 +3,9 @@
  */
 
 @interface _GEOMapItemTransitInfoSnippetLabelItem : NSObject <GEOTransitLabelItem> {
-    <GEOTransitArtworkDataSource> *_labelArtwork;
-    NSString *_labelString;
-    int _type;
+    <GEOTransitArtworkDataSource> * _labelArtwork;
+    NSString * _labelString;
+    int  _type;
 }
 
 @property (readonly, copy) NSString *debugDescription;

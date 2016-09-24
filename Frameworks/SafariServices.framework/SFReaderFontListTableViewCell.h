@@ -3,7 +3,7 @@
  */
 
 @interface SFReaderFontListTableViewCell : UITableViewCell {
-    UIImageView *_fontSelectionImageView;
+    UIImageView * _fontSelectionImageView;
 }
 
 @property (nonatomic, retain) UIImageView *fontSelectionImageView;

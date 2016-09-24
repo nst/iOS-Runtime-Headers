@@ -3,10 +3,10 @@
  */
 
 @interface _RMSBonjourService : NSObject {
-    BOOL _available;
-    NSNetService *_netService;
-    RMSService *_service;
-    int _state;
+    BOOL  _available;
+    NSNetService * _netService;
+    RMSService * _service;
+    int  _state;
 }
 
 @property (getter=isAvailable, nonatomic) BOOL available;

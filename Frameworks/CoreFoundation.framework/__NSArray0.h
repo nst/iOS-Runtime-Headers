@@ -13,7 +13,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
 - (void)dealloc;
-- (void)finalize;
 - (id)init;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (oneway void)release;

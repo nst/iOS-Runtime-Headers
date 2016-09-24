@@ -3,7 +3,7 @@
  */
 
 @interface SKUIRowViewElementPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate> {
-    SKUIViewElementLayoutContext *_cellLayoutContext;
+    SKUIViewElementLayoutContext * _cellLayoutContext;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -16,7 +16,7 @@
 - (Class)_cellClassForCardViewElement:(id)arg1;
 - (Class)_cellClassForLockupViewElement:(id)arg1;
 - (Class)_cellClassForViewElement:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentInsetForIndexPath:(id)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentInsetForIndexPath:(id)arg1;
 - (void)_enumerateViewElementsUsingBlock:(id /* block */)arg1;
 - (id)_firstChildForColumn:(id)arg1;
 - (float)_interiorColumnSpacing;
@@ -29,7 +29,7 @@
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (id)backgroundColorForIndexPath:(id)arg1;
 - (id)cellForIndexPath:(id)arg1;
-- (struct CGSize { float x1; float x2; })cellSizeForIndexPath:(id)arg1;
+- (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
 - (void)collectionViewDidEndDisplayingCellForItemAtIndexPath:(id)arg1;
 - (void)collectionViewDidSelectItemAtIndexPath:(id)arg1;
 - (BOOL)collectionViewShouldHighlightItemAtIndexPath:(id)arg1;
@@ -40,9 +40,9 @@
 - (id)initWithPageComponent:(id)arg1;
 - (int)numberOfCells;
 - (void)prefetchResourcesWithReason:(int)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionContentInset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionContentInset;
 - (BOOL)updateCellWithIndexPath:(id)arg1 itemState:(id)arg2 animated:(BOOL)arg3;
 - (void)willAppearInContext:(id)arg1;
-- (void)willTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)willTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

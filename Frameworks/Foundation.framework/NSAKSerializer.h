@@ -3,7 +3,7 @@
  */
 
 @interface NSAKSerializer : NSObject {
-    id ss;
+    id  ss;
 }
 
 - (void)dealloc;

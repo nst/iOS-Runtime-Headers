@@ -3,10 +3,10 @@
  */
 
 @interface SBKTransaction : NSObject {
-    SBKRequest *_activeRequest;
-    NSString *_domain;
-    NSURL *_requestURL;
-    NSMutableDictionary *_userInfo;
+    SBKRequest * _activeRequest;
+    NSString * _domain;
+    NSURL * _requestURL;
+    NSMutableDictionary * _userInfo;
 }
 
 @property (retain) SBKRequest *activeRequest;

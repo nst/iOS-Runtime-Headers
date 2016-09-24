@@ -3,7 +3,7 @@
  */
 
 @interface CardDAVFolderSyncTaskGroup : CoreDAVContainerSyncTaskGroup {
-    BOOL _isInitialSync;
+    BOOL  _isInitialSync;
 }
 
 @property (nonatomic) BOOL isInitialSync;

@@ -3,18 +3,18 @@
  */
 
 @interface PURegularAdjustmentsModeBar : PUAdjustmentsModeBar <UICollectionViewDataSource> {
-    NSArray *__availableSupermodes;
-    NSArray *__visibleSliderModes;
-    UIButton *_expansionButton;
-    NSArray *_expansionButtonConstraints;
-    PUSlidersCollectionView *_modeDetailSlidersCollectionView;
-    NSArray *_modeDetailSlidersCollectionViewConstraints;
-    UIView *_modeDetailView;
-    NSArray *_modeDetailViewConstraints;
-    NSMapTable *_supermodeButtonsByMode;
-    NSArray *_supermodeButtonsConstraints;
-    NSMapTable *_supermodeLabelsByMode;
-    NSMapTable *_supermodeTitleBackgroundByMode;
+    NSArray * __availableSupermodes;
+    NSArray * __visibleSliderModes;
+    UIButton * _expansionButton;
+    NSArray * _expansionButtonConstraints;
+    PUSlidersCollectionView * _modeDetailSlidersCollectionView;
+    NSArray * _modeDetailSlidersCollectionViewConstraints;
+    UIView * _modeDetailView;
+    NSArray * _modeDetailViewConstraints;
+    NSMapTable * _supermodeButtonsByMode;
+    NSArray * _supermodeButtonsConstraints;
+    NSMapTable * _supermodeLabelsByMode;
+    NSMapTable * _supermodeTitleBackgroundByMode;
 }
 
 @property (nonatomic, readonly) PUAdjustmentsMode *_expandedSupermode;
@@ -44,7 +44,7 @@
 - (void)updateConstraints;
 - (void)updateEnabledForCurrentMode;
 - (id)visibleSliderAdjustmentModes;
-- (BOOL)wantsToHandleEventAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)wantsToHandleEventAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)willMoveToWindow:(id)arg1;
 
 @end

@@ -3,10 +3,10 @@
  */
 
 @interface OCPPackageRelationship : NSObject {
-    NSString *mIdentifier;
-    NSURL *mTargetLocation;
-    int mTargetMode;
-    NSString *mType;
+    NSString * mIdentifier;
+    NSURL * mTargetLocation;
+    int  mTargetMode;
+    NSString * mType;
 }
 
 - (void)dealloc;

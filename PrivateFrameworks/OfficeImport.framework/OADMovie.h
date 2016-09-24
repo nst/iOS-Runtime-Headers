@@ -3,19 +3,19 @@
  */
 
 @interface OADMovie : OCDDelayedMedia {
-    BOOL loop;
-    NSData *mData;
-    float mEnd;
-    BOOL mIsAudioOnly;
-    NSString *mName;
-    float mStart;
+    BOOL  loop;
+    NSData * mData;
+    double  mEnd;
+    BOOL  mIsAudioOnly;
+    NSString * mName;
+    double  mStart;
 }
 
 @property (retain) NSData *data;
 @property BOOL isAudioOnly;
 @property BOOL loop;
-@property float movieEndPoint;
-@property float movieStartPoint;
+@property double movieEndPoint;
+@property double movieStartPoint;
 @property (retain) NSString *name;
 
 - (id)data;

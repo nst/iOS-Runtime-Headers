@@ -3,24 +3,24 @@
  */
 
 @interface NCInteractiveNotificationHostViewController : _UIRemoteViewController <NCInteractiveNotificationHost, NCInteractiveNotificationHostDelegate, NCInteractiveNotificationHostInterface> {
-    NCViewServiceDescriptor *_accessoryViewService;
-    float _bottomOverhangHeight;
-    <NCInteractiveNotificationHostDelegate> *_delegate;
-    NCViewServiceDescriptor *_inlayViewService;
-    float _maximumHeight;
-    BOOL _modal;
-    BOOL _proximityMonitoringEnabled;
-    BOOL _showsKeyboard;
+    NCViewServiceDescriptor * _accessoryViewService;
+    double  _bottomOverhangHeight;
+    <NCInteractiveNotificationHostDelegate> * _delegate;
+    NCViewServiceDescriptor * _inlayViewService;
+    double  _maximumHeight;
+    BOOL  _modal;
+    BOOL  _proximityMonitoringEnabled;
+    BOOL  _showsKeyboard;
 }
 
 @property (nonatomic, retain) NCViewServiceDescriptor *accessoryViewService;
-@property (nonatomic) float bottomOverhangHeight;
+@property (nonatomic) double bottomOverhangHeight;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NCInteractiveNotificationHostDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NCViewServiceDescriptor *inlayViewService;
-@property (nonatomic) float maximumHeight;
+@property (nonatomic) double maximumHeight;
 @property (getter=isModal, nonatomic) BOOL modal;
 @property (nonatomic) BOOL showsKeyboard;
 @property (readonly) Class superclass;
@@ -30,6 +30,7 @@
 + (void)requestInteractiveNotificationControllerWithName:(id)arg1 bundleIdentifier:(id)arg2 context:(id)arg3 completion:(id /* block */)arg4;
 + (id)serviceViewControllerInterface;
 
+- (void).cxx_destruct;
 - (BOOL)__shouldRemoteViewControllerFenceOperations;
 - (void)_dismissWithContext:(id)arg1;
 - (void)_proximityStateChanged:(id)arg1;

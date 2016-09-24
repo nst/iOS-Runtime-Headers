@@ -2,16 +2,16 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMZone : NSObject <HMMessageReceiver, HMObjectMerge, NSSecureCoding> {
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    HMThreadSafeMutableArrayCollection *_currentRooms;
-    HMDelegateCaller *_delegateCaller;
-    HMHome *_home;
-    HMMessageDispatcher *_msgDispatcher;
-    NSString *_name;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
-    NSUUID *_uniqueIdentifier;
-    NSUUID *_uuid;
+@interface HMZone : NSObject <HMFMessageReceiver, HMObjectMerge, NSSecureCoding> {
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    HMThreadSafeMutableArrayCollection * _currentRooms;
+    HMDelegateCaller * _delegateCaller;
+    HMHome * _home;
+    HMFMessageDispatcher * _msgDispatcher;
+    NSString * _name;
+    NSObject<OS_dispatch_queue> * _propertyQueue;
+    NSUUID * _uniqueIdentifier;
+    NSUUID * _uuid;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
@@ -23,7 +23,7 @@
 @property (nonatomic) HMHome *home;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
-@property (nonatomic, retain) HMMessageDispatcher *msgDispatcher;
+@property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic, readonly, copy) NSArray *rooms;

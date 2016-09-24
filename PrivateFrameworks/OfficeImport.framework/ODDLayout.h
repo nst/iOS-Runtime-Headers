@@ -3,7 +3,7 @@
  */
 
 @interface ODDLayout : NSObject {
-    ODDLayoutNode *mRootNode;
+    ODDLayoutNode * mRootNode;
 }
 
 - (void)dealloc;

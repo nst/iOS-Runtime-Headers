@@ -3,7 +3,7 @@
  */
 
 @interface HSContainersResponse : HSResponse {
-    NSArray *_containers;
+    NSArray * _containers;
 }
 
 @property (nonatomic, copy) NSArray *containers;

@@ -12,7 +12,7 @@
 - (BOOL)isTimeZoneSet;
 - (unsigned int)preferredVideoFormat;
 - (unsigned int)preferredVideoPreviewFormat;
-- (struct CGSize { float x1; float x2; })screenSize;
+- (struct CGSize { double x1; double x2; })screenSize;
 - (id)storeFrontCountryCode;
 - (id)systemLanguage;
 - (id)timeZone;

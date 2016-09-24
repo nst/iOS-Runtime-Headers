@@ -3,9 +3,9 @@
  */
 
 @interface __NSMessageBuilder  {
-    id *_addr;
-    id _target;
-    Class isa;
+    id * _addr;
+    id  _target;
+    Class  isa;
 }
 
 + (void)initialize;

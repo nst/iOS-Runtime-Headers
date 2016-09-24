@@ -3,13 +3,15 @@
  */
 
 @interface UIStatusBarStyleRequest : NSObject <NSCopying, NSMutableCopying> {
-    UIColor *_foregroundColor;
-    BOOL _legacy;
-    int _legibilityStyle;
-    NSNumber *_overrideHeight;
-    int _style;
+    double  _foregroundAlpha;
+    UIColor * _foregroundColor;
+    BOOL  _legacy;
+    int  _legibilityStyle;
+    NSNumber * _overrideHeight;
+    int  _style;
 }
 
+@property (nonatomic, readonly) double foregroundAlpha;
 @property (nonatomic, readonly, retain) UIColor *foregroundColor;
 @property (getter=isLegacy, nonatomic, readonly) BOOL legacy;
 @property (nonatomic, readonly) int legibilityStyle;
@@ -19,10 +21,13 @@
 - (void).cxx_destruct;
 - (id)_copyWithZone:(struct _NSZone { }*)arg1 class:(Class)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (float)foregroundAlpha;
 - (id)foregroundColor;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithStyle:(int)arg1 legacy:(BOOL)arg2 legibilityStyle:(int)arg3 foregroundColor:(id)arg4;
+- (id)initWithStyle:(int)arg1 legacy:(BOOL)arg2 legibilityStyle:(int)arg3 foregroundColor:(id)arg4 foregroundAlpha:(float)arg5;
+- (id)initWithStyle:(int)arg1 legacy:(BOOL)arg2 legibilityStyle:(int)arg3 foregroundColor:(id)arg4 foregroundAlpha:(float)arg5 overrideHeight:(id)arg6;
 - (id)initWithStyle:(int)arg1 legacy:(BOOL)arg2 legibilityStyle:(int)arg3 foregroundColor:(id)arg4 overrideHeight:(id)arg5;
 - (BOOL)isDoubleHeight;
 - (BOOL)isEqual:(id)arg1;

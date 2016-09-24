@@ -3,7 +3,7 @@
  */
 
 @interface OADImageProperties : OADGraphicProperties {
-    OADImageFill *mImageFill;
+    OADImageFill * mImageFill;
 }
 
 + (id)defaultProperties;

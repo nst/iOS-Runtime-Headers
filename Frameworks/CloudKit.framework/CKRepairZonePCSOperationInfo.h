@@ -3,7 +3,7 @@
  */
 
 @interface CKRepairZonePCSOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    NSArray *_zoneIDs;
+    NSArray * _zoneIDs;
 }
 
 @property (nonatomic, retain) NSArray *zoneIDs;

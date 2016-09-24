@@ -3,12 +3,12 @@
  */
 
 @interface PKPaperList : NSObject {
-    NSArray *_duplexPapers;
-    BOOL _hasMediaReady;
-    NSArray *_papers;
-    NSArray *_photoPapers;
-    NSArray *_rolls;
-    NSArray *_simplexPapers;
+    NSArray * _duplexPapers;
+    BOOL  _hasMediaReady;
+    NSArray * _papers;
+    NSArray * _photoPapers;
+    NSArray * _rolls;
+    NSArray * _simplexPapers;
 }
 
 @property (retain) NSArray *duplexPapers;
@@ -42,12 +42,12 @@
 - (id)matchedPaper:(id)arg1 preferBorderless:(BOOL)arg2 withDuplexMode:(id)arg3 didMatch:(BOOL*)arg4;
 - (id)paperListForDuplexMode:(id)arg1;
 - (id)papers;
-- (id)papersForDocumentWithSize:(struct CGSize { float x1; float x2; })arg1 scaleUpOnRoll:(BOOL)arg2 andDuplex:(BOOL)arg3;
-- (id)papersForPhotoWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)papersForDocumentWithSize:(struct CGSize { double x1; double x2; })arg1 scaleUpOnRoll:(BOOL)arg2 andDuplex:(BOOL)arg3;
+- (id)papersForPhotoWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)photoPapers;
-- (id)rollReadyPaperListForDocumentWithContentSize:(struct CGSize { float x1; float x2; })arg1 scaleUp:(BOOL)arg2;
-- (id)rollReadyPaperListForPhotoWithContentSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)rollReadyPaperListWithContentSize:(struct CGSize { float x1; float x2; })arg1 forPhoto:(BOOL)arg2;
+- (id)rollReadyPaperListForDocumentWithContentSize:(struct CGSize { double x1; double x2; })arg1 scaleUp:(BOOL)arg2;
+- (id)rollReadyPaperListForPhotoWithContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)rollReadyPaperListWithContentSize:(struct CGSize { double x1; double x2; })arg1 forPhoto:(BOOL)arg2;
 - (id)rolls;
 - (void)setDuplexPapers:(id)arg1;
 - (void)setHasMediaReady:(BOOL)arg1;

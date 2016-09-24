@@ -3,14 +3,14 @@
  */
 
 @interface SKUIProfileImagePicker : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
-    SKUIClientContext *_clientContext;
-    UIView *_contentView;
-    <SKUIProfileImagePickerDelegate> *_delegate;
-    UILabel *_descriptionLabel;
-    BOOL _firstApperance;
-    UIImagePickerController *_imagePicker;
-    UIScrollView *_scrollView;
-    UILabel *_titleLabel;
+    SKUIClientContext * _clientContext;
+    UIView * _contentView;
+    <SKUIProfileImagePickerDelegate> * _delegate;
+    UILabel * _descriptionLabel;
+    BOOL  _firstApperance;
+    UIImagePickerController * _imagePicker;
+    UIScrollView * _scrollView;
+    UILabel * _titleLabel;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,8 +3,8 @@
  */
 
 @interface NRMutableStateBaseObserverWrapper : NSObject {
-    id /* block */ _observer;
-    NSObject<OS_dispatch_queue> *_queue;
+    id /* block */  _observer;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, copy) id /* block */ observer;

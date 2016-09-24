@@ -13,8 +13,8 @@
 - (Class)itemClass;
 - (id)mixPlaylist;
 - (id)playbackInfoForIdentifier:(id)arg1;
-- (unsigned int)realRepeatType;
-- (unsigned int)realShuffleType;
+- (int)realRepeatType;
+- (int)realShuffleType;
 - (void)setMixPlaylist:(id)arg1;
 
 @end

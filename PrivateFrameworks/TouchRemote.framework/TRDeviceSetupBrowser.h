@@ -3,9 +3,9 @@
  */
 
 @interface TRDeviceSetupBrowser : NSObject <TRTransferBrowserDelegate> {
-    <TRDeviceSetupBrowserDelegate> *_delegate;
-    TRDeviceSetupPeripheral *_peripheral;
-    TRTransferBrowser *_transferBrowser;
+    <TRDeviceSetupBrowserDelegate> * _delegate;
+    TRDeviceSetupPeripheral * _peripheral;
+    TRTransferBrowser * _transferBrowser;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,12 +3,16 @@
  */
 
 @interface PSIGroupAggregate : NSObject {
-    NSMutableArray *_aggregatedGroupIds;
-    NSMutableArray *_assetIdArrays;
-    NSMutableArray *_groups;
-    NSMutableArray *_rangesMatchingTokens;
-    NSArray *_searchTokens;
+    NSMutableArray * _aggregatedGroupIds;
+    NSMutableArray * _assetIdArrays;
+    NSMutableArray * _groups;
+    NSMutableArray * _primaryAssetIdArrays;
+    NSMutableArray * _rangesMatchingTokens;
+    NSArray * _searchTokens;
+    NSMutableArray * _secondaryAssetIdArrays;
 }
+
+@property (readonly) NSArray *searchTokens;
 
 - (struct __CFArray { }*)_newSortedGroupIds;
 - (BOOL)_prefer:(id)arg1 over:(id)arg2;
@@ -16,9 +20,10 @@
 - (BOOL)_verifySortedGroupIdsUnique;
 - (void)dealloc;
 - (id)initWithSearchTokens:(id)arg1;
-- (id)newGroup;
+- (id)newGroupResult;
 - (void)pop;
 - (void)postProcessGroupResults:(id)arg1;
-- (BOOL)pushGroup:(id)arg1;
+- (BOOL)pushGroup:(id)arg1 secondaryPairedGroup:(id)arg2;
+- (id)searchTokens;
 
 @end

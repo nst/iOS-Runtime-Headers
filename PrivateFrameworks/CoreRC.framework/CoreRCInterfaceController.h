@@ -3,9 +3,9 @@
  */
 
 @interface CoreRCInterfaceController : NSObject <CoreRCInterfaceListenerDelegate> {
-    <CoreRCInterfaceControllerDelegate> *_delegate;
-    NSMutableArray *_interfaceListeners;
-    NSObject<OS_dispatch_queue> *_queue;
+    <CoreRCInterfaceControllerDelegate> * _delegate;
+    NSMutableArray * _interfaceListeners;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

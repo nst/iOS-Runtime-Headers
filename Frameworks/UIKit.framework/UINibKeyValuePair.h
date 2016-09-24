@@ -3,9 +3,9 @@
  */
 
 @interface UINibKeyValuePair : NSObject {
-    NSString *keyPath;
-    id object;
-    id value;
+    NSString * keyPath;
+    id  object;
+    id  value;
 }
 
 @property (nonatomic, readonly, copy) NSString *keyPath;

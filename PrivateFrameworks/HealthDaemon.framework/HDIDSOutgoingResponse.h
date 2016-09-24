@@ -3,18 +3,18 @@
  */
 
 @interface HDIDSOutgoingResponse : NSObject <HDNanoSyncDescription> {
-    NSData *_data;
-    BOOL _doNotCompress;
-    BOOL _forceLocalDelivery;
-    NSString *_idsIdentifier;
-    unsigned short _messageID;
-    id _pbResponse;
-    NSDictionary *_persistentUserInfo;
-    unsigned int _priority;
-    HDIDSIncomingRequest *_request;
-    double _sendTimeout;
-    BOOL _sent;
-    IDSDevice *_toDevice;
+    NSData * _data;
+    BOOL  _doNotCompress;
+    BOOL  _forceLocalDelivery;
+    NSString * _idsIdentifier;
+    unsigned short  _messageID;
+    id  _pbResponse;
+    NSDictionary * _persistentUserInfo;
+    unsigned int  _priority;
+    HDIDSIncomingRequest * _request;
+    double  _sendTimeout;
+    BOOL  _sent;
+    IDSDevice * _toDevice;
 }
 
 @property (nonatomic, retain) NSData *data;

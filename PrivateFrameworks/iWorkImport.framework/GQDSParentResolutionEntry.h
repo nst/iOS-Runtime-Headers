@@ -3,8 +3,8 @@
  */
 
 @interface GQDSParentResolutionEntry : NSObject {
-    char *mParentIdentifier;
-    GQDSStyle *mStyle;
+    char * mParentIdentifier;
+    GQDSStyle * mStyle;
 }
 
 - (void)dealloc;

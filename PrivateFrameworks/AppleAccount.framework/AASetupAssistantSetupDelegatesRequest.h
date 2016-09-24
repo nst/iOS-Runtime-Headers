@@ -3,9 +3,9 @@
  */
 
 @interface AASetupAssistantSetupDelegatesRequest : AARequest {
-    ACAccount *_account;
-    NSDictionary *setupParameters;
-    AASigningSession *signingSession;
+    ACAccount * _account;
+    NSDictionary * setupParameters;
+    AASigningSession * signingSession;
 }
 
 + (Class)responseClass;

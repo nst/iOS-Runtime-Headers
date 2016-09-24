@@ -5,22 +5,22 @@
 @interface UIGestureInfo : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } centerRect;
-    id delegate;
-    int enabledGestures;
-    float endDegrees;
-    float endScale;
+    }  centerRect;
+    id  delegate;
+    int  enabledGestures;
+    double  endDegrees;
+    double  endScale;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } endScrollPoint;
+        double x; 
+        double y; 
+    }  endScrollPoint;
     struct { 
         unsigned int pushedRunLoop : 1; 
         unsigned int isRotatingRight : 1; 
@@ -28,48 +28,48 @@
         unsigned int zoomsFromCurrentToMinOrMax : 1; 
         unsigned int updatesScroller : 1; 
         unsigned int isAnimatingZoomFailure : 1; 
-    } flags;
-    float maxDegrees;
-    float maxScale;
-    float minDegrees;
-    float minScale;
-    int panState;
-    float recentRotationDegrees;
-    UIGestureAnimation *rotationAnimation;
-    float rotationDegrees;
-    int rotationState;
-    UIScrollAnimation *scrollAnimation;
-    float startDegrees;
+    }  flags;
+    double  maxDegrees;
+    double  maxScale;
+    double  minDegrees;
+    double  minScale;
+    int  panState;
+    double  recentRotationDegrees;
+    UIGestureAnimation * rotationAnimation;
+    double  rotationDegrees;
+    int  rotationState;
+    UIScrollAnimation * scrollAnimation;
+    double  startDegrees;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } startGestureInner;
+        double x; 
+        double y; 
+    }  startGestureInner;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } startGestureOuter;
-    float startScale;
+        double x; 
+        double y; 
+    }  startGestureOuter;
+    double  startScale;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } startScrollPoint;
-    float unadjustedScale;
+        double x; 
+        double y; 
+    }  startScrollPoint;
+    double  unadjustedScale;
     struct CGSize { 
-        float width; 
-        float height; 
-    } visibleSize;
-    UIGestureAnimation *zoomAnimation;
-    float zoomAnimationProgress;
-    float zoomFailureDuration;
-    float zoomFailureStartScale;
+        double width; 
+        double height; 
+    }  visibleSize;
+    UIGestureAnimation * zoomAnimation;
+    double  zoomAnimationProgress;
+    double  zoomFailureDuration;
+    double  zoomFailureStartScale;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } zoomFailureWindowPoint;
-    float zoomMultiplier;
-    int zoomRubberBandHysteresisCount;
-    float zoomScale;
-    int zoomState;
+        double x; 
+        double y; 
+    }  zoomFailureWindowPoint;
+    double  zoomMultiplier;
+    int  zoomRubberBandHysteresisCount;
+    double  zoomScale;
+    int  zoomState;
 }
 
 - (void).cxx_destruct;

@@ -3,7 +3,7 @@
  */
 
 @interface GLKMeshBufferAllocator : NSObject <MDLMeshBufferAllocator> {
-    EAGLSharegroup *_sharegroup;
+    EAGLSharegroup * _sharegroup;
 }
 
 @property (readonly, copy) NSString *debugDescription;

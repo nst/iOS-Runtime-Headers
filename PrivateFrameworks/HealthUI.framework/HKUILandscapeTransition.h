@@ -3,11 +3,11 @@
  */
 
 @interface HKUILandscapeTransition : NSObject <UIViewControllerTransitioningDelegate> {
-    BOOL _isVisible;
-    UIViewController *_presentedViewController;
-    BOOL _shouldRetainViewHierarchy;
-    <UIViewControllerAnimatedTransitioning> *_transitionAnimator;
-    UIViewController<HKUILandscapeTransitioningViewController> *_transitioningViewController;
+    BOOL  _isVisible;
+    UIViewController * _presentedViewController;
+    BOOL  _shouldRetainViewHierarchy;
+    <UIViewControllerAnimatedTransitioning> * _transitionAnimator;
+    UIViewController<HKUILandscapeTransitioningViewController> * _transitioningViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

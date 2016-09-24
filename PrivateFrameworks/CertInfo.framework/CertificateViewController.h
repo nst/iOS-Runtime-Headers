@@ -3,19 +3,19 @@
  */
 
 @interface CertificateViewController : UITableViewController {
-    int _certUIAction;
-    id /* block */ _certificateButtonActionHandler;
-    NSString *_certificateButtonDescription;
-    BOOL _certificateButtonIsDestructiveAction;
-    NSString *_certificateButtonTitle;
-    NSDate *_certificateExpiration;
-    BOOL _certificateIsRoot;
-    NSString *_certificateIssuer;
-    NSArray *_certificateProperties;
-    NSString *_certificatePurpose;
-    NSString *_certificateTitle;
-    id _certificateTrust;
-    BOOL _showCertificateButton;
+    int  _certUIAction;
+    id /* block */  _certificateButtonActionHandler;
+    NSString * _certificateButtonDescription;
+    BOOL  _certificateButtonIsDestructiveAction;
+    NSString * _certificateButtonTitle;
+    NSDate * _certificateExpiration;
+    BOOL  _certificateIsRoot;
+    NSString * _certificateIssuer;
+    NSArray * _certificateProperties;
+    NSString * _certificatePurpose;
+    NSString * _certificateTitle;
+    id  _certificateTrust;
+    BOOL  _showCertificateButton;
 }
 
 @property (nonatomic) int certUIAction;

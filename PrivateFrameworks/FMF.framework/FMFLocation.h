@@ -3,36 +3,36 @@
  */
 
 @interface FMFLocation : NSObject <FMAnnotation, NSCopying, NSSecureCoding> {
-    double _TTL;
-    NSString *_age;
-    struct { 
+    double  _TTL;
+    NSString * _age;
+    struct CLLocationCoordinate2D { 
         double latitude; 
         double longitude; 
-    } _coordinate;
-    double _distance;
-    NSString *_distanceDescription;
-    double _distanceFromUser;
-    FMFHandle *_handle;
-    double _horizontalAccuracy;
-    BOOL _isBorderEnabled;
-    NSString *_label;
-    UIImage *_largeAnnotationIcon;
-    UIImage *_largeOverlayIcon;
-    BOOL _locatingInProgress;
-    CLLocation *_location;
-    NSString *_longAddress;
-    double _maxLocatingInterval;
-    FMAccuracyOverlay *_overlay;
-    NSString *_shortAddressString;
-    UIImage *_smallAnnotationIcon;
-    UIImage *_smallOverlayIcon;
-    NSDate *_timestamp;
-    UIColor *_tintColor;
+    }  _coordinate;
+    double  _distance;
+    NSString * _distanceDescription;
+    double  _distanceFromUser;
+    FMFHandle * _handle;
+    double  _horizontalAccuracy;
+    BOOL  _isBorderEnabled;
+    NSString * _label;
+    UIImage * _largeAnnotationIcon;
+    UIImage * _largeOverlayIcon;
+    BOOL  _locatingInProgress;
+    CLLocation * _location;
+    NSString * _longAddress;
+    double  _maxLocatingInterval;
+    FMAccuracyOverlay * _overlay;
+    NSString * _shortAddressString;
+    UIImage * _smallAnnotationIcon;
+    UIImage * _smallOverlayIcon;
+    NSDate * _timestamp;
+    UIColor * _tintColor;
 }
 
 @property (nonatomic) double TTL;
 @property (nonatomic, retain) NSString *age;
-@property (nonatomic) struct { double x1; double x2; } coordinate;
+@property (nonatomic) struct CLLocationCoordinate2D { double x1; double x2; } coordinate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) double distance;
@@ -68,7 +68,7 @@
 - (id)age;
 - (id)agingItemTimestamp;
 - (BOOL)conformsToProtocol:(id)arg1;
-- (struct { double x1; double x2; })coordinate;
+- (struct CLLocationCoordinate2D { double x1; double x2; })coordinate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (double)distance;
@@ -101,7 +101,7 @@
 - (void)resetLocateInProgress:(id)arg1;
 - (void)resetLocateInProgressTimer;
 - (void)setAge:(id)arg1;
-- (void)setCoordinate:(struct { double x1; double x2; })arg1;
+- (void)setCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
 - (void)setDistance:(double)arg1;
 - (void)setDistanceDescription:(id)arg1;
 - (void)setDistanceFromUser:(double)arg1;

@@ -3,23 +3,23 @@
  */
 
 @interface CDBRecurrenceGenerator : NSObject {
-    BOOL _allDay;
-    NSCalendar *_calendar;
-    NSArray *_daysOfTheMonth;
-    NSArray *_daysOfTheWeek;
-    NSArray *_daysOfTheYear;
-    unsigned int _duration;
-    NSDate *_endDate;
-    NSDate *_eventEndDate;
-    NSDate *_eventStartDate;
-    NSTimeZone *_eventTimeZone;
-    int _frequency;
-    long _interval;
-    NSArray *_monthsOfTheYear;
-    NSArray *_setPositions;
-    BOOL _shouldPinMonthDays;
-    int _weekStart;
-    NSArray *_weeksOfTheYear;
+    BOOL  _allDay;
+    NSCalendar * _calendar;
+    NSArray * _daysOfTheMonth;
+    NSArray * _daysOfTheWeek;
+    NSArray * _daysOfTheYear;
+    unsigned int  _duration;
+    NSDate * _endDate;
+    NSDate * _eventEndDate;
+    NSDate * _eventStartDate;
+    NSTimeZone * _eventTimeZone;
+    int  _frequency;
+    long  _interval;
+    NSArray * _monthsOfTheYear;
+    NSArray * _setPositions;
+    BOOL  _shouldPinMonthDays;
+    int  _weekStart;
+    NSArray * _weeksOfTheYear;
 }
 
 @property (nonatomic) BOOL allDay;
@@ -34,6 +34,7 @@
 @property (nonatomic, copy) NSArray *setPositions;
 @property (nonatomic, copy) NSArray *weeksOfTheYear;
 
+- (void).cxx_destruct;
 - (double)_convertAbsoluteTime:(double)arg1 fromTimeZone:(id)arg2 toTimeZone:(id)arg3;
 - (id)_copyDailyOccurrencesWithInitialDate:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 count:(unsigned int)arg4;
 - (id)_copyMonthlyOccurrencesWithInitialDate:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 count:(unsigned int)arg4;
@@ -54,7 +55,6 @@
 - (id)daysOfTheMonth;
 - (id)daysOfTheWeek;
 - (id)daysOfTheYear;
-- (void)dealloc;
 - (id)endDate;
 - (id)eventEndDate;
 - (id)eventStartDate;

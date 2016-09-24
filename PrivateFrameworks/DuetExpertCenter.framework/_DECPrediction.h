@@ -3,11 +3,11 @@
  */
 
 @interface _DECPrediction : NSObject <NSCopying, NSSecureCoding> {
-    NSDate *_creationDate;
-    _DECPredictionExpiry *_expiry;
-    NSArray *_items;
-    int _reason;
-    NSDictionary *_reasonMetadata;
+    NSDate * _creationDate;
+    _DECPredictionExpiry * _expiry;
+    NSArray * _items;
+    int  _reason;
+    NSDictionary * _reasonMetadata;
 }
 
 @property (nonatomic, retain) NSDate *creationDate;

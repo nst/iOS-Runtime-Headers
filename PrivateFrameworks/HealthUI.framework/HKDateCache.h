@@ -3,23 +3,26 @@
  */
 
 @interface HKDateCache : NSObject {
-    NSCalendar *_calendar;
-    NSDate *_endOfDayMidnight;
-    NSDate *_endOfDayNoon;
-    NSDate *_endOfMonthMidnight;
-    NSDate *_endOfMonthNoon;
-    NSDate *_endOfWeekMidnight;
-    NSDate *_endOfWeekNoon;
-    NSDate *_endOfYear;
-    NSHashTable *_observers;
-    NSDate *_startOfDayMidnight;
-    NSDate *_startOfDayNoon;
-    NSDate *_startOfMonthMidnight;
-    NSDate *_startOfMonthNoon;
-    NSDate *_startOfWeekMidnight;
-    NSDate *_startOfWeekNoon;
-    NSDate *_startOfYear;
-    NSSet *_weekendDays;
+    NSCalendar * _calendar;
+    NSDate * _endOfDayMidnight;
+    NSDate * _endOfDayNoon;
+    NSDate * _endOfMonthMidnight;
+    NSDate * _endOfMonthNoon;
+    NSDate * _endOfWeekMidnight;
+    NSDate * _endOfWeekNoon;
+    NSDate * _endOfYear;
+    NSDate * _endOfYearNoon;
+    NSHashTable * _observers;
+    NSDate * _oneMinuteBeforeEndOfDayMidnight;
+    NSDate * _startOfDayMidnight;
+    NSDate * _startOfDayNoon;
+    NSDate * _startOfMonthMidnight;
+    NSDate * _startOfMonthNoon;
+    NSDate * _startOfWeekMidnight;
+    NSDate * _startOfWeekNoon;
+    NSDate * _startOfYear;
+    NSDate * _startOfYearNoon;
+    NSSet * _weekendDays;
 }
 
 @property (nonatomic, readonly) NSCalendar *calendar;
@@ -31,6 +34,7 @@
 @property (nonatomic, readonly) NSDate *endOfWeekNoon;
 @property (nonatomic, readonly) NSDate *endOfYearMidnight;
 @property (nonatomic, readonly) NSDate *endOfYearNoon;
+@property (nonatomic, readonly) NSDate *oneMinuteBeforeEndOfDayMidnight;
 @property (nonatomic, readonly) NSDate *startOfDayMidnight;
 @property (nonatomic, readonly) NSDate *startOfDayNoon;
 @property (nonatomic, readonly) NSDate *startOfMonthMidnight;
@@ -63,6 +67,7 @@
 - (id)initWithCalendar:(id)arg1;
 - (BOOL)isDateInToday:(id)arg1;
 - (BOOL)isDayOfWeekNumberOnWeekend:(id)arg1;
+- (id)oneMinuteBeforeEndOfDayMidnight;
 - (void)removeObserver:(id)arg1;
 - (id)startOfDay:(BOOL)arg1;
 - (id)startOfDayMidnight;

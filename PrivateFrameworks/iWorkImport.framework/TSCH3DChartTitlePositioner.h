@@ -5,42 +5,42 @@
 @interface TSCH3DChartTitlePositioner : NSObject {
     struct tvec2<float> { 
         union { 
-            float x; 
-            float r; 
-            float s; 
+            double x; 
+            double r; 
+            double s; 
         } ; 
         union { 
-            float y; 
-            float g; 
-            float t; 
+            double y; 
+            double g; 
+            double t; 
         } ; 
-    } mCachedCategoryAxisLabelsSize;
+    }  mCachedCategoryAxisLabelsSize;
     struct tvec2<float> { 
         union { 
-            float x; 
-            float r; 
-            float s; 
+            double x; 
+            double r; 
+            double s; 
         } ; 
         union { 
-            float y; 
-            float g; 
-            float t; 
+            double y; 
+            double g; 
+            double t; 
         } ; 
-    } mCachedSeriesLabelsSize;
+    }  mCachedSeriesLabelsSize;
     struct tvec2<float> { 
         union { 
-            float x; 
-            float r; 
-            float s; 
+            double x; 
+            double r; 
+            double s; 
         } ; 
         union { 
-            float y; 
-            float g; 
-            float t; 
+            double y; 
+            double g; 
+            double t; 
         } ; 
-    } mCachedValueAxisLabelsSize;
-    TSCHChartInfo *mInfo;
-    TSCH3DScene *mScene;
+    }  mCachedValueAxisLabelsSize;
+    TSCHChartInfo * mInfo;
+    TSCH3DScene * mScene;
 }
 
 @property (nonatomic, readonly) TSCHChartInfo *info;
@@ -49,14 +49,14 @@
 + (id)positionerWithInfo:(id)arg1 scene:(id)arg2;
 
 - (id).cxx_construct;
-- (void)applyParagraphStyle:(id)arg1 onLabelTransform:(struct LabelTransform { struct tvec3<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; } x1; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; } x2; unsigned int x3; float x4; BOOL x5; }*)arg2 alignmentDimension:(int)arg3;
+- (void)applyParagraphStyle:(id)arg1 onLabelTransform:(struct LabelTransform { struct tvec3<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; } x1; struct tvec2<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_2_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_2_1_2; } x2; unsigned int x3; double x4; BOOL x5; }*)arg2 alignmentDimension:(int)arg3;
 - (void)dealloc;
 - (id)info;
 - (id)initWithInfo:(id)arg1 scene:(id)arg2;
 - (id)scene;
-- (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })sizeOfCategoryAxisLabels;
-- (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })sizeOfSeriesLabels;
-- (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })sizeOfValueAxisLabels;
-- (float)wrapWidthForSize:(struct CGSize { float x1; float x2; })arg1 labelTransform:(const struct LabelTransform { struct tvec3<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; } x1; struct tvec2<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; } x2; unsigned int x3; float x4; BOOL x5; }*)arg2;
+- (struct tvec2<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; })sizeOfCategoryAxisLabels;
+- (struct tvec2<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; })sizeOfSeriesLabels;
+- (struct tvec2<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; })sizeOfValueAxisLabels;
+- (float)wrapWidthForSize:(struct CGSize { double x1; double x2; })arg1 labelTransform:(const struct LabelTransform { struct tvec3<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; } x1; struct tvec2<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_2_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_2_1_2; } x2; unsigned int x3; double x4; BOOL x5; }*)arg2;
 
 @end

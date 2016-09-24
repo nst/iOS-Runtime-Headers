@@ -3,7 +3,7 @@
  */
 
 @interface TSUScaledProgressStorage : NSObject {
-    double mMaxValue;
+    double  mMaxValue;
 }
 
 @property double maxValue;

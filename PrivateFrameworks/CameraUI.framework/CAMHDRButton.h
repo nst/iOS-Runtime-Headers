@@ -3,10 +3,10 @@
  */
 
 @interface CAMHDRButton : CAMExpandableMenuButton {
-    NSArray *__allowedModes;
-    UIImageView *__glyphView;
-    BOOL _allowsAutomaticHDR;
-    BOOL _allowsHDROn;
+    NSArray * __allowedModes;
+    UIImageView * __glyphView;
+    BOOL  _allowsAutomaticHDR;
+    BOOL  _allowsHDROn;
 }
 
 @property (nonatomic) int HDRMode;
@@ -28,16 +28,16 @@
 - (BOOL)allowsAutomaticHDR;
 - (BOOL)allowsHDROn;
 - (id)headerView;
-- (id)hiddenIndexesWhileCollapsed;
 - (unsigned int)indexForMode:(int)arg1;
-- (id)initWithExpansionOrientation:(int)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithLayoutStyle:(int)arg1;
 - (int)modeForIndex:(int)arg1;
 - (int)numberOfMenuItems;
+- (float)padHeaderViewContentInsetLeft;
 - (void)prepareHeaderViewForExpanding:(BOOL)arg1;
 - (void)reloadData;
 - (void)setAllowsAutomaticHDR:(BOOL)arg1;
 - (void)setAllowsHDROn:(BOOL)arg1;
-- (void)setExpansionOrientation:(int)arg1;
 - (void)setHDRMode:(int)arg1;
 - (BOOL)shouldAllowExpansion;
 - (id)titleForMenuItemAtIndex:(int)arg1;

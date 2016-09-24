@@ -20,9 +20,10 @@
 @property (nonatomic, readonly) int interfaceOrientation;
 @property (nonatomic, readonly) BOOL interfaceOrientationChangesDisabled;
 @property (nonatomic, readonly) int notificationCenterRevealMode;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } primaryWindowOverlayInsets;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } primaryWindowOverlayInsets;
 @property (nonatomic, readonly) unsigned int proximityDetectionModes;
 @property (nonatomic, readonly) unsigned int statusBarContextID;
+@property (getter=isStatusBarForegroundTransparent, nonatomic, readonly) BOOL statusBarForegroundTransparent;
 @property (nonatomic, readonly) BOOL statusBarHidden;
 @property (nonatomic, readonly) int statusBarStyle;
 @property (readonly) Class superclass;
@@ -41,12 +42,13 @@
 - (BOOL)idleTimerDisabled;
 - (int)interfaceOrientation;
 - (BOOL)interfaceOrientationChangesDisabled;
+- (BOOL)isStatusBarForegroundTransparent;
 - (BOOL)isUISubclass;
 - (id)keyDescriptionForOtherSetting:(unsigned int)arg1;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (int)notificationCenterRevealMode;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })primaryWindowOverlayInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })primaryWindowOverlayInsets;
 - (unsigned int)proximityDetectionModes;
 - (unsigned int)statusBarContextID;
 - (BOOL)statusBarHidden;

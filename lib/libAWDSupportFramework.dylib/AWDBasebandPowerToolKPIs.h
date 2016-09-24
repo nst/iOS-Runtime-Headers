@@ -7,95 +7,95 @@
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _armUtilityPDFs;
-    int _armUtilityThresholdPoint;
+    }  _armUtilityPDFs;
+    int  _armUtilityThresholdPoint;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _causeCodeBackgroundActivityARMUtilitys;
+    }  _causeCodeBackgroundActivityARMUtilitys;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _causeCodeBackgroundActivityDurations;
+    }  _causeCodeBackgroundActivityDurations;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _causeCodeCumulativeARMUtilitys;
+    }  _causeCodeCumulativeARMUtilitys;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _causeCodeCumulativeDurations;
+    }  _causeCodeCumulativeDurations;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _causeCodeMarginalCoverageARMUtilitys;
+    }  _causeCodeMarginalCoverageARMUtilitys;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _causeCodeMarginalCoverageDurations;
+    }  _causeCodeMarginalCoverageDurations;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _causeCodeOOSARMUtilitys;
+    }  _causeCodeOOSARMUtilitys;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _causeCodeOOSDurations;
+    }  _causeCodeOOSDurations;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _causeCodeRACHFailARMUtilitys;
+    }  _causeCodeRACHFailARMUtilitys;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _causeCodeRACHFailDurations;
+    }  _causeCodeRACHFailDurations;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _causeCodeStruckInDCHARMUtilitys;
+    }  _causeCodeStruckInDCHARMUtilitys;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _causeCodeStruckInDCHDurations;
+    }  _causeCodeStruckInDCHDurations;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _causeCodeTcXONotShuttingARMUtilitys;
+    }  _causeCodeTcXONotShuttingARMUtilitys;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _causeCodeTcXONotShuttingDurations;
+    }  _causeCodeTcXONotShuttingDurations;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _causeCodeUnknownARMUtilitys;
+    }  _causeCodeUnknownARMUtilitys;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _causeCodeUnknownDurations;
+    }  _causeCodeUnknownDurations;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int armUtilityThresholdPoint : 1; 
         unsigned int radarPriority : 1; 
-    } _has;
-    int _radarPriority;
-    unsigned long long _timestamp;
+    }  _has;
+    int  _radarPriority;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic, readonly) int*armUtilityPDFs;

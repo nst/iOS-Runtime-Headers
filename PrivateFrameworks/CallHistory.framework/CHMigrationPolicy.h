@@ -3,9 +3,9 @@
  */
 
 @interface CHMigrationPolicy : NSEntityMigrationPolicy {
-    NSString *currentLocale;
-    NSString *lastQueriedISOCountryCode;
-    NSMutableDictionary *mccToISOCountryCodeMap;
+    NSString * currentLocale;
+    NSString * lastQueriedISOCountryCode;
+    NSMutableDictionary * mccToISOCountryCodeMap;
 }
 
 - (void).cxx_destruct;

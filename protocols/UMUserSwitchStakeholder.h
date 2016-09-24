@@ -7,8 +7,4 @@
 
 - (void)willSwitchUser;
 
-@optional
-
-- (void)registrationFailedWithError:(NSError *)arg1;
-
 @end

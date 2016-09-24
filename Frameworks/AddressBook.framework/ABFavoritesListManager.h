@@ -3,15 +3,15 @@
  */
 
 @interface ABFavoritesListManager : NSObject {
-    void *_addressBook;
+    void * _addressBook;
     struct { 
         unsigned int dirty : 1; 
         unsigned int postCount : 1; 
         unsigned int needsReload : 1; 
         unsigned int unused : 29; 
-    } _flags;
-    NSMutableArray *_list;
-    struct __CFDictionary { } *_uidToEntry;
+    }  _flags;
+    NSMutableArray * _list;
+    struct __CFDictionary { } * _uidToEntry;
 }
 
 + (id)sharedInstance;
@@ -27,7 +27,6 @@
 - (void)_postChangeNotification;
 - (void)_removeEntryFromMap:(id)arg1 withUid:(int)arg2;
 - (void)_scheduleSave;
-- (BOOL)_writeFavoritesToFile:(id)arg1;
 - (void)addEntry:(id)arg1;
 - (BOOL)addEntryForPerson:(void*)arg1 property:(int)arg2 withIdentifier:(int)arg3;
 - (BOOL)containsEntryWithIdentifier:(int)arg1 forPerson:(void*)arg2;

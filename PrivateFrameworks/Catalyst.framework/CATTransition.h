@@ -3,8 +3,8 @@
  */
 
 @interface CATTransition : NSObject {
-    SEL _action;
-    CATState *_state;
+    SEL  _action;
+    CATState * _state;
 }
 
 @property (nonatomic, readonly) SEL action;

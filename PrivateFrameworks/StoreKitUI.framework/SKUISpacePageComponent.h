@@ -3,10 +3,10 @@
  */
 
 @interface SKUISpacePageComponent : SKUIPageComponent {
-    float _height;
+    double  _height;
 }
 
-@property (nonatomic, readonly) float height;
+@property (nonatomic, readonly) double height;
 
 - (int)componentType;
 - (float)height;

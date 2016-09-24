@@ -2,40 +2,42 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSFileAccessClaim : NSObject {
-    NSObject<OS_dispatch_queue> *_arbiterQueue;
-    unsigned int _blockageCount;
-    NSMutableSet *_blockingClaims;
-    NSMutableSet *_blockingReactorIDs;
-    BOOL _cameFromSuperarbiter;
-    NSString *_claimID;
-    NSMutableArray *_claimerBlockageReasons;
-    NSError *_claimerError;
-    id _claimerOrNil;
-    NSObject<OS_dispatch_semaphore> *_claimerWaiter;
-    NSObject<OS_xpc_object> *_client;
-    NSMutableArray *_devaluationProcedures;
-    BOOL _didWait;
-    NSMutableArray *_finishingProcedures;
-    BOOL _hasInvokedClaimer;
-    BOOL _isRevoked;
-    NSMutableOrderedSet *_pendingClaims;
-    NSFileAccessProcessManager *_processManager;
-    NSMutableArray *_providerCancellationProcedures;
-    NSString *_purposeIDOrNil;
-    NSMutableDictionary *_reacquisitionProceduresByPresenterID;
-    NSMutableArray *_revocationProcedures;
-    NSMutableArray *_sandboxTokens;
+@interface NSFileAccessClaim : NSObject <NSSecureCoding> {
+    NSObject<OS_dispatch_queue> * _arbiterQueue;
+    unsigned int  _blockageCount;
+    NSMutableSet * _blockingClaims;
+    NSMutableSet * _blockingReactorIDs;
+    BOOL  _cameFromSuperarbiter;
+    NSString * _claimID;
+    NSMutableArray * _claimerBlockageReasons;
+    NSError * _claimerError;
+    id  _claimerOrNil;
+    NSObject<OS_dispatch_semaphore> * _claimerWaiter;
+    NSXPCConnection * _client;
+    NSMutableArray * _devaluationProcedures;
+    BOOL  _didWait;
+    NSMutableArray * _finishingProcedures;
+    BOOL  _hasInvokedClaimer;
+    BOOL  _isRevoked;
+    NSMutableOrderedSet * _pendingClaims;
+    NSFileAccessProcessManager * _processManager;
+    NSMutableArray * _providerCancellationProcedures;
+    NSString * _purposeIDOrNil;
+    NSMutableDictionary * _reacquisitionProceduresByPresenterID;
+    NSMutableArray * _revocationProcedures;
+    NSMutableArray * _sandboxTokens;
+    id /* block */  _serverClaimerOrNil;
 }
 
 @property (readonly) NSObject<OS_dispatch_semaphore> *claimerWaiter;
 
 + (BOOL)canReadingItemAtLocation:(id)arg1 options:(unsigned int)arg2 safelyOverlapWritingItemAtLocation:(id)arg3 options:(unsigned int)arg4;
 + (BOOL)canWritingItemAtLocation:(id)arg1 options:(unsigned int)arg2 safelyOverlapWritingItemAtLocation:(id)arg3 options:(unsigned int)arg4;
-+ (BOOL)readingItemAtLocation:(id)arg1 withPurposeID:(id)arg2 requiresOnlyPhysicalItemWithOptions:(unsigned int)arg3;
-+ (BOOL)writingItemAtLocation:(id)arg1 withPurposeID:(id)arg2 requiresOnlyPhysicalItemWithOptions:(unsigned int)arg3;
++ (BOOL)supportsSecureCoding;
 
+- (void)_setupWithClaimID:(id)arg1 purposeID:(id)arg2;
 - (BOOL)_writeArchiveOfDirectoryAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
+- (void)acceptClaimFromClient:(id)arg1 arbiterQueue:(id)arg2 grantHandler:(id /* block */)arg3;
 - (void)addPendingClaim:(id)arg1;
 - (id)allURLs;
 - (void)block;
@@ -56,14 +58,15 @@
 - (void)devalueOldClaim:(id)arg1;
 - (void)devalueSelf;
 - (BOOL)didWait;
+- (void)disavowed;
+- (void)encodeWithCoder:(id)arg1;
 - (void)evaluateNewClaim:(id)arg1;
 - (BOOL)evaluateSelfWithRootNode:(id)arg1 checkSubarbitrability:(BOOL)arg2;
-- (void)finalize;
 - (void)finished;
-- (void)forwardUsingMessageSender:(id /* block */)arg1 crashHandler:(id /* block */)arg2;
+- (void)forwardUsingConnection:(id)arg1 crashHandler:(id /* block */)arg2;
 - (void)granted;
-- (id)initWithClient:(id)arg1 claimID:(id)arg2 purposeID:(id)arg3 arbiterQueue:(id)arg4;
-- (id)initWithClient:(id)arg1 messageParameters:(id)arg2 arbiterQueue:(id)arg3 replySender:(id /* block */)arg4;
+- (id)initWithClient:(id)arg1 claimID:(id)arg2 purposeID:(id)arg3;
+- (id)initWithCoder:(id)arg1;
 - (void)invokeClaimer;
 - (BOOL)isBlockedByClaimWithPurposeID:(id)arg1;
 - (BOOL)isBlockedByReadingItemAtLocation:(id)arg1 options:(unsigned int)arg2;
@@ -72,8 +75,10 @@
 - (BOOL)isRevoked;
 - (void)itemAtLocation:(id)arg1 wasReplacedByItemAtLocation:(id)arg2;
 - (void)makePresentersOfItemAtLocation:(id)arg1 orContainedItem:(BOOL)arg2 relinquishUsingProcedureGetter:(id /* block */)arg3;
+- (void)makeProviderOfItemAtLocation:(id)arg1 provideIfNecessaryWithOptions:(unsigned int)arg2 thenContinue:(id /* block */)arg3;
+- (void)makeProviderOfItemAtLocation:(id)arg1 provideOrAttachPhysicalURLIfNecessaryForPurposeID:(id)arg2 readingOptions:(unsigned int)arg3 thenContinue:(id /* block */)arg4;
+- (void)makeProviderOfItemAtLocation:(id)arg1 provideOrAttachPhysicalURLIfNecessaryForPurposeID:(id)arg2 writingOptions:(unsigned int)arg3 thenContinue:(id /* block */)arg4;
 - (void)makeProviderOfItemAtLocation:(id)arg1 providePhysicalURLThenContinue:(id /* block */)arg2;
-- (void)makeProviderOfItemAtLocation:(id)arg1 provideWithOptions:(unsigned int)arg2 thenContinue:(id /* block */)arg3;
 - (id)pendingClaims;
 - (void)prepareItemForUploadingFromURL:(id)arg1 thenContinue:(id /* block */)arg2;
 - (id)purposeID;
@@ -84,6 +89,7 @@
 - (void)setCameFromSuperarbiter;
 - (void)setClaimerError:(id)arg1;
 - (BOOL)shouldBeRevokedPriorToInvokingAccessor;
+- (BOOL)shouldCancelInsteadOfWaiting;
 - (BOOL)shouldReadingWithOptions:(unsigned int)arg1 causePresenterToRelinquish:(id)arg2;
 - (void)startObservingClientState;
 - (void)unblock;

@@ -3,17 +3,17 @@
  */
 
 @interface WBSParsecDescriptionCardSection : WBSParsecCardSection {
-    BOOL _descriptionCanBeExpanded;
-    NSString *_descriptionExpandText;
-    NSNumber *_descriptionMaximumNumberOfLines;
-    NSNumber *_descriptionSize;
-    NSString *_descriptionText;
-    NSNumber *_descriptionWeight;
-    WBSParsecImageRepresentation *_image;
-    int _imageAlignment;
-    NSString *_titleText;
-    BOOL _titleTextCanWrap;
-    NSNumber *_titleWeight;
+    BOOL  _descriptionCanBeExpanded;
+    NSString * _descriptionExpandText;
+    NSNumber * _descriptionMaximumNumberOfLines;
+    NSNumber * _descriptionSize;
+    NSString * _descriptionText;
+    NSNumber * _descriptionWeight;
+    WBSParsecImageRepresentation * _image;
+    int  _imageAlignment;
+    NSString * _titleText;
+    BOOL  _titleTextCanWrap;
+    NSNumber * _titleWeight;
 }
 
 @property (nonatomic, readonly) BOOL descriptionCanBeExpanded;

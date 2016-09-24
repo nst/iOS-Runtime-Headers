@@ -3,11 +3,11 @@
  */
 
 @interface MSPQuerySearch : PBCodable <NSCopying> {
-    NSString *_language;
-    NSString *_locationDisplayString;
-    GEOMapRegion *_mapRegion;
-    NSString *_query;
-    PBUnknownFields *_unknownFields;
+    NSString * _language;
+    NSString * _locationDisplayString;
+    GEOMapRegion * _mapRegion;
+    NSString * _query;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, readonly) BOOL hasLanguage;

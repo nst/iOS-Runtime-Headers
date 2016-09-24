@@ -3,7 +3,7 @@
  */
 
 @interface NEFilterControlExtensionProviderContext : NEFilterExtensionProviderContext <NEFilterControlExtensionProviderHostProtocol, NEFilterControlExtensionProviderProtocol> {
-    BOOL _observing;
+    BOOL  _observing;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,6 +15,7 @@
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
 
+- (void)dealloc;
 - (void)dispose;
 - (void)handleNewFlow:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)notifyRulesChanged;
@@ -24,6 +25,7 @@
 - (void)provideURLAppendStringMap:(id)arg1;
 - (void)setObserving:(BOOL)arg1;
 - (void)startFilterWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)stopObserving;
 - (void)stopWithReason:(int)arg1;
 
 @end

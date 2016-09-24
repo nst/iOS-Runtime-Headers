@@ -3,8 +3,8 @@
  */
 
 @interface FIUIPushyLabelCharacter : NSObject {
-    UIView *_renderedView;
-    NSAttributedString *_sourceText;
+    UIView * _renderedView;
+    NSAttributedString * _sourceText;
 }
 
 @property (retain) UIView *renderedView;

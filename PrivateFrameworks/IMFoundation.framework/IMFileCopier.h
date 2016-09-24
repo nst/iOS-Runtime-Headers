@@ -3,17 +3,17 @@
  */
 
 @interface IMFileCopier : NSObject {
-    void *_BOMCopier;
-    id /* block */ _callback;
-    <IMFileCopierDelegate> *_delegate;
-    BOOL _didErrorOccur;
-    id _identifier;
-    BOOL _inProgress;
-    NSURL *_inputURL;
-    unsigned int _operation;
-    NSURL *_outputURL;
-    NSObject<OS_dispatch_queue> *_queue;
-    BOOL _shouldCancel;
+    void * _BOMCopier;
+    id /* block */  _callback;
+    <IMFileCopierDelegate> * _delegate;
+    BOOL  _didErrorOccur;
+    id  _identifier;
+    BOOL  _inProgress;
+    NSURL * _inputURL;
+    unsigned int  _operation;
+    NSURL * _outputURL;
+    NSObject<OS_dispatch_queue> * _queue;
+    BOOL  _shouldCancel;
 }
 
 @property void*_BOMCopier;

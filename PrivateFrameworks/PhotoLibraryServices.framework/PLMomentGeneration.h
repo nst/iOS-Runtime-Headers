@@ -3,16 +3,16 @@
  */
 
 @interface PLMomentGeneration : NSObject {
-    PLMomentAnalyzer *_analyzer;
-    unsigned int _inProgressCount;
-    NSObject<OS_dispatch_queue> *_incrementalGenerationStateQueue;
-    BOOL _isGenerationPassInProgress;
-    BOOL _isInStressTestMode;
-    <PLMomentGenerationDataManagement> *_momentGenerationDataManager;
-    PLMomentAnalyzer *_pairedAnalyzer;
-    NSMutableArray *_pendingCompletionBlocks;
-    NSMutableDictionary *_pendingDeletes;
-    NSMutableOrderedSet *_pendingInsertsAndUpdates;
+    PLMomentAnalyzer * _analyzer;
+    unsigned int  _inProgressCount;
+    NSObject<OS_dispatch_queue> * _incrementalGenerationStateQueue;
+    BOOL  _isGenerationPassInProgress;
+    BOOL  _isInStressTestMode;
+    <PLMomentGenerationDataManagement> * _momentGenerationDataManager;
+    PLMomentAnalyzer * _pairedAnalyzer;
+    NSMutableArray * _pendingCompletionBlocks;
+    NSMutableDictionary * _pendingDeletes;
+    NSMutableOrderedSet * _pendingInsertsAndUpdates;
 }
 
 @property (nonatomic) PLMomentAnalyzer *analyzer;
@@ -40,6 +40,7 @@
 - (id)_nameForMomentGenerationType:(short)arg1;
 - (id)_newPublicGlobalUUIDsToAssetsMappingWithAssets:(id)arg1;
 - (BOOL)_rebuildAllMomentsInManager:(id)arg1 shouldAnalyze:(BOOL)arg2 error:(id*)arg3;
+- (void)_refreshObjects:(id)arg1 withDataManager:(id)arg2;
 - (void)_runIncrementalGenerationPassWithCompletionHandler:(id /* block */)arg1;
 - (void)_updateIncrementalMomentGeneration;
 - (BOOL)_writeDetails:(id)arg1 toFilepath:(id)arg2 withDefaultFilename:(id)arg3;

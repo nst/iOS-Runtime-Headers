@@ -3,13 +3,13 @@
  */
 
 @interface AWDBltDelayUIFromFactory : PBCodable <NSCopying> {
-    unsigned int _delayMs;
+    unsigned int  _delayMs;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int delayMs : 1; 
-    } _has;
-    unsigned long long _timestamp;
-    NSString *_uniqueid;
+    }  _has;
+    unsigned long long  _timestamp;
+    NSString * _uniqueid;
 }
 
 @property (nonatomic) unsigned int delayMs;

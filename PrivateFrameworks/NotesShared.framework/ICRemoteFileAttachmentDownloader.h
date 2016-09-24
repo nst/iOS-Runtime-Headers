@@ -3,8 +3,8 @@
  */
 
 @interface ICRemoteFileAttachmentDownloader : NSObject {
-    NSOperationQueue *_operationQueue;
-    NSMutableDictionary *_operationsByAttachmentIdentifier;
+    NSOperationQueue * _operationQueue;
+    NSMutableDictionary * _operationsByAttachmentIdentifier;
 }
 
 @property (nonatomic, retain) NSOperationQueue *operationQueue;

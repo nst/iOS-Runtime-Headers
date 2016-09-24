@@ -3,12 +3,12 @@
  */
 
 @interface PFUbiquityStoreExportContext : NSObject {
-    PFUbiquitySwitchboardCacheWrapper *_cacheWrapper;
-    NSString *_localPeerID;
-    NSSQLCore *_store;
-    NSString *_storeName;
-    NSMutableSet *_transactionEntries;
-    PFUbiquityLocation *_ubiquityRootLocation;
+    PFUbiquitySwitchboardCacheWrapper * _cacheWrapper;
+    NSString * _localPeerID;
+    NSSQLCore * _store;
+    NSString * _storeName;
+    NSMutableSet * _transactionEntries;
+    PFUbiquityLocation * _ubiquityRootLocation;
 }
 
 @property (nonatomic, retain) PFUbiquitySwitchboardCacheWrapper *cacheWrapper;

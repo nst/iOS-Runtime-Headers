@@ -3,9 +3,9 @@
  */
 
 @interface SSDistributedNotificationCenterObserver : NSObject {
-    id /* block */ _block;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    NSString *_name;
+    id /* block */  _block;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    NSString * _name;
 }
 
 @property (nonatomic, readonly) id /* block */ block;

@@ -3,10 +3,10 @@
  */
 
 @interface _UIViewServiceUIBehaviorProxy : _UITargetedProxy <_UIViewServiceUIBehaviorInterface> {
-    BOOL __automatic_invalidation_invalidated;
-    int __automatic_invalidation_retainCount;
-    _UIViewServiceFencingControlProxy *_fencingControlProxy;
-    int _remotePID;
+    BOOL  __automatic_invalidation_invalidated;
+    int  __automatic_invalidation_retainCount;
+    _UIViewServiceFencingControlProxy * _fencingControlProxy;
+    int  _remotePID;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,13 +3,14 @@
  */
 
 @interface IMChatHistoryController : NSObject {
-    NSMutableDictionary *_runningQueries;
+    NSMutableDictionary * _runningQueries;
 }
 
 @property (retain) NSMutableDictionary *_runningQueries;
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (id)_runningQueries;
 - (void)databaseFull;
 - (void)databaseNoLongerFull;

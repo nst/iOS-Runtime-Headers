@@ -3,8 +3,8 @@
  */
 
 @interface CalNWideQueue : NSObject {
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_semaphore> *_semaphore;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_semaphore> * _semaphore;
 }
 
 - (void).cxx_destruct;

@@ -3,10 +3,10 @@
  */
 
 @interface _MFDigestMD5Authenticator : MFSASLAuthenticator {
-    void *_cryptInfo;
-    NSData *_expectedResponse;
-    unsigned int _maxbuf;
-    unsigned int _securityLevel;
+    void * _cryptInfo;
+    NSData * _expectedResponse;
+    unsigned int  _maxbuf;
+    unsigned int  _securityLevel;
 }
 
 - (void)dealloc;

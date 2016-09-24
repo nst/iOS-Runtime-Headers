@@ -3,13 +3,13 @@
  */
 
 @interface CurrencyCache : NSObject <NSXMLParserDelegate> {
-    NSDictionary *_currencyData;
-    NSString *_currentCurrency;
-    NSNumber *_currentRate;
-    NSMutableString *_currentString;
-    NSDate *_lastRefreshDate;
-    NSMutableDictionary *_mutableCurrencyCache;
-    unsigned long _uuid;
+    NSDictionary * _currencyData;
+    NSString * _currentCurrency;
+    NSNumber * _currentRate;
+    NSMutableString * _currentString;
+    NSDate * _lastRefreshDate;
+    NSMutableDictionary * _mutableCurrencyCache;
+    unsigned long  _uuid;
 }
 
 @property (nonatomic, retain) NSDictionary *currencyData;

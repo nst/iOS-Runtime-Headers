@@ -3,10 +3,10 @@
  */
 
 @interface RMSBonjourServiceProvider : NSObject <NSNetServiceBrowserDelegate, NSNetServiceDelegate, RMSServiceProvider> {
-    NSMutableDictionary *_cache;
-    <RMSServiceProviderDelegate> *_delegate;
-    NSNetServiceBrowser *_netServiceBrowser;
-    NSMutableDictionary *_services;
+    NSMutableDictionary * _cache;
+    <RMSServiceProviderDelegate> * _delegate;
+    NSNetServiceBrowser * _netServiceBrowser;
+    NSMutableDictionary * _services;
 }
 
 @property (readonly, copy) NSString *debugDescription;

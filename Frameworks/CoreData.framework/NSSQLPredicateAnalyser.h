@@ -3,11 +3,11 @@
  */
 
 @interface NSSQLPredicateAnalyser : NSObject <NSPredicateVisitor> {
-    NSMutableArray *_allModifierPredicates;
-    BOOL _compoundPredicate;
-    NSMutableArray *_keys;
-    NSMutableArray *_setExpressions;
-    NSMutableArray *_subqueries;
+    NSMutableArray * _allModifierPredicates;
+    BOOL  _compoundPredicate;
+    NSMutableArray * _keys;
+    NSMutableArray * _setExpressions;
+    NSMutableArray * _subqueries;
 }
 
 - (id)allModifierPredicates;

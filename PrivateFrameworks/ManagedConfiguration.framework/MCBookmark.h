@@ -3,9 +3,9 @@
  */
 
 @interface MCBookmark : NSObject <NSCopying> {
-    NSURL *_URL;
-    NSString *_path;
-    NSString *_title;
+    NSURL * _URL;
+    NSString * _path;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) NSURL *URL;

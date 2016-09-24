@@ -3,7 +3,7 @@
  */
 
 @interface MDLURLTexture : MDLTexture {
-    NSURL *_url;
+    NSURL * _url;
 }
 
 @property (nonatomic, copy) NSURL *URL;

@@ -3,7 +3,7 @@
  */
 
 @interface PSUIDoNotDisturbDataSource : PSSpecifierDataSource <PSTimeRangeCellDelegate> {
-    PSSpecifier *_dndRangeSpec;
+    PSSpecifier * _dndRangeSpec;
 }
 
 @property (nonatomic, retain) PSSpecifier *dndRangeSpec;

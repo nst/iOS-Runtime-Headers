@@ -3,7 +3,7 @@
  */
 
 @interface GQDWPHeaderFooterStorage : GQDWPLayoutStorage {
-    struct __CFString { } *mName;
+    struct __CFString { } * mName;
 }
 
 - (void)dealloc;

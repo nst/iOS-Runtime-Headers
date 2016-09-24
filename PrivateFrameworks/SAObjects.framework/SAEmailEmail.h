@@ -4,6 +4,7 @@
 
 @interface SAEmailEmail : SADomainObject
 
+@property (nonatomic, copy) NSArray *attachments;
 @property (nonatomic, copy) NSDate *dateSent;
 @property (nonatomic, retain) SAPersonAttribute *fromEmail;
 @property (nonatomic, copy) NSString *message;
@@ -21,6 +22,7 @@
 + (id)email;
 + (id)emailWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)attachments;
 - (id)dateSent;
 - (id)encodedClassName;
 - (id)fromEmail;
@@ -33,6 +35,7 @@
 - (id)recipientsCc;
 - (id)recipientsTo;
 - (id)referenceId;
+- (void)setAttachments:(id)arg1;
 - (void)setDateSent:(id)arg1;
 - (void)setFromEmail:(id)arg1;
 - (void)setMessage:(id)arg1;

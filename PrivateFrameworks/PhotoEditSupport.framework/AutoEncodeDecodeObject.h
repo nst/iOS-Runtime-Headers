@@ -3,7 +3,7 @@
  */
 
 @interface AutoEncodeDecodeObject : NSObject <NSCopying> {
-    NSArray *_keysToEncode;
+    NSArray * _keysToEncode;
 }
 
 @property (nonatomic, retain) NSArray *keysToEncode;

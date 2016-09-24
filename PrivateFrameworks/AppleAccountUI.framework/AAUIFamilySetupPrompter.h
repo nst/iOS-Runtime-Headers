@@ -3,14 +3,14 @@
  */
 
 @interface AAUIFamilySetupPrompter : NSObject <AAUIFamilySetupDelegate> {
-    ACAccountStore *_accountStore;
-    ACAccount *_appleAccount;
-    <AAUIFamilySetupPrompterDelegate> *_delegate;
-    ACAccount *_grandSlamAccount;
-    SSAccount *_iTunesAccount;
-    BOOL _isRequestInFlight;
-    NSOperationQueue *_networkingQueue;
-    UIViewController *_presentingViewController;
+    ACAccountStore * _accountStore;
+    ACAccount * _appleAccount;
+    <AAUIFamilySetupPrompterDelegate> * _delegate;
+    ACAccount * _grandSlamAccount;
+    SSAccount * _iTunesAccount;
+    BOOL  _isRequestInFlight;
+    NSOperationQueue * _networkingQueue;
+    UIViewController * _presentingViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

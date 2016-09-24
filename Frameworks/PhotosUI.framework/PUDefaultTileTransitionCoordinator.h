@@ -3,13 +3,13 @@
  */
 
 @interface PUDefaultTileTransitionCoordinator : PUTileTransitionCoordinator {
-    NSNumber *_animationDuration;
+    NSNumber * _animationDuration;
 }
 
 @property (nonatomic, copy) NSNumber *animationDuration;
 
 - (void).cxx_destruct;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_adjustDefaultDisappearanceTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_adjustDefaultDisappearanceTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (id)_layoutInfoWithDefaultDisappearance:(id)arg1;
 - (id)animationDuration;
 - (void)configureOptions:(id)arg1 forSpringAnimationsZommingIn:(BOOL)arg2;

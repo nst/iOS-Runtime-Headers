@@ -3,7 +3,7 @@
  */
 
 @interface CoreRCManagerClient : CoreRCManager <CoreRCXPCClient, CoreRCXPCClientCEC, CoreRCXPCClientIR, CoreRCXPCService, CoreRCXPCServiceCEC, CoreRCXPCServiceCECPrivate, CoreRCXPCServiceIR, CoreRCXPCServicePrivate> {
-    NSXPCConnection *_connection;
+    NSXPCConnection * _connection;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -81,6 +81,7 @@
 - (void)setLoggingAsync:(id)arg1 reply:(id /* block */)arg2;
 - (void)setOSDNameAsync:(id)arg1 forDevice:(id)arg2 reply:(id /* block */)arg3;
 - (void)setOsdNameAsync:(id)arg1 forBus:(id)arg2 reply:(id /* block */)arg3;
+- (void)setPairStateAsync:(BOOL)arg1 forAppleRemote:(id)arg2 reply:(id /* block */)arg3;
 - (BOOL)setProperty:(id)arg1 forKey:(id)arg2 ofBus:(id)arg3 error:(id*)arg4;
 - (void)setPropertyAsync:(id)arg1 forKey:(id)arg2 ofBus:(id)arg3 reply:(id /* block */)arg4;
 - (void)setTvLanguageCodeAsync:(id)arg1 forBus:(id)arg2 reply:(id /* block */)arg3;

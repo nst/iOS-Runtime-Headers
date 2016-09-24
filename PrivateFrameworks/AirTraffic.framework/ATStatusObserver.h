@@ -3,11 +3,11 @@
  */
 
 @interface ATStatusObserver : NSObject <ATStatusObserverProtocol> {
-    BOOL _ATCRunning;
-    NSXPCConnection *_connection;
-    <ATStatusObserverDelegate> *_delegate;
-    int _notifyToken;
-    BOOL _resumed;
+    BOOL  _ATCRunning;
+    NSXPCConnection * _connection;
+    <ATStatusObserverDelegate> * _delegate;
+    int  _notifyToken;
+    BOOL  _resumed;
 }
 
 @property (nonatomic) BOOL ATCRunning;

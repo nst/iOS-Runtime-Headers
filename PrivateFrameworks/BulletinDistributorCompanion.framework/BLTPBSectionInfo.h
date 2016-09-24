@@ -3,11 +3,11 @@
  */
 
 @interface BLTPBSectionInfo : PBCodable <NSCopying> {
-    unsigned int _alertType;
-    BOOL _allowsNotifications;
-    NSString *_displayName;
-    BOOL _displaysCriticalBulletins;
-    NSString *_factorySectionID;
+    unsigned int  _alertType;
+    BOOL  _allowsNotifications;
+    NSString * _displayName;
+    BOOL  _displaysCriticalBulletins;
+    NSString * _factorySectionID;
     struct { 
         unsigned int alertType : 1; 
         unsigned int notificationCenterLimit : 1; 
@@ -25,25 +25,25 @@
         unsigned int showsMessagePreview : 1; 
         unsigned int showsOnExternalDevices : 1; 
         unsigned int suppressFromSettings : 1; 
-    } _has;
-    BLTPBSectionIcon *_icon;
-    BOOL _iconsStripped;
-    unsigned int _notificationCenterLimit;
-    unsigned int _pushSettings;
-    int _sectionCategory;
-    NSString *_sectionID;
-    int _sectionType;
-    BOOL _showsInLockScreen;
-    BOOL _showsInNotificationCenter;
-    BOOL _showsMessagePreview;
-    BOOL _showsOnExternalDevices;
-    NSString *_subsectionID;
-    int _subsectionPriority;
-    NSMutableArray *_subsections;
-    BOOL _suppressFromSettings;
-    unsigned int _suppressedSettings;
-    NSString *_universalSectionID;
-    unsigned int _version;
+    }  _has;
+    BLTPBSectionIcon * _icon;
+    BOOL  _iconsStripped;
+    unsigned int  _notificationCenterLimit;
+    unsigned int  _pushSettings;
+    int  _sectionCategory;
+    NSString * _sectionID;
+    int  _sectionType;
+    BOOL  _showsInLockScreen;
+    BOOL  _showsInNotificationCenter;
+    BOOL  _showsMessagePreview;
+    BOOL  _showsOnExternalDevices;
+    NSString * _subsectionID;
+    int  _subsectionPriority;
+    NSMutableArray * _subsections;
+    BOOL  _suppressFromSettings;
+    unsigned int  _suppressedSettings;
+    NSString * _universalSectionID;
+    unsigned int  _version;
 }
 
 @property (nonatomic) unsigned int alertType;

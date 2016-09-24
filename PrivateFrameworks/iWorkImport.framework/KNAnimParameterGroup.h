@@ -3,34 +3,36 @@
  */
 
 @interface KNAnimParameterGroup : NSObject {
-    NSString *_fileName;
-    NSString *_name;
-    NSString *_originalFileName;
-    NSArray *_parameterArray;
-    NSMutableDictionary *_parametersDict;
+    NSString * _fileName;
+    NSString * _name;
+    KNAnimParameterSavedGroup * _savedGroup;
 }
 
+@property (nonatomic, copy) NSString *fileName;
 @property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) NSArray *parameterArray;
+@property (nonatomic, retain) KNAnimParameterSavedGroup *savedGroup;
 
 + (id)easeInEaseOutPath;
 + (id)easeInPath;
 + (id)easeOutPath;
 + (id)linearPath;
 + (id)mediaTimingFunctionForPath:(id)arg1 reversed:(BOOL)arg2;
-+ (id)parameterGroupForFile:(id)arg1;
++ (void)p_loadAllParametersIfNecessary;
++ (id)parameterGroupForName:(id)arg1;
 
+- (BOOL)boolForKey:(id)arg1;
 - (void)dealloc;
+- (float)doubleForAnimationCurve:(id)arg1 atPercent:(float)arg2;
+- (float)doubleForKey:(id)arg1;
+- (id)fileName;
 - (id)initWithFileName:(id)arg1;
 - (id)mediaTimingFunctionForAnimationCurve:(id)arg1;
 - (id)mediaTimingFunctionForAnimationCurve:(id)arg1 reversed:(BOOL)arg2;
 - (id)name;
-- (id)parameterArray;
+- (void)p_loadParameters;
 - (id)pathForAnimationCurve:(id)arg1;
-- (void)readAnimationCurvesFromFile;
-- (void)resetAnimationCurvesFromBundle;
-- (float)valueForAnimationCurve:(id)arg1 atPercent:(float)arg2;
-- (float)valueForConstant:(id)arg1;
-- (void)writeAnimationCurvesToFile;
+- (id)savedGroup;
+- (void)setFileName:(id)arg1;
+- (void)setSavedGroup:(id)arg1;
 
 @end

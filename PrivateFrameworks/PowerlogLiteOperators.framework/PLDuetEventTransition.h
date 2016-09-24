@@ -3,9 +3,9 @@
  */
 
 @interface PLDuetEventTransition : NSObject {
-    NSString *_bundleID;
-    NSDate *_date;
-    BOOL _isStart;
+    NSString * _bundleID;
+    NSDate * _date;
+    BOOL  _isStart;
 }
 
 @property (retain) NSString *bundleID;

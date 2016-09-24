@@ -3,7 +3,7 @@
  */
 
 @interface ICDispatchAfterHandler : NSObject {
-    NSMutableDictionary *_identifierBlockMap;
+    NSMutableDictionary * _identifierBlockMap;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *identifierBlockMap;

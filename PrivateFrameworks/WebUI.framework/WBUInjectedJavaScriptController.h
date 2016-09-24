@@ -3,10 +3,10 @@
  */
 
 @interface WBUInjectedJavaScriptController : NSObject <WBUInjectedJavaScriptObserver> {
-    _WKRemoteObjectInterface *_activityJavaScriptObserverInterface;
-    <WBUInjectedJavaScriptWebProcessController> *_activityProxy;
-    NSMutableDictionary *_replyIdentifierToCompletionMap;
-    WKWebView *_webView;
+    _WKRemoteObjectInterface * _activityJavaScriptObserverInterface;
+    <WBUInjectedJavaScriptWebProcessController> * _activityProxy;
+    NSMutableDictionary * _replyIdentifierToCompletionMap;
+    WKWebView * _webView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,10 +3,10 @@
  */
 
 @interface GEOIndexQueryNode : PBCodable <NSCopying> {
-    NSString *_field;
-    NSMutableArray *_operands;
-    int _type;
-    NSString *_value;
+    NSString * _field;
+    NSMutableArray * _operands;
+    int  _type;
+    NSString * _value;
 }
 
 @property (nonatomic, retain) NSString *field;
@@ -16,6 +16,9 @@
 @property (nonatomic) int type;
 @property (nonatomic, retain) NSString *value;
 
++ (Class)operandsType;
+
+- (int)StringAsType:(id)arg1;
 - (void)addOperands:(id)arg1;
 - (void)clearOperands;
 - (void)copyTo:(id)arg1;
@@ -38,6 +41,7 @@
 - (void)setType:(int)arg1;
 - (void)setValue:(id)arg1;
 - (int)type;
+- (id)typeAsString:(int)arg1;
 - (id)value;
 - (void)writeTo:(id)arg1;
 

@@ -3,9 +3,9 @@
  */
 
 @interface SCNFixedSizePage : NSObject {
-    <MTLBuffer> *_buffer;
-    unsigned int _elementSize;
-    NSMutableIndexSet *_freeIndices;
+    <MTLBuffer> * _buffer;
+    unsigned int  _elementSize;
+    NSMutableIndexSet * _freeIndices;
 }
 
 @property (nonatomic, readonly) <MTLBuffer> *buffer;

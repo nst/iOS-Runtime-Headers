@@ -3,7 +3,7 @@
  */
 
 @interface FigVideoLayer : FigBaseCALayer {
-    FigVideoLayerInternal *_videoLayer;
+    FigVideoLayerInternal * _videoLayer;
 }
 
 + (id)defaultActionForKey:(id)arg1;

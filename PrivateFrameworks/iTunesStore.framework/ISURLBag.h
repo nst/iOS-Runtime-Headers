@@ -3,15 +3,16 @@
  */
 
 @interface ISURLBag : NSObject {
-    SSURLBagContext *_context;
-    SSNetworkConstraints *_defaultConstraints;
-    NSDictionary *_dictionary;
-    NSArray *_guidPatterns;
-    NSSet *_guidSchemes;
-    NSDictionary *_headerPatterns;
-    double _invalidationTime;
-    BOOL _loadedFromDiskCache;
-    NSString *_storeFrontIdentifier;
+    ISURLBagBackend * _bagBackend;
+    NSString * _bagBackendKey;
+    SSURLBagContext * _context;
+    SSNetworkConstraints * _defaultConstraints;
+    NSArray * _guidPatterns;
+    NSSet * _guidSchemes;
+    NSDictionary * _headerPatterns;
+    double  _invalidationTime;
+    BOOL  _loadedFromDiskCache;
+    NSString * _storeFrontIdentifier;
 }
 
 @property (nonatomic, copy) SSURLBagContext *URLBagContext;
@@ -21,10 +22,11 @@
 @property (nonatomic) BOOL loadedFromDiskCache;
 @property (nonatomic, copy) NSString *storeFrontIdentifier;
 @property (getter=isValid, nonatomic, readonly) BOOL valid;
-@property (nonatomic, readonly) long long versionIdentifier;
+@property (nonatomic, readonly) int versionIdentifier;
 
 + (BOOL)_allowUnsignedBags;
 + (void)_loadItemKindURLBagKeyMap;
++ (id)_sharedBagBackend;
 + (id)copyExtraHeadersForURL:(id)arg1 inBagContext:(id)arg2;
 + (id)networkConstraintsForDownloadKind:(id)arg1 inBagContext:(id)arg2;
 + (BOOL)shouldSendGUIDForURL:(id)arg1 inBagContext:(id)arg2;
@@ -34,20 +36,20 @@
 + (BOOL)urlIsTrusted:(id)arg1 inBagContext:(id)arg2;
 + (id)valueForKey:(id)arg1 inBagContext:(id)arg2;
 
+- (void).cxx_destruct;
 - (id)URLBagContext;
 - (id)URLBagDictionary;
 - (id)URLForURL:(id)arg1 clientIdentifier:(id)arg2;
-- (id)_copyGUIDPatternsFromDictionary:(id)arg1;
-- (id)_copyGUIDSchemesFromDictionary:(id)arg1;
-- (id)_copyHeaderPatternsFromDictionary:(id)arg1;
+- (id)_copyGUIDPatternsFromBagBackend;
+- (id)_copyGUIDSchemesFromBagBackend;
+- (id)_copyHeaderPatternsFromBagBackend;
 - (id)_networkConstraintsCachePath;
 - (void)_preprocessURLResolutionCacheDictionary:(id)arg1;
-- (void)_setDictionary:(id)arg1;
+- (void)_setBagBackendWithDictionary:(id)arg1;
 - (void)_writeNetworkConstraintsCacheFile;
 - (void)_writeURLResolutionCacheFile;
 - (id)availableStorefrontItemKinds;
 - (id)copyExtraHeadersForURL:(id)arg1;
-- (void)dealloc;
 - (id)init;
 - (id)initWithContentsOfFile:(id)arg1;
 - (id)initWithRawDictionary:(id)arg1;
@@ -70,7 +72,7 @@
 - (id)urlForKey:(id)arg1;
 - (BOOL)urlIsTrusted:(id)arg1;
 - (id)valueForKey:(id)arg1;
-- (long long)versionIdentifier;
+- (int)versionIdentifier;
 - (BOOL)writeToFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
 
 @end

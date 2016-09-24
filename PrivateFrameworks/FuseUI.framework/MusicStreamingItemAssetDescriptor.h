@@ -3,10 +3,10 @@
  */
 
 @interface MusicStreamingItemAssetDescriptor : NSObject {
-    NSURL *_URL;
-    NSString *_downloadKey;
-    NSString *_flavor;
-    NSArray *_sinfs;
+    NSURL * _URL;
+    NSString * _downloadKey;
+    NSString * _flavor;
+    NSArray * _sinfs;
 }
 
 @property (nonatomic, readonly, retain) NSURL *URL;

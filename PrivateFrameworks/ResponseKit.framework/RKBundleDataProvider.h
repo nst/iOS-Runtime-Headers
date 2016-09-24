@@ -3,10 +3,10 @@
  */
 
 @interface RKBundleDataProvider : NSObject <RKDisplayStringsProvider, RKPolarityDataProvider> {
-    NSBundle *_bundle;
-    NSMutableDictionary *_displayStringsByPlatformByLanguage;
-    NSMutableDictionary *_localizationsByLanguageID;
-    NSMutableDictionary *_polarityMapsByLanguageID;
+    NSBundle * _bundle;
+    NSMutableDictionary * _displayStringsByPlatformByLanguage;
+    NSMutableDictionary * _localizationsByLanguageID;
+    NSMutableDictionary * _polarityMapsByLanguageID;
 }
 
 @property (readonly) NSBundle *bundle;

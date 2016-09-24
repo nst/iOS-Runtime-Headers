@@ -3,8 +3,8 @@
  */
 
 @interface ATRemoteFileManagerLinkHandler : NSObject <ATMessageLinkRequestHandler> {
-    NSFileManager *_fm;
-    NSString *_rootPath;
+    NSFileManager * _fm;
+    NSString * _rootPath;
 }
 
 @property (readonly, copy) NSString *debugDescription;

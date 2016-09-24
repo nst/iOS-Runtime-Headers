@@ -3,11 +3,11 @@
  */
 
 @interface MCManifest : NSObject {
-    NSObject<OS_dispatch_queue> *_syncQueue;
-    NSString *_systemFilePath;
-    NSMutableDictionary *_systemManifest;
-    NSString *_userFilePath;
-    NSMutableDictionary *_userManifest;
+    NSObject<OS_dispatch_queue> * _syncQueue;
+    NSString * _systemFilePath;
+    NSMutableDictionary * _systemManifest;
+    NSString * _userFilePath;
+    NSMutableDictionary * _userManifest;
 }
 
 + (void)_setSystemManifestPath:(id)arg1 userManifestPath:(id)arg2;
@@ -35,7 +35,8 @@
 - (id)installedSystemProfileWithIdentifier:(id)arg1;
 - (id)installedUserProfileWithIdentifier:(id)arg1;
 - (void)invalidateCache;
-- (void)removeIdentifierFromManifest:(id)arg1;
+- (void)removeIdentifierFromSystemManifest:(id)arg1;
+- (void)removeIdentifierFromUserManifest:(id)arg1;
 - (id)systemManifest;
 - (id)userManifest;
 

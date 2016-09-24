@@ -3,11 +3,11 @@
  */
 
 @interface STShowHourlyWeatherForecastRequest : AFSiriRequest {
-    STCity *_city;
-    STWeatherAttributes *_currentAttributes;
-    int _forecastType;
-    NSArray *_hourlyAttributes;
-    int _startHour;
+    STCity * _city;
+    STWeatherAttributes * _currentAttributes;
+    int  _forecastType;
+    NSArray * _hourlyAttributes;
+    int  _startHour;
 }
 
 + (BOOL)supportsSecureCoding;

@@ -3,7 +3,7 @@
  */
 
 @interface _UISceneSettingsMediaTimingAnimationFactory : NSObject <_UIBasicAnimationFactory> {
-    CAMediaTimingFunction *__timingFunctionForAnimation;
+    CAMediaTimingFunction * __timingFunctionForAnimation;
 }
 
 @property (getter=_timingFunctionForAnimation, nonatomic, retain) CAMediaTimingFunction *_timingFunctionForAnimation;

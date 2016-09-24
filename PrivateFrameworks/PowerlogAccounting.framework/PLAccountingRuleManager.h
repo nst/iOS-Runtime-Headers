@@ -3,8 +3,8 @@
  */
 
 @interface PLAccountingRuleManager : NSObject {
-    NSRegularExpression *_regex;
-    NSMutableDictionary *_ruleIDToRule;
+    NSRegularExpression * _regex;
+    NSMutableDictionary * _ruleIDToRule;
 }
 
 @property (nonatomic, retain) NSRegularExpression *regex;

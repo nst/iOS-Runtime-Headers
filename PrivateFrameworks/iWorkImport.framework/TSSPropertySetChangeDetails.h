@@ -3,7 +3,7 @@
  */
 
 @interface TSSPropertySetChangeDetails : NSObject {
-    TSSMutablePropertySet *mChangedProperties;
+    TSSMutablePropertySet * mChangedProperties;
 }
 
 - (void)addChangedProperties:(id)arg1;

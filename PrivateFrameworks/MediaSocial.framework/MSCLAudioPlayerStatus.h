@@ -3,10 +3,10 @@
  */
 
 @interface MSCLAudioPlayerStatus : NSObject <NSCopying> {
-    double _currentTime;
-    double _duration;
-    NSError *_error;
-    int _state;
+    double  _currentTime;
+    double  _duration;
+    NSError * _error;
+    int  _state;
 }
 
 @property (nonatomic) double currentTime;

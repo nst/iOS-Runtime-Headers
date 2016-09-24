@@ -3,10 +3,10 @@
  */
 
 @interface CATXPCTransport : CATTransport <CATXPCInterface> {
-    NSXPCConnection *mConnection;
-    BOOL mConnectionHasInvalidated;
-    BOOL mConnectionHasResumed;
-    BOOL mConnectionShouldInvalidate;
+    NSXPCConnection * mConnection;
+    BOOL  mConnectionHasInvalidated;
+    BOOL  mConnectionHasResumed;
+    BOOL  mConnectionShouldInvalidate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

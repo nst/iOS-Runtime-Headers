@@ -3,10 +3,10 @@
  */
 
 @interface GEOMotionContext : NSObject <GEOMotionContextProviderDelegate> {
-    unsigned int _confidence;
-    unsigned int _exitType;
-    unsigned int _motionType;
-    <GEOMotionContextProvider> *_provider;
+    unsigned int  _confidence;
+    unsigned int  _exitType;
+    unsigned int  _motionType;
+    <GEOMotionContextProvider> * _provider;
 }
 
 @property (nonatomic, readonly) unsigned int confidence;

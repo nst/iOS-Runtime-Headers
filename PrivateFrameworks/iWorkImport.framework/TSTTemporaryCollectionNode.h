@@ -3,15 +3,15 @@
  */
 
 @interface TSTTemporaryCollectionNode : NSObject {
-    NSMutableArray *mChildren;
+    NSMutableArray * mChildren;
     struct TSCEVectorIndexPair { 
         unsigned short column; 
         unsigned short row; 
-    } mDimensions;
-    unsigned int mFirstIndex;
-    unsigned int mLastIndex;
-    NSMutableArray *mWhitespaceAfterDelimiters;
-    NSString *mWhitespaceBeforeFirstChild;
+    }  mDimensions;
+    unsigned int  mFirstIndex;
+    unsigned int  mLastIndex;
+    NSMutableArray * mWhitespaceAfterDelimiters;
+    NSString * mWhitespaceBeforeFirstChild;
 }
 
 @property (nonatomic, retain) NSMutableArray *children;

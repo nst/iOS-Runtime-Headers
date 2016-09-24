@@ -3,7 +3,7 @@
  */
 
 @interface _NSOrderedSetDiff : NSObject {
-    id _diffObject;
+    id  _diffObject;
 }
 
 - (void)applyToSet:(id)arg1;

@@ -3,16 +3,18 @@
  */
 
 @interface AXServer : NSObject {
-    AXDispatchTimer *_assertionRetryTimer;
-    NSMutableArray *_assertionWorkBacklog;
-    AXIPCClient *_client;
-    AXIPCServer *_server;
-    NSString *_serverIdentifier;
-    BOOL _shouldRegisterClientCallbackSourceOnMainRunloop;
+    AXDispatchTimer * _assertionRetryTimer;
+    NSMutableArray * _assertionWorkBacklog;
+    NSObject<OS_dispatch_queue> * _assertionWorkQueue;
+    AXIPCClient * _client;
+    AXIPCServer * _server;
+    NSString * _serverIdentifier;
+    BOOL  _shouldRegisterClientCallbackSourceOnMainRunloop;
 }
 
 @property (nonatomic, retain) AXDispatchTimer *assertionRetryTimer;
 @property (nonatomic, retain) NSMutableArray *assertionWorkBacklog;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *assertionWorkQueue;
 @property (nonatomic, retain) AXIPCClient *client;
 @property (nonatomic, retain) AXIPCServer *server;
 @property (nonatomic, copy) NSString *serverIdentifier;
@@ -30,8 +32,10 @@
 - (void)acquireAssertionWithType:(id)arg1 identifier:(id)arg2;
 - (id)assertionRetryTimer;
 - (id)assertionWorkBacklog;
+- (id)assertionWorkQueue;
 - (id)client;
 - (void)dealloc;
+- (id)init;
 - (void)relinquishAssertionWithType:(id)arg1 identifier:(id)arg2;
 - (void)sendAsynchronousMessage:(id)arg1 replyOnQueue:(id)arg2 boolResultHandler:(id /* block */)arg3;
 - (void)sendAsynchronousMessage:(id)arg1 replyOnQueue:(id)arg2 handler:(id /* block */)arg3;
@@ -45,6 +49,7 @@
 - (id)serverIdentifier;
 - (void)setAssertionRetryTimer:(id)arg1;
 - (void)setAssertionWorkBacklog:(id)arg1;
+- (void)setAssertionWorkQueue:(id)arg1;
 - (void)setClient:(id)arg1;
 - (void)setServer:(id)arg1;
 - (void)setServerIdentifier:(id)arg1;

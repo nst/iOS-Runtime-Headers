@@ -3,58 +3,85 @@
  */
 
 @interface SKUIOfferView : SKUIViewReuseView <SKUIItemOfferButtonDelegate, SKUIViewElementView> {
-    unsigned int _alignment;
-    NSMapTable *_buttonElements;
-    NSMapTable *_buyButtonDescriptorToButton;
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _contentInset;
-    <SKUIOfferViewDelegate> *_delegate;
-    BOOL _isShowingConfirmation;
-    int _metadataPosition;
-    NSMutableArray *_metadataViews;
-    NSMapTable *_notices;
-    NSMutableArray *_offerButtonViews;
+    unsigned int  _alignment;
+    NSMapTable * _buttonElements;
+    NSMapTable * _buyButtonDescriptorToButton;
+    BOOL  _compactModeEnabled;
+    <SKUIOfferViewDelegate> * _delegate;
+    NSNumber * _hlsID;
+    UIButton * _hlsPlayButton;
+    int  _metadataPosition;
+    NSMutableArray * _metadataViews;
+    NSMapTable * _notices;
+    NSMutableArray * _offerButtonViews;
+    BOOL  _showingConfirmation;
 }
 
+@property (nonatomic) unsigned int alignment;
+@property (nonatomic, retain) NSMapTable *buttonElements;
+@property (nonatomic, retain) NSMapTable *buyButtonDescriptorToButton;
+@property (getter=isCompactModeEnabled, nonatomic) BOOL compactModeEnabled;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKUIOfferViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSNumber *hlsID;
+@property (nonatomic, retain) UIButton *hlsPlayButton;
 @property (nonatomic) int metadataPosition;
-@property (getter=isShowingConfirmation, nonatomic, readonly) BOOL showingConfirmation;
+@property (nonatomic, retain) NSMutableArray *metadataViews;
+@property (nonatomic, retain) NSMapTable *notices;
+@property (nonatomic, retain) NSMutableArray *offerButtonViews;
+@property (nonatomic, readonly) NSString *offerViewStateDescription;
+@property (getter=isShowingConfirmation, nonatomic) BOOL showingConfirmation;
 @property (readonly) Class superclass;
 
 + (id)_attributedStringForButton:(id)arg1 context:(id)arg2;
 + (id)_attributedStringForLabel:(id)arg1 context:(id)arg2;
-+ (struct CGSize { float x1; float x2; })preferredSizeForViewElement:(id)arg1 context:(id)arg2;
++ (struct CGSize { double x1; double x2; })preferredSizeForViewElement:(id)arg1 context:(id)arg2;
 + (BOOL)prefetchResourcesForViewElement:(id)arg1 reason:(int)arg2 context:(id)arg3;
 + (void)requestLayoutForViewElement:(id)arg1 width:(float)arg2 context:(id)arg3;
-+ (struct CGSize { float x1; float x2; })sizeThatFitsWidth:(float)arg1 viewElement:(id)arg2 context:(id)arg3;
++ (struct CGSize { double x1; double x2; })sizeThatFitsWidth:(float)arg1 viewElement:(id)arg2 context:(id)arg3;
 
 - (void).cxx_destruct;
 - (void)_buttonAction:(id)arg1;
 - (void)_cancelConfirmationAction:(id)arg1;
-- (void)_positionNoticeForItemOfferButton:(id)arg1;
 - (void)_sendWillAnimate;
 - (BOOL)_shouldHideNoticesWithBuyButtonDescriptor:(id)arg1 context:(id)arg2;
 - (void)_showConfirmationAction:(id)arg1;
+- (unsigned int)alignment;
+- (id)buttonElements;
+- (id)buyButtonDescriptorToButton;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)hlsID;
+- (id)hlsPlayButton;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (BOOL)isCompactModeEnabled;
 - (BOOL)isShowingConfirmation;
 - (void)itemOfferButtonDidAnimateTransition:(id)arg1;
 - (void)itemOfferButtonWillAnimateTransition:(id)arg1;
 - (void)layoutSubviews;
 - (int)metadataPosition;
+- (id)metadataViews;
+- (id)notices;
+- (id)offerButtonViews;
+- (id)offerViewStateDescription;
 - (void)reloadWithViewElement:(id)arg1 width:(float)arg2 context:(id)arg3;
-- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setAlignment:(unsigned int)arg1;
+- (void)setButtonElements:(id)arg1;
+- (void)setBuyButtonDescriptorToButton:(id)arg1;
+- (void)setCompactModeEnabled:(BOOL)arg1;
+- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setHlsID:(id)arg1;
+- (void)setHlsPlayButton:(id)arg1;
 - (BOOL)setImage:(id)arg1 forArtworkRequest:(id)arg2 context:(id)arg3;
 - (void)setMetadataPosition:(int)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setMetadataViews:(id)arg1;
+- (void)setNotices:(id)arg1;
+- (void)setOfferButtonViews:(id)arg1;
+- (void)setShowingConfirmation:(BOOL)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (BOOL)updateWithItemState:(id)arg1 context:(id)arg2 animated:(BOOL)arg3;
 - (id)viewForElementIdentifier:(id)arg1;
 

@@ -3,9 +3,9 @@
  */
 
 @interface _UIGlobalUserDefaults : NSUserDefaults {
-    unsigned int _backgroundTaskIdentifier;
-    NSMutableDictionary *_userDefaultsDictionary;
-    <UIFoundationGlobalUserDefaultsHelper> *_userDefaultsHelper;
+    unsigned int  _backgroundTaskIdentifier;
+    NSMutableDictionary * _userDefaultsDictionary;
+    <UIFoundationGlobalUserDefaultsHelper> * _userDefaultsHelper;
 }
 
 @property (nonatomic) unsigned int backgroundTaskIdentifier;

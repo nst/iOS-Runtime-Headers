@@ -3,8 +3,8 @@
  */
 
 @interface HMDIncomingHomeInvitation : HMDHomeInvitation {
-    NSString *_inviterControllerName;
-    NSData *_inviterPublicKey;
+    NSString * _inviterControllerName;
+    NSData * _inviterPublicKey;
 }
 
 @property (nonatomic, readonly) NSDictionary *bulletinContext;
@@ -18,6 +18,7 @@
 
 - (void).cxx_destruct;
 - (struct NSDictionary { Class x1; }*)bulletinContext;
+- (id)describeWithFormat;
 - (void)encodeWithCoder:(id)arg1;
 - (id)homeName;
 - (id)homeUUID;

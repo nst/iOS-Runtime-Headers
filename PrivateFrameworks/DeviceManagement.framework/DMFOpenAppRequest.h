@@ -3,9 +3,9 @@
  */
 
 @interface DMFOpenAppRequest : CATTaskRequest {
-    NSData *_activityData;
-    NSString *_activityType;
-    NSString *_bundleIdentifier;
+    NSData * _activityData;
+    NSString * _activityType;
+    NSString * _bundleIdentifier;
 }
 
 @property (nonatomic, copy) NSData *activityData;

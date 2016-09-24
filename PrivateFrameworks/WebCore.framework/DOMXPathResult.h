@@ -14,7 +14,6 @@
 
 - (BOOL)booleanValue;
 - (void)dealloc;
-- (void)finalize;
 - (BOOL)invalidIteratorState;
 - (id)iterateNext;
 - (double)numberValue;

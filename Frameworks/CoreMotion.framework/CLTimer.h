@@ -3,11 +3,11 @@
  */
 
 @interface CLTimer : NSObject {
-    double _fireInterval;
-    id /* block */ _handler;
-    double _nextFireTime;
-    <CLTimerScheduler> *_scheduler;
-    CLSilo *_silo;
+    double  _fireInterval;
+    id /* block */  _handler;
+    double  _nextFireTime;
+    <CLTimerScheduler> * _scheduler;
+    CLSilo * _silo;
 }
 
 @property (nonatomic) double fireInterval;

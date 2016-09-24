@@ -3,11 +3,11 @@
  */
 
 @interface PBBridgeIDSServiceDelegate : NSObject <IDSServiceDelegate> {
-    NSMutableDictionary *_inflightMessages;
-    NSMutableDictionary *_pendingMessages;
-    IDSService *_service;
-    BOOL _shouldSuppressTransportReachabilityTimeout;
-    NSTimer *_transportReachabilityTimer;
+    NSMutableDictionary * _inflightMessages;
+    NSMutableDictionary * _pendingMessages;
+    IDSService * _service;
+    BOOL  _shouldSuppressTransportReachabilityTimeout;
+    NSTimer * _transportReachabilityTimer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -31,6 +31,7 @@
 - (id)inflightMessages;
 - (id)pendingMessages;
 - (void)reportConnectionForService:(id)arg1 accounts:(id)arg2 devices:(id)arg3;
+- (void)resetTransportReachabilityTimer;
 - (id)sendProtoBuf:(id)arg1 service:(id)arg2 priority:(int)arg3 responseIdentifier:(id)arg4 expectsResponse:(BOOL)arg5 retryCount:(int)arg6 retryInterval:(double)arg7;
 - (id)service;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5;

@@ -3,10 +3,10 @@
  */
 
 @interface GKTurnBasedMatch : NSObject <GKSessionDelegate> {
-    NSArray *_exchanges;
-    GKTurnBasedMatchInternal *_internal;
-    NSArray *_participants;
-    unsigned int _state;
+    NSArray * _exchanges;
+    GKTurnBasedMatchInternal * _internal;
+    NSArray * _participants;
+    unsigned int  _state;
 }
 
 @property (nonatomic, readonly, retain) NSArray *activeExchanges;
@@ -91,6 +91,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isMyTurn;
 - (void)loadMatchDataWithCompletionHandler:(id /* block */)arg1;
+- (void)loadURLWithMatchRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)localPlayerHasRecentTurn;
 - (id)localPlayerParticipant;
 - (unsigned int)matchDataMaximumSize;
@@ -105,6 +106,7 @@
 - (id)previousParticipantOrFirstKnownPlayer;
 - (void)rematchWithCompletionHandler:(id /* block */)arg1;
 - (void)removeWithCompletionHandler:(id /* block */)arg1;
+- (void)reserveShareParticipantSlots:(int)arg1 andInvitePlayers:(id)arg2 withMessage:(id)arg3 handler:(id /* block */)arg4;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (void)saveCurrentTurnWithMatchData:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)saveMergedMatchData:(id)arg1 withResolvedExchanges:(id)arg2 completionHandler:(id /* block */)arg3;

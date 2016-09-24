@@ -3,7 +3,7 @@
  */
 
 @interface CalDAVCalendarServerReplyItem : CalDAVItemWithRecurrenceChildren {
-    CoreDAVLeafItem *_attendee;
+    CoreDAVLeafItem * _attendee;
 }
 
 @property (nonatomic, retain) CoreDAVLeafItem *attendee;

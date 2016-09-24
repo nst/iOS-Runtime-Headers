@@ -7,11 +7,11 @@
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _deviceIDs;
-    unsigned int _errorCode;
+    }  _deviceIDs;
+    unsigned int  _errorCode;
     struct { 
         unsigned int errorCode : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic, readonly) unsigned int*deviceIDs;

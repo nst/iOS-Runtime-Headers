@@ -3,29 +3,30 @@
  */
 
 @interface APSConnection : NSObject {
-    NSObject<OS_xpc_object> *_connection;
-    unsigned int _connectionPort;
-    NSString *_connectionPortName;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    CUTWeakReference *_delegateReference;
-    BOOL _enableCriticalReliability;
-    BOOL _enableStatusNotifications;
-    NSArray *_enabledTopics;
-    NSString *_environmentName;
-    BOOL _everHadDelegate;
-    NSMutableDictionary *_idsToOutgoingMessages;
-    NSArray *_ignoredTopics;
-    BOOL _isConnected;
-    NSObject<OS_dispatch_queue> *_ivarQueue;
-    unsigned int _largeMessageSize;
-    NSObject<OS_dispatch_queue> *_machQueue;
-    NSObject<OS_dispatch_source> *_mach_source;
-    unsigned int _messageSize;
-    unsigned int _nextOutgoingMessageID;
-    NSArray *_opportunisticTopics;
-    NSData *_publicToken;
-    NSMutableArray *_queuedDelegateBlocks;
-    BOOL _usesAppLaunchStats;
+    NSObject<OS_xpc_object> * _connection;
+    unsigned int  _connectionPort;
+    NSString * _connectionPortName;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    CUTWeakReference * _delegateReference;
+    BOOL  _enableCriticalReliability;
+    BOOL  _enableStatusNotifications;
+    NSArray * _enabledTopics;
+    NSString * _environmentName;
+    BOOL  _everHadDelegate;
+    NSMutableDictionary * _idsToOutgoingMessages;
+    NSArray * _ignoredTopics;
+    BOOL  _isConnected;
+    NSObject<OS_dispatch_queue> * _ivarQueue;
+    unsigned int  _largeMessageSize;
+    NSObject<OS_dispatch_queue> * _machQueue;
+    NSObject<OS_dispatch_source> * _mach_source;
+    unsigned int  _messageSize;
+    unsigned int  _nextOutgoingMessageID;
+    NSArray * _opportunisticTopics;
+    BOOL  _portNameIsBundleId;
+    NSData * _publicToken;
+    NSMutableArray * _queuedDelegateBlocks;
+    BOOL  _usesAppLaunchStats;
 }
 
 @property (nonatomic) <APSConnectionDelegate> *delegate;
@@ -42,6 +43,7 @@
 + (void)_setTokenState;
 + (id)connectionsDebuggingState;
 + (struct __SecIdentity { }*)copyIdentity;
++ (id)geoRegion;
 + (void)invalidateDeviceIdentity;
 + (BOOL)isValidEnvironment:(id)arg1;
 + (double)keepAliveIntervalForEnvironmentName:(id)arg1;
@@ -87,6 +89,7 @@
 - (BOOL)hasIdentity;
 - (id)ignoredTopics;
 - (id)initWithEnvironmentName:(id)arg1;
+- (id)initWithEnvironmentName:(id)arg1 launchBundleIdOnDemand:(id)arg2 queue:(id)arg3;
 - (id)initWithEnvironmentName:(id)arg1 namedDelegatePort:(id)arg2;
 - (id)initWithEnvironmentName:(id)arg1 namedDelegatePort:(id)arg2 queue:(id)arg3;
 - (id)initWithEnvironmentName:(id)arg1 queue:(id)arg2;

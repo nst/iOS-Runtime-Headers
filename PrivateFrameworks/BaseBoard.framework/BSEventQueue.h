@@ -3,18 +3,20 @@
  */
 
 @interface BSEventQueue : NSObject <BSDescriptionProviding> {
-    NSMutableArray *_eventQueue;
-    NSHashTable *_eventQueueLocks;
-    BSEventQueueEvent *_executingEvent;
-    NSString *_name;
-    BOOL _processingEvents;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableArray * _eventQueue;
+    NSHashTable * _eventQueueLocks;
+    BSEventQueueEvent * _executingEvent;
+    NSString * _name;
+    BOOL  _processingEvents;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (getter=isEmpty, nonatomic, readonly) BOOL empty;
 @property (nonatomic, retain) BSEventQueueEvent *executingEvent;
 @property (readonly) unsigned int hash;
+@property (getter=isLocked, nonatomic, readonly) BOOL locked;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSArray *pendingEvents;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
@@ -47,6 +49,7 @@
 - (BOOL)hasEventWithPrefix:(id)arg1;
 - (id)init;
 - (id)initWithName:(id)arg1 onQueue:(id)arg2;
+- (BOOL)isEmpty;
 - (BOOL)isLocked;
 - (id)name;
 - (id)pendingEvents;

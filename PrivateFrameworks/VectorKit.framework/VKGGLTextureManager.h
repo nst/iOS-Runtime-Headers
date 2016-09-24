@@ -3,9 +3,9 @@
  */
 
 @interface VKGGLTextureManager : NSObject <GEOResourceManifestTileGroupObserver> {
-    struct Device { int (**x1)(); int x2; } *_device;
-    GEOResourceManifestConfiguration *_manifestConfiguration;
-    VKResourceManager *_resourceManager;
+    struct Device { int (**x1)(); struct DeviceVersion { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; struct DeviceCapabilities { bool x_3_1_1; unsigned int x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; } x3; struct DeviceAPIProperties { int x_4_1_1; double x_4_1_2; } x4; int x5; int x6; } * _device;
+    GEOResourceManifestConfiguration * _manifestConfiguration;
+    VKResourceManager * _resourceManager;
     struct map<std::__1::basic_string<char>, std::__1::shared_ptr<ggl::Texture2D>, std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::shared_ptr<ggl::Texture2D> > > > { 
         struct __tree<std::__1::__value_type<std::__1::basic_string<char>, std::__1::shared_ptr<ggl::Texture2D> >, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::shared_ptr<ggl::Texture2D> >, std::__1::less<std::__1::basic_string<char> >, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, std::__1::shared_ptr<ggl::Texture2D> > > > { 
             struct __tree_node<std::__1::__value_type<std::__1::basic_string<char>, std::__1::shared_ptr<ggl::Texture2D> >, void *> {} *__begin_node_; 
@@ -18,12 +18,12 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    } _textureDictionary;
-    NSObject<OS_dispatch_queue> *_textureQueue;
+    }  _textureDictionary;
+    NSObject<OS_dispatch_queue> * _textureQueue;
     struct shared_ptr<ggl::Texture2D> { 
         struct Texture2D {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _whiteTexture;
+    }  _whiteTexture;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -35,14 +35,14 @@
 - (void).cxx_destruct;
 - (id)dataWithName:(id)arg1 fromResourceManager:(id)arg2;
 - (void)dealloc;
-- (id)initWithConfiguration:(id)arg1 resourceManager:(id)arg2 device:(struct Device { int (**x1)(); int x2; }*)arg3;
+- (id)initWithConfiguration:(id)arg1 resourceManager:(id)arg2 device:(struct Device { int (**x1)(); struct DeviceVersion { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; struct DeviceCapabilities { bool x_3_1_1; unsigned int x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; } x3; struct DeviceAPIProperties { int x_4_1_1; double x_4_1_2; } x4; int x5; int x6; }*)arg3;
 - (void)purge;
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
-- (struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; })textureWithName:(id)arg1;
-- (struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; })textureWithName:(id)arg1 forScale:(float)arg2;
-- (struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; })textureWithName:(id)arg1 forScale:(float)arg2 mipmap:(BOOL)arg3 repeatWrap:(BOOL)arg4;
-- (struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; })textureWithName:(id)arg1 mipmap:(BOOL)arg2 repeatWrap:(BOOL)arg3;
-- (struct Texture2D { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int x4; int x5; unsigned int x6; int x7; int x8; int x9; float x10; struct TextureDataAbstract {} *x11; bool x12; bool x13; bool x14; unsigned int x15; unsigned int x16; int x17; int x18; }*)whiteTexture;
+- (struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; })textureWithName:(id)arg1 forScale:(float)arg2 mipmap:(BOOL)arg3 samplerState:(struct shared_ptr<ggl::SamplerState> { struct SamplerState {} *x1; struct __shared_weak_count {} *x2; })arg4;
+- (struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; })textureWithName:(id)arg1 forScale:(float)arg2 samplerState:(struct shared_ptr<ggl::SamplerState> { struct SamplerState {} *x1; struct __shared_weak_count {} *x2; })arg3;
+- (struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; })textureWithName:(id)arg1 mipmap:(BOOL)arg2 samplerState:(struct shared_ptr<ggl::SamplerState> { struct SamplerState {} *x1; struct __shared_weak_count {} *x2; })arg3;
+- (struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; })textureWithName:(id)arg1 samplerState:(struct shared_ptr<ggl::SamplerState> { struct SamplerState {} *x1; struct __shared_weak_count {} *x2; })arg2;
+- (const struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x1; struct __shared_weak_count {} *x2; }*)whiteTexture;
 
 @end

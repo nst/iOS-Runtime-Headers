@@ -3,11 +3,11 @@
  */
 
 @interface _SFSafariSharingExtensionController : NSObject <SFSafariExtensionEventsListener> {
-    NSTimer *_expirationTimer;
-    <SFSharingExtensionWebProcessController> *_extensionControllerProxy;
-    _WKRemoteObjectInterface *_extensionEventListenerInterface;
-    NSMutableDictionary *_replyIdentifierToCompletionMap;
-    WKWebView *_webView;
+    NSTimer * _expirationTimer;
+    <SFSharingExtensionWebProcessController> * _extensionControllerProxy;
+    _WKRemoteObjectInterface * _extensionEventListenerInterface;
+    NSMutableDictionary * _replyIdentifierToCompletionMap;
+    WKWebView * _webView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

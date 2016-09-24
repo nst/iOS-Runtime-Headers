@@ -3,13 +3,13 @@
  */
 
 @interface GKScore : NSObject <NSCoding, NSCopying, NSSecureCoding> {
-    GKGame *_game;
-    GKScoreInternal *_internal;
-    BOOL _shouldSetDefaultLeaderboard;
+    GKGame * _game;
+    GKScoreInternal * _internal;
+    BOOL  _shouldSetDefaultLeaderboard;
 }
 
 @property (nonatomic, copy) NSString *category;
-@property (nonatomic) unsigned long long context;
+@property (nonatomic) unsigned int context;
 @property (nonatomic, readonly, retain) NSDate *date;
 @property (nonatomic, copy) NSString *formattedValue;
 @property (nonatomic, retain) GKGame *game;
@@ -20,7 +20,7 @@
 @property (readonly, retain) NSString *playerID;
 @property (nonatomic) int rank;
 @property (nonatomic) BOOL shouldSetDefaultLeaderboard;
-@property (nonatomic) long long value;
+@property (nonatomic) int value;
 @property BOOL valueSet;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation

@@ -3,9 +3,9 @@
  */
 
 @interface GKInvite : NSObject {
-    BOOL _cancelled;
-    GKInviteInternal *_internal;
-    GKPlayer *_sender;
+    BOOL  _cancelled;
+    GKInviteInternal * _internal;
+    GKPlayer * _sender;
 }
 
 @property (getter=isCancelled, nonatomic) BOOL cancelled;

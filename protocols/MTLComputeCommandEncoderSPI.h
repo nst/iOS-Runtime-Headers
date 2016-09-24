@@ -7,8 +7,4 @@
 
 - (NSData *)newKernelDebugInfo;
 
-@optional
-
-- (void)setTexture:(id <MTLTexture>)arg1 baseLevel:(unsigned int)arg2 atIndex:(unsigned int)arg3;
-
 @end

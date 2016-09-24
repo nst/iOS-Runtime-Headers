@@ -3,8 +3,8 @@
  */
 
 @interface _GCACHomeButton : _GCControllerButtonInput {
-    <_GCACHomeButtonDelegate> *_delegate;
-    BOOL needsReset;
+    <_GCACHomeButtonDelegate> * _delegate;
+    BOOL  needsReset;
 }
 
 - (void).cxx_destruct;

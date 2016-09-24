@@ -3,7 +3,7 @@
  */
 
 @interface ISURLOperationPool : NSObject {
-    ISOperationQueue *_operationQueue;
+    ISOperationQueue * _operationQueue;
 }
 
 @property (nonatomic, retain) ISOperationQueue *operationQueue;

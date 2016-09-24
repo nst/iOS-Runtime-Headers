@@ -3,20 +3,20 @@
  */
 
 @interface PKDiff : NSObject <NSSecureCoding> {
-    NSMutableArray *_hunks;
-    NSString *_passUniqueID;
+    NSMutableArray * _hunks;
+    NSString * _passUniqueID;
 }
 
 @property (nonatomic, copy) NSString *passUniqueID;
 
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (unsigned int)_hunkIndexForKey:(id)arg1;
 - (void)addHunkWithKey:(id)arg1 oldValue:(id)arg2 newValue:(id)arg3 message:(id)arg4;
 - (void)addHunksFromDiff:(id)arg1;
 - (id)anyKey;
 - (int)compare:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateHunks:(id /* block */)arg1;

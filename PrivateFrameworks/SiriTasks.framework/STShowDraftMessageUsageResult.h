@@ -3,7 +3,7 @@
  */
 
 @interface STShowDraftMessageUsageResult : AFSiriTaskUsageResult {
-    int _resultCode;
+    int  _resultCode;
 }
 
 @property (nonatomic) int resultCode;

@@ -3,18 +3,18 @@
  */
 
 @interface CPLRecordChange : NSObject <NSCopying, NSSecureCoding> {
-    unsigned int _alterationTypeFlags;
-    unsigned int _changeType;
-    NSDate *_dateDeleted;
-    NSString *_identifier;
-    BOOL _inExpunged;
-    BOOL _inTrash;
-    BOOL _isSparseFullChange;
-    NSString *_realIdentifier;
-    NSData *_recordChangeData;
-    NSDate *_recordModificationDate;
-    BOOL _serverRecordIsCorrupted;
-    BOOL _shouldFilterDefaultValuesForNewProperties;
+    unsigned int  _alterationTypeFlags;
+    unsigned int  _changeType;
+    NSDate * _dateDeleted;
+    NSString * _identifier;
+    BOOL  _inExpunged;
+    BOOL  _inTrash;
+    BOOL  _isSparseFullChange;
+    NSString * _realIdentifier;
+    NSData * _recordChangeData;
+    NSDate * _recordModificationDate;
+    BOOL  _serverRecordIsCorrupted;
+    BOOL  _shouldFilterDefaultValuesForNewProperties;
 }
 
 @property (nonatomic) unsigned int changeType;
@@ -29,9 +29,11 @@
 
 + (id)_descriptionForChangeType:(unsigned int)arg1 isSparseFullChange:(BOOL)arg2;
 + (Class)classForStoredClassName:(id)arg1 forCPLArchiver:(id)arg2;
++ (id /* block */)copyPropertyBlockForDirection:(unsigned int)arg1;
 + (id)cplAdditionalSecureClassesForProperty:(id)arg1;
 + (id)deleteChangeWithIdentifier:(id)arg1;
 + (id)descriptionForChangeType:(unsigned int)arg1;
++ (id /* block */)equalityBlockForDirection:(unsigned int)arg1;
 + (int)maxInlineDataSize;
 + (id)newChangeWithIdentifier:(id)arg1 changeType:(unsigned int)arg2;
 + (id)newChangeWithType:(unsigned int)arg1;
@@ -42,20 +44,20 @@
 - (void).cxx_destruct;
 - (BOOL)_addRealChangeToChangeBatch:(id)arg1 withStoredRecord:(id)arg2 andApplyToClientCache:(id)arg3 error:(id*)arg4;
 - (BOOL)addExpandedChangesToChangeBatch:(id)arg1 andApplyToClientCache:(id)arg2 error:(id*)arg3;
+- (id)allRelatedIdentifiers;
 - (unsigned int)alterationTypeFlags;
-- (BOOL)applyChange:(id)arg1 copyPropertiesToFinalChange:(id)arg2 forChangeType:(unsigned int)arg3 updatedProperty:(id*)arg4;
+- (BOOL)applyChange:(id)arg1 copyPropertiesToFinalChange:(id)arg2 forChangeType:(unsigned int)arg3 direction:(unsigned int)arg4 updatedProperty:(id*)arg5;
 - (void)awakeFromStorage;
 - (unsigned int)changeType;
 - (id /* block */)checkDefaultValueBlockForPropertyWithSelector:(SEL)arg1;
-- (id)compactedChangeWithRelatedChanges:(id)arg1 isOnlyChange:(BOOL)arg2 usingClientCache:(id)arg3;
+- (id)compactedChangeWithRelatedChanges:(id)arg1 isOnlyChange:(BOOL)arg2 fullRecord:(id)arg3 usingClientCache:(id)arg4;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)cplFullDescription;
 - (id)dateDeleted;
-- (BOOL)decodePropertiesFromObject:(id)arg1;
 - (int)dequeueOrder;
 - (id)description;
-- (BOOL)encodePropertiesInObject:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned int)estimatedRecordSize;
 - (BOOL)hasChangeType:(unsigned int)arg1;
 - (unsigned int)hash;
 - (id)identifier;
@@ -69,17 +71,17 @@
 - (BOOL)isFullRecord;
 - (BOOL)isSparseFullChange;
 - (void)markAsSparseFullChange;
-- (id)mergeRecordChangeWithNewRecordChange:(id)arg1;
-- (unsigned long long)originalResourceSize;
+- (id)mergeRecordChangeWithNewRecordChange:(id)arg1 direction:(unsigned int)arg2;
+- (unsigned int)originalResourceSize;
 - (void)prepareForStorage;
 - (id)propertiesDescription;
 - (id)propertiesForChangeType:(unsigned int)arg1;
 - (id)proposedCloudIdentifierWithError:(id*)arg1;
 - (id)proposedLocalIdentifier;
 - (id)realIdentifier;
-- (id)realRecordChangeFromRecordChange:(id)arg1 newRecord:(id*)arg2;
-- (id)realRecordChangeFromRecordChange:(id)arg1 newRecord:(id*)arg2 updatedProperties:(id*)arg3;
-- (unsigned long long)realResourceSize;
+- (id)realRecordChangeFromRecordChange:(id)arg1 direction:(unsigned int)arg2 newRecord:(id*)arg3;
+- (id)realRecordChangeFromRecordChange:(id)arg1 direction:(unsigned int)arg2 newRecord:(id*)arg3 updatedProperties:(id*)arg4;
+- (unsigned int)realResourceSize;
 - (id)recordChangeData;
 - (id)recordModificationDate;
 - (id)relatedIdentifier;
@@ -105,10 +107,13 @@
 - (BOOL)shouldApplyPropertiesWithSelector:(SEL)arg1;
 - (BOOL)shouldFilterDefaultValuesForNewProperties;
 - (id)storedClassNameForCPLArchiver:(id)arg1;
+- (BOOL)supportsDeletion;
+- (BOOL)supportsDirectDeletion;
 - (BOOL)supportsResources;
-- (unsigned long long)totalResourceSize;
+- (unsigned int)totalResourceSize;
 - (id)translateToClientChangeUsingIDMapping:(id)arg1 error:(id*)arg2;
 - (id)translateToCloudChangeUsingIDMapping:(id)arg1 error:(id*)arg2;
+- (BOOL)validateChangeWithError:(id*)arg1;
 - (BOOL)validateFullRecord;
 
 @end

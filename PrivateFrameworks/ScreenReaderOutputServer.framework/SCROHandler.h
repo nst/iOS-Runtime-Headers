@@ -3,9 +3,9 @@
  */
 
 @interface SCROHandler : NSObject <SCROHandlerProtocol> {
-    id _callbackDelegate;
-    NSLock *_lock;
-    BOOL isInvalid;
+    id  _callbackDelegate;
+    NSLock * _lock;
+    BOOL  isInvalid;
 }
 
 - (id)callbackDelegate;

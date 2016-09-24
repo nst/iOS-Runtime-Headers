@@ -3,8 +3,8 @@
  */
 
 @interface CATBatchRemoteTaskOperation : CATOperation {
-    NSOperationQueue *mQueue;
-    NSArray *mRemoteTasks;
+    NSOperationQueue * mQueue;
+    NSArray * mRemoteTasks;
 }
 
 @property (nonatomic, readonly, copy) NSArray *remoteTaskOperations;

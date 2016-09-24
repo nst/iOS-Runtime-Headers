@@ -2,10 +2,16 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@interface GKAutomatchPlayerInternal : GKSpecialPlayerInternal
+@interface GKAutomatchPlayerInternal : GKSpecialPlayerInternal {
+    int  _automatchPosition;
+}
+
+@property (nonatomic) int automatchPosition;
 
 - (id)alias;
+- (int)automatchPosition;
 - (BOOL)isAutomatchPlayer;
 - (id)playerID;
+- (void)setAutomatchPosition:(int)arg1;
 
 @end

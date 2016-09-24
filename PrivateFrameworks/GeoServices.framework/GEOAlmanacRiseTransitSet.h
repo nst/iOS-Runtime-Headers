@@ -3,7 +3,7 @@
  */
 
 @interface GEOAlmanacRiseTransitSet : NSObject {
-    double _julianDay;
+    double  _julianDay;
     struct CAARiseTransitSetDetails { 
         bool bRiseValid; 
         double Rise; 
@@ -11,10 +11,10 @@
         double Transit; 
         bool bSetValid; 
         double Set; 
-    } _riseTransitSet;
-    NSDate *_sunrise;
-    NSDate *_sunset;
-    NSDate *_transit;
+    }  _riseTransitSet;
+    NSDate * _sunrise;
+    NSDate * _sunset;
+    NSDate * _transit;
 }
 
 @property (nonatomic, readonly) double julianDay;

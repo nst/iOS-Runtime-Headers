@@ -3,8 +3,8 @@
  */
 
 @interface NSThread : NSObject {
-    unsigned char _bytes;
-    id _private;
+    unsigned char  _bytes;
+    id  _private;
 }
 
 @property (getter=isCancelled, readonly) BOOL cancelled;
@@ -23,6 +23,7 @@
 + (id)callStackSymbols;
 + (id)currentThread;
 + (void)detachNewThreadSelector:(SEL)arg1 toTarget:(id)arg2 withObject:(id)arg3;
++ (void)detachNewThreadWithBlock:(id /* block */)arg1;
 + (void)exit;
 + (BOOL)isDying;
 + (BOOL)isMainThread;
@@ -41,6 +42,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)init;
+- (id)initWithBlock:(id /* block */)arg1;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2 object:(id)arg3;
 - (BOOL)isCancelled;
 - (BOOL)isDying;
@@ -91,5 +93,6 @@
 + (void)tsp_performSynchronousOperationWithReadFileAccessUsingBlock:(id /* block */)arg1;
 + (void)tsp_performSynchronousOperationWithThreadDictionaryObject:(id)arg1 forKey:(id)arg2 usingBlock:(id /* block */)arg3;
 + (void)tsp_runFinalizeHandlersForReadCoordinator:(id)arg1 usingBlock:(id /* block */)arg2;
++ (id)tsu_currentThreadName;
 
 @end

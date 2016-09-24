@@ -3,12 +3,12 @@
  */
 
 @interface OAVReadState : OCXReadState {
-    Class mClient;
-    NSMutableSet *mDualDrawables;
-    OAXDrawingState *mOAXState;
-    OCPPackagePart *mPackagePart;
-    NSMutableDictionary *mShapeIdMap;
-    NSMutableDictionary *mShapeTypes;
+    Class  mClient;
+    NSMutableSet * mDualDrawables;
+    OAXDrawingState * mOAXState;
+    OCPPackagePart * mPackagePart;
+    NSMutableDictionary * mShapeIdMap;
+    NSMutableDictionary * mShapeTypes;
 }
 
 - (void)addDualDrawable:(id)arg1;

@@ -3,26 +3,26 @@
  */
 
 @interface CKVideoMessageRecordingViewController : UIViewController <CKActionMenuControllerDelegate, CKVideoRecorderDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
-    UIImagePickerController *_cameraViewController;
-    BOOL _canceled;
-    NSError *_captureError;
-    unsigned int _enableCancel;
-    id /* block */ _mediaExportCompletionBlock;
-    CKMediaObject *_mediaObjectForSending;
-    UIWindow *_overlayWindow;
-    CKActionMenuItem *_photoMenuItem;
-    UIView *_presentationView;
-    BOOL _presented;
-    BOOL _previewWarmedUp;
-    BOOL _recording;
-    BOOL _sending;
-    BOOL _showingVideo;
-    UIButton *_swapCameraButton;
-    CKRecordingElapsedTimeView *_timerView;
-    UIView *_topBackgroundView;
-    BOOL _triedToRecord;
-    CKActionMenuController *_videoActionMenuController;
-    <CKVideoMessageRecordingViewControllerDelegate> *_videoMessageDelegate;
+    UIImagePickerController * _cameraViewController;
+    BOOL  _canceled;
+    NSError * _captureError;
+    unsigned int  _enableCancel;
+    id /* block */  _mediaExportCompletionBlock;
+    CKMediaObject * _mediaObjectForSending;
+    UIWindow * _overlayWindow;
+    CKActionMenuItem * _photoMenuItem;
+    UIView * _presentationView;
+    BOOL  _presented;
+    BOOL  _previewWarmedUp;
+    BOOL  _recording;
+    BOOL  _sending;
+    BOOL  _showingVideo;
+    UIButton * _swapCameraButton;
+    CKRecordingElapsedTimeView * _timerView;
+    UIView * _topBackgroundView;
+    BOOL  _triedToRecord;
+    CKActionMenuController * _videoActionMenuController;
+    <CKVideoMessageRecordingViewControllerDelegate> * _videoMessageDelegate;
 }
 
 @property (nonatomic, retain) UIImagePickerController *cameraViewController;
@@ -45,6 +45,7 @@
 @property (nonatomic, retain) CKActionMenuController *videoActionMenuController;
 @property (nonatomic) <CKVideoMessageRecordingViewControllerDelegate> *videoMessageDelegate;
 
+- (void).cxx_destruct;
 - (void)_animateVideoIn;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;

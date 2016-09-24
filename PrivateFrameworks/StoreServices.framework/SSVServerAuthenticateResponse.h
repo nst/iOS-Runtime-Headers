@@ -3,10 +3,10 @@
  */
 
 @interface SSVServerAuthenticateResponse : NSObject <SSXPCCoding> {
-    NSNumber *_authenticatedAccountIdentifier;
-    int _performedButtonIndex;
-    NSURL *_redirectURL;
-    int _selectedButtonIndex;
+    NSNumber * _authenticatedAccountIdentifier;
+    int  _performedButtonIndex;
+    NSURL * _redirectURL;
+    int  _selectedButtonIndex;
 }
 
 @property (nonatomic, copy) NSNumber *authenticatedAccountIdentifier;

@@ -3,12 +3,12 @@
  */
 
 @interface UIOpenInIBooksActivity : UIActivity <LSOpenResourceOperationDelegate> {
-    NSString *_applicationIdentifier;
-    LSApplicationProxy *_applicationProxy;
-    NSOperation *_operation;
-    BOOL _shouldUnlinkFile;
-    BOOL _sourceIsManaged;
-    NSURL *_url;
+    NSString * _applicationIdentifier;
+    LSApplicationProxy * _applicationProxy;
+    NSOperation * _operation;
+    BOOL  _shouldUnlinkFile;
+    BOOL  _sourceIsManaged;
+    NSURL * _url;
 }
 
 @property (nonatomic, retain) NSString *applicationIdentifier;

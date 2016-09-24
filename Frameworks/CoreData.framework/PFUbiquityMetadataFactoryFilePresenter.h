@@ -3,8 +3,8 @@
  */
 
 @interface PFUbiquityMetadataFactoryFilePresenter : NSObject <NSFilePresenter> {
-    PFUbiquityLocation *_presentedItemLocation;
-    NSURL *_presentedItemURL;
+    PFUbiquityLocation * _presentedItemLocation;
+    NSURL * _presentedItemURL;
 }
 
 @property (readonly, copy) NSString *debugDescription;

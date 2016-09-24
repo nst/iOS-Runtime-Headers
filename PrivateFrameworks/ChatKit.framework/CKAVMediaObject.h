@@ -3,8 +3,8 @@
  */
 
 @interface CKAVMediaObject : CKMediaObject {
-    double _duration;
-    BOOL _durationLoaded;
+    double  _duration;
+    BOOL  _durationLoaded;
 }
 
 @property (nonatomic) double duration;

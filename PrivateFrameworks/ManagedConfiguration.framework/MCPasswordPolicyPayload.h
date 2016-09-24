@@ -3,17 +3,17 @@
  */
 
 @interface MCPasswordPolicyPayload : MCPayload {
-    NSNumber *_isAlphanumericPasscodeRequired;
-    NSNumber *_isManualFetchingWhenRoaming;
-    NSNumber *_isPasscodeRequired;
-    NSNumber *_isSimplePasscodeAllowed;
-    NSNumber *_maxFailedAttempts;
-    NSNumber *_maxGracePeriodMinutes;
-    NSNumber *_maxInactivityMinutes;
-    NSNumber *_maxPasscodeAgeDays;
-    NSNumber *_minComplexCharacters;
-    NSNumber *_minLength;
-    NSNumber *_passcodeHistoryCount;
+    NSNumber * _isAlphanumericPasscodeRequired;
+    NSNumber * _isManualFetchingWhenRoaming;
+    NSNumber * _isPasscodeRequired;
+    NSNumber * _isSimplePasscodeAllowed;
+    NSNumber * _maxFailedAttempts;
+    NSNumber * _maxGracePeriodMinutes;
+    NSNumber * _maxInactivityMinutes;
+    NSNumber * _maxPasscodeAgeDays;
+    NSNumber * _minComplexCharacters;
+    NSNumber * _minLength;
+    NSNumber * _passcodeHistoryCount;
 }
 
 @property (nonatomic, readonly, retain) NSNumber *isAlphanumericPasscodeRequired;

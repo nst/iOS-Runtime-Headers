@@ -9,28 +9,30 @@
 @property (nonatomic) short state;
 @property (nonatomic, retain) NSDate *stateModificationDate;
 
-+ (id)allCloudObjects;
++ (id)allCloudObjectsInContext:(id)arg1;
++ (id)allDeviceMigrationStatesInContext:(id)arg1;
 + (id)allKnownDeviceMigrationStates;
 + (id)currentDeviceMigrationState;
 + (id)currentDeviceMigrationStateCreateIfNecessary:(BOOL)arg1;
-+ (id)deviceMigrationStateWithDeviceIdentifier:(id)arg1;
-+ (id)deviceMigrationStatesMatchingPredicate:(id)arg1;
-+ (id)existingCloudObjectForRecordID:(id)arg1;
++ (id)currentDeviceMigrationStateCreateIfNecessary:(BOOL)arg1 context:(id)arg2;
++ (id)deviceMigrationStateWithDeviceIdentifier:(id)arg1 context:(id)arg2;
++ (id)deviceMigrationStatesMatchingPredicate:(id)arg1 context:(id)arg2;
++ (id)existingCloudObjectForRecordID:(id)arg1 context:(id)arg2;
 + (id)identifierForDeviceIdentifier:(id)arg1;
-+ (id)newCloudObjectForRecord:(id)arg1;
-+ (id)newDeviceMigrationStateWithDeviceIdentifier:(id)arg1 account:(id)arg2;
++ (id)newCloudObjectForRecord:(id)arg1 context:(id)arg2;
++ (id)newDeviceMigrationStateWithDeviceIdentifier:(id)arg1 account:(id)arg2 context:(id)arg3;
 + (id)stringFromMigrationState:(short)arg1;
 
 - (void)deleteFromLocalDatabase;
+- (id)ic_loggingValues;
 - (BOOL)isInICloudAccount;
 - (BOOL)isMigrating;
-- (id)loggingDescriptionValues;
 - (void)mergeDataFromRecord:(id)arg1;
+- (id)newlyCreatedRecord;
 - (void)objectWasDeletedFromCloud;
 - (void)objectWasDeletedFromCloudByAnotherDevice;
 - (id)recordName;
 - (id)recordType;
-- (id)recordZoneID;
-- (id)threadUnsafeNewlyCreatedRecord;
+- (id)recordZoneName;
 
 @end

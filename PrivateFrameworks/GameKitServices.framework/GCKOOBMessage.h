@@ -3,9 +3,9 @@
  */
 
 @interface GCKOOBMessage : NSObject <NSCoding> {
-    unsigned int band;
-    NSData *data;
-    unsigned int type;
+    unsigned int  band;
+    NSData * data;
+    unsigned int  type;
 }
 
 - (unsigned int)band;

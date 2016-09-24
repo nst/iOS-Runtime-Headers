@@ -3,11 +3,11 @@
  */
 
 @interface CKContactBalloonView : CKColoredBalloonView <CKContactBalloonViewProtocol> {
-    UIImageView *_chevron;
-    UIImageView *_contactImageView;
-    CKMediaObject *_mediaObject;
-    UILabel *_nameLabel;
-    UILabel *_organizationLabel;
+    UIImageView * _chevron;
+    UIImageView * _contactImageView;
+    CKMediaObject * _mediaObject;
+    UILabel * _nameLabel;
+    UILabel * _organizationLabel;
 }
 
 @property (nonatomic, retain) UIImageView *chevron;
@@ -20,14 +20,15 @@
 @property (nonatomic, retain) UILabel *organizationLabel;
 @property (readonly) Class superclass;
 
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
+- (void).cxx_destruct;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
 - (id)chevron;
+- (void)configureForComposition:(id)arg1;
 - (void)configureForMediaObject:(id)arg1 previewWidth:(float)arg2 orientation:(BOOL)arg3;
 - (void)configureForMessagePart:(id)arg1;
 - (id)contactImageView;
-- (void)dealloc;
 - (id)description;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)mediaObject;
 - (id)nameLabel;
@@ -39,6 +40,6 @@
 - (void)setMediaObject:(id)arg1;
 - (void)setNameLabel:(id)arg1;
 - (void)setOrganizationLabel:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 textAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1 textAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
 
 @end

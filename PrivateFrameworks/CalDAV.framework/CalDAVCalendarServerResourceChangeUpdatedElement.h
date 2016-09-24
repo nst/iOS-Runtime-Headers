@@ -3,9 +3,9 @@
  */
 
 @interface CalDAVCalendarServerResourceChangeUpdatedElement : CalDAVCalendarServerResourceChangeElement {
-    NSMutableSet *_calendarChanges;
-    BOOL _content;
-    CoreDAVItem *_prop;
+    NSMutableSet * _calendarChanges;
+    BOOL  _content;
+    CoreDAVItem * _prop;
 }
 
 @property (nonatomic, retain) NSMutableSet *calendarChanges;

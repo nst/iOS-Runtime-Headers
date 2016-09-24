@@ -3,9 +3,9 @@
  */
 
 @interface HDSQLiteHasAssociatedEntityPredicate : HDSQLitePredicate <NSCopying> {
-    Class _associatedEntityClass;
-    HDSQLitePredicate *_associatedPredicate;
-    BOOL _inverted;
+    Class  _associatedEntityClass;
+    HDSQLitePredicate * _associatedPredicate;
+    BOOL  _inverted;
 }
 
 + (id)predicateWithAssociatedEntityClass:(Class)arg1;

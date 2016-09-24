@@ -3,9 +3,9 @@
  */
 
 @interface OCXState : NSObject {
-    CXNamespace *mOCXDrawingNamespace;
-    CXNamespace *mOCXRelationshipsNamespace;
-    int mXMLFormat;
+    CXNamespace * mOCXDrawingNamespace;
+    CXNamespace * mOCXRelationshipsNamespace;
+    int  mXMLFormat;
 }
 
 @property (nonatomic, retain) CXNamespace *OCXDrawingNamespace;

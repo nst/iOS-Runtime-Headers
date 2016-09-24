@@ -3,7 +3,7 @@
  */
 
 @interface NSDictionaryStoreMap : NSPersistentStoreMap {
-    NSMutableDictionary *_theMap;
+    NSMutableDictionary * _theMap;
 }
 
 + (void)initialize;

@@ -3,8 +3,8 @@
  */
 
 @interface IMDelayedInvocationTrampoline : IMInvocationTrampoline {
-    double _delay;
-    NSArray *_modes;
+    double  _delay;
+    NSArray * _modes;
 }
 
 - (void)dealloc;

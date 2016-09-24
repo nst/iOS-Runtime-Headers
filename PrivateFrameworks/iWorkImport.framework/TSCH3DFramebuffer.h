@@ -11,7 +11,7 @@
         int depthDataType; 
         BOOL linearFilter; 
         BOOL discardHint; 
-    } mFramebufferAttributes;
+    }  mFramebufferAttributes;
 }
 
 + (id)framebufferWithFramebufferAttributes:(const struct FramebufferAttributes { int x1; int x2; int x3; int x4; int x5; BOOL x6; BOOL x7; }*)arg1;

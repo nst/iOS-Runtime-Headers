@@ -3,20 +3,18 @@
  */
 
 @interface AVAsynchronousCIImageFilteringRequestInternal : NSObject {
-    id /* block */ _cancellationTest;
-    id /* block */ _completionHandler;
-    AVAsynchronousVideoCompositionRequest *_compositingRequest;
-    id /* block */ _defaultCIContextProvider;
-    struct CGColorSpace { } *_dstColorSpace;
-    CIImage *_sourceCIImage;
-    struct __CVBuffer { } *_sourcePBuf;
+    id /* block */  _cancellationTest;
+    id /* block */  _completionHandler;
+    AVAsynchronousVideoCompositionRequest * _compositingRequest;
+    id /* block */  _defaultCIContextProvider;
+    CIImage * _sourceCIImage;
+    struct __CVBuffer { } * _sourcePBuf;
 }
 
 @property (nonatomic, copy) id /* block */ cancellationTest;
 @property (nonatomic, copy) id /* block */ completionHandler;
 @property (nonatomic, retain) AVAsynchronousVideoCompositionRequest *compositingRequest;
 @property (nonatomic, copy) id /* block */ defaultCIContextProvider;
-@property (nonatomic, retain) struct CGColorSpace { }*dstColorSpace;
 @property (nonatomic, retain) CIImage *sourceCIImage;
 @property (nonatomic, retain) struct __CVBuffer { }*sourcePBuf;
 
@@ -26,13 +24,11 @@
 - (id)compositingRequest;
 - (void)dealloc;
 - (id /* block */)defaultCIContextProvider;
-- (struct CGColorSpace { }*)dstColorSpace;
 - (void)finalize;
 - (void)setCancellationTest:(id /* block */)arg1;
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setCompositingRequest:(id)arg1;
 - (void)setDefaultCIContextProvider:(id /* block */)arg1;
-- (void)setDstColorSpace:(struct CGColorSpace { }*)arg1;
 - (void)setSourceCIImage:(id)arg1;
 - (void)setSourcePBuf:(struct __CVBuffer { }*)arg1;
 - (id)sourceCIImage;

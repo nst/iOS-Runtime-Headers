@@ -3,7 +3,7 @@
  */
 
 @interface BasicAceContext : NSObject <AceContext> {
-    NSMutableDictionary *_groupMap;
+    NSMutableDictionary * _groupMap;
 }
 
 @property (readonly, copy) NSString *debugDescription;

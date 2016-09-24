@@ -3,7 +3,7 @@
  */
 
 @interface SKUISettingsTableHeaderFooterView : UITableViewHeaderFooterView {
-    SKUISettingsHeaderFooterDescriptionView *_settingsHeaderFooterDescriptionView;
+    SKUISettingsHeaderFooterDescriptionView * _settingsHeaderFooterDescriptionView;
 }
 
 - (void).cxx_destruct;

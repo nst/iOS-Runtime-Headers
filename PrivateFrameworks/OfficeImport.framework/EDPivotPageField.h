@@ -3,9 +3,9 @@
  */
 
 @interface EDPivotPageField : NSObject {
-    NSString *mCap;
-    unsigned long mFieldId;
-    NSString *mName;
+    NSString * mCap;
+    unsigned long  mFieldId;
+    NSString * mName;
 }
 
 + (id)pivotPageField;

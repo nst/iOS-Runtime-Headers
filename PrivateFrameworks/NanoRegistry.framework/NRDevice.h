@@ -3,12 +3,12 @@
  */
 
 @interface NRDevice : NSObject <NSSecureCoding> {
-    NSMutableDictionary *_changeBlocks;
-    NSObject<OS_dispatch_queue> *_nrQueue;
-    NSMutableDictionary *_observers;
-    NSMutableArray *_promiscuousChangeBlocks;
-    NSPointerArray *_promiscuousObservers;
-    NSMutableDictionary *_properties;
+    NSMutableDictionary * _changeBlocks;
+    NSObject<OS_dispatch_queue> * _nrQueue;
+    NSMutableDictionary * _observers;
+    NSMutableArray * _promiscuousChangeBlocks;
+    NSPointerArray * _promiscuousObservers;
+    NSMutableDictionary * _properties;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *changeBlocks;
@@ -64,6 +64,11 @@
 - (id)valueForProperty:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
+
++ (BOOL)_activePairedDeviceSupportIsGreaterEqualVersion:(unsigned int)arg1;
++ (BOOL)activePairedDeviceSupportsAttachmentFiles;
++ (BOOL)activePairedDeviceSupportsFileBulletinAdd;
++ (BOOL)activePairedDeviceSupportsFileSettingSync;
 
 - (unsigned int)bltVersion;
 

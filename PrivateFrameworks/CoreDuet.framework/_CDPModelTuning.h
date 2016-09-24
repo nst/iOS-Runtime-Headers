@@ -3,12 +3,12 @@
  */
 
 @interface _CDPModelTuning : NSObject {
-    _CDPModelTuningState *_currentState;
-    id /* block */ _heartBeat;
-    _CDPSimpleModel *_model;
-    int _numberOfGridTests;
-    id /* block */ _scorer;
-    NSIndexSet *_testIndices;
+    _CDPModelTuningState * _currentState;
+    id /* block */  _heartBeat;
+    _CDPSimpleModel * _model;
+    int  _numberOfGridTests;
+    id /* block */  _scorer;
+    NSIndexSet * _testIndices;
 }
 
 @property (nonatomic, readonly) _CDPModelTuningState *currentState;

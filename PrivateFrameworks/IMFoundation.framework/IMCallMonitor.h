@@ -3,9 +3,9 @@
  */
 
 @interface IMCallMonitor : NSObject {
-    id _callCenter;
-    NSDate *_lastCallDate;
-    BOOL _wasOnCall;
+    id  _callCenter;
+    NSDate * _lastCallDate;
+    BOOL  _wasOnCall;
 }
 
 @property (nonatomic, readonly, retain) NSDate *dateLastCallEnded;

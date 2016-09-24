@@ -3,23 +3,25 @@
  */
 
 @interface NPKPaymentPreflighter : NSObject {
-    BOOL _authRandomSetIfNecessary;
-    BOOL _checkedCompanioniCloudStatus;
-    BOOL _checkedWatchPasscodeAndUnlockedStatus;
-    BOOL _checkedWatchiCloudStatus;
-    BOOL _checkedWristDetectionStatus;
-    BOOL _needsCompanioniCloudAccount;
-    BOOL _needsPasscode;
-    BOOL _needsUnlock;
-    BOOL _needsWatchiCloudAccount;
-    BOOL _needsWristDetection;
-    PUConnection *_passcodeConnection;
-    id /* block */ _preflightCompletionHandler;
-    BOOL _preflighting;
-    NSSManager *_systemSettingsManager;
-    BOOL _watchConnected;
-    NSDate *_watchPasscodeAndUnlockedQueryDate;
-    PKPaymentWebService *_webService;
+    BOOL  _authRandomSetIfNecessary;
+    BOOL  _checkedCompanioniCloudStatus;
+    BOOL  _checkedWatchPasscodeAndUnlockedStatus;
+    BOOL  _checkedWatchiCloudStatus;
+    BOOL  _checkedWristDetectionStatus;
+    NPKCompanionAgentConnection * _companionAgentConnection;
+    BOOL  _needsCompanioniCloudAccount;
+    BOOL  _needsPasscode;
+    BOOL  _needsUnlock;
+    BOOL  _needsWatchiCloudAccount;
+    BOOL  _needsWristDetection;
+    PUConnection * _passcodeConnection;
+    id /* block */  _preflightCompletionHandler;
+    BOOL  _preflighting;
+    BOOL  _spaceAvailableOnSecureElement;
+    NSSManager * _systemSettingsManager;
+    BOOL  _watchConnected;
+    NSDate * _watchPasscodeAndUnlockedQueryDate;
+    PKPaymentWebService * _webService;
 }
 
 @property (nonatomic) BOOL authRandomSetIfNecessary;
@@ -27,6 +29,7 @@
 @property (nonatomic) BOOL checkedWatchPasscodeAndUnlockedStatus;
 @property (nonatomic) BOOL checkedWatchiCloudStatus;
 @property (nonatomic) BOOL checkedWristDetectionStatus;
+@property (nonatomic, retain) NPKCompanionAgentConnection *companionAgentConnection;
 @property (nonatomic) BOOL needsCompanioniCloudAccount;
 @property (nonatomic) BOOL needsPasscode;
 @property (nonatomic) BOOL needsUnlock;
@@ -35,6 +38,7 @@
 @property (nonatomic, retain) PUConnection *passcodeConnection;
 @property (nonatomic, copy) id /* block */ preflightCompletionHandler;
 @property (getter=isPreflighting, nonatomic) BOOL preflighting;
+@property (nonatomic) BOOL spaceAvailableOnSecureElement;
 @property (nonatomic, retain) NSSManager *systemSettingsManager;
 @property (nonatomic) BOOL watchConnected;
 @property (nonatomic, retain) NSDate *watchPasscodeAndUnlockedQueryDate;
@@ -43,6 +47,7 @@
 - (void).cxx_destruct;
 - (void)_checkCompanioniCloudAccount;
 - (void)_checkPasscodeEnabledAndUnlockedState;
+- (void)_checkSpaceAvailableOnSecureElement;
 - (void)_checkWatchConnected;
 - (void)_checkWatchiCloudAccount;
 - (void)_checkWristDetectEnabledState;
@@ -61,7 +66,8 @@
 - (BOOL)checkedWatchPasscodeAndUnlockedStatus;
 - (BOOL)checkedWatchiCloudStatus;
 - (BOOL)checkedWristDetectionStatus;
-- (id)initWithWebService:(id)arg1;
+- (id)companionAgentConnection;
+- (id)initWithWebService:(id)arg1 companionAgentConnection:(id)arg2;
 - (BOOL)isPreflighting;
 - (BOOL)needsCompanioniCloudAccount;
 - (BOOL)needsPasscode;
@@ -76,6 +82,7 @@
 - (void)setCheckedWatchPasscodeAndUnlockedStatus:(BOOL)arg1;
 - (void)setCheckedWatchiCloudStatus:(BOOL)arg1;
 - (void)setCheckedWristDetectionStatus:(BOOL)arg1;
+- (void)setCompanionAgentConnection:(id)arg1;
 - (void)setNeedsCompanioniCloudAccount:(BOOL)arg1;
 - (void)setNeedsPasscode:(BOOL)arg1;
 - (void)setNeedsUnlock:(BOOL)arg1;
@@ -84,10 +91,12 @@
 - (void)setPasscodeConnection:(id)arg1;
 - (void)setPreflightCompletionHandler:(id /* block */)arg1;
 - (void)setPreflighting:(BOOL)arg1;
+- (void)setSpaceAvailableOnSecureElement:(BOOL)arg1;
 - (void)setSystemSettingsManager:(id)arg1;
 - (void)setWatchConnected:(BOOL)arg1;
 - (void)setWatchPasscodeAndUnlockedQueryDate:(id)arg1;
 - (void)setWebService:(id)arg1;
+- (BOOL)spaceAvailableOnSecureElement;
 - (id)systemSettingsManager;
 - (BOOL)watchConnected;
 - (id)watchPasscodeAndUnlockedQueryDate;

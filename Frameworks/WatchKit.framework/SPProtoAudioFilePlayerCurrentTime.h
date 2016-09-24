@@ -3,7 +3,7 @@
  */
 
 @interface SPProtoAudioFilePlayerCurrentTime : PBCodable <NSCopying> {
-    double _currentTime;
+    double  _currentTime;
 }
 
 @property (nonatomic) double currentTime;

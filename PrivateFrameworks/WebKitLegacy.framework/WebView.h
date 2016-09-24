@@ -3,7 +3,7 @@
  */
 
 @interface WebView : WAKView {
-    WebViewPrivate *_private;
+    WebViewPrivate * _private;
 }
 
 @property (nonatomic) <WebUIDelegate> *UIDelegate;
@@ -20,7 +20,7 @@
 @property (nonatomic) <WebDownloadDelegate> *downloadDelegate;
 @property (nonatomic) BOOL drawsBackground;
 @property (getter=isEditable, nonatomic) BOOL editable;
-@property (nonatomic, retain) id editingDelegate;
+@property (nonatomic) <WebEditingDelegate> *editingDelegate;
 @property (nonatomic, readonly) double estimatedProgress;
 @property (nonatomic) <WebFrameLoadDelegate> *frameLoadDelegate;
 @property (nonatomic, copy) NSString *groupName;
@@ -44,7 +44,7 @@
 @property (nonatomic) BOOL smartInsertDeleteEnabled;
 @property (getter=_sourceApplicationAuditData, setter=_setSourceApplicationAuditData:, nonatomic, copy) NSData *sourceApplicationAuditData;
 @property (nonatomic, readonly) BOOL supportsTextEncoding;
-@property (nonatomic) float textSizeMultiplier;
+@property (nonatomic) double textSizeMultiplier;
 @property (nonatomic, retain) DOMCSSStyleDeclaration *typingStyle;
 @property (nonatomic, readonly) NSUndoManager *undoManager;
 @property (nonatomic, readonly) WebScriptObject *windowScriptObject;
@@ -60,7 +60,6 @@
 + (void)_addUserStyleSheetToGroup:(id)arg1 world:(id)arg2 source:(id)arg3 url:(id)arg4 whitelist:(id)arg5 blacklist:(id)arg6;
 + (void)_addUserStyleSheetToGroup:(id)arg1 world:(id)arg2 source:(id)arg3 url:(id)arg4 whitelist:(id)arg5 blacklist:(id)arg6 injectedFrames:(int)arg7;
 + (BOOL)_allowCookies;
-+ (BOOL)_allowsRoundingHacks;
 + (unsigned int)_cacheModel;
 + (void)_cacheModelChangedNotification:(id)arg1;
 + (BOOL)_canHandleRequest:(id)arg1;
@@ -102,7 +101,6 @@
 + (BOOL)_representationExistsForURLScheme:(id)arg1;
 + (void)_resetOriginAccessWhitelists;
 + (void)_setAllowCookies:(BOOL)arg1;
-+ (void)_setAllowsRoundingHacks:(BOOL)arg1;
 + (void)_setAlwaysUsesComplexTextCodePath:(BOOL)arg1;
 + (void)_setCacheModel:(unsigned int)arg1;
 + (void)_setDomainRelaxationForbidden:(BOOL)arg1 forURLScheme:(id)arg2;
@@ -168,10 +166,10 @@
 - (void)_closeWindow;
 - (void)_closeWithFastTeardown;
 - (void)_commonInitializationWithFrameName:(id)arg1 groupName:(id)arg2;
-- (struct CGSize { float x1; float x2; })_contentsSizeRespectingOverflow;
+- (struct CGSize { double x1; double x2; })_contentsSizeRespectingOverflow;
 - (BOOL)_continuousCheckingAllowed;
-- (struct CGPoint { float x1; float x2; })_convertPointFromRootView:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_convertRectFromRootView:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGPoint { double x1; double x2; })_convertPointFromRootView:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_convertRectFromRootView:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)_cookieEnabled;
 - (void)_destroyAllPlugIns;
 - (void)_detachScriptDebuggerFromAllFrames;
@@ -185,12 +183,12 @@
 - (void)_documentScaleChanged;
 - (id)_downloadURL:(id)arg1;
 - (id)_editingDelegateForwarder;
-- (id)_elementAtWindowPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)_enterVideoFullscreenForVideoElement:(struct HTMLVideoElement { int (**x1)(); struct Weak<WebCore::JSDOMWrapper> { struct WeakImpl {} *x_2_1_1; } x2; int x3; unsigned int x4; struct ContainerNode {} *x5; struct TreeScope {} *x6; struct Node {} *x7; struct Node {} *x8; union DataUnion { struct RenderObject {} *x_9_1_1; struct NodeRareDataBase {} *x_9_1_2; } x9; struct Node {} *x10; struct Node {} *x11; struct QualifiedName { struct RefPtr<WebCore::QualifiedName::QualifiedNameImpl> { struct QualifiedNameImpl {} *x_1_2_1; } x_12_1_1; } x12; struct RefPtr<WebCore::ElementData> { struct ElementData {} *x_13_1_1; } x13; int (**x14)(); int (**x15)(); int (**x16)(); int (**x17)(); struct ScriptExecutionContext {} *x18; unsigned int x19; int (**x20)(); int (**x21)(); int (**x22)(); int (**x23)(); int (**x24)(); int (**x25)(); int (**x26)(); struct Timer { int (**x_27_1_1)(); double x_27_1_2; double x_27_1_3; double x_27_1_4; int x_27_1_5; unsigned int x_27_1_6; struct Vector<WebCore::TimerBase *, 0, WTF::CrashOnOverflow, 16> {} *x_27_1_7; struct function<void ()>={type=[12C] {} x_27_1_8; struct __base<void ()> {} *x_27_1_9; } x27; }*)arg1 mode:(unsigned int)arg2;
+- (id)_elementAtWindowPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_enterVideoFullscreenForVideoElement:(struct HTMLVideoElement { int (**x1)(); struct Weak<WebCore::JSDOMObject> { struct WeakImpl {} *x_2_1_1; } x2; int x3; unsigned int x4; struct ContainerNode {} *x5; struct TreeScope {} *x6; struct Node {} *x7; struct Node {} *x8; union DataUnion { struct RenderObject {} *x_9_1_1; struct NodeRareDataBase {} *x_9_1_2; } x9; struct Node {} *x10; struct Node {} *x11; struct QualifiedName { struct RefPtr<WebCore::QualifiedName::QualifiedNameImpl> { struct QualifiedNameImpl {} *x_1_2_1; } x_12_1_1; } x12; struct RefPtr<WebCore::ElementData> { struct ElementData {} *x_13_1_1; } x13; int (**x14)(); struct ScriptExecutionContext {} *x15; unsigned int x16; int (**x17)(); int (**x18)(); int (**x19)(); int (**x20)(); int (**x21)(); int (**x22)(); int (**x23)(); int (**x24)(); int (**x25)(); struct Timer { int (**x_26_1_1)(); double x_26_1_2; double x_26_1_3; double x_26_1_4; int x_26_1_5; unsigned int x_26_1_6; struct Vector<WebCore::TimerBase *, 0, WTF::CrashOnOverflow, 16> {} *x_26_1_7; struct function<void ()>={type=[12C] {} x_26_1_8; struct __base<void ()> {} *x_26_1_9; } x26; }*)arg1 mode:(unsigned int)arg2;
 - (void)_executeCoreCommandByName:(id)arg1 value:(id)arg2;
 - (void)_exitVideoFullscreen;
-- (BOOL)_fetchCustomFixedPositionLayoutRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1;
-- (struct CGSize { float x1; float x2; })_fixedLayoutSize;
+- (BOOL)_fetchCustomFixedPositionLayoutRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1;
+- (struct CGSize { double x1; double x2; })_fixedLayoutSize;
 - (id)_fixedPositionContent;
 - (BOOL)_flushCompositingChanges;
 - (id)_focusedFrame;
@@ -198,7 +196,7 @@
 - (id)_formDelegateForSelector:(SEL)arg1;
 - (id)_formDelegateForwarder;
 - (id)_frameLoadDelegateForwarder;
-- (id)_frameViewAtWindowPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)_frameViewAtWindowPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (float)_gapBetweenPages;
 - (void)_geolocationDidChangePosition:(id)arg1;
 - (void)_geolocationDidFailWithMessage:(id)arg1;
@@ -207,7 +205,7 @@
 - (BOOL)_inFastImageScalingMode;
 - (BOOL)_includesFlattenedCompositingLayersWhenDrawingToBitmap;
 - (id)_initWithArguments:(id)arg1;
-- (id)_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 frameName:(id)arg2 groupName:(id)arg3;
+- (id)_initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 frameName:(id)arg2 groupName:(id)arg3;
 - (void)_insertNewlineInQuotedContent;
 - (BOOL)_isClosed;
 - (BOOL)_isClosing;
@@ -225,22 +223,23 @@
 - (void)_loadBackForwardListFromOtherView:(id)arg1;
 - (BOOL)_locked_plugInsAreRunningInFrame:(id)arg1;
 - (void)_locked_recursivelyPerformPlugInSelector:(SEL)arg1 inFrame:(id)arg2;
-- (struct Frame { int (**x1)(); struct atomic<int> { int x_2_1_1; } x2; struct HashSet<WebCore::FrameDestructionObserver *, WTF::PtrHash<WebCore::FrameDestructionObserver *>, WTF::HashTraits<WebCore::FrameDestructionObserver *> > { struct HashTable<WebCore::FrameDestructionObserver *, WebCore::FrameDestructionObserver *, WTF::IdentityExtractor, WTF::PtrHash<WebCore::FrameDestructionObserver *>, WTF::HashTraits<WebCore::FrameDestructionObserver *>, WTF::HashTraits<WebCore::FrameDestructionObserver *> > { struct FrameDestructionObserver {} **x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_3_1_1; } x3; struct MainFrame {} *x4; struct Page {} *x5; struct RefPtr<WebCore::Settings> { struct Settings {} *x_6_1_1; } x6; struct FrameTree { struct Frame {} *x_7_1_1; struct Frame {} *x_7_1_2; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_3_2_1; } x_7_1_3; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_4_2_1; } x_7_1_4; struct RefPtr<WebCore::Frame> { struct Frame {} *x_5_2_1; } x_7_1_5; struct Frame {} *x_7_1_6; struct RefPtr<WebCore::Frame> { struct Frame {} *x_7_2_1; } x_7_1_7; struct Frame {} *x_7_1_8; unsigned int x_7_1_9; } x7; struct FrameLoader { struct Frame {} *x_8_1_1; struct FrameLoaderClient {} *x_8_1_2; struct unique_ptr<WebCore::PolicyChecker, std::__1::default_delete<WebCore::PolicyChecker> > { struct __compressed_pair<WebCore::PolicyChecker *, std::__1::default_delete<WebCore::PolicyChecker> > { struct PolicyChecker {} *x_1_3_1; } x_3_2_1; } x_8_1_3; struct unique_ptr<WebCore::HistoryController, std::__1::default_delete<WebCore::HistoryController> > { struct __compressed_pair<WebCore::HistoryController *, std::__1::default_delete<WebCore::HistoryController> > { struct HistoryController {} *x_1_3_1; } x_4_2_1; } x_8_1_4; struct ResourceLoadNotifier { struct Frame {} *x_5_2_1; } x_8_1_5; struct unique_ptr<WebCore::SubframeLoader, std::__1::default_delete<WebCore::SubframeLoader> > { struct __compressed_pair<WebCore::SubframeLoader *, std::__1::default_delete<WebCore::SubframeLoader> > { struct SubframeLoader {} *x_1_3_1; } x_6_2_1; } x_8_1_6; struct FrameLoaderStateMachine { int x_7_2_1; } x_8_1_7; struct unique_ptr<WebCore::IconController, std::__1::default_delete<WebCore::IconController> > { struct __compressed_pair<WebCore::IconController *, std::__1::default_delete<WebCore::IconController> > { struct IconController {} *x_1_3_1; } x_8_2_1; } x_8_1_8; struct MixedContentChecker { struct Frame {} *x_9_2_1; } x_8_1_9; struct unique_ptr<WebCore::FrameLoader::FrameProgressTracker, std::__1::default_delete<WebCore::FrameLoader::FrameProgressTracker> > { struct __compressed_pair<WebCore::FrameLoader::FrameProgressTracker *, std::__1::default_delete<WebCore::FrameLoader::FrameProgressTracker> > { struct FrameProgressTracker {} *x_1_3_1; } x_10_2_1; } x_8_1_10; int x_8_1_11; int x_8_1_12; struct RefPtr<WebCore::DocumentLoader> { struct DocumentLoader {} *x_13_2_1; } x_8_1_13; struct RefPtr<WebCore::DocumentLoader> { struct DocumentLoader {} *x_14_2_1; } x_8_1_14; struct RefPtr<WebCore::DocumentLoader> { struct DocumentLoader {} *x_15_2_1; } x_8_1_15; struct URL { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_16_2_1; unsigned int x_16_2_2 : 1; unsigned int x_16_2_3 : 1; int x_16_2_4; int x_16_2_5; int x_16_2_6; int x_16_2_7; int x_16_2_8; int x_16_2_9; int x_16_2_10; int x_16_2_11; int x_16_2_12; int x_16_2_13; } x_8_1_16; bool x_8_1_17; bool x_8_1_18; bool x_8_1_19; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_3_1; } x_20_2_1; } x_8_1_20; bool x_8_1_21; bool x_8_1_22; bool x_8_1_23; int x_8_1_24; bool x_8_1_25; struct RefPtr<WebCore::SerializedScriptValue> { struct SerializedScriptValue {} *x_26_2_1; } x_8_1_26; bool x_8_1_27; struct URL { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_28_2_1; unsigned int x_28_2_2 : 1; unsigned int x_28_2_3 : 1; int x_28_2_4; int x_28_2_5; int x_28_2_6; int x_28_2_7; int x_28_2_8; int x_28_2_9; int x_28_2_10; int x_28_2_11; int x_28_2_12; int x_28_2_13; } x_8_1_28; struct Timer { int (**x_29_2_1)(); double x_29_2_2; double x_29_2_3; double x_29_2_4; int x_29_2_5; unsigned int x_29_2_6; struct Vector<WebCore::TimerBase *, 0, WTF::CrashOnOverflow, 16> {} *x_29_2_7; struct function<void ()>={type=[12C] {} x_29_2_8; struct __base<void ()> {} *x_29_2_9; } x_8_1_29; } x8; bool x9; bool x10; struct Frame {} *x11; struct HashSet<WebCore::Frame *, WTF::PtrHash<WebCore::Frame *>, WTF::HashTraits<WebCore::Frame *> > { struct HashTable<WebCore::Frame *, WebCore::Frame *, WTF::IdentityExtractor, WTF::PtrHash<WebCore::Frame *>, WTF::HashTraits<WebCore::Frame *>, WTF::HashTraits<WebCore::Frame *> > { struct Frame {} **x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_12_1_1; } x12; bool x13; bool x14; bool x15; int x16; struct RefPtr<WebCore::FrameNetworkingContext> { struct FrameNetworkingContext {} *x_17_1_1; } x17; struct Optional<WebCore::ResourceRequestCachePolicy> { bool x_18_1_1; struct type { unsigned char x_2_2_1[4]; } x_18_1_2; } x18; struct Optional<WebCore::ResourceLoadPriority> { bool x_19_1_1; struct type { unsigned char x_2_2_1[4]; } x_19_1_2; } x19; struct URL { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_20_1_1; unsigned int x_20_1_2 : 1; unsigned int x_20_1_3 : 1; int x_20_1_4; int x_20_1_5; int x_20_1_6; int x_20_1_7; int x_20_1_8; int x_20_1_9; int x_20_1_10; int x_20_1_11; int x_20_1_12; int x_20_1_13; } x20; struct RefPtr<WebCore::HistoryItem> { struct HistoryItem {} *x_21_1_1; } x21; struct Token<WebCore::PageActivityAssertionTokenType> { struct RefPtr<WTF::RefCounter::Count> { struct Count {} *x_1_2_1; } x_22_1_1; } x22; }*)_mainCoreFrame;
+- (struct Frame { int (**x1)(); struct atomic<int> { int x_2_1_1; } x2; struct HashSet<WebCore::FrameDestructionObserver *, WTF::PtrHash<WebCore::FrameDestructionObserver *>, WTF::HashTraits<WebCore::FrameDestructionObserver *> > { struct HashTable<WebCore::FrameDestructionObserver *, WebCore::FrameDestructionObserver *, WTF::IdentityExtractor, WTF::PtrHash<WebCore::FrameDestructionObserver *>, WTF::HashTraits<WebCore::FrameDestructionObserver *>, WTF::HashTraits<WebCore::FrameDestructionObserver *> > { struct FrameDestructionObserver {} **x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_3_1_1; } x3; struct MainFrame {} *x4; struct Page {} *x5; struct RefPtr<WebCore::Settings> { struct Settings {} *x_6_1_1; } x6; struct FrameTree { struct Frame {} *x_7_1_1; struct Frame {} *x_7_1_2; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_3_2_1; } x_7_1_3; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_4_1; } x_1_3_1; } x_4_2_1; } x_7_1_4; struct RefPtr<WebCore::Frame> { struct Frame {} *x_5_2_1; } x_7_1_5; struct Frame {} *x_7_1_6; struct RefPtr<WebCore::Frame> { struct Frame {} *x_7_2_1; } x_7_1_7; struct Frame {} *x_7_1_8; unsigned int x_7_1_9; } x7; }*)_mainCoreFrame;
 - (id)_mainFrameOverrideEncoding;
 - (void)_mouseDidMoveOverElement:(id)arg1 modifierFlags:(unsigned int)arg2;
 - (BOOL)_needsOneShotDrawingSynchronization;
 - (BOOL)_needsPreHTML5ParserQuirks;
-- (void)_notificationDidClick:(unsigned long long)arg1;
-- (void)_notificationDidShow:(unsigned long long)arg1;
-- (unsigned long long)_notificationIDForTesting:(struct OpaqueJSValue { }*)arg1;
+- (void)_notificationDidClick:(unsigned int)arg1;
+- (void)_notificationDidShow:(unsigned int)arg1;
+- (unsigned int)_notificationIDForTesting:(struct OpaqueJSValue { }*)arg1;
 - (id)_notificationProvider;
 - (void)_notificationsDidClose:(id)arg1;
 - (id)_objectForIdentifier:(unsigned long)arg1;
 - (id)_openNewWindowWithRequest:(id)arg1;
-- (void)_overflowScrollPositionChangedTo:(struct CGPoint { float x1; float x2; })arg1 forNode:(id)arg2 isUserScroll:(BOOL)arg3;
+- (void)_overflowScrollPositionChangedTo:(struct CGPoint { double x1; double x2; })arg1 forNode:(id)arg2 isUserScroll:(BOOL)arg3;
 - (unsigned int)_pageCount;
 - (float)_pageLength;
 - (BOOL)_paginationBehavesLikeColumns;
+- (BOOL)_paginationLineGridEnabled;
 - (int)_paginationMode;
 - (void)_performResponderOperation:(SEL)arg1 with:(id)arg2;
 - (id)_pluginForExtension:(id)arg1;
@@ -265,25 +264,25 @@
 - (id)_responderForResponderOperations;
 - (void)_restorePlugInsFromCache;
 - (void)_retrieveKeyboardUIModeFromPreferences:(id)arg1;
-- (void)_scaleWebView:(float)arg1 atOrigin:(struct CGPoint { float x1; float x2; })arg2;
+- (void)_scaleWebView:(float)arg1 atOrigin:(struct CGPoint { double x1; double x2; })arg2;
 - (void)_scheduleCompositingLayerFlush;
 - (void)_scheduleLayerFlushForPendingTileCacheRepaint;
 - (id)_selectedOrMainFrame;
 - (BOOL)_selectionIsAll;
 - (BOOL)_selectionIsCaret;
 - (void)_setAllowsMessaging:(BOOL)arg1;
-- (void)_setBaseCTM:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 forContext:(struct CGContext { }*)arg2;
+- (void)_setBaseCTM:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 forContext:(struct CGContext { }*)arg2;
 - (void)_setBrowserUserAgentProductVersion:(id)arg1 buildVersion:(id)arg2 bundleVersion:(id)arg3;
 - (void)_setCookieEnabled:(BOOL)arg1;
-- (void)_setCustomFixedPositionLayoutRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_setCustomFixedPositionLayoutRectInWebThread:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 synchronize:(BOOL)arg2;
+- (void)_setCustomFixedPositionLayoutRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_setCustomFixedPositionLayoutRectInWebThread:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 synchronize:(BOOL)arg2;
 - (void)_setDeviceOrientationProvider:(id)arg1;
-- (void)_setFixedLayoutSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_setFixedLayoutSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_setFontFallbackPrefersPictographs:(BOOL)arg1;
 - (void)_setFormDelegate:(id)arg1;
 - (void)_setGapBetweenPages:(float)arg1;
 - (void)_setGeolocationProvider:(id)arg1;
-- (void)_setGlobalHistoryItem:(struct HistoryItem { unsigned int x1; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_4_1_1; } x4; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_5_1_1; } x5; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_6_1_1; } x6; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_7_1_1; } x7; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_8_1_1; } x8; struct IntPoint { int x_9_1_1; int x_9_1_2; } x9; float x10; struct Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> { struct String {} *x_11_1_1; unsigned int x_11_1_2; unsigned int x_11_1_3; } x11; int x12; struct Vector<WTF::Ref<WebCore::HistoryItem>, 0, WTF::CrashOnOverflow, 16> { struct Ref<WebCore::HistoryItem> {} *x_13_1_1; unsigned int x_13_1_2; unsigned int x_13_1_3; } x13; bool x14; bool x15; struct unique_ptr<WTF::Vector<WTF::String, 0, WTF::CrashOnOverflow, 16>, std::__1::default_delete<WTF::Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> > > { struct __compressed_pair<WTF::Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> *, std::__1::default_delete<WTF::Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> > > { struct Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> {} *x_1_2_1; } x_16_1_1; } x16; long long x17; long long x18; struct RefPtr<WebCore::SerializedScriptValue> { struct SerializedScriptValue {} *x_19_1_1; } x19; struct RefPtr<WebCore::FormData> { struct FormData {} *x_20_1_1; } x20; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_21_1_1; } x21; struct unique_ptr<WebCore::CachedPage, std::__1::default_delete<WebCore::CachedPage> > { struct __compressed_pair<WebCore::CachedPage *, std::__1::default_delete<WebCore::CachedPage> > { struct CachedPage {} *x_1_2_1; } x_22_1_1; } x22; int x23; struct FloatRect { struct FloatPoint { float x_1_2_1; float x_1_2_2; } x_24_1_1; struct FloatSize { float x_2_2_1; float x_2_2_2; } x_24_1_2; } x24; struct IntRect { struct IntPoint { int x_1_2_1; int x_1_2_2; } x_25_1_1; struct IntSize { int x_2_2_1; int x_2_2_2; } x_25_1_2; } x25; struct FloatSize { float x_26_1_1; float x_26_1_2; } x26; struct IntSize { int x_27_1_1; int x_27_1_2; } x27; float x28; bool x29; struct ViewportArguments { int x_30_1_1; float x_30_1_2; float x_30_1_3; float x_30_1_4; float x_30_1_5; float x_30_1_6; float x_30_1_7; float x_30_1_8; float x_30_1_9; float x_30_1_10; float x_30_1_11; float x_30_1_12; float x_30_1_13; bool x_30_1_14; } x30; unsigned int x31; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_32_1_1; } x32; struct RetainPtr<id> { void *x_33_1_1; } x33; struct unique_ptr<WTF::HashMap<WTF::String, WTF::RetainPtr<id>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::RetainPtr<id> > >, std::__1::default_delete<WTF::HashMap<WTF::String, WTF::RetainPtr<id>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::RetainPtr<id> > > > > { struct __compressed_pair<WTF::HashMap<WTF::String, WTF::RetainPtr<id>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::RetainPtr<id> > > *, std::__1::default_delete<WTF::HashMap<WTF::String, WTF::RetainPtr<id>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::RetainPtr<id> > > > > { struct HashMap<WTF::String, WTF::RetainPtr<id>, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::RetainPtr<id> > > {} *x_1_2_1; } x_34_1_1; } x34; }*)arg1;
+- (void)_setGlobalHistoryItem:(struct HistoryItem { unsigned int x1; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_4_1_1; } x4; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_5_1_1; } x5; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_6_1_1; } x6; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_7_1_1; } x7; struct IntPoint { int x_8_1_1; int x_8_1_2; } x8; double x9; struct Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> { struct String {} *x_10_1_1; unsigned int x_10_1_2; unsigned int x_10_1_3; } x10; int x11; struct Vector<WTF::Ref<WebCore::HistoryItem>, 0, WTF::CrashOnOverflow, 16> { struct Ref<WebCore::HistoryItem> {} *x_12_1_1; unsigned int x_12_1_2; unsigned int x_12_1_3; } x12; bool x13; bool x14; bool x15; struct unique_ptr<WTF::Vector<WTF::String, 0, WTF::CrashOnOverflow, 16>, std::__1::default_delete<WTF::Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> > > { struct __compressed_pair<WTF::Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> *, std::__1::default_delete<WTF::Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> > > { struct Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> {} *x_1_2_1; } x_16_1_1; } x16; }*)arg1;
 - (void)_setHostApplicationProcessIdentifier:(int)arg1 auditToken:(struct { unsigned int x1[8]; })arg2;
 - (void)_setIncludesFlattenedCompositingLayersWhenDrawingToBitmap:(BOOL)arg1;
 - (void)_setIsVisible:(BOOL)arg1;
@@ -294,6 +293,7 @@
 - (void)_setNotificationProvider:(id)arg1;
 - (void)_setPageLength:(float)arg1;
 - (void)_setPaginationBehavesLikeColumns:(BOOL)arg1;
+- (void)_setPaginationLineGridEnabled:(BOOL)arg1;
 - (void)_setPaginationMode:(int)arg1;
 - (void)_setPostsAcceleratedCompositingNotifications:(BOOL)arg1;
 - (void)_setResourceLoadSchedulerSuspended:(BOOL)arg1;
@@ -359,6 +359,7 @@
 - (BOOL)canResetPageZoom;
 - (BOOL)canZoomPageIn;
 - (BOOL)canZoomPageOut;
+- (id)candidateList;
 - (void)capitalizeWord:(id)arg1;
 - (id)caretChangeListener;
 - (id)caretChangeListeners;
@@ -401,15 +402,15 @@
 - (void)deleteToMark:(id)arg1;
 - (void)deleteWordBackward:(id)arg1;
 - (void)deleteWordForward:(id)arg1;
-- (id)documentViewAtWindowPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)documentViewAtWindowPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)downloadDelegate;
 - (BOOL)drawsBackground;
-- (id)editableDOMRangeForPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)editableDOMRangeForPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)editingDelegate;
-- (id)elementAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)elementAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (double)estimatedProgress;
-- (void)finalize;
 - (BOOL)findString:(id)arg1 options:(unsigned int)arg2;
+- (void)forceRequestCandidatesForTesting;
 - (id)frameLoadDelegate;
 - (id)fullScreenPlaceholderView;
 - (BOOL)goBack;
@@ -422,9 +423,9 @@
 - (id)hostWindow;
 - (void)ignoreSpelling:(id)arg1;
 - (void)indent:(id)arg1;
-- (id)initSimpleHTMLDocumentWithStyle:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 preferences:(id)arg3 groupName:(id)arg4;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 frameName:(id)arg2 groupName:(id)arg3;
+- (id)initSimpleHTMLDocumentWithStyle:(id)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 preferences:(id)arg3 groupName:(id)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 frameName:(id)arg2 groupName:(id)arg3;
 - (void)insertBacktab:(id)arg1;
 - (void)insertDictationPhrases:(id)arg1 metadata:(id)arg2;
 - (void)insertLineBreak:(id)arg1;
@@ -509,7 +510,7 @@
 - (void)orderFrontSubstitutionsPanel:(id)arg1;
 - (void)outdent:(id)arg1;
 - (void)overWrite:(id)arg1;
-- (struct Page { struct HashMap<const char *, std::__1::unique_ptr<WebCore::Supplement<WebCore::Page>, std::__1::default_delete<WebCore::Supplement<WebCore::Page> > >, WTF::PtrHash<const char *>, WTF::HashTraits<const char *>, WTF::HashTraits<std::__1::unique_ptr<WebCore::Supplement<WebCore::Page>, std::__1::default_delete<WebCore::Supplement<WebCore::Page> > > > > { struct HashTable<const char *, WTF::KeyValuePair<const char *, std::__1::unique_ptr<WebCore::Supplement<WebCore::Page>, std::__1::default_delete<WebCore::Supplement<WebCore::Page> > > >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<const char *, std::__1::unique_ptr<WebCore::Supplement<WebCore::Page>, std::__1::default_delete<WebCore::Supplement<WebCore::Page> > > > >, WTF::PtrHash<const char *>, WTF::HashMap<const char *, std::__1::unique_ptr<WebCore::Supplement<WebCore::Page>, std::__1::default_delete<WebCore::Supplement<WebCore::Page> > >, WTF::PtrHash<const char *>, WTF::HashTraits<const char *>, WTF::HashTraits<std::__1::unique_ptr<WebCore::Supplement<WebCore::Page>, std::__1::default_delete<WebCore::Supplement<WebCore::Page> > > > >::KeyValuePairTraits, WTF::HashTraits<const char *> > { struct KeyValuePair<const char *, std::__1::unique_ptr<WebCore::Supplement<WebCore::Page>, std::__1::default_delete<WebCore::Supplement<WebCore::Page> > > > {} *x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_1_1_1; } x1; struct unique_ptr<WTF::HashSet<WTF::RefPtr<WTF::SchedulePair>, WTF::SchedulePairHash, WTF::HashTraits<WTF::RefPtr<WTF::SchedulePair> > >, std::__1::default_delete<WTF::HashSet<WTF::RefPtr<WTF::SchedulePair>, WTF::SchedulePairHash, WTF::HashTraits<WTF::RefPtr<WTF::SchedulePair> > > > > { struct __compressed_pair<WTF::HashSet<WTF::RefPtr<WTF::SchedulePair>, WTF::SchedulePairHash, WTF::HashTraits<WTF::RefPtr<WTF::SchedulePair> > > *, std::__1::default_delete<WTF::HashSet<WTF::RefPtr<WTF::SchedulePair>, WTF::SchedulePairHash, WTF::HashTraits<WTF::RefPtr<WTF::SchedulePair> > > > > { struct HashSet<WTF::RefPtr<WTF::SchedulePair>, WTF::SchedulePairHash, WTF::HashTraits<WTF::RefPtr<WTF::SchedulePair> > > {} *x_1_2_1; } x_2_1_1; } x2; struct unique_ptr<WebCore::Chrome, std::__1::default_delete<WebCore::Chrome> > { struct __compressed_pair<WebCore::Chrome *, std::__1::default_delete<WebCore::Chrome> > { struct Chrome {} *x_1_2_1; } x_3_1_1; } x3; struct unique_ptr<WebCore::DragCaretController, std::__1::default_delete<WebCore::DragCaretController> > { struct __compressed_pair<WebCore::DragCaretController *, std::__1::default_delete<WebCore::DragCaretController> > { struct DragCaretController {} *x_1_2_1; } x_4_1_1; } x4; struct unique_ptr<WebCore::FocusController, std::__1::default_delete<WebCore::FocusController> > { struct __compressed_pair<WebCore::FocusController *, std::__1::default_delete<WebCore::FocusController> > { struct FocusController {} *x_1_2_1; } x_5_1_1; } x5; struct unique_ptr<WebCore::UserInputBridge, std::__1::default_delete<WebCore::UserInputBridge> > { struct __compressed_pair<WebCore::UserInputBridge *, std::__1::default_delete<WebCore::UserInputBridge> > { struct UserInputBridge {} *x_1_2_1; } x_6_1_1; } x6; struct unique_ptr<WebCore::InspectorController, std::__1::default_delete<WebCore::InspectorController> > { struct __compressed_pair<WebCore::InspectorController *, std::__1::default_delete<WebCore::InspectorController> > { struct InspectorController {} *x_1_2_1; } x_7_1_1; } x7; struct RefPtr<WebCore::ScrollingCoordinator> { struct ScrollingCoordinator {} *x_8_1_1; } x8; struct RefPtr<WebCore::Settings> { struct Settings {} *x_9_1_1; } x9; struct unique_ptr<WebCore::ProgressTracker, std::__1::default_delete<WebCore::ProgressTracker> > { struct __compressed_pair<WebCore::ProgressTracker *, std::__1::default_delete<WebCore::ProgressTracker> > { struct ProgressTracker {} *x_1_2_1; } x_10_1_1; } x10; struct unique_ptr<WebCore::BackForwardController, std::__1::default_delete<WebCore::BackForwardController> > { struct __compressed_pair<WebCore::BackForwardController *, std::__1::default_delete<WebCore::BackForwardController> > { struct BackForwardController {} *x_1_2_1; } x_11_1_1; } x11; struct RefPtr<WebCore::MainFrame> { struct MainFrame {} *x_12_1_1; } x12; struct RefPtr<WebCore::PluginData> { struct PluginData {} *x_13_1_1; } x13; struct RefPtr<WebCore::RenderTheme> { struct RenderTheme {} *x_14_1_1; } x14; struct EditorClient {} *x15; struct PlugInClient {} *x16; struct ValidationMessageClient {} *x17; int x18; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_19_1_1; } x19; bool x20; bool x21; bool x22; unsigned int x23; bool x24; bool x25; float x26; bool x27; float x28; float x29; float x30; float x31; float x32; float x33; bool x34; unsigned int x35 : 2; unsigned int x36 : 2; struct Pagination { int x_37_1_1; bool x_37_1_2; unsigned int x_37_1_3; unsigned int x_37_1_4; } x37; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_38_1_1; } x38; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_39_1_1; } x39; bool x40; int x41; struct unique_ptr<WebCore::PageGroup, std::__1::default_delete<WebCore::PageGroup> > { struct __compressed_pair<WebCore::PageGroup *, std::__1::default_delete<WebCore::PageGroup> > { struct PageGroup {} *x_1_2_1; } x_42_1_1; } x42; struct PageGroup {} *x43; struct Debugger {} *x44; bool x45; struct RefPtr<WebCore::StorageNamespace> { struct StorageNamespace {} *x_46_1_1; } x46; bool x47; bool x48; bool x49; unsigned int x50; unsigned int x51; int x52; int x53; struct HashSet<WebCore::RenderObject *, WTF::PtrHash<WebCore::RenderObject *>, WTF::HashTraits<WebCore::RenderObject *> > { struct HashTable<WebCore::RenderObject *, WebCore::RenderObject *, WTF::IdentityExtractor, WTF::PtrHash<WebCore::RenderObject *>, WTF::HashTraits<WebCore::RenderObject *>, WTF::HashTraits<WebCore::RenderObject *> > { struct RenderObject {} **x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_54_1_1; } x54; struct Region { struct IntRect { struct IntPoint { int x_1_3_1; int x_1_3_2; } x_1_2_1; struct IntSize { int x_2_3_1; int x_2_3_2; } x_1_2_2; } x_55_1_1; struct Shape { struct Vector<int, 32, WTF::CrashOnOverflow, 16> { int *x_1_3_1; unsigned int x_1_3_2; unsigned int x_1_3_3; struct type { unsigned char x_4_4_1[4]; } x_1_3_4[32]; } x_2_2_1; struct Vector<WebCore::Region::Span, 16, WTF::CrashOnOverflow, 16> { struct Span {} *x_2_3_1; unsigned int x_2_3_2; unsigned int x_2_3_3; struct type { unsigned char x_4_4_1[8]; } x_2_3_4[16]; } x_2_2_2; } x_55_1_2; } x55; struct Region { struct IntRect { struct IntPoint { int x_1_3_1; int x_1_3_2; } x_1_2_1; struct IntSize { int x_2_3_1; int x_2_3_2; } x_1_2_2; } x_56_1_1; struct Shape { struct Vector<int, 32, WTF::CrashOnOverflow, 16> { int *x_1_3_1; unsigned int x_1_3_2; unsigned int x_1_3_3; struct type { unsigned char x_4_4_1[4]; } x_1_3_4[32]; } x_2_2_1; struct Vector<WebCore::Region::Span, 16, WTF::CrashOnOverflow, 16> { struct Span {} *x_2_3_1; unsigned int x_2_3_2; unsigned int x_2_3_3; struct type { unsigned char x_4_4_1[8]; } x_2_3_4[16]; } x_2_2_2; } x_56_1_2; } x56; struct Region { struct IntRect { struct IntPoint { int x_1_3_1; int x_1_3_2; } x_1_2_1; struct IntSize { int x_2_3_1; int x_2_3_2; } x_1_2_2; } x_57_1_1; struct Shape { struct Vector<int, 32, WTF::CrashOnOverflow, 16> { int *x_1_3_1; unsigned int x_1_3_2; unsigned int x_1_3_3; struct type { unsigned char x_4_4_1[4]; } x_1_3_4[32]; } x_2_2_1; struct Vector<WebCore::Region::Span, 16, WTF::CrashOnOverflow, 16> { struct Span {} *x_2_3_1; unsigned int x_2_3_2; unsigned int x_2_3_3; struct type { unsigned char x_4_4_1[8]; } x_2_3_4[16]; } x_2_2_2; } x_57_1_2; } x57; bool x58; struct AlternativeTextClient {} *x59; bool x60; struct PageThrottler { struct Page {} *x_61_1_1; unsigned int x_61_1_2; struct HysteresisActivity { struct function<void (WebCore::HysteresisState)>={type=[12C] {} x_3_2_1; struct __base<void (WebCore::HysteresisState)> {} *x_3_2_2; } x_61_1_3; double x_61_1_4; bool x_61_1_5; struct Timer { int (**x_6_2_1)(); double x_6_2_2; double x_6_2_3; double x_6_2_4; int x_6_2_5; unsigned int x_6_2_6; struct Vector<WebCore::TimerBase *, 0, WTF::CrashOnOverflow, 16> {} *x_6_2_7; struct function<void ()>={type=[12C] {} x_6_2_8; struct __base<void ()> {} *x_6_2_9; } x_61_1_6; } x61; }*)page;
+- (struct Page { struct HashMap<const char *, std::__1::unique_ptr<WebCore::Supplement<WebCore::Page>, std::__1::default_delete<WebCore::Supplement<WebCore::Page> > >, WTF::PtrHash<const char *>, WTF::HashTraits<const char *>, WTF::HashTraits<std::__1::unique_ptr<WebCore::Supplement<WebCore::Page>, std::__1::default_delete<WebCore::Supplement<WebCore::Page> > > > > { struct HashTable<const char *, WTF::KeyValuePair<const char *, std::__1::unique_ptr<WebCore::Supplement<WebCore::Page>, std::__1::default_delete<WebCore::Supplement<WebCore::Page> > > >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<const char *, std::__1::unique_ptr<WebCore::Supplement<WebCore::Page>, std::__1::default_delete<WebCore::Supplement<WebCore::Page> > > > >, WTF::PtrHash<const char *>, WTF::HashMap<const char *, std::__1::unique_ptr<WebCore::Supplement<WebCore::Page>, std::__1::default_delete<WebCore::Supplement<WebCore::Page> > >, WTF::PtrHash<const char *>, WTF::HashTraits<const char *>, WTF::HashTraits<std::__1::unique_ptr<WebCore::Supplement<WebCore::Page>, std::__1::default_delete<WebCore::Supplement<WebCore::Page> > > > >::KeyValuePairTraits, WTF::HashTraits<const char *> > { struct KeyValuePair<const char *, std::__1::unique_ptr<WebCore::Supplement<WebCore::Page>, std::__1::default_delete<WebCore::Supplement<WebCore::Page> > > > {} *x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_1_1_1; } x1; }*)page;
 - (void)pageDown:(id)arg1;
 - (void)pageDownAndModifySelection:(id)arg1;
 - (float)pageSizeMultiplier;
@@ -539,6 +540,7 @@
 - (void)resetPageZoom:(id)arg1;
 - (void)resetTrackedRepaints;
 - (id)resourceLoadDelegate;
+- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
 - (id)scriptDebugDelegate;
 - (void)scrollDOMRangeToVisible:(id)arg1;
 - (void)scrollDOMRangeToVisible:(id)arg1 withInset:(float)arg2;
@@ -610,7 +612,9 @@
 - (void)setWebMailDelegate:(id)arg1;
 - (BOOL)shouldClose;
 - (BOOL)shouldCloseWithWindow;
+- (BOOL)shouldRequestCandidates;
 - (BOOL)shouldUpdateWhileOffscreen;
+- (void)showCandidates:(id)arg1 forString:(id)arg2 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 forSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 view:(id)arg5 completionHandler:(id /* block */)arg6;
 - (void)showGuessPanel:(id)arg1;
 - (BOOL)smartInsertDeleteEnabled;
 - (void)startSpeaking:(id)arg1;
@@ -627,7 +631,7 @@
 - (BOOL)tabKeyCyclesThroughElements;
 - (void)takeFindStringFromSelection:(id)arg1;
 - (void)takeStringURLFrom:(id)arg1;
-- (id)textIteratorForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)textIteratorForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (float)textSizeMultiplier;
 - (void)toggleBaseWritingDirection:(id)arg1;
 - (void)toggleBold:(id)arg1;
@@ -640,13 +644,16 @@
 - (void)underline:(id)arg1;
 - (id)undoManager;
 - (void)unmarkAllTextMatches;
+- (void)unscheduleFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)unscript:(id)arg1;
 - (void)updateLayoutIgnorePendingStyleSheets;
+- (void)updateWebViewAdditions;
 - (void)uppercaseWord:(id)arg1;
 - (id)userAgentForURL:(id)arg1;
 - (BOOL)usesPageCache;
 - (int)validationMessageTimerMagnification;
 - (void)viewDidMoveToWindow;
+- (void)webViewAdditionsWillDestroyView;
 - (id)windowScriptObject;
 - (void)yank:(id)arg1;
 - (void)yankAndSelect:(id)arg1;

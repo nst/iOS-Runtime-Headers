@@ -3,9 +3,9 @@
  */
 
 @interface UIStatusBarPersonNameItemView : UIStatusBarItemView {
-    float _letterSpacing;
-    float _maxWidth;
-    NSString *_personNameString;
+    double  _letterSpacing;
+    double  _maxWidth;
+    NSString * _personNameString;
 }
 
 - (void).cxx_destruct;

@@ -3,9 +3,9 @@
  */
 
 @interface PLBackupRestoreAgent : PLAgent {
-    MBManager *_backupRestoreManager;
-    BOOL _backupState;
-    BOOL _restoreState;
+    MBManager * _backupRestoreManager;
+    BOOL  _backupState;
+    BOOL  _restoreState;
 }
 
 @property (readonly) MBManager *backupRestoreManager;

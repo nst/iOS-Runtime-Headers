@@ -3,7 +3,7 @@
  */
 
 @interface ML3DatabaseException : MLException {
-    NSError *_sqliteError;
+    NSError * _sqliteError;
 }
 
 @property (nonatomic, readonly) NSError *sqliteError;

@@ -3,9 +3,9 @@
  */
 
 @interface TSUMutableLinkedPointerSet : NSObject <NSFastEnumeration> {
-    struct __CFDictionary { } *mDictionary;
-    TSULinkedPointerSetEntry *mHead;
-    TSULinkedPointerSetEntry *mTail;
+    struct __CFDictionary { } * mDictionary;
+    TSULinkedPointerSetEntry * mHead;
+    TSULinkedPointerSetEntry * mTail;
 }
 
 - (void)addObject:(id)arg1;
@@ -18,6 +18,7 @@
 - (void)encodeToReferenceMessage:(struct RepeatedPtrField<TSP::Reference> { void **x1; int x2; int x3; int x4; }*)arg1 archiver:(id)arg2;
 - (id)firstObject;
 - (BOOL)hasObjects;
+- (unsigned int)hash;
 - (id)init;
 - (void)insertFirstObject:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

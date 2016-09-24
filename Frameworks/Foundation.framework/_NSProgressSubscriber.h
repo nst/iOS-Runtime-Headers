@@ -3,11 +3,11 @@
  */
 
 @interface _NSProgressSubscriber : NSObject <NSProgressSubscriber> {
-    NSXPCConnection *_connection;
-    NSLock *_lock;
-    NSMutableDictionary *_proxiesByPublisherID;
-    id /* block */ _publishingHandler;
-    NSString *_subscriberID;
+    NSLock * _lock;
+    NSMutableDictionary * _proxiesByPublisherID;
+    id /* block */  _publishingHandler;
+    BOOL  _started;
+    NSString * _subscriberID;
 }
 
 @property (readonly, copy) NSString *debugDescription;

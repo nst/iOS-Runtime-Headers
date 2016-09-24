@@ -3,8 +3,8 @@
  */
 
 @interface PDAnimationOleChartTarget : PDAnimationShapeTarget {
-    int mChartSubElementType;
-    int mLevel;
+    int  mChartSubElementType;
+    int  mLevel;
 }
 
 - (int)chartSubElementType;

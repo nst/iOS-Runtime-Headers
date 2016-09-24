@@ -3,7 +3,7 @@
  */
 
 @interface NEVPNProtocolPPTP : NEVPNProtocolPPP {
-    int _encryptionLevel;
+    int  _encryptionLevel;
 }
 
 @property int encryptionLevel;

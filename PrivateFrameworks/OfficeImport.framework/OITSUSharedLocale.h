@@ -3,8 +3,8 @@
  */
 
 @interface OITSUSharedLocale : NSObject {
-    struct __CFLocale { } *mCurrentLocale;
-    NSArray *mObserverObjects;
+    struct __CFLocale { } * mCurrentLocale;
+    NSArray * mObserverObjects;
 }
 
 + (id)_singletonAlloc;

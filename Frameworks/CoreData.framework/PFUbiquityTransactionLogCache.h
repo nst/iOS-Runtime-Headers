@@ -3,10 +3,10 @@
  */
 
 @interface PFUbiquityTransactionLogCache : NSObject {
-    PFUbiquityGlobalObjectIDCache *_gidCache;
-    NSString *_localPeerID;
-    NSMutableDictionary *_transactionLogCache;
-    NSRecursiveLock *_transactionLogCacheLock;
+    PFUbiquityGlobalObjectIDCache * _gidCache;
+    NSString * _localPeerID;
+    NSMutableDictionary * _transactionLogCache;
+    NSRecursiveLock * _transactionLogCacheLock;
 }
 
 - (void)cacheExportedLog:(id)arg1;

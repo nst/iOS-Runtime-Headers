@@ -3,12 +3,12 @@
  */
 
 @interface CISpotLight : CIFilter {
-    NSNumber *inputBrightness;
-    CIColor *inputColor;
-    NSNumber *inputConcentration;
-    CIImage *inputImage;
-    CIVector *inputLightPointsAt;
-    CIVector *inputLightPosition;
+    NSNumber * inputBrightness;
+    CIColor * inputColor;
+    NSNumber * inputConcentration;
+    CIImage * inputImage;
+    CIVector * inputLightPointsAt;
+    CIVector * inputLightPosition;
 }
 
 + (id)customAttributes;

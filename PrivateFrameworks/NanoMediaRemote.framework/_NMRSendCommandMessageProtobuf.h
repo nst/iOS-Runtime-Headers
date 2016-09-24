@@ -3,13 +3,13 @@
  */
 
 @interface _NMRSendCommandMessageProtobuf : PBCodable <NSCopying> {
-    int _command;
+    int  _command;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int command : 1; 
-    } _has;
-    _NMRCommandOptionsProtobuf *_options;
-    double _timestamp;
+    }  _has;
+    _NMRCommandOptionsProtobuf * _options;
+    double  _timestamp;
 }
 
 @property (nonatomic) int command;
@@ -20,7 +20,9 @@
 @property (nonatomic) double timestamp;
 
 - (void).cxx_destruct;
+- (int)StringAsCommand:(id)arg1;
 - (int)command;
+- (id)commandAsString:(int)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

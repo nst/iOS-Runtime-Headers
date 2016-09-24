@@ -3,11 +3,11 @@
  */
 
 @interface MFMessageBodyParserObject : NSObject {
-    BOOL _copyBlocks;
-    BOOL _didTimeout;
-    BOOL _shouldAbort;
-    double _timeoutInterval;
-    double _timeoutTime;
+    BOOL  _copyBlocks;
+    BOOL  _didTimeout;
+    BOOL  _shouldAbort;
+    double  _timeoutInterval;
+    double  _timeoutTime;
 }
 
 @property (nonatomic) double timeoutInterval;

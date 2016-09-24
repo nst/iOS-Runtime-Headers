@@ -3,11 +3,11 @@
  */
 
 @interface ABValuePredicate : ABPredicate {
-    long _comparison;
-    BOOL _dictionaryValue;
-    NSArray *_orderedKeys;
-    int _property;
-    <NSObject> *_value;
+    long  _comparison;
+    BOOL  _dictionaryValue;
+    NSArray * _orderedKeys;
+    int  _property;
+    <NSObject> * _value;
 }
 
 @property (nonatomic) long comparison;
@@ -22,7 +22,7 @@
 - (id)_ftsTokenizedTermStringForString:(id)arg1;
 - (BOOL)_shouldConsultIndexForKey:(id)arg1;
 - (BOOL)_supportsFTSSearch;
-- (void)ab_bindWhereClauseComponentOfStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
+- (void)ab_bindWhereClauseComponentOfStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; double x3; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
 - (long)comparison;
 - (void)dealloc;
 - (id)init;

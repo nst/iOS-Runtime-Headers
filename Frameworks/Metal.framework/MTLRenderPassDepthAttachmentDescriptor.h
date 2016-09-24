@@ -3,7 +3,7 @@
  */
 
 @interface MTLRenderPassDepthAttachmentDescriptor : MTLRenderPassAttachmentDescriptor {
-    unsigned int _depthResolveFilter;
+    unsigned int  _depthResolveFilter;
 }
 
 @property (nonatomic) double clearDepth;

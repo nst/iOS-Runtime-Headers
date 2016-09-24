@@ -3,8 +3,8 @@
  */
 
 @interface HAPOSTransaction : NSObject {
-    NSObject<OS_os_transaction> *_HAPOSTransaction;
-    double _creationTime;
+    NSObject<OS_os_transaction> * _HAPOSTransaction;
+    double  _creationTime;
 }
 
 @property (nonatomic, retain) NSObject<OS_os_transaction> *HAPOSTransaction;

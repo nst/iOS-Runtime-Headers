@@ -3,8 +3,8 @@
  */
 
 @interface ICSearchString : NSObject <NSCopying> {
-    id _searchID;
-    NSString *_string;
+    id  _searchID;
+    NSString * _string;
 }
 
 @property (nonatomic, readonly) id searchID;

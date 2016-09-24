@@ -3,20 +3,20 @@
  */
 
 @interface _CDInteraction : NSObject <NSSecureCoding, _CDPDataPoint> {
-    NSString *_account;
-    NSString *_bundleId;
-    NSURL *_contentURL;
-    int _direction;
-    NSString *_domainIdentifier;
-    NSDate *_endDate;
-    BOOL _isResponse;
-    NSArray *_keywords;
-    NSString *_locationUUID;
-    int _mechanism;
-    NSArray *_recipients;
-    _CDContact *_sender;
-    NSDate *_startDate;
-    NSString *_uuid;
+    NSString * _account;
+    NSString * _bundleId;
+    NSURL * _contentURL;
+    int  _direction;
+    NSString * _domainIdentifier;
+    NSDate * _endDate;
+    BOOL  _isResponse;
+    NSArray * _keywords;
+    NSString * _locationUUID;
+    int  _mechanism;
+    NSArray * _recipients;
+    _CDContact * _sender;
+    NSDate * _startDate;
+    NSString * _uuid;
 }
 
 @property (retain) NSString *account;
@@ -57,6 +57,7 @@
 - (id)endDate;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initwithINInteraction:(id)arg1 bundleID:(id)arg2;
 - (BOOL)isResponse;
 - (id)keywords;
 - (id)locationUUID;

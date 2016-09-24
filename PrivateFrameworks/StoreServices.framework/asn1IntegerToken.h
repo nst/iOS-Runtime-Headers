@@ -3,13 +3,13 @@
  */
 
 @interface asn1IntegerToken : asn1Token {
-    unsigned long long mValue;
+    unsigned int  mValue;
 }
 
-@property (readonly) unsigned long long value;
+@property (readonly) unsigned int value;
 
 - (id)_initWithID:(unsigned int)arg1 class:(unsigned char)arg2 length:(unsigned int)arg3 content:(const char *)arg4 opaque:(BOOL)arg5;
 - (id)description;
-- (unsigned long long)value;
+- (unsigned int)value;
 
 @end

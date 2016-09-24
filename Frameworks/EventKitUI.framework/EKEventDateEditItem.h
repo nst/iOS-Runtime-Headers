@@ -3,34 +3,40 @@
  */
 
 @interface EKEventDateEditItem : EKEventEditItem <EKCellShortener, EKTimeZoneViewControllerDelegate> {
-    BOOL _allDay;
-    UITableViewCell *_allDayCell;
-    BOOL _changingDate;
-    NSDateComponents *_endComponents;
-    PreferencesTwoPartValueCell *_endDateCell;
-    UIDatePicker *_endDatePicker;
-    UITableViewCell *_endDatePickerCell;
-    BOOL _endTimeWasMessedUp;
-    NSTimeZone *_endTimeZone;
-    UITableViewCell *_endTimeZoneCell;
-    BOOL _pushingTZController;
-    int _selectedSubitem;
-    int _shorteningStatus;
-    BOOL _showTimeZones;
-    BOOL _showsAllDay;
-    NSDateComponents *_startComponents;
-    PreferencesTwoPartValueCell *_startDateCell;
-    UIDatePicker *_startDatePicker;
-    UITableViewCell *_startDatePickerCell;
-    NSTimeZone *_startTimeZone;
-    UITableViewCell *_startTimeZoneCell;
+    BOOL  _allDay;
+    UITableViewCell * _allDayCell;
+    BOOL  _changingDate;
+    NSDateComponents * _endComponents;
+    PreferencesTwoPartValueCell * _endDateCell;
+    UIDatePicker * _endDatePicker;
+    UITableViewCell * _endDatePickerCell;
+    BOOL  _endTimeWasMessedUp;
+    NSTimeZone * _endTimeZone;
+    UITableViewCell * _endTimeZoneCell;
+    <EKEventDateEditItemDelegate> * _eventDateEditItemDelegate;
+    BOOL  _proposedTime;
+    BOOL  _pushingTZController;
+    int  _selectedSubitem;
+    int  _shorteningStatus;
+    BOOL  _showTimeZones;
+    BOOL  _showsAllDay;
+    NSDateComponents * _startComponents;
+    PreferencesTwoPartValueCell * _startDateCell;
+    UIDatePicker * _startDatePicker;
+    UITableViewCell * _startDatePickerCell;
+    NSTimeZone * _startTimeZone;
+    UITableViewCell * _startTimeZoneCell;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) <EKEventDateEditItemDelegate> *eventDateEditItemDelegate;
 @property (readonly) unsigned int hash;
+@property (nonatomic) BOOL proposedTime;
 @property (nonatomic) BOOL showsAllDay;
 @property (readonly) Class superclass;
+
++ (id)_timeZoneLocalizedString;
 
 - (void).cxx_destruct;
 - (void)_adjustDatePickerFrame:(id)arg1 toFillEnclosingViewWidth:(id)arg2;
@@ -79,14 +85,18 @@
 - (void)editor:(id)arg1 didSelectSubitem:(unsigned int)arg2;
 - (void)editor:(id)arg1 didStartEditingItem:(id)arg2;
 - (void)endInlineEditing;
+- (id)eventDateEditItemDelegate;
 - (BOOL)forceRefreshInviteesItemOnSave;
 - (BOOL)forceRefreshLocationItemOnSave;
 - (id)init;
 - (BOOL)isInline;
 - (unsigned int)numberOfSubitems;
+- (BOOL)proposedTime;
 - (void)refreshFromCalendarItemAndStore;
 - (BOOL)requiresReconfigurationOnSave;
 - (BOOL)saveAndDismissWithForce:(BOOL)arg1;
+- (void)setEventDateEditItemDelegate:(id)arg1;
+- (void)setProposedTime:(BOOL)arg1;
 - (void)setShowsAllDay:(BOOL)arg1;
 - (void)shortenCell:(id)arg1;
 - (BOOL)showsAllDay;

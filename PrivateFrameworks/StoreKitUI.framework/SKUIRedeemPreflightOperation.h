@@ -3,12 +3,12 @@
  */
 
 @interface SKUIRedeemPreflightOperation : NSOperation {
-    SKUIClientContext *_clientContext;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    BOOL _loadsRedeemCodeMetadata;
-    id /* block */ _outputBlock;
-    NSString *_redeemCode;
-    SKUIRedeemConfiguration *_redeemConfiguration;
+    SKUIClientContext * _clientContext;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    BOOL  _loadsRedeemCodeMetadata;
+    id /* block */  _outputBlock;
+    NSString * _redeemCode;
+    SKUIRedeemConfiguration * _redeemConfiguration;
 }
 
 @property BOOL loadsRedeemCodeMetadata;

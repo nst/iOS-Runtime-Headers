@@ -3,8 +3,8 @@
  */
 
 @interface CKDSaveUserPrivacySettingsOperationInfo : CKOperationInfo {
-    NSString *_applicationBundleID;
-    int _discoverable;
+    NSString * _applicationBundleID;
+    int  _discoverable;
 }
 
 @property (nonatomic, copy) NSString *applicationBundleID;

@@ -3,9 +3,9 @@
  */
 
 @interface NSFileAccessIntent : NSObject {
-    BOOL _isRead;
-    int _options;
-    NSURL *_url;
+    BOOL  _isRead;
+    int  _options;
+    NSURL * _url;
 }
 
 @property (copy) NSURL *URL;

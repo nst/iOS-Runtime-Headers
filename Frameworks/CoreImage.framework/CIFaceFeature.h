@@ -5,42 +5,42 @@
 @interface CIFaceFeature : CIFeature {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } bounds;
-    float faceAngle;
-    BOOL hasFaceAngle;
-    BOOL hasLeftEyePosition;
-    BOOL hasMouthPosition;
-    BOOL hasRightEyePosition;
-    BOOL hasSmile;
-    BOOL hasTrackingFrameCount;
-    BOOL hasTrackingID;
-    BOOL leftEyeClosed;
+    }  bounds;
+    double  faceAngle;
+    BOOL  hasFaceAngle;
+    BOOL  hasLeftEyePosition;
+    BOOL  hasMouthPosition;
+    BOOL  hasRightEyePosition;
+    BOOL  hasSmile;
+    BOOL  hasTrackingFrameCount;
+    BOOL  hasTrackingID;
+    BOOL  leftEyeClosed;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } leftEyePosition;
+        double x; 
+        double y; 
+    }  leftEyePosition;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } mouthPosition;
-    BOOL rightEyeClosed;
+        double x; 
+        double y; 
+    }  mouthPosition;
+    BOOL  rightEyeClosed;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } rightEyePosition;
-    int trackingFrameCount;
-    int trackingID;
+        double x; 
+        double y; 
+    }  rightEyePosition;
+    int  trackingFrameCount;
+    int  trackingID;
 }
 
-@property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
-@property (readonly) float faceAngle;
+@property (readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
+@property (readonly) double faceAngle;
 @property (readonly) BOOL hasFaceAngle;
 @property (readonly) BOOL hasLeftEyePosition;
 @property (readonly) BOOL hasMouthPosition;
@@ -49,14 +49,14 @@
 @property (readonly) BOOL hasTrackingFrameCount;
 @property (readonly) BOOL hasTrackingID;
 @property (readonly) BOOL leftEyeClosed;
-@property (readonly) struct CGPoint { float x1; float x2; } leftEyePosition;
-@property (readonly) struct CGPoint { float x1; float x2; } mouthPosition;
+@property (readonly) struct CGPoint { double x1; double x2; } leftEyePosition;
+@property (readonly) struct CGPoint { double x1; double x2; } mouthPosition;
 @property (readonly) BOOL rightEyeClosed;
-@property (readonly) struct CGPoint { float x1; float x2; } rightEyePosition;
+@property (readonly) struct CGPoint { double x1; double x2; } rightEyePosition;
 @property (readonly) int trackingFrameCount;
 @property (readonly) int trackingID;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
 - (float)faceAngle;
 - (BOOL)hasFaceAngle;
 - (BOOL)hasLeftEyePosition;
@@ -65,12 +65,12 @@
 - (BOOL)hasSmile;
 - (BOOL)hasTrackingFrameCount;
 - (BOOL)hasTrackingID;
-- (id)initWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 hasLeftEyePosition:(BOOL)arg2 leftEyePosition:(struct CGPoint { float x1; float x2; })arg3 hasRightEyePosition:(BOOL)arg4 rightEyePosition:(struct CGPoint { float x1; float x2; })arg5 hasMouthPosition:(BOOL)arg6 mouthPosition:(struct CGPoint { float x1; float x2; })arg7 hasFaceAngle:(BOOL)arg8 faceAngle:(float)arg9 hasTrackingID:(BOOL)arg10 trackingID:(int)arg11 hasTrackingFrameCount:(BOOL)arg12 trackingFrameCount:(int)arg13 hasSmile:(BOOL)arg14 leftEyeClosed:(BOOL)arg15 rightEyeClosed:(BOOL)arg16;
+- (id)initWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 hasLeftEyePosition:(BOOL)arg2 leftEyePosition:(struct CGPoint { double x1; double x2; })arg3 hasRightEyePosition:(BOOL)arg4 rightEyePosition:(struct CGPoint { double x1; double x2; })arg5 hasMouthPosition:(BOOL)arg6 mouthPosition:(struct CGPoint { double x1; double x2; })arg7 hasFaceAngle:(BOOL)arg8 faceAngle:(float)arg9 hasTrackingID:(BOOL)arg10 trackingID:(int)arg11 hasTrackingFrameCount:(BOOL)arg12 trackingFrameCount:(int)arg13 hasSmile:(BOOL)arg14 leftEyeClosed:(BOOL)arg15 rightEyeClosed:(BOOL)arg16;
 - (BOOL)leftEyeClosed;
-- (struct CGPoint { float x1; float x2; })leftEyePosition;
-- (struct CGPoint { float x1; float x2; })mouthPosition;
+- (struct CGPoint { double x1; double x2; })leftEyePosition;
+- (struct CGPoint { double x1; double x2; })mouthPosition;
 - (BOOL)rightEyeClosed;
-- (struct CGPoint { float x1; float x2; })rightEyePosition;
+- (struct CGPoint { double x1; double x2; })rightEyePosition;
 - (int)trackingFrameCount;
 - (int)trackingID;
 - (id)type;

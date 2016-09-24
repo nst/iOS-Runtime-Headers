@@ -3,22 +3,22 @@
  */
 
 @interface TPSetPINViewController : UIViewController <TPSimpleNumberPadDelegate> {
-    BOOL _confirmPIN;
-    UIView *_customBackgroundView;
-    <TPSetPINViewControllerDelegate> *_delegate;
-    int _initialState;
-    unsigned int _maxPINLength;
-    unsigned int _minPINLength;
-    TPSimpleNumberPad *_numberPad;
-    NSString *_oldPIN;
-    TPPasscodeView *_passcodeView;
-    NSString *_promptTextForConfirmingNewPIN;
-    NSString *_promptTextForNewPIN;
-    NSString *_promptTextForOldPIN;
-    NSString *_promptTextForSavingPIN;
-    int _state;
-    UILabel *_statusLabel;
-    NSString *_unconfirmedPIN;
+    BOOL  _confirmPIN;
+    UIView * _customBackgroundView;
+    <TPSetPINViewControllerDelegate> * _delegate;
+    int  _initialState;
+    unsigned int  _maxPINLength;
+    unsigned int  _minPINLength;
+    TPSimpleNumberPad * _numberPad;
+    NSString * _oldPIN;
+    TPPasscodeView * _passcodeView;
+    NSString * _promptTextForConfirmingNewPIN;
+    NSString * _promptTextForNewPIN;
+    NSString * _promptTextForOldPIN;
+    NSString * _promptTextForSavingPIN;
+    int  _state;
+    UILabel * _statusLabel;
+    NSString * _unconfirmedPIN;
 }
 
 @property BOOL confirmPIN;

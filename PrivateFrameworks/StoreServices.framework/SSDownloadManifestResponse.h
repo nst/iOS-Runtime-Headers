@@ -3,7 +3,7 @@
  */
 
 @interface SSDownloadManifestResponse : NSObject <NSCoding, SSXPCCoding> {
-    NSArray *_validDownloads;
+    NSArray * _validDownloads;
 }
 
 @property (readonly, copy) NSString *debugDescription;

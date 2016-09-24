@@ -3,9 +3,9 @@
  */
 
 @interface TSDLinePreset : NSObject {
-    TSDLineEnd *mHeadLineEnd;
-    TSDStroke *mStroke;
-    TSDLineEnd *mTailLineEnd;
+    TSDLineEnd * mHeadLineEnd;
+    TSDStroke * mStroke;
+    TSDLineEnd * mTailLineEnd;
 }
 
 @property (nonatomic, readonly, copy) TSDLineEnd *headLineEnd;
@@ -15,6 +15,7 @@
 + (id)lineWithStroke:(id)arg1 headLineEnd:(id)arg2 tailLineEnd:(id)arg3;
 
 - (void)dealloc;
+- (unsigned int)hash;
 - (id)headLineEnd;
 - (id)initWithStroke:(id)arg1 headLineEnd:(id)arg2 tailLineEnd:(id)arg3;
 - (BOOL)isEqual:(id)arg1;

@@ -3,9 +3,9 @@
  */
 
 @interface _SYOutputDataItem : NSObject {
-    unsigned int _bytesSent;
-    id /* block */ _callback;
-    NSData *_data;
+    unsigned int  _bytesSent;
+    id /* block */  _callback;
+    NSData * _data;
 }
 
 @property (nonatomic) unsigned int bytesSent;

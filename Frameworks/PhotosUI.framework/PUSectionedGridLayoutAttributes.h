@@ -3,16 +3,16 @@
  */
 
 @interface PUSectionedGridLayoutAttributes : UICollectionViewLayoutAttributes {
-    BOOL _exists;
-    BOOL _extendsTopContent;
-    BOOL _floating;
-    float _interactiveTransitionProgress;
+    BOOL  _exists;
+    BOOL  _extendsTopContent;
+    BOOL  _floating;
+    double  _interactiveTransitionProgress;
 }
 
 @property (nonatomic) BOOL exists;
 @property (nonatomic) BOOL extendsTopContent;
 @property (nonatomic) BOOL floating;
-@property (nonatomic) float interactiveTransitionProgress;
+@property (nonatomic) double interactiveTransitionProgress;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

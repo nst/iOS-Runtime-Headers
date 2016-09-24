@@ -3,7 +3,7 @@
  */
 
 @interface MPAudioRouteCell : _UIAlertTableViewCell {
-    UIImageView *_pickedImage;
+    UIImageView * _pickedImage;
 }
 
 - (void).cxx_destruct;

@@ -14,7 +14,6 @@
 
 - (void)dealloc;
 - (BOOL)disabled;
-- (void)finalize;
 - (id)href;
 - (id)media;
 - (id)ownerNode;

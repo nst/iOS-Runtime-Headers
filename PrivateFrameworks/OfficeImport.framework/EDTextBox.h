@@ -3,9 +3,9 @@
  */
 
 @interface EDTextBox : NSObject {
-    EDAlignmentInfo *mAlignmentInfo;
-    EDProtection *mProtection;
-    EDString *mText;
+    EDAlignmentInfo * mAlignmentInfo;
+    EDProtection * mProtection;
+    EDString * mText;
 }
 
 + (id)textBox;

@@ -3,13 +3,13 @@
  */
 
 @interface WBSOpenSearchURLTemplateParameter : NSObject {
-    NSString *_name;
-    BOOL _optional;
-    NSString *_prefix;
+    NSString * _name;
+    BOOL  _optional;
+    NSString * _prefix;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
+    }  _range;
 }
 
 @property (nonatomic, copy) NSString *name;

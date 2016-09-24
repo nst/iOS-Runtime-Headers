@@ -3,36 +3,36 @@
  */
 
 @interface PDTimeNode : NSObject {
-    NSDictionary *attributeMap;
-    double mAcceleration;
-    int mAnimationPresetClass;
-    NSMutableArray *mChildTimeNodeList;
-    double mDeceleration;
-    BOOL mDisplay;
-    double mDuration;
-    NSMutableArray *mEndTimeConditions;
-    int mFillType;
-    NSString *mGroupId;
-    BOOL mHasAcceleration;
-    BOOL mHasDeceleration;
-    BOOL mHasDisplay;
-    BOOL mHasDuration;
-    BOOL mHasFillType;
-    BOOL mHasPresetId;
-    BOOL mHasPresetSubType;
-    BOOL mHasRepeatCount;
-    BOOL mHasRepeatDuration;
-    BOOL mHasSpeed;
-    PDIterate *mIterate;
-    int mPresetId;
-    int mPresetSubType;
-    int mRepeatCount;
-    int mRepeatDuration;
-    int mRestartType;
-    double mSpeed;
-    NSMutableArray *mStartTimeConditions;
-    NSMutableArray *mSubTimeNodeList;
-    int mType;
+    NSDictionary * attributeMap;
+    double  mAcceleration;
+    int  mAnimationPresetClass;
+    NSMutableArray * mChildTimeNodeList;
+    double  mDeceleration;
+    BOOL  mDisplay;
+    double  mDuration;
+    NSMutableArray * mEndTimeConditions;
+    int  mFillType;
+    NSString * mGroupId;
+    BOOL  mHasAcceleration;
+    BOOL  mHasDeceleration;
+    BOOL  mHasDisplay;
+    BOOL  mHasDuration;
+    BOOL  mHasFillType;
+    BOOL  mHasPresetId;
+    BOOL  mHasPresetSubType;
+    BOOL  mHasRepeatCount;
+    BOOL  mHasRepeatDuration;
+    BOOL  mHasSpeed;
+    PDIterate * mIterate;
+    int  mPresetId;
+    int  mPresetSubType;
+    int  mRepeatCount;
+    int  mRepeatDuration;
+    int  mRestartType;
+    double  mSpeed;
+    NSMutableArray * mStartTimeConditions;
+    NSMutableArray * mSubTimeNodeList;
+    int  mType;
 }
 
 @property (nonatomic, retain) NSDictionary *attributeMap;

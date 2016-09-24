@@ -3,28 +3,40 @@
  */
 
 @interface CKDPRecord : PBCodable <NSCopying> {
-    NSMutableArray *_conflictLoserEtags;
-    CKDPIdentifier *_createdBy;
-    NSString *_etag;
-    NSMutableArray *_fields;
+    CKDPRecordChainParent * _chainParent;
+    NSData * _chainPrivateKey;
+    CKDPProtectionInfo * _chainProtectionInfo;
+    NSMutableArray * _conflictLoserEtags;
+    CKDPIdentifier * _createdBy;
+    NSString * _etag;
+    NSMutableArray * _fields;
     struct { 
         unsigned int permission : 1; 
-    } _has;
-    CKDPIdentifier *_modifiedBy;
-    NSString *_modifiedByDevice;
-    int _permission;
-    NSMutableArray *_pluginFields;
-    CKDPProtectionInfo *_protectionInfo;
-    CKDPRecordIdentifier *_recordIdentifier;
-    CKDPShareIdentifier *_shareId;
-    CKDPDateStatistics *_timeStatistics;
-    CKDPRecordType *_type;
+    }  _has;
+    CKDPIdentifier * _modifiedBy;
+    NSString * _modifiedByDevice;
+    int  _permission;
+    NSMutableArray * _pluginFields;
+    CKDPProtectionInfo * _protectionInfo;
+    CKDPRecordIdentifier * _recordIdentifier;
+    CKDPShareIdentifier * _shareId;
+    CKDPShare * _shareInfo;
+    CKDPRecordStableUrl * _stableUrl;
+    CKDPDateStatistics * _timeStatistics;
+    NSMutableArray * _tombstonedPublicKeyIDs;
+    CKDPRecordType * _type;
 }
 
+@property (nonatomic, retain) CKDPRecordChainParent *chainParent;
+@property (nonatomic, retain) NSData *chainPrivateKey;
+@property (nonatomic, retain) CKDPProtectionInfo *chainProtectionInfo;
 @property (nonatomic, retain) NSMutableArray *conflictLoserEtags;
 @property (nonatomic, retain) CKDPIdentifier *createdBy;
 @property (nonatomic, retain) NSString *etag;
 @property (nonatomic, retain) NSMutableArray *fields;
+@property (nonatomic, readonly) BOOL hasChainParent;
+@property (nonatomic, readonly) BOOL hasChainPrivateKey;
+@property (nonatomic, readonly) BOOL hasChainProtectionInfo;
 @property (nonatomic, readonly) BOOL hasCreatedBy;
 @property (nonatomic, readonly) BOOL hasEtag;
 @property (nonatomic, readonly) BOOL hasModifiedBy;
@@ -33,6 +45,8 @@
 @property (nonatomic, readonly) BOOL hasProtectionInfo;
 @property (nonatomic, readonly) BOOL hasRecordIdentifier;
 @property (nonatomic, readonly) BOOL hasShareId;
+@property (nonatomic, readonly) BOOL hasShareInfo;
+@property (nonatomic, readonly) BOOL hasStableUrl;
 @property (nonatomic, readonly) BOOL hasTimeStatistics;
 @property (nonatomic, readonly) BOOL hasType;
 @property (nonatomic, retain) CKDPIdentifier *modifiedBy;
@@ -42,19 +56,33 @@
 @property (nonatomic, retain) CKDPProtectionInfo *protectionInfo;
 @property (nonatomic, retain) CKDPRecordIdentifier *recordIdentifier;
 @property (nonatomic, retain) CKDPShareIdentifier *shareId;
+@property (nonatomic, retain) CKDPShare *shareInfo;
+@property (nonatomic, retain) CKDPRecordStableUrl *stableUrl;
 @property (nonatomic, retain) CKDPDateStatistics *timeStatistics;
+@property (nonatomic, retain) NSMutableArray *tombstonedPublicKeyIDs;
 @property (nonatomic, retain) CKDPRecordType *type;
 
++ (Class)conflictLoserEtagsType;
++ (Class)fieldsType;
++ (Class)pluginFieldsType;
 + (id)recordFromData:(id)arg1;
++ (Class)tombstonedPublicKeyIDsType;
 
 - (void).cxx_destruct;
+- (int)StringAsPermission:(id)arg1;
 - (void)_inflateFieldsFromData:(id)arg1;
+- (id)_permissionAsString;
 - (void)addConflictLoserEtags:(id)arg1;
 - (void)addFields:(id)arg1;
 - (void)addPluginFields:(id)arg1;
+- (void)addTombstonedPublicKeyIDs:(id)arg1;
+- (id)chainParent;
+- (id)chainPrivateKey;
+- (id)chainProtectionInfo;
 - (void)clearConflictLoserEtags;
 - (void)clearFields;
 - (void)clearPluginFields;
+- (void)clearTombstonedPublicKeyIDs;
 - (id)conflictLoserEtags;
 - (id)conflictLoserEtagsAtIndex:(unsigned int)arg1;
 - (unsigned int)conflictLoserEtagsCount;
@@ -70,6 +98,9 @@
 - (id)fields;
 - (id)fieldsAtIndex:(unsigned int)arg1;
 - (unsigned int)fieldsCount;
+- (BOOL)hasChainParent;
+- (BOOL)hasChainPrivateKey;
+- (BOOL)hasChainProtectionInfo;
 - (BOOL)hasCreatedBy;
 - (BOOL)hasEtag;
 - (BOOL)hasModifiedBy;
@@ -78,6 +109,8 @@
 - (BOOL)hasProtectionInfo;
 - (BOOL)hasRecordIdentifier;
 - (BOOL)hasShareId;
+- (BOOL)hasShareInfo;
+- (BOOL)hasStableUrl;
 - (BOOL)hasTimeStatistics;
 - (BOOL)hasType;
 - (unsigned int)hash;
@@ -86,12 +119,16 @@
 - (id)modifiedBy;
 - (id)modifiedByDevice;
 - (int)permission;
+- (id)permissionAsString:(int)arg1;
 - (id)pluginFields;
 - (id)pluginFieldsAtIndex:(unsigned int)arg1;
 - (unsigned int)pluginFieldsCount;
 - (id)protectionInfo;
 - (BOOL)readFrom:(id)arg1;
 - (id)recordIdentifier;
+- (void)setChainParent:(id)arg1;
+- (void)setChainPrivateKey:(id)arg1;
+- (void)setChainProtectionInfo:(id)arg1;
 - (void)setConflictLoserEtags:(id)arg1;
 - (void)setCreatedBy:(id)arg1;
 - (void)setEtag:(id)arg1;
@@ -104,10 +141,18 @@
 - (void)setProtectionInfo:(id)arg1;
 - (void)setRecordIdentifier:(id)arg1;
 - (void)setShareId:(id)arg1;
+- (void)setShareInfo:(id)arg1;
+- (void)setStableUrl:(id)arg1;
 - (void)setTimeStatistics:(id)arg1;
+- (void)setTombstonedPublicKeyIDs:(id)arg1;
 - (void)setType:(id)arg1;
 - (id)shareId;
+- (id)shareInfo;
+- (id)stableUrl;
 - (id)timeStatistics;
+- (id)tombstonedPublicKeyIDs;
+- (id)tombstonedPublicKeyIDsAtIndex:(unsigned int)arg1;
+- (unsigned int)tombstonedPublicKeyIDsCount;
 - (id)type;
 - (void)writeTo:(id)arg1;
 

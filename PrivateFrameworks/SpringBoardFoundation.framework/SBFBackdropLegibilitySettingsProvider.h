@@ -3,9 +3,9 @@
  */
 
 @interface SBFBackdropLegibilitySettingsProvider : NSObject <SBFLegibilitySettingsProvider, _UIBackdropViewObserver> {
-    _UIBackdropView *_backdropView;
-    <SBFLegibilitySettingsProviderDelegate> *_delegate;
-    _UILegibilitySettings *_legibilitySettings;
+    _UIBackdropView * _backdropView;
+    <SBFLegibilitySettingsProviderDelegate> * _delegate;
+    _UILegibilitySettings * _legibilitySettings;
 }
 
 @property (readonly, copy) NSString *debugDescription;

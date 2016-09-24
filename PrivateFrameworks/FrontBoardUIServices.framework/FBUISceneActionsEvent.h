@@ -3,7 +3,7 @@
  */
 
 @interface FBUISceneActionsEvent : FBUISceneEvent {
-    NSSet *_actions;
+    NSSet * _actions;
 }
 
 @property (nonatomic, copy) NSSet *actions;

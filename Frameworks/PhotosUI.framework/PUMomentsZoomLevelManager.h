@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUMomentsZoomLevelManager : NSObject <PUPhotosDataSourceChangeObserver> {
-    NSMutableArray *_allLevelInfos;
-    BOOL _isInvalidatingLayoutOfZoomLevels;
-    PUPhotosDataSource *_momentsDataSource;
-    PUSessionInfo *_sessionInfo;
-    PUCollectionViewIntermediateDataSource *_sharedIntermediateDataSource;
-    PUZoomableGridViewControllerSpec *_zoomableGridSpec;
+@interface PUMomentsZoomLevelManager : NSObject <PXPhotosDataSourceChangeObserver> {
+    NSMutableArray * _allLevelInfos;
+    BOOL  _isInvalidatingLayoutOfZoomLevels;
+    PXPhotosDataSource * _momentsDataSource;
+    PUSessionInfo * _sessionInfo;
+    PUCollectionViewIntermediateDataSource * _sharedIntermediateDataSource;
+    PUZoomableGridViewControllerSpec * _zoomableGridSpec;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -39,7 +39,7 @@
 - (id)sessionInfo;
 - (void)setSessionInfo:(id)arg1;
 - (id)sharedIntermediateDataSource;
-- (void)updateZoomableGridSpecForTraitCollection:(id)arg1;
+- (void)updateZoomableGridSpecForTraitCollection:(id)arg1 referenceSize:(struct CGSize { double x1; double x2; })arg2;
 - (BOOL)zoomLevel:(unsigned int)arg1 isHigherThanZoomLevel:(unsigned int)arg2;
 - (unsigned int)zoomLevelAboveZoomLevel:(unsigned int)arg1;
 - (unsigned int)zoomLevelBelowZoomLevel:(unsigned int)arg1;

@@ -3,15 +3,15 @@
  */
 
 @interface TSWPStorageIterator : NSObject {
-    unsigned int _charIndex;
-    BOOL _lastEventWasMarker;
-    NSMutableArray *_locationProviders;
-    NSCharacterSet *_markers;
-    NSMutableArray *_pendingEvents;
-    NSMutableArray *_rangeProviders;
-    BOOL _sendEventsForNilObjects;
-    unsigned int _startCharIndex;
-    TSWPStorage *_storage;
+    unsigned int  _charIndex;
+    BOOL  _lastEventWasMarker;
+    NSMutableArray * _locationProviders;
+    NSCharacterSet * _markers;
+    NSMutableArray * _pendingEvents;
+    NSMutableArray * _rangeProviders;
+    BOOL  _sendEventsForNilObjects;
+    unsigned int  _startCharIndex;
+    TSWPStorage * _storage;
 }
 
 @property (nonatomic, retain) NSCharacterSet *markers;

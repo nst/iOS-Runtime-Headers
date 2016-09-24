@@ -3,8 +3,8 @@
  */
 
 @interface OISFUZipFreeSpaceEntry : NSObject {
-    unsigned long long length;
-    unsigned long long offset;
+    unsigned int  length;
+    unsigned int  offset;
 }
 
 - (int)compareByOffset:(id)arg1;

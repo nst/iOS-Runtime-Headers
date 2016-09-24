@@ -3,8 +3,8 @@
  */
 
 @interface NRBlockQueueWrapper : NSObject {
-    id /* block */ _block;
-    NSObject<OS_dispatch_queue> *_queue;
+    id /* block */  _block;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, copy) id /* block */ block;

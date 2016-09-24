@@ -3,8 +3,8 @@
  */
 
 @interface __NSVariableWidthString : NSString {
-    NSString *_defaultString;
-    NSDictionary *_variants;
+    NSString * _defaultString;
+    NSDictionary * _variants;
 }
 
 @property (readonly) unsigned int length;

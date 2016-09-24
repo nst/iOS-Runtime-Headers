@@ -3,8 +3,8 @@
  */
 
 @interface _CDInteractionAdvisor : NSObject <_CDInteractionAdvising> {
-    NSXPCConnection *_connection;
-    NSError *_error;
+    NSXPCConnection * _connection;
+    NSError * _error;
 }
 
 @property (nonatomic, retain) NSError *error;

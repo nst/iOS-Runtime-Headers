@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
  */
 
-@interface CAMMutablePanoramaCaptureRequest : CAMPanoramaCaptureRequest <CAMMutableCaptureRequestLocation, CAMMutableCaptureRequestPersistence, CAMMutableCaptureRequestPower>
+@interface CAMMutablePanoramaCaptureRequest : CAMPanoramaCaptureRequest <CAMMutableCaptureRequestLocation, CAMMutableCaptureRequestOrigin, CAMMutableCaptureRequestPersistence, CAMMutableCaptureRequestPower>
 
 @property (nonatomic) unsigned int assertionIdentifier;
 @property (nonatomic) int captureDevice;
@@ -15,6 +15,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSURL *localDestinationURL;
 @property (nonatomic, retain) CLLocation *location;
+@property (nonatomic) int origin;
 @property (nonatomic) int persistenceOptions;
 @property (nonatomic, copy) NSString *persistenceUUID;
 @property (nonatomic) int physicalButtonType;
@@ -23,6 +24,7 @@
 @property (nonatomic) BOOL shouldExtractDiagnosticsFromMetadata;
 @property (nonatomic) BOOL shouldPersistDiagnosticsToSidecar;
 @property (readonly) Class superclass;
+@property (nonatomic) int temporaryPersistenceOptions;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
@@ -34,7 +36,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setLocalDestinationURL:(id)arg1;
 - (void)setLocation:(id)arg1;
-- (void)setParameter:(id)arg1 forKey:(id)arg2;
+- (void)setOrigin:(int)arg1;
 - (void)setPersistenceOptions:(int)arg1;
 - (void)setPersistenceUUID:(id)arg1;
 - (void)setPhysicalButtonType:(int)arg1;
@@ -42,5 +44,6 @@
 - (void)setShouldDelayRemotePersistence:(BOOL)arg1;
 - (void)setShouldExtractDiagnosticsFromMetadata:(BOOL)arg1;
 - (void)setShouldPersistDiagnosticsToSidecar:(BOOL)arg1;
+- (void)setTemporaryPersistenceOptions:(int)arg1;
 
 @end

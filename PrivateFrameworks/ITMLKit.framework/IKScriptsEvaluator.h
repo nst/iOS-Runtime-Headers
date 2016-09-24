@@ -3,12 +3,12 @@
  */
 
 @interface IKScriptsEvaluator : NSObject <ISStoreURLOperationDelegate, NSURLConnectionDataDelegate> {
-    IKAppContext *_appContext;
-    JSManagedValue *_callback;
-    NSString *_identifier;
-    BOOL _isJingleRequest;
-    NSMutableArray *_records;
-    NSArray *_scripts;
+    IKAppContext * _appContext;
+    JSManagedValue * _callback;
+    NSString * _identifier;
+    BOOL  _isJingleRequest;
+    NSMutableArray * _records;
+    NSArray * _scripts;
 }
 
 @property (nonatomic) IKAppContext *appContext;

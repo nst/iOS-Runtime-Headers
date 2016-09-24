@@ -3,18 +3,18 @@
  */
 
 @interface ABMultiCellContentView_Address : ABMultiCellContentView_DisplayAlternate {
-    unsigned int _entryFieldIndexOfFirstStreetField;
-    NSArray *_lineInfos;
-    NSMutableArray *_lineSubviews;
+    unsigned int  _entryFieldIndexOfFirstStreetField;
+    NSArray * _lineInfos;
+    NSMutableArray * _lineSubviews;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _streetRange;
-    NSMutableArray *_verticalDividers;
+    }  _streetRange;
+    NSMutableArray * _verticalDividers;
 }
 
 + (int)calculateStreetRowsForText:(id)arg1;
-+ (struct CGSize { float x1; float x2; })layoutSubviewsForView:(id)arg1 usingSize:(struct CGSize { float x1; float x2; })arg2 propertyGroup:(id)arg3 info:(id)arg4 styleProvider:(id)arg5 whenEditing:(BOOL)arg6;
++ (struct CGSize { double x1; double x2; })layoutSubviewsForView:(id)arg1 usingSize:(struct CGSize { double x1; double x2; })arg2 propertyGroup:(id)arg3 info:(id)arg4 styleProvider:(id)arg5 whenEditing:(BOOL)arg6;
 + (id)lineInfosForPropertyGroup:(id)arg1 info:(id)arg2;
 + (unsigned int)rowsForPropertyGroup:(id)arg1 info:(id)arg2;
 + (id)streetTextForPropertyGroup:(id)arg1 info:(id)arg2;

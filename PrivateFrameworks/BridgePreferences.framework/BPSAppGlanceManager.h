@@ -3,9 +3,9 @@
  */
 
 @interface BPSAppGlanceManager : NSObject <BPSInternalGlanceObserverDelegate> {
-    NGSGlance *_glance;
-    PSListController *_listControllerDelegate;
-    BPSInternalGlanceManager *_manager;
+    NGSGlance * _glance;
+    PSListController * _listControllerDelegate;
+    BPSInternalGlanceManager * _manager;
 }
 
 @property (readonly, copy) NSString *debugDescription;

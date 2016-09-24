@@ -3,10 +3,10 @@
  */
 
 @interface NRActiveDeviceAssertion : NSObject {
-    NRDevice *_device;
-    NSString *_identifier;
-    BOOL _isActive;
-    NSObject<OS_dispatch_queue> *_queue;
+    NRDevice * _device;
+    NSString * _identifier;
+    BOOL  _isActive;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, retain) NRDevice *device;

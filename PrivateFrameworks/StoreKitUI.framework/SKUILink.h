@@ -3,12 +3,12 @@
  */
 
 @interface SKUILink : NSObject <SSMetricsEventFieldProvider> {
-    SKUICountdown *_countdown;
-    SKUIItem *_item;
-    NSNumber *_itemIdentifier;
-    NSString *_target;
-    NSString *_title;
-    NSURL *_url;
+    SKUICountdown * _countdown;
+    SKUIItem * _item;
+    NSNumber * _itemIdentifier;
+    NSString * _target;
+    NSString * _title;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

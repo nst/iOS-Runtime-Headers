@@ -3,7 +3,7 @@
  */
 
 @interface CHDPieSeries : CHDSeries {
-    int mExplosion;
+    int  mExplosion;
 }
 
 - (int)explosion;

@@ -3,8 +3,8 @@
  */
 
 @interface TSPCryptoTranscodeReadChannel : NSObject <TSUStreamReadChannel> {
-    <TSPMutableCryptoInfo> *_encryptionInfo;
-    <TSUStreamReadChannel> *_readChannel;
+    <TSPMutableCryptoInfo> * _encryptionInfo;
+    <TSUStreamReadChannel> * _readChannel;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,6 +14,7 @@
 
 - (void).cxx_destruct;
 - (void)close;
+- (id)init;
 - (id)initWithReadChannel:(id)arg1 decryptionInfo:(id)arg2 encryptionInfo:(id)arg3;
 - (void)readWithHandler:(id /* block */)arg1;
 

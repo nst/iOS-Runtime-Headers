@@ -5,9 +5,9 @@
 @interface CKDPMescalSessionInfoResponse : PBCodable <NSCopying> {
     struct { 
         unsigned int status : 1; 
-    } _has;
-    NSData *_sessionInfo;
-    int _status;
+    }  _has;
+    NSData * _sessionInfo;
+    int  _status;
 }
 
 @property (nonatomic, readonly) BOOL hasSessionInfo;

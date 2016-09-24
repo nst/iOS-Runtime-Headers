@@ -3,7 +3,7 @@
  */
 
 @interface _MKMapItemPhotosAttribution : _MKMapItemAttribution {
-    GEOMapItemPhotosAttribution *_geoPhotosAttribution;
+    GEOMapItemPhotosAttribution * _geoPhotosAttribution;
 }
 
 @property (nonatomic, readonly) NSArray *addPhotoURLs;

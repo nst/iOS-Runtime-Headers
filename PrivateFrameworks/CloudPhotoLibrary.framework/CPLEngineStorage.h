@@ -3,10 +3,10 @@
  */
 
 @interface CPLEngineStorage : NSObject <CPLAbstractObject> {
-    CPLEngineStore *_engineStore;
-    NSString *_name;
-    CPLPlatformObject *_platformObject;
-    BOOL _superWasCalled;
+    CPLEngineStore * _engineStore;
+    NSString * _name;
+    CPLPlatformObject * _platformObject;
+    BOOL  _superWasCalled;
 }
 
 @property (readonly, copy) NSString *debugDescription;

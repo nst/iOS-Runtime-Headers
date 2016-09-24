@@ -3,12 +3,12 @@
  */
 
 @interface NNMKProtoMessageDeletions : PBCodable <NSCopying> {
-    NSData *_dateSynced;
-    unsigned int _fullSyncVersion;
+    NSData * _dateSynced;
+    unsigned int  _fullSyncVersion;
     struct { 
         unsigned int fullSyncVersion : 1; 
-    } _has;
-    NSMutableArray *_messageDeletions;
+    }  _has;
+    NSMutableArray * _messageDeletions;
 }
 
 @property (nonatomic, retain) NSData *dateSynced;

@@ -8,11 +8,11 @@
         unsigned int minute : 1; 
         unsigned int second : 1; 
         unsigned int weekday : 1; 
-    } _has;
-    int _hour;
-    int _minute;
-    int _second;
-    int _weekday;
+    }  _has;
+    int  _hour;
+    int  _minute;
+    int  _second;
+    int  _weekday;
 }
 
 @property (nonatomic) BOOL hasHour;

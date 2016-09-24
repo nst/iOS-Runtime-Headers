@@ -3,16 +3,17 @@
  */
 
 @interface PUVideoEditMaker : NSObject {
-    id /* block */ __exportCompletionBlock;
-    id /* block */ __exportProgressBlock;
-    NSTimer *__exportProgressTimer;
-    PUVideoEditMakerOptions *__makerOptions;
-    NSString *__outputFilePath;
-    AVAssetExportSession *__trimExportSession;
-    PFVideoAdjustments *__videoAdjustments;
-    PHAsset *__videoAsset;
-    PUVideoEditModel *__videoEditModel;
-    BOOL _isExportInProgress;
+    id /* block */  __exportCompletionBlock;
+    id /* block */  __exportProgressBlock;
+    NSTimer * __exportProgressTimer;
+    PUVideoEditMakerOptions * __makerOptions;
+    NSString * __outputFilePath;
+    AVAssetExportSession * __trimExportSession;
+    PFVideoAdjustments * __videoAdjustments;
+    <PUEditableAsset> * __videoAsset;
+    PUVideoEditModel * __videoEditModel;
+    PUMediaDestination * __videoMediaDestination;
+    BOOL  _isExportInProgress;
 }
 
 @property (setter=_setExportCompletionBlock:, nonatomic, copy) id /* block */ _exportCompletionBlock;
@@ -22,8 +23,9 @@
 @property (setter=_setOutputFilePath:, nonatomic, retain) NSString *_outputFilePath;
 @property (setter=_setTrimExportSession:, nonatomic, retain) AVAssetExportSession *_trimExportSession;
 @property (setter=_setVideoAdjustments:, nonatomic, retain) PFVideoAdjustments *_videoAdjustments;
-@property (nonatomic, readonly) PHAsset *_videoAsset;
+@property (nonatomic, readonly) <PUEditableAsset> *_videoAsset;
 @property (nonatomic, readonly) PUVideoEditModel *_videoEditModel;
+@property (nonatomic, readonly) PUMediaDestination *_videoMediaDestination;
 
 + (BOOL)canTrimAssetInPlace:(id)arg1;
 
@@ -52,8 +54,9 @@
 - (id)_videoAdjustments;
 - (id)_videoAsset;
 - (id)_videoEditModel;
+- (id)_videoMediaDestination;
 - (void)exportVideowithOptions:(id)arg1 progressHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
 - (id)init;
-- (id)initWithAsset:(id)arg1 videoEditModel:(id)arg2;
+- (id)initWithAsset:(id)arg1 mediaDestination:(id)arg2 editModel:(id)arg3;
 
 @end

@@ -3,11 +3,11 @@
  */
 
 @interface CKDPAssetsToDownload : PBCodable <NSCopying> {
-    BOOL _allAssets;
-    CKDPRequestedFields *_assetFields;
+    BOOL  _allAssets;
+    CKDPRequestedFields * _assetFields;
     struct { 
         unsigned int allAssets : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic) BOOL allAssets;

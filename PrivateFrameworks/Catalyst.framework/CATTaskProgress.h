@@ -3,16 +3,16 @@
  */
 
 @interface CATTaskProgress : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
-    NSUUID *_UUID;
-    int _completedUnitCount;
-    NSError *_error;
-    BOOL _isCancelable;
-    BOOL _isCanceled;
-    unsigned int _phase;
-    NSString *_requestClassName;
-    id _resultObject;
-    int _totalUnitCount;
-    NSDictionary *_userInfo;
+    NSUUID * _UUID;
+    int  _completedUnitCount;
+    NSError * _error;
+    BOOL  _isCancelable;
+    BOOL  _isCanceled;
+    unsigned int  _phase;
+    NSString * _requestClassName;
+    id  _resultObject;
+    int  _totalUnitCount;
+    NSDictionary * _userInfo;
 }
 
 @property (nonatomic, copy) NSUUID *UUID;

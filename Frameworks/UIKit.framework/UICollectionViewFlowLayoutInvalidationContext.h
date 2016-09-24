@@ -6,7 +6,7 @@
     struct { 
         unsigned int invalidateDelegateMetrics : 1; 
         unsigned int invalidateAttributes : 1; 
-    } _flowLayoutInvalidationFlags;
+    }  _flowLayoutInvalidationFlags;
 }
 
 @property (nonatomic) BOOL invalidateFlowLayoutAttributes;

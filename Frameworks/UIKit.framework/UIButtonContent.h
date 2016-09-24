@@ -3,14 +3,14 @@
  */
 
 @interface UIButtonContent : NSObject <NSCoding, NSCopying> {
-    NSAttributedString *attributedTitle;
-    UIImage *background;
-    NSNumber *drawingStroke;
-    UIImage *image;
-    UIColor *imageColor;
-    UIColor *shadowColor;
-    NSString *title;
-    UIColor *titleColor;
+    NSAttributedString * attributedTitle;
+    UIImage * background;
+    NSNumber * drawingStroke;
+    UIImage * image;
+    UIColor * imageColor;
+    UIColor * shadowColor;
+    NSString * title;
+    UIColor * titleColor;
 }
 
 @property (nonatomic, retain) NSAttributedString *attributedTitle;

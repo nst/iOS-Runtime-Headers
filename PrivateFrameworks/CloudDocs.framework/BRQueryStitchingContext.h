@@ -3,11 +3,11 @@
  */
 
 @interface BRQueryStitchingContext : NSObject {
-    BRQuery *_query;
-    BRNotificationReceiver *_receiver;
+    BRQuery * _query;
+    BRNotificationReceiver * _receiver;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithQuery:(id)arg1;
 - (void)performAsyncOnReceiver:(id /* block */)arg1;
 

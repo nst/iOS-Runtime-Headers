@@ -3,7 +3,7 @@
  */
 
 @interface TSPSnappyReadChannel : NSObject <TSUStreamReadChannel> {
-    <TSUStreamReadChannel> *_readChannel;
+    <TSUStreamReadChannel> * _readChannel;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,36 +3,36 @@
  */
 
 @interface MusicMediaProfileDetailViewController : MusicMediaDetailViewController <MusicClientContextConsuming, MusicJSNativeViewControllerFactory, MusicJSProfileNativeViewControllerDelegate, MusicMediaProfileHeaderContentViewControllerDelegate, SKUIModalSourceViewProvider, UIViewControllerRestoration> {
-    MPMediaItemCollection *_artistMediaItemCollection;
-    MPArtworkCatalog *_artworkCatalog;
-    MusicClientContext *_clientContext;
-    <MusicEntityProviding> *_containerEntityProvider;
-    MusicEntityValueContext *_containerEntityValueContext;
-    BOOL _didDispatchLoadEvent;
-    NSString *_followerCountText;
-    NSString *_followersText;
-    BOOL _hasDetailTintInformation;
-    BOOL _isAdminEnabled;
-    BOOL _isAlbumArtist;
-    BOOL _isExpectingRelatedContentDocument;
-    BOOL _isUsingHeaderLockupProfileImage;
-    BOOL _isUsingUberArtistHeroImage;
-    BOOL _isWaitingToPushMoreRelatedContentView;
-    NSArray *_jsVisibleSegments;
-    BOOL _needsArtworkCatalogUpdate;
-    BOOL _needsColorAnalysisUpdate;
-    int _numberOfFollowers;
-    NSMutableArray *_pendingTintInformationDispatchEvents;
+    MPMediaItemCollection * _artistMediaItemCollection;
+    MPArtworkCatalog * _artworkCatalog;
+    MusicClientContext * _clientContext;
+    <MusicEntityProviding> * _containerEntityProvider;
+    MusicEntityValueContext * _containerEntityValueContext;
+    BOOL  _didDispatchLoadEvent;
+    NSString * _followerCountText;
+    NSString * _followersText;
+    BOOL  _hasDetailTintInformation;
+    BOOL  _isAdminEnabled;
+    BOOL  _isAlbumArtist;
+    BOOL  _isExpectingRelatedContentDocument;
+    BOOL  _isUsingHeaderLockupProfileImage;
+    BOOL  _isUsingUberArtistHeroImage;
+    BOOL  _isWaitingToPushMoreRelatedContentView;
+    NSArray * _jsVisibleSegments;
+    BOOL  _needsArtworkCatalogUpdate;
+    BOOL  _needsColorAnalysisUpdate;
+    int  _numberOfFollowers;
+    NSMutableArray * _pendingTintInformationDispatchEvents;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _previousMaximumHeaderSize;
-    unsigned int _profileType;
-    UIViewController *_relatedContentViewController;
-    NSString *_segmentIdentifierNeedingContent;
-    BOOL _sharingHidden;
-    BOOL _socialHidden;
-    NSNumber *_storeAdamID;
+        double width; 
+        double height; 
+    }  _previousMaximumHeaderSize;
+    unsigned int  _profileType;
+    UIViewController * _relatedContentViewController;
+    NSString * _segmentIdentifierNeedingContent;
+    BOOL  _sharingHidden;
+    BOOL  _socialHidden;
+    NSNumber * _storeAdamID;
 }
 
 @property (nonatomic, retain) MusicClientContext *clientContext;
@@ -91,7 +91,7 @@
 - (void)mediaProfileHeaderContentViewController:(id)arg1 didSelectContextualActionsButton:(id)arg2;
 - (void)mediaProfileHeaderContentViewController:(id)arg1 didSelectEditButton:(id)arg2;
 - (void)mediaProfileHeaderContentViewController:(id)arg1 didSelectShareButton:(id)arg2;
-- (void)mediaProfileHeaderContentViewController:(id)arg1 didUpdateFollowingState:(BOOL)arg2 forStoreID:(long long)arg3;
+- (void)mediaProfileHeaderContentViewController:(id)arg1 didUpdateFollowingState:(BOOL)arg2 forStoreID:(int)arg3;
 - (void)mediaProfileHeaderContentViewControllerDidSelectProfileTitle:(id)arg1;
 - (void)mediaProfileSplitMainViewController:(id)arg1 needsContentForSegmentWithIdentifier:(id)arg2;
 - (void)mediaProfileSplitMainViewControllerSegmentedControlVisibleDidChange:(id)arg1;

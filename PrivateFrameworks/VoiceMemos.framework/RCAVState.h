@@ -3,8 +3,8 @@
  */
 
 @interface RCAVState : NSObject <NSCopying, NSSecureCoding> {
-    int _AVCaptureState;
-    int _AVPreviewState;
+    int  _AVCaptureState;
+    int  _AVPreviewState;
 }
 
 @property (nonatomic) int AVCaptureState;

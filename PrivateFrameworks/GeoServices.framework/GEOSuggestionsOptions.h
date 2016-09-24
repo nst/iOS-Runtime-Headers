@@ -3,18 +3,18 @@
  */
 
 @interface GEOSuggestionsOptions : PBCodable <NSCopying> {
-    int _entriesType;
+    int  _entriesType;
     struct { 
         unsigned int entriesType : 1; 
         unsigned int listType : 1; 
         unsigned int includeRankingFeatures : 1; 
         unsigned int normalizePOIs : 1; 
-    } _has;
-    BOOL _includeRankingFeatures;
-    int _listType;
-    BOOL _normalizePOIs;
-    NSData *_suggestionEntryMetadata;
-    NSData *_suggestionMetadata;
+    }  _has;
+    BOOL  _includeRankingFeatures;
+    int  _listType;
+    BOOL  _normalizePOIs;
+    NSData * _suggestionEntryMetadata;
+    NSData * _suggestionMetadata;
 }
 
 @property (nonatomic) int entriesType;
@@ -30,12 +30,15 @@
 @property (nonatomic, retain) NSData *suggestionEntryMetadata;
 @property (nonatomic, retain) NSData *suggestionMetadata;
 
+- (int)StringAsEntriesType:(id)arg1;
+- (int)StringAsListType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)entriesType;
+- (id)entriesTypeAsString:(int)arg1;
 - (BOOL)hasEntriesType;
 - (BOOL)hasIncludeRankingFeatures;
 - (BOOL)hasListType;
@@ -46,6 +49,7 @@
 - (BOOL)includeRankingFeatures;
 - (BOOL)isEqual:(id)arg1;
 - (int)listType;
+- (id)listTypeAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)normalizePOIs;
 - (BOOL)readFrom:(id)arg1;

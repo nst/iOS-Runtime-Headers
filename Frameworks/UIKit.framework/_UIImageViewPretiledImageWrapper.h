@@ -3,8 +3,8 @@
  */
 
 @interface _UIImageViewPretiledImageWrapper : NSObject {
-    _UIImageViewPretiledImageCacheKey *_cacheKey;
-    UIImage *_pretiledImage;
+    _UIImageViewPretiledImageCacheKey * _cacheKey;
+    UIImage * _pretiledImage;
 }
 
 @property (nonatomic, readonly) UIImage *pretiledImage;

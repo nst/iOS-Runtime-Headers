@@ -2,9 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSKArchivedDocumentSelection : TSPObject <TSKArchivedSelection> {
-    TSKDocumentSelection *mSelection;
-}
+@interface TSKArchivedDocumentSelection : TSPObject <TSKArchivedSelection>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -12,7 +10,6 @@
 @property (nonatomic, retain) TSKSelection *selection;
 @property (readonly) Class superclass;
 
-- (void)dealloc;
 - (id)description;
 - (id)initFromUnarchiver:(id)arg1;
 - (void)saveToArchiver:(id)arg1;

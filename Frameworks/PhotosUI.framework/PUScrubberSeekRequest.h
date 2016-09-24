@@ -3,9 +3,9 @@
  */
 
 @interface PUScrubberSeekRequest : NSObject {
-    AVPlayer *_avPlayer;
-    NSDate *_dateCreated;
-    double _seekTime;
+    AVPlayer * _avPlayer;
+    NSDate * _dateCreated;
+    double  _seekTime;
 }
 
 @property (nonatomic) AVPlayer *avPlayer;

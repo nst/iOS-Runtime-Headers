@@ -3,8 +3,8 @@
  */
 
 @interface GEOPDLocalizedSpokenStructuredAddress : PBCodable <NSCopying> {
-    NSString *_language;
-    GEOStructuredAddress *_spokenStructuredAddress;
+    NSString * _language;
+    GEOStructuredAddress * _spokenStructuredAddress;
 }
 
 @property (nonatomic, readonly) BOOL hasLanguage;

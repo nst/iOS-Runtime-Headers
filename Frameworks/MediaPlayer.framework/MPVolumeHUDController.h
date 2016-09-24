@@ -3,8 +3,8 @@
  */
 
 @interface MPVolumeHUDController : NSObject {
-    NSMutableSet *_categories;
-    NSMutableArray *_contexts;
+    NSMutableSet * _categories;
+    NSMutableArray * _contexts;
 }
 
 @property (nonatomic, readonly) id mainContext;

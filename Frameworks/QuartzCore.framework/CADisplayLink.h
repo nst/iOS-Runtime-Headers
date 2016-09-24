@@ -3,13 +3,19 @@
  */
 
 @interface CADisplayLink : NSObject {
-    void *_impl;
+    void * _impl;
 }
 
 @property (nonatomic, readonly) CADisplay *display;
 @property (nonatomic, readonly) double duration;
 @property (nonatomic) int frameInterval;
+@property (nonatomic, readonly) double heartbeatRate;
+@property (nonatomic, readonly) double maximumRefreshRate;
+@property (nonatomic, readonly) int minimumFrameDuration;
+@property (nonatomic, readonly) double minimumRefreshRate;
 @property (getter=isPaused, nonatomic) BOOL paused;
+@property (nonatomic) int preferredFramesPerSecond;
+@property (nonatomic, readonly) double targetTimestamp;
 @property (nonatomic, readonly) double timestamp;
 @property (nonatomic, retain) id userInfo;
 
@@ -18,18 +24,27 @@
 + (id)displayLinkWithDisplay:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 + (id)displayLinkWithTarget:(id)arg1 selector:(SEL)arg2;
 
-- (id)_initWithDisplayLinkItem:(struct DisplayLinkItem { struct Display {} *x1; void *x2; SEL x3; void *x4; int x5; struct Mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_6_1_1; } x6; struct Condition { struct _opaque_pthread_cond_t { long x_1_2_1; BOOL x_1_2_2[24]; } x_7_1_1; } x7; struct _opaque_pthread_t {} *x8; id x9; /* Warning: Unrecognized filer type: 'R' using 'void*' */ void*x10; void*x11; float x12; void*x13; unsigned char x14; SEL x15; SEL x16; long doublex17; int x18; short x19; void*x20; long x21; void*x22; void*x23; SEL x24; SEL x25; long doublex26; int x27; short x28; void*x29; long x30; void*x31; void*x32; unsigned long x33; int x34; in void*x35; void*x36; void*x37; struct DisplayLink {} *x38; }*)arg1;
+- (id)_initWithDisplayLinkItem:(struct DisplayLinkItem { struct Display {} *x1; void *x2; SEL x3; void *x4; int x5; int x6; int x7; struct Mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_8_1_1; } x8; struct Condition { struct _opaque_pthread_cond_t { long x_1_2_1; BOOL x_1_2_2[24]; } x_9_1_1; } x9; struct _opaque_pthread_t {} *x10; id x11; /* Warning: Unrecognized filer type: 'R' using 'void*' */ void*x12; void*x13; double x14; void*x15; unsigned char x16; SEL x17; SEL x18; long doublex19; int x20; short x21; void*x22; long x23; void*x24; void*x25; SEL x26; SEL x27; long doublex28; int x29; short x30; void*x31; long x32; void*x33; void*x34; unsigned long x35; int x36; in void*x37; void*x38; void*x39; struct DisplayLink {} *x40; }*)arg1;
 - (void)addToRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)dealloc;
 - (id)display;
 - (double)duration;
 - (int)frameInterval;
+- (double)heartbeatRate;
 - (void)invalidate;
 - (BOOL)isPaused;
+- (double)maximumRefreshRate;
+- (int)minimumFrameDuration;
+- (double)minimumRefreshRate;
+- (float)preferredFrameRate;
+- (int)preferredFramesPerSecond;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)setFrameInterval:(int)arg1;
 - (void)setPaused:(BOOL)arg1;
+- (void)setPreferredFrameRate:(float)arg1;
+- (void)setPreferredFramesPerSecond:(int)arg1;
 - (void)setUserInfo:(id)arg1;
+- (double)targetTimestamp;
 - (double)timestamp;
 - (id)userInfo;
 

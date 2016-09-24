@@ -5,10 +5,10 @@
 @interface TSPFileDataStorage : TSPStreamDataStorage
 
 - (id)AVAssetWithOptions:(id)arg1 forData:(id)arg2;
-- (id)bookmarkDataWithOptions:(unsigned int)arg1;
-- (unsigned long long)encodedLength;
+- (unsigned int)encodedLength;
 - (BOOL)isReadable;
 - (void)performIOChannelReadWithAccessor:(id /* block */)arg1;
+- (void)performReadOnBookmarkDataSourceURLWithAccessor:(id /* block */)arg1;
 - (void)performReadWithAccessor:(id /* block */)arg1;
 
 @end

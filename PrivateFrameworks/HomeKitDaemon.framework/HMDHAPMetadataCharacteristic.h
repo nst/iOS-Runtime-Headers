@@ -3,8 +3,8 @@
  */
 
 @interface HMDHAPMetadataCharacteristic : NSObject <NSSecureCoding> {
-    HAPMetadataCharacteristic *_hapCharacteristicMetadata;
-    HMDHAPMetadataCharacteristicValue *_valueMetadata;
+    HAPMetadataCharacteristic * _hapCharacteristicMetadata;
+    HMDHAPMetadataCharacteristicValue * _valueMetadata;
 }
 
 @property (nonatomic, retain) HAPMetadataCharacteristic *hapCharacteristicMetadata;

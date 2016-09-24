@@ -3,9 +3,9 @@
  */
 
 @interface CAMBufferKeyValueObserverObservanceChange : CAMBufferObservanceChange {
-    NSDictionary *_change;
-    NSString *_keyPath;
-    NSObject *_object;
+    NSDictionary * _change;
+    NSString * _keyPath;
+    NSObject * _object;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *change;

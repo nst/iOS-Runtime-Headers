@@ -3,8 +3,8 @@
  */
 
 @interface BRFieldXattr : PBCodable <NSCopying> {
-    NSString *_name;
-    NSData *_value;
+    NSString * _name;
+    NSData * _value;
 }
 
 @property (nonatomic, retain) NSString *name;

@@ -2,17 +2,17 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDHomeAssistantOperation : NSObject <HAPTimerDelegate> {
-    NSSet *_accessoriesToOperateOn;
-    HAPTimer *_accessoryConnectivityWaitTimer;
-    id /* block */ _completionHandler;
-    BOOL _completionHandlerCalled;
-    NSMutableSet *_reachableAccessoriesToOperateOn;
-    NSObject<OS_dispatch_queue> *_workQueue;
+@interface HMDHomeAssistantOperation : NSObject <HMFTimerDelegate> {
+    NSSet * _accessoriesToOperateOn;
+    HMFTimer * _accessoryConnectivityWaitTimer;
+    id /* block */  _completionHandler;
+    BOOL  _completionHandlerCalled;
+    NSMutableSet * _reachableAccessoriesToOperateOn;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic, readonly) NSSet *accessoriesToOperateOn;
-@property (nonatomic, readonly) HAPTimer *accessoryConnectivityWaitTimer;
+@property (nonatomic, readonly) HMFTimer *accessoryConnectivityWaitTimer;
 @property (nonatomic, copy) id /* block */ completionHandler;
 @property (nonatomic) BOOL completionHandlerCalled;
 @property (readonly, copy) NSString *debugDescription;

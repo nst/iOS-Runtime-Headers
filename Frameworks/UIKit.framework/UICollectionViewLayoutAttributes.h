@@ -3,73 +3,73 @@
  */
 
 @interface UICollectionViewLayoutAttributes : NSObject <NSCopying, UIDynamicItem> {
-    float _alpha;
+    double  _alpha;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _center;
-    NSString *_elementKind;
+        double x; 
+        double y; 
+    }  _center;
+    NSString * _elementKind;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _frame;
-    NSIndexPath *_indexPath;
-    NSString *_isCloneString;
+    }  _frame;
+    NSIndexPath * _indexPath;
+    NSString * _isCloneString;
     struct { 
         unsigned int isCellKind : 1; 
         unsigned int isDecorationView : 1; 
         unsigned int isHidden : 1; 
         unsigned int isClone : 1; 
-    } _layoutFlags;
-    NSString *_reuseIdentifier;
+    }  _layoutFlags;
+    NSString * _reuseIdentifier;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _size;
+        double width; 
+        double height; 
+    }  _size;
     struct CATransform3D { 
-        float m11; 
-        float m12; 
-        float m13; 
-        float m14; 
-        float m21; 
-        float m22; 
-        float m23; 
-        float m24; 
-        float m31; 
-        float m32; 
-        float m33; 
-        float m34; 
-        float m41; 
-        float m42; 
-        float m43; 
-        float m44; 
-    } _transform;
-    int _zIndex;
+        double m11; 
+        double m12; 
+        double m13; 
+        double m14; 
+        double m21; 
+        double m22; 
+        double m23; 
+        double m24; 
+        double m31; 
+        double m32; 
+        double m33; 
+        double m34; 
+        double m41; 
+        double m42; 
+        double m43; 
+        double m44; 
+    }  _transform;
+    int  _zIndex;
 }
 
-@property (nonatomic) float alpha;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
-@property (nonatomic) struct CGPoint { float x1; float x2; } center;
+@property (nonatomic) double alpha;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
+@property (nonatomic) struct CGPoint { double x1; double x2; } center;
 @property (nonatomic, readonly) UIBezierPath *collisionBoundingPath;
 @property (nonatomic, readonly) unsigned int collisionBoundsType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } frame;
 @property (readonly) unsigned int hash;
 @property (getter=isHidden, nonatomic) BOOL hidden;
 @property (nonatomic, retain) NSIndexPath *indexPath;
 @property (nonatomic, readonly) unsigned int representedElementCategory;
 @property (nonatomic, readonly) NSString *representedElementKind;
-@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic) struct CGSize { double x1; double x2; } size;
 @property (readonly) Class superclass;
-@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
-@property (nonatomic) struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; } transform3D;
+@property (nonatomic) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } transform;
+@property (nonatomic) struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; } transform3D;
 @property (nonatomic) int zIndex;
 
 + (id)layoutAttributesForCellWithIndexPath:(id)arg1;
@@ -91,11 +91,11 @@
 - (void)_setIsClone:(BOOL)arg1;
 - (void)_setReuseIdentifier:(id)arg1;
 - (float)alpha;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (struct CGPoint { float x1; float x2; })center;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
+- (struct CGPoint { double x1; double x2; })center;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frame;
 - (unsigned int)hash;
 - (id)indexPath;
 - (id)init;
@@ -105,18 +105,18 @@
 - (unsigned int)representedElementCategory;
 - (id)representedElementKind;
 - (void)setAlpha:(float)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setHidden:(BOOL)arg1;
 - (void)setIndexPath:(id)arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setTransform3D:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg1;
-- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setTransform3D:(struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })arg1;
+- (void)setTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (void)setZIndex:(int)arg1;
-- (struct CGSize { float x1; float x2; })size;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
-- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })transform3D;
+- (struct CGSize { double x1; double x2; })size;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transform;
+- (struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })transform3D;
 - (int)zIndex;
 
 @end

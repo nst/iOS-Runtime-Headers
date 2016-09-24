@@ -3,8 +3,8 @@
  */
 
 @interface ACUILinkButtonFooterView : UIView <PSHeaderFooterView> {
-    int _desiredTextAlignment;
-    ACUILinkButton *_linkButton;
+    int  _desiredTextAlignment;
+    ACUILinkButton * _linkButton;
 }
 
 @property (nonatomic) int alignment;

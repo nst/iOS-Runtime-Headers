@@ -3,15 +3,15 @@
  */
 
 @interface ABPopoverManager : NSObject <UIActionSheetDelegate, UIPopoverControllerDelegate> {
-    UIActionSheet *_autorotateActionSheet;
-    UIBarButtonItem *_autorotateBarButtonItem;
-    unsigned int _autorotateDirections;
-    UIPopoverController *_autorotatePopoverController;
-    UIResponder *_autorotateResponder;
-    UIView *_autorotateView;
-    id _realDelegate;
-    <ABPopoverRepresentDelegate> *_representDelegate;
-    BOOL _rotating;
+    UIActionSheet * _autorotateActionSheet;
+    UIBarButtonItem * _autorotateBarButtonItem;
+    unsigned int  _autorotateDirections;
+    UIPopoverController * _autorotatePopoverController;
+    UIResponder * _autorotateResponder;
+    UIView * _autorotateView;
+    id  _realDelegate;
+    <ABPopoverRepresentDelegate> * _representDelegate;
+    BOOL  _rotating;
 }
 
 @property (nonatomic, retain) UIActionSheet *autorotateActionSheet;
@@ -31,15 +31,15 @@
 + (void)actionSheet:(id)arg1 dismissWithClickedButtonIndex:(int)arg2 animated:(BOOL)arg3;
 + (void)actionSheet:(id)arg1 showFromBarButtonItem:(id)arg2 animated:(BOOL)arg3;
 + (void)actionSheet:(id)arg1 showFromBarButtonItem:(id)arg2 animated:(BOOL)arg3 autorotate:(BOOL)arg4;
-+ (void)actionSheet:(id)arg1 showFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inView:(id)arg3 animated:(BOOL)arg4;
-+ (void)actionSheet:(id)arg1 showFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inView:(id)arg3 animated:(BOOL)arg4 direction:(unsigned int)arg5 autorotate:(BOOL)arg6;
-+ (void)actionSheet:(id)arg1 showFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inView:(id)arg3 direction:(unsigned int)arg4 animated:(BOOL)arg5;
++ (void)actionSheet:(id)arg1 showFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 inView:(id)arg3 animated:(BOOL)arg4;
++ (void)actionSheet:(id)arg1 showFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 inView:(id)arg3 animated:(BOOL)arg4 direction:(unsigned int)arg5 autorotate:(BOOL)arg6;
++ (void)actionSheet:(id)arg1 showFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 inView:(id)arg3 direction:(unsigned int)arg4 animated:(BOOL)arg5;
 + (void)actionSheet:(id)arg1 showFromView:(id)arg2 animated:(BOOL)arg3 autorotate:(BOOL)arg4;
 + (void)actionSheet:(id)arg1 showFromView:(id)arg2 animated:(BOOL)arg3 direction:(unsigned int)arg4 autorotate:(BOOL)arg5;
 + (void)dismissPopoverForActionSheet:(id)arg1;
 + (id)managerForPresenter:(id)arg1;
 + (void)popoverController:(id)arg1 dismissPopoverAnimated:(BOOL)arg2;
-+ (void)popoverController:(id)arg1 presentPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inView:(id)arg3 permittedArrowDirections:(unsigned int)arg4 animated:(BOOL)arg5;
++ (void)popoverController:(id)arg1 presentPopoverFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 inView:(id)arg3 permittedArrowDirections:(unsigned int)arg4 animated:(BOOL)arg5;
 + (void)popoverController:(id)arg1 presentPopoverFromView:(id)arg2 permittedArrowDirections:(unsigned int)arg3 animated:(BOOL)arg4 representDelegate:(id)arg5;
 + (void)removeManagerForPresenter:(id)arg1;
 + (BOOL)resignFirstResponderIfNeeded;

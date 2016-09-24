@@ -3,28 +3,28 @@
  */
 
 @interface ShadowInfo : NSObject {
-    UIColor *_color;
+    UIColor * _color;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _offset;
-    float _radius;
-    float _scale;
+        double width; 
+        double height; 
+    }  _offset;
+    double  _radius;
+    double  _scale;
 }
 
 @property (nonatomic, copy) UIColor *color;
-@property (nonatomic) struct CGSize { float x1; float x2; } offset;
-@property (nonatomic) float radius;
-@property (nonatomic) float scale;
+@property (nonatomic) struct CGSize { double x1; double x2; } offset;
+@property (nonatomic) double radius;
+@property (nonatomic) double scale;
 
 - (void).cxx_destruct;
 - (id)color;
-- (id)initWithColor:(id)arg1 radius:(float)arg2 offset:(struct CGSize { float x1; float x2; })arg3 scale:(float)arg4;
-- (struct CGSize { float x1; float x2; })offset;
+- (id)initWithColor:(id)arg1 radius:(float)arg2 offset:(struct CGSize { double x1; double x2; })arg3 scale:(float)arg4;
+- (struct CGSize { double x1; double x2; })offset;
 - (float)radius;
 - (float)scale;
 - (void)setColor:(id)arg1;
-- (void)setOffset:(struct CGSize { float x1; float x2; })arg1;
+- (void)setOffset:(struct CGSize { double x1; double x2; })arg1;
 - (void)setRadius:(float)arg1;
 - (void)setScale:(float)arg1;
 

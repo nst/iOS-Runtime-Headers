@@ -3,9 +3,9 @@
  */
 
 @interface _MKAppImageManagerContainer : NSObject {
-    id /* block */ _completionHandler;
-    NSMutableData *_data;
-    NSString *_urlString;
+    id /* block */  _completionHandler;
+    NSMutableData * _data;
+    NSString * _urlString;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;

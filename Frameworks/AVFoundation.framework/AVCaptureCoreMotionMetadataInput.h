@@ -3,7 +3,7 @@
  */
 
 @interface AVCaptureCoreMotionMetadataInput : AVCaptureInput {
-    AVCaptureCoreMotionMetadataInputInternal *_internal;
+    AVCaptureCoreMotionMetadataInputInternal * _internal;
 }
 
 @property (nonatomic, readonly) NSString *sourceID;

@@ -3,18 +3,19 @@
  */
 
 @interface NFContactlessPaymentEndEvent : NSObject <NSSecureCoding> {
-    NSDecimalNumber *_amount;
-    NFApplet *_applet;
-    NSString *_appletIdentifier;
-    unsigned short _command;
-    NSString *_currency;
-    BOOL _didError;
-    unsigned short _informative;
-    unsigned short _result;
-    unsigned short _status;
-    NSData *_tlv;
-    NSString *_transactionIdentifier;
-    unsigned short _type;
+    NSDecimalNumber * _amount;
+    NFApplet * _applet;
+    NSString * _appletIdentifier;
+    unsigned short  _command;
+    NSString * _currency;
+    BOOL  _didError;
+    NSDictionary * _felicaInfo;
+    unsigned short  _informative;
+    unsigned short  _result;
+    unsigned short  _status;
+    NSData * _tlv;
+    NSString * _transactionIdentifier;
+    unsigned short  _type;
 }
 
 @property (nonatomic, readonly) NSDecimalNumber *amount;
@@ -22,6 +23,7 @@
 @property (nonatomic, readonly) unsigned short command;
 @property (nonatomic, readonly) NSString *currency;
 @property (nonatomic, readonly) BOOL didError;
+@property (nonatomic, readonly) NSDictionary *felicaInfo;
 @property (nonatomic, readonly) unsigned short informative;
 @property (nonatomic, readonly) unsigned short result;
 @property (nonatomic, readonly) unsigned short status;
@@ -43,6 +45,7 @@
 - (id)description;
 - (BOOL)didError;
 - (void)encodeWithCoder:(id)arg1;
+- (id)felicaInfo;
 - (unsigned short)informative;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;

@@ -3,19 +3,21 @@
  */
 
 @interface GKLeaderboard : NSObject {
-    GKLeaderboardInternal *_internal;
-    int _loadingCount;
-    GKScore *_localPlayerScore;
-    int _lock;
-    int _playerScope;
-    NSArray *_players;
+    GKLeaderboardInternal * _internal;
+    int  _loadingCount;
+    GKScore * _localPlayerScore;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
+    int  _playerScope;
+    NSArray * _players;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
-    NSArray *_scores;
-    int _timeScope;
-    <GKLeaderboardDelegate> *_weakDelegate;
+    }  _range;
+    NSArray * _scores;
+    int  _timeScope;
+    <GKLeaderboardDelegate> * _weakDelegate;
 }
 
 @property (nonatomic, copy) NSString *category;
@@ -29,7 +31,7 @@
 @property (nonatomic) int loadingCount;
 @property (nonatomic, retain) GKScore *localPlayerScore;
 @property (nonatomic, readonly, retain) NSString *localizedTitle;
-@property (nonatomic) int lock;
+@property (nonatomic) struct os_unfair_lock_s { unsigned int x1; } lock;
 @property (nonatomic, readonly) unsigned int maxRange;
 @property (nonatomic, readonly) int overallRank;
 @property (nonatomic, readonly) int overallRankCount;
@@ -71,7 +73,7 @@
 - (void)loadScoresWithCompletionHandler:(id /* block */)arg1;
 - (int)loadingCount;
 - (id)localPlayerScore;
-- (int)lock;
+- (struct os_unfair_lock_s { unsigned int x1; })lock;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (int)playerScope;
 - (id)players;
@@ -83,7 +85,7 @@
 - (void)setInternal:(id)arg1;
 - (void)setLoadingCount:(int)arg1;
 - (void)setLocalPlayerScore:(id)arg1;
-- (void)setLock:(int)arg1;
+- (void)setLock:(struct os_unfair_lock_s { unsigned int x1; })arg1;
 - (void)setPlayerScope:(int)arg1;
 - (void)setPlayers:(id)arg1;
 - (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;

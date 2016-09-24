@@ -3,10 +3,10 @@
  */
 
 @interface SBKPushValueResponse : SBKResponse {
-    NSString *_conflictItemKey;
-    NSData *_conflictItemValuePayload;
-    NSString *_conflictItemVersionAnchor;
-    NSString *_domainVersion;
+    NSString * _conflictItemKey;
+    NSData * _conflictItemValuePayload;
+    NSString * _conflictItemVersionAnchor;
+    NSString * _domainVersion;
 }
 
 @property (readonly) NSString *conflictItemKey;

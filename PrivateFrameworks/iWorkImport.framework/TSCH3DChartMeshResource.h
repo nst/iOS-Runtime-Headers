@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DChartMeshResource : TSCH3DResource {
-    TSCH3DChartMeshSharedChildResource *mShared;
+    TSCH3DChartMeshSharedChildResource * mShared;
 }
 
 + (id)resourceWithSharedResource:(id)arg1;
@@ -16,6 +16,6 @@
 - (unsigned int)hash;
 - (id)initWithSharedResource:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (unsigned long long)uniqueIdentifier;
+- (unsigned int)uniqueIdentifier;
 
 @end

@@ -3,10 +3,10 @@
  */
 
 @interface CNiOSAddressBook : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSMutableSet *_addressBookPool;
-    id /* block */ _addressBookProvider;
-    NSObject<OS_dispatch_source> *_memoryMonitoringSource;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSMutableSet * _addressBookPool;
+    id /* block */  _addressBookProvider;
+    NSObject<OS_dispatch_source> * _memoryMonitoringSource;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *accessQueue;
@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_source> *memoryMonitoringSource;
 
 + (void)initialize;
-+ (void*)newAddressBookWithPath:(id)arg1;
++ (void*)newAddressBookWithEnvironment:(id)arg1;
 
 - (id)accessQueue;
 - (id)addressBookPool;
@@ -24,7 +24,7 @@
 - (void)flushPool;
 - (id)init;
 - (id)initWithAddressBookProvider:(id /* block */)arg1;
-- (id)initWithPath:(id)arg1;
+- (id)initWithContactsEnvironment:(id)arg1;
 - (id)memoryMonitoringSource;
 - (void)performAsynchronousWorkWithInvalidatedAddressBook:(id /* block */)arg1;
 - (void)performSynchronousWorkWithInvalidatedAddressBook:(id /* block */)arg1;

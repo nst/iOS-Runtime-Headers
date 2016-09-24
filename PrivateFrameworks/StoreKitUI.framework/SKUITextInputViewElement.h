@@ -3,10 +3,10 @@
  */
 
 @interface SKUITextInputViewElement : SKUIInputViewElement {
-    int _keyboardType;
-    int _maximumLength;
-    NSString *_placeholderText;
-    BOOL _secure;
+    int  _keyboardType;
+    int  _maximumLength;
+    NSString * _placeholderText;
+    BOOL  _secure;
 }
 
 @property (nonatomic, readonly) SKUIAnimatorDOMFeature *animationInterface;

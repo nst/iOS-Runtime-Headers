@@ -3,8 +3,8 @@
  */
 
 @interface SBKTransactionURLOperation : ISStoreURLOperation {
-    SBKRequest *_SBKRequest;
-    BOOL _shouldAuthenticate;
+    SBKRequest * _SBKRequest;
+    BOOL  _shouldAuthenticate;
 }
 
 @property (nonatomic, retain) SBKRequest *SBKRequest;

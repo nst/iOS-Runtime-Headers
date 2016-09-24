@@ -3,7 +3,7 @@
  */
 
 @interface DDRemoteActionHostViewController : _UIRemoteViewController {
-    <DDRemoteActionHostViewControllerDelegate> *_delegate;
+    <DDRemoteActionHostViewControllerDelegate> * _delegate;
 }
 
 @property <DDRemoteActionHostViewControllerDelegate> *delegate;

@@ -3,7 +3,7 @@
  */
 
 @interface AVAssetReaderSampleReferenceOutputInternal : NSObject {
-    AVAssetTrack *track;
+    AVAssetTrack * track;
 }
 
 @end

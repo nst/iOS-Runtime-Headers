@@ -3,18 +3,24 @@
  */
 
 @interface HMDTimerTrigger : HMDTrigger {
-    NSDate *_currentFireDate;
-    NSDate *_fireDate;
-    NSTimeZone *_fireDateTimeZone;
-    NSDateComponents *_fireRepeatInterval;
-    NSTimer *_timer;
-    NSString *_timerID;
+    NSDate * _currentFireDate;
+    NSDate * _fireDate;
+    NSTimeZone * _fireDateTimeZone;
+    NSDateComponents * _fireRepeatInterval;
+    NSArray * _recurrences;
+    NSString * _significantEvent;
+    NSDateComponents * _significantEventOffset;
+    NSTimer * _timer;
+    NSString * _timerID;
 }
 
 @property (nonatomic, retain) NSDate *currentFireDate;
 @property (nonatomic, copy) NSDate *fireDate;
 @property (nonatomic, copy) NSTimeZone *fireDateTimeZone;
 @property (nonatomic, copy) NSDateComponents *fireRepeatInterval;
+@property (nonatomic, copy) NSArray *recurrences;
+@property (nonatomic, copy) NSString *significantEvent;
+@property (nonatomic, copy) NSDateComponents *significantEventOffset;
 @property (nonatomic, retain) NSTimer *timer;
 @property (nonatomic, retain) NSString *timerID;
 
@@ -22,11 +28,23 @@
 + (id)validateWholeMinuteDate:(id)arg1 onCalendar:(id)arg2;
 
 - (void).cxx_destruct;
+- (void)_activateFireDateTrigger:(id*)arg1;
+- (void)_activateSignificantEventTrigger:(id*)arg1;
 - (void)_closestDatesForStartDate:(id)arg1 earliestDate:(id)arg2 timeZone:(id)arg3 deliveryRepeatInterval:(id)arg4 returnDateBefore:(id*)arg5 returnDateAfter:(id*)arg6;
+- (void)_disableTimer:(id)arg1;
 - (void)_handleUpdateTimerTriggerPropertiesRequest:(id)arg1;
 - (id)_nextFireDate;
+- (id)_nextSignificantEventFireDate;
+- (BOOL)_reactivateFireDateTrigger:(id)arg1;
+- (BOOL)_reactivateSignificantEventTrigger:(id)arg1;
+- (BOOL)_reactivateTrigger:(id)arg1;
+- (void)_reactiveTriggerAfterDelay;
 - (void)_registerForMessages;
+- (id)_serializeForAdd;
+- (BOOL)_shouldExecuteActionSet;
+- (void)_startTimer:(id)arg1;
 - (void)_startTimerWithFireDate:(id)arg1;
+- (void)_startTimerWithSignificantEventDate:(id)arg1;
 - (void)_stopTimer;
 - (void)_timerTriggered;
 - (void)activate:(BOOL)arg1 completionHandler:(id /* block */)arg2;
@@ -34,24 +52,39 @@
 - (void)configure:(id)arg1 messageDispatcher:(id)arg2 queue:(id)arg3;
 - (id)currentFireDate;
 - (void)dealloc;
+- (id)description;
+- (id)dumpState;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fireDate;
 - (id)fireDateTimeZone;
 - (id)fireRepeatInterval;
 - (id)getCalendar;
+- (id)getFireInterval;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithName:(id)arg1;
 - (id)initWithName:(id)arg1 fireDate:(id)arg2 timeZone:(id)arg3 recurrence:(id)arg4;
+- (id)initWithName:(id)arg1 fireDate:(id)arg2 timeZone:(id)arg3 recurrences:(id)arg4;
+- (id)initWithName:(id)arg1 significantEvent:(id)arg2 significantEventOffset:(id)arg3 recurrences:(id)arg4;
 - (void)invalidate;
 - (void)nsTimerTriggered:(id)arg1;
+- (id)recurrences;
 - (void)setCurrentFireDate:(id)arg1;
 - (void)setFireDate:(id)arg1;
 - (void)setFireDateTimeZone:(id)arg1;
 - (void)setFireRepeatInterval:(id)arg1;
+- (void)setRecurrences:(id)arg1;
+- (void)setSignificantEvent:(id)arg1;
+- (void)setSignificantEventOffset:(id)arg1;
 - (void)setTimer:(id)arg1;
 - (void)setTimerID:(id)arg1;
+- (id)significantEvent;
+- (id)significantEventOffset;
 - (id)timer;
 - (id)timerID;
 - (void)timerTriggered;
+- (unsigned int)triggerType;
 - (id)validateRecurrence:(id)arg1;
+- (id)validateRecurrences:(id)arg1;
+- (id)validateSignificantOffset:(id)arg1;
 
 @end

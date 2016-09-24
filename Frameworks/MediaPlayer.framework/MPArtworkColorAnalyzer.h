@@ -3,8 +3,8 @@
  */
 
 @interface MPArtworkColorAnalyzer : NSObject {
-    int _algorithm;
-    UIImage *_image;
+    int  _algorithm;
+    UIImage * _image;
 }
 
 @property (nonatomic, readonly) int algorithm;

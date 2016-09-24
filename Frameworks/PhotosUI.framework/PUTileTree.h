@@ -3,8 +3,8 @@
  */
 
 @interface PUTileTree : NSObject <NSCopying> {
-    NSMutableDictionary *__objectsByTileIdentifier;
-    BOOL _useUniqueLeafs;
+    NSMutableDictionary * __objectsByTileIdentifier;
+    BOOL  _useUniqueLeafs;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *_objectsByTileIdentifier;

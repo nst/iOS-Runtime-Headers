@@ -3,10 +3,10 @@
  */
 
 @interface _HKCFGParseContext : NSObject {
-    _HKCFGNodeCache *_cache;
-    unsigned int _lengthAllowance;
-    unsigned int _recursiveDepth;
-    NSScanner *_scanner;
+    _HKCFGNodeCache * _cache;
+    unsigned int  _lengthAllowance;
+    unsigned int  _recursiveDepth;
+    NSScanner * _scanner;
 }
 
 @property (nonatomic, readonly) _HKCFGNodeCache *cache;

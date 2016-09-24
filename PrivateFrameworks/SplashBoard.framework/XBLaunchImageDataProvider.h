@@ -3,8 +3,8 @@
  */
 
 @interface XBLaunchImageDataProvider : NSObject <XBSnapshotDataProvider> {
-    UIImage *_cachedImage;
-    XBDisplaySnapshot *_snapshot;
+    UIImage * _cachedImage;
+    XBDisplaySnapshot * _snapshot;
 }
 
 @property (nonatomic, readonly, retain) XBSnapshotDataProviderContext *context;

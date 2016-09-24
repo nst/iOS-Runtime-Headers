@@ -3,14 +3,14 @@
  */
 
 @interface MIPSong : PBCodable <NSCopying> {
-    MIPAlbum *_album;
-    MIPArtist *_artist;
-    int _audioFormat;
-    MIPArtist *_composer;
-    int _discNumber;
-    BOOL _excludeFromShuffle;
-    long long _geniusId;
-    MIPGenre *_genre;
+    MIPAlbum * _album;
+    MIPArtist * _artist;
+    int  _audioFormat;
+    MIPArtist * _composer;
+    int  _discNumber;
+    BOOL  _excludeFromShuffle;
+    int  _geniusId;
+    MIPGenre * _genre;
     struct { 
         unsigned int geniusId : 1; 
         unsigned int audioFormat : 1; 
@@ -20,13 +20,13 @@
         unsigned int userRating : 1; 
         unsigned int excludeFromShuffle : 1; 
         unsigned int hasVideo : 1; 
-    } _has;
-    BOOL _hasVideo;
-    NSString *_lyrics;
-    int _lyricsChecksum;
-    MIPPlaybackInfo *_playbackInfo;
-    int _trackNumber;
-    int _userRating;
+    }  _has;
+    BOOL  _hasVideo;
+    NSString * _lyrics;
+    int  _lyricsChecksum;
+    MIPPlaybackInfo * _playbackInfo;
+    int  _trackNumber;
+    int  _userRating;
 }
 
 @property (nonatomic, retain) MIPAlbum *album;
@@ -35,7 +35,7 @@
 @property (nonatomic, retain) MIPArtist *composer;
 @property (nonatomic) int discNumber;
 @property (nonatomic) BOOL excludeFromShuffle;
-@property (nonatomic) long long geniusId;
+@property (nonatomic) int geniusId;
 @property (nonatomic, retain) MIPGenre *genre;
 @property (nonatomic, readonly) BOOL hasAlbum;
 @property (nonatomic, readonly) BOOL hasArtist;
@@ -69,7 +69,7 @@
 - (id)dictionaryRepresentation;
 - (int)discNumber;
 - (BOOL)excludeFromShuffle;
-- (long long)geniusId;
+- (int)geniusId;
 - (id)genre;
 - (BOOL)hasAlbum;
 - (BOOL)hasArtist;
@@ -99,7 +99,7 @@
 - (void)setComposer:(id)arg1;
 - (void)setDiscNumber:(int)arg1;
 - (void)setExcludeFromShuffle:(BOOL)arg1;
-- (void)setGeniusId:(long long)arg1;
+- (void)setGeniusId:(int)arg1;
 - (void)setGenre:(id)arg1;
 - (void)setHasAudioFormat:(BOOL)arg1;
 - (void)setHasDiscNumber:(BOOL)arg1;

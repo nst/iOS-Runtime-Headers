@@ -3,7 +3,7 @@
  */
 
 @interface TSPUnknownFieldObjectReference : TSPUnknownField {
-    TSPLazyReferenceArray *_objects;
+    TSPLazyReferenceArray * _objects;
 }
 
 - (void).cxx_destruct;

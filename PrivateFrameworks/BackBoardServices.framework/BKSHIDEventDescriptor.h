@@ -3,7 +3,7 @@
  */
 
 @interface BKSHIDEventDescriptor : NSObject <NSSecureCoding> {
-    unsigned int _hidEventType;
+    unsigned int  _hidEventType;
 }
 
 @property (readonly) unsigned int hidEventType;

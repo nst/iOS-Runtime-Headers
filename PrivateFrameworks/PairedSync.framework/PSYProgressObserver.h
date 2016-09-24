@@ -3,12 +3,12 @@
  */
 
 @interface PSYProgressObserver : NSObject <PSYSyncSessionObserverDelegate> {
-    NSMutableSet *_completedInitialSyncPairingIDs;
-    PSYSyncSession *_currentSyncSession;
-    <PSYProgressObserverDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    NSObject<OS_dispatch_queue> *_internalQueue;
-    PSYSyncSessionObserver *_syncSessionObserver;
+    NSMutableSet * _completedInitialSyncPairingIDs;
+    PSYSyncSession * _currentSyncSession;
+    <PSYProgressObserverDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    NSObject<OS_dispatch_queue> * _internalQueue;
+    PSYSyncSessionObserver * _syncSessionObserver;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *activityErrors;

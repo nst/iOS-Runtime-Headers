@@ -3,7 +3,7 @@
  */
 
 @interface SEIDDetailsController : PSListController {
-    NSString *_SEIDString;
+    NSString * _SEIDString;
 }
 
 @property (nonatomic, retain) NSString *SEIDString;

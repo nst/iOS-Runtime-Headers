@@ -3,7 +3,7 @@
  */
 
 @interface SUTableView : UITableView {
-    BOOL _allowsHeaderAndFooterToFloat;
+    BOOL  _allowsHeaderAndFooterToFloat;
 }
 
 @property (nonatomic) BOOL allowsHeaderAndFooterToFloat;

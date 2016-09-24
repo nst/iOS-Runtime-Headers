@@ -3,44 +3,44 @@
  */
 
 @interface PUSwipeDownSettings : PUSettings {
-    float _downGestureToleranceAngle;
-    int _downMotionType;
-    float _downResistanceDistance;
-    int _horizontalMotionType;
-    float _horizontalResistanceDistance;
-    float _rotationHorizontalMotionFactor;
-    float _rotationHorizontalMotionHysteresisDistance;
-    float _rotationMaximumAngle;
-    BOOL _rotationOnHorizontalMotion;
-    BOOL _rotationOnVerticalMotion;
-    float _rotationVerticalMotionAngle;
-    float _rotationVerticalMotionResistanceDistance;
-    float _scaleDownDistance;
-    float _scaleDownFactor;
-    float _transitionDistance;
-    float _upGestureToleranceAngle;
-    int _upMotionType;
-    float _upResistanceDistance;
+    double  _downGestureToleranceAngle;
+    int  _downMotionType;
+    double  _downResistanceDistance;
+    int  _horizontalMotionType;
+    double  _horizontalResistanceDistance;
+    double  _rotationHorizontalMotionFactor;
+    double  _rotationHorizontalMotionHysteresisDistance;
+    double  _rotationMaximumAngle;
+    BOOL  _rotationOnHorizontalMotion;
+    BOOL  _rotationOnVerticalMotion;
+    double  _rotationVerticalMotionAngle;
+    double  _rotationVerticalMotionResistanceDistance;
+    double  _scaleDownDistance;
+    double  _scaleDownFactor;
+    double  _transitionDistance;
+    double  _upGestureToleranceAngle;
+    int  _upMotionType;
+    double  _upResistanceDistance;
 }
 
-@property (nonatomic) float downGestureToleranceAngle;
+@property (nonatomic) double downGestureToleranceAngle;
 @property (nonatomic) int downMotionType;
-@property (nonatomic) float downResistanceDistance;
+@property (nonatomic) double downResistanceDistance;
 @property (nonatomic) int horizontalMotionType;
-@property (nonatomic) float horizontalResistanceDistance;
-@property (nonatomic) float rotationHorizontalMotionFactor;
-@property (nonatomic) float rotationHorizontalMotionHysteresisDistance;
-@property (nonatomic) float rotationMaximumAngle;
+@property (nonatomic) double horizontalResistanceDistance;
+@property (nonatomic) double rotationHorizontalMotionFactor;
+@property (nonatomic) double rotationHorizontalMotionHysteresisDistance;
+@property (nonatomic) double rotationMaximumAngle;
 @property (nonatomic) BOOL rotationOnHorizontalMotion;
 @property (nonatomic) BOOL rotationOnVerticalMotion;
-@property (nonatomic) float rotationVerticalMotionAngle;
-@property (nonatomic) float rotationVerticalMotionResistanceDistance;
-@property (nonatomic) float scaleDownDistance;
-@property (nonatomic) float scaleDownFactor;
-@property (nonatomic) float transitionDistance;
-@property (nonatomic) float upGestureToleranceAngle;
+@property (nonatomic) double rotationVerticalMotionAngle;
+@property (nonatomic) double rotationVerticalMotionResistanceDistance;
+@property (nonatomic) double scaleDownDistance;
+@property (nonatomic) double scaleDownFactor;
+@property (nonatomic) double transitionDistance;
+@property (nonatomic) double upGestureToleranceAngle;
 @property (nonatomic) int upMotionType;
-@property (nonatomic) float upResistanceDistance;
+@property (nonatomic) double upResistanceDistance;
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;

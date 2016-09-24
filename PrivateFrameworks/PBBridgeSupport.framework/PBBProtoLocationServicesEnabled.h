@@ -3,7 +3,7 @@
  */
 
 @interface PBBProtoLocationServicesEnabled : PBCodable <NSCopying> {
-    BOOL _enabled;
+    BOOL  _enabled;
 }
 
 @property (nonatomic) BOOL enabled;

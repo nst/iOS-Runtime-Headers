@@ -3,11 +3,11 @@
  */
 
 @interface SKUISignInSettingsGroupController : SKUISettingsGroupController {
-    NSString *_accountName;
-    BOOL _authenticating;
-    NSMapTable *_keyMapping;
-    NSString *_password;
-    BOOL _valid;
+    NSString * _accountName;
+    BOOL  _authenticating;
+    NSMapTable * _keyMapping;
+    NSString * _password;
+    BOOL  _valid;
 }
 
 - (void).cxx_destruct;

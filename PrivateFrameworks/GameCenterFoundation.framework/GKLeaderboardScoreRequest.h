@@ -3,13 +3,13 @@
  */
 
 @interface GKLeaderboardScoreRequest : NSObject <NSSecureCoding> {
-    BOOL _friendsOnly;
-    NSString *_gameBundleID;
-    NSString *_groupIdentifier;
-    NSString *_identifier;
-    GKPlayerInternal *_playerInternal;
-    BOOL _prefetch;
-    int _timeScope;
+    BOOL  _friendsOnly;
+    NSString * _gameBundleID;
+    NSString * _groupIdentifier;
+    NSString * _identifier;
+    GKPlayerInternal * _playerInternal;
+    BOOL  _prefetch;
+    int  _timeScope;
 }
 
 @property (nonatomic) BOOL friendsOnly;

@@ -3,13 +3,15 @@
  */
 
 @interface CKDPQueryRetrieveResponse : PBCodable <NSCopying> {
-    NSData *_continuationMarker;
-    NSMutableArray *_queryResults;
+    NSData * _continuationMarker;
+    NSMutableArray * _queryResults;
 }
 
 @property (nonatomic, retain) NSData *continuationMarker;
 @property (nonatomic, readonly) BOOL hasContinuationMarker;
 @property (nonatomic, retain) NSMutableArray *queryResults;
+
++ (Class)queryResultsType;
 
 - (void).cxx_destruct;
 - (void)addQueryResults:(id)arg1;

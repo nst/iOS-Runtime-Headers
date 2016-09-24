@@ -3,13 +3,13 @@
  */
 
 @interface AXAccessQueueTimer : NSObject <AXAccessQueueTimer> {
-    AXAccessQueue *_accessQueue;
-    BOOL _accessQueueIsExternal;
-    BOOL _active;
-    BOOL _automaticallyCancelPendingBlockUponSchedulingNewBlock;
-    NSObject<OS_dispatch_source> *_dispatchTimer;
-    NSString *_label;
-    int _state;
+    AXAccessQueue * _accessQueue;
+    BOOL  _accessQueueIsExternal;
+    BOOL  _active;
+    BOOL  _automaticallyCancelPendingBlockUponSchedulingNewBlock;
+    NSObject<OS_dispatch_source> * _dispatchTimer;
+    NSString * _label;
+    int  _state;
 }
 
 @property (nonatomic, retain) AXAccessQueue *accessQueue;
@@ -25,7 +25,6 @@
 @property (nonatomic) int state;
 @property (readonly) Class superclass;
 
-+ (void)initialize;
 + (id)timerTargettingMainAccessQueue;
 
 - (void)_afterDelay:(double)arg1 processBlock:(id /* block */)arg2 shouldTreatAsWritingBlock:(BOOL)arg3;

@@ -3,9 +3,9 @@
  */
 
 @interface SKUICompletion : NSObject <SKUICacheCoding> {
-    NSString *_URLString;
-    NSString *_alternateTitle;
-    NSString *_title;
+    NSString * _URLString;
+    NSString * _alternateTitle;
+    NSString * _title;
 }
 
 @property (nonatomic, readonly) NSString *URLString;

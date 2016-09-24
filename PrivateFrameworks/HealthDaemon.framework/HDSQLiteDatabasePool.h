@@ -3,19 +3,19 @@
  */
 
 @interface HDSQLiteDatabasePool : NSObject <HDDiagnosticObject> {
-    int _backgroundReadersWaiting;
-    NSMutableSet *_cache;
-    unsigned int _cacheGeneration;
-    NSObject<OS_dispatch_queue> *_cacheQueue;
-    unsigned int _cacheSize;
-    NSMapTable *_checkoutMap;
-    NSObject<OS_dispatch_queue> *_checkoutQueue;
-    <HDSQLiteDatabasePoolDelegate> *_delegate;
-    unsigned int _maxConcurrentBackgroundReaders;
-    unsigned int _maxConcurrentWriters;
-    NSObject<OS_dispatch_semaphore> *_readerSemaphore;
-    NSObject<OS_dispatch_semaphore> *_writerSemaphore;
-    int _writersWaiting;
+    int  _backgroundReadersWaiting;
+    NSMutableSet * _cache;
+    unsigned int  _cacheGeneration;
+    NSObject<OS_dispatch_queue> * _cacheQueue;
+    unsigned int  _cacheSize;
+    NSMapTable * _checkoutMap;
+    NSObject<OS_dispatch_queue> * _checkoutQueue;
+    <HDSQLiteDatabasePoolDelegate> * _delegate;
+    unsigned int  _maxConcurrentBackgroundReaders;
+    unsigned int  _maxConcurrentWriters;
+    NSObject<OS_dispatch_semaphore> * _readerSemaphore;
+    NSObject<OS_dispatch_semaphore> * _writerSemaphore;
+    int  _writersWaiting;
 }
 
 @property (readonly) unsigned int backgroundReadersWaiting;
@@ -31,10 +31,11 @@
 
 - (void).cxx_destruct;
 - (id)_databaseWithType:(int)arg1 error:(id*)arg2;
+- (void)_didFlushDatabases:(id)arg1;
 - (id)_semaphoreForDatabaseType:(int)arg1 waitCounter:(int**)arg2;
 - (unsigned int)backgroundReadersWaiting;
 - (unsigned int)cacheSize;
-- (void)checkInDatabase:(id)arg1 closeImmediately:(BOOL)arg2;
+- (void)checkInDatabase:(id)arg1 flushImmediately:(BOOL)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)diagnosticDescription;

@@ -3,8 +3,8 @@
  */
 
 @interface FBSWorkspaceSceneLayerEvent : FBSWorkspaceSceneEvent {
-    FBSSceneLayer *_layer;
-    BOOL _orderOut;
+    FBSSceneLayer * _layer;
+    BOOL  _orderOut;
 }
 
 @property (nonatomic, retain) FBSSceneLayer *layer;

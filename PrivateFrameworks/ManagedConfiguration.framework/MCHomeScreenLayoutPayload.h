@@ -3,7 +3,7 @@
  */
 
 @interface MCHomeScreenLayoutPayload : MCPayload {
-    NSArray *_layout;
+    NSArray * _layout;
 }
 
 @property (nonatomic, retain) NSArray *layout;

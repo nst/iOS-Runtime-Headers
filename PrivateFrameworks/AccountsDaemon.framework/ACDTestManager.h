@@ -3,10 +3,10 @@
  */
 
 @interface ACDTestManager : NSObject {
-    NSXPCListener *_accountStoreConnectionListener;
-    NSXPCListener *_authenticationDialogConnectionListener;
-    NSXPCListener *_oauthSignerConnectionListener;
-    NSString *_storePath;
+    NSXPCListener * _accountStoreConnectionListener;
+    NSXPCListener * _authenticationDialogConnectionListener;
+    NSXPCListener * _oauthSignerConnectionListener;
+    NSString * _storePath;
 }
 
 @property (nonatomic, readonly) NSXPCListenerEndpoint *remoteAccountStoreEndpoint;

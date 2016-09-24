@@ -3,8 +3,8 @@
  */
 
 @interface VKTimer : NSObject {
-    double _nextFireDate;
-    NSObject<OS_dispatch_source> *_source;
+    double  _nextFireDate;
+    NSObject<OS_dispatch_source> * _source;
 }
 
 @property (nonatomic, readonly) double nextFireDate;

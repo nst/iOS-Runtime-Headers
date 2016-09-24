@@ -4,7 +4,7 @@
 
 @interface MTLIOAccelBlitCommandEncoder : MTLIOAccelCommandEncoder
 
-- (id)initWithCommandBuffer:(id)arg1;
+- (unsigned int)getType;
 - (void)synchronizeResource:(id)arg1;
 - (void)synchronizeTexture:(id)arg1 slice:(unsigned int)arg2 level:(unsigned int)arg3;
 

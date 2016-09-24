@@ -3,8 +3,8 @@
  */
 
 @interface NSVariableAssignmentExpression : NSExpression {
-    NSVariableExpression *_assignmentVariable;
-    NSExpression *_subexpression;
+    NSVariableExpression * _assignmentVariable;
+    NSExpression * _subexpression;
 }
 
 + (BOOL)supportsSecureCoding;

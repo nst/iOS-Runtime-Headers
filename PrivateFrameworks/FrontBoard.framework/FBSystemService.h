@@ -3,10 +3,10 @@
  */
 
 @interface FBSystemService : NSObject {
-    <FBSystemServiceDelegate> *_delegate;
-    int _pendingExit;
-    FBSSerialQueue *_queue;
-    FBSystemServiceServer *_server;
+    <FBSystemServiceDelegate> * _delegate;
+    int  _pendingExit;
+    FBSSerialQueue * _queue;
+    FBSystemServiceServer * _server;
 }
 
 @property (nonatomic) <FBSystemServiceDelegate> *delegate;
@@ -17,17 +17,17 @@
 + (id)sharedInstance;
 
 - (void)_activateApplication:(id)arg1 options:(id)arg2 source:(id)arg3 originalSource:(id)arg4 withResult:(id /* block */)arg5;
-- (void)_activateURL:(id)arg1 application:(id)arg2 options:(id)arg3 source:(id)arg4 originalSource:(id)arg5 withResult:(id /* block */)arg6;
+- (BOOL)_isTrustedRequestToOpenApplication:(id)arg1 options:(id)arg2 source:(id)arg3 originalSource:(id)arg4;
 - (BOOL)_isWhitelistedLaunchSuspendedApp:(id)arg1;
 - (void)_logPendedActivationRequestForMismatchedClientSequenceNumber:(unsigned int)arg1 clientCacheGUID:(id)arg2 ourSequenceNumber:(unsigned int)arg3 ourCacheGUID:(id)arg4;
 - (void)_performExitTasksForRelaunch:(BOOL)arg1;
-- (void)_reallyActivateApplication:(id)arg1 options:(id)arg2 source:(id)arg3 originalSource:(id)arg4 sequenceNumber:(unsigned int)arg5 cacheGUID:(id)arg6 ourSequenceNumber:(unsigned int)arg7 ourCacheGUID:(id)arg8 withResult:(id /* block */)arg9;
-- (BOOL)_requiresOpenApplicationEntitlement:(id)arg1 options:(id)arg2 originalSource:(id)arg3;
+- (void)_reallyActivateApplication:(id)arg1 options:(id)arg2 source:(id)arg3 originalSource:(id)arg4 isTrusted:(BOOL)arg5 sequenceNumber:(unsigned int)arg6 cacheGUID:(id)arg7 ourSequenceNumber:(unsigned int)arg8 ourCacheGUID:(id)arg9 withResult:(id /* block */)arg10;
+- (BOOL)_requireEntitlementToOpenURL:(id)arg1;
 - (BOOL)_shouldPendRequestForClientSequenceNumber:(unsigned int)arg1 clientCacheGUID:(id)arg2 ourSequenceNumber:(unsigned int)arg3 ourCacheGUID:(id)arg4;
-- (void)_terminateProcess:(id)arg1 forReason:(int)arg2 andReport:(BOOL)arg3 withDescription:(id)arg4;
+- (void)_terminateProcess:(id)arg1 forReason:(int)arg2 andReport:(BOOL)arg3 withDescription:(id)arg4 completion:(id /* block */)arg5;
 - (void)activateApplication:(id)arg1 options:(id)arg2 source:(id)arg3 originalSource:(id)arg4 withResult:(id /* block */)arg5;
-- (void)activateURL:(id)arg1 application:(id)arg2 options:(id)arg3 source:(id)arg4 originalSource:(id)arg5 withResult:(id /* block */)arg6;
 - (void)canActivateApplication:(id)arg1 source:(id)arg2 withResult:(id /* block */)arg3;
+- (void)dataReset:(id)arg1 completion:(id /* block */)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (void)exitAndRelaunch:(BOOL)arg1;
@@ -45,7 +45,8 @@
 - (void)shutdownAndReboot:(BOOL)arg1;
 - (void)shutdownWithOptions:(unsigned int)arg1;
 - (id)systemApplicationBundleIdentifier;
-- (void)terminateApplication:(id)arg1 forReason:(int)arg2 andReport:(BOOL)arg3 withDescription:(id)arg4 source:(id)arg5;
+- (void)terminateApplication:(id)arg1 forReason:(int)arg2 andReport:(BOOL)arg3 withDescription:(id)arg4 source:(id)arg5 completion:(id /* block */)arg6;
 - (void)terminateApplicationGroup:(int)arg1 forReason:(int)arg2 andReport:(BOOL)arg3 withDescription:(id)arg4 source:(id)arg5;
+- (void)terminateApplicationGroup:(int)arg1 forReason:(int)arg2 andReport:(BOOL)arg3 withDescription:(id)arg4 source:(id)arg5 completion:(id /* block */)arg6;
 
 @end

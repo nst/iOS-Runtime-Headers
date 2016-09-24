@@ -3,7 +3,7 @@
  */
 
 @interface _SBFVibrantTableViewCell : UITableViewCell {
-    int _graphicsQuality;
+    int  _graphicsQuality;
 }
 
 @property (nonatomic) int graphicsQuality;

@@ -3,14 +3,14 @@
  */
 
 @interface __NSATSStringSegment : NSString {
-    unsigned short _buffer;
-    const unsigned short *_characters;
-    struct __CFString { } *_originalString;
-    long _originalStringLength;
+    unsigned short  _buffer;
+    const unsigned short * _characters;
+    struct __CFString { } * _originalString;
+    long  _originalStringLength;
     struct { 
         int location; 
         int length; 
-    } _range;
+    }  _range;
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

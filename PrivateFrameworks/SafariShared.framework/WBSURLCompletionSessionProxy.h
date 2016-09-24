@@ -3,9 +3,9 @@
  */
 
 @interface WBSURLCompletionSessionProxy : NSObject {
-    <WBSURLCompletionSessionProtocol> *_completionSession;
-    NSObject<OS_dispatch_queue> *_completionSessionAccessQueue;
-    WBSHistoryConnectionProxy *_historyConnectionProxy;
+    <WBSURLCompletionSessionProtocol> * _completionSession;
+    NSObject<OS_dispatch_queue> * _completionSessionAccessQueue;
+    WBSHistoryConnectionProxy * _historyConnectionProxy;
 }
 
 + (id)_cannedMatchesWithTypedString:(id)arg1;

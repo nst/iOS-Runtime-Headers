@@ -4,16 +4,16 @@
 
 @interface GEOPBTransitIncidentEntityFilter : PBCodable <NSCopying> {
     struct { 
-        unsigned long long *list; 
+        unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _nextStopMuids;
+    }  _nextStopMuids;
 }
 
-@property (nonatomic, readonly) unsigned long long*nextStopMuids;
+@property (nonatomic, readonly) unsigned int*nextStopMuids;
 @property (nonatomic, readonly) unsigned int nextStopMuidsCount;
 
-- (void)addNextStopMuid:(unsigned long long)arg1;
+- (void)addNextStopMuid:(unsigned int)arg1;
 - (void)clearNextStopMuids;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -23,11 +23,11 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (unsigned long long)nextStopMuidAtIndex:(unsigned int)arg1;
-- (unsigned long long*)nextStopMuids;
+- (unsigned int)nextStopMuidAtIndex:(unsigned int)arg1;
+- (unsigned int*)nextStopMuids;
 - (unsigned int)nextStopMuidsCount;
 - (BOOL)readFrom:(id)arg1;
-- (void)setNextStopMuids:(unsigned long long*)arg1 count:(unsigned int)arg2;
+- (void)setNextStopMuids:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)writeTo:(id)arg1;
 
 @end

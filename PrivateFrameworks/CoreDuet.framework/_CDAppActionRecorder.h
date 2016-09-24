@@ -3,10 +3,10 @@
  */
 
 @interface _CDAppActionRecorder : NSObject <_CDActivityEventRecording, _CDAppActionRecording> {
-    NSXPCConnection *_connection;
-    NSString *_previousActivityType;
-    NSString *_previousTitle;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSXPCConnection * _connection;
+    NSString * _previousActivityType;
+    NSString * _previousTitle;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, retain) NSXPCConnection *connection;

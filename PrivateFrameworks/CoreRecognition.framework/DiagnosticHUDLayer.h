@@ -3,14 +3,14 @@
  */
 
 @interface DiagnosticHUDLayer : CALayer {
-    CAShapeLayer *_cameraAreaLayer;
-    CAShapeLayer *_focusIndicatorLayer;
-    CAShapeLayer *_focusPointLayer;
-    CAShapeLayer *_frameIndicator;
-    CRColor *_freshPointColor;
-    NSMutableArray *_pointLayers;
-    AVCaptureVideoPreviewLayer *_previewLayer;
-    CRColor *_stalePointColor;
+    CAShapeLayer * _cameraAreaLayer;
+    CAShapeLayer * _focusIndicatorLayer;
+    CAShapeLayer * _focusPointLayer;
+    CAShapeLayer * _frameIndicator;
+    CRColor * _freshPointColor;
+    NSMutableArray * _pointLayers;
+    AVCaptureVideoPreviewLayer * _previewLayer;
+    CRColor * _stalePointColor;
 }
 
 @property (retain) CAShapeLayer *cameraAreaLayer;
@@ -35,7 +35,7 @@
 - (id)pointLayers;
 - (id)previewLayer;
 - (void)refreshFrameIndicator;
-- (void)setAdjustingFocus:(BOOL)arg1 pointOfInterestSupported:(BOOL)arg2 focusPoint:(struct CGPoint { float x1; float x2; })arg3;
+- (void)setAdjustingFocus:(BOOL)arg1 pointOfInterestSupported:(BOOL)arg2 focusPoint:(struct CGPoint { double x1; double x2; })arg3;
 - (void)setBoxPoints:(id)arg1;
 - (void)setCameraAreaLayer:(id)arg1;
 - (void)setFocusIndicatorLayer:(id)arg1;

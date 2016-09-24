@@ -3,15 +3,15 @@
  */
 
 @interface _UICascadingTextStorage : NSConcreteTextStorage {
-    NSMutableDictionary *_defaultAttributes;
+    NSMutableDictionary * _defaultAttributes;
 }
 
 @property (nonatomic, copy) NSDictionary *defaultAttributes;
 @property (nonatomic, retain) UIFont *font;
 @property (nonatomic) int lineBreakMode;
-@property (nonatomic) float shadowBlur;
+@property (nonatomic) double shadowBlur;
 @property (nonatomic, retain) UIColor *shadowColor;
-@property (nonatomic) struct CGSize { float x1; float x2; } shadowOffset;
+@property (nonatomic) struct CGSize { double x1; double x2; } shadowOffset;
 @property (nonatomic) int textAlignment;
 @property (nonatomic, retain) UIColor *textColor;
 
@@ -36,12 +36,12 @@
 - (void)setLineBreakMode:(int)arg1;
 - (void)setShadowBlur:(float)arg1;
 - (void)setShadowColor:(id)arg1;
-- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
+- (void)setShadowOffset:(struct CGSize { double x1; double x2; })arg1;
 - (void)setTextAlignment:(int)arg1;
 - (void)setTextColor:(id)arg1;
 - (float)shadowBlur;
 - (id)shadowColor;
-- (struct CGSize { float x1; float x2; })shadowOffset;
+- (struct CGSize { double x1; double x2; })shadowOffset;
 - (int)textAlignment;
 - (id)textColor;
 

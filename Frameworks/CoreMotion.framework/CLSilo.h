@@ -3,7 +3,7 @@
  */
 
 @interface CLSilo : NSObject <NSCopying> {
-    NSString *_identifier;
+    NSString * _identifier;
 }
 
 @property (nonatomic, readonly) NSString *identifier;

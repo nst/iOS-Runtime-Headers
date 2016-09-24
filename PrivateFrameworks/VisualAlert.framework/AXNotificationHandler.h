@@ -3,11 +3,11 @@
  */
 
 @interface AXNotificationHandler : NSObject {
-    id /* block */ _dispatcher;
-    NSString *_notificationName;
-    unsigned int _observerIdentifier;
-    id _target;
-    BOOL _valid;
+    id /* block */  _dispatcher;
+    NSString * _notificationName;
+    unsigned int  _observerIdentifier;
+    id  _target;
+    BOOL  _valid;
 }
 
 @property (setter=_setDispatcher:, nonatomic, copy) id /* block */ _dispatcher;

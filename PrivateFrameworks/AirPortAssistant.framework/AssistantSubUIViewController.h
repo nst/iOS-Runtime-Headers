@@ -3,9 +3,9 @@
  */
 
 @interface AssistantSubUIViewController : AUUITableViewController {
-    NSDictionary *_inParamDict;
-    NSMutableDictionary *_outResultsDict;
-    AssistantUIViewController *_parentController;
+    NSDictionary * _inParamDict;
+    NSMutableDictionary * _outResultsDict;
+    AssistantUIViewController * _parentController;
 }
 
 @property (nonatomic, retain) NSDictionary *inParamDict;

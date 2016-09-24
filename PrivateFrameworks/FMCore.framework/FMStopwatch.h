@@ -3,10 +3,10 @@
  */
 
 @interface FMStopwatch : NSObject {
-    NSString *comment;
-    double endTime;
-    NSString *label;
-    double startTime;
+    NSString * comment;
+    double  endTime;
+    NSString * label;
+    double  startTime;
 }
 
 @property (nonatomic, copy) NSString *comment;

@@ -3,7 +3,7 @@
  */
 
 @interface GKGradient : NSObject {
-    struct CGGradient { } *_CGGradient;
+    struct CGGradient { } * _CGGradient;
 }
 
 + (id)gradientWithColors:(id)arg1 atLocations:(const float*)arg2;

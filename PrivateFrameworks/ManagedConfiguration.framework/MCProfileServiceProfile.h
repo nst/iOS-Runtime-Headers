@@ -3,12 +3,12 @@
  */
 
 @interface MCProfileServiceProfile : MCProfile {
-    NSString *_URLString;
-    NSArray *_bogusPayloads;
-    id _challenge;
-    BOOL _confirmInstallation;
-    NSArray *_deviceAttributes;
-    NSData *_enrollmentIdentityPersistentID;
+    NSString * _URLString;
+    NSArray * _bogusPayloads;
+    id  _challenge;
+    BOOL  _confirmInstallation;
+    NSArray * _deviceAttributes;
+    NSData * _enrollmentIdentityPersistentID;
 }
 
 @property (nonatomic, retain) NSString *URLString;

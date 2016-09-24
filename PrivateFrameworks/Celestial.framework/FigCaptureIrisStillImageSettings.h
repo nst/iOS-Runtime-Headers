@@ -2,30 +2,32 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@interface FigCaptureIrisStillImageSettings : FigCaptureStillImageSettings <NSCoding, NSCopying> {
-    NSArray *_movieLevelMetadataForEV0Image;
-    int _movieMode;
-    FigCaptureMovieFileRecordingSettings *_movieRecordingSettings;
-    NSURL *_movieURLForEV0Image;
+@interface FigCaptureIrisStillImageSettings : FigCaptureStillImageSettings {
+    NSArray * _movieLevelMetadataForOriginalImage;
+    int  _movieMode;
+    FigCaptureMovieFileRecordingSettings * _movieRecordingSettings;
+    NSURL * _movieURLForOriginalImage;
 }
 
-@property (nonatomic, copy) NSArray *movieLevelMetadataForEV0Image;
+@property (nonatomic, copy) NSArray *movieLevelMetadataForOriginalImage;
 @property (nonatomic) int movieMode;
 @property (nonatomic, copy) FigCaptureMovieFileRecordingSettings *movieRecordingSettings;
-@property (nonatomic, copy) NSURL *movieURLForEV0Image;
+@property (nonatomic, copy) NSURL *movieURLForOriginalImage;
+
++ (BOOL)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)movieLevelMetadataForEV0Image;
+- (id)movieLevelMetadataForOriginalImage;
 - (int)movieMode;
 - (id)movieRecordingSettings;
-- (id)movieURLForEV0Image;
-- (void)setMovieLevelMetadataForEV0Image:(id)arg1;
+- (id)movieURLForOriginalImage;
+- (void)setMovieLevelMetadataForOriginalImage:(id)arg1;
 - (void)setMovieMode:(int)arg1;
 - (void)setMovieRecordingSettings:(id)arg1;
-- (void)setMovieURLForEV0Image:(id)arg1;
+- (void)setMovieURLForOriginalImage:(id)arg1;
 
 @end

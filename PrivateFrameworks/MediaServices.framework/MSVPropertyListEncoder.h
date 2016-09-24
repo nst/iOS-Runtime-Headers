@@ -3,24 +3,24 @@
  */
 
 @interface MSVPropertyListEncoder : NSObject {
-    NSData *_arrayClosingTagData;
-    NSData *_arrayOpeningTagData;
-    NSData *_boolFalseTagData;
-    NSData *_boolTrueTagData;
-    NSMutableArray *_containerStack;
-    NSData *_dataClosingTagData;
-    NSData *_dataOpeningTagData;
-    NSDateFormatter *_dateFormatter;
-    NSData *_dictionaryClosingTagData;
-    NSData *_dictionaryOpeningTagData;
-    NSData *_keyClosingTagData;
-    NSData *_keyOpeningTagData;
-    NSMutableData *_outputBuffer;
-    NSFileHandle *_outputFileHandle;
-    NSData *_stringClosingTagData;
-    NSData *_stringOpeningTagData;
-    NSMutableString *_tabPrefix;
-    NSData *_tabPrefixData;
+    NSData * _arrayClosingTagData;
+    NSData * _arrayOpeningTagData;
+    NSData * _boolFalseTagData;
+    NSData * _boolTrueTagData;
+    NSMutableArray * _containerStack;
+    NSData * _dataClosingTagData;
+    NSData * _dataOpeningTagData;
+    NSDateFormatter * _dateFormatter;
+    NSData * _dictionaryClosingTagData;
+    NSData * _dictionaryOpeningTagData;
+    NSData * _keyClosingTagData;
+    NSData * _keyOpeningTagData;
+    NSMutableData * _outputBuffer;
+    NSFileHandle * _outputFileHandle;
+    NSData * _stringClosingTagData;
+    NSData * _stringOpeningTagData;
+    NSMutableString * _tabPrefix;
+    NSData * _tabPrefixData;
 }
 
 @property (nonatomic, readonly) NSData *arrayClosingTagData;

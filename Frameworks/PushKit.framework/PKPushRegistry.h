@@ -3,14 +3,14 @@
  */
 
 @interface PKPushRegistry : NSObject <PKComplicationXPCClient, PKVoIPXPCClient> {
-    int _complicationToken;
-    <PKPushRegistryDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    NSSet *_desiredPushTypes;
-    NSObject<OS_dispatch_queue> *_ivarQueue;
-    NSMutableDictionary *_pushTypeToConnection;
-    NSMutableDictionary *_pushTypeToToken;
-    int _voipToken;
+    int  _complicationToken;
+    <PKPushRegistryDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    NSSet * _desiredPushTypes;
+    NSObject<OS_dispatch_queue> * _ivarQueue;
+    NSMutableDictionary * _pushTypeToConnection;
+    NSMutableDictionary * _pushTypeToToken;
+    int  _voipToken;
 }
 
 @property (nonatomic) int complicationToken;

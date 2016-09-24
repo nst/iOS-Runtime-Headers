@@ -3,8 +3,8 @@
  */
 
 @interface _FBSystemServiceServerPendingConnection : NSObject {
-    id /* block */ _completion;
-    FBSystemServiceFacility *_facility;
+    id /* block */  _completion;
+    FBSystemServiceFacility * _facility;
 }
 
 @property (nonatomic, copy) id /* block */ completion;

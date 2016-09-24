@@ -3,9 +3,9 @@
  */
 
 @interface UITextEffectsHostingInfo : NSObject <_UIScreenBasedObject> {
-    unsigned int _hostedUseCount;
-    NSDictionary *_perScreenOptions;
-    UIScreen *_screen;
+    unsigned int  _hostedUseCount;
+    NSDictionary * _perScreenOptions;
+    UIScreen * _screen;
 }
 
 @property (readonly) UIScreen *_intendedScreen;

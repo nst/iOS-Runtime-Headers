@@ -3,20 +3,23 @@
  */
 
 @interface HKSwitchTableViewCell : UITableViewCell {
-    BOOL _centersIcon;
-    <HKSwitchTableViewCellDelegate> *_delegate;
-    UILabel *_displayLabel;
-    BOOL _enabled;
-    UIImageView *_iconImageView;
-    UISwitch *_switch;
+    BOOL  _centersIcon;
+    UILabel * _countLabel;
+    <HKSwitchTableViewCellDelegate> * _delegate;
+    UILabel * _displayLabel;
+    BOOL  _enabled;
+    UIImageView * _iconImageView;
+    BOOL  _shouldHideSwitch;
+    UISwitch * _switch;
 }
 
 @property (nonatomic) BOOL adjustsFontSizeToFitWidth;
 @property (nonatomic) BOOL centersIcon;
 @property (nonatomic) <HKSwitchTableViewCellDelegate> *delegate;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } iconSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } iconSize;
 @property (getter=isOn, nonatomic) BOOL on;
+@property (nonatomic) BOOL shouldHideSwitch;
 
 - (void).cxx_destruct;
 - (void)_contextSizeCategoryChanged;
@@ -26,18 +29,21 @@
 - (BOOL)centersIcon;
 - (void)dealloc;
 - (id)delegate;
-- (struct CGSize { float x1; float x2; })iconSize;
+- (struct CGSize { double x1; double x2; })iconSize;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (BOOL)isEnabled;
 - (BOOL)isOn;
 - (void)layoutSubviews;
 - (void)setAdjustsFontSizeToFitWidth:(BOOL)arg1;
 - (void)setCentersIcon:(BOOL)arg1;
+- (void)setCountText:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisplayText:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setIconImage:(id)arg1;
 - (void)setOn:(BOOL)arg1;
+- (void)setShouldHideSwitch:(BOOL)arg1;
+- (BOOL)shouldHideSwitch;
 - (void)switchValueChanged:(id)arg1;
 
 @end

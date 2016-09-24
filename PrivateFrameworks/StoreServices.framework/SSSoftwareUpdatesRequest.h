@@ -3,7 +3,7 @@
  */
 
 @interface SSSoftwareUpdatesRequest : SSRequest {
-    SSSoftwareUpdatesContext *_context;
+    SSSoftwareUpdatesContext * _context;
 }
 
 @property (nonatomic) <SSSoftwareUpdatesRequestDelegate> *delegate;

@@ -3,11 +3,11 @@
  */
 
 @interface CPObject : NSObject <CPCopying, NSCopying> {
-    NSMutableArray *children;
-    CPDocument *document;
-    CPPage *page;
-    CPObject *parent;
-    long zOrder;
+    NSMutableArray * children;
+    CPDocument * document;
+    CPPage * page;
+    CPObject * parent;
+    long  zOrder;
 }
 
 - (void)accept:(id)arg1;

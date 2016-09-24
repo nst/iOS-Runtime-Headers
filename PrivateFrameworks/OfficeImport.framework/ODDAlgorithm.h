@@ -3,7 +3,7 @@
  */
 
 @interface ODDAlgorithm : ODDLayoutObject {
-    int mType;
+    int  mType;
 }
 
 - (id)description;

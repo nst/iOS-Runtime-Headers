@@ -3,9 +3,9 @@
  */
 
 @interface _UIAlertControllerAnimatedTransitioning : NSObject <UIViewControllerAnimatedTransitioning> {
-    UIAlertController *_alertController;
-    UIInteractionProgress *_interactionProgress;
-    BOOL _presentation;
+    UIAlertController * _alertController;
+    UIInteractionProgress * _interactionProgress;
+    BOOL  _presentation;
 }
 
 @property (nonatomic, retain) UIAlertController *alertController;

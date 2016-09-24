@@ -12,12 +12,12 @@
         unsigned int uniformContentItemType : 1; 
         unsigned int memberOfChartSet : 1; 
         unsigned int brick : 1; 
-    } _requestedBrowseSectionProperties;
-    MPUPropertySet *_requestedPropertySet;
+    }  _requestedBrowseSectionProperties;
+    MPPropertySet * _requestedPropertySet;
 }
 
-@property (nonatomic, readonly) MPUPropertySet *requestedPropertySet;
-@property (nonatomic, readonly) MPUPropertySet *requestedPropertySetExcludingInternalOnlyProperties;
+@property (nonatomic, readonly) MPPropertySet *requestedPropertySet;
+@property (nonatomic, readonly) MPPropertySet *requestedPropertySetExcludingInternalOnlyProperties;
 
 + (id)allSupportedInternalOnlyProperties;
 + (id)allSupportedPropertiesIncludingInternalOnlyProperties:(BOOL)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface VVVerifier : NSObject {
-    NSMutableDictionary *_checkpointDictionary;
-    NSArray *_keyDescriptions;
+    NSMutableDictionary * _checkpointDictionary;
+    NSArray * _keyDescriptions;
 }
 
 + (id)sharedVerifier;

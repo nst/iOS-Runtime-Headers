@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/Contacts.framework/Contacts
  */
 
-@interface CNContactMatchInfo : NSObject {
-    NSAttributedString *_excerpt;
-    BOOL _matchedNameProperty;
-    NSDictionary *_matchedProperties;
-    NSNumber *_relevanceScore;
+@interface CNContactMatchInfo : NSObject <NSSecureCoding> {
+    NSAttributedString * _excerpt;
+    BOOL  _matchedNameProperty;
+    NSDictionary * _matchedProperties;
+    NSNumber * _relevanceScore;
 }
 
 @property (nonatomic, retain) NSAttributedString *excerpt;
@@ -14,8 +14,13 @@
 @property (nonatomic, copy) NSDictionary *matchedProperties;
 @property (nonatomic, copy) NSNumber *relevanceScore;
 
++ (BOOL)supportsSecureCoding;
+
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (id)excerpt;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)matchedNameProperty;
 - (id)matchedProperties;
 - (id)relevanceScore;

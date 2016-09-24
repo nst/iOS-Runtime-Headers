@@ -3,7 +3,7 @@
  */
 
 @interface OADSchemeColor : OADColor {
-    int mIndex;
+    int  mIndex;
 }
 
 + (id)schemeColorWithIndex:(int)arg1;

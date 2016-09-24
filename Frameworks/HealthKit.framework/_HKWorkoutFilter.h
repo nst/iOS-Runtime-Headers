@@ -3,7 +3,7 @@
  */
 
 @interface _HKWorkoutFilter : _HKFilter {
-    NSUUID *_workoutUUID;
+    NSUUID * _workoutUUID;
 }
 
 @property (nonatomic, readonly) NSUUID *workoutUUID;
@@ -24,6 +24,6 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
-- (id)predicateWithHealthDaemon:(id)arg1;
+- (id)predicateWithProfile:(id)arg1;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface SAClassRegistry : NSObject {
-    NSMutableDictionary *_classesByAceClassNameByGroupIdentifier;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableDictionary * _classesByAceClassNameByGroupIdentifier;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (getter=_classesByAceClassNameByGroupIdentifier, nonatomic, readonly) NSMutableDictionary *classesByAceClassNameByGroupIdentifier;

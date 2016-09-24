@@ -3,8 +3,8 @@
  */
 
 @interface PULayoutSectionSimpleSampler : PULayoutSectionSampler {
-    int _numberOfRealItems;
-    int _numberOfVisibleItems;
+    int  _numberOfRealItems;
+    int  _numberOfVisibleItems;
 }
 
 - (void)dumpInternalMemory;

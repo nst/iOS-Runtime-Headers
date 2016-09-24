@@ -10,6 +10,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSArray *outputLogs;
 @property (nonatomic, copy) NSString *refId;
+@property (nonatomic, copy) NSString *results;
 @property (nonatomic) int status;
 @property (readonly) Class superclass;
 
@@ -19,7 +20,9 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)outputLogs;
+- (id)results;
 - (void)setOutputLogs:(id)arg1;
+- (void)setResults:(id)arg1;
 - (void)setStatus:(int)arg1;
 - (int)status;
 

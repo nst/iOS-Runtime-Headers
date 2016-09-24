@@ -3,8 +3,8 @@
  */
 
 @interface PLQuotaRequest : AARequest {
-    NSString *_authToken;
-    NSString *_personID;
+    NSString * _authToken;
+    NSString * _personID;
 }
 
 - (void)dealloc;

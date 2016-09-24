@@ -3,11 +3,11 @@
  */
 
 @interface NSStoreMapNode : NSObject {
-    NSString *_entityName;
-    NSPersistentStoreMap *_map;
-    NSManagedObjectID *_objectID;
-    NSMutableDictionary *_relatedNodes;
-    unsigned int _version;
+    NSString * _entityName;
+    NSPersistentStoreMap * _map;
+    NSManagedObjectID * _objectID;
+    NSMutableDictionary * _relatedNodes;
+    unsigned int  _version;
 }
 
 + (void)initialize;

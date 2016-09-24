@@ -3,9 +3,9 @@
  */
 
 @interface ACDKeychainCleanupActivity : NSObject {
-    ACAccountStore *_accountStore;
-    NSObject<OS_dispatch_queue> *_activityQueue;
-    NSObject<OS_xpc_object> *_xpcActivity;
+    ACAccountStore * _accountStore;
+    NSObject<OS_dispatch_queue> * _activityQueue;
+    NSObject<OS_xpc_object> * _xpcActivity;
 }
 
 + (id)sharedActivity;

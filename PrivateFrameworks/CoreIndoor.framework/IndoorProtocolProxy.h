@@ -3,8 +3,8 @@
  */
 
 @interface IndoorProtocolProxy : NSObject <CLIndoorDelegateProtocol, CLIndoorDelegateProtocolInternal> {
-    <CLIndoorDelegateProtocol> *_delegate;
-    NSError *_shutdownReason;
+    <CLIndoorDelegateProtocol> * _delegate;
+    NSError * _shutdownReason;
 }
 
 @property (readonly, copy) NSString *debugDescription;

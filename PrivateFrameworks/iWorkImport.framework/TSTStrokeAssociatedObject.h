@@ -3,7 +3,7 @@
  */
 
 @interface TSTStrokeAssociatedObject : NSObject {
-    BOOL dontClearBackground;
+    BOOL  dontClearBackground;
 }
 
 @property (nonatomic) BOOL dontClearBackground;

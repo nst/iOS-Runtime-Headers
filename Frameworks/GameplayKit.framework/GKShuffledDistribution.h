@@ -3,12 +3,12 @@
  */
 
 @interface GKShuffledDistribution : GKRandomDistribution {
-    int _delta;
-    int _lastInt;
-    int *_nextInts;
-    int _nextIntsCapacity;
-    int _nextIntsCount;
-    float _uniformDistance;
+    int  _delta;
+    int  _lastInt;
+    int * _nextInts;
+    int  _nextIntsCapacity;
+    int  _nextIntsCount;
+    double  _uniformDistance;
 }
 
 - (void)dealloc;

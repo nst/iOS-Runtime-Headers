@@ -3,7 +3,7 @@
  */
 
 @interface BLTPBFullBulletinList : PBCodable <NSCopying> {
-    NSMutableArray *_sectionBulletinLists;
+    NSMutableArray * _sectionBulletinLists;
 }
 
 @property (nonatomic, retain) NSMutableArray *sectionBulletinLists;

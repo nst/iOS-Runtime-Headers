@@ -3,9 +3,9 @@
  */
 
 @interface RadioSeedMetadata : NSObject <NSCopying, NSMutableCopying> {
-    NSString *_seedDescription;
-    NSString *_subtitle;
-    NSString *_title;
+    NSString * _seedDescription;
+    NSString * _subtitle;
+    NSString * _title;
 }
 
 @property (nonatomic, readonly, copy) NSString *seedDescription;

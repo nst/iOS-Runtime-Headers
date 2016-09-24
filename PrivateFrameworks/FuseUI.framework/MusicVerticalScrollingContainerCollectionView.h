@@ -6,8 +6,8 @@
     struct { 
         unsigned int didLayoutSubviews : 1; 
         unsigned int contentSizeDidChange : 1; 
-    } _delegateRespondsToSelector;
-    BOOL _performingLayout;
+    }  _delegateRespondsToSelector;
+    BOOL  _performingLayout;
 }
 
 @property (nonatomic) <MusicVerticalScrollingContainerCollectionViewDelegate> *delegate;
@@ -16,7 +16,7 @@
 - (BOOL)_shouldFadeCellsForBoundChangeWhileRotating;
 - (BOOL)isPerformingLayout;
 - (void)layoutSubviews;
-- (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setDelegate:(id)arg1;
 
 @end

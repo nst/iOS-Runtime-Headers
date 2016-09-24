@@ -3,15 +3,15 @@
  */
 
 @interface CKDModifyRecordZonesOperation : CKDDatabaseOperation {
-    BOOL _allowDefaultZoneSave;
-    id /* block */ _deleteCompletionBlock;
-    BOOL _markZonesAsUserPurged;
-    int _maxZoneSaveAttempts;
-    int _numZoneSaveAttempts;
-    NSArray *_recordZoneIDsToDelete;
-    NSMutableDictionary *_recordZonesByZoneID;
-    NSMutableArray *_recordZonesToSave;
-    id /* block */ _saveCompletionBlock;
+    BOOL  _allowDefaultZoneSave;
+    id /* block */  _deleteCompletionBlock;
+    BOOL  _markZonesAsUserPurged;
+    int  _maxZoneSaveAttempts;
+    int  _numZoneSaveAttempts;
+    NSArray * _recordZoneIDsToDelete;
+    NSMutableDictionary * _recordZonesByZoneID;
+    NSMutableArray * _recordZonesToSave;
+    id /* block */  _saveCompletionBlock;
 }
 
 @property (nonatomic) BOOL allowDefaultZoneSave;
@@ -33,7 +33,7 @@
 - (void)_handleRecordZoneSaved:(id)arg1 responseCode:(id)arg2;
 - (BOOL)_saveZonesToServer;
 - (void)_sendErrorForFailedZones;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (BOOL)allowDefaultZoneSave;
 - (id /* block */)deleteCompletionBlock;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;

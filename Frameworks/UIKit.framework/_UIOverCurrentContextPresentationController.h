@@ -4,6 +4,7 @@
 
 @interface _UIOverCurrentContextPresentationController : _UICurrentContextPresentationController
 
+- (BOOL)_shouldPresentedViewControllerControlStatusBarAppearance;
 - (int)presentationStyle;
 - (BOOL)shouldRemovePresentersView;
 

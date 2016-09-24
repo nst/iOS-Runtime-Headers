@@ -3,8 +3,8 @@
  */
 
 @interface _SYQueuedStartSession : NSObject {
-    id /* block */ _completion;
-    SYStartSyncSession *_request;
+    id /* block */  _completion;
+    SYStartSyncSession * _request;
 }
 
 @property (nonatomic, readonly) id /* block */ completion;

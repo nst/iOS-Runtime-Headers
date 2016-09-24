@@ -3,11 +3,11 @@
  */
 
 @interface BKSHIDEventKeyCommandDescriptor : BKSHIDEventDescriptor {
-    NSString *_commandModifiedInput;
-    NSString *_input;
-    int _modifierFlags;
-    NSString *_shiftModifiedInput;
-    NSString *_unmodifiedInput;
+    NSString * _commandModifiedInput;
+    NSString * _input;
+    int  _modifierFlags;
+    NSString * _shiftModifiedInput;
+    NSString * _unmodifiedInput;
 }
 
 @property (nonatomic, retain) NSString *commandModifiedInput;

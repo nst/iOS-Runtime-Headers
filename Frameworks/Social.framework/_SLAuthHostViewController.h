@@ -3,7 +3,7 @@
  */
 
 @interface _SLAuthHostViewController : _UIRemoteViewController {
-    id /* block */ _viewServiceTerminationBlock;
+    id /* block */  _viewServiceTerminationBlock;
 }
 
 @property (nonatomic, copy) id /* block */ viewServiceTerminationBlock;

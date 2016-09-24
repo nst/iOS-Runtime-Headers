@@ -3,10 +3,10 @@
  */
 
 @interface _HDDemoDataModule : NSObject {
-    <_HDDemoDataModuleDelegate> *_delegate;
-    NSDate *_lastFireDate;
-    NSOperationQueue *_operationQueue;
-    NSObject<OS_dispatch_source> *_timerSource;
+    <_HDDemoDataModuleDelegate> * _delegate;
+    NSDate * _lastFireDate;
+    NSOperationQueue * _operationQueue;
+    NSObject<OS_dispatch_source> * _timerSource;
 }
 
 @property (nonatomic) <_HDDemoDataModuleDelegate> *delegate;
@@ -14,7 +14,6 @@
 @property (nonatomic, readonly) double nextFireInterval;
 
 - (void).cxx_destruct;
-- (void)dealloc;
 - (id)delegate;
 - (void)handleDataObject:(id)arg1;
 - (id)initWithOperationQueue:(id)arg1;

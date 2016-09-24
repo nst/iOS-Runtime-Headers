@@ -3,7 +3,7 @@
  */
 
 @interface VKRasterOverlayScene : VKScene <NSCopying> {
-    unsigned int _overlayLevel;
+    unsigned int  _overlayLevel;
 }
 
 @property (nonatomic) unsigned int overlayLevel;

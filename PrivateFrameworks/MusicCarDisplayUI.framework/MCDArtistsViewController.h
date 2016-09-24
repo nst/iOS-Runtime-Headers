@@ -3,7 +3,7 @@
  */
 
 @interface MCDArtistsViewController : MCDTableViewController {
-    BOOL _allowsActions;
+    BOOL  _allowsActions;
 }
 
 @property (nonatomic) BOOL allowsActions;
@@ -18,5 +18,6 @@
 - (void)setAllowsActions:(BOOL)arg1;
 - (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 
 @end

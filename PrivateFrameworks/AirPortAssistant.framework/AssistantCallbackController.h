@@ -3,9 +3,9 @@
  */
 
 @interface AssistantCallbackController : NSObject <AssistantCallbackUIDelegateResult> {
-    struct AssistantCallbackContext { unsigned int x1; struct AssistantContext {} *x2; int x3; struct __CFDictionary {} *x4; int x5; id x6; struct _opaque_pthread_mutex_t { long x_7_1_1; BOOL x_7_1_2[40]; } x7; void *x8; int x9; } *_callbackContext;
-    BOOL _saveScanState;
-    id _uiDelegate;
+    struct AssistantCallbackContext { unsigned int x1; struct AssistantContext {} *x2; int x3; struct __CFDictionary {} *x4; int x5; id x6; struct _opaque_pthread_mutex_t { long x_7_1_1; BOOL x_7_1_2[40]; } x7; void *x8; int x9; } * _callbackContext;
+    BOOL  _saveScanState;
+    id  _uiDelegate;
 }
 
 @property (nonatomic, retain) <AssistantCallbackUIDelegate> *uiDelegate;

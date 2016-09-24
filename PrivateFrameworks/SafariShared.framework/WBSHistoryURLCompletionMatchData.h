@@ -5,7 +5,7 @@
 @interface WBSHistoryURLCompletionMatchData : NSObject <WBSURLCompletionMatchData> {
     struct RefPtr<SafariShared::HistoryURLCompletionItem> { 
         struct HistoryURLCompletionItem {} *m_ptr; 
-    } _item;
+    }  _item;
 }
 
 @property (nonatomic, readonly) BOOL containsBookmark;

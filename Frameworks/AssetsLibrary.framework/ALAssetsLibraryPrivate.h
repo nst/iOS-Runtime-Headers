@@ -3,11 +3,11 @@
  */
 
 @interface ALAssetsLibraryPrivate : NSObject {
-    NSHashTable *_assetGroupInternals;
-    ALAssetsLibrary *_assetsLibrary;
-    NSMutableDictionary *_groupURLSByAlbumOID;
-    BOOL _isValid;
-    PLPhotoLibrary *_photoLibrary;
+    NSHashTable * _assetGroupInternals;
+    ALAssetsLibrary * _assetsLibrary;
+    NSMutableDictionary * _groupURLSByAlbumOID;
+    BOOL  _isValid;
+    PLPhotoLibrary * _photoLibrary;
 }
 
 @property (nonatomic) ALAssetsLibrary *assetsLibrary;

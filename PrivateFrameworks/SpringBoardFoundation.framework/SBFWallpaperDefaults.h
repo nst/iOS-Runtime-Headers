@@ -3,7 +3,7 @@
  */
 
 @interface SBFWallpaperDefaults : NSObject {
-    SBWallpaperDefaults *_defaultsStore;
+    SBWallpaperDefaults * _defaultsStore;
 }
 
 @property (nonatomic, readonly) SBWallpaperDefaults *defaultsStore;
@@ -11,7 +11,7 @@
 + (id)defaults;
 
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cropRectForVariant:(int)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRectForVariant:(int)arg1;
 - (id)defaultsStore;
 - (id)description;
 - (BOOL)hasVideo;
@@ -31,7 +31,7 @@
 - (void)resetPortraitDefaults;
 - (void)resetStillTimeInVideoDefaults;
 - (void)resetZoomScaleDefaults;
-- (void)setCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forLocations:(int)arg2;
+- (void)setCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forLocations:(int)arg2;
 - (void)setHasVideo:(BOOL)arg1;
 - (void)setMagnifyEnabled:(BOOL)arg1 forLocations:(int)arg2;
 - (void)setName:(id)arg1 forLocations:(int)arg2;

@@ -3,17 +3,17 @@
  */
 
 @interface PLTimer : NSObject {
-    id /* block */ _block;
-    NSDate *_fireDate;
-    double _interval;
-    NSDate *_lastSleepTime;
-    NSObject<OS_dispatch_queue> *_queue;
-    BOOL _repeats;
-    PLEntryNotificationOperatorComposition *_sleepEntryNotification;
-    NSTimer *_timer;
-    double _tolerance;
-    id _userInfo;
-    PLEntryNotificationOperatorComposition *_wakeEntryNotification;
+    id /* block */  _block;
+    NSDate * _fireDate;
+    double  _interval;
+    NSDate * _lastSleepTime;
+    NSObject<OS_dispatch_queue> * _queue;
+    BOOL  _repeats;
+    PLEntryNotificationOperatorComposition * _sleepEntryNotification;
+    NSTimer * _timer;
+    double  _tolerance;
+    id  _userInfo;
+    PLEntryNotificationOperatorComposition * _wakeEntryNotification;
 }
 
 @property (copy) id /* block */ block;

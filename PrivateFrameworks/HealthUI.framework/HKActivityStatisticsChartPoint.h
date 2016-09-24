@@ -3,12 +3,12 @@
  */
 
 @interface HKActivityStatisticsChartPoint : NSObject <HKChartPoint> {
-    NSDate *_date;
-    NSNumber *_moveGoalValue;
-    NSArray *_nodes;
-    HKActivityStatisticsChartPointSummary *_summary;
-    NSNumber *_totalActiveEnergyBurned;
-    HKUnit *_unit;
+    NSDate * _date;
+    NSNumber * _moveGoalValue;
+    NSArray * _nodes;
+    HKActivityStatisticsChartPointSummary * _summary;
+    NSNumber * _totalActiveEnergyBurned;
+    HKUnit * _unit;
 }
 
 @property (readonly, copy) NSString *debugDescription;

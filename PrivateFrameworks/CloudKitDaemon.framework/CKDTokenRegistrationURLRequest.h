@@ -3,9 +3,9 @@
  */
 
 @interface CKDTokenRegistrationURLRequest : CKDURLRequest {
-    NSString *_apsEnvironmentString;
-    NSString *_bundleID;
-    NSData *_token;
+    NSString * _apsEnvironmentString;
+    NSString * _bundleID;
+    NSData * _token;
 }
 
 @property (nonatomic, retain) NSString *apsEnvironmentString;

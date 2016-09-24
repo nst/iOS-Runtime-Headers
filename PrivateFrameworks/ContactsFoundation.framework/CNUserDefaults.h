@@ -3,18 +3,19 @@
  */
 
 @interface CNUserDefaults : NSObject {
-    <CNPrimitiveUserDefaults> *_primitiveDefaults;
-    NSDictionary *_registeredDefaults;
+    <CNPrimitiveUserDefaults> * _primitiveDefaults;
+    NSDictionary * _registeredDefaults;
 }
 
 @property (copy) NSDictionary *registeredDefaults;
 
++ (id)inMemoryPreferences;
 + (id)preferencesWithApplicationID:(id)arg1;
 + (id)standardPreferences;
 
+- (void).cxx_destruct;
 - (BOOL)boolForKey:(id)arg1;
 - (BOOL)boolForKey:(id)arg1 keyExists:(BOOL*)arg2;
-- (void)dealloc;
 - (double)doubleForKey:(id)arg1;
 - (id)initWithApplicationID:(id)arg1;
 - (id)initWithPrimitiveDefaults:(id)arg1;

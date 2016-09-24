@@ -3,36 +3,40 @@
  */
 
 @interface HKDataUnit : NSObject <NSCopying> {
-    NSAttributedString *_attributedSummaryAttribution;
-    int _categoryIdentifier;
-    NSString *_cautionaryText;
-    NSDictionary *_chartingPredicatesByTimeScope;
-    HKDataUnitChartingRules *_chartingRules;
-    int _dataUnitIdentifier;
-    NSPredicate *_defaultChartingPredicate;
-    UIImage *_detailImage;
-    NSString *_displayName;
-    NSString *_embeddedDisplayName;
-    NSSet *_keywords;
-    NSString *_labelDisplayName;
-    HKObjectType *_objectType;
-    NSDictionary *_portraitPresentationOptionOverrides;
-    unsigned int _portraitPresentationOptions;
-    float _scalarValue;
-    BOOL _shouldDisplayUnitStringOnYAxis;
-    BOOL _shouldUseSingleSecondaryValue;
-    BOOL _showAllDataHierarchically;
-    NSDictionary *_singularUnitNameOverrides;
-    NSString *_summary;
-    BOOL _summaryAttributionHasLink;
-    NSString *_summaryForPairedWatch;
-    NSString *_titleEmbeddedDisplayName;
-    NSString *_unitChangeCautionaryText;
-    NSDictionary *_unitNameOverrides;
+    BOOL  __wheelchairUser;
+    NSAttributedString * _attributedSummaryAttribution;
+    int  _categoryIdentifier;
+    NSString * _cautionaryTextKey;
+    NSDictionary * _chartingPredicatesByTimeScope;
+    HKDataUnitChartingRules * _chartingRules;
+    int  _dataUnitIdentifier;
+    NSPredicate * _defaultChartingPredicate;
+    UIImage * _detailImage;
+    BOOL  _disallowsSourceReordering;
+    NSString * _displayNameKey;
+    NSString * _embeddedDisplayNameKey;
+    NSString * _keywordsNameKey;
+    NSString * _labelDisplayNameKey;
+    HKObjectType * _objectType;
+    NSDictionary * _portraitPresentationOptionOverrides;
+    unsigned int  _portraitPresentationOptions;
+    double  _scalarValue;
+    BOOL  _shouldDisplayUnitStringOnYAxis;
+    BOOL  _shouldUseSingleSecondaryValue;
+    BOOL  _showAllDataHierarchically;
+    BOOL  _summaryAttributionHasLink;
+    NSString * _summaryNameKey;
+    NSString * _summaryPairedWatchNameKey;
+    NSString * _titleEmbeddedDisplayNameKey;
+    NSString * _unitChangeCautionaryTextKey;
+    NSDictionary * _unitNameKeyOverrides;
 }
 
+@property (getter=_isWheelchairUser, setter=_setWheelchairUser:) BOOL _wheelchairUser;
 @property (nonatomic, readonly) BOOL allowsManualEntry;
+@property (nonatomic, readonly) BOOL anyPortraitChartDefinition;
 @property (nonatomic, readonly) NSAttributedString *attributedSummaryAttribution;
+@property (nonatomic, readonly) BOOL canBecomeFavorite;
 @property (nonatomic, readonly) int categoryIdentifier;
 @property (nonatomic, readonly) NSString *cautionaryText;
 @property (nonatomic, readonly) HKDataUnitChartingRules *chartingRules;
@@ -40,11 +44,13 @@
 @property (nonatomic, readonly) UIImage *dataUnitIcon;
 @property (nonatomic, readonly) int dataUnitIdentifier;
 @property (nonatomic, readonly) UIImage *detailImage;
+@property (nonatomic, readonly) BOOL disallowsSourceReordering;
 @property (nonatomic, readonly) NSString *displayName;
 @property (nonatomic, readonly) NSString *embeddedDisplayName;
 @property (nonatomic, readonly) BOOL hidden;
 @property (nonatomic, readonly) BOOL isActivitySummary;
 @property (nonatomic, readonly) BOOL isCharacteristic;
+@property (nonatomic, readonly) BOOL isDocument;
 @property (nonatomic, readonly) NSSet *keywords;
 @property (nonatomic, readonly) NSString *labelDisplayName;
 @property (nonatomic, readonly) UIImage *listIcon;
@@ -52,7 +58,7 @@
 @property (nonatomic, readonly) HKObjectType *objectType;
 @property (nonatomic, readonly) HKSampleType *recordSampleType;
 @property (nonatomic, readonly) HKSampleType *sampleType;
-@property (nonatomic, readonly) float scalarValue;
+@property (nonatomic, readonly) double scalarValue;
 @property (nonatomic, readonly) UIImage *shareIcon;
 @property (nonatomic) BOOL shouldDisplayUnitStringOnYAxis;
 @property (nonatomic, readonly) BOOL shouldUseSingleSecondaryValue;
@@ -60,6 +66,7 @@
 @property (nonatomic, readonly) NSString *summary;
 @property (nonatomic, readonly) BOOL summaryAttributionHasLink;
 @property (nonatomic, readonly) NSString *summaryForPairedWatch;
+@property (nonatomic, readonly) BOOL supportsAssociatedSamples;
 @property (nonatomic, readonly) NSString *titleEmbeddedDisplayName;
 @property (nonatomic, readonly) NSString *unitChangeCautionaryText;
 @property (nonatomic, readonly) UIImage *unitIcon;
@@ -67,16 +74,21 @@
 
 - (void).cxx_destruct;
 - (void)_applyChartingProperties:(id)arg1;
-- (void)_applyScalarValueWithDictionary:(id)arg1;
-- (void)_applySummaryAndAttributionPropertiesWithDictionary:(id)arg1 displayNameKey:(id)arg2;
+- (void)_applyScalarValue:(id)arg1;
+- (void)_applySummaryAndAttributionPropertiesWithAttributionURLString:(id)arg1 displayNameKey:(id)arg2;
 - (void)_applyTextualPropertiesWithDictionary:(id)arg1 displayNameKey:(id)arg2;
-- (void)_applyUnitNameOverrides:(id)arg1;
 - (BOOL)_isActivitySummary;
 - (BOOL)_isNikeFuel;
+- (BOOL)_isWheelchairUser;
+- (id)_localizedStringWithKey:(id)arg1;
+- (id)_rawLocalizedStringForKey:(id)arg1;
+- (void)_setWheelchairUser:(BOOL)arg1;
 - (id)adjustedValueForClientValue:(id)arg1;
 - (id)adjustedValueForDaemonValue:(id)arg1;
 - (BOOL)allowsManualEntry;
+- (BOOL)anyPortraitChartDefinition;
 - (id)attributedSummaryAttribution;
+- (BOOL)canBecomeFavorite;
 - (int)categoryIdentifier;
 - (id)cautionaryText;
 - (id)chartingPredicateForTimeScope:(int)arg1;
@@ -88,6 +100,7 @@
 - (id)defaultValuePredicate;
 - (id)description;
 - (id)detailImage;
+- (BOOL)disallowsSourceReordering;
 - (id)displayName;
 - (id)embeddedDisplayName;
 - (unsigned int)hash;
@@ -96,6 +109,7 @@
 - (id)initFromDictionary:(id)arg1;
 - (BOOL)isActivitySummary;
 - (BOOL)isCharacteristic;
+- (BOOL)isDocument;
 - (BOOL)isEqual:(id)arg1;
 - (id)keywords;
 - (id)labelDisplayName;
@@ -111,13 +125,13 @@
 - (BOOL)shouldDisplayUnitStringOnYAxis;
 - (BOOL)shouldUseSingleSecondaryValue;
 - (BOOL)showAllDataHierarchically;
-- (id)singularUnitDisplayNameOverrideForUnit:(id)arg1;
 - (id)summary;
 - (BOOL)summaryAttributionHasLink;
 - (id)summaryForPairedWatch;
+- (BOOL)supportsAssociatedSamples;
 - (id)titleEmbeddedDisplayName;
 - (id)unitChangeCautionaryText;
-- (id)unitDisplayNameOverrideForUnit:(id)arg1;
+- (id)unitDisplayNameKeyOverrideForUnit:(id)arg1;
 - (id)unitIcon;
 - (BOOL)unitPreferencesRequireChangeConfirmation;
 

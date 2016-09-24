@@ -3,7 +3,7 @@
  */
 
 @interface TSDArchivedPathSelection : TSPObject <TSKArchivedSelection> {
-    TSDPathSelection *mPathSelection;
+    TSDPathSelection * mPathSelection;
 }
 
 @property (readonly, copy) NSString *debugDescription;

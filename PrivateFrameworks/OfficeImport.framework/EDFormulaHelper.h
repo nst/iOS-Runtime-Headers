@@ -3,11 +3,11 @@
  */
 
 @interface EDFormulaHelper : NSObject <EFHelper> {
-    int mColumnNumber;
-    ECMappingContext *mMappingContext;
-    int mRowNumber;
-    EDWorkbook *mWorkbook;
-    EDWorksheet *mWorksheet;
+    int  mColumnNumber;
+    ECMappingContext * mMappingContext;
+    int  mRowNumber;
+    EDWorkbook * mWorkbook;
+    EDWorksheet * mWorksheet;
 }
 
 @property (readonly, copy) NSString *debugDescription;

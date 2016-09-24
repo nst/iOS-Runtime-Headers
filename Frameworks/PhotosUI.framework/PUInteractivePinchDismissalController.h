@@ -3,10 +3,10 @@
  */
 
 @interface PUInteractivePinchDismissalController : PUInteractiveDismissalController <PUPinchedTileTrackerDelegate, UIGestureRecognizerDelegate> {
-    UIPinchGestureRecognizer *__pinchGestureRecognizer;
-    PUPinchedTileTracker *__pinchedTileTracker;
-    PUChangeDirectionValueFilter *__scaleDirectionValueFilter;
-    BOOL _handlingPinchGestureRecognizer;
+    UIPinchGestureRecognizer * __pinchGestureRecognizer;
+    PUPinchedTileTracker * __pinchedTileTracker;
+    PUChangeDirectionValueFilter * __scaleDirectionValueFilter;
+    BOOL  _handlingPinchGestureRecognizer;
 }
 
 @property (setter=_setPinchGestureRecognizer:, nonatomic, retain) UIPinchGestureRecognizer *_pinchGestureRecognizer;

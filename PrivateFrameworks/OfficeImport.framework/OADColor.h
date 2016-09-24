@@ -3,7 +3,7 @@
  */
 
 @interface OADColor : NSObject <NSCopying> {
-    NSMutableArray *mTransforms;
+    NSMutableArray * mTransforms;
 }
 
 + (float)alphaWithColor:(id)arg1;

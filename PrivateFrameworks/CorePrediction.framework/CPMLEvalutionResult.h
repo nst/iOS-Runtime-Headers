@@ -3,8 +3,8 @@
  */
 
 @interface CPMLEvalutionResult : NSObject {
-    unsigned int count;
-    NSObject *object;
+    unsigned int  count;
+    NSObject * object;
 }
 
 - (void).cxx_destruct;

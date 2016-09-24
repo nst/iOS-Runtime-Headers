@@ -3,12 +3,12 @@
  */
 
 @interface AWDCoreRoutineModelVisitCount : PBCodable <NSCopying> {
-    unsigned int _count;
+    unsigned int  _count;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int count : 1; 
-    } _has;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int count;

@@ -3,16 +3,16 @@
  */
 
 @interface PBBProtoPerformanceResult : PBCodable <NSCopying> {
-    NSString *_activityType;
+    NSString * _activityType;
     struct { 
         unsigned int timeDelta : 1; 
         unsigned int timeEnded : 1; 
         unsigned int timeStarted : 1; 
-    } _has;
-    NSString *_identifier;
-    double _timeDelta;
-    double _timeEnded;
-    double _timeStarted;
+    }  _has;
+    NSString * _identifier;
+    double  _timeDelta;
+    double  _timeEnded;
+    double  _timeStarted;
 }
 
 @property (nonatomic, retain) NSString *activityType;

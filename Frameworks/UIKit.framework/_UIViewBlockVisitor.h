@@ -3,7 +3,7 @@
  */
 
 @interface _UIViewBlockVisitor : _UIViewVisitor {
-    id /* block */ _visitorBlock;
+    id /* block */  _visitorBlock;
 }
 
 @property (nonatomic, copy) id /* block */ visitorBlock;

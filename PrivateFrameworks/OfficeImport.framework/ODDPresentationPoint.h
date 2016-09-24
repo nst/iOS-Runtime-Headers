@@ -3,8 +3,8 @@
  */
 
 @interface ODDPresentationPoint : ODDPoint {
-    NSMutableArray *mChildren;
-    ODDPresentationPoint *mParent;
+    NSMutableArray * mChildren;
+    ODDPresentationPoint * mParent;
 }
 
 - (void)addChild:(id)arg1 order:(unsigned int)arg2;

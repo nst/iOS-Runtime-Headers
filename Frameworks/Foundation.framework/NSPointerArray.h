@@ -47,5 +47,6 @@
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
 - (void)tsu_enumerateNonNullPointersUsingBlock:(id /* block */)arg1;
+- (void)tsu_insertRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 
 @end

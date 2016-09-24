@@ -3,8 +3,8 @@
  */
 
 @interface CUIKUserActivityCalendarDate : CUIKUserActivity {
-    NSDate *_date;
-    unsigned int _view;
+    NSDate * _date;
+    unsigned int  _view;
 }
 
 @property (nonatomic, readonly) NSDate *date;

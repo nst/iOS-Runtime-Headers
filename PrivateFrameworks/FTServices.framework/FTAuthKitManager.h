@@ -3,8 +3,8 @@
  */
 
 @interface FTAuthKitManager : NSObject {
-    AKAppleIDSession *_akAppleIDSession;
-    NSObject<OS_dispatch_queue> *_queue;
+    AKAppleIDSession * _akAppleIDSession;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 + (id)sharedInstance;

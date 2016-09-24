@@ -3,11 +3,11 @@
  */
 
 @interface SUMediaPlayerViewController : MPMoviePlayerViewController <ISOperationDelegate> {
-    UIView *_backgroundContainerView;
-    SUClientInterface *_clientInterface;
-    SUMediaPlayerItem *_mediaItem;
-    NSMutableArray *_operations;
-    int _playerState;
+    UIView * _backgroundContainerView;
+    SUClientInterface * _clientInterface;
+    SUMediaPlayerItem * _mediaItem;
+    NSMutableArray * _operations;
+    int  _playerState;
 }
 
 @property (nonatomic, retain) SUClientInterface *clientInterface;

@@ -3,10 +3,10 @@
  */
 
 @interface SKUIJSImageColorAnalyzer : IKJSObject <SKUIArtworkRequestDelegate, SKUIJSImageColorAnalyzer> {
-    NSMutableDictionary *_artworkRequestIDsToManagedCallbacks;
-    SKUIClientContext *_clientContext;
-    NSOperationQueue *_operationQueue;
-    SKUIResourceLoader *_resourceLoader;
+    NSMutableDictionary * _artworkRequestIDsToManagedCallbacks;
+    SKUIClientContext * _clientContext;
+    NSOperationQueue * _operationQueue;
+    SKUIResourceLoader * _resourceLoader;
 }
 
 @property (readonly, copy) NSString *debugDescription;

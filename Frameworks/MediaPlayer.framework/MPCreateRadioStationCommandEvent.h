@@ -3,8 +3,8 @@
  */
 
 @interface MPCreateRadioStationCommandEvent : MPRemoteCommandEvent {
-    BOOL _requestingPlaybackInitialization;
-    NSURL *_stationURL;
+    BOOL  _requestingPlaybackInitialization;
+    NSURL * _stationURL;
 }
 
 @property (getter=isRequestingPlaybackInitialization, nonatomic, readonly) BOOL requestingPlaybackInitialization;

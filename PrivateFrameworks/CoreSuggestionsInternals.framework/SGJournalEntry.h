@@ -3,9 +3,9 @@
  */
 
 @interface SGJournalEntry : NSObject {
-    SGStorageContact *_contact;
-    SGStorageEvent *_event;
-    unsigned int _operation;
+    SGStorageContact * _contact;
+    SGStorageEvent * _event;
+    unsigned int  _operation;
 }
 
 @property (nonatomic, readonly) SGStorageContact *contact;

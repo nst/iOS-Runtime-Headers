@@ -2,21 +2,25 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicForYouRecommendationsRequest : MusicStoreModelRequest {
-    unsigned int _recommendationsRequestType;
+@interface MusicForYouRecommendationsRequest : MPStoreModelRequest {
+    MusicForYouRecommendationsResponse * _previousResponse;
+    unsigned int  _recommendationsRequestType;
 }
 
 @property (nonatomic, retain) MusicForYouRecommendationsResponse *previousResponse;
-@property unsigned int recommendationsRequestType;
-@property (nonatomic, copy) id /* block */ responseHandler;
+@property (nonatomic) unsigned int recommendationsRequestType;
 
 + (id)allSupportedItemProperties;
 + (id)allSupportedSectionProperties;
 
-- (id)configurationForLoadingModelDataWithStoreBag:(id)arg1 error:(id*)arg2;
-- (id)init;
-- (void)produceResponseWithLoadedOutput:(id)arg1 completion:(id /* block */)arg2;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)newOperationWithResponseHandler:(id /* block */)arg1;
+- (id)previousResponse;
 - (unsigned int)recommendationsRequestType;
+- (void)setPreviousResponse:(id)arg1;
 - (void)setRecommendationsRequestType:(unsigned int)arg1;
 
 @end

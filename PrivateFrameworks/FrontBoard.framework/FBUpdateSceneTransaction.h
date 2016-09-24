@@ -3,27 +3,20 @@
  */
 
 @interface FBUpdateSceneTransaction : FBTransaction <FBSceneManagerObserver, FBSynchronizedTransaction> {
-    <FBSceneClientProvider> *_clientProvider;
-    id /* block */ _clientProviderProvider;
-    FBSSceneClientSettings *_clientSettings;
-    id /* block */ _clientSettingsProvider;
-    id _context;
-    BOOL _destroyed;
-    FBWaitForSceneDestructionTransaction *_destuctionTransaction;
-    BOOL _didCommit;
-    FBSDisplay *_display;
-    FBSSceneSettings *_newSceneSettings;
-    FBProcess *_process;
-    BOOL _readyToCommit;
-    NSString *_sceneID;
-    FBSceneManager *_sceneManager;
-    <FBSynchronizedTransactionDelegate> *_synchronizationDelegate;
-    unsigned int _transactionID;
-    FBSSceneTransitionContext *_transitionContext;
-    BOOL _waitsForSceneCommit;
+    FBSSceneDefinition * _definition;
+    BOOL  _destroyed;
+    FBWaitForSceneDestructionTransaction * _destructionTransaction;
+    BOOL  _didCommit;
+    FBSSceneParameters * _parameters;
+    BOOL  _readyToCommit;
+    NSString * _sceneID;
+    FBSceneManager * _sceneManager;
+    <FBSynchronizedTransactionDelegate> * _synchronizationDelegate;
+    unsigned int  _transactionID;
+    FBSSceneTransitionContext * _transitionContext;
+    BOOL  _waitsForSceneCommit;
 }
 
-@property (nonatomic, retain) id context;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) BOOL destroyed;
@@ -32,11 +25,14 @@
 @property (nonatomic, readonly, retain) FBSSceneSettings *newSettings;
 @property (nonatomic, readonly, retain) FBScene *scene;
 @property (nonatomic, readonly, retain) NSString *sceneIdentifier;
+@property (nonatomic, readonly, retain) FBSSceneSettings *settings;
+@property (nonatomic, readonly, retain) FBSSceneSpecification *specification;
 @property (readonly) Class superclass;
 @property (nonatomic) <FBSynchronizedTransactionDelegate> *synchronizationDelegate;
 @property (nonatomic, readonly, retain) FBSSceneTransitionContext *transitionContext;
 @property (nonatomic) BOOL waitsForSceneCommit;
 
+- (void).cxx_destruct;
 - (void)_begin;
 - (BOOL)_canBeInterrupted;
 - (void)_childTransactionDidComplete:(id)arg1;
@@ -47,16 +43,16 @@
 - (void)_didComplete;
 - (void)_didInterruptWithReason:(id)arg1;
 - (void)_enumerateUpdateSceneObserversWithBlock:(id /* block */)arg1;
-- (id)_initWithSceneIdentifier:(id)arg1 display:(id)arg2 newSettings:(id)arg3 transitionContext:(id)arg4 clientProvider:(id)arg5 initialClientSettings:(id)arg6;
+- (id)_initWithSceneDefinition:(id)arg1 parameters:(id)arg2 transitionContext:(id)arg3;
 - (void)_performCommit;
 - (void)_updateScene;
 - (void)addObserver:(id)arg1;
-- (id)context;
 - (void)dealloc;
 - (BOOL)destroyed;
 - (id)display;
+- (id)initWithSceneDefinition:(id)arg1 parameters:(id)arg2 transitionContext:(id)arg3;
 - (id)initWithSceneIdentifier:(id)arg1 process:(id)arg2 display:(id)arg3 newSettings:(id)arg4 transitionContext:(id)arg5 clientProviderProvider:(id /* block */)arg6 initialClientSettingsProvider:(id /* block */)arg7;
-- (id)initWithSceneToCreate:(id)arg1 display:(id)arg2 newSettings:(id)arg3 transitionContext:(id)arg4 clientProvider:(id)arg5 initialClientSettings:(id)arg6;
+- (id)initWithSceneIdentifier:(id)arg1 process:(id)arg2 parameters:(id)arg3 transitionContext:(id)arg4;
 - (id)initWithSceneToUpdate:(id)arg1 newSettings:(id)arg2 transitionContext:(id)arg3;
 - (BOOL)isReadyForSynchronizedCommit;
 - (id)newSettings;
@@ -70,9 +66,10 @@
 - (void)sceneManager:(id)arg1 willCommitUpdateForScene:(id)arg2 transactionID:(unsigned int)arg3;
 - (void)sceneManager:(id)arg1 willDestroyScene:(id)arg2;
 - (void)sceneManager:(id)arg1 willUpdateScene:(id)arg2 withSettings:(id)arg3 transitionContext:(id)arg4;
-- (void)setContext:(id)arg1;
 - (void)setSynchronizationDelegate:(id)arg1;
 - (void)setWaitsForSceneCommit:(BOOL)arg1;
+- (id)settings;
+- (id)specification;
 - (id)synchronizationDelegate;
 - (id)transitionContext;
 - (BOOL)waitsForSceneCommit;

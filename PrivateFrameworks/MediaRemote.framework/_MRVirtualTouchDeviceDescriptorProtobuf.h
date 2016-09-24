@@ -3,16 +3,16 @@
  */
 
 @interface _MRVirtualTouchDeviceDescriptorProtobuf : PBCodable <NSCopying> {
-    BOOL _absolute;
+    BOOL  _absolute;
     struct { 
         unsigned int screenSizeHeight : 1; 
         unsigned int screenSizeWidth : 1; 
         unsigned int absolute : 1; 
         unsigned int integratedDisplay : 1; 
-    } _has;
-    BOOL _integratedDisplay;
-    float _screenSizeHeight;
-    float _screenSizeWidth;
+    }  _has;
+    BOOL  _integratedDisplay;
+    double  _screenSizeHeight;
+    double  _screenSizeWidth;
 }
 
 @property (nonatomic) BOOL absolute;
@@ -21,8 +21,8 @@
 @property (nonatomic) BOOL hasScreenSizeHeight;
 @property (nonatomic) BOOL hasScreenSizeWidth;
 @property (nonatomic) BOOL integratedDisplay;
-@property (nonatomic) float screenSizeHeight;
-@property (nonatomic) float screenSizeWidth;
+@property (nonatomic) double screenSizeHeight;
+@property (nonatomic) double screenSizeWidth;
 
 - (BOOL)absolute;
 - (void)copyTo:(id)arg1;

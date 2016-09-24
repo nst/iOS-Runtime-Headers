@@ -3,9 +3,9 @@
  */
 
 @interface AWDPushReceivedSlow : PBCodable <NSCopying> {
-    unsigned int _connectionType;
-    unsigned int _dualChannelState;
-    NSString *_guid;
+    unsigned int  _connectionType;
+    unsigned int  _dualChannelState;
+    NSString * _guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int connectionType : 1; 
@@ -14,12 +14,12 @@
         unsigned int linkQuality : 1; 
         unsigned int payloadSize : 1; 
         unsigned int receiveOffset : 1; 
-    } _has;
-    unsigned int _isFromStorage;
-    int _linkQuality;
-    unsigned int _payloadSize;
-    unsigned int _receiveOffset;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned int  _isFromStorage;
+    int  _linkQuality;
+    unsigned int  _payloadSize;
+    unsigned int  _receiveOffset;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int connectionType;

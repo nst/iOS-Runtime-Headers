@@ -3,8 +3,8 @@
  */
 
 @interface _MPSparseArrayNode : NSObject <NSSecureCoding> {
-    id _object;
-    unsigned int _relativeOffset;
+    id  _object;
+    unsigned int  _relativeOffset;
 }
 
 @property (nonatomic, retain) id object;

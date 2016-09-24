@@ -3,7 +3,7 @@
  */
 
 @interface GKNavigationController : UINavigationController <UINavigationBarDelegate, UIViewControllerRestoration> {
-    NSMutableArray *_deferredTransitions;
+    NSMutableArray * _deferredTransitions;
 }
 
 @property (readonly, copy) NSString *debugDescription;

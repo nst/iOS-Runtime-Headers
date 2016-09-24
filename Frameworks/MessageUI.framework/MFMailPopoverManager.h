@@ -3,7 +3,7 @@
  */
 
 @interface MFMailPopoverManager : NSObject <UIAdaptivePresentationControllerDelegate> {
-    NSMutableArray *_passThroughProviders;
+    NSMutableArray * _passThroughProviders;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,11 +3,11 @@
  */
 
 @interface AVAssetReaderTrackOutputInternal : NSObject {
-    BOOL appliesPreferredTrackTransform;
-    NSString *audioTimePitchAlgorithm;
-    BOOL isAttachedToMetadataAdaptor;
-    AVOutputSettings *outputSettings;
-    AVAssetTrack *track;
+    BOOL  appliesPreferredTrackTransform;
+    NSString * audioTimePitchAlgorithm;
+    AVOutputSettings * outputSettings;
+    AVAssetTrack * track;
+    AVWeakReference * weakReferenceToAttachedAdaptor;
 }
 
 @end

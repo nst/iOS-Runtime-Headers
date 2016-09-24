@@ -3,32 +3,24 @@
  */
 
 @interface MTDateLabel : UIView {
-    NSArray *_currentConstraints;
-    NSDate *_date;
-    UILabel *_dateLabel;
-    UIFont *_font;
-    BOOL _hideTimeDesignator;
-    <MTDateLabelObserver> *_observer;
-    float _paddingFromTimeToDesignator;
-    BOOL _shouldAddLayoutConstraints;
-    UIColor *_textColor;
-    UIFont *_timeDesignatorFont;
-    NSString *_timeDesignatorString;
-    NSTimeZone *_timeZone;
+    NSArray * _currentConstraints;
+    NSDate * _date;
+    UILabel * _dateLabel;
+    UIFont * _font;
+    BOOL  _shouldAddLayoutConstraints;
+    UIColor * _textColor;
+    UIFont * _timeDesignatorFont;
+    NSTimeZone * _timeZone;
 }
 
 @property (nonatomic, retain) NSArray *currentConstraints;
 @property (nonatomic, copy) NSDate *date;
 @property (nonatomic, readonly) UILabel *dateLabel;
 @property (nonatomic, retain) UIFont *font;
-@property (nonatomic, readonly) BOOL hasTimeDesignator;
-@property (nonatomic) BOOL hideTimeDesignator;
-@property (nonatomic) <MTDateLabelObserver> *observer;
-@property (nonatomic) float paddingFromTimeToDesignator;
+@property (nonatomic) double lastBaselineFrameOriginY;
 @property (nonatomic) BOOL shouldAddLayoutConstraints;
 @property (nonatomic, retain) UIColor *textColor;
 @property (nonatomic, retain) UIFont *timeDesignatorFont;
-@property (nonatomic, copy) NSString *timeDesignatorString;
 @property (nonatomic, retain) NSTimeZone *timeZone;
 
 - (void).cxx_destruct;
@@ -38,30 +30,23 @@
 - (id)date;
 - (id)dateLabel;
 - (id)font;
-- (BOOL)hasTimeDesignator;
-- (BOOL)hideTimeDesignator;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (id)observer;
-- (float)paddingFromTimeToDesignator;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (float)lastBaselineFrameOriginY;
 - (void)setCurrentConstraints:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setFont:(id)arg1;
-- (void)setHideTimeDesignator:(BOOL)arg1;
-- (void)setObserver:(id)arg1;
-- (void)setPaddingFromTimeToDesignator:(float)arg1;
+- (void)setLastBaselineFrameOriginY:(float)arg1;
 - (void)setShouldAddLayoutConstraints:(BOOL)arg1;
 - (void)setTextColor:(id)arg1;
 - (void)setTimeDesignatorFont:(id)arg1;
-- (void)setTimeDesignatorString:(id)arg1;
 - (void)setTimeZone:(id)arg1;
 - (BOOL)shouldAddLayoutConstraints;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)textColor;
 - (id)timeDesignatorFont;
-- (id)timeDesignatorString;
 - (id)timeZone;
 - (void)updateConstraints;
 - (id)viewForBaselineLayout;
+- (id)viewForFirstBaselineLayout;
+- (id)viewForLastBaselineLayout;
 
 @end

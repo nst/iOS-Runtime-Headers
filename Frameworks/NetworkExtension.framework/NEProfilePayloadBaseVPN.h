@@ -3,18 +3,18 @@
  */
 
 @interface NEProfilePayloadBaseVPN : NEProfilePayloadBase {
-    NSString *_password;
-    BOOL _passwordRequired;
-    NSString *_pin;
-    BOOL _pinRequired;
-    NSString *_proxyPassword;
-    BOOL _proxyPasswordRequired;
-    NSString *_proxyUserName;
-    BOOL _proxyUserNameRequired;
-    NSString *_sharedSecret;
-    BOOL _sharedSecretRequired;
-    NSString *_userName;
-    BOOL _userNameRequired;
+    NSString * _password;
+    BOOL  _passwordRequired;
+    NSString * _pin;
+    BOOL  _pinRequired;
+    NSString * _proxyPassword;
+    BOOL  _proxyPasswordRequired;
+    NSString * _proxyUserName;
+    BOOL  _proxyUserNameRequired;
+    NSString * _sharedSecret;
+    BOOL  _sharedSecretRequired;
+    NSString * _userName;
+    BOOL  _userNameRequired;
 }
 
 @property (nonatomic, copy) NSString *password;

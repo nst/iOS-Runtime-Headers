@@ -3,8 +3,8 @@
  */
 
 @interface NSCIDGlyphInfo : NSGlyphInfo <NSSecureCoding> {
-    unsigned short _cid;
-    unsigned int _collection;
+    unsigned short  _cid;
+    unsigned int  _collection;
 }
 
 + (id)glyphInfoWithCharacterIdentifier:(unsigned int)arg1 collection:(unsigned int)arg2 baseString:(id)arg3;

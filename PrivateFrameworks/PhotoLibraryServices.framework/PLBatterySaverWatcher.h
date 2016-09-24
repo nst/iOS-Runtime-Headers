@@ -3,8 +3,8 @@
  */
 
 @interface PLBatterySaverWatcher : NSObject {
-    NSMutableArray *_delegates;
-    int _notifyBatterySaverModeToken;
+    NSMutableArray * _delegates;
+    int  _notifyBatterySaverModeToken;
 }
 
 + (id)sharedBatterySaverWatcher;

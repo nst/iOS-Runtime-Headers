@@ -3,25 +3,25 @@
  */
 
 @interface DATaskManager : NSObject {
-    DAAccount *_account;
-    <DATask> *_activeExclusiveTask;
-    <DATask> *_activeModalTask;
-    <DATask> *_activeQueuedTask;
-    BOOL _didLogSyncStart;
-    DADuetReporter *_duetReporter;
-    NSMutableSet *_heldIndependentTasks;
-    NSMutableSet *_independentTasks;
-    NSMutableArray *_mQueuedTasks;
-    NSTimer *_managerIdleTimer;
-    <DATask> *_modalHeldActiveQueuedTask;
-    NSMutableSet *_modalHeldIndependentTasks;
-    NSTimer *_powerLogIdleTimer;
-    NSMutableArray *_queuedExclusiveTasks;
-    NSMutableArray *_queuedModalTasks;
-    int _state;
-    DATransaction *_transaction;
-    NSTimer *_userInitiatedSyncTimer;
-    NSTimer *_xpcTransactionTimer;
+    DAAccount * _account;
+    <DATask> * _activeExclusiveTask;
+    <DATask> * _activeModalTask;
+    <DATask> * _activeQueuedTask;
+    BOOL  _didLogSyncStart;
+    DADuetReporter * _duetReporter;
+    NSMutableSet * _heldIndependentTasks;
+    NSMutableSet * _independentTasks;
+    NSMutableArray * _mQueuedTasks;
+    NSTimer * _managerIdleTimer;
+    <DATask> * _modalHeldActiveQueuedTask;
+    NSMutableSet * _modalHeldIndependentTasks;
+    NSTimer * _powerLogIdleTimer;
+    NSMutableArray * _queuedExclusiveTasks;
+    NSMutableArray * _queuedModalTasks;
+    int  _state;
+    DATransaction * _transaction;
+    NSTimer * _userInitiatedSyncTimer;
+    NSTimer * _xpcTransactionTimer;
 }
 
 @property (nonatomic) DAAccount *account;
@@ -46,6 +46,7 @@
 @property (nonatomic, retain) NSTimer *xpcTransactionTimer;
 
 - (void).cxx_destruct;
+- (id)OAuth2Token;
 - (void)_cancelTasksWithReason:(int)arg1;
 - (void)_clearUserInitiatedSyncTimer;
 - (void)_endXpcTransaction;

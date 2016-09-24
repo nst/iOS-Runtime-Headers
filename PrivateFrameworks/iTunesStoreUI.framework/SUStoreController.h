@@ -3,20 +3,20 @@
  */
 
 @interface SUStoreController : NSObject <MFMailComposeViewControllerDelegate, SUClientDelegate, SUPurchaseManagerDelegate, SUTabBarControllerDelegate, UIApplicationDelegate> {
-    SUClient *_client;
-    SUSectionsResponse *_lastBackgroundSectionsResponse;
-    SUSectionsResponse *_lastSectionsResponse;
-    NSURL *_launchURL;
-    ISOperation *_loadSectionsOperation;
-    NSString *_localStoreFrontAtLastSuspend;
-    id _locationObserver;
-    MFMailComposeViewController *_mailComposeViewController;
-    NSArray *_overlayConfigurations;
-    BOOL _reloadForStorefrontChangeAfterAccountSetup;
-    BOOL _reloadSectionsOnNextLaunch;
-    NSDictionary *_storeFrontLanguages;
-    NSString *_synchedStoreFrontAtLastSuspend;
-    SUTabBarController *_tabBarController;
+    SUClient * _client;
+    SUSectionsResponse * _lastBackgroundSectionsResponse;
+    SUSectionsResponse * _lastSectionsResponse;
+    NSURL * _launchURL;
+    ISOperation * _loadSectionsOperation;
+    NSString * _localStoreFrontAtLastSuspend;
+    id  _locationObserver;
+    MFMailComposeViewController * _mailComposeViewController;
+    NSArray * _overlayConfigurations;
+    BOOL  _reloadForStorefrontChangeAfterAccountSetup;
+    BOOL  _reloadSectionsOnNextLaunch;
+    NSDictionary * _storeFrontLanguages;
+    NSString * _synchedStoreFrontAtLastSuspend;
+    SUTabBarController * _tabBarController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -85,7 +85,7 @@
 - (BOOL)isStoreEnabled;
 - (BOOL)isTabBarControllerLoaded;
 - (id)launchURL;
-- (BOOL)libraryContainsItemIdentifier:(unsigned long long)arg1;
+- (BOOL)libraryContainsItemIdentifier:(unsigned int)arg1;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
 - (BOOL)matchesClientApplication:(id)arg1;
 - (id)newScriptInterface;

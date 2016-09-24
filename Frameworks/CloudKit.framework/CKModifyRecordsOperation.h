@@ -3,24 +3,25 @@
  */
 
 @interface CKModifyRecordsOperation : CKDatabaseOperation {
-    NSMutableDictionary *_assetsByRecordIDAndRecordKey;
-    BOOL _atomic;
-    NSData *_clientChangeTokenData;
-    NSDictionary *_conflictLosersToResolveByRecordID;
-    NSMutableArray *_deletedRecordIDs;
-    id /* block */ _modifyRecordsCompletionBlock;
-    id /* block */ _perRecordCompletionBlock;
-    id /* block */ _perRecordProgressBlock;
-    NSMutableDictionary *_recordErrors;
-    NSArray *_recordIDsToDelete;
-    NSDictionary *_recordIDsToDeleteToEtags;
-    NSMutableDictionary *_recordsByRecordIDs;
-    id /* block */ _recordsInFlightBlock;
-    NSArray *_recordsToSave;
-    int _savePolicy;
-    NSMutableArray *_savedRecords;
-    BOOL _shouldOnlySaveAssetContent;
-    BOOL _shouldReportRecordsInFlight;
+    NSMutableDictionary * _assetsByRecordIDAndRecordKey;
+    BOOL  _atomic;
+    NSData * _clientChangeTokenData;
+    NSDictionary * _conflictLosersToResolveByRecordID;
+    NSMutableArray * _deletedRecordIDs;
+    id /* block */  _modifyRecordsCompletionBlock;
+    NSMutableSet * _packagesToDestroy;
+    id /* block */  _perRecordCompletionBlock;
+    id /* block */  _perRecordProgressBlock;
+    NSMutableDictionary * _recordErrors;
+    NSArray * _recordIDsToDelete;
+    NSDictionary * _recordIDsToDeleteToEtags;
+    NSMutableDictionary * _recordsByRecordIDs;
+    id /* block */  _recordsInFlightBlock;
+    NSArray * _recordsToSave;
+    int  _savePolicy;
+    NSMutableArray * _savedRecords;
+    BOOL  _shouldOnlySaveAssetContent;
+    BOOL  _shouldReportRecordsInFlight;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *assetsByRecordIDAndRecordKey;
@@ -29,6 +30,7 @@
 @property (nonatomic, retain) NSDictionary *conflictLosersToResolveByRecordID;
 @property (nonatomic, retain) NSMutableArray *deletedRecordIDs;
 @property (nonatomic, copy) id /* block */ modifyRecordsCompletionBlock;
+@property (nonatomic, retain) NSMutableSet *packagesToDestroy;
 @property (nonatomic, copy) id /* block */ perRecordCompletionBlock;
 @property (nonatomic, copy) id /* block */ perRecordProgressBlock;
 @property (nonatomic, retain) NSMutableDictionary *recordErrors;
@@ -49,18 +51,22 @@
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (void)_trackAssetsToUpload;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (id)assetsByRecordIDAndRecordKey;
 - (BOOL)atomic;
+- (BOOL)claimPackagesInRecord:(id)arg1 error:(id*)arg2;
 - (id)clientChangeTokenData;
 - (id)conflictLosersToResolveByRecordID;
 - (id)deletedRecordIDs;
+- (void)destroyPackages:(id)arg1;
+- (void)destroyPackagesInRecords:(id)arg1;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
 - (BOOL)hasCKOperationCallbacksSet;
 - (id)init;
 - (id)initWithRecordsToSave:(id)arg1 recordIDsToDelete:(id)arg2;
 - (id /* block */)modifyRecordsCompletionBlock;
+- (id)packagesToDestroy;
 - (id /* block */)perRecordCompletionBlock;
 - (id /* block */)perRecordProgressBlock;
 - (void)performCKOperation;
@@ -78,6 +84,7 @@
 - (void)setConflictLosersToResolveByRecordID:(id)arg1;
 - (void)setDeletedRecordIDs:(id)arg1;
 - (void)setModifyRecordsCompletionBlock:(id /* block */)arg1;
+- (void)setPackagesToDestroy:(id)arg1;
 - (void)setPerRecordCompletionBlock:(id /* block */)arg1;
 - (void)setPerRecordProgressBlock:(id /* block */)arg1;
 - (void)setRecordErrors:(id)arg1;

@@ -3,10 +3,10 @@
  */
 
 @interface _HKFirstPartyWorkoutSnapshot : NSObject <NSSecureCoding> {
-    unsigned int _activityType;
-    NSDate *_startDate;
-    int _state;
-    NSArray *_workoutEvents;
+    unsigned int  _activityType;
+    NSDate * _startDate;
+    int  _state;
+    NSArray * _workoutEvents;
 }
 
 @property (nonatomic, readonly) unsigned int activityType;

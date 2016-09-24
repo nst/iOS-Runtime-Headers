@@ -3,7 +3,7 @@
  */
 
 @interface PUSaveToCameraRollActivity : UISaveToCameraRollActivity <PUActivity> {
-    PUActivityItemSourceController *_itemSourceController;
+    PUActivityItemSourceController * _itemSourceController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

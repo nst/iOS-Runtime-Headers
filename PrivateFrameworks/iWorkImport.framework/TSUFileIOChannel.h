@@ -3,9 +3,9 @@
  */
 
 @interface TSUFileIOChannel : NSObject <TSURandomWriteChannel, TSUReadChannel, TSUStreamWriteChannel> {
-    NSObject<OS_dispatch_io> *_channel;
-    BOOL _isClosed;
-    NSObject<OS_dispatch_queue> *_readQueue;
+    NSObject<OS_dispatch_io> * _channel;
+    NSObject<OS_dispatch_queue> * _ioQueue;
+    BOOL  _isClosed;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -17,20 +17,21 @@
 - (void).cxx_destruct;
 - (void)addBarrier:(id /* block */)arg1;
 - (void)close;
-- (id)createRandomAccessChannel;
 - (void)dealloc;
 - (id)initForRandomWritingURL:(id)arg1 error:(id*)arg2;
+- (id)initForRandomWritingURL:(id)arg1 error:(id*)arg2 cleanupHandler:(id /* block */)arg3;
 - (id)initForReadingDescriptor:(int)arg1 queue:(id)arg2 cleanupHandler:(id /* block */)arg3;
 - (id)initForReadingURL:(id)arg1 error:(id*)arg2;
+- (id)initForReadingURL:(id)arg1 error:(id*)arg2 cleanupHandler:(id /* block */)arg3;
 - (id)initForStreamWritingURL:(id)arg1 error:(id*)arg2;
-- (id)initWithType:(unsigned long)arg1 URL:(id)arg2 oflag:(int)arg3 mode:(unsigned short)arg4 error:(id*)arg5;
-- (id)initWithType:(unsigned long)arg1 channel:(id)arg2;
+- (id)initForStreamWritingURL:(id)arg1 error:(id*)arg2 cleanupHandler:(id /* block */)arg3;
+- (id)initWithType:(unsigned long)arg1 URL:(id)arg2 oflag:(int)arg3 mode:(unsigned short)arg4 error:(id*)arg5 cleanupHandler:(id /* block */)arg6;
 - (id)initWithType:(unsigned long)arg1 descriptor:(int)arg2 queue:(id)arg3 cleanupHandler:(id /* block */)arg4;
 - (BOOL)isValid;
-- (void)readFromOffset:(long long)arg1 length:(unsigned long)arg2 handler:(id /* block */)arg3;
+- (void)readFromOffset:(int)arg1 length:(unsigned long)arg2 handler:(id /* block */)arg3;
 - (void)readWithHandler:(id /* block */)arg1;
 - (void)setLowWater:(unsigned long)arg1;
-- (void)writeData:(id)arg1 offset:(long long)arg2 queue:(id)arg3 handler:(id /* block */)arg4;
-- (void)writeData:(id)arg1 queue:(id)arg2 handler:(id /* block */)arg3;
+- (void)writeData:(id)arg1 handler:(id /* block */)arg2;
+- (void)writeData:(id)arg1 offset:(int)arg2 handler:(id /* block */)arg3;
 
 @end

@@ -3,9 +3,9 @@
  */
 
 @interface SBFMicaWallpaper : SBFProceduralWallpaper {
-    NSBundle *_loadedBundle;
-    _UICAPackageView *_packageView;
-    UIView *_rootView;
+    NSBundle * _loadedBundle;
+    _UICAPackageView * _packageView;
+    UIView * _rootView;
 }
 
 + (id)identifier;

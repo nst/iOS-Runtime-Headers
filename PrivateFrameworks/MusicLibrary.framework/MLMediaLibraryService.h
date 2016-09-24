@@ -3,11 +3,11 @@
  */
 
 @interface MLMediaLibraryService : NSObject <MLMediaLibraryServiceClientProtocol> {
-    NSMutableDictionary *_progressBlocksByUUID;
-    NSObject<OS_dispatch_queue> *_replyQueue;
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    NSXPCConnection *_serviceConnection;
-    <MLMediaLibraryServiceProtocol> *_serviceProxy;
+    NSMutableDictionary * _progressBlocksByUUID;
+    NSObject<OS_dispatch_queue> * _replyQueue;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    NSXPCConnection * _serviceConnection;
+    <MLMediaLibraryServiceProtocol> * _serviceProxy;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,6 +20,7 @@
 
 - (void).cxx_destruct;
 - (id)_serviceConnection;
+- (void)attemptDatabaseFileRecoveryAtPath:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)beginTransactionForDatabaseAtPath:(id)arg1 withPriorityLevel:(unsigned int)arg2 options:(unsigned int)arg3 completionHandler:(id /* block */)arg4;
 - (void)cancelImportOperation:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
 - (void)dealloc;

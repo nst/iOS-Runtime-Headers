@@ -3,13 +3,13 @@
  */
 
 @interface NNMKProtoContentRequest : PBRequest <NSCopying> {
-    unsigned int _fullSyncVersion;
+    unsigned int  _fullSyncVersion;
     struct { 
         unsigned int fullSyncVersion : 1; 
         unsigned int highPriority : 1; 
-    } _has;
-    BOOL _highPriority;
-    NSString *_messageId;
+    }  _has;
+    BOOL  _highPriority;
+    NSString * _messageId;
 }
 
 @property (nonatomic) unsigned int fullSyncVersion;

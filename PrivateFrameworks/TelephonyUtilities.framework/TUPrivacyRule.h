@@ -3,9 +3,9 @@
  */
 
 @interface TUPrivacyRule : NSObject <NSCoding> {
-    NSString *_email;
-    TUPhoneNumber *_phoneNumber;
-    int _type;
+    NSString * _email;
+    TUPhoneNumber * _phoneNumber;
+    int  _type;
 }
 
 @property (nonatomic, readonly) NSString *email;

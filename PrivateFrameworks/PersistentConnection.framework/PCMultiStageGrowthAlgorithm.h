@@ -3,18 +3,18 @@
  */
 
 @interface PCMultiStageGrowthAlgorithm : NSObject <PCGrowthAlgorithm> {
-    NSString *_algorithmName;
-    unsigned int _countOfGrowthActions;
-    double _currentKeepAliveInterval;
-    int _growthStage;
-    double _highWatermark;
-    double _initialGrowthStageHighWatermark;
-    double _initialGrowthStageLastAttempt;
-    double _lastKeepAliveInterval;
-    NSDate *_leaveSteadyStateDate;
-    NSString *_loggingIdentifier;
-    double _maximumKeepAliveInterval;
-    double _minimumKeepAliveInterval;
+    NSString * _algorithmName;
+    unsigned int  _countOfGrowthActions;
+    double  _currentKeepAliveInterval;
+    int  _growthStage;
+    double  _highWatermark;
+    double  _initialGrowthStageHighWatermark;
+    double  _initialGrowthStageLastAttempt;
+    double  _lastKeepAliveInterval;
+    NSDate * _leaveSteadyStateDate;
+    NSString * _loggingIdentifier;
+    double  _maximumKeepAliveInterval;
+    double  _minimumKeepAliveInterval;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *cacheInfo;

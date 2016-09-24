@@ -7,11 +7,11 @@
 + (void)blockUntilFirstUnlock;
 + (id)currentOsBuild;
 + (BOOL)isClassCLocked;
-+ (BOOL)isConstrainedDevice;
 + (BOOL)isDeviceFormattedForProtection;
 + (BOOL)isUnlocked;
 + (int)lockState;
-+ (void)registerForLockStateChangeNotifications:(id /* block */)arg1;
++ (id)registerForLockStateChangeNotifications:(id /* block */)arg1;
 + (void)runBlockWhenDeviceIsReadyForSuggestions:(id /* block */)arg1;
++ (void)unregisterForLockStateChangeNotifications:(id)arg1;
 
 @end

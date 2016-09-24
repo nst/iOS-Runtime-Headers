@@ -3,8 +3,8 @@
  */
 
 @interface OADStyleMatrixReference : NSObject <NSCopying> {
-    OADColor *mColor;
-    unsigned long mMatrixIndex;
+    OADColor * mColor;
+    unsigned long  mMatrixIndex;
 }
 
 + (id)styleMatrixReferenceWithMatrixIndex:(unsigned long)arg1 color:(id)arg2;

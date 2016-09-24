@@ -3,8 +3,8 @@
  */
 
 @interface PUPhotoKitAssetActionManager : PUAssetActionManager {
-    PUPhotoKitDataSourceManager *_dataSourceManager;
-    BOOL _enableNavigateToPhotos;
+    PUPhotoKitDataSourceManager * _dataSourceManager;
+    BOOL  _enableNavigateToPhotos;
 }
 
 @property (nonatomic, retain) PUPhotoKitDataSourceManager *dataSourceManager;

@@ -3,17 +3,21 @@
  */
 
 @interface NACXPCServer : NSObject <NACIDSClientDelegate, NACXPCInterface, NSXPCListenerDelegate> {
-    BOOL _audioAndHapticPreviewIsPlaying;
-    NSObject<OS_dispatch_queue> *_audioAndHapticPreviewQueue;
-    NSObject<OS_dispatch_source> *_audioRouteDeferTimer;
-    NSMutableDictionary *_audioRoutesRecords;
-    NPSDomainAccessor *_domainAccessor;
-    float _hapticIntensity;
-    NACIDSClient *_idsClient;
-    BOOL _systemMutedState;
-    NSMutableSet *_volumeObservers;
-    NSMutableDictionary *_volumeRecords;
-    NSXPCListener *_xpcListener;
+    TLAlert * _alert;
+    BOOL  _audioAndHapticPreviewIsPlaying;
+    NSObject<OS_dispatch_queue> * _audioAndHapticPreviewQueue;
+    NSObject<OS_dispatch_source> * _audioRouteDeferTimer;
+    NSMutableDictionary * _audioRoutesRecords;
+    NPSDomainAccessor * _domainAccessor;
+    double  _hapticIntensity;
+    NACIDSClient * _idsClient;
+    NSObject<OS_dispatch_queue> * _internalQueue;
+    BOOL  _prominentHapticEnabled;
+    BOOL  _prominentHapticPreviewIsPlaying;
+    BOOL  _systemMutedState;
+    NSMutableSet * _volumeObservers;
+    NSMutableDictionary * _volumeRecords;
+    NSXPCListener * _xpcListener;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -27,6 +31,7 @@
 - (void)EULimitForCategory:(id)arg1 result:(id /* block */)arg2;
 - (id)_audioRoutesRecordForCategory:(id)arg1;
 - (float)_cachedHapticIntensity;
+- (BOOL)_cachedProminentHapticState;
 - (BOOL)_cachedSystemMutedState;
 - (id)_cachedVolumeRecords;
 - (void)_cancelDeferredAudioRoutesUpdate;
@@ -34,6 +39,7 @@
 - (void)_endObservingAudioRoutesForCategory:(id)arg1 connection:(id)arg2;
 - (void)_endObservingVolumeForConnection:(id)arg1;
 - (void)_persistHapticIntensity;
+- (void)_persistProminentHapticState;
 - (void)_persistSystemMutedState;
 - (void)_persistVolumeRecords;
 - (id)_routeObservationCategoriesForConnection:(id)arg1;
@@ -44,10 +50,12 @@
 - (void)audioRoutesForCategory:(id)arg1 result:(id /* block */)arg2;
 - (void)beginObservingAudioRoutesForCategory:(id)arg1;
 - (void)beginObservingVolume;
+- (void)beginObservingVolumeForConnection:(id)arg1;
 - (void)client:(id)arg1 EULimit:(float)arg2 didChangeForCategory:(id)arg3;
 - (void)client:(id)arg1 audioRoutes:(id)arg2 didChangeForCategory:(id)arg3;
 - (void)client:(id)arg1 hapticIntensityDidChange:(float)arg2;
 - (void)client:(id)arg1 mutedState:(BOOL)arg2 didChangeForCategory:(id)arg3;
+- (void)client:(id)arg1 prominentHapticStateDidChange:(BOOL)arg2;
 - (void)client:(id)arg1 routeObservationCancelledForCategory:(id)arg2;
 - (void)client:(id)arg1 systemMutedStateDidChange:(BOOL)arg2;
 - (void)client:(id)arg1 volumeControlAvailable:(BOOL)arg2 didChangeForCategory:(id)arg3;
@@ -62,8 +70,11 @@
 - (void)mutedStateForCategory:(id)arg1 result:(id /* block */)arg2;
 - (void)pickAudioRouteWithIdentifier:(id)arg1 category:(id)arg2;
 - (void)playAudioAndHapticPreview;
+- (void)playProminentHapticPreview;
+- (void)prominentHapticEnabled:(id /* block */)arg1;
 - (void)setHapticIntensity:(float)arg1;
 - (void)setMuted:(BOOL)arg1 category:(id)arg2;
+- (void)setProminentHapticEnabled:(BOOL)arg1;
 - (void)setSystemMuted:(BOOL)arg1;
 - (void)setVolumeValue:(float)arg1 category:(id)arg2;
 - (void)systemMutedState:(id /* block */)arg1;

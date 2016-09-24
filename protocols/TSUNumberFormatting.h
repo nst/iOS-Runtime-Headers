@@ -24,7 +24,7 @@
 - (double)scaleFactor;
 - (void)setFormatName:(NSString *)arg1;
 - (BOOL)showThousandsSeparator;
-- (NSString *)stringFromDouble:(double)arg1 locale:(TSULocale *)arg2;
+- (NSString *)stringFromDouble:(double)arg1 locale:(OITSULocale *)arg2;
 - (NSString *)stringFromString:(NSString *)arg1;
 - (NSString *)suffixString;
 - (BOOL)usesAccountingStyle;

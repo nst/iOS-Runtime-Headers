@@ -3,7 +3,7 @@
  */
 
 @interface PLPhotoLibraryImageSource : PLImageSource {
-    int _imageFormat;
+    int  _imageFormat;
 }
 
 @property (nonatomic, readonly) int imageFormat;

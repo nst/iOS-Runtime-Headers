@@ -3,10 +3,10 @@
  */
 
 @interface CMKTimelapseBackendSessionContext : NSObject {
-    NSArray *_filesToDelete;
-    NSArray *_filesToWrite;
-    CMKTimelapseState *_state;
-    NSString *_timelapseUUID;
+    NSArray * _filesToDelete;
+    NSArray * _filesToWrite;
+    CMKTimelapseState * _state;
+    NSString * _timelapseUUID;
 }
 
 @property (nonatomic, retain) NSArray *filesToDelete;

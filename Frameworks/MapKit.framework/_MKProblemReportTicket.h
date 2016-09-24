@@ -3,7 +3,7 @@
  */
 
 @interface _MKProblemReportTicket : NSObject <MKMapServiceProblemReportTicket> {
-    <GEOMapServiceProblemReportTicket> *_ticket;
+    <GEOMapServiceProblemReportTicket> * _ticket;
 }
 
 @property (readonly, copy) NSString *debugDescription;

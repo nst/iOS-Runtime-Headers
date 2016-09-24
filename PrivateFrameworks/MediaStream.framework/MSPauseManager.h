@@ -3,8 +3,8 @@
  */
 
 @interface MSPauseManager : NSObject {
-    NSMutableDictionary *_UUIDToTimerMap;
-    <MSPauseManagerDelegate> *_delegate;
+    NSMutableDictionary * _UUIDToTimerMap;
+    <MSPauseManagerDelegate> * _delegate;
 }
 
 @property (nonatomic) <MSPauseManagerDelegate> *delegate;

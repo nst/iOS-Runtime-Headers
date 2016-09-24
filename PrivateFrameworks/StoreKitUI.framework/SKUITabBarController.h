@@ -3,14 +3,17 @@
  */
 
 @interface SKUITabBarController : UITabBarController <SKUIMoreNavigationControllerDelegate> {
-    SKUIFloatingOverlayView *_floatingOverlayView;
-    UIViewController *_floatingOverlayViewController;
-    SKUITabBarBackgroundView *_tabBarBackgroundView;
+    SKUIFloatingOverlayView * _floatingOverlayView;
+    UIViewController * _floatingOverlayViewController;
+    BOOL  _sizeTransitionInProgress;
+    SKUITabBarBackgroundView * _tabBarBackgroundView;
 }
 
+@property (nonatomic, readonly) BOOL containsTransientViewControllerOnly;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic) BOOL sizeTransitionInProgress;
 @property (readonly) Class superclass;
 
 + (Class)_moreNavigationControllerClass;
@@ -20,14 +23,18 @@
 - (void)_layoutFloatingOverlayView;
 - (void)_setSelectedViewController:(id)arg1;
 - (void)cancelTransientViewController:(id)arg1;
+- (BOOL)containsTransientViewControllerOnly;
 - (id)floatingOverlayViewController;
 - (id)init;
 - (id)moreNavigationController;
 - (void)moreNavigationController:(id)arg1 didSelectItemAtIndex:(int)arg2;
 - (void)setFloatingOverlayViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)setSizeTransitionInProgress:(BOOL)arg1;
 - (void)setTabBarBackdropStyle:(int)arg1;
 - (void)setTransientViewController:(id)arg1 animated:(BOOL)arg2;
+- (BOOL)sizeTransitionInProgress;
+- (id)traitCollection;
 - (void)viewDidLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

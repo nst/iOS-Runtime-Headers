@@ -3,7 +3,7 @@
  */
 
 @interface RCTrimmedCompositionWaveformDataSource : RCCompositionWaveformDataSource {
-    NSURL *_destinationWaveformURL;
+    NSURL * _destinationWaveformURL;
 }
 
 @property (nonatomic, readonly) NSURL *destinationWaveformURL;

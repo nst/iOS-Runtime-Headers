@@ -3,11 +3,11 @@
  */
 
 @interface _MKDistanceDetailProvider : NSObject <MKLocationManagerObserver> {
-    NSString *_distanceToPlace;
-    MKMapItem *_mapItem;
-    id /* block */ _updateHandler;
-    BOOL _useMetric;
-    BOOL _useYardsForShortDistances;
+    NSString * _distanceToPlace;
+    MKMapItem * _mapItem;
+    id /* block */  _updateHandler;
+    BOOL  _useMetric;
+    BOOL  _useYardsForShortDistances;
 }
 
 @property (readonly, copy) NSString *debugDescription;

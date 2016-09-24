@@ -3,7 +3,7 @@
  */
 
 @interface IKJSMenuBarDocument : IKJSObject <IKJSMenuBarDocument> {
-    <IKJSMenuBarDocumentAppBridge> *_appBridge;
+    <IKJSMenuBarDocumentAppBridge> * _appBridge;
 }
 
 @property (nonatomic) <IKJSMenuBarDocumentAppBridge> *appBridge;

@@ -3,9 +3,9 @@
  */
 
 @interface OISFUGZipFileOutputStream : NSObject <SFUOutputStream> {
-    void *_file;
-    long long _offset;
-    NSString *_path;
+    struct gzFile_s { unsigned int x1; char *x2; int x3; } * _file;
+    int  _offset;
+    NSString * _path;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -22,9 +22,9 @@
 - (void)dealloc;
 - (id)initWithPath:(id)arg1;
 - (id)inputStream;
-- (long long)offset;
+- (int)offset;
 - (id)path;
-- (void)seekToOffset:(long long)arg1 whence:(int)arg2;
+- (void)seekToOffset:(int)arg1 whence:(int)arg2;
 - (void)writeBuffer:(const char *)arg1 size:(unsigned long)arg2;
 
 @end

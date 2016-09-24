@@ -3,9 +3,9 @@
  */
 
 @interface PTSSavedModeTableViewController : NSObject <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, _UISettingsGroupObserver> {
-    unsigned int _modalEditingIndex;
-    _UISettingsGroup *_settingsGroup;
-    UITableView *_tableView;
+    unsigned int  _modalEditingIndex;
+    _UISettingsGroup * _settingsGroup;
+    UITableView * _tableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

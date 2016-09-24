@@ -2,26 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUDialog : NSObject <UIAlertViewDelegate> {
-    UIAlertView *_alertView;
-    id /* block */ _completionBlock;
-    ISDialog *_dialog;
-}
-
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) ISDialog *dialog;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
-
-- (id)_alertView;
-- (void)_completeWithButtonIndex:(int)arg1;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)alertViewCancel:(id)arg1;
-- (void)dealloc;
-- (id)dialog;
-- (id)initWithDialog:(id)arg1;
-- (BOOL)isEquivalent:(id)arg1;
-- (void)showWithCompletionBlock:(id /* block */)arg1;
+@interface SUDialog : NSObject
 
 @end

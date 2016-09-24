@@ -3,7 +3,7 @@
  */
 
 @interface UIWebViewWebViewDelegate : NSObject <WebFrameLoadDelegate, WebPolicyDelegate, WebResourceLoadDelegate, WebUIDelegate> {
-    UIWebView *uiWebView;
+    UIWebView * uiWebView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

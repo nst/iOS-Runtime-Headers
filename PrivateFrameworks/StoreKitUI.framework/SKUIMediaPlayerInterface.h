@@ -3,13 +3,13 @@
  */
 
 @interface SKUIMediaPlayerInterface : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    NSObject<OS_dispatch_queue> *_observerQueue;
-    NSHashTable *_observers;
-    SKUIMediaPlayerItemStatus *_onDeckItem;
-    NSMapTable *_players;
-    NSObject<OS_dispatch_source> *_timeoutTimer;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    NSObject<OS_dispatch_queue> * _observerQueue;
+    NSHashTable * _observers;
+    SKUIMediaPlayerItemStatus * _onDeckItem;
+    NSMapTable * _players;
+    NSObject<OS_dispatch_source> * _timeoutTimer;
 }
 
 + (BOOL)identifierMatches:(id)arg1 item:(id)arg2;

@@ -3,9 +3,9 @@
  */
 
 @interface WBSMetadataExtractor : NSObject {
-    JSContext *_context;
-    WKWebProcessPlugInFrame *_webProcessPlugInFrame;
-    WKWebProcessPlugInScriptWorld *_webProcessPlugInScriptWorld;
+    JSContext * _context;
+    WKWebProcessPlugInFrame * _webProcessPlugInFrame;
+    WKWebProcessPlugInScriptWorld * _webProcessPlugInScriptWorld;
 }
 
 @property (nonatomic, readonly) JSContext *context;

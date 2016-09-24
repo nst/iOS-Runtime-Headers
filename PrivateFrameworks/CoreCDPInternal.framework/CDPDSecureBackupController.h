@@ -3,17 +3,19 @@
  */
 
 @interface CDPDSecureBackupController : NSObject {
-    NSDictionary *_cachedAccountInfo;
-    NSDictionary *_cachedAccountLockoutInfo;
-    CDPContext *_context;
-    <CDPDSecureBackupDelegate> *_delegate;
-    BOOL _fakeNearlyDepletedRecords;
-    <CDPDSecureBackupProxy> *_secureBackupProxy;
-    <CDPStateUIProviderInternal> *_uiProvider;
+    NSDictionary * _cachedAccountInfo;
+    NSDictionary * _cachedAccountLockoutInfo;
+    CDPDSecureBackupConfiguration * _configuration;
+    CDPContext * _context;
+    <CDPDSecureBackupDelegate> * _delegate;
+    BOOL  _fakeNearlyDepletedRecords;
+    <CDPDSecureBackupProxy> * _secureBackupProxy;
+    <CDPStateUIProviderInternal> * _uiProvider;
 }
 
 @property (nonatomic, retain) NSDictionary *cachedAccountInfo;
 @property (nonatomic, retain) NSDictionary *cachedAccountLockoutInfo;
+@property (nonatomic, retain) CDPDSecureBackupConfiguration *configuration;
 @property (nonatomic, readonly) CDPContext *context;
 @property (nonatomic, readonly) <CDPDSecureBackupDelegate> *delegate;
 @property (nonatomic) BOOL fakeNearlyDepletedRecords;
@@ -26,24 +28,29 @@
 - (void)_accountInfoWithCompletion:(id /* block */)arg1;
 - (void)_accountLockoutInfoWithCompletion:(id /* block */)arg1;
 - (void)_authenticatedEnableSecureBackupWithSecret:(id)arg1 secretType:(unsigned int)arg2 useCachedSecret:(BOOL)arg3 completion:(id /* block */)arg4;
-- (void)_authenticatedRecoverSecureBackupWithSecret:(id)arg1 isSilentAttempt:(BOOL)arg2 device:(id)arg3 useCachedSecret:(BOOL)arg4 completion:(id /* block */)arg5;
 - (id)_clientMetadataWithSecretType:(unsigned int)arg1 length:(unsigned int)arg2;
+- (id)_currentAnisetteData;
 - (id)_dateWithSecureBackupDateString:(id)arg1;
 - (void)_deleteAllBackupRecordsWithCompletion:(id /* block */)arg1;
 - (void)_deleteSingleICSCBackupWithCompletion:(id /* block */)arg1;
 - (void)_disableSecureBackupWithCompletion:(id /* block */)arg1;
+- (void)_disableThenEnableWithInfo:(id)arg1 completion:(id /* block */)arg2;
 - (void)_enableSecureBackupWithSecret:(id)arg1 secretType:(unsigned int)arg2 useCachedSecret:(BOOL)arg3 completion:(id /* block */)arg4;
 - (void)_getBackupRecordDevicesIncludingUnrecoverableRecords:(BOOL)arg1 completion:(id /* block */)arg2;
-- (void)_recoverSecureBackupWithSecret:(id)arg1 isSilentAttempt:(BOOL)arg2 device:(id)arg3 useCachedSecret:(BOOL)arg4 completion:(id /* block */)arg5;
+- (void)_recoverBackupDictionaryWithContext:(id)arg1 completion:(id /* block */)arg2;
+- (id)_recoveryInfoDictionaryFromContext:(id)arg1;
 - (void)_setBackoffDate:(id)arg1 withCompletion:(id /* block */)arg2;
+- (id)_stashedPRK;
 - (void)accountInfoWithCompletion:(id /* block */)arg1;
 - (void)accountLockoutInfoWithCompletion:(id /* block */)arg1;
-- (void)attemptSilentRecoveryWithLocalSecret:(id)arg1 useCachedSecret:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)backupRecordsArePresentWithCompletion:(id /* block */)arg1;
 - (id)cachedAccountInfo;
 - (id)cachedAccountLockoutInfo;
 - (void)cdpBackupRecordsArePresentWithCompletion:(id /* block */)arg1;
 - (void)checkForExistingRecord:(id /* block */)arg1;
+- (void)checkForExistingRecordMatchingPredicate:(id)arg1 completion:(id /* block */)arg2;
+- (void)checkForExistingRecordWithPeerId:(id)arg1 completion:(id /* block */)arg2;
+- (id)configuration;
 - (id)context;
 - (id)delegate;
 - (void)deleteAllBackupRecordsWithCompletion:(id /* block */)arg1;
@@ -58,12 +65,13 @@
 - (void)isAccountLockedWithShouldReset:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)isEligibleForCDPWithCompletion:(id /* block */)arg1;
 - (void)lockAccountOutWithCompletion:(id /* block */)arg1;
-- (void)recoverSecureBackupWithSecret:(id)arg1 device:(id)arg2 completion:(id /* block */)arg3;
+- (void)recoverSecureBackupWithContext:(id)arg1 completion:(id /* block */)arg2;
 - (void)resetAccountLockOutWithCompletion:(id /* block */)arg1;
 - (id)secureBackupProxy;
 - (void)setBackoffDate:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)setCachedAccountInfo:(id)arg1;
 - (void)setCachedAccountLockoutInfo:(id)arg1;
+- (void)setConfiguration:(id)arg1;
 - (void)setFakeNearlyDepletedRecords:(BOOL)arg1;
 - (void)setSecureBackupProxy:(id)arg1;
 - (void)synchronizeKeyValueStoreWithCompletion:(id /* block */)arg1;

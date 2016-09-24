@@ -3,12 +3,12 @@
  */
 
 @interface MLTrackImport : NSObject <NSCopying> {
-    NSData *_artworkData;
-    NSString *_assetFilePath;
-    BOOL _assignArtworkCacheIDFromAlbum;
-    NSArray *_chapters;
-    NSMutableDictionary *_properties;
-    BOOL _shouldAddToPurchasedPlaylist;
+    NSData * _artworkData;
+    NSString * _assetFilePath;
+    BOOL  _assignArtworkCacheIDFromAlbum;
+    NSArray * _chapters;
+    NSMutableDictionary * _properties;
+    BOOL  _shouldAddToPurchasedPlaylist;
 }
 
 @property (nonatomic, copy) NSData *artworkData;

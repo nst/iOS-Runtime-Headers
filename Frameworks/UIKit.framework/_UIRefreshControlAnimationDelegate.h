@@ -2,9 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIRefreshControlAnimationDelegate : NSObject {
-    id /* block */ block;
+@interface _UIRefreshControlAnimationDelegate : NSObject <CAAnimationDelegate> {
+    id /* block */  block;
 }
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)delegateWithCompletionBlock:(id /* block */)arg1;
 

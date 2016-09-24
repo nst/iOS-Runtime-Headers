@@ -3,11 +3,11 @@
  */
 
 @interface SKUIPhysicalCirclesTemplateDOMFeature : NSObject <SKUIDOMFeature> {
-    IKAppContext *_appContext;
-    <SKUIPhysicalCirclesTemplateDelegate> *_delegate;
-    NSMutableArray *_domUpdateBlocks;
-    NSString *_featureName;
-    NSMutableArray *_pendingAnimationRequests;
+    IKAppContext * _appContext;
+    <SKUIPhysicalCirclesTemplateDelegate> * _delegate;
+    NSMutableArray * _domUpdateBlocks;
+    NSString * _featureName;
+    NSMutableArray * _pendingAnimationRequests;
 }
 
 @property (nonatomic, readonly) IKAppContext *appContext;

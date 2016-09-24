@@ -3,9 +3,9 @@
  */
 
 @interface AXTrampoline : NSObject {
-    id _caller;
-    Class _targetClass;
-    BOOL _warnAboutUnknownSelectors;
+    id  _caller;
+    Class  _targetClass;
+    BOOL  _warnAboutUnknownSelectors;
 }
 
 @property (nonatomic) id caller;

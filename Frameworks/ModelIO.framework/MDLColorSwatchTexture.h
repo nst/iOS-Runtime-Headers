@@ -3,11 +3,11 @@
  */
 
 @interface MDLColorSwatchTexture : MDLTexture {
-    struct CGColor { } *_color1;
-    struct CGColor { } *_color2;
-    float _colorTemperature1;
-    float _colorTemperature2;
-    int _type;
+    struct CGColor { } * _color1;
+    struct CGColor { } * _color2;
+    double  _colorTemperature1;
+    double  _colorTemperature2;
+    int  _type;
 }
 
 - (id)generateDataAtLevel:(int)arg1;

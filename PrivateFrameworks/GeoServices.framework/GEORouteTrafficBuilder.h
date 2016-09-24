@@ -3,9 +3,9 @@
  */
 
 @interface GEORouteTrafficBuilder : NSObject {
-    NSMutableData *_trafficColors;
-    unsigned int _trafficDistance;
-    NSMutableData *_trafficOffsets;
+    NSMutableData * _trafficColors;
+    unsigned int  _trafficDistance;
+    NSMutableData * _trafficOffsets;
 }
 
 - (void)_removeDuplicateTraffic;

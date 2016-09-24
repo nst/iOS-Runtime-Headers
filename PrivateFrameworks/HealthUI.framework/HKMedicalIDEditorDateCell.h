@@ -3,8 +3,8 @@
  */
 
 @interface HKMedicalIDEditorDateCell : HKMedicalIDEditorCell {
-    NSDate *_dateValue;
-    UIDatePicker *_picker;
+    NSDate * _dateValue;
+    UIDatePicker * _picker;
 }
 
 @property (nonatomic, retain) NSDate *dateValue;

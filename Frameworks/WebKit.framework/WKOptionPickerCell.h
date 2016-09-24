@@ -3,7 +3,7 @@
  */
 
 @interface WKOptionPickerCell : UIPickerContentView {
-    BOOL _disabled;
+    BOOL  _disabled;
 }
 
 @property (nonatomic) BOOL disabled;

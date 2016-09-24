@@ -3,14 +3,15 @@
  */
 
 @interface CRKClassSessionBeaconBrowser : NSObject <WPDeviceScannerDelegate, WPZoneTrackerDelegate> {
-    NSSet *_controlGroupIdentifiers;
-    <CRKClassSessionBeaconBrowserDelegate> *_delegate;
-    BOOL _isBrowsing;
-    BOOL _isScanning;
-    NSSet *_organizationUUIDs;
-    WPDeviceScanner *mDeviceScanner;
-    NSMutableSet *mScanningZones;
-    WPZoneTracker *mZoneTracker;
+    NSSet * _controlGroupIdentifiers;
+    <CRKClassSessionBeaconBrowserDelegate> * _delegate;
+    BOOL  _isBrowsing;
+    BOOL  _isScanning;
+    NSSet * _organizationUUIDs;
+    WPDeviceScanner * mDeviceScanner;
+    int  mIncreasedScanRequestCount;
+    NSMutableSet * mScanningZones;
+    WPZoneTracker * mZoneTracker;
 }
 
 @property (nonatomic, copy) NSSet *controlGroupIdentifiers;
@@ -30,6 +31,8 @@
 - (void)delegateDidFailWithError:(id)arg1;
 - (void)delegateDidFindClassSession:(id)arg1 flags:(unsigned short)arg2;
 - (void)deviceScannerDidUpdateState:(id)arg1;
+- (void)increaseScanFrequencyForDuration:(double)arg1;
+- (void)increasedScanDurationElapsed;
 - (id)init;
 - (BOOL)isBrowsing;
 - (BOOL)isScanning;
@@ -45,11 +48,13 @@
 - (void)setOrganizationUUID:(id)arg1;
 - (void)setOrganizationUUIDs:(id)arg1;
 - (void)startBrowsing;
+- (void)startInitialScan;
 - (void)startScanningForDevicesInZone:(id)arg1;
 - (id)stateDictionary;
 - (void)stopBrowsing;
 - (void)stopScanningForDevicesInAllZones;
 - (void)stopScanningForDevicesInZone:(id)arg1;
+- (void)updateScanner;
 - (void)updateZones;
 - (id)zoneDataForOrganizationUUID:(id)arg1;
 - (void)zoneTracker:(id)arg1 didFailToRegisterZones:(id)arg2 withError:(id)arg3;

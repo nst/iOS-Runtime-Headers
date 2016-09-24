@@ -3,12 +3,12 @@
  */
 
 @interface UITextFieldCenteredLabel : UITextFieldLabel {
-    float _textWidth;
-    float _textXPosition;
+    double  _textWidth;
+    double  _textXPosition;
 }
 
-@property (nonatomic) float textWidth;
-@property (nonatomic) float textXPosition;
+@property (nonatomic) double textWidth;
+@property (nonatomic) double textXPosition;
 
 - (BOOL)_isTextFieldCenteredLabel;
 - (void)setTextWidth:(float)arg1;

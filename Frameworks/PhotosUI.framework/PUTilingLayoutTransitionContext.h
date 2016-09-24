@@ -3,7 +3,7 @@
  */
 
 @interface PUTilingLayoutTransitionContext : NSObject {
-    BOOL _isCancelingTransition;
+    BOOL  _isCancelingTransition;
 }
 
 @property (setter=setCancelingTransition:, nonatomic) BOOL isCancelingTransition;

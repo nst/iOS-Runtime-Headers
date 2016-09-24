@@ -3,36 +3,22 @@
  */
 
 @interface VKAnnotationTrackingCameraController : VKCameraController {
-    <VKTrackableAnnotation> *_annotation;
-    <VKTrackableAnnotationPresentation> *_annotationPresentation;
-    VKTimedAnimation *_currentAnimation;
-    struct VKPoint { 
-        double x; 
-        double y; 
-        double z; 
-    } _currentAnimationEndCameraPosition;
-    struct VKPoint { 
-        double x; 
-        double y; 
-        double z; 
-    } _currentAnimationEndPoint;
-    struct VKPoint { 
-        double x; 
-        double y; 
-        double z; 
-    } _currentAnimationStartCameraPosition;
-    struct VKPoint { 
-        double x; 
-        double y; 
-        double z; 
-    } _currentAnimationStartPoint;
-    VKTimedAnimation *_currentHeadingAnimation;
-    struct VKEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _edgeInsets;
+    <VKTrackableAnnotation> * _annotation;
+    <VKTrackableAnnotationPresentation> * _annotationPresentation;
+    VKTimedAnimation * _currentAnimation;
+    struct Matrix<double, 3, 1> { 
+        double _e[3]; 
+    }  _currentAnimationEndCameraPosition;
+    struct Matrix<double, 3, 1> { 
+        double _e[3]; 
+    }  _currentAnimationEndPoint;
+    struct Matrix<double, 3, 1> { 
+        double _e[3]; 
+    }  _currentAnimationStartCameraPosition;
+    struct Matrix<double, 3, 1> { 
+        double _e[3]; 
+    }  _currentAnimationStartPoint;
+    VKTimedAnimation * _currentHeadingAnimation;
     struct { 
         unsigned int hasPendingChange : 1; 
         unsigned int paused : 1; 
@@ -44,16 +30,15 @@
         unsigned int annotationImplementsHeading : 1; 
         unsigned int annotationImplementsExpectedCoordinateUpdateInterval : 1; 
         unsigned int annotationImplementsExpectedHeadingUpdateInterval : 1; 
-    } _flags;
-    float _headingAnimationCompletedAngle;
-    int _headingAnimationDisplayRate;
-    double _pendingChangeDuration;
-    double _pendingHeadingChangeDuration;
-    int _zoomStyle;
+    }  _flags;
+    double  _headingAnimationCompletedAngle;
+    int  _headingAnimationDisplayRate;
+    double  _pendingChangeDuration;
+    double  _pendingHeadingChangeDuration;
+    int  _zoomStyle;
 }
 
 @property (nonatomic, readonly) <VKTrackableAnnotation> *annotation;
-@property (nonatomic) struct VKEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
 @property (nonatomic) int headingAnimationDisplayRate;
 @property (getter=isTrackingHeading, nonatomic, readonly) BOOL trackingHeading;
 @property (nonatomic) int zoomStyle;
@@ -63,7 +48,6 @@
 - (void)_rotateToHeadingAnimated:(BOOL)arg1 duration:(double)arg2;
 - (id)annotation;
 - (void)dealloc;
-- (struct VKEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (int)headingAnimationDisplayRate;
 - (id)init;
 - (BOOL)isAnimating;
@@ -71,7 +55,7 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)pauseAnimation;
 - (void)resumeAnimation;
-- (void)setEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setEdgeInsets:(struct VKEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setGesturing:(BOOL)arg1;
 - (void)setHeadingAnimationDisplayRate:(int)arg1;
 - (void)setZoomStyle:(int)arg1;

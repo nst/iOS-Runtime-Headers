@@ -3,8 +3,8 @@
  */
 
 @interface WDRubyProperties : NSObject {
-    unsigned int mOriginal;
-    struct { int x1; unsigned short x2; unsigned short x3; unsigned short x4; int x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; } *mOriginalProperties;
+    unsigned int  mOriginal;
+    struct { int x1; unsigned short x2; unsigned short x3; unsigned short x4; int x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; } * mOriginalProperties;
 }
 
 @property (nonatomic) int alignment;

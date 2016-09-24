@@ -3,19 +3,19 @@
  */
 
 @interface FTMessageDelivery_APS : FTMessageDelivery <APSConnectionDelegate, FTMessageQueueDelegate> {
-    Class _APSConnectionClass;
-    Class _APSOutgoingMessageClass;
-    NSMutableDictionary *_apsMessageMap;
-    NSMutableDictionary *_bodyMap;
-    APSConnection *_connection;
-    NSMutableDictionary *_deathTimerMap;
-    NSMutableArray *_enabledTopics;
-    NSMutableDictionary *_ftMessageMap;
-    int _largeMessageSize;
-    int _messageSize;
-    NSMutableDictionary *_retriesMap;
-    NSMutableDictionary *_startDateMap;
-    NSMutableDictionary *_timerMap;
+    Class  _APSConnectionClass;
+    Class  _APSOutgoingMessageClass;
+    NSMutableDictionary * _apsMessageMap;
+    NSMutableDictionary * _bodyMap;
+    APSConnection * _connection;
+    NSMutableDictionary * _deathTimerMap;
+    NSMutableArray * _enabledTopics;
+    NSMutableDictionary * _ftMessageMap;
+    int  _largeMessageSize;
+    int  _messageSize;
+    NSMutableDictionary * _retriesMap;
+    NSMutableDictionary * _startDateMap;
+    NSMutableDictionary * _timerMap;
 }
 
 @property (readonly, copy) NSString *debugDescription;

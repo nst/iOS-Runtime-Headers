@@ -3,10 +3,10 @@
  */
 
 @interface AWDBacklightLuxMicroAmpsBucket : PBCodable <NSCopying> {
-    unsigned int _bucketDuration;
+    unsigned int  _bucketDuration;
     struct { 
         unsigned int bucketDuration : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic) unsigned int bucketDuration;

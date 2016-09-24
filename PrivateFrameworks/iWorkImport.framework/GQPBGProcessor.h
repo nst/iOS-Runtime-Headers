@@ -3,7 +3,7 @@
  */
 
 @interface GQPBGProcessor : GQPProcessor {
-    Class mGenerator;
+    Class  mGenerator;
 }
 
 - (Class)generator;

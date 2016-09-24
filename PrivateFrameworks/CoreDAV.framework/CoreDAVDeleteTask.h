@@ -3,7 +3,7 @@
  */
 
 @interface CoreDAVDeleteTask : CoreDAVActionBackedTask {
-    NSString *_previousETag;
+    NSString * _previousETag;
 }
 
 @property (nonatomic) <CoreDAVTaskDelegate> *delegate;

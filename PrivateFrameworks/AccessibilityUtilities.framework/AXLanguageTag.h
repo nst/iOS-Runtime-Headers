@@ -3,14 +3,14 @@
  */
 
 @interface AXLanguageTag : NSObject <NSCopying> {
-    NSMutableOrderedSet *_ambiguousDialects;
-    NSString *_content;
+    NSMutableOrderedSet * _ambiguousDialects;
+    NSString * _content;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
-    NSMutableOrderedSet *_unambiguousDialects;
-    BOOL _wasPredicted;
+    }  _range;
+    NSMutableOrderedSet * _unambiguousDialects;
+    BOOL  _wasPredicted;
 }
 
 @property (nonatomic, retain) NSMutableOrderedSet *ambiguousDialects;

@@ -3,7 +3,7 @@
  */
 
 @interface IKDOMHTMLCollection : IKJSObject <IKJSDOMHTMLCollection> {
-    IKDOMNode *_parentNode;
+    IKDOMNode * _parentNode;
 }
 
 @property (readonly) unsigned long length;

@@ -3,9 +3,9 @@
  */
 
 @interface DMFInstalledApplication : NSObject <NSSecureCoding> {
-    NSString *_bundleIdentifier;
-    NSData *_iconData;
-    NSString *_name;
+    NSString * _bundleIdentifier;
+    NSData * _iconData;
+    NSString * _name;
 }
 
 @property (nonatomic, copy) NSString *bundleIdentifier;

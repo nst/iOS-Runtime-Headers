@@ -3,8 +3,8 @@
  */
 
 @interface _UITextViewInteractableLink : _UITextViewInteractableItem <DDDetectionControllerInteractionDelegate> {
-    LSAppLink *_appLink;
-    NSURL *_link;
+    LSAppLink * _appLink;
+    NSURL * _link;
 }
 
 @property (nonatomic, retain) LSAppLink *appLink;
@@ -18,16 +18,18 @@
 
 - (void).cxx_destruct;
 - (void)_dataDetectorAction:(id)arg1;
+- (BOOL)_isMobileSafariRestricted;
 - (void)_linkInteractionAddToReadingList;
 - (void)_linkInteractionCopyLink;
 - (void)_linkInteractionOpenURL;
 - (void)_linkInteractionOpenURLInDefaultBrowser;
 - (void)_linkInteractionOpenURLInExternalApplication;
 - (BOOL)_linkInteractionPerformDefaultAction;
+- (void)_linkInteractionShareLink;
 - (void)action:(id)arg1 didDismissAlertController:(id)arg2;
 - (void)actionDidFinish:(id)arg1;
 - (id)actions;
-- (BOOL)allowInteraction;
+- (BOOL)allowInteraction:(int)arg1;
 - (id)appLink;
 - (id)dataDetectorActionsForTextView:(id)arg1;
 - (id)defaultAction;

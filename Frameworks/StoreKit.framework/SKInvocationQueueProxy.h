@@ -3,9 +3,9 @@
  */
 
 @interface SKInvocationQueueProxy : NSObject {
-    NSMutableArray *_invocationQueue;
-    id _invocationTarget;
-    Protocol *_protocol;
+    NSMutableArray * _invocationQueue;
+    id  _invocationTarget;
+    Protocol * _protocol;
 }
 
 @property (nonatomic, retain) id invocationTarget;

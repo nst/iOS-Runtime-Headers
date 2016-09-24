@@ -3,18 +3,26 @@
  */
 
 @interface TUCallServicesClientCapabilities : NSObject <NSSecureCoding> {
-    BOOL _wantsFrequencyChangeNotifications;
+    <TUCallServicesClientCapabilitiesActions> * _delegate;
+    BOOL  _wantsCallDisconnectionOnInvalidation;
+    BOOL  _wantsFrequencyChangeNotifications;
 }
 
+@property (nonatomic) <TUCallServicesClientCapabilitiesActions> *delegate;
+@property (nonatomic) BOOL wantsCallDisconnectionOnInvalidation;
 @property (nonatomic) BOOL wantsFrequencyChangeNotifications;
 
-+ (id)sharedInstance;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
+- (id)delegate;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)save;
+- (void)setDelegate:(id)arg1;
+- (void)setWantsCallDisconnectionOnInvalidation:(BOOL)arg1;
 - (void)setWantsFrequencyChangeNotifications:(BOOL)arg1;
+- (BOOL)wantsCallDisconnectionOnInvalidation;
 - (BOOL)wantsFrequencyChangeNotifications;
 
 @end

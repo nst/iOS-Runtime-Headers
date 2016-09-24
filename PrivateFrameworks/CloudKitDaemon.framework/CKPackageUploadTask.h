@@ -3,14 +3,14 @@
  */
 
 @interface CKPackageUploadTask : NSObject <CKDCancelling> {
-    CKDMMCSItem *_MMCSManifestItem;
-    CKDMMCSRequestOptions *_MMCSRequestOptions;
-    NSArray *_MMCSSectionItems;
-    CKDCancelTokenGroup *_cancelTokens;
-    NSError *_error;
-    NSObject<OS_dispatch_group> *_group;
-    CKPackage *_package;
-    CKDProgressTracker *_progressTracker;
+    CKDMMCSItem * _MMCSManifestItem;
+    CKDMMCSRequestOptions * _MMCSRequestOptions;
+    NSArray * _MMCSSectionItems;
+    CKDCancelTokenGroup * _cancelTokens;
+    NSError * _error;
+    NSObject<OS_dispatch_group> * _group;
+    CKPackage * _package;
+    CKDProgressTracker * _progressTracker;
 }
 
 @property (nonatomic, retain) CKDMMCSItem *MMCSManifestItem;
@@ -29,7 +29,7 @@
 - (id)MMCSManifestItem;
 - (id)MMCSRequestOptions;
 - (id)MMCSSectionItems;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (void)cancel;
 - (id)cancelTokens;
 - (id)error;

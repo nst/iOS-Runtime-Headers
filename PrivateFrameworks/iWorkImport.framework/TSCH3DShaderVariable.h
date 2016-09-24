@@ -3,16 +3,16 @@
  */
 
 @interface TSCH3DShaderVariable : NSObject <NSCopying> {
-    unsigned int mArraySize;
-    NSArray *mElements;
-    TSCH3DShaderVariable *mGenericName;
-    BOOL mIsSpecial;
-    NSString *mName;
-    struct NSString { Class x1; } *mPrecision;
+    unsigned int  mArraySize;
+    NSArray * mElements;
+    TSCH3DShaderVariable * mGenericName;
+    BOOL  mIsSpecial;
+    NSString * mName;
+    struct NSString { Class x1; } * mPrecision;
     struct TSCH3DShaderType { 
         unsigned int mValue; 
-    } mShaderType;
-    struct NSString { Class x1; } *mType;
+    }  mShaderType;
+    struct NSString { Class x1; } * mType;
 }
 
 @property (nonatomic, readonly) unsigned int arraySize;

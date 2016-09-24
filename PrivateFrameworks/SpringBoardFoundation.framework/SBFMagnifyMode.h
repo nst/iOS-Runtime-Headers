@@ -3,24 +3,24 @@
  */
 
 @interface SBFMagnifyMode : NSObject <BSDescriptionProviding, NSCopying> {
-    NSString *_name;
+    NSString * _name;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _size;
-    float _zoomFactor;
+        double width; 
+        double height; 
+    }  _size;
+    double  _zoomFactor;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic) struct CGSize { double x1; double x2; } size;
 @property (readonly) Class superclass;
-@property (nonatomic) float zoomFactor;
+@property (nonatomic) double zoomFactor;
 
 + (id)currentMagnifyMode;
-+ (id)magnifyModeWithSize:(struct CGSize { float x1; float x2; })arg1 name:(id)arg2;
++ (id)magnifyModeWithSize:(struct CGSize { double x1; double x2; })arg1 name:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -32,9 +32,9 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)name;
 - (void)setName:(id)arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setZoomFactor:(float)arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { double x1; double x2; })size;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
 - (float)zoomFactor;

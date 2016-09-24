@@ -3,8 +3,8 @@
  */
 
 @interface UIScrollViewDirectionalPressGestureRecognizer : _UIRepeatingPressGestureRecognizer {
-    int _activePressType;
-    UIScrollView *_scrollView;
+    int  _activePressType;
+    UIScrollView * _scrollView;
 }
 
 @property (nonatomic, readonly) int activePressType;

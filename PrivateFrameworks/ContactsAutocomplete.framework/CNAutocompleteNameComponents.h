@@ -3,10 +3,10 @@
  */
 
 @interface CNAutocompleteNameComponents : NSObject <NSCopying> {
-    NSString *_firstName;
-    NSString *_lastName;
-    NSString *_nameSuffix;
-    NSString *_nickname;
+    NSString * _firstName;
+    NSString * _lastName;
+    NSString * _nameSuffix;
+    NSString * _nickname;
 }
 
 @property (readonly) NSString *firstName;

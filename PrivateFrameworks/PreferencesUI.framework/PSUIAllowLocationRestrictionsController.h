@@ -3,7 +3,7 @@
  */
 
 @interface PSUIAllowLocationRestrictionsController : PSUILocationServicesListController {
-    PSSpecifier *_allowedGroup;
+    PSSpecifier * _allowedGroup;
 }
 
 - (void).cxx_destruct;

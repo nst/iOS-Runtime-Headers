@@ -3,9 +3,9 @@
  */
 
 @interface MTLRenderPassColorAttachmentDescriptorArrayInternal : MTLRenderPassColorAttachmentDescriptorArray {
-    MTLRenderPassColorAttachmentDescriptorInternal *_color_descriptors;
-    MTLRenderPassDepthAttachmentDescriptorInternal *_depth_descriptor;
-    MTLRenderPassStencilAttachmentDescriptorInternal *_stencil_descriptor;
+    MTLRenderPassColorAttachmentDescriptorInternal * _color_descriptors;
+    MTLRenderPassDepthAttachmentDescriptorInternal * _depth_descriptor;
+    MTLRenderPassStencilAttachmentDescriptorInternal * _stencil_descriptor;
 }
 
 - (id)_descriptorAtIndex:(unsigned int)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface NRMutableDeviceCollection : NRMutableStateBase <NRMutableStateParentDelegate, NSFastEnumeration> {
-    NSMutableDictionary *_childMap;
-    NSMutableDictionary *_deviceCollection;
+    NSMutableDictionary * _childMap;
+    NSMutableDictionary * _deviceCollection;
 }
 
 @property (nonatomic, readonly) NRMutableDevice *activeDevice;
@@ -19,6 +19,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_diffsToChangeActiveDeviceToDeviceID:(id)arg1;
 - (id)activeDevice;
 - (id)activeDeviceID;
 - (id)allPairingIDs;

@@ -3,9 +3,9 @@
  */
 
 @interface RecommendationActionController : NSObject {
-    NSString *actionKey;
-    NSString *sectionIdentifier;
-    TableViewManager *tableManager;
+    NSString * actionKey;
+    NSString * sectionIdentifier;
+    TableViewManager * tableManager;
 }
 
 @property (nonatomic, retain) NSString *actionKey;

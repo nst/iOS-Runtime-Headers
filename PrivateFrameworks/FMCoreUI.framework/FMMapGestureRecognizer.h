@@ -3,71 +3,71 @@
  */
 
 @interface FMMapGestureRecognizer : UIGestureRecognizer {
-    NSTimer *_doubleTapTimer;
+    NSTimer * _doubleTapTimer;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _initialTouchLocation;
-    BOOL _isRTLOrientation;
-    BOOL _isSwipeEnabled;
-    BOOL _isSwipingFromTheEdge;
-    BOOL _isSwipingGestureEnded;
-    BOOL _isTrackingTouches;
+        double x; 
+        double y; 
+    }  _initialTouchLocation;
+    BOOL  _isRTLOrientation;
+    BOOL  _isSwipeEnabled;
+    BOOL  _isSwipingFromTheEdge;
+    BOOL  _isSwipingGestureEnded;
+    BOOL  _isTrackingTouches;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _lastTouchPoint;
-    NSMutableArray *_otherGestures;
-    UITouch *_previousTouch;
-    float _swipeThreshold;
-    <FMMapGestureRecognizerDelegate> *_touchDelegate;
-    int _touchRadius;
-    float _velocity;
+        double x; 
+        double y; 
+    }  _lastTouchPoint;
+    NSMutableArray * _otherGestures;
+    UITouch * _previousTouch;
+    double  _swipeThreshold;
+    <FMMapGestureRecognizerDelegate> * _touchDelegate;
+    int  _touchRadius;
+    double  _velocity;
 }
 
 @property (nonatomic, retain) NSTimer *doubleTapTimer;
-@property (nonatomic) struct CGPoint { float x1; float x2; } initialTouchLocation;
+@property (nonatomic) struct CGPoint { double x1; double x2; } initialTouchLocation;
 @property (nonatomic) BOOL isRTLOrientation;
 @property (nonatomic) BOOL isSwipeEnabled;
 @property (nonatomic) BOOL isSwipingFromTheEdge;
 @property (nonatomic) BOOL isSwipingGestureEnded;
 @property (nonatomic) BOOL isTrackingTouches;
-@property (nonatomic) struct CGPoint { float x1; float x2; } lastTouchPoint;
+@property (nonatomic) struct CGPoint { double x1; double x2; } lastTouchPoint;
 @property (nonatomic, retain) NSMutableArray *otherGestures;
 @property (nonatomic, retain) UITouch *previousTouch;
-@property (nonatomic) float swipeThreshold;
+@property (nonatomic) double swipeThreshold;
 @property (nonatomic) <FMMapGestureRecognizerDelegate> *touchDelegate;
 @property (nonatomic) int touchRadius;
-@property (nonatomic) float velocity;
+@property (nonatomic) double velocity;
 
 - (void).cxx_destruct;
 - (BOOL)canBePreventedByGestureRecognizer:(id)arg1;
 - (BOOL)canPreventGestureRecognizer:(id)arg1;
 - (void)dealloc;
-- (float)distanceBetweenPointA:(struct CGPoint { float x1; float x2; })arg1 andPointB:(struct CGPoint { float x1; float x2; })arg2;
+- (float)distanceBetweenPointA:(struct CGPoint { double x1; double x2; })arg1 andPointB:(struct CGPoint { double x1; double x2; })arg2;
 - (id)doubleTapTimer;
 - (void)finishSwipeGesture:(float)arg1;
 - (id)init;
-- (struct CGPoint { float x1; float x2; })initialTouchLocation;
+- (struct CGPoint { double x1; double x2; })initialTouchLocation;
 - (void)invalidateGesture;
 - (BOOL)isRTLOrientation;
 - (BOOL)isSwipeEnabled;
 - (BOOL)isSwipingFromTheEdge;
 - (BOOL)isSwipingGestureEnded;
 - (BOOL)isTrackingTouches;
-- (struct CGPoint { float x1; float x2; })lastTouchPoint;
+- (struct CGPoint { double x1; double x2; })lastTouchPoint;
 - (void)mapTappedTimer;
 - (id)otherGestures;
 - (id)previousTouch;
 - (void)reset;
 - (void)setDoubleTapTimer:(id)arg1;
-- (void)setInitialTouchLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setInitialTouchLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setIsRTLOrientation:(BOOL)arg1;
 - (void)setIsSwipeEnabled:(BOOL)arg1;
 - (void)setIsSwipingFromTheEdge:(BOOL)arg1;
 - (void)setIsSwipingGestureEnded:(BOOL)arg1;
 - (void)setIsTrackingTouches:(BOOL)arg1;
-- (void)setLastTouchPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setLastTouchPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setOtherGestures:(id)arg1;
 - (void)setPreviousTouch:(id)arg1;
 - (void)setSwipeThreshold:(float)arg1;

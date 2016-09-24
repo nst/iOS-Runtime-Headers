@@ -3,8 +3,8 @@
  */
 
 @interface QLPreviewConverter : NSObject {
-    NSDictionary *_options;
-    QLPreviewParts *_previewParts;
+    NSDictionary * _options;
+    QLPreviewParts * _previewParts;
 }
 
 @property (nonatomic, readonly) NSString *previewFileName;
@@ -29,6 +29,7 @@
 + (BOOL)isSafeURL:(id)arg1;
 + (BOOL)isSpreadSheetDocumentType:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_register;
 - (void)appendData:(id)arg1;
 - (void)appendDataArray:(id)arg1;

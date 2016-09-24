@@ -3,12 +3,12 @@
  */
 
 @interface ISDialogButton : NSObject <SSXPCCoding> {
-    int _actionType;
-    NSDictionary *_dictionary;
-    id _parameter;
-    NSString *_subtarget;
-    NSString *_title;
-    int _urlType;
+    int  _actionType;
+    NSDictionary * _dictionary;
+    id  _parameter;
+    NSString * _subtarget;
+    NSString * _title;
+    int  _urlType;
 }
 
 @property int actionType;

@@ -3,22 +3,26 @@
  */
 
 @interface MPStoreAVItem : MPAVItem {
-    unsigned int _assetQuality;
-    BOOL _didDeferLeaseStart;
-    BOOL _hasEverPrioritizedPlayerItem;
-    BOOL _hasPrioritizedPlayWhileDownloadSession;
-    BOOL _hasPrioritizedStreamingDownloadSession;
-    BOOL _hasValidAssetQuality;
-    BOOL _isActivePlayerItem;
-    unsigned int _options;
-    MPStorePlayWhileDownloadSession *_playWhileDownloadSession;
-    MPMediaPlaybackItemMetadata *_playbackItemMetadata;
-    unsigned int _preferredAssetQuality;
-    MPStreamingDownloadSession *_streamingDownloadSession;
+    NSDictionary * _alternativeConfigurationOptions;
+    unsigned int  _assetQuality;
+    BOOL  _didDeferLeaseStart;
+    BOOL  _hasEverPrioritizedPlayerItem;
+    BOOL  _hasPrioritizedPlayWhileDownloadSession;
+    BOOL  _hasPrioritizedStreamingDownloadSession;
+    BOOL  _hasValidAssetQuality;
+    BOOL  _isActivePlayerItem;
+    unsigned int  _options;
+    MPStorePlayWhileDownloadSession * _playWhileDownloadSession;
+    MPMediaPlaybackItemMetadata * _playbackItemMetadata;
+    unsigned int  _preferredAssetQuality;
+    unsigned int  _streamType;
+    MPStreamingDownloadSession * _streamingDownloadSession;
 }
 
+@property (nonatomic, readonly, copy) NSDictionary *alternativeConfigurationOptions;
 @property (nonatomic, readonly) unsigned int options;
 @property (nonatomic, readonly) MPMediaPlaybackItemMetadata *playbackItemMetadata;
+@property (nonatomic, readonly) unsigned int streamType;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
@@ -46,15 +50,16 @@
 - (void)_willResignActivePlayerItem;
 - (id)album;
 - (id)albumArtist;
-- (long long)albumStoreID;
+- (int)albumStoreID;
 - (unsigned int)albumTrackCount;
 - (unsigned int)albumTrackNumber;
 - (BOOL)allowsAirPlayFromCloud;
 - (BOOL)allowsEQ;
 - (BOOL)allowsExternalPlayback;
+- (id)alternativeConfigurationOptions;
 - (void)applyVolumeNormalizationWithSoundCheckEnabled:(BOOL)arg1;
 - (id)artist;
-- (long long)artistStoreID;
+- (int)artistStoreID;
 - (id)artworkCatalogForPlaybackTime:(double)arg1;
 - (id)artworkTimeMarkers;
 - (BOOL)canSeedGenius;
@@ -79,32 +84,36 @@
 - (BOOL)isLikedStateEnabled;
 - (BOOL)isStreamable;
 - (BOOL)isStreamingLowQualityAsset;
-- (BOOL)isSupportedDefaultPlaybackSpeed:(unsigned int)arg1;
+- (BOOL)isSupportedDefaultPlaybackSpeed:(int)arg1;
 - (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
 - (void)loadAssetAndPlayerItem;
 - (id)mainTitle;
 - (id)mediaItem;
+- (id)modelObject;
+- (id)modelSong;
 - (void)notePlaybackFinishedByHittingEnd;
 - (unsigned int)options;
-- (unsigned long long)persistentID;
+- (unsigned int)persistentID;
 - (double)playbackCheckpointCurrentTime;
 - (id)playbackItemMetadata;
 - (void)prepareForRate:(float)arg1 completionHandler:(id /* block */)arg2;
 - (void)reevaluateType;
 - (void)setAlternateAudioTrackID:(int)arg1;
+- (void)setAlternateAudioTrackLocale:(id)arg1;
 - (void)setLoudnessInfoVolumeNormalization:(float)arg1;
 - (void)setPlaybackCheckpointCurrentTime:(double)arg1;
 - (void)setPlaybackFinishedTime:(double)arg1;
 - (void)setPlaybackStoppedTime:(double)arg1;
 - (void)setRating:(float)arg1;
 - (id)storeDownload;
-- (long long)storeItemInt64ID;
+- (int)storeItemInt64ID;
 - (int)storePlaybackEndpointType;
-- (long long)storeSubscriptionAdamID;
+- (int)storeSubscriptionAdamID;
+- (unsigned int)streamType;
 - (BOOL)supportsLikedState;
 - (BOOL)supportsRewindAndFastForward15Seconds;
 - (id)titlesForTime:(double)arg1;
-- (unsigned int)type;
+- (int)type;
 - (id)urlTimeMarkers;
 - (BOOL)useEmbeddedChapterData;
 - (float)userRating;
@@ -117,11 +126,10 @@
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
 
 - (id)MPU_contentItemIdentifierCollection;
-- (long long)_mpuReporting_storeItemInt64ID;
-- (long long)_mpuReporting_storeItemInt64IDFromIdentifierCollection:(id)arg1;
-- (BOOL)mpuReporting_isValidReportingItem;
-- (unsigned int)mpuReporting_itemType;
-- (BOOL)mpuReporting_shouldReportPlayEventsToStore;
-- (id)mpuReporting_storeItemID;
+
+// Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
+
+- (BOOL)mpcReporting_isValidReportingItem;
+- (BOOL)mpcReporting_shouldReportPlayEventsToStore;
 
 @end

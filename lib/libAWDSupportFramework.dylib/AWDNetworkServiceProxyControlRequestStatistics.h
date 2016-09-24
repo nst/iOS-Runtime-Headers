@@ -15,28 +15,31 @@
         unsigned int resultUnknownErrorCount : 1; 
         unsigned int timestamp : 1; 
         unsigned int interfaceType : 1; 
+        unsigned int protocolType : 1; 
         unsigned int requestType : 1; 
-    } _has;
-    int _interfaceType;
-    unsigned long long _requestCount;
-    int _requestType;
+    }  _has;
+    int  _interfaceType;
+    int  _protocolType;
+    unsigned long long  _requestCount;
+    int  _requestType;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _responseTimeBuckets;
-    unsigned long long _resultCertificateFailureCount;
-    unsigned long long _resultConnectionResetCount;
-    unsigned long long _resultNetworkUnavailableCount;
-    unsigned long long _resultResponseTimeoutCount;
-    unsigned long long _resultSendFailureCount;
-    unsigned long long _resultServerUnreachableCount;
-    unsigned long long _resultSuccessCount;
-    unsigned long long _resultUnknownErrorCount;
-    unsigned long long _timestamp;
+    }  _responseTimeBuckets;
+    unsigned long long  _resultCertificateFailureCount;
+    unsigned long long  _resultConnectionResetCount;
+    unsigned long long  _resultNetworkUnavailableCount;
+    unsigned long long  _resultResponseTimeoutCount;
+    unsigned long long  _resultSendFailureCount;
+    unsigned long long  _resultServerUnreachableCount;
+    unsigned long long  _resultSuccessCount;
+    unsigned long long  _resultUnknownErrorCount;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL hasInterfaceType;
+@property (nonatomic) BOOL hasProtocolType;
 @property (nonatomic) BOOL hasRequestCount;
 @property (nonatomic) BOOL hasRequestType;
 @property (nonatomic) BOOL hasResultCertificateFailureCount;
@@ -49,6 +52,7 @@
 @property (nonatomic) BOOL hasResultUnknownErrorCount;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) int interfaceType;
+@property (nonatomic) int protocolType;
 @property (nonatomic) unsigned long long requestCount;
 @property (nonatomic) int requestType;
 @property (nonatomic, readonly) unsigned int*responseTimeBuckets;
@@ -64,6 +68,7 @@
 @property (nonatomic) unsigned long long timestamp;
 
 - (int)StringAsInterfaceType:(id)arg1;
+- (int)StringAsProtocolType:(id)arg1;
 - (int)StringAsRequestType:(id)arg1;
 - (void)addResponseTimeBuckets:(unsigned int)arg1;
 - (void)clearResponseTimeBuckets;
@@ -73,6 +78,7 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasInterfaceType;
+- (BOOL)hasProtocolType;
 - (BOOL)hasRequestCount;
 - (BOOL)hasRequestType;
 - (BOOL)hasResultCertificateFailureCount;
@@ -89,6 +95,8 @@
 - (id)interfaceTypeAsString:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (int)protocolType;
+- (id)protocolTypeAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (unsigned long long)requestCount;
 - (int)requestType;
@@ -105,6 +113,7 @@
 - (unsigned long long)resultSuccessCount;
 - (unsigned long long)resultUnknownErrorCount;
 - (void)setHasInterfaceType:(BOOL)arg1;
+- (void)setHasProtocolType:(BOOL)arg1;
 - (void)setHasRequestCount:(BOOL)arg1;
 - (void)setHasRequestType:(BOOL)arg1;
 - (void)setHasResultCertificateFailureCount:(BOOL)arg1;
@@ -117,6 +126,7 @@
 - (void)setHasResultUnknownErrorCount:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setInterfaceType:(int)arg1;
+- (void)setProtocolType:(int)arg1;
 - (void)setRequestCount:(unsigned long long)arg1;
 - (void)setRequestType:(int)arg1;
 - (void)setResponseTimeBuckets:(unsigned int*)arg1 count:(unsigned int)arg2;

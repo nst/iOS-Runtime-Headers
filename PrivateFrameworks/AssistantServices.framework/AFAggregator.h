@@ -3,11 +3,11 @@
  */
 
 @interface AFAggregator : NSObject {
-    BOOL _hasActiveRequest;
-    BOOL _retryPrefersWWAN;
-    BOOL _sessionIsRetrying;
-    double _startTime;
-    unsigned int _type;
+    BOOL  _hasActiveRequest;
+    BOOL  _retryPrefersWWAN;
+    BOOL  _sessionIsRetrying;
+    double  _startTime;
+    unsigned int  _type;
 }
 
 @property (nonatomic) unsigned int connectionType;
@@ -16,16 +16,18 @@
 + (id)_fullAggDKeyWithPrefix:(id)arg1 error:(id)arg2;
 + (id)_stringForGatekeeperType:(unsigned int)arg1;
 + (void)logCreateAssistant;
++ (void)logDESEvaluationForLanguage:(id)arg1 error:(id)arg2;
++ (void)logDESRecordingForLanguage:(id)arg1 error:(id)arg2;
 + (void)logDictationCancelled;
-+ (void)logDictationDeleteCommand;
 + (void)logDictationFailedWithError:(id)arg1;
-+ (void)logDictationKeyboardRevisited;
-+ (void)logDictationSessionOccurred;
++ (void)logDictationFollowedByContinueOccurredForLanguage:(id)arg1;
++ (void)logDictationFollowedByKeyboardDeleteOccurredForLanguage:(id)arg1;
++ (void)logDictationFollowedByKeyboardInputOccurredForLanguage:(id)arg1;
 + (void)logDictationStarted;
 + (void)logDictationSucceeded;
++ (void)logEnabledState:(unsigned int)arg1;
 + (void)logHomeButtonPressToActivationDuration:(double)arg1;
-+ (void)logKeyboardDeleteKeyPress;
-+ (void)logKeyboardSessionOccurred;
++ (void)logKeyboardInputFollowedByContinueOccurredForLanguage:(id)arg1;
 + (void)logLoadAssistant;
 + (void)logLocalFinalSpeechRecognitionWithDuration:(double)arg1;
 + (void)logLocalRecognitionAssetEvictedForLanguage:(id)arg1;

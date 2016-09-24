@@ -3,8 +3,8 @@
  */
 
 @interface GKPlayerMultiPhotoView : UIImageView {
-    NSMutableDictionary *_photoImages;
-    NSArray *_players;
+    NSMutableDictionary * _photoImages;
+    NSArray * _players;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *photoImages;

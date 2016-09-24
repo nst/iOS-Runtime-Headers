@@ -3,7 +3,7 @@
  */
 
 @interface DMFStartAppLockRequest : CATTaskRequest {
-    NSString *_bundleIdentifier;
+    NSString * _bundleIdentifier;
 }
 
 @property (nonatomic, copy) NSString *bundleIdentifier;

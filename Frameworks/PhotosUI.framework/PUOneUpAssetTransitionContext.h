@@ -3,20 +3,20 @@
  */
 
 @interface PUOneUpAssetTransitionContext : NSObject {
-    id /* block */ _animationBlock;
-    UIView *_containerView;
-    UIView *_fromView;
-    BOOL _shouldHideBackground;
-    UIView *_snapshotView;
-    PUOneUpAssetTransitionInfo *_transitionInfo;
+    id /* block */  _animationBlock;
+    UIView * _containerView;
+    UIView * _fromView;
+    BOOL  _shouldHideBackground;
+    UIView * _snapshotView;
+    PUOneUpAssetTransitionInfo * _transitionInfo;
 }
 
-@property (nonatomic, copy) id /* block */ animationBlock;
-@property (nonatomic, retain) UIView *containerView;
-@property (nonatomic, retain) UIView *fromView;
-@property (nonatomic) BOOL shouldHideBackground;
-@property (nonatomic, retain) UIView *snapshotView;
-@property (nonatomic, retain) PUOneUpAssetTransitionInfo *transitionInfo;
+@property (setter=_setAnimationBlock:, nonatomic, copy) id /* block */ animationBlock;
+@property (setter=_setContainerView:, nonatomic, retain) UIView *containerView;
+@property (setter=_setFromView:, nonatomic, retain) UIView *fromView;
+@property (setter=_setShouldHideBackground:, nonatomic) BOOL shouldHideBackground;
+@property (setter=_setSnapshotView:, nonatomic, retain) UIView *snapshotView;
+@property (setter=_setTransitionInfo:, nonatomic, retain) PUOneUpAssetTransitionInfo *transitionInfo;
 
 + (id)oneUpAssetTransitionContextWithContainerView:(id)arg1 fromView:(id)arg2 snapshotView:(id)arg3 transitionInfo:(id)arg4;
 

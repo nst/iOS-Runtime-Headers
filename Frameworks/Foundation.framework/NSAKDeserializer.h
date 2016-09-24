@@ -3,7 +3,7 @@
  */
 
 @interface NSAKDeserializer : NSObject {
-    id ds;
+    id  ds;
 }
 
 - (void)dealloc;

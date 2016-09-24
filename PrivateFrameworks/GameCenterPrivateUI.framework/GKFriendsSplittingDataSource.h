@@ -3,12 +3,12 @@
  */
 
 @interface GKFriendsSplittingDataSource : GKSplittingDataSource {
-    NSString *_achievementID;
-    GKGame *_game;
-    NSSet *_hiddenPlayers;
-    NSString *_leaderboardID;
-    int _maxSelectable;
-    NSMutableDictionary *_pickerInfos;
+    NSString * _achievementID;
+    GKGame * _game;
+    NSSet * _hiddenPlayers;
+    NSString * _leaderboardID;
+    int  _maxSelectable;
+    NSMutableDictionary * _pickerInfos;
 }
 
 @property (nonatomic, retain) NSString *achievementID;

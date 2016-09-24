@@ -3,14 +3,14 @@
  */
 
 @interface AWDLibnetcoreNetworkdStatsReport : PBCodable <NSCopying> {
-    unsigned long long _fallbackConnectionCount;
+    unsigned long long  _fallbackConnectionCount;
     struct { 
         unsigned int fallbackConnectionCount : 1; 
         unsigned int totalConnectionCount : 1; 
         unsigned int totalSuccessfulConnectionCount : 1; 
-    } _has;
-    unsigned long long _totalConnectionCount;
-    unsigned long long _totalSuccessfulConnectionCount;
+    }  _has;
+    unsigned long long  _totalConnectionCount;
+    unsigned long long  _totalSuccessfulConnectionCount;
 }
 
 @property (nonatomic) unsigned long long fallbackConnectionCount;

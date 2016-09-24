@@ -3,7 +3,7 @@
  */
 
 @interface ML3LibraryManager : NSObject {
-    ML3MusicLibrary *_currentLibrary;
+    ML3MusicLibrary * _currentLibrary;
 }
 
 @property (nonatomic, retain) ML3MusicLibrary *currentLibrary;

@@ -3,19 +3,21 @@
  */
 
 @interface SKUIFamilyCircleController : NSObject {
-    SKUIClientContext *_clientContext;
-    BOOL _hasLoaded;
-    FAFamilyCircle *_iCloudFamily;
-    SSFamilyCircle *_iTunesFamily;
-    NSCache *_imageCache;
-    NSNumber *_lastAccountID;
-    NSOperationQueue *_opQueue;
+    SKUIClientContext * _clientContext;
+    BOOL  _hasLoaded;
+    FAFamilyCircle * _iCloudFamily;
+    SSFamilyCircle * _iTunesFamily;
+    NSCache * _imageCache;
+    NSNumber * _lastAccountID;
+    int  _reloadPromptStyle;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
 @property (nonatomic, readonly) SSFamilyCircle *familyCircle;
 @property (nonatomic, readonly) BOOL hasLoaded;
 @property (nonatomic, readonly) FAFamilyCircle *iCloudFamily;
+@property (retain) NSNumber *lastAccountID;
+@property int reloadPromptStyle;
 
 + (id)sharedController;
 
@@ -30,8 +32,12 @@
 - (BOOL)hasLoaded;
 - (id)iCloudFamily;
 - (id)init;
+- (id)lastAccountID;
 - (id)profilePictureForFamilyMember:(id)arg1;
 - (void)reloadData;
+- (int)reloadPromptStyle;
 - (void)setClientContext:(id)arg1;
+- (void)setLastAccountID:(id)arg1;
+- (void)setReloadPromptStyle:(int)arg1;
 
 @end

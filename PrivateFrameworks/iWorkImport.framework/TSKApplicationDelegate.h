@@ -3,11 +3,13 @@
  */
 
 @interface TSKApplicationDelegate : NSObject <TSKApplicationDelegate> {
-    <TSKCompatibilityDelegate> *_compatibilityDelegate;
+    <TSKCompatibilityDelegate> * _compatibilityDelegate;
 }
 
 @property (getter=isActivating, readonly) BOOL activating;
+@property (nonatomic, readonly) NSDate *applicationLaunchTime;
 @property (nonatomic, readonly) NSString *applicationName;
+@property (nonatomic, readonly) NSString *bladerunnerContainerIdentifier;
 @property (nonatomic, readonly) NSString *cloudKitContainerIdentifier;
 @property (nonatomic, retain) <TSKCompatibilityDelegate> *compatibilityDelegate;
 @property (nonatomic, readonly) BOOL designModeEnabled;
@@ -15,6 +17,7 @@
 @property (nonatomic, readonly) NSString *documentTypeDisplayNameForSharingInvitation;
 @property (nonatomic) unsigned int iWorkAuthorColorIndex;
 @property (nonatomic, copy) NSString *iWorkAuthorName;
+@property (nonatomic, readonly) NSString *iWorkAuthorPrivateID;
 @property (getter=isInBackground, readonly) BOOL inBackground;
 @property (nonatomic, readonly) BOOL isCanvasFullScreen;
 @property (nonatomic, readonly) BOOL performanceModeEnabled;
@@ -30,24 +33,31 @@
 + (void)setDelegate:(id)arg1;
 + (id)sharedDelegate;
 
+- (void).cxx_destruct;
 - (id)appChartPropertyOverrides;
+- (id)applicationLaunchTime;
 - (id)applicationName;
 - (id)applicationNameForTitleBar;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })applicationToolbarFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })applicationToolbarFrame;
+- (id)bladerunnerContainerIdentifier;
 - (id)cloudKitContainerIdentifier;
 - (id)compatibilityDelegate;
 - (id)createCompatibilityDelegate;
+- (void)dealloc;
 - (id)defaultHyperlinkURL;
 - (BOOL)designModeEnabled;
 - (id)documentTypeDisplayName;
 - (id)documentTypeDisplayNameForSharingInvitation;
 - (unsigned int)iWorkAuthorColorIndex;
 - (id)iWorkAuthorName;
+- (id)iWorkAuthorPrivateID;
 - (id)init;
 - (id)invalidURLSchemes;
 - (BOOL)isActivating;
 - (BOOL)isCanvasFullScreen;
 - (BOOL)isInBackground;
+- (void)logDocumentCreationWithImportState:(BOOL)arg1;
+- (void)logLaunchTime;
 - (BOOL)openURL:(id)arg1;
 - (BOOL)performanceModeEnabled;
 - (id)previewImageForType:(id)arg1;
@@ -57,6 +67,7 @@
 - (BOOL)shouldRenderContactShadow;
 - (BOOL)shouldRenderCurvedShadow;
 - (BOOL)shouldValidateMasterLayoutWhileInsertingRows;
+- (BOOL)sidebarPositionRespectsUserInterfaceLayoutDirection;
 - (BOOL)supportsRTL;
 - (BOOL)supportsShrinkTextToFit;
 - (BOOL)tableCellInspectorShowsNaturalAlignment;

@@ -3,19 +3,20 @@
  */
 
 @interface LKClassConfiguration : NSObject <LKClassConfigurationProviding, NSSecureCoding> {
-    NSArray *_classGroups;
-    NSDictionary *_classRosterInformationDictionary;
-    NSArray *_classes;
-    NSMutableDictionary *_classesByClassGroupName;
-    NSMutableDictionary *_classesByClassID;
-    NSData *_payloadCertificatePersistentID;
-    NSString *_schoolName;
-    NSArray *_students;
-    NSMutableDictionary *_studentsByStudentIdentifier;
-    NSMutableDictionary *_studentsByStudentUsername;
+    NSArray * _classGroups;
+    NSDictionary * _classRosterInformationDictionary;
+    NSArray * _classes;
+    NSMutableDictionary * _classesByClassGroupName;
+    NSMutableDictionary * _classesByClassID;
+    NSArray * _instructors;
+    NSData * _payloadCertificatePersistentID;
+    NSString * _schoolName;
+    NSArray * _students;
+    NSMutableDictionary * _usersByUsername;
+    NSMutableDictionary * _usersWithAppleIDByIdentifier;
 }
 
-@property (retain) NSArray *classGroups;
+@property (nonatomic, retain) NSArray *classGroups;
 @property (retain) NSDictionary *classRosterInformationDictionary;
 @property (nonatomic, readonly, copy) NSArray *classes;
 @property (retain) NSMutableDictionary *classesByClassGroupName;
@@ -23,12 +24,13 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSArray *instructors;
 @property (nonatomic, readonly) NSData *payloadCertificatePersistentID;
 @property (nonatomic, readonly, copy) NSString *schoolName;
-@property (nonatomic, readonly, copy) NSArray *students;
-@property (retain) NSMutableDictionary *studentsByStudentIdentifier;
-@property (retain) NSMutableDictionary *studentsByStudentUsername;
+@property (nonatomic, copy) NSArray *students;
 @property (readonly) Class superclass;
+@property (retain) NSMutableDictionary *usersByUsername;
+@property (retain) NSMutableDictionary *usersWithAppleIDByIdentifier;
 
 + (BOOL)supportsSecureCoding;
 
@@ -45,20 +47,22 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithPropertyList:(id)arg1;
+- (id)instructors;
 - (id)payloadCertificatePersistentID;
 - (id)schoolName;
 - (void)setClassGroups:(id)arg1;
 - (void)setClassRosterInformationDictionary:(id)arg1;
 - (void)setClassesByClassGroupName:(id)arg1;
 - (void)setClassesByClassID:(id)arg1;
-- (void)setStudentsByStudentIdentifier:(id)arg1;
-- (void)setStudentsByStudentUsername:(id)arg1;
+- (void)setStudents:(id)arg1;
+- (void)setUsersByUsername:(id)arg1;
+- (void)setUsersWithAppleIDByIdentifier:(id)arg1;
 - (id)studentForStudentIdentifier:(id)arg1;
 - (id)studentForStudentIdentifier:(id)arg1 inClass:(id)arg2;
 - (id)studentForUsername:(id)arg1;
 - (id)studentForUsername:(id)arg1 inClass:(id)arg2;
 - (id)students;
-- (id)studentsByStudentIdentifier;
-- (id)studentsByStudentUsername;
+- (id)usersByUsername;
+- (id)usersWithAppleIDByIdentifier;
 
 @end

@@ -3,25 +3,29 @@
  */
 
 @interface ISStoreURLOperation : ISURLOperation {
-    int _activeMachineDataStyle;
-    NSNumber *_authenticatedDSID;
-    BOOL _canSendGUIDParameter;
-    BOOL _ignorePreexistingSecureToken;
-    BOOL _isURLBagRequest;
-    int _machineDataStyle;
-    BOOL _needsAuthentication;
-    BOOL _needsTermsAndConditionsAcceptance;
-    BOOL _needsURLBag;
-    SSVFairPlaySAPSession *_sapSession;
-    BOOL _shouldSendXTokenHeader;
-    BOOL _urlKnownToBeTrusted;
-    BOOL _useUserSpecificURLBag;
+    int  _activeMachineDataStyle;
+    NSNumber * _authenticatedDSID;
+    ISBiometricAuthenticationContext * _biometricAuthenticationContext;
+    <ISBiometricPurchaseDelegate> * _biometricDelegate;
+    BOOL  _canSendGUIDParameter;
+    BOOL  _ignorePreexistingSecureToken;
+    BOOL  _isURLBagRequest;
+    int  _machineDataStyle;
+    BOOL  _needsAuthentication;
+    BOOL  _needsTermsAndConditionsAcceptance;
+    BOOL  _needsURLBag;
+    SSVFairPlaySAPSession * _sapSession;
+    BOOL  _shouldSendXTokenHeader;
+    BOOL  _urlKnownToBeTrusted;
+    BOOL  _useUserSpecificURLBag;
 }
 
 @property (retain) SSVFairPlaySAPSession *SAPSession;
 @property (readonly) SSURLBagContext *URLBagContext;
 @property (getter=isURLBagRequest, nonatomic) BOOL URLBagRequest;
 @property (retain) NSNumber *authenticatedDSID;
+@property (retain) ISBiometricAuthenticationContext *biometricAuthenticationContext;
+@property <ISBiometricPurchaseDelegate> *biometricDelegate;
 @property BOOL canSendGUIDParameter;
 @property <ISStoreURLOperationDelegate> *delegate;
 @property (nonatomic) BOOL ignorePreexistingSecureToken;
@@ -34,22 +38,24 @@
 @property BOOL urlKnownToBeTrusted;
 @property BOOL useUserSpecificURLBag;
 
-+ (void)_addITunesStoreHeadersToRequest:(id)arg1 withURLBag:(id)arg2 account:(id)arg3;
-+ (void)_addITunesStoreHeadersToRequest:(id)arg1 withURLBag:(id)arg2 accountIdentifier:(id)arg3;
++ (void)_addITunesStoreHeadersToRequest:(id)arg1 withURLBag:(id)arg2 account:(id)arg3 clientBundleIdentifier:(id)arg4;
++ (void)_addITunesStoreHeadersToRequest:(id)arg1 withURLBag:(id)arg2 accountIdentifier:(id)arg3 clientBundleIdentifier:(id)arg4;
 + (id)_authKitSession;
 + (id)_restrictionsHeaderValue;
 + (void)addITunesStoreHeadersToRequest:(id)arg1 withAccountIdentifier:(id)arg2;
 + (void)handleITunesStoreResponseHeaders:(id)arg1 request:(id)arg2 withAccountIdentifier:(id)arg3 shouldRetry:(BOOL*)arg4;
-+ (id)itemPingOperationWithIdentifier:(unsigned long long)arg1 urlBagKey:(id)arg2;
++ (id)itemPingOperationWithIdentifier:(unsigned int)arg1 urlBagKey:(id)arg2;
 + (id)pingOperationWithUrl:(id)arg1;
 + (id)propertyListOperationWithURLBagKey:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)SAPSession;
 - (id)URLBagContext;
 - (id)_account;
 - (void)_addStandardQueryParametersForURL:(id)arg1;
 - (BOOL)_authenticateWithContext:(id)arg1 error:(id*)arg2;
 - (BOOL)_canSendTokenToURL:(id)arg1;
+- (void)_continueTouchIDSession;
 - (id)_copyAuthenticationContext;
 - (id)_copyAuthenticationContextForAttemptNumber:(int)arg1;
 - (BOOL)_isErrorTokenError:(id)arg1;
@@ -59,12 +65,14 @@
 - (id)_resolvedURLInBagContext:(id)arg1 URLBag:(id*)arg2;
 - (void)_runURLOperation;
 - (void)_setStoreFrontIdentifier:(id)arg1 isTransient:(BOOL)arg2;
+- (BOOL)_shouldRetryForTouchIDChallengeWithError:(id)arg1;
 - (id)_urlBagForContext:(id)arg1;
 - (void)_willSendRequest:(id)arg1;
 - (id)authenticatedAccountDSID;
 - (id)authenticatedDSID;
+- (id)biometricAuthenticationContext;
+- (id)biometricDelegate;
 - (BOOL)canSendGUIDParameter;
-- (void)dealloc;
 - (BOOL)handleRedirectFromDataProvider:(id)arg1 error:(id*)arg2;
 - (void)handleResponse:(id)arg1;
 - (BOOL)ignorePreexistingSecureToken;
@@ -78,6 +86,8 @@
 - (BOOL)performsMachineDataActions;
 - (void)run;
 - (void)setAuthenticatedDSID:(id)arg1;
+- (void)setBiometricAuthenticationContext:(id)arg1;
+- (void)setBiometricDelegate:(id)arg1;
 - (void)setCanSendGUIDParameter:(BOOL)arg1;
 - (void)setIgnorePreexistingSecureToken:(BOOL)arg1;
 - (void)setMachineDataStyle:(int)arg1;

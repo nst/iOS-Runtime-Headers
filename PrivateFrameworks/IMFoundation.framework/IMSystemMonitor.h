@@ -3,33 +3,33 @@
  */
 
 @interface IMSystemMonitor : NSObject {
-    BOOL _active;
-    BOOL _backingUp;
-    int _dataProtectionState;
-    NSDate *_dateScreenLightLastChanged;
-    NSDate *_dateSystemLockLastChanged;
-    double _delayTime;
-    NSMutableArray *_earlyListeners;
-    BOOL _idleOverride;
-    NSDate *_idleStart;
-    BOOL _inBackground;
-    NSMutableArray *_listeners;
-    BOOL _receivesMemoryWarnings;
-    BOOL _screenLit;
-    BOOL _screenLocked;
-    BOOL _screensaverActive;
-    BOOL _switchedOut;
-    BOOL _systemLocked;
-    NSTimer *_timer;
-    BOOL _underFirstLock;
-    NSString *_userID;
-    int _userIdleToken;
-    BOOL _usesPowerNotifications;
-    BOOL _usesSystemIdleState;
-    BOOL _watchesDataProtectionLockState;
-    BOOL _watchesScreenLightState;
-    BOOL _watchesSystemLockState;
-    BOOL _willSleep;
+    BOOL  _active;
+    BOOL  _backingUp;
+    int  _dataProtectionState;
+    NSDate * _dateScreenLightLastChanged;
+    NSDate * _dateSystemLockLastChanged;
+    double  _delayTime;
+    NSMutableArray * _earlyListeners;
+    BOOL  _idleOverride;
+    NSDate * _idleStart;
+    BOOL  _inBackground;
+    NSMutableArray * _listeners;
+    BOOL  _receivesMemoryWarnings;
+    BOOL  _screenLit;
+    BOOL  _screenLocked;
+    BOOL  _screensaverActive;
+    BOOL  _switchedOut;
+    BOOL  _systemLocked;
+    NSTimer * _timer;
+    BOOL  _underFirstLock;
+    NSString * _userID;
+    int  _userIdleToken;
+    BOOL  _usesPowerNotifications;
+    BOOL  _usesSystemIdleState;
+    BOOL  _watchesDataProtectionLockState;
+    BOOL  _watchesScreenLightState;
+    BOOL  _watchesSystemLockState;
+    BOOL  _willSleep;
 }
 
 @property (nonatomic) int _dataProtectionState;

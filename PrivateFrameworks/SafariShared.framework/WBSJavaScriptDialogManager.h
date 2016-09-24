@@ -3,7 +3,7 @@
  */
 
 @interface WBSJavaScriptDialogManager : NSObject {
-    NSMutableDictionary *_completionHandlers;
+    NSMutableDictionary * _completionHandlers;
 }
 
 - (void).cxx_destruct;

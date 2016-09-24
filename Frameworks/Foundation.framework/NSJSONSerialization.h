@@ -3,7 +3,7 @@
  */
 
 @interface NSJSONSerialization : NSObject {
-    void *reserved;
+    void * reserved;
 }
 
 + (id)JSONObjectWithData:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;

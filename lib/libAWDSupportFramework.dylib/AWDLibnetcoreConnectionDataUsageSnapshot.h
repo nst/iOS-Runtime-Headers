@@ -3,12 +3,12 @@
  */
 
 @interface AWDLibnetcoreConnectionDataUsageSnapshot : PBCodable <NSCopying> {
-    unsigned long long _bytesIn;
-    unsigned long long _bytesOut;
+    unsigned long long  _bytesIn;
+    unsigned long long  _bytesOut;
     struct { 
         unsigned int bytesIn : 1; 
         unsigned int bytesOut : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic) unsigned long long bytesIn;

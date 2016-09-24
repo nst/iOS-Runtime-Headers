@@ -3,14 +3,14 @@
  */
 
 @interface FBPlistApplicationDataStoreRepository : NSObject <FBApplicationDataStoreRepository> {
-    int _autoFlushDuration;
-    unsigned int _batchCount;
-    <FBApplicationDataStoreRepositoryDelegate> *_delegate;
-    BOOL _dirty;
-    NSMutableDictionary *_state;
-    NSObject<OS_dispatch_queue> *_stateQueue;
-    NSURL *_storeURL;
-    NSObject<OS_dispatch_queue> *_writeQueue;
+    int  _autoFlushDuration;
+    unsigned int  _batchCount;
+    <FBApplicationDataStoreRepositoryDelegate> * _delegate;
+    BOOL  _dirty;
+    NSMutableDictionary * _state;
+    NSObject<OS_dispatch_queue> * _stateQueue;
+    NSURL * _storeURL;
+    NSObject<OS_dispatch_queue> * _writeQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

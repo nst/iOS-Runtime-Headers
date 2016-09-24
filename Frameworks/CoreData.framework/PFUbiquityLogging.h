@@ -3,7 +3,7 @@
  */
 
 @interface PFUbiquityLogging : NSObject {
-    int _desiredLogLevel;
+    int  _desiredLogLevel;
 }
 
 @property (nonatomic) int desiredLogLevel;

@@ -3,11 +3,11 @@
  */
 
 @interface STSiriLocation : NSObject <AFTranscriptionType> {
-    NSURL *_addressBookID;
-    NSString *_addressLabel;
-    NSString *_contactName;
-    NSData *_geoResult;
-    int _resultType;
+    NSURL * _addressBookID;
+    NSString * _addressLabel;
+    NSString * _contactName;
+    NSData * _geoResult;
+    int  _resultType;
 }
 
 @property (nonatomic, copy) NSURL *addressBookID;

@@ -3,13 +3,13 @@
  */
 
 @interface DCDocumentManager : NSObject <DCConnectivityTrackerDelegate, DCDocumentManager> {
-    NSObject<OS_dispatch_queue> *_completionHandlerQueue;
-    DCConnectivityTracker *_connectivityTracker;
-    NSMutableDictionary *_delegateStates;
-    SDFDispatchQueue *_queue;
-    DCService *_service;
-    BOOL _synchronousContentsOfDirectory;
-    NSDictionary *_watchedDocumentIdentifiersAndVersionIdentifiers;
+    NSObject<OS_dispatch_queue> * _completionHandlerQueue;
+    DCConnectivityTracker * _connectivityTracker;
+    NSMutableDictionary * _delegateStates;
+    SDFDispatchQueue * _queue;
+    DCService * _service;
+    BOOL  _synchronousContentsOfDirectory;
+    NSDictionary * _watchedDocumentIdentifiersAndVersionIdentifiers;
 }
 
 @property (retain) NSObject<OS_dispatch_queue> *completionHandlerQueue;

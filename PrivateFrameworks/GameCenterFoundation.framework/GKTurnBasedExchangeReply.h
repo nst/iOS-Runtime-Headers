@@ -3,9 +3,9 @@
  */
 
 @interface GKTurnBasedExchangeReply : NSObject {
-    GKTurnBasedExchangeReplyInternal *_internal;
-    GKTurnBasedMatch *_matchWeak;
-    GKTurnBasedParticipant *_recipient;
+    GKTurnBasedExchangeReplyInternal * _internal;
+    GKTurnBasedMatch * _matchWeak;
+    GKTurnBasedParticipant * _recipient;
 }
 
 @property (nonatomic, retain) NSData *data;

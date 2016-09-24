@@ -3,12 +3,12 @@
  */
 
 @interface FMFFriendshipRequest : NSObject <NSCopying, NSSecureCoding> {
-    NSDate *_endDate;
-    FMFHandle *_fromHandle;
-    NSString *_groupId;
-    NSString *_requestId;
-    int _requestType;
-    NSSet *_toHandles;
+    NSDate * _endDate;
+    FMFHandle * _fromHandle;
+    NSString * _groupId;
+    NSString * _requestId;
+    int  _requestType;
+    NSSet * _toHandles;
 }
 
 @property (nonatomic, retain) NSDate *endDate;

@@ -3,7 +3,7 @@
  */
 
 @interface WBSAutomaticReadingListTwitterSource : WBSAutomaticReadingListSocialSource {
-    unsigned int _numberOfRequestsAllowedInRateLimitWindow;
+    unsigned int  _numberOfRequestsAllowedInRateLimitWindow;
 }
 
 @property (nonatomic) unsigned int numberOfRequestsAllowedInRateLimitWindow;

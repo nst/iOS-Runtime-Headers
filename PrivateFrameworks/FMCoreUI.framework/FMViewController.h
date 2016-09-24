@@ -3,8 +3,8 @@
  */
 
 @interface FMViewController : UIViewController {
-    NSMutableDictionary *_kvoObservationTokens;
-    NSMutableSet *_notificationTokens;
+    NSMutableDictionary * _kvoObservationTokens;
+    NSMutableSet * _notificationTokens;
 }
 
 @property (readonly, copy) NSString *controllerNibName;

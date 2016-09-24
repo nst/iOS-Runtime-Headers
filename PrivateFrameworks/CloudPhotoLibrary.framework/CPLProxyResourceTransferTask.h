@@ -3,7 +3,7 @@
  */
 
 @interface CPLProxyResourceTransferTask : CPLResourceTransferTask {
-    CPLProxyLibraryManager *_proxyLibraryManager;
+    CPLProxyLibraryManager * _proxyLibraryManager;
 }
 
 @property (nonatomic, retain) CPLProxyLibraryManager *proxyLibraryManager;

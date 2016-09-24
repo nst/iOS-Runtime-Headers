@@ -3,10 +3,10 @@
  */
 
 @interface NSConcreteMapTable : NSMapTable {
-    unsigned int capacity;
-    unsigned int count;
-    int growLock;
-    unsigned int keyOptions;
+    unsigned int  capacity;
+    unsigned int  count;
+    int  growLock;
+    unsigned int  keyOptions;
     struct NSSlice { 
         void **items; 
         BOOL wantsStrong; 
@@ -20,7 +20,6 @@
         BOOL pointerPersonality; 
         BOOL integerPersonality; 
         BOOL simpleReadClear; 
-        NSWeakCallback *callback; 
         int (*sizeFunction)(); 
         int (*hashFunction)(); 
         int (*isEqualFunction)(); 
@@ -32,10 +31,10 @@
         int (*readAt)(); 
         int (*clearAt)(); 
         int (*storeAt)(); 
-    } keys;
-    unsigned int mutations;
-    bool shouldRehash;
-    unsigned int valueOptions;
+    }  keys;
+    unsigned int  mutations;
+    bool  shouldRehash;
+    unsigned int  valueOptions;
     struct NSSlice { 
         void **items; 
         BOOL wantsStrong; 
@@ -49,7 +48,6 @@
         BOOL pointerPersonality; 
         BOOL integerPersonality; 
         BOOL simpleReadClear; 
-        NSWeakCallback *callback; 
         int (*sizeFunction)(); 
         int (*hashFunction)(); 
         int (*isEqualFunction)(); 
@@ -61,11 +59,10 @@
         int (*readAt)(); 
         int (*clearAt)(); 
         int (*storeAt)(); 
-    } values;
+    }  values;
 }
 
 - (unsigned int)__capacity;
-- (void)_initBlock;
 - (void)_setBackingStore;
 - (id)allKeys;
 - (id)allValues;
@@ -81,7 +78,6 @@
 - (id)dump;
 - (void)encodeWithCoder:(id)arg1;
 - (void*)existingItemForSetItem:(const void*)arg1 forAbsentKey:(const void*)arg2;
-- (void)finalize;
 - (unsigned int)getKeys:(const void**)arg1 values:(const void**)arg2;
 - (void)grow;
 - (unsigned int)hash;
@@ -106,6 +102,5 @@
 - (void)setItem:(const void*)arg1 forKnownAbsentKey:(const void*)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)valuePointerFunctions;
-- (void)zeroPairedEntries;
 
 @end

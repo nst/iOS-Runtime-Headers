@@ -3,9 +3,9 @@
  */
 
 @interface __NSCFURLLocalStreamTaskWorkRead : __NSCFURLLocalStreamTaskWork {
-    id /* block */ _completion;
-    unsigned int _maxBytes;
-    unsigned int _minBytes;
+    id /* block */  _completion;
+    unsigned int  _maxBytes;
+    unsigned int  _minBytes;
 }
 
 - (void)dealloc;

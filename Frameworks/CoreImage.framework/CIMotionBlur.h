@@ -3,7 +3,7 @@
  */
 
 @interface CIMotionBlur : CILinearBlur {
-    NSNumber *inputAngle;
+    NSNumber * inputAngle;
 }
 
 @property (nonatomic, retain) NSNumber *inputAngle;

@@ -4,7 +4,8 @@
 
 @interface DDTrackShipmentAction : DDAction
 
+- (BOOL)canBePerformedByOpeningURL;
 - (id)localizedName;
-- (void)perform;
+- (void)performFromView:(id)arg1;
 
 @end

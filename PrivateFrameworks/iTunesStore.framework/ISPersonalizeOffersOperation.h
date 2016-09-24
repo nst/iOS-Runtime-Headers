@@ -3,8 +3,8 @@
  */
 
 @interface ISPersonalizeOffersOperation : ISOperation {
-    ISPersonalizeOffersRequest *_request;
-    SSPersonalizeOffersResponse *_response;
+    ISPersonalizeOffersRequest * _request;
+    SSPersonalizeOffersResponse * _response;
 }
 
 @property (readonly) ISPersonalizeOffersRequest *personalizeOffersReqeust;

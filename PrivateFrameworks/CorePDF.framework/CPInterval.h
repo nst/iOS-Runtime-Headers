@@ -3,8 +3,8 @@
  */
 
 @interface CPInterval : NSObject {
-    float left;
-    float right;
+    double  left;
+    double  right;
 }
 
 - (void)add:(id)arg1;

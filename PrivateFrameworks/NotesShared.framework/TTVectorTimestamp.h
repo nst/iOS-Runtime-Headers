@@ -3,7 +3,7 @@
  */
 
 @interface TTVectorTimestamp : NSObject <NSCopying> {
-    NSMutableDictionary *_clock;
+    NSMutableDictionary * _clock;
 }
 
 - (void).cxx_destruct;

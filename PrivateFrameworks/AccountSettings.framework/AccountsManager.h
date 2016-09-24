@@ -3,13 +3,13 @@
  */
 
 @interface AccountsManager : NSObject {
-    NSMutableDictionary *_childAccountIDToParentAccountID;
-    NSMutableDictionary *_childAccountsByID;
-    unsigned int _dataVersion;
-    NSMutableArray *_orderedTopLevelAccounts;
-    NSMutableDictionary *_originalAccountsByID;
-    NSArray *_runtimeFixers;
-    NSMutableDictionary *_topLevelAccountsByID;
+    NSMutableDictionary * _childAccountIDToParentAccountID;
+    NSMutableDictionary * _childAccountsByID;
+    unsigned int  _dataVersion;
+    NSMutableArray * _orderedTopLevelAccounts;
+    NSMutableDictionary * _originalAccountsByID;
+    NSArray * _runtimeFixers;
+    NSMutableDictionary * _topLevelAccountsByID;
 }
 
 + (void)_migrateAccountsIfNeeded;

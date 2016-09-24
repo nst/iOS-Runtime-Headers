@@ -3,10 +3,10 @@
  */
 
 @interface _MSPContainerEditsRecorder : NSObject {
-    NSMutableArray *_orderedEdits;
-    NSMutableArray *_originalMutableArray;
-    NSMutableArray *_proxiesMutableArray;
-    NSMutableSet *_updatedObjects;
+    NSMutableArray * _orderedEdits;
+    NSMutableArray * _originalMutableArray;
+    NSMutableArray * _proxiesMutableArray;
+    NSMutableSet * _updatedObjects;
 }
 
 @property (nonatomic, readonly) NSArray *orderedEdits;

@@ -3,7 +3,7 @@
  */
 
 @interface MSAlertManager : NSObject {
-    NSMutableDictionary *_personIDToNotification;
+    NSMutableDictionary * _personIDToNotification;
 }
 
 + (id)sharedAlertManager;

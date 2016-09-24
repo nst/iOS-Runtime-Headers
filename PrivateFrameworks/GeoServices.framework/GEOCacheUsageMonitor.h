@@ -3,12 +3,12 @@
  */
 
 @interface GEOCacheUsageMonitor : NSObject {
-    NSLock *_lock;
-    NSMutableDictionary *_tileSetStyleToHits;
-    NSMutableDictionary *_tileSetStyleToMisses;
-    NSObject<OS_dispatch_source> *_timer;
-    NSMutableDictionary *_typeToHits;
-    NSMutableDictionary *_typeToMisses;
+    NSLock * _lock;
+    NSMutableDictionary * _tileSetStyleToHits;
+    NSMutableDictionary * _tileSetStyleToMisses;
+    NSObject<OS_dispatch_source> * _timer;
+    NSMutableDictionary * _typeToHits;
+    NSMutableDictionary * _typeToMisses;
 }
 
 + (id)sharedMonitor;

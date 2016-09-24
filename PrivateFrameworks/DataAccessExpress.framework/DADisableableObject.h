@@ -3,7 +3,7 @@
  */
 
 @interface DADisableableObject : NSObject {
-    BOOL _isDisabled;
+    BOOL  _isDisabled;
 }
 
 @property (nonatomic) BOOL isDisabled;

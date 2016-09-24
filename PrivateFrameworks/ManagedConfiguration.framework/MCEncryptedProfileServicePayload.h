@@ -3,7 +3,7 @@
  */
 
 @interface MCEncryptedProfileServicePayload : MCPayload {
-    NSString *_urlString;
+    NSString * _urlString;
 }
 
 + (id)localizedPluralForm;

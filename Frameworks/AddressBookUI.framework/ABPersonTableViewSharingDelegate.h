@@ -3,16 +3,16 @@
  */
 
 @interface ABPersonTableViewSharingDelegate : NSObject {
-    ABActionSheetDelegate *_actionSheetDelegate;
-    ABPersonViewControllerHelper *_helper;
-    UIImage *_shareLocationSnapshotImage;
-    NSString *_shareLocationURL;
-    NSString *_shareMessageBody;
-    BOOL _shareMessageBodyIsHTML;
-    NSString *_shareMessageSubject;
-    ABStyleProvider *_styleProvider;
-    id /* block */ _willTweetLocationCallback;
-    id /* block */ _willWeiboLocationCallback;
+    ABActionSheetDelegate * _actionSheetDelegate;
+    ABPersonViewControllerHelper * _helper;
+    UIImage * _shareLocationSnapshotImage;
+    NSString * _shareLocationURL;
+    NSString * _shareMessageBody;
+    BOOL  _shareMessageBodyIsHTML;
+    NSString * _shareMessageSubject;
+    ABStyleProvider * _styleProvider;
+    id /* block */  _willTweetLocationCallback;
+    id /* block */  _willWeiboLocationCallback;
 }
 
 @property (nonatomic, readonly) BOOL canSendMMS;

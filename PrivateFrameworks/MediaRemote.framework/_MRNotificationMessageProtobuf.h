@@ -3,10 +3,12 @@
  */
 
 @interface _MRNotificationMessageProtobuf : PBCodable <NSCopying> {
-    NSMutableArray *_notifications;
+    NSMutableArray * _notifications;
 }
 
 @property (nonatomic, retain) NSMutableArray *notifications;
+
++ (Class)notificationType;
 
 - (void)addNotification:(id)arg1;
 - (void)clearNotifications;

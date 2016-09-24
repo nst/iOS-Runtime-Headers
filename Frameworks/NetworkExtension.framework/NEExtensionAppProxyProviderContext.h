@@ -3,9 +3,9 @@
  */
 
 @interface NEExtensionAppProxyProviderContext : NEExtensionTunnelProviderContext <NEExtensionAppProxyProviderHostProtocol, NEExtensionAppProxyProviderProtocol> {
-    unsigned int _delegateInterfaceIndex;
-    struct _NEFlowDirector { } *_director;
-    NSObject<OS_dispatch_queue> *_flowQueue;
+    unsigned int  _delegateInterfaceIndex;
+    struct _NEFlowDirector { } * _director;
+    NSObject<OS_dispatch_queue> * _flowQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -33,6 +33,7 @@
 - (void)setDirector:(struct _NEFlowDirector { }*)arg1;
 - (void)setFlowQueue:(id)arg1;
 - (void)setInitialFlowDivertControlSocket:(id)arg1;
+- (void)setInitialFlowDivertControlSocket:(id)arg1 extraValidation:(BOOL)arg2;
 - (void)startWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)stopWithReason:(int)arg1;
 - (void)verifyAppWithPID:(int)arg1 uuid:(id)arg2 matchesAppRule:(id)arg3 completionHandler:(id /* block */)arg4;

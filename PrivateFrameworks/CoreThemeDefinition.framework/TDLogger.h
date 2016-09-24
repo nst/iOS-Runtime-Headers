@@ -3,9 +3,9 @@
  */
 
 @interface TDLogger : NSObject {
-    int _logMaxVerbosity;
-    NSObject<OS_dispatch_queue> *_loggingQueue;
-    int _verbosity;
+    int  _logMaxVerbosity;
+    NSObject<OS_dispatch_queue> * _loggingQueue;
+    int  _verbosity;
 }
 
 @property (nonatomic) int verbosity;

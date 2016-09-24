@@ -3,8 +3,8 @@
  */
 
 @interface PKPushCredentials : NSObject {
-    NSData *_token;
-    NSString *_type;
+    NSData * _token;
+    NSString * _type;
 }
 
 @property (copy) NSData *token;

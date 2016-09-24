@@ -3,9 +3,9 @@
  */
 
 @interface ACTSlowmoResults : NSObject {
-    double _minTimeBetweenFrames;
-    NSMutableDictionary *_results;
-    BOOL _verbose;
+    double  _minTimeBetweenFrames;
+    NSMutableDictionary * _results;
+    BOOL  _verbose;
 }
 
 @property double minTimeBetweenFrames;

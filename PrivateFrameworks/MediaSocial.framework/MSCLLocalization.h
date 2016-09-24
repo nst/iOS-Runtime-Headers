@@ -3,7 +3,7 @@
  */
 
 @interface MSCLLocalization : NSObject {
-    SKUILocalizedStringDictionary *_localizedStrings;
+    SKUILocalizedStringDictionary * _localizedStrings;
 }
 
 + (id)defaultLocalization;

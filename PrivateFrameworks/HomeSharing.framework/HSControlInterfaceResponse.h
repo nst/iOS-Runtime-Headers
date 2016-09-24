@@ -3,7 +3,7 @@
  */
 
 @interface HSControlInterfaceResponse : HSResponse {
-    NSArray *_interfaces;
+    NSArray * _interfaces;
 }
 
 @property (nonatomic, copy) NSArray *interfaces;

@@ -3,7 +3,7 @@
  */
 
 @interface SKUIJSRestrictions : IKJSObject <SKUIJSRestrictions> {
-    SKUIClientContext *_clientContext;
+    SKUIClientContext * _clientContext;
 }
 
 - (void).cxx_destruct;
@@ -12,6 +12,7 @@
 - (id)initWithAppContext:(id)arg1 clientContext:(id)arg2;
 - (void)isExplicitContentDisallowedInCurrentStoreFront:(id)arg1;
 - (void)isExplicitContentRestrictedByDefaultInCurrentStoreFront:(id)arg1;
+- (BOOL)isRestrictedApp:(id)arg1;
 - (void)isRestrictionsPasscodeSet:(id)arg1;
 - (void)presentExplicitRestrictionAlertIfNeededOfType:(id)arg1 :(id)arg2;
 - (void)setAllowExplicitContent;

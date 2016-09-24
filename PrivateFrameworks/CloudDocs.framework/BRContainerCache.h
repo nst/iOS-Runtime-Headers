@@ -3,16 +3,18 @@
  */
 
 @interface BRContainerCache : NSObject {
-    <NSObject> *_containerStatusObserver;
-    NSMutableDictionary *_containersByID;
-    BOOL _didFetchAllContainers;
-    <BRContainerHelper> *_helper;
-    struct br_pacer_t { } *_invalidationPacer;
-    NSObject<OS_dispatch_source> *_memoryPressureSource;
+    <NSObject> * _containerStatusObserver;
+    NSMutableDictionary * _containersByID;
+    BOOL  _didFetchAllContainers;
+    <BRContainerHelper> * _helper;
+    br_pacer * _invalidationPacer;
+    NSObject<OS_dispatch_source> * _memoryPressureSource;
 }
 
 + (id)containerCache;
 
+- (void).cxx_destruct;
+- (void)_accountWillChange;
 - (id)_allContainersByIDNoCopy;
 - (void)_containerListDidChange;
 - (void)_invalidate;

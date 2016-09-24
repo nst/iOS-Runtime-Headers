@@ -26,6 +26,7 @@
 - (int)mailNumberOfPastDaysToSync;
 - (id)mailboxes;
 - (oneway void)monitorFoldersForUpdates:(id)arg1;
+- (oneway void)monitorFoldersForUpdates:(id)arg1 persistent:(BOOL)arg2;
 - (int)performFetchAttachmentRequest:(id)arg1 consumer:(id)arg2;
 - (int)performFetchMessageSearchResultRequests:(id)arg1 consumer:(id)arg2;
 - (void)performFolderChange:(id)arg1 isUserRequested:(BOOL)arg2;
@@ -36,8 +37,8 @@
 - (oneway void)performSearchQuery:(id)arg1;
 - (BOOL)reattemptInvitationLinkageForMetaData:(id)arg1 inFolderWithId:(id)arg2;
 - (BOOL)searchQueriesRunning;
-- (int)sendMessageWithRFC822Data:(id)arg1 messageID:(id)arg2 outgoingMessageType:(int)arg3 originalMessageFolderID:(id)arg4 originalMessageItemID:(id)arg5 originalMessageLongID:(id)arg6 originalAccountID:(id)arg7 useSmartTasksIfPossible:(BOOL)arg8 consumer:(id)arg9 context:(id)arg10;
 - (int)sendMessageWithRFC822Data:(id)arg1 messageID:(id)arg2 outgoingMessageType:(int)arg3 originalMessageFolderID:(id)arg4 originalMessageItemID:(id)arg5 originalMessageLongID:(id)arg6 originalAccountID:(id)arg7 useSmartTasksIfPossible:(BOOL)arg8 isUserRequested:(BOOL)arg9 consumer:(id)arg10 context:(id)arg11;
+- (int)sendSmartMessageWithRFC822Data:(id)arg1 messageID:(id)arg2 outgoingMessageType:(int)arg3 originalMessageFolderID:(id)arg4 originalMessageItemID:(id)arg5 originalMessageLongID:(id)arg6 originalAccountID:(id)arg7 replaceOriginalMime:(BOOL)arg8 isUserRequested:(BOOL)arg9 consumer:(id)arg10 context:(id)arg11;
 - (id)sentItemsFolder;
 - (oneway void)setAccount:(id)arg1;
 - (oneway void)setCustomSignature:(id)arg1;
@@ -55,6 +56,7 @@
 - (int)supportsDraftFolderSync;
 - (int)supportsEmailFlagging;
 - (int)supportsMailboxSearch;
+- (int)supportsSmartForwardReply;
 - (id)unactionableICSRepresentationForMetaData:(id)arg1 inFolderWithId:(id)arg2 outSummary:(id*)arg3;
 
 @end

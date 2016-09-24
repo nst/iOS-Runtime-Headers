@@ -3,8 +3,8 @@
  */
 
 @interface _SFFolderPickerItem : NSObject {
-    WebBookmark *_bookmark;
-    unsigned int _depth;
+    WebBookmark * _bookmark;
+    unsigned int  _depth;
 }
 
 @property (nonatomic, readonly) WebBookmark *bookmark;

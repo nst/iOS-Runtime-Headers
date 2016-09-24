@@ -3,12 +3,12 @@
  */
 
 @interface SKUIStoreAssetResourceLoaderDelegate : NSObject <AVAssetResourceLoaderDelegate> {
-    SKUIClientContext *_clientContext;
-    BOOL _isITunesStream;
-    NSURL *_keyCertificateURL;
-    NSURL *_keyServerURL;
-    NSOperationQueue *_operationQueue;
-    BOOL _shouldUseITunesStoreSecureKeyDelivery;
+    SKUIClientContext * _clientContext;
+    BOOL  _isITunesStream;
+    NSURL * _keyCertificateURL;
+    NSURL * _keyServerURL;
+    NSOperationQueue * _operationQueue;
+    BOOL  _shouldUseITunesStoreSecureKeyDelivery;
 }
 
 @property (nonatomic, readonly) SKUIClientContext *clientContext;

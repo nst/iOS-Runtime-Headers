@@ -3,8 +3,8 @@
  */
 
 @interface SafariFetcherServerProxy : NSObject <WebBookmarksXPCConnectionDelegate> {
-    WebBookmarksXPCConnection *_connection;
-    <WebBookmarksClientDelegateProtocol> *_delegate;
+    WebBookmarksXPCConnection * _connection;
+    <WebBookmarksClientDelegateProtocol> * _delegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

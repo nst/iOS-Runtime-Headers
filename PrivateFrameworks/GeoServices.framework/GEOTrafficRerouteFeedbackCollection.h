@@ -3,22 +3,22 @@
  */
 
 @interface GEOTrafficRerouteFeedbackCollection : PBCodable <NSCopying> {
-    NSData *_directionResponseID;
+    NSData * _directionResponseID;
     struct { 
         unsigned int oldRouteHistoricTravelTime : 1; 
         unsigned int oldRouteTravelTime : 1; 
         unsigned int reroutedRouteHistoricTravelTime : 1; 
         unsigned int reroutedRouteTravelTime : 1; 
         unsigned int oldRouteBlocked : 1; 
-    } _has;
-    BOOL _oldRouteBlocked;
-    unsigned int _oldRouteHistoricTravelTime;
-    NSData *_oldRouteID;
-    NSMutableArray *_oldRouteIncidents;
-    unsigned int _oldRouteTravelTime;
-    unsigned int _reroutedRouteHistoricTravelTime;
-    NSData *_reroutedRouteID;
-    unsigned int _reroutedRouteTravelTime;
+    }  _has;
+    BOOL  _oldRouteBlocked;
+    unsigned int  _oldRouteHistoricTravelTime;
+    NSData * _oldRouteID;
+    NSMutableArray * _oldRouteIncidents;
+    unsigned int  _oldRouteTravelTime;
+    unsigned int  _reroutedRouteHistoricTravelTime;
+    NSData * _reroutedRouteID;
+    unsigned int  _reroutedRouteTravelTime;
 }
 
 @property (nonatomic, retain) NSData *directionResponseID;
@@ -38,6 +38,8 @@
 @property (nonatomic) unsigned int reroutedRouteHistoricTravelTime;
 @property (nonatomic, retain) NSData *reroutedRouteID;
 @property (nonatomic) unsigned int reroutedRouteTravelTime;
+
++ (Class)oldRouteIncidentsType;
 
 - (void)addOldRouteIncidents:(id)arg1;
 - (void)clearOldRouteIncidents;

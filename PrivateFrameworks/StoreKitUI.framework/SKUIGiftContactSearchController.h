@@ -3,14 +3,13 @@
  */
 
 @interface SKUIGiftContactSearchController : NSObject <MFContactsSearchConsumer, UITableViewDataSource, UITableViewDelegate> {
-    void *_addressBook;
-    <SKUIGiftContactSearchDelegate> *_delegate;
-    NSArray *_results;
-    MFContactsSearchResultsModel *_resultsModel;
-    MFContactsSearchManager *_searchManager;
-    UIView *_searchResultsView;
-    NSNumber *_searchTaskIdentifier;
-    UITableView *_tableView;
+    NSMutableArray * _autocompleteSearchResults;
+    <SKUIGiftContactSearchDelegate> * _delegate;
+    NSArray * _results;
+    MFContactsSearchManager * _searchManager;
+    UIView * _searchResultsView;
+    NSNumber * _searchTaskIdentifier;
+    UITableView * _tableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -25,15 +24,11 @@
 - (void)_finishSearchWithResults:(id)arg1;
 - (void)_setResults:(id)arg1;
 - (id)_tableView;
-- (void)beganNetworkActivity;
 - (BOOL)cancelSearch;
-- (void)consumeSearchResults:(id)arg1 type:(unsigned int)arg2 taskID:(id)arg3;
+- (void)consumeAutocompleteSearchResults:(id)arg1 taskID:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
-- (void)endedNetworkActivity;
-- (void)finishedSearchingForType:(unsigned int)arg1;
-- (void)finishedTaskWithID:(id)arg1;
-- (id)initWithAddressBook:(void*)arg1;
+- (void)finishedSearchingForAutocompleteResults;
 - (int)numberOfResults;
 - (void)resetSearch;
 - (void)searchForText:(id)arg1;

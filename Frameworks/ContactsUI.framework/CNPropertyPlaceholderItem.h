@@ -3,7 +3,7 @@
  */
 
 @interface CNPropertyPlaceholderItem : CNCardGroupItem {
-    NSString *_property;
+    NSString * _property;
 }
 
 @property (nonatomic, retain) NSString *property;

@@ -3,15 +3,15 @@
  */
 
 @interface IDSRelayCancelMessage : IDSFaceTimeMessage <NSCopying> {
-    NSString *_peerID;
-    NSData *_peerPushToken;
-    NSData *_peerRelayIP;
-    NSNumber *_peerRelayPort;
-    NSNumber *_reason;
-    NSData *_relayConnectionID;
-    NSNumber *_relayType;
-    NSData *_selfRelayIP;
-    NSNumber *_selfRelayPort;
+    NSString * _peerID;
+    NSData * _peerPushToken;
+    NSData * _peerRelayIP;
+    NSNumber * _peerRelayPort;
+    NSNumber * _reason;
+    NSData * _relayConnectionID;
+    NSNumber * _relayType;
+    NSData * _selfRelayIP;
+    NSNumber * _selfRelayPort;
 }
 
 @property (copy) NSString *peerID;

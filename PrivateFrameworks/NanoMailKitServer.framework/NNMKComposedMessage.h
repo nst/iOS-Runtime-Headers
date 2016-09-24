@@ -3,14 +3,14 @@
  */
 
 @interface NNMKComposedMessage : NSObject <NSSecureCoding> {
-    NSString *_body;
-    NSArray *_cc;
-    NSString *_composedMessageId;
-    BOOL _includeAttachments;
-    NSString *_referenceMessageId;
-    unsigned int _sendingType;
-    NSString *_subject;
-    NSArray *_to;
+    NSString * _body;
+    NSArray * _cc;
+    NSString * _composedMessageId;
+    BOOL  _includeAttachments;
+    NSString * _referenceMessageId;
+    unsigned int  _sendingType;
+    NSString * _subject;
+    NSArray * _to;
 }
 
 @property (nonatomic, retain) NSString *body;

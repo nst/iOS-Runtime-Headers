@@ -7,15 +7,15 @@
 @property (nonatomic, copy) NSString *skipIdentifier;
 @property (nonatomic, copy) NSArray *skipTimestamps;
 @property (nonatomic, copy) NSString *stationHash;
-@property (nonatomic) long long stationID;
+@property (nonatomic) int stationID;
 
 - (void)setSkipIdentifier:(id)arg1;
 - (void)setSkipTimestamps:(id)arg1;
 - (void)setStationHash:(id)arg1;
-- (void)setStationID:(long long)arg1;
+- (void)setStationID:(int)arg1;
 - (id)skipIdentifier;
 - (id)skipTimestamps;
 - (id)stationHash;
-- (long long)stationID;
+- (int)stationID;
 
 @end

@@ -3,17 +3,17 @@
  */
 
 @interface CoreDAVContainerMultiGetTask : CoreDAVTask <CoreDAVContainerMultiGetSubmittable> {
-    NSSet *_additionalPropElements;
-    Class _appSpecificDataItemClass;
-    NSString *_appSpecificDataProp;
-    NSString *_appSpecificMultiGetCommand;
-    NSString *_appSpecificMultiGetNameSpace;
-    NSString *_appSpecificNamespace;
-    NSSet *_deletedURLs;
-    NSSet *_missingURLs;
-    NSSet *_parsedContents;
-    BOOL _shouldIgnoreResponseErrors;
-    NSSet *_urls;
+    NSSet * _additionalPropElements;
+    Class  _appSpecificDataItemClass;
+    NSString * _appSpecificDataProp;
+    NSString * _appSpecificMultiGetCommand;
+    NSString * _appSpecificMultiGetNameSpace;
+    NSString * _appSpecificNamespace;
+    NSSet * _deletedURLs;
+    NSSet * _missingURLs;
+    NSSet * _parsedContents;
+    BOOL  _shouldIgnoreResponseErrors;
+    NSSet * _urls;
 }
 
 @property (nonatomic) <CoreDAVAccountInfoProvider> *accountInfoProvider;

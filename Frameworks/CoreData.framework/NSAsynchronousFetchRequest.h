@@ -3,9 +3,9 @@
  */
 
 @interface NSAsynchronousFetchRequest : NSPersistentStoreRequest {
-    int _estimatedResultCount;
-    NSFetchRequest *_fetchRequest;
-    id _requestCompletionBlock;
+    int  _estimatedResultCount;
+    NSFetchRequest * _fetchRequest;
+    id  _requestCompletionBlock;
 }
 
 @property (readonly) id /* block */ completionBlock;

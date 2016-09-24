@@ -3,12 +3,12 @@
  */
 
 @interface MCResourceDownloader : NSObject <NSURLSessionDataDelegate, NSURLSessionDelegate> {
-    MCPeerID *_peerID;
-    NSString *_resourceName;
-    MCSession *_session;
-    id /* block */ _urlResponseHandler;
-    NSURLSession *_urlSession;
-    NSURLSessionDataTask *_urlTask;
+    MCPeerID * _peerID;
+    NSString * _resourceName;
+    MCSession * _session;
+    id /* block */  _urlResponseHandler;
+    NSURLSession * _urlSession;
+    NSURLSessionDataTask * _urlTask;
 }
 
 @property (readonly, copy) NSString *debugDescription;

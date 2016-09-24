@@ -3,15 +3,15 @@
  */
 
 @interface SUWebView : UIWebView {
-    BOOL _isPinned;
-    UIColor *_originalBackgroundColor;
-    BOOL _originalShowsBackgroundShadow;
-    float _pinnedHeaderInsetAdjustment;
-    UIView *_pinnedHeaderView;
-    unsigned int _scrollingDisabled;
-    BOOL _showsTopBackgroundShadow;
-    int _synchronousLayoutCount;
-    UIColor *_topBackgroundColor;
+    BOOL  _isPinned;
+    UIColor * _originalBackgroundColor;
+    BOOL  _originalShowsBackgroundShadow;
+    double  _pinnedHeaderInsetAdjustment;
+    UIView * _pinnedHeaderView;
+    unsigned int  _scrollingDisabled;
+    BOOL  _showsTopBackgroundShadow;
+    int  _synchronousLayoutCount;
+    UIColor * _topBackgroundColor;
 }
 
 @property (nonatomic) <SUWebViewDelegate> *delegate;
@@ -27,7 +27,7 @@
 - (void)dealloc;
 - (void)endSynchronousLayout;
 - (BOOL)getStatusBarStyle:(int*)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isScrollingEnabled;
 - (void)loadArchive:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
@@ -37,7 +37,7 @@
 - (BOOL)showsTopBackgroundShadow;
 - (id)title;
 - (id)topBackgroundColor;
-- (void)view:(id)arg1 didSetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 oldFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (void)view:(id)arg1 didSetFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 oldFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (id)windowScriptObject;
 
 @end

@@ -3,11 +3,11 @@
  */
 
 @interface ATXPCMessage : NSObject {
-    NSDictionary *_info;
-    NSString *_name;
-    ATXPCConnection *_receivingConnection;
-    NSObject<OS_xpc_object> *_x_reply;
-    NSObject<OS_xpc_object> *_x_reply_connection;
+    NSDictionary * _info;
+    NSString * _name;
+    ATXPCConnection * _receivingConnection;
+    NSObject<OS_xpc_object> * _x_reply;
+    NSObject<OS_xpc_object> * _x_reply_connection;
 }
 
 @property (nonatomic, copy) NSDictionary *info;

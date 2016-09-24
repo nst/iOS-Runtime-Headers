@@ -8,13 +8,13 @@
         unsigned int routeType : 1; 
         unsigned int picked : 1; 
         unsigned int supportsVolumeControl : 1; 
-    } _has;
-    BOOL _picked;
-    NSString *_routeName;
-    int _routeSubtype;
-    int _routeType;
-    BOOL _supportsVolumeControl;
-    NSString *_uniqueIdentifier;
+    }  _has;
+    BOOL  _picked;
+    NSString * _routeName;
+    int  _routeSubtype;
+    int  _routeType;
+    BOOL  _supportsVolumeControl;
+    NSString * _uniqueIdentifier;
 }
 
 @property (nonatomic) BOOL hasPicked;

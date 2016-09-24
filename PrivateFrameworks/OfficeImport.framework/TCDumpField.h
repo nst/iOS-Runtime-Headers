@@ -3,8 +3,8 @@
  */
 
 @interface TCDumpField : NSObject {
-    NSString *mName;
-    TCDumpType *mType;
+    NSString * mName;
+    TCDumpType * mType;
 }
 
 - (id)initWithType:(id)arg1 name:(id)arg2;

@@ -3,7 +3,7 @@
  */
 
 @interface MusicApplicationController : SKUIApplicationController <SKUIModalDocumentDataSource, SKUIModalDocumentDelegate, SSVDirectUploadObserver> {
-    SSVDirectUploadQueue *_uploadQueue;
+    SSVDirectUploadQueue * _uploadQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -13,7 +13,6 @@
 
 - (void).cxx_destruct;
 - (Class)_JSITunesStoreClass;
-- (Class)_scrollingTabBarControllerClass;
 - (BOOL)_sendNativeBackButtonMetricEvents;
 - (id)activeDocument;
 - (void)dealloc;

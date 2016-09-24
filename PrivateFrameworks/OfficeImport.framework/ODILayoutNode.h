@@ -3,10 +3,10 @@
  */
 
 @interface ODILayoutNode : NSObject {
-    ODDAlgorithm *mAlgorithm;
-    NSMutableArray *mChildren;
-    ODDPoint *mPoint;
-    ODDShape *mShape;
+    ODDAlgorithm * mAlgorithm;
+    NSMutableArray * mChildren;
+    ODDPoint * mPoint;
+    ODDShape * mShape;
 }
 
 - (void)dealloc;

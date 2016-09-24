@@ -3,7 +3,7 @@
  */
 
 @interface GQDWebView : GQDGraphic <GQDNameMappable> {
-    GQDImageBinary *mImageBinary;
+    GQDImageBinary * mImageBinary;
 }
 
 @property (readonly, copy) NSString *debugDescription;

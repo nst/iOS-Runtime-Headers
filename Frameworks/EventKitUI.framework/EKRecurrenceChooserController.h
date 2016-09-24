@@ -3,9 +3,9 @@
  */
 
 @interface EKRecurrenceChooserController : NSObject {
-    UIColor *_backgroundColor;
-    NSDate *_date;
-    <EKRecurrenceChooserControllerDelegate> *_delegate;
+    UIColor * _backgroundColor;
+    NSDate * _date;
+    <EKRecurrenceChooserControllerDelegate> * _delegate;
 }
 
 @property (nonatomic, copy) UIColor *backgroundColor;

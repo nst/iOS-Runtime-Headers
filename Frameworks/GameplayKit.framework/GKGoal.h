@@ -3,15 +3,15 @@
  */
 
 @interface GKGoal : NSObject <NSCopying> {
-    NSArray *_agents;
-    float _angle;
-    float _distance;
-    BOOL _forward;
-    NSArray *_obstacles;
-    GKPath *_path;
-    float _speed;
-    double _time;
-    int _type;
+    NSArray * _agents;
+    double  _angle;
+    double  _distance;
+    BOOL  _forward;
+    NSArray * _obstacles;
+    GKPath * _path;
+    double  _speed;
+    double  _time;
+    int  _type;
 }
 
 + (id)goalToAlignWithAgents:(id)arg1 maxDistance:(float)arg2 maxAngle:(float)arg3;

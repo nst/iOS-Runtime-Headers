@@ -3,8 +3,8 @@
  */
 
 @interface ABGroupTableCell : UITableViewCell <ABGroupWrapperDelegate> {
-    ABGroupWrapper *_groupWrapper;
-    ABStyleProvider *_styleProvider;
+    ABGroupWrapper * _groupWrapper;
+    ABStyleProvider * _styleProvider;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,11 +3,11 @@
  */
 
 @interface PLPersonTableViewCell : UITableViewCell {
-    UIImageView *__personIconImageView;
-    UIImage *__personMonogramImage;
-    NSString *_personFirstName;
-    UIImage *_personIcon;
-    NSString *_personLastName;
+    UIImageView * __personIconImageView;
+    UIImage * __personMonogramImage;
+    NSString * _personFirstName;
+    UIImage * _personIcon;
+    NSString * _personLastName;
 }
 
 @property (setter=_setPersonIconImageView:, nonatomic, retain) UIImageView *_personIconImageView;

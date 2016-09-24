@@ -3,11 +3,11 @@
  */
 
 @interface DASharedCalendarContext : NSObject {
-    NSString *_accountID;
-    NSString *_calendarID;
-    id /* block */ _completionBlock;
-    NSObject<OS_dispatch_queue> *_queue;
-    BOOL _shouldSyncCalendar;
+    NSString * _accountID;
+    NSString * _calendarID;
+    id /* block */  _completionBlock;
+    NSObject<OS_dispatch_queue> * _queue;
+    BOOL  _shouldSyncCalendar;
 }
 
 @property (nonatomic, readonly) NSString *accountID;

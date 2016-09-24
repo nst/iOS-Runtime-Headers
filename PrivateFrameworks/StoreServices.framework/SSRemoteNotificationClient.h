@@ -3,8 +3,8 @@
  */
 
 @interface SSRemoteNotificationClient : NSObject {
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    int _notifyToken;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    int  _notifyToken;
 }
 
 + (id)sharedClient;

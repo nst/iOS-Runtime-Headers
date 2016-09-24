@@ -3,17 +3,17 @@
  */
 
 @interface MFComposeHeaderView : UIView {
-    id _delegate;
-    UIView *_highlightBackgroundView;
-    float _labelIndentation;
-    MFHeaderLabelView *_labelView;
-    NSString *_navTitle;
-    UIView *_separator;
-    BOOL _showsHighlightWhenTouched;
+    id  _delegate;
+    UIView * _highlightBackgroundView;
+    double  _labelIndentation;
+    MFHeaderLabelView * _labelView;
+    NSString * _navTitle;
+    UIView * _separator;
+    BOOL  _showsHighlightWhenTouched;
 }
 
 @property (nonatomic, copy) NSString *label;
-@property (nonatomic) float labelIndentation;
+@property (nonatomic) double labelIndentation;
 @property (nonatomic, readonly) MFHeaderLabelView *labelView;
 @property (nonatomic, copy) NSString *navTitle;
 @property (nonatomic) BOOL showsHighlightWhenTouched;
@@ -28,10 +28,10 @@
 - (id)_baseAttributes;
 - (BOOL)_canBecomeFirstResponder;
 - (id)_highlightedBackgroundView;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_recipientViewEdgeInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_recipientViewEdgeInsets;
 - (void)dealloc;
 - (void)handleTouchesEnded;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)label;
 - (id)labelColor;
 - (float)labelIndentation;
@@ -41,14 +41,14 @@
 - (id)navTitle;
 - (void)refreshPreferredContentSize;
 - (void)setDelegate:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setLabel:(id)arg1;
 - (void)setLabelIndentation:(float)arg1;
 - (void)setNavTitle:(id)arg1;
 - (void)setShowsHighlightWhenTouched:(BOOL)arg1;
 - (BOOL)showsHighlightWhenTouched;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleLabelBaselineAlignmentRectForLabel:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })titleLabelBaselineAlignmentRectForLabel:(id)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEORPVoltaireProblemProvider : GEORPProblemProvider <PBRequesterDelegate> {
-    id /* block */ _statusErrorHandler;
-    id /* block */ _statusFinishedHandler;
-    GEORequester *_statusRequester;
-    id /* block */ _submissionErrorHandler;
-    id /* block */ _submissionFinishedHandler;
-    GEORequester *_submissionRequester;
+@interface GEORPVoltaireProblemProvider : GEORPProblemProvider <GEOPBSessionRequesterDelegate> {
+    id /* block */  _statusErrorHandler;
+    id /* block */  _statusFinishedHandler;
+    GEORequester * _statusRequester;
+    id /* block */  _submissionErrorHandler;
+    id /* block */  _submissionFinishedHandler;
+    GEORequester * _submissionRequester;
 }
 
 @property (readonly, copy) NSString *debugDescription;

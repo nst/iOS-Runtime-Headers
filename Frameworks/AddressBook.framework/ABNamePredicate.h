@@ -3,17 +3,17 @@
  */
 
 @interface ABNamePredicate : ABPredicate {
-    void *_addressBook;
-    BOOL _generateExceprts;
-    NSArray *_groups;
-    BOOL _matchPersonOrCompanyNamesExclusively;
-    BOOL _matchPreferredName;
-    BOOL _matchWholeWords;
-    NSString *_name;
-    NSArray *_scopedContactIdentifiers;
-    NSArray *_sources;
-    struct __CFArray { } *_tokenizationSortKeys;
-    void *_tokenizations;
+    void * _addressBook;
+    BOOL  _generateExceprts;
+    NSArray * _groups;
+    BOOL  _matchPersonOrCompanyNamesExclusively;
+    BOOL  _matchPreferredName;
+    BOOL  _matchWholeWords;
+    NSString * _name;
+    NSArray * _scopedContactIdentifiers;
+    NSArray * _sources;
+    struct __CFArray { } * _tokenizationSortKeys;
+    void * _tokenizations;
 }
 
 @property (nonatomic, copy) NSString *accountIdentifier;
@@ -32,9 +32,9 @@
 - (id)_matchClauseForColumns:(id)arg1 requiringAllTerms:(BOOL)arg2;
 - (id)_personNameKeys;
 - (id)_personNonNameKeys;
-- (void)ab_bindJoinClauseComponentOfStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
-- (void)ab_bindWhereClauseComponentOfStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
-- (id)ab_metadataForMatchingRow:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 columnOffset:(int)arg2;
+- (void)ab_bindJoinClauseComponentOfStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; double x3; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
+- (void)ab_bindWhereClauseComponentOfStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; double x3; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
+- (id)ab_metadataForMatchingRow:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; double x3; }*)arg1 columnOffset:(int)arg2;
 - (id)accountIdentifier;
 - (void*)addressBook;
 - (void)dealloc;

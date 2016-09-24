@@ -3,10 +3,10 @@
  */
 
 @interface CalDAVPrincipalPropertySearchTask : CoreDAVPrincipalPropertySearchTask {
-    id _searchContext;
-    NSSet *_searchStrings;
-    NSSet *_searchTypes;
-    CalDAVPrincipalSearchPropertySet *_serverSupportSet;
+    id  _searchContext;
+    NSSet * _searchStrings;
+    NSSet * _searchTypes;
+    CalDAVPrincipalSearchPropertySet * _serverSupportSet;
 }
 
 @property (nonatomic, retain) id searchContext;

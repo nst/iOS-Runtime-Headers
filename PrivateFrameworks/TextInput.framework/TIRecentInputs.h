@@ -3,8 +3,8 @@
  */
 
 @interface TIRecentInputs : TILexicon {
-    NSString *_filePath;
-    BOOL _needsSync;
+    NSString * _filePath;
+    BOOL  _needsSync;
 }
 
 @property (nonatomic, retain) NSString *filePath;
@@ -20,6 +20,7 @@
 + (void)requestLexiconForRecentInputIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
 + (void)requestRemovalOfLexiconForRecentInputIdentifier:(id)arg1;
 + (void)storeInput:(id)arg1 forLocalIdentifier:(id)arg2;
++ (void)storeInput:(id)arg1 forSystemIdentifier:(id)arg2;
 + (void)storeInput:(id)arg1 forSystemIdentifier:(id)arg2 atPath:(id)arg3;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

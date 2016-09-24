@@ -3,9 +3,9 @@
  */
 
 @interface PLAggregateAlbumList : NSObject <PLAlbumContainer, PLAssetContainerListChangeObserver> {
-    NSMutableOrderedSet *_allAlbums;
-    NSMutableOrderedSet *_childAlbumLists;
-    int _filter;
+    NSMutableOrderedSet * _allAlbums;
+    NSMutableOrderedSet * _childAlbumLists;
+    int  _filter;
 }
 
 @property (nonatomic, readonly, retain) NSString *_prettyDescription;

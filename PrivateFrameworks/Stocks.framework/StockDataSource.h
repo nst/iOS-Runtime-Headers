@@ -3,9 +3,9 @@
  */
 
 @interface StockDataSource : NSObject {
-    int _identifier;
-    NSString *_name;
-    NSString *_sourceDescription;
+    int  _identifier;
+    NSString * _name;
+    NSString * _sourceDescription;
 }
 
 @property (nonatomic) int identifier;

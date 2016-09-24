@@ -3,7 +3,7 @@
  */
 
 @interface TSTStrokeSelection : TSKSelection {
-    unsigned int _mask;
+    unsigned int  _mask;
 }
 
 @property (nonatomic, readonly) unsigned int mask;

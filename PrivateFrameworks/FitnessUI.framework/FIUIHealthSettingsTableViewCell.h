@@ -3,8 +3,8 @@
  */
 
 @interface FIUIHealthSettingsTableViewCell : UITableViewCell {
-    <FIUIHealthSettingsForceUpdatable> *_forceUpdatable;
-    UIView *_inputView;
+    <FIUIHealthSettingsForceUpdatable> * _forceUpdatable;
+    UIView * _inputView;
 }
 
 @property (nonatomic) <FIUIHealthSettingsForceUpdatable> *forceUpdatable;

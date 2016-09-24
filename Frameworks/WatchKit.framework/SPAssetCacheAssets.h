@@ -3,7 +3,7 @@
  */
 
 @interface SPAssetCacheAssets : NSObject {
-    NSMutableArray *_assets;
+    NSMutableArray * _assets;
 }
 
 @property (nonatomic, retain) NSMutableArray *assets;

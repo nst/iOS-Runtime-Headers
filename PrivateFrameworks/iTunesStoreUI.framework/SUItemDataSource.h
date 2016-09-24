@@ -12,7 +12,7 @@
 - (id)_newDownloadMetadataForPodcastEpisode:(id)arg1 storeOffer:(id)arg2;
 - (id)_newTonePurchaseWithPurchase:(id)arg1;
 - (id)_thumbnailImageForItem:(id)arg1;
-- (long long)estimatedDiskSpaceNeededForItem:(id)arg1 storeOffer:(id)arg2;
+- (int)estimatedDiskSpaceNeededForItem:(id)arg1 storeOffer:(id)arg2;
 - (int)itemTypeForItem:(id)arg1;
 - (int)itemTypeForTypeString:(id)arg1;
 - (id)newDisplayItemValidationTestsForItem:(id)arg1;

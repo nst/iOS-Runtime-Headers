@@ -3,9 +3,9 @@
  */
 
 @interface SBKTaskAssertion : NSObject {
-    NSString *_debugInfo;
-    id /* block */ _expireHandler;
-    SBKProcessAssertion *_processAssertion;
+    NSString * _debugInfo;
+    id /* block */  _expireHandler;
+    SBKProcessAssertion * _processAssertion;
 }
 
 + (id)newBackgroundTaskWithExpirationHandler:(id /* block */)arg1 debugInfo:(id)arg2;

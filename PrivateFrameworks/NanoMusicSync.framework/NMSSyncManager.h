@@ -3,15 +3,16 @@
  */
 
 @interface NMSSyncManager : NSObject <ATSessionObserver> {
-    id _activeSyncSessionIdentifier;
-    unsigned int _aggregateAssetPlaylistItemBytes;
-    BOOL _assetPlaylistItemsPendingDownload;
-    float _estimatedSyncProgress;
-    NSTimer *_maskedPendingSyncStateRevealTimer;
-    unsigned int _numberOfAssetPlaylistItems;
-    ATSession *_observedSession;
-    BOOL _syncPending;
-    BOOL _syncing;
+    id  _activeSyncSessionIdentifier;
+    unsigned int  _aggregateAssetPlaylistItemBytes;
+    BOOL  _assetPlaylistItemsPendingDownload;
+    double  _estimatedSyncProgress;
+    NSTimer * _maskedPendingSyncStateRevealTimer;
+    unsigned int  _numberOfAssetPlaylistItems;
+    unsigned int  _numberOfAssetPlaylistItemsNeedingDownload;
+    ATSession * _observedSession;
+    BOOL  _syncPending;
+    BOOL  _syncing;
 }
 
 @property (nonatomic, retain) id activeSyncSessionIdentifier;
@@ -19,9 +20,10 @@
 @property (getter=hasAssetPlaylistItemsPendingDownload, nonatomic) BOOL assetPlaylistItemsPendingDownload;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) float estimatedSyncProgress;
+@property (nonatomic) double estimatedSyncProgress;
 @property (readonly) unsigned int hash;
 @property (nonatomic) unsigned int numberOfAssetPlaylistItems;
+@property (nonatomic) unsigned int numberOfAssetPlaylistItemsNeedingDownload;
 @property (readonly) Class superclass;
 @property (getter=isSyncPending, nonatomic) BOOL syncPending;
 @property (getter=isSyncing, nonatomic) BOOL syncing;
@@ -30,8 +32,10 @@
 
 - (void).cxx_destruct;
 - (id)_assetPlaylistTracksQuery;
+- (id)_assetSyncAutofillTracksPredicate;
 - (id)_assetSyncPlaylistTracksNeedingDownloadPredicate;
 - (id)_assetSyncPlaylistTracksPredicate;
+- (id)_assetSyncTracksPredicate;
 - (unsigned int)_estimatedArtworkSizeInBytes;
 - (unsigned int)_estimatedAssetPlaylistAggregateItemSizeInBytes;
 - (unsigned int)_estimatedAssetPlaylistAverageItemSizeInBytes;
@@ -52,6 +56,7 @@
 - (BOOL)isSyncPending;
 - (BOOL)isSyncing;
 - (unsigned int)numberOfAssetPlaylistItems;
+- (unsigned int)numberOfAssetPlaylistItemsNeedingDownload;
 - (void)session:(id)arg1 didBeginSessionTask:(id)arg2;
 - (void)session:(id)arg1 didFinishSessionTask:(id)arg2;
 - (void)session:(id)arg1 didUpdateSessionTask:(id)arg2;
@@ -63,6 +68,7 @@
 - (void)setAssetPlaylistItemsPendingDownload:(BOOL)arg1;
 - (void)setEstimatedSyncProgress:(float)arg1;
 - (void)setNumberOfAssetPlaylistItems:(unsigned int)arg1;
+- (void)setNumberOfAssetPlaylistItemsNeedingDownload:(unsigned int)arg1;
 - (void)setSyncPending:(BOOL)arg1;
 - (void)setSyncing:(BOOL)arg1;
 

@@ -3,22 +3,24 @@
  */
 
 @interface BRCStatInfo : NSObject <NSCopying, NSSecureCoding> {
-    long long _birthtime;
-    BRFieldCKInfo *_ckInfo;
-    NSString *_filenameOrAliasTarget;
-    NSData *_finderTags;
-    BOOL _hiddenExt;
-    NSData *_lazyXattr;
-    BOOL _mode;
-    BRCItemID *_parentID;
-    BOOL _state;
-    BOOL _type;
-    NSData *_xattrSignature;
+    int  _birthtime;
+    BRFieldCKInfo * _ckInfo;
+    NSString * _filenameOrAliasTarget;
+    NSData * _finderTags;
+    BOOL  _hiddenExt;
+    NSData * _lazyXattr;
+    BOOL  _mode;
+    BRCItemID * _parentID;
+    BOOL  _state;
+    BRCItemID * _trashPutBackParentID;
+    NSString * _trashPutBackPath;
+    BOOL  _type;
+    NSData * _xattrSignature;
 }
 
-@property (nonatomic, readonly) BRCItemID *_aliasTargetItemID;
+@property (nonatomic, readonly) NSString *_aliasTargetContainerIDAndOwner;
 @property (nonatomic, readonly) NSString *_aliasTargetMangledID;
-@property (nonatomic) long long birthtime;
+@property (nonatomic) int birthtime;
 @property (nonatomic, retain) BRFieldCKInfo *ckInfo;
 @property (nonatomic, retain) NSData *finderTags;
 @property (getter=isHiddenExt, nonatomic) BOOL hiddenExt;
@@ -28,24 +30,29 @@
 @property (nonatomic) BOOL mode;
 @property (nonatomic, retain) BRCItemID *parentID;
 @property (nonatomic) BOOL state;
+@property (nonatomic, retain) BRCItemID *trashPutBackParentID;
+@property (nonatomic, retain) NSString *trashPutBackPath;
 @property (nonatomic) BOOL type;
 @property (nonatomic, retain) NSData *xattrSignature;
 
++ (id)_aliasTargetContainerIDAndOwnerForItemType:(BOOL)arg1 aliasTarget:(id)arg2;
++ (id)_aliasTargetMangledIDForAliasTarget:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_aliasTargetContainerIDAndOwner;
 - (id)_aliasTargetItemID;
 - (id)_aliasTargetMangledID;
+- (id)_aliasTargetShareItemIDWithLibraryRowID:(id)arg1;
 - (void)_updateAliasTarget:(id)arg1;
-- (long long)birthtime;
-- (BOOL)check:(id)arg1 logToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg2;
-- (BOOL)checkStateWithItemID:(id)arg1 logToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg2;
+- (int)birthtime;
+- (BOOL)check:(id)arg1 logToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; int x20; }*)arg2;
+- (BOOL)checkStateWithItemID:(id)arg1 logToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; int x20; }*)arg2;
 - (id)ckInfo;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)descriptionWithContext:(id)arg1 origName:(id)arg2;
-- (unsigned long long)diffAgainst:(id)arg1;
+- (unsigned int)diffAgainst:(id)arg1;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)finderTags;
@@ -60,7 +67,7 @@
 - (id)logicalName;
 - (BOOL)mode;
 - (id)parentID;
-- (void)setBirthtime:(long long)arg1;
+- (void)setBirthtime:(int)arg1;
 - (void)setCkInfo:(id)arg1;
 - (void)setFinderTags:(id)arg1;
 - (void)setHiddenExt:(BOOL)arg1;
@@ -69,9 +76,13 @@
 - (void)setMode:(BOOL)arg1;
 - (void)setParentID:(id)arg1;
 - (void)setState:(BOOL)arg1;
+- (void)setTrashPutBackParentID:(id)arg1;
+- (void)setTrashPutBackPath:(id)arg1;
 - (void)setType:(BOOL)arg1;
 - (void)setXattrSignature:(id)arg1;
 - (BOOL)state;
+- (id)trashPutBackParentID;
+- (id)trashPutBackPath;
 - (BOOL)type;
 - (id)xattrSignature;
 

@@ -3,20 +3,20 @@
  */
 
 @interface MPStorePlayWhileDownloadController : NSObject <MPStoreDownloadManagerObserver, SSDownloadHandlerDelegate> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    SSDownloadHandler *_downloadHandler;
-    NSMapTable *_downloadToActiveSessions;
-    NSMapTable *_downloadToDownloadTokenPendingCompletionHandlers;
-    NSMapTable *_downloadToObservationTransactionCount;
-    NSMapTable *_downloadToProcessingDownloadHandlerSessions;
-    NSMapTable *_downloadToValidStatePendingCompletionHandlers;
-    NSMutableArray *_pausedDownloads;
-    NSMutableArray *_prioritizedDownloads;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    SSDownloadHandler * _downloadHandler;
+    NSMapTable * _downloadToActiveSessions;
+    NSMapTable * _downloadToDownloadTokenPendingCompletionHandlers;
+    NSMapTable * _downloadToObservationTransactionCount;
+    NSMapTable * _downloadToProcessingDownloadHandlerSessions;
+    NSMapTable * _downloadToValidStatePendingCompletionHandlers;
+    NSMutableArray * _pausedDownloads;
+    NSMutableArray * _prioritizedDownloads;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) long long downloadHandlerIdentifier;
+@property (nonatomic, readonly) int downloadHandlerIdentifier;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
@@ -43,7 +43,7 @@
 - (void)dealloc;
 - (void)downloadHandler:(id)arg1 cancelSession:(id)arg2;
 - (void)downloadHandler:(id)arg1 handleSession:(id)arg2;
-- (long long)downloadHandlerIdentifier;
+- (int)downloadHandlerIdentifier;
 - (void)downloadManager:(id)arg1 downloadDidFinish:(id)arg2;
 - (void)downloadManager:(id)arg1 downloadDidProgress:(id)arg2;
 - (void)downloadManager:(id)arg1 downloadPurchaseDidFinish:(id)arg2;

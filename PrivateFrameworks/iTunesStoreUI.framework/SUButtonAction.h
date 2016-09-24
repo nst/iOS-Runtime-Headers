@@ -3,7 +3,7 @@
  */
 
 @interface SUButtonAction : NSObject {
-    BOOL _activated;
+    BOOL  _activated;
 }
 
 @property (getter=isActivated, nonatomic, readonly) BOOL activated;

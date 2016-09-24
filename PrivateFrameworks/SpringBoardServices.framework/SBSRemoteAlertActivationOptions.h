@@ -3,7 +3,7 @@
  */
 
 @interface SBSRemoteAlertActivationOptions : NSObject <BSDescriptionProviding, BSSettingDescriptionProvider, BSXPCCoding> {
-    BSMutableSettings *_settings;
+    BSMutableSettings * _settings;
 }
 
 @property (readonly, copy) NSString *debugDescription;

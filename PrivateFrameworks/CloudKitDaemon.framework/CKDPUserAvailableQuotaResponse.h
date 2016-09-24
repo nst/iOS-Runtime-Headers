@@ -5,12 +5,12 @@
 @interface CKDPUserAvailableQuotaResponse : PBCodable <NSCopying> {
     struct { 
         unsigned int storageAvailableBytes : 1; 
-    } _has;
-    unsigned long long _storageAvailableBytes;
+    }  _has;
+    unsigned int  _storageAvailableBytes;
 }
 
 @property (nonatomic) BOOL hasStorageAvailableBytes;
-@property (nonatomic) unsigned long long storageAvailableBytes;
+@property (nonatomic) unsigned int storageAvailableBytes;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -22,8 +22,8 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasStorageAvailableBytes:(BOOL)arg1;
-- (void)setStorageAvailableBytes:(unsigned long long)arg1;
-- (unsigned long long)storageAvailableBytes;
+- (void)setStorageAvailableBytes:(unsigned int)arg1;
+- (unsigned int)storageAvailableBytes;
 - (void)writeTo:(id)arg1;
 
 @end

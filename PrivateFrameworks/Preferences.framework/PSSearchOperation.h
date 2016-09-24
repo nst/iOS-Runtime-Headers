@@ -3,11 +3,11 @@
  */
 
 @interface PSSearchOperation : NSOperation {
-    PSSearchResults *_currentResults;
-    <PSSearchOperationDelegate> *_delegate;
-    BOOL _newQuery;
-    NSString *_query;
-    NSSet *_rootEntries;
+    PSSearchResults * _currentResults;
+    <PSSearchOperationDelegate> * _delegate;
+    BOOL  _newQuery;
+    NSString * _query;
+    NSSet * _rootEntries;
 }
 
 @property (readonly, copy) PSSearchResults *currentResults;

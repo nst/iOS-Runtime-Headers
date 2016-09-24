@@ -3,7 +3,7 @@
  */
 
 @interface MKNewAnnotationContainerView : MKAnnotationContainerView {
-    BOOL _suppress;
+    BOOL  _suppress;
 }
 
 - (void)_updateAddedAnnotationRotation:(id)arg1;

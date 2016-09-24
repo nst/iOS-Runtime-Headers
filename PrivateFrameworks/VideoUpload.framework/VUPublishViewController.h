@@ -3,24 +3,24 @@
  */
 
 @interface VUPublishViewController : UIViewController <UIAlertViewDelegate, UIPickerViewDelegate, UITableViewDataSource, UITableViewDelegate> {
-    long long _HDSize;
-    long long _SDSize;
-    NSArray *_accessCells;
-    unsigned int _accessRow;
-    UIAlertView *_accountAlert;
-    UITableViewCell *_accountCell;
-    UIAlertView *_authenticationAlert;
-    UIAlertView *_authenticationFailedAlert;
-    VUCategoryCell *_categoryCell;
-    <VUPublishViewControllerDelegate> *_delegate;
-    PLTableViewEditableCell *_descriptionCell;
-    float _descriptionHeight;
-    BOOL _enableHDSection;
-    VUFooterContainerView *_footerContainer;
-    UIImageView *_headerImageView;
-    PLTableViewEditableCell *_optionCells;
-    UIPickerView *_picker;
-    UIView *_pickerContainer;
+    int  _HDSize;
+    int  _SDSize;
+    NSArray * _accessCells;
+    unsigned int  _accessRow;
+    UIAlertView * _accountAlert;
+    UITableViewCell * _accountCell;
+    UIAlertView * _authenticationAlert;
+    UIAlertView * _authenticationFailedAlert;
+    VUCategoryCell * _categoryCell;
+    <VUPublishViewControllerDelegate> * _delegate;
+    PLTableViewEditableCell * _descriptionCell;
+    double  _descriptionHeight;
+    BOOL  _enableHDSection;
+    VUFooterContainerView * _footerContainer;
+    UIImageView * _headerImageView;
+    PLTableViewEditableCell * _optionCells;
+    UIPickerView * _picker;
+    UIView * _pickerContainer;
     struct { 
         int title; 
         int hd; 
@@ -28,18 +28,18 @@
         int category; 
         int access; 
         int account; 
-    } _sectionIndices;
-    int _selectedOption;
-    BOOL _showHDSection;
-    BOOL _showingPicker;
-    UITableView *_tableView;
-    NSMutableArray *_tagCells;
-    PLTableViewEditableCell *_titleCell;
-    BOOL _viewShrunk;
+    }  _sectionIndices;
+    int  _selectedOption;
+    BOOL  _showHDSection;
+    BOOL  _showingPicker;
+    UITableView * _tableView;
+    NSMutableArray * _tagCells;
+    PLTableViewEditableCell * _titleCell;
+    BOOL  _viewShrunk;
 }
 
-@property (nonatomic) long long HDSize;
-@property (nonatomic) long long SDSize;
+@property (nonatomic) int HDSize;
+@property (nonatomic) int SDSize;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <VUPublishViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -54,8 +54,8 @@
 @property (nonatomic, readonly) NSString *videoTitle;
 
 - (void).cxx_destruct;
-- (long long)HDSize;
-- (long long)SDSize;
+- (int)HDSize;
+- (int)SDSize;
 - (void)_addNewTagCell;
 - (void)_authenticatorFailed:(id)arg1;
 - (void)_authenticatorStateChanged:(id)arg1;
@@ -103,8 +103,8 @@
 - (int)selectedOption;
 - (void)setDelegate:(id)arg1;
 - (void)setEnableHDSection:(BOOL)arg1;
-- (void)setHDSize:(long long)arg1;
-- (void)setSDSize:(long long)arg1;
+- (void)setHDSize:(int)arg1;
+- (void)setSDSize:(int)arg1;
 - (void)setShowHDSection:(BOOL)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)showAlertWithTitle:(id)arg1 message:(id)arg2;

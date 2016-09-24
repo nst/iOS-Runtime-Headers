@@ -3,14 +3,14 @@
  */
 
 @interface ACDAuthenticationPluginManager : NSObject {
-    NSObject<OS_dispatch_queue> *_authenticationPluginQueue;
-    NSMutableDictionary *_authenticationPluginsByType;
-    ACDQueueDictionary *_discoveryHandlerQueues;
-    NSLock *_discoveryHandlersLock;
-    ACDQueueDictionary *_renewalHandlerQueues;
-    NSLock *_renewalHandlersLock;
-    ACDQueueDictionary *_verificationHandlerQueues;
-    NSLock *_verificationHandlersLock;
+    NSObject<OS_dispatch_queue> * _authenticationPluginQueue;
+    NSMutableDictionary * _authenticationPluginsByType;
+    ACDQueueDictionary * _discoveryHandlerQueues;
+    NSLock * _discoveryHandlersLock;
+    ACDQueueDictionary * _renewalHandlerQueues;
+    NSLock * _renewalHandlersLock;
+    ACDQueueDictionary * _verificationHandlerQueues;
+    NSLock * _verificationHandlersLock;
 }
 
 - (void).cxx_destruct;

@@ -3,15 +3,15 @@
  */
 
 @interface CPLCodingPropertyEntry : NSObject {
-    struct objc_ivar { } *_ivar;
-    NSSet *_propertyClasses;
-    SEL _propertyGetter;
-    int (*_propertyGetterIMP;
-    SEL _propertySetter;
-    int (*_propertySetterIMP;
-    BOOL _propertyType;
-    BOOL _readOnly;
-    NSString *_structName;
+    struct objc_ivar { } * _ivar;
+    NSSet * _propertyClasses;
+    SEL  _propertyGetter;
+    int (* _propertyGetterIMP;
+    SEL  _propertySetter;
+    int (* _propertySetterIMP;
+    BOOL  _propertyType;
+    BOOL  _readOnly;
+    NSString * _structName;
 }
 
 @property (nonatomic) struct objc_ivar { }*ivar;

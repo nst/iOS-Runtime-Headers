@@ -3,10 +3,10 @@
  */
 
 @interface _NSBundleODRDataCommon : NSObject {
-    NSMutableDictionary *_assetPackToURL;
-    NSBundle *_bundle;
-    NSLock *_lock;
-    long long _sandboxToken;
+    NSMutableDictionary * _assetPackToURL;
+    NSBundle * _bundle;
+    NSLock * _lock;
+    int  _sandboxToken;
 }
 
 - (id)URLForAssetPack:(id)arg1;

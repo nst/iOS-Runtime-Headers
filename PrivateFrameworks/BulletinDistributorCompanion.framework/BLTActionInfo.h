@@ -3,11 +3,11 @@
  */
 
 @interface BLTActionInfo : NSObject <BSDescriptionProviding> {
-    int _actionType;
-    NSDictionary *_context;
-    NSString *_publisherBulletinID;
-    NSString *_recordID;
-    NSString *_sectionID;
+    int  _actionType;
+    NSDictionary * _context;
+    NSString * _publisherBulletinID;
+    NSString * _recordID;
+    NSString * _sectionID;
 }
 
 @property (nonatomic) int actionType;

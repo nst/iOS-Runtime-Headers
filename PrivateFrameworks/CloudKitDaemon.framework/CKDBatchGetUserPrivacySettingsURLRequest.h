@@ -3,7 +3,7 @@
  */
 
 @interface CKDBatchGetUserPrivacySettingsURLRequest : CKDURLRequest {
-    NSArray *_containerPrivacySettings;
+    NSArray * _containerPrivacySettings;
 }
 
 @property (nonatomic, retain) NSArray *containerPrivacySettings;

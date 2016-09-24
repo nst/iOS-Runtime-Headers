@@ -3,7 +3,7 @@
  */
 
 @interface SiriUISnippetManager : NSObject {
-    SUICPluginManager *_pluginManager;
+    AFClientPluginManager * _pluginManager;
 }
 
 + (id)sharedInstance;
@@ -14,6 +14,7 @@
 - (BOOL)_listItem:(id)arg1 isEqualToListItem:(id)arg2;
 - (BOOL)_listItem:(id)arg1 isPreferredOverListItem:(id)arg2;
 - (id)disambiguationItemForListItem:(id)arg1 disambiguationKey:(id)arg2;
+- (id)filteredDisambiguationListItems:(id)arg1;
 - (id)init;
 - (id)listItemToPickInAutodisambiguationForListItems:(id)arg1;
 - (id)speakableProviderForObject:(id)arg1;

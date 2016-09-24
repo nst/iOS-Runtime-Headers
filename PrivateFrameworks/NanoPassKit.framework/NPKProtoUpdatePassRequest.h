@@ -3,16 +3,16 @@
  */
 
 @interface NPKProtoUpdatePassRequest : PBRequest <NSCopying> {
-    NPKProtoCatalog *_catalog;
+    NPKProtoCatalog * _catalog;
     struct { 
         unsigned int lastKnownResyncID : 1; 
         unsigned int resyncID : 1; 
-    } _has;
-    unsigned int _lastKnownResyncID;
-    NPKProtoHash *_libraryHash;
-    NPKProtoPass *_pass;
-    NSData *_previousManifestHash;
-    unsigned int _resyncID;
+    }  _has;
+    unsigned int  _lastKnownResyncID;
+    NPKProtoHash * _libraryHash;
+    NPKProtoPass * _pass;
+    NSData * _previousManifestHash;
+    unsigned int  _resyncID;
 }
 
 @property (nonatomic, retain) NPKProtoCatalog *catalog;

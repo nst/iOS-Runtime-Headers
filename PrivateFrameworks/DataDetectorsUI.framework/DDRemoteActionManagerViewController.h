@@ -3,24 +3,26 @@
  */
 
 @interface DDRemoteActionManagerViewController : UIViewController <DDRemoteActionHostViewControllerDelegate> {
-    DDRemoteAction *_action;
-    BOOL _displayed;
-    UIView *_errorView;
-    NSExtension *_extension;
-    UIView *_hitView;
-    BOOL _loaded;
-    NSDate *_loadingDate;
-    UIView *_loadingView;
-    UINavigationController *_navigationController;
-    NSString *_platerTitle;
-    BOOL _previewMode;
-    NSMutableArray *_rawSwipeActions;
-    DDRemoteActionHostViewController *_remoteViewController;
-    <NSCopying> *_request;
-    <DDRemoteActionViewServiceProtocol> *_serviceContext;
-    BOOL _shouldDeferPresenting;
-    DDRemoteActionManagerViewController *_strongSelf;
-    UIView *_titleBar;
+    DDRemoteAction * _action;
+    BOOL  _displayed;
+    UIView * _errorView;
+    NSExtension * _extension;
+    UIView * _hitView;
+    BOOL  _loaded;
+    NSDate * _loadingDate;
+    UIView * _loadingView;
+    NSLayoutConstraint * _navControllerTopConstraint;
+    UINavigationController * _navigationController;
+    NSString * _platerTitle;
+    BOOL  _previewMode;
+    NSMutableArray * _rawSwipeActions;
+    DDRemoteActionHostViewController * _remoteViewController;
+    <NSCopying> * _request;
+    <DDRemoteActionViewServiceProtocol> * _serviceContext;
+    BOOL  _shouldDeferPresenting;
+    DDRemoteActionManagerViewController * _strongSelf;
+    UIView * _titleBar;
+    NSLayoutConstraint * _titleBarBottomConstraint;
 }
 
 @property DDRemoteAction *action;
@@ -47,7 +49,7 @@
 - (void)loadRemoteAction:(id)arg1;
 - (void)loadTitleBarIfNeeded;
 - (void)presentRemoteViewController;
-- (id)previewMenuItems;
+- (id)previewActionItems;
 - (BOOL)previewMode;
 - (void)removeLoadingViewToShowView:(id)arg1;
 - (id)request;

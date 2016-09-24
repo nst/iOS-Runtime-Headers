@@ -3,18 +3,25 @@
  */
 
 @interface RPFlatVideoOverlayButton : UIButton <RPVideoOverlayButton> {
-    SEL _action;
-    int _style;
-    id _target;
+    SEL  _action;
+    int  _style;
+    id  _target;
 }
+
+@property (nonatomic) SEL action;
+@property (nonatomic) id target;
 
 - (void).cxx_destruct;
 - (id)_createOverlayImageWithBackgroundWhite:(float)arg1 backgroundAlpha:(float)arg2 glyphAlpha:(float)arg3;
 - (void)_handleTap:(id)arg1;
 - (id)_highlightedButtonImage;
 - (id)_normalButtonImage;
+- (SEL)action;
 - (id)initWithStyle:(int)arg1;
+- (void)setAction:(SEL)arg1;
+- (void)setTarget:(id)arg1;
 - (void)setTarget:(id)arg1 action:(SEL)arg2;
 - (int)style;
+- (id)target;
 
 @end

@@ -3,18 +3,18 @@
  */
 
 @interface GQDRGradient : NSObject <GQDNameMappable> {
-    float mAngle;
+    double  mAngle;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } mEnd;
-    float mOpacity;
+        double x; 
+        double y; 
+    }  mEnd;
+    double  mOpacity;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } mStart;
-    struct __CFArray { } *mStops;
-    int mType;
+        double x; 
+        double y; 
+    }  mStart;
+    struct __CFArray { } * mStops;
+    int  mType;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -26,10 +26,10 @@
 
 - (float)angle;
 - (void)dealloc;
-- (struct CGPoint { float x1; float x2; })end;
+- (struct CGPoint { double x1; double x2; })end;
 - (float)opacity;
 - (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1;
-- (struct CGPoint { float x1; float x2; })start;
+- (struct CGPoint { double x1; double x2; })start;
 - (struct __CFArray { }*)stops;
 - (int)type;
 

@@ -3,7 +3,7 @@
  */
 
 @interface CAMApplication : UIApplication {
-    CAMPerformanceTestHarness *_currentTestHarness;
+    CAMPerformanceTestHarness * _currentTestHarness;
 }
 
 @property (nonatomic, retain) CAMPerformanceTestHarness *currentTestHarness;

@@ -2,29 +2,32 @@
    Image: /System/Library/PrivateFrameworks/FlightUtilities.framework/FlightUtilities
  */
 
-@interface FUFlightLeg : NSObject <NSCopying> {
-    NSString *_aircraftcode;
-    float _altitude;
-    FUFlightStep *_arrival;
-    FUFlightStep *_departure;
-    float _heading;
-    struct { 
+@interface FUFlightLeg : NSObject <NSCopying, NSSecureCoding> {
+    NSString * _aircraftcode;
+    double  _altitude;
+    FUFlightStep * _arrival;
+    FUFlightStep * _departure;
+    double  _duration;
+    double  _heading;
+    struct CLLocationCoordinate2D { 
         double latitude; 
         double longitude; 
-    } _location;
-    float _speed;
-    int _status;
+    }  _location;
+    double  _speed;
+    int  _status;
 }
 
 @property (retain) NSString *aircraftcode;
-@property float altitude;
+@property double altitude;
 @property (retain) FUFlightStep *arrival;
 @property (retain) FUFlightStep *departure;
-@property (readonly) double duration;
-@property float heading;
-@property struct { double x1; double x2; } location;
-@property float speed;
+@property double duration;
+@property double heading;
+@property struct CLLocationCoordinate2D { double x1; double x2; } location;
+@property double speed;
 @property int status;
+
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)aircraftcode;
@@ -34,15 +37,18 @@
 - (id)departure;
 - (id)description;
 - (double)duration;
+- (void)encodeWithCoder:(id)arg1;
 - (float)heading;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (struct { double x1; double x2; })location;
+- (struct CLLocationCoordinate2D { double x1; double x2; })location;
 - (void)setAircraftcode:(id)arg1;
 - (void)setAltitude:(float)arg1;
 - (void)setArrival:(id)arg1;
 - (void)setDeparture:(id)arg1;
+- (void)setDuration:(double)arg1;
 - (void)setHeading:(float)arg1;
-- (void)setLocation:(struct { double x1; double x2; })arg1;
+- (void)setLocation:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
 - (void)setSpeed:(float)arg1;
 - (void)setStatus:(int)arg1;
 - (float)speed;

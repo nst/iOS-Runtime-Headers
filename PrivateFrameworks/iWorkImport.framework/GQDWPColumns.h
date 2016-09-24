@@ -3,8 +3,8 @@
  */
 
 @interface GQDWPColumns : NSObject <GQDNameMappable> {
-    struct __CFArray { } *mColumns;
-    BOOL mEqualColumns;
+    struct __CFArray { } * mColumns;
+    BOOL  mEqualColumns;
 }
 
 @property (readonly, copy) NSString *debugDescription;

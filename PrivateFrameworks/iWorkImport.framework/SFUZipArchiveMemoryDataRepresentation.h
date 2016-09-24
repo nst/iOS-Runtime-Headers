@@ -3,7 +3,7 @@
  */
 
 @interface SFUZipArchiveMemoryDataRepresentation : SFUDataRepresentation <SFUZipArchiveDataRepresentation> {
-    NSData *mData;
+    NSData * mData;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -13,14 +13,14 @@
 
 - (id)bufferedInputStream;
 - (id)bufferedInputStreamWithBufferSize:(unsigned long)arg1;
-- (id)bufferedInputStreamWithOffset:(long long)arg1 length:(long long)arg2;
+- (id)bufferedInputStreamWithOffset:(int)arg1 length:(int)arg2;
 - (id)data;
-- (long long)dataLength;
+- (int)dataLength;
 - (void)dealloc;
 - (BOOL)hasSameLocationAs:(id)arg1;
 - (id)initWithData:(id)arg1;
 - (id)inputStream;
-- (id)inputStreamWithOffset:(long long)arg1 length:(long long)arg2;
+- (id)inputStreamWithOffset:(int)arg1 length:(int)arg2;
 - (BOOL)isReadable;
 
 @end

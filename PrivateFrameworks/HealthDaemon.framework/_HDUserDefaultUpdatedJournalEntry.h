@@ -3,13 +3,12 @@
  */
 
 @interface _HDUserDefaultUpdatedJournalEntry : HDJournalEntry {
-    HDUserDefault *_userDefault;
+    HDUserDefault * _userDefault;
 }
 
 @property (nonatomic, readonly) HDUserDefault *userDefault;
 
-+ (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
-+ (int)behavior;
++ (void)applyEntries:(id)arg1 withProfile:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;

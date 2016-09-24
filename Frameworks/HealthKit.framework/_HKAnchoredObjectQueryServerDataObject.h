@@ -3,9 +3,9 @@
  */
 
 @interface _HKAnchoredObjectQueryServerDataObject : _HKQueryServerDataObject {
-    HKQueryAnchor *_anchor;
-    BOOL _includeDeletedObjects;
-    unsigned int _limit;
+    HKQueryAnchor * _anchor;
+    BOOL  _includeDeletedObjects;
+    unsigned int  _limit;
 }
 
 @property (nonatomic, retain) HKQueryAnchor *anchor;

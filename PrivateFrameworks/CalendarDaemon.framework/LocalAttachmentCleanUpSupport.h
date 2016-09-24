@@ -3,12 +3,12 @@
  */
 
 @interface LocalAttachmentCleanUpSupport : NSObject {
-    NSObject<OS_dispatch_source> *_source;
+    NSObject<OS_dispatch_source> * _source;
 }
 
 - (void).cxx_destruct;
-- (void)_dispatchCleanupAfterDelay:(long long)arg1;
-- (void)_setTimerOnSource:(long long)arg1;
+- (void)_dispatchCleanupAfterDelay:(int)arg1;
+- (void)_setTimerOnSource:(int)arg1;
 - (void)cleanUpOrphanedFiles;
 - (void)dealloc;
 - (id)init;

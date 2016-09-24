@@ -11,6 +11,6 @@
 
 @optional
 
-- (void)composeSubjectViewDidRemoveContent:(MFComposeSubjectView *)arg1;
+- (void)composeSubjectViewWillRemoveContent:(MFComposeSubjectView *)arg1;
 
 @end

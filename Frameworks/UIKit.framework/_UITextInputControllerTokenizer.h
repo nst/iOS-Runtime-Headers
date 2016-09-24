@@ -3,9 +3,9 @@
  */
 
 @interface _UITextInputControllerTokenizer : UITextInputStringTokenizer {
-    UITextInputController *_textInput;
-    struct __CFStringTokenizer { } *_tokenizer;
-    int _tokenizerType;
+    UITextInputController * _textInput;
+    struct __CFStringTokenizer { } * _tokenizer;
+    int  _tokenizerType;
 }
 
 - (void).cxx_destruct;

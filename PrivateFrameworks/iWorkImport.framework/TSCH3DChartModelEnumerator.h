@@ -3,41 +3,41 @@
  */
 
 @interface TSCH3DChartModelEnumerator : NSObject {
-    TSCH3DChartType *mChartType;
+    TSCH3DChartType * mChartType;
     struct ValueEnumerator { 
         BOOL mForward; 
         unsigned int mIndex; 
         unsigned int mMax; 
         double mValue; 
-    } mCoordinate;
-    TSCHChartAxis *mCoordinateAxis;
+    }  mCoordinate;
+    TSCHChartAxis * mCoordinateAxis;
     struct vector<double, std::__1::allocator<double> > { 
         double *__begin_; 
         double *__end_; 
         struct __compressed_pair<double *, std::__1::allocator<double> > { 
             double *__first_; 
         } __end_cap_; 
-    } mCoordinateValues;
-    double mIntercept;
-    TSCHChartModel *mModel;
-    unsigned int mNumberOfValues;
+    }  mCoordinateValues;
+    double  mIntercept;
+    TSCHChartModel * mModel;
+    unsigned int  mNumberOfValues;
     struct ValueEnumerator { 
         BOOL mForward; 
         unsigned int mIndex; 
         unsigned int mMax; 
         double mValue; 
-    } mSeries;
-    NSArray *mSeriesList;
-    TSCHChartSeriesType *mSeriesType;
+    }  mSeries;
+    NSArray * mSeriesList;
+    TSCHChartSeriesType * mSeriesType;
     struct vector<double, std::__1::allocator<double> > { 
         double *__begin_; 
         double *__end_; 
         struct __compressed_pair<double *, std::__1::allocator<double> > { 
             double *__first_; 
         } __end_cap_; 
-    } mSeriesValues;
-    double mUnitSpaceIntercept;
-    TSCHChartAxis *mValueAxis;
+    }  mSeriesValues;
+    double  mUnitSpaceIntercept;
+    TSCHChartAxis * mValueAxis;
 }
 
 @property (nonatomic, readonly) TSCH3DChartType *chartType;

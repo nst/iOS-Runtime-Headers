@@ -3,23 +3,23 @@
  */
 
 @interface AssistantUIController : NSObject <AssistantUIDelegateResult, AutoGuessUIDelegate, SetupUIConfigDelegate, SetupUIDelegate, StepByStepUIDelegate> {
-    long _assistantResult;
-    AutoGuessController *_autoGuessController;
-    int _connectionStatusSelectorAwaitingResolution;
-    id _delegate;
-    NSDictionary *_guessCompleteDict;
-    NSDictionary *_lastAssociatedInfo;
-    NSDictionary *_lastAutoguessInstrumentation;
-    NSDictionary *_lastSetupInstrumentation;
-    NSDictionary *_lastStepByStepInstrumentation;
-    NSArray *_paramScanResults;
-    AUSetupController *_setupController;
-    NSMutableDictionary *_setupOptions;
-    int _state;
-    StepByStepController *_stepByStepController;
-    NSDictionary *_targetBrowseRecord;
-    NSString *_targetMACAddress;
-    NSDictionary *_targetScanRecord;
+    long  _assistantResult;
+    AutoGuessController * _autoGuessController;
+    int  _connectionStatusSelectorAwaitingResolution;
+    id  _delegate;
+    NSDictionary * _guessCompleteDict;
+    NSDictionary * _lastAssociatedInfo;
+    NSDictionary * _lastAutoguessInstrumentation;
+    NSDictionary * _lastSetupInstrumentation;
+    NSDictionary * _lastStepByStepInstrumentation;
+    NSArray * _paramScanResults;
+    AUSetupController * _setupController;
+    NSMutableDictionary * _setupOptions;
+    int  _state;
+    StepByStepController * _stepByStepController;
+    NSDictionary * _targetBrowseRecord;
+    NSString * _targetMACAddress;
+    NSDictionary * _targetScanRecord;
 }
 
 @property (readonly) long assistantResult;

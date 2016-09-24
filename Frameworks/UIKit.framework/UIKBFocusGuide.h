@@ -3,8 +3,8 @@
  */
 
 @interface UIKBFocusGuide : UIFocusGuide {
-    <UIKBFocusGuideDelegate> *_keyboardDelegate;
-    unsigned int focusHeading;
+    <UIKBFocusGuideDelegate> * _keyboardDelegate;
+    unsigned int  focusHeading;
 }
 
 @property (nonatomic) unsigned int focusHeading;

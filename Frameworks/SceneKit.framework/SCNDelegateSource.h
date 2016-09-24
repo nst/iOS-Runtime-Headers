@@ -3,7 +3,7 @@
  */
 
 @interface SCNDelegateSource : SCNImageSource {
-    id _delegate;
+    id  _delegate;
 }
 
 @property (nonatomic, retain) id delegate;

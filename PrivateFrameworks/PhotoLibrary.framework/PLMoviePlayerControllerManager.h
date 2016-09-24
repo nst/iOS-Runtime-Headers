@@ -3,7 +3,7 @@
  */
 
 @interface PLMoviePlayerControllerManager : NSObject {
-    NSMutableArray *_playerStack;
+    NSMutableArray * _playerStack;
 }
 
 + (id)sharedInstance;

@@ -3,8 +3,8 @@
  */
 
 @interface IMAVCameraController : NSObject {
-    NSMutableArray *_cameras;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableArray * _cameras;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, readonly, retain) NSArray *cameras;

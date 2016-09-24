@@ -3,7 +3,7 @@
  */
 
 @interface RadioUpdateSortOrderRequest : RadioSyncRequest {
-    NSArray *_stationSortOrdering;
+    NSArray * _stationSortOrdering;
 }
 
 - (void).cxx_destruct;

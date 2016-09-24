@@ -3,9 +3,9 @@
  */
 
 @interface CKDServerConfiguration : NSObject <CKPropertyCoding> {
-    NSMutableDictionary *_allowedAppVersionsCache;
-    NSDate *_expiry;
-    NSMutableDictionary *_values;
+    NSMutableDictionary * _allowedAppVersionsCache;
+    NSDate * _expiry;
+    NSMutableDictionary * _values;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *allowedAppVersionsCache;

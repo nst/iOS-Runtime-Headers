@@ -15,8 +15,8 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    } _clients;
-    struct CLNotifierBase { int (**x1)(); } *_notifier;
+    }  _clients;
+    struct CLNotifierBase { int (**x1)(); } * _notifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;

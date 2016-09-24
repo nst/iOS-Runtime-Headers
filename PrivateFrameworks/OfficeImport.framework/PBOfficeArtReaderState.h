@@ -3,8 +3,8 @@
  */
 
 @interface PBOfficeArtReaderState : OABReaderState {
-    PBPresentationReaderState *mPresentationState;
-    PXPresentationState *mXmlDocumentState;
+    PBPresentationReaderState * mPresentationState;
+    PXPresentationState * mXmlDocumentState;
 }
 
 - (void)dealloc;

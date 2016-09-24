@@ -3,7 +3,7 @@
  */
 
 @interface PUPreviewIdentifiedAction : UIPreviewAction {
-    NSString *_actionIdentifier;
+    NSString * _actionIdentifier;
 }
 
 @property (nonatomic, retain) NSString *actionIdentifier;

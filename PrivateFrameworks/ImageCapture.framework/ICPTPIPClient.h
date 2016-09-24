@@ -3,7 +3,7 @@
  */
 
 @interface ICPTPIPClient : NSObject {
-    id _clientProperties;
+    id  _clientProperties;
 }
 
 - (struct __CFFileDescriptor { }*)fdref;

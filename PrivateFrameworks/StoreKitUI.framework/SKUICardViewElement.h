@@ -3,15 +3,17 @@
  */
 
 @interface SKUICardViewElement : SKUIViewElement {
-    BOOL _enabled;
+    BOOL  _enabled;
 }
 
+@property (getter=isAdCard, nonatomic, readonly) BOOL adCard;
 @property (nonatomic, readonly) int cardType;
 
 - (id)applyUpdatesWithElement:(id)arg1;
 - (int)cardType;
 - (void)enumerateChildrenUsingBlock:(id /* block */)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
+- (BOOL)isAdCard;
 - (BOOL)isEnabled;
 - (int)pageComponentType;
 

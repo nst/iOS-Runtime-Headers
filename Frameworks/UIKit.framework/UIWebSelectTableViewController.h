@@ -3,16 +3,16 @@
  */
 
 @interface UIWebSelectTableViewController : UITableViewController <UIKeyInput> {
-    BOOL _allowsMultipleSelection;
-    NSArray *_cachedItems;
-    float _fontSize;
-    NSArray *_groupsAndOptions;
-    float _maximumTextWidth;
-    UIWebSelectPopover *_popover;
-    DOMHTMLSelectElement *_selectionNode;
-    unsigned int _singleSelectionIndex;
-    unsigned int _singleSelectionSection;
-    int _textAlignment;
+    BOOL  _allowsMultipleSelection;
+    NSArray * _cachedItems;
+    double  _fontSize;
+    NSArray * _groupsAndOptions;
+    double  _maximumTextWidth;
+    UIWebSelectPopover * _popover;
+    DOMHTMLSelectElement * _selectionNode;
+    unsigned int  _singleSelectionIndex;
+    unsigned int  _singleSelectionSection;
+    int  _textAlignment;
 }
 
 @property (nonatomic, retain) NSArray *_cachedItems;
@@ -24,6 +24,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL enablesReturnKeyAutomatically;
+@property (nonatomic, readonly) BOOL hasText;
 @property (readonly) unsigned int hash;
 @property (nonatomic) int keyboardAppearance;
 @property (nonatomic) int keyboardType;
@@ -31,6 +32,7 @@
 @property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
 @property (nonatomic) int spellCheckingType;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *textContentType;
 
 - (id)_cachedItems;
 - (id)_groupsAndOptions;

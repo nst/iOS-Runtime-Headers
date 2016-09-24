@@ -3,15 +3,15 @@
  */
 
 @interface MusicLibraryAlbumsCollectionViewConfiguration : MusicLibraryBrowseCollectionViewConfiguration {
-    NSMutableSet *_additionalQueryFilterPredicates;
-    BOOL _forMainAlbumsList;
-    BOOL _includeCompilations;
+    NSMutableSet * _additionalQueryFilterPredicates;
+    BOOL  _forMainAlbumsList;
+    BOOL  _includeCompilations;
 }
 
 + (void)populateHorizontalLayoutInterpolatorsOnCollectionViewDescriptor:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)_detailViewControllerForAlbumPersistentID:(unsigned long long)arg1 sourceViewController:(id)arg2;
+- (id)_detailViewControllerForAlbumPersistentID:(unsigned int)arg1 sourceViewController:(id)arg2;
 - (void)addQueryFilterPredicate:(id)arg1;
 - (BOOL)canPreviewEntityValueContext:(id)arg1;
 - (void)dealloc;
@@ -22,7 +22,7 @@
 - (id)initForMainAlbumsList:(BOOL)arg1 includeCompilations:(BOOL)arg2;
 - (id)loadEntityViewDescriptor;
 - (id)previewViewControllerForEntityValueContext:(id)arg1 fromViewController:(id)arg2;
-- (BOOL)pushAlbumViewWithAlbumPersistentID:(unsigned long long)arg1 fromViewController:(id)arg2;
+- (BOOL)pushAlbumViewWithAlbumPersistentID:(unsigned int)arg1 fromViewController:(id)arg2;
 - (id)queryForAlbumsCollectionView;
 
 @end

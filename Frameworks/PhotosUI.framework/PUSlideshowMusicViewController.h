@@ -3,15 +3,15 @@
  */
 
 @interface PUSlideshowMusicViewController : UIViewController <MPMediaPickerControllerDelegate, PUViewControllerSpecChangeObserver, UITableViewDataSource, UITableViewDelegate> {
-    BOOL __needsUpdateBackgroundView;
-    BOOL __needsUpdateSpec;
-    BOOL __needsUpdateTableView;
-    PUSlideshowMediaItem *_currentMediaItem;
-    <PUSlideshowMusicDelegate> *_delegate;
-    NSArray *_mediaItems;
-    BOOL _shouldHideTableViewWhenViewWillDisappear;
-    PUSlideshowSettingsViewControllerSpec *_spec;
-    UITableView *_tableView;
+    BOOL  __needsUpdateBackgroundView;
+    BOOL  __needsUpdateSpec;
+    BOOL  __needsUpdateTableView;
+    PUSlideshowMediaItem * _currentMediaItem;
+    <PUSlideshowMusicDelegate> * _delegate;
+    NSArray * _mediaItems;
+    BOOL  _shouldHideTableViewWhenViewWillDisappear;
+    PUSlideshowSettingsViewControllerSpec * _spec;
+    UITableView * _tableView;
 }
 
 @property (setter=_setNeedsUpdateBackgroundView:, nonatomic) BOOL _needsUpdateBackgroundView;

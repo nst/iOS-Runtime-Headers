@@ -3,19 +3,19 @@
  */
 
 @interface HLPHelpBookController : HLPRemoteDataController {
-    NSString *_contentFormatVersion;
-    NSString *_contentVersion;
-    NSString *_copyrightText;
-    NSString *_copyrightTopicIdentifier;
-    BOOL _hasSectionIcon;
-    NSURL *_helpBookURL;
-    NSMutableDictionary *_helpItemMap;
-    HLPURLImageCacheController *_imageCacheController;
-    HLPHelpSectionItem *_rootSectionItem;
-    NSString *_welcomeTopicIdentifier;
+    int  _contentFormatVersion;
+    NSString * _contentVersion;
+    NSString * _copyrightText;
+    NSString * _copyrightTopicIdentifier;
+    BOOL  _hasSectionIcon;
+    NSURL * _helpBookURL;
+    NSMutableDictionary * _helpItemMap;
+    HLPURLImageCacheController * _imageCacheController;
+    HLPHelpSectionItem * _rootSectionItem;
+    NSString * _welcomeTopicIdentifier;
 }
 
-@property (nonatomic, retain) NSString *contentFormatVersion;
+@property (nonatomic) int contentFormatVersion;
 @property (nonatomic, retain) NSString *contentVersion;
 @property (nonatomic, retain) NSString *copyrightText;
 @property (nonatomic, retain) NSString *copyrightTopicIdentifier;
@@ -28,7 +28,7 @@
 @property (nonatomic, retain) NSString *welcomeTopicIdentifier;
 
 - (void).cxx_destruct;
-- (id)contentFormatVersion;
+- (int)contentFormatVersion;
 - (id)contentVersion;
 - (id)copyrightText;
 - (id)copyrightTopicIdentifier;
@@ -46,7 +46,7 @@
 - (void)processFileURLWithCompletionHandler:(id /* block */)arg1;
 - (id)rootSectionItem;
 - (id)sectionsForChildrenIdentifiers:(id)arg1 level:(int)arg2 parent:(id)arg3 sectionsMap:(id)arg4 topicsMap:(id)arg5;
-- (void)setContentFormatVersion:(id)arg1;
+- (void)setContentFormatVersion:(int)arg1;
 - (void)setContentVersion:(id)arg1;
 - (void)setCopyrightText:(id)arg1;
 - (void)setCopyrightTopicIdentifier:(id)arg1;

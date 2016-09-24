@@ -3,7 +3,7 @@
  */
 
 @interface TSKDocumentSelection : TSKSelection {
-    TSKDocumentRoot *mDocumentRoot;
+    TSKDocumentRoot * mDocumentRoot;
 }
 
 @property (nonatomic, readonly) TSKDocumentRoot *documentRoot;

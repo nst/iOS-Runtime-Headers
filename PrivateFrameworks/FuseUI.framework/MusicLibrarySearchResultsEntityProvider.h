@@ -3,13 +3,13 @@
  */
 
 @interface MusicLibrarySearchResultsEntityProvider : NSObject <MusicEntityProviding> {
-    NSArray *_invalidationBlocks;
-    NSObject<OS_dispatch_queue> *_invalidationQueue;
-    unsigned int _maximumNumberOfSectionResults;
-    NSArray *_searchDataSources;
-    MusicLibrarySearchResultsEntityProviderConfiguration *_searchEntityProviderConfiguration;
-    NSOperationQueue *_searchOperationQueue;
-    NSString *_searchTerm;
+    NSArray * _invalidationBlocks;
+    NSObject<OS_dispatch_queue> * _invalidationQueue;
+    unsigned int  _maximumNumberOfSectionResults;
+    NSArray * _searchDataSources;
+    MusicLibrarySearchResultsEntityProviderConfiguration * _searchEntityProviderConfiguration;
+    NSOperationQueue * _searchOperationQueue;
+    NSString * _searchTerm;
 }
 
 @property (readonly, copy) NSString *debugDescription;

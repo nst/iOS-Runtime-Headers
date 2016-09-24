@@ -3,15 +3,15 @@
  */
 
 @interface NEContentFilterPlugin : NSObject <NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
-    BOOL _filterBrowsers;
-    BOOL _filterSockets;
-    NSData *_identityReference;
-    NSString *_organization;
-    NSData *_passwordReference;
-    NSString *_pluginType;
-    NSString *_serverAddress;
-    NSString *_username;
-    NSDictionary *_vendorConfiguration;
+    BOOL  _filterBrowsers;
+    BOOL  _filterSockets;
+    NSData * _identityReference;
+    NSString * _organization;
+    NSData * _passwordReference;
+    NSString * _pluginType;
+    NSString * _serverAddress;
+    NSString * _username;
+    NSDictionary * _vendorConfiguration;
 }
 
 @property BOOL filterBrowsers;

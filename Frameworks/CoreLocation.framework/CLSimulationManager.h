@@ -3,11 +3,11 @@
  */
 
 @interface CLSimulationManager : NSObject {
-    int _locationDeliveryBehavior;
-    double _locationDistance;
-    double _locationInterval;
-    int _locationRepeatBehavior;
-    double _locationSpeed;
+    int  _locationDeliveryBehavior;
+    double  _locationDistance;
+    double  _locationInterval;
+    int  _locationRepeatBehavior;
+    double  _locationSpeed;
 }
 
 @property (nonatomic) int locationDeliveryBehavior;

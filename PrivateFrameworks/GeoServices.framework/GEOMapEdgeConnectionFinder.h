@@ -3,15 +3,15 @@
  */
 
 @interface GEOMapEdgeConnectionFinder : GEOMapRequest {
-    NSMutableArray *_builders;
+    NSMutableArray * _builders;
     struct { 
         double latitude; 
         double longitude; 
-    } _coordinate;
-    struct { unsigned int x1; unsigned int x2; struct { /* ? */ } *x3; } *_junction;
-    GEOMapAccess *_map;
-    GEOVectorTile *_tile;
-    GEOMapTileFinder *_tileFinder;
+    }  _coordinate;
+    struct { unsigned int x1; unsigned int x2; struct { /* ? */ } *x3; } * _junction;
+    GEOMapAccess * _map;
+    GEOVectorTile * _tile;
+    GEOMapTileFinder * _tileFinder;
 }
 
 - (void)_findConnections:(id /* block */)arg1 incoming:(BOOL)arg2;

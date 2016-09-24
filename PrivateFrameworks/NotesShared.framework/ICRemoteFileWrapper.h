@@ -3,8 +3,8 @@
  */
 
 @interface ICRemoteFileWrapper : NSFileWrapper <NSSecureCoding> {
-    NSData *_cachedData;
-    NSURL *_remoteURL;
+    NSData * _cachedData;
+    NSURL * _remoteURL;
 }
 
 @property (nonatomic, retain) NSData *cachedData;

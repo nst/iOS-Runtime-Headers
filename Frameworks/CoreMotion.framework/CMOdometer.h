@@ -3,8 +3,8 @@
  */
 
 @interface CMOdometer : NSObject {
-    <CMOdometerDelegate> *_delegate;
-    CMOdometerProxy *_odometerProxy;
+    <CMOdometerDelegate> * _delegate;
+    CMOdometerProxy * _odometerProxy;
 }
 
 @property (nonatomic) <CMOdometerDelegate> *delegate;

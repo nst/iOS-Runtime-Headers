@@ -3,11 +3,11 @@
  */
 
 @interface PLIOHIDOperatorComposition : NSObject {
-    struct __IOHIDEventSystemClient { } *_eventSystemClient;
-    PLOperator *_operator;
-    id /* block */ _operatorBlock;
-    NSArray *_serviceClients;
-    NSString *_serviceName;
+    struct __IOHIDEventSystemClient { } * _eventSystemClient;
+    PLOperator * _operator;
+    id /* block */  _operatorBlock;
+    NSArray * _serviceClients;
+    NSString * _serviceName;
 }
 
 @property struct __IOHIDEventSystemClient { }*eventSystemClient;

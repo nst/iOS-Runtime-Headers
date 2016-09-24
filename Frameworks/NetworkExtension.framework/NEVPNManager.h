@@ -3,9 +3,9 @@
  */
 
 @interface NEVPNManager : NSObject <NEPrettyDescription> {
-    NEConfiguration *_configuration;
-    NEVPNConnection *_connection;
-    BOOL _hasLoaded;
+    NEConfiguration * _configuration;
+    NEVPNConnection * _connection;
+    BOOL  _hasLoaded;
 }
 
 @property (copy) NEConfiguration *configuration;

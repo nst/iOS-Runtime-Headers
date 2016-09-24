@@ -3,7 +3,7 @@
  */
 
 @interface ISJSONDataProvider : ISDataProvider {
-    unsigned int _options;
+    unsigned int  _options;
 }
 
 @property unsigned int parserOptions;

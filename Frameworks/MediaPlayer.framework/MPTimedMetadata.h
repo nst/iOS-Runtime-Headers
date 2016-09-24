@@ -3,7 +3,7 @@
  */
 
 @interface MPTimedMetadata : NSObject {
-    AVMetadataItem *_metadataItem;
+    AVMetadataItem * _metadataItem;
 }
 
 @property (nonatomic, readonly) NSDictionary *allMetadata;

@@ -3,7 +3,7 @@
  */
 
 @interface SFReaderFontSizeButton : UIButton {
-    SFVibrantCellSelectionBackgroundView *_backgroundView;
+    SFVibrantCellSelectionBackgroundView * _backgroundView;
 }
 
 - (void).cxx_destruct;

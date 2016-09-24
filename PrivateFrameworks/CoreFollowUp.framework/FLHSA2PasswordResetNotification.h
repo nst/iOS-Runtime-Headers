@@ -3,11 +3,11 @@
  */
 
 @interface FLHSA2PasswordResetNotification : NSObject <NSSecureCoding> {
-    NSString *_appleID;
-    NSString *_approveButtonTitle;
-    NSString *_dismissButtonTitle;
-    NSString *_informativeText;
-    NSString *_title;
+    NSString * _appleID;
+    NSString * _approveButtonTitle;
+    NSString * _dismissButtonTitle;
+    NSString * _informativeText;
+    NSString * _title;
 }
 
 @property (nonatomic, copy) NSString *appleID;

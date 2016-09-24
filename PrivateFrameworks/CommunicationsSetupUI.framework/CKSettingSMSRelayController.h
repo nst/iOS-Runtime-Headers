@@ -3,7 +3,7 @@
  */
 
 @interface CKSettingSMSRelayController : PSListController <IDSServiceDelegate> {
-    IDSService *_relayService;
+    IDSService * _relayService;
 }
 
 @property (readonly, copy) NSString *debugDescription;

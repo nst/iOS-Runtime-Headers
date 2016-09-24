@@ -3,17 +3,17 @@
  */
 
 @interface UIWebSelectionNode : NSObject {
-    UIWebSelectionNode *_fromBottomByContracting;
-    UIWebSelectionNode *_fromBottomByExpanding;
-    UIWebSelectionNode *_fromLeftByContracting;
-    UIWebSelectionNode *_fromLeftByExpanding;
-    UIWebSelectionNode *_fromRightByContracting;
-    UIWebSelectionNode *_fromRightByExpanding;
-    UIWebSelectionNode *_fromTopByContracting;
-    UIWebSelectionNode *_fromTopByExpanding;
-    BOOL _invalid;
-    UIWebSelection *_selection;
-    UIWebSelectionGraph *_sharedGraph;
+    UIWebSelectionNode * _fromBottomByContracting;
+    UIWebSelectionNode * _fromBottomByExpanding;
+    UIWebSelectionNode * _fromLeftByContracting;
+    UIWebSelectionNode * _fromLeftByExpanding;
+    UIWebSelectionNode * _fromRightByContracting;
+    UIWebSelectionNode * _fromRightByExpanding;
+    UIWebSelectionNode * _fromTopByContracting;
+    UIWebSelectionNode * _fromTopByExpanding;
+    BOOL  _invalid;
+    UIWebSelection * _selection;
+    UIWebSelectionGraph * _sharedGraph;
 }
 
 @property (retain) UIWebSelection *selection;

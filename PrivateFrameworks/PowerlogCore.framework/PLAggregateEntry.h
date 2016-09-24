@@ -3,12 +3,12 @@
  */
 
 @interface PLAggregateEntry : NSObject {
-    short _aggregateFunction;
-    NSString *_aggregateKey;
-    double _aggregateValue;
-    NSString *_entryKey;
-    NSMutableDictionary *_matchingKeyToValue;
-    NSArray *_otherAggregateKeys;
+    short  _aggregateFunction;
+    NSString * _aggregateKey;
+    double  _aggregateValue;
+    NSString * _entryKey;
+    NSMutableDictionary * _matchingKeyToValue;
+    NSArray * _otherAggregateKeys;
 }
 
 @property short aggregateFunction;

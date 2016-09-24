@@ -3,11 +3,11 @@
  */
 
 @interface WBSReaderFont : NSObject {
-    NSString *_displayName;
-    NSString *_familyName;
-    BOOL _hasCalculatedLocalizedName;
-    NSString *_localizedName;
-    BOOL _systemFont;
+    NSString * _displayName;
+    NSString * _familyName;
+    BOOL  _hasCalculatedLocalizedName;
+    NSString * _localizedName;
+    BOOL  _systemFont;
 }
 
 @property (nonatomic, readonly) NSString *displayName;

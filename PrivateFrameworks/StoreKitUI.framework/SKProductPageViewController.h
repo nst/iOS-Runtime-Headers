@@ -3,31 +3,32 @@
  */
 
 @interface SKProductPageViewController : SUViewController <SKUIBannerViewDelegate, SKUIIPadProductPageDelegate, SKUIIPhoneProductPageDelegate, SKUIItemStateCenterObserver, SUClientInterfaceDelegatePrivate, SUPurchaseManagerDelegate> {
-    NSString *_additionalPurchaseParameters;
-    NSString *_affiliateIdentifier;
-    BOOL _askToBuy;
-    SKUIBannerViewController *_bannerViewController;
-    NSString *_cancelButtonTitle;
-    SKUIClientContext *_clientContext;
-    <SKProductPageViewControllerDelegatePrivate> *_delegate;
-    SUDialogManager *_dialogManager;
-    SUBarButtonItem *_gotoStoreButtonItem;
-    SKUIIPadProductPageViewController *_ipadProductPageViewController;
-    SKUIIPhoneProductPageViewController *_iphoneProductPageViewController;
-    SKUIItemStateCenter *_itemStateCenter;
-    SSMetricsPageEvent *_lastPageEvent;
-    NSURL *_nativeURL;
-    SUPreviewOverlayViewController *_previewOverlay;
-    NSDictionary *_productParameters;
-    NSString *_promptString;
-    SUPurchaseManager *_purchaseManager;
-    SUBarButtonItem *_rightBarButtonItem;
-    NSString *_rightBarButtonTitle;
-    BOOL _showsRightBarButton;
-    BOOL _showsStoreButton;
-    SKUIITunesStoreUIPageViewController *_storePageViewController;
-    int _style;
-    int _urlBagType;
+    NSString * _additionalPurchaseParameters;
+    NSString * _affiliateIdentifier;
+    BOOL  _askToBuy;
+    SKUIBannerViewController * _bannerViewController;
+    NSString * _cancelButtonTitle;
+    SKUIClientContext * _clientContext;
+    <SKProductPageViewControllerDelegatePrivate> * _delegate;
+    SUDialogManager * _dialogManager;
+    SUBarButtonItem * _gotoStoreButtonItem;
+    SKUIIPadProductPageViewController * _ipadProductPageViewController;
+    SKUIIPhoneProductPageViewController * _iphoneProductPageViewController;
+    SKUIItemStateCenter * _itemStateCenter;
+    SSMetricsPageEvent * _lastPageEvent;
+    NSURL * _nativeURL;
+    BOOL  _preview;
+    SUPreviewOverlayViewController * _previewOverlay;
+    NSDictionary * _productParameters;
+    NSString * _promptString;
+    SUPurchaseManager * _purchaseManager;
+    SUBarButtonItem * _rightBarButtonItem;
+    NSString * _rightBarButtonTitle;
+    BOOL  _showsRightBarButton;
+    BOOL  _showsStoreButton;
+    SKUIITunesStoreUIPageViewController * _storePageViewController;
+    int  _style;
+    int  _urlBagType;
 }
 
 @property (nonatomic) int URLBagType;
@@ -39,6 +40,7 @@
 @property (nonatomic) <SKProductPageViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (getter=isPreview, nonatomic) BOOL preview;
 @property (nonatomic) int productPageStyle;
 @property (nonatomic, copy) NSString *promptString;
 @property (nonatomic, copy) NSString *rightBarButtonTitle;
@@ -100,6 +102,7 @@
 - (id)init;
 - (id)initWithProductPageStyle:(int)arg1;
 - (id)initWithTabBarItem:(id)arg1;
+- (BOOL)isPreview;
 - (void)itemStateCenter:(id)arg1 didFinishPurchases:(id)arg2;
 - (void)loadProductWithParameters:(id)arg1;
 - (void)loadProductWithRequest:(id)arg1;
@@ -120,6 +123,7 @@
 - (void)setCancelButtonTitle:(id)arg1;
 - (void)setClientInterface:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setPreview:(BOOL)arg1;
 - (void)setProductPageStyle:(int)arg1;
 - (void)setPromptString:(id)arg1;
 - (void)setRightBarButtonTitle:(id)arg1;

@@ -3,12 +3,14 @@
  */
 
 @interface NPSManager : NSObject {
-    NSObject<OS_dispatch_queue> *_internalQueue;
-    NSXPCConnection *_xpcConnection;
+    NSObject<OS_dispatch_queue> * _internalQueue;
+    NSXPCConnection * _xpcConnection;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *internalQueue;
 @property (nonatomic, retain) NSXPCConnection *xpcConnection;
+
++ (void)initialize;
 
 - (void).cxx_destruct;
 - (id)connection;

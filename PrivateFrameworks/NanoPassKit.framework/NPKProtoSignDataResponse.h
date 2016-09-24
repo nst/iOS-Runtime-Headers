@@ -3,33 +3,45 @@
  */
 
 @interface NPKProtoSignDataResponse : PBCodable <NSCopying> {
+    NSData * _certsBytes;
     struct { 
         unsigned int pending : 1; 
-    } _has;
-    BOOL _pending;
-    NSData *_signedData;
+    }  _has;
+    BOOL  _pending;
+    NSData * _signatureInfoBytes;
+    NSData * _signedData;
 }
 
+@property (nonatomic, retain) NSData *certsBytes;
+@property (nonatomic, readonly) BOOL hasCertsBytes;
 @property (nonatomic) BOOL hasPending;
+@property (nonatomic, readonly) BOOL hasSignatureInfoBytes;
 @property (nonatomic, readonly) BOOL hasSignedData;
 @property (nonatomic) BOOL pending;
+@property (nonatomic, retain) NSData *signatureInfoBytes;
 @property (nonatomic, retain) NSData *signedData;
 
 - (void).cxx_destruct;
+- (id)certsBytes;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasCertsBytes;
 - (BOOL)hasPending;
+- (BOOL)hasSignatureInfoBytes;
 - (BOOL)hasSignedData;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)pending;
 - (BOOL)readFrom:(id)arg1;
+- (void)setCertsBytes:(id)arg1;
 - (void)setHasPending:(BOOL)arg1;
 - (void)setPending:(BOOL)arg1;
+- (void)setSignatureInfoBytes:(id)arg1;
 - (void)setSignedData:(id)arg1;
+- (id)signatureInfoBytes;
 - (id)signedData;
 - (void)writeTo:(id)arg1;
 

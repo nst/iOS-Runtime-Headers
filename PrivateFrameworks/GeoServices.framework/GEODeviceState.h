@@ -3,20 +3,20 @@
  */
 
 @interface GEODeviceState : PBCodable <NSCopying> {
-    GEOCarInfo *_carInfo;
-    int _deviceBatteryState;
-    NSString *_deviceCarrierName;
-    int _deviceConnectivity;
-    NSString *_deviceCountryCode;
-    NSString *_deviceInputLocale;
-    int _deviceInterfaceOrientation;
-    NSString *_deviceLocale;
-    NSString *_deviceOutputLocale;
+    GEOCarInfo * _carInfo;
+    int  _deviceBatteryState;
+    NSString * _deviceCarrierName;
+    int  _deviceConnectivity;
+    NSString * _deviceCountryCode;
+    NSString * _deviceInputLocale;
+    int  _deviceInterfaceOrientation;
+    NSString * _deviceLocale;
+    NSString * _deviceOutputLocale;
     struct { 
         unsigned int deviceBatteryState : 1; 
         unsigned int deviceConnectivity : 1; 
         unsigned int deviceInterfaceOrientation : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic, retain) GEOCarInfo *carInfo;
@@ -38,17 +38,23 @@
 @property (nonatomic, readonly) BOOL hasDeviceLocale;
 @property (nonatomic, readonly) BOOL hasDeviceOutputLocale;
 
+- (int)StringAsDeviceBatteryState:(id)arg1;
+- (int)StringAsDeviceConnectivity:(id)arg1;
+- (int)StringAsDeviceInterfaceOrientation:(id)arg1;
 - (id)carInfo;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (int)deviceBatteryState;
+- (id)deviceBatteryStateAsString:(int)arg1;
 - (id)deviceCarrierName;
 - (int)deviceConnectivity;
+- (id)deviceConnectivityAsString:(int)arg1;
 - (id)deviceCountryCode;
 - (id)deviceInputLocale;
 - (int)deviceInterfaceOrientation;
+- (id)deviceInterfaceOrientationAsString:(int)arg1;
 - (id)deviceLocale;
 - (id)deviceOutputLocale;
 - (id)dictionaryRepresentation;

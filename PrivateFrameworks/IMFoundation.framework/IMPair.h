@@ -3,8 +3,8 @@
  */
 
 @interface IMPair : NSObject <NSCopying> {
-    id _first;
-    id _second;
+    id  _first;
+    id  _second;
 }
 
 @property (retain) id first;

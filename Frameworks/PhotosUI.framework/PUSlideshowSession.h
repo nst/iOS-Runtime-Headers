@@ -3,16 +3,16 @@
  */
 
 @interface PUSlideshowSession : NSObject <PUSlideshowSettingsViewModelChangeObserver, PUSlideshowViewModelChangeObserver, _UISettingsKeyObserver> {
-    BOOL __disablingIdleTimer;
-    id __disablingIdleTimerToken;
-    PHAssetCollection *_assetCollection;
-    PUSlideshowContextRegistry *_contextRegistry;
-    OKProducerPreset *_currentPreset;
-    PHFetchResult *_fetchResult;
-    OKMediaFeederPhotoKit *_mediaFeeder;
-    OKPresentationViewController *_presentationViewController;
-    PUSlideshowSettingsViewModel *_settingsViewModel;
-    PUSlideshowViewModel *_viewModel;
+    BOOL  __disablingIdleTimer;
+    id  __disablingIdleTimerToken;
+    PHAssetCollection * _assetCollection;
+    PUSlideshowContextRegistry * _contextRegistry;
+    OKProducerPreset * _currentPreset;
+    PHFetchResult * _fetchResult;
+    OKMediaFeederPhotoKit * _mediaFeeder;
+    OKPresentationViewController * _presentationViewController;
+    PUSlideshowSettingsViewModel * _settingsViewModel;
+    PUSlideshowViewModel * _viewModel;
 }
 
 @property (setter=_setDisablingIdleTimer:, nonatomic) BOOL _disablingIdleTimer;

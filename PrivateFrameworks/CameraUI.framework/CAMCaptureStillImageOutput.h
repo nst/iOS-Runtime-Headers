@@ -3,11 +3,11 @@
  */
 
 @interface CAMCaptureStillImageOutput : AVCaptureStillImageOutput {
-    CAMCaptureEngine *__captureEngine;
-    NSMutableDictionary *__userInfoBySettingsID;
-    NSObject<OS_dispatch_queue> *__userInfoQueue;
-    NSDictionary *_currentUserInfo;
-    NSDictionary *_userInfoForNextCapture;
+    CAMCaptureEngine * __captureEngine;
+    NSMutableDictionary * __userInfoBySettingsID;
+    NSObject<OS_dispatch_queue> * __userInfoQueue;
+    NSDictionary * _currentUserInfo;
+    NSDictionary * _userInfoForNextCapture;
 }
 
 @property (nonatomic, readonly) CAMCaptureEngine *_captureEngine;

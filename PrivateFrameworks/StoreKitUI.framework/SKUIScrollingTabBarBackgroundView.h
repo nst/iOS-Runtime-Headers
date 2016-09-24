@@ -3,14 +3,14 @@
  */
 
 @interface SKUIScrollingTabBarBackgroundView : UIView {
-    NSString *_backdropBarGroupName;
-    _UIBackdropView *_backdropView;
-    UIView *_bottomHairlineView;
-    BOOL _showsBackdrop;
-    BOOL _showsBottomHairline;
-    BOOL _showsTopHairline;
-    UIView *_topHairlineView;
-    BOOL _usesOpaqueColorForTopHairline;
+    NSString * _backdropBarGroupName;
+    _UIBackdropView * _backdropView;
+    UIView * _bottomHairlineView;
+    BOOL  _showsBackdrop;
+    BOOL  _showsBottomHairline;
+    BOOL  _showsTopHairline;
+    UIView * _topHairlineView;
+    BOOL  _usesOpaqueColorForTopHairline;
 }
 
 @property (nonatomic, copy) NSString *backdropBarGroupName;

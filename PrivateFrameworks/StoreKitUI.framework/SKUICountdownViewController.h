@@ -3,9 +3,9 @@
  */
 
 @interface SKUICountdownViewController : UIViewController <SKUIArtworkRequestDelegate> {
-    SKUIResourceLoader *_artworkLoader;
-    SKUIClientContext *_clientContext;
-    SKUICountdownComponent *_countdownComponent;
+    SKUIResourceLoader * _artworkLoader;
+    SKUIClientContext * _clientContext;
+    SKUICountdownComponent * _countdownComponent;
 }
 
 @property (nonatomic, readonly) SKUIResourceLoader *artworkLoader;

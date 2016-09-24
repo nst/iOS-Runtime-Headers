@@ -3,7 +3,7 @@
  */
 
 @interface BRCExtensionErrorPayload : PBCodable <NSCopying> {
-    NSString *_minimumOSName;
+    NSString * _minimumOSName;
 }
 
 @property (nonatomic, readonly) BOOL hasMinimumOSName;

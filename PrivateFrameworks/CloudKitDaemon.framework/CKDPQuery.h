@@ -3,15 +3,15 @@
  */
 
 @interface CKDPQuery : PBCodable <NSCopying> {
-    BOOL _distinct;
-    NSMutableArray *_filters;
+    BOOL  _distinct;
+    NSMutableArray * _filters;
     struct { 
         unsigned int queryOperator : 1; 
         unsigned int distinct : 1; 
-    } _has;
-    int _queryOperator;
-    NSMutableArray *_sorts;
-    NSMutableArray *_types;
+    }  _has;
+    int  _queryOperator;
+    NSMutableArray * _sorts;
+    NSMutableArray * _types;
 }
 
 @property (nonatomic) BOOL distinct;
@@ -22,7 +22,12 @@
 @property (nonatomic, retain) NSMutableArray *sorts;
 @property (nonatomic, retain) NSMutableArray *types;
 
++ (Class)filtersType;
++ (Class)sortsType;
++ (Class)typesType;
+
 - (void).cxx_destruct;
+- (int)StringAsQueryOperator:(id)arg1;
 - (void)addFilters:(id)arg1;
 - (void)addSorts:(id)arg1;
 - (void)addTypes:(id)arg1;
@@ -43,6 +48,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)queryOperator;
+- (id)queryOperatorAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setDistinct:(BOOL)arg1;
 - (void)setFilters:(id)arg1;

@@ -3,10 +3,10 @@
  */
 
 @interface WBSJavaScriptDialogCompletionHandler : NSObject {
-    id /* block */ _alertCompletionHandler;
-    id /* block */ _confirmCompletionHandler;
-    int _dialogMode;
-    id /* block */ _promptCompletionHandler;
+    id /* block */  _alertCompletionHandler;
+    id /* block */  _confirmCompletionHandler;
+    int  _dialogMode;
+    id /* block */  _promptCompletionHandler;
 }
 
 @property (nonatomic, copy) id /* block */ alertCompletionHandler;

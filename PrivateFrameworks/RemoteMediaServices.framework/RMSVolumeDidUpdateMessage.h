@@ -6,15 +6,15 @@
     struct { 
         unsigned int sessionIdentifier : 1; 
         unsigned int volume : 1; 
-    } _has;
-    int _sessionIdentifier;
-    float _volume;
+    }  _has;
+    int  _sessionIdentifier;
+    double  _volume;
 }
 
 @property (nonatomic) BOOL hasSessionIdentifier;
 @property (nonatomic) BOOL hasVolume;
 @property (nonatomic) int sessionIdentifier;
-@property (nonatomic) float volume;
+@property (nonatomic) double volume;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -3,11 +3,11 @@
  */
 
 @interface NACMutedMessage : PBCodable <NSCopying> {
-    NSString *_category;
+    NSString * _category;
     struct { 
         unsigned int muted : 1; 
-    } _has;
-    BOOL _muted;
+    }  _has;
+    BOOL  _muted;
 }
 
 @property (nonatomic, retain) NSString *category;

@@ -3,16 +3,16 @@
  */
 
 @interface _MRClientUpdatesConfigurationProtobuf : PBCodable <NSCopying> {
-    BOOL _artworkUpdates;
+    BOOL  _artworkUpdates;
     struct { 
         unsigned int artworkUpdates : 1; 
         unsigned int keyboardUpdates : 1; 
         unsigned int nowPlayingUpdates : 1; 
         unsigned int volumeUpdates : 1; 
-    } _has;
-    BOOL _keyboardUpdates;
-    BOOL _nowPlayingUpdates;
-    BOOL _volumeUpdates;
+    }  _has;
+    BOOL  _keyboardUpdates;
+    BOOL  _nowPlayingUpdates;
+    BOOL  _volumeUpdates;
 }
 
 @property (nonatomic) BOOL artworkUpdates;

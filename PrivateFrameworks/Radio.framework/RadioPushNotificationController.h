@@ -3,11 +3,11 @@
  */
 
 @interface RadioPushNotificationController : NSObject <APSConnectionDelegate> {
-    APSConnection *_connection;
-    <RadioPushNotificationControllerDelegate> *_delegate;
-    NSString *_environment;
-    BOOL _notificationsEnabled;
-    BOOL _pushEnabled;
+    APSConnection * _connection;
+    <RadioPushNotificationControllerDelegate> * _delegate;
+    NSString * _environment;
+    BOOL  _notificationsEnabled;
+    BOOL  _pushEnabled;
 }
 
 @property (readonly, copy) NSString *debugDescription;

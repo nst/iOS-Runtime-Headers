@@ -3,9 +3,9 @@
  */
 
 @interface CKDOperationInfoMetadata : NSObject {
-    NSDate *_lastAttemptDate;
-    CKOperationInfo *_operationInfo;
-    NSNumber *_retryNumber;
+    NSDate * _lastAttemptDate;
+    CKOperationInfo * _operationInfo;
+    NSNumber * _retryNumber;
 }
 
 @property (nonatomic, retain) NSDate *lastAttemptDate;

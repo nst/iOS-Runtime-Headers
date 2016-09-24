@@ -3,13 +3,13 @@
  */
 
 @interface NEFilterVerdict : NSObject <NSCopying, NSSecureCoding> {
-    BOOL _drop;
-    BOOL _needRules;
-    BOOL _remediate;
-    NSString *_remediationButtonTextMapKey;
-    NSString *_remediationURLMapKey;
-    BOOL _urlAppendString;
-    NSString *_urlAppendStringMapKey;
+    BOOL  _drop;
+    BOOL  _needRules;
+    BOOL  _remediate;
+    NSString * _remediationButtonTextMapKey;
+    NSString * _remediationURLMapKey;
+    BOOL  _urlAppendString;
+    NSString * _urlAppendStringMapKey;
 }
 
 @property BOOL drop;

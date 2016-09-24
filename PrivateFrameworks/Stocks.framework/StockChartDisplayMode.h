@@ -3,55 +3,62 @@
  */
 
 @interface StockChartDisplayMode : NSObject <NSCopying> {
-    BOOL _HUDEnabled;
-    UIColor *_axisLabelsColor;
-    struct CGGradient { } *_backgroundGradient;
-    UIColor *_backgroundLinesColor;
-    struct CGSize { 
-        float width; 
-        float height; 
-    } _chartSize;
-    BOOL _graphOverlapsYAxisLabels;
-    NSString *_hash;
-    unsigned int _horizontalGridlineCount;
-    float _intervalRowHeight;
-    UIColor *_lineColor;
+    BOOL  _HUDEnabled;
+    UIColor * _axisLabelsColor;
+    struct CGGradient { } * _backgroundGradient;
+    UIColor * _backgroundLinesColor;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _lineGraphInsets;
-    float _lineWidth;
-    int _maxInterval;
-    BOOL _showsPriceLabelForPreviousClose;
-    float _showsTitle;
-    BOOL _showsVolume;
-    BOOL _usesDetailedAxisLabels;
-    float _volumeHeight;
-    UIColor *_xAxisKeylineColor;
-    unsigned int _yAxisLabelCount;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _chartRenderingInsets;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _chartSize;
+    BOOL  _graphOverlapsYAxisLabels;
+    NSString * _hash;
+    unsigned int  _horizontalGridlineCount;
+    double  _intervalRowHeight;
+    UIColor * _lineColor;
+    struct UIEdgeInsets { 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _lineGraphInsets;
+    double  _lineWidth;
+    int  _maxInterval;
+    BOOL  _showsPriceLabelForPreviousClose;
+    double  _showsTitle;
+    BOOL  _showsVolume;
+    BOOL  _usesDetailedAxisLabels;
+    double  _volumeHeight;
+    UIColor * _xAxisKeylineColor;
+    unsigned int  _yAxisLabelCount;
 }
 
 @property (nonatomic) BOOL HUDEnabled;
 @property (nonatomic, retain) UIColor *axisLabelsColor;
 @property (nonatomic) struct CGGradient { }*backgroundGradient;
 @property (nonatomic, retain) UIColor *backgroundLinesColor;
-@property (nonatomic) struct CGSize { float x1; float x2; } chartSize;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } chartRenderingInsets;
+@property (nonatomic) struct CGSize { double x1; double x2; } chartSize;
 @property (nonatomic) BOOL graphOverlapsYAxisLabels;
-@property (nonatomic, readonly) float gutterHeight;
+@property (nonatomic, readonly) double gutterHeight;
 @property (nonatomic) unsigned int horizontalGridlineCount;
-@property (nonatomic) float intervalRowHeight;
+@property (nonatomic) double intervalRowHeight;
 @property (nonatomic, retain) UIColor *lineColor;
-@property (nonatomic, readonly) float lineGraphBottomPadding;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } lineGraphInsets;
-@property (nonatomic) float lineWidth;
+@property (nonatomic, readonly) double lineGraphBottomPadding;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } lineGraphInsets;
+@property (nonatomic) double lineWidth;
 @property (nonatomic) int maxInterval;
 @property (nonatomic) BOOL showsPriceLabelForPreviousClose;
-@property (nonatomic) float showsTitle;
+@property (nonatomic) double showsTitle;
 @property (nonatomic) BOOL showsVolume;
 @property (nonatomic) BOOL usesDetailedAxisLabels;
-@property (nonatomic) float volumeHeight;
+@property (nonatomic) double volumeHeight;
 @property (nonatomic, retain) UIColor *xAxisKeylineColor;
 @property (nonatomic) unsigned int yAxisLabelCount;
 
@@ -62,7 +69,8 @@
 - (id)axisLabelsColor;
 - (struct CGGradient { }*)backgroundGradient;
 - (id)backgroundLinesColor;
-- (struct CGSize { float x1; float x2; })chartSize;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })chartRenderingInsets;
+- (struct CGSize { double x1; double x2; })chartSize;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -75,19 +83,20 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)lineColor;
 - (float)lineGraphBottomPadding;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })lineGraphInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })lineGraphInsets;
 - (float)lineWidth;
 - (int)maxInterval;
 - (void)setAxisLabelsColor:(id)arg1;
 - (void)setBackgroundGradient:(struct CGGradient { }*)arg1;
 - (void)setBackgroundLinesColor:(id)arg1;
-- (void)setChartSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setChartRenderingInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setChartSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setGraphOverlapsYAxisLabels:(BOOL)arg1;
 - (void)setHUDEnabled:(BOOL)arg1;
 - (void)setHorizontalGridlineCount:(unsigned int)arg1;
 - (void)setIntervalRowHeight:(float)arg1;
 - (void)setLineColor:(id)arg1;
-- (void)setLineGraphInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setLineGraphInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setLineWidth:(float)arg1;
 - (void)setMaxInterval:(int)arg1;
 - (void)setShowsPriceLabelForPreviousClose:(BOOL)arg1;

@@ -5,7 +5,9 @@
 @interface TIAssistantSettings : NSObject
 
 + (void)connectForOperations:(id /* block */)arg1 withErrorHandler:(id /* block */)arg2;
++ (void)dismissDialog;
 + (void)dismissEnableDictationPrompt;
++ (void)presentDialogForType:(int)arg1 withCompletionHandler:(id /* block */)arg2;
 + (void)promptToEnableDictationWithCompletionHandler:(id /* block */)arg1;
 + (void)setTestBlock:(id /* block */)arg1;
 

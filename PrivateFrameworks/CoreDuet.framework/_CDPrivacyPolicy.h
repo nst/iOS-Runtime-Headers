@@ -3,8 +3,8 @@
  */
 
 @interface _CDPrivacyPolicy : NSObject {
-    BOOL canPersistOnStorage;
-    double temporalPrecision;
+    BOOL  canPersistOnStorage;
+    double  temporalPrecision;
 }
 
 @property (nonatomic, readonly) BOOL canPersistOnStorage;

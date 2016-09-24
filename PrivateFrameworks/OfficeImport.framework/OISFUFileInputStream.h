@@ -3,11 +3,11 @@
  */
 
 @interface OISFUFileInputStream : NSObject <SFUInputStream> {
-    long long mCurrentOffset;
-    long long mEndOffset;
-    int mFd;
-    BOOL mIsCachingDisabled;
-    long long mStartOffset;
+    int  mCurrentOffset;
+    int  mEndOffset;
+    int  mFd;
+    BOOL  mIsCachingDisabled;
+    int  mStartOffset;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -21,11 +21,11 @@
 - (void)dealloc;
 - (void)disableSystemCaching;
 - (void)enableSystemCaching;
-- (id)initWithFileDescriptor:(int)arg1 offset:(long long)arg2 length:(long long)arg3;
-- (id)initWithPath:(id)arg1 offset:(long long)arg2;
-- (id)initWithPath:(id)arg1 offset:(long long)arg2 length:(long long)arg3;
-- (long long)offset;
+- (id)initWithFileDescriptor:(int)arg1 offset:(int)arg2 length:(int)arg3;
+- (id)initWithPath:(id)arg1 offset:(int)arg2;
+- (id)initWithPath:(id)arg1 offset:(int)arg2 length:(int)arg3;
+- (int)offset;
 - (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
-- (void)seekToOffset:(long long)arg1;
+- (void)seekToOffset:(int)arg1;
 
 @end

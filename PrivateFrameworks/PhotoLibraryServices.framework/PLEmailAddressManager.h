@@ -3,10 +3,10 @@
  */
 
 @interface PLEmailAddressManager : NSObject {
-    NSMutableDictionary *_emailsForKey;
-    NSMutableDictionary *_keysForEmails;
-    int _maxKey;
-    NSString *_plistPath;
+    NSMutableDictionary * _emailsForKey;
+    NSMutableDictionary * _keysForEmails;
+    int  _maxKey;
+    NSString * _plistPath;
 }
 
 + (id)sharedManager;

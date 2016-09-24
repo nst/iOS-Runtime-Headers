@@ -3,8 +3,8 @@
  */
 
 @interface CKDMescalSessionOperation : CKDDatabaseOperation {
-    CKDMescalSession *_mescalSession;
-    int _serverVersion;
+    CKDMescalSession * _mescalSession;
+    int  _serverVersion;
 }
 
 @property (nonatomic, retain) CKDMescalSession *mescalSession;
@@ -15,7 +15,7 @@
 - (void)_handleCertRequestFinished:(id)arg1;
 - (void)_handleDataExchanged:(id)arg1 withError:(id)arg2;
 - (void)_handleSessionRequestFinished:(id)arg1;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (BOOL)allowsAnonymousAccount;
 - (id)flowControlKey;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;

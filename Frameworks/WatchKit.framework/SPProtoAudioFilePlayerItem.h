@@ -3,13 +3,13 @@
  */
 
 @interface SPProtoAudioFilePlayerItem : PBCodable <NSCopying> {
-    SPProtoObjectMessage *_destroy;
-    SPProtoObjectMessage *_getCurrentTime;
-    SPProtoObjectMessage *_notifyDidPlayToEndTime;
-    SPProtoObjectMessage *_notifyFailedToPlayToEndTime;
-    SPProtoObjectMessage *_notifyTimeJumped;
-    SPProtoAudioFilePlayerStatus *_setStatus;
-    SPProtoAudioFilePlayerUpdateContainedIdentifier *_upsertWithAsset;
+    SPProtoObjectMessage * _destroy;
+    SPProtoObjectMessage * _getCurrentTime;
+    SPProtoObjectMessage * _notifyDidPlayToEndTime;
+    SPProtoObjectMessage * _notifyFailedToPlayToEndTime;
+    SPProtoObjectMessage * _notifyTimeJumped;
+    SPProtoAudioFilePlayerStatus * _setStatus;
+    SPProtoAudioFilePlayerUpdateContainedIdentifier * _upsertWithAsset;
 }
 
 @property (nonatomic, retain) SPProtoObjectMessage *destroy;

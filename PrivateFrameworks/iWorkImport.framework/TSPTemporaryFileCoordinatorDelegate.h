@@ -3,7 +3,7 @@
  */
 
 @interface TSPTemporaryFileCoordinatorDelegate : NSObject <TSPFileCoordinatorDelegate> {
-    NSURL *_URL;
+    NSURL * _URL;
 }
 
 @property (nonatomic, copy) NSURL *URL;

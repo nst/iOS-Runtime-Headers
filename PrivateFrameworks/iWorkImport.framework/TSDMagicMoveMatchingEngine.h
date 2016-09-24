@@ -3,7 +3,7 @@
  */
 
 @interface TSDMagicMoveMatchingEngine : NSObject {
-    NSMutableArray *_matches;
+    NSMutableArray * _matches;
 }
 
 + (id)matchingEngine;

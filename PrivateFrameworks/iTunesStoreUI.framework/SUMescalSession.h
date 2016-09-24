@@ -3,13 +3,13 @@
  */
 
 @interface SUMescalSession : NSObject {
-    BOOL _complete;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
+    BOOL  _complete;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
     struct FairPlayHWInfo_ { 
         unsigned int IDLength; 
         unsigned char ID[20]; 
-    } _hardwareInfo;
-    struct FPSAPContextOpaque_ { } *_session;
+    }  _hardwareInfo;
+    struct FPSAPContextOpaque_ { } * _session;
 }
 
 @property (getter=isComplete, readonly) BOOL complete;

@@ -3,28 +3,30 @@
  */
 
 @interface TSTTableRep : TSWPTextHostRep <UITextFieldDelegate> {
-    BOOL _settingSelection;
-    <TSTTableAnimationController> *mAnimationController;
-    NSMutableArray *mAnimationStack;
-    <TSTCanvasReferenceController> *mCanvasReferenceController;
+    BOOL  _settingSelection;
+    <TSTTableAnimationController> * mAnimationController;
+    NSMutableArray * mAnimationStack;
+    TSKHighlightArrayController * mBodyHighlightArrayController;
+    TSKHighlightArrayController * mBodyPulseArrayController;
+    <TSTCanvasReferenceController> * mCanvasReferenceController;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } mCanvasVisibleRect;
-    TSTSelectionDragController *mCellDragController;
-    CAShapeLayer *mCellEditingMaskLayer;
-    NSMutableDictionary *mChildTextReps;
-    TSTTableCellTextEditingRep *mContainedTextEditingRep;
-    float mCurrentScreenScale;
-    <TSTTableRepDelegate> *mDelegate;
-    struct TSUColumnRowRect { 
-        struct { 
+    }  mCanvasVisibleRect;
+    TSTSelectionDragController * mCellDragController;
+    CAShapeLayer * mCellEditingMaskLayer;
+    NSMutableDictionary * mChildTextReps;
+    TSTTableCellTextEditingRep * mContainedTextEditingRep;
+    double  mCurrentScreenScale;
+    <TSTTableRepDelegate> * mDelegate;
+    struct TSUCellRect { 
+        struct TSUCellCoord { 
             unsigned short row; 
             unsigned char column; 
             unsigned char reserved; 
@@ -33,52 +35,60 @@
             unsigned short numberOfColumns; 
             unsigned short numberOfRows; 
         } size; 
-    } mDirtyCellRange;
-    BOOL mDragByHandleOnly;
-    struct { 
+    }  mDirtyCellRange;
+    BOOL  mDragByHandleOnly;
+    struct TSUCellCoord { 
         unsigned short row; 
         unsigned char column; 
         unsigned char reserved; 
-    } mEditingHyperlinkCellID;
-    CAShapeLayer *mFindSelectionHighlightLayer;
-    CAShapeLayer *mHighlightedHyperlinkLayer;
-    TSWPHyperlinkField *mHyperlinkField;
-    BOOL mHyperlinkModified;
-    TSWPStorage *mHyperlinkParentStorage;
-    BOOL mInspectingHyperlinkInEditingStorage;
-    BOOL mIsAspectOperationInProgress;
-    BOOL mIsZoomOperationInProgress;
-    BOOL mIsZoomToEditOperationInProgress;
-    struct { 
+    }  mEditingHyperlinkCellID;
+    CAShapeLayer * mFindSelectionHighlightLayer;
+    TSKHighlightArrayController * mFrozenColumnsHighlightArrayController;
+    TSKHighlightArrayController * mFrozenColumnsPulseArrayController;
+    TSKHighlightArrayController * mFrozenCornerHighlightArrayController;
+    TSKHighlightArrayController * mFrozenCornerPulseArrayController;
+    TSKHighlightArrayController * mFrozenRowsHighlightArrayController;
+    TSKHighlightArrayController * mFrozenRowsPulseArrayController;
+    CAShapeLayer * mHighlightedHyperlinkLayer;
+    TSWPHyperlinkField * mHyperlinkField;
+    BOOL  mHyperlinkModified;
+    TSWPStorage * mHyperlinkParentStorage;
+    BOOL  mInspectingHyperlinkInEditingStorage;
+    BOOL  mIsAspectOperationInProgress;
+    BOOL  mIsZoomOperationInProgress;
+    BOOL  mIsZoomToEditOperationInProgress;
+    TSTSearchReference * mPreviousSearchReference;
+    struct TSUCellCoord { 
         unsigned short row; 
         unsigned char column; 
         unsigned char reserved; 
-    } mRatingsDragCellID;
-    BOOL mRecursivelyDrawingInContext;
-    TSTTableReferences *mReferences;
+    }  mRatingsDragCellID;
+    BOOL  mRecursivelyDrawingInContext;
+    TSTTableReferences * mReferences;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } mSearchSelectionBounds;
-    BOOL mSelectionUsesBezierPath;
-    BOOL mSelectsCellOnInitialTap;
-    TSTCellSelection *mSourceFillSelection;
-    <TSTTableChromeProvider> *mTableChrome;
-    CALayer *mTableCollaboratorCursorLayer;
-    BOOL mTableNameValid;
-    TSTCellSelection *mTargetFillSelection;
-    BOOL mUsesWholeChromeResizer;
-    NSSet *mVisibleFillKnobs;
-    TSDKnobTracker<TSTTableKnobTrackerVisitorProtocol> *mVisitorKnobTracker;
-    BOOL mWPEndedTableNameEditing;
-    struct TSUColumnRowRect { 
-        struct { 
+    }  mSearchSelectionBounds;
+    BOOL  mSelectionDragAbortedOnNewSelection;
+    BOOL  mSelectionUsesBezierPath;
+    BOOL  mSelectsCellOnInitialTap;
+    TSTCellSelection * mSourceFillSelection;
+    <TSTTableChromeProvider> * mTableChrome;
+    CALayer * mTableCollaboratorCursorLayer;
+    BOOL  mTableNameValid;
+    TSTCellSelection * mTargetFillSelection;
+    BOOL  mUsesWholeChromeResizer;
+    NSSet * mVisibleFillKnobs;
+    TSDKnobTracker<TSTTableKnobTrackerVisitorProtocol> * mVisitorKnobTracker;
+    BOOL  mWPEndedTableNameEditing;
+    struct TSUCellRect { 
+        struct TSUCellCoord { 
             unsigned short row; 
             unsigned char column; 
             unsigned char reserved; 
@@ -87,13 +97,12 @@
             unsigned short numberOfColumns; 
             unsigned short numberOfRows; 
         } size; 
-    } mZoomToEditVisibleCellRange;
+    }  mZoomToEditVisibleCellRange;
 }
 
-@property (nonatomic, retain) TSTSearchReference *activeSearchReference;
 @property (nonatomic) <TSTTableAnimationController> *animationController;
 @property (nonatomic, readonly) <TSTCanvasReferenceController> *canvasReferenceController;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } canvasVisibleRect;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } canvasVisibleRect;
 @property (nonatomic) TSTSelectionDragController *cellDragController;
 @property (nonatomic, retain) NSMutableDictionary *childTextReps;
 @property (nonatomic, readonly) TSTAnimation *currentAnimation;
@@ -103,7 +112,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isZoomToEditOperationInProgress;
 @property (nonatomic, readonly) TSTMasterLayout *masterLayout;
-@property (nonatomic) struct { unsigned short x1; unsigned char x2; unsigned char x3; } ratingsDragCellID;
+@property (nonatomic) struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; } ratingsDragCellID;
 @property (nonatomic, readonly) TSTCellSelection *selection;
 @property (nonatomic, readonly) int selectionType;
 @property (readonly) Class superclass;
@@ -112,8 +121,8 @@
 @property (nonatomic, readonly) TSTLayout *tableLayout;
 @property (nonatomic, readonly) TSTTableModel *tableModel;
 @property (getter=isTableNameValid, nonatomic) BOOL tableNameValid;
-@property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transformFromCanvas;
-@property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transformToCanvas;
+@property (nonatomic, readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } transformFromCanvas;
+@property (nonatomic, readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } transformToCanvas;
 
 + (float)magicMoveAttributeMatchPercentBetweenOutgoingObject:(id)arg1 incomingObject:(id)arg2 mixingTypeContext:(id)arg3;
 + (unsigned int)p_countOfIdenticalCellsBetweenOutgoingTableModel:(id)arg1 incomingTableModel:(id)arg2;
@@ -122,28 +131,30 @@
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (void)addAdditionalChildLayersToArray:(id)arg1;
 - (id)animationController;
-- (void)asyncPostTextChangedInRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForCellSelection:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (void)asyncPostTextChangedInRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsForCellSelection:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (BOOL)canDrawInBackgroundDuringScroll;
 - (BOOL)canDrawInParallel;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })canvasBoundsForCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })canvasBoundsForCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (id)canvasReferenceController;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })canvasVisibleRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })canvasVisibleRect;
 - (id)cellDragController;
 - (id)childReps;
 - (id)childTextReps;
-- (void)contentsRectForCellRangeAcrossSpaces:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 contentsCenterInfo:(struct { BOOL x1; float x2; float x3; float x4; float x5; float x6; float x7; }*)arg2 canvasFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3 contentsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4;
+- (void)contentsRectForCellRangeAcrossSpaces:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 contentsCenterInfo:(struct { BOOL x1; double x2; double x3; double x4; double x5; double x6; double x7; }*)arg2 canvasFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3 contentsRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg4;
 - (id)currentAnimation;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })deviceBoundsForCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
-- (void)didDrawCellImageFill:(id)arg1 inCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })deviceBoundsForCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (void)didDrawCellImageFill:(id)arg1 inCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (id)editorSelection;
-- (id)hitRep:(struct CGPoint { float x1; float x2; })arg1;
-- (id)hitRepChrome:(struct CGPoint { float x1; float x2; })arg1;
+- (id)hitRep:(struct CGPoint { double x1; double x2; })arg1;
+- (id)hitRepChrome:(struct CGPoint { double x1; double x2; })arg1;
+- (id)hyperlinkContainerRep;
+- (id)hyperlinkRegions;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;
 - (void)invalidateEditingCell;
 - (void)invalidateFrozenHeaders;
@@ -151,18 +162,23 @@
 - (BOOL)isFullyVisibleWithBorder:(int)arg1;
 - (BOOL)isTableNameValid;
 - (BOOL)isZoomToEditOperationInProgress;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })layerFrameInScaledCanvas;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })layerFrameInScaledCanvas;
 - (void)layoutInRootChangedFrom:(id)arg1 to:(id)arg2 translatedOnly:(BOOL)arg3;
 - (id)masterLayout;
 - (BOOL)mustDrawOnMainThreadForInteractiveCanvas;
-- (void)orientationDidChange:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })naturalBoundsRectForHyperlinkField:(id)arg1;
 - (id)overlayLayers;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_alignedLayerFrameForLayoutSpace:(id)arg1 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2;
+- (void)p_addObservers;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })p_alignedLayerFrameForLayoutSpace:(id)arg1 transform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2;
+- (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })p_cellIDForHyperlinkField:(id)arg1;
+- (id)p_columnForCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })p_horizontalAlignmentTransformForHyperlinkWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inCell:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
+- (void)p_removeObservers;
 - (BOOL)p_shouldPerformOnChildTextReps:(SEL)arg1;
 - (id)p_textImageForPath:(struct CGPath { }*)arg1 shouldPulsate:(BOOL)arg2;
 - (void)popAnimation;
 - (void)pushAnimation:(id)arg1;
-- (struct { unsigned short x1; unsigned char x2; unsigned char x3; })ratingsDragCellID;
+- (struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })ratingsDragCellID;
 - (void)recursivelyDrawInContext:(struct CGContext { }*)arg1;
 - (void)recursivelyPerformSelector:(SEL)arg1;
 - (void)recursivelyPerformSelector:(SEL)arg1 withObject:(id)arg2;
@@ -175,7 +191,7 @@
 - (void)setAnimationController:(id)arg1;
 - (void)setCellDragController:(id)arg1;
 - (void)setChildTextReps:(id)arg1;
-- (void)setRatingsDragCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (void)setRatingsDragCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (void)setTableNameValid:(BOOL)arg1;
 - (void)setTextureStage:(unsigned int)arg1;
 - (id)tableChrome;
@@ -183,8 +199,8 @@
 - (id)tableLayout;
 - (id)tableModel;
 - (id)textureForContext:(id)arg1;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformFromCanvas;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformToCanvas;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transformFromCanvas;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transformToCanvas;
 - (void)updateChildrenFromLayout;
 - (void)updateDynamicModeForEditingSpillText;
 - (void)updateFromLayout;
@@ -195,6 +211,7 @@
 - (void)validateStrokesInEditingSpillingTextRange;
 - (void)validateVisibleRect;
 - (void)viewScaleDidChange;
+- (BOOL)wantsActivityLine;
 - (void)willBeRemoved;
 - (void)willUpdateLayer:(id)arg1;
 

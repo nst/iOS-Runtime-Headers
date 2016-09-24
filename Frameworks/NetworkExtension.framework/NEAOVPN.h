@@ -3,14 +3,14 @@
  */
 
 @interface NEAOVPN : NSObject <NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
-    NSString *_activeInterfaceProtocolKey;
-    BOOL _allowAllCaptiveNetworkPlugins;
-    BOOL _allowCaptiveWebSheet;
-    NSDictionary *_allowedCaptiveNetworkPlugins;
-    BOOL _enabled;
-    NSDictionary *_interfaceProtocolMapping;
-    NSDictionary *_serviceExceptions;
-    BOOL _toggleEnabled;
+    NSString * _activeInterfaceProtocolKey;
+    BOOL  _allowAllCaptiveNetworkPlugins;
+    BOOL  _allowCaptiveWebSheet;
+    NSDictionary * _allowedCaptiveNetworkPlugins;
+    BOOL  _enabled;
+    NSDictionary * _interfaceProtocolMapping;
+    NSDictionary * _serviceExceptions;
+    BOOL  _toggleEnabled;
 }
 
 @property (copy) NSString *activeInterfaceProtocolKey;

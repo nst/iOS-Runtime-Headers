@@ -3,16 +3,16 @@
  */
 
 @interface StepByStepUIViewController_DevicePicker : StepByStepUIViewController <TableViewManagerDelegate> {
-    UIPopoverController *_popover;
-    NSDictionary *_selectedDevice;
-    BOOL _showSingleBaseTopo;
-    NSDictionary *_sourceBase;
-    NSDictionary *_sourceNetwork;
-    NSDictionary *_targetBase;
-    RecommendationActionController *actionController;
-    NSString *connectionMedium;
-    BOOL showFullList;
-    NSArray *sortedDevices;
+    UIPopoverController * _popover;
+    NSDictionary * _selectedDevice;
+    BOOL  _showSingleBaseTopo;
+    NSDictionary * _sourceBase;
+    NSDictionary * _sourceNetwork;
+    NSDictionary * _targetBase;
+    RecommendationActionController * actionController;
+    NSString * connectionMedium;
+    BOOL  showFullList;
+    NSArray * sortedDevices;
 }
 
 @property (nonatomic, retain) RecommendationActionController *actionController;

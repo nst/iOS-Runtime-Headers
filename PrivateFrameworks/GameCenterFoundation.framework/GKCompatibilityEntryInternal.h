@@ -3,8 +3,8 @@
  */
 
 @interface GKCompatibilityEntryInternal : GKInternalRepresentation {
-    NSString *_bundleID;
-    NSSet *_versions;
+    NSString * _bundleID;
+    NSSet * _versions;
 }
 
 @property (nonatomic, retain) NSString *bundleID;

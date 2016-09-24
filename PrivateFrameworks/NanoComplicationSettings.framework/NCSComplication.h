@@ -3,13 +3,13 @@
  */
 
 @interface NCSComplication : NSObject <NSCopying> {
-    BOOL _active;
-    NSString *_appBundleIdentifier;
-    BOOL _cannotBeDisabled;
-    NSString *_complicationBundleIdentifier;
-    unsigned int _installState;
-    NSString *_name;
-    NSString *_sockPuppetIdentifier;
+    BOOL  _active;
+    NSString * _appBundleIdentifier;
+    BOOL  _cannotBeDisabled;
+    NSString * _complicationBundleIdentifier;
+    unsigned int  _installState;
+    NSString * _name;
+    NSString * _sockPuppetIdentifier;
 }
 
 @property (getter=isActive, nonatomic) BOOL active;

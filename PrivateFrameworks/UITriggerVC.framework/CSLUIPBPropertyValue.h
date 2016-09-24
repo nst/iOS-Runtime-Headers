@@ -3,13 +3,13 @@
  */
 
 @interface CSLUIPBPropertyValue : PBCodable <NSCopying> {
-    NSMutableArray *_arrayValues;
-    NSData *_dataValue;
-    CSLUIPBPropertyValue *_dictionaryKey;
-    CSLUIPBNumber *_numberValue;
-    CSLUIPBSize *_sizeValue;
-    NSString *_stringValue;
-    NSData *_uUIDValue;
+    NSMutableArray * _arrayValues;
+    NSData * _dataValue;
+    CSLUIPBPropertyValue * _dictionaryKey;
+    CSLUIPBNumber * _numberValue;
+    CSLUIPBSize * _sizeValue;
+    NSString * _stringValue;
+    NSData * _uUIDValue;
 }
 
 @property (nonatomic, retain) NSMutableArray *arrayValues;

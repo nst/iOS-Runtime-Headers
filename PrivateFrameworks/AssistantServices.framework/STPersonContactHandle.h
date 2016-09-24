@@ -3,9 +3,9 @@
  */
 
 @interface STPersonContactHandle : NSObject <NSSecureCoding> {
-    NSString *_handle;
-    NSString *_label;
-    unsigned int _type;
+    NSString * _handle;
+    NSString * _label;
+    unsigned int  _type;
 }
 
 @property (nonatomic, copy) NSString *handle;

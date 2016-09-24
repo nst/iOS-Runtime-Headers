@@ -8,9 +8,9 @@
         struct { 
             MTLIOAccelPooledResource *tqe_next; 
             id *tqe_prev; 
-            unsigned long long time_added; 
+            unsigned int time_added; 
         } entry; 
-    } _priv;
+    }  _priv;
 }
 
 @end

@@ -3,10 +3,10 @@
  */
 
 @interface MFComposeAttachmentDataProvider : NSObject <MFAttachmentDataProviderProtocol> {
-    NSMutableDictionary *_attachmentsData;
-    NSMutableDictionary *_attachmentsPasteboardData;
-    NSCache *_attachmentsPlaceholderData;
-    NSMutableDictionary *_attachmentsUndoData;
+    NSMutableDictionary * _attachmentsData;
+    NSMutableDictionary * _attachmentsPasteboardData;
+    NSCache * _attachmentsPlaceholderData;
+    NSMutableDictionary * _attachmentsUndoData;
 }
 
 @property (readonly, copy) NSString *debugDescription;

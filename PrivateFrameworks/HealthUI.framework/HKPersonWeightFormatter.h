@@ -3,8 +3,8 @@
  */
 
 @interface HKPersonWeightFormatter : NSObject {
-    int _localWeightUnit;
-    NSMassFormatter *_massFormatter;
+    int  _localWeightUnit;
+    NSMassFormatter * _massFormatter;
 }
 
 @property (nonatomic, readonly) int localWeightUnit;

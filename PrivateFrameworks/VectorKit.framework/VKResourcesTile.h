@@ -3,8 +3,8 @@
  */
 
 @interface VKResourcesTile : VKTile {
-    NSArray *_attributions;
-    NSArray *_resourceNames;
+    NSArray * _attributions;
+    NSArray * _resourceNames;
 }
 
 @property (nonatomic, retain) NSArray *attributions;

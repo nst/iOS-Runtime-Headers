@@ -3,12 +3,12 @@
  */
 
 @interface MPUBorderDrawingCache : NSObject {
-    MPUBorderView *_borderView;
-    float _displayScale;
-    NSCache *_images;
+    MPUBorderView * _borderView;
+    double  _displayScale;
+    NSCache * _images;
 }
 
-@property (nonatomic) float displayScale;
+@property (nonatomic) double displayScale;
 
 - (void).cxx_destruct;
 - (void)_applicationDidReceiveMemoryWarning:(id)arg1;

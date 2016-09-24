@@ -6,5 +6,6 @@
 
 + (BOOL)hasLocalSecret;
 + (id)modelClass;
++ (id)serialNumber;
 
 @end

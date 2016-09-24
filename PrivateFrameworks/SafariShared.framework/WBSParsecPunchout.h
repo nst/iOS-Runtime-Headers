@@ -3,11 +3,11 @@
  */
 
 @interface WBSParsecPunchout : WBSParsecModel {
-    NSString *_bundleID;
-    NSURL *_installURL;
-    NSString *_name;
-    NSString *_punchoutLabel;
-    NSURL *_punchoutURL;
+    NSString * _bundleID;
+    NSURL * _installURL;
+    NSString * _name;
+    NSString * _punchoutLabel;
+    NSURL * _punchoutURL;
 }
 
 @property (nonatomic, readonly, copy) NSString *bundleID;

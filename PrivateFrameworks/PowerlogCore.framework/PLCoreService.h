@@ -3,7 +3,7 @@
  */
 
 @interface PLCoreService : PLCoreOperator {
-    NSMutableDictionary *_services;
+    NSMutableDictionary * _services;
 }
 
 @property (retain) NSMutableDictionary *services;

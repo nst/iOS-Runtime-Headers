@@ -3,11 +3,11 @@
  */
 
 @interface NEUserNotification : NSObject {
-    id /* block */ _callback;
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    BOOL _isBanner;
-    id _notification;
-    id _notificationSource;
+    id /* block */  _callback;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    BOOL  _isBanner;
+    id  _notification;
+    id  _notificationSource;
 }
 
 @property (nonatomic, copy) id /* block */ callback;

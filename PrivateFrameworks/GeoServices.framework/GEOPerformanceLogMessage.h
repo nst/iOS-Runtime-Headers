@@ -3,8 +3,8 @@
  */
 
 @interface GEOPerformanceLogMessage : PBCodable <NSCopying> {
-    NSString *_perfEventKey;
-    NSString *_perfEventValue;
+    NSString * _perfEventKey;
+    NSString * _perfEventValue;
 }
 
 @property (nonatomic, readonly) BOOL hasPerfEventKey;

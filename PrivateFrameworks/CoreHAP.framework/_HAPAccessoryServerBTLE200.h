@@ -2,33 +2,32 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface _HAPAccessoryServerBTLE200 : HAPAccessoryServerBTLE <CBPeripheralDelegate, HAPBTLEControlOutputStreamDelegate, HAPPairSetupSessionClientDelegate, HAPSecuritySessionDelegate, HAPTimerDelegate> {
-    BOOL _badPairSetupCode;
-    NSMapTable *_characteristicEnableEventCompletionHandlers;
-    NSMapTable *_characteristicWriteCompletionHandlers;
-    NSOperationQueue *_clientOperationQueue;
-    id /* block */ _connectionCompletionHandler;
-    HAPTimer *_connectionIdleTimer;
-    int _connectionState;
-    _HAPBTLEDiscoveryContext *_discoveryContext;
-    HAPCharacteristic *_identifyCharacteristic;
-    double _pairSetupBackoffTimeInterval;
-    HAPCharacteristic *_pairSetupCharacteristic;
-    HAPPairSetupSession *_pairSetupSession;
-    HAPCharacteristic *_pairVerifyCharacteristic;
-    NSOperationQueue *_pairVerifyOperationQueue;
-    BOOL _pairing;
-    HAPCharacteristic *_pairingFeaturesCharacteristic;
-    HAPCharacteristic *_pairingsCharacteristic;
-    NSMutableArray *_pendingRequests;
-    NSMutableArray *_pendingResponses;
-    NSOperationQueue *_requestOperationQueue;
-    HAPSecuritySession *_securitySession;
-    BOOL _securitySessionOpen;
-    BOOL _securitySessionOpening;
-    id /* block */ _setupCodeCompletionHandler;
-    BOOL _supportsMFiPairSetup;
-    BOOL _verified;
+@interface _HAPAccessoryServerBTLE200 : HAPAccessoryServerBTLE <CBPeripheralDelegate, HAPBTLEControlOutputStreamDelegate, HAPPairSetupSessionClientDelegate, HAPSecuritySessionDelegate, HMFTimerDelegate> {
+    BOOL  _badPairSetupCode;
+    NSMapTable * _characteristicEnableEventCompletionHandlers;
+    NSMapTable * _characteristicWriteCompletionHandlers;
+    NSOperationQueue * _clientOperationQueue;
+    id /* block */  _connectionCompletionHandler;
+    HMFTimer * _connectionIdleTimer;
+    int  _connectionState;
+    _HAPBTLEDiscoveryContext * _discoveryContext;
+    HAPCharacteristic * _identifyCharacteristic;
+    double  _pairSetupBackoffTimeInterval;
+    HAPCharacteristic * _pairSetupCharacteristic;
+    HAPPairSetupSession * _pairSetupSession;
+    HAPCharacteristic * _pairVerifyCharacteristic;
+    NSOperationQueue * _pairVerifyOperationQueue;
+    BOOL  _pairing;
+    HAPCharacteristic * _pairingFeaturesCharacteristic;
+    HAPCharacteristic * _pairingsCharacteristic;
+    NSMutableArray * _pendingRequests;
+    NSMutableArray * _pendingResponses;
+    NSOperationQueue * _requestOperationQueue;
+    HAPSecuritySession * _securitySession;
+    BOOL  _securitySessionOpening;
+    id /* block */  _setupCodeCompletionHandler;
+    BOOL  _supportsMFiPairSetup;
+    BOOL  _verified;
 }
 
 @property (getter=isBadSetupCode, nonatomic) BOOL badPairSetupCode;
@@ -36,7 +35,7 @@
 @property (nonatomic, readonly) NSMapTable *characteristicWriteCompletionHandlers;
 @property (nonatomic, readonly) NSOperationQueue *clientOperationQueue;
 @property (nonatomic, copy) id /* block */ connectionCompletionHandler;
-@property (nonatomic, retain) HAPTimer *connectionIdleTimer;
+@property (nonatomic, retain) HMFTimer *connectionIdleTimer;
 @property (nonatomic) int connectionState;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -55,7 +54,6 @@
 @property (nonatomic, readonly) NSMutableArray *pendingResponses;
 @property (nonatomic, readonly) NSOperationQueue *requestOperationQueue;
 @property (nonatomic, retain) HAPSecuritySession *securitySession;
-@property (getter=isSecuritySessionOpen, nonatomic) BOOL securitySessionOpen;
 @property (getter=isSecuritySessionOpening, nonatomic) BOOL securitySessionOpening;
 @property (nonatomic, copy) id /* block */ setupCodeCompletionHandler;
 @property (readonly) Class superclass;
@@ -66,11 +64,13 @@
 + (BOOL)isHAPDescriptor:(id)arg1;
 + (BOOL)isHAPService:(id)arg1;
 + (BOOL)parseReadResponse:(id)arg1 value:(id*)arg2 error:(id*)arg3;
++ (id)parseServiceSignatureResponse:(id)arg1 serviceInstanceID:(id)arg2 serviceType:(id)arg3 error:(id*)arg4;
 + (id)parseSignatureResponse:(id)arg1 error:(id*)arg2;
 + (BOOL)parseWriteResponse:(id)arg1 value:(id*)arg2 error:(id*)arg3;
 + (id)prepareWriteRequestForCharacteristic:(id)arg1 value:(id)arg2 authorizationData:(id)arg3 options:(int)arg4 error:(id*)arg5;
 + (id)readRequestForCharacteristic:(id)arg1 options:(int)arg2 error:(id*)arg3;
 + (id)signatureRequestForCharacteristic:(id)arg1 requiresAuthentication:(BOOL)arg2 error:(id*)arg3;
++ (id)signatureRequestForService:(id)arg1 characteristic:(id)arg2 requiresAuthentication:(BOOL)arg3 error:(id*)arg4;
 + (id)writeRequestForCharacteristic:(id)arg1 value:(id)arg2 authorizationData:(id)arg3 options:(int)arg4 error:(id*)arg5;
 
 - (void).cxx_destruct;
@@ -108,6 +108,7 @@
 - (void)_handleReadCharacteristicValue:(id)arg1 error:(id)arg2;
 - (void)_handleReadDescriptorValue:(id)arg1 error:(id)arg2;
 - (void)_handleReadServiceInstanceId:(id)arg1;
+- (void)_handleReadServiceSignature:(id)arg1 error:(id)arg2;
 - (void)_handleResponseData:(id)arg1 fromCharacteristic:(id)arg2 error:(id)arg3;
 - (void)_handleSecuritySessionSetupExchangeData:(id)arg1;
 - (void)_handleWriteCompletionForCharacteristic:(id)arg1 error:(id)arg2;
@@ -134,10 +135,12 @@
 - (void)_readCharacteristicValue:(id)arg1;
 - (void)_readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_readDescriptorValue:(id)arg1;
+- (void)_readServiceSignature:(id)arg1;
 - (void)_readValueForCharacteristic:(id)arg1 options:(int)arg2 completionHandler:(id /* block */)arg3;
 - (void)_reallySendRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_requestResponseForRequest:(id)arg1;
 - (void)_resetWithError:(id)arg1;
+- (void)_restartConnectionIdleTimer:(double)arg1;
 - (void)_resumeAllOperations;
 - (void)_resumeConnectionIdleTimer;
 - (void)_retryDiscovery;
@@ -148,6 +151,7 @@
 - (id)_serviceForCBService:(id)arg1;
 - (void)_suspendAllOperations;
 - (void)_suspendConnectionIdleTimer;
+- (void)_updateConnectionIdleTime:(unsigned char)arg1;
 - (void)_writeValue:(id)arg1 toCharacteristic:(id)arg2 authorizationData:(id)arg3 options:(int)arg4 completionHandler:(id /* block */)arg5;
 - (BOOL)addPairingWithIdentifier:(id)arg1 publicKey:(id)arg2 admin:(BOOL)arg3 queue:(id)arg4 completion:(id /* block */)arg5;
 - (id)characteristicEnableEventCompletionHandlers;
@@ -176,11 +180,10 @@
 - (unsigned int)hapBLEProtocolVersion;
 - (id)identifyCharacteristic;
 - (void)identifyWithCompletion:(id /* block */)arg1;
-- (id)initWithPeripheral:(id)arg1 name:(id)arg2 pairingUsername:(id)arg3 statusFlags:(id)arg4 stateNumber:(id)arg5 category:(id)arg6 browser:(id)arg7 keyStore:(id)arg8;
+- (id)initWithPeripheral:(id)arg1 name:(id)arg2 pairingUsername:(id)arg3 statusFlags:(id)arg4 stateNumber:(id)arg5 category:(id)arg6 connectionIdleTime:(unsigned char)arg7 browser:(id)arg8 keyStore:(id)arg9;
 - (BOOL)isBadSetupCode;
 - (BOOL)isHAPCharacteristic:(id)arg1;
 - (BOOL)isPairing;
-- (BOOL)isSecuritySessionOpen;
 - (BOOL)isSecuritySessionOpening;
 - (BOOL)isVerified;
 - (void)listPairingsWithCompletionQueue:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -234,7 +237,6 @@
 - (void)setPairingFeaturesCharacteristic:(id)arg1;
 - (void)setPairingsCharacteristic:(id)arg1;
 - (void)setSecuritySession:(id)arg1;
-- (void)setSecuritySessionOpen:(BOOL)arg1;
 - (void)setSecuritySessionOpening:(BOOL)arg1;
 - (void)setSetupCodeCompletionHandler:(id /* block */)arg1;
 - (void)setSupportsMFiPairSetup:(BOOL)arg1;
@@ -242,11 +244,13 @@
 - (id /* block */)setupCodeCompletionHandler;
 - (id)shortDescription;
 - (BOOL)shouldVerifyHAPCharacteristic:(id)arg1;
+- (BOOL)shouldVerifyHAPService:(id)arg1;
 - (void)startPairing;
 - (BOOL)stopPairingWithError:(id*)arg1;
 - (BOOL)supportsMFiPairSetup;
 - (void)timerDidFire:(id)arg1;
 - (BOOL)tryPairingPassword:(id)arg1 error:(id*)arg2;
+- (void)updateConnectionIdleTime:(unsigned char)arg1;
 - (void)writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 queue:(id)arg4 completionHandler:(id /* block */)arg5;
 

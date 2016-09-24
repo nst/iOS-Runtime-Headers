@@ -3,7 +3,7 @@
  */
 
 @interface ACTVideoProcessor : NSObject {
-    double _videoLength;
+    double  _videoLength;
 }
 
 @property double videoLength;

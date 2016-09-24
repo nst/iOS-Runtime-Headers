@@ -3,16 +3,16 @@
  */
 
 @interface PLXPCService : PLService {
-    NSArray *_clientIDs;
-    NSDictionary *_clientNames;
-    PLNSNotificationOperatorComposition *_dailyTaskNotification;
-    NSDictionary *_permissionCache;
-    NSMutableDictionary *_registeredListeners;
-    NSMutableDictionary *_registeredResponders;
-    PLNSNotificationOperatorComposition *_registrationNotification;
-    PLTimer *_resetPermissionsForClientsTimer;
-    PLSemaphore *_satelliteProcessSemaphore;
-    NSObject<OS_xpc_object> *_xpcConnection;
+    NSArray * _clientIDs;
+    NSDictionary * _clientNames;
+    PLNSNotificationOperatorComposition * _dailyTaskNotification;
+    NSDictionary * _permissionCache;
+    NSMutableDictionary * _registeredListeners;
+    NSMutableDictionary * _registeredResponders;
+    PLNSNotificationOperatorComposition * _registrationNotification;
+    PLTimer * _resetPermissionsForClientsTimer;
+    PLSemaphore * _satelliteProcessSemaphore;
+    NSObject<OS_xpc_object> * _xpcConnection;
 }
 
 @property (retain) NSArray *clientIDs;

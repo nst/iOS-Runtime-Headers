@@ -3,7 +3,7 @@
  */
 
 @interface CertInfoCertificateSummaryDescriptionCell : UITableViewCell {
-    CertInfoDescriptionCellContentView *_customContentView;
+    CertInfoDescriptionCellContentView * _customContentView;
 }
 
 - (void).cxx_destruct;

@@ -3,7 +3,7 @@
  */
 
 @interface CNWrappedDictionary : NSDictionary {
-    NSDictionary *_underlyingDictionary;
+    NSDictionary * _underlyingDictionary;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

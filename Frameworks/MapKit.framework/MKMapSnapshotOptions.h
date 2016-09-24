@@ -3,7 +3,8 @@
  */
 
 @interface MKMapSnapshotOptions : NSObject <NSCopying, NSSecureCoding> {
-    MKMapCamera *_camera;
+    MKMapCamera * _camera;
+    NSArray * _customFeatureAnnotations;
     struct { 
         struct { 
             double x; 
@@ -13,11 +14,11 @@
             double width; 
             double height; 
         } size; 
-    } _mapRect;
-    unsigned int _mapType;
-    int _mode;
+    }  _mapRect;
+    unsigned int  _mapType;
+    int  _mode;
     struct { 
-        struct { 
+        struct CLLocationCoordinate2D { 
             double latitude; 
             double longitude; 
         } center; 
@@ -25,37 +26,48 @@
             double latitudeDelta; 
             double longitudeDelta; 
         } span; 
-    } _region;
-    BOOL _rendersInBackground;
-    float _scale;
-    BOOL _showsBuildings;
-    BOOL _showsPointsOfInterest;
+    }  _region;
+    BOOL  _rendersInBackground;
+    double  _scale;
+    unsigned char  _searchResultsType;
+    BOOL  _showsBuildings;
+    BOOL  _showsNightMode;
+    BOOL  _showsPointsOfInterest;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _size;
-    BOOL _useSnapshotService;
-    BOOL _usingRect;
+        double width; 
+        double height; 
+    }  _size;
+    BOOL  _useSnapshotService;
+    BOOL  _usingRect;
 }
 
 @property (nonatomic, copy) MKMapCamera *camera;
+@property (getter=_customFeatureAnnotations, setter=_setCustomFeatureAnnotations:, nonatomic, copy) NSArray *customFeatureAnnotations;
 @property (nonatomic) struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } mapRect;
 @property (nonatomic) unsigned int mapType;
-@property (nonatomic) struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } region;
+@property (nonatomic) struct { struct CLLocationCoordinate2D { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } region;
 @property (getter=_rendersInBackground, setter=_setRendersInBackground:, nonatomic) BOOL rendersInBackground;
-@property (nonatomic) float scale;
+@property (nonatomic) double scale;
+@property (getter=_searchResultsType, setter=_setSearchResultsType:, nonatomic) unsigned char searchResultsType;
 @property (nonatomic) BOOL showsBuildings;
+@property (getter=_showsNightMode, setter=_setShowsNightMode:, nonatomic) BOOL showsNightMode;
 @property (nonatomic) BOOL showsPointsOfInterest;
-@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic) struct CGSize { double x1; double x2; } size;
 @property (getter=_useSnapshotService, setter=_setUseSnapshotService:, nonatomic) BOOL useSnapshotService;
 @property (nonatomic, readonly) BOOL usingRect;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_customFeatureAnnotations;
 - (BOOL)_rendersInBackground;
+- (unsigned char)_searchResultsType;
+- (void)_setCustomFeatureAnnotations:(id)arg1;
 - (void)_setRendersInBackground:(BOOL)arg1;
+- (void)_setSearchResultsType:(unsigned char)arg1;
+- (void)_setShowsNightMode:(BOOL)arg1;
 - (void)_setUseSnapshotService:(BOOL)arg1;
+- (BOOL)_showsNightMode;
 - (BOOL)_useSnapshotService;
 - (id)camera;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -64,19 +76,19 @@
 - (id)initWithCoder:(id)arg1;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })mapRect;
 - (unsigned int)mapType;
-- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })region;
+- (struct { struct CLLocationCoordinate2D { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })region;
 - (float)scale;
 - (void)setCamera:(id)arg1;
 - (void)setMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setMapType:(unsigned int)arg1;
-- (void)setRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setRegion:(struct { struct CLLocationCoordinate2D { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setScale:(float)arg1;
 - (void)setShowsBuildings:(BOOL)arg1;
 - (void)setShowsPointsOfInterest:(BOOL)arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
 - (BOOL)showsBuildings;
 - (BOOL)showsPointsOfInterest;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { double x1; double x2; })size;
 - (BOOL)usingRect;
 
 @end

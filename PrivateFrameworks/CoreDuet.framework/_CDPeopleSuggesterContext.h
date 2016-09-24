@@ -3,12 +3,12 @@
  */
 
 @interface _CDPeopleSuggesterContext : NSObject <NSCopying> {
-    NSString *_consumerIdentifier;
-    NSString *_contactPrefix;
-    NSDate *_date;
-    NSString *_locationUUID;
-    NSSet *_seedContactIdentifiers;
-    NSString *_title;
+    NSString * _consumerIdentifier;
+    NSString * _contactPrefix;
+    NSDate * _date;
+    NSString * _locationUUID;
+    NSSet * _seedContactIdentifiers;
+    NSString * _title;
 }
 
 @property (retain) NSString *consumerIdentifier;

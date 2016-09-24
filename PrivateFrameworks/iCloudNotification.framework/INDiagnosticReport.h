@@ -3,11 +3,11 @@
  */
 
 @interface INDiagnosticReport : NSObject <NSSecureCoding> {
-    BOOL _disabled;
-    NSDate *_nextHeartbeatDate;
-    NSString *_pushEnvironment;
-    NSString *_pushToken;
-    NSArray *_pushTopics;
+    BOOL  _disabled;
+    NSDate * _nextHeartbeatDate;
+    NSString * _pushEnvironment;
+    NSString * _pushToken;
+    NSArray * _pushTopics;
 }
 
 @property (nonatomic) BOOL disabled;

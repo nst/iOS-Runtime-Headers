@@ -3,11 +3,11 @@
  */
 
 @interface SKUICommenter : SKUIMediaSocialAuthor {
-    NSString *_attributedName;
-    BOOL _isAttributed;
-    BOOL _isMySelf;
-    UIImage *_thumbnailImage;
-    BOOL _useImageCopy;
+    NSString * _attributedName;
+    BOOL  _isAttributed;
+    BOOL  _isMySelf;
+    UIImage * _thumbnailImage;
+    BOOL  _useImageCopy;
 }
 
 @property (nonatomic, retain) NSString *attributedName;

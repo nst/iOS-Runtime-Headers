@@ -3,7 +3,7 @@
  */
 
 @interface AVItemAccessLogEventInternal : NSObject {
-    NSDictionary *dict;
+    NSDictionary * dict;
 }
 
 @end

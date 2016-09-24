@@ -3,10 +3,12 @@
  */
 
 @interface NFTechnologyEvent : NSObject <NSSecureCoding> {
-    unsigned int _technology;
-    unsigned char _valueAddedServiceMode;
+    unsigned short  _systemCode;
+    unsigned int  _technology;
+    unsigned char  _valueAddedServiceMode;
 }
 
+@property (nonatomic, readonly) unsigned short systemCode;
 @property (nonatomic, readonly) unsigned int technology;
 @property (nonatomic, readonly) unsigned char valueAddedServiceMode;
 
@@ -16,6 +18,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTechnology:(unsigned int)arg1 andValueAddedServiceMode:(unsigned int)arg2;
+- (id)initWithTechnology:(unsigned int)arg1 andValueAddedServiceMode:(unsigned int)arg2 andSystemCode:(unsigned short)arg3;
+- (unsigned short)systemCode;
 - (unsigned int)technology;
 - (unsigned char)valueAddedServiceMode;
 

@@ -3,11 +3,11 @@
  */
 
 @interface NSCalendarDate : NSDate {
-    NSString *_formatString;
-    void *_reserved;
-    double _timeIntervalSinceReferenceDate;
-    NSTimeZone *_timeZone;
-    unsigned int refCount;
+    NSString * _formatString;
+    void * _reserved;
+    double  _timeIntervalSinceReferenceDate;
+    NSTimeZone * _timeZone;
+    unsigned int  refCount;
 }
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation

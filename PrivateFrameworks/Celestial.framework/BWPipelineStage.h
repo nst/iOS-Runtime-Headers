@@ -3,12 +3,12 @@
  */
 
 @interface BWPipelineStage : NSObject {
-    NSObject<OS_dispatch_group> *_executionGroup;
-    NSObject<OS_dispatch_queue> *_executionQueue;
-    NSMutableArray *_inputsForQueuedMessages;
-    NSString *_name;
-    unsigned int _priority;
-    NSMutableArray *_queuedMessages;
+    NSObject<OS_dispatch_group> * _executionGroup;
+    NSObject<OS_dispatch_queue> * _executionQueue;
+    NSMutableArray * _inputsForQueuedMessages;
+    NSString * _name;
+    unsigned int  _priority;
+    NSMutableArray * _queuedMessages;
 }
 
 @property (nonatomic, readonly) NSString *name;

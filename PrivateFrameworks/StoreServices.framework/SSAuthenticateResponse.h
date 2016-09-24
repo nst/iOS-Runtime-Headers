@@ -3,10 +3,10 @@
  */
 
 @interface SSAuthenticateResponse : NSObject <SSXPCCoding> {
-    SSAccount *_authenticatedAccount;
-    NSError *_error;
-    NSDictionary *_responseDictionary;
-    int _responseType;
+    SSAccount * _authenticatedAccount;
+    NSError * _error;
+    NSDictionary * _responseDictionary;
+    int  _responseType;
 }
 
 @property (nonatomic) int authenticateResponseType;

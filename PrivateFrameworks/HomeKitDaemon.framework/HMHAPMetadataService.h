@@ -3,10 +3,10 @@
  */
 
 @interface HMHAPMetadataService : NSObject <NSSecureCoding> {
-    NSString *_localizedDescription;
-    NSString *_name;
-    NSString *_svcDescription;
-    NSString *_type;
+    NSString * _localizedDescription;
+    NSString * _name;
+    NSString * _svcDescription;
+    NSString * _type;
 }
 
 @property (nonatomic, retain) NSString *localizedDescription;

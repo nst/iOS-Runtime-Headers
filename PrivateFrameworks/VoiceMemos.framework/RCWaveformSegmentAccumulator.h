@@ -3,9 +3,9 @@
  */
 
 @interface RCWaveformSegmentAccumulator : NSObject <RCWaveformGeneratorSegmentOutputObserver> {
-    BOOL _finishedSuccessfully;
-    RCWaveformGenerator *_generator;
-    NSMutableArray *_segments;
+    BOOL  _finishedSuccessfully;
+    RCWaveformGenerator * _generator;
+    NSMutableArray * _segments;
 }
 
 @property (readonly, copy) NSString *debugDescription;

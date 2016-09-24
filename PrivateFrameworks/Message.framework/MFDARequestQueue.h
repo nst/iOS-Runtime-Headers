@@ -3,8 +3,8 @@
  */
 
 @interface MFDARequestQueue : MFRequestQueue {
-    DAMailAccount *_account;
-    NSString *_folderID;
+    DAMailAccount * _account;
+    NSString * _folderID;
 }
 
 - (void)dealloc;

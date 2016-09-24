@@ -3,7 +3,7 @@
  */
 
 @interface SBCClientConfiguration : NSObject <NSSecureCoding> {
-    SBCPlaybackPositionDomain *_playbackPositionDomain;
+    SBCPlaybackPositionDomain * _playbackPositionDomain;
 }
 
 @property (nonatomic, readonly) SBCPlaybackPositionDomain *playbackPositionDomain;

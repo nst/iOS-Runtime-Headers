@@ -3,13 +3,13 @@
  */
 
 @interface ACAccountCredential : NSObject <NSSecureCoding> {
-    NSMutableDictionary *_credentialItems;
-    NSString *_credentialType;
-    BOOL _dirty;
-    NSMutableSet *_dirtyProperties;
-    BOOL _empty;
-    ACAccount *_owningAccount;
-    BOOL _requiresTouchID;
+    NSMutableDictionary * _credentialItems;
+    NSString * _credentialType;
+    BOOL  _dirty;
+    NSMutableSet * _dirtyProperties;
+    BOOL  _empty;
+    ACAccount * _owningAccount;
+    BOOL  _requiresTouchID;
 }
 
 @property (nonatomic, copy) NSString *credentialType;
@@ -29,6 +29,7 @@
 @property (nonatomic, copy) NSString *token;
 @property (nonatomic, copy) NSDate *tokenExpiryDate;
 
++ (id)allSupportedKeys;
 + (id)credentialPolicyForAccountType:(id)arg1 key:(id)arg2 clientID:(id)arg3;
 + (id)credentialWithOAuthToken:(id)arg1 tokenSecret:(id)arg2;
 + (id)credentialWithPassword:(id)arg1;

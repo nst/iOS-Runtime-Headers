@@ -3,9 +3,9 @@
  */
 
 @interface EDPatternFill : EDFill {
-    EDColorReference *mBackColorReference;
-    EDColorReference *mForeColorReference;
-    int mType;
+    EDColorReference * mBackColorReference;
+    EDColorReference * mForeColorReference;
+    int  mType;
 }
 
 + (id)patternFillWithType:(int)arg1 foreColor:(id)arg2 backColor:(id)arg3 resources:(id)arg4;

@@ -3,9 +3,9 @@
  */
 
 @interface PSYDeviceSyncStateEntry : NSObject <NSSecureCoding> {
-    unsigned int _initialSyncState;
-    NSUUID *_pairingID;
-    unsigned long _syncSwitchIndex;
+    unsigned int  _initialSyncState;
+    NSUUID * _pairingID;
+    unsigned long  _syncSwitchIndex;
 }
 
 @property (nonatomic, readonly) BOOL hasCompletedInitialSync;

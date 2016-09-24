@@ -5,8 +5,8 @@
 @interface GEOPDEntityFilter : PBCodable <NSCopying> {
     struct { 
         unsigned int includeSpokenNames : 1; 
-    } _has;
-    BOOL _includeSpokenNames;
+    }  _has;
+    BOOL  _includeSpokenNames;
 }
 
 @property (nonatomic) BOOL hasIncludeSpokenNames;

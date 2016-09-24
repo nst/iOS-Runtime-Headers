@@ -3,8 +3,8 @@
  */
 
 @interface _RMSMessageRecord : NSObject {
-    unsigned short _messageType;
-    id _responseBlock;
+    unsigned short  _messageType;
+    id  _responseBlock;
 }
 
 @property (nonatomic) unsigned short messageType;

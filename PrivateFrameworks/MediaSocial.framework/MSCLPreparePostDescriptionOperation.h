@@ -3,16 +3,16 @@
  */
 
 @interface MSCLPreparePostDescriptionOperation : NSOperation {
-    MSCLAccountStore *_accountStore;
-    BOOL _attachmentWasDownloadedAndNeedsRemoval;
-    NSArray *_attachments;
-    BOOL _attributed;
-    SKUIMediaSocialAuthor *_author;
-    SKUIClientContext *_clientContext;
-    MSCLStoreItem *_contentItem;
-    NSArray *_enabledExternalServices;
-    id /* block */ _outputBlock;
-    NSString *_text;
+    MSCLAccountStore * _accountStore;
+    BOOL  _attachmentWasDownloadedAndNeedsRemoval;
+    NSArray * _attachments;
+    BOOL  _attributed;
+    SKUIMediaSocialAuthor * _author;
+    SKUIClientContext * _clientContext;
+    MSCLStoreItem * _contentItem;
+    NSArray * _enabledExternalServices;
+    id /* block */  _outputBlock;
+    NSString * _text;
 }
 
 @property (nonatomic, retain) MSCLAccountStore *accountStore;

@@ -7,7 +7,7 @@
 + (id)_allowableCategories;
 + (int)category;
 + (int)nanoSyncObjectType;
-+ (int)receiveSyncObjects:(id)arg1 syncStore:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
++ (int)receiveSyncObjects:(id)arg1 syncStore:(id)arg2 profile:(id)arg3 error:(id*)arg4;
 + (unsigned int)supportedNanoSyncDirectionsForProtocolVersion:(int)arg1;
 + (id)syncEntityDependencies;
 + (int)syncEntityType;

@@ -3,11 +3,11 @@
  */
 
 @interface CNPropertyIDSRequest : NSObject <IDSIDQueryControllerDelegate> {
-    id /* block */ _idQueryResultHandler;
-    NSString *_listenerID;
-    NSArray *_propertyItems;
-    id /* block */ _requestResultBlock;
-    NSString *_service;
+    id /* block */  _idQueryResultHandler;
+    NSString * _listenerID;
+    NSArray * _propertyItems;
+    id /* block */  _requestResultBlock;
+    NSString * _service;
 }
 
 @property (nonatomic, readonly) BOOL cancelled;

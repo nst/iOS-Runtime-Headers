@@ -3,22 +3,22 @@
  */
 
 @interface RCCaptureSession : NSObject <RCCaptureOutputWriterDelegate, RCWaveformDataSourceObserver> {
-    unsigned int _backgroundTaskIdentifier;
-    BOOL _captureBeginSoundEffectDisabled;
-    BOOL _captureEndSoundEffectDisabled;
-    RCCaptureOutputWriter *_captureOutputWriter;
-    RCAudioSessionRoutingAssertion *_captureRouteAssertion;
-    NSDate *_captureStartDate;
-    RCCaptureInputWaveformDataSource *_captureWaveformDataSource;
-    BOOL _deleteCapturedOutWhenFinished;
-    BOOL _destinationShouldBeDeleted;
-    NSObject<OS_dispatch_group> *_endCaptureTaskGroup;
-    BOOL _handledFinishedCapturingAfterCompletionSound;
-    BOOL _handlingDidFinishCapturing;
-    RCCaptureInputDevice *_inputDevice;
-    int _sessionCaptureState;
-    NSString *_sessionRouteName;
-    NSHashTable *_weakObservers;
+    unsigned int  _backgroundTaskIdentifier;
+    BOOL  _captureBeginSoundEffectDisabled;
+    BOOL  _captureEndSoundEffectDisabled;
+    RCCaptureOutputWriter * _captureOutputWriter;
+    RCAudioSessionRoutingAssertion * _captureRouteAssertion;
+    NSDate * _captureStartDate;
+    RCCaptureInputWaveformDataSource * _captureWaveformDataSource;
+    BOOL  _deleteCapturedOutWhenFinished;
+    BOOL  _destinationShouldBeDeleted;
+    NSObject<OS_dispatch_group> * _endCaptureTaskGroup;
+    BOOL  _handledFinishedCapturingAfterCompletionSound;
+    BOOL  _handlingDidFinishCapturing;
+    RCCaptureInputDevice * _inputDevice;
+    int  _sessionCaptureState;
+    NSString * _sessionRouteName;
+    NSHashTable * _weakObservers;
 }
 
 @property (nonatomic, readonly) RCAVState *AVState;

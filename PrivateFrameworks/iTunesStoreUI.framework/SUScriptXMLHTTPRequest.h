@@ -3,16 +3,16 @@
  */
 
 @interface SUScriptXMLHTTPRequest : SUScriptObject {
-    <SUScriptXMLHTTPRequestDelegate> *_delegate;
-    NSMutableDictionary *_functions;
-    SUXMLHTTPRequestOperation *_operation;
-    unsigned int _readyState;
-    SSMutableURLRequestProperties *_requestProperties;
-    NSDictionary *_responseHeaders;
-    NSString *_responseText;
-    unsigned int _status;
-    NSString *_statusText;
-    unsigned int _timeout;
+    <SUScriptXMLHTTPRequestDelegate> * _delegate;
+    NSMutableDictionary * _functions;
+    SUXMLHTTPRequestOperation * _operation;
+    unsigned int  _readyState;
+    SSMutableURLRequestProperties * _requestProperties;
+    NSDictionary * _responseHeaders;
+    NSString * _responseText;
+    unsigned int  _status;
+    NSString * _statusText;
+    unsigned int  _timeout;
 }
 
 @property <SUScriptXMLHTTPRequestDelegate> *delegate;

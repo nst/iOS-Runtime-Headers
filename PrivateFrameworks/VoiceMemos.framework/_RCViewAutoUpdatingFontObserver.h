@@ -3,8 +3,8 @@
  */
 
 @interface _RCViewAutoUpdatingFontObserver : NSObject {
-    id _notificationObserver;
-    id _target;
+    id  _notificationObserver;
+    id  _target;
 }
 
 @property (nonatomic, readonly) id target;

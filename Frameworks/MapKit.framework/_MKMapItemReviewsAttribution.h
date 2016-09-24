@@ -3,7 +3,7 @@
  */
 
 @interface _MKMapItemReviewsAttribution : _MKMapItemAttribution {
-    GEOMapItemReviewsAttribution *_geoReviewsAttribution;
+    GEOMapItemReviewsAttribution * _geoReviewsAttribution;
 }
 
 @property (nonatomic, readonly) NSArray *addReviewURLs;

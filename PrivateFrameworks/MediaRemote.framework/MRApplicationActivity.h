@@ -3,12 +3,12 @@
  */
 
 @interface MRApplicationActivity : NSObject <NSMutableCopying, NSSecureCoding> {
-    int _creatorProcessID;
-    NSString *_primaryApplicationDisplayID;
-    NSString *_secondaryApplicationDisplayID;
-    BOOL _shouldPrepareAppPlaybackQueue;
-    int _status;
-    NSUUID *_uniqueIdentifier;
+    int  _creatorProcessID;
+    NSString * _primaryApplicationDisplayID;
+    NSString * _secondaryApplicationDisplayID;
+    BOOL  _shouldPrepareAppPlaybackQueue;
+    int  _status;
+    NSUUID * _uniqueIdentifier;
 }
 
 @property (nonatomic, readonly) int creatorProcessID;

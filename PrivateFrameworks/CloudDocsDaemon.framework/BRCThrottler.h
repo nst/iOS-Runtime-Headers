@@ -3,11 +3,11 @@
  */
 
 @interface BRCThrottler : NSObject {
-    long long _latestRetry;
-    NSObject<OS_dispatch_queue> *_queue;
-    unsigned int _retryCount;
-    NSObject<OS_dispatch_source> *_source;
-    BRCThrottleBase *_throttle;
+    int  _latestRetry;
+    NSObject<OS_dispatch_queue> * _queue;
+    unsigned int  _retryCount;
+    NSObject<OS_dispatch_source> * _source;
+    BRCThrottleBase * _throttle;
 }
 
 - (void).cxx_destruct;

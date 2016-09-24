@@ -3,10 +3,10 @@
  */
 
 @interface SUScrollRequest : NSObject {
-    BOOL _animated;
-    id /* block */ _completionHandler;
-    NSValue *_contentOffsetValue;
-    NSValue *_frameValue;
+    BOOL  _animated;
+    id /* block */  _completionHandler;
+    NSValue * _contentOffsetValue;
+    NSValue * _frameValue;
 }
 
 @property (getter=isAnimated, nonatomic) BOOL animated;

@@ -3,8 +3,8 @@
  */
 
 @interface ACDAccessPluginManager : NSObject {
-    NSObject<OS_dispatch_queue> *_accessPluginQueue;
-    NSSet *_accessPlugins;
+    NSObject<OS_dispatch_queue> * _accessPluginQueue;
+    NSSet * _accessPlugins;
 }
 
 - (void).cxx_destruct;

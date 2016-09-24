@@ -3,10 +3,10 @@
  */
 
 @interface ABPersonPickersDelegate : NSObject <ABImagePickerControllerDelegate, ABPickerViewControllerDelegate> {
-    ABPersonTableViewDataSource *_dataSource;
-    ABPersonViewControllerHelper *_helper;
-    ABImagePickerController *_imagePicker;
-    ABStyleProvider *_styleProvider;
+    ABPersonTableViewDataSource * _dataSource;
+    ABPersonViewControllerHelper * _helper;
+    ABImagePickerController * _imagePicker;
+    ABStyleProvider * _styleProvider;
 }
 
 @property (nonatomic) ABPersonTableViewDataSource *dataSource;

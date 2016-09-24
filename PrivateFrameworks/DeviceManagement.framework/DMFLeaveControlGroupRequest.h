@@ -3,8 +3,8 @@
  */
 
 @interface DMFLeaveControlGroupRequest : CATTaskRequest {
-    DMFControlGroupIdentifier *_groupIdentifier;
-    NSArray *_leaderIdentifiers;
+    DMFControlGroupIdentifier * _groupIdentifier;
+    NSArray * _leaderIdentifiers;
 }
 
 @property (nonatomic, copy) DMFControlGroupIdentifier *groupIdentifier;

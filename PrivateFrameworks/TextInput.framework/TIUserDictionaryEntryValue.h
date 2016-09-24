@@ -3,9 +3,9 @@
  */
 
 @interface TIUserDictionaryEntryValue : NSObject <NSSecureCoding, TIUserDictionaryEntry> {
-    NSString *_phrase;
-    NSString *_shortcut;
-    NSNumber *_timestamp;
+    NSString * _phrase;
+    NSString * _shortcut;
+    NSNumber * _timestamp;
 }
 
 @property (readonly, copy) NSString *debugDescription;

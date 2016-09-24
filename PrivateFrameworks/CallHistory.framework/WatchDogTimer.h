@@ -3,8 +3,8 @@
  */
 
 @interface WatchDogTimer : CHLogger {
-    NSString *_name;
-    NSObject<OS_dispatch_source> *_timer;
+    NSString * _name;
+    NSObject<OS_dispatch_source> * _timer;
 }
 
 - (void).cxx_destruct;

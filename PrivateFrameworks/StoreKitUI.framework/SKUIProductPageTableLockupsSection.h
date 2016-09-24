@@ -3,14 +3,14 @@
  */
 
 @interface SKUIProductPageTableLockupsSection : SKUIProductPageTableSection <SKUIArtworkRequestDelegate, SKUIMissingItemDelegate> {
-    NSMapTable *_artworkRequests;
-    SKUIProductPageTableSeparatorView *_footerView;
-    SKUIProductPageTableHeaderView *_headerView;
-    NSArray *_lockups;
-    SKUIMissingItemLoader *_missingItemLoader;
-    UIImage *_placeholderImage;
-    SKUIStyledImageDataConsumer *_productImageDataConsumer;
-    SKUIResourceLoader *_resourceLoader;
+    NSMapTable * _artworkRequests;
+    SKUIProductPageTableSeparatorView * _footerView;
+    SKUIProductPageTableHeaderView * _headerView;
+    NSArray * _lockups;
+    SKUIMissingItemLoader * _missingItemLoader;
+    UIImage * _placeholderImage;
+    SKUIStyledImageDataConsumer * _productImageDataConsumer;
+    SKUIResourceLoader * _resourceLoader;
 }
 
 @property (readonly, copy) NSString *debugDescription;

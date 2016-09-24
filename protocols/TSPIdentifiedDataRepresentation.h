@@ -5,7 +5,7 @@
 
 @required
 
-- (long long)identifier;
+- (int)identifier;
 - (BOOL)isLoaded;
 - (BOOL)setDataRepresentation:(SFUDataRepresentation *)arg1 shouldCopy:(BOOL)arg2 error:(id*)arg3;
 

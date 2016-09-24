@@ -3,8 +3,8 @@
  */
 
 @interface EXOfficeArtClient : OAXClient {
-    BOOL mAutoChartFillIsHollow;
-    BOOL mAutoChartStrokeIsHollow;
+    BOOL  mAutoChartFillIsHollow;
+    BOOL  mAutoChartStrokeIsHollow;
 }
 
 @property BOOL autoChartFillIsHollow;

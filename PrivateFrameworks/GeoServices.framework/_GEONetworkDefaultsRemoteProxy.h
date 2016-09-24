@@ -3,10 +3,10 @@
  */
 
 @interface _GEONetworkDefaultsRemoteProxy : NSObject <_GEONetworkDefaultsServerProxy> {
-    int _configChangedToken;
-    <_GEONetworkDefaultsServerProxyDelegate> *_delegate;
-    NSLock *_lock;
-    NSMutableArray *_updateCompletionHandlers;
+    int  _configChangedToken;
+    <_GEONetworkDefaultsServerProxyDelegate> * _delegate;
+    NSLock * _lock;
+    NSMutableArray * _updateCompletionHandlers;
 }
 
 @property (readonly, copy) NSString *debugDescription;

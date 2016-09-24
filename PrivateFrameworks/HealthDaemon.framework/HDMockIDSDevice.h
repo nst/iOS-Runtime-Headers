@@ -3,13 +3,13 @@
  */
 
 @interface HDMockIDSDevice : NSObject <NSCopying> {
-    BOOL _isActive;
-    NSString *_name;
-    NSUUID *_nanoRegistryPairingID;
-    NSUUID *_nsuuid;
-    NSString *_productBuildVersion;
-    NSString *_service;
-    NSString *_uniqueIDOverride;
+    BOOL  _isActive;
+    NSString * _name;
+    NSUUID * _nanoRegistryPairingID;
+    NSUUID * _nsuuid;
+    NSString * _productBuildVersion;
+    NSString * _service;
+    NSString * _uniqueIDOverride;
 }
 
 @property (nonatomic) BOOL isActive;

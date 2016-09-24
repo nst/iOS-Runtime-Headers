@@ -3,9 +3,9 @@
  */
 
 @interface MRLanguageOptionGroup : NSObject <NSSecureCoding> {
-    BOOL _allowEmptySelection;
-    MRLanguageOption *_defaultLanguageOption;
-    NSArray *_languageOptions;
+    BOOL  _allowEmptySelection;
+    MRLanguageOption * _defaultLanguageOption;
+    NSArray * _languageOptions;
 }
 
 @property (nonatomic, readonly) BOOL allowEmptySelection;

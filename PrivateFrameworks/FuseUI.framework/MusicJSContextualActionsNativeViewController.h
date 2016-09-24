@@ -3,11 +3,11 @@
  */
 
 @interface MusicJSContextualActionsNativeViewController : MusicJSNativeViewController <MusicJSContextualActionsNativeViewController> {
-    <MusicJSContextualActionsNativeViewControllerDelegate> *_delegate;
-    MusicJSContextualActionsNavigationDocument *_jsContextualActionsNavigationDocument;
-    MusicJSManagedObject *_jsManagedContextualActionsNavigationDocumentObject;
-    IKAppDocument *_shareDocument;
-    NSDictionary *_shareDocumentOptions;
+    <MusicJSContextualActionsNativeViewControllerDelegate> * _delegate;
+    MusicJSContextualActionsNavigationDocument * _jsContextualActionsNavigationDocument;
+    MusicJSManagedObject * _jsManagedContextualActionsNavigationDocumentObject;
+    IKAppDocument * _shareDocument;
+    NSDictionary * _shareDocumentOptions;
 }
 
 @property (nonatomic) <MusicJSContextualActionsNativeViewControllerDelegate> *delegate;

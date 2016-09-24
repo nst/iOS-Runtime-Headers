@@ -3,33 +3,33 @@
  */
 
 @interface SearchUICardSectionFormatter : NSObject {
-    float _imageXInset;
-    float _imageYInset;
-    UIFont *_primaryFont;
-    float _primaryTextBaselineFromBottom;
-    float _primaryTextBaselineFromTop;
-    BOOL _primaryTextIsVibrant;
-    float _primaryTextLeadingInset;
-    UIFont *_secondaryFont;
-    float _secondaryTextBaselineFromBottom;
-    float _secondaryTextBaselineFromTop;
-    BOOL _secondaryTextIsVibrant;
-    float _secondaryTextLeadingInset;
-    unsigned int _style;
+    double  _imageXInset;
+    double  _imageYInset;
+    UIFont * _primaryFont;
+    double  _primaryTextBaselineFromBottom;
+    double  _primaryTextBaselineFromTop;
+    BOOL  _primaryTextIsVibrant;
+    double  _primaryTextLeadingInset;
+    UIFont * _secondaryFont;
+    double  _secondaryTextBaselineFromBottom;
+    double  _secondaryTextBaselineFromTop;
+    BOOL  _secondaryTextIsVibrant;
+    double  _secondaryTextLeadingInset;
+    unsigned int  _style;
 }
 
-@property (nonatomic) float imageXInset;
-@property (nonatomic) float imageYInset;
+@property (nonatomic) double imageXInset;
+@property (nonatomic) double imageYInset;
 @property (nonatomic, retain) UIFont *primaryFont;
-@property (nonatomic) float primaryTextBaselineFromBottom;
-@property (nonatomic) float primaryTextBaselineFromTop;
+@property (nonatomic) double primaryTextBaselineFromBottom;
+@property (nonatomic) double primaryTextBaselineFromTop;
 @property (nonatomic) BOOL primaryTextIsVibrant;
-@property (nonatomic) float primaryTextLeadingInset;
+@property (nonatomic) double primaryTextLeadingInset;
 @property (nonatomic, retain) UIFont *secondaryFont;
-@property (nonatomic) float secondaryTextBaselineFromBottom;
-@property (nonatomic) float secondaryTextBaselineFromTop;
+@property (nonatomic) double secondaryTextBaselineFromBottom;
+@property (nonatomic) double secondaryTextBaselineFromTop;
 @property (nonatomic) BOOL secondaryTextIsVibrant;
-@property (nonatomic) float secondaryTextLeadingInset;
+@property (nonatomic) double secondaryTextLeadingInset;
 @property (nonatomic) unsigned int style;
 
 - (void).cxx_destruct;

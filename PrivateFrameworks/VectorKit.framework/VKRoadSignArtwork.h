@@ -3,23 +3,309 @@
  */
 
 @interface VKRoadSignArtwork : NSObject {
-    float _contentScale;
-    struct CGSize { 
-        float width; 
-        float height; 
-    } _layoutSize;
-    struct __CTLine { } *_line;
-    BOOL _onRoute;
-    int _orientation;
-    float _scale;
+    struct RoadSignGeneratedMetrics { 
+        struct RoadSignPartMetrics { 
+            unsigned char _type; 
+            struct CGSize { 
+                double width; 
+                double height; 
+            } _imageSize; 
+            struct CGRect { 
+                struct CGPoint { 
+                    double x; 
+                    double y; 
+                } origin; 
+                struct CGSize { 
+                    double width; 
+                    double height; 
+                } size; 
+            } _signBaseRect; 
+            double _topEmptySpaceHeight; 
+            double _bottomEmptySpaceHeight; 
+            double _leftEmptySpaceWidth; 
+            double _rightEmptySpaceWidth; 
+            double _outsideImagePathExtension; 
+            bool _hasArrows; 
+            struct CGPoint { 
+                double x; 
+                double y; 
+            } _arrowWingMin; 
+            struct CGPoint { 
+                double x; 
+                double y; 
+            } _arrowWingMax; 
+            struct CGPoint { 
+                double x; 
+                double y; 
+            } _arrowTip; 
+        } _leftRoadSignPartMetrics; 
+        struct RoadSignPartMetrics { 
+            unsigned char _type; 
+            struct CGSize { 
+                double width; 
+                double height; 
+            } _imageSize; 
+            struct CGRect { 
+                struct CGPoint { 
+                    double x; 
+                    double y; 
+                } origin; 
+                struct CGSize { 
+                    double width; 
+                    double height; 
+                } size; 
+            } _signBaseRect; 
+            double _topEmptySpaceHeight; 
+            double _bottomEmptySpaceHeight; 
+            double _leftEmptySpaceWidth; 
+            double _rightEmptySpaceWidth; 
+            double _outsideImagePathExtension; 
+            bool _hasArrows; 
+            struct CGPoint { 
+                double x; 
+                double y; 
+            } _arrowWingMin; 
+            struct CGPoint { 
+                double x; 
+                double y; 
+            } _arrowWingMax; 
+            struct CGPoint { 
+                double x; 
+                double y; 
+            } _arrowTip; 
+        } _rightRoadSignPartMetrics; 
+        struct RoadSignPartMetrics { 
+            unsigned char _type; 
+            struct CGSize { 
+                double width; 
+                double height; 
+            } _imageSize; 
+            struct CGRect { 
+                struct CGPoint { 
+                    double x; 
+                    double y; 
+                } origin; 
+                struct CGSize { 
+                    double width; 
+                    double height; 
+                } size; 
+            } _signBaseRect; 
+            double _topEmptySpaceHeight; 
+            double _bottomEmptySpaceHeight; 
+            double _leftEmptySpaceWidth; 
+            double _rightEmptySpaceWidth; 
+            double _outsideImagePathExtension; 
+            bool _hasArrows; 
+            struct CGPoint { 
+                double x; 
+                double y; 
+            } _arrowWingMin; 
+            struct CGPoint { 
+                double x; 
+                double y; 
+            } _arrowWingMax; 
+            struct CGPoint { 
+                double x; 
+                double y; 
+            } _arrowTip; 
+        } _stretchedRoadSignPartMetrics; 
+        struct RoadSignPartMetrics { 
+            unsigned char _type; 
+            struct CGSize { 
+                double width; 
+                double height; 
+            } _imageSize; 
+            struct CGRect { 
+                struct CGPoint { 
+                    double x; 
+                    double y; 
+                } origin; 
+                struct CGSize { 
+                    double width; 
+                    double height; 
+                } size; 
+            } _signBaseRect; 
+            double _topEmptySpaceHeight; 
+            double _bottomEmptySpaceHeight; 
+            double _leftEmptySpaceWidth; 
+            double _rightEmptySpaceWidth; 
+            double _outsideImagePathExtension; 
+            bool _hasArrows; 
+            struct CGPoint { 
+                double x; 
+                double y; 
+            } _arrowWingMin; 
+            struct CGPoint { 
+                double x; 
+                double y; 
+            } _arrowWingMax; 
+            struct CGPoint { 
+                double x; 
+                double y; 
+            } _arrowTip; 
+        } _middleRoadSignPartMetrics; 
+        bool _hasMiddleSignPart; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } _imageSize; 
+        struct CGRect { 
+            struct CGPoint { 
+                double x; 
+                double y; 
+            } origin; 
+            struct CGSize { 
+                double width; 
+                double height; 
+            } size; 
+        } _signBaseRect; 
+        double _stretchedRoadSignPartWidth; 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } _arrowTipPosition; 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } _textPosition; 
+        struct CGRect { 
+            struct CGPoint { 
+                double x; 
+                double y; 
+            } origin; 
+            struct CGSize { 
+                double width; 
+                double height; 
+            } size; 
+        } _leftPartRect; 
+        struct CGRect { 
+            struct CGPoint { 
+                double x; 
+                double y; 
+            } origin; 
+            struct CGSize { 
+                double width; 
+                double height; 
+            } size; 
+        } _rightPartRect; 
+        struct CGRect { 
+            struct CGPoint { 
+                double x; 
+                double y; 
+            } origin; 
+            struct CGSize { 
+                double width; 
+                double height; 
+            } size; 
+        } _stretchedPartRect; 
+        struct CGRect { 
+            struct CGPoint { 
+                double x; 
+                double y; 
+            } origin; 
+            struct CGSize { 
+                double width; 
+                double height; 
+            } size; 
+        } _middlePartRect; 
+        struct CGRect { 
+            struct CGPoint { 
+                double x; 
+                double y; 
+            } origin; 
+            struct CGSize { 
+                double width; 
+                double height; 
+            } size; 
+        } _middleLeftStretchedPartRect; 
+        struct CGRect { 
+            struct CGPoint { 
+                double x; 
+                double y; 
+            } origin; 
+            struct CGSize { 
+                double width; 
+                double height; 
+            } size; 
+        } _middleRightStretchedPartRect; 
+    }  _generatedMetrics;
+    struct __CTLine { } * _line;
+    struct RoadSignColoring { 
+        bool _hasFillColor; 
+        bool _hasStrokeColor; 
+        bool _hasShadowColor; 
+        bool _hasTextColor; 
+        struct array<float, 4> { 
+            double __elems_[4]; 
+        } _fillColorComponents; 
+        struct array<float, 4> { 
+            double __elems_[4]; 
+        } _strokeColorComponents; 
+        struct array<float, 4> { 
+            double __elems_[4]; 
+        } _shadowColorComponents; 
+        struct array<float, 4> { 
+            double __elems_[4]; 
+        } _textColorComponents; 
+    }  _signColoring;
+    struct RoadSignMetrics { 
+        unsigned char _orientation; 
+        double _scale; 
+        double _contentScale; 
+        double _arrowWeight; 
+        double _arrowLength; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } _shadowOffset; 
+        double _shadowRadius; 
+        double _strokeWeight; 
+        double _signHeight; 
+        double _signMargin; 
+        double _horizontalMargin; 
+        double _verticalMargin; 
+        double _cornerRadius; 
+    }  _signMetrics;
+    struct RoadSignTextMetrics { 
+        double _scale; 
+        double _contentScale; 
+        double _horizontalMargin; 
+        double _verticalOffset; 
+        double _textSize; 
+        struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { 
+            struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { 
+                struct __rep { 
+                    union { 
+                        struct __long { 
+                            unsigned int __cap_; 
+                            unsigned int __size_; 
+                            char *__data_; 
+                        } __l; 
+                        struct __short { 
+                            union { 
+                                unsigned char __size_; 
+                                BOOL __lx; 
+                            } ; 
+                            BOOL __data_[11]; 
+                        } __s; 
+                        struct __raw { 
+                            unsigned long __words[3]; 
+                        } __r; 
+                    } ; 
+                } __first_; 
+            } __r_; 
+        } _fontFamily; 
+        double _textDrawWidth; 
+    }  _textMetrics;
 }
 
-- (void)_updateLayoutSize;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)image;
-- (id)initWithString:(id)arg1 orientation:(int)arg2 contentScale:(float)arg3 scale:(float)arg4 onRoute:(BOOL)arg5;
-- (struct Box<float, 2> { struct Matrix<float, 2, 1> { float x_1_1_1[2]; } x1; struct Matrix<float, 2, 1> { float x_2_1_1[2]; } x2; })localCollisionBounds;
-- (struct Box<float, 2> { struct Matrix<float, 2, 1> { float x_1_1_1[2]; } x1; struct Matrix<float, 2, 1> { float x_2_1_1[2]; } x2; })localRenderBounds;
-- (struct Matrix<float, 2, 1> { float x1[2]; })offsetPixelForPixel:(struct Matrix<float, 2, 1> { float x1[2]; })arg1;
+- (id)initWithString:(id)arg1 signMetrics:(struct RoadSignMetrics { unsigned char x1; double x2; double x3; double x4; double x5; struct CGSize { double x_6_1_1; double x_6_1_2; } x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; })arg2 textMetrics:(struct RoadSignTextMetrics { double x1; double x2; double x3; double x4; double x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_6_1_1; } x6; double x7; })arg3 signColoring:(struct RoadSignColoring { bool x1; bool x2; bool x3; bool x4; struct array<float, 4> { double x_5_1_1[4]; } x5; struct array<float, 4> { double x_6_1_1[4]; } x6; struct array<float, 4> { double x_7_1_1[4]; } x7; struct array<float, 4> { double x_8_1_1[4]; } x8; })arg4;
+- (struct Box<float, 2> { struct Matrix<float, 2, 1> { double x_1_1_1[2]; } x1; struct Matrix<float, 2, 1> { double x_2_1_1[2]; } x2; })localCollisionBounds;
+- (struct Box<float, 2> { struct Matrix<float, 2, 1> { double x_1_1_1[2]; } x1; struct Matrix<float, 2, 1> { double x_2_1_1[2]; } x2; })localRenderBounds;
+- (struct Matrix<float, 2, 1> { double x1[2]; })offsetPixelForPixel:(struct Matrix<float, 2, 1> { double x1[2]; })arg1;
 
 @end

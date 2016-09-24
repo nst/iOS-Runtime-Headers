@@ -3,10 +3,10 @@
  */
 
 @interface _GEOCountryConfigurationRemoteProxy : NSObject <_GEOCountryConfigurationServerProxy> {
-    int _countryCodeChangedToken;
-    <_GEOCountryConfigurationServerProxyDelegate> *_delegate;
-    int _providersChangedToken;
-    NSObject<OS_dispatch_queue> *_queue;
+    int  _countryCodeChangedToken;
+    <_GEOCountryConfigurationServerProxyDelegate> * _delegate;
+    int  _providersChangedToken;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,15 +3,15 @@
  */
 
 @interface HKDataUnitChartingRules : NSObject {
-    int _allowedDecimalPrecision;
-    <HKInteractiveChartsAxisScalingRule> *_axisScalingRule;
-    int _defaultChartStyle;
-    int _defaultStyle;
-    NSDictionary *_perUnitDecimalPrecision;
-    NSMutableDictionary *_rulesByTimeScope;
-    BOOL _shouldConnectSamplesWithLines;
-    BOOL _shouldHideAverageLine;
-    BOOL _shouldStartDayAtNoon;
+    <HKDecimalPrecisionRule> * _allowedDecimalPrecisionRule;
+    <HKInteractiveChartsAxisScalingRule> * _axisScalingRule;
+    int  _defaultChartStyle;
+    int  _defaultStyle;
+    NSDictionary * _perUnitDecimalPrecision;
+    NSMutableDictionary * _rulesByTimeScope;
+    BOOL  _shouldConnectSamplesWithLines;
+    BOOL  _shouldHideAverageLine;
+    BOOL  _shouldStartDayAtNoon;
 }
 
 @property (nonatomic, retain) <HKInteractiveChartsAxisScalingRule> *axisScalingRule;
@@ -24,7 +24,7 @@
 - (id)_ruleForKey:(id)arg1 timeScope:(int)arg2;
 - (void)_setRule:(id)arg1 forKey:(id)arg2 timeScope:(int)arg3;
 - (void)adjustedBoundsForPortraitChartWithMin:(double)arg1 max:(double)arg2 minOut:(double*)arg3 maxOut:(double*)arg4 decimalPrecision:(int*)arg5 unit:(id)arg6 timeScope:(int)arg7;
-- (int)allowedDecimalPrecisionForUnit:(id)arg1;
+- (id)allowedDecimalPrecisionRuleForUnit:(id)arg1;
 - (id)axisScalingRule;
 - (float)chartPointLineWidthForTimeScope:(int)arg1;
 - (float)chartPointRadiusForTimeScope:(int)arg1;
@@ -32,7 +32,7 @@
 - (int)defaultChartStyle;
 - (id)initWithDefaultChartStyle:(int)arg1;
 - (id)intervalComponentsForTimeScope:(int)arg1;
-- (void)setAllowedDecimalPrecision:(int)arg1 perUnitPrecision:(id)arg2;
+- (void)setAllowedDecimalPrecisionRule:(id)arg1 perUnitPrecisionRules:(id)arg2;
 - (void)setAxisScalingRule:(id)arg1;
 - (void)setChartPointLineWidth:(float)arg1 forTimeScope:(int)arg2;
 - (void)setChartPointRadius:(float)arg1 forTimeScope:(int)arg2;

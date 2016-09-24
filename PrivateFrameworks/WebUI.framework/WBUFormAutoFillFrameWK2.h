@@ -3,7 +3,7 @@
  */
 
 @interface WBUFormAutoFillFrameWK2 : NSObject <WBSFormAutoFillFrame> {
-    WKWebProcessPlugInFrame *_plugInFrame;
+    WKWebProcessPlugInFrame * _plugInFrame;
 }
 
 @property (readonly, copy) NSString *debugDescription;

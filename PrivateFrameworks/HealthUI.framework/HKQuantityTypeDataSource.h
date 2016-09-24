@@ -3,10 +3,10 @@
  */
 
 @interface HKQuantityTypeDataSource : HKHealthQueryChartCacheDataSource {
-    id /* block */ _mappingFunction;
-    unsigned int _statisticsOptions;
-    HKUnitController *_unitController;
-    id /* block */ _userInfoCreationBlock;
+    id /* block */  _mappingFunction;
+    unsigned int  _statisticsOptions;
+    HKUnitController * _unitController;
+    id /* block */  _userInfoCreationBlock;
 }
 
 @property (nonatomic, readonly) HKQuantityType *quantityType;

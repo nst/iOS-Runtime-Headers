@@ -3,16 +3,16 @@
  */
 
 @interface PUPingTimer : NSObject {
-    SEL _action;
-    BOOL _everPinged;
-    BOOL _invalid;
-    unsigned int _maxPingCount;
-    BOOL _nextPingFires;
-    unsigned int _pingCount;
-    NSObject<OS_dispatch_queue> *_queue;
-    unsigned int _scheduleId;
-    id _target;
-    double _timeout;
+    SEL  _action;
+    BOOL  _everPinged;
+    BOOL  _invalid;
+    unsigned int  _maxPingCount;
+    BOOL  _nextPingFires;
+    unsigned int  _pingCount;
+    NSObject<OS_dispatch_queue> * _queue;
+    unsigned int  _scheduleId;
+    id  _target;
+    double  _timeout;
 }
 
 @property (nonatomic, readonly) SEL action;

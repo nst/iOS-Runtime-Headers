@@ -3,8 +3,8 @@
  */
 
 @interface CMKDebugCaptureService : CMKCaptureService {
-    double __enqueueTime;
-    BOOL _debugLoggingEnabled;
+    double  __enqueueTime;
+    BOOL  _debugLoggingEnabled;
 }
 
 @property (nonatomic, readonly) double _enqueueTime;

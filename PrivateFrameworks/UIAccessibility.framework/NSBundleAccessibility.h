@@ -7,7 +7,6 @@
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 
-- (void)_loadAXBundleForBundleOffMainThread;
 - (BOOL)loadAndReturnError:(id*)arg1;
 - (id)localizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
 

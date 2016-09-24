@@ -3,8 +3,8 @@
  */
 
 @interface GKLoginAlertView : UIAlertView <UITextFieldDelegate> {
-    unsigned int _passwordFieldIndex;
-    NSString *_username;
+    unsigned int  _passwordFieldIndex;
+    NSString * _username;
 }
 
 @property (readonly, copy) NSString *debugDescription;

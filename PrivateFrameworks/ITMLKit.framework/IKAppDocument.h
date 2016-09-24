@@ -3,22 +3,22 @@
  */
 
 @interface IKAppDocument : NSObject <IKJSDOMDocumentAppBridge, IKStyleMediaQueryEvaluator> {
-    IKAppContext *_appContext;
-    <IKAppDocumentDelegate> *_delegate;
-    NSError *_error;
-    IKHeadElement *_headElement;
-    NSString *_identifier;
-    double _impressionThreshold;
-    NSMutableSet *_impressions;
-    NSMutableDictionary *_impressionsDict;
-    IKDOMDocument *_jsDocument;
-    IKViewElement *_navigationBarElement;
-    IKJSObject *_owner;
-    IKViewElementStyleFactory *_styleFactory;
-    BOOL _subtreeUpdated;
-    IKViewElement *_templateElement;
-    IKViewElement *_toolbarElement;
-    BOOL _updated;
+    IKAppContext * _appContext;
+    <IKAppDocumentDelegate> * _delegate;
+    NSError * _error;
+    IKHeadElement * _headElement;
+    NSString * _identifier;
+    double  _impressionThreshold;
+    NSMutableDictionary * _impressions;
+    IKDOMDocument * _jsDocument;
+    IKViewElement * _navigationBarElement;
+    IKJSObject * _owner;
+    NSHashTable * _styleChangeObservers;
+    IKViewElementStyleFactory * _styleFactory;
+    BOOL  _subtreeUpdated;
+    IKViewElement * _templateElement;
+    IKViewElement * _toolbarElement;
+    BOOL  _updated;
 }
 
 @property (readonly) IKAppContext *appContext;
@@ -27,28 +27,31 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSError *error;
 @property (readonly) unsigned int hash;
-@property (nonatomic, retain) IKHeadElement *headElement;
-@property (nonatomic, retain) NSString *identifier;
+@property (retain) IKHeadElement *headElement;
+@property (retain) NSString *identifier;
 @property (nonatomic) double impressionThreshold;
-@property (nonatomic, retain) NSMutableSet *impressions;
-@property (nonatomic, retain) NSMutableDictionary *impressionsDict;
+@property (nonatomic, retain) NSMutableDictionary *impressions;
 @property (nonatomic, readonly) IKDOMDocument *jsDocument;
-@property (nonatomic, retain) IKViewElement *navigationBarElement;
+@property (retain) IKViewElement *navigationBarElement;
 @property (nonatomic, readonly) IKJSNavigationDocument *navigationDocument;
 @property (nonatomic, readonly) IKJSObject *owner;
+@property (nonatomic, retain) NSHashTable *styleChangeObservers;
 @property (nonatomic, retain) IKViewElementStyleFactory *styleFactory;
 @property (getter=isSubtreeUpdated) BOOL subtreeUpdated;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) IKViewElement *templateElement;
-@property (nonatomic, retain) IKViewElement *toolbarElement;
+@property (retain) IKViewElement *templateElement;
+@property (retain) IKViewElement *toolbarElement;
 @property (getter=isUpdated, nonatomic) BOOL updated;
 
 - (void).cxx_destruct;
+- (void)_addStyleChangeObserver:(id)arg1;
 - (BOOL)_clearUpdatesForElement:(id)arg1;
-- (void)_impressionDataFromViewElements:(id)arg1 timestamp:(long long)arg2 impressions:(id)arg3 impressionsDict:(id)arg4;
+- (void)_removeStyleChangeObserver:(id)arg1;
+- (void)_setViewElementStylesDirty;
 - (void)_updateWithXML:(id)arg1;
 - (id)appContext;
 - (void)dealloc;
+- (id)debugDescription;
 - (id)delegate;
 - (id)error;
 - (BOOL)evaluateStyleMediaQueryList:(id)arg1;
@@ -56,7 +59,7 @@
 - (id)identifier;
 - (double)impressionThreshold;
 - (id)impressions;
-- (id)impressionsDict;
+- (id)impressionsMatching:(id)arg1 reset:(BOOL)arg2;
 - (id)initWithAppContext:(id)arg1 document:(id)arg2 owner:(id)arg3;
 - (BOOL)isSubtreeUpdated;
 - (BOOL)isUpdated;
@@ -65,6 +68,7 @@
 - (id)navigationDocument;
 - (void)onAppear;
 - (void)onDisappear;
+- (void)onImpressionsChange:(id)arg1;
 - (void)onLoad;
 - (void)onNeedsUpdateWithCompletion:(id /* block */)arg1;
 - (void)onUnload;
@@ -73,6 +77,7 @@
 - (id)owner;
 - (void)recordImpressionsForViewElements:(id)arg1;
 - (id)recordedImpressions;
+- (id)recordedImpressions:(BOOL)arg1;
 - (id)retrieveJSElementForViewElement:(id)arg1 jsContext:(id)arg2;
 - (void)runTestWithName:(id)arg1 options:(id)arg2;
 - (void)scrollToTop;
@@ -82,9 +87,9 @@
 - (void)setIdentifier:(id)arg1;
 - (void)setImpressionThreshold:(double)arg1;
 - (void)setImpressions:(id)arg1;
-- (void)setImpressionsDict:(id)arg1;
 - (void)setNavigationBarElement:(id)arg1;
 - (void)setNeedsUpdateForDocument:(id)arg1;
+- (void)setStyleChangeObservers:(id)arg1;
 - (void)setStyleFactory:(id)arg1;
 - (void)setSubtreeUpdated:(BOOL)arg1;
 - (void)setTemplateElement:(id)arg1;
@@ -92,6 +97,7 @@
 - (void)setUpdated:(BOOL)arg1;
 - (void)setViewElementStylesDirty;
 - (id)snapshotImpressions;
+- (id)styleChangeObservers;
 - (id)styleFactory;
 - (id)templateElement;
 - (id)toolbarElement;

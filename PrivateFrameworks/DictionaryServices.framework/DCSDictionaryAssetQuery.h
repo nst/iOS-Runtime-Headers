@@ -3,7 +3,7 @@
  */
 
 @interface DCSDictionaryAssetQuery : ASAssetQuery {
-    NSLocale *_locale;
+    NSLocale * _locale;
 }
 
 - (id)initWithAssetLocale:(id)arg1;

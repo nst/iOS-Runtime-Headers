@@ -3,9 +3,9 @@
  */
 
 @interface SiriUIPhotoCollectionViewCell : SiriUIClearBackgroundCell {
-    UIImage *_image;
-    CALayer *_imageLayer;
-    NSURL *_photoURL;
+    UIImage * _image;
+    CALayer * _imageLayer;
+    NSURL * _photoURL;
 }
 
 + (id)reuseIdentifier;

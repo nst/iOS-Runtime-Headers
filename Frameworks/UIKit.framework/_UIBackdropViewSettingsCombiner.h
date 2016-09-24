@@ -3,18 +3,18 @@
  */
 
 @interface _UIBackdropViewSettingsCombiner : _UIBackdropViewSettings {
-    _UIBackdropViewSettings *_inputSettingsA;
-    _UIBackdropViewSettings *_inputSettingsB;
-    _UIBackdropViewSettings *_outputSettingsA;
-    _UIBackdropViewSettings *_outputSettingsB;
-    float _weighting;
+    _UIBackdropViewSettings * _inputSettingsA;
+    _UIBackdropViewSettings * _inputSettingsB;
+    _UIBackdropViewSettings * _outputSettingsA;
+    _UIBackdropViewSettings * _outputSettingsB;
+    double  _weighting;
 }
 
 @property (nonatomic, retain) _UIBackdropViewSettings *inputSettingsA;
 @property (nonatomic, retain) _UIBackdropViewSettings *inputSettingsB;
 @property (nonatomic, retain) _UIBackdropViewSettings *outputSettingsA;
 @property (nonatomic, retain) _UIBackdropViewSettings *outputSettingsB;
-@property (nonatomic) float weighting;
+@property (nonatomic) double weighting;
 
 - (void).cxx_destruct;
 - (void)computeOutputSettingsUsingModel:(id)arg1;

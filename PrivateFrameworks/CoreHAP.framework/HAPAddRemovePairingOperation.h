@@ -3,13 +3,13 @@
  */
 
 @interface HAPAddRemovePairingOperation : NSObject {
-    BOOL _admin;
-    id /* block */ _completionHandler;
-    NSString *_identifier;
-    int _operation;
-    BOOL _operationExecuting;
-    NSData *_publicKey;
-    NSObject<OS_dispatch_queue> *_queue;
+    BOOL  _admin;
+    id /* block */  _completionHandler;
+    NSString * _identifier;
+    int  _operation;
+    BOOL  _operationExecuting;
+    NSData * _publicKey;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic) BOOL admin;

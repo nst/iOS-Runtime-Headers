@@ -3,9 +3,9 @@
  */
 
 @interface CalDAVCalendarServerRecurrenceItem : CoreDAVItem {
-    CalDAVCalendarServerChangesItem *_changes;
-    CoreDAVItemWithNoChildren *_master;
-    CoreDAVLeafItem *_recurrenceID;
+    CalDAVCalendarServerChangesItem * _changes;
+    CoreDAVItemWithNoChildren * _master;
+    CoreDAVLeafItem * _recurrenceID;
 }
 
 @property (nonatomic, retain) CalDAVCalendarServerChangesItem *changes;

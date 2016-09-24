@@ -3,10 +3,10 @@
  */
 
 @interface MPArrayQueueItem : NSObject {
-    MPAVItem *_item;
-    NSString *_path;
-    double _startTime;
-    double _stopTime;
+    MPAVItem * _item;
+    NSString * _path;
+    double  _startTime;
+    double  _stopTime;
 }
 
 @property (nonatomic, readonly) MPAVItem *item;

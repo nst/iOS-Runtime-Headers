@@ -3,19 +3,19 @@
  */
 
 @interface RCCompositionComposedAssetWriter : NSObject {
-    BOOL _canGenerateWaveform;
-    BOOL _canGenerateWaveformByProcessingAVURL;
-    BOOL _canSaveCompositionMetadata;
-    RCComposition *_composition;
-    AVAssetExportSession *_exportSession;
-    RCWaveformDataSource *_waveformDataSource;
+    BOOL  _canGenerateWaveform;
+    BOOL  _canGenerateWaveformByProcessingAVURL;
+    BOOL  _canSaveCompositionMetadata;
+    RCComposition * _composition;
+    AVAssetExportSession * _exportSession;
+    RCWaveformDataSource * _waveformDataSource;
 }
 
 @property (nonatomic) BOOL canGenerateWaveform;
 @property (nonatomic) BOOL canGenerateWaveformByProcessingAVURL;
 @property (nonatomic) BOOL canSaveCompositionMetadata;
 @property (nonatomic, readonly) RCComposition *composition;
-@property (nonatomic, readonly) float progress;
+@property (nonatomic, readonly) double progress;
 
 - (void).cxx_destruct;
 - (void)_writeCompositionWaveformForFinalizedAssetFromFragmentsWithCompletionHandler:(id /* block */)arg1;

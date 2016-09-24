@@ -3,12 +3,12 @@
  */
 
 @interface MFBase64Encoder : MFBaseFilterDataConsumer {
-    unsigned long _left;
-    unsigned char _leftovers;
-    unsigned long _line;
-    unsigned long _lineBreak;
-    BOOL _padChar;
-    const char *_table;
+    unsigned long  _left;
+    unsigned char  _leftovers;
+    unsigned long  _line;
+    unsigned long  _lineBreak;
+    BOOL  _padChar;
+    const char * _table;
 }
 
 @property (nonatomic) BOOL allowSlash;

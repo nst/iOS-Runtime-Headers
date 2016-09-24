@@ -3,15 +3,15 @@
  */
 
 @interface EMCellMapper : CMMapper {
-    int columnSpan;
-    double columnWidth;
-    struct EDCellHeader { unsigned int x1; unsigned int x2; } *edCell;
-    EDReference *edMergedCellReference;
-    BOOL firstCellFlag;
-    int firstColumn;
-    int lastColumn;
-    int rowNumber;
-    BOOL spreadLeftFlag;
+    int  columnSpan;
+    double  columnWidth;
+    struct EDCellHeader { unsigned int x1; unsigned int x2; } * edCell;
+    EDReference * edMergedCellReference;
+    BOOL  firstCellFlag;
+    int  firstColumn;
+    int  lastColumn;
+    int  rowNumber;
+    BOOL  spreadLeftFlag;
 }
 
 + (BOOL)isCellEmpty:(struct EDCellHeader { unsigned int x1; unsigned int x2; }*)arg1;

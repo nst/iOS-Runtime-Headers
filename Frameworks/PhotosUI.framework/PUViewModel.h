@@ -3,13 +3,13 @@
  */
 
 @interface PUViewModel : NSObject {
-    NSHashTable *__changeObservers;
-    BOOL __publishingChanges;
-    PUViewModelChange *_currentChange;
-    int _nestedChanges;
-    int _numAppliedPendingChanges;
-    NSObject<OS_dispatch_queue> *_observerQueue;
-    NSMutableArray *_pendingChangeBlocks;
+    NSHashTable * __changeObservers;
+    BOOL  __publishingChanges;
+    PUViewModelChange * _currentChange;
+    int  _nestedChanges;
+    int  _numAppliedPendingChanges;
+    NSObject<OS_dispatch_queue> * _observerQueue;
+    NSMutableArray * _pendingChangeBlocks;
 }
 
 @property (nonatomic, readonly) NSHashTable *_changeObservers;

@@ -3,25 +3,24 @@
  */
 
 @interface PLCPLStatus : NSObject <CPLStatusDelegate> {
-    CPLStatus *_cplStatus;
-    <PLCPLStatusDelegate> *_delegate;
-    BOOL _inResetSync;
-    BOOL _isCPLDataClassEnabled;
-    BOOL _isCPLDataClassEnabledValid;
-    unsigned int _numberOfImagesToDownload;
-    unsigned int _numberOfImagesToUpload;
-    unsigned int _numberOfPulledAssets;
-    unsigned int _numberOfPushedAsset;
-    unsigned int _numberOfVideosToDownload;
-    unsigned int _numberOfVideosToUpload;
-    NSProgress *_progress;
-    id _progressSubscriber;
-    double _syncProgress;
-    unsigned int _syncProgressState;
-    unsigned int _totalAssetsOnServer;
-    unsigned long long _totalSizeOfPushedOriginals;
-    unsigned long long _totalSizeOfUnpushedOriginals;
-    unsigned long long _totalUploadedOriginalSize;
+    CPLStatus * _cplStatus;
+    <PLCPLStatusDelegate> * _delegate;
+    BOOL  _inResetSync;
+    BOOL  _isCPLDataClassEnabled;
+    BOOL  _isCPLDataClassEnabledValid;
+    unsigned int  _numberOfImagesToDownload;
+    unsigned int  _numberOfImagesToUpload;
+    unsigned int  _numberOfPulledAssets;
+    unsigned int  _numberOfVideosToDownload;
+    unsigned int  _numberOfVideosToUpload;
+    NSProgress * _progress;
+    id  _progressSubscriber;
+    double  _syncProgress;
+    unsigned int  _syncProgressState;
+    unsigned int  _totalAssetsOnServer;
+    unsigned int  _totalSizeOfPushedOriginals;
+    unsigned int  _totalSizeOfUnpushedOriginals;
+    unsigned int  _totalUploadedOriginalSize;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -41,16 +40,15 @@
 @property (nonatomic, readonly) unsigned int numberOfImagesToDownload;
 @property (nonatomic, readonly) unsigned int numberOfImagesToUpload;
 @property (nonatomic, readonly) unsigned int numberOfPulledAssets;
-@property (nonatomic, readonly) unsigned int numberOfPushedAsset;
 @property (nonatomic, readonly) unsigned int numberOfVideosToDownload;
 @property (nonatomic, readonly) unsigned int numberOfVideosToUpload;
 @property (setter=_setProgress:, nonatomic, retain) NSProgress *progress;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) double syncProgress;
 @property (nonatomic, readonly) unsigned int totalAssetsOnServer;
-@property (nonatomic) unsigned long long totalSizeOfPushedOriginals;
-@property (nonatomic) unsigned long long totalSizeOfUnpushedOriginals;
-@property (nonatomic) unsigned long long totalUploadedOriginalSize;
+@property (nonatomic) unsigned int totalSizeOfPushedOriginals;
+@property (nonatomic) unsigned int totalSizeOfUnpushedOriginals;
+@property (nonatomic) unsigned int totalUploadedOriginalSize;
 
 + (void)_prepareQueue;
 + (void)_setPulledItemsCount:(unsigned int)arg1;
@@ -92,21 +90,20 @@
 - (unsigned int)numberOfImagesToDownload;
 - (unsigned int)numberOfImagesToUpload;
 - (unsigned int)numberOfPulledAssets;
-- (unsigned int)numberOfPushedAsset;
 - (unsigned int)numberOfVideosToDownload;
 - (unsigned int)numberOfVideosToUpload;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)progress;
 - (void)setDelegate:(id)arg1;
 - (void)setInResetSync:(BOOL)arg1;
-- (void)setTotalSizeOfPushedOriginals:(unsigned long long)arg1;
-- (void)setTotalSizeOfUnpushedOriginals:(unsigned long long)arg1;
-- (void)setTotalUploadedOriginalSize:(unsigned long long)arg1;
+- (void)setTotalSizeOfPushedOriginals:(unsigned int)arg1;
+- (void)setTotalSizeOfUnpushedOriginals:(unsigned int)arg1;
+- (void)setTotalUploadedOriginalSize:(unsigned int)arg1;
 - (void)statusDidChange:(id)arg1;
 - (double)syncProgress;
 - (unsigned int)totalAssetsOnServer;
-- (unsigned long long)totalSizeOfPushedOriginals;
-- (unsigned long long)totalSizeOfUnpushedOriginals;
-- (unsigned long long)totalUploadedOriginalSize;
+- (unsigned int)totalSizeOfPushedOriginals;
+- (unsigned int)totalSizeOfUnpushedOriginals;
+- (unsigned int)totalUploadedOriginalSize;
 
 @end

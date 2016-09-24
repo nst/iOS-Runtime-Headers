@@ -3,20 +3,20 @@
  */
 
 @interface SKUIProductPageDetailsViewController : UIViewController <SKUIItemStateCenterObserver, SKUIProductPageChildViewController, SKUIScreenshotsDelegate, SKUITableViewSectionDelegate> {
-    BOOL _askPermission;
-    SKUIClientContext *_clientContext;
-    SKUIProductPageTableHeaderOnlySection *_copyrightSection;
-    <SKUIProductPageChildViewControllerDelegate> *_delegate;
-    SKUIProductPageTableTextBoxSection *_descriptionSection;
-    NSOperationQueue *_operationQueue;
-    SKUIProductPage *_productPage;
-    SKUIResourceLoader *_resourceLoader;
-    SKUIProductPageTableHeaderOnlySection *_screenshotsSection;
-    NSMutableArray *_sections;
-    SKUIProductPageTableTextBoxSection *_storeNotesSection;
-    SKUIProductPageTableViewController *_tableViewController;
-    SKUILayoutCache *_textLayoutCache;
-    SKUIProductPageTableTextBoxSection *_whatsNewSection;
+    BOOL  _askPermission;
+    SKUIClientContext * _clientContext;
+    SKUIProductPageTableHeaderOnlySection * _copyrightSection;
+    <SKUIProductPageChildViewControllerDelegate> * _delegate;
+    SKUIProductPageTableTextBoxSection * _descriptionSection;
+    NSOperationQueue * _operationQueue;
+    SKUIProductPage * _productPage;
+    SKUIResourceLoader * _resourceLoader;
+    SKUIProductPageTableHeaderOnlySection * _screenshotsSection;
+    NSMutableArray * _sections;
+    SKUIProductPageTableTextBoxSection * _storeNotesSection;
+    SKUIProductPageTableViewController * _tableViewController;
+    SKUILayoutCache * _textLayoutCache;
+    SKUIProductPageTableTextBoxSection * _whatsNewSection;
 }
 
 @property (nonatomic) BOOL askPermission;
@@ -67,5 +67,7 @@
 - (void)setHeaderViewController:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
 - (id)tableViewForTableViewSection:(id)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 
 @end

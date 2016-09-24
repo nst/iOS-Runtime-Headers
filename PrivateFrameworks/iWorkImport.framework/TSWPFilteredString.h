@@ -3,10 +3,10 @@
  */
 
 @interface TSWPFilteredString : NSString {
-    unsigned int _length;
-    TSWPDeletionRangeMap *_rangeMap;
-    TSWPRangeArray *_sourceRanges;
-    NSString *_sourceString;
+    unsigned int  _length;
+    TSWPDeletionRangeMap * _rangeMap;
+    TSWPRangeArray * _sourceRanges;
+    NSString * _sourceString;
 }
 
 @property (nonatomic, retain) TSWPDeletionRangeMap *rangeMap;

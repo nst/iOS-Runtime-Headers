@@ -3,10 +3,10 @@
  */
 
 @interface CNContactViewController2 : UIViewController <CNContactPropertyModelDelegate, CNContactPropertyRemoteModelDelegate, UITableViewDataSource, UITableViewDelegate> {
-    BOOL _ignoreViewWillBePresented;
-    CNContactPropertyModel *_model;
-    CNContactViewHostViewController *_remoteHostViewController;
-    UITableView *_tableView;
+    BOOL  _ignoreViewWillBePresented;
+    CNContactPropertyModel * _model;
+    CNContactViewHostViewController * _remoteHostViewController;
+    UITableView * _tableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

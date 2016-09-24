@@ -3,12 +3,12 @@
  */
 
 @interface _SFWebProcessPlugInPageSafeBrowsingController : NSObject <_SFSafeBrowsingWebProcessController> {
-    id /* block */ _completionHandler;
-    NSDictionary *_localizedStrings;
-    WBUWebProcessPlugInPageController *_pageController;
-    <_SFSafeBrowsingWarningResponseObserver> *_responseObserver;
-    _WKRemoteObjectInterface *_safeBrowsingControllerInterface;
-    _SFSecurityInfo *_securityInfo;
+    id /* block */  _completionHandler;
+    NSDictionary * _localizedStrings;
+    WBUWebProcessPlugInPageController * _pageController;
+    <_SFSafeBrowsingWarningResponseObserver> * _responseObserver;
+    _WKRemoteObjectInterface * _safeBrowsingControllerInterface;
+    _SFSecurityInfo * _securityInfo;
 }
 
 @property (readonly, copy) NSString *debugDescription;

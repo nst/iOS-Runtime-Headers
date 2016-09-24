@@ -3,7 +3,7 @@
  */
 
 @interface MKMapItemMetadataRequest : NSObject {
-    MKMapItem *_mapItem;
+    MKMapItem * _mapItem;
 }
 
 @property (nonatomic, retain) MKMapItem *mapItem;

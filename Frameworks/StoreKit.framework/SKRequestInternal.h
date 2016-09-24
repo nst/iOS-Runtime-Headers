@@ -3,11 +3,11 @@
  */
 
 @interface SKRequestInternal : NSObject {
-    int _backgroundTaskIdentifier;
-    SKPaymentQueueClient *_client;
-    SKXPCConnection *_connection;
-    <SKRequestDelegate> *_delegate;
-    int _state;
+    int  _backgroundTaskIdentifier;
+    SKPaymentQueueClient * _client;
+    SKXPCConnection * _connection;
+    <SKRequestDelegate> * _delegate;
+    int  _state;
 }
 
 - (void)dealloc;

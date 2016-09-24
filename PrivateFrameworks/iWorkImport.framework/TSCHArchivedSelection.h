@@ -3,7 +3,7 @@
  */
 
 @interface TSCHArchivedSelection : TSPObject <TSKArchivedSelection> {
-    TSCHSelection *mSelection;
+    TSCHSelection * mSelection;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,6 +14,7 @@
 
 - (void)dealloc;
 - (id)initFromUnarchiver:(id)arg1;
+- (id)initWithContext:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (id)selection;
 - (void)setSelection:(id)arg1;

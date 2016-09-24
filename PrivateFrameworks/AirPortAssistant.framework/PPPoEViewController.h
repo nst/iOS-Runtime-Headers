@@ -3,11 +3,11 @@
  */
 
 @interface PPPoEViewController : AssistantSubUIViewController <TableViewManagerDelegate, UINavigationControllerDelegate> {
-    UIView *justTextContainerView;
-    UILabel *justTextLabel;
-    PPPoEConnectionUIViewController *pppoeConnectionUIViewController;
-    id previousNavDelegate;
-    UIView *tableHeaderContainerView;
+    UIView * justTextContainerView;
+    UILabel * justTextLabel;
+    PPPoEConnectionUIViewController * pppoeConnectionUIViewController;
+    id  previousNavDelegate;
+    UIView * tableHeaderContainerView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

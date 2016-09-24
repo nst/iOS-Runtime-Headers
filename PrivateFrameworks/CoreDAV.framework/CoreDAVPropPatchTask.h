@@ -3,12 +3,12 @@
  */
 
 @interface CoreDAVPropPatchTask : CoreDAVActionBackedTask {
-    int _absoluteOrder;
-    NSURL *_priorOrderedURL;
-    NSSet *_propPatchRemoveElements;
-    NSSet *_propPatchSetElements;
-    CoreDAVResponseItem *_responseItem;
-    BOOL _sendOrder;
+    int  _absoluteOrder;
+    NSURL * _priorOrderedURL;
+    NSSet * _propPatchRemoveElements;
+    NSSet * _propPatchSetElements;
+    CoreDAVResponseItem * _responseItem;
+    BOOL  _sendOrder;
 }
 
 @property (nonatomic) int absoluteOrder;

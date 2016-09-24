@@ -3,14 +3,14 @@
  */
 
 @interface DAMailboxSearchQuery : DASearchQuery {
-    int _MIMESupport;
-    BOOL _allOrNone;
-    int _bodyType;
-    NSString *_collectionID;
-    BOOL _deepTraversal;
-    NSDate *_priorToDate;
-    BOOL _rebuildResults;
-    long long _truncationSize;
+    int  _MIMESupport;
+    BOOL  _allOrNone;
+    int  _bodyType;
+    NSString * _collectionID;
+    BOOL  _deepTraversal;
+    NSDate * _priorToDate;
+    BOOL  _rebuildResults;
+    int  _truncationSize;
 }
 
 @property (nonatomic) int MIMESupport;
@@ -20,9 +20,10 @@
 @property (nonatomic) BOOL deepTraversal;
 @property (nonatomic, retain) NSDate *priorToDate;
 @property (nonatomic) BOOL rebuildResults;
-@property (nonatomic) long long truncationSize;
+@property (nonatomic) int truncationSize;
 
 + (id)mailboxSearchQueryWithSearchString:(id)arg1 consumer:(id)arg2;
++ (id)mailboxSearchQueryWithSearchString:(id)arg1 predicate:(id)arg2 consumer:(id)arg3;
 
 - (void).cxx_destruct;
 - (int)MIMESupport;
@@ -33,6 +34,7 @@
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1 consumer:(id)arg2;
 - (id)initWithSearchString:(id)arg1 consumer:(id)arg2;
+- (id)initWithSearchString:(id)arg1 predicate:(id)arg2 consumer:(id)arg3;
 - (id)priorToDate;
 - (BOOL)rebuildResults;
 - (void)setAllOrNone:(BOOL)arg1;
@@ -42,7 +44,7 @@
 - (void)setMIMESupport:(int)arg1;
 - (void)setPriorToDate:(id)arg1;
 - (void)setRebuildResults:(BOOL)arg1;
-- (void)setTruncationSize:(long long)arg1;
-- (long long)truncationSize;
+- (void)setTruncationSize:(int)arg1;
+- (int)truncationSize;
 
 @end

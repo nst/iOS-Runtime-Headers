@@ -3,10 +3,10 @@
  */
 
 @interface TCProgressContext : NSObject {
-    TCProgressStage *m_currentStage;
-    NSDate *m_lastReportTime;
-    OITSUProgressContext *m_parentProgressContext;
-    NSMutableArray *m_stackOfBranches;
+    TCProgressStage * m_currentStage;
+    NSDate * m_lastReportTime;
+    OITSUProgressContext * m_parentProgressContext;
+    NSMutableArray * m_stackOfBranches;
 }
 
 + (void)addProgressObserver:(id)arg1 selector:(SEL)arg2;

@@ -3,9 +3,9 @@
  */
 
 @interface _UIStoryboardUnwindChain : NSObject {
-    unsigned int _commonAncestorIdx;
-    unsigned int _modalAncestorContainingSourceIdx;
-    NSMutableArray *_viewControllers;
+    unsigned int  _commonAncestorIdx;
+    unsigned int  _modalAncestorContainingSourceIdx;
+    NSMutableArray * _viewControllers;
 }
 
 @property (nonatomic, readonly) UIViewController *commonAncestorViewController;

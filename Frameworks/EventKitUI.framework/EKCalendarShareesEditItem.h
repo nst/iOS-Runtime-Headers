@@ -3,9 +3,9 @@
  */
 
 @interface EKCalendarShareesEditItem : EKCalendarEditItem <EKShareePickerViewControllerDelegate, EKShareeViewControllerDelegate> {
-    UILabel *_descriptionLabel;
-    UIView *_footerView;
-    NSMutableArray *_shareeCells;
+    UILabel * _descriptionLabel;
+    UIView * _footerView;
+    NSMutableArray * _shareeCells;
 }
 
 @property (readonly, copy) NSString *debugDescription;

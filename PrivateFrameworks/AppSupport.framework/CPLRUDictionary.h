@@ -3,10 +3,10 @@
  */
 
 @interface CPLRUDictionary : NSObject {
-    struct __CFDictionary { } *_dictionary;
-    CPLRUDictionaryNode *_head;
-    unsigned int _maxCount;
-    CPLRUDictionaryNode *_tail;
+    struct __CFDictionary { } * _dictionary;
+    CPLRUDictionaryNode * _head;
+    unsigned int  _maxCount;
+    CPLRUDictionaryNode * _tail;
 }
 
 + (id)dictionaryWithMaximumCapacity:(unsigned int)arg1;

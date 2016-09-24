@@ -3,7 +3,7 @@
  */
 
 @interface PUEditViewController : UIViewController {
-    UIImage *_placeholderImage;
+    UIImage * _placeholderImage;
 }
 
 @property (nonatomic, retain) UIImage *placeholderImage;

@@ -3,10 +3,10 @@
  */
 
 @interface MSASPersonModelItem : NSObject <NSCopying> {
-    MSASAlbum *_album;
-    NSString *_albumGUID;
-    int _errorCount;
-    <NSObject> *_object;
+    MSASAlbum * _album;
+    NSString * _albumGUID;
+    int  _errorCount;
+    <NSObject> * _object;
 }
 
 @property (nonatomic, retain) MSASAlbum *album;

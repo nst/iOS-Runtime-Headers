@@ -3,10 +3,10 @@
  */
 
 @interface AAUIDeviceLocatorService : NSObject {
-    BOOL _hasAttemptedToFetchState;
-    unsigned int _lastKnownState;
-    NSObject<OS_dispatch_queue> *_stateUpdateQueue;
-    BOOL _wantsToEnable;
+    BOOL  _hasAttemptedToFetchState;
+    unsigned int  _lastKnownState;
+    NSObject<OS_dispatch_queue> * _stateUpdateQueue;
+    BOOL  _wantsToEnable;
 }
 
 + (id)sharedInstance;

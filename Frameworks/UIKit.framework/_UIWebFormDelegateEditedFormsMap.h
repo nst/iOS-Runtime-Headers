@@ -3,8 +3,8 @@
  */
 
 @interface _UIWebFormDelegateEditedFormsMap : NSObject {
-    NSMutableArray *_lifetimeHelper;
-    NSMutableDictionary *_map;
+    NSMutableArray * _lifetimeHelper;
+    NSMutableDictionary * _map;
 }
 
 - (id)_keyForWebFrame:(id)arg1;

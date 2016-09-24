@@ -3,10 +3,10 @@
  */
 
 @interface HKCorrelationQuery : HKQuery {
-    int _behaviorVersion;
-    id /* block */ _completionHandler;
-    NSDictionary *_filterDictionary;
-    NSDictionary *_samplePredicates;
+    int  _behaviorVersion;
+    id /* block */  _completionHandler;
+    NSDictionary * _filterDictionary;
+    NSDictionary * _samplePredicates;
 }
 
 @property (getter=_behaviorVersion, setter=_setBehaviorVersion:, nonatomic) int behaviorVersion;
@@ -18,6 +18,7 @@
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (Class)_queryServerDataObjectClass;
++ (BOOL)shouldApplyPredicateForObjectType:(id)arg1;
 
 - (void).cxx_destruct;
 - (int)_behaviorVersion;

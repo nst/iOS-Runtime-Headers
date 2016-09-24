@@ -3,8 +3,8 @@
  */
 
 @interface CAMTransientImageManager : NSObject <PUTransientImageManager> {
-    NSMutableDictionary *__activeRequestsByPairedUUID;
-    NSMutableDictionary *__pairedVideosByPairedUUID;
+    NSMutableDictionary * __activeRequestsByPairedUUID;
+    NSMutableDictionary * __pairedVideosByPairedUUID;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *_activeRequestsByPairedUUID;
@@ -20,7 +20,7 @@
 - (id)_pairedVideosByPairedUUID;
 - (id)existingPairedVideoForUUID:(id)arg1;
 - (id)init;
-- (id)insertPairedVideoWithConvertible:(id)arg1;
+- (id)insertPairedVideoWithConvertible:(id)arg1 filterType:(int)arg2;
 - (void)removePairedVideoForUUID:(id)arg1;
 - (void)requestPairedVideoURLForUUID:(id)arg1 resultHandler:(id /* block */)arg2;
 

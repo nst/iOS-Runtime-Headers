@@ -3,22 +3,22 @@
  */
 
 @interface HTSHTTPServerConnection : NSObject <NSStreamDelegate> {
-    BOOL _closeOnEmptyQueue;
-    NSObject<OS_dispatch_queue> *_connectionQueue;
-    NSString *_identifier;
-    NSTimer *_idleTimer;
-    struct __CFHTTPMessage { } *_incomingMessage;
-    NSMutableArray *_incomingQueue;
-    double _lastActivity;
-    NSMutableArray *_outputQueue;
-    BOOL _outputStalled;
-    BOOL _readActive;
-    NSObject<OS_dispatch_source> *_readSource;
-    HTSHTTPServer *_server;
-    int _socket;
-    int _socketRefCount;
-    BOOL _writeActive;
-    NSObject<OS_dispatch_source> *_writeSource;
+    BOOL  _closeOnEmptyQueue;
+    NSObject<OS_dispatch_queue> * _connectionQueue;
+    NSString * _identifier;
+    NSTimer * _idleTimer;
+    struct __CFHTTPMessage { } * _incomingMessage;
+    NSMutableArray * _incomingQueue;
+    double  _lastActivity;
+    NSMutableArray * _outputQueue;
+    BOOL  _outputStalled;
+    BOOL  _readActive;
+    NSObject<OS_dispatch_source> * _readSource;
+    HTSHTTPServer * _server;
+    int  _socket;
+    int  _socketRefCount;
+    BOOL  _writeActive;
+    NSObject<OS_dispatch_source> * _writeSource;
 }
 
 @property (readonly, copy) NSString *debugDescription;

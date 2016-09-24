@@ -3,9 +3,9 @@
  */
 
 @interface PLNetworkAgent : PLAgent {
-    PLEntryNotificationOperatorComposition *_batteryLevelChanged;
-    PLEntryNotificationOperatorComposition *_canSleep;
-    PLSemaphore *_canSleepSemaphore;
+    PLEntryNotificationOperatorComposition * _batteryLevelChanged;
+    PLEntryNotificationOperatorComposition * _canSleep;
+    PLSemaphore * _canSleepSemaphore;
 }
 
 @property (retain) PLEntryNotificationOperatorComposition *batteryLevelChanged;

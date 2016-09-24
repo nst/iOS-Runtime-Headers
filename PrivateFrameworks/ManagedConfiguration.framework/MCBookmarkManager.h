@@ -3,10 +3,10 @@
  */
 
 @interface MCBookmarkManager : NSObject {
-    NSObject<OS_dispatch_queue> *_memberQueue;
-    NSArray *_memberQueueCurrentUserBookmarks;
-    NSDictionary *_memberQueueStashedBookmarksByLabel;
-    int _notificationToken;
+    NSObject<OS_dispatch_queue> * _memberQueue;
+    NSArray * _memberQueueCurrentUserBookmarks;
+    NSDictionary * _memberQueueStashedBookmarksByLabel;
+    int  _notificationToken;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *memberQueue;

@@ -3,15 +3,15 @@
  */
 
 @interface CKRecordActionMenuItem : CKActionMenuItem {
-    NSDate *_dateSelected;
-    BOOL _wasSelected;
+    NSDate * _dateSelected;
+    BOOL  _wasSelected;
 }
 
 @property (nonatomic, retain) NSDate *dateSelected;
 @property (nonatomic) BOOL wasSelected;
 
+- (void).cxx_destruct;
 - (id)dateSelected;
-- (void)dealloc;
 - (void)setDateSelected:(id)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setWasSelected:(BOOL)arg1;

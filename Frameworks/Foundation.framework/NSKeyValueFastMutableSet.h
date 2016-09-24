@@ -3,7 +3,7 @@
  */
 
 @interface NSKeyValueFastMutableSet : NSKeyValueMutableSet {
-    NSKeyValueMutatingSetMethodSet *_mutatingMethods;
+    NSKeyValueMutatingSetMethodSet * _mutatingMethods;
 }
 
 - (id)_proxyInitWithContainer:(id)arg1 getter:(id)arg2;

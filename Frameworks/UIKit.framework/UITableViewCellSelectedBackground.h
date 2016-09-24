@@ -3,11 +3,11 @@
  */
 
 @interface UITableViewCellSelectedBackground : UIView {
-    BOOL _multiselect;
-    UIColor *_multiselectBackgroundColor;
-    UIColor *_noneStyleBackgroundColor;
-    int _selectionStyle;
-    UIColor *_selectionTintColor;
+    BOOL  _multiselect;
+    UIColor * _multiselectBackgroundColor;
+    UIColor * _noneStyleBackgroundColor;
+    int  _selectionStyle;
+    UIColor * _selectionTintColor;
 }
 
 @property (getter=isMultiselect, nonatomic) BOOL multiselect;
@@ -17,7 +17,7 @@
 @property (nonatomic, retain) UIColor *selectionTintColor;
 
 - (void).cxx_destruct;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isMultiselect;
 - (id)multiselectBackgroundColor;
 - (id)noneStyleBackgroundColor;

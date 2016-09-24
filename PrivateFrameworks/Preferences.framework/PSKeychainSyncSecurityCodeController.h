@@ -3,14 +3,14 @@
  */
 
 @interface PSKeychainSyncSecurityCodeController : PSKeychainSyncTextEntryController {
-    NSString *_firstPasscodeEntry;
-    UIButton *_footerButton;
-    UILabel *_footerLabel;
-    NSString *_generatedCode;
-    float _keyboardHeight;
-    int _mode;
-    int _securityCodeType;
-    BOOL _showsAdvancedSettings;
+    NSString * _firstPasscodeEntry;
+    UIButton * _footerButton;
+    UILabel * _footerLabel;
+    NSString * _generatedCode;
+    double  _keyboardHeight;
+    int  _mode;
+    int  _securityCodeType;
+    BOOL  _showsAdvancedSettings;
 }
 
 @property (nonatomic, retain) NSString *firstPasscodeEntry;

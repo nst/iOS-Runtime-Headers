@@ -3,14 +3,14 @@
  */
 
 @interface _UIOLAConfigurationHistory : _UILAConfigurationHistory <_UIOLAPropertySource> {
-    BOOL _baselineRelativeArrangement;
-    int _distribution;
-    BOOL _hasEstablishedOrderingValues;
-    BOOL _inOrderedArrangementUpdateSection;
-    BOOL _itemFittingSizeChanged;
-    BOOL _itemOrderingChanged;
-    float _proportionalFillDenominator;
-    float _spacing;
+    BOOL  _baselineRelativeArrangement;
+    int  _distribution;
+    BOOL  _hasEstablishedOrderingValues;
+    BOOL  _inOrderedArrangementUpdateSection;
+    BOOL  _itemFittingSizeChanged;
+    BOOL  _itemOrderingChanged;
+    double  _proportionalFillDenominator;
+    double  _spacing;
 }
 
 @property (setter=_setItemFittingSizeChanged:, nonatomic) BOOL _itemFittingSizeChanged;
@@ -27,8 +27,8 @@
 @property (getter=isInOrderedArrangementUpdateSection, nonatomic) BOOL inOrderedArrangementUpdateSection;
 @property (nonatomic) BOOL layoutFillsCanvas;
 @property (nonatomic) BOOL layoutUsesCanvasMarginsWhenFilling;
-@property (nonatomic) float proportionalFillDenominator;
-@property (nonatomic) float spacing;
+@property (nonatomic) double proportionalFillDenominator;
+@property (nonatomic) double spacing;
 @property (readonly) Class superclass;
 
 - (BOOL)_itemFittingSizeChanged;

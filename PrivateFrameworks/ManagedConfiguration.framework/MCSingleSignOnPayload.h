@@ -3,8 +3,8 @@
  */
 
 @interface MCSingleSignOnPayload : MCPayload {
-    NSString *_humanReadableName;
-    MCSingleSignOnPayloadKerberosInfo *_kerberosInfo;
+    NSString * _humanReadableName;
+    MCSingleSignOnPayloadKerberosInfo * _kerberosInfo;
 }
 
 @property (nonatomic, retain) NSString *humanReadableName;

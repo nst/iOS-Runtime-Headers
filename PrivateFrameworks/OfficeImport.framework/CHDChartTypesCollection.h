@@ -3,7 +3,7 @@
  */
 
 @interface CHDChartTypesCollection : EDCollection {
-    CHDChart *mChart;
+    CHDChart * mChart;
 }
 
 - (unsigned int)addObject:(id)arg1;

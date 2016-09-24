@@ -3,9 +3,9 @@
  */
 
 @interface _NSConcreteObservation : NSObservation {
-    NSObject<NSObservable> *_LHSobservable;
-    NSObject<NSObserver> *_RHSobserver;
-    id _observers;
+    NSObject<NSObservable> * _LHSobservable;
+    NSObject<NSObserver> * _RHSobserver;
+    id  _observers;
 }
 
 - (id*)_observerStorage;

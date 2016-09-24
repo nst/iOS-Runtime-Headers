@@ -3,10 +3,10 @@
  */
 
 @interface MusicLibraryActionPendingValues : NSObject {
-    BOOL _hasPendingKeepLocalValue;
-    BOOL _hasPendingLibraryState;
-    int _pendingKeepLocalValue;
-    unsigned int _pendingLibraryState;
+    BOOL  _hasPendingKeepLocalValue;
+    BOOL  _hasPendingLibraryState;
+    int  _pendingKeepLocalValue;
+    unsigned int  _pendingLibraryState;
 }
 
 @property (nonatomic) BOOL hasPendingKeepLocalValue;

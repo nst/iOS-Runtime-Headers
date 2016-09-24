@@ -3,11 +3,11 @@
  */
 
 @interface SGPostalAddressComponents : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_city;
-    NSString *_country;
-    NSString *_postalCode;
-    NSString *_state;
-    NSString *_street;
+    NSString * _city;
+    NSString * _country;
+    NSString * _postalCode;
+    NSString * _state;
+    NSString * _street;
 }
 
 @property (nonatomic, readonly) NSString *city;

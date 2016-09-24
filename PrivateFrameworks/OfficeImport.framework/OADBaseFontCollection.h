@@ -3,9 +3,9 @@
  */
 
 @interface OADBaseFontCollection : NSObject {
-    NSString *_complexScriptFont;
-    NSString *_eastAsianFont;
-    NSString *_latinFont;
+    NSString * _complexScriptFont;
+    NSString * _eastAsianFont;
+    NSString * _latinFont;
 }
 
 @property (nonatomic, copy) NSString *complexScriptFont;

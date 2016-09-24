@@ -3,8 +3,8 @@
  */
 
 @interface CNPair : NSObject {
-    id _first;
-    id _second;
+    id  _first;
+    id  _second;
 }
 
 @property (readonly) id first;

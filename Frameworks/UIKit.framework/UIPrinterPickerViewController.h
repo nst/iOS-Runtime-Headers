@@ -3,20 +3,20 @@
  */
 
 @interface UIPrinterPickerViewController : UIViewController <UINavigationControllerDelegate, UIPrinterBrowserOwner> {
-    BOOL _animated;
-    BOOL _dismissed;
-    UINavigationController *_navigationController;
-    BOOL _observingRotation;
-    id _originalNavControllerDelegate;
-    UIViewController *_originalViewControllerInNav;
-    UIViewController *_parentController;
-    BOOL _parentHasNoPopover;
-    UIPopoverController *_poverController;
-    PKPrinter *_printer;
-    UIPrinterBrowserViewController *_printerBrowserViewController;
-    UIPrinterPickerController *_printerPickerController;
-    BOOL _userSelectedPrinter;
-    UIWindow *_window;
+    BOOL  _animated;
+    BOOL  _dismissed;
+    UINavigationController * _navigationController;
+    BOOL  _observingRotation;
+    id  _originalNavControllerDelegate;
+    UIViewController * _originalViewControllerInNav;
+    UIViewController * _parentController;
+    BOOL  _parentHasNoPopover;
+    UIPopoverController * _poverController;
+    PKPrinter * _printer;
+    UIPrinterBrowserViewController * _printerBrowserViewController;
+    UIPrinterPickerController * _printerPickerController;
+    BOOL  _userSelectedPrinter;
+    UIWindow * _window;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -41,7 +41,7 @@
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)presentPrinterPickerPanelAnimated:(BOOL)arg1;
 - (void)presentPrinterPickerPanelFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
-- (void)presentPrinterPickerPanelFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3;
+- (void)presentPrinterPickerPanelFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3;
 - (id)printer;
 - (void)printerBrowserViewDidDisappear;
 - (void)setPrinter:(id)arg1;

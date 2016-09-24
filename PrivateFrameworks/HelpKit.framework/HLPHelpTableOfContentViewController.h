@@ -3,23 +3,23 @@
  */
 
 @interface HLPHelpTableOfContentViewController : UITableViewController <UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating> {
-    UILabel *_copyrightFooterLabel;
-    NSLayoutConstraint *_copyrightFooterLabelHeightConstraint;
-    NSLayoutConstraint *_copyrightFooterLabelTopConstraint;
-    <HLPHelpTableOfContentViewControllerDelegate> *_delegate;
-    NSMutableArray *_displayHelpItems;
-    UIButton *_footerViewOverlayButton;
-    HLPHelpBookController *_helpBookController;
-    HLPHelpSearchIndexController *_helpSearchIndexController;
-    HLPHelpLocale *_locale;
-    float _minNameLabelHeight;
-    NSMutableArray *_openSections;
-    UISearchController *_searchController;
-    HLPHelpSearchResultTableViewController *_searchResultTableViewController;
-    NSArray *_searchTerms;
-    BOOL _searching;
-    UIView *_tableFooterView;
-    HLPHelpUsageController *_usageController;
+    UILabel * _copyrightFooterLabel;
+    NSLayoutConstraint * _copyrightFooterLabelHeightConstraint;
+    NSLayoutConstraint * _copyrightFooterLabelTopConstraint;
+    <HLPHelpTableOfContentViewControllerDelegate> * _delegate;
+    NSMutableArray * _displayHelpItems;
+    UIButton * _footerViewOverlayButton;
+    HLPHelpBookController * _helpBookController;
+    HLPHelpSearchIndexController * _helpSearchIndexController;
+    HLPHelpLocale * _locale;
+    double  _minNameLabelHeight;
+    NSMutableArray * _openSections;
+    UISearchController * _searchController;
+    HLPHelpSearchResultTableViewController * _searchResultTableViewController;
+    NSArray * _searchTerms;
+    BOOL  _searching;
+    UIView * _tableFooterView;
+    HLPHelpUsageController * _usageController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

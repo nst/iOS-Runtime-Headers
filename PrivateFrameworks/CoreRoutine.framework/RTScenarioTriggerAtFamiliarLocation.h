@@ -3,7 +3,7 @@
  */
 
 @interface RTScenarioTriggerAtFamiliarLocation : RTScenarioTrigger {
-    RTLocationOfInterest *_locationOfInterest;
+    RTLocationOfInterest * _locationOfInterest;
 }
 
 @property (nonatomic, readonly) RTLocationOfInterest *locationOfInterest;

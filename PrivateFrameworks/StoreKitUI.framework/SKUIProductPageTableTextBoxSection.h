@@ -3,13 +3,13 @@
  */
 
 @interface SKUIProductPageTableTextBoxSection : SKUIProductPageTableSection {
-    SKUIClientContext *_clientContext;
-    SKUIColorScheme *_colorScheme;
-    BOOL _isExpanded;
-    int _stringIndex;
-    NSString *_subtitle;
-    SKUILayoutCache *_textLayoutCache;
-    NSString *_title;
+    SKUIClientContext * _clientContext;
+    SKUIColorScheme * _colorScheme;
+    BOOL  _isExpanded;
+    int  _stringIndex;
+    NSString * _subtitle;
+    SKUILayoutCache * _textLayoutCache;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) SKUIColorScheme *colorScheme;

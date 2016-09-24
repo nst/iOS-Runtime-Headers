@@ -3,9 +3,9 @@
  */
 
 @interface SLGoogleLegacyTokenMigrationResponse : NSObject {
-    NSError *_error;
-    NSString *_responseBody;
-    int _statusCode;
+    NSError * _error;
+    NSString * _responseBody;
+    int  _statusCode;
 }
 
 @property (readonly) NSError *error;

@@ -3,9 +3,9 @@
  */
 
 @interface TSUBacktrace : NSObject {
-    void **_callstack;
-    int _frames;
-    int _initAdjustment;
+    void ** _callstack;
+    int  _frames;
+    int  _initAdjustment;
 }
 
 + (id)backtrace;
@@ -18,6 +18,7 @@
 - (id)caller;
 - (id)callerAtIndex:(int)arg1;
 - (void)dealloc;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithAdjustment:(int)arg1;
 - (BOOL)isEqual:(id)arg1;

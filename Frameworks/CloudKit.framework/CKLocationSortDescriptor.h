@@ -3,7 +3,7 @@
  */
 
 @interface CKLocationSortDescriptor : NSSortDescriptor <NSSecureCoding> {
-    CLLocation *_relativeLocation;
+    CLLocation * _relativeLocation;
 }
 
 @property (nonatomic, copy) CLLocation *relativeLocation;

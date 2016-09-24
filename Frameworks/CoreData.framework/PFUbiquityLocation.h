@@ -3,17 +3,17 @@
  */
 
 @interface PFUbiquityLocation : NSObject <NSCopying> {
-    NSString *_exportingPeerID;
-    NSString *_filename;
-    unsigned int _hash;
-    BOOL _isDirectory;
-    BOOL _isRootUbiquitous;
-    NSString *_modelVersionHash;
-    NSArray *_otherPathComponents;
-    NSString *_storeName;
-    int _ubiquityLocationType;
-    PFUbiquityLocation *_ubiquityRootLocation;
-    NSString *_ubiquityRootLocationPath;
+    NSString * _exportingPeerID;
+    NSString * _filename;
+    unsigned int  _hash;
+    BOOL  _isDirectory;
+    BOOL  _isRootUbiquitous;
+    NSString * _modelVersionHash;
+    NSArray * _otherPathComponents;
+    NSString * _storeName;
+    int  _ubiquityLocationType;
+    PFUbiquityLocation * _ubiquityRootLocation;
+    NSString * _ubiquityRootLocationPath;
 }
 
 @property (nonatomic, readonly) NSString *exportingPeerID;

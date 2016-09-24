@@ -3,10 +3,10 @@
  */
 
 @interface PLInstrumentedBlockOperation : NSBlockOperation {
-    double _creationTime;
-    double _executionEndTime;
-    double _executionStartTime;
-    BOOL _postambleAdded;
+    double  _creationTime;
+    double  _executionEndTime;
+    double  _executionStartTime;
+    BOOL  _postambleAdded;
 }
 
 @property (nonatomic) double creationTime;

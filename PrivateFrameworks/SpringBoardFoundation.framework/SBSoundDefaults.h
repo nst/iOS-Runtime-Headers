@@ -5,13 +5,11 @@
 @interface SBSoundDefaults : SBAbstractSpringBoardDefaultDomain
 
 @property (nonatomic, retain) NSString *calendarAlarmPath;
-@property (nonatomic) BOOL playLockSound;
 @property (nonatomic, readonly) BOOL playSoundOnBasebandReset;
 @property (nonatomic, readonly) BOOL playSoundOnDeviceWake;
 @property (getter=isRingerMuted, nonatomic) BOOL ringerMuted;
 @property (nonatomic, readonly) BOOL vibrateWhenRinging;
 @property (nonatomic, readonly) BOOL vibrateWhenSilent;
-@property (nonatomic, readonly) int vibrationPattern;
 
 - (void)_bindAndRegisterDefaults;
 

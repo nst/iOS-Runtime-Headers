@@ -5,10 +5,10 @@
 @interface GEOPDSource : PBCodable <NSCopying> {
     struct { 
         unsigned int resultProviderId : 1; 
-    } _has;
-    int _resultProviderId;
-    NSString *_sourceId;
-    NSString *_version;
+    }  _has;
+    int  _resultProviderId;
+    NSString * _sourceId;
+    NSString * _version;
 }
 
 @property (nonatomic) BOOL hasResultProviderId;

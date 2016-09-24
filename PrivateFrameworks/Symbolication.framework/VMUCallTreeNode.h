@@ -3,25 +3,25 @@
  */
 
 @interface VMUCallTreeNode : NSObject {
-    unsigned long long _address;
-    unsigned int _count;
-    NSString *_name;
-    unsigned long long _numBytes;
-    unsigned int _numChildren;
-    VMUCallTreeNode *_parent;
+    unsigned int  _address;
+    unsigned int  _count;
+    NSString * _name;
+    unsigned int  _numBytes;
+    unsigned int  _numChildren;
+    VMUCallTreeNode * _parent;
     union { 
         void *theChild; 
         void **theChildren; 
-    } _un;
+    }  _un;
 }
 
 + (id)makeFakeRootForNode:(id)arg1;
-+ (id)nodeWithName:(id)arg1 address:(unsigned long long)arg2 count:(unsigned int)arg3 numBytes:(unsigned long long)arg4;
++ (id)nodeWithName:(id)arg1 address:(unsigned int)arg2 count:(unsigned int)arg3 numBytes:(unsigned int)arg4;
 + (id)rootForSamples:(id)arg1 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2;
 + (id)rootForSamples:(id)arg1 symbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2 sampler:(id)arg3 options:(unsigned int)arg4;
 
 - (void)addChild:(id)arg1;
-- (unsigned long long)address;
+- (unsigned int)address;
 - (id)allChildren;
 - (id)browserName;
 - (BOOL)callTreeHasBranches;
@@ -37,12 +37,12 @@
 - (void)dealloc;
 - (id)filterOutSymbols:(id)arg1;
 - (id)filterOutSymbols:(id)arg1 required:(id)arg2;
-- (id)findOrAddChildWithName:(id)arg1 address:(unsigned long long)arg2;
-- (id)findOrAddChildWithName:(id)arg1 address:(unsigned long long)arg2 nodeSearchType:(int)arg3 isLeafNode:(BOOL)arg4;
+- (id)findOrAddChildWithName:(id)arg1 address:(unsigned int)arg2;
+- (id)findOrAddChildWithName:(id)arg1 address:(unsigned int)arg2 nodeSearchType:(int)arg3 isLeafNode:(BOOL)arg4;
 - (id)fullOutputWithThreshold:(unsigned int)arg1;
 - (id)fullOutputWithThreshold:(unsigned int)arg1 showPseudoNodes:(BOOL)arg2;
 - (void)getBrowserName:(id)arg1;
-- (id)initWithName:(id)arg1 address:(unsigned long long)arg2 count:(unsigned int)arg3 numBytes:(unsigned long long)arg4;
+- (id)initWithName:(id)arg1 address:(unsigned int)arg2 count:(unsigned int)arg3 numBytes:(unsigned int)arg4;
 - (id)invertedNode;
 - (BOOL)isMallocBlockContentNode;
 - (BOOL)isPseudo;
@@ -50,12 +50,12 @@
 - (id)name;
 - (id)nameWithStringsForSymbol:(id)arg1 library:(id)arg2 loadAddress:(id)arg3 offset:(id)arg4 address:(id)arg5 suffix:(id)arg6;
 - (id)nameWithoutOffset;
-- (unsigned long long)numBytes;
+- (unsigned int)numBytes;
 - (unsigned int)numChildren;
 - (id)parent;
-- (void)parseNameIntoSymbol:(id*)arg1 library:(id*)arg2 loadAddress:(unsigned long long*)arg3 offset:(unsigned long long*)arg4 address:(unsigned long long*)arg5 suffix:(id*)arg6;
+- (void)parseNameIntoSymbol:(id*)arg1 library:(id*)arg2 loadAddress:(unsigned int*)arg3 offset:(unsigned int*)arg4 address:(unsigned int*)arg5 suffix:(id*)arg6;
 - (id)pruneCount:(unsigned int)arg1;
-- (id)pruneMallocSize:(unsigned long long)arg1;
+- (id)pruneMallocSize:(unsigned int)arg1;
 - (id)pseudoName;
 - (id)pseudoNodeTopOfStackChild;
 - (void)setChildren:(id)arg1;

@@ -4,6 +4,8 @@
 
 @interface TDPackedRenditionSpec : TDRenditionSpec
 
+@property (nonatomic, retain) TDThemeCompressionType *compressionType;
+
 - (id)createCSIRepresentationWithCompression:(BOOL)arg1 colorSpaceID:(unsigned int)arg2 document:(id)arg3;
 
 @end

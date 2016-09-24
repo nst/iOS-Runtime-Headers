@@ -4,8 +4,6 @@
 
 @interface EKOrganizer : EKParticipant
 
-@property (getter=isCurrentUser, nonatomic) BOOL currentUser;
-
 + (id)organizerWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3 isCurrentUser:(BOOL)arg4;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

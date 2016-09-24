@@ -3,15 +3,15 @@
  */
 
 @interface MSCLTagListViewController : SKUIViewController <SKUIArtworkRequestDelegate, UITableViewDataSource, UITableViewDelegate> {
-    SKUIResourceLoader *_artworkLoader;
-    MSCLConfiguration *_configuration;
-    NSArray *_defaultTagSuggestions;
-    <MSCLTagListDelegate> *_delegate;
-    SSVLoadURLOperation *_loadTagsOperation;
-    NSArray *_matchedTagSuggestions;
-    UIImage *_placeholderImage;
-    UITableView *_tableView;
-    NSString *_tagString;
+    SKUIResourceLoader * _artworkLoader;
+    MSCLConfiguration * _configuration;
+    NSArray * _defaultTagSuggestions;
+    <MSCLTagListDelegate> * _delegate;
+    SSVLoadURLOperation * _loadTagsOperation;
+    NSArray * _matchedTagSuggestions;
+    UIImage * _placeholderImage;
+    UITableView * _tableView;
+    NSString * _tagString;
 }
 
 @property (nonatomic, readonly) MSCLConfiguration *configuration;

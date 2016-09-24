@@ -3,8 +3,8 @@
  */
 
 @interface TIKeyboardLayoutFactory : NSObject {
-    NSMutableDictionary *_internalCache;
-    void *_layoutsLibraryHandle;
+    NSMutableDictionary * _internalCache;
+    void * _layoutsLibraryHandle;
 }
 
 @property (retain) NSMutableDictionary *internalCache;

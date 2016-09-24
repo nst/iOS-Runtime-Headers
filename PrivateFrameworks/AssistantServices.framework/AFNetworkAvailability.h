@@ -3,13 +3,13 @@
  */
 
 @interface AFNetworkAvailability : NSObject {
-    int _notifyToken;
-    NSHashTable *_observers;
-    NSObject<OS_dispatch_queue> *_queue;
+    int  _notifyToken;
+    NSHashTable * _observers;
+    NSObject<OS_dispatch_queue> * _queue;
     struct AvailabilityState { 
         unsigned int availabilityIsKnown : 1; 
         unsigned int isAvailable : 1; 
-    } _state;
+    }  _state;
 }
 
 + (id)sharedAvailability;

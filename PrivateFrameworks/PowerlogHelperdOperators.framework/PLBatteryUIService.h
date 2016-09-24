@@ -3,8 +3,8 @@
  */
 
 @interface PLBatteryUIService : PLBatteryBreakdownService {
-    PLXPCResponderOperatorComposition *_batteryBreakdownResponder;
-    PLXPCResponderOperatorComposition *_modelsResponder;
+    PLXPCResponderOperatorComposition * _batteryBreakdownResponder;
+    PLXPCResponderOperatorComposition * _modelsResponder;
 }
 
 @property (retain) PLXPCResponderOperatorComposition *batteryBreakdownResponder;

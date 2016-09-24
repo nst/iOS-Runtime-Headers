@@ -3,11 +3,11 @@
  */
 
 @interface MusicMediaProfileSplitDetailViewController : UIViewController <MusicClientContextConsuming, MusicMediaDetailSplitViewController, MusicVerticalScrollingContainerViewControllerDelegate> {
-    MusicClientContext *_clientContext;
-    MusicMediaDetailTintInformation *_mediaDetailTintInformation;
-    <MusicMediaDetailSplitViewControllerDelegate> *_mediaSplitViewControllerDelegate;
-    UIViewController *_relatedContentViewController;
-    MusicVerticalScrollingContainerViewController *_verticalScrollingContainerViewController;
+    MusicClientContext * _clientContext;
+    MusicMediaDetailTintInformation * _mediaDetailTintInformation;
+    <MusicMediaDetailSplitViewControllerDelegate> * _mediaSplitViewControllerDelegate;
+    UIViewController * _relatedContentViewController;
+    MusicVerticalScrollingContainerViewController * _verticalScrollingContainerViewController;
 }
 
 @property (nonatomic, retain) MusicClientContext *clientContext;
@@ -22,7 +22,7 @@
 - (void).cxx_destruct;
 - (void)_applyTintInformation;
 - (void)_reloadVerticalScrollingContainerItems;
-- (void)_setContentOverlayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)_setContentOverlayInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (id)clientContext;
 - (id)contentScrollView;
 - (void)dealloc;
@@ -33,7 +33,7 @@
 - (void)setMediaDetailTintInformation:(id)arg1;
 - (void)setMediaSplitViewControllerDelegate:(id)arg1;
 - (void)setRelatedContentViewController:(id)arg1;
-- (void)verticalScrollingContainerViewController:(id)arg1 willEndDraggingWithVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
+- (void)verticalScrollingContainerViewController:(id)arg1 willEndDraggingWithVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
 - (void)verticalScrollingContainerViewControllerContentSizeDidChange:(id)arg1;
 - (void)verticalScrollingContainerViewControllerDidScroll:(id)arg1;
 - (void)viewDidLayoutSubviews;

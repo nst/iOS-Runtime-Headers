@@ -6,7 +6,7 @@
 @required
 
 - (const void*)dataOfLength:(unsigned int)arg1;
-- (unsigned long long)offsetInFile;
-- (void)seekToFileOffset:(unsigned long long)arg1;
+- (unsigned int)offsetInFile;
+- (void)seekToFileOffset:(unsigned int)arg1;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface SBSStatusBarStyleOverridesAssertion : NSObject {
-    SBSStatusBarStyleOverridesAssertionData *_assertionData;
-    id /* block */ _invalidationHandler;
+    SBSStatusBarStyleOverridesAssertionData * _assertionData;
+    id /* block */  _invalidationHandler;
 }
 
 @property (nonatomic, retain) SBSStatusBarStyleOverridesAssertionData *assertionData;

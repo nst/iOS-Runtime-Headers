@@ -3,31 +3,31 @@
  */
 
 @interface SUScalingFlipView : UIView {
-    UIView *_backView;
-    <SUScalingFlipViewDelegate> *_delegate;
-    int _direction;
-    double _duration;
+    UIView * _backView;
+    <SUScalingFlipViewDelegate> * _delegate;
+    int  _direction;
+    double  _duration;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _fromFrame;
-    UIView *_frontView;
+    }  _fromFrame;
+    UIView * _frontView;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _toFrame;
+    }  _toFrame;
 }
 
 @property (nonatomic) <SUScalingFlipViewDelegate> *delegate;
@@ -39,7 +39,7 @@
 - (id)_frontLayerAnimation;
 - (id)_inputColorAnimation;
 - (id)_positionAnimation;
-- (id)_transformAnimationWithStart:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg1 middle:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg2 end:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg3;
+- (id)_transformAnimationWithStart:(struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })arg1 middle:(struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })arg2 end:(struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })arg3;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)dealloc;
 - (id)delegate;

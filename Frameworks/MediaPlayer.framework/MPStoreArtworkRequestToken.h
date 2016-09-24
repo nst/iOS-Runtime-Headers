@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPStoreArtworkRequestToken : NSObject <NSCopying> {
-    NSURL *_artworkURL;
-    NSString *_cropStyle;
-    NSArray *_lookupItemArtworks;
-    BOOL _shouldIgnoreImage;
-    NSString *_sourceEditorialArtworkKind;
+@interface MPStoreArtworkRequestToken : NSObject <NSCopying, NSSecureCoding> {
+    NSURL * _artworkURL;
+    NSString * _cropStyle;
+    NSArray * _lookupItemArtworks;
+    BOOL  _shouldIgnoreImage;
+    NSString * _sourceEditorialArtworkKind;
 }
 
 @property (nonatomic, copy) NSURL *artworkURL;
@@ -16,10 +16,15 @@
 @property (nonatomic) BOOL shouldIgnoreImage;
 @property (nonatomic, copy) NSString *sourceEditorialArtworkKind;
 
++ (BOOL)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)artworkURL;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)cropStyle;
+- (void)encodeWithCoder:(id)arg1;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)lookupItemArtworks;
 - (void)setArtworkURL:(id)arg1;
 - (void)setCropStyle:(id)arg1;

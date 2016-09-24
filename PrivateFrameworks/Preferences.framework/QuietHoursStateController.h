@@ -3,18 +3,18 @@
  */
 
 @interface QuietHoursStateController : NSObject {
-    BBSettingsGateway *_bbGateway;
-    NSArray *_behaviorOverrides;
-    NSDateComponents *_fromComponents;
-    BOOL _isEffectiveWhileUnlocked;
-    unsigned int _mode;
-    int _overrideStatus;
-    unsigned int _overrideType;
-    NSArray *_overrides;
-    unsigned int _privilegeTypes;
-    int _recordID;
-    NSDateComponents *_toComponents;
-    BOOL _valid;
+    BBSettingsGateway * _bbGateway;
+    NSArray * _behaviorOverrides;
+    NSDateComponents * _fromComponents;
+    BOOL  _isEffectiveWhileUnlocked;
+    unsigned int  _mode;
+    int  _overrideStatus;
+    unsigned int  _overrideType;
+    NSArray * _overrides;
+    unsigned int  _privilegeTypes;
+    int  _recordID;
+    NSDateComponents * _toComponents;
+    BOOL  _valid;
 }
 
 @property (nonatomic, readonly) BBSettingsGateway *bbGateway;

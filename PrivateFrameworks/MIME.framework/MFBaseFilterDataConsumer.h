@@ -3,8 +3,8 @@
  */
 
 @interface MFBaseFilterDataConsumer : NSObject <MFDataConsumer> {
-    NSMutableArray *_consumers;
-    BOOL _serialAppend;
+    NSMutableArray * _consumers;
+    BOOL  _serialAppend;
 }
 
 @property (nonatomic, readonly) NSArray *consumers;

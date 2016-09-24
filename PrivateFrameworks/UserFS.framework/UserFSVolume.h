@@ -3,9 +3,9 @@
  */
 
 @interface UserFSVolume : NSObject {
-    NSObject<OS_xpc_object> *_connection;
-    NSString *_deviceName;
-    BOOL _isLocked;
+    NSObject<OS_xpc_object> * _connection;
+    NSString * _deviceName;
+    BOOL  _isLocked;
 }
 
 @property (nonatomic, retain) NSObject<OS_xpc_object> *connection;

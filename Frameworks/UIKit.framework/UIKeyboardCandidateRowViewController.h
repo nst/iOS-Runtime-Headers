@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKeyboardCandidateRowViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIKeyboardCandidateList> {
-    <UIKeyboardCandidateListDelegate> *_candidateListDelegate;
-    TIKeyboardCandidateResultSet *_candidateSet;
-    Class _cellClass;
-    <UIKeyboardCandidateRowViewControllerDelegate> *_delegate;
-    BOOL _showsHiddenCandidates;
+@interface UIKeyboardCandidateRowViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIKeyboardCandidateBarLayoutDelegate, UIKeyboardCandidateList> {
+    <UIKeyboardCandidateListDelegate> * _candidateListDelegate;
+    TIKeyboardCandidateResultSet * _candidateSet;
+    Class  _cellClass;
+    <UIKeyboardCandidateRowViewControllerDelegate> * _delegate;
+    BOOL  _showsHiddenCandidates;
 }
 
 @property (nonatomic) <UIKeyboardCandidateListDelegate> *candidateListDelegate;
@@ -36,16 +36,16 @@
 - (id)collectionView;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (id)currentCandidate;
 - (unsigned int)currentIndex;
+- (void)dealloc;
 - (id)delegate;
 - (BOOL)hasCandidates;
 - (id)initWithCellClass:(Class)arg1;
 - (BOOL)isExtendedList;
-- (BOOL)isHiddenCandidatesList;
 - (id)keyboardBehaviors;
 - (void)loadView;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
@@ -53,8 +53,8 @@
 - (unsigned int)selectedSortIndex;
 - (void)setCandidateListDelegate:(id)arg1;
 - (void)setCandidateSet:(id)arg1;
-- (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
-- (void)setCandidates:(id)arg1 type:(int)arg2 inlineText:(id)arg3 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 maxX:(float)arg5 layout:(BOOL)arg6;
+- (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
+- (void)setCandidates:(id)arg1 type:(int)arg2 inlineText:(id)arg3 inlineRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4 maxX:(float)arg5 layout:(BOOL)arg6;
 - (void)setCellClass:(Class)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setShowsHiddenCandidates:(BOOL)arg1;
@@ -68,7 +68,7 @@
 - (void)showPreviousPage;
 - (void)showPreviousRow;
 - (BOOL)showsHiddenCandidates;
-- (struct CGSize { float x1; float x2; })sizeOfDummyItemForCollectionView:(id)arg1 layout:(id)arg2;
+- (struct CGSize { double x1; double x2; })sizeOfDummyItemForCollectionView:(id)arg1 layout:(id)arg2;
 - (id)statisticsIdentifier;
 - (float)suggestedHeight;
 

@@ -3,8 +3,8 @@
  */
 
 @interface _HKSampleQueryServerDataObject : _HKQueryServerDataObject {
-    unsigned int _limit;
-    NSArray *_sortDescriptors;
+    unsigned int  _limit;
+    NSArray * _sortDescriptors;
 }
 
 @property (nonatomic) unsigned int limit;

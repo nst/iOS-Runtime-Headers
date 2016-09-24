@@ -3,11 +3,11 @@
  */
 
 @interface RadioShareInfoRequest : RadioRequest {
-    NSArray *_acceptedMIMETypes;
-    SSURLConnectionRequest *_request;
-    int _shareType;
-    NSString *_stationHash;
-    long long _stationID;
+    NSArray * _acceptedMIMETypes;
+    SSURLConnectionRequest * _request;
+    int  _shareType;
+    NSString * _stationHash;
+    int  _stationID;
 }
 
 @property (nonatomic, copy) NSArray *acceptedMIMETypes;

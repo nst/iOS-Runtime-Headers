@@ -3,12 +3,12 @@
  */
 
 @interface _HMLocationHandler : NSObject <CLLocationManagerDelegate> {
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    NSString *_effectiveLocationBundleIdentifier;
-    int _locationAuthorization;
-    NSHashTable *_locationAuthorizationDelegates;
-    CLLocationManager *_locationManager;
-    NSThread *_myThread;
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    NSString * _effectiveLocationBundleIdentifier;
+    int  _locationAuthorization;
+    NSHashTable * _locationAuthorizationDelegates;
+    CLLocationManager * _locationManager;
+    NSThread * _myThread;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;

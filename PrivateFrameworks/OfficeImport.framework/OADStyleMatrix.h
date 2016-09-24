@@ -3,11 +3,11 @@
  */
 
 @interface OADStyleMatrix : NSObject {
-    NSMutableArray *mBgFills;
-    NSMutableArray *mEffects;
-    NSMutableArray *mFills;
-    NSString *mName;
-    NSMutableArray *mStrokes;
+    NSMutableArray * mBgFills;
+    NSMutableArray * mEffects;
+    NSMutableArray * mFills;
+    NSString * mName;
+    NSMutableArray * mStrokes;
 }
 
 @property (nonatomic, copy) NSString *name;

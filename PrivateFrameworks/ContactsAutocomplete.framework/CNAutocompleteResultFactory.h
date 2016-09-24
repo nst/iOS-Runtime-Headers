@@ -3,8 +3,8 @@
  */
 
 @interface CNAutocompleteResultFactory : NSObject {
-    NSString *_preferredDomain;
-    NSString *_sendingAddress;
+    NSString * _preferredDomain;
+    NSString * _sendingAddress;
 }
 
 + (id)factoryWithPriorityDomain:(id)arg1 sendingAddress:(id)arg2;

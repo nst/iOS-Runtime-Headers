@@ -3,16 +3,16 @@
  */
 
 @interface TSTStrokeLayerMergedStack : TSTStrokeLayerAbstractStack {
-    TSTMutableStrokeLayer *_clearedMajorStrokeLayer;
-    TSTMutableStrokeLayer *_clearedMinorStrokeLayer;
-    TSTStrokeOrderedLayer *_customOrderedStrokeLayer;
-    TSTStrokeLayer *_customUnorderedStrokeLayer;
-    TSTStrokeLayer *_defaultMajorStrokeLayer;
-    TSTStrokeLayer *_defaultMinorStrokeLayer;
-    TSTStrokeOrderedLayer *_dynamicOrderedStrokeLayer;
-    TSTMutableStrokeLayer *_dynamicUnorderedStrokeLayer;
-    TSTMutableStrokeLayer *_spillMajorStrokeLayer;
-    TSTMutableStrokeLayer *_spillMinorStrokeLayer;
+    TSTMutableStrokeLayer * _clearedMajorStrokeLayer;
+    TSTMutableStrokeLayer * _clearedMinorStrokeLayer;
+    TSTStrokeOrderedLayer * _customOrderedStrokeLayer;
+    TSTStrokeLayer * _customUnorderedStrokeLayer;
+    TSTStrokeLayer * _defaultMajorStrokeLayer;
+    TSTStrokeLayer * _defaultMinorStrokeLayer;
+    TSTStrokeOrderedLayer * _dynamicOrderedStrokeLayer;
+    TSTMutableStrokeLayer * _dynamicUnorderedStrokeLayer;
+    TSTMutableStrokeLayer * _spillMajorStrokeLayer;
+    TSTMutableStrokeLayer * _spillMinorStrokeLayer;
 }
 
 @property (nonatomic, retain) TSTMutableStrokeLayer *clearedMajorStrokeLayer;

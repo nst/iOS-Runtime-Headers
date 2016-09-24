@@ -3,8 +3,8 @@
  */
 
 @interface HDCoachingDiagnosticData : NSObject {
-    HKCategorySample *_coachingEventSample;
-    NSArray *_items;
+    HKCategorySample * _coachingEventSample;
+    NSArray * _items;
 }
 
 @property (nonatomic, retain) HKCategorySample *coachingEventSample;

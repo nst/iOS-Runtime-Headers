@@ -3,26 +3,36 @@
  */
 
 @interface NEPathRule : NEAppRule <NEConfigurationValidating, NEPrettyDescription> {
-    NSNumber *_aggregateEnterpriseCellular;
-    NSNumber *_aggregatePersonalCellular;
-    BOOL _denyCellularFallback;
-    int _internalCellularBehavior;
+    NSNumber * _aggregateEnterpriseCellular;
+    NSNumber * _aggregateEnterpriseWiFi;
+    NSNumber * _aggregatePersonalCellular;
+    NSNumber * _aggregatePersonalWiFi;
+    BOOL  _denyCellularFallback;
+    int  _internalCellularBehavior;
+    int  _internalWiFiBehavior;
 }
 
 @property (retain) NSNumber *aggregateEnterpriseCellular;
+@property (retain) NSNumber *aggregateEnterpriseWiFi;
 @property (retain) NSNumber *aggregatePersonalCellular;
+@property (retain) NSNumber *aggregatePersonalWiFi;
 @property int cellularBehavior;
 @property (getter=isDefaultPathRule, readonly) BOOL defaultPathRule;
 @property BOOL denyCellularFallback;
 @property int internalCellularBehavior;
+@property int internalWiFiBehavior;
+@property int wifiBehavior;
 
 + (int)aggregateNetworkBehavior:(int)arg1 other:(int)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)addCellularBehavior:(int)arg1 grade:(int)arg2;
+- (void)addWiFiBehavior:(int)arg1 grade:(int)arg2;
 - (id)aggregateEnterpriseCellular;
+- (id)aggregateEnterpriseWiFi;
 - (id)aggregatePersonalCellular;
+- (id)aggregatePersonalWiFi;
 - (int)cellularBehavior;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)denyCellularFallback;
@@ -32,15 +42,22 @@
 - (id)initDefaultPathRule;
 - (id)initWithCoder:(id)arg1;
 - (int)internalCellularBehavior;
+- (int)internalWiFiBehavior;
 - (BOOL)isAggregateRule;
 - (BOOL)isDefaultPathRule;
 - (BOOL)isEqual:(id)arg1;
 - (void)setAggregateEnterpriseCellular:(id)arg1;
+- (void)setAggregateEnterpriseWiFi:(id)arg1;
 - (void)setAggregatePersonalCellular:(id)arg1;
+- (void)setAggregatePersonalWiFi:(id)arg1;
 - (void)setCellularBehavior:(int)arg1;
 - (void)setDenyCellularFallback:(BOOL)arg1;
 - (void)setInternalCellularBehavior:(int)arg1;
+- (void)setInternalWiFiBehavior:(int)arg1;
+- (void)setWifiBehavior:(int)arg1;
 - (BOOL)signingIdentifierAllowed:(id)arg1 domainsRequired:(out BOOL*)arg2;
 - (BOOL)supportsCellularBehavior:(int)arg1;
+- (BOOL)supportsWiFiBehavior:(int)arg1;
+- (int)wifiBehavior;
 
 @end

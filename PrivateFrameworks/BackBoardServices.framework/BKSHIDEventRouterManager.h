@@ -3,7 +3,7 @@
  */
 
 @interface BKSHIDEventRouterManager : BKSHIDEventRouterManagerBase {
-    BOOL _needsFlush;
+    BOOL  _needsFlush;
 }
 
 @property (nonatomic) BOOL needsFlush;

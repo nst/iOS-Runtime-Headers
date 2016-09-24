@@ -3,9 +3,9 @@
  */
 
 @interface MPAudioVideoRoutingViewController : UIViewController {
-    <MPAudioVideoRoutingViewControllerDelegate> *_delegate;
-    UINavigationController *_navigationController;
-    MPAudioVideoRoutingTableViewController *_tableViewController;
+    <MPAudioVideoRoutingViewControllerDelegate> * _delegate;
+    UINavigationController * _navigationController;
+    MPAudioVideoRoutingTableViewController * _tableViewController;
 }
 
 @property (nonatomic) <MPAudioVideoRoutingViewControllerDelegate> *delegate;

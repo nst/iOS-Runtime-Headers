@@ -3,7 +3,7 @@
  */
 
 @interface WBReadingListPrivate : NSObject {
-    WebBookmarksXPCConnection *_connection;
+    WebBookmarksXPCConnection * _connection;
 }
 
 - (void).cxx_destruct;

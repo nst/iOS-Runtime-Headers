@@ -3,7 +3,7 @@
  */
 
 @interface BLTIDSService : NSObject <BLTAbstractIDSService> {
-    IDSService *_service;
+    IDSService * _service;
 }
 
 @property (readonly, copy) NSString *debugDescription;

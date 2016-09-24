@@ -3,7 +3,7 @@
  */
 
 @interface AASigningSessionRequest : AARequest {
-    NSData *_sessionInfoRequestData;
+    NSData * _sessionInfoRequestData;
 }
 
 + (Class)responseClass;

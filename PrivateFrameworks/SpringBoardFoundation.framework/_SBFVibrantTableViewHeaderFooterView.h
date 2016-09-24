@@ -3,11 +3,11 @@
  */
 
 @interface _SBFVibrantTableViewHeaderFooterView : UITableViewHeaderFooterView {
-    _UIBackdropView *_backdrop;
-    NSString *_backdropGroupName;
-    int _graphicsQuality;
-    UIView *_plusDView;
-    BOOL _wantsPlusDLayer;
+    _UIBackdropView * _backdrop;
+    NSString * _backdropGroupName;
+    int  _graphicsQuality;
+    UIView * _plusDView;
+    BOOL  _wantsPlusDLayer;
 }
 
 @property (nonatomic, copy) NSString *backdropGroupName;

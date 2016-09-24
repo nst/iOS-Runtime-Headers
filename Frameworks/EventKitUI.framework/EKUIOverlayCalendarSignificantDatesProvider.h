@@ -3,15 +3,15 @@
  */
 
 @interface EKUIOverlayCalendarSignificantDatesProvider : NSObject {
-    CalDateRange *_cachedCentralYear;
-    CalDateRange *_cachedDateRange;
-    NSDictionary *_cachedFirstsOfMonths;
-    NSDictionary *_cachedFirstsOfYears;
-    unsigned int _currentGeneration;
-    NSDate *_currentRequest;
-    BOOL _loadPending;
-    NSObject<OS_dispatch_queue> *_queue;
-    id /* block */ _significantDatesChangedHandler;
+    CalDateRange * _cachedCentralYear;
+    CalDateRange * _cachedDateRange;
+    NSDictionary * _cachedFirstsOfMonths;
+    NSDictionary * _cachedFirstsOfYears;
+    unsigned int  _currentGeneration;
+    NSDate * _currentRequest;
+    BOOL  _loadPending;
+    NSObject<OS_dispatch_queue> * _queue;
+    id /* block */  _significantDatesChangedHandler;
 }
 
 @property (nonatomic, copy) id /* block */ significantDatesChangedHandler;

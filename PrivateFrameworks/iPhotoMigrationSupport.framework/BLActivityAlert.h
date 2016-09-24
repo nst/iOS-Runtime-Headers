@@ -3,11 +3,11 @@
  */
 
 @interface BLActivityAlert : BLAlert {
-    UIActivityIndicatorView *_activityIndicatorView;
-    BOOL _hasActivity;
-    float _progress;
-    UIProgressView *_progressView;
-    int _type;
+    UIActivityIndicatorView * _activityIndicatorView;
+    BOOL  _hasActivity;
+    double  _progress;
+    UIProgressView * _progressView;
+    int  _type;
 }
 
 - (void).cxx_destruct;

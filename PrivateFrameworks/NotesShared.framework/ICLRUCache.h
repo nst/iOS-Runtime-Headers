@@ -3,10 +3,10 @@
  */
 
 @interface ICLRUCache : NSObject {
-    <ICLRUCacheDelegate> *_delegate;
-    NSMapTable *mData;
-    unsigned int mMax;
-    NSMutableArray *mOrderedKeys;
+    <ICLRUCacheDelegate> * _delegate;
+    NSMapTable * mData;
+    unsigned int  mMax;
+    NSMutableArray * mOrderedKeys;
 }
 
 @property (nonatomic, readonly) NSArray *allKeys;

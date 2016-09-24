@@ -3,11 +3,11 @@
  */
 
 @interface AppLaunchStatsSaveAndRestore : NSObject {
-    bool allowSave;
-    NSObject<OS_dispatch_queue> *aplsSaveAndRestoreQueue;
-    bool hasSavedData;
-    NSMutableArray *saveRestoreObjects;
-    NSMutableDictionary *saveState;
+    bool  allowSave;
+    NSObject<OS_dispatch_queue> * aplsSaveAndRestoreQueue;
+    bool  hasSavedData;
+    NSMutableArray * saveRestoreObjects;
+    NSMutableDictionary * saveState;
 }
 
 @property (nonatomic) bool allowSave;

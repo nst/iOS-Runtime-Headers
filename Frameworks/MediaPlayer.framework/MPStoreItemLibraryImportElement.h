@@ -3,17 +3,17 @@
  */
 
 @interface MPStoreItemLibraryImportElement : NSObject {
-    NSDictionary *_additionalTrackMetadata;
-    long long _storeItemID;
+    NSDictionary * _additionalTrackMetadata;
+    int  _storeItemID;
 }
 
 @property (nonatomic, readonly) NSDictionary *additionalTrackMetadata;
-@property (nonatomic, readonly) long long storeItemID;
+@property (nonatomic, readonly) int storeItemID;
 
 - (void).cxx_destruct;
 - (id)additionalTrackMetadata;
-- (id)initWithStoreItemID:(long long)arg1 additionalTrackMetadata:(id)arg2;
+- (id)initWithStoreItemID:(int)arg1 additionalTrackMetadata:(id)arg2;
 - (id)storeItem;
-- (long long)storeItemID;
+- (int)storeItemID;
 
 @end

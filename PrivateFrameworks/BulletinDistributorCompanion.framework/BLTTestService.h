@@ -3,7 +3,7 @@
  */
 
 @interface BLTTestService : NSObject {
-    NSXPCConnection *_connection;
+    NSXPCConnection * _connection;
 }
 
 + (id)sharedTestService;
@@ -20,9 +20,10 @@
 - (id)init;
 - (void)originalSettingsWithCompletion:(id /* block */)arg1;
 - (void)overriddenSettingsWithCompletion:(id /* block */)arg1;
-- (void)sendAllSectionInfoWithCompletion:(id /* block */)arg1;
+- (void)sendAllSectionInfoWithSpool:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)sendSectionInfoWithSectionID:(id)arg1 completion:(id /* block */)arg2;
 - (void)settingOverridesWithCompletion:(id /* block */)arg1;
-- (void)willAlertForSectionID:(id)arg1 subtype:(int)arg2 considerSubtype:(BOOL)arg3 completion:(id /* block */)arg4;
+- (void)spoolSectionInfoWithCompletion:(id /* block */)arg1;
+- (void)willAlertForSectionID:(id)arg1 subtype:(int)arg2 completion:(id /* block */)arg3;
 
 @end

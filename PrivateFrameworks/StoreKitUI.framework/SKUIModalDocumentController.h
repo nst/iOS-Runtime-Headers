@@ -3,20 +3,22 @@
  */
 
 @interface SKUIModalDocumentController : NSObject <AAUIFamilySetupDelegate, SKComposeReviewDelegate, SKUIGiftViewControllerDelegate, SKUIModalDocumentController, SKUIOverlayContainerDelegate, UIPopoverControllerDelegate, UIPopoverPresentationControllerDelegate> {
-    SKUIClientContext *_clientContext;
-    NSMutableArray *_composeReviewViewControllers;
-    <SKUIModalDocumentDataSource> *_dataSource;
-    <SKUIModalDocumentDelegate> *_delegate;
-    NSMutableArray *_giftViewControllers;
-    <SKUIModalSourceViewProvider> *_modalSourceViewProvider;
-    <UINavigationControllerDelegate> *_navigationControllerDelegate;
-    UINavigationController *_overlayNavigationController;
-    SKUIOverlayContainerViewController *_overlayViewController;
-    UIPopoverController *_popoverController;
-    UIViewController *_rootViewController;
-    NSMutableArray *_stackItems;
+    SKUIClientContext * _clientContext;
+    NSMutableArray * _composeReviewViewControllers;
+    <SKUIModalDocumentDataSource> * _dataSource;
+    <SKUIModalDocumentDelegate> * _delegate;
+    NSMutableArray * _giftViewControllers;
+    <SKUIModalSourceViewProvider> * _modalSourceViewProvider;
+    <UINavigationControllerDelegate> * _navigationControllerDelegate;
+    UINavigationController * _overlayNavigationController;
+    SKUIOverlayContainerViewController * _overlayViewController;
+    UIPopoverController * _popoverController;
+    UIViewController * _rootViewController;
+    NSMutableArray * _stackItems;
 }
 
+@property (nonatomic, readonly) UINavigationController *_overlayNavigationController;
+@property (nonatomic, readonly) SKUIOverlayContainerViewController *_overlayViewController;
 @property (nonatomic, retain) SKUIClientContext *clientContext;
 @property (nonatomic) <SKUIModalDocumentDataSource> *dataSource;
 @property (readonly, copy) NSString *debugDescription;
@@ -30,12 +32,14 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_centerRect:(id)arg1 adjust:(BOOL)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_centerRect:(id)arg1 adjust:(BOOL)arg2;
 - (void)_dismissOverlayControllerWithStackItem:(id)arg1 animated:(BOOL)arg2;
 - (void)_garbageCollectActivityViewController:(id)arg1;
 - (id)_imageForImageViewElement:(id)arg1;
 - (void)_overlayControllerBackstopAction:(id)arg1;
+- (id)_overlayNavigationController;
 - (id)_overlayStackItems;
+- (id)_overlayViewController;
 - (void)_popDocument:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)_popDocumentSkippingUserInterfaceUpdates;
 - (void)_popOverlayStackItem:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
@@ -65,6 +69,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)documents;
+- (void)ensureOverlayNavigationControllerStackConsistencyForNavigationController:(id)arg1;
 - (void)familySetupViewController:(id)arg1 didCompleteWithSuccess:(BOOL)arg2;
 - (void)giftViewController:(id)arg1 didFinishWithResult:(BOOL)arg2;
 - (id)init;
@@ -77,7 +82,7 @@
 - (void)popDocument;
 - (void)popToDocument:(id)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
-- (void)popoverPresentationController:(id)arg1 willRepositionPopoverToRect:(inout struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 inView:(inout id*)arg3;
+- (void)popoverPresentationController:(id)arg1 willRepositionPopoverToRect:(inout struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 inView:(inout id*)arg3;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (void)presentOverlayViewControllersFromNavigationController:(id)arg1;
 - (void)pushDocument:(id)arg1 options:(id)arg2;

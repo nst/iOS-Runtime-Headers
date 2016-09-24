@@ -3,11 +3,11 @@
  */
 
 @interface NSSQLCorrelationTableUpdateTracker : NSObject {
-    id _deletes;
-    id _inserts;
-    id _masterUpdates;
-    id _otherUpdates;
-    NSSQLManyToMany *_relationship;
+    id  _deletes;
+    id  _inserts;
+    id  _masterUpdates;
+    id  _otherUpdates;
+    NSSQLManyToMany * _relationship;
 }
 
 @property (readonly) NSSQLManyToMany *relationship;

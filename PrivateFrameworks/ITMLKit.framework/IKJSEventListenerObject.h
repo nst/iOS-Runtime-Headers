@@ -3,7 +3,7 @@
  */
 
 @interface IKJSEventListenerObject : IKJSObject <IKJSEventListenerObject> {
-    NSMutableDictionary *_eventListenersMap;
+    NSMutableDictionary * _eventListenersMap;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *eventListenersMap;

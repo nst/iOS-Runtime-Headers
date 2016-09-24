@@ -3,13 +3,14 @@
  */
 
 @interface WBSQuickWebsiteSearchProvider : NSObject {
-    NSDate *_dateAdded;
-    NSDate *_dateOfLastSearch;
-    NSString *_displayName;
-    NSString *_hostname;
-    NSString *_openSearchDescriptionURLString;
-    WBSOpenSearchURLTemplate *_searchURLTemplateFromForm;
-    NSString *_sourcePageURLString;
+    NSDate * _dateAdded;
+    NSDate * _dateOfLastSearch;
+    <WBSQuickWebsiteSearchProviderDelegate> * _delegate;
+    NSString * _displayName;
+    NSString * _hostname;
+    NSString * _openSearchDescriptionURLString;
+    WBSOpenSearchURLTemplate * _searchURLTemplateFromForm;
+    NSString * _sourcePageURLString;
 }
 
 @property (nonatomic, readonly) NSDate *dateAdded;
@@ -29,9 +30,9 @@
 - (id)dictionaryRepresentation;
 - (id)displayName;
 - (id)hostname;
-- (id)initWithDictionaryRepresentation:(id)arg1;
-- (id)initWithSourcePageURLString:(id)arg1 openSearchDescriptionURLString:(id)arg2;
-- (id)initWithSourcePageURLString:(id)arg1 searchURLTemplateFromForm:(id)arg2;
+- (id)initWithDictionaryRepresentation:(id)arg1 delegate:(id)arg2;
+- (id)initWithSourcePageURLString:(id)arg1 openSearchDescriptionURLString:(id)arg2 delegate:(id)arg3;
+- (id)initWithSourcePageURLString:(id)arg1 searchURLTemplateFromForm:(id)arg2 delegate:(id)arg3;
 - (id)openSearchDescription;
 - (id)openSearchDescriptionURLString;
 - (id)searchURLTemplate;

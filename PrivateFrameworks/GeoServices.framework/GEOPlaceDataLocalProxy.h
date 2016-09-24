@@ -3,12 +3,13 @@
  */
 
 @interface GEOPlaceDataLocalProxy : NSObject <GEOPlaceDataProxy> {
-    GEOPlaceDataCacheRegister *_cacheRegister;
-    NSMapTable *_pendingRequests;
-    NSLock *_pendingRequestsLock;
-    GEOPhoneNumberMUIDMapper *_phoneNumberMapper;
-    NSMutableOrderedSet *_placeHashes;
-    NSMutableSet *_requestsInProgress;
+    NSObject<OS_dispatch_queue> * _accessSerialQueue;
+    GEOPlaceDataCacheRegister * _cacheRegister;
+    NSMapTable * _pendingRequests;
+    GEOPhoneNumberMUIDMapper * _phoneNumberMapper;
+    NSMutableOrderedSet * _placeHashes;
+    NSMutableArray * _requestHandlersPending;
+    NSMutableSet * _requestsInProgress;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -33,10 +34,10 @@
 - (void)fetchAllCacheEntriesWithRequesterHandler:(id /* block */)arg1;
 - (id)init;
 - (void)performPlaceDataRequest:(id)arg1 traits:(id)arg2 timeout:(double)arg3 auditToken:(id)arg4 networkActivity:(id /* block */)arg5 requesterHandler:(id /* block */)arg6;
-- (void)requestComponentsFromNetwork:(id)arg1 muid:(unsigned long long)arg2 resultProviderID:(int)arg3 traits:(id)arg4 auditToken:(id)arg5 requesterHandler:(id /* block */)arg6;
+- (void)requestComponentsFromNetwork:(id)arg1 muid:(unsigned int)arg2 resultProviderID:(int)arg3 traits:(id)arg4 auditToken:(id)arg5 requesterHandler:(id /* block */)arg6;
 - (void)requestMUIDs:(id)arg1 resultProviderID:(int)arg2 includeETA:(BOOL)arg3 traits:(id)arg4 options:(unsigned int)arg5 auditToken:(id)arg6 requesterHandler:(id /* block */)arg7;
 - (void)requestPhoneNumbers:(id)arg1 allowCellularDataForLookup:(BOOL)arg2 traits:(id)arg3 auditToken:(id)arg4 requesterHandler:(id /* block */)arg5;
-- (void)shrinkBySize:(unsigned long long)arg1 finished:(id /* block */)arg2;
+- (void)shrinkBySize:(unsigned int)arg1 finished:(id /* block */)arg2;
 - (void)startRequest:(id)arg1 traits:(id)arg2 timeout:(double)arg3 auditToken:(id)arg4 finished:(id /* block */)arg5 networkActivity:(id /* block */)arg6 error:(id /* block */)arg7;
 - (void)trackPlaceData:(id)arg1;
 

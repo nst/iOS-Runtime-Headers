@@ -3,9 +3,9 @@
  */
 
 @interface OADScene3D : NSObject <NSCopying> {
-    OADBackdrop *mBackdrop;
-    OADCamera *mCamera;
-    OADLightRig *mLightRig;
+    OADBackdrop * mBackdrop;
+    OADCamera * mCamera;
+    OADLightRig * mLightRig;
 }
 
 + (id)nullScene3D;

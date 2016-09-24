@@ -3,8 +3,8 @@
  */
 
 @interface SKUIHandleRulesSettingsHeaderFooterDescription : SKUISettingsHeaderFooterDescription {
-    SKUIClientContext *_clientContext;
-    BOOL _showInvalid;
+    SKUIClientContext * _clientContext;
+    BOOL  _showInvalid;
 }
 
 @property (nonatomic) BOOL showInvalid;

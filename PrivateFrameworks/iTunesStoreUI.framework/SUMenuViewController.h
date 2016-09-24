@@ -3,9 +3,9 @@
  */
 
 @interface SUMenuViewController : SUViewController <UITableViewDataSource, UITableViewDelegate> {
-    <SUMenuViewControllerDelegate> *_delegate;
-    int _selectedIndex;
-    UITableView *_tableView;
+    <SUMenuViewControllerDelegate> * _delegate;
+    int  _selectedIndex;
+    UITableView * _tableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -22,8 +22,8 @@
 - (id)init;
 - (BOOL)isMenuItemEnabledAtIndex:(int)arg1;
 - (void)loadView;
-- (struct CGSize { float x1; float x2; })maximumViewSize;
-- (struct CGSize { float x1; float x2; })minimumViewSize;
+- (struct CGSize { double x1; double x2; })maximumViewSize;
+- (struct CGSize { double x1; double x2; })minimumViewSize;
 - (int)numberOfMenuItems;
 - (void)performActionForMenuItemAtIndex:(int)arg1;
 - (void)reload;

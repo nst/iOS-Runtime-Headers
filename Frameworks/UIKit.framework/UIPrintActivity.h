@@ -3,7 +3,7 @@
  */
 
 @interface UIPrintActivity : UIActivity {
-    UIViewController *_wrapperViewController;
+    UIViewController * _wrapperViewController;
 }
 
 @property (retain) UIViewController *wrapperViewController;

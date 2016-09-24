@@ -3,28 +3,28 @@
  */
 
 @interface UIKeyboardCandidateGridCellAttributes : UICollectionViewLayoutAttributes {
-    NSIndexPath *_candidateIndexPath;
-    unsigned int _candidateNumber;
-    int _candidatesVisualStyle;
-    BOOL _dummy;
-    unsigned int _edges;
-    BOOL _emphasizedAppearance;
-    BOOL _groupHeader;
-    BOOL _groupShowsAlternativeText;
-    BOOL _needsPaddingForIndexScrubber;
-    unsigned int _rowIndex;
+    NSIndexPath * _candidateIndexPath;
+    unsigned int  _candidateNumber;
+    int  _candidatesVisualStyle;
+    BOOL  _dummy;
+    unsigned int  _edges;
+    BOOL  _emphasizedAppearance;
+    BOOL  _groupHeader;
+    BOOL  _groupShowsAlternativeText;
+    BOOL  _needsPaddingForIndexScrubber;
+    unsigned int  _rowIndex;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _rowSize;
-    BOOL _secondaryCandidateAppearance;
+        double width; 
+        double height; 
+    }  _rowSize;
+    BOOL  _secondaryCandidateAppearance;
     struct { 
         unsigned int idiom : 6; 
         unsigned int landscape : 1; 
         unsigned int split : 1; 
         unsigned int appearance : 8; 
         unsigned int rendering : 16; 
-    } _visualStyling;
+    }  _visualStyling;
 }
 
 @property (nonatomic, retain) NSIndexPath *candidateIndexPath;
@@ -37,7 +37,7 @@
 @property (nonatomic) BOOL groupShowsAlternativeText;
 @property (nonatomic) BOOL needsPaddingForIndexScrubber;
 @property (nonatomic) unsigned int rowIndex;
-@property (nonatomic) struct CGSize { float x1; float x2; } rowSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } rowSize;
 @property (nonatomic) BOOL secondaryCandidateAppearance;
 @property (nonatomic) struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
 
@@ -57,7 +57,7 @@
 - (BOOL)needsPaddingForIndexScrubber;
 - (unsigned int)representedElementCategory;
 - (unsigned int)rowIndex;
-- (struct CGSize { float x1; float x2; })rowSize;
+- (struct CGSize { double x1; double x2; })rowSize;
 - (BOOL)secondaryCandidateAppearance;
 - (void)setCandidateIndexPath:(id)arg1;
 - (void)setCandidateNumber:(unsigned int)arg1;
@@ -69,7 +69,7 @@
 - (void)setGroupShowsAlternativeText:(BOOL)arg1;
 - (void)setNeedsPaddingForIndexScrubber:(BOOL)arg1;
 - (void)setRowIndex:(unsigned int)arg1;
-- (void)setRowSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setRowSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setSecondaryCandidateAppearance:(BOOL)arg1;
 - (void)setVisualStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1;
 - (struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })visualStyling;

@@ -3,8 +3,8 @@
  */
 
 @interface __NSGenericDeallocHandler  {
-    id /* block */ _block;
-    Class isa;
+    id /* block */  _block;
+    Class  isa;
 }
 
 + (void)initialize;

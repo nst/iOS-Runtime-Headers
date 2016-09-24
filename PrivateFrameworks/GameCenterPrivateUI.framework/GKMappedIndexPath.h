@@ -3,8 +3,8 @@
  */
 
 @interface GKMappedIndexPath : NSIndexPath {
-    NSIndexPath *_sourceIndexPath;
-    id _tag;
+    NSIndexPath * _sourceIndexPath;
+    id  _tag;
 }
 
 @property (nonatomic, copy) NSIndexPath *sourceIndexPath;

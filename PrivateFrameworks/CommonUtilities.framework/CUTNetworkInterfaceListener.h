@@ -3,13 +3,13 @@
  */
 
 @interface CUTNetworkInterfaceListener : NSObject {
-    NSSet *_IPv4Addresses;
-    NSSet *_IPv6Addresses;
-    int _cellState;
-    NSHashTable *_delegateMap;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    void *_dynamicStore;
-    int _wifiState;
+    NSSet * _IPv4Addresses;
+    NSSet * _IPv6Addresses;
+    int  _cellState;
+    NSHashTable * _delegateMap;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    void * _dynamicStore;
+    int  _wifiState;
 }
 
 @property (nonatomic, readonly, retain) NSSet *IPv4Addresses;

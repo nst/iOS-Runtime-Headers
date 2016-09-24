@@ -3,11 +3,11 @@
  */
 
 @interface CKDModifySubscriptionsOperation : CKDDatabaseOperation {
-    id /* block */ _deleteCompletionBlock;
-    id /* block */ _saveCompletionBlock;
-    NSArray *_subscriptionIDsToDelete;
-    NSMutableDictionary *_subscriptionsByServerID;
-    NSArray *_subscriptionsToSave;
+    id /* block */  _deleteCompletionBlock;
+    id /* block */  _saveCompletionBlock;
+    NSArray * _subscriptionIDsToDelete;
+    NSMutableDictionary * _subscriptionsByServerID;
+    NSArray * _subscriptionsToSave;
 }
 
 @property (nonatomic, copy) id /* block */ deleteCompletionBlock;
@@ -21,7 +21,7 @@
 - (void)_handleSubscriptionDeleted:(id)arg1 responseCode:(id)arg2;
 - (void)_handleSubscriptionSaved:(id)arg1 error:(id)arg2;
 - (void)_handleSubscriptionSaved:(id)arg1 responseCode:(id)arg2;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (id /* block */)deleteCompletionBlock;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;

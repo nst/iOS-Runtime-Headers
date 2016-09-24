@@ -3,7 +3,7 @@
  */
 
 @interface ABMemberNameViewCache : NSObject {
-    NSCache *_styleProvidersCache;
+    NSCache * _styleProvidersCache;
 }
 
 + (id)sharedInstance;

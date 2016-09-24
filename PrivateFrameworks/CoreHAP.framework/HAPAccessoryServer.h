@@ -3,26 +3,27 @@
  */
 
 @interface HAPAccessoryServer : NSObject {
-    NSArray *_accessories;
-    NSArray *_associatedAccessories;
-    <HAPAccessoryServerForBridgeDelegate> *_bridgeDelegate;
-    NSNumber *_category;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    <HAPAccessoryServerDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    NSArray *_discoveredAccessories;
-    BOOL _hasPairings;
-    NSString *_homeName;
-    NSString *_identifier;
-    BOOL _incompatibleUpdate;
-    NSObject<OS_dispatch_queue> *_internalDelegateQueue;
-    NSHashTable *_internalDelegates;
-    <HAPKeyStore> *_keyStore;
-    NSString *_name;
-    NSString *_pairSetupPassword;
-    HAPAccessory *_primaryAccessory;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
-    BOOL _reachable;
+    NSArray * _accessories;
+    NSArray * _associatedAccessories;
+    <HAPAccessoryServerForBridgeDelegate> * _bridgeDelegate;
+    NSNumber * _category;
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    <HAPAccessoryServerDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    NSArray * _discoveredAccessories;
+    BOOL  _hasPairings;
+    NSString * _homeName;
+    NSString * _identifier;
+    BOOL  _incompatibleUpdate;
+    NSObject<OS_dispatch_queue> * _internalDelegateQueue;
+    NSHashTable * _internalDelegates;
+    <HAPKeyStore> * _keyStore;
+    NSString * _name;
+    NSString * _pairSetupPassword;
+    HAPAccessory * _primaryAccessory;
+    NSObject<OS_dispatch_queue> * _propertyQueue;
+    BOOL  _reachable;
+    BOOL  _securitySessionOpen;
 }
 
 @property (nonatomic, copy) NSArray *accessories;
@@ -47,6 +48,7 @@
 @property (nonatomic, retain) HAPAccessory *primaryAccessory;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (getter=isReachable, nonatomic) BOOL reachable;
+@property (getter=isSecuritySessionOpen) BOOL securitySessionOpen;
 
 + (BOOL)isAccessoryServerWithIdentifierPaired:(id)arg1 keyStore:(id)arg2;
 
@@ -77,6 +79,7 @@
 - (BOOL)isIncompatibleUpdate;
 - (BOOL)isPaired;
 - (BOOL)isReachable;
+- (BOOL)isSecuritySessionOpen;
 - (id)keyStore;
 - (int)linkType;
 - (void)listPairingsWithCompletionQueue:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -106,6 +109,7 @@
 - (void)setPairSetupPassword:(id)arg1;
 - (void)setPrimaryAccessory:(id)arg1;
 - (void)setReachable:(BOOL)arg1;
+- (void)setSecuritySessionOpen:(BOOL)arg1;
 - (void)setTheBridgeDelegate:(id)arg1;
 - (void)startPairing;
 - (BOOL)stopPairingWithError:(id*)arg1;

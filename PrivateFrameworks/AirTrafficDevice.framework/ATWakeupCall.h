@@ -3,16 +3,16 @@
  */
 
 @interface ATWakeupCall : NSObject <NSNetServiceBrowserDelegate, NSNetServiceDelegate> {
-    NSNetServiceBrowser *_browser;
-    id /* block */ _completion;
-    NSMutableArray *_hostLibraryIdentifiers;
-    unsigned int _hostsToResolve;
-    NSMutableArray *_resolvedLibraryIdentifiers;
-    NSMutableArray *_resolvedLibraryServices;
-    int _resolving;
-    NSMutableArray *_resolvingHosts;
-    BOOL _searching;
-    NSThread *_wakeThread;
+    NSNetServiceBrowser * _browser;
+    id /* block */  _completion;
+    NSMutableArray * _hostLibraryIdentifiers;
+    unsigned int  _hostsToResolve;
+    NSMutableArray * _resolvedLibraryIdentifiers;
+    NSMutableArray * _resolvedLibraryServices;
+    int  _resolving;
+    NSMutableArray * _resolvingHosts;
+    BOOL  _searching;
+    NSThread * _wakeThread;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,7 +3,7 @@
  */
 
 @interface IKCSSParseToken : IKCSSParseObject {
-    IKCSSToken *_token;
+    IKCSSToken * _token;
 }
 
 @property (nonatomic, retain) IKCSSToken *token;

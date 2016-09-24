@@ -3,8 +3,8 @@
  */
 
 @interface FAFamilyCircleRequest : NSObject {
-    NSString *_passwordOrToken;
-    NSString *_usernameOrDSID;
+    NSString * _passwordOrToken;
+    NSString * _usernameOrDSID;
 }
 
 @property (copy) NSString *passwordOrToken;

@@ -3,8 +3,8 @@
  */
 
 @interface NSComplexRegularExpressionCheckingResult : NSRegularExpressionCheckingResult {
-    NSArray *_rangeArray;
-    NSRegularExpression *_regularExpression;
+    NSArray * _rangeArray;
+    NSRegularExpression * _regularExpression;
 }
 
 - (BOOL)_adjustRangesWithOffset:(int)arg1;

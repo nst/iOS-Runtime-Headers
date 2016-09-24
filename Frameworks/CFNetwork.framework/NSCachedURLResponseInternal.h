@@ -3,11 +3,11 @@
  */
 
 @interface NSCachedURLResponseInternal : NSObject {
-    struct _CFCachedURLResponse { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFCachedURLResponse {} *x2; } *_cachedURLResponse;
-    NSData *data;
-    NSURLResponse *response;
-    unsigned int storagePolicy;
-    NSDictionary *userInfo;
+    struct _CFCachedURLResponse { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFCachedURLResponse {} *x2; } * _cachedURLResponse;
+    NSData * data;
+    NSURLResponse * response;
+    unsigned int  storagePolicy;
+    NSDictionary * userInfo;
 }
 
 - (void)dealloc;

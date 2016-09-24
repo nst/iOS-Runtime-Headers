@@ -3,13 +3,15 @@
  */
 
 @interface AMSBTLEConnectionManager : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate> {
-    CBCentralManager *centralManager;
-    int centralState;
-    NSMutableArray *connectedAMSPeripherals;
-    NSMutableArray *connectedBTPeripherals;
-    <BTLEConnectionTable> *controller;
-    NSMutableArray *peripheralList;
-    NSTimer *refreshTimer;
+    CBCentralManager * centralManager;
+    int  centralState;
+    NSMutableArray * connectedAMSPeripherals;
+    NSMutableArray * connectedBTPeripherals;
+    NSTimer * connectionTimer;
+    <BTLEConnectionTable> * controller;
+    BOOL  isAdvertising;
+    NSMutableArray * peripheralList;
+    NSTimer * refreshTimer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -27,6 +29,7 @@
 - (void)centralManager:(id)arg1 didRetrievePeripherals:(id)arg2;
 - (void)centralManagerDidUpdateState:(id)arg1;
 - (void)checkAlreadyConnectedPeripherals;
+- (void)connectionTimerFired:(id)arg1;
 - (void)createPeripheralList;
 - (void)dealloc;
 - (id)initWithUIController:(id)arg1;
@@ -44,5 +47,6 @@
 - (void)startTimer;
 - (void)stopScan;
 - (void)timerFired:(id)arg1;
+- (void)updateAdvertisingState:(id)arg1;
 
 @end

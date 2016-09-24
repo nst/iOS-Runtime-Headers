@@ -3,7 +3,7 @@
  */
 
 @interface AUAudioUnitViewService : UIViewController <AUAudioUnitRemoteViewProtocol> {
-    AURemoteExtensionContext *_extensionContext;
+    AURemoteExtensionContext * _extensionContext;
 }
 
 @property (readonly, copy) NSString *debugDescription;

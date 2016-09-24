@@ -3,11 +3,13 @@
  */
 
 @interface TSPSaveOperationState : NSObject {
-    NSMapTable *_newDataStorages;
-    int _sampleID;
-    int _updateType;
+    NSMapTable * _newDataStorages;
+    NSHashTable * _remoteData;
+    int  _sampleID;
+    int  _updateType;
 }
 
+@property (nonatomic, readonly) BOOL hasRemoteData;
 @property (nonatomic, readonly) BOOL preserveDocumentUUID;
 @property (nonatomic) int sampleID;
 @property (nonatomic, readonly) BOOL shouldUpdate;
@@ -15,8 +17,10 @@
 
 - (void).cxx_destruct;
 - (void)addNewStorage:(id)arg1 forData:(id)arg2;
+- (void)addRemoteData:(id)arg1;
 - (void)enumerateDatasAndStoragesUsingBlock:(id /* block */)arg1;
 - (BOOL)hasNewStorageForData:(id)arg1;
+- (BOOL)hasRemoteData;
 - (id)init;
 - (id)initWithUpdateType:(int)arg1;
 - (BOOL)preserveDocumentUUID;

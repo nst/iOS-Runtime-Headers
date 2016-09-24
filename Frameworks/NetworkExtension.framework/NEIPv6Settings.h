@@ -3,12 +3,12 @@
  */
 
 @interface NEIPv6Settings : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
-    NSArray *_addresses;
-    int _configMethod;
-    NSArray *_excludedRoutes;
-    NSArray *_includedRoutes;
-    NSArray *_networkPrefixLengths;
-    NSString *_router;
+    NSArray * _addresses;
+    int  _configMethod;
+    NSArray * _excludedRoutes;
+    NSArray * _includedRoutes;
+    NSArray * _networkPrefixLengths;
+    NSString * _router;
 }
 
 @property (readonly) NSArray *addresses;

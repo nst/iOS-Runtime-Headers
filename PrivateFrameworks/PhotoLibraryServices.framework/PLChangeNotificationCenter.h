@@ -6,60 +6,59 @@
     struct contentChanges_s { 
         NSMutableArray *container; 
         NSMutableArray *updatedContent; 
-    } _albumListsContent;
+    }  _albumListsContent;
     struct contentChanges_s { 
         NSMutableArray *container; 
         NSMutableArray *updatedContent; 
-    } _albumsContent;
-    NSMutableSet *_assetsWithCloudCommentChanges;
-    int _cameraPreviewChangeListenerCount;
-    NSNumber *_cameraPreviewChangedToken;
+    }  _albumsContent;
+    NSMutableSet * _assetsWithCloudCommentChanges;
+    int  _cameraPreviewChangeListenerCount;
+    NSNumber * _cameraPreviewChangedToken;
     struct changeList_s { 
         NSMutableSet *inserted; 
         NSMutableSet *updated; 
         NSMutableSet *deleted; 
-    } _changedAlbumLists;
+    }  _changedAlbumLists;
     struct changeList_s { 
         NSMutableSet *inserted; 
         NSMutableSet *updated; 
         NSMutableSet *deleted; 
-    } _changedAlbums;
+    }  _changedAlbums;
     struct changeList_s { 
         NSMutableSet *inserted; 
         NSMutableSet *updated; 
         NSMutableSet *deleted; 
-    } _changedAssets;
+    }  _changedAssets;
     struct changeList_s { 
         NSMutableSet *inserted; 
         NSMutableSet *updated; 
         NSMutableSet *deleted; 
-    } _changedCloudFeedEntries;
-    NSMapTable *_changedInflightAssetsAlbumsToSnapshots;
+    }  _changedCloudFeedEntries;
     struct changeList_s { 
         NSMutableSet *inserted; 
         NSMutableSet *updated; 
         NSMutableSet *deleted; 
-    } _changedMomentLists;
+    }  _changedMomentLists;
     struct changeList_s { 
         NSMutableSet *inserted; 
         NSMutableSet *updated; 
         NSMutableSet *deleted; 
-    } _changedMoments;
-    NSMutableArray *_enqueuedNotifications;
-    BOOL _isOverloaded;
-    BOOL _isProcessingRemoteDidSave;
-    PLManagedObjectContext *_moc;
+    }  _changedMoments;
+    NSMutableArray * _enqueuedNotifications;
+    BOOL  _isOverloaded;
+    BOOL  _isProcessingRemoteDidSave;
+    PLManagedObjectContext * _moc;
     struct contentChanges_s { 
         NSMutableArray *container; 
         NSMutableArray *updatedContent; 
-    } _momentListsContent;
+    }  _momentListsContent;
     struct contentChanges_s { 
         NSMutableArray *container; 
         NSMutableArray *updatedContent; 
-    } _momentsContent;
-    NSMutableSet *_overloadedObjects;
-    NSDictionary *_remoteNotificationData;
-    NSMutableArray *_snapshots;
+    }  _momentsContent;
+    NSMutableSet * _overloadedObjects;
+    NSDictionary * _remoteNotificationData;
+    NSMutableArray * _snapshots;
 }
 
 @property (nonatomic, readonly) BOOL _shouldForceFetchingAlbumsToReload;
@@ -93,7 +92,6 @@
 - (id)_orderedRelationshipsOfInterestForObject:(id)arg1;
 - (void)_postEnqueuedNotifications;
 - (void)_registerForCameraPreviewWellChanges;
-- (void)_saveCurrentStateForAlbum:(id)arg1;
 - (void)_sendNotificationsForSplitChanges;
 - (BOOL)_shouldForceFetchingAlbumsToReload;
 - (id)_snapshotForObject:(id)arg1;
@@ -119,7 +117,6 @@
 - (id)descriptionOfSplitChanges;
 - (void)enqueueNotification:(id)arg1;
 - (void)enumerateIndexMappingCachesForObject:(id)arg1 withBlock:(id /* block */)arg2;
-- (void)inflightAssetsAlbumWillChange:(id)arg1;
 - (id)init;
 - (void)managedObjectContext:(id)arg1 didProcessRemoteContextSave:(id)arg2 usingObjectIDs:(BOOL)arg3;
 - (void)managedObjectContext:(id)arg1 willProcessRemoteContextSave:(id)arg2 usingObjectIDs:(BOOL)arg3 isCoalescedEvent:(BOOL)arg4;

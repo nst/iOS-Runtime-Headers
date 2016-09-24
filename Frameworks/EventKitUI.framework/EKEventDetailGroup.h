@@ -3,9 +3,9 @@
  */
 
 @interface EKEventDetailGroup : NSObject {
-    NSString *_headerTitle;
-    NSArray *_items;
-    int _tag;
+    NSString * _headerTitle;
+    NSArray * _items;
+    int  _tag;
 }
 
 @property (nonatomic, retain) NSString *headerTitle;

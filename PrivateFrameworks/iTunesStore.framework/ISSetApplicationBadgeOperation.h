@@ -3,8 +3,8 @@
  */
 
 @interface ISSetApplicationBadgeOperation : ISOperation {
-    NSString *_badgeValue;
-    NSString *_bundleIdentifier;
+    NSString * _badgeValue;
+    NSString * _bundleIdentifier;
 }
 
 @property (retain) NSString *badgeValue;

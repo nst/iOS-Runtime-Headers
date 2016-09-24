@@ -3,9 +3,9 @@
  */
 
 @interface SGMicrodataItemProp : NSObject {
-    SGMicrodataItem *_itemValue;
-    NSString *_propertyName;
-    NSString *_stringValue;
+    SGMicrodataItem * _itemValue;
+    NSString * _propertyName;
+    NSString * _stringValue;
 }
 
 @property (nonatomic, readonly) SGMicrodataItem *itemValue;

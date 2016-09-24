@@ -3,10 +3,10 @@
  */
 
 @interface PKDiffHunk : NSObject <NSSecureCoding> {
-    NSString *_key;
-    NSString *_message;
-    id _newValue;
-    id _oldValue;
+    NSString * _key;
+    NSString * _message;
+    id  _newValue;
+    id  _oldValue;
 }
 
 @property (nonatomic, retain) NSString *key;
@@ -17,8 +17,8 @@
 + (id)hunkWithKey:(id)arg1 oldValue:(id)arg2 newValue:(id)arg3 message:(id)arg4;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (int)compare:(id)arg1;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;

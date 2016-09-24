@@ -3,13 +3,13 @@
  */
 
 @interface PKPaymentSetupFieldText : PKPaymentSetupField {
-    NSString *_displayFormatPlaceholder;
-    BOOL _luhnCheck;
-    unsigned int _maxLength;
-    unsigned int _minLength;
-    BOOL _numeric;
-    BOOL _secureText;
-    BOOL _secureVisibleText;
+    NSString * _displayFormatPlaceholder;
+    BOOL  _luhnCheck;
+    unsigned int  _maxLength;
+    unsigned int  _minLength;
+    BOOL  _numeric;
+    BOOL  _secureText;
+    BOOL  _secureVisibleText;
 }
 
 @property (nonatomic, copy) NSString *displayFormatPlaceholder;
@@ -20,7 +20,7 @@
 @property (getter=isSecureText, nonatomic) BOOL secureText;
 @property (getter=isSecureVisibleText, nonatomic) BOOL secureVisibleText;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)displayFormatPaddingCharacters;
 - (id)displayFormatPaddingPrefix;
 - (id)displayFormatPlaceholder;

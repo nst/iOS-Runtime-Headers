@@ -3,8 +3,8 @@
  */
 
 @interface MCCloudConfiguration : NSObject {
-    NSObject<OS_dispatch_queue> *_memberQueue;
-    NSDictionary *_memberQueueDetails;
+    NSObject<OS_dispatch_queue> * _memberQueue;
+    NSDictionary * _memberQueueDetails;
 }
 
 @property (nonatomic, copy) NSDictionary *details;

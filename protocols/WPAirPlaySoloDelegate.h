@@ -20,5 +20,6 @@
 - (void)airPlaySoloStartedScanning:(WPAirPlaySolo *)arg1;
 - (void)airPlaySoloStoppedAdvertising:(WPAirPlaySolo *)arg1;
 - (void)airPlaySoloStoppedScanning:(WPAirPlaySolo *)arg1;
+- (void)airplaySolo:(WPAirPlaySolo *)arg1 peerTrackingSlotsAvailable:(BOOL)arg2;
 
 @end

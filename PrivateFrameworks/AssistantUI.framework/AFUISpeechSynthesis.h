@@ -2,22 +2,22 @@
    Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
  */
 
-@interface AFUISpeechSynthesis : NSObject <AFUIQueueDelegate, AFUISpeechSynthesis, AFUISpeechSynthesisElementDelegate, VSSpeechSynthesizerDelegate> {
-    NSMutableArray *_activeElements;
-    <AFUISpeechSynthesisDelegate> *_delegate;
-    AFUIQueue *_elementQueue;
-    <AFUISpeechSynthesisLocalDelegate> *_localDelegate;
-    AFVoiceInfo *_outputVoice;
-    unsigned int _sessionID;
-    BOOL _sessionIDIsValid;
-    VSSpeechSynthesizer *_synthesizer;
+@interface AFUISpeechSynthesis : NSObject <AFQueueDelegate, AFUISpeechSynthesis, AFUISpeechSynthesisElementDelegate, VSSpeechSynthesizerDelegate> {
+    NSMutableArray * _activeElements;
+    <AFUISpeechSynthesisDelegate> * _delegate;
+    AFQueue * _elementQueue;
+    <AFUISpeechSynthesisLocalDelegate> * _localDelegate;
+    AFVoiceInfo * _outputVoice;
+    unsigned int  _sessionID;
+    BOOL  _sessionIDIsValid;
+    VSSpeechSynthesizer * _synthesizer;
 }
 
 @property (getter=_activeElements, nonatomic, readonly) NSMutableArray *activeElements;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) <AFUISpeechSynthesisDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (getter=_elementQueue, nonatomic, readonly) AFUIQueue *elementQueue;
+@property (getter=_elementQueue, nonatomic, readonly) AFQueue *elementQueue;
 @property (readonly) unsigned int hash;
 @property (nonatomic) <AFUISpeechSynthesisLocalDelegate> *localDelegate;
 @property (readonly) Class superclass;
@@ -37,9 +37,11 @@
 - (void)enqueueText:(id)arg1 isPhonetic:(BOOL)arg2 provisionally:(BOOL)arg3 eligibleAfterDuration:(double)arg4 preparationIdentifier:(id)arg5 completion:(id /* block */)arg6 animationIdentifier:(id)arg7;
 - (id)init;
 - (void)invalidate;
+- (void)invalidateOnMainThread;
 - (BOOL)isSpeaking;
 - (BOOL)isSynthesisQueueEmpty;
 - (id)localDelegate;
+- (void)prewarmIfNeeded;
 - (void)queue:(id)arg1 didEnqueueObjects:(id)arg2;
 - (void)setAudioSessionID:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
@@ -48,6 +50,7 @@
 - (void)skipCurrentSynthesis;
 - (void)speechSynthesisElementSynthesisEligibilityDidChange:(id)arg1;
 - (void)speechSynthesizer:(id)arg1 didFinishSpeakingRequest:(id)arg2 successfully:(BOOL)arg3 withError:(id)arg4;
+- (void)speechSynthesizer:(id)arg1 didFinishSpeakingRequest:(id)arg2 withInstrumentMetrics:(id)arg3;
 - (void)speechSynthesizer:(id)arg1 didStartSpeakingRequest:(id)arg2;
 
 @end

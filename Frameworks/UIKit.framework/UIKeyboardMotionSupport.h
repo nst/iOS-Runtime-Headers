@@ -3,8 +3,8 @@
  */
 
 @interface UIKeyboardMotionSupport : NSObject <_UIScreenBasedObject> {
-    <UISplitKeyboardSource> *_controller;
-    UIScreen *_screen;
+    <UISplitKeyboardSource> * _controller;
+    UIScreen * _screen;
 }
 
 @property (readonly) UIScreen *_intendedScreen;
@@ -23,6 +23,7 @@
 - (id)_intendedScreen;
 - (BOOL)_matchingOptions:(id)arg1;
 - (id)_options;
+- (void)_updatedController;
 - (void)dealloc;
 - (id)masterController;
 - (void)setMasterController:(id)arg1;

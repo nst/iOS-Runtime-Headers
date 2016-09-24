@@ -3,24 +3,24 @@
  */
 
 @interface CNMonogrammer : NSObject {
-    UIColor *_backgroundColor;
-    float _diameter;
-    UIFont *_font;
-    float _innerBorderWidth;
-    UIImage *_knockoutMaskMonogram;
-    int _monogrammerStyle;
-    UIImage *_questionMarkMonogram;
-    float _scale;
-    NSString *_silhouetteImageName;
-    UIImage *_silhouetteMonogram;
-    CNMonogrammer *_subMonogrammer;
-    UIColor *_textColor;
-    BOOL _textKnockout;
-    UIColor *_tintColor;
+    UIColor * _backgroundColor;
+    double  _diameter;
+    UIFont * _font;
+    double  _innerBorderWidth;
+    UIImage * _knockoutMaskMonogram;
+    int  _monogrammerStyle;
+    UIImage * _questionMarkMonogram;
+    double  _scale;
+    NSString * _silhouetteImageName;
+    UIImage * _silhouetteMonogram;
+    CNMonogrammer * _subMonogrammer;
+    UIColor * _textColor;
+    BOOL  _textKnockout;
+    UIColor * _tintColor;
 }
 
 @property (nonatomic, retain) UIColor *backgroundColor;
-@property (nonatomic) float diameter;
+@property (nonatomic) double diameter;
 @property (nonatomic, retain) UIFont *font;
 @property (nonatomic, readonly) NSArray *keysToFetch;
 @property (nonatomic, readonly) UIImage *knockoutMaskMonogram;

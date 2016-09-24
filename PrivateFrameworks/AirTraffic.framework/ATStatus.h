@@ -3,17 +3,17 @@
  */
 
 @interface ATStatus : NSObject <NSSecureCoding> {
-    BOOL _automaticSync;
-    unsigned int _completedAssetCount;
-    NSString *_dataClass;
-    NSString *_libraryID;
-    NSString *_localizedDescription;
-    float _progress;
-    unsigned int _syncStage;
-    unsigned int _syncType;
-    unsigned int _totalAssetCount;
-    unsigned int _totalItemCount;
-    BOOL _wirelessSync;
+    BOOL  _automaticSync;
+    unsigned int  _completedAssetCount;
+    NSString * _dataClass;
+    NSString * _libraryID;
+    NSString * _localizedDescription;
+    double  _progress;
+    unsigned int  _syncStage;
+    unsigned int  _syncType;
+    unsigned int  _totalAssetCount;
+    unsigned int  _totalItemCount;
+    BOOL  _wirelessSync;
 }
 
 @property (getter=isAutomaticSync, nonatomic) BOOL automaticSync;
@@ -21,7 +21,7 @@
 @property (nonatomic, copy) NSString *dataClass;
 @property (nonatomic, copy) NSString *libraryID;
 @property (nonatomic, copy) NSString *localizedDescription;
-@property (nonatomic) float progress;
+@property (nonatomic) double progress;
 @property (nonatomic) unsigned int syncStage;
 @property (nonatomic) unsigned int syncType;
 @property (nonatomic) unsigned int totalAssetCount;

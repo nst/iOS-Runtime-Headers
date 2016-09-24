@@ -3,10 +3,10 @@
  */
 
 @interface AAAuthenticateRequest : AARequest {
-    ACAccount *_account;
-    NSString *_authToken;
-    NSString *_password;
-    NSString *_username;
+    ACAccount * _account;
+    NSString * _authToken;
+    NSString * _password;
+    NSString * _username;
 }
 
 @property (nonatomic, retain) ACAccount *account;

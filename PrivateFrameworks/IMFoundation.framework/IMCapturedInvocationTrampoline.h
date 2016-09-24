@@ -3,7 +3,7 @@
  */
 
 @interface IMCapturedInvocationTrampoline : IMInvocationTrampoline {
-    id *_outInvocation;
+    id * _outInvocation;
 }
 
 - (void)forwardInvocation:(id)arg1;

@@ -3,11 +3,11 @@
  */
 
 @interface HKEmergencyCardContactsTableItem : HKEmergencyCardTableItem <CNContactPickerDelegate, HKMedicalIDEditorCellEditDelegate, _HKEmergencyContactRelationshipPickerDelegate> {
-    NSMutableArray *_cells;
-    CNContactStoreDataSource *_contactDataSource;
-    UITableViewCell *_lastDequeuedAddContactCell;
-    _HKEmergencyContact *_selectedContact;
-    BOOL _selectedContactIsBeingAdded;
+    NSMutableArray * _cells;
+    CNContactStoreDataSource * _contactDataSource;
+    UITableViewCell * _lastDequeuedAddContactCell;
+    _HKEmergencyContact * _selectedContact;
+    BOOL  _selectedContactIsBeingAdded;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -18,7 +18,6 @@
 - (void).cxx_destruct;
 - (void)_addEmergencyContactToData:(id)arg1;
 - (void)_configureAddContactCellLayoutForRowIndex:(int)arg1;
-- (id)_contactKeysToFetch;
 - (id)_dequeueAndConfigureContactEditCellForIndex:(int)arg1 inTableView:(id)arg2;
 - (id)_dequeueAndConfigureContactViewCellForIndex:(int)arg1;
 - (void)_didSelectContact:(id)arg1 property:(id)arg2;

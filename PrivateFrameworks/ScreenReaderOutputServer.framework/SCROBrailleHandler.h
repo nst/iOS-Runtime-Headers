@@ -3,7 +3,7 @@
  */
 
 @interface SCROBrailleHandler : SCROHandler <SCROSBrailleDisplayManagerDelegate> {
-    SCROBrailleDisplayManager *_brailleDisplayManager;
+    SCROBrailleDisplayManager * _brailleDisplayManager;
     struct { 
         BOOL didDisplay; 
         BOOL keypress; 
@@ -20,9 +20,9 @@
         BOOL bluetoothDisplayLoadFailed; 
         BOOL tableLoadFailed; 
         BOOL displayModeChanged; 
-    } _callbacks;
-    BOOL _wantsDidDisplayCallbacks;
-    BOOL _wantsInputCallbacks;
+    }  _callbacks;
+    BOOL  _wantsDidDisplayCallbacks;
+    BOOL  _wantsInputCallbacks;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,8 +3,8 @@
  */
 
 @interface WBSAutomaticReadingListTrackedRecordsInfo : NSObject {
-    NSArray *_items;
-    WBSAutomaticReadingListRecordRange *_rangeOfTrackedRecords;
+    NSArray * _items;
+    WBSAutomaticReadingListRecordRange * _rangeOfTrackedRecords;
 }
 
 @property (nonatomic, copy) NSArray *items;

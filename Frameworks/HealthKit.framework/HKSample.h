@@ -2,21 +2,17 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface HKSample : HKObject <HKTimePeriod> {
-    double _endTimestamp;
-    HKSampleType *_sampleType;
-    double _startTimestamp;
+@interface HKSample : HKObject <NSCopying> {
+    double  _endTimestamp;
+    HKSampleType * _sampleType;
+    double  _startTimestamp;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
 @property (readonly) NSDate *endDate;
 @property (getter=_endTimestamp, setter=_setEndTimestamp:, nonatomic) double endTimestamp;
-@property (readonly) unsigned int hash;
 @property (readonly) HKSampleType *sampleType;
 @property (readonly) NSDate *startDate;
 @property (getter=_startTimestamp, setter=_setStartTimestamp:, nonatomic) double startTimestamp;
-@property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
@@ -26,6 +22,7 @@
 
 - (void).cxx_destruct;
 - (double)_endTimestamp;
+- (void)_enumerateTimePeriodsWithBlock:(id /* block */)arg1;
 - (void)_setEndTimestamp:(double)arg1;
 - (void)_setSampleType:(id)arg1;
 - (void)_setStartTimestamp:(double)arg1;
@@ -46,9 +43,5 @@
 - (int)entityType;
 - (id)hd_associatedSampleTypes;
 - (id)hd_sampleType;
-
-// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
-
-- (id)hk_timePeriods;
 
 @end

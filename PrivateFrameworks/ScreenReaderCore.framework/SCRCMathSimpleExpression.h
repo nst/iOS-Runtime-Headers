@@ -3,7 +3,7 @@
  */
 
 @interface SCRCMathSimpleExpression : SCRCMathExpression {
-    NSString *_content;
+    NSString * _content;
 }
 
 @property (nonatomic, copy) NSString *content;

@@ -3,7 +3,7 @@
  */
 
 @interface DelayedInvocationTrampoline : InvocationTrampoline {
-    double _delay;
+    double  _delay;
 }
 
 - (void)forwardInvocation:(id)arg1;

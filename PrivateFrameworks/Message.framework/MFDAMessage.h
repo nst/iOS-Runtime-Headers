@@ -3,10 +3,10 @@
  */
 
 @interface MFDAMessage : MFMailMessage {
-    DAMailMessage *_DAMailMessage;
-    NSString *_externalConversationID;
-    MFMailboxUid *_mailbox;
-    MFMessage *_rfc822CreatedMessage;
+    DAMailMessage * _DAMailMessage;
+    NSString * _externalConversationID;
+    MFMailboxUid * _mailbox;
+    MFMessage * _rfc822CreatedMessage;
 }
 
 @property (nonatomic, readonly) DAMailMessage *DAMailMessage;
@@ -21,7 +21,7 @@
 - (id)messageBody;
 - (BOOL)messageData:(id*)arg1 messageSize:(unsigned int*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
 - (BOOL)messageDataHolder:(id*)arg1 messageSize:(unsigned int*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
-- (unsigned long long)messageFlags;
+- (unsigned int)messageFlags;
 - (unsigned int)messageSize;
 - (id)remoteID;
 - (id)remoteMailboxURL;

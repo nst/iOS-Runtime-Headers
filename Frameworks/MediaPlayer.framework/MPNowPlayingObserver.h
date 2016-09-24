@@ -3,16 +3,16 @@
  */
 
 @interface MPNowPlayingObserver : NSObject <MPStoreDownloadManagerObserver> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    MPStoreDownload *_activeDownload;
-    NSData *_currentArtworkData;
-    UIImage *_currentArtworkImage;
-    BOOL _enabled;
-    BOOL _hasSeenAnyItem;
-    NSMutableDictionary *_mediaItemCoalescedUpdateDateAccessedTimers;
-    MPAVController *_player;
-    BOOL _scheduledNowPlayingInfoUpdate;
-    NSObject<OS_dispatch_queue> *_statusBarQueue;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    MPStoreDownload * _activeDownload;
+    NSData * _currentArtworkData;
+    UIImage * _currentArtworkImage;
+    BOOL  _enabled;
+    BOOL  _hasSeenAnyItem;
+    NSMutableDictionary * _mediaItemCoalescedUpdateDateAccessedTimers;
+    MPAVController * _player;
+    BOOL  _scheduledNowPlayingInfoUpdate;
+    NSObject<OS_dispatch_queue> * _statusBarQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -24,7 +24,7 @@
 
 - (void).cxx_destruct;
 - (int)_MPNowPlayingDownloadStateForDownload:(id)arg1;
-- (id)_activeDownloadForItemWithStoreID:(long long)arg1;
+- (id)_activeDownloadForItemWithStoreID:(int)arg1;
 - (id)_additionalKeysForNowPlayingItem:(id)arg1;
 - (void)_avItemArtworkDidChangeNotification:(id)arg1;
 - (void)_avItemDurationDidChangeNotification:(id)arg1;

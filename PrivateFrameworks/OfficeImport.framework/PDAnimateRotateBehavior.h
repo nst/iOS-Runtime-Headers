@@ -3,12 +3,12 @@
  */
 
 @interface PDAnimateRotateBehavior : PDAnimateBehavior {
-    double mBy;
-    double mFrom;
-    BOOL mHasBy;
-    BOOL mHasFrom;
-    BOOL mHasTo;
-    double mTo;
+    double  mBy;
+    double  mFrom;
+    BOOL  mHasBy;
+    BOOL  mHasFrom;
+    BOOL  mHasTo;
+    double  mTo;
 }
 
 - (double)by;

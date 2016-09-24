@@ -3,15 +3,15 @@
  */
 
 @interface GEOPDCaptionedPhoto : PBCodable <NSCopying> {
-    NSString *_author;
-    NSString *_caption;
-    BOOL _displayFullPhotoInline;
+    NSString * _author;
+    NSString * _caption;
+    BOOL  _displayFullPhotoInline;
     struct { 
         unsigned int displayFullPhotoInline : 1; 
-    } _has;
-    NSString *_licenseDescription;
-    NSString *_licenseUrl;
-    GEOPDPhoto *_photo;
+    }  _has;
+    NSString * _licenseDescription;
+    NSString * _licenseUrl;
+    GEOPDPhoto * _photo;
 }
 
 @property (nonatomic, retain) NSString *author;

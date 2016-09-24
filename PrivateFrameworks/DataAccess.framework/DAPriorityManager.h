@@ -3,9 +3,9 @@
  */
 
 @interface DAPriorityManager : NSObject {
-    NSMapTable *_clientsToPriorityRequests;
-    int _currentPriority;
-    int _foregroundDataclasses;
+    NSMapTable * _clientsToPriorityRequests;
+    int  _currentPriority;
+    int  _foregroundDataclasses;
 }
 
 @property (nonatomic, retain) NSMapTable *clientsToPriorityRequests;

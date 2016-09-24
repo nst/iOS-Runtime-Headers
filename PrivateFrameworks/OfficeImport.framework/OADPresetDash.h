@@ -3,8 +3,8 @@
  */
 
 @interface OADPresetDash : OADDash {
-    unsigned int mIsTypeOverridden;
-    BOOL mType;
+    unsigned int  mIsTypeOverridden;
+    BOOL  mType;
 }
 
 + (id)defaultProperties;

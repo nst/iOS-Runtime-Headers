@@ -3,7 +3,7 @@
  */
 
 @interface _HKCFGCharacterTerminal : _HKCFGTerminal {
-    NSCharacterSet *_characterSet;
+    NSCharacterSet * _characterSet;
 }
 
 @property (nonatomic, copy) NSCharacterSet *characterSet;

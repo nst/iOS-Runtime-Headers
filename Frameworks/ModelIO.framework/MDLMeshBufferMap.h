@@ -3,8 +3,8 @@
  */
 
 @interface MDLMeshBufferMap : NSObject {
-    void *_bytes;
-    id /* block */ _deallocator;
+    void * _bytes;
+    id /* block */  _deallocator;
 }
 
 @property (nonatomic, readonly) void*bytes;

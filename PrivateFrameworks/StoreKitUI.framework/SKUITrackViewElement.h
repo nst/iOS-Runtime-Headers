@@ -3,8 +3,8 @@
  */
 
 @interface SKUITrackViewElement : SKUIViewElement {
-    BOOL _enabled;
-    BOOL _selected;
+    BOOL  _enabled;
+    BOOL  _selected;
 }
 
 @property (getter=isSelected, nonatomic, readonly) BOOL selected;

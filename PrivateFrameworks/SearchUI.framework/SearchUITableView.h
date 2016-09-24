@@ -2,9 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUITableView : UITableView
+@interface SearchUITableView : UITableView {
+    BOOL  _allowHeaderViewsToFloat;
+}
 
+@property BOOL allowHeaderViewsToFloat;
+
+- (void)_numberOfRowsDidChange;
+- (BOOL)allowHeaderViewsToFloat;
+- (BOOL)allowsHeaderViewsToFloat;
 - (id)initWithStyle:(unsigned int)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })layoutMargins;
+- (void)setAllowHeaderViewsToFloat:(BOOL)arg1;
 
 @end

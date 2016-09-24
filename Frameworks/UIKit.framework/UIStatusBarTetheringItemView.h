@@ -3,7 +3,7 @@
  */
 
 @interface UIStatusBarTetheringItemView : UIStatusBarItemView {
-    int _tetheringConnectionCount;
+    int  _tetheringConnectionCount;
 }
 
 - (id)contentsImage;

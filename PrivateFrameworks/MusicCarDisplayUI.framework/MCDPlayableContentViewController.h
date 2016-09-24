@@ -3,12 +3,13 @@
  */
 
 @interface MCDPlayableContentViewController : UINavigationController <UINavigationControllerDelegate> {
-    NSString *_bundleID;
-    BOOL _hasBrowsableContent;
-    BOOL _hasLoaded;
-    MCDPCModel *_model;
-    MCDPCContainer *_rootContainer;
-    NSArray *_stackToRebuild;
+    NSString * _bundleID;
+    BOOL  _hasBrowsableContent;
+    BOOL  _hasLoaded;
+    BOOL  _hasSectionedContent;
+    MCDPCModel * _model;
+    MCDPCContainer * _rootContainer;
+    NSArray * _stackToRebuild;
 }
 
 @property (nonatomic, readonly, copy) NSString *bundleID;
@@ -21,8 +22,10 @@
 - (void)_browsableContentEndpointChangedNotification:(id)arg1;
 - (void)_checkAndSetupView;
 - (id)_createRootViewController;
+- (id)_createSectionedRootViewController;
 - (void)_modelDidInvalidate:(id)arg1;
 - (void)_modelWillInvalidate:(id)arg1;
+- (void)_nowPlayingIdentifiersChanged:(id)arg1;
 - (void)_populateStack;
 - (void)_setupView;
 - (void)_updateStackForPlaying:(BOOL)arg1;

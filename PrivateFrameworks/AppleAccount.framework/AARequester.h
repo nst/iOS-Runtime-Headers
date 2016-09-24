@@ -3,20 +3,20 @@
  */
 
 @interface AARequester : NSOperation {
-    AKAppleIDSession *_appleIDSession;
-    BOOL _canceled;
-    NSMutableData *_data;
-    id /* block */ _handler;
-    NSObject<OS_dispatch_queue> *_handlerQueue;
-    NSHTTPURLResponse *_httpResponse;
-    BOOL _isCanceled;
-    BOOL _isExecuting;
-    BOOL _isFinished;
-    AARequest *_request;
-    AAResponse *_response;
-    Class _responseClass;
-    BOOL _shouldRetry;
-    NSURLConnection *_urlConnection;
+    AKAppleIDSession * _appleIDSession;
+    BOOL  _canceled;
+    NSMutableData * _data;
+    id /* block */  _handler;
+    NSObject<OS_dispatch_queue> * _handlerQueue;
+    NSHTTPURLResponse * _httpResponse;
+    BOOL  _isCanceled;
+    BOOL  _isExecuting;
+    BOOL  _isFinished;
+    AARequest * _request;
+    AAResponse * _response;
+    Class  _responseClass;
+    BOOL  _shouldRetry;
+    NSURLConnection * _urlConnection;
 }
 
 @property (getter=isCanceled) BOOL canceled;

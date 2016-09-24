@@ -3,11 +3,11 @@
  */
 
 @interface _MFMailComposeAttachmentWrapper : NSObject {
-    NSData *_data;
-    NSString *_fileName;
-    NSURL *_fileURL;
-    NSString *_identifier;
-    NSString *_mimeType;
+    NSData * _data;
+    NSString * _fileName;
+    NSURL * _fileURL;
+    NSString * _identifier;
+    NSString * _mimeType;
 }
 
 @property (nonatomic, readonly) NSData *data;

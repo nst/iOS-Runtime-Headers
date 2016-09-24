@@ -3,7 +3,7 @@
  */
 
 @interface BKSProcessAssertionCreateResponseEvent : BKSProcessAssertionEvent {
-    BOOL _success;
+    BOOL  _success;
 }
 
 @property (nonatomic) BOOL success;

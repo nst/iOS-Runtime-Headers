@@ -3,12 +3,14 @@
  */
 
 @interface PULayoutAnimationsHelper : NSObject {
-    PUSectionedGridLayout *_layout;
-    BOOL _shouldAnimateTemporaryImageView;
+    PUSectionedGridLayout * _layout;
+    BOOL  _shouldAnimateTemporaryImageView;
 }
 
 @property (nonatomic, readonly) PUSectionedGridLayout *layout;
 @property (nonatomic) BOOL shouldAnimateTemporaryImageView;
+
++ (id /* block */)stackedTransitionAnimationsForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 shouldUseSpringAnimations:(BOOL)arg3;
 
 - (void).cxx_destruct;
 - (id)_adjustAnimation:(id)arg1 forReusableView:(id)arg2 toLayoutAttributes:(id)arg3;

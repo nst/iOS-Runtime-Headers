@@ -3,7 +3,7 @@
  */
 
 @interface _DECAggregateLogger : NSObject {
-    NSMutableDictionary *_batchScalars;
+    NSMutableDictionary * _batchScalars;
 }
 
 + (void)logIncrementKey:(id)arg1;

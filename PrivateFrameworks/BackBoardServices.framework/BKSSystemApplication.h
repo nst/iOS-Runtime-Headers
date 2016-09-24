@@ -3,9 +3,9 @@
  */
 
 @interface BKSSystemApplication : NSObject <BKSSystemApplicationClientDelegate> {
-    BKSSystemApplicationClient *_client;
-    <BKSSystemApplicationDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_queue;
+    BKSSystemApplicationClient * _client;
+    <BKSSystemApplicationDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

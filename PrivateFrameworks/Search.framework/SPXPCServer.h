@@ -3,16 +3,16 @@
  */
 
 @interface SPXPCServer : NSObject {
-    NSObject<OS_xpc_object> *_conn;
-    NSMutableSet *_connections;
-    NSObject<OS_dispatch_queue> *_connectionsQueue;
-    id /* block */ _defaultMessageHandler;
-    id /* block */ _disconnectHandler;
-    NSObject<OS_dispatch_queue> *_eventQueue;
-    NSMutableDictionary *_handlerMap;
-    double _idleTimerInterval;
-    BOOL _shutdown;
-    NSObject<OS_dispatch_queue> *_timerQueue;
+    NSObject<OS_xpc_object> * _conn;
+    NSMutableSet * _connections;
+    NSObject<OS_dispatch_queue> * _connectionsQueue;
+    id /* block */  _defaultMessageHandler;
+    id /* block */  _disconnectHandler;
+    NSObject<OS_dispatch_queue> * _eventQueue;
+    NSMutableDictionary * _handlerMap;
+    double  _idleTimerInterval;
+    BOOL  _shutdown;
+    NSObject<OS_dispatch_queue> * _timerQueue;
 }
 
 @property (nonatomic, copy) id /* block */ defaultMessageHandler;

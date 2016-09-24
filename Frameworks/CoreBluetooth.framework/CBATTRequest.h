@@ -3,12 +3,12 @@
  */
 
 @interface CBATTRequest : NSObject {
-    CBCentral *_central;
-    CBCharacteristic *_characteristic;
-    BOOL _ignoreResponse;
-    unsigned int _offset;
-    NSNumber *_transactionID;
-    NSMutableData *_value;
+    CBCentral * _central;
+    CBCharacteristic * _characteristic;
+    BOOL  _ignoreResponse;
+    unsigned int  _offset;
+    NSNumber * _transactionID;
+    NSMutableData * _value;
 }
 
 @property (nonatomic, readonly) CBCentral *central;
@@ -18,10 +18,10 @@
 @property (nonatomic, readonly) NSNumber *transactionID;
 @property (copy) NSData *value;
 
+- (void).cxx_destruct;
 - (void)appendValueData:(id)arg1;
 - (id)central;
 - (id)characteristic;
-- (void)dealloc;
 - (id)description;
 - (unsigned int)endOffset;
 - (BOOL)ignoreResponse;

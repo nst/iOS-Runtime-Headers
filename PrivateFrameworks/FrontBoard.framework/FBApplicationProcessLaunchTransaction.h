@@ -3,15 +3,15 @@
  */
 
 @interface FBApplicationProcessLaunchTransaction : FBTransaction {
-    NSString *_bundleID;
-    FBWaitForProcessDeathTransaction *_deathTransaction;
-    FBProcessExecutionContext *_executionContext;
-    id /* block */ _executionContextProvider;
-    BOOL _exited;
-    BOOL _failedLaunch;
-    int _interruptedOrComplete;
-    FBApplicationProcess *_process;
-    FBProcessManager *_processManager;
+    NSString * _bundleID;
+    FBWaitForProcessDeathTransaction * _deathTransaction;
+    FBProcessExecutionContext * _executionContext;
+    id /* block */  _executionContextProvider;
+    BOOL  _exited;
+    BOOL  _failedLaunch;
+    int  _interruptedOrComplete;
+    FBApplicationProcess * _process;
+    FBProcessManager * _processManager;
 }
 
 @property (nonatomic, readonly) BOOL exited;

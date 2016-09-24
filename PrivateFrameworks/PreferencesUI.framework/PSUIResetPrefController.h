@@ -3,25 +3,24 @@
  */
 
 @interface PSUIResetPrefController : PSListController {
-    UIAlertView *_alert;
-    int _codesEntered;
-    int _codesNeeded;
-    PSSpecifier *_currentSpecifier;
-    PSSpecifier *_locationSpecifier;
-    int _locationSpecifierIndex;
-    NSString *_passcode;
-    BOOL _requirePasscode;
-    BOOL _requireRestrictionsCode;
-    BOOL _returningFromPINSheetWithSuccess;
-    BOOL _shouldEraseDataPlans;
-    BOOL _shouldEraseWithFMiP;
-    BOOL _shouldTryEraseAgainWithFMiP;
+    int  _codesEntered;
+    int  _codesNeeded;
+    PSSpecifier * _currentSpecifier;
+    PSSpecifier * _locationSpecifier;
+    int  _locationSpecifierIndex;
+    NSString * _passcode;
+    BOOL  _requirePasscode;
+    BOOL  _requireRestrictionsCode;
+    BOOL  _returningFromPINSheetWithSuccess;
+    BOOL  _shouldEraseDataPlans;
+    BOOL  _shouldEraseWithFMiP;
+    BOOL  _shouldTryEraseAgainWithFMiP;
 }
 
 - (void).cxx_destruct;
+- (void)_disablePhoneLocatorAndErase;
 - (void)_eraseSettingsAndContent;
 - (void)_resetWithMode:(int)arg1;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)confirmEraseCellularSettings;
 - (void)confirmationSpecifierConfirmed:(id)arg1;
 - (void)dealloc;

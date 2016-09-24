@@ -2,41 +2,30 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@interface AlarmView : UIView <MTDateLabelObserver> {
-    id _contentSizeFontAdjustObserver;
-    NSArray *_currentConstraints;
-    UILabel *_detailLabel;
-    UISwitch *_enabledSwitch;
-    NSString *_name;
-    UIFont *_nameFont;
-    UILabel *_nameLabel;
-    UIFont *_repeatFont;
-    UILabel *_repeatLabel;
-    NSString *_repeatText;
-    UILabel *_secondaryDesignatorLabel;
-    BOOL _shouldAddLayoutConstraints;
-    UIView *_singleStyleDetailContainer;
-    int _style;
-    BOOL _switchVisible;
-    DigitalClockLabel *_timeLabel;
+@interface AlarmView : UIView {
+    id  _contentSizeFontAdjustObserver;
+    NSArray * _currentConstraints;
+    UILabel * _detailLabel;
+    UISwitch * _enabledSwitch;
+    NSString * _name;
+    UIFont * _nameFont;
+    UIFont * _repeatFont;
+    NSString * _repeatText;
+    BOOL  _shouldAddLayoutConstraints;
+    int  _style;
+    BOOL  _switchVisible;
+    DigitalClockLabel * _timeLabel;
 }
 
 @property (nonatomic, retain) NSArray *currentConstraints;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) UILabel *detailLabel;
 @property (nonatomic, readonly) UISwitch *enabledSwitch;
-@property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, retain) UIFont *nameFont;
-@property (nonatomic, readonly) UILabel *nameLabel;
 @property (nonatomic, retain) UIFont *repeatFont;
-@property (nonatomic, readonly) UILabel *repeatLabel;
 @property (nonatomic, copy) NSString *repeatText;
-@property (nonatomic, readonly) UILabel *secondaryDesignatorLabel;
 @property (nonatomic) BOOL shouldAddLayoutConstraints;
 @property (nonatomic) int style;
-@property (readonly) Class superclass;
 @property (getter=isSwitchVisible, nonatomic) BOOL switchVisible;
 @property (nonatomic, readonly) DigitalClockLabel *timeLabel;
 @property (nonatomic, readonly) NSDictionary *viewsByIdentifier;
@@ -44,18 +33,14 @@
 - (void).cxx_destruct;
 - (void)_loadFontsWithTextStyles;
 - (id)currentConstraints;
-- (void)dateLabel:(id)arg1 timeDesignatorDidChange:(id)arg2;
 - (id)detailLabel;
 - (id)enabledSwitch;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isSwitchVisible;
 - (id)name;
 - (id)nameFont;
-- (id)nameLabel;
 - (id)repeatFont;
-- (id)repeatLabel;
 - (id)repeatText;
-- (id)secondaryDesignatorLabel;
 - (void)setCurrentConstraints:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setName:(id)arg1 andRepeatText:(id)arg2 textColor:(id)arg3;
@@ -71,7 +56,6 @@
 - (id)timeLabel;
 - (void)updateConstraints;
 - (void)updatePreferredMaxLayoutWidthForDetailContainerLabels;
-- (void)updateSubviewVisibility;
 - (id)viewsByIdentifier;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface MusicPlaylistsWithNewActionViewConfiguration : MusicLibraryPlaylistsViewConfiguration {
-    MusicEntityViewDescriptor *_playlistCreationViewDescriptor;
+    MusicEntityViewDescriptor * _playlistCreationViewDescriptor;
 }
 
 - (void).cxx_destruct;

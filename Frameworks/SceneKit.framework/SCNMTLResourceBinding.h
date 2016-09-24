@@ -3,17 +3,17 @@
  */
 
 @interface SCNMTLResourceBinding : NSObject {
-    MTLArgument *_argument;
-    id _bindBlock;
+    MTLArgument * _argument;
+    id  _bindBlock;
     struct { 
         BOOL vertexIndex; 
         BOOL fragmentIndex; 
-    } _indices;
-    BOOL _needsRenderResource;
+    }  _indices;
+    BOOL  _needsRenderResource;
     struct { 
         BOOL vertexIndex; 
         BOOL fragmentIndex; 
-    } _samplerIndices;
+    }  _samplerIndices;
 }
 
 @property (nonatomic, retain) MTLArgument *argument;

@@ -3,13 +3,13 @@
  */
 
 @interface ICLetterpressImageCacheKey : NSObject <NSCopying> {
-    NSString *_name;
-    float _scale;
-    UIColor *_tintColor;
+    NSString * _name;
+    double  _scale;
+    UIColor * _tintColor;
 }
 
 @property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) float scale;
+@property (nonatomic, readonly) double scale;
 @property (nonatomic, readonly) UIColor *tintColor;
 
 - (void).cxx_destruct;

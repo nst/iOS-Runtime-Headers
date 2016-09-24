@@ -3,10 +3,10 @@
  */
 
 @interface CKActionMenuGestureRecognizerButton : NSObject {
-    UIButton *_button;
-    <CKActionMenuGestureRecognizerButtonDelegate> *_delegate;
-    NSDate *_gestureDidBeginDate;
-    CKActionMenuGestureRecognizer *_gestureRecognizer;
+    UIButton * _button;
+    <CKActionMenuGestureRecognizerButtonDelegate> * _delegate;
+    NSDate * _gestureDidBeginDate;
+    CKActionMenuGestureRecognizer * _gestureRecognizer;
 }
 
 @property (nonatomic, retain) UIButton *button;
@@ -16,8 +16,8 @@
 
 + (id)actionMenuGestureRecognizerButtonWithButton:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)button;
-- (void)dealloc;
 - (id)delegate;
 - (id)gestureDidBeginDate;
 - (void)gestureRecognized:(id)arg1;

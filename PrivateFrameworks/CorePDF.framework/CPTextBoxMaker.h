@@ -3,8 +3,8 @@
  */
 
 @interface CPTextBoxMaker : NSObject {
-    CPBody *bodyZone;
-    CPZone *mainZone;
+    CPBody * bodyZone;
+    CPZone * mainZone;
 }
 
 + (void)boxLayoutsIn:(id)arg1;

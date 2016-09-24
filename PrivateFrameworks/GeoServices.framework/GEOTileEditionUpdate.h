@@ -3,9 +3,9 @@
  */
 
 @interface GEOTileEditionUpdate : NSObject {
-    NSMutableArray *_entries;
-    BOOL _flushEverything;
-    BOOL _invalidateEverything;
+    NSMutableArray * _entries;
+    BOOL  _flushEverything;
+    BOOL  _invalidateEverything;
 }
 
 @property (nonatomic) BOOL flushEverything;

@@ -3,8 +3,8 @@
  */
 
 @interface TSUQuicklookAssetColorMap : NSObject {
-    NSString *mAppAssetPath;
-    NSMutableDictionary *mAssetMap;
+    NSString * mAppAssetPath;
+    NSMutableDictionary * mAssetMap;
 }
 
 @property (nonatomic, retain) NSString *appAssetPath;

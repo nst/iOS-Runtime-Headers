@@ -3,9 +3,9 @@
  */
 
 @interface _SFQueueingBrowserServiceViewControllerProxy : NSProxy <SFServiceViewControllerProtocol> {
-    <_SFQueueingBrowserServiceViewControllerProxyDelegate> *_delegate;
-    NSMutableArray *_queuedInvocations;
-    <SFServiceViewControllerProtocol> *_target;
+    <_SFQueueingBrowserServiceViewControllerProxyDelegate> * _delegate;
+    NSMutableArray * _queuedInvocations;
+    <SFServiceViewControllerProtocol> * _target;
 }
 
 @property (readonly, copy) NSString *debugDescription;

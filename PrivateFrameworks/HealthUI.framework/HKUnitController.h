@@ -3,40 +3,35 @@
  */
 
 @interface HKUnitController : NSObject {
-    HKHealthStore *_healthStore;
-    NSDictionary *_unitPreferencesByObjectType;
-    NSMutableDictionary *_unitStrings;
+    HKHealthStore * _healthStore;
+    NSDictionary * _unitPreferencesByObjectType;
+    NSMutableDictionary * _unitStrings;
 }
 
 - (void).cxx_destruct;
 - (id)_changedKeysBetweenDictionary:(id)arg1 andDictionary:(id)arg2;
-- (id)_displayNameForUnit:(id)arg1;
-- (id)_displayNameForUnit:(id)arg1 localizablePrefix:(id)arg2;
-- (void)_fetchKUnitPreferencesWithAttempt:(int)arg1;
+- (id)_displayNameKey:(id)arg1 withNumber:(BOOL)arg2;
+- (id)_displayNameKeyForDataUnit:(id)arg1 withNumber:(BOOL)arg2;
+- (id)_displayNameKeyForUnit:(id)arg1;
+- (void)_fetchHKUnitPreferencesWithAttempt:(int)arg1;
 - (id)_generateDefaultHKUnitPreferences;
 - (void)_initHKUnitPreferences;
 - (void)_localeDidChange:(id)arg1;
 - (id)_longDisplayNameForUnit:(id)arg1;
 - (id)_longDisplayNameOverrideForDataUnit:(id)arg1;
-- (id)_nameWithKey:(id)arg1 forDataUnit:(id)arg2;
-- (id)_nameWithKey:(id)arg1 forDataUnit:(id)arg2 unit:(id)arg3;
 - (void)_postNotificationWithChangedKeys:(id)arg1;
-- (id)_rangeForDataUnit:(id)arg1 fromRanges:(id)arg2;
 - (void)_refreshHKUnitPreferencesWithCompletion:(id /* block */)arg1;
-- (id)_unitForBloodPressureDataUnit;
 - (void)_unitPreferencesDidUpdate:(id)arg1;
 - (void)_updateHKUnitPreferences:(id)arg1;
 - (void)dealloc;
-- (id)displayNameForDataUnit:(id)arg1;
-- (id)displayNameForDataUnit:(id)arg1 unit:(id)arg2;
-- (id)displayNameForDataUnit:(id)arg1 value:(double)arg2;
 - (id)displayRangeForDataUnit:(id)arg1;
 - (id)initWithHealthStore:(id)arg1;
-- (id)longDisplayNameForDataUnit:(id)arg1;
-- (id)manualEntryAbsoluteRangeForDataUnit:(id)arg1;
-- (id)manualEntryConfirmRangeForDataUnit:(id)arg1;
-- (id)singularDisplayNameForDataUnit:(id)arg1;
-- (id)singularDisplayNameForDataUnit:(id)arg1 unit:(id)arg2;
+- (id)localizedDisplayNameForDataUnit:(id)arg1;
+- (id)localizedDisplayNameForDataUnit:(id)arg1 value:(id)arg2;
+- (id)localizedDisplayNameForUnit:(id)arg1;
+- (id)localizedHealthUIStringForDataUnit:(id)arg1 key:(id)arg2 value:(id)arg3;
+- (id)localizedLongDisplayNameForDataUnit:(id)arg1;
+- (double)scaleFactorForYAxisLabeling:(id)arg1;
 - (id)unitForDataUnit:(id)arg1;
 - (void)updatePreferredUnit:(id)arg1 forDataUnit:(id)arg2;
 

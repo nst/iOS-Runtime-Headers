@@ -3,9 +3,9 @@
  */
 
 @interface PLReplaceAssetsWithCameraRollCopiesJob : PLDaemonJob {
-    PLManagedAlbum *_album;
-    NSArray *_assets;
-    PLPhotoLibrary *_photoLibrary;
+    PLManagedAlbum * _album;
+    NSArray * _assets;
+    PLPhotoLibrary * _photoLibrary;
 }
 
 @property (nonatomic, retain) PLManagedAlbum *album;
@@ -20,7 +20,7 @@
 - (id)album;
 - (id)assets;
 - (id)coordinator;
-- (long long)daemonOperation;
+- (int)daemonOperation;
 - (void)dealloc;
 - (void)encodeToXPCObject:(id)arg1;
 - (id)initFromXPCObject:(id)arg1 connection:(id)arg2;

@@ -2,35 +2,38 @@
    Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
  */
 
-@interface CAMStillImageCaptureRequest : CAMCaptureRequest <CAMBurstIdentifierProvider, CAMBurstRequest, CAMEffectFilterTypeProvider, CAMHDRRequest, CAMIrisRequest, NSCopying, NSMutableCopying> {
-    NSString *_HDREV0IrisIdentifier;
-    NSURL *_HDREV0LocalVideoDestinationURL;
-    NSString *_HDREV0PersistenceUUID;
-    NSString *_HDREV0VideoPersistenceUUID;
-    NSString *_burstIdentifier;
-    <CAMStillImageCaptureRequestDelegate> *_delegate;
-    int _effectFilterType;
-    int _flashMode;
-    int _hdrMode;
-    NSString *_irisIdentifier;
-    int _irisMode;
-    NSURL *_localVideoDestinationURL;
-    unsigned int _maximumBurstLength;
-    BOOL _usesStillImageStabilization;
-    NSString *_videoPersistenceUUID;
-    BOOL _wantsAudioForCapture;
-    BOOL _wantsHighResolutionStills;
-    BOOL _wantsSquareCrop;
+@interface CAMStillImageCaptureRequest : CAMCaptureRequest <CAMBurstIdentifierProvider, CAMBurstRequest, CAMEffectFilterTypeProvider, CAMIrisRequest, CAMPossibleOriginalRequest, CAMTimelapseRequest, NSCopying, NSMutableCopying> {
+    NSString * _burstIdentifier;
+    <CAMStillImageCaptureRequestDelegate> * _delegate;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _desiredPreviewSize;
+    int  _effectFilterType;
+    int  _flashMode;
+    int  _hdrMode;
+    NSString * _irisIdentifier;
+    int  _irisMode;
+    NSURL * _localVideoDestinationURL;
+    unsigned int  _maximumBurstLength;
+    NSString * _originalIrisIdentifier;
+    NSURL * _originalLocalVideoDestinationURL;
+    NSString * _originalPersistenceUUID;
+    NSString * _originalVideoPersistenceUUID;
+    NSString * _timelapseIdentifier;
+    BOOL  _usesStillImageStabilization;
+    NSString * _videoPersistenceUUID;
+    BOOL  _wantsAudioForCapture;
+    BOOL  _wantsAutoDuoImageFusion;
+    BOOL  _wantsHighResolutionStills;
+    BOOL  _wantsSquareCrop;
 }
 
-@property (nonatomic, readonly, copy) NSString *HDREV0IrisIdentifier;
-@property (nonatomic, readonly, copy) NSURL *HDREV0LocalVideoDestinationURL;
-@property (nonatomic, readonly, copy) NSString *HDREV0PersistenceUUID;
-@property (nonatomic, readonly, copy) NSString *HDREV0VideoPersistenceUUID;
 @property (nonatomic, readonly, copy) NSString *burstIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) <CAMStillImageCaptureRequestDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } desiredPreviewSize;
 @property (nonatomic, readonly) int effectFilterType;
 @property (nonatomic, readonly) int flashMode;
 @property (readonly) unsigned int hash;
@@ -39,40 +42,50 @@
 @property (nonatomic, readonly) int irisMode;
 @property (nonatomic, readonly, copy) NSURL *localVideoDestinationURL;
 @property (nonatomic, readonly) unsigned int maximumBurstLength;
+@property (nonatomic, readonly, copy) NSString *originalIrisIdentifier;
+@property (nonatomic, readonly, copy) NSURL *originalLocalVideoDestinationURL;
+@property (nonatomic, readonly, copy) NSString *originalPersistenceUUID;
+@property (nonatomic, readonly, copy) NSString *originalVideoPersistenceUUID;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly, copy) NSString *timelapseIdentifier;
 @property (nonatomic, readonly) BOOL usesStillImageStabilization;
 @property (nonatomic, readonly, copy) NSString *videoPersistenceUUID;
 @property (nonatomic, readonly) BOOL wantsAudioForCapture;
+@property (nonatomic, readonly) BOOL wantsAutoDuoImageFusion;
 @property (nonatomic, readonly) BOOL wantsHighResolutionStills;
 @property (nonatomic, readonly) BOOL wantsSquareCrop;
 
 - (void).cxx_destruct;
-- (id)HDREV0IrisIdentifier;
-- (id)HDREV0LocalVideoDestinationURL;
-- (id)HDREV0PersistenceUUID;
-- (id)HDREV0VideoPersistenceUUID;
 - (id)burstIdentifier;
 - (id)captureRequest;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)delegate;
+- (struct CGSize { double x1; double x2; })desiredPreviewSize;
 - (int)effectFilterType;
 - (int)flashMode;
 - (int)hdrMode;
 - (id)init;
 - (id)initWithRequest:(id)arg1 distinctPersistence:(BOOL)arg2;
 - (id)irisIdentifier;
-- (id)irisIdentifierForHDREV0:(BOOL)arg1;
-- (id)irisLocalVideoDestinationURLForHDREV0:(BOOL)arg1;
+- (id)irisIdentifierForOriginal:(BOOL)arg1;
+- (id)irisLocalVideoDestinationURLForOriginal:(BOOL)arg1;
 - (int)irisMode;
-- (id)irisStillImagePersistenceUUIDForHDREV0:(BOOL)arg1;
-- (id)irisVideoPersistenceUUIDForHDREV0:(BOOL)arg1;
-- (BOOL)isHDREV0LocalVideoDestinationURL:(id)arg1;
+- (id)irisStillImagePersistenceUUIDForOriginal:(BOOL)arg1;
+- (id)irisVideoPersistenceUUIDForOriginal:(BOOL)arg1;
+- (BOOL)isOriginalLocalVideoDestinationURL:(id)arg1;
 - (id)localVideoDestinationURL;
 - (unsigned int)maximumBurstLength;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)originalIrisIdentifier;
+- (id)originalLocalVideoDestinationURL;
+- (id)originalPersistenceUUID;
+- (id)originalVideoPersistenceUUID;
+- (BOOL)shouldPersistToLivePhotoDirectory;
+- (id)timelapseIdentifier;
 - (BOOL)usesStillImageStabilization;
 - (id)videoPersistenceUUID;
 - (BOOL)wantsAudioForCapture;
+- (BOOL)wantsAutoDuoImageFusion;
 - (BOOL)wantsHighResolutionStills;
 - (BOOL)wantsSquareCrop;
 

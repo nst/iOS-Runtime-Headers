@@ -3,9 +3,9 @@
  */
 
 @interface BLTSectionInfoSyncAlertingSectionState : NSObject {
-    id /* block */ _clientCompletion;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    unsigned int _state;
+    id /* block */  _clientCompletion;
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    unsigned int  _state;
 }
 
 @property (nonatomic, copy) id /* block */ clientCompletion;

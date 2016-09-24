@@ -3,28 +3,28 @@
  */
 
 @interface AAUIBaseSignInViewController : ACUIViewController <AAUIAccountCreationDelegate, AAUIAccountRepairRemoteUIDelegate, AAUICredentialRecoveryPresentationDelegate, AAUIGenericTermsRemoteUIDelegate> {
-    ACAccount *_account;
-    AAUIAccountRepairRemoteUI *_accountRepairRemoteUI;
-    ACAccount *_appleAccount;
-    ACAccountType *_appleAccountType;
-    PSSpecifier *_createNewAccountButtonSpecifier;
-    AAUICredentialRecoveryController *_credentialRecoveryUIController;
-    AAUIGenericTermsRemoteUI *_genericTermsRemoteUI;
-    id /* block */ _identityConsolidationCompletion;
-    NSString *_initialTitle;
-    BOOL _isPasswordDirty;
-    BOOL _isPresentedModally;
-    UINavigationController *_modalRemoteViewController;
-    ABMonogrammer *_monogrammer;
-    NSString *_recommendedUsername;
-    AAUIAccountCreationRemoteUI *_remoteAccountCreationUI;
-    RUILoader *_remoteUILoader;
-    NSMutableArray *_remoteUIModels;
-    BOOL _shouldHideBackButton;
-    BOOL _shouldHideCreateNewAccount;
-    PSSpecifier *_signInButtonSpecifier;
-    UIImageView *_silhouetteView;
-    id _textFieldTextDidChangeObserver;
+    ACAccount * _account;
+    AAUIAccountRepairRemoteUI * _accountRepairRemoteUI;
+    ACAccount * _appleAccount;
+    ACAccountType * _appleAccountType;
+    PSSpecifier * _createNewAccountButtonSpecifier;
+    AAUICredentialRecoveryController * _credentialRecoveryUIController;
+    AAUIGenericTermsRemoteUI * _genericTermsRemoteUI;
+    id /* block */  _identityConsolidationCompletion;
+    NSString * _initialTitle;
+    BOOL  _isPasswordDirty;
+    BOOL  _isPresentedModally;
+    UINavigationController * _modalRemoteViewController;
+    ABMonogrammer * _monogrammer;
+    NSString * _recommendedUsername;
+    AAUIAccountCreationRemoteUI * _remoteAccountCreationUI;
+    RUILoader * _remoteUILoader;
+    NSMutableArray * _remoteUIModels;
+    BOOL  _shouldHideBackButton;
+    BOOL  _shouldHideCreateNewAccount;
+    PSSpecifier * _signInButtonSpecifier;
+    UIImageView * _silhouetteView;
+    id  _textFieldTextDidChangeObserver;
 }
 
 @property (nonatomic, readonly) ACAccount *account;

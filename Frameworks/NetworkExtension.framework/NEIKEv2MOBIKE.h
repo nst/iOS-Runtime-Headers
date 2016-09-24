@@ -3,11 +3,11 @@
  */
 
 @interface NEIKEv2MOBIKE : NSObject <NSObject> {
-    NEIKEv2PacketTunnelProvider *_ikev2TunnelProvider;
-    BOOL _mobikeCapable;
-    unsigned int _mobikeRetries;
-    BOOL _mobikeRunning;
-    NSObject<OS_dispatch_source> *_mobikeTimer;
+    NEIKEv2PacketTunnelProvider * _ikev2TunnelProvider;
+    BOOL  _mobikeCapable;
+    unsigned int  _mobikeRetries;
+    BOOL  _mobikeRunning;
+    NSObject<OS_dispatch_source> * _mobikeTimer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -24,10 +24,10 @@
 - (void)dealloc;
 - (void)ikev2MOBIKECleanup;
 - (void)ikev2MOBIKEFailed;
-- (void)ikev2MOBIKEReassert;
-- (BOOL)ikev2MOBIKESetup:(BOOL)arg1 ifChange:(BOOL)arg2;
+- (void)ikev2MOBIKEReassert:(id /* block */)arg1;
+- (BOOL)ikev2MOBIKESetup:(BOOL)arg1 ifChange:(BOOL)arg2 serverAddress:(id)arg3;
 - (BOOL)ikev2MOBIKESkipTunnelNetworkSettingsUpdate;
-- (void)ikev2MOBIKEStart:(unsigned int)arg1 pathStatus:(int)arg2 persist:(unsigned char)arg3;
+- (void)ikev2MOBIKEStart:(unsigned int)arg1 pathStatus:(int)arg2 serverAddress:(id)arg3 persist:(unsigned char)arg4;
 - (void)ikev2MOBIKEStopTimer;
 - (id)ikev2TunnelProvider;
 - (id)initWithTunnelProvider:(id)arg1;

@@ -3,10 +3,10 @@
  */
 
 @interface NETunnelProvider : NEProvider <NSExtensionRequestHandling> {
-    NSArray *_appRules;
-    BOOL _onDemandEnabled;
-    NEVPNProtocol *_protocolConfiguration;
-    BOOL _reasserting;
+    NSArray * _appRules;
+    BOOL  _onDemandEnabled;
+    NEVPNProtocol * _protocolConfiguration;
+    BOOL  _reasserting;
 }
 
 @property (retain) NSArray *appRules;

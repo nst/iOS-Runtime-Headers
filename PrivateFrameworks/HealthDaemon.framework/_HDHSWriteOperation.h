@@ -3,10 +3,10 @@
  */
 
 @interface _HDHSWriteOperation : NSObject {
-    id /* block */ _completion;
-    NSData *_data;
-    BOOL _expectResponse;
-    CBPeripheral *_peripheral;
+    id /* block */  _completion;
+    NSData * _data;
+    BOOL  _expectResponse;
+    CBPeripheral * _peripheral;
 }
 
 @property (nonatomic, copy) id /* block */ completion;

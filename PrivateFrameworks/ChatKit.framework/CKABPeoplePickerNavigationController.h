@@ -2,8 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKABPeoplePickerNavigationController : ABPeoplePickerNavigationController
+@interface CKABPeoplePickerNavigationController : ABPeoplePickerNavigationController <CKAdaptivePresentedControllerProtocol>
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+
+- (BOOL)preserveModalPresentationStyle;
 - (BOOL)shouldAutorotate;
+- (BOOL)wantsWindowedPresentation;
 
 @end

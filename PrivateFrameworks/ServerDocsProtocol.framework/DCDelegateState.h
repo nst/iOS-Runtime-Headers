@@ -3,10 +3,10 @@
  */
 
 @interface DCDelegateState : NSObject {
-    <DCDocumentManagerDelegate> *_delegate;
-    DCCachedItem *_item;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSData *_watchedVersionIdentifier;
+    <DCDocumentManagerDelegate> * _delegate;
+    DCCachedItem * _item;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSData * _watchedVersionIdentifier;
 }
 
 @property (readonly) <DCDocumentManagerDelegate> *delegate;

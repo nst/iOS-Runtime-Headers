@@ -3,17 +3,17 @@
  */
 
 @interface MPConcreteMediaItemCollection : MPMediaItemCollection <MPCacheableConcreteMediaEntity, NSCoding, NSCopying> {
-    int _grouping;
-    long long _identifier;
-    MPMediaQuery *_itemsQuery;
-    MPConcreteMediaEntityPropertiesCache *_propertiesCache;
-    MPMediaItem *_representativeItem;
+    int  _grouping;
+    int  _identifier;
+    MPMediaQuery * _itemsQuery;
+    MPConcreteMediaEntityPropertiesCache * _propertiesCache;
+    MPMediaItem * _representativeItem;
 }
 
 @property (nonatomic, readonly, retain) MPConcreteMediaEntityPropertiesCache *cachedPropertyValues;
 
 - (void).cxx_destruct;
-- (id)_initWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2 itemsQuery:(id)arg3 grouping:(int)arg4 representativeItemIdentifier:(long long)arg5 propertiesCache:(id)arg6;
+- (id)_initWithIdentifier:(int)arg1 valuesForProperties:(id)arg2 itemsQuery:(id)arg3 grouping:(int)arg4 representativeItemIdentifier:(int)arg5 propertiesCache:(id)arg6;
 - (id)cachedPropertyValues;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
@@ -23,15 +23,15 @@
 - (int)groupingType;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIdentifier:(long long)arg1 itemsQuery:(id)arg2 grouping:(int)arg3;
-- (id)initWithIdentifier:(long long)arg1 valuesForProperties:(id)arg2 itemsQuery:(id)arg3 grouping:(int)arg4 representativeItemIdentifier:(long long)arg5;
+- (id)initWithIdentifier:(int)arg1 itemsQuery:(id)arg2 grouping:(int)arg3;
+- (id)initWithIdentifier:(int)arg1 valuesForProperties:(id)arg2 itemsQuery:(id)arg3 grouping:(int)arg4 representativeItemIdentifier:(int)arg5;
 - (id)initWithMultiverseIdentifier:(id)arg1;
 - (void)invalidateCachedProperties;
 - (BOOL)isEqual:(id)arg1;
 - (id)items;
 - (id)itemsQuery;
 - (id)mediaLibrary;
-- (unsigned long long)persistentID;
+- (unsigned int)persistentID;
 - (id)representativeItem;
 - (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
 - (void)setValue:(id)arg1 forProperty:(id)arg2 withCompletionBlock:(id /* block */)arg3;

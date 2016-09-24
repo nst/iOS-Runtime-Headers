@@ -3,8 +3,8 @@
  */
 
 @interface SBKSimpleTransactionRequestHandler : SBKRequestHandler {
-    BOOL _canceled;
-    SBKTransactionController *_transactionController;
+    BOOL  _canceled;
+    SBKTransactionController * _transactionController;
 }
 
 @property (nonatomic, readonly) BOOL canceled;

@@ -3,8 +3,8 @@
  */
 
 @interface _UIViewServiceViewControllerDeputyXPCInterface : NSObject <_UIViewServiceDeputyXPCInterface> {
-    NSXPCInterface *_exportedInterface;
-    NSXPCInterface *_remoteViewControllerInterface;
+    NSXPCInterface * _exportedInterface;
+    NSXPCInterface * _remoteViewControllerInterface;
 }
 
 @property (readonly, copy) NSString *debugDescription;

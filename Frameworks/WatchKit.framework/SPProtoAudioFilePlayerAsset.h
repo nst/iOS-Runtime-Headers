@@ -3,8 +3,8 @@
  */
 
 @interface SPProtoAudioFilePlayerAsset : PBCodable <NSCopying> {
-    SPProtoObjectMessage *_destroy;
-    SPProtoAudioFilePlayerAssetUpdateMetaData *_upsertWithMetaData;
+    SPProtoObjectMessage * _destroy;
+    SPProtoAudioFilePlayerAssetUpdateMetaData * _upsertWithMetaData;
 }
 
 @property (nonatomic, retain) SPProtoObjectMessage *destroy;

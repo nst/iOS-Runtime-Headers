@@ -5,8 +5,8 @@
 @interface AWDCoreRoutineHintSourceSubmissionInstance : PBCodable <NSCopying> {
     struct { 
         unsigned int hintSource : 1; 
-    } _has;
-    int _hintSource;
+    }  _has;
+    int  _hintSource;
 }
 
 @property (nonatomic) BOOL hasHintSource;

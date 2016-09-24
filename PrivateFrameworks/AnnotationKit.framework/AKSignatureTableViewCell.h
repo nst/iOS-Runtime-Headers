@@ -3,8 +3,8 @@
  */
 
 @interface AKSignatureTableViewCell : UITableViewCell {
-    AKSignature *_signature;
-    UIImageView *_signatureImageView;
+    AKSignature * _signature;
+    UIImageView * _signatureImageView;
 }
 
 @property (nonatomic, retain) AKSignature *signature;

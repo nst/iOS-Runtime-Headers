@@ -3,12 +3,12 @@
  */
 
 @interface MFMessageBodyStringAccumulator : NSObject <MFMessageBodyStringAccumulator> {
-    NSMutableString *_accumulatedString;
-    BOOL _isFull;
-    unsigned int _lastCustomEntityTag;
-    int _lastEntity;
-    int _options;
-    unsigned int _remainingLength;
+    NSMutableString * _accumulatedString;
+    BOOL  _isFull;
+    unsigned int  _lastCustomEntityTag;
+    int  _lastEntity;
+    int  _options;
+    unsigned int  _remainingLength;
 }
 
 @property (readonly, copy) NSString *debugDescription;

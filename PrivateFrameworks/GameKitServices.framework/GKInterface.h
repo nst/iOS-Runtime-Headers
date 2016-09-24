@@ -3,10 +3,10 @@
  */
 
 @interface GKInterface : NSObject {
-    NSString *_bsdName;
-    NSNumber *_index;
-    unsigned int _priority;
-    NSString *_type;
+    NSString * _bsdName;
+    NSNumber * _index;
+    unsigned int  _priority;
+    NSString * _type;
 }
 
 @property (nonatomic, copy) NSString *bsdName;

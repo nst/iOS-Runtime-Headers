@@ -3,7 +3,7 @@
  */
 
 @interface MPWeakTimer : NSObject {
-    NSObject<OS_dispatch_source> *_timerSource;
+    NSObject<OS_dispatch_source> * _timerSource;
 }
 
 + (id)timerWithInterval:(double)arg1 block:(id /* block */)arg2;

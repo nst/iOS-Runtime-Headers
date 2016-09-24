@@ -3,8 +3,8 @@
  */
 
 @interface AVAssetWriterInputPixelBufferAdaptorInternal : NSObject {
-    AVAssetWriterInput *input;
-    AVKeyPathDependencyManager *keyPathDependencyManager;
+    AVAssetWriterInput * input;
+    AVKeyPathDependencyManager * keyPathDependencyManager;
 }
 
 @end

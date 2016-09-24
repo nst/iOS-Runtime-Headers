@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DGLRenderBuffer : NSObject <TSCH3DGLBindable> {
-    unsigned int mBuffer;
+    unsigned int  mBuffer;
 }
 
 @property (readonly, copy) NSString *debugDescription;

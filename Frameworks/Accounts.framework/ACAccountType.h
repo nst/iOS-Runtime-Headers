@@ -3,20 +3,20 @@
  */
 
 @interface ACAccountType : NSObject <NSSecureCoding> {
-    NSSet *_accessKeys;
-    ACAccountStore *_accountStore;
-    NSString *_accountTypeDescription;
-    NSString *_credentialProtectionPolicy;
-    NSString *_credentialType;
-    BOOL _encryptAccountProperties;
-    NSString *_identifier;
-    NSURL *_objectID;
-    NSString *_owningBundleID;
-    NSSet *_supportedDataclasses;
-    int _supportsAuthentication;
-    BOOL _supportsMultipleAccounts;
-    NSSet *_syncableDataclasses;
-    int _visibility;
+    NSSet * _accessKeys;
+    ACAccountStore * _accountStore;
+    NSString * _accountTypeDescription;
+    NSString * _credentialProtectionPolicy;
+    NSString * _credentialType;
+    BOOL  _encryptAccountProperties;
+    NSString * _identifier;
+    NSURL * _objectID;
+    NSString * _owningBundleID;
+    NSSet * _supportedDataclasses;
+    int  _supportsAuthentication;
+    BOOL  _supportsMultipleAccounts;
+    NSSet * _syncableDataclasses;
+    int  _visibility;
 }
 
 @property (nonatomic, readonly) BOOL accessGranted;
@@ -36,6 +36,7 @@
 @property (nonatomic, readonly) NSSet *syncableDataclasses;
 @property (nonatomic) int visibility;
 
++ (id)allIdentifiers;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;

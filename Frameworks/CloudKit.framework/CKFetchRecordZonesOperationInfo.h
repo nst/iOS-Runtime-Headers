@@ -3,9 +3,9 @@
  */
 
 @interface CKFetchRecordZonesOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    BOOL _ignorePCSFailures;
-    BOOL _isFetchAllRecordZonesOperation;
-    NSArray *_recordZoneIDs;
+    BOOL  _ignorePCSFailures;
+    BOOL  _isFetchAllRecordZonesOperation;
+    NSArray * _recordZoneIDs;
 }
 
 @property (nonatomic) BOOL ignorePCSFailures;

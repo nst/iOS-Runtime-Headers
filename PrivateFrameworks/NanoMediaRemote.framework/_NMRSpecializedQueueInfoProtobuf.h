@@ -3,10 +3,12 @@
  */
 
 @interface _NMRSpecializedQueueInfoProtobuf : PBCodable <NSCopying> {
-    NSMutableArray *_specializedQueues;
+    NSMutableArray * _specializedQueues;
 }
 
 @property (nonatomic, retain) NSMutableArray *specializedQueues;
+
++ (Class)specializedQueuesType;
 
 - (void).cxx_destruct;
 - (void)addSpecializedQueues:(id)arg1;

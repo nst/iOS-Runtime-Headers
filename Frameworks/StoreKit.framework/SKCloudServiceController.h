@@ -3,9 +3,9 @@
  */
 
 @interface SKCloudServiceController : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    unsigned int _cloudServiceCapability;
-    BOOL _hasValidCloudServiceCapability;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    unsigned int  _cloudServiceCapability;
+    BOOL  _hasValidCloudServiceCapability;
 }
 
 + (int)authorizationStatus;

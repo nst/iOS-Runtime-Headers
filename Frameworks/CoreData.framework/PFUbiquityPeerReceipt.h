@@ -3,8 +3,8 @@
  */
 
 @interface PFUbiquityPeerReceipt : PFUbiquitySafeSaveFile {
-    PFUbiquityKnowledgeVector *_kv;
-    NSDate *_writeDate;
+    PFUbiquityKnowledgeVector * _kv;
+    NSDate * _writeDate;
 }
 
 @property (nonatomic, readonly) PFUbiquityKnowledgeVector *kv;

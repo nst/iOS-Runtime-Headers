@@ -3,25 +3,25 @@
  */
 
 @interface _SFWebProcessPlugInReaderEnabledPageController : WBUWebProcessPlugInAutoFillPageController <RequestDesktopSiteWebProcessPlugInListener, SFReaderWebProcessControllerProtocol> {
-    _WKRemoteObjectInterface *_availabilityControllerInterface;
-    int _cachedReaderTopScrollOffset;
-    NSMutableSet *_domainsNeedingDesktopUserAgent;
-    SFWebProcessPlugInPageExtensionController *_extensionController;
-    NSDictionary *_initalArticleScrollPositionAsDictionary;
-    NSDictionary *_initialReaderConfiguration;
-    NSDictionary *_initialScrollPositionAsDictionary;
-    <SFReaderEventsListener> *_readerActivityListenerProxy;
+    _WKRemoteObjectInterface * _availabilityControllerInterface;
+    int  _cachedReaderTopScrollOffset;
+    NSMutableSet * _domainsNeedingDesktopUserAgent;
+    SFWebProcessPlugInPageExtensionController * _extensionController;
+    NSDictionary * _initalArticleScrollPositionAsDictionary;
+    NSDictionary * _initialReaderConfiguration;
+    NSDictionary * _initialScrollPositionAsDictionary;
+    <SFReaderEventsListener> * _readerActivityListenerProxy;
     struct unique_ptr<SafariServices::ReaderAvailabilityController, std::__1::default_delete<SafariServices::ReaderAvailabilityController> > { 
         struct __compressed_pair<SafariServices::ReaderAvailabilityController *, std::__1::default_delete<SafariServices::ReaderAvailabilityController> > { 
             struct ReaderAvailabilityController {} *__first_; 
         } __ptr_; 
-    } _readerAvailabilityController;
-    _SFReaderWebProcessPlugInPageController *_readerPageController;
-    float _readerUserVisibleWidth;
-    <RequestDesktopSiteUIProcessListener> *_requestDesktopSiteUIProcessListener;
-    _WKRemoteObjectInterface *_requestDesktopSiteWebProcessPlugInListenerInterface;
-    _SFWebProcessPlugInPageSafeBrowsingController *_safeBrowsingController;
-    BOOL _viewingReadingListArchive;
+    }  _readerAvailabilityController;
+    _SFReaderWebProcessPlugInPageController * _readerPageController;
+    double  _readerUserVisibleWidth;
+    <RequestDesktopSiteUIProcessListener> * _requestDesktopSiteUIProcessListener;
+    _WKRemoteObjectInterface * _requestDesktopSiteWebProcessPlugInListenerInterface;
+    _SFWebProcessPlugInPageSafeBrowsingController * _safeBrowsingController;
+    BOOL  _viewingReadingListArchive;
 }
 
 @property (nonatomic) int cachedReaderTopScrollOffset;
@@ -32,7 +32,7 @@
 @property (nonatomic, copy) NSDictionary *initalArticleScrollPositionAsDictionary;
 @property (nonatomic, readonly) NSDictionary *initialReaderConfiguration;
 @property (nonatomic, retain) _SFReaderWebProcessPlugInPageController *readerPageController;
-@property (nonatomic, readonly) float readerUserVisibleWidth;
+@property (nonatomic, readonly) double readerUserVisibleWidth;
 @property (readonly) Class superclass;
 @property (getter=isViewingReadingListArchive, nonatomic, readonly) BOOL viewingReadingListArchive;
 
@@ -77,6 +77,7 @@
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didReceiveServerRedirectForProvisionalLoadForFrame:(id)arg2;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didSameDocumentNavigation:(int)arg2 forFrame:(id)arg3;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didStartProvisionalLoadForFrame:(id)arg2;
+- (id)webProcessPlugInBrowserContextController:(id)arg1 frame:(id)arg2 willSendRequestForResource:(unsigned int)arg3 request:(id)arg4 redirectResponse:(id)arg5;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 globalObjectIsAvailableForFrame:(id)arg2 inScriptWorld:(id)arg3;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 renderingProgressDidChange:(unsigned int)arg2;
 - (void)willDestroyBrowserContextController:(id)arg1;

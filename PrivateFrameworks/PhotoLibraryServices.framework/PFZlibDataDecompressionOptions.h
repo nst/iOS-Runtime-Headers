@@ -3,10 +3,10 @@
  */
 
 @interface PFZlibDataDecompressionOptions : NSObject {
-    id /* block */ _createBuffer;
-    BOOL _decompressAllAtOnce;
-    id /* block */ _growData;
-    int _windowBits;
+    id /* block */  _createBuffer;
+    BOOL  _decompressAllAtOnce;
+    id /* block */  _growData;
+    int  _windowBits;
 }
 
 @property (nonatomic, copy) id /* block */ createBuffer;

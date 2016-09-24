@@ -3,8 +3,8 @@
  */
 
 @interface SLSheetPreviewImageSource : NSObject {
-    AVAssetImageGenerator *_assetImageGenerator;
-    ALAssetsLibrary *_assetsLibrary;
+    AVAssetImageGenerator * _assetImageGenerator;
+    ALAssetsLibrary * _assetsLibrary;
 }
 
 @property (readonly) ALAssetsLibrary *assetsLibrary;

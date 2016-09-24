@@ -3,14 +3,14 @@
  */
 
 @interface NSURLConnectionInternalConnection : NSURLConnectionInternal <NSURLConnectionRequired> {
-    struct _CFURLConnection { } *_cfConn;
-    int _cfConnLock;
-    struct _CFURLAuthChallenge { } *_currCFChallenge;
-    NSURLAuthenticationChallenge *_currNSChallenge;
-    long long _expectedTotalBytes;
-    struct __CFString { } *_fileName;
-    bool _shouldSkipCancelOnRelease;
-    long long _totalBytes;
+    struct _CFURLConnection { } * _cfConn;
+    int  _cfConnLock;
+    struct _CFURLAuthChallenge { } * _currCFChallenge;
+    NSURLAuthenticationChallenge * _currNSChallenge;
+    int  _expectedTotalBytes;
+    struct __CFString { } * _fileName;
+    bool  _shouldSkipCancelOnRelease;
+    int  _totalBytes;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -33,7 +33,7 @@
 - (void)cleanupChallenges;
 - (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
 - (void)dealloc;
-- (id)initWithInfo:(const struct InternalInit { id x1; id x2; BOOL x3; long long x4; }*)arg1;
+- (id)initWithInfo:(const struct InternalInit { id x1; id x2; BOOL x3; int x4; }*)arg1;
 - (void)invokeForDelegate:(id /* block */)arg1;
 - (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
 - (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;

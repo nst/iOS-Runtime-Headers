@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DChartElementProperties : NSObject <NSCopying> {
-    TSCH3DTexturePool *mPool;
+    TSCH3DTexturePool * mPool;
 }
 
 @property (nonatomic, readonly) TSCH3DTexturePool *pool;

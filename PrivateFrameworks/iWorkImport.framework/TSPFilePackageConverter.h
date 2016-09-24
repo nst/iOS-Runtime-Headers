@@ -5,6 +5,6 @@
 @interface TSPFilePackageConverter : TSPPackageConverter
 
 - (BOOL)isValid;
-- (id)newWriteChannelAtPath:(id)arg1 size:(unsigned long long)arg2 CRC:(unsigned int)arg3 packageWriter:(id)arg4 error:(id*)arg5;
+- (id)newWriteChannelAtPath:(id)arg1 size:(unsigned int)arg2 CRC:(unsigned int)arg3 packageWriter:(id)arg4 error:(id*)arg5;
 
 @end

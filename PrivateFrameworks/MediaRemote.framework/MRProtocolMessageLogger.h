@@ -3,8 +3,8 @@
  */
 
 @interface MRProtocolMessageLogger : NSObject {
-    BOOL _shouldLog;
-    int _token;
+    BOOL  _shouldLog;
+    int  _token;
 }
 
 @property (nonatomic) BOOL shouldLog;

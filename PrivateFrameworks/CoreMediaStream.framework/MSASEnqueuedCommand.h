@@ -3,9 +3,9 @@
  */
 
 @interface MSASEnqueuedCommand : NSObject <NSCoding> {
-    NSString *_command;
-    NSDictionary *_invariantParam;
-    NSDictionary *_variantParam;
+    NSString * _command;
+    NSDictionary * _invariantParam;
+    NSDictionary * _variantParam;
 }
 
 @property (nonatomic, copy) NSString *command;

@@ -3,10 +3,10 @@
  */
 
 @interface UIStoryboardPresentationSegueTemplate : UIStoryboardSegueTemplate {
-    int _modalPresentationStyle;
-    int _modalTransitionStyle;
-    BOOL _useDefaultModalPresentationStyle;
-    BOOL _useDefaultModalTransitionStyle;
+    int  _modalPresentationStyle;
+    int  _modalTransitionStyle;
+    BOOL  _useDefaultModalPresentationStyle;
+    BOOL  _useDefaultModalTransitionStyle;
 }
 
 @property (nonatomic) int modalPresentationStyle;

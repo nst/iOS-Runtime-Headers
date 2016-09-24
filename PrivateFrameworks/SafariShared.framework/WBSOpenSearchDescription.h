@@ -3,10 +3,10 @@
  */
 
 @interface WBSOpenSearchDescription : NSObject {
-    NSString *_descriptionDocumentURLString;
-    WBSOpenSearchURLTemplate *_searchURLTemplate;
-    WBSOpenSearchURLTemplate *_urlTemplateForSuggestionsInJSON;
-    WBSOpenSearchURLTemplate *_urlTemplateForSuggestionsInXML;
+    NSString * _descriptionDocumentURLString;
+    WBSOpenSearchURLTemplate * _searchURLTemplate;
+    WBSOpenSearchURLTemplate * _urlTemplateForSuggestionsInJSON;
+    WBSOpenSearchURLTemplate * _urlTemplateForSuggestionsInXML;
 }
 
 @property (nonatomic, readonly) NSString *descriptionDocumentURLString;

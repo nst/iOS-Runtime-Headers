@@ -3,10 +3,10 @@
  */
 
 @interface MFBasicMessageDataSection : NSObject <MFMessageDataSection> {
-    BOOL _complete;
-    MFDataHolder *_dataHolder;
-    NSString *_partName;
-    BOOL _partial;
+    BOOL  _complete;
+    MFDataHolder * _dataHolder;
+    NSString * _partName;
+    BOOL  _partial;
 }
 
 @property (getter=isComplete, nonatomic) BOOL complete;

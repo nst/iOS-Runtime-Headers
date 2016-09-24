@@ -8,7 +8,7 @@
         double max; 
         double min; 
         unsigned int count; 
-    } stats;
+    }  stats;
 }
 
 - (id)description;

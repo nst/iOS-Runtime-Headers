@@ -3,32 +3,24 @@
  */
 
 @interface HMDMainDriver : NSObject {
-    HMDAccessoryBrowser *_accessoryBrowser;
-    HMDAccessoryManager *_accessoryManager;
-    HMDCloudDataSyncManager *_cloudDataSyncManager;
-    HMDHomeManager *_homeManager;
-    HMDIdentityRegistry *_identityRegistry;
-    HMDIDSMessageTransport *_idsProxyTransport;
-    HMDIDSMessageTransport *_idsTransport;
-    HMDIDSMessageDispatcher *_messageDispatcher;
-    HMDMessageFilterChain *_msgFilterChain;
-    HMMessageDispatcher *_notificationRelayDispatcher;
-    NSMutableArray *_unpairedAccessories;
-    NSObject<OS_dispatch_queue> *_workQueue;
-    HMDXpcServer *_xpcServer;
+    HMDAccessoryBrowser * _accessoryBrowser;
+    HMDCloudDataSyncManager * _cloudDataSyncManager;
+    HMDHomeManager * _homeManager;
+    HMDRemoteIdentityRegistry * _identityRegistry;
+    HMDCentralMessageDispatcher * _messageDispatcher;
+    HMDMessageFilterChain * _msgFilterChain;
+    HMFMessageDispatcher * _notificationRelayDispatcher;
+    NSObject<OS_dispatch_queue> * _workQueue;
+    HMDXpcServer * _xpcServer;
 }
 
 @property (nonatomic, retain) HMDAccessoryBrowser *accessoryBrowser;
-@property (nonatomic, retain) HMDAccessoryManager *accessoryManager;
 @property (nonatomic, retain) HMDCloudDataSyncManager *cloudDataSyncManager;
 @property (nonatomic, retain) HMDHomeManager *homeManager;
-@property (nonatomic, retain) HMDIdentityRegistry *identityRegistry;
-@property (nonatomic, retain) HMDIDSMessageTransport *idsProxyTransport;
-@property (nonatomic, retain) HMDIDSMessageTransport *idsTransport;
-@property (nonatomic, retain) HMDIDSMessageDispatcher *messageDispatcher;
+@property (nonatomic, retain) HMDRemoteIdentityRegistry *identityRegistry;
+@property (nonatomic, retain) HMDCentralMessageDispatcher *messageDispatcher;
 @property (nonatomic, retain) HMDMessageFilterChain *msgFilterChain;
-@property (nonatomic, retain) HMMessageDispatcher *notificationRelayDispatcher;
-@property (nonatomic, retain) NSMutableArray *unpairedAccessories;
+@property (nonatomic, retain) HMFMessageDispatcher *notificationRelayDispatcher;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 @property (nonatomic, retain) HMDXpcServer *xpcServer;
 
@@ -36,13 +28,10 @@
 
 - (void).cxx_destruct;
 - (id)accessoryBrowser;
-- (id)accessoryManager;
 - (id)cloudDataSyncManager;
 - (void)executeBTAJob:(const char *)arg1 withXPCDict:(id)arg2;
 - (id)homeManager;
 - (id)identityRegistry;
-- (id)idsProxyTransport;
-- (id)idsTransport;
 - (id)init;
 - (void)initBackgroundTaskAgent;
 - (void)logError:(id)arg1 component:(id)arg2;
@@ -50,20 +39,15 @@
 - (id)msgFilterChain;
 - (id)notificationRelayDispatcher;
 - (void)setAccessoryBrowser:(id)arg1;
-- (void)setAccessoryManager:(id)arg1;
 - (void)setCloudDataSyncManager:(id)arg1;
 - (void)setHomeManager:(id)arg1;
 - (void)setIdentityRegistry:(id)arg1;
-- (void)setIdsProxyTransport:(id)arg1;
-- (void)setIdsTransport:(id)arg1;
 - (void)setMessageDispatcher:(id)arg1;
 - (void)setMsgFilterChain:(id)arg1;
 - (void)setNotificationRelayDispatcher:(id)arg1;
-- (void)setUnpairedAccessories:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (void)setXpcServer:(id)arg1;
 - (void)start;
-- (id)unpairedAccessories;
 - (id)workQueue;
 - (id)xpcServer;
 

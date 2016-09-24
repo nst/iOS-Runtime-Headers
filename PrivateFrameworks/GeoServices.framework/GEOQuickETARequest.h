@@ -3,17 +3,17 @@
  */
 
 @interface GEOQuickETARequest : NSObject {
-    NSArray *_additionalTransportTypesRequested;
-    NSDate *_arrivalDate;
-    GEOAutomobileOptions *_automobileOptions;
-    GEOLocation *_currentLocation;
-    NSDate *_departureDate;
-    GEOComposedWaypoint *_destinationWaypoint;
-    BOOL _includeDistance;
-    GEOComposedWaypoint *_sourceWaypoint;
-    GEOTransitOptions *_transitOptions;
-    int _transportType;
-    GEOWalkingOptions *_walkingOptions;
+    NSArray * _additionalTransportTypesRequested;
+    NSDate * _arrivalDate;
+    GEOAutomobileOptions * _automobileOptions;
+    GEOLocation * _currentLocation;
+    NSDate * _departureDate;
+    GEOComposedWaypoint * _destinationWaypoint;
+    BOOL  _includeDistance;
+    GEOComposedWaypoint * _sourceWaypoint;
+    GEOTransitOptions * _transitOptions;
+    int  _transportType;
+    GEOWalkingOptions * _walkingOptions;
 }
 
 @property (nonatomic, readonly) NSArray *additionalTransportTypesRequested;

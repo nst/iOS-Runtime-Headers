@@ -3,9 +3,9 @@
  */
 
 @interface CECRouter : NSObject <CECInterfaceDelegate> {
-    NSMutableSet *_interfaces;
-    NSDictionary *_properties;
-    CECInterface *_sinkInterface;
+    NSMutableSet * _interfaces;
+    NSDictionary * _properties;
+    CECInterface * _sinkInterface;
 }
 
 @property (readonly, copy) NSString *debugDescription;

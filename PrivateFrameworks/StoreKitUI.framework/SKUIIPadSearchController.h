@@ -3,9 +3,9 @@
  */
 
 @interface SKUIIPadSearchController : NSObject <SKUISearchFieldDelegate> {
-    SKUIClientContext *_clientContext;
-    UIViewController *_parentViewController;
-    SKUISearchFieldController *_searchFieldController;
+    SKUIClientContext * _clientContext;
+    UIViewController * _parentViewController;
+    SKUISearchFieldController * _searchFieldController;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
@@ -15,6 +15,9 @@
 @property (nonatomic, readonly) UIViewController *parentViewController;
 @property (nonatomic, readonly) SKUISearchFieldController *searchFieldController;
 @property (readonly) Class superclass;
+
++ (id)lastSearchTerm;
++ (void)setLastSearchTerm:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_searchFieldController;

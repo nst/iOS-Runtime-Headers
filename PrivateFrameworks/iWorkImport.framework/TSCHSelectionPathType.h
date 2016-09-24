@@ -3,8 +3,8 @@
  */
 
 @interface TSCHSelectionPathType : NSObject <NSCopying> {
-    NSString *mName;
-    NSString *mType;
+    NSString * mName;
+    NSString * mType;
 }
 
 @property (nonatomic, readonly) NSString *name;

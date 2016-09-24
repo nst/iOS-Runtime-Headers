@@ -3,10 +3,10 @@
  */
 
 @interface MPUDataSourceViewController : UIViewController <UIStateRestoring, UIViewControllerRestoration> {
-    MPUDataSource *_dataSource;
-    BOOL _hasEverReloadedData;
-    BOOL _shouldReloadWhenVisible;
-    BOOL _visible;
+    MPUDataSource * _dataSource;
+    BOOL  _hasEverReloadedData;
+    BOOL  _shouldReloadWhenVisible;
+    BOOL  _visible;
 }
 
 @property (nonatomic, retain) MPUDataSource *dataSource;

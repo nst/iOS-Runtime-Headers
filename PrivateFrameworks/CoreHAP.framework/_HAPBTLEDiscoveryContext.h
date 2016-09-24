@@ -3,16 +3,18 @@
  */
 
 @interface _HAPBTLEDiscoveryContext : NSObject {
-    NSMapTable *_characteristicSignatures;
-    id /* block */ _completionHandler;
-    NSMutableArray *_discoveringCharacteristics;
-    NSMutableArray *_discoveringDescriptors;
-    NSMutableArray *_discoveringServices;
-    int _discoveryType;
-    NSMutableArray *_readingCharacteristics;
-    NSMutableArray *_readingDescriptors;
-    NSMutableArray *_readingSignatureCharacteristics;
-    int _retries;
+    NSMapTable * _characteristicSignatures;
+    id /* block */  _completionHandler;
+    NSMutableArray * _discoveringCharacteristics;
+    NSMutableArray * _discoveringDescriptors;
+    NSMutableArray * _discoveringServices;
+    int  _discoveryType;
+    NSMutableArray * _readingCharacteristics;
+    NSMutableArray * _readingDescriptors;
+    NSMutableArray * _readingSignatureCharacteristics;
+    NSMutableArray * _readingSignatureServices;
+    int  _retries;
+    NSMapTable * _serviceSignatures;
 }
 
 @property (nonatomic, readonly) NSMapTable *characteristicSignatures;
@@ -25,7 +27,9 @@
 @property (nonatomic, readonly) NSMutableArray *readingCharacteristics;
 @property (nonatomic, readonly) NSMutableArray *readingDescriptors;
 @property (nonatomic, readonly) NSMutableArray *readingSignatureCharacteristics;
+@property (nonatomic, readonly) NSMutableArray *readingSignatureServices;
 @property (nonatomic) int retries;
+@property (nonatomic, readonly) NSMapTable *serviceSignatures;
 
 - (void).cxx_destruct;
 - (id)characteristicSignatures;
@@ -40,8 +44,10 @@
 - (id)readingCharacteristics;
 - (id)readingDescriptors;
 - (id)readingSignatureCharacteristics;
+- (id)readingSignatureServices;
 - (void)reset;
 - (int)retries;
+- (id)serviceSignatures;
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setRetries:(int)arg1;
 

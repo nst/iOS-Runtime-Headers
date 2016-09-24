@@ -3,8 +3,8 @@
  */
 
 @interface PHSandboxExtensionWrapper : NSObject {
-    long long _handle;
-    NSString *_token;
+    int  _handle;
+    NSString * _token;
 }
 
 + (id)wrapperWithToken:(id)arg1;

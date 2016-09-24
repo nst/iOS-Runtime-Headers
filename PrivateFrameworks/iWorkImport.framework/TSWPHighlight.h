@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSWPHighlight : TSPObject <TSDAnnotationHosting, TSKDocumentObject, TSPCopying> {
-    TSDCommentStorage *_commentStorage;
-    TSWPStorage *_parentStorage;
+@interface TSWPHighlight : TSPObject <TSDAnnotationHosting, TSKDocumentObject, TSPCopying, TSWPTextSpanningObject> {
+    TSDCommentStorage * _commentStorage;
+    TSWPStorage * _parentStorage;
+    NSString * _textAttributeUUIDString;
 }
 
 @property (nonatomic, readonly) int annotationDisplayStringType;
@@ -18,10 +19,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) <TSKModel> *hostingModel;
-@property (nonatomic, retain) TSWPStorage *parentStorage;
+@property (nonatomic, readonly) TSPObject *hostingModel;
+@property (nonatomic) TSWPStorage *parentStorage;
 @property (nonatomic, copy) TSDCommentStorage *storage;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *textAttributeUUIDString;
 
 + (id)defaultHighlightWithContext:(id)arg1 includeCommentWithAuthor:(id)arg2;
 
@@ -36,20 +38,24 @@
 - (void)dealloc;
 - (id)description;
 - (id)hostingModel;
+- (void)i_setCommentStorage:(id)arg1;
+- (void)i_setTextAttributeUUIDString:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;
+- (id)initWithContext:(id)arg1;
 - (id)initWithContext:(id)arg1 commentStorage:(id)arg2;
 - (BOOL)isCommentEmpty;
-- (BOOL)isEqual:(id)arg1;
-- (void)loadFromArchive:(const struct HighlightArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; }*)arg1 unarchiver:(id)arg2;
+- (BOOL)isEquivalentToObject:(id)arg1;
+- (void)loadFromArchive:(const struct HighlightArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; }*)arg1 unarchiver:(id)arg2;
 - (void)p_invalidateAnnotationResultsForDocumentRoot:(id)arg1 key:(id)arg2;
 - (id)parentStorage;
+- (void)resetTextAttributeUUIDString;
 - (void)saveToArchiver:(id)arg1;
 - (void)setAuthor:(id)arg1;
 - (void)setCommentStorage:(id)arg1;
-- (void)setHostingModel:(id)arg1;
 - (void)setParentStorage:(id)arg1;
 - (void)setStorage:(id)arg1;
 - (id)storage;
+- (id)textAttributeUUIDString;
 - (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
 - (void)willBeAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;

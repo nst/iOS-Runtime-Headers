@@ -3,27 +3,27 @@
  */
 
 @interface BWVideoOrientationMetadataNode : BWNode {
-    struct OpaqueCMBlockBuffer {} *_bbufCache;
-    struct opaqueCMFormatDescription { } *_boxedMetadataFormatDescription;
-    struct OpaqueCMClock { } *_clock;
-    NSObject<OS_dispatch_queue> *_emitSamplesDispatchQueue;
-    int _exifOrientation;
-    unsigned long _localIDOfOrientationMetadata;
-    struct OpaqueCMClock { } *_masterClock;
-    BOOL _recordVideoOrientationAndMirroringChanges;
-    BOOL _recording;
-    int _sourcePosition;
-    BOOL _videoMirrored;
-    int _videoOrientation;
+    struct OpaqueCMBlockBuffer {} * _bbufCache;
+    struct opaqueCMFormatDescription { } * _boxedMetadataFormatDescription;
+    struct OpaqueCMClock { } * _clock;
+    NSObject<OS_dispatch_queue> * _emitSamplesDispatchQueue;
+    int  _exifOrientation;
+    unsigned long  _localIDOfOrientationMetadata;
+    struct OpaqueCMClock { } * _masterClock;
+    BOOL  _recordVideoOrientationAndMirroringChanges;
+    BOOL  _recording;
+    int  _sourcePosition;
+    BOOL  _videoMirrored;
+    int  _videoOrientation;
 }
 
 + (void)initialize;
 
 - (void)_determineExifOrientation;
 - (void)_emitBufferForNewStateIfRecording;
-- (void)_emitValidatedVideoOrientationSampleBufferForBoxedFormatOutputAtTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)_emitValidatedVideoOrientationSampleBufferForBoxedFormatOutputAtTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
 - (void)_releaseCachedBBufs;
-- (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
+- (void)configurationWithID:(int)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
 - (id)init;

@@ -3,11 +3,11 @@
  */
 
 @interface EKCalendarPublishingEditItem : EKCalendarEditItem <CalendarPublishingActivityDelegate> {
-    UILabel *_descriptionLabel;
-    UIView *_footerView;
-    BOOL _published;
-    UILabel *_publishingLabel;
-    UIActivityIndicatorView *_spinner;
+    UILabel * _descriptionLabel;
+    UIView * _footerView;
+    BOOL  _published;
+    UILabel * _publishingLabel;
+    UIActivityIndicatorView * _spinner;
 }
 
 @property (readonly, copy) NSString *debugDescription;

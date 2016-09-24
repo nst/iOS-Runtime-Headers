@@ -3,10 +3,12 @@
  */
 
 @interface CKDPZoneRetrieveResponse : PBCodable <NSCopying> {
-    NSMutableArray *_zoneSummarys;
+    NSMutableArray * _zoneSummarys;
 }
 
 @property (nonatomic, retain) NSMutableArray *zoneSummarys;
+
++ (Class)zoneSummaryType;
 
 - (void).cxx_destruct;
 - (void)addZoneSummary:(id)arg1;

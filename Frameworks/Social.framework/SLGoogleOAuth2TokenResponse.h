@@ -3,13 +3,13 @@
  */
 
 @interface SLGoogleOAuth2TokenResponse : NSObject {
-    NSDictionary *_data;
-    NSError *_error;
-    NSString *_errorMessage;
-    NSDate *_expiryDate;
-    NSString *_refreshToken;
-    int _statusCode;
-    NSString *_token;
+    NSDictionary * _data;
+    NSError * _error;
+    NSString * _errorMessage;
+    NSDate * _expiryDate;
+    NSString * _refreshToken;
+    int  _statusCode;
+    NSString * _token;
 }
 
 @property (readonly) NSDictionary *data;

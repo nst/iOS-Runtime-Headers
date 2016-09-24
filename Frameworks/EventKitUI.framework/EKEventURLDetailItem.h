@@ -3,7 +3,7 @@
  */
 
 @interface EKEventURLDetailItem : EKEventDetailItem {
-    UITableViewCell *_cell;
+    UITableViewCell * _cell;
 }
 
 - (void).cxx_destruct;

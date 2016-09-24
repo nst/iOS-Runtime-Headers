@@ -3,24 +3,24 @@
  */
 
 @interface CKFetchUserQuotaOperation : CKDatabaseOperation {
-    id /* block */ _fetchUserQuotaCompletionBlock;
-    unsigned long long _quotaAvailable;
+    id /* block */  _fetchUserQuotaCompletionBlock;
+    unsigned int  _quotaAvailable;
 }
 
 @property (nonatomic, copy) id /* block */ fetchUserQuotaCompletionBlock;
-@property (nonatomic) unsigned long long quotaAvailable;
+@property (nonatomic) unsigned int quotaAvailable;
 
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleCompletionCallback:(id)arg1;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (id /* block */)fetchUserQuotaCompletionBlock;
 - (BOOL)hasCKOperationCallbacksSet;
 - (id)init;
 - (Class)operationInfoClass;
 - (void)performCKOperation;
-- (unsigned long long)quotaAvailable;
+- (unsigned int)quotaAvailable;
 - (void)setFetchUserQuotaCompletionBlock:(id /* block */)arg1;
-- (void)setQuotaAvailable:(unsigned long long)arg1;
+- (void)setQuotaAvailable:(unsigned int)arg1;
 
 @end

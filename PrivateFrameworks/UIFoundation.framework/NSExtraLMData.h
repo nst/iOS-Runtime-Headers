@@ -3,89 +3,89 @@
  */
 
 @interface NSExtraLMData : NSObject {
-    NSRunStorage *_attachmentSizesRun;
-    NSMutableArray *_blockRunsArray;
+    NSRunStorage * _attachmentSizesRun;
+    NSMutableArray * _blockRunsArray;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _cachedFontBounds;
-    float _cachedUnderlineAdjustment;
-    float _cachedUnderlinePosition;
+    }  _cachedFontBounds;
+    double  _cachedUnderlineAdjustment;
+    double  _cachedUnderlinePosition;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _cachedUnderlineRange;
-    float _cachedUnderlineThickness;
-    unsigned int _currentAttachmentIndex;
+    }  _cachedUnderlineRange;
+    double  _cachedUnderlineThickness;
+    unsigned int  _currentAttachmentIndex;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _currentAttachmentRect;
-    NSLock *_fillHoleLock;
-    NSTextContainer *_firstTextContainer;
+    }  _currentAttachmentRect;
+    NSLock * _fillHoleLock;
+    NSTextContainer * _firstTextContainer;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _firstTextViewVisibleCharRange;
+    }  _firstTextViewVisibleCharRange;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _firstTextViewVisibleOffset;
-    NSRunStorage *_fragmentRunsExtras;
+        double width; 
+        double height; 
+    }  _firstTextViewVisibleOffset;
+    NSRunStorage * _fragmentRunsExtras;
     struct _NSGlyphTree { 
         struct _NSGlyphNode {} *rootNode; 
         struct _NSGlyphNode {} *curNode; 
         unsigned int curCharIndex; 
         unsigned int curGlyphIndex; 
-    } _glyphTree;
-    float _hyphenationFactor;
-    NSMutableArray *_insertionPointCache;
+    }  _glyphTree;
+    double  _hyphenationFactor;
+    NSMutableArray * _insertionPointCache;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _lastInvalidatedCharRange;
-    float _lastInvalidatedLongitudinalPosition;
-    NSTextContainer *_lastInvalidatedTextContainer;
+    }  _lastInvalidatedCharRange;
+    double  _lastInvalidatedLongitudinalPosition;
+    NSTextContainer * _lastInvalidatedTextContainer;
     struct _NSLayoutTree { 
         struct _NSLayoutNode {} *rootNode; 
         struct _NSLayoutNode {} *curNode; 
         unsigned int curGlyphIndex; 
-        float curLongitudinalOrigin; 
+        double curLongitudinalOrigin; 
         struct CGRect { 
             struct CGPoint { 
-                float x; 
-                float y; 
+                double x; 
+                double y; 
             } origin; 
             struct CGSize { 
-                float width; 
-                float height; 
+                double width; 
+                double height; 
             } size; 
         } extraLineFragmentRect; 
         struct CGRect { 
             struct CGPoint { 
-                float x; 
-                float y; 
+                double x; 
+                double y; 
             } origin; 
             struct CGSize { 
-                float width; 
-                float height; 
+                double width; 
+                double height; 
             } size; 
         } extraLineFragmentUsedRect; 
         unsigned int glyphsPerLineEstimate; 
-        float offsetPerLineEstimate; 
-    } _layoutTree;
+        double offsetPerLineEstimate; 
+    }  _layoutTree;
     struct __lmFlags2 { 
         unsigned int glyphCause : 6; 
         unsigned int layoutCause : 6; 
@@ -96,14 +96,17 @@
         unsigned int usesOldShowPackedGlyphs : 1; 
         unsigned int drawsUnderlinesLikeWebKit : 1; 
         unsigned int drawsDebugBaselines : 1; 
-        unsigned int reserved : 13; 
-    } _lmFlags2;
-    NSParagraphArbitrator *_paragraphArbitrator;
-    NSLayoutManagerTextBlockRowArrayCache *_rowArrayCache;
-    id _temporaryAttributes;
-    struct __CFDictionary { } *_textContainerGlyphIndexes;
-    struct __CFDictionary { } *_textContainerIndexes;
-    int _typesetterBehavior;
+        unsigned int mirrorsTextAlignment : 1; 
+        unsigned int forcesTrackingFloor : 1; 
+        unsigned int reserved : 11; 
+    }  _lmFlags2;
+    NSParagraphArbitrator * _paragraphArbitrator;
+    NSLayoutManagerTextBlockRowArrayCache * _rowArrayCache;
+    CUIStyleEffectConfiguration * _styleEffectConfig;
+    id  _temporaryAttributes;
+    struct __CFDictionary { } * _textContainerGlyphIndexes;
+    struct __CFDictionary { } * _textContainerIndexes;
+    int  _typesetterBehavior;
 }
 
 @end

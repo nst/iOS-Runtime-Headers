@@ -3,9 +3,9 @@
  */
 
 @interface HKNumericChartPoint : NSObject <HKChartPoint> {
-    id _userInfo;
-    NSDate *_xValue;
-    id _yValue;
+    id  _userInfo;
+    NSDate * _xValue;
+    id  _yValue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

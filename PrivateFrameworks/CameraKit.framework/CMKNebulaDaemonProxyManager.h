@@ -3,9 +3,9 @@
  */
 
 @interface CMKNebulaDaemonProxyManager : NSObject <CMKNebulaDaemonClientProtocol, CMKNebulaDaemonProtocol> {
-    NSXPCConnection *__connection;
-    int __connectionCount;
-    NSObject<OS_dispatch_queue> *__queue;
+    NSXPCConnection * __connection;
+    int  __connectionCount;
+    NSObject<OS_dispatch_queue> * __queue;
 }
 
 @property (nonatomic, readonly) NSXPCConnection *_connection;

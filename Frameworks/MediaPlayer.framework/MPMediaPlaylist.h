@@ -3,14 +3,14 @@
  */
 
 @interface MPMediaPlaylist : MPMediaItemCollection {
-    NSArray *_representativeArtists;
-    MPMediaQuery *_seedTracksQuery;
+    NSArray * _representativeArtists;
+    MPMediaQuery * _seedTracksQuery;
 }
 
 @property (nonatomic, readonly) NSString *authorDisplayName;
 @property (nonatomic, readonly) NSString *descriptionText;
 @property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) unsigned long long persistentID;
+@property (nonatomic, readonly) unsigned int persistentID;
 @property (nonatomic, readonly) unsigned int playlistAttributes;
 @property (nonatomic, readonly) NSArray *seedItems;
 
@@ -34,14 +34,14 @@
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMultiverseIdentifier:(id)arg1;
-- (id)initWithPersistentID:(unsigned long long)arg1;
+- (id)initWithPersistentID:(unsigned int)arg1;
 - (BOOL)isCloudMix;
 - (BOOL)isEqual:(id)arg1;
 - (id)items;
 - (unsigned int)mediaTypes;
 - (id)multiverseIdentifier;
 - (id)name;
-- (unsigned long long)persistentID;
+- (unsigned int)persistentID;
 - (unsigned int)playlistAttributes;
 - (void)removeFirstItem;
 - (id)representativeArtists;

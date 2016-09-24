@@ -3,8 +3,8 @@
  */
 
 @interface GKHostReachability : GKReachability {
-    NSError *_error;
-    NSString *_hostName;
+    NSError * _error;
+    NSString * _hostName;
 }
 
 @property (nonatomic, retain) NSError *error;

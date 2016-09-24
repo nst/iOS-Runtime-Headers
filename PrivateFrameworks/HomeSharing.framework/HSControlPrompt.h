@@ -3,22 +3,22 @@
  */
 
 @interface HSControlPrompt : NSObject {
-    unsigned int _keyboardType;
-    unsigned int _messageType;
-    unsigned int _promptID;
-    BOOL _secureText;
-    unsigned long long _sessionID;
-    NSString *_string;
-    NSString *_subText;
-    NSString *_title;
-    unsigned int _version;
+    unsigned int  _keyboardType;
+    unsigned int  _messageType;
+    unsigned int  _promptID;
+    BOOL  _secureText;
+    unsigned int  _sessionID;
+    NSString * _string;
+    NSString * _subText;
+    NSString * _title;
+    unsigned int  _version;
 }
 
 @property (nonatomic) unsigned int keyboardType;
 @property (nonatomic) unsigned int messageType;
 @property (nonatomic) unsigned int promptID;
 @property (getter=isSecureText, nonatomic) BOOL secureText;
-@property (nonatomic) unsigned long long sessionID;
+@property (nonatomic) unsigned int sessionID;
 @property (nonatomic, copy) NSString *string;
 @property (nonatomic, copy) NSString *subText;
 @property (nonatomic, copy) NSString *title;
@@ -30,12 +30,12 @@
 - (unsigned int)keyboardType;
 - (unsigned int)messageType;
 - (unsigned int)promptID;
-- (unsigned long long)sessionID;
+- (unsigned int)sessionID;
 - (void)setKeyboardType:(unsigned int)arg1;
 - (void)setMessageType:(unsigned int)arg1;
 - (void)setPromptID:(unsigned int)arg1;
 - (void)setSecureText:(BOOL)arg1;
-- (void)setSessionID:(unsigned long long)arg1;
+- (void)setSessionID:(unsigned int)arg1;
 - (void)setString:(id)arg1;
 - (void)setSubText:(id)arg1;
 - (void)setTitle:(id)arg1;

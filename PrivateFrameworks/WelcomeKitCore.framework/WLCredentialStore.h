@@ -3,8 +3,8 @@
  */
 
 @interface WLCredentialStore : NSObject {
-    WLDeviceAuthentication *_authentication;
-    WLAuthenticationCredentials *_credentials;
+    WLDeviceAuthentication * _authentication;
+    WLAuthenticationCredentials * _credentials;
 }
 
 + (id)sharedInstance;

@@ -3,13 +3,14 @@
  */
 
 @interface RTSourceBluetooth : RTSource <NSCopying, NSSecureCoding> {
-    NSString *_deviceName;
-    int _deviceType;
+    NSString * _deviceName;
+    int  _deviceType;
 }
 
 @property (nonatomic, readonly) NSString *deviceName;
 @property (nonatomic, readonly) int deviceType;
 
++ (id)allowedKeys;
 + (id)stringFromBluetoothDeviceType:(int)arg1;
 + (BOOL)supportsSecureCoding;
 

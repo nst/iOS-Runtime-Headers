@@ -3,7 +3,7 @@
  */
 
 @interface CKDPDeleteCommentRequest : PBRequest <NSCopying> {
-    CKDPIdentifier *_commentId;
+    CKDPIdentifier * _commentId;
 }
 
 @property (nonatomic, retain) CKDPIdentifier *commentId;

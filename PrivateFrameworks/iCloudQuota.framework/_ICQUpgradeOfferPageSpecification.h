@@ -3,14 +3,14 @@
  */
 
 @interface _ICQUpgradeOfferPageSpecification : _ICQPageSpecification {
-    NSString *_finePrintFormat;
-    NSArray *_finePrintLinks;
-    ICQLink *_learnMoreLink;
-    NSString *_message;
-    ICQLink *_purchaseLink;
-    NSDictionary *_serverDict;
-    NSArray *_services;
-    NSString *_title;
+    NSString * _finePrintFormat;
+    NSArray * _finePrintLinks;
+    ICQLink * _learnMoreLink;
+    NSString * _message;
+    ICQLink * _purchaseLink;
+    NSDictionary * _serverDict;
+    NSArray * _services;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) NSString *finePrintFormat;

@@ -3,10 +3,10 @@
  */
 
 @interface PHCloudResourceManager : NSObject {
-    int _currentRequestID;
-    NSOperationQueue *_operationQueue;
-    NSMutableDictionary *_requestsById;
-    NSObject<OS_dispatch_queue> *_serialQueue;
+    int  _currentRequestID;
+    NSOperationQueue * _operationQueue;
+    NSMutableDictionary * _requestsById;
+    NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
 + (id)defaultManager;
@@ -18,6 +18,6 @@
 - (void)cancelRequest:(int)arg1;
 - (void)dealloc;
 - (id)init;
-- (int)requestCloudResourceType:(unsigned int)arg1 forAssetWithObjectID:(id)arg2 progressHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (int)requestCloudResourceType:(unsigned int)arg1 forAssetWithObjectID:(id)arg2 downloadIsTransient:(BOOL)arg3 progressHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
 
 @end

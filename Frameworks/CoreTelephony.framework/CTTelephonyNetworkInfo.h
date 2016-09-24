@@ -3,19 +3,19 @@
  */
 
 @interface CTTelephonyNetworkInfo : NSObject {
-    NSString *_cachedCellId;
-    NSString *_cachedCurrentRadioAccessTechnology;
-    NSDictionary *_cachedSignalStrength;
-    BOOL _monitoringCellId;
+    NSString * _cachedCellId;
+    NSString * _cachedCurrentRadioAccessTechnology;
+    NSDictionary * _cachedSignalStrength;
+    BOOL  _monitoringCellId;
     struct queue { 
         struct object { 
             struct dispatch_object_s {} *fObj; 
         } fObj; 
-    } _queue;
-    CTCarrier *_subscriberCellularProvider;
-    id /* block */ _subscriberCellularProviderDidUpdateNotifier;
-    struct __CTServerConnection { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct dispatch_queue_s {} *x2; struct CTServerState {} *x3; unsigned char x4; unsigned char x5; unsigned int x6; struct _xpc_connection_s {} *x7; unsigned char x8; unsigned char x9; } *server_connection;
-    NSLock *server_lock;
+    }  _queue;
+    CTCarrier * _subscriberCellularProvider;
+    id /* block */  _subscriberCellularProviderDidUpdateNotifier;
+    struct __CTServerConnection { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct dispatch_queue_s {} *x2; struct CTServerState {} *x3; unsigned char x4; unsigned char x5; unsigned int x6; struct _xpc_connection_s {} *x7; unsigned char x8; unsigned char x9; } * server_connection;
+    NSLock * server_lock;
 }
 
 @property (retain) NSString *cachedCellId;

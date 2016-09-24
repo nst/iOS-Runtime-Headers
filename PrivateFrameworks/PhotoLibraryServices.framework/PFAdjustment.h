@@ -3,13 +3,13 @@
  */
 
 @interface PFAdjustment : NSObject {
-    NSString *_autoIdentifier;
-    NSDictionary *_autoSettings;
-    BOOL _enabled;
-    unsigned int _formatVersion;
-    NSString *_identifier;
-    NSString *_maskUUID;
-    NSDictionary *_settings;
+    NSString * _autoIdentifier;
+    NSDictionary * _autoSettings;
+    BOOL  _enabled;
+    unsigned int  _formatVersion;
+    NSString * _identifier;
+    NSString * _maskUUID;
+    NSDictionary * _settings;
 }
 
 @property (nonatomic, readonly) NSString *autoIdentifier;

@@ -3,7 +3,7 @@
  */
 
 @interface MTLToolsLibrary : MTLToolsObject <MTLLibrarySPI> {
-    MTLToolsPointerArray *_functions;
+    MTLToolsPointerArray * _functions;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -23,6 +23,8 @@
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
 - (id)label;
 - (id)newFunctionWithName:(id)arg1;
+- (void)newFunctionWithName:(id)arg1 constantValues:(id)arg2 completionHandler:(id /* block */)arg3;
+- (id)newFunctionWithName:(id)arg1 constantValues:(id)arg2 error:(id*)arg3;
 - (void)setLabel:(id)arg1;
 
 @end

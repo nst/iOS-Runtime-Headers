@@ -3,8 +3,8 @@
  */
 
 @interface GKCenteringScrollView : UIScrollView {
-    UIView *_contentView;
-    UIView *_footerView;
+    UIView * _contentView;
+    UIView * _footerView;
 }
 
 @property (nonatomic, retain) UIView *contentView;

@@ -3,13 +3,13 @@
  */
 
 @interface PFUbiquityPeerRangeCache : NSObject {
-    NSMutableDictionary *_allEntityRanges;
-    NSMutableDictionary *_cachedRanges;
-    BOOL _cachedStorePeerRanges;
-    NSString *_localPeerID;
-    NSPersistentStore *_privateStore;
-    NSString *_storeName;
-    NSMutableDictionary *_translatedGlobalIDs;
+    NSMutableDictionary * _allEntityRanges;
+    NSMutableDictionary * _cachedRanges;
+    BOOL  _cachedStorePeerRanges;
+    NSString * _localPeerID;
+    NSPersistentStore * _privateStore;
+    NSString * _storeName;
+    NSMutableDictionary * _translatedGlobalIDs;
 }
 
 @property (nonatomic, readonly) NSString *localPeerID;

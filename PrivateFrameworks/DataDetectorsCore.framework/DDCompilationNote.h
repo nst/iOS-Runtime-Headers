@@ -3,8 +3,8 @@
  */
 
 @interface DDCompilationNote : DDLocation {
-    int _level;
-    NSString *_message;
+    int  _level;
+    NSString * _message;
 }
 
 @property (readonly) int level;

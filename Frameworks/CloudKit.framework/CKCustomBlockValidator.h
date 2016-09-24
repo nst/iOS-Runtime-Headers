@@ -3,7 +3,7 @@
  */
 
 @interface CKCustomBlockValidator : CKPredicateValidatorInstance {
-    id /* block */ _block;
+    id /* block */  _block;
 }
 
 @property (nonatomic, copy) id /* block */ block;

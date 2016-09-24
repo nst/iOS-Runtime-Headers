@@ -9,10 +9,10 @@
         struct __compressed_pair<TSCH3D::RenderElementInfo *, std::__1::allocator<TSCH3D::RenderElementInfo> > { 
             struct RenderElementInfo {} *__first_; 
         } __end_cap_; 
-    } mDelayedItems;
-    TSCH3DSceneRenderPipeline *mPipeline;
-    TSCH3DChartElementProperties *mProperties;
-    TSCH3DChartElementSceneObject *mSceneObject;
+    }  mDelayedItems;
+    TSCH3DSceneRenderPipeline * mPipeline;
+    TSCH3DChartElementProperties * mProperties;
+    TSCH3DChartElementSceneObject * mSceneObject;
 }
 
 @property (nonatomic, readonly) BOOL geometryOnly;

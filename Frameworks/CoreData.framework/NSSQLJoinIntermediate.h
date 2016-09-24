@@ -3,12 +3,12 @@
  */
 
 @interface NSSQLJoinIntermediate : NSSQLIntermediate {
-    NSString *_correlationAlias;
-    NSString *_destinationAlias;
-    BOOL _direct;
-    NSSQLRelationship *_relationship;
-    NSString *_sourceAlias;
-    unsigned int _type;
+    NSString * _correlationAlias;
+    NSString * _destinationAlias;
+    BOOL  _direct;
+    NSSQLRelationship * _relationship;
+    NSString * _sourceAlias;
+    unsigned int  _type;
 }
 
 + (id)createJoinIntermediatesForKeypath:(id)arg1 startEntity:(id)arg2 startAlias:(id)arg3 forScope:(id)arg4 inStatementIntermediate:(id)arg5 inContext:(id)arg6;

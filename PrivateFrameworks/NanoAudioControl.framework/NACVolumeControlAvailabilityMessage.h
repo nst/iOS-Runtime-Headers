@@ -3,11 +3,11 @@
  */
 
 @interface NACVolumeControlAvailabilityMessage : PBCodable <NSCopying> {
-    NSString *_category;
+    NSString * _category;
     struct { 
         unsigned int volumeControlAvailable : 1; 
-    } _has;
-    BOOL _volumeControlAvailable;
+    }  _has;
+    BOOL  _volumeControlAvailable;
 }
 
 @property (nonatomic, retain) NSString *category;

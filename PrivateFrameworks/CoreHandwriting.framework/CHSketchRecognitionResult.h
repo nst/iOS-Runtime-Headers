@@ -3,11 +3,11 @@
  */
 
 @interface CHSketchRecognitionResult : CHRecognitionResult {
-    float _rotation;
-    NSString *_string;
+    double  _rotation;
+    NSString * _string;
 }
 
-@property (readonly) float rotation;
+@property (readonly) double rotation;
 @property (readonly) NSString *string;
 
 - (void)dealloc;

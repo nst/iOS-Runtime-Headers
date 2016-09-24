@@ -3,8 +3,8 @@
  */
 
 @interface NRFrameworkDevice : NRDevice {
-    NSUUID *_deviceID;
-    <NRFrameworkDeviceDelegate> *_syncDevicesDelegate;
+    NSUUID * _deviceID;
+    <NRFrameworkDeviceDelegate> * _syncDevicesDelegate;
 }
 
 @property (nonatomic, retain) NSUUID *deviceID;

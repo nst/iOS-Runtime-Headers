@@ -3,7 +3,7 @@
  */
 
 @interface WCDataMessageRecord : WCMessageRecord {
-    id /* block */ _responseHandler;
+    id /* block */  _responseHandler;
 }
 
 @property (readonly, copy) id /* block */ responseHandler;

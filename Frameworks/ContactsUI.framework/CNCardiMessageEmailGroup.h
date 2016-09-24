@@ -3,7 +3,7 @@
  */
 
 @interface CNCardiMessageEmailGroup : CNCardPropertyGroup {
-    NSArray *_displayItems;
+    NSArray * _displayItems;
 }
 
 - (void).cxx_destruct;

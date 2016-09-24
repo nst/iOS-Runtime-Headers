@@ -3,26 +3,33 @@
  */
 
 @interface CKMessageEntryRichTextView : CKMessageEntryTextView <NSTextStorageDelegate, UIGestureRecognizerDelegate> {
-    BOOL _balloonColor;
-    NSMutableDictionary *_composeImages;
-    NSMutableDictionary *_mediaObjects;
-    int _pasteboardChangeCount;
-    CKComposition *_pasteboardComposition;
-    UITapGestureRecognizer *_tapGestureRecognizer;
+    BOOL  _allowCalloutActions;
+    BOOL  _balloonColor;
+    NSMutableDictionary * _composeImages;
+    UILongPressGestureRecognizer * _longPressGestureRecognizer;
+    NSMutableDictionary * _mediaObjects;
+    CKComposition * _pasteboardComposition;
+    NSMutableDictionary * _pluginDisplayContainers;
+    UITapGestureRecognizer * _tapGestureRecognizer;
 }
 
+@property (nonatomic) BOOL allowCalloutActions;
 @property (nonatomic) BOOL balloonColor;
 @property (nonatomic, retain) NSMutableDictionary *composeImages;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CKMessageEntryRichTextViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) UILongPressGestureRecognizer *longPressGestureRecognizer;
 @property (nonatomic, retain) NSMutableDictionary *mediaObjects;
-@property (nonatomic) int pasteboardChangeCount;
 @property (nonatomic, retain) CKComposition *pasteboardComposition;
+@property (nonatomic, retain) NSMutableDictionary *pluginDisplayContainers;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UITapGestureRecognizer *tapGestureRecognizer;
 
+- (void).cxx_destruct;
+- (void)_showCustomInputView;
+- (BOOL)allowCalloutActions;
 - (id)attributedTextForCompositionText:(id)arg1;
 - (BOOL)balloonColor;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
@@ -33,20 +40,23 @@
 - (void)cut:(id)arg1;
 - (void)dealloc;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
+- (void)handleTapOrLongPress:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
+- (id)longPressGestureRecognizer;
 - (id)mediaObjects;
 - (void)paste:(id)arg1;
-- (int)pasteboardChangeCount;
 - (id)pasteboardComposition;
+- (id)pluginDisplayContainers;
 - (void)previewDidChange:(id)arg1;
+- (void)setAllowCalloutActions:(BOOL)arg1;
 - (void)setBalloonColor:(BOOL)arg1;
 - (void)setComposeImages:(id)arg1;
 - (void)setCompositionText:(id)arg1;
+- (void)setLongPressGestureRecognizer:(id)arg1;
 - (void)setMediaObjects:(id)arg1;
-- (void)setPasteboardChangeCount:(int)arg1;
 - (void)setPasteboardComposition:(id)arg1;
+- (void)setPluginDisplayContainers:(id)arg1;
 - (void)setTapGestureRecognizer:(id)arg1;
-- (void)tapGestureRecognized:(id)arg1;
 - (id)tapGestureRecognizer;
 - (void)textStorage:(id)arg1 willProcessEditing:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 changeInLength:(int)arg4;
 - (void)updateComposeImages;

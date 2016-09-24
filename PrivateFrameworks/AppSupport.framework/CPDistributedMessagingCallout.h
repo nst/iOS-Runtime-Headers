@@ -3,10 +3,10 @@
  */
 
 @interface CPDistributedMessagingCallout : NSObject {
-    BOOL _returnsVoid;
-    BOOL _returnsVoidIsValid;
-    SEL _selector;
-    id _target;
+    BOOL  _returnsVoid;
+    BOOL  _returnsVoidIsValid;
+    SEL  _selector;
+    id  _target;
 }
 
 @property (nonatomic, readonly) BOOL returnsVoid;

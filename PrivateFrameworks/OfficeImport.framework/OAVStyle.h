@@ -3,7 +3,7 @@
  */
 
 @interface OAVStyle : NSObject {
-    NSMutableString *_string;
+    NSMutableString * _string;
 }
 
 - (void)addPropertyWithName:(id)arg1 value:(id)arg2;

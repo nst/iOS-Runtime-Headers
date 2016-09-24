@@ -3,8 +3,8 @@
  */
 
 @interface BABookmarkItem : NSObject {
-    WebBookmark *_bookmark;
-    WebBookmarkCollection *_collection;
+    WebBookmark * _bookmark;
+    WebBookmarkCollection * _collection;
 }
 
 @property (nonatomic, retain) WebBookmark *bookmark;

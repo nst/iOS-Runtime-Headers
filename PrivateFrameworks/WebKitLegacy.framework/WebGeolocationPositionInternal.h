@@ -5,7 +5,7 @@
 @interface WebGeolocationPositionInternal : NSObject {
     struct RefPtr<WebCore::GeolocationPosition> { 
         struct GeolocationPosition {} *m_ptr; 
-    } _position;
+    }  _position;
 }
 
 - (id).cxx_construct;

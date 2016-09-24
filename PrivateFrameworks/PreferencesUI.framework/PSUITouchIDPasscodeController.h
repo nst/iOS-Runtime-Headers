@@ -3,14 +3,14 @@
  */
 
 @interface PSUITouchIDPasscodeController : PSUIPasscodeLockController <BiometricKitDelegate, BiometricKitUIEnrollResultDelegate, UIPopoverControllerDelegate> {
-    BOOL _currentlyEnablingTouchIDForPurchases;
-    PSEnrollContainerViewController *_enrollController;
-    UIPopoverController *_enrollmentPopoverController;
-    BiometricKit *_highlightMatcher;
-    NSObject<OS_dispatch_queue> *_highlightQueue;
-    id /* block */ _modalFlowCancelCompletion;
-    id /* block */ _modalFlowSuccessCompletion;
-    int _storeState;
+    BOOL  _currentlyEnablingTouchIDForPurchases;
+    PSEnrollContainerViewController * _enrollController;
+    UIPopoverController * _enrollmentPopoverController;
+    BiometricKit * _highlightMatcher;
+    NSObject<OS_dispatch_queue> * _highlightQueue;
+    id /* block */  _modalFlowCancelCompletion;
+    id /* block */  _modalFlowSuccessCompletion;
+    int  _storeState;
 }
 
 @property (nonatomic) BOOL currentlyEnablingTouchIDForPurchases;

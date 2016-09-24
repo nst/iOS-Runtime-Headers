@@ -13,5 +13,6 @@
 - (void)statusMessage:(unsigned int)arg1;
 - (void)taskResumeStatus:(long)arg1;
 - (void)templateUpdate:(BiometricKitIdentity *)arg1 withDetails:(NSDictionary *)arg2;
+- (void)touchIDButtonPressed:(BOOL)arg1;
 
 @end

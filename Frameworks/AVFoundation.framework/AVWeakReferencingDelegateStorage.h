@@ -3,9 +3,9 @@
  */
 
 @interface AVWeakReferencingDelegateStorage : NSObject <AVDelegateStorage> {
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    NSObject<OS_dispatch_queue> *_delegateReadWriteQueue;
-    AVWeakReference *_weakReferenceToDelegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    NSObject<OS_dispatch_queue> * _delegateReadWriteQueue;
+    AVWeakReference * _weakReferenceToDelegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

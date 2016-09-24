@@ -3,21 +3,24 @@
  */
 
 @interface CPLStatus : NSObject {
-    <CPLStatusDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_lock;
-    NSMutableDictionary *_status;
-    NSURL *_statusFileURL;
+    <CPLStatusDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _lock;
+    NSMutableDictionary * _status;
+    NSURL * _statusFileURL;
 }
 
 @property (nonatomic, readonly) NSDictionary *cloudAssetCountPerType;
 @property (nonatomic, readonly) NSDate *cloudAssetCountPerTypeLastCheckDate;
 @property (nonatomic) <CPLStatusDelegate> *delegate;
-@property (nonatomic) NSDate *exitDeleteTime;
+@property (nonatomic, copy) NSDate *exitDeleteTime;
 @property (nonatomic) BOOL hasChangesToProcess;
 @property (nonatomic) BOOL iCloudLibraryExists;
 @property (nonatomic) BOOL iCloudLibraryHasBeenWiped;
+@property (nonatomic, copy) NSDate *initialSyncDate;
 @property (nonatomic) BOOL isExceedingQuota;
-@property (nonatomic) NSDate *lastSuccessfulSyncDate;
+@property (nonatomic, copy) NSDate *lastCompletePrefetchDate;
+@property (nonatomic, copy) NSDate *lastPruneDate;
+@property (nonatomic, copy) NSDate *lastSuccessfulSyncDate;
 
 + (id)statusForSharedLibrary;
 
@@ -33,7 +36,10 @@
 - (BOOL)iCloudLibraryExists;
 - (BOOL)iCloudLibraryHasBeenWiped;
 - (id)initWithClientLibraryBaseURL:(id)arg1;
+- (id)initialSyncDate;
 - (BOOL)isExceedingQuota;
+- (id)lastCompletePrefetchDate;
+- (id)lastPruneDate;
 - (id)lastSuccessfulSyncDate;
 - (void)refetchFromDisk;
 - (void)setCloudAssetCountPerType:(id)arg1 updateCheckDate:(BOOL)arg2;
@@ -42,7 +48,10 @@
 - (void)setHasChangesToProcess:(BOOL)arg1;
 - (void)setICloudLibraryExists:(BOOL)arg1;
 - (void)setICloudLibraryHasBeenWiped:(BOOL)arg1;
+- (void)setInitialSyncDate:(id)arg1;
 - (void)setIsExceedingQuota:(BOOL)arg1;
+- (void)setLastCompletePrefetchDate:(id)arg1;
+- (void)setLastPruneDate:(id)arg1;
 - (void)setLastSuccessfulSyncDate:(id)arg1;
 - (id)statusDescription;
 

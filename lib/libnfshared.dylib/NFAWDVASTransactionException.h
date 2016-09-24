@@ -3,9 +3,9 @@
  */
 
 @interface NFAWDVASTransactionException : NSObject <NFAWDEventProtocol> {
-    AWDNFCVASTransactionExceptionEvent *_metric;
-    unsigned int swStatus;
-    unsigned int type;
+    AWDNFCVASTransactionExceptionEvent * _metric;
+    unsigned int  _swStatus;
+    unsigned int  _type;
 }
 
 @property (readonly, copy) NSString *debugDescription;

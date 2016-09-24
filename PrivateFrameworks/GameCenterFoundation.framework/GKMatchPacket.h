@@ -3,13 +3,13 @@
  */
 
 @interface GKMatchPacket : NSObject {
-    unsigned short _checksum;
-    NSData *_data;
-    unsigned char _packetType;
-    unsigned int _sequenceNumber;
-    unsigned int _totalLength;
-    BOOL _valid;
-    unsigned char _version;
+    unsigned short  _checksum;
+    NSData * _data;
+    unsigned char  _packetType;
+    unsigned int  _sequenceNumber;
+    unsigned int  _totalLength;
+    BOOL  _valid;
+    unsigned char  _version;
 }
 
 @property (nonatomic) unsigned short checksum;

@@ -3,7 +3,7 @@
  */
 
 @interface MusicProfileTemplateDocumentViewController : SKUIViewController <SKUIDocumentViewController, SKUIModalSourceViewProvider, SKUINavigationBarDisplayConfiguring> {
-    UIViewController<MusicClientContextConsuming><SKUINavigationBarDisplayConfiguring> *_profileViewController;
+    UIViewController<MusicClientContextConsuming><SKUINavigationBarDisplayConfiguring> * _profileViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

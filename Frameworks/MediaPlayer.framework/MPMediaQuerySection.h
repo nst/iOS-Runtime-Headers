@@ -6,9 +6,9 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
-    unsigned int _sectionIndexTitleIndex;
-    NSString *_title;
+    }  _range;
+    unsigned int  _sectionIndexTitleIndex;
+    NSString * _title;
 }
 
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } range;

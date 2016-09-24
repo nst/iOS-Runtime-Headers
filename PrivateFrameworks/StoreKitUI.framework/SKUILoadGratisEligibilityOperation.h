@@ -3,10 +3,10 @@
  */
 
 @interface SKUILoadGratisEligibilityOperation : NSOperation {
-    NSArray *_bundleIDs;
-    SKUIClientContext *_clientContext;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    id /* block */ _outputBlock;
+    NSArray * _bundleIDs;
+    SKUIClientContext * _clientContext;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    id /* block */  _outputBlock;
 }
 
 @property (copy) id /* block */ outputBlock;

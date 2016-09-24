@@ -3,13 +3,13 @@
  */
 
 @interface VTPeerRemoteConnection : NSObject <IDSServiceDelegate> {
-    NSMutableDictionary *_completions;
-    <VTPeerRemoteConnectionDelegate> *_delegate;
-    NSString *_identifier;
-    IDSService *_idsService;
-    NSObject<OS_dispatch_queue> *_queue;
-    BOOL _requireNearbyPeer;
-    NSMutableDictionary *_responseClasses;
+    NSMutableDictionary * _completions;
+    <VTPeerRemoteConnectionDelegate> * _delegate;
+    NSString * _identifier;
+    IDSService * _idsService;
+    NSObject<OS_dispatch_queue> * _queue;
+    BOOL  _requireNearbyPeer;
+    NSMutableDictionary * _responseClasses;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,7 +3,7 @@
  */
 
 @interface YTTimeQualifiedVideoDataSource : YTVideoDataSource {
-    NSString *_timeQualifier;
+    NSString * _timeQualifier;
 }
 
 - (void)setTimeQualifier:(id)arg1 clearVideos:(BOOL)arg2;

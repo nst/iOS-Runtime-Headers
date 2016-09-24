@@ -3,16 +3,18 @@
  */
 
 @interface _MFDAMessageBodyFetchConsumer : NSObject <DAMailAccountStreamConsumerFactory, MFRequestQueueResponseConsumer> {
-    NSData *_data;
-    MFError *_error;
-    <MFDAStreamingContentConsumer> *_streamConsumer;
-    BOOL _succeeded;
+    NSData * _data;
+    MFError * _error;
+    BOOL  _hasLocalCopyOfData;
+    <MFDAStreamingContentConsumer> * _streamConsumer;
+    BOOL  _succeeded;
 }
 
 @property (nonatomic, retain) NSData *data;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) MFError *error;
+@property (nonatomic) BOOL hasLocalCopyOfData;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) <MFDAStreamingContentConsumer> *streamConsumer;
 @property (nonatomic, readonly) BOOL succeeded;
@@ -22,8 +24,10 @@
 - (void)dealloc;
 - (id)error;
 - (void)handleResponse:(id)arg1 error:(id)arg2;
+- (BOOL)hasLocalCopyOfData;
 - (void)setData:(id)arg1;
 - (void)setError:(id)arg1;
+- (void)setHasLocalCopyOfData:(BOOL)arg1;
 - (void)setStreamConsumer:(id)arg1;
 - (id)streamConsumer;
 - (id)streamingContentConsumer;

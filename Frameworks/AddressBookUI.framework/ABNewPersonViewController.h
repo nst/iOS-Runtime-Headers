@@ -3,17 +3,17 @@
  */
 
 @interface ABNewPersonViewController : UIViewController {
-    _UIAccessDeniedView *_accessDeniedView;
-    ABContactViewController *_contactViewController;
-    ABPersonTableViewDataSource *_dataSource;
-    id _helper;
-    BOOL _isRealViewLoaded;
-    CNContact *_mergeContact;
-    <ABNewPersonViewControllerDelegate> *_newPersonViewDelegate;
-    id _parentGroup;
-    void *_parentSource;
-    <CNPresenterDelegate> *_presentingDelegate;
-    void *_recordForNewPerson;
+    _UIAccessDeniedView * _accessDeniedView;
+    ABContactViewController * _contactViewController;
+    ABPersonTableViewDataSource * _dataSource;
+    id  _helper;
+    BOOL  _isRealViewLoaded;
+    CNContact * _mergeContact;
+    <ABNewPersonViewControllerDelegate> * _newPersonViewDelegate;
+    id  _parentGroup;
+    void * _parentSource;
+    <CNPresenterDelegate> * _presentingDelegate;
+    void * _recordForNewPerson;
 }
 
 @property (nonatomic, readonly) _UIAccessDeniedView *accessDeniedView;
@@ -33,10 +33,8 @@
 @property (nonatomic) BOOL showsCancelButton;
 @property (nonatomic, retain) <ABStyleProvider> *styleProvider;
 
-// Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
-
 - (BOOL)_allowsAutorotation;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; int x7; }*)arg1;
 - (int)abViewControllerType;
 - (float)ab_heightToFitForViewInPopoverView;
 - (void)accessChanged;
@@ -94,9 +92,5 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-
-// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
-
-- (BOOL)ckCanDismissWhenSuspending;
 
 @end

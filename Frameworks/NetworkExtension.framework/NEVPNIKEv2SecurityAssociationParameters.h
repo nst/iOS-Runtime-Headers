@@ -3,10 +3,10 @@
  */
 
 @interface NEVPNIKEv2SecurityAssociationParameters : NSObject <NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
-    int _diffieHellmanGroup;
-    int _encryptionAlgorithm;
-    int _integrityAlgorithm;
-    int _lifetimeMinutes;
+    int  _diffieHellmanGroup;
+    int  _encryptionAlgorithm;
+    int  _integrityAlgorithm;
+    int  _lifetimeMinutes;
 }
 
 @property int diffieHellmanGroup;

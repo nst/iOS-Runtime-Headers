@@ -3,13 +3,13 @@
  */
 
 @interface PUAssetActionPerformer : NSObject {
-    unsigned int _actionType;
-    NSArray *_assets;
-    NSDictionary *_assetsByAssetCollection;
-    id /* block */ _completionHandler;
-    <PUAssetActionPerformerDelegate> *_delegate;
-    UIViewController *_presentedViewController;
-    unsigned int _state;
+    unsigned int  _actionType;
+    NSArray * _assets;
+    NSDictionary * _assetsByAssetCollection;
+    id /* block */  _completionHandler;
+    <PUAssetActionPerformerDelegate> * _delegate;
+    UIViewController * _presentedViewController;
+    unsigned int  _state;
 }
 
 @property (nonatomic, readonly) unsigned int actionType;

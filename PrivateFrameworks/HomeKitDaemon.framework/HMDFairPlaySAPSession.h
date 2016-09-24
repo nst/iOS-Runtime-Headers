@@ -3,16 +3,16 @@
  */
 
 @interface HMDFairPlaySAPSession : NSObject {
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    <HMDFairPlaySAPSessionDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    <HMDFairPlaySAPSessionDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
     struct FairPlayHWInfo_ { 
         unsigned int IDLength; 
         unsigned char ID[20]; 
-    } _hardwareInfo;
-    struct FPSAPContextOpaque_ { } *_session;
-    NSUUID *_sessionIdentifier;
-    unsigned int _state;
+    }  _hardwareInfo;
+    struct FPSAPContextOpaque_ { } * _session;
+    NSUUID * _sessionIdentifier;
+    unsigned int  _state;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;

@@ -3,11 +3,13 @@
  */
 
 @interface ACUIAddAccountViewController : PSListController <ACUISetupViewControllerDelegate> {
-    BOOL _dontShowSecondLevelOtherAccountTypes;
-    PSSpecifier *_gmailSpecifier;
-    unsigned char _originalCellFlag;
-    unsigned char _originalWifiFlag;
-    NSArray *_preEnabledDataclasses;
+    ACAccountStore * _accountStore;
+    BOOL  _dontShowSecondLevelOtherAccountTypes;
+    NSString * _filteredDataclass;
+    PSSpecifier * _gmailSpecifier;
+    unsigned char  _originalCellFlag;
+    unsigned char  _originalWifiFlag;
+    NSArray * _preEnabledDataclasses;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -31,7 +33,9 @@
 - (id)giantSpecifierWithName:(id)arg1 forAccountTypeID:(id)arg2;
 - (id)init;
 - (void)nonModalDataclassConfigurationControllerDidCompleteWithSuccess:(BOOL)arg1;
+- (void)setSpecifier:(id)arg1;
 - (void)setupViewControllerDidDismiss:(id)arg1;
+- (BOOL)shouldAddSpecifierForAccountTypeID:(id)arg1;
 - (id)specifierForOtherAccounts;
 - (id)specifiers;
 - (id)viewProvidersManager;

@@ -3,12 +3,12 @@
  */
 
 @interface CoreDAVContainerQueryTask : CoreDAVTask {
-    Class _appSpecificDataItemClass;
-    NSString *_appSpecificDataProp;
-    NSString *_appSpecificNamespace;
-    NSString *_appSpecificQueryCommand;
-    unsigned int _searchLimit;
-    NSSet *_searchTerms;
+    Class  _appSpecificDataItemClass;
+    NSString * _appSpecificDataProp;
+    NSString * _appSpecificNamespace;
+    NSString * _appSpecificQueryCommand;
+    unsigned int  _searchLimit;
+    NSSet * _searchTerms;
 }
 
 @property (nonatomic) <CoreDAVContainerQueryTaskDelegate> *delegate;

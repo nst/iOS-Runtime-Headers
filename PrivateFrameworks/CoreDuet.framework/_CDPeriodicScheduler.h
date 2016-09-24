@@ -2,9 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
  */
 
-@interface _CDPeriodicScheduler : NSObject <_CDPeriodicScheduler> {
-    NSMutableDictionary *allJobs;
-}
+@interface _CDPeriodicScheduler : NSObject <_CDPeriodicScheduler>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -13,8 +11,6 @@
 
 + (id)sharedInstance;
 
-- (void).cxx_destruct;
-- (id)init;
 - (void)registerJob:(id)arg1;
 - (void)unregisterJob:(id)arg1;
 

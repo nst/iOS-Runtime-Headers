@@ -3,10 +3,10 @@
  */
 
 @interface TNChartFormulaStorage : NSObject <NSCopying, NSMutableCopying> {
-    unsigned int mCachedNumberOfGroups;
-    BOOL mCachedNumberOfGroupsValid;
-    int mDirection;
-    struct __CFDictionary { } *mStorage;
+    unsigned int  mCachedNumberOfGroups;
+    BOOL  mCachedNumberOfGroupsValid;
+    int  mDirection;
+    struct __CFDictionary { } * mStorage;
 }
 
 + (struct vector<TNChartFormulaType, std::__1::allocator<TNChartFormulaType> > { unsigned int *x1; unsigned int *x2; struct __compressed_pair<TNChartFormulaType *, std::__1::allocator<TNChartFormulaType> > { unsigned int *x_3_1_1; } x3; })persistentFormulaTypes;
@@ -14,6 +14,7 @@
 - (id)areaFormulaWithCalcEngine:(id)arg1 inOwner:(struct __CFUUID { }*)arg2;
 - (unsigned int)categoryLabelFormulaType;
 - (void)clearCachesForCalculationEngine:(id)arg1;
+- (id)copyByRewriting:(BOOL)arg1 withCalcEngine:(id)arg2 andHostID:(struct __CFUUID { }*)arg3;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
 - (BOOL)dataFormulaAreRegularForSeriesInsertionWithCalcEngine:(id)arg1 inOwner:(struct __CFUUID { }*)arg2;
@@ -22,7 +23,6 @@
 - (int)direction;
 - (id)formulaForID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg1;
 - (id)formulaListForType:(unsigned int)arg1;
-- (id)formulaOrNilForID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg1;
 - (id)formulaTypeEnumerator;
 - (BOOL)formulasOfType:(unsigned int)arg1 areAllStaticWithCalcEngine:(id)arg2 inEntity:(struct __CFUUID { }*)arg3;
 - (id)init;

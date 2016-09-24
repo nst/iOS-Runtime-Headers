@@ -3,7 +3,7 @@
  */
 
 @interface AVCaptureAudioChannelInternal : NSObject {
-    AVCaptureConnection *connection;
+    AVCaptureConnection * connection;
 }
 
 @end

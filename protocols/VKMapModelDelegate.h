@@ -5,9 +5,9 @@
 
 @required
 
-- (void)mapModel:(void *)arg1 needsPanByOffset:(void *)arg2 relativeToScreenPoint:(void *)arg3 animated:(void *)arg4 duration:(void *)arg5 completionHandler:(void *)arg6; // needs 6 arg types, found 10: VKMapModel *, struct CGPoint { float x1; float x2; }, struct CGPoint { float x1; float x2; }, BOOL, double, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (VKOverlayPainter *)mapModel:(VKMapModel *)arg1 painterForOverlay:(id <VKOverlay>)arg2;
-- (void)mapModel:(VKMapModel *)arg1 selectedLabelMarkerWillDisappear:(VKLabelMarker *)arg2;
+- (void)mapModel:(VKMapModel *)arg1 selectedLabelMarkerDidChangeState:(const struct shared_ptr<md::LabelMarker> { struct LabelMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg2;
+- (void)mapModel:(VKMapModel *)arg1 selectedLabelMarkerWillDisappear:(const struct shared_ptr<md::LabelMarker> { struct LabelMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg2;
 - (void)mapModel:(VKMapModel *)arg1 willTransitionFrom:(int)arg2 to:(int)arg3 duration:(double)arg4;
 - (void)mapModelDidBecomeFullyDrawn:(VKMapModel *)arg1 hasFailedTiles:(BOOL)arg2;
 - (void)mapModelDidBecomePartiallyDrawn:(VKMapModel *)arg1;
@@ -15,16 +15,13 @@
 - (void)mapModelDidFinishLoadingTiles:(VKMapModel *)arg1;
 - (void)mapModelDidStartLoadingTiles:(VKMapModel *)arg1;
 - (void)mapModelDidUpdateMinMaxZoomLevel:(VKMapModel *)arg1;
-- (BOOL)mapModelInNav:(VKMapModel *)arg1;
-- (BOOL)mapModelInNavAtDefaultZoom:(VKMapModel *)arg1;
 - (void)mapModelLabelsDidLayout:(VKMapModel *)arg1;
 - (void)mapModelWillBecomeFullyDrawn:(VKMapModel *)arg1;
-- (double)mapModelZoomScale:(VKMapModel *)arg1;
 
 @optional
 
 - (void)mapModel:(VKMapModel *)arg1 didUpdateContainsOverlay:(BOOL)arg2;
-- (void)mapModel:(VKMapModel *)arg1 didUpdateNavigationPuckSize:(float)arg2;
 - (void)mapModelDidReloadStylesheet:(VKMapModel *)arg1;
+- (void)mapModelStylesheetDidChange:(VKMapModel *)arg1;
 
 @end

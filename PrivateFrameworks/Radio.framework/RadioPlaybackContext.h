@@ -3,8 +3,8 @@
  */
 
 @interface RadioPlaybackContext : NSObject <NSCopying, NSMutableCopying> {
-    int _numberOfSkipsUsed;
-    NSArray *_trackPlaybackDescriptorQueue;
+    int  _numberOfSkipsUsed;
+    NSArray * _trackPlaybackDescriptorQueue;
 }
 
 @property (nonatomic, readonly) int numberOfSkipsUsed;

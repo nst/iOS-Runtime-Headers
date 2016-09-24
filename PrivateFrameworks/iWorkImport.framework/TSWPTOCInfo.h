@@ -3,11 +3,12 @@
  */
 
 @interface TSWPTOCInfo : TSWPShapeInfo {
-    NSArray *_pageNumberRanges;
-    TSWPTOCPartitioner *_partitioner;
-    <TSWPTOCController> *_tocController;
-    NSArray *_tocEntries;
-    TSWPTOCSettings *_tocSettings;
+    NSArray * _pageNumberRanges;
+    TSWPTOCPartitioner * _partitioner;
+    <TSWPTOCController> * _tocController;
+    NSArray * _tocEntries;
+    TSWPTOCSettings * _tocSettings;
+    BOOL  rebuildEntriesAfterPaste;
 }
 
 @property (nonatomic, retain) NSArray *pageNumberRanges;
@@ -15,6 +16,7 @@
 @property (nonatomic) <TSWPTOCController> *tocController;
 @property (setter=setTOCEntries:, nonatomic, retain) NSArray *tocEntries;
 @property (setter=setTOCSettings:, nonatomic, retain) TSWPTOCSettings *tocSettings;
+@property (nonatomic, readonly) NSArray *visibleTOCEntries;
 
 + (BOOL)canPartition;
 
@@ -42,5 +44,6 @@
 - (id)tocController;
 - (id)tocEntries;
 - (id)tocSettings;
+- (id)visibleTOCEntries;
 
 @end

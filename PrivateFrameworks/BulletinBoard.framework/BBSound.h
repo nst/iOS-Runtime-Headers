@@ -2,75 +2,63 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@interface BBSound : NSObject <BBUniquableObject, NSCopying, NSSecureCoding> {
-    NSString *_accountIdentifier;
-    int _alertType;
-    NSString *_audioCategory;
-    double _maxDuration;
-    BOOL _repeats;
-    NSString *_ringtoneName;
-    NSString *_songPath;
-    unsigned int _soundBehavior;
-    int _soundType;
-    unsigned long _systemSoundID;
-    NSString *_toneIdentifier;
-    NSString *_vibrationIdentifier;
-    NSDictionary *_vibrationPattern;
+@interface BBSound : NSObject <NSCopying, NSSecureCoding> {
+    TLAlertConfiguration * _alertConfiguration;
+    NSString * _audioCategory;
+    double  _maxDuration;
+    BOOL  _repeats;
+    NSString * _ringtoneName;
+    NSString * _songPath;
+    unsigned int  _soundBehavior;
+    int  _soundType;
+    unsigned long  _systemSoundID;
+    NSDictionary * _vibrationPattern;
 }
 
-@property (nonatomic, copy) NSString *accountIdentifier;
-@property (nonatomic) int alertType;
+@property (nonatomic, readonly, copy) NSString *accountIdentifier;
+@property (nonatomic, copy) TLAlertConfiguration *alertConfiguration;
+@property (nonatomic, readonly) int alertType;
 @property (nonatomic, copy) NSString *audioCategory;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL ignoreRingerSwitch;
 @property (nonatomic) double maxDuration;
 @property (getter=isRepeating, nonatomic) BOOL repeats;
 @property (nonatomic, copy) NSString *ringtoneName;
 @property (nonatomic, copy) NSString *songPath;
 @property (nonatomic) unsigned int soundBehavior;
 @property (nonatomic) int soundType;
-@property (readonly) Class superclass;
 @property (nonatomic) unsigned long systemSoundID;
-@property (nonatomic, copy) NSString *toneIdentifier;
-@property (nonatomic, copy) NSString *vibrationIdentifier;
+@property (nonatomic, readonly, copy) NSString *toneIdentifier;
+@property (nonatomic, readonly, copy) NSString *vibrationIdentifier;
 @property (nonatomic, copy) NSDictionary *vibrationPattern;
 
-+ (id)_possiblyCachedAlertSoundForInitializedSound:(id)arg1;
-+ (void)_removeCachedSound:(id)arg1;
-+ (id)alertSoundWithSystemSoundID:(unsigned long)arg1;
-+ (id)alertSoundWithSystemSoundPath:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)accountIdentifier;
+- (id)alertConfiguration;
 - (int)alertType;
 - (id)audioCategory;
+- (id)awakeAfterUsingCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
+- (BOOL)ignoreRingerSwitch;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithRingtone:(id)arg1 vibrationPattern:(id)arg2 repeats:(BOOL)arg3;
-- (id)initWithRingtone:(id)arg1 vibrationPattern:(id)arg2 repeats:(BOOL)arg3 audioCategory:(id)arg4;
-- (id)initWithRingtone:(id)arg1 vibrationPattern:(id)arg2 repeats:(BOOL)arg3 audioCategory:(id)arg4 maxDuration:(double)arg5;
-- (id)initWithSong:(id)arg1 vibrationPattern:(id)arg2;
-- (id)initWithSong:(id)arg1 vibrationPattern:(id)arg2 repeats:(BOOL)arg3 audioCategory:(id)arg4 maxDuration:(double)arg5;
-- (id)initWithSong:(id)arg1 vibrationPattern:(id)arg2 repeats:(BOOL)arg3 maxDuration:(double)arg4;
-- (id)initWithSystemSoundID:(unsigned long)arg1 behavior:(unsigned int)arg2;
-- (id)initWithSystemSoundID:(unsigned long)arg1 behavior:(unsigned int)arg2 vibrationPattern:(id)arg3;
-- (id)initWithSystemSoundID:(unsigned long)arg1 soundPath:(id)arg2 behavior:(unsigned int)arg3 vibrationPattern:(id)arg4;
-- (id)initWithSystemSoundPath:(id)arg1 behavior:(unsigned int)arg2;
-- (id)initWithSystemSoundPath:(id)arg1 behavior:(unsigned int)arg2 vibrationPattern:(id)arg3;
 - (id)initWithToneAlert:(int)arg1;
 - (id)initWithToneAlert:(int)arg1 accountIdentifier:(id)arg2;
+- (id)initWithToneAlert:(int)arg1 accountIdentifier:(id)arg2 ignoreRingerSwitch:(BOOL)arg3;
+- (id)initWithToneAlert:(int)arg1 accountIdentifier:(id)arg2 toneIdentifier:(id)arg3 vibrationIdentifier:(id)arg4 ignoreRingerSwitch:(BOOL)arg5;
+- (id)initWithToneAlert:(int)arg1 ignoreRingerSwitch:(BOOL)arg2;
 - (id)initWithToneAlert:(int)arg1 toneIdentifier:(id)arg2 vibrationIdentifier:(id)arg3;
+- (id)initWithToneAlert:(int)arg1 toneIdentifier:(id)arg2 vibrationIdentifier:(id)arg3 ignoreRingerSwitch:(BOOL)arg4;
+- (id)initWithToneAlertConfiguration:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isRepeating;
 - (double)maxDuration;
+- (id)replacementObjectForCoder:(id)arg1;
 - (id)ringtoneName;
-- (void)setAccountIdentifier:(id)arg1;
-- (void)setAlertType:(int)arg1;
+- (void)setAlertConfiguration:(id)arg1;
 - (void)setAudioCategory:(id)arg1;
 - (void)setMaxDuration:(double)arg1;
 - (void)setRepeats:(BOOL)arg1;
@@ -79,15 +67,12 @@
 - (void)setSoundBehavior:(unsigned int)arg1;
 - (void)setSoundType:(int)arg1;
 - (void)setSystemSoundID:(unsigned long)arg1;
-- (void)setToneIdentifier:(id)arg1;
-- (void)setVibrationIdentifier:(id)arg1;
 - (void)setVibrationPattern:(id)arg1;
 - (id)songPath;
 - (unsigned int)soundBehavior;
 - (int)soundType;
 - (unsigned long)systemSoundID;
 - (id)toneIdentifier;
-- (id)uniqueIdentifier;
 - (id)vibrationIdentifier;
 - (id)vibrationPattern;
 

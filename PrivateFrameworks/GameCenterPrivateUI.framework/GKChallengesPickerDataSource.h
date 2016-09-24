@@ -3,7 +3,7 @@
  */
 
 @interface GKChallengesPickerDataSource : GKFriendsSplittingDataSource {
-    GKChallenge *_challenge;
+    GKChallenge * _challenge;
 }
 
 @property (nonatomic, retain) GKChallenge *challenge;

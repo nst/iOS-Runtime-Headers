@@ -3,8 +3,8 @@
  */
 
 @interface BSZeroingWeakReferenceProxy : NSProxy {
-    Class _targetClass;
-    BSZeroingWeakReference *_weakReference;
+    Class  _targetClass;
+    BSZeroingWeakReference * _weakReference;
 }
 
 + (id)zeroingWeakProxyWithObject:(id)arg1;

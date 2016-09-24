@@ -2,28 +2,30 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUCloudPhotoWelcomeViewController : UIViewController <AAUIGenericTermsRemoteUIDelegate, PSCloudStorageOffersManagerDelegate, PUCloudPhotoWelcomeViewDelegate> {
-    BOOL _enableOnAppear;
-    PSCloudStorageOffersManager *_offersManager;
-    BOOL _requireStorageUpgrade;
-    UIBarButtonItem *_skipBarButtonItem;
-    AAUIGenericTermsRemoteUI *_termsManager;
-    PUCloudPhotoWelcomeView *_welcomeView;
+@interface PUCloudPhotoWelcomeViewController : PUWelcomeViewController <AAUIGenericTermsRemoteUIDelegate, PSCloudStorageOffersManagerDelegate, PUCloudPhotoWelcomeViewDelegate> {
+    id /* block */  __completionHandler;
+    BOOL  _enableOnAppear;
+    PSCloudStorageOffersManager * _offersManager;
+    BOOL  _requireStorageUpgrade;
+    AAUIGenericTermsRemoteUI * _termsManager;
+    PUCloudPhotoWelcomeView * _welcomeView;
 }
 
+@property (setter=_setCompletionHandler:, nonatomic, copy) id /* block */ _completionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) UIBarButtonItem *skipBarButtonItem;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) PUCloudPhotoWelcomeView *welcomeView;
 
 + (BOOL)_isPhotoStreamEnabled;
-+ (void)showIfNecessaryWithPresentingViewController:(id)arg1;
-+ (void)showWithPresentingViewController:(id)arg1;
++ (void)_showWithPresentingViewController:(id)arg1 completionHandler:(id /* block */)arg2;
++ (void)presentIfNecessaryFromViewController:(id)arg1 completionHandler:(id /* block */)arg2;
++ (void)resetLastPresentationInfo;
 
 - (void).cxx_destruct;
 - (void)_applicationWillEnterForeground:(id)arg1;
+- (id /* block */)_completionHandler;
 - (void)_continueWithoutStoragePurchase:(id)arg1;
 - (void)_dismiss;
 - (void)_enableButtons;
@@ -32,19 +34,19 @@
 - (void)_handleEnableError:(id)arg1;
 - (void)_handleGoButtonTapped;
 - (void)_presentStoragePurchaseController;
-- (void)_skipButtonTapped:(id)arg1;
+- (void)_setCompletionHandler:(id /* block */)arg1;
 - (void)cloudPhotoWelcomeViewGoButtonTapped:(id)arg1;
 - (void)cloudPhotoWelcomeViewLearnMoreTapped:(id)arg1;
+- (void)cloudPhotoWelcomeViewNotNowButtonTapped:(id)arg1;
+- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)genericTermsRemoteUI:(id)arg1 didFinishWithSuccess:(BOOL)arg2;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)manager:(id)arg1 loadDidFailWithError:(id)arg2;
 - (void)manager:(id)arg1 willPresentViewController:(id)arg2;
 - (void)managerDidCancel:(id)arg1;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (int)preferredInterfaceOrientationForPresentation;
 - (void)setWelcomeView:(id)arg1;
 - (BOOL)shouldAutorotate;
-- (id)skipBarButtonItem;
 - (unsigned int)supportedInterfaceOrientations;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;

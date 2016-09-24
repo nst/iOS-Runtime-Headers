@@ -3,15 +3,17 @@
  */
 
 @interface CTCellularPlanItem : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_iccid;
-    BOOL _isSelectable;
-    NSNumber *_isSelectedOverride;
-    BOOL _isSimStateValid;
-    NSString *_name;
-    CTCellularPlan *_plan;
-    BOOL _shouldAutoSelectWhenInRange;
-    BOOL _shouldDisplayType;
-    int _type;
+    NSString * _iccid;
+    BOOL  _isSelectable;
+    NSNumber * _isSelectedOverride;
+    BOOL  _isSimStateValid;
+    int  _lockState;
+    NSString * _name;
+    CTCellularPlan * _plan;
+    BOOL  _shouldAutoSelectWhenInRange;
+    BOOL  _shouldDisplay;
+    BOOL  _shouldDisplayType;
+    int  _type;
 }
 
 @property (nonatomic, readonly) NSString *iccid;
@@ -21,9 +23,11 @@
 @property (nonatomic, readonly) BOOL isSelected;
 @property (nonatomic, retain) NSNumber *isSelectedOverride;
 @property (nonatomic) BOOL isSimStateValid;
+@property (nonatomic) int lockState;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) CTCellularPlan *plan;
 @property (nonatomic) BOOL shouldAutoSelectWhenInRange;
+@property (nonatomic, readonly) BOOL shouldDisplay;
 @property (nonatomic) BOOL shouldDisplayType;
 @property (nonatomic) int type;
 
@@ -45,15 +49,18 @@
 - (BOOL)isSelected;
 - (id)isSelectedOverride;
 - (BOOL)isSimStateValid;
+- (int)lockState;
 - (id)name;
 - (id)plan;
 - (void)setIsSelectable:(BOOL)arg1;
 - (void)setIsSelectedOverride:(id)arg1;
 - (void)setIsSimStateValid:(BOOL)arg1;
+- (void)setLockState:(int)arg1;
 - (void)setShouldAutoSelectWhenInRange:(BOOL)arg1;
 - (void)setShouldDisplayType:(BOOL)arg1;
 - (void)setType:(int)arg1;
 - (BOOL)shouldAutoSelectWhenInRange;
+- (BOOL)shouldDisplay;
 - (BOOL)shouldDisplayType;
 - (int)type;
 

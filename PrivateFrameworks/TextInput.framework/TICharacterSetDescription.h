@@ -3,10 +3,10 @@
  */
 
 @interface TICharacterSetDescription : NSObject <NSCopying, NSSecureCoding> {
-    long _baseIdentifier;
-    NSCharacterSet *_characterSet;
-    NSString *_charactersAddedToBase;
-    BOOL _inverted;
+    long  _baseIdentifier;
+    NSCharacterSet * _characterSet;
+    NSString * _charactersAddedToBase;
+    BOOL  _inverted;
 }
 
 @property (nonatomic, readonly) long baseIdentifier;

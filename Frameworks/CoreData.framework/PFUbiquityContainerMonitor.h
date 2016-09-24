@@ -3,17 +3,17 @@
  */
 
 @interface PFUbiquityContainerMonitor : NSObject {
-    PFUbiquityContainerIdentifier *_containerIdentifier;
-    int _containerState;
-    <NSObject><NSCopying><NSCoding> *_currentIdentityToken;
-    BOOL _hasScheduledCheckBlock;
-    NSString *_identityTokenOverride;
-    NSString *_localPeerID;
-    int _monitorState;
-    NSObject<OS_dispatch_queue> *_processingQueue;
-    int _scheduleSpinLock;
-    NSString *_storeName;
-    PFUbiquityLocation *_ubiquityRootLocation;
+    PFUbiquityContainerIdentifier * _containerIdentifier;
+    int  _containerState;
+    <NSObject><NSCopying><NSCoding> * _currentIdentityToken;
+    BOOL  _hasScheduledCheckBlock;
+    NSString * _identityTokenOverride;
+    NSString * _localPeerID;
+    int  _monitorState;
+    NSObject<OS_dispatch_queue> * _processingQueue;
+    int  _scheduleSpinLock;
+    NSString * _storeName;
+    PFUbiquityLocation * _ubiquityRootLocation;
 }
 
 @property (nonatomic, readonly) PFUbiquityContainerIdentifier *containerIdentifier;

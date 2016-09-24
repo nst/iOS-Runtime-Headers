@@ -3,9 +3,9 @@
  */
 
 @interface UIStatusBarActivityItemView : UIStatusBarItemView {
-    UIActivityIndicatorView *_activityIndicator;
-    BOOL _slowActivity;
-    BOOL _syncActivity;
+    UIActivityIndicatorView * _activityIndicator;
+    BOOL  _slowActivity;
+    BOOL  _syncActivity;
 }
 
 - (void).cxx_destruct;

@@ -3,8 +3,8 @@
  */
 
 @interface CIWhitePointAdjust : CIFilter {
-    CIColor *inputColor;
-    CIImage *inputImage;
+    CIColor * inputColor;
+    CIImage * inputImage;
 }
 
 @property (nonatomic, retain) CIColor *inputColor;

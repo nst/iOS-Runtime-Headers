@@ -3,13 +3,13 @@
  */
 
 @interface MSCLAttachmentPropertiesTableViewSection : NSObject <MSCLSettingsTableViewCellDelegate, MSCLTokenTextViewDelegate, UITextFieldDelegate> {
-    SKUIClientContext *_clientContext;
-    BOOL _isExplicit;
-    <MSCLAttachmentPropertiesTableViewSectionDelegate> *_sectionDelegate;
-    float _sectionHeaderHeight;
-    int _sectionType;
-    NSArray *_tableViewCells;
-    MSCLVideoCoverImageSelectionView *_videoCoverImageView;
+    SKUIClientContext * _clientContext;
+    BOOL  _isExplicit;
+    <MSCLAttachmentPropertiesTableViewSectionDelegate> * _sectionDelegate;
+    double  _sectionHeaderHeight;
+    int  _sectionType;
+    NSArray * _tableViewCells;
+    MSCLVideoCoverImageSelectionView * _videoCoverImageView;
 }
 
 @property (nonatomic, readonly) SKUIClientContext *clientContext;
@@ -17,7 +17,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic) <MSCLAttachmentPropertiesTableViewSectionDelegate> *sectionDelegate;
-@property (nonatomic, readonly) float sectionHeaderHeight;
+@property (nonatomic, readonly) double sectionHeaderHeight;
 @property (nonatomic, readonly) int sectionType;
 @property (nonatomic, readonly) UIImage *selectedCoverImage;
 @property (readonly) Class superclass;

@@ -3,7 +3,7 @@
  */
 
 @interface TSPContainedObject : NSObject {
-    TSPObject *_owner;
+    TSPObject * _owner;
 }
 
 @property (nonatomic) TSPObject *owner;

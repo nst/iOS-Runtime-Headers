@@ -3,9 +3,9 @@
  */
 
 @interface TSDEditableBezierPathSourceMorphInfo : NSObject {
-    TSDEditableBezierPathSource *mOriginal;
-    TSUPointerKeyDictionary *mOriginalNodeIndexMapping;
-    TSDEditableBezierPathSource *mSmoothOriginal;
+    TSDEditableBezierPathSource * mOriginal;
+    TSUPointerKeyDictionary * mOriginalNodeIndexMapping;
+    TSDEditableBezierPathSource * mSmoothOriginal;
 }
 
 @property (nonatomic, retain) TSDEditableBezierPathSource *original;

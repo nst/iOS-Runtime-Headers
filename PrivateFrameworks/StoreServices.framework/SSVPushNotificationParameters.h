@@ -3,10 +3,10 @@
  */
 
 @interface SSVPushNotificationParameters : NSObject <NSCopying, SSXPCCoding> {
-    NSNumber *_accountIdentifier;
-    NSString *_environmentName;
-    NSMutableDictionary *_parameterDictionary;
-    int _requestType;
+    NSNumber * _accountIdentifier;
+    NSString * _environmentName;
+    NSMutableDictionary * _parameterDictionary;
+    int  _requestType;
 }
 
 @property (nonatomic, copy) NSNumber *accountIdentifier;

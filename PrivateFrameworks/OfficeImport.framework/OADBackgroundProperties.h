@@ -3,8 +3,8 @@
  */
 
 @interface OADBackgroundProperties : OADBackground {
-    NSArray *mEffects;
-    OADFill *mFill;
+    NSArray * mEffects;
+    OADFill * mFill;
 }
 
 - (void)dealloc;

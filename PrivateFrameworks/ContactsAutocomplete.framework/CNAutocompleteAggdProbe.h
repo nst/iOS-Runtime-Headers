@@ -3,10 +3,10 @@
  */
 
 @interface CNAutocompleteAggdProbe : NSObject <CNAutocompleteProbe> {
-    NSMutableDictionary *_addData;
-    NSString *_bundleID;
-    NSString *_keyPrefix;
-    NSMutableDictionary *_setData;
+    NSMutableDictionary * _addData;
+    NSString * _bundleID;
+    NSString * _keyPrefix;
+    NSMutableDictionary * _setData;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *addData;

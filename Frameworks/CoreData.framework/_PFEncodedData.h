@@ -3,8 +3,8 @@
  */
 
 @interface _PFEncodedData : NSData {
-    NSData *_aData;
-    unsigned int _byteCount;
+    NSData * _aData;
+    unsigned int  _byteCount;
 }
 
 + (Class)classForCoder;

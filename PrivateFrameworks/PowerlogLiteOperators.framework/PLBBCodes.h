@@ -3,10 +3,10 @@
  */
 
 @interface PLBBCodes : NSObject {
-    NSArray *_Mav5_7_Lite_LogCodes;
-    NSArray *_Mav5_7_LogCodes;
-    NSArray *_Mav7_LogCodes;
-    NSArray *_allMav_LogCodes;
+    NSArray * _Mav5_7_Lite_LogCodes;
+    NSArray * _Mav5_7_LogCodes;
+    NSArray * _Mav7_LogCodes;
+    NSArray * _allMav_LogCodes;
 }
 
 @property (retain) NSArray *Mav5_7_Lite_LogCodes;

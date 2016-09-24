@@ -3,53 +3,53 @@
  */
 
 @interface MusicMediaDetailHeaderViewController : UIViewController <MusicMediaDetailHeaderViewController> {
-    float _artworkFittingHeight;
-    UIImage *_artworkImage;
-    UIView *_contentEffectClippingView;
-    unsigned long long _contentEffectRevisionID;
-    UISnapshotView *_contentEffectSnapshotView;
-    MusicInteractiveContentEffectView *_contentEffectView;
-    UIView *_darkeningTintView;
+    double  _artworkFittingHeight;
+    UIImage * _artworkImage;
+    UIView * _contentEffectClippingView;
+    unsigned int  _contentEffectRevisionID;
+    UISnapshotView * _contentEffectSnapshotView;
+    MusicInteractiveContentEffectView * _contentEffectView;
+    UIView * _darkeningTintView;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _focusRect;
-    NSArray *_focusRegions;
-    BOOL _hasReceivedHeaderInformation;
-    float _headerHeight;
-    unsigned int _headerStyle;
-    float _headerVerticalOffset;
-    unsigned int _ignoreContentEffectSnapshotCount;
+    }  _focusRect;
+    NSArray * _focusRegions;
+    BOOL  _hasReceivedHeaderInformation;
+    double  _headerHeight;
+    unsigned int  _headerStyle;
+    double  _headerVerticalOffset;
+    unsigned int  _ignoreContentEffectSnapshotCount;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _lastContentEffectViewInputBounds;
+    }  _lastContentEffectViewInputBounds;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _lastContentEffectViewSnapshotSize;
-    NSString *_legibilityBottomGradientType;
-    MusicMediaUberHeaderLegibilityOverlayView *_legibilityOverlayView;
-    float _maximumHeaderHeight;
-    MusicMediaDetailTintInformation *_mediaDetailTintInformation;
-    <MusicMediaDetailHeaderViewControllerDelegate> *_mediaHeaderViewControllerDelegate;
-    float _originalContentViewControllerViewAlpha;
-    float _transitionProgress;
+        double width; 
+        double height; 
+    }  _lastContentEffectViewSnapshotSize;
+    NSString * _legibilityBottomGradientType;
+    MusicMediaUberHeaderLegibilityOverlayView * _legibilityOverlayView;
+    double  _maximumHeaderHeight;
+    MusicMediaDetailTintInformation * _mediaDetailTintInformation;
+    <MusicMediaDetailHeaderViewControllerDelegate> * _mediaHeaderViewControllerDelegate;
+    double  _originalContentViewControllerViewAlpha;
+    double  _transitionProgress;
 }
 
-@property (nonatomic) float artworkFittingHeight;
+@property (nonatomic) double artworkFittingHeight;
 @property (nonatomic, retain) UIImage *artworkImage;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -88,6 +88,6 @@
 - (void)setMediaHeaderViewControllerDelegate:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

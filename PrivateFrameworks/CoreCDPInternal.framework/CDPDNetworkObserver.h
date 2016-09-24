@@ -3,11 +3,11 @@
  */
 
 @interface CDPDNetworkObserver : NSObject {
-    NSMutableDictionary *_clientsByUUID;
-    NSLock *_clientsLock;
-    NSObject<OS_dispatch_queue> *_eventQueue;
-    BOOL _networkIsReachable;
-    struct __SCNetworkReachability { } *_networkReach;
+    NSMutableDictionary * _clientsByUUID;
+    NSLock * _clientsLock;
+    NSObject<OS_dispatch_queue> * _eventQueue;
+    BOOL  _networkIsReachable;
+    struct __SCNetworkReachability { } * _networkReach;
 }
 
 + (id)sharedInstance;

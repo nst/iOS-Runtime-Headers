@@ -10,7 +10,11 @@
 @property (readonly) Class superclass;
 
 - (id)afterDelay:(double)arg1 performBlock:(id /* block */)arg2;
+- (id)afterDelay:(double)arg1 performBlock:(id /* block */)arg2 qualityOfService:(unsigned int)arg3;
 - (void)performBlock:(id /* block */)arg1;
+- (void)performBlock:(id /* block */)arg1 qualityOfService:(unsigned int)arg2;
 - (id)performCancelableBlock:(id /* block */)arg1;
+- (id)performCancelableBlock:(id /* block */)arg1 qualityOfService:(unsigned int)arg2;
+- (double)timestamp;
 
 @end

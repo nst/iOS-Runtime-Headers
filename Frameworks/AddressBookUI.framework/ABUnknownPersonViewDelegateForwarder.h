@@ -3,7 +3,7 @@
  */
 
 @interface ABUnknownPersonViewDelegateForwarder : NSObject <UITableViewDataSource, UITableViewDelegate> {
-    ABUnknownPersonViewController *_viewController;
+    ABUnknownPersonViewController * _viewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

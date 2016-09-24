@@ -3,10 +3,10 @@
  */
 
 @interface MPPlayableContentManagerContext : NSObject {
-    BOOL _contentLimitsEnforced;
-    BOOL _endpointAvailable;
-    int _enforcedContentItemsCount;
-    int _enforcedContentTreeDepth;
+    BOOL  _contentLimitsEnforced;
+    BOOL  _endpointAvailable;
+    int  _enforcedContentItemsCount;
+    int  _enforcedContentTreeDepth;
 }
 
 @property (nonatomic, readonly) BOOL contentLimitsEnabled;

@@ -3,10 +3,10 @@
  */
 
 @interface ALCityManager : NSObject {
-    CPSearchMatcher *_citySearchMatcher;
-    NSRecursiveLock *_databaseAccessRecursiveLock;
-    struct sqlite3 { } *_db;
-    struct sqlite3 { } *_localizedDb;
+    CPSearchMatcher * _citySearchMatcher;
+    NSRecursiveLock * _databaseAccessRecursiveLock;
+    struct sqlite3 { } * _db;
+    struct sqlite3 { } * _localizedDb;
 }
 
 @property (readonly) CPSearchMatcher *citySearchMatcher;

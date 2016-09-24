@@ -3,9 +3,9 @@
  */
 
 @interface _UIALAConfigurationHistory : _UILAConfigurationHistory <_UIALAPropertySource> {
-    unsigned int _alignment;
-    BOOL _hasEstablishedAlignmentValues;
-    BOOL _inAlignmentLayoutUpdateSection;
+    unsigned int  _alignment;
+    BOOL  _hasEstablishedAlignmentValues;
+    BOOL  _inAlignmentLayoutUpdateSection;
 }
 
 @property (nonatomic, readonly) NSSet *_newlyHiddenItems;

@@ -3,23 +3,18 @@
  */
 
 @interface __NSArrayM : NSMutableArray {
-    unsigned int _doHardRetain;
-    unsigned int _doWeakAccess;
-    unsigned int _hasObjects;
-    unsigned int _hasStrongReferences;
-    id *_list;
-    unsigned long _mutations;
-    unsigned int _offset;
-    unsigned int _size;
-    unsigned int _used;
+    id * _list;
+    unsigned long  _mutations;
+    unsigned int  _offset;
+    unsigned int  _size;
+    unsigned int  _unused;
+    unsigned int  _used;
 }
 
-+ (id)__new:(const id*)arg1 :(unsigned int)arg2 :(BOOL)arg3 :(BOOL)arg4 :(BOOL)arg5;
++ (id)__new:(const id*)arg1 :(unsigned int)arg2 :(BOOL)arg3;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
-- (BOOL)_hasObjects;
-- (BOOL)_hasStrongReferences;
 - (void)_mutate;
 - (void)addObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -28,15 +23,19 @@
 - (void)dealloc;
 - (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
 - (void)exchangeObjectAtIndex:(unsigned int)arg1 withObjectAtIndex:(unsigned int)arg2;
-- (void)finalize;
 - (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (unsigned int)indexOfObjectIdenticalTo:(id)arg1;
 - (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)insertObjects:(const id*)arg1 count:(unsigned int)arg2 atIndex:(unsigned int)arg3;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (void)removeAllObjects;
 - (void)removeLastObject;
 - (void)removeObjectAtIndex:(unsigned int)arg1;
+- (void)removeObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
+- (void)replaceObjectsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withObjects:(const id*)arg2 count:(unsigned int)arg3;
 - (void)setObject:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)setObject:(id)arg1 atIndexedSubscript:(unsigned int)arg2;
 
 @end

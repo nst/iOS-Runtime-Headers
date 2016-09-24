@@ -5,17 +5,17 @@
 @interface JSManagedValue : NSObject {
     struct Weak<JSC::JSGlobalObject> { 
         struct WeakImpl {} *m_impl; 
-    } m_globalObject;
+    }  m_globalObject;
     struct RefPtr<JSC::JSLock> { 
         struct JSLock {} *m_ptr; 
-    } m_lock;
-    NSMapTable *m_owners;
+    }  m_lock;
+    NSMapTable * m_owners;
     struct WeakValueRef { 
         int m_tag; 
         union WeakValueUnion { 
             struct JSValue { 
                 union EncodedValueDescriptor { 
-                    long long asInt64; 
+                    int asInt64; 
                     double asDouble; 
                     struct { 
                         int payload; 
@@ -30,7 +30,7 @@
                 struct WeakImpl {} *m_impl; 
             } m_string; 
         } u; 
-    } m_weakValue;
+    }  m_weakValue;
 }
 
 @property (readonly) JSValue *value;

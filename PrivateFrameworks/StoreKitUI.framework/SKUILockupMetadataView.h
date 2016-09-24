@@ -3,21 +3,21 @@
  */
 
 @interface SKUILockupMetadataView : UIView {
-    UILabel *_artistNameLabel;
-    UILabel *_categoryLabel;
-    SKUIClientContext *_clientContext;
-    SKUIBadgeLabel *_editorialBadgeLabel;
-    UILabel *_itemCountLabel;
-    UILabel *_itemOfferLabel;
-    int _numberOfUserRatings;
-    UILabel *_releaseDateLabel;
-    UIColor *_textColor;
-    UIColor *_titleColor;
-    UILabel *_titleLabel;
-    float _userRating;
-    UIImageView *_userRatingImageView;
-    UILabel *_userRatingLabel;
-    unsigned int _visibleFields;
+    UILabel * _artistNameLabel;
+    UILabel * _categoryLabel;
+    SKUIClientContext * _clientContext;
+    SKUIBadgeLabel * _editorialBadgeLabel;
+    UILabel * _itemCountLabel;
+    UILabel * _itemOfferLabel;
+    int  _numberOfUserRatings;
+    UILabel * _releaseDateLabel;
+    UIColor * _textColor;
+    UIColor * _titleColor;
+    UILabel * _titleLabel;
+    double  _userRating;
+    UIImageView * _userRatingImageView;
+    UILabel * _userRatingLabel;
+    unsigned int  _visibleFields;
 }
 
 @property (nonatomic, copy) NSString *artistName;
@@ -30,7 +30,7 @@
 @property (nonatomic, readonly) UIColor *primaryTextColor;
 @property (nonatomic, copy) NSString *releaseDateString;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic) float userRating;
+@property (nonatomic) double userRating;
 @property (nonatomic) unsigned int visibleFields;
 
 + (float)maximumHeightWithVisibleFields:(unsigned int)arg1;
@@ -42,9 +42,9 @@
 - (id)artistName;
 - (id)categoryString;
 - (id)clientContext;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)editorialBadgeString;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)itemCountString;
 - (id)itemOfferString;
 - (int)numberOfUserRatings;
@@ -63,7 +63,7 @@
 - (void)setTitle:(id)arg1;
 - (void)setUserRating:(float)arg1;
 - (void)setVisibleFields:(unsigned int)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)title;
 - (float)userRating;
 - (unsigned int)visibleFields;

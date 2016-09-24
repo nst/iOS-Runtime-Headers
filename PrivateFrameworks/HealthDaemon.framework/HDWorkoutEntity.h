@@ -6,13 +6,14 @@
 
 + (id)_databaseTable;
 + (BOOL)addCodableObject:(id)arg1 toCollection:(id)arg2;
-+ (BOOL)associateSamples:(id)arg1 toWorkout:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
++ (BOOL)associateSamples:(id)arg1 toWorkout:(id)arg2 profile:(id)arg3 error:(id*)arg4;
 + (id)codableObjectsFromObjectCollection:(id)arg1;
 + (id)columnNameForSortIdentifier:(id)arg1;
 + (id)columnsDefinition;
-+ (BOOL)copySampleAssociationsFromWorkout:(id)arg1 toWorkout:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
++ (BOOL)copySampleAssociationsFromWorkout:(id)arg1 toWorkout:(id)arg2 profile:(id)arg3 error:(id*)arg4;
 + (id)deleteStatementsForRelatedEntitiesInDatabase:(id)arg1;
-+ (id)entityEncoderForHealthDaemon:(id)arg1 database:(id)arg2 purpose:(int)arg3 authorizationFilter:(id /* block */)arg4;
++ (id)entityEncoderForProfile:(id)arg1 database:(id)arg2 purpose:(int)arg3 encodingOptions:(id)arg4 authorizationFilter:(id /* block */)arg5;
++ (BOOL)enumerateAssociatedObjectsForIdentifier:(int)arg1 inDatabase:(id)arg2 error:(id*)arg3 associatedObjectHandler:(id /* block */)arg4;
 + (id)insertDataObject:(id)arg1 withProvenance:(id)arg2 inDatabase:(id)arg3 persistentID:(id)arg4 error:(id*)arg5;
 
 @end

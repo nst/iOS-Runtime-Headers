@@ -3,9 +3,9 @@
  */
 
 @interface AFSiriTask : NSObject <BSXPCCoding, NSSecureCoding> {
-    NSXPCListenerEndpoint *_remoteResponseListenerEndpoint;
-    AFSiriRequest *_request;
-    NSXPCListenerEndpoint *_usageResultListenerEndpoint;
+    NSXPCListenerEndpoint * _remoteResponseListenerEndpoint;
+    AFSiriRequest * _request;
+    NSXPCListenerEndpoint * _usageResultListenerEndpoint;
 }
 
 @property (readonly, copy) NSString *debugDescription;

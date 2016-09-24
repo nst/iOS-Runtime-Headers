@@ -3,10 +3,10 @@
  */
 
 @interface PUPhotoKitMediaProviderDownloadSimulation : NSObject {
-    double __simulatedProgress;
-    double __updateInterval;
-    double _downloadDuration;
-    BOOL _shouldSimulateFailure;
+    double  __simulatedProgress;
+    double  __updateInterval;
+    double  _downloadDuration;
+    BOOL  _shouldSimulateFailure;
 }
 
 @property (setter=_setSimulatedProgress:, nonatomic) double _simulatedProgress;

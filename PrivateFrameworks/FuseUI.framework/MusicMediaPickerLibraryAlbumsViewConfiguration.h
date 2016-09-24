@@ -3,7 +3,7 @@
  */
 
 @interface MusicMediaPickerLibraryAlbumsViewConfiguration : MusicLibraryCollectionBasedTableViewConfiguration {
-    BOOL _isMultipleSelectionAllowed;
+    BOOL  _isMultipleSelectionAllowed;
 }
 
 - (void)_multipleSelectionAllowanceDidChange:(id)arg1;

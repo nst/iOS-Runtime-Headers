@@ -3,7 +3,7 @@
  */
 
 @interface FigBaseCALayerHost : CALayerHost {
-    BOOL _preventsChangesToSublayerHierarchy;
+    BOOL  _preventsChangesToSublayerHierarchy;
 }
 
 @property (nonatomic) BOOL preventsChangesToSublayerHierarchy;

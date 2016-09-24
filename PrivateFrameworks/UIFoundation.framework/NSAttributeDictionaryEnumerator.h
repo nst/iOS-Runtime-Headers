@@ -3,8 +3,8 @@
  */
 
 @interface NSAttributeDictionaryEnumerator : NSEnumerator {
-    NSAttributeDictionary *dictionary;
-    unsigned int nextElement;
+    NSAttributeDictionary * dictionary;
+    unsigned int  nextElement;
 }
 
 - (void)dealloc;

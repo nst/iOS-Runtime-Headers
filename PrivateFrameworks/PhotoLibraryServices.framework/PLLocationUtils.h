@@ -4,6 +4,6 @@
 
 @interface PLLocationUtils : NSObject
 
-+ (BOOL)canUseCoordinate:(struct { double x1; double x2; })arg1;
++ (BOOL)canUseCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
 
 @end

@@ -3,9 +3,9 @@
  */
 
 @interface CUIKiCloudKVStore : NSObject {
-    BOOL _hasConnectedToCarBluetooth;
-    NSDate *_lastCarConnectionDate;
-    <NSObject><NSCopying><NSCoding> *_ubiquityIdentityToken;
+    BOOL  _hasConnectedToCarBluetooth;
+    NSDate * _lastCarConnectionDate;
+    <NSObject><NSCopying><NSCoding> * _ubiquityIdentityToken;
 }
 
 @property (nonatomic) BOOL hasConnectedToCarBluetooth;

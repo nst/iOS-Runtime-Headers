@@ -3,7 +3,7 @@
  */
 
 @interface GEORegionalResourcesTileRequester : GEOTileRequester {
-    NSMutableArray *_loaders;
+    NSMutableArray * _loaders;
 }
 
 + (unsigned char)tileProviderIdentifier;

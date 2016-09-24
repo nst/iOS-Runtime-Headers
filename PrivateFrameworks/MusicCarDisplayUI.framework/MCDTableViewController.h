@@ -3,20 +3,23 @@
  */
 
 @interface MCDTableViewController : MPUTableViewController {
-    AVExternalDevice *_externalDevice;
-    BOOL _limitedUI;
-    BOOL _limiting;
-    MPMediaPredicate *_localPredicate;
-    UIView *_nowPlayingButton;
-    BOOL _shouldHideIndexTitles;
-    BOOL _showMore;
-    UIView *_snapshotView;
-    BOOL _topLevel;
+    AVExternalDevice * _externalDevice;
+    BOOL  _limitedUI;
+    BOOL  _limiting;
+    MPMediaPredicate * _localPredicate;
+    MCDNowPlayingButton * _nowPlayingButton;
+    BOOL  _shouldHideIndexTitles;
+    BOOL  _showMore;
+    UIView * _snapshotView;
+    UIColor * _tintColor;
+    BOOL  _topLevel;
 }
 
+@property (readonly) BOOL currentAppIsPlaying;
 @property (nonatomic) BOOL limitedUI;
 @property (nonatomic) BOOL shouldHideIndexTitles;
 @property (nonatomic) BOOL showMore;
+@property (nonatomic, retain) UIColor *tintColor;
 @property (nonatomic) BOOL topLevel;
 
 + (Class)_tableViewClass;
@@ -26,8 +29,10 @@
 - (void)_MCD_nowPlayingButtonAction:(id)arg1;
 - (void)_itemChanged:(id)arg1;
 - (void)_limitedUIDidChange;
+- (void)_nowPlayingDidChangeNotification:(id)arg1;
 - (void)_updateNowPlayingVisibility;
 - (BOOL)_viewControllerWasSelected;
+- (BOOL)currentAppIsPlaying;
 - (void)dataSourceDidInvalidate;
 - (void)dealloc;
 - (id)initWithDataSource:(id)arg1 cellConfigurationClass:(Class)arg2;
@@ -38,6 +43,7 @@
 - (void)setLimitedUI:(BOOL)arg1;
 - (void)setShouldHideIndexTitles:(BOOL)arg1;
 - (void)setShowMore:(BOOL)arg1;
+- (void)setTintColor:(id)arg1;
 - (void)setTopLevel:(BOOL)arg1;
 - (BOOL)shouldHideIndexTitles;
 - (BOOL)shouldScrollToFirstDataSourceSectionOnInitialAppearance;
@@ -47,6 +53,8 @@
 - (void)tableView:(id)arg1 didUnhighlightRowAtIndexPath:(id)arg2;
 - (BOOL)tableView:(id)arg1 shouldChangeFocusedItem:(id)arg2 fromRowAtIndexPath:(id)arg3;
 - (BOOL)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(int)arg3;
+- (id)tintColor;
 - (BOOL)topLevel;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;

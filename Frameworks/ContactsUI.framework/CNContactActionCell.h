@@ -3,8 +3,8 @@
  */
 
 @interface CNContactActionCell : CNLabeledCell {
-    UILabel *_label;
-    CNTransportButton *_transportIcon;
+    UILabel * _label;
+    CNTransportButton * _transportIcon;
 }
 
 @property (nonatomic, readonly) CNContactAction *action;
@@ -23,6 +23,7 @@
 - (void)setLabelTextAttributes:(id)arg1;
 - (void)setTransportIcon:(id)arg1;
 - (BOOL)shouldPerformDefaultAction;
+- (void)tintColorDidChange;
 - (id)transportIcon;
 - (id)variableConstraints;
 

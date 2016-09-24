@@ -3,11 +3,11 @@
  */
 
 @interface _MFMailAccountProxySource : NSObject {
-    NSArray *_accountProxies;
-    int _lastSourceAccountManagementQueried;
-    NSLock *_lock;
-    int _notifyToken;
-    BOOL _registeredForNotifications;
+    NSArray * _accountProxies;
+    int  _lastSourceAccountManagementQueried;
+    NSLock * _lock;
+    int  _notifyToken;
+    BOOL  _registeredForNotifications;
 }
 
 + (id)defaultInstance;

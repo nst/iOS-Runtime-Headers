@@ -3,7 +3,7 @@
  */
 
 @interface PQLFormatInjection : PQLNameInjectionBase <PQLInjecting> {
-    NSMutableArray *_binds;
+    NSMutableArray * _binds;
 }
 
 @property (readonly, copy) NSString *debugDescription;

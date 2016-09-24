@@ -3,14 +3,14 @@
  */
 
 @interface SKUIGiftCharity : NSObject {
-    NSString *_amountDisclaimer;
-    NSArray *_amounts;
-    NSString *_description;
-    NSString *_identifier;
-    NSString *_legalText;
-    NSString *_legalText2;
-    SKUIArtwork *_logoArtwork;
-    NSString *_name;
+    NSString * _amountDisclaimer;
+    NSArray * _amounts;
+    NSString * _description;
+    NSString * _identifier;
+    NSString * _legalText;
+    NSString * _legalText2;
+    SKUIArtwork * _logoArtwork;
+    NSString * _name;
 }
 
 @property (nonatomic, readonly) NSString *amountDisclaimer;

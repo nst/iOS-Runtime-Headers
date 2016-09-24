@@ -8,9 +8,9 @@
 - (void)applicationContentsDidReset:(NSString *)arg1;
 - (void)applicationDidBecomeActive:(NSString *)arg1;
 - (void)applicationDidFinishConnecting:(NSString *)arg1;
-- (void)applicationDidReceiveLocalNotification:(NSData *)arg1 clientIdentifier:(NSString *)arg2;
-- (void)applicationDidReceiveRemoteNotification:(NSDictionary *)arg1 clientIdentifier:(NSString *)arg2;
+- (void)applicationDidReceiveNotification:(void *)arg1 clientIdentifier:(void *)arg2 withCompletionHandler:(void *)arg3; // needs 3 arg types, found 8: NSData *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned int, void*
 - (void)applicationDidTerminate:(NSString *)arg1;
+- (void)applicationHandleWatchTaskKeys:(NSDictionary *)arg1 returnToPrimaryUI:(BOOL)arg2 visibleVCID:(NSString *)arg3 clientIdentifier:(NSString *)arg4;
 - (void)applicationIsStillActive;
 - (void)applicationWillResignActive:(NSString *)arg1;
 - (void)dataInterfaceDidBecomeActive:(NSString *)arg1;
@@ -22,7 +22,8 @@
 
 @optional
 
-- (void)extensionDidBeginUsingWithLaunchEnv:(NSDictionary *)arg1 launchArgs:(NSArray *)arg2;
+- (void)extensionDelegateHandlesBackgroudTasks:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
+- (void)extensionDidBeginUsingWithLaunchEnv:(void *)arg1 launchArgs:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: NSDictionary *, NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, void*
 - (void)extensionWillEndUsing;
 - (void)receiveNativeComplicationRequest:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, void*
 - (void)replyTimingData:(NSDictionary *)arg1;

@@ -3,15 +3,15 @@
  */
 
 @interface PTSSwitch : UIView <PTSHUDControl, _UISettingsKeyPathObserver> {
-    SEL _action;
-    int _alignment;
-    float _height;
-    _UISettings *_settings;
-    NSArray *_subviewConstraints;
-    UISwitch *_switchControl;
-    id _target;
-    UILabel *_titleLabel;
-    NSString *_valueKeyPath;
+    SEL  _action;
+    int  _alignment;
+    double  _height;
+    _UISettings * _settings;
+    NSArray * _subviewConstraints;
+    UISwitch * _switchControl;
+    id  _target;
+    UILabel * _titleLabel;
+    NSString * _valueKeyPath;
 }
 
 @property (nonatomic) SEL action;
@@ -20,7 +20,7 @@
 @property (readonly, copy) NSString *description;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) float height;
+@property (nonatomic, readonly) double height;
 @property (nonatomic) _UISettings *settings;
 @property (nonatomic, retain) NSArray *subviewConstraints;
 @property (readonly) Class superclass;
@@ -29,7 +29,7 @@
 @property (nonatomic, retain) UILabel *titleLabel;
 @property (nonatomic, copy) NSString *valueKeyPath;
 
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultFrame;
++ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })defaultFrame;
 + (id)switch;
 + (id)switchForSettings:(id)arg1 valueKeyPath:(id)arg2 title:(id)arg3;
 
@@ -39,7 +39,7 @@
 - (void)dealloc;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (float)height;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isEnabled;
 - (void)layoutSubviews;
 - (id)makeSwitch;

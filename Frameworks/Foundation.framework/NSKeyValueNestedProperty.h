@@ -3,13 +3,13 @@
  */
 
 @interface NSKeyValueNestedProperty : NSKeyValueProperty {
-    id _dependentValueKeyOrKeys;
-    BOOL _dependentValueKeyOrKeysIsASet;
-    BOOL _isAllowedToResultInForwarding;
-    NSString *_keyPathFromRelatedObject;
-    NSString *_keyPathWithoutOperatorComponents;
-    NSString *_relationshipKey;
-    NSKeyValueUnnestedProperty *_relationshipProperty;
+    id  _dependentValueKeyOrKeys;
+    BOOL  _dependentValueKeyOrKeysIsASet;
+    BOOL  _isAllowedToResultInForwarding;
+    NSString * _keyPathFromRelatedObject;
+    NSString * _keyPathWithoutOperatorComponents;
+    NSString * _relationshipKey;
+    NSKeyValueUnnestedProperty * _relationshipProperty;
 }
 
 - (void)_addDependentValueKey:(id)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface _DECFeedbackProvider : NSObject {
-    NSXPCConnection *_connection;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSXPCConnection * _connection;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 + (void)setCategory:(unsigned int)arg1;

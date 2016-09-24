@@ -3,10 +3,10 @@
  */
 
 @interface PBBProtoDidMakeAutoLockChoice : PBCodable <NSCopying> {
-    BOOL _accept;
+    BOOL  _accept;
     struct { 
         unsigned int accept : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic) BOOL accept;

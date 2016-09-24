@@ -3,10 +3,10 @@
  */
 
 @interface CAMKeepAliveController : NSObject {
-    NSObject<OS_xpc_object> *__connection;
-    NSObject<OS_dispatch_queue> *__heartbeatQueue;
-    NSObject<OS_dispatch_source> *__heartbeatSource;
-    NSObject<OS_dispatch_queue> *__keepAliveQueue;
+    NSObject<OS_xpc_object> * __connection;
+    NSObject<OS_dispatch_queue> * __heartbeatQueue;
+    NSObject<OS_dispatch_source> * __heartbeatSource;
+    NSObject<OS_dispatch_queue> * __keepAliveQueue;
 }
 
 @property (setter=_setConnection:, nonatomic, retain) NSObject<OS_xpc_object> *_connection;
@@ -18,6 +18,8 @@
 - (id)_connection;
 - (void)_handleApplicationDidEnterBackground:(id)arg1;
 - (void)_handleApplicationWillEnterForeground:(id)arg1;
+- (void)_handleHeartbeatConnectionReply:(id)arg1;
+- (void)_handleHeartbeatSourceEvent;
 - (id)_heartbeatQueue;
 - (id)_heartbeatSource;
 - (id)_keepAliveQueue;

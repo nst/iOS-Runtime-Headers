@@ -3,13 +3,13 @@
  */
 
 @interface HLPURLDataCache : NSObject <NSCoding, NSCopying> {
-    unsigned int _cacheType;
-    unsigned int _fileSize;
-    NSString *_identifier;
-    NSString *_lastModified;
-    NSString *_locale;
-    int _maxAge;
-    NSDate *_updatedDate;
+    unsigned int  _cacheType;
+    unsigned int  _fileSize;
+    NSString * _identifier;
+    NSString * _lastModified;
+    NSString * _locale;
+    int  _maxAge;
+    NSDate * _updatedDate;
 }
 
 @property (nonatomic) unsigned int cacheType;

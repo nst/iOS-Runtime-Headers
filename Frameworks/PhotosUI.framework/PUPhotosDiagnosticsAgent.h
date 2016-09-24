@@ -13,6 +13,7 @@
 - (id)_viewModelDescription;
 - (id)_windowRecursiveDescription;
 - (void)captureDescriptionOfCloudPhotoLibraryWithResultHandler:(id /* block */)arg1;
+- (void)captureDescriptionOfPhotoAnalysisWithResultHandler:(id /* block */)arg1;
 - (void)captureDescriptionOfUIState:(int)arg1 resultHandler:(id /* block */)arg2;
 
 @end

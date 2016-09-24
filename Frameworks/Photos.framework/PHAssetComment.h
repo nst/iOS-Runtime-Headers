@@ -3,18 +3,18 @@
  */
 
 @interface PHAssetComment : PHObject {
-    BOOL _canBeDeletedByUser;
-    NSString *_cloudGUID;
-    NSDate *_commentClientDate;
-    NSDate *_commentDate;
-    NSString *_commentText;
-    NSString *_commenterHashedPersonID;
-    BOOL _isBatchComment;
-    BOOL _isCaption;
-    BOOL _isDeletable;
-    BOOL _isInterestingToUser;
-    BOOL _isLike;
-    BOOL _isMyComment;
+    BOOL  _canBeDeletedByUser;
+    NSString * _cloudGUID;
+    NSDate * _commentClientDate;
+    NSDate * _commentDate;
+    NSString * _commentText;
+    NSString * _commenterHashedPersonID;
+    BOOL  _isBatchComment;
+    BOOL  _isCaption;
+    BOOL  _isDeletable;
+    BOOL  _isInterestingToUser;
+    BOOL  _isLike;
+    BOOL  _isMyComment;
 }
 
 @property (nonatomic, readonly) BOOL canBeDeletedByUser;
@@ -36,6 +36,7 @@
 @property (nonatomic, readonly) BOOL isLike;
 @property (nonatomic, readonly) BOOL isMyComment;
 
++ (id)fetchType;
 + (id)managedEntityName;
 + (id)propertiesToFetchWithHint:(unsigned int)arg1;
 

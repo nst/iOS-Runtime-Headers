@@ -2,21 +2,20 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPAccessoryServerRelay : HAPAccessoryServer <HAPFragmentationStreamDelegate, HAPSecuritySessionDelegate, HAPStreamDelegate, HAPTimerDelegate> {
-    unsigned int _configurationNumber;
-    BOOL _discovered;
-    HAPFragmentationStream *_fragmentationStream;
-    unsigned short _nextRequestTransactionIdentifier;
-    NSOperationQueue *_pairVerifyOperationQueue;
-    NSMutableArray *_pendingRequests;
-    NSMapTable *_pendingResponses;
-    HAPExponentialBackoffTimer *_reachabilityProbeTimer;
-    NSOperationQueue *_requestOperationQueue;
-    HAPSecuritySession *_securitySession;
-    BOOL _securitySessionOpen;
-    BOOL _securitySessionOpening;
-    BOOL _shouldDiscover;
-    HAPRelayStream *_stream;
+@interface HAPAccessoryServerRelay : HAPAccessoryServer <HAPFragmentationStreamDelegate, HAPSecuritySessionDelegate, HAPStreamDelegate, HMFTimerDelegate> {
+    unsigned int  _configurationNumber;
+    BOOL  _discovered;
+    HAPFragmentationStream * _fragmentationStream;
+    unsigned short  _nextRequestTransactionIdentifier;
+    NSOperationQueue * _pairVerifyOperationQueue;
+    NSMutableArray * _pendingRequests;
+    NSMapTable * _pendingResponses;
+    HMFExponentialBackoffTimer * _reachabilityProbeTimer;
+    NSOperationQueue * _requestOperationQueue;
+    HAPSecuritySession * _securitySession;
+    BOOL  _securitySessionOpening;
+    BOOL  _shouldDiscover;
+    HAPRelayStream * _stream;
 }
 
 @property (nonatomic) unsigned int configurationNumber;
@@ -29,10 +28,9 @@
 @property (nonatomic, readonly) NSOperationQueue *pairVerifyOperationQueue;
 @property (nonatomic, readonly) NSMutableArray *pendingRequests;
 @property (nonatomic, readonly) NSMapTable *pendingResponses;
-@property (nonatomic, retain) HAPExponentialBackoffTimer *reachabilityProbeTimer;
+@property (nonatomic, retain) HMFExponentialBackoffTimer *reachabilityProbeTimer;
 @property (nonatomic, readonly) NSOperationQueue *requestOperationQueue;
 @property (nonatomic, retain) HAPSecuritySession *securitySession;
-@property (getter=isSecuritySessionOpen, nonatomic) BOOL securitySessionOpen;
 @property (getter=isSecuritySessionOpening, nonatomic) BOOL securitySessionOpening;
 @property (nonatomic) BOOL shouldDiscover;
 @property (nonatomic, readonly) HAPRelayStream *stream;
@@ -73,7 +71,6 @@
 - (void)identifyWithCompletion:(id /* block */)arg1;
 - (id)initWithStream:(id)arg1 name:(id)arg2 identifier:(id)arg3 keyStore:(id)arg4;
 - (BOOL)isPaired;
-- (BOOL)isSecuritySessionOpen;
 - (BOOL)isSecuritySessionOpening;
 - (int)linkType;
 - (void)listPairingsWithCompletionQueue:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -98,7 +95,6 @@
 - (void)setDiscovered:(BOOL)arg1;
 - (void)setReachabilityProbeTimer:(id)arg1;
 - (void)setSecuritySession:(id)arg1;
-- (void)setSecuritySessionOpen:(BOOL)arg1;
 - (void)setSecuritySessionOpening:(BOOL)arg1;
 - (void)setShouldDiscover:(BOOL)arg1;
 - (BOOL)shouldDiscover;

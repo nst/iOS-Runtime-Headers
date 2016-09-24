@@ -3,19 +3,19 @@
  */
 
 @interface IKViewElementStyle : NSObject {
-    NSString *_classDescriptorString;
-    IKCSSRule *_cssRule;
-    BOOL _filterBlockedStyles;
-    NSArray *_mediaQueryList;
-    NSMutableDictionary *_styleDict;
+    NSString * _classDescriptorString;
+    IKCSSRule * _cssRule;
+    BOOL  _filterBlockedStyles;
+    NSArray * _mediaQueryList;
+    NSMutableDictionary * _styleDict;
 }
 
 @property (nonatomic, readonly) UIColor *backgroundColor;
 @property (nonatomic, readonly) NSString *badgeTreatment;
 @property (nonatomic, readonly) UIColor *borderColor;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } borderMargins;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } borderMargins;
 @property (nonatomic, readonly) IKFourTuple *borderRadius;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } borderWidths;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } borderWidths;
 @property (nonatomic, readonly) NSString *cardType;
 @property (nonatomic, readonly) NSString *classDescriptorString;
 @property (nonatomic, readonly) UIColor *color;
@@ -25,11 +25,11 @@
 @property (nonatomic, retain) IKCSSRule *cssRule;
 @property (nonatomic, readonly) NSString *dividerType;
 @property (nonatomic, readonly) unsigned int elementAlignment;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } elementMargin;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } elementPadding;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } elementMargin;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } elementPadding;
 @property (nonatomic, readonly) unsigned int elementPosition;
 @property (nonatomic, readonly) int fillImage;
-@property (nonatomic, readonly) float fontSize;
+@property (nonatomic, readonly) double fontSize;
 @property (nonatomic, readonly) NSString *fontWeight;
 @property (nonatomic, readonly) IKColor *ikBackgroundColor;
 @property (nonatomic, readonly) IKColor *ikBorderColor;
@@ -57,7 +57,7 @@
 @property (nonatomic, readonly) NSString *textScale;
 @property (nonatomic, readonly) NSShadow *textShadow;
 @property (nonatomic, readonly) NSString *textStyle;
-@property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
+@property (nonatomic, readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } transform;
 @property (nonatomic, readonly) NSString *transition;
 @property (nonatomic, readonly) NSNumber *transitionInterval;
 @property (nonatomic, readonly) NSString *visibility;
@@ -85,15 +85,15 @@
 - (void).cxx_destruct;
 - (void)_addElementStyle:(id)arg1;
 - (void)_addParentStyle:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForStyleKey:(id)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForStyleKey:(id)arg1;
 - (id)_gradientFromString:(id)arg1;
 - (id)_newColorFromString:(id)arg1;
 - (id)backgroundColor;
 - (id)badgeTreatment;
 - (id)borderColor;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })borderMargins;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })borderMargins;
 - (id)borderRadius;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })borderWidths;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })borderWidths;
 - (id)cardType;
 - (id)classDescriptorString;
 - (id)color;
@@ -101,11 +101,12 @@
 - (id)columnItemType;
 - (id)columnType;
 - (id)cssRule;
+- (id)debugDescription;
 - (id)description;
 - (id)dividerType;
 - (unsigned int)elementAlignment;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })elementMargin;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })elementPadding;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })elementMargin;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })elementPadding;
 - (unsigned int)elementPosition;
 - (int)fillImage;
 - (float)fontSize;
@@ -142,15 +143,15 @@
 - (id)textScale;
 - (id)textShadow;
 - (id)textStyle;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transform;
 - (id)transition;
 - (id)transitionInterval;
 - (unsigned int)typeForStyle:(id)arg1;
 - (id)valueForStyle:(id)arg1;
 - (id)visibility;
 
-// Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
+// Image: /System/Library/PrivateFrameworks/VideosExtras.framework/VideosExtras
 
-+ (id)positionConstraintsForView:(id)arg1 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 position:(unsigned int)arg3;
++ (id)positionConstraintsForView:(id)arg1 insets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2 position:(unsigned int)arg3;
 
 @end

@@ -3,19 +3,18 @@
  */
 
 @interface GEORouteHypothesisValue : NSObject <NSSecureCoding> {
-    NSDate *_arrivalDate;
-    GEORouteHypothesis *_currentHypothesis;
-    GEOComposedWaypoint *_destination;
-    NSDate *_expirationDate;
-    NSMutableDictionary *_handlers;
-    GEORouteHypothesisMonitor *_monitor;
-    GEOComposedWaypoint *_origin;
-    BOOL _prediction;
-    long long _rowId;
-    GEOMapServiceTraits *_traits;
-    int _transportType;
-    double _updatedTimeStamp;
-    double _valueRefreshTimeStamp;
+    NSDate * _arrivalDate;
+    GEORouteHypothesis * _currentHypothesis;
+    GEOComposedWaypoint * _destination;
+    NSDate * _expirationDate;
+    GEORouteHypothesisMonitor * _monitor;
+    GEOComposedWaypoint * _origin;
+    BOOL  _prediction;
+    int  _rowId;
+    GEOMapServiceTraits * _traits;
+    int  _transportType;
+    double  _updatedTimeStamp;
+    double  _valueRefreshTimeStamp;
 }
 
 @property (nonatomic, readonly) NSDate *arrivalDate;
@@ -27,7 +26,7 @@
 @property (nonatomic, readonly, retain) GEORouteHypothesisMonitor *monitor;
 @property (nonatomic, readonly) GEOComposedWaypoint *origin;
 @property (nonatomic) BOOL prediction;
-@property (nonatomic) long long rowId;
+@property (nonatomic) int rowId;
 @property (nonatomic, readonly, retain) GEOMapServiceTraits *traits;
 @property (nonatomic) int transportType;
 @property (nonatomic) double updatedTimeStamp;
@@ -44,7 +43,6 @@
 - (id)description;
 - (id)destination;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateHandlersUsingBlock:(id /* block */)arg1;
 - (id)expirationDate;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSource:(id)arg1 toDestination:(id)arg2 transportType:(int)arg3 arrivalDate:(id)arg4 expirationDate:(id)arg5 traits:(id)arg6;
@@ -53,16 +51,13 @@
 - (id)monitor;
 - (id)origin;
 - (BOOL)prediction;
-- (void)removeHandlerForClient:(id)arg1;
-- (long long)rowId;
+- (int)rowId;
 - (void)setCurrentHypothesis:(id)arg1;
-- (void)setHandler:(id /* block */)arg1 forClient:(id)arg2;
 - (void)setPrediction:(BOOL)arg1;
-- (void)setRowId:(long long)arg1;
+- (void)setRowId:(int)arg1;
 - (void)setTransportType:(int)arg1;
 - (void)setUpdatedTimeStamp:(double)arg1;
 - (void)setValueRefreshTimeStamp:(double)arg1;
-- (BOOL)shouldBeRemovedFromCache;
 - (id)traits;
 - (int)transportType;
 - (double)updatedTimeStamp;

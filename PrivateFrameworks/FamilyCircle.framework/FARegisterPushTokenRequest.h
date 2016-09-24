@@ -3,7 +3,7 @@
  */
 
 @interface FARegisterPushTokenRequest : FAFamilyCircleRequest {
-    NSData *_pushToken;
+    NSData * _pushToken;
 }
 
 @property (readonly, copy) NSData *pushToken;

@@ -3,10 +3,10 @@
  */
 
 @interface CMKPhysicalCaptureRecognizer : UIGestureRecognizer {
-    int _activeButton;
-    NSArray *_desiredButtons;
-    int _physicalButtonType;
-    BOOL _suspended;
+    int  _activeButton;
+    NSArray * _desiredButtons;
+    int  _physicalButtonType;
+    BOOL  _suspended;
 }
 
 @property (nonatomic) int activeButton;

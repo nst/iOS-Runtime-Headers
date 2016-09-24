@@ -8,7 +8,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, copy) NSLocale *language;
+@property (nonatomic, copy) NSString *language;
 @property (nonatomic, copy) NSString *orthography;
 @property (readonly) Class superclass;
 @property (nonatomic) int tokenOffset;

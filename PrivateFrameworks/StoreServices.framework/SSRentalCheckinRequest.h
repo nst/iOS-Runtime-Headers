@@ -3,9 +3,9 @@
  */
 
 @interface SSRentalCheckinRequest : SSRequest {
-    NSNumber *_accountIdentifier;
-    NSNumber *_rentalKeyIdentifier;
-    NSArray *_sinfs;
+    NSNumber * _accountIdentifier;
+    NSNumber * _rentalKeyIdentifier;
+    NSArray * _sinfs;
 }
 
 @property (readonly) NSNumber *accountIdentifier;

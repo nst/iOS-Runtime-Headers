@@ -6,6 +6,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) int durationMillis;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) SACalendar *lastPlayedDate;
 @property (nonatomic) int playbackPositionMillis;
@@ -16,12 +17,14 @@
 + (id)playbackInfo;
 + (id)playbackInfoWithDictionary:(id)arg1 context:(id)arg2;
 
+- (int)durationMillis;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)lastPlayedDate;
 - (int)playbackPositionMillis;
 - (int)plays;
 - (BOOL)rememberPlaybackPosition;
+- (void)setDurationMillis:(int)arg1;
 - (void)setLastPlayedDate:(id)arg1;
 - (void)setPlaybackPositionMillis:(int)arg1;
 - (void)setPlays:(int)arg1;

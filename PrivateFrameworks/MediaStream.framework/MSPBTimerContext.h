@@ -3,8 +3,8 @@
  */
 
 @interface MSPBTimerContext : NSObject {
-    NSDate *_date;
-    BOOL _isValid;
+    NSDate * _date;
+    BOOL  _isValid;
 }
 
 @property (nonatomic, retain) NSDate *date;

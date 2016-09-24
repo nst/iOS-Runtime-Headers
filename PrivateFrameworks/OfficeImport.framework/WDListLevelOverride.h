@@ -3,11 +3,11 @@
  */
 
 @interface WDListLevelOverride : NSObject {
-    WDDocument *mDocument;
-    unsigned char mLevel;
-    WDListLevel *mListLevel;
-    long mStartNumber;
-    BOOL mStartNumberOverridden;
+    WDDocument * mDocument;
+    unsigned char  mLevel;
+    WDListLevel * mListLevel;
+    long  mStartNumber;
+    BOOL  mStartNumberOverridden;
 }
 
 - (void)dealloc;

@@ -3,12 +3,12 @@
  */
 
 @interface TSPSupportManager : NSObject <NSFilePresenter, TSPFileCoordinatorDelegate> {
-    TSPObjectContext *_context;
-    NSObject<OS_dispatch_group> *_pendingEndSaveGroup;
-    NSOperationQueue *_presentedItemQueue;
-    NSURL *_presentedSupportURL;
-    NSRecursiveLock *_presentedSupportURLLock;
-    TSPSupportSaveOperationState *_saveOperationState;
+    TSPObjectContext * _context;
+    NSObject<OS_dispatch_group> * _pendingEndSaveGroup;
+    NSOperationQueue * _presentedItemQueue;
+    NSURL * _presentedSupportURL;
+    NSRecursiveLock * _presentedSupportURLLock;
+    TSPSupportSaveOperationState * _saveOperationState;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -27,7 +27,6 @@
 + (id)supportDirectoryURLWithDelegate:(id)arg1 isUnique:(BOOL*)arg2;
 
 - (void).cxx_destruct;
-- (void)accommodatePresentedItemDeletionWithCompletionHandler:(id /* block */)arg1;
 - (void)beginSaveWithDocumentUUID:(id)arg1 versionUUID:(id)arg2 originalURL:(id)arg3 updateType:(int)arg4;
 - (BOOL)copyOrMoveSupportAtURL:(id)arg1 originalDocumentProperties:(id)arg2 toURL:(id)arg3 isCopying:(BOOL)arg4 newDocumentProperties:(id)arg5 error:(id*)arg6;
 - (BOOL)didUpdateDocumentUUIDWithOriginalDocumentProperties:(id)arg1 newDocumentProperties:(id)arg2 preserveOriginalDocumentSupport:(BOOL)arg3 preserveShareUUID:(BOOL)arg4 originalURL:(id)arg5 newURL:(id*)arg6 error:(id*)arg7;
@@ -35,12 +34,10 @@
 - (id)init;
 - (id)initWithContext:(id)arg1;
 - (void)performReadUsingAccessor:(id /* block */)arg1;
-- (void)presentedItemDidChange;
 - (void)presentedItemDidMoveToURL:(id)arg1;
 - (id)presentedItemOperationQueue;
 - (id)presentedItemURL;
 - (id)presentedSupportURL;
-- (void)relinquishPresentedItemToWriter:(id /* block */)arg1;
 - (void)removeFilePresenter;
 - (void)setPresentedSupportURL:(id)arg1;
 - (id)supportURLWithDocumentUUID:(id)arg1;

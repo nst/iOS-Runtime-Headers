@@ -3,42 +3,42 @@
  */
 
 @interface MFModernAtomView : UIDefaultKeyboardInput <MFModernAtomViewResembling> {
-    MFModernAtomIconView *_accessoryIconView;
-    UIActivityIndicatorView *_activityIndicator;
-    MFModernAtomBackgroundView *_background;
-    MFModernAtomIconView *_badgeIconView;
-    UIView *_baselineView;
-    UIView *_compositingView;
-    unsigned int _disabledPresentationOptions;
-    UIColor *_effectiveTintColor;
-    BOOL _isPrimaryAddressAtom;
-    UILabel *_label;
-    unsigned int _presentationOptions;
-    float _scalingFactor;
-    BOOL _selected;
-    BOOL _separatorHidden;
-    BOOL _separatorIsLeftAligned;
-    UIFont *_titleFont;
-    UIView *_titleLabelFillView;
+    MFModernAtomIconView * _accessoryIconView;
+    UIActivityIndicatorView * _activityIndicator;
+    MFModernAtomBackgroundView * _background;
+    MFModernAtomIconView * _badgeIconView;
+    UIView * _baselineView;
+    UIView * _compositingView;
+    unsigned int  _disabledPresentationOptions;
+    UIColor * _effectiveTintColor;
+    BOOL  _isPrimaryAddressAtom;
+    UILabel * _label;
+    unsigned int  _presentationOptions;
+    double  _scalingFactor;
+    BOOL  _selected;
+    BOOL  _separatorHidden;
+    BOOL  _separatorIsLeftAligned;
+    UIFont * _titleFont;
+    UIView * _titleLabelFillView;
 }
 
 @property (nonatomic, readonly) MFModernAtomIconView *accessoryIconView;
 @property (nonatomic, readonly) UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, readonly) MFModernAtomBackgroundView *backgroundView;
 @property (nonatomic, readonly) MFModernAtomIconView *badgeIconView;
-@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } baselinePoint;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } baselinePoint;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } edgeInsets;
 @property (nonatomic, readonly) unsigned int effectivePresentationOptions;
 @property (nonatomic, readonly) UIColor *effectiveTintColor;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL hidesVIPIndicator;
 @property (nonatomic) BOOL isPrimaryAddressAtom;
 @property (nonatomic) unsigned int presentationOptions;
-@property (nonatomic) float scale;
+@property (nonatomic) double scale;
 @property (getter=isSelected, nonatomic) BOOL selected;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } selectionFrame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } selectionFrame;
 @property (nonatomic) BOOL separatorHidden;
 @property (nonatomic) BOOL separatorIsLeftAligned;
 @property (nonatomic) int separatorStyle;
@@ -53,7 +53,7 @@
 + (id)_defaultLabelAttributesWithFont:(id)arg1;
 + (id)_defaultTintColor;
 + (id)_failureTintColor;
-+ (struct CGPoint { float x1; float x2; })defaultBaselinePoint;
++ (struct CGPoint { double x1; double x2; })defaultBaselinePoint;
 + (id)defaultFont;
 + (float)defaultHeight;
 + (float)horizontalPadding;
@@ -76,25 +76,25 @@
 - (void)appendPresentationOption:(unsigned int)arg1;
 - (id)backgroundView;
 - (id)badgeIconView;
-- (struct CGPoint { float x1; float x2; })baselinePoint;
+- (struct CGPoint { double x1; double x2; })baselinePoint;
 - (void)clearPresentationOption:(unsigned int)arg1;
 - (void)dealloc;
 - (id)description;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
 - (unsigned int)effectivePresentationOptions;
 - (id)effectiveTintColor;
 - (BOOL)hidesVIPIndicator;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 presentationOptions:(unsigned int)arg2 separatorStyle:(int)arg3;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 presentationOptions:(unsigned int)arg2 separatorStyle:(int)arg3;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (BOOL)isPrimaryAddressAtom;
 - (BOOL)isSelected;
 - (void)layoutSubviews;
 - (void)performBuildInAnimationFromTextColor:(id)arg1 withDuration:(double)arg2;
 - (float)preferredWidth;
-- (float)preferredWidthWithSizeConstraints:(struct CGSize { float x1; float x2; })arg1;
+- (float)preferredWidthWithSizeConstraints:(struct CGSize { double x1; double x2; })arg1;
 - (unsigned int)presentationOptions;
 - (float)scale;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectionFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })selectionFrame;
 - (BOOL)separatorHidden;
 - (BOOL)separatorIsLeftAligned;
 - (int)separatorStyle;
@@ -114,6 +114,6 @@
 - (id)title;
 - (id)titleFont;
 - (id)titleLabel;
-- (id)viewForBaselineLayout;
+- (id)viewForLastBaselineLayout;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface MFPhoneBitmap : MFBitmap {
-    OITSUImage *m_image;
+    OITSUImage * m_image;
 }
 
 - (void)dealloc;

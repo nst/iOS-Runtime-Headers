@@ -3,8 +3,8 @@
  */
 
 @interface MRVVIClient : NSObject {
-    NSMutableDictionary *_deviceIDToCallbackMap;
-    NSObject<OS_dispatch_queue> *_serialQueue;
+    NSMutableDictionary * _deviceIDToCallbackMap;
+    NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
 + (id)sharedClient;

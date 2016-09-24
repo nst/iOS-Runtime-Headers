@@ -3,7 +3,7 @@
  */
 
 @interface MPRadioLibrary : NSObject {
-    MPRadioController *_radioController;
+    MPRadioController * _radioController;
 }
 
 @property (nonatomic, readonly) BOOL isEnabled;
@@ -23,7 +23,7 @@
 - (id)init;
 - (BOOL)isEnabled;
 - (unsigned int)stationCount;
-- (id)stationWithIdentifier:(long long)arg1;
+- (id)stationWithIdentifier:(int)arg1;
 - (id)stations;
 
 @end

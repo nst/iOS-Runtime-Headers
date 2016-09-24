@@ -3,7 +3,7 @@
  */
 
 @interface WLAvailabilityRequestController : NSObject <NSURLSessionTaskDelegate> {
-    id /* block */ _completionHandler;
+    id /* block */  _completionHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;

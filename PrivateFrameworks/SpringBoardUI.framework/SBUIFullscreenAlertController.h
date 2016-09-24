@@ -3,10 +3,10 @@
  */
 
 @interface SBUIFullscreenAlertController : UIViewController <NSCopying> {
-    NSString *_activationContext;
-    NSNumber *_animationStartTime;
-    NSInvocation *_pendingDeactivationInvocation;
-    BOOL _shouldAnimateIn;
+    NSString * _activationContext;
+    NSNumber * _animationStartTime;
+    NSInvocation * _pendingDeactivationInvocation;
+    BOOL  _shouldAnimateIn;
 }
 
 @property (nonatomic, retain) NSString *activationContext;

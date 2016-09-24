@@ -3,9 +3,9 @@
  */
 
 @interface _UIScreenRoutePickerViewController : UIViewController <UIAlertControllerContaining> {
-    UIAlertController *_alertController;
-    _UIResilientRemoteViewContainerViewController *_childViewController;
-    NSObject<OS_dispatch_semaphore> *_remoteViewControllerSemaphore;
+    UIAlertController * _alertController;
+    _UIResilientRemoteViewContainerViewController * _childViewController;
+    NSObject<OS_dispatch_semaphore> * _remoteViewControllerSemaphore;
 }
 
 @property (readonly, copy) NSString *debugDescription;

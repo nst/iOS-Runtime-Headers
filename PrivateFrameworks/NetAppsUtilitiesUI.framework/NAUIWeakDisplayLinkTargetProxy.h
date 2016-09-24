@@ -3,8 +3,8 @@
  */
 
 @interface NAUIWeakDisplayLinkTargetProxy : NSObject {
-    NAUIWeakRef *_weakTarget;
-    SEL _weakTargetSelector;
+    NAUIWeakRef * _weakTarget;
+    SEL  _weakTargetSelector;
 }
 
 + (SEL)proxyDisplayLinkSelector;

@@ -3,12 +3,12 @@
  */
 
 @interface TCMessageEntry : NSObject {
-    NSMutableArray *m_affectedObjects;
-    int m_count;
-    NSArray *m_parameters;
-    int m_tag;
-    NSString *m_text;
-    unsigned int m_timeStamp;
+    NSMutableArray * m_affectedObjects;
+    int  m_count;
+    NSArray * m_parameters;
+    int  m_tag;
+    NSString * m_text;
+    unsigned int  m_timeStamp;
 }
 
 @property (nonatomic) unsigned int timeStamp;

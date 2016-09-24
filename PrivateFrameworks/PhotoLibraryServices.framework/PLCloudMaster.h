@@ -25,6 +25,7 @@
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 + (id)insertIntoPhotoLibrary:(id)arg1 withCloudMasterGUID:(id)arg2;
++ (void)resetCloudMastersStateInManagedObjectContext:(id)arg1;
 
 - (void)applyPropertiesFromCPLMasterChange:(id)arg1;
 - (void)applyResourcesFromCPLMasterChange:(id)arg1 inPhotoLibrary:(id)arg2;
@@ -33,7 +34,8 @@
 - (id)cloudResourceForResourceType:(unsigned int)arg1 forAssetUuid:(id)arg2;
 - (id)cloudResourcesForResourceType:(unsigned int)arg1;
 - (id)cplResourceForResourceType:(unsigned int)arg1 forAssetUuid:(id)arg2;
+- (void)deleteAllResourcesForAssetUuid:(id)arg1;
 - (id)description;
-- (unsigned long long)sizeOfOriginal;
+- (unsigned int)sizeOfOriginal;
 
 @end

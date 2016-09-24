@@ -3,15 +3,21 @@
  */
 
 @interface CKDatabaseOperation : CKOperation {
-    CKDatabase *_database;
+    CKDatabase * _database;
 }
 
 @property (nonatomic, retain) CKDatabase *database;
+
+// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
 - (void).cxx_destruct;
 - (id)database;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
 - (void)setDatabase:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
+- (id)ic_loggingValues;
 
 @end

@@ -3,15 +3,15 @@
  */
 
 @interface ATMessageLinkProxy : ATMessageLink <ATMessageLinkObserver, ATMessageLinkRequestHandler, NSSecureCoding> {
-    NSXPCConnection *_connection;
-    NSXPCListenerEndpoint *_endpoint;
-    int _endpointType;
-    NSString *_identifier;
-    BOOL _initialized;
-    NSHashTable *_observers;
-    BOOL _open;
-    NSMutableDictionary *_requestHandlers;
-    NSMutableSet *_streams;
+    NSXPCConnection * _connection;
+    NSXPCListenerEndpoint * _endpoint;
+    int  _endpointType;
+    NSString * _identifier;
+    BOOL  _initialized;
+    NSHashTable * _observers;
+    BOOL  _open;
+    NSMutableDictionary * _requestHandlers;
+    NSMutableSet * _streams;
 }
 
 @property (readonly, copy) NSString *debugDescription;

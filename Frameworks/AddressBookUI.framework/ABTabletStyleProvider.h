@@ -6,8 +6,8 @@
 
 - (int)abCellStyleForGroupsTablePlain;
 - (int)abCellStyleForMembersTable;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })cardActionButtonImageInsets;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })cardActionButtonTitleSingleLineInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })cardActionButtonImageInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })cardActionButtonTitleSingleLineInsets;
 - (id)cardTableCellBorderColor;
 - (int)composeModalPresentationStyle;
 - (id)editorViewColor;

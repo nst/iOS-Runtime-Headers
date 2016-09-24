@@ -3,7 +3,7 @@
  */
 
 @interface ODDStyleLabel : NSObject {
-    OADShapeStyle *mShapeStyle;
+    OADShapeStyle * mShapeStyle;
 }
 
 - (void)dealloc;

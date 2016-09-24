@@ -3,22 +3,22 @@
  */
 
 @interface BWMRCNode : BWNode {
-    int (*_createSampleBufferProcessorFunction;
-    int _lastMRCCount;
-    NSDictionary *_metadataIdentifierToSymbologyDictionary;
-    NSArray *_mrcIdentifiers;
+    int (* _createSampleBufferProcessorFunction;
+    int  _lastMRCCount;
+    NSDictionary * _metadataIdentifierToSymbologyDictionary;
+    NSArray * _mrcIdentifiers;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _rectOfInterest;
-    struct OpaqueFigSampleBufferProcessor { } *_sampleBufferProcessor;
-    NSArray *_symbologiesArray;
+    }  _rectOfInterest;
+    struct OpaqueFigSampleBufferProcessor { } * _sampleBufferProcessor;
+    NSArray * _symbologiesArray;
 }
 
 + (void)initialize;
@@ -34,9 +34,9 @@
 - (id)nodeSubType;
 - (id)nodeType;
 - (void)prepareForCurrentConfigurationToBecomeLive;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectOfInterest;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectOfInterest;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
 - (void)setMrcIdentifiers:(id)arg1;
-- (void)setRectOfInterest:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setRectOfInterest:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 @end

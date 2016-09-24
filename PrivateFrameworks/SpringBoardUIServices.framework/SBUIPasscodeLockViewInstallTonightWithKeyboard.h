@@ -3,7 +3,7 @@
  */
 
 @interface SBUIPasscodeLockViewInstallTonightWithKeyboard : SBUIPasscodeLockViewWithKeyboard {
-    SBUIButton *_remindMeLaterButton;
+    SBUIButton * _remindMeLaterButton;
 }
 
 - (void).cxx_destruct;

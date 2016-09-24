@@ -3,11 +3,11 @@
  */
 
 @interface NetworkChangeNotifier : NSObject <IMConnectionMonitorDelegate, IMSystemMonitorListener> {
-    IMConnectionMonitor *_connectionMonitor;
-    BOOL _lastPostedNetworkUp;
-    NSString *_myIP;
-    NSArray *_myIPs;
-    struct __SCDynamicStore { } *_store;
+    IMConnectionMonitor * _connectionMonitor;
+    BOOL  _lastPostedNetworkUp;
+    NSString * _myIP;
+    NSArray * _myIPs;
+    struct __SCDynamicStore { } * _store;
 }
 
 @property (nonatomic, retain) IMConnectionMonitor *connectionMonitor;

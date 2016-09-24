@@ -3,16 +3,16 @@
  */
 
 @interface PKPaymentPassesResponse : PKPaymentWebServiceResponse {
-    NSArray *_devicePassSerialNumbers;
-    NSString *_lastUpdatedTag;
-    NSArray *_passURLs;
+    NSArray * _devicePassSerialNumbers;
+    NSString * _lastUpdatedTag;
+    NSArray * _passURLs;
 }
 
-@property (nonatomic, retain) NSArray *devicePassSerialNumbers;
-@property (nonatomic, retain) NSString *lastUpdatedTag;
-@property (nonatomic, retain) NSArray *passURLs;
+@property (nonatomic, copy) NSArray *devicePassSerialNumbers;
+@property (nonatomic, copy) NSString *lastUpdatedTag;
+@property (nonatomic, copy) NSArray *passURLs;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)devicePassSerialNumbers;
 - (id)initWithData:(id)arg1;
 - (id)lastUpdatedTag;

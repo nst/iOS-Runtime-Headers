@@ -3,8 +3,8 @@
  */
 
 @interface StockNewsItemCollection : NSObject {
-    double _expirationTime;
-    NSArray *_newsItems;
+    double  _expirationTime;
+    NSArray * _newsItems;
 }
 
 @property (nonatomic) double expirationTime;

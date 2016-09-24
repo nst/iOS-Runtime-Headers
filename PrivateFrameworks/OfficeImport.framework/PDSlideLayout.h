@@ -3,8 +3,8 @@
  */
 
 @interface PDSlideLayout : PDSlideChild {
-    int mSlideLayoutType;
-    PDSlideMaster *mSlideMaster;
+    int  mSlideLayoutType;
+    PDSlideMaster * mSlideMaster;
 }
 
 - (id)background;

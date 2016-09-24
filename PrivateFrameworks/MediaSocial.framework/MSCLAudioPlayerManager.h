@@ -3,8 +3,8 @@
  */
 
 @interface MSCLAudioPlayerManager : NSObject <MSCLAudioPlayerDelegate> {
-    <MSCLAudioPlayerManagerDataSource> *_dataSource;
-    MSCLAudioPlayer *_player;
+    <MSCLAudioPlayerManagerDataSource> * _dataSource;
+    MSCLAudioPlayer * _player;
 }
 
 @property (nonatomic) <MSCLAudioPlayerManagerDataSource> *dataSource;

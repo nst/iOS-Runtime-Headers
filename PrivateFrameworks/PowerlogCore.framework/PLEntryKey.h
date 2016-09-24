@@ -3,18 +3,18 @@
  */
 
 @interface PLEntryKey : NSObject {
-    PLEntryKey *_baseEntryKey;
-    NSString *_entryKey;
-    NSString *_entryName;
-    NSString *_entryType;
-    BOOL _isDynamic;
-    Class _operatorClass;
-    NSString *_operatorName;
+    PLEntryKey * _baseEntryKey;
+    NSString * _entryKey;
+    NSString * _entryName;
+    NSString * _entryType;
+    BOOL  _isDynamic;
+    Class  _operatorClass;
+    NSString * _operatorName;
     struct _PLTimeIntervalRange { 
         double location; 
         double length; 
-    } _timeIntervalRange;
-    NSString *_wildCardName;
+    }  _timeIntervalRange;
+    NSString * _wildCardName;
 }
 
 @property PLEntryKey *baseEntryKey;

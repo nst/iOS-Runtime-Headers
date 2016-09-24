@@ -3,7 +3,7 @@
  */
 
 @interface MKMapAttributionImage : NSObject {
-    NSDictionary *_imageNameForScale;
+    NSDictionary * _imageNameForScale;
 }
 
 - (void).cxx_destruct;

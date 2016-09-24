@@ -3,7 +3,7 @@
  */
 
 @interface SKUIMutableIntegerValue : NSObject <NSCopying> {
-    int _integerValue;
+    int  _integerValue;
 }
 
 @property (nonatomic) int integerValue;

@@ -3,7 +3,7 @@
  */
 
 @interface TSCEEdgeListPrinter : NSObject {
-    NSMutableDictionary *_edgesForOwner;
+    NSMutableDictionary * _edgesForOwner;
 }
 
 - (void)addEdge:(id)arg1 forOwner:(id)arg2;

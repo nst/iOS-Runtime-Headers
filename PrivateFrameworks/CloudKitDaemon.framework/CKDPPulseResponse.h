@@ -3,13 +3,15 @@
  */
 
 @interface CKDPPulseResponse : PBCodable <NSCopying> {
-    NSString *_currentEtag;
-    NSMutableArray *_userDatas;
+    NSString * _currentEtag;
+    NSMutableArray * _userDatas;
 }
 
 @property (nonatomic, retain) NSString *currentEtag;
 @property (nonatomic, readonly) BOOL hasCurrentEtag;
 @property (nonatomic, retain) NSMutableArray *userDatas;
+
++ (Class)userDataType;
 
 - (void).cxx_destruct;
 - (void)addUserData:(id)arg1;

@@ -3,10 +3,10 @@
  */
 
 @interface WLAuthenticationCredentials : NSObject {
-    struct __SecCertificate { } *_localCertificate;
-    struct __SecKey { } *_privateKey;
-    struct __SecKey { } *_publicKey;
-    struct __SecCertificate { } *_remoteCertificate;
+    struct __SecCertificate { } * _localCertificate;
+    struct __SecKey { } * _privateKey;
+    struct __SecKey { } * _publicKey;
+    struct __SecCertificate { } * _remoteCertificate;
 }
 
 @property (nonatomic) struct __SecCertificate { }*localCertificate;

@@ -4,20 +4,27 @@
 
 @interface FontAssetDownloadManager : NSObject {
     struct TCFRef<const __CFArray *> { 
-        struct __CFArray {} *fRef; 
-    } fDescriptors;
-    NSMutableDictionary *fDownloadOptions;
+        struct TAtomicPtr<const __CFArray *> { 
+            /* Warning: Unrecognized filer type: '^' using 'void*' */ void*__a_; 
+        } fRef; 
+    }  fDescriptors;
+    NSMutableDictionary * fDownloadOptions;
     struct TCFRef<const __CFSet *> { 
-        struct __CFSet {} *fRef; 
-    } fMandatoryAttributes;
-    NSSet *fPreciousFontLanguages;
-    id /* block */ fProgressCallbackBlock;
-    NSMutableDictionary *fProgressParams;
+        struct TAtomicPtr<const __CFSet *> { 
+            /* Warning: Unrecognized filer type: '^' using 'void*' */ void*__a_; 
+        } fRef; 
+    }  fMandatoryAttributes;
+    id /* block */  fProgressCallbackBlock;
+    NSMutableDictionary * fProgressParams;
 }
 
++ (BOOL)activateFontsFromAssetURL:(id)arg1;
 + (id)availableFontAttributesArray;
++ (id)availableMobileAssets:(BOOL)arg1 error:(id*)arg2;
++ (unsigned long)calculateDownloadSize:(id)arg1;
 + (id)displayNameForCurrentUser:(id)arg1;
 + (id)enabledKeyboardLanguages;
++ (id)extractMatchingAssetsForDescriptor:(struct __CTFontDescriptor { }*)arg1 from:(id)arg2 withFailInfo:(BOOL*)arg3 andFontFilePaths:(id)arg4;
 + (Class)getASAssetQueryClass;
 + (BOOL)shouldIgnoreFontAsset:(id)arg1;
 + (BOOL)shouldRetryWithServer;
@@ -25,16 +32,13 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (BOOL)activateFontsFromAssetURL:(id)arg1;
 - (BOOL)assetStalled:(id)arg1;
-- (id)availableMobileAssets:(BOOL)arg1 error:(id*)arg2;
-- (unsigned long)calculateDownloadSize:(id)arg1;
-- (BOOL)callProgressCallbak:(unsigned int)arg1;
+- (BOOL)callProgressCallback:(unsigned int)arg1;
 - (void)dealloc;
 - (id)doFinalMatching;
+- (BOOL)downloadAllowed;
 - (void)downloadFontAssets;
 - (BOOL)executeDownloadingFontAssets:(id)arg1 forDescriptors:(id)arg2 andFontFilePaths:(id)arg3;
-- (id)extractMatchingAssetsForDescriptor:(struct __CTFontDescriptor { }*)arg1 from:(id)arg2 withFailInfo:(BOOL*)arg3 andFontFilePaths:(id)arg4;
 - (id)getUnmatchedDescriptors;
 - (id)initWithDescriptors:(struct __CFArray { }*)arg1 andMandatoryAttributes:(struct __CFSet { }*)arg2 withBlock:(id /* block */)arg3;
 - (id)mobileAssetsForUnmatched:(id)arg1 andFontFilePaths:(id)arg2;

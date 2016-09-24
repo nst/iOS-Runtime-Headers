@@ -3,10 +3,10 @@
  */
 
 @interface MFMessageSigner : NSObject {
-    NSString *_sender;
-    int _status;
-    struct __SecTrust { } *_trust;
-    NSString *_uncommentedSender;
+    NSString * _sender;
+    int  _status;
+    struct __SecTrust { } * _trust;
+    NSString * _uncommentedSender;
 }
 
 @property (nonatomic, readonly) int action;

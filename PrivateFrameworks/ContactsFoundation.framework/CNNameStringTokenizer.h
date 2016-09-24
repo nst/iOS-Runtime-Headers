@@ -3,8 +3,8 @@
  */
 
 @interface CNNameStringTokenizer : NSObject {
-    NSObject<OS_dispatch_queue> *_syncQueue;
-    struct __CFStringTokenizer { } *_tokenizer;
+    NSObject<OS_dispatch_queue> * _syncQueue;
+    struct __CFStringTokenizer { } * _tokenizer;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *syncQueue;

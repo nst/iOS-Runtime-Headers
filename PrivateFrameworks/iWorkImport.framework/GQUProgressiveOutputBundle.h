@@ -3,13 +3,13 @@
  */
 
 @interface GQUProgressiveOutputBundle : NSObject <GQUOutputBundle> {
-    struct __CFDictionary { } *mAttachmentsURLs;
-    struct __CFDictionary { } *mComputedAttachments;
-    GQUProgressiveHelper *mHelper;
-    BOOL mPreviewStarted;
-    struct __CFDictionary { } *mQuickLookProperties;
-    struct __CFString { } *mUriScheme;
-    struct __CFString { } *mUuidStr;
+    struct __CFDictionary { } * mAttachmentsURLs;
+    struct __CFDictionary { } * mComputedAttachments;
+    GQUProgressiveHelper * mHelper;
+    BOOL  mPreviewStarted;
+    struct __CFDictionary { } * mQuickLookProperties;
+    struct __CFString { } * mUriScheme;
+    struct __CFString { } * mUuidStr;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -26,7 +26,7 @@
 - (void)setCurrentSheetUri:(struct __CFString { }*)arg1;
 - (BOOL)setData:(struct __CFData { }*)arg1 mimeType:(struct __CFString { }*)arg2 forNamedResource:(struct __CFString { }*)arg3;
 - (BOOL)setDataForMainHtmlResource:(struct __CFData { }*)arg1;
-- (void)setDocumentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setDocumentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setPageElementXPath:(struct __CFString { }*)arg1 withThumbnailsOnLeft:(BOOL)arg2;
 - (void)startProgressiveData;
 

@@ -3,9 +3,9 @@
  */
 
 @interface AFUIRequestTrigger : NSObject {
-    NSMapTable *_observers;
-    AFUIRequestOptions *_options;
-    int _state;
+    NSMapTable * _observers;
+    AFUIRequestOptions * _options;
+    int  _state;
 }
 
 @property (nonatomic, readonly) AFUIRequestOptions *options;

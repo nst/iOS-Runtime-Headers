@@ -3,11 +3,11 @@
  */
 
 @interface _UIFocusEngineTargetedDynamicAnimation : _UIDynamicAnimation {
-    id /* block */ _applier;
-    double _convergenceRate;
-    double _minimumDifference;
-    double _targetValue;
-    double _value;
+    id /* block */  _applier;
+    double  _convergenceRate;
+    double  _minimumDifference;
+    double  _targetValue;
+    double  _value;
 }
 
 @property (nonatomic) double convergenceRate;

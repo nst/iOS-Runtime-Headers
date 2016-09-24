@@ -3,9 +3,9 @@
  */
 
 @interface ML3DatabaseForeignKeyConstraint : NSObject {
-    NSArray *_foreignColumns;
-    ML3DatabaseTable *_foreignTable;
-    NSArray *_localColumns;
+    NSArray * _foreignColumns;
+    ML3DatabaseTable * _foreignTable;
+    NSArray * _localColumns;
 }
 
 @property (nonatomic, readonly) NSArray *foreignColumns;

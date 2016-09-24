@@ -3,7 +3,7 @@
  */
 
 @interface WLBookmarksMigrator : WLMigrationWebService {
-    WebBookmarkCollection *_collection;
+    WebBookmarkCollection * _collection;
 }
 
 + (id)_bookmarkFolderAtTitlePath:(id)arg1 withinBookmarkFolder:(id)arg2;

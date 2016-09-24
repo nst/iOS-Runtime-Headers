@@ -3,13 +3,14 @@
  */
 
 @interface WebUIAuthenticationManager : NSObject {
-    UIAlertController *_alertController;
-    NSMutableArray *_authenticationChallenges;
-    id _delegate;
-    BOOL _isShowingAuthenticationPanel;
+    UIAlertController * _alertController;
+    NSMutableArray * _authenticationChallenges;
+    id  _delegate;
+    BOOL  _showingAuthenticationPanel;
 }
 
 @property id delegate;
+@property (getter=isShowingAuthenticationPanel, nonatomic, readonly) BOOL showingAuthenticationPanel;
 
 - (void).cxx_destruct;
 - (void)_cancel;
@@ -20,6 +21,7 @@
 - (id)authenticationChallenge;
 - (void)cancelAuthentication;
 - (id)delegate;
+- (BOOL)isShowingAuthenticationPanel;
 - (void)removeAuthenticationChallenge:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setShowingAuthentication:(BOOL)arg1;

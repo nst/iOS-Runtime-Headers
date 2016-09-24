@@ -6,7 +6,12 @@
 
 @property (nonatomic) BOOL commentChanged;
 @property (nonatomic, readonly) NSDate *lastModifiedParticipationStatus;
+@property (nonatomic) int participantRole;
+@property (nonatomic) int participantStatus;
+@property (nonatomic) int participantType;
 @property (nonatomic) int pendingStatus;
+@property (nonatomic, readonly) NSDate *proposedStartDate;
+@property (nonatomic) BOOL proposedStartDateChanged;
 @property (nonatomic) BOOL statusChanged;
 
 + (id)attendeeWithEmailAddress:(id)arg1 name:(id)arg2;
@@ -29,11 +34,14 @@
 - (int)participantStatus;
 - (int)participantType;
 - (int)pendingStatus;
+- (id)proposedStartDate;
+- (BOOL)proposedStartDateChanged;
 - (void)setCommentChanged:(BOOL)arg1;
 - (void)setParticipantRole:(int)arg1;
 - (void)setParticipantStatus:(int)arg1;
 - (void)setParticipantType:(int)arg1;
 - (void)setPendingStatus:(int)arg1;
+- (void)setProposedStartDateChanged:(BOOL)arg1;
 - (void)setStatusChanged:(BOOL)arg1;
 - (BOOL)statusChanged;
 

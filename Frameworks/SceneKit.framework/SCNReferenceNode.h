@@ -3,10 +3,10 @@
  */
 
 @interface SCNReferenceNode : SCNNode {
-    NSURL *_catalogURL;
-    BOOL _loaded;
-    int _loadingPolicy;
-    NSURL *_referenceURL;
+    NSURL * _catalogURL;
+    BOOL  _loaded;
+    int  _loadingPolicy;
+    NSURL * _referenceURL;
 }
 
 @property (getter=isLoaded, readonly) BOOL loaded;

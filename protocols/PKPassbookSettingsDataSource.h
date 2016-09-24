@@ -7,7 +7,7 @@
 
 - (BOOL)deviceInRestrictedMode;
 - (BOOL)deviceSupportsInAppPayments;
-- (<PKPassbookSettingsOptionsDelegate> *)optionsDelegate;
+- (<PKPaymentOptionsProtocol> *)optionsDelegate;
 - (<PKPassLibraryDataProvider> *)passLibraryDataProvider;
 - (<PKPaymentDataProvider> *)paymentDataProvider;
 - (NSString *)secureElementID;

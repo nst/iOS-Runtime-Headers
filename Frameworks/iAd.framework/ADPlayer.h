@@ -3,13 +3,13 @@
  */
 
 @interface ADPlayer : NSObject <ADBannerViewInternalDelegate> {
-    AVPlayer *_avPlayer;
-    AVPlayerItem *_avPlayerItem;
-    <ADPlayerDelegate> *_delegate;
-    BOOL _playbackHasBegun;
-    unsigned int _playbackState;
-    id _timeObserver;
-    ADBannerView *_videoAd;
+    AVPlayer * _avPlayer;
+    AVPlayerItem * _avPlayerItem;
+    <ADPlayerDelegate> * _delegate;
+    BOOL  _playbackHasBegun;
+    unsigned int  _playbackState;
+    id  _timeObserver;
+    ADBannerView * _videoAd;
 }
 
 @property (nonatomic, retain) AVPlayer *avPlayer;
@@ -19,12 +19,13 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL playbackHasBegun;
-@property (nonatomic, readonly) float playbackRate;
+@property (nonatomic, readonly) double playbackRate;
 @property (nonatomic) unsigned int playbackState;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) id timeObserver;
 @property (nonatomic, retain) ADBannerView *videoAd;
 
+- (BOOL)_beginLoadingVideoFromURL:(id)arg1;
 - (id)_networkOptimalVideoURLForAd:(id)arg1;
 - (void)applicationDidBecomeActive;
 - (void)applicationWillResignActive;
@@ -52,6 +53,7 @@
 - (void)playerItemDidFailedToPlayToEnd:(id)arg1;
 - (void)playerItemDidPlayToEnd:(id)arg1;
 - (void)playerItemEncounteredPlaybackStall:(id)arg1;
+- (BOOL)prepareForPlayackOfInterstitialWithURL:(id)arg1;
 - (BOOL)prepareForPlayback;
 - (void)setAvPlayer:(id)arg1;
 - (void)setAvPlayerItem:(id)arg1;
@@ -60,6 +62,7 @@
 - (void)setPlaybackState:(unsigned int)arg1;
 - (void)setTimeObserver:(id)arg1;
 - (void)setVideoAd:(id)arg1;
+- (void)showAdTransparency;
 - (void)shutdown;
 - (id)timeObserver;
 - (id)videoAd;

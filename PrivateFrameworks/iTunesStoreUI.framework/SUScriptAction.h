@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptAction : SUScriptObject <NSCopying> {
-    NSString *_actionType;
+    NSString * _actionType;
 }
 
 @property (copy) NSString *actionType;

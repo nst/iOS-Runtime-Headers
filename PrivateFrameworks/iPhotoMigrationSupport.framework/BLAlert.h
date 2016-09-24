@@ -3,15 +3,15 @@
  */
 
 @interface BLAlert : NSObject <BLAlertViewControllerDelegate, UIAlertViewDelegate> {
-    NSArray *_actions;
-    BLAlertViewController *_alertView;
-    BLAlertAction *_cancelAction;
-    id /* block */ _conditionBlock;
-    id _context;
-    id /* block */ _executionBlock;
-    int _options;
-    BOOL _showing;
-    BLAlert *_strongSelf;
+    NSArray * _actions;
+    BLAlertViewController * _alertView;
+    BLAlertAction * _cancelAction;
+    id /* block */  _conditionBlock;
+    id  _context;
+    id /* block */  _executionBlock;
+    int  _options;
+    BOOL  _showing;
+    BLAlert * _strongSelf;
 }
 
 @property (copy) id /* block */ conditionBlock;

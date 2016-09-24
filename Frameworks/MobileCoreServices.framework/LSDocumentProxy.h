@@ -3,12 +3,12 @@
  */
 
 @interface LSDocumentProxy : LSResourceProxy <NSSecureCoding> {
-    NSString *_MIMEType;
-    NSURL *_URL;
-    NSString *_containerOwnerApplicationIdentifier;
-    NSString *_name;
-    BOOL _sourceIsManaged;
-    NSString *_typeIdentifier;
+    NSString * _MIMEType;
+    NSURL * _URL;
+    NSString * _containerOwnerApplicationIdentifier;
+    NSString * _name;
+    BOOL  _sourceIsManaged;
+    NSString * _typeIdentifier;
 }
 
 @property (nonatomic, readonly) NSString *MIMEType;
@@ -27,7 +27,9 @@
 
 - (id)MIMEType;
 - (id)URL;
-- (void)bind;
+- (id)applicationsAvailableForOpeningWithHandlerRanks:(id)arg1 error:(id*)arg2;
+- (id)applicationsAvailableForOpeningWithTypeOwner:(BOOL)arg1 airDropStyle:(BOOL)arg2;
+- (id)boundDocumentProxy;
 - (id)containerOwnerApplicationIdentifier;
 - (void)dealloc;
 - (id)description;
@@ -41,9 +43,13 @@
 - (id)typeIdentifier;
 - (id)uniqueIdentifier;
 
+// Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
+
++ (id)_sf_documentProxyForName:(id)arg1 type:(id)arg2 MIMEType:(id)arg3 sourceURL:(id)arg4;
+
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-- (struct CGSize { float x1; float x2; })_defaultStyleSize:(id)arg1;
-- (struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconVariantDefinitions:(id)arg1;
+- (struct CGSize { double x1; double x2; })_defaultStyleSize:(id)arg1;
+- (struct { int x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)_iconVariantDefinitions:(id)arg1;
 
 @end

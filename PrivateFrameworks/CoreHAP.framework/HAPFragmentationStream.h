@@ -3,10 +3,10 @@
  */
 
 @interface HAPFragmentationStream : NSObject {
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    NSNumber *_currentPacketTransactionIdentifier;
-    <HAPFragmentationStreamDelegate> *_delegate;
-    NSMutableOrderedSet *_pendingPackets;
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    NSNumber * _currentPacketTransactionIdentifier;
+    <HAPFragmentationStreamDelegate> * _delegate;
+    NSMutableOrderedSet * _pendingPackets;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;

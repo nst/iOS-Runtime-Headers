@@ -3,14 +3,14 @@
  */
 
 @interface HMHAPMetadata : NSObject <NSSecureCoding> {
-    NSArray *_accessoryCategories;
-    NSArray *_assistantCharacteristics;
-    NSDictionary *_assistantServices;
-    NSDictionary *_assistantUnits;
-    NSArray *_hapCharacteristics;
-    NSArray *_hapServices;
-    NSArray *_hapValueUnits;
-    NSNumber *_version;
+    NSArray * _accessoryCategories;
+    NSArray * _assistantCharacteristics;
+    NSDictionary * _assistantServices;
+    NSDictionary * _assistantUnits;
+    NSArray * _hapCharacteristics;
+    NSArray * _hapServices;
+    NSArray * _hapValueUnits;
+    NSNumber * _version;
 }
 
 @property (nonatomic, retain) NSArray *accessoryCategories;

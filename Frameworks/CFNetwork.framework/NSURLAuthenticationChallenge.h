@@ -3,7 +3,7 @@
  */
 
 @interface NSURLAuthenticationChallenge : NSObject <NSSecureCoding> {
-    NSURLAuthenticationChallengeInternal *_internal;
+    NSURLAuthenticationChallengeInternal * _internal;
 }
 
 @property (readonly, copy) NSError *error;

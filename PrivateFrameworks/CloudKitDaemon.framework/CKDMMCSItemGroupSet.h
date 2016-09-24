@@ -3,7 +3,7 @@
  */
 
 @interface CKDMMCSItemGroupSet : NSObject {
-    NSMutableDictionary *_itemsByGroupTuple;
+    NSMutableDictionary * _itemsByGroupTuple;
 }
 
 @property (nonatomic, readonly) NSError *error;

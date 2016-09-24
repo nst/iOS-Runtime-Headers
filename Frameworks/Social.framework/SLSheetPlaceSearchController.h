@@ -3,14 +3,14 @@
  */
 
 @interface SLSheetPlaceSearchController : NSObject <SLPlaceDataSourceDelegate, UITableViewDataSource> {
-    NSTimer *_delayTimer;
-    BOOL _isSearching;
-    NSObject<SLPlaceDataSource> *_placeDataSource;
-    int _retryCount;
-    NSLock *_retryLock;
-    UISearchDisplayController *_searchDisplayController;
-    NSArray *_searchResults;
-    NSString *_searchString;
+    NSTimer * _delayTimer;
+    BOOL  _isSearching;
+    NSObject<SLPlaceDataSource> * _placeDataSource;
+    int  _retryCount;
+    NSLock * _retryLock;
+    UISearchDisplayController * _searchDisplayController;
+    NSArray * _searchResults;
+    NSString * _searchString;
 }
 
 @property (readonly, copy) NSString *debugDescription;

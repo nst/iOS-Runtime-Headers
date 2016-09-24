@@ -3,8 +3,8 @@
  */
 
 @interface CIDiscBlur : CIFilter {
-    CIImage *inputImage;
-    NSNumber *inputRadius;
+    CIImage * inputImage;
+    NSNumber * inputRadius;
 }
 
 + (id)customAttributes;

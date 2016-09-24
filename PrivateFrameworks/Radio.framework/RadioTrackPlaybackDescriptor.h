@@ -3,19 +3,19 @@
  */
 
 @interface RadioTrackPlaybackDescriptor : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
-    BOOL _current;
-    NSDate *_expirationDate;
-    double _pauseTime;
-    NSDate *_skipDate;
-    long long _storeID;
-    NSDictionary *_trackInfo;
+    BOOL  _current;
+    NSDate * _expirationDate;
+    double  _pauseTime;
+    NSDate * _skipDate;
+    int  _storeID;
+    NSDictionary * _trackInfo;
 }
 
 @property (getter=isCurrent, nonatomic, readonly) BOOL current;
 @property (nonatomic, readonly) NSDate *expirationDate;
 @property (nonatomic, readonly) double pauseTime;
 @property (nonatomic, readonly) NSDate *skipDate;
-@property (nonatomic, readonly) long long storeID;
+@property (nonatomic, readonly) int storeID;
 @property (nonatomic, readonly, copy) NSDictionary *trackInfo;
 
 + (BOOL)supportsSecureCoding;
@@ -34,7 +34,7 @@
 - (double)pauseTime;
 - (id)queueTrackDictionary;
 - (id)skipDate;
-- (long long)storeID;
+- (int)storeID;
 - (id)trackInfo;
 
 @end

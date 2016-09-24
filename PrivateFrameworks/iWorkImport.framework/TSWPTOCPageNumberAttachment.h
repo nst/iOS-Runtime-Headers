@@ -3,8 +3,8 @@
  */
 
 @interface TSWPTOCPageNumberAttachment : TSWPTextualAttachment {
-    NSString *_bookmarkName;
-    NSString *_pageNumber;
+    NSString * _bookmarkName;
+    NSString * _pageNumber;
 }
 
 @property (nonatomic, copy) NSString *bookmarkName;

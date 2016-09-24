@@ -3,10 +3,11 @@
  */
 
 @interface IMRemoteObject : NSObject {
-    id _internal;
+    id  _internal;
 }
 
 @property (nonatomic, readonly) NSObject<OS_xpc_object> *connection;
+@property (nonatomic, readonly) BOOL forceSecureCoding;
 @property (nonatomic, readonly) BOOL isValid;
 @property (nonatomic) int pid;
 @property (nonatomic, readonly) NSString *portName;
@@ -18,7 +19,7 @@
 + (void)initialize;
 
 - (void)_cleanupMachBitsCanPost:(BOOL)arg1;
-- (id)_initWithConnection:(id)arg1 portName:(id)arg2 protocol:(id)arg3 alreadyConfigured:(BOOL)arg4;
+- (id)_initWithConnection:(id)arg1 portName:(id)arg2 protocol:(id)arg3 alreadyConfigured:(BOOL)arg4 forceSecureCoding:(BOOL)arg5;
 - (void)_portDidBecomeInvalid;
 - (id)_queue;
 - (void)_systemShutdown:(id)arg1;
@@ -26,10 +27,12 @@
 - (void)dealloc;
 - (id)description;
 - (void)finalize;
+- (BOOL)forceSecureCoding;
 - (void)forwardInvocation:(id)arg1;
 - (unsigned int)forwardXPCObject:(id)arg1 messageContext:(id)arg2;
 - (id)initWithConnection:(id)arg1 protocol:(id)arg2;
 - (id)initWithConnection:(id)arg1 protocol:(id)arg2 alreadyConfigured:(BOOL)arg3;
+- (id)initWithConnection:(id)arg1 protocol:(id)arg2 alreadyConfigured:(BOOL)arg3 forceSecureCoding:(BOOL)arg4;
 - (id)initWithPortName:(id)arg1 protocol:(id)arg2;
 - (void)invalidate;
 - (BOOL)isValid;

@@ -3,8 +3,8 @@
  */
 
 @interface CNBaselineBoundLayoutConstraint : CNBoundLayoutConstraint {
-    float _baselineConstant;
-    BOOL _ignoreAccessibilitySizes;
+    double  _baselineConstant;
+    BOOL  _ignoreAccessibilitySizes;
 }
 
 @property BOOL ignoreAccessibilitySizes;

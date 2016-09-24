@@ -3,12 +3,12 @@
  */
 
 @interface SKRunAction : SKAction {
-    SKAction *_action;
-    NSString *_actionKey;
-    BOOL _fired;
-    BOOL _runOnSubSprite;
-    NSString *_subSpriteKey;
-    BOOL _waitForKeyedAction;
+    SKAction * _action;
+    NSString * _actionKey;
+    BOOL  _fired;
+    BOOL  _runOnSubSprite;
+    NSString * _subSpriteKey;
+    BOOL  _waitForKeyedAction;
 }
 
 + (id)runAction:(id)arg1 afterActionWithKey:(id)arg2;

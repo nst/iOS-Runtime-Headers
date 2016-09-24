@@ -3,13 +3,13 @@
  */
 
 @interface PFRWSampleBufferChannel : NSObject {
-    AVAssetWriterInputPixelBufferAdaptor *_adaptor;
-    AVAssetReaderOutput *_assetReaderOutput;
-    AVAssetWriterInput *_assetWriterInput;
-    BOOL _finished;
-    BOOL _useAdaptor;
-    id /* block */ completionHandler;
-    NSObject<OS_dispatch_queue> *serializationQueue;
+    AVAssetWriterInputPixelBufferAdaptor * _adaptor;
+    AVAssetReaderOutput * _assetReaderOutput;
+    AVAssetWriterInput * _assetWriterInput;
+    BOOL  _finished;
+    BOOL  _useAdaptor;
+    id /* block */  completionHandler;
+    NSObject<OS_dispatch_queue> * serializationQueue;
 }
 
 @property (nonatomic, retain) AVAssetWriterInputPixelBufferAdaptor *adaptor;

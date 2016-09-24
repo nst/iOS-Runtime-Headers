@@ -3,25 +3,25 @@
  */
 
 @interface SUSplitView : UIView {
-    UIView *_firstView;
-    int _layoutType;
-    float _minimumPaneSize;
-    UIView *_secondView;
-    float _splitPosition;
-    BOOL _vertical;
+    UIView * _firstView;
+    int  _layoutType;
+    double  _minimumPaneSize;
+    UIView * _secondView;
+    double  _splitPosition;
+    BOOL  _vertical;
 }
 
 @property (nonatomic, retain) UIView *firstView;
 @property (nonatomic) int layoutType;
-@property (nonatomic) float minimumPaneSize;
+@property (nonatomic) double minimumPaneSize;
 @property (nonatomic, retain) UIView *secondView;
-@property (nonatomic) float splitPosition;
+@property (nonatomic) double splitPosition;
 @property (getter=isVertical, nonatomic) BOOL vertical;
 
 - (float)_minimumPaneSizeForLayout;
 - (void)dealloc;
 - (id)firstView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isVertical;
 - (void)layoutSubviews;
 - (int)layoutType;

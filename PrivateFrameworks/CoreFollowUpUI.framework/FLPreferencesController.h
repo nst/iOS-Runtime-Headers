@@ -3,9 +3,9 @@
  */
 
 @interface FLPreferencesController : NSObject {
-    FLFollowUpController *_controller;
-    id /* block */ _itemChangeObserver;
-    int _notifyToken;
+    FLFollowUpController * _controller;
+    id /* block */  _itemChangeObserver;
+    int  _notifyToken;
 }
 
 @property (nonatomic, copy) id /* block */ itemChangeObserver;

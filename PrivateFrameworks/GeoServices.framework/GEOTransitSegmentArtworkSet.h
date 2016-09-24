@@ -7,13 +7,15 @@
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _artworkIndexs;
-    NSMutableArray *_clusters;
+    }  _artworkIndexs;
+    NSMutableArray * _clusters;
 }
 
 @property (nonatomic, readonly) unsigned int*artworkIndexs;
 @property (nonatomic, readonly) unsigned int artworkIndexsCount;
 @property (nonatomic, retain) NSMutableArray *clusters;
+
++ (Class)clusterType;
 
 - (void)addArtworkIndex:(unsigned int)arg1;
 - (void)addCluster:(id)arg1;

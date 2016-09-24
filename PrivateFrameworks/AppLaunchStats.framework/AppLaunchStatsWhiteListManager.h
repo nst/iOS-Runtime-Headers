@@ -3,13 +3,13 @@
  */
 
 @interface AppLaunchStatsWhiteListManager : NSObject <DuetLoggerProtocol, LSApplicationWorkspaceObserverProtocol> {
-    NSObject<OS_dispatch_queue> *aplsWLMQueue;
-    NSMutableArray *defaultsWriteWhiteList;
-    BOOL enableWhiteListCheck;
-    NSMutableArray *launchServiceWhiteListFetch;
-    NSMutableArray *launchServiceWhiteListPush;
-    AppLaunchStatsSaveAndRestore *saveAndRestoreContext;
-    LSApplicationWorkspace *wlmAppWorkSpace;
+    NSObject<OS_dispatch_queue> * aplsWLMQueue;
+    NSMutableArray * defaultsWriteWhiteList;
+    BOOL  enableWhiteListCheck;
+    NSMutableArray * launchServiceWhiteListFetch;
+    NSMutableArray * launchServiceWhiteListPush;
+    AppLaunchStatsSaveAndRestore * saveAndRestoreContext;
+    LSApplicationWorkspace * wlmAppWorkSpace;
 }
 
 @property (readonly, copy) NSString *debugDescription;

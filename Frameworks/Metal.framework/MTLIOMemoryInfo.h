@@ -3,9 +3,9 @@
  */
 
 @interface MTLIOMemoryInfo : NSObject {
-    int _memoryInfoLock;
-    MTLIOAccelResource *fResourceListHead;
-    void *memlist_key;
+    int  _memoryInfoLock;
+    MTLIOAccelResource * fResourceListHead;
+    void * memlist_key;
 }
 
 + (id)initialize;

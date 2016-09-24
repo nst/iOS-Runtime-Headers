@@ -2,36 +2,34 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface FBApplicationProcess : FBProcess <BKSProcessDelegate, BSWatchdogDelegate> {
-    NSMutableSet *_allowedLockedFilePaths;
-    FBApplicationInfo *_applicationInfo;
-    BOOL _beingDebugged;
-    BKSProcess *_bksProcess;
-    BOOL _bootstrapFailed;
-    BOOL _bootstrapped;
-    BOOL _connectedToExternalAccessory;
-    BKSProcessAssertion *_continuousProcessAssertion;
-    FBProcessCPUStatistics *_cpuStatistics;
-    int _defaultSceneSuspendType;
-    double _execTime;
-    FBProcessExecutionContext *_executionContext;
-    FBApplicationProcessExitContext *_exitContext;
-    BOOL _finishedLaunching;
-    BSMachPortSendRight *_gsEventPort;
-    BKSProcessAssertion *_launchProcessAssertion;
-    double _launchWatchdogTimeAllowed;
-    double _launchWatchdogTimeElapsed;
-    BOOL _nowPlayingWithAudio;
-    BOOL _pendingExit;
-    BOOL _performedLaunch;
-    NSMutableArray *_queuedSceneBlocksToExecuteAfterLaunch;
-    BOOL _recordingAudio;
-    BOOL _supportsBackgroundTaskAssertions;
-    BOOL _supportsSuspendOnLock;
-    BSMachPortSendRight *_taskNamePort;
-    BSMachPortSendRight *_taskPort;
-    int _terminationReason;
-    FBProcessWatchdog *_watchdog;
+@interface FBApplicationProcess : FBProcess <BKSProcessDelegate> {
+    NSMutableSet * _allowedLockedFilePaths;
+    FBApplicationInfo * _applicationInfo;
+    BOOL  _beingDebugged;
+    BKSProcess * _bksProcess;
+    BOOL  _bootstrapFailed;
+    BOOL  _bootstrapped;
+    BOOL  _connectedToExternalAccessory;
+    BKSProcessAssertion * _continuousProcessAssertion;
+    FBProcessCPUStatistics * _cpuStatistics;
+    int  _defaultSceneSuspendType;
+    double  _execTime;
+    FBProcessExecutionContext * _executionContext;
+    FBApplicationProcessExitContext * _exitContext;
+    BOOL  _finishedLaunching;
+    BSMachPortSendRight * _gsEventPort;
+    BKSProcessAssertion * _launchProcessAssertion;
+    BOOL  _nowPlayingWithAudio;
+    BOOL  _pendingExit;
+    BOOL  _performedLaunch;
+    NSMutableArray * _queue_terminateRequestCompletionBlocks;
+    NSMutableArray * _queuedSceneBlocksToExecuteAfterLaunch;
+    BOOL  _recordingAudio;
+    FBSProcessWatchdogPolicy * _sceneCreateWatchdogPolicy;
+    BOOL  _supportsBackgroundTaskAssertions;
+    BOOL  _supportsSuspendOnLock;
+    int  _terminationReason;
+    FBProcessWatchdog * _watchdog;
 }
 
 @property (nonatomic, readonly, retain) FBApplicationInfo *applicationInfo;
@@ -54,7 +52,6 @@
 @property (readonly) Class superclass;
 @property (getter=_queue_supportsBackgroundTaskAssertions, nonatomic, readonly) BOOL supportsBackgroundTaskAssertions;
 @property (getter=_queue_supportsSuspendOnLock, nonatomic, readonly) BOOL supportsSuspendOnLock;
-@property (getter=_queue_taskPort, setter=_queue_setTaskPort:, nonatomic) BSMachPortSendRight *taskPort;
 @property (getter=_queue_terminationReason, nonatomic, readonly) int terminationReason;
 
 + (void)deleteAllJobs;
@@ -62,8 +59,7 @@
 - (id)GSEventPort;
 - (id)_applicationWorkspace;
 - (id)_createWorkspace;
-- (id)_queue_GSEventPortName;
-- (id)_queue_UIRemoteAppPortName;
+- (int)_exceptionCodeForKillReason:(int)arg1;
 - (void)_queue_addAllowedLockedFilePath:(id)arg1;
 - (int)_queue_bksVisibilityForVisibility:(int)arg1;
 - (BOOL)_queue_bootstrapAndExecWithContext:(id)arg1;
@@ -74,8 +70,7 @@
 - (id)_queue_cpuStatistics;
 - (id)_queue_crashReportThermalsInfo;
 - (int)_queue_defaultSuspendType;
-- (void)_queue_doGracefulKillWithCompletion:(id /* block */)arg1 withWatchdog:(BOOL)arg2;
-- (void)_queue_doGracefulKillWithCompletion:(id /* block */)arg1 withWatchdog:(BOOL)arg2 transitionContext:(id)arg3;
+- (void)_queue_doGracefulKillWithDeliveryConfirmation:(id /* block */)arg1;
 - (void)_queue_dropContinuousProcessAssertion;
 - (void)_queue_dropLaunchProcessAssertion;
 - (int)_queue_effectiveVisibilityForSceneSettings:(id)arg1;
@@ -84,9 +79,10 @@
 - (void)_queue_enumerateApplicationObserversWithBlock:(id /* block */)arg1;
 - (double)_queue_execTime;
 - (void)_queue_executeBlockAfterLaunchCompletes:(id /* block */)arg1;
+- (void)_queue_executeKillForRequest:(id)arg1;
 - (void)_queue_executeLaunchCompletionBlocks;
+- (void)_queue_executeTerminateRequestCompletionBlocksIfNecessaryForSucccess:(BOOL)arg1;
 - (void)_queue_finishLaunch;
-- (void)_queue_forceCrashReportWithReason:(int)arg1 description:(id)arg2;
 - (id)_queue_internalDebugEnvironmentVariables;
 - (void)_queue_invalidateBKSProcess;
 - (BOOL)_queue_isAllowedLockedFilePath:(id)arg1 standardizedPath:(out id*)arg2;
@@ -96,29 +92,34 @@
 - (void)_queue_launchIfNecessary;
 - (id)_queue_lockedFilePathsIgnoringAllowed;
 - (id)_queue_name;
-- (id)_queue_newWatchdogForContext:(struct { int x1; id x2; })arg1 completion:(id /* block */)arg2;
-- (unsigned long long)_queue_noteExitedForForceQuit:(BOOL)arg1;
+- (id)_queue_newWatchdogForContext:(id)arg1 completion:(id /* block */)arg2;
+- (unsigned int)_queue_noteExitedForForceQuit:(BOOL)arg1;
 - (int)_queue_ourTaskStateForBKSTaskState:(int)arg1;
 - (void)_queue_processDidExit;
 - (void)_queue_processReallyDidExit;
 - (void)_queue_sceneLifecycleStateChanged:(id)arg1;
-- (void)_queue_sceneNeedsGracefulExit:(id)arg1 withExitCompletion:(id /* block */)arg2;
+- (void)_queue_sceneNeedsGracefulExit:(id)arg1 withDeliveryConfirmation:(id /* block */)arg2;
 - (void)_queue_setSupportsBackgroundTaskAssertions:(BOOL)arg1;
 - (void)_queue_setSupportsSuspendOnLock:(BOOL)arg1;
-- (void)_queue_setTaskPort:(id)arg1;
 - (void)_queue_setTaskState:(int)arg1;
 - (void)_queue_setVisibility:(int)arg1;
 - (void)_queue_setupBKSProcess;
 - (BOOL)_queue_shouldWatchdogWithDeclineReason:(id*)arg1;
-- (void)_queue_startWatchdogTimerForContext:(struct { int x1; id x2; })arg1;
+- (void)_queue_startWatchdogTimerForContext:(id)arg1;
 - (BOOL)_queue_supportsBackgroundTaskAssertions;
 - (BOOL)_queue_supportsContinuousBackgroundMode;
 - (BOOL)_queue_supportsSuspendOnLock;
 - (void)_queue_takeLaunchProcessAssertion;
-- (id)_queue_taskPort;
+- (void)_queue_terminateWithRequest:(id)arg1 completion:(id /* block */)arg2;
 - (int)_queue_terminationReason;
 - (void)_queue_waitToExecOrExit;
-- (void)_queue_watchdogTerminateWithReason:(int)arg1 format:(id)arg2;
+- (void)_terminateWithRequest:(id)arg1 forWatchdog:(id)arg2;
+- (BOOL)_watchdog:(id)arg1 shouldTerminateWithDeclineReason:(out id*)arg2;
+- (id)_watchdog:(id)arg1 terminationRequestForViolatedProvision:(id)arg2 error:(id)arg3;
+- (id)_watchdogProvider;
+- (int)_watchdogReportType;
+- (void)_watchdogStarted:(id)arg1;
+- (void)_watchdogStopped:(id)arg1;
 - (id)_workspace;
 - (id)_workspaceServer;
 - (id)applicationInfo;
@@ -130,7 +131,7 @@
 - (id)exitContext;
 - (BOOL)finishedLaunching;
 - (id)initWithApplicationInfo:(id)arg1 callOutQueue:(id)arg2;
-- (id)initWithApplicationInfo:(id)arg1 pid:(int)arg2 callOutQueue:(id)arg3;
+- (id)initWithApplicationInfo:(id)arg1 handle:(id)arg2 callOutQueue:(id)arg3;
 - (id)initWithBundleID:(id)arg1 pid:(int)arg2 callOutQueue:(id)arg3;
 - (BOOL)isApplicationProcess;
 - (BOOL)isBeingDebugged;
@@ -153,8 +154,5 @@
 - (void)setPendingExit:(BOOL)arg1;
 - (void)setRecordingAudio:(BOOL)arg1;
 - (void)stop;
-- (void)watchdogCancelled:(id)arg1;
-- (void)watchdogFired:(id)arg1;
-- (void)watchdogStarted:(id)arg1;
 
 @end

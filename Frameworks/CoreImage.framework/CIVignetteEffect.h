@@ -3,11 +3,11 @@
  */
 
 @interface CIVignetteEffect : CIFilter {
-    CIVector *inputCenter;
-    NSNumber *inputFalloff;
-    CIImage *inputImage;
-    NSNumber *inputIntensity;
-    NSNumber *inputRadius;
+    CIVector * inputCenter;
+    NSNumber * inputFalloff;
+    CIImage * inputImage;
+    NSNumber * inputIntensity;
+    NSNumber * inputRadius;
 }
 
 @property (nonatomic, retain) CIVector *inputCenter;

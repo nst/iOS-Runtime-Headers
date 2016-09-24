@@ -3,8 +3,8 @@
  */
 
 @interface CardDAVUpdateMeCardTaskGroup : CoreDAVTaskGroup <CoreDAVPropPatchTaskDelegate> {
-    NSURL *_cardURL;
-    NSURL *_homeURL;
+    NSURL * _cardURL;
+    NSURL * _homeURL;
 }
 
 @property (nonatomic, readonly) NSURL *cardURL;

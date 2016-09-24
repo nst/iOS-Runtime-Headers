@@ -3,7 +3,7 @@
  */
 
 @interface SKRequest : NSObject {
-    id _requestInternal;
+    id  _requestInternal;
 }
 
 @property (nonatomic) <SKRequestDelegate> *delegate;

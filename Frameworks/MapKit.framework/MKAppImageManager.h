@@ -3,10 +3,10 @@
  */
 
 @interface MKAppImageManager : NSObject <NSURLSessionDataDelegate, NSURLSessionDelegate, NSURLSessionTaskDelegate> {
-    NSMapTable *_containers;
-    NSCache *_iconCache;
-    NSURLSession *_session;
-    NSMutableDictionary *_urlConnections;
+    NSMapTable * _containers;
+    NSCache * _iconCache;
+    NSURLSession * _session;
+    NSMutableDictionary * _urlConnections;
 }
 
 @property (readonly, copy) NSString *debugDescription;

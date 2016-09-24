@@ -3,7 +3,7 @@
  */
 
 @interface UIPrintPaperViewController : UITableViewController {
-    UIPrintPanelViewController *_printPanelViewController;
+    UIPrintPanelViewController * _printPanelViewController;
 }
 
 - (void).cxx_destruct;

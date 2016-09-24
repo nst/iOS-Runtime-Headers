@@ -4,6 +4,7 @@
 
 @interface PUOneUpCommentsInfoProvider : NSObject
 
++ (BOOL)_canHandleDisplayAsset:(id)arg1;
 + (unsigned int)commentCountForDisplayAsset:(id)arg1;
 + (BOOL)hasUserLikedDisplayAsset:(id)arg1;
 + (unsigned int)likeCountForDisplayAsset:(id)arg1;

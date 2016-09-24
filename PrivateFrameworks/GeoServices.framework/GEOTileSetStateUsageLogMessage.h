@@ -3,16 +3,16 @@
  */
 
 @interface GEOTileSetStateUsageLogMessage : PBCodable <NSCopying> {
-    double _durationInOldState;
+    double  _durationInOldState;
     struct { 
         unsigned int durationInOldState : 1; 
         unsigned int newCoverage : 1; 
         unsigned int oldCoverage : 1; 
         unsigned int tileSetStateType : 1; 
-    } _has;
-    double _newCoverage;
-    double _oldCoverage;
-    int _tileSetStateType;
+    }  _has;
+    double  _newCoverage;
+    double  _oldCoverage;
+    int  _tileSetStateType;
 }
 
 @property (nonatomic) double durationInOldState;
@@ -24,6 +24,7 @@
 @property (nonatomic) double oldCoverage;
 @property (nonatomic) int tileSetStateType;
 
+- (int)StringAsTileSetStateType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -48,6 +49,7 @@
 - (void)setOldCoverage:(double)arg1;
 - (void)setTileSetStateType:(int)arg1;
 - (int)tileSetStateType;
+- (id)tileSetStateTypeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

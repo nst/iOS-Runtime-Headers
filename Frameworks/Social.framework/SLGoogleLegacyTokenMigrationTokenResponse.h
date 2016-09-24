@@ -3,8 +3,8 @@
  */
 
 @interface SLGoogleLegacyTokenMigrationTokenResponse : SLGoogleLegacyTokenMigrationResponse {
-    NSString *_errorMessage;
-    NSString *_token;
+    NSString * _errorMessage;
+    NSString * _token;
 }
 
 @property (readonly) NSString *errorMessage;

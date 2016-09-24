@@ -3,9 +3,9 @@
  */
 
 @interface NEVPNAppRuleExecutable : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_matchDesignatedRequirement;
-    NSString *_matchPath;
-    NSString *_matchSigningIdentifier;
+    NSString * _matchDesignatedRequirement;
+    NSString * _matchPath;
+    NSString * _matchSigningIdentifier;
 }
 
 @property (readonly) NSString *matchDesignatedRequirement;

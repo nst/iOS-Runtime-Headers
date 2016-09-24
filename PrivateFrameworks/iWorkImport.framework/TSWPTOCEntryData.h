@@ -3,14 +3,14 @@
  */
 
 @interface TSWPTOCEntryData : TSPObject <TSPCopying> {
-    NSString *_heading;
-    unsigned int _indexedListStart;
-    TSWPListStyle *_indexedListStyle;
-    unsigned int _indexedParagraphLevel;
-    TSWPParagraphStyle *_indexedStyle;
-    int _numberFormat;
-    unsigned int _pageNumber;
-    unsigned int _paragraphIndex;
+    NSString * _heading;
+    unsigned int  _indexedListStart;
+    TSWPListStyle * _indexedListStyle;
+    unsigned int  _indexedParagraphLevel;
+    TSWPParagraphStyle * _indexedStyle;
+    int  _numberFormat;
+    unsigned int  _pageNumber;
+    unsigned int  _paragraphIndex;
 }
 
 @property (nonatomic, readonly) NSString *heading;

@@ -3,14 +3,14 @@
  */
 
 @interface FTMessageDelivery : NSObject <FTMessageQueueDelegate> {
-    BOOL _logToRegistration;
-    unsigned int _maxConcurrentMessages;
-    NSNumber *_protocolVersion;
-    FTMessageQueue *_queue;
-    unsigned int _retries;
-    BOOL _retryInAirplaneMode;
-    IMTimer *_timer;
-    NSString *_userAgent;
+    BOOL  _logToRegistration;
+    unsigned int  _maxConcurrentMessages;
+    NSNumber * _protocolVersion;
+    FTMessageQueue * _queue;
+    unsigned int  _retries;
+    BOOL  _retryInAirplaneMode;
+    IMTimer * _timer;
+    NSString * _userAgent;
 }
 
 @property (readonly) NSArray *allMessages;

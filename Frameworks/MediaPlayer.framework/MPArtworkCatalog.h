@@ -3,18 +3,20 @@
  */
 
 @interface MPArtworkCatalog : NSObject {
-    NSString *_cacheIdentifier;
-    id /* block */ _configurationBlock;
-    <MPArtworkDataSource> *_dataSource;
-    id _destination;
-    float _destinationScale;
+    NSString * _cacheIdentifier;
+    id /* block */  _configurationBlock;
+    <MPArtworkDataSource> * _dataSource;
+    id  _destination;
+    double  _destinationScale;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _fittingSize;
-    BOOL _loadingRepresentation;
-    id _requestingContext;
-    id _token;
+        double width; 
+        double height; 
+    }  _fittingSize;
+    BOOL  _loadingRepresentation;
+    int  _modelRevisionID;
+    unsigned int  _renderHint;
+    id  _requestingContext;
+    id  _token;
 }
 
 @property (nonatomic, readonly) int MP_artworkType;
@@ -23,12 +25,13 @@
 @property (nonatomic, copy) id /* block */ configurationBlock;
 @property (nonatomic) <MPArtworkDataSource> *dataSource;
 @property (nonatomic) id destination;
-@property (nonatomic) float destinationScale;
-@property (nonatomic) struct CGSize { float x1; float x2; } fittingSize;
+@property (nonatomic) double destinationScale;
+@property (nonatomic) struct CGSize { double x1; double x2; } fittingSize;
 @property (nonatomic, readonly) BOOL hasImageOnDisk;
 @property (getter=isLoadingRepresentation) BOOL loadingRepresentation;
+@property (nonatomic) unsigned int renderHint;
 @property (nonatomic) id requestingContext;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } scaledFittingSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } scaledFittingSize;
 @property (nonatomic, retain) id token;
 @property (nonatomic, readonly) <NSCopying> *visualIdenticalityIdentifier;
 
@@ -42,7 +45,7 @@
 - (int)MP_artworkType;
 - (void)_loadBestRepresentationIfNeeded;
 - (void)_updateRepresentation;
-- (void)_updateWithRepresentation:(id)arg1;
+- (void)_updateWithRepresentation:(id)arg1 isBestRepresentation:(BOOL)arg2 modelRevisionID:(int)arg3;
 - (id)bestImageFromDisk;
 - (id)cache;
 - (id)cacheIdentifier;
@@ -53,27 +56,31 @@
 - (id)destination;
 - (float)destinationScale;
 - (id)existingColorAnalysisWithAlgorithm:(int)arg1;
-- (struct CGSize { float x1; float x2; })fittingSize;
+- (struct CGSize { double x1; double x2; })fittingSize;
 - (BOOL)hasImageOnDisk;
 - (unsigned int)hash;
 - (id)initWithToken:(id)arg1 dataSource:(id)arg2;
 - (BOOL)isArtworkVisuallyIdenticalToCatalog:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isLoadingRepresentation;
+- (unsigned int)renderHint;
 - (void)requestColorAnalysisWithAlgorithm:(int)arg1 completionHandler:(id /* block */)arg2;
 - (void)requestFocusRegionsWithCompletionHandler:(id /* block */)arg1;
 - (void)requestImageWithCompletionHandler:(id /* block */)arg1;
+- (void)requestRadiosityImageWithCompletionHandler:(id /* block */)arg1;
 - (id)requestingContext;
-- (struct CGSize { float x1; float x2; })scaledFittingSize;
+- (struct CGSize { double x1; double x2; })scaledFittingSize;
 - (void)setCacheIdentifier:(id)arg1;
 - (void)setCacheIdentifier:(id)arg1 forRequestingContext:(id)arg2;
 - (void)setConfigurationBlock:(id /* block */)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDestination:(id)arg1;
 - (void)setDestination:(id)arg1 configurationBlock:(id /* block */)arg2;
+- (void)setDestination:(id)arg1 progressiveConfigurationBlock:(id /* block */)arg2;
 - (void)setDestinationScale:(float)arg1;
-- (void)setFittingSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setFittingSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setLoadingRepresentation:(BOOL)arg1;
+- (void)setRenderHint:(unsigned int)arg1;
 - (void)setRequestingContext:(id)arg1;
 - (void)setToken:(id)arg1;
 - (id)token;

@@ -10,7 +10,6 @@
 @property (readonly) Class superclass;
 
 - (void)_dispose;
-- (void)_xref_dispose;
 - (id)debugDescription;
 - (id)description;
 - (id)init;

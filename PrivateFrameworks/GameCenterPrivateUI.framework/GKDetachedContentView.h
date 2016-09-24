@@ -3,7 +3,7 @@
  */
 
 @interface GKDetachedContentView : UIView {
-    GKStaticRenderContentView *_renderView;
+    GKStaticRenderContentView * _renderView;
 }
 
 @property (nonatomic) GKStaticRenderContentView *renderView;

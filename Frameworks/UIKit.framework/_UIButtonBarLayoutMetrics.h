@@ -3,13 +3,13 @@
  */
 
 @interface _UIButtonBarLayoutMetrics : NSObject <NSCopying, _UIButtonBarLayoutMetricsData> {
-    NSLayoutDimension *_flexibleSpaceGuide;
-    NSLayoutDimension *_groupSizeGuide;
-    NSLayoutDimension *_groupSpacingGuide;
-    bool _locked;
-    NSLayoutDimension *_minimumSpaceGuide;
-    NSLayoutYAxisAnchor *_popoverGuideTopAnchor;
-    NSLayoutDimension *_verticalSizeGuide;
+    NSLayoutDimension * _flexibleSpaceGuide;
+    NSLayoutDimension * _groupSizeGuide;
+    NSLayoutDimension * _groupSpacingGuide;
+    bool  _locked;
+    NSLayoutDimension * _minimumSpaceGuide;
+    NSLayoutYAxisAnchor * _popoverGuideTopAnchor;
+    NSLayoutDimension * _verticalSizeGuide;
 }
 
 @property (readonly, copy) NSString *debugDescription;

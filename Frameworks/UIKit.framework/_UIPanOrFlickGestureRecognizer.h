@@ -3,31 +3,31 @@
  */
 
 @interface _UIPanOrFlickGestureRecognizer : UIPanGestureRecognizer {
-    float _allowableMovement;
-    unsigned int _allowedFlickDirections;
-    BOOL _didLongPress;
-    UIDelayedAction *_elapsedAction;
+    double  _allowableMovement;
+    unsigned int  _allowedFlickDirections;
+    BOOL  _didLongPress;
+    UIDelayedAction * _elapsedAction;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _initialCentroidLocation;
-    double _maximumFlickDuration;
-    float _minimumFlickDistance;
-    double _minimumPressDuration;
-    UIDelayedAction *_responsivenessAction;
-    double _responsivenessDelay;
-    double _timestampBeforeGestureBegan;
-    double _timestampOfLastEvent;
-    unsigned int _touchCount;
+        double x; 
+        double y; 
+    }  _initialCentroidLocation;
+    double  _maximumFlickDuration;
+    double  _minimumFlickDistance;
+    double  _minimumPressDuration;
+    UIDelayedAction * _responsivenessAction;
+    double  _responsivenessDelay;
+    double  _timestampBeforeGestureBegan;
+    double  _timestampOfLastEvent;
+    unsigned int  _touchCount;
 }
 
-@property (nonatomic) float allowableMovement;
+@property (nonatomic) double allowableMovement;
 @property (nonatomic) unsigned int allowedFlickDirections;
 @property (nonatomic, readonly) BOOL didLongPress;
 @property (nonatomic, retain) UIDelayedAction *elapsedAction;
-@property (nonatomic) struct CGPoint { float x1; float x2; } initialCentroidLocation;
+@property (nonatomic) struct CGPoint { double x1; double x2; } initialCentroidLocation;
 @property (nonatomic) double maximumFlickDuration;
-@property (nonatomic) float minimumFlickDistance;
+@property (nonatomic) double minimumFlickDistance;
 @property (nonatomic) double minimumPressDuration;
 @property (nonatomic, readonly) <_UIPanOrFlickGestureRecognizerDelegate> *panOrFlickDelegate;
 @property (nonatomic, readonly) unsigned int recognizedFlickDirection;
@@ -45,7 +45,7 @@
 - (id)elapsedAction;
 - (void)enoughTimeElapsed:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (struct CGPoint { float x1; float x2; })initialCentroidLocation;
+- (struct CGPoint { double x1; double x2; })initialCentroidLocation;
 - (BOOL)isValidLongPress;
 - (double)maximumFlickDuration;
 - (float)minimumFlickDistance;
@@ -59,7 +59,7 @@
 - (void)setAllowableMovement:(float)arg1;
 - (void)setAllowedFlickDirections:(unsigned int)arg1;
 - (void)setElapsedAction:(id)arg1;
-- (void)setInitialCentroidLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setInitialCentroidLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setMaximumFlickDuration:(double)arg1;
 - (void)setMinimumFlickDistance:(float)arg1;
 - (void)setMinimumPressDuration:(double)arg1;

@@ -3,11 +3,11 @@
  */
 
 @interface SSRollableLog : NSObject {
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    NSFileHandle *_fileHandle;
-    NSObject<OS_dispatch_source> *_fileObserverSource;
-    double _lastFileStatTime;
-    SSLogFileOptions *_options;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    NSFileHandle * _fileHandle;
+    NSObject<OS_dispatch_source> * _fileObserverSource;
+    double  _lastFileStatTime;
+    SSLogFileOptions * _options;
 }
 
 @property (readonly) SSLogFileOptions *logOptions;

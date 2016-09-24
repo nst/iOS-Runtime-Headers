@@ -3,8 +3,8 @@
  */
 
 @interface BSEventQueueEvent : NSObject {
-    id /* block */ _handler;
-    NSString *_name;
+    id /* block */  _handler;
+    NSString * _name;
 }
 
 @property (nonatomic, copy) id /* block */ handler;

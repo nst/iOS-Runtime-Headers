@@ -2,24 +2,46 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKMessagePartChatItem : CKBalloonChatItem
+@interface CKMessagePartChatItem : CKBalloonChatItem {
+    NSArray * _visibleAssociatedMessageChatItems;
+}
 
+@property (nonatomic, readonly) BOOL canSendMessageAcknowledgment;
 @property (nonatomic, readonly) BOOL color;
-@property (nonatomic, readonly, retain) IMMessage *message;
+@property (nonatomic, readonly) BOOL hasMessageAcknowledgment;
+@property (nonatomic, readonly) BOOL hasStickers;
+@property (nonatomic, readonly) IMMessage *message;
+@property (nonatomic, readonly, copy) NSArray *messageAcknowledgments;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } messagePartRange;
 @property (nonatomic, readonly, copy) NSArray *pasteboardItems;
+@property (nonatomic, readonly) NSArray *visibleAssociatedMessageChatItems;
 
+- (void).cxx_destruct;
+- (id)aggregateAcknowledgmentChatItem;
+- (BOOL)canAttachStickers;
 - (BOOL)canCopy;
 - (BOOL)canForward;
 - (BOOL)canSendAsTextMessage;
+- (BOOL)canSendMessageAcknowledgment;
 - (BOOL)color;
 - (id)composition;
 - (void)configureBalloonView:(id)arg1;
 - (id)description;
 - (BOOL)failed;
+- (BOOL)hasMessageAcknowledgment;
+- (BOOL)hasStickers;
+- (id)initWithIMChatItem:(id)arg1 maxWidth:(float)arg2;
 - (BOOL)isFromMe;
 - (id)message;
+- (id)messageAcknowledgments;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })messagePartRange;
 - (id)pasteboardItems;
+- (int)selectedType;
 - (id)sender;
+- (BOOL)shouldShowVotingView;
+- (BOOL)stickersSnapToPoint;
 - (id)time;
+- (id)visibleAssociatedMessageChatItems;
+- (id)votingCounts;
 
 @end

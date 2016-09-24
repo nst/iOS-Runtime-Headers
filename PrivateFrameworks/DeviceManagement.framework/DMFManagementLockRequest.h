@@ -3,8 +3,8 @@
  */
 
 @interface DMFManagementLockRequest : CATTaskRequest {
-    NSString *_lockedByLabel;
-    NSString *_passcode;
+    NSString * _lockedByLabel;
+    NSString * _passcode;
 }
 
 @property (nonatomic, copy) NSString *lockedByLabel;

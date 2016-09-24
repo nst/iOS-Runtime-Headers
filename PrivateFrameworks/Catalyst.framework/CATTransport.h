@@ -3,12 +3,13 @@
  */
 
 @interface CATTransport : NSObject {
-    <CATTransportDelegate> *_delegate;
-    NSString *_name;
-    CATOperationQueue *mDelegationQueue;
-    CATStateMachine *mFSM;
-    CATOperationQueue *mMessageQueue;
-    CATTransport *mStrongSelf;
+    <CATTransportDelegate> * _delegate;
+    NSString * _name;
+    CATOperationQueue * mControlQueue;
+    CATOperationQueue * mDelegationQueue;
+    CATStateMachine * mFSM;
+    CATOperationQueue * mMessageQueue;
+    CATTransport * mStrongSelf;
 }
 
 @property (nonatomic) <CATTransportDelegate> *delegate;

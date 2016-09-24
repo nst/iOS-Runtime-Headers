@@ -6,10 +6,10 @@
     struct { 
         unsigned int length : 1; 
         unsigned int startIndex : 1; 
-    } _has;
-    unsigned int _length;
-    unsigned int _startIndex;
-    PBUnknownFields *_unknownFields;
+    }  _has;
+    unsigned int  _length;
+    unsigned int  _startIndex;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic) BOOL hasLength;

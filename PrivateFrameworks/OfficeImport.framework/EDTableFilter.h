@@ -3,10 +3,10 @@
  */
 
 @interface EDTableFilter : NSObject {
-    double mFilterValue;
-    int mOperator;
-    int mScale;
-    double mValue;
+    double  mFilterValue;
+    int  mOperator;
+    int  mScale;
+    double  mValue;
 }
 
 + (id)edTableFilter;

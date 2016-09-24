@@ -3,16 +3,16 @@
  */
 
 @interface _GCGamepad : GCGamepad <GCNamedProfile, NSSecureCoding> {
-    _GCControllerButtonInput *_button0;
-    _GCControllerButtonInput *_button1;
-    _GCControllerButtonInput *_button2;
-    _GCControllerButtonInput *_button3;
-    GCController *_controller;
-    _GCControllerDirectionPad *_dpad;
-    BOOL _dpadFlippedY;
-    _GCControllerButtonInput *_leftShoulder;
-    _GCControllerButtonInput *_rightShoulder;
-    id /* block */ _valueChangedHandler;
+    _GCControllerButtonInput * _button0;
+    _GCControllerButtonInput * _button1;
+    _GCControllerButtonInput * _button2;
+    _GCControllerButtonInput * _button3;
+    GCController * _controller;
+    _GCControllerDirectionPad * _dpad;
+    BOOL  _dpadFlippedY;
+    _GCControllerButtonInput * _leftShoulder;
+    _GCControllerButtonInput * _rightShoulder;
+    id /* block */  _valueChangedHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -31,7 +31,6 @@
 - (id)controller;
 - (id)dpad;
 - (void)encodeWithCoder:(id)arg1;
-- (void)handleReport:(unsigned int)arg1 data:(id)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithController:(id)arg1;

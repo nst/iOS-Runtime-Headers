@@ -8,12 +8,18 @@
 - (struct __IOSurface { }*)iosurface;
 - (unsigned int)iosurfacePlane;
 - (BOOL)isDrawable;
+- (<MTLTexture> *)newTextureViewWithPixelFormat:(unsigned int)arg1 textureType:(unsigned int)arg2 levels:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 slices:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 swizzle:(unsigned int)arg5;
 - (unsigned int)numFaces;
 - (unsigned int)rotation;
+- (void)setSwizzle:(unsigned int)arg1;
+- (unsigned int)swizzle;
 
 @optional
 
+- (BOOL)canGenerateMipmapLevels;
+- (void)generateMipmapLevel:(unsigned int)arg1 slice:(unsigned int)arg2;
 - (void)getBytes:(void*)arg1 bytesPerRow:(unsigned int)arg2 bytesPerImage:(unsigned int)arg3 fromRegion:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; })arg4 mipmapLevel:(unsigned int)arg5 slice:(unsigned int)arg6 options:(unsigned int)arg7;
+- (<MTLTexture> *)newCompressedTextureViewWithPixelFormat:(unsigned int)arg1 textureType:(unsigned int)arg2 level:(unsigned int)arg3 slice:(unsigned int)arg4;
 - (void)replaceRegion:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; })arg1 mipmapLevel:(unsigned int)arg2 slice:(unsigned int)arg3 withBytes:(const void*)arg4 bytesPerRow:(unsigned int)arg5 bytesPerImage:(unsigned int)arg6 options:(unsigned int)arg7;
 
 @end

@@ -3,9 +3,9 @@
  */
 
 @interface CATEndPoint : NSObject {
-    CATAddress *_address;
-    NSData *_data;
-    unsigned long _port;
+    CATAddress * _address;
+    NSData * _data;
+    unsigned long  _port;
 }
 
 @property (nonatomic, readonly) CATAddress *address;
@@ -15,6 +15,7 @@
 - (void).cxx_destruct;
 - (id)address;
 - (id)data;
+- (id)description;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithAddress:(id)arg1 port:(unsigned long)arg2;

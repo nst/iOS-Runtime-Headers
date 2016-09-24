@@ -3,9 +3,9 @@
  */
 
 @interface OADBaseStylesBase : NSObject {
-    OADColorScheme *mColorScheme;
-    OADFontScheme *mFontScheme;
-    OADStyleMatrix *mStyleMatrix;
+    OADColorScheme * mColorScheme;
+    OADFontScheme * mFontScheme;
+    OADStyleMatrix * mStyleMatrix;
 }
 
 @property (nonatomic, retain) OADColorScheme *colorScheme;

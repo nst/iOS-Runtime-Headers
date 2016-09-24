@@ -3,25 +3,25 @@
  */
 
 @interface _MKScaleUnitsView : UIView {
-    NSNumberFormatter *_floatNumberFormatter;
-    float _justUnitsWidth;
-    NSDictionary *_legendAttributes;
-    NSString *_legendBaseString;
-    NSMutableDictionary *_legendStringForDistanceStringCache;
-    NSMapTable *_legendStringWidthCache;
-    double _segmentLengthInPixels;
-    NSMutableArray *_strings;
-    NSString *_unitsString;
-    float _unitsWidth;
-    NSString *_unpaddedUnitsString;
-    BOOL _useLightText;
+    NSNumberFormatter * _floatNumberFormatter;
+    double  _justUnitsWidth;
+    NSDictionary * _legendAttributes;
+    NSString * _legendBaseString;
+    NSMutableDictionary * _legendStringForDistanceStringCache;
+    NSMapTable * _legendStringWidthCache;
+    double  _segmentLengthInPixels;
+    NSMutableArray * _strings;
+    NSString * _unitsString;
+    double  _unitsWidth;
+    NSString * _unpaddedUnitsString;
+    BOOL  _useLightText;
 }
 
 @property (nonatomic, retain) NSNumberFormatter *floatNumberFormatter;
 @property (nonatomic, retain) NSString *legendBaseString;
 @property (nonatomic) double segmentLengthInPixels;
 @property (nonatomic, retain) NSString *unitsString;
-@property (nonatomic, readonly) float unitsWidth;
+@property (nonatomic, readonly) double unitsWidth;
 @property (nonatomic, copy) NSString *unpaddedUnitsString;
 @property (nonatomic) BOOL useLightText;
 

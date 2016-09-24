@@ -3,17 +3,17 @@
  */
 
 @interface AKControllerForTesting : AKController {
-    AKActionController *_testingActionController;
-    AKAttributeController *_testingAttributeController;
-    <AKControllerDelegateProtocol> *_testingDelegate;
-    AKIntelligentSketchController *_testingIntelligentSketchController;
-    AKMainEventHandler *_testingMainEventHandler;
-    AKModelController *_testingModelController;
-    UIView *_testingOverlayView;
-    AKSignatureModelController *_testingSignatureModelController;
-    AKToolController *_testingToolController;
-    UIView *_testingToolbarView;
-    AKUndoController *_testingUndoController;
+    AKActionController * _testingActionController;
+    AKAttributeController * _testingAttributeController;
+    <AKControllerDelegateProtocol> * _testingDelegate;
+    AKIntelligentSketchController * _testingIntelligentSketchController;
+    AKMainEventHandler * _testingMainEventHandler;
+    AKModelController * _testingModelController;
+    UIView * _testingOverlayView;
+    AKSignatureModelController * _testingSignatureModelController;
+    AKToolController * _testingToolController;
+    UIView * _testingToolbarView;
+    AKUndoController * _testingUndoController;
 }
 
 @property (retain) AKActionController *testingActionController;

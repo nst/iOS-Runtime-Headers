@@ -3,8 +3,7 @@
  */
 
 @interface NFAWDSelect : NSObject <NFAWDEventProtocol> {
-    AWDNFCSEAIDSelectEvent *_metric;
-    NSData *aid;
+    AWDNFCSEAIDSelectEvent * _metric;
 }
 
 @property (nonatomic, retain) NSData *aid;

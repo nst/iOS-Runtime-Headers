@@ -3,10 +3,10 @@
  */
 
 @interface PSUILocationCoreRoutineListController : PSUILocationServicesListController {
-    id _cachedParentController;
-    id _coreRoutineSettings;
-    PSSpecifier *_coreRoutineSpecifier;
-    RTRoutineManager *_routineManager;
+    id  _cachedParentController;
+    id  _coreRoutineSettings;
+    PSSpecifier * _coreRoutineSpecifier;
+    RTRoutineManager * _routineManager;
 }
 
 @property (retain) id cachedParentController;

@@ -3,9 +3,9 @@
  */
 
 @interface MusicContextualActionsAlertController : UIAlertController <MusicClientContextConsuming, MusicJSContextualActionsNativeViewControllerDelegate, MusicJSNativeViewControllerFactory> {
-    MusicClientContext *_clientContext;
-    MusicViewControllerPresenter *_presenter;
-    id _strongSelfRef;
+    MusicClientContext * _clientContext;
+    MusicViewControllerPresenter * _presenter;
+    id  _strongSelfRef;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
@@ -20,7 +20,7 @@
 
 - (void).cxx_destruct;
 - (id)clientContext;
-- (void)handleSelectionOfHeaderWithInformation:(struct { long long x1; unsigned long long x2; })arg1;
+- (void)handleSelectionOfHeaderWithInformation:(struct { int x1; unsigned int x2; })arg1;
 - (void)jsContextualActionsNativeViewController:(id)arg1 presentShareDocument:(id)arg2 options:(id)arg3;
 - (id)loadJSNativeViewControllerWithAppContext:(id)arg1;
 - (void)prepareForJSCallback;

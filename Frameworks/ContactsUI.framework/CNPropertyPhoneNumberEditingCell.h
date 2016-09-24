@@ -3,7 +3,7 @@
  */
 
 @interface CNPropertyPhoneNumberEditingCell : CNPropertySimpleEditingCell {
-    NSArray *_previousValue;
+    NSArray * _previousValue;
 }
 
 @property (nonatomic, retain) NSArray *previousValue;

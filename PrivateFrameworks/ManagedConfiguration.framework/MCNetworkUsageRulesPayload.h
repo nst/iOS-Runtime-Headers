@@ -3,7 +3,7 @@
  */
 
 @interface MCNetworkUsageRulesPayload : MCPayload {
-    NSArray *_applicationRules;
+    NSArray * _applicationRules;
 }
 
 @property (nonatomic, copy) NSArray *applicationRules;

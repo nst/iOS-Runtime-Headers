@@ -2,13 +2,8 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUIMusicRestrictionsController : PSListController {
-    UIAlertView *_iAPAlertView;
-}
+@interface PSUIMusicRestrictionsController : PSListController
 
-- (void).cxx_destruct;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)dealloc;
 - (id)explicitEnabled:(id)arg1;
 - (void)setExplicitEnabled:(id)arg1 specifier:(id)arg2;
 - (id)specifiers;

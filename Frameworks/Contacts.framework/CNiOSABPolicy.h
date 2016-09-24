@@ -3,9 +3,9 @@
  */
 
 @interface CNiOSABPolicy : CNPolicy {
-    BOOL _abSourceIsContentReadonly;
-    void *_fakePerson;
-    void *_iOSABPolicy;
+    BOOL  _abSourceIsContentReadonly;
+    void * _fakePerson;
+    void * _iOSABPolicy;
 }
 
 - (void)dealloc;

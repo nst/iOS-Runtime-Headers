@@ -3,18 +3,18 @@
  */
 
 @interface CTCellularPlanRequest : NSObject <NSURLConnectionDataDelegate> {
-    NSDictionary *_bootstrapSettings;
-    id /* block */ _completionBlock;
-    NSURLConnection *_connection;
-    NSError *_error;
-    NSDictionary *_internetSettings;
-    struct dispatch_queue_s { } *_queue;
-    NSMutableData *_receivedData;
-    NSMutableURLRequest *_request;
-    NSArray *_requestCookies;
-    NSURLResponse *_response;
-    NSArray *_responseCookies;
-    int nextConnectionTypeIndex;
+    NSDictionary * _bootstrapSettings;
+    id /* block */  _completionBlock;
+    NSURLConnection * _connection;
+    NSError * _error;
+    NSDictionary * _internetSettings;
+    struct dispatch_queue_s { } * _queue;
+    NSMutableData * _receivedData;
+    NSMutableURLRequest * _request;
+    NSArray * _requestCookies;
+    NSURLResponse * _response;
+    NSArray * _responseCookies;
+    int  nextConnectionTypeIndex;
 }
 
 @property (nonatomic, copy) id /* block */ completionBlock;

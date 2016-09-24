@@ -3,11 +3,11 @@
  */
 
 @interface CNAvatarCardAlertController : CNAvatarCardController <CNQuickActionsManagerDelegate, UIAlertControllerSystemProvidedPresentationDelegate, UIGestureRecognizerDelegate> {
-    NSArray *_actions;
-    CNQuickActionsManager *_actionsManager;
-    UIAlertController *_alertController;
-    BOOL _expanded;
-    UIView *_sourceView;
+    NSArray * _actions;
+    CNQuickActionsManager * _actionsManager;
+    UIAlertController * _alertController;
+    BOOL  _expanded;
+    UIView * _sourceView;
 }
 
 @property (nonatomic, retain) NSArray *actions;
@@ -23,7 +23,7 @@
 - (void)_performAction:(id)arg1;
 - (id)_presentingViewControllerForSystemProvidedPresentationOfAlertController:(id)arg1;
 - (void)_refreshAlertController;
-- (BOOL)_shouldPerformSystemProvidedPresentationOfAlertController:(id)arg1 atSystemProvidedPresentationRegisteredViewLocation:(struct CGPoint { float x1; float x2; })arg2;
+- (BOOL)_shouldPerformSystemProvidedPresentationOfAlertController:(id)arg1 atSystemProvidedPresentationRegisteredViewLocation:(struct CGPoint { double x1; double x2; })arg2;
 - (void)_updateActions;
 - (void)_updateWithActions:(id)arg1;
 - (void)_willBeginSystemProvidedPresentationOfAlertController:(id)arg1;

@@ -3,10 +3,10 @@
  */
 
 @interface SULockoutViewController : SUViewController {
-    UIImage *_image;
-    NSBundle *_localizationBundle;
-    NSString *_messageBody;
-    NSString *_messageTitle;
+    UIImage * _image;
+    NSBundle * _localizationBundle;
+    NSString * _messageBody;
+    NSString * _messageTitle;
 }
 
 @property (nonatomic, retain) UIImage *image;

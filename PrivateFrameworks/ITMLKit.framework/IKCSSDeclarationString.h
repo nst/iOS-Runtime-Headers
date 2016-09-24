@@ -3,7 +3,7 @@
  */
 
 @interface IKCSSDeclarationString : IKCSSDeclaration {
-    NSString *_value;
+    NSString * _value;
 }
 
 @property (nonatomic, retain) NSString *value;

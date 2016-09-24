@@ -2,16 +2,30 @@
    Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
  */
 
-@interface ICServerChangeToken : NSManagedObject
+@interface ICServerChangeToken : NSManagedObject <ICLoggable> {
+    CKRecordZoneID * _zoneID;
+}
 
 @property (nonatomic, retain) ICAccount *account;
 @property (nonatomic, retain) CKServerChangeToken *ckServerChangeToken;
+@property (nonatomic) int databaseScope;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *ownerName;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) CKRecordZoneID *zoneID;
 @property (nonatomic, retain) NSString *zoneName;
 
-+ (id)addServerChangeTokenForAccount:(id)arg1 ckServerChangeToken:(id)arg2 zoneName:(id)arg3 context:(id)arg4;
-+ (id)serverChangeTokenForAccount:(id)arg1 zoneName:(id)arg2 context:(id)arg3;
++ (id)addServerChangeTokenForAccount:(id)arg1 ckServerChangeToken:(id)arg2 zoneID:(id)arg3 databaseScope:(int)arg4 context:(id)arg5;
++ (id)serverChangeTokenForAccount:(id)arg1 zoneID:(id)arg2 databaseScope:(int)arg3 context:(id)arg4;
 + (id)serverChangeTokensMatchingPredicate:(id)arg1 inContext:(id)arg2;
 
-- (id)loggingDescription;
+- (void).cxx_destruct;
+- (int)databaseScope;
+- (id)ic_loggingValues;
+- (void)setDatabaseScope:(int)arg1;
+- (void)willTurnIntoFault;
+- (id)zoneID;
 
 @end

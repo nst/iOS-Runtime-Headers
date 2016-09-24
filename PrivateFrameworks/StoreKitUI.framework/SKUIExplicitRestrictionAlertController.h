@@ -3,8 +3,8 @@
  */
 
 @interface SKUIExplicitRestrictionAlertController : NSObject {
-    SKUIClientContext *_clientContext;
-    UIViewController *_presentingViewController;
+    SKUIClientContext * _clientContext;
+    UIViewController * _presentingViewController;
 }
 
 - (void).cxx_destruct;

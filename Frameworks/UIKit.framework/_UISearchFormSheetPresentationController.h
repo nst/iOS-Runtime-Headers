@@ -3,18 +3,18 @@
  */
 
 @interface _UISearchFormSheetPresentationController : UIPresentationController <_UISearchControllerPresenting> {
-    _UISearchPresentationAssistant *_assistant;
-    UIView *_wrapperView;
+    _UISearchPresentationAssistant * _assistant;
+    UIView * _wrapperView;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } finalFrameForContainerView;
+    }  finalFrameForContainerView;
 }
 
 @property (nonatomic, readonly) UIPresentationController<_UISearchControllerPresenting> *adaptivePresentationController;
@@ -22,20 +22,20 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) unsigned int edgeForHidingNavigationBar;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } finalFrameForContainerView;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } finalFrameForContainerView;
 @property (nonatomic, readonly) BOOL forceObeyNavigationBarInsets;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) float resultsControllerContentOffset;
+@property (nonatomic, readonly) double resultsControllerContentOffset;
 @property (nonatomic, readonly) BOOL resultsUnderlapsSearchBar;
 @property (nonatomic, readonly) BOOL searchBarCanContainScopeBar;
 @property (nonatomic, readonly, retain) UIView *searchBarContainerView;
 @property (nonatomic, readonly) BOOL searchBarShouldClipToBounds;
 @property (nonatomic, readonly) BOOL searchBarToBecomeTopAttached;
 @property (nonatomic, readonly) BOOL shouldAccountForStatusBar;
-@property (nonatomic, readonly) float statusBarAdjustment;
+@property (nonatomic, readonly) double statusBarAdjustment;
 @property (readonly) Class superclass;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameOfPresentedViewControllerViewInSuperview;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameOfPresentedViewControllerViewInSuperview;
 - (id)_presentationControllerForTraitCollection:(id)arg1;
 - (void)_presentedView:(id)arg1 enableFormSheetAccoutrements:(BOOL)arg2;
 - (id)_presentedViewControllerForPresentationController:(id)arg1 traitCollection:(id)arg2;
@@ -54,9 +54,9 @@
 - (void)dismissalTransitionDidEnd:(BOOL)arg1;
 - (void)dismissalTransitionWillBegin;
 - (unsigned int)edgeForHidingNavigationBar;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })finalFrameForContainerView;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })finalFrameForContainerView;
 - (BOOL)forceObeyNavigationBarInsets;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfPresentedViewInContainerView;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameOfPresentedViewInContainerView;
 - (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
 - (void)presentationTransitionDidEnd:(BOOL)arg1;
 - (void)presentationTransitionWillBegin;

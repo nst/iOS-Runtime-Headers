@@ -3,8 +3,8 @@
  */
 
 @interface SSDialogButton : NSObject {
-    NSDictionary *_actionDictionary;
-    NSString *_title;
+    NSDictionary * _actionDictionary;
+    NSString * _title;
 }
 
 @property (nonatomic, readonly) NSString *URLTarget;

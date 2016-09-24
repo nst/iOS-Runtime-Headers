@@ -3,8 +3,8 @@
  */
 
 @interface PSYSyncSessionUpdate : NSObject {
-    PSYSyncSession *_originalSession;
-    PSYSyncSession *_updatedSession;
+    PSYSyncSession * _originalSession;
+    PSYSyncSession * _updatedSession;
 }
 
 @property (nonatomic, readonly) PSYSyncSession *originalSession;

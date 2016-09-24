@@ -3,10 +3,10 @@
  */
 
 @interface NEVPNProtocolPPP : NEVPNProtocol {
-    NEIPv4Settings *_IPv4Settings;
-    NEIPv6Settings *_IPv6Settings;
-    int _authenticationMethod;
-    BOOL _verboseLoggingEnabled;
+    NEIPv4Settings * _IPv4Settings;
+    NEIPv6Settings * _IPv6Settings;
+    int  _authenticationMethod;
+    BOOL  _verboseLoggingEnabled;
 }
 
 @property (copy) NEIPv4Settings *IPv4Settings;

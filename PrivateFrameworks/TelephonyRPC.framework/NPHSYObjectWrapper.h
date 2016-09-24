@@ -3,8 +3,8 @@
  */
 
 @interface NPHSYObjectWrapper : NSObject <SYChange> {
-    int _type;
-    <SYObject> *_wrappedObject;
+    int  _type;
+    <SYObject> * _wrappedObject;
 }
 
 @property (nonatomic, readonly) int changeType;

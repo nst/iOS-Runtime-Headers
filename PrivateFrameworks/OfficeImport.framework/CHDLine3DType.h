@@ -3,7 +3,7 @@
  */
 
 @interface CHDLine3DType : CHDLineType {
-    int mGapDepth;
+    int  mGapDepth;
 }
 
 + (bool)is3DType;

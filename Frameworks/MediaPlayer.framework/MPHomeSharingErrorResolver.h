@@ -3,17 +3,17 @@
  */
 
 @interface MPHomeSharingErrorResolver : MPAVErrorResolver <SSAuthorizationRequestDelegate> {
-    unsigned long long _accountID;
-    NSData *_accountTokenData;
-    SSAuthorizationRequest *_activeRequest;
-    BOOL _atLeastOneAuthorizationRequestSuccessful;
-    MPHomeSharingML3DataProvider *_dataProvider;
-    unsigned long long _downloaderAccountID;
-    NSData *_downloaderAccountTokenData;
-    NSError *_error;
-    unsigned long long _familyAccountID;
-    NSURL *_keybagURL;
-    NSMutableArray *_requests;
+    unsigned int  _accountID;
+    NSData * _accountTokenData;
+    SSAuthorizationRequest * _activeRequest;
+    BOOL  _atLeastOneAuthorizationRequestSuccessful;
+    MPHomeSharingML3DataProvider * _dataProvider;
+    unsigned int  _downloaderAccountID;
+    NSData * _downloaderAccountTokenData;
+    NSError * _error;
+    unsigned int  _familyAccountID;
+    NSURL * _keybagURL;
+    NSMutableArray * _requests;
 }
 
 @property (nonatomic, retain) MPHomeSharingML3DataProvider *dataProvider;
@@ -29,8 +29,8 @@
 - (void)authorizationRequest:(id)arg1 didReceiveResponse:(id)arg2;
 - (id)dataProvider;
 - (void)dealloc;
-- (id)initWithKeybagURL:(id)arg1 accountID:(unsigned long long)arg2 accountTokenData:(id)arg3;
-- (id)initWithKeybagURL:(id)arg1 accountID:(unsigned long long)arg2 accountTokenData:(id)arg3 downloaderAccountID:(unsigned long long)arg4 downloaderAccountTokenData:(id)arg5 familyAccountID:(unsigned long long)arg6;
+- (id)initWithKeybagURL:(id)arg1 accountID:(unsigned int)arg2 accountTokenData:(id)arg3;
+- (id)initWithKeybagURL:(id)arg1 accountID:(unsigned int)arg2 accountTokenData:(id)arg3 downloaderAccountID:(unsigned int)arg4 downloaderAccountTokenData:(id)arg5 familyAccountID:(unsigned int)arg6;
 - (void)request:(id)arg1 didFailWithError:(id)arg2;
 - (void)requestDidFinish:(id)arg1;
 - (void)resolveError:(id)arg1;

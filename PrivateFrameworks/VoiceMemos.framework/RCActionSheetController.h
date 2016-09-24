@@ -3,19 +3,19 @@
  */
 
 @interface RCActionSheetController : NSObject <UIActionSheetDelegate> {
-    UIViewController *_accessoryViewController;
-    NSArray *_actionButtonTitles;
-    id /* block */ _actionHandlerBlock;
-    RCActionSheetAlertController *_alertController;
-    NSString *_alertMessage;
-    NSString *_alertTitle;
-    BOOL _autoDismissDisabled;
-    NSString *_cancelButtonTitle;
-    BOOL _dismissWhenDismissIsEnabled;
-    BOOL _enabled;
-    UIViewController *_modalItemPresentationViewController;
-    UIResponder *_originalFirstResponder;
-    BOOL _showing;
+    UIViewController * _accessoryViewController;
+    NSArray * _actionButtonTitles;
+    id /* block */  _actionHandlerBlock;
+    RCActionSheetAlertController * _alertController;
+    NSString * _alertMessage;
+    NSString * _alertTitle;
+    BOOL  _autoDismissDisabled;
+    NSString * _cancelButtonTitle;
+    BOOL  _dismissWhenDismissIsEnabled;
+    BOOL  _enabled;
+    UIViewController * _modalItemPresentationViewController;
+    UIResponder * _originalFirstResponder;
+    BOOL  _showing;
 }
 
 @property (nonatomic, readonly) UIViewController *accessoryViewController;

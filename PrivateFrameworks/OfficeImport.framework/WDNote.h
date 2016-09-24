@@ -3,9 +3,9 @@
  */
 
 @interface WDNote : WDRun {
-    BOOL mAutomaticNumbering;
-    WDCharacterRun *mReference;
-    WDText *mText;
+    BOOL  mAutomaticNumbering;
+    WDCharacterRun * mReference;
+    WDText * mText;
 }
 
 - (BOOL)automaticNumbering;

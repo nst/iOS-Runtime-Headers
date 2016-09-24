@@ -3,7 +3,7 @@
  */
 
 @interface IDSAccountController : NSObject {
-    _IDSAccountController *_internal;
+    _IDSAccountController * _internal;
 }
 
 @property (nonatomic, readonly, retain) NSSet *accounts;

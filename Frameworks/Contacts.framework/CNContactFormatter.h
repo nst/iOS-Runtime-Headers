@@ -3,13 +3,13 @@
  */
 
 @interface CNContactFormatter : NSFormatter {
-    BOOL _emphasizesPrimaryNameComponent;
-    unsigned int _fallbackStyle;
-    BOOL _ignoresNickname;
-    BOOL _ignoresOrganization;
-    NSPersonNameComponentsFormatter *_nameFormatter;
-    int _sortOrder;
-    int _style;
+    BOOL  _emphasizesPrimaryNameComponent;
+    unsigned int  _fallbackStyle;
+    BOOL  _ignoresNickname;
+    BOOL  _ignoresOrganization;
+    NSPersonNameComponentsFormatter * _nameFormatter;
+    int  _sortOrder;
+    int  _style;
 }
 
 @property (nonatomic) BOOL emphasizesPrimaryNameComponent;
@@ -20,6 +20,8 @@
 @property (nonatomic) int sortOrder;
 @property (nonatomic) int style;
 
+// Image: /System/Library/Frameworks/Contacts.framework/Contacts
+
 + (id)attributedStringFromContact:(id)arg1 style:(int)arg2 defaultAttributes:(id)arg3;
 + (id)delimiterForContact:(id)arg1;
 + (id)descriptorForRequiredKeysForStyle:(int)arg1;
@@ -27,6 +29,7 @@
 + (id)stringFromContact:(id)arg1 style:(int)arg2;
 + (BOOL)styleSupportsFallBackToFullNameStyle:(int)arg1;
 
+- (id)abbreviatedNameForContact:(id)arg1 attributes:(id)arg2;
 - (void)appendValue:(id)arg1 derivedFromPropertyName:(id)arg2 toString:(id)arg3 delimiter:(id)arg4 attributes:(id)arg5;
 - (void)appendValueForProperties:(id)arg1 fromContact:(id)arg2 toString:(id)arg3 delimiter:(id)arg4 attributes:(id)arg5 fallback:(BOOL)arg6;
 - (id)attributedStringForObjectValue:(id)arg1 withDefaultAttributes:(id)arg2;
@@ -58,5 +61,10 @@
 - (id)stringFromContact:(id)arg1 attributes:(id)arg2;
 - (id)stringFromPotentiallySuggestedContact:(id)arg1 relatedToProperty:(id)arg2;
 - (int)style;
+
+// Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
+
++ (id)sharedFullNameFormatter;
++ (id)sharedFullNameFormatterWithFallBacks;
 
 @end

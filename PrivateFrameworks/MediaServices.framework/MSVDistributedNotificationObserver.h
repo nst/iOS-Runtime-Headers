@@ -3,12 +3,12 @@
  */
 
 @interface MSVDistributedNotificationObserver : NSObject {
-    <MSVDistributedNotificationObserverDelegate> *_delegate;
-    NSString *_distributedName;
-    NSString *_localName;
-    int _notifyToken;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSDictionary *_userInfoForLocalNotification;
+    <MSVDistributedNotificationObserverDelegate> * _delegate;
+    NSString * _distributedName;
+    NSString * _localName;
+    int  _notifyToken;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSDictionary * _userInfoForLocalNotification;
 }
 
 @property (nonatomic) <MSVDistributedNotificationObserverDelegate> *delegate;

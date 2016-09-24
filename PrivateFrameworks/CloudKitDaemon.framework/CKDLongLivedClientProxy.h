@@ -25,8 +25,11 @@
 - (BOOL)hasCloudKitSystemServiceEntitlement;
 - (BOOL)hasDarkWakeNetworkReachabilityEnabledEntitlement;
 - (BOOL)hasDeviceIdentifierEntitlement;
+- (BOOL)hasDisplaysSystemAcceptPromptEntitlement;
 - (BOOL)hasLightweightPCSEntitlement;
 - (BOOL)hasMasqueradingEntitlement;
+- (BOOL)hasOutOfProcessUIEntitlement;
+- (BOOL)hasParticipantPIIEntitlement;
 - (BOOL)hasProtectionDataEntitlement;
 - (BOOL)hasTCCAuthorization;
 - (id)initWithClientContext:(id)arg1;

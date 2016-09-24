@@ -3,14 +3,14 @@
  */
 
 @interface SBFWallpaperConfiguration : NSObject <BSDescriptionProviding, NSCopying> {
-    <SBFProceduralWallpaper> *_proceduralWallpaper;
-    NSDictionary *_proceduralWallpaperInfo;
-    int _variant;
-    NSURL *_videoURL;
-    SBFWallpaperConfigurationManager *_wallpaperConfigurationManager;
-    SBWallpaperImage *_wallpaperImage;
-    SBFWallpaperOptions *_wallpaperOptions;
-    int _wallpaperType;
+    <SBFProceduralWallpaper> * _proceduralWallpaper;
+    NSDictionary * _proceduralWallpaperInfo;
+    int  _variant;
+    NSURL * _videoURL;
+    SBFWallpaperConfigurationManager * _wallpaperConfigurationManager;
+    SBWallpaperImage * _wallpaperImage;
+    SBFWallpaperOptions * _wallpaperOptions;
+    int  _wallpaperType;
 }
 
 @property (readonly, copy) NSString *debugDescription;

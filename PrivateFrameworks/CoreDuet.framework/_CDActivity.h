@@ -3,33 +3,33 @@
  */
 
 @interface _CDActivity : NSObject {
-    CDAttribute *_admissionAttribute;
-    BOOL _afterUserIsInactive;
-    BOOL _allowOnBattery;
-    BOOL _beforeUserIsActive;
-    BOOL _budgeted;
-    int _budgetedPid;
-    unsigned long long _budgetingToken;
-    NSString *_bundleId;
-    BOOL _cpuIntensive;
-    BOOL _deviceWakeAllowed;
-    BOOL _discretionaryActivity;
-    NSDate *_executeBefore;
-    NSObject<OS_dispatch_queue> *_handlerQueue;
-    NSNumber *_identifier;
-    BOOL _ioIntensive;
-    double _leeway;
-    BOOL _memoryIntensive;
-    CDAttribute *_meteringAttribute;
-    NSString *_name;
-    NSString *_networkAvailability;
-    int _pid;
-    NSDate *_scheduledTime;
-    NSDate *_startAfter;
-    id /* block */ _startHandler;
-    unsigned int _state;
-    id /* block */ _suspendHandler;
-    BOOL _triggersRestart;
+    CDAttribute * _admissionAttribute;
+    BOOL  _afterUserIsInactive;
+    BOOL  _allowOnBattery;
+    BOOL  _beforeUserIsActive;
+    BOOL  _budgeted;
+    int  _budgetedPid;
+    unsigned int  _budgetingToken;
+    NSString * _bundleId;
+    BOOL  _cpuIntensive;
+    BOOL  _deviceWakeAllowed;
+    BOOL  _discretionaryActivity;
+    NSDate * _executeBefore;
+    NSObject<OS_dispatch_queue> * _handlerQueue;
+    NSNumber * _identifier;
+    BOOL  _ioIntensive;
+    double  _leeway;
+    BOOL  _memoryIntensive;
+    CDAttribute * _meteringAttribute;
+    NSString * _name;
+    NSString * _networkAvailability;
+    int  _pid;
+    NSDate * _scheduledTime;
+    NSDate * _startAfter;
+    id /* block */  _startHandler;
+    unsigned int  _state;
+    id /* block */  _suspendHandler;
+    BOOL  _triggersRestart;
 }
 
 @property (retain) CDAttribute *admissionAttribute;
@@ -38,7 +38,7 @@
 @property (nonatomic) BOOL beforeUserIsActive;
 @property (nonatomic) BOOL budgeted;
 @property (nonatomic) int budgetedPid;
-@property unsigned long long budgetingToken;
+@property unsigned int budgetingToken;
 @property (nonatomic, retain) NSString *bundleId;
 @property (nonatomic) BOOL cpuIntensive;
 @property (nonatomic) BOOL deviceWakeAllowed;
@@ -69,7 +69,7 @@
 - (BOOL)beforeUserIsActive;
 - (BOOL)budgeted;
 - (int)budgetedPid;
-- (unsigned long long)budgetingToken;
+- (unsigned int)budgetingToken;
 - (id)bundleId;
 - (BOOL)checkForBudget;
 - (BOOL)cpuIntensive;
@@ -94,7 +94,7 @@
 - (void)setBeforeUserIsActive:(BOOL)arg1;
 - (void)setBudgeted:(BOOL)arg1;
 - (void)setBudgetedPid:(int)arg1;
-- (void)setBudgetingToken:(unsigned long long)arg1;
+- (void)setBudgetingToken:(unsigned int)arg1;
 - (void)setBundleId:(id)arg1;
 - (void)setCpuIntensive:(BOOL)arg1;
 - (void)setDeviceWakeAllowed:(BOOL)arg1;

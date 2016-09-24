@@ -3,10 +3,10 @@
  */
 
 @interface MSPushRegistration : MSMailDefaultService {
-    NSString *_accountIdentifier;
-    NSString *_bundleIdentifier;
-    NSArray *_mailboxNames;
-    NSString *_notificationNamePrefix;
+    NSString * _accountIdentifier;
+    NSString * _bundleIdentifier;
+    NSArray * _mailboxNames;
+    NSString * _notificationNamePrefix;
 }
 
 @property (nonatomic, copy) NSString *accountIdentifier;

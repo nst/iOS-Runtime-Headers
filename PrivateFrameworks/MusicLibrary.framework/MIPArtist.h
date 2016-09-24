@@ -3,15 +3,15 @@
  */
 
 @interface MIPArtist : PBCodable <NSCopying> {
-    NSString *_artworkId;
+    NSString * _artworkId;
     struct { 
         unsigned int persistentId : 1; 
         unsigned int storeId : 1; 
-    } _has;
-    NSString *_name;
-    long long _persistentId;
-    NSString *_sortName;
-    long long _storeId;
+    }  _has;
+    NSString * _name;
+    int  _persistentId;
+    NSString * _sortName;
+    int  _storeId;
 }
 
 @property (nonatomic, retain) NSString *artworkId;
@@ -21,9 +21,9 @@
 @property (nonatomic, readonly) BOOL hasSortName;
 @property (nonatomic) BOOL hasStoreId;
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic) long long persistentId;
+@property (nonatomic) int persistentId;
 @property (nonatomic, retain) NSString *sortName;
-@property (nonatomic) long long storeId;
+@property (nonatomic) int storeId;
 
 - (void).cxx_destruct;
 - (id)artworkId;
@@ -40,17 +40,17 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
-- (long long)persistentId;
+- (int)persistentId;
 - (BOOL)readFrom:(id)arg1;
 - (void)setArtworkId:(id)arg1;
 - (void)setHasPersistentId:(BOOL)arg1;
 - (void)setHasStoreId:(BOOL)arg1;
 - (void)setName:(id)arg1;
-- (void)setPersistentId:(long long)arg1;
+- (void)setPersistentId:(int)arg1;
 - (void)setSortName:(id)arg1;
-- (void)setStoreId:(long long)arg1;
+- (void)setStoreId:(int)arg1;
 - (id)sortName;
-- (long long)storeId;
+- (int)storeId;
 - (void)writeTo:(id)arg1;
 
 @end

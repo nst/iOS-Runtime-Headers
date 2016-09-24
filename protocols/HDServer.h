@@ -5,12 +5,11 @@
 
 @required
 
+- (void)deliverWorkoutEvent:(_HKWorkoutEvent *)arg1 forSessionUUID:(NSUUID *)arg2;
 - (void)deliverWorkoutSessionChangedToState:(int)arg1 fromState:(int)arg2 date:(NSDate *)arg3 forSessionUUID:(NSUUID *)arg4;
 - (void)deliverWorkoutSessionError:(NSError *)arg1 forSessionUUID:(NSUUID *)arg2;
 - (_HKFirstPartyWorkoutSnapshot *)firstPartyWorkoutSnapshot;
-- (BOOL)hasActiveWorkouts;
 - (void)invalidate;
-- (void)nukeActiveWorkoutServers;
 - (void)pauseActiveWorkoutsWithCompletion:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)start;
 

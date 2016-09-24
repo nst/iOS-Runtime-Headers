@@ -3,25 +3,26 @@
  */
 
 @interface BSDateFormatterCache : NSObject {
-    NSDateFormatter *_abbrevDayMonthFormatter;
-    NSDateFormatter *_abbrevDayMonthTimeFormatter;
-    NSDateComponentsFormatter *_abbreviatedTimerFormatter;
-    NSDateComponentsFormatter *_alarmSnoozeFormatter;
-    NSDateFormatter *_dayMonthYearFormatter;
-    NSDateFormatter *_dayOfWeekFormatter;
-    NSDateFormatter *_dayOfWeekMonthDayFormatter;
-    NSDateFormatter *_dayOfWeekWithTimeFormatter;
-    NSNumberFormatter *_decimalFormatter;
-    NSDateFormatter *_longYMDHMSNoSpaceFormatter;
-    NSDateFormatter *_longYMDHMSZFormatter;
-    NSDateFormatter *_longYMDHMSZPosixLocaleFormatter;
-    NSDateFormatter *_relativeDateFormatter;
-    NSDateFormatter *_relativeDateTimeFormatter;
-    NSDateFormatter *_shortDayMonthFormatter;
-    NSDateFormatter *_shortDayMonthTimeFormatter;
-    NSDateFormatter *_timeFormatter;
-    NSDateFormatter *_timeNoAMPMFormatter;
-    NSNumberFormatter *_timerNumberFormatter;
+    NSDateFormatter * _abbrevDayMonthFormatter;
+    NSDateFormatter * _abbrevDayMonthTimeFormatter;
+    NSDateComponentsFormatter * _abbreviatedTimerFormatter;
+    NSDateComponentsFormatter * _alarmSnoozeFormatter;
+    NSDateFormatter * _dayMonthYearFormatter;
+    NSDateFormatter * _dayOfWeekFormatter;
+    NSDateFormatter * _dayOfWeekMonthDayFormatter;
+    NSDateFormatter * _dayOfWeekWithTimeFormatter;
+    NSNumberFormatter * _decimalFormatter;
+    NSDateFormatter * _longYMDHMSNoSpaceFormatter;
+    NSDateFormatter * _longYMDHMSZFormatter;
+    NSDateFormatter * _longYMDHMSZPosixLocaleFormatter;
+    NSDateFormatter * _multiLineDayOfWeekMonthDayFormatter;
+    NSDateFormatter * _relativeDateFormatter;
+    NSDateFormatter * _relativeDateTimeFormatter;
+    NSDateFormatter * _shortDayMonthFormatter;
+    NSDateFormatter * _shortDayMonthTimeFormatter;
+    NSDateFormatter * _timeFormatter;
+    NSDateFormatter * _timeNoAMPMFormatter;
+    NSNumberFormatter * _timerNumberFormatter;
 }
 
 + (id)sharedInstance;
@@ -40,6 +41,7 @@
 - (id)formatDateAsLongYMDHMSNoSpacesWithDate:(id)arg1;
 - (id)formatDateAsLongYMDHMSZPosixLocaleWithDate:(id)arg1;
 - (id)formatDateAsLongYMDHMSZWithDate:(id)arg1;
+- (id)formatDateAsMultiLineDayOfWeekMonthDayStyle:(id)arg1;
 - (id)formatDateAsRelativeDateAndTimeStyle:(id)arg1;
 - (id)formatDateAsRelativeDateStyle:(id)arg1;
 - (id)formatDateAsShortDayMonthWithTimeStyle:(id)arg1;
@@ -48,7 +50,9 @@
 - (id)formatNumberAsDecimal:(id)arg1;
 - (id)formatTimerDuration:(double)arg1;
 - (id)init;
+- (id)multiLineDayOfWeekMonthDayFormatForLocale:(id)arg1;
 - (void)resetFormatters:(id)arg1;
 - (void)resetFormattersIfNecessary;
+- (BOOL)supportsMultiLineDayOfWeekMonthDayStyle;
 
 @end

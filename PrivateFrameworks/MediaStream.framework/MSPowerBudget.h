@@ -3,20 +3,20 @@
  */
 
 @interface MSPowerBudget : NSObject {
-    <MSPowerBudgetDelegate> *_delegate;
-    NSString *_focusAlbumGUID;
-    NSString *_focusAssetCollectionGUID;
-    double _maxActiveTimeAfterGlobalResetSync;
-    double _maxActiveTimeAfterLossOfForeground;
-    double _maxActiveTimeAfterPush;
-    NSString *_personID;
-    NSObject<OS_dispatch_queue> *_workQueue;
-    MSPBTimerContext *_workQueueGlobalResetSyncTimerContext;
-    BOOL _workQueueIsExternalPowered;
-    BOOL _workQueueIsFileTransferAllowed;
-    BOOL _workQueueIsForeground;
-    MSPBTimerContext *_workQueuePostForegroundTimerContext;
-    MSPBTimerContext *_workQueuePushTimerContext;
+    <MSPowerBudgetDelegate> * _delegate;
+    NSString * _focusAlbumGUID;
+    NSString * _focusAssetCollectionGUID;
+    double  _maxActiveTimeAfterGlobalResetSync;
+    double  _maxActiveTimeAfterLossOfForeground;
+    double  _maxActiveTimeAfterPush;
+    NSString * _personID;
+    NSObject<OS_dispatch_queue> * _workQueue;
+    MSPBTimerContext * _workQueueGlobalResetSyncTimerContext;
+    BOOL  _workQueueIsExternalPowered;
+    BOOL  _workQueueIsFileTransferAllowed;
+    BOOL  _workQueueIsForeground;
+    MSPBTimerContext * _workQueuePostForegroundTimerContext;
+    MSPBTimerContext * _workQueuePushTimerContext;
 }
 
 @property (nonatomic) <MSPowerBudgetDelegate> *delegate;

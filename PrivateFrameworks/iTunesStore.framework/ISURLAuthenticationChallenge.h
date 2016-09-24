@@ -4,6 +4,9 @@
 
 @interface ISURLAuthenticationChallenge : ISAuthenticationChallenge
 
++ (id)_messageForProtectionSpace:(id)arg1;
++ (id)_titleForProtectionSpace:(id)arg1;
+
 - (void)cancelAuthentication;
 - (int)failureCount;
 - (BOOL)hasPassword;

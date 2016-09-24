@@ -3,8 +3,8 @@
  */
 
 @interface PLCacheEntry : NSObject {
-    struct lruEntry { id x1; struct { struct lruEntry {} *x_2_1_1; struct lruEntry {} **x_2_1_2; } x2; } *_entry;
-    id _object;
+    struct lruEntry { id x1; struct { struct lruEntry {} *x_2_1_1; struct lruEntry {} **x_2_1_2; } x2; } * _entry;
+    id  _object;
 }
 
 - (void)dealloc;

@@ -3,11 +3,11 @@
  */
 
 @interface NEVPN : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
-    BOOL _enabled;
-    NSArray *_exceptionApps;
-    BOOL _onDemandEnabled;
-    NSArray *_onDemandRules;
-    NEVPNProtocol *_protocol;
+    BOOL  _enabled;
+    NSArray * _exceptionApps;
+    BOOL  _onDemandEnabled;
+    NSArray * _onDemandRules;
+    NEVPNProtocol * _protocol;
 }
 
 @property (getter=isEnabled) BOOL enabled;

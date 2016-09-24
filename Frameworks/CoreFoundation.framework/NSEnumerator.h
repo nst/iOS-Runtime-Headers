@@ -4,8 +4,14 @@
 
 @interface NSEnumerator : NSObject <NSFastEnumeration>
 
+// Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+
 - (id)allObjects;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (id)nextObject;
+
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
+- (id)fc_firstObjectPassingTest:(id /* block */)arg1;
 
 @end

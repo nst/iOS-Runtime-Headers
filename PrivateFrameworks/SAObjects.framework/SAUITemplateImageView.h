@@ -4,7 +4,7 @@
 
 @interface SAUITemplateImageView : SAUITemplateBaseItem <SAUITemplateMonogrammable>
 
-@property (nonatomic) float alpha;
+@property (nonatomic) double alpha;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;

@@ -3,9 +3,9 @@
  */
 
 @interface WFWebPageDecorator : NSObject <WFWebPageProtocol> {
-    NSString *URLString;
-    WFImgArrayCache *pageImagesPropertyCache;
-    NSObject<WFWebPageProtocol> *webPageStripper;
+    NSString * URLString;
+    WFImgArrayCache * pageImagesPropertyCache;
+    NSObject<WFWebPageProtocol> * webPageStripper;
 }
 
 @property (retain) NSString *URLString;

@@ -3,8 +3,8 @@
  */
 
 @interface SSVURLCacheConfiguration : NSObject {
-    NSString *_sessionIdentifier;
-    BOOL _supportsProcessSharing;
+    NSString * _sessionIdentifier;
+    BOOL  _supportsProcessSharing;
 }
 
 @property (nonatomic, copy) NSString *sessionIdentifier;

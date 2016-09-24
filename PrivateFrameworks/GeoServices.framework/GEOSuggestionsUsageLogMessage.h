@@ -3,21 +3,21 @@
  */
 
 @interface GEOSuggestionsUsageLogMessage : PBCodable <NSCopying> {
-    NSMutableArray *_displayedResults;
+    NSMutableArray * _displayedResults;
     struct { 
         unsigned int searchFieldType : 1; 
         unsigned int selectedIndex : 1; 
         unsigned int suggestionEntryIndex : 1; 
         unsigned int suggestionEntryListIndex : 1; 
-    } _has;
-    NSString *_prefix;
-    int _searchFieldType;
-    int _selectedIndex;
-    GEOPDAutocompleteEntry *_suggestionEntry;
-    int _suggestionEntryIndex;
-    int _suggestionEntryListIndex;
-    NSData *_suggestionEntryMetadata;
-    NSData *_suggestionMetadata;
+    }  _has;
+    NSString * _prefix;
+    int  _searchFieldType;
+    int  _selectedIndex;
+    GEOPDAutocompleteEntry * _suggestionEntry;
+    int  _suggestionEntryIndex;
+    int  _suggestionEntryListIndex;
+    NSData * _suggestionEntryMetadata;
+    NSData * _suggestionMetadata;
 }
 
 @property (nonatomic, retain) NSMutableArray *displayedResults;
@@ -38,6 +38,9 @@
 @property (nonatomic, retain) NSData *suggestionEntryMetadata;
 @property (nonatomic, retain) NSData *suggestionMetadata;
 
++ (Class)displayedResultType;
+
+- (int)StringAsSearchFieldType:(id)arg1;
 - (void)addDisplayedResult:(id)arg1;
 - (void)clearDisplayedResults;
 - (void)copyTo:(id)arg1;
@@ -62,6 +65,7 @@
 - (id)prefix;
 - (BOOL)readFrom:(id)arg1;
 - (int)searchFieldType;
+- (id)searchFieldTypeAsString:(int)arg1;
 - (int)selectedIndex;
 - (void)setDisplayedResults:(id)arg1;
 - (void)setHasSearchFieldType:(BOOL)arg1;

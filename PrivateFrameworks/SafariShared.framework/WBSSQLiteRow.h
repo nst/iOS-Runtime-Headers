@@ -3,7 +3,7 @@
  */
 
 @interface WBSSQLiteRow : NSObject {
-    struct sqlite3_stmt { } *_handle;
+    struct sqlite3_stmt { } * _handle;
 }
 
 - (BOOL)_isNullAtIndex:(unsigned int)arg1;
@@ -12,7 +12,7 @@
 - (id)debugDictionaryRepresentationWithStatement:(id)arg1;
 - (double)doubleAtIndex:(unsigned int)arg1;
 - (id)initWithCurrentRowOfEnumerator:(id)arg1;
-- (long long)int64AtIndex:(unsigned int)arg1;
+- (int)int64AtIndex:(unsigned int)arg1;
 - (int)intAtIndex:(unsigned int)arg1;
 - (id)stringAtIndex:(unsigned int)arg1;
 - (id)uncopiedDataAtIndex:(unsigned int)arg1;

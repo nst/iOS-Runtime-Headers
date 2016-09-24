@@ -3,35 +3,60 @@
  */
 
 @interface TIZephyrCandidate : TIKeyboardCandidateSingle {
-    BOOL _isFromPhraseDictionary;
-    BOOL _isFromTextChecker;
-    NSString *_label;
-    unsigned int _usageTrackingMask;
-    unsigned int _wordOriginFeedbackID;
+    unsigned int  _ageForConnectionsMetrics;
+    NSString * _fromBundleId;
+    BOOL  _fromBundleIdWhitelistedForMetrics;
+    BOOL  _isFromPhraseDictionary;
+    BOOL  _isFromTextChecker;
+    BOOL  _isSecureContentCandidate;
+    BOOL  _isSendCurrentLocation;
+    NSString * _label;
+    TIProactiveTrigger * _proactiveTrigger;
+    BOOL  _targetBundleIdWhitelistedForMetrics;
+    unsigned int  _usageTrackingMask;
+    unsigned int  _wordOriginFeedbackID;
 }
 
+@property (nonatomic) unsigned int ageForConnectionsMetrics;
+@property (nonatomic, copy) NSString *fromBundleId;
+@property (nonatomic) BOOL fromBundleIdWhitelistedForMetrics;
 @property (nonatomic) BOOL isFromPhraseDictionary;
 @property (nonatomic) BOOL isFromTextChecker;
+@property (nonatomic) BOOL isSendCurrentLocation;
 @property (nonatomic, copy) NSString *label;
+@property (nonatomic) BOOL targetBundleIdWhitelistedForMetrics;
 
 + (BOOL)supportsSecureCoding;
 + (int)type;
 
+- (unsigned int)ageForConnectionsMetrics;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCandidateResultSetCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)fromBundleId;
+- (BOOL)fromBundleIdWhitelistedForMetrics;
 - (id)initWithCandidate:(id)arg1 forInput:(id)arg2 wordOriginFeedbackID:(unsigned int)arg3;
 - (id)initWithCandidate:(id)arg1 forInput:(id)arg2 wordOriginFeedbackID:(unsigned int)arg3 usageTrackingMask:(unsigned int)arg4;
+- (id)initWithCandidate:(id)arg1 forInput:(id)arg2 wordOriginFeedbackID:(unsigned int)arg3 usageTrackingMask:(unsigned int)arg4 secureContentCandidate:(BOOL)arg5 proactiveTrigger:(id)arg6;
 - (id)initWithCandidateResultSetCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isAutocorrection;
 - (BOOL)isFromPhraseDictionary;
 - (BOOL)isFromTextChecker;
+- (BOOL)isSecureContentCandidate;
+- (BOOL)isSendCurrentLocation;
 - (id)label;
+- (id)proactiveTrigger;
+- (void)setAgeForConnectionsMetrics:(unsigned int)arg1;
+- (void)setFromBundleId:(id)arg1;
+- (void)setFromBundleIdWhitelistedForMetrics:(BOOL)arg1;
 - (void)setIsFromPhraseDictionary:(BOOL)arg1;
 - (void)setIsFromTextChecker:(BOOL)arg1;
+- (void)setIsSendCurrentLocation:(BOOL)arg1;
 - (void)setLabel:(id)arg1;
+- (void)setTargetBundleIdWhitelistedForMetrics:(BOOL)arg1;
+- (BOOL)targetBundleIdWhitelistedForMetrics;
 - (unsigned int)usageTrackingMask;
 - (unsigned int)wordOriginFeedbackID;
 

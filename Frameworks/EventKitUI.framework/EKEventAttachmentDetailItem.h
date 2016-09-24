@@ -3,7 +3,7 @@
  */
 
 @interface EKEventAttachmentDetailItem : EKEventDetailItem <EKEventAttachmentCellControllerDelegate> {
-    NSArray *_cellControllers;
+    NSArray * _cellControllers;
 }
 
 @property (readonly, copy) NSString *debugDescription;

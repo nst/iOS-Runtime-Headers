@@ -3,8 +3,8 @@
  */
 
 @interface UIPrintMoreOptionsTableViewController : UITableViewController {
-    UIPrintPanelViewController *_printPanelViewController;
-    int _stapleRow;
+    UIPrintPanelViewController * _printPanelViewController;
+    int  _stapleRow;
 }
 
 - (void).cxx_destruct;

@@ -3,20 +3,20 @@
  */
 
 @interface _ML3DatabaseConnectionSubPool : NSObject {
-    NSMutableSet *_availableConnections;
-    NSMutableSet *_busyConnections;
-    NSObject<OS_dispatch_queue> *_checkinQueue;
-    NSObject<OS_dispatch_queue> *_checkoutQueue;
-    unsigned int _connectionsJournalingMode;
-    int _connectionsProfilingLevel;
-    NSString *_databasePath;
-    int _homeSharingCachesClearedNotifyToken;
-    unsigned int _maxConcurrentConnections;
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    BOOL _useDistantConnections;
-    BOOL _useReadOnlyConnections;
-    NSObject<OS_dispatch_semaphore> *_waitingSemaphore;
-    int _willDeleteDatabaseNotifyToken;
+    NSMutableSet * _availableConnections;
+    NSMutableSet * _busyConnections;
+    NSObject<OS_dispatch_queue> * _checkinQueue;
+    NSObject<OS_dispatch_queue> * _checkoutQueue;
+    unsigned int  _connectionsJournalingMode;
+    int  _connectionsProfilingLevel;
+    NSString * _databasePath;
+    int  _homeSharingCachesClearedNotifyToken;
+    unsigned int  _maxConcurrentConnections;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    BOOL  _useDistantConnections;
+    BOOL  _useReadOnlyConnections;
+    NSObject<OS_dispatch_semaphore> * _waitingSemaphore;
+    int  _willDeleteDatabaseNotifyToken;
 }
 
 @property (nonatomic) unsigned int connectionsJournalingMode;

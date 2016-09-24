@@ -3,11 +3,11 @@
  */
 
 @interface ISUserNotification : NSObject {
-    int _allowedRetryCount;
-    int _currentRetryCount;
-    NSDictionary *_dictionary;
-    unsigned long _optionFlags;
-    NSDictionary *_userInfo;
+    int  _allowedRetryCount;
+    int  _currentRetryCount;
+    NSDictionary * _dictionary;
+    unsigned long  _optionFlags;
+    NSDictionary * _userInfo;
 }
 
 @property int allowedRetryCount;

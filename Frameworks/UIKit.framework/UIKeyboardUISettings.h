@@ -3,9 +3,9 @@
  */
 
 @interface UIKeyboardUISettings : _UISettings {
-    BOOL _didShowHUD;
-    int _lastVolume;
-    BOOL _nextPage;
+    BOOL  _didShowHUD;
+    int  _lastVolume;
+    BOOL  _nextPage;
 }
 
 + (BOOL)enabled;

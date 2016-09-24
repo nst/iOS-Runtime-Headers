@@ -3,14 +3,14 @@
  */
 
 @interface UIInputSwitcher : NSObject {
-    NSString *_loadedIdentifier;
-    NSString *_newMode;
-    UIDelayedAction *m_hideSwitcherDelay;
-    UIDelayedAction *m_keyHoldDelay;
-    double m_lastGlobeKeyUpTime;
-    UIDelayedAction *m_showSwitcherDelay;
-    int m_state;
-    UIInputSwitcherView *m_switcherView;
+    NSString * _loadedIdentifier;
+    NSString * _newMode;
+    UIDelayedAction * m_hideSwitcherDelay;
+    UIDelayedAction * m_keyHoldDelay;
+    double  m_lastGlobeKeyUpTime;
+    UIDelayedAction * m_showSwitcherDelay;
+    int  m_state;
+    UIInputSwitcherView * m_switcherView;
 }
 
 @property (nonatomic, copy) NSString *loadedIdentifier;

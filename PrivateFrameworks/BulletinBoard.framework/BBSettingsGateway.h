@@ -3,15 +3,16 @@
  */
 
 @interface BBSettingsGateway : NSObject <BBSettingsGatewayClientInterface> {
-    id /* block */ _activeOverrideTypesChangedHandler;
-    NSXPCConnection *_connection;
-    id /* block */ _overrideStateChangeHandler;
-    id /* block */ _overrideStatusChangeHandler;
-    id /* block */ _overridesChangedHandler;
-    id /* block */ _overridesEffectiveWhileUnlockedChangedHandler;
-    id /* block */ _privilegedSenderGroupChangedHandler;
-    id /* block */ _privilegedSenderTypesChangedHandler;
-    NSObject<OS_dispatch_queue> *_queue;
+    id /* block */  _activeOverrideTypesChangedActiveQuietModeAssertionCountHandler;
+    id /* block */  _activeOverrideTypesChangedHandler;
+    NSXPCConnection * _connection;
+    id /* block */  _overrideStateChangeHandler;
+    id /* block */  _overrideStatusChangeHandler;
+    id /* block */  _overridesChangedHandler;
+    id /* block */  _overridesEffectiveWhileUnlockedChangedHandler;
+    id /* block */  _privilegedSenderGroupChangedHandler;
+    id /* block */  _privilegedSenderTypesChangedHandler;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -23,7 +24,9 @@
 + (void)initialize;
 + (id)serverInterface;
 
+- (void).cxx_destruct;
 - (void)activeBehaviorOverrideTypesChanged:(unsigned int)arg1 source:(unsigned int)arg2;
+- (void)activeBehaviorOverrideTypesChanged:(unsigned int)arg1 source:(unsigned int)arg2 activeQuietModeAssertionCount:(unsigned int)arg3;
 - (void)behaviorOverrideStatusChanged:(int)arg1 source:(unsigned int)arg2;
 - (void)behaviorOverridesChanged:(id)arg1 source:(unsigned int)arg2;
 - (void)behaviorOverridesEffectiveWhileUnlockedChanged:(BOOL)arg1 source:(unsigned int)arg2;
@@ -44,7 +47,9 @@
 - (void)invalidate;
 - (void)privilegedSenderAddressBookGroupRecordIDChanged:(int)arg1 name:(id)arg2 source:(unsigned int)arg3;
 - (void)privilegedSenderTypesChanged:(unsigned int)arg1 source:(unsigned int)arg2;
+- (void)requestQuietModeOverrideAssertionWithCompletion:(id /* block */)arg1;
 - (void)setActiveBehaviorOverrideTypesChangeHandler:(id /* block */)arg1;
+- (void)setActiveBehaviorOverrideTypesWithSourceChangeActiveQuietModeAssertionCountHandler:(id /* block */)arg1;
 - (void)setActiveBehaviorOverrideTypesWithSourceChangeHandler:(id /* block */)arg1;
 - (void)setBehaviorOverrideStateChangeHandler:(id /* block */)arg1;
 - (void)setBehaviorOverrideStatus:(int)arg1;

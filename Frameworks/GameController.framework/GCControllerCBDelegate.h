@@ -3,10 +3,10 @@
  */
 
 @interface GCControllerCBDelegate : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate> {
-    CBCentralManager *_centralManager;
-    id /* block */ _completionHandler;
-    NSMutableArray *_connectedPeripherals;
-    NSMutableArray *_foundPeripherals;
+    CBCentralManager * _centralManager;
+    id /* block */  _completionHandler;
+    NSMutableArray * _connectedPeripherals;
+    NSMutableArray * _foundPeripherals;
 }
 
 @property (nonatomic, retain) CBCentralManager *centralManager;

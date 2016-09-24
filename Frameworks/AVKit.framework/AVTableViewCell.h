@@ -3,7 +3,7 @@
  */
 
 @interface AVTableViewCell : UITableViewCell {
-    id _representedObject;
+    id  _representedObject;
 }
 
 @property (nonatomic, retain) id representedObject;

@@ -3,11 +3,11 @@
  */
 
 @interface AWDCpuLoad : PBCodable <NSCopying> {
-    unsigned int _duration;
+    unsigned int  _duration;
     struct { 
         unsigned int duration : 1; 
-    } _has;
-    NSString *_procName;
+    }  _has;
+    NSString * _procName;
 }
 
 @property (nonatomic) unsigned int duration;

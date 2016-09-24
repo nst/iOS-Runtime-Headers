@@ -3,7 +3,7 @@
  */
 
 @interface CMMotionManager : NSObject {
-    id _internal;
+    id  _internal;
 }
 
 @property (getter=isAccelerometerActive, nonatomic, readonly) BOOL accelerometerActive;
@@ -31,7 +31,8 @@
 + (unsigned int)availableAttitudeReferenceFrames;
 + (BOOL)configureM7Activity:(BOOL)arg1 stepCounting:(BOOL)arg2 activityForceCodeTransition:(BOOL)arg3 stepCountingForceCodeTransition:(BOOL)arg4 threshold:(BOOL)arg5 impulse:(BOOL)arg6 onBodyDetection:(BOOL)arg7 ispMode:(unsigned char)arg8 predictionInterval:(float)arg9 logLevel:(BOOL)arg10 proactiveRevisitTime:(unsigned short)arg11;
 + (void)dummySelector:(id)arg1;
-+ (struct { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; double x3; })gyroCalibrationDatabaseGetBiasFit;
++ (struct { int x1; double x2; union { struct { struct { double x_1_3_1; double x_1_3_2; double x_1_3_3; } x_1_2_1; struct { double x_2_3_1; double x_2_3_2; double x_2_3_3; } x_1_2_2; } x_3_1_1; struct { bool x_2_2_1; BOOL x_2_2_2[241]; } x_3_1_2; } x3; })gyroCalibrationDatabaseGetBiasFit;
++ (struct { int x1; double x2; union { struct { struct { double x_1_3_1; double x_1_3_2; double x_1_3_3; } x_1_2_1; struct { double x_2_3_1; double x_2_3_2; double x_2_3_3; } x_1_2_2; } x_3_1_1; struct { bool x_2_2_1; BOOL x_2_2_2[241]; } x_3_1_2; } x3; })gyroCalibrationDatabaseGetBiasFitAndEstimate:(struct { double x1; double x2; double x3; }*)arg1 atTemperature:(float)arg2;
 + (BOOL)hasRunMiniCal;
 + (void)initialize;
 + (void)setAllowInBackground:(BOOL)arg1;
@@ -44,19 +45,16 @@
 - (id)ambientPressureData;
 - (double)ambientPressureUpdateInterval;
 - (unsigned int)attitudeReferenceFrame;
+- (void)captureStarting;
+- (void)connect;
 - (void)dealloc;
 - (void)deallocPrivate;
 - (id)deviceMotion;
-- (double)deviceMotionGyroDt;
-- (double)deviceMotionRequestedAccelerometerUpdateInterval;
-- (double)deviceMotionRequestedCompassUpdateInterval;
-- (double)deviceMotionRequestedGyroUpdateInterval;
 - (double)deviceMotionUpdateInterval;
 - (void)didBecomeActive:(id)arg1;
 - (void)didBecomeActivePrivate:(id)arg1;
 - (void)dismissDeviceMovementDisplay;
 - (id)gyroData;
-- (int)gyroStartupLatency;
 - (double)gyroUpdateInterval;
 - (int)gyttNumTemperatures;
 - (id)init;
@@ -77,24 +75,22 @@
 - (BOOL)isSidebandSensorFusionAvailable;
 - (id)magnetometerData;
 - (double)magnetometerUpdateInterval;
-- (void)onAccelerometer:(const struct Sample { double x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1;
-- (void)onAmbientPressure:(const struct Sample { double x1; struct { float x_2_1_1; float x_2_1_2; } x2; }*)arg1;
-- (void)onDeviceMotion:(const struct Sample { double x1; struct { struct { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_2_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; struct { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_2_1_3; struct { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_2_1_4; int x_2_1_5; bool x_2_1_6; bool x_2_1_7; bool x_2_1_8; } x2; bool x3; }*)arg1;
+- (void)onAccelerometer:(const struct Sample { double x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; }*)arg1;
+- (void)onAmbientPressure:(const struct Sample { double x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg1;
+- (void)onDeviceMotion:(const struct Sample { double x1; struct { struct { double x_1_2_1; double x_1_2_2; double x_1_2_3; double x_1_2_4; } x_2_1_1; struct { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_2_1_2; struct { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_2_1_3; struct { double x_4_2_1; double x_4_2_2; double x_4_2_3; } x_2_1_4; int x_2_1_5; bool x_2_1_6; bool x_2_1_7; bool x_2_1_8; } x2; bool x3; }*)arg1;
 - (void)onGeomagneticModel:(const struct { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; }*)arg1;
-- (void)onGyro:(const struct Sample { double x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; unsigned short x3; bool x4; }*)arg1;
-- (void)onMagnetometer:(const struct Sample { double x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1;
+- (void)onGyro:(const struct Sample { double x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; unsigned short x3; bool x4; }*)arg1;
+- (void)onMagnetometer:(const struct Sample { double x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; }*)arg1;
 - (void)rebuildGytt;
 - (void)setAccelerometerDataCallback:(int (*)arg1 info:(void*)arg2 interval:(double)arg3;
 - (void)setAccelerometerUpdateInterval:(double)arg1;
 - (void)setAccelerometerUpdateIntervalPrivate:(double)arg1;
 - (void)setAmbientPressureUpdateInterval:(double)arg1;
 - (void)setAmbientPressureUpdateIntervalPrivate:(double)arg1;
+- (void)setCaptureMode:(int)arg1;
 - (void)setDeviceMotionCallback:(int (*)arg1 info:(void*)arg2 interval:(double)arg3 fsync:(BOOL)arg4;
-- (void)setDeviceMotionCompassAlignmentCallback:(int (*)arg1 info:(void*)arg2;
-- (void)setDeviceMotionCompassDataCallback:(int (*)arg1 info:(void*)arg2;
 - (void)setDeviceMotionUpdateInterval:(double)arg1;
 - (void)setDeviceMotionUpdateIntervalPrivate:(double)arg1;
-- (void)setGyroBiasAndVarianceCallback:(int (*)arg1 info:(void*)arg2;
 - (void)setGyroDataCallback:(int (*)arg1 info:(void*)arg2 interval:(double)arg3;
 - (void)setGyroUpdateInterval:(double)arg1;
 - (void)setGyroUpdateIntervalPrivate:(double)arg1;
@@ -119,9 +115,9 @@
 - (void)startAmbientPressureUpdates;
 - (void)startAmbientPressureUpdatesPrivateToQueue:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)startAmbientPressureUpdatesToQueue:(id)arg1 withHandler:(id /* block */)arg2;
-- (void)startDeviceMotionLiteDebugUpdatesToQueue:(id)arg1 withHandler:(id /* block */)arg2;
-- (void)startDeviceMotionLiteFusedUpdatesToQueue:(id)arg1 withHandler:(id /* block */)arg2;
-- (void)startDeviceMotionLiteUpdatesUsingConfiguration:(struct { int x1; })arg1 toQueue:(id)arg2 withFusedHandler:(id /* block */)arg3 debugHandler:(id /* block */)arg4;
+- (void)startDeviceMotionLiteDebugUpdatesForDeviceID:(id)arg1 toQueue:(id)arg2 withHandler:(id /* block */)arg3;
+- (void)startDeviceMotionLiteFusedUpdatesForDeviceID:(id)arg1 toQueue:(id)arg2 withHandler:(id /* block */)arg3;
+- (void)startDeviceMotionLiteUpdatesForDeviceID:(id)arg1 usingConfiguration:(struct { int x1; })arg2 toQueue:(id)arg3 withFusedHandler:(id /* block */)arg4 debugHandler:(id /* block */)arg5;
 - (void)startDeviceMotionUpdates;
 - (void)startDeviceMotionUpdatesPrivateUsingReferenceFrame:(unsigned int)arg1 toQueue:(id)arg2 withHandler:(id /* block */)arg3;
 - (void)startDeviceMotionUpdatesToQueue:(id)arg1 withHandler:(id /* block */)arg2;
@@ -138,7 +134,7 @@
 - (void)stopAccelerometerUpdatesPrivate;
 - (void)stopAmbientPressureUpdates;
 - (void)stopAmbientPressureUpdatesPrivate;
-- (void)stopDeviceMotionLiteUpdates;
+- (void)stopDeviceMotionLiteUpdatesForDeviceID:(id)arg1;
 - (void)stopDeviceMotionUpdates;
 - (void)stopDeviceMotionUpdatesPrivate;
 - (void)stopGyroUpdates;

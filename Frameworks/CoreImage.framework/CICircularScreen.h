@@ -3,10 +3,10 @@
  */
 
 @interface CICircularScreen : CIFilter {
-    CIVector *inputCenter;
-    CIImage *inputImage;
-    NSNumber *inputSharpness;
-    NSNumber *inputWidth;
+    CIVector * inputCenter;
+    CIImage * inputImage;
+    NSNumber * inputSharpness;
+    NSNumber * inputWidth;
 }
 
 @property (nonatomic, retain) CIVector *inputCenter;

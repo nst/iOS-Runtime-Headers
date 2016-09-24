@@ -3,13 +3,13 @@
  */
 
 @interface OADGradientFill : OADFill {
-    int mFlipMode;
-    BOOL mIsFlipModeOverridden;
-    BOOL mIsRotateWithShapeOverridden;
-    BOOL mRotateWithShape;
-    OADShade *mShade;
-    NSArray *mStops;
-    OADRelativeRect *mTileRect;
+    int  mFlipMode;
+    BOOL  mIsFlipModeOverridden;
+    BOOL  mIsRotateWithShapeOverridden;
+    BOOL  mRotateWithShape;
+    OADShade * mShade;
+    NSArray * mStops;
+    OADRelativeRect * mTileRect;
 }
 
 + (id)defaultProperties;

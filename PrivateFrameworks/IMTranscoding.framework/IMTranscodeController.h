@@ -3,16 +3,19 @@
  */
 
 @interface IMTranscodeController : NSObject {
-    NSObject<OS_xpc_object> *_connection;
+    NSObject<OS_xpc_object> * _connection;
 }
 
 + (id)sharedInstance;
 
 - (BOOL)_connect;
 - (void)_disconnected;
-- (void)_transcodeFileTransferContents:(id)arg1 utiType:(id)arg2 allowUnfilteredUTIs:(id)arg3 target:(int)arg4 highQualityMaxByteSize:(unsigned long)arg5 lowQualityMaxByteSize:(unsigned long)arg6 maxDimension:(unsigned long)arg7 transcoderUserInfo:(id)arg8 representations:(int)arg9 retries:(int)arg10 completionBlock:(id /* block */)arg11;
+- (void)_transcodeFileTransferContents:(id)arg1 utiType:(id)arg2 allowUnfilteredUTIs:(id)arg3 target:(int)arg4 sizes:(id)arg5 maxDimension:(unsigned long)arg6 transcoderUserInfo:(id)arg7 representations:(int)arg8 retries:(int)arg9 completionBlock:(id /* block */)arg10;
+- (void)_transcodeFileTransferPayloadData:(id)arg1 balloonBundleID:(id)arg2 attachments:(id)arg3 retries:(unsigned int)arg4 fallBack:(BOOL)arg5 completionBlock:(id /* block */)arg6;
 - (void)dealloc;
 - (id)init;
-- (void)transcodeFileTransferContents:(id)arg1 utiType:(id)arg2 allowUnfilteredUTIs:(id)arg3 target:(int)arg4 highQualityMaxByteSize:(unsigned long)arg5 lowQualityMaxByteSize:(unsigned long)arg6 maxDimension:(unsigned long)arg7 transcoderUserInfo:(id)arg8 representations:(int)arg9 completionBlock:(id /* block */)arg10;
+- (void)transcodeFallbackFileTransferPayloadData:(id)arg1 balloonBundleID:(id)arg2 attachments:(id)arg3 completionBlock:(id /* block */)arg4;
+- (void)transcodeFileTransferContents:(id)arg1 utiType:(id)arg2 allowUnfilteredUTIs:(id)arg3 target:(int)arg4 sizes:(id)arg5 maxDimension:(unsigned long)arg6 transcoderUserInfo:(id)arg7 representations:(int)arg8 completionBlock:(id /* block */)arg9;
+- (void)transcodeLocalTransferPayloadData:(id)arg1 balloonBundleID:(id)arg2 completionBlock:(id /* block */)arg3;
 
 @end

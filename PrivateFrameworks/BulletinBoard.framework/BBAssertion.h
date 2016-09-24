@@ -3,15 +3,20 @@
  */
 
 @interface BBAssertion : NSObject {
-    BBZeroingWeakReference *_delegate;
-    NSString *_identifier;
-    unsigned int _transactionID;
+    <BBAssertionDelegate> * _delegate;
+    NSString * _identifier;
+    unsigned int  _transactionID;
 }
 
+@property (nonatomic) <BBAssertionDelegate> *delegate;
+
+- (void).cxx_destruct;
 - (void)dealloc;
+- (id)delegate;
 - (id)identifier;
 - (void)increaseOrIgnoreTransactionID:(unsigned int)arg1;
 - (id)initWithDelegate:(id)arg1 identifier:(id)arg2;
+- (void)setDelegate:(id)arg1;
 - (unsigned int)transactionID;
 
 @end

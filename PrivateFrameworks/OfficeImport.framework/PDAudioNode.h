@@ -3,7 +3,7 @@
  */
 
 @interface PDAudioNode : PDMediaNode {
-    BOOL mIsNarration;
+    BOOL  mIsNarration;
 }
 
 - (BOOL)isNarration;

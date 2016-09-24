@@ -3,8 +3,8 @@
  */
 
 @interface RadioTrackAdInfo : NSObject <NSSecureCoding> {
-    BOOL _gatewayAdSlot;
-    NSString *_slotIdentifier;
+    BOOL  _gatewayAdSlot;
+    NSString * _slotIdentifier;
 }
 
 @property (getter=isGatewayAdSlot, nonatomic, readonly) BOOL gatewayAdSlot;

@@ -3,14 +3,14 @@
  */
 
 @interface NSBundle : NSObject {
-    id _cfBundle;
-    unsigned int _flags;
-    id _initialPath;
-    id _lock;
-    Class _principalClass;
-    unsigned int _reserved2;
-    id _reserved3;
-    id _resolvedPath;
+    id  _cfBundle;
+    unsigned int  _flags;
+    id  _initialPath;
+    id  _lock;
+    Class  _principalClass;
+    unsigned int  _reserved2;
+    id  _reserved3;
+    id  _resolvedPath;
 }
 
 @property (readonly, copy) NSURL *appStoreReceiptURL;
@@ -19,6 +19,8 @@
 @property (readonly, copy) NSString *bundleIdentifier;
 @property (readonly, copy) NSString *bundlePath;
 @property (readonly, copy) NSURL *bundleURL;
+@property (nonatomic, readonly, copy) NSString *cx_displayName;
+@property (nonatomic, readonly) BOOL cx_hasVoIPBackgroundMode;
 @property (readonly, copy) NSString *developmentLocalization;
 @property (readonly, copy) NSArray *executableArchitectures;
 @property (readonly, copy) NSString *executablePath;
@@ -84,7 +86,6 @@
 - (id)executableArchitectures;
 - (id)executablePath;
 - (id)executableURL;
-- (void)finalize;
 - (id)findBundleResourceURLsCallingMethod:(SEL)arg1 passingTest:(id /* block */)arg2;
 - (id)infoDictionary;
 - (id)initWithPath:(id)arg1;
@@ -124,14 +125,19 @@
 
 // Image: /System/Library/Frameworks/AVKit.framework/AVKit
 
-+ (BOOL)mainBundleIsXcode;
-
 - (id)URLForMovieResource:(id)arg1;
-- (id)imageForResource:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (id)imageForResource:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
+
+// Image: /System/Library/Frameworks/CallKit.framework/CallKit
+
+- (id)cx_displayName;
+- (BOOL)cx_hasVoIPBackgroundMode;
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
 + (id)_mapkitBundle;
+
+- (id)_mapkit_localizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
@@ -143,9 +149,11 @@
 
 // Image: /System/Library/Frameworks/ReplayKit.framework/ReplayKit
 
-+ (id)_srFrameworkBundle;
-+ (id)_srLocalizedAppNameFromBundleID:(id)arg1;
-+ (id)_srLocalizedStringFromFrameworkBundleWithKey:(id)arg1;
++ (id)_rpFrameworkBundle;
++ (id)_rpLocalizedAppNameFromBundleID:(id)arg1;
++ (id)_rpLocalizedStringFromFrameworkBundleWithKey:(id)arg1 bundleID:(id)arg2;
+
+- (id)_rpLocalizedAppName;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
@@ -159,6 +167,16 @@
 
 - (id)dataForResourceName:(id)arg1;
 - (id)loadNibNamed:(id)arg1 owner:(id)arg2 options:(id)arg3;
+
+// Image: /System/Library/Frameworks/UserNotifications.framework/UserNotifications
+
++ (id)un_applicationBundle;
++ (id)un_safeBundleWithURL:(id)arg1;
+
+// Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
+
++ (id)vs_bundleForProcessIdentifier:(int)arg1;
++ (id)vs_frameworkBundle;
 
 // Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
 
@@ -204,7 +222,9 @@
 - (id)_gkLocalizedStringForKey:(id)arg1 defaultValue:(id)arg2 arguments:(id)arg3;
 - (id)_gkLocalizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3 language:(id)arg4;
 - (id)_gkPathForChallengeSound;
+- (id)_gkPathForImageWithName:(id)arg1;
 - (id)_gkPathForInviteSound;
+- (id)_gkPathForMessageImage;
 - (id)_gkPathForSoundWithName:(id)arg1;
 - (id)_gkPreferredLanguage;
 - (BOOL)_gkShouldAddQuickActions;
@@ -230,9 +250,12 @@
 
 + (id)mediaSocialBundle;
 
-// Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
+// Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
 
-+ (id)MCD_bundle;
++ (id)_navigationBundle;
++ (BOOL)_navigation_isRunningInSiri;
+
+- (id)_navigation_localizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
@@ -242,9 +265,21 @@
 
 - (id)PKSanitizedBundleIdentifier;
 
-// Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
+// Image: /System/Library/PrivateFrameworks/PersonaUI.framework/PersonaUI
 
-+ (id)radioUIBundle;
++ (id)pr_personaUIBundle;
+
+// Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
+
++ (id)px_PhotosUICoreFrameworkBundle;
+
+// Image: /System/Library/PrivateFrameworks/PlacesKit.framework/PlacesKit
+
++ (id)pk_PlacesKitFrameworkBundle;
+
+// Image: /System/Library/PrivateFrameworks/SAML.framework/SAML
+
++ (id)saml_frameworkBundle;
 
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 
@@ -305,14 +340,20 @@
 // Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
 
 + (id)accessibilityBundleWithLastPathComponent:(id)arg1;
++ (id)accessibilityInternalBundleWithLastPathComponent:(id)arg1;
 + (id)accessibilityLocalBundleWithLastPathComponent:(id)arg1;
 
 - (void)_accessibilityInitializeContainerLogic;
+- (void)_loadAXBundleForBundleOffMainThread;
 - (id)accessibilityBundlePath;
 
 // Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
 
 + (id)__vkBundle;
+
+// Image: /System/Library/PrivateFrameworks/VideosExtras.framework/VideosExtras
+
++ (id)videosExtrasBundle;
 
 // Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
 

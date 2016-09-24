@@ -3,8 +3,8 @@
  */
 
 @interface MRTelevisionManager : NSObject {
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    NSPointerArray *_televisionsPointerArray;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    NSPointerArray * _televisionsPointerArray;
 }
 
 @property (nonatomic, readonly) NSArray *allTelevisions;

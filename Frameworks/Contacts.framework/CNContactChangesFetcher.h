@@ -3,9 +3,9 @@
  */
 
 @interface CNContactChangesFetcher : NSObject {
-    NSSet *_identifiers;
-    NSSet *_keysToFetch;
-    BOOL _unify;
+    NSSet * _identifiers;
+    NSSet * _keysToFetch;
+    BOOL  _unify;
 }
 
 @property (nonatomic, retain) NSSet *identifiers;

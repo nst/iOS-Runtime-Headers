@@ -3,21 +3,25 @@
  */
 
 @interface BRCSharingAcceptFlowOperation : _BRCOperation <BRCForegroundClient, BRCOperationSubclass> {
-    NSArray *_acceptationFlow;
-    BRCPrivateLocalContainer *_aliasContainer;
-    BRCLocalContainer *_localContainer;
-    id _logSection;
-    BRCAccountSession *_session;
-    NSString *_shareDocumentFileProviderString;
-    NSURL *_shareDocumentURL;
-    CKShareID *_shareID;
-    CKShareInfo *_shareInfo;
-    NSURL *_shareURL;
-    BRCItemID *_sharedItemID;
-    unsigned int _stepIndex;
-    NSString *_unsaltedBookmarkData;
-    BRCUserNotification *_userNotification;
-    BRCXPCClient *_xpcClient;
+    BRCAcceptShareOperation * _acceptShareOpBlockingSyncDown;
+    NSArray * _acceptationFlow;
+    BRCPrivateAppLibrary * _aliasAppLibrary;
+    NSURL * _aliasURL;
+    NSString * _documentName;
+    BRCAppLibrary * _localAppLibrary;
+    NSObject<OS_dispatch_queue> * _queue;
+    BRCAccountSession * _session;
+    CKShare * _share;
+    NSString * _shareDocumentFileProviderString;
+    NSURL * _shareDocumentURL;
+    CKRecordID * _shareID;
+    CKShareMetadata * _shareMetadata;
+    NSURL * _shareURL;
+    BRCItemID * _sharedItemID;
+    unsigned int  _stepIndex;
+    NSString * _unsaltedBookmarkData;
+    <BRCUserNotifier> * _userNotification;
+    BRCXPCClient * _xpcClient;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -30,31 +34,50 @@
 + (void)_openShareURLInWebBrowser:(id)arg1 withReason:(id)arg2;
 + (void)_openiCloudSettings;
 + (id)_runningShareIDs;
++ (Class)userNotificationClass;
 
 - (void).cxx_destruct;
 - (void)_acceptShareURL;
-- (void)_createNecessaryContainers;
-- (void)_downloadDocument;
-- (void)_fetchShareInfo;
+- (void)_captureOpenInfoFromDocument:(id)arg1;
+- (void)_checkIfShouldWaitUntilDownloadCompletion;
+- (id)_createAcceptShareOperation;
+- (void)_createAliasInAppLibrary:(id)arg1 target:(id)arg2;
+- (void)_createSideFaultOnDisk;
+- (void)_endAcceptationFlow;
+- (void)_fetchShareMetadata;
+- (void)_isAccountRestricted;
 - (void)_isAppInstalled;
-- (void)_isAppProfileEnabled;
-- (BOOL)_isItemDownloaded;
+- (void)_isDocumentSharingSupported;
 - (BOOL)_isOwner;
 - (BOOL)_isOwnerOrShareAlreadyAccepted;
 - (void)_isURLWellFormed;
 - (void)_isUserSignedInToiCloudDrive;
-- (void)_openSharedDocument;
+- (BOOL)_isiWorkShare;
+- (void)_jumpToSelector:(SEL)arg1;
+- (void)_jumpToSelectorInQueue:(SEL)arg1;
+- (void)_openSharedDownloadedDocumentIfStillNeeded;
+- (void)_openSharedSideFaultFile;
+- (BOOL)_openiWorkAppPreemptively;
+- (void)_parseShareMetadata;
 - (void)_performNextStep;
+- (void)_performNextStepInQueue;
+- (void)_prepareToDownloadSharedDocument;
 - (void)_showGenericErrorAndFinish:(id)arg1;
-- (void)_showSharingOpenDialog;
-- (void)_waitForFaultToBeOnDisk;
-- (void)_waitForSharedItemToSyncDown;
+- (void)_showSharingJoinDialog;
+- (id)_stepNameAtIndex:(unsigned int)arg1 withPrefix:(id)arg2;
+- (void)_waitForFaultToBeOnDiskOnOwner;
+- (void)_waitForFaultToBeOnDiskOnRecipient;
+- (void)_waitForSharedItemToSyncDownOnOwner;
+- (void)_waitForSharedItemToSyncDownOnRecipient;
+- (id)createActivity;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)identifier;
+- (id)initWithShareMetadata:(id)arg1 client:(id)arg2 session:(id)arg3;
 - (id)initWithShareURL:(id)arg1 client:(id)arg2 session:(id)arg3;
+- (id)localClientZone;
 - (void)main;
+- (void)moveDialogToFront;
 - (BOOL)shouldRetryForError:(id)arg1;
-- (unsigned long long)startActivity;
 - (id)subclassableDescriptionWithContext:(id)arg1;
 
 @end

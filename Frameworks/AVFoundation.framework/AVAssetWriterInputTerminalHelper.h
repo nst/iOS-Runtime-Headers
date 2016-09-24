@@ -3,8 +3,8 @@
  */
 
 @interface AVAssetWriterInputTerminalHelper : AVAssetWriterInputHelper <AVAssetWriterInputMediaDataRequesterDelegate> {
-    BOOL _didRequestMediaDataOnce;
-    int _terminalStatus;
+    BOOL  _didRequestMediaDataOnce;
+    int  _terminalStatus;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,7 +12,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (BOOL)appendPixelBuffer:(struct __CVBuffer { }*)arg1 withPresentationTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
+- (BOOL)appendPixelBuffer:(struct __CVBuffer { }*)arg1 withPresentationTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg2;
 - (int)appendSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 error:(id*)arg2;
 - (BOOL)canStartRespondingToEachPassDescriptionReturningReason:(id*)arg1;
 - (id)initWithConfigurationState:(id)arg1;

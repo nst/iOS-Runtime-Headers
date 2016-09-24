@@ -3,10 +3,10 @@
  */
 
 @interface ICArchiveWriter : NSObject {
-    struct archive { } *_archive;
-    NSString *_basePath;
-    NSURL *_destinationURL;
-    BOOL _usesCompression;
+    struct archive { } * _archive;
+    NSString * _basePath;
+    NSURL * _destinationURL;
+    BOOL  _usesCompression;
 }
 
 @property (nonatomic, retain) NSString *basePath;

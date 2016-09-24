@@ -3,16 +3,16 @@
  */
 
 @interface NSAllDescendantPathsEnumerator : NSDirectoryEnumerator {
-    BOOL _padding;
-    NSArray *contents;
-    BOOL cross;
-    unsigned int depth;
-    NSFileAttributes *directoryAttributes;
-    unsigned int idx;
-    NSString *path;
-    NSString *pathToLastReportedItem;
-    NSString *prepend;
-    NSAllDescendantPathsEnumerator *under;
+    BOOL  _padding;
+    NSArray * contents;
+    BOOL  cross;
+    unsigned int  depth;
+    NSFileAttributes * directoryAttributes;
+    unsigned int  idx;
+    NSString * path;
+    NSString * pathToLastReportedItem;
+    NSString * prepend;
+    NSAllDescendantPathsEnumerator * under;
 }
 
 + (id)newWithPath:(id)arg1 prepend:(id)arg2 attributes:(id)arg3 cross:(BOOL)arg4 depth:(unsigned int)arg5;

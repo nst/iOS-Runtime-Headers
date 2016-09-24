@@ -3,9 +3,9 @@
  */
 
 @interface SUSubtitledButtonContent : NSObject {
-    NSString *_subtitle;
-    UIColor *_subtitleColor;
-    UIColor *_subtitleShadowColor;
+    NSString * _subtitle;
+    UIColor * _subtitleColor;
+    UIColor * _subtitleShadowColor;
 }
 
 @property (nonatomic, retain) NSString *subtitle;

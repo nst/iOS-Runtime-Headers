@@ -3,7 +3,7 @@
  */
 
 @interface SFAirDropTransferStateMachine : SFStateMachine {
-    BOOL _restoring;
+    BOOL  _restoring;
 }
 
 @property (nonatomic) BOOL restoring;

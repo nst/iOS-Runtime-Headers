@@ -7,10 +7,10 @@
         unsigned int supportsDirectionalControl : 1; 
         unsigned int supportsSpeakerSelection : 1; 
         unsigned int supportsVolumeControl : 1; 
-    } _has;
-    BOOL _supportsDirectionalControl;
-    BOOL _supportsSpeakerSelection;
-    BOOL _supportsVolumeControl;
+    }  _has;
+    BOOL  _supportsDirectionalControl;
+    BOOL  _supportsSpeakerSelection;
+    BOOL  _supportsVolumeControl;
 }
 
 @property (nonatomic) BOOL hasSupportsDirectionalControl;

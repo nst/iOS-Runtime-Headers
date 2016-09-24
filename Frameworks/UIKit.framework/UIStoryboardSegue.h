@@ -3,12 +3,12 @@
  */
 
 @interface UIStoryboardSegue : NSObject {
-    UIViewController *_destinationViewController;
-    NSString *_identifier;
-    id /* block */ _performHandler;
-    id /* block */ _prepareHandler;
-    id _sender;
-    UIViewController *_sourceViewController;
+    UIViewController * _destinationViewController;
+    NSString * _identifier;
+    id /* block */  _performHandler;
+    id /* block */  _prepareHandler;
+    id  _sender;
+    UIViewController * _sourceViewController;
 }
 
 @property (nonatomic, readonly) UIViewController *destinationViewController;

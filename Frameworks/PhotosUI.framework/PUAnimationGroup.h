@@ -3,10 +3,10 @@
  */
 
 @interface PUAnimationGroup : NSObject {
-    id /* block */ _completionHandler;
-    BOOL _paused;
-    NSMutableArray *_subAnimationGroups;
-    PUAnimationGroup *_superAnimationGroup;
+    id /* block */  _completionHandler;
+    BOOL  _paused;
+    NSMutableArray * _subAnimationGroups;
+    PUAnimationGroup * _superAnimationGroup;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;

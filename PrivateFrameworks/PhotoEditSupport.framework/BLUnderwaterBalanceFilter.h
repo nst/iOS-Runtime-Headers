@@ -3,22 +3,22 @@
  */
 
 @interface BLUnderwaterBalanceFilter : CIFilter {
-    CIVector *_inputAverageLinearColor;
-    NSNumber *_inputDepthStrength;
-    CIImage *_inputImage;
-    NSNumber *_inputWaterBlend;
-    float _lastDepthStrength;
-    float _lastWaterBlend;
-    BOOL _needsReprocess;
-    CIFilter *_underwaterAdditionFilter;
-    CIFilter *_underwaterBalanceFilter;
-    CIFilter *_underwaterColorMatrixIQFilter;
-    CIFilter *_underwaterColorMatrixRGB2YIQFilter;
-    CIFilter *_underwaterColorMatrixScaleFilter;
-    CIFilter *_underwaterColorMatrixYFilter;
-    CIFilter *_underwaterColorMatrixYIQ2RGBFilter;
-    CIFilter *_underwaterGamma1Filter;
-    CIFilter *_underwaterGamma2Filter;
+    CIVector * _inputAverageLinearColor;
+    NSNumber * _inputDepthStrength;
+    CIImage * _inputImage;
+    NSNumber * _inputWaterBlend;
+    double  _lastDepthStrength;
+    double  _lastWaterBlend;
+    BOOL  _needsReprocess;
+    CIFilter * _underwaterAdditionFilter;
+    CIFilter * _underwaterBalanceFilter;
+    CIFilter * _underwaterColorMatrixIQFilter;
+    CIFilter * _underwaterColorMatrixRGB2YIQFilter;
+    CIFilter * _underwaterColorMatrixScaleFilter;
+    CIFilter * _underwaterColorMatrixYFilter;
+    CIFilter * _underwaterColorMatrixYIQ2RGBFilter;
+    CIFilter * _underwaterGamma1Filter;
+    CIFilter * _underwaterGamma2Filter;
 }
 
 @property (nonatomic, copy) CIVector *inputAverageLinearColor;

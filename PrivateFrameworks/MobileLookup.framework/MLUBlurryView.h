@@ -3,11 +3,11 @@
  */
 
 @interface MLUBlurryView : UIView {
-    BOOL _hasActivated;
-    BOOL _shouldRasterizeForTransition;
+    BOOL  _hasActivated;
+    BOOL  _shouldRasterizeForTransition;
 }
 
-@property float blurRadius;
+@property double blurRadius;
 @property (nonatomic) BOOL shouldRasterizeForTransition;
 
 - (void)_activateBlurring;

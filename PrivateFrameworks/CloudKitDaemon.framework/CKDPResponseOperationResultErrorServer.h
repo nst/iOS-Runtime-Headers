@@ -5,14 +5,15 @@
 @interface CKDPResponseOperationResultErrorServer : PBCodable <NSCopying> {
     struct { 
         unsigned int type : 1; 
-    } _has;
-    int _type;
+    }  _has;
+    int  _type;
 }
 
 @property (nonatomic) BOOL hasType;
 @property (nonatomic) int type;
 
-- (id)_prettyDictionaryRepresentation;
+- (int)StringAsType:(id)arg1;
+- (id)_typeCKLogValue;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -25,6 +26,7 @@
 - (void)setHasType:(BOOL)arg1;
 - (void)setType:(int)arg1;
 - (int)type;
+- (id)typeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

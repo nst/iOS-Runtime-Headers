@@ -3,9 +3,9 @@
  */
 
 @interface UpdateAndReportServices : NSObject {
-    id /* block */ _block;
-    bool _report;
-    bool _update;
+    id /* block */  _block;
+    bool  _report;
+    bool  _update;
 }
 
 @property (copy) id /* block */ block;

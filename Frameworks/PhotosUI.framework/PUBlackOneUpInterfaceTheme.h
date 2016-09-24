@@ -7,6 +7,7 @@
 - (unsigned int)emptyPlaceholderStyle;
 - (int)photoBrowserBarStyle;
 - (id)photoBrowserChromeVisibleBackgroundColor;
+- (id)photoBrowserTitleViewTappableTextColor;
 - (id)photoBrowserTitleViewTextColor;
 - (id)playheadBackgroundColor;
 - (id)playheadColor;

@@ -3,11 +3,11 @@
  */
 
 @interface SFUCryptoOutputStream : NSObject <SFUOutputStream> {
-    <SFUOutputStream> *mBaseStream;
-    BOOL mComputeCrc32;
-    unsigned int mCrc32;
-    SFUCryptor *mCryptor;
-    BOOL mIsClosed;
+    <SFUOutputStream> * mBaseStream;
+    BOOL  mComputeCrc32;
+    unsigned int  mCrc32;
+    SFUCryptor * mCryptor;
+    BOOL  mIsClosed;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,7 +15,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-+ (unsigned long long)encodedLengthForDataLength:(unsigned long long)arg1 key:(id)arg2;
++ (unsigned int)encodedLengthForDataLength:(unsigned int)arg1 key:(id)arg2;
 
 - (BOOL)canCreateInputStream;
 - (BOOL)canSeek;
@@ -26,8 +26,8 @@
 - (id)initForEncryptionWithOutputStream:(id)arg1 key:(id)arg2;
 - (id)initForEncryptionWithOutputStream:(id)arg1 key:(id)arg2 computeCrc32:(BOOL)arg3;
 - (id)inputStream;
-- (long long)offset;
-- (void)seekToOffset:(long long)arg1 whence:(int)arg2;
+- (int)offset;
+- (void)seekToOffset:(int)arg1 whence:(int)arg2;
 - (void)writeBuffer:(const char *)arg1 size:(unsigned long)arg2;
 
 @end

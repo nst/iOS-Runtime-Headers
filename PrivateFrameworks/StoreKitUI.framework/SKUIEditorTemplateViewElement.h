@@ -3,7 +3,7 @@
  */
 
 @interface SKUIEditorTemplateViewElement : SKUIViewElement {
-    NSNumber *_contentId;
+    NSNumber * _contentId;
 }
 
 @property (nonatomic, readonly) NSNumber *contentId;

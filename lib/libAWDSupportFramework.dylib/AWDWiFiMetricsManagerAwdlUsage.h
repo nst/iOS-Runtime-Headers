@@ -3,23 +3,23 @@
  */
 
 @interface AWDWiFiMetricsManagerAwdlUsage : PBCodable <NSCopying> {
-    unsigned int _advertiseAddFilteredCount;
-    unsigned int _advertiseAddTotalCount;
-    unsigned int _advertiseDeleteFilteredCount;
-    unsigned int _advertiseDeleteTotalCount;
-    unsigned int _appRxBytes;
-    unsigned int _appTxBytes;
-    unsigned int _browseAddFilteredCount;
-    unsigned int _browseAddTotalCount;
-    unsigned int _browseDeleteFilteredCount;
-    unsigned int _browseDeleteTotalCount;
-    unsigned int _cachedPeersDifferentInfra;
-    unsigned int _cachedPeersNotAssociated;
-    unsigned int _cachedPeersOn24G;
-    unsigned int _cachedPeersOn5G;
-    unsigned int _cachedPeersOnDFS;
-    unsigned int _cachedPeersSameInfra;
-    unsigned int _flags;
+    unsigned int  _advertiseAddFilteredCount;
+    unsigned int  _advertiseAddTotalCount;
+    unsigned int  _advertiseDeleteFilteredCount;
+    unsigned int  _advertiseDeleteTotalCount;
+    unsigned int  _appRxBytes;
+    unsigned int  _appTxBytes;
+    unsigned int  _browseAddFilteredCount;
+    unsigned int  _browseAddTotalCount;
+    unsigned int  _browseDeleteFilteredCount;
+    unsigned int  _browseDeleteTotalCount;
+    unsigned int  _cachedPeersDifferentInfra;
+    unsigned int  _cachedPeersNotAssociated;
+    unsigned int  _cachedPeersOn24G;
+    unsigned int  _cachedPeersOn5G;
+    unsigned int  _cachedPeersOnDFS;
+    unsigned int  _cachedPeersSameInfra;
+    unsigned int  _flags;
     struct { 
         unsigned int noServiceIdleTime : 1; 
         unsigned int timestamp : 1; 
@@ -48,19 +48,19 @@
         unsigned int peerInfraChannel : 1; 
         unsigned int periodInMinutes : 1; 
         unsigned int selfInfraChannel : 1; 
-    } _has;
-    unsigned int _ifPacketFailures;
-    unsigned int _ifRxBytes;
-    unsigned int _ifTxBytes;
-    unsigned long long _noServiceIdleTime;
-    unsigned int _numOfCachedPeers;
-    unsigned int _numOfPeers;
-    unsigned int _peerInfraChannel;
-    unsigned int _periodInMinutes;
-    unsigned int _selfInfraChannel;
-    NSMutableArray *_services;
-    NSMutableArray *_states;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned int  _ifPacketFailures;
+    unsigned int  _ifRxBytes;
+    unsigned int  _ifTxBytes;
+    unsigned long long  _noServiceIdleTime;
+    unsigned int  _numOfCachedPeers;
+    unsigned int  _numOfPeers;
+    unsigned int  _peerInfraChannel;
+    unsigned int  _periodInMinutes;
+    unsigned int  _selfInfraChannel;
+    NSMutableArray * _services;
+    NSMutableArray * _states;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int advertiseAddFilteredCount;

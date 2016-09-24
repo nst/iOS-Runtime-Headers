@@ -3,8 +3,8 @@
  */
 
 @interface TRDeviceSetupLegacySetupActionAuthInfo : NSObject {
-    NSDictionary *_body;
-    NSDictionary *_headers;
+    NSDictionary * _body;
+    NSDictionary * _headers;
 }
 
 @property (nonatomic, readonly) NSDictionary *body;

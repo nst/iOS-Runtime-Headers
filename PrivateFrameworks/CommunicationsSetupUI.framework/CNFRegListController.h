@@ -3,11 +3,11 @@
  */
 
 @interface CNFRegListController : PSListController <CNFRegAccountAuthorizationDelegate, CNFRegChangeAccountPasswordDelegate, IMSystemMonitorListener> {
-    id /* block */ _appearBlock;
-    BOOL _appeared;
-    CNFRegController *_regController;
-    BOOL _shouldRerootPreferences;
-    BOOL _showingChildController;
+    id /* block */  _appearBlock;
+    BOOL  _appeared;
+    CNFRegController * _regController;
+    BOOL  _shouldRerootPreferences;
+    BOOL  _showingChildController;
 }
 
 @property (nonatomic, copy) id /* block */ appearBlock;

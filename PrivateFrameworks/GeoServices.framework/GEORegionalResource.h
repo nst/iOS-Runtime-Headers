@@ -3,25 +3,20 @@
  */
 
 @interface GEORegionalResource : PBCodable <NSCopying> {
-    NSMutableArray *_attributions;
+    NSMutableArray * _attributions;
     struct { 
         unsigned int x : 1; 
         unsigned int y : 1; 
         unsigned int z : 1; 
-    } _has;
-    NSMutableArray *_iconChecksums;
-    NSMutableArray *_icons;
-    struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; } *_tileRanges;
-    unsigned int _tileRangesCount;
-    unsigned int _tileRangesSpace;
-    struct { 
-        unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
-    } _validSubManifestVersions;
-    unsigned int _x;
-    unsigned int _y;
-    unsigned int _z;
+    }  _has;
+    NSMutableArray * _iconChecksums;
+    NSMutableArray * _icons;
+    struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; } * _tileRanges;
+    unsigned int  _tileRangesCount;
+    unsigned int  _tileRangesSpace;
+    unsigned int  _x;
+    unsigned int  _y;
+    unsigned int  _z;
 }
 
 @property (nonatomic, retain) NSMutableArray *attributions;
@@ -30,19 +25,20 @@
 @property (nonatomic) BOOL hasZ;
 @property (nonatomic, retain) NSMutableArray *iconChecksums;
 @property (nonatomic, retain) NSMutableArray *icons;
-@property (nonatomic, readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*tileRanges;
+@property (nonatomic, readonly) struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*tileRanges;
 @property (nonatomic, readonly) unsigned int tileRangesCount;
-@property (nonatomic, readonly) unsigned int*validSubManifestVersions;
-@property (nonatomic, readonly) unsigned int validSubManifestVersionsCount;
 @property (nonatomic) unsigned int x;
 @property (nonatomic) unsigned int y;
 @property (nonatomic) unsigned int z;
 
++ (Class)attributionType;
++ (Class)iconChecksumType;
++ (Class)iconType;
+
 - (void)addAttribution:(id)arg1;
 - (void)addIcon:(id)arg1;
 - (void)addIconChecksum:(id)arg1;
-- (void)addTileRange:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })arg1;
-- (void)addValidSubManifestVersion:(unsigned int)arg1;
+- (void)addTileRange:(struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })arg1;
 - (id)attributionAtIndex:(unsigned int)arg1;
 - (id)attributions;
 - (unsigned int)attributionsCount;
@@ -50,7 +46,6 @@
 - (void)clearIconChecksums;
 - (void)clearIcons;
 - (void)clearTileRanges;
-- (void)clearValidSubManifestVersions;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -75,17 +70,13 @@
 - (void)setHasZ:(BOOL)arg1;
 - (void)setIconChecksums:(id)arg1;
 - (void)setIcons:(id)arg1;
-- (void)setTileRanges:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)arg1 count:(unsigned int)arg2;
-- (void)setValidSubManifestVersions:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (void)setTileRanges:(struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)arg1 count:(unsigned int)arg2;
 - (void)setX:(unsigned int)arg1;
 - (void)setY:(unsigned int)arg1;
 - (void)setZ:(unsigned int)arg1;
-- (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })tileRangeAtIndex:(unsigned int)arg1;
-- (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)tileRanges;
+- (struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })tileRangeAtIndex:(unsigned int)arg1;
+- (struct GEOTileSetRegion { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)tileRanges;
 - (unsigned int)tileRangesCount;
-- (unsigned int)validSubManifestVersionAtIndex:(unsigned int)arg1;
-- (unsigned int*)validSubManifestVersions;
-- (unsigned int)validSubManifestVersionsCount;
 - (void)writeTo:(id)arg1;
 - (unsigned int)x;
 - (unsigned int)y;

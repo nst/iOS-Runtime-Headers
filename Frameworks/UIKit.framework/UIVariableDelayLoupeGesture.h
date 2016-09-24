@@ -3,7 +3,7 @@
  */
 
 @interface UIVariableDelayLoupeGesture : UILongPressGestureRecognizer {
-    UIResponder<UITextInput> *_textView;
+    UIResponder<UITextInput> * _textView;
 }
 
 @property UIResponder<UITextInput> *textView;

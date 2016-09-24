@@ -3,7 +3,7 @@
  */
 
 @interface MPStoreItemImportTrackData : ML3StoreItemTrackData {
-    NSArray *_importElements;
+    NSArray * _importElements;
 }
 
 @property (nonatomic, readonly) NSArray *importElements;

@@ -3,7 +3,7 @@
  */
 
 @interface VSRecognitionSpeakAction : VSRecognitionAction {
-    BOOL _shouldTerminate;
+    BOOL  _shouldTerminate;
 }
 
 - (int)completionType;

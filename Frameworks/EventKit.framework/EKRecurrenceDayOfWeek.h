@@ -3,8 +3,8 @@
  */
 
 @interface EKRecurrenceDayOfWeek : NSObject <NSCopying> {
-    int _dayOfTheWeek;
-    int _weekNumber;
+    int  _dayOfTheWeek;
+    int  _weekNumber;
 }
 
 @property (nonatomic, readonly) int dayOfTheWeek;

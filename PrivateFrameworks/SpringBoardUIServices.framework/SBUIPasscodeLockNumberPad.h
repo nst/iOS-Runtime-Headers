@@ -3,27 +3,30 @@
  */
 
 @interface SBUIPasscodeLockNumberPad : UIView <SBNumberPadDelegate> {
-    SBUIButton *_backspaceButton;
-    UIView *_bottomPaddingView;
-    SBUIButton *_cancelButton;
-    UIColor *_customBackgroundColor;
-    <SBUIPasscodeLockNumberPadDelegate> *_delegate;
-    UIControl<SBUIPasscodeNumberPadButton> *_downButton;
-    SBUIButton *_emergencyCallButton;
-    UIView *_leftPaddingView;
-    SBNumberPadWithDelegate *_numberPad;
-    UIView *_rightPaddingView;
-    BOOL _showsBackspaceButton;
-    BOOL _showsCancelButton;
-    BOOL _showsEmergencyCallButton;
-    BOOL _useLightStyle;
+    SBUIButton * _backspaceButton;
+    UIView * _bottomPaddingView;
+    SBUIButton * _cancelButton;
+    UIColor * _customBackgroundColor;
+    <SBUIPasscodeLockNumberPadDelegate> * _delegate;
+    UIControl<SBUIPasscodeNumberPadButton> * _downButton;
+    SBUIButton * _emergencyCallButton;
+    UIView * _leftPaddingView;
+    SBNumberPadWithDelegate * _numberPad;
+    UIView * _rightPaddingView;
+    BOOL  _showsBackspaceButton;
+    BOOL  _showsCancelButton;
+    BOOL  _showsEmergencyCallButton;
+    BOOL  _useLightStyle;
 }
 
+@property (nonatomic, readonly) SBUIButton *backspaceButton;
 @property (nonatomic, readonly) NSArray *buttons;
+@property (nonatomic, readonly) SBUIButton *cancelButton;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SBUIPasscodeLockNumberPadDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIControl<SBUIPasscodeNumberPadButton> *downButton;
+@property (nonatomic, readonly) SBUIButton *emergencyCallButton;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL showsBackspaceButton;
 @property (nonatomic) BOOL showsCancelButton;
@@ -31,8 +34,8 @@
 @property (readonly) Class superclass;
 
 + (id)_buttonForCharacter:(unsigned int)arg1 withLightStyle:(BOOL)arg2;
-+ (struct CGSize { float x1; float x2; })_inputButtonCircleSize;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_inputButtonCircleSpacing;
++ (struct CGSize { double x1; double x2; })_inputButtonCircleSize;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_inputButtonCircleSpacing;
 
 - (void).cxx_destruct;
 - (void)_backspaceButtonHit;
@@ -46,9 +49,12 @@
 - (void)_numberPadTouchDrag:(id)arg1 forEvent:(id)arg2;
 - (void)_numberPadTouchUp:(id)arg1 forEvent:(id)arg2;
 - (void)_setLuminosityBoost:(float)arg1;
+- (id)backspaceButton;
 - (id)buttons;
+- (id)cancelButton;
 - (id)delegate;
 - (id)downButton;
+- (id)emergencyCallButton;
 - (id)initWithDefaultSizeAndLightStyle:(BOOL)arg1;
 - (void)setBackgroundAlpha:(float)arg1;
 - (void)setCustomBackgroundColor:(id)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface MFMessageStore : NSObject <NSCopying> {
-    MFMessageStoreObjectCache *_objectCache;
-    NSMutableSet *_uniqueStrings;
+    MFMessageStoreObjectCache * _objectCache;
+    NSMutableSet * _uniqueStrings;
 }
 
 @property (nonatomic, readonly, retain) MFMessageStoreObjectCache *objectCache;
@@ -21,6 +21,7 @@
 - (id)_cachedHeaderDataForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
 - (id)_cachedHeadersForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
 - (void)_deleteCachedBodyForMessage:(id)arg1;
+- (id)_downloadHeadersForMessages:(id)arg1;
 - (id)_fetchBodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id*)arg2 downloadIfNecessary:(BOOL)arg3 partial:(BOOL*)arg4;
 - (void)_flushAllCaches;
 - (void)_flushAllMessageData;

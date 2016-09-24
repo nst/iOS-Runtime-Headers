@@ -3,18 +3,19 @@
  */
 
 @interface PUSessionInfo : NSObject <PUPhotoSelectionManagerDelegate> {
-    id /* block */ _bannerGenerator;
-    NSString *_localizedPrompt;
-    NSPointerArray *_observers;
-    PUPhotoSelectionManager *_photoSelectionManager;
-    int _promptLocation;
-    BOOL _selectingAssets;
-    BOOL _selectingTargetAlbum;
-    struct NSObject { Class x1; } *_sourceAlbum;
-    int _status;
-    struct NSObject { Class x1; } *_targetAlbum;
-    BOOL _targetAlbumIsNewLocalAlbum;
-    NSOrderedSet *_transferredAssets;
+    id /* block */  _bannerGenerator;
+    NSString * _localizedPrompt;
+    NSPointerArray * _observers;
+    PUPhotoSelectionManager * _photoSelectionManager;
+    int  _promptLocation;
+    BOOL  _selectingAssets;
+    BOOL  _selectingTargetAlbum;
+    struct NSObject { Class x1; } * _sourceAlbum;
+    int  _status;
+    struct NSObject { Class x1; } * _targetAlbum;
+    BOOL  _targetAlbumIsNewLocalAlbum;
+    NSString * _targetAlbumName;
+    NSOrderedSet * _transferredAssets;
 }
 
 @property (nonatomic, copy) id /* block */ bannerGenerator;
@@ -31,6 +32,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSObject<PLAlbumProtocol> *targetAlbum;
 @property (nonatomic) BOOL targetAlbumIsNewLocalAlbum;
+@property (nonatomic, retain) NSString *targetAlbumName;
 @property (nonatomic, copy) NSOrderedSet *transferredAssets;
 
 - (void).cxx_destruct;
@@ -53,11 +55,13 @@
 - (void)setStatus:(int)arg1;
 - (void)setTargetAlbum:(struct NSObject { Class x1; }*)arg1;
 - (void)setTargetAlbumIsNewLocalAlbum:(BOOL)arg1;
+- (void)setTargetAlbumName:(id)arg1;
 - (void)setTransferredAssets:(id)arg1;
 - (struct NSObject { Class x1; }*)sourceAlbum;
 - (int)status;
 - (struct NSObject { Class x1; }*)targetAlbum;
 - (BOOL)targetAlbumIsNewLocalAlbum;
+- (id)targetAlbumName;
 - (id)transferredAssets;
 
 @end

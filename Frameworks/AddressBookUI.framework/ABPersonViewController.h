@@ -3,16 +3,16 @@
  */
 
 @interface ABPersonViewController : UIViewController <AFContextProvider, UIViewControllerRestoration> {
-    ABPersonTableViewActionsDelegate *_actionsDelegate;
-    BOOL _allowsContactBlocking;
-    ABContactViewController *_contactViewController;
-    ABPersonTableViewDataSource *_dataSource;
-    NSTimer *_editAnimationTimer;
-    id _helper;
-    id _internal;
-    BOOL _internal2;
-    <ABPersonViewControllerDelegate> *_personViewDelegate;
-    ABPersonTableViewSharingDelegate *_sharingDelegate;
+    ABPersonTableViewActionsDelegate * _actionsDelegate;
+    BOOL  _allowsContactBlocking;
+    ABContactViewController * _contactViewController;
+    ABPersonTableViewDataSource * _dataSource;
+    NSTimer * _editAnimationTimer;
+    id  _helper;
+    id  _internal;
+    BOOL  _internal2;
+    <ABPersonViewControllerDelegate> * _personViewDelegate;
+    ABPersonTableViewSharingDelegate * _sharingDelegate;
 }
 
 @property (nonatomic, readonly) ABPersonTableViewActionsDelegate *actionsDelegate;
@@ -66,7 +66,7 @@
 
 - (BOOL)_allowsAutorotation;
 - (void)_editAnimationTimerFired:(id)arg1;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; int x7; }*)arg1;
 - (void)_handleLocalChange:(struct __CFDictionary { }*)arg1;
 - (void)_removeContextProviderOnMainThread;
 - (BOOL)_updateAllDataForExternalChange;

@@ -3,8 +3,8 @@
  */
 
 @interface BYBuddyDaemonController : NSObject {
-    NSXPCConnection *_connection;
-    NSLock *_connectionLock;
+    NSXPCConnection * _connection;
+    NSLock * _connectionLock;
 }
 
 - (void).cxx_destruct;

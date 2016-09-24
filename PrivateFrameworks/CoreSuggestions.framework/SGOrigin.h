@@ -3,24 +3,26 @@
  */
 
 @interface SGOrigin : NSObject <NSCopying, NSSecureCoding> {
-    NSArray *_bcc;
-    NSArray *_cc;
-    NSString *_contextSnippet;
+    NSArray * _bcc;
+    NSString * _bundleId;
+    NSArray * _cc;
+    NSString * _contextSnippet;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _contextSnippetRange;
-    NSDate *_date;
-    NSString *_externalKey;
-    SGSimpleNamedEmailAddress *_from;
-    BOOL _fromForwardedMessage;
-    NSString *_sourceKey;
-    NSString *_title;
-    NSArray *_to;
-    unsigned int _type;
+    }  _contextSnippetRange;
+    NSDate * _date;
+    NSString * _externalKey;
+    BOOL  _fromForwardedMessage;
+    CSPerson * _fromPerson;
+    NSString * _sourceKey;
+    NSString * _title;
+    NSArray * _to;
+    unsigned int  _type;
 }
 
 @property (nonatomic, readonly) NSArray *bcc;
+@property (nonatomic, readonly) NSString *bundleId;
 @property (nonatomic, readonly) NSArray *cc;
 @property (nonatomic, readonly) NSString *contextSnippet;
 @property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } contextSnippetRange;
@@ -28,6 +30,7 @@
 @property (nonatomic, readonly) NSString *externalKey;
 @property (nonatomic, readonly) SGSimpleNamedEmailAddress *from;
 @property (getter=isFromForwardedMessage, readonly) BOOL fromForwardedMessage;
+@property (nonatomic, readonly) CSPerson *fromPerson;
 @property (nonatomic, readonly) NSString *sourceKey;
 @property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) NSArray *to;
@@ -36,11 +39,13 @@
 
 // Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
 
++ (id)originWithType:(unsigned int)arg1 sourceKey:(id)arg2 externalKey:(id)arg3 bundleId:(id)arg4 fromForwardedMessage:(BOOL)arg5;
 + (id)originWithType:(unsigned int)arg1 sourceKey:(id)arg2 externalKey:(id)arg3 fromForwardedMessage:(BOOL)arg4;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bcc;
+- (id)bundleId;
 - (id)cc;
 - (id)contextSnippet;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })contextSnippetRange;
@@ -49,10 +54,11 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)externalKey;
 - (id)from;
+- (id)fromPerson;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithType:(unsigned int)arg1 sourceKey:(id)arg2 externalKey:(id)arg3 fromForwardedMessage:(BOOL)arg4;
+- (id)initWithType:(unsigned int)arg1 sourceKey:(id)arg2 externalKey:(id)arg3 bundleId:(id)arg4 fromForwardedMessage:(BOOL)arg5;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToOrigin:(id)arg1;
 - (BOOL)isFromForwardedMessage;
@@ -64,12 +70,15 @@
 
 // Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
 
++ (id)originForDuplicateKey:(id)arg1 entity:(id)arg2 parent:(id)arg3;
 + (id)originForDuplicateKey:(id)arg1 sourceKey:(id)arg2 store:(id)arg3;
++ (unsigned int)originTypeForEntityType:(int)arg1;
 
-- (void)addDetailsFromOriginatingCalendarEntity:(id)arg1 store:(id)arg2;
-- (void)addDetailsFromOriginatingContactEntity:(id)arg1 store:(id)arg2;
-- (void)addDetailsFromOriginatingEmailEntity:(id)arg1 store:(id)arg2;
+- (void)addDetailsFromOriginatingCalendarEntity:(id)arg1;
+- (void)addDetailsFromOriginatingContactEntity:(id)arg1;
 - (void)addDetailsFromOriginatingGenericEntity:(id)arg1;
+- (void)addDetailsFromOriginatingInteractionEntity:(id)arg1;
+- (void)addDetailsFromOriginatingMessageEntity:(id)arg1;
 - (void)addDetailsFromParticipantsOfEntity:(id)arg1;
 - (void)addSnippetIfNotExistsFromContentOfEntity:(id)arg1;
 

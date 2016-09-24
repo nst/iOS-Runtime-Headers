@@ -3,8 +3,8 @@
  */
 
 @interface MusicMyMusicViewController : SKUIScrollingSegmentedController <MusicClientContextConsuming, SKUIProxyScrollViewDelegate, SKUITabBarItemRootViewController> {
-    SKUIProxyScrollView *_proxyScrollView;
-    MusicLibraryTopBarController *_topBarController;
+    SKUIProxyScrollView * _proxyScrollView;
+    MusicLibraryTopBarController * _topBarController;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

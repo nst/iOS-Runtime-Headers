@@ -2,35 +2,30 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicMediaProductHeaderContentViewController : UIViewController <MusicClientContextConsuming, MusicEntityPlaybackStatusControllerObserving, MusicEntityProductHeaderLockupViewDelegate, MusicMediaDetailHeaderContentViewController> {
-    MusicContextualLibraryUpdateAlertAction *_addRemoveLibraryAlertAction;
-    NSArray *_addRemoveNotificationObservers;
-    BOOL _allowsEditing;
-    MusicClientContext *_clientContext;
-    <MusicEntityProviding> *_containerEntityProvider;
-    MusicEntityValueContext *_containerEntityValueContext;
-    <MusicEntityProviding> *_contextualActionsOverrideTracklistEntityProvider;
-    <MusicMediaProductHeaderContentViewControllerDelegate> *_delegate;
-    struct MusicEntityDownloadInformation { 
-        int downloadStatus; 
-        float downloadProgress; 
-    } _downloadInformation;
-    UIImage *_editedContentArtworkImage;
-    MusicHairlineView *_hairlineView;
-    BOOL _hairlineVisible;
-    MusicContextualLibraryUpdateAlertAction *_keepLocalAlertAction;
-    NSString *_lockupArtworkProperty;
-    MusicMediaDetailTintInformation *_mediaDetailTintInformation;
-    BOOL _needToMakeTitleFirstResponder;
-    MusicEntityPlaybackStatusController *_playbackStatusController;
-    MPAVController *_player;
-    int _presentationSource;
-    MusicEntityViewProductHeaderLockupContentDescriptor *_productHeaderLockupContentDecriptor;
-    MusicEntityProductHeaderLockupView *_productHeaderLockupView;
-    BOOL _shouldDelayTransitionProgress;
-    BOOL _trailingSeparatorInsetFollowsLayoutInsets;
-    float _transitionProgress;
-    BOOL _wantsRefreshActivityIndicator;
+@interface MusicMediaProductHeaderContentViewController : UIViewController <MusicClientContextConsuming, MusicEntityProductHeaderLockupViewDelegate, MusicMediaDetailHeaderContentViewController> {
+    MusicContextualLibraryUpdateAlertAction * _addRemoveLibraryAlertAction;
+    NSArray * _addRemoveNotificationObservers;
+    BOOL  _allowsEditing;
+    MusicClientContext * _clientContext;
+    <MusicEntityProviding> * _containerEntityProvider;
+    MusicEntityValueContext * _containerEntityValueContext;
+    <MusicEntityProviding> * _contextualActionsOverrideTracklistEntityProvider;
+    <MusicMediaProductHeaderContentViewControllerDelegate> * _delegate;
+    UIImage * _editedContentArtworkImage;
+    MusicHairlineView * _hairlineView;
+    BOOL  _hairlineVisible;
+    MusicContextualLibraryUpdateAlertAction * _keepLocalAlertAction;
+    NSString * _lockupArtworkProperty;
+    MusicMediaDetailTintInformation * _mediaDetailTintInformation;
+    BOOL  _needToMakeTitleFirstResponder;
+    MPAVController * _player;
+    int  _presentationSource;
+    MusicEntityViewProductHeaderLockupContentDescriptor * _productHeaderLockupContentDecriptor;
+    MusicEntityProductHeaderLockupView * _productHeaderLockupView;
+    BOOL  _shouldDelayTransitionProgress;
+    BOOL  _trailingSeparatorInsetFollowsLayoutInsets;
+    double  _transitionProgress;
+    BOOL  _wantsRefreshActivityIndicator;
 }
 
 @property (nonatomic, readonly) MusicEntityValueContext *_containerEntityValueContext;
@@ -41,7 +36,6 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MusicMediaProductHeaderContentViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) struct MusicEntityDownloadInformation { int x1; float x2; } downloadInformation;
 @property (nonatomic, readonly, copy) NSString *editableText;
 @property (nonatomic, retain) UIImage *editedContentArtworkImage;
 @property (getter=isHairlineVisible, nonatomic) BOOL hairlineVisible;
@@ -65,19 +59,17 @@
 - (id)_containerEntityValueContext;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)_contentTasteControllerDidChangeNotification:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_hairlineViewFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_hairlineViewFrame;
 - (id)_loadProductHeaderLockupContentDescriptor;
 - (void)_presentContextualActionsFromButton:(id)arg1;
 - (id)_productHeaderLockupContentDescriptor;
 - (void)_reloadAddRemoveLibraryAndKeepLocalActions;
 - (void)_reloadContainerEntityValueContextProperties;
-- (void)_reloadDownloadProgressButtonState;
-- (void)_setContentOverlayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)_setContentOverlayInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)_updateContentTaste;
 - (void)_updateHairline;
 - (void)_updateHairlineLayoutInsets;
 - (void)_updateNavigationTitle;
-- (void)_updatePlaybackStatusForLockupView;
 - (void)_updatePreferredContentSize;
 - (void)_updateProductHeaderLockupProperties;
 - (BOOL)allowsEditing;
@@ -86,7 +78,6 @@
 - (id)contextualActionsOverrideTracklistEntityProvider;
 - (void)dealloc;
 - (id)delegate;
-- (struct MusicEntityDownloadInformation { int x1; float x2; })downloadInformation;
 - (id)editableText;
 - (id)editedContentArtworkImage;
 - (id)initWithContainerEntityProvider:(id)arg1 presentationSource:(int)arg2;
@@ -95,7 +86,6 @@
 - (void)makeEditableTitleBecomeFirstResponder;
 - (id)mediaDetailTintInformation;
 - (void)music_viewInheritedLayoutInsetsDidChange;
-- (void)playbackStatusControllerPlaybackStatusDidChange:(id)arg1;
 - (int)presentationSource;
 - (void)productHeaderLockupView:(id)arg1 didSelectCameraButton:(id)arg2;
 - (void)productHeaderLockupView:(id)arg1 didSelectPlayButtonAction:(unsigned int)arg2;
@@ -111,7 +101,6 @@
 - (void)setClientContext:(id)arg1;
 - (void)setContextualActionsOverrideTracklistEntityProvider:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDownloadInformation:(struct MusicEntityDownloadInformation { int x1; float x2; })arg1;
 - (void)setEditedContentArtworkImage:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHairlineVisible:(BOOL)arg1;

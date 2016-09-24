@@ -3,15 +3,15 @@
  */
 
 @interface AVCaptureFileOutput : AVCaptureOutput {
-    AVCaptureFileOutputInternal *_fileOutputInternal;
+    AVCaptureFileOutputInternal * _fileOutputInternal;
 }
 
-@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } maxRecordedDuration;
-@property (nonatomic) long long maxRecordedFileSize;
-@property (nonatomic) long long minFreeDiskSpaceLimit;
+@property (nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } maxRecordedDuration;
+@property (nonatomic) int maxRecordedFileSize;
+@property (nonatomic) int minFreeDiskSpaceLimit;
 @property (nonatomic, readonly) NSURL *outputFileURL;
-@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } recordedDuration;
-@property (nonatomic, readonly) long long recordedFileSize;
+@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } recordedDuration;
+@property (nonatomic, readonly) int recordedFileSize;
 @property (getter=isRecording, nonatomic, readonly) BOOL recording;
 
 + (void)initialize;
@@ -20,18 +20,18 @@
 - (id)init;
 - (BOOL)isRecording;
 - (BOOL)isRecordingPaused;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })maxRecordedDuration;
-- (long long)maxRecordedFileSize;
-- (long long)minFreeDiskSpaceLimit;
+- (struct { int x1; int x2; unsigned int x3; int x4; })maxRecordedDuration;
+- (int)maxRecordedFileSize;
+- (int)minFreeDiskSpaceLimit;
 - (id)outputFileURL;
 - (void)pauseRecording;
 - (BOOL)pausesRecordingOnInterruption;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })recordedDuration;
-- (long long)recordedFileSize;
+- (struct { int x1; int x2; unsigned int x3; int x4; })recordedDuration;
+- (int)recordedFileSize;
 - (void)resumeRecording;
-- (void)setMaxRecordedDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (void)setMaxRecordedFileSize:(long long)arg1;
-- (void)setMinFreeDiskSpaceLimit:(long long)arg1;
+- (void)setMaxRecordedDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)setMaxRecordedFileSize:(int)arg1;
+- (void)setMinFreeDiskSpaceLimit:(int)arg1;
 - (void)setPausesRecordingOnInterruption:(BOOL)arg1;
 - (void)startRecordingToOutputFileURL:(id)arg1 recordingDelegate:(id)arg2;
 - (void)stopRecording;

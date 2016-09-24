@@ -3,25 +3,25 @@
  */
 
 @interface SKUIPanelDocumentViewController : SKUIViewController <SKUIArtworkRequestDelegate, SKUIDocumentViewController, SKUILayoutCacheDelegate> {
-    UIImageView *_backgroundImageView;
-    BOOL _didAttemptBecomeFirstResponder;
+    UIImageView * _backgroundImageView;
+    BOOL  _didAttemptBecomeFirstResponder;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _keyboardFrame;
-    int _lastContentWidth;
-    SKUIViewElementLayoutContext *_layoutContext;
-    SKUIMetricsImpressionSession *_metricsImpressionSession;
-    SKUIPanelView *_panelView;
-    UIScrollView *_scrollView;
-    SKUIPanelTemplateViewElement *_templateElement;
-    SKUILayoutCache *_textLayoutCache;
+    }  _keyboardFrame;
+    int  _lastContentWidth;
+    SKUIViewElementLayoutContext * _layoutContext;
+    SKUIMetricsImpressionSession * _metricsImpressionSession;
+    SKUIPanelView * _panelView;
+    UIScrollView * _scrollView;
+    SKUIPanelTemplateViewElement * _templateElement;
+    SKUILayoutCache * _textLayoutCache;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -39,7 +39,7 @@
 - (void)_layoutScrollView;
 - (void)_reloadBackgroundImageView;
 - (void)_reloadContentSize;
-- (void)_reloadPanelViewWithScrollViewSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_reloadPanelViewWithScrollViewSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_requestPanelViewLayoutWithContentWidth:(int)arg1 forced:(BOOL)arg2;
 - (id)_templateBackgroundColor;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
@@ -56,6 +56,6 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

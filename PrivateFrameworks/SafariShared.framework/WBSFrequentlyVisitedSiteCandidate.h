@@ -3,12 +3,12 @@
  */
 
 @interface WBSFrequentlyVisitedSiteCandidate : NSObject {
-    WBSHistoryItem *_historyItem;
-    float _score;
+    WBSHistoryItem * _historyItem;
+    double  _score;
 }
 
 @property (nonatomic, readonly) WBSHistoryItem *historyItem;
-@property (nonatomic, readonly) float score;
+@property (nonatomic, readonly) double score;
 
 - (void).cxx_destruct;
 - (id)historyItem;

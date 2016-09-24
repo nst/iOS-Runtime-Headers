@@ -3,14 +3,14 @@
  */
 
 @interface _NSCachedAttributedString : NSMutableAttributedString {
-    long _allocedRunsSize;
-    NSAttributeDictionary *_baseAttributes;
-    id _contents;
-    unsigned long _hashValue;
-    long _length;
-    long _numHits;
-    long _numRuns;
-    struct { id x1; } *_runs;
+    long  _allocedRunsSize;
+    NSAttributeDictionary * _baseAttributes;
+    id  _contents;
+    unsigned long  _hashValue;
+    long  _length;
+    long  _numHits;
+    long  _numRuns;
+    struct { id x1; } * _runs;
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
@@ -26,6 +26,7 @@
 - (id)copyCachedInstance;
 - (void)dealloc;
 - (void)finalize;
+- (BOOL)hasColorGlyphsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithAttributedString:(id)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface OITSUDurationFormat : NSObject <NSCopying, TSUDataFormat> {
-    NSString *mFormat;
-    NSString *mName;
+    NSString * mFormat;
+    NSString * mName;
 }
 
 @property (readonly, copy) NSString *debugDescription;

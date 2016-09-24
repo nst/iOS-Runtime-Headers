@@ -3,9 +3,9 @@
  */
 
 @interface YTCaptionsRequest : YTXMLHTTPRequest {
-    NSMutableArray *_captions;
-    <YTCaptionsRequestDelegate> *_delegate;
-    YTVideo *_video;
+    NSMutableArray * _captions;
+    <YTCaptionsRequestDelegate> * _delegate;
+    YTVideo * _video;
 }
 
 - (void)_requestCaptionsFromURL:(id)arg1;

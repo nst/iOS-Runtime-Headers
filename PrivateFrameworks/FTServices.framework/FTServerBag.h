@@ -3,7 +3,7 @@
  */
 
 @interface FTServerBag : NSObject {
-    int _type;
+    int  _type;
 }
 
 @property (readonly) BOOL allowSelfSignedCertificates;

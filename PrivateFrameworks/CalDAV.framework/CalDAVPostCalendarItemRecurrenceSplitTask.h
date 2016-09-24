@@ -3,16 +3,16 @@
  */
 
 @interface CalDAVPostCalendarItemRecurrenceSplitTask : CoreDAVPropertyFindBaseTask {
-    CoreDAVResponseItem *_createdResponseItem;
-    BOOL _isAllDay;
-    BOOL _isFloating;
-    NSURL *_postURLWithQuery;
-    NSString *_previousETag;
-    NSString *_previousScheduleTag;
-    NSDate *_recurrenceDate;
-    NSURL *_resourceURL;
-    NSString *_uidForCreatedSeries;
-    CoreDAVResponseItem *_updatedResponseItem;
+    CoreDAVResponseItem * _createdResponseItem;
+    BOOL  _isAllDay;
+    BOOL  _isFloating;
+    NSURL * _postURLWithQuery;
+    NSString * _previousETag;
+    NSString * _previousScheduleTag;
+    NSDate * _recurrenceDate;
+    NSURL * _resourceURL;
+    NSString * _uidForCreatedSeries;
+    CoreDAVResponseItem * _updatedResponseItem;
 }
 
 @property (nonatomic, retain) CoreDAVResponseItem *createdResponseItem;

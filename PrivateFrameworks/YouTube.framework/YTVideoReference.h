@@ -3,9 +3,9 @@
  */
 
 @interface YTVideoReference : NSObject {
-    NSURL *_contentURL;
-    unsigned int _duration;
-    int _profile;
+    NSURL * _contentURL;
+    unsigned int  _duration;
+    int  _profile;
 }
 
 - (id)archiveDictionary;

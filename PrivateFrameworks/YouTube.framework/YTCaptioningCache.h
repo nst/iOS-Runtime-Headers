@@ -3,11 +3,11 @@
  */
 
 @interface YTCaptioningCache : NSObject <YTCaptionTrackRequestDelegate, YTCaptionsRequestDelegate> {
-    NSMutableDictionary *_cache;
-    NSMutableArray *_captionTrackQueue;
-    YTCaptionTrackRequest *_captionTrackRequest;
-    YTCaptionsRequest *_captionsRequest;
-    NSMutableArray *_videoQueue;
+    NSMutableDictionary * _cache;
+    NSMutableArray * _captionTrackQueue;
+    YTCaptionTrackRequest * _captionTrackRequest;
+    YTCaptionsRequest * _captionsRequest;
+    NSMutableArray * _videoQueue;
 }
 
 + (BOOL)closedCaptionsEnabled;

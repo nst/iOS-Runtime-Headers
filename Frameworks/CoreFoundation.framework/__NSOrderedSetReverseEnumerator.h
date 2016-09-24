@@ -3,8 +3,8 @@
  */
 
 @interface __NSOrderedSetReverseEnumerator : NSEnumerator {
-    unsigned int _idx;
-    id _obj;
+    unsigned int  _idx;
+    id  _obj;
 }
 
 - (void)dealloc;

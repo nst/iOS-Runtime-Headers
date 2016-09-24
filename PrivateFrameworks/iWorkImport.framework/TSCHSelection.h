@@ -3,8 +3,8 @@
  */
 
 @interface TSCHSelection : TSKSelection {
-    TSCHChartDrawableInfo *mInfo;
-    NSArray *mPaths;
+    TSCHChartDrawableInfo * mInfo;
+    NSArray * mPaths;
 }
 
 @property (nonatomic, readonly, retain) TSCHChartDrawableInfo *chartInfo;

@@ -3,10 +3,10 @@
  */
 
 @interface CIVortexDistortion : CIFilter {
-    NSNumber *inputAngle;
-    CIVector *inputCenter;
-    CIImage *inputImage;
-    NSNumber *inputRadius;
+    NSNumber * inputAngle;
+    CIVector * inputCenter;
+    CIImage * inputImage;
+    NSNumber * inputRadius;
 }
 
 @property (nonatomic, retain) NSNumber *inputAngle;

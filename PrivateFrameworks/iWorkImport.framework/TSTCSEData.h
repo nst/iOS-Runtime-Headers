@@ -3,7 +3,7 @@
  */
 
 @interface TSTCSEData : NSObject {
-    NSMutableDictionary *_hashesToNodeSets;
+    NSMutableDictionary * _hashesToNodeSets;
     struct unordered_map<TSTExpressionNode *, TSTCSENodeData, std::__1::hash<TSTExpressionNode *>, std::__1::equal_to<TSTExpressionNode *>, std::__1::allocator<std::__1::pair<TSTExpressionNode *const, TSTCSENodeData> > > { 
         struct __hash_table<std::__1::__hash_value_type<TSTExpressionNode *, TSTCSENodeData>, std::__1::__unordered_map_hasher<TSTExpressionNode *, std::__1::__hash_value_type<TSTExpressionNode *, TSTCSENodeData>, std::__1::hash<TSTExpressionNode *>, true>, std::__1::__unordered_map_equal<TSTExpressionNode *, std::__1::__hash_value_type<TSTExpressionNode *, TSTCSENodeData>, std::__1::equal_to<TSTExpressionNode *>, true>, std::__1::allocator<std::__1::__hash_value_type<TSTExpressionNode *, TSTCSENodeData> > > { 
             struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<TSTExpressionNode *, TSTCSENodeData>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<TSTExpressionNode *, TSTCSENodeData>, void *> *> > > { 
@@ -25,10 +25,10 @@
                 unsigned long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<TSTExpressionNode *, std::__1::__hash_value_type<TSTExpressionNode *, TSTCSENodeData>, std::__1::equal_to<TSTExpressionNode *>, true> > { 
-                float __first_; 
+                double __first_; 
             } __p3_; 
         } __table_; 
-    } _nodesToData;
+    }  _nodesToData;
 }
 
 - (id).cxx_construct;

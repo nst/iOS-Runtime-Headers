@@ -6,10 +6,11 @@
     struct { 
         unsigned int maxResults : 1; 
         unsigned int sortOrder : 1; 
-    } _has;
-    unsigned int _maxResults;
-    int _sortOrder;
-    GEOPDViewportInfo *_viewportInfo;
+    }  _has;
+    unsigned int  _maxResults;
+    int  _sortOrder;
+    PBUnknownFields * _unknownFields;
+    GEOPDViewportInfo * _viewportInfo;
 }
 
 @property (nonatomic) BOOL hasMaxResults;
@@ -17,8 +18,10 @@
 @property (nonatomic, readonly) BOOL hasViewportInfo;
 @property (nonatomic) unsigned int maxResults;
 @property (nonatomic) int sortOrder;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) GEOPDViewportInfo *viewportInfo;
 
+- (int)StringAsSortOrder:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -38,6 +41,8 @@
 - (void)setSortOrder:(int)arg1;
 - (void)setViewportInfo:(id)arg1;
 - (int)sortOrder;
+- (id)sortOrderAsString:(int)arg1;
+- (id)unknownFields;
 - (id)viewportInfo;
 - (void)writeTo:(id)arg1;
 

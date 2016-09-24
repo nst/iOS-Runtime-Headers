@@ -3,8 +3,8 @@
  */
 
 @interface CalSimpleStack : NSObject {
-    NSMutableArray *_objects;
-    BOOL _objectsProbablyAvailable;
+    NSMutableArray * _objects;
+    BOOL  _objectsProbablyAvailable;
 }
 
 @property (readonly) NSMutableArray *objects;

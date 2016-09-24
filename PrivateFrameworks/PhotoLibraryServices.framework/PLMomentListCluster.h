@@ -3,11 +3,11 @@
  */
 
 @interface PLMomentListCluster : NSObject {
-    NSMutableSet *__moments;
-    unsigned int _month;
-    unsigned int _numberOfAssets;
-    unsigned int _numberOfMoments;
-    unsigned int _year;
+    NSMutableSet * __moments;
+    unsigned int  _month;
+    unsigned int  _numberOfAssets;
+    unsigned int  _numberOfMoments;
+    unsigned int  _year;
 }
 
 @property (nonatomic, readonly) NSMutableSet *_moments;

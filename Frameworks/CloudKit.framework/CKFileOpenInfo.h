@@ -3,12 +3,12 @@
  */
 
 @interface CKFileOpenInfo : NSObject <NSSecureCoding> {
-    NSString *_UUID;
-    NSNumber *_deviceID;
-    NSNumber *_fileID;
-    NSNumber *_generationID;
-    NSString *_path;
-    BOOL _shouldReadRawEncryptedData;
+    NSString * _UUID;
+    NSNumber * _deviceID;
+    NSNumber * _fileID;
+    NSNumber * _generationID;
+    NSString * _path;
+    BOOL  _shouldReadRawEncryptedData;
 }
 
 @property (nonatomic, retain) NSString *UUID;

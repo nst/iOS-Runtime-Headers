@@ -3,8 +3,8 @@
  */
 
 @interface CLDispatchTimerScheduler : NSObject <CLTimerScheduler> {
-    NSObject<OS_dispatch_source> *_source;
-    CLTimer *timer;
+    NSObject<OS_dispatch_source> * _source;
+    CLTimer * timer;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *source;

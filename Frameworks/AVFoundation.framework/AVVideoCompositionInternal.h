@@ -3,23 +3,27 @@
  */
 
 @interface AVVideoCompositionInternal : NSObject {
-    AVVideoCompositionCoreAnimationTool *animationTool;
-    BOOL auxiliaryTrackLayerSetLast;
-    NSString *builtInCompositorName;
-    unsigned int changeSeed;
-    Class customCompositorClass;
+    AVVideoCompositionCoreAnimationTool * animationTool;
+    BOOL  auxiliaryTrackLayerSetLast;
+    NSString * builtInCompositorName;
+    unsigned int  changeSeed;
+    NSString * colorPrimaries;
+    NSString * colorTransferFunction;
+    NSString * colorYCbCrMatrix;
+    Class  customCompositorClass;
     struct { 
-        long long value; 
+        int value; 
         int timescale; 
         unsigned int flags; 
-        long long epoch; 
-    } frameDuration;
-    NSArray *instructions;
-    float renderScale;
+        int epoch; 
+    }  frameDuration;
+    NSArray * instructions;
+    double  renderScale;
     struct CGSize { 
-        float width; 
-        float height; 
-    } renderSize;
+        double width; 
+        double height; 
+    }  renderSize;
+    int  sourceTrackIDForFrameTiming;
 }
 
 @end

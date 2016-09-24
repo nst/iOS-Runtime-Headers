@@ -3,33 +3,33 @@
  */
 
 @interface ABModel : NSObject {
-    void *_addressBook;
-    BOOL _autoInvalidateOnDatabaseChange;
-    void *_backgroundAddressBook;
-    BOOL _backgroundAddressBookInvalidated;
-    BOOL _backgroundInvalidated;
-    NSRecursiveLock *_backgroundLoadingLock;
-    NSMutableArray *_cachedModelRecords;
-    struct __CFArray { } *_databaseChangeDelegates;
-    id _delayedNotificationHandler;
-    unsigned int _displayOrdering;
-    ABContactsFilter *_displayedContactsFilter;
+    void * _addressBook;
+    BOOL  _autoInvalidateOnDatabaseChange;
+    void * _backgroundAddressBook;
+    BOOL  _backgroundAddressBookInvalidated;
+    BOOL  _backgroundInvalidated;
+    NSRecursiveLock * _backgroundLoadingLock;
+    NSMutableArray * _cachedModelRecords;
+    struct __CFArray { } * _databaseChangeDelegates;
+    id  _delayedNotificationHandler;
+    unsigned int  _displayOrdering;
+    ABContactsFilter * _displayedContactsFilter;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _displayedMemberPreparedRange;
-    BOOL _displayedMembersAreSearchResults;
-    struct __CFDictionary { } *_headerSortKeyToHeaderString;
-    NSArray *_lastSeenGroups;
-    NSArray *_lastSeenSources;
-    ABContactsFilter *_lastSelectedContactsFilter;
-    BOOL _loadingInBackground;
-    int _meID;
-    NSRecursiveLock *_memberLock;
-    unsigned int _numberOfDisplayedMembers;
-    struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; } *_sectionLists;
-    ABContactsFilter *_selectedContactsFilter;
-    void *_selectedPerson;
+    }  _displayedMemberPreparedRange;
+    BOOL  _displayedMembersAreSearchResults;
+    struct __CFDictionary { } * _headerSortKeyToHeaderString;
+    NSArray * _lastSeenGroups;
+    NSArray * _lastSeenSources;
+    ABContactsFilter * _lastSelectedContactsFilter;
+    BOOL  _loadingInBackground;
+    int  _meID;
+    NSRecursiveLock * _memberLock;
+    unsigned int  _numberOfDisplayedMembers;
+    struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; } * _sectionLists;
+    ABContactsFilter * _selectedContactsFilter;
+    void * _selectedPerson;
 }
 
 @property (nonatomic) void*addressBook;

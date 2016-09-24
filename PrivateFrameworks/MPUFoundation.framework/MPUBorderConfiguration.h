@@ -3,25 +3,25 @@
  */
 
 @interface MPUBorderConfiguration : NSObject <NSCopying> {
-    float _borderAlpha;
-    UIColor *_borderColor;
-    float _borderWidth;
-    float _dropShadowAlpha;
-    UIColor *_dropShadowColor;
-    unsigned int _dropShadowEdges;
-    float _dropShadowWidth;
-    float _fillAlpha;
-    UIColor *_fillColor;
+    double  _borderAlpha;
+    UIColor * _borderColor;
+    double  _borderWidth;
+    double  _dropShadowAlpha;
+    UIColor * _dropShadowColor;
+    unsigned int  _dropShadowEdges;
+    double  _dropShadowWidth;
+    double  _fillAlpha;
+    UIColor * _fillColor;
 }
 
-@property (nonatomic) float borderAlpha;
+@property (nonatomic) double borderAlpha;
 @property (nonatomic, retain) UIColor *borderColor;
-@property (nonatomic) float borderWidth;
-@property (nonatomic) float dropShadowAlpha;
+@property (nonatomic) double borderWidth;
+@property (nonatomic) double dropShadowAlpha;
 @property (nonatomic, retain) UIColor *dropShadowColor;
 @property (nonatomic) unsigned int dropShadowEdges;
-@property (nonatomic) float dropShadowWidth;
-@property (nonatomic) float fillAlpha;
+@property (nonatomic) double dropShadowWidth;
+@property (nonatomic) double fillAlpha;
 @property (nonatomic, retain) UIColor *fillColor;
 @property (getter=isFullyTransparent, nonatomic, readonly) BOOL fullyTransparent;
 

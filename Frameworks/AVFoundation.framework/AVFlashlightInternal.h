@@ -3,12 +3,12 @@
  */
 
 @interface AVFlashlightInternal : NSObject {
-    BOOL available;
-    struct OpaqueFigFlashlight { } *flashlight;
-    float flashlightLevel;
-    struct OpaqueFigSimpleMutex { } *lock;
-    BOOL overheated;
-    AVWeakReference *weakReference;
+    BOOL  available;
+    struct OpaqueFigFlashlight { } * flashlight;
+    double  flashlightLevel;
+    struct OpaqueFigSimpleMutex { } * lock;
+    BOOL  overheated;
+    AVWeakReference * weakReference;
 }
 
 @end

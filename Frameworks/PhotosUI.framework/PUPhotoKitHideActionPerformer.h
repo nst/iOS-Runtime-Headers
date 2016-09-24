@@ -3,8 +3,8 @@
  */
 
 @interface PUPhotoKitHideActionPerformer : PUPhotoKitActionPerformer {
-    PUAssetHidingHelper *_assetHidingHelper;
-    BOOL _isHiding;
+    PUAssetHidingHelper * _assetHidingHelper;
+    BOOL  _isHiding;
 }
 
 @property (nonatomic, retain) PUAssetHidingHelper *assetHidingHelper;

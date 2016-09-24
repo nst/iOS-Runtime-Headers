@@ -3,9 +3,9 @@
  */
 
 @interface SBSStatusBarStyleOverridesAssertionManager : NSObject <SBSStatusBarStyleOverridesAssertionClient> {
-    NSMapTable *_assertionsByIdentifier;
-    NSObject<OS_dispatch_queue> *_internalQueue;
-    NSXPCConnection *_sbXPCConnection;
+    NSMapTable * _assertionsByIdentifier;
+    NSObject<OS_dispatch_queue> * _internalQueue;
+    NSXPCConnection * _sbXPCConnection;
 }
 
 @property (nonatomic, retain) NSMapTable *assertionsByIdentifier;

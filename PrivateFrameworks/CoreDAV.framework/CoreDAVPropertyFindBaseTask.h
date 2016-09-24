@@ -3,8 +3,8 @@
  */
 
 @interface CoreDAVPropertyFindBaseTask : CoreDAVTask {
-    CoreDAVMultiStatusItem *_multiStatus;
-    NSSet *_propertiesToFind;
+    CoreDAVMultiStatusItem * _multiStatus;
+    NSSet * _propertiesToFind;
 }
 
 @property (nonatomic, retain) CoreDAVMultiStatusItem *multiStatus;

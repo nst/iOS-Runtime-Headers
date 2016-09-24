@@ -3,11 +3,11 @@
  */
 
 @interface PKGroup : NSObject {
-    PKCatalogGroup *_catalogGroup;
-    <PKGroupDelegate> *_delegate;
-    unsigned int _frontmostPassIndex;
-    BOOL _local;
-    NSMutableDictionary *_passesByUniqueID;
+    PKCatalogGroup * _catalogGroup;
+    <PKGroupDelegate> * _delegate;
+    unsigned int  _frontmostPassIndex;
+    BOOL  _local;
+    NSMutableDictionary * _passesByUniqueID;
 }
 
 @property (nonatomic) <PKGroupDelegate> *delegate;
@@ -15,6 +15,7 @@
 @property (nonatomic, readonly) NSNumber *groupID;
 @property (getter=isLocal, nonatomic) BOOL local;
 
+- (void).cxx_destruct;
 - (unsigned int)_indexOfUniqueID:(id)arg1;
 - (void)_insertPass:(id)arg1 atIndex:(unsigned int)arg2 notify:(BOOL)arg3;
 - (void)_moveUniqueID:(id)arg1 toIndex:(unsigned int)arg2 notify:(BOOL)arg3;
@@ -23,7 +24,6 @@
 - (BOOL)containsOnlyUniqueID:(id)arg1;
 - (BOOL)containsPasses;
 - (id)copyCatalogGroup;
-- (void)dealloc;
 - (id)delegate;
 - (id)description;
 - (void)enumerateUniqueIDsWithHandler:(id /* block */)arg1;

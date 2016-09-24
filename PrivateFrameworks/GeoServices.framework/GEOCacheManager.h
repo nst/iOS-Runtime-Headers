@@ -3,7 +3,7 @@
  */
 
 @interface GEOCacheManager : NSObject <GEOCacheManaging> {
-    <GEOCacheManaging> *_proxy;
+    <GEOCacheManaging> * _proxy;
 }
 
 @property (readonly, copy) NSString *debugDescription;

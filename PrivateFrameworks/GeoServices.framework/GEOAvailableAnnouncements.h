@@ -3,13 +3,15 @@
  */
 
 @interface GEOAvailableAnnouncements : PBCodable <NSCopying> {
-    NSMutableArray *_announcements;
-    NSString *_languageCode;
+    NSMutableArray * _announcements;
+    NSString * _languageCode;
 }
 
 @property (nonatomic, retain) NSMutableArray *announcements;
 @property (nonatomic, readonly) BOOL hasLanguageCode;
 @property (nonatomic, retain) NSString *languageCode;
+
++ (Class)announcementType;
 
 - (void)addAnnouncement:(id)arg1;
 - (id)announcementAtIndex:(unsigned int)arg1;

@@ -3,17 +3,17 @@
  */
 
 @interface MPVideoBackgroundView : UIView {
-    UIImageView *_backgroundPlaceholderImageView;
-    UIView *_backgroundPlaceholderPosterImageView;
-    UIView *_backgroundPlaceholderView;
-    UIImageView *_customBackgroundImageView;
-    NSString *_destinationName;
-    int _destinationPlaceholderStyle;
-    UIImageView *_iconView;
-    UIView *_imageView;
-    int _interfaceOrientation;
-    id /* block */ _layoutSubviewsPostflightHandler;
-    BOOL _showDestinationPlaceholder;
+    UIImageView * _backgroundPlaceholderImageView;
+    UIView * _backgroundPlaceholderPosterImageView;
+    UIView * _backgroundPlaceholderView;
+    UIImageView * _customBackgroundImageView;
+    NSString * _destinationName;
+    int  _destinationPlaceholderStyle;
+    UIImageView * _iconView;
+    UIView * _imageView;
+    int  _interfaceOrientation;
+    id /* block */  _layoutSubviewsPostflightHandler;
+    BOOL  _showDestinationPlaceholder;
 }
 
 @property (nonatomic, retain) UIImage *backgroundPlaceholderImage;
@@ -34,7 +34,7 @@
 - (void)dealloc;
 - (id)destinationName;
 - (int)destinationPlaceholderStyle;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (int)interfaceOrientation;
 - (void)layoutSubviews;
 - (id /* block */)layoutSubviewsPostflightHandler;

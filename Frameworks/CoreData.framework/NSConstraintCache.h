@@ -3,11 +3,11 @@
  */
 
 @interface NSConstraintCache : NSObject {
-    NSMutableArray *_children;
-    NSArray *_constraint;
-    NSEntityDescription *_entity;
-    NSArray *_extension;
-    NSMutableDictionary *_knownValues;
+    NSMutableArray * _children;
+    NSArray * _constraint;
+    NSEntityDescription * _entity;
+    NSArray * _extension;
+    NSMutableDictionary * _knownValues;
 }
 
 @property (nonatomic, readonly, retain) NSArray *children;

@@ -3,7 +3,7 @@
  */
 
 @interface ISDelayedInvocationRecorder : ISInvocationRecorder {
-    double _delayInterval;
+    double  _delayInterval;
 }
 
 @property (nonatomic) double delayInterval;

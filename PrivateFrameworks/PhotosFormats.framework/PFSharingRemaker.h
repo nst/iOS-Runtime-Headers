@@ -3,18 +3,18 @@
  */
 
 @interface PFSharingRemaker : NSObject {
-    id /* block */ __completionHandler;
-    NSArray *__operations;
-    PFSharingRemakerOptions *__options;
-    id /* block */ __progressHandler;
-    BOOL _abortedRemaker;
-    NSMutableDictionary *_inProgressOperationByUUID;
-    float _progress;
-    NSObject<OS_dispatch_source> *_progressTimer;
-    NSOperationQueue *_remakeOperationQueue;
-    NSError *_remakerError;
-    NSObject<OS_dispatch_queue> *_remakerQueue;
-    BOOL _remakerSuccess;
+    id /* block */  __completionHandler;
+    NSArray * __operations;
+    PFSharingRemakerOptions * __options;
+    id /* block */  __progressHandler;
+    BOOL  _abortedRemaker;
+    NSMutableDictionary * _inProgressOperationByUUID;
+    double  _progress;
+    NSObject<OS_dispatch_source> * _progressTimer;
+    NSOperationQueue * _remakeOperationQueue;
+    NSError * _remakerError;
+    NSObject<OS_dispatch_queue> * _remakerQueue;
+    BOOL  _remakerSuccess;
 }
 
 @property (setter=_setCompletionHandler:, nonatomic, copy) id /* block */ _completionHandler;

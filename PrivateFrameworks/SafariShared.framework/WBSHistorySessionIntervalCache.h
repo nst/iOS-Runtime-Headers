@@ -3,13 +3,13 @@
  */
 
 @interface WBSHistorySessionIntervalCache : NSObject {
-    NSCalendar *_calendar;
+    NSCalendar * _calendar;
     struct Vector<double, 0, WTF::CrashOnOverflow, 16> { 
         double *m_buffer; 
         unsigned int m_capacity; 
         unsigned int m_size; 
-    } _intervalCache;
-    NSObject<OS_dispatch_queue> *_queue;
+    }  _intervalCache;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 - (id).cxx_construct;

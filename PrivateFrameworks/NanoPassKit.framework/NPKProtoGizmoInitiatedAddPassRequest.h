@@ -3,7 +3,7 @@
  */
 
 @interface NPKProtoGizmoInitiatedAddPassRequest : PBRequest <NSCopying> {
-    NSData *_passData;
+    NSData * _passData;
 }
 
 @property (nonatomic, retain) NSData *passData;

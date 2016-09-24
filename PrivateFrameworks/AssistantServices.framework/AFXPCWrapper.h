@@ -3,7 +3,7 @@
  */
 
 @interface AFXPCWrapper : NSObject <NSSecureCoding> {
-    NSObject<OS_xpc_object> *_xpcObject;
+    NSObject<OS_xpc_object> * _xpcObject;
 }
 
 + (BOOL)supportsSecureCoding;

@@ -3,23 +3,23 @@
  */
 
 @interface PKPlugInCore : NSObject {
-    NSDictionary *_annotations;
-    NSDictionary *_bundleInfoDictionary;
-    NSData *_cdhash;
-    NSURL *_containingUrl;
-    unsigned int _hubProtocolVersion;
-    NSString *_identifier;
-    long _lastModified;
-    NSString *_localizedContainingName;
-    NSString *_localizedName;
-    NSString *_localizedShortName;
-    BOOL _onSystemVolume;
-    NSString *_originalIdentifier;
-    NSDictionary *_plugInDictionary;
-    NSString *_requirement;
-    NSDictionary *_topDictionary;
-    NSURL *_url;
-    NSUUID *_uuid;
+    NSDictionary * _annotations;
+    NSDictionary * _bundleInfoDictionary;
+    NSData * _cdhash;
+    NSURL * _containingUrl;
+    NSDictionary * _entitlements;
+    unsigned int  _hubProtocolVersion;
+    NSString * _identifier;
+    long  _lastModified;
+    NSString * _localizedContainingName;
+    NSString * _localizedName;
+    NSString * _localizedShortName;
+    BOOL  _onSystemVolume;
+    NSString * _originalIdentifier;
+    NSDictionary * _plugInDictionary;
+    NSString * _requirement;
+    NSURL * _url;
+    NSUUID * _uuid;
 }
 
 @property (retain) NSDictionary *annotations;
@@ -28,6 +28,7 @@
 @property (retain) NSData *cdhash;
 @property (readonly) NSString *containingPath;
 @property (retain) NSURL *containingUrl;
+@property (retain) NSDictionary *entitlements;
 @property unsigned int hubProtocolVersion;
 @property (retain) NSString *identifier;
 @property (readonly) bool isAppExtension;
@@ -44,11 +45,11 @@
 @property (retain) NSString *originalIdentifier;
 @property (readonly) NSString *path;
 @property (retain) NSDictionary *plugInDictionary;
+@property (readonly) NSString *principalSpec;
 @property (readonly) id protocolSpec;
 @property (retain) NSString *requirement;
 @property (readonly) NSString *sdkSpec;
 @property (readonly) NSDate *timestamp;
-@property (retain) NSDictionary *topDictionary;
 @property (retain) NSURL *url;
 @property (retain) NSUUID *uuid;
 @property (readonly) NSString *version;
@@ -57,6 +58,7 @@
 
 - (void).cxx_destruct;
 - (id)annotations;
+- (id)attribute:(id)arg1;
 - (id)attributes;
 - (id)augmentInterface:(id)arg1;
 - (id)bundleInfoDictionary;
@@ -67,10 +69,12 @@
 - (id)diagnose;
 - (id)embeddedCodePath;
 - (id)embeddedProtocolSpec;
+- (id)entitlements;
 - (id)export:(id*)arg1;
 - (unsigned int)hash;
 - (unsigned int)hubProtocolVersion;
 - (id)identifier;
+- (id)infoKey:(id)arg1;
 - (id)init;
 - (id)initWithForm:(id)arg1;
 - (id)initWithName:(id)arg1 url:(id)arg2 bundleInfo:(id)arg3 info:(id)arg4 uuid:(id)arg5;
@@ -92,6 +96,8 @@
 - (id)originalIdentifier;
 - (id)path;
 - (id)plugInDictionary;
+- (id)pluginKey:(id)arg1;
+- (id)principalSpec;
 - (id)protocolSpec;
 - (id)requirement;
 - (void)resolveSDK;
@@ -103,6 +109,7 @@
 - (void)setCdhash:(id)arg1;
 - (void)setContainingUrl:(id)arg1;
 - (BOOL)setDictionaries:(id)arg1;
+- (void)setEntitlements:(id)arg1;
 - (void)setHubProtocolVersion:(unsigned int)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setLastModified:(long)arg1;
@@ -113,13 +120,11 @@
 - (void)setOriginalIdentifier:(id)arg1;
 - (void)setPlugInDictionary:(id)arg1;
 - (void)setRequirement:(id)arg1;
-- (void)setTopDictionary:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (void)setUuid:(id)arg1;
 - (bool)setupWithForm:(id)arg1;
 - (bool)setupWithName:(id)arg1 url:(id)arg2 bundleInfo:(id)arg3 info:(id)arg4 uuid:(id)arg5;
 - (id)timestamp;
-- (id)topDictionary;
 - (void)updateFromForm:(id)arg1;
 - (id)url;
 - (id)uuid;

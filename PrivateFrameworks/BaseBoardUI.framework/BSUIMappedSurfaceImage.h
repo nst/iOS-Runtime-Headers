@@ -3,7 +3,7 @@
  */
 
 @interface BSUIMappedSurfaceImage : UIImage {
-    NSData *_mappedSurfaceData;
+    NSData * _mappedSurfaceData;
 }
 
 @property (getter=_mappedSurfaceData, setter=_setMappedSurfaceData:, nonatomic, retain) NSData *_mappedSurfaceData;

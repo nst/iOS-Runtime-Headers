@@ -3,10 +3,10 @@
  */
 
 @interface ISDialogTextField : NSObject <SSXPCCoding> {
-    int _keyboardType;
-    BOOL _secure;
-    NSString *_title;
-    NSString *_value;
+    int  _keyboardType;
+    BOOL  _secure;
+    NSString * _title;
+    NSString * _value;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,10 +3,10 @@
  */
 
 @interface MKPlaceTransitViewController : MKTransitDeparturesViewController <MKStackingViewControllerPreferredSizeUse> {
-    BOOL _analyticsAwaitingMapItemLoad;
-    BOOL _displayError;
-    NSString *_errorString;
-    BOOL _mapItemIsLoading;
+    BOOL  _analyticsAwaitingMapItemLoad;
+    BOOL  _displayError;
+    NSString * _errorString;
+    BOOL  _mapItemIsLoading;
 }
 
 @property (readonly, copy) NSString *debugDescription;

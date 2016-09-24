@@ -3,13 +3,13 @@
  */
 
 @interface SCRDUSBDevice : NSObject {
-    struct IOUSBDeviceStruct300 {} **_device;
-    struct IOUSBInterfaceStruct220 {} **_interface;
-    BOOL _isConfigured;
-    BOOL _isOpen;
-    unsigned int _notification;
-    struct IONotificationPort { } *_notificationPort;
-    NSString *_privateRunLoopMode;
+    struct IOUSBDeviceStruct300 {} ** _device;
+    struct IOUSBInterfaceStruct220 {} ** _interface;
+    BOOL  _isConfigured;
+    BOOL  _isOpen;
+    unsigned int  _notification;
+    struct IONotificationPort { } * _notificationPort;
+    NSString * _privateRunLoopMode;
 }
 
 - (unsigned long)_transferData:(void*)arg1 withSize:(unsigned long)arg2 toPipe:(unsigned char)arg3 withTimeout:(double)arg4 withFunction:(int (*)arg5;

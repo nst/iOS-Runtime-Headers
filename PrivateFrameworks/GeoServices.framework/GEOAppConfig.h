@@ -3,9 +3,9 @@
  */
 
 @interface GEOAppConfig : PBCodable <NSCopying> {
-    NSString *_appIdentifier;
-    NSString *_appMajorVersion;
-    NSString *_appMinorVersion;
+    NSString * _appIdentifier;
+    NSString * _appMajorVersion;
+    NSString * _appMinorVersion;
 }
 
 @property (nonatomic, retain) NSString *appIdentifier;

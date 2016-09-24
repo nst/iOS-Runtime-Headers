@@ -3,12 +3,12 @@
  */
 
 @interface NWTCPListener : NSObject {
-    id _delegate;
-    NWEndpoint *_endpoint;
-    NSError *_error;
-    NSObject<OS_tcp_listener> *_internalListener;
-    NWEndpoint *_localEndpoint;
-    NWParameters *_parameters;
+    id  _delegate;
+    NWEndpoint * _endpoint;
+    NSError * _error;
+    NSObject<OS_tcp_listener> * _internalListener;
+    NWEndpoint * _localEndpoint;
+    NWParameters * _parameters;
 }
 
 @property id delegate;
@@ -19,6 +19,7 @@
 @property (retain) NWParameters *parameters;
 
 - (void).cxx_destruct;
+- (void)cancel;
 - (id)delegate;
 - (id)endpoint;
 - (id)error;

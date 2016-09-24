@@ -6,6 +6,7 @@
 
 @property (nonatomic, retain) SASRecognition *recognition;
 @property (nonatomic, copy) NSString *sessionId;
+@property (nonatomic, copy) NSString *title;
 
 // Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 
@@ -19,11 +20,16 @@
 - (id)sessionId;
 - (void)setRecognition:(id)arg1;
 - (void)setSessionId:(id)arg1;
+- (void)setTitle:(id)arg1;
+- (id)title;
 
 // Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
 
 - (id)af_bestTextInterpretation;
 - (id)af_correctionContext;
+- (BOOL)af_isUserUtterance;
+- (BOOL)af_isUtterance;
 - (id)af_userUtteranceValue;
+- (BOOL)af_waitsForConfirmation;
 
 @end

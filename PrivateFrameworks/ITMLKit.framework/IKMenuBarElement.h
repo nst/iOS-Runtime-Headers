@@ -3,7 +3,7 @@
  */
 
 @interface IKMenuBarElement : IKCollectionElement {
-    IKAppMenuBarDocument *_menuBarDocument;
+    IKAppMenuBarDocument * _menuBarDocument;
 }
 
 @property (nonatomic, readonly) IKAppMenuBarDocument *menuBarDocument;

@@ -3,8 +3,8 @@
  */
 
 @interface NMSPBMapping : NSObject {
-    Class _requestClass;
-    Class _responseClass;
+    Class  _requestClass;
+    Class  _responseClass;
 }
 
 @property (nonatomic, retain) Class requestClass;

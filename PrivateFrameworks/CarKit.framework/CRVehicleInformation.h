@@ -3,8 +3,9 @@
  */
 
 @interface CRVehicleInformation : NSObject {
-    AVExternalDevice *_externalDevice;
-    unsigned int _mapsFallbackAmbientBrightness;
+    AVExternalDevice * _externalDevice;
+    int  _mapsAmbientBrightnessNotifyToken;
+    unsigned int  _mapsFallbackAmbientBrightness;
 }
 
 @property (nonatomic, readonly) unsigned int driverPosition;
@@ -14,6 +15,7 @@
 @property (nonatomic, readonly) unsigned int vehicleAmbientBrightness;
 
 - (void).cxx_destruct;
+- (void)_fetchMapsFallbackAmbientBrightnessWithToken:(int)arg1;
 - (void)_handleLimitedUIChanged:(id)arg1;
 - (void)_handleNightModeChanged:(id)arg1;
 - (void)_screenDidUpdate:(id)arg1;

@@ -3,10 +3,10 @@
  */
 
 @interface _NACIDSMessageRecord : NSObject {
-    PBCodable *_message;
-    NSString *_queueOne;
-    double _timeout;
-    int _type;
+    PBCodable * _message;
+    NSString * _queueOne;
+    double  _timeout;
+    int  _type;
 }
 
 @property (nonatomic, retain) PBCodable *message;

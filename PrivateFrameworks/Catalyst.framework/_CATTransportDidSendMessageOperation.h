@@ -2,21 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Catalyst.framework/Catalyst
  */
 
-@interface _CATTransportDidSendMessageOperation : CATOperation {
-    id /* block */ _block;
-}
+@interface _CATTransportDidSendMessageOperation : NSBlockOperation
 
-@property (nonatomic, copy) id /* block */ block;
-
-+ (id)blockOperationWithBlock:(id /* block */)arg1;
-
-- (void).cxx_destruct;
-- (id /* block */)block;
 - (void)cancel;
-- (BOOL)isAsynchronous;
 - (BOOL)isCanceled;
 - (BOOL)isCancelled;
-- (void)main;
-- (void)setBlock:(id /* block */)arg1;
 
 @end

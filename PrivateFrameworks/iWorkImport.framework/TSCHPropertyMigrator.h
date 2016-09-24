@@ -3,9 +3,9 @@
  */
 
 @interface TSCHPropertyMigrator : NSObject {
-    TSSPropertySet *mPropertiesToForce;
-    TSUIntToIntDictionary *mShouldForceFlags;
-    TSUIntegerKeyDictionary *mValuesToForce;
+    TSSPropertySet * mPropertiesToForce;
+    TSUIntToIntDictionary * mShouldForceFlags;
+    TSUIntegerKeyDictionary * mValuesToForce;
 }
 
 - (void)dealloc;

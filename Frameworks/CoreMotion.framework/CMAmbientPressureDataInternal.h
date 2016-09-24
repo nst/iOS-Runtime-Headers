@@ -4,13 +4,13 @@
 
 @interface CMAmbientPressureDataInternal : NSObject {
     struct { 
-        float pressure; 
-        float temperature; 
-    } fPressure;
+        double pressure; 
+        double temperature; 
+    }  fPressure;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithPressure:(struct { float x1; float x2; })arg1;
-- (void)setAmbientPressure:(struct { float x1; float x2; })arg1;
+- (id)initWithPressure:(struct { double x1; double x2; })arg1;
+- (void)setAmbientPressure:(struct { double x1; double x2; })arg1;
 
 @end

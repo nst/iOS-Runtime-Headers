@@ -3,13 +3,13 @@
  */
 
 @interface NEFilterDataVerdict : NEFilterVerdict <NSCopying, NSSecureCoding> {
-    unsigned long long _passBytes;
-    unsigned long long _peekBytes;
-    NSURL *_url;
+    unsigned int  _passBytes;
+    unsigned int  _peekBytes;
+    NSURL * _url;
 }
 
-@property unsigned long long passBytes;
-@property unsigned long long peekBytes;
+@property unsigned int passBytes;
+@property unsigned int peekBytes;
 @property (retain) NSURL *url;
 
 + (id)allowVerdict;
@@ -23,10 +23,10 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (unsigned long long)passBytes;
-- (unsigned long long)peekBytes;
-- (void)setPassBytes:(unsigned long long)arg1;
-- (void)setPeekBytes:(unsigned long long)arg1;
+- (unsigned int)passBytes;
+- (unsigned int)peekBytes;
+- (void)setPassBytes:(unsigned int)arg1;
+- (void)setPeekBytes:(unsigned int)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;
 

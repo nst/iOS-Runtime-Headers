@@ -3,7 +3,7 @@
  */
 
 @interface PSTextView : UITextContentView {
-    PSTextViewTableCell *_cell;
+    PSTextViewTableCell * _cell;
 }
 
 - (void).cxx_destruct;

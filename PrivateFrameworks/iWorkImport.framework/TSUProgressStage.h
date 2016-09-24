@@ -3,13 +3,13 @@
  */
 
 @interface TSUProgressStage : NSObject {
-    TSUProgressContext *m_context;
-    double m_currentPosition;
-    double m_nextSubStageParentSize;
-    TSUProgressStage *m_parentStage;
-    double m_startInParent;
-    double m_stepsInParent;
-    double m_totalSteps;
+    TSUProgressContext * m_context;
+    double  m_currentPosition;
+    double  m_nextSubStageParentSize;
+    TSUProgressStage * m_parentStage;
+    double  m_startInParent;
+    double  m_stepsInParent;
+    double  m_totalSteps;
 }
 
 - (void)advanceProgress:(double)arg1;

@@ -3,17 +3,17 @@
  */
 
 @interface GKLoadableContentViewController : GKViewController <_GKStateMachineDelegate> {
-    UIActivityIndicatorView *_activityIndicator;
-    float _loadingIndicatorDelay;
-    GKLoadableContentStateMachine *_loadingMachine;
-    NSArray *_viewsToHideWhileLoading;
+    UIActivityIndicatorView * _activityIndicator;
+    double  _loadingIndicatorDelay;
+    GKLoadableContentStateMachine * _loadingMachine;
+    NSArray * _viewsToHideWhileLoading;
 }
 
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) float loadingIndicatorDelay;
+@property (nonatomic) double loadingIndicatorDelay;
 @property (nonatomic, retain) GKLoadableContentStateMachine *loadingMachine;
 @property (nonatomic, retain) NSString *loadingState;
 @property (readonly) Class superclass;

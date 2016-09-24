@@ -3,13 +3,13 @@
  */
 
 @interface SKUIPreviewOverlayViewController : SKUIViewController <SKUIArtworkRequestDelegate, SKUIItemStateCenterObserver, SKUILayoutCacheDelegate, UIGestureRecognizerDelegate> {
-    int _backgroundStyle;
-    IKAppDocument *_document;
-    SKUILayoutCache *_layoutCache;
-    SKUIViewElementLayoutContext *_layoutContext;
-    SKUIHorizontalLockupView *_lockupView;
-    SUPlayerStatus *_previewStatus;
-    UITapGestureRecognizer *_tapGestureRecognizer;
+    int  _backgroundStyle;
+    IKAppDocument * _document;
+    SKUILayoutCache * _layoutCache;
+    SKUIViewElementLayoutContext * _layoutContext;
+    SKUIHorizontalLockupView * _lockupView;
+    SUPlayerStatus * _previewStatus;
+    UITapGestureRecognizer * _tapGestureRecognizer;
 }
 
 @property (nonatomic) int backgroundStyle;

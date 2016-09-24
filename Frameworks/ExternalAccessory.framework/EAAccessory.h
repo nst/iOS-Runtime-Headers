@@ -3,7 +3,7 @@
  */
 
 @interface EAAccessory : NSObject {
-    EAAccessoryInternal *_internal;
+    EAAccessoryInternal * _internal;
 }
 
 @property (getter=isConnected, nonatomic, readonly) BOOL connected;
@@ -42,6 +42,7 @@
 - (int)captureStillImage:(unsigned int)arg1 forCameraIds:(id)arg2;
 - (int)classType;
 - (unsigned int)connectionID;
+- (BOOL)containsSameProtocolsAsiAPAccessoryProtocols:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
@@ -71,6 +72,7 @@
 - (void)requestIAPAccessoryWiFiCredentials;
 - (void)resetIAPTimeSyncKalmanFilter;
 - (BOOL)sendDestinationInformation:(id)arg1 identifier:(id)arg2;
+- (void)sendDeviceIdentifierNotification:(id)arg1 usbIdentifier:(id)arg2;
 - (BOOL)sendEphemeris:(id)arg1;
 - (BOOL)sendEphemerisPointDataGpsWeek:(unsigned int)arg1 gpsTOW:(double)arg2 latitude:(double)arg3 longitude:(double)arg4 accuracy:(unsigned short)arg5;
 - (BOOL)sendGPRMCDataStatusValueA:(BOOL)arg1 ValueV:(BOOL)arg2 ValueX:(BOOL)arg3;

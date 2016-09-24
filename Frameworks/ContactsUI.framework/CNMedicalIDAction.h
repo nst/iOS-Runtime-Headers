@@ -3,9 +3,9 @@
  */
 
 @interface CNMedicalIDAction : CNPropertyAction <HKMedicalIDViewControllerDelegate> {
-    _HKMedicalIDData *_healthData;
-    HKHealthStore *_healthStore;
-    int _medicalIDActionType;
+    _HKMedicalIDData * _healthData;
+    HKHealthStore * _healthStore;
+    int  _medicalIDActionType;
 }
 
 @property (nonatomic, retain) CNContact *contact;

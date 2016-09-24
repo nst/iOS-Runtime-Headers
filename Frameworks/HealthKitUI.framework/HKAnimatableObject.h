@@ -3,7 +3,7 @@
  */
 
 @interface HKAnimatableObject : NSObject {
-    NSMutableDictionary *_animatableProperties;
+    NSMutableDictionary * _animatableProperties;
 }
 
 - (void).cxx_destruct;
@@ -13,6 +13,7 @@
 - (BOOL)areAnimationsInProgress;
 - (id)endingValueForPropertyType:(unsigned int)arg1;
 - (void)removeAllAnimationsForPropertyType:(unsigned int)arg1;
+- (void)setValue:(id)arg1 forPropertyType:(unsigned int)arg2;
 - (void)update:(double)arg1;
 
 @end

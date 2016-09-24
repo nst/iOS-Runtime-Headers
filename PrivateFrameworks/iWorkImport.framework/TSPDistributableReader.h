@@ -3,10 +3,10 @@
  */
 
 @interface TSPDistributableReader : NSObject <TSPStreamingDistributableUnarchiver> {
-    TSPDatabase *_database;
-    TSPDistributableFileManager *_fileManager;
-    BOOL _hasReadTangierVersionRoot;
-    BOOL _isCancelled;
+    TSPDatabase * _database;
+    TSPDistributableFileManager * _fileManager;
+    BOOL  _hasReadTangierVersionRoot;
+    BOOL  _isCancelled;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -19,11 +19,11 @@
 - (void).cxx_destruct;
 - (BOOL)_initializeNewDocumentDirectory:(id)arg1;
 - (void)cancel;
-- (BOOL)handleArchivedVersions:(struct { unsigned long long x1; unsigned long long x2; })arg1 error:(id*)arg2;
+- (BOOL)handleArchivedVersions:(struct { unsigned int x1; unsigned int x2; })arg1 error:(id*)arg2;
 - (BOOL)handleClassInfoWithClassType:(int)arg1 className:(id)arg2 isProtobufClass:(BOOL)arg3 error:(id*)arg4;
 - (BOOL)handleFileDescriptorProtoWithInputStream:(id)arg1 length:(unsigned int)arg2 error:(id*)arg3;
-- (BOOL)handleObjectWithIdentifier:(long long)arg1 fileStateIdentifier:(id)arg2 version:(unsigned int)arg3 classType:(int)arg4 stream:(id)arg5 length:(long long)arg6 relationshipTargets:(long long*)arg7 relationshipCount:(unsigned int)arg8 error:(id*)arg9;
+- (BOOL)handleObjectWithIdentifier:(int)arg1 fileStateIdentifier:(id)arg2 version:(unsigned int)arg3 classType:(int)arg4 stream:(id)arg5 length:(int)arg6 relationshipTargets:(int*)arg7 relationshipCount:(unsigned int)arg8 error:(id*)arg9;
 - (id)initWithDestinationPath:(id)arg1;
-- (BOOL)readFromDistributableArchiveStream:(id)arg1 estimatedDataLength:(long long)arg2 supplementalDataBundle:(id)arg3 error:(id*)arg4;
+- (BOOL)readFromDistributableArchiveStream:(id)arg1 estimatedDataLength:(int)arg2 supplementalDataBundle:(id)arg3 error:(id*)arg4;
 
 @end

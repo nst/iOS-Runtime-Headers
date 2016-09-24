@@ -5,34 +5,34 @@
 @interface WebGeolocationProviderIOS : NSObject <WebGeolocationProvider> {
     struct RetainPtr<WebGeolocationCoreLocationProvider> { 
         void *m_ptr; 
-    } _coreLocationProvider;
+    }  _coreLocationProvider;
     struct RetainPtr<_WebCoreLocationUpdateThreadingProxy> { 
         void *m_ptr; 
-    } _coreLocationUpdateListenerProxy;
-    BOOL _enableHighAccuracy;
-    BOOL _isSuspended;
+    }  _coreLocationUpdateListenerProxy;
+    BOOL  _enableHighAccuracy;
+    BOOL  _isSuspended;
     struct RetainPtr<WebGeolocationPosition> { 
         void *m_ptr; 
-    } _lastPosition;
+    }  _lastPosition;
     struct HashSet<WebView *, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *> > { 
         /* Warning: unhandled struct encoding: '{HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> >="m_table"^@"m_tableSize"I"m_tableSizeMask"I"m_keyCount"I"m_deletedCount"I}}' */ struct HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> > { 
             m_tableSize **m_table; 
         } m_impl; 
-    } _pendingInitialPositionWebView;
+    }  _pendingInitialPositionWebView;
     struct HashSet<WebView *, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *> > { 
         /* Warning: unhandled struct encoding: '{HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> >="m_table"^@"m_tableSize"I"m_tableSizeMask"I"m_keyCount"I"m_deletedCount"I}}' */ struct HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> > { 
             m_tableSize **m_table; 
         } m_impl; 
-    } _registeredWebViews;
+    }  _registeredWebViews;
     struct RetainPtr<NSTimer> { 
         void *m_ptr; 
-    } _sendLastPositionAsynchronouslyTimer;
-    BOOL _shouldResetOnResume;
+    }  _sendLastPositionAsynchronouslyTimer;
+    BOOL  _shouldResetOnResume;
     struct HashSet<WebView *, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *> > { 
         /* Warning: unhandled struct encoding: '{HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> >="m_table"^@"m_tableSize"I"m_tableSizeMask"I"m_keyCount"I"m_deletedCount"I}}' */ struct HashTable<WebView *, WebView *, WTF::IdentityExtractor, WTF::PtrHash<WebView *>, WTF::HashTraits<WebView *>, WTF::HashTraits<WebView *> > { 
             m_tableSize **m_table; 
         } m_impl; 
-    } _trackedWebViews;
+    }  _trackedWebViews;
     struct HashMap<WTF::RetainPtr<WebView>, WTF::RetainPtr<id<WebGeolocationProviderInitializationListener> >, WTF::PtrHash<WTF::RetainPtr<WebView> >, WTF::HashTraits<WTF::RetainPtr<WebView> >, WTF::HashTraits<WTF::RetainPtr<id<WebGeolocationProviderInitializationListener> > > > { 
         struct HashTable<WTF::RetainPtr<WebView>, WTF::KeyValuePair<WTF::RetainPtr<WebView>, WTF::RetainPtr<id<WebGeolocationProviderInitializationListener> > >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<WTF::RetainPtr<WebView>, WTF::RetainPtr<id<WebGeolocationProviderInitializationListener> > > >, WTF::PtrHash<WTF::RetainPtr<WebView> >, WTF::HashMap<WTF::RetainPtr<WebView>, WTF::RetainPtr<id<WebGeolocationProviderInitializationListener> >, WTF::PtrHash<WTF::RetainPtr<WebView> >, WTF::HashTraits<WTF::RetainPtr<WebView> >, WTF::HashTraits<WTF::RetainPtr<id<WebGeolocationProviderInitializationListener> > > >::KeyValuePairTraits, WTF::HashTraits<WTF::RetainPtr<WebView> > > { 
             struct KeyValuePair<WTF::RetainPtr<WebView>, WTF::RetainPtr<id<WebGeolocationProviderInitializationListener> > > {} *m_table; 
@@ -41,7 +41,7 @@
             unsigned int m_keyCount; 
             unsigned int m_deletedCount; 
         } m_impl; 
-    } _webViewsWaitingForCoreLocationAuthorization;
+    }  _webViewsWaitingForCoreLocationAuthorization;
 }
 
 @property (readonly, copy) NSString *debugDescription;

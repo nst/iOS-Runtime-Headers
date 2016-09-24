@@ -3,12 +3,12 @@
  */
 
 @interface SGSlice : NSObject {
-    unsigned int _end;
-    unsigned int _start;
+    unsigned int  _end;
+    unsigned int  _start;
     struct { 
         unsigned short category; 
         unsigned short subtype; 
-    } _type;
+    }  _type;
 }
 
 @property (nonatomic, readonly) unsigned int end;

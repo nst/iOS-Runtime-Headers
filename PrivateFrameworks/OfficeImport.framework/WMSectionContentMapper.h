@@ -3,7 +3,7 @@
  */
 
 @interface WMSectionContentMapper : CMMapper {
-    WDText *wdText;
+    WDText * wdText;
 }
 
 - (id)initWithWDText:(id)arg1 parent:(id)arg2;

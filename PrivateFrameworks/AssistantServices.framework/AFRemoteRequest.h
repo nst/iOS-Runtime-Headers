@@ -3,7 +3,7 @@
  */
 
 @interface AFRemoteRequest : NSObject {
-    AFRequestInfo *_info;
+    AFRequestInfo * _info;
 }
 
 @property (nonatomic, readonly) AFRequestInfo *info;

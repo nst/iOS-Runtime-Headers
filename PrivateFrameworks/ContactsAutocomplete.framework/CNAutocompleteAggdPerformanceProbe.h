@@ -3,8 +3,8 @@
  */
 
 @interface CNAutocompleteAggdPerformanceProbe : NSObject <CNAutocompletePerformanceProbe> {
-    CNAutocompleteAggdProbe *_aggdProbe;
-    NSMutableDictionary *_pendingAddData;
+    CNAutocompleteAggdProbe * _aggdProbe;
+    NSMutableDictionary * _pendingAddData;
 }
 
 @property (nonatomic, retain) CNAutocompleteAggdProbe *aggdProbe;

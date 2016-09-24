@@ -3,10 +3,10 @@
  */
 
 @interface UIControlTargetAction : NSObject {
-    SEL _action;
-    BOOL _cancelled;
-    unsigned int _eventMask;
-    id _target;
+    SEL  _action;
+    BOOL  _cancelled;
+    unsigned int  _eventMask;
+    id  _target;
 }
 
 @property (nonatomic) BOOL cancelled;

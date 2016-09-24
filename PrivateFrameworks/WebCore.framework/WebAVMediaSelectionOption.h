@@ -3,11 +3,12 @@
  */
 
 @interface WebAVMediaSelectionOption : NSObject {
-    NSString *_localizedDisplayName;
+    NSString * _localizedDisplayName;
 }
 
 @property (retain) NSString *localizedDisplayName;
 
+- (void)dealloc;
 - (id)localizedDisplayName;
 - (void)setLocalizedDisplayName:(id)arg1;
 

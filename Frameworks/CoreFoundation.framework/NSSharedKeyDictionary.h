@@ -3,15 +3,16 @@
  */
 
 @interface NSSharedKeyDictionary : NSMutableDictionary {
-    unsigned int _count;
-    int (*_ifkIMP;
-    NSSharedKeySet *_keyMap;
-    unsigned long _mutations;
-    NSMutableDictionary *_sideDic;
-    id *_values;
+    unsigned int  _count;
+    int (* _ifkIMP;
+    NSSharedKeySet * _keyMap;
+    unsigned long  _mutations;
+    NSMutableDictionary * _sideDic;
+    id * _values;
 }
 
 + (id)sharedKeyDictionaryWithKeySet:(id)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -20,7 +21,6 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateKeysAndObjectsWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
-- (void)finalize;
 - (void)getObjects:(id*)arg1 andKeys:(id*)arg2 count:(unsigned int)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithKeySet:(id)arg1;

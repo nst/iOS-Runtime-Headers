@@ -3,9 +3,9 @@
  */
 
 @interface _DECPersonItem : _DECItem {
-    CNContact *_contact;
-    NSString *_contactIdentifier;
-    CNContactProperty *_contactProperty;
+    CNContact * _contact;
+    NSString * _contactIdentifier;
+    CNContactProperty * _contactProperty;
 }
 
 @property (nonatomic, readonly) CNContact *contact;
@@ -13,12 +13,14 @@
 @property (nonatomic, readonly) CNContactProperty *contactProperty;
 
 + (id)_contactStore;
++ (unsigned int)category;
 + (id)personWithContact:(id)arg1;
 + (id)personWithContactIdentifier:(id)arg1;
 + (id)personWithContactProperty:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (BOOL)_isEqualToDECPersonItem:(id)arg1;
 - (id)contact;
 - (id)contactIdentifier;
 - (id)contactProperty;
@@ -30,6 +32,8 @@
 - (id)initWithContact:(id)arg1;
 - (id)initWithContactIdentifier:(id)arg1;
 - (id)initWithContactProperty:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEquivalent:(id)arg1;
 - (BOOL)isEquivalent:(id)arg1;
 
 @end

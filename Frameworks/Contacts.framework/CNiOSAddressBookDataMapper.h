@@ -3,7 +3,7 @@
  */
 
 @interface CNiOSAddressBookDataMapper : NSObject <CNDataMapper> {
-    CNiOSAddressBook *_addressBook;
+    CNiOSAddressBook * _addressBook;
 }
 
 @property (nonatomic, readonly) CNiOSAddressBook *addressBook;
@@ -32,7 +32,10 @@
 - (BOOL)_processSubgroupMembershipsFromSaveContext:(id)arg1 error:(id*)arg2;
 - (id)accountsMatchingPredicate:(id)arg1 error:(id*)arg2;
 - (id)addressBook;
-- (BOOL)canExecuteSaveRequest:(id)arg1 exception:(id*)arg2;
+- (id)batchEnumeratorForFetchRequest:(id)arg1;
+- (BOOL)canExecuteSaveRequest:(id)arg1 error:(id*)arg2;
+- (id)changeHistoryWithFetchRequest:(id)arg1 error:(id*)arg2;
+- (BOOL)clearChangeHistoryForClient:(id)arg1 toSequenceNumber:(int)arg2 error:(id*)arg3;
 - (id)contactWithUserActivityUserInfo:(id)arg1 keysToFetch:(id)arg2;
 - (id)contactsForFetchRequest:(id)arg1 error:(id*)arg2;
 - (id)contactsForFetchRequest:(id)arg1 matchInfos:(id*)arg2 error:(id*)arg3;
@@ -43,14 +46,17 @@
 - (id)defaultContainerIdentifierForAddressBook:(void*)arg1;
 - (id)executeFetchRequest:(id)arg1 progressiveResults:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (BOOL)executeSaveRequest:(id)arg1 error:(id*)arg2;
+- (BOOL)executeSaveRequest:(id)arg1 response:(id*)arg2 error:(id*)arg3;
 - (id)groupsMatchingPredicate:(id)arg1 error:(id*)arg2;
 - (id)groupsWithIdentifiers:(id)arg1 error:(id*)arg2;
+- (id)identifierWithError:(id*)arg1;
 - (id)init;
 - (id)initWithAddressBook:(id)arg1;
-- (id)initWithPath:(id)arg1;
+- (id)initWithContactsEnvironment:(id)arg1;
 - (id)meContactIdentifierWithError:(id*)arg1;
 - (id)membersOfGroupWithIdentifier:(id)arg1 keysToFetch:(id)arg2 error:(id*)arg3;
 - (id)policyForContainerWithIdentifier:(id)arg1 error:(id*)arg2;
+- (BOOL)registerClientForChangeHistory:(id)arg1 error:(id*)arg2;
 - (void)requestAccessForEntityType:(int)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)requestAccessForEntityType:(int)arg1 error:(id*)arg2;
 - (id)serverSearchContainersMatchingPredicate:(id)arg1 error:(id*)arg2;
@@ -58,6 +64,8 @@
 - (BOOL)setMeContact:(id)arg1 error:(id*)arg2;
 - (BOOL)setMeContact:(id)arg1 forContainer:(id)arg2 error:(id*)arg3;
 - (id)subgroupsOfGroupWithIdentifier:(id)arg1 error:(id*)arg2;
+- (id)unifiedContactCountWithError:(id*)arg1;
+- (BOOL)unregisterClientForChangeHistory:(id)arg1 error:(id*)arg2;
 - (id)usedLabelsForPropertyWithKey:(id)arg1 error:(id*)arg2;
 - (id)userActivityUserInfoForContact:(id)arg1;
 

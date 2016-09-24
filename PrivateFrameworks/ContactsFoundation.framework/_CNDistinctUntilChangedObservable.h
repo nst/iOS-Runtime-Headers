@@ -3,12 +3,12 @@
  */
 
 @interface _CNDistinctUntilChangedObservable : CNObservable {
-    id _lastObservedResult;
-    <CNObservable> *_observable;
+    id  _lastObservedResult;
+    <CNObservable> * _observable;
 }
 
+- (void).cxx_destruct;
 - (BOOL)_resultIsDistinctFromLastResult:(id)arg1;
-- (void)dealloc;
 - (id)initWithObservable:(id)arg1;
 - (id)subscribe:(id)arg1;
 

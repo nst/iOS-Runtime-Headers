@@ -3,17 +3,17 @@
  */
 
 @interface EKCalendarNotification : NSObject <EKIdentityProtocol> {
-    NSURL *_URI;
-    BOOL _alerted;
-    struct CGColor { } *_dotColor;
-    NSString *_emailAddress;
-    NSString *_firstName;
-    BOOL _hiddenFromNotificationCenter;
-    NSString *_lastName;
-    NSString *_name;
-    EKObjectID *_objectID;
-    NSString *_title;
-    int _type;
+    NSURL * _URI;
+    BOOL  _alerted;
+    struct CGColor { } * _dotColor;
+    NSString * _emailAddress;
+    NSString * _firstName;
+    BOOL  _hiddenFromNotificationCenter;
+    NSString * _lastName;
+    NSString * _name;
+    EKObjectID * _objectID;
+    NSString * _title;
+    int  _type;
 }
 
 @property (nonatomic, retain) NSURL *URI;
@@ -35,6 +35,7 @@
 
 // Image: /System/Library/Frameworks/EventKit.framework/EventKit
 
+- (void).cxx_destruct;
 - (id)URI;
 - (BOOL)alerted;
 - (void)dealloc;
@@ -63,8 +64,9 @@
 
 // Image: /System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
 
-- (id)messageStringForDescriptionWithOptions:(unsigned int)arg1;
-- (id)messageStringsForDescriptionWithOptions:(unsigned int)arg1;
+- (id)_identityStringWithOptions:(unsigned int)arg1;
+- (id)allDescriptionStringsWithOptions:(unsigned int)arg1;
+- (id)importantDescriptionStringWithOptions:(unsigned int)arg1;
 - (BOOL)supportsDisplay;
 - (id)titleStringWithOptions:(unsigned int)arg1;
 

@@ -3,17 +3,17 @@
  */
 
 @interface _SYMessageTimerContext : NSObject {
-    NSString *_identifier;
-    unsigned long long _seqno;
+    NSString * _identifier;
+    unsigned int  _seqno;
 }
 
 @property (nonatomic, copy) NSString *identifier;
-@property (nonatomic) unsigned long long seqno;
+@property (nonatomic) unsigned int seqno;
 
 - (void).cxx_destruct;
 - (id)identifier;
-- (unsigned long long)seqno;
+- (unsigned int)seqno;
 - (void)setIdentifier:(id)arg1;
-- (void)setSeqno:(unsigned long long)arg1;
+- (void)setSeqno:(unsigned int)arg1;
 
 @end

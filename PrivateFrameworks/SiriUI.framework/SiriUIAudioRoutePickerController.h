@@ -3,12 +3,12 @@
  */
 
 @interface SiriUIAudioRoutePickerController : NSObject {
-    NSString *_audioCategory;
-    BOOL _bluetoothIsPicked;
-    <SiriUIAudioRoutePickerControllerDelegate> *_delegate;
-    BOOL _hasRoutesToPick;
-    SiriRoutePickerAlertController *_pickerAlertController;
-    UIWindow *_window;
+    NSString * _audioCategory;
+    BOOL  _bluetoothIsPicked;
+    <SiriUIAudioRoutePickerControllerDelegate> * _delegate;
+    BOOL  _hasRoutesToPick;
+    SiriRoutePickerAlertController * _pickerAlertController;
+    UIWindow * _window;
 }
 
 @property (nonatomic) <SiriUIAudioRoutePickerControllerDelegate> *delegate;

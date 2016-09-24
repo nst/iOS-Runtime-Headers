@@ -3,7 +3,7 @@
  */
 
 @interface NSURLResponseInternal : NSObject {
-    struct _CFURLResponse { } *response;
+    struct _CFURLResponse { } * response;
 }
 
 - (void)dealloc;

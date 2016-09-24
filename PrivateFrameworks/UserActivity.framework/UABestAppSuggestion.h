@@ -3,17 +3,17 @@
  */
 
 @interface UABestAppSuggestion : NSObject {
-    NSString *_activityType;
-    NSString *_bundleIdentifier;
-    double _confidence;
-    NSString *_dynamicIdentifier;
-    NSDate *_lastUpdateTime;
-    NSDictionary *_options;
-    NSString *_originatingDeviceIdentifier;
-    NSString *_originatingDeviceName;
-    NSString *_originatingDeviceType;
-    unsigned int _type;
-    NSUUID *_uniqueIdentifier;
+    NSString * _activityType;
+    NSString * _bundleIdentifier;
+    double  _confidence;
+    NSString * _dynamicIdentifier;
+    NSDate * _lastUpdateTime;
+    NSDictionary * _options;
+    NSString * _originatingDeviceIdentifier;
+    NSString * _originatingDeviceName;
+    NSString * _originatingDeviceType;
+    unsigned int  _type;
+    NSUUID * _uniqueIdentifier;
 }
 
 @property (copy) NSString *activityType;
@@ -32,10 +32,10 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)activityType;
 - (id)bundleIdentifier;
 - (double)confidence;
-- (void)dealloc;
 - (id)debugDescription;
 - (id)description;
 - (id)dynamicIdentifier;

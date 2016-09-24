@@ -3,9 +3,9 @@
  */
 
 @interface KNClassicThemeRecord : TSPObject {
-    NSMutableArray *mMasters;
-    KNClassicStylesheetRecord *mStylesheetRecord;
-    NSString *mUUID;
+    NSMutableArray * mMasters;
+    KNClassicStylesheetRecord * mStylesheetRecord;
+    NSString * mUUID;
 }
 
 @property (nonatomic, copy) NSString *UUID;

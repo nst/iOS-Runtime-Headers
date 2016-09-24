@@ -3,9 +3,9 @@
  */
 
 @interface FBSceneLayerManager : NSObject <BSDescriptionProviding> {
-    NSString *_identifier;
-    NSHashTable *_observers;
-    NSMutableOrderedSet *_orderedLayers;
+    NSString * _identifier;
+    NSHashTable * _observers;
+    NSMutableOrderedSet * _orderedLayers;
 }
 
 @property (readonly, copy) NSString *debugDescription;

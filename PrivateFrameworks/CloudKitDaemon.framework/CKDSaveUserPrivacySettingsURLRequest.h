@@ -3,8 +3,8 @@
  */
 
 @interface CKDSaveUserPrivacySettingsURLRequest : CKDURLRequest {
-    NSString *_bundleID;
-    int _discoverableTrinary;
+    NSString * _bundleID;
+    int  _discoverableTrinary;
 }
 
 @property (nonatomic, copy) NSString *bundleID;
@@ -18,6 +18,7 @@
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
 - (id)requestOperations;
+- (BOOL)requiresTokenRegistration;
 - (void)setBundleID:(id)arg1;
 - (void)setDiscoverable:(BOOL)arg1;
 - (void)setDiscoverableTrinary:(int)arg1;

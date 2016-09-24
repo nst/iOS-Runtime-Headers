@@ -3,11 +3,11 @@
  */
 
 @interface TSPObjectContainer : TSPObject {
-    NSArray *_childObjects;
-    unsigned char _packageIdentifier;
+    NSArray * _childObjects;
+    unsigned char  _packageIdentifier;
 }
 
-+ (long long)objectIdentifierForPackageIdentifier:(unsigned char)arg1;
++ (int)objectIdentifierForPackageIdentifier:(unsigned char)arg1;
 
 - (void).cxx_destruct;
 - (unsigned int)delayedArchivingPriority;
@@ -19,6 +19,6 @@
 - (void)prepareForComponentWriteWithDelayedObjects:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (BOOL)shouldDelayArchiving;
-- (long long)tsp_identifier;
+- (int)tsp_identifier;
 
 @end

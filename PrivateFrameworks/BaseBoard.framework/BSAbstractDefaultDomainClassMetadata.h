@@ -3,8 +3,8 @@
  */
 
 @interface BSAbstractDefaultDomainClassMetadata : NSObject {
-    NSMutableDictionary *_propertyNameToPropertyMap;
-    NSMutableDictionary *_selectorToPropertyMap;
+    NSMutableDictionary * _propertyNameToPropertyMap;
+    NSMutableDictionary * _selectorToPropertyMap;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *propertyNameToPropertyMap;

@@ -3,8 +3,8 @@
  */
 
 @interface TSSStylePromise : NSObject <TSSStyleObject> {
-    NSMutableArray *_promisees;
-    TSSStyle *_sourceStyle;
+    NSMutableArray * _promisees;
+    TSSStyle * _sourceStyle;
 }
 
 + (id)promiseForStyle:(id)arg1;

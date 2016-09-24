@@ -3,23 +3,23 @@
  */
 
 @interface GEONavRoutePreloader : GEORoutePreloader {
-    BOOL _anyErrors;
-    double _beginTime;
-    <GEORoutePreloadCamera> *_camera;
-    int _currentLoadingSteps;
-    BOOL _finished;
-    NSTimer *_geodCrashTimer;
-    BOOL _hadEnoughTilesToDisableNetworking;
-    double _maneuverSizeInMeters;
-    double _mostRecentErrorTime;
-    NSMapTable *_stepErrors;
-    unsigned int _stepGeneration;
-    NSMapTable *_stepLifetimeErrors;
-    NSMutableArray *_steps;
-    GEOTileKeyList *_tilesLoadingOrLoaded;
-    GEOTileKeyList *_tilesMissed;
-    GEOTileKeyList *_tilesReceived;
-    BOOL _tooFarFromRoute;
+    BOOL  _anyErrors;
+    double  _beginTime;
+    <GEORoutePreloadCamera> * _camera;
+    int  _currentLoadingSteps;
+    BOOL  _finished;
+    NSTimer * _geodCrashTimer;
+    BOOL  _hadEnoughTilesToDisableNetworking;
+    double  _maneuverSizeInMeters;
+    double  _mostRecentErrorTime;
+    NSMapTable * _stepErrors;
+    unsigned int  _stepGeneration;
+    NSMapTable * _stepLifetimeErrors;
+    NSMutableArray * _steps;
+    GEOTileKeyList * _tilesLoadingOrLoaded;
+    GEOTileKeyList * _tilesMissed;
+    GEOTileKeyList * _tilesReceived;
+    BOOL  _tooFarFromRoute;
 }
 
 @property (nonatomic, retain) <GEORoutePreloadCamera> *camera;

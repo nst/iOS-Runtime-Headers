@@ -3,33 +3,34 @@
  */
 
 @interface IMDaemonController : NSObject {
-    BOOL _acquiringDaemonConnection;
-    BOOL _autoReconnect;
-    NSLock *_blockingLock;
-    BOOL _blocksConnectionAtResume;
-    unsigned int _cachedCapabilities;
-    NSRecursiveLock *_connectionLock;
-    IMDaemonListener *_daemonListener;
-    id _delegate;
-    unsigned int _gMyFZListenerCapabilities;
-    BOOL _hasBeenSuspended;
-    BOOL _hasCheckedForDaemon;
-    BOOL _inBlockingConnect;
-    unsigned int _lastUpdatedCapabilities;
-    NSString *_listenerID;
-    NSObject<OS_dispatch_queue> *_listenerLockQueue;
-    NSMutableDictionary *_listenerMap;
-    IMLocalObject *_localObject;
-    NSObject<OS_dispatch_queue> *_localObjectLockQueue;
-    BOOL _preventReconnect;
-    NSProtocolChecker *_protocol;
-    NSObject<OS_dispatch_queue> *_remoteDaemonLockQueue;
-    NSObject<OS_dispatch_queue> *_remoteMessageQueue;
-    IMRemoteObject<IMRemoteDaemonProtocol> *_remoteObject;
-    struct __CFRunLoopSource { } *_runLoopSource;
-    NSMutableArray *_services;
-    NSArray *_servicesToAllow;
-    NSArray *_servicesToDeny;
+    BOOL  _acquiringDaemonConnection;
+    BOOL  _autoReconnect;
+    NSLock * _blockingLock;
+    BOOL  _blocksConnectionAtResume;
+    unsigned int  _cachedCapabilities;
+    NSRecursiveLock * _connectionLock;
+    IMDaemonListener * _daemonListener;
+    id  _delegate;
+    unsigned int  _gMyFZListenerCapabilities;
+    BOOL  _hasBeenSuspended;
+    BOOL  _hasCheckedForDaemon;
+    BOOL  _inBlockingConnect;
+    unsigned int  _lastUpdatedCapabilities;
+    NSString * _listenerID;
+    NSObject<OS_dispatch_queue> * _listenerLockQueue;
+    NSMutableDictionary * _listenerMap;
+    IMLocalObject * _localObject;
+    NSObject<OS_dispatch_queue> * _localObjectLockQueue;
+    BOOL  _preventReconnect;
+    NSProtocolChecker * _protocol;
+    NSObject<OS_dispatch_queue> * _remoteDaemonLockQueue;
+    NSObject<OS_dispatch_queue> * _remoteMessageQueue;
+    IMRemoteObject<IMRemoteDaemonProtocol> * _remoteObject;
+    BOOL  _requestingConnection;
+    struct __CFRunLoopSource { } * _runLoopSource;
+    NSMutableArray * _services;
+    NSArray * _servicesToAllow;
+    NSArray * _servicesToDeny;
 }
 
 @property (setter=_setAutoReconnect:) BOOL _autoReconnect;
@@ -44,6 +45,7 @@
 @property (nonatomic, readonly) BOOL isConnected;
 @property (nonatomic, readonly) BOOL isConnecting;
 @property (nonatomic, readonly) IMDaemonListener *listener;
+@property (getter=isRequestingConnection, nonatomic, readonly) BOOL requestingConnection;
 
 + (BOOL)_applicationWillTerminate;
 + (void)_blockUntilSendQueueIsEmpty;
@@ -51,6 +53,7 @@
 + (id)sharedController;
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (BOOL)__isLocalObjectValidOnQueue:(id)arg1;
 - (BOOL)__isRemoteObjectValidOnQueue:(id)arg1;
 - (void)__setCapabilities:(unsigned int)arg1;
@@ -97,6 +100,8 @@
 - (id)init;
 - (BOOL)isConnected;
 - (BOOL)isConnecting;
+- (BOOL)isRequestingConnection;
+- (void)killDaemon;
 - (id)listener;
 - (void)listener:(id)arg1 setListenerCapabilities:(unsigned int)arg2;
 - (void)listener:(id)arg1 setValue:(id)arg2 ofPersistentProperty:(id)arg3;

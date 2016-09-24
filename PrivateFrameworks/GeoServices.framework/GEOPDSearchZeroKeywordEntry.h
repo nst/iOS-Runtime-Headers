@@ -7,13 +7,14 @@
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _categoryIndexs;
-    unsigned int _dayOfWeek;
+    }  _categoryIndexs;
+    unsigned int  _dayOfWeek;
     struct { 
         unsigned int dayOfWeek : 1; 
         unsigned int hourOfDay : 1; 
-    } _has;
-    unsigned int _hourOfDay;
+    }  _has;
+    unsigned int  _hourOfDay;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, readonly) unsigned int*categoryIndexs;
@@ -22,6 +23,7 @@
 @property (nonatomic) BOOL hasDayOfWeek;
 @property (nonatomic) BOOL hasHourOfDay;
 @property (nonatomic) unsigned int hourOfDay;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (void)addCategoryIndex:(unsigned int)arg1;
 - (unsigned int)categoryIndexAtIndex:(unsigned int)arg1;
@@ -46,6 +48,7 @@
 - (void)setHasDayOfWeek:(BOOL)arg1;
 - (void)setHasHourOfDay:(BOOL)arg1;
 - (void)setHourOfDay:(unsigned int)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

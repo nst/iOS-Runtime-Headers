@@ -3,9 +3,9 @@
  */
 
 @interface CKReaderViewController : UIViewController <UIWebViewDelegate> {
-    <CKReaderViewControllerDelegate> *_delegate;
-    NSString *_messageGUID;
-    UITextView *_textView;
+    <CKReaderViewControllerDelegate> * _delegate;
+    NSString * _messageGUID;
+    UITextView * _textView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -18,7 +18,10 @@
 @property (nonatomic, retain) UITextView *textView;
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } visibleRange;
 
-- (BOOL)ckCanDismissWhenSuspending;
++ (id)readerScrollPositionCache;
++ (id)readerViewControllerForChatItem:(id)arg1;
+
+- (void).cxx_destruct;
 - (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)dealloc;
 - (id)delegate;

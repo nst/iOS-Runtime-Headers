@@ -3,33 +3,33 @@
  */
 
 @interface YTVideo : NSObject {
-    NSString *_author;
-    int _batchStatus;
-    NSMutableArray *_captions;
-    NSURL *_captionsURL;
-    NSString *_category;
-    NSURL *_commentsURL;
-    NSCalendarDate *_dateAdded;
-    NSCalendarDate *_dateUpdated;
-    NSURL *_editURL;
-    NSString *_id;
-    NSURL *_infoURL;
-    BOOL _isProcessing;
-    NSString *_notificationName;
-    unsigned int _numDislikes;
-    unsigned int _numLikes;
-    unsigned int _numberOfViews;
-    int _privacy;
-    NSURL *_ratingsURL;
-    NSString *_restrictedCountries;
-    NSString *_shortID;
-    NSArray *_tags;
-    id /* block */ _thumbnailProxyBlock;
-    NSURL *_thumbnailURL;
-    NSString *_title;
-    NSString *_unplayable;
-    NSString *_videoDescription;
-    NSArray *_videoReferences;
+    NSString * _author;
+    int  _batchStatus;
+    NSMutableArray * _captions;
+    NSURL * _captionsURL;
+    NSString * _category;
+    NSURL * _commentsURL;
+    NSCalendarDate * _dateAdded;
+    NSCalendarDate * _dateUpdated;
+    NSURL * _editURL;
+    NSString * _id;
+    NSURL * _infoURL;
+    BOOL  _isProcessing;
+    NSString * _notificationName;
+    unsigned int  _numDislikes;
+    unsigned int  _numLikes;
+    unsigned int  _numberOfViews;
+    int  _privacy;
+    NSURL * _ratingsURL;
+    NSString * _restrictedCountries;
+    NSString * _shortID;
+    NSArray * _tags;
+    id /* block */  _thumbnailProxyBlock;
+    NSURL * _thumbnailURL;
+    NSString * _title;
+    NSString * _unplayable;
+    NSString * _videoDescription;
+    NSArray * _videoReferences;
 }
 
 + (void)disableNotifications;

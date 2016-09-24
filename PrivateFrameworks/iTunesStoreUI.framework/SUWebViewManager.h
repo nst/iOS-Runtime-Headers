@@ -3,23 +3,23 @@
  */
 
 @interface SUWebViewManager : NSObject <SUScriptInterfaceDelegate, UIWebViewDelegate, WebFrameLoadDelegate, WebPolicyDelegate, WebResourceLoadDelegate, WebUIDelegate> {
-    SSAuthenticationContext *_authenticationContext;
-    SUClientInterface *_clientInterface;
-    <SUWebViewManagerDelegate> *_delegate;
-    ISURLRequestPerformance *_initialRequestPerformance;
-    NSLock *_lock;
-    int _modalAlertClickedIndex;
-    id _originalFrameLoadDelegate;
-    id _originalPolicyDelegate;
-    id _originalResourceLoadDelegate;
-    id _originalUIDelegate;
-    NSMutableSet *_requireCellularURLs;
-    NSMapTable *_scriptInterfaces;
-    SUScriptWindowContext *_scriptWindowContext;
-    NSSet *_suppressCookiesHosts;
-    int _usingNetworkCount;
-    struct __CFSet { } *_webFramesPendingInitialRequest;
-    UIWebView *_webView;
+    SSAuthenticationContext * _authenticationContext;
+    SUClientInterface * _clientInterface;
+    <SUWebViewManagerDelegate> * _delegate;
+    ISURLRequestPerformance * _initialRequestPerformance;
+    NSLock * _lock;
+    id  _originalFrameLoadDelegate;
+    id  _originalPolicyDelegate;
+    id  _originalResourceLoadDelegate;
+    id  _originalUIDelegate;
+    SUWebScriptReloadContext * _pendingWebScriptReloadContext;
+    NSMutableSet * _requireCellularURLs;
+    NSMapTable * _scriptInterfaces;
+    SUScriptWindowContext * _scriptWindowContext;
+    NSSet * _suppressCookiesHosts;
+    int  _usingNetworkCount;
+    struct __CFSet { } * _webFramesPendingInitialRequest;
+    UIWebView * _webView;
 }
 
 @property (nonatomic, copy) SSAuthenticationContext *authenticationContext;
@@ -44,9 +44,9 @@
 - (id)_delegate;
 - (void)_endUsingNetwork;
 - (void)_enumerateScriptInterfacesWithBlock:(id /* block */)arg1;
-- (id)_newAlertWithMessage:(id)arg1;
+- (BOOL)_presentModalAlertWithMessage:(id)arg1 includingCancelButton:(BOOL)arg2 configurationHandler:(id /* block */)arg3;
+- (void)_requestWebScriptReloadWithContext:(id)arg1;
 - (id)_userIdentifier;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)authenticationContext;
 - (void)connectToWebView:(id)arg1;
 - (void)dealloc;
@@ -90,7 +90,7 @@
 - (void)webView:(id)arg1 didParseSource:(id)arg2 fromURL:(id)arg3 sourceId:(long)arg4 forWebFrame:(id)arg5;
 - (void)webView:(id)arg1 didReceiveTitle:(id)arg2 forFrame:(id)arg3;
 - (void)webView:(id)arg1 didStartProvisionalLoadForFrame:(id)arg2;
-- (void)webView:(id)arg1 documentViewDidSetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)webView:(id)arg1 documentViewDidSetFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (void)webView:(id)arg1 exceptionWasRaised:(id)arg2 sourceId:(long)arg3 line:(int)arg4 forWebFrame:(id)arg5;
 - (void)webView:(id)arg1 failedToParseSource:(id)arg2 baseLineNumber:(unsigned int)arg3 fromURL:(id)arg4 withError:(id)arg5 forWebFrame:(id)arg6;
 - (void)webView:(id)arg1 resource:(id)arg2 didReceiveResponse:(id)arg3 fromDataSource:(id)arg4;

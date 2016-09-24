@@ -3,8 +3,8 @@
  */
 
 @interface GEOPDComponent : PBCodable <NSCopying> {
-    GEOPDAttribution *_attribution;
-    int _cacheControl;
+    GEOPDAttribution * _attribution;
+    int  _cacheControl;
     struct { 
         unsigned int timestampFirstSeen : 1; 
         unsigned int cacheControl : 1; 
@@ -14,17 +14,17 @@
         unsigned int type : 1; 
         unsigned int valuesAvailable : 1; 
         unsigned int version : 1; 
-    } _has;
-    GEOPDSource *_source;
-    int _startIndex;
-    int _status;
-    double _timestampFirstSeen;
-    unsigned int _ttl;
-    int _type;
-    NSMutableArray *_values;
-    int _valuesAvailable;
-    unsigned int _version;
-    NSMutableArray *_versionDomains;
+    }  _has;
+    GEOPDSource * _source;
+    int  _startIndex;
+    int  _status;
+    double  _timestampFirstSeen;
+    unsigned int  _ttl;
+    int  _type;
+    NSMutableArray * _values;
+    int  _valuesAvailable;
+    unsigned int  _version;
+    NSMutableArray * _versionDomains;
 }
 
 @property (nonatomic, retain) GEOPDAttribution *attribution;
@@ -50,10 +50,17 @@
 @property (nonatomic) unsigned int version;
 @property (nonatomic, retain) NSMutableArray *versionDomains;
 
++ (Class)valueType;
++ (Class)versionDomainType;
+
+- (int)StringAsCacheControl:(id)arg1;
+- (int)StringAsStatus:(id)arg1;
+- (int)StringAsType:(id)arg1;
 - (void)addValue:(id)arg1;
 - (void)addVersionDomain:(id)arg1;
 - (id)attribution;
 - (int)cacheControl;
+- (id)cacheControlAsString:(int)arg1;
 - (void)clearValues;
 - (void)clearVersionDomains;
 - (void)copyTo:(id)arg1;
@@ -98,9 +105,11 @@
 - (id)source;
 - (int)startIndex;
 - (int)status;
+- (id)statusAsString:(int)arg1;
 - (double)timestampFirstSeen;
 - (unsigned int)ttl;
 - (int)type;
+- (id)typeAsString:(int)arg1;
 - (id)valueAtIndex:(unsigned int)arg1;
 - (id)values;
 - (int)valuesAvailable;

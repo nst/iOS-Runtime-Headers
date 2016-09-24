@@ -3,7 +3,7 @@
  */
 
 @interface StepHandler : NSObject {
-    <CoreActivityPedometerDelegate> *_delegate;
+    <CoreActivityPedometerDelegate> * _delegate;
 }
 
 @property (nonatomic) <CoreActivityPedometerDelegate> *delegate;

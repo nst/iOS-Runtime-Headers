@@ -3,9 +3,9 @@
  */
 
 @interface CBMutableCharacteristic : CBCharacteristic {
-    NSNumber *_ID;
-    unsigned int _permissions;
-    NSMutableArray *_subscribedCentrals;
+    NSNumber * _ID;
+    unsigned int  _permissions;
+    NSMutableArray * _subscribedCentrals;
 }
 
 @property (retain) NSNumber *ID;
@@ -15,6 +15,7 @@
 @property (readonly, retain) NSArray *subscribedCentrals;
 @property (retain) NSData *value;
 
+- (void).cxx_destruct;
 - (id)ID;
 - (void)dealloc;
 - (id)description;

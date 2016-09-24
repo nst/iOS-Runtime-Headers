@@ -3,7 +3,7 @@
  */
 
 @interface EXReader : OCXReader {
-    NSString *mTemporaryDirectory;
+    NSString * mTemporaryDirectory;
 }
 
 @property (nonatomic, retain) NSString *temporaryDirectory;

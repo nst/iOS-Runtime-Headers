@@ -3,8 +3,8 @@
  */
 
 @interface FBUISceneUpdateClientSettingsEvent : FBUISceneEvent {
-    FBSSceneClientSettingsDiff *_diff;
-    FBSSceneClientSettings *_settings;
+    FBSSceneClientSettingsDiff * _diff;
+    FBSSceneClientSettings * _settings;
 }
 
 @property (nonatomic, copy) FBSSceneClientSettings *settings;

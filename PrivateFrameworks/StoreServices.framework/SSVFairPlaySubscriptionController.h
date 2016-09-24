@@ -3,24 +3,24 @@
  */
 
 @interface SSVFairPlaySubscriptionController : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    BOOL _hasValidSubscriptionStatusDidChangeNotifyToken;
-    int _subscriptionStatusDidChangeNotifyToken;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    BOOL  _hasValidSubscriptionStatusDidChangeNotifyToken;
+    int  _subscriptionStatusDidChangeNotifyToken;
 }
 
 - (void).cxx_destruct;
-- (id)_accountUniqueIdentifierToSubscriptionStatusWithFPSubscriptionInfoList:(struct FPSubscriptionInfo_ { unsigned long long x1; int x2; }*)arg1 subscriptionInfoListLength:(unsigned long)arg2;
+- (id)_accountUniqueIdentifierToSubscriptionStatusWithFPSubscriptionInfoList:(struct FPSubscriptionInfo_ { unsigned int x1; int x2; }*)arg1 subscriptionInfoListLength:(unsigned long)arg2;
 - (void)_enumerateSubscriptionInfoUsingBlock:(id /* block */)arg1;
 - (void)_notifySubscriptionStatusDidChange;
-- (id)_subscriptionStatusForFPSubscriptionInfo:(struct FPSubscriptionInfo_ { unsigned long long x1; int x2; })arg1;
+- (id)_subscriptionStatusForFPSubscriptionInfo:(struct FPSubscriptionInfo_ { unsigned int x1; int x2; })arg1;
 - (void)dealloc;
 - (void)enumerateAccountSubscriptionStatusUsingBlock:(id /* block */)arg1;
-- (void)generateSubscriptionBagRequestWithAccountUniqueIdentifier:(unsigned long long)arg1 transactionType:(unsigned int)arg2 machineIDData:(id)arg3 returningSubscriptionBagData:(id*)arg4 error:(id*)arg5;
-- (void)generateSubscriptionLeaseRequestWithAccountUniqueID:(unsigned long long)arg1 transactionType:(unsigned int)arg2 certificateData:(id)arg3 assetIDData:(id)arg4 returningLeaseData:(id*)arg5 subscriptionBagData:(id*)arg6 error:(id*)arg7;
-- (void)importSubscriptionKeyBagData:(id)arg1 leaseInfoData:(id)arg2 returningError:(id*)arg3;
-- (void)importSubscriptionKeyBagData:(id)arg1 returningError:(id*)arg2;
+- (BOOL)generateSubscriptionBagRequestWithAccountUniqueIdentifier:(unsigned int)arg1 transactionType:(unsigned int)arg2 machineIDData:(id)arg3 returningSubscriptionBagData:(id*)arg4 error:(id*)arg5;
+- (BOOL)generateSubscriptionLeaseRequestWithAccountUniqueID:(unsigned int)arg1 transactionType:(unsigned int)arg2 certificateData:(id)arg3 assetIDData:(id)arg4 returningLeaseData:(id*)arg5 subscriptionBagData:(id*)arg6 error:(id*)arg7;
+- (BOOL)importSubscriptionKeyBagData:(id)arg1 leaseInfoData:(id)arg2 returningError:(id*)arg3;
+- (BOOL)importSubscriptionKeyBagData:(id)arg1 returningError:(id*)arg2;
 - (id)init;
 - (BOOL)stopSubscriptionLease:(id*)arg1;
-- (id)subscriptionStatusForAccountUniqueIdentifier:(unsigned long long)arg1;
+- (id)subscriptionStatusForAccountUniqueIdentifier:(unsigned int)arg1;
 
 @end

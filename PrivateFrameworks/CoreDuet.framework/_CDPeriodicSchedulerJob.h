@@ -3,11 +3,11 @@
  */
 
 @interface _CDPeriodicSchedulerJob : NSObject {
-    NSObject<OS_xpc_object> *_executionCriteria;
-    id /* block */ _handler;
-    NSString *_jobName;
-    int _period;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_xpc_object> * _executionCriteria;
+    id /* block */  _handler;
+    NSString * _jobName;
+    int  _period;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly) NSObject<OS_xpc_object> *executionCriteria;

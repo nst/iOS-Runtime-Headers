@@ -3,7 +3,7 @@
  */
 
 @interface STStorage : STSStgObject {
-    struct _Storage { } *m_pCStorage;
+    struct _Storage { } * m_pCStorage;
 }
 
 - (void)close;

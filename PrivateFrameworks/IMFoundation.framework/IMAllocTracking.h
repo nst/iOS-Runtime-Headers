@@ -3,7 +3,7 @@
  */
 
 @interface IMAllocTracking : NSObject {
-    NSMutableArray *_callStacks;
+    NSMutableArray * _callStacks;
 }
 
 - (void)_registerCallstack;

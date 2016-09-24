@@ -3,14 +3,14 @@
  */
 
 @interface SSVDirectUploadQueue : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    int _daemonLaunchToken;
-    SSXPCConnection *_inboundConnection;
-    NSObject<OS_dispatch_queue> *_observerQueue;
-    NSHashTable *_observers;
-    SSXPCConnection *_outboundConnection;
-    NSArray *_uploadKinds;
-    NSMutableArray *_uploads;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    int  _daemonLaunchToken;
+    SSXPCConnection * _inboundConnection;
+    NSObject<OS_dispatch_queue> * _observerQueue;
+    NSHashTable * _observers;
+    SSXPCConnection * _outboundConnection;
+    NSArray * _uploadKinds;
+    NSMutableArray * _uploads;
 }
 
 @property (readonly, copy) NSArray *uploadKinds;

@@ -3,8 +3,8 @@
  */
 
 @interface CNFInternalAccountViewController : PSListController {
-    IMAccount *_account;
-    FTRegConnectionHandler *_connectionHandler;
+    IMAccount * _account;
+    FTRegConnectionHandler * _connectionHandler;
 }
 
 @property (nonatomic, retain) IMAccount *account;

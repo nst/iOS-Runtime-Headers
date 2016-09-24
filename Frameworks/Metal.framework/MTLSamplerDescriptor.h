@@ -3,14 +3,15 @@
  */
 
 @interface MTLSamplerDescriptor : NSObject <NSCopying> {
-    BOOL _lodAverage;
+    BOOL  _lodAverage;
 }
 
+@property (nonatomic) unsigned int borderColor;
 @property (nonatomic) unsigned int compareFunction;
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic) BOOL lodAverage;
-@property (nonatomic) float lodMaxClamp;
-@property (nonatomic) float lodMinClamp;
+@property (nonatomic) double lodMaxClamp;
+@property (nonatomic) double lodMinClamp;
 @property (nonatomic) unsigned int magFilter;
 @property (nonatomic) unsigned int maxAnisotropy;
 @property (nonatomic) unsigned int minFilter;

@@ -3,20 +3,20 @@
  */
 
 @interface MPStreamingDownloadSessionController : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSMapTable *_assetDownloadSessionToDownloadSessions;
-    NSMapTable *_assetDownloadSessionToPlaybackMetadata;
-    NSMutableArray *_assetDownloadSessionsPendingStart;
-    unsigned int _pausingAllDownloadsTransactionCount;
-    struct vector<unsigned long long, std::__1::allocator<unsigned long long> > { 
-        unsigned long long *__begin_; 
-        unsigned long long *__end_; 
-        struct __compressed_pair<unsigned long long *, std::__1::allocator<unsigned long long> > { 
-            unsigned long long *__first_; 
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSMapTable * _assetDownloadSessionToDownloadSessions;
+    NSMapTable * _assetDownloadSessionToPlaybackMetadata;
+    NSMutableArray * _assetDownloadSessionsPendingStart;
+    unsigned int  _pausingAllDownloadsTransactionCount;
+    struct vector<unsigned int, std::__1::allocator<unsigned int> > { 
+        unsigned int *__begin_; 
+        unsigned int *__end_; 
+        struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int> > { 
+            unsigned int *__first_; 
         } __end_cap_; 
-    } _prioritizedDownloadTokens;
-    NSOperationQueue *_streamingOperationQueue;
-    NSMapTable *_uniqueKeyToDownloadSessions;
+    }  _prioritizedDownloadTokens;
+    NSOperationQueue * _streamingOperationQueue;
+    NSMapTable * _uniqueKeyToDownloadSessions;
 }
 
 + (id)sharedDownloadSessionController;
@@ -39,6 +39,7 @@
 - (id)_newDownloadSessionForPlaybackItemMetadata:(id)arg1 sourceURL:(id)arg2 downloadKey:(id)arg3 sinfs:(id)arg4 pathExtension:(id)arg5 assetFlavor:(id)arg6 protectionType:(unsigned int)arg7 returningAssetDownloadSession:(id*)arg8;
 - (void)_playbackItemMetadataNetworkConstraintsDidChangeNotification:(id)arg1;
 - (void)_postFailedForDownloadSession:(id)arg1;
+- (void)_postFailedForDownloadSession:(id)arg1 withError:(id)arg2;
 - (id)_preferredAssetFlavorsForAssetQuality:(unsigned int)arg1;
 - (void)_registerForNotificationsForAssetDownloadSession:(id)arg1;
 - (void)_registerForNotificationsForPlaybackItemMetadata:(id)arg1;

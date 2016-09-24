@@ -3,13 +3,13 @@
  */
 
 @interface CBMutableDescriptor : CBDescriptor {
-    NSNumber *_ID;
+    NSNumber * _ID;
 }
 
 @property (retain) NSNumber *ID;
 
+- (void).cxx_destruct;
 - (id)ID;
-- (void)dealloc;
 - (id)description;
 - (id)initWithCharacteristic:(id)arg1 dictionary:(id)arg2;
 - (id)initWithType:(id)arg1 value:(id)arg2;

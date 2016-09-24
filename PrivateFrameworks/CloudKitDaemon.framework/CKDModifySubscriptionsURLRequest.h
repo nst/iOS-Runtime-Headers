@@ -3,11 +3,11 @@
  */
 
 @interface CKDModifySubscriptionsURLRequest : CKDURLRequest {
-    NSMutableDictionary *_subscriptionIDByRequestID;
-    NSArray *_subscriptionIDsToDelete;
-    id /* block */ _subscriptionModifiedBlock;
-    NSArray *_subscriptionsToSave;
-    CKRecordZoneID *_zoneID;
+    NSMutableDictionary * _subscriptionIDByRequestID;
+    NSArray * _subscriptionIDsToDelete;
+    id /* block */  _subscriptionModifiedBlock;
+    NSArray * _subscriptionsToSave;
+    CKRecordZoneID * _zoneID;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *subscriptionIDByRequestID;

@@ -3,8 +3,8 @@
  */
 
 @interface _SKUIDynamicGridEntityValueProviderValue : NSObject {
-    <IKEntityValueProviding> *_entityValueProvider;
-    int _sectionIndex;
+    <IKEntityValueProviding> * _entityValueProvider;
+    int  _sectionIndex;
 }
 
 @property (nonatomic, retain) <IKEntityValueProviding> *entityValueProvider;

@@ -3,11 +3,11 @@
  */
 
 @interface YTCaptionTrack : NSObject {
-    NSURL *_captionTrackURL;
-    NSString *_language;
-    BOOL _speechRecognition;
-    NSString *_title;
-    YTVideo *_video;
+    NSURL * _captionTrackURL;
+    NSString * _language;
+    BOOL  _speechRecognition;
+    NSString * _title;
+    YTVideo * _video;
 }
 
 @property (nonatomic, retain) NSURL *captionTrackURL;

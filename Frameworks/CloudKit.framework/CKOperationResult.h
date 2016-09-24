@@ -3,12 +3,12 @@
  */
 
 @interface CKOperationResult : NSObject <NSSecureCoding> {
-    NSError *_error;
-    CKOperationMetrics *_metrics;
-    NSString *_operationID;
-    NSArray *_requestUUIDs;
-    NSDictionary *_responseHTTPHeadersByRequestUUID;
-    NSDictionary *_w3cNavigationTimingByRequestUUID;
+    NSError * _error;
+    CKOperationMetrics * _metrics;
+    NSString * _operationID;
+    NSArray * _requestUUIDs;
+    NSDictionary * _responseHTTPHeadersByRequestUUID;
+    NSDictionary * _w3cNavigationTimingByRequestUUID;
 }
 
 @property (nonatomic, retain) NSError *error;

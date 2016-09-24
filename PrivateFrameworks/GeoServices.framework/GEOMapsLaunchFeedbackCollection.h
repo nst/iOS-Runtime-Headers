@@ -5,19 +5,19 @@
 @interface GEOMapsLaunchFeedbackCollection : PBCodable <NSCopying> {
     struct { 
         unsigned int sessionId : 1; 
-    } _has;
-    struct { 
-        unsigned long long _high; 
-        unsigned long long _low; 
-    } _sessionId;
-    NSString *_sourceAppBundleId;
-    NSString *_uriScheme;
+    }  _has;
+    struct GEOSessionID { 
+        unsigned int _high; 
+        unsigned int _low; 
+    }  _sessionId;
+    NSString * _sourceAppBundleId;
+    NSString * _uriScheme;
 }
 
 @property (nonatomic) BOOL hasSessionId;
 @property (nonatomic, readonly) BOOL hasSourceAppBundleId;
 @property (nonatomic, readonly) BOOL hasUriScheme;
-@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; } sessionId;
+@property (nonatomic) struct GEOSessionID { unsigned int x1; unsigned int x2; } sessionId;
 @property (nonatomic, retain) NSString *sourceAppBundleId;
 @property (nonatomic, retain) NSString *uriScheme;
 
@@ -33,9 +33,9 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (struct { unsigned long long x1; unsigned long long x2; })sessionId;
+- (struct GEOSessionID { unsigned int x1; unsigned int x2; })sessionId;
 - (void)setHasSessionId:(BOOL)arg1;
-- (void)setSessionId:(struct { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setSessionId:(struct GEOSessionID { unsigned int x1; unsigned int x2; })arg1;
 - (void)setSourceAppBundleId:(id)arg1;
 - (void)setUriScheme:(id)arg1;
 - (id)sourceAppBundleId;

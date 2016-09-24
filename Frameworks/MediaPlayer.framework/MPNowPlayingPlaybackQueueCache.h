@@ -3,10 +3,10 @@
  */
 
 @interface MPNowPlayingPlaybackQueueCache : NSObject {
-    NSMutableDictionary *_changedItems;
-    BOOL _coalescingUpdates;
-    NSMutableSet *_items;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableDictionary * _changedItems;
+    BOOL  _coalescingUpdates;
+    NSMutableSet * _items;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 - (void).cxx_destruct;

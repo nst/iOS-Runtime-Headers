@@ -3,11 +3,11 @@
  */
 
 @interface ABModelRecord : NSObject {
-    long _highlightIndex;
-    BOOL _isGroup;
-    NSArray *_namePieces;
-    int _recordID;
-    struct __CFString { } *_sortKey;
+    long  _highlightIndex;
+    BOOL  _isGroup;
+    NSArray * _namePieces;
+    int  _recordID;
+    struct __CFString { } * _sortKey;
 }
 
 - (void)dealloc;

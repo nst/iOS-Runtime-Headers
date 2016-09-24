@@ -3,8 +3,8 @@
  */
 
 @interface SKPerformSelector : SKAction {
-    SEL _selector;
-    id _target;
+    SEL  _selector;
+    id  _target;
 }
 
 + (id)perfromSelector:(SEL)arg1 onTarget:(id)arg2;

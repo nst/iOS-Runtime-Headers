@@ -3,52 +3,47 @@
  */
 
 @interface SCROBrailleLine : NSObject {
-    BOOL _anyUnread;
-    id _appToken;
-    BOOL _blink;
-    char *_blinkerBuffer;
-    BOOL _brailleChunksAreDirty;
-    <SCROBrailleDriverProtocol> *_brailleDriver;
-    struct __CFArray { } *_chunkArray;
-    struct __CFDictionary { } *_chunkDictionary;
-    BOOL _currentUnread;
-    char *_displayBuffer;
-    BOOL _displayEnabled;
-    char *_displayFilter;
-    int _displayMode;
-    int _firstToken;
-    int _focusLocation;
-    int _iBeamLocation;
-    int _insetSize;
-    BOOL _isPanning;
-    int _lastToken;
-    int _leftInset;
-    NSMutableAttributedString *_lineBuffer;
-    int _lineFocus;
-    int _lineOffset;
-    int _masterStatusCellIndex;
-    BOOL _needsDisplayFlush;
-    BOOL _needsFocusFlush;
-    BOOL _needsStatusFlush;
-    int _rightInset;
-    struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
-    } _selectionRange;
-    BOOL _showDotsSevenAndEight;
-    int _size;
-    NSData *_statusData;
-    char *_statusFilter;
-    int _statusSize;
+    BOOL  _anyUnread;
+    id  _appToken;
+    BOOL  _blink;
+    char * _blinkerBuffer;
+    <SCROBrailleDriverProtocol> * _brailleDriver;
+    struct __CFArray { } * _chunkArray;
+    struct __CFDictionary { } * _chunkDictionary;
+    BOOL  _currentUnread;
+    char * _displayBuffer;
+    BOOL  _displayEnabled;
+    char * _displayFilter;
+    int  _displayMode;
+    int  _firstToken;
+    int  _iBeamLocation;
+    int  _insetSize;
+    BOOL  _isPanning;
+    int  _lastToken;
+    int  _leftInset;
+    NSMutableAttributedString * _lineBuffer;
+    int  _lineFocus;
+    int  _lineOffset;
+    int  _masterStatusCellIndex;
+    BOOL  _needsDisplayFlush;
+    BOOL  _needsFocusFlush;
+    BOOL  _needsStatusFlush;
+    int  _rightInset;
+    BOOL  _showDotsSevenAndEight;
+    int  _size;
+    NSData * _statusData;
+    char * _statusFilter;
+    int  _statusSize;
     struct { 
         NSData *data; 
         int alignment; 
         int length; 
         char *cells; 
-    } _virtualStatus;
+    }  _virtualStatus;
 }
 
 @property (nonatomic) BOOL displayEnabled;
+@property (nonatomic) int lineOffset;
 @property (nonatomic, readonly) BOOL needsDisplayFlush;
 
 + (void)initialize;
@@ -73,9 +68,10 @@
 - (id)initWithDriver:(id)arg1 mainSize:(int)arg2 statusSize:(int)arg3;
 - (int)lastToken;
 - (int)lineFocus;
+- (int)lineOffset;
 - (int)masterStatusCellIndex;
 - (BOOL)needsDisplayFlush;
-- (id)newLineDescriptorscriptor;
+- (id)newLineDescriptor;
 - (BOOL)panLeft;
 - (BOOL)panRight;
 - (void)setAnyUnread:(BOOL)arg1;
@@ -85,6 +81,7 @@
 - (void)setDisplayMode:(int)arg1;
 - (void)setFormatter:(id)arg1;
 - (void)setLineFocus:(int)arg1;
+- (void)setLineOffset:(int)arg1;
 - (void)setMainSize:(int)arg1;
 - (void)setMasterStatusCellIndex:(int)arg1;
 - (void)setRealStatus:(id)arg1;

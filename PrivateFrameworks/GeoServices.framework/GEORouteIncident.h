@@ -3,9 +3,9 @@
  */
 
 @interface GEORouteIncident : PBCodable <NSCopying> {
-    NSString *_crossStreet;
-    long long _endTime;
-    BOOL _endTimeReliable;
+    NSString * _crossStreet;
+    int  _endTime;
+    BOOL  _endTimeReliable;
     struct { 
         unsigned int endTime : 1; 
         unsigned int startTime : 1; 
@@ -15,21 +15,21 @@
         unsigned int significance : 1; 
         unsigned int type : 1; 
         unsigned int endTimeReliable : 1; 
-    } _has;
-    NSString *_incidentId;
-    NSString *_info;
-    unsigned int _laneClosureCount;
-    int _laneClosureType;
-    GEOLatLng *_position;
-    int _significance;
-    long long _startTime;
-    NSString *_street;
-    int _type;
-    long long _updateTime;
+    }  _has;
+    NSString * _incidentId;
+    NSString * _info;
+    unsigned int  _laneClosureCount;
+    int  _laneClosureType;
+    GEOLatLng * _position;
+    int  _significance;
+    int  _startTime;
+    NSString * _street;
+    int  _type;
+    int  _updateTime;
 }
 
 @property (nonatomic, retain) NSString *crossStreet;
-@property (nonatomic) long long endTime;
+@property (nonatomic) int endTime;
 @property (nonatomic) BOOL endTimeReliable;
 @property (nonatomic, readonly) BOOL hasCrossStreet;
 @property (nonatomic) BOOL hasEndTime;
@@ -50,20 +50,21 @@
 @property (nonatomic) int laneClosureType;
 @property (nonatomic, retain) GEOLatLng *position;
 @property (nonatomic) int significance;
-@property (nonatomic) long long startTime;
+@property (nonatomic) int startTime;
 @property (nonatomic, retain) NSString *street;
 @property (nonatomic) int type;
-@property (nonatomic) long long updateTime;
+@property (nonatomic) int updateTime;
 
-// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
-
+- (int)StringAsLaneClosureType:(id)arg1;
+- (int)StringAsSignificance:(id)arg1;
+- (int)StringAsType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)crossStreet;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (long long)endTime;
+- (int)endTime;
 - (BOOL)endTimeReliable;
 - (BOOL)hasCrossStreet;
 - (BOOL)hasEndTime;
@@ -84,11 +85,12 @@
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)laneClosureCount;
 - (int)laneClosureType;
+- (id)laneClosureTypeAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)position;
 - (BOOL)readFrom:(id)arg1;
 - (void)setCrossStreet:(id)arg1;
-- (void)setEndTime:(long long)arg1;
+- (void)setEndTime:(int)arg1;
 - (void)setEndTimeReliable:(BOOL)arg1;
 - (void)setHasEndTime:(BOOL)arg1;
 - (void)setHasEndTimeReliable:(BOOL)arg1;
@@ -104,19 +106,17 @@
 - (void)setLaneClosureType:(int)arg1;
 - (void)setPosition:(id)arg1;
 - (void)setSignificance:(int)arg1;
-- (void)setStartTime:(long long)arg1;
+- (void)setStartTime:(int)arg1;
 - (void)setStreet:(id)arg1;
 - (void)setType:(int)arg1;
-- (void)setUpdateTime:(long long)arg1;
+- (void)setUpdateTime:(int)arg1;
 - (int)significance;
-- (long long)startTime;
+- (id)significanceAsString:(int)arg1;
+- (int)startTime;
 - (id)street;
 - (int)type;
-- (long long)updateTime;
+- (id)typeAsString:(int)arg1;
+- (int)updateTime;
 - (void)writeTo:(id)arg1;
-
-// Image: /System/Library/Frameworks/MapKit.framework/MapKit
-
-- (struct CGImage { }*)_mapKitImage;
 
 @end

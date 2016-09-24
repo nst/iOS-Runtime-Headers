@@ -3,8 +3,8 @@
  */
 
 @interface _UIInputViewKeyboardOutput : TIKeyboardOutput <NSCopying, NSSecureCoding> {
-    BOOL _didBeginOutput;
-    int _positionOffset;
+    BOOL  _didBeginOutput;
+    int  _positionOffset;
 }
 
 @property (nonatomic) BOOL didBeginOutput;

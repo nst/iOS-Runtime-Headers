@@ -3,10 +3,10 @@
  */
 
 @interface CKTiledLayoutGeneratorScanState : NSObject {
-    int _scanLocation;
-    int _scanSpecialSequenceCount;
-    BOOL _scannedBatchHasCaption;
-    id _scannedBatchID;
+    int  _scanLocation;
+    int  _scanSpecialSequenceCount;
+    BOOL  _scannedBatchHasCaption;
+    id  _scannedBatchID;
 }
 
 @property (nonatomic) int scanLocation;

@@ -3,15 +3,15 @@
  */
 
 @interface AWDMPTCPConnectionReport : PBCodable <NSCopying> {
-    NSString *_clientId;
-    BOOL _establishmentCellularFallback;
-    int _establishmentFailureError;
-    BOOL _establishmentForcedTcpFallback;
-    NSString *_establishmentInterfaceName;
-    BOOL _establishmentSuccess;
-    int _establishmentSynRetransmits;
-    BOOL _establishmentTcpFallback;
-    double _establishmentTime;
+    NSString * _clientId;
+    BOOL  _establishmentCellularFallback;
+    int  _establishmentFailureError;
+    BOOL  _establishmentForcedTcpFallback;
+    NSString * _establishmentInterfaceName;
+    BOOL  _establishmentSuccess;
+    int  _establishmentSynRetransmits;
+    BOOL  _establishmentTcpFallback;
+    double  _establishmentTime;
     struct { 
         unsigned int establishmentTime : 1; 
         unsigned int postConnectSessionLifetime : 1; 
@@ -27,16 +27,16 @@
         unsigned int establishmentTcpFallback : 1; 
         unsigned int postConnectMultiHomed : 1; 
         unsigned int postConnectSingleHomed : 1; 
-    } _has;
-    NSMutableArray *_interfaceReports;
-    BOOL _postConnectMultiHomed;
-    double _postConnectSessionLifetime;
-    BOOL _postConnectSingleHomed;
-    int _postConnectSubflowAttemptCount;
-    int _postConnectSubflowMaxSubflowCount;
-    int _subflowSwitchingCount;
-    NSMutableArray *_subflowSwitchingReports;
-    unsigned long long _timestamp;
+    }  _has;
+    NSMutableArray * _interfaceReports;
+    BOOL  _postConnectMultiHomed;
+    double  _postConnectSessionLifetime;
+    BOOL  _postConnectSingleHomed;
+    int  _postConnectSubflowAttemptCount;
+    int  _postConnectSubflowMaxSubflowCount;
+    int  _subflowSwitchingCount;
+    NSMutableArray * _subflowSwitchingReports;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic, retain) NSString *clientId;

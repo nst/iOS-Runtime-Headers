@@ -3,20 +3,24 @@
  */
 
 @interface GEOPDExternalAction : PBCodable <NSCopying> {
-    int _componentType;
-    NSMutableArray *_externalActionDetails;
+    int  _componentType;
+    NSMutableArray * _externalActionDetails;
     struct { 
         unsigned int componentType : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic) int componentType;
 @property (nonatomic, retain) NSMutableArray *externalActionDetails;
 @property (nonatomic) BOOL hasComponentType;
 
++ (Class)externalActionDetailType;
+
+- (int)StringAsComponentType:(id)arg1;
 - (void)addExternalActionDetail:(id)arg1;
 - (void)clearExternalActionDetails;
 - (int)componentType;
+- (id)componentTypeAsString:(int)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

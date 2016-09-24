@@ -3,7 +3,7 @@
  */
 
 @interface WKApplicationProxy : NSObject {
-    NSURL *_bundleURL;
+    NSURL * _bundleURL;
 }
 
 @property (nonatomic, readonly) NSURL *bundleURL;

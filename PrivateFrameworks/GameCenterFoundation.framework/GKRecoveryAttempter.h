@@ -3,7 +3,7 @@
  */
 
 @interface GKRecoveryAttempter : NSObject {
-    id /* block */ _attemptRecovery;
+    id /* block */  _attemptRecovery;
 }
 
 + (id)recoveryAttempterUsingHandler:(id /* block */)arg1;

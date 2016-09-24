@@ -3,10 +3,10 @@
  */
 
 @interface CalRoute : NSObject <NSSecureCoding> {
-    double _duration;
-    CalLocation *_end;
-    NSString *_route;
-    CalLocation *_start;
+    double  _duration;
+    CalLocation * _end;
+    NSString * _route;
+    CalLocation * _start;
 }
 
 @property double duration;

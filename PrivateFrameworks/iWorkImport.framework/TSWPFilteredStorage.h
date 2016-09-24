@@ -3,10 +3,10 @@
  */
 
 @interface TSWPFilteredStorage : NSObject <TSWPTextSource> {
-    unsigned int _length;
-    TSWPDeletionRangeMap *_rangeMap;
-    TSWPStorage *_storage;
-    unsigned int _storageLength;
+    unsigned int  _length;
+    TSWPDeletionRangeMap * _rangeMap;
+    TSWPStorage * _storage;
+    unsigned int  _storageChangeCount;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -18,11 +18,13 @@
 - (id)attachmentAtCharIndex:(unsigned int)arg1;
 - (id)attachmentOrFootnoteAtCharIndex:(unsigned int)arg1;
 - (void)attributesAtCharIndex:(unsigned int)arg1 attributesOfInterest:(BOOL)arg2 attributesTable:(/* Warning: unhandled array encoding: '[19@]' */ id)arg3 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg4;
+- (unsigned int)changeCount;
 - (unsigned int)charIndexMappedFromStorage:(unsigned int)arg1;
 - (unsigned int)charIndexMappedToStorage:(unsigned int)arg1;
 - (unsigned int)charIndexRemappedFromStorage:(unsigned int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })charRangeMappedFromStorage:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })charRangeMappedToStorage:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })charRangeRemappedFromStorage:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (unsigned short)characterAtIndex:(unsigned int)arg1;
 - (id)characterStyleAtCharIndex:(unsigned int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
 - (void)dealloc;
@@ -49,6 +51,7 @@
 - (unsigned int)storageLength;
 - (id)string;
 - (id)substringWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)updateStorageChangeCount;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })whiteSpaceRangeAtCharIndex:(unsigned int)arg1 includingBreaks:(BOOL)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })wordAtCharIndex:(unsigned int)arg1 includePreviousWord:(BOOL)arg2;
 

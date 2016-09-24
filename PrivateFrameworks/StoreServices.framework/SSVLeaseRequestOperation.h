@@ -3,15 +3,15 @@
  */
 
 @interface SSVLeaseRequestOperation : SSVOperation {
-    NSString *_bagKey;
-    NSObject<OS_dispatch_semaphore> *_bagLoadSemaphore;
-    NSData *_certificateData;
-    NSString *_certificateURLBagKey;
-    SSVPlaybackLeaseConfiguration *_configuration;
-    id /* block */ _outputBlock;
-    SSVPlaybackLeaseRequest *_request;
-    unsigned int _retryCount;
-    SSURLBag *_urlBag;
+    NSString * _bagKey;
+    NSObject<OS_dispatch_semaphore> * _bagLoadSemaphore;
+    NSData * _certificateData;
+    NSString * _certificateURLBagKey;
+    SSVPlaybackLeaseConfiguration * _configuration;
+    id /* block */  _outputBlock;
+    SSVPlaybackLeaseRequest * _request;
+    unsigned int  _retryCount;
+    SSURLBag * _urlBag;
 }
 
 @property (copy) NSString *certificateURLBagKey;

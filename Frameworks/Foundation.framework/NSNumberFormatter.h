@@ -2,15 +2,15 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSNumberFormatter : NSFormatter <NSObservable, NSObserver> {
-    NSMutableDictionary *_attributes;
-    unsigned int _behavior;
-    int _cacheGeneration;
-    unsigned int _counter;
-    struct __CFNumberFormatter { } *_formatter;
-    NSRecursiveLock *_lock;
-    void *_reserved;
-    unsigned long _stateBitMask;
+@interface NSNumberFormatter : NSFormatter <HKNumberFormatter, NSObservable, NSObserver> {
+    NSMutableDictionary * _attributes;
+    unsigned int  _behavior;
+    int  _cacheGeneration;
+    unsigned int  _counter;
+    struct __CFNumberFormatter { } * _formatter;
+    NSRecursiveLock * _lock;
+    void * _reserved;
+    unsigned long  _stateBitMask;
 }
 
 @property BOOL allowsFloats;
@@ -110,7 +110,6 @@
 - (id)decimalSeparator;
 - (void)encodeWithCoder:(id)arg1;
 - (id)exponentSymbol;
-- (void)finalize;
 - (unsigned int)formatWidth;
 - (unsigned int)formatterBehavior;
 - (int)formattingContext;
@@ -235,6 +234,10 @@
 + (id)mf_formatInteger:(int)arg1 withGrouping:(BOOL)arg2;
 + (id)mf_formatUnsignedInteger:(unsigned int)arg1 withGrouping:(BOOL)arg2;
 
+// Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
+
+- (id)stringFromInteger:(int)arg1;
+
 // Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
 
 + (id)FU_adaptiveLocalizedDistanceStringWithDistance:(double)arg1 distanceType:(int)arg2 unitStyle:(int)arg3 usedUnit:(int*)arg4;
@@ -245,13 +248,16 @@
 + (double)FU_distanceInUserDistanceUnitForDistanceInMeters:(double)arg1 distanceType:(int)arg2;
 + (double)FU_energyBurnedInUserUnitForCalories:(double)arg1;
 + (BOOL)FU_localeUsesMetricForPersonHeight;
++ (id)FU_localizedDistinguishingShortEnergyStringForEnergyMetricType:(unsigned int)arg1;
 + (id)FU_localizedLongActiveEnergyUnitString;
 + (id)FU_localizedLongActiveEnergyUnitStringCapitalized:(BOOL)arg1;
-+ (id)FU_localizedPaceStringForDuration:(double)arg1 distance:(id)arg2 useCyclingFormat:(BOOL)arg3;
++ (id)FU_localizedLongActiveEnergyUnitStringUppercase:(BOOL)arg1;
++ (id)FU_localizedLongUnitStringWithDistanceUnit:(int)arg1 distance:(double)arg2;
++ (id)FU_localizedLongUnitStringWithDistanceUnit:(int)arg1 distance:(double)arg2 uppercase:(BOOL)arg3;
++ (id)FU_localizedPaceStringForDuration:(double)arg1 distance:(id)arg2 paceFormatType:(int)arg3;
 + (id)FU_localizedShortActiveEnergyUnitString;
 + (id)FU_localizedShortUnitStringWithDistanceUnit:(int)arg1;
 + (id)FU_localizedShortUnitStringWithDistanceUnit:(int)arg1 uppercase:(BOOL)arg2;
-+ (id)FU_localizedSpeedUnit;
 + (id)FU_localizedSpeedValueForDistance:(id)arg1 overTime:(double)arg2;
 + (id)FU_localizedStringForPaceAsTimeInterval:(double)arg1 gateInvalidPaceValues:(BOOL)arg2;
 + (id)FU_localizedStringWithActiveEnergy:(id)arg1;
@@ -267,11 +273,15 @@
 + (id)FU_stringForHeightInInches:(long)arg1;
 + (id)FU_stringWithNumber:(id)arg1 decimalPrecision:(int)arg2;
 + (id)FU_stringWithTimeInterval:(double)arg1 formatType:(unsigned int)arg2;
++ (int)FU_userDistanceUnitForLapLength;
 + (id)_FU_doubleFractionNumberFormatter;
 + (id)_FU_energyFormatter;
 + (id)_FU_integerNumberFormatter;
 + (id)_FU_integerPercentNumberFormatter;
 + (id)_FU_lengthFormatterWithDecimalPrecision:(int)arg1 unitStyle:(int)arg2;
++ (id)_FU_roundedDoubleFractionNumberFormatter;
++ (id)_FU_roundedIntegerNumberFormatter;
++ (id)_FU_roundedSingleFractionNumberFormatter;
 + (id)_FU_singleFractionNumberFormatter;
 + (id)_FU_zeroPaddedIntegerNumberFormatter;
 + (id)_durationSeperator;
@@ -283,6 +293,11 @@
 + (id)gkRankFormatter;
 + (id)gk_formatInteger:(int)arg1 withGrouping:(BOOL)arg2;
 + (id)gk_formatUnsignedInteger:(unsigned int)arg1 withGrouping:(BOOL)arg2;
+
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
+
+- (BOOL)returnsUnitWithValueForDisplay;
+- (id)stringFromNumber:(id)arg1 dataUnit:(id)arg2 unitController:(id)arg3;
 
 // Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
 

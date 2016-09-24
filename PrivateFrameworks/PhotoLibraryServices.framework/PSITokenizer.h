@@ -3,7 +3,7 @@
  */
 
 @interface PSITokenizer : NSObject {
-    NSCharacterSet *_excludedSingleCharacterSet;
+    NSCharacterSet * _excludedSingleCharacterSet;
 }
 
 - (void)dealloc;

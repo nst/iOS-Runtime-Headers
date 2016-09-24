@@ -3,8 +3,8 @@
  */
 
 @interface RMSConnectToServiceMessage : PBCodable <NSCopying> {
-    NSString *_pairingGUID;
-    RMSServiceMessage *_service;
+    NSString * _pairingGUID;
+    RMSServiceMessage * _service;
 }
 
 @property (nonatomic, readonly) BOOL hasPairingGUID;

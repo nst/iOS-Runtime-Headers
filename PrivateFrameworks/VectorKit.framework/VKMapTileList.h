@@ -5,11 +5,11 @@
 @interface VKMapTileList : NSObject {
     /* Warning: unhandled struct encoding: '{vector<VKMapTile *, std::__1::allocator<VKMapTile *> >="__begin_"^@"__end_"^@"__end_cap_"{__compressed_pair<VKMapTile **, std::__1::allocator<VKMapTile *> >="__first_"^@}}' */ struct vector<VKMapTile *, std::__1::allocator<VKMapTile *> > { 
         __end_ **__begin_; 
-    } _list;
-    float _maximumStyleZ;
+    }  _list;
+    double  _maximumStyleZ;
 }
 
-@property (nonatomic, readonly) float maximumStyleZ;
+@property (nonatomic, readonly) double maximumStyleZ;
 @property (nonatomic, readonly) unsigned int numTiles;
 @property (nonatomic, readonly) id*tileList;
 

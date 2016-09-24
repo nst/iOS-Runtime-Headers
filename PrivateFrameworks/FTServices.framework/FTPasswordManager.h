@@ -3,28 +3,41 @@
  */
 
 @interface FTPasswordManager : NSObject {
-    ACAccountStore *_accountStore;
-    NSMutableSet *_runningQueries;
+    ACAccountStore * _accountStore;
+    NSMutableSet * _runningQueries;
+    IMUserNotificationCenter * _userNotificationCenter;
 }
 
 + (id)_loginUserNotificationForService:(id)arg1 user:(id)arg2 isForBadPassword:(BOOL)arg3 showForgetPassword:(BOOL)arg4 shouldRememberPassword:(BOOL)arg5;
 + (id)sharedInstance;
 
+- (id)_accountBasedOnProfileID:(id)arg1 orUsername:(id)arg2 inStore:(id)arg3;
 - (id)_accountOptionsDictForRenewCredentialsForService:(id)arg1 username:(id)arg2;
-- (id)acAccountWithUsername:(id)arg1 accountStore:(id)arg2;
+- (id)_accountWithProfileID:(id)arg1 username:(id)arg2 inStore:(id)arg3;
+- (id)_accountWithProfileIDMatchingUser:(id)arg1 inStore:(id)arg2;
+- (id)_accountWithUsername:(id)arg1 inStore:(id)arg2;
+- (id)_accountWithUsernameAlias:(id)arg1 inStore:(id)arg2;
+- (id)_findIDSAccountInStore:(id)arg1 withCriteria:(id /* block */)arg2;
+- (id)_findIDSAccountsInStore:(id)arg1 withCriteria:(id /* block */)arg2;
+- (id)_keychainAuthTokenForUsername:(id)arg1 service:(id)arg2;
+- (id)_keychainPasswordForUsername:(id)arg1 service:(id)arg2;
+- (id)_profileIDForUsername:(id)arg1 inStore:(id)arg2;
+- (void)_setKeychainAuthToken:(id)arg1 forUsername:(id)arg2 service:(id)arg3;
+- (void)_setKeychainPassword:(id)arg1 forUsername:(id)arg2 service:(id)arg3;
+- (id)acAccountWithProfileID:(id)arg1 username:(id)arg2 accountStore:(id)arg3;
 - (void)cancelRequestID:(id)arg1 serviceIdentifier:(id)arg2;
 - (void)dealloc;
-- (void)fetchAuthTokenForUsername:(id)arg1 service:(id)arg2 outRequestID:(id*)arg3 blockingly:(BOOL)arg4 completionBlock:(id /* block */)arg5;
-- (void)fetchAuthTokenForUsername:(id)arg1 service:(id)arg2 profileID:(id)arg3 outRequestID:(id*)arg4 blockingly:(BOOL)arg5 completionBlock:(id /* block */)arg6;
-- (void)fetchPasswordForUsername:(id)arg1 service:(id)arg2 outRequestID:(id*)arg3 blockingly:(BOOL)arg4 completionBlock:(id /* block */)arg5;
+- (void)fetchAuthTokenForProfileID:(id)arg1 username:(id)arg2 service:(id)arg3 outRequestID:(id*)arg4 completionBlock:(id /* block */)arg5;
+- (void)fetchPasswordForProfileID:(id)arg1 username:(id)arg2 service:(id)arg3 outRequestID:(id*)arg4 completionBlock:(id /* block */)arg5;
 - (id)init;
+- (id)initWithUserNotificationCenter:(id)arg1;
 - (id)profileIDForACAccount:(id)arg1;
-- (void)requestAuthTokenForUsername:(id)arg1 service:(id)arg2 badPassword:(BOOL)arg3 showForgotPassword:(BOOL)arg4 outRequestID:(id*)arg5 completionBlock:(id /* block */)arg6;
+- (void)requestAuthTokenForProfileID:(id)arg1 username:(id)arg2 service:(id)arg3 badPassword:(BOOL)arg4 showForgotPassword:(BOOL)arg5 outRequestID:(id*)arg6 completionBlock:(id /* block */)arg7;
 - (void)requestPasswordForUsername:(id)arg1 service:(id)arg2 badPassword:(BOOL)arg3 showForgotPassword:(BOOL)arg4 shouldRememberPassword:(BOOL)arg5 outRequestID:(id*)arg6 completionBlock:(id /* block */)arg7;
-- (void)setAuthTokenForUsername:(id)arg1 service:(id)arg2 authToken:(id)arg3 profileID:(id)arg4 selfHandle:(id)arg5 accountStatus:(id)arg6 outRequestID:(id*)arg7 completionBlock:(id /* block */)arg8;
-- (void)setAuthTokenForUsername:(id)arg1 service:(id)arg2 authToken:(id)arg3 profileID:(id)arg4 selfHandle:(id)arg5 outRequestID:(id*)arg6 completionBlock:(id /* block */)arg7;
-- (void)setPairedAccountPasswordForUsername:(id)arg1 password:(id)arg2 completionBlock:(id /* block */)arg3;
-- (void)setPasswordForUsername:(id)arg1 service:(id)arg2 password:(id)arg3 outRequestID:(id*)arg4 completionBlock:(id /* block */)arg5;
+- (void)setAuthTokenForProfileID:(id)arg1 username:(id)arg2 service:(id)arg3 authToken:(id)arg4 selfHandle:(id)arg5 accountStatus:(id)arg6 outRequestID:(id*)arg7 completionBlock:(id /* block */)arg8;
+- (void)setAuthTokenForProfileID:(id)arg1 username:(id)arg2 service:(id)arg3 authToken:(id)arg4 selfHandle:(id)arg5 outRequestID:(id*)arg6 completionBlock:(id /* block */)arg7;
+- (void)setHandlesForProfileID:(id)arg1 username:(id)arg2 service:(id)arg3 handles:(id)arg4;
+- (void)setPasswordForProfileID:(id)arg1 username:(id)arg2 service:(id)arg3 password:(id)arg4 outRequestID:(id*)arg5 completionBlock:(id /* block */)arg6;
 - (BOOL)supportsAuthTokenRequests;
 
 @end

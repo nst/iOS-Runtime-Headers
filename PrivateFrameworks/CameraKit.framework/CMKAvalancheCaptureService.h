@@ -3,13 +3,13 @@
  */
 
 @interface CMKAvalancheCaptureService : CMKCaptureService {
-    CMKAvalancheSession *__activeAvalancheSession;
-    NSMutableDictionary *__avalancheSessionsByUUID;
-    NSMutableSet *__avalancheSessionsToBeFinalizedAfterNextResponseCompletion;
-    double __avalancheStartTime;
-    NSCountedSet *__inflightRequestsByUUID;
-    NSArray *_recentFaceMetadata;
-    BOOL _supportsAvalancheAnalysis;
+    CMKAvalancheSession * __activeAvalancheSession;
+    NSMutableDictionary * __avalancheSessionsByUUID;
+    NSMutableSet * __avalancheSessionsToBeFinalizedAfterNextResponseCompletion;
+    double  __avalancheStartTime;
+    NSCountedSet * __inflightRequestsByUUID;
+    NSArray * _recentFaceMetadata;
+    BOOL  _supportsAvalancheAnalysis;
 }
 
 @property (nonatomic, readonly) CMKAvalancheSession *_activeAvalancheSession;

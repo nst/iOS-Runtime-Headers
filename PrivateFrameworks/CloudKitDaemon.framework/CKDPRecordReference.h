@@ -5,9 +5,9 @@
 @interface CKDPRecordReference : PBCodable <NSCopying> {
     struct { 
         unsigned int type : 1; 
-    } _has;
-    CKDPRecordIdentifier *_recordIdentifier;
-    int _type;
+    }  _has;
+    CKDPRecordIdentifier * _recordIdentifier;
+    int  _type;
 }
 
 @property (nonatomic, readonly) BOOL hasRecordIdentifier;
@@ -16,6 +16,7 @@
 @property (nonatomic) int type;
 
 - (void).cxx_destruct;
+- (int)StringAsType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -31,6 +32,7 @@
 - (void)setRecordIdentifier:(id)arg1;
 - (void)setType:(int)arg1;
 - (int)type;
+- (id)typeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

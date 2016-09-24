@@ -3,8 +3,8 @@
  */
 
 @interface HKEmergencyCardDeletionTableItem : HKEmergencyCardTableItem {
-    UITableViewCell *_cell;
-    <HKEmergencyCardDeletionDelegate> *_deletionDelegate;
+    UITableViewCell * _cell;
+    <HKEmergencyCardDeletionDelegate> * _deletionDelegate;
 }
 
 @property (nonatomic) <HKEmergencyCardDeletionDelegate> *deletionDelegate;
@@ -16,7 +16,6 @@
 - (BOOL)shouldHighlightRowAtIndex:(int)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndex:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndex:(int)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndex:(int)arg2;
 - (id)title;
 
 @end

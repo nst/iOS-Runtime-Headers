@@ -3,15 +3,16 @@
  */
 
 @interface GEOComposedTransitTripRouteLeg : GEOComposedTransitBaseRouteLeg {
-    NSArray *_actionSheetDescriptions;
-    NSArray *_actionSheetOptionsArtwork;
-    GEOComposedTransitTripRouteStep *_alightStep;
-    GEOComposedTransitTripRouteStep *_blockTransferStep;
-    GEOComposedTransitTripRouteStep *_boardStep;
-    unsigned int _numberOfTransitStops;
-    NSArray *_routeDetailsOptionsArtwork;
-    unsigned int _selectedRideOptionIndex;
-    NSArray *_transitLineOptions;
+    NSArray * _actionSheetDescriptions;
+    NSArray * _actionSheetOptionsArtwork;
+    NSArray * _alightNotifications;
+    GEOComposedTransitTripRouteStep * _alightStep;
+    GEOComposedTransitTripRouteStep * _blockTransferStep;
+    GEOComposedTransitTripRouteStep * _boardStep;
+    unsigned int  _numberOfTransitStops;
+    NSArray * _routeDetailsOptionsArtwork;
+    unsigned int  _selectedRideOptionIndex;
+    NSArray * _transitLineOptions;
 }
 
 @property (nonatomic, readonly) GEOComposedTransitTripRouteStep *alightStep;
@@ -22,6 +23,7 @@
 @property (nonatomic, readonly) NSTimeZone *departureTimeZone;
 @property (nonatomic, readonly) NSArray *departureTimes;
 @property (nonatomic, readonly) NSDate *lastStepArrivalDate;
+@property (nonatomic, readonly) BOOL notifyBeforeAlightStep;
 @property (nonatomic, readonly) unsigned int rideOptionsCount;
 @property (nonatomic, readonly) NSArray *routeLineArtwork;
 @property (nonatomic) unsigned int selectedRideOptionIndex;
@@ -44,6 +46,7 @@
 - (id)departureTimes;
 - (id)initWithComposedRoute:(id)arg1 tripIndex:(unsigned int)arg2 stepRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 transitStepRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 pointRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5;
 - (id)lastStepArrivalDate;
+- (BOOL)notifyBeforeAlightStep;
 - (unsigned int)numberOfTransitStops;
 - (unsigned int)rideOptionsCount;
 - (id)routeDetailsPrimaryArtworkForRideOption:(unsigned int)arg1;

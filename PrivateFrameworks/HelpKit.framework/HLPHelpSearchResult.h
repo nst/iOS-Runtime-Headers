@@ -3,9 +3,9 @@
  */
 
 @interface HLPHelpSearchResult : NSObject {
-    NSString *_identifier;
-    int _matchCount;
-    int _weight;
+    NSString * _identifier;
+    int  _matchCount;
+    int  _weight;
 }
 
 @property (nonatomic, retain) NSString *identifier;

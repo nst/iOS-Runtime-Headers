@@ -3,21 +3,21 @@
  */
 
 @interface CKDRecordFetchAggregator : CKDDatabaseOperation {
-    unsigned int _curFetchOrder;
-    NSSet *_desiredKeys;
-    id /* block */ _fetchAggregatorCompletionBlock;
-    BOOL _fetchAssetContents;
-    NSObject<OS_dispatch_group> *_fetchGroup;
-    NSMutableDictionary *_fetchInfosByOrder;
-    NSObject<OS_dispatch_queue> *_fetchQueue;
-    NSObject<OS_dispatch_source> *_fetchSource;
-    unsigned int _highestReturnedOrder;
-    BOOL _markedToFinishByParent;
-    BOOL _preserveOrdering;
-    CKDRecordCache *_recordCache;
-    NSObject<OS_dispatch_source> *_recordReadySource;
-    BOOL _started;
-    NSObject<OS_dispatch_source> *_timerSource;
+    unsigned int  _curFetchOrder;
+    NSSet * _desiredKeys;
+    id /* block */  _fetchAggregatorCompletionBlock;
+    BOOL  _fetchAssetContents;
+    NSObject<OS_dispatch_group> * _fetchGroup;
+    NSMutableDictionary * _fetchInfosByOrder;
+    NSObject<OS_dispatch_queue> * _fetchQueue;
+    NSObject<OS_dispatch_source> * _fetchSource;
+    unsigned int  _highestReturnedOrder;
+    BOOL  _markedToFinishByParent;
+    BOOL  _preserveOrdering;
+    CKDRecordCache * _recordCache;
+    NSObject<OS_dispatch_source> * _recordReadySource;
+    BOOL  _started;
+    NSObject<OS_dispatch_source> * _timerSource;
 }
 
 @property unsigned int curFetchOrder;

@@ -3,12 +3,12 @@
  */
 
 @interface _HKHorizontalSingleLineSeriesMarkEntry : NSObject {
-    int _markStyle;
-    float _xCoord;
+    int  _markStyle;
+    double  _xCoord;
 }
 
 @property (nonatomic, readonly) int markStyle;
-@property (nonatomic, readonly) float xCoord;
+@property (nonatomic, readonly) double xCoord;
 
 - (id)initWithXCoord:(float)arg1 markStyle:(int)arg2;
 - (int)markStyle;

@@ -3,11 +3,11 @@
  */
 
 @interface ACUIAccountOperationsHelper : NSObject {
-    NSObject<OS_dispatch_queue> *_accountOperationsQueue;
-    ACAccountStore *_accountStore;
-    <ACUIAccountOperationsDelegate> *_delegate;
-    BOOL _isRemovingAccount;
-    BOOL _isSavingAccount;
+    NSObject<OS_dispatch_queue> * _accountOperationsQueue;
+    ACAccountStore * _accountStore;
+    <ACUIAccountOperationsDelegate> * _delegate;
+    BOOL  _isRemovingAccount;
+    BOOL  _isSavingAccount;
 }
 
 @property (nonatomic) <ACUIAccountOperationsDelegate> *delegate;

@@ -3,7 +3,7 @@
  */
 
 @interface PUSingleAssetLayoutTransitionCoordinator : PUTileTransitionCoordinator {
-    <PUTilingCoordinateSystem> *_fixedCoordinateSystem;
+    <PUTilingCoordinateSystem> * _fixedCoordinateSystem;
 }
 
 @property (nonatomic, retain) <PUTilingCoordinateSystem> *fixedCoordinateSystem;

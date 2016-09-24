@@ -3,12 +3,12 @@
  */
 
 @interface OccurrenceCacheSearchDataSource : OccurrenceCacheDataSource {
-    NSMutableArray *_processingCachedDays;
+    NSMutableArray * _processingCachedDays;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _resultsLock;
-    EKOccurrenceCacheSearch *_search;
+    }  _resultsLock;
+    EKOccurrenceCacheSearch * _search;
 }
 
 - (void).cxx_destruct;

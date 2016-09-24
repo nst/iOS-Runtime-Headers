@@ -3,28 +3,34 @@
  */
 
 @interface UIPercentDrivenInteractiveTransition : NSObject <UIViewControllerInteractiveTransitioning> {
-    NSString *__originalFillMode;
-    BOOL __transitionInterrupted;
-    NSUUID *__uuid;
-    int _completionCurve;
-    float _completionSpeed;
-    BOOL _didCommitAnimations;
-    float _duration;
+    NSString * __originalFillMode;
+    BOOL  __transitionInterrupted;
+    NSUUID * __uuid;
+    int  _completionCurve;
+    double  _completionSpeed;
+    BOOL  _didCommitAnimations;
+    double  _duration;
+    <UIViewImplicitlyAnimating> * _interruptibleAnimator;
+    <UITimingCurveProvider> * _timingCurve;
+    BOOL  _wantsInteractiveStart;
 }
 
 @property (setter=_setOriginalFillMode:, nonatomic, retain) NSString *_originalFillMode;
 @property (getter=_isTransitionInterrupted, setter=_setTransitionInterrupted:, nonatomic) BOOL _transitionInterrupted;
 @property (setter=_setUuid:, nonatomic, retain) NSUUID *_uuid;
 @property (nonatomic) int completionCurve;
-@property (nonatomic) float completionSpeed;
+@property (nonatomic) double completionSpeed;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) float duration;
+@property (readonly) double duration;
 @property (readonly) unsigned int hash;
-@property (readonly) float percentComplete;
+@property (readonly) double percentComplete;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) <UITimingCurveProvider> *timingCurve;
+@property (nonatomic) BOOL wantsInteractiveStart;
 
 - (void).cxx_destruct;
+- (void)_continueInterruptibleTransition:(id)arg1 reverse:(BOOL)arg2;
 - (BOOL)_isTransitionInterrupted;
 - (id)_originalFillMode;
 - (void)_resetInteractionController;
@@ -32,6 +38,7 @@
 - (void)_setOriginalFillMode:(id)arg1;
 - (void)_setTransitionInterrupted:(BOOL)arg1;
 - (void)_setUuid:(id)arg1;
+- (BOOL)_startInterruptibleTransition:(id)arg1;
 - (void)_stopInteractiveTransition;
 - (void)_stopInteractiveTransition:(id)arg1;
 - (void)_updateInteractiveTransition:(id)arg1 percent:(float)arg2 isFinished:(BOOL)arg3 didComplete:(BOOL)arg4;
@@ -42,11 +49,16 @@
 - (float)duration;
 - (void)finishInteractiveTransition;
 - (id)init;
+- (void)pauseInteractiveTransition;
 - (float)percentComplete;
 - (void)setCompletionCurve:(int)arg1;
 - (void)setCompletionSpeed:(float)arg1;
+- (void)setTimingCurve:(id)arg1;
+- (void)setWantsInteractiveStart:(BOOL)arg1;
 - (void)startInteractiveTransition:(id)arg1;
 - (void)startInteractiveTransition:(id)arg1 containerViews:(id)arg2 animation:(id /* block */)arg3;
+- (id)timingCurve;
 - (void)updateInteractiveTransition:(float)arg1;
+- (BOOL)wantsInteractiveStart;
 
 @end

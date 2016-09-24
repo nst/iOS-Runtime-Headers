@@ -3,13 +3,13 @@
  */
 
 @interface IMDFileTransferCenter : NSObject <IMFileCopierDelegate> {
-    NSMutableSet *_activeTransfers;
-    NSString *_contextStamp;
-    NSMutableDictionary *_guidToCopierMap;
-    NSMutableDictionary *_guidToSimpleCopierMap;
-    NSMutableDictionary *_guidToTransferMap;
-    NSTimer *_transferTimer;
-    NSMutableArray *_transferringTransfers;
+    NSMutableSet * _activeTransfers;
+    NSString * _contextStamp;
+    NSMutableDictionary * _guidToCopierMap;
+    NSMutableDictionary * _guidToSimpleCopierMap;
+    NSMutableDictionary * _guidToTransferMap;
+    NSTimer * _transferTimer;
+    NSMutableArray * _transferringTransfers;
 }
 
 @property (nonatomic, retain) NSString *contextStamp;
@@ -34,6 +34,7 @@
 - (void)_handleFileTransferRemoved:(id)arg1;
 - (void)_handleFileTransferStopped:(id)arg1;
 - (void)_handleSendFileTransfer:(id)arg1;
+- (id)_newFileTransferForStoredAttachmentPayloadDataWithTransferGUID:(id)arg1 messageGUID:(id)arg2;
 - (void)_postUpdated:(id)arg1;
 - (id)_progressForTransferGUID:(id)arg1 allowCreate:(BOOL)arg2 path:(id)arg3;
 - (void)_removeActiveTransfer:(id)arg1;
@@ -47,6 +48,7 @@
 - (void)addTransfer:(id)arg1 forGUID:(id)arg2;
 - (void)archiveFileTransfer:(id)arg1;
 - (void)assignTransfer:(id)arg1 toAccount:(id)arg2 otherPerson:(id)arg3;
+- (void)broadcastTransfersWithGUIDs:(id)arg1 atLocalPaths:(id)arg2;
 - (id)contextStamp;
 - (void)dealloc;
 - (void)endTransfer:(id)arg1;
@@ -54,12 +56,15 @@
 - (void)failTransfer:(id)arg1 reason:(int)arg2;
 - (void)fileCopierDidFinish:(id)arg1;
 - (void)fileCopierDidStart:(id)arg1;
-- (id)guidForNewIncomingTransferWithFilename:(id)arg1 isDirectory:(BOOL)arg2 totalBytes:(unsigned long long)arg3 hfsType:(unsigned long)arg4 hfsCreator:(unsigned long)arg5 hfsFlags:(unsigned short)arg6;
-- (id)guidForNewOutgoingTransferWithFilename:(id)arg1 isDirectory:(BOOL)arg2 totalBytes:(unsigned long long)arg3 hfsType:(unsigned long)arg4 hfsCreator:(unsigned long)arg5 hfsFlags:(unsigned short)arg6;
+- (id)guidForNewIncomingTransferWithFilename:(id)arg1 isDirectory:(BOOL)arg2 totalBytes:(unsigned int)arg3 hfsType:(unsigned long)arg4 hfsCreator:(unsigned long)arg5 hfsFlags:(unsigned short)arg6;
+- (id)guidForNewOutgoingTransferWithFilename:(id)arg1 isDirectory:(BOOL)arg2 totalBytes:(unsigned int)arg3 hfsType:(unsigned long)arg4 hfsCreator:(unsigned long)arg5 hfsFlags:(unsigned short)arg6;
+- (id)guidForNewOutgoingTransferWithLocalURL:(id)arg1;
+- (id)guidsForStoredAttachmentPayloadData:(id)arg1 messageGUID:(id)arg2;
 - (BOOL)hasActiveFileTransfers;
 - (id)init;
-- (void)makeNewIncomingTransferWithGUID:(id)arg1 filename:(id)arg2 isDirectory:(BOOL)arg3 totalBytes:(unsigned long long)arg4 hfsType:(unsigned long)arg5 hfsCreator:(unsigned long)arg6 hfsFlags:(unsigned short)arg7;
-- (void)makeNewOutgoingTransferWithGUID:(id)arg1 filename:(id)arg2 isDirectory:(BOOL)arg3 totalBytes:(unsigned long long)arg4 hfsType:(unsigned long)arg5 hfsCreator:(unsigned long)arg6 hfsFlags:(unsigned short)arg7;
+- (void)makeNewIncomingTransferWithGUID:(id)arg1 filename:(id)arg2 isDirectory:(BOOL)arg3 totalBytes:(unsigned int)arg4 hfsType:(unsigned long)arg5 hfsCreator:(unsigned long)arg6 hfsFlags:(unsigned short)arg7;
+- (void)makeNewOutgoingTransferWithGUID:(id)arg1 filename:(id)arg2 isDirectory:(BOOL)arg3 totalBytes:(unsigned int)arg4 hfsType:(unsigned long)arg5 hfsCreator:(unsigned long)arg6 hfsFlags:(unsigned short)arg7;
+- (BOOL)markAttachment:(id)arg1 sender:(id)arg2 recipients:(id)arg3 isIncoming:(BOOL)arg4;
 - (void)registerStandaloneTransfer:(id)arg1;
 - (void)removeTransferForGUID:(id)arg1;
 - (void)removeUnassignedTransfers;
@@ -70,6 +75,6 @@
 - (void)startTransfer:(id)arg1;
 - (id)transferForGUID:(id)arg1;
 - (void)updateTransfer:(id)arg1;
-- (void)updateTransfer:(id)arg1 currentBytes:(unsigned long long)arg2 totalBytes:(unsigned long long)arg3;
+- (void)updateTransfer:(id)arg1 currentBytes:(unsigned int)arg2 totalBytes:(unsigned int)arg3;
 
 @end

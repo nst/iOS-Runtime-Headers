@@ -3,12 +3,12 @@
  */
 
 @interface BBSmartPL : NSObject {
-    PLEntryNotificationOperatorComposition *_bbHwOtherCallback;
-    PLTelephonyConnection *_connection;
-    double _cxoDuration;
-    NSDate *_lastLogDate;
-    double _logDuration;
-    PLSmartPLService *_operator;
+    PLEntryNotificationOperatorComposition * _bbHwOtherCallback;
+    PLTelephonyConnection * _connection;
+    double  _cxoDuration;
+    NSDate * _lastLogDate;
+    double  _logDuration;
+    PLSmartPLService * _operator;
 }
 
 @property (retain) PLEntryNotificationOperatorComposition *bbHwOtherCallback;

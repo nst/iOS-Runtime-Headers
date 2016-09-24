@@ -3,11 +3,11 @@
  */
 
 @interface UIInputViewAnimationStyle : NSObject <NSCopying> {
-    BOOL animated;
-    double duration;
-    unsigned int extraOptions;
-    BOOL force;
-    BOOL interactivelyCancelled;
+    BOOL  animated;
+    double  duration;
+    unsigned int  extraOptions;
+    BOOL  force;
+    BOOL  interactivelyCancelled;
 }
 
 @property (nonatomic) BOOL animated;

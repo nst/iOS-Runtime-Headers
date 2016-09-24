@@ -3,32 +3,32 @@
  */
 
 @interface SSDevice : NSObject <SSRequestDelegate> {
-    NSString *_appleTVProductVersion;
-    double _batteryLevel;
-    unsigned int _batteryMonitorNotification;
-    struct IONotificationPort { } *_batteryMonitorPort;
-    id _cloudMediaLibraryIdentifier;
-    int _deviceType;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    SSKeyValueStore *_keyValueStore;
-    NSString *_legacyUserAgent;
-    NSString *_localStoreFrontIdentifier;
-    BOOL _localStoreFrontIsTransient;
-    id _mediaLibraryIdentifier;
-    NSObject<OS_dispatch_queue> *_notificationQueue;
-    NSString *_phoneNumber;
-    BOOL _pluggedIn;
-    int _pluggedInToken;
-    int _powerMonitorCount;
-    NSString *_productType;
-    NSString *_productVersion;
-    id _softwareLibraryIdentifier;
-    NSString *_synchedStoreFrontIdentifier;
-    int _telephonyCapability;
-    struct __CTServerConnection { } *_telephonyServer;
-    NSString *_udid;
-    SSURLBag *_urlBag;
-    NSString *_userAgent;
+    NSString * _appleTVProductVersion;
+    double  _batteryLevel;
+    unsigned int  _batteryMonitorNotification;
+    struct IONotificationPort { } * _batteryMonitorPort;
+    id  _cloudMediaLibraryIdentifier;
+    int  _deviceType;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    SSKeyValueStore * _keyValueStore;
+    NSString * _legacyUserAgent;
+    NSString * _localStoreFrontIdentifier;
+    BOOL  _localStoreFrontIsTransient;
+    id  _mediaLibraryIdentifier;
+    NSObject<OS_dispatch_queue> * _notificationQueue;
+    NSString * _phoneNumber;
+    BOOL  _pluggedIn;
+    int  _pluggedInToken;
+    int  _powerMonitorCount;
+    NSString * _productType;
+    NSString * _productVersion;
+    id  _softwareLibraryIdentifier;
+    NSString * _synchedStoreFrontIdentifier;
+    int  _telephonyCapability;
+    struct __CTServerConnection { } * _telephonyServer;
+    NSString * _udid;
+    SSURLBag * _urlBag;
+    NSString * _userAgent;
 }
 
 @property (readonly) NSSet *automaticDownloadKinds;
@@ -95,6 +95,7 @@
 - (id)_userAgentClientNameForAppleTVBundleID:(id)arg1;
 - (id)_userAgentClientNameForBundleID:(id)arg1;
 - (id)_userAgentClientNameForInfoPlist:(id)arg1;
+- (id)_userAgentClientVersionForInfoPlist:(id)arg1 clientName:(id)arg2;
 - (id)automaticDownloadKinds;
 - (double)batteryLevel;
 - (id)carrierBundleStatusForService:(int)arg1;

@@ -3,13 +3,13 @@
  */
 
 @interface NSFileCoordinator : NSObject {
-    id _accessArbiter;
-    id _accessClaimIDOrIDs;
-    id _fileReactor;
-    BOOL _isCancelled;
-    NSMutableDictionary *_movedItems;
-    id _purposeID;
-    NSURL *_recentFilePresenterURL;
+    id  _accessArbiter;
+    id  _accessClaimIDOrIDs;
+    id  _fileReactor;
+    BOOL  _isCancelled;
+    NSMutableDictionary * _movedItems;
+    id  _purposeID;
+    NSURL * _recentFilePresenterURL;
 }
 
 @property (copy) NSString *purposeIdentifier;
@@ -30,17 +30,25 @@
 + (void)_addFileProvider:(id)arg1 completionHandler:(id /* block */)arg2;
 + (void)_addProcessIdentifier:(int)arg1 forID:(id)arg2;
 + (id)_canonicalURLForURL:(id)arg1;
++ (id)_createConnectionToFileAccessArbiterForQueue:(id)arg1;
++ (id)_createConnectionToProgressRegistrar;
 + (id)_currentFileCoordinator;
++ (id)_fileAccessArbiterInterface;
 + (id)_fileProviders;
 + (void)_getDebugInfoWithCompletionHandler:(id /* block */)arg1;
++ (void)_performBarrier;
++ (void)_performBarrierAsync:(id /* block */)arg1;
 + (void)_printDebugInfo;
 + (int)_processIdentifierForID:(id)arg1;
 + (BOOL)_provideRecursively;
++ (unsigned int)_readingOptions;
 + (void)_removeFileProvider:(id)arg1;
 + (void)_removeProcessIdentifierForID:(id)arg1;
-+ (unsigned long long)_responsesForPresenter:(id)arg1;
-+ (void)_setProvideRecursively:(BOOL)arg1;
++ (unsigned int)_responsesForPresenter:(id)arg1;
++ (void)_setReadingOptions:(unsigned int)arg1;
 + (BOOL)_skipCoordinationWork;
++ (void)_startInProcessFileCoordinationAndProgressServers;
++ (void)_stopInProcessFileCoordinationAndProgressServers;
 + (void)addFilePresenter:(id)arg1;
 + (id)filePresenters;
 + (void)removeFilePresenter:(id)arg1;
@@ -50,7 +58,7 @@
 - (void)__coordinateWritingItemAtURL:(id)arg1 options:(unsigned int)arg2 purposeID:(id)arg3 byAccessor:(id /* block */)arg4;
 - (void)__coordinateWritingItemAtURL:(id)arg1 options:(unsigned int)arg2 writingItemAtURL:(id)arg3 options:(unsigned int)arg4 purposeID:(id)arg5 byAccessor:(id /* block */)arg6;
 - (void)__prepareForReadingItemsAtURLs:(id)arg1 options:(unsigned int)arg2 writingItemsAtURLs:(id)arg3 options:(unsigned int)arg4 byAccessor:(id /* block */)arg5;
-- (void)_blockOnAccessClaim:(id)arg1;
+- (void)_blockOnAccessClaim:(id)arg1 withAccessArbiter:(id)arg2;
 - (void)_coordinateAccessWithIntents:(id)arg1 queue:(id)arg2 byAccessor:(id /* block */)arg3;
 - (void)_coordinateReadingItemAtURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3 byAccessor:(id /* block */)arg4;
 - (void)_coordinateReadingItemAtURL:(id)arg1 options:(unsigned int)arg2 writingItemAtURL:(id)arg3 options:(unsigned int)arg4 error:(id*)arg5 byAccessor:(id /* block */)arg6;
@@ -58,7 +66,6 @@
 - (void)_coordinateWritingItemAtURL:(id)arg1 options:(unsigned int)arg2 writingItemAtURL:(id)arg3 options:(unsigned int)arg4 error:(id*)arg5 byAccessor:(id /* block */)arg6;
 - (void)_didEndWrite:(id)arg1;
 - (void)_forgetAccessClaimForID:(id)arg1;
-- (void)_invokeAccessor:(id /* block */)arg1 orDont:(BOOL)arg2 andRelinquishAccessClaim:(id)arg3;
 - (void)_invokeAccessor:(id /* block */)arg1 thenCompletionHandler:(id /* block */)arg2;
 - (void)_itemAtURL:(id)arg1 didMoveToURL:(id)arg2;
 - (void)_itemAtURL:(id)arg1 willMoveToURL:(id)arg2;
@@ -71,6 +78,7 @@
 - (void)_setPurposeIdentifier:(id)arg1;
 - (void)_ubiquityDidChangeForItemAtURL:(id)arg1;
 - (id)_willStartWriteWithIntents:(id)arg1 async:(BOOL)arg2;
+- (void)_withAccessArbiter:(id)arg1 invokeAccessor:(id /* block */)arg2 orDont:(BOOL)arg3 andRelinquishAccessClaim:(id)arg4;
 - (void)cancel;
 - (void)coordinateAccessWithIntents:(id)arg1 queue:(id)arg2 byAccessor:(id /* block */)arg3;
 - (void)coordinateReadingItemAtURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3 byAccessor:(id /* block */)arg4;
@@ -87,6 +95,10 @@
 - (void)releaseAccess:(id)arg1;
 - (id)retainAccess;
 - (void)setPurposeIdentifier:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
+
++ (void)br_boostFilePresenter:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 

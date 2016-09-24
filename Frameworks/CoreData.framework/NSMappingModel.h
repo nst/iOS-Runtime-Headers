@@ -3,15 +3,15 @@
  */
 
 @interface NSMappingModel : NSObject {
-    NSMutableArray *_entityMappings;
-    NSMutableDictionary *_entityMappingsByName;
+    NSMutableArray * _entityMappings;
+    NSMutableDictionary * _entityMappingsByName;
     struct __modelMappingFlags { 
         unsigned int _isInUse : 1; 
         unsigned int _reservedModelMapping : 31; 
-    } _modelMappingFlags;
-    void *_reserved;
-    void *_reserved1;
-    void *_reserved2;
+    }  _modelMappingFlags;
+    void * _reserved;
+    void * _reserved1;
+    void * _reserved2;
 }
 
 @property (retain) NSArray *entityMappings;

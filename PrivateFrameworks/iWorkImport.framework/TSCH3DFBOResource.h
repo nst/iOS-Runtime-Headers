@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DFBOResource : TSCH3DResource {
-    NSString *mName;
+    NSString * mName;
 }
 
 @property (nonatomic, retain) NSString *name;

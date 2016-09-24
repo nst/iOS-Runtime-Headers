@@ -2,17 +2,22 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDEvent : NSObject <NSSecureCoding> {
-    HMDEventTrigger *_eventTrigger;
-    NSUUID *_uuid;
+@interface HMDEvent : NSObject <HMFDumpState, NSSecureCoding> {
+    HMDEventTrigger * _eventTrigger;
+    NSUUID * _uuid;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) HMDEventTrigger *eventTrigger;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) NSUUID *uuid;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)dumpState;
 - (void)encodeWithCoder:(id)arg1;
 - (id)eventTrigger;
 - (id)init;

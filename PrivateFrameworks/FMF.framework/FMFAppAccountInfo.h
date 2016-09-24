@@ -3,13 +3,13 @@
  */
 
 @interface FMFAppAccountInfo : NSObject {
-    NSString *_appAuthToken;
-    int _appAuthTokenStatus;
-    NSString *_appServerHost;
-    NSString *_dsid;
-    NSString *_legacyDsid;
-    NSString *_legacyUsername;
-    NSString *_username;
+    NSString * _appAuthToken;
+    int  _appAuthTokenStatus;
+    NSString * _appServerHost;
+    NSString * _dsid;
+    NSString * _legacyDsid;
+    NSString * _legacyUsername;
+    NSString * _username;
 }
 
 @property (nonatomic, retain) NSString *appAuthToken;

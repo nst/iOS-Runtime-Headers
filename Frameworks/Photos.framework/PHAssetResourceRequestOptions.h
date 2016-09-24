@@ -3,20 +3,24 @@
  */
 
 @interface PHAssetResourceRequestOptions : NSObject <NSCopying> {
-    BOOL _networkAccessAllowed;
-    id /* block */ _progressHandler;
-    BOOL _resistentToPrune;
+    BOOL  _downloadIsTransient;
+    BOOL  _networkAccessAllowed;
+    id /* block */  _progressHandler;
+    BOOL  _resistentToPrune;
 }
 
+@property (nonatomic) BOOL downloadIsTransient;
 @property (getter=isNetworkAccessAllowed, nonatomic) BOOL networkAccessAllowed;
 @property (nonatomic, copy) id /* block */ progressHandler;
 @property (nonatomic) BOOL resistentToPrune;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (BOOL)downloadIsTransient;
 - (BOOL)isNetworkAccessAllowed;
 - (id /* block */)progressHandler;
 - (BOOL)resistentToPrune;
+- (void)setDownloadIsTransient:(BOOL)arg1;
 - (void)setNetworkAccessAllowed:(BOOL)arg1;
 - (void)setProgressHandler:(id /* block */)arg1;
 - (void)setResistentToPrune:(BOOL)arg1;

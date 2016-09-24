@@ -3,8 +3,8 @@
  */
 
 @interface PBSlideObjAndMasterPair : NSObject {
-    int mMasterId;
-    PDSlide *mSlide;
+    int  mMasterId;
+    PDSlide * mSlide;
 }
 
 + (id)createPair:(id)arg1 masterId:(int)arg2;

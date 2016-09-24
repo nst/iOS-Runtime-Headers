@@ -3,7 +3,7 @@
  */
 
 @interface PUFeedCommentsSectionInfo : PUFeedSectionInfo {
-    BOOL __hasLikes;
+    BOOL  __hasLikes;
 }
 
 @property (setter=_setHasLikes:, nonatomic) BOOL _hasLikes;

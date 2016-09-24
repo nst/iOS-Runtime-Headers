@@ -3,15 +3,15 @@
  */
 
 @interface GQDBGAbstractSlide : NSObject {
-    GQDBGBodyPlaceholder *mBodyPlaceholder;
-    BOOL mCallGenerator;
-    BOOL mHidden;
-    char *mID;
-    GQDBGObjectPlaceholder *mObjectPlaceholder;
-    GQDBGSlideNumberPlaceholder *mSlideNumberPlaceholder;
-    GQDSStyle *mSlideStyle;
-    GQDSStylesheet *mStylesheet;
-    GQDBGTitlePlaceholder *mTitlePlaceholder;
+    GQDBGBodyPlaceholder * mBodyPlaceholder;
+    BOOL  mCallGenerator;
+    BOOL  mHidden;
+    char * mID;
+    GQDBGObjectPlaceholder * mObjectPlaceholder;
+    GQDBGSlideNumberPlaceholder * mSlideNumberPlaceholder;
+    GQDSStyle * mSlideStyle;
+    GQDSStylesheet * mStylesheet;
+    GQDBGTitlePlaceholder * mTitlePlaceholder;
 }
 
 - (char *)ID;

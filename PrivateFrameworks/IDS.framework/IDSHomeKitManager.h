@@ -3,11 +3,11 @@
  */
 
 @interface IDSHomeKitManager : NSObject <IDSDaemonListenerProtocol> {
-    _IDSGenericCompletionHandler *_getAdminAccessTokensCompletion;
-    _IDSGenericCompletionHandler *_getConsentTokensCompletion;
-    _IDSGenericCompletionHandler *_getServiceUserIDsCompletion;
-    _IDSGenericCompletionHandler *_getUserAccessTokensCompletion;
-    _IDSGenericCompletionHandler *_refreshUserAccessTokensCompletion;
+    _IDSGenericCompletionHandler * _getAdminAccessTokensCompletion;
+    _IDSGenericCompletionHandler * _getConsentTokensCompletion;
+    _IDSGenericCompletionHandler * _getServiceUserIDsCompletion;
+    _IDSGenericCompletionHandler * _getUserAccessTokensCompletion;
+    _IDSGenericCompletionHandler * _refreshUserAccessTokensCompletion;
 }
 
 @property (readonly, copy) NSString *debugDescription;

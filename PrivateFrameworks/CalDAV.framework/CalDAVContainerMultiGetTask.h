@@ -3,8 +3,8 @@
  */
 
 @interface CalDAVContainerMultiGetTask : CoreDAVContainerMultiGetTask {
-    BOOL _getScheduleChanges;
-    BOOL _getScheduleTags;
+    BOOL  _getScheduleChanges;
+    BOOL  _getScheduleTags;
 }
 
 @property (nonatomic) BOOL getScheduleChanges;

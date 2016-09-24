@@ -3,8 +3,8 @@
  */
 
 @interface ATResponse : ATMessage <NSSecureCoding> {
-    NSError *_error;
-    BOOL _partial;
+    NSError * _error;
+    BOOL  _partial;
 }
 
 @property (nonatomic, retain) NSError *error;

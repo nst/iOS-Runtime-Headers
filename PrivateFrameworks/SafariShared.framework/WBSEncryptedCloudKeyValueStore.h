@@ -3,18 +3,18 @@
  */
 
 @interface WBSEncryptedCloudKeyValueStore : NSObject {
-    id _accountUpdateObserver;
-    NSUbiquitousKeyValueStore *_backingStore;
-    NSString *_dsid;
+    id  _accountUpdateObserver;
+    NSUbiquitousKeyValueStore * _backingStore;
+    NSString * _dsid;
     struct RetainPtr<_PCSIdentitySetData *> { 
         void *m_ptr; 
-    } _pcsIdentitySet;
+    }  _pcsIdentitySet;
     struct RetainPtr<_OpaquePCSShareProtection *> { 
         void *m_ptr; 
-    } _pcsShareProtection;
+    }  _pcsShareProtection;
     struct RetainPtr<const __CFData *> { 
         void *m_ptr; 
-    } _serializedPCSObject;
+    }  _serializedPCSObject;
 }
 
 @property (nonatomic, readonly) NSUbiquitousKeyValueStore *backingStore;

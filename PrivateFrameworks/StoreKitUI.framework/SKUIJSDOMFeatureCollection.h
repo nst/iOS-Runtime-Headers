@@ -3,7 +3,7 @@
  */
 
 @interface SKUIJSDOMFeatureCollection : IKJSObject <SKUIJSDOMFeatureCollection> {
-    <SKUIJSDOMFeatureCollectionAppBridge> *_appBridge;
+    <SKUIJSDOMFeatureCollectionAppBridge> * _appBridge;
 }
 
 @property (nonatomic) <SKUIJSDOMFeatureCollectionAppBridge> *appBridge;

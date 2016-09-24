@@ -3,19 +3,19 @@
  */
 
 @interface CPLEngineSyncTask : NSObject {
-    BOOL _cancelled;
-    <CPLEngineSyncTaskDelegate> *_delegate;
-    CPLEngineLibrary *_engineLibrary;
-    BOOL _foreground;
-    BOOL _paused;
-    <NSCoding> *_transportUserIdentifier;
+    BOOL  _cancelled;
+    <CPLEngineSyncTaskDelegate> * _delegate;
+    CPLEngineLibrary * _engineLibrary;
+    BOOL  _foreground;
+    BOOL  _paused;
+    <NSCoding> * _transportUserIdentifier;
 }
 
-@property (getter=isCancelled) BOOL cancelled;
+@property (getter=isCancelled, setter=_setCancelled:) BOOL cancelled;
 @property (retain) <CPLEngineSyncTaskDelegate> *delegate;
 @property (nonatomic, readonly) CPLEngineLibrary *engineLibrary;
 @property (nonatomic) BOOL foreground;
-@property (getter=isPaused) BOOL paused;
+@property (getter=isPaused, setter=_setPaused:) BOOL paused;
 @property (nonatomic, readonly) NSString *taskIdentifier;
 @property (nonatomic, retain) <NSCoding> *transportUserIdentifier;
 

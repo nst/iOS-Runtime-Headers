@@ -3,15 +3,15 @@
  */
 
 @interface PSFooterHyperlinkView : UIView <PSHeaderFooterView, UITextViewDelegate> {
-    NSURL *_URL;
-    SEL _action;
+    NSURL * _URL;
+    SEL  _action;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _linkRange;
-    id _target;
-    NSString *_text;
-    UITextView *_textView;
+    }  _linkRange;
+    id  _target;
+    NSString * _text;
+    UITextView * _textView;
 }
 
 @property (retain) NSURL *URL;
@@ -37,10 +37,10 @@
 - (void)setTarget:(id)arg1;
 - (void)setText:(id)arg1;
 - (void)setURL:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)target;
 - (id)text;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })textInsets;
 - (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 
 @end

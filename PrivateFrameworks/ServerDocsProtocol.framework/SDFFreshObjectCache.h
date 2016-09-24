@@ -3,12 +3,12 @@
  */
 
 @interface SDFFreshObjectCache : NSObject {
-    NSMutableDictionary *_cache;
-    NSMutableDictionary *_cacheByMetadata;
-    BOOL _enableRefresh;
-    unsigned int _expired;
-    NSObject<OS_dispatch_source> *_flusher;
-    double _lifetime;
+    NSMutableDictionary * _cache;
+    NSMutableDictionary * _cacheByMetadata;
+    BOOL  _enableRefresh;
+    unsigned int  _expired;
+    NSObject<OS_dispatch_source> * _flusher;
+    double  _lifetime;
 }
 
 - (void).cxx_destruct;

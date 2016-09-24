@@ -3,7 +3,7 @@
  */
 
 @interface PUProtoSetShouldNotifyNextUnlock : PBCodable <NSCopying> {
-    BOOL _shouldNotify;
+    BOOL  _shouldNotify;
 }
 
 @property (nonatomic) BOOL shouldNotify;

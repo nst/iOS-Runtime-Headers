@@ -3,9 +3,9 @@
  */
 
 @interface TSWPTOCSettings : TSPObject <TSPCopying, TSSPreset, TSSStyleClient> {
-    NSString *_displayName;
-    TSURetainedPointerKeyDictionary *_map;
-    int _scope;
+    NSString * _displayName;
+    TSURetainedPointerKeyDictionary * _map;
+    int  _scope;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -22,6 +22,7 @@
 - (void)addIndexedStyle:(id)arg1 withEntryStyle:(id)arg2;
 - (void)addIndexedStyle:(id)arg1 withEntryStyle:(id)arg2 showInTOC:(BOOL)arg3;
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
+- (id)copyUsingDeepCopy;
 - (id)copyWithContext:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -44,7 +45,6 @@
 - (void)setDisplayName:(id)arg1;
 - (void)setMap:(id)arg1;
 - (void)setScope:(int)arg1;
-- (id)shallowCopy;
 - (BOOL)showInTOCForParagraphStyle:(id)arg1;
 - (void)upgradeWithStylesheet:(id)arg1;
 

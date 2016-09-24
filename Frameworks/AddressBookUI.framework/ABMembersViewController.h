@@ -3,16 +3,16 @@
  */
 
 @interface ABMembersViewController : ABAbstractViewController <ABMembersControllerDelegate, ABNewPersonViewControllerDelegate, ABPersonEditDelegate, ABViewControllerBannerViewProtocol, CNAvatarCardControllerDelegate, CNContactViewControllerAddContactPresenter> {
-    _UIAccessDeniedView *_accessDeniedView;
-    CNAvatarCardController *_cardController;
-    CNContactStore *_contactStore;
-    id _insertionLabel;
-    int _insertionProperty;
-    id _insertionValue;
-    int _leftButtonBehavior;
-    ABMembersController *_membersController;
-    int _rightButtonBehavior;
-    BOOL _shouldHandleExternalChangeOnPersonViewControllers;
+    _UIAccessDeniedView * _accessDeniedView;
+    CNAvatarCardController * _cardController;
+    CNContactStore * _contactStore;
+    id  _insertionLabel;
+    int  _insertionProperty;
+    id  _insertionValue;
+    int  _leftButtonBehavior;
+    ABMembersController * _membersController;
+    int  _rightButtonBehavior;
+    BOOL  _shouldHandleExternalChangeOnPersonViewControllers;
 }
 
 @property (nonatomic, readonly) _UIAccessDeniedView *accessDeniedView;
@@ -30,7 +30,7 @@
 
 - (void)_applicationEnteringBackground;
 - (void)_applicationEnteringForeground;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; int x7; }*)arg1;
 - (void)_updateForModel;
 - (int)abViewControllerType;
 - (id)accessDeniedView;
@@ -41,7 +41,7 @@
 - (BOOL)allowsCardEditing;
 - (BOOL)allowsShowingPersonsCards;
 - (void)applicationDidResume;
-- (int)avatarCardController:(id)arg1 presentationResultForLocation:(struct CGPoint { float x1; float x2; })arg2;
+- (int)avatarCardController:(id)arg1 presentationResultForLocation:(struct CGPoint { double x1; double x2; })arg2;
 - (BOOL)canHandleSnapbackIdentifier:(id)arg1 animated:(BOOL)arg2;
 - (void)cancel:(id)arg1;
 - (void)cancelRefreshingAccount;

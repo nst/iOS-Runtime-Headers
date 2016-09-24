@@ -3,13 +3,13 @@
  */
 
 @interface WBSCloudTabDevice : NSObject <NSCopying> {
-    BOOL _closeRequestSupported;
-    BOOL _ephemeralDevice;
-    BOOL _hasDuplicateName;
-    NSDate *_lastModified;
-    NSString *_name;
-    NSArray *_tabs;
-    NSString *_uuid;
+    BOOL  _closeRequestSupported;
+    BOOL  _ephemeralDevice;
+    BOOL  _hasDuplicateName;
+    NSDate * _lastModified;
+    NSString * _name;
+    NSArray * _tabs;
+    NSString * _uuid;
 }
 
 @property (getter=isCloseRequestSupported, nonatomic, readonly) BOOL closeRequestSupported;

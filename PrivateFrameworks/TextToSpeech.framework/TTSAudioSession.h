@@ -3,19 +3,19 @@
  */
 
 @interface TTSAudioSession : NSObject {
-    struct __CFBag { } *_activityBag;
-    BOOL _audioSessionIsSetUp;
-    BOOL _bluetoothAllowed;
+    struct __CFBag { } * _activityBag;
+    BOOL  _audioSessionIsSetUp;
+    BOOL  _bluetoothAllowed;
     struct { 
         int category; 
         long activity; 
-    } _cachedState;
+    }  _cachedState;
     struct { 
         int category; 
         long activity; 
-    } _desiredState;
-    NSObject<OS_dispatch_queue> *_queue;
-    int _serverGeneration;
+    }  _desiredState;
+    NSObject<OS_dispatch_queue> * _queue;
+    int  _serverGeneration;
 }
 
 + (id)sharedInstance;

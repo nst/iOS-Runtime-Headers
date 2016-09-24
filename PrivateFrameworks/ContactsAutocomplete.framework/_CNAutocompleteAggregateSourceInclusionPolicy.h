@@ -3,7 +3,7 @@
  */
 
 @interface _CNAutocompleteAggregateSourceInclusionPolicy : NSObject <CNAutocompleteSourceInclusionPolicy> {
-    NSArray *_policies;
+    NSArray * _policies;
 }
 
 @property (readonly, copy) NSString *debugDescription;

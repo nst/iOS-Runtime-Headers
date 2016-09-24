@@ -3,9 +3,9 @@
  */
 
 @interface WBSFrequentlyVisitedSitesController : NSObject {
-    WBSFrequentlyVisitedSitesBannedURLStore *_bannedURLStore;
-    WBSHistory *_history;
-    double _timeOfLastFrequentlyVisitedSitesComputation;
+    WBSFrequentlyVisitedSitesBannedURLStore * _bannedURLStore;
+    WBSHistory * _history;
+    double  _timeOfLastFrequentlyVisitedSitesComputation;
 }
 
 @property (nonatomic, readonly) NSArray *frequentlyVisitedSites;

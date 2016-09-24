@@ -3,16 +3,20 @@
  */
 
 @interface CLSensorRecorderAccelDataRequestById : NSObject <NSSecureCoding> {
-    unsigned long long _identifier;
+    unsigned int  _identifier;
+    unsigned int  _metaIdentifier;
 }
 
-@property unsigned long long identifier;
+@property unsigned int identifier;
+@property unsigned int metaIdentifier;
 
 + (BOOL)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)identifier;
+- (unsigned int)identifier;
 - (id)initWithCoder:(id)arg1;
-- (void)setIdentifier:(unsigned long long)arg1;
+- (unsigned int)metaIdentifier;
+- (void)setIdentifier:(unsigned int)arg1;
+- (void)setMetaIdentifier:(unsigned int)arg1;
 
 @end

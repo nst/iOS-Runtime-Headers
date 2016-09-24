@@ -3,16 +3,16 @@
  */
 
 @interface SPProtoAudioFileQueuePlayer : PBCodable <NSCopying> {
-    SPProtoObjectMessage *_advanceToNextItem;
-    SPProtoAudioFilePlayerUpdateContainedIdentifier *_appendItem;
-    SPProtoObjectMessage *_destroy;
-    SPProtoObjectMessage *_removeAllItems;
-    SPProtoAudioFilePlayerUpdateContainedIdentifier *_removeItem;
-    SPProtoAudioFilePlayerUpdateContainedIdentifier *_replaceCurrentItem;
-    SPProtoAudioFilePlayerUpdateContainedIdentifier *_setCurrentItem;
-    SPProtoAudioFileQueuePlayerSetRate *_setRate;
-    SPProtoAudioFilePlayerStatus *_setStatus;
-    SPProtoAudioFileQueuePlayerSetItems *_upsertWithItems;
+    SPProtoObjectMessage * _advanceToNextItem;
+    SPProtoAudioFilePlayerUpdateContainedIdentifier * _appendItem;
+    SPProtoObjectMessage * _destroy;
+    SPProtoObjectMessage * _removeAllItems;
+    SPProtoAudioFilePlayerUpdateContainedIdentifier * _removeItem;
+    SPProtoAudioFilePlayerUpdateContainedIdentifier * _replaceCurrentItem;
+    SPProtoAudioFilePlayerUpdateContainedIdentifier * _setCurrentItem;
+    SPProtoAudioFileQueuePlayerSetRate * _setRate;
+    SPProtoAudioFilePlayerStatus * _setStatus;
+    SPProtoAudioFileQueuePlayerSetItems * _upsertWithItems;
 }
 
 @property (nonatomic, retain) SPProtoObjectMessage *advanceToNextItem;

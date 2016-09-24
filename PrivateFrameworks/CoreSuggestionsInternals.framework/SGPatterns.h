@@ -3,12 +3,12 @@
  */
 
 @interface SGPatterns : NSObject {
-    NSString *_classKey;
-    NSCache *_compiledRegexes2;
-    NSArray *_langResolutionOrder;
-    NSString *_language;
-    int _localLanguageVersion;
-    NSMutableSet *_regexpKeysSeen;
+    NSString * _classKey;
+    NSCache * _compiledRegexes2;
+    NSArray * _langResolutionOrder;
+    NSString * _language;
+    int  _localLanguageVersion;
+    NSMutableSet * _regexpKeysSeen;
 }
 
 + (void)_reinstateDeath;
@@ -23,6 +23,8 @@
 + (id)languagePartOfLanguageCode:(id)arg1;
 + (id)patternsForClass:(Class)arg1;
 + (void)pauseCacheEvictionTemporarily;
++ (void)resetToDefaultPatternsForTesting;
++ (void)setPatternsDictForTesting:(id)arg1;
 + (void)useAllLanguagesAtOnce:(BOOL)arg1;
 
 - (void).cxx_destruct;
@@ -31,6 +33,7 @@
 - (void)dealloc;
 - (id)init;
 - (id)rawValueForKey:(id)arg1;
+- (id)rawValueOrDataForKey:(id)arg1;
 - (id)rawValuesForKey:(id)arg1;
 - (id)regex2ForKey:(id)arg1;
 - (void)reset;

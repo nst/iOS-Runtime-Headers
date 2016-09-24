@@ -3,10 +3,10 @@
  */
 
 @interface IMMockURLResponse : NSObject <NSSecureCoding> {
-    NSData *_data;
-    NSString *_mockID;
-    NSString *_requestBodyKeyPath;
-    NSHTTPURLResponse *_response;
+    NSData * _data;
+    NSString * _mockID;
+    NSString * _requestBodyKeyPath;
+    NSHTTPURLResponse * _response;
 }
 
 @property (retain) NSData *data;

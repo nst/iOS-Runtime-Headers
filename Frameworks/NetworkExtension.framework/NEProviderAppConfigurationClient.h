@@ -3,14 +3,14 @@
  */
 
 @interface NEProviderAppConfigurationClient : NEUtilConfigurationClient <NSXPCListenerDelegate> {
-    NSXPCConnection *_connection;
-    NSMutableArray *_createdManagers;
-    NEVPNManager *_currentManager;
-    NSMutableArray *_currentManagers;
-    BOOL _isServerMode;
-    NSXPCListener *_listener;
-    <NEConfigurationCommandHandling> *_remoteObject;
-    NSString *_targetAppBundleID;
+    NSXPCConnection * _connection;
+    NSMutableArray * _createdManagers;
+    NEVPNManager * _currentManager;
+    NSMutableArray * _currentManagers;
+    BOOL  _isServerMode;
+    NSXPCListener * _listener;
+    <NEConfigurationCommandHandling> * _remoteObject;
+    NSString * _targetAppBundleID;
 }
 
 @property (retain) NSXPCConnection *connection;

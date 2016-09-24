@@ -3,11 +3,11 @@
  */
 
 @interface CPLFileWatcher : NSObject {
-    <CPLFileWatcherDelegate> *_delegate;
-    NSURL *_fileURL;
-    NSObject<OS_dispatch_source> *_nodeSource;
-    NSObject<OS_dispatch_source> *_parentSource;
-    NSObject<OS_dispatch_queue> *_queue;
+    <CPLFileWatcherDelegate> * _delegate;
+    NSURL * _fileURL;
+    NSObject<OS_dispatch_source> * _nodeSource;
+    NSObject<OS_dispatch_source> * _parentSource;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic) <CPLFileWatcherDelegate> *delegate;

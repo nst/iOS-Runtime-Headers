@@ -3,9 +3,9 @@
  */
 
 @interface _UIUCBPopoverBarButtonVisualProviderIOS : _UIUCBBarButtonVisualProviderIOS {
-    UIColor *_selectionBackgroundTintColor;
-    UIView *_selectionBackgroundView;
-    UIColor *_selectionTintColor;
+    UIColor * _selectionBackgroundTintColor;
+    UIView * _selectionBackgroundView;
+    UIColor * _selectionTintColor;
 }
 
 @property (nonatomic, retain) UIColor *selectionBackgroundTintColor;

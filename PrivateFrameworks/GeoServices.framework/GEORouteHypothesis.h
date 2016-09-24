@@ -3,21 +3,23 @@
  */
 
 @interface GEORouteHypothesis : NSObject <NSSecureCoding> {
-    NSDate *_aggressiveDepartureDate;
-    double _aggressiveTravelTime;
-    NSDate *_conservativeDepartureDate;
-    double _conservativeTravelTime;
-    unsigned int _currentTrafficDensity;
-    NSError *_error;
-    double _estimatedTravelTime;
-    NSDate *_generationDate;
-    unsigned int _historicTrafficDensity;
-    GEOLocation *_lastLocation;
-    GEORouteHypothesisIncident *_mostRelevantIncident;
-    NSDate *_suggestedDepartureDate;
-    BOOL _supportsLiveTraffic;
-    int _transportType;
-    int _travelState;
+    NSDate * _aggressiveDepartureDate;
+    double  _aggressiveTravelTime;
+    NSDate * _conservativeDepartureDate;
+    double  _conservativeTravelTime;
+    unsigned int  _currentTrafficDensity;
+    NSError * _error;
+    double  _estimatedTravelTime;
+    NSDate * _generationDate;
+    unsigned int  _historicTrafficDensity;
+    GEOLocation * _lastLocation;
+    GEORouteHypothesisIncident * _mostRelevantIncident;
+    NSString * _routeName;
+    NSDate * _suggestedDepartureDate;
+    BOOL  _supportsLiveTraffic;
+    NSString * _trafficDensityDescription;
+    int  _transportType;
+    int  _travelState;
 }
 
 @property (nonatomic, readonly, retain) NSDate *aggressiveDepartureDate;
@@ -31,21 +33,25 @@
 @property (nonatomic, readonly) unsigned int historicTrafficDensity;
 @property (nonatomic, readonly, retain) GEOLocation *lastLocation;
 @property (nonatomic, readonly, retain) GEORouteHypothesisIncident *mostRelevantIncident;
+@property (nonatomic, readonly, copy) NSString *routeName;
 @property (nonatomic, readonly, retain) NSDate *suggestedDepartureDate;
 @property (nonatomic, readonly) BOOL supportsLiveTraffic;
+@property (nonatomic, readonly) NSString *trafficDensityDescription;
 @property (nonatomic, readonly) int transportType;
 @property (nonatomic, readonly) int travelState;
 
 + (id)_routeHypothesisErrorWithUnderlyingError:(id)arg1;
 + (BOOL)supportsSecureCoding;
++ (BOOL)supportsTravelState:(int)arg1 forTransportType:(int)arg2;
 
 - (void)_clearHypothesisAndSetErrorWithCode:(int)arg1;
 - (void)_setError:(id)arg1;
 - (void)_updateCurrentTrafficDensity:(double)arg1 staticTravelTime:(double)arg2;
-- (void)_updateDepartureAndArrivalSuggestions:(id)arg1 arrivalDate:(id)arg2 travelTimeWithTraffic:(double)arg3 conservativeTravelTime:(double)arg4 aggressiveTravelTime:(double)arg5 transportType:(int)arg6;
+- (void)_updateDepartureAndArrivalSuggestionsForArrivalDate:(id)arg1 travelTimeWithTraffic:(double)arg2 conservativeTravelTime:(double)arg3 aggressiveTravelTime:(double)arg4 transportType:(int)arg5;
 - (void)_updateHistoricTrafficDensity:(double)arg1 staticTravelTime:(double)arg2;
+- (void)_updateTrafficDensityDescription:(id)arg1;
 - (void)_updateTrafficIncidents:(id)arg1;
-- (void)_updateTravelState:(id)arg1;
+- (void)_updateTravelStateHasArrived:(BOOL)arg1 isTraveling:(BOOL)arg2 travelScore:(double)arg3;
 - (id)aggressiveDepartureDate;
 - (double)aggressiveTravelTime;
 - (id)conservativeDepartureDate;
@@ -61,10 +67,13 @@
 - (id)initWithCoder:(id)arg1;
 - (id)lastLocation;
 - (id)mostRelevantIncident;
+- (id)routeName;
 - (void)setLastLocation:(id)arg1;
+- (void)setRouteName:(id)arg1;
 - (void)setSupportsLiveTraffic:(BOOL)arg1;
 - (id)suggestedDepartureDate;
 - (BOOL)supportsLiveTraffic;
+- (id)trafficDensityDescription;
 - (int)transportType;
 - (int)travelState;
 

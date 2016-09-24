@@ -3,39 +3,41 @@
  */
 
 @interface _UIButtonBar : NSObject <NSCoding, _UIBarButtonItemGroupOwner, _UIBarButtonItemViewOwner> {
-    NSArray *_barButtonGroups;
-    BOOL _compact;
-    id /* block */ _defaultActionFilter;
-    NSMutableArray *_effectiveLayout;
-    UILayoutGuide *_flexibleSpaceEqualSizeLayoutGuide;
-    NSMapTable *_groupLayoutMap;
-    NSMutableArray *_groupLayouts;
-    BOOL _itemsInGroupUseSameSize;
-    NSMutableArray *_layoutActiveConstraints;
-    NSMutableArray *_layoutGuides;
-    _UIButtonBarLayoutMetrics *_layoutMetrics;
-    NSMutableArray *_layoutViews;
-    float _minimumInterGroupSpace;
-    NSLayoutConstraint *_minimumInterGroupSpaceConstraint;
-    UILayoutGuide *_minimumInterGroupSpaceLayoutGuide;
-    float _minimumInterItemSpace;
-    NSLayoutConstraint *_minimumInterItemSpaceConstraint;
-    UILayoutGuide *_minimumInterItemSpaceLayoutGuide;
-    NSMapTable *_senderActionMap;
-    _UIButtonBarStackView *_stackView;
-    _UIButtonBarButtonVisualProvider *_visualProvider;
+    NSArray * _barButtonGroups;
+    BOOL  _compact;
+    id /* block */  _defaultActionFilter;
+    <_UIButtonBarDelegate> * _delegate;
+    NSMutableArray * _effectiveLayout;
+    UILayoutGuide * _flexibleSpaceEqualSizeLayoutGuide;
+    NSMapTable * _groupLayoutMap;
+    NSMutableArray * _groupLayouts;
+    BOOL  _itemsInGroupUseSameSize;
+    NSMutableArray * _layoutActiveConstraints;
+    NSMutableArray * _layoutGuides;
+    _UIButtonBarLayoutMetrics * _layoutMetrics;
+    NSMutableArray * _layoutViews;
+    double  _minimumInterGroupSpace;
+    NSLayoutConstraint * _minimumInterGroupSpaceConstraint;
+    UILayoutGuide * _minimumInterGroupSpaceLayoutGuide;
+    double  _minimumInterItemSpace;
+    NSLayoutConstraint * _minimumInterItemSpaceConstraint;
+    UILayoutGuide * _minimumInterItemSpaceLayoutGuide;
+    NSMapTable * _senderActionMap;
+    _UIButtonBarStackView * _stackView;
+    _UIButtonBarButtonVisualProvider * _visualProvider;
 }
 
 @property (nonatomic, copy) NSArray *barButtonGroups;
 @property (getter=_compact, setter=_setCompact:, nonatomic) BOOL compact;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, copy) id /* block */ defaultActionFilter;
+@property (nonatomic) <_UIButtonBarDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (getter=_itemsInGroupUseSameSize, setter=_setItemsInGroupUseSameSize:, nonatomic) BOOL itemsInGroupUseSameSize;
-@property (getter=_layoutWidth, nonatomic, readonly) float layoutWidth;
-@property (getter=_minimumInterGroupSpace, setter=_setMinimumInterGroupSpace:, nonatomic) float minimumInterGroupSpace;
-@property (nonatomic) float minimumInterItemSpace;
+@property (getter=_layoutWidth, nonatomic, readonly) double layoutWidth;
+@property (getter=_minimumInterGroupSpace, setter=_setMinimumInterGroupSpace:, nonatomic) double minimumInterGroupSpace;
+@property (nonatomic) double minimumInterItemSpace;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIBarButtonItem *ultimateFallbackItem;
 @property (nonatomic, readonly) UIView *view;
@@ -68,6 +70,7 @@
 - (void)_setItemsInGroupUseSameSize:(BOOL)arg1;
 - (void)_setMinimumInterGroupSpace:(float)arg1;
 - (void)_setNeedsVisualUpdate;
+- (void)_setNeedsVisualUpdateAndNotify:(BOOL)arg1;
 - (void)_setVisualProvider:(id)arg1;
 - (id)_targetActionForBarButtonItem:(id)arg1;
 - (void)_updateForTraitCollectionChange:(id)arg1;
@@ -78,12 +81,14 @@
 - (id)barButtonGroups;
 - (void)dealloc;
 - (id /* block */)defaultActionFilter;
+- (id)delegate;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (float)minimumInterItemSpace;
 - (void)setBarButtonGroups:(id)arg1;
 - (void)setDefaultActionFilter:(id /* block */)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setMinimumInterItemSpace:(float)arg1;
 - (id)ultimateFallbackItem;
 - (id)view;

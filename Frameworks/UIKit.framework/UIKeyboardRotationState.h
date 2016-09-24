@@ -3,11 +3,11 @@
  */
 
 @interface UIKeyboardRotationState : NSObject {
-    UIInputViewAnimationStyle *_animationStyle;
-    int _postRotationState;
-    BOOL _requiresNewState;
-    int _state;
-    int _targetOrientation;
+    UIInputViewAnimationStyle * _animationStyle;
+    int  _postRotationState;
+    BOOL  _requiresNewState;
+    int  _state;
+    int  _targetOrientation;
 }
 
 @property (nonatomic, retain) UIInputViewAnimationStyle *animationStyle;

@@ -3,7 +3,7 @@
  */
 
 @interface STShowChannelRequest : AFSiriRequest {
-    STMediaChannel *_channel;
+    STMediaChannel * _channel;
 }
 
 @property (nonatomic, readonly) STMediaChannel *channel;

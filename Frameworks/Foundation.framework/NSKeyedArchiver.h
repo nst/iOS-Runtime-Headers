@@ -3,26 +3,27 @@
  */
 
 @interface NSKeyedArchiver : NSCoder {
-    void *_cache;
-    unsigned int _cacheSize;
-    id _classNameMap;
-    id _classes;
-    id _conditionals;
-    id _containers;
-    id _delegate;
-    unsigned int _estimatedCount;
-    unsigned int _flags;
-    unsigned int _genericKey;
-    id _objRefMap;
-    id _objects;
-    id _replacementMap;
-    void *_reserved0;
-    void *_reserved2;
-    void *_stream;
-    id _visited;
+    void * _cache;
+    unsigned int  _cacheSize;
+    id  _classNameMap;
+    id  _classes;
+    id  _conditionals;
+    id  _containers;
+    id  _delegate;
+    unsigned int  _estimatedCount;
+    unsigned int  _flags;
+    unsigned int  _genericKey;
+    id  _objRefMap;
+    id  _objects;
+    id  _replacementMap;
+    void * _reserved0;
+    void * _reserved2;
+    void * _stream;
+    id  _visited;
 }
 
 @property <NSKeyedArchiverDelegate> *delegate;
+@property (readonly) NSData *encodedData;
 @property unsigned int outputFormat;
 @property BOOL requiresSecureCoding;
 
@@ -34,6 +35,7 @@
 + (void)initialize;
 + (void)setClassName:(id)arg1 forClass:(Class)arg2;
 
+- (BOOL)_allowsValueCoding;
 - (id)_blobForCurrentObject;
 - (void)_encodeArrayOfObjects:(id)arg1 forKey:(id)arg2;
 - (void)_encodePropertyList:(id)arg1 forKey:(id)arg2;
@@ -56,14 +58,14 @@
 - (void)encodeDouble:(double)arg1 forKey:(id)arg2;
 - (void)encodeFloat:(float)arg1 forKey:(id)arg2;
 - (void)encodeInt32:(int)arg1 forKey:(id)arg2;
-- (void)encodeInt64:(long long)arg1 forKey:(id)arg2;
+- (void)encodeInt64:(int)arg1 forKey:(id)arg2;
 - (void)encodeInt:(int)arg1 forKey:(id)arg2;
 - (void)encodeObject:(id)arg1;
 - (void)encodeObject:(id)arg1 forKey:(id)arg2;
 - (void)encodeRootObject:(id)arg1;
 - (void)encodeValueOfObjCType:(const char *)arg1 at:(const void*)arg2;
 - (void)encodeValuesOfObjCTypes:(const char *)arg1;
-- (void)finalize;
+- (id)encodedData;
 - (void)finishEncoding;
 - (id)init;
 - (id)initForWritingWithMutableData:(id)arg1;
@@ -77,8 +79,14 @@
 - (unsigned int)systemVersion;
 - (int)versionForClassName:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/Search.framework/Search
+// Image: /System/Library/PrivateFrameworks/DigitalTouchShared.framework/DigitalTouchShared
 
-+ (id)_sp_secureArchivedDataWithRootObject:(id)arg1;
++ (id)_et_secureArchivedDataWithRootObject:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PairedSync.framework/PairedSync
+
++ (BOOL)secureArchiveRootObject:(id)arg1 toFile:(id)arg2;
++ (BOOL)secureArchiveRootObject:(id)arg1 toFile:(id)arg2 withOptions:(unsigned int)arg3;
++ (id)secureArchivedDataWithRootObject:(id)arg1;
 
 @end

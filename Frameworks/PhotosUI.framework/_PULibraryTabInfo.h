@@ -3,9 +3,9 @@
  */
 
 @interface _PULibraryTabInfo : NSObject {
-    int _contentMode;
-    NSString *_iconName;
-    NSString *_labelKey;
+    int  _contentMode;
+    NSString * _iconName;
+    NSString * _labelKey;
 }
 
 @property (nonatomic) int contentMode;

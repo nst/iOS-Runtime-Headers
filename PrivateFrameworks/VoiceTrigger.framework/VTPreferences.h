@@ -9,11 +9,11 @@
 
 - (id)_languageCode;
 - (BOOL)_storeModeEnabled;
-- (id)consoleLoggingLevel;
 - (void)discardAllSATEnrollment;
 - (void)discardSATEnrollmentForLanguageCode:(id)arg1;
 - (BOOL)fileLoggingIsEnabled;
 - (id)fileLoggingLevel;
+- (BOOL)gestureSubscriptionEnabled;
 - (BOOL)hasExplicitlySetVoiceTriggerEnabled;
 - (BOOL)isSATEnrolledForLanguageCode:(id)arg1;
 - (id)localizedTriggerPhrase;
@@ -22,7 +22,6 @@
 - (BOOL)onetimeRemoteAssetQueryRanSuccessfully;
 - (BOOL)phraseSpotterEnabled;
 - (BOOL)secondPassAudioLoggingEnabled;
-- (void)setConsoleLoggingLevel:(id)arg1;
 - (void)setFileLoggingIsEnabled:(BOOL)arg1;
 - (void)setFileLoggingLevel:(id)arg1;
 - (void)setOnetimeRemoteAssetQueryRanSuccessfully:(BOOL)arg1;

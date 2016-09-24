@@ -3,7 +3,7 @@
  */
 
 @interface _DECExpertManager : NSObject {
-    NSArray *_experts;
+    NSArray * _experts;
 }
 
 + (id)sharedInstance;

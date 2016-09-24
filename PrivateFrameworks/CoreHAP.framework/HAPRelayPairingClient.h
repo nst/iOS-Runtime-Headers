@@ -3,8 +3,8 @@
  */
 
 @interface HAPRelayPairingClient : NSObject {
-    NSURL *_accessoryBagURL;
-    <HAPRelayPairingClientDelegate> *_delegate;
+    NSURL * _accessoryBagURL;
+    <HAPRelayPairingClientDelegate> * _delegate;
 }
 
 @property (nonatomic, readonly) NSURL *accessoryBagURL;

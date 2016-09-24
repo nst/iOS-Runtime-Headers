@@ -3,8 +3,8 @@
  */
 
 @interface SKUIGridViewElement : SKUIViewElement {
-    id _persistenceKey;
-    BOOL _showsEditMode;
+    id  _persistenceKey;
+    BOOL  _showsEditMode;
 }
 
 @property (nonatomic, readonly) BOOL allowsMultipleSelectionDuringEditing;

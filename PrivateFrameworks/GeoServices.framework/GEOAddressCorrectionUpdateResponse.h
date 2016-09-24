@@ -5,8 +5,8 @@
 @interface GEOAddressCorrectionUpdateResponse : PBCodable <NSCopying> {
     struct { 
         unsigned int retryScheduleInDays : 1; 
-    } _has;
-    unsigned int _retryScheduleInDays;
+    }  _has;
+    unsigned int  _retryScheduleInDays;
 }
 
 @property (nonatomic) BOOL hasRetryScheduleInDays;

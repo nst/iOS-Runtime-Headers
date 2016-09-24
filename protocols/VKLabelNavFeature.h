@@ -12,8 +12,9 @@
 - (BOOL)isOnRoute;
 - (BOOL)isRamp;
 - (BOOL)isStartOfRoadName;
+- (void)layoutWithNavContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg1;
 - (NSString *)name;
-- (struct PolylineCoordinate { unsigned int x1; float x2; })routeOffset;
+- (struct PolylineCoordinate { unsigned int x1; double x2; })routeOffset;
 - (NSString *)shieldDisplayGroup;
 
 @end

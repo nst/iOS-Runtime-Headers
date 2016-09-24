@@ -3,12 +3,12 @@
  */
 
 @interface MKDirections : NSObject {
-    GEOQuickETARequest *_etaRequest;
-    GEOQuickETARequester *_etaRequester;
-    GEODirectionsRouteRequest *_geoRequest;
-    <MKLocationManagerOperation> *_locationOperation;
-    MKDirectionsRequest *_request;
-    NSObject<OS_dispatch_group> *_waypointsDispatchGroup;
+    GEOQuickETARequest * _etaRequest;
+    GEOQuickETARequester * _etaRequester;
+    GEODirectionsRequest * _geoRequest;
+    <MKLocationManagerOperation> * _locationOperation;
+    MKDirectionsRequest * _request;
+    NSObject<OS_dispatch_group> * _waypointsDispatchGroup;
 }
 
 @property (getter=isCalculating, nonatomic, readonly) BOOL calculating;

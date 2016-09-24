@@ -3,7 +3,7 @@
  */
 
 @interface UIKBColorGradient : UIKBGradient {
-    UIColor *_color;
+    UIColor * _color;
 }
 
 + (id)gradientWithUIColor:(id)arg1;

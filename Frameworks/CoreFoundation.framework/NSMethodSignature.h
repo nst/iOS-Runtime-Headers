@@ -3,8 +3,8 @@
  */
 
 @interface NSMethodSignature : NSObject {
-    void *_private;
-    void *_reserved;
+    void * _private;
+    void * _reserved;
 }
 
 @property (readonly) unsigned int frameLength;
@@ -25,7 +25,6 @@
 - (id)_typeString;
 - (void)dealloc;
 - (id)debugDescription;
-- (void)finalize;
 - (unsigned int)frameLength;
 - (const char *)getArgumentTypeAtIndex:(unsigned int)arg1;
 - (unsigned int)hash;

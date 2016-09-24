@@ -3,10 +3,10 @@
  */
 
 @interface MSASPhoneInvitations : NSObject <IDSServiceDelegate> {
-    MSASAlbum *_album;
-    IDSService *_idsService;
-    NSMutableDictionary *_sendMessageIdentifierToPhone;
-    MSASStateMachine *_stateMachine;
+    MSASAlbum * _album;
+    IDSService * _idsService;
+    NSMutableDictionary * _sendMessageIdentifierToPhone;
+    MSASStateMachine * _stateMachine;
 }
 
 @property (nonatomic, retain) MSASAlbum *album;

@@ -3,7 +3,7 @@
  */
 
 @interface _UITextUndoManager : NSUndoManager {
-    UITextInputController *_inputController;
+    UITextInputController * _inputController;
 }
 
 @property (nonatomic) UITextInputController *inputController;

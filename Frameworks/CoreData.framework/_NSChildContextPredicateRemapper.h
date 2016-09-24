@@ -3,7 +3,7 @@
  */
 
 @interface _NSChildContextPredicateRemapper : NSObject {
-    NSManagedObjectContext *_context;
+    NSManagedObjectContext * _context;
 }
 
 - (id)createPredicateForFetchFromPredicate:(id)arg1 withContext:(id)arg2;

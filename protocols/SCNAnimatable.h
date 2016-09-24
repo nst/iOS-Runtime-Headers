@@ -14,5 +14,6 @@
 - (void)removeAnimationForKey:(NSString *)arg1;
 - (void)removeAnimationForKey:(NSString *)arg1 fadeOutDuration:(float)arg2;
 - (void)resumeAnimationForKey:(NSString *)arg1;
+- (void)setSpeed:(float)arg1 forAnimationKey:(NSString *)arg2;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface ATGrappaSignatureProvider : ATSignatureProvider {
-    ATGrappaSession *_grappaSession;
-    ATDeviceSettings *_settings;
+    ATGrappaSession * _grappaSession;
+    ATDeviceSettings * _settings;
 }
 
 - (void).cxx_destruct;

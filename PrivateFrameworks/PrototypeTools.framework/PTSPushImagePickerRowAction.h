@@ -3,7 +3,7 @@
  */
 
 @interface PTSPushImagePickerRowAction : PTSPushViewControllerRowAction {
-    NSString *_imageDirectoryPath;
+    NSString * _imageDirectoryPath;
 }
 
 @property (nonatomic, copy) NSString *imageDirectoryPath;

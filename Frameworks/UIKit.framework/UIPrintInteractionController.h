@@ -3,22 +3,22 @@
  */
 
 @interface UIPrintInteractionController : NSObject {
-    unsigned int _backgroundTaskIdentifier;
-    id /* block */ _completionHandler;
-    <UIPrintInteractionControllerDelegate> *_delegate;
-    BOOL _hidesNumberOfCopies;
-    NSObject<OS_dispatch_queue> *_previewQueue;
-    <UIPrintInteractionControllerDelegate> *_printActivityDelegate;
-    UIPrintFormatter *_printFormatter;
-    UIPrintInfo *_printInfo;
-    UIPrintPageRenderer *_printPageRenderer;
-    UIPrintPaper *_printPaper;
-    id _printState;
-    id _printingItem;
-    NSArray *_printingItems;
-    BOOL _showsPageRange;
-    BOOL _showsPaperSelectionForLoadedPapers;
-    id _temporaryRetainCycle;
+    unsigned int  _backgroundTaskIdentifier;
+    id /* block */  _completionHandler;
+    <UIPrintInteractionControllerDelegate> * _delegate;
+    BOOL  _hidesNumberOfCopies;
+    NSObject<OS_dispatch_queue> * _previewQueue;
+    <UIPrintInteractionControllerDelegate> * _printActivityDelegate;
+    UIPrintFormatter * _printFormatter;
+    UIPrintInfo * _printInfo;
+    UIPrintPageRenderer * _printPageRenderer;
+    UIPrintPaper * _printPaper;
+    id  _printState;
+    id  _printingItem;
+    NSArray * _printingItems;
+    BOOL  _showsPageRange;
+    BOOL  _showsPaperSelectionForLoadedPapers;
+    id  _temporaryRetainCycle;
 }
 
 @property (nonatomic) <UIPrintInteractionControllerDelegate> *delegate;
@@ -46,6 +46,7 @@
 - (void).cxx_destruct;
 - (BOOL)_canPrintPDFData:(id)arg1;
 - (BOOL)_canPrintPDFURL:(id)arg1;
+- (BOOL)_canShowAnnotations;
 - (BOOL)_canShowColor;
 - (BOOL)_canShowCopies;
 - (BOOL)_canShowDuplex;
@@ -66,19 +67,19 @@
 - (float)_getCutLengthFromDelegateForPaper:(id)arg1;
 - (id)_init;
 - (void)_manualPrintPage;
-- (struct CGContext { }*)_newSaveContext:(id)arg1 withMediaRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (struct CGContext { }*)_newSaveContext:(id)arg1 withMediaRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (id)_paperForContentType:(int)arg1;
 - (id)_paperForPDFItem:(id)arg1 withDuplexMode:(int)arg2;
 - (void)_preparePrintInfo;
 - (id)_printItem:(id)arg1;
-- (struct CGSize { float x1; float x2; })_printItemContentSize;
+- (struct CGSize { double x1; double x2; })_printItemContentSize;
 - (void)_printPage;
 - (id)_printPageRenderer:(id)arg1;
 - (void)_printPanelDidDismiss;
 - (void)_printPanelDidPresent;
 - (void)_printPanelWillDismiss:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })_printablePDFDataSize:(id)arg1;
-- (struct CGSize { float x1; float x2; })_printablePDFURLSize:(id)arg1;
+- (struct CGSize { double x1; double x2; })_printablePDFDataSize:(id)arg1;
+- (struct CGSize { double x1; double x2; })_printablePDFURLSize:(id)arg1;
 - (void)_setPrintInfoState:(int)arg1;
 - (BOOL)_setupPrintPanel:(id /* block */)arg1;
 - (void)_startPrinting;
@@ -94,7 +95,7 @@
 - (id)paper;
 - (BOOL)presentAnimated:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)presentFromBarButtonItem:(id)arg1 animated:(BOOL)arg2 completionHandler:(id /* block */)arg3;
-- (BOOL)presentFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3 completionHandler:(id /* block */)arg4;
+- (BOOL)presentFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3 completionHandler:(id /* block */)arg4;
 - (id)printActivityDelegate;
 - (id)printFormatter;
 - (id)printInfo;

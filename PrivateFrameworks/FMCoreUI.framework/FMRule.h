@@ -3,9 +3,9 @@
  */
 
 @interface FMRule : UIView {
-    UIColor *_color;
-    UIImageView *_imageView;
-    BOOL _leading;
+    UIColor * _color;
+    UIImageView * _imageView;
+    BOOL  _leading;
 }
 
 @property (nonatomic, retain) UIColor *color;
@@ -19,7 +19,7 @@
 - (id)color;
 - (void)commonSetup;
 - (id)imageView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)leading;
 - (void)prepareForInterfaceBuilder;
 - (void)setColor:(id)arg1;

@@ -3,23 +3,23 @@
  */
 
 @interface NSStoreMigrationPolicy : NSObject {
-    NSPersistentStoreCoordinator *_coordinator;
-    NSString *_destinationConfiguration;
-    NSDictionary *_destinationOptions;
-    NSString *_destinationType;
-    NSURL *_destinationURL;
-    NSMappingModel *_mappingModel;
-    NSMigrationManager *_migrationManager;
-    void *_reserved2;
-    void *_reserved3;
-    void *_reserved4;
-    NSArray *_resourceBundles;
-    NSString *_sourceConfiguration;
-    NSDictionary *_sourceMetadata;
-    NSManagedObjectModel *_sourceModel;
-    NSDictionary *_sourceOptions;
-    NSURL *_sourceURL;
-    long _workingWithSkewedSource;
+    NSPersistentStoreCoordinator * _coordinator;
+    NSString * _destinationConfiguration;
+    NSDictionary * _destinationOptions;
+    NSString * _destinationType;
+    NSURL * _destinationURL;
+    NSMappingModel * _mappingModel;
+    NSMigrationManager * _migrationManager;
+    void * _reserved2;
+    void * _reserved3;
+    void * _reserved4;
+    NSArray * _resourceBundles;
+    NSString * _sourceConfiguration;
+    NSDictionary * _sourceMetadata;
+    NSManagedObjectModel * _sourceModel;
+    NSDictionary * _sourceOptions;
+    NSURL * _sourceURL;
+    long  _workingWithSkewedSource;
 }
 
 + (id)destinationURLForMigrationSourceURL:(id)arg1 createDocumentReplacementDirectory:(BOOL)arg2 error:(id*)arg3;

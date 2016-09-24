@@ -9,5 +9,8 @@
 - (BOOL)canModifyCalendarDatabase;
 - (BOOL)canModifySuggestedEventCalendar;
 - (BOOL)canSetAutomaticLocationGeocodingAllowedValue;
+- (BOOL)hasContactsUIEntitlement;
+- (BOOL)internalAccessLevelGranted;
+- (BOOL)testingAccessLevelGranted;
 
 @end

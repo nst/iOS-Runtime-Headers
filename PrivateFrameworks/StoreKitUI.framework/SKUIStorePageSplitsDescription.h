@@ -3,10 +3,10 @@
  */
 
 @interface SKUIStorePageSplitsDescription : NSObject <NSCopying> {
-    SKUIStorePageSplit *_bottomSplit;
-    SKUIStorePageSplit *_leftSplit;
-    SKUIStorePageSplit *_rightSplit;
-    SKUIStorePageSplit *_topSplit;
+    SKUIStorePageSplit * _bottomSplit;
+    SKUIStorePageSplit * _leftSplit;
+    SKUIStorePageSplit * _rightSplit;
+    SKUIStorePageSplit * _topSplit;
 }
 
 @property (nonatomic, copy) SKUIStorePageSplit *bottomSplit;

@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIPreviewActionGroup : NSObject <NSCopying, UIPreviewActionItem> {
-    NSArray *_actions;
-    UIColor *_color;
-    NSString *_identifier;
-    UIImage *_image;
-    int _style;
-    NSString *_title;
+@interface UIPreviewActionGroup : NSObject <NSCopying, UIPreviewActionItem, UIPreviewActionItem_Internal> {
+    NSArray * _actions;
+    UIColor * _color;
+    NSString * _identifier;
+    UIImage * _image;
+    int  _style;
+    NSString * _title;
 }
 
 @property (getter=_actions, setter=_setActions:, nonatomic, copy) NSArray *actions;
@@ -29,6 +29,8 @@
 - (void).cxx_destruct;
 - (id)_actions;
 - (id)_color;
+- (id)_effectiveColor;
+- (id)_effectiveImage;
 - (void)_setActions:(id)arg1;
 - (void)_setColor:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

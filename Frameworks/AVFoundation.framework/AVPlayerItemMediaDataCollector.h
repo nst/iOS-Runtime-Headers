@@ -3,7 +3,7 @@
  */
 
 @interface AVPlayerItemMediaDataCollector : NSObject {
-    AVPlayerItemMediaDataCollectorInternal *_collectorInternal;
+    AVPlayerItemMediaDataCollectorInternal * _collectorInternal;
 }
 
 - (BOOL)_attachToPlayerItem:(id)arg1;

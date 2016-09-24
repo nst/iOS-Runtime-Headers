@@ -3,12 +3,12 @@
  */
 
 @interface PSUIRestrictionsController : PSListController {
-    UISwitch *_delayedSwitch;
-    BOOL _delayedValue;
-    PSSpecifier *_iBooksExplicitSpecifier;
-    PSSpecifier *_iBooksSpecifier;
-    BOOL _isObservingFaceTimeChanges;
-    NSMutableArray *_mcRestrictionFeatures;
+    UISwitch * _delayedSwitch;
+    BOOL  _delayedValue;
+    PSSpecifier * _iBooksExplicitSpecifier;
+    PSSpecifier * _iBooksSpecifier;
+    BOOL  _isObservingFaceTimeChanges;
+    NSMutableArray * _mcRestrictionFeatures;
 }
 
 @property (nonatomic, retain) NSMutableArray *mcRestrictionFeatures;
@@ -17,6 +17,7 @@
 + (BOOL)requiresPIN;
 
 - (void).cxx_destruct;
+- (void)_configureIfGreenTeaDevice;
 - (void)_disableFaceTimeRestrictions;
 - (void)_disableSpecifier:(id)arg1;
 - (void)_handleExternalApplicationChange;

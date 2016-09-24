@@ -3,13 +3,16 @@
  */
 
 @interface TSTTableDataStyle : TSTTableDataObject {
-    TSSStyle *mStyle;
+    TSSStyle * mStyle;
 }
+
+@property (nonatomic, readonly) TSSStyle *style;
 
 - (void)dealloc;
 - (id)description;
 - (unsigned int)hash;
-- (id)initObjectWithStyle:(id)arg1;
+- (id)initObjectWithStyle:(id)arg1 refCount:(unsigned int)arg2;
 - (BOOL)isEqual:(id)arg1;
+- (id)style;
 
 @end

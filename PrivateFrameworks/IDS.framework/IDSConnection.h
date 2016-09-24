@@ -3,7 +3,7 @@
  */
 
 @interface IDSConnection : NSObject {
-    _IDSConnection *_internal;
+    _IDSConnection * _internal;
 }
 
 @property (nonatomic, readonly, retain) _IDSConnection *_internal;

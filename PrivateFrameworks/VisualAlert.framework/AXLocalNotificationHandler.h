@@ -3,7 +3,7 @@
  */
 
 @interface AXLocalNotificationHandler : AXNotificationHandler {
-    id _opaqueObserver;
+    id  _opaqueObserver;
 }
 
 @property (setter=_setOpaqueObserver:, nonatomic, retain) id _opaqueObserver;
@@ -15,5 +15,6 @@
 - (void)_startObservingWithObject:(id)arg1;
 - (void)_stopObserving;
 - (void)_stopObservingWithObject:(id)arg1;
+- (void)dealloc;
 
 @end

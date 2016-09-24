@@ -3,8 +3,8 @@
  */
 
 @interface TSCHPropertyMutationTuple : NSObject {
-    NSDictionary *mMutations;
-    <TSCHStyleOwning> *mStyleOwner;
+    NSDictionary * mMutations;
+    <TSCHStyleOwning> * mStyleOwner;
 }
 
 @property (readonly) NSDictionary *mutations;

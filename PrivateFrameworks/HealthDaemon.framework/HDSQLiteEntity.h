@@ -3,17 +3,18 @@
  */
 
 @interface HDSQLiteEntity : NSObject <HDSQLiteEntity> {
-    long long _persistentID;
+    int  _persistentID;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) long long persistentID;
+@property (nonatomic, readonly) int persistentID;
 @property (readonly) Class superclass;
 
 + (id)_copyDeleteSQLWithTableName:(id)arg1 columnName:(id)arg2;
 + (id)_generateDisambiguatedDatabaseTableName;
++ (id)additionalPredicateForEnumeration;
 + (id)aggregateSingleValueForProperty:(id)arg1 function:(id)arg2 predicate:(id)arg3 database:(id)arg4 error:(id*)arg5;
 + (id)aggregateSingleValueForProperty:(id)arg1 function:(id)arg2 queryDescriptor:(id)arg3 database:(id)arg4 error:(id*)arg5;
 + (id)aggregateValuesForProperty:(id)arg1 functions:(id)arg2 predicate:(id)arg3 groupBy:(id)arg4 database:(id)arg5 error:(id*)arg6;
@@ -35,16 +36,13 @@
 + (id)entityWithPersistentID:(id)arg1;
 + (BOOL)enumerateEntitiesInDatabase:(id)arg1 predicate:(id)arg2 error:(id*)arg3 enumerationHandler:(id /* block */)arg4;
 + (BOOL)enumerateQueryResultsFromColumns:(id)arg1 properties:(id)arg2 predicate:(id)arg3 groupBy:(id)arg4 orderingProperties:(id)arg5 limit:(int)arg6 database:(id)arg7 error:(id*)arg8 enumerationHandler:(id /* block */)arg9;
-+ (id)foreignDatabaseColumnForProperty:(id)arg1;
-+ (id)foreignDatabaseTableForProperty:(id)arg1;
-+ (id)foreignDatabaseTablesToDelete;
-+ (id)foreignKeyColumnForTable:(id)arg1;
++ (id)indices;
 + (id)insertOrReplaceEntity:(BOOL)arg1 database:(id)arg2 properties:(id)arg3 error:(id*)arg4 bindingHandler:(id /* block */)arg5;
 + (id)insertSQLForProperties:(id)arg1 shouldReplace:(BOOL)arg2;
 + (id)joinClausesForProperty:(id)arg1;
-+ (id)maxPersistentIDWithPredicate:(id)arg1 database:(id)arg2;
 + (id)maxPersistentIDWithPredicate:(id)arg1 database:(id)arg2 error:(id*)arg3;
 + (id)maxValueForProperty:(id)arg1 predicate:(id)arg2 database:(id)arg3 error:(id*)arg4;
++ (id)privateSubEntities;
 + (id)propertyValueForAnyInDatabase:(id)arg1 property:(id)arg2 predicate:(id)arg3 error:(id*)arg4;
 + (id)queryStatementWithPredicate:(id)arg1 properties:(id)arg2 database:(id)arg3;
 + (id)queryWithDatabase:(id)arg1 predicate:(id)arg2;
@@ -63,8 +61,8 @@
 - (BOOL)existsInDatabase:(id)arg1;
 - (BOOL)getValuesForProperties:(id)arg1 database:(id)arg2 handler:(id /* block */)arg3;
 - (BOOL)getValuesForProperties:(id)arg1 withDatabase:(id)arg2 applier:(id /* block */)arg3;
-- (id)initWithPersistentID:(long long)arg1;
-- (long long)persistentID;
+- (id)initWithPersistentID:(int)arg1;
+- (int)persistentID;
 - (BOOL)updateProperties:(id)arg1 database:(id)arg2 error:(id*)arg3 bindingHandler:(id /* block */)arg4;
 - (id)valueForProperty:(id)arg1 database:(id)arg2;
 

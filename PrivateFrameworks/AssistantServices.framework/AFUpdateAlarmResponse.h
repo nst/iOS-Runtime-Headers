@@ -3,7 +3,7 @@
  */
 
 @interface AFUpdateAlarmResponse : AFSiriResponse {
-    NSArray *_alarmIdentifiers;
+    NSArray * _alarmIdentifiers;
 }
 
 @property (nonatomic, copy) NSArray *alarmIdentifiers;

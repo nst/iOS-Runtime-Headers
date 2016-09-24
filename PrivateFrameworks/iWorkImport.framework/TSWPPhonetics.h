@@ -3,7 +3,7 @@
  */
 
 @interface TSWPPhonetics : NSObject {
-    NSDictionary *_transcribers;
+    NSDictionary * _transcribers;
 }
 
 + (id)_singletonAlloc;

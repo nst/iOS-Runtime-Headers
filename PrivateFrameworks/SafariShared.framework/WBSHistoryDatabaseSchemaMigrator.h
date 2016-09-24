@@ -3,7 +3,7 @@
  */
 
 @interface WBSHistoryDatabaseSchemaMigrator : NSObject {
-    WBSHistoryDatabaseAccessBroker *_databaseAccessBroker;
+    WBSHistoryDatabaseAccessBroker * _databaseAccessBroker;
 }
 
 - (void).cxx_destruct;

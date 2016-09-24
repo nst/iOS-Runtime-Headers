@@ -3,8 +3,8 @@
  */
 
 @interface SiriUIBaseSnippetViewController : UIViewController <SiriUIViewController> {
-    <SiriUIAceObjectViewControllerDelegate> *_delegate;
-    AceObject *aceObject;
+    <SiriUIAceObjectViewControllerDelegate> * _delegate;
+    AceObject * aceObject;
 }
 
 @property (nonatomic, retain) AceObject *aceObject;

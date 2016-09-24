@@ -3,10 +3,10 @@
  */
 
 @interface _CDInteractionRecorder : NSObject <_CDInteractionDeleting, _CDInteractionQuerying, _CDInteractionRecording> {
-    NSXPCConnection *_connection;
-    BOOL _enforceDataLimits;
-    BOOL _enforcePrivacy;
-    _CDInteractionPolicies *_policies;
+    NSXPCConnection * _connection;
+    BOOL  _enforceDataLimits;
+    BOOL  _enforcePrivacy;
+    _CDInteractionPolicies * _policies;
 }
 
 @property BOOL enforceDataLimits;

@@ -3,9 +3,9 @@
  */
 
 @interface PBBProtoTransferPerformanceResults : PBCodable <NSCopying> {
-    NSMutableArray *_macroActivites;
-    NSMutableArray *_measures;
-    NSMutableArray *_milestones;
+    NSMutableArray * _macroActivites;
+    NSMutableArray * _measures;
+    NSMutableArray * _milestones;
 }
 
 @property (nonatomic, retain) NSMutableArray *macroActivites;

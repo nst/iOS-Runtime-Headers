@@ -3,15 +3,15 @@
  */
 
 @interface PLEntry : NSObject <NSCopying> {
-    NSMutableDictionary *_dictionary;
-    NSDate *_entryDate;
-    NSDictionary *_entryDefinition;
-    long long _entryID;
-    NSString *_entryKey;
-    BOOL _existsInDB;
-    BOOL _isErrorEntry;
-    NSObject<OS_dispatch_semaphore> *_sem;
-    BOOL _writeToDB;
+    NSMutableDictionary * _dictionary;
+    NSDate * _entryDate;
+    NSDictionary * _entryDefinition;
+    int  _entryID;
+    NSString * _entryKey;
+    BOOL  _existsInDB;
+    BOOL  _isErrorEntry;
+    NSObject<OS_dispatch_semaphore> * _sem;
+    BOOL  _writeToDB;
 }
 
 @property (readonly) NSArray *arrayKeys;
@@ -20,7 +20,7 @@
 @property (readonly) NSArray *dynamicKeys;
 @property (nonatomic, retain) NSDate *entryDate;
 @property (nonatomic, retain) NSDictionary *entryDefinition;
-@property (nonatomic) long long entryID;
+@property (nonatomic) int entryID;
 @property (nonatomic, retain) NSString *entryKey;
 @property BOOL existsInDB;
 @property (readonly) BOOL hasArrayKeys;
@@ -55,7 +55,7 @@
 - (id)dynamicKeys;
 - (id)entryDate;
 - (id)entryDefinition;
-- (long long)entryID;
+- (int)entryID;
 - (id)entryKey;
 - (BOOL)existsInDB;
 - (BOOL)filterEntryLogging;
@@ -86,7 +86,7 @@
 - (void)setDynamicObjectsFromRawData:(id)arg1;
 - (void)setEntryDate:(id)arg1;
 - (void)setEntryDefinition:(id)arg1;
-- (void)setEntryID:(long long)arg1;
+- (void)setEntryID:(int)arg1;
 - (void)setEntryKey:(id)arg1;
 - (void)setExistsInDB:(BOOL)arg1;
 - (void)setIsErrorEntry:(BOOL)arg1;

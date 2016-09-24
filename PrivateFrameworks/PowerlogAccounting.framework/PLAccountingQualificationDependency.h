@@ -3,7 +3,7 @@
  */
 
 @interface PLAccountingQualificationDependency : PLAccountingDependency {
-    PLAccountingQualificationEventEntry *_qualificationEvent;
+    PLAccountingQualificationEventEntry * _qualificationEvent;
 }
 
 @property (retain) PLAccountingQualificationEventEntry *qualificationEvent;

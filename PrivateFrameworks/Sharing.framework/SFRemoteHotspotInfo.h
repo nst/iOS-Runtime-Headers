@@ -3,9 +3,9 @@
  */
 
 @interface SFRemoteHotspotInfo : NSObject <NSSecureCoding> {
-    NSNumber *_channel;
-    NSString *_name;
-    NSString *_password;
+    NSNumber * _channel;
+    NSString * _name;
+    NSString * _password;
 }
 
 @property (retain) NSNumber *channel;
@@ -14,8 +14,8 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)channel;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1 password:(id)arg2 channel:(id)arg3;

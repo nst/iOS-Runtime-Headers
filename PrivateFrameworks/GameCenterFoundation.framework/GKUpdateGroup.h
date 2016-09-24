@@ -3,12 +3,12 @@
  */
 
 @interface GKUpdateGroup : NSObject {
-    NSObject<OS_dispatch_group> *_dispatchGroup;
-    NSError *_error;
-    NSLock *_lock;
-    NSString *_name;
-    NSMutableArray *_notifiers;
-    NSObject<OS_dispatch_queue> *_targetQueue;
+    NSObject<OS_dispatch_group> * _dispatchGroup;
+    NSError * _error;
+    NSLock * _lock;
+    NSString * _name;
+    NSMutableArray * _notifiers;
+    NSObject<OS_dispatch_queue> * _targetQueue;
 }
 
 @property (nonatomic) NSObject<OS_dispatch_group> *dispatchGroup;
@@ -32,6 +32,7 @@
 - (id)initWithName:(id)arg1 targetQueue:(id)arg2;
 - (void)join:(id /* block */)arg1;
 - (void)joinAndApplyUpdates;
+- (void)joinApplyUpdatesAndDo:(id /* block */)arg1;
 - (id)lock;
 - (id)name;
 - (id)notifiers;

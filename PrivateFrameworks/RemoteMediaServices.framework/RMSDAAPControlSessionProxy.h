@@ -3,10 +3,10 @@
  */
 
 @interface RMSDAAPControlSessionProxy : RMSSessionProxy <RMSDAAPControlSession> {
-    <RMSDAAPControlSessionDelegate> *_delegate;
-    RMSIDSClient *_idsClient;
-    RMSNowPlayingInfo *_nowPlayingInfo;
-    RMSService *_service;
+    <RMSDAAPControlSessionDelegate> * _delegate;
+    RMSIDSClient * _idsClient;
+    RMSNowPlayingInfo * _nowPlayingInfo;
+    RMSService * _service;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -23,7 +23,7 @@
 - (void)_handleSessionDidEndNotification:(id)arg1;
 - (void)_handleVolumeDidUpdateNotification:(id)arg1;
 - (void)_notifyDelegateForArtworkChange;
-- (void)addToWishlist:(unsigned long long)arg1 databaseID:(unsigned long long)arg2 completionHandler:(id /* block */)arg3;
+- (void)addToWishlist:(unsigned int)arg1 databaseID:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
 - (void)beginObservingNowPlaying;
 - (void)connectToService:(id)arg1 pairingGUID:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)dealloc;
@@ -40,7 +40,7 @@
 - (void)sendTouchMoveWithDirection:(int)arg1 repeatCount:(unsigned long)arg2;
 - (id)service;
 - (void)setDelegate:(id)arg1;
-- (void)setLikedState:(int)arg1 itemID:(unsigned long long)arg2 databaseID:(unsigned long long)arg3 completionHandler:(id /* block */)arg4;
+- (void)setLikedState:(int)arg1 itemID:(unsigned int)arg2 databaseID:(unsigned int)arg3 completionHandler:(id /* block */)arg4;
 - (void)setVolume:(float)arg1 completionHandler:(id /* block */)arg2;
 
 @end

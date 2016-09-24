@@ -3,9 +3,9 @@
  */
 
 @interface PFUBLogEventID : NSObject {
-    int _eventType;
-    int _hash;
-    NSString *_idString;
+    int  _eventType;
+    int  _hash;
+    NSString * _idString;
 }
 
 @property (nonatomic, readonly) int eventType;

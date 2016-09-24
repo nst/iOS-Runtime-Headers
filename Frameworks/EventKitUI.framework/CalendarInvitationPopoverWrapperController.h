@@ -3,7 +3,7 @@
  */
 
 @interface CalendarInvitationPopoverWrapperController : UINavigationController {
-    EKEventViewController *_eventViewController;
+    EKEventViewController * _eventViewController;
 }
 
 @property (nonatomic, retain) EKEventViewController *eventViewController;

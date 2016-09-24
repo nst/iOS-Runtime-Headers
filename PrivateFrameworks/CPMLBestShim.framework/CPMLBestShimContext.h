@@ -3,7 +3,7 @@
  */
 
 @interface CPMLBestShimContext : NSObject {
-    NSArray *orderedSuggestions;
+    NSArray * orderedSuggestions;
 }
 
 @property (retain) NSArray *orderedSuggestions;

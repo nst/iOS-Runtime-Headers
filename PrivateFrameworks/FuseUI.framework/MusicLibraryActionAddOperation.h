@@ -3,11 +3,11 @@
  */
 
 @interface MusicLibraryActionAddOperation : NSOperation {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    BOOL _addToCloudLibrary;
-    MPUContentItemIdentifierCollection *_contentItemIdentifierCollection;
-    NSArray *_resultingItems;
-    BOOL _success;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    BOOL  _addToCloudLibrary;
+    MPUContentItemIdentifierCollection * _contentItemIdentifierCollection;
+    NSArray * _resultingItems;
+    BOOL  _success;
 }
 
 @property (nonatomic) BOOL addToCloudLibrary;

@@ -3,8 +3,8 @@
  */
 
 @interface GEOTilePool : NSObject {
-    GEOTileCache *_cache;
-    NSObject<OS_dispatch_source> *_memoryNotificationEventSource;
+    GEOTileCache * _cache;
+    NSObject<OS_dispatch_source> * _memoryNotificationEventSource;
     struct _GEOGenericContainer<_GEOTileKey, id, std::__1::hash<GEOTileKey>, std::__1::equal_to<GEOTileKey>, geo::GEOGenericContainerWeakReferenceTag, 0, 0, geo::GEOGenericContainerLockingTag, detail::_default_pointer_type> { 
         struct mutex { 
             struct _opaque_pthread_mutex_t { 
@@ -14,8 +14,8 @@
         } _lock; 
         struct list<geo::detail::_CacheItem<_GEOTileKey, id, _value_ptr>, std::__1::allocator<geo::detail::_CacheItem<_GEOTileKey, id, _value_ptr> > > { 
             struct __list_node_base<geo::detail::_CacheItem<_GEOTileKey, id, _value_ptr>, void *> { 
-                struct __list_node<geo::detail::_CacheItem<_GEOTileKey, id, _value_ptr>, void *> {} *__prev_; 
-                struct __list_node<geo::detail::_CacheItem<_GEOTileKey, id, _value_ptr>, void *> {} *__next_; 
+                struct __list_node_base<geo::detail::_CacheItem<_GEOTileKey, id, _value_ptr>, void *> {} *__prev_; 
+                struct __list_node_base<geo::detail::_CacheItem<_GEOTileKey, id, _value_ptr>, void *> {} *__next_; 
             } __end_; 
             struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<geo::detail::_CacheItem<_GEOTileKey, id, _value_ptr>, void *> > > { 
                 unsigned long __first_; 
@@ -42,7 +42,7 @@
                     unsigned long __first_; 
                 } __p2_; 
                 struct __compressed_pair<float, std::__1::__unordered_map_equal<_GEOTileKey, std::__1::__hash_value_type<_GEOTileKey, std::__1::__list_iterator<geo::detail::_CacheItem<_GEOTileKey, id, _value_ptr>, void *> >, std::__1::equal_to<GEOTileKey>, true> > { 
-                    float __first_; 
+                    double __first_; 
                 } __p3_; 
             } __table_; 
         } _map; 
@@ -50,7 +50,7 @@
         unsigned int _maxCost; 
         unsigned int _currentCost; 
         unsigned int _currentCount; 
-    } _pool;
+    }  _pool;
 }
 
 @property (nonatomic, readonly) unsigned int currentCost;

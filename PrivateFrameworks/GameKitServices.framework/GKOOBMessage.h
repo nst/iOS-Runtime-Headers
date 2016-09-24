@@ -3,7 +3,7 @@
  */
 
 @interface GKOOBMessage : NSObject {
-    unsigned short _type;
+    unsigned short  _type;
 }
 
 @property (readonly) unsigned short type;

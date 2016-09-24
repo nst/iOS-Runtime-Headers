@@ -3,8 +3,8 @@
  */
 
 @interface MFPlainTextDocument : NSObject {
-    NSMutableArray *_fragments;
-    NSMutableString *_text;
+    NSMutableArray * _fragments;
+    NSMutableString * _text;
 }
 
 - (void)appendArchivedRepresentation:(id)arg1;

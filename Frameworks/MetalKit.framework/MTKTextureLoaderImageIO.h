@@ -3,18 +3,38 @@
  */
 
 @interface MTKTextureLoaderImageIO : MTKTextureLoaderData {
-    struct CGImageBlockSet { } *_blockSet;
-    struct __CFData { } *_cfData;
+    struct CGImageBlockSet { } * _blockSet;
+    unsigned int  _bytesPerRow;
+    struct __CFData { } * _cfData;
+    NSData * _imageData;
+    struct MTLPixelFormatInfo { 
+        char *name; 
+        unsigned int flags; 
+        unsigned int castClass; 
+        union { 
+            struct MTLNormalPixelFormatInfo { 
+                unsigned int pixelBytes; 
+                unsigned char componentCount; 
+                unsigned int pixelBytesRender; 
+                unsigned int pixelBytesRenderMSAA; 
+            } normal; 
+            struct MTLCompressedPixelFormatInfo { 
+                unsigned int blockBytes; 
+                unsigned int blockWidth; 
+                unsigned int blockHeight; 
+                unsigned int blockDepth; 
+            } compressed; 
+        } type; 
+    }  _pixelFormatInfo;
 }
 
 - (void)dealloc;
 - (BOOL)decodeCGImage:(struct CGImage { }*)arg1 options:(id)arg2;
 - (BOOL)decodeCGImageDataProvider:(struct CGImage { }*)arg1 options:(id)arg2;
 - (BOOL)decodeCGImageImageProvider:(struct CGImage { }*)arg1 CGImageProvider:(struct CGImageProvider { }*)arg2 options:(id)arg3;
-- (BOOL)determineCGImageBlockFormatWithComponentType:(int)arg1 alphaInfo:(unsigned int)arg2 andPixelSizeBytes:(unsigned long)arg3 andColorModel:(int)arg4 isOptimized:(BOOL)arg5 options:(id)arg6;
-- (BOOL)loadCGImage:(struct CGImage { }*)arg1 options:(id)arg2 error:(id*)arg3;
-- (BOOL)loadData:(id)arg1 options:(id)arg2 error:(id*)arg3;
-- (void)releaseData;
-- (id)uploadDataWithOptions:(id)arg1;
+- (BOOL)determineCGImageBlockFormatWithComponentType:(int)arg1 alphaInfo:(unsigned int)arg2 andPixelSizeBytes:(unsigned long)arg3 andColorSpace:(struct CGColorSpace { }*)arg4 isOptimized:(BOOL)arg5 options:(id)arg6;
+- (id)getDataForArrayElement:(unsigned int)arg1 face:(unsigned int)arg2 level:(unsigned int)arg3 depthPlane:(unsigned int)arg4 bytesPerRow:(unsigned int*)arg5 bytesPerImage:(unsigned int*)arg6;
+- (id)initWithCGImage:(struct CGImage { }*)arg1 options:(id)arg2 error:(id*)arg3;
+- (id)initWithData:(id)arg1 options:(id)arg2 error:(id*)arg3;
 
 @end

@@ -3,13 +3,13 @@
  */
 
 @interface CKDModifyRecordAccessOperation : CKDDatabaseOperation {
-    id /* block */ _accessWasGrantedBlock;
-    id /* block */ _accessWasRevokedBlock;
-    NSMutableSet *_fetchedRecordIDs;
-    int _numSaveAttempts;
-    NSArray *_recordIDsToGrant;
-    NSArray *_recordIDsToRevoke;
-    NSMutableDictionary *_recordsToSaveByID;
+    id /* block */  _accessWasGrantedBlock;
+    id /* block */  _accessWasRevokedBlock;
+    NSMutableSet * _fetchedRecordIDs;
+    int  _numSaveAttempts;
+    NSArray * _recordIDsToGrant;
+    NSArray * _recordIDsToRevoke;
+    NSMutableDictionary * _recordsToSaveByID;
 }
 
 @property (nonatomic, copy) id /* block */ accessWasGrantedBlock;
@@ -29,7 +29,7 @@
 - (void)_saveRecords;
 - (id /* block */)accessWasGrantedBlock;
 - (id /* block */)accessWasRevokedBlock;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (id)fetchedRecordIDs;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;

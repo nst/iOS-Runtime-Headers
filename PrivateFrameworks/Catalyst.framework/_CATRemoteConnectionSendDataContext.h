@@ -3,10 +3,10 @@
  */
 
 @interface _CATRemoteConnectionSendDataContext : NSObject {
-    int _bytesWritten;
-    NSData *_data;
-    NSData *_encodedData;
-    id _userInfo;
+    int  _bytesWritten;
+    NSData * _data;
+    NSData * _encodedData;
+    id  _userInfo;
 }
 
 @property (nonatomic) int bytesWritten;

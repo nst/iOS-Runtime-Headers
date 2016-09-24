@@ -3,27 +3,27 @@
  */
 
 @interface PFUbiquityTransactionLog : NSObject {
-    NSMutableDictionary *_contents;
-    NSRecursiveLock *_contentsLock;
-    NSString *_fileProtectionOption;
-    BOOL _inPermanentLocation;
-    BOOL _inStagingLocation;
-    BOOL _inTemporaryLocation;
-    PFUbiquityKnowledgeVector *_knowledgeVector;
-    BOOL _loadUsingRetry;
-    BOOL _loadedComparisonMetadata;
-    BOOL _loadedContents;
-    BOOL _loadedDeletedObjectData;
-    BOOL _loadedImportMetadata;
-    BOOL _loadedInsertedObjectData;
-    BOOL _loadedUpdatedObjectData;
-    NSString *_localPeerID;
-    PFUbiquitySaveSnapshot *_saveSnapshot;
-    PFUbiquityLocation *_stagingTransactionLogLocation;
-    PFUbiquityLocation *_temporaryTransactionLogLocation;
-    PFUbiquityLocation *_transactionLogLocation;
-    int _transactionLogType;
-    BOOL _useTemporaryLogLocation;
+    NSMutableDictionary * _contents;
+    NSRecursiveLock * _contentsLock;
+    NSString * _fileProtectionOption;
+    BOOL  _inPermanentLocation;
+    BOOL  _inStagingLocation;
+    BOOL  _inTemporaryLocation;
+    PFUbiquityKnowledgeVector * _knowledgeVector;
+    BOOL  _loadUsingRetry;
+    BOOL  _loadedComparisonMetadata;
+    BOOL  _loadedContents;
+    BOOL  _loadedDeletedObjectData;
+    BOOL  _loadedImportMetadata;
+    BOOL  _loadedInsertedObjectData;
+    BOOL  _loadedUpdatedObjectData;
+    NSString * _localPeerID;
+    PFUbiquitySaveSnapshot * _saveSnapshot;
+    PFUbiquityLocation * _stagingTransactionLogLocation;
+    PFUbiquityLocation * _temporaryTransactionLogLocation;
+    PFUbiquityLocation * _transactionLogLocation;
+    int  _transactionLogType;
+    BOOL  _useTemporaryLogLocation;
 }
 
 @property (nonatomic, readonly) PFUbiquityLocation *currentLocation;

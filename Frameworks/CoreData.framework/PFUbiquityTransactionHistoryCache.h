@@ -3,19 +3,19 @@
  */
 
 @interface PFUbiquityTransactionHistoryCache : NSObject {
-    PFUbiquityKnowledgeVector *_cacheKV;
-    NSMutableArray *_entriesToWrite;
-    PFUbiquityGlobalObjectIDCache *_globalIDCache;
-    NSMutableDictionary *_globalIDToHistoryArray;
-    BOOL _hasScheduledWriteBlock;
-    NSString *_localPeerID;
-    PFUbiquityKnowledgeVector *_minCacheKV;
-    NSMutableDictionary *_peerIDToHistoryArray;
-    NSRecursiveLock *_peerIDToHistoryArrayLock;
-    NSPersistentStoreCoordinator *_privatePSC;
-    NSPersistentStore *_privateStore;
-    PFUbiquityLocation *_rootLocation;
-    NSString *_storeName;
+    PFUbiquityKnowledgeVector * _cacheKV;
+    NSMutableArray * _entriesToWrite;
+    PFUbiquityGlobalObjectIDCache * _globalIDCache;
+    NSMutableDictionary * _globalIDToHistoryArray;
+    BOOL  _hasScheduledWriteBlock;
+    NSString * _localPeerID;
+    PFUbiquityKnowledgeVector * _minCacheKV;
+    NSMutableDictionary * _peerIDToHistoryArray;
+    NSRecursiveLock * _peerIDToHistoryArrayLock;
+    NSPersistentStoreCoordinator * _privatePSC;
+    NSPersistentStore * _privateStore;
+    PFUbiquityLocation * _rootLocation;
+    NSString * _storeName;
 }
 
 @property (nonatomic, readonly) PFUbiquityKnowledgeVector *cacheKV;

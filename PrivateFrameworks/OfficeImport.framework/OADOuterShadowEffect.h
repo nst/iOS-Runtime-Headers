@@ -3,12 +3,12 @@
  */
 
 @interface OADOuterShadowEffect : OADShadowEffect {
-    int mAlignment;
-    BOOL mRotateWithShape;
-    float mXScale;
-    float mXSkew;
-    float mYScale;
-    float mYSkew;
+    int  mAlignment;
+    BOOL  mRotateWithShape;
+    double  mXScale;
+    double  mXSkew;
+    double  mYScale;
+    double  mYSkew;
 }
 
 - (int)alignment;

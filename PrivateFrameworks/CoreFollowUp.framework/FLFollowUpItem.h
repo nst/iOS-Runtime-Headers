@@ -3,19 +3,19 @@
  */
 
 @interface FLFollowUpItem : NSObject <NSSecureCoding> {
-    NSArray *_actions;
-    NSString *_clientIdentifier;
-    NSString *_delegateMachServiceName;
-    unsigned int _displayStyle;
-    NSString *_informativeText;
-    FLFollowUpNotification *_notification;
-    BOOL _shouldPersistWhenActivated;
-    BOOL _shouldPersistWhenDismissed;
-    BOOL _showInSettings;
-    unsigned int _sqlID;
-    NSString *_title;
-    NSString *_uniqueIdentifier;
-    NSDictionary *_userInfo;
+    NSArray * _actions;
+    NSString * _clientIdentifier;
+    NSString * _delegateMachServiceName;
+    unsigned int  _displayStyle;
+    NSString * _informativeText;
+    FLFollowUpNotification * _notification;
+    BOOL  _shouldPersistWhenActivated;
+    BOOL  _shouldPersistWhenDismissed;
+    BOOL  _showInSettings;
+    unsigned int  _sqlID;
+    NSString * _title;
+    NSString * _uniqueIdentifier;
+    NSDictionary * _userInfo;
 }
 
 @property (nonatomic, retain) NSData *_userInfoData;

@@ -3,8 +3,8 @@
  */
 
 @interface BLTTestIDSServiceDelegate : NSObject {
-    <IDSServiceDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_queue;
+    <IDSServiceDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, retain) <IDSServiceDelegate> *delegate;

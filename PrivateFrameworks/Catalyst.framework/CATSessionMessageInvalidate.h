@@ -3,7 +3,7 @@
  */
 
 @interface CATSessionMessageInvalidate : CATSessionMessage {
-    NSError *_error;
+    NSError * _error;
 }
 
 @property (nonatomic, copy) NSError *error;

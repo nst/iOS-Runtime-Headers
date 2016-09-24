@@ -3,9 +3,9 @@
  */
 
 @interface CNFullTextSearchContactPredicate : CNPredicate <CNSuggestedContactPredicate> {
-    NSArray *_containerIdentifiers;
-    NSArray *_groupIdentifiers;
-    NSString *_searchString;
+    NSArray * _containerIdentifiers;
+    NSArray * _groupIdentifiers;
+    NSString * _searchString;
 }
 
 @property (nonatomic, readonly, copy) NSArray *containerIdentifiers;
@@ -16,10 +16,14 @@
 @property (nonatomic, readonly, copy) NSString *searchString;
 @property (readonly) Class superclass;
 
++ (BOOL)supportsSecureCoding;
+
 - (id)containerIdentifiers;
 - (void)dealloc;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (id)groupIdentifiers;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithSearchString:(id)arg1 containerIdentifiers:(id)arg2 groupIdentifiers:(id)arg3;
 - (id)searchString;
 - (id)sgContactMatchesWithSortOrder:(int)arg1 mutableObjects:(BOOL)arg2 service:(id)arg3 error:(id*)arg4;

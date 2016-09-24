@@ -3,9 +3,9 @@
  */
 
 @interface ISAuthenticationChallenge : NSObject {
-    NSURLAuthenticationChallenge *_challenge;
-    NSString *_localizedMessage;
-    NSString *_localizedTitle;
+    NSURLAuthenticationChallenge * _challenge;
+    NSString * _localizedMessage;
+    NSString * _localizedTitle;
 }
 
 @property (readonly) int failureCount;

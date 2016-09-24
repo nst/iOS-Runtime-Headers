@@ -3,11 +3,12 @@
  */
 
 @interface MKApplicationStateMonitor : NSObject {
-    BOOL _active;
-    BKSApplicationStateMonitor *_appStateMonitor;
-    BOOL _forceBackboardServicesMonitoring;
-    BOOL _inBackground;
-    unsigned int _observerCount;
+    BOOL  _active;
+    BKSApplicationStateMonitor * _appStateMonitor;
+    BOOL  _forceBackboardServicesMonitoring;
+    BOOL  _inBackground;
+    BOOL  _lastOccludedState;
+    unsigned int  _observerCount;
 }
 
 @property (getter=isActive, nonatomic, readonly) BOOL active;

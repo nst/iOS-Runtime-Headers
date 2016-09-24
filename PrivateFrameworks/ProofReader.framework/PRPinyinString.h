@@ -3,14 +3,14 @@
  */
 
 @interface PRPinyinString : NSPinyinString {
-    struct _NSRange { unsigned int x1; unsigned int x2; } *_finalRanges;
-    unsigned int _modificationCount;
-    unsigned int *_modificationTypes;
-    struct _NSRange { unsigned int x1; unsigned int x2; } *_originalAdditionalSyllableRanges;
-    unsigned int _originalCheckedLength;
-    unsigned int _originalLength;
-    struct _NSRange { unsigned int x1; unsigned int x2; } *_originalRanges;
-    struct _NSRange { unsigned int x1; unsigned int x2; } *_originalSyllableRanges;
+    struct _NSRange { unsigned int x1; unsigned int x2; } * _finalRanges;
+    unsigned int  _modificationCount;
+    unsigned int * _modificationTypes;
+    struct _NSRange { unsigned int x1; unsigned int x2; } * _originalAdditionalSyllableRanges;
+    unsigned int  _originalCheckedLength;
+    unsigned int  _originalLength;
+    struct _NSRange { unsigned int x1; unsigned int x2; } * _originalRanges;
+    struct _NSRange { unsigned int x1; unsigned int x2; } * _originalSyllableRanges;
 }
 
 + (id)alternativesForInputString:(id)arg1;

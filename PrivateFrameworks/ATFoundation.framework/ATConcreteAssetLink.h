@@ -3,16 +3,16 @@
  */
 
 @interface ATConcreteAssetLink : NSObject <ATAssetLink, ATMessageLinkObserver> {
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    <ATAssetLinkDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_fileIOQueue;
-    ATMessageLink *_messageLink;
-    BOOL _open;
-    NSMutableArray *_outstandingAssets;
-    int _pendingWriteAmount;
-    NSObject<OS_dispatch_semaphore> *_pendingWriteSemaphore;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableSet *_readers;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    <ATAssetLinkDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _fileIOQueue;
+    ATMessageLink * _messageLink;
+    BOOL  _open;
+    NSMutableArray * _outstandingAssets;
+    int  _pendingWriteAmount;
+    NSObject<OS_dispatch_semaphore> * _pendingWriteSemaphore;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableSet * _readers;
 }
 
 @property (readonly, copy) NSString *debugDescription;

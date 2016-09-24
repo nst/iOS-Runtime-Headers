@@ -3,108 +3,108 @@
  */
 
 @interface TSCH3DLabelsRendererTransforms : NSObject {
-    struct ChartScenePropertyAccessor { id x1; } *mAccessor;
-    TSCH3DCamera *mCamera;
+    struct ChartScenePropertyAccessor { id x1; } * mAccessor;
+    TSCH3DCamera * mCamera;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
-                float x; 
-                float r; 
-                float s; 
+                double x; 
+                double r; 
+                double s; 
             } ; 
             union { 
-                float y; 
-                float g; 
-                float t; 
+                double y; 
+                double g; 
+                double t; 
             } ; 
             union { 
-                float z; 
-                float b; 
-                float p; 
+                double z; 
+                double b; 
+                double p; 
             } ; 
             union { 
-                float w; 
-                float a; 
-                float q; 
+                double w; 
+                double a; 
+                double q; 
             } ; 
         } value[4]; 
-    } mProjector;
-    TSCH3DScene *mScene;
+    }  mProjector;
+    TSCH3DScene * mScene;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
-                float x; 
-                float r; 
-                float s; 
+                double x; 
+                double r; 
+                double s; 
             } ; 
             union { 
-                float y; 
-                float g; 
-                float t; 
+                double y; 
+                double g; 
+                double t; 
             } ; 
             union { 
-                float z; 
-                float b; 
-                float p; 
+                double z; 
+                double b; 
+                double p; 
             } ; 
             union { 
-                float w; 
-                float a; 
-                float q; 
+                double w; 
+                double a; 
+                double q; 
             } ; 
         } value[4]; 
-    } mStageToWorld;
+    }  mStageToWorld;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
-                float x; 
-                float r; 
-                float s; 
+                double x; 
+                double r; 
+                double s; 
             } ; 
             union { 
-                float y; 
-                float g; 
-                float t; 
+                double y; 
+                double g; 
+                double t; 
             } ; 
             union { 
-                float z; 
-                float b; 
-                float p; 
+                double z; 
+                double b; 
+                double p; 
             } ; 
             union { 
-                float w; 
-                float a; 
-                float q; 
+                double w; 
+                double a; 
+                double q; 
             } ; 
         } value[4]; 
-    } mUnitToWorld;
+    }  mUnitToWorld;
     struct bitset<5> { 
         unsigned int __first_; 
-    } mValidBits;
+    }  mValidBits;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
-                float x; 
-                float r; 
-                float s; 
+                double x; 
+                double r; 
+                double s; 
             } ; 
             union { 
-                float y; 
-                float g; 
-                float t; 
+                double y; 
+                double g; 
+                double t; 
             } ; 
             union { 
-                float z; 
-                float b; 
-                float p; 
+                double z; 
+                double b; 
+                double p; 
             } ; 
             union { 
-                float w; 
-                float a; 
-                float q; 
+                double w; 
+                double a; 
+                double q; 
             } ; 
         } value[4]; 
-    } mWorldToStage;
+    }  mWorldToStage;
 }
 
 @property (nonatomic, retain) TSCH3DCamera *camera;
@@ -116,15 +116,15 @@
 - (struct ChartScenePropertyAccessor { id x1; }*)accessor;
 - (id)camera;
 - (void)dealloc;
-- (const struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; }*)p_projector;
-- (const struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; }*)p_stageToWorld;
-- (struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; })projectPoint:(const struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; }*)arg1;
+- (const struct tmat4x4<float> { struct tvec4<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; union { double x_4_2_1; double x_4_2_2; double x_4_2_3; } x_1_1_4; } x1[4]; }*)p_projector;
+- (const struct tmat4x4<float> { struct tvec4<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; union { double x_4_2_1; double x_4_2_2; double x_4_2_3; } x_1_1_4; } x1[4]; }*)p_stageToWorld;
+- (struct tvec3<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; })projectPoint:(const struct tvec3<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; }*)arg1;
 - (void)resetWithScene:(id)arg1 camera:(id)arg2;
-- (struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; })samples;
+- (struct tvec3<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; })samples;
 - (id)scene;
 - (void)setCamera:(id)arg1;
 - (void)setScene:(id)arg1;
-- (const struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; }*)unitToWorld;
-- (const struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; }*)worldToStage;
+- (const struct tmat4x4<float> { struct tvec4<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; union { double x_4_2_1; double x_4_2_2; double x_4_2_3; } x_1_1_4; } x1[4]; }*)unitToWorld;
+- (const struct tmat4x4<float> { struct tvec4<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; union { double x_4_2_1; double x_4_2_2; double x_4_2_3; } x_1_1_4; } x1[4]; }*)worldToStage;
 
 @end

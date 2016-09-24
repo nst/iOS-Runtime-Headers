@@ -3,7 +3,7 @@
  */
 
 @interface CNiOSABContainerIdentifiersPredicate : CNPredicate <CNiOSContainerPredicate> {
-    NSArray *_identifiers;
+    NSArray * _identifiers;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,11 +12,15 @@
 @property (nonatomic, readonly, copy) NSArray *identifiers;
 @property (readonly) Class superclass;
 
++ (BOOL)supportsSecureCoding;
+
 - (struct __CFArray { }*)cn_copyContainersInAddressBook:(void*)arg1 error:(struct __CFError {}**)arg2;
 - (void)dealloc;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (id)identifiers;
 - (BOOL)includesDisabledContainers;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifiers:(id)arg1;
 
 @end

@@ -3,10 +3,10 @@
  */
 
 @interface CIConvolution : CIFilter {
-    CIImage *inputImage;
-    NSNumber *inputLinearFilterModeEnabled;
-    NSArray *inputPoints;
-    NSArray *inputWeights;
+    CIImage * inputImage;
+    NSNumber * inputLinearFilterModeEnabled;
+    NSArray * inputPoints;
+    NSArray * inputWeights;
 }
 
 - (id)_CIConvolutionAdd_1;

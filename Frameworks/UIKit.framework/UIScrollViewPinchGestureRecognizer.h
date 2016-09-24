@@ -3,9 +3,9 @@
  */
 
 @interface UIScrollViewPinchGestureRecognizer : UIPinchGestureRecognizer {
-    unsigned int _hasParentScrollView;
-    UIScrollView *_scrollView;
-    SEL _scrollViewAction;
+    unsigned int  _hasParentScrollView;
+    UIScrollView * _scrollView;
+    SEL  _scrollViewAction;
 }
 
 @property (nonatomic) UIScrollView *scrollView;

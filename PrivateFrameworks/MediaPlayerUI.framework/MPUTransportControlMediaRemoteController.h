@@ -3,25 +3,24 @@
  */
 
 @interface MPUTransportControlMediaRemoteController : NSObject {
-    BOOL _advertisement;
-    NSArray *_allowedTransportControlTypes;
-    BOOL _alwaysLive;
-    <MPUTransportControlMediaRemoteControllerDelegate> *_delegate;
-    double _displayedSkipBackwardInterval;
-    double _displayedSkipForwardInterval;
-    BOOL _likeBanCyclesThroughPossibleStates;
-    int _likeControlPresentationStyle;
-    int _likedState;
-    BOOL _nowPlayingAppIsRunning;
-    NSDictionary *_nowPlayingInfo;
-    BOOL _playing;
-    unsigned int _repeatType;
-    unsigned int _runningLongPressCommand;
-    BOOL _sharingEnabled;
-    unsigned int _shuffleType;
-    NSArray *_supportedCommands;
-    unsigned int _transportControlsCount;
-    MPUTransportControlsView *_transportControlsView;
+    BOOL  _advertisement;
+    NSArray * _allowedTransportControlTypes;
+    BOOL  _alwaysLive;
+    <MPUTransportControlMediaRemoteControllerDelegate> * _delegate;
+    double  _displayedSkipBackwardInterval;
+    double  _displayedSkipForwardInterval;
+    int  _likeControlPresentationStyle;
+    int  _likedState;
+    BOOL  _nowPlayingAppIsRunning;
+    NSDictionary * _nowPlayingInfo;
+    BOOL  _playing;
+    int  _repeatType;
+    unsigned int  _runningLongPressCommand;
+    BOOL  _sharingEnabled;
+    int  _shuffleType;
+    NSArray * _supportedCommands;
+    unsigned int  _transportControlsCount;
+    MPUTransportControlsView * _transportControlsView;
 }
 
 @property (getter=isAdvertisement, nonatomic, readonly) BOOL advertisement;
@@ -30,16 +29,16 @@
 @property (nonatomic) <MPUTransportControlMediaRemoteControllerDelegate> *delegate;
 @property (nonatomic, readonly) double displayedSkipBackwardInterval;
 @property (nonatomic, readonly) double displayedSkipForwardInterval;
-@property (nonatomic) BOOL likeBanCyclesThroughPossibleStates;
 @property (nonatomic, readonly) int likeControlPresentationStyle;
 @property (nonatomic, readonly) int likedState;
 @property (nonatomic) BOOL nowPlayingAppIsRunning;
 @property (nonatomic, copy) NSDictionary *nowPlayingInfo;
 @property (getter=isPlaying, nonatomic) BOOL playing;
-@property (nonatomic, readonly) unsigned int repeatType;
+@property (nonatomic, readonly) int repeatType;
 @property (getter=isSharingEnabled, nonatomic, readonly) BOOL sharingEnabled;
-@property (nonatomic, readonly) unsigned int shuffleType;
+@property (nonatomic, readonly) int shuffleType;
 @property (nonatomic, copy) NSArray *supportedCommands;
+@property (nonatomic, readonly) BOOL supportsStopButNotPause;
 @property (nonatomic) unsigned int transportControlsCount;
 @property (nonatomic, readonly) MPUTransportControlsView *transportControlsView;
 
@@ -69,22 +68,21 @@
 - (BOOL)isAlwaysLive;
 - (BOOL)isPlaying;
 - (BOOL)isSharingEnabled;
-- (BOOL)likeBanCyclesThroughPossibleStates;
 - (int)likeControlPresentationStyle;
 - (int)likedState;
 - (BOOL)nowPlayingAppIsRunning;
 - (id)nowPlayingInfo;
-- (unsigned int)repeatType;
+- (int)repeatType;
 - (void)setAllowedTransportControlTypes:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setLikeBanCyclesThroughPossibleStates:(BOOL)arg1;
 - (void)setNowPlayingAppIsRunning:(BOOL)arg1;
 - (void)setNowPlayingInfo:(id)arg1;
 - (void)setPlaying:(BOOL)arg1;
 - (void)setSupportedCommands:(id)arg1;
 - (void)setTransportControlsCount:(unsigned int)arg1;
-- (unsigned int)shuffleType;
+- (int)shuffleType;
 - (id)supportedCommands;
+- (BOOL)supportsStopButNotPause;
 - (unsigned int)transportControlsCount;
 - (id)transportControlsView;
 

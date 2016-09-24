@@ -2,20 +2,27 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKTransitIncidentsViewController : UITableViewController {
-    NSArray *_incidents;
+@interface MKTransitIncidentsViewController : _MKTableViewController {
+    NSArray * _incidents;
 }
+
+@property (nonatomic, copy) NSArray *incidents;
 
 - (void).cxx_destruct;
 - (id)_cellForRow:(int)arg1 inSection:(int)arg2;
 - (void)_localeDidChange;
+- (void)_updateTitle;
 - (void)dealloc;
+- (id)incidents;
+- (void)infoCardThemeChanged:(id)arg1;
 - (id)initWithIncidents:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (void)setIncidents:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
 - (void)viewDidLoad;
 
 @end

@@ -3,10 +3,10 @@
  */
 
 @interface _UIButtonGroupViewController : UIViewController <UIPopoverPresentationControllerDelegate> {
-    NSArray *_barButtonItemGroups;
-    _UIButtonBar *_buttonBar;
-    _UIButtonBar *_originalOwner;
-    UIScrollView *_scrollView;
+    NSArray * _barButtonItemGroups;
+    _UIButtonBar * _buttonBar;
+    _UIButtonBar * _originalOwner;
+    UIScrollView * _scrollView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

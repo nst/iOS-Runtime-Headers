@@ -3,8 +3,8 @@
  */
 
 @interface _ATXScoreInterpreter : NSObject {
-    id _subscoreKeys;
-    NSMutableDictionary *_varPrograms;
+    id  _subscoreKeys;
+    NSMutableDictionary * _varPrograms;
 }
 
 - (void).cxx_destruct;

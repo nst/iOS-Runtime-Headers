@@ -3,10 +3,10 @@
  */
 
 @interface _UIDefinitionDictionary : NSObject {
-    BOOL _activated;
-    NSString *_definitionLanguage;
-    struct __DCSDictionary { } *_dictionary;
-    ASAsset *_rawAsset;
+    BOOL  _activated;
+    NSString * _definitionLanguage;
+    struct __DCSDictionary { } * _dictionary;
+    ASAsset * _rawAsset;
 }
 
 @property BOOL activated;
@@ -23,6 +23,7 @@
 - (id)_definitionValueForTerm:(id)arg1;
 - (id)_fullHTMLDefinitionForTerm:(id)arg1;
 - (BOOL)_hasDefinitionForTerm:(id)arg1;
+- (BOOL)_isTTYDictionary;
 - (id)_shortHTMLDefinitionForTerm:(id)arg1;
 - (BOOL)activated;
 - (void)dealloc;

@@ -10,7 +10,7 @@
         unsigned int depthStencilPassOperation; 
         unsigned int readMask; 
         unsigned int writeMask; 
-    } _private;
+    }  _private;
 }
 
 @property (readonly) const struct MTLStencilDescriptorPrivate { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*stencilPrivate;

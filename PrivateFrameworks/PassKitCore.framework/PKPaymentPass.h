@@ -3,40 +3,47 @@
  */
 
 @interface PKPaymentPass : PKPass <NSCopying, NSSecureCoding> {
-    NSString *_appURLScheme;
-    NSSet *_associatedApplicationIdentifiers;
-    NSString *_cobrandName;
-    BOOL _cobranded;
-    NSSet *_devicePaymentApplications;
-    PKPaymentApplication *_devicePrimaryPaymentApplication;
-    NSString *_localizedSuspendedReason;
-    NSString *_messagePushTopic;
-    NSURL *_messageServiceURL;
-    NSSet *_paymentApplications;
-    BOOL _paymentOptionSelectable;
-    NSString *_primaryAccountIdentifier;
-    NSString *_primaryAccountNumberSuffix;
-    NSString *_sanitizedPrimaryAccountNumber;
-    BOOL _supportsDPANNotifications;
-    BOOL _supportsDefaultCardSelection;
-    BOOL _supportsFPANNotifications;
-    BOOL _supportsSerialNumberBasedProvisioning;
-    NSString *_transactionPushTopic;
-    NSURL *_transactionServiceURL;
+    NSString * _appURLScheme;
+    NSSet * _associatedApplicationIdentifiers;
+    NSSet * _associatedWebDomains;
+    NSString * _cobrandName;
+    BOOL  _cobranded;
+    NSSet * _devicePaymentApplications;
+    PKPaymentApplication * _devicePrimaryContactlessPaymentApplication;
+    PKPaymentApplication * _devicePrimaryInAppPaymentApplication;
+    PKPaymentApplication * _devicePrimaryPaymentApplication;
+    NSString * _localizedSuspendedReason;
+    NSString * _messagePushTopic;
+    NSURL * _messageServiceURL;
+    NSSet * _paymentApplications;
+    BOOL  _paymentOptionSelectable;
+    NSString * _primaryAccountIdentifier;
+    NSString * _primaryAccountNumberSuffix;
+    NSString * _sanitizedPrimaryAccountNumber;
+    BOOL  _supportsDPANNotifications;
+    BOOL  _supportsDefaultCardSelection;
+    BOOL  _supportsFPANNotifications;
+    BOOL  _supportsSerialNumberBasedProvisioning;
+    NSString * _transactionPushTopic;
+    NSURL * _transactionServiceURL;
 }
 
 @property (nonatomic, readonly) unsigned int activationState;
 @property (nonatomic, copy) NSString *appURLScheme;
 @property (nonatomic, copy) NSSet *associatedApplicationIdentifiers;
+@property (nonatomic, copy) NSSet *associatedWebDomains;
 @property (nonatomic, copy) NSString *cobrandName;
 @property (getter=isCobranded, nonatomic) BOOL cobranded;
 @property (readonly) NSString *deviceAccountIdentifier;
 @property (readonly) NSString *deviceAccountNumberSuffix;
 @property (nonatomic, copy) NSSet *devicePaymentApplications;
+@property (nonatomic, retain) PKPaymentApplication *devicePrimaryContactlessPaymentApplication;
+@property (nonatomic, retain) PKPaymentApplication *devicePrimaryInAppPaymentApplication;
 @property (nonatomic, retain) PKPaymentApplication *devicePrimaryPaymentApplication;
 @property (nonatomic, copy) NSString *localizedSuspendedReason;
 @property (nonatomic, copy) NSString *messagePushTopic;
 @property (nonatomic, copy) NSURL *messageServiceURL;
+@property (nonatomic, retain) PKPaymentApplication *npkSelectedPaymentApplication;
 @property (nonatomic, copy) NSSet *paymentApplications;
 @property (getter=isPaymentOptionSelectable, nonatomic) BOOL paymentOptionSelectable;
 @property (nonatomic, copy) NSString *primaryAccountIdentifier;
@@ -55,24 +62,27 @@
 + (unsigned int)defaultSettings;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (unsigned int)_activationStateForApplicationState:(int)arg1;
 - (id)_localizedSuspendedReasonForAID:(id)arg1;
 - (unsigned int)activationState;
 - (id)appURLScheme;
 - (id)associatedApplicationIdentifiers;
+- (id)associatedWebDomains;
 - (BOOL)availableForAutomaticPresentationUsingBeaconContext;
 - (BOOL)availableForAutomaticPresentationUsingVASContext;
 - (id)cobrandName;
 - (unsigned int)contactlessActivationState;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)deviceAccountIdentifier;
 - (id)deviceAccountNumberSuffix;
 - (id)devicePaymentApplications;
+- (id)devicePrimaryContactlessPaymentApplication;
+- (id)devicePrimaryInAppPaymentApplication;
 - (id)devicePrimaryPaymentApplication;
 - (int)effectiveContactlessPaymentApplicationState;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasDevicePaymentApplicationsAvailable;
+- (BOOL)hasContactlessDevicePaymentApplicationsAvailable;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1 bundle:(id)arg2;
 - (BOOL)isCobranded;
@@ -84,18 +94,21 @@
 - (id)messageServiceURL;
 - (id)paymentApplicationForAID:(id)arg1;
 - (id)paymentApplications;
-- (id)paymentApplicationsForSecureElementIdentifier:(id)arg1;
+- (id)paymentApplicationsForSecureElementIdentifiers:(id)arg1;
 - (id)primaryAccountIdentifier;
 - (id)primaryAccountNumberSuffix;
-- (id)primaryPaymentApplicationForSecureElementIdentifier:(id)arg1;
+- (id)primaryPaymentApplicationForSecureElementIdentifiers:(id)arg1;
 - (void)sanitizePaymentApplications;
 - (id)sanitizedDeviceAccountNumber;
 - (id)sanitizedPrimaryAccountNumber;
 - (void)setAppURLScheme:(id)arg1;
 - (void)setAssociatedApplicationIdentifiers:(id)arg1;
+- (void)setAssociatedWebDomains:(id)arg1;
 - (void)setCobrandName:(id)arg1;
 - (void)setCobranded:(BOOL)arg1;
 - (void)setDevicePaymentApplications:(id)arg1;
+- (void)setDevicePrimaryContactlessPaymentApplication:(id)arg1;
+- (void)setDevicePrimaryInAppPaymentApplication:(id)arg1;
 - (void)setDevicePrimaryPaymentApplication:(id)arg1;
 - (void)setLocalizedSuspendedReason:(id)arg1;
 - (void)setMessagePushTopic:(id)arg1;
@@ -117,11 +130,13 @@
 - (BOOL)supportsSerialNumberBasedProvisioning;
 - (id)transactionPushTopic;
 - (id)transactionServiceURL;
-- (void)updateDevicePaymentApplicationsWithSecureElementIdentifier:(id)arg1;
+- (void)updateDevicePaymentApplicationsWithSecureElementIdentifiers:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
 
 - (BOOL)npkHasUserSelectablePaymentApplications;
 - (id)npkSelectedPaymentApplication;
+- (id)npkSortedDevicePaymentApplications;
+- (void)setNpkSelectedPaymentApplication:(id)arg1;
 
 @end

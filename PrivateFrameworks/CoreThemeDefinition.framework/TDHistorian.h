@@ -3,7 +3,7 @@
  */
 
 @interface TDHistorian : NSObject {
-    CoreThemeDocument *document;
+    CoreThemeDocument * document;
 }
 
 - (void)_updateEntryForManagedObject:(id)arg1;

@@ -3,19 +3,21 @@
  */
 
 @interface ANAccountNotification : NSObject <NSSecureCoding> {
-    NSString *_accountTypeID;
-    ANNotificationAction *_activateAction;
-    NSString *_activateButtonTitle;
-    NSString *_callbackMachService;
-    ANNotificationAction *_clearAction;
-    NSDate *_date;
-    ANNotificationAction *_dismissAction;
-    NSString *_dismissButtonTitle;
-    NSString *_eventIdentifier;
-    NSString *_identifier;
-    NSString *_message;
-    NSString *_title;
-    NSDictionary *_userInfo;
+    NSString * _accountTypeID;
+    ANNotificationAction * _activateAction;
+    NSString * _activateButtonTitle;
+    NSString * _callbackMachService;
+    ANNotificationAction * _clearAction;
+    NSDate * _date;
+    int  _destinations;
+    ANNotificationAction * _dismissAction;
+    NSString * _dismissButtonTitle;
+    NSString * _eventIdentifier;
+    NSString * _identifier;
+    NSString * _message;
+    int  _sectionSubtype;
+    NSString * _title;
+    NSDictionary * _userInfo;
 }
 
 @property (nonatomic, readonly) NSString *accountTypeID;
@@ -24,11 +26,13 @@
 @property (nonatomic, copy) NSString *callbackMachService;
 @property (nonatomic, retain) ANNotificationAction *clearAction;
 @property (nonatomic, copy) NSDate *date;
+@property (nonatomic) int destinations;
 @property (nonatomic, retain) ANNotificationAction *dismissAction;
 @property (nonatomic, copy) NSString *dismissButtonTitle;
 @property (nonatomic, copy) NSString *eventIdentifier;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, copy) NSString *message;
+@property (nonatomic) int sectionSubtype;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSDictionary *userInfo;
 
@@ -42,6 +46,7 @@
 - (id)clearAction;
 - (id)date;
 - (id)description;
+- (int)destinations;
 - (id)dismissAction;
 - (id)dismissButtonTitle;
 - (void)encodeWithCoder:(id)arg1;
@@ -51,15 +56,18 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithManagedObject:(id)arg1;
 - (id)message;
+- (int)sectionSubtype;
 - (void)setActivateAction:(id)arg1;
 - (void)setActivateButtonTitle:(id)arg1;
 - (void)setCallbackMachService:(id)arg1;
 - (void)setClearAction:(id)arg1;
 - (void)setDate:(id)arg1;
+- (void)setDestinations:(int)arg1;
 - (void)setDismissAction:(id)arg1;
 - (void)setDismissButtonTitle:(id)arg1;
 - (void)setEventIdentifier:(id)arg1;
 - (void)setMessage:(id)arg1;
+- (void)setSectionSubtype:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (id)title;

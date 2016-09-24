@@ -3,13 +3,14 @@
  */
 
 @interface CKDNDList : NSObject {
-    NPSManager *_syncManager;
+    NPSManager * _syncManager;
 }
 
 @property (nonatomic, retain) NPSManager *syncManager;
 
 + (id)sharedList;
 
+- (void).cxx_destruct;
 - (void)_handleDNDListChanged;
 - (id)currentList;
 - (void)dealloc;

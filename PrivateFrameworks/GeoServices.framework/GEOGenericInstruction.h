@@ -3,7 +3,7 @@
  */
 
 @interface GEOGenericInstruction : PBCodable <NSCopying> {
-    NSString *_maneuver;
+    NSString * _maneuver;
 }
 
 @property (nonatomic, readonly) BOOL hasManeuver;

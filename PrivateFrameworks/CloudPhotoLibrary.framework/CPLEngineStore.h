@@ -3,28 +3,29 @@
  */
 
 @interface CPLEngineStore : NSObject <CPLAbstractObject, CPLEngineComponent> {
-    BOOL _batchedTransactionDequeueIsScheduled;
-    NSMutableArray *_batchedTransactions;
-    NSObject<OS_dispatch_queue> *_batchedTransactionsQueue;
-    CPLEngineClientCache *_clientCache;
-    CPLEngineCloudCache *_cloudCache;
-    CPLEngineChangePipe *_deletePushQueue;
-    CPLEngineDerivativesCache *_derivativesCache;
-    CPLEngineResourceDownloadQueue *_downloadQueue;
-    CPLEngineLibrary *_engineLibrary;
-    CPLEngineIDMapping *_idMapping;
-    CPLPlatformObject *_platformObject;
-    CPLEngineChangePipe *_pullQueue;
-    CPLEngineChangePipe *_pushQueue;
-    CPLEngineQuarantinedRecords *_quarantinedRecords;
-    CPLEngineRemappedDeletes *_remappedDeletes;
-    NSMutableArray *_resetEvents;
-    NSURL *_resetEventsURL;
-    CPLEngineResourceStorage *_resourceStorage;
-    unsigned int _state;
-    NSHashTable *_storages;
-    CPLEngineTransientRepository *_transientPullRepository;
-    CPLEngineResourceUploadQueue *_uploadQueue;
+    BOOL  _batchedTransactionDequeueIsScheduled;
+    NSMutableArray * _batchedTransactions;
+    NSObject<OS_dispatch_queue> * _batchedTransactionsQueue;
+    CPLEngineClientCache * _clientCache;
+    CPLEngineCloudCache * _cloudCache;
+    CPLEngineChangePipe * _deletePushQueue;
+    CPLEngineDerivativesCache * _derivativesCache;
+    CPLEngineResourceDownloadQueue * _downloadQueue;
+    CPLEngineLibrary * _engineLibrary;
+    CPLEngineIDMapping * _idMapping;
+    CPLPlatformObject * _platformObject;
+    CPLEngineChangePipe * _pullQueue;
+    CPLEngineChangePipe * _pushQueue;
+    CPLEngineQuarantinedRecords * _quarantinedRecords;
+    CPLEngineRemappedDeletes * _remappedDeletes;
+    NSMutableArray * _resetEvents;
+    NSURL * _resetEventsURL;
+    CPLEngineResourceStorage * _resourceStorage;
+    unsigned int  _state;
+    NSHashTable * _storages;
+    BOOL  _supportedFeatureVersionIsMostRecent;
+    CPLEngineTransientRepository * _transientPullRepository;
+    CPLEngineResourceUploadQueue * _uploadQueue;
 }
 
 @property (nonatomic, readonly) CPLEngineClientCache *clientCache;
@@ -50,6 +51,7 @@
 @property (nonatomic) unsigned int state;
 @property (nonatomic, readonly) NSArray *storages;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL supportedFeatureVersionIsMostRecent;
 @property (nonatomic, readonly) CPLEngineTransientRepository *transientPullRepository;
 @property (nonatomic, readonly) CPLEngineResourceUploadQueue *uploadQueue;
 
@@ -119,6 +121,7 @@
 - (BOOL)storeSupportedFeatureVersionInLastSync:(unsigned int)arg1 error:(id*)arg2;
 - (BOOL)storeUserIdentifier:(id)arg1 error:(id*)arg2;
 - (unsigned int)supportedFeatureVersionInLastSync;
+- (BOOL)supportedFeatureVersionIsMostRecent;
 - (id)transientPullRepository;
 - (id)uploadQueue;
 - (id)userIdentifier;

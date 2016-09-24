@@ -3,7 +3,7 @@
  */
 
 @interface PUHideActivity : PUActivity {
-    PUAssetHidingHelper *_assetHidingHelper;
+    PUAssetHidingHelper * _assetHidingHelper;
 }
 
 + (int)activityCategory;

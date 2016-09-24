@@ -6,7 +6,7 @@
 @optional
 
 - (void)connectionWithServiceWasInterruptedForUserInterfaceClient:(AXUIClient *)arg1;
-- (AXAccessQueue *)userInterfaceClient:(AXUIClient *)arg1 accessQueueForProcessingMessageWithIdentifier:(unsigned int)arg2;
+- (AXHAAccessQueue *)userInterfaceClient:(AXUIClient *)arg1 accessQueueForProcessingMessageWithIdentifier:(unsigned int)arg2;
 - (BOOL)userInterfaceClient:(AXUIClient *)arg1 messageFromServerForWithIdentifierShouldBeProcessedAsynchronously:(unsigned int)arg2;
 - (BOOL)userInterfaceClient:(AXUIClient *)arg1 messageWithIdentifierRequiresWritingBlock:(unsigned int)arg2;
 - (NSDictionary *)userInterfaceClient:(AXUIClient *)arg1 processMessageFromServer:(NSDictionary *)arg2 withIdentifier:(unsigned int)arg3 error:(id*)arg4;

@@ -3,16 +3,16 @@
  */
 
 @interface MCSessionPeerState : NSObject {
-    int _certificateDecision;
-    BOOL _connectPeerCalled;
-    NSMutableDictionary *_incomingStreams;
-    NSData *_nearbyConnectionData;
-    unsigned int _newStreamID;
-    unsigned int _newStreamOpenRequestID;
-    NSMutableDictionary *_outgoingStreamRequests;
-    NSMutableDictionary *_outgoingStreams;
-    MCPeerID *_peerID;
-    int _state;
+    int  _certificateDecision;
+    BOOL  _connectPeerCalled;
+    NSMutableDictionary * _incomingStreams;
+    NSData * _nearbyConnectionData;
+    unsigned int  _newStreamID;
+    unsigned int  _newStreamOpenRequestID;
+    NSMutableDictionary * _outgoingStreamRequests;
+    NSMutableDictionary * _outgoingStreams;
+    MCPeerID * _peerID;
+    int  _state;
 }
 
 @property (nonatomic) int certificateDecision;
@@ -29,6 +29,7 @@
 - (int)certificateDecision;
 - (BOOL)connectPeerCalled;
 - (void)dealloc;
+- (id)description;
 - (id)incomingStreams;
 - (id)initWithPeer:(id)arg1;
 - (id)nearbyConnectionData;

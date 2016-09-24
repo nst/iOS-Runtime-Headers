@@ -3,8 +3,8 @@
  */
 
 @interface ThreadedInvocationTrampoline : InvocationTrampoline {
-    BOOL _immediateForMatchingThread;
-    NSThread *_thread;
+    BOOL  _immediateForMatchingThread;
+    NSThread * _thread;
 }
 
 - (void)dealloc;

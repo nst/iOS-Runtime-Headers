@@ -3,12 +3,12 @@
  */
 
 @interface UISearchDisplayControllerContainerView : UIView {
-    UIView *_behindView;
-    UIView *_bottomView;
-    BOOL _collapsedTopView;
-    UIView *_topView;
-    NSLayoutConstraint *_topViewAttributeTopConstraint;
-    NSLayoutConstraint *_topViewHeightConstraint;
+    UIView * _behindView;
+    UIView * _bottomView;
+    BOOL  _collapsedTopView;
+    UIView * _topView;
+    NSLayoutConstraint * _topViewAttributeTopConstraint;
+    NSLayoutConstraint * _topViewHeightConstraint;
 }
 
 @property (nonatomic, readonly) UIView *behindView;
@@ -24,10 +24,9 @@
 - (id)bottomView;
 - (void)collapseTopView;
 - (void)configureInteractionForContainment:(BOOL)arg1;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 topViewHeight:(float)arg2;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 topViewHeight:(float)arg2;
 - (void)setBottomViewUserInteractionEnabled:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setTopViewAttributeTopConstraint:(id)arg1;
 - (void)setTopViewHeightConstraint:(id)arg1;
 - (id)topView;

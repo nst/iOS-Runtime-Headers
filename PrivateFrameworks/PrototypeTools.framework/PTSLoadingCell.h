@@ -3,7 +3,7 @@
  */
 
 @interface PTSLoadingCell : UITableViewCell {
-    UIActivityIndicatorView *_activityIndicator;
+    UIActivityIndicatorView * _activityIndicator;
 }
 
 - (void).cxx_destruct;

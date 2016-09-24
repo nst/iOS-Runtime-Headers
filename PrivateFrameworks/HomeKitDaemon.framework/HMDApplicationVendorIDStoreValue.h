@@ -3,10 +3,10 @@
  */
 
 @interface HMDApplicationVendorIDStoreValue : NSObject <NSSecureCoding> {
-    NSString *_applicationBundleId;
-    NSString *_companionAppBundleId;
-    BOOL _spiClient;
-    NSData *_vendorIdSha1;
+    NSString * _applicationBundleId;
+    NSString * _companionAppBundleId;
+    BOOL  _spiClient;
+    NSData * _vendorIdSha1;
 }
 
 @property (nonatomic, readonly) NSString *applicationBundleId;

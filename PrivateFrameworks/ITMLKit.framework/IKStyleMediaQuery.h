@@ -3,9 +3,9 @@
  */
 
 @interface IKStyleMediaQuery : NSObject {
-    NSDictionary *_featureValues;
-    BOOL _isNegated;
-    NSString *_mediaType;
+    NSDictionary * _featureValues;
+    BOOL  _isNegated;
+    NSString * _mediaType;
 }
 
 @property (nonatomic, readonly, retain) NSDictionary *featureValues;

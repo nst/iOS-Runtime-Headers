@@ -3,13 +3,13 @@
  */
 
 @interface NSArchiver : NSCoder {
-    void *ids;
-    void *map;
-    void *mdata;
-    void *pointerTable;
-    void *replacementTable;
-    void *reserved;
-    void *stringTable;
+    void * ids;
+    void * map;
+    void * mdata;
+    void * pointerTable;
+    void * replacementTable;
+    void * reserved;
+    void * stringTable;
 }
 
 @property (readonly, retain) NSMutableData *archiverData;
@@ -33,7 +33,6 @@
 - (void)encodeRootObject:(id)arg1;
 - (void)encodeValueOfObjCType:(const char *)arg1 at:(const void*)arg2;
 - (void)encodeValuesOfObjCTypes:(const char *)arg1;
-- (void)finalize;
 - (id)initForWritingWithMutableData:(id)arg1;
 - (void)replaceObject:(id)arg1 withObject:(id)arg2;
 - (int)versionForClassName:(id)arg1;

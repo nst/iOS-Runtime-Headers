@@ -3,8 +3,8 @@
  */
 
 @interface PURemoteDiagnosticsService : NSObject <NSXPCListenerDelegate> {
-    NSObject<OS_dispatch_queue> *_diagnosticsQueue;
-    NSXPCListener *_listener;
+    NSObject<OS_dispatch_queue> * _diagnosticsQueue;
+    NSXPCListener * _listener;
 }
 
 @property (readonly, copy) NSString *debugDescription;

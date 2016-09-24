@@ -3,10 +3,10 @@
  */
 
 @interface DABabysitter : NSObject {
-    NSString *_buildVersion;
-    NSMutableDictionary *_failedWaiters;
-    NSMutableDictionary *_refreshingWaiters;
-    NSMutableDictionary *_restrictedWaiters;
+    NSString * _buildVersion;
+    NSMutableDictionary * _failedWaiters;
+    NSMutableDictionary * _refreshingWaiters;
+    NSMutableDictionary * _restrictedWaiters;
 }
 
 @property (nonatomic, retain) NSString *buildVersion;

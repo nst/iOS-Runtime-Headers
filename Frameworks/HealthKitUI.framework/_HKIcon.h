@@ -3,37 +3,37 @@
  */
 
 @interface _HKIcon : HKAnimatableObject {
-    float _alpha;
-    UIColor *_color;
-    float _coloration;
-    int _currentFrameIndex;
+    double  _alpha;
+    UIColor * _color;
+    double  _coloration;
+    int  _currentFrameIndex;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _firstFrameOrigin;
-    int _frameColumns;
-    int _frameCount;
+        double x; 
+        double y; 
+    }  _firstFrameOrigin;
+    int  _frameColumns;
+    int  _frameCount;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _frameSize;
+        double width; 
+        double height; 
+    }  _frameSize;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _position;
-    float _size;
+        double x; 
+        double y; 
+    }  _position;
+    double  _size;
 }
 
-@property (nonatomic) float alpha;
+@property (nonatomic) double alpha;
 @property (nonatomic, retain) UIColor *color;
-@property (nonatomic) float coloration;
+@property (nonatomic) double coloration;
 @property (nonatomic) int currentFrameIndex;
-@property (nonatomic) struct CGPoint { float x1; float x2; } firstFrameOrigin;
+@property (nonatomic) struct CGPoint { double x1; double x2; } firstFrameOrigin;
 @property (nonatomic) int frameColumns;
 @property (nonatomic) int frameCount;
-@property (nonatomic) struct CGSize { float x1; float x2; } frameSize;
-@property (nonatomic) struct CGPoint { float x1; float x2; } position;
-@property (nonatomic) float size;
+@property (nonatomic) struct CGSize { double x1; double x2; } frameSize;
+@property (nonatomic) struct CGPoint { double x1; double x2; } position;
+@property (nonatomic) double size;
 
 - (void).cxx_destruct;
 - (id)_newAnimatablePropertyForType:(unsigned int)arg1;
@@ -42,22 +42,22 @@
 - (id)color;
 - (float)coloration;
 - (int)currentFrameIndex;
-- (struct CGPoint { float x1; float x2; })firstFrameOrigin;
+- (struct CGPoint { double x1; double x2; })firstFrameOrigin;
 - (int)frameColumns;
 - (int)frameCount;
-- (struct CGSize { float x1; float x2; })frameSize;
+- (struct CGSize { double x1; double x2; })frameSize;
 - (id)init;
 - (BOOL)isDrawable;
-- (struct CGPoint { float x1; float x2; })position;
+- (struct CGPoint { double x1; double x2; })position;
 - (void)setAlpha:(float)arg1;
 - (void)setColor:(id)arg1;
 - (void)setColoration:(float)arg1;
 - (void)setCurrentFrameIndex:(int)arg1;
-- (void)setFirstFrameOrigin:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setFirstFrameOrigin:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setFrameColumns:(int)arg1;
 - (void)setFrameCount:(int)arg1;
-- (void)setFrameSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setFrameSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPosition:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setSize:(float)arg1;
 - (float)size;
 

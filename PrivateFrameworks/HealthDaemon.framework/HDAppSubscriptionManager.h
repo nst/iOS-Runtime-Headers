@@ -3,15 +3,15 @@
  */
 
 @interface HDAppSubscriptionManager : NSObject <HDDatabaseProtectedDataObserver> {
-    HDAppAssertionManager *_appAssertionManager;
-    int _backgroundAppRefreshNotifyToken;
-    HDDaemon *_healthDaemon;
-    NSObject<OS_dispatch_queue> *_launchQueue;
-    NSMutableDictionary *_launchTimerLaunchTimes;
-    NSObject<OS_dispatch_queue> *_launchTimerQueue;
-    NSMutableDictionary *_launchTimers;
-    NSMutableSet *_pendingTypeCodes;
-    BOOL _shouldScheduleLaunches;
+    HDAppAssertionManager * _appAssertionManager;
+    int  _backgroundAppRefreshNotifyToken;
+    HDDaemon * _healthDaemon;
+    NSObject<OS_dispatch_queue> * _launchQueue;
+    NSMutableDictionary * _launchTimerLaunchTimes;
+    NSObject<OS_dispatch_queue> * _launchTimerQueue;
+    NSMutableDictionary * _launchTimers;
+    NSMutableSet * _pendingTypeCodes;
+    BOOL  _shouldScheduleLaunches;
 }
 
 @property (nonatomic, retain) HDAppAssertionManager *appAssertionManager;
@@ -36,7 +36,7 @@
 - (void)_queue_scheduleLaunchForSubscription:(id)arg1;
 - (void)_queue_scheduleLaunches:(int)arg1;
 - (void)_queue_setAnchor:(id)arg1 forDataCode:(int)arg2;
-- (void)_queue_subscribeForBundleID:(id)arg1 dataCode:(int)arg2 frequencyInSeconds:(unsigned long long)arg3;
+- (void)_queue_subscribeForBundleID:(id)arg1 dataCode:(int)arg2 frequencyInSeconds:(unsigned int)arg3;
 - (id)_queue_subscriptionForActivityName:(id)arg1;
 - (void)_queue_updateBundleID:(id)arg1 dataCode:(int)arg2 launchTime:(id)arg3;
 - (void)_removeBundleID:(id)arg1;
@@ -68,7 +68,7 @@
 - (void)setPendingTypeCodes:(id)arg1;
 - (void)setShouldScheduleLaunches:(BOOL)arg1;
 - (BOOL)shouldScheduleLaunches;
-- (void)subscribeForBundleID:(id)arg1 dataCode:(int)arg2 frequencyInSeconds:(unsigned long long)arg3;
+- (void)subscribeForBundleID:(id)arg1 dataCode:(int)arg2 frequencyInSeconds:(unsigned int)arg3;
 - (void)updateBundleID:(id)arg1 dataCode:(int)arg2 launchTime:(id)arg3;
 
 @end

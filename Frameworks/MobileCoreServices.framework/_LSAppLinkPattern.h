@@ -3,8 +3,8 @@
  */
 
 @interface _LSAppLinkPattern : NSObject {
-    BOOL _blocking;
-    NSString *_pattern;
+    BOOL  _blocking;
+    NSString * _pattern;
 }
 
 @property (getter=isBlocking) BOOL blocking;

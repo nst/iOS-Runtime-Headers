@@ -3,7 +3,7 @@
  */
 
 @interface CAMShutterSoundCommand : CAMCaptureCommand {
-    BOOL _shutterSoundEnabled;
+    BOOL  _shutterSoundEnabled;
 }
 
 @property (getter=_isShutterSoundEnabled, nonatomic, readonly) BOOL shutterSoundEnabled;

@@ -3,7 +3,7 @@
  */
 
 @interface NSGlyphNameGlyphInfo : NSIdentityGlyphInfo <NSSecureCoding> {
-    NSString *_name;
+    NSString * _name;
 }
 
 + (void)initialize;

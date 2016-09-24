@@ -3,8 +3,8 @@
  */
 
 @interface UIViewControllerPreviewAction : NSObject <NSCopying> {
-    id /* block */ _handler;
-    NSString *_title;
+    id /* block */  _handler;
+    NSString * _title;
 }
 
 @property (nonatomic, copy) id /* block */ handler;

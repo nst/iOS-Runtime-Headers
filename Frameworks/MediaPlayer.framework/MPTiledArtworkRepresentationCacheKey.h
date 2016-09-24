@@ -3,16 +3,16 @@
  */
 
 @interface MPTiledArtworkRepresentationCacheKey : NSObject <NSCopying> {
-    id _entityIdentifier;
-    id _namespaceIdentifier;
-    unsigned int _numberOfColumns;
-    unsigned int _numberOfRows;
-    id _revisionIdentifier;
+    id  _entityIdentifier;
+    id  _namespaceIdentifier;
+    unsigned int  _numberOfColumns;
+    unsigned int  _numberOfRows;
+    id  _revisionIdentifier;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _scaledFittingSize;
-    float _tileSpacing;
+        double width; 
+        double height; 
+    }  _scaledFittingSize;
+    double  _tileSpacing;
 }
 
 - (void).cxx_destruct;
@@ -20,7 +20,7 @@
 - (id)description;
 - (unsigned int)hash;
 - (id)init;
-- (id)initWithTiledArtworkRequest:(id)arg1 scaledFittingSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)initWithTiledArtworkRequest:(id)arg1 scaledFittingSize:(struct CGSize { double x1; double x2; })arg2;
 - (BOOL)isEqual:(id)arg1;
 
 @end

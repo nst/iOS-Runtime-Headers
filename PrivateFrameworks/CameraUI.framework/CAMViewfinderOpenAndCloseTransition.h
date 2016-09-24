@@ -3,21 +3,21 @@
  */
 
 @interface CAMViewfinderOpenAndCloseTransition : NSObject {
-    CAMPreviewView *__previewView;
-    CAMSnapshotView *__snapshotView;
+    CAMSnapshotView * __snapshotView;
+    CAMViewfinderView * __viewfinderView;
 }
 
-@property (nonatomic, readonly) CAMPreviewView *_previewView;
 @property (setter=_setSnapshotView:, nonatomic, retain) CAMSnapshotView *_snapshotView;
+@property (nonatomic, readonly) CAMViewfinderView *_viewfinderView;
 
 - (void).cxx_destruct;
 - (void)_closeViewfinder:(BOOL)arg1 animated:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
 - (id)_existingSnapshotViewCreateIfNecessary:(BOOL)arg1 removedOnCompletion:(BOOL)arg2;
-- (id)_previewView;
 - (void)_setSnapshotView:(id)arg1;
 - (id)_snapshotView;
+- (id)_viewfinderView;
 - (void)closeAnimated:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
-- (id)initWithPreviewView:(id)arg1;
+- (id)initWithViewfinderView:(id)arg1;
 - (void)openAnimated:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
 
 @end

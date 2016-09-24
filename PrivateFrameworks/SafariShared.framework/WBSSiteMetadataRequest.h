@@ -3,8 +3,8 @@
  */
 
 @interface WBSSiteMetadataRequest : NSObject <NSCopying> {
-    NSDictionary *_extraInfo;
-    NSURL *_url;
+    NSDictionary * _extraInfo;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *extraInfo;
@@ -12,6 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (id)extraInfo;
 - (unsigned int)hash;
 - (id)init;

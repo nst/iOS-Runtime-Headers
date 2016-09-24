@@ -3,9 +3,9 @@
  */
 
 @interface PTPInitCommandACKPacket : NSObject {
-    unsigned long _connectionNumber;
-    NSString *_responderFriendlyName;
-    unsigned char _responderGUID;
+    unsigned long  _connectionNumber;
+    NSString * _responderFriendlyName;
+    unsigned char  _responderGUID;
 }
 
 - (unsigned long)connectionNumber;

@@ -3,16 +3,16 @@
  */
 
 @interface ALAssetsGroupPrivate : NSObject <ALAssetsLibraryAsset> {
-    struct NSObject { Class x1; } *_album;
-    BOOL _applyHyperionFilter;
-    ALAssetsFilter *_assetsFilter;
-    unsigned int _groupType;
-    BOOL _isCloudSharedGroup;
-    BOOL _isValid;
-    ALAssetsLibrary *_library;
-    BOOL _loadedAssets;
-    PLPhotoLibrary *_photoLibrary;
-    NSMutableDictionary *_propertyValues;
+    struct NSObject { Class x1; } * _album;
+    BOOL  _applyHyperionFilter;
+    ALAssetsFilter * _assetsFilter;
+    unsigned int  _groupType;
+    BOOL  _isCloudSharedGroup;
+    BOOL  _isValid;
+    ALAssetsLibrary * _library;
+    BOOL  _loadedAssets;
+    PLPhotoLibrary * _photoLibrary;
+    NSMutableDictionary * _propertyValues;
 }
 
 @property (nonatomic, retain) PLPhotoLibrary *_photoLibrary;
@@ -29,6 +29,7 @@
 @property (nonatomic, retain) NSMutableDictionary *propertyValues;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_performBlockAndWait:(id /* block */)arg1;
 - (id)_photoLibrary;
 - (struct NSObject { Class x1; }*)album;

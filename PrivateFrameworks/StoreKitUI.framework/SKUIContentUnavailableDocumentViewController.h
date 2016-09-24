@@ -3,10 +3,10 @@
  */
 
 @interface SKUIContentUnavailableDocumentViewController : SKUIViewController <SKUIArtworkRequestDelegate, SKUIDocumentViewController, SKUILayoutCacheDelegate> {
-    SKUIContentUnavailableView *_contentUnavailableView;
-    SKUIViewElementLayoutContext *_layoutContext;
-    SKUIContentUnavailableTemplateElement *_templateElement;
-    SKUILayoutCache *_textLayoutCache;
+    SKUIContentUnavailableView * _contentUnavailableView;
+    SKUIViewElementLayoutContext * _layoutContext;
+    SKUIContentUnavailableTemplateElement * _templateElement;
+    SKUILayoutCache * _textLayoutCache;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,7 +15,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentInsets;
 - (id)_layoutContext;
 - (void)_reloadContentUnavailableView:(id)arg1 width:(float)arg2;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
@@ -26,6 +26,6 @@
 - (void)loadView;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

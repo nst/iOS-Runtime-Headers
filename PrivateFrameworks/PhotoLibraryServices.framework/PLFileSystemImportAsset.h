@@ -3,10 +3,10 @@
  */
 
 @interface PLFileSystemImportAsset : NSObject {
-    NSDate *_dateCreated;
-    struct NSObject { Class x1; } *_destinationAlbum;
-    NSMutableSet *_urls;
-    int assetKind;
+    NSDate * _dateCreated;
+    struct NSObject { Class x1; } * _destinationAlbum;
+    NSMutableSet * _urls;
+    int  assetKind;
 }
 
 @property (nonatomic) int assetKind;

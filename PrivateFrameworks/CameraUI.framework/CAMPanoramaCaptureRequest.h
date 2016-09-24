@@ -3,7 +3,7 @@
  */
 
 @interface CAMPanoramaCaptureRequest : CAMCaptureRequest <NSCopying, NSMutableCopying> {
-    <CAMPanoramaCaptureRequestDelegate> *_delegate;
+    <CAMPanoramaCaptureRequestDelegate> * _delegate;
 }
 
 @property (nonatomic, readonly) <CAMPanoramaCaptureRequestDelegate> *delegate;

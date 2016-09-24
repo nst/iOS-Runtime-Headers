@@ -3,8 +3,8 @@
  */
 
 @interface AXSpeechThread : NSThread {
-    NSPort *_machPort;
-    NSRunLoop *_threadRunLoop;
+    NSPort * _machPort;
+    NSRunLoop * _threadRunLoop;
 }
 
 - (void)cancel;

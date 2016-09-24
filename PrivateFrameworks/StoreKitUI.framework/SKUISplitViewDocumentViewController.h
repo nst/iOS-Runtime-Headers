@@ -3,11 +3,11 @@
  */
 
 @interface SKUISplitViewDocumentViewController : SKUIViewController <SKUIDocumentViewController, SKUINavigationDocumentDelegate> {
-    UIViewController *_delayingPresentationViewController;
-    SKUINavigationDocumentController *_leftNavigationDocumentController;
-    SKUINavigationDocumentController *_rightNavigationDocumentController;
-    UISplitViewController *_splitViewController;
-    SKUISplitViewTemplateElement *_templateElement;
+    UIViewController * _delayingPresentationViewController;
+    SKUINavigationDocumentController * _leftNavigationDocumentController;
+    SKUINavigationDocumentController * _rightNavigationDocumentController;
+    UISplitViewController * _splitViewController;
+    SKUISplitViewTemplateElement * _templateElement;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,13 +3,13 @@
  */
 
 @interface _UIStatusBarStateStackInfo : NSObject {
-    int _hostPID;
-    float _statusBarHeightWithoutHost;
-    int _statusBarOrientationWithoutHost;
+    int  _hostPID;
+    double  _statusBarHeightWithoutHost;
+    int  _statusBarOrientationWithoutHost;
 }
 
 @property int hostPID;
-@property float statusBarHeightWithoutHost;
+@property double statusBarHeightWithoutHost;
 @property int statusBarOrientationWithoutHost;
 
 - (int)hostPID;

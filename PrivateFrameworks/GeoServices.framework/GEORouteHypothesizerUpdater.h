@@ -3,27 +3,27 @@
  */
 
 @interface GEORouteHypothesizerUpdater : NSObject <NSSecureCoding> {
-    GEOMapRegion *_arrivalMapRegion;
-    GEODirectionsRouteRequest *_currentRequest;
-    <GEORouteHypothesizerUpdaterDelegate> *_delegate;
-    GEOComposedWaypoint *_destination;
-    GEODirectionsRequestFeedback *_feedback;
-    BOOL _hasArrived;
-    BOOL _isNavd;
-    BOOL _isTraveling;
-    GEOLocation *_lastMatchedLocation;
-    NSDate *_lastRerouteDate;
-    unsigned int _numThrottledReroutes;
-    GEOLocation *_originLocation;
-    NSLock *_requestLock;
-    NSMutableArray *_rerouteEntries;
-    GEOComposedRoute *_route;
-    GEORouteAttributes *_routeAttributes;
-    GEORouteMatch *_routeMatch;
-    GEORouteSummaryAttributes *_routeSummaryAttributes;
-    double _score;
-    BOOL _shouldThrottleReroutes;
-    GEOComposedWaypoint *_source;
+    GEOMapRegion * _arrivalMapRegion;
+    GEOCommonOptions * _commonOptions;
+    GEODirectionsRequest * _currentRequest;
+    <GEORouteHypothesizerUpdaterDelegate> * _delegate;
+    GEOComposedWaypoint * _destination;
+    GEODirectionsRequestFeedback * _feedback;
+    BOOL  _hasArrived;
+    BOOL  _isNavd;
+    BOOL  _isTraveling;
+    GEOLocation * _lastMatchedLocation;
+    NSDate * _lastRerouteDate;
+    unsigned int  _numThrottledReroutes;
+    GEOLocation * _originLocation;
+    NSLock * _requestLock;
+    NSMutableArray * _rerouteEntries;
+    GEOComposedRoute * _route;
+    GEORouteAttributes * _routeAttributes;
+    GEORouteMatch * _routeMatch;
+    double  _score;
+    BOOL  _shouldThrottleReroutes;
+    GEOComposedWaypoint * _source;
 }
 
 @property (nonatomic) <GEORouteHypothesizerUpdaterDelegate> *delegate;

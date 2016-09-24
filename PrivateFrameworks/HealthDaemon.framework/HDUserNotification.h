@@ -3,13 +3,13 @@
  */
 
 @interface HDUserNotification : NSObject {
-    NSString *_cancelButton;
-    NSString *_defaultButton;
-    NSString *_message;
-    struct __CFUserNotification { } *_notification;
-    NSString *_otherButton;
-    id /* block */ _responseHandler;
-    NSString *_title;
+    NSString * _cancelButton;
+    NSString * _defaultButton;
+    NSString * _message;
+    struct __CFUserNotification { } * _notification;
+    NSString * _otherButton;
+    id /* block */  _responseHandler;
+    NSString * _title;
 }
 
 @property (nonatomic, copy) NSString *cancelButton;

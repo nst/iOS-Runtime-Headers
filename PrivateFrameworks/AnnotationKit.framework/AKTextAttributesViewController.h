@@ -3,19 +3,19 @@
  */
 
 @interface AKTextAttributesViewController : UITableViewController <AKFontChooserUserInterfaceItem, AKTextAttributesUserInterfaceItem> {
-    UITableViewCell *_alignmentTableCell;
-    AKController *_controller;
-    id _currentAlignment;
-    UIColor *_currentFontColor;
-    NSString *_currentFontFamilyName;
-    NSNumber *_currentFontSize;
-    id _currentStyle;
-    AKFontChooserUIItemDelegate *_fontUIItemDelegate;
-    int _lastActionID;
-    id _lastActionValue;
-    AKFontListController *_presetFontController;
-    UITableViewCell *_sizeTableCell;
-    AKTextAttributesUIItemDelegate *_textAttributesUIItemDelegate;
+    UITableViewCell * _alignmentTableCell;
+    AKController * _controller;
+    id  _currentAlignment;
+    UIColor * _currentFontColor;
+    NSString * _currentFontFamilyName;
+    NSNumber * _currentFontSize;
+    id  _currentStyle;
+    AKFontChooserUIItemDelegate * _fontUIItemDelegate;
+    int  _lastActionID;
+    id  _lastActionValue;
+    AKFontListController * _presetFontController;
+    UITableViewCell * _sizeTableCell;
+    AKTextAttributesUIItemDelegate * _textAttributesUIItemDelegate;
 }
 
 @property (nonatomic, retain) UITableViewCell *alignmentTableCell;

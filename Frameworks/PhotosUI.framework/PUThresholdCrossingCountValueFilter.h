@@ -3,9 +3,9 @@
  */
 
 @interface PUThresholdCrossingCountValueFilter : PUValueFilter {
-    int _crossingCount;
-    int _maximumCrossingCount;
-    double _thresholdValue;
+    int  _crossingCount;
+    int  _maximumCrossingCount;
+    double  _thresholdValue;
 }
 
 @property (nonatomic) int maximumCrossingCount;

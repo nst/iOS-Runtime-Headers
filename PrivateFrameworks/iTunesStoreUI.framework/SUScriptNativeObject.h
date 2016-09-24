@@ -3,10 +3,10 @@
  */
 
 @interface SUScriptNativeObject : NSObject {
-    NSLock *_lock;
-    id _nativeObject;
-    SUScriptObject *_scriptObject;
-    BOOL _weak;
+    NSLock * _lock;
+    id  _nativeObject;
+    SUScriptObject * _scriptObject;
+    BOOL  _weak;
 }
 
 @property (nonatomic) id object;

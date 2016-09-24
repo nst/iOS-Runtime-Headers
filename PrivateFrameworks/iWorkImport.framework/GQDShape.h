@@ -3,8 +3,8 @@
  */
 
 @interface GQDShape : GQDGraphic <GQDNameMappable> {
-    GQDWPLayoutFrame *mLayoutFrame;
-    GQDPath *mPath;
+    GQDWPLayoutFrame * mLayoutFrame;
+    GQDPath * mPath;
 }
 
 @property (readonly, copy) NSString *debugDescription;

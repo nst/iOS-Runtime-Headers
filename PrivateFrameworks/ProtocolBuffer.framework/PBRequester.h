@@ -3,16 +3,16 @@
  */
 
 @interface PBRequester : NSObject <NSURLConnectionDelegate> {
-    NSURL *_URL;
-    NSArray *_clientCertificates;
-    NSURLConnection *_connection;
-    NSDictionary *_connectionProperties;
-    NSRunLoop *_connectionRunLoop;
-    NSMutableData *_data;
-    PBDataReader *_dataReader;
-    <PBRequesterDelegate> *_delegate;
-    BOOL _didNotifyRequestCompleted;
-    unsigned int _downloadPayloadSize;
+    NSURL * _URL;
+    NSArray * _clientCertificates;
+    NSURLConnection * _connection;
+    NSDictionary * _connectionProperties;
+    NSRunLoop * _connectionRunLoop;
+    NSMutableData * _data;
+    PBDataReader * _dataReader;
+    <PBRequesterDelegate> * _delegate;
+    BOOL  _didNotifyRequestCompleted;
+    unsigned int  _downloadPayloadSize;
     struct { 
         unsigned int ignoresResponse : 1; 
         unsigned int loading : 1; 
@@ -25,24 +25,24 @@
         unsigned int delegateDidFailWithError : 1; 
         unsigned int paused : 1; 
         unsigned int resuming : 1; 
-    } _flags;
-    NSMutableDictionary *_httpRequestHeaders;
-    NSDictionary *_httpResponseHeaders;
-    NSMutableArray *_internalRequests;
-    NSMutableArray *_internalResponses;
-    unsigned int _lastGoodDataOffset;
-    NSString *_logRequestToFile;
-    NSString *_logResponseToFile;
-    NSMutableArray *_requests;
-    int _responseStatusCode;
-    NSMutableArray *_responses;
-    BOOL _shouldHandleCookies;
-    NSThread *_startThread;
-    unsigned long long _timeRequestSent;
-    unsigned long long _timeResponseReceived;
-    double _timeoutSeconds;
-    struct __CFRunLoopTimer { } *_timeoutTimer;
-    unsigned int _uploadPayloadSize;
+    }  _flags;
+    NSMutableDictionary * _httpRequestHeaders;
+    NSDictionary * _httpResponseHeaders;
+    NSMutableArray * _internalRequests;
+    NSMutableArray * _internalResponses;
+    unsigned int  _lastGoodDataOffset;
+    NSString * _logRequestToFile;
+    NSString * _logResponseToFile;
+    NSMutableArray * _requests;
+    int  _responseStatusCode;
+    NSMutableArray * _responses;
+    BOOL  _shouldHandleCookies;
+    NSThread * _startThread;
+    unsigned int  _timeRequestSent;
+    unsigned int  _timeResponseReceived;
+    double  _timeoutSeconds;
+    struct __CFRunLoopTimer { } * _timeoutTimer;
+    unsigned int  _uploadPayloadSize;
 }
 
 @property (nonatomic, retain) NSURL *URL;
@@ -66,8 +66,6 @@
 @property (readonly) Class superclass;
 @property (nonatomic) double timeoutSeconds;
 @property (nonatomic, readonly) unsigned int uploadPayloadSize;
-
-// Image: /System/Library/PrivateFrameworks/ProtocolBuffer.framework/ProtocolBuffer
 
 + (BOOL)usesEncodedMessages;
 
@@ -154,10 +152,5 @@
 - (id)tryReadResponseData:(id)arg1 forRequest:(id)arg2 forResponseClass:(Class)arg3;
 - (unsigned int)uploadPayloadSize;
 - (void)writeRequest:(id)arg1 into:(id)arg2;
-
-// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
-
-- (void)_scheduleThrottlingError;
-- (void)_scheduleThrottlingErrorForKey:(id)arg1;
 
 @end

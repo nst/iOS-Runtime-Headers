@@ -3,12 +3,12 @@
  */
 
 @interface _UIActivityIndicatorViewArtworkItem : NSObject <NSDiscardableContent> {
-    NSString *_artKey;
+    NSString * _artKey;
     struct { 
         unsigned int isDiscarded : 1; 
         unsigned int useCount; 
-    } _flags;
-    NSArray *_images;
+    }  _flags;
+    NSArray * _images;
 }
 
 @property (nonatomic, readonly) NSString *artKey;

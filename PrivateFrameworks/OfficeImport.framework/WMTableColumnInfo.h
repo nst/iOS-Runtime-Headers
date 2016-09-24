@@ -3,7 +3,7 @@
  */
 
 @interface WMTableColumnInfo : NSObject {
-    NSMutableArray *mStopArray;
+    NSMutableArray * mStopArray;
 }
 
 - (unsigned int)columnSpan:(float)arg1 at:(unsigned int)arg2;

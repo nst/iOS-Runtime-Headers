@@ -3,7 +3,7 @@
  */
 
 @interface NPKProtoUpdatePaymentPassRequest : PBRequest <NSCopying> {
-    NSString *_passTypeIdentifier;
+    NSString * _passTypeIdentifier;
 }
 
 @property (nonatomic, retain) NSString *passTypeIdentifier;

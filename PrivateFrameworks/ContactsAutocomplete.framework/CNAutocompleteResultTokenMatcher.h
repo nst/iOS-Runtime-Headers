@@ -3,8 +3,8 @@
  */
 
 @interface CNAutocompleteResultTokenMatcher : NSObject {
-    NSString *_countryCode;
-    NSArray *_tokens;
+    NSString * _countryCode;
+    NSArray * _tokens;
 }
 
 + (id)indexTokensFromPhoneNumber:(id)arg1;
@@ -14,6 +14,8 @@
 
 - (void).cxx_destruct;
 - (BOOL)evaluateResult:(id)arg1;
+- (BOOL)evaluateSingleResult:(id)arg1;
+- (BOOL)evaluateTopLevelGroupResult:(id)arg1;
 - (id /* block */)filterAdapter;
 - (id)init;
 - (id)initWithSearchString:(id)arg1;

@@ -3,20 +3,20 @@
  */
 
 @interface PLMomentNode : NSObject {
-    PLMomentCluster *__cluster;
-    NSDate *__creationDate;
-    CLLocation *__location;
-    NSObject<NSCopying> *__objectID;
-    NSString *__userTag;
-    unsigned int __userTagType;
-    NSNumber *_cacheInsertionIndex;
-    BOOL _marked;
-    BOOL _visited;
+    PLMomentCluster * __cluster;
+    NSDate * __creationDate;
+    CLLocation * __location;
+    NSObject<NSCopying> * __objectID;
+    NSString * __userTag;
+    unsigned int  __userTagType;
+    NSNumber * _cacheInsertionIndex;
+    BOOL  _marked;
+    BOOL  _visited;
 }
 
 @property (nonatomic, retain) NSNumber *cacheInsertionIndex;
 @property (nonatomic) PLMomentCluster *cluster;
-@property (nonatomic, readonly) struct { double x1; double x2; } coordinate;
+@property (nonatomic, readonly) struct CLLocationCoordinate2D { double x1; double x2; } coordinate;
 @property (nonatomic, readonly, retain) NSDate *creationDate;
 @property (nonatomic, readonly) CLLocation *location;
 @property (getter=isMarked, nonatomic) BOOL marked;
@@ -27,7 +27,7 @@
 
 - (id)cacheInsertionIndex;
 - (id)cluster;
-- (struct { double x1; double x2; })coordinate;
+- (struct CLLocationCoordinate2D { double x1; double x2; })coordinate;
 - (id)creationDate;
 - (void)dealloc;
 - (id)description;

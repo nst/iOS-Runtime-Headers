@@ -3,10 +3,10 @@
  */
 
 @interface SKUIApplicationLicenseViewController : SKUIViewController {
-    SKUIApplicationLicensePage *_licensePage;
-    SSVLoadURLOperation *_loadOperation;
-    NSURL *_url;
-    UIWebView *_webView;
+    SKUIApplicationLicensePage * _licensePage;
+    SSVLoadURLOperation * _loadOperation;
+    NSURL * _url;
+    UIWebView * _webView;
 }
 
 - (void).cxx_destruct;

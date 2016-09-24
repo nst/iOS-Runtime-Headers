@@ -3,9 +3,9 @@
  */
 
 @interface BBSectionFilter : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_displayName;
-    BOOL _enabled;
-    NSString *_filterID;
+    NSString * _displayName;
+    BOOL  _enabled;
+    NSString * _filterID;
 }
 
 @property (nonatomic, copy) NSString *displayName;
@@ -14,16 +14,18 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)filterID;
+- (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithID:(id)arg1;
 - (BOOL)isEnabled;
+- (BOOL)isEqual:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setFilterID:(id)arg1;

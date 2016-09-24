@@ -3,10 +3,10 @@
  */
 
 @interface CPLResourceTransferTask : NSObject <NSSecureCoding> {
-    BOOL _cancelled;
-    int _priority;
-    CPLResource *_resource;
-    NSString *_taskIdentifier;
+    BOOL  _cancelled;
+    int  _priority;
+    CPLResource * _resource;
+    NSString * _taskIdentifier;
 }
 
 @property (getter=isCancelled, nonatomic, readonly) BOOL cancelled;

@@ -3,28 +3,28 @@
  */
 
 @interface GKCollectionViewController : UICollectionViewController <GKCollectionViewDataSourceDelegate, GKSegmentedSectionDataSourceEventHandler, UISearchBarDelegate, UITextFieldDelegate, _GKStateMachineDelegate> {
-    BOOL _active;
-    GKSearchBar *_activeSearchBar;
-    int _appearCount;
-    GKColorPalette *_colorPalette;
-    NSString *_currentSearchText;
-    <UICollectionViewDataSource> *_dataSource;
-    UICollectionViewLayout *_defaultLayout;
-    BOOL _didSlideIn;
-    int _gkFocusBubbleType;
-    BOOL _hasViewFactories;
-    UIActivityIndicatorView *_loadingIndicatorView;
-    GKLoadableContentStateMachine *_loadingMachine;
-    UINavigationController *_placeholderNavigationController;
-    GKPlaceholderView *_placeholderView;
-    int _previousOrientation;
-    BOOL _readyToDisplayData;
-    NSMapTable *_reusableViewsIHaveSeen;
-    BOOL _shouldSlideInContents;
-    BOOL _showSupplementaryViewsWhileLoading;
-    BOOL _skipLoadAfterViewDidLoad;
-    BOOL _supportsMasterSelectionBehavior;
-    GKSwipeToEditStateMachine *_swipeStateMachine;
+    BOOL  _active;
+    GKSearchBar * _activeSearchBar;
+    int  _appearCount;
+    GKColorPalette * _colorPalette;
+    NSString * _currentSearchText;
+    <UICollectionViewDataSource> * _dataSource;
+    UICollectionViewLayout * _defaultLayout;
+    BOOL  _didSlideIn;
+    int  _gkFocusBubbleType;
+    BOOL  _hasViewFactories;
+    UIActivityIndicatorView * _loadingIndicatorView;
+    GKLoadableContentStateMachine * _loadingMachine;
+    UINavigationController * _placeholderNavigationController;
+    GKPlaceholderView * _placeholderView;
+    int  _previousOrientation;
+    BOOL  _readyToDisplayData;
+    NSMapTable * _reusableViewsIHaveSeen;
+    BOOL  _shouldSlideInContents;
+    BOOL  _showSupplementaryViewsWhileLoading;
+    BOOL  _skipLoadAfterViewDidLoad;
+    BOOL  _supportsMasterSelectionBehavior;
+    GKSwipeToEditStateMachine * _swipeStateMachine;
 }
 
 @property BOOL active;
@@ -55,6 +55,7 @@
 @property (nonatomic) BOOL supportsMasterSelectionBehavior;
 @property (nonatomic, retain) GKSwipeToEditStateMachine *swipeStateMachine;
 
++ (id)_initializeSafeCategoryFromValidationManager;
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 
 - (void)_applyUpdates:(id)arg1 withCompletionHandler:(id /* block */)arg2;
@@ -187,7 +188,7 @@
 - (id)swipeStateMachine;
 - (void)swipeToDeleteCell:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)updateDynamicColumnCountsForViewSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)updateDynamicColumnCountsForViewSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)updateLayoutGuideOffsets;
 - (void)updateMetrics;
 - (void)updateSelectionHighlight;
@@ -197,7 +198,7 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willDismissActionSheetFromCell:(id)arg1;
 

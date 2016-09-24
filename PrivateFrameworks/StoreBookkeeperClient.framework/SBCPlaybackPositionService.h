@@ -3,8 +3,8 @@
  */
 
 @interface SBCPlaybackPositionService : SBCXPCService <SBCPlaybackPositionServiceProtocol> {
-    SBCPlaybackPositionDomain *_playbackPositionDomain;
-    BOOL _usingPlaybackPositions;
+    SBCPlaybackPositionDomain * _playbackPositionDomain;
+    BOOL  _usingPlaybackPositions;
 }
 
 @property (readonly, copy) NSString *debugDescription;

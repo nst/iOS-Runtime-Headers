@@ -3,19 +3,20 @@
  */
 
 @interface IMTranscriptChatItem : IMChatItem {
-    unsigned char _attachmentContiguousType;
-    unsigned int _contiguousLoaded;
-    unsigned char _contiguousType;
-    NSString *_guid;
+    unsigned char  _attachmentContiguousType;
+    unsigned int  _contiguousLoaded;
+    unsigned char  _contiguousType;
+    NSString * _guid;
 }
 
 @property (nonatomic, readonly) unsigned char attachmentContiguousType;
 @property (getter=isContiguous, nonatomic, readonly) BOOL contiguous;
 @property (nonatomic, readonly) unsigned char contiguousType;
-@property (nonatomic, copy) NSString *guid;
+@property (setter=_setGUID:, nonatomic, copy) NSString *guid;
 
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
+- (void).cxx_destruct;
 - (BOOL)_isContiguousLoaded;
 - (void)_setAttachmentContiguousType:(unsigned char)arg1;
 - (void)_setContiguousLoaded:(BOOL)arg1;
@@ -24,7 +25,6 @@
 - (unsigned char)attachmentContiguousType;
 - (unsigned char)contiguousType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)guid;
 - (unsigned int)hash;

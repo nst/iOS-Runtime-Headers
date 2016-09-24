@@ -3,21 +3,20 @@
  */
 
 @interface TIKeyboardInputManagerState : NSObject <NSCopying, NSSecureCoding> {
-    TIKeyboardCandidate *_autocorrectionRecordForInputString;
-    unsigned int _initialCandidateBatchCount;
-    unsigned int _inputCount;
-    unsigned int _inputIndex;
-    NSString *_inputString;
-    TICharacterSetDescription *_inputsPreventingAcceptSelectedCandidate;
-    TICharacterSetDescription *_inputsToReject;
-    TIKeyEventMap *_keyEventMap;
-    TIKeyboardBehaviors *_keyboardBehaviors;
+    TIKeyboardCandidate * _autocorrectionRecordForInputString;
+    unsigned int  _initialCandidateBatchCount;
+    unsigned int  _inputCount;
+    unsigned int  _inputIndex;
+    NSString * _inputString;
+    TICharacterSetDescription * _inputsPreventingAcceptSelectedCandidate;
+    TICharacterSetDescription * _inputsToReject;
+    TIKeyEventMap * _keyEventMap;
+    TIKeyboardBehaviors * _keyboardBehaviors;
     union { 
         int integerValue; 
         struct { 
             unsigned int canHandleKeyHitTest : 1; 
             unsigned int ignoresDeadKeys : 1; 
-            unsigned int needsKeyHitTestResults : 1; 
             unsigned int shouldExtendPriorWord : 1; 
             unsigned int suppliesCompletions : 1; 
             unsigned int supportsNumberKeySelection : 1; 
@@ -31,16 +30,16 @@
             unsigned int suppressPlaceholderCandidate : 1; 
             unsigned int usesAutocorrectionLists : 1; 
         } fields; 
-    } _mask;
-    NSString *_replacementForDoubleSpace;
-    NSString *_searchStringForMarkedText;
-    NSString *_shadowTyping;
-    TICharacterSetDescription *_shortcutCompletions;
-    BOOL _shouldAddModifierSymbolsToWordCharacters;
-    TICharacterSetDescription *_terminatorsDeletingAutospace;
-    TICharacterSetDescription *_terminatorsPreventingAutocorrection;
-    TICharacterSetDescription *_wordCharacters;
-    NSString *_wordSeparator;
+    }  _mask;
+    NSString * _replacementForDoubleSpace;
+    NSString * _searchStringForMarkedText;
+    NSString * _shadowTyping;
+    TICharacterSetDescription * _shortcutCompletions;
+    BOOL  _shouldAddModifierSymbolsToWordCharacters;
+    TICharacterSetDescription * _terminatorsDeletingAutospace;
+    TICharacterSetDescription * _terminatorsPreventingAutocorrection;
+    TICharacterSetDescription * _wordCharacters;
+    NSString * _wordSeparator;
 }
 
 @property (nonatomic, retain) TIKeyboardCandidate *autocorrectionRecordForInputString;
@@ -56,7 +55,6 @@
 @property (nonatomic, copy) TICharacterSetDescription *inputsToReject;
 @property (nonatomic, retain) TIKeyEventMap *keyEventMap;
 @property (nonatomic, retain) TIKeyboardBehaviors *keyboardBehaviors;
-@property (nonatomic) BOOL needsKeyHitTestResults;
 @property (nonatomic) BOOL nextInputWouldStartSentence;
 @property (nonatomic, copy) NSString *replacementForDoubleSpace;
 @property (nonatomic, copy) NSString *searchStringForMarkedText;
@@ -98,7 +96,6 @@
 - (id)inputsToReject;
 - (id)keyEventMap;
 - (id)keyboardBehaviors;
-- (BOOL)needsKeyHitTestResults;
 - (BOOL)nextInputWouldStartSentence;
 - (id)replacementForDoubleSpace;
 - (id)searchStringForMarkedText;
@@ -115,7 +112,6 @@
 - (void)setInputsToReject:(id)arg1;
 - (void)setKeyEventMap:(id)arg1;
 - (void)setKeyboardBehaviors:(id)arg1;
-- (void)setNeedsKeyHitTestResults:(BOOL)arg1;
 - (void)setNextInputWouldStartSentence:(BOOL)arg1;
 - (void)setReplacementForDoubleSpace:(id)arg1;
 - (void)setSearchStringForMarkedText:(id)arg1;

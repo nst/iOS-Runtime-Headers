@@ -3,11 +3,10 @@
  */
 
 @interface ICScrollViewKeyboardResizer : NSObject {
-    BOOL _autoResizing;
-    <ICScrollViewKeyboardResizerDelegate> *_delegate;
-    BOOL _didResizeScrollView;
-    BOOL _observingKeyboardNotifications;
-    UIScrollView *_scrollView;
+    BOOL  _autoResizing;
+    <ICScrollViewKeyboardResizerDelegate> * _delegate;
+    BOOL  _didResizeScrollView;
+    BOOL  _observingKeyboardNotifications;
 }
 
 @property (getter=isAutoResizing, nonatomic) BOOL autoResizing;
@@ -17,15 +16,15 @@
 @property (nonatomic, readonly) UIScrollView *scrollView;
 
 - (void).cxx_destruct;
-- (void)applyInsetsFromKeyboardFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)clearInsets;
+- (void)applyInsetsFromKeyboardFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 duration:(double)arg2;
+- (void)clearInsetsWithDuration:(double)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)didResizeScrollView;
 - (void)handleKeyboardWillHide:(id)arg1;
 - (void)handleKeyboardWillShow:(id)arg1;
 - (id)init;
-- (id)initWithScrollView:(id)arg1;
+- (id)initWithDelegate:(id)arg1;
 - (BOOL)isAutoResizing;
 - (BOOL)isObservingKeyboardNotifications;
 - (id)scrollView;

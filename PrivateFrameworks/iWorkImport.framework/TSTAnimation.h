@@ -3,24 +3,24 @@
  */
 
 @interface TSTAnimation : NSObject <NSCopying> {
-    BOOL mByCell;
-    BOOL mByCellRange;
-    BOOL mByColumn;
-    BOOL mByContent;
-    BOOL mByMissingCellRange;
-    BOOL mByRow;
-    unsigned int mCellRangeCount;
-    struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } *mCellRanges;
-    BOOL mDrawsBlackAndWhite;
-    BOOL mExpandBackgroundFill;
-    BOOL mFinal;
-    int mKind;
-    TSTLayout *mLayout;
-    BOOL mReverse;
-    BOOL mShowsOverlayLayers;
-    BOOL mShowsTableChrome;
-    unsigned int mStage;
-    unsigned int mStageCount;
+    BOOL  mByCell;
+    BOOL  mByCellRange;
+    BOOL  mByColumn;
+    BOOL  mByContent;
+    BOOL  mByMissingCellRange;
+    BOOL  mByRow;
+    unsigned int  mCellRangeCount;
+    struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; } * mCellRanges;
+    BOOL  mDrawsBlackAndWhite;
+    BOOL  mExpandBackgroundFill;
+    BOOL  mFinal;
+    int  mKind;
+    TSTLayout * mLayout;
+    BOOL  mReverse;
+    BOOL  mShowsOverlayLayers;
+    BOOL  mShowsTableChrome;
+    unsigned int  mStage;
+    unsigned int  mStageCount;
 }
 
 @property (readonly) unsigned int cellRangeCount;
@@ -41,7 +41,7 @@
 @property (readonly) unsigned int stageCount;
 
 + (BOOL)deliveryStyleSupportedForExport:(unsigned int)arg1;
-+ (id)newAnimationWithLayout:(id)arg1 andCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
++ (id)newAnimationWithLayout:(id)arg1 andCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
 + (id)newAnimationWithLayout:(id)arg1 andDeliveryStyle:(unsigned int)arg2;
 + (unsigned int)p_NumberOfCellBuilds:(id)arg1;
 + (unsigned int)p_NumberOfColumnBuilds:(id)arg1;
@@ -51,8 +51,8 @@
 + (unsigned int)textureDeliveryStyleFromDeliveryString:(id)arg1;
 + (id)textureDeliveryStylesLocalized:(BOOL)arg1;
 
-- (void)addCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
-- (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })cellRangeAtIndex:(unsigned int)arg1;
+- (void)addCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })cellRangeAtIndex:(unsigned int)arg1;
 - (unsigned int)cellRangeCount;
 - (void)clearCellRanges;
 - (BOOL)clipStrokes;
@@ -67,7 +67,7 @@
 - (BOOL)enabled;
 - (BOOL)expandBackgroundFill;
 - (BOOL)final;
-- (BOOL)isHidingContentOfCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (BOOL)isHidingContentOfCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (id)layout;
 - (void)setDrawsBlackAndWhite:(BOOL)arg1;
 - (void)setExpandBackgroundFill:(BOOL)arg1;

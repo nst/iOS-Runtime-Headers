@@ -3,15 +3,15 @@
  */
 
 @interface PUPlayPauseBarItemsControllerChange : NSObject {
-    BOOL _currentPlaybackTimeDidChange;
-    BOOL _playPauseStateDidChange;
-    BOOL _playbackDurationDidChange;
+    BOOL  _currentPlaybackTimeDidChange;
+    BOOL  _playPauseStateDidChange;
+    BOOL  _playbackDurationDidChange;
 }
 
-@property (nonatomic) BOOL currentPlaybackTimeDidChange;
+@property (setter=_setCurrentPlaybackTimeDidChange:, nonatomic) BOOL currentPlaybackTimeDidChange;
 @property (nonatomic, readonly) BOOL hasChanges;
-@property (nonatomic) BOOL playPauseStateDidChange;
-@property (nonatomic) BOOL playbackDurationDidChange;
+@property (setter=_setPlayPauseStateDidChange:, nonatomic) BOOL playPauseStateDidChange;
+@property (setter=_setPlaybackDurationDidChange:, nonatomic) BOOL playbackDurationDidChange;
 
 - (void)_setCurrentPlaybackTimeDidChange:(BOOL)arg1;
 - (void)_setPlayPauseStateDidChange:(BOOL)arg1;

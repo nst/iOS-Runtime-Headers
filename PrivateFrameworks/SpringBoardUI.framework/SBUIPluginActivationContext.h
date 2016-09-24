@@ -3,8 +3,8 @@
  */
 
 @interface SBUIPluginActivationContext : NSObject {
-    int _activationEvent;
-    UIScreen *_screen;
+    int  _activationEvent;
+    UIScreen * _screen;
 }
 
 @property (nonatomic) int activationEvent;

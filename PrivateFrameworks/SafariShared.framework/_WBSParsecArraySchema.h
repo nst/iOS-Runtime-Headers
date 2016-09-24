@@ -3,7 +3,7 @@
  */
 
 @interface _WBSParsecArraySchema : WBSParsecSchema {
-    WBSParsecSchema *_elementSchema;
+    WBSParsecSchema * _elementSchema;
 }
 
 @property (nonatomic, retain) WBSParsecSchema *elementSchema;

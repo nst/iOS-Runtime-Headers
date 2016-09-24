@@ -3,10 +3,10 @@
  */
 
 @interface CoreRCXPCService : NSObject <CoreCECBusDelegate, CoreCECDeviceDelegate, CoreIRLearningSessionBridgeDelegate, CoreRCBusDelegate, CoreRCDeviceDelegate, CoreRCManagerDelegate, CoreRCXPCService, CoreRCXPCServiceCEC, CoreRCXPCServiceCECPrivate, CoreRCXPCServiceIR, CoreRCXPCServicePrivate, NSXPCListenerDelegate> {
-    NSMutableSet *_connections;
-    NSXPCListener *_listener;
-    CoreRCManagerProvider *_manager;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableSet * _connections;
+    NSXPCListener * _listener;
+    CoreRCManagerProvider * _manager;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, readonly) NSSet *connections;
@@ -53,6 +53,7 @@
 - (void)_setExtendedPropertyAsync:(id)arg1 forKey:(id)arg2 ofDevice:(id)arg3 reply:(id /* block */)arg4;
 - (void)_setOSDNameAsync:(id)arg1 forDevice:(id)arg2 reply:(id /* block */)arg3;
 - (void)_setOsdNameAsync:(id)arg1 forBus:(id)arg2 reply:(id /* block */)arg3;
+- (void)_setPairStateAsync:(BOOL)arg1 forAppleRemote:(id)arg2 reply:(id /* block */)arg3;
 - (void)_setPropertyAsync:(id)arg1 forKey:(id)arg2 ofBus:(id)arg3 reply:(id /* block */)arg4;
 - (void)_setTvLanguageCodeAsync:(id)arg1 forBus:(id)arg2 reply:(id /* block */)arg3;
 - (void)_startLearningCommandAsync:(unsigned int)arg1 withDevice:(id)arg2 reply:(id /* block */)arg3;
@@ -124,6 +125,7 @@
 - (void)setLoggingAsync:(id)arg1 reply:(id /* block */)arg2;
 - (void)setOSDNameAsync:(id)arg1 forDevice:(id)arg2 reply:(id /* block */)arg3;
 - (void)setOsdNameAsync:(id)arg1 forBus:(id)arg2 reply:(id /* block */)arg3;
+- (void)setPairStateAsync:(BOOL)arg1 forAppleRemote:(id)arg2 reply:(id /* block */)arg3;
 - (void)setPropertyAsync:(id)arg1 forKey:(id)arg2 ofBus:(id)arg3 reply:(id /* block */)arg4;
 - (void)setTvLanguageCodeAsync:(id)arg1 forBus:(id)arg2 reply:(id /* block */)arg3;
 - (void)startLearningCommandAsync:(unsigned int)arg1 withDevice:(id)arg2 reply:(id /* block */)arg3;

@@ -3,13 +3,13 @@
  */
 
 @interface EASession : NSObject {
-    EAAccessory *_accessory;
-    NSInputStream *_inputStream;
-    BOOL _openCompleted;
-    NSOutputStream *_outputStream;
-    NSString *_protocolString;
-    unsigned int _sessionID;
-    int _sock;
+    EAAccessory * _accessory;
+    NSInputStream * _inputStream;
+    BOOL  _openCompleted;
+    NSOutputStream * _outputStream;
+    NSString * _protocolString;
+    unsigned int  _sessionID;
+    int  _sock;
 }
 
 @property (nonatomic, readonly) EAAccessory *accessory;

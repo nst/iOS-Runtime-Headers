@@ -3,8 +3,8 @@
  */
 
 @interface ML3StatementCacheNode : NSObject {
-    NSObject<NSCopying> *_dictionaryKey;
-    ML3StatementCacheNode *_next;
+    NSObject<NSCopying> * _dictionaryKey;
+    ML3StatementCacheNode * _next;
 }
 
 @property (nonatomic, copy) NSObject<NSCopying> *dictionaryKey;

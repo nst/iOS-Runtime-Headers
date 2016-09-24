@@ -3,8 +3,8 @@
  */
 
 @interface CMDiagramMapper : CMDrawableMapper {
-    ODDDiagram *mDiagram;
-    CMDrawingContext *mDrawingContext;
+    ODDDiagram * mDiagram;
+    CMDrawingContext * mDrawingContext;
 }
 
 + (int)diagramTypeFromString:(id)arg1;

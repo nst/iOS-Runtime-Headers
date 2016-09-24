@@ -3,7 +3,7 @@
  */
 
 @interface CNLinkedCardsPlaceholderCell : CNPropertyPlaceholderCell {
-    <CNPropertyCellDelegate> *_delegate;
+    <CNPropertyCellDelegate> * _delegate;
 }
 
 @property (nonatomic) <CNPropertyCellDelegate> *delegate;

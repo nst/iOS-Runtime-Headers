@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDSQLiteMetadataPredicate : HDSQLitePredicate <NSCopying> {
-    BOOL _includeNullPredicate;
-    HDSQLitePredicate *_keyPredicate;
-    HDSQLitePredicate *_valuePredicate;
+@interface HDSQLiteMetadataPredicate : HDSQLitePredicate {
+    BOOL  _includeNullPredicate;
+    HDSQLitePredicate * _keyPredicate;
+    HDSQLitePredicate * _valuePredicate;
 }
 
 + (id)predicateWithMetadataKey:(id)arg1 allowedValues:(id)arg2;

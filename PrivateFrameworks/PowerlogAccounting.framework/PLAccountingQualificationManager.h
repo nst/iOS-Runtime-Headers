@@ -3,7 +3,7 @@
  */
 
 @interface PLAccountingQualificationManager : PLAccountingOwnerDependencyManager {
-    <PLAccountingQualificationManagerDelegate> *_delegate;
+    <PLAccountingQualificationManagerDelegate> * _delegate;
 }
 
 @property <PLAccountingQualificationManagerDelegate> *delegate;

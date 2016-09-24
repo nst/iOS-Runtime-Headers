@@ -3,9 +3,9 @@
  */
 
 @interface CKDPZone : PBCodable <NSCopying> {
-    NSString *_etag;
-    CKDPProtectionInfo *_protectionInfo;
-    CKDPRecordZoneIdentifier *_zoneIdentifier;
+    NSString * _etag;
+    CKDPProtectionInfo * _protectionInfo;
+    CKDPRecordZoneIdentifier * _zoneIdentifier;
 }
 
 @property (nonatomic, retain) NSString *etag;

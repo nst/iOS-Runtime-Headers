@@ -3,13 +3,13 @@
  */
 
 @interface _NSPersonNameComponentsData : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_familyName;
-    NSString *_givenName;
-    NSString *_middleName;
-    NSString *_namePrefix;
-    NSString *_nameSuffix;
-    NSString *_nickname;
-    NSPersonNameComponents *_phoneticRepresentation;
+    NSString * _familyName;
+    NSString * _givenName;
+    NSString * _middleName;
+    NSString * _namePrefix;
+    NSString * _nameSuffix;
+    NSString * _nickname;
+    NSPersonNameComponents * _phoneticRepresentation;
 }
 
 @property (copy) NSString *familyName;
@@ -27,7 +27,6 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)familyName;
-- (void)finalize;
 - (id)givenName;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

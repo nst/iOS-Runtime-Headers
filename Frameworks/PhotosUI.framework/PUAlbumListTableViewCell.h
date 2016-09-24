@@ -3,7 +3,7 @@
  */
 
 @interface PUAlbumListTableViewCell : UITableViewCell {
-    <PUAlbumListTableViewCellDelegate> *_stateChangeDelegate;
+    <PUAlbumListTableViewCellDelegate> * _stateChangeDelegate;
 }
 
 @property (nonatomic) <PUAlbumListTableViewCellDelegate> *stateChangeDelegate;

@@ -7,7 +7,7 @@
 - (float)_buttonAlpha;
 - (id)_buttonBackgroundImageForStyle:(unsigned int)arg1 controlState:(unsigned int)arg2;
 - (id)_buttonFont;
-- (struct CGSize { float x1; float x2; })_buttonSize;
+- (struct CGSize { double x1; double x2; })_buttonSize;
 - (float)_buttonVerticalSpacing;
 - (float)_labelAlpha;
 - (float)_labelVerticalSpacing;

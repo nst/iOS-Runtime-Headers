@@ -3,7 +3,7 @@
  */
 
 @interface GKFriendsDataSource : GKBasicCollectionViewDataSource {
-    int _kind;
+    int  _kind;
 }
 
 @property (nonatomic) int kind;

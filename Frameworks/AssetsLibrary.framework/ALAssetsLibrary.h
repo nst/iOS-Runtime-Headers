@@ -3,14 +3,14 @@
  */
 
 @interface ALAssetsLibrary : NSObject {
-    id _internal;
+    id  _internal;
 }
 
 @property (nonatomic, retain) ALAssetsLibraryPrivate *internal;
 
 + (struct CGImage { }*)_aspectRatioThumbnailForAssetURL:(id)arg1;
-+ (long long)_estimatedOutputFileLengthForVideoFilePath:(id)arg1 metadata:(id)arg2 exportPreset:(id)arg3 exportProperties:(id)arg4;
-+ (long long)_estimatedOutputFileLengthForVideoURL:(id)arg1 fallbackFilePath:(id)arg2 exportPreset:(id)arg3 exportProperties:(id)arg4;
++ (int)_estimatedOutputFileLengthForVideoFilePath:(id)arg1 metadata:(id)arg2 exportPreset:(id)arg3 exportProperties:(id)arg4;
++ (int)_estimatedOutputFileLengthForVideoURL:(id)arg1 fallbackFilePath:(id)arg2 exportPreset:(id)arg3 exportProperties:(id)arg4;
 + (id)_exportSessionForVideoFilePath:(id)arg1 metadata:(id)arg2 exportPreset:(id)arg3;
 + (id)_exportSessionForVideoURL:(id)arg1 fallbackFilePath:(id)arg2 exportPreset:(id)arg3;
 + (id)_filePathForVideoURL:(id)arg1 outMetadata:(id*)arg2;

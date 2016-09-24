@@ -3,7 +3,7 @@
  */
 
 @interface NNMKMessagesSyncServiceServer : NNMKSyncServiceEndpoint {
-    <NNMKMessagesSyncServiceServerDelegate> *_delegate;
+    <NNMKMessagesSyncServiceServerDelegate> * _delegate;
 }
 
 @property (nonatomic) <NNMKMessagesSyncServiceServerDelegate> *delegate;
@@ -16,6 +16,7 @@
 - (void)failedSendingProtobufWithIDSIdentifier:(id)arg1 errorCode:(int)arg2;
 - (id)initWithQueue:(id)arg1;
 - (void)readProtobufData:(id)arg1 type:(unsigned int)arg2;
+- (id)sendBatchedFetchResult:(id)arg1;
 - (id)sendInitialMessagesSync:(id)arg1;
 - (id)sendMoreMessages:(id)arg1;
 - (id)sendMoreMessagesForConversation:(id)arg1;

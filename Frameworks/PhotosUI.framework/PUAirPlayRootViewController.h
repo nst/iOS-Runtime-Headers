@@ -3,8 +3,8 @@
  */
 
 @interface PUAirPlayRootViewController : UIViewController {
-    NSArray *__childViewConstraints;
-    UIViewController *_childViewController;
+    NSArray * __childViewConstraints;
+    UIViewController * _childViewController;
 }
 
 @property (setter=_setChildViewConstraints:, nonatomic, copy) NSArray *_childViewConstraints;

@@ -3,10 +3,10 @@
  */
 
 @interface TKSmartCardUserInteractionForSecurePINVerification : TKSmartCardUserInteractionForPINOperation <NSSecureCoding> {
-    NSData *_APDU;
-    int _PINByteOffset;
-    TKSmartCardPINFormat *_PINFormat;
-    TKSmartCardSlot *_slot;
+    NSData * _APDU;
+    int  _PINByteOffset;
+    TKSmartCardPINFormat * _PINFormat;
+    TKSmartCardSlot * _slot;
 }
 
 @property (retain) NSData *APDU;

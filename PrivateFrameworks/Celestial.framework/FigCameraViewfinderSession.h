@@ -3,7 +3,7 @@
  */
 
 @interface FigCameraViewfinderSession : NSObject {
-    FigDelegateStorage *_delegateStorage;
+    FigDelegateStorage * _delegateStorage;
 }
 
 - (void)closePreviewStream;

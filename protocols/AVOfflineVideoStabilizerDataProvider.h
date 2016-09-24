@@ -5,7 +5,7 @@
 
 @required
 
-- (struct __CVBuffer { }*)copySourcePixelBufferForFrameNumber:(int)arg1 outputSampleTime:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2 stabilizer:(AVOfflineVideoStabilizer *)arg3;
-- (NSDictionary *)copySourceStabilizationMetadataForFrameNumber:(int)arg1 outputSampleTime:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2 stabilizer:(AVOfflineVideoStabilizer *)arg3;
+- (struct __CVBuffer { }*)copySourcePixelBufferForFrameNumber:(int)arg1 outputSampleTime:(struct { int x1; int x2; unsigned int x3; int x4; }*)arg2 stabilizer:(AVOfflineVideoStabilizer *)arg3;
+- (NSDictionary *)copySourceStabilizationMetadataForFrameNumber:(int)arg1 outputSampleTime:(struct { int x1; int x2; unsigned int x3; int x4; }*)arg2 stabilizer:(AVOfflineVideoStabilizer *)arg3;
 
 @end

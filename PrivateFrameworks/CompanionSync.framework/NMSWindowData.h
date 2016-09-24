@@ -3,22 +3,22 @@
  */
 
 @interface NMSWindowData : NSObject {
-    struct sqlite3_stmt { } *_addMessageInFlight;
-    struct sqlite3_stmt { } *_countPendingMessages;
-    struct sqlite3 { } *_db;
-    struct sqlite3_stmt { } *_getBytesInFlight;
-    struct sqlite3_stmt { } *_getCountInFlight;
-    struct sqlite3_stmt { } *_getExpiredMessageIDs;
-    struct sqlite3_stmt { } *_getMessageLength;
-    struct sqlite3_stmt { } *_getNextExpireDate;
-    struct sqlite3_stmt { } *_getPendingMessage;
-    struct __CFString { } *_loggingFacility;
-    NSString *_path;
-    struct sqlite3_stmt { } *_popPendingMessage;
-    struct sqlite3_stmt { } *_pushPendingMessage;
-    struct sqlite3_stmt { } *_removeMessageInFlight;
-    _SYSharedServiceDB *_sharedDB;
-    NSObject<OS_dispatch_queue> *_syncQ;
+    struct sqlite3_stmt { } * _addMessageInFlight;
+    struct sqlite3_stmt { } * _countPendingMessages;
+    struct sqlite3 { } * _db;
+    struct sqlite3_stmt { } * _getBytesInFlight;
+    struct sqlite3_stmt { } * _getCountInFlight;
+    struct sqlite3_stmt { } * _getExpiredMessageIDs;
+    struct sqlite3_stmt { } * _getMessageLength;
+    struct sqlite3_stmt { } * _getNextExpireDate;
+    struct sqlite3_stmt { } * _getPendingMessage;
+    struct __CFString { } * _loggingFacility;
+    NSString * _path;
+    struct sqlite3_stmt { } * _popPendingMessage;
+    struct sqlite3_stmt { } * _pushPendingMessage;
+    struct sqlite3_stmt { } * _removeMessageInFlight;
+    _SYSharedServiceDB * _sharedDB;
+    NSObject<OS_dispatch_queue> * _syncQ;
 }
 
 @property (nonatomic, readonly) unsigned int countOfAllMessagesInFlight;

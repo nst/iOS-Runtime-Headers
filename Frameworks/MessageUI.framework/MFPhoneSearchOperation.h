@@ -3,11 +3,11 @@
  */
 
 @interface MFPhoneSearchOperation : _MFAddressBookPropertySearchOperation <ABPredicateDelegate> {
-    struct __CFArray { } *_addresses;
-    struct __CFString { } *_countryCode;
-    struct __CFArray { } *_identifiers;
-    NSString *_searchTerm;
-    struct __CFArray { } *_uids;
+    struct __CFArray { } * _addresses;
+    struct __CFString { } * _countryCode;
+    struct __CFArray { } * _identifiers;
+    NSString * _searchTerm;
+    struct __CFArray { } * _uids;
 }
 
 @property (readonly, copy) NSString *debugDescription;

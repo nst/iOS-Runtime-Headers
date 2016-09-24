@@ -3,7 +3,7 @@
  */
 
 @interface AVItemErrorLog : NSObject <NSCopying> {
-    AVItemErrorLogInternal *_playerItemErrorLog;
+    AVItemErrorLogInternal * _playerItemErrorLog;
 }
 
 @property (nonatomic, readonly) NSArray *events;

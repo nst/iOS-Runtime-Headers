@@ -3,10 +3,10 @@
  */
 
 @interface RCDurationFormatter : NSObject {
-    NSNumberFormatter *_defaultFormatter;
-    NSNumberFormatter *_nonPaddedHourFormatter;
-    NSMutableDictionary *_positionalParameterFormatStrings;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSNumberFormatter * _defaultFormatter;
+    NSNumberFormatter * _nonPaddedHourFormatter;
+    NSMutableDictionary * _positionalParameterFormatStrings;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 + (id)_localizedDateTimeFormatForDurationFormattingStyle:(int)arg1;

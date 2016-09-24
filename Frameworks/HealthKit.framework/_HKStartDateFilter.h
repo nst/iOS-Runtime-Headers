@@ -3,8 +3,8 @@
  */
 
 @interface _HKStartDateFilter : _HKFilter {
-    NSDate *_comparisonDate;
-    unsigned int _operatorType;
+    NSDate * _comparisonDate;
+    unsigned int  _operatorType;
 }
 
 @property (nonatomic, readonly) NSDate *comparisonDate;
@@ -27,6 +27,6 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
-- (id)predicateWithHealthDaemon:(id)arg1;
+- (id)predicateWithProfile:(id)arg1;
 
 @end

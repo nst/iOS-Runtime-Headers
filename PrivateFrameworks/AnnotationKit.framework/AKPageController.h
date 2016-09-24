@@ -2,63 +2,93 @@
    Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
  */
 
-@interface AKPageController : NSObject {
-    AKController *_controller;
-    AKGeometryHelper *_geometryHelper;
-    AKLayerPresentationManager *_layerPresentationManager;
-    BOOL _layerPresentationManagerWasSetup;
-    UIView *_overlayView;
-    unsigned int _pageIndex;
-    AKPageModelController *_pageModelController;
-    BOOL _shouldPixelate;
+@interface AKPageController : NSObject <AKHighlightColorEditorControllerDelegate, AKNoteEditorControllerDelegate> {
+    AKController * _controller;
+    AKGeometryHelper * _geometryHelper;
+    AKHighlightColorEditorController * _highlightColorEditorController;
+    AKLayerPresentationManager * _layerPresentationManager;
+    BOOL  _layerPresentationManagerWasSetup;
+    NSMutableDictionary * _noteEditors;
+    UIView * _overlayView;
+    unsigned int  _pageIndex;
+    AKPageModelController * _pageModelController;
+    BOOL  _shouldPixelate;
 }
 
 @property AKController *controller;
+@property (readonly, copy) NSString *debugDescription;
 @property (readonly) <AKControllerDelegateProtocol> *delegate;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) AKGeometryHelper *geometryHelper;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) AKHighlightColorEditorController *highlightColorEditorController;
 @property (nonatomic, retain) AKLayerPresentationManager *layerPresentationManager;
 @property BOOL layerPresentationManagerWasSetup;
+@property (retain) NSMutableDictionary *noteEditors;
 @property (nonatomic, retain) UIView *overlayView;
 @property unsigned int pageIndex;
 @property (retain) AKPageModelController *pageModelController;
 @property BOOL shouldPixelate;
+@property (readonly) Class superclass;
 
 + (id)pageControllerWithController:(id)arg1 andPageModelController:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)_initWithController:(id)arg1 andPageModelController:(id)arg2;
+- (id)_popoverPresentingViewController;
 - (id)annotationsBeneathLoupe:(id)arg1;
 - (id)controller;
-- (struct CGPoint { float x1; float x2; })convertPointFromModelToOverlay:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })convertPointFromOverlayToModel:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRectFromModelToOverlay:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRectFromOverlayToModel:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGPoint { double x1; double x2; })convertPointFromModelToOverlay:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })convertPointFromOverlayToModel:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertRectFromModelToOverlay:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })convertRectFromOverlayToModel:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (int)currentModelToScreenExifOrientation;
 - (float)currentModelToScreenScaleFactor;
 - (id)delegate;
+- (unsigned int)edgeForNoteEditor:(id)arg1;
+- (void)editorController:(id)arg1 deleteAnnotation:(id)arg2;
+- (void)editorController:(id)arg1 editNote:(id)arg2;
+- (void)editorController:(id)arg1 editedAnnotation:(id)arg2 toText:(id)arg3;
+- (BOOL)editorController:(id)arg1 isRightArrowEnabledForAnnotation:(id)arg2;
+- (void)editorController:(id)arg1 setTheme:(id)arg2 forAnnotation:(id)arg3;
+- (void)editorController:(id)arg1 showEditMenuForAnnotation:(id)arg2;
 - (id)geometryHelper;
+- (BOOL)handleEditAnnotation:(id)arg1;
+- (id)highlightColorEditorController;
 - (id)initForTesting;
 - (id)layerPresentationManager;
 - (BOOL)layerPresentationManagerWasSetup;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })maxPageRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })maxPageRect;
 - (float)modelBaseScaleFactor;
-- (id)newContentSnapshotPDFDataAtScale:(float)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 forLoupeAnnotation:(id)arg3;
+- (id)newContentSnapshotPDFDataAtScale:(float)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 forLoupeAnnotation:(id)arg3;
+- (void)noteEditorDidBeginEditing:(id)arg1;
+- (void)noteEditorDidFinishEditing:(id)arg1;
+- (void)noteEditorWillDismissFromFullScreen:(id)arg1;
+- (void)noteEditorWillPresentFullScreen:(id)arg1;
+- (id)noteEditors;
+- (void)openPopoverForHighlightAnnotation:(id)arg1;
+- (void)openPopoverForNoteAnnotation:(id)arg1;
 - (id)overlayView;
 - (void)overlayWasAddedToSuperview;
 - (unsigned int)pageIndex;
 - (id)pageModelController;
+- (id)popoverPresentingViewControllerForNoteEditor:(id)arg1;
 - (void)releaseRelinquishables;
 - (BOOL)relinquishablesAreLoaded;
 - (void)setController:(id)arg1;
 - (void)setGeometryHelper:(id)arg1;
+- (void)setHighlightColorEditorController:(id)arg1;
 - (void)setLayerPresentationManager:(id)arg1;
 - (void)setLayerPresentationManagerWasSetup:(BOOL)arg1;
+- (void)setNoteEditors:(id)arg1;
 - (void)setOverlayView:(id)arg1;
 - (void)setPageIndex:(unsigned int)arg1;
 - (void)setPageModelController:(id)arg1;
 - (void)setShouldPixelate:(BOOL)arg1;
 - (void)setupRelinquishables;
 - (BOOL)shouldPixelate;
+- (id)stickyContainerForNoteEditor:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })stickyViewFrameForNoteEditor:(id)arg1;
 - (void)teardown;
 - (void)updateScaleFactor:(float)arg1 isLiveUpdate:(BOOL)arg2 forceUpdate:(BOOL)arg3;
 

@@ -3,11 +3,15 @@
  */
 
 @interface CKDPUser : PBCodable <NSCopying> {
-    CKDPUserAlias *_alias;
-    NSString *_firstName;
-    CKDPIdentifier *_identifier;
-    NSString *_lastName;
-    CKDPProtectionInfo *_protectionInfo;
+    CKDPUserAlias * _alias;
+    NSString * _firstName;
+    struct { 
+        unsigned int isInNetwork : 1; 
+    }  _has;
+    CKDPIdentifier * _identifier;
+    BOOL  _isInNetwork;
+    NSString * _lastName;
+    CKDPProtectionInfo * _protectionInfo;
 }
 
 @property (nonatomic, retain) CKDPUserAlias *alias;
@@ -15,9 +19,11 @@
 @property (nonatomic, readonly) BOOL hasAlias;
 @property (nonatomic, readonly) BOOL hasFirstName;
 @property (nonatomic, readonly) BOOL hasIdentifier;
+@property (nonatomic) BOOL hasIsInNetwork;
 @property (nonatomic, readonly) BOOL hasLastName;
 @property (nonatomic, readonly) BOOL hasProtectionInfo;
 @property (nonatomic, retain) CKDPIdentifier *identifier;
+@property (nonatomic) BOOL isInNetwork;
 @property (nonatomic, retain) NSString *lastName;
 @property (nonatomic, retain) CKDPProtectionInfo *protectionInfo;
 
@@ -31,18 +37,22 @@
 - (BOOL)hasAlias;
 - (BOOL)hasFirstName;
 - (BOOL)hasIdentifier;
+- (BOOL)hasIsInNetwork;
 - (BOOL)hasLastName;
 - (BOOL)hasProtectionInfo;
 - (unsigned int)hash;
 - (id)identifier;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isInNetwork;
 - (id)lastName;
 - (void)mergeFrom:(id)arg1;
 - (id)protectionInfo;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAlias:(id)arg1;
 - (void)setFirstName:(id)arg1;
+- (void)setHasIsInNetwork:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
+- (void)setIsInNetwork:(BOOL)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setProtectionInfo:(id)arg1;
 - (void)writeTo:(id)arg1;

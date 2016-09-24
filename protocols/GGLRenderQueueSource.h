@@ -9,6 +9,7 @@
 
 @optional
 
+- (void)didPresent;
 - (void)didReadPixels:(struct shared_ptr<ggl::BitmapData> { }*)arg1;
 
 @end

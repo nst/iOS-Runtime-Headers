@@ -3,7 +3,7 @@
  */
 
 @interface TNArchivedSheetSelection : TSPObject <TSKArchivedSelection> {
-    TNSheetSelection *mSelection;
+    TNSheetSelection * mSelection;
 }
 
 @property (readonly, copy) NSString *debugDescription;

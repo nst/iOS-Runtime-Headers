@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDClientConnection : NSObject <HMMessageReceiver> {
-    NSMutableArray *_commandsBeingExecuted;
-    HMDHomeManager *_homeManager;
-    HMMessageDispatcher *_msgDispatcher;
-    NSObject<OS_dispatch_queue> *_workQueue;
+@interface HMDClientConnection : NSObject <HMFMessageReceiver> {
+    NSMutableArray * _commandsBeingExecuted;
+    HMDHomeManager * _homeManager;
+    HMFMessageDispatcher * _msgDispatcher;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic, retain) NSMutableArray *commandsBeingExecuted;
@@ -16,15 +16,17 @@
 @property (nonatomic) HMDHomeManager *homeManager;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
-@property (nonatomic, retain) HMMessageDispatcher *msgDispatcher;
+@property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
 - (void)_handleDaemonRequest:(id)arg1;
 - (void)_handleSiriCommand:(id)arg1;
+- (void)_handleSiriSyncDataRequest:(id)arg1;
 - (void)_registerForMessages;
 - (id)commandsBeingExecuted;
+- (void)dealloc;
 - (id)homeManager;
 - (id)initWithHomeManager:(id)arg1 queue:(id)arg2 messageDispatcher:(id)arg3;
 - (id)messageReceiveQueue;

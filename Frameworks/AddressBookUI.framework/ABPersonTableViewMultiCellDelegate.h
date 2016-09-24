@@ -3,10 +3,10 @@
  */
 
 @interface ABPersonTableViewMultiCellDelegate : NSObject <ABDatePickerViewControllerDismissDelegate, ABMultiCellContentViewUpdateDelegate, ABPersonTableHeaderViewDelegate> {
-    ABPersonTableViewDataSource *_dataSource;
-    UIDatePicker *_datePicker;
-    ABPersonPickersDelegate *_pickersDelegate;
-    ABStyleProvider *_styleProvider;
+    ABPersonTableViewDataSource * _dataSource;
+    UIDatePicker * _datePicker;
+    ABPersonPickersDelegate * _pickersDelegate;
+    ABStyleProvider * _styleProvider;
 }
 
 @property (nonatomic) ABPersonTableViewDataSource *dataSource;

@@ -5,9 +5,9 @@
 @interface GEOCMTicketSubmissionResponse : PBCodable <NSCopying> {
     struct { 
         unsigned int isNotificationSupported : 1; 
-    } _has;
-    BOOL _isNotificationSupported;
-    NSString *_ticketId;
+    }  _has;
+    BOOL  _isNotificationSupported;
+    NSString * _ticketId;
 }
 
 @property (nonatomic) BOOL hasIsNotificationSupported;

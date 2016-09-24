@@ -3,11 +3,11 @@
  */
 
 @interface NEProfileIngestion : NSObject <NEProfileIngestionDelegate> {
-    NSString *_clientName;
-    NSMutableArray *_currentConfigurations;
-    NEConfiguration *_ingestedConfiguration;
-    NEConfigurationManager *_manager;
-    NSString *_payloadType;
+    NSString * _clientName;
+    NSMutableArray * _currentConfigurations;
+    NEConfiguration * _ingestedConfiguration;
+    NEConfigurationManager * _manager;
+    NSString * _payloadType;
 }
 
 @property (readonly) NSString *clientName;

@@ -3,9 +3,9 @@
  */
 
 @interface ML3SuicidePact : NSObject {
-    int _notifyToken;
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    NSMutableSet *_signatures;
+    int  _notifyToken;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    NSMutableSet * _signatures;
 }
 
 @property (nonatomic, readonly) BOOL isSigned;

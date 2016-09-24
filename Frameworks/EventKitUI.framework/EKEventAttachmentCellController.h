@@ -3,11 +3,11 @@
  */
 
 @interface EKEventAttachmentCellController : NSObject <UIDocumentInteractionControllerDelegate> {
-    EKAttachment *_attachment;
-    EKEventAttachmentCell *_cell;
-    <EKEventAttachmentCellControllerDelegate> *_delegate;
-    id _downloadID;
-    BOOL _sourceIsManaged;
+    EKAttachment * _attachment;
+    EKEventAttachmentCell * _cell;
+    <EKEventAttachmentCellControllerDelegate> * _delegate;
+    id  _downloadID;
+    BOOL  _sourceIsManaged;
 }
 
 @property (nonatomic, retain) EKAttachment *attachment;
@@ -19,7 +19,10 @@
 @property (nonatomic) BOOL sourceIsManaged;
 @property (readonly) Class superclass;
 
++ (id)_attachmentDownloadErrorLocalizedString;
 + (BOOL)_attachmentIsViewable:(id)arg1;
++ (id)_cannotOpenAttachmentLocalizedString;
++ (id)_okLocalizedString;
 + (id)cellControllersForAttachments:(id)arg1 givenExistingControllers:(id)arg2;
 
 - (void).cxx_destruct;

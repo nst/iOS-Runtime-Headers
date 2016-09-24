@@ -3,8 +3,8 @@
  */
 
 @interface VKPGenericShield : PBCodable <NSCopying> {
-    int _style;
-    NSMutableArray *_variants;
+    int  _style;
+    NSMutableArray * _variants;
 }
 
 @property (nonatomic) int style;

@@ -3,8 +3,8 @@
  */
 
 @interface EDTableStyle : NSObject <NSCopying> {
-    NSString *mName;
-    EDKeyedCollection *mTableStyleElements;
+    NSString * mName;
+    EDKeyedCollection * mTableStyleElements;
 }
 
 + (id)tableStyle;

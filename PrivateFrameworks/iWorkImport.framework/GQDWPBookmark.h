@@ -3,9 +3,9 @@
  */
 
 @interface GQDWPBookmark : GQDWPInlineList {
-    BOOL mHidden;
-    struct __CFString { } *mName;
-    BOOL mRanged;
+    BOOL  mHidden;
+    struct __CFString { } * mName;
+    BOOL  mRanged;
 }
 
 - (void)dealloc;

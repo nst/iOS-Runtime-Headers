@@ -3,13 +3,13 @@
  */
 
 @interface CalDAVContainerChecksumSyncTaskGroup : CalDAVContainerSyncTaskGroup {
-    CoreDAVItemParserMapping *_bestServerChecksumVersion;
-    NSDictionary *_localURLsToChecksums;
-    BOOL _mismatchDetected;
-    NSArray *_preferredChecksumVersions;
-    NSMutableDictionary *_serverURLsToChecksums;
-    NSString *_unusedCTag;
-    NSString *_unusedSyncToken;
+    CoreDAVItemParserMapping * _bestServerChecksumVersion;
+    NSDictionary * _localURLsToChecksums;
+    BOOL  _mismatchDetected;
+    NSArray * _preferredChecksumVersions;
+    NSMutableDictionary * _serverURLsToChecksums;
+    NSString * _unusedCTag;
+    NSString * _unusedSyncToken;
 }
 
 @property (nonatomic, retain) CoreDAVItemParserMapping *bestServerChecksumVersion;

@@ -3,12 +3,12 @@
  */
 
 @interface CertInfoTrustSummaryController : UITableViewController {
-    <CertInfoTrustSummaryControllerDelegate> *_delegate;
-    <CertInfoTrustDescription> *_description;
-    UITableViewCell *_descriptionCell;
-    UIBarButtonItem *_doneButton;
-    UITableViewCell *_headerCell;
-    unsigned int _showsDoneButton;
+    <CertInfoTrustSummaryControllerDelegate> * _delegate;
+    <CertInfoTrustDescription> * _description;
+    UITableViewCell * _descriptionCell;
+    UIBarButtonItem * _doneButton;
+    UITableViewCell * _headerCell;
+    unsigned int  _showsDoneButton;
 }
 
 @property (nonatomic) <CertInfoTrustSummaryControllerDelegate> *delegate;

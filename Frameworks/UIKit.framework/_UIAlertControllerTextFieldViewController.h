@@ -3,13 +3,13 @@
  */
 
 @interface _UIAlertControllerTextFieldViewController : UICollectionViewController {
-    UICollectionViewFlowLayout *_collectionViewLayout;
-    <_UIAlertControllerTextFieldViewControllerContaining> *_container;
-    BOOL _hidden;
-    BOOL _textFieldsCanBecomeFirstResponder;
-    UIAlertControllerVisualStyle *_visualStyle;
-    NSMutableArray *textFieldViews;
-    NSMutableArray *textFields;
+    UICollectionViewFlowLayout * _collectionViewLayout;
+    <_UIAlertControllerTextFieldViewControllerContaining> * _container;
+    BOOL  _hidden;
+    BOOL  _textFieldsCanBecomeFirstResponder;
+    UIAlertControllerVisualStyle * _visualStyle;
+    NSMutableArray * textFieldViews;
+    NSMutableArray * textFields;
 }
 
 @property (nonatomic) <_UIAlertControllerTextFieldViewControllerContaining> *container;
@@ -32,6 +32,7 @@
 - (int)numberOfSectionsInCollectionView:(id)arg1;
 - (int)numberOfTextFields;
 - (void)removeAllTextFields;
+- (BOOL)resignFirstResponder;
 - (void)setContainer:(id)arg1;
 - (void)setHidden:(BOOL)arg1;
 - (void)setTextFieldsCanBecomeFirstResponder:(BOOL)arg1;

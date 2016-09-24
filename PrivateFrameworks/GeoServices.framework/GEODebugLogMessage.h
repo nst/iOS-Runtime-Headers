@@ -3,7 +3,7 @@
  */
 
 @interface GEODebugLogMessage : PBCodable <NSCopying> {
-    NSString *_callStack;
+    NSString * _callStack;
 }
 
 @property (nonatomic, retain) NSString *callStack;

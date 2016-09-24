@@ -3,8 +3,8 @@
  */
 
 @interface BLTAWDMetric : NSObject {
-    id _metric;
-    AWDMetricContainer *_metricContainer;
+    id  _metric;
+    AWDMetricContainer * _metricContainer;
 }
 
 @property (nonatomic, readonly, retain) id metric;

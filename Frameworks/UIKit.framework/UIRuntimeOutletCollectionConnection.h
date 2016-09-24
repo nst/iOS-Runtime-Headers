@@ -3,8 +3,8 @@
  */
 
 @interface UIRuntimeOutletCollectionConnection : UIRuntimeConnection {
-    BOOL addsContentToExistingCollection;
-    NSString *runtimeCollectionClassName;
+    BOOL  addsContentToExistingCollection;
+    NSString * runtimeCollectionClassName;
 }
 
 @property BOOL addsContentToExistingCollection;

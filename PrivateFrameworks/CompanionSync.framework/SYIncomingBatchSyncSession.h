@@ -3,17 +3,16 @@
  */
 
 @interface SYIncomingBatchSyncSession : SYIncomingFullSyncSession {
-    id /* block */ _completion;
-    BOOL _hasReceivedEndSync;
-    NSMutableArray *_incomingBatchQueue;
-    struct os_lock_handoff_s { 
-        struct _os_lock_type_handoff_s {} *osl_type; 
-        unsigned long _osl_handoff_opaque[1]; 
-    } _queueLock;
-    NSMutableIndexSet *_receivedBatchIndices;
-    NSObject<OS_dispatch_source> *_sessionTimer;
-    BOOL canRestart;
-    BOOL canRollback;
+    id /* block */  _completion;
+    BOOL  _hasReceivedEndSync;
+    NSMutableArray * _incomingBatchQueue;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _queueLock;
+    NSMutableIndexSet * _receivedBatchIndices;
+    NSObject<OS_dispatch_source> * _sessionTimer;
+    BOOL  canRestart;
+    BOOL  canRollback;
 }
 
 - (void).cxx_destruct;

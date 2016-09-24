@@ -3,9 +3,9 @@
  */
 
 @interface MSASAssetCollectionChange : NSObject {
-    NSString *_GUID;
-    NSString *_ctag;
-    BOOL _wasDeleted;
+    NSString * _GUID;
+    NSString * _ctag;
+    BOOL  _wasDeleted;
 }
 
 @property (nonatomic, retain) NSString *GUID;

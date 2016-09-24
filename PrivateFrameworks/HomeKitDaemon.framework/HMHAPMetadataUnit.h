@@ -3,9 +3,9 @@
  */
 
 @interface HMHAPMetadataUnit : NSObject <NSSecureCoding> {
-    NSString *_localizedDescription;
-    NSString *_name;
-    NSString *_unitDescription;
+    NSString * _localizedDescription;
+    NSString * _name;
+    NSString * _unitDescription;
 }
 
 @property (nonatomic, retain) NSString *localizedDescription;

@@ -3,10 +3,10 @@
  */
 
 @interface ICExclusiveLock : NSObject <NSLocking> {
-    NSString *_cachePath;
-    int _fd;
-    NSString *_fullPath;
-    NSString *_name;
+    NSString * _cachePath;
+    int  _fd;
+    NSString * _fullPath;
+    NSString * _name;
 }
 
 - (void).cxx_destruct;

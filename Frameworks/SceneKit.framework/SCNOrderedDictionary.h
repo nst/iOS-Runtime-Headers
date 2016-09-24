@@ -3,8 +3,8 @@
  */
 
 @interface SCNOrderedDictionary : NSObject {
-    NSMutableDictionary *_keyValues;
-    NSMutableArray *_keys;
+    NSMutableDictionary * _keyValues;
+    NSMutableArray * _keys;
 }
 
 - (void)_setupFrom:(id)arg1;

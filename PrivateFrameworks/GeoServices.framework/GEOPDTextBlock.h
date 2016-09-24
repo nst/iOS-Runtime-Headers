@@ -3,8 +3,8 @@
  */
 
 @interface GEOPDTextBlock : PBCodable <NSCopying> {
-    NSString *_text;
-    NSString *_title;
+    NSString * _text;
+    NSString * _title;
 }
 
 @property (nonatomic, readonly) BOOL hasText;

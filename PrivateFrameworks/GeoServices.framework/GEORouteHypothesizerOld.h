@@ -3,27 +3,27 @@
  */
 
 @interface GEORouteHypothesizerOld : NSObject <GEOETAUpdaterDelegate, GEORouteHypothesizerUpdaterDelegate> {
-    NSDate *_arrivalDate;
-    GEOETARoute *_baselineETARoute;
-    <GEORouteHypothesizerDelegate> *_delegate;
-    NSDate *_departureDate;
-    GEOComposedWaypoint *_destination;
-    unsigned int _etaUpdateFrequency;
-    double _etaUpdateInterval;
-    GEOETAUpdater *_etaUpdater;
-    GEORoute *_existingRoute;
-    GEODirectionsRequestFeedback *_feedback;
-    id /* block */ _handler;
-    GEORouteHypothesisOld *_hypothesis;
-    NSDate *_lastETARequestDate;
-    GEOLocation *_lastLocation;
-    GEOETARoute *_liveETARoute;
-    GEOLocationShifter *_locationShifter;
-    GEORouteAttributes *_routeAttributes;
-    GEOComposedWaypoint *_source;
-    NSDate *_suggestedNextUpdateDate;
-    GEORouteHypothesizerUpdater *_updater;
-    NSData *_usualRouteData;
+    NSDate * _arrivalDate;
+    GEOETARoute * _baselineETARoute;
+    <GEORouteHypothesizerDelegate> * _delegate;
+    NSDate * _departureDate;
+    GEOComposedWaypoint * _destination;
+    unsigned int  _etaUpdateFrequency;
+    double  _etaUpdateInterval;
+    GEOETAUpdater * _etaUpdater;
+    GEORoute * _existingRoute;
+    GEODirectionsRequestFeedback * _feedback;
+    id /* block */  _handler;
+    GEORouteHypothesisOld * _hypothesis;
+    NSDate * _lastETARequestDate;
+    GEOLocation * _lastLocation;
+    GEOETARoute * _liveETARoute;
+    GEOLocationShifter * _locationShifter;
+    GEORouteAttributes * _routeAttributes;
+    GEOComposedWaypoint * _source;
+    NSDate * _suggestedNextUpdateDate;
+    GEORouteHypothesizerUpdater * _updater;
+    NSData * _usualRouteData;
 }
 
 @property (nonatomic, readonly) NSDate *arrivalDate;
@@ -48,6 +48,7 @@
 - (void)_updateETAWithRouteMatch:(id)arg1;
 - (void)_updateLocation:(id)arg1 hypothesisHandler:(id /* block */)arg2;
 - (void)_updateLocationAndETAUpdateInterval;
+- (void)addRouteAttributes:(id)arg1;
 - (id)arrivalDate;
 - (void)dealloc;
 - (id)delegate;

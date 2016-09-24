@@ -3,7 +3,7 @@
  */
 
 @interface _CNAutocompleteObservableBuilderBatchingHelper : NSObject {
-    NSArray *_batches;
+    NSArray * _batches;
 }
 
 @property (nonatomic, readonly) NSArray *batches;

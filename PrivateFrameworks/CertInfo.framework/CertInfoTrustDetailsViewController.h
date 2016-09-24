@@ -3,7 +3,7 @@
  */
 
 @interface CertInfoTrustDetailsViewController : UIViewController {
-    NSArray *_trustProperties;
+    NSArray * _trustProperties;
 }
 
 @property (nonatomic, retain) NSArray *trustProperties;

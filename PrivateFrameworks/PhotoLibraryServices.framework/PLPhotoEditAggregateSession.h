@@ -3,12 +3,12 @@
  */
 
 @interface PLPhotoEditAggregateSession : NSObject {
-    BOOL __autoCropAdjusted;
-    BOOL __autoCropReset;
-    BOOL __hasCropSuggestion;
-    BOOL _pluginSaved;
-    BOOL _pluginStarted;
-    BOOL _toggledOriginal;
+    BOOL  __autoCropAdjusted;
+    BOOL  __autoCropReset;
+    BOOL  __hasCropSuggestion;
+    BOOL  _pluginSaved;
+    BOOL  _pluginStarted;
+    BOOL  _toggledOriginal;
 }
 
 @property (setter=_setAutoCropAdjusted:, nonatomic) BOOL _autoCropAdjusted;

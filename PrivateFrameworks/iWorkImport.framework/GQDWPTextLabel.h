@@ -3,9 +3,9 @@
  */
 
 @interface GQDWPTextLabel : NSObject {
-    int mFirst;
-    struct __CFString { } *mFormat;
-    int mLabelType;
+    int  mFirst;
+    struct __CFString { } * mFormat;
+    int  mLabelType;
 }
 
 - (void)dealloc;

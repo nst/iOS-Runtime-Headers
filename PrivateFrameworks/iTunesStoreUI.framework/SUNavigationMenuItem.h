@@ -3,9 +3,9 @@
  */
 
 @interface SUNavigationMenuItem : NSObject <NSCopying> {
-    SUItemContentRating *_contentRating;
-    NSString *_title;
-    NSURL *_url;
+    SUItemContentRating * _contentRating;
+    NSString * _title;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

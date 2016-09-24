@@ -3,12 +3,12 @@
  */
 
 @interface QLWordProcessorPrintPageRenderer : QLWebViewPrintPageHelper {
-    UIWebPaginationInfo *_paginationInfo;
+    UIWebPaginationInfo * _paginationInfo;
 }
 
+- (void).cxx_destruct;
 - (id)_paginationInfo;
-- (void)dealloc;
 - (int)numberOfPages;
-- (id)pdfDataForPageAtIndex:(int)arg1 printingDone:(BOOL*)arg2;
+- (id)pdfDataForPageAtIndex:(int)arg1;
 
 @end

@@ -2,14 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartDrawableInfo : TSDDrawableInfo <TSCECalculationEngineRegistration, TSCHStyleSwapSupporting, TSDMixing, TSDReducableInfo, TSKCustomFormatContainingInfo, TSKModel, TSKSearchable, TSPCopying, TSSPresetSource, TSSStyleClient> {
-    TSCHChartInfo *mChart;
-    TSCHChunkManager *mChunkManager;
-    TSPObject<TSCHMediatorProvider> *mMediatorPersistentObject;
+@interface TSCHChartDrawableInfo : TSDDrawableInfo <TSCECalculationEngineRegistration, TSCHStyleSwapSupporting, TSDCompatibilityAwareMediaContainer, TSDMixing, TSDReducibleImageContainer, TSKCustomFormatContainingInfo, TSKModel, TSKSearchable, TSPCopying, TSSPresetSource, TSSStyleClient> {
+    TSCHChartInfo * mChart;
+    TSCHChunkManager * mChunkManager;
+    TSPObject<TSCHMediatorProvider> * mMediatorPersistentObject;
 }
 
 @property (nonatomic, readonly) TSCHChartInfo *chart;
 @property (nonatomic, readonly) TSCHChunkManager *chunkManager;
+@property (nonatomic, readonly) NSDictionary *datasForReplacingMediaContentsWithAssociatedHints;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -21,6 +22,8 @@
 + (id)presetKinds;
 
 - (void)acceptVisitor:(id)arg1;
+- (id)additionalObjectsToCopy;
+- (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 - (id)animationFilters;
 - (id)applyStyleSwapTuple:(id)arg1;
 - (id)applyStyleSwapTuples:(id)arg1;
@@ -32,15 +35,14 @@
 - (id)childInfos;
 - (unsigned int)chunkCountForTextureDeliveryStyle:(unsigned int)arg1 animationFilter:(id)arg2;
 - (id)chunkManager;
-- (id)commandToReplaceImageData:(id)arg1 withReducedImageData:(id)arg2 associatedHint:(id)arg3;
 - (id)componentRootObject;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
 - (int)elementKind;
+- (struct __CFUUID { }*)formulaOwnerID;
 - (id)geometry;
 - (BOOL)hasBackgroundLayerForPieChart;
 - (BOOL)hasReferenceLines;
-- (id)imageDatasForReducingFileSizeWithAssociatedHints;
 - (id)infoGeometryForVisiblePositioningInfoGeometry:(id)arg1;
 - (id)initFromPreUFFArchiveWithUnarchiver:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;
@@ -56,16 +58,19 @@
 - (id)initWithContext:(id)arg1 chartType:(id)arg2 legendShowing:(id)arg3 circumscribingFrame:(id)arg4 stylePreset:(id)arg5 privateSeriesStyles:(id)arg6 chartNonStyle:(id)arg7 legendNonStyle:(id)arg8 valueAxisNonStyles:(id)arg9 categoryAxisNonStyles:(id)arg10 seriesNonStyles:(id)arg11 refLineNonStylesMap:(id)arg12 refLineStylesMap:(id)arg13;
 - (BOOL)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
 - (BOOL)isEquivalentForSerializationRoundTrip:(id)arg1;
+- (BOOL)isSelectable;
 - (BOOL)isVisibleAtBeginningOfMagicChartBuildForDeliveryStyle:(unsigned int)arg1 animationFilter:(id)arg2;
 - (Class)layoutClass;
 - (id)localizedChunkNameForTextureDeliveryStyle:(unsigned int)arg1 animationFilter:(id)arg2 chunkIndex:(unsigned int)arg3;
+- (int)mediaCompatibilityTypeForData:(id)arg1 associatedHint:(id)arg2;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
 - (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (unsigned int)multiDataSetIndex;
 - (id)objectToArchiveInDependencyTracker;
-- (id)p_copyFor3DAs2DWithContext:(id)arg1 chartFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 legendFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (id)p_copyFor3DAs2DWithContext:(id)arg1 chartFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 legendFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
 - (id)p_drawableGeometry;
 - (void)p_setDrawableGeometry:(id)arg1 clearObjectPlaceholderFlag:(BOOL)arg2;
+- (void)reassignPasteboardCustomFormatKeys;
 - (id)referencedStyles;
 - (BOOL)registerLast;
 - (void)registerWithCalculationEngineForDocumentLoad:(id)arg1;
@@ -75,18 +80,19 @@
 - (void)saveToArchiver:(id)arg1;
 - (void)setGeometry:(id)arg1;
 - (void)setGeometry:(id)arg1 omitLegendResize:(BOOL)arg2;
-- (void)setInsertionCenterPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setInsertionCenterPosition:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setPersistentMediator:(id)arg1;
 - (BOOL)shouldAddMultiDataBuildWhenAddingToDocument;
 - (id)styleOwnerFromSwapType:(int)arg1 andIndex:(unsigned int)arg2;
 - (BOOL)supportsHyperlinks;
-- (struct CGSize { float x1; float x2; })targetSizeForImageData:(id)arg1 associatedHint:(id)arg2;
+- (struct CGSize { double x1; double x2; })targetSizeForImageData:(id)arg1 associatedHint:(id)arg2;
 - (unsigned int)textureDeliveryStyleFromDeliveryString:(id)arg1;
 - (id)textureDeliveryStylesLocalized:(BOOL)arg1 animationFilter:(id)arg2;
-- (void)tsaMoveToPosition:(struct CGPoint { float x1; float x2; })arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (id)transformedGeometryWithTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1 inBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)tsaMoveToPosition:(struct CGPoint { double x1; double x2; })arg1 size:(struct CGSize { double x1; double x2; })arg2;
 - (void)unregisterFromCalculationEngine:(id)arg1;
 - (void)upgradeFormatsForCustomFormatListU2_0;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleBoundsForPositioning;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleBoundsForPositioning;
 - (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
 - (void)willBeAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;

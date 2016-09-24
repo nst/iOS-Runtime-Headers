@@ -3,7 +3,7 @@
  */
 
 @interface HDSQLiteNullPredicate : HDSQLitePropertyPredicate <NSCopying> {
-    BOOL _matchesNull;
+    BOOL  _matchesNull;
 }
 
 @property (nonatomic, readonly) BOOL matchesNull;

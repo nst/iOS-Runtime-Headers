@@ -3,20 +3,20 @@
  */
 
 @interface CalDAVCalendarPropertyRefreshOperation : CalDAVOperation <CoreDAVContainerInfoSyncProvider, CoreDAVContainerInfoTaskGroupDelegate, CoreDAVPropPatchTaskDelegate, CoreDAVTaskGroupDelegate> {
-    NSString *_calendarHomeSyncToken;
-    NSMutableDictionary *_ctags;
-    BOOL _didFinish;
-    BOOL _didMakeCalendars;
-    BOOL _forceClearCalendarHomeSyncToken;
-    BOOL _isSecondRefresh;
-    NSMutableSet *_localCalendarsWithNoPath;
-    int _nextCalendarOrder;
-    NSObject<OS_dispatch_group> *_outstandingTasksGroup;
-    NSMutableDictionary *_pathToLocalCalendar;
-    NSError *_savedError;
-    NSMutableDictionary *_syncTokens;
-    NSMutableSet *_updatedCalendars;
-    BOOL _useCalendarHomeSyncReport;
+    NSString * _calendarHomeSyncToken;
+    NSMutableDictionary * _ctags;
+    BOOL  _didFinish;
+    BOOL  _didMakeCalendars;
+    BOOL  _forceClearCalendarHomeSyncToken;
+    BOOL  _isSecondRefresh;
+    NSMutableSet * _localCalendarsWithNoPath;
+    int  _nextCalendarOrder;
+    NSObject<OS_dispatch_group> * _outstandingTasksGroup;
+    NSMutableDictionary * _pathToLocalCalendar;
+    NSError * _savedError;
+    NSMutableDictionary * _syncTokens;
+    NSMutableSet * _updatedCalendars;
+    BOOL  _useCalendarHomeSyncReport;
 }
 
 @property (nonatomic, retain) NSString *calendarHomeSyncToken;

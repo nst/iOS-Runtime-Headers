@@ -3,10 +3,10 @@
  */
 
 @interface SULegacyClientBridge : NSObject <MFMailComposeViewControllerDelegate, SUOverlayBackgroundDelegate> {
-    SUClientInterface *_clientInterface;
-    SUOverlayBackgroundViewController *_overlayBackgroundViewController;
-    SUPreviewOverlayViewController *_previewOverlayViewController;
-    UITabBarController *_rootViewController;
+    SUClientInterface * _clientInterface;
+    SUOverlayBackgroundViewController * _overlayBackgroundViewController;
+    SUPreviewOverlayViewController * _previewOverlayViewController;
+    UITabBarController * _rootViewController;
 }
 
 @property (nonatomic, readonly) SUClientInterface *clientInterface;

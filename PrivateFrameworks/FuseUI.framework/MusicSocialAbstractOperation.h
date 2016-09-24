@@ -3,14 +3,14 @@
  */
 
 @interface MusicSocialAbstractOperation : NSOperation {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    long long _artistID;
-    NSObject<OS_dispatch_queue> *_calloutSerialQueue;
-    BOOL _follow;
-    BOOL _isExecuting;
-    BOOL _isFinished;
-    ISLoadURLBagOperation *_loadURLBagOperation;
-    MusicSocialOperationResponse *_socialResponse;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    int  _artistID;
+    NSObject<OS_dispatch_queue> * _calloutSerialQueue;
+    BOOL  _follow;
+    BOOL  _isExecuting;
+    BOOL  _isFinished;
+    ISLoadURLBagOperation * _loadURLBagOperation;
+    MusicSocialOperationResponse * _socialResponse;
 }
 
 @property (nonatomic, readonly) MusicSocialOperationResponse *socialResponse;

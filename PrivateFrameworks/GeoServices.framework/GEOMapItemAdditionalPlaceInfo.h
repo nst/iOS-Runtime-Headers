@@ -3,7 +3,7 @@
  */
 
 @interface GEOMapItemAdditionalPlaceInfo : NSObject {
-    GEOPlace *_place;
+    GEOPlace * _place;
 }
 
 @property (nonatomic, readonly) double areaInMeters;

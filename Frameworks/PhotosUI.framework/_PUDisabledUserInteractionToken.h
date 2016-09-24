@@ -3,8 +3,8 @@
  */
 
 @interface _PUDisabledUserInteractionToken : NSObject {
-    NSString *_identifier;
-    int _reason;
+    NSString * _identifier;
+    int  _reason;
 }
 
 @property (nonatomic, copy) NSString *identifier;

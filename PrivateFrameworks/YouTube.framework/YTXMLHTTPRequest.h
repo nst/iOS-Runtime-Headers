@@ -3,9 +3,9 @@
  */
 
 @interface YTXMLHTTPRequest : XMLSAXHTTPRequest {
-    NSMutableURLRequest *_deferredRequest;
-    BOOL _needsAccountAuth;
-    BOOL _needsHostHeader;
+    NSMutableURLRequest * _deferredRequest;
+    BOOL  _needsAccountAuth;
+    BOOL  _needsHostHeader;
 }
 
 @property (nonatomic) BOOL needsAccountAuth;

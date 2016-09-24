@@ -3,10 +3,10 @@
  */
 
 @interface TSDInstantAlphaBinaryBitmap : NSObject {
-    char *mData;
-    int mHeight;
-    int mRowBytes;
-    int mWidth;
+    char * mData;
+    int  mHeight;
+    int  mRowBytes;
+    int  mWidth;
 }
 
 @property (nonatomic, readonly) char *data;

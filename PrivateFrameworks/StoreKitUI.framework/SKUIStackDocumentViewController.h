@@ -2,17 +2,17 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIStackDocumentViewController : SKUIViewController <SKUICollectionViewPullToRefreshDelegate, SKUIDocumentViewController, SKUIIndexBarControlControllerDataSource, SKUIIndexBarControlControllerDelegate, SKUIIndexBarEntryListControllerDelegate, SKUIModalSourceViewProvider, SKUIStorePageSectionsDelegate, SKUIViewControllerTesting> {
-    IKAppDocument *_document;
-    NSArray *_entryListControllers;
-    BOOL _hasResetState;
-    SKUIIndexBarControlController *_indexBarControlController;
-    int _lastNeedsMoreCount;
-    int _layoutStyle;
-    SKUIResourceLoader *_resourceLoader;
-    SKUIStorePageSectionsViewController *_sectionsViewController;
-    SKUIStackTemplateElement *_templateElement;
-    NSMapTable *_viewElementToEntryListController;
+@interface SKUIStackDocumentViewController : SKUIViewController <SKUICollectionViewPullToRefreshDelegate, SKUIDocumentViewController, SKUIIndexBarControlControllerDataSource, SKUIIndexBarControlControllerDelegate, SKUIIndexBarEntryListControllerDelegate, SKUIModalSourceViewProvider, SKUIResourceLoaderDelegate, SKUIStorePageSectionsDelegate, SKUIViewControllerTesting> {
+    IKAppDocument * _document;
+    NSArray * _entryListControllers;
+    BOOL  _hasResetState;
+    SKUIIndexBarControlController * _indexBarControlController;
+    int  _lastNeedsMoreCount;
+    int  _layoutStyle;
+    SKUIResourceLoader * _resourceLoader;
+    SKUIStorePageSectionsViewController * _sectionsViewController;
+    SKUIStackTemplateElement * _templateElement;
+    NSMapTable * _viewElementToEntryListController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -59,9 +59,13 @@
 - (int)numberOfSectionsInIndexBarControlController:(id)arg1;
 - (BOOL)performTestWithName:(id)arg1 options:(id)arg2;
 - (void)refresh:(id)arg1 refreshControl:(id)arg2;
+- (void)resourceLoader:(id)arg1 didLoadAllForReason:(int)arg2;
+- (void)resourceLoaderDidBeginLoading:(id)arg1;
 - (id)sectionsViewController;
-- (void)sectionsViewController:(id)arg1 willScrollToOffset:(struct CGPoint { float x1; float x2; })arg2 visibleRange:(struct SKUIIndexPathRange { int x1; int x2; int x3; int x4; })arg3;
-- (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)sectionsViewController:(id)arg1 willScrollToOffset:(struct CGPoint { double x1; double x2; })arg2 visibleRange:(struct SKUIIndexPathRange { int x1; int x2; int x3; int x4; })arg3;
+- (void)setPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)skui_viewWillAppear:(BOOL)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 
 @end

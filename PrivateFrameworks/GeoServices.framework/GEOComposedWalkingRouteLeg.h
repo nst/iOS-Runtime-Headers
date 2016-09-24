@@ -3,8 +3,8 @@
  */
 
 @interface GEOComposedWalkingRouteLeg : GEOComposedRouteLeg {
-    <GEOTransitRoutingIncidentMessage> *_transitRouteDetailsIncidentMessage;
-    <GEOTransitRoutingIncidentMessage> *_transitSteppingIncidentMessage;
+    <GEOTransitRoutingIncidentMessage> * _transitRouteDetailsIncidentMessage;
+    <GEOTransitRoutingIncidentMessage> * _transitSteppingIncidentMessage;
 }
 
 @property (nonatomic, readonly) GEOComposedTransitWalkingRouteStep *arrivalStep;

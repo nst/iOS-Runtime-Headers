@@ -3,21 +3,21 @@
  */
 
 @interface VMUProcInfo : NSObject {
-    NSArray *_arguments;
-    NSArray *_envVars;
-    NSString *_firstArg;
-    NSString *_name;
-    BOOL _needTaskPortDealloc;
-    int _pid;
-    int _ppid;
-    NSString *_procTableName;
-    NSString *_realAppName;
-    NSString *_requestedAppName;
+    NSArray * _arguments;
+    NSArray * _envVars;
+    NSString * _firstArg;
+    NSString * _name;
+    BOOL  _needTaskPortDealloc;
+    int  _pid;
+    int  _ppid;
+    NSString * _procTableName;
+    NSString * _realAppName;
+    NSString * _requestedAppName;
     struct timeval { 
         int tv_sec; 
         int tv_usec; 
-    } _startTime;
-    unsigned int _task;
+    }  _startTime;
+    unsigned int  _task;
 }
 
 + (id)getProcessIds;

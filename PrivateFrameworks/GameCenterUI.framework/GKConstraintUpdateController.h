@@ -3,7 +3,7 @@
  */
 
 @interface GKConstraintUpdateController : NSObject {
-    NSPointerArray *_constraintsToUpdate;
+    NSPointerArray * _constraintsToUpdate;
 }
 
 @property (nonatomic, retain) NSPointerArray *constraintsToUpdate;

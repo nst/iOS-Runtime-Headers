@@ -3,7 +3,7 @@
  */
 
 @interface CAMPanoramaRetainedBufferHintCommand : CAMCaptureCommand {
-    BOOL __enabled;
+    BOOL  __enabled;
 }
 
 @property (getter=_isEnabled, nonatomic, readonly) BOOL _enabled;

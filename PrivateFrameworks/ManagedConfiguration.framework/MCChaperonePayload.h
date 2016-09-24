@@ -3,9 +3,9 @@
  */
 
 @interface MCChaperonePayload : MCPayload {
-    BOOL _nonChaperonePairingAllowed;
-    NSNumber *_nonChaperonePairingAllowedNum;
-    NSData *_pairingCertificateData;
+    BOOL  _nonChaperonePairingAllowed;
+    NSNumber * _nonChaperonePairingAllowedNum;
+    NSData * _pairingCertificateData;
 }
 
 @property (nonatomic, readonly) BOOL nonChaperonePairingAllowed;

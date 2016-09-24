@@ -3,10 +3,10 @@
  */
 
 @interface GKTurnBasedExchangeReplyInternal : GKInternalRepresentation {
-    NSData *_data;
-    NSDictionary *_localizableMessage;
-    unsigned char _recipientIndex;
-    NSDate *_replyDate;
+    NSData * _data;
+    NSDictionary * _localizableMessage;
+    unsigned char  _recipientIndex;
+    NSDate * _replyDate;
 }
 
 @property (nonatomic, retain) NSData *data;

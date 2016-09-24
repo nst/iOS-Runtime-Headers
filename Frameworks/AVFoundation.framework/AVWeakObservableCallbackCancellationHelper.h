@@ -3,7 +3,7 @@
  */
 
 @interface AVWeakObservableCallbackCancellationHelper : NSObject {
-    NSMutableArray *_callbackRegistrations;
+    NSMutableArray * _callbackRegistrations;
 }
 
 - (void)addCallbackToCancel:(id)arg1;

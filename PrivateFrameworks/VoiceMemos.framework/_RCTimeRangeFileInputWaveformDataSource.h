@@ -3,12 +3,12 @@
  */
 
 @interface _RCTimeRangeFileInputWaveformDataSource : RCFileInputWaveformDataSource {
-    double _destinationBeginTime;
-    BOOL _isDecomposedFragment;
+    double  _destinationBeginTime;
+    BOOL  _isDecomposedFragment;
     struct { 
         double beginTime; 
         double endTime; 
-    } _sourceTimeRange;
+    }  _sourceTimeRange;
 }
 
 @property (nonatomic) double destinationBeginTime;

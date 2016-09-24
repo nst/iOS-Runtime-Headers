@@ -3,8 +3,8 @@
  */
 
 @interface CAMBufferKeyValueObserverObservance : CAMBufferObservance {
-    NSString *_keyPath;
-    NSObject *_object;
+    NSString * _keyPath;
+    NSObject * _object;
 }
 
 @property (nonatomic, readonly, copy) NSString *keyPath;

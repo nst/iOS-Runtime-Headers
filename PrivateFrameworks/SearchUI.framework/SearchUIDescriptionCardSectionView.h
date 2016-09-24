@@ -3,9 +3,9 @@
  */
 
 @interface SearchUIDescriptionCardSectionView : SearchUICardSectionView {
-    SearchUICardDetailsView *_detailsView;
-    UIButton *_moreButton;
-    NSLayoutConstraint *_moreButtonHorizontalInsetConstraint;
+    SearchUICardDetailsView * _detailsView;
+    UIButton * _moreButton;
+    NSLayoutConstraint * _moreButtonHorizontalInsetConstraint;
 }
 
 @property (retain) SearchUICardDetailsView *detailsView;

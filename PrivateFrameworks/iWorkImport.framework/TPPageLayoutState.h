@@ -3,17 +3,19 @@
  */
 
 @interface TPPageLayoutState : NSObject {
-    unsigned int _bodyCharIndex;
-    void *_bodyLayoutState;
-    TSWPStorage *_bodyStorage;
-    unsigned int _documentPageIndex;
-    BOOL _doingLayout;
-    unsigned int _footnoteIndex;
-    unsigned int _lastLaidOutSectionIndex;
-    BOOL _onLastSection;
-    TPPageIndexPath *_pageIndexPath;
+    BOOL  _allowParagraphMetrics;
+    unsigned int  _bodyCharIndex;
+    void * _bodyLayoutState;
+    TSWPStorage * _bodyStorage;
+    unsigned int  _documentPageIndex;
+    BOOL  _doingLayout;
+    unsigned int  _footnoteIndex;
+    unsigned int  _lastLaidOutSectionIndex;
+    BOOL  _onLastSection;
+    TPPageIndexPath * _pageIndexPath;
 }
 
+@property (nonatomic) BOOL allowParagraphMetrics;
 @property (nonatomic) unsigned int bodyCharIndex;
 @property (nonatomic) void*bodyLayoutState;
 @property (nonatomic, readonly) unsigned int documentPageIndex;
@@ -31,6 +33,7 @@
 
 - (void)advancePageIndex;
 - (void)advanceSectionIndex;
+- (BOOL)allowParagraphMetrics;
 - (void)backUpPageIndex;
 - (unsigned int)bodyCharIndex;
 - (void*)bodyLayoutState;
@@ -53,6 +56,7 @@
 - (id)section;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })sectionCharRange;
 - (unsigned int)sectionIndex;
+- (void)setAllowParagraphMetrics:(BOOL)arg1;
 - (void)setBodyCharIndex:(unsigned int)arg1;
 - (void)setBodyLayoutState:(void*)arg1;
 - (void)setDocumentPageIndex:(unsigned int)arg1;

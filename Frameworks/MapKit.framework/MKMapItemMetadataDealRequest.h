@@ -3,7 +3,7 @@
  */
 
 @interface MKMapItemMetadataDealRequest : MKMapItemMetadataRequest {
-    id /* block */ _dealHandler;
+    id /* block */  _dealHandler;
 }
 
 @property (nonatomic, copy) id /* block */ dealHandler;

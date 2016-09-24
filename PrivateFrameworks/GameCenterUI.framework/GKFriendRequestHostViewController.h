@@ -3,9 +3,9 @@
  */
 
 @interface GKFriendRequestHostViewController : GKUIRemoteViewController <GKFriendRequestComposeServiceProtocol> {
-    NSString *_defaultMessage;
-    GKFriendRequestComposeViewController *_delegateWeak;
-    unsigned int _rid;
+    NSString * _defaultMessage;
+    GKFriendRequestComposeViewController * _delegateWeak;
+    unsigned int  _rid;
 }
 
 @property (readonly, copy) NSString *debugDescription;

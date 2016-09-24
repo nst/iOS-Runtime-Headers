@@ -3,11 +3,11 @@
  */
 
 @interface GKTurnBasedExchange : NSObject {
-    GKTurnBasedExchangeInternal *_internal;
-    GKTurnBasedMatch *_matchWeak;
-    NSArray *_recipients;
-    NSArray *_replies;
-    GKTurnBasedParticipant *_sender;
+    GKTurnBasedExchangeInternal * _internal;
+    GKTurnBasedMatch * _matchWeak;
+    NSArray * _recipients;
+    NSArray * _replies;
+    GKTurnBasedParticipant * _sender;
 }
 
 @property (nonatomic, retain) NSDate *completionDate;

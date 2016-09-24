@@ -3,10 +3,10 @@
  */
 
 @interface PLBasebandMavLogMessage : PLBasebandMessage {
-    unsigned int _eventCode;
-    NSString *_eventCodeString;
-    struct _PLBasebandLogHeader { struct _PLBasebandMessageHeader { unsigned char x_1_1_1; } x1; unsigned short x2; unsigned short x3; unsigned char x4[8]; } *_header;
-    NSData *_payload;
+    unsigned int  _eventCode;
+    NSString * _eventCodeString;
+    struct _PLBasebandLogHeader { struct _PLBasebandMessageHeader { unsigned char x_1_1_1; } x1; unsigned short x2; unsigned short x3; unsigned char x4[8]; } * _header;
+    NSData * _payload;
 }
 
 @property (readonly) unsigned int eventCode;

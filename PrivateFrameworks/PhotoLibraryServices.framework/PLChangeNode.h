@@ -3,15 +3,15 @@
  */
 
 @interface PLChangeNode : NSObject {
-    Class _changeHubClass;
-    NSObject<OS_xpc_object> *_hubConnection;
-    BOOL _isObservingOrderKeys;
-    NSObject<OS_dispatch_queue> *_isolationQueue;
-    unsigned long long _lastKnownChangeHubEventIndex;
-    unsigned char _nodeUUID;
-    int _notifyToken;
-    NSSet *_observedRelationships;
-    NSMutableDictionary *_updatedOrderKeyObjectIDs;
+    Class  _changeHubClass;
+    NSObject<OS_xpc_object> * _hubConnection;
+    BOOL  _isObservingOrderKeys;
+    NSObject<OS_dispatch_queue> * _isolationQueue;
+    unsigned int  _lastKnownChangeHubEventIndex;
+    unsigned char  _nodeUUID;
+    int  _notifyToken;
+    NSSet * _observedRelationships;
+    NSMutableDictionary * _updatedOrderKeyObjectIDs;
 }
 
 + (id)_descriptionForEvent:(id)arg1;
@@ -22,6 +22,7 @@
 - (void)_processCloudFeedUpdateDataFromChangeHubEvent:(id)arg1 transaction:(id)arg2;
 - (void)_processDelayedAlbumCountUpdates:(id)arg1 transaction:(id)arg2;
 - (void)_processDelayedAlbumCountUpdatesFromChangeHubEvent:(id)arg1 transaction:(id)arg2;
+- (void)_processDelayedAssetsForAnalysis:(id)arg1 transaction:(id)arg2;
 - (void)_processDelayedAssetsForFileSystemPersistencyFromChangeHubEvent:(id)arg1 transaction:(id)arg2;
 - (void)_processDelayedDupeAnalysisFromChangeHubEvent:(id)arg1 transaction:(id)arg2;
 - (void)_processDelayedSearchIndexUpdates:(id)arg1 transaction:(id)arg2;

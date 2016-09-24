@@ -3,8 +3,8 @@
  */
 
 @interface _NSXPCConnectionClassCache : NSObject {
-    NSMutableSet *_cache;
-    int _lock;
+    NSMutableSet * _cache;
+    int  _lock;
 }
 
 - (void)addClass:(Class)arg1;

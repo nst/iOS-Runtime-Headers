@@ -3,27 +3,27 @@
  */
 
 @interface IMDaemonListener : NSObject {
-    NSMutableDictionary *_contexts;
-    NSMutableArray *_deferredChatMessages;
-    NSMutableArray *_handlers;
-    BOOL _hasPendingProcessChange;
-    BOOL _hidingDisconnect;
-    BOOL _holdingChatMessages;
-    NSDate *_myIdleSince;
-    NSString *_myNowPlayingString;
-    NSData *_myPicture;
-    unsigned int _myStatus;
-    NSString *_myStatusMessage;
-    NSMutableDictionary *_persistentProperties;
-    BOOL _postedSetupComplete;
-    NSMutableDictionary *_properties;
-    NSProtocolChecker *_protocol;
-    NSMutableDictionary *_services;
-    BOOL _setupComplete;
-    unsigned long long _vcCapabilities;
+    NSMutableDictionary * _contexts;
+    NSMutableArray * _deferredChatMessages;
+    NSMutableArray * _handlers;
+    BOOL  _hasPendingProcessChange;
+    BOOL  _hidingDisconnect;
+    BOOL  _holdingChatMessages;
+    NSDate * _myIdleSince;
+    NSString * _myNowPlayingString;
+    NSData * _myPicture;
+    unsigned int  _myStatus;
+    NSString * _myStatusMessage;
+    NSMutableDictionary * _persistentProperties;
+    BOOL  _postedSetupComplete;
+    NSMutableDictionary * _properties;
+    NSProtocolChecker * _protocol;
+    NSMutableDictionary * _services;
+    BOOL  _setupComplete;
+    unsigned int  _vcCapabilities;
 }
 
-@property (nonatomic, readonly, retain) NSMutableDictionary *_contexts;
+@property (nonatomic, readonly) NSMutableDictionary *_contexts;
 @property (setter=_setHidingDisconnect:, nonatomic) BOOL _hidingDisconnect;
 @property (nonatomic, readonly) NSArray *allServices;
 @property (nonatomic, readonly) NSArray *handlers;
@@ -36,8 +36,9 @@
 @property (nonatomic, readonly) NSDictionary *persistentProperties;
 @property (nonatomic, readonly) NSDictionary *properties;
 @property (nonatomic, readonly) BOOL shouldHoldChatMessages;
-@property (nonatomic, readonly) unsigned long long vcCapabilities;
+@property (nonatomic, readonly) unsigned int vcCapabilities;
 
+- (void).cxx_destruct;
 - (void)_cacheValue:(id)arg1 forPersistentProperty:(id)arg2;
 - (void)_cacheValue:(id)arg1 forProperty:(id)arg2;
 - (id)_contexts;
@@ -60,16 +61,17 @@
 - (void)account:(id)arg1 buddyPictureChanged:(id)arg2 imageData:(id)arg3 imageHash:(id)arg4;
 - (void)account:(id)arg1 buddyProperties:(id)arg2 buddyPictures:(id)arg3;
 - (void)account:(id)arg1 buddyPropertiesChanged:(id)arg2;
-- (void)account:(id)arg1 capabilitiesChanged:(unsigned long long)arg2;
+- (void)account:(id)arg1 capabilitiesChanged:(unsigned int)arg2;
 - (void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 chatProperties:(id)arg4 invitationReceived:(id)arg5;
 - (void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 chatProperties:(id)arg4 messageReceived:(id)arg5;
-- (void)account:(id)arg1 defaults:(id)arg2 blockList:(id)arg3 allowList:(id)arg4 blockingMode:(unsigned int)arg5 blockIdleStatus:(BOOL)arg6 status:(id)arg7 capabilities:(unsigned long long)arg8 serviceLoginStatus:(unsigned int)arg9 loginStatusMessage:(id)arg10;
+- (void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 chatProperties:(id)arg4 messagesReceived:(id)arg5;
+- (void)account:(id)arg1 defaults:(id)arg2 blockList:(id)arg3 allowList:(id)arg4 blockingMode:(unsigned int)arg5 blockIdleStatus:(BOOL)arg6 status:(id)arg7 capabilities:(unsigned int)arg8 serviceLoginStatus:(unsigned int)arg9 loginStatusMessage:(id)arg10;
 - (void)account:(id)arg1 defaultsChanged:(id)arg2;
 - (void)account:(id)arg1 groupsChanged:(id)arg2 error:(id)arg3;
 - (void)account:(id)arg1 handleSubscriptionRequestFrom:(id)arg2 withMessage:(id)arg3;
 - (void)account:(id)arg1 loginStatusChanged:(unsigned int)arg2 message:(id)arg3 reason:(int)arg4 properties:(id)arg5;
 - (void)account:(id)arg1 postedError:(id)arg2;
-- (void)account:(id)arg1 status:(id)arg2 capabilities:(unsigned long long)arg3 serviceLoginStatus:(unsigned int)arg4 loginStatusMessage:(id)arg5;
+- (void)account:(id)arg1 status:(id)arg2 capabilities:(unsigned int)arg3 serviceLoginStatus:(unsigned int)arg4 loginStatusMessage:(id)arg5;
 - (void)account:(id)arg1 statusChanged:(id)arg2;
 - (void)accountAdded:(id)arg1 defaults:(id)arg2 service:(id)arg3;
 - (void)accountRemoved:(id)arg1;
@@ -79,12 +81,12 @@
 - (void)databaseFull;
 - (void)databaseNoLongerFull;
 - (void)databaseUpdated:(id)arg1;
-- (void)dealloc;
 - (void)defaultsChanged:(id)arg1 forService:(id)arg2;
 - (void)displayPinCodeForAccount:(id)arg1 pinCode:(id)arg2 deviceName:(id)arg3 deviceType:(id)arg4 phoneNumber:(id)arg5;
 - (void)fileTransfer:(id)arg1 createdWithProperties:(id)arg2;
-- (void)fileTransfer:(id)arg1 updatedWithCurrentBytes:(unsigned long long)arg2 totalBytes:(unsigned long long)arg3 averageTransferRate:(unsigned long long)arg4;
+- (void)fileTransfer:(id)arg1 updatedWithCurrentBytes:(unsigned int)arg2 totalBytes:(unsigned int)arg3 averageTransferRate:(unsigned int)arg4;
 - (void)fileTransfer:(id)arg1 updatedWithProperties:(id)arg2;
+- (void)fileTransfers:(id)arg1 createdWithLocalPaths:(id)arg2;
 - (void)forwardInvocation:(id)arg1;
 - (id)handlers;
 - (BOOL)hasPostedSetupComplete;
@@ -111,7 +113,7 @@
 - (void)standaloneFileTransferRegistered:(id)arg1;
 - (id)valueOfPersistentProperty:(id)arg1;
 - (id)valueOfProperty:(id)arg1;
-- (unsigned long long)vcCapabilities;
-- (void)vcCapabilitiesChanged:(unsigned long long)arg1;
+- (unsigned int)vcCapabilities;
+- (void)vcCapabilitiesChanged:(unsigned int)arg1;
 
 @end

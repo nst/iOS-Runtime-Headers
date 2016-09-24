@@ -3,8 +3,8 @@
  */
 
 @interface HAPMetadataUnit : NSObject {
-    NSString *_name;
-    NSString *_unitDescription;
+    NSString * _name;
+    NSString * _unitDescription;
 }
 
 @property (nonatomic, retain) NSString *name;

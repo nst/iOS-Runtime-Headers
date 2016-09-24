@@ -3,10 +3,10 @@
  */
 
 @interface SUDefaultDownloadPolicy : NSObject <SUDownloadPolicy> {
-    SUCarrierDownloadPolicyProperties *_carrierPolicy;
-    BOOL _cellularCapable;
-    SUDescriptor *_descriptor;
-    SUNetworkMonitor *_networkMonitor;
+    SUCarrierDownloadPolicyProperties * _carrierPolicy;
+    BOOL  _cellularCapable;
+    SUDescriptor * _descriptor;
+    SUNetworkMonitor * _networkMonitor;
 }
 
 @property (nonatomic, retain) SUCarrierDownloadPolicyProperties *carrierPolicy;

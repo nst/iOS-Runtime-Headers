@@ -3,7 +3,7 @@
  */
 
 @interface SDFActivityInfo : NSObject {
-    SDFDispatchQueue *_queue;
+    SDFDispatchQueue * _queue;
 }
 
 @property (readonly, retain) SDFDispatchQueue *queue;

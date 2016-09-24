@@ -3,11 +3,11 @@
  */
 
 @interface FMJSONCommand : FMCommandBase {
-    BOOL __hasParsedResponseBody;
-    NSDictionary *__requestBodyDict;
-    NSDictionary *__responseBodyDict;
-    NSError *_jsonResponseParseError;
-    NSObject<OS_dispatch_queue> *_responseQueue;
+    BOOL  __hasParsedResponseBody;
+    NSDictionary * __requestBodyDict;
+    NSDictionary * __responseBodyDict;
+    NSError * _jsonResponseParseError;
+    NSObject<OS_dispatch_queue> * _responseQueue;
 }
 
 @property (nonatomic) BOOL _hasParsedResponseBody;

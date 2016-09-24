@@ -3,13 +3,13 @@
  */
 
 @interface _GEORouteMatchUpdater_Transfer : _GEORouteMatchUpdater {
-    GEOPBTransitStation *_alightStation;
-    GEOComposedRouteStep *_alightStep;
-    GEOPBTransitStop *_alightStop;
-    GEOPBTransitStation *_boardStation;
-    GEOComposedRouteStep *_boardStep;
-    GEOPBTransitStop *_boardStop;
-    GEOComposedRouteStep *_transferStep;
+    GEOPBTransitStation * _alightStation;
+    GEOComposedRouteStep * _alightStep;
+    GEOPBTransitStop * _alightStop;
+    GEOPBTransitStation * _boardStation;
+    GEOComposedRouteStep * _boardStep;
+    GEOPBTransitStop * _boardStop;
+    GEOComposedRouteStep * _transferStep;
 }
 
 - (BOOL)_isLocation:(id)arg1 nearStation:(id)arg2;

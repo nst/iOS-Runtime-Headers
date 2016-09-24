@@ -3,7 +3,7 @@
  */
 
 @interface UIRemoteControlEvent : UIEvent {
-    int _subtype;
+    int  _subtype;
 }
 
 - (id)_init;

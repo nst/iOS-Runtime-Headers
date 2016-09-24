@@ -2,27 +2,21 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSUURLTracker : NSObject <NSFilePresenter> {
-    NSURL *_URL;
-    NSOperationQueue *_presentedItemOperationQueue;
+@interface TSUURLTracker : NSObject {
+    TSUURLTrackerFilePresenter * _filePresenter;
 }
 
-@property (copy) NSURL *URL;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly, retain) NSOperationQueue *presentedItemOperationQueue;
-@property (readonly, copy) NSURL *presentedItemURL;
-@property (readonly, copy) NSURL *primaryPresentedItemURL;
-@property (readonly) Class superclass;
+@property (readonly, copy) NSURL *URL;
 
 - (void).cxx_destruct;
 - (id)URL;
+- (void)applicationDidEnterBackground:(id)arg1;
+- (void)applicationWillEnterForeground:(id)arg1;
+- (void)dealloc;
+- (id)description;
+- (id)init;
 - (id)initWithURL:(id)arg1;
-- (void)presentedItemDidMoveToURL:(id)arg1;
-- (id)presentedItemOperationQueue;
-- (id)presentedItemURL;
-- (void)setURL:(id)arg1;
+- (void)start;
 - (void)stop;
 
 @end

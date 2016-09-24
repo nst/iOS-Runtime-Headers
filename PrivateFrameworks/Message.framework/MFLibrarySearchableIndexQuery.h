@@ -2,15 +2,15 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFLibrarySearchableIndexQuery : NSObject <MDSearchQueryDelegate, NSProgressReporting> {
-    unsigned int _cancellableQuery;
-    NSProgress *_internalProgress;
-    NSLock *_lock;
-    NSProgress *_progress;
-    MDSearchQuery *_query;
-    NSString *_queryString;
-    NSMutableArray *_resultsBlocks;
-    MFFuture *_resultsFuture;
+@interface MFLibrarySearchableIndexQuery : NSObject <MDSearchQueryDelegate, MFCancelable, NSProgressReporting> {
+    unsigned int  _cancellableQuery;
+    NSProgress * _internalProgress;
+    NSLock * _lock;
+    NSProgress * _progress;
+    MDSearchQuery * _query;
+    NSString * _queryString;
+    NSMutableArray * _resultsBlocks;
+    MFPromise * _resultsPromise;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -28,6 +28,7 @@
 + (id)queryWithString:(id)arg1 options:(id)arg2;
 + (id)searchWordsForPhrase:(id)arg1;
 
+- (void)_cancel;
 - (void)_completed;
 - (void)_failedWithError:(id)arg1;
 - (void)_foundItems:(id)arg1;

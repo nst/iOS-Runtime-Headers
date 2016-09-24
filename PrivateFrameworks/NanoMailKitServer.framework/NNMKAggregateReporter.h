@@ -6,11 +6,11 @@
 
 + (void)_addScalarValue1ToKey:(id)arg1;
 + (id)_buildVersion;
-+ (long long)_delayInMSFromDateSynced:(id)arg1;
-+ (void)_postGroupedDelayInMS:(long long)arg1 key:(id)arg2;
-+ (void)_postGroupedSizeInBytes:(long long)arg1 key:(id)arg2;
++ (int)_delayInMSFromDateSynced:(id)arg1;
++ (void)_postGroupedDelayInMS:(int)arg1 key:(id)arg2;
++ (void)_postGroupedSizeInBytes:(int)arg1 key:(id)arg2;
 + (void)_postGroupedValue:(float)arg1 key:(id)arg2;
-+ (void)_postRawValue:(long long)arg1 key:(id)arg2;
++ (void)_postRawValue:(int)arg1 key:(id)arg2;
 + (BOOL)_reportingEnabled;
 + (void)reportContentDisplayedForMessageWithId:(id)arg1 hasMainAlternative:(BOOL)arg2 hasTextAlternative:(BOOL)arg3;
 + (void)reportContentReceivedForMessageWithId:(id)arg1 sizeInBytes:(unsigned int)arg2 fullSyncVersion:(unsigned int)arg3 dateSynced:(id)arg4;

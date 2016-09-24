@@ -6,10 +6,12 @@
 @required
 
 - (struct CGColor { }*)CGColor;
+- (UIKBGradient *)gradient;
 - (BOOL)isValid;
 - (SEL)renderSelector;
 - (BOOL)renderUnder;
 - (void)setWeight:(float)arg1;
+- (BOOL)usesRGBColors;
 - (float)weight;
 
 @end

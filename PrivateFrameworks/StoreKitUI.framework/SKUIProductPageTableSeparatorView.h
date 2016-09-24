@@ -3,7 +3,7 @@
  */
 
 @interface SKUIProductPageTableSeparatorView : UIView {
-    UIView *_separatorView;
+    UIView * _separatorView;
 }
 
 - (void).cxx_destruct;

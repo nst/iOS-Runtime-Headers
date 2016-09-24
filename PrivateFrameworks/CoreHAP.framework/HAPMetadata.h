@@ -3,15 +3,15 @@
  */
 
 @interface HAPMetadata : NSObject {
-    NSString *_hapBaseUUIDSuffix;
-    NSArray *_hapCharacteristics;
-    NSArray *_hapProperties;
-    NSArray *_hapServices;
-    NSArray *_hapSupportsAuthDataTuples;
-    NSArray *_hapValueUnits;
-    NSMutableArray *_parsedUUIDs;
-    NSNumber *_schemaVersion;
-    NSNumber *_version;
+    NSString * _hapBaseUUIDSuffix;
+    NSArray * _hapCharacteristics;
+    NSArray * _hapProperties;
+    NSArray * _hapServices;
+    NSArray * _hapSupportsAuthDataTuples;
+    NSArray * _hapValueUnits;
+    NSMutableArray * _parsedUUIDs;
+    NSNumber * _schemaVersion;
+    NSNumber * _version;
 }
 
 @property (nonatomic, retain) NSString *hapBaseUUIDSuffix;
@@ -40,6 +40,7 @@
 - (id)generateHAPMetadataTuplesDictionary:(id)arg1;
 - (id)getDefaultCharacteristicMetadata:(id)arg1;
 - (id)getDefaultCharacteristicProperties:(id)arg1;
+- (id)getDefaultServiceProperties:(id)arg1;
 - (id)hapBaseUUIDSuffix;
 - (id)hapCharacteristics;
 - (id)hapProperties;

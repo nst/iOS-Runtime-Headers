@@ -3,8 +3,8 @@
  */
 
 @interface HMThreadSafeMutableArrayCollection : NSObject {
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    NSMutableArray *_mutableArray;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    NSMutableArray * _mutableArray;
 }
 
 @property (nonatomic, readonly, copy) NSArray *array;
@@ -23,10 +23,14 @@
 - (unsigned int)count;
 - (id)dispatchQueue;
 - (id)filteredArrayUsingPredicate:(id)arg1;
+- (id)firstItemWithValue:(id)arg1 forKey:(id)arg2;
 - (id)initWithArray:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (id)itemsWithValue:(id)arg1 forKey:(id)arg2;
 - (id)mutableArray;
 - (void)removeObject:(id)arg1;
 - (void)removeObjectsInArray:(id)arg1;
 - (void)setArray:(id)arg1;
+- (void)setIfDifferent:(id)arg1;
 
 @end

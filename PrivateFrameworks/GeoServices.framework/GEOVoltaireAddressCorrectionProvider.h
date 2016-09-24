@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOVoltaireAddressCorrectionProvider : NSObject <PBRequesterDelegate> {
-    id /* block */ _errorHandler;
-    id /* block */ _initFinishedHandler;
-    GEORequester *_requester;
-    id /* block */ _updateFinishedHandler;
+@interface GEOVoltaireAddressCorrectionProvider : NSObject <GEOPBSessionRequesterDelegate> {
+    id /* block */  _errorHandler;
+    id /* block */  _initFinishedHandler;
+    GEORequester * _requester;
+    id /* block */  _updateFinishedHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;

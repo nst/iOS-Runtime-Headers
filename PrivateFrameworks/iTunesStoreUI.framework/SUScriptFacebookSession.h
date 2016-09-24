@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptFacebookSession : SUScriptObject {
-    SUScriptAppleAccount *_account;
+    SUScriptAppleAccount * _account;
 }
 
 @property (readonly) id hasAccounts;

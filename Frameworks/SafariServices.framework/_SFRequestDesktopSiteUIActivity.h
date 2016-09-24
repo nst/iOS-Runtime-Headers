@@ -3,7 +3,7 @@
  */
 
 @interface _SFRequestDesktopSiteUIActivity : _SFActivity {
-    _SFReloadOptionsController *_reloadOptionsController;
+    _SFReloadOptionsController * _reloadOptionsController;
 }
 
 @property (nonatomic, readonly) _SFReloadOptionsController *reloadOptionsController;

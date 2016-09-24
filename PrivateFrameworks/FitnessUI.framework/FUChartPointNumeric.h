@@ -3,8 +3,8 @@
  */
 
 @interface FUChartPointNumeric : NSObject <FUChartPoint> {
-    NSDate *_xValue;
-    NSNumber *_yValue;
+    NSDate * _xValue;
+    NSNumber * _yValue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

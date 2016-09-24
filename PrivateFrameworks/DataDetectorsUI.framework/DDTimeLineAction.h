@@ -3,7 +3,7 @@
  */
 
 @interface DDTimeLineAction : DDRemoteAction {
-    NSDate *_startDate;
+    NSDate * _startDate;
 }
 
 + (id)viewControllerProviderClass;

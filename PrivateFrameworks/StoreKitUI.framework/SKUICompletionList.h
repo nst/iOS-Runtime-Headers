@@ -3,8 +3,8 @@
  */
 
 @interface SKUICompletionList : NSObject <SKUICacheCoding> {
-    NSArray *_completions;
-    NSString *_title;
+    NSArray * _completions;
+    NSString * _title;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *cacheRepresentation;

@@ -3,16 +3,16 @@
  */
 
 @interface NSByteCountFormatter : NSFormatter <NSObservable, NSObserver> {
-    BOOL _adaptive;
-    unsigned int _allowedUnits;
-    BOOL _allowsNonnumericFormatting;
-    BOOL _countStyle;
-    int _formattingContext;
-    BOOL _includesActualByteCount;
-    BOOL _includesCount;
-    BOOL _includesUnit;
-    int _reserved;
-    BOOL _zeroPadsFractionDigits;
+    BOOL  _adaptive;
+    unsigned int  _allowedUnits;
+    BOOL  _allowsNonnumericFormatting;
+    BOOL  _countStyle;
+    int  _formattingContext;
+    BOOL  _includesActualByteCount;
+    BOOL  _includesCount;
+    BOOL  _includesUnit;
+    int  _reserved;
+    BOOL  _zeroPadsFractionDigits;
 }
 
 @property (getter=isAdaptive) BOOL adaptive;
@@ -29,10 +29,10 @@
 @property (readonly) Class superclass;
 @property BOOL zeroPadsFractionDigits;
 
-+ (id)stringFromByteCount:(long long)arg1 countStyle:(int)arg2;
++ (id)stringFromByteCount:(int)arg1 countStyle:(int)arg2;
 
 - (BOOL)_mayDecorateAttributedStringForObjectValue:(id)arg1;
-- (unsigned long long)_options;
+- (unsigned int)_options;
 - (unsigned int)allowedUnits;
 - (BOOL)allowsNonnumericFormatting;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -58,7 +58,7 @@
 - (void)setIncludesUnit:(BOOL)arg1;
 - (void)setZeroPadsFractionDigits:(BOOL)arg1;
 - (id)stringForObjectValue:(id)arg1;
-- (id)stringFromByteCount:(long long)arg1;
+- (id)stringFromByteCount:(int)arg1;
 - (BOOL)zeroPadsFractionDigits;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface SBUIPluginAppearanceContext : NSObject {
-    BOOL _hideOtherWindowsDuringAppearance;
-    unsigned int _uiEnvironment;
+    BOOL  _hideOtherWindowsDuringAppearance;
+    unsigned int  _uiEnvironment;
 }
 
 @property (nonatomic) BOOL hideOtherWindowsDuringAppearance;

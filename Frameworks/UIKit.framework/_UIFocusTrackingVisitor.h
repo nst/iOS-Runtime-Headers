@@ -3,8 +3,8 @@
  */
 
 @interface _UIFocusTrackingVisitor : _UIViewVisitor {
-    unsigned int _countOfFocusedAncestorTrackingViewsInSubtree;
-    BOOL _subviewAddedToHierarchy;
+    unsigned int  _countOfFocusedAncestorTrackingViewsInSubtree;
+    BOOL  _subviewAddedToHierarchy;
 }
 
 - (BOOL)_prepareVisitor:(id)arg1 toVisitView:(id)arg2 changedSubview:(id)arg3 previousWindow:(id)arg4 previousSuperview:(id)arg5;

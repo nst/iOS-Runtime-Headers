@@ -3,8 +3,8 @@
  */
 
 @interface MPUContentItemIdentifierCollection : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
-    NSMapTable *_identifierTypeToIdentifier;
-    unsigned int _itemType;
+    NSMapTable * _identifierTypeToIdentifier;
+    unsigned int  _itemType;
 }
 
 @property (nonatomic, readonly) unsigned int identifierCount;

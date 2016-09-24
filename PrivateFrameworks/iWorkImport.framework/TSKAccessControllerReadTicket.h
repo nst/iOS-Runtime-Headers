@@ -3,8 +3,8 @@
  */
 
 @interface TSKAccessControllerReadTicket : NSObject <TSKAccessControllerReadTicket> {
-    TSKAccessController *_accessController;
-    int _accessCount;
+    TSKAccessController * _accessController;
+    int  _accessCount;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,6 +15,7 @@
 - (void)beginExtendingLifetime;
 - (void)dealloc;
 - (void)endExtendingLifetime;
+- (id)init;
 - (id)initWithAccessController:(id)arg1;
 
 @end

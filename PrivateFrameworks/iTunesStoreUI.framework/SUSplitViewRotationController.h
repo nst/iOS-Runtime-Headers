@@ -3,10 +3,10 @@
  */
 
 @interface SUSplitViewRotationController : SURotationController {
-    SURotationController *_firstRotationController;
-    UIViewController *_firstViewController;
-    SURotationController *_secondRotationController;
-    UIViewController *_secondViewController;
+    SURotationController * _firstRotationController;
+    UIViewController * _firstViewController;
+    SURotationController * _secondRotationController;
+    UIViewController * _secondViewController;
 }
 
 - (id)_firstRotationController;

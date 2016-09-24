@@ -3,20 +3,20 @@
  */
 
 @interface EDWorkbook : OCDDocument {
-    unsigned int mActiveSheetIndex;
-    NSMutableArray *mBulletBlips;
-    int mDateBase;
-    NSDate *mDateBaseDate;
-    ESDContainer *mEscherDrawingGroup;
-    NSString *mFileName;
-    ECMappingContext *mMappingContext;
-    NSMutableArray *mOtherResources;
-    EDProcessors *mProcessors;
-    EDResources *mResources;
-    NSMutableArray *mSheets;
-    NSString *mTemporaryDirectory;
-    EDReference *mVisibleRange;
-    EDWarnings *mWarnings;
+    unsigned int  mActiveSheetIndex;
+    NSMutableArray * mBulletBlips;
+    int  mDateBase;
+    NSDate * mDateBaseDate;
+    ESDContainer * mEscherDrawingGroup;
+    NSString * mFileName;
+    ECMappingContext * mMappingContext;
+    NSMutableArray * mOtherResources;
+    EDProcessors * mProcessors;
+    EDResources * mResources;
+    NSMutableArray * mSheets;
+    NSString * mTemporaryDirectory;
+    EDReference * mVisibleRange;
+    EDWarnings * mWarnings;
 }
 
 + (id)impliedColorMap;

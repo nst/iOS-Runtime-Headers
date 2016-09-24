@@ -3,11 +3,11 @@
  */
 
 @interface SKUIJSDOMFeatureNavigationDocument : NSObject <IKAppNavigationController, SKUIDOMFeature> {
-    IKAppContext *_appContext;
-    NSString *_featureName;
-    IKJSNavigationDocument *_jsNavigationDocument;
-    SKUINavigationDocumentController *_navigationDocumentController;
-    NSMutableArray *_stackItems;
+    IKAppContext * _appContext;
+    NSString * _featureName;
+    IKJSNavigationDocument * _jsNavigationDocument;
+    SKUINavigationDocumentController * _navigationDocumentController;
+    NSMutableArray * _stackItems;
 }
 
 @property (nonatomic, readonly) IKAppContext *appContext;

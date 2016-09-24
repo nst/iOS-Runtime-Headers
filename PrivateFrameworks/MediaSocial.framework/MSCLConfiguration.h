@@ -3,18 +3,22 @@
  */
 
 @interface MSCLConfiguration : NSObject <NSCopying> {
-    NSArray *_allowedExternalServices;
-    NSArray *_audioCategoryNames;
-    SKUIMediaSocialAuthor *_authorForActiveAccount;
-    NSURL *_baseTagLookupURL;
-    MSCLStoreItem *_item;
-    int _maximumNumberOfAttachments;
-    double _maximumSoundBiteDuration;
-    NSArray *_potentalAuthors;
-    NSArray *_suggestedTags;
+    NSArray * _allowedExternalServices;
+    BOOL  _allowsCamera;
+    BOOL  _allowsMicrophone;
+    NSArray * _audioCategoryNames;
+    SKUIMediaSocialAuthor * _authorForActiveAccount;
+    NSURL * _baseTagLookupURL;
+    MSCLStoreItem * _item;
+    int  _maximumNumberOfAttachments;
+    double  _maximumSoundBiteDuration;
+    NSArray * _potentalAuthors;
+    NSArray * _suggestedTags;
 }
 
 @property (nonatomic, copy) NSArray *allowedExternalServices;
+@property (nonatomic) BOOL allowsCamera;
+@property (nonatomic) BOOL allowsMicrophone;
 @property (nonatomic, copy) NSArray *audioCategoryNames;
 @property (nonatomic, copy) SKUIMediaSocialAuthor *authorForActiveAccount;
 @property (nonatomic, copy) MSCLStoreItem *item;
@@ -25,6 +29,8 @@
 
 - (void).cxx_destruct;
 - (id)allowedExternalServices;
+- (BOOL)allowsCamera;
+- (BOOL)allowsMicrophone;
 - (id)audioCategoryNames;
 - (id)authorForActiveAccount;
 - (id)authorsForSharing;
@@ -35,6 +41,8 @@
 - (double)maximumSoundBiteDuration;
 - (id)potentalAuthors;
 - (void)setAllowedExternalServices:(id)arg1;
+- (void)setAllowsCamera:(BOOL)arg1;
+- (void)setAllowsMicrophone:(BOOL)arg1;
 - (void)setAudioCategoryNames:(id)arg1;
 - (void)setAuthorForActiveAccount:(id)arg1;
 - (void)setItem:(id)arg1;

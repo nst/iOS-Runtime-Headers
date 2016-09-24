@@ -3,19 +3,19 @@
  */
 
 @interface IMMobileNetworkManager : IMNetworkManager <RadiosPreferencesDelegate> {
-    int _applySkipCount;
-    void *_cellAssertion;
-    NSMutableSet *_cellAutoAssociationTokens;
-    struct __CTServerConnection { } *_ctServerConnection;
-    BOOL _dataContextActive;
-    NSMutableSet *_disableFastDormancyTokens;
-    NSRecursiveLock *_lock;
-    RadiosPreferences *_radiosPreferences;
-    BOOL _registered;
-    void *_serverConnection;
-    BOOL _shouldBringUpDataContext;
-    void *_suspendDormancyAssertion;
-    NSMutableSet *_wiFiAutoAssociationTokens;
+    int  _applySkipCount;
+    void * _cellAssertion;
+    NSMutableSet * _cellAutoAssociationTokens;
+    struct __CTServerConnection { } * _ctServerConnection;
+    BOOL  _dataContextActive;
+    NSMutableSet * _disableFastDormancyTokens;
+    NSRecursiveLock * _lock;
+    RadiosPreferences * _radiosPreferences;
+    BOOL  _registered;
+    void * _serverConnection;
+    BOOL  _shouldBringUpDataContext;
+    void * _suspendDormancyAssertion;
+    NSMutableSet * _wiFiAutoAssociationTokens;
 }
 
 @property (nonatomic) int _applySkipCount;

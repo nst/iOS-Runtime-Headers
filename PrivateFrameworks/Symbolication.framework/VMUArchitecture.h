@@ -3,8 +3,8 @@
  */
 
 @interface VMUArchitecture : NSObject <NSCoding, NSCopying> {
-    int _cpuSubtype;
-    int _cpuType;
+    int  _cpuSubtype;
+    int  _cpuType;
 }
 
 + (id)anyArchitecture;

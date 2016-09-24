@@ -3,9 +3,9 @@
  */
 
 @interface __NSOrderedSetM : NSMutableOrderedSet {
-    NSMutableArray *_array;
-    struct __CFBasicHash { } *_set;
-    unsigned int _used;
+    NSMutableArray * _array;
+    struct __CFBasicHash { } * _set;
+    unsigned int  _used;
 }
 
 + (id)__new:(const id*)arg1 :(unsigned int)arg2 :(BOOL)arg3;
@@ -19,7 +19,6 @@
 - (unsigned int)countForObject:(id)arg1;
 - (void)dealloc;
 - (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
-- (void)finalize;
 - (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (unsigned int)indexOfObject:(id)arg1;
 - (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;

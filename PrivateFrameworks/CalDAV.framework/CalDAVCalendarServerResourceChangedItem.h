@@ -3,12 +3,12 @@
  */
 
 @interface CalDAVCalendarServerResourceChangedItem : CoreDAVItem {
-    NSMutableSet *_collectionChanges;
-    NSMutableSet *_collectionUpdates;
-    NSMutableSet *_created;
-    NSMutableSet *_deleted;
-    ICSDateValue *_dtstamp;
-    NSMutableSet *_updated;
+    NSMutableSet * _collectionChanges;
+    NSMutableSet * _collectionUpdates;
+    NSMutableSet * _created;
+    NSMutableSet * _deleted;
+    ICSDateValue * _dtstamp;
+    NSMutableSet * _updated;
 }
 
 @property (nonatomic, retain) NSMutableSet *collectionChanges;

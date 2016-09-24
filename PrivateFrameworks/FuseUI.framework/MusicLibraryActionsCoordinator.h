@@ -3,9 +3,9 @@
  */
 
 @interface MusicLibraryActionsCoordinator : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    unsigned int _backgroundTaskIdentifier;
-    NSOperationQueue *_operationQueue;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    unsigned int  _backgroundTaskIdentifier;
+    NSOperationQueue * _operationQueue;
 }
 
 + (id)sharedCoordinator;

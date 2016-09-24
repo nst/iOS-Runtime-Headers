@@ -3,16 +3,16 @@
  */
 
 @interface _UITextFieldPasscodeCutoutBackground : UITextFieldBackgroundView {
-    float _cornerRadius;
-    BOOL _customFillColor;
-    BOOL _customStrokeColor;
-    CAShapeLayer *_lighteningOutline;
-    float _outlineAlpha;
+    double  _cornerRadius;
+    BOOL  _customFillColor;
+    BOOL  _customStrokeColor;
+    CAShapeLayer * _lighteningOutline;
+    double  _outlineAlpha;
 }
 
-@property (nonatomic) float cornerRadius;
+@property (nonatomic) double cornerRadius;
 @property (nonatomic, readonly) UIBezierPath *customPath;
-@property (nonatomic) float outlineAlpha;
+@property (nonatomic) double outlineAlpha;
 
 + (id)_fillColor:(BOOL)arg1;
 + (id)_strokeColor:(BOOL)arg1;
@@ -22,7 +22,6 @@
 - (id)_fillColor:(BOOL)arg1;
 - (id)_layer;
 - (float)_pathInset;
-- (float)_pixelAlignment;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 - (id)_strokeColor:(BOOL)arg1;
 - (void)_updateLightingOutlinePath;
@@ -30,16 +29,16 @@
 - (float)cornerRadius;
 - (id)customPath;
 - (id)fillColor;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 active:(BOOL)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 active:(BOOL)arg2;
 - (float)lineWidth;
 - (float)outlineAlpha;
 - (void)setActive:(BOOL)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setCornerRadius:(float)arg1;
 - (void)setEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setFillColor:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setLineWidth:(float)arg1;
 - (void)setLineWidth:(float)arg1 updatePath:(BOOL)arg2;
 - (void)setOutlineAlpha:(float)arg1;

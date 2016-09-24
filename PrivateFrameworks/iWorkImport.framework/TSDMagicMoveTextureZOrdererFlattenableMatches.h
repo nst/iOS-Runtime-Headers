@@ -3,8 +3,8 @@
  */
 
 @interface TSDMagicMoveTextureZOrdererFlattenableMatches : NSObject {
-    NSArray *_animationMatches;
-    NSArray *_texturesInZOrder;
+    NSArray * _animationMatches;
+    NSArray * _texturesInZOrder;
 }
 
 @property (nonatomic, retain) NSArray *animationMatches;

@@ -2,17 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPPairSetupSession : NSObject <HAPTimerDelegate> {
-    HAPTimer *_backoffTimer;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    <HAPPairSetupSessionDelegate> *_delegate;
-    int _options;
-    struct PairingSessionPrivate { } *_pairingSession;
-    int _role;
-    unsigned int _state;
+@interface HAPPairSetupSession : NSObject <HMFTimerDelegate> {
+    HMFTimer * _backoffTimer;
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    <HAPPairSetupSessionDelegate> * _delegate;
+    int  _options;
+    struct PairingSessionPrivate { } * _pairingSession;
+    int  _role;
+    unsigned int  _state;
 }
 
-@property (nonatomic, retain) HAPTimer *backoffTimer;
+@property (nonatomic, retain) HMFTimer *backoffTimer;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly) <HAPPairSetupSessionDelegate> *delegate;
@@ -23,6 +23,9 @@
 @property (nonatomic, readonly) int role;
 @property (nonatomic) unsigned int state;
 @property (readonly) Class superclass;
+
++ (void)initialize;
++ (BOOL)isValidSetupCode:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_handleBackoffExpiration;

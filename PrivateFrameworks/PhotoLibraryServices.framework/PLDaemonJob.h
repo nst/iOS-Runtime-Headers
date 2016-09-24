@@ -3,9 +3,9 @@
  */
 
 @interface PLDaemonJob : NSObject {
-    NSObject<OS_xpc_object> *_connection;
-    PLXPCTransaction *_transaction;
-    NSObject<OS_xpc_object> *_xpcReply;
+    NSObject<OS_xpc_object> * _connection;
+    PLXPCTransaction * _transaction;
+    NSObject<OS_xpc_object> * _xpcReply;
 }
 
 @property (nonatomic, readonly) BOOL clientWantsReply;
@@ -19,7 +19,7 @@
 - (void)archiveXPCToDisk:(id)arg1;
 - (BOOL)clientWantsReply;
 - (id)connection;
-- (long long)daemonOperation;
+- (int)daemonOperation;
 - (void)dealloc;
 - (void)encodeToXPCObject:(id)arg1;
 - (void)handleReply;

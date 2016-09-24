@@ -3,13 +3,13 @@
  */
 
 @interface MBEngine : NSObject {
-    MBAppManager *_appManager;
-    MBDebugContext *_debugContext;
-    MBDomainManager *_domainManager;
-    NSMutableDictionary *_domainRestoreBehaviors;
-    BOOL _encrypted;
-    MBProperties *_properties;
-    MBSettingsContext *_settingsContext;
+    MBAppManager * _appManager;
+    MBDebugContext * _debugContext;
+    MBDomainManager * _domainManager;
+    NSMutableDictionary * _domainRestoreBehaviors;
+    BOOL  _encrypted;
+    MBProperties * _properties;
+    MBSettingsContext * _settingsContext;
 }
 
 @property (nonatomic, readonly) MBAppManager *appManager;
@@ -21,7 +21,7 @@
 @property (nonatomic, readonly) MBDomainManager *domainManager;
 @property (nonatomic, retain) NSMutableDictionary *domainRestoreBehaviors;
 @property (getter=isDriveEngine, nonatomic, readonly) BOOL driveEngine;
-@property (getter=isEncrypted, nonatomic) BOOL encrypted;
+@property (nonatomic) BOOL encrypted;
 @property (nonatomic, readonly) int engineMode;
 @property (nonatomic, readonly) NSString *engineModeString;
 @property (nonatomic, readonly) int engineType;
@@ -35,6 +35,9 @@
 @property (getter=isServiceEngine, nonatomic, readonly) BOOL serviceEngine;
 @property (nonatomic, readonly) MBSettingsContext *settingsContext;
 
++ (id)aggregateDictionaryForFullRestoreWithKey:(id)arg1 engineType:(int)arg2;
++ (id)aggregateDictionaryKey:(id)arg1 forEngineType:(int)arg2 engineMode:(int)arg3;
++ (id)aggregateDictionaryKey:(id)arg1 forEngineType:(int)arg2 restoreType:(int)arg3;
 + (id)stringForEngineMode:(int)arg1;
 + (id)stringForEngineType:(int)arg1;
 + (id)stringForRestoreType:(int)arg1;
@@ -45,6 +48,7 @@
 - (id)debugContext;
 - (id)domainManager;
 - (id)domainRestoreBehaviors;
+- (BOOL)encrypted;
 - (int)engineMode;
 - (id)engineModeString;
 - (int)engineType;
@@ -54,16 +58,16 @@
 - (BOOL)isBackupEngine;
 - (BOOL)isCloudKitEngine;
 - (BOOL)isDriveEngine;
-- (BOOL)isEncrypted;
 - (BOOL)isForegroundRestore;
 - (BOOL)isMigrate;
 - (BOOL)isRestoreEngine;
 - (BOOL)isServiceEngine;
 - (id)localRootPathForDomain:(id)arg1;
 - (id)properties;
-- (void)pushAggregateDictionaryTotalFileCount:(long long)arg1 totalFileSize:(long long)arg2 duration:(double)arg3;
+- (void)pushAggregateDictionaryTotalFileCount:(int)arg1 totalFileSize:(int)arg2 duration:(double)arg3;
 - (int)restoreBehaviorForDomain:(id)arg1 error:(id*)arg2;
 - (int)restoreBehaviorForFile:(id)arg1 error:(id*)arg2;
+- (int)restoreBehaviorForFile:(id)arg1 withValidation:(BOOL)arg2 error:(id*)arg3;
 - (int)restoreType;
 - (id)restoreTypeString;
 - (void)setDomainRestoreBehaviors:(id)arg1;

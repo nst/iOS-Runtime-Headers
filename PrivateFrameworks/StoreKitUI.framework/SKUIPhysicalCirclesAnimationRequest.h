@@ -3,8 +3,8 @@
  */
 
 @interface SKUIPhysicalCirclesAnimationRequest : NSObject <NSCopying> {
-    int _animationType;
-    id /* block */ _completionBlock;
+    int  _animationType;
+    id /* block */  _completionBlock;
 }
 
 @property (nonatomic) int animationType;

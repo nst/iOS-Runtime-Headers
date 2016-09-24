@@ -3,12 +3,12 @@
  */
 
 @interface DAOofParams : NSObject {
-    NSDate *_endTime;
-    NSString *_externalMessage;
-    int _externalState;
-    NSString *_message;
-    int _oofState;
-    NSDate *_startTime;
+    NSDate * _endTime;
+    NSString * _externalMessage;
+    int  _externalState;
+    NSString * _message;
+    int  _oofState;
+    NSDate * _startTime;
 }
 
 @property (nonatomic, retain) NSDate *endTime;

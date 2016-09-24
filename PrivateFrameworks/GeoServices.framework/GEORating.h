@@ -8,14 +8,14 @@
         unsigned int score : 1; 
         unsigned int numberOfRatings : 1; 
         unsigned int numberOfReviews : 1; 
-    } _has;
-    double _maxScore;
-    int _numberOfRatings;
-    int _numberOfReviews;
-    NSString *_provider;
-    NSMutableArray *_reviews;
-    double _score;
-    NSString *_uRL;
+    }  _has;
+    double  _maxScore;
+    int  _numberOfRatings;
+    int  _numberOfReviews;
+    NSString * _provider;
+    NSMutableArray * _reviews;
+    double  _score;
+    NSString * _uRL;
 }
 
 @property (nonatomic) BOOL hasMaxScore;
@@ -31,6 +31,8 @@
 @property (nonatomic, retain) NSMutableArray *reviews;
 @property (nonatomic) double score;
 @property (nonatomic, retain) NSString *uRL;
+
++ (Class)reviewType;
 
 - (void)addReview:(id)arg1;
 - (void)clearReviews;

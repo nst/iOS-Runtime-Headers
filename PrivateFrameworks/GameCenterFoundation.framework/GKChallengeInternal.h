@@ -3,16 +3,16 @@
  */
 
 @interface GKChallengeInternal : GKInternalRepresentation {
-    NSString *_bundleID;
-    NSString *_challengeID;
-    NSOrderedSet *_compatibleBundleIDs;
-    NSDate *_completionDate;
-    GKGameInternal *_game;
-    NSDate *_issueDate;
-    GKPlayerInternal *_issuingPlayer;
-    NSString *_message;
-    GKPlayerInternal *_receivingPlayer;
-    int _state;
+    NSString * _bundleID;
+    NSString * _challengeID;
+    NSOrderedSet * _compatibleBundleIDs;
+    NSDate * _completionDate;
+    GKGameInternal * _game;
+    NSDate * _issueDate;
+    GKPlayerInternal * _issuingPlayer;
+    NSString * _message;
+    GKPlayerInternal * _receivingPlayer;
+    int  _state;
 }
 
 @property (nonatomic, retain) NSString *bundleID;

@@ -3,19 +3,19 @@
  */
 
 @interface CalPersistentLRUCache : NSObject {
-    NSMutableDictionary *_cacheItemsByKey;
-    unsigned int _capacity;
-    NSDate *_expirationDate;
-    double _expirationInterval;
-    NSObject<OS_dispatch_source> *_expirationSource;
-    CalFileSensor *_fileSensor;
-    CalPersistentLRUCacheItem *_firstCacheItem;
-    CalPersistentLRUCacheItem *_lastCacheItem;
-    unsigned int _numItems;
-    NSString *_path;
-    NSObject<OS_dispatch_queue> *_queue;
-    CalLimitingQueue *_saveQueue;
-    id _systemClockObserver;
+    NSMutableDictionary * _cacheItemsByKey;
+    unsigned int  _capacity;
+    NSDate * _expirationDate;
+    double  _expirationInterval;
+    NSObject<OS_dispatch_source> * _expirationSource;
+    CalFileSensor * _fileSensor;
+    CalPersistentLRUCacheItem * _firstCacheItem;
+    CalPersistentLRUCacheItem * _lastCacheItem;
+    unsigned int  _numItems;
+    NSString * _path;
+    NSObject<OS_dispatch_queue> * _queue;
+    CalLimitingQueue * _saveQueue;
+    id  _systemClockObserver;
 }
 
 - (void).cxx_destruct;

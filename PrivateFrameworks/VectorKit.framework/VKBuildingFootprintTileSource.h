@@ -3,16 +3,16 @@
  */
 
 @interface VKBuildingFootprintTileSource : VKVectorTileSource {
-    BOOL _makeFacades;
-    int _minimumZoomLevel;
-    BOOL _prepareExtrusion;
+    BOOL  _makeFacades;
+    int  _minimumZoomLevel;
+    BOOL  _prepareExtrusion;
 }
 
 @property (nonatomic) BOOL makeFacades;
 
-- (id)initWithTileSet:(id)arg1 resourceManifestConfiguration:(id)arg2 locale:(id)arg3;
+- (id)initWithTileSet:(id)arg1 resourceManifestConfiguration:(id)arg2 locale:(id)arg3 sharedResources:(id)arg4;
 - (BOOL)makeFacades;
-- (unsigned long long)mapLayerForZoomLevelRange;
+- (unsigned int)mapLayerForZoomLevelRange;
 - (BOOL)maximumZoomLevelBoundsCamera;
 - (int)minimumZoomLevel;
 - (BOOL)minimumZoomLevelBoundsCamera;

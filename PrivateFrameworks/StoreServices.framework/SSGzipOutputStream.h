@@ -3,7 +3,7 @@
  */
 
 @interface SSGzipOutputStream : NSOutputStream {
-    NSOutputStream *_actualOutputStream;
+    NSOutputStream * _actualOutputStream;
     struct z_stream_s { 
         char *next_in; 
         unsigned int avail_in; 
@@ -19,11 +19,11 @@
         int data_type; 
         unsigned int adler; 
         unsigned int reserved; 
-    } _stream;
-    unsigned int _streamContentLength;
-    NSError *_streamError;
-    char *_streamOutBuffer;
-    unsigned int _streamOutBufferSize;
+    }  _stream;
+    unsigned int  _streamContentLength;
+    NSError * _streamError;
+    char * _streamOutBuffer;
+    unsigned int  _streamOutBufferSize;
 }
 
 - (int)_consumeStreamOutput:(BOOL)arg1;

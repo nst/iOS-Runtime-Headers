@@ -3,8 +3,8 @@
  */
 
 @interface ABVCardPersonValueSetter : ABVCardValueSetter {
-    void *_person;
-    struct __CFArray { } *_properties;
+    void * _person;
+    struct __CFArray { } * _properties;
 }
 
 + (struct __CFArray { }*)supportedProperties;

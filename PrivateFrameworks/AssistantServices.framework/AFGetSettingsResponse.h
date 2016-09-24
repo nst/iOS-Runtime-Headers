@@ -3,7 +3,7 @@
  */
 
 @interface AFGetSettingsResponse : AFSiriResponse {
-    NSArray *_settings;
+    NSArray * _settings;
 }
 
 @property (nonatomic, copy) NSArray *settings;

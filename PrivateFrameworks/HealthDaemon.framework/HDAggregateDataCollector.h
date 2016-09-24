@@ -3,16 +3,17 @@
  */
 
 @interface HDAggregateDataCollector : HDDataCollector {
-    BOOL _didReceiveSensorDatum;
-    BOOL _fetchingHistoricalData;
-    _HKDataCollectorDelayedOperation *_historicalFetchOperation;
-    NSDictionary *_lastReceivedSecondaryContext;
-    <HDSensorDatum> *_lastReceivedSensorDatum;
-    double _maxDatumDuration;
-    BOOL _needsHistoricalFetch;
+    BOOL  _didReceiveSensorDatum;
+    BOOL  _fetchingHistoricalData;
+    _HKDataCollectorDelayedOperation * _historicalFetchOperation;
+    NSDictionary * _lastReceivedSecondaryContext;
+    <HDSensorDatum> * _lastReceivedSensorDatum;
+    double  _maxDatumDuration;
+    BOOL  _needsHistoricalFetch;
 }
 
 @property double maxDatumDuration;
+@property (nonatomic, readonly) BOOL requiresSampleAggregation;
 
 - (void).cxx_destruct;
 - (double)_queue_aggregationInterval;
@@ -31,10 +32,12 @@
 - (void)beginUpdatesFromDatum:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)fetchHistoricalSensorDataSinceDatum:(id)arg1 databaseIdentifier:(id)arg2 completion:(id /* block */)arg3;
 - (id)hkObjectsFromSensorData:(id)arg1 baseSensorDatum:(id)arg2 startDate:(id)arg3 endDate:(id)arg4;
-- (id)initWithHealthDaemon:(id)arg1;
+- (id)initWithPrimaryProfile:(id)arg1;
 - (double)maxDatumDuration;
+- (BOOL)requiresSampleAggregation;
 - (void)setMaxDatumDuration:(double)arg1;
 - (void)updateHistoricalData;
 - (void)updateHistoricalDataWithCompletion:(id /* block */)arg1;
+- (void)willPersistHKObjects:(id)arg1;
 
 @end

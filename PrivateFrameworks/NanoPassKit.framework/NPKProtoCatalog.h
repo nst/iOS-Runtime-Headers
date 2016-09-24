@@ -3,7 +3,7 @@
  */
 
 @interface NPKProtoCatalog : PBCodable <NSCopying> {
-    NSData *_catalogData;
+    NSData * _catalogData;
 }
 
 @property (nonatomic, retain) NSData *catalogData;

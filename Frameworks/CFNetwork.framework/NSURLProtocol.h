@@ -3,7 +3,7 @@
  */
 
 @interface NSURLProtocol : NSObject {
-    NSURLProtocolInternal *_internal;
+    NSURLProtocolInternal * _internal;
 }
 
 @property (readonly, copy) NSCachedURLResponse *cachedResponse;

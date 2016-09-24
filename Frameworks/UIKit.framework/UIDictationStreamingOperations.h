@@ -3,10 +3,10 @@
  */
 
 @interface UIDictationStreamingOperations : NSObject {
-    <UITextInput> *_document;
-    NSMutableArray *_operations;
-    double _timeAfterInsertion;
-    double _timeAfterSelectRange;
+    <UITextInput> * _document;
+    NSMutableArray * _operations;
+    double  _timeAfterInsertion;
+    double  _timeAfterSelectRange;
 }
 
 @property (nonatomic, retain) NSMutableArray *operations;

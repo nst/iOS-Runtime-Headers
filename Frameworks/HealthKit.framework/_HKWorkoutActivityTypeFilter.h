@@ -3,8 +3,8 @@
  */
 
 @interface _HKWorkoutActivityTypeFilter : _HKFilter {
-    unsigned int _operatorType;
-    unsigned int _workoutActivityType;
+    unsigned int  _operatorType;
+    unsigned int  _workoutActivityType;
 }
 
 @property (nonatomic, readonly) unsigned int operatorType;
@@ -26,6 +26,6 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
-- (id)predicateWithHealthDaemon:(id)arg1;
+- (id)predicateWithProfile:(id)arg1;
 
 @end

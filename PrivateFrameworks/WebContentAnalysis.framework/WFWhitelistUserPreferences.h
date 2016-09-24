@@ -3,13 +3,13 @@
  */
 
 @interface WFWhitelistUserPreferences : NSObject {
-    BOOL alwaysAllowHTTPS;
-    WFWhitelistSiteBuffer *filterBlacklist;
-    BOOL filterEnabled;
-    WFWhitelistSiteBuffer *filterWhitelist;
-    NSString *username;
-    WFWhitelistSiteBuffer *webWhitelist;
-    BOOL whitelistEnabled;
+    BOOL  alwaysAllowHTTPS;
+    WFWhitelistSiteBuffer * filterBlacklist;
+    BOOL  filterEnabled;
+    WFWhitelistSiteBuffer * filterWhitelist;
+    NSString * username;
+    WFWhitelistSiteBuffer * webWhitelist;
+    BOOL  whitelistEnabled;
 }
 
 @property BOOL alwaysAllowHTTPS;

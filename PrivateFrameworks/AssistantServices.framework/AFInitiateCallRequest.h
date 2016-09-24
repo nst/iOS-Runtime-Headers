@@ -3,7 +3,7 @@
  */
 
 @interface AFInitiateCallRequest : AFSiriRequest {
-    STCall *_call;
+    STCall * _call;
 }
 
 + (BOOL)supportsSecureCoding;

@@ -3,11 +3,11 @@
  */
 
 @interface AAUIServerSuppliedProfilePictureCache : NSObject {
-    NSMutableDictionary *_personIDToEntryMap;
-    float _pictureDiameter;
+    NSMutableDictionary * _personIDToEntryMap;
+    double  _pictureDiameter;
 }
 
-@property (nonatomic, readonly) float pictureDiameter;
+@property (nonatomic, readonly) double pictureDiameter;
 
 + (id)sharedCache;
 

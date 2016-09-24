@@ -2,23 +2,33 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIBuyButtonDescriptor : NSObject <NSCopying, NSMutableCopying> {
-    NSString *_buttonText;
-    int _buttonType;
-    NSString *_confirmationText;
-    unsigned int _elementType;
-    long long _itemIdentifier;
-    SKUIStoreIdentifier *_storeIdentifier;
-    NSString *_variantIdentifier;
+@interface SKUIBuyButtonDescriptor : NSObject {
+    NSString * _buttonText;
+    int  _buttonType;
+    NSString * _confirmationText;
+    unsigned int  _elementType;
+    BOOL  _highlighted;
+    int  _itemIdentifier;
+    int  _progressType;
+    BOOL  _shouldSuppressEnabled;
+    BOOL  _showingConfirmation;
+    BOOL  _showsUniversal;
+    SKUIStoreIdentifier * _storeIdentifier;
+    NSString * _variantIdentifier;
 }
 
-@property (nonatomic, readonly, copy) NSString *buttonText;
-@property (nonatomic, readonly) int buttonType;
-@property (nonatomic, readonly, copy) NSString *confirmationText;
-@property (nonatomic, readonly) unsigned int elementType;
-@property (nonatomic, readonly) long long itemIdentifier;
-@property (nonatomic, readonly) SKUIStoreIdentifier *storeIdentifier;
-@property (nonatomic, readonly) NSString *variantIdentifier;
+@property (nonatomic, copy) NSString *buttonText;
+@property (nonatomic) int buttonType;
+@property (nonatomic, copy) NSString *confirmationText;
+@property (nonatomic) unsigned int elementType;
+@property (nonatomic) BOOL highlighted;
+@property (nonatomic) int itemIdentifier;
+@property (nonatomic) int progressType;
+@property (nonatomic) BOOL shouldSuppressEnabled;
+@property (nonatomic) BOOL showingConfirmation;
+@property (nonatomic) BOOL showsUniversal;
+@property (nonatomic, retain) SKUIStoreIdentifier *storeIdentifier;
+@property (nonatomic, retain) NSString *variantIdentifier;
 
 - (void).cxx_destruct;
 - (id)buttonText;
@@ -26,10 +36,25 @@
 - (BOOL)canPerformLocalActionWithItemState:(id)arg1;
 - (BOOL)canPersonalizeUsingItemState:(id)arg1;
 - (id)confirmationText;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)elementType;
-- (long long)itemIdentifier;
-- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (BOOL)highlighted;
+- (int)itemIdentifier;
+- (int)progressType;
+- (void)setButtonText:(id)arg1;
+- (void)setButtonType:(int)arg1;
+- (void)setConfirmationText:(id)arg1;
+- (void)setElementType:(unsigned int)arg1;
+- (void)setHighlighted:(BOOL)arg1;
+- (void)setItemIdentifier:(int)arg1;
+- (void)setProgressType:(int)arg1;
+- (void)setShouldSuppressEnabled:(BOOL)arg1;
+- (void)setShowingConfirmation:(BOOL)arg1;
+- (void)setShowsUniversal:(BOOL)arg1;
+- (void)setStoreIdentifier:(id)arg1;
+- (void)setVariantIdentifier:(id)arg1;
+- (BOOL)shouldSuppressEnabled;
+- (BOOL)showingConfirmation;
+- (BOOL)showsUniversal;
 - (id)storeIdentifier;
 - (id)variantIdentifier;
 

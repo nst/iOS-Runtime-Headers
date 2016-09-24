@@ -3,9 +3,9 @@
  */
 
 @interface CNAccountsAndGroupsSection : NSObject {
-    NSArray *_items;
-    NSString *_title;
-    id /* block */ _titleProvider;
+    NSArray * _items;
+    NSString * _title;
+    id /* block */  _titleProvider;
 }
 
 @property (nonatomic, retain) NSArray *items;

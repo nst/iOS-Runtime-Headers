@@ -3,12 +3,12 @@
  */
 
 @interface TSCH3DTextureAtlas : NSObject {
-    NSMutableDictionary *mCachedLabels;
-    float mSamples;
-    NSMutableArray *mTextures;
+    NSMutableDictionary * mCachedLabels;
+    double  mSamples;
+    NSMutableArray * mTextures;
 }
 
-@property (nonatomic, readonly) float samples;
+@property (nonatomic, readonly) double samples;
 
 + (id)atlas;
 + (id)atlasWithSamples:(float)arg1;

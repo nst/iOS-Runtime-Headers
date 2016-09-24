@@ -3,7 +3,7 @@
  */
 
 @interface EDOptimizedStringsCollection : EDCollection {
-    NSMutableDictionary *mStringDictionary;
+    NSMutableDictionary * mStringDictionary;
 }
 
 - (unsigned int)addObject:(id)arg1;

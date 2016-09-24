@@ -3,10 +3,10 @@
  */
 
 @interface PLChoosableItem : NSObject {
-    int _height;
-    int _type;
-    NSString *_uniformTypeIdentifier;
-    int _width;
+    int  _height;
+    int  _type;
+    NSString * _uniformTypeIdentifier;
+    int  _width;
 }
 
 @property (nonatomic, readonly) int height;

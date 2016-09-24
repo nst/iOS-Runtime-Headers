@@ -3,7 +3,7 @@
  */
 
 @interface NSUnknownRequestTypeResult : NSPersistentStoreResult {
-    NSArray *_subresults;
+    NSArray * _subresults;
 }
 
 @property (readonly) NSArray *subresults;

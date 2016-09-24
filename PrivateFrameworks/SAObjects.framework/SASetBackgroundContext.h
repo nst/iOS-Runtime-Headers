@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASetBackgroundContext : SABaseCommand <SAServerBoundCommand>
+@interface SASetBackgroundContext : SABaseCommand <SAClientStateServerBoundCommand>
 
 @property (nonatomic, copy) NSString *aceId;
 @property (readonly, copy) NSString *debugDescription;

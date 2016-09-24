@@ -3,13 +3,16 @@
  */
 
 @interface _MCDBrowsableContentTableViewPreloader : NSObject {
-    BOOL _cancelled;
-    id /* block */ _cancelledBlock;
-    MCDPCContainer *_container;
-    int _index;
-    NSIndexPath *_indexPath;
-    MCDPCItem *_item;
-    UIViewController *_sourceViewController;
+    BOOL  _cancelled;
+    id /* block */  _cancelledBlock;
+    MCDPCContainer * _container;
+    int  _index;
+    NSIndexPath * _indexPath;
+    BOOL  _isRootTableView;
+    BOOL  _isTabbedBrowsing;
+    MCDPCItem * _item;
+    MPWeakTimer * _loadingTimer;
+    UIViewController * _sourceViewController;
 }
 
 @property (getter=isCancelled, nonatomic) BOOL cancelled;
@@ -17,7 +20,10 @@
 @property (nonatomic, readonly) MCDPCContainer *container;
 @property (nonatomic, readonly) int index;
 @property (nonatomic, readonly) NSIndexPath *indexPath;
+@property (nonatomic) BOOL isRootTableView;
+@property (nonatomic) BOOL isTabbedBrowsing;
 @property (nonatomic, readonly) MCDPCItem *item;
+@property (nonatomic, retain) MPWeakTimer *loadingTimer;
 @property (nonatomic, readonly) UIViewController *sourceViewController;
 
 - (void).cxx_destruct;
@@ -31,11 +37,17 @@
 - (id)description;
 - (int)index;
 - (id)indexPath;
-- (id)initWithContainer:(id)arg1 index:(int)arg2 sourceViewController:(id)arg3 cancelledBlock:(id /* block */)arg4;
+- (id)initWithContainer:(id)arg1 index:(int)arg2 sourceViewController:(id)arg3 rootTableView:(BOOL)arg4 tabbedBrowsing:(BOOL)arg5 cancelledBlock:(id /* block */)arg6;
 - (BOOL)isCancelled;
+- (BOOL)isRootTableView;
+- (BOOL)isTabbedBrowsing;
 - (id)item;
 - (void)loadAndPush;
+- (id)loadingTimer;
 - (void)setCancelled:(BOOL)arg1;
+- (void)setIsRootTableView:(BOOL)arg1;
+- (void)setIsTabbedBrowsing:(BOOL)arg1;
+- (void)setLoadingTimer:(id)arg1;
 - (id)sourceViewController;
 
 @end

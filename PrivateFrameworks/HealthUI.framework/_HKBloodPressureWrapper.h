@@ -3,8 +3,8 @@
  */
 
 @interface _HKBloodPressureWrapper : NSObject {
-    HKStatistics *_diastolic;
-    HKStatistics *_systolic;
+    HKStatistics * _diastolic;
+    HKStatistics * _systolic;
 }
 
 @property (nonatomic, retain) HKStatistics *diastolic;

@@ -3,11 +3,11 @@
  */
 
 @interface CalDAVCalendarServerDeletedDetailsItem : CoreDAVItem {
-    NSString *_componentType;
-    NSString *_displayName;
-    BOOL _hadMoreInstances;
-    ICSDateValue *_nextInstance;
-    NSString *_summary;
+    NSString * _componentType;
+    NSString * _displayName;
+    BOOL  _hadMoreInstances;
+    ICSDateValue * _nextInstance;
+    NSString * _summary;
 }
 
 @property (nonatomic, retain) NSString *componentType;

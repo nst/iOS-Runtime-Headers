@@ -3,28 +3,28 @@
  */
 
 @interface CATProperty : NSObject {
-    int _association;
-    SEL _customGetterSelector;
-    SEL _customSetterSelector;
-    NSString *_instanceVariableName;
-    NSString *_name;
-    BOOL _nonAtomic;
-    Class _objectClass;
-    BOOL _readOnly;
-    int _type;
-    BOOL _weakReference;
+    int  _association;
+    SEL  _customGetterSelector;
+    SEL  _customSetterSelector;
+    NSString * _instanceVariableName;
+    NSString * _name;
+    BOOL  _nonAtomic;
+    Class  _objectClass;
+    BOOL  _readOnly;
+    int  _type;
+    BOOL  _weakReference;
 }
 
-@property (readonly) int association;
-@property (readonly) SEL customGetterSelector;
-@property (readonly) SEL customSetterSelector;
-@property (readonly, copy) NSString *instanceVariableName;
-@property (readonly, copy) NSString *name;
-@property (getter=isNonAtomic, readonly) BOOL nonAtomic;
-@property (readonly) Class objectClass;
-@property (getter=isReadOnly, readonly) BOOL readOnly;
-@property (readonly) int type;
-@property (getter=isWeakReference, readonly) BOOL weakReference;
+@property (nonatomic, readonly) int association;
+@property (nonatomic, readonly) SEL customGetterSelector;
+@property (nonatomic, readonly) SEL customSetterSelector;
+@property (nonatomic, readonly, copy) NSString *instanceVariableName;
+@property (nonatomic, readonly, copy) NSString *name;
+@property (getter=isNonAtomic, nonatomic, readonly) BOOL nonAtomic;
+@property (nonatomic, readonly) Class objectClass;
+@property (getter=isReadOnly, nonatomic, readonly) BOOL readOnly;
+@property (nonatomic, readonly) int type;
+@property (getter=isWeakReference, nonatomic, readonly) BOOL weakReference;
 
 + (void)initialize;
 + (id)propertiesForClass:(Class)arg1;

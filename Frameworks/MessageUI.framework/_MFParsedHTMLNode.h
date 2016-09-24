@@ -3,12 +3,12 @@
  */
 
 @interface _MFParsedHTMLNode : NSObject <MFMessageBodyConsumableInnerTextNode, MFMessageBodyTreeNode> {
-    NSMutableArray *_childNodes;
-    unsigned int _endLocation;
-    NSString *_htmlString;
-    _MFParsedHTMLNode *_nextSibling;
-    _MFParsedHTMLNode *_parentNode;
-    unsigned int _startLocation;
+    NSMutableArray * _childNodes;
+    unsigned int  _endLocation;
+    NSString * _htmlString;
+    _MFParsedHTMLNode * _nextSibling;
+    _MFParsedHTMLNode * _parentNode;
+    unsigned int  _startLocation;
 }
 
 @property (readonly, copy) NSString *debugDescription;

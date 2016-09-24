@@ -3,9 +3,9 @@
  */
 
 @interface SKUIDynamicGridViewElement : SKUIGridViewElement {
-    BOOL _hasValidTemplateDefinitionMap;
-    int _minimumEntityCountForSections;
-    NSMutableDictionary *_templateDefinitionTypeToModeValueMap;
+    BOOL  _hasValidTemplateDefinitionMap;
+    int  _minimumEntityCountForSections;
+    NSMutableDictionary * _templateDefinitionTypeToModeValueMap;
 }
 
 @property (nonatomic, readonly) BOOL hasSectionHeaders;

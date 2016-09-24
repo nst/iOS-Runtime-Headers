@@ -3,8 +3,8 @@
  */
 
 @interface SKUIShareTemplateTextItemProvider : UIActivityItemProvider {
-    SKUIClientContext *_clientContext;
-    SKUIShareTemplateViewElement *_templateElement;
+    SKUIClientContext * _clientContext;
+    SKUIShareTemplateViewElement * _templateElement;
 }
 
 - (void).cxx_destruct;

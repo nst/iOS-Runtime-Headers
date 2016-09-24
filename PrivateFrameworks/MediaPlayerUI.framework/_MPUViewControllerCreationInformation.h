@@ -3,8 +3,8 @@
  */
 
 @interface _MPUViewControllerCreationInformation : NSObject {
-    NSDictionary *_attributes;
-    id /* block */ _defaultQueryCreationHandler;
+    NSDictionary * _attributes;
+    id /* block */  _defaultQueryCreationHandler;
 }
 
 @property (nonatomic, readonly) NSDictionary *attributes;

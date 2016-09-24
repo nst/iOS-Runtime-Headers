@@ -3,7 +3,7 @@
  */
 
 @interface WCMessageRequest : WCMessage <NSSecureCoding> {
-    BOOL _expectsResponse;
+    BOOL  _expectsResponse;
 }
 
 @property BOOL expectsResponse;

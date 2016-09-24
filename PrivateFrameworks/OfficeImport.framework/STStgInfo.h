@@ -3,19 +3,19 @@
  */
 
 @interface STStgInfo : NSObject {
-    int m_accessMode;
+    int  m_accessMode;
     struct { 
         unsigned int m_data1; 
         unsigned short m_data2; 
         unsigned short m_data3; 
         unsigned char m_data4[8]; 
-    } m_clsid;
-    long m_creationTime;
-    long m_modificationTime;
-    NSString *m_pstrName;
-    unsigned long m_size;
-    int m_type;
-    unsigned long m_userFlags;
+    }  m_clsid;
+    long  m_creationTime;
+    long  m_modificationTime;
+    NSString * m_pstrName;
+    unsigned long  m_size;
+    int  m_type;
+    unsigned long  m_userFlags;
 }
 
 - (void)dealloc;
@@ -28,7 +28,7 @@
 - (int)getType;
 - (unsigned long)getUserFlags;
 - (id)init;
-- (id)initWithStgInfo:(struct _StgInfo { int *x1; int x2; unsigned int x3; unsigned long long x4; int x5; int x6; int x7; struct _SSRW_GUID { unsigned int x_8_1_1; unsigned short x_8_1_2; unsigned short x_8_1_3; unsigned char x_8_1_4[8]; } x8; }*)arg1;
+- (id)initWithStgInfo:(struct _StgInfo { int *x1; int x2; unsigned int x3; unsigned int x4; int x5; int x6; int x7; struct _SSRW_GUID { unsigned int x_8_1_1; unsigned short x_8_1_2; unsigned short x_8_1_3; unsigned char x_8_1_4[8]; } x8; }*)arg1;
 - (void)setAccessMode:(int)arg1;
 - (void)setCLSID:(struct { unsigned int x1; unsigned short x2; unsigned short x3; unsigned char x4[8]; })arg1;
 - (void)setCreationTime:(long)arg1;

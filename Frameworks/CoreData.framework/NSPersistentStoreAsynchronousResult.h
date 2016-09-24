@@ -3,11 +3,11 @@
  */
 
 @interface NSPersistentStoreAsynchronousResult : NSPersistentStoreResult {
-    int _flags;
-    id _requestCompletionBlock;
-    NSManagedObjectContext *_requestContext;
-    NSError *_requestError;
-    NSProgress *_requestProgress;
+    int  _flags;
+    id  _requestCompletionBlock;
+    NSManagedObjectContext * _requestContext;
+    NSError * _requestError;
+    NSProgress * _requestProgress;
 }
 
 @property (readonly) NSManagedObjectContext *managedObjectContext;

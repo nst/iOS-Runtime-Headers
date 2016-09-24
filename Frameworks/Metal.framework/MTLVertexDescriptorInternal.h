@@ -3,8 +3,8 @@
  */
 
 @interface MTLVertexDescriptorInternal : MTLVertexDescriptor {
-    MTLVertexAttributeDescriptorArrayInternal *_attributeArray;
-    MTLVertexBufferLayoutDescriptorArrayInternal *_vertexBufferArray;
+    MTLVertexAttributeDescriptorArrayInternal * _attributeArray;
+    MTLVertexBufferLayoutDescriptorArrayInternal * _vertexBufferArray;
 }
 
 + (id)vertexDescriptor;

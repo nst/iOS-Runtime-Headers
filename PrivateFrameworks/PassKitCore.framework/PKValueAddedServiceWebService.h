@@ -3,10 +3,10 @@
  */
 
 @interface PKValueAddedServiceWebService : NSObject <NSURLConnectionDataDelegate> {
-    NSDictionary *_merchantPayload;
-    PKPass *_pass;
-    NSURLSession *_urlSession;
-    PKValueAddedServiceTransaction *_valueAddedTransaction;
+    NSDictionary * _merchantPayload;
+    PKPass * _pass;
+    NSURLSession * _urlSession;
+    PKValueAddedServiceTransaction * _valueAddedTransaction;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -16,7 +16,7 @@
 @property (nonatomic, readonly) PKPass *pass;
 @property (readonly) Class superclass;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)downloadMerchantPayloadWithCompletion:(id /* block */)arg1;
 - (void)downloadPassWithCompletion:(id /* block */)arg1;
 - (id)initWithValueAddedServiceTransaction:(id)arg1;

@@ -3,13 +3,13 @@
  */
 
 @interface _MKTransitConnectionCell : MKCustomSeparatorTableViewCell {
-    UIButton *_button;
-    <GEOTransitConnectionInfo> *_connectionInfo;
-    <_MKTransitConnectionCellDelegate> *_delegate;
-    UILabel *_nameLabel;
-    NSLayoutConstraint *_nameLabelToTopConstraint;
-    MKTransitInfoLabelView *_transitInfoLabel;
-    NSLayoutConstraint *_transitInfoToNameConstraint;
+    UIButton * _button;
+    <GEOTransitConnectionInfo> * _connectionInfo;
+    <_MKTransitConnectionCellDelegate> * _delegate;
+    _MKUILabel * _nameLabel;
+    NSLayoutConstraint * _nameLabelToTopConstraint;
+    MKTransitInfoLabelView * _transitInfoLabel;
+    NSLayoutConstraint * _transitInfoToNameConstraint;
 }
 
 @property (nonatomic, retain) <GEOTransitConnectionInfo> *connectionInfo;

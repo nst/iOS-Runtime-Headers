@@ -3,12 +3,13 @@
  */
 
 @interface EKCalendarInfo : NSObject {
-    EKCalendar *_calendar;
-    UIColor *_color;
-    int _customGroupType;
-    EKGroupInfo *_group;
-    BOOL _selected;
-    NSString *_title;
+    EKCalendar * _calendar;
+    UIColor * _color;
+    int  _customGroupType;
+    EKGroupInfo * _group;
+    BOOL  _isEnabled;
+    BOOL  _selected;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) EKCalendar *calendar;
@@ -20,6 +21,7 @@
 @property (nonatomic, readonly) UIImage *highlightedIcon;
 @property (nonatomic, readonly) UIImage *icon;
 @property (nonatomic, readonly) BOOL isEditable;
+@property (nonatomic) BOOL isEnabled;
 @property (nonatomic, readonly) BOOL isPublished;
 @property (nonatomic, readonly) BOOL isShared;
 @property (nonatomic, readonly) BOOL isSubscribed;
@@ -39,6 +41,7 @@
 - (id)icon;
 - (id)initWithCalendar:(id)arg1;
 - (BOOL)isEditable;
+- (BOOL)isEnabled;
 - (BOOL)isPublished;
 - (BOOL)isShared;
 - (BOOL)isSubscribed;
@@ -47,6 +50,7 @@
 - (void)setColor:(id)arg1;
 - (void)setCustomGroupType:(int)arg1;
 - (void)setGroup:(id)arg1;
+- (void)setIsEnabled:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (id)title;
 

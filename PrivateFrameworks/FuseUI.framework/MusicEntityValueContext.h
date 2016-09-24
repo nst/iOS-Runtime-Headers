@@ -3,22 +3,22 @@
  */
 
 @interface MusicEntityValueContext : NSObject <NSCoding, NSCopying> {
-    <MusicEntityProviding> *_containerDownloadInformationEntityProvider;
-    <MusicEntityValueProviding> *_containerEntityValueProvider;
-    MPUContentItemIdentifierCollection *_containerIdentifierCollection;
-    MPPlaybackContext *_containerPlaybackContext;
-    <MusicEntityValueProviding> *_itemEntityValueProvider;
-    unsigned int _itemGlobalIndex;
-    MPUContentItemIdentifierCollection *_itemIdentifierCollection;
-    MPPlaybackContext *_itemPlaybackContext;
-    BOOL _wantsContainerDownloadInformationEntityProvider;
-    BOOL _wantsContainerEntityValueProvider;
-    BOOL _wantsContainerIdentifierCollection;
-    BOOL _wantsContainerPlaybackContext;
-    BOOL _wantsItemEntityValueProvider;
-    BOOL _wantsItemGlobalIndex;
-    BOOL _wantsItemIdentifierCollection;
-    BOOL _wantsItemPlaybackContext;
+    <MusicEntityProviding> * _containerDownloadInformationEntityProvider;
+    <MusicEntityValueProviding> * _containerEntityValueProvider;
+    MPUContentItemIdentifierCollection * _containerIdentifierCollection;
+    MPPlaybackContext * _containerPlaybackContext;
+    <MusicEntityValueProviding> * _itemEntityValueProvider;
+    unsigned int  _itemGlobalIndex;
+    MPUContentItemIdentifierCollection * _itemIdentifierCollection;
+    MPPlaybackContext * _itemPlaybackContext;
+    BOOL  _wantsContainerDownloadInformationEntityProvider;
+    BOOL  _wantsContainerEntityValueProvider;
+    BOOL  _wantsContainerIdentifierCollection;
+    BOOL  _wantsContainerPlaybackContext;
+    BOOL  _wantsItemEntityValueProvider;
+    BOOL  _wantsItemGlobalIndex;
+    BOOL  _wantsItemIdentifierCollection;
+    BOOL  _wantsItemPlaybackContext;
 }
 
 @property (nonatomic, retain) <MusicEntityProviding> *containerDownloadInformationEntityProvider;

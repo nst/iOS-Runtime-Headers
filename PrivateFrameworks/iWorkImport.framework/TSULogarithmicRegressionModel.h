@@ -3,11 +3,11 @@
  */
 
 @interface TSULogarithmicRegressionModel : TSURegressionModel {
-    BOOL mAffine;
-    double *mCoefficients;
-    double mIntercept;
-    int mNumCoefficients;
-    double mRSquared;
+    BOOL  mAffine;
+    double * mCoefficients;
+    double  mIntercept;
+    int  mNumCoefficients;
+    double  mRSquared;
 }
 
 - (double)coefficientAtIndex:(int)arg1;

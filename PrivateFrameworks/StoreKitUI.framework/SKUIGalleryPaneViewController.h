@@ -3,8 +3,8 @@
  */
 
 @interface SKUIGalleryPaneViewController : UIViewController {
-    SKUIMediaComponent *_component;
-    int _galleryIndex;
+    SKUIMediaComponent * _component;
+    int  _galleryIndex;
 }
 
 @property (nonatomic, readonly) SKUIMediaComponent *component;

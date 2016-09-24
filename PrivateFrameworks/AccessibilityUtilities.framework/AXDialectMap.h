@@ -3,12 +3,12 @@
  */
 
 @interface AXDialectMap : NSObject {
-    AXLangMap *_langMap;
-    NSLocale *_locale;
-    NSCharacterSet *_secondaryLanguageRange;
-    NSCharacterSet *_speakableCharacters;
-    NSString *_specificLanguageID;
-    NSString *_voiceName;
+    AXLangMap * _langMap;
+    NSLocale * _locale;
+    NSCharacterSet * _secondaryLanguageRange;
+    NSCharacterSet * _speakableCharacters;
+    NSString * _specificLanguageID;
+    NSString * _voiceName;
 }
 
 @property (nonatomic, readonly) AXLanguageManager *langManager;

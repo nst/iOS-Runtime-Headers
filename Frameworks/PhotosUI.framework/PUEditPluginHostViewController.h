@@ -3,15 +3,15 @@
  */
 
 @interface PUEditPluginHostViewController : UIViewController <PLDismissableViewController> {
-    BOOL __didHandleCancel;
-    BOOL __didHandleDone;
-    id __disablingIdleTimerToken;
-    BOOL __extensionDidBeginContentEditing;
-    UIViewController *__remoteViewController;
-    <NSCopying> *__request;
-    <PUEditPluginHostViewControllerDataSource> *_dataSource;
-    <PUEditPluginHostViewControllerDelegate> *_delegate;
-    PUEditPlugin *_plugin;
+    BOOL  __didHandleCancel;
+    BOOL  __didHandleDone;
+    id  __disablingIdleTimerToken;
+    BOOL  __extensionDidBeginContentEditing;
+    UIViewController * __remoteViewController;
+    <NSCopying> * __request;
+    <PUEditPluginHostViewControllerDataSource> * _dataSource;
+    <PUEditPluginHostViewControllerDelegate> * _delegate;
+    PUEditPlugin * _plugin;
 }
 
 @property (setter=_setDidHandleCancel:, nonatomic) BOOL _didHandleCancel;

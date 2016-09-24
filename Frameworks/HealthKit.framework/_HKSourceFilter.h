@@ -3,8 +3,8 @@
  */
 
 @interface _HKSourceFilter : _HKFilter {
-    unsigned int _operatorType;
-    NSSet *_sources;
+    unsigned int  _operatorType;
+    NSSet * _sources;
 }
 
 @property (nonatomic, readonly) unsigned int operatorType;
@@ -29,7 +29,7 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
-- (id)_sourceIdentifiersWithHealthDaemon:(id)arg1 error:(id*)arg2;
-- (id)predicateWithHealthDaemon:(id)arg1;
+- (id)_sourceIdentifiersWithProfile:(id)arg1 error:(id*)arg2;
+- (id)predicateWithProfile:(id)arg1;
 
 @end

@@ -3,16 +3,17 @@
  */
 
 @interface CUState : NSObject {
-    id /* block */ _eventHandler;
-    unsigned int _index;
-    NSPointerArray *_lcaMap;
-    NSString *_name;
-    CUState *_parent;
+    id /* block */  _eventHandler;
+    unsigned int  _index;
+    NSPointerArray * _lcaMap;
+    NSString * _name;
+    CUState * _parent;
 }
 
 @property (nonatomic, copy) id /* block */ eventHandler;
 @property (nonatomic, readonly, copy) NSString *name;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (id /* block */)eventHandler;

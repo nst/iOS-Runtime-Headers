@@ -3,8 +3,8 @@
  */
 
 @interface HSControlPromptEntryRequest : HSRequest {
-    NSDictionary *_attributes;
-    unsigned int _interfaceID;
+    NSDictionary * _attributes;
+    unsigned int  _interfaceID;
 }
 
 @property (nonatomic, readonly) NSDictionary *attributes;

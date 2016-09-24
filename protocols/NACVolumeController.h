@@ -13,12 +13,14 @@
 - (id)init;
 - (id)initWithAudioCategory:(NSString *)arg1;
 - (BOOL)isMuted;
+- (BOOL)isProminentHapticEnabled;
 - (BOOL)isSystemMuted;
 - (BOOL)isVolumeControlAvailable;
 - (BOOL)isVolumeWarningEnabled;
 - (void)setDelegate:(id <NACVolumeControllerDelegate>)arg1;
 - (void)setHapticIntensity:(float)arg1;
 - (void)setMuted:(BOOL)arg1;
+- (void)setProminentHapticEnabled:(BOOL)arg1;
 - (void)setSystemMuted:(BOOL)arg1;
 - (void)setVolumeValue:(float)arg1;
 - (void)setVolumeValue:(float)arg1 muted:(BOOL)arg2 overrideEULimit:(BOOL)arg3;

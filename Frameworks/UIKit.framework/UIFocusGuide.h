@@ -2,12 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIFocusGuide : UILayoutGuide <_UIFocusRegion> {
-    BOOL _automaticallyDisableWhenIntersectingFocus;
-    BOOL _automaticallyPreferOwningView;
-    BOOL _didSetPreferredFocusedView;
-    BOOL _enabled;
-    UIView *_preferredFocusedView;
+@interface UIFocusGuide : UILayoutGuide <_UIFocusGuideRegionDelegate, _UIFocusRegionContainer, _UILegacyFocusRegion> {
+    BOOL  _automaticallyDisableWhenIntersectingFocus;
+    BOOL  _automaticallyPreferOwningView;
+    BOOL  _didSetPreferredFocusedEnvironments;
+    BOOL  _enabled;
+    NSArray * _preferredFocusEnvironments;
 }
 
 @property (getter=_automaticallyDisableWhenIntersectingFocus, setter=_setAutomaticallyDisableWhenIntersectingFocus:, nonatomic) BOOL automaticallyDisableWhenIntersectingFocus;
@@ -16,6 +16,7 @@
 @property (readonly, copy) NSString *description;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
 @property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSArray *preferredFocusEnvironments;
 @property (nonatomic) UIView *preferredFocusedView;
 @property (readonly) Class superclass;
 
@@ -23,11 +24,12 @@
 - (BOOL)_automaticallyDisableWhenIntersectingFocus;
 - (BOOL)_automaticallyPreferOwningView;
 - (id)_childFocusRegions;
-- (id)_childFocusRegionsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)_childFocusRegionsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_didUpdateFocusToPreferredFocusedView;
+- (id)_encodablePreferredFocusEnvironments;
 - (id)_focusDebugOverlayParentView;
 - (BOOL)_focusRegionCanBecomeFocused;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_focusRegionFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_focusRegionFrame;
 - (id)_focusRegionGuides;
 - (BOOL)_focusRegionIsEligibleForFocus;
 - (id)_focusRegionItem;
@@ -35,14 +37,20 @@
 - (id)_fulfillPromisedFocusRegion;
 - (BOOL)_isPromiseFocusRegion;
 - (BOOL)_isTransparentFocusRegion;
+- (void)_searchForFocusRegionsInContext:(id)arg1;
 - (void)_setAutomaticallyDisableWhenIntersectingFocus:(BOOL)arg1;
 - (void)_setAutomaticallyPreferOwningView:(BOOL)arg1;
+- (BOOL)_shouldSearchForFocusRegionsInContext:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)focusGuideRegion:(id)arg1 preferredFocusEnvironmentsForMovement:(id)arg2;
+- (void)focusGuideRegion:(id)arg1 willParticipateAsDestinationRegionInFocusUpdate:(id)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEnabled;
+- (id)preferredFocusEnvironments;
 - (id)preferredFocusedView;
 - (void)setEnabled:(BOOL)arg1;
+- (void)setPreferredFocusEnvironments:(id)arg1;
 - (void)setPreferredFocusedView:(id)arg1;
 
 @end

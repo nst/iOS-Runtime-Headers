@@ -3,8 +3,8 @@
  */
 
 @interface NRMutableDevice : NRMutableStateBase <NRMutableStateParentDelegate, NSFastEnumeration> {
-    NSMutableDictionary *_childMap;
-    NSMutableDictionary *_properties;
+    NSMutableDictionary * _childMap;
+    NSMutableDictionary * _properties;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *childMap;
@@ -15,6 +15,10 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 
 + (id)diffFrom:(id)arg1 to:(id)arg2;
++ (id)diffsToActivate:(BOOL)arg1 withDate:(id)arg2;
++ (id)diffsToClearStatusCodeAndCompatibilityState;
++ (id)diffsToPair:(BOOL)arg1 withDate:(id)arg2;
++ (id)diffsToSetStatusCode:(unsigned int)arg1 andCompatibilityState:(unsigned short)arg2;
 + (id)enclosedClassTypes;
 + (BOOL)supportsSecureCoding;
 

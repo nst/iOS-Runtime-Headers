@@ -3,12 +3,12 @@
  */
 
 @interface AVNowPlayingInfoController : NSObject {
-    unsigned int _enabled;
-    NSUUID *_identifier;
-    unsigned int _nowPlayingInfoNeedsUpdate;
-    AVPlayerController *_playerController;
-    id _playerControllerCurrentTimeJumpedObserver;
-    unsigned int _shouldOwnNowPlayingInfo;
+    BOOL  _enabled;
+    NSUUID * _identifier;
+    BOOL  _nowPlayingInfoNeedsUpdate;
+    AVPlayerController * _playerController;
+    id  _playerControllerCurrentTimeJumpedObserver;
+    BOOL  _shouldOwnNowPlayingInfo;
 }
 
 @property (getter=isEnabled, nonatomic) BOOL enabled;

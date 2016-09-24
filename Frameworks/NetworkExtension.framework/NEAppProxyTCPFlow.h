@@ -3,7 +3,7 @@
  */
 
 @interface NEAppProxyTCPFlow : NEAppProxyFlow {
-    NWEndpoint *_remoteEndpoint;
+    NWEndpoint * _remoteEndpoint;
 }
 
 @property (readonly) NWEndpoint *remoteEndpoint;

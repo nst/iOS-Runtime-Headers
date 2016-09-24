@@ -3,13 +3,13 @@
  */
 
 @interface RCCompositionController : NSObject {
-    NSMutableDictionary *_accessTokensByName;
-    RCCaptureSession *_activeCaptureSession;
-    RCComposition *_composition;
-    BOOL _hasLoggedUsageStatisticRecordingEvent;
-    BOOL _hasStartedRecording;
-    NSMutableArray *_undoableCompositionItemStack;
-    unsigned int _usageHistoryMask;
+    NSMutableDictionary * _accessTokensByName;
+    RCCaptureSession * _activeCaptureSession;
+    RCComposition * _composition;
+    BOOL  _hasLoggedUsageStatisticRecordingEvent;
+    BOOL  _hasStartedRecording;
+    NSMutableArray * _undoableCompositionItemStack;
+    unsigned int  _usageHistoryMask;
 }
 
 @property (nonatomic, readonly) RCCaptureSession *activeCaptureSession;
@@ -34,7 +34,7 @@
 - (void)activeRecordingSessionWillFinish;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 subjectForActivityType:(id)arg2;
-- (id)activityViewController:(id)arg1 thumbnailImageForActivityType:(id)arg2 suggestedSize:(struct CGSize { float x1; float x2; })arg3;
+- (id)activityViewController:(id)arg1 thumbnailImageForActivityType:(id)arg2 suggestedSize:(struct CGSize { double x1; double x2; })arg3;
 - (id)activityViewControllerPlaceholderItem:(id)arg1;
 - (void)beginAccessSessionToExportWithAssetReadyBlock:(id /* block */)arg1;
 - (void)beginAccessSessionToPlayTimeRange:(struct { double x1; double x2; })arg1 readyToPlayBlock:(id /* block */)arg2;

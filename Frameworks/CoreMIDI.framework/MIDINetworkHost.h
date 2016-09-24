@@ -3,7 +3,7 @@
  */
 
 @interface MIDINetworkHost : NSObject {
-    void *_imp;
+    void * _imp;
 }
 
 @property (nonatomic, readonly, retain) NSString *address;

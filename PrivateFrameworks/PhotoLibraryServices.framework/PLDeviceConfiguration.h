@@ -3,38 +3,45 @@
  */
 
 @interface PLDeviceConfiguration : NSObject {
-    int _interfaceIdiom;
-    BOOL _isRidingCrudSnow;
-    BOOL _isRidingPowderSnow;
+    BOOL  _isPad;
+    BOOL  _isRetina;
+    BOOL  _isRidingCrudSnow;
+    BOOL  _isRidingPowderSnow;
+    BOOL  _isTV;
+    BOOL  _isWatch;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _logicalScreenSize;
-    float _screenScale;
+        double width; 
+        double height; 
+    }  _logicalScreenSize;
+    double  _screenScale;
 }
 
-@property (nonatomic, readonly) int interfaceIdiom;
-@property (nonatomic, readonly) BOOL isPad;
-@property (nonatomic, readonly) BOOL isRetina;
+@property (nonatomic) BOOL isPad;
+@property (nonatomic) BOOL isRetina;
 @property (nonatomic, readonly) BOOL isRidingCrudSnow;
 @property (nonatomic, readonly) BOOL isRidingPowderSnow;
-@property (nonatomic, readonly) BOOL isTV;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } logicalScreenSize;
-@property (nonatomic, readonly) float screenScale;
+@property (nonatomic) BOOL isTV;
+@property (nonatomic) BOOL isWatch;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } logicalScreenSize;
+@property (nonatomic, readonly) double screenScale;
 @property (nonatomic, readonly) BOOL shouldUseNanoThumbnailFormats;
 
 + (id)defaultDeviceConfiguration;
 
 - (id)description;
-- (id)initWithLogicalScreenSize:(struct CGSize { float x1; float x2; })arg1 screenScale:(float)arg2 interfaceIdiom:(int)arg3 isRidingCrudSnow:(BOOL)arg4 isRidingPowderSnow:(BOOL)arg5;
-- (int)interfaceIdiom;
+- (id)initWithLogicalScreenSize:(struct CGSize { double x1; double x2; })arg1 screenScale:(float)arg2 isRidingCrudSnow:(BOOL)arg3 isRidingPowderSnow:(BOOL)arg4;
 - (BOOL)isPad;
 - (BOOL)isRetina;
 - (BOOL)isRidingCrudSnow;
 - (BOOL)isRidingPowderSnow;
 - (BOOL)isTV;
-- (struct CGSize { float x1; float x2; })logicalScreenSize;
+- (BOOL)isWatch;
+- (struct CGSize { double x1; double x2; })logicalScreenSize;
 - (float)screenScale;
+- (void)setIsPad:(BOOL)arg1;
+- (void)setIsRetina:(BOOL)arg1;
+- (void)setIsTV:(BOOL)arg1;
+- (void)setIsWatch:(BOOL)arg1;
 - (BOOL)shouldUseNanoThumbnailFormats;
 
 @end

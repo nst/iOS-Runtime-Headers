@@ -2,17 +2,18 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@interface BRCDesiredVersion : BRCVersion <PQLBindable> {
-    NSError *_downloadError;
+@interface BRCDesiredVersion : BRCVersion <PQLValuable> {
+    NSError * _downloadError;
     union { 
         unsigned int value; 
         struct { 
             unsigned int isFault : 1; 
             unsigned int startDownload : 1; 
+            unsigned int wantsThumbnail : 1; 
             unsigned int userInitiated : 1; 
         } ; 
-    } _flags;
-    NSString *_serverName;
+    }  _flags;
+    NSString * _serverName;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -25,7 +26,9 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) BOOL userInitiated;
 @property (nonatomic, readonly) BOOL wantsContent;
+@property (nonatomic, readonly) BOOL wantsThumbnail;
 
++ (id)newFromSqliteValue:(struct Mem { }*)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -45,5 +48,6 @@
 - (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 - (BOOL)userInitiated;
 - (BOOL)wantsContent;
+- (BOOL)wantsThumbnail;
 
 @end

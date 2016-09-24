@@ -3,7 +3,7 @@
  */
 
 @interface TDAssetPackDistiller : TDDistiller {
-    NSSet *assetPackMap;
+    NSSet * assetPackMap;
 }
 
 @property (nonatomic, retain) NSSet *assetPackMap;

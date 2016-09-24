@@ -3,7 +3,7 @@
  */
 
 @interface SBFWallpaperDirectoryDataStore : NSObject <BSDescriptionProviding, SBFWallpaperDataStore> {
-    NSURL *_directoryURL;
+    NSURL * _directoryURL;
 }
 
 @property (readonly, copy) NSString *debugDescription;

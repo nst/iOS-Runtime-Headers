@@ -3,25 +3,34 @@
  */
 
 @interface _HDWorkoutData : NSObject {
-    NSString *_clientIdentifier;
-    BOOL _isFirstParty;
-    <HDServer> *_server;
-    _HKWorkoutSession *_workoutSession;
+    HDBackgroundWorkoutRunner * _backgroundRunner;
+    HDClient * _client;
+    CMWorkout * _cmWorkout;
+    BOOL  _isFirstParty;
+    <HDServer> * _server;
+    _HKWorkoutSession * _workoutSession;
 }
 
-@property (nonatomic, retain) NSString *clientIdentifier;
+@property (nonatomic, retain) HDBackgroundWorkoutRunner *backgroundRunner;
+@property (nonatomic) HDClient *client;
+@property (nonatomic, retain) CMWorkout *cmWorkout;
 @property (nonatomic) BOOL isFirstParty;
 @property (nonatomic) <HDServer> *server;
 @property (nonatomic, retain) _HKWorkoutSession *workoutSession;
 
 - (void).cxx_destruct;
-- (id)clientIdentifier;
+- (id)backgroundRunner;
+- (id)client;
+- (id)cmWorkout;
 - (void)deliverChangeToState:(int)arg1 fromState:(int)arg2 date:(id)arg3;
 - (void)deliverError:(id)arg1;
-- (id)initWithWorkoutSession:(id)arg1 clientIdentifier:(id)arg2 server:(id)arg3 isFirstParty:(BOOL)arg4;
+- (void)deliverEvent:(id)arg1;
+- (id)initWithWorkoutSession:(id)arg1 client:(id)arg2 server:(id)arg3 isFirstParty:(BOOL)arg4;
 - (BOOL)isFirstParty;
 - (id)server;
-- (void)setClientIdentifier:(id)arg1;
+- (void)setBackgroundRunner:(id)arg1;
+- (void)setClient:(id)arg1;
+- (void)setCmWorkout:(id)arg1;
 - (void)setIsFirstParty:(BOOL)arg1;
 - (void)setServer:(id)arg1;
 - (void)setWorkoutSession:(id)arg1;

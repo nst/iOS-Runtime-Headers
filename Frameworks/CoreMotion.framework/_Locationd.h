@@ -3,7 +3,7 @@
  */
 
 @interface _Locationd : NSObject <CLIntersiloServiceProtocol> {
-    BOOL _valid;
+    BOOL  _valid;
 }
 
 @property (readonly, copy) NSString *debugDescription;

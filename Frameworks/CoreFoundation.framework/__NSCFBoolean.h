@@ -19,7 +19,6 @@
 - (id)description;
 - (id)descriptionWithLocale:(id)arg1;
 - (double)doubleValue;
-- (void)finalize;
 - (float)floatValue;
 - (void)getValue:(void*)arg1;
 - (unsigned int)hash;
@@ -27,7 +26,7 @@
 - (int)integerValue;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToNumber:(id)arg1;
-- (long long)longLongValue;
+- (int)longLongValue;
 - (long)longValue;
 - (const char *)objCType;
 - (oneway void)release;
@@ -38,7 +37,7 @@
 - (unsigned char)unsignedCharValue;
 - (unsigned int)unsignedIntValue;
 - (unsigned int)unsignedIntegerValue;
-- (unsigned long long)unsignedLongLongValue;
+- (unsigned int)unsignedLongLongValue;
 - (unsigned long)unsignedLongValue;
 - (unsigned short)unsignedShortValue;
 

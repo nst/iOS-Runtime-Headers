@@ -3,15 +3,15 @@
  */
 
 @interface NMSIncomingRequest : NSObject <NMSDeviceSourced, NMSObfuscatableDescriptionProviding> {
-    NSData *_data;
-    BOOL _expectsResponse;
-    NSString *_idsIdentifier;
-    NMSMessageCenter *_messageCenter;
-    unsigned short _messageID;
-    id _pbRequest;
-    unsigned int _priority;
-    NMSOutgoingResponse *_response;
-    NSString *sourceDeviceID;
+    NSData * _data;
+    BOOL  _expectsResponse;
+    NSString * _idsIdentifier;
+    NMSMessageCenter * _messageCenter;
+    unsigned short  _messageID;
+    id  _pbRequest;
+    unsigned int  _priority;
+    NMSOutgoingResponse * _response;
+    NSString * sourceDeviceID;
 }
 
 @property (nonatomic, retain) NSData *data;

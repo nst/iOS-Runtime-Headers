@@ -3,8 +3,8 @@
  */
 
 @interface MFDataHolder : NSObject {
-    NSMutableArray *_datas;
-    unsigned int _length;
+    NSMutableArray * _datas;
+    unsigned int  _length;
 }
 
 @property (nonatomic, readonly) unsigned int length;

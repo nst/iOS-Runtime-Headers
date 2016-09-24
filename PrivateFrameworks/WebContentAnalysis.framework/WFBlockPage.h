@@ -3,10 +3,10 @@
  */
 
 @interface WFBlockPage : NSObject {
-    NSString *formActionURLString;
-    NSURL *pageTemplateURL;
-    NSString *preferredLanguage;
-    NSString *userVisibleURLString;
+    NSString * formActionURLString;
+    NSURL * pageTemplateURL;
+    NSString * preferredLanguage;
+    NSString * userVisibleURLString;
 }
 
 @property (retain) NSString *formActionURLString;

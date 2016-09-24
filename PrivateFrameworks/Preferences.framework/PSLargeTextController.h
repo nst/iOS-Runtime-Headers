@@ -3,13 +3,13 @@
  */
 
 @interface PSLargeTextController : PSListController {
-    UILabel *_bodyExampleLabel;
-    NSArray *_contentSizeCategories;
-    UILabel *_headlineExampleLabel;
-    int _selectedCategoryIndex;
-    BOOL _showsExtendedRangeSwitch;
-    PSSpecifier *_sliderGroupSpecifier;
-    BOOL _usesExtendedRange;
+    UILabel * _bodyExampleLabel;
+    NSArray * _contentSizeCategories;
+    UILabel * _headlineExampleLabel;
+    int  _selectedCategoryIndex;
+    BOOL  _showsExtendedRangeSwitch;
+    PSSpecifier * _sliderGroupSpecifier;
+    BOOL  _usesExtendedRange;
 }
 
 @property (nonatomic) BOOL showsExtendedRangeSwitch;

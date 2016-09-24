@@ -9,20 +9,20 @@
                 unsigned int mValue; 
             } __elems_[2]; 
         } mScopes; 
-    } mDeclaredScope;
-    NSMutableSet *mDependees;
-    BOOL mIsUsed;
+    }  mDeclaredScope;
+    NSMutableSet * mDependees;
+    BOOL  mIsUsed;
     struct TSCH3DShaderType { 
         unsigned int mValue; 
-    } mLinked;
+    }  mLinked;
     struct TSCH3DShaderVariableScopes { 
         struct array<TSCH3DShaderVariableScopeType, 2> { 
             struct TSCH3DShaderVariableScopeType { 
                 unsigned int mValue; 
             } __elems_[2]; 
         } mScopes; 
-    } mScope;
-    TSCH3DShaderVariable *mVariable;
+    }  mScope;
+    TSCH3DShaderVariable * mVariable;
 }
 
 @property (nonatomic, readonly) BOOL canHaveFragment;

@@ -3,14 +3,14 @@
  */
 
 @interface MFBitmap : NSObject {
-    unsigned int m_bitsPerPixel;
-    NSMutableData *m_bmpData;
-    int m_compression;
-    int m_height;
-    unsigned int m_infoHeaderSize;
-    BOOL m_isOS2;
-    unsigned int m_paletteSize;
-    int m_width;
+    unsigned int  m_bitsPerPixel;
+    NSMutableData * m_bmpData;
+    int  m_compression;
+    int  m_height;
+    unsigned int  m_infoHeaderSize;
+    BOOL  m_isOS2;
+    unsigned int  m_paletteSize;
+    int  m_width;
 }
 
 - (void)appendDIBPalette:(id)arg1 :(const char *)arg2 :(unsigned int)arg3 :(int)arg4;

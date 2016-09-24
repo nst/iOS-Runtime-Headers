@@ -3,14 +3,14 @@
  */
 
 @interface TSUDescription : NSObject {
-    void *_cfType;
-    Class _class;
-    BOOL _commaSeparated;
-    unsigned int _fieldNameWidth;
-    NSMutableArray *_fieldOrder;
-    NSMutableDictionary *_fields;
-    NSString *_header;
-    NSObject *_object;
+    void * _cfType;
+    Class  _class;
+    BOOL  _commaSeparated;
+    unsigned int  _fieldNameWidth;
+    NSMutableArray * _fieldOrder;
+    NSMutableDictionary * _fields;
+    NSString * _header;
+    NSObject * _object;
 }
 
 + (id)descriptionWithCFType:(void*)arg1 format:(id)arg2;

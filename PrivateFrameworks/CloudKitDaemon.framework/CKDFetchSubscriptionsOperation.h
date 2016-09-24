@@ -3,21 +3,21 @@
  */
 
 @interface CKDFetchSubscriptionsOperation : CKDDatabaseOperation {
-    BOOL _isFetchAllSubscriptionsOperation;
-    id /* block */ _subscriptionFetchedProgressBlock;
-    NSArray *_subscriptionIDs;
-    NSArray *_subscriptions;
+    BOOL  _isFetchAllSubscriptionsOperation;
+    id /* block */  _subscriptionFetchedProgressBlock;
+    NSArray * _subscriptionIDs;
+    NSMutableArray * _subscriptions;
 }
 
 @property (nonatomic) BOOL isFetchAllSubscriptionsOperation;
 @property (nonatomic, copy) id /* block */ subscriptionFetchedProgressBlock;
 @property (nonatomic, retain) NSArray *subscriptionIDs;
-@property (nonatomic, retain) NSArray *subscriptions;
+@property (nonatomic, retain) NSMutableArray *subscriptions;
 
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleSubscriptionFetched:(id)arg1 withID:(id)arg2 responseCode:(id)arg3;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (BOOL)isFetchAllSubscriptionsOperation;
 - (void)main;

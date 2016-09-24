@@ -3,8 +3,8 @@
  */
 
 @interface IMPowerAssertion : NSObject {
-    unsigned int _assertion;
-    NSString *_identifier;
+    unsigned int  _assertion;
+    NSString * _identifier;
 }
 
 - (void)dealloc;

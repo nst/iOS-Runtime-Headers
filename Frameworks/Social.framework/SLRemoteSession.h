@@ -3,8 +3,8 @@
  */
 
 @interface SLRemoteSession : NSObject {
-    NSXPCConnection *_connection;
-    SLDatabase *_database;
+    NSXPCConnection * _connection;
+    SLDatabase * _database;
 }
 
 @property (nonatomic, retain) NSXPCConnection *connection;

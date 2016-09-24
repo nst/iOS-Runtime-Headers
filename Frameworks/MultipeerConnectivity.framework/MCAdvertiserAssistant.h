@@ -3,23 +3,23 @@
  */
 
 @interface MCAdvertiserAssistant : NSObject <MCNearbyServiceAdvertiserDelegate, UIAlertViewDelegate> {
-    MCNearbyServiceAdvertiser *_advertiser;
-    UIAlertView *_alertView;
-    NSString *_appName;
-    <MCAdvertiserAssistantDelegate> *_delegate;
-    NSDictionary *_discoveryInfo;
-    NSBundle *_frameworkBundle;
-    id /* block */ _invitationHandlerForPresentedAlert;
-    NSMutableArray *_invitationsBuffer;
-    BOOL _isAdvertising;
-    MCPeerID *_myPeerID;
-    NSString *_serviceType;
-    MCSession *_session;
-    BOOL _wasAdvertising;
+    MCNearbyServiceAdvertiser * _advertiser;
+    MCAlertController * _alertController;
+    NSString * _appName;
+    <MCAdvertiserAssistantDelegate> * _delegate;
+    NSDictionary * _discoveryInfo;
+    NSBundle * _frameworkBundle;
+    id /* block */  _invitationHandlerForPresentedAlert;
+    NSMutableArray * _invitationsBuffer;
+    BOOL  _isAdvertising;
+    MCPeerID * _myPeerID;
+    NSString * _serviceType;
+    MCSession * _session;
+    BOOL  _wasAdvertising;
 }
 
 @property (nonatomic, retain) MCNearbyServiceAdvertiser *advertiser;
-@property (nonatomic, retain) UIAlertView *alertView;
+@property (nonatomic, retain) MCAlertController *alertController;
 @property (nonatomic, readonly, copy) NSString *appName;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MCAdvertiserAssistantDelegate> *delegate;
@@ -38,9 +38,7 @@
 
 - (id)advertiser;
 - (void)advertiser:(id)arg1 didReceiveInvitationFromPeer:(id)arg2 withContext:(id)arg3 invitationHandler:(id /* block */)arg4;
-- (id)alertView;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (id)alertController;
 - (id)appName;
 - (void)applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)applicationWillTerminateNotification:(id)arg1;
@@ -49,6 +47,7 @@
 - (id)description;
 - (id)discoveryInfo;
 - (id)frameworkBundle;
+- (void)handleUserInvitationDecision:(BOOL)arg1;
 - (id)init;
 - (id)initWithServiceType:(id)arg1 discoveryInfo:(id)arg2 session:(id)arg3;
 - (id /* block */)invitationHandlerForPresentedAlert;
@@ -59,7 +58,7 @@
 - (id)serviceType;
 - (id)session;
 - (void)setAdvertiser:(id)arg1;
-- (void)setAlertView:(id)arg1;
+- (void)setAlertController:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDiscoveryInfo:(id)arg1;
 - (void)setFrameworkBundle:(id)arg1;
@@ -73,6 +72,5 @@
 - (void)start;
 - (void)stop;
 - (BOOL)wasAdvertising;
-- (void)willPresentAlertView:(id)arg1;
 
 @end

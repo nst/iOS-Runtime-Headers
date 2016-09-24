@@ -3,7 +3,7 @@
  */
 
 @interface FBSWorkspaceSceneEvent : FBSWorkspaceEvent {
-    NSString *_sceneID;
+    NSString * _sceneID;
 }
 
 @property (nonatomic, copy) NSString *sceneID;

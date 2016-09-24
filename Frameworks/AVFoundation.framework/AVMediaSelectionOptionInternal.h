@@ -3,11 +3,11 @@
  */
 
 @interface AVMediaSelectionOptionInternal : NSObject {
-    NSString *_displayName;
-    NSString *_displayNameLocaleIdentifier;
-    NSArray *_groupMediaCharacteristics;
-    NSArray *_optionMediaCharacteristics;
-    long _synthesizeMediaCharacteristicsOnce;
+    NSString * _displayName;
+    NSString * _displayNameLocaleIdentifier;
+    NSArray * _groupMediaCharacteristics;
+    NSArray * _optionMediaCharacteristics;
+    long  _synthesizeMediaCharacteristicsOnce;
 }
 
 @end

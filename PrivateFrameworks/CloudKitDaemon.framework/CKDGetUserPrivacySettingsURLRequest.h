@@ -3,7 +3,7 @@
  */
 
 @interface CKDGetUserPrivacySettingsURLRequest : CKDURLRequest {
-    CKDPUserPrivacySettings *_userPrivacySettings;
+    CKDPUserPrivacySettings * _userPrivacySettings;
 }
 
 @property (nonatomic, retain) CKDPUserPrivacySettings *userPrivacySettings;

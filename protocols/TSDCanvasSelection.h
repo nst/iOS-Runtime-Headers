@@ -5,7 +5,7 @@
 
 @required
 
-+ (TSKSelection<TSDCanvasSelection> *)emptySelection;
++ (id)emptySelection;
 
 - (BOOL)containsKindOfClass:(Class)arg1;
 - (BOOL)containsUnlockedKindOfClass:(Class)arg1;

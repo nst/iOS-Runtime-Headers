@@ -3,7 +3,7 @@
  */
 
 @interface RadioRecentStationsResponse : NSObject {
-    NSDictionary *_responseDictionary;
+    NSDictionary * _responseDictionary;
 }
 
 @property (nonatomic, readonly, copy) NSArray *stationDictionaries;

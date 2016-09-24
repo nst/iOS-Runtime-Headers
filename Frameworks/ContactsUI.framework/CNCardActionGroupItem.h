@@ -3,7 +3,7 @@
  */
 
 @interface CNCardActionGroupItem : CNCardGroupItem {
-    NSMutableArray *_actions;
+    NSMutableArray * _actions;
 }
 
 @property (nonatomic, readonly) NSArray *actions;

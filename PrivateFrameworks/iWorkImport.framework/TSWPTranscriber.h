@@ -3,10 +3,10 @@
  */
 
 @interface TSWPTranscriber : NSObject {
-    NSString *_displayName;
-    NSString *_identifier;
-    NSLocale *_romanizationLocale;
-    NSString *_transformIdentifier;
+    NSString * _displayName;
+    NSString * _identifier;
+    NSLocale * _romanizationLocale;
+    NSString * _transformIdentifier;
 }
 
 @property (readonly) NSLocale *romanizationLocale;

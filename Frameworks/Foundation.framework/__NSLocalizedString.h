@@ -3,8 +3,8 @@
  */
 
 @interface __NSLocalizedString : NSMutableString {
-    NSDictionary *config;
-    NSMutableString *original;
+    NSDictionary * config;
+    NSMutableString * original;
 }
 
 - (const char *)_fastCStringContents:(BOOL)arg1;

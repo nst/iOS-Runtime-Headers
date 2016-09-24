@@ -3,11 +3,11 @@
  */
 
 @interface CPLNetworkWatcher : NSObject {
-    <CPLNetworkWatcherDelegate> *_delegate;
-    unsigned int _networkState;
-    NSObject<OS_dispatch_queue> *_queue;
-    struct __SCNetworkReachability { } *_reachability;
-    unsigned int _reachabilityFlags;
+    <CPLNetworkWatcherDelegate> * _delegate;
+    unsigned int  _networkState;
+    NSObject<OS_dispatch_queue> * _queue;
+    struct __SCNetworkReachability { } * _reachability;
+    unsigned int  _reachabilityFlags;
 }
 
 @property (nonatomic) <CPLNetworkWatcherDelegate> *delegate;

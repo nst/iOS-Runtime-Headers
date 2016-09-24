@@ -3,26 +3,27 @@
  */
 
 @interface __NSCFURLLocalSessionConnection : __NSCFURLSessionConnection <NSCopying, NSURLAuthenticationChallengeSender> {
-    BOOL _actuallyTriedCredentialsSuppliedInURL;
-    BOOL _canceled;
-    long long _clientBufferLength;
-    NSURLResponse *_currentResponse;
-    BOOL _didCheckCredentialsSuppliedInURL;
-    BOOL _didCheckMixedReplace;
-    unsigned int _didReceiveDataCount;
-    unsigned int _didReceiveResponseDisposition;
-    BOOL _isMixedReplace;
-    struct URLConnectionLoader { int (**x1)(); struct __CFAllocator {} *x2; int (**x3)(); unsigned char x4; unsigned char x5; struct InterfaceRequiredForLoader {} *x6; id x7; int (*x8)(); int (**x9)(); struct PerformanceTiming {} *x10; id x11; struct RedirectionRecorder {} *x12; unsigned char x13; unsigned char x14; unsigned char x15; id x16; double x17; struct URLProtocol {} *x18; id x19; struct CoreSchedulingSet {} *x20; double x21; double x22; unsigned long long x23; struct ConfigFlags { unsigned int x_24_1_1 : 1; unsigned int x_24_1_2 : 1; unsigned int x_24_1_3 : 1; unsigned int x_24_1_4 : 1; unsigned int x_24_1_5 : 1; unsigned int x_24_1_6 : 1; unsigned int x_24_1_7 : 1; unsigned int x_24_1_8 : 1; } x24; unsigned char x25; unsigned char x26; unsigned char x27; unsigned char x28; unsigned int x29; unsigned int x30; unsigned char x31; } *_loader;
-    struct SessionConnectionLoadable { int (**x1)(); int x2; int x3; int x4; int x5; int (**x6)(); int (**x7)(); id x8; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; void*x29; void*x30; void*x31; void*x32; void*x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; void*x50; void*x51; void*x52; void*x53; void x54; void*x55; void*x56; void*x57; void*x58; void*x59; void*x60; void*x61; void*x62; bool x63; void*x64; void*x65; const void*x66; void*x67; const void*x68; void*x69; void*x70; void*x71; void*x72; void*x73; void*x74; void*x75; void*x76; void*x77; void*x78; void*x79; void*x80; void*x81; void*x82; void*x83; void*x84; void*x85; void*x86; void*x87; void*x88; void*x89; void*x90; void*x91; void*x92; void*x93; void*x94; void*x95; void*x96; void*x97; void*x98; void*x99; void*x100; void*x101; void*x102; void*x103; void*x104; void*x105; void*x106; void*x107; void*x108; void*x109; void*x110; void*x111; void*x112; void*x113; void*x114; void*x115; void x116; void*x117; void*x118; void*x119; void*x120; void*x121; void*x122; void*x123; void*x124; bool x125; void*x126; void*x127; const void*x128; void*x129; const void*x130; void*x131; void*x132; void*x133; void*x134; void*x135; void*x136; void*x137; void*x138; void*x139; void*x140; void*x141; void*x142; void*x143; void*x144; void*x145; void x146; void*x147; void*x148; void*x149; void*x150; void*x151; void*x152; void*x153; void*x154; unsigned short x155; void*x156; short x157; void*x158; void*x159; void*x160; void*x161; unsigned long x162; int x163; unsigned int x164/* : ? */; const void*x165; const void*x166; void*x167; void*x168; const int x169; void x170; void*x171; void*x172; void*x173; void*x174; const void*x175; void*x176; void*x177; void*x178; out const void*x179; short x180; void*x181; bycopy float x182; float x183; int x184; BOOL x185; void*x186; unsigned int x187; void*x188; void*x189; out const void*x190; void*x191; float x192; const void*x193; void*x194; void*x195; void*x196; out const void*x197; void*x198; bycopy float x199; float x200; int x201; BOOL x202; void*x203; unsigned int x204; void*x205; void*x206; out const void*x207; void*x208; void*x209; void*x210; void*x211; void*x212; void*x213; void*x214; void*x215; void*x216; void*x217; void*x218; void*x219; void*x220; void*x221; void*x222; void*x223; void*x224; void*x225; void*x226; void*x227; void*x228; void*x229; void*x230; void*x231; void*x232; void*x233; void*x234; void*x235; void*x236; void*x237; void*x238; void*x239; void*x240; void*x241; void*x242; void*x243; void*x244; void*x245; void*x246; void*x247; long long x248; void*x249; void*x250; void*x251; void*x252; void*x253; void*x254; void*x255; void*x256; void*x257; void*x258; void*x259; void*x260; void*x261; void*x262; void*x263; void*x264; void*x265; void*x266; void*x267; void*x268; void*x269; void*x270; void*x271; void*x272; void*x273; void*x274; void x275; void*x276; void*x277; void*x278; void*x279; void*x280; void*x281; void*x282; void*x283; void*x284; unsigned int x285; oneway int x286; void*x287; void*x288; unsigned short x289; void*x290; const void x291; int x292; BOOL x293; void*x294; void*x295; void*x296; void*x297; long x298; void*x299; unsigned char x300; out in void*x301; const out long x302; void*x303; const out void*x304; void*x305; void*x306; void*x307; void*x308; void*x309; void*x310; void*x311; void*x312; void*x313; void*x314; void*x315; void*x316; void*x317; void*x318; void*x319; void*x320; void*x321; void*x322; void*x323; void*x324; void*x325; void*x326; void*x327; void*x328; void*x329; void*x330; void*x331; void*x332; void*x333; void*x334; void*x335; void*x336; void*x337; void*x338; void*x339; void*x340; void*x341; void*x342; void*x343; void*x344; void*x345; void*x346; void*x347; void*x348; id x349; void*x350; short x351; void*x352; void*x353; void*x354; out void*x355; in void*x356; short x357; void*x358; void*x359; void*x360; void*x361; void*x362; void x363; void*x364; out void*x365; int x366; void*x367; double x368; void*x369; char *x370; void*x371; void*x372; unsigned int x373/* : ? */; void*x374; void*x375; void*x376; long long x377; void*x378; void*x379; void*x380; unsigned long long x381; void*x382; void*x383; void*x384; void*x385; void*x386; void*x387; void*x388; void*x389; void*x390; void*x391; void*x392; void*x393; void*x394; void*x395; void*x396; void*x397; void*x398; void*x399; void*x400; void*x401; void*x402; void*x403; void*x404; void*x405; void*x406; void*x407; void*x408; void*x409; void*x410; void*x411; void*x412; void*x413; void*x414; void*x415; void*x416; void*x417; void*x418; void*x419; void*x420; void*x421; void*x422; } *_loaderClient;
-    unsigned long _maxDataSegmentCoalesceThreshhold;
-    unsigned long _maxDataSegmentCount;
-    int _pendingCompletion;
-    NSObject<OS_dispatch_data> *_pendingData;
-    NSError *_pendingError;
-    NSObject<OS_dispatch_data> *_sniffData;
-    NSURLResponse *_sniffResponse;
-    int _state;
-    int _suspended;
+    BOOL  _actuallyTriedCredentialsSuppliedInURL;
+    BOOL  _canSendDidFinishCollectingMetrics;
+    BOOL  _canceled;
+    int  _clientBufferLength;
+    BOOL  _didCheckCredentialsSuppliedInURL;
+    BOOL  _didCheckMixedReplace;
+    unsigned int  _didReceiveDataCount;
+    unsigned int  _didReceiveResponseDisposition;
+    BOOL  _isMixedReplace;
+    struct URLConnectionLoader { int (**x1)(); struct __CFAllocator {} *x2; int (**x3)(); unsigned char x4; unsigned char x5; struct InterfaceRequiredForLoader {} *x6; id x7; int (*x8)(); int (**x9)(); struct PerformanceTiming {} *x10; id x11; struct RedirectionRecorder {} *x12; unsigned char x13; unsigned char x14; unsigned char x15; id x16; double x17; struct URLProtocol {} *x18; id x19; struct CoreSchedulingSet {} *x20; double x21; double x22; unsigned int x23; struct ConfigFlags { unsigned int x_24_1_1 : 1; unsigned int x_24_1_2 : 1; unsigned int x_24_1_3 : 1; unsigned int x_24_1_4 : 1; unsigned int x_24_1_5 : 1; unsigned int x_24_1_6 : 1; unsigned int x_24_1_7 : 1; unsigned int x_24_1_8 : 1; } x24; unsigned char x25; unsigned char x26; unsigned char x27; unsigned char x28; unsigned int x29; unsigned int x30; unsigned char x31; } * _loader;
+    /* Warning: unhandled struct encoding: '{SessionConnectionLoadable=^^?iiii^^?^^?@}' */ struct SessionConnectionLoadable { int (**x1)(); int x2; int x3; int x4; int x5; int (**x6)(); int (**x7)(); id x8; } * _loaderClient;
+    unsigned long  _maxDataSegmentCoalesceThreshhold;
+    unsigned long  _maxDataSegmentCount;
+    int  _pendingCompletion;
+    NSObject<OS_dispatch_data> * _pendingData;
+    NSError * _pendingError;
+    BOOL  _sentDidFinishCollectingMetrics;
+    NSObject<OS_dispatch_data> * _sniffData;
+    NSURLResponse * _sniffResponse;
+    int  _state;
+    int  _suspended;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -30,18 +31,19 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (void)_ackBytes:(long long)arg1;
+- (void)_ackBytes:(int)arg1;
 - (void)_capturedSocketInputStream:(id)arg1 outputStream:(id)arg2;
 - (void)_cleanup;
 - (void)_conditionalRequirementsChanged:(BOOL)arg1;
-- (void)_connectionIsWaitingWithReason:(long long)arg1;
+- (void)_connectionIsWaitingWithReason:(int)arg1;
 - (void)_didFinishWithError:(id)arg1;
 - (void)_didReceiveChallenge:(id)arg1;
-- (void)_didReceiveConnectionCacheKey:(struct HTTPConnectionCacheKey { int (**x1)(); struct __CFAllocator {} *x2; int x3; unsigned int x4; struct __CFString {} *x5; int x6; int x7; struct __CFDictionary {} *x8; unsigned int x9; struct __CFDictionary {} *x10; struct NetworkProxy {} *x11; struct __CFString {} *x12; int x13; int x14; }*)arg1;
+- (void)_didReceiveConnectionCacheKey:(struct HTTPConnectionCacheKey { int (**x1)(); struct __CFAllocator {} *x2; int x3; unsigned int x4; struct __CFString {} *x5; int x6; int x7; struct __CFDictionary {} *x8; unsigned int x9; struct __CFDictionary {} *x10; struct shared_ptr<NetworkProxy> { struct NetworkProxy {} *x_11_1_1; struct __shared_weak_count {} *x_11_1_2; } x11; struct shared_ptr<const __CFString> { struct __CFString {} *x_12_1_1; struct __shared_weak_count {} *x_12_1_2; } x12; int x13; int x14; }*)arg1;
 - (void)_didReceiveData:(id)arg1;
 - (void)_didReceiveResponse:(id)arg1 sniff:(BOOL)arg2;
 - (void)_didSendBodyData:(struct UploadProgressInfo { int x1; int x2; int x3; })arg1;
 - (void)_immediatePostDelegateTick;
+- (void)_needConnectedSocketToHost:(id)arg1 port:(unsigned int)arg2 completion:(id /* block */)arg3;
 - (void)_needNewBodyStream;
 - (void)_redirectRequest:(id)arg1 redirectResponse:(id)arg2 completion:(id /* block */)arg3;
 - (void)_task_sendFinish;
@@ -58,8 +60,9 @@
 - (void)dealloc;
 - (id)initWithTask:(id)arg1 delegate:(id)arg2 delegateQueue:(id)arg3;
 - (void)resume;
-- (void)setBytesPerSecondLimit:(long long)arg1;
-- (void)setPoolPriority:(long long)arg1;
+- (void)setBytesPerSecondLimit:(int)arg1;
+- (void)setIsDownload:(BOOL)arg1;
+- (void)setPoolPriority:(int)arg1;
 - (void)setPriorityHint:(float)arg1;
 - (void)suspend;
 - (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;

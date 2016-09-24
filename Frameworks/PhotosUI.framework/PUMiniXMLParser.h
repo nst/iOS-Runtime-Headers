@@ -3,12 +3,12 @@
  */
 
 @interface PUMiniXMLParser : NSObject {
-    NSScanner *__scanner;
-    NSCharacterSet *__syntaxMarkerCharactersSet;
-    id /* block */ _parsedCharactersBlock;
-    id /* block */ _parsedEntityBlock;
-    id /* block */ _parsedErrorBlock;
-    id /* block */ _parsedTagBlock;
+    NSScanner * __scanner;
+    NSCharacterSet * __syntaxMarkerCharactersSet;
+    id /* block */  _parsedCharactersBlock;
+    id /* block */  _parsedEntityBlock;
+    id /* block */  _parsedErrorBlock;
+    id /* block */  _parsedTagBlock;
 }
 
 @property (nonatomic, readonly) NSScanner *_scanner;

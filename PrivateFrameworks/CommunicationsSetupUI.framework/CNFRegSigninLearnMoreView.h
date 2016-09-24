@@ -3,16 +3,16 @@
  */
 
 @interface CNFRegSigninLearnMoreView : UIView <PSHeaderFooterView> {
-    UIView *_authKitSignInView;
-    CNFRegSplashSignInController *_controller;
-    UIButton *_learnMoreButton;
-    int _serviceType;
-    UILabel *_signingInLabel;
-    UIActivityIndicatorView *_signingInSpinner;
-    PSSpecifier *_specifier;
-    UIImageView *_splashImageView;
-    UILabel *_titleLabel;
-    UILabel *_verbiageLabel;
+    UIView * _authKitSignInView;
+    CNFRegSplashSignInController * _controller;
+    UIButton * _learnMoreButton;
+    int  _serviceType;
+    UILabel * _signingInLabel;
+    UIActivityIndicatorView * _signingInSpinner;
+    PSSpecifier * _specifier;
+    UIImageView * _splashImageView;
+    UILabel * _titleLabel;
+    UILabel * _verbiageLabel;
 }
 
 @property (nonatomic) CNFRegSplashSignInController *controller;

@@ -3,7 +3,7 @@
  */
 
 @interface MFMailComposeRemoteViewController : _UIRemoteViewController <MFMailComposeRemoteHost> {
-    <MFMailComposeRemoteViewControllerDelegate> *_delegate;
+    <MFMailComposeRemoteViewControllerDelegate> * _delegate;
 }
 
 @property (nonatomic) <MFMailComposeRemoteViewControllerDelegate> *delegate;
@@ -15,6 +15,7 @@
 - (void)bodyFinishedDrawing;
 - (id)delegate;
 - (void)serviceCompositionFinishedWithResult:(int)arg1 error:(id)arg2;
+- (void)serviceCompositionRequestsSendWithBody:(id)arg1 recipients:(id)arg2 completion:(id /* block */)arg3;
 - (void)setDelegate:(id)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 

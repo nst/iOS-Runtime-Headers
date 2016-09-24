@@ -3,15 +3,15 @@
  */
 
 @interface CNAutocompleteFetchBlockDelegate : NSObject <CNAutocompleteFetchDelegate> {
-    id /* block */ _adjustmentHandler;
-    id /* block */ _beganNetworkActivityHandler;
-    id /* block */ _comparatorHandler;
-    id /* block */ _endedNetworkActivityHandler;
-    id /* block */ _errorHandler;
-    id /* block */ _finishHandler;
-    id /* block */ _resultHandler;
-    id /* block */ _supplementalResultHandler;
-    id /* block */ _willSortHandler;
+    id /* block */  _adjustmentHandler;
+    id /* block */  _beganNetworkActivityHandler;
+    id /* block */  _comparatorHandler;
+    id /* block */  _endedNetworkActivityHandler;
+    id /* block */  _errorHandler;
+    id /* block */  _finishHandler;
+    id /* block */  _resultHandler;
+    id /* block */  _supplementalResultHandler;
+    id /* block */  _willSortHandler;
 }
 
 @property (copy) id /* block */ adjustmentHandler;

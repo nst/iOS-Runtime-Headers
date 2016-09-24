@@ -3,31 +3,61 @@
  */
 
 @interface GEOPDETAFilter : PBCodable <NSCopying> {
+    GEOAutomobileOptions * _automobileOptions;
+    struct { 
+        unsigned int includeHistoricTravelTime : 1; 
+    }  _has;
+    BOOL  _includeHistoricTravelTime;
+    GEOTransitOptions * _transitOptions;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _transportTypes;
+    }  _transportTypes;
+    GEOWalkingOptions * _walkingOptions;
 }
 
+@property (nonatomic, retain) GEOAutomobileOptions *automobileOptions;
+@property (nonatomic, readonly) BOOL hasAutomobileOptions;
+@property (nonatomic) BOOL hasIncludeHistoricTravelTime;
+@property (nonatomic, readonly) BOOL hasTransitOptions;
+@property (nonatomic, readonly) BOOL hasWalkingOptions;
+@property (nonatomic) BOOL includeHistoricTravelTime;
+@property (nonatomic, retain) GEOTransitOptions *transitOptions;
 @property (nonatomic, readonly) int*transportTypes;
 @property (nonatomic, readonly) unsigned int transportTypesCount;
+@property (nonatomic, retain) GEOWalkingOptions *walkingOptions;
 
+- (int)StringAsTransportTypes:(id)arg1;
 - (void)addTransportType:(int)arg1;
+- (id)automobileOptions;
 - (void)clearTransportTypes;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasAutomobileOptions;
+- (BOOL)hasIncludeHistoricTravelTime;
+- (BOOL)hasTransitOptions;
+- (BOOL)hasWalkingOptions;
 - (unsigned int)hash;
+- (BOOL)includeHistoricTravelTime;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)setAutomobileOptions:(id)arg1;
+- (void)setHasIncludeHistoricTravelTime:(BOOL)arg1;
+- (void)setIncludeHistoricTravelTime:(BOOL)arg1;
+- (void)setTransitOptions:(id)arg1;
 - (void)setTransportTypes:(int*)arg1 count:(unsigned int)arg2;
+- (void)setWalkingOptions:(id)arg1;
+- (id)transitOptions;
 - (int)transportTypeAtIndex:(unsigned int)arg1;
 - (int*)transportTypes;
+- (id)transportTypesAsString:(int)arg1;
 - (unsigned int)transportTypesCount;
+- (id)walkingOptions;
 - (void)writeTo:(id)arg1;
 
 @end

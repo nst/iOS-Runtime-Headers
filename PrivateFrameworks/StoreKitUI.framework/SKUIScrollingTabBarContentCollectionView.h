@@ -3,7 +3,7 @@
  */
 
 @interface SKUIScrollingTabBarContentCollectionView : SKUIViewControllerContainerCollectionView {
-    BOOL _performingLayout;
+    BOOL  _performingLayout;
 }
 
 @property (nonatomic) <SKUIScrollingTabBarContentCollectionViewDelegate> *delegate;

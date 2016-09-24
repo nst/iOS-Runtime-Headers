@@ -3,21 +3,21 @@
  */
 
 @interface BKSAccelerometer : NSObject {
-    struct __CFRunLoop { } *_accelerometerEventsRunLoop;
-    struct __CFRunLoopSource { } *_accelerometerEventsSource;
-    <BKSAccelerometerDelegate> *_delegate;
-    double _interval;
-    NSLock *_lock;
-    int _orientationCheckToken;
-    BOOL _orientationEventsEnabled;
-    NSThread *_orientationEventsThread;
-    int _orientationNotificationsToken;
-    unsigned int _orientationPort;
-    BOOL _passiveOrientationEvents;
-    double _updateInterval;
-    float _xThreshold;
-    float _yThreshold;
-    float _zThreshold;
+    struct __CFRunLoop { } * _accelerometerEventsRunLoop;
+    struct __CFRunLoopSource { } * _accelerometerEventsSource;
+    <BKSAccelerometerDelegate> * _delegate;
+    double  _interval;
+    NSLock * _lock;
+    int  _orientationCheckToken;
+    BOOL  _orientationEventsEnabled;
+    NSThread * _orientationEventsThread;
+    int  _orientationNotificationsToken;
+    unsigned int  _orientationPort;
+    BOOL  _passiveOrientationEvents;
+    double  _updateInterval;
+    double  _xThreshold;
+    double  _yThreshold;
+    double  _zThreshold;
 }
 
 @property (nonatomic) BOOL accelerometerEventsEnabled;
@@ -25,9 +25,9 @@
 @property (nonatomic) BOOL orientationEventsEnabled;
 @property (nonatomic) BOOL passiveOrientationEvents;
 @property (nonatomic) double updateInterval;
-@property (nonatomic) float xThreshold;
-@property (nonatomic) float yThreshold;
-@property (nonatomic) float zThreshold;
+@property (nonatomic) double xThreshold;
+@property (nonatomic) double yThreshold;
+@property (nonatomic) double zThreshold;
 
 - (void)_checkIn;
 - (void)_checkOut;

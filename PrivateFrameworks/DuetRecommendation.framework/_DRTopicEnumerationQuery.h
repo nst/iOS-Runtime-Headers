@@ -2,11 +2,15 @@
    Image: /System/Library/PrivateFrameworks/DuetRecommendation.framework/DuetRecommendation
  */
 
-@interface _DRTopicEnumerationQuery : _DKQuery {
-    NSObject<OS_dispatch_queue> *_defaultQueue;
-    id /* block */ _topicEnumerator;
+@interface _DRTopicEnumerationQuery : _DKQuery <_DKExecutableQuery> {
+    NSObject<OS_dispatch_queue> * _defaultQueue;
+    unsigned int  _limit;
+    NSPredicate * _predicate;
+    id /* block */  _topicEnumerator;
 }
 
+@property unsigned int limit;
+@property (retain) NSPredicate *predicate;
 @property (copy) id /* block */ topicEnumerator;
 
 + (id)enumerationCountExpresion;
@@ -14,9 +18,13 @@
 + (id)topicEnumerationQueryWithPredicate:(id)arg1 topicEnumerator:(id /* block */)arg2;
 
 - (void).cxx_destruct;
-- (void)executeUsingCoreDataStorage:(id)arg1 reponseQueue:(id)arg2;
-- (void)handleResults:(id)arg1 error:(id)arg2 responseQueue:(id)arg3;
+- (id)executeUsingCoreDataStorage:(id)arg1 error:(id*)arg2;
+- (id)handleResults:(id)arg1 error:(id)arg2;
 - (id)initWithPredicate:(id)arg1 topicEnumerator:(id /* block */)arg2;
+- (unsigned int)limit;
+- (id)predicate;
+- (void)setLimit:(unsigned int)arg1;
+- (void)setPredicate:(id)arg1;
 - (void)setTopicEnumerator:(id /* block */)arg1;
 - (id /* block */)topicEnumerator;
 

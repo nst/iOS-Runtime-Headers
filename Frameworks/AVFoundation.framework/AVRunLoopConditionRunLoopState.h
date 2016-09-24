@@ -3,9 +3,9 @@
  */
 
 @interface AVRunLoopConditionRunLoopState : NSObject {
-    struct __CFRunLoop { } *_runLoop;
-    struct __CFRunLoopSource { } *_signalSource;
-    BOOL _signaled;
+    struct __CFRunLoop { } * _runLoop;
+    struct __CFRunLoopSource { } * _signalSource;
+    BOOL  _signaled;
 }
 
 @property (nonatomic, readonly) struct __CFRunLoop { }*runLoop;

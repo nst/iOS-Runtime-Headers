@@ -3,24 +3,24 @@
  */
 
 @interface DAStatusReport : NSObject {
-    NSString *_accountType;
-    NSNumber *_averageHBI;
-    NSDate *_creationDate;
-    NSString *_displayName;
-    NSNumber *_downloadedElements;
-    NSNumber *_failedNetworkRequests;
-    NSNumber *_failedProtocolRequests;
-    NSNumber *_falseMoreAvailableCount;
-    NSDate *_lastFailureDate;
-    NSDate *_lastSuccessDate;
-    int _numHBIDataPoints;
-    NSString *_persistentUUID;
-    NSString *_protocolVersion;
-    NSNumber *_successfulRequests;
-    BOOL _syncingAllowed;
-    NSNumber *_timeInNetworking;
-    NSNumber *_timeSpan;
-    NSNumber *_uploadedElements;
+    NSString * _accountType;
+    NSNumber * _averageHBI;
+    NSDate * _creationDate;
+    NSString * _displayName;
+    NSNumber * _downloadedElements;
+    NSNumber * _failedNetworkRequests;
+    NSNumber * _failedProtocolRequests;
+    NSNumber * _falseMoreAvailableCount;
+    NSDate * _lastFailureDate;
+    NSDate * _lastSuccessDate;
+    int  _numHBIDataPoints;
+    NSString * _persistentUUID;
+    NSString * _protocolVersion;
+    NSNumber * _successfulRequests;
+    BOOL  _syncingAllowed;
+    NSNumber * _timeInNetworking;
+    NSNumber * _timeSpan;
+    NSNumber * _uploadedElements;
 }
 
 @property (nonatomic, retain) NSString *accountType;

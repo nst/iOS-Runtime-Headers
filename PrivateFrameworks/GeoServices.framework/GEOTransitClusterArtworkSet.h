@@ -7,7 +7,7 @@
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _artworkIndexs;
+    }  _artworkIndexs;
 }
 
 @property (nonatomic, readonly) unsigned int*artworkIndexs;

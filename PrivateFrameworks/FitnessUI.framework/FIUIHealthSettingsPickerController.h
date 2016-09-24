@@ -3,8 +3,8 @@
  */
 
 @interface FIUIHealthSettingsPickerController : NSObject <FIUIHealthSettingsForceUpdatable, UIPickerViewDataSource, UIPickerViewDelegate> {
-    BOOL _isMetricLocale;
-    UIPickerView *_pickerView;
+    BOOL  _isMetricLocale;
+    UIPickerView * _pickerView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

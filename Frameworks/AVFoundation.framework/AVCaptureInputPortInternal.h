@@ -3,13 +3,13 @@
  */
 
 @interface AVCaptureInputPortInternal : NSObject {
-    int changeSeed;
-    struct OpaqueCMClock { } *clock;
-    BOOL enabled;
-    struct opaqueCMFormatDescription { } *formatDescription;
-    AVCaptureInput *input;
-    NSString *mediaType;
-    NSString *sourceID;
+    int  changeSeed;
+    struct OpaqueCMClock { } * clock;
+    BOOL  enabled;
+    struct opaqueCMFormatDescription { } * formatDescription;
+    AVCaptureInput * input;
+    NSString * mediaType;
+    NSString * sourceID;
 }
 
 - (void)dealloc;

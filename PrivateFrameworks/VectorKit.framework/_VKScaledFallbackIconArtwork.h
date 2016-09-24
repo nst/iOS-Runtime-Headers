@@ -3,17 +3,14 @@
  */
 
 @interface _VKScaledFallbackIconArtwork : VKIconArtwork {
-    VKIconArtwork *_artwork;
-    struct CGSize { 
-        float width; 
-        float height; 
-    } _size;
+    VKIconArtwork * _artwork;
 }
 
 - (void)_cleanUpAfterDrawing;
 - (id)_newImage;
+- (id)_newImageWithText:(id)arg1 fontName:(id)arg2;
+- (id)_newScaledImage:(id)arg1;
 - (void)dealloc;
 - (id)initWithArtwork:(id)arg1 contentScale:(float)arg2;
-- (struct CGSize { float x1; float x2; })size;
 
 @end

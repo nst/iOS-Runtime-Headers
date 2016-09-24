@@ -3,7 +3,7 @@
  */
 
 @interface PTSDrillDownRowTableViewCell : PTSRowTableViewCell {
-    UIButton *_actionButton;
+    UIButton * _actionButton;
 }
 
 - (void).cxx_destruct;

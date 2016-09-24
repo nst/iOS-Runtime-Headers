@@ -3,18 +3,18 @@
  */
 
 @interface MSASSharingRelationship : NSObject <NSCopying> {
-    NSString *_GUID;
-    NSString *_albumGUID;
-    NSString *_email;
-    NSArray *_emails;
-    NSString *_firstName;
-    NSString *_fullName;
-    BOOL _isMine;
-    NSString *_lastName;
-    NSString *_personID;
-    NSArray *_phones;
-    int _state;
-    NSDate *_subscriptionDate;
+    NSString * _GUID;
+    NSString * _albumGUID;
+    NSString * _email;
+    NSArray * _emails;
+    NSString * _firstName;
+    NSString * _fullName;
+    BOOL  _isMine;
+    NSString * _lastName;
+    NSString * _personID;
+    NSArray * _phones;
+    int  _state;
+    NSDate * _subscriptionDate;
 }
 
 @property (nonatomic, retain) NSString *GUID;

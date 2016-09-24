@@ -3,15 +3,19 @@
  */
 
 @interface EKCalendarEventInvitationNotificationAttendee : NSObject <EKIdentityProtocol> {
-    NSString *_comment;
-    BOOL _commentChanged;
-    NSString *_emailAddress;
-    NSString *_firstName;
-    NSString *_lastName;
-    NSString *_name;
-    int _participantStatus;
-    BOOL _statusChanged;
-    NSURL *_url;
+    NSString * _comment;
+    BOOL  _commentChanged;
+    NSString * _emailAddress;
+    NSString * _firstName;
+    BOOL  _isCurrentUser;
+    NSString * _lastName;
+    NSString * _name;
+    int  _participantStatus;
+    NSDate * _proposedStartDate;
+    BOOL  _proposedStartDateChanged;
+    BOOL  _proposedStartDateDeclined;
+    BOOL  _statusChanged;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSString *comment;
@@ -21,22 +25,30 @@
 @property (nonatomic, readonly) NSString *emailAddress;
 @property (nonatomic, readonly) NSString *firstName;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isCurrentUser;
 @property (nonatomic, readonly) NSString *lastName;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) int participantStatus;
+@property (nonatomic, readonly) NSDate *proposedStartDate;
+@property (nonatomic, readonly) BOOL proposedStartDateChanged;
+@property (nonatomic, readonly) BOOL proposedStartDateDeclined;
 @property (nonatomic, readonly) BOOL statusChanged;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSURL *url;
 
+- (void).cxx_destruct;
 - (id)comment;
 - (BOOL)commentChanged;
-- (void)dealloc;
 - (id)emailAddress;
 - (id)firstName;
-- (id)initWithAttendee:(id)arg1;
+- (id)initWithParticipant:(id)arg1;
+- (BOOL)isCurrentUser;
 - (id)lastName;
 - (id)name;
 - (int)participantStatus;
+- (id)proposedStartDate;
+- (BOOL)proposedStartDateChanged;
+- (BOOL)proposedStartDateDeclined;
 - (BOOL)statusChanged;
 - (id)url;
 

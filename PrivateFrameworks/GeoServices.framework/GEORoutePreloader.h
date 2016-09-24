@@ -3,21 +3,23 @@
  */
 
 @interface GEORoutePreloader : NSObject <GEOResourceManifestTileGroupObserver, GEORoutePreloadSession> {
-    BOOL _allStationTilesBatchMade;
-    id /* block */ _batteryHandler;
-    double _currentRoutePosition;
-    <GEORoutePreloadSessionDelegate> *_delegate;
-    int _downloadState;
-    BOOL _enabled;
-    BOOL _fullDebuggingEnabled;
-    BOOL _loggingEnabled;
-    BOOL _minimalDebuggingEnabled;
-    unsigned int _networkQuality;
-    BOOL _paused;
-    GEOComposedRoute *_route;
-    double _stepSizeInMeters;
+    BOOL  _allStationTilesBatchMade;
+    id /* block */  _batteryHandler;
+    double  _currentRoutePosition;
+    <GEORoutePreloadSessionDelegate> * _delegate;
+    int  _downloadState;
+    BOOL  _enabled;
+    BOOL  _fullDebuggingEnabled;
+    BOOL  _loggingEnabled;
+    BOOL  _minimalDebuggingEnabled;
+    unsigned int  _networkQuality;
+    BOOL  _paused;
+    GEOComposedRoute * _route;
+    double  _stepSizeInMeters;
+    NSMutableDictionary * _tileSetStyles;
 }
 
+@property (nonatomic, copy) id /* block */ batteryHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property <GEORoutePreloadSessionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -26,8 +28,12 @@
 @property (nonatomic, readonly) GEOComposedRoute *route;
 @property (readonly) Class superclass;
 
++ (id)preloaderForRoute:(id)arg1;
+
 - (void)_cancelPreloadTasks;
 - (void)_retryFailuresWithErrorsReset:(BOOL)arg1;
+- (void)addTileSetStyle:(int)arg1 betweenZoom:(unsigned int)arg2 andZoom:(unsigned int)arg3;
+- (id /* block */)batteryHandler;
 - (void)beginLoading;
 - (void)dealloc;
 - (id)delegate;
@@ -44,6 +50,7 @@
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
 - (id)route;
+- (void)setBatteryHandler:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setNetworkQuality:(unsigned int)arg1;
 - (void)setTraits:(id)arg1;

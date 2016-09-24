@@ -3,7 +3,15 @@
  */
 
 @interface TSTTableDataObject : NSObject {
-    unsigned int mRefCount;
+    unsigned int  mRefCount;
 }
+
+@property (nonatomic, readonly) unsigned int refCount;
+
+- (void)addReferencesFromObject:(id)arg1;
+- (BOOL)dropReference;
+- (id)initWithRefCount:(unsigned int)arg1;
+- (unsigned int)refCount;
+- (void)takeReference;
 
 @end

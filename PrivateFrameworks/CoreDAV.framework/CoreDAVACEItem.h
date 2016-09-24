@@ -3,12 +3,12 @@
  */
 
 @interface CoreDAVACEItem : CoreDAVItem {
-    CoreDAVDenyItem *_deny;
-    CoreDAVGrantItem *_grant;
-    CoreDAVItemWithHrefChildItem *_inherited;
-    CoreDAVInvertItem *_invert;
-    CoreDAVPrincipalItem *_principal;
-    CoreDAVItemWithNoChildren *_protectedItem;
+    CoreDAVDenyItem * _deny;
+    CoreDAVGrantItem * _grant;
+    CoreDAVItemWithHrefChildItem * _inherited;
+    CoreDAVInvertItem * _invert;
+    CoreDAVPrincipalItem * _principal;
+    CoreDAVItemWithNoChildren * _protectedItem;
 }
 
 @property (nonatomic, retain) CoreDAVDenyItem *deny;

@@ -3,16 +3,16 @@
  */
 
 @interface PUVideoEditModelChange : PUViewModelChange {
-    BOOL _videoBuilderChanged;
-    BOOL _videoDurationChanged;
-    BOOL _videoSizeChanged;
-    BOOL _videoTrimRegionChanged;
+    BOOL  _videoBuilderChanged;
+    BOOL  _videoDurationChanged;
+    BOOL  _videoSizeChanged;
+    BOOL  _videoTrimRegionChanged;
 }
 
-@property (nonatomic) BOOL videoBuilderChanged;
-@property (nonatomic) BOOL videoDurationChanged;
-@property (nonatomic) BOOL videoSizeChanged;
-@property (nonatomic) BOOL videoTrimRegionChanged;
+@property (setter=_setVideoBuilderChanged:, nonatomic) BOOL videoBuilderChanged;
+@property (setter=_setVideoDurationChanged:, nonatomic) BOOL videoDurationChanged;
+@property (setter=_setVideoSizeChanged:, nonatomic) BOOL videoSizeChanged;
+@property (setter=_setVideoTrimRegionChanged:, nonatomic) BOOL videoTrimRegionChanged;
 
 - (void)_setVideoBuilderChanged:(BOOL)arg1;
 - (void)_setVideoDurationChanged:(BOOL)arg1;

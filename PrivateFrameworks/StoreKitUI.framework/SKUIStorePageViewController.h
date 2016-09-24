@@ -3,21 +3,21 @@
  */
 
 @interface SKUIStorePageViewController : UIViewController <SKUIMetricsViewController, SKUIStorePageSectionsDelegate, SKUIViewControllerTesting, UIViewControllerRestoration> {
-    SKUIClientContext *_clientContext;
-    <SKUIStorePageDelegate> *_delegate;
-    NSString *_lastDataConsumerClassName;
-    SSMetricsPageEvent *_lastPageEvent;
-    NSURLRequest *_lastRequest;
-    BOOL _loadOnAppear;
-    SSVLoadURLOperation *_loadOperation;
-    SKUIMetricsController *_metricsController;
-    NSOperationQueue *_operationQueue;
-    NSString *_performanceTestName;
-    NSDictionary *_performanceTestOptions;
-    SKUIColorScheme *_placeholderColorScheme;
-    UIRefreshControl *_refreshControl;
-    SKUIStorePageSectionsViewController *_sectionsViewController;
-    SKUIStorePage *_storePage;
+    SKUIClientContext * _clientContext;
+    <SKUIStorePageDelegate> * _delegate;
+    NSString * _lastDataConsumerClassName;
+    SSMetricsPageEvent * _lastPageEvent;
+    NSURLRequest * _lastRequest;
+    BOOL  _loadOnAppear;
+    SSVLoadURLOperation * _loadOperation;
+    SKUIMetricsController * _metricsController;
+    NSOperationQueue * _operationQueue;
+    NSString * _performanceTestName;
+    NSDictionary * _performanceTestOptions;
+    SKUIColorScheme * _placeholderColorScheme;
+    UIRefreshControl * _refreshControl;
+    SKUIStorePageSectionsViewController * _sectionsViewController;
+    SKUIStorePage * _storePage;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
@@ -25,9 +25,9 @@
 @property (nonatomic) <SKUIStorePageDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (getter=isLoading, nonatomic, readonly) BOOL loading;
 @property (nonatomic, retain) NSOperationQueue *operationQueue;
 @property (nonatomic, retain) UIRefreshControl *refreshControl;
+@property (getter=isSkLoading, nonatomic, readonly) BOOL skLoading;
 @property (nonatomic, copy) SKUIStorePage *storePage;
 @property (readonly) Class superclass;
 
@@ -56,7 +56,7 @@
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)isLoading;
+- (BOOL)isSkLoading;
 - (void)loadURL:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (void)loadURL:(id)arg1 withDataConsumer:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)loadURLRequest:(id)arg1 withCompletionBlock:(id /* block */)arg2;

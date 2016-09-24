@@ -5,7 +5,7 @@
 @interface NSFileHandle : NSObject <NSSecureCoding>
 
 @property (readonly, copy) NSData *availableData;
-@property (readonly) unsigned long long offsetInFile;
+@property (readonly) unsigned int offsetInFile;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
@@ -38,22 +38,26 @@
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3;
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
 - (id)initWithURL:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
-- (unsigned long long)offsetInFile;
+- (unsigned int)offsetInFile;
 - (id)readDataOfLength:(unsigned int)arg1;
 - (id)readDataToEndOfFile;
 - (id /* block */)readabilityHandler;
-- (unsigned long long)seekToEndOfFile;
-- (void)seekToFileOffset:(unsigned long long)arg1;
+- (unsigned int)seekToEndOfFile;
+- (void)seekToFileOffset:(unsigned int)arg1;
 - (void)setReadabilityHandler:(id /* block */)arg1;
 - (void)setWriteabilityHandler:(id /* block */)arg1;
 - (void)synchronizeFile;
-- (void)truncateFileAtOffset:(unsigned long long)arg1;
+- (void)truncateFileAtOffset:(unsigned int)arg1;
 - (void)writeData:(id)arg1;
 - (id /* block */)writeabilityHandler;
 
 // Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
 
 - (void)writeString:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
+
+- (unsigned int)writeWithCompression:(id)arg1 andUpdateAdler32:(struct adler32_t { unsigned int x1; }*)arg2;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
@@ -64,5 +68,9 @@
 
 - (void)ml_lock;
 - (void)ml_unlock;
+
+// Image: /System/Library/PrivateFrameworks/Parsec.framework/Parsec
+
+- (id)prs_mappedData;
 
 @end

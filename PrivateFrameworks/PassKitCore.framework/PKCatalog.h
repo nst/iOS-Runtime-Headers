@@ -3,8 +3,8 @@
  */
 
 @interface PKCatalog : NSObject <NSSecureCoding> {
-    NSMutableArray *_groups;
-    NSDate *_timestamp;
+    NSMutableArray * _groups;
+    NSDate * _timestamp;
 }
 
 @property (nonatomic, retain) NSMutableArray *groups;
@@ -13,8 +13,8 @@
 + (id)catalogWithContentsOfURL:(id)arg1 nonUbiquitousCatalogURL:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)allGroupIDs;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)groups;

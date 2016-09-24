@@ -3,9 +3,9 @@
  */
 
 @interface CalDAVCalendarServerNotificationTypeItem : CoreDAVItem {
-    CoreDAVItemWithNoChildren *_inviteNotification;
-    CoreDAVItemWithNoChildren *_inviteReply;
-    CoreDAVItemWithNoChildren *_resourceChanged;
+    CoreDAVItemWithNoChildren * _inviteNotification;
+    CoreDAVItemWithNoChildren * _inviteReply;
+    CoreDAVItemWithNoChildren * _resourceChanged;
 }
 
 @property (nonatomic, retain) CoreDAVItemWithNoChildren *inviteNotification;

@@ -3,8 +3,8 @@
  */
 
 @interface EAGLSharegroup : NSObject {
-    struct _EAGLSharegroupPrivate { unsigned int x1; int x2; bool x3; struct __GLDPixelFormatRec {} *x4; struct __GLISharedRec {} *x5; } *_private;
-    NSString *debugLabel;
+    struct _EAGLSharegroupPrivate { unsigned int x1; int x2; bool x3; struct __GLDPixelFormatRec {} *x4; struct __GLISharedRec {} *x5; } * _private;
+    NSString * debugLabel;
 }
 
 @property (nonatomic, copy) NSString *debugLabel;

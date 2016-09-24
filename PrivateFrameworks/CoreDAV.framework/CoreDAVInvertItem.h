@@ -3,7 +3,7 @@
  */
 
 @interface CoreDAVInvertItem : CoreDAVItem {
-    CoreDAVPrincipalItem *_principal;
+    CoreDAVPrincipalItem * _principal;
 }
 
 @property (nonatomic, retain) CoreDAVPrincipalItem *principal;

@@ -3,7 +3,7 @@
  */
 
 @interface CKSpringBoardActionManager : NSObject <CKContactsSearchManagerDelegate> {
-    CKContactsSearchManager *_contactsSearchManager;
+    CKContactsSearchManager * _contactsSearchManager;
 }
 
 @property (nonatomic, retain) CKContactsSearchManager *contactsSearchManager;
@@ -14,6 +14,7 @@
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (id)contactsSearchManager;
 - (void)contactsSearchManager:(id)arg1 finishedSearchingWithResults:(id)arg2;
 - (void)dealloc;

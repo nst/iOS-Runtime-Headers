@@ -3,19 +3,47 @@
  */
 
 @interface PLLocationAgent : PLAgent {
-    PLCFNotificationOperatorComposition *_appStatusChangedNotification;
-    NSMutableSet *_processes;
-    PLCFNotificationOperatorComposition *_techStatusChangedNotification;
+    PLCFNotificationOperatorComposition * _appStatusChangedNotification;
+    NSMutableDictionary * _bundleIDToWeightUsingGPSCache;
+    NSMutableDictionary * _bundleIDToWeightUsingLocationCache;
+    NSMutableDictionary * _bundleIDToWeightUsingWiFiCache;
+    NSMutableDictionary * _clientStatusTypeStrings;
+    NSDate * _gps_segment_date;
+    NSDate * _gps_segment_lastWrittenDate;
+    double  _gps_segment_lastWrittenTimestamp;
+    double  _gps_segment_power;
+    double  _gps_segment_timestamp;
+    PLXPCListenerOperatorComposition * _locationGPSListener;
+    PLXPCListenerOperatorComposition * _logLevelNotification;
+    NSMutableSet * _processes;
+    PLEntryNotificationOperatorComposition * _sbcLevelChanged;
+    PLXPCListenerOperatorComposition * _statusBarNotification;
+    PLCFNotificationOperatorComposition * _techStatusChangedNotification;
 }
 
 @property (retain) PLCFNotificationOperatorComposition *appStatusChangedNotification;
+@property (retain) NSMutableDictionary *bundleIDToWeightUsingGPSCache;
+@property (retain) NSMutableDictionary *bundleIDToWeightUsingLocationCache;
+@property (retain) NSMutableDictionary *bundleIDToWeightUsingWiFiCache;
+@property (retain) NSMutableDictionary *clientStatusTypeStrings;
+@property (retain) NSDate *gps_segment_date;
+@property (retain) NSDate *gps_segment_lastWrittenDate;
+@property double gps_segment_lastWrittenTimestamp;
+@property double gps_segment_power;
+@property double gps_segment_timestamp;
+@property (retain) PLXPCListenerOperatorComposition *locationGPSListener;
+@property (retain) PLXPCListenerOperatorComposition *logLevelNotification;
 @property (retain) NSMutableSet *processes;
+@property (retain) PLEntryNotificationOperatorComposition *sbcLevelChanged;
+@property (retain) PLXPCListenerOperatorComposition *statusBarNotification;
 @property (retain) PLCFNotificationOperatorComposition *techStatusChangedNotification;
 
 + (id)defaults;
 + (id)entryAggregateDefinitions;
 + (id)entryEventBackwardDefinitions;
 + (id)entryEventForwardDefinitionClientStatus;
++ (id)entryEventForwardDefinitionLogLevel;
++ (id)entryEventForwardDefinitionStatusBar;
 + (id)entryEventForwardDefinitionTechStatus;
 + (id)entryEventForwardDefinitions;
 + (id)entryEventIntervalDefinitions;
@@ -26,25 +54,53 @@
 + (void)load;
 
 - (void).cxx_destruct;
+- (void)UpdateGnssPowerMetric:(id)arg1;
 - (id)appStatusChangedNotification;
+- (id)bundleIDToWeightUsingGPSCache;
+- (id)bundleIDToWeightUsingLocationCache;
+- (id)bundleIDToWeightUsingWiFiCache;
+- (id)clientStatusTypeStrings;
 - (void)createLocationDistributionEventsWithClientToOpenEntry:(id)arg1;
+- (id)gps_segment_date;
+- (id)gps_segment_lastWrittenDate;
+- (double)gps_segment_lastWrittenTimestamp;
+- (double)gps_segment_power;
+- (double)gps_segment_timestamp;
 - (id)humanReadableNameForTechnology:(id)arg1;
 - (id)init;
 - (void)initOperatorDependancies;
 - (id)lastEntryWithClient:(id)arg1 withType:(id)arg2 withEntryKey:(id)arg3;
+- (id)locationGPSListener;
 - (void)log;
 - (void)logEventForwardClientStatus;
 - (void)logEventForwardTechStatus;
 - (void)logEventNoneClientStatus;
 - (void)logEventNoneClientStatusDebugWithClients:(id)arg1;
 - (void)logEventPointClientStatus;
-- (void)modelGPSICEPower:(id)arg1;
+- (id)logLevelNotification;
+- (void)modelGpsSegmentPower:(id)arg1 withGpsPower:(double)arg2 withTotalDuration:(double)arg3;
 - (id)processes;
 - (void)processesOfInterest:(id)arg1;
+- (id)sbcLevelChanged;
 - (void)setAppStatusChangedNotification:(id)arg1;
+- (void)setBundleIDToWeightUsingGPSCache:(id)arg1;
+- (void)setBundleIDToWeightUsingLocationCache:(id)arg1;
+- (void)setBundleIDToWeightUsingWiFiCache:(id)arg1;
+- (void)setClientStatusTypeStrings:(id)arg1;
+- (void)setGps_segment_date:(id)arg1;
+- (void)setGps_segment_lastWrittenDate:(id)arg1;
+- (void)setGps_segment_lastWrittenTimestamp:(double)arg1;
+- (void)setGps_segment_power:(double)arg1;
+- (void)setGps_segment_timestamp:(double)arg1;
+- (void)setLocationGPSListener:(id)arg1;
+- (void)setLogLevelNotification:(id)arg1;
 - (void)setProcesses:(id)arg1;
+- (void)setSbcLevelChanged:(id)arg1;
+- (void)setStatusBarNotification:(id)arg1;
 - (void)setTechStatusChangedNotification:(id)arg1;
+- (id)statusBarNotification;
 - (id)techStatusChangedNotification;
 - (void)updateLocalCacheWithClient:(id)arg1 withType:(id)arg2 withEntry:(id)arg3;
+- (void)writeModeledPower;
 
 @end

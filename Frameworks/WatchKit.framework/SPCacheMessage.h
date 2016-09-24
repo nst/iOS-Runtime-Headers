@@ -3,13 +3,13 @@
  */
 
 @interface SPCacheMessage : NSObject {
-    NSData *_assetData;
-    NSString *_assetKey;
-    unsigned int _cacheType;
-    unsigned int _error;
-    NSString *_gizmoCacheIdentifier;
-    long _messageType;
-    SPAssetCacheSyncData *_syncData;
+    NSData * _assetData;
+    NSString * _assetKey;
+    unsigned int  _cacheType;
+    unsigned int  _error;
+    NSString * _gizmoCacheIdentifier;
+    long  _messageType;
+    SPAssetCacheSyncData * _syncData;
 }
 
 @property (nonatomic, retain) NSData *assetData;

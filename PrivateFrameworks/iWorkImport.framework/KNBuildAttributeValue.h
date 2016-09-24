@@ -2,19 +2,19 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface KNBuildAttributeValue : TSPObject <NSCopying> {
-    BOOL _boolValue;
-    TSUColor *_colorValue;
-    BOOL _definedBoolValue;
-    BOOL _definedColorValue;
-    BOOL _definedDoubleValue;
-    BOOL _definedIntegerValue;
-    BOOL _definedPathSourceValue;
-    BOOL _definedStringValue;
-    double _doubleValue;
-    int _integerValue;
-    TSDPathSource *_pathSourceValue;
-    NSString *_stringValue;
+@interface KNBuildAttributeValue : TSKSosBase <NSCopying> {
+    BOOL  _boolValue;
+    TSUColor * _colorValue;
+    BOOL  _definedBoolValue;
+    BOOL  _definedColorValue;
+    BOOL  _definedDoubleValue;
+    BOOL  _definedIntegerValue;
+    BOOL  _definedPathSourceValue;
+    BOOL  _definedStringValue;
+    double  _doubleValue;
+    int  _integerValue;
+    TSDPathSource * _pathSourceValue;
+    NSString * _stringValue;
 }
 
 @property (nonatomic, readonly) BOOL boolValue;

@@ -3,7 +3,7 @@
  */
 
 @interface MFError : NSError {
-    NSMutableDictionary *_moreUserInfo;
+    NSMutableDictionary * _moreUserInfo;
 }
 
 + (id)errorWithDomain:(id)arg1 code:(int)arg2 localizedDescription:(id)arg3;

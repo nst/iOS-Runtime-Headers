@@ -3,8 +3,8 @@
  */
 
 @interface FBUISceneManager : NSObject <FBUISceneManager> {
-    NSMutableDictionary *_sceneHostsByID;
-    NSMutableDictionary *_workspacesByID;
+    NSMutableDictionary * _sceneHostsByID;
+    NSMutableDictionary * _workspacesByID;
 }
 
 @property (readonly, copy) NSString *debugDescription;

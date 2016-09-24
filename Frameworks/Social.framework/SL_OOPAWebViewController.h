@@ -3,16 +3,16 @@
  */
 
 @interface SL_OOPAWebViewController : UIViewController <NSURLConnectionDataDelegate, UIWebViewDelegate, UIWebViewPrivateDelegate, WKNavigationDelegate> {
-    NSObject<SL_OOPAuthFlowDelegate> *_authFlowDelegate;
-    NSURL *_authURL;
-    <SL_OOPAWebViewControllerDelegate> *_delegate;
-    BOOL _hidingWebView;
-    SL_OOPASpinnerTitle *_spinnerTitleView;
-    struct __CFURLStorageSession { } *_storageSession;
-    UIWebView *_uiWebView;
-    NSMutableURLRequest *_urlRequest;
-    NSString *_username;
-    WKWebView *_wkWebView;
+    NSObject<SL_OOPAuthFlowDelegate> * _authFlowDelegate;
+    NSURL * _authURL;
+    <SL_OOPAWebViewControllerDelegate> * _delegate;
+    BOOL  _hidingWebView;
+    SL_OOPASpinnerTitle * _spinnerTitleView;
+    struct __CFURLStorageSession { } * _storageSession;
+    UIWebView * _uiWebView;
+    NSMutableURLRequest * _urlRequest;
+    NSString * _username;
+    WKWebView * _wkWebView;
 }
 
 @property (nonatomic, retain) NSObject<SL_OOPAuthFlowDelegate> *authFlowDelegate;

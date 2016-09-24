@@ -3,7 +3,7 @@
  */
 
 @interface AFUpdateMessageRequest : AFSiriRequest {
-    STSiriMessage *_message;
+    STSiriMessage * _message;
 }
 
 + (BOOL)supportsSecureCoding;

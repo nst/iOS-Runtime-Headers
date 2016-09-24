@@ -3,19 +3,19 @@
  */
 
 @interface GEOPDTransitScheduleFilter : PBCodable <NSCopying> {
-    GEOPDDeparturePredicate *_departurePredicateCountdown;
-    GEOPDDeparturePredicate *_departurePredicateStamp;
+    GEOPDDeparturePredicate * _departurePredicateCountdown;
+    GEOPDDeparturePredicate * _departurePredicateStamp;
     struct { 
         unsigned int operatingHoursRange : 1; 
-    } _has;
-    struct { 
+    }  _has;
+    struct GEOPDTimeRange { 
         unsigned int _duration; 
         unsigned int _startTime; 
         struct { 
             unsigned int duration : 1; 
             unsigned int startTime : 1; 
         } _has; 
-    } _operatingHoursRange;
+    }  _operatingHoursRange;
 }
 
 @property (nonatomic, retain) GEOPDDeparturePredicate *departurePredicateCountdown;
@@ -23,7 +23,7 @@
 @property (nonatomic, readonly) BOOL hasDeparturePredicateCountdown;
 @property (nonatomic, readonly) BOOL hasDeparturePredicateStamp;
 @property (nonatomic) BOOL hasOperatingHoursRange;
-@property (nonatomic) struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } operatingHoursRange;
+@property (nonatomic) struct GEOPDTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } operatingHoursRange;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -38,12 +38,12 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })operatingHoursRange;
+- (struct GEOPDTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })operatingHoursRange;
 - (BOOL)readFrom:(id)arg1;
 - (void)setDeparturePredicateCountdown:(id)arg1;
 - (void)setDeparturePredicateStamp:(id)arg1;
 - (void)setHasOperatingHoursRange:(BOOL)arg1;
-- (void)setOperatingHoursRange:(struct { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
+- (void)setOperatingHoursRange:(struct GEOPDTimeRange { unsigned int x1; unsigned int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
 - (void)writeTo:(id)arg1;
 
 @end

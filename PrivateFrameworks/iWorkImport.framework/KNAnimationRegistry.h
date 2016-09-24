@@ -3,12 +3,12 @@
  */
 
 @interface KNAnimationRegistry : NSObject {
-    NSDictionary *mAlternateEffectIdentifiersForEffectIdentifierAndFilter;
-    NSArray *mAnimationInfos;
-    NSDictionary *mClassesForTypeAndCategory;
-    NSDictionary *mClassesForTypeAndFilter;
-    NSDictionary *mClassesForTypeAndName;
-    NSDictionary *mClassesForTypeAndObsoleteName;
+    NSDictionary * mAlternateEffectIdentifiersForEffectIdentifierAndFilter;
+    NSArray * mAnimationInfos;
+    NSDictionary * mClassesForTypeAndCategory;
+    NSDictionary * mClassesForTypeAndFilter;
+    NSDictionary * mClassesForTypeAndName;
+    NSDictionary * mClassesForTypeAndObsoleteName;
 }
 
 + (id)animationsInBundle;

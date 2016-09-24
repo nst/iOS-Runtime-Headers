@@ -3,29 +3,29 @@
  */
 
 @interface TSPDatabaseObject : NSObject {
-    int _classType;
-    long long _identifier;
+    int  _classType;
+    int  _identifier;
 }
 
 @property (nonatomic, readonly) int classType;
-@property (nonatomic, readonly) long long dataState;
+@property (nonatomic, readonly) int dataState;
 @property (nonatomic, readonly) NSString *fileState;
 @property (nonatomic, readonly) NSURL *fileURL;
 @property (nonatomic, readonly) BOOL hasDataState;
 @property (nonatomic, readonly) BOOL hasFileState;
-@property (nonatomic, readonly) long long identifier;
+@property (nonatomic, readonly) int identifier;
 
-+ (id)databaseObjectWithIdentifier:(long long)arg1 classType:(int)arg2 dataState:(long long)arg3;
-+ (id)databaseObjectWithIdentifier:(long long)arg1 classType:(int)arg2 fileState:(id)arg3 packageURL:(id)arg4;
++ (id)databaseObjectWithIdentifier:(int)arg1 classType:(int)arg2 dataState:(int)arg3;
++ (id)databaseObjectWithIdentifier:(int)arg1 classType:(int)arg2 fileState:(id)arg3 packageURL:(id)arg4;
 
 - (int)classType;
-- (long long)dataState;
+- (int)dataState;
 - (id)fileState;
 - (id)fileURL;
 - (BOOL)hasDataState;
 - (BOOL)hasFileState;
-- (long long)identifier;
+- (int)identifier;
 - (id)init;
-- (id)initWithIdentifier:(long long)arg1 classType:(int)arg2;
+- (id)initWithIdentifier:(int)arg1 classType:(int)arg2;
 
 @end

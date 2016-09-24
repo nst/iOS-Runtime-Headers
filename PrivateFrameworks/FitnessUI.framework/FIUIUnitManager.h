@@ -3,10 +3,10 @@
  */
 
 @interface FIUIUnitManager : NSObject {
-    HKHealthStore *_healthStore;
-    NSMutableDictionary *_preferredUnits;
+    NSMutableDictionary * _preferredUnits;
 }
 
++ (void)setHealthStore:(id)arg1;
 + (id)sharedManager;
 
 - (void).cxx_destruct;
@@ -19,6 +19,7 @@
 - (void)_updatePreferredUnits;
 - (void)_userPreferencesDidChange:(id)arg1;
 - (void)dealloc;
+- (id)healthStore;
 - (id)init;
 - (void)setPreferredUnitsForTesting:(id)arg1;
 - (void)setUserActiveEnergyBurnedUnit:(id)arg1;
@@ -30,9 +31,12 @@
 - (id)userBasalEnergyBurnedUnit;
 - (id)userDistanceCyclingHKUnit;
 - (int)userDistanceCyclingUnit;
+- (id)userDistanceElevationHKUnit;
+- (int)userDistanceElevationUnit;
 - (id)userDistanceHKUnitForDistanceType:(int)arg1;
 - (int)userDistanceUnitForDistanceType:(int)arg1;
 - (id)userDistanceWalkingRunningHKUnit;
 - (int)userDistanceWalkingRunningUnit;
+- (id)userLapLengthHKUnit;
 
 @end

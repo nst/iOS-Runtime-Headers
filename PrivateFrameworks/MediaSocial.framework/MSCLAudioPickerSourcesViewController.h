@@ -3,8 +3,8 @@
  */
 
 @interface MSCLAudioPickerSourcesViewController : SKUIViewController <UITableViewDataSource, UITableViewDelegate> {
-    NSArray *_sources;
-    UITableView *_tableView;
+    NSArray * _sources;
+    UITableView * _tableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

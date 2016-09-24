@@ -3,13 +3,14 @@
  */
 
 @interface TKTonePickerTableView : UITableView {
-    <TKTonePickerTableViewLayoutMarginsObserver> *_layoutMarginsObserver;
-    <TKTonePickerTableViewSeparatorObserver> *_separatorObserver;
+    <TKTonePickerTableViewLayoutMarginsObserver> * _layoutMarginsObserver;
+    <TKTonePickerTableViewSeparatorObserver> * _separatorObserver;
 }
 
 @property (nonatomic) <TKTonePickerTableViewLayoutMarginsObserver> *layoutMarginsObserver;
 @property (nonatomic) <TKTonePickerTableViewSeparatorObserver> *separatorObserver;
 
+- (void).cxx_destruct;
 - (void)_handleSeparatorColorDidChange;
 - (void)layoutMarginsDidChange;
 - (id)layoutMarginsObserver;

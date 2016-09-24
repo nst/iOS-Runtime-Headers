@@ -3,8 +3,11 @@
  */
 
 @interface SKThreadSafeMapTable : NSObject <NSCoding, NSCopying, NSFastEnumeration> {
-    NSMutableArray *_storage;
-    int _storageLock;
+    NSMutableArray * _storage;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
+    }  _storageLock;
 }
 
 - (void).cxx_destruct;

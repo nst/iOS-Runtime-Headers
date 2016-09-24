@@ -3,8 +3,8 @@
  */
 
 @interface CNLinkedContactsPredicate : CNPredicate <CNSuggestedContactPredicate> {
-    CNContact *_contact;
-    NSString *_contactIdentifier;
+    CNContact * _contact;
+    NSString * _contactIdentifier;
 }
 
 @property (nonatomic, readonly, copy) CNContact *contact;
@@ -14,10 +14,14 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
++ (BOOL)supportsSecureCoding;
+
 - (id)contact;
 - (id)contactIdentifier;
 - (void)dealloc;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithContact:(id)arg1;
 - (id)initWithContactIdentifier:(id)arg1;
 

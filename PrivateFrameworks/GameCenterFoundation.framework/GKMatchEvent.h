@@ -3,8 +3,8 @@
  */
 
 @interface GKMatchEvent : NSObject {
-    NSData *_data;
-    GKPlayer *_recipientPlayer;
+    NSData * _data;
+    GKPlayer * _recipientPlayer;
 }
 
 @property (nonatomic, retain) NSData *data;

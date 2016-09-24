@@ -3,9 +3,9 @@
  */
 
 @interface HKSortedSampleArray : NSObject <NSFastEnumeration> {
-    NSMutableArray *_samples;
-    NSMutableDictionary *_samplesByUUID;
-    NSSortDescriptor *_sortDescriptor;
+    NSMutableArray * _samples;
+    NSMutableDictionary * _samplesByUUID;
+    NSSortDescriptor * _sortDescriptor;
 }
 
 @property (nonatomic, retain) NSSortDescriptor *sortDescriptor;

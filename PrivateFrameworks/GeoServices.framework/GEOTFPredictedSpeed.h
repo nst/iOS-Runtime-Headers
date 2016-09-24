@@ -3,35 +3,35 @@
  */
 
 @interface GEOTFPredictedSpeed : PBCodable <NSCopying> {
-    unsigned int _deltaMinutesInFuture;
-    float _deltaSpeed;
+    unsigned int  _deltaMinutesInFuture;
     struct { 
         unsigned int deltaMinutesInFuture : 1; 
-        unsigned int deltaSpeed : 1; 
-    } _has;
+        unsigned int speed : 1; 
+    }  _has;
+    unsigned int  _speed;
 }
 
 @property (nonatomic) unsigned int deltaMinutesInFuture;
-@property (nonatomic) float deltaSpeed;
 @property (nonatomic) BOOL hasDeltaMinutesInFuture;
-@property (nonatomic) BOOL hasDeltaSpeed;
+@property (nonatomic) BOOL hasSpeed;
+@property (nonatomic) unsigned int speed;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)deltaMinutesInFuture;
-- (float)deltaSpeed;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasDeltaMinutesInFuture;
-- (BOOL)hasDeltaSpeed;
+- (BOOL)hasSpeed;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setDeltaMinutesInFuture:(unsigned int)arg1;
-- (void)setDeltaSpeed:(float)arg1;
 - (void)setHasDeltaMinutesInFuture:(BOOL)arg1;
-- (void)setHasDeltaSpeed:(BOOL)arg1;
+- (void)setHasSpeed:(BOOL)arg1;
+- (void)setSpeed:(unsigned int)arg1;
+- (unsigned int)speed;
 - (void)writeTo:(id)arg1;
 
 @end

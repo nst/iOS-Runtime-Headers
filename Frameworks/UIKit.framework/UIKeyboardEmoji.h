@@ -3,8 +3,8 @@
  */
 
 @interface UIKeyboardEmoji : NSObject {
-    NSString *_emojiString;
-    unsigned int _variantMask;
+    NSString * _emojiString;
+    unsigned int  _variantMask;
 }
 
 @property (nonatomic, retain) NSString *emojiString;

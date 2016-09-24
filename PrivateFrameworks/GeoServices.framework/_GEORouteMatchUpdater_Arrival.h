@@ -5,14 +5,14 @@
 @interface _GEORouteMatchUpdater_Arrival : _GEORouteMatchUpdater {
     struct PolylineCoordinate { 
         unsigned int index; 
-        float offset; 
-    } _arrivalRouteCoordinate;
-    GEOComposedRouteStep *_arrivalStep;
+        double offset; 
+    }  _arrivalRouteCoordinate;
+    GEOComposedRouteStep * _arrivalStep;
     struct { 
         double latitude; 
         double longitude; 
-    } _destinationLocationCoordinate;
-    GEOComposedRouteStep *_previousExitStationStep;
+    }  _destinationLocationCoordinate;
+    GEOComposedRouteStep * _previousExitStationStep;
 }
 
 - (id).cxx_construct;

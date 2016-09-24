@@ -3,9 +3,9 @@
  */
 
 @interface MusicJSNativeViewEventRequest : NSObject {
-    id /* block */ _completion;
-    NSDictionary *_extraInfo;
-    int _nativeViewEventType;
+    id /* block */  _completion;
+    NSDictionary * _extraInfo;
+    int  _nativeViewEventType;
 }
 
 @property (nonatomic, copy) id /* block */ completion;

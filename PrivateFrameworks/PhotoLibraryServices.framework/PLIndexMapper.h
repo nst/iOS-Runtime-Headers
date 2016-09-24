@@ -3,7 +3,7 @@
  */
 
 @interface PLIndexMapper : NSObject {
-    <PLIndexMapperDataSource> *_dataSource;
+    <PLIndexMapperDataSource> * _dataSource;
 }
 
 - (BOOL)applyContainerChangeNotification:(id)arg1 changeTypes:(int)arg2 toFilteredIndexes:(id)arg3;

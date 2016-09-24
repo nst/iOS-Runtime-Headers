@@ -3,22 +3,22 @@
  */
 
 @interface EKICSPreviewController : NSObject <EKEventViewDelegatePrivate> {
-    unsigned int _actionsState;
-    BOOL _allowsEditing;
-    BOOL _allowsImport;
-    BOOL _allowsInvalidProperties;
-    BOOL _allowsSubitems;
-    BOOL _allowsToDos;
-    int _cancelButtonType;
-    UIViewController *_contentViewController;
-    EKEventViewController *_currentImport;
-    EKEvent *_eventFromUID;
-    EKEventStore *_eventStore;
-    int _eventUID;
-    BOOL _hasCustomCancelButton;
-    BOOL _importing;
-    EKICSPreviewModel *_model;
-    <EKICSPreviewControllerDelegate> *_previewDelegate;
+    unsigned int  _actionsState;
+    BOOL  _allowsEditing;
+    BOOL  _allowsImport;
+    BOOL  _allowsInvalidProperties;
+    BOOL  _allowsSubitems;
+    BOOL  _allowsToDos;
+    int  _cancelButtonType;
+    UIViewController * _contentViewController;
+    EKEventViewController * _currentImport;
+    EKEvent * _eventFromUID;
+    EKEventStore * _eventStore;
+    int  _eventUID;
+    BOOL  _hasCustomCancelButton;
+    BOOL  _importing;
+    EKICSPreviewModel * _model;
+    <EKICSPreviewControllerDelegate> * _previewDelegate;
 }
 
 @property (nonatomic) unsigned int actionsState;
@@ -38,8 +38,14 @@
 @property (nonatomic, readonly) unsigned int unimportedEventCount;
 
 - (void).cxx_destruct;
+- (BOOL)_anyCalendarsSupportingImport;
+- (BOOL)_calendarSupportsImport:(id)arg1;
+- (unsigned int)_countOfCalendarsSupportingImport;
 - (void)_createCancelButtonWithType:(int)arg1 target:(id)arg2 action:(SEL)arg3;
 - (void)_databaseChanged:(id)arg1;
+- (id)_defaultCalendarForImport;
+- (void)_enumerateSupportedCalendarsUsingBlock:(id /* block */)arg1;
+- (BOOL)_shouldShowCalendarChooser;
 - (void)_updateCancelButton;
 - (unsigned int)actionsState;
 - (BOOL)allowsEditing;

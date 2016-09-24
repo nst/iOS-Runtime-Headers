@@ -2,41 +2,57 @@
    Image: /System/Library/PrivateFrameworks/FlightUtilities.framework/FlightUtilities
  */
 
-@interface FUFlightStep : NSObject {
-    NSDate *_actualTime;
-    FUAirport *_airport;
-    NSString *_gate;
-    NSDate *_scheduledTime;
-    NSString *_terminal;
-    int _timeAccuracy;
-    NSTimeZone *_timeZone;
+@interface FUFlightStep : NSObject <NSSecureCoding> {
+    FUStepTime * _actualTime;
+    FUAirport * _airport;
+    NSNumber * _delayFromSchedule;
+    FUStepTime * _estimatedTime;
+    NSString * _gate;
+    int  _legStatus;
+    FUStepTime * _plannedTime;
+    FUStepTime * _scheduledTime;
+    NSString * _terminal;
 }
 
-@property (retain) NSDate *actualTime;
+@property (retain) FUStepTime *actualTime;
 @property (retain) FUAirport *airport;
+@property (nonatomic, retain) NSNumber *delayFromSchedule;
+@property (retain) FUStepTime *estimatedTime;
 @property (retain) NSString *gate;
-@property (retain) NSDate *scheduledTime;
+@property int legStatus;
+@property (retain) FUStepTime *plannedTime;
+@property (retain) FUStepTime *scheduledTime;
+@property (nonatomic, readonly) unsigned int status;
 @property (retain) NSString *terminal;
-@property int timeAccuracy;
-@property (retain) NSTimeZone *timeZone;
+@property (readonly) FUStepTime *time;
+
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)actualTime;
 - (id)airport;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)delayFromSchedule;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (id)estimatedTime;
 - (id)gate;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (int)legStatus;
+- (id)plannedTime;
 - (id)scheduledTime;
 - (void)setActualTime:(id)arg1;
 - (void)setAirport:(id)arg1;
+- (void)setDelayFromSchedule:(id)arg1;
+- (void)setEstimatedTime:(id)arg1;
 - (void)setGate:(id)arg1;
+- (void)setLegStatus:(int)arg1;
+- (void)setPlannedTime:(id)arg1;
 - (void)setScheduledTime:(id)arg1;
 - (void)setTerminal:(id)arg1;
-- (void)setTimeAccuracy:(int)arg1;
-- (void)setTimeZone:(id)arg1;
+- (unsigned int)status;
 - (id)terminal;
-- (int)timeAccuracy;
-- (id)timeZone;
+- (id)time;
 
 @end

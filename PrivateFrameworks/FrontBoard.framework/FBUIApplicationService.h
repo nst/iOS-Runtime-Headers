@@ -3,8 +3,8 @@
  */
 
 @interface FBUIApplicationService : NSObject {
-    <FBUIApplicationServiceDelegate> *_delegate;
-    FBSSerialQueue *_queue;
+    <FBUIApplicationServiceDelegate> * _delegate;
+    FBSSerialQueue * _queue;
 }
 
 @property (nonatomic) <FBUIApplicationServiceDelegate> *delegate;

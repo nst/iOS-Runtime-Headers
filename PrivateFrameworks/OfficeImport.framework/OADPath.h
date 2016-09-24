@@ -3,13 +3,13 @@
  */
 
 @interface OADPath : NSObject {
-    NSMutableArray *mElements;
-    int mFillMode;
+    NSMutableArray * mElements;
+    int  mFillMode;
     struct CGSize { 
-        float width; 
-        float height; 
-    } mSize;
-    BOOL mStroked;
+        double width; 
+        double height; 
+    }  mSize;
+    BOOL  mStroked;
 }
 
 - (void)addElement:(id)arg1;
@@ -20,9 +20,9 @@
 - (int)fillMode;
 - (id)init;
 - (void)setFillMode:(int)arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setStroked:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { double x1; double x2; })size;
 - (BOOL)stroked;
 
 @end

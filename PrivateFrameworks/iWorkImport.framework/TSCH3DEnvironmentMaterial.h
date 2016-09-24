@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DEnvironmentMaterial : TSCH3DTexturesMaterial {
-    BOOL _decalMode;
+    BOOL  _decalMode;
 }
 
 @property (nonatomic) BOOL decalMode;

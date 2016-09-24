@@ -3,11 +3,11 @@
  */
 
 @interface SBKAlertDialog : NSObject {
-    NSString *_acceptButtonTitle;
-    NSString *_cancelButtonTitle;
-    id /* block */ _completionHandler;
-    NSString *_message;
-    NSString *_title;
+    NSString * _acceptButtonTitle;
+    NSString * _cancelButtonTitle;
+    id /* block */  _completionHandler;
+    NSString * _message;
+    NSString * _title;
 }
 
 @property (copy) NSString *acceptButtonTitle;

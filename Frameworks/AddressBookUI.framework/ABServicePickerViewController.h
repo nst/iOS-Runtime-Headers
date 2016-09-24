@@ -3,10 +3,10 @@
  */
 
 @interface ABServicePickerViewController : ABPickerViewController <ABSimpleTextInputViewControllerDelegate> {
-    NSString *_customService;
-    NSArray *_defaultServices;
-    NSIndexPath *_selectedIndexPath;
-    NSString *_selectedService;
+    NSString * _customService;
+    NSArray * _defaultServices;
+    NSIndexPath * _selectedIndexPath;
+    NSString * _selectedService;
 }
 
 @property (readonly, copy) NSString *debugDescription;

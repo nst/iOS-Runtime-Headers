@@ -8,5 +8,6 @@
 
 - (void)_limitedUIDidChange;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 
 @end

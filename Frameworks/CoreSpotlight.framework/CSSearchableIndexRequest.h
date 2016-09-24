@@ -3,19 +3,19 @@
  */
 
 @interface CSSearchableIndexRequest : NSObject {
-    id /* block */ _completionBlock;
-    id /* block */ _completionDataBlock;
-    NSData *_data;
-    BOOL _finished;
-    CSSearchableIndex *_index;
-    NSString *_label;
-    unsigned int _maxRetryCount;
-    id /* block */ _performBlock;
-    int _requestID;
-    unsigned int _retryCount;
-    BOOL _shouldThrottle;
-    BOOL _started;
-    BOOL _throttled;
+    id /* block */  _completionBlock;
+    id /* block */  _completionDataBlock;
+    NSData * _data;
+    BOOL  _finished;
+    CSSearchableIndex * _index;
+    NSString * _label;
+    unsigned int  _maxRetryCount;
+    id /* block */  _performBlock;
+    unsigned int  _requestID;
+    unsigned int  _retryCount;
+    BOOL  _shouldThrottle;
+    BOOL  _started;
+    BOOL  _throttled;
 }
 
 @property (nonatomic, copy) id /* block */ completionBlock;
@@ -26,7 +26,7 @@
 @property (nonatomic, retain) NSString *label;
 @property (nonatomic) unsigned int maxRetryCount;
 @property (nonatomic, copy) id /* block */ performBlock;
-@property (nonatomic) int requestID;
+@property (nonatomic) unsigned int requestID;
 @property (nonatomic) unsigned int retryCount;
 @property (nonatomic) BOOL shouldThrottle;
 @property (nonatomic) BOOL started;
@@ -51,7 +51,7 @@
 - (id)label;
 - (unsigned int)maxRetryCount;
 - (id /* block */)performBlock;
-- (int)requestID;
+- (unsigned int)requestID;
 - (unsigned int)retryCount;
 - (void)retryIfNecessaryWithError:(id)arg1;
 - (void)retryIfNecessaryWithError:(id)arg1 data:(id)arg2;
@@ -63,7 +63,7 @@
 - (void)setLabel:(id)arg1;
 - (void)setMaxRetryCount:(unsigned int)arg1;
 - (void)setPerformBlock:(id /* block */)arg1;
-- (void)setRequestID:(int)arg1;
+- (void)setRequestID:(unsigned int)arg1;
 - (void)setRetryCount:(unsigned int)arg1;
 - (void)setShouldThrottle:(BOOL)arg1;
 - (void)setStarted:(BOOL)arg1;

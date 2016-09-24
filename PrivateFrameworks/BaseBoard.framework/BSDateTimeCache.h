@@ -3,15 +3,15 @@
  */
 
 @interface BSDateTimeCache : NSObject {
-    double _2daysFromNow;
-    double _6daysAgo;
-    double _lastAttemptedResetTime;
-    double _lastSuccessfulResetTime;
-    double _nextWeek;
-    double _prevWeek;
-    double _today;
-    double _tomorrow;
-    double _yesterday;
+    double  _2daysFromNow;
+    double  _6daysAgo;
+    double  _lastAttemptedResetTime;
+    double  _lastSuccessfulResetTime;
+    double  _nextWeek;
+    double  _prevWeek;
+    double  _today;
+    double  _tomorrow;
+    double  _yesterday;
 }
 
 + (id)sharedInstance;

@@ -3,21 +3,21 @@
  */
 
 @interface PLAggregateDictionaryService : PLService {
-    PLCFNotificationOperatorComposition *_blmAggregateCFNotification;
-    NSNumber *_currentMachWakeTime;
-    PLMonotonicTimer *_dailyTaskTimer;
-    BOOL _firstScreenOnAfterWake;
+    PLCFNotificationOperatorComposition * _blmAggregateCFNotification;
+    NSNumber * _currentMachWakeTime;
+    PLMonotonicTimer * _dailyTaskTimer;
+    BOOL  _firstScreenOnAfterWake;
     struct AggState { 
         int state; 
         double level; 
         double timestamp; 
-    } _last_state;
-    NSMutableArray *_registeredNotifications;
-    NSMutableDictionary *_validReasonsDictionary;
-    NSString *_wakeReasonString;
-    NSString *_wakeReasons;
-    double remainderUnpluggedEnergy;
-    double remainderUnpluggedTime;
+    }  _last_state;
+    NSMutableArray * _registeredNotifications;
+    NSMutableDictionary * _validReasonsDictionary;
+    NSString * _wakeReasonString;
+    NSString * _wakeReasons;
+    double  remainderUnpluggedEnergy;
+    double  remainderUnpluggedTime;
 }
 
 @property (retain) PLCFNotificationOperatorComposition *blmAggregateCFNotification;
@@ -31,17 +31,19 @@
 @property (retain) NSString *wakeReasons;
 
 + (void)load;
++ (id)modelIdentifier;
 + (id)nameForBundleID:(id)arg1;
 + (id)nameForPluginID:(id)arg1;
++ (id)osVersion;
 + (id)queryForTopNodes;
-+ (id)queryForTopRootNodeEnergyWithNomeName:(id)arg1;
++ (id)queryForTopRootNodeEnergyWithName:(id)arg1;
 
 - (void).cxx_destruct;
-- (unsigned long long)abstimeToNanosec:(unsigned long long)arg1;
+- (unsigned int)abstimeToNanosec:(unsigned int)arg1;
 - (void)addToDurationScalarKey:(id)arg1 withDuration:(double)arg2;
 - (void)blmAggregate;
 - (id)blmAggregateCFNotification;
-- (unsigned long long)bucketWakeTime:(unsigned long long)arg1;
+- (unsigned int)bucketWakeTime:(unsigned int)arg1;
 - (id)currentMachWakeTime;
 - (id)dailyTaskTimer;
 - (void)dailyTasks;
@@ -80,6 +82,7 @@
 - (void)setValidReasonsDictionary:(id)arg1;
 - (void)setWakeReasonString:(id)arg1;
 - (void)setWakeReasons:(id)arg1;
+- (BOOL)shouldSample;
 - (void)updateAggregateStateWithEntry:(id)arg1;
 - (id)validReasonsDictionary;
 - (id)wakeReasonString;

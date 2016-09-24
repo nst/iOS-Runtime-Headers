@@ -3,55 +3,59 @@
  */
 
 @interface CKEditableCollectionViewCell : UICollectionViewCell {
-    UIImageView *_checkmark;
+    UIImageView * _checkmark;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _contentAlignmentRect;
+    }  _contentAlignmentRect;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _contentInsets;
-    BOOL _editing;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _contentInsets;
+    BOOL  _editing;
+    BOOL  _hidesCheckmark;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _marginInsets;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _marginInsets;
 }
 
 @property (nonatomic, retain) UIImageView *checkmark;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentAlignmentInsets;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentAlignmentRect;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentAlignmentInsets;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } contentAlignmentRect;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
 @property (getter=isEditing, nonatomic) BOOL editing;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } marginInsets;
+@property (nonatomic) BOOL hidesCheckmark;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } marginInsets;
 
+- (void).cxx_destruct;
 - (id)checkmark;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentAlignmentInsets;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentAlignmentRect;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
-- (void)dealloc;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentAlignmentInsets;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentAlignmentRect;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (id)description;
+- (BOOL)hidesCheckmark;
 - (BOOL)isEditing;
 - (void)layoutSubviews;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })marginInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })marginInsets;
 - (void)setCheckmark:(id)arg1;
-- (void)setContentAlignmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setContentAlignmentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setEditing:(BOOL)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setHidesCheckmark:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
-- (void)setMarginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setMarginInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)updateCheckmarkImage;
 

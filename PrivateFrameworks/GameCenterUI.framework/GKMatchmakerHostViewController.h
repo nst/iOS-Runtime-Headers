@@ -3,7 +3,7 @@
  */
 
 @interface GKMatchmakerHostViewController : GKUIRemoteViewController <GKMatchmakerHostProtocol, GKMatchmakerServiceProtocol> {
-    GKMatchmakerViewController *_delegateWeak;
+    GKMatchmakerViewController * _delegateWeak;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -41,6 +41,8 @@
 - (void)setPlayer:(id)arg1 connected:(BOOL)arg2;
 - (void)setPlayer:(id)arg1 responded:(int)arg2;
 - (void)setPlayer:(id)arg1 sentData:(id)arg2;
+- (void)setShareInvitees:(id)arg1;
+- (void)shareMatchWithRequest:(id)arg1 handler:(id /* block */)arg2;
 - (void)startMatchingWithRequest:(id)arg1;
 
 @end

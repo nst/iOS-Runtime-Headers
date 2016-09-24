@@ -3,7 +3,7 @@
  */
 
 @interface NSSQLForeignKey : NSSQLColumn {
-    NSSQLToOne *_toOne;
+    NSSQLToOne * _toOne;
 }
 
 - (void)copyValuesForReadOnlyFetch:(id)arg1;

@@ -3,14 +3,16 @@
  */
 
 @interface _HKActivityStatisticsQueryServerDataObject : _HKQueryServerDataObject {
-    NSDate *_endDate;
-    NSDateComponents *_intervalComponents;
-    NSDate *_startDate;
-    double _updateInterval;
+    NSDate * _endDate;
+    NSDateComponents * _exerciseIntervalComponents;
+    NSDateComponents * _moveIntervalComponents;
+    NSDate * _startDate;
+    double  _updateInterval;
 }
 
 @property (nonatomic, copy) NSDate *endDate;
-@property (nonatomic, copy) NSDateComponents *intervalComponents;
+@property (nonatomic, copy) NSDateComponents *exerciseIntervalComponents;
+@property (nonatomic, copy) NSDateComponents *moveIntervalComponents;
 @property (nonatomic, copy) NSDate *startDate;
 @property (nonatomic) double updateInterval;
 
@@ -19,10 +21,12 @@
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
+- (id)exerciseIntervalComponents;
 - (id)initWithCoder:(id)arg1;
-- (id)intervalComponents;
+- (id)moveIntervalComponents;
 - (void)setEndDate:(id)arg1;
-- (void)setIntervalComponents:(id)arg1;
+- (void)setExerciseIntervalComponents:(id)arg1;
+- (void)setMoveIntervalComponents:(id)arg1;
 - (void)setStartDate:(id)arg1;
 - (void)setUpdateInterval:(double)arg1;
 - (id)startDate;

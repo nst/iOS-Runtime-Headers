@@ -3,9 +3,9 @@
  */
 
 @interface CKDDeviceManager : NSObject {
-    NSMutableDictionary *_deviceIDs;
-    NSString *_deviceIdentifier;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableDictionary * _deviceIDs;
+    NSString * _deviceIdentifier;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *deviceIDs;

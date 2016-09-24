@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-@interface BRZombie : NSObject
+@interface BRZombie : NSProxy
 
-+ (void)turnInZombieObject:(id)arg1;
++ (void)turnObjectIntoZombie:(id)arg1;
 
+- (void)dealloc;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 

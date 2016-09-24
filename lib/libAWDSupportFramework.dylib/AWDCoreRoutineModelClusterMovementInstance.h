@@ -3,10 +3,10 @@
  */
 
 @interface AWDCoreRoutineModelClusterMovementInstance : PBCodable <NSCopying> {
-    unsigned long long _distance;
+    unsigned long long  _distance;
     struct { 
         unsigned int distance : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic) unsigned long long distance;

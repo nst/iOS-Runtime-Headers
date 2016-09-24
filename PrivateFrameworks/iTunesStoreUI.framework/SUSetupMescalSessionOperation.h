@@ -3,8 +3,8 @@
  */
 
 @interface SUSetupMescalSessionOperation : ISOperation {
-    SSURLRequestProperties *_requestProperties;
-    SUMescalSession *_session;
+    SSURLRequestProperties * _requestProperties;
+    SUMescalSession * _session;
 }
 
 @property (readonly) SUMescalSession *mescalSession;

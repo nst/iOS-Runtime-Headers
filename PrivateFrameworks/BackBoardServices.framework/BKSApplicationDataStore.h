@@ -3,7 +3,7 @@
  */
 
 @interface BKSApplicationDataStore : NSObject {
-    FBSApplicationDataStore *_fbsApplicationDataStore;
+    FBSApplicationDataStore * _fbsApplicationDataStore;
 }
 
 @property (nonatomic, readonly, retain) NSString *bundleID;

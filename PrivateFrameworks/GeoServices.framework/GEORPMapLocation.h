@@ -3,13 +3,13 @@
  */
 
 @interface GEORPMapLocation : PBCodable <NSCopying> {
-    GEOLatLng *_coordinate;
+    GEOLatLng * _coordinate;
     struct { 
         unsigned int zoomLevel : 1; 
-    } _has;
-    NSData *_image;
-    GEOPDViewportInfo *_viewportInfo;
-    float _zoomLevel;
+    }  _has;
+    NSData * _image;
+    GEOPDViewportInfo * _viewportInfo;
+    double  _zoomLevel;
 }
 
 @property (nonatomic, retain) GEOLatLng *coordinate;
@@ -19,7 +19,7 @@
 @property (nonatomic) BOOL hasZoomLevel;
 @property (nonatomic, retain) NSData *image;
 @property (nonatomic, retain) GEOPDViewportInfo *viewportInfo;
-@property (nonatomic) float zoomLevel;
+@property (nonatomic) double zoomLevel;
 
 // Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
 

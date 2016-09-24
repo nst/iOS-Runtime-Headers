@@ -3,11 +3,11 @@
  */
 
 @interface ECCurrencyEntry : NSObject {
-    bool mAppliesToExport;
-    NSString *mLassoCurrencyCode;
-    int mXlAccountingFormat;
-    NSString *mXlCurrencySymbol;
-    NSString *mXlLangId;
+    bool  mAppliesToExport;
+    NSString * mLassoCurrencyCode;
+    int  mXlAccountingFormat;
+    NSString * mXlCurrencySymbol;
+    NSString * mXlLangId;
 }
 
 + (id)currencyWithLassoCode:(id)arg1 langId:(int)arg2 xlSymbol:(id)arg3;

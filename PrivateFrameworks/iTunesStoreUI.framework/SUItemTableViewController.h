@@ -3,7 +3,7 @@
  */
 
 @interface SUItemTableViewController : SUTableViewController {
-    SUDocumentInteractionSession *_documentInteractionSession;
+    SUDocumentInteractionSession * _documentInteractionSession;
 }
 
 - (void)_chooseApplicationToOpenDocumentAtIndexPath:(id)arg1 withCompletionHandler:(id /* block */)arg2;

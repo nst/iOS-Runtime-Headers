@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPPairingIdentity : NSObject {
-    NSString *_identifier;
-    unsigned int _permissions;
-    HAPPairingKey *_privateKey;
-    HAPPairingKey *_publicKey;
+@interface HAPPairingIdentity : NSObject <NSSecureCoding> {
+    NSString * _identifier;
+    unsigned int  _permissions;
+    HAPPairingKey * _privateKey;
+    HAPPairingKey * _publicKey;
 }
 
 @property (nonatomic, readonly, copy) NSString *identifier;
@@ -14,13 +14,17 @@
 @property (nonatomic, readonly) HAPPairingKey *privateKey;
 @property (nonatomic, readonly) HAPPairingKey *publicKey;
 
++ (BOOL)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (id)descriptionWithPointer:(BOOL)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)identifier;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 publicKey:(id)arg2 privateKey:(id)arg3 permissions:(unsigned int)arg4;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)permissions;

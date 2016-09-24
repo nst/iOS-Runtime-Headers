@@ -3,10 +3,10 @@
  */
 
 @interface CATState : NSObject {
-    SEL _enterAction;
-    SEL _exitAction;
-    NSString *_name;
-    NSMutableDictionary *mTranstionByTriggeringEvent;
+    SEL  _enterAction;
+    SEL  _exitAction;
+    NSString * _name;
+    NSMutableDictionary * mTranstionByTriggeringEvent;
 }
 
 @property (nonatomic) SEL enterAction;

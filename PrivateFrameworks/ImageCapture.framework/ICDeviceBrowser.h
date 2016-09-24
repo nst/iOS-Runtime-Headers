@@ -3,7 +3,7 @@
  */
 
 @interface ICDeviceBrowser : NSObject {
-    id _privateData;
+    id  _privateData;
 }
 
 @property (getter=isBrowsing, readonly) BOOL browsing;

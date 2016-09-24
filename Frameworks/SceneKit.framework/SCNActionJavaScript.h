@@ -3,7 +3,7 @@
  */
 
 @interface SCNActionJavaScript : SCNAction {
-    NSString *_script;
+    NSString * _script;
 }
 
 + (id)javaScriptActionWithDuration:(double)arg1 script:(id)arg2;

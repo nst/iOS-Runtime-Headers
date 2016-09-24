@@ -3,10 +3,10 @@
  */
 
 @interface FBApplicationTerminationAssertionService : NSObject {
-    <FBApplicationTerminationAssertionServiceDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_queue;
-    FBApplicationTerminationAssertionServiceServer *_server;
-    NSMutableDictionary *_terminationAssertionsByBundleID;
+    <FBApplicationTerminationAssertionServiceDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _queue;
+    FBApplicationTerminationAssertionServiceServer * _server;
+    NSMutableDictionary * _terminationAssertionsByBundleID;
 }
 
 @property (nonatomic) <FBApplicationTerminationAssertionServiceDelegate> *delegate;

@@ -2,15 +2,19 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@interface MTLArgument : NSObject
+@interface MTLArgument : NSObject {
+    unsigned int  _arrayLength;
+}
 
 @property (readonly) unsigned int access;
 @property (getter=isActive, readonly) BOOL active;
+@property (readonly) unsigned int arrayLength;
 @property (readonly) unsigned int bufferAlignment;
 @property (readonly) unsigned int bufferDataSize;
 @property (readonly) unsigned int bufferDataType;
 @property (readonly) MTLStructType *bufferStructType;
 @property (readonly) unsigned int index;
+@property (readonly) BOOL isDepthTexture;
 @property (readonly) NSString *name;
 @property (readonly) unsigned int textureDataType;
 @property (readonly) unsigned int textureType;
@@ -20,5 +24,7 @@
 
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
+
+- (unsigned int)arrayLength;
 
 @end

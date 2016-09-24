@@ -3,18 +3,17 @@
  */
 
 @interface SCNGeometrySource : NSObject <NSSecureCoding> {
-    int _bytesPerComponent;
-    int _componentsPerVector;
-    NSData *_data;
-    int _dataOffset;
-    int _dataStride;
-    BOOL _floatComponents;
-    struct __C3DMeshSource { struct __C3DGenericSource { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_3_1; unsigned char x_1_3_2[4]; } x_1_2_1; void *x_1_2_2; struct __CFString {} *x_1_2_3; struct __CFString {} *x_1_2_4; struct __CFDictionary {} *x_1_2_5; int x_1_2_6; int x_1_2_7; } x_1_1_1; struct __C3DSourceAccessor {} *x_1_1_2; union { struct __CFData {} *x_3_2_1; void *x_3_2_2; void *x_3_2_3; } x_1_1_3; int x_1_1_4; unsigned int x_1_1_5 : 1; unsigned int x_1_1_6 : 1; unsigned int x_1_1_7 : 1; } x1; unsigned short x2; unsigned char x3; unsigned char x4; } *_meshSource;
-    unsigned char _mkSemantic;
-    <MTLBuffer> *_mtlBuffer;
-    long _mtlVertexFormat;
-    NSString *_semantic;
-    int _vectorCount;
+    unsigned short  _componentCount;
+    short  _componentType;
+    NSData * _data;
+    int  _dataOffset;
+    int  _dataStride;
+    struct __C3DMeshSource { struct __C3DGenericSource { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_3_1; unsigned char x_1_3_2[4]; } x_1_2_1; void *x_1_2_2; struct __CFString {} *x_1_2_3; struct __CFString {} *x_1_2_4; struct __CFDictionary {} *x_1_2_5; int x_1_2_6; int x_1_2_7; } x_1_1_1; struct __C3DSourceAccessor {} *x_1_1_2; union { struct __CFData {} *x_3_2_1; void *x_3_2_2; void *x_3_2_3; } x_1_1_3; int x_1_1_4; unsigned int x_1_1_5 : 1; unsigned int x_1_1_6 : 1; unsigned int x_1_1_7 : 1; } x1; unsigned short x2; unsigned char x3; unsigned char x4; } * _meshSource;
+    unsigned char  _mkSemantic;
+    <MTLBuffer> * _mtlBuffer;
+    long  _mtlVertexFormat;
+    NSString * _semantic;
+    int  _vectorCount;
 }
 
 @property (nonatomic, readonly) int bytesPerComponent;
@@ -26,17 +25,22 @@
 @property (nonatomic, readonly) NSString *semantic;
 @property (nonatomic, readonly) int vectorCount;
 
-+ (id)dataWithPointArray:(const struct CGPoint { float x1; float x2; }*)arg1 count:(int)arg2 bytesPerComponent:(int*)arg3;
-+ (id)dataWithVector3Array:(const struct SCNVector3 { float x1; float x2; float x3; }*)arg1 count:(int)arg2 bytesPerComponent:(int*)arg3;
++ (id)_geometrySourceWithData:(id)arg1 semantic:(id)arg2 vectorCount:(int)arg3 componentType:(short)arg4 componentCount:(unsigned int)arg5 dataOffset:(int)arg6 dataStride:(int)arg7;
++ (id)_geometrySourceWithSource:(id)arg1 vertexFormat:(unsigned int)arg2;
++ (id)dataByConvertingDoublesToFloats:(const double*)arg1 count:(int)arg2;
++ (id)dataWithPointArray:(const struct CGPoint { double x1; double x2; }*)arg1 count:(int)arg2 bytesPerComponent:(int*)arg3;
++ (id)dataWithVector3Array:(const struct SCNVector3 { double x1; double x2; double x3; }*)arg1 count:(int)arg2 bytesPerComponent:(int*)arg3;
 + (id)geometrySourceWithBuffer:(id)arg1 vertexFormat:(unsigned int)arg2 semantic:(id)arg3 vertexCount:(int)arg4 dataOffset:(int)arg5 dataStride:(int)arg6;
 + (id)geometrySourceWithData:(id)arg1 semantic:(id)arg2 vectorCount:(int)arg3 floatComponents:(BOOL)arg4 componentsPerVector:(int)arg5 bytesPerComponent:(int)arg6 dataOffset:(int)arg7 dataStride:(int)arg8;
-+ (id)geometrySourceWithNormals:(const struct SCNVector3 { float x1; float x2; float x3; }*)arg1 count:(int)arg2;
-+ (id)geometrySourceWithTextureCoordinates:(const struct CGPoint { float x1; float x2; }*)arg1 count:(int)arg2;
-+ (id)geometrySourceWithVertices:(const struct SCNVector3 { float x1; float x2; float x3; }*)arg1 count:(int)arg2;
++ (id)geometrySourceWithMDLVertexAttribute:(id)arg1 mesh:(id)arg2;
++ (id)geometrySourceWithMeshSourceRef:(struct __C3DMeshSource { struct __C3DGenericSource { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_3_1; unsigned char x_1_3_2[4]; } x_1_2_1; void *x_1_2_2; struct __CFString {} *x_1_2_3; struct __CFString {} *x_1_2_4; struct __CFDictionary {} *x_1_2_5; int x_1_2_6; int x_1_2_7; } x_1_1_1; struct __C3DSourceAccessor {} *x_1_1_2; union { struct __CFData {} *x_3_2_1; void *x_3_2_2; void *x_3_2_3; } x_1_1_3; int x_1_1_4; unsigned int x_1_1_5 : 1; unsigned int x_1_1_6 : 1; unsigned int x_1_1_7 : 1; } x1; unsigned short x2; unsigned char x3; unsigned char x4; }*)arg1;
++ (id)geometrySourceWithNormals:(const struct SCNVector3 { double x1; double x2; double x3; }*)arg1 count:(int)arg2;
++ (id)geometrySourceWithTextureCoordinates:(const struct CGPoint { double x1; double x2; }*)arg1 count:(int)arg2;
++ (id)geometrySourceWithVertices:(const struct SCNVector3 { double x1; double x2; double x3; }*)arg1 count:(int)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (void)_clearC3DCache;
-- (short)baseTypeForDataFormat;
+- (short)_componentType;
 - (int)bytesPerComponent;
 - (int)componentsPerVector;
 - (id)data;
@@ -49,6 +53,7 @@
 - (id)init;
 - (id)initWithBuffer:(id)arg1 vertexFormat:(unsigned int)arg2 semantic:(id)arg3 vertexCount:(int)arg4 dataOffset:(int)arg5 dataStride:(int)arg6;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithData:(id)arg1 semantic:(id)arg2 vectorCount:(int)arg3 componentType:(short)arg4 componentCount:(unsigned int)arg5 dataOffset:(int)arg6 dataStride:(int)arg7;
 - (id)initWithData:(id)arg1 semantic:(id)arg2 vectorCount:(int)arg3 floatComponents:(BOOL)arg4 componentsPerVector:(int)arg5 bytesPerComponent:(int)arg6 dataOffset:(int)arg7 dataStride:(int)arg8;
 - (id)initWithMeshSource:(struct __C3DMeshSource { struct __C3DGenericSource { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_3_1; unsigned char x_1_3_2[4]; } x_1_2_1; void *x_1_2_2; struct __CFString {} *x_1_2_3; struct __CFString {} *x_1_2_4; struct __CFDictionary {} *x_1_2_5; int x_1_2_6; int x_1_2_7; } x_1_1_1; struct __C3DSourceAccessor {} *x_1_1_2; union { struct __CFData {} *x_3_2_1; void *x_3_2_2; void *x_3_2_3; } x_1_1_3; int x_1_1_4; unsigned int x_1_1_5 : 1; unsigned int x_1_1_6 : 1; unsigned int x_1_1_7 : 1; } x1; unsigned short x2; unsigned char x3; unsigned char x4; }*)arg1;
 - (struct __C3DMeshSource { struct __C3DGenericSource { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_3_1; unsigned char x_1_3_2[4]; } x_1_2_1; void *x_1_2_2; struct __CFString {} *x_1_2_3; struct __CFString {} *x_1_2_4; struct __CFDictionary {} *x_1_2_5; int x_1_2_6; int x_1_2_7; } x_1_1_1; struct __C3DSourceAccessor {} *x_1_1_2; union { struct __CFData {} *x_3_2_1; void *x_3_2_2; void *x_3_2_3; } x_1_1_3; int x_1_1_4; unsigned int x_1_1_5 : 1; unsigned int x_1_1_6 : 1; unsigned int x_1_1_7 : 1; } x1; unsigned short x2; unsigned char x3; unsigned char x4; }*)meshSource;

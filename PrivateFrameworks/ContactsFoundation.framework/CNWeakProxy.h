@@ -3,8 +3,8 @@
  */
 
 @interface CNWeakProxy : NSProxy {
-    Class _targetClass;
-    CNWeakReference *_weakReference;
+    Class  _targetClass;
+    CNWeakReference * _weakReference;
 }
 
 + (id)weakProxyWithObject:(id)arg1;

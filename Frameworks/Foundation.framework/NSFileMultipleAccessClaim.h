@@ -3,28 +3,30 @@
  */
 
 @interface NSFileMultipleAccessClaim : NSFileAccessClaim {
-    unsigned int _currentlyLinkResolvingURLIndex;
-    int _readingLinkResolutionCount;
-    NSMutableArray *_readingLocations;
-    unsigned int *_readingOptions;
-    NSMutableArray *_readingURLs;
-    BOOL *_readingURLsDidChange;
-    NSFileAccessNode *_rootNode;
-    NSMutableArray *_writingLocations;
-    unsigned int *_writingOptions;
-    NSMutableArray *_writingURLs;
-    BOOL *_writingURLsDidChange;
+    unsigned int  _currentlyLinkResolvingURLIndex;
+    int  _readingLinkResolutionCount;
+    NSMutableArray * _readingLocations;
+    unsigned int * _readingOptions;
+    NSMutableArray * _readingURLs;
+    BOOL * _readingURLsDidChange;
+    NSFileAccessNode * _rootNode;
+    NSMutableArray * _writingLocations;
+    unsigned int * _writingOptions;
+    NSMutableArray * _writingURLs;
+    BOOL * _writingURLsDidChange;
 }
+
++ (BOOL)supportsSecureCoding;
 
 - (id)allURLs;
 - (BOOL)blocksClaim:(id)arg1;
 - (void)dealloc;
 - (void)devalueSelf;
+- (void)encodeWithCoder:(id)arg1;
 - (BOOL)evaluateSelfWithRootNode:(id)arg1 checkSubarbitrability:(BOOL)arg2;
-- (void)finalize;
-- (void)forwardUsingMessageSender:(id /* block */)arg1 crashHandler:(id /* block */)arg2;
+- (void)forwardUsingConnection:(id)arg1 crashHandler:(id /* block */)arg2;
 - (void)granted;
-- (id)initWithClient:(id)arg1 messageParameters:(id)arg2 arbiterQueue:(id)arg3 replySender:(id /* block */)arg4;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithPurposeID:(id)arg1 intents:(id)arg2 claimer:(id /* block */)arg3;
 - (void)invokeClaimer;
 - (BOOL)isBlockedByReadingItemAtLocation:(id)arg1 options:(unsigned int)arg2;
@@ -32,5 +34,6 @@
 - (void)itemAtLocation:(id)arg1 wasReplacedByItemAtLocation:(id)arg2;
 - (void)resolveURLsThenMaybeContinueInvokingClaimer:(id /* block */)arg1;
 - (BOOL)shouldBeRevokedPriorToInvokingAccessor;
+- (BOOL)shouldCancelInsteadOfWaiting;
 
 @end

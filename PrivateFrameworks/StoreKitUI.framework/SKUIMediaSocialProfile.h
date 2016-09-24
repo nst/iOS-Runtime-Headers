@@ -3,13 +3,13 @@
  */
 
 @interface SKUIMediaSocialProfile : NSObject <NSCopying> {
-    NSURL *_backgroundImageURL;
-    NSString *_bio;
-    NSString *_handle;
-    NSString *_identifier;
-    NSString *_name;
-    NSURL *_profileImageURL;
-    NSString *_profileType;
+    NSURL * _backgroundImageURL;
+    NSString * _bio;
+    NSString * _handle;
+    NSString * _identifier;
+    NSString * _name;
+    NSURL * _profileImageURL;
+    NSString * _profileType;
 }
 
 @property (nonatomic, copy) NSURL *backgroundImageURL;

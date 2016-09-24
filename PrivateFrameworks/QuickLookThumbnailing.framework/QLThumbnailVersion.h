@@ -3,10 +3,10 @@
  */
 
 @interface QLThumbnailVersion : NSObject <NSSecureCoding> {
-    unsigned int _fileSize;
-    NSString *_generatorID;
-    NSString *_generatorVersion;
-    NSDate *_modificationDate;
+    unsigned int  _fileSize;
+    NSString * _generatorID;
+    NSString * _generatorVersion;
+    NSDate * _modificationDate;
 }
 
 @property (getter=isAutomaticallyGenerated, readonly) BOOL automaticallyGenerated;

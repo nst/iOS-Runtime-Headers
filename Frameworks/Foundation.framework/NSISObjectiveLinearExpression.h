@@ -3,9 +3,9 @@
  */
 
 @interface NSISObjectiveLinearExpression : NSObject <NSISRowBody> {
-    struct __CFData { } *_constant;
-    struct __CFDictionary { } *_priorityMap;
-    NSMutableArray *_variablesSortedByPriorityVectors;
+    struct __CFData { } * _constant;
+    struct __CFDictionary { } * _priorityMap;
+    NSMutableArray * _variablesSortedByPriorityVectors;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,13 +3,13 @@
  */
 
 @interface PDXPCService : NSObject <PDXPCServiceExportedInterface> {
-    BOOL _callbacksSuspended;
-    NSString *_className;
-    NSXPCConnection *_connection;
-    NSObject<OS_dispatch_queue> *_readWriteQueue;
-    NSString *_remoteProcessApplicationIdentifier;
-    NSString *_remoteProcessBundleIdentifier;
-    int _remoteProcessIdentifier;
+    BOOL  _callbacksSuspended;
+    NSString * _className;
+    NSXPCConnection * _connection;
+    NSObject<OS_dispatch_queue> * _readWriteQueue;
+    NSString * _remoteProcessApplicationIdentifier;
+    NSString * _remoteProcessBundleIdentifier;
+    int  _remoteProcessIdentifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,9 +20,9 @@
 @property (nonatomic, readonly) int remoteProcessIdentifier;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)clearConnectionReference;
 - (id)connection;
-- (void)dealloc;
 - (id)init;
 - (id)initWithConnection:(id)arg1;
 - (id)remoteObjectProxy;

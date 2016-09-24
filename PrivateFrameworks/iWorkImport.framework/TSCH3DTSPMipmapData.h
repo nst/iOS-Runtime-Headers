@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DTSPMipmapData : NSObject <TSCHUnretainedParent> {
-    TSPData *mData;
-    TSCH3DTSPImageDataTexture *mParent;
+    TSPData * mData;
+    TSCH3DTSPImageDataTexture * mParent;
 }
 
 @property (nonatomic, readonly) TSPData *data;

@@ -3,9 +3,9 @@
  */
 
 @interface _CDPSimpleModelParameterManagerAccountState : NSObject <NSSecureCoding> {
-    _CDPModelTuningState *_lastTuningState;
-    _CDPSimpleModelParameterManagerTuningValue *_previousBestTuningValue;
-    NSMutableArray *_tuningValues;
+    _CDPModelTuningState * _lastTuningState;
+    _CDPSimpleModelParameterManagerTuningValue * _previousBestTuningValue;
+    NSMutableArray * _tuningValues;
 }
 
 @property (nonatomic, retain) _CDPModelTuningState *lastTuningState;

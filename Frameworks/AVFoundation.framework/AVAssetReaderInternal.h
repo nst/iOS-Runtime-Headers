@@ -3,28 +3,30 @@
  */
 
 @interface AVAssetReaderInternal : NSObject {
-    AVAsset *asset;
-    NSError *error;
-    struct OpaqueFigAssetReader { } *figAssetReader;
-    NSMutableSet *outputFinishedCallbackInvokers;
-    NSMutableArray *outputs;
-    int status;
-    NSObject<OS_dispatch_queue> *statusReadWriteQueue;
+    AVAsset * asset;
+    NSError * error;
+    NSError * errorThatOccurredBeforeStartReading;
+    struct OpaqueFigAssetReader { } * figAssetReader;
+    NSMutableSet * outputFinishedCallbackInvokers;
+    NSMutableArray * outputs;
+    BOOL  readSingleSample;
+    int  status;
+    NSObject<OS_dispatch_queue> * statusReadWriteQueue;
     struct { 
         struct { 
-            long long value; 
+            int value; 
             int timescale; 
             unsigned int flags; 
-            long long epoch; 
+            int epoch; 
         } start; 
         struct { 
-            long long value; 
+            int value; 
             int timescale; 
             unsigned int flags; 
-            long long epoch; 
+            int epoch; 
         } duration; 
-    } timeRange;
-    AVWeakReference *weakReference;
+    }  timeRange;
+    AVWeakReference * weakReference;
 }
 
 @end

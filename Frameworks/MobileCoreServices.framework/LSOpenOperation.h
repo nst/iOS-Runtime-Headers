@@ -3,19 +3,28 @@
  */
 
 @interface LSOpenOperation : NSOperation {
-    NSString *_applicationIdentifier;
-    id _delegate;
-    NSString *_documentIdentifier;
-    BOOL _executing;
-    BOOL _finished;
-    NSDictionary *_options;
-    NSURL *_resourceURL;
-    int _result;
-    BOOL _sourceIsManaged;
-    id _userInfoPlist;
-    BOOL _userSpecifiedApp;
+    NSXPCConnection * _XPCConnection;
+    NSString * _applicationIdentifier;
+    <LSOpenResourceOperationDelegate> * _delegate;
+    BOOL  _didSucceed;
+    NSString * _documentIdentifier;
+    NSError * _error;
+    BOOL  _executing;
+    BOOL  _finished;
+    NSDictionary * _options;
+    NSURL * _resourceURL;
+    BOOL  _sourceIsManaged;
+    NSDictionary * _userInfoPlist;
+    BOOL  _userSpecifiedApp;
 }
 
+@property (nonatomic, retain) NSXPCConnection *XPCConnection;
+@property (nonatomic) BOOL didSucceed;
+@property (nonatomic, copy) NSError *error;
+
++ (id)queue;
+
+- (id)XPCConnection;
 - (void)completeOperation;
 - (void)dealloc;
 - (BOOL)didSucceed;
@@ -26,6 +35,9 @@
 - (BOOL)isFinished;
 - (void)main;
 - (BOOL)performAppLinkOpen;
+- (void)setDidSucceed:(BOOL)arg1;
+- (void)setError:(id)arg1;
+- (void)setXPCConnection:(id)arg1;
 - (void)start;
 
 @end

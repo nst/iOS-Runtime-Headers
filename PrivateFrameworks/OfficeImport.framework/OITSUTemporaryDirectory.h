@@ -3,8 +3,8 @@
  */
 
 @interface OITSUTemporaryDirectory : NSObject {
-    BOOL _leak;
-    NSString *_path;
+    BOOL  _leak;
+    NSString * _path;
 }
 
 - (id)URL;

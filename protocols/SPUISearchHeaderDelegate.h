@@ -6,8 +6,8 @@
 @required
 
 - (void)cancelButtonPressed;
-- (void)dictationButtonPressed;
+- (void)didBeginEditing;
 - (UIResponder *)headerNextResponder;
-- (BOOL)isDictationAvailable;
+- (void)queryContextDidChange:(SPSearchQueryContext *)arg1 allowZKW:(BOOL)arg2;
 
 @end

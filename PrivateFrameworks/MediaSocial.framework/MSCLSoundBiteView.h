@@ -3,25 +3,25 @@
  */
 
 @interface MSCLSoundBiteView : UIView <MSCLProximityObserver> {
-    UIView *_backgroundView;
-    <MSCLSoundBiteViewDelegate> *_delegate;
-    BOOL _detectedFaceProximity;
-    MSCLSoundBiteViewButton *_explicitToggleButton;
-    BOOL _isExplicit;
-    BOOL _isObservingProximity;
-    int _mode;
-    UIButton *_playButton;
-    float _playbackProgress;
-    UIImageView *_playbackProgressImageView;
-    UILabel *_promptExplicitLabel;
-    UILabel *_promptLabel;
-    UIButton *_recordButton;
-    float _recordingTimeLabelWidth;
-    CMKShutterButton *_stopRecordingIndicator;
-    UILabel *_timeLabel;
-    UIView *_waveformBackgroundView;
-    MSCLWaveformImageProducer *_waveformImageProducer;
-    UIImageView *_waveformImageView;
+    UIView * _backgroundView;
+    <MSCLSoundBiteViewDelegate> * _delegate;
+    BOOL  _detectedFaceProximity;
+    MSCLSoundBiteViewButton * _explicitToggleButton;
+    BOOL  _isExplicit;
+    BOOL  _isObservingProximity;
+    int  _mode;
+    UIButton * _playButton;
+    double  _playbackProgress;
+    UIImageView * _playbackProgressImageView;
+    UILabel * _promptExplicitLabel;
+    UILabel * _promptLabel;
+    UIButton * _recordButton;
+    double  _recordingTimeLabelWidth;
+    CMKShutterButton * _stopRecordingIndicator;
+    UILabel * _timeLabel;
+    UIView * _waveformBackgroundView;
+    MSCLWaveformImageProducer * _waveformImageProducer;
+    UIImageView * _waveformImageView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -30,7 +30,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isExplicit;
 @property (nonatomic) int mode;
-@property (nonatomic) float playbackProgress;
+@property (nonatomic) double playbackProgress;
 @property (nonatomic, copy) NSString *promptString;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *timeString;
@@ -46,7 +46,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)didMoveToWindow;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isExplicit;
 - (void)layoutSubviews;
 - (int)mode;
@@ -63,7 +63,7 @@
 - (void)setPromptString:(id)arg1;
 - (void)setTimeString:(id)arg1;
 - (void)setWaveformImageUsingProducer:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)timeString;
 - (void)tintColorDidChange;
 

@@ -3,7 +3,7 @@
  */
 
 @interface _NSProxyWrapperMutableSet : _NSNotifyingWrapperMutableSet {
-    _NSFaultingMutableSetMutationMethods *_mutationMethods;
+    _NSFaultingMutableSetMutationMethods * _mutationMethods;
 }
 
 - (void)addObject:(id)arg1;

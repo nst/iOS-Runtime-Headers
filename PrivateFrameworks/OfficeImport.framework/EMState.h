@@ -3,9 +3,9 @@
  */
 
 @interface EMState : CMState {
-    EDSheet *_currentSheet;
-    NSMutableDictionary *_hyperlinks;
-    EDWorkbook *_workbook;
+    EDSheet * _currentSheet;
+    NSMutableDictionary * _hyperlinks;
+    EDWorkbook * _workbook;
 }
 
 @property EDSheet *currentSheet;

@@ -3,7 +3,7 @@
  */
 
 @interface GEOLogAdaptorFactory : NSObject {
-    NSMutableDictionary *_logAdaptors;
+    NSMutableDictionary * _logAdaptors;
 }
 
 + (id)sharedInstance;

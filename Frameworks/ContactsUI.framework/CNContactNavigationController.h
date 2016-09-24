@@ -2,23 +2,27 @@
    Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
  */
 
-@interface CNContactNavigationController : UINavigationController <CNAccountsAndGroupsViewControllerDelegate, CNContactContentViewControllerDelegate, CNContactListViewControllerDelegate, CNContactViewControllerAddContactPresenter, CNContactViewControllerDelegate> {
-    CNAccountsAndGroupsDataSource *_accountsAndGroupsDataSource;
-    BOOL _allowsCanceling;
-    BOOL _allowsCardDeletion;
-    BOOL _allowsCardEditing;
-    BOOL _allowsContactBlocking;
-    BOOL _allowsDone;
-    CNContactListViewController *_contactListViewController;
-    CNContactStore *_contactStore;
-    CNContactStyle *_contactStyle;
-    BOOL _ignoresMapsData;
-    int _leftButtonBehavior;
-    CNContactStoreDataSource *_nonServerDataSource;
-    int _rightButtonBehavior;
+@interface CNContactNavigationController : UINavigationController <CNAccountsAndGroupsViewControllerDelegate, CNContactContentViewControllerDelegate, CNContactListViewControllerDelegate, CNContactListViewControllerDelegateInternal, CNContactViewControllerAddContactPresenter, CNContactViewControllerDelegate> {
+    CNAccountsAndGroupsDataSource * _accountsAndGroupsDataSource;
+    UIKeyCommand * _addKeyCommand;
+    BOOL  _allowsCanceling;
+    BOOL  _allowsCardDeletion;
+    BOOL  _allowsCardEditing;
+    BOOL  _allowsContactBlocking;
+    BOOL  _allowsDone;
+    CNContactListViewController * _contactListViewController;
+    CNContactStore * _contactStore;
+    CNContactStyle * _contactStyle;
+    BOOL  _ignoresMapsData;
+    int  _leftButtonBehavior;
+    CNContactStoreDataSource * _nonServerDataSource;
+    CNContactViewController * _presentedContactViewController;
+    CNContactViewController * _reusableContactViewController;
+    int  _rightButtonBehavior;
 }
 
 @property (nonatomic, retain) CNAccountsAndGroupsDataSource *accountsAndGroupsDataSource;
+@property (nonatomic, retain) UIKeyCommand *addKeyCommand;
 @property (nonatomic) BOOL allowsCanceling;
 @property (nonatomic) BOOL allowsCardDeletion;
 @property (nonatomic) BOOL allowsCardEditing;
@@ -35,17 +39,21 @@
 @property (nonatomic) BOOL ignoresMapsData;
 @property (nonatomic) int leftButtonBehavior;
 @property (nonatomic, retain) CNContactStoreDataSource *nonServerDataSource;
+@property (nonatomic) CNContactViewController *presentedContactViewController;
+@property (nonatomic, retain) CNContactViewController *reusableContactViewController;
 @property (nonatomic) int rightButtonBehavior;
 @property (readonly) Class superclass;
 
 + (id)newContactFormatter;
 
 - (void).cxx_destruct;
+- (void)_cnui_presentViewController:(id)arg1 animated:(BOOL)arg2;
 - (id)accountsAndGroupsDataSource;
 - (void)accountsAndGroupsViewControllerDidFinish:(id)arg1;
 - (void)addContact:(id)arg1;
 - (void)addContact:(id)arg1 animated:(BOOL)arg2;
 - (id)addContactPresenter;
+- (id)addKeyCommand;
 - (BOOL)allowsCanceling;
 - (BOOL)allowsCardDeletion;
 - (BOOL)allowsCardEditing;
@@ -53,7 +61,7 @@
 - (BOOL)allowsDone;
 - (void)applicationDidResume;
 - (void)beginSearch:(id)arg1;
-- (BOOL)canBecomeFirstResponder;
+- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)cancel:(id)arg1;
 - (void)cancelSearch:(id)arg1;
 - (id)contactListViewController;
@@ -71,14 +79,24 @@
 - (BOOL)hidesSearchableSources;
 - (BOOL)ignoresMapsData;
 - (id)initWithDataSource:(id)arg1;
-- (id)initWithDataSource:(id)arg1 contactFormatter:(id)arg2 applyGroupFilterFromPreferences:(BOOL)arg3;
+- (id)initWithDataSource:(id)arg1 contactFormatter:(id)arg2 applyGroupFilterFromPreferences:(BOOL)arg3 environment:(id)arg4;
+- (id)initWithDataSource:(id)arg1 environment:(id)arg2;
+- (BOOL)isPresentedContactViewControllerVisible;
 - (int)leftButtonBehavior;
+- (id)nextResponderForContactListViewController:(id)arg1;
 - (id)nonServerDataSource;
+- (void)popToContactListAndSaveChanges:(BOOL)arg1;
 - (void)presentAddContactViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)presentContactViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)presentGroupsViewController:(id)arg1;
+- (id)presentedContactViewController;
+- (id)reusableContactViewController;
+- (id)reuseableContactViewControllerConfiguredForContact:(id)arg1 mode:(int)arg2;
 - (int)rightButtonBehavior;
+- (void)searchForString:(id)arg1;
+- (void)selectNextContact:(id)arg1;
+- (void)selectPreviousContact:(id)arg1;
 - (void)setAccountsAndGroupsDataSource:(id)arg1;
+- (void)setAddKeyCommand:(id)arg1;
 - (void)setAllowsCanceling:(BOOL)arg1;
 - (void)setAllowsCardDeletion:(BOOL)arg1;
 - (void)setAllowsCardEditing:(BOOL)arg1;
@@ -90,11 +108,16 @@
 - (void)setIgnoresMapsData:(BOOL)arg1;
 - (void)setLeftButtonBehavior:(int)arg1;
 - (void)setNonServerDataSource:(id)arg1;
+- (void)setPresentedContactViewController:(id)arg1;
+- (void)setReusableContactViewController:(id)arg1;
 - (void)setRightButtonBehavior:(int)arg1;
 - (void)setShouldDisplayMeContactBanner:(BOOL)arg1;
 - (BOOL)shouldDisplayMeContactBanner;
 - (void)showCardForContact:(id)arg1 animated:(BOOL)arg2;
 - (void)showCardForContact:(id)arg1 resetFilter:(BOOL)arg2 resetSearch:(BOOL)arg3 fallbackToFirstContact:(BOOL)arg4 scrollToContact:(BOOL)arg5 animated:(BOOL)arg6;
+- (void)showCardForContactAfterIndexPath:(id)arg1;
+- (void)showCardForContactBeforeIndexPath:(id)arg1;
+- (void)showCardForContactIfPossible:(id)arg1;
 - (void)showUnifiedCardForPerson:(void*)arg1;
 - (void)updateLeftNavigationButtonAnimated:(BOOL)arg1;
 - (void)updateNavigationButtonsAnimated:(BOOL)arg1;

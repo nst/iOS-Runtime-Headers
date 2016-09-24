@@ -3,14 +3,14 @@
  */
 
 @interface SKUIPlayableAsset : NSObject {
-    BOOL _ITunesStream;
-    NSURL *_contentURL;
-    double _initialPlaybackTime;
-    NSURL *_keyCertificateURL;
-    NSURL *_keyServerURL;
-    double _playbackDuration;
-    BOOL _shouldUseITunesStoreSecureKeyDelivery;
-    long long _storeItemIdentifier;
+    BOOL  _ITunesStream;
+    NSURL * _contentURL;
+    double  _initialPlaybackTime;
+    NSURL * _keyCertificateURL;
+    NSURL * _keyServerURL;
+    double  _playbackDuration;
+    BOOL  _shouldUseITunesStoreSecureKeyDelivery;
+    int  _storeItemIdentifier;
 }
 
 @property (getter=isITunesStream, nonatomic, readonly) BOOL ITunesStream;
@@ -20,7 +20,7 @@
 @property (nonatomic, readonly, retain) NSURL *keyServerURL;
 @property (nonatomic) double playbackDuration;
 @property (nonatomic) BOOL shouldUseITunesStoreSecureKeyDelivery;
-@property (nonatomic) long long storeItemIdentifier;
+@property (nonatomic) int storeItemIdentifier;
 
 - (void).cxx_destruct;
 - (id)contentURL;
@@ -37,8 +37,8 @@
 - (void)setInitialPlaybackTime:(double)arg1;
 - (void)setPlaybackDuration:(double)arg1;
 - (void)setShouldUseITunesStoreSecureKeyDelivery:(BOOL)arg1;
-- (void)setStoreItemIdentifier:(long long)arg1;
+- (void)setStoreItemIdentifier:(int)arg1;
 - (BOOL)shouldUseITunesStoreSecureKeyDelivery;
-- (long long)storeItemIdentifier;
+- (int)storeItemIdentifier;
 
 @end

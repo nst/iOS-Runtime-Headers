@@ -3,8 +3,8 @@
  */
 
 @interface DADataHandler : NSObject {
-    NSString *_changeTrackingID;
-    void *_container;
+    NSString * _changeTrackingID;
+    void * _container;
 }
 
 @property (nonatomic, copy) NSString *changeTrackingID;

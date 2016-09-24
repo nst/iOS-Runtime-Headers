@@ -3,8 +3,8 @@
  */
 
 @interface OCXSStreamLevel : NSObject {
-    int mDepth;
-    const char *mName;
+    int  mDepth;
+    const char * mName;
 }
 
 @property (nonatomic) int depth;

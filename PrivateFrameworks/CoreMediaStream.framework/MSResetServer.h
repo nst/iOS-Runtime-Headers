@@ -3,10 +3,10 @@
  */
 
 @interface MSResetServer : NSObject <MSResetServerProtocolDelegate> {
-    MSMediaStreamDaemon *_daemon;
-    NSString *_personID;
-    MSResetServerProtocol *_protocol;
-    id _selfReference;
+    MSMediaStreamDaemon * _daemon;
+    NSString * _personID;
+    MSResetServerProtocol * _protocol;
+    id  _selfReference;
 }
 
 @property (nonatomic) MSMediaStreamDaemon *daemon;

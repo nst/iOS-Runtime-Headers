@@ -3,8 +3,8 @@
  */
 
 @interface PKPushPayload : NSObject {
-    NSDictionary *_dictionaryPayload;
-    NSString *_type;
+    NSDictionary * _dictionaryPayload;
+    NSString * _type;
 }
 
 @property (copy) NSDictionary *dictionaryPayload;

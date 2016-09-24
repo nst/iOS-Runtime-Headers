@@ -3,8 +3,8 @@
  */
 
 @interface _UIMotionEffectCoreMotionEventProvider : _UIMotionEffectEventProvider {
-    NSOperationQueue *_motionEventQueue;
-    CMMotionManager *_motionManager;
+    NSOperationQueue * _motionEventQueue;
+    CMMotionManager * _motionManager;
 }
 
 - (void).cxx_destruct;

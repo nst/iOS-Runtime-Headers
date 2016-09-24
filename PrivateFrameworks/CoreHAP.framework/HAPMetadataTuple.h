@@ -3,8 +3,8 @@
  */
 
 @interface HAPMetadataTuple : NSObject {
-    NSString *_characteristicName;
-    NSString *_serviceName;
+    NSString * _characteristicName;
+    NSString * _serviceName;
 }
 
 @property (nonatomic, readonly) NSString *characteristicName;

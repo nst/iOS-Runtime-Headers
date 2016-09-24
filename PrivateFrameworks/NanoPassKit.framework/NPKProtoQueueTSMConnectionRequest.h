@@ -3,7 +3,7 @@
  */
 
 @interface NPKProtoQueueTSMConnectionRequest : PBRequest <NSCopying> {
-    NSString *_pushTopic;
+    NSString * _pushTopic;
 }
 
 @property (nonatomic, readonly) BOOL hasPushTopic;

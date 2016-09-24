@@ -3,12 +3,14 @@
  */
 
 @interface CKDGetRecordZonesURLRequest : CKDURLRequest {
-    id /* block */ _recordZoneFetchedBlock;
-    NSArray *_recordZones;
-    NSMutableDictionary *_zoneIDByRequestID;
-    NSArray *_zoneIDs;
+    BOOL  _onlyFetchPCSInfo;
+    id /* block */  _recordZoneFetchedBlock;
+    NSArray * _recordZones;
+    NSMutableDictionary * _zoneIDByRequestID;
+    NSArray * _zoneIDs;
 }
 
+@property (nonatomic) BOOL onlyFetchPCSInfo;
 @property (nonatomic, copy) id /* block */ recordZoneFetchedBlock;
 @property (nonatomic, readonly) NSArray *recordZones;
 @property (nonatomic, retain) NSMutableDictionary *zoneIDByRequestID;
@@ -16,6 +18,7 @@
 
 - (void).cxx_destruct;
 - (id)initWithRecordZoneIDs:(id)arg1;
+- (BOOL)onlyFetchPCSInfo;
 - (int)operationType;
 - (id /* block */)recordZoneFetchedBlock;
 - (id)recordZones;
@@ -23,6 +26,7 @@
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
 - (id)requestOperations;
+- (void)setOnlyFetchPCSInfo:(BOOL)arg1;
 - (void)setRecordZoneFetchedBlock:(id /* block */)arg1;
 - (void)setZoneIDByRequestID:(id)arg1;
 - (void)setZoneIDs:(id)arg1;

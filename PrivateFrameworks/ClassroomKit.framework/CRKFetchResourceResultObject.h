@@ -3,7 +3,7 @@
  */
 
 @interface CRKFetchResourceResultObject : CATTaskResultObject {
-    NSData *_resourceData;
+    NSData * _resourceData;
 }
 
 @property (nonatomic, retain) NSData *resourceData;
@@ -11,7 +11,6 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)resourceData;

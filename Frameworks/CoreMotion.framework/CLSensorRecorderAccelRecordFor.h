@@ -3,7 +3,7 @@
  */
 
 @interface CLSensorRecorderAccelRecordFor : NSObject <NSSecureCoding> {
-    double _duration;
+    double  _duration;
 }
 
 @property double duration;

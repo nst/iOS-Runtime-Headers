@@ -3,12 +3,12 @@
  */
 
 @interface GEOURLItem : PBCodable <NSCopying> {
-    BOOL _currentLocation;
+    BOOL  _currentLocation;
     struct { 
         unsigned int currentLocation : 1; 
-    } _has;
-    GEOMapItemStorage *_mapItemStorage;
-    GEOPlace *_place;
+    }  _has;
+    GEOMapItemStorage * _mapItemStorage;
+    GEOPlace * _place;
 }
 
 @property (nonatomic) BOOL currentLocation;

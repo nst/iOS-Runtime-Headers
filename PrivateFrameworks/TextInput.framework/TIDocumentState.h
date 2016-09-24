@@ -3,14 +3,14 @@
  */
 
 @interface TIDocumentState : NSObject <NSSecureCoding> {
-    NSString *_contextAfterInput;
-    NSString *_contextBeforeInput;
-    NSString *_markedText;
+    NSString * _contextAfterInput;
+    NSString * _contextBeforeInput;
+    NSString * _markedText;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _selectedRangeInMarkedText;
-    NSString *_selectedText;
+    }  _selectedRangeInMarkedText;
+    NSString * _selectedText;
 }
 
 @property (nonatomic, readonly) NSString *contextAfterInput;
@@ -21,10 +21,10 @@
 
 // Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
 
++ (id)documentStateForTestingWithContextBefore:(id)arg1 selectedText:(id)arg2 contextAfter:(id)arg3;
++ (id)documentStateForTestingWithText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 + (id)documentStateWithContextBefore:(id)arg1 markedText:(id)arg2 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 contextAfter:(id)arg4;
 + (id)documentStateWithContextBefore:(id)arg1 selectedText:(id)arg2 contextAfter:(id)arg3;
-+ (id)documentStateWithContextBefore:(id)arg1 selectedText:(id)arg2 contextAfter:(id)arg3;
-+ (id)documentStateWithText:(id)arg1 selectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 + (BOOL)supportsSecureCoding;
 
 - (id)contextAfterInput;
@@ -60,14 +60,17 @@
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)documentStateOfDocument:(id)arg1;
++ (id)documentStateOfDocumentWithRecentInputIdentifier:(id)arg1;
 + (id)documentStateOfSecureTextDocument:(id)arg1;
 
-- (id)_contextAfterPosition:(id)arg1 inDocument:(id)arg2;
-- (id)_contextBeforePosition:(id)arg1 inDocument:(id)arg2;
+- (id)_contextAfterPosition:(id)arg1 inDocument:(id)arg2 toBoundary:(int)arg3;
+- (id)_contextBeforePosition:(id)arg1 inDocument:(id)arg2 toBoundary:(int)arg3;
 - (id)_positionFromPosition:(id)arg1 toPreviousWordBoundaryInDocument:(id)arg2 tokenAccumulator:(id /* block */)arg3;
 - (id)_positionFromPosition:(id)arg1 toPreviousWordStartInDocument:(id)arg2 tokenAccumulator:(id /* block */)arg3;
 - (id)copyTextInRange:(id)arg1 fromDocument:(id)arg2;
 - (id)initWithDocument:(id)arg1;
+- (id)initWithDocument:(id)arg1 contextBoundary:(int)arg2;
+- (id)initWithDocumentWithRecentInputIdentifier:(id)arg1;
 - (id)initWithSecureTextDocument:(id)arg1;
 - (id)textRangeFromPosition:(id)arg1 toPosition:(id)arg2 inDocument:(id)arg3;
 

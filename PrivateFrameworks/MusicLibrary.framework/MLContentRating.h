@@ -3,7 +3,7 @@
  */
 
 @interface MLContentRating : NSObject <NSCopying> {
-    NSMutableDictionary *_dictionary;
+    NSMutableDictionary * _dictionary;
 }
 
 @property (nonatomic, copy) NSString *ratingDescription;

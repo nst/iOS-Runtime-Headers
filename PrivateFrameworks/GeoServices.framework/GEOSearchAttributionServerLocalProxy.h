@@ -3,13 +3,13 @@
  */
 
 @interface GEOSearchAttributionServerLocalProxy : NSObject <GEOSearchAttributionServerProxy> {
-    GEOSearchAttributionManifest *_attributionManifest;
-    NSLock *_attributionManifestLock;
-    NSMapTable *_listeners;
-    NSLock *_listenersLock;
-    NSMutableArray *_updateManifestCompletionHandlers;
-    NSMutableArray *_updateManifestErrorHandlers;
-    BOOL _updatingManifest;
+    GEOSearchAttributionManifest * _attributionManifest;
+    NSLock * _attributionManifestLock;
+    NSMapTable * _listeners;
+    NSLock * _listenersLock;
+    NSMutableArray * _updateManifestCompletionHandlers;
+    NSMutableArray * _updateManifestErrorHandlers;
+    BOOL  _updatingManifest;
 }
 
 @property (readonly, copy) NSString *debugDescription;

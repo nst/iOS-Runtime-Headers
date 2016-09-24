@@ -3,12 +3,12 @@
  */
 
 @interface VKTriangulator : NSObject {
-    unsigned int *_mesh;
-    unsigned int _mesh_capacity;
-    void *_opaque_segments;
-    void *_opaque_triangulator;
-    NSMutableData *_scratch;
-    unsigned int _segments_capacity;
+    unsigned int * _mesh;
+    unsigned int  _mesh_capacity;
+    void * _opaque_segments;
+    void * _opaque_triangulator;
+    NSMutableData * _scratch;
+    unsigned int  _segments_capacity;
 }
 
 - (BOOL)_triangulateIndicesInto:(id)arg1;

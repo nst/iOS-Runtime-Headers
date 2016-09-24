@@ -3,10 +3,10 @@
  */
 
 @interface CNAccountsAndGroupsViewController : UITableViewController <UITableViewDelegate> {
-    CNAccountsAndGroupsDataSource *_dataSource;
-    <CNAccountsAndGroupsViewControllerDelegate> *_delegate;
-    BOOL _needsReload;
-    BOOL _tableViewNeedsReloadAfterResume;
+    CNAccountsAndGroupsDataSource * _dataSource;
+    <CNAccountsAndGroupsViewControllerDelegate> * _delegate;
+    BOOL  _needsReload;
+    BOOL  _tableViewNeedsReloadAfterResume;
 }
 
 @property (nonatomic, retain) CNAccountsAndGroupsDataSource *dataSource;

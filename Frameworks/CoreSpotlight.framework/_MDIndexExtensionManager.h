@@ -3,13 +3,13 @@
  */
 
 @interface _MDIndexExtensionManager : NSObject <CSIndexExtensionDelegate> {
-    _MDIndexExtensionLoader *_extensionLoader;
-    NSCondition *_extensionsCondition;
-    NSDictionary *_indexExtensionsByBundleID;
-    BOOL _isUnderMemoryPressure;
-    NSObject<OS_dispatch_source> *_memoryStatusSource;
-    NSObject<OS_dispatch_queue> *_notifyQueue;
-    NSObject<OS_dispatch_queue> *_queue;
+    _MDIndexExtensionLoader * _extensionLoader;
+    NSCondition * _extensionsCondition;
+    NSDictionary * _indexExtensionsByBundleID;
+    BOOL  _isUnderMemoryPressure;
+    NSObject<OS_dispatch_source> * _memoryStatusSource;
+    NSObject<OS_dispatch_queue> * _notifyQueue;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,7 +20,7 @@
 @property (nonatomic, retain) NSDictionary *indexExtensionsByBundleID;
 @property BOOL isUnderMemoryPressure;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *memoryStatusSource;
-@property (retain) NSObject<OS_dispatch_queue> *notifyQueue;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *notifyQueue;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
 
@@ -40,6 +40,7 @@
 - (id)extensionLoader;
 - (id)extensions;
 - (id)extensionsCondition;
+- (void)findExtensionsWithCompletionBlock:(id /* block */)arg1;
 - (id)indexExtensionsByBundleID;
 - (void)indexRequestsPerformJob:(id)arg1 extensions:(id)arg2 perExtensionCompletionHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 - (void)indexRequestsPerformJob:(id)arg1 forBundle:(id)arg2 completionHandler:(id /* block */)arg3;

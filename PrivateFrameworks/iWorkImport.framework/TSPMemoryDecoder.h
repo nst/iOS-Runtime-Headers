@@ -3,9 +3,9 @@
  */
 
 @interface TSPMemoryDecoder : NSObject <TSPDecoder> {
-    <TSPMemoryDecoderDelegate> *_delegate;
-    NSObject<OS_dispatch_data> *_metadataDispatchData;
-    NSObject<OS_dispatch_data> *_rootObjectComponentDispatchData;
+    <TSPMemoryDecoderDelegate> * _delegate;
+    NSObject<OS_dispatch_data> * _metadataDispatchData;
+    NSObject<OS_dispatch_data> * _rootObjectComponentDispatchData;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,7 +20,7 @@
 - (id)initWithEncodedData:(id)arg1 delegate:(id)arg2;
 - (id)initWithMetadataDispatchData:(id)arg1 rootObjectComponentDispatchData:(id)arg2 delegate:(id)arg3;
 - (id)metadataDispatchData;
-- (id)newReadChannelForDataWithIdentifier:(long long)arg1 info:(id)arg2;
+- (id)newReadChannelForDataWithIdentifier:(int)arg1 info:(id)arg2;
 - (id)newReadChannelForMetadata;
 - (id)newReadChannelForRootObjectComponent;
 - (id)rootObjectComponentDispatchData;

@@ -3,8 +3,8 @@
  */
 
 @interface PptHyperlinkBlock : NSObject {
-    ESDContainer *mInteractiveInfoContainerHolder;
-    ESDObject *mTxInteractiveInfoAtomHolder;
+    ESDContainer * mInteractiveInfoContainerHolder;
+    ESDObject * mTxInteractiveInfoAtomHolder;
 }
 
 - (id)interactiveInfoContainerHolder;

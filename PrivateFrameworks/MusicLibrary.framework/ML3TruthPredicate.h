@@ -3,7 +3,7 @@
  */
 
 @interface ML3TruthPredicate : ML3Predicate {
-    BOOL _truthValue;
+    BOOL  _truthValue;
 }
 
 + (id)falsePredicate;

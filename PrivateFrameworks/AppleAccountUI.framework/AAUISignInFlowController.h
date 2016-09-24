@@ -3,15 +3,15 @@
  */
 
 @interface AAUISignInFlowController : NSObject <AAUIAccountRepairRemoteUIDelegate, AAUIGenericTermsRemoteUIDelegate> {
-    AAUIAccountRepairRemoteUI *_accountRepairRemoteUI;
-    ACAccountStore *_accountStore;
-    ACAccountType *_appleAccountType;
-    NSMutableDictionary *_cdpContextsByAccountID;
-    NSLock *_cdpContextsByAccountIDLock;
-    AAUIGenericTermsRemoteUI *_genericTermsRemoteUI;
-    id /* block */ _pendingCompletion;
-    UIViewController *_presentingViewController;
-    BOOL _shouldAutomaticallySaveSignInResults;
+    AAUIAccountRepairRemoteUI * _accountRepairRemoteUI;
+    ACAccountStore * _accountStore;
+    ACAccountType * _appleAccountType;
+    NSMutableDictionary * _cdpContextsByAccountID;
+    NSLock * _cdpContextsByAccountIDLock;
+    AAUIGenericTermsRemoteUI * _genericTermsRemoteUI;
+    id /* block */  _pendingCompletion;
+    UIViewController * _presentingViewController;
+    BOOL  _shouldAutomaticallySaveSignInResults;
 }
 
 @property (readonly, copy) NSString *debugDescription;

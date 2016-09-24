@@ -3,17 +3,17 @@
  */
 
 @interface AAUIFamilySetupGetStartedViewController : UIViewController <AAUIFamilySetupPage> {
-    ACAccount *_account;
-    ACAccountStore *_accountStore;
-    UIView *_contentView;
-    <AAUIFamilySetupPageDelegate> *_delegate;
-    UILabel *_descriptionLabel;
-    AAFamilyEligibilityResponse *_familyEligibilityResponse;
-    AAUIFamilySharingFeaturesView *_familyFeaturesView;
-    UIImageView *_familySharingLogo;
-    UIButton *_getStartedButton;
-    UIScrollView *_scrollView;
-    UILabel *_titleLabel;
+    ACAccount * _account;
+    ACAccountStore * _accountStore;
+    UIView * _contentView;
+    <AAUIFamilySetupPageDelegate> * _delegate;
+    UILabel * _descriptionLabel;
+    AAFamilyEligibilityResponse * _familyEligibilityResponse;
+    AAUIFamilySharingFeaturesView * _familyFeaturesView;
+    UIImageView * _familySharingLogo;
+    UIButton * _getStartedButton;
+    UIScrollView * _scrollView;
+    UILabel * _titleLabel;
 }
 
 @property (readonly, copy) NSString *debugDescription;

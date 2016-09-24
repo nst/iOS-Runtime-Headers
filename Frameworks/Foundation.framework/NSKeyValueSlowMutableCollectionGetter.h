@@ -3,8 +3,8 @@
  */
 
 @interface NSKeyValueSlowMutableCollectionGetter : NSKeyValueProxyGetter {
-    NSKeyValueGetter *_baseGetter;
-    NSKeyValueSetter *_baseSetter;
+    NSKeyValueGetter * _baseGetter;
+    NSKeyValueSetter * _baseSetter;
 }
 
 - (id)baseGetter;

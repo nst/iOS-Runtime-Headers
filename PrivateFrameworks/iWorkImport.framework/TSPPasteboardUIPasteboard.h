@@ -3,10 +3,10 @@
  */
 
 @interface TSPPasteboardUIPasteboard : TSPPasteboard {
-    int _cachedChangeCount;
-    NSArray *_cachedPasteboardTypes;
-    unsigned int _pasteboardItemCount;
-    NSMutableDictionary *_pasteboardItemIndexCache;
+    int  _cachedChangeCount;
+    NSArray * _cachedPasteboardTypes;
+    unsigned int  _pasteboardItemCount;
+    NSMutableDictionary * _pasteboardItemIndexCache;
 }
 
 - (void).cxx_destruct;
@@ -30,13 +30,16 @@
 - (void)invalidatePasteboardCache;
 - (void)invalidatePasteboardCacheIfNeeded;
 - (int)numberOfItems;
+- (unsigned long)pasteboardItemMaxSize;
 - (id)pasteboardTypes;
 - (id)pasteboardTypesForItemSet:(id)arg1;
 - (id)propertyListForValue:(id)arg1;
 - (void)reloadPasteboardItemIndexCacheIfNeeded;
 - (void)setString:(id)arg1;
 - (id)string;
+- (id)stringForPasteboardType:(id)arg1;
 - (id)strings;
+- (id)stringsForPasteboardType:(id)arg1 inItemSet:(id)arg2;
 - (void)updateCachedChangeCount;
 - (id)valueForPasteboardType:(id)arg1;
 - (id)valuesForPasteboardType:(id)arg1 inItemSet:(id)arg2;

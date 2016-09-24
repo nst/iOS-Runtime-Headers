@@ -3,13 +3,17 @@
  */
 
 @interface IKTextBadgeAttachment : NSTextAttachment {
-    IKBadgeElement *_badge;
+    IKBadgeElement * _badge;
+    IKColor * _tintColor;
 }
 
 @property (nonatomic, readonly, retain) IKBadgeElement *badge;
+@property (nonatomic, retain) IKColor *tintColor;
 
 - (void).cxx_destruct;
 - (id)badge;
 - (id)initWithBadgeElement:(id)arg1;
+- (void)setTintColor:(id)arg1;
+- (id)tintColor;
 
 @end

@@ -3,21 +3,21 @@
  */
 
 @interface TSPArchiverManager : NSObject {
-    NSObject<OS_dispatch_queue> *_archiveCompletionQueue;
-    NSObject<OS_dispatch_queue> *_archiveDefaultQueue;
-    NSObject<OS_dispatch_queue> *_archiveHighQueue;
-    NSObject<OS_dispatch_queue> *_archiveLowQueue;
-    Class _archiverClass;
-    NSMapTable *_archivers;
-    NSObject<OS_dispatch_queue> *_archiversHighQueue;
-    NSObject<OS_dispatch_queue> *_archiversLowQueue;
-    <TSPArchiverManagerDelegate> *_delegate;
-    TSPDescriptionGenerator *_descriptionGenerator;
+    NSObject<OS_dispatch_queue> * _archiveCompletionQueue;
+    NSObject<OS_dispatch_queue> * _archiveDefaultQueue;
+    NSObject<OS_dispatch_queue> * _archiveHighQueue;
+    NSObject<OS_dispatch_queue> * _archiveLowQueue;
+    Class  _archiverClass;
+    NSMapTable * _archivers;
+    NSObject<OS_dispatch_queue> * _archiversHighQueue;
+    NSObject<OS_dispatch_queue> * _archiversLowQueue;
+    <TSPArchiverManagerDelegate> * _delegate;
+    TSPDescriptionGenerator * _descriptionGenerator;
     struct { 
         unsigned int isStopped : 1; 
         unsigned int delegateRespondsToDidCreateArchiver : 1; 
         unsigned int delegateRespondsToShouldDelayArchivingObject : 1; 
-    } _flags;
+    }  _flags;
 }
 
 @property (nonatomic, retain) TSPDescriptionGenerator *descriptionGenerator;

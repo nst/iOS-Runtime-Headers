@@ -3,9 +3,9 @@
  */
 
 @interface SUPastisOperation : ISOperation {
-    NSURL *_certificateUrl;
-    NSURL *_keyUrl;
-    AVAssetResourceLoadingRequest *_loadingRequest;
+    NSURL * _certificateUrl;
+    NSURL * _keyUrl;
+    AVAssetResourceLoadingRequest * _loadingRequest;
 }
 
 @property (nonatomic, retain) NSURL *certificateURL;

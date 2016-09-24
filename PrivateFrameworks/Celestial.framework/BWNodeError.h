@@ -3,28 +3,31 @@
  */
 
 @interface BWNodeError : NSObject {
-    long _errorCode;
-    FigCaptureRecordingSettings *_recordingSettings;
-    NSString *_sourceNodeDescription;
-    FigCaptureStillImageSettings *_stillImageSettings;
-    int _uniqueID;
+    long  _errorCode;
+    FigCaptureRecordingSettings * _recordingSettings;
+    FigCaptureStillImageSettings * _requestedStillImageCaptureSettings;
+    BWStillImageCaptureSettings * _resolvedStillImageCaptureSettings;
+    NSString * _sourceNodeDescription;
+    int  _uniqueID;
 }
 
 @property (readonly) long errorCode;
 @property (readonly) FigCaptureRecordingSettings *recordingSettings;
+@property (readonly) FigCaptureStillImageSettings *requestedStillImageCaptureSettings;
+@property (readonly) BWStillImageCaptureSettings *resolvedStillImageCaptureSettings;
 @property (readonly) NSString *sourceNodeDescription;
-@property (readonly) FigCaptureStillImageSettings *stillImageSettings;
 
 + (id)newError:(long)arg1 sourceNode:(id)arg2;
 + (id)newError:(long)arg1 sourceNode:(id)arg2 recordingSettings:(id)arg3;
-+ (id)newError:(long)arg1 sourceNode:(id)arg2 stillImageSettings:(id)arg3;
++ (id)newError:(long)arg1 sourceNode:(id)arg2 requestedStillImageCaptureSettings:(id)arg3 resolvedStillImageCaptureSettings:(id)arg4;
 
-- (id)_initWithError:(long)arg1 sourceNode:(id)arg2 stillImageSettings:(id)arg3 recordingSettings:(id)arg4;
+- (id)_initWithError:(long)arg1 sourceNode:(id)arg2 requestedStillImageCaptureSettings:(id)arg3 resolvedStillImageCaptureSettings:(id)arg4 recordingSettings:(id)arg5;
 - (void)dealloc;
 - (long)errorCode;
 - (unsigned int)hash;
 - (id)recordingSettings;
+- (id)requestedStillImageCaptureSettings;
+- (id)resolvedStillImageCaptureSettings;
 - (id)sourceNodeDescription;
-- (id)stillImageSettings;
 
 @end

@@ -3,15 +3,15 @@
  */
 
 @interface ACUIAppInstaller : NSObject {
-    ACUIAppDescription *_app;
-    BOOL _availableInStoreResult;
-    BOOL _cachedReachabilityResult;
-    NSDate *_dateOfLastInstallationCheck;
-    NSDate *_dateOfLastReachabilityCheck;
-    <ACUIAppInstallerDelegate> *_delegate;
-    BOOL _needsAvailableInStoreCheck;
-    NSURL *_publisherURL;
-    BOOL _resultOfLastInstallationCheck;
+    ACUIAppDescription * _app;
+    BOOL  _availableInStoreResult;
+    BOOL  _cachedReachabilityResult;
+    NSDate * _dateOfLastInstallationCheck;
+    NSDate * _dateOfLastReachabilityCheck;
+    <ACUIAppInstallerDelegate> * _delegate;
+    BOOL  _needsAvailableInStoreCheck;
+    NSURL * _publisherURL;
+    BOOL  _resultOfLastInstallationCheck;
 }
 
 @property (nonatomic) <ACUIAppInstallerDelegate> *delegate;

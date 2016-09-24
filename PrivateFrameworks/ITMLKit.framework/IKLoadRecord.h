@@ -3,10 +3,10 @@
  */
 
 @interface IKLoadRecord : NSObject {
-    NSURL *_URL;
-    BOOL _loadCompleted;
-    ISURLOperation *_opertaion;
-    NSString *_scriptStr;
+    NSURL * _URL;
+    BOOL  _loadCompleted;
+    ISURLOperation * _opertaion;
+    NSString * _scriptStr;
 }
 
 @property (nonatomic, retain) NSURL *URL;

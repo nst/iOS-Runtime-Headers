@@ -3,9 +3,9 @@
  */
 
 @interface PUPhotoEditVisualLevelSliderCell : UICollectionViewCell {
-    UIImageView *_imageView;
-    unsigned int _roundedCornersEdge;
-    UIImage *_thumbnail;
+    UIImageView * _imageView;
+    unsigned int  _roundedCornersEdge;
+    UIImage * _thumbnail;
 }
 
 @property (nonatomic) unsigned int roundedCornersEdge;

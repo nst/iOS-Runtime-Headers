@@ -3,7 +3,7 @@
  */
 
 @interface CNSuggestedContactStore : CNContactStore {
-    SGSuggestionsService *_suggestionService;
+    SGSuggestionsService * _suggestionService;
 }
 
 @property (nonatomic, retain) SGSuggestionsService *suggestionService;
@@ -20,6 +20,7 @@
 - (id)init;
 - (id)initWithSuggestionsService:(id)arg1;
 - (id)originForSuggestion:(id)arg1 error:(id*)arg2;
+- (id)requestAccessForEntityType:(int)arg1;
 - (void)setSuggestionService:(id)arg1;
 - (id)suggestionService;
 - (id)unifiedContactsMatchingPredicate:(id)arg1 keysToFetch:(id)arg2 error:(id*)arg3;

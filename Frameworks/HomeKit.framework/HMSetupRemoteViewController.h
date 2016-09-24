@@ -3,7 +3,7 @@
  */
 
 @interface HMSetupRemoteViewController : _UIRemoteViewController <HMSetupRemoteHost> {
-    <HMSetupRemoteHost> *_delegate;
+    <HMSetupRemoteHost> * _delegate;
 }
 
 @property (nonatomic) <HMSetupRemoteHost> *delegate;

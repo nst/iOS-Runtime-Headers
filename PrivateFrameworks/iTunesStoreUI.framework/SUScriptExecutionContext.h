@@ -3,8 +3,8 @@
  */
 
 @interface SUScriptExecutionContext : NSObject <ISStoreURLOperationDelegate, SUWebViewDelegate> {
-    ISStoreURLOperation *_loadOperation;
-    SUWebView *_webView;
+    ISStoreURLOperation * _loadOperation;
+    SUWebView * _webView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,17 +3,17 @@
  */
 
 @interface AWDWiFiMetricsKnownNetworksEvent : PBCodable <NSCopying> {
-    unsigned int _eventType;
+    unsigned int  _eventType;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int eventType : 1; 
         unsigned int networkSecurity : 1; 
         unsigned int networkTypeBitMap : 1; 
-    } _has;
-    unsigned int _networkSecurity;
-    unsigned int _networkTypeBitMap;
-    NSData *_oui;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned int  _networkSecurity;
+    unsigned int  _networkTypeBitMap;
+    NSData * _oui;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int eventType;

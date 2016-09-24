@@ -3,7 +3,7 @@
  */
 
 @interface ACDFakeRemoteAccountStoreSession : ACRemoteAccountStoreSession {
-    NSObject *_proxy;
+    NSObject * _proxy;
 }
 
 - (void).cxx_destruct;

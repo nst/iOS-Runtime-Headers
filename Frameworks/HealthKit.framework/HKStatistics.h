@@ -3,20 +3,20 @@
  */
 
 @interface HKStatistics : NSObject <NSCopying, NSSecureCoding> {
-    HKQuantity *_averageQuantity;
-    NSDictionary *_averageQuantityBySource;
-    unsigned int _dataCount;
-    NSDictionary *_dataCountBySource;
-    NSDate *_endDate;
-    HKQuantity *_maximumQuantity;
-    NSDictionary *_maximumQuantityBySource;
-    HKQuantity *_minimumQuantity;
-    NSDictionary *_minimumQuantityBySource;
-    HKQuantityType *_quantityType;
-    NSArray *_sources;
-    NSDate *_startDate;
-    HKQuantity *_sumQuantity;
-    NSDictionary *_sumQuantityBySource;
+    HKQuantity * _averageQuantity;
+    NSDictionary * _averageQuantityBySource;
+    unsigned int  _dataCount;
+    NSDictionary * _dataCountBySource;
+    NSDate * _endDate;
+    HKQuantity * _maximumQuantity;
+    NSDictionary * _maximumQuantityBySource;
+    HKQuantity * _minimumQuantity;
+    NSDictionary * _minimumQuantityBySource;
+    HKQuantityType * _quantityType;
+    NSArray * _sources;
+    NSDate * _startDate;
+    HKQuantity * _sumQuantity;
+    NSDictionary * _sumQuantityBySource;
 }
 
 @property (nonatomic, retain) HKQuantity *averageQuantity;

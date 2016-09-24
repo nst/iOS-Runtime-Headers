@@ -3,10 +3,10 @@
  */
 
 @interface PUFilmstripDataSource : PUTilingDataSource {
-    AVAsset *_asset;
-    NSMutableDictionary *_assetByIndexPath;
-    NSMapTable *_indexPathByAsset;
-    int _numberOfIndexes;
+    AVAsset * _asset;
+    NSMutableDictionary * _assetByIndexPath;
+    NSMapTable * _indexPathByAsset;
+    int  _numberOfIndexes;
 }
 
 @property (nonatomic, readonly) AVAsset *asset;

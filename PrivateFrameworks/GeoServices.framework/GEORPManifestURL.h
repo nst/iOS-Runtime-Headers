@@ -3,8 +3,8 @@
  */
 
 @interface GEORPManifestURL : PBCodable <NSCopying> {
-    NSString *_urlName;
-    NSString *_urlValue;
+    NSString * _urlName;
+    NSString * _urlValue;
 }
 
 @property (nonatomic, readonly) BOOL hasUrlName;

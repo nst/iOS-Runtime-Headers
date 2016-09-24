@@ -3,13 +3,13 @@
  */
 
 @interface PKSupply : NSObject {
-    NSArray *_colors;
-    int _highLevel;
-    int _level;
-    int _lowLevel;
-    NSString *_markerType;
-    NSString *_name;
-    unsigned int _supplyType;
+    NSArray * _colors;
+    int  _highLevel;
+    int  _level;
+    int  _lowLevel;
+    NSString * _markerType;
+    NSString * _name;
+    unsigned int  _supplyType;
 }
 
 @property (nonatomic, retain) NSArray *colors;

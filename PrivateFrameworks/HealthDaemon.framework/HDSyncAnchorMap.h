@@ -3,7 +3,7 @@
  */
 
 @interface HDSyncAnchorMap : NSObject <HDSyncAnchorMap> {
-    NSMutableDictionary *_anchorsByObjectType;
+    NSMutableDictionary * _anchorsByObjectType;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *anchorsByObjectType;
@@ -14,11 +14,11 @@
 
 - (void).cxx_destruct;
 - (unsigned int)anchorCount;
-- (long long)anchorForSyncEntityClass:(Class)arg1;
+- (int)anchorForSyncEntityClass:(Class)arg1;
 - (id)anchorsByObjectType;
 - (id)description;
 - (void)enumerateAnchorsAndSyncEntitiesWithBlock:(id /* block */)arg1;
-- (void)setAnchor:(long long)arg1 forSyncEntity:(Class)arg2;
+- (void)setAnchor:(int)arg1 forSyncEntity:(Class)arg2;
 - (void)setAnchorsByObjectType:(id)arg1;
 
 @end

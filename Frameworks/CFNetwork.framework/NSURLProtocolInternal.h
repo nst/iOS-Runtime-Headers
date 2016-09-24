@@ -3,10 +3,10 @@
  */
 
 @interface NSURLProtocolInternal : NSObject {
-    NSCachedURLResponse *cachedResponse;
-    <NSURLProtocolClient> *client;
-    NSLock *mutex;
-    NSURLRequest *request;
+    NSCachedURLResponse * cachedResponse;
+    <NSURLProtocolClient> * client;
+    NSLock * mutex;
+    NSURLRequest * request;
 }
 
 - (void)dealloc;

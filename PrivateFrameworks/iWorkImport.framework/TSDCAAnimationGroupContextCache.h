@@ -3,8 +3,8 @@
  */
 
 @interface TSDCAAnimationGroupContextCache : TSDCAAnimationContextCache {
-    NSArray *_animationContextCaches;
-    NSArray *_animations;
+    NSArray * _animationContextCaches;
+    NSArray * _animations;
 }
 
 @property (nonatomic, readonly) NSArray *animationContextCaches;

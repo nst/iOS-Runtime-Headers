@@ -3,10 +3,10 @@
  */
 
 @interface GKNearbyDevice : NSObject {
-    NSString *_deviceID;
-    GKDiscovery *_discovery;
-    GKPlayer *_player;
-    int _state;
+    NSString * _deviceID;
+    GKDiscovery * _discovery;
+    GKPlayer * _player;
+    int  _state;
 }
 
 @property (nonatomic, retain) NSString *deviceID;

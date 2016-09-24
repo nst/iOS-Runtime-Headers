@@ -3,10 +3,10 @@
  */
 
 @interface BSFuture : NSObject <BSFuture> {
-    NSMutableArray *_completionBlocks;
-    NSError *_error;
-    id _result;
-    NSConditionLock *_stateLock;
+    NSMutableArray * _completionBlocks;
+    NSError * _error;
+    id  _result;
+    NSConditionLock * _stateLock;
 }
 
 @property (getter=isCancelled, readonly) BOOL cancelled;

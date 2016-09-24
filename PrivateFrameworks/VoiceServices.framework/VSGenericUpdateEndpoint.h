@@ -3,10 +3,10 @@
  */
 
 @interface VSGenericUpdateEndpoint : NSObject <NSSecureCoding, NSXPCListenerDelegate> {
-    NSXPCListenerEndpoint *_endpoint;
-    id /* block */ _handler;
-    NSXPCListener *_listener;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSXPCListenerEndpoint * _endpoint;
+    id /* block */  _handler;
+    NSXPCListener * _listener;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

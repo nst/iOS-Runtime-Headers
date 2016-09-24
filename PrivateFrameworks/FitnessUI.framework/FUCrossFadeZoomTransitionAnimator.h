@@ -3,12 +3,12 @@
  */
 
 @interface FUCrossFadeZoomTransitionAnimator : NSObject <FUViewControllerAnimatedTransitioning> {
-    id /* block */ _animationCompletionBlock;
-    id _context;
-    UIView *_largeView;
-    UIView *_smallView;
-    BOOL _transitionCompleted;
-    BOOL _zoomingUp;
+    id /* block */  _animationCompletionBlock;
+    id  _context;
+    UIView * _largeView;
+    UIView * _smallView;
+    BOOL  _transitionCompleted;
+    BOOL  _zoomingUp;
 }
 
 @property (nonatomic, retain) id context;

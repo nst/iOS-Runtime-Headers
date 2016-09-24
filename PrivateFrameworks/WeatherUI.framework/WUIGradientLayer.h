@@ -3,7 +3,7 @@
  */
 
 @interface WUIGradientLayer : CAGradientLayer {
-    BOOL _allowsActions;
+    BOOL  _allowsActions;
 }
 
 @property (nonatomic) BOOL allowsActions;

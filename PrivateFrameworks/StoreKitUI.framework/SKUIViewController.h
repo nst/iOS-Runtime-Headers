@@ -3,15 +3,15 @@
  */
 
 @interface SKUIViewController : UIViewController <SKUIClientContextConsuming, SKUINetworkErrorDelegate, SKUIProductPageOverlayDelegate, SKUITabBarItemRootViewController, SKUIWishlistDelegate, UIPopoverControllerDelegate> {
-    SKUIClientContext *_clientContext;
-    SKUINetworkErrorViewController *_networkErrorViewController;
-    NSOperationQueue *_operationQueue;
-    SKUIProductPageOverlayController *_productPageOverlayController;
-    SKUIIPadSearchController *_searchController;
-    BOOL _wishlistButtonHidden;
-    UIBarButtonItem *_wishlistButtonItem;
-    SKUIPopoverObserver *_wishlistPopoverObserver;
-    SKUIWishlistViewController *_wishlistViewController;
+    SKUIClientContext * _clientContext;
+    SKUINetworkErrorViewController * _networkErrorViewController;
+    NSOperationQueue * _operationQueue;
+    SKUIProductPageOverlayController * _productPageOverlayController;
+    SKUIIPadSearchController * _searchController;
+    BOOL  _wishlistButtonHidden;
+    UIBarButtonItem * _wishlistButtonItem;
+    SKUIPopoverObserver * _wishlistPopoverObserver;
+    SKUIWishlistViewController * _wishlistViewController;
 }
 
 @property (nonatomic, readonly) SKUIIPadSearchController *IPadSearchController;
@@ -25,6 +25,11 @@
 
 - (void).cxx_destruct;
 - (id)IPadSearchController;
+- (id)_defaultLeftBarButtonItems;
+- (id)_defaultRightBarButtonItemsIsCompact:(BOOL)arg1;
+- (id)_getIPadSearchController;
+- (void)_presentWishlistFromPopover:(id)arg1;
+- (void)_presentWishlistFromSheet;
 - (void)_reloadForOrientation:(int)arg1;
 - (void)_setWishlistButtonHidden:(BOOL)arg1;
 - (void)_showDialogWithError:(id)arg1;
@@ -33,6 +38,7 @@
 - (void)_wishlistPopoverDidDismiss;
 - (id)clientContext;
 - (void)dealloc;
+- (void)forceOrientationBackToSupportedOrientation;
 - (id)initWithTabBarItem:(id)arg1;
 - (void)networkErrorViewControllerInvalidated:(id)arg1;
 - (id)operationQueue;
@@ -41,6 +47,8 @@
 - (void)setClientContext:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
 - (void)showDefaultNavigationItems;
+- (void)showDefaultNavigationItemsForSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)showDefaultNavigationItemsIsCompact:(BOOL)arg1;
 - (void)showError:(id)arg1;
 - (BOOL)showingError;
 - (void)skui_viewWillAppear:(BOOL)arg1;

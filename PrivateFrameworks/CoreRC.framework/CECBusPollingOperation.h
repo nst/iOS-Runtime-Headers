@@ -3,11 +3,11 @@
  */
 
 @interface CECBusPollingOperation : NSObject {
-    <CECBusPollingOperationDelegate> *_delegate;
-    unsigned char _initiatorAddress;
-    CECInterface *_interface;
-    unsigned char _pollingAddress;
-    NSObject<OS_dispatch_queue> *_queue;
+    <CECBusPollingOperationDelegate> * _delegate;
+    unsigned char  _initiatorAddress;
+    CECInterface * _interface;
+    unsigned char  _pollingAddress;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic) <CECBusPollingOperationDelegate> *delegate;

@@ -3,12 +3,13 @@
  */
 
 @interface CKRaiseGesture : NSObject {
-    SEL _action;
-    BOOL _enabled;
-    CMGestureManager *_gestureManager;
-    int _gestureState;
-    BOOL _proximityState;
-    id _target;
+    SEL  _action;
+    BOOL  _enabled;
+    CMGestureManager * _gestureManager;
+    int  _gestureState;
+    BOOL  _proximityState;
+    id  _target;
+    int  proximityToken;
 }
 
 @property (nonatomic) SEL action;
@@ -22,6 +23,7 @@
 + (BOOL)isRaiseGestureEnabled;
 + (BOOL)isRaiseGestureSupported;
 
+- (void).cxx_destruct;
 - (SEL)action;
 - (void)dealloc;
 - (id)gestureManager;
@@ -35,6 +37,7 @@
 - (void)setEnabled:(BOOL)arg1;
 - (void)setGestureManager:(id)arg1;
 - (void)setGestureState:(int)arg1;
+- (void)setProximityMonitoringEnabled:(BOOL)arg1;
 - (void)setProximityState:(BOOL)arg1;
 - (void)setTarget:(id)arg1;
 - (id)target;

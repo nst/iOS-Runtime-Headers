@@ -3,19 +3,19 @@
  */
 
 @interface ISVitalitySpecificSettings : ISSettings <ISVitalitySettings> {
-    int _behavior;
-    double _endTimeOffset;
-    double _maximumDeceleration;
-    double _maximumDelayBeforePlayback;
-    int _maximumNumberOfFrames;
-    double _maximumRate;
-    double _minimumDurationForColorMismatch;
-    double _minimumVisibilityFactor;
-    double _playbackRate;
-    double _postDuration;
-    double _preDuration;
-    double _relativeEnd;
-    double _relativeStart;
+    int  _behavior;
+    double  _endTimeOffset;
+    double  _maximumDeceleration;
+    double  _maximumDelayBeforePlayback;
+    int  _maximumNumberOfFrames;
+    double  _maximumRate;
+    double  _minimumDurationForColorMismatch;
+    double  _minimumVisibilityFactor;
+    double  _playbackRate;
+    double  _postDuration;
+    double  _preDuration;
+    double  _relativeEnd;
+    double  _relativeStart;
 }
 
 @property (nonatomic) int behavior;

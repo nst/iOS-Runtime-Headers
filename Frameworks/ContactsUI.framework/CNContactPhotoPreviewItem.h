@@ -3,8 +3,8 @@
  */
 
 @interface CNContactPhotoPreviewItem : NSObject <QLPreviewItem> {
-    NSString *_previewItemTitle;
-    NSURL *_previewItemURL;
+    NSString * _previewItemTitle;
+    NSURL * _previewItemURL;
 }
 
 @property (readonly, copy) NSString *debugDescription;

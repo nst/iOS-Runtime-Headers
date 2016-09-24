@@ -3,8 +3,8 @@
  */
 
 @interface ABTranslucentNavigationController : UINavigationController {
-    BOOL _overridesNavigationBarInset;
-    <ABStyleProvider> *_styleProvider;
+    BOOL  _overridesNavigationBarInset;
+    <ABStyleProvider> * _styleProvider;
 }
 
 @property (nonatomic) BOOL overridesNavigationBarInset;

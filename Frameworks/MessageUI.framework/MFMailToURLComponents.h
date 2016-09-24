@@ -3,11 +3,11 @@
  */
 
 @interface MFMailToURLComponents : NSObject {
-    NSArray *_bccRecipients;
-    NSString *_body;
-    NSArray *_ccRecipients;
-    NSString *_subject;
-    NSArray *_toRecipients;
+    NSArray * _bccRecipients;
+    NSString * _body;
+    NSArray * _ccRecipients;
+    NSString * _subject;
+    NSArray * _toRecipients;
 }
 
 @property (nonatomic, readonly) NSArray *bccRecipients;

@@ -3,9 +3,9 @@
  */
 
 @interface MKDistanceFormatter : NSFormatter {
-    NSLocale *_locale;
-    unsigned int _unitStyle;
-    unsigned int _units;
+    NSLocale * _locale;
+    unsigned int  _unitStyle;
+    unsigned int  _units;
 }
 
 @property (nonatomic, copy) NSLocale *locale;
@@ -14,10 +14,13 @@
 
 - (void).cxx_destruct;
 - (BOOL)_useMetric;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (double)distanceFromString:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (BOOL)getObjectValue:(id*)arg1 forString:(id)arg2 errorDescription:(id*)arg3;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)isPartialStringValid:(id*)arg1 proposedSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 originalString:(id)arg3 originalSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 errorDescription:(id*)arg5;
 - (id)locale;
 - (void)setLocale:(id)arg1;

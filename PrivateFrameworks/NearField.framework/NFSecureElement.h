@@ -3,26 +3,41 @@
  */
 
 @interface NFSecureElement : NSObject {
-    NFHardwareSecureElementInfo *_info;
+    NFHardwareSecureElementInfo * _info;
+    BOOL  _isDirty;
 }
 
+@property (readonly) unsigned int OSVersion;
 @property (readonly) NSString *eccCertificate;
+@property (readonly) NSString *eckaCertificate;
 @property (readonly) BOOL isInRestrictedMode;
 @property (readonly) BOOL isProductionSigned;
 @property (readonly) NSString *rsaCertificate;
+@property (readonly) NSNumber *sequenceCounter;
 @property (readonly) NSString *serialNumber;
+@property (readonly) unsigned int supportedTechnologies;
 
 + (id)embeddedSecureElement;
++ (id)icefallSecureElement;
++ (unsigned int)supportedTechnologies;
 
+- (unsigned int)OSVersion;
 - (id)_initWithInfo:(id)arg1;
+- (void)_markDirty;
 - (void)_setIsInRestrictedMode:(BOOL)arg1;
+- (void)_updateIfDirty;
+- (void)_updateSecureElementInfo:(id)arg1;
 - (void)dealloc;
 - (id)eccCertificate;
+- (id)eckaCertificate;
 - (id)identifier;
 - (id)info;
 - (BOOL)isInRestrictedMode;
 - (BOOL)isProductionSigned;
+- (id)manifestQueryBlob;
 - (id)rsaCertificate;
+- (id)sequenceCounter;
 - (id)serialNumber;
+- (unsigned int)supportedTechnologies;
 
 @end

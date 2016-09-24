@@ -3,9 +3,11 @@
  */
 
 @interface EMCellTextMapper : CMMapper {
-    EDString *edString;
-    EDStyle *edStyle;
+    EDString * edString;
+    EDStyle * edStyle;
 }
+
++ (double)contentWidthForString:(id)arg1 style:(id)arg2;
 
 - (double)contentWidth;
 - (id)initWithEDString:(id)arg1 style:(id)arg2 parent:(id)arg3;

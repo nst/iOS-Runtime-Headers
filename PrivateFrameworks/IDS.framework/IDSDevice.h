@@ -3,7 +3,7 @@
  */
 
 @interface IDSDevice : NSObject {
-    _IDSDevice *_internal;
+    _IDSDevice * _internal;
 }
 
 @property (getter=isConnected, nonatomic, readonly) BOOL connected;
@@ -11,6 +11,7 @@
 @property (nonatomic, readonly, retain) NSString *enclosureColor;
 @property (nonatomic, readonly, retain) NSArray *identities;
 @property (nonatomic, readonly) BOOL isActive;
+@property (nonatomic, readonly) BOOL isCloudConnected;
 @property (nonatomic, readonly) BOOL isDefaultPairedDevice;
 @property (nonatomic, readonly) BOOL isHSATrusted;
 @property (nonatomic, readonly) BOOL isLocallyPaired;
@@ -26,10 +27,13 @@
 @property (nonatomic, readonly) struct { int x1; int x2; int x3; } operatingSystemVersion;
 @property (nonatomic, readonly) unsigned int pairingProtocolVersion;
 @property (nonatomic, readonly) NSString *productBuildVersion;
+@property (nonatomic, readonly) HMFProductInfo *productInfo;
 @property (nonatomic, readonly) NSString *productName;
 @property (nonatomic, readonly) NSString *productVersion;
 @property (nonatomic, readonly, retain) NSData *pushToken;
 @property (nonatomic, readonly, retain) NSString *service;
+@property (nonatomic, readonly) unsigned int serviceMinCompatibilityVersion;
+@property (nonatomic, readonly) BOOL supportsApplePay;
 @property (nonatomic, readonly) BOOL supportsHandoff;
 @property (nonatomic, readonly) BOOL supportsMMSRelay;
 @property (nonatomic, readonly) BOOL supportsPhoneCalls;
@@ -45,7 +49,6 @@
 - (id)_initWithDictionary:(id)arg1;
 - (id)_internal;
 - (void)_setAccount:(id)arg1;
-- (void)_updateNSUUID:(id)arg1;
 - (void)cleanupStreamPairWithInputStream:(id)arg1 outputStream:(id)arg2;
 - (void)closeSocket:(int)arg1;
 - (void)closeSocketForDomain:(id)arg1;
@@ -57,6 +60,7 @@
 - (id)identities;
 - (id)initWithDictionary:(id)arg1;
 - (BOOL)isActive;
+- (BOOL)isCloudConnected;
 - (BOOL)isConnected;
 - (BOOL)isDefaultPairedDevice;
 - (BOOL)isHSATrusted;
@@ -80,8 +84,10 @@
 - (id)productVersion;
 - (id)pushToken;
 - (id)service;
+- (unsigned int)serviceMinCompatibilityVersion;
 - (void)setNSUUID:(id)arg1;
 - (int)socketForDomain:(id)arg1;
+- (BOOL)supportsApplePay;
 - (BOOL)supportsHandoff;
 - (BOOL)supportsMMSRelay;
 - (BOOL)supportsPhoneCalls;
@@ -101,5 +107,9 @@
 - (id)hd_deviceIdentifier;
 - (BOOL)hd_isEquivalentToDevice:(id)arg1;
 - (id)hd_shortDescription;
+
+// Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
+
+- (id)productInfo;
 
 @end

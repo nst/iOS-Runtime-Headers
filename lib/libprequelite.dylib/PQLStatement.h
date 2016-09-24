@@ -3,23 +3,24 @@
  */
 
 @interface PQLStatement : NSObject {
-    NSMutableArray *_aliveBinds;
-    BOOL _inUse;
-    BOOL _isTraced;
-    PQLStatement *_next;
-    short _specLength;
+    NSMutableArray * _aliveBinds;
+    BOOL  _inUse;
+    BOOL  _isTraced;
+    PQLStatement * _next;
+    id /* block */  _profilingHook;
+    short  _specLength;
     union { 
         unsigned char inlined[8]; 
         unsigned char *ptr; 
-    } _specUnion;
-    struct sqlite3_stmt { } *_stmt;
+    }  _specUnion;
+    struct sqlite3_stmt { } * _stmt;
 }
 
 @property (nonatomic, readonly) BOOL isTraced;
 
 - (void).cxx_destruct;
 - (BOOL)_prepare:(const char *)arg1 withDB:(id)arg2;
-- (void)bindArguments:(void*)arg1;
+- (void)bindArguments:(void*)arg1 db:(id)arg2;
 - (void)dealloc;
 - (id)description;
 - (id)initWithFormat:(id)arg1 arguments:(void*)arg2 db:(id)arg3 cache:(struct cache_s { }*)arg4;

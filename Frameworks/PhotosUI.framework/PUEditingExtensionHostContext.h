@@ -3,7 +3,7 @@
  */
 
 @interface PUEditingExtensionHostContext : NSExtensionContext <PUEditingExtensionHost> {
-    id /* block */ _contentEditingOutputCommitHandler;
+    id /* block */  _contentEditingOutputCommitHandler;
 }
 
 @property (copy) id /* block */ contentEditingOutputCommitHandler;

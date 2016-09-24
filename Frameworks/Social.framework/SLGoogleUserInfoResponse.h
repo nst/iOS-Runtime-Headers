@@ -3,12 +3,12 @@
  */
 
 @interface SLGoogleUserInfoResponse : NSObject {
-    NSString *_displayName;
-    NSString *_emailAddress;
-    NSError *_error;
-    NSString *_errorMessage;
-    int _statusCode;
-    NSDictionary *_userInfo;
+    NSString * _displayName;
+    NSString * _emailAddress;
+    NSError * _error;
+    NSString * _errorMessage;
+    int  _statusCode;
+    NSDictionary * _userInfo;
 }
 
 @property (readonly) NSString *displayName;

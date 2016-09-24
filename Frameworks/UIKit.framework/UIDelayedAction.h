@@ -3,14 +3,14 @@
  */
 
 @interface UIDelayedAction : NSObject {
-    SEL m_action;
-    BOOL m_canceled;
-    double m_delay;
-    NSString *m_runLoopMode;
-    NSDate *m_startDate;
-    id m_target;
-    NSTimer *m_timer;
-    id m_userInfo;
+    SEL  m_action;
+    BOOL  m_canceled;
+    double  m_delay;
+    NSString * m_runLoopMode;
+    NSDate * m_startDate;
+    id  m_target;
+    NSTimer * m_timer;
+    id  m_userInfo;
 }
 
 @property (readonly) BOOL _canceled;

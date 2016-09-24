@@ -3,10 +3,25 @@
  */
 
 @interface UIDebuggingInformationOverlay : UIWindow <UISplitViewControllerDelegate> {
-    UIDebuggingInformationRootTableViewController *_rootTableViewController;
+    BOOL  _checkingTouches;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _drawingOrigin;
+    UIWindow * _inspectedWindow;
+    UIEvent * _lastTouch;
+    BOOL  _touchCaptureEnabled;
+    NSMutableArray * _touchObservers;
 }
 
+@property (nonatomic) BOOL checkingTouches;
+@property (nonatomic) struct CGPoint { double x1; double x2; } drawingOrigin;
+@property (nonatomic, retain) UIWindow *inspectedWindow;
+@property (nonatomic, retain) UIEvent *lastTouch;
+@property (nonatomic, readonly) UIDebuggingInformationOverlayViewController *overlayViewController;
 @property (nonatomic, retain) UIDebuggingInformationRootTableViewController *rootTableViewController;
+@property (nonatomic) BOOL touchCaptureEnabled;
+@property (nonatomic, retain) NSMutableArray *touchObservers;
 
 + (id)overlay;
 + (void)popDisableApplyingConfigurations;
@@ -15,9 +30,25 @@
 
 - (void).cxx_destruct;
 - (void)_handleActivationGesture:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)checkingTouches;
+- (struct CGPoint { double x1; double x2; })drawingOrigin;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)init;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)inspectedWindow;
+- (id)lastTouch;
+- (id)overlayViewController;
 - (id)rootTableViewController;
+- (void)setCheckingTouches:(BOOL)arg1;
+- (void)setDrawingOrigin:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setInspectedWindow:(id)arg1;
+- (void)setLastTouch:(id)arg1;
 - (void)setRootTableViewController:(id)arg1;
+- (void)setTouchCaptureEnabled:(BOOL)arg1;
+- (void)setTouchObservers:(id)arg1;
+- (void)toggleFullscreen;
 - (void)toggleVisibility;
+- (BOOL)touchCaptureEnabled;
+- (id)touchObservers;
 
 @end

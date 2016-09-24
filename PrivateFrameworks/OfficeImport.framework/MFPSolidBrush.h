@@ -3,7 +3,7 @@
  */
 
 @interface MFPSolidBrush : MFPBrush {
-    OITSUColor *mColor;
+    OITSUColor * mColor;
 }
 
 - (id)color;

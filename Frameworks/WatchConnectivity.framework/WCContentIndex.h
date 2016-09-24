@@ -3,10 +3,11 @@
  */
 
 @interface WCContentIndex : NSObject <NSFilePresenter> {
-    NSMutableArray *_cachedContentIndex;
-    NSURL *_itemURL;
-    id _lastGenerationIdentifier;
-    NSOperationQueue *_operationQueue;
+    NSMutableArray * _cachedContentIndex;
+    BOOL  _invalidated;
+    NSURL * _itemURL;
+    id  _lastGenerationIdentifier;
+    NSOperationQueue * _operationQueue;
 }
 
 @property (nonatomic, retain) NSMutableArray *cachedContentIndex;
@@ -14,6 +15,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly, copy) NSArray *index;
+@property (nonatomic) BOOL invalidated;
 @property (nonatomic, retain) NSURL *itemURL;
 @property (nonatomic, retain) id lastGenerationIdentifier;
 @property (nonatomic, retain) NSOperationQueue *operationQueue;
@@ -26,11 +28,12 @@
 - (void)addContentIdentifier:(id)arg1;
 - (id)cachedContentIndex;
 - (void)commit;
-- (void)dealloc;
 - (id)description;
 - (unsigned int)hash;
 - (id)index;
 - (id)initWithContainingFolder:(id)arg1;
+- (void)invalidate;
+- (BOOL)invalidated;
 - (BOOL)isEqual:(id)arg1;
 - (id)itemURL;
 - (id)lastGenerationIdentifier;
@@ -42,6 +45,7 @@
 - (id)presentedItemURL;
 - (void)removeContentIdentifier:(id)arg1;
 - (void)setCachedContentIndex:(id)arg1;
+- (void)setInvalidated:(BOOL)arg1;
 - (void)setItemURL:(id)arg1;
 - (void)setLastGenerationIdentifier:(id)arg1;
 - (void)setOperationQueue:(id)arg1;

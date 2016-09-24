@@ -3,7 +3,7 @@
  */
 
 @interface PSControlTableCell : PSTableCell {
-    UIControl *_control;
+    UIControl * _control;
 }
 
 @property (nonatomic, retain) UIControl *control;

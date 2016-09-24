@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DBarNormalResource : TSCH3DAbstractBarNormalResource {
-    TSCH3DBarExtrusionGeometry *mGeometry;
+    TSCH3DBarExtrusionGeometry * mGeometry;
 }
 
 - (void)dealloc;

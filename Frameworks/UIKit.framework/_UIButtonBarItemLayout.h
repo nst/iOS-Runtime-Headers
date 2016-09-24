@@ -3,18 +3,18 @@
  */
 
 @interface _UIButtonBarItemLayout : _UIButtonBarLayout {
-    NSLayoutConstraint *_groupSameSize;
-    UIBarButtonItem *_item;
-    UIView *_itemView;
-    id /* block */ _itemViewGenerator;
-    NSLayoutConstraint *_maximumAlignmentSize;
-    NSLayoutConstraint *_popoverGuideHeight;
-    NSLayoutConstraint *_popoverGuideLeading;
-    NSLayoutConstraint *_popoverGuideTop;
-    NSLayoutConstraint *_popoverGuideTrailing;
-    UILayoutGuide *_popoverLayoutGuide;
-    NSLayoutConstraint *_requestedSize;
-    bool _useGroupSizing;
+    NSLayoutConstraint * _groupSameSize;
+    UIBarButtonItem * _item;
+    UIView * _itemView;
+    id /* block */  _itemViewGenerator;
+    NSLayoutConstraint * _maximumAlignmentSize;
+    NSLayoutConstraint * _popoverGuideHeight;
+    NSLayoutConstraint * _popoverGuideLeading;
+    NSLayoutConstraint * _popoverGuideTop;
+    NSLayoutConstraint * _popoverGuideTrailing;
+    UILayoutGuide * _popoverLayoutGuide;
+    NSLayoutConstraint * _requestedSize;
+    bool  _useGroupSizing;
 }
 
 @property (nonatomic, copy) id /* block */ itemViewGenerator;

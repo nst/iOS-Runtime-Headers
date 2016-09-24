@@ -3,21 +3,21 @@
  */
 
 @interface AKImageAnnotation : AKAnnotation <AKFlippableAnnotationProtocol, AKRectangularAnnotationProtocol, AKRotatableAnnotationProtocol> {
-    BOOL _hasShadow;
-    BOOL _horizontallyFlipped;
-    UIImage *_image;
+    BOOL  _hasShadow;
+    BOOL  _horizontallyFlipped;
+    UIImage * _image;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _rectangle;
-    float _rotationAngle;
-    BOOL _verticallyFlipped;
+    }  _rectangle;
+    double  _rotationAngle;
+    BOOL  _verticallyFlipped;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -26,8 +26,8 @@
 @property (readonly) unsigned int hash;
 @property BOOL horizontallyFlipped;
 @property (retain) UIImage *image;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rectangle;
-@property float rotationAngle;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } rectangle;
+@property double rotationAngle;
 @property (readonly) Class superclass;
 @property BOOL verticallyFlipped;
 
@@ -40,23 +40,23 @@
 - (void)adjustModelToCompensateForOriginalExif;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
-- (void)flattenModelExifOrientation:(int)arg1 withModelSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)flattenModelExifOrientation:(int)arg1 withModelSize:(struct CGSize { double x1; double x2; })arg2;
 - (BOOL)hasShadow;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hitTestBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })hitTestBounds;
 - (BOOL)horizontallyFlipped;
 - (id)image;
 - (id)initWithCoder:(id)arg1;
 - (id)keysForValuesToObserveForRedrawing;
 - (id)keysForValuesToObserveForUndo;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectangle;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectangle;
 - (float)rotationAngle;
 - (void)setHasShadow:(BOOL)arg1;
 - (void)setHorizontallyFlipped:(BOOL)arg1;
 - (void)setImage:(id)arg1;
-- (void)setRectangle:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setRectangle:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setRotationAngle:(float)arg1;
 - (void)setVerticallyFlipped:(BOOL)arg1;
-- (void)translateBy:(struct CGPoint { float x1; float x2; })arg1;
+- (void)translateBy:(struct CGPoint { double x1; double x2; })arg1;
 - (BOOL)verticallyFlipped;
 
 @end

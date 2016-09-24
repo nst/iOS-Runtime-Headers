@@ -3,8 +3,8 @@
  */
 
 @interface IKStyleFactory : NSObject {
-    NSMutableDictionary *_styleListsByClassSelector;
-    IKStylesGroup *_stylesGroup;
+    NSMutableDictionary * _styleListsByClassSelector;
+    IKStylesGroup * _stylesGroup;
 }
 
 @property (nonatomic, readonly, retain) NSMutableDictionary *styleListsByClassSelector;

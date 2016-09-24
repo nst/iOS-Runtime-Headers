@@ -3,22 +3,22 @@
  */
 
 @interface ABMultiCellContentView : ABPersonCellContentView <ABResponderDelegate> {
-    int _abCellStyle;
-    BOOL _allowsEditing;
-    UITableViewCell *_cell;
-    BOOL _isEditing;
-    BOOL _isEmphasized;
-    BOOL _isHighlighted;
-    BOOL _isImportant;
-    UIView *_labelDivider;
-    BOOL _needsReload;
-    ABAbstractPropertyGroup *_pg;
-    id _pgInfo;
-    int _property;
-    BOOL _shouldIgnoreEndEditing;
-    UIView *_touchedView;
-    <ABMultiCellContentViewUpdateDelegate> *_updateDelegate;
-    BOOL _usesCustomPropertyCell;
+    int  _abCellStyle;
+    BOOL  _allowsEditing;
+    UITableViewCell * _cell;
+    BOOL  _isEditing;
+    BOOL  _isEmphasized;
+    BOOL  _isHighlighted;
+    BOOL  _isImportant;
+    UIView * _labelDivider;
+    BOOL  _needsReload;
+    ABAbstractPropertyGroup * _pg;
+    id  _pgInfo;
+    int  _property;
+    BOOL  _shouldIgnoreEndEditing;
+    UIView * _touchedView;
+    <ABMultiCellContentViewUpdateDelegate> * _updateDelegate;
+    BOOL  _usesCustomPropertyCell;
 }
 
 @property (nonatomic) int abCellStyle;
@@ -34,15 +34,15 @@
 @property (nonatomic) BOOL usesCustomPropertyCell;
 
 + (Class)classForProperty:(int)arg1;
-+ (struct CGSize { float x1; float x2; })layoutSubviewsForView:(id)arg1 usingSize:(struct CGSize { float x1; float x2; })arg2 propertyGroup:(id)arg3 info:(id)arg4 styleProvider:(id)arg5 whenEditing:(BOOL)arg6;
++ (struct CGSize { double x1; double x2; })layoutSubviewsForView:(id)arg1 usingSize:(struct CGSize { double x1; double x2; })arg2 propertyGroup:(id)arg3 info:(id)arg4 styleProvider:(id)arg5 whenEditing:(BOOL)arg6;
 + (id)reuseIdentifierForPropertyGroup:(id)arg1 info:(id)arg2;
 + (void)setupTextField:(id)arg1 withStyleProvider:(id)arg2;
-+ (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 forPropertyGroup:(id)arg2 info:(id)arg3 styleProvider:(id)arg4 whenEditing:(BOOL)arg5;
++ (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1 forPropertyGroup:(id)arg2 info:(id)arg3 styleProvider:(id)arg4 whenEditing:(BOOL)arg5;
 
 - (BOOL)ABTabToNextResponder:(BOOL)arg1 fromView:(id)arg2;
 - (int)abCellStyle;
 - (BOOL)allowsEditing;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })backgroundRectForView:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })backgroundRectForView:(id)arg1;
 - (id)badgeIconWhenEditing:(BOOL)arg1;
 - (BOOL)becomeFirstResponder;
 - (BOOL)canBecomeFirstResponder;
@@ -62,13 +62,13 @@
 - (BOOL)entryFieldShouldBeginEditing:(id)arg1;
 - (BOOL)entryFieldShouldEndEditing:(id)arg1;
 - (BOOL)entryFieldShouldReturn:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })focusRectForView:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForLabelDivider;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })focusRectForView:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForLabelDivider;
 - (id)hitTestForTouches:(id)arg1 withEvent:(id)arg2;
 - (id)init;
-- (id)initCommonWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 property:(int)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 property:(int)arg2;
+- (id)initCommonWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 property:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 property:(int)arg2;
 - (BOOL)isEditing;
 - (BOOL)isEmphasized;
 - (BOOL)isHighlighted;
@@ -77,11 +77,11 @@
 - (id)labelTextColorWhenEditing:(BOOL)arg1;
 - (void)layoutLabel;
 - (void)layoutSubviews;
-- (id)newTextFieldWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 tag:(int)arg2 keyboardSettings:(id)arg3 delegate:(id)arg4;
+- (id)newTextFieldWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 tag:(int)arg2 keyboardSettings:(id)arg3 delegate:(id)arg4;
 - (id)pickerView;
 - (id)propertyGroup;
 - (id)propertyGroupInfo;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForView:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForView:(id)arg1;
 - (void)reload;
 - (void)reloadFromModel;
 - (void)reloadIfNeeded:(BOOL)arg1 reloadFromModel:(BOOL)arg2;
@@ -104,8 +104,8 @@
 - (void)setUsesCustomPropertyCell:(BOOL)arg1;
 - (BOOL)shouldIgnoreEndEditing;
 - (BOOL)shouldSendTouchesToSuperviewForHitView:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 forPropertyGroup:(id)arg2 info:(id)arg3 styleProvider:(id)arg4 whenEditing:(BOOL)arg5;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1 forPropertyGroup:(id)arg2 info:(id)arg3 styleProvider:(id)arg4 whenEditing:(BOOL)arg5;
 - (BOOL)tabToNextResponder:(BOOL)arg1 fromView:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

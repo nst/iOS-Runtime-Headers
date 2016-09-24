@@ -3,8 +3,8 @@
  */
 
 @interface PSUIPrivacyController : PSListController {
-    ACAccountStore *_accountStore;
-    PSSpecifier *_locationSpecifier;
+    ACAccountStore * _accountStore;
+    PSSpecifier * _locationSpecifier;
 }
 
 + (void)formatSearchEntries:(id)arg1 parent:(id)arg2;

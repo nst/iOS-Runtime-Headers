@@ -3,10 +3,10 @@
  */
 
 @interface AXIPCServerMessageHandlerContext : NSObject {
-    BOOL _async;
-    id /* block */ _handler;
-    SEL _selector;
-    id _target;
+    BOOL  _async;
+    id /* block */  _handler;
+    SEL  _selector;
+    id  _target;
 }
 
 @property (nonatomic, readonly) BOOL async;

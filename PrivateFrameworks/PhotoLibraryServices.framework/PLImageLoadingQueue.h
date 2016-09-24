@@ -3,9 +3,9 @@
  */
 
 @interface PLImageLoadingQueue : NSObject {
-    PLImageCache *_cache;
-    <PLImageLoadingQueueDelegate> *_delegate;
-    NSLock *_lock;
+    PLImageCache * _cache;
+    <PLImageLoadingQueueDelegate> * _delegate;
+    NSLock * _lock;
 }
 
 @property (nonatomic) <PLImageLoadingQueueDelegate> *delegate;

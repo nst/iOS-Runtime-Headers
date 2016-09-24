@@ -3,11 +3,11 @@
  */
 
 @interface SUAutoInstallForecast : NSObject <NSCopying, NSSecureCoding> {
-    NSDate *_firstUnlock;
-    NSDate *_suEndDate;
-    NSDate *_suStartDate;
-    NSDate *_unlockEndDate;
-    NSDate *_unlockStartDate;
+    NSDate * _firstUnlock;
+    NSDate * _suEndDate;
+    NSDate * _suStartDate;
+    NSDate * _unlockEndDate;
+    NSDate * _unlockStartDate;
 }
 
 @property (nonatomic, retain) NSDate *firstUnlock;

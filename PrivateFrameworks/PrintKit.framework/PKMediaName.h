@@ -3,14 +3,14 @@
  */
 
 @interface PKMediaName : NSObject {
-    NSString *_baseName;
-    double _conversionFactor;
-    double _heightInUnits;
-    NSString *_mediaClass;
-    NSString *_mediaName;
-    int _units;
-    double _widthInUnits;
-    NSString *_widthStr;
+    NSString * _baseName;
+    double  _conversionFactor;
+    double  _heightInUnits;
+    NSString * _mediaClass;
+    NSString * _mediaName;
+    int  _units;
+    double  _widthInUnits;
+    NSString * _widthStr;
 }
 
 @property (retain) NSString *baseName;

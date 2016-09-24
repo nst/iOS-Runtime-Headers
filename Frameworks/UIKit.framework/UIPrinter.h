@@ -3,8 +3,8 @@
  */
 
 @interface UIPrinter : NSObject {
-    NSURL *URL;
-    id _printerInfo;
+    NSURL * URL;
+    id  _printerInfo;
 }
 
 @property (readonly, copy) NSURL *URL;

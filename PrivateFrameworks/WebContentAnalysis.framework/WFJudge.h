@@ -3,7 +3,7 @@
  */
 
 @interface WFJudge : NSObject {
-    WFLSMMap *map;
+    WFLSMMap * map;
 }
 
 + (id)defaultJudge;

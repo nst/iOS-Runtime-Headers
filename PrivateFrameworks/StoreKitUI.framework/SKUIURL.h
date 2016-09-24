@@ -3,10 +3,10 @@
  */
 
 @interface SKUIURL : NSObject <NSCopying> {
-    NSMutableDictionary *_queryDictionary;
-    NSString *_referrerApplicationName;
-    NSString *_referrerURLString;
-    NSURL *_url;
+    NSMutableDictionary * _queryDictionary;
+    NSString * _referrerApplicationName;
+    NSString * _referrerURLString;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSString *URLBagKey;
@@ -20,6 +20,8 @@
 
 - (void).cxx_destruct;
 - (id)URLBagKey;
+- (id)_appStoreSearchURLBagKey;
+- (id)_decodedQueryParameter:(id)arg1;
 - (id)_queryDictionary;
 - (id)_searchGroupForSearchKind:(id)arg1;
 - (id)_searchURLBagKey;

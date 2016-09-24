@@ -3,16 +3,18 @@
  */
 
 @interface CKAccountInfo : NSObject <NSCopying, NSSecureCoding> {
-    BOOL _accountWantsPushRegistration;
-    NSString *_email;
-    BOOL _isUnitTestingAccount;
-    NSString *_password;
+    BOOL  _accountWantsPushRegistration;
+    NSString * _email;
+    BOOL  _isUnitTestingAccount;
+    NSString * _password;
+    NSString * _secondEmail;
 }
 
 @property (nonatomic) BOOL accountWantsPushRegistration;
 @property (nonatomic, readonly) NSString *email;
 @property (nonatomic) BOOL isUnitTestingAccount;
 @property (nonatomic, readonly) NSString *password;
+@property (nonatomic, copy) NSString *secondEmail;
 
 + (BOOL)supportsSecureCoding;
 
@@ -29,7 +31,9 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isUnitTestingAccount;
 - (id)password;
+- (id)secondEmail;
 - (void)setAccountWantsPushRegistration:(BOOL)arg1;
 - (void)setIsUnitTestingAccount:(BOOL)arg1;
+- (void)setSecondEmail:(id)arg1;
 
 @end

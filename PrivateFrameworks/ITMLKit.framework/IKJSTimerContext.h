@@ -3,11 +3,11 @@
  */
 
 @interface IKJSTimerContext : NSObject {
-    BOOL _isRepeating;
-    IKJSManagedArray *_managedArgs;
-    JSManagedValue *_managedCallback;
-    id _ownerObject;
-    NSTimer *_timer;
+    BOOL  _isRepeating;
+    IKJSManagedArray * _managedArgs;
+    JSManagedValue * _managedCallback;
+    id  _ownerObject;
+    NSTimer * _timer;
 }
 
 @property (nonatomic, readonly) BOOL isRepeating;

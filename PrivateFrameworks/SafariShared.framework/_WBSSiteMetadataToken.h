@@ -3,15 +3,17 @@
  */
 
 @interface _WBSSiteMetadataToken : NSObject {
-    NSTimer *_delayTimer;
-    BOOL _isOneTimeRequest;
-    int _priority;
-    WBSSiteMetadataRequest *_request;
-    id /* block */ _responseHandler;
+    NSTimer * _delayTimer;
+    BOOL  _isOneTimeRequest;
+    int  _lastResponseType;
+    int  _priority;
+    WBSSiteMetadataRequest * _request;
+    id /* block */  _responseHandler;
 }
 
 @property (nonatomic, retain) NSTimer *delayTimer;
 @property (nonatomic, readonly) BOOL isOneTimeRequest;
+@property (nonatomic) int lastResponseType;
 @property (nonatomic) int priority;
 @property (nonatomic, readonly) WBSSiteMetadataRequest *request;
 @property (nonatomic, readonly, copy) id /* block */ responseHandler;
@@ -19,13 +21,16 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)delayTimer;
+- (void)dispatchResponse:(id)arg1;
 - (id)initWithOneTimeRequest:(id)arg1 priority:(int)arg2 responseHandler:(id /* block */)arg3;
 - (id)initWithRequest:(id)arg1 priority:(int)arg2 responseHandler:(id /* block */)arg3;
 - (BOOL)isOneTimeRequest;
+- (int)lastResponseType;
 - (int)priority;
 - (id)request;
 - (id /* block */)responseHandler;
 - (void)setDelayTimer:(id)arg1;
+- (void)setLastResponseType:(int)arg1;
 - (void)setPriority:(int)arg1;
 
 @end

@@ -3,13 +3,13 @@
  */
 
 @interface ICBackoffTimer : NSObject {
-    unsigned int _backoffCount;
-    double _initialTimeInterval;
-    double _maxTimeInterval;
-    SEL _selector;
-    id _target;
-    NSTimer *_timer;
-    id _userInfo;
+    unsigned int  _backoffCount;
+    double  _initialTimeInterval;
+    double  _maxTimeInterval;
+    SEL  _selector;
+    id  _target;
+    NSTimer * _timer;
+    id  _userInfo;
 }
 
 @property (nonatomic) unsigned int backoffCount;

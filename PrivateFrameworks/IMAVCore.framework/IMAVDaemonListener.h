@@ -3,9 +3,9 @@
  */
 
 @interface IMAVDaemonListener : NSObject {
-    NSMutableArray *_handlers;
-    BOOL _postedSetupComplete;
-    BOOL _setupComplete;
+    NSMutableArray * _handlers;
+    BOOL  _postedSetupComplete;
+    BOOL  _setupComplete;
 }
 
 @property (nonatomic, readonly) BOOL isSetupComplete;

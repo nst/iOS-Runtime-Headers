@@ -3,10 +3,10 @@
  */
 
 @interface CKStarkConversationListCell : UITableViewCell {
-    UIDateLabel *_dateLabel;
-    UIImage *_monogramImage;
-    UILabel *_recipientsLabel;
-    UIImageView *_unreadImageView;
+    UIDateLabel * _dateLabel;
+    UIImage * _monogramImage;
+    UILabel * _recipientsLabel;
+    UIImageView * _unreadImageView;
 }
 
 @property (nonatomic, retain) NSDate *date;
@@ -19,8 +19,8 @@
 
 + (float)starkCellMarginWidth;
 
+- (void).cxx_destruct;
 - (id)dateLabel;
-- (void)dealloc;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (id)monogramImage;

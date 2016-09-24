@@ -3,10 +3,10 @@
  */
 
 @interface PFUbiquitySwitchboard : NSObject {
-    NSRecursiveLock *_registrationLock;
-    NSMutableDictionary *_rootLocationToLocalPeerIDToFilePresenters;
-    NSMutableDictionary *_rootLocationToLocalPeerIDToPreviousEntries;
-    NSMutableDictionary *_storeNameToLocalPeerIDToEntry;
+    NSRecursiveLock * _registrationLock;
+    NSMutableDictionary * _rootLocationToLocalPeerIDToFilePresenters;
+    NSMutableDictionary * _rootLocationToLocalPeerIDToPreviousEntries;
+    NSMutableDictionary * _storeNameToLocalPeerIDToEntry;
 }
 
 + (void)initialize;

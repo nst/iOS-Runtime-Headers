@@ -3,9 +3,9 @@
  */
 
 @interface _MPMediaLibraryEntityChange : NSObject {
-    NSString *_anchor;
-    int _deletionType;
-    MPMediaEntity *_entity;
+    NSString * _anchor;
+    int  _deletionType;
+    MPMediaEntity * _entity;
 }
 
 @property (nonatomic, readonly, copy) NSString *anchor;

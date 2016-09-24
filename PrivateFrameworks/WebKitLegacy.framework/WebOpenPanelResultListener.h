@@ -3,7 +3,7 @@
  */
 
 @interface WebOpenPanelResultListener : NSObject <WebOpenPanelResultListener> {
-    struct FileChooser { unsigned int x1; struct FileChooserClient {} *x2; struct FileChooserSettings { bool x_3_1_1; struct Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> { struct String {} *x_2_2_1; unsigned int x_2_2_2; unsigned int x_2_2_3; } x_3_1_2; struct Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> { struct String {} *x_3_2_1; unsigned int x_3_2_2; unsigned int x_3_2_3; } x_3_1_3; struct Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> { struct String {} *x_4_2_1; unsigned int x_4_2_2; unsigned int x_4_2_3; } x_3_1_4; } x3; } *_chooser;
+    struct FileChooser { unsigned int x1; struct FileChooserClient {} *x2; struct FileChooserSettings { bool x_3_1_1; struct Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> { struct String {} *x_2_2_1; unsigned int x_2_2_2; unsigned int x_2_2_3; } x_3_1_2; struct Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> { struct String {} *x_3_2_1; unsigned int x_3_2_2; unsigned int x_3_2_3; } x_3_1_3; struct Vector<WTF::String, 0, WTF::CrashOnOverflow, 16> { struct String {} *x_4_2_1; unsigned int x_4_2_2; unsigned int x_4_2_3; } x_3_1_4; } x3; } * _chooser;
 }
 
 @property (readonly, copy) NSString *debugDescription;

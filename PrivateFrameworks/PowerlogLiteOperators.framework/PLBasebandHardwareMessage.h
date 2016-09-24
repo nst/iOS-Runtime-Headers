@@ -3,20 +3,20 @@
  */
 
 @interface PLBasebandHardwareMessage : PLBasebandMessage {
-    struct _PLBasebandHWOnOffComponentStats { unsigned int x1; unsigned int x2; unsigned int x3[2]; } *_adm;
-    struct _PLBasebandHWStatsADSP { struct _PLBasebandHWOnOffComponentStats { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3[2]; } x1; struct _PLBasebandHWOnOffComponentStats { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3[2]; } x2; unsigned int x3; unsigned int x4; unsigned int x5[5]; } *_adsp;
-    struct _PLBasebandHWStatsARMPerf { unsigned int x1; unsigned int x2; unsigned int x3[8]; } *_armPerf;
-    unsigned int _duration;
-    struct _PLBasebandHWOnOffComponentStats { unsigned int x1; unsigned int x2; unsigned int x3[2]; } *_gps;
-    struct _PLBasebandHWStatsHeader { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; } *_header;
-    struct _PLBasebandHWOnOffComponentStats { unsigned int x1; unsigned int x2; unsigned int x3[2]; } *_mdm;
-    struct _PLBasebandHWStatsMDSP { struct _PLBasebandHWOnOffComponentStats { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3[2]; } x1; struct _PLBasebandHWOnOffComponentStats { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3[2]; } x2; unsigned int x3; unsigned int x4; unsigned int x5[5]; } *_mdsp;
-    struct _PLBasebandHWStatsRXRSSI { unsigned int x1[4]; unsigned int x2[13]; unsigned int x3[13]; } *_rx;
-    struct _PLBasebandHWOnOffComponentStats { unsigned int x1; unsigned int x2; unsigned int x3[2]; } *_spi;
-    struct _PLBasebandHWStatsSystem { unsigned int x1; unsigned int x2; unsigned int x3[3]; } *_system;
-    struct _PLBasebandHWStatsTXPower { unsigned int x1[12]; } *_tx;
-    struct _PLBasebandHWStatsUART { struct _PLBasebandHWOnOffComponentStats { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3[2]; } x1; struct _PLBasebandHWOnOffComponentStats { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3[2]; } x2; } *_uart;
-    struct _PLBasebandHWOnOffComponentStats { unsigned int x1; unsigned int x2; unsigned int x3[2]; } *_usb;
+    struct _PLBasebandHWOnOffComponentStats { unsigned int x1; unsigned int x2; unsigned int x3[2]; } * _adm;
+    struct _PLBasebandHWStatsADSP { struct _PLBasebandHWOnOffComponentStats { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3[2]; } x1; struct _PLBasebandHWOnOffComponentStats { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3[2]; } x2; unsigned int x3; unsigned int x4; unsigned int x5[5]; } * _adsp;
+    struct _PLBasebandHWStatsARMPerf { unsigned int x1; unsigned int x2; unsigned int x3[8]; } * _armPerf;
+    unsigned int  _duration;
+    struct _PLBasebandHWOnOffComponentStats { unsigned int x1; unsigned int x2; unsigned int x3[2]; } * _gps;
+    struct _PLBasebandHWStatsHeader { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; } * _header;
+    struct _PLBasebandHWOnOffComponentStats { unsigned int x1; unsigned int x2; unsigned int x3[2]; } * _mdm;
+    struct _PLBasebandHWStatsMDSP { struct _PLBasebandHWOnOffComponentStats { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3[2]; } x1; struct _PLBasebandHWOnOffComponentStats { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3[2]; } x2; unsigned int x3; unsigned int x4; unsigned int x5[5]; } * _mdsp;
+    struct _PLBasebandHWStatsRXRSSI { unsigned int x1[4]; unsigned int x2[13]; unsigned int x3[13]; } * _rx;
+    struct _PLBasebandHWOnOffComponentStats { unsigned int x1; unsigned int x2; unsigned int x3[2]; } * _spi;
+    struct _PLBasebandHWStatsSystem { unsigned int x1; unsigned int x2; unsigned int x3[3]; } * _system;
+    struct _PLBasebandHWStatsTXPower { unsigned int x1[12]; } * _tx;
+    struct _PLBasebandHWStatsUART { struct _PLBasebandHWOnOffComponentStats { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3[2]; } x1; struct _PLBasebandHWOnOffComponentStats { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3[2]; } x2; } * _uart;
+    struct _PLBasebandHWOnOffComponentStats { unsigned int x1; unsigned int x2; unsigned int x3[2]; } * _usb;
 }
 
 @property (nonatomic) struct _PLBasebandHWOnOffComponentStats { unsigned int x1; unsigned int x2; unsigned int x3[2]; }*adm;
@@ -44,7 +44,7 @@
 - (id)convertUint16ArrayToNSArray:(unsigned short*)arg1 ofSize:(unsigned int)arg2;
 - (id)convertUint32ArrayToNSArray:(unsigned int*)arg1 ofSize:(unsigned int)arg2;
 - (id)convertUint32ArrayToNSArray:(unsigned int*)arg1 ofSize:(unsigned int)arg2 andFill:(unsigned int)arg3;
-- (id)convertUint64ArrayToNSArray:(unsigned long long*)arg1 ofSize:(unsigned int)arg2;
+- (id)convertUint64ArrayToNSArray:(unsigned int*)arg1 ofSize:(unsigned int)arg2;
 - (id)convertUint8ArrayToNSArray:(char *)arg1 ofSize:(unsigned int)arg2;
 - (void)formatArray:(unsigned int*)arg1 ofSize:(unsigned int)arg2 inString:(id)arg3;
 - (void)formatArray:(unsigned int*)arg1 ofSize:(unsigned int)arg2 inString:(id)arg3 inReverse:(BOOL)arg4;

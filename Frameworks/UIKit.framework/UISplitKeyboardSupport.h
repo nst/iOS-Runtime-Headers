@@ -3,17 +3,26 @@
  */
 
 @interface UISplitKeyboardSupport : UIKeyboardMotionSupport <UIGestureRecognizerDelegate, UIKeyboardKeyplaneTransitionDelegate> {
-    id /* block */ _bounceCompletionBlock;
-    CADisplayLink *_displayLink;
-    float _initialTranslation;
-    BOOL _isSplitting;
-    BOOL _isTranslating;
-    double _lastBounceTime;
-    double _lastTranslationNotificationTime;
-    BOOL _splitLockState;
-    float _targetTranslation;
-    UIPanGestureRecognizer *_translateRecognizer;
-    float _translationVelocity;
+    id /* block */  _bounceCompletionBlock;
+    CADisplayLink * _displayLink;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _initialTranslation;
+    BOOL  _isSplitting;
+    BOOL  _isTranslating;
+    double  _lastBounceTime;
+    double  _lastTranslationNotificationTime;
+    BOOL  _splitLockState;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _targetTranslation;
+    UIPanGestureRecognizer * _translateRecognizer;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _translationVelocity;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -26,6 +35,7 @@
 - (void)_connectController:(id)arg1;
 - (void)_disconnectingController:(id)arg1;
 - (void)_updateBounceAnimation:(id)arg1;
+- (void)_updatedController;
 - (void)bounceAnimationDidFinish;
 - (BOOL)completedPlacementFrom:(id)arg1 to:(id)arg2 forController:(id)arg3;
 - (void)dealloc;
@@ -46,5 +56,6 @@
 - (void)translateToPlacement:(id)arg1 quietly:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)undock;
 - (void)updateProgress:(float)arg1 startHeight:(float)arg2 endHeight:(float)arg3;
+- (void)updatedControllerApplicator:(id)arg1;
 
 @end

@@ -3,12 +3,12 @@
  */
 
 @interface MSASModelBase : NSObject {
-    struct sqlite3 { } *_db;
-    NSObject<OS_dispatch_queue> *_dbQueue;
-    BOOL _dbWasRecreated;
-    NSString *_personID;
-    NSObject<OS_dispatch_queue> *_statementQueue;
-    struct __CFDictionary { } *_statements;
+    struct sqlite3 { } * _db;
+    NSObject<OS_dispatch_queue> * _dbQueue;
+    BOOL  _dbWasRecreated;
+    NSString * _personID;
+    NSObject<OS_dispatch_queue> * _statementQueue;
+    struct __CFDictionary { } * _statements;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *dbQueue;

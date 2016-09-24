@@ -6,11 +6,11 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _compressedRange;
-    NSData *_contents;
-    BOOL _isDeflated;
-    NSString *_path;
-    int _uncompressedSize;
+    }  _compressedRange;
+    NSData * _contents;
+    BOOL  _isDeflated;
+    NSString * _path;
+    int  _uncompressedSize;
 }
 
 @property struct _NSRange { unsigned int x1; unsigned int x2; } compressedRange;

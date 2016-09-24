@@ -3,15 +3,21 @@
  */
 
 @interface AVMediaSelectionOption : NSObject <NSCopying> {
-    AVMediaSelectionOptionInternal *_mediaSelectionOption;
+    AVMediaSelectionOptionInternal * _mediaSelectionOption;
 }
 
+@property (getter=isAC3Only, readonly) BOOL AC3Only;
+@property (getter=isCC, readonly) BOOL CC;
+@property (getter=isSDH, readonly) BOOL SDH;
+@property (getter=isAuxiliary, readonly) BOOL auxiliary;
 @property (nonatomic, readonly) NSArray *availableMetadataFormats;
 @property (nonatomic, readonly) NSArray *commonMetadata;
 @property (nonatomic, readonly) NSString *displayName;
+@property (getter=isEasyReader, readonly) BOOL easyReader;
 @property (nonatomic, readonly) NSString *extendedLanguageTag;
 @property (nonatomic, readonly) NSLocale *locale;
 @property (nonatomic, readonly) NSString *localizedDisplayName;
+@property (getter=isMain, readonly) BOOL main;
 @property (nonatomic, readonly) NSArray *mediaSubTypes;
 @property (nonatomic, readonly) NSString *mediaType;
 @property (nonatomic, readonly) BOOL mpIsOnlyAC3;
@@ -24,9 +30,11 @@
 
 // Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
++ (BOOL)_plistHasOptionIdentifier:(id)arg1;
 + (id)mediaSelectionOptionForAsset:(id)arg1 group:(id)arg2 dictionary:(id)arg3 hasUnderlyingTrack:(BOOL)arg4;
 
 - (id)_ancillaryDescription;
+- (id)_displayNameWithLocale:(id)arg1 fallingBackToMatchingUndeterminedAndMultilingual:(BOOL)arg2;
 - (id)_groupID;
 - (id)_groupMediaCharacteristics;
 - (id)_groupMediaType;
@@ -49,7 +57,6 @@
 - (id)dictionary;
 - (id)displayName;
 - (id)displayNameWithLocale:(id)arg1;
-- (id)displayNameWithLocale:(id)arg1 fallingBackToMatchingUndeterminedAndMultilingual:(BOOL)arg2;
 - (BOOL)displaysNonForcedSubtitles;
 - (id)extendedLanguageTag;
 - (id)fallbackIDs;
@@ -75,10 +82,13 @@
 
 // Image: /System/Library/Frameworks/AVKit.framework/AVKit
 
-- (int)_caseInsensitiveCompare:(id)arg1;
-- (BOOL)_containsAC3;
-- (BOOL)_containsOnlyAC3;
-- (id)_extendedLanguageTagOrUndetermined;
+- (BOOL)isAC3Only;
+- (BOOL)isAuxiliary;
+- (BOOL)isCC;
+- (BOOL)isEasyReader;
+- (BOOL)isMain;
+- (BOOL)isSDH;
+- (int)languageCompare:(id)arg1;
 - (id)localizedDisplayName;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer

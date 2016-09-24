@@ -3,8 +3,8 @@
  */
 
 @interface SKUIItemViewElement : SKUIViewElement {
-    SKUIViewElementText *_itemText;
-    BOOL _selected;
+    SKUIViewElementText * _itemText;
+    BOOL  _selected;
 }
 
 @property (nonatomic, readonly) SKUIViewElementText *itemText;

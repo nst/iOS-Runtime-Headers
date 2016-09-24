@@ -3,10 +3,10 @@
  */
 
 @interface CAStateControllerUndo : NSObject <CAStateRecorder> {
-    NSMutableArray *_elements;
-    CAStateControllerUndo *_next;
-    CAState *_state;
-    NSMutableArray *_transitions;
+    NSMutableArray * _elements;
+    CAStateControllerUndo * _next;
+    CAState * _state;
+    NSMutableArray * _transitions;
 }
 
 @property (readonly, copy) NSString *debugDescription;

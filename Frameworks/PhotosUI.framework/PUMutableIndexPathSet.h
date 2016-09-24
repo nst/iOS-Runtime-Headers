@@ -3,7 +3,7 @@
  */
 
 @interface PUMutableIndexPathSet : PUIndexPathSet {
-    NSMutableSet *_indexPaths;
+    NSMutableSet * _indexPaths;
 }
 
 - (void).cxx_destruct;

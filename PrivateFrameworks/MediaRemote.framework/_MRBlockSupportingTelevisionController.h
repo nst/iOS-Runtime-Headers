@@ -3,8 +3,8 @@
  */
 
 @interface _MRBlockSupportingTelevisionController : MRTelevisionController <MRTelevisionDelegate> {
-    _MRTelevisionControllerBlockCallback *_discoveryCallback;
-    _MRTelevisionControllerBlockCallback *_removalCallback;
+    _MRTelevisionControllerBlockCallback * _discoveryCallback;
+    _MRTelevisionControllerBlockCallback * _removalCallback;
 }
 
 @property (readonly, copy) NSString *debugDescription;

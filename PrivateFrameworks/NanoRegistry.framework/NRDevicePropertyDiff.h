@@ -3,7 +3,7 @@
  */
 
 @interface NRDevicePropertyDiff : NRDiffBase {
-    <NSObject><NSCopying> *_value;
+    <NSObject><NSCopying> * _value;
 }
 
 @property (nonatomic, readonly) <NSObject><NSCopying> *value;

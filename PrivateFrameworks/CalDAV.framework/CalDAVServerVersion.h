@@ -3,32 +3,33 @@
  */
 
 @interface CalDAVServerVersion : NSObject <NSCopying> {
-    BOOL _alwaysSupportsFreebusyOnOutbox;
-    NSSet *_complianceClasses;
-    NSString *_serverHeader;
-    NSString *_supportedCalendarComponentSets;
-    BOOL _supportsAutoSchedule;
-    BOOL _supportsCalendarHomeSync;
-    BOOL _supportsCalendarNoTimezone;
-    BOOL _supportsCalendarProxy;
-    BOOL _supportsCalendarRecurrenceSplit;
-    BOOL _supportsCheckForValidEmail;
-    BOOL _supportsChecksumming;
-    BOOL _supportsExtendedCalendarQuery;
-    BOOL _supportsInboxAvailability;
-    BOOL _supportsManagedAttachments;
-    BOOL _supportsPrincipalPropertySearch;
-    BOOL _supportsPrivateComments;
-    BOOL _supportsPrivateEvents;
-    BOOL _supportsRequestCompression;
-    BOOL _supportsSharing;
-    BOOL _supportsSharingNoScheduling;
-    BOOL _supportsSubscriptionCalendars;
-    BOOL _supportsTimeRangeFilter;
-    BOOL _supportsTimeRangeFilterOnInbox;
-    BOOL _supportsTimeRangeFilterWithoutEndDate;
-    BOOL _supportsTodoTimeRangeFilter;
-    double _version;
+    BOOL  _alwaysSupportsFreebusyOnOutbox;
+    NSSet * _complianceClasses;
+    NSString * _serverHeader;
+    NSString * _supportedCalendarComponentSets;
+    BOOL  _supportsAutoSchedule;
+    BOOL  _supportsCalendarHomeSync;
+    BOOL  _supportsCalendarNoTimezone;
+    BOOL  _supportsCalendarProxy;
+    BOOL  _supportsCalendarRecurrenceSplit;
+    BOOL  _supportsCheckForValidEmail;
+    BOOL  _supportsChecksumming;
+    BOOL  _supportsExtendedCalendarQuery;
+    BOOL  _supportsInboxAvailability;
+    BOOL  _supportsLikenessPropagation;
+    BOOL  _supportsManagedAttachments;
+    BOOL  _supportsPrincipalPropertySearch;
+    BOOL  _supportsPrivateComments;
+    BOOL  _supportsPrivateEvents;
+    BOOL  _supportsRequestCompression;
+    BOOL  _supportsSharing;
+    BOOL  _supportsSharingNoScheduling;
+    BOOL  _supportsSubscriptionCalendars;
+    BOOL  _supportsTimeRangeFilter;
+    BOOL  _supportsTimeRangeFilterOnInbox;
+    BOOL  _supportsTimeRangeFilterWithoutEndDate;
+    BOOL  _supportsTodoTimeRangeFilter;
+    double  _version;
 }
 
 @property (nonatomic) BOOL alwaysSupportsFreebusyOnOutbox;
@@ -44,6 +45,7 @@
 @property (nonatomic) BOOL supportsChecksumming;
 @property (nonatomic) BOOL supportsExtendedCalendarQuery;
 @property (nonatomic) BOOL supportsInboxAvailability;
+@property (nonatomic) BOOL supportsLikenessPropagation;
 @property (nonatomic) BOOL supportsManagedAttachments;
 @property (nonatomic) BOOL supportsPrincipalPropertySearch;
 @property (nonatomic) BOOL supportsPrivateComments;
@@ -90,6 +92,7 @@
 - (void)setSupportsChecksumming:(BOOL)arg1;
 - (void)setSupportsExtendedCalendarQuery:(BOOL)arg1;
 - (void)setSupportsInboxAvailability:(BOOL)arg1;
+- (void)setSupportsLikenessPropagation:(BOOL)arg1;
 - (void)setSupportsManagedAttachments:(BOOL)arg1;
 - (void)setSupportsPrincipalPropertySearch:(BOOL)arg1;
 - (void)setSupportsPrivateComments:(BOOL)arg1;
@@ -113,6 +116,7 @@
 - (BOOL)supportsChecksumming;
 - (BOOL)supportsExtendedCalendarQuery;
 - (BOOL)supportsInboxAvailability;
+- (BOOL)supportsLikenessPropagation;
 - (BOOL)supportsManagedAttachments;
 - (BOOL)supportsPrincipalPropertySearch;
 - (BOOL)supportsPrivateComments;

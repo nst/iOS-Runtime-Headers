@@ -3,18 +3,18 @@
  */
 
 @interface TSCHChartAxisAnalysis : NSObject {
-    double _dataSetModelMax;
-    double _dataSetModelMin;
-    NSArray *_majorGridLocations;
-    double _max;
-    double _min;
-    NSArray *_minorGridLocations;
-    double _modelAverage;
-    double _modelMax;
-    double _modelMedian;
-    double _modelMin;
-    long long _retainCount;
-    NSArray *_totals;
+    double  _dataSetModelMax;
+    double  _dataSetModelMin;
+    NSArray * _majorGridLocations;
+    double  _max;
+    double  _min;
+    NSArray * _minorGridLocations;
+    double  _modelAverage;
+    double  _modelMax;
+    double  _modelMedian;
+    double  _modelMin;
+    int  _retainCount;
+    NSArray * _totals;
 }
 
 @property (nonatomic) double dataSetModelMax;

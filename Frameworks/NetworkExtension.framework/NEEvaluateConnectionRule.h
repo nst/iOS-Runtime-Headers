@@ -3,10 +3,10 @@
  */
 
 @interface NEEvaluateConnectionRule : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
-    int _action;
-    NSArray *_matchDomains;
-    NSURL *_probeURL;
-    NSArray *_useDNSServers;
+    int  _action;
+    NSArray * _matchDomains;
+    NSURL * _probeURL;
+    NSArray * _useDNSServers;
 }
 
 @property (readonly) int action;
@@ -26,6 +26,7 @@
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMatchDomains:(id)arg1 andAction:(int)arg2;
+- (BOOL)isEqual:(id)arg1;
 - (id)matchDomains;
 - (id)probeURL;
 - (void)setProbeURL:(id)arg1;

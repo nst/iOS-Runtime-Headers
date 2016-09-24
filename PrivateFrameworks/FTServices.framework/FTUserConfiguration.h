@@ -2,19 +2,34 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@interface FTUserConfiguration : NSObject
+@interface FTUserConfiguration : NSObject {
+    NSMutableDictionary * _cellularDataAvailableCache;
+    struct __CTServerConnection { } * _ctServerConnection;
+    NSMutableDictionary * _wifiAllowedCache;
+}
 
 @property (nonatomic, readonly) BOOL _nonWifiFaceTimeEntitled;
 @property (nonatomic) BOOL allowAnyNetwork;
 @property (nonatomic) BOOL cellularFaceTimeEnabled;
+@property (nonatomic) struct __CTServerConnection { }*ctServerConnection;
 
 + (id)sharedInstance;
 
 - (BOOL)_adequateInternalOrCarrierInstall;
+- (void)_clearCaches;
+- (BOOL)_getCellularDataEnabledForBundleID:(id)arg1;
+- (BOOL)_getWifiDataAllowedForBundleID:(id)arg1;
 - (BOOL)_nonWifiFaceTimeEntitled;
+- (void)_setAppCellularDataEnabled:(BOOL)arg1;
 - (BOOL)allowAnyNetwork;
+- (BOOL)cellularDataEnabledForBundleId:(id)arg1;
 - (BOOL)cellularFaceTimeEnabled;
+- (struct __CTServerConnection { }*)ctServerConnection;
+- (void)dealloc;
+- (id)init;
 - (void)setAllowAnyNetwork:(BOOL)arg1;
 - (void)setCellularFaceTimeEnabled:(BOOL)arg1;
+- (void)setCtServerConnection:(struct __CTServerConnection { }*)arg1;
+- (BOOL)wifiAllowedForBundleId:(id)arg1;
 
 @end

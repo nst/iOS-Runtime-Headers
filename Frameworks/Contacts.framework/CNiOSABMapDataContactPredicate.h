@@ -3,7 +3,7 @@
  */
 
 @interface CNiOSABMapDataContactPredicate : CNPredicate <CNiOSContactPredicate> {
-    NSString *_mapString;
+    NSString * _mapString;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,10 +12,14 @@
 @property (nonatomic, readonly, copy) NSString *mapString;
 @property (readonly) Class superclass;
 
++ (BOOL)supportsSecureCoding;
+
 - (struct __CFArray { }*)cn_copyPeopleInAddressBook:(void*)arg1 withSortOrder:(unsigned int)arg2 matchInfos:(id*)arg3 options:(unsigned int)arg4 error:(struct __CFError {}**)arg5;
 - (BOOL)cn_supportsNativeSorting;
 - (void)dealloc;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithString:(id)arg1;
 - (id)mapString;
 

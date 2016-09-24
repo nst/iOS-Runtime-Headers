@@ -3,9 +3,9 @@
  */
 
 @interface CATLocalizationHelper : NSObject {
-    NSBundle *_bundle;
-    NSLock *mLock;
-    NSMutableDictionary *mStringByKeyByTableName;
+    NSBundle * _bundle;
+    NSLock * mLock;
+    NSMutableDictionary * mStringByKeyByTableName;
 }
 
 @property (nonatomic, readonly) NSBundle *bundle;

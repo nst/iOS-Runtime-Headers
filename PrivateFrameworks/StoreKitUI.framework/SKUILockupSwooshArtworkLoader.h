@@ -3,9 +3,9 @@
  */
 
 @interface SKUILockupSwooshArtworkLoader : SKUISwooshArtworkLoader {
-    SKUIItemArtworkContext *_context;
-    SKUIVideoImageDataConsumer *_videoImageConsumer;
-    UIImage *_videoPlaceholderImage;
+    SKUIItemArtworkContext * _context;
+    SKUIVideoImageDataConsumer * _videoImageConsumer;
+    UIImage * _videoPlaceholderImage;
 }
 
 @property (nonatomic, readonly) SKUILockupSwooshViewController *swooshViewController;

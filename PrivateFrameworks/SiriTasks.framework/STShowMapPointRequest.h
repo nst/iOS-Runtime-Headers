@@ -3,10 +3,10 @@
  */
 
 @interface STShowMapPointRequest : AFSiriRequest {
-    NSString *_extSessionGuid;
-    NSDate *_extSessionGuidCreatedTimestamp;
-    BOOL _isCurrentLocation;
-    NSData *_placeData;
+    NSString * _extSessionGuid;
+    NSDate * _extSessionGuidCreatedTimestamp;
+    BOOL  _isCurrentLocation;
+    NSData * _placeData;
 }
 
 @property (nonatomic) BOOL isCurrentLocation;

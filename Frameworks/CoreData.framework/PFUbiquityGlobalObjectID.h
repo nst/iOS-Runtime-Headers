@@ -3,13 +3,13 @@
  */
 
 @interface PFUbiquityGlobalObjectID : NSObject <NSCopying> {
-    NSString *_entityName;
-    unsigned int _hash;
-    NSManagedObjectID *_managedObjectID;
-    NSString *_owningPeerID;
-    NSString *_primaryKey;
-    unsigned int _primaryKeyInteger;
-    NSString *_storeName;
+    NSString * _entityName;
+    unsigned int  _hash;
+    NSManagedObjectID * _managedObjectID;
+    NSString * _owningPeerID;
+    NSString * _primaryKey;
+    unsigned int  _primaryKeyInteger;
+    NSString * _storeName;
 }
 
 @property (nonatomic, readonly) NSString *entityName;

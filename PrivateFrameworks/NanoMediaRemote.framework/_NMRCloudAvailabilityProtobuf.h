@@ -3,12 +3,12 @@
  */
 
 @interface _NMRCloudAvailabilityProtobuf : PBCodable <NSCopying> {
-    BOOL _canShowCloudMusic;
+    BOOL  _canShowCloudMusic;
     struct { 
         unsigned int canShowCloudMusic : 1; 
         unsigned int hasProperNetworkConditionsToPlayMedia : 1; 
-    } _has;
-    BOOL _hasProperNetworkConditionsToPlayMedia;
+    }  _has;
+    BOOL  _hasProperNetworkConditionsToPlayMedia;
 }
 
 @property (nonatomic) BOOL canShowCloudMusic;

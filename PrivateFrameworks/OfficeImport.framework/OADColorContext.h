@@ -3,9 +3,9 @@
  */
 
 @interface OADColorContext : NSObject {
-    OADColorMap *mMap;
-    <OADColorPalette> *mPalette;
-    OADColorScheme *mScheme;
+    OADColorMap * mMap;
+    <OADColorPalette> * mPalette;
+    OADColorScheme * mScheme;
 }
 
 @property (nonatomic, readonly) OADColorMap *map;

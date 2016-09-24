@@ -3,28 +3,28 @@
  */
 
 @interface FAFamilyNotification : NSObject <NSSecureCoding> {
-    NSString *_actionButtonLabel;
-    NSURL *_activateActionURL;
-    NSURL *_clearActionURL;
-    NSString *_clientIdentifier;
-    NSString *_delegateMachServiceName;
-    NSURL *_dismissActionlURL;
-    unsigned int _displayStyle;
-    NSDate *_expiryDate;
-    NSNumber *_familyMemberDSID;
-    BOOL _hasActionButton;
-    NSString *_identifier;
-    NSString *_informativeText;
-    NSData *_launchActionArguments;
-    NSURL *_launchActionURL;
-    NSString *_otherButtonLabel;
-    NSDate *_relevanceDate;
-    BOOL _shouldPersistWhenActivated;
-    BOOL _shouldPersistWhenDismissed;
-    NSString *_title;
-    NSString *_unlockActionLabel;
-    NSDictionary *_userInfo;
-    NSString *_uuid;
+    NSString * _actionButtonLabel;
+    NSURL * _activateActionURL;
+    NSURL * _clearActionURL;
+    NSString * _clientIdentifier;
+    NSString * _delegateMachServiceName;
+    NSURL * _dismissActionlURL;
+    unsigned int  _displayStyle;
+    NSDate * _expiryDate;
+    NSNumber * _familyMemberDSID;
+    BOOL  _hasActionButton;
+    NSString * _identifier;
+    NSString * _informativeText;
+    NSData * _launchActionArguments;
+    NSURL * _launchActionURL;
+    NSString * _otherButtonLabel;
+    NSDate * _relevanceDate;
+    BOOL  _shouldPersistWhenActivated;
+    BOOL  _shouldPersistWhenDismissed;
+    NSString * _title;
+    NSString * _unlockActionLabel;
+    NSDictionary * _userInfo;
+    NSString * _uuid;
 }
 
 @property (copy) NSString *actionButtonLabel;

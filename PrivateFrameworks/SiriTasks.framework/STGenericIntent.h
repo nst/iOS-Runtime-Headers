@@ -3,16 +3,16 @@
  */
 
 @interface STGenericIntent : NSObject <NSCoding> {
-    BOOL _appInForeground;
-    NSString *_attributes;
-    BOOL _finishedState;
-    BOOL _handled;
-    STGenericIntentRequest *_intentRequest;
-    BOOL _isLaunch;
-    NSString *_name;
-    NSMutableDictionary *_parameters;
-    AFSiriTask *_siriTask;
-    NSString *_utterance;
+    BOOL  _appInForeground;
+    NSString * _attributes;
+    BOOL  _finishedState;
+    BOOL  _handled;
+    STGenericIntentRequest * _intentRequest;
+    BOOL  _isLaunch;
+    NSString * _name;
+    NSMutableDictionary * _parameters;
+    AFSiriTask * _siriTask;
+    NSString * _utterance;
 }
 
 @property (nonatomic) BOOL appInForeground;

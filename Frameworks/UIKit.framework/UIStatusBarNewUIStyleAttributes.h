@@ -3,13 +3,14 @@
  */
 
 @interface UIStatusBarNewUIStyleAttributes : UIStatusBarStyleAttributes {
-    UIColor *_backgroundColor;
-    UIColor *_foregroundColor;
-    BOOL _hasBusyBackground;
+    UIColor * _backgroundColor;
+    UIColor * _foregroundColor;
+    BOOL  _hasBusyBackground;
 }
 
 - (void).cxx_destruct;
 - (id)backgroundColorWithTintColor:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)foregroundColor;
 - (Class)foregroundStyleClass;
 - (id)initWithRequest:(id)arg1;

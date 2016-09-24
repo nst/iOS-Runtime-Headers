@@ -3,7 +3,7 @@
  */
 
 @interface NEFilterExtensionProviderHostContext : NEExtensionProviderHostContext <NEFilterExtensionProviderHostProtocol, NEFilterExtensionProviderProtocol> {
-    <NEFilterExtensionProviderProtocol> *_vendorContext;
+    <NEFilterExtensionProviderProtocol> * _vendorContext;
 }
 
 @property (readonly, copy) NSString *debugDescription;

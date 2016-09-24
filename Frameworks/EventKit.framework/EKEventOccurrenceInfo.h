@@ -9,7 +9,7 @@
             int entityID; 
         } objectID; 
         double date; 
-    } _occurrenceInfo;
+    }  _occurrenceInfo;
 }
 
 @property (nonatomic) struct { struct { int x_1_1_1; int x_1_1_2; } x1; double x2; } occurrenceInfo;

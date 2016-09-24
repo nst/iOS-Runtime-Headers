@@ -3,22 +3,22 @@
  */
 
 @interface _HKEmergencyContact : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_name;
-    NSString *_nameContactIdentifier;
-    NSNumber *_nameRecordID;
-    NSString *_phoneNumber;
-    NSString *_phoneNumberContactIdentifier;
-    NSNumber *_phoneNumberPropertyID;
-    NSString *_relationship;
+    NSString * _name;
+    NSString * _nameContactIdentifier;
+    NSNumber * _nameRecordID;
+    NSString * _phoneNumber;
+    NSString * _phoneNumberContactIdentifier;
+    NSNumber * _phoneNumberPropertyID;
+    NSString * _relationship;
 }
 
-@property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSString *nameContactIdentifier;
-@property (nonatomic, retain) NSNumber *nameRecordID;
-@property (nonatomic, retain) NSString *phoneNumber;
-@property (nonatomic, retain) NSString *phoneNumberContactIdentifier;
-@property (nonatomic, retain) NSNumber *phoneNumberPropertyID;
-@property (nonatomic, retain) NSString *relationship;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *nameContactIdentifier;
+@property (nonatomic, copy) NSNumber *nameRecordID;
+@property (nonatomic, copy) NSString *phoneNumber;
+@property (nonatomic, copy) NSString *phoneNumberContactIdentifier;
+@property (nonatomic, copy) NSNumber *phoneNumberPropertyID;
+@property (nonatomic, copy) NSString *relationship;
 
 + (BOOL)supportsSecureCoding;
 

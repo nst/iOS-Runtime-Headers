@@ -4,7 +4,7 @@
 
 @interface CNPropertyGroupInstantMessageItem : CNPropertyGroupItem
 
-@property (nonatomic, readonly) CNInstantMessageAddress *profile;
+@property (nonatomic, readonly) CNInstantMessageAddress *imAddress;
 
 + (id)emptyValueForLabel:(id)arg1;
 
@@ -12,8 +12,8 @@
 - (id)displayLabel;
 - (id)displayStringForValue:(id)arg1;
 - (id)editingStringValue;
+- (id)imAddress;
 - (BOOL)isEquivalentToItem:(id)arg1;
-- (id)profile;
 - (id)valueForDisplayString:(id)arg1;
 
 @end

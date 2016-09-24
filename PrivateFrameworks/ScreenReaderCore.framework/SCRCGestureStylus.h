@@ -3,13 +3,13 @@
  */
 
 @interface SCRCGestureStylus : SCRCGestureFinger {
-    float _altitude;
-    float _azimuth;
+    double  _altitude;
+    double  _azimuth;
 }
 
 - (float)altitude;
 - (float)azimuth;
-- (id)initWithIdentifier:(unsigned int)arg1 location:(struct CGPoint { float x1; float x2; })arg2 pressure:(float)arg3 altitude:(float)arg4 azimuth:(float)arg5;
+- (id)initWithIdentifier:(unsigned int)arg1 location:(struct CGPoint { double x1; double x2; })arg2 pressure:(float)arg3 altitude:(float)arg4 azimuth:(float)arg5;
 - (float)pressure;
 - (unsigned int)type;
 

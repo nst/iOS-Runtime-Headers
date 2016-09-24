@@ -3,27 +3,27 @@
  */
 
 @interface PLBBMavHwRfWCDMALogMsg : PLBasebandMessage {
-    NSArray *_DCEqStatCnt;
-    NSArray *_DCQsetEqStatCnt;
-    NSArray *_DurInCarrierMode;
-    NSArray *_RABModeCnt;
-    NSArray *_RABTypeCnt;
-    NSArray *_SCEqStatCnt;
-    NSArray *_SCQsetEqStatCnt;
-    NSArray *_TxPwrBucket;
-    NSMutableDictionary *_commonInfo;
-    NSNumber *_cpcEnergy;
-    NSNumber *_cpcRxOnCnt;
-    NSNumber *_cpcRxTxOffCnt;
-    NSNumber *_cpcTimeCnt;
-    NSString *_error;
-    NSNumber *_fetCnt;
-    NSMutableArray *_groupArrEntries;
-    NSString *_groupEntryKey;
-    NSString *_groupID;
-    unsigned char _inited;
-    NSMutableDictionary *_kvPairs;
-    NSNumber *_logDuration;
+    NSArray * _DCEqStatCnt;
+    NSArray * _DCQsetEqStatCnt;
+    NSArray * _DurInCarrierMode;
+    NSArray * _RABModeCnt;
+    NSArray * _RABTypeCnt;
+    NSArray * _SCEqStatCnt;
+    NSArray * _SCQsetEqStatCnt;
+    NSArray * _TxPwrBucket;
+    NSMutableDictionary * _commonInfo;
+    NSNumber * _cpcEnergy;
+    NSNumber * _cpcRxOnCnt;
+    NSNumber * _cpcRxTxOffCnt;
+    NSNumber * _cpcTimeCnt;
+    NSString * _error;
+    NSNumber * _fetCnt;
+    NSMutableArray * _groupArrEntries;
+    NSString * _groupEntryKey;
+    NSString * _groupID;
+    unsigned char  _inited;
+    NSMutableDictionary * _kvPairs;
+    NSNumber * _logDuration;
 }
 
 @property (retain) NSArray *DCEqStatCnt;
@@ -48,6 +48,7 @@
 @property (nonatomic, retain) NSMutableDictionary *kvPairs;
 @property (retain) NSNumber *logDuration;
 
++ (id)entryEventBackwardDefinitionBBMav16HwRfWCDMA;
 + (id)entryEventBackwardDefinitionBBMavHwRfWCDMA;
 
 - (void).cxx_destruct;

@@ -2,34 +2,26 @@
    Image: /System/Library/PrivateFrameworks/WirelessProximity.framework/WirelessProximity
  */
 
-@interface WPHomeKit : NSObject <XPCClientDelegate> {
-    XPCClient *_connection;
-    <WPHomeKitDelegate> *_delegate;
-    int _state;
+@interface WPHomeKit : WPClient {
+    <WPHomeKitDelegate> * _delegate;
 }
 
-@property (nonatomic, retain) XPCClient *connection;
-@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <WPHomeKitDelegate> *delegate;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) int state;
-@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)checkAllowDuplicate;
-- (id)connection;
-- (void)connectionDied;
-- (void)connectionInterrupted;
-- (void)dealloc;
+- (id)clientAsString;
 - (id)delegate;
+- (void)deviceDiscovered:(id)arg1;
+- (struct { int x1; int x2; int x3; })dutyCycleToScanningRates:(int)arg1;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
-- (void)messageArrived:(id)arg1;
-- (void)setConnection:(id)arg1;
+- (void)invalidate;
+- (void)scanningFailedToStart:(id)arg1 ofType:(unsigned char)arg2;
+- (void)scanningStartedOfType:(unsigned char)arg1;
+- (void)scanningStoppedOfType:(unsigned char)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)startScanningWithData:(id)arg1;
-- (int)state;
+- (void)stateDidChange:(int)arg1;
 - (void)stopScanning;
-- (void)updateState:(int)arg1;
 
 @end

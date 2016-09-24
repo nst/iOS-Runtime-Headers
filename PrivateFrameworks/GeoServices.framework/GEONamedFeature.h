@@ -3,8 +3,8 @@
  */
 
 @interface GEONamedFeature : PBCodable <NSCopying> {
-    NSString *_name;
-    double _value;
+    NSString * _name;
+    double  _value;
 }
 
 @property (nonatomic, retain) NSString *name;

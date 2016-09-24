@@ -9,13 +9,13 @@
         struct __compressed_pair<TSCH3D::AxisLabelCacheItem *, std::__1::allocator<TSCH3D::AxisLabelCacheItem> > { 
             struct AxisLabelCacheItem {} *__first_; 
         } __end_cap_; 
-    } mCache;
-    TSCH3DValueEnumerator *mCachee;
-    unsigned int mCount;
-    TSCH3DAxisLabelKind *mKind;
-    int mLabelPosition;
-    BOOL mShouldRender;
-    BOOL mValid;
+    }  mCache;
+    TSCH3DValueEnumerator * mCachee;
+    unsigned int  mCount;
+    TSCH3DAxisLabelKind * mKind;
+    int  mLabelPosition;
+    BOOL  mShouldRender;
+    BOOL  mValid;
 }
 
 @property (nonatomic, readonly) TSCH3DAxisLabelKind *kind;

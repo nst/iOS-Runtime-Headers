@@ -3,24 +3,25 @@
  */
 
 @interface IMMessageStatusChatItem : IMTranscriptChatItem {
-    unsigned int _count;
-    int _expireStatusType;
-    int _statusType;
-    NSDate *_time;
-    NSDate *_timeAdded;
-    NSDate *_timeStale;
+    unsigned int  _count;
+    int  _expireStatusType;
+    int  _statusType;
+    NSDate * _time;
+    NSDate * _timeAdded;
+    NSDate * _timeStale;
 }
 
 @property (nonatomic, readonly) unsigned int count;
-@property (nonatomic, readonly, retain) NSString *errorText;
+@property (nonatomic, readonly) NSString *errorText;
 @property (nonatomic, readonly) int expireStatusType;
 @property (nonatomic, readonly) BOOL isFromMe;
 @property (nonatomic, readonly) int messageStatusType;
 @property (nonatomic, readonly) int statusType;
-@property (nonatomic, readonly, retain) NSDate *time;
+@property (nonatomic, readonly) NSDate *time;
 
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
+- (void).cxx_destruct;
 - (id)_initWithItem:(id)arg1 expireStatusType:(int)arg2 count:(unsigned int)arg3;
 - (id)_initWithItem:(id)arg1 statusType:(int)arg2 time:(id)arg3 count:(unsigned int)arg4;
 - (id)_initWithItem:(id)arg1 statusType:(int)arg2 time:(id)arg3 count:(unsigned int)arg4 expireStatusType:(int)arg5;
@@ -29,7 +30,6 @@
 - (id)_timeStale;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
-- (void)dealloc;
 - (id)description;
 - (id)errorText;
 - (int)expireStatusType;

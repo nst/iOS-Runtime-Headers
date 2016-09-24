@@ -3,11 +3,11 @@
  */
 
 @interface NPKTransientPassAssertionConnection : NSObject <NPKTransientPassAssertionServerProtocol> {
-    BOOL _backgrounded;
-    NSXPCConnection *_connection;
-    <NPKTransientPassAssertionConnectionDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_queue;
-    NPKTransientPassRequest *_transientPassRequest;
+    BOOL  _backgrounded;
+    NSXPCConnection * _connection;
+    <NPKTransientPassAssertionConnectionDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _queue;
+    NPKTransientPassRequest * _transientPassRequest;
 }
 
 @property (getter=isBackgrounded, nonatomic) BOOL backgrounded;

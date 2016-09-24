@@ -3,21 +3,21 @@
  */
 
 @interface _CDPModelTuningState : NSObject <NSSecureCoding> {
-    float _bestLogLambda;
-    float _bestScore;
-    float _bestThreshold;
-    float _bestW0;
-    int _i;
-    int _j;
+    double  _bestLogLambda;
+    double  _bestScore;
+    double  _bestThreshold;
+    double  _bestW0;
+    int  _i;
+    int  _j;
 }
 
-@property (nonatomic) float bestLogLambda;
-@property (nonatomic) float bestScore;
-@property (nonatomic) float bestThreshold;
-@property (nonatomic) float bestW0;
+@property (nonatomic) double bestLogLambda;
+@property (nonatomic) double bestScore;
+@property (nonatomic) double bestThreshold;
+@property (nonatomic) double bestW0;
 @property (nonatomic) int i;
 @property (nonatomic) int j;
-@property (nonatomic, readonly) float progress;
+@property (nonatomic, readonly) double progress;
 
 + (id)initialTuningState;
 + (BOOL)supportsSecureCoding;

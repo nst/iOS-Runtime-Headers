@@ -3,8 +3,8 @@
  */
 
 @interface MusicNewPlaylistActionEntityProvider : NSObject <MusicEntityProviding> {
-    BOOL _hasNewPlaylistAction;
-    MusicNewPlaylistActionEntityValueProvider *_newPlaylistActionEntityValueProvider;
+    BOOL  _hasNewPlaylistAction;
+    MusicNewPlaylistActionEntityValueProvider * _newPlaylistActionEntityValueProvider;
 }
 
 @property (readonly, copy) NSString *debugDescription;

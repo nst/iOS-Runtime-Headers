@@ -3,13 +3,13 @@
  */
 
 @interface FBSSceneLayer : NSObject <BSXPCCoding> {
-    int _alignment;
-    CAContext *_context;
-    <FBSSceneLayerDelegate> *_delegate;
-    unsigned int _identifier;
-    float _level;
-    FBSScene *_scene;
-    BOOL _shouldObserveUpdates;
+    int  _alignment;
+    CAContext * _context;
+    <FBSSceneLayerDelegate> * _delegate;
+    unsigned int  _identifier;
+    double  _level;
+    FBSScene * _scene;
+    BOOL  _shouldObserveUpdates;
 }
 
 @property (nonatomic) int alignment;
@@ -17,7 +17,7 @@
 @property (nonatomic) <FBSSceneLayerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) float level;
+@property (nonatomic) double level;
 @property (nonatomic) FBSScene *scene;
 @property (nonatomic, readonly) BOOL shouldObserveUpdates;
 @property (readonly) Class superclass;

@@ -3,7 +3,7 @@
  */
 
 @interface SBUIPasscodeLockViewSimpleFixedDigitKeypad : SBUIPasscodeLockViewWithKeypad {
-    unsigned int _numberOfDigits;
+    unsigned int  _numberOfDigits;
 }
 
 @property (nonatomic, readonly) unsigned int numberOfDigits;

@@ -3,10 +3,10 @@
  */
 
 @interface SCROBrailleStealthDriver : NSObject <SCROBrailleDriverProtocol> {
-    BOOL _isDriverLoaded;
-    int _mainSize;
-    NSString *_modelIdentifier;
-    int _statusSize;
+    BOOL  _isDriverLoaded;
+    int  _mainSize;
+    NSString * _modelIdentifier;
+    int  _statusSize;
 }
 
 @property (readonly, copy) NSString *debugDescription;

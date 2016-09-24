@@ -3,8 +3,8 @@
  */
 
 @interface UIKeyboardWipeGestureRecognizer : UIGestureRecognizer {
-    NSMutableArray *_endPoints;
-    UITouch *candidateEndpoint;
+    NSMutableArray * _endPoints;
+    UITouch * candidateEndpoint;
 }
 
 @property (nonatomic, retain) UITouch *candidateEndpoint;

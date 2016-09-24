@@ -3,7 +3,7 @@
  */
 
 @interface WDRun : NSObject {
-    WDParagraph *mParagraph;
+    WDParagraph * mParagraph;
 }
 
 - (void)clearProperties;

@@ -3,12 +3,12 @@
  */
 
 @interface XPCServiceConnection : NSObject {
-    NSObject<OS_xpc_object> *_client;
-    <NSObject> *_context;
-    <XPCServiceConnectionDelegate> *_delegate;
-    XPCServiceListener *_serviceListener;
-    NSString *_serviceName;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    NSObject<OS_xpc_object> * _client;
+    <NSObject> * _context;
+    <XPCServiceConnectionDelegate> * _delegate;
+    XPCServiceListener * _serviceListener;
+    NSString * _serviceName;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic, readonly) NSObject<OS_xpc_object> *client;

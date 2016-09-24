@@ -3,10 +3,10 @@
  */
 
 @interface MSCLLoadAuthorAlbumsOperation : NSOperation {
-    NSString *_authorIdentifier;
-    SKUIClientContext *_clientContext;
-    NSLock *_lock;
-    id /* block */ _outputBlock;
+    NSString * _authorIdentifier;
+    SKUIClientContext * _clientContext;
+    NSLock * _lock;
+    id /* block */  _outputBlock;
 }
 
 @property (nonatomic, readonly, copy) NSString *authorIdentifier;

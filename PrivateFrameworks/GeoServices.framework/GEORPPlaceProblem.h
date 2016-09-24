@@ -3,14 +3,14 @@
  */
 
 @interface GEORPPlaceProblem : PBCodable <NSCopying> {
-    unsigned int _componentIndex;
-    unsigned int _componentValueIndex;
+    unsigned int  _componentIndex;
+    unsigned int  _componentValueIndex;
     struct { 
         unsigned int componentIndex : 1; 
         unsigned int componentValueIndex : 1; 
         unsigned int problematicDepartureSequenceIndex : 1; 
-    } _has;
-    unsigned int _problematicDepartureSequenceIndex;
+    }  _has;
+    unsigned int  _problematicDepartureSequenceIndex;
 }
 
 @property (nonatomic) unsigned int componentIndex;

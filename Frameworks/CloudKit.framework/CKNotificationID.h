@@ -3,7 +3,7 @@
  */
 
 @interface CKNotificationID : NSObject <CKXPCSuitableString, NSCopying, NSSecureCoding> {
-    NSString *_notificationUUID;
+    NSString * _notificationUUID;
 }
 
 @property (nonatomic, copy) NSString *notificationUUID;

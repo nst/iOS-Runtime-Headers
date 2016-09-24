@@ -3,7 +3,7 @@
  */
 
 @interface AVMediaSelectionGroupInternal : NSObject {
-    AVWeakReference *weakReference;
+    AVWeakReference * weakReference;
 }
 
 @end

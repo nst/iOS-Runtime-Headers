@@ -3,12 +3,12 @@
  */
 
 @interface MRTelevisionController : NSObject <NSNetServiceBrowserDelegate, NSNetServiceDelegate> {
-    <MRTelevisionDelegate> *_delegate;
-    NSMutableSet *_discoveredTelevisions;
-    BOOL _discovering;
-    NSMutableSet *_resolvingServices;
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    NSNetServiceBrowser *_serviceBrowser;
+    <MRTelevisionDelegate> * _delegate;
+    NSMutableSet * _discoveredTelevisions;
+    BOOL  _discovering;
+    NSMutableSet * _resolvingServices;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    NSNetServiceBrowser * _serviceBrowser;
 }
 
 @property (readonly, copy) NSString *debugDescription;

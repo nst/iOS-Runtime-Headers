@@ -3,9 +3,9 @@
  */
 
 @interface MPAVBoundaryTimeObserverInfo : NSObject {
-    id /* block */ _block;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSArray *_times;
+    id /* block */  _block;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSArray * _times;
 }
 
 @property (nonatomic, readonly, copy) id /* block */ block;

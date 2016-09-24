@@ -3,22 +3,21 @@
  */
 
 @interface UIWebFileUploadPanel : UIViewController <UIDocumentMenuDelegate, UIDocumentPickerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverControllerDelegate> {
-    BOOL _allowMultipleFiles;
-    <UIWebFileUploadPanelDelegate> *_delegate;
-    UIDocumentMenuViewController *_documentMenuController;
-    UIWebDocumentView *_documentView;
-    BOOL _documentViewPresentedViewController;
-    UIImagePickerController *_imagePicker;
-    DOMNode *_interactionElement;
+    BOOL  _allowMultipleFiles;
+    <UIWebFileUploadPanelDelegate> * _delegate;
+    UIDocumentMenuViewController * _documentMenuController;
+    UIWebDocumentView * _documentView;
+    UIImagePickerController * _imagePicker;
+    DOMNode * _interactionElement;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _interactionPoint;
-    BOOL _isUsingCamera;
-    NSArray *_mimeTypes;
-    UIPopoverController *_presentationPopover;
-    UIViewController *_presentationViewController;
-    NSObject<WebOpenPanelResultListener> *_resultListener;
+        double x; 
+        double y; 
+    }  _interactionPoint;
+    BOOL  _isUsingCamera;
+    NSArray * _mimeTypes;
+    UIPopoverController * _presentationPopover;
+    UIViewController * _presentationViewController;
+    NSObject<WebOpenPanelResultListener> * _resultListener;
 }
 
 @property (nonatomic) BOOL allowMultipleFiles;

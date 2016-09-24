@@ -4,6 +4,7 @@
 
 @interface ICAppUtilities : NSObject
 
++ (id)applicationDataContainerURL;
 + (id)applicationDocumentsURL;
 + (id)attributesForGroupContainerDirectory;
 + (BOOL)isReadOnlyPersistentStore;

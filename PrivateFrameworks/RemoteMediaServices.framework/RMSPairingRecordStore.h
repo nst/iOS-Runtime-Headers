@@ -3,7 +3,7 @@
  */
 
 @interface RMSPairingRecordStore : NSObject {
-    NSMutableDictionary *_pairingRecords;
+    NSMutableDictionary * _pairingRecords;
 }
 
 + (id)sharedRecordStore;

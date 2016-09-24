@@ -3,21 +3,25 @@
  */
 
 @interface _HKActiveWorkoutServerConfiguration : NSObject <NSSecureCoding> {
-    NSUUID *_UUID;
-    BOOL _indoor;
-    NSDictionary *_resumeDataByType;
-    BOOL _shouldUseDeviceData;
-    NSDate *_startDate;
-    unsigned int _workoutActivityType;
-    NSArray *_workoutEvents;
-    int _workoutState;
+    NSUUID * _UUID;
+    BOOL  _indoor;
+    HKQuantity * _lapLength;
+    NSDictionary * _resumeDataByType;
+    BOOL  _shouldUseDeviceData;
+    NSDate * _startDate;
+    int  _swimmingLocation;
+    unsigned int  _workoutActivityType;
+    NSArray * _workoutEvents;
+    int  _workoutState;
 }
 
 @property (nonatomic, retain) NSUUID *UUID;
 @property (getter=isIndoor, nonatomic) BOOL indoor;
+@property (nonatomic, retain) HKQuantity *lapLength;
 @property (nonatomic, retain) NSDictionary *resumeDataByType;
 @property (nonatomic) BOOL shouldUseDeviceData;
 @property (nonatomic, retain) NSDate *startDate;
+@property (nonatomic) int swimmingLocation;
 @property (nonatomic) unsigned int workoutActivityType;
 @property (nonatomic, retain) NSArray *workoutEvents;
 @property (nonatomic) int workoutState;
@@ -29,17 +33,21 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isIndoor;
+- (id)lapLength;
 - (id)resumeDataByType;
 - (void)setIndoor:(BOOL)arg1;
+- (void)setLapLength:(id)arg1;
 - (void)setResumeDataByType:(id)arg1;
 - (void)setShouldUseDeviceData:(BOOL)arg1;
 - (void)setStartDate:(id)arg1;
+- (void)setSwimmingLocation:(int)arg1;
 - (void)setUUID:(id)arg1;
 - (void)setWorkoutActivityType:(unsigned int)arg1;
 - (void)setWorkoutEvents:(id)arg1;
 - (void)setWorkoutState:(int)arg1;
 - (BOOL)shouldUseDeviceData;
 - (id)startDate;
+- (int)swimmingLocation;
 - (unsigned int)workoutActivityType;
 - (id)workoutEvents;
 - (int)workoutState;

@@ -3,22 +3,23 @@
  */
 
 @interface _UIHostedWindow : UIWindow {
-    UIColor *__hostTintColor;
-    BOOL __hostViewUnderlapsStatusBar;
-    int _hostTintAdjustmentMode;
-    UITraitCollection *_hostTraitCollection;
-    BOOL _wantsTraitPropagation;
+    UIColor * __hostTintColor;
+    BOOL  __hostViewUnderlapsStatusBar;
+    int  _hostTintAdjustmentMode;
+    UITraitCollection * _hostTraitCollection;
+    BOOL  _wantsTraitPropagation;
 }
 
 @property (setter=_setHostTintAdjustmentMode:, nonatomic) int _hostTintAdjustmentMode;
 @property (setter=_setHostTintColor:, nonatomic, retain) UIColor *_hostTintColor;
 @property (setter=_setHostTraitCollection:, nonatomic, retain) UITraitCollection *_hostTraitCollection;
-@property (setter=_setWantsTraitPropigation:, nonatomic) BOOL _wantsTraitPropagation;
+@property (setter=_setWantsTraitPropagation:, nonatomic) BOOL _wantsTraitPropagation;
 @property (nonatomic, readonly) _UIHostedWindowHostingHandle *hostingHandle;
 
 - (void).cxx_destruct;
 - (BOOL)__hostViewUnderlapsStatusBar;
 - (void)__setHostViewUnderlapsStatusBar:(BOOL)arg1;
+- (BOOL)_allowsLinkPreviewInteractionInViewServices;
 - (BOOL)_canPromoteFromKeyWindowStack;
 - (void)_configureContextOptions:(id)arg1;
 - (int)_defaultTintAdjustmentMode;
@@ -36,9 +37,9 @@
 - (void)_setHostTintAdjustmentMode:(int)arg1;
 - (void)_setHostTintColor:(id)arg1;
 - (void)_setHostTraitCollection:(id)arg1;
-- (void)_setWantsTraitPropigation:(BOOL)arg1;
-- (BOOL)_shouldPropigateTraitCollectionChanges;
-- (id)_traitCollectionForSize:(struct CGSize { float x1; float x2; })arg1 screenCollection:(id)arg2 virtualHorizontalSizeClass:(int)arg3 virtualVerticalSizeClass:(int)arg4;
+- (void)_setWantsTraitPropagation:(BOOL)arg1;
+- (BOOL)_shouldPropagateTraitCollectionChanges;
+- (id)_traitCollectionForSize:(struct CGSize { double x1; double x2; })arg1 screenCollection:(id)arg2 virtualHorizontalSizeClass:(int)arg3 virtualVerticalSizeClass:(int)arg4;
 - (void)_unregisterScrollToTopView:(id)arg1;
 - (void)_updateAppTintView;
 - (void)_updateTransformLayerForClassicPresentation;
@@ -48,7 +49,7 @@
 - (unsigned int)contextID;
 - (void)dealloc;
 - (id)hostingHandle;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setScreen:(id)arg1;
 
 @end

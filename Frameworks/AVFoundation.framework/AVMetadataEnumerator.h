@@ -3,13 +3,13 @@
  */
 
 @interface AVMetadataEnumerator : NSEnumerator {
-    NSEnumerator *_arrayEnumerator;
-    long _count;
-    long _index;
-    id _key;
-    NSString *_keySpace;
-    NSLocale *_locale;
-    struct OpaqueFigMetadataReader { } *_reader;
+    NSEnumerator * _arrayEnumerator;
+    long  _count;
+    long  _index;
+    id  _key;
+    NSString * _keySpace;
+    NSLocale * _locale;
+    struct OpaqueFigMetadataReader { } * _reader;
 }
 
 + (id)metadataEnumeratorWithArray:(id)arg1 key:(id)arg2 keySpace:(id)arg3 locale:(id)arg4;

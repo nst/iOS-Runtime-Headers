@@ -27,14 +27,10 @@
 - (void)setSubtitle:(NSString *)arg1;
 - (void)setTitle:(NSString *)arg1;
 - (void)setType:(NSString *)arg1;
-- (void)setUpNextPresentationDuration:(double)arg1;
-- (void)setUpNextPresentationStartTime:(double)arg1;
 - (void)setUrl:(NSString *)arg1;
 - (NSString *)subtitle;
 - (NSString *)title;
 - (NSString *)type;
-- (double)upNextPresentationDuration;
-- (double)upNextPresentationStartTime;
 - (NSString *)url;
 
 @end

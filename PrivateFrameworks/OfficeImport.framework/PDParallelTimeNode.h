@@ -3,7 +3,7 @@
  */
 
 @interface PDParallelTimeNode : PDTimeNode {
-    PDParallelTimeNodeBuildInfo *mBuildInfo;
+    PDParallelTimeNodeBuildInfo * mBuildInfo;
 }
 
 @property (retain) PDParallelTimeNodeBuildInfo *buildInfo;

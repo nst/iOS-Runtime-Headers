@@ -3,7 +3,7 @@
  */
 
 @interface WBUFormMetadataControllerWK1 : WBSFormMetadataController {
-    WebScriptWorld *_scriptWorld;
+    WebScriptWorld * _scriptWorld;
 }
 
 @property (nonatomic, readonly) WebScriptWorld *scriptWorld;
@@ -14,5 +14,6 @@
 - (void)clearScriptWorld;
 - (id)formAutoFillNodeForJSWrapper:(struct OpaqueJSValue { }*)arg1 inContext:(struct OpaqueJSContext { }*)arg2;
 - (id)scriptWorld;
+- (BOOL)shouldAttemptToClassifyFormsWithoutAPasswordFieldAsLoginForms;
 
 @end

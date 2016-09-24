@@ -3,8 +3,8 @@
  */
 
 @interface _MFNetworkObserver : NSObject {
-    id /* block */ _block;
-    NSObject<OS_dispatch_queue> *_queue;
+    id /* block */  _block;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 - (void)dealloc;

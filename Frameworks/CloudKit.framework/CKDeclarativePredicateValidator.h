@@ -3,7 +3,7 @@
  */
 
 @interface CKDeclarativePredicateValidator : CKPredicateValidator {
-    <CKObjectValidating> *_validator;
+    <CKObjectValidating> * _validator;
 }
 
 - (void).cxx_destruct;

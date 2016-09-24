@@ -3,9 +3,9 @@
  */
 
 @interface TSCH3DGLFBO : TSCH3DGLFramebuffer {
-    TSCH3DFBOLoader *mLoader;
-    BOOL mPreserveProtectedResourceAfterDestroy;
-    TSCH3DResource *mResource;
+    TSCH3DFBOLoader * mLoader;
+    BOOL  mPreserveProtectedResourceAfterDestroy;
+    TSCH3DResource * mResource;
 }
 
 @property (nonatomic) BOOL preserveProtectedResourceAfterDestroy;

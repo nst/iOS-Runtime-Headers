@@ -3,8 +3,8 @@
  */
 
 @interface NSCountedSet : NSMutableSet {
-    void *_reserved;
-    id _table;
+    void * _reserved;
+    id  _table;
 }
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
@@ -33,8 +33,16 @@
 - (id)objectEnumerator;
 - (void)removeObject:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/Home.framework/Home
+
+- (id)hf_mostCommonObject;
+
 // Image: /System/Library/PrivateFrameworks/Message.framework/Message
 
 - (id)mf_debugDescription;
+
+// Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/Frameworks/MediaMiningKit.framework/MediaMiningKit
+
+- (void)enumerateObjectsSortedByCountUsingBlock:(id /* block */)arg1 ascending:(BOOL)arg2;
 
 @end

@@ -3,16 +3,16 @@
  */
 
 @interface ATLegacyMessage : NSObject {
-    NSString *_dataClass;
-    unsigned int _messageId;
-    unsigned int _messageType;
-    NSString *_name;
-    NSDictionary *_params;
-    NSData *_payload;
-    NSError *_result;
-    unsigned int _session;
-    NSData *_sig;
-    double _timestamp;
+    NSString * _dataClass;
+    unsigned int  _messageId;
+    unsigned int  _messageType;
+    NSString * _name;
+    NSDictionary * _params;
+    NSData * _payload;
+    NSError * _result;
+    unsigned int  _session;
+    NSData * _sig;
+    double  _timestamp;
 }
 
 @property (nonatomic, retain) NSString *dataClass;

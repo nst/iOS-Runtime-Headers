@@ -3,8 +3,8 @@
  */
 
 @interface _GEOURLManifestListenerCallback : NSObject {
-    id /* block */ _handler;
-    struct __CFRunLoop { } *_runLoop;
+    id /* block */  _handler;
+    struct __CFRunLoop { } * _runLoop;
 }
 
 - (void)dealloc;

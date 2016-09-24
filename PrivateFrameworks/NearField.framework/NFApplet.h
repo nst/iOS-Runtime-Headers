@@ -3,25 +3,29 @@
  */
 
 @interface NFApplet : NSObject <NSSecureCoding> {
-    unsigned char _activationState;
-    NSObject<NFAppletCollection> *_appletCollection;
-    BOOL _authTransientSupport;
-    NSData *_discretionaryData;
-    unsigned char _family;
-    unsigned char _groupActivationStyle;
-    NSString *_groupHeadID;
-    NSArray *_groupMemberIDs;
-    NSString *_identifier;
-    NSData *_identifierAsData;
-    BOOL _isContainer;
-    BOOL _isProxy;
-    unsigned char _lifecycleState;
-    NSString *_moduleIdentifier;
-    NSString *_packageIdentifier;
-    NSArray *_referencedAppIDs;
+    unsigned char  _activationState;
+    NSObject<NFAppletCollection> * _appletCollection;
+    BOOL  _authTransientConfigurable;
+    BOOL  _authTransientSupport;
+    NSData * _discretionaryData;
+    unsigned char  _family;
+    unsigned char  _groupActivationStyle;
+    NSString * _groupHeadID;
+    NSArray * _groupMemberIDs;
+    NSString * _identifier;
+    NSData * _identifierAsData;
+    BOOL  _isContainer;
+    BOOL  _isProxy;
+    unsigned char  _lifecycleState;
+    NSString * _moduleIdentifier;
+    NSArray * _multiSEApplicationGroupMemberIDs;
+    NSString * _packageIdentifier;
+    NSArray * _referencedAppIDs;
+    NSString * _seIdentifier;
 }
 
 @property (nonatomic, readonly) unsigned char activationState;
+@property (nonatomic, readonly) BOOL authTransientConfigurable;
 @property (nonatomic, readonly) BOOL authTransientSupport;
 @property (nonatomic, readonly) NSData *discretionaryData;
 @property (nonatomic, readonly) unsigned char family;
@@ -30,7 +34,9 @@
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) NSData *identifierAsData;
 @property (nonatomic, readonly) unsigned char lifecycleState;
+@property (nonatomic, readonly) NSArray *multiSEApplicationGroup;
 @property (nonatomic, readonly) NSArray *referencedApps;
+@property (nonatomic, readonly) NSString *seIdentifier;
 
 + (BOOL)supportsSecureCoding;
 
@@ -38,6 +44,7 @@
 - (unsigned char)activationState;
 - (id)appletCollection;
 - (id)asDictionary;
+- (BOOL)authTransientConfigurable;
 - (BOOL)authTransientSupport;
 - (void)dealloc;
 - (id)description;
@@ -59,8 +66,11 @@
 - (BOOL)isProxy;
 - (unsigned char)lifecycleState;
 - (id)moduleIdentifier;
+- (id)multiSEApplicationGroup;
+- (id)multiSSDMembers;
 - (id)packageIdentifier;
 - (id)referencedApps;
+- (id)seIdentifier;
 - (void)setAppletCollection:(id)arg1;
 
 @end

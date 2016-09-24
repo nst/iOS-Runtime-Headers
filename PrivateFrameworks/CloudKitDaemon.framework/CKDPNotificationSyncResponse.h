@@ -3,12 +3,12 @@
  */
 
 @interface CKDPNotificationSyncResponse : PBCodable <NSCopying> {
-    NSData *_changeID;
+    NSData * _changeID;
     struct { 
         unsigned int moreAvailable : 1; 
-    } _has;
-    BOOL _moreAvailable;
-    NSMutableArray *_pushMessages;
+    }  _has;
+    BOOL  _moreAvailable;
+    NSMutableArray * _pushMessages;
 }
 
 @property (nonatomic, retain) NSData *changeID;
@@ -16,6 +16,8 @@
 @property (nonatomic) BOOL hasMoreAvailable;
 @property (nonatomic) BOOL moreAvailable;
 @property (nonatomic, retain) NSMutableArray *pushMessages;
+
++ (Class)pushMessageType;
 
 - (void).cxx_destruct;
 - (void)addPushMessage:(id)arg1;

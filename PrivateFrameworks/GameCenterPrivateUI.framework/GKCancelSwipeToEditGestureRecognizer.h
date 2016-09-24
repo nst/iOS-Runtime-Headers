@@ -3,7 +3,7 @@
  */
 
 @interface GKCancelSwipeToEditGestureRecognizer : UITapGestureRecognizer {
-    GKCollectionViewCell *_currentEditingCell;
+    GKCollectionViewCell * _currentEditingCell;
 }
 
 @property (nonatomic, retain) GKCollectionViewCell *currentEditingCell;

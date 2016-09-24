@@ -3,15 +3,15 @@
  */
 
 @interface AXRemoteElement : NSObject {
-    id _accessibilityContainer;
-    NSMutableSet *_allChildren;
-    unsigned int _contextId;
-    BOOL _deniesDirectAppConnection;
-    unsigned int _machPort;
-    BOOL _onClientSide;
-    <AXRemoteElementChildrenDelegate> *_remoteChildrenDelegate;
-    int _remotePid;
-    NSString *_uuid;
+    id  _accessibilityContainer;
+    NSMutableSet * _allChildren;
+    unsigned int  _contextId;
+    BOOL  _deniesDirectAppConnection;
+    unsigned int  _machPort;
+    BOOL  _onClientSide;
+    <AXRemoteElementChildrenDelegate> * _remoteChildrenDelegate;
+    int  _remotePid;
+    NSString * _uuid;
 }
 
 @property (nonatomic) id accessibilityContainer;
@@ -22,7 +22,7 @@
 @property (nonatomic) <AXRemoteElementChildrenDelegate> *remoteChildrenDelegate;
 @property (nonatomic) int remotePid;
 @property (nonatomic, retain) NSString *uuid;
-@property (nonatomic, readonly) unsigned long long uuidHash;
+@property (nonatomic, readonly) unsigned int uuidHash;
 
 // Image: /System/Library/PrivateFrameworks/AXRuntime.framework/AXRuntime
 
@@ -42,7 +42,7 @@
 - (id)_remoteElementWithAttribute:(int)arg1 limitToRemoteSubviews:(BOOL)arg2;
 - (id)accessibilityContainer;
 - (id)accessibilityContainerElements;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })accessibilityFrame;
 - (unsigned int)contextId;
 - (void)dealloc;
 - (BOOL)deniesDirectAppConnection;
@@ -63,7 +63,7 @@
 - (void)setUuid:(id)arg1;
 - (void)unregister;
 - (id)uuid;
-- (unsigned long long)uuidHash;
+- (unsigned int)uuidHash;
 
 // Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
 

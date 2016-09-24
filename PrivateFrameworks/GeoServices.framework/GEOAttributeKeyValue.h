@@ -3,8 +3,8 @@
  */
 
 @interface GEOAttributeKeyValue : PBCodable <NSCopying> {
-    NSString *_attributeKey;
-    NSString *_attributeValue;
+    NSString * _attributeKey;
+    NSString * _attributeValue;
 }
 
 @property (nonatomic, retain) NSString *attributeKey;

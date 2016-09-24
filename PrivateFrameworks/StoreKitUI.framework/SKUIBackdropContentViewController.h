@@ -3,8 +3,8 @@
  */
 
 @interface SKUIBackdropContentViewController : UIViewController {
-    int _backdropViewPrivateStyle;
-    UIViewController *_contentViewController;
+    int  _backdropViewPrivateStyle;
+    UIViewController * _contentViewController;
 }
 
 @property (nonatomic) int backdropViewPrivateStyle;

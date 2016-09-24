@@ -3,7 +3,7 @@
  */
 
 @interface CIPremultiply : CIFilter {
-    CIImage *inputImage;
+    CIImage * inputImage;
 }
 
 @property (nonatomic, retain) CIImage *inputImage;

@@ -3,7 +3,7 @@
  */
 
 @interface CNVCardDataStorage : NSObject <CNVCardSerializationStorage> {
-    NSMutableData *_data;
+    NSMutableData * _data;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -13,6 +13,7 @@
 
 + (id)storageWithData:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)appendFormat:(id)arg1;
 - (void)appendString:(id)arg1;
 - (void)appendString:(id)arg1 usingEncoding:(unsigned int)arg2;

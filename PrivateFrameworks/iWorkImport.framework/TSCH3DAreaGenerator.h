@@ -9,38 +9,38 @@
         struct __compressed_pair<glm::detail::tvec3<float> *, std::__1::allocator<glm::detail::tvec3<float> > > { 
             struct tvec3<float> {} *__first_; 
         } __end_cap_; 
-    } mBottom;
+    }  mBottom;
     struct vector<glm::detail::tvec3<float>, std::__1::allocator<glm::detail::tvec3<float> > > { 
         struct tvec3<float> {} *__begin_; 
         struct tvec3<float> {} *__end_; 
         struct __compressed_pair<glm::detail::tvec3<float> *, std::__1::allocator<glm::detail::tvec3<float> > > { 
             struct tvec3<float> {} *__first_; 
         } __end_cap_; 
-    } mTop;
+    }  mTop;
     struct tvec2<float> { 
         union { 
-            float x; 
-            float r; 
-            float s; 
+            double x; 
+            double r; 
+            double s; 
         } ; 
         union { 
-            float y; 
-            float g; 
-            float t; 
+            double y; 
+            double g; 
+            double t; 
         } ; 
-    } mYLimits;
-    float mZeroValue;
+    }  mYLimits;
+    double  mZeroValue;
 }
 
-+ (id)generatorWithYLimits:(struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })arg1 zeroValue:(float)arg2;
++ (id)generatorWithYLimits:(struct tvec2<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; })arg1 zeroValue:(float)arg2;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)addRow:(const struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; }*)arg1;
+- (void)addRow:(const struct vector<float, std::__1::allocator<float> > { double *x1; double *x2; struct __compressed_pair<double *, std::__1::allocator<float> > { double *x_3_1_1; } x3; }*)arg1;
 - (float)clampedZero;
 - (void)clipLine:(const struct vector<glm::detail::tvec3<float>, std::__1::allocator<glm::detail::tvec3<float> > > { struct tvec3<float> {} *x1; struct tvec3<float> {} *x2; struct __compressed_pair<glm::detail::tvec3<float> *, std::__1::allocator<glm::detail::tvec3<float> > > { struct tvec3<float> {} *x_3_1_1; } x3; }*)arg1 into:(struct vector<glm::detail::tvec3<float>, std::__1::allocator<glm::detail::tvec3<float> > > { struct tvec3<float> {} *x1; struct tvec3<float> {} *x2; struct __compressed_pair<glm::detail::tvec3<float> *, std::__1::allocator<glm::detail::tvec3<float> > > { struct tvec3<float> {} *x_3_1_1; } x3; }*)arg2;
-- (id)createGeometry:(const struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; }*)arg1;
+- (id)createGeometry:(const struct vector<float, std::__1::allocator<float> > { double *x1; double *x2; struct __compressed_pair<double *, std::__1::allocator<float> > { double *x_3_1_1; } x3; }*)arg1;
 - (void)dealloc;
-- (id)initWithYLimits:(struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })arg1 zeroValue:(float)arg2;
+- (id)initWithYLimits:(struct tvec2<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; })arg1 zeroValue:(float)arg2;
 
 @end

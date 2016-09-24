@@ -3,9 +3,9 @@
  */
 
 @interface MusicSocialOperationResponse : NSObject {
-    NSError *_error;
-    id _responseData;
-    BOOL _serverSuccess;
+    NSError * _error;
+    id  _responseData;
+    BOOL  _serverSuccess;
 }
 
 @property (nonatomic, retain) NSError *error;

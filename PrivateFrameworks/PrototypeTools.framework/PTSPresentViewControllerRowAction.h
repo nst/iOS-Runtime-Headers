@@ -3,7 +3,7 @@
  */
 
 @interface PTSPresentViewControllerRowAction : PTSRowAction {
-    id /* block */ _viewControllerCreator;
+    id /* block */  _viewControllerCreator;
 }
 
 @property (nonatomic, copy) id /* block */ viewControllerCreator;

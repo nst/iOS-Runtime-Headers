@@ -31,12 +31,14 @@
 - (id)accessKey;
 - (id)charset;
 - (id)coords;
+- (id)download;
 - (id)hashName;
 - (id)host;
 - (id)hostname;
 - (id)href;
 - (id)hreflang;
 - (id)name;
+- (id)origin;
 - (id)pathname;
 - (id)ping;
 - (id)port;
@@ -48,6 +50,7 @@
 - (void)setAccessKey:(id)arg1;
 - (void)setCharset:(id)arg1;
 - (void)setCoords:(id)arg1;
+- (void)setDownload:(id)arg1;
 - (void)setHref:(id)arg1;
 - (void)setHreflang:(id)arg1;
 - (void)setName:(id)arg1;

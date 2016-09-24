@@ -3,8 +3,8 @@
  */
 
 @interface _DECFeedbackBuilder : NSObject {
-    id /* block */ _feedbackHandler;
-    NSObject<OS_dispatch_queue> *_queue;
+    id /* block */  _feedbackHandler;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 + (id)sharedInstance;

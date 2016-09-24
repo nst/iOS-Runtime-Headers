@@ -3,7 +3,7 @@
  */
 
 @interface RemoteUITableViewSubtitleAndValueCell : RemoteUITableViewCell {
-    UILabel *_valueLabel;
+    UILabel * _valueLabel;
 }
 
 @property (nonatomic, readonly) UILabel *valueLabel;

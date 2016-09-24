@@ -3,8 +3,8 @@
  */
 
 @interface HDRoutineLocationOfInterestVisit : NSObject {
-    NSDate *_entryTime;
-    NSDate *_exitTime;
+    NSDate * _entryTime;
+    NSDate * _exitTime;
 }
 
 @property (nonatomic, retain) NSDate *entryTime;

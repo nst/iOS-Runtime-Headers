@@ -3,32 +3,34 @@
  */
 
 @interface PFVideoSharingOperation : NSOperation {
-    PFAssetAdjustments *__adjustments;
-    AVAudioMix *_audioMix;
-    BOOL _beganExport;
-    AVAssetExportSession *_exportSession;
-    NSObject<OS_dispatch_queue> *_externalIsolation;
-    NSString *_generatedFileName;
-    NSError *_operationError;
-    BOOL _operationSuccess;
-    NSURL *_outputDirectoryURL;
-    BOOL _shouldStripLocation;
-    BOOL _shouldStripMetadata;
-    AVAsset *_videoAsset;
-    AVVideoComposition *_videoComposition;
-    NSArray *_videoMetadata;
-    NSURL *_videoURL;
+    PFAssetAdjustments * __adjustments;
+    AVAudioMix * _audioMix;
+    BOOL  _beganExport;
+    NSString * _customAccessibilityLabel;
+    AVAssetExportSession * _exportSession;
+    NSObject<OS_dispatch_queue> * _externalIsolation;
+    NSString * _generatedFileName;
+    NSError * _operationError;
+    BOOL  _operationSuccess;
+    NSURL * _outputDirectoryURL;
+    BOOL  _shouldStripLocation;
+    BOOL  _shouldStripMetadata;
+    AVAsset * _videoAsset;
+    AVVideoComposition * _videoComposition;
+    NSArray * _videoMetadata;
+    NSURL * _videoURL;
 }
 
 @property (setter=_setAdjustments:, nonatomic, retain) PFAssetAdjustments *_adjustments;
+@property (nonatomic, copy) NSString *customAccessibilityLabel;
 @property (nonatomic, copy) NSString *generatedFileName;
-@property (nonatomic, retain) NSError *operationError;
+@property (setter=_setOperationError:, nonatomic, retain) NSError *operationError;
 @property (nonatomic, copy) NSURL *outputDirectoryURL;
-@property (nonatomic, readonly) float progress;
+@property (nonatomic, readonly) double progress;
 @property (nonatomic) BOOL shouldStripLocation;
 @property (nonatomic) BOOL shouldStripMetadata;
-@property (nonatomic) BOOL success;
-@property (nonatomic, copy) NSURL *videoURL;
+@property (setter=_setSuccess:, nonatomic) BOOL success;
+@property (setter=_setVideoURL:, nonatomic, copy) NSURL *videoURL;
 
 - (void).cxx_destruct;
 - (id)_adjustments;
@@ -40,12 +42,14 @@
 - (void)_setVideoURL:(id)arg1;
 - (void)_validateMetadata;
 - (void)cancel;
+- (id)customAccessibilityLabel;
 - (id)generatedFileName;
 - (id)initWithVideoURL:(id)arg1 adjustmentData:(id)arg2;
 - (void)main;
 - (id)operationError;
 - (id)outputDirectoryURL;
 - (float)progress;
+- (void)setCustomAccessibilityLabel:(id)arg1;
 - (void)setGeneratedFileName:(id)arg1;
 - (void)setOutputDirectoryURL:(id)arg1;
 - (void)setShouldStripLocation:(BOOL)arg1;

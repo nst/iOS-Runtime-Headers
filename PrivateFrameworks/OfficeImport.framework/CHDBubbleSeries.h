@@ -3,10 +3,10 @@
  */
 
 @interface CHDBubbleSeries : CHDSeries {
-    bool mBubble3D;
-    bool mInvertIfNegative;
-    bool mShowBubbleSize;
-    CHDData *mSizeData;
+    bool  mBubble3D;
+    bool  mInvertIfNegative;
+    bool  mShowBubbleSize;
+    CHDData * mSizeData;
 }
 
 - (void)dealloc;

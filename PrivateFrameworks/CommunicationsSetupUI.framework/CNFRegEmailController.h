@@ -3,13 +3,13 @@
  */
 
 @interface CNFRegEmailController : CNFRegFirstRunController {
-    PSSpecifier *_actionGroupSpecifier;
-    NSArray *_checkMailSpecifiers;
-    PSSpecifier *_currentActionSpecifier;
-    PSSpecifier *_emailSpecifier;
-    NSString *_pendingAlias;
-    BOOL _validating;
-    NSTimer *_validationTimeoutTimer;
+    PSSpecifier * _actionGroupSpecifier;
+    NSArray * _checkMailSpecifiers;
+    PSSpecifier * _currentActionSpecifier;
+    PSSpecifier * _emailSpecifier;
+    NSString * _pendingAlias;
+    BOOL  _validating;
+    NSTimer * _validationTimeoutTimer;
 }
 
 @property (nonatomic, copy) NSString *pendingAlias;

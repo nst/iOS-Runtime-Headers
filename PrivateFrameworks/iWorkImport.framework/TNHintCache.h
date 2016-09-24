@@ -3,23 +3,23 @@
  */
 
 @interface TNHintCache : NSObject {
-    TNPageCoordinateDictionary *mHintCacheEntryDictionary;
-    TSDDrawableInfo *mInfo;
-    BOOL mIsMaxColumnValid;
-    BOOL mIsMaxRowValid;
-    TNPageController *mPageController;
+    TNPageCoordinateDictionary * mHintCacheEntryDictionary;
+    TSDDrawableInfo * mInfo;
+    BOOL  mIsMaxColumnValid;
+    BOOL  mIsMaxRowValid;
+    TNPageController * mPageController;
     struct { 
-        struct { 
+        struct TSUCellCoord { 
             unsigned short row; 
             unsigned char column; 
             unsigned char reserved; 
         } topLeft; 
-        struct { 
+        struct TSUCellCoord { 
             unsigned short row; 
             unsigned char column; 
             unsigned char reserved; 
         } bottomRight; 
-    } mPageRange;
+    }  mPageRange;
 }
 
 @property (retain) TSDDrawableInfo *info;
@@ -29,10 +29,10 @@
 - (id)info;
 - (id)initWithInfo:(id)arg1 pageController:(id)arg2;
 - (void)invalidate;
-- (id)layoutAtCoordinate:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1 parentLayout:(id)arg2;
-- (id)p_hintCacheEntryAtCoordinate:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (id)layoutAtCoordinate:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1 parentLayout:(id)arg2;
+- (id)p_hintCacheEntryAtCoordinate:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (id)pageController;
-- (struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })pageRangeWithUpperBound:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (struct { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct TSUCellCoord { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })pageRangeWithUpperBound:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (void)setInfo:(id)arg1;
 
 @end

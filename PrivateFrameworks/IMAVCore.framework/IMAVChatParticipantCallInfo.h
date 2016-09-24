@@ -3,28 +3,28 @@
  */
 
 @interface IMAVChatParticipantCallInfo : NSObject {
-    unsigned int _callID;
-    BOOL _inviteNeedsDelivery;
-    BOOL _isAudioPaused;
-    BOOL _isBeingHandedOff;
-    BOOL _isReinitiate;
-    BOOL _isVideoPaused;
-    unsigned int _localConnectionType;
-    NSData *_localICEData;
-    NSData *_localNATIP;
-    NSNumber *_localNATType;
-    NSData *_localSKEData;
-    NSString *_peerCN;
-    NSNumber *_peerProtocolVersion;
-    NSDictionary *_relayCancel;
-    NSDictionary *_relayInitiate;
-    NSDictionary *_relayUpdate;
-    unsigned int _remoteConnectionType;
-    NSData *_remoteICEData;
-    NSData *_remoteNATIP;
-    NSNumber *_remoteNATType;
-    NSData *_remoteSKEData;
-    int _state;
+    unsigned int  _callID;
+    BOOL  _inviteNeedsDelivery;
+    BOOL  _isAudioPaused;
+    BOOL  _isBeingHandedOff;
+    BOOL  _isReinitiate;
+    BOOL  _isVideoPaused;
+    unsigned int  _localConnectionType;
+    NSData * _localICEData;
+    NSData * _localNATIP;
+    NSNumber * _localNATType;
+    NSData * _localSKEData;
+    NSString * _peerCN;
+    NSNumber * _peerProtocolVersion;
+    NSDictionary * _relayCancel;
+    NSDictionary * _relayInitiate;
+    NSDictionary * _relayUpdate;
+    unsigned int  _remoteConnectionType;
+    NSData * _remoteICEData;
+    NSData * _remoteNATIP;
+    NSNumber * _remoteNATType;
+    NSData * _remoteSKEData;
+    int  _state;
 }
 
 @property (nonatomic) unsigned int callID;

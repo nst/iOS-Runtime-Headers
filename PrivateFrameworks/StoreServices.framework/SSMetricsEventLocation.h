@@ -3,9 +3,9 @@
  */
 
 @interface SSMetricsEventLocation : NSObject {
-    int _position;
-    NSString *_type;
-    NSMutableDictionary *_values;
+    int  _position;
+    NSString * _type;
+    NSMutableDictionary * _values;
 }
 
 @property (nonatomic) int locationPosition;

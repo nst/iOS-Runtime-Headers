@@ -3,10 +3,12 @@
  */
 
 @interface NPKProtoRelevantPassesRequest : PBRequest <NSCopying> {
-    NSMutableArray *_passRelevancyTuples;
+    NSMutableArray * _passRelevancyTuples;
 }
 
 @property (nonatomic, retain) NSMutableArray *passRelevancyTuples;
+
++ (Class)passRelevancyTuplesType;
 
 - (void).cxx_destruct;
 - (void)addPassRelevancyTuples:(id)arg1;

@@ -3,11 +3,11 @@
  */
 
 @interface _UIActivityApplicationExtensionDiscovery : NSObject {
-    id _extensionMatchingContext;
-    NSArray *_extensionPointIdentifiers;
-    BOOL _matchesOnlyUserElectedExtensions;
-    BOOL _performsInitialMatching;
-    BOOL _sourceIsManaged;
+    id  _extensionMatchingContext;
+    NSArray * _extensionPointIdentifiers;
+    BOOL  _matchesOnlyUserElectedExtensions;
+    BOOL  _performsInitialMatching;
+    BOOL  _sourceIsManaged;
 }
 
 @property (retain) id extensionMatchingContext;
@@ -17,7 +17,7 @@
 @property (nonatomic) BOOL sourceIsManaged;
 
 - (void).cxx_destruct;
-- (id)activitiesMatchingInputItems:(id)arg1 error:(id*)arg2 updateBlock:(id /* block */)arg3;
+- (id)activitiesMatchingInputItems:(id)arg1 activityItems:(id)arg2 error:(id*)arg3 updateBlock:(id /* block */)arg4;
 - (void)cancelUpdatesIfNeeded;
 - (void)dealloc;
 - (id)extensionMatchingContext;

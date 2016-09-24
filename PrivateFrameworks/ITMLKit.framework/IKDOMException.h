@@ -3,7 +3,7 @@
  */
 
 @interface IKDOMException : IKJSObject <IKJSDOMException> {
-    int code;
+    int  code;
 }
 
 @property (nonatomic) int code;

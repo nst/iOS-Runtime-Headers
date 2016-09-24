@@ -6,10 +6,10 @@
     struct { 
         unsigned int matchingStatus : 1; 
         unsigned int status : 1; 
-    } _has;
-    int _matchingStatus;
-    int _status;
-    NSData *_zilchPoints;
+    }  _has;
+    int  _matchingStatus;
+    int  _status;
+    NSData * _zilchPoints;
 }
 
 @property (nonatomic) BOOL hasMatchingStatus;
@@ -19,6 +19,8 @@
 @property (nonatomic) int status;
 @property (nonatomic, retain) NSData *zilchPoints;
 
+- (int)StringAsMatchingStatus:(id)arg1;
+- (int)StringAsStatus:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -30,6 +32,7 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (int)matchingStatus;
+- (id)matchingStatusAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasMatchingStatus:(BOOL)arg1;
@@ -38,6 +41,7 @@
 - (void)setStatus:(int)arg1;
 - (void)setZilchPoints:(id)arg1;
 - (int)status;
+- (id)statusAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 - (id)zilchPoints;
 

@@ -3,10 +3,10 @@
  */
 
 @interface TUMetadataDestinationID : NSObject {
-    NSString *_cacheKey;
-    NSString *_countryCode;
-    NSString *_destinationID;
-    struct __CFPhoneNumber { } *_phoneNumber;
+    NSString * _cacheKey;
+    NSString * _countryCode;
+    NSString * _destinationID;
+    struct __CFPhoneNumber { } * _phoneNumber;
 }
 
 @property (nonatomic, retain) NSString *cacheKey;

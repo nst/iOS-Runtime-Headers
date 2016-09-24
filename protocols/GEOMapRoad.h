@@ -6,7 +6,23 @@
 @required
 
 - (GEOMapRequest *)findRoadsFrom:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 12: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <GEOMapRoad> *, void*, id /* block */, void*, void, id /* block */, GEOMapRequest *, void*
+- (GEOMapRequest *)findRoadsFromNextIntersection:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 12: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <GEOMapRoad> *, void*, id /* block */, void*, void, id /* block */, GEOMapRequest *, void*
+- (GEOMapRequest *)findRoadsFromPreviousIntersection:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 12: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <GEOMapRoad> *, void*, id /* block */, void*, void, id /* block */, GEOMapRequest *, void*
+- (GEOMapRequest *)findRoadsToNextIntersection:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 12: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <GEOMapRoad> *, void*, id /* block */, void*, void, id /* block */, GEOMapRequest *, void*
+- (GEOMapRequest *)findRoadsToPreviousIntersection:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 12: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <GEOMapRoad> *, void*, id /* block */, void*, void, id /* block */, GEOMapRequest *, void*
 - (int)formOfWay;
+- (NSString *)internalRoadName;
+- (BOOL)isBridge;
+- (BOOL)isRail;
+- (BOOL)isTunnel;
+- (int)rampType;
 - (int)roadClass;
+- (void)roadEdgesWithHandler:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }*, void*
+- (void)roadFeaturesWithHandler:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, struct { struct { id x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; BOOL x_1_1_8; unsigned int x_1_1_9; double x_1_1_10; unsigned int x_1_1_11; id x_1_1_12; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { double x_1_3_1; double x_1_3_2; } x_1_2_1; struct { double x_2_3_1; double x_2_3_2; } x_1_2_2; } x_9_1_1; struct { double x_2_2_1; double x_2_2_2; double x_2_2_3; double x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; BOOL x13; unsigned char x14; BOOL x15; BOOL x16; unsigned char x17; BOOL x18; unsigned char x19; struct _NSRange { unsigned int x_20_1_1; unsigned int x_20_1_2; } x20; BOOL x21; }*, void*
+- (unsigned int)roadID;
+- (double)roadWidth;
+- (unsigned int)speedLimit;
+- (BOOL)speedLimitIsMPH;
+- (int)travelDirection;
 
 @end

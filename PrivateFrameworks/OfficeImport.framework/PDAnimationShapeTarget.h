@@ -3,7 +3,7 @@
  */
 
 @interface PDAnimationShapeTarget : PDAnimationTarget {
-    OADDrawable *mDrawable;
+    OADDrawable * mDrawable;
 }
 
 - (void)dealloc;

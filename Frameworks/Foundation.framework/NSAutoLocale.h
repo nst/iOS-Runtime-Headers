@@ -6,8 +6,8 @@
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _lock;
-    NSLocale *loc;
+    }  _lock;
+    NSLocale * loc;
 }
 
 + (BOOL)supportsSecureCoding;

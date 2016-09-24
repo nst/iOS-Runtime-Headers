@@ -3,10 +3,10 @@
  */
 
 @interface SULoadMoreMediaCellConfiguration : SUItemCellConfiguration {
-    float _previousCellHeight;
+    double  _previousCellHeight;
 }
 
-@property (nonatomic) float previousCellHeight;
+@property (nonatomic) double previousCellHeight;
 
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
 

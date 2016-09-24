@@ -3,25 +3,38 @@
  */
 
 @interface EKAlarmsViewModel : NSObject {
-    EKCalendarItem *_calendarItem;
-    BOOL _needsUpdate;
-    NSMutableArray *_uiAlarms;
+    EKCalendarItem * _calendarItem;
+    BOOL  _canHaveLeaveNowAlarm;
+    BOOL  _hasLeaveNowAlarm;
+    BOOL  _needsUpdate;
+    NSMutableArray * _uiAlarms;
 }
 
 @property (nonatomic, retain) EKCalendarItem *calendarItem;
+@property (nonatomic, readonly) BOOL canHaveLeaveNowAlarm;
+@property (nonatomic, readonly) BOOL hasLeaveNowAlarm;
 @property (nonatomic) BOOL needsUpdate;
 @property (nonatomic, retain) NSMutableArray *uiAlarms;
 
++ (id)labelTextForIndex:(unsigned int)arg1;
+
 - (void).cxx_destruct;
 - (BOOL)_hasUIAlarmChangedFromUIAlarm:(id)arg1 toUIAlarm:(id)arg2;
+- (void)_updateAlarms;
+- (void)_updateLeaveNowFlags;
 - (id)calendarItem;
+- (BOOL)canHaveLeaveNowAlarm;
+- (id)createAlarmEditItemViewControllerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forAlarmAtIndex:(unsigned int)arg2;
+- (BOOL)hasLeaveNowAlarm;
 - (id)init;
 - (id)initWithCalendarItem:(id)arg1;
 - (BOOL)needsUpdate;
 - (void)setCalendarItem:(id)arg1;
+- (void)setNeedsUpdate;
 - (void)setNeedsUpdate:(BOOL)arg1;
 - (void)setUiAlarms:(id)arg1;
 - (id)uiAlarms;
+- (void)updateIfNeeded;
 - (void)updatedUIAlarmFromUIAlarm:(id)arg1 toUIAlarm:(id)arg2 atIndex:(unsigned int)arg3 completion:(id /* block */)arg4;
 
 @end

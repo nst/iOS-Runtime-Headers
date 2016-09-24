@@ -3,14 +3,14 @@
  */
 
 @interface OITSUDurationFormatter : NSFormatter {
-    int mCompactStyleStartUnit;
-    NSString *mFormat;
-    TSULocale *mLocale;
+    int  mCompactStyleStartUnit;
+    NSString * mFormat;
+    OITSULocale * mLocale;
 }
 
 @property (nonatomic) int compactStyleStartUnit;
 @property (nonatomic, copy) NSString *format;
-@property (readonly) TSULocale *locale;
+@property (readonly) OITSULocale *locale;
 
 - (int)compactStyleStartUnit;
 - (void)dealloc;

@@ -3,9 +3,9 @@
  */
 
 @interface DMFConnection : NSObject <CATTaskClientDelegate> {
-    BOOL mConnected;
-    CATOperationQueue *mOperationQueue;
-    CATTaskClient *mTaskClient;
+    BOOL  mConnected;
+    CATOperationQueue * mOperationQueue;
+    CATTaskClient * mTaskClient;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,7 +3,7 @@
  */
 
 @interface CLGeocoder : NSObject {
-    CLGeocoderInternal *_internal;
+    CLGeocoderInternal * _internal;
 }
 
 @property (getter=isGeocoding, nonatomic, readonly) BOOL geocoding;

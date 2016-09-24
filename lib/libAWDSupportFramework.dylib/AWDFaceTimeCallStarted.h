@@ -3,7 +3,7 @@
  */
 
 @interface AWDFaceTimeCallStarted : PBCodable <NSCopying> {
-    NSString *_guid;
+    NSString * _guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int isCallUpgrade : 1; 
@@ -11,13 +11,13 @@
         unsigned int isToPhoneNumber : 1; 
         unsigned int isVideo : 1; 
         unsigned int onLockScreen : 1; 
-    } _has;
-    unsigned int _isCallUpgrade;
-    unsigned int _isToEmail;
-    unsigned int _isToPhoneNumber;
-    unsigned int _isVideo;
-    unsigned int _onLockScreen;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned int  _isCallUpgrade;
+    unsigned int  _isToEmail;
+    unsigned int  _isToPhoneNumber;
+    unsigned int  _isVideo;
+    unsigned int  _onLockScreen;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic, retain) NSString *guid;

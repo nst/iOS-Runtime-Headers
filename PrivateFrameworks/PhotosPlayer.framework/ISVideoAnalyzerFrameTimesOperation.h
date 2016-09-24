@@ -3,10 +3,10 @@
  */
 
 @interface ISVideoAnalyzerFrameTimesOperation : NSOperation {
-    AVAsset *_asset;
-    AVAssetReader *_assetReader;
-    AVAssetReaderSampleReferenceOutput *_assetReaderOutput;
-    id /* block */ _resultHandler;
+    AVAsset * _asset;
+    AVAssetReader * _assetReader;
+    AVAssetReaderSampleReferenceOutput * _assetReaderOutput;
+    id /* block */  _resultHandler;
 }
 
 @property (nonatomic, readonly) AVAsset *asset;

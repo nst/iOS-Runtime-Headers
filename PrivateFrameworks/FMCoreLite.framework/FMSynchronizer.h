@@ -3,10 +3,10 @@
  */
 
 @interface FMSynchronizer : NSObject {
-    NSString *_info;
-    NSObject<OS_dispatch_semaphore> *_sem;
-    double _timeout;
-    BOOL _timeoutOccurred;
+    NSString * _info;
+    NSObject<OS_dispatch_semaphore> * _sem;
+    double  _timeout;
+    BOOL  _timeoutOccurred;
 }
 
 @property (nonatomic, retain) NSString *info;
@@ -17,7 +17,6 @@
 - (void).cxx_destruct;
 - (id)info;
 - (id)initWithDescription:(id)arg1 andTimeout:(double)arg2;
-- (id)loggingID;
 - (id)sem;
 - (void)setInfo:(id)arg1;
 - (void)setSem:(id)arg1;

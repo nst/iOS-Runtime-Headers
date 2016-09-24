@@ -4,24 +4,24 @@
 
 @interface UIRotationGestureRecognizer : UIGestureRecognizer {
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _anchorSceneReferencePoint;
-    int _currentRotationCount;
-    double _currentTouchAngle;
-    double _initialTouchAngle;
-    double _initialTouchDistance;
-    double _lastTouchTime;
-    float _postRecognitionWeight;
-    float _preRecognitionWeight;
-    float _previousVelocity;
-    UITouch *_touches;
-    id _transformAnalyzer;
-    float _velocity;
+        double x; 
+        double y; 
+    }  _anchorSceneReferencePoint;
+    int  _currentRotationCount;
+    double  _currentTouchAngle;
+    double  _initialTouchAngle;
+    double  _initialTouchDistance;
+    double  _lastTouchTime;
+    double  _postRecognitionWeight;
+    double  _preRecognitionWeight;
+    double  _previousVelocity;
+    UITouch * _touches;
+    id  _transformAnalyzer;
+    double  _velocity;
 }
 
-@property (nonatomic) float rotation;
-@property (nonatomic, readonly) float velocity;
+@property (nonatomic) double rotation;
+@property (nonatomic, readonly) double velocity;
 
 + (BOOL)_shouldDefaultToTouches;
 
@@ -32,7 +32,7 @@
 - (void)_setPostRecognitionWeight:(float)arg1;
 - (void)_setPreRecognitionWeight:(float)arg1;
 - (void)_updateTransformAnalyzerWeights;
-- (struct CGPoint { float x1; float x2; })anchorPoint;
+- (struct CGPoint { double x1; double x2; })anchorPoint;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (float)rotation;

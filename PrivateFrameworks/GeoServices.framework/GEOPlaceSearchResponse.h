@@ -7,17 +7,17 @@
         unsigned int turnaroundTime : 1; 
         unsigned int statusCodeInfo : 1; 
         unsigned int isChainResultSet : 1; 
-    } _has;
-    BOOL _isChainResultSet;
-    GEOMapRegion *_mapRegion;
-    NSMutableArray *_namedFeatures;
-    NSString *_nearbySectionHeader;
-    NSMutableArray *_placeResults;
-    int _status;
-    int _statusCodeInfo;
-    NSMutableArray *_suggestionEntryLists;
-    NSData *_suggestionMetadata;
-    double _turnaroundTime;
+    }  _has;
+    BOOL  _isChainResultSet;
+    GEOMapRegion * _mapRegion;
+    NSMutableArray * _namedFeatures;
+    NSString * _nearbySectionHeader;
+    NSMutableArray * _placeResults;
+    int  _status;
+    int  _statusCodeInfo;
+    NSMutableArray * _suggestionEntryLists;
+    NSData * _suggestionMetadata;
+    double  _turnaroundTime;
 }
 
 @property (nonatomic) BOOL hasIsChainResultSet;
@@ -37,6 +37,12 @@
 @property (nonatomic, retain) NSData *suggestionMetadata;
 @property (nonatomic) double turnaroundTime;
 
++ (Class)namedFeaturesType;
++ (Class)placeResultType;
++ (Class)suggestionEntryListsType;
+
+- (int)StringAsStatus:(id)arg1;
+- (int)StringAsStatusCodeInfo:(id)arg1;
 - (void)addNamedFeatures:(id)arg1;
 - (void)addPlaceResult:(id)arg1;
 - (void)addSuggestionEntryLists:(id)arg1;
@@ -81,7 +87,9 @@
 - (void)setSuggestionMetadata:(id)arg1;
 - (void)setTurnaroundTime:(double)arg1;
 - (int)status;
+- (id)statusAsString:(int)arg1;
 - (int)statusCodeInfo;
+- (id)statusCodeInfoAsString:(int)arg1;
 - (id)suggestionEntryLists;
 - (id)suggestionEntryListsAtIndex:(unsigned int)arg1;
 - (unsigned int)suggestionEntryListsCount;

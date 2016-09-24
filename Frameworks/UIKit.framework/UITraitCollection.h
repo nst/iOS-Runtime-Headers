@@ -5,16 +5,19 @@
 @interface UITraitCollection : NSObject <NSCopying, NSSecureCoding> {
     struct { 
         int userInterfaceIdiom; 
-        float displayScale; 
+        double displayScale; 
+        int displayGamut; 
         int touchLevel; 
         unsigned int interactionModel; 
         unsigned int primaryInteractionModel; 
         int horizontalSizeClass; 
         int verticalSizeClass; 
         int userInterfaceStyle; 
+        int layoutDirection; 
         int forceTouchCapability; 
-    } _builtinTraits;
-    NSDictionary *_clientDefinedTraits;
+        int preferredContentSizeCategory; 
+    }  _builtinTraits;
+    NSDictionary * _clientDefinedTraits;
 }
 
 @property (nonatomic, readonly) BOOL MPU_hasCompactHeight;
@@ -23,12 +26,16 @@
 @property (nonatomic, readonly) BOOL MPU_hasRegularWidth;
 @property (nonatomic, readonly) int barMetrics;
 @property (nonatomic, readonly) int barPosition;
-@property (nonatomic, readonly) float displayScale;
+@property (nonatomic, readonly) int displayGamut;
+@property (nonatomic, readonly) double displayScale;
 @property (nonatomic, readonly) int forceTouchCapability;
 @property (nonatomic, readonly) int horizontalSizeClass;
+@property (nonatomic, readonly) int layoutDirection;
 @property (getter=music_isContainedWithinSplitViewDetail, nonatomic, readonly) BOOL music_containedWithinSplitViewDetail;
 @property (getter=music_isContainedWithinSplitViewPrimary, nonatomic, readonly) BOOL music_containedWithinSplitViewPrimary;
+@property (nonatomic, readonly, copy) NSString *preferredContentSizeCategory;
 @property (nonatomic, readonly) int userInterfaceIdiom;
+@property (nonatomic, readonly) int userInterfaceStyle;
 @property (nonatomic, readonly) int verticalSizeClass;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
@@ -38,10 +45,13 @@
 + (BOOL)supportsSecureCoding;
 + (id)traitCollectionWithBarMetrics:(int)arg1;
 + (id)traitCollectionWithBarPosition:(int)arg1;
++ (id)traitCollectionWithDisplayGamut:(int)arg1;
 + (id)traitCollectionWithDisplayScale:(float)arg1;
 + (id)traitCollectionWithForceTouchCapability:(int)arg1;
 + (id)traitCollectionWithHorizontalSizeClass:(int)arg1;
 + (id)traitCollectionWithInteractionModel:(unsigned int)arg1;
++ (id)traitCollectionWithLayoutDirection:(int)arg1;
++ (id)traitCollectionWithPreferredContentSizeCategory:(id)arg1;
 + (id)traitCollectionWithPrimaryInteractionModel:(unsigned int)arg1;
 + (id)traitCollectionWithTouchLevel:(int)arg1;
 + (id)traitCollectionWithTraitsFromCollections:(id)arg1;
@@ -49,10 +59,12 @@
 + (id)traitCollectionWithUserInterfaceStyle:(int)arg1;
 + (id)traitCollectionWithVerticalSizeClass:(int)arg1;
 
+- (BOOL)_changedContentSizeCategoryFromTraitCollection:(id)arg1;
 - (int)_compare:(id)arg1;
-- (id)_initWithBuiltinTraitStorage:(struct { int x1; float x2; int x3; unsigned int x4; unsigned int x5; int x6; int x7; int x8; int x9; }*)arg1 clientDefinedTraits:(id)arg2;
+- (id)_initWithBuiltinTraitStorage:(struct { int x1; double x2; int x3; int x4; unsigned int x5; unsigned int x6; int x7; int x8; int x9; int x10; int x11; int x12; }*)arg1 clientDefinedTraits:(id)arg2;
 - (BOOL)_matchesIntersectionWithTraitCollection:(id)arg1;
 - (id)_namedImageDescription;
+- (id)_traitCollectionByReplacingValue:(id)arg1 forTraitName:(id)arg2;
 - (id)_valueForTraitNamed:(id)arg1;
 - (int)barMetrics;
 - (int)barPosition;
@@ -60,6 +72,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (int)displayGamut;
 - (float)displayScale;
 - (void)encodeWithCoder:(id)arg1;
 - (int)forceTouchCapability;
@@ -69,6 +82,8 @@
 - (id)initWithCoder:(id)arg1;
 - (unsigned int)interactionModel;
 - (BOOL)isEqual:(id)arg1;
+- (int)layoutDirection;
+- (id)preferredContentSizeCategory;
 - (unsigned int)primaryInteractionModel;
 - (int)touchLevel;
 - (int)userInterfaceIdiom;
@@ -77,6 +92,7 @@
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
+- (BOOL)mf_hasCompactDimension;
 - (BOOL)mf_supportsPopoverPresentation;
 
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
@@ -95,11 +111,6 @@
 - (BOOL)MPU_hasRegularWidth;
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
-
-- (BOOL)tsu_isCompactHeight;
-- (BOOL)tsu_isCompactWidth;
-
-// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
 - (BOOL)tsu_isCompactHeight;
 - (BOOL)tsu_isCompactWidth;

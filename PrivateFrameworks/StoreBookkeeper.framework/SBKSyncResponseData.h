@@ -3,14 +3,14 @@
  */
 
 @interface SBKSyncResponseData : NSObject {
-    NSArray *_conflictedKeys;
-    NSArray *_deletedKeys;
-    NSMutableDictionary *_responseOpEntiesByKey;
-    NSArray *_successfullyDeletedKeys;
-    NSArray *_successfullyUpdatedKeys;
-    NSString *_syncAnchor;
-    SBKSyncTransaction *_transaction;
-    NSArray *_updatedKeys;
+    NSArray * _conflictedKeys;
+    NSArray * _deletedKeys;
+    NSMutableDictionary * _responseOpEntiesByKey;
+    NSArray * _successfullyDeletedKeys;
+    NSArray * _successfullyUpdatedKeys;
+    NSString * _syncAnchor;
+    SBKSyncTransaction * _transaction;
+    NSArray * _updatedKeys;
 }
 
 @property (readonly) NSArray *conflictedKeys;

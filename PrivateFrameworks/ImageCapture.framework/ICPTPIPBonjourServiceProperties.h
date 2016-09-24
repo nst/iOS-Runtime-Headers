@@ -3,23 +3,27 @@
  */
 
 @interface ICPTPIPBonjourServiceProperties : NSObject {
-    int _clientSpinLock;
-    NSMutableArray *_clients;
-    int _clientsSpinLock;
-    id _delegate;
-    NSString *_hostGUID;
-    unsigned long _hostMaxConnections;
-    NSString *_hostName;
-    unsigned short _hostPort;
-    int _hostSecuritylevel;
-    struct __CFSocket { } *_hostSocket;
-    struct __CFNetService { } *_publishedService;
-    NSString *_serviceType;
-    NSDictionary *_txtRecordsDict;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _clientUnfairLock;
+    NSMutableArray * _clients;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _clientsUnfairLock;
+    id  _delegate;
+    NSString * _hostGUID;
+    unsigned long  _hostMaxConnections;
+    NSString * _hostName;
+    unsigned short  _hostPort;
+    int  _hostSecuritylevel;
+    struct __CFSocket { } * _hostSocket;
+    struct __CFNetService { } * _publishedService;
+    NSString * _serviceType;
+    NSDictionary * _txtRecordsDict;
 }
 
 @property (retain) NSMutableArray *clients;
-@property int clientsSpinLock;
+@property struct os_unfair_lock_s { unsigned int x1; } clientsUnfairLock;
 @property id delegate;
 @property (retain) NSString *hostGUID;
 @property unsigned long hostMaxConnections;
@@ -32,7 +36,7 @@
 @property (retain) NSDictionary *txtRecordsDict;
 
 - (id)clients;
-- (int)clientsSpinLock;
+- (struct os_unfair_lock_s { unsigned int x1; })clientsUnfairLock;
 - (void)dealloc;
 - (id)delegate;
 - (void)finalize;
@@ -42,10 +46,13 @@
 - (unsigned short)hostPort;
 - (int)hostSecurityLevel;
 - (struct __CFSocket { }*)hostSocket;
+- (id)init;
 - (struct __CFNetService { }*)publishedService;
+- (void)releaseNetService;
+- (void)releaseSocket;
 - (id)serviceType;
 - (void)setClients:(id)arg1;
-- (void)setClientsSpinLock:(int)arg1;
+- (void)setClientsUnfairLock:(struct os_unfair_lock_s { unsigned int x1; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHostGUID:(id)arg1;
 - (void)setHostMaxConnections:(unsigned long)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface _UITableViewCellRemoveControl : UIRemoveControl {
-    float _verticalOffset;
+    double  _verticalOffset;
 }
 
 - (float)_verticalOffsetFromTarget;

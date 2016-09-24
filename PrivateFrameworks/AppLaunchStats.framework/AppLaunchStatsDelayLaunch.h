@@ -3,10 +3,10 @@
  */
 
 @interface AppLaunchStatsDelayLaunch : NSObject <DuetLoggerProtocol, DuetSaveAndRestore> {
-    NSObject<OS_dispatch_queue> *aplsDelayLaunchQueue;
-    NSMutableDictionary *delayLaunchList;
-    NSMutableDictionary *delayLaunchTimeInterval;
-    AppLaunchStatsSaveAndRestore *saveAndRestoreContext;
+    NSObject<OS_dispatch_queue> * aplsDelayLaunchQueue;
+    NSMutableDictionary * delayLaunchList;
+    NSMutableDictionary * delayLaunchTimeInterval;
+    AppLaunchStatsSaveAndRestore * saveAndRestoreContext;
 }
 
 - (void).cxx_destruct;

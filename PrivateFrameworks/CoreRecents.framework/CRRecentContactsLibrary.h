@@ -3,8 +3,8 @@
  */
 
 @interface CRRecentContactsLibrary : NSObject {
-    NSXPCConnection *_connection;
-    NSObject<OS_dispatch_queue> *_replyQueue;
+    NSXPCConnection * _connection;
+    NSObject<OS_dispatch_queue> * _replyQueue;
 }
 
 // Image: /System/Library/PrivateFrameworks/CoreRecents.framework/CoreRecents

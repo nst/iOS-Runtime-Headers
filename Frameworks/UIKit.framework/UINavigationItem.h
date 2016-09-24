@@ -3,43 +3,43 @@
  */
 
 @interface UINavigationItem : NSObject <NSCoding> {
-    float __idealCustomTitleWidth;
-    UINavigationBar *__owningNavigationBar;
-    float __titleViewWidthForAnimations;
-    NSArray *_abbreviatedBackButtonTitles;
-    UIBarButtonItem *_backBarButtonItem;
-    NSString *_backButtonTitle;
-    UIView *_backButtonView;
-    NSMutableDictionary *_backgroundImages;
-    BOOL _barStyleIndependent;
-    id _context;
-    NSArray *_customLeftViews;
-    NSArray *_customRightViews;
-    UIView *_defaultTitleView;
-    float _fontScaleAdjustment;
-    UIImageView *_frozenTitleView;
-    BOOL _hidesBackButton;
-    int _independentBarStyle;
-    NSArray *_leftBarButtonItems;
-    unsigned int _leftFlexibleSpaceCount;
-    NSArray *_leftItemSpaceList;
-    BOOL _leftItemsSupplementBackButton;
-    UINavigationBar *_navigationBar;
-    NSString *_pendingTitle;
-    NSString *_prompt;
-    NSArray *_rightBarButtonItems;
-    unsigned int _rightFlexibleSpaceCount;
-    NSArray *_rightItemSpaceList;
-    int _tag;
-    NSString *_title;
-    UIView *_titleView;
+    BOOL  __backgroundHidden;
+    UIView * __canvasView;
+    double  __idealCustomTitleWidth;
+    UINavigationBar * __owningNavigationBar;
+    double  __titleViewWidthForAnimations;
+    NSArray * _abbreviatedBackButtonTitles;
+    UIBarButtonItem * _backBarButtonItem;
+    NSString * _backButtonTitle;
+    UIView * _backButtonView;
+    id  _context;
+    NSArray * _customLeftViews;
+    NSArray * _customRightViews;
+    UIView * _defaultTitleView;
+    double  _fontScaleAdjustment;
+    UIImageView * _frozenTitleView;
+    BOOL  _hidesBackButton;
+    NSArray * _leftBarButtonItems;
+    unsigned int  _leftFlexibleSpaceCount;
+    NSArray * _leftItemSpaceList;
+    BOOL  _leftItemsSupplementBackButton;
+    NSMutableDictionary * _minimumDesiredHeights;
+    UINavigationBar * _navigationBar;
+    NSString * _pendingTitle;
+    NSString * _prompt;
+    NSArray * _rightBarButtonItems;
+    unsigned int  _rightFlexibleSpaceCount;
+    NSArray * _rightItemSpaceList;
+    int  _tag;
+    NSString * _title;
+    UIView * _titleView;
 }
 
 @property (setter=_setAbbreviatedBackButtonTitles:, nonatomic, copy) NSArray *_abbreviatedBackButtonTitles;
-@property (nonatomic, readonly) NSMutableDictionary *_backgroundImages;
-@property (getter=_isBarStyleIndependent, setter=_setBarStyleIndependent:, nonatomic) BOOL _barStyleIndependent;
-@property (setter=_setFontScaleAdjustment:, nonatomic) float _fontScaleAdjustment;
-@property (setter=_setIdealCustomTitleWidth:, nonatomic) float _idealCustomTitleWidth;
+@property (setter=_setBackgroundHidden:, nonatomic) BOOL _backgroundHidden;
+@property (setter=_setCanvasView:, nonatomic, retain) UIView *_canvasView;
+@property (setter=_setFontScaleAdjustment:, nonatomic) double _fontScaleAdjustment;
+@property (setter=_setIdealCustomTitleWidth:, nonatomic) double _idealCustomTitleWidth;
 @property (setter=_setIndependentBarStyle:, nonatomic) int _independentBarStyle;
 @property (setter=_setLeftFlexibleSpaceCount:, nonatomic) unsigned int _leftFlexibleSpaceCount;
 @property (setter=_setLeftItemSpaceList:, nonatomic, copy) NSArray *_leftItemSpaceList;
@@ -47,13 +47,13 @@
 @property (setter=_setPendingTitle:, nonatomic, copy) NSString *_pendingTitle;
 @property (setter=_setRightFlexibleSpaceCount:, nonatomic) unsigned int _rightFlexibleSpaceCount;
 @property (setter=_setRightItemSpaceList:, nonatomic, copy) NSArray *_rightItemSpaceList;
-@property (nonatomic) float _titleViewWidthForAnimations;
+@property (nonatomic) double _titleViewWidthForAnimations;
 @property (nonatomic, retain) UIBarButtonItem *backBarButtonItem;
 @property (nonatomic) BOOL hidesBackButton;
 @property (nonatomic, retain) UIBarButtonItem *leftBarButtonItem;
 @property (nonatomic, copy) NSArray *leftBarButtonItems;
 @property (nonatomic) BOOL leftItemsSupplementBackButton;
-@property (setter=music_setTitleViewAlpha:, nonatomic) float music_titleViewAlpha;
+@property (setter=music_setTitleViewAlpha:, nonatomic) double music_titleViewAlpha;
 @property (nonatomic, copy) NSString *prompt;
 @property (setter=pu_setBanner:, nonatomic, retain) PUAbstractNavigationBanner *pu_banner;
 @property (nonatomic, retain) UIBarButtonItem *rightBarButtonItem;
@@ -69,10 +69,10 @@
 - (id)_abbreviatedBackButtonTitles;
 - (BOOL)_accumulateViewsFromItems:(id)arg1 isLeft:(BOOL)arg2 refreshViews:(BOOL)arg3;
 - (void)_addDefaultTitleViewToNavigationBarIfNecessary;
-- (id)_automationID;
-- (id)_backgroundImages;
+- (BOOL)_backgroundHidden;
 - (id)_barButtonForBackButtonIndicator;
 - (id)_buttonForBackButtonIndicator;
+- (id)_canvasView;
 - (void)_cleanupFrozenTitleView;
 - (id)_customLeftView;
 - (id)_customLeftViewCreating:(BOOL)arg1;
@@ -83,6 +83,7 @@
 - (id)_customRightViews;
 - (id)_customRightViewsCreating:(BOOL)arg1;
 - (id)_defaultTitleView;
+- (float)_desiredHeightForBarMetrics:(int)arg1 defaultHeightBlock:(id /* block */)arg2;
 - (id)_firstNonSpaceItemInList:(id)arg1;
 - (id)_firstNonSpaceLeftItem;
 - (id)_firstNonSpaceRightItem;
@@ -92,16 +93,18 @@
 - (id)_independentBackgroundImageForBarMetrics:(int)arg1;
 - (int)_independentBarStyle;
 - (id)_independentShadowImage;
-- (BOOL)_isBarStyleIndependent;
 - (id)_leftBarButtonItem;
 - (id)_leftBarButtonItems;
 - (unsigned int)_leftFlexibleSpaceCount;
 - (id)_leftItemSpaceList;
 - (BOOL)_leftItemsWantBackButton;
+- (float)_minimumDesiredHeightForBarMetrics:(int)arg1;
+- (BOOL)_needsSizeTransitionToItem:(id)arg1 barMetrics:(int)arg2 defaultHeightBlock:(id /* block */)arg3;
 - (id)_owningNavigationBar;
 - (id)_pendingTitle;
 - (void)_removeBackButtonView;
 - (void)_removeBarButtonItemViews;
+- (void)_removeContentInView:(id)arg1;
 - (void)_removeTitleAndButtonViews;
 - (void)_replaceCustomLeftRightViewAtIndex:(unsigned int)arg1 withView:(id)arg2 left:(BOOL)arg3;
 - (id)_rightBarButtonItem;
@@ -111,7 +114,8 @@
 - (void)_setAbbreviatedBackButtonTitles:(id)arg1;
 - (void)_setBackButtonPressed:(BOOL)arg1;
 - (void)_setBackButtonTitle:(id)arg1 lineBreakMode:(int)arg2;
-- (void)_setBarStyleIndependent:(BOOL)arg1;
+- (void)_setBackgroundHidden:(BOOL)arg1;
+- (void)_setCanvasView:(id)arg1;
 - (void)_setCustomLeftRightView:(id)arg1 left:(BOOL)arg2;
 - (void)_setCustomLeftView:(id)arg1;
 - (void)_setCustomLeftViews:(id)arg1;
@@ -125,6 +129,7 @@
 - (void)_setLeftBarButtonItems:(id)arg1;
 - (void)_setLeftFlexibleSpaceCount:(unsigned int)arg1;
 - (void)_setLeftItemSpaceList:(id)arg1;
+- (void)_setMinimumDesiredHeight:(float)arg1 forBarMetrics:(int)arg2;
 - (void)_setOwningNavigationBar:(id)arg1;
 - (void)_setPendingTitle:(id)arg1;
 - (void)_setRightBarButtonItem:(id)arg1;
@@ -150,6 +155,7 @@
 - (id)customRightView;
 - (id)customTitleView;
 - (void)dealloc;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)existingBackButtonView;
 - (BOOL)hidesBackButton;
@@ -205,8 +211,11 @@
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
+- (BOOL)_pu_shouldUpdateBarButtonItems:(id)arg1 withNewBarButtonItems:(id)arg2;
 - (id)pu_banner;
 - (void)pu_setBanner:(id)arg1;
+- (BOOL)pu_shouldUpdateLeftBarButtonItems:(id)arg1;
+- (BOOL)pu_shouldUpdateRightBarButtonItems:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 

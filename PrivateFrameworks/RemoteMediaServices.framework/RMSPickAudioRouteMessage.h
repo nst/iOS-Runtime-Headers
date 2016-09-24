@@ -6,14 +6,14 @@
     struct { 
         unsigned int macAddress : 1; 
         unsigned int sessionIdentifier : 1; 
-    } _has;
-    long long _macAddress;
-    int _sessionIdentifier;
+    }  _has;
+    int  _macAddress;
+    int  _sessionIdentifier;
 }
 
 @property (nonatomic) BOOL hasMacAddress;
 @property (nonatomic) BOOL hasSessionIdentifier;
-@property (nonatomic) long long macAddress;
+@property (nonatomic) int macAddress;
 @property (nonatomic) int sessionIdentifier;
 
 - (void)copyTo:(id)arg1;
@@ -24,13 +24,13 @@
 - (BOOL)hasSessionIdentifier;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (long long)macAddress;
+- (int)macAddress;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (int)sessionIdentifier;
 - (void)setHasMacAddress:(BOOL)arg1;
 - (void)setHasSessionIdentifier:(BOOL)arg1;
-- (void)setMacAddress:(long long)arg1;
+- (void)setMacAddress:(int)arg1;
 - (void)setSessionIdentifier:(int)arg1;
 - (void)writeTo:(id)arg1;
 

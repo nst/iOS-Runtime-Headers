@@ -3,13 +3,13 @@
  */
 
 @interface SUPageSection : NSObject {
-    double _expirationTime;
-    NSString *_identifier;
-    UIImage *_image;
-    int _structuredPageType;
-    NSString *_title;
-    SSMutableURLRequestProperties *_urlRequestProperties;
-    id _userInfo;
+    double  _expirationTime;
+    NSString * _identifier;
+    UIImage * _image;
+    int  _structuredPageType;
+    NSString * _title;
+    SSMutableURLRequestProperties * _urlRequestProperties;
+    id  _userInfo;
 }
 
 @property (nonatomic, copy) SSURLRequestProperties *URLRequestProperties;

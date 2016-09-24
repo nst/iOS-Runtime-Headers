@@ -3,13 +3,13 @@
  */
 
 @interface HMDRemoteReadRequestMessage : NSObject {
-    NSUUID *_accessoryUUID;
-    HMMessage *_readMessage;
-    NSObject<OS_dispatch_queue> *_responseQueue;
+    NSUUID * _accessoryUUID;
+    HMFMessage * _readMessage;
+    NSObject<OS_dispatch_queue> * _responseQueue;
 }
 
 @property (nonatomic, readonly) NSUUID *accessoryUUID;
-@property (nonatomic, readonly) HMMessage *readMessage;
+@property (nonatomic, readonly) HMFMessage *readMessage;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *responseQueue;
 
 - (void).cxx_destruct;

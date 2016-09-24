@@ -3,8 +3,8 @@
  */
 
 @interface SUScriptRedeemViewController : SUScriptViewController {
-    int _category;
-    NSString *_initialCode;
+    int  _category;
+    NSString * _initialCode;
 }
 
 @property (nonatomic, copy) NSString *initialCode;

@@ -3,8 +3,8 @@
  */
 
 @interface HDCodableObjectAssociations : PBCodable <NSCopying> {
-    NSData *_associationUuid;
-    NSData *_objectUuids;
+    NSData * _associationUuid;
+    NSData * _objectUuids;
 }
 
 @property (nonatomic, retain) NSData *associationUuid;

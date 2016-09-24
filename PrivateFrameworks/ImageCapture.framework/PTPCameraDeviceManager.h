@@ -3,8 +3,8 @@
  */
 
 @interface PTPCameraDeviceManager : DeviceManager <NSNetServiceBrowserDelegate, NSNetServiceDelegate> {
-    NSNetServiceBrowser *_netServiceBrowser;
-    NSMutableArray *_netServices;
+    NSNetServiceBrowser * _netServiceBrowser;
+    NSMutableArray * _netServices;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,12 +12,15 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void)asyncRequestDataOfFilesImp:(id)arg1;
+- (void)asyncRetrieveDataOfFilesImp:(id)arg1;
 - (void)closeDeviceImp:(id)arg1;
 - (void)closeSessionImp:(id)arg1;
 - (void)dealloc;
 - (void)deleteFileImp:(id)arg1;
 - (void)downloadFileImp:(id)arg1;
 - (void)ejectImp:(id)arg1;
+- (void)getMaxObjectsImp:(id)arg1;
 - (void)getMetadataOfFileImp:(id)arg1;
 - (void)getThumbnailOfFileImp:(id)arg1;
 - (int)handleEvent:(id)arg1 onDevice:(id)arg2 contextInfo:(void*)arg3;

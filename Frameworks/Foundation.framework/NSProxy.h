@@ -3,7 +3,7 @@
  */
 
 @interface NSProxy <NSObject> {
-    Class isa;
+    Class  isa;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -80,6 +80,18 @@
 - (BOOL)isFault;
 - (BOOL)isKindOfClass:(Class)arg1;
 - (BOOL)isMemberOfClass:(Class)arg1;
+- (BOOL)isNSArray__;
+- (BOOL)isNSCFConstantString__;
+- (BOOL)isNSData__;
+- (BOOL)isNSDate__;
+- (BOOL)isNSDictionary__;
+- (BOOL)isNSNumber__;
+- (BOOL)isNSObject__;
+- (BOOL)isNSOrderedSet__;
+- (BOOL)isNSSet__;
+- (BOOL)isNSString__;
+- (BOOL)isNSTimeZone__;
+- (BOOL)isNSValue__;
 - (BOOL)isProxy;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)performSelector:(SEL)arg1;
@@ -107,11 +119,5 @@
 - (void)_accessibilitySetValue:(id)arg1 forKey:(id)arg2 storageMode:(int)arg3;
 - (unsigned int)_accessibilityUnsignedIntegerValueForKey:(id)arg1;
 - (id)_accessibilityValueForKey:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
-
-+ (BOOL)ICLogging_isLoggingEnabledAtLevel:(int)arg1;
-
-- (BOOL)ICLogging_isLoggingEnabledAtLevel:(int)arg1;
 
 @end

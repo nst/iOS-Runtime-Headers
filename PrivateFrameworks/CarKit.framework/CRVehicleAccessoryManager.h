@@ -3,8 +3,8 @@
  */
 
 @interface CRVehicleAccessoryManager : NSObject {
-    <CRVehicleAccessoryManagerDelegate> *_vehicleAccessoryDelegate;
-    NSMutableDictionary *_vehiclesBySerialNumber;
+    <CRVehicleAccessoryManagerDelegate> * _vehicleAccessoryDelegate;
+    NSMutableDictionary * _vehiclesBySerialNumber;
 }
 
 @property (nonatomic) <CRVehicleAccessoryManagerDelegate> *vehicleAccessoryDelegate;

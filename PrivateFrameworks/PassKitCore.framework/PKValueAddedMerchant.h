@@ -3,8 +3,8 @@
  */
 
 @interface PKValueAddedMerchant : NSObject <NSSecureCoding> {
-    NSData *_identifier;
-    int _timesPresented;
+    NSData * _identifier;
+    int  _timesPresented;
 }
 
 @property (nonatomic, retain) NSData *identifier;
@@ -12,7 +12,7 @@
 
 + (BOOL)supportsSecureCoding;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;

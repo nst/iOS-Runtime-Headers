@@ -3,7 +3,7 @@
  */
 
 @interface PUImageViewExtraction : NSObject {
-    BOOL __cancelled;
+    BOOL  __cancelled;
 }
 
 @property (getter=_isCancelled, setter=_setCancelled:) BOOL _cancelled;

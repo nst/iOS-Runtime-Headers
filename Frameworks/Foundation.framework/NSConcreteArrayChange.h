@@ -3,10 +3,10 @@
  */
 
 @interface NSConcreteArrayChange : NSArrayChange {
-    unsigned int _changeType;
-    unsigned int _destinationIndex;
-    unsigned int _sourceIndex;
-    id _value;
+    unsigned int  _changeType;
+    unsigned int  _destinationIndex;
+    unsigned int  _sourceIndex;
+    id  _value;
 }
 
 - (unsigned int)changeType;

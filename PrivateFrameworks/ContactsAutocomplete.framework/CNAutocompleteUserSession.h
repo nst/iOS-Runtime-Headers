@@ -3,14 +3,14 @@
  */
 
 @interface CNAutocompleteUserSession : NSObject {
-    unsigned int _currentBatch;
-    CNAutocompleteFetchRequest *_currentRequest;
-    <CNFuture> *_duetResultsFuture;
-    _CNAutocompleteUserSessionDisplayedResults *_lastDisplayedResults;
-    <CNAutocompleteProbeProvider> *_probeProvider;
-    NSDate *_requestStartTime;
-    NSObject<OS_dispatch_queue> *_syncQueue;
-    CNAutocompleteUsageMonitor *_usageMonitor;
+    unsigned int  _currentBatch;
+    CNAutocompleteFetchRequest * _currentRequest;
+    <CNFuture> * _duetResultsFuture;
+    _CNAutocompleteUserSessionDisplayedResults * _lastDisplayedResults;
+    <CNAutocompleteProbeProvider> * _probeProvider;
+    NSDate * _requestStartTime;
+    NSObject<OS_dispatch_queue> * _syncQueue;
+    CNAutocompleteUsageMonitor * _usageMonitor;
 }
 
 @property (nonatomic) unsigned int currentBatch;

@@ -3,14 +3,16 @@
  */
 
 @interface PSYInitialSyncStateObserver : NSObject <PSYSyncStateObserverInterface> {
-    NSXPCConnection *_connection;
-    <PSYInitialSyncStateObserverDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    BOOL _init;
-    NSMutableDictionary *_initialSyncStateCache;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_syncStateCache;
-    NSMutableDictionary *_syncStateEntryCache;
+    NSXPCConnection * _connection;
+    int  _daemonStartedNotifyToken;
+    <PSYInitialSyncStateObserverDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    BOOL  _init;
+    NSMutableDictionary * _initialSyncStateCache;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableDictionary * _syncStateCache;
+    NSMutableDictionary * _syncStateEntryCache;
+    int  _syncSwitchNotifyToken;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -21,9 +23,9 @@
 
 - (void).cxx_destruct;
 - (void)_handleConnectionInvalidated;
-- (void)_notifyCanRetryFailedRequests;
-- (void)_querySyncState;
 - (void)_queue_initializeIfNotInitialized;
+- (void)_queue_notifyCanRetryFailedRequests;
+- (void)_queue_querySyncState;
 - (void)_queue_updateSyncStates:(id)arg1 notifyDelegateOfChanges:(BOOL)arg2;
 - (void)dealloc;
 - (id)delegate;

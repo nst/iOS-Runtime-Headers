@@ -5,7 +5,7 @@
 
 @required
 
-- (NSArray *)assetIndexPathsForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (NSArray *)assetIndexPathsForElementsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)finalizeViewTransitionToSize;
 - (float)globalBottomPadding;
 - (float)globalFooterHeight;
@@ -14,7 +14,7 @@
 - (float)globalTopPadding;
 - (NSSet *)hiddenItemIndexPaths;
 - (void)invalidateLayoutForVerticalScroll;
-- (id)prepareForViewTransitionToSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)prepareForViewTransitionToSize:(struct CGSize { double x1; double x2; })arg1;
 - (NSString *)sectionHeaderElementKind;
 - (float)sectionHeaderHeight;
 - (BOOL)sectionHeadersEnabled;
@@ -28,6 +28,8 @@
 - (void)setSectionHeaderHeight:(float)arg1;
 - (void)setSectionHeadersEnabled:(BOOL)arg1;
 - (void)setSectionTopPadding:(float)arg1;
-- (struct CGPoint { float x1; float x2; })targetContentOffsetForViewSizeTransitionContext:(id)arg1;
+- (void)setUsesAspectItems:(BOOL)arg1;
+- (struct CGPoint { double x1; double x2; })targetContentOffsetForViewSizeTransitionContext:(id)arg1;
+- (BOOL)usesAspectItems;
 
 @end

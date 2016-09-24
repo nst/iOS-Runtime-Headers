@@ -3,9 +3,9 @@
  */
 
 @interface EKEventDetailNotesCell : EKEventDetailCell {
-    BOOL _isTruncatingNotes;
-    UILabel *_notesTitleView;
-    UITextView *_notesView;
+    BOOL  _isTruncatingNotes;
+    UILabel * _notesTitleView;
+    UITextView * _notesView;
 }
 
 @property (nonatomic, readonly) BOOL isTruncatingNotes;

@@ -3,11 +3,11 @@
  */
 
 @interface AccountUtilities : NSObject {
-    NSArray *_accountIDsEnabledForNotes;
-    ACAccountStore *_accountStore;
-    NSObject<OS_dispatch_group> *_backgroundDispatchGroup;
-    NoteContext *_noteContext;
-    NSLock *_updateAccountInfosLock;
+    NSArray * _accountIDsEnabledForNotes;
+    ACAccountStore * _accountStore;
+    NSObject<OS_dispatch_group> * _backgroundDispatchGroup;
+    NoteContext * _noteContext;
+    NSLock * _updateAccountInfosLock;
 }
 
 @property (nonatomic, retain) ACAccountStore *accountStore;

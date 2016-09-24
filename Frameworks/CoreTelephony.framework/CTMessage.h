@@ -3,20 +3,20 @@
  */
 
 @interface CTMessage : NSObject {
-    NSString *_contentType;
-    NSMutableDictionary *_contentTypeParams;
-    NSString *_countryCode;
-    NSDate *_date;
-    NSMutableArray *_items;
-    unsigned int _messageId;
-    int _messageType;
-    NSDictionary *_rawHeaders;
-    NSMutableArray *_recipients;
-    unsigned int _replaceMessage;
-    NSObject<CTMessageAddress><NSCopying> *_sender;
-    CTPhoneNumber *_serviceCenter;
-    NSString *_subject;
-    NSUUID *_uuid;
+    NSString * _contentType;
+    NSMutableDictionary * _contentTypeParams;
+    NSString * _countryCode;
+    NSDate * _date;
+    NSMutableArray * _items;
+    unsigned int  _messageId;
+    int  _messageType;
+    NSDictionary * _rawHeaders;
+    NSMutableArray * _recipients;
+    unsigned int  _replaceMessage;
+    NSObject<CTMessageAddress><NSCopying> * _sender;
+    CTPhoneNumber * _serviceCenter;
+    NSString * _subject;
+    NSUUID * _uuid;
 }
 
 @property (nonatomic, copy) NSString *contentType;

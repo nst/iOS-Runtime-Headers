@@ -3,20 +3,24 @@
  */
 
 @interface HAPMetadataService : NSObject {
-    BOOL _allowAssociatedService;
-    NSString *_btleuuidStr;
-    NSArray *_mandatoryCharacteristics;
-    NSString *_name;
-    NSArray *_optionalCharacteristics;
-    NSString *_svcDescription;
-    NSString *_uuidStr;
+    BOOL  _allowAssociatedService;
+    NSString * _btleuuidStr;
+    NSArray * _linkedServices;
+    NSArray * _mandatoryCharacteristics;
+    NSString * _name;
+    NSArray * _optionalCharacteristics;
+    NSNumber * _properties;
+    NSString * _svcDescription;
+    NSString * _uuidStr;
 }
 
 @property (nonatomic) BOOL allowAssociatedService;
 @property (nonatomic, retain) NSString *btleuuidStr;
+@property (nonatomic, retain) NSArray *linkedServices;
 @property (nonatomic, retain) NSArray *mandatoryCharacteristics;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSArray *optionalCharacteristics;
+@property (nonatomic, retain) NSNumber *properties;
 @property (nonatomic, retain) NSString *svcDescription;
 @property (nonatomic, retain) NSString *uuidStr;
 
@@ -26,15 +30,19 @@
 - (id)description;
 - (void)dump;
 - (id)generateDictionary:(id)arg1;
-- (id)initWithName:(id)arg1 uuid:(id)arg2 description:(id)arg3 mandatoryCharacteristics:(id)arg4;
+- (id)initWithName:(id)arg1 uuid:(id)arg2 description:(id)arg3 mandatoryCharacteristics:(id)arg4 properties:(id)arg5 linkedServices:(id)arg6;
+- (id)linkedServices;
 - (id)mandatoryCharacteristics;
 - (id)name;
 - (id)optionalCharacteristics;
+- (id)properties;
 - (void)setAllowAssociatedService:(BOOL)arg1;
 - (void)setBtleuuidStr:(id)arg1;
+- (void)setLinkedServices:(id)arg1;
 - (void)setMandatoryCharacteristics:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setOptionalCharacteristics:(id)arg1;
+- (void)setProperties:(id)arg1;
 - (void)setSvcDescription:(id)arg1;
 - (void)setUuidStr:(id)arg1;
 - (id)svcDescription;

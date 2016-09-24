@@ -3,10 +3,10 @@
  */
 
 @interface ABSimpleTextInputViewController : UITableViewController <ABPropertyEditingTableViewCellDelegate> {
-    <ABSimpleTextInputViewControllerDelegate> *_delegate;
-    NSString *_placeholder;
-    <ABStyleProvider> *_styleProvider;
-    id _value;
+    <ABSimpleTextInputViewControllerDelegate> * _delegate;
+    NSString * _placeholder;
+    <ABStyleProvider> * _styleProvider;
+    id  _value;
 }
 
 @property (readonly, copy) NSString *debugDescription;

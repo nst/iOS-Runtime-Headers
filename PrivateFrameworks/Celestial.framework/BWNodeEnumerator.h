@@ -3,9 +3,9 @@
  */
 
 @interface BWNodeEnumerator : NSEnumerator {
-    unsigned int _depth;
-    BWGraph *_graph;
-    NSMutableDictionary *_nodeVisitCountMap;
+    unsigned int  _depth;
+    BWGraph * _graph;
+    NSMutableDictionary * _nodeVisitCountMap;
 }
 
 + (void)initialize;

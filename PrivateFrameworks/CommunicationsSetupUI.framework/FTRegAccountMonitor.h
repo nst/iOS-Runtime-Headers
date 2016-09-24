@@ -3,13 +3,13 @@
  */
 
 @interface FTRegAccountMonitor : NSObject {
-    NSArray *_accounts;
-    FTRegConnectionHandler *_connectionHandler;
+    NSArray * _accounts;
+    FTRegConnectionHandler * _connectionHandler;
     struct { 
         unsigned int listeningForNotifications : 1; 
-    } _monitorFlags;
-    IMServiceImpl *_service;
-    int _serviceType;
+    }  _monitorFlags;
+    IMServiceImpl * _service;
+    int  _serviceType;
 }
 
 @property (nonatomic, readonly, retain) NSArray *activeAccounts;

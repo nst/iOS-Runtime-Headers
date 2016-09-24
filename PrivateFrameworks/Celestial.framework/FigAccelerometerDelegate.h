@@ -3,16 +3,16 @@
  */
 
 @interface FigAccelerometerDelegate : NSObject <SBSAccelerometerDelegate> {
-    int ringIndex;
+    int  ringIndex;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } ringMutex;
-    double ringTime;
-    float ringX;
-    float ringY;
-    float ringZ;
-    SBSAccelerometer *sbsaccel;
+    }  ringMutex;
+    double  ringTime;
+    double  ringX;
+    double  ringY;
+    double  ringZ;
+    SBSAccelerometer * sbsaccel;
 }
 
 @property (readonly, copy) NSString *debugDescription;

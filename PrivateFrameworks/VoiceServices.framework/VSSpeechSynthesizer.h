@@ -3,18 +3,20 @@
  */
 
 @interface VSSpeechSynthesizer : NSObject <VSSpeechConnectionDelegate> {
-    unsigned int _audioQueueFlags;
-    unsigned int _audioSessionID;
-    BOOL _audioSessionIDIsValid;
-    <VSSpeechSynthesizerDelegate> *_delegate;
-    int _footprint;
-    int _gender;
-    VSKeepAlive *_inactiveKeepAlive;
-    VSKeepAlive *_keepAlive;
-    float _pitch;
-    NSObject<OS_dispatch_queue> *_queue;
-    float _rate;
-    VSSpeechConnection *_speechConnection;
+    unsigned int  _audioQueueFlags;
+    unsigned int  _audioSessionID;
+    BOOL  _audioSessionIDIsValid;
+    NSString * _clientBundleIdentifier;
+    <VSSpeechSynthesizerDelegate> * _delegate;
+    long  _footprint;
+    long  _gender;
+    VSKeepAlive * _inactiveKeepAlive;
+    VSKeepAlive * _keepAlive;
+    NSString * _language;
+    double  _pitch;
+    NSObject<OS_dispatch_queue> * _queue;
+    double  _rate;
+    VSSpeechConnection * _speechConnection;
     struct { 
         unsigned int delegateStart : 1; 
         unsigned int delegateFinish : 1; 
@@ -25,36 +27,39 @@
         unsigned int delegateStartWithRequest : 1; 
         unsigned int delegateFinishWithRequest : 1; 
         unsigned int delegateFinishWithPhonemesSpokenWithRequest : 1; 
+        unsigned int delegateSuccessWithInstrumentMetrics : 1; 
         unsigned int delegatePauseWithRequest : 1; 
         unsigned int delegateContinueWithRequest : 1; 
         unsigned int delegateWillSpeakWithRequest : 1; 
         unsigned int willUseInput : 1; 
-    } _synthesizerFlags;
-    BOOL _useCustomVoice;
-    BOOL _useSharedSession;
-    NSString *_voice;
-    float _volume;
+    }  _synthesizerFlags;
+    BOOL  _useCustomVoice;
+    BOOL  _useSharedSession;
+    NSString * _voice;
+    long  _voiceType;
+    double  _volume;
 }
 
 @property (nonatomic) <VSSpeechSynthesizerDelegate> *delegate;
-@property (nonatomic) float pitch;
-@property (nonatomic) float rate;
+@property (nonatomic) double pitch;
+@property (nonatomic) double rate;
 @property (nonatomic, retain) NSString *voice;
-@property (nonatomic) float volume;
+@property (nonatomic) double volume;
 
 + (id)availableFootprintsForVoice:(id)arg1 languageCode:(id)arg2;
 + (id)availableLanguageCodes;
 + (id)availableVoices;
 + (id)availableVoicesForLanguageCode:(id)arg1;
-+ (void)downloadVoiceAsset:(id)arg1 progress:(id /* block */)arg2 completion:(id /* block */)arg3;
 + (void)getAllVoiceAssets:(id /* block */)arg1;
 + (void)getAutoDownloadedVoiceAssets:(id /* block */)arg1;
 + (void)getLocalVoiceAssets:(id /* block */)arg1;
++ (void)getLocalVoiceResources:(id /* block */)arg1;
 + (void)getLogToFile:(id /* block */)arg1;
-+ (void)getVoiceInfoForLanguageCode:(id)arg1 footprint:(int)arg2 gender:(int)arg3 custom:(BOOL)arg4 reply:(id /* block */)arg5;
-+ (void)initialize;
++ (void)getVoiceInfoForLanguageCode:(id)arg1 footprint:(long)arg2 gender:(long)arg3 custom:(BOOL)arg4 reply:(id /* block */)arg5;
++ (void)getVoiceInfoForLanguageCode:(id)arg1 footprint:(long)arg2 gender:(long)arg3 type:(long)arg4 reply:(id /* block */)arg5;
++ (void)getVoiceResourceForLanguage:(id)arg1 reply:(id /* block */)arg2;
 + (BOOL)isSystemSpeaking;
-+ (BOOL)playVoicePreviewForLanguageCode:(id)arg1 gender:(int)arg2;
++ (BOOL)playVoicePreviewForLanguageCode:(id)arg1 gender:(long)arg2;
 + (void)setAutoDownloadedVoiceAssets:(id)arg1;
 + (void)setLogToFile:(BOOL)arg1;
 
@@ -65,7 +70,8 @@
 - (BOOL)_startSpeakingString:(id)arg1 orAttributedString:(id)arg2 toURL:(id)arg3 withLanguageCode:(id)arg4 request:(id*)arg5 error:(id*)arg6;
 - (BOOL)_stopSpeakingRequest:(id)arg1 atNextBoundary:(int)arg2 synchronously:(BOOL)arg3 error:(id*)arg4;
 - (void)connection:(id)arg1 speechRequest:(id)arg2 didStopAtEnd:(BOOL)arg3 phonemesSpoken:(id)arg4 error:(id)arg5;
-- (void)connection:(id)arg1 speechRequest:(id)arg2 willSpeakMark:(int)arg3 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
+- (void)connection:(id)arg1 speechRequest:(id)arg2 successWithInstrumentMetrics:(id)arg3;
+- (void)connection:(id)arg1 speechRequest:(id)arg2 willSpeakMark:(long)arg3 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
 - (void)connection:(id)arg1 speechRequestDidContinue:(id)arg2;
 - (void)connection:(id)arg1 speechRequestDidPause:(id)arg2;
 - (void)connection:(id)arg1 speechRequestDidStart:(id)arg2;
@@ -73,11 +79,12 @@
 - (BOOL)continueSpeakingWithError:(id*)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (int)footprint;
-- (int)gender;
+- (long)footprint;
+- (long)gender;
 - (id)init;
 - (id)initForInputFeedback;
 - (BOOL)isSpeaking;
+- (id)language;
 - (float)maximumRate;
 - (float)minimumRate;
 - (BOOL)pauseSpeakingAtNextBoundary:(int)arg1 error:(id*)arg2;
@@ -85,16 +92,19 @@
 - (BOOL)pauseSpeakingRequest:(id)arg1 atNextBoundary:(int)arg2 error:(id*)arg3;
 - (BOOL)pauseSpeakingRequest:(id)arg1 atNextBoundary:(int)arg2 synchronously:(BOOL)arg3 error:(id*)arg4;
 - (float)pitch;
+- (BOOL)prewarmIfNeeded;
 - (float)rate;
 - (void)setDelegate:(id)arg1;
-- (void)setFootprint:(int)arg1;
-- (void)setGender:(int)arg1;
+- (void)setFootprint:(long)arg1;
+- (void)setGender:(long)arg1;
+- (void)setLanguage:(id)arg1;
 - (void)setMaintainInactivePersistentConnection:(BOOL)arg1;
 - (void)setMaintainPersistentConnection:(BOOL)arg1;
 - (void)setPitch:(float)arg1;
 - (void)setRate:(float)arg1;
 - (void)setUseCustomVoice:(BOOL)arg1;
 - (void)setVoice:(id)arg1;
+- (void)setVoiceType:(long)arg1;
 - (void)setVolume:(float)arg1;
 - (id)speechString;
 - (BOOL)startSpeakingAttributedString:(id)arg1 toURL:(id)arg2 withLanguageCode:(id)arg3 error:(id*)arg4;
@@ -114,6 +124,7 @@
 - (void)useSharedAudioSession:(BOOL)arg1;
 - (void)useSpecificAudioSession:(unsigned int)arg1;
 - (id)voice;
+- (long)voiceType;
 - (float)volume;
 
 @end

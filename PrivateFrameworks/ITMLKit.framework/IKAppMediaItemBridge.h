@@ -3,15 +3,17 @@
  */
 
 @interface IKAppMediaItemBridge : NSObject {
-    IKAppContext *_appContext;
-    <IKAppMediaItem> *_appMediaItem;
-    IKJSMediaItem *_jsMediaItem;
+    IKAppContext * _appContext;
+    <IKAppMediaItem> * _appMediaItem;
+    IKJSMediaItem * _jsMediaItem;
 }
 
 @property (nonatomic, readonly) IKAppContext *appContext;
 @property (nonatomic, readonly) <IKAppMediaItem> *appMediaItem;
 @property (nonatomic, retain) NSString *artworkImageURL;
 @property (nonatomic, retain) NSArray *chapterGroups;
+@property (nonatomic) double contentProposalAutomaticAcceptanceInterval;
+@property (nonatomic) double contentProposalPresentationTime;
 @property (nonatomic, retain) NSString *contentRatingDomain;
 @property (nonatomic, retain) NSNumber *contentRatingRanking;
 @property (nonatomic, retain) NSString *description;
@@ -31,12 +33,14 @@
 - (id)appMediaItem;
 - (id)artworkImageURL;
 - (id)chapterGroups;
+- (void)cleanup;
+- (double)contentProposalAutomaticAcceptanceInterval;
+- (double)contentProposalPresentationTime;
 - (id)contentRatingDomain;
 - (id)contentRatingRanking;
-- (void)dealloc;
 - (id)description;
 - (id)externalID;
-- (id)initWithJSMediaItem:(id)arg1;
+- (id)initWithAppContext:(id)arg1 jsMediaItem:(id)arg2;
 - (id)interstitials;
 - (BOOL)isExplicit;
 - (id)jsMediaItem;
@@ -48,6 +52,8 @@
 - (id)resumeTime;
 - (void)setArtworkImageURL:(id)arg1;
 - (void)setChapterGroups:(id)arg1;
+- (void)setContentProposalAutomaticAcceptanceInterval:(double)arg1;
+- (void)setContentProposalPresentationTime:(double)arg1;
 - (void)setContentRatingDomain:(id)arg1;
 - (void)setContentRatingRanking:(id)arg1;
 - (void)setDescription:(id)arg1;

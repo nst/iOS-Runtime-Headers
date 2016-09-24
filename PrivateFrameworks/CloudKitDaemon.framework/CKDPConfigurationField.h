@@ -3,8 +3,8 @@
  */
 
 @interface CKDPConfigurationField : PBCodable <NSCopying> {
-    NSString *_name;
-    CKDPConfigurationFieldValue *_value;
+    NSString * _name;
+    CKDPConfigurationFieldValue * _value;
 }
 
 @property (nonatomic, readonly) BOOL hasName;

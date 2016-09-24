@@ -3,8 +3,8 @@
  */
 
 @interface PLRevGeoPlaceInfo : NSObject {
-    NSMutableSet *_geoPlaceInfos;
-    NSString *_placeName;
+    NSMutableSet * _geoPlaceInfos;
+    NSString * _placeName;
 }
 
 @property (nonatomic, readonly, retain) NSSet *geoPlaceInfos;

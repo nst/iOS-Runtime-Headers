@@ -3,7 +3,7 @@
  */
 
 @interface CNVCardConstantsMapping : NSObject {
-    NSDictionary *_mapping;
+    NSDictionary * _mapping;
 }
 
 @property (nonatomic, retain) NSDictionary *mapping;

@@ -5,10 +5,10 @@
 @interface AWDITesterTestStart : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
-    } _has;
-    NSString *_testName;
-    unsigned long long _timestamp;
-    NSString *_uniqueKey;
+    }  _has;
+    NSString * _testName;
+    unsigned long long  _timestamp;
+    NSString * _uniqueKey;
 }
 
 @property (nonatomic, readonly) BOOL hasTestName;

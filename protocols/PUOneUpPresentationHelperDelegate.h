@@ -16,7 +16,9 @@
 - (void)oneUpPresentationHelper:(PUOneUpPresentationHelper *)arg1 willPresentOneUpViewController:(PUOneUpViewController *)arg2;
 - (BOOL)oneUpPresentationHelperDisableFinalFadeoutAnimation:(PUOneUpPresentationHelper *)arg1;
 - (int)oneUpPresentationHelperPreferredBarStyle:(PUOneUpPresentationHelper *)arg1;
+- (BOOL)oneUpPresentationHelperPreventRevealInMomentAction:(PUOneUpPresentationHelper *)arg1;
 - (UIScrollView *)oneUpPresentationHelperScrollView:(PUOneUpPresentationHelper *)arg1;
+- (BOOL)oneUpPresentationHelperShouldAutoPlay:(PUOneUpPresentationHelper *)arg1;
 - (BOOL)oneUpPresentationHelperShouldLeaveContentOnSecondScreen:(PUOneUpPresentationHelper *)arg1;
 - (UIView *)oneUpPresentationHelperViewHostingGestureRecognizers:(PUOneUpPresentationHelper *)arg1;
 

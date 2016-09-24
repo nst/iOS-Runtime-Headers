@@ -3,26 +3,26 @@
  */
 
 @interface SUViewController : UIViewController <ISOperationDelegate, SUScriptNativeObject> {
-    SUViewControllerScriptProperties *_cachedScriptProperties;
-    BOOL _canBeWeakScriptReference;
-    NSMutableArray *_cancelOnDeallocOperations;
-    SUClientInterface *_clientInterface;
-    BOOL _excludeFromNavigationHistory;
-    UIBarButtonItem *_exitStoreButton;
-    UIViewController *_footerViewController;
-    UIViewController *_inputAccessoryViewController;
-    BOOL _isEnteringForeground;
-    BOOL _loading;
-    SUViewControllerContext *_memoryPurgeContext;
-    NSMutableArray *_operations;
-    NSMutableArray *_pendingDialogs;
-    SUViewControllerContext *_restoredContext;
-    SURotationController *_rotationController;
-    int _rotationState;
-    BOOL _shouldAdjustContentOffsets;
-    BOOL _shouldInvalidateForMemoryPurge;
-    BOOL _showsLibraryButton;
-    int _transitionSafetyCount;
+    SUViewControllerScriptProperties * _cachedScriptProperties;
+    BOOL  _canBeWeakScriptReference;
+    NSMutableArray * _cancelOnDeallocOperations;
+    SUClientInterface * _clientInterface;
+    BOOL  _excludeFromNavigationHistory;
+    UIBarButtonItem * _exitStoreButton;
+    UIViewController * _footerViewController;
+    UIViewController * _inputAccessoryViewController;
+    BOOL  _isEnteringForeground;
+    SUViewControllerContext * _memoryPurgeContext;
+    NSMutableArray * _operations;
+    NSMutableArray * _pendingDialogs;
+    SUViewControllerContext * _restoredContext;
+    SURotationController * _rotationController;
+    int  _rotationState;
+    BOOL  _shouldAdjustContentOffsets;
+    BOOL  _shouldInvalidateForMemoryPurge;
+    BOOL  _showsLibraryButton;
+    BOOL  _skLoading;
+    int  _transitionSafetyCount;
 }
 
 @property (getter=_cachedScriptProperties, nonatomic, readonly) SUViewControllerScriptProperties *_cachedScriptProperties;
@@ -37,12 +37,12 @@
 @property (nonatomic, readonly) UIViewController *footerViewController;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIViewController *inputAccessoryViewController;
-@property (getter=isLoading, nonatomic) BOOL loading;
 @property (nonatomic, readonly, retain) SUNavigationItem *navigationItem;
 @property (nonatomic) BOOL shouldAdjustContentOffsets;
 @property (nonatomic) BOOL shouldExcludeFromNavigationHistory;
 @property (nonatomic) BOOL shouldInvalidateForMemoryPurge;
 @property (nonatomic) BOOL showsLibraryButton;
+@property (getter=isSkLoading, nonatomic) BOOL skLoading;
 @property (readonly) Class superclass;
 @property (getter=isVisible, nonatomic, readonly) BOOL visible;
 @property (getter=isVisibleAndFrontmost, nonatomic, readonly) BOOL visibleAndFrontmost;
@@ -102,7 +102,7 @@
 - (int)interfaceOrientation;
 - (void)invalidate;
 - (void)invalidateForMemoryPurge;
-- (BOOL)isLoading;
+- (BOOL)isSkLoading;
 - (BOOL)isVisible;
 - (BOOL)isVisibleAndFrontmost;
 - (void)loadView;
@@ -122,7 +122,6 @@
 - (void)restoreArchivableContext:(id)arg1;
 - (void)setClientInterface:(id)arg1;
 - (void)setInputAccessoryViewController:(id)arg1;
-- (void)setLoading:(BOOL)arg1;
 - (void)setParentViewController:(id)arg1;
 - (void)setScriptProperties:(id)arg1;
 - (void)setSection:(id)arg1;
@@ -130,6 +129,7 @@
 - (void)setShouldExcludeFromNavigationHistory:(BOOL)arg1;
 - (void)setShouldInvalidateForMemoryPurge:(BOOL)arg1;
 - (void)setShowsLibraryButton:(BOOL)arg1;
+- (void)setSkLoading:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitle:(id)arg1 changeTabBarItem:(BOOL)arg2;
 - (BOOL)shouldAdjustContentOffsets;

@@ -3,7 +3,7 @@
  */
 
 @interface AVPlayerItemVideoOutput : AVPlayerItemOutput {
-    AVPlayerItemVideoOutputInternal *_videoOutputInternal;
+    AVPlayerItemVideoOutputInternal * _videoOutputInternal;
 }
 
 @property (nonatomic, readonly) <AVPlayerItemOutputPullDelegate> *delegate;
@@ -14,22 +14,25 @@
 - (void)_dispatchOutputMediaDataWillChange;
 - (void)_dispatchOutputSequenceWasFlushed;
 - (id)_pixelBufferAttributes;
+- (void)_respondToPlayerItemFormatDescriptionsChange;
 - (void)_setTagBuffersWithConversionInformation;
 - (void)_setTimebase:(struct OpaqueCMTimebase { }*)arg1;
 - (void)_startObservingTimebaseNotificationsForTimebase:(struct OpaqueCMTimebase { }*)arg1;
 - (void)_stopObservingTimebaseNotificationsForTimebase:(struct OpaqueCMTimebase { }*)arg1;
 - (struct OpaqueFigVisualContext { }*)_visualContext;
-- (struct __CVBuffer { }*)copyPixelBufferForItemTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 itemTimeForDisplay:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2;
+- (struct __CVBuffer { }*)copyPixelBufferForItemTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 itemTimeForDisplay:(struct { int x1; int x2; unsigned int x3; int x4; }*)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateQueue;
 - (void)finalize;
-- (BOOL)hasNewPixelBufferForItemTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (BOOL)hasNewPixelBufferForItemTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
 - (id)init;
+- (id)initWithOutputSettings:(id)arg1;
 - (id)initWithPixelBufferAttributes:(id)arg1;
 - (void)requestNotificationOfMediaDataChangeWithAdvanceInterval:(double)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setSuppressesPlayerRendering:(BOOL)arg1;
+- (BOOL)setUpWithOutputSettings:(id)arg1 outputSettingsArePixelBufferAttributes:(BOOL)arg2 withExceptionReason:(id*)arg3;
 - (BOOL)suppressesPlayerRendering;
 
 @end

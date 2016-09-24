@@ -3,9 +3,9 @@
  */
 
 @interface CalDAVScheduleResponseItem : CoreDAVItem {
-    NSMutableSet *_failedResponseItems;
-    NSMutableSet *_responses;
-    NSMutableSet *_successfulICS;
+    NSMutableSet * _failedResponseItems;
+    NSMutableSet * _responses;
+    NSMutableSet * _successfulICS;
 }
 
 @property (nonatomic, retain) NSMutableSet *failedResponseItems;

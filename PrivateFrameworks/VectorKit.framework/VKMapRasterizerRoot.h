@@ -6,33 +6,24 @@
     struct ClearItem { 
         unsigned char colorMask; 
         struct Matrix<float, 4, 1> { 
-            float _e[4]; 
+            double _e[4]; 
         } color; 
         bool clearDepthBuffer; 
-        float depth; 
+        double depth; 
         unsigned char clearStencilBuffer; 
-        int stencil; 
-        unsigned char scissorRegion; 
-        struct Box<unsigned int, 2> { 
-            struct Matrix<unsigned int, 2, 1> { 
-                unsigned int _e[2]; 
-            } _minimum; 
-            struct Matrix<unsigned int, 2, 1> { 
-                unsigned int _e[2]; 
-            } _maximum; 
-        } scissorRect; 
-    } _clearItem;
-    VKMapRasterizer *_mapRasterizer;
+        unsigned int stencil; 
+    }  _clearItem;
+    VKMapRasterizer * _mapRasterizer;
 }
 
 @property (nonatomic) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  backgroundColor; /* unknown property attribute:  1>=[4f]} */
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (struct Matrix<float, 4, 1> { float x1[4]; })backgroundColor;
-- (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
+- (struct Matrix<float, 4, 1> { double x1[4]; })backgroundColor;
+- (void)gglLayoutScene:(id)arg1 withContext:(struct LayoutContext { id x1; short x2; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x3; void*x4; const void*x5; double x6; void*x7; void*x8; void*x9; const void*x10; void*x11; double x12; SEL x13; SEL x14; oneway int x15; void*x16; void*x17; void*x18; const void*x19; in short x20; double x21; out const void*x22; void*x23; void*x24; struct ViewTransform {} *x25; struct __shared_weak_count {} *x26; }*)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
 - (id)initWithMapRasterizer:(id)arg1;
-- (void)setBackgroundColor:(struct Matrix<float, 4, 1> { float x1[4]; })arg1;
+- (void)setBackgroundColor:(struct Matrix<float, 4, 1> { double x1[4]; })arg1;
 - (void)stylesheetDidChange;
 
 @end

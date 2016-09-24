@@ -3,10 +3,10 @@
  */
 
 @interface OITSUProgressContext : NSObject {
-    OITSUProgressStage *m_currentStage;
-    double m_lastOverallProgress;
-    double m_lastProgressReport;
-    NSDate *m_lastReportTime;
+    OITSUProgressStage * m_currentStage;
+    double  m_lastOverallProgress;
+    double  m_lastProgressReport;
+    NSDate * m_lastReportTime;
 }
 
 - (void)addProgressObserver:(id)arg1 selector:(SEL)arg2;

@@ -3,7 +3,7 @@
  */
 
 @interface MPMovieView : UIView {
-    <MPMovieViewDelegate> *_delegate;
+    <MPMovieViewDelegate> * _delegate;
 }
 
 @property (nonatomic) <MPMovieViewDelegate> *delegate;

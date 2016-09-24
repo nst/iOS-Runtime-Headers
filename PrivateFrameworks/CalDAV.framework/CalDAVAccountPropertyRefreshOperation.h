@@ -3,7 +3,7 @@
  */
 
 @interface CalDAVAccountPropertyRefreshOperation : CalDAVOperation {
-    BOOL _fetchPrincipalSearchProperties;
+    BOOL  _fetchPrincipalSearchProperties;
 }
 
 @property (nonatomic) <CalDAVAccountPropertyRefreshDelegate> *delegate;

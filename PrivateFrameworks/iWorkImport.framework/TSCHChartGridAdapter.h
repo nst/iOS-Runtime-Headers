@@ -3,8 +3,8 @@
  */
 
 @interface TSCHChartGridAdapter : NSObject <NSFastEnumeration> {
-    TSCHChartGrid *mGrid;
-    unsigned int mIndex;
+    TSCHChartGrid * mGrid;
+    unsigned int  mIndex;
 }
 
 @property (nonatomic, readonly) TSCHChartGrid *grid;

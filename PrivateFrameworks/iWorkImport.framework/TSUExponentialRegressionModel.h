@@ -3,13 +3,13 @@
  */
 
 @interface TSUExponentialRegressionModel : TSURegressionModel {
-    BOOL mAffine;
-    double *mCoefficients;
-    double mIntercept;
-    int mNumCoefficients;
-    int mNumSuperscriptRanges;
-    double mRSquared;
-    NSMutableArray *mSuperscriptRangesArray;
+    BOOL  mAffine;
+    double * mCoefficients;
+    double  mIntercept;
+    int  mNumCoefficients;
+    int  mNumSuperscriptRanges;
+    double  mRSquared;
+    NSMutableArray * mSuperscriptRangesArray;
 }
 
 - (double)coefficientAtIndex:(int)arg1;

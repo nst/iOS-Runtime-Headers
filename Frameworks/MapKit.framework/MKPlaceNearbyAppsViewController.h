@@ -3,8 +3,8 @@
  */
 
 @interface MKPlaceNearbyAppsViewController : UITableViewController <MKPlaceViewNearbyAppsCellDelegate, MKStackingViewControllerPreferredSizeUse> {
-    <MKPlaceNearbyAppsViewControllerDelegate> *_nearbyAppsDelegate;
-    NSArray *_storeItems;
+    <MKPlaceNearbyAppsViewControllerDelegate> * _nearbyAppsDelegate;
+    NSArray * _storeItems;
 }
 
 @property (readonly, copy) NSString *debugDescription;

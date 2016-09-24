@@ -3,9 +3,9 @@
  */
 
 @interface BPSInternalGlanceManager : NSObject <NGSSettingsManagerDelegate> {
-    NGSSettingsManager *_glanceManager;
-    NSHashTable *_observers;
-    BOOL _settingsAreValid;
+    NGSSettingsManager * _glanceManager;
+    NSHashTable * _observers;
+    BOOL  _settingsAreValid;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -2,23 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ContactsFoundation.framework/ContactsFoundation
  */
 
-@interface CNManualObservable : CNObservable <CNObserver> {
-    NSMutableArray *_observers;
-}
-
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
-
-- (void)_addObserver:(id)arg1;
-- (id)_allObservers;
-- (void)_removeObserver:(id)arg1;
-- (void)dealloc;
-- (id)init;
-- (void)observerDidComplete;
-- (void)observerDidFailWithError:(id)arg1;
-- (void)observerDidReceiveResult:(id)arg1;
-- (id)subscribe:(id)arg1;
+@interface CNManualObservable : CNPublishingSubject
 
 @end

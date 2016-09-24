@@ -3,13 +3,13 @@
  */
 
 @interface UIMailActivity : UIActivity <UIStateRestoring> {
-    NSString *_autosaveIdentifier;
-    BOOL _hasAnyAccount;
-    BOOL _hasFilteredAccount;
-    BOOL _keyboardVisible;
-    MFMailComposeViewController *_mailComposeViewController;
-    BOOL _sourceIsManaged;
-    NSString *_subject;
+    NSString * _autosaveIdentifier;
+    BOOL  _hasAnyAccount;
+    BOOL  _hasFilteredAccount;
+    BOOL  _keyboardVisible;
+    MFMailComposeViewController * _mailComposeViewController;
+    BOOL  _sourceIsManaged;
+    NSString * _subject;
 }
 
 @property (nonatomic, retain) NSString *autosaveIdentifier;
@@ -27,6 +27,7 @@
 @property (readonly) Class superclass;
 
 + (int)activityCategory;
++ (id)applicationBundleID;
 
 - (void).cxx_destruct;
 - (id)_activityImage;

@@ -3,14 +3,14 @@
  */
 
 @interface GEOCountryConfiguration : NSObject <GEOResourceManifestTileGroupObserver, _GEOCountryConfigurationServerProxyDelegate> {
-    NSString *_countryCode;
-    NSLock *_countryCodeLock;
-    BOOL _hasURLAuthenticationTimeToLive;
-    <_GEOCountryConfigurationServerProxy> *_serverProxy;
-    NSMutableDictionary *_supportedFeatures;
-    NSLock *_supportedFeaturesLock;
-    NSMutableArray *_updateCompletionHandlers;
-    double _urlAuthenticationTimeToLive;
+    NSString * _countryCode;
+    NSLock * _countryCodeLock;
+    BOOL  _hasURLAuthenticationTimeToLive;
+    <_GEOCountryConfigurationServerProxy> * _serverProxy;
+    NSMutableDictionary * _supportedFeatures;
+    NSLock * _supportedFeaturesLock;
+    NSMutableArray * _updateCompletionHandlers;
+    double  _urlAuthenticationTimeToLive;
 }
 
 @property (nonatomic, copy) NSString *countryCode;

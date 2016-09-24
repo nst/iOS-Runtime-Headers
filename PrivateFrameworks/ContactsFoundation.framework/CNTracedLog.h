@@ -3,20 +3,20 @@
  */
 
 @interface CNTracedLog : NSObject {
-    NSDictionary *_customProperties;
-    NSString *_domain;
-    NSString *_domainScope;
-    NSString *_domainVersion;
-    NSString *_message;
-    int _result;
-    NSString *_signature;
-    NSString *_signature2;
-    NSString *_signature3;
-    BOOL _summarize;
-    NSString *_uuid;
-    NSString *_value;
-    NSString *_value2;
-    NSString *_value3;
+    NSDictionary * _customProperties;
+    NSString * _domain;
+    NSString * _domainScope;
+    NSString * _domainVersion;
+    NSString * _message;
+    int  _result;
+    NSString * _signature;
+    NSString * _signature2;
+    NSString * _signature3;
+    BOOL  _summarize;
+    NSString * _uuid;
+    NSString * _value;
+    NSString * _value2;
+    NSString * _value3;
 }
 
 @property (copy) NSDictionary *customProperties;

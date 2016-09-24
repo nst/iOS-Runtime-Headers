@@ -3,7 +3,7 @@
  */
 
 @interface CalLogASLWriter : CalLogWriter {
-    struct __asl_object_s { } *log_client;
+    struct __asl_object_s { } * log_client;
 }
 
 + (id)aslNamespaces;

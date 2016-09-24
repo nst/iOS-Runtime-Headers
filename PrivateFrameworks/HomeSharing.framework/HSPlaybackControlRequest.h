@@ -3,8 +3,8 @@
  */
 
 @interface HSPlaybackControlRequest : HSRequest {
-    int _controlCommand;
-    unsigned int _interfaceID;
+    int  _controlCommand;
+    unsigned int  _interfaceID;
 }
 
 @property (nonatomic, readonly) int controlCommand;

@@ -3,15 +3,15 @@
  */
 
 @interface TSPDocumentResourceManager : NSObject {
-    NSURL *_appDocumentResourcesMetadataURL;
-    NSURL *_appDocumentResourcesURL;
-    TSPDocumentResourceCache *_cache;
-    NSDictionary *_documentResourcesConfiguration;
-    NSObject<OS_dispatch_queue> *_documentResourcesConfigurationQueue;
-    long _documentResourcesConfigurationToken;
-    TSUDownloadManager *_downloadManager;
-    NSMutableDictionary *_sageDocumentResourcesConfiguration;
-    long _sageDocumentResourcesConfigurationToken;
+    NSURL * _appDocumentResourcesMetadataURL;
+    NSURL * _appDocumentResourcesURL;
+    TSPDocumentResourceCache * _cache;
+    NSDictionary * _documentResourcesConfiguration;
+    NSObject<OS_dispatch_queue> * _documentResourcesConfigurationQueue;
+    long  _documentResourcesConfigurationToken;
+    TSUDownloadManager * _downloadManager;
+    NSMutableDictionary * _sageDocumentResourcesConfiguration;
+    long  _sageDocumentResourcesConfigurationToken;
 }
 
 @property (nonatomic, readonly) TSPDocumentResourceCache *cache;

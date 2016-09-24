@@ -3,8 +3,8 @@
  */
 
 @interface WBSFluidProgressController : NSObject {
-    <WBSFluidProgressControllerDelegate> *_delegate;
-    <WBSFluidProgressControllerWindowDelegate> *_windowDelegate;
+    <WBSFluidProgressControllerDelegate> * _delegate;
+    <WBSFluidProgressControllerWindowDelegate> * _windowDelegate;
 }
 
 @property <WBSFluidProgressControllerDelegate> *delegate;

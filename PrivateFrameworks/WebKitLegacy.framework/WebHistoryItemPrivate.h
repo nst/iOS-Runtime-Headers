@@ -5,8 +5,8 @@
 @interface WebHistoryItemPrivate : NSObject {
     struct RefPtr<WebCore::HistoryItem> { 
         struct HistoryItem {} *m_ptr; 
-    } _historyItem;
-    double _lastVisitedTime;
+    }  _historyItem;
+    double  _lastVisitedTime;
 }
 
 - (id).cxx_construct;

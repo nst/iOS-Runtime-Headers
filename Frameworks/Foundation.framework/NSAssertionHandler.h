@@ -3,7 +3,7 @@
  */
 
 @interface NSAssertionHandler : NSObject {
-    void *_reserved;
+    void * _reserved;
 }
 
 + (id)currentHandler;

@@ -3,9 +3,9 @@
  */
 
 @interface MFOutgoingRichtextMessageContent : MFOutgoingMessageContent {
-    NSArray *_mixedContent;
-    MFPlainTextDocument *_plaintextAlternative;
-    BOOL _textPartsAreHTML;
+    NSArray * _mixedContent;
+    MFPlainTextDocument * _plaintextAlternative;
+    BOOL  _textPartsAreHTML;
 }
 
 @property (nonatomic, retain) NSArray *mixedContent;

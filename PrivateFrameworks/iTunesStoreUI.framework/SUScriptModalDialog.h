@@ -3,17 +3,19 @@
  */
 
 @interface SUScriptModalDialog : NSObject {
-    UIAlertView *_alert;
-    int _buttonIndex;
-    ISDialog *_dialog;
+    <SUScriptModalDialogDelegate> * _delegate;
+    ISDialog * _dialog;
 }
+
+@property (nonatomic) <SUScriptModalDialogDelegate> *delegate;
 
 + (id)titleForURL:(id)arg1;
 
 - (id)_copyResponseByRunningModal;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)copyResponseByRunningModal;
 - (void)dealloc;
+- (id)delegate;
 - (id)initWithDialog:(id)arg1;
+- (void)setDelegate:(id)arg1;
 
 @end

@@ -6,150 +6,150 @@
     struct box<glm::detail::tvec3<float> > { 
         struct tvec3<float> { 
             union { 
-                float x; 
-                float r; 
-                float s; 
+                double x; 
+                double r; 
+                double s; 
             } ; 
             union { 
-                float y; 
-                float g; 
-                float t; 
+                double y; 
+                double g; 
+                double t; 
             } ; 
             union { 
-                float z; 
-                float b; 
-                float p; 
+                double z; 
+                double b; 
+                double p; 
             } ; 
         } mMin; 
         struct tvec3<float> { 
             union { 
-                float x; 
-                float r; 
-                float s; 
+                double x; 
+                double r; 
+                double s; 
             } ; 
             union { 
-                float y; 
-                float g; 
-                float t; 
+                double y; 
+                double g; 
+                double t; 
             } ; 
             union { 
-                float z; 
-                float b; 
-                float p; 
+                double z; 
+                double b; 
+                double p; 
             } ; 
         } mMax; 
-    } mBodyLayout3DBounds;
+    }  mBodyLayout3DBounds;
     struct box<glm::detail::tvec3<float> > { 
         struct tvec3<float> { 
             union { 
-                float x; 
-                float r; 
-                float s; 
+                double x; 
+                double r; 
+                double s; 
             } ; 
             union { 
-                float y; 
-                float g; 
-                float t; 
+                double y; 
+                double g; 
+                double t; 
             } ; 
             union { 
-                float z; 
-                float b; 
-                float p; 
+                double z; 
+                double b; 
+                double p; 
             } ; 
         } mMin; 
         struct tvec3<float> { 
             union { 
-                float x; 
-                float r; 
-                float s; 
+                double x; 
+                double r; 
+                double s; 
             } ; 
             union { 
-                float y; 
-                float g; 
-                float t; 
+                double y; 
+                double g; 
+                double t; 
             } ; 
             union { 
-                float z; 
-                float b; 
-                float p; 
+                double z; 
+                double b; 
+                double p; 
             } ; 
         } mMax; 
-    } mConstantDepthBodyLayout3DBounds;
+    }  mConstantDepthBodyLayout3DBounds;
     struct box<glm::detail::tvec3<float> > { 
         struct tvec3<float> { 
             union { 
-                float x; 
-                float r; 
-                float s; 
+                double x; 
+                double r; 
+                double s; 
             } ; 
             union { 
-                float y; 
-                float g; 
-                float t; 
+                double y; 
+                double g; 
+                double t; 
             } ; 
             union { 
-                float z; 
-                float b; 
-                float p; 
+                double z; 
+                double b; 
+                double p; 
             } ; 
         } mMin; 
         struct tvec3<float> { 
             union { 
-                float x; 
-                float r; 
-                float s; 
+                double x; 
+                double r; 
+                double s; 
             } ; 
             union { 
-                float y; 
-                float g; 
-                float t; 
+                double y; 
+                double g; 
+                double t; 
             } ; 
             union { 
-                float z; 
-                float b; 
-                float p; 
+                double z; 
+                double b; 
+                double p; 
             } ; 
         } mMax; 
-    } mLayout3DBounds;
-    BOOL mLayoutBoundsValid;
-    TSCH3DGetBoundsProjector *mProjector;
+    }  mLayout3DBounds;
+    BOOL  mLayoutBoundsValid;
+    TSCH3DGetBoundsProjector * mProjector;
     struct box<glm::detail::tvec3<float> > { 
         struct tvec3<float> { 
             union { 
-                float x; 
-                float r; 
-                float s; 
+                double x; 
+                double r; 
+                double s; 
             } ; 
             union { 
-                float y; 
-                float g; 
-                float t; 
+                double y; 
+                double g; 
+                double t; 
             } ; 
             union { 
-                float z; 
-                float b; 
-                float p; 
+                double z; 
+                double b; 
+                double p; 
             } ; 
         } mMin; 
         struct tvec3<float> { 
             union { 
-                float x; 
-                float r; 
-                float s; 
+                double x; 
+                double r; 
+                double s; 
             } ; 
             union { 
-                float y; 
-                float g; 
-                float t; 
+                double y; 
+                double g; 
+                double t; 
             } ; 
             union { 
-                float z; 
-                float b; 
-                float p; 
+                double z; 
+                double b; 
+                double p; 
             } ; 
         } mMax; 
-    } mShadowsLayout3DBounds;
-    BOOL mUseIndividualBounds;
+    }  mShadowsLayout3DBounds;
+    BOOL  mUseIndividualBounds;
 }
 
 @property (nonatomic) BOOL useIndividualBounds;
@@ -158,7 +158,7 @@
 + (void)setIncludesDepthForUnitScale:(BOOL)arg1 forScene:(id)arg2;
 
 - (id).cxx_construct;
-- (struct box<glm::detail::tvec3<float> > { struct tvec3<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; } x1; struct tvec3<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_2_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_2_1_3; } x2; })boundsFromObjectBoundsOfType:(int)arg1;
+- (struct box<glm::detail::tvec3<float> > { struct tvec3<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; } x1; struct tvec3<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_2_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_2_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_2_1_3; } x2; })boundsFromObjectBoundsOfType:(int)arg1;
 - (void)calculateBounds;
 - (void)calculateLayoutBounds;
 - (void)calculateLayoutLabelsBounds;

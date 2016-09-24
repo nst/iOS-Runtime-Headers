@@ -3,7 +3,7 @@
  */
 
 @interface CUIKUserActivityRemindersListDate : CUIKUserActivity {
-    NSDate *_date;
+    NSDate * _date;
 }
 
 @property (nonatomic, readonly) NSDate *date;

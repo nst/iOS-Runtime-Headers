@@ -3,7 +3,7 @@
  */
 
 @interface EKStrikethroughLabel : UILabel {
-    BOOL _drawsStrikethrough;
+    BOOL  _drawsStrikethrough;
 }
 
 @property (nonatomic) BOOL drawsStrikethrough;

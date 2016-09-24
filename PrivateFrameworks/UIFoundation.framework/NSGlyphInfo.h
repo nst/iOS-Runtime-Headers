@@ -3,7 +3,7 @@
  */
 
 @interface NSGlyphInfo : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_baseString;
+    NSString * _baseString;
 }
 
 + (id)glyphInfoWithCharacterIdentifier:(unsigned int)arg1 collection:(unsigned int)arg2 baseString:(id)arg3;

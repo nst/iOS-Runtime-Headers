@@ -3,13 +3,14 @@
  */
 
 @interface CKDraftManager : NSObject {
-    NSMutableDictionary *_cachedDrafts;
-    NSMutableSet *_dirtyDraftIDs;
-    NSArray *_pendingRecipients;
+    NSMutableDictionary * _cachedDrafts;
+    NSMutableSet * _dirtyDraftIDs;
+    NSArray * _pendingRecipients;
 }
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (void)_clearDraftForConversation:(id)arg1;
 - (id)_draftForKey:(id)arg1;
 - (id)_pendingRecipients;

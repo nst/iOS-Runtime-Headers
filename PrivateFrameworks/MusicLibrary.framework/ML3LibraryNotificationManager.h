@@ -3,12 +3,12 @@
  */
 
 @interface ML3LibraryNotificationManager : NSObject <MSVDistributedNotificationObserverDelegate> {
-    ML3MusicLibrary *_library;
-    NSString *_libraryPath;
-    NSMutableArray *_notificationObservers;
-    NSMutableOrderedSet *_queuedDistributedNotificationNames;
-    NSMutableOrderedSet *_queuedLocalNotifications;
-    NSObject<OS_dispatch_queue> *_serialQueue;
+    ML3MusicLibrary * _library;
+    NSString * _libraryPath;
+    NSMutableArray * _notificationObservers;
+    NSMutableOrderedSet * _queuedDistributedNotificationNames;
+    NSMutableOrderedSet * _queuedLocalNotifications;
+    NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

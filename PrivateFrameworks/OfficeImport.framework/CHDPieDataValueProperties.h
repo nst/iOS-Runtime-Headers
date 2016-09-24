@@ -3,7 +3,7 @@
  */
 
 @interface CHDPieDataValueProperties : CHDDataValueProperties {
-    int mExplosion;
+    int  mExplosion;
 }
 
 - (int)explosion;

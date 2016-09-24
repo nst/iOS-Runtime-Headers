@@ -3,8 +3,8 @@
  */
 
 @interface _UIImageAssetMapEnvelope : NSObject {
-    NSString *_assetName;
-    UIImageAsset *_imageAsset;
+    NSString * _assetName;
+    UIImageAsset * _imageAsset;
 }
 
 @property (nonatomic, copy) NSString *assetName;

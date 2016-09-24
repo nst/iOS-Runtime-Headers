@@ -3,14 +3,14 @@
  */
 
 @interface PLInvitationRecipient : NSObject {
-    NSMutableArray *_allEmails;
-    NSMutableArray *_allPhones;
-    NSString *_firstName;
-    NSString *_invalidAddressString;
-    NSString *_lastName;
-    MFComposeRecipient *_mfRecipient;
-    NSString *_selectedEmailString;
-    NSString *_selectedPhoneString;
+    NSMutableArray * _allEmails;
+    NSMutableArray * _allPhones;
+    NSString * _firstName;
+    NSString * _invalidAddressString;
+    NSString * _lastName;
+    MFComposeRecipient * _mfRecipient;
+    NSString * _selectedEmailString;
+    NSString * _selectedPhoneString;
 }
 
 @property (nonatomic, readonly, retain) NSArray *allEmails;

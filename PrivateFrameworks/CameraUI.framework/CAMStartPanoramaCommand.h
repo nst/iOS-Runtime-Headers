@@ -3,7 +3,7 @@
  */
 
 @interface CAMStartPanoramaCommand : CAMCaptureCommand {
-    CAMPanoramaCaptureRequest *__request;
+    CAMPanoramaCaptureRequest * __request;
 }
 
 @property (nonatomic, readonly) CAMPanoramaCaptureRequest *_request;

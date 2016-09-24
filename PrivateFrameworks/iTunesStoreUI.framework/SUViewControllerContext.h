@@ -3,9 +3,9 @@
  */
 
 @interface SUViewControllerContext : NSObject <NSCoding> {
-    NSMutableDictionary *_metadata;
-    NSString *_sectionIdentifier;
-    int _type;
+    NSMutableDictionary * _metadata;
+    NSString * _sectionIdentifier;
+    int  _type;
 }
 
 @property (nonatomic, retain) NSString *sectionIdentifier;

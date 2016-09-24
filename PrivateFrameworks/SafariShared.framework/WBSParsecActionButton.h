@@ -3,23 +3,23 @@
  */
 
 @interface WBSParsecActionButton : WBSParsecModel {
-    WBSParsecImageRepresentation *_baseIcon;
-    NSString *_completion;
-    BOOL _forStreamingResult;
-    WBSParsecImageRepresentation *_icon;
-    NSString *_itunesCompletion;
-    NSArray *_itunesContentIdentifiers;
-    NSString *_itunesLabel;
-    NSString *_label;
-    NSString *_labelAlignment;
-    NSString *_mediaKind;
-    NSString *_offerType;
-    BOOL _overlay;
-    NSString *_punchoutAppBundleIdentifier;
-    NSURL *_punchoutAppInstallURL;
-    NSString *_punchoutAppName;
-    NSURL *_punchoutURL;
-    NSString *_type;
+    WBSParsecImageRepresentation * _baseIcon;
+    NSString * _completion;
+    BOOL  _forStreamingResult;
+    WBSParsecImageRepresentation * _icon;
+    NSString * _itunesCompletion;
+    NSArray * _itunesContentIdentifiers;
+    NSString * _itunesLabel;
+    NSString * _label;
+    NSString * _labelAlignment;
+    NSString * _mediaKind;
+    NSString * _offerType;
+    BOOL  _overlay;
+    NSString * _punchoutAppBundleIdentifier;
+    NSURL * _punchoutAppInstallURL;
+    NSString * _punchoutAppName;
+    NSURL * _punchoutURL;
+    NSString * _type;
 }
 
 @property (nonatomic, readonly) WBSParsecImageRepresentation *baseIcon;

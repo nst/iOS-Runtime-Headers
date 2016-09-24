@@ -3,25 +3,26 @@
  */
 
 @interface GKMatchmaker : NSObject {
-    id /* block */ _inviteHandler;
-    id /* block */ _inviteeResponseHandler;
-    NSSet *_invitees;
-    NSDictionary *_inviteesByUserID;
-    NSObject<OS_dispatch_queue> *_lookForInviteQueue;
-    GKMatch *_match;
-    int _matching;
-    BOOL _nearbyAdvertising;
-    BOOL _nearbyBrowsing;
-    NSSet *_nearbyCompatibileHashes;
-    GKDiscovery *_nearbyDiscovery;
-    NSMutableDictionary *_nearbyInvites;
-    id /* block */ _nearbyPlayerHandler;
-    id /* block */ _nearbyPlayerIDHandler;
-    NSMutableDictionary *_nearbyPlayers;
-    double _nearbyQueryAllowance;
-    NSDate *_nearbyQueryLastCheckDate;
-    id /* block */ _recipientResponseHandler;
-    BOOL _wasNearbyBrowsing;
+    id /* block */  _inviteHandler;
+    id /* block */  _inviteeResponseHandler;
+    NSSet * _invitees;
+    NSDictionary * _inviteesByUserID;
+    NSObject<OS_dispatch_queue> * _lookForInviteQueue;
+    GKMatch * _match;
+    int  _matching;
+    BOOL  _nearbyAdvertising;
+    BOOL  _nearbyBrowsing;
+    NSSet * _nearbyCompatibileHashes;
+    GKDiscovery * _nearbyDiscovery;
+    NSMutableDictionary * _nearbyInvites;
+    id /* block */  _nearbyPlayerHandler;
+    id /* block */  _nearbyPlayerIDHandler;
+    NSMutableDictionary * _nearbyPlayers;
+    double  _nearbyQueryAllowance;
+    NSDate * _nearbyQueryLastCheckDate;
+    id /* block */  _recipientResponseHandler;
+    NSMutableArray * _shareInvitees;
+    BOOL  _wasNearbyBrowsing;
 }
 
 @property (nonatomic, readonly) BOOL hasInviteListener;
@@ -43,6 +44,7 @@
 @property (nonatomic) double nearbyQueryAllowance;
 @property (nonatomic, retain) NSDate *nearbyQueryLastCheckDate;
 @property (nonatomic, copy) id /* block */ recipientResponseHandler;
+@property (nonatomic, retain) NSMutableArray *shareInvitees;
 @property (nonatomic) BOOL wasNearbyBrowsing;
 
 + (id)descriptionForNearbyDictionary:(id)arg1;
@@ -98,6 +100,7 @@
 - (void)loadCompatabilityMatrixAsDictionaryWithHandler:(id /* block */)arg1;
 - (void)loadConnectivitySettingsWithCompletionHandler:(id /* block */)arg1;
 - (void)loadPhotoDataDictionaryWithHandler:(id /* block */)arg1;
+- (void)loadURLForMatch:(id)arg1 matchRequest:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)localPlayerAcceptedGameInvite;
 - (void)localPlayerAcceptedGameInviteNotification:(id)arg1;
 - (void)localPlayerAcceptedNearbyInvite:(id)arg1;
@@ -167,8 +170,11 @@
 - (void)setNearbyQueryAllowance:(double)arg1;
 - (void)setNearbyQueryLastCheckDate:(id)arg1;
 - (void)setRecipientResponseHandler:(id /* block */)arg1;
+- (void)setShareInvitees:(id)arg1;
+- (void)setShareInvitees:(id)arg1 propogateToDaemon:(BOOL)arg2;
 - (void)setWasNearbyBrowsing:(BOOL)arg1;
 - (void)setupNearbyDiscovery;
+- (id)shareInvitees;
 - (BOOL)shouldRespondToNearbyQuery;
 - (void)startBrowsingForNearbyPlayersWithHandler:(id /* block */)arg1;
 - (void)startBrowsingForNearbyPlayersWithReachableHandler:(id /* block */)arg1;

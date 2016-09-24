@@ -8,7 +8,7 @@
         double green; 
         double blue; 
         double alpha; 
-    } leadOutColor;
+    }  leadOutColor;
 }
 
 + (id)doubleColorStopWithLocation:(float)arg1 leadInColor:(struct _psdGradientColor { double x1; double x2; double x3; double x4; })arg2 leadOutColor:(struct _psdGradientColor { double x1; double x2; double x3; double x4; })arg3;

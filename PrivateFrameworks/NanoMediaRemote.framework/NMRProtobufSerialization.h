@@ -3,11 +3,11 @@
  */
 
 @interface NMRProtobufSerialization : NSObject {
-    NSDictionary *_dictionaryKeyToProtobufKeyMapping;
-    id /* block */ _dictionaryValueToProtobufValueTransformer;
-    Class _protobufClass;
-    NSDictionary *_protobufKeyToDictionaryKeyMapping;
-    id /* block */ _protobufValueToDictionaryValueTransformer;
+    NSDictionary * _dictionaryKeyToProtobufKeyMapping;
+    id /* block */  _dictionaryValueToProtobufValueTransformer;
+    Class  _protobufClass;
+    NSDictionary * _protobufKeyToDictionaryKeyMapping;
+    id /* block */  _protobufValueToDictionaryValueTransformer;
 }
 
 @property (nonatomic, copy) NSDictionary *dictionaryKeyToProtobufKeyMapping;

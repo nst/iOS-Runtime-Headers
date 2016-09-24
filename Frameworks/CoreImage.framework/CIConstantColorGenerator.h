@@ -3,7 +3,7 @@
  */
 
 @interface CIConstantColorGenerator : CIFilter {
-    CIColor *inputColor;
+    CIColor * inputColor;
 }
 
 @property (nonatomic, retain) CIColor *inputColor;

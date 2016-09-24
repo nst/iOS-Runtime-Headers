@@ -3,10 +3,10 @@
  */
 
 @interface _IMTimingInstance : NSObject {
-    BOOL _isRunning;
-    double _startTiming;
-    double _stopTiming;
-    double _totalTime;
+    BOOL  _isRunning;
+    double  _startTiming;
+    double  _stopTiming;
+    double  _totalTime;
 }
 
 @property (nonatomic) BOOL isRunning;

@@ -2,20 +2,20 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUISwooshArrayViewController : UIViewController <SKUIMetricsViewController, SKUIProductPageChildViewController, SKUIResourceLoaderDelegate, SKUISwooshViewControllerDelegate, UIScrollViewDelegate> {
-    SKUIResourceLoader *_artworkLoader;
-    BOOL _askPermission;
-    SKUIClientContext *_clientContext;
-    SKUIColorScheme *_colorScheme;
-    <SKUIProductPageChildViewControllerDelegate> *_delegate;
-    SKUIProductPageHeaderViewController *_headerViewController;
-    SKUIMetricsController *_metricsController;
-    NSOperationQueue *_operationQueue;
-    SSVPlatformRequestOperation *_platformOperation;
-    UIScrollView *_scrollView;
-    NSMutableArray *_swooshArtworkLoaders;
-    NSArray *_swooshComponents;
-    NSMutableArray *_viewControllers;
+@interface SKUISwooshArrayViewController : UIViewController <SKUIMetricsViewController, SKUIProductPageChildViewController, SKUISwooshViewControllerDelegate, UIScrollViewDelegate> {
+    SKUIResourceLoader * _artworkLoader;
+    BOOL  _askPermission;
+    SKUIClientContext * _clientContext;
+    SKUIColorScheme * _colorScheme;
+    <SKUIProductPageChildViewControllerDelegate> * _delegate;
+    SKUIProductPageHeaderViewController * _headerViewController;
+    SKUIMetricsController * _metricsController;
+    NSOperationQueue * _operationQueue;
+    SSVPlatformRequestOperation * _platformOperation;
+    UIScrollView * _scrollView;
+    NSMutableArray * _swooshArtworkLoaders;
+    NSArray * _swooshComponents;
+    NSMutableArray * _viewControllers;
 }
 
 @property (nonatomic) BOOL askPermission;
@@ -43,7 +43,6 @@
 - (void)_reloadChildViewControllers;
 - (id)_scrollView;
 - (id)activeMetricsController;
-- (void)artworkLoaderDidIdle:(id)arg1;
 - (BOOL)askPermission;
 - (id)clientContext;
 - (id)colorScheme;
@@ -51,7 +50,7 @@
 - (id)delegate;
 - (id)headerViewController;
 - (id)initWithSwooshComponents:(id)arg1;
-- (BOOL)isLoaded;
+- (BOOL)isSkLoaded;
 - (void)loadMissingItemData;
 - (void)loadView;
 - (id)metricsController;

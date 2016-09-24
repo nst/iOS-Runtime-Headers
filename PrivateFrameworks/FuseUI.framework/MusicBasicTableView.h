@@ -3,7 +3,7 @@
  */
 
 @interface MusicBasicTableView : UITableView {
-    UITraitCollection *_cachedTraitCollection;
+    UITraitCollection * _cachedTraitCollection;
 }
 
 - (void).cxx_destruct;

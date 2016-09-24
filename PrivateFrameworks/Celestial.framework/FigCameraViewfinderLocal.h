@@ -3,16 +3,16 @@
  */
 
 @interface FigCameraViewfinderLocal : FigCameraViewfinder <FigCaptureSessionObserver> {
-    FigCameraViewfinderSessionLocal *_activeViewfinderSession;
-    BOOL _observing;
-    NSDictionary *_options;
+    FigCameraViewfinderSessionLocal * _activeViewfinderSession;
+    BOOL  _observing;
+    NSDictionary * _options;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) int photoThumbnailMaxDimension;
-@property (readonly) float photoThumbnailQuality;
+@property (readonly) double photoThumbnailQuality;
 @property (readonly) BOOL photoThumbnailQualitySpecified;
 @property (readonly) Class superclass;
 
@@ -20,9 +20,9 @@
 + (void)initialize;
 
 - (void)_updateActiveViewfinderSession:(id)arg1;
-- (void)captureSession:(long long)arg1 didCapturePhotoWithStatus:(long)arg2 thumbnailData:(id)arg3 timestamp:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4;
+- (void)captureSession:(int)arg1 didCapturePhotoWithStatus:(long)arg2 thumbnailData:(id)arg3 timestamp:(struct { int x1; int x2; unsigned int x3; int x4; })arg4;
 - (void)captureSessionDidStart:(id)arg1;
-- (void)captureSessionDidStop:(long long)arg1;
+- (void)captureSessionDidStop:(int)arg1;
 - (void)dealloc;
 - (id)init;
 - (int)photoThumbnailMaxDimension;

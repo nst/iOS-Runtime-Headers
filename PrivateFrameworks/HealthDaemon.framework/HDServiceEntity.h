@@ -10,7 +10,7 @@
 + (id)columnsDefinition;
 + (id)databaseTable;
 + (BOOL)deleteService:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
-+ (id)entityEncoderForHealthDaemon:(id)arg1 database:(id)arg2 purpose:(int)arg3 authorizationFilter:(id /* block */)arg4;
++ (id)entityEncoderForProfile:(id)arg1 database:(id)arg2 purpose:(int)arg3 encodingOptions:(id)arg4 authorizationFilter:(id /* block */)arg5;
 + (BOOL)healthUpdatesEnabledForDevice:(id)arg1 inDatabase:(id)arg2 error:(id*)arg3;
 + (id)insertOrUpdateService:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
 + (int)protectionClass;

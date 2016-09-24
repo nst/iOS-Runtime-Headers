@@ -2,22 +2,24 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDServiceGroup : NSObject <HMMessageReceiver, NSSecureCoding> {
-    HMDHome *_home;
-    HMMessageDispatcher *_msgDispatcher;
-    NSString *_name;
-    NSMutableArray *_services;
-    NSUUID *_uuid;
-    NSObject<OS_dispatch_queue> *_workQueue;
+@interface HMDServiceGroup : NSObject <HMFDumpState, HMFMessageReceiver, NSSecureCoding> {
+    HMDApplicationData * _appData;
+    HMDHome * _home;
+    HMFMessageDispatcher * _msgDispatcher;
+    NSString * _name;
+    NSMutableArray * _services;
+    NSUUID * _uuid;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
+@property (nonatomic, retain) HMDApplicationData *appData;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic) HMDHome *home;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
-@property (nonatomic, retain) HMMessageDispatcher *msgDispatcher;
+@property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSMutableArray *services;
 @property (readonly) Class superclass;
@@ -31,10 +33,11 @@
 - (void)_handleRemoveServiceRequest:(id)arg1;
 - (void)_handleRenameRequest:(id)arg1;
 - (void)_registerForMessages;
-- (id)assistantUniqueIdentifier;
+- (id)appData;
+- (id)assistantObject;
 - (void)configure:(id)arg1 queue:(id)arg2;
-- (BOOL)containsAccessoryWithUUID:(id)arg1;
 - (void)dealloc;
+- (id)dumpState;
 - (void)encodeWithCoder:(id)arg1;
 - (void)fixupServicesForReplacementAccessory:(id)arg1;
 - (id)home;
@@ -47,6 +50,7 @@
 - (void)removeService:(id)arg1;
 - (void)removeServicesForAccessory:(id)arg1;
 - (id)services;
+- (void)setAppData:(id)arg1;
 - (void)setHome:(id)arg1;
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setName:(id)arg1;

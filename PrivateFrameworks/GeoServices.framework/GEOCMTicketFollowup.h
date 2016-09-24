@@ -3,8 +3,8 @@
  */
 
 @interface GEOCMTicketFollowup : PBCodable <NSCopying> {
-    NSString *_ticketId;
-    NSString *_userEmail;
+    NSString * _ticketId;
+    NSString * _userEmail;
 }
 
 @property (nonatomic, readonly) BOOL hasTicketId;

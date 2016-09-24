@@ -3,8 +3,8 @@
  */
 
 @interface _HKCFGStringTerminal : _HKCFGTerminal {
-    BOOL _caseSensitive;
-    NSString *_string;
+    BOOL  _caseSensitive;
+    NSString * _string;
 }
 
 @property (nonatomic) BOOL caseSensitive;

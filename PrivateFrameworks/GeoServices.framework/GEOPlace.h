@@ -3,14 +3,14 @@
  */
 
 @interface GEOPlace : PBCodable <GEOURLSerializable, NSCopying> {
-    GEOAddress *_address;
-    int _addressGeocodeAccuracy;
-    double _area;
-    NSMutableArray *_business;
-    GEOLatLng *_center;
-    GEOMapRegion *_displayMapRegion;
-    NSMutableArray *_entryPoints;
-    long long _geoId;
+    GEOAddress * _address;
+    int  _addressGeocodeAccuracy;
+    double  _area;
+    NSMutableArray * _business;
+    GEOLatLng * _center;
+    GEOMapRegion * _displayMapRegion;
+    NSMutableArray * _entryPoints;
+    int  _geoId;
     struct { 
         unsigned int area : 1; 
         unsigned int geoId : 1; 
@@ -20,22 +20,22 @@
         unsigned int referenceFrame : 1; 
         unsigned int type : 1; 
         unsigned int isDisputed : 1; 
-    } _has;
-    BOOL _isDisputed;
-    int _localSearchProviderID;
-    GEOMapRegion *_mapRegion;
-    NSString *_name;
-    GEOAddress *_phoneticAddress;
-    NSString *_phoneticLocaleIdentifier;
-    NSString *_phoneticName;
-    int _referenceFrame;
-    NSMutableArray *_roadAccessPoints;
-    NSString *_spokenAddress;
-    NSString *_spokenName;
-    GEOStructuredAddress *_spokenStructuredAddress;
-    GEOTimezone *_timezone;
-    int _type;
-    long long _uID;
+    }  _has;
+    BOOL  _isDisputed;
+    int  _localSearchProviderID;
+    GEOMapRegion * _mapRegion;
+    NSString * _name;
+    GEOAddress * _phoneticAddress;
+    NSString * _phoneticLocaleIdentifier;
+    NSString * _phoneticName;
+    int  _referenceFrame;
+    NSMutableArray * _roadAccessPoints;
+    NSString * _spokenAddress;
+    NSString * _spokenName;
+    GEOStructuredAddress * _spokenStructuredAddress;
+    GEOTimezone * _timezone;
+    int  _type;
+    int  _uID;
 }
 
 @property (nonatomic, retain) GEOAddress *address;
@@ -48,7 +48,7 @@
 @property (nonatomic, retain) GEOMapRegion *displayMapRegion;
 @property (nonatomic, retain) NSMutableArray *entryPoints;
 @property (nonatomic, readonly) GEOBusiness *firstBusiness;
-@property (nonatomic) long long geoId;
+@property (nonatomic) int geoId;
 @property (nonatomic, readonly) BOOL hasAddress;
 @property (nonatomic) BOOL hasAddressGeocodeAccuracy;
 @property (nonatomic) BOOL hasArea;
@@ -85,7 +85,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) GEOTimezone *timezone;
 @property (nonatomic) int type;
-@property (nonatomic) long long uID;
+@property (nonatomic) int uID;
 
 // Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
 
@@ -100,8 +100,14 @@
 + (id)_urlToShowCurrentLocationWithOptions:(id)arg1;
 + (id)_urlToShowPlaces:(id)arg1 options:(id)arg2;
 + (id)_urlToShowURLRepresentations:(id)arg1 options:(id)arg2;
++ (Class)businessType;
++ (Class)entryPointType;
 + (id)placeForPlaceData:(id)arg1;
++ (Class)roadAccessPointsType;
 
+- (int)StringAsAddressGeocodeAccuracy:(id)arg1;
+- (int)StringAsReferenceFrame:(id)arg1;
+- (int)StringAsType:(id)arg1;
 - (BOOL)_isEquivalentURLRepresentationTo:(id)arg1;
 - (id)_urlForDirectionsFromCurrentLocationWithOptions:(id)arg1;
 - (id)_urlForDirectionsFromPlace:(id)arg1 options:(id)arg2;
@@ -114,6 +120,7 @@
 - (id)address;
 - (id)addressDictionary;
 - (int)addressGeocodeAccuracy;
+- (id)addressGeocodeAccuracyAsString:(int)arg1;
 - (double)area;
 - (id)arrivalMapRegion;
 - (id)arrivalMapRegionForTransportType:(int)arg1;
@@ -136,7 +143,7 @@
 - (id)entryPoints;
 - (unsigned int)entryPointsCount;
 - (id)firstBusiness;
-- (long long)geoId;
+- (int)geoId;
 - (id)geoMapItem;
 - (BOOL)hasAddress;
 - (BOOL)hasAddressGeocodeAccuracy;
@@ -161,9 +168,9 @@
 - (unsigned int)hash;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2 addressDictionary:(id)arg3;
-- (id)initWithLocation:(id)arg1 addressDictionary:(id)arg2 name:(id)arg3 businessURL:(id)arg4 phoneNumber:(id)arg5 muid:(unsigned long long)arg6 attributionID:(id)arg7 sampleSizeForUserRatingScore:(unsigned int)arg8 normalizedUserRatingScore:(float)arg9;
+- (id)initWithLocation:(id)arg1 addressDictionary:(id)arg2 name:(id)arg3 businessURL:(id)arg4 phoneNumber:(id)arg5 muid:(unsigned int)arg6 attributionID:(id)arg7 sampleSizeForUserRatingScore:(unsigned int)arg8 normalizedUserRatingScore:(float)arg9;
 - (id)initWithName:(id)arg1 placeType:(int)arg2 areaInMeters:(double)arg3;
-- (id)initWithPlaceInfo:(id)arg1 entity:(id)arg2 address:(id)arg3 bounds:(id)arg4 roadAccessInfo:(id)arg5;
+- (id)initWithPlaceInfo:(id)arg1 entity:(id)arg2 addressObject:(id)arg3 bounds:(id)arg4 roadAccessInfo:(id)arg5;
 - (id)initWithUrlRepresentation:(id)arg1;
 - (BOOL)isDisputed;
 - (BOOL)isEqual:(id)arg1;
@@ -177,6 +184,7 @@
 - (double)radialDistance;
 - (BOOL)readFrom:(id)arg1;
 - (int)referenceFrame;
+- (id)referenceFrameAsString:(int)arg1;
 - (id)roadAccessPoints;
 - (id)roadAccessPointsAtIndex:(unsigned int)arg1;
 - (unsigned int)roadAccessPointsCount;
@@ -188,7 +196,7 @@
 - (void)setCenterCoordinate:(struct { double x1; double x2; })arg1;
 - (void)setDisplayMapRegion:(id)arg1;
 - (void)setEntryPoints:(id)arg1;
-- (void)setGeoId:(long long)arg1;
+- (void)setGeoId:(int)arg1;
 - (void)setHasAddressGeocodeAccuracy:(BOOL)arg1;
 - (void)setHasArea:(BOOL)arg1;
 - (void)setHasGeoId:(BOOL)arg1;
@@ -212,13 +220,14 @@
 - (void)setSpokenStructuredAddress:(id)arg1;
 - (void)setTimezone:(id)arg1;
 - (void)setType:(int)arg1;
-- (void)setUID:(long long)arg1;
+- (void)setUID:(int)arg1;
 - (id)spokenAddress;
 - (id)spokenName;
 - (id)spokenStructuredAddress;
 - (id)timezone;
 - (int)type;
-- (long long)uID;
+- (id)typeAsString:(int)arg1;
+- (int)uID;
 - (id)urlRepresentation;
 - (void)writeTo:(id)arg1;
 

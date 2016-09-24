@@ -3,7 +3,7 @@
  */
 
 @interface _MFLoginAuthenticator : MFSASLAuthenticator {
-    BOOL _justSentPassword;
+    BOOL  _justSentPassword;
 }
 
 - (BOOL)justSentPlainTextPassword;

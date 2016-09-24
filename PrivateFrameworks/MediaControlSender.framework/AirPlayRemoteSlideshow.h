@@ -3,12 +3,12 @@
  */
 
 @interface AirPlayRemoteSlideshow : NSObject {
-    MediaControlClient *_client;
-    <AirPlayRemoteSlideshowDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_internalQueue;
-    double _startTime;
-    BOOL _started;
-    NSObject<OS_dispatch_queue> *_userQueue;
+    MediaControlClient * _client;
+    <AirPlayRemoteSlideshowDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _internalQueue;
+    double  _startTime;
+    BOOL  _started;
+    NSObject<OS_dispatch_queue> * _userQueue;
 }
 
 @property (nonatomic) <AirPlayRemoteSlideshowDelegate> *delegate;

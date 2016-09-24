@@ -3,13 +3,15 @@
  */
 
 @interface BLTObjectCache : NSObject {
-    NSMutableDictionary *_cachedObjects;
-    <BLTObjectCacheDelegate> *_delegate;
-    NSMutableSet *_keys;
-    double _maxItemAge;
-    int _maxItemCount;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableDictionary * _cachedObjects;
+    <BLTObjectCacheDelegate> * _delegate;
+    NSMutableSet * _keys;
+    double  _maxItemAge;
+    int  _maxItemCount;
+    NSObject<OS_dispatch_queue> * _queue;
 }
+
+@property (nonatomic, readonly) NSSet *keys;
 
 - (void).cxx_destruct;
 - (void)_addKeyToSet:(id)arg1;
@@ -24,6 +26,7 @@
 - (id)initWithDelegate:(id)arg1 withMaxItemAge:(double)arg2;
 - (id)initWithDelegate:(id)arg1 withMaxItemCount:(int)arg2;
 - (id)initWithDelegate:(id)arg1 withMaxItemCount:(int)arg2 andMaxItemAge:(double)arg3;
+- (id)keys;
 - (id)objectForKey:(id)arg1;
 - (void)removeObjectForKey:(id)arg1;
 - (void)storeObject:(id)arg1 withKey:(id)arg2;

@@ -3,15 +3,19 @@
  */
 
 @interface _ATXFeedback : NSObject {
-    double _baseAlpha;
-    double _baseBeta;
-    double _decayHalfLifeSeconds;
-    double _priorAlpha;
-    double _priorBeta;
-    double _priorMean;
-    _ATXDataStore *_store;
+    NSString * _abGroupIdentifier;
+    _DECAsset * _asset;
+    double  _baseAlpha;
+    double  _baseBeta;
+    double  _decayHalfLifeSeconds;
+    double  _priorAlpha;
+    double  _priorBeta;
+    double  _priorMean;
+    _ATXDataStore * _store;
+    _ATXInternalUninstallNotification * _uninstallNotificationListener;
 }
 
+@property (nonatomic, readonly) NSString *abGroupIdentifier;
 @property (nonatomic, readonly) double baseAlpha;
 @property (nonatomic, readonly) double baseBeta;
 @property (nonatomic, readonly) double currentAlpha;
@@ -20,6 +24,7 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
+- (id)abGroupIdentifier;
 - (double)baseAlpha;
 - (double)baseBeta;
 - (double)currentAlpha;
@@ -29,8 +34,11 @@
 - (void)feedbackLaunched:(id)arg1 rejected:(id)arg2;
 - (id)init;
 - (id)initWithDataStore:(id)arg1;
+- (id)initWithDataStore:(id)arg1 asset:(id)arg2;
 - (void)putFeedbackScoresForApps:(id)arg1 into:(double*)arg2;
 - (void)putNopScoresForApps:(id)arg1 into:(double*)arg2 atTime:(double)arg3;
 - (void)removeFeedbackForBundle:(id)arg1;
+- (void)removeFeedbackForBundles:(id)arg1;
+- (void)resetData;
 
 @end

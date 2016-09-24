@@ -3,10 +3,10 @@
  */
 
 @interface MFQuotedPrintableDecoder : MFBaseFilterDataConsumer {
-    BOOL _badlyEncoded;
-    BOOL _forTextPart;
-    unsigned char _lastEncoded;
-    unsigned long _required;
+    BOOL  _badlyEncoded;
+    BOOL  _forTextPart;
+    unsigned char  _lastEncoded;
+    unsigned long  _required;
 }
 
 @property (nonatomic) BOOL forTextPart;

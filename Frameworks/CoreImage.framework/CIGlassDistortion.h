@@ -3,10 +3,10 @@
  */
 
 @interface CIGlassDistortion : CIFilter {
-    CIVector *inputCenter;
-    CIImage *inputImage;
-    NSNumber *inputScale;
-    CIImage *inputTexture;
+    CIVector * inputCenter;
+    CIImage * inputImage;
+    NSNumber * inputScale;
+    CIImage * inputTexture;
 }
 
 @property (nonatomic, retain) CIVector *inputCenter;

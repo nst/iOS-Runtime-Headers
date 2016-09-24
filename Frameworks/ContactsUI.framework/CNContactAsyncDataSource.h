@@ -3,16 +3,18 @@
  */
 
 @interface CNContactAsyncDataSource : NSObject <CNContactDataSource> {
-    CNContactFormatter *_contactFormatter;
-    CNContactDataSourceSafeDelegate *_delegate;
-    CNContactStoreFilter *_filter;
-    <CNScheduler> *_reloadScheduler;
-    CNManualObservable *_reloadStream;
-    NSMutableArray *_resultingContacts;
-    <CNCancelable> *_searchCancelationToken;
-    CNContactStore *_store;
+    NSArray * _allKeysToFetchForTransientContacts;
+    CNContactFormatter * _contactFormatter;
+    CNContactDataSourceSafeDelegate * _delegate;
+    CNContactStoreFilter * _filter;
+    <CNSchedulerProvider> * _reloadSchedulerProvider;
+    CNManualObservable * _reloadStream;
+    NSMutableArray * _resultingContacts;
+    <CNCancelable> * _searchCancelationToken;
+    CNContactStore * _store;
 }
 
+@property (nonatomic, retain) NSArray *allKeysToFetchForTransientContacts;
 @property (nonatomic, readonly) BOOL canReload;
 @property (nonatomic, retain) CNContactFormatter *contactFormatter;
 @property (nonatomic, readonly) NSDictionary *contactMatchInfos;
@@ -25,9 +27,8 @@
 @property (nonatomic, copy) CNContactStoreFilter *filter;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSArray *indexSections;
-@property (nonatomic, readonly) CNContact *meContact;
 @property (nonatomic, readonly) NSString *meContactIdentifier;
-@property (nonatomic, retain) <CNScheduler> *reloadScheduler;
+@property (nonatomic, retain) <CNSchedulerProvider> *reloadSchedulerProvider;
 @property (nonatomic, retain) CNManualObservable *reloadStream;
 @property (nonatomic, retain) NSMutableArray *resultingContacts;
 @property (nonatomic, retain) <CNCancelable> *searchCancelationToken;
@@ -37,6 +38,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)allKeysToFetchForTransientContacts;
 - (BOOL)canReload;
 - (id)completeContactFromContact:(id)arg1 fromMainStoreOnly:(BOOL)arg2 keysToFetch:(id)arg3;
 - (id)contactFormatter;
@@ -56,16 +58,17 @@
 - (void)invalidateSearch;
 - (id)meContactIdentifier;
 - (void)reload;
-- (id)reloadScheduler;
+- (id)reloadSchedulerProvider;
 - (id)reloadStream;
 - (void)reloadWithRequest:(id)arg1;
 - (id)resultingContacts;
 - (id)searchCancelationToken;
 - (id)sections;
+- (void)setAllKeysToFetchForTransientContacts:(id)arg1;
 - (void)setContactFormatter:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFilter:(id)arg1;
-- (void)setReloadScheduler:(id)arg1;
+- (void)setReloadSchedulerProvider:(id)arg1;
 - (void)setReloadStream:(id)arg1;
 - (void)setResultingContacts:(id)arg1;
 - (void)setSearchCancelationToken:(id)arg1;

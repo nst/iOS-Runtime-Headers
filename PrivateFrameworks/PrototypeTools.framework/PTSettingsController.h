@@ -3,7 +3,7 @@
  */
 
 @interface PTSettingsController : UINavigationController {
-    UIBarButtonItem *_dismissButton;
+    UIBarButtonItem * _dismissButton;
 }
 
 @property (nonatomic, retain) UIBarButtonItem *dismissButton;

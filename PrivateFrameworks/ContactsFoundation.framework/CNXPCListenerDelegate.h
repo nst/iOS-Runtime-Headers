@@ -3,8 +3,8 @@
  */
 
 @interface CNXPCListenerDelegate : NSObject <NSXPCListenerDelegate> {
-    Protocol *_exportedInterfaceProtocol;
-    id _exportedObject;
+    Protocol * _exportedInterfaceProtocol;
+    id  _exportedObject;
 }
 
 @property (readonly, copy) NSString *debugDescription;

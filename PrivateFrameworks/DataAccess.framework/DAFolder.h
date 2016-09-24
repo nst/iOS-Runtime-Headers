@@ -3,12 +3,12 @@
  */
 
 @interface DAFolder : NSObject {
-    int _dataclass;
-    NSString *_folderID;
-    NSString *_folderName;
-    BOOL _hasRemoteChanges;
-    BOOL _isDefault;
-    NSString *_parentFolderID;
+    int  _dataclass;
+    NSString * _folderID;
+    NSString * _folderName;
+    BOOL  _hasRemoteChanges;
+    BOOL  _isDefault;
+    NSString * _parentFolderID;
 }
 
 @property (nonatomic) int dataclass;

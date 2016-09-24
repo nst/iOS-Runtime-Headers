@@ -4,14 +4,13 @@
 
 @interface SBBootDefaults : SBAbstractSpringBoardDefaultDomain
 
+@property (nonatomic) NSDictionary *bootTransitionContext;
+@property (nonatomic) BOOL comingFromUserPowerDown;
 @property (nonatomic, readonly) BOOL dontLockAfterCrash;
+@property (nonatomic) BOOL hasCompletedSynchronizingCloudCriticalData;
+@property (nonatomic, retain) NSString *lastRestoreIdentifier;
 @property (nonatomic, retain) NSString *lastSystemBuildVersion;
 @property (nonatomic, readonly) BOOL recordBootTimeTillDidFinishLaunching;
-@property (nonatomic, retain) NSString *relaunchReason;
-@property (getter=isRestartForLauguageChanged, nonatomic) BOOL restartForLanguageChanged;
-@property (getter=isRestartForLanguageSetup, nonatomic) BOOL restartForLanguageSetup;
-@property (getter=isRestartForLanguageWhileLocked, nonatomic) BOOL restartForLanguageWhileLocked;
-@property (nonatomic, retain) NSURL *urlToRelaunchToAfterBoot;
 
 - (void)_bindAndRegisterDefaults;
 

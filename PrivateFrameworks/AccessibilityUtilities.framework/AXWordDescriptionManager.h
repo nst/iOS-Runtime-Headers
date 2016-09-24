@@ -3,10 +3,10 @@
  */
 
 @interface AXWordDescriptionManager : NSObject {
-    NSManagedObjectContext *_managedObjectContext;
-    NSManagedObjectModel *_managedObjectModel;
-    NSPersistentStoreCoordinator *_persistentStoreCoordinator;
-    NSString *languageDialectCode;
+    NSManagedObjectContext * _managedObjectContext;
+    NSManagedObjectModel * _managedObjectModel;
+    NSPersistentStoreCoordinator * _persistentStoreCoordinator;
+    NSString * languageDialectCode;
 }
 
 @property (nonatomic, retain) NSString *languageDialectCode;

@@ -3,10 +3,10 @@
  */
 
 @interface GKBubbleFlowRootViewController : GKViewController {
-    GKBubbleFlowAnimator *_animator;
-    BOOL _coveringContentUnderneath;
-    BOOL _currentlyAnimatingADismiss;
-    BOOL _showingInterstitial;
+    GKBubbleFlowAnimator * _animator;
+    BOOL  _coveringContentUnderneath;
+    BOOL  _currentlyAnimatingADismiss;
+    BOOL  _showingInterstitial;
 }
 
 @property (nonatomic, retain) GKBubbleFlowAnimator *animator;

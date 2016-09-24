@@ -3,23 +3,25 @@
  */
 
 @interface GEONavdCachePersistenceManager : NSObject {
-    NSObject<OS_dispatch_queue> *_queue;
-    GEONavdCacheDBReader *_reader;
-    GEONavdCacheDBWriter *_writer;
+    NSObject<OS_dispatch_queue> * _queue;
+    GEONavdCacheDBReader * _reader;
+    GEONavdCacheDBWriter * _writer;
 }
 
 - (void)_deleteFromDiskWithKey:(id)arg1;
-- (long long)_dumpToDiskWithKey:(id)arg1 value:(id)arg2;
-- (id)_entryWithRowId:(long long)arg1;
+- (void)_deleteRowWithRowId:(int)arg1;
+- (int)_dumpToDiskWithKey:(id)arg1 value:(id)arg2;
+- (id)_entryWithRowId:(int)arg1;
 - (void)_enumerateAllEntriesWithHandler:(id /* block */)arg1;
+- (void)_enumerateAllForCacheEntriesWithHandler:(id /* block */)arg1;
 - (double)_nextTimeStampForRefreshTimer;
-- (long long)_numberOfEntries;
+- (int)_numberOfEntries;
 - (id)_readValueWithKey:(id)arg1;
 - (void)_removeAllEntries;
 - (void)_removeOldFormatCache;
-- (long long)_rowIdOfKey:(id)arg1;
+- (int)_rowIdOfKey:(id)arg1;
 - (id)_rowIdsOfEntriesBeforeTimeStamp:(double)arg1;
-- (long long)_threadUnsafeRowIdOfKey:(id)arg1;
+- (int)_threadUnsafeRowIdOfKey:(id)arg1;
 - (id)initWithPath:(id)arg1;
 
 @end

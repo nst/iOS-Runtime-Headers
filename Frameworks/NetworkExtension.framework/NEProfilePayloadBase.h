@@ -3,9 +3,9 @@
  */
 
 @interface NEProfilePayloadBase : NSObject <NEProfilePayloadBaseDelegate> {
-    NSDictionary *_payloadAtom;
-    NSMutableDictionary *_pendingCertificates;
-    NSDictionary *_pluginUpgradeInfo;
+    NSDictionary * _payloadAtom;
+    NSMutableDictionary * _pendingCertificates;
+    NSDictionary * _pluginUpgradeInfo;
 }
 
 @property (nonatomic, retain) NSDictionary *payloadAtom;

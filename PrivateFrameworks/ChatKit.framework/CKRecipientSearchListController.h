@@ -3,14 +3,14 @@
  */
 
 @interface CKRecipientSearchListController : MFAutocompleteResultsTableViewController <CKContactsSearchManagerDelegate, IDSBatchIDQueryControllerDelegate> {
-    IMAccount *_defaultiMessageAccount;
-    NSArray *_enteredRecipients;
-    NSDate *_idsQueryStartTime;
-    NSArray *_prefilteredRecipients;
-    CKContactsSearchManager *_searchManager;
-    NSArray *_searchResults;
-    BOOL _smsEnabled;
-    IDSBatchIDQueryController *_statusQueryController;
+    IMAccount * _defaultiMessageAccount;
+    NSArray * _enteredRecipients;
+    NSDate * _idsQueryStartTime;
+    NSArray * _prefilteredRecipients;
+    CKContactsSearchManager * _searchManager;
+    NSArray * _searchResults;
+    BOOL  _smsEnabled;
+    IDSBatchIDQueryController * _statusQueryController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -28,6 +28,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL suppressGroupSuggestions;
 
+- (void).cxx_destruct;
 - (BOOL)_serviceColorForRecipients:(id)arg1;
 - (id)_statusQueryController;
 - (void)cancelSearch;
@@ -65,5 +66,6 @@
 - (id)statusQueryController;
 - (BOOL)suppressGroupSuggestions;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

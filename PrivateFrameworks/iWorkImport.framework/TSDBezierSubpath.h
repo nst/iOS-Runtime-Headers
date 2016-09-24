@@ -3,8 +3,8 @@
  */
 
 @interface TSDBezierSubpath : NSObject {
-    BOOL mClosed;
-    NSMutableArray *mNodes;
+    BOOL  mClosed;
+    NSArray * mNodes;
 }
 
 @property (nonatomic, readonly) BOOL allNodesSelected;
@@ -16,8 +16,8 @@
 @property (nonatomic, readonly) BOOL hasSelectedNode;
 @property (nonatomic, readonly) BOOL isRectangular;
 @property (nonatomic, readonly) TSDBezierNode *lastNode;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } nodeBounds;
-@property (nonatomic, retain) NSMutableArray *nodes;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } nodeBounds;
+@property (nonatomic, copy) NSArray *nodes;
 
 - (void)addNode:(id)arg1;
 - (void)addNodesToArray:(id)arg1;
@@ -25,9 +25,9 @@
 - (BOOL)allNodesSelected;
 - (void)appendToBezierPath:(id)arg1;
 - (void)appendToBezierPath:(id)arg1 selectedNodesOnly:(BOOL)arg2 fromIndex:(unsigned int)arg3;
-- (id)bezierNodeUnderPoint:(struct CGPoint { float x1; float x2; })arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 andTolerance:(float)arg3 returningType:(int*)arg4;
+- (id)bezierNodeUnderPoint:(struct CGPoint { double x1; double x2; })arg1 withTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2 andTolerance:(float)arg3 returningType:(int*)arg4;
 - (id)bezierPath;
-- (struct CGPoint { float x1; float x2; })calculateNewControlFromOriginalDelta:(struct CGPoint { float x1; float x2; })arg1 currentDelta:(struct CGPoint { float x1; float x2; })arg2 originalSmoothDelta:(struct CGPoint { float x1; float x2; })arg3 node:(struct CGPoint { float x1; float x2; })arg4;
+- (struct CGPoint { double x1; double x2; })calculateNewControlFromOriginalDelta:(struct CGPoint { double x1; double x2; })arg1 currentDelta:(struct CGPoint { double x1; double x2; })arg2 originalSmoothDelta:(struct CGPoint { double x1; double x2; })arg3 node:(struct CGPoint { double x1; double x2; })arg4;
 - (BOOL)canDeleteSelectedNodes;
 - (BOOL)closeIfEndpointsAreEqual;
 - (void)convertToHobby;
@@ -36,7 +36,7 @@
 - (void)deleteSelectedNodes;
 - (id)description;
 - (void)deselectAllNodes;
-- (float)distanceToPoint:(struct CGPoint { float x1; float x2; })arg1 elementIndex:(unsigned int*)arg2 tValue:(float*)arg3 threshold:(float)arg4;
+- (float)distanceToPoint:(struct CGPoint { double x1; double x2; })arg1 elementIndex:(unsigned int*)arg2 tValue:(float*)arg3 threshold:(float)arg4;
 - (id)firstNode;
 - (BOOL)hasSelectedNode;
 - (id)init;
@@ -46,11 +46,11 @@
 - (id)lastNode;
 - (void)morphWithMorphInfo:(id)arg1;
 - (id)nodeAfterNode:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })nodeBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })nodeBounds;
 - (id)nodePriorToNode:(id)arg1;
 - (id)nodes;
-- (void)offsetSelectedEdgesByDelta:(struct CGPoint { float x1; float x2; })arg1;
-- (void)offsetSelectedNodesByDelta:(struct CGPoint { float x1; float x2; })arg1;
+- (void)offsetSelectedEdgesByDelta:(struct CGPoint { double x1; double x2; })arg1;
+- (void)offsetSelectedNodesByDelta:(struct CGPoint { double x1; double x2; })arg1;
 - (void)removeLastNode;
 - (void)removeNode:(id)arg1;
 - (void)removeTemporaryNodes;
@@ -62,7 +62,7 @@
 - (void)smoothAllNodes;
 - (void)smoothNode:(id)arg1;
 - (id)splitEdgeAtIndex:(unsigned int)arg1 atPercentage:(float)arg2;
-- (void)transformUsingAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)transformUsingAffineTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (void)updateReflectedState;
 - (void)updateSmoothNodes;
 - (void)updateSmoothNodes:(id)arg1 addTemporaryNodes:(BOOL)arg2;

@@ -3,16 +3,16 @@
  */
 
 @interface MPAudioDeviceController : NSObject {
-    NSString *_category;
-    id _delegate;
-    BOOL _determiningPickableRoutes;
-    BOOL _fakeRouteAvailable;
-    NSArray *_pickableRoutes;
-    NSMutableArray *_pickableRoutesCompletionHandlers;
-    NSDictionary *_pickedRoute;
-    BOOL _pickedRouteHasVolumeControl;
-    BOOL _pickedRouteHasVolumeControlIsValid;
-    BOOL _scheduledSendAudioRoutesDidChange;
+    NSString * _category;
+    id  _delegate;
+    BOOL  _determiningPickableRoutes;
+    BOOL  _fakeRouteAvailable;
+    NSArray * _pickableRoutes;
+    NSMutableArray * _pickableRoutesCompletionHandlers;
+    NSDictionary * _pickedRoute;
+    BOOL  _pickedRouteHasVolumeControl;
+    BOOL  _pickedRouteHasVolumeControlIsValid;
+    BOOL  _scheduledSendAudioRoutesDidChange;
 }
 
 @property (nonatomic) id delegate;

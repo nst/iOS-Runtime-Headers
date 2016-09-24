@@ -3,12 +3,12 @@
  */
 
 @interface NSURLDownloadInternal : NSObject {
-    NSOperationQueue *_targetQueue;
-    struct _CFURLDownload { } *cfDownload;
-    struct _CFURLAuthChallenge { } *currCFChallenge;
-    NSURLAuthenticationChallenge *currNSChallenge;
-    id delegate;
-    BOOL downloadActive;
+    NSOperationQueue * _targetQueue;
+    struct _CFURLDownload { } * cfDownload;
+    struct _CFURLAuthChallenge { } * currCFChallenge;
+    NSURLAuthenticationChallenge * currNSChallenge;
+    id  delegate;
+    BOOL  downloadActive;
 }
 
 - (void)dealloc;

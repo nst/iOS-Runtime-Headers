@@ -3,10 +3,10 @@
  */
 
 @interface VKDispatch : NSObject {
-    NSObject<OS_dispatch_queue> *_homeQueue;
-    NSObject<OS_dispatch_queue> *_layoutQueue;
-    NSObject<OS_dispatch_queue> *_layoutWorkerQueue;
-    NSObject<OS_dispatch_queue> *_renderQueue;
+    NSObject<OS_dispatch_queue> * _homeQueue;
+    NSObject<OS_dispatch_queue> * _layoutQueue;
+    NSObject<OS_dispatch_queue> * _layoutWorkerQueue;
+    NSObject<OS_dispatch_queue> * _renderQueue;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *homeQueue;

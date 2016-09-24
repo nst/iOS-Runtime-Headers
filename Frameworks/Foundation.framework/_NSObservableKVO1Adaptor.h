@@ -3,8 +3,8 @@
  */
 
 @interface _NSObservableKVO1Adaptor : _NSObservableObservation {
-    BOOL emitsChanges;
-    NSObservableKeyPath *kp;
+    BOOL  emitsChanges;
+    NSObservableKeyPath * kp;
 }
 
 - (void)_observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 changeKind:(unsigned int)arg3 oldValue:(id)arg4 newValue:(id)arg5 indexes:(id)arg6 context:(void*)arg7;

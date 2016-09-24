@@ -3,7 +3,7 @@
  */
 
 @interface IKCSSDeclarationShadow : IKCSSDeclaration {
-    NSShadow *_value;
+    NSShadow * _value;
 }
 
 @property (nonatomic, retain) NSShadow *value;

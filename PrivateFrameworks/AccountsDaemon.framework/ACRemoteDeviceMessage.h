@@ -3,11 +3,11 @@
  */
 
 @interface ACRemoteDeviceMessage : NSObject {
-    NSData *_data;
-    NSString *_identifier;
-    BOOL _isReply;
-    BOOL _needsReply;
-    NSMutableDictionary *_payload;
+    NSData * _data;
+    NSString * _identifier;
+    BOOL  _isReply;
+    BOOL  _needsReply;
+    NSMutableDictionary * _payload;
 }
 
 @property (nonatomic, readonly) ACAccount *account;

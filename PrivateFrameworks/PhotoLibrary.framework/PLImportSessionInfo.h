@@ -3,13 +3,13 @@
  */
 
 @interface PLImportSessionInfo : NSObject {
-    BOOL _importComplete;
-    NSMutableIndexSet *_importCompleteIndexes;
-    NSMutableIndexSet *_importErrorIndexes;
-    NSMutableIndexSet *_importInProgressIndexes;
-    NSMutableIndexSet *_importIndexes;
-    BOOL _importStopped;
-    BOOL _importingSelection;
+    BOOL  _importComplete;
+    NSMutableIndexSet * _importCompleteIndexes;
+    NSMutableIndexSet * _importErrorIndexes;
+    NSMutableIndexSet * _importInProgressIndexes;
+    NSMutableIndexSet * _importIndexes;
+    BOOL  _importStopped;
+    BOOL  _importingSelection;
 }
 
 @property (nonatomic, readonly, retain) NSIndexSet *completedIndexes;

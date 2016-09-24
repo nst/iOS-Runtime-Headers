@@ -3,23 +3,36 @@
  */
 
 @interface MTKTextureLoaderKTX : MTKTextureLoaderData {
-    unsigned int _baseInternalFormat;
-    unsigned int _bytesOfKeyValueData;
-    BOOL _fileIsLittleEndian;
-    unsigned int _format;
-    unsigned int _internalFormat;
-    NSDictionary *_internalSizedFormatLookup;
-    unsigned int _type;
-    unsigned int _typeSize;
+    NSData * _imageData;
+    struct MTLPixelFormatInfo { 
+        char *name; 
+        unsigned int flags; 
+        unsigned int castClass; 
+        union { 
+            struct MTLNormalPixelFormatInfo { 
+                unsigned int pixelBytes; 
+                unsigned char componentCount; 
+                unsigned int pixelBytesRender; 
+                unsigned int pixelBytesRenderMSAA; 
+            } normal; 
+            struct MTLCompressedPixelFormatInfo { 
+                unsigned int blockBytes; 
+                unsigned int blockWidth; 
+                unsigned int blockHeight; 
+                unsigned int blockDepth; 
+            } compressed; 
+        } type; 
+    }  _pixelFormatInfo;
 }
 
 + (BOOL)isKTXFile:(id)arg1;
 
 - (void)dealloc;
-- (BOOL)determineFormatFromType:(unsigned int)arg1 format:(unsigned int)arg2 internalFormat:(unsigned int)arg3 baseInternalFormat:(unsigned int)arg4 options:(id)arg5;
-- (id)initWithDevice:(id)arg1;
-- (void)initializeSizedFormatTable;
-- (BOOL)loadData:(id)arg1 options:(id)arg2 error:(id*)arg3;
-- (id)uploadDataWithOptions:(id)arg1;
+- (unsigned int)determineFormatFromSizedFormat:(unsigned int)arg1;
+- (unsigned int)determineFormatFromType:(unsigned int)arg1 format:(unsigned int)arg2 internalFormat:(unsigned int)arg3 baseInternalFormat:(unsigned int)arg4;
+- (id)getDataForArrayElement:(unsigned int)arg1 face:(unsigned int)arg2 level:(unsigned int)arg3 depthPlane:(unsigned int)arg4 bytesPerRow:(unsigned int*)arg5 bytesPerImage:(unsigned int*)arg6;
+- (id)initWithData:(id)arg1 options:(id)arg2 error:(id*)arg3;
+- (BOOL)parseKey:(id)arg1 value:(id)arg2 error:(id*)arg3;
+- (BOOL)parseKeyValueBytes:(const char *)arg1 length:(unsigned int)arg2 error:(id*)arg3;
 
 @end

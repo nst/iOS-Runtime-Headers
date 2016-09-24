@@ -7,6 +7,7 @@
 
 - (void)__runAlongsideAnimations;
 - (BOOL)_allowUserInteraction;
+- (int)_alongsideAnimationsCount;
 - (NSArray *)_containerViews;
 - (void)_interactivityDidChange:(BOOL)arg1;
 - (float)_percentOffset;

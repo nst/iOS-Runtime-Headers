@@ -3,7 +3,7 @@
  */
 
 @interface VKAttributesTile : VKTile {
-    int _metroArea;
+    int  _metroArea;
 }
 
 @property (nonatomic, readonly) int metroArea;

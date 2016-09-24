@@ -3,9 +3,9 @@
  */
 
 @interface PSWallClockMinuteTimer : NSObject {
-    SEL _action;
-    id _target;
-    NSTimer *_timer;
+    SEL  _action;
+    id  _target;
+    NSTimer * _timer;
 }
 
 - (void).cxx_destruct;

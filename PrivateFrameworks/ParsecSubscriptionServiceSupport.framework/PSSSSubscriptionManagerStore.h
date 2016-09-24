@@ -3,9 +3,11 @@
  */
 
 @interface PSSSSubscriptionManagerStore : NSObject {
-    NSMutableDictionary *_store;
+    NSDistributedNotificationCenter * _notificationCenter;
+    NSMutableDictionary * _store;
 }
 
+@property (nonatomic, retain) NSDistributedNotificationCenter *notificationCenter;
 @property (nonatomic, retain) NSMutableDictionary *store;
 
 + (id)_subscriptionStoreDirectoryPath;
@@ -18,10 +20,12 @@
 - (void)_storeSubscriptionsIfNecessary;
 - (void)getActiveSubscriptionServicesMatchingBundleIdentifiers:(id)arg1 domainIdentifiers:(id)arg2 maximumExpirationLimit:(double)arg3 completionHandler:(id /* block */)arg4;
 - (id)init;
+- (id)notificationCenter;
 - (void)registerSubscriptionServiceForURL:(id)arg1 withSubscriptionInfo:(id)arg2 expirationDate:(id)arg3;
 - (void)registerSubscriptionWithClientId:(id)arg1 subscriptionInfo:(id)arg2 expirationDate:(id)arg3;
 - (void)removeSubscriptionServiceForURL:(id)arg1;
 - (void)removeWebSubscriptionServicesCreatedAfterDate:(id)arg1;
+- (void)setNotificationCenter:(id)arg1;
 - (void)setStore:(id)arg1;
 - (id)store;
 - (void)unregisterAllSubscriptionsWithClientId:(id)arg1;

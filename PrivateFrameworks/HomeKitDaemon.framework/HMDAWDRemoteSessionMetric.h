@@ -2,36 +2,38 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDAWDRemoteSessionMetric : NSObject {
-    unsigned int _closeReason;
-    NSDate *_creation;
-    double _duration;
-    unsigned int _role;
-    BOOL _submitted;
+@interface HMDAWDRemoteSessionMetric : HMDLogEvent <HMDAWDLogEvent> {
+    int  _closeReason;
+    NSDate * _creation;
+    int  _role;
+    NSUUID * _sessionID;
+    BOOL  _submitted;
 }
 
-@property (nonatomic) unsigned int closeReason;
+@property (nonatomic, readonly) int closeReason;
 @property (nonatomic, retain) NSDate *creation;
-@property (nonatomic) double duration;
-@property (nonatomic, readonly) unsigned int role;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int role;
+@property (nonatomic, readonly) NSUUID *sessionID;
 @property (nonatomic) BOOL submitted;
+@property (readonly) Class superclass;
 
-+ (unsigned int)closeReasonFromError:(id)arg1;
-+ (unsigned int)currentDeviceType;
++ (int)closeReasonFromError:(id)arg1;
++ (void)initialize;
++ (id)uuid;
 
 - (void).cxx_destruct;
-- (void)__submitMetric;
-- (unsigned int)closeReason;
-- (void)closeWithReason:(unsigned int)arg1;
+- (unsigned int)AWDMessageType;
+- (int)closeReason;
 - (id)creation;
-- (id)description;
-- (double)duration;
-- (id)initWithRole:(unsigned int)arg1;
+- (id)initWithClientMode:(BOOL)arg1 sessionID:(id)arg2;
+- (id)metricForAWD;
 - (void)open;
-- (unsigned int)role;
-- (void)setCloseReason:(unsigned int)arg1;
+- (int)role;
+- (id)sessionID;
 - (void)setCreation:(id)arg1;
-- (void)setDuration:(double)arg1;
 - (void)setSubmitted:(BOOL)arg1;
 - (BOOL)submitted;
 

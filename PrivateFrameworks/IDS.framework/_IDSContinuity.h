@@ -3,10 +3,10 @@
  */
 
 @interface _IDSContinuity : NSObject <IDSDaemonListenerProtocol> {
-    CUTWeakReference *_delegate;
-    id _delegateContext;
-    NSObject<OS_dispatch_queue> *_queue;
-    int _state;
+    CUTWeakReference * _delegate;
+    id  _delegateContext;
+    NSObject<OS_dispatch_queue> * _queue;
+    int  _state;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -35,8 +35,10 @@
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2 delegateContext:(id)arg3;
 - (void)startAdvertisingOfType:(int)arg1 withData:(id)arg2 withOptions:(id)arg3;
-- (void)startScanningForType:(int)arg1 withData:(id)arg2 peers:(id)arg3 withOptions:(id)arg4;
-- (void)startScanningForType:(int)arg1 withData:(id)arg2 withOptions:(id)arg3;
+- (void)startScanningForType:(int)arg1 withData:(id)arg2 mask:(id)arg3;
+- (void)startScanningForType:(int)arg1 withData:(id)arg2 mask:(id)arg3 boostedScan:(BOOL)arg4 duplicates:(BOOL)arg5;
+- (void)startScanningForType:(int)arg1 withData:(id)arg2 mask:(id)arg3 peers:(id)arg4;
+- (void)startScanningForType:(int)arg1 withData:(id)arg2 mask:(id)arg3 peers:(id)arg4 boostedScan:(BOOL)arg5 duplicates:(BOOL)arg6;
 - (void)startTrackingPeer:(id)arg1 forType:(int)arg2;
 - (int)state;
 - (void)stopAdvertisingOfType:(int)arg1;

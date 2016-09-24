@@ -3,17 +3,18 @@
  */
 
 @interface EMCellStyle : CMStyle <NSCopying> {
-    double _columnWidth;
-    double _contentWidth;
-    int _edCellType;
-    EDStyle *_edStyle;
-    BOOL _isColumnZero;
-    BOOL _isRowZero;
-    BOOL _resolvedProperties;
-    BOOL _truncateContents;
+    double  _columnWidth;
+    double  _contentWidth;
+    int  _edCellType;
+    EDStyle * _edStyle;
+    BOOL  _isColumnZero;
+    BOOL  _isRowZero;
+    BOOL  _resolvedProperties;
+    BOOL  _truncateContents;
 }
 
 + (id)_parseFontName:(id)arg1 nameContainsBold:(BOOL*)arg2 nameContainsItalic:(BOOL*)arg3;
++ (float)contentWidthForColumnWidth:(float)arg1;
 + (id)styleForFont:(id)arg1;
 
 - (void)addAlignmentStyle:(id)arg1;

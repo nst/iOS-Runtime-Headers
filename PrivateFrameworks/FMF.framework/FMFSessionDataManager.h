@@ -3,10 +3,10 @@
  */
 
 @interface FMFSessionDataManager : NSObject {
-    NSSet *_followers;
-    NSSet *_following;
-    NSSet *_locations;
-    NSMutableDictionary *_locationsCache;
+    NSSet * _followers;
+    NSSet * _following;
+    NSSet * _locations;
+    NSMutableDictionary * _locationsCache;
 }
 
 @property (nonatomic, retain) NSSet *followers;

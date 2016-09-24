@@ -3,7 +3,7 @@
  */
 
 @interface ISMainThreadInvocationRecorder : ISInvocationRecorder {
-    BOOL _waitUntilDone;
+    BOOL  _waitUntilDone;
 }
 
 @property (nonatomic) BOOL waitUntilDone;

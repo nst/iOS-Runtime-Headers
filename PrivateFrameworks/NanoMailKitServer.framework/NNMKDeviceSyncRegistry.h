@@ -3,35 +3,33 @@
  */
 
 @interface NNMKDeviceSyncRegistry : NSObject {
-    NNMKSQLiteConnection *_database;
-    NSDate *_dateReceivedCapForAdding;
-    float _deviceScreenScale;
-    float _deviceScreenWidth;
-    NSDate *_disconnectedSince;
-    unsigned int _fullMessagesSyncVersion;
-    BOOL _isMessagesSyncActive;
-    BOOL _isMessagesSyncSuspendedByConnectivity;
-    BOOL _isMessagesSyncSuspendedByUsage;
-    BOOL _isMoreMessagesRequestPending;
-    BOOL _organizeByThread;
-    NSString *_path;
-    BOOL _protectedChannelSupported;
-    NNMKSyncedMailbox *_syncedMailbox;
+    NNMKSQLiteConnection * _database;
+    NSDate * _dateReceivedCapForAdding;
+    double  _deviceScreenScale;
+    double  _deviceScreenWidth;
+    NSDate * _disconnectedSince;
+    unsigned int  _fullMessagesSyncVersion;
+    BOOL  _isMessagesSyncActive;
+    BOOL  _isMessagesSyncSuspendedByConnectivity;
+    BOOL  _isMessagesSyncSuspendedByUsage;
+    BOOL  _organizeByThread;
+    NSString * _path;
+    BOOL  _protectedContentChannelSupported;
+    NNMKSyncedMailbox * _syncedMailbox;
 }
 
 @property (nonatomic, retain) NNMKSQLiteConnection *database;
 @property (nonatomic, retain) NSDate *dateReceivedCapForAdding;
-@property (nonatomic) float deviceScreenScale;
-@property (nonatomic) float deviceScreenWidth;
+@property (nonatomic) double deviceScreenScale;
+@property (nonatomic) double deviceScreenWidth;
 @property (nonatomic, retain) NSDate *disconnectedSince;
 @property (nonatomic) unsigned int fullMessagesSyncVersion;
 @property (nonatomic) BOOL isMessagesSyncActive;
 @property (nonatomic) BOOL isMessagesSyncSuspendedByConnectivity;
 @property (nonatomic) BOOL isMessagesSyncSuspendedByUsage;
-@property (nonatomic) BOOL isMoreMessagesRequestPending;
 @property (nonatomic) BOOL organizeByThread;
 @property (nonatomic, readonly) NSString *path;
-@property (nonatomic) BOOL protectedChannelSupported;
+@property (nonatomic) BOOL protectedContentChannelSupported;
 @property (nonatomic, retain) NNMKSyncedMailbox *syncedMailbox;
 
 - (void).cxx_destruct;
@@ -66,7 +64,6 @@
 - (BOOL)isMessagesSyncActive;
 - (BOOL)isMessagesSyncSuspendedByConnectivity;
 - (BOOL)isMessagesSyncSuspendedByUsage;
-- (BOOL)isMoreMessagesRequestPending;
 - (void)markIDSIdentifierAsAckd:(id)arg1;
 - (id)objectIdsForIDSIdentifierNotYetAckd:(id)arg1 type:(id*)arg2 resendInterval:(unsigned int*)arg3;
 - (id)oldestDateReceived;
@@ -75,7 +72,7 @@
 - (id)pendingComposedMessageIds;
 - (void)prepareIDSIdentifiersForResendForErrorCode:(int)arg1;
 - (int)progressForComposedMessageWithId:(id)arg1;
-- (BOOL)protectedChannelSupported;
+- (BOOL)protectedContentChannelSupported;
 - (void)removePendingComposedMessages;
 - (void)removeProgressForComposedMessageWithId:(id)arg1;
 - (void)removeSyncedAccountForAccountWithId:(id)arg1;
@@ -91,11 +88,9 @@
 - (void)setIsMessagesSyncActive:(BOOL)arg1;
 - (void)setIsMessagesSyncSuspendedByConnectivity:(BOOL)arg1;
 - (void)setIsMessagesSyncSuspendedByUsage:(BOOL)arg1;
-- (void)setIsMoreMessagesRequestPending:(BOOL)arg1;
-- (void)setMoreMessagesRequestPending:(BOOL)arg1;
 - (void)setOrganizeByThread:(BOOL)arg1;
 - (void)setProgress:(int)arg1 forComposedMessageWithId:(id)arg2;
-- (void)setProtectedChannelSupported:(BOOL)arg1;
+- (void)setProtectedContentChannelSupported:(BOOL)arg1;
 - (void)setSyncedMailbox:(id)arg1;
 - (id)syncedAccountForAccountWithId:(id)arg1;
 - (id)syncedAccountIdsResendRequested;
@@ -105,7 +100,7 @@
 - (id)syncedMessageIdsResendRequested;
 - (unsigned int)syncedMessagesCount;
 - (id)syncedMessagesForConversationWithId:(id)arg1;
-- (id)syncedMessagesStatusKeyedByMessageIdAfterDateReceived:(id)arg1;
+- (id)syncedMessagesKeyedByMessageIdAfterDateReceived:(id)arg1;
 - (id)typeForIDSIdentifierNotYetAckd:(id)arg1;
 
 @end

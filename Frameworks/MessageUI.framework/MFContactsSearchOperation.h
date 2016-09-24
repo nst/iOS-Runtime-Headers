@@ -3,12 +3,12 @@
  */
 
 @interface MFContactsSearchOperation : NSOperation {
-    void *_addressBook;
-    MFContactsSearchManager *_owner;
-    NSOrderedSet *_properties;
-    NSString *_sendingAddress;
-    NSNumber *_taskID;
-    NSString *_text;
+    void * _addressBook;
+    MFContactsSearchManager * _owner;
+    NSOrderedSet * _properties;
+    NSString * _sendingAddress;
+    NSNumber * _taskID;
+    NSString * _text;
 }
 
 @property (nonatomic, readonly) void*addressBook;

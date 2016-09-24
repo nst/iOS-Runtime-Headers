@@ -3,11 +3,11 @@
  */
 
 @interface CNAvatarCardTransition : NSObject <UIViewControllerAnimatedTransitioning> {
-    <UIViewControllerContextTransitioning> *_context;
-    UIPanGestureRecognizer *_gestureRecognizer;
-    BOOL _interactive;
-    UIView *_presentedView;
-    BOOL _reversed;
+    <UIViewControllerContextTransitioning> * _context;
+    UIPanGestureRecognizer * _gestureRecognizer;
+    BOOL  _interactive;
+    UIView * _presentedView;
+    BOOL  _reversed;
 }
 
 @property (nonatomic, retain) <UIViewControllerContextTransitioning> *context;

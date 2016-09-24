@@ -3,24 +3,25 @@
  */
 
 @interface BRCSystemResourcesManager : NSObject <BRReachabilityObserver> {
-    NSHashTable *_appListObservers;
-    BOOL _invalidated;
-    BOOL _isNetworkReachable;
-    NSObject<OS_dispatch_source> *_isNetworkReachableTimer;
-    NSMutableDictionary *_lowDiskDict;
-    NSMutableSet *_lowDiskSet;
-    NSObject<OS_dispatch_source> *_lowDiskSource;
-    NSObject<OS_dispatch_source> *_lowDiskTimer;
-    NSHashTable *_lowMemoryObservers;
-    NSObject<OS_dispatch_source> *_memoryNotificationEventSource;
-    NSObject<OS_dispatch_queue> *_notificationQueue;
-    BOOL _powerLevelOK;
-    NSObject<OS_dispatch_source> *_powerLevelOKTimer;
-    int _powerNotifyToken;
-    NSHashTable *_powerObservers;
-    NSMapTable *_processObservers;
-    BRReachabilityMonitor *_reachabilityMonitor;
-    NSHashTable *_reachabilityObservers;
+    NSHashTable * _appListObservers;
+    BOOL  _invalidated;
+    BOOL  _isNetworkReachable;
+    NSObject<OS_dispatch_source> * _isNetworkReachableTimer;
+    NSMutableDictionary * _lowDiskDict;
+    NSMutableSet * _lowDiskSet;
+    NSObject<OS_dispatch_source> * _lowDiskSource;
+    NSObject<OS_dispatch_source> * _lowDiskTimer;
+    NSHashTable * _lowMemoryObservers;
+    NSObject<OS_dispatch_source> * _memoryNotificationEventSource;
+    NSObject<OS_dispatch_queue> * _notificationQueue;
+    BOOL  _powerLevelOK;
+    NSObject<OS_dispatch_source> * _powerLevelOKTimer;
+    int  _powerNotifyToken;
+    NSHashTable * _powerObservers;
+    NSMapTable * _processObservers;
+    unsigned int  _reachabilityFlags;
+    BRReachabilityMonitor * _reachabilityMonitor;
+    NSHashTable * _reachabilityObservers;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -28,6 +29,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) BOOL isNetworkReachable;
 @property (readonly) BOOL isPowerOK;
+@property (readonly) unsigned int reachabilityFlags;
 @property (readonly) Class superclass;
 
 + (id)manager;
@@ -57,6 +59,7 @@
 - (void)_setNetworkReachableWithCoalescing:(BOOL)arg1;
 - (void)_setPowerLevel:(BOOL)arg1;
 - (void)_setPowerLevelWithCoalescing:(BOOL)arg1;
+- (void)_setReachabilityFlags:(unsigned int)arg1;
 - (void)addAppListObserver:(id)arg1;
 - (void)addLowDiskObserver:(id)arg1 forDevice:(int)arg2;
 - (void)addLowMemoryObserver:(id)arg1;
@@ -69,6 +72,8 @@
 - (id)init;
 - (BOOL)isNetworkReachable;
 - (BOOL)isPowerOK;
+- (unsigned int)reachabilityFlags;
+- (void)reachabilityMonitor:(id)arg1 didChangeReachabilityFlagsTo:(unsigned int)arg2;
 - (void)reachabilityMonitor:(id)arg1 didChangeReachabilityStatusTo:(BOOL)arg2;
 - (void)removeAppListObserver:(id)arg1;
 - (void)removeLowDiskObserver:(id)arg1 forDevice:(int)arg2;

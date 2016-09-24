@@ -3,22 +3,22 @@
  */
 
 @interface ADPrerollBottomBar : UIView {
-    double _accumulatedViewingTime;
-    ADPrerollButton *_actionButton;
-    <ADPrerollBottomBarDelegate> *_delegate;
-    BOOL _isFullscreen;
-    double _lastViewingStartTime;
-    BOOL _layoutForExpandedSize;
-    UIImage *_pauseImage;
-    UIImage *_playImage;
-    ADPrerollButton *_playPauseButton;
-    UILabel *_shortSkipLabel;
-    NSTimer *_skipAccumulationTimer;
-    ADPrerollButton *_skipButton;
-    BOOL _skipButtonCountingDown;
-    double _skipDuration;
-    UILabel *_skipLabel;
-    ADVolumeSlider *_volumeSlider;
+    double  _accumulatedViewingTime;
+    ADPrerollButton * _actionButton;
+    <ADPrerollBottomBarDelegate> * _delegate;
+    BOOL  _isFullscreen;
+    double  _lastViewingStartTime;
+    BOOL  _layoutForExpandedSize;
+    UIImage * _pauseImage;
+    UIImage * _playImage;
+    ADPrerollButton * _playPauseButton;
+    UILabel * _shortSkipLabel;
+    NSTimer * _skipAccumulationTimer;
+    ADPrerollButton * _skipButton;
+    BOOL  _skipButtonCountingDown;
+    double  _skipDuration;
+    UILabel * _skipLabel;
+    ADVolumeSlider * _volumeSlider;
 }
 
 @property (nonatomic) double accumulatedViewingTime;
@@ -52,7 +52,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)displayAsPaused:(BOOL)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isFullscreen;
 - (double)lastViewingStartTime;
 - (BOOL)layoutForExpandedSize;

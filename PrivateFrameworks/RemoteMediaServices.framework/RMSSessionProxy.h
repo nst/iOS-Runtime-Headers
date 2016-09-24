@@ -3,11 +3,11 @@
  */
 
 @interface RMSSessionProxy : NSObject {
-    NSTimer *_heartbeatTimer;
-    BOOL _isPaused;
-    double _lastHeartbeatTime;
-    int _sessionIdentifier;
-    double _sessionTimeout;
+    NSTimer * _heartbeatTimer;
+    BOOL  _isPaused;
+    double  _lastHeartbeatTime;
+    int  _sessionIdentifier;
+    double  _sessionTimeout;
 }
 
 @property (nonatomic) int sessionIdentifier;

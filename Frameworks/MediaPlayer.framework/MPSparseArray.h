@@ -3,8 +3,8 @@
  */
 
 @interface MPSparseArray : NSObject <NSCopying, NSSecureCoding> {
-    unsigned int _maximumIndex;
-    NSMutableArray *_nodes;
+    unsigned int  _maximumIndex;
+    NSMutableArray * _nodes;
 }
 
 @property (nonatomic, readonly) unsigned int count;

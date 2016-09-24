@@ -3,8 +3,8 @@
  */
 
 @interface TSPIOHandlerWriteChannelAdapter : NSObject <TSPComponentWriteChannel> {
-    NSError *_error;
-    id /* block */ _handler;
+    NSError * _error;
+    id /* block */  _handler;
 }
 
 @property (readonly, copy) NSString *debugDescription;

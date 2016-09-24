@@ -3,11 +3,11 @@
  */
 
 @interface GEOTileServerLocalProxyBatchContext : NSObject {
-    GEOTileKeyList *_fullList;
-    GEOTileKeyList *_interestList;
-    GEOTileKeyList *_networkList;
-    GEOTileKeyList *_pendingNetworkList;
-    GEOTileRequester *_tileRequester;
+    GEOTileKeyList * _fullList;
+    GEOTileKeyList * _interestList;
+    GEOTileKeyList * _networkList;
+    GEOTileKeyList * _pendingNetworkList;
+    GEOTileRequester * _tileRequester;
 }
 
 @property (nonatomic, retain) GEOTileKeyList *fullList;

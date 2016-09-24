@@ -3,19 +3,19 @@
  */
 
 @interface TSTCellDictionary : NSObject {
-    TSUIntegerKeyDictionary *mDict;
+    TSUIntegerKeyDictionary * mDict;
     struct _opaque_pthread_rwlock_t { 
         long __sig; 
         BOOL __opaque[124]; 
-    } mDictRWLock;
+    }  mDictRWLock;
 }
 
 - (id)allCells;
 - (void)applyBlockToAllCells:(id /* block */)arg1;
-- (id)cellAtCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (id)cellAtCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (void)dealloc;
 - (id)init;
-- (void)removeAllCells;
-- (void)setCell:(id)arg1 atCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
+- (struct vector<TSUCellCoord, std::__1::allocator<TSUCellCoord> > { struct TSUCellCoord {} *x1; struct TSUCellCoord {} *x2; struct __compressed_pair<TSUCellCoord *, std::__1::allocator<TSUCellCoord> > { struct TSUCellCoord {} *x_3_1_1; } x3; })removeAllCells;
+- (void)setCell:(id)arg1 atCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 
 @end

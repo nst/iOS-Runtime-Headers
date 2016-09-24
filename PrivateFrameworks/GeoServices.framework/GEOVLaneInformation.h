@@ -3,8 +3,8 @@
  */
 
 @interface GEOVLaneInformation : PBCodable <NSCopying> {
-    unsigned int _style;
-    unsigned int _validityMask;
+    unsigned int  _style;
+    unsigned int  _validityMask;
 }
 
 @property (nonatomic) unsigned int style;

@@ -3,14 +3,14 @@
  */
 
 @interface CPLAdjustmentFingerprinting : NSObject {
-    CPLResource *_baseImage;
-    BOOL _hasAutoEnhance;
-    BOOL _hasOtherAdjustments;
-    BOOL _hasRedEye;
-    BOOL _hasSimpleLightenDarken;
-    CPLResource *_largeAdjustmentData;
-    CPLAdjustments *_otherAdjustments;
-    CPLResource *_secondaryAdjustmentData;
+    CPLResource * _baseImage;
+    BOOL  _hasAutoEnhance;
+    BOOL  _hasOtherAdjustments;
+    BOOL  _hasRedEye;
+    BOOL  _hasSimpleLightenDarken;
+    CPLResource * _largeAdjustmentData;
+    CPLAdjustments * _otherAdjustments;
+    CPLResource * _secondaryAdjustmentData;
 }
 
 @property (nonatomic, retain) CPLResource *baseImage;

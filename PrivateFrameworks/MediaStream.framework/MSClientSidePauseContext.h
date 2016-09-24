@@ -3,10 +3,10 @@
  */
 
 @interface MSClientSidePauseContext : NSObject {
-    NSString *_UUID;
-    MSTimerGate *_gate;
-    NSXPCConnection *_server;
-    NSObject<OS_dispatch_queue> *_timerQueue;
+    NSString * _UUID;
+    MSTimerGate * _gate;
+    NSXPCConnection * _server;
+    NSObject<OS_dispatch_queue> * _timerQueue;
 }
 
 @property (nonatomic, retain) MSTimerGate *gate;

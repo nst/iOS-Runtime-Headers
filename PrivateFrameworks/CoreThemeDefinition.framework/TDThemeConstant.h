@@ -3,7 +3,7 @@
  */
 
 @interface TDThemeConstant : NSManagedObject {
-    int _identifier;
+    int  _identifier;
 }
 
 - (id)constantName;

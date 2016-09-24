@@ -3,8 +3,8 @@
  */
 
 @interface CNAggregateKeyDescriptor : NSObject <CNKeyDescriptor_Private> {
-    NSArray *_keyDescriptors;
-    NSString *_privateDescription;
+    NSArray * _keyDescriptors;
+    NSString * _privateDescription;
 }
 
 @property (readonly, copy) NSString *debugDescription;

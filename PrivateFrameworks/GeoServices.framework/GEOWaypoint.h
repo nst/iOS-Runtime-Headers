@@ -3,9 +3,9 @@
  */
 
 @interface GEOWaypoint : PBCodable <NSCopying> {
-    NSMutableArray *_entryPoints;
-    GEOLocation *_location;
-    GEOPlaceSearchRequest *_placeSearchRequest;
+    NSMutableArray * _entryPoints;
+    GEOLocation * _location;
+    GEOPlaceSearchRequest * _placeSearchRequest;
 }
 
 @property (nonatomic, retain) NSMutableArray *entryPoints;
@@ -13,6 +13,8 @@
 @property (nonatomic, readonly) BOOL hasPlaceSearchRequest;
 @property (nonatomic, retain) GEOLocation *location;
 @property (nonatomic, retain) GEOPlaceSearchRequest *placeSearchRequest;
+
++ (Class)entryPointType;
 
 - (void)addEntryPoint:(id)arg1;
 - (void)clearEntryPoints;

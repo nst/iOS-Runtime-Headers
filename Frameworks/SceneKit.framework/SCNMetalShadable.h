@@ -3,14 +3,14 @@
  */
 
 @interface SCNMetalShadable : NSObject {
-    /* Warning: unhandled array encoding: '[31@]' */ id _fragmentBuffers;
-    /* Warning: unhandled array encoding: '[15@]' */ id _fragmentSamplers;
-    /* Warning: unhandled array encoding: '[31@]' */ id _fragmentTextures;
-    /* Warning: unhandled array encoding: '[31@]' */ id _vertexBuffers;
-    /* Warning: unhandled array encoding: '[15@]' */ id _vertexSamplers;
-    /* Warning: unhandled array encoding: '[31@]' */ id _vertexTextures;
-    int geometryModificationCount;
-    int materialModificationCount;
+    /* Warning: unhandled array encoding: '[31@]' */ id  _fragmentBuffers;
+    /* Warning: unhandled array encoding: '[16@]' */ id  _fragmentSamplers;
+    /* Warning: unhandled array encoding: '[31@]' */ id  _fragmentTextures;
+    /* Warning: unhandled array encoding: '[31@]' */ id  _vertexBuffers;
+    /* Warning: unhandled array encoding: '[16@]' */ id  _vertexSamplers;
+    /* Warning: unhandled array encoding: '[31@]' */ id  _vertexTextures;
+    int  geometryModificationCount;
+    int  materialModificationCount;
 }
 
 @property (nonatomic) int geometryModificationCount;

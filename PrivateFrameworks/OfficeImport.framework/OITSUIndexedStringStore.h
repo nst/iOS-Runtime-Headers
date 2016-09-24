@@ -3,9 +3,9 @@
  */
 
 @interface OITSUIndexedStringStore : NSObject {
-    NSMutableDictionary *_indexByString;
-    int _lock;
-    NSMutableArray *_stringByIndex;
+    NSMutableDictionary * _indexByString;
+    int  _lock;
+    NSMutableArray * _stringByIndex;
 }
 
 - (unsigned int)count;

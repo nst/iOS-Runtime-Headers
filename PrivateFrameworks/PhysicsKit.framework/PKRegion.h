@@ -5,22 +5,22 @@
 @interface PKRegion : NSObject <NSCoding, NSCopying> {
     struct vec4 { 
         /* Warning: Unrecognized filer type: '}' using 'void*' */ void*v; 
-    } _halfExtent;
+    }  _halfExtent;
     struct vec4 { 
         /* Warning: Unrecognized filer type: '}' using 'void*' */ void*v; 
-    } _halfExtent2;
-    bool _isExclusive;
+    }  _halfExtent2;
+    bool  _isExclusive;
     struct shared_ptr<PKCPathHolder> { 
         struct PKCPathHolder {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _path;
+    }  _path;
     struct shared_ptr<PKCPathHolder> { 
         struct PKCPathHolder {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _path2;
-    int _regionOp;
-    int _shape;
-    int _shape2;
+    }  _path2;
+    int  _regionOp;
+    int  _shape;
+    int  _shape2;
 }
 
 @property (nonatomic, readonly) struct CGPath { }*path;
@@ -29,14 +29,14 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (BOOL)containsPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)containsPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)containsPoints:(const float*)arg1 locationStride:(int)arg2 results:(char *)arg3 resultsStride:(int)arg4 count:(int)arg5;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPath:(struct CGPath { }*)arg1;
 - (id)initWithRadius:(float)arg1;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)inverseRegion;
 - (BOOL)isEmpty;
 - (BOOL)isInfinite;

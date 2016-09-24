@@ -3,8 +3,8 @@
  */
 
 @interface SSVMediaContentTasteUpdateRequest : SSRequest <SSXPCCoding> {
-    NSArray *_contentTasteItemUpdates;
-    BOOL _shouldInvalidateLocalCache;
+    NSArray * _contentTasteItemUpdates;
+    BOOL  _shouldInvalidateLocalCache;
 }
 
 @property (nonatomic, copy) NSArray *contentTasteItemUpdates;

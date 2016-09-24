@@ -3,8 +3,10 @@
  */
 
 @interface MFAccountStore : NSObject {
-    ACAccountStore *_accountStore;
-    int _accountStoreLock;
+    ACAccountStore * _accountStore;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _accountStoreLock;
 }
 
 @property (readonly) ACAccountStore *persistentStore;

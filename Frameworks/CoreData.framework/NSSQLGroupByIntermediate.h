@@ -3,7 +3,7 @@
  */
 
 @interface NSSQLGroupByIntermediate : NSSQLIntermediate {
-    NSArray *_properties;
+    NSArray * _properties;
 }
 
 - (void)dealloc;

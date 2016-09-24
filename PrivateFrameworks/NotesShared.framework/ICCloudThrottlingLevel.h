@@ -3,8 +3,8 @@
  */
 
 @interface ICCloudThrottlingLevel : NSObject {
-    double _batchInterval;
-    unsigned int _numberOfBatches;
+    double  _batchInterval;
+    unsigned int  _numberOfBatches;
 }
 
 @property (nonatomic) double batchInterval;

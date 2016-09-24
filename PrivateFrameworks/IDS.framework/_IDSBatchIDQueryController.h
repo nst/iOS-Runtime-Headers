@@ -3,16 +3,16 @@
  */
 
 @interface _IDSBatchIDQueryController : NSObject <IDSIDQueryControllerDelegate> {
-    CUTWeakReference *_delegate;
-    NSArray *_destinations;
-    NSMutableArray *_destinationsToQuery;
-    BOOL _isDead;
-    NSString *_listenerID;
-    NSTimer *_nextQueryTimer;
-    int _numberOfQueriesDone;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSString *_serviceName;
-    NSDate *_timeOfDeath;
+    CUTWeakReference * _delegate;
+    NSArray * _destinations;
+    NSMutableArray * _destinationsToQuery;
+    BOOL  _isDead;
+    NSString * _listenerID;
+    NSTimer * _nextQueryTimer;
+    int  _numberOfQueriesDone;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSString * _serviceName;
+    NSDate * _timeOfDeath;
 }
 
 @property (readonly, copy) NSString *debugDescription;

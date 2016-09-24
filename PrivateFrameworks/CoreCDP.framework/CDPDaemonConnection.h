@@ -3,8 +3,8 @@
  */
 
 @interface CDPDaemonConnection : NSObject {
-    NSXPCConnection *_conn;
-    NSLock *_connLock;
+    NSXPCConnection * _conn;
+    NSLock * _connLock;
 }
 
 - (void).cxx_destruct;
@@ -12,5 +12,6 @@
 - (id)daemon;
 - (id)daemonWithErrorHandler:(id /* block */)arg1;
 - (id)init;
+- (id)synchronousDaemonWithErrorHandler:(id /* block */)arg1;
 
 @end

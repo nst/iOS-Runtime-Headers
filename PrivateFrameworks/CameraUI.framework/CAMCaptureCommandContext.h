@@ -3,21 +3,21 @@
  */
 
 @interface CAMCaptureCommandContext : NSObject {
-    CAMCaptureEngine *__captureEngine;
-    AVCaptureDevice *_currentAudioDevice;
-    AVCaptureDeviceInput *_currentAudioDeviceInput;
-    AVCaptureSession *_currentCaptureSession;
-    AVCaptureVideoDataOutput *_currentEffectsPreviewOutput;
-    AVCaptureStillImageOutput *_currentLegacyStillImageOutput;
-    AVCaptureMetadataOutput *_currentMetadataOutput;
-    AVCaptureMovieFileOutput *_currentMovieFileOutput;
-    CAMPanoramaOutput *_currentPanoramaOutput;
-    AVCaptureIrisStillImageOutput *_currentStillImageOutput;
-    AVCaptureDevice *_currentVideoDevice;
-    AVCaptureDeviceFormat *_currentVideoDeviceFormat;
-    AVCaptureDeviceInput *_currentVideoDeviceInput;
-    NSString *_currentVideoDevicePreset;
-    AVCaptureVideoPreviewLayer *_currentVideoPreviewLayer;
+    CAMCaptureEngine * __captureEngine;
+    AVCaptureDevice * _currentAudioDevice;
+    AVCaptureDeviceInput * _currentAudioDeviceInput;
+    AVCaptureSession * _currentCaptureSession;
+    AVCaptureVideoDataOutput * _currentEffectsPreviewOutput;
+    AVCaptureStillImageOutput * _currentLegacyStillImageOutput;
+    AVCaptureMetadataOutput * _currentMetadataOutput;
+    AVCaptureMovieFileOutput * _currentMovieFileOutput;
+    CAMPanoramaOutput * _currentPanoramaOutput;
+    AVCapturePhotoOutput * _currentStillImageOutput;
+    AVCaptureDevice * _currentVideoDevice;
+    AVCaptureDeviceFormat * _currentVideoDeviceFormat;
+    AVCaptureDeviceInput * _currentVideoDeviceInput;
+    NSString * _currentVideoDevicePreset;
+    AVCaptureVideoPreviewLayer * _currentVideoPreviewLayer;
 }
 
 @property (nonatomic, readonly) CAMCaptureEngine *_captureEngine;
@@ -31,8 +31,8 @@
 @property (nonatomic, readonly) CAMPanoramaConfiguration *currentPanoramaConfiguration;
 @property (nonatomic, retain) CAMPanoramaOutput *currentPanoramaOutput;
 @property (nonatomic, readonly) <AVCaptureFileOutputRecordingDelegate> *currentRecordingDelegate;
-@property (nonatomic, readonly) <AVCaptureIrisStillImageCaptureDelegate> *currentStillImageDelegate;
-@property (nonatomic, retain) AVCaptureIrisStillImageOutput *currentStillImageOutput;
+@property (nonatomic, readonly) <AVCapturePhotoCaptureDelegate> *currentStillImageDelegate;
+@property (nonatomic, retain) AVCapturePhotoOutput *currentStillImageOutput;
 @property (nonatomic, retain) AVCaptureDevice *currentVideoDevice;
 @property (nonatomic, retain) AVCaptureDeviceFormat *currentVideoDeviceFormat;
 @property (nonatomic, retain) AVCaptureDeviceInput *currentVideoDeviceInput;
@@ -41,6 +41,7 @@
 
 - (void).cxx_destruct;
 - (id)_captureEngine;
+- (id)_captureEngineDeviceForMode:(int)arg1 desiredDevice:(int)arg2 videoConfiguration:(int)arg3 resolvedDevice:(int*)arg4;
 - (id)audioDeviceInput;
 - (void)clear;
 - (id)currentAudioDevice;
@@ -84,9 +85,6 @@
 - (void)setCurrentVideoPreviewLayer:(id)arg1;
 - (void)startPanoramaCaptureWithRequest:(id)arg1;
 - (void)stopPanoramaCapture;
-- (id)videoDeviceForDevice:(int)arg1;
-- (id)videoDeviceFormatForModeWithOptions:(struct CAMCaptureModeWithOptions { int x1; int x2; int x3; int x4; })arg1 device:(int)arg2;
-- (id)videoDeviceInputForDevice:(int)arg1;
-- (id)videoDevicePresetForModeWithOptions:(struct CAMCaptureModeWithOptions { int x1; int x2; int x3; int x4; })arg1 device:(int)arg2;
+- (id)videoDeviceForMode:(int)arg1 desiredDevice:(int)arg2 videoConfiguration:(int)arg3 resolvedDevice:(int*)arg4;
 
 @end

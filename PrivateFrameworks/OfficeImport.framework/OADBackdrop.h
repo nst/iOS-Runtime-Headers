@@ -3,9 +3,9 @@
  */
 
 @interface OADBackdrop : NSObject <NSCopying> {
-    OADPoint3D *mAnchor;
-    OADVector3D *mNormal;
-    OADVector3D *mUp;
+    OADPoint3D * mAnchor;
+    OADVector3D * mNormal;
+    OADVector3D * mUp;
 }
 
 - (id)anchor;

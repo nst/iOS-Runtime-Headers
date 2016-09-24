@@ -3,7 +3,7 @@
  */
 
 @interface CNPropertyEmailAddressCell : CNPropertySimpleTransportCell {
-    BOOL _VIP;
+    BOOL  _VIP;
 }
 
 @property (getter=isVIP, nonatomic) BOOL VIP;

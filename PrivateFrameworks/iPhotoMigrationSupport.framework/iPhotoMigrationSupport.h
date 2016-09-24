@@ -3,8 +3,8 @@
  */
 
 @interface iPhotoMigrationSupport : NSObject {
-    int _inFlightMigrationCount;
-    PLPhotoLibrary *_pl_library;
+    int  _inFlightMigrationCount;
+    PLPhotoLibrary * _pl_library;
 }
 
 @property (nonatomic, readonly) BOOL migrationWasInterrupted;
@@ -20,7 +20,7 @@
 - (id)_firstFilePathWithAnyExtensionAtPath:(id)arg1 extension:(id*)arg2;
 - (id)_iPhotoMediaDirUuidListSortedByDateCreatedWithDir:(id)arg1;
 - (id)_iPhotoToPhotosUuidMapTable;
-- (id)_iPhotoUuidsWithProjectDict:(id)arg1 type:(unsigned long long)arg2;
+- (id)_iPhotoUuidsWithProjectDict:(id)arg1 type:(unsigned int)arg2;
 - (id)_inFlightMigrationMarkerFilePath;
 - (void)_incrementInFlightMigrationCount;
 - (BOOL)_isMigrating;

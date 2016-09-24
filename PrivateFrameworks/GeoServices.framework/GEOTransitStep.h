@@ -3,13 +3,14 @@
  */
 
 @interface GEOTransitStep : PBCodable <NSCopying> {
-    unsigned int _accessPointZilchIndex;
-    GEOTransitArrivalInfo *_arrivalInfo;
-    unsigned int _defaultVehicleInfoIndex;
-    unsigned int _departureFrequency;
-    unsigned int _distanceInMeters;
-    unsigned int _endingStopIndex;
-    NSMutableArray *_enterExitInfos;
+    unsigned int  _accessPointZilchIndex;
+    GEOTransitArrivalInfo * _arrivalInfo;
+    GEOTransitBaseFare * _baseFare;
+    unsigned int  _defaultVehicleInfoIndex;
+    unsigned int  _departureFrequency;
+    unsigned int  _distanceInMeters;
+    unsigned int  _endingStopIndex;
+    NSMutableArray * _enterExitInfos;
     struct { 
         unsigned int accessPointZilchIndex : 1; 
         unsigned int defaultVehicleInfoIndex : 1; 
@@ -26,36 +27,37 @@
         unsigned int walkingIndex : 1; 
         unsigned int zilchIndex : 1; 
         unsigned int prioritizeTilesPreloading : 1; 
-    } _has;
-    GEOInstructionSet *_instructions;
-    unsigned int _listTransitIncidentMessageIndex;
-    GEOLatLng *_location;
-    int _maneuverType;
-    BOOL _prioritizeTilesPreloading;
+    }  _has;
+    GEOInstructionSet * _instructions;
+    unsigned int  _listTransitIncidentMessageIndex;
+    GEOLatLng * _location;
+    int  _maneuverType;
+    BOOL  _prioritizeTilesPreloading;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _routeDetailsPrimaryArtworkIndexs;
-    unsigned int _routeDetailsSecondaryArtworkIndex;
-    int _significanceForEndNode;
-    unsigned int _startingStopIndex;
-    unsigned int _startingTime;
+    }  _routeDetailsPrimaryArtworkIndexs;
+    unsigned int  _routeDetailsSecondaryArtworkIndex;
+    int  _significanceForEndNode;
+    unsigned int  _startingStopIndex;
+    unsigned int  _startingTime;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _steppingArtworkIndexs;
-    unsigned int _steppingTransitIncidentMessageIndex;
-    NSMutableArray *_transferInfos;
-    GEOPBTransitRoutingIncidentMessage *_transitIncidentMessage;
-    NSMutableArray *_vehicleInfos;
-    unsigned int _walkingIndex;
-    unsigned int _zilchIndex;
+    }  _steppingArtworkIndexs;
+    unsigned int  _steppingTransitIncidentMessageIndex;
+    GEOTransitSurcharge * _surcharge;
+    NSMutableArray * _transferInfos;
+    NSMutableArray * _vehicleInfos;
+    unsigned int  _walkingIndex;
+    unsigned int  _zilchIndex;
 }
 
 @property (nonatomic) unsigned int accessPointZilchIndex;
 @property (nonatomic, retain) GEOTransitArrivalInfo *arrivalInfo;
+@property (nonatomic, retain) GEOTransitBaseFare *baseFare;
 @property (nonatomic) unsigned int defaultVehicleInfoIndex;
 @property (nonatomic) unsigned int departureFrequency;
 @property (nonatomic) unsigned int distanceInMeters;
@@ -63,6 +65,7 @@
 @property (nonatomic, retain) NSMutableArray *enterExitInfos;
 @property (nonatomic) BOOL hasAccessPointZilchIndex;
 @property (nonatomic, readonly) BOOL hasArrivalInfo;
+@property (nonatomic, readonly) BOOL hasBaseFare;
 @property (nonatomic) BOOL hasDefaultVehicleInfoIndex;
 @property (nonatomic) BOOL hasDepartureFrequency;
 @property (nonatomic) BOOL hasDistanceInMeters;
@@ -77,7 +80,7 @@
 @property (nonatomic) BOOL hasStartingStopIndex;
 @property (nonatomic) BOOL hasStartingTime;
 @property (nonatomic) BOOL hasSteppingTransitIncidentMessageIndex;
-@property (nonatomic, readonly) BOOL hasTransitIncidentMessage;
+@property (nonatomic, readonly) BOOL hasSurcharge;
 @property (nonatomic) BOOL hasWalkingIndex;
 @property (nonatomic) BOOL hasZilchIndex;
 @property (nonatomic, retain) GEOInstructionSet *instructions;
@@ -94,12 +97,18 @@
 @property (nonatomic, readonly) unsigned int*steppingArtworkIndexs;
 @property (nonatomic, readonly) unsigned int steppingArtworkIndexsCount;
 @property (nonatomic) unsigned int steppingTransitIncidentMessageIndex;
+@property (nonatomic, retain) GEOTransitSurcharge *surcharge;
 @property (nonatomic, retain) NSMutableArray *transferInfos;
-@property (nonatomic, retain) GEOPBTransitRoutingIncidentMessage *transitIncidentMessage;
 @property (nonatomic, retain) NSMutableArray *vehicleInfos;
 @property (nonatomic) unsigned int walkingIndex;
 @property (nonatomic) unsigned int zilchIndex;
 
++ (Class)enterExitInfoType;
++ (Class)transferInfoType;
++ (Class)vehicleInfoType;
+
+- (int)StringAsManeuverType:(id)arg1;
+- (int)StringAsSignificanceForEndNode:(id)arg1;
 - (unsigned int)accessPointZilchIndex;
 - (void)addEnterExitInfo:(id)arg1;
 - (void)addRouteDetailsPrimaryArtworkIndex:(unsigned int)arg1;
@@ -107,6 +116,7 @@
 - (void)addTransferInfo:(id)arg1;
 - (void)addVehicleInfo:(id)arg1;
 - (id)arrivalInfo;
+- (id)baseFare;
 - (void)clearEnterExitInfos;
 - (void)clearRouteDetailsPrimaryArtworkIndexs;
 - (void)clearSteppingArtworkIndexs;
@@ -126,6 +136,7 @@
 - (unsigned int)enterExitInfosCount;
 - (BOOL)hasAccessPointZilchIndex;
 - (BOOL)hasArrivalInfo;
+- (BOOL)hasBaseFare;
 - (BOOL)hasDefaultVehicleInfoIndex;
 - (BOOL)hasDepartureFrequency;
 - (BOOL)hasDistanceInMeters;
@@ -140,15 +151,17 @@
 - (BOOL)hasStartingStopIndex;
 - (BOOL)hasStartingTime;
 - (BOOL)hasSteppingTransitIncidentMessageIndex;
-- (BOOL)hasTransitIncidentMessage;
+- (BOOL)hasSurcharge;
 - (BOOL)hasWalkingIndex;
 - (BOOL)hasZilchIndex;
 - (unsigned int)hash;
 - (id)instructions;
 - (BOOL)isEqual:(id)arg1;
+- (int)legTypeForManuever;
 - (unsigned int)listTransitIncidentMessageIndex;
 - (id)location;
 - (int)maneuverType;
+- (id)maneuverTypeAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)prioritizeTilesPreloading;
 - (BOOL)readFrom:(id)arg1;
@@ -158,6 +171,7 @@
 - (unsigned int)routeDetailsSecondaryArtworkIndex;
 - (void)setAccessPointZilchIndex:(unsigned int)arg1;
 - (void)setArrivalInfo:(id)arg1;
+- (void)setBaseFare:(id)arg1;
 - (void)setDefaultVehicleInfoIndex:(unsigned int)arg1;
 - (void)setDepartureFrequency:(unsigned int)arg1;
 - (void)setDistanceInMeters:(unsigned int)arg1;
@@ -190,22 +204,23 @@
 - (void)setStartingTime:(unsigned int)arg1;
 - (void)setSteppingArtworkIndexs:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)setSteppingTransitIncidentMessageIndex:(unsigned int)arg1;
+- (void)setSurcharge:(id)arg1;
 - (void)setTransferInfos:(id)arg1;
-- (void)setTransitIncidentMessage:(id)arg1;
 - (void)setVehicleInfos:(id)arg1;
 - (void)setWalkingIndex:(unsigned int)arg1;
 - (void)setZilchIndex:(unsigned int)arg1;
 - (int)significanceForEndNode;
+- (id)significanceForEndNodeAsString:(int)arg1;
 - (unsigned int)startingStopIndex;
 - (unsigned int)startingTime;
 - (unsigned int)steppingArtworkIndexAtIndex:(unsigned int)arg1;
 - (unsigned int*)steppingArtworkIndexs;
 - (unsigned int)steppingArtworkIndexsCount;
 - (unsigned int)steppingTransitIncidentMessageIndex;
+- (id)surcharge;
 - (id)transferInfoAtIndex:(unsigned int)arg1;
 - (id)transferInfos;
 - (unsigned int)transferInfosCount;
-- (id)transitIncidentMessage;
 - (id)vehicleInfoAtIndex:(unsigned int)arg1;
 - (id)vehicleInfos;
 - (unsigned int)vehicleInfosCount;

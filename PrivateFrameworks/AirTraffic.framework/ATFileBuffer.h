@@ -3,9 +3,9 @@
  */
 
 @interface ATFileBuffer : NSObject {
-    NSFileHandle *_bufferFileHandle;
-    unsigned int _currentReadLocation;
-    unsigned int _length;
+    NSFileHandle * _bufferFileHandle;
+    unsigned int  _currentReadLocation;
+    unsigned int  _length;
 }
 
 - (void).cxx_destruct;

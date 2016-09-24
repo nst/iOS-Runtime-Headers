@@ -3,7 +3,7 @@
  */
 
 @interface NSSQLOrderIntermediate : NSSQLIntermediate {
-    NSArray *_sortDescriptors;
+    NSArray * _sortDescriptors;
 }
 
 - (id)_generateSQLForOrderedManyToManyInverse:(id)arg1 inContext:(id)arg2;

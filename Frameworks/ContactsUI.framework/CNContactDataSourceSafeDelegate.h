@@ -3,7 +3,7 @@
  */
 
 @interface CNContactDataSourceSafeDelegate : NSObject <CNContactDataSourceDelegate> {
-    <CNContactDataSourceDelegate> *_delegate;
+    <CNContactDataSourceDelegate> * _delegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

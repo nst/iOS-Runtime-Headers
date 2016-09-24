@@ -3,16 +3,19 @@
  */
 
 @interface GEOPDAutocompleteParametersAllEntriesWithBrowse : PBCodable <NSCopying> {
-    GEOPDAutocompleteEntry *_categorySuggestionEntry;
-    NSData *_categorySuggestionEntryMetadata;
+    GEOPDAutocompleteEntry * _categorySuggestionEntry;
+    NSData * _categorySuggestionEntryMetadata;
     struct { 
         unsigned int maxResults : 1; 
         unsigned int highlightDiff : 1; 
-    } _has;
-    BOOL _highlightDiff;
-    int _maxResults;
-    NSString *_query;
-    GEOPDViewportInfo *_viewportInfo;
+        unsigned int interleaveCategorySuggestions : 1; 
+    }  _has;
+    BOOL  _highlightDiff;
+    BOOL  _interleaveCategorySuggestions;
+    int  _maxResults;
+    NSString * _query;
+    PBUnknownFields * _unknownFields;
+    GEOPDViewportInfo * _viewportInfo;
 }
 
 @property (nonatomic, retain) GEOPDAutocompleteEntry *categorySuggestionEntry;
@@ -20,12 +23,15 @@
 @property (nonatomic, readonly) BOOL hasCategorySuggestionEntry;
 @property (nonatomic, readonly) BOOL hasCategorySuggestionEntryMetadata;
 @property (nonatomic) BOOL hasHighlightDiff;
+@property (nonatomic) BOOL hasInterleaveCategorySuggestions;
 @property (nonatomic) BOOL hasMaxResults;
 @property (nonatomic, readonly) BOOL hasQuery;
 @property (nonatomic, readonly) BOOL hasViewportInfo;
 @property (nonatomic) BOOL highlightDiff;
+@property (nonatomic) BOOL interleaveCategorySuggestions;
 @property (nonatomic) int maxResults;
 @property (nonatomic, retain) NSString *query;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) GEOPDViewportInfo *viewportInfo;
 
 - (id)categorySuggestionEntry;
@@ -38,11 +44,13 @@
 - (BOOL)hasCategorySuggestionEntry;
 - (BOOL)hasCategorySuggestionEntryMetadata;
 - (BOOL)hasHighlightDiff;
+- (BOOL)hasInterleaveCategorySuggestions;
 - (BOOL)hasMaxResults;
 - (BOOL)hasQuery;
 - (BOOL)hasViewportInfo;
 - (unsigned int)hash;
 - (BOOL)highlightDiff;
+- (BOOL)interleaveCategorySuggestions;
 - (BOOL)isEqual:(id)arg1;
 - (int)maxResults;
 - (void)mergeFrom:(id)arg1;
@@ -51,11 +59,14 @@
 - (void)setCategorySuggestionEntry:(id)arg1;
 - (void)setCategorySuggestionEntryMetadata:(id)arg1;
 - (void)setHasHighlightDiff:(BOOL)arg1;
+- (void)setHasInterleaveCategorySuggestions:(BOOL)arg1;
 - (void)setHasMaxResults:(BOOL)arg1;
 - (void)setHighlightDiff:(BOOL)arg1;
+- (void)setInterleaveCategorySuggestions:(BOOL)arg1;
 - (void)setMaxResults:(int)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setViewportInfo:(id)arg1;
+- (id)unknownFields;
 - (id)viewportInfo;
 - (void)writeTo:(id)arg1;
 

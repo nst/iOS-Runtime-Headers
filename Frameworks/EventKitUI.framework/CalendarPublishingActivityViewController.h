@@ -3,7 +3,7 @@
  */
 
 @interface CalendarPublishingActivityViewController : UIActivityViewController {
-    <CalendarPublishingActivityDelegate> *_activityDelegate;
+    <CalendarPublishingActivityDelegate> * _activityDelegate;
 }
 
 @property <CalendarPublishingActivityDelegate> *activityDelegate;

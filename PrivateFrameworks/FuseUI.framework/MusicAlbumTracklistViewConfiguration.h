@@ -3,11 +3,11 @@
  */
 
 @interface MusicAlbumTracklistViewConfiguration : MusicProductTracklistTableViewConfiguration <ISURLBagObserver> {
-    <MusicEntityProviding> *_entityProvider;
-    NSString *_groupingProperty;
-    <MusicEntityProviding> *_originalEntityProvider;
-    unsigned int _originalMinimumNumberOfEntitiesForSection;
-    NSString *_wantsGroupingProperty;
+    <MusicEntityProviding> * _entityProvider;
+    NSString * _groupingProperty;
+    <MusicEntityProviding> * _originalEntityProvider;
+    unsigned int  _originalMinimumNumberOfEntitiesForSection;
+    NSString * _wantsGroupingProperty;
 }
 
 @property (readonly, copy) NSString *debugDescription;

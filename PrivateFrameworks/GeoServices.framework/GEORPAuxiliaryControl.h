@@ -3,8 +3,8 @@
  */
 
 @interface GEORPAuxiliaryControl : PBCodable <NSCopying> {
-    GEORPCarPlayAuxiliaryControl *_car;
-    GEORPWatchAuxiliaryControl *_watch;
+    GEORPCarPlayAuxiliaryControl * _car;
+    GEORPWatchAuxiliaryControl * _watch;
 }
 
 @property (nonatomic, retain) GEORPCarPlayAuxiliaryControl *car;

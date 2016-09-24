@@ -3,14 +3,14 @@
  */
 
 @interface HDCodableAuthorizationResponseMessage : PBCodable <NSCopying> {
-    NSString *_appBundleIdentifier;
-    NSString *_errorDescription;
+    NSString * _appBundleIdentifier;
+    NSString * _errorDescription;
     struct { 
         unsigned int shouldPrompt : 1; 
-    } _has;
-    NSString *_hostAppName;
-    NSData *_requestIdentifier;
-    BOOL _shouldPrompt;
+    }  _has;
+    NSString * _hostAppName;
+    NSData * _requestIdentifier;
+    BOOL  _shouldPrompt;
 }
 
 @property (nonatomic, retain) NSString *appBundleIdentifier;

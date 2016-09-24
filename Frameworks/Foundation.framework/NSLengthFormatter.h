@@ -3,9 +3,9 @@
  */
 
 @interface NSLengthFormatter : NSFormatter <NSObservable, NSObserver> {
-    void *_formatter;
-    BOOL _isForPersonHeight;
-    void *_reserved;
+    void * _formatter;
+    BOOL  _isForPersonHeight;
+    void * _reserved;
 }
 
 @property (readonly, copy) NSString *debugDescription;

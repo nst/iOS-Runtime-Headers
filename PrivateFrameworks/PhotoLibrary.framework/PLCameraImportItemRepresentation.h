@@ -3,12 +3,12 @@
  */
 
 @interface PLCameraImportItemRepresentation : NSObject {
-    ICCameraFile *_cameraFile;
-    BOOL _canRequestMetadata;
-    BOOL _canRequestThumbnail;
-    BOOL _inDatabase;
-    NSDictionary *_metadata;
-    NSString *_path;
+    ICCameraFile * _cameraFile;
+    BOOL  _canRequestMetadata;
+    BOOL  _canRequestThumbnail;
+    BOOL  _inDatabase;
+    NSDictionary * _metadata;
+    NSString * _path;
 }
 
 @property (nonatomic, retain) ICCameraFile *cameraFile;

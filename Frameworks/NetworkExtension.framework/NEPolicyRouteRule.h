@@ -3,9 +3,9 @@
  */
 
 @interface NEPolicyRouteRule : NSObject <NEPrettyDescription> {
-    int _action;
-    NSString *_interfaceName;
-    int _type;
+    int  _action;
+    NSString * _interfaceName;
+    int  _type;
 }
 
 @property int action;

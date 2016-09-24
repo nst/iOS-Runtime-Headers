@@ -3,8 +3,8 @@
  */
 
 @interface WBSParsecSportsScoreSummaryCardSection : WBSParsecCardSection {
-    WBSParsecSportsScoreSummary *_scoreSummary;
-    NSString *_title;
+    WBSParsecSportsScoreSummary * _scoreSummary;
+    NSString * _title;
 }
 
 @property (nonatomic, readonly, copy) NSArray *images;

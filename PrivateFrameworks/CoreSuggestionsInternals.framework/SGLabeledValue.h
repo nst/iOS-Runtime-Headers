@@ -3,8 +3,8 @@
  */
 
 @interface SGLabeledValue : NSObject {
-    NSString *_label;
-    NSString *_value;
+    NSString * _label;
+    NSString * _value;
 }
 
 @property (nonatomic, readonly) NSString *label;
@@ -13,6 +13,7 @@
 - (void).cxx_destruct;
 - (id)description;
 - (unsigned int)hash;
+- (id)init;
 - (id)initWithLabel:(id)arg1 value:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToLabeledValue:(id)arg1;

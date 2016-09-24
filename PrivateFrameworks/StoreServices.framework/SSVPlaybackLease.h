@@ -3,24 +3,24 @@
  */
 
 @interface SSVPlaybackLease : NSObject {
-    NSMutableArray *_assetOperations;
-    NSData *_certificateData;
-    NSString *_certificateURLBagKey;
-    SSVPlaybackLeaseConfiguration *_configuration;
-    <SSVPlaybackLeaseDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    SSVFairPlaySubscriptionController *_fairPlaySubscriptionController;
-    unsigned long long _kdMovieIdentifier;
-    SSVPlaybackLeaseRequest *_lastKDLeaseRequest;
-    int _leaseDidEndNotificationToken;
-    NSDate *_leaseExpirationDate;
-    int _leaseType;
-    SSVRefreshSubscriptionRequest *_offlineSlotRequest;
-    SSVBarrierOperationQueue *_operationQueue;
-    NSObject<OS_dispatch_source> *_refreshTimer;
-    BOOL _refreshesAutomatically;
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    SSURLBag *_urlBag;
+    NSMutableArray * _assetOperations;
+    NSData * _certificateData;
+    NSString * _certificateURLBagKey;
+    SSVPlaybackLeaseConfiguration * _configuration;
+    <SSVPlaybackLeaseDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    SSVFairPlaySubscriptionController * _fairPlaySubscriptionController;
+    unsigned int  _kdMovieIdentifier;
+    SSVPlaybackLeaseRequest * _lastKDLeaseRequest;
+    int  _leaseDidEndNotificationToken;
+    NSDate * _leaseExpirationDate;
+    int  _leaseType;
+    SSVRefreshSubscriptionRequest * _offlineSlotRequest;
+    SSVBarrierOperationQueue * _operationQueue;
+    NSObject<OS_dispatch_source> * _refreshTimer;
+    BOOL  _refreshesAutomatically;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    SSURLBag * _urlBag;
 }
 
 @property (copy) NSData *certificateData;

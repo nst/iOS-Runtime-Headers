@@ -3,9 +3,9 @@
  */
 
 @interface CNContactGroupPickerViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    <CNContactGroupPickerDelegate> *_groupPickerDelegate;
-    NSArray *_pickableGroups;
-    UITableView *_tableView;
+    <CNContactGroupPickerDelegate> * _groupPickerDelegate;
+    NSArray * _pickableGroups;
+    UITableView * _tableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

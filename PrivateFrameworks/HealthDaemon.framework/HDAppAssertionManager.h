@@ -3,11 +3,11 @@
  */
 
 @interface HDAppAssertionManager : NSObject {
-    NSMutableSet *_activeAssertions;
-    NSMutableDictionary *_appAssertions;
-    HDDaemon *_daemon;
-    NSMutableArray *_pendingAssertions;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableSet * _activeAssertions;
+    NSMutableDictionary * _appAssertions;
+    HDDaemon * _daemon;
+    NSMutableArray * _pendingAssertions;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, retain) NSMutableSet *activeAssertions;

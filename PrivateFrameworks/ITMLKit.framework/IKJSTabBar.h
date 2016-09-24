@@ -3,8 +3,8 @@
  */
 
 @interface IKJSTabBar : IKJSObject <IKJSTabBar, JSExport> {
-    IKAppTabBar *_appTabBar;
-    NSArray *_tabItems;
+    IKAppTabBar * _appTabBar;
+    NSArray * _tabItems;
 }
 
 @property (nonatomic, readonly) IKAppTabBar *appTabBar;

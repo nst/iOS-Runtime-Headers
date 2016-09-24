@@ -3,9 +3,9 @@
  */
 
 @interface SUScanOptions : NSObject <NSSecureCoding> {
-    BOOL _forced;
-    NSString *_identifier;
-    NSMutableSet *_types;
+    BOOL  _forced;
+    NSString * _identifier;
+    NSMutableSet * _types;
 }
 
 @property (getter=isForced, nonatomic) BOOL forced;

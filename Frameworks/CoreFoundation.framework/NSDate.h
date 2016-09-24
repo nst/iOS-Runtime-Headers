@@ -2,16 +2,18 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSDate : NSObject <CKDParsedObject, CKRecordValue, NSCopying, NSSecureCoding, PQLValuable, TSCHChartGridValue>
+@interface NSDate : NSObject <CKDParsedObject, CKRecordValue, FCKeyValueStoreCoding, NSCopying, NSSecureCoding, PQLValuable, TSCHChartGridValue>
 
 @property (nonatomic, readonly) NSString *briefFormattedDate;
 @property (nonatomic, readonly) int chartGridValueType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (readonly) double fc_timeIntervalUntilNow;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isToday;
 @property (nonatomic, readonly) BOOL isYesterday;
 @property (nonatomic, readonly) NSString *shortFormattedDate;
+@property (nonatomic, readonly) NSString *summary;
 @property (readonly) Class superclass;
 @property (readonly) double timeIntervalSinceReferenceDate;
 
@@ -62,14 +64,6 @@
 - (double)timeIntervalSinceNow;
 - (double)timeIntervalSinceReferenceDate;
 
-// Image: /System/Library/Frameworks/EventKit.framework/EventKit
-
-- (id)dateForDayInTimeZone:(id)arg1;
-- (id)dateForDayInTimeZone:(id)arg1 fromTimeZone:(id)arg2;
-- (id)dateForEndOfDayInTimeZone:(id)arg1 fromTimeZone:(id)arg2;
-- (id)dateInTimeZone:(id)arg1 fromTimeZone:(id)arg2;
-- (id)ek_ios_dateForEndOfDayInTimeZone:(id)arg1;
-
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 + (id)dateWithNaturalLanguageString:(id)arg1;
@@ -88,21 +82,15 @@
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
+- (id)asNumber;
 - (BOOL)hk_isAfterDate:(id)arg1;
 - (BOOL)hk_isBeforeDate:(id)arg1;
+- (BOOL)isEqualToDateToSecondAccuracy:(id)arg1;
 
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
-+ (id)currentTimeDescriptionInIS08601;
 + (unsigned char)dayOfTheWeek;
 + (id)iso8601dateFromString:(id)arg1;
-+ (id)timeIntervalDescription:(double)arg1;
-
-- (id)localTimeDescription;
-
-// Image: /System/Library/Frameworks/MapKit.framework/MapKit
-
-- (BOOL)isWholeHour;
 
 // Image: /System/Library/Frameworks/ReplayKit.framework/ReplayKit
 
@@ -125,6 +113,12 @@
 - (BOOL)isAfterDate:(id)arg1;
 - (BOOL)isBeforeDate:(id)arg1;
 - (BOOL)isInclusiveBetweenDate:(id)arg1 andDate:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
+
+- (BOOL)_af_isSameDayAsDate:(id)arg1;
+- (BOOL)af_isToday;
+- (BOOL)af_isTomorrow;
 
 // Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
 
@@ -176,8 +170,12 @@
 - (id)dateByAddingWeeks:(int)arg1 inCalendar:(id)arg2;
 - (id)dateByAddingYears:(int)arg1 inCalendar:(id)arg2;
 - (id)dateBySubtractingCalSimulatedOffset;
+- (id)dateForDayInTimeZone:(id)arg1;
+- (id)dateForDayInTimeZone:(id)arg1 fromTimeZone:(id)arg2;
 - (id)dateForEndOfDayInTimeZone:(id)arg1;
+- (id)dateForEndOfDayInTimeZone:(id)arg1 fromTimeZone:(id)arg2;
 - (id)dateForStartOfDayInTimeZone:(id)arg1;
+- (id)dateInTimeZone:(id)arg1 fromTimeZone:(id)arg2;
 - (id)dateOnlyByTranslatingFrom:(id)arg1 toCalendar:(id)arg2;
 - (id)dateOnlyComponentsInCalendar:(id)arg1;
 - (id)dateRemovingTimeComponentsInCalendar:(id)arg1;
@@ -187,6 +185,7 @@
 - (id)dateRoundedToStartOfNextDayInCalendar:(id)arg1;
 - (id)dateWithoutTimeComponentsInTimeZone:(id)arg1;
 - (int)dayInCalendar:(id)arg1;
+- (id)ek_ios_dateForEndOfDayInTimeZone:(id)arg1;
 - (int)hourInCalendar:(id)arg1;
 - (BOOL)isAfterDate:(id)arg1;
 - (BOOL)isAfterOrSameDayAsDate:(id)arg1 inCalendar:(id)arg2;
@@ -204,6 +203,9 @@
 - (id)localizedMonthAndYearStringShortened:(BOOL)arg1;
 - (id)localizedMonthShortened:(BOOL)arg1;
 - (id)localizedRelativeDateStringShortened:(BOOL)arg1;
+- (id)localizedRelativeDateStringShortened:(BOOL)arg1 lowercase:(BOOL)arg2;
+- (id)localizedStringWithFormat:(id)arg1;
+- (id)localizedStringWithFormat:(id)arg1 timeZone:(id)arg2;
 - (id)localizedWeekNumber;
 - (id)localizedWeekdayMonthDayStringShortened:(BOOL)arg1;
 - (id)localizedWeekdayMonthDayYearStringShortened:(BOOL)arg1;
@@ -244,7 +246,14 @@
 
 - (id)cat_internetTimeString;
 
+// Image: /System/Library/PrivateFrameworks/ClockKit.framework/ClockKit
+
+- (id)JSONObjectRepresentation;
+- (id)initWithJSONObjectRepresentation:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
+
++ (id)CKSharedCalendar;
 
 - (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;
 
@@ -255,19 +264,18 @@
 
 // Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
 
-- (id)_cd_beginningOfDay;
-- (id)_cd_endOfDay;
-- (id)_cd_nextBeginningOfDay;
-- (int)_cd_weekday;
+- (id)cd_dateWithCeilingForAlignment:(double)arg1;
+- (id)cd_dateWithCeilingForAlignment:(double)arg1 withOffset:(double)arg2 inTimeZone:(id)arg3;
+- (id)cd_dateWithFloorForAlignment:(double)arg1;
+- (id)cd_dateWithFloorForAlignment:(double)arg1 withOffset:(double)arg2 inTimeZone:(id)arg3;
 
-// Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
+// Image: /System/Library/PrivateFrameworks/CoreKnowledge.framework/CoreKnowledge
 
-+ (id)currentTimeDescriptionInIS08601;
-+ (unsigned char)dayOfTheWeek;
-+ (id)iso8601dateFromString:(id)arg1;
-+ (id)timeIntervalDescription:(double)arg1;
++ (id)relevantPredicateLabels;
 
-- (id)localTimeDescription;
+- (id)dateTimeComponents;
+- (BOOL)isSameAsDate:(id)arg1 upTo:(unsigned int)arg2;
+- (id)toString:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
 
@@ -277,16 +285,16 @@
 
 - (id)sg_descriptionForMimeHeaders;
 
-// Image: /System/Library/PrivateFrameworks/FMCoreLite.framework/FMCoreLite
+// Image: /System/Library/PrivateFrameworks/FMCore.framework/FMCore
 
-+ (id)fm_dateFromEpoch:(long long)arg1;
++ (id)fm_dateFromEpoch:(int)arg1;
 
-- (long long)fm_epoch;
+- (int)fm_epoch;
 - (id)fm_epochObject;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
-+ (id)_gkDateFromScalarServerTimestamp:(unsigned long long)arg1;
++ (id)_gkDateFromScalarServerTimestamp:(unsigned int)arg1;
 + (id)_gkDateFromServerTimestamp:(id)arg1;
 + (id)_gkServerTimestamp;
 
@@ -303,6 +311,16 @@
 - (double)geo_julianDay;
 - (double)geo_julianEphemerisDay;
 
+// Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
+
++ (id)dateFromFileNameDescription:(id)arg1;
++ (id)timeIntervalDescription:(double)arg1;
+
+- (id)fileNameDescription;
+- (id)iso8601Description;
+- (id)localTimeDescription;
+- (id)shortDescription;
+
 // Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
 + (id)hk_minimumDateForBirthDateWithCalendar:(id)arg1;
@@ -311,9 +329,36 @@
 - (id)hk_dateWithTruncatedSecond;
 - (id)hk_midPointToValue:(id)arg1 percentage:(float)arg2;
 
+// Image: /System/Library/PrivateFrameworks/Home.framework/Home
+
++ (id)hf_dateByAddingComponents:(id)arg1 toDate:(id)arg2 times:(int)arg3;
++ (id)hf_dateByAddingDays:(int)arg1 toDate:(id)arg2;
++ (id)hf_dateByAddingHours:(int)arg1 toDate:(id)arg2;
++ (id)hf_dateByAddingMinutes:(int)arg1 toDate:(id)arg2;
++ (id)hf_dateByAddingMonths:(int)arg1 toDate:(id)arg2;
++ (id)hf_dateByAddingNanoseconds:(int)arg1 toDate:(id)arg2;
++ (id)hf_dateByAddingSeconds:(int)arg1 toDate:(id)arg2;
++ (id)hf_dateByAddingWeeks:(int)arg1 toDate:(id)arg2;
++ (id)hf_dateByAddingYears:(int)arg1 months:(int)arg2 weeks:(int)arg3 days:(int)arg4 hours:(int)arg5 minutes:(int)arg6 seconds:(int)arg7 nanoseconds:(int)arg8 toDate:(id)arg9;
++ (id)hf_dateByAddingYears:(int)arg1 toDate:(id)arg2;
++ (id)hf_dateBySubtractingComponents:(id)arg1 fromDate:(id)arg2 times:(int)arg3;
++ (id)ho_sharedCalendar;
++ (id)ho_sharedTimeZone;
+
+- (BOOL)hf_isFirstHourOfDay;
+- (BOOL)hf_isWithinInterval:(double)arg1 ofDate:(id)arg2;
+- (BOOL)hf_isWithinOneHourOfDate:(id)arg1;
+- (BOOL)hf_isWithinOneMinuteOfDate:(id)arg1;
+- (BOOL)hf_isWithinOneSecondOfDate:(id)arg1;
+- (id)hf_startOfDay;
+- (id)hf_startOfHour;
+- (id)hf_startOfMinute;
+- (id)hf_startOfSecond;
+
 // Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
 
-- (id)localTimeDescription;
++ (unsigned char)dayOfTheWeek;
++ (id)iso8601dateFromString:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
 
@@ -332,6 +377,31 @@
 
 - (void)ml_bindToSQLiteStatement:(struct sqlite3_stmt { }*)arg1 atPosition:(int)arg2;
 - (id)ml_stringValueForSQL;
+
+// Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
+
+- (BOOL)isWholeHour;
+
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
++ (id)dateWithPBDate:(id)arg1;
++ (id)fc_dateWithMillisecondsTimeIntervalSince1970:(unsigned int)arg1;
++ (int)keyValuePairType;
++ (id)pbDate;
++ (id)readValueFromKeyValuePair:(id)arg1;
+
+- (id)fc_dateBySubtractingTimeInterval:(double)arg1;
+- (BOOL)fc_isEarlierThan:(id)arg1;
+- (BOOL)fc_isLaterThan:(id)arg1;
+- (BOOL)fc_isWithinTimeInterval:(double)arg1 ofDate:(id)arg2;
+- (unsigned int)fc_millisecondTimeIntervalSince1970;
+- (double)fc_timeIntervalUntilNow;
+- (id)pbDate;
+- (void)writeToKeyValuePair:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NewsServices.framework/NewsServices
+
+- (void)nss_gregorianDescriptionWithFlags:(int)arg1 completion:(id /* block */)arg2;
 
 // Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
 
@@ -362,6 +432,19 @@
 - (BOOL)isTomorrow;
 - (BOOL)isYesterday;
 
+// Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/Frameworks/MediaMiningKit.framework/MediaMiningKit
+
++ (id)dateComponentsFromString:(id)arg1;
++ (id)dateFromString:(id)arg1;
+
+- (id)dateByAddingDays:(int)arg1;
+- (id)nextWeekend;
+- (id)previousWeekend;
+
+// Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
+
+- (BOOL)px_isSameDayAsDate:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
 
 + (BOOL)dateIsMidnightLocalTime:(id)arg1;
@@ -388,6 +471,7 @@
 - (BOOL)safari_isInSameDayAsDate:(id)arg1;
 - (BOOL)safari_isInToday;
 - (BOOL)safari_isInclusivelyBetweenDate:(id)arg1 andDate:(id)arg2;
+- (BOOL)safari_isNowOrInRecentPast;
 - (int)safari_numberOfWeeksUntilDate:(id)arg1;
 - (id)safari_startOfDay;
 
@@ -407,6 +491,14 @@
 
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
+
+- (id)summary;
+
+// Image: /System/Library/PrivateFrameworks/WeatherFoundation.framework/WeatherFoundation
+
+- (id)wf_dateOnlyComponentsInCalendar:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 

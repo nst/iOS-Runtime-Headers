@@ -3,7 +3,7 @@
  */
 
 @interface PLPhotoStreamsHelper : NSObject {
-    BOOL _appHasPolledOnceThisForegroundSession;
+    BOOL  _appHasPolledOnceThisForegroundSession;
 }
 
 + (BOOL)canInitiateDistributedPhotoStreamDeletionForAssetUUID:(id)arg1;
@@ -22,7 +22,7 @@
 - (void)dealloc;
 - (BOOL)dequeueAssetsForPSPublishing:(id)arg1;
 - (id)derivedAssetForMasterAsset:(id)arg1;
-- (struct CGSize { float x1; float x2; })derivedAssetSizeForMasterSizeWidth:(float)arg1 height:(float)arg2;
+- (struct CGSize { double x1; double x2; })derivedAssetSizeForMasterSizeWidth:(float)arg1 height:(float)arg2;
 - (BOOL)enqueueAssetForPSPublishing:(id)arg1 assetHash:(id)arg2 fullPath:(id)arg3 fileSize:(id)arg4 type:(id)arg5 reenqueueCount:(id)arg6 publicGlobalUUID:(id*)arg7;
 - (void)enumerateMasterHashesAndPublicGlobalUUIDsForAssets:(id)arg1 withBlock:(id /* block */)arg2;
 - (int)friendsLimit;

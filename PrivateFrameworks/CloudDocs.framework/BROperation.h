@@ -3,11 +3,11 @@
  */
 
 @interface BROperation : NSOperation {
-    id _executionTransation;
-    BOOL _finished;
-    NSObject<OS_dispatch_queue> *_queue;
-    id _remoteOperation;
-    unsigned char _uuid;
+    id  _executionTransation;
+    BOOL  _finished;
+    NSObject<OS_dispatch_queue> * _queue;
+    id  _remoteOperation;
+    unsigned char  _uuid;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *callbackQueue;
@@ -15,6 +15,7 @@
 @property (getter=isFinished, readonly) BOOL finished;
 @property (nonatomic, retain) NSObject<BRCancellable> *remoteOperation;
 
+- (void).cxx_destruct;
 - (BOOL)_finishIfCancelled;
 - (void)_setExecuting:(BOOL)arg1;
 - (void)_setFinished:(BOOL)arg1;
@@ -23,6 +24,8 @@
 - (void)cancel;
 - (void)completedWithResult:(id)arg1 error:(id)arg2;
 - (void)dealloc;
+- (id)description;
+- (BOOL)finishIfCancelled;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)init;
 - (oneway void)invalidate;

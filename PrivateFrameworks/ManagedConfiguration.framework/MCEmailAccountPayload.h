@@ -3,27 +3,27 @@
  */
 
 @interface MCEmailAccountPayload : MCEmailAccountPayloadBase {
-    NSString *_emailAccountDescription;
-    NSString *_emailAccountName;
-    NSString *_emailAccountType;
-    NSString *_emailAddress;
-    NSString *_incomingMailServerAuthentication;
-    NSString *_incomingMailServerHostname;
-    NSString *_incomingMailServerIMAPPathPrefix;
-    NSNumber *_incomingMailServerPortNumber;
-    BOOL _incomingMailServerUseSSL;
-    NSNumber *_incomingMailServerUseSSLNum;
-    NSString *_incomingMailServerUsername;
-    NSString *_incomingPassword;
-    NSString *_outgoingMailServerAuthentication;
-    NSString *_outgoingMailServerHostname;
-    NSNumber *_outgoingMailServerPortNumber;
-    BOOL _outgoingMailServerUseSSL;
-    NSNumber *_outgoingMailServerUseSSLNum;
-    NSString *_outgoingMailServerUsername;
-    NSString *_outgoingPassword;
-    BOOL _outgoingPasswordSameAsIncomingPassword;
-    NSNumber *_outgoingPasswordSameAsIncomingPasswordNum;
+    NSString * _emailAccountDescription;
+    NSString * _emailAccountName;
+    NSString * _emailAccountType;
+    NSString * _emailAddress;
+    NSString * _incomingMailServerAuthentication;
+    NSString * _incomingMailServerHostname;
+    NSString * _incomingMailServerIMAPPathPrefix;
+    NSNumber * _incomingMailServerPortNumber;
+    BOOL  _incomingMailServerUseSSL;
+    NSNumber * _incomingMailServerUseSSLNum;
+    NSString * _incomingMailServerUsername;
+    NSString * _incomingPassword;
+    NSString * _outgoingMailServerAuthentication;
+    NSString * _outgoingMailServerHostname;
+    NSNumber * _outgoingMailServerPortNumber;
+    BOOL  _outgoingMailServerUseSSL;
+    NSNumber * _outgoingMailServerUseSSLNum;
+    NSString * _outgoingMailServerUsername;
+    NSString * _outgoingPassword;
+    BOOL  _outgoingPasswordSameAsIncomingPassword;
+    NSNumber * _outgoingPasswordSameAsIncomingPasswordNum;
 }
 
 @property (nonatomic, readonly, retain) NSString *emailAccountDescription;

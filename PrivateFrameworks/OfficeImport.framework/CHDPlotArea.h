@@ -3,12 +3,12 @@
  */
 
 @interface CHDPlotArea : NSObject {
-    CHDAxesCollection *mAxes;
-    bool mCategoryAxesReversed;
-    bool mCategoryAxesReversedOverridden;
-    CHDChartTypesCollection *mChartTypes;
-    bool mContainsVolumeStockType;
-    OADGraphicProperties *mGraphicProperties;
+    CHDAxesCollection * mAxes;
+    bool  mCategoryAxesReversed;
+    bool  mCategoryAxesReversedOverridden;
+    CHDChartTypesCollection * mChartTypes;
+    bool  mContainsVolumeStockType;
+    OADGraphicProperties * mGraphicProperties;
 }
 
 - (id)axes;

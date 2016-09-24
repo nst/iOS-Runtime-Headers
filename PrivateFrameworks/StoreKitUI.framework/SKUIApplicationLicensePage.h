@@ -3,8 +3,8 @@
  */
 
 @interface SKUIApplicationLicensePage : NSObject <NSCopying> {
-    NSString *_licenseAgreementHTML;
-    NSString *_title;
+    NSString * _licenseAgreementHTML;
+    NSString * _title;
 }
 
 @property (nonatomic, copy) NSString *licenseAgreementHTML;

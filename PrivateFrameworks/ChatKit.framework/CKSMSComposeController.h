@@ -3,15 +3,15 @@
  */
 
 @interface CKSMSComposeController : UIViewController <CKSMSCompose, CKSMSComposeRemoteViewControllerDelegate> {
-    _UIAsyncInvocation *_cancellationInvocation;
-    UINavigationController *_clientNavigationController;
-    id _delegate;
-    BOOL _didChangeStatusBarStyle;
-    int _entryViewInvisible;
-    CKSMSComposeRemoteViewController *_remoteViewController;
-    CKSMSComposeQueuingRemoteViewControllerProxy *_remoteViewControllerProxy;
-    BOOL _safeToAdd;
-    int _savedStatusBarStyle;
+    _UIAsyncInvocation * _cancellationInvocation;
+    UINavigationController * _clientNavigationController;
+    id  _delegate;
+    BOOL  _didChangeStatusBarStyle;
+    int  _entryViewInvisible;
+    CKSMSComposeRemoteViewController * _remoteViewController;
+    CKSMSComposeQueuingRemoteViewControllerProxy * _remoteViewControllerProxy;
+    BOOL  _safeToAdd;
+    int  _savedStatusBarStyle;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -27,8 +27,10 @@
 + (double)maxTrimDurationForAudio;
 + (double)maxTrimDurationForVideo;
 
+- (void).cxx_destruct;
 - (void)_addRemoteVCIfNeeded;
 - (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
+- (BOOL)canInsertMessage;
 - (void)dealloc;
 - (id)delegate;
 - (void)disableCameraAttachments;
@@ -39,10 +41,14 @@
 - (BOOL)insertAttachmentWithURL:(id)arg1 andDescription:(id)arg2;
 - (BOOL)insertData:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
 - (BOOL)insertFilename:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3 options:(id)arg4;
+- (BOOL)insertMessage:(id)arg1;
+- (BOOL)insertRichLinkWithURL:(id)arg1 andData:(id)arg2;
 - (id)remoteViewController;
 - (id)remoteViewControllerProxy;
 - (void)setCanEditRecipients:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setGameCenterModeWithPickerBlock:(id /* block */)arg1;
+- (void)setGameCenterPickedHandles:(id)arg1 playerNames:(id)arg2;
 - (void)setPendingAddresses:(id)arg1;
 - (void)setRemoteViewController:(id)arg1;
 - (void)setRemoteViewControllerProxy:(id)arg1;
@@ -54,6 +60,7 @@
 - (void)smsComposeControllerCancelled;
 - (void)smsComposeControllerDataInserted;
 - (void)smsComposeControllerSendStartedWithText:(id)arg1;
+- (void)smsComposeControllerShouldSendMessageWithText:(id)arg1 toRecipients:(id)arg2 completion:(id /* block */)arg3;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;

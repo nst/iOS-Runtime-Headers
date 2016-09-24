@@ -3,27 +3,31 @@
  */
 
 @interface ICCameraFileProperties : NSObject {
-    BOOL _burstFavorite;
-    BOOL _burstPicked;
-    NSString *_burstUUID;
-    double _duration;
-    BOOL _fetchingMetadata;
-    int _fetchingMetadataLock;
-    BOOL _fetchingThumbnail;
-    int _fetchingThumbnailLock;
-    long long _fileSize;
-    BOOL _hasMetadata;
-    BOOL _hasOverriddenOrientation;
-    BOOL _hasThumbnail;
-    BOOL _highFramerate;
-    NSMutableDictionary *_metadata;
-    NSMutableDictionary *_metadata_hidden;
-    unsigned int _orientation;
-    struct CGImage { } *_originalThumbnail;
-    BOOL _raw;
-    NSMutableArray *_sidecarFiles;
-    struct CGImage { } *_thumbnail;
-    BOOL _timeLapse;
+    BOOL  _burstFavorite;
+    BOOL  _burstPicked;
+    NSString * _burstUUID;
+    double  _duration;
+    BOOL  _fetchingMetadata;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _fetchingMetadataLock;
+    BOOL  _fetchingThumbnail;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _fetchingThumbnailLock;
+    int  _fileSize;
+    BOOL  _hasMetadata;
+    BOOL  _hasOverriddenOrientation;
+    BOOL  _hasThumbnail;
+    BOOL  _highFramerate;
+    NSMutableDictionary * _metadata;
+    NSMutableDictionary * _metadata_hidden;
+    unsigned int  _orientation;
+    struct CGImage { } * _originalThumbnail;
+    BOOL  _raw;
+    NSMutableArray * _sidecarFiles;
+    struct CGImage { } * _thumbnail;
+    BOOL  _timeLapse;
 }
 
 @property BOOL burstFavorite;
@@ -32,7 +36,7 @@
 @property double duration;
 @property BOOL fetchingMetadata;
 @property BOOL fetchingThumbnail;
-@property long long fileSize;
+@property int fileSize;
 @property BOOL hasMetadata;
 @property BOOL hasOverriddenOrientation;
 @property BOOL hasThumbnail;
@@ -53,12 +57,13 @@
 - (double)duration;
 - (BOOL)fetchingMetadata;
 - (BOOL)fetchingThumbnail;
-- (long long)fileSize;
+- (int)fileSize;
 - (void)finalize;
 - (BOOL)hasMetadata;
 - (BOOL)hasOverriddenOrientation;
 - (BOOL)hasThumbnail;
 - (BOOL)highFramerate;
+- (id)init;
 - (BOOL)isRaw;
 - (id)metadata;
 - (id)metadata_hidden;
@@ -70,7 +75,7 @@
 - (void)setDuration:(double)arg1;
 - (void)setFetchingMetadata:(BOOL)arg1;
 - (void)setFetchingThumbnail:(BOOL)arg1;
-- (void)setFileSize:(long long)arg1;
+- (void)setFileSize:(int)arg1;
 - (void)setHasMetadata:(BOOL)arg1;
 - (void)setHasOverriddenOrientation:(BOOL)arg1;
 - (void)setHasThumbnail:(BOOL)arg1;

@@ -3,19 +3,20 @@
  */
 
 @interface GKMatchRequestInternal : GKInternalRepresentation {
-    unsigned char _defaultNumberOfPlayers;
-    NSString *_inviteMessage;
-    NSDictionary *_localizableInviteMessage;
-    unsigned int _matchType;
-    unsigned char _maxPlayers;
-    unsigned char _minPlayers;
-    unsigned int _playerAttributes;
-    int _playerGroup;
-    NSArray *_recipientPlayerIDs;
-    NSArray *_recipients;
-    NSString *_rid;
-    NSData *_sessionToken;
-    unsigned int _version;
+    unsigned char  _defaultNumberOfPlayers;
+    NSString * _inviteMessage;
+    NSDictionary * _localizableInviteMessage;
+    unsigned int  _matchType;
+    unsigned char  _maxPlayers;
+    unsigned char  _minPlayers;
+    unsigned int  _playerAttributes;
+    int  _playerGroup;
+    BOOL  _preloadedMatch;
+    NSArray * _recipientPlayerIDs;
+    NSArray * _recipients;
+    NSString * _rid;
+    NSData * _sessionToken;
+    unsigned int  _version;
 }
 
 @property (nonatomic) unsigned char defaultNumberOfPlayers;
@@ -26,6 +27,7 @@
 @property (nonatomic) unsigned char minPlayers;
 @property (nonatomic) unsigned int playerAttributes;
 @property (nonatomic) int playerGroup;
+@property (getter=isPreloadedMatch, nonatomic) BOOL preloadedMatch;
 @property (nonatomic, retain) NSArray *recipientPlayerIDs;
 @property (nonatomic, retain) NSArray *recipients;
 @property (nonatomic, retain) NSString *rid;
@@ -41,6 +43,7 @@
 - (id)init;
 - (id)inviteMessage;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isPreloadedMatch;
 - (id)localizableInviteMessage;
 - (unsigned int)matchType;
 - (unsigned char)maxPlayers;
@@ -59,6 +62,7 @@
 - (void)setMinPlayers:(unsigned char)arg1;
 - (void)setPlayerAttributes:(unsigned int)arg1;
 - (void)setPlayerGroup:(int)arg1;
+- (void)setPreloadedMatch:(BOOL)arg1;
 - (void)setRecipientPlayerIDs:(id)arg1;
 - (void)setRecipients:(id)arg1;
 - (void)setRid:(id)arg1;

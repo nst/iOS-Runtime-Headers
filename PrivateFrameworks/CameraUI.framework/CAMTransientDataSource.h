@@ -3,14 +3,14 @@
  */
 
 @interface CAMTransientDataSource : NSObject <PUTransientDataSource> {
-    NSMutableArray *__assetUUIDs;
-    NSMutableDictionary *__assetsByUUID;
-    NSMutableDictionary *__enqueuedBurstAssetUUIDByBurstIdentifier;
-    NSMutableDictionary *__enqueuedBurstConvertiblesByAssetUUID;
-    int __nestedPerformChanges;
-    NSHashTable *__observers;
-    int __pendingChangeNotifications;
-    NSMutableDictionary *__representativeAssetsByBurstIdentifier;
+    NSMutableArray * __assetUUIDs;
+    NSMutableDictionary * __assetsByUUID;
+    NSMutableDictionary * __enqueuedBurstAssetUUIDByBurstIdentifier;
+    NSMutableDictionary * __enqueuedBurstConvertiblesByAssetUUID;
+    int  __nestedPerformChanges;
+    NSHashTable * __observers;
+    int  __pendingChangeNotifications;
+    NSMutableDictionary * __representativeAssetsByBurstIdentifier;
 }
 
 @property (nonatomic, readonly) NSMutableArray *_assetUUIDs;

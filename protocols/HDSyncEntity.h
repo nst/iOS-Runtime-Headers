@@ -6,10 +6,10 @@
 @required
 
 + (<HDSyncCodable> *)decodeSyncObjectWithData:(NSData *)arg1;
-+ (long long)nextSyncAnchorWithStore:(id <HDSyncStore>)arg1 predicate:(HDSQLitePredicate *)arg2 startSyncAnchor:(long long)arg3 healthDaemon:(id <HDHealthDaemon>)arg4 error:(id*)arg5;
-+ (int)receiveSyncObjects:(NSArray *)arg1 syncStore:(id <HDSyncStore>)arg2 healthDaemon:(id <HDHealthDaemon>)arg3 error:(id*)arg4;
++ (BOOL)generateSyncObjectsForStore:(void *)arg1 predicate:(void *)arg2 syncAnchorRange:(void *)arg3 maxEncodedBytesPerMessage:(void *)arg4 profile:(void *)arg5 error:(void *)arg6 handler:(void *)arg7; // needs 7 arg types, found 14: <HDSyncStore> *, HDSQLitePredicate *, struct HDSyncAnchorRange { int x1; int x2; }, int, HDProfile *, id*, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, BOOL, id /* block */, NSArray *, int, BOOL, id*
++ (int)nextSyncAnchorWithStore:(id <HDSyncStore>)arg1 predicate:(HDSQLitePredicate *)arg2 startSyncAnchor:(int)arg3 profile:(HDProfile *)arg4 error:(id*)arg5;
++ (int)receiveSyncObjects:(NSArray *)arg1 syncStore:(id <HDSyncStore>)arg2 profile:(HDProfile *)arg3 error:(id*)arg4;
 + (NSSet *)syncEntityDependencies;
 + (int)syncEntityType;
-+ (NSArray *)syncObjectsWithStore:(id <HDSyncStore>)arg1 predicate:(HDSQLitePredicate *)arg2 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg3 lastSyncAnchor:(long long*)arg4 limit:(unsigned int)arg5 healthDaemon:(id <HDHealthDaemon>)arg6 error:(id*)arg7;
 
 @end

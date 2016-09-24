@@ -3,7 +3,7 @@
  */
 
 @interface CKDFetchRecordZonePCSDiagnosticsOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    NSArray *_recordZoneIDs;
+    NSArray * _recordZoneIDs;
 }
 
 @property (nonatomic, retain) NSArray *recordZoneIDs;

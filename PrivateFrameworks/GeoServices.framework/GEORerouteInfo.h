@@ -3,11 +3,11 @@
  */
 
 @interface GEORerouteInfo : NSObject <NSSecureCoding> {
-    double _distanceFromDestination;
-    double _distancePenalty;
-    double _penalty;
-    double _throttledReroutesPenalty;
-    NSDate *_time;
+    double  _distanceFromDestination;
+    double  _distancePenalty;
+    double  _penalty;
+    double  _throttledReroutesPenalty;
+    NSDate * _time;
 }
 
 @property (nonatomic) double distanceFromDestination;
@@ -16,6 +16,7 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (void)dealloc;
 - (double)distanceFromDestination;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

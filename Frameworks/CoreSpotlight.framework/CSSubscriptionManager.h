@@ -3,7 +3,7 @@
  */
 
 @interface CSSubscriptionManager : NSObject {
-    PSSSSubscriptionManager *_internal;
+    PSSSSubscriptionManager * _internal;
 }
 
 + (id)sharedManager;

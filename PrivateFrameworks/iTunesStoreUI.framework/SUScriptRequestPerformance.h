@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptRequestPerformance : SUScriptObject {
-    ISURLRequestPerformance *_performance;
+    ISURLRequestPerformance * _performance;
 }
 
 @property (readonly) NSString *JSONHeaders;

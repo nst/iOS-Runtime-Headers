@@ -3,12 +3,15 @@
  */
 
 @interface MSPPlaceDisplay : PBCodable <NSCopying> {
-    GEOMapItemStorage *_placeMapItemStorage;
-    PBUnknownFields *_unknownFields;
+    GEOMapItemStorage * _placeMapItemStorage;
+    NSString * _supersededSearchIdentifier;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, readonly) BOOL hasPlaceMapItemStorage;
+@property (nonatomic, readonly) BOOL hasSupersededSearchIdentifier;
 @property (nonatomic, retain) GEOMapItemStorage *placeMapItemStorage;
+@property (nonatomic, retain) NSString *supersededSearchIdentifier;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (void).cxx_destruct;
@@ -17,12 +20,15 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasPlaceMapItemStorage;
+- (BOOL)hasSupersededSearchIdentifier;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)placeMapItemStorage;
 - (BOOL)readFrom:(id)arg1;
 - (void)setPlaceMapItemStorage:(id)arg1;
+- (void)setSupersededSearchIdentifier:(id)arg1;
+- (id)supersededSearchIdentifier;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
 

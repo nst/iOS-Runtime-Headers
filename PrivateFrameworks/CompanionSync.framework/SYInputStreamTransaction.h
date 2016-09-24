@@ -3,10 +3,10 @@
  */
 
 @interface SYInputStreamTransaction : NSObject <SYStreamTransaction> {
-    NSURL *_fileURL;
-    NSDictionary *_metadata;
-    NSProgress *_progress;
-    struct NSInputStream { Class x1; } *_stream;
+    NSURL * _fileURL;
+    NSDictionary * _metadata;
+    NSProgress * _progress;
+    struct NSInputStream { Class x1; } * _stream;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -19,7 +19,7 @@
 @property (nonatomic, readonly) int type;
 
 - (void).cxx_destruct;
-- (id)initWithURL:(id)arg1 metadata:(id)arg2 decompressedSize:(unsigned long long)arg3;
+- (id)initWithURL:(id)arg1 metadata:(id)arg2 decompressedSize:(unsigned int)arg3;
 - (id)inputStream;
 - (id)metadata;
 - (id)progress;

@@ -3,7 +3,7 @@
  */
 
 @interface CDPStateUIProviderProxy : NSObject <CDPStateUIProviderInternal> {
-    <CDPStateUIProvider> *_uiProvider;
+    <CDPStateUIProvider> * _uiProvider;
 }
 
 @property (nonatomic, retain) <CDPStateUIProvider> *uiProvider;
@@ -15,8 +15,11 @@
 - (void)cdpContext:(id)arg1 promptForInteractiveAuthenticationWithCompletion:(id /* block */)arg2;
 - (void)cdpContext:(id)arg1 promptForLocalSecretWithHandler:(id)arg2;
 - (void)cdpContext:(id)arg1 promptForRemoteSecretWithDevices:(id)arg2 offeringRemoteApproval:(BOOL)arg3 validator:(id)arg4;
+- (void)cdpContext:(id)arg1 promptToEnableStingrayCompletion:(id /* block */)arg2;
 - (void)cdpContext:(id)arg1 promptToInformUserOfAccountLockOutWithCompletion:(id /* block */)arg2;
 - (void)cdpContext:(id)arg1 promptToInformUserOfAccountUnlockWithCompletion:(id /* block */)arg2;
+- (void)cdpContext:(id)arg1 showError:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)cdpContext:(id)arg1 showError:(id)arg2 withDefaultIndex:(int)arg3 withCompletion:(id /* block */)arg4;
 - (id)initWithUIProvider:(id)arg1;
 - (void)setUiProvider:(id)arg1;
 - (id)uiProvider;

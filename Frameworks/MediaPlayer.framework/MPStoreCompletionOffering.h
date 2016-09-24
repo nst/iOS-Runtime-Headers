@@ -3,12 +3,12 @@
  */
 
 @interface MPStoreCompletionOffering : NSObject <NSCopying> {
-    MPStoreCollectionCompletionOffering *_collectionWithCompletionItemsOffering;
-    MPMediaQuery *_localItemsQuery;
-    int _preferredStoreOfferVariant;
-    int _presentationStyle;
-    MPStoreCompletionOfferResponse *_storeOfferResponse;
-    NSURL *_storeURL;
+    MPStoreCollectionCompletionOffering * _collectionWithCompletionItemsOffering;
+    MPMediaQuery * _localItemsQuery;
+    int  _preferredStoreOfferVariant;
+    int  _presentationStyle;
+    MPStoreCompletionOfferResponse * _storeOfferResponse;
+    NSURL * _storeURL;
 }
 
 @property (nonatomic, readonly) MPStoreOfferMediaItemCollection *collectionWithCompletionItems;

@@ -3,9 +3,9 @@
  */
 
 @interface MKTransitAttributionSummaryCell : MKCustomSeparatorTableViewCell {
-    UILabel *_attributionLabel;
-    NSLayoutConstraint *_bottomConstraint;
-    NSLayoutConstraint *_topConstraint;
+    _MKUILabel * _attributionLabel;
+    NSLayoutConstraint * _bottomConstraint;
+    NSLayoutConstraint * _topConstraint;
 }
 
 @property (nonatomic, copy) NSString *attributionSummary;

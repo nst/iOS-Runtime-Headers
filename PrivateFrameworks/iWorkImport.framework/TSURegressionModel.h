@@ -3,8 +3,8 @@
  */
 
 @interface TSURegressionModel : NSObject {
-    int mErrorType;
-    BOOL mModelValid;
+    int  mErrorType;
+    BOOL  mModelValid;
 }
 
 - (double)coefficientAtIndex:(int)arg1;

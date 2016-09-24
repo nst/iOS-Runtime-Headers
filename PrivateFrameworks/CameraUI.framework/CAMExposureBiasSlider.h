@@ -3,16 +3,16 @@
  */
 
 @interface CAMExposureBiasSlider : UIView {
-    double __lastInteractionTime;
-    UIView *__maxTrackMaskView;
-    UIView *__maxTrackView;
-    UIView *__minTrackMaskView;
-    UIView *__minTrackView;
-    CAMExposureBiasSliderThumb *__thumbView;
-    float _exposureBiasMax;
-    float _exposureBiasMin;
-    float _exposureBiasValue;
-    BOOL _suspendTrackFadeOut;
+    double  __lastInteractionTime;
+    UIView * __maxTrackMaskView;
+    UIView * __maxTrackView;
+    UIView * __minTrackMaskView;
+    UIView * __minTrackView;
+    CAMExposureBiasSliderThumb * __thumbView;
+    double  _exposureBiasMax;
+    double  _exposureBiasMin;
+    double  _exposureBiasValue;
+    BOOL  _suspendTrackFadeOut;
 }
 
 @property (nonatomic, readonly) double _lastInteractionTime;
@@ -21,11 +21,11 @@
 @property (nonatomic, readonly, retain) UIView *_minTrackMaskView;
 @property (nonatomic, readonly, retain) UIView *_minTrackView;
 @property (nonatomic, readonly, retain) CAMExposureBiasSliderThumb *_thumbView;
-@property (nonatomic) float exposureBiasMax;
-@property (nonatomic) float exposureBiasMin;
-@property (nonatomic) float exposureBiasValue;
+@property (nonatomic) double exposureBiasMax;
+@property (nonatomic) double exposureBiasMin;
+@property (nonatomic) double exposureBiasValue;
 @property (nonatomic) BOOL suspendTrackFadeOut;
-@property (nonatomic, readonly) float thumbMaxExtension;
+@property (nonatomic, readonly) double thumbMaxExtension;
 
 - (void).cxx_destruct;
 - (void)_animateTrackAlpha:(float)arg1 withDuration:(double)arg2;
@@ -38,7 +38,7 @@
 - (id)_minTrackView;
 - (float)_normalizedExposureValue;
 - (void)_scheduleDelayedDim;
-- (struct CGPoint { float x1; float x2; })_sunCenterForNormalizedValue:(float)arg1;
+- (struct CGPoint { double x1; double x2; })_sunCenterForNormalizedValue:(float)arg1;
 - (id)_thumbView;
 - (float)_trackAlpha;
 - (void)_updateForChangedNormalizedExposureValue;
@@ -46,13 +46,13 @@
 - (float)exposureBiasMin;
 - (float)exposureBiasValue;
 - (void)forceTrackDimmed;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)setExposureBiasMax:(float)arg1;
 - (void)setExposureBiasMin:(float)arg1;
 - (void)setExposureBiasValue:(float)arg1;
 - (void)setSuspendTrackFadeOut:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (BOOL)suspendTrackFadeOut;
 - (float)thumbMaxExtension;
 - (void)updateLastInteractionTime;

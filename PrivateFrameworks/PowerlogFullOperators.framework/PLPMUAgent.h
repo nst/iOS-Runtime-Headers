@@ -3,11 +3,11 @@
  */
 
 @interface PLPMUAgent : PLAgent {
-    PLEntryNotificationOperatorComposition *_batteryLevelChanged;
-    struct __IOHIDEventSystemClient { } *hidEventSystem;
-    NSMutableDictionary *matchingSensors;
-    NSMutableArray *sensorNamesC;
-    NSMutableArray *sensorNamesV;
+    PLEntryNotificationOperatorComposition * _batteryLevelChanged;
+    struct __IOHIDEventSystemClient { } * hidEventSystem;
+    NSMutableDictionary * matchingSensors;
+    NSMutableArray * sensorNamesC;
+    NSMutableArray * sensorNamesV;
 }
 
 @property (retain) PLEntryNotificationOperatorComposition *batteryLevelChanged;

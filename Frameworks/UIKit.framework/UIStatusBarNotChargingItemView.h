@@ -3,7 +3,7 @@
  */
 
 @interface UIStatusBarNotChargingItemView : UIStatusBarItemView {
-    NSString *_notChargingString;
+    NSString * _notChargingString;
 }
 
 - (void).cxx_destruct;

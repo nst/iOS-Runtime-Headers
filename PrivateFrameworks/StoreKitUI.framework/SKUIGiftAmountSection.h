@@ -3,7 +3,7 @@
  */
 
 @interface SKUIGiftAmountSection : SKUIGiftTableViewSection {
-    SKUIGiftAmountControl *_amountControl;
+    SKUIGiftAmountControl * _amountControl;
 }
 
 @property (nonatomic, readonly) UIControl *amountControl;

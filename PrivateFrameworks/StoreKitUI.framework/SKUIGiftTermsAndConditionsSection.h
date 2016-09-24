@@ -3,7 +3,7 @@
  */
 
 @interface SKUIGiftTermsAndConditionsSection : SKUIGiftTableViewSection {
-    UIView *_headerView;
+    UIView * _headerView;
 }
 
 - (void).cxx_destruct;

@@ -3,7 +3,7 @@
  */
 
 @interface CHDSeriesAxis : CHDAxis {
-    int mLabelFrequency;
+    int  mLabelFrequency;
 }
 
 - (id)initWithResources:(id)arg1;

@@ -3,9 +3,9 @@
  */
 
 @interface SCRDKGSPacket : NSObject {
-    unsigned char _command;
-    NSData *_data;
-    unsigned char _subCommand;
+    unsigned char  _command;
+    NSData * _data;
+    unsigned char  _subCommand;
 }
 
 @property (nonatomic) unsigned char command;

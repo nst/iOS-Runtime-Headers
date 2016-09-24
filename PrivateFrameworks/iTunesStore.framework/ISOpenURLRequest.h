@@ -3,11 +3,11 @@
  */
 
 @interface ISOpenURLRequest : NSObject <NSCopying> {
-    BOOL _interruptsKeybagRefresh;
-    BOOL _isITunesStoreURL;
-    NSString *_targetIdentifier;
-    NSURL *_url;
-    NSString *_urlBagKey;
+    BOOL  _interruptsKeybagRefresh;
+    BOOL  _isITunesStoreURL;
+    NSString * _targetIdentifier;
+    NSURL * _url;
+    NSString * _urlBagKey;
 }
 
 @property (getter=isITunesStoreURL, nonatomic) BOOL ITunesStoreURL;
@@ -18,10 +18,10 @@
 
 + (id)openURLRequestWithURL:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)URL;
 - (id)URLBagKey;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)init;
 - (id)initWithURL:(id)arg1;

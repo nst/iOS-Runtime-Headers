@@ -3,9 +3,9 @@
  */
 
 @interface CIMaskedVariableBlur : CIFilter {
-    CIImage *inputImage;
-    CIImage *inputMask;
-    NSNumber *inputRadius;
+    CIImage * inputImage;
+    CIImage * inputMask;
+    NSNumber * inputRadius;
 }
 
 @property (nonatomic, retain) CIImage *inputImage;

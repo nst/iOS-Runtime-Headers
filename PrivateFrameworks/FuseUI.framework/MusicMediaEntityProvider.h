@@ -3,10 +3,10 @@
  */
 
 @interface MusicMediaEntityProvider : NSObject <MusicEntityProviding, NSCoding> {
-    NSArray *_localizedSectionIndexTitles;
-    int _maximumItemCount;
-    MusicMediaQueryDataSource *_mediaQueryDataSource;
-    NSSet *_requiredVisibilityPrioritySectionIndexTitles;
+    NSArray * _localizedSectionIndexTitles;
+    int  _maximumItemCount;
+    MusicMediaQueryDataSource * _mediaQueryDataSource;
+    NSSet * _requiredVisibilityPrioritySectionIndexTitles;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -46,7 +46,6 @@
 - (int)maximumItemCount;
 - (id)mediaQuery;
 - (id)mediaQueryDataSource;
-- (id)newDownloadInformationController;
 - (unsigned int)numberOfEntitiesInSection:(unsigned int)arg1;
 - (unsigned int)numberOfIndexBarEntries;
 - (unsigned int)numberOfSections;

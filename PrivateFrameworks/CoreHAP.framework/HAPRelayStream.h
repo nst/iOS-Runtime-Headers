@@ -3,8 +3,8 @@
  */
 
 @interface HAPRelayStream : NSObject {
-    <HAPStreamDelegate> *_delegate;
-    unsigned int _mtu;
+    <HAPStreamDelegate> * _delegate;
+    unsigned int  _mtu;
 }
 
 @property <HAPStreamDelegate> *delegate;

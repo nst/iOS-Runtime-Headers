@@ -3,15 +3,15 @@
  */
 
 @interface PUAirPlayScreen : NSObject <_UISettingsKeyObserver> {
-    UIWindow *__window;
-    NSString *_identifier;
-    UIViewController *_rootViewController;
-    UIScreen *_screen;
+    UIWindow * __window;
+    NSString * _identifier;
+    UIViewController * _rootViewController;
+    UIScreen * _screen;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _size;
-    unsigned int _type;
+        double width; 
+        double height; 
+    }  _size;
+    unsigned int  _type;
 }
 
 @property (nonatomic, readonly) NSString *_typeName;
@@ -19,18 +19,18 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, retain) NSString *identifier;
+@property (setter=_setIdentifier:, nonatomic, retain) NSString *identifier;
 @property (nonatomic, readonly) unsigned int placeholderType;
 @property (nonatomic, retain) UIViewController *rootViewController;
-@property (nonatomic, retain) UIScreen *screen;
-@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (setter=_setScreen:, nonatomic, retain) UIScreen *screen;
+@property (setter=_setSize:, nonatomic) struct CGSize { double x1; double x2; } size;
 @property (readonly) Class superclass;
-@property (nonatomic) unsigned int type;
+@property (setter=_setType:, nonatomic) unsigned int type;
 
 - (void).cxx_destruct;
 - (void)_setIdentifier:(id)arg1;
 - (void)_setScreen:(id)arg1;
-- (void)_setSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_setSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_setType:(unsigned int)arg1;
 - (void)_setWindow:(id)arg1;
 - (id)_typeName;
@@ -50,7 +50,7 @@
 - (id)screen;
 - (void)setRootViewController:(id)arg1;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { double x1; double x2; })size;
 - (unsigned int)type;
 
 @end

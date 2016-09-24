@@ -3,10 +3,10 @@
  */
 
 @interface DAMessageMoveRequest : NSObject {
-    id _context;
-    NSString *_fromFolder;
-    NSString *_message;
-    NSString *_toFolder;
+    id  _context;
+    NSString * _fromFolder;
+    NSString * _message;
+    NSString * _toFolder;
 }
 
 @property (nonatomic, retain) id context;

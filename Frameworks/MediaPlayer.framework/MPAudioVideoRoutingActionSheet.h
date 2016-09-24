@@ -3,15 +3,15 @@
  */
 
 @interface MPAudioVideoRoutingActionSheet : UIActionSheet <UIActionSheetDelegate> {
-    int _airPlayPasswordAlertDidAppearToken;
-    BOOL _airPlayPasswordAlertDidAppearTokenIsValid;
-    unsigned int _avItemType;
-    id /* block */ _completionHandler;
-    NSArray *_displayedRoutes;
-    MPAVRoutingController *_routingController;
-    BOOL _shouldPauseAfterDismissing;
-    UIViewController *_viewControllerForActionSheet;
-    UIWindow *_windowForActionSheet;
+    int  _airPlayPasswordAlertDidAppearToken;
+    BOOL  _airPlayPasswordAlertDidAppearTokenIsValid;
+    int  _avItemType;
+    id /* block */  _completionHandler;
+    NSArray * _displayedRoutes;
+    MPAVRoutingController * _routingController;
+    BOOL  _shouldPauseAfterDismissing;
+    UIViewController * _viewControllerForActionSheet;
+    UIWindow * _windowForActionSheet;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -26,11 +26,11 @@
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)dealloc;
-- (id)initWithType:(unsigned int)arg1;
-- (id)initWithType:(unsigned int)arg1 routingController:(id)arg2;
+- (id)initWithType:(int)arg1;
+- (id)initWithType:(int)arg1 routingController:(id)arg2;
 - (void)layoutSubviews;
-- (void)showFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3 withCompletionHandler:(id /* block */)arg4;
-- (void)showInPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 backgroundStyle:(int)arg3 animated:(BOOL)arg4 completionHandler:(id /* block */)arg5;
+- (void)showFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3 withCompletionHandler:(id /* block */)arg4;
+- (void)showInPopoverFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2 backgroundStyle:(int)arg3 animated:(BOOL)arg4 completionHandler:(id /* block */)arg5;
 - (void)showWithValidInterfaceOrientationMaskBlock:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
 - (void)showWithValidInterfaceOrientationMaskBlock:(id /* block */)arg1 windowLevel:(float)arg2 completionHandler:(id /* block */)arg3;
 - (void)showWithValidInterfaceOrientationsBlock:(id /* block */)arg1 completionHandler:(id /* block */)arg2;

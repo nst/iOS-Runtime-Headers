@@ -3,15 +3,15 @@
  */
 
 @interface HLPReachabilityManager : NSObject {
-    BOOL _connected;
-    <HLPReachabilityManagerDelegate> *_delegate;
-    BOOL _hostActive;
-    NSString *_hostName;
-    HLPReachability *_hostReachability;
-    BOOL _internetActive;
-    HLPReachability *_internetReachability;
-    BOOL _notifying;
-    BOOL _reachabilityInitialized;
+    BOOL  _connected;
+    <HLPReachabilityManagerDelegate> * _delegate;
+    BOOL  _hostActive;
+    NSString * _hostName;
+    HLPReachability * _hostReachability;
+    BOOL  _internetActive;
+    HLPReachability * _internetReachability;
+    BOOL  _notifying;
+    BOOL  _reachabilityInitialized;
 }
 
 @property (nonatomic) BOOL connected;

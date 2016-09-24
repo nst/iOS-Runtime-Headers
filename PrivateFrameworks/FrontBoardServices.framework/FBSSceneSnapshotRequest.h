@@ -3,10 +3,10 @@
  */
 
 @interface FBSSceneSnapshotRequest : NSObject <BSXPCCoding> {
-    <FBSSceneSnapshotRequestDelegate> *_delegate;
-    BOOL _handled;
-    NSString *_sceneID;
-    FBSSceneSettings *_settings;
+    <FBSSceneSnapshotRequestDelegate> * _delegate;
+    BOOL  _handled;
+    NSString * _sceneID;
+    FBSSceneSettings * _settings;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,10 +3,10 @@
  */
 
 @interface CAMExposureTargetBiasCommand : CAMCaptureCommand {
-    float __exposureTargetBias;
+    double  __exposureTargetBias;
 }
 
-@property (nonatomic, readonly) float _exposureTargetBias;
+@property (nonatomic, readonly) double _exposureTargetBias;
 
 - (float)_exposureTargetBias;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

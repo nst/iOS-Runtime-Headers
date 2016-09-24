@@ -3,9 +3,9 @@
  */
 
 @interface MPStoreItemErrorResolver : MPAVErrorResolver {
-    MPAVItem *_item;
-    SSKeybagRequest *_request;
-    NSNumber *_storeAccountIdentifier;
+    MPAVItem * _item;
+    SSKeybagRequest * _request;
+    NSNumber * _storeAccountIdentifier;
 }
 
 @property (nonatomic, readonly) MPAVItem *item;

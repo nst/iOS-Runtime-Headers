@@ -3,7 +3,7 @@
  */
 
 @interface AppLaunchStatsComputation : NSObject {
-    AppLaunchStatsState *aplsState;
+    AppLaunchStatsState * aplsState;
 }
 
 - (void).cxx_destruct;

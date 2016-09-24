@@ -3,9 +3,9 @@
  */
 
 @interface _LSIconCache : NSObject {
-    NSString *_cacheKeySalt;
-    NSURL *_cacheURL;
-    BOOL _initialized;
+    NSString * _cacheKeySalt;
+    NSURL * _cacheURL;
+    BOOL  _initialized;
 }
 
 @property (copy) NSString *cacheKeySalt;
@@ -13,7 +13,6 @@
 @property (readonly) BOOL initialized;
 
 + (id)UUIDStringForString:(id)arg1;
-+ (id)dataWithResourcePath:(id)arg1;
 
 - (id)bundleCacheKeyForBundleIdentifier:(id)arg1 cacheKey:(id)arg2 variant:(int)arg3;
 - (id)bundleCacheKeyForBundleIdentifier:(id)arg1 roleIdentifier:(id)arg2 iconFiles:(id)arg3 variant:(int)arg4;

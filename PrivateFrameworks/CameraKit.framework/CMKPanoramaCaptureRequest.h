@@ -3,8 +3,8 @@
  */
 
 @interface CMKPanoramaCaptureRequest : CMKCaptureRequest <NSCopying, NSMutableCopying> {
-    int _captureDevice;
-    int _deviceOrientation;
+    int  _captureDevice;
+    int  _deviceOrientation;
 }
 
 @property (nonatomic, readonly) int captureDevice;

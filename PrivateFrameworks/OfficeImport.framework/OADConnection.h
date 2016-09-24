@@ -3,8 +3,8 @@
  */
 
 @interface OADConnection : NSObject {
-    unsigned long mDrawableId;
-    int mLocationIndex;
+    unsigned long  mDrawableId;
+    int  mLocationIndex;
 }
 
 - (id)description;

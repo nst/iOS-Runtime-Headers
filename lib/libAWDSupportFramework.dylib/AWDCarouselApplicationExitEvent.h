@@ -3,19 +3,23 @@
  */
 
 @interface AWDCarouselApplicationExitEvent : PBCodable <NSCopying> {
-    NSString *_bundleID;
+    NSString * _bundleID;
+    BOOL  _development;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int reason : 1; 
-    } _has;
-    AWDCarouselPreviousForeground *_previousActivation;
-    NSMutableArray *_prewarms;
-    unsigned int _reason;
-    unsigned long long _timestamp;
+        unsigned int development : 1; 
+    }  _has;
+    AWDCarouselPreviousForeground * _previousActivation;
+    NSMutableArray * _prewarms;
+    unsigned int  _reason;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic, retain) NSString *bundleID;
+@property (nonatomic) BOOL development;
 @property (nonatomic, readonly) BOOL hasBundleID;
+@property (nonatomic) BOOL hasDevelopment;
 @property (nonatomic, readonly) BOOL hasPreviousActivation;
 @property (nonatomic) BOOL hasReason;
 @property (nonatomic) BOOL hasTimestamp;
@@ -33,8 +37,10 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (BOOL)development;
 - (id)dictionaryRepresentation;
 - (BOOL)hasBundleID;
+- (BOOL)hasDevelopment;
 - (BOOL)hasPreviousActivation;
 - (BOOL)hasReason;
 - (BOOL)hasTimestamp;
@@ -48,6 +54,8 @@
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)reason;
 - (void)setBundleID:(id)arg1;
+- (void)setDevelopment:(BOOL)arg1;
+- (void)setHasDevelopment:(BOOL)arg1;
 - (void)setHasReason:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setPreviousActivation:(id)arg1;

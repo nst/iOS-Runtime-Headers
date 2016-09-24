@@ -8,7 +8,7 @@
 - (int)deprecated3DBevelEdgesSpecificProperty;
 - (int)deprecated3DShadowSpecificProperty;
 - (id)genericToSpecificPropertyMap;
-- (id)initialSceneWithChartInfo:(id)arg1 layoutSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; unsigned int x7; })arg2;
+- (id)initialSceneWithChartInfo:(id)arg1 layoutSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; int x6; unsigned int x7; })arg2;
 - (BOOL)isPie;
 - (unsigned int)maxCellsToCheckForGridValueType;
 - (void)p_initializeAxisIDs;

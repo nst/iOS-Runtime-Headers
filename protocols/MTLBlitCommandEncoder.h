@@ -15,5 +15,7 @@
 - (void)generateMipmapsForTexture:(id <MTLTexture>)arg1;
 - (void)synchronizeResource:(id <MTLResource>)arg1;
 - (void)synchronizeTexture:(id <MTLTexture>)arg1 slice:(unsigned int)arg2 level:(unsigned int)arg3;
+- (void)updateFence:(id <MTLFence>)arg1;
+- (void)waitForFence:(id <MTLFence>)arg1;
 
 @end

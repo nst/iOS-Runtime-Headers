@@ -3,8 +3,8 @@
  */
 
 @interface TKSmartCardSlotProxy : NSObject <TKProtocolSmartCardSlotNotification> {
-    NSHashTable *_cards;
-    TKSmartCardSlot *_slot;
+    NSHashTable * _cards;
+    TKSmartCardSlot * _slot;
 }
 
 @property (readonly) NSHashTable *cards;

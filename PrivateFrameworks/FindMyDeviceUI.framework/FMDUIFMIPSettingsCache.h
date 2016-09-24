@@ -3,10 +3,10 @@
  */
 
 @interface FMDUIFMIPSettingsCache : NSObject {
-    unsigned int _fmipState;
-    BOOL _fmipStateAvailable;
-    BOOL _lowBatteryLocateEnabled;
-    BOOL _lowBatteryLocateStateAvailable;
+    unsigned int  _fmipState;
+    BOOL  _fmipStateAvailable;
+    BOOL  _lowBatteryLocateEnabled;
+    BOOL  _lowBatteryLocateStateAvailable;
 }
 
 @property (nonatomic, readonly) BOOL fmipEnabled;

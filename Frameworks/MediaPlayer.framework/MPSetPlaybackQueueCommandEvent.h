@@ -3,7 +3,7 @@
  */
 
 @interface MPSetPlaybackQueueCommandEvent : MPRemoteCommandEvent {
-    MPRemotePlaybackQueue *_playbackQueue;
+    MPRemotePlaybackQueue * _playbackQueue;
 }
 
 @property (nonatomic, readonly) MPRemotePlaybackQueue *playbackQueue;

@@ -3,11 +3,11 @@
  */
 
 @interface Exchange : NSObject {
-    double _lastUpdateTime;
-    NSString *_name;
-    NSDate *_nextOpenDate;
-    int _status;
-    double _streamInterval;
+    double  _lastUpdateTime;
+    NSString * _name;
+    NSDate * _nextOpenDate;
+    int  _status;
+    double  _streamInterval;
 }
 
 @property (nonatomic, readonly) double lastUpdateTime;

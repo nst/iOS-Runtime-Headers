@@ -3,11 +3,11 @@
  */
 
 @interface SKUIGiftValidator : NSObject {
-    SKUIClientContext *_clientContext;
-    NSOperationQueue *_operationQueue;
-    int _validationCount;
-    SSVLoadURLOperation *_validationOperation;
-    NSURL *_validationURL;
+    SKUIClientContext * _clientContext;
+    NSOperationQueue * _operationQueue;
+    int  _validationCount;
+    SSVLoadURLOperation * _validationOperation;
+    NSURL * _validationURL;
 }
 
 @property (nonatomic, retain) NSOperationQueue *operationQueue;

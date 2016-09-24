@@ -3,7 +3,7 @@
  */
 
 @interface IKJSEntityValueProvider : IKJSObject <IKJSEntityValueProvider> {
-    <IKEntityValueProviding> *_entityValueProvider;
+    <IKEntityValueProviding> * _entityValueProvider;
 }
 
 @property (nonatomic, retain) <IKEntityValueProviding> *entityValueProvider;

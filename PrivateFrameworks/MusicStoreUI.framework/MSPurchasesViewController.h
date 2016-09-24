@@ -3,10 +3,10 @@
  */
 
 @interface MSPurchasesViewController : SUViewController {
-    int _activeViewControllerIndex;
-    UIView *_containerView;
-    SUSegmentedControl *_segmentedControl;
-    NSArray *_viewControllers;
+    int  _activeViewControllerIndex;
+    UIView * _containerView;
+    SUSegmentedControl * _segmentedControl;
+    NSArray * _viewControllers;
 }
 
 - (id)_activeViewController;

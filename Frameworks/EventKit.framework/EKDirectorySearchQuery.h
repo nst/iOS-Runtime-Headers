@@ -3,12 +3,12 @@
  */
 
 @interface EKDirectorySearchQuery : NSObject {
-    BOOL _findGroups;
-    BOOL _findLocations;
-    BOOL _findResources;
-    BOOL _findUsers;
-    unsigned int _resultLimit;
-    NSSet *_terms;
+    BOOL  _findGroups;
+    BOOL  _findLocations;
+    BOOL  _findResources;
+    BOOL  _findUsers;
+    unsigned int  _resultLimit;
+    NSSet * _terms;
 }
 
 @property (nonatomic) BOOL findGroups;
@@ -18,6 +18,7 @@
 @property (nonatomic) unsigned int resultLimit;
 @property (nonatomic, retain) NSSet *terms;
 
+- (void).cxx_destruct;
 - (BOOL)findGroups;
 - (BOOL)findLocations;
 - (BOOL)findResources;

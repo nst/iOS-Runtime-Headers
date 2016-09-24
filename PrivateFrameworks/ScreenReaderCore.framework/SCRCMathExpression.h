@@ -3,8 +3,8 @@
  */
 
 @interface SCRCMathExpression : NSObject {
-    unsigned int _cachedMaximumDepth;
-    SCRCMathExpression *_parent;
+    unsigned int  _cachedMaximumDepth;
+    SCRCMathExpression * _parent;
 }
 
 @property (nonatomic, readonly) BOOL beginsWithSpace;

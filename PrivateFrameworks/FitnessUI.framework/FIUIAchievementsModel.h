@@ -3,17 +3,15 @@
  */
 
 @interface FIUIAchievementsModel : NSObject {
-    NSArray *_achievements;
-    NSObject<OS_dispatch_queue> *_achievementsLock;
-    <FIUIAchievementsModelDelegate> *_delegate;
-    HKExtendedHealthStore *_extendedHealthStore;
-    BOOL _loadingAchievements;
+    <FIUIAchievementsModelDelegate> * _delegate;
+    HKExtendedHealthStore * _extendedHealthStore;
 }
 
 @property (nonatomic) <FIUIAchievementsModelDelegate> *delegate;
 
++ (int)compareAchievement:(id)arg1 toAchievement:(id)arg2;
+
 - (void).cxx_destruct;
-- (id)achievements;
 - (id)delegate;
 - (void)fetchAchievementsOnDay:(id)arg1 inCalendar:(id)arg2 completion:(id /* block */)arg3;
 - (id)init;

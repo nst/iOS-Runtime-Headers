@@ -3,8 +3,8 @@
  */
 
 @interface ContactFolderItemsSyncContext : NSObject {
-    int _abGroupChangeId;
-    int _abPersonChangeId;
+    int  _abGroupChangeId;
+    int  _abPersonChangeId;
 }
 
 @property (nonatomic) int abGroupChangeId;

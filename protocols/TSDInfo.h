@@ -11,6 +11,7 @@
 - (BOOL)isAttachedToBodyText;
 - (BOOL)isFloatingAboveText;
 - (BOOL)isInlineWithText;
+- (BOOL)isSelectable;
 - (BOOL)isThemeContent;
 - (Class)layoutClass;
 - (TSPObject<TSDOwningAttachment> *)owningAttachment;
@@ -25,6 +26,7 @@
 @optional
 
 - (TSKCollaboratorCursor *)collaboratorCursorForSelectionPath:(TSKSelectionPath *)arg1;
+- (BOOL)needsDownload;
 - (<TSDInfoUUIDPathPrefixComponentsProvider> *)uuidPathPrefixComponentsProvider;
 
 @end

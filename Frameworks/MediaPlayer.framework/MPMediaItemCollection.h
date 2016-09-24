@@ -3,12 +3,12 @@
  */
 
 @interface MPMediaItemCollection : MPMediaEntity {
-    unsigned int _containedMediaTypes;
-    BOOL _initializedContainedMediaTypes;
-    NSArray *_items;
-    unsigned int _itemsCount;
-    MPMediaQuery *_itemsQuery;
-    MPMediaItem *_representativeItem;
+    unsigned int  _containedMediaTypes;
+    BOOL  _initializedContainedMediaTypes;
+    NSArray * _items;
+    unsigned int  _itemsCount;
+    MPMediaQuery * _itemsQuery;
+    MPMediaItem * _representativeItem;
 }
 
 @property (nonatomic, readonly) unsigned int count;

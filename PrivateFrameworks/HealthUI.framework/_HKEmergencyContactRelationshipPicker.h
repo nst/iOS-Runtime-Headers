@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
  */
 
-@interface _HKEmergencyContactRelationshipPicker : UITableViewController {
-    <_HKEmergencyContactRelationshipPickerDelegate> *_delegate;
-    NSArray *_labels;
-    NSArray *_tokens;
+@interface _HKEmergencyContactRelationshipPicker : HKTableViewController {
+    <_HKEmergencyContactRelationshipPickerDelegate> * _delegate;
+    NSArray * _labels;
+    NSArray * _tokens;
 }
 
 @property (nonatomic) <_HKEmergencyContactRelationshipPickerDelegate> *delegate;

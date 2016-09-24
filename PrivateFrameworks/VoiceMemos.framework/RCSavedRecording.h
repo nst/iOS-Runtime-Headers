@@ -3,11 +3,11 @@
  */
 
 @interface RCSavedRecording : NSManagedObject <UIActivityItemSource> {
-    AVAsset *_avAsset;
-    BOOL _hasPendingChangeAffectingEntityRevision;
-    BOOL _ignoreChangeForEntityRevision;
-    NSString *_path;
-    BOOL _pathWasInvalid;
+    AVAsset * _avAsset;
+    BOOL  _hasPendingChangeAffectingEntityRevision;
+    BOOL  _ignoreChangeForEntityRevision;
+    NSString * _path;
+    BOOL  _pathWasInvalid;
 }
 
 @property (nonatomic, readonly, copy) NSURL *URIRepresentation;
@@ -18,11 +18,11 @@
 @property (nonatomic) double duration;
 @property (nonatomic, readonly) BOOL hasPendingChangeAffectingEntityRevision;
 @property (readonly) unsigned int hash;
-@property (nonatomic) long long iTunesPersistentID;
+@property (nonatomic) int iTunesPersistentID;
 @property (nonatomic, readonly) BOOL isContentBeingModified;
 @property (nonatomic, copy) NSString *path;
 @property (getter=isPendingRestore, nonatomic) BOOL pendingRestore;
-@property (nonatomic) long long recordingID;
+@property (nonatomic) int recordingID;
 @property (nonatomic, readonly, copy) CSSearchableItem *searchableItem;
 @property (readonly) Class superclass;
 @property (getter=isSynced, nonatomic) BOOL synced;
@@ -42,7 +42,7 @@
 - (void)_validatePath;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 subjectForActivityType:(id)arg2;
-- (id)activityViewController:(id)arg1 thumbnailImageForActivityType:(id)arg2 suggestedSize:(struct CGSize { float x1; float x2; })arg3;
+- (id)activityViewController:(id)arg1 thumbnailImageForActivityType:(id)arg2 suggestedSize:(struct CGSize { double x1; double x2; })arg3;
 - (id)activityViewControllerPlaceholderItem:(id)arg1;
 - (id)avAsset;
 - (void)awakeFromFetch;
@@ -51,7 +51,7 @@
 - (id)detailLabel;
 - (double)duration;
 - (BOOL)hasPendingChangeAffectingEntityRevision;
-- (long long)iTunesPersistentID;
+- (int)iTunesPersistentID;
 - (BOOL)isContentBeingModified;
 - (BOOL)isPendingRestore;
 - (BOOL)isSynced;
@@ -59,16 +59,16 @@
 - (int)labelPreset;
 - (id)name;
 - (id)path;
-- (long long)recordingID;
+- (int)recordingID;
 - (id)searchableItem;
 - (void)setCustomLabel:(id)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setITunesPersistentID:(long long)arg1;
+- (void)setITunesPersistentID:(int)arg1;
 - (void)setLabelPreset:(int)arg1;
 - (void)setName:(id)arg1;
 - (void)setPath:(id)arg1;
 - (void)setPendingRestore:(BOOL)arg1;
-- (void)setRecordingID:(long long)arg1;
+- (void)setRecordingID:(int)arg1;
 - (void)setSynced:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;

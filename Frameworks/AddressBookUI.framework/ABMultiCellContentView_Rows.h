@@ -3,9 +3,9 @@
  */
 
 @interface ABMultiCellContentView_Rows : ABMultiCellContentView <UITextFieldDelegate> {
-    NSMutableArray *_entryFields;
-    NSMutableArray *_horizontalDividers;
-    BOOL _isAttemptingFirstResponder;
+    NSMutableArray * _entryFields;
+    NSMutableArray * _horizontalDividers;
+    BOOL  _isAttemptingFirstResponder;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -13,12 +13,12 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-+ (struct CGSize { float x1; float x2; })layoutSubviewsForView:(id)arg1 usingSize:(struct CGSize { float x1; float x2; })arg2 propertyGroup:(id)arg3 info:(id)arg4 styleProvider:(id)arg5 whenEditing:(BOOL)arg6;
-+ (struct CGSize { float x1; float x2; })layoutSubviewsForView:(id)arg1 usingSize:(struct CGSize { float x1; float x2; })arg2 propertyGroup:(id)arg3 info:(id)arg4 styleProvider:(id)arg5 whenEditing:(BOOL)arg6 includeRows:(BOOL)arg7;
++ (struct CGSize { double x1; double x2; })layoutSubviewsForView:(id)arg1 usingSize:(struct CGSize { double x1; double x2; })arg2 propertyGroup:(id)arg3 info:(id)arg4 styleProvider:(id)arg5 whenEditing:(BOOL)arg6;
++ (struct CGSize { double x1; double x2; })layoutSubviewsForView:(id)arg1 usingSize:(struct CGSize { double x1; double x2; })arg2 propertyGroup:(id)arg3 info:(id)arg4 styleProvider:(id)arg5 whenEditing:(BOOL)arg6 includeRows:(BOOL)arg7;
 + (unsigned int)rowsForPropertyGroup:(id)arg1 info:(id)arg2;
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })zerothHorizontalDividerFrameForValueViewRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
++ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })zerothHorizontalDividerFrameForValueViewRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })backgroundRectForView:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })backgroundRectForView:(id)arg1;
 - (void)dealloc;
 - (void)entryField:(id)arg1 didEndEditingForKey:(id)arg2;
 - (void)entryFieldBeginAttemptBecomeFirstResponder:(id)arg1;
@@ -26,7 +26,7 @@
 - (id)entryFieldForRow:(unsigned int)arg1;
 - (id)hitTestForTouches:(id)arg1 withEvent:(id)arg2;
 - (id)keyboardSettingsForKey:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForView:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForView:(id)arg1;
 - (void)reload;
 - (void)reloadFromModel;
 - (void)reloadFromModelIncludingRows:(BOOL)arg1;

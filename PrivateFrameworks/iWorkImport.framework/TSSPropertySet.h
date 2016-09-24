@@ -3,7 +3,7 @@
  */
 
 @interface TSSPropertySet : NSObject <NSCopying, NSMutableCopying> {
-    id mIndexSet;
+    id  mIndexSet;
 }
 
 + (id)p_mutableIndexSetWithFirstProperty:(int)arg1 argumentList:(void*)arg2;

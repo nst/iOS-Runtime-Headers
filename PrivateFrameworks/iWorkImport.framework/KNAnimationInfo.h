@@ -3,8 +3,8 @@
  */
 
 @interface KNAnimationInfo : NSObject {
-    Class mAnimationClass;
-    NSSet *mValidAnimationTypes;
+    Class  mAnimationClass;
+    NSSet * mValidAnimationTypes;
 }
 
 @property (nonatomic, readonly) Class animationClass;

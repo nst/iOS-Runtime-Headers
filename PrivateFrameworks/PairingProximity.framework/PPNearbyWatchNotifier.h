@@ -3,20 +3,18 @@
  */
 
 @interface PPNearbyWatchNotifier : NSObject <PPDiscoveryManagerDelegate, PPNearbyWatchBulletinProviderDelegate> {
-    PPNearbyWatchBulletinProvider *_bulletinProvider;
-    BBDataProviderConnection *_dataProviderConnection;
-    id /* block */ _discoveryCompletion;
-    PPDiscoveryManager *_discoveryManager;
-    NSObject<OS_dispatch_source> *_timerSource;
+    id /* block */  _discoveryCompletion;
+    PPDiscoveryManager * _discoveryManager;
+    NSXPCConnection * _notificationService;
+    NSObject<OS_dispatch_source> * _timerSource;
 }
 
-@property (nonatomic, retain) PPNearbyWatchBulletinProvider *bulletinProvider;
-@property (nonatomic, retain) BBDataProviderConnection *dataProviderConnection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ discoveryCompletion;
 @property (nonatomic, retain) PPDiscoveryManager *discoveryManager;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSXPCConnection *notificationService;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *timerSource;
 
@@ -25,21 +23,19 @@
 
 - (void).cxx_destruct;
 - (void)_cleanupDiscoveryDidFindDevice:(BOOL)arg1 error:(id)arg2;
-- (id)bulletinProvider;
 - (void)bulletinProviderDidClearBulletins:(id)arg1;
 - (void)cancelDiscovery;
-- (id)dataProviderConnection;
 - (void)didDiscoverDeviceWithAdvertisingID:(id)arg1 signalStrength:(int)arg2;
 - (void)didStopDiscovering;
 - (id)discoverForNearbyWatchesWithCompletion:(id /* block */)arg1;
 - (id)discoverForTimeInterval:(double)arg1 signalLimit:(int)arg2 completion:(id /* block */)arg3;
 - (id /* block */)discoveryCompletion;
 - (id)discoveryManager;
-- (id)init;
-- (void)setBulletinProvider:(id)arg1;
-- (void)setDataProviderConnection:(id)arg1;
+- (id)notificationService;
+- (void)prepareServiceConnectionIfNeeded;
 - (void)setDiscoveryCompletion:(id /* block */)arg1;
 - (void)setDiscoveryManager:(id)arg1;
+- (void)setNotificationService:(id)arg1;
 - (void)setTimerSource:(id)arg1;
 - (id)timerSource;
 

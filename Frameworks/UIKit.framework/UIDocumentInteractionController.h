@@ -3,13 +3,13 @@
  */
 
 @interface UIDocumentInteractionController : NSObject <QLPreviewControllerDelegate, UIActionSheetDelegate> {
-    UIActivityViewController *_activityViewController;
-    id _annotation;
-    LSApplicationProxy *_applicationToOpen;
-    NSArray *_availableApplications;
-    id /* block */ _completionWithItemsHandler;
-    <UIDocumentInteractionControllerDelegate> *_delegate;
-    BOOL _disableFilteringDotFilesInArchives;
+    UIActivityViewController * _activityViewController;
+    id  _annotation;
+    NSArray * _applicationActivities;
+    LSApplicationProxy * _applicationToOpen;
+    id /* block */  _completionWithItemsHandler;
+    <UIDocumentInteractionControllerDelegate> * _delegate;
+    BOOL  _disableFilteringDotFilesInArchives;
     struct { 
         unsigned int delegateViewControllerForPreview : 1; 
         unsigned int delegateRectForPreview : 1; 
@@ -36,31 +36,31 @@
         unsigned int delegateProvidesActivityItem : 1; 
         unsigned int delegateProvidesPrintInfo : 1; 
         unsigned int performingActivity : 1; 
-    } _documentInteractionControllerFlags;
-    NSArray *_gestureRecognizers;
-    NSArray *_icons;
-    UIPopoverController *_popoverController;
-    UIBarButtonItem *_presentItem;
+    }  _documentInteractionControllerFlags;
+    NSArray * _gestureRecognizers;
+    NSArray * _icons;
+    UIPopoverController * _popoverController;
+    UIBarButtonItem * _presentItem;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _presentRect;
-    UIView *_presentView;
-    UIViewController *_presentingViewController;
-    QLPreviewController *_previewController;
-    id _previewItemProxy;
-    BOOL _shouldUnzipDocument;
-    BOOL _sourceIsManaged;
-    NSURL *_tmpURLToDeleteOnDealloc;
-    NSString *_uniqueIdentifier;
-    NSURL *_unzippedDocumentURL;
-    BOOL previewsPresentWithMarkup;
+    }  _presentRect;
+    UIView * _presentView;
+    UIViewController * _presentingViewController;
+    QLPreviewController * _previewController;
+    id  _previewItemProxy;
+    BOOL  _shouldUnzipDocument;
+    BOOL  _sourceIsManaged;
+    NSURL * _tmpURLToDeleteOnDealloc;
+    NSString * _uniqueIdentifier;
+    NSURL * _unzippedDocumentURL;
+    BOOL  previewsPresentWithMarkup;
 }
 
 @property (retain) NSURL *URL;
@@ -87,8 +87,9 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *uniqueIdentifier;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (id)_UTIForFileURL:(id)arg1;
-+ (id)_applicationsForDocumentProxy:(id)arg1;
 + (id)_pathFilterPredicate:(BOOL)arg1;
 + (id)_unzippingQueue;
 + (id)allActionSelectorNames;
@@ -98,9 +99,10 @@
 - (void).cxx_destruct;
 - (id)URL;
 - (id)UTI;
+- (void)__openDocumentInPlaceWithApplication:(id)arg1;
 - (void)_activityControllerViewDidDismiss;
+- (id)_applicationActivities:(BOOL)arg1;
 - (id)_applicationToOpen;
-- (id)_applications:(BOOL)arg1;
 - (void)_callBeginSelector:(id)arg1;
 - (void)_callFinishSelectorForOpenInPlace:(id)arg1;
 - (BOOL)_canPreviewUnzippedDocument;
@@ -133,6 +135,7 @@
 - (void)_openDocumentWithApplication:(id)arg1;
 - (void)_openDocumentWithApplication:(id)arg1 userInfo:(id)arg2;
 - (void)_openDocumentWithCurrentApplication;
+- (id)_openWithAppActivitiesForDocumentProxy:(id)arg1;
 - (id)_pathsInArchive:(id /* block */)arg1;
 - (BOOL)_performingActivity;
 - (void)_presentOpenIn:(id)arg1;
@@ -146,17 +149,18 @@
 - (BOOL)_setupForOpenInMenu;
 - (BOOL)_setupForOptionsMenu;
 - (BOOL)_setupPreviewController;
+- (BOOL)_shouldReturnDefaultApplication;
 - (void)_unzipFileAndSetupPayload:(id /* block */)arg1;
 - (id)_unzipFileAndSetupPayload:(id)arg1 completion:(id /* block */)arg2;
 - (id)_unzippedDocumentURL;
 - (id)activityViewController;
 - (id)annotation;
-- (unsigned int)applicationCount;
 - (void)dealloc;
 - (BOOL)defaultApplicationSupportsOpenInPlace;
 - (id)delegate;
 - (void)dismissMenuAnimated:(BOOL)arg1;
 - (void)dismissPreviewAnimated:(BOOL)arg1;
+- (id)excludedActivityTypesForPreviewController:(id)arg1;
 - (id)extractSubitemFromArchive:(id)arg1 completion:(id /* block */)arg2;
 - (id)gestureRecognizers;
 - (id)icons;
@@ -170,15 +174,15 @@
 - (id)popoverController;
 - (void)popoverController:(id)arg1 animationCompleted:(int)arg2;
 - (BOOL)presentOpenInMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
-- (BOOL)presentOpenInMenuFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3;
+- (BOOL)presentOpenInMenuFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3;
 - (BOOL)presentOptionsMenuFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
-- (BOOL)presentOptionsMenuFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3;
+- (BOOL)presentOptionsMenuFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3;
 - (BOOL)presentPreviewAnimated:(BOOL)arg1;
 - (id)presentingNavigationController;
 - (id)previewController;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previewController:(id)arg1 frameForPreviewItem:(id)arg2 inSourceView:(id*)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })previewController:(id)arg1 frameForPreviewItem:(id)arg2 inSourceView:(id*)arg3;
 - (id)previewController:(id)arg1 previewItemAtIndex:(int)arg2;
-- (id)previewController:(id)arg1 transitionImageForPreviewItem:(id)arg2 contentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
+- (id)previewController:(id)arg1 transitionImageForPreviewItem:(id)arg2 contentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3;
 - (void)previewControllerDidDismiss:(id)arg1;
 - (void)previewControllerWillDismiss:(id)arg1;
 - (id)previewItemProxy;
@@ -199,5 +203,9 @@
 - (BOOL)sourceIsManaged;
 - (id)subitemsInArchive:(id /* block */)arg1;
 - (id)uniqueIdentifier;
+
+// Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
+
++ (id)_sf_interactionControllerWithDocumentURL:(id)arg1 sourceURL:(id)arg2;
 
 @end

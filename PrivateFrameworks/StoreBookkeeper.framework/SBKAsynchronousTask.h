@@ -3,19 +3,19 @@
  */
 
 @interface SBKAsynchronousTask : NSObject {
-    int _cancelType;
-    NSMutableArray *_completions;
-    NSString *_debugDescription;
-    NSError *_error;
-    id /* block */ _expirationHandler;
-    id /* block */ _finishedHandler;
-    NSObject<OS_dispatch_queue> *_handlerQueue;
-    NSObject<OS_dispatch_queue> *_queue;
-    id _result;
-    SBKTaskAssertion *_taskAssertion;
-    BOOL _taskInvalidationDisabled;
-    double _timeout;
-    NSObject<OS_dispatch_source> *_timeoutTimer;
+    int  _cancelType;
+    NSMutableArray * _completions;
+    NSString * _debugDescription;
+    NSError * _error;
+    id /* block */  _expirationHandler;
+    id /* block */  _finishedHandler;
+    NSObject<OS_dispatch_queue> * _handlerQueue;
+    NSObject<OS_dispatch_queue> * _queue;
+    id  _result;
+    SBKTaskAssertion * _taskAssertion;
+    BOOL  _taskInvalidationDisabled;
+    double  _timeout;
+    NSObject<OS_dispatch_source> * _timeoutTimer;
 }
 
 @property int cancelType;

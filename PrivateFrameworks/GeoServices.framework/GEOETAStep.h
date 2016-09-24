@@ -3,17 +3,17 @@
  */
 
 @interface GEOETAStep : PBCodable <NSCopying> {
-    unsigned int _distanceRemaining;
-    unsigned int _expectedTime;
+    unsigned int  _distanceRemaining;
+    unsigned int  _expectedTime;
     struct { 
         unsigned int distanceRemaining : 1; 
         unsigned int expectedTime : 1; 
         unsigned int stepID : 1; 
         unsigned int zilchPointIndex : 1; 
-    } _has;
-    unsigned int _stepID;
-    GEOTimeCheckpoints *_timeCheckpoints;
-    int _zilchPointIndex;
+    }  _has;
+    unsigned int  _stepID;
+    GEOTimeCheckpoints * _timeCheckpoints;
+    int  _zilchPointIndex;
 }
 
 @property (nonatomic) unsigned int distanceRemaining;

@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DScenePropertyAccessor : NSObject <TSCHUnretainedParent> {
-    TSCH3DScene *mScene;
+    TSCH3DScene * mScene;
 }
 
 @property (nonatomic, readonly) TSCH3DScene *scene;

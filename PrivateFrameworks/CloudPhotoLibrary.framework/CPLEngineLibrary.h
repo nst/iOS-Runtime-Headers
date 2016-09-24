@@ -3,27 +3,28 @@
  */
 
 @interface CPLEngineLibrary : NSObject <CPLAbstractObject> {
-    NSHashTable *_attachedObjects;
-    NSDate *_cachedLastQuarantineCountReportDate;
-    NSURL *_clientLibraryBaseURL;
-    BOOL _closed;
-    NSURL *_cloudLibraryResourceStorageURL;
-    NSURL *_cloudLibraryStateStorageURL;
-    NSArray *_components;
-    CPLConfiguration *_configuration;
-    NSString *_libraryIdentifier;
-    BOOL _libraryIsCorrupted;
-    NSError *_openingError;
-    CPLPlatformObject *_platformObject;
-    NSObject<OS_dispatch_queue> *_queue;
-    CPLEngineScheduler *_scheduler;
-    CPLStatus *_status;
-    CPLEngineStore *_store;
-    CPLEngineSyncManager *_syncManager;
-    CPLEngineSystemMonitor *_systemMonitor;
-    unsigned int _totalAssetCount;
-    BOOL _totalAssetCountHasBeenCalculated;
-    CPLEngineTransport *_transport;
+    NSHashTable * _attachedObjects;
+    NSDate * _cachedLastQuarantineCountReportDate;
+    NSURL * _clientLibraryBaseURL;
+    BOOL  _closed;
+    NSURL * _cloudLibraryResourceStorageURL;
+    NSURL * _cloudLibraryStateStorageURL;
+    NSArray * _components;
+    CPLConfiguration * _configuration;
+    CPLEngineFeedbackManager * _feedback;
+    NSString * _libraryIdentifier;
+    BOOL  _libraryIsCorrupted;
+    NSError * _openingError;
+    CPLPlatformObject * _platformObject;
+    NSObject<OS_dispatch_queue> * _queue;
+    CPLEngineScheduler * _scheduler;
+    CPLStatus * _status;
+    CPLEngineStore * _store;
+    CPLEngineSyncManager * _syncManager;
+    CPLEngineSystemMonitor * _systemMonitor;
+    unsigned int  _totalAssetCount;
+    BOOL  _totalAssetCountHasBeenCalculated;
+    CPLEngineTransport * _transport;
 }
 
 @property (nonatomic, readonly, copy) NSURL *clientLibraryBaseURL;
@@ -32,7 +33,8 @@
 @property (nonatomic, readonly) CPLConfiguration *configuration;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) NSDate *exitDeleteTime;
+@property (nonatomic, copy) NSDate *exitDeleteTime;
+@property (nonatomic, readonly) CPLEngineFeedbackManager *feedback;
 @property (nonatomic) BOOL hasChangesToProcess;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL iCloudLibraryExists;
@@ -67,9 +69,11 @@
 - (id)description;
 - (void)detachObject:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)exitDeleteTime;
+- (id)feedback;
 - (void)getListOfComponentsWithCompletionHandler:(id /* block */)arg1;
 - (void)getStatusArrayForComponents:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)getStatusForComponents:(id)arg1 completionHandler:(id /* block */)arg2;
+- (BOOL)hasAssetCountOnServer;
 - (BOOL)hasChangesToProcess;
 - (BOOL)iCloudLibraryExists;
 - (BOOL)iCloudLibraryHasBeenWiped;
@@ -80,7 +84,7 @@
 - (void)notifyAttachedObjectsPullQueueIsFull;
 - (void)notifyAttachedObjectsResourceDidDowloadInBackground:(id)arg1;
 - (void)notifyAttachedObjectsResourceDidFailBackgroundDownloadOfResource:(id)arg1;
-- (void)notifyAttachedObjectsSizeOfResourcesToUploadDidChangeToSize:(unsigned long long)arg1 sizeOfOriginalResourcesToUpload:(unsigned long long)arg2 numberOfImages:(unsigned int)arg3 numberOfVideos:(unsigned int)arg4 numberOfOtherItems:(unsigned int)arg5;
+- (void)notifyAttachedObjectsSizeOfResourcesToUploadDidChangeToSize:(unsigned int)arg1 sizeOfOriginalResourcesToUpload:(unsigned int)arg2 numberOfImages:(unsigned int)arg3 numberOfVideos:(unsigned int)arg4 numberOfOtherItems:(unsigned int)arg5;
 - (void)notifyAttachedObjectsUploadTask:(id)arg1 didFinishWithError:(id)arg2;
 - (void)notifyAttachedObjectsUploadTask:(id)arg1 didProgress:(float)arg2;
 - (void)notifyAttachedObjectsUploadTaskDidStart:(id)arg1;
@@ -104,6 +108,7 @@
 - (unsigned int)totalAssetCountOnServer;
 - (id)transport;
 - (void)updateAssetCountsFromServer:(id)arg1;
+- (void)updateInitialSyncDate:(id)arg1;
 - (void)updateLastSuccessfullSyncDate:(id)arg1;
 
 @end

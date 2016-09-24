@@ -3,7 +3,7 @@
  */
 
 @interface CNContactUpdateExistingContactAction : CNContactAction <CNContactViewControllerDelegate> {
-    CNContact *_existingContact;
+    CNContact * _existingContact;
 }
 
 @property (readonly, copy) NSString *debugDescription;

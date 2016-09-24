@@ -3,42 +3,33 @@
  */
 
 @interface KNCanvasSelection : TSDCanvasSelection {
-    NSSet *mBuildChunks;
-    TSUPointerKeyDictionary *mDrawableToSelectedActionGhostIndexesMap;
+    NSSet * mBuildChunks;
 }
 
 @property (nonatomic, readonly) NSSet *buildChunks;
+@property (nonatomic, readonly) BOOL containsOnlyUnlockedInfosSupportingHyperlinkActions;
+@property (nonatomic, readonly) NSSet *drawableInfos;
 @property (nonatomic, readonly) NSSet *unlockedDrawableInfos;
+@property (nonatomic, readonly) NSSet *unlockedInfosSupportingHyperlinkActions;
 
 + (Class)archivedSelectionClass;
++ (id)emptySelection;
 
+- (id)UUIDDescription;
 - (id)buildChunks;
 - (BOOL)containsBuildChunksOfAnimationType:(int)arg1;
-- (BOOL)containsKindOfClass:(Class)arg1;
 - (BOOL)containsOnlyUnlockedInfosSupportingHyperlinkActions;
 - (id)copyExcludingBuildChunks:(id)arg1;
-- (id)copyExcludingInfo:(id)arg1;
-- (id)copyIncludingInfo:(id)arg1;
 - (id)copyReplacingChunksWithChunks:(id)arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
+- (id)drawableInfos;
 - (unsigned int)hash;
-- (id)infos;
-- (id)infosOfClass:(Class)arg1;
-- (id)initWithArchive:(const struct CanvasSelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TSP::IndexSet> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct RepeatedPtrField<TSP::Reference> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct RepeatedField<unsigned int> { unsigned int *x_8_1_1; int x_8_1_2; int x_8_1_3; } x8; }*)arg1 unarchiver:(id)arg2;
-- (id)initWithDrawable:(id)arg1 actionGhostIndexPromise:(id)arg2;
-- (id)initWithDrawableToActionGhostIndexPromiseMap:(id)arg1;
 - (id)initWithInfos:(id)arg1;
 - (id)initWithInfos:(id)arg1 buildChunks:(id)arg2;
+- (id)initWithPersistableInfos:(id)arg1 drawableToActionGhostIndexPromiseMap:(id)arg2 buildChunks:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
-- (id)p_actionGhostSelectionIndexesForDrawable:(id)arg1;
 - (id)p_drawablesWithoutPromisesInDrawableToActionGhostIndexPromiseMap:(id)arg1;
-- (id)p_indexesOfGhostInfos:(id)arg1 inActionSequenceForDrawable:(id)arg2;
-- (id)p_selectedGhostInfosForDrawable:(id)arg1;
-- (void)saveToArchive:(struct CanvasSelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TSP::IndexSet> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct RepeatedPtrField<TSP::Reference> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct RepeatedField<unsigned int> { unsigned int *x_8_1_1; int x_8_1_2; int x_8_1_3; } x8; }*)arg1 archiver:(id)arg2;
 - (id)unlockedDrawableInfos;
-- (id)unlockedInfos;
 - (id)unlockedInfosSupportingHyperlinkActions;
 
 @end

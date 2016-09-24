@@ -3,8 +3,8 @@
  */
 
 @interface CoreRCInterfaceListener : NSObject {
-    <CoreRCInterfaceListenerDelegate> *_delegate;
-    NSMutableArray *_interfaces;
+    <CoreRCInterfaceListenerDelegate> * _delegate;
+    NSMutableArray * _interfaces;
 }
 
 @property (nonatomic) <CoreRCInterfaceListenerDelegate> *delegate;

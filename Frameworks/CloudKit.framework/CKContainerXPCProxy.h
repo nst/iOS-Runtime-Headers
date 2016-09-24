@@ -3,7 +3,7 @@
  */
 
 @interface CKContainerXPCProxy : NSObject <CKBXPCClient> {
-    CKContainer *_container;
+    CKContainer * _container;
 }
 
 @property (nonatomic) CKContainer *container;

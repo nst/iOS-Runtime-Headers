@@ -3,8 +3,8 @@
  */
 
 @interface CNVCardViewController : UIViewController <CNContactNavigationControllerDelegate> {
-    NSArray *_contacts;
-    <CNVCardViewControllerDelegate> *_delegate;
+    NSArray * _contacts;
+    <CNVCardViewControllerDelegate> * _delegate;
 }
 
 @property (nonatomic, readonly) CNContactNavigationController *contactNavigationController;

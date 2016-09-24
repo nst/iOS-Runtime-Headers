@@ -3,7 +3,7 @@
  */
 
 @interface EXOAVState : OAVReadState {
-    EXReadState *mEXReadState;
+    EXReadState * mEXReadState;
 }
 
 - (id)exState;

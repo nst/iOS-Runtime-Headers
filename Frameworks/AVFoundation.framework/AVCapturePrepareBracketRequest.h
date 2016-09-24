@@ -3,8 +3,8 @@
  */
 
 @interface AVCapturePrepareBracketRequest : NSObject {
-    id /* block */ _completionBlock;
-    FigCaptureStillImageSettings *_settings;
+    id /* block */  _completionBlock;
+    FigCaptureStillImageSettings * _settings;
 }
 
 @property (readonly) id /* block */ completionBlock;

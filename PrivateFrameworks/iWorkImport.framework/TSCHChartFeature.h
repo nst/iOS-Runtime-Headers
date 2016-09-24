@@ -3,9 +3,9 @@
  */
 
 @interface TSCHChartFeature : NSObject <TSCHUnretainedParent> {
-    NSArray *mCategoryAxisIDs;
-    TSCHChartType *mChartType;
-    NSArray *mValueAxisIDs;
+    NSArray * mCategoryAxisIDs;
+    TSCHChartType * mChartType;
+    NSArray * mValueAxisIDs;
 }
 
 @property (nonatomic, readonly, retain) NSArray *categoryAxisIDs;
@@ -25,7 +25,7 @@
 - (unsigned int)gridOffsetToSeriesForScatterFormat:(int)arg1;
 - (id)init;
 - (id)initWithChartType:(id)arg1;
-- (id)initialSceneWithChartInfo:(id)arg1 layoutSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; unsigned int x7; })arg2;
+- (id)initialSceneWithChartInfo:(id)arg1 layoutSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; int x6; unsigned int x7; })arg2;
 - (BOOL)isHorizontal;
 - (BOOL)isPie;
 - (int)labelOrientation;
@@ -38,6 +38,7 @@
 - (BOOL)requiresYAxisOrdinal;
 - (BOOL)reverseSingleColumnLegendOrder;
 - (float)sageMaxDepthRatio;
+- (float)spiceMaxDepthRatio;
 - (int)stackingSignRule;
 - (Class)stageClass;
 - (unsigned int)styleIndexForAxisID:(id)arg1;

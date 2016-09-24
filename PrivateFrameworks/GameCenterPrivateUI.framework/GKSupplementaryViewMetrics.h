@@ -3,27 +3,27 @@
  */
 
 @interface GKSupplementaryViewMetrics : NSObject <NSCopying> {
-    int _animateWithSection;
-    SEL _configurator;
-    float _desiredHeight;
-    float _desiredWidth;
+    int  _animateWithSection;
+    SEL  _configurator;
+    double  _desiredHeight;
+    double  _desiredWidth;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _globalSectionRange;
-    BOOL _hidden;
-    NSString *_kind;
-    Class _reusableViewClass;
-    BOOL _shouldPin;
-    BOOL _shouldPinGlobal;
-    BOOL _shouldUseGlobalIndexing;
-    id _target;
+    }  _globalSectionRange;
+    BOOL  _hidden;
+    NSString * _kind;
+    Class  _reusableViewClass;
+    BOOL  _shouldPin;
+    BOOL  _shouldPinGlobal;
+    BOOL  _shouldUseGlobalIndexing;
+    id  _target;
 }
 
 @property (nonatomic) int animateWithSection;
 @property (nonatomic) SEL configurator;
-@property (nonatomic) float desiredHeight;
-@property (nonatomic) float desiredWidth;
+@property (nonatomic) double desiredHeight;
+@property (nonatomic) double desiredWidth;
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } globalSectionRange;
 @property (getter=isHidden, nonatomic) BOOL hidden;
 @property (nonatomic, retain) NSString *kind;
@@ -63,7 +63,7 @@
 - (BOOL)shouldPin;
 - (BOOL)shouldPinGlobal;
 - (BOOL)shouldUseGlobalIndexing;
-- (struct CGSize { float x1; float x2; })sizeForCollectionView:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeForCollectionView:(id)arg1;
 - (id)target;
 
 @end

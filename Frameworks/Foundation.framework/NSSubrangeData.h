@@ -3,13 +3,13 @@
  */
 
 @interface NSSubrangeData : NSData {
-    NSData *_data;
+    NSData * _data;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
-    unsigned int _reserved;
-    unsigned int _retainCount;
+    }  _range;
+    unsigned int  _reserved;
+    unsigned int  _retainCount;
 }
 
 - (BOOL)_isCompact;

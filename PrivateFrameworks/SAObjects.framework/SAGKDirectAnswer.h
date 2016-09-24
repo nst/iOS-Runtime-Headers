@@ -5,6 +5,7 @@
 @interface SAGKDirectAnswer : AceObject <SAAceSerializable>
 
 @property (nonatomic, copy) NSString *answer;
+@property (nonatomic, copy) NSString *confidenceLevel;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;

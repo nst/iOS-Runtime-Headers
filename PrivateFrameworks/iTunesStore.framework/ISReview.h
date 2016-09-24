@@ -3,18 +3,18 @@
  */
 
 @interface ISReview : NSObject <NSCoding, NSCopying> {
-    int _assetType;
-    NSString *_body;
-    unsigned int _bodyMaxLength;
-    NSURL *_infoURL;
-    unsigned long long _itemIdentifier;
-    NSString *_nickname;
-    BOOL _nicknameIsConfirmed;
-    unsigned int _nicknameMaxLength;
-    float _rating;
-    NSURL *_submitURL;
-    NSString *_title;
-    unsigned int _titleMaxLength;
+    int  _assetType;
+    NSString * _body;
+    unsigned int  _bodyMaxLength;
+    NSURL * _infoURL;
+    unsigned int  _itemIdentifier;
+    NSString * _nickname;
+    BOOL  _nicknameIsConfirmed;
+    unsigned int  _nicknameMaxLength;
+    double  _rating;
+    NSURL * _submitURL;
+    NSString * _title;
+    unsigned int  _titleMaxLength;
 }
 
 @property (nonatomic) int assetType;
@@ -22,11 +22,11 @@
 @property (nonatomic) unsigned int bodyMaxLength;
 @property (nonatomic, readonly) BOOL hasSavedDraft;
 @property (nonatomic, retain) NSURL *infoURL;
-@property (nonatomic) unsigned long long itemIdentifier;
+@property (nonatomic) unsigned int itemIdentifier;
 @property (nonatomic, retain) NSString *nickname;
 @property (nonatomic) BOOL nicknameIsConfirmed;
 @property (nonatomic) unsigned int nicknameMaxLength;
-@property (nonatomic) float rating;
+@property (nonatomic) double rating;
 @property (nonatomic, retain) NSURL *submitURL;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic) unsigned int titleMaxLength;
@@ -42,7 +42,7 @@
 - (BOOL)hasSavedDraft;
 - (id)infoURL;
 - (id)initWithCoder:(id)arg1;
-- (unsigned long long)itemIdentifier;
+- (unsigned int)itemIdentifier;
 - (void)loadFromDictionary:(id)arg1;
 - (void)mergeWithReview:(id)arg1 preferLocalValues:(BOOL)arg2;
 - (id)nickname;
@@ -56,7 +56,7 @@
 - (void)setBody:(id)arg1;
 - (void)setBodyMaxLength:(unsigned int)arg1;
 - (void)setInfoURL:(id)arg1;
-- (void)setItemIdentifier:(unsigned long long)arg1;
+- (void)setItemIdentifier:(unsigned int)arg1;
 - (void)setNickname:(id)arg1;
 - (void)setNicknameIsConfirmed:(BOOL)arg1;
 - (void)setNicknameMaxLength:(unsigned int)arg1;

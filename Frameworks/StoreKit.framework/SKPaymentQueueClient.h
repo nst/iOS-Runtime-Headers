@@ -3,17 +3,17 @@
  */
 
 @interface SKPaymentQueueClient : NSObject <NSCopying> {
-    BOOL _allowsBootstrapCellularData;
-    NSString *_bundleIdentifier;
-    NSString *_bundleVersion;
-    int _environmentType;
-    BOOL _hidesConfirmationDialogs;
-    BOOL _ignoresInAppPurchaseRestriction;
-    NSString *_receiptDirectoryPath;
-    BOOL _requiresAuthenticationForPayment;
-    NSNumber *_storeExternalVersion;
-    NSNumber *_storeItemIdentifier;
-    NSString *_vendorIdentifier;
+    BOOL  _allowsBootstrapCellularData;
+    NSString * _bundleIdentifier;
+    NSString * _bundleVersion;
+    int  _environmentType;
+    BOOL  _hidesConfirmationDialogs;
+    BOOL  _ignoresInAppPurchaseRestriction;
+    NSString * _receiptDirectoryPath;
+    BOOL  _requiresAuthenticationForPayment;
+    NSNumber * _storeExternalVersion;
+    NSNumber * _storeItemIdentifier;
+    NSString * _vendorIdentifier;
 }
 
 @property (nonatomic) BOOL allowsBootstrapCellularData;

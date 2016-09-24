@@ -3,39 +3,39 @@
  */
 
 @interface _UIDatePickerView : UIPickerView <UIPickerViewDataSource, UIPickerViewDelegate> {
-    BOOL _allowsZeroTimeInterval;
-    _UIDatePickerChineseCalendar *_chineseWrapperCalendar;
-    NSLocale *_compositeLocale;
-    UIDatePicker *_datePickerDelegate;
+    BOOL  _allowsZeroTimeInterval;
+    _UIDatePickerChineseCalendar * _chineseWrapperCalendar;
+    NSLocale * _compositeLocale;
+    UIDatePicker * _datePickerDelegate;
     struct { 
         unsigned int staggerTimeIntervals : 1; 
         unsigned int loadingDateOrTime : 1; 
         unsigned int highlightsToday : 1; 
         unsigned int usesBlackChrome : 1; 
-    } _datePickerFlags;
-    id _delegateOfDatePicker;
-    int _expectedAMPM;
-    UILabel *_hourLabel;
-    NSDateComponents *_lastSelectedDateComponents;
-    int _loadingDate;
-    NSDate *_maximumDate;
-    NSDate *_minimumDate;
-    UILabel *_minuteLabel;
-    _UIDatePickerMode *_mode;
-    double _timeInterval;
-    NSTimeZone *_timeZone;
-    NSCalendar *_userProvidedCalendar;
-    NSLocale *_userProvidedLocale;
-    NSDate *_userSuppliedDate;
-    NSDate *_userSuppliedMaximumDate;
-    NSDate *_userSuppliedMinimumDate;
+    }  _datePickerFlags;
+    id  _delegateOfDatePicker;
+    int  _expectedAMPM;
+    UILabel * _hourLabel;
+    NSDateComponents * _lastSelectedDateComponents;
+    int  _loadingDate;
+    NSDate * _maximumDate;
+    NSDate * _minimumDate;
+    UILabel * _minuteLabel;
+    _UIDatePickerMode * _mode;
+    double  _timeInterval;
+    NSTimeZone * _timeZone;
+    NSCalendar * _userProvidedCalendar;
+    NSLocale * _userProvidedLocale;
+    NSDate * _userSuppliedDate;
+    NSDate * _userSuppliedMaximumDate;
+    NSDate * _userSuppliedMinimumDate;
 }
 
 @property (getter=_allowsZeroCountDownDuration, setter=_setAllowsZeroCountDownDuration:, nonatomic) BOOL allowsZeroCountDownDuration;
 @property (getter=_allowsZeroTimeInterval, setter=_setAllowsZeroTimeInterval:, nonatomic) BOOL allowsZeroTimeInterval;
 @property (getter=_amPmValue, nonatomic, readonly) int amPmValue;
 @property (nonatomic, readonly) NSCalendar *calendar;
-@property (nonatomic, readonly) float contentWidth;
+@property (nonatomic, readonly) double contentWidth;
 @property (nonatomic, copy) NSDate *date;
 @property (nonatomic, copy) NSDateComponents *dateComponents;
 @property (nonatomic) int datePickerMode;
@@ -62,6 +62,7 @@
 @property (getter=_usesBlackChrome, setter=_setUsesBlackChrome:, nonatomic) BOOL usesBlackChrome;
 
 - (void).cxx_destruct;
+- (void)_UIAppearance_setTextColor:(id)arg1;
 - (BOOL)_allowsZeroCountDownDuration;
 - (BOOL)_allowsZeroTimeInterval;
 - (int)_amPmValue;
@@ -69,6 +70,7 @@
 - (id)_contentViewForSizingLabelForPositioningInComponent:(int)arg1;
 - (void)_datePickerReset:(id)arg1;
 - (void)_doneLoadingDateOrTime;
+- (id)_existingLabelForCalendarUnit:(unsigned int)arg1;
 - (void)_fadeLabelForCalendarUnit:(unsigned int)arg1 toText:(id)arg2 animated:(BOOL)arg3;
 - (BOOL)_hasCustomCalendar;
 - (BOOL)_hasCustomLocale;
@@ -80,7 +82,7 @@
 - (id)_labelTextForCalendarUnit:(unsigned int)arg1;
 - (id)_lastSelectedDateComponents;
 - (void)_loadDate:(id)arg1 animated:(BOOL)arg2;
-- (id)_makeNewAccessoryLabel;
+- (id)_makeNewCalendarUnitLabel;
 - (id)_minutesStringForHour:(int)arg1 minutes:(int)arg2;
 - (id)_orientationImageSuffix;
 - (void)_positionLabel:(id)arg1 forCalendarUnit:(unsigned int)arg2 relativeTo:(id)arg3 order:(int)arg4;
@@ -97,13 +99,16 @@
 - (void)_setHidesLabels:(BOOL)arg1;
 - (void)_setLabel:(id)arg1 forCalendarUnit:(unsigned int)arg2 animated:(BOOL)arg3;
 - (void)_setMode:(id)arg1;
+- (void)_setTextColor:(id)arg1;
 - (void)_setUsesBlackChrome:(BOOL)arg1;
 - (BOOL)_showingDate;
 - (float)_tableRowHeight;
 - (void)_todayChanged:(id)arg1;
 - (BOOL)_updateDateOrTime;
 - (void)_updateEnabledCellsIncludingWMDCells:(BOOL)arg1;
+- (void)_updateLabelColors;
 - (void)_updateLabels:(BOOL)arg1;
+- (void)_updateTextColorForCalendarUnitLabel:(id)arg1;
 - (BOOL)_updatedLastSelectedComponentsByValidatingSelectedDateWithLastManipulatedComponent:(int)arg1;
 - (BOOL)_usesBlackChrome;
 - (id)_viewForSelectedRowInComponent:(int)arg1;
@@ -116,7 +121,7 @@
 - (id)delegateOfDatePicker;
 - (BOOL)highlightsToday;
 - (int)hour;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)locale;
 - (id)maximumDate;
@@ -139,7 +144,7 @@
 - (void)setDatePickerMode:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegateOfDatePicker:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setHighlightsToday:(BOOL)arg1;
 - (void)setMaximumDate:(id)arg1;
 - (void)setMinimumDate:(id)arg1;

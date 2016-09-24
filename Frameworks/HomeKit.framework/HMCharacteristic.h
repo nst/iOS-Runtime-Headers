@@ -2,18 +2,23 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMCharacteristic : NSObject <HMObjectMerge, NSSecureCoding> {
-    NSString *_characteristicType;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    HMDelegateCaller *_delegateCaller;
-    NSNumber *_instanceID;
-    HMCharacteristicMetadata *_metadata;
-    BOOL _notificationEnabled;
-    NSArray *_properties;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
-    HMService *_service;
-    NSUUID *_uniqueIdentifier;
-    id _value;
+@interface HMCharacteristic : NSObject <HFPrettyDescription, HMObjectMerge, NSSecureCoding> {
+    NSString * _characteristicType;
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    HMDelegateCaller * _delegateCaller;
+    BOOL  _hasAuthorizationData;
+    NSNumber * _instanceID;
+    HMCharacteristicMetadata * _metadata;
+    BOOL  _notificationEnabled;
+    BOOL  _notificationEnabledByThisClient;
+    NSDate * _notificationEnabledTime;
+    NSArray * _properties;
+    NSObject<OS_dispatch_queue> * _propertyQueue;
+    BOOL  _requiresDeviceUnlock;
+    HMService * _service;
+    NSUUID * _uniqueIdentifier;
+    id  _value;
+    NSDate * _valueUpdatedTime;
 }
 
 @property (nonatomic, copy) NSString *characteristicType;
@@ -21,19 +26,28 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) HMDelegateCaller *delegateCaller;
 @property (readonly, copy) NSString *description;
+@property BOOL hasAuthorizationData;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSNumber *instanceID;
 @property (nonatomic, readonly, copy) NSString *localizedDescription;
 @property (nonatomic, readonly) HMCharacteristicMetadata *metadata;
 @property (getter=isNotificationEnabled, nonatomic) BOOL notificationEnabled;
+@property (nonatomic) BOOL notificationEnabledByThisClient;
+@property (nonatomic, copy) NSDate *notificationEnabledTime;
 @property (nonatomic, copy) NSArray *properties;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *propertyQueue;
+@property (nonatomic) BOOL requiresDeviceUnlock;
 @property (nonatomic) HMService *service;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSUUID *uniqueIdentifier;
 @property (nonatomic, copy) id value;
+@property (nonatomic, copy) NSDate *valueUpdatedTime;
 
+// Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
+
++ (id)__localizedDescriptionForCharacteristicType:(id)arg1;
 + (id)_characteristicTypeAsString:(id)arg1;
++ (id)localizedDescriptionForCharacteristicType:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -43,36 +57,66 @@
 - (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)_readValueWithCompletionHandler:(id /* block */)arg1;
 - (void)_updateAuthorizationData:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)_updateValue:(id)arg1;
+- (void)_updateValue:(id)arg1 updateTime:(id)arg2;
 - (void)_writeValue:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)characteristicType;
 - (id)clientQueue;
 - (id)delegateCaller;
 - (void)enableNotification:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)hasAuthorizationData;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)instanceID;
 - (BOOL)isNotificationEnabled;
 - (id)localizedDescription;
-- (id)mapCuapProperties:(int)arg1;
-- (int)mapToCuapProperties:(id)arg1;
+- (id)mapHAPProperties:(int)arg1;
 - (id)metadata;
+- (BOOL)notificationEnabledByThisClient;
+- (id)notificationEnabledTime;
 - (id)properties;
 - (id)propertyQueue;
 - (void)readValueWithCompletionHandler:(id /* block */)arg1;
+- (BOOL)requiresDeviceUnlock;
 - (id)service;
 - (void)setCharacteristicType:(id)arg1;
 - (void)setClientQueue:(id)arg1;
 - (void)setDelegateCaller:(id)arg1;
+- (void)setHasAuthorizationData:(BOOL)arg1;
 - (void)setNotificationEnabled:(BOOL)arg1;
+- (void)setNotificationEnabledByThisClient:(BOOL)arg1;
+- (void)setNotificationEnabledTime:(id)arg1;
 - (void)setProperties:(id)arg1;
 - (void)setPropertyQueue:(id)arg1;
+- (void)setRequiresDeviceUnlock:(BOOL)arg1;
 - (void)setService:(id)arg1;
 - (void)setValue:(id)arg1;
+- (void)setValueUpdateTime:(id)arg1;
+- (void)setValueUpdatedTime:(id)arg1;
 - (id)uniqueIdentifier;
 - (void)updateAuthorizationData:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)value;
+- (id)valueUpdatedTime;
 - (void)writeValue:(id)arg1 completionHandler:(id /* block */)arg2;
+
+// Image: /System/Library/PrivateFrameworks/Home.framework/Home
+
++ (id)_hf_alarmCharacteristicTypeToAbnormalValueMap;
++ (id)hf_abnormalValueForAlarmCharacteristicType:(id)arg1;
++ (id)hf_alarmCharacteristicTypes;
++ (id)hf_associatedCharacteristicTypeForCharacteristicType:(id)arg1;
++ (id /* block */)hf_characteristicSortComparator;
++ (id)hf_currentStateCharacteristicTypeForTargetStateCharacteristicType:(id)arg1;
++ (id)hf_descriptionForCharacteristicType:(id)arg1;
++ (int)hf_sortPriorityForCharacteristicType:(id)arg1;
++ (id)hf_targetStateCharacteristicTypeForCurrentStateCharacteristicType:(id)arg1;
+
+- (id)hf_associatedCharacteristicType;
+- (id)hf_characteristicTypeDescription;
+- (id)hf_defaultValue;
+- (BOOL)hf_isReadable;
+- (BOOL)hf_isWritable;
+- (id)hf_prettyDescription;
+- (int)hf_sortPriority;
 
 @end

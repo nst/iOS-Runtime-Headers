@@ -3,12 +3,12 @@
  */
 
 @interface _HDHealthServiceConnectionInfo : NSObject {
-    id /* block */ _characteristicsHandler;
-    int _connectionState;
-    NSUUID *_peripheralUUID;
-    id /* block */ _sessionHandler;
-    unsigned int _sessionIdentifier;
-    id /* block */ _transitoryHandler;
+    id /* block */  _characteristicsHandler;
+    int  _connectionState;
+    NSUUID * _peripheralUUID;
+    id /* block */  _sessionHandler;
+    unsigned int  _sessionIdentifier;
+    id /* block */  _transitoryHandler;
 }
 
 @property (nonatomic, readonly) id /* block */ characteristicsHandler;

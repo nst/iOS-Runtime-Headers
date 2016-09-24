@@ -3,20 +3,21 @@
  */
 
 @interface UIKBGradient : NSObject <NSCopying> {
-    NSArray *_colors;
-    BOOL _didQueryRGBColors;
-    NSString *_endColorName;
-    NSString *_flatColorName;
-    NSString *_gradientName;
-    BOOL _horizontal;
-    float _middleLocation;
-    float _opacity;
-    NSString *_startColorName;
-    BOOL _usesRGBColors;
+    NSArray * _colors;
+    BOOL  _didQueryRGBColors;
+    NSString * _endColorName;
+    NSString * _flatColorName;
+    NSString * _gradientName;
+    BOOL  _horizontal;
+    double  _middleLocation;
+    double  _opacity;
+    NSString * _startColorName;
+    BOOL  _usesRGBColors;
 }
 
+@property (nonatomic, readonly) NSString *flatColorName;
 @property (nonatomic) BOOL horizontal;
-@property (nonatomic) float opacity;
+@property (nonatomic) double opacity;
 @property (nonatomic, readonly) BOOL usesRGBColors;
 
 + (id)gradientWith3Colors:(id)arg1 middleLocation:(float)arg2;
@@ -28,6 +29,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)flatColorName;
 - (BOOL)horizontal;
 - (id)initWith3Colors:(id)arg1 middleLocation:(float)arg2;
 - (id)initWithFlatColor:(id)arg1;

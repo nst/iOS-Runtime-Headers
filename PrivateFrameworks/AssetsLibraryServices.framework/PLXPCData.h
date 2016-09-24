@@ -3,7 +3,7 @@
  */
 
 @interface PLXPCData : NSData {
-    NSObject<OS_xpc_object> *_data;
+    NSObject<OS_xpc_object> * _data;
 }
 
 - (const void*)bytes;

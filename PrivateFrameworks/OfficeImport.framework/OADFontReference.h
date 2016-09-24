@@ -3,8 +3,8 @@
  */
 
 @interface OADFontReference : NSObject <NSCopying> {
-    OADColor *mColor;
-    int mIndex;
+    OADColor * mColor;
+    int  mIndex;
 }
 
 - (void)applyToParagraphProperties:(id)arg1;

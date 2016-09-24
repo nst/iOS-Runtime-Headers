@@ -3,8 +3,8 @@
  */
 
 @interface SUScriptTextField : SUScriptObject <SUScriptNavigationItem> {
-    SUScriptFunction *_shouldFocusFunction;
-    NSString *_style;
+    SUScriptFunction * _shouldFocusFunction;
+    NSString * _style;
 }
 
 @property (retain) NSString *autocapitalizationType;

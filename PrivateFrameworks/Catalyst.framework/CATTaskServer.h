@@ -3,16 +3,16 @@
  */
 
 @interface CATTaskServer : NSObject <CATTaskSessionDelegate> {
-    <CATTaskServerDelegate> *_delegate;
-    NSDictionary *_userInfo;
-    NSMutableDictionary *mActiveSessionsByUUID;
-    NSObject<OS_dispatch_group> *mAllSessionsDidInvalidateGroup;
-    NSMutableDictionary *mConnectedSessionsByUUID;
-    CATStateMachine *mFSM;
-    NSMutableDictionary *mInvalidatingSessionsByUUID;
-    CATOperationQueue *mOrphanedOperationQueue;
-    NSMutableSet *mSessions;
-    CATTaskServer *mStrongSelf;
+    <CATTaskServerDelegate> * _delegate;
+    NSDictionary * _userInfo;
+    NSMutableDictionary * mActiveSessionsByUUID;
+    NSObject<OS_dispatch_group> * mAllSessionsDidInvalidateGroup;
+    NSMutableDictionary * mConnectedSessionsByUUID;
+    CATStateMachine * mFSM;
+    NSMutableDictionary * mInvalidatingSessionsByUUID;
+    CATOperationQueue * mOrphanedOperationQueue;
+    NSMutableSet * mSessions;
+    CATTaskServer * mStrongSelf;
 }
 
 @property (nonatomic, readonly, copy) NSArray *clientSessions;
@@ -49,7 +49,7 @@
 - (void)session:(id)arg1 didInterruptWithError:(id)arg2;
 - (void)session:(id)arg1 didReceiveNotificationWithName:(id)arg2 userInfo:(id)arg3;
 - (void)session:(id)arg1 enqueueOperation:(id)arg2;
-- (id)session:(id)arg1 enqueueOperationForRequest:(id)arg2 error:(id*)arg3;
+- (id)session:(id)arg1 prepareOperationForRequest:(id)arg2 error:(id*)arg3;
 - (BOOL)session:(id)arg1 shouldAcceptConnectionFromTransport:(id)arg2;
 - (void)sessionDidConnect:(id)arg1;
 - (void)sessionDidDisconnect:(id)arg1;

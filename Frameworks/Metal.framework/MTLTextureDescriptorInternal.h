@@ -3,7 +3,7 @@
  */
 
 @interface MTLTextureDescriptorInternal : MTLTextureDescriptor {
-    struct MTLTextureDescriptorPrivate { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; BOOL x9; unsigned int x10; BOOL x11; BOOL x12; unsigned int x13; union { unsigned int x_14_1_1; unsigned int x_14_1_2; } x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; } *_private;
+    struct MTLTextureDescriptorPrivate { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; BOOL x9; unsigned int x10; BOOL x11; BOOL x12; unsigned int x13; union { unsigned int x_14_1_1; unsigned int x_14_1_2; } x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; } * _private;
 }
 
 - (unsigned int)arrayLength;
@@ -14,6 +14,7 @@
 - (id)description;
 - (const struct MTLTextureDescriptorPrivate { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; BOOL x9; unsigned int x10; BOOL x11; BOOL x12; unsigned int x13; union { unsigned int x_14_1_1; unsigned int x_14_1_2; } x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; }*)descriptorPrivate;
 - (BOOL)framebufferOnly;
+- (unsigned int)getSwizzle;
 - (unsigned int)hash;
 - (unsigned int)height;
 - (id)init;
@@ -36,6 +37,7 @@
 - (void)setRotation:(unsigned int)arg1;
 - (void)setSampleCount:(unsigned int)arg1;
 - (void)setStorageMode:(unsigned int)arg1;
+- (void)setSwizzle:(unsigned int)arg1;
 - (void)setSwizzleAlpha:(unsigned int)arg1;
 - (void)setSwizzleBlue:(unsigned int)arg1;
 - (void)setSwizzleGreen:(unsigned int)arg1;

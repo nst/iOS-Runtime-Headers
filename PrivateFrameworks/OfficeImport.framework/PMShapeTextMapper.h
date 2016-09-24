@@ -3,10 +3,10 @@
  */
 
 @interface PMShapeTextMapper : CMMapper {
-    OADOrientedBounds *mBounds;
-    BOOL mRectangular;
-    CMStyle *mStyle;
-    OADTextBody *mTextBody;
+    OADOrientedBounds * mBounds;
+    BOOL  mRectangular;
+    CMStyle * mStyle;
+    OADTextBody * mTextBody;
 }
 
 - (void)dealloc;

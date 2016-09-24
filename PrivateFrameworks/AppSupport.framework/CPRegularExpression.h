@@ -3,8 +3,8 @@
  */
 
 @interface CPRegularExpression : NSObject <NSCoding, NSCopying> {
-    NSString *_expressionString;
-    void *_reserved;
+    NSString * _expressionString;
+    void * _reserved;
 }
 
 + (const char *)getBytesForString:(id)arg1 lossByte:(unsigned char)arg2;

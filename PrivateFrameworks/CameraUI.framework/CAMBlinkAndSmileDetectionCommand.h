@@ -3,8 +3,8 @@
  */
 
 @interface CAMBlinkAndSmileDetectionCommand : CAMCaptureCommand {
-    BOOL __blinkDetectionEnabled;
-    BOOL __smileDetectionEnabled;
+    BOOL  __blinkDetectionEnabled;
+    BOOL  __smileDetectionEnabled;
 }
 
 @property (getter=_isBlinkDetectionEnabled, nonatomic, readonly) BOOL _blinkDetectionEnabled;

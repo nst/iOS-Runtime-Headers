@@ -5,9 +5,11 @@
 
 @required
 
+- (IKDOMNamedNodeMap *)attributes;
 - (NSString *)getAttribute:(NSString *)arg1;
 - (IKDOMNodeList *)getElementsByTagName:(NSString *)arg1;
 - (BOOL)hasAttribute:(NSString *)arg1;
+- (BOOL)hasAttributes;
 - (void)removeAttribute:(NSString *)arg1;
 - (void)setAttribute:(NSString *)arg1 :(NSString *)arg2;
 - (NSString *)tagName;

@@ -3,14 +3,36 @@
  */
 
 @interface _NCWidgetExtensionContext : NSExtensionContext {
-    _NCWidgetViewController *_hostViewController;
+    int  _activeDisplayMode;
+    _NCWidgetViewController * _hostViewController;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _maxCompactSize;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _maxExpandedSize;
+    int  _widgetLargestAvailableDisplayMode;
 }
 
-@property (nonatomic) _NCWidgetViewController *hostViewController;
+@property (getter=_activeDisplayMode, setter=_setActiveDisplayMode:, nonatomic) int activeDisplayMode;
+@property (getter=_hostViewController, setter=_setHostViewController:, nonatomic) _NCWidgetViewController *hostViewController;
 
-- (id)hostViewController;
+- (void).cxx_destruct;
+- (int)_activeDisplayMode;
+- (id)_hostViewController;
+- (struct CGSize { double x1; double x2; })_maximumSizeForDisplayMode:(int)arg1;
+- (void)_setActiveDisplayMode:(int)arg1;
+- (void)_setHostViewController:(id)arg1;
+- (void)_setMaximumSize:(struct CGSize { double x1; double x2; })arg1 forDisplayMode:(int)arg2;
+- (id)initWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 contextUUID:(id)arg3;
+- (void)invalidateWidgetDisplayProperties;
 - (void)openURL:(id)arg1 completion:(id /* block */)arg2;
 - (void)openURL:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)setHostViewController:(id)arg1;
+- (void)setWidgetLargestAvailableDisplayMode:(int)arg1;
+- (int)widgetActiveDisplayMode;
+- (int)widgetLargestAvailableDisplayMode;
+- (struct CGSize { double x1; double x2; })widgetMaximumSizeForDisplayMode:(int)arg1;
 
 @end

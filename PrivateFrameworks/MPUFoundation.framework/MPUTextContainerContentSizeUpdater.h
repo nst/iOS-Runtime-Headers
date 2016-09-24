@@ -3,8 +3,8 @@
  */
 
 @interface MPUTextContainerContentSizeUpdater : NSObject {
-    NSString *_lastSeenPreferredContentSizeCategory;
-    <MPUTextContainer> *_textContainer;
+    NSString * _lastSeenPreferredContentSizeCategory;
+    <MPUTextContainer> * _textContainer;
 }
 
 @property (nonatomic, retain) NSString *lastSeenPreferredContentSizeCategory;

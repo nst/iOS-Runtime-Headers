@@ -3,9 +3,9 @@
  */
 
 @interface CKSQLiteStatementEnumerator : NSEnumerator {
-    id /* block */ _block;
-    BOOL _closed;
-    CKSQLiteStatement *_statement;
+    id /* block */  _block;
+    BOOL  _closed;
+    CKSQLiteStatement * _statement;
 }
 
 @property (nonatomic, copy) id /* block */ block;

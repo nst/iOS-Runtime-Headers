@@ -3,11 +3,11 @@
  */
 
 @interface PLMappedImageData : NSMutableData {
-    void *_bytes;
-    BOOL _freeBytes;
-    unsigned long _length;
-    NSData *_pl_data;
-    PLImageTableSegment *_segment;
+    void * _bytes;
+    BOOL  _freeBytes;
+    unsigned long  _length;
+    NSData * _pl_data;
+    PLImageTableSegment * _segment;
 }
 
 @property (nonatomic) unsigned int imageHeight;

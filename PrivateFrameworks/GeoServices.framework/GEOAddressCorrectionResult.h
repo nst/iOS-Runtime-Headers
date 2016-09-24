@@ -3,13 +3,15 @@
  */
 
 @interface GEOAddressCorrectionResult : PBCodable <NSCopying> {
-    NSString *_addressID;
-    NSMutableArray *_significantLocations;
+    NSString * _addressID;
+    NSMutableArray * _significantLocations;
 }
 
 @property (nonatomic, retain) NSString *addressID;
 @property (nonatomic, readonly) BOOL hasAddressID;
 @property (nonatomic, retain) NSMutableArray *significantLocations;
+
++ (Class)significantLocationType;
 
 - (void)addSignificantLocation:(id)arg1;
 - (id)addressID;

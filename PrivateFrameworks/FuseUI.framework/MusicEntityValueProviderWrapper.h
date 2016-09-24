@@ -3,8 +3,8 @@
  */
 
 @interface MusicEntityValueProviderWrapper : NSObject <MusicEntityValueProviding> {
-    <MusicEntityValueProviding> *_entityValueProvider;
-    NSMutableDictionary *_handlers;
+    <MusicEntityValueProviding> * _entityValueProvider;
+    NSMutableDictionary * _handlers;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -18,7 +18,7 @@
 - (id)entityUniqueIdentifier;
 - (id)entityValueProvider;
 - (id)forwardingTargetForSelector:(SEL)arg1;
-- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { float x1; float x2; })arg2 destinationScale:(float)arg3;
+- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { double x1; double x2; })arg2 destinationScale:(float)arg3;
 - (id)initWithEntithValueProvider:(id)arg1;
 - (id)valueForEntityProperty:(id)arg1;
 - (id)valuesForEntityProperties:(id)arg1;

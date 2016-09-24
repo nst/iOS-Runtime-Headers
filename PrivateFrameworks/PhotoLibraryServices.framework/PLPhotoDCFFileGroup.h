@@ -3,18 +3,18 @@
  */
 
 @interface PLPhotoDCFFileGroup : PLPhotoDCFObject {
-    unsigned int _addedExtensions;
-    NSDate *_date;
-    id _delegate;
-    PLPhotoDCFDirectory *_directory;
-    NSString *_directoryPath;
-    NSMutableSet *_extensions;
-    unsigned int _hash;
-    unsigned int _hashComputed;
-    NSString *_prebakedThumbnailPath;
-    NSString *_preferredExtension;
-    NSString *_videoFileExtension;
-    unsigned int _writeIsPending;
+    unsigned int  _addedExtensions;
+    NSDate * _date;
+    id  _delegate;
+    PLPhotoDCFDirectory * _directory;
+    NSString * _directoryPath;
+    NSMutableSet * _extensions;
+    unsigned int  _hash;
+    unsigned int  _hashComputed;
+    NSString * _prebakedThumbnailPath;
+    NSString * _preferredExtension;
+    NSString * _videoFileExtension;
+    unsigned int  _writeIsPending;
 }
 
 + (id)allMetadataFileExtensions;

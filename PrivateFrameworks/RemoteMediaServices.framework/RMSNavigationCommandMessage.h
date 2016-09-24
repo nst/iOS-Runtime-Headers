@@ -6,9 +6,9 @@
     struct { 
         unsigned int navigationCommand : 1; 
         unsigned int sessionIdentifier : 1; 
-    } _has;
-    int _navigationCommand;
-    int _sessionIdentifier;
+    }  _has;
+    int  _navigationCommand;
+    int  _sessionIdentifier;
 }
 
 @property (nonatomic) BOOL hasNavigationCommand;

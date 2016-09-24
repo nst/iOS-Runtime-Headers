@@ -3,20 +3,20 @@
  */
 
 @interface HDCodableNanoSyncAnchor : PBCodable <NSCopying> {
-    long long _anchor;
+    int  _anchor;
     struct { 
         unsigned int anchor : 1; 
         unsigned int objectType : 1; 
-    } _has;
-    int _objectType;
+    }  _has;
+    int  _objectType;
 }
 
-@property (nonatomic) long long anchor;
+@property (nonatomic) int anchor;
 @property (nonatomic) BOOL hasAnchor;
 @property (nonatomic) BOOL hasObjectType;
 @property (nonatomic) int objectType;
 
-- (long long)anchor;
+- (int)anchor;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -29,7 +29,7 @@
 - (id)nanoSyncDescription;
 - (int)objectType;
 - (BOOL)readFrom:(id)arg1;
-- (void)setAnchor:(long long)arg1;
+- (void)setAnchor:(int)arg1;
 - (void)setHasAnchor:(BOOL)arg1;
 - (void)setHasObjectType:(BOOL)arg1;
 - (void)setObjectType:(int)arg1;

@@ -3,19 +3,19 @@
  */
 
 @interface _WKRemoteObjectInterface : NSObject {
-    struct HashMap<SEL *, WTF::Vector<WTF::RetainPtr<NSSet>, 0, WTF::CrashOnOverflow, 16>, WTF::PtrHash<SEL *>, WTF::HashTraits<SEL *>, WTF::HashTraits<WTF::Vector<WTF::RetainPtr<NSSet>, 0, WTF::CrashOnOverflow, 16> > > { 
-        struct HashTable<SEL *, WTF::KeyValuePair<SEL *, WTF::Vector<WTF::RetainPtr<NSSet>, 0, WTF::CrashOnOverflow, 16> >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<SEL *, WTF::Vector<WTF::RetainPtr<NSSet>, 0, WTF::CrashOnOverflow, 16> > >, WTF::PtrHash<SEL *>, WTF::HashMap<SEL *, WTF::Vector<WTF::RetainPtr<NSSet>, 0, WTF::CrashOnOverflow, 16>, WTF::PtrHash<SEL *>, WTF::HashTraits<SEL *>, WTF::HashTraits<WTF::Vector<WTF::RetainPtr<NSSet>, 0, WTF::CrashOnOverflow, 16> > >::KeyValuePairTraits, WTF::HashTraits<SEL *> > { 
-            struct KeyValuePair<SEL *, WTF::Vector<WTF::RetainPtr<NSSet>, 0, WTF::CrashOnOverflow, 16> > {} *m_table; 
+    struct RetainPtr<NSString> { 
+        void *m_ptr; 
+    }  _identifier;
+    struct HashMap<SEL *, MethodInfo, WTF::PtrHash<SEL *>, WTF::HashTraits<SEL *>, WTF::HashTraits<MethodInfo> > { 
+        struct HashTable<SEL *, WTF::KeyValuePair<SEL *, MethodInfo>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<SEL *, MethodInfo> >, WTF::PtrHash<SEL *>, WTF::HashMap<SEL *, MethodInfo, WTF::PtrHash<SEL *>, WTF::HashTraits<SEL *>, WTF::HashTraits<MethodInfo> >::KeyValuePairTraits, WTF::HashTraits<SEL *> > { 
+            struct KeyValuePair<SEL *, MethodInfo> {} *m_table; 
             unsigned int m_tableSize; 
             unsigned int m_tableSizeMask; 
             unsigned int m_keyCount; 
             unsigned int m_deletedCount; 
         } m_impl; 
-    } _allowedArgumentClasses;
-    struct RetainPtr<NSString> { 
-        void *m_ptr; 
-    } _identifier;
-    Protocol *_protocol;
+    }  _methods;
+    Protocol * _protocol;
 }
 
 @property (nonatomic, readonly) NSString *identifier;
@@ -25,13 +25,17 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (const struct Vector<WTF::RetainPtr<NSSet>, 0, WTF::CrashOnOverflow, 16> { struct RetainPtr<NSSet> {} *x1; unsigned int x2; unsigned int x3; }*)_allowedArgumentClassesForSelector:(SEL)arg1;
+- (const struct Vector<WTF::HashSet<Class, WTF::PtrHash<Class>, WTF::HashTraits<Class> >, 0, WTF::CrashOnOverflow, 16> { struct HashSet<Class, WTF::PtrHash<Class>, WTF::HashTraits<Class> > {} *x1; unsigned int x2; unsigned int x3; }*)_allowedArgumentClassesForReplyBlockOfSelector:(SEL)arg1;
+- (const struct Vector<WTF::HashSet<Class, WTF::PtrHash<Class>, WTF::HashTraits<Class> >, 0, WTF::CrashOnOverflow, 16> { struct HashSet<Class, WTF::PtrHash<Class>, WTF::HashTraits<Class> > {} *x1; unsigned int x2; unsigned int x3; }*)_allowedArgumentClassesForSelector:(SEL)arg1;
+- (id)_methodSignatureForReplyBlockOfSelector:(SEL)arg1;
 - (id)_methodSignatureForSelector:(SEL)arg1;
 - (id)classesForSelector:(SEL)arg1 argumentIndex:(unsigned int)arg2;
-- (id)description;
+- (id)classesForSelector:(SEL)arg1 argumentIndex:(unsigned int)arg2 ofReply:(BOOL)arg3;
+- (id)debugDescription;
 - (id)identifier;
 - (id)initWithProtocol:(id)arg1 identifier:(id)arg2;
 - (id)protocol;
 - (void)setClasses:(id)arg1 forSelector:(SEL)arg2 argumentIndex:(unsigned int)arg3;
+- (void)setClasses:(id)arg1 forSelector:(SEL)arg2 argumentIndex:(unsigned int)arg3 ofReply:(BOOL)arg4;
 
 @end

@@ -3,9 +3,9 @@
  */
 
 @interface CKDOperationInfoCache : CKSQLite {
-    NSObject<OS_dispatch_queue> *_cacheDelegateQueue;
-    NSObject<OS_dispatch_queue> *_cacheQueue;
-    NSMapTable *_delegatesByOperationID;
+    NSObject<OS_dispatch_queue> * _cacheDelegateQueue;
+    NSObject<OS_dispatch_queue> * _cacheQueue;
+    NSMapTable * _delegatesByOperationID;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *cacheDelegateQueue;

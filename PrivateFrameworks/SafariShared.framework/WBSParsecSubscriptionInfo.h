@@ -3,8 +3,8 @@
  */
 
 @interface WBSParsecSubscriptionInfo : NSObject {
-    NSDate *_expirationDate;
-    NSString *_type;
+    NSDate * _expirationDate;
+    NSString * _type;
 }
 
 @property (nonatomic, readonly) NSDate *expirationDate;

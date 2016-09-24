@@ -3,14 +3,14 @@
  */
 
 @interface ATXPCConnection : NSObject {
-    BOOL _assertionHeld;
-    NSObject<OS_xpc_object> *_conn;
-    id _context;
-    id /* block */ _disconnectHandler;
-    NSObject<OS_dispatch_queue> *_eventQueue;
-    id /* block */ _lockdownHandler;
-    id /* block */ _messageHandler;
-    NSMutableSet *_outstandingMessages;
+    BOOL  _assertionHeld;
+    NSObject<OS_xpc_object> * _conn;
+    id  _context;
+    id /* block */  _disconnectHandler;
+    NSObject<OS_dispatch_queue> * _eventQueue;
+    id /* block */  _lockdownHandler;
+    id /* block */  _messageHandler;
+    NSMutableSet * _outstandingMessages;
 }
 
 @property (nonatomic) BOOL assertionHeld;

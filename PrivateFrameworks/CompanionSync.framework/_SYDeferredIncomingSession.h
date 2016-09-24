@@ -3,9 +3,9 @@
  */
 
 @interface _SYDeferredIncomingSession : NSObject {
-    NSString *_identifier;
-    NSDictionary *_metadata;
-    NSURL *_resourceURL;
+    NSString * _identifier;
+    NSDictionary * _metadata;
+    NSURL * _resourceURL;
 }
 
 @property (nonatomic, copy) NSString *identifier;

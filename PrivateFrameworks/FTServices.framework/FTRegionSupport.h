@@ -3,8 +3,8 @@
  */
 
 @interface FTRegionSupport : NSObject {
-    FTMessageDelivery *_delivery;
-    NSArray *_regions;
+    FTMessageDelivery * _delivery;
+    NSArray * _regions;
 }
 
 @property (retain) FTMessageDelivery *_delivery;

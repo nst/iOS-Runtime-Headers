@@ -3,31 +3,32 @@
  */
 
 @interface MPDetailSlider : UISlider <MPDetailScrubControllerDelegate, MPDetailedScrubbing> {
-    BOOL _allowsScrubbing;
-    BOOL _autoscrubActive;
-    NSTimer *_autoscrubTimer;
-    double _availableDuration;
-    BOOL _canCommit;
-    double _currentTime;
-    UILabel *_currentTimeInverseLabel;
-    UILabel *_currentTimeLabel;
-    <MPDetailSliderDelegate> *_delegate;
-    float _detailScrubbingVerticalRange;
-    UIView *_downloadingTrackOverlay;
-    double _duration;
-    UIImageView *_glowDetailScrubImageView;
-    BOOL _isTracking;
-    float _maxTrackWidth;
-    float _minTimeLabelWidth;
+    BOOL  _allowsScrubbing;
+    BOOL  _autoscrubActive;
+    NSTimer * _autoscrubTimer;
+    double  _availableDuration;
+    BOOL  _canCommit;
+    double  _currentTime;
+    UILabel * _currentTimeInverseLabel;
+    UILabel * _currentTimeLabel;
+    <MPDetailSliderDelegate> * _delegate;
+    double  _detailScrubbingVerticalRange;
+    UIView * _downloadingTrackOverlay;
+    double  _duration;
+    AVTimeFormatter * _formatter;
+    UIImageView * _glowDetailScrubImageView;
+    BOOL  _isTracking;
+    double  _maxTrackWidth;
+    double  _minTimeLabelWidth;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _previousLocationInView;
-    MPDetailScrubController *_scrubController;
-    int _style;
-    UIImageView *_thumbImageView;
-    int _timeLabelStyle;
-    float _trackInset;
+        double x; 
+        double y; 
+    }  _previousLocationInView;
+    MPDetailScrubController * _scrubController;
+    int  _style;
+    UIImageView * _thumbImageView;
+    int  _timeLabelStyle;
+    double  _trackInset;
 }
 
 @property (nonatomic) BOOL allowsDetailScrubbing;
@@ -37,11 +38,11 @@
 @property (nonatomic) <MPDetailSliderDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) BOOL detailScrubbingAvailableForCurrentDuration;
-@property (nonatomic) float detailScrubbingVerticalRange;
+@property (nonatomic) double detailScrubbingVerticalRange;
 @property (nonatomic) double duration;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSString *localizedScrubSpeedText;
-@property (nonatomic) float minTimeLabelWidth;
+@property (nonatomic) double minTimeLabelWidth;
 @property (readonly) Class superclass;
 @property (nonatomic) int timeLabelStyle;
 
@@ -57,8 +58,8 @@
 - (void)_setupControlsForStyle;
 - (id)_stringForCurrentTime:(double)arg1;
 - (id)_stringForInverseCurrentTime:(double)arg1;
-- (id)_stringForTime:(double)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_thumbHitEdgeInsets;
+- (id)_stringForTime:(double)arg1 elapsed:(BOOL)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_thumbHitEdgeInsets;
 - (void)_updateForAvailableDuraton;
 - (void)_updateTimeDisplayForTime:(double)arg1;
 - (void)_updateTimeDisplayForTime:(double)arg1 force:(BOOL)arg2;
@@ -80,9 +81,9 @@
 - (float)detailScrubbingVerticalRange;
 - (double)duration;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2 maxTrackWidth:(float)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(int)arg2 maxTrackWidth:(float)arg3;
 - (BOOL)isTracking;
 - (void)layoutSubviews;
 - (id)localizedScrubSpeedText;
@@ -90,22 +91,22 @@
 - (void)setAllowsDetailScrubbing:(BOOL)arg1;
 - (void)setAllowsScrubbing:(BOOL)arg1;
 - (void)setAvailableDuration:(double)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDetailScrubbingVerticalRange:(float)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setMinTimeLabelWidth:(float)arg1;
 - (void)setTimeLabelStyle:(int)arg1;
 - (void)setValue:(float)arg1 animated:(BOOL)arg2;
 - (void)setValue:(float)arg1 duration:(double)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbHitRect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 trackRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 value:(float)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })thumbHitRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })thumbRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 trackRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 value:(float)arg3;
 - (id)timeLabelFontForStyle:(int)arg1;
 - (int)timeLabelStyle;
 - (id)timeLabelTextColorForStyle:(int)arg1;
 - (void)tintColorDidChange;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })trackRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })trackRectForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)viewForFirstBaselineLayout;
 - (id)viewForLastBaselineLayout;
 

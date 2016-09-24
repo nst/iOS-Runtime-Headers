@@ -3,9 +3,9 @@
  */
 
 @interface CAMPriorityNotificationCenter : NSObject {
-    NSNotificationCenter *__notificationCenter;
-    NSMutableDictionary *__observersByNameHighPriority;
-    NSMutableDictionary *__observersByNameNormalPriority;
+    NSNotificationCenter * __notificationCenter;
+    NSMutableDictionary * __observersByNameHighPriority;
+    NSMutableDictionary * __observersByNameNormalPriority;
 }
 
 @property (nonatomic, readonly, retain) NSNotificationCenter *_notificationCenter;

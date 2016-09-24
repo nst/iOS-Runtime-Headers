@@ -3,46 +3,46 @@
  */
 
 @interface CRKDevice : NSObject <NSCopying, NSSecureCoding> {
-    NSDictionary *_activeAirPlayRoute;
-    BOOL _appLocked;
-    NSArray *_availableAirPlayRoutes;
-    unsigned long long _availableBytes;
-    float _batteryLevel;
-    NSString *_buildVersion;
-    int _chargingState;
-    int _deviceOrientation;
-    BOOL _ephemeralMultiUser;
-    NSString *_identifier;
-    NSArray *_installedApplications;
-    int _interfaceOrientation;
-    int _lockState;
-    int _loginState;
-    NSString *_managementLockPasscode;
-    NSString *_model;
-    NSString *_name;
-    BOOL _orientationLocked;
-    BOOL _passcodeEnabled;
-    int _platform;
-    NSString *_primaryOpenApplication;
-    int _screenState;
-    NSString *_secondaryOpenApplication;
-    NSString *_serialNumber;
-    BOOL _supervised;
-    NSString *_systemName;
-    NSString *_systemVersion;
-    NSString *_userDisplayName;
-    NSString *_userFamilyName;
-    NSString *_userGivenName;
-    NSString *_userIdentifier;
-    NSString *_userImageURL;
-    float _volume;
+    NSDictionary * _activeAirPlayRoute;
+    BOOL  _appLocked;
+    NSArray * _availableAirPlayRoutes;
+    unsigned int  _availableBytes;
+    double  _batteryLevel;
+    NSString * _buildVersion;
+    int  _chargingState;
+    int  _deviceOrientation;
+    BOOL  _ephemeralMultiUser;
+    NSString * _identifier;
+    NSArray * _installedApplications;
+    int  _interfaceOrientation;
+    int  _lockState;
+    int  _loginState;
+    NSString * _managementLockPasscode;
+    NSString * _model;
+    NSString * _name;
+    BOOL  _orientationLocked;
+    BOOL  _passcodeEnabled;
+    int  _platform;
+    NSString * _primaryOpenApplication;
+    int  _screenState;
+    NSString * _secondaryOpenApplication;
+    NSString * _serialNumber;
+    BOOL  _supervised;
+    NSString * _systemName;
+    NSString * _systemVersion;
+    NSString * _userDisplayName;
+    NSString * _userFamilyName;
+    NSString * _userGivenName;
+    NSString * _userIdentifier;
+    NSString * _userImageURL;
+    double  _volume;
 }
 
 @property (nonatomic, copy) NSDictionary *activeAirPlayRoute;
 @property (getter=isAppLocked, nonatomic) BOOL appLocked;
 @property (nonatomic, copy) NSArray *availableAirPlayRoutes;
-@property (nonatomic) unsigned long long availableBytes;
-@property (nonatomic) float batteryLevel;
+@property (nonatomic) unsigned int availableBytes;
+@property (nonatomic) double batteryLevel;
 @property (nonatomic, copy) NSString *buildVersion;
 @property (nonatomic) int chargingState;
 @property (nonatomic) int deviceOrientation;
@@ -70,7 +70,7 @@
 @property (nonatomic, copy) NSString *userGivenName;
 @property (nonatomic, copy) NSString *userIdentifier;
 @property (nonatomic, copy) NSString *userImageURL;
-@property (nonatomic) float volume;
+@property (nonatomic) double volume;
 
 + (id)allPropertyKeys;
 + (BOOL)supportsSecureCoding;
@@ -78,7 +78,7 @@
 - (void).cxx_destruct;
 - (id)activeAirPlayRoute;
 - (id)availableAirPlayRoutes;
-- (unsigned long long)availableBytes;
+- (unsigned int)availableBytes;
 - (float)batteryLevel;
 - (id)buildVersion;
 - (int)chargingState;
@@ -112,7 +112,7 @@
 - (void)setActiveAirPlayRoute:(id)arg1;
 - (void)setAppLocked:(BOOL)arg1;
 - (void)setAvailableAirPlayRoutes:(id)arg1;
-- (void)setAvailableBytes:(unsigned long long)arg1;
+- (void)setAvailableBytes:(unsigned int)arg1;
 - (void)setBatteryLevel:(float)arg1;
 - (void)setBuildVersion:(id)arg1;
 - (void)setChargingState:(int)arg1;

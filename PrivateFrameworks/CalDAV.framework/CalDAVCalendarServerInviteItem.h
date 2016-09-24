@@ -3,7 +3,7 @@
  */
 
 @interface CalDAVCalendarServerInviteItem : CoreDAVItem {
-    NSMutableSet *_users;
+    NSMutableSet * _users;
 }
 
 @property (nonatomic, retain) NSMutableSet *users;

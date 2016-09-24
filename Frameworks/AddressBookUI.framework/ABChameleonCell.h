@@ -3,9 +3,9 @@
  */
 
 @interface ABChameleonCell : UITableViewCell {
-    int _abCellStyle;
-    BOOL _hasConfiguredBackgroundViews;
-    <ABStyleProvider> *_styleProvider;
+    int  _abCellStyle;
+    BOOL  _hasConfiguredBackgroundViews;
+    <ABStyleProvider> * _styleProvider;
 }
 
 @property (nonatomic) int abCellStyle;

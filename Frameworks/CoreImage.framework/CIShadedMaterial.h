@@ -3,9 +3,9 @@
  */
 
 @interface CIShadedMaterial : CIFilter {
-    CIImage *inputImage;
-    NSNumber *inputScale;
-    CIImage *inputShadingImage;
+    CIImage * inputImage;
+    NSNumber * inputScale;
+    CIImage * inputShadingImage;
 }
 
 + (id)customAttributes;

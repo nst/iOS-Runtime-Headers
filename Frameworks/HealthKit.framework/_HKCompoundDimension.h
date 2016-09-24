@@ -3,7 +3,7 @@
  */
 
 @interface _HKCompoundDimension : _HKDimension {
-    _HKFactorization *_baseDimensions;
+    _HKFactorization * _baseDimensions;
 }
 
 + (id)dimensionWithBaseDimensions:(id)arg1;

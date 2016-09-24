@@ -3,20 +3,20 @@
  */
 
 @interface MFSQLiteConnectionPool : NSObject {
-    NSObject<OS_dispatch_semaphore> *_backgroundReaderSemaphore;
-    int _backgroundReadersWaiting;
-    NSMutableSet *_cache;
-    unsigned int _cacheGeneration;
-    NSLock *_cacheLock;
-    unsigned int _cacheSize;
-    NSLock *_checkoutLock;
-    struct __CFDictionary { } *_checkoutMap;
-    <MFSQLiteConnectionPoolDelegate> *_delegate;
-    unsigned int _maxConcurrentBackgroundReaders;
-    unsigned int _maxConcurrentWriters;
-    NSObject<OS_dispatch_source> *_terminationTimer;
-    NSObject<OS_dispatch_semaphore> *_writerSemaphore;
-    int _writersWaiting;
+    NSObject<OS_dispatch_semaphore> * _backgroundReaderSemaphore;
+    int  _backgroundReadersWaiting;
+    NSMutableSet * _cache;
+    unsigned int  _cacheGeneration;
+    NSLock * _cacheLock;
+    unsigned int  _cacheSize;
+    NSLock * _checkoutLock;
+    struct __CFDictionary { } * _checkoutMap;
+    <MFSQLiteConnectionPoolDelegate> * _delegate;
+    unsigned int  _maxConcurrentBackgroundReaders;
+    unsigned int  _maxConcurrentWriters;
+    NSObject<OS_dispatch_source> * _terminationTimer;
+    NSObject<OS_dispatch_semaphore> * _writerSemaphore;
+    int  _writersWaiting;
 }
 
 @property (readonly) unsigned int backgroundReadersWaiting;

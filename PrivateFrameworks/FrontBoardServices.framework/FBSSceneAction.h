@@ -3,8 +3,8 @@
  */
 
 @interface FBSSceneAction : BSAction {
-    FBSSerialQueue *_callOutQueue;
-    FBSScene *_scene;
+    FBSSerialQueue * _callOutQueue;
+    FBSScene * _scene;
 }
 
 @property (nonatomic, retain) FBSSerialQueue *callOutQueue;

@@ -2,22 +2,25 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@interface BRCDataOrDocsScopeGatherer : BRCNotificationGatherer {
-    BRCItemID *_gatheredChildrenItemID;
-    NSMutableArray *_gatheringContainers;
-    NSString *_gatheringNamePrefix;
-    unsigned long long _gatheringRankCur;
-    unsigned long long _gatheringRankMax;
+@interface BRCDataOrDocsScopeGatherer : NSObject {
+    id /* block */  _gatherReply;
+    BRCItemID * _gatheredChildrenItemID;
+    NSMutableArray * _gatheringAppLibraries;
+    NSString * _gatheringNamePrefix;
+    unsigned int  _gatheringRankCur;
+    unsigned int  _gatheringRankMax;
+    BRCNotificationPipe * _pipe;
+    BRCAccountSession * _session;
 }
 
 @property (nonatomic, retain) BRCItemID *gatheredChildrenItemID;
 
 - (void).cxx_destruct;
-- (id)_gatheringDescendantOfContainerWithID:(id)arg1;
-- (id)_gatheringNotDescendantOfContainerWithID:(id)arg1;
-- (BOOL)continueGatheringWithBatchSize:(int)arg1;
+- (void)done;
+- (void)gatherWithBatchSize:(int)arg1 completion:(id /* block */)arg2;
 - (id)gatheredChildrenItemID;
-- (id)initWithNotificationPipe:(id)arg1 containers:(id)arg2 reply:(id /* block */)arg3;
+- (id)initWithNotificationPipe:(id)arg1 appLibraries:(id)arg2 reply:(id /* block */)arg3;
+- (void)invalidate;
 - (void)setGatheredChildrenItemID:(id)arg1;
 
 @end

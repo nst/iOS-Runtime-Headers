@@ -3,8 +3,8 @@
  */
 
 @interface MPPSearchStringPredicate : PBCodable <NSCopying> {
-    NSMutableArray *_properties;
-    NSString *_searchString;
+    NSMutableArray * _properties;
+    NSString * _searchString;
 }
 
 @property (nonatomic, readonly) BOOL hasSearchString;

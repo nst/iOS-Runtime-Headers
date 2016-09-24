@@ -3,8 +3,8 @@
  */
 
 @interface KNBuildChunkIdentifier : NSObject <NSCopying> {
-    NSUUID *_buildUUID;
-    int _chunkID;
+    NSUUID * _buildUUID;
+    int  _chunkID;
 }
 
 @property (nonatomic, readonly) NSUUID *buildUUID;

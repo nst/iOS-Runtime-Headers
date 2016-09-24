@@ -3,8 +3,8 @@
  */
 
 @interface _HDContentProtectionObserverWrapper : NSObject {
-    <HDContentProtectionObserver> *_observer;
-    NSObject<OS_dispatch_queue> *_queue;
+    <HDContentProtectionObserver> * _observer;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, readonly) <HDContentProtectionObserver> *observer;

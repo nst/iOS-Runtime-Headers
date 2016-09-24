@@ -7,4 +7,8 @@
 
 - (void)audioPlayerCurrentTimeDidChange:(CKAudioPlayer *)arg1;
 
+@optional
+
+- (void)audioPlayerDidPrepareAudioToPlay:(CKAudioPlayer *)arg1 successfully:(BOOL)arg2;
+
 @end

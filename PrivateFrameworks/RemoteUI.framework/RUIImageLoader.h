@@ -3,25 +3,25 @@
  */
 
 @interface RUIImageLoader : NSObject {
-    NSLock *_cacheLock;
-    NSMutableDictionary *_imageCache;
-    NSMutableArray *_imageCacheLRU;
-    NSMutableDictionary *_loadCompletions;
-    NSMutableArray *_loadQueue;
-    NSTimer *_loadStatusNotificationTimer;
-    struct __CFRunLoop { } *_loaderRunLoop;
-    struct __CFRunLoopSource { } *_loaderSource;
-    NSMutableSet *_loadsInProgress;
-    NSNotificationCenter *_notificationCenter;
-    NSLock *_queueLock;
+    NSLock * _cacheLock;
+    NSMutableDictionary * _imageCache;
+    NSMutableArray * _imageCacheLRU;
+    NSMutableDictionary * _loadCompletions;
+    NSMutableArray * _loadQueue;
+    NSTimer * _loadStatusNotificationTimer;
+    struct __CFRunLoop { } * _loaderRunLoop;
+    struct __CFRunLoopSource { } * _loaderSource;
+    NSMutableSet * _loadsInProgress;
+    NSNotificationCenter * _notificationCenter;
+    NSLock * _queueLock;
     struct _opaque_pthread_cond_t { 
         long __sig; 
         BOOL __opaque[24]; 
-    } _startupCondition;
+    }  _startupCondition;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _startupLock;
+    }  _startupLock;
 }
 
 + (id)sharedImageLoader;

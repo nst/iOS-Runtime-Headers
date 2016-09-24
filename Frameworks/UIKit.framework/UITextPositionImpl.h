@@ -3,7 +3,7 @@
  */
 
 @interface UITextPositionImpl : UITextPosition {
-    WebVisiblePosition *_webVisiblePosition;
+    WebVisiblePosition * _webVisiblePosition;
 }
 
 @property (nonatomic, retain) WebVisiblePosition *webVisiblePosition;

@@ -3,24 +3,29 @@
  */
 
 @interface _UIPreviewTransitionController : UIPercentDrivenInteractiveTransition <UIForceInteractionController, UIInteractionProgressObserver, UIViewControllerAnimatedTransitioning> {
-    NSMutableDictionary *_animationsByPresentationPhase;
-    UIInteractionProgress *_interactionProgress;
-    unsigned int _targetPresentationPhase;
-    <UIViewControllerContextTransitioning> *_transitionContext;
-    NSDictionary *_viewsParticipatingInCommitTransition;
+    NSMutableDictionary * _animationsByPresentationPhase;
+    _UIFeedbackStatesBehavior * _feedbackBehavior;
+    UIInteractionProgress * _interactionProgress;
+    unsigned int  _targetPresentationPhase;
+    <UIViewControllerContextTransitioning> * _transitionContext;
+    NSDictionary * _viewsParticipatingInCommitTransition;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *animationsByPresentationPhase;
+@property (nonatomic, readonly) int completionCurve;
+@property (nonatomic, readonly) double completionSpeed;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) _UIFeedbackStatesBehavior *feedbackBehavior;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIInteractionProgress *interactionProgress;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned int targetPresentationPhase;
 @property (nonatomic) <UIViewControllerContextTransitioning> *transitionContext;
 @property (nonatomic, retain) NSDictionary *viewsParticipatingInCommitTransition;
+@property (nonatomic, readonly) BOOL wantsInteractiveStart;
 
-+ (void)performCommitTransitionWithDelegate:(id)arg1 forViewController:(id)arg2 previewViewController:(id)arg3 previewInteractionController:(id)arg4 completion:(id /* block */)arg5;
++ (id)performCommitTransitionWithDelegate:(id)arg1 forViewController:(id)arg2 previewViewController:(id)arg3 previewInteractionController:(id)arg4 completion:(id /* block */)arg5;
 
 - (void).cxx_destruct;
 - (void)_animateCommitTransition:(id)arg1;
@@ -33,6 +38,7 @@
 - (void)animationEnded:(BOOL)arg1;
 - (id)animationsByPresentationPhase;
 - (void)cancelInteractiveTransition;
+- (id)feedbackBehavior;
 - (void)finishInteractiveTransition;
 - (id)init;
 - (id)initWithInteractionProgress:(id)arg1 targetPresentationPhase:(unsigned int)arg2;
@@ -41,6 +47,7 @@
 - (void)interactionProgressDidUpdate:(id)arg1;
 - (void)setAnimations:(id /* block */)arg1 completion:(id /* block */)arg2 forPresentationPhase:(unsigned int)arg3;
 - (void)setAnimationsByPresentationPhase:(id)arg1;
+- (void)setFeedbackBehavior:(id)arg1;
 - (void)setInteractionProgress:(id)arg1;
 - (void)setTargetPresentationPhase:(unsigned int)arg1;
 - (void)setTransitionContext:(id)arg1;

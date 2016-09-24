@@ -5,11 +5,11 @@
 @interface WKDateTimePicker : NSObject <WKFormControl> {
     struct RetainPtr<UIDatePicker> { 
         void *m_ptr; 
-    } _datePicker;
-    NSString *_formatString;
-    BOOL _isTimeInput;
-    BOOL _shouldRemoveTimeZoneInformation;
-    WKContentView *_view;
+    }  _datePicker;
+    NSString * _formatString;
+    BOOL  _isTimeInput;
+    BOOL  _shouldRemoveTimeZoneInformation;
+    WKContentView * _view;
 }
 
 - (id).cxx_construct;

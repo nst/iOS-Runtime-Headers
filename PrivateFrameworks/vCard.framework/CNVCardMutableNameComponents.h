@@ -6,6 +6,7 @@
 
 @property (copy) NSString *companyName;
 @property (copy) NSString *firstName;
+@property (copy) NSString *formattedName;
 @property BOOL isCompany;
 @property (copy) NSString *lastName;
 @property (copy) NSString *middleName;
@@ -14,6 +15,7 @@
 
 - (void)setCompanyName:(id)arg1;
 - (void)setFirstName:(id)arg1;
+- (void)setFormattedName:(id)arg1;
 - (void)setIsCompany:(BOOL)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setMiddleName:(id)arg1;

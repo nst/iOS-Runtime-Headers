@@ -3,11 +3,11 @@
  */
 
 @interface MSConnection : NSObject {
-    NSXPCConnection *_center;
-    NSXPCConnection *_noWakeCenter;
-    NSMutableDictionary *_serverSideConfig;
-    int _serverSideConfigNotificationToken;
-    NSObject<OS_dispatch_queue> *_serverSideConfigQueue;
+    NSXPCConnection * _center;
+    NSXPCConnection * _noWakeCenter;
+    NSMutableDictionary * _serverSideConfig;
+    int  _serverSideConfigNotificationToken;
+    NSObject<OS_dispatch_queue> * _serverSideConfigQueue;
 }
 
 + (id)sharedConnection;

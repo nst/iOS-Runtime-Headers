@@ -3,9 +3,9 @@
  */
 
 @interface CPLIDMapping : NSObject {
-    NSString *_cloudIdentifier;
-    BOOL _final;
-    NSString *_localIdentifier;
+    NSString * _cloudIdentifier;
+    BOOL  _final;
+    NSString * _localIdentifier;
 }
 
 @property (nonatomic, readonly) NSString *cloudIdentifier;

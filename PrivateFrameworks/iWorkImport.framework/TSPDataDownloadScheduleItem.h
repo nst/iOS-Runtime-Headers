@@ -3,7 +3,7 @@
  */
 
 @interface TSPDataDownloadScheduleItem : NSObject {
-    TSPData *_data;
+    TSPData * _data;
 }
 
 @property (nonatomic) TSPData *data;

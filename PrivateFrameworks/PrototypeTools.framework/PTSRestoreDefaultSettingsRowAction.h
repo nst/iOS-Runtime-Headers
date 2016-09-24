@@ -3,7 +3,7 @@
  */
 
 @interface PTSRestoreDefaultSettingsRowAction : PTSRowAction {
-    NSString *_settingsKeyPath;
+    NSString * _settingsKeyPath;
 }
 
 @property (nonatomic, copy) NSString *settingsKeyPath;

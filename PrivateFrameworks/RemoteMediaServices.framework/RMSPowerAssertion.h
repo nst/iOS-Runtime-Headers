@@ -3,7 +3,7 @@
  */
 
 @interface RMSPowerAssertion : NSObject {
-    unsigned int _assertionID;
+    unsigned int  _assertionID;
 }
 
 - (void)dealloc;

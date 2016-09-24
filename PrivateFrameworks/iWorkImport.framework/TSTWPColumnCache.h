@@ -4,6 +4,6 @@
 
 @interface TSTWPColumnCache : TSUConcurrentCache
 
-- (id)description;
+- (void)invalidateObjectsWithKeysInCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 
 @end

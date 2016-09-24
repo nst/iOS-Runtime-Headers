@@ -3,7 +3,7 @@
  */
 
 @interface CMMapper : NSObject <CMMapperRootArchiver> {
-    CMMapper *mParent;
+    CMMapper * mParent;
 }
 
 @property (readonly) CMMapper *parent;
@@ -14,6 +14,7 @@
 - (void)addStyleUsingGlobalCacheTo:(id)arg1 style:(id)arg2 embedStyle:(BOOL)arg3;
 - (id)archiver;
 - (void)finishMappingWithState:(id)arg1;
+- (id)init;
 - (id)initWithParent:(id)arg1;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (void)mapElement:(id)arg1 atIndex:(unsigned int)arg2 withState:(id)arg3 isLastElement:(BOOL)arg4;

@@ -3,8 +3,8 @@
  */
 
 @interface FPDaemonConnection : NSObject {
-    NSObject<OS_dispatch_queue> *_connectionQueue;
-    NSXPCConnection<FPDaemon> *_connectionQueueConnection;
+    NSObject<OS_dispatch_queue> * _connectionQueue;
+    NSXPCConnection<FPDaemon> * _connectionQueueConnection;
 }
 
 @property (nonatomic, readonly) NSXPCConnection<FPDaemon> *connection;

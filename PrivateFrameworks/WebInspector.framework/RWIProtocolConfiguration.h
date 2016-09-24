@@ -3,18 +3,18 @@
  */
 
 @interface RWIProtocolConfiguration : NSObject {
-    RWIProtocolConsoleDomainEventDispatcher *_consoleEventDispatcher;
-    struct AugmentableInspectorController { int (**x1)(); } *_controller;
-    RWIProtocolCSSDomainEventDispatcher *_cssEventDispatcher;
-    <RWIProtocolCSSDomainHandler> *_cssHandler;
-    RWIProtocolDOMDomainEventDispatcher *_domEventDispatcher;
-    <RWIProtocolDOMDomainHandler> *_domHandler;
-    RWIProtocolDOMStorageDomainEventDispatcher *_domStorageEventDispatcher;
-    <RWIProtocolDOMStorageDomainHandler> *_domStorageHandler;
-    RWIProtocolNetworkDomainEventDispatcher *_networkEventDispatcher;
-    <RWIProtocolNetworkDomainHandler> *_networkHandler;
-    RWIProtocolPageDomainEventDispatcher *_pageEventDispatcher;
-    <RWIProtocolPageDomainHandler> *_pageHandler;
+    RWIProtocolConsoleDomainEventDispatcher * _consoleEventDispatcher;
+    struct AugmentableInspectorController { int (**x1)(); } * _controller;
+    RWIProtocolCSSDomainEventDispatcher * _cssEventDispatcher;
+    <RWIProtocolCSSDomainHandler> * _cssHandler;
+    RWIProtocolDOMDomainEventDispatcher * _domEventDispatcher;
+    <RWIProtocolDOMDomainHandler> * _domHandler;
+    RWIProtocolDOMStorageDomainEventDispatcher * _domStorageEventDispatcher;
+    <RWIProtocolDOMStorageDomainHandler> * _domStorageHandler;
+    RWIProtocolNetworkDomainEventDispatcher * _networkEventDispatcher;
+    <RWIProtocolNetworkDomainHandler> * _networkHandler;
+    RWIProtocolPageDomainEventDispatcher * _pageEventDispatcher;
+    <RWIProtocolPageDomainHandler> * _pageHandler;
 }
 
 @property (nonatomic, readonly) RWIProtocolConsoleDomainEventDispatcher *consoleEventDispatcher;

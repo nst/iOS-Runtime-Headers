@@ -3,7 +3,7 @@
  */
 
 @interface EDReferenceCollection : EDCollection {
-    bool mCoalesce;
+    bool  mCoalesce;
 }
 
 + (id)coalesceCollection;

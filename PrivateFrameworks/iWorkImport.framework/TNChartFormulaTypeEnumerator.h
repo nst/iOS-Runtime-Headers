@@ -3,9 +3,9 @@
  */
 
 @interface TNChartFormulaTypeEnumerator : NSObject {
-    unsigned int _count;
-    unsigned int _index;
-    unsigned int **_keys;
+    unsigned int  _count;
+    unsigned int  _index;
+    unsigned int ** _keys;
 }
 
 - (void)dealloc;

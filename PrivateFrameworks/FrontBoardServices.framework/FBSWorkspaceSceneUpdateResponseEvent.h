@@ -3,7 +3,7 @@
  */
 
 @interface FBSWorkspaceSceneUpdateResponseEvent : FBSWorkspaceSceneEvent {
-    FBSWorkspaceSceneUpdateResponse *_response;
+    FBSWorkspaceSceneUpdateResponse * _response;
 }
 
 @property (nonatomic, retain) FBSWorkspaceSceneUpdateResponse *response;

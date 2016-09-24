@@ -3,20 +3,20 @@
  */
 
 @interface MSCLFacebookLoadImageOperation : NSOperation {
-    NSString *_accessToken;
-    SKUIImageDataConsumer *_dataConsumer;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
+    NSString * _accessToken;
+    SKUIImageDataConsumer * _dataConsumer;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _imagePixelSize;
-    NSString *_objectIdentifier;
-    id /* block */ _outputBlock;
+        double width; 
+        double height; 
+    }  _imagePixelSize;
+    NSString * _objectIdentifier;
+    id /* block */  _outputBlock;
 }
 
 @property (copy) NSString *accessToken;
 @property (retain) SKUIImageDataConsumer *dataConsumer;
-@property struct CGSize { float x1; float x2; } imagePixelSize;
+@property struct CGSize { double x1; double x2; } imagePixelSize;
 @property (copy) NSString *objectIdentifier;
 @property (copy) id /* block */ outputBlock;
 
@@ -25,14 +25,14 @@
 - (id)_newFacebookRequest;
 - (id)accessToken;
 - (id)dataConsumer;
-- (struct CGSize { float x1; float x2; })imagePixelSize;
+- (struct CGSize { double x1; double x2; })imagePixelSize;
 - (id)init;
 - (void)main;
 - (id)objectIdentifier;
 - (id /* block */)outputBlock;
 - (void)setAccessToken:(id)arg1;
 - (void)setDataConsumer:(id)arg1;
-- (void)setImagePixelSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setImagePixelSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setObjectIdentifier:(id)arg1;
 - (void)setOutputBlock:(id /* block */)arg1;
 

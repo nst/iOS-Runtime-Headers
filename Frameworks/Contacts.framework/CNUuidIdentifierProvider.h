@@ -3,7 +3,7 @@
  */
 
 @interface CNUuidIdentifierProvider : NSObject <CNIdentifierProvider> {
-    NSString *_suffix;
+    NSString * _suffix;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,7 +3,7 @@
  */
 
 @interface KNPdfExporter : KNRenderingExporter <TSKEncryptedDocumentExporter> {
-    NSDictionary *mOptions;
+    NSDictionary * mOptions;
 }
 
 @property (readonly, copy) NSString *debugDescription;

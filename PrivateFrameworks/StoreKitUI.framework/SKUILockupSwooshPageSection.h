@@ -3,11 +3,11 @@
  */
 
 @interface SKUILockupSwooshPageSection : SKUIStorePageSection <SKUIMissingItemDelegate, SKUIProductPageOverlayDelegate, SKUISwooshViewControllerDelegate> {
-    SKUILockupSwooshArtworkLoader *_artworkLoader;
-    SKUIMissingItemLoader *_missingItemLoader;
-    SKUIProductPageOverlayController *_overlayController;
-    int _overlaySourceIndex;
-    SKUILockupSwooshViewController *_swooshViewController;
+    SKUILockupSwooshArtworkLoader * _artworkLoader;
+    SKUIMissingItemLoader * _missingItemLoader;
+    SKUIProductPageOverlayController * _overlayController;
+    int  _overlaySourceIndex;
+    SKUILockupSwooshViewController * _swooshViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -26,7 +26,7 @@
 - (id)_swooshViewController;
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
 - (id)cellForIndexPath:(id)arg1;
-- (struct CGSize { float x1; float x2; })cellSizeForIndexPath:(id)arg1;
+- (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
 - (void)collectionViewDidEndDisplayingCellForItemAtIndexPath:(id)arg1;
 - (void)dealloc;
 - (id)initWithPageComponent:(id)arg1;

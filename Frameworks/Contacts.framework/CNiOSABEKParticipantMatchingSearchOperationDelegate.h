@@ -2,8 +2,8 @@
    Image: /System/Library/Frameworks/Contacts.framework/Contacts
  */
 
-@interface CNiOSABEKParticipantMatchingSearchOperationDelegate : NSObject <ABSearchOperationDelegate> {
-    id /* block */ _completionHandler;
+@interface CNiOSABEKParticipantMatchingSearchOperationDelegate : NSObject <ABPredicateDelegate> {
+    id /* block */  _completionHandler;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;
@@ -12,10 +12,10 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (void)_completeWithRecord:(void*)arg1;
 - (id /* block */)completionHandler;
 - (void)dealloc;
-- (void)searchOperation:(id)arg1 didFindMatches:(id)arg2 moreComing:(BOOL)arg3;
+- (BOOL)predicateShouldContinue:(id)arg1;
+- (BOOL)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2;
 - (void)setCompletionHandler:(id /* block */)arg1;
 
 @end

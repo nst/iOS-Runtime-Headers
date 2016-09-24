@@ -13,6 +13,7 @@
 @property (nonatomic, retain) NSURL *standardOutputURL;
 @property (nonatomic) BOOL waitForDebugger;
 @property (nonatomic) double watchdogExtension;
+@property (nonatomic, retain) <FBProcessWatchdogProviding> *watchdogProvider;
 @property (nonatomic) double watchdogScaleFactor;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

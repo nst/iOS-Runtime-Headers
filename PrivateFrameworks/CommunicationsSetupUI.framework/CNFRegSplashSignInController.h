@@ -3,8 +3,8 @@
  */
 
 @interface CNFRegSplashSignInController : CNFRegSignInController <AKTapToSignInViewControllerDelegate> {
-    AKTapToSignInViewController *_akSignInVC;
-    CNFRegSigninLearnMoreView *_signInView;
+    AKTapToSignInViewController * _akSignInVC;
+    CNFRegSigninLearnMoreView * _signInView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

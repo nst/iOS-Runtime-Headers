@@ -5,16 +5,16 @@
 @interface WKImagePreviewViewController : UIViewController {
     struct RetainPtr<_WKActivatedElementInfo> { 
         void *m_ptr; 
-    } _activatedElementInfo;
+    }  _activatedElementInfo;
     struct RetainPtr<CGImage *> { 
         void *m_ptr; 
-    } _image;
+    }  _image;
     struct RetainPtr<NSArray> { 
         void *m_ptr; 
-    } _imageActions;
+    }  _imageActions;
     struct RetainPtr<UIImageView> { 
         void *m_ptr; 
-    } _imageView;
+    }  _imageView;
 }
 
 - (id).cxx_construct;

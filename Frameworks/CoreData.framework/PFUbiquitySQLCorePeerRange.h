@@ -3,12 +3,12 @@
  */
 
 @interface PFUbiquitySQLCorePeerRange : NSObject {
-    NSString *_entityName;
-    NSString *_owningPeerID;
-    NSNumber *_peerEnd;
-    NSNumber *_peerStart;
-    NSNumber *_rangeEnd;
-    NSNumber *_rangeStart;
+    NSString * _entityName;
+    NSString * _owningPeerID;
+    NSNumber * _peerEnd;
+    NSNumber * _peerStart;
+    NSNumber * _rangeEnd;
+    NSNumber * _rangeStart;
 }
 
 @property (nonatomic, readonly) NSString *entityName;

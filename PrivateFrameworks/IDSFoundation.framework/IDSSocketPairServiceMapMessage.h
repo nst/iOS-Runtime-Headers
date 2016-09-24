@@ -3,9 +3,9 @@
  */
 
 @interface IDSSocketPairServiceMapMessage : IDSSocketPairMessage {
-    unsigned short _mappedStreamID;
-    unsigned char _reason;
-    NSString *_serviceName;
+    unsigned short  _mappedStreamID;
+    unsigned char  _reason;
+    NSString * _serviceName;
 }
 
 @property (nonatomic, readonly) unsigned short mappedStreamID;

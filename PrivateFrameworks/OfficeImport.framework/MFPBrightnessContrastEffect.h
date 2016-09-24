@@ -3,8 +3,8 @@
  */
 
 @interface MFPBrightnessContrastEffect : MFPEffect {
-    int mBrightness;
-    int mContrast;
+    int  mBrightness;
+    int  mContrast;
 }
 
 + (id)GUID;

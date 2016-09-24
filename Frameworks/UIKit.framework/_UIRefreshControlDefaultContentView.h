@@ -2,22 +2,26 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIRefreshControlDefaultContentView : _UIRefreshControlContentView {
-    BOOL _animationsAreValid;
-    BOOL _areAnimationsValid;
-    UIImageView *_arrow;
-    UIImageView *_imageView;
-    NSMutableDictionary *_snappingArrowFromValues;
-    NSMutableDictionary *_snappingImageFromValues;
-    NSMutableDictionary *_snappingTextFromValues;
-    UIActivityIndicatorView *_spinner;
-    UILabel *_textLabel;
+@interface _UIRefreshControlDefaultContentView : _UIRefreshControlContentView <CAAnimationDelegate> {
+    BOOL  _animationsAreValid;
+    BOOL  _areAnimationsValid;
+    UIImageView * _arrow;
+    UIImageView * _imageView;
+    NSMutableDictionary * _snappingArrowFromValues;
+    NSMutableDictionary * _snappingImageFromValues;
+    NSMutableDictionary * _snappingTextFromValues;
+    UIActivityIndicatorView * _spinner;
+    UILabel * _textLabel;
 }
 
 @property (nonatomic) BOOL areAnimationsValid;
 @property (nonatomic, readonly) UIImageView *arrow;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) UIImageView *imageView;
 @property (nonatomic, readonly) UIActivityIndicatorView *spinner;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) UILabel *textLabel;
 
 - (void).cxx_destruct;
@@ -40,7 +44,7 @@
 - (id)attributedTitle;
 - (void)didTransitionFromState:(int)arg1 toState:(int)arg2;
 - (id)imageView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (float)maximumSnappingHeight;
 - (float)minimumSnappingHeight;
@@ -48,7 +52,7 @@
 - (void)setAreAnimationsValid:(BOOL)arg1;
 - (void)setAttributedTitle:(id)arg1;
 - (void)setTintColor:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)spinner;
 - (int)style;
 - (id)textLabel;

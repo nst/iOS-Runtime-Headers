@@ -3,10 +3,10 @@
  */
 
 @interface SLYahooLoginTokenResponse : NSObject {
-    NSString *_body;
-    NSError *_error;
-    NSString *_loginToken;
-    int _statusCode;
+    NSString * _body;
+    NSError * _error;
+    NSString * _loginToken;
+    int  _statusCode;
 }
 
 @property (readonly) NSString *body;

@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@interface NSTextList : NSObject <NSCoding, NSCopying> {
-    unsigned int _listFlags;
-    void *_listSecondary;
-    NSString *_markerFormat;
-    int _startIndex;
+@interface NSTextList : NSObject <NSCoding, NSCopying, NSSecureCoding> {
+    unsigned int  _listFlags;
+    void * _listSecondary;
+    NSString * _markerFormat;
+    int  _startIndex;
 }
 
 @property (readonly) unsigned int listOptions;
@@ -15,6 +15,7 @@
 
 + (id)_standardMarkerAttributesForAttributes:(id)arg1;
 + (void)initialize;
++ (BOOL)supportsSecureCoding;
 
 - (BOOL)_isOrdered;
 - (id)_markerAtIndex:(unsigned int)arg1 inText:(id)arg2;

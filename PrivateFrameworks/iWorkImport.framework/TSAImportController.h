@@ -3,12 +3,12 @@
  */
 
 @interface TSAImportController : NSObject <NSFilePresenter, TSADocumentRootDelegate, TSKImportExportDelegate, TSPObjectContextDelegate> {
-    NSMutableArray *_deferredWriters;
-    <TSAImportDelegate> *_delegate;
-    TSPObjectContext *_documentContext;
-    NSString *_documentType;
-    NSURL *_documentURL;
-    NSError *_error;
+    NSMutableArray * _deferredWriters;
+    <TSAImportDelegate> * _delegate;
+    TSPObjectContext * _documentContext;
+    NSString * _documentType;
+    NSError * _error;
+    NSURL * _fileURL;
     struct { 
         unsigned int success : 1; 
         unsigned int isPasswordProtected : 1; 
@@ -16,21 +16,22 @@
         unsigned int isImportCancelled : 1; 
         unsigned int preserveDocumentAfterImport : 1; 
         unsigned int shouldNotifyProgress : 1; 
-    } _flags;
-    NSMutableSet *_importWarnings;
-    <TSKImporter> *_importer;
-    NSObject<OS_dispatch_group> *_passphraseCompletionGroup;
-    NSOperationQueue *_presentedItemOperationQueue;
-    NSURL *_presentedItemURL;
-    TSUProgressContext *_progressContext;
-    NSString *_sourcePath;
-    TSUTemporaryDirectory *_temporaryDFFDirectory;
-    TSUTemporaryDirectory *_temporaryDirectory;
+    }  _flags;
+    NSMutableSet * _importWarnings;
+    <TSKImporter> * _importer;
+    NSObject<OS_dispatch_group> * _passphraseCompletionGroup;
+    NSOperationQueue * _presentedItemOperationQueue;
+    NSURL * _presentedItemURL;
+    TSUProgressContext * _progressContext;
+    NSString * _sourcePath;
+    TSUTemporaryDirectory * _temporaryDFFDirectory;
+    TSUTemporaryDirectory * _temporaryDirectory;
 }
 
+@property (nonatomic, readonly) NSDictionary *additionalDocumentPropertiesForWrite;
+@property (nonatomic, readonly) NSDictionary *additionalDocumentSupportPropertiesForWrite;
 @property (nonatomic, readonly) BOOL areNewExternalReferencesToDataAllowed;
 @property (nonatomic, readonly) NSUUID *baseUUIDForObjectUUID;
-@property (nonatomic, readonly) TSKCollaborationState *collaborationState;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) NSString *defaultDraftName;
 @property (nonatomic) <TSAImportDelegate> *delegate;
@@ -40,16 +41,16 @@
 @property (nonatomic, readonly) int documentTypeCategory;
 @property (nonatomic, readonly) NSError *error;
 @property (nonatomic, readonly) <NSFilePresenter> *filePresenter;
+@property (nonatomic, copy) NSURL *fileURL;
 @property (nonatomic, readonly) BOOL hasWarnings;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL ignoreDocumentSupport;
 @property (nonatomic, readonly) <TSKImporter> *importer;
-@property (nonatomic, readonly) BOOL importingDesignDemoDoc;
+@property (nonatomic, readonly) NSDictionary *incompatibleMediaContainersWithDataUnsupportedOnAllDevices;
+@property (nonatomic, readonly) NSDictionary *incompatibleMediaContainersWithDataUnsupportedOnThisDevice;
 @property (nonatomic, readonly) BOOL isBrowsingVersions;
 @property (nonatomic, readonly) BOOL isDocumentSupportTemporary;
 @property (nonatomic, readonly) BOOL isImportCancelled;
-@property (nonatomic, readonly) BOOL isInCollaborationMode;
-@property (nonatomic, readonly) BOOL isInReadOnlyMode;
 @property (nonatomic, readonly) BOOL isPasswordProtected;
 @property (nonatomic, readonly) NSString *name;
 @property (readonly, retain) NSOperationQueue *presentedItemOperationQueue;
@@ -68,10 +69,11 @@
 - (id)_prepareTemplate:(id)arg1;
 - (BOOL)_saveContextToTemporaryURL:(id)arg1 passphrase:(id)arg2 originalURL:(id)arg3 documentUUID:(id)arg4 error:(id*)arg5;
 - (void)_setPresentedItemURL:(id)arg1;
-- (void)addIncompatibleMovieInfo:(id)arg1 withCompatibilityLevel:(int)arg2;
+- (void)addIncompatibleMediaContainer:(id)arg1 incompatibleData:(id)arg2 compatibilityLevel:(int)arg3;
 - (void)addPersistenceWarnings:(id)arg1;
 - (void)addWarning:(id)arg1;
 - (id)additionalDocumentPropertiesForWrite;
+- (id)additionalDocumentSupportPropertiesForWrite;
 - (BOOL)areNewExternalReferencesToDataAllowed;
 - (BOOL)beginImport;
 - (void)beginImportAsync;
@@ -84,6 +86,7 @@
 - (id)documentContext;
 - (int)documentTypeCategory;
 - (id)error;
+- (id)fileURL;
 - (void)finishImportWithSuccess:(BOOL)arg1 error:(id)arg2;
 - (BOOL)hasWarnings;
 - (BOOL)ignoreDocumentSupport;
@@ -111,6 +114,7 @@
 - (void)removeWarning:(id)arg1;
 - (void)retrievePassphraseForEncryptedDocumentWithImporter:(id)arg1 completion:(id /* block */)arg2;
 - (void)setDelegate:(id)arg1;
+- (void)setFileURL:(id)arg1;
 - (void)setPreserveDocumentAfterImport:(BOOL)arg1;
 - (void)setProgressContext:(id)arg1;
 - (void)showProgressIfNeededForURL:(id)arg1;

@@ -3,10 +3,9 @@
  */
 
 @interface CNMutableContact : CNContact {
-    BOOL _hasChanges;
+    BOOL  _hasChanges;
 }
 
-@property (nonatomic, copy) NSString *accountIdentifier;
 @property (nonatomic, copy) NSDictionary *activityAlerts;
 @property (nonatomic, copy) NSSet *availableKeys;
 @property (nonatomic, copy) NSDateComponents *birthday;
@@ -17,11 +16,9 @@
 @property (copy) NSString *companyName;
 @property (nonatomic, copy) NSArray *contactRelations;
 @property (nonatomic) int contactType;
-@property (nonatomic, copy) NSDate *creationDate;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cropRect;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } cropRect;
 @property (nonatomic, copy) NSArray *dates;
 @property (nonatomic, copy) NSString *departmentName;
-@property (nonatomic) int displayNameOrder;
 @property (nonatomic, copy) NSArray *emailAddresses;
 @property (nonatomic, copy) NSString *familyName;
 @property (copy) NSString *firstName;
@@ -48,24 +45,27 @@
 @property (nonatomic, copy) NSString *organizationName;
 @property (nonatomic, copy) NSArray *phoneNumbers;
 @property (nonatomic, copy) NSString *phonemeData;
+@property (nonatomic, copy) NSString *phoneticCompanyName;
 @property (nonatomic, copy) NSString *phoneticFamilyName;
 @property (copy) NSString *phoneticFirstName;
 @property (nonatomic, copy) NSString *phoneticGivenName;
 @property (copy) NSString *phoneticLastName;
 @property (nonatomic, copy) NSString *phoneticMiddleName;
+@property (nonatomic, copy) NSString *phoneticOrganizationName;
 @property (nonatomic, copy) NSArray *postalAddresses;
+@property (nonatomic, copy) NSString *preferredApplePersonaIdentifier;
 @property (getter=isPreferredForImage, nonatomic) BOOL preferredForImage;
 @property (getter=isPreferredForName, nonatomic) BOOL preferredForName;
+@property (nonatomic, copy) NSString *preferredLikenessSource;
 @property (nonatomic, copy) NSString *previousFamilyName;
 @property (nonatomic, copy) NSString *pronunciationFamilyName;
 @property (nonatomic, copy) NSString *pronunciationGivenName;
 @property (copy) NSArray *relatedNames;
+@property (nonatomic, copy) NSString *searchIndex;
 @property (nonatomic, copy) NSString *sectionForSortingByFamilyName;
 @property (nonatomic, copy) NSString *sectionForSortingByGivenName;
 @property (nonatomic, copy) CNContact *snapshot;
 @property (nonatomic, copy) NSArray *socialProfiles;
-@property (nonatomic, copy) NSString *sortingFamilyName;
-@property (nonatomic, copy) NSString *sortingGivenName;
 @property (nonatomic, copy) NSString *storeIdentifier;
 @property (nonatomic, copy) NSDictionary *storeInfo;
 @property (nonatomic, copy) CNActivityAlert *textAlert;
@@ -74,9 +74,10 @@
 
 // Image: /System/Library/Frameworks/Contacts.framework/Contacts
 
++ (id)imageDataDescriptions;
 + (id)unifyContacts:(id)arg1;
 
-- (id)accountIdentifier;
+- (void)adoptValuesFromAndSetSnaphot:(id)arg1;
 - (id)availableKeys;
 - (id)birthday;
 - (id)calendarURIs;
@@ -86,11 +87,9 @@
 - (int)contactType;
 - (id)copyWithSelfAsSnapshot;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)creationDate;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cropRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRect;
 - (id)dates;
 - (id)departmentName;
-- (int)displayNameOrder;
 - (id)emailAddresses;
 - (id)familyName;
 - (id)freeze;
@@ -106,6 +105,7 @@
 - (id)linkIdentifier;
 - (id)mapsData;
 - (id)middleName;
+- (id)modificationDate;
 - (id)namePrefix;
 - (id)nameSuffix;
 - (id)nickname;
@@ -117,15 +117,18 @@
 - (id)phoneticFamilyName;
 - (id)phoneticGivenName;
 - (id)phoneticMiddleName;
+- (id)phoneticOrganizationName;
 - (id)postalAddresses;
+- (id)preferredApplePersonaIdentifier;
 - (BOOL)preferredForImage;
 - (BOOL)preferredForName;
+- (id)preferredLikenessSource;
 - (id)previousFamilyName;
 - (id)pronunciationFamilyName;
 - (id)pronunciationGivenName;
+- (id)searchIndex;
 - (id)sectionForSortingByFamilyName;
 - (id)sectionForSortingByGivenName;
-- (void)setAccountIdentifier:(id)arg1;
 - (void)setActivityAlerts:(id)arg1;
 - (void)setAvailableKeys:(id)arg1;
 - (void)setBirthday:(id)arg1;
@@ -135,11 +138,9 @@
 - (void)setCompanyName:(id)arg1;
 - (void)setContactRelations:(id)arg1;
 - (void)setContactType:(int)arg1;
-- (void)setCreationDate:(id)arg1;
-- (void)setCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setDates:(id)arg1;
 - (void)setDepartmentName:(id)arg1;
-- (void)setDisplayNameOrder:(int)arg1;
 - (void)setEmailAddresses:(id)arg1;
 - (void)setFamilyName:(id)arg1;
 - (void)setFirstName:(id)arg1;
@@ -156,6 +157,7 @@
 - (void)setMaidenName:(id)arg1;
 - (void)setMapsData:(id)arg1;
 - (void)setMiddleName:(id)arg1;
+- (void)setModificationDate:(id)arg1;
 - (void)setNamePrefix:(id)arg1;
 - (void)setNameSuffix:(id)arg1;
 - (void)setNameTitle:(id)arg1;
@@ -166,34 +168,36 @@
 - (void)setOrganizationName:(id)arg1;
 - (void)setPhoneNumbers:(id)arg1;
 - (void)setPhonemeData:(id)arg1;
+- (void)setPhoneticCompanyName:(id)arg1;
 - (void)setPhoneticFamilyName:(id)arg1;
 - (void)setPhoneticFirstName:(id)arg1;
 - (void)setPhoneticGivenName:(id)arg1;
 - (void)setPhoneticLastName:(id)arg1;
 - (void)setPhoneticMiddleName:(id)arg1;
+- (void)setPhoneticOrganizationName:(id)arg1;
 - (void)setPostalAddresses:(id)arg1;
+- (void)setPreferredApplePersonaIdentifier:(id)arg1;
 - (void)setPreferredForImage:(BOOL)arg1;
 - (void)setPreferredForName:(BOOL)arg1;
+- (void)setPreferredLikenessSource:(id)arg1;
 - (void)setPreviousFamilyName:(id)arg1;
 - (void)setPronunciationFamilyName:(id)arg1;
 - (void)setPronunciationGivenName:(id)arg1;
 - (void)setRelatedNames:(id)arg1;
+- (void)setSearchIndex:(id)arg1;
 - (void)setSectionForSortingByFamilyName:(id)arg1;
 - (void)setSectionForSortingByGivenName:(id)arg1;
 - (void)setSnapshot:(id)arg1;
 - (void)setSocialProfiles:(id)arg1;
-- (void)setSortingFamilyName:(id)arg1;
-- (void)setSortingGivenName:(id)arg1;
 - (void)setStoreIdentifier:(id)arg1;
 - (void)setStoreInfo:(id)arg1;
 - (void)setTextAlert:(id)arg1;
 - (void)setThumbnailImageData:(id)arg1;
 - (void)setUrlAddresses:(id)arg1;
 - (id)socialProfiles;
-- (id)sortingFamilyName;
-- (id)sortingGivenName;
 - (id)textAlert;
 - (id)thumbnailImageData;
+- (void)updateImageDataAvailableFromCurrentState;
 - (id)urlAddresses;
 
 // Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
@@ -211,6 +215,7 @@
 - (BOOL)hasNonPersistedData;
 - (void)removePhoto;
 - (BOOL)saveContactInStore:(id)arg1 group:(id)arg2 container:(id)arg3;
+- (BOOL)saveContactInStore:(id)arg1 group:(id)arg2 container:(id)arg3 request:(id)arg4;
 - (void)setBirthdays:(id)arg1;
 - (void)updateContactType:(BOOL)arg1;
 

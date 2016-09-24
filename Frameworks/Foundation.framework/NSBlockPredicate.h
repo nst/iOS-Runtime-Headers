@@ -3,7 +3,7 @@
  */
 
 @interface NSBlockPredicate : NSPredicate {
-    id /* block */ _block;
+    id /* block */  _block;
 }
 
 - (id /* block */)_predicateBlock;

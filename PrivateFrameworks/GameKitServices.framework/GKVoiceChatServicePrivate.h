@@ -2,13 +2,12 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@interface GKVoiceChatServicePrivate : NSObject <VideoConferenceDelegate, VideoConferenceRealTimeChannel> {
-    int chatMode;
-    <GKVoiceChatClient> *client;
-    BOOL clientHasRTChannel;
-    NSLock *clientLock;
-    VideoConference *conf;
-    unsigned long curCallID;
+@interface GKVoiceChatServicePrivate : NSObject <VideoConferenceDelegate> {
+    int  chatMode;
+    <GKVoiceChatClient> * client;
+    NSLock * clientLock;
+    VideoConference * conf;
+    unsigned long  curCallID;
     struct tagCONNRESULT { 
         unsigned int dwCallID; 
         int iResultCount; 
@@ -77,39 +76,38 @@
         int bIfRemoteCellularQoS; 
         int iLocalCellTech; 
         int iRemoteCellTech; 
-        unsigned int dwCellularUniqueTag; 
         unsigned short wCellularMTU; 
         int bIfUpgrade; 
         int bIfPrimary; 
         int bIfReplaceOnly; 
         struct tagCONNRESULT {} *next; 
-    } currentConnResult;
-    BOOL focus;
-    BOOL forceNoICE;
-    GKVoiceChatDictionary *incomingCallDict;
-    BOOL inputMeteringEnabled;
-    BOOL microphoneMuted;
-    GKVoiceChatDictionary *outgoingCallDict;
-    BOOL outputMeteringEnabled;
-    int state;
-    NSRecursiveLock *stateLock;
-    GKVoiceChatService *wrapperService;
+    }  currentConnResult;
+    BOOL  focus;
+    BOOL  forceNoICE;
+    GKVoiceChatDictionary * incomingCallDict;
+    BOOL  inputMeteringEnabled;
+    BOOL  microphoneMuted;
+    GKVoiceChatDictionary * outgoingCallDict;
+    BOOL  outputMeteringEnabled;
+    int  state;
+    NSRecursiveLock * stateLock;
+    GKVoiceChatService * wrapperService;
 }
 
 @property int chatMode;
 @property (nonatomic) id client;
 @property (getter=isFocus) BOOL focus;
-@property (nonatomic, readonly) float inputMeterLevel;
+@property (nonatomic, readonly) double inputMeterLevel;
 @property (getter=isInputMeteringEnabled) BOOL inputMeteringEnabled;
 @property (readonly) double localBitrate;
 @property (readonly) double localFramerate;
 @property (nonatomic) void*localVideoLayer;
 @property (getter=isMicrophoneMuted) BOOL microphoneMuted;
-@property (nonatomic, readonly) float outputMeterLevel;
+@property (nonatomic, readonly) double outputMeterLevel;
 @property (getter=isOutputMeteringEnabled) BOOL outputMeteringEnabled;
 @property (readonly) double remoteBitrate;
 @property (readonly) double remoteFramerate;
-@property float remoteParticipantVolume;
+@property double remoteParticipantVolume;
 @property (nonatomic) void*remoteVideoLayer;
 @property int state;
 @property GKVoiceChatService *wrapperService;
@@ -125,8 +123,8 @@
 - (void)dealloc;
 - (void)denyCallID:(unsigned long)arg1;
 - (void)forceNoICE:(BOOL)arg1;
-- (void)getNSError:(id*)arg1 code:(int)arg2 description:(id)arg3 hResult:(long)arg4;
-- (void)getNSError:(id*)arg1 code:(int)arg2 description:(id)arg3 reason:(id)arg4;
+- (BOOL)getNSError:(id*)arg1 code:(int)arg2 description:(id)arg3 hResult:(long)arg4;
+- (BOOL)getNSError:(id*)arg1 code:(int)arg2 description:(id)arg3 reason:(id)arg4;
 - (void)informClientOfInviteFromParticipant:(id)arg1;
 - (void)informClientVoiceChatDidNotStart:(id)arg1;
 - (void)informClientVoiceChatDidNotStartMainSelector:(id)arg1;
@@ -146,7 +144,6 @@
 - (void*)localVideoLayer;
 - (float)outputMeterLevel;
 - (void)receivedData:(id)arg1 fromParticipantID:(id)arg2;
-- (void)receivedRealTimeData:(id)arg1 fromParticipantID:(id)arg2;
 - (double)remoteBitrate;
 - (id)remoteDisplayNameForCallID:(unsigned long)arg1;
 - (double)remoteFramerate;
@@ -170,7 +167,6 @@
 - (int)state;
 - (void)stopVoiceChatProc:(id)arg1;
 - (void)stopVoiceChatWithParticipantID:(id)arg1;
-- (void)vcArg:(id)arg1 sendRealTimeData:(id)arg2 toParticipantID:(id)arg3;
 - (void)videoConference:(id)arg1 didStartSession:(BOOL)arg2 withCallID:(unsigned long)arg3 error:(id)arg4;
 - (void)videoConference:(id)arg1 didStopWithCallID:(unsigned long)arg2 error:(id)arg3;
 - (id)wrapperService;

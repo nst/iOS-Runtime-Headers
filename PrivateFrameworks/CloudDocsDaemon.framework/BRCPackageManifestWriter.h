@@ -3,13 +3,12 @@
  */
 
 @interface BRCPackageManifestWriter : NSObject {
-    NSError *_error;
-    BRCAccountSession *_session;
-    BOOL _sharedZone;
-    NSString *_stageID;
-    NSOutputStream *_stream;
-    NSURL *_url;
-    PBMessageStreamWriter *_writer;
+    BRCClientZone * _clientZone;
+    NSError * _error;
+    NSString * _stageID;
+    NSOutputStream * _stream;
+    NSURL * _url;
+    PBMessageStreamWriter * _writer;
 }
 
 @property (nonatomic, readonly) NSError *error;
@@ -27,8 +26,8 @@
 - (BOOL)addLocalItem:(id)arg1;
 - (BOOL)done;
 - (id)error;
-- (id)initWithSession:(id)arg1 stageID:(id)arg2 url:(id)arg3 sharedZone:(BOOL)arg4;
-- (BOOL)stagePackageWithReader:(id)arg1 package:(id)arg2 stageItemURL:(id)arg3 livefd:(int)arg4;
+- (id)initWithZone:(id)arg1 stageID:(id)arg2 url:(id)arg3;
+- (BOOL)stagePackageWithReader:(id)arg1 package:(id)arg2 xattrsPackage:(id)arg3 stageItemURL:(id)arg4 livefd:(int)arg5 recordName:(id)arg6;
 - (id)url;
 
 @end

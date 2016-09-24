@@ -3,12 +3,12 @@
  */
 
 @interface _MRRegisterHIDDeviceResultMessageProtobuf : PBCodable <NSCopying> {
-    unsigned int _deviceIdentifier;
-    unsigned int _errorCode;
+    unsigned int  _deviceIdentifier;
+    unsigned int  _errorCode;
     struct { 
         unsigned int deviceIdentifier : 1; 
         unsigned int errorCode : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic) unsigned int deviceIdentifier;

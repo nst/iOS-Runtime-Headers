@@ -3,13 +3,13 @@
  */
 
 @interface _UILAConfigurationHistory : NSObject <NSCopying, _UILAPropertySource> {
-    int _axis;
-    BOOL _hasEstablishedBaseValues;
-    BOOL _inLayoutArrangementUpdateSection;
-    BOOL _layoutFillsCanvas;
-    BOOL _layoutUsesCanvasMarginsWhenFilling;
-    NSMutableSet *_newlyHiddenItems;
-    NSMutableSet *_newlyUnhiddenItems;
+    int  _axis;
+    BOOL  _hasEstablishedBaseValues;
+    BOOL  _inLayoutArrangementUpdateSection;
+    BOOL  _layoutFillsCanvas;
+    BOOL  _layoutUsesCanvasMarginsWhenFilling;
+    NSMutableSet * _newlyHiddenItems;
+    NSMutableSet * _newlyUnhiddenItems;
 }
 
 @property (nonatomic, readonly) NSSet *_newlyHiddenItems;

@@ -3,9 +3,9 @@
  */
 
 @interface CNDescriptionBuilder : NSObject {
-    NSMutableString *_description;
-    NSObject *_object;
-    NSString *_separator;
+    NSMutableString * _description;
+    NSObject * _object;
+    NSString * _separator;
 }
 
 @property (nonatomic, copy) NSString *separator;

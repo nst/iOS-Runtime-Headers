@@ -3,17 +3,17 @@
  */
 
 @interface BLImage : NSObject <NSCopying> {
-    struct CGImage { } *_CGImage;
-    CIImage *_CIImage;
-    UIImage *_UIImage;
-    int _askedImageType;
-    BOOL _isPlaceholder;
-    int _obtainedImageType;
+    struct CGImage { } * _CGImage;
+    CIImage * _CIImage;
+    UIImage * _UIImage;
+    int  _askedImageType;
+    BOOL  _isPlaceholder;
+    int  _obtainedImageType;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _size;
-    int _storageType;
+        double width; 
+        double height; 
+    }  _size;
+    int  _storageType;
 }
 
 @property (nonatomic) int askedImageType;
@@ -21,8 +21,8 @@
 @property (nonatomic) BOOL isPlaceholder;
 @property (nonatomic, readonly) unsigned int memoryUsage;
 @property (nonatomic) int obtainedImageType;
-@property (nonatomic, readonly) float scale;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) double scale;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
 @property (nonatomic, readonly) int storageType;
 
 + (id)abbreviatedDescriptionWithImageType:(int)arg1;
@@ -46,7 +46,7 @@
 - (void)setAskedImageType:(int)arg1;
 - (void)setIsPlaceholder:(BOOL)arg1;
 - (void)setObtainedImageType:(int)arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { double x1; double x2; })size;
 - (int)storageType;
 
 @end

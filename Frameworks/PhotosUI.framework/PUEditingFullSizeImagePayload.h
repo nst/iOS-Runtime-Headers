@@ -3,9 +3,9 @@
  */
 
 @interface PUEditingFullSizeImagePayload : NSObject <NSSecureCoding> {
-    int _imageOrientation;
-    NSString *_sandboxExtensionToken;
-    NSURL *_url;
+    int  _imageOrientation;
+    NSString * _sandboxExtensionToken;
+    NSURL * _url;
 }
 
 @property (nonatomic) int imageOrientation;

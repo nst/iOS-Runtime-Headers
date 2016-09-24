@@ -3,8 +3,8 @@
  */
 
 @interface AFSearchAlarmsRequest : AFSiriRequest {
-    STAlarm *_criteria;
-    int _options;
+    STAlarm * _criteria;
+    int  _options;
 }
 
 @property (nonatomic, retain) STAlarm *criteria;

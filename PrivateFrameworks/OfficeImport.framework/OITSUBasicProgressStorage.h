@@ -3,9 +3,9 @@
  */
 
 @interface OITSUBasicProgressStorage : NSObject {
-    BOOL mIndeterminate;
-    double mMaxValue;
-    double mValue;
+    BOOL  mIndeterminate;
+    double  mMaxValue;
+    double  mValue;
 }
 
 @property (getter=isIndeterminate) BOOL indeterminate;

@@ -3,7 +3,7 @@
  */
 
 @interface IKDOMSchema : NSObject {
-    struct _xmlSchema { } *_schemaPtr;
+    struct _xmlSchema { } * _schemaPtr;
 }
 
 - (void)dealloc;

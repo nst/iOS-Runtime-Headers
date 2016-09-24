@@ -3,23 +3,27 @@
  */
 
 @interface CKDApplicationMetadata : NSObject {
-    BOOL _allowCustomAccounts;
-    BOOL _allowsPowerNapScheduling;
-    NSString *_applicationIdentifier;
-    NSString *_apsEnvironmentString;
-    BOOL _canAccessProtectionData;
-    BOOL _canMasquerade;
-    BOOL _canSetDeviceIdentifier;
-    BOOL _canSetEnvironment;
-    NSString *_clientPrefix;
-    BOOL _hasAccessDuringBuddy;
-    BOOL _hasLightweightPCS;
-    BOOL _hasTCCAuthorization;
-    int _isApplication;
-    BOOL _isCKSystemService;
+    BOOL  _allowCustomAccounts;
+    BOOL  _allowsParticipantPII;
+    BOOL  _allowsPowerNapScheduling;
+    NSString * _applicationIdentifier;
+    NSString * _apsEnvironmentString;
+    BOOL  _canAccessProtectionData;
+    BOOL  _canMasquerade;
+    BOOL  _canSetDeviceIdentifier;
+    BOOL  _canSetEnvironment;
+    NSString * _clientPrefix;
+    BOOL  _displaysSystemAcceptPrompt;
+    BOOL  _hasAccessDuringBuddy;
+    BOOL  _hasLightweightPCS;
+    BOOL  _hasTCCAuthorization;
+    int  _isApplication;
+    BOOL  _isCKSystemService;
+    BOOL  _isOOPUI;
 }
 
 @property (nonatomic) BOOL allowCustomAccounts;
+@property (nonatomic) BOOL allowsParticipantPII;
 @property (nonatomic) BOOL allowsPowerNapScheduling;
 @property (nonatomic, retain) NSString *applicationIdentifier;
 @property (nonatomic, retain) NSString *apsEnvironmentString;
@@ -28,14 +32,17 @@
 @property (nonatomic) BOOL canSetDeviceIdentifier;
 @property (nonatomic) BOOL canSetEnvironment;
 @property (nonatomic, retain) NSString *clientPrefix;
+@property (nonatomic) BOOL displaysSystemAcceptPrompt;
 @property (nonatomic) BOOL hasAccessDuringBuddy;
 @property (nonatomic) BOOL hasLightweightPCS;
 @property (nonatomic) BOOL hasTCCAuthorization;
 @property (nonatomic) int isApplication;
 @property (nonatomic) BOOL isCKSystemService;
+@property (nonatomic) BOOL isOOPUI;
 
 - (void).cxx_destruct;
 - (BOOL)allowCustomAccounts;
+- (BOOL)allowsParticipantPII;
 - (BOOL)allowsPowerNapScheduling;
 - (id)applicationIdentifier;
 - (id)apsEnvironmentString;
@@ -44,13 +51,16 @@
 - (BOOL)canSetDeviceIdentifier;
 - (BOOL)canSetEnvironment;
 - (id)clientPrefix;
+- (BOOL)displaysSystemAcceptPrompt;
 - (BOOL)hasAccessDuringBuddy;
 - (BOOL)hasLightweightPCS;
 - (BOOL)hasTCCAuthorization;
 - (id)init;
 - (int)isApplication;
 - (BOOL)isCKSystemService;
+- (BOOL)isOOPUI;
 - (void)setAllowCustomAccounts:(BOOL)arg1;
+- (void)setAllowsParticipantPII:(BOOL)arg1;
 - (void)setAllowsPowerNapScheduling:(BOOL)arg1;
 - (void)setApplicationIdentifier:(id)arg1;
 - (void)setApsEnvironmentString:(id)arg1;
@@ -59,10 +69,12 @@
 - (void)setCanSetDeviceIdentifier:(BOOL)arg1;
 - (void)setCanSetEnvironment:(BOOL)arg1;
 - (void)setClientPrefix:(id)arg1;
+- (void)setDisplaysSystemAcceptPrompt:(BOOL)arg1;
 - (void)setHasAccessDuringBuddy:(BOOL)arg1;
 - (void)setHasLightweightPCS:(BOOL)arg1;
 - (void)setHasTCCAuthorization:(BOOL)arg1;
 - (void)setIsApplication:(int)arg1;
 - (void)setIsCKSystemService:(BOOL)arg1;
+- (void)setIsOOPUI:(BOOL)arg1;
 
 @end

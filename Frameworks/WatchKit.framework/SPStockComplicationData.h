@@ -3,13 +3,13 @@
  */
 
 @interface SPStockComplicationData : SPComplicationData <NSSecureCoding> {
-    unsigned int _changeDirection;
-    NSString *_changeInPercentText;
-    NSString *_changeInPointsText;
-    NSString *_changeText;
-    NSString *_marketCapText;
-    NSString *_priceText;
-    NSString *_tickerSymbolText;
+    unsigned int  _changeDirection;
+    NSString * _changeInPercentText;
+    NSString * _changeInPointsText;
+    NSString * _changeText;
+    NSString * _marketCapText;
+    NSString * _priceText;
+    NSString * _tickerSymbolText;
 }
 
 @property (nonatomic) unsigned int changeDirection;

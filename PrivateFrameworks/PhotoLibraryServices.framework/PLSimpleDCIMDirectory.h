@@ -3,17 +3,17 @@
  */
 
 @interface PLSimpleDCIMDirectory : NSObject {
-    NSMutableIndexSet *_availableFileNameNumbers;
-    NSURL *_baseURL;
-    NSURL *_currentSubDirectory;
-    unsigned int _currentSubDirectoryNumber;
-    unsigned int _directoryLimit;
-    NSFileManager *_fileManager;
-    BOOL _hasLoadedUserInfo;
-    NSObject<OS_dispatch_queue> *_isolation;
-    BOOL _representsCameraRoll;
-    NSString *_subDirSuffix;
-    NSString *_userInfoPath;
+    NSMutableIndexSet * _availableFileNameNumbers;
+    NSURL * _baseURL;
+    NSURL * _currentSubDirectory;
+    unsigned int  _currentSubDirectoryNumber;
+    unsigned int  _directoryLimit;
+    NSFileManager * _fileManager;
+    BOOL  _hasLoadedUserInfo;
+    NSObject<OS_dispatch_queue> * _isolation;
+    BOOL  _representsCameraRoll;
+    NSString * _subDirSuffix;
+    NSString * _userInfoPath;
 }
 
 @property (nonatomic, readonly, retain) NSURL *currentSubDirectory;

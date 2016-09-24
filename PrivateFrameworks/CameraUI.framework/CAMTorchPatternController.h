@@ -3,12 +3,12 @@
  */
 
 @interface CAMTorchPatternController : NSObject {
-    CUCaptureController *__captureController;
-    CAMTorchPattern *__currentPattern;
-    CADisplayLink *__displayLink;
-    BOOL __performing;
-    double __startTime;
-    double _stepInterval;
+    CUCaptureController * __captureController;
+    CAMTorchPattern * __currentPattern;
+    CADisplayLink * __displayLink;
+    BOOL  __performing;
+    double  __startTime;
+    double  _stepInterval;
 }
 
 @property (nonatomic, readonly) CUCaptureController *_captureController;

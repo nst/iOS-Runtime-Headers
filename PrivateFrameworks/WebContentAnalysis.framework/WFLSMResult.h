@@ -3,8 +3,8 @@
  */
 
 @interface WFLSMResult : NSObject {
-    NSMutableArray *categoryJudgements;
-    NSNumber *threshold;
+    NSMutableArray * categoryJudgements;
+    NSNumber * threshold;
 }
 
 @property (copy) NSNumber *threshold;

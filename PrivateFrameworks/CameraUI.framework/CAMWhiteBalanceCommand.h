@@ -3,8 +3,8 @@
  */
 
 @interface CAMWhiteBalanceCommand : CAMCaptureCommand {
-    BOOL __matchExposureMode;
-    int __whiteBalanceMode;
+    BOOL  __matchExposureMode;
+    int  __whiteBalanceMode;
 }
 
 @property (nonatomic, readonly) BOOL _matchExposureMode;

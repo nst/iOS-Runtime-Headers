@@ -3,7 +3,7 @@
  */
 
 @interface GEONotificationPreferenceManager : NSObject {
-    NSMutableDictionary *_enableFlags;
+    NSMutableDictionary * _enableFlags;
 }
 
 + (id)sharedManager;

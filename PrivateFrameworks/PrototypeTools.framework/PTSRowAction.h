@@ -3,8 +3,8 @@
  */
 
 @interface PTSRowAction : NSObject <NSCopying> {
-    BOOL _deselectRowOnSuccess;
-    id /* block */ _handler;
+    BOOL  _deselectRowOnSuccess;
+    id /* block */  _handler;
 }
 
 @property (nonatomic) BOOL deselectRowOnSuccess;

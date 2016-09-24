@@ -3,9 +3,9 @@
  */
 
 @interface UIMoreNavigationController : UINavigationController {
-    UIMoreListController *_moreListController;
-    UINavigationController *_originalNavigationController;
-    UIViewController *_originalRootViewController;
+    UIMoreListController * _moreListController;
+    UINavigationController * _originalNavigationController;
+    UIViewController * _originalRootViewController;
 }
 
 @property (nonatomic) BOOL allowsCustomizing;
@@ -31,7 +31,7 @@
 - (id)moreViewControllers;
 - (BOOL)moreViewControllersChanged;
 - (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)restoreOriginalNavigationController:(id)arg1;
+- (void)restoreOriginalNavigationControllerIfNecessary:(id)arg1;
 - (void)setAllowsCustomizing:(BOOL)arg1;
 - (void)setDisplayedViewController:(id)arg1;
 - (void)setMoreViewControllers:(id)arg1;

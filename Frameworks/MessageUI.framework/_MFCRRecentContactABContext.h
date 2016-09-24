@@ -3,9 +3,9 @@
  */
 
 @interface _MFCRRecentContactABContext : NSObject {
-    void *_existingPerson;
-    int _identifier;
-    void *_interimPerson;
+    void * _existingPerson;
+    int  _identifier;
+    void * _interimPerson;
 }
 
 - (void)dealloc;

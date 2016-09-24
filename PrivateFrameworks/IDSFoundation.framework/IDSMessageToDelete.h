@@ -3,9 +3,9 @@
  */
 
 @interface IDSMessageToDelete : NSObject {
-    NSString *_alternateGUID;
-    unsigned int _dataProtectionClass;
-    NSString *_guid;
+    NSString * _alternateGUID;
+    unsigned int  _dataProtectionClass;
+    NSString * _guid;
 }
 
 @property (setter=setAlternateGUID:, retain) NSString *alternateGUID;

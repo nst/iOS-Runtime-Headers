@@ -3,7 +3,7 @@
  */
 
 @interface MTKMeshBufferAllocator : NSObject <MDLMeshBufferAllocator> {
-    <MTLDevice> *_device;
+    <MTLDevice> * _device;
 }
 
 @property (readonly, copy) NSString *debugDescription;

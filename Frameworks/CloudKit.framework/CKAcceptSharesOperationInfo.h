@@ -2,18 +2,18 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@interface CKAcceptSharesOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    NSArray *_shareURLsToAccept;
+@interface CKAcceptSharesOperationInfo : CKOperationInfo <NSSecureCoding> {
+    NSArray * _shareMetadatasToAccept;
 }
 
-@property (nonatomic, retain) NSArray *shareURLsToAccept;
+@property (nonatomic, retain) NSArray *shareMetadatasToAccept;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setShareURLsToAccept:(id)arg1;
-- (id)shareURLsToAccept;
+- (void)setShareMetadatasToAccept:(id)arg1;
+- (id)shareMetadatasToAccept;
 
 @end

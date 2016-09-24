@@ -3,7 +3,7 @@
  */
 
 @interface CalDAVScheduleCalendarTranspItem : CoreDAVItem {
-    CoreDAVItemWithNoChildren *_transparent;
+    CoreDAVItemWithNoChildren * _transparent;
 }
 
 @property (nonatomic, readonly) BOOL isScheduleTransparent;

@@ -3,7 +3,7 @@
  */
 
 @interface BSSignal : NSObject {
-    BOOL _signalled;
+    BOOL  _signalled;
 }
 
 - (BOOL)hasBeenSignalled;

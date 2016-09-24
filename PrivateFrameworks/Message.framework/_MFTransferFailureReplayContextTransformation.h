@@ -3,8 +3,8 @@
  */
 
 @interface _MFTransferFailureReplayContextTransformation : NSObject <MFOfflineCacheReplayContextTransformation> {
-    MFOfflineTransferFailureSnapshot *_snapshot;
-    NSString *_temporaryID;
+    MFOfflineTransferFailureSnapshot * _snapshot;
+    NSString * _temporaryID;
 }
 
 - (void)applyToReplayContext:(id)arg1;

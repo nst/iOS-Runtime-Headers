@@ -3,7 +3,7 @@
  */
 
 @interface PLConfigAgent : PLAgent {
-    PLTimer *_timedTrigger;
+    PLTimer * _timedTrigger;
 }
 
 @property (retain) PLTimer *timedTrigger;
@@ -28,10 +28,14 @@
 - (void)dealloc;
 - (id)deviceName;
 - (BOOL)disableCABlanking;
+- (int)getDeviceType;
 - (id)hardwareModel;
+- (id)hwBoardRevision;
+- (id)hwConfig;
 - (id)init;
 - (void)initOperatorDependancies;
 - (void)log;
+- (id)logAndUpdateLastBuild:(id)arg1;
 - (id)logAutomatedDeviceGroup;
 - (void)logEventNoneConfig;
 - (void)logEventNonePairedDeviceConfig;

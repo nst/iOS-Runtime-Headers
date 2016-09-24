@@ -3,8 +3,8 @@
  */
 
 @interface DMFFetchControlGroupIdentifiersRequest : CATTaskRequest {
-    BOOL _includeTemporary;
-    NSString *_leaderIdentifier;
+    BOOL  _includeTemporary;
+    NSString * _leaderIdentifier;
 }
 
 @property (nonatomic) BOOL includeTemporary;

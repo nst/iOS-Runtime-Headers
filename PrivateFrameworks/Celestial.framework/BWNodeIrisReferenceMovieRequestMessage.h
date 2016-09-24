@@ -3,7 +3,7 @@
  */
 
 @interface BWNodeIrisReferenceMovieRequestMessage : BWNodeMessage {
-    BWIrisMovieInfo *_irisMovieInfo;
+    BWIrisMovieInfo * _irisMovieInfo;
 }
 
 @property (readonly) BWIrisMovieInfo *irisMovieInfo;

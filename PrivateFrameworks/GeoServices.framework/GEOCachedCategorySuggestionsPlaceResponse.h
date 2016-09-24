@@ -3,14 +3,14 @@
  */
 
 @interface GEOCachedCategorySuggestionsPlaceResponse : PBCodable <NSCopying> {
-    NSString *_countryCode;
+    NSString * _countryCode;
     struct { 
         unsigned int timestamp : 1; 
-    } _has;
-    NSString *_language;
-    GEOPDPlaceResponse *_response;
-    NSString *_sourceURL;
-    double _timestamp;
+    }  _has;
+    NSString * _language;
+    GEOPDPlaceResponse * _response;
+    NSString * _sourceURL;
+    double  _timestamp;
 }
 
 @property (nonatomic, retain) NSString *countryCode;

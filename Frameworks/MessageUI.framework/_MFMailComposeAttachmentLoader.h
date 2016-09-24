@@ -3,14 +3,15 @@
  */
 
 @interface _MFMailComposeAttachmentLoader : NSObject {
-    id /* block */ _completionBlock;
-    id _content;
-    BOOL _isDraft;
-    MFMailMessage *_message;
+    id /* block */  _completionBlock;
+    id  _content;
+    BOOL  _didLoadBestAlternative;
+    BOOL  _isDraft;
+    MFMailMessage * _message;
 }
 
 - (void)dealloc;
-- (id)initWithMessage:(id)arg1 content:(id)arg2 isDraft:(BOOL)arg3 completion:(id /* block */)arg4;
+- (id)initWithMessage:(id)arg1 content:(id)arg2 isDraft:(BOOL)arg3 didLoadBestAlternative:(BOOL)arg4 completion:(id /* block */)arg5;
 - (void)loadAttachments;
 
 @end

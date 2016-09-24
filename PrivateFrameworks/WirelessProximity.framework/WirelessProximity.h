@@ -2,33 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WirelessProximity.framework/WirelessProximity
  */
 
-@interface WirelessProximity : NSObject <XPCClientDelegate> {
-    XPCClient *_connection;
-    <WirelessProximityDelegate> *_delegate;
-    int _state;
-}
-
-@property (nonatomic, retain) XPCClient *connection;
-@property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) <WirelessProximityDelegate> *delegate;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int state;
-@property (readonly) Class superclass;
-
-- (void).cxx_destruct;
-- (id)connection;
-- (void)connectionDied;
-- (void)connectionInterrupted;
-- (void)dealloc;
-- (id)delegate;
-- (id)initWithDelegate:(id)arg1;
-- (id)initWithDelegate:(id)arg1 queue:(id)arg2;
-- (void)messageArrived:(id)arg1;
-- (void)setConnection:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setState:(int)arg1;
-- (int)state;
-- (void)updateState:(int)arg1;
+@interface WirelessProximity : WPStateTracker
 
 @end

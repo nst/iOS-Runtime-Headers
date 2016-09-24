@@ -3,8 +3,8 @@
  */
 
 @interface EKCalendarSharedCalendarNotification : EKCalendarNotification {
-    unsigned int _allowedEntityTypes;
-    unsigned int _sharingInvitationResponse;
+    unsigned int  _allowedEntityTypes;
+    unsigned int  _sharingInvitationResponse;
 }
 
 @property (nonatomic) unsigned int allowedEntityTypes;
@@ -21,8 +21,7 @@
 
 // Image: /System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
 
-- (id)messageStringForDescriptionWithOptions:(unsigned int)arg1;
-- (id)messageStringsForDescriptionWithOptions:(unsigned int)arg1;
+- (id)allDescriptionStringsWithOptions:(unsigned int)arg1;
 - (BOOL)supportsDisplay;
 - (id)titleStringWithOptions:(unsigned int)arg1;
 

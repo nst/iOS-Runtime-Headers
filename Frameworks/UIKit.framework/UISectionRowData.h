@@ -3,26 +3,26 @@
  */
 
 @interface UISectionRowData : NSObject <NSCopying> {
-    unsigned int _arrayLength;
-    BOOL _estimatesRowHeights;
-    int _footerAlignment;
-    float _footerHeight;
-    float _footerOffset;
-    NSMutableIndexSet *_forcedNegativeRows;
-    int _headerAlignment;
-    float _headerHeight;
-    float _headerOffset;
-    float _maxFooterTitleWidth;
-    float _maxHeaderTitleWidth;
-    unsigned int _numRows;
-    UITableViewRowData *_rowData;
-    float *_rowHeights;
-    float *_rowOffsets;
-    float _sectionHeight;
-    float _sectionOffset;
-    BOOL _sectionOffsetValid;
-    int _sectionRowOffset;
-    BOOL _valid;
+    unsigned int  _arrayLength;
+    BOOL  _estimatesHeights;
+    int  _footerAlignment;
+    double  _footerHeight;
+    double  _footerOffset;
+    NSMutableIndexSet * _forcedNegativeRows;
+    int  _headerAlignment;
+    double  _headerHeight;
+    double  _headerOffset;
+    double  _maxFooterTitleWidth;
+    double  _maxHeaderTitleWidth;
+    unsigned int  _numRows;
+    UITableViewRowData * _rowData;
+    double * _rowHeights;
+    double * _rowOffsets;
+    double  _sectionHeight;
+    double  _sectionOffset;
+    BOOL  _sectionOffsetValid;
+    int  _sectionRowOffset;
+    BOOL  _valid;
 }
 
 - (void).cxx_destruct;
@@ -30,11 +30,13 @@
 - (float)_defaultSectionHeaderHeightForSection:(int)arg1 tableView:(id)arg2 tableViewRowData:(id)arg3;
 - (float)_headerOrFooterSizeForTable:(id)arg1 title:(id)arg2 detailText:(id)arg3 isHeader:(BOOL)arg4 stripPaddingForAbuttingView:(BOOL)arg5 isTopHeader:(BOOL)arg6;
 - (float)_offsetForFirstRow;
-- (int)_rowForPoint:(struct CGPoint { float x1; float x2; })arg1 beginningWithRow:(int)arg2 numberOfRows:(int)arg3 extraHitSpaceBetweenRows:(float)arg4;
-- (int)_rowForPoint:(struct CGPoint { float x1; float x2; })arg1 extraHitSpaceBetweenRows:(float)arg2;
+- (int)_rowForPoint:(struct CGPoint { double x1; double x2; })arg1 beginningWithRow:(int)arg2 numberOfRows:(int)arg3 extraHitSpaceBetweenRows:(float)arg4;
+- (int)_rowForPoint:(struct CGPoint { double x1; double x2; })arg1 extraHitSpaceBetweenRows:(float)arg2;
 - (void)addOffset:(float)arg1 fromRow:(int)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (float)defaultSectionFooterHeight;
+- (float)defaultSectionHeaderHeight;
 - (void)deleteRowAtIndex:(int)arg1;
 - (float)heightForEmptySection:(int)arg1 inTableView:(id)arg2 rowData:(id)arg3;
 - (float)heightForFooterInSection:(int)arg1 canGuess:(BOOL)arg2;

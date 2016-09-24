@@ -3,31 +3,31 @@
  */
 
 @interface MCProfile : NSObject {
-    NSString *_UUID;
-    NSString *_displayName;
-    BOOL _encrypted;
-    NSDate *_expiryDate;
-    NSString *_identifier;
-    NSDate *_installDate;
-    NSDictionary *_installOptions;
-    BOOL _isLocked;
-    BOOL _isStub;
-    NSString *_localizedConsentText;
-    BOOL _mustInstallNonInteractively;
-    BOOL _needsReboot;
-    NSString *_organization;
-    NSString *_productBuildVersion;
-    NSString *_productVersion;
-    NSString *_profileDescription;
-    NSDate *_removalDate;
-    NSString *_removalPasscode;
-    NSObject<OS_dispatch_queue> *_signerEvaluationQueue;
-    NSArray *_signerQueueSignerCertificates;
-    NSString *_signerQueueSignerSummary;
-    NSObject<OS_dispatch_queue> *_trustEvaluationQueue;
-    BOOL _trustQueueTrustHasBeenEvaluated;
-    int _trustQueueTrustLevel;
-    int _version;
+    NSString * _UUID;
+    NSString * _displayName;
+    BOOL  _encrypted;
+    NSDate * _expiryDate;
+    NSString * _identifier;
+    NSDate * _installDate;
+    NSDictionary * _installOptions;
+    BOOL  _isLocked;
+    BOOL  _isStub;
+    NSString * _localizedConsentText;
+    BOOL  _mustInstallNonInteractively;
+    BOOL  _needsReboot;
+    NSString * _organization;
+    NSString * _productBuildVersion;
+    NSString * _productVersion;
+    NSString * _profileDescription;
+    NSDate * _removalDate;
+    NSString * _removalPasscode;
+    NSObject<OS_dispatch_queue> * _signerEvaluationQueue;
+    NSArray * _signerQueueSignerCertificates;
+    NSString * _signerQueueSignerSummary;
+    NSObject<OS_dispatch_queue> * _trustEvaluationQueue;
+    BOOL  _trustQueueTrustHasBeenEvaluated;
+    int  _trustQueueTrustLevel;
+    int  _version;
 }
 
 @property (nonatomic, readonly, retain) NSString *UUID;

@@ -7,16 +7,18 @@
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _componentTypes;
+    }  _componentTypes;
 }
 
 @property (nonatomic, readonly) int*componentTypes;
 @property (nonatomic, readonly) unsigned int componentTypesCount;
 
+- (int)StringAsComponentTypes:(id)arg1;
 - (void)addComponentType:(int)arg1;
 - (void)clearComponentTypes;
 - (int)componentTypeAtIndex:(unsigned int)arg1;
 - (int*)componentTypes;
+- (id)componentTypesAsString:(int)arg1;
 - (unsigned int)componentTypesCount;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

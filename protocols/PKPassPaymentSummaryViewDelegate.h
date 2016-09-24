@@ -5,6 +5,6 @@
 
 @required
 
-- (void)summaryView:(PKPassPaymentSummaryView *)arg1 didDeleteMessage:(PKPaymentMessage *)arg2;
+- (void)summaryView:(PKPassPaymentSummaryView *)arg1 didArchiveMessage:(PKPaymentMessage *)arg2;
 
 @end

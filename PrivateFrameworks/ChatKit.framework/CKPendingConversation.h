@@ -3,15 +3,16 @@
  */
 
 @interface CKPendingConversation : CKConversation {
-    IMService *_composeSendingService;
-    BOOL _noAvailableServices;
-    IMService *_previousSendingService;
+    IMService * _composeSendingService;
+    BOOL  _noAvailableServices;
+    IMService * _previousSendingService;
 }
 
 @property (nonatomic) IMService *composeSendingService;
 @property (nonatomic) BOOL noAvailableServices;
 @property (nonatomic) IMService *previousSendingService;
 
+- (void).cxx_destruct;
 - (id)composeSendingService;
 - (id)deviceIndependentID;
 - (BOOL)noAvailableServices;

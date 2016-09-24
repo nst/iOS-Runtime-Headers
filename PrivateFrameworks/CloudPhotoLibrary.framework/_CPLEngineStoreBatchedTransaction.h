@@ -3,8 +3,8 @@
  */
 
 @interface _CPLEngineStoreBatchedTransaction : NSObject {
-    id /* block */ _block;
-    id /* block */ _completionHandler;
+    id /* block */  _block;
+    id /* block */  _completionHandler;
 }
 
 @property (nonatomic, copy) id /* block */ block;

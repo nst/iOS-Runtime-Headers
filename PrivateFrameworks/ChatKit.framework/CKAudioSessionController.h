@@ -3,33 +3,39 @@
  */
 
 @interface CKAudioSessionController : NSObject {
-    BOOL _active;
-    BOOL _dirty;
-    BOOL _shouldUseSpeaker;
+    BOOL  _active;
+    BOOL  _dirty;
+    unsigned int  _options;
 }
 
 @property (getter=isActive) BOOL active;
 @property (getter=isDirty) BOOL dirty;
-@property BOOL shouldUseSpeaker;
+@property unsigned int options;
+@property (readonly) BOOL shouldDuckOthers;
+@property (readonly) BOOL shouldStopPlayingWhenSilent;
+@property (readonly) BOOL shouldUseSpeaker;
 
 + (id)queue;
 + (id)shareInstance;
 
-- (void)activateUsingSpeaker:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)activateWithOptions:(unsigned int)arg1 completion:(id /* block */)arg2;
 - (void)audioSessionInterruption:(id)arg1;
 - (void)audioSessionMediaServicesWereLost:(id)arg1;
 - (void)audioSessionMediaServicesWereReset:(id)arg1;
 - (void)audioSessionRouteChange:(id)arg1;
-- (void)configureAudioSession:(BOOL)arg1;
+- (void)configureAudioSessionWithOptions:(unsigned int)arg1;
 - (void)deactivate;
 - (void)dealloc;
 - (id)init;
 - (BOOL)isActive;
 - (BOOL)isDirty;
+- (unsigned int)options;
 - (void)setActive:(BOOL)arg1;
-- (void)setActive:(BOOL)arg1 shouldUseSpeaker:(BOOL)arg2 completion:(id /* block */)arg3;
+- (void)setActive:(BOOL)arg1 options:(unsigned int)arg2 completion:(id /* block */)arg3;
 - (void)setDirty:(BOOL)arg1;
-- (void)setShouldUseSpeaker:(BOOL)arg1;
+- (void)setOptions:(unsigned int)arg1;
+- (BOOL)shouldDuckOthers;
+- (BOOL)shouldStopPlayingWhenSilent;
 - (BOOL)shouldUseSpeaker;
 
 @end

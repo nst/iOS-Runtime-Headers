@@ -3,7 +3,7 @@
  */
 
 @interface _AABasicGetRequest : AARequest {
-    ACAccount *_account;
+    ACAccount * _account;
 }
 
 - (void).cxx_destruct;

@@ -2,10 +2,17 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUImageEditPluginSession : PUEditPluginSession
+@interface PUImageEditPluginSession : PUEditPluginSession {
+    BOOL  _allowLivePhotoExtensions;
+}
 
+@property (nonatomic) BOOL allowLivePhotoExtensions;
+
+- (BOOL)allowLivePhotoExtensions;
 - (id)imageDataSource;
 - (void)loadItemProviderWithSupportedAdjustmentData:(id)arg1 loadHandler:(id /* block */)arg2;
-- (int)mediaType;
+- (unsigned int)pluginManagerMediaType;
+- (void)setAllowLivePhotoExtensions:(BOOL)arg1;
+- (void)shouldLaunchPlugin:(id)arg1 completion:(id /* block */)arg2;
 
 @end

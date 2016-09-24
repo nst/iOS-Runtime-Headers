@@ -3,26 +3,29 @@
  */
 
 @interface MLULookupItem : NSObject {
-    struct __DDResult { } *_ddResult;
-    NSDictionary *_documentProperties;
+    NSArray * _attachments;
+    unsigned int  _currentAttachmentIndex;
+    struct __DDResult { } * _ddResult;
+    NSDictionary * _documentProperties;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _focusRange;
-    MLULookupItemContent *_previewContent;
+    }  _focusRange;
+    MLULookupItemContent * _previewContent;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _proposedRange;
-    BOOL _resolved;
-    NSString *_text;
-    NSURL *_url;
+    }  _proposedRange;
+    BOOL  _resolved;
+    NSString * _text;
+    NSURL * _url;
 }
 
 @property (retain) NSDictionary *documentProperties;
 @property (nonatomic, retain) MLULookupItemContent *previewContent;
 
 - (void).cxx_destruct;
+- (BOOL)_resolveAttachments:(id)arg1 currentAttachmentIndex:(unsigned int)arg2;
 - (BOOL)_resolveText:(id)arg1 focusRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (BOOL)_resolveURL:(id)arg1 DDResult:(struct __DDResult { }*)arg2 focusRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (void)commit;
@@ -30,6 +33,7 @@
 - (void)commitWithTransitionForPreviewViewController:(id)arg1 inViewController:(id)arg2 completion:(id /* block */)arg3;
 - (void)dealloc;
 - (id)documentProperties;
+- (id)initWithAttachments:(id)arg1 currentAttachment:(unsigned int)arg2;
 - (id)initWithURL:(id)arg1 dataDetectorsResult:(struct __DDResult { }*)arg2 text:(id)arg3 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
 - (id)previewContent;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })proposedRange;

@@ -3,12 +3,12 @@
  */
 
 @interface AWDCoreRoutineModelConsistencyReconsolidation : PBCodable <NSCopying> {
-    int _countOfReconsolidatedLOIs;
+    int  _countOfReconsolidatedLOIs;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int countOfReconsolidatedLOIs : 1; 
-    } _has;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) int countOfReconsolidatedLOIs;

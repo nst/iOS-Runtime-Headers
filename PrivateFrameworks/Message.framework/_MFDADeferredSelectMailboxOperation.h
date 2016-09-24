@@ -3,7 +3,7 @@
  */
 
 @interface _MFDADeferredSelectMailboxOperation : MFOfflineCacheOperation <MFDAOfflineCacheOperation> {
-    NSString *_folderID;
+    NSString * _folderID;
 }
 
 - (id)description;

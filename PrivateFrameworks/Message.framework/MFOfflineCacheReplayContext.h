@@ -3,9 +3,9 @@
  */
 
 @interface MFOfflineCacheReplayContext : NSObject {
-    NSMutableDictionary *_failureSnapshotsByTemporaryID;
-    NSString *_selectedMailboxID;
-    NSMutableDictionary *_translatedIDsByTemporaryID;
+    NSMutableDictionary * _failureSnapshotsByTemporaryID;
+    NSString * _selectedMailboxID;
+    NSMutableDictionary * _translatedIDsByTemporaryID;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *failureSnapshotsByTemporaryID;

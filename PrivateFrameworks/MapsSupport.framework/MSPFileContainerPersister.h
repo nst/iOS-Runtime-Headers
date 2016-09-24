@@ -3,10 +3,12 @@
  */
 
 @interface MSPFileContainerPersister : MSPContainerPersister {
-    NSURL *_persistenceFileURL;
+    NSURL * _persistenceFileURL;
 }
 
 @property (nonatomic, readonly) NSURL *persistenceFileURL;
+
++ (void)initialize;
 
 - (void).cxx_destruct;
 - (void)commitEditedContents:(id)arg1 completion:(id /* block */)arg2;

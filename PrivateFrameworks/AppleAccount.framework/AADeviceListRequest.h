@@ -3,7 +3,7 @@
  */
 
 @interface AADeviceListRequest : AARequest {
-    ACAccount *_account;
+    ACAccount * _account;
 }
 
 + (Class)responseClass;

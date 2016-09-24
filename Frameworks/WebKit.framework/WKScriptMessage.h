@@ -5,16 +5,16 @@
 @interface WKScriptMessage : NSObject {
     struct RetainPtr<id> { 
         void *m_ptr; 
-    } _body;
+    }  _body;
     struct RetainPtr<WKFrameInfo> { 
         void *m_ptr; 
-    } _frameInfo;
+    }  _frameInfo;
     struct RetainPtr<NSString> { 
         void *m_ptr; 
-    } _name;
+    }  _name;
     /* Warning: unhandled struct encoding: '{WeakObjCPtr<WKWebView>="m_weakReference"@}' */ struct WeakObjCPtr<WKWebView> { 
         id m_weakReference; 
-    } _webView;
+    }  _webView;
 }
 
 @property (nonatomic, readonly, copy) id body;

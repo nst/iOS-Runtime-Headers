@@ -3,12 +3,12 @@
  */
 
 @interface WLSourceDeviceMigrationMetadata : NSObject {
-    unsigned int _attemptCount;
-    NSDate *_communicationDate;
-    unsigned int _crashCount;
-    NSString *_deviceOSVersion;
-    NSString *_deviceType;
-    unsigned int _state;
+    unsigned int  _attemptCount;
+    NSDate * _communicationDate;
+    unsigned int  _crashCount;
+    NSString * _deviceOSVersion;
+    NSString * _deviceType;
+    unsigned int  _state;
 }
 
 @property (nonatomic) unsigned int attemptCount;

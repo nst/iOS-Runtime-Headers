@@ -3,7 +3,7 @@
  */
 
 @interface _HKDateRangeQuery : HKQuery {
-    id /* block */ _handler;
+    id /* block */  _handler;
 }
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit

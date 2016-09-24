@@ -3,8 +3,8 @@
  */
 
 @interface DAPriorityRequest : NSObject {
-    int _UIDataclasses;
-    int _refreshDataclasses;
+    int  _UIDataclasses;
+    int  _refreshDataclasses;
 }
 
 @property (nonatomic) int UIDataclasses;

@@ -3,9 +3,9 @@
  */
 
 @interface _MRTextEditingAttributesProtobuf : PBCodable <NSCopying> {
-    _MRTextInputTraitsProtobuf *_inputTraits;
-    NSString *_prompt;
-    NSString *_title;
+    _MRTextInputTraitsProtobuf * _inputTraits;
+    NSString * _prompt;
+    NSString * _title;
 }
 
 @property (nonatomic, readonly) BOOL hasInputTraits;

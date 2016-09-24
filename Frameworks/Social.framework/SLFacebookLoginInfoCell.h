@@ -3,7 +3,7 @@
  */
 
 @interface SLFacebookLoginInfoCell : UITableViewCell {
-    SLFacebookLoginInfoCellContentView *_infoView;
+    SLFacebookLoginInfoCellContentView * _infoView;
 }
 
 + (float)desiredRowHeightForWidth:(float)arg1;

@@ -3,9 +3,9 @@
  */
 
 @interface XBApplicationSnapshotGenerationContext : NSObject <BSDescriptionProviding> {
-    XBApplicationLaunchCompatibilityInfo *_applicationCompatibilityInfo;
-    XBLaunchStateRequest *_launchRequest;
-    double _timeout;
+    XBApplicationLaunchCompatibilityInfo * _applicationCompatibilityInfo;
+    XBLaunchStateRequest * _launchRequest;
+    double  _timeout;
 }
 
 @property (nonatomic, readonly, retain) XBApplicationLaunchCompatibilityInfo *applicationCompatibilityInfo;

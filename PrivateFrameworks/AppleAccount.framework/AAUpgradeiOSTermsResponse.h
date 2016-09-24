@@ -3,7 +3,7 @@
  */
 
 @interface AAUpgradeiOSTermsResponse : AAResponse {
-    NSData *_xmlUIData;
+    NSData * _xmlUIData;
 }
 
 @property (nonatomic, readonly) NSData *xmlUIData;

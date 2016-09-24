@@ -3,22 +3,26 @@
  */
 
 @interface AWDWiFiMetricsManagerDeviceCount : PBCodable <NSCopying> {
-    unsigned int _deviceCount;
-    unsigned int _deviceIdentifierMap;
+    unsigned int  _deviceCount;
+    unsigned int  _deviceIdentifierMap;
+    unsigned int  _deviceInitFailureReason;
     struct { 
         unsigned int timeSinceBoot : 1; 
         unsigned int timestamp : 1; 
         unsigned int deviceCount : 1; 
         unsigned int deviceIdentifierMap : 1; 
-    } _has;
-    double _timeSinceBoot;
-    unsigned long long _timestamp;
+        unsigned int deviceInitFailureReason : 1; 
+    }  _has;
+    double  _timeSinceBoot;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int deviceCount;
 @property (nonatomic) unsigned int deviceIdentifierMap;
+@property (nonatomic) unsigned int deviceInitFailureReason;
 @property (nonatomic) BOOL hasDeviceCount;
 @property (nonatomic) BOOL hasDeviceIdentifierMap;
+@property (nonatomic) BOOL hasDeviceInitFailureReason;
 @property (nonatomic) BOOL hasTimeSinceBoot;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) double timeSinceBoot;
@@ -29,9 +33,11 @@
 - (id)description;
 - (unsigned int)deviceCount;
 - (unsigned int)deviceIdentifierMap;
+- (unsigned int)deviceInitFailureReason;
 - (id)dictionaryRepresentation;
 - (BOOL)hasDeviceCount;
 - (BOOL)hasDeviceIdentifierMap;
+- (BOOL)hasDeviceInitFailureReason;
 - (BOOL)hasTimeSinceBoot;
 - (BOOL)hasTimestamp;
 - (unsigned int)hash;
@@ -40,8 +46,10 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setDeviceCount:(unsigned int)arg1;
 - (void)setDeviceIdentifierMap:(unsigned int)arg1;
+- (void)setDeviceInitFailureReason:(unsigned int)arg1;
 - (void)setHasDeviceCount:(BOOL)arg1;
 - (void)setHasDeviceIdentifierMap:(BOOL)arg1;
+- (void)setHasDeviceInitFailureReason:(BOOL)arg1;
 - (void)setHasTimeSinceBoot:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setTimeSinceBoot:(double)arg1;

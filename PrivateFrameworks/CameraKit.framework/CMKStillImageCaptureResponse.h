@@ -3,23 +3,23 @@
  */
 
 @interface CMKStillImageCaptureResponse : CMKCaptureResponse {
-    NSString *_avalancheUUID;
-    CIFilter *_effectFilter;
-    BOOL _finalResponse;
-    id /* block */ _stillImageCompletionBlock;
-    UIImage *_stillImageFilteredPreviewImage;
-    struct __IOSurface { } *_stillImageFilteredPreviewSurface;
-    NSData *_stillImageJPEGData;
-    NSMutableDictionary *_stillImageJob;
-    UIImage *_stillImageOriginalImage;
-    struct opaqueCMSampleBuffer { } *_stillImageOriginalSampleBuffer;
-    struct __IOSurface { } *_stillImageOriginalSurface;
-    unsigned long _stillImageOriginalSurfaceSize;
-    id /* block */ _stillImageRequestEnqueuedBlock;
-    UIImage *_stillImageUnfilteredPreviewImage;
-    struct __IOSurface { } *_stillImageUnfilteredPreviewSurface;
-    NSString *_timelapseDestinationPath;
-    BOOL _transient;
+    NSString * _avalancheUUID;
+    CIFilter * _effectFilter;
+    BOOL  _finalResponse;
+    id /* block */  _stillImageCompletionBlock;
+    UIImage * _stillImageFilteredPreviewImage;
+    struct __IOSurface { } * _stillImageFilteredPreviewSurface;
+    NSData * _stillImageJPEGData;
+    NSMutableDictionary * _stillImageJob;
+    UIImage * _stillImageOriginalImage;
+    struct opaqueCMSampleBuffer { } * _stillImageOriginalSampleBuffer;
+    struct __IOSurface { } * _stillImageOriginalSurface;
+    unsigned long  _stillImageOriginalSurfaceSize;
+    id /* block */  _stillImageRequestEnqueuedBlock;
+    UIImage * _stillImageUnfilteredPreviewImage;
+    struct __IOSurface { } * _stillImageUnfilteredPreviewSurface;
+    NSString * _timelapseDestinationPath;
+    BOOL  _transient;
 }
 
 @property (nonatomic, copy) NSString *avalancheUUID;

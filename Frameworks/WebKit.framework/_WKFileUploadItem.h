@@ -5,7 +5,7 @@
 @interface _WKFileUploadItem : NSObject {
     struct RetainPtr<NSURL> { 
         void *m_ptr; 
-    } _fileURL;
+    }  _fileURL;
 }
 
 @property (nonatomic, readonly) UIImage *displayImage;

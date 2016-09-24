@@ -3,24 +3,25 @@
  */
 
 @interface CKPhotoPickerItemForSending : NSObject {
-    NSURL *_assetURL;
-    <CKPhotoPickerItemForSendingDelegate> *_delegate;
-    NSURL *_extraVideoURL;
-    BOOL _isVideo;
-    NSURL *_localURL;
-    NSObject<OS_dispatch_semaphore> *_outstandingWork;
-    BOOL _sendIris;
-    UIImage *_thumbnail;
+    NSURL * _assetURL;
+    <CKPhotoPickerItemForSendingDelegate> * _delegate;
+    NSURL * _extraVideoURL;
+    BOOL  _isVideo;
+    NSURL * _localURL;
+    NSObject<OS_dispatch_semaphore> * _outstandingWork;
+    BOOL  _sendIris;
+    UIImage * _thumbnail;
 }
 
-@property (nonatomic, readonly, retain) NSURL *assetURL;
+@property (nonatomic, readonly) NSURL *assetURL;
 @property (nonatomic) <CKPhotoPickerItemForSendingDelegate> *delegate;
 @property (nonatomic, retain) NSURL *extraVideoURL;
 @property (nonatomic, readonly) BOOL isVideo;
-@property (nonatomic, readonly, retain) NSURL *localURL;
+@property (nonatomic, readonly) NSURL *localURL;
 @property (nonatomic) BOOL sendIris;
 @property (retain) UIImage *thumbnail;
 
+- (void).cxx_destruct;
 - (void)_fetchAndPersistImageDataForAsset:(id)arg1 withImageManager:(id)arg2;
 - (id)assetURL;
 - (void)dealloc;

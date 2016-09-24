@@ -3,12 +3,12 @@
  */
 
 @interface GKScoreSharingInfo : NSObject <NSCoding, NSSecureCoding> {
-    UIImage *_badgeImage;
-    BOOL _complete;
-    GKGame *_game;
-    UIImage *_iconImage;
-    GKLeaderboard *_leaderboardCategory;
-    GKPlayer *_player;
+    UIImage * _badgeImage;
+    BOOL  _complete;
+    GKGame * _game;
+    UIImage * _iconImage;
+    GKLeaderboard * _leaderboardCategory;
+    GKPlayer * _player;
 }
 
 @property (nonatomic, retain) UIImage *badgeImage;

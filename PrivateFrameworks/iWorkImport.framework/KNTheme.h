@@ -3,21 +3,21 @@
  */
 
 @interface KNTheme : TSATheme <KNSlideCollection, TSKDocumentObject, TSKTransformableObject, TSSPresetSource> {
-    NSMutableArray *mClassicThemeRecords;
-    NSMutableDictionary *mCustomEffectTimingCurves;
-    BOOL mDefaultMasterSlideNodeIsOurBestGuess;
-    NSObject<OS_dispatch_queue> *mDefaultMasterSlideNodeQueue;
-    TSUWeakReference *mDefaultMasterSlideNodeReference;
-    TSUPointerKeyDictionary *mFormulaReferenceNamesForSlideNodesCache;
-    NSArray *mMasters;
-    NSMutableDictionary *mSlideNodesForFormulaReferenceNamesCache;
-    int mSlideStyleIndex;
-    NSString *mUUID;
+    NSMutableArray * mClassicThemeRecords;
+    NSMutableDictionary * mCustomEffectTimingCurves;
+    BOOL  mDefaultMasterSlideNodeIsOurBestGuess;
+    NSObject<OS_dispatch_queue> * mDefaultMasterSlideNodeQueue;
+    TSUWeakReference * mDefaultMasterSlideNodeReference;
+    TSUPointerKeyDictionary * mFormulaReferenceNamesForSlideNodesCache;
+    NSArray * mMasters;
+    NSMutableDictionary * mSlideNodesForFormulaReferenceNamesCache;
+    int  mSlideStyleIndex;
+    NSString * mUUID;
 }
 
 @property (nonatomic, retain) NSString *UUID;
 @property (nonatomic, retain) NSArray *classicThemeRecords;
-@property (nonatomic, readonly) float cornerRadius;
+@property (nonatomic, readonly) double cornerRadius;
 @property (nonatomic, copy) NSDictionary *customEffectTimingCurves;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) KNSlideNode *defaultMasterSlideNode;
@@ -28,7 +28,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSArray *masters;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } thumbnailSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } thumbnailSize;
 
 + (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3;
 + (id)classicThemeNameFromTheme:(id)arg1;
@@ -44,13 +44,14 @@
 - (void)addDefaultPresenterNotesStylesIfAbsent;
 - (void)addMasterSlideNode:(id)arg1 dolcContext:(id)arg2;
 - (void)addMasterSlideNode:(id)arg1 withThumbnails:(id)arg2 dolcContext:(id)arg3;
-- (void)bootstrapBlackThemeOfSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)bootstrapGradientThemeOfSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)bootstrapThemeOfSize:(struct CGSize { float x1; float x2; })arg1 alternate:(int)arg2;
-- (void)bootstrapWhiteThemeOfSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)bootstrapBlackThemeOfSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)bootstrapGradientThemeOfSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)bootstrapThemeOfSize:(struct CGSize { double x1; double x2; })arg1 alternate:(int)arg2;
+- (void)bootstrapWhiteThemeOfSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)childEnumerator;
 - (id)classicThemeRecords;
 - (BOOL)containsMasterWithName:(id)arg1;
+- (BOOL)containsSlideNode:(id)arg1;
 - (float)cornerRadius;
 - (id)customEffectTimingCurves;
 - (id)customTimingCurveWithName:(id)arg1;
@@ -60,8 +61,10 @@
 - (BOOL)defaultMasterSlideNodeIsOurBestGuess;
 - (id)defaultPresenterNotesParagraphStyle;
 - (id)defaultSlideNodeForNewSelection;
+- (id)defaultSlideNodeForNewSelectionNearestToIndex:(unsigned int)arg1;
 - (id)formulaReferenceNameForSlideNode:(id)arg1;
 - (id)i_findDefaultMaster;
+- (unsigned int)indexOfSlideNode:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 documentStylesheet:(id)arg2;
 - (void)insertMasterSlideNode:(id)arg1 withThumbnails:(id)arg2 atIndex:(unsigned int)arg3 dolcContext:(id)arg4;
@@ -100,7 +103,7 @@
 - (id)slideNamesMatchingPrefix:(id)arg1;
 - (id)slideNodeForFormulaReferenceName:(id)arg1 caseSensitive:(BOOL)arg2;
 - (id)themeCurvesForBuilds:(id)arg1 slideNodes:(id)arg2;
-- (struct CGSize { float x1; float x2; })thumbnailSize;
+- (struct CGSize { double x1; double x2; })thumbnailSize;
 - (id)undeletableStyles;
 - (id)updatedThemeCurveInfoForPastedThemeCurves:(id)arg1;
 - (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;

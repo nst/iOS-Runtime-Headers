@@ -3,7 +3,7 @@
  */
 
 @interface RTScenarioTrigger : NSObject <NSSecureCoding> {
-    unsigned int _type;
+    unsigned int  _type;
 }
 
 @property (nonatomic, readonly) unsigned int type;

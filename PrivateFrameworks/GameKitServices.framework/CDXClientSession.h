@@ -3,19 +3,19 @@
  */
 
 @interface CDXClientSession : NSObject {
-    CDXClient *CDXClient_;
-    unsigned short *ack_;
-    <CDXClientSessionDelegate> *delegate_;
-    id /* block */ inboundHandler_;
-    NSData *lastSent_;
-    NSMutableIndexSet *participantsInFlight_;
-    unsigned char pid_;
-    int retransmitAttempts_;
-    NSObject<OS_dispatch_source> *retransmitTimer_;
-    unsigned short seq_;
-    NSData *sessionKeyPrepped_;
-    NSData *sessionKey_;
-    NSData *ticket_;
+    CDXClient * CDXClient_;
+    unsigned short * ack_;
+    <CDXClientSessionDelegate> * delegate_;
+    id /* block */  inboundHandler_;
+    NSData * lastSent_;
+    NSMutableIndexSet * participantsInFlight_;
+    unsigned char  pid_;
+    int  retransmitAttempts_;
+    NSObject<OS_dispatch_source> * retransmitTimer_;
+    unsigned short  seq_;
+    NSData * sessionKeyPrepped_;
+    NSData * sessionKey_;
+    NSData * ticket_;
 }
 
 @property (nonatomic, readonly, retain) CDXClient *CDXClient;

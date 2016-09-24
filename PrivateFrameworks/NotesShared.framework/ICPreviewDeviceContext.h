@@ -3,12 +3,13 @@
  */
 
 @interface ICPreviewDeviceContext : NSObject {
-    NSArray *_deviceScales;
-    NSArray *_nonScalableDeviceInfo;
-    NSArray *_scalableDeviceInfo;
+    NSArray * _deviceScales;
+    NSArray * _nonScalableDeviceInfo;
+    NSArray * _scalableDeviceInfo;
 }
 
 @property (readonly) NSArray *deviceScales;
+@property (readonly) double maxDeviceScale;
 @property (copy) NSArray *nonScalableDeviceInfo;
 @property (copy) NSArray *scalableDeviceInfo;
 
@@ -19,6 +20,7 @@
 - (id)deviceInfoScalable:(BOOL)arg1;
 - (id)deviceScales;
 - (id)init;
+- (float)maxDeviceScale;
 - (float)maxSizeOfPreviewDeviceInfoImage;
 - (id)nonScalableDeviceInfo;
 - (id)scalableDeviceInfo;

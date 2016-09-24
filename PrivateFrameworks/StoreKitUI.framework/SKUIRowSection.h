@@ -3,19 +3,19 @@
  */
 
 @interface SKUIRowSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIEmbeddedMediaViewDelegate, SKUIItemStateCenterObserver, SKUIMissingItemDelegate, SKUIProductPageOverlayDelegate> {
-    SKUIClientContext *_clientContext;
-    NSMapTable *_columnViews;
-    NSMapTable *_componentArtworkRequestIDs;
-    NSMapTable *_countdownViewControllers;
-    NSMapTable *_editorialLayouts;
-    NSMutableIndexSet *_expandedEditorialIndexes;
-    NSMapTable *_galleryViewControllers;
-    BOOL _isPad;
-    float _landscapeCellContentHeight;
-    SKUIMissingItemLoader *_missingItemLoader;
-    SKUIProductPageOverlayController *_overlayController;
-    SKUILockupComponent *_overlaySourceComponent;
-    float _portraitCellContentHeight;
+    SKUIClientContext * _clientContext;
+    NSMapTable * _columnViews;
+    NSMapTable * _componentArtworkRequestIDs;
+    NSMapTable * _countdownViewControllers;
+    NSMapTable * _editorialLayouts;
+    NSMutableIndexSet * _expandedEditorialIndexes;
+    NSMapTable * _galleryViewControllers;
+    BOOL  _isPad;
+    double  _landscapeCellContentHeight;
+    SKUIMissingItemLoader * _missingItemLoader;
+    SKUIProductPageOverlayController * _overlayController;
+    SKUILockupComponent * _overlaySourceComponent;
+    double  _portraitCellContentHeight;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -28,7 +28,7 @@
 - (float)_cellContentHeightForRowWidth:(float)arg1;
 - (id)_columnViews;
 - (float)_columnWidthForColumnIndex:(int)arg1 rowWidth:(float)arg2;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForColumnIndex:(int)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForColumnIndex:(int)arg1;
 - (id)_editorialLayoutForEditorial:(id)arg1 columnIndex:(int)arg2;
 - (id)_editorialLayoutForLockup:(id)arg1 columnIndex:(int)arg2;
 - (void)_enumerateLockupsWithBlock:(id /* block */)arg1;
@@ -44,6 +44,7 @@
 - (float)_interColumnSpacing;
 - (void)_loadImagesForGalleryComponent:(id)arg1 columnIndex:(int)arg2;
 - (id)_lockupImageForComponent:(id)arg1;
+- (id)_lockupPlaceholderForComponent:(id)arg1;
 - (struct SKUILockupStyle { int x1; int x2; unsigned int x3; })_lockupStyleForComponent:(id)arg1 columnIndex:(int)arg2;
 - (id)_missingItemLoader;
 - (id)_newSizeToFitArtworkRequestWithArtwork:(id)arg1 columnIndex:(int)arg2;
@@ -64,7 +65,7 @@
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (id)backgroundColorForIndexPath:(id)arg1;
 - (id)cellForIndexPath:(id)arg1;
-- (struct CGSize { float x1; float x2; })cellSizeForIndexPath:(id)arg1;
+- (struct CGSize { double x1; double x2; })cellSizeForIndexPath:(id)arg1;
 - (id)clickEventWithItem:(id)arg1 elementName:(id)arg2 index:(int)arg3;
 - (void)collectionViewDidConfirmItemOfferAtIndexPath:(id)arg1;
 - (void)collectionViewDidSelectItemAtIndexPath:(id)arg1;
@@ -84,6 +85,6 @@
 - (void)productPageOverlayDidDismiss:(id)arg1;
 - (void)willAppearInContext:(id)arg1;
 - (void)willHideInContext:(id)arg1;
-- (void)willTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)willTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

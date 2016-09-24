@@ -3,8 +3,8 @@
  */
 
 @interface SYSyncSessionRestartRequest : PBRequest <NSCopying> {
-    SYMessageHeader *_header;
-    NSString *_sessionID;
+    SYMessageHeader * _header;
+    NSString * _sessionID;
 }
 
 @property (nonatomic, retain) SYMessageHeader *header;

@@ -3,7 +3,7 @@
  */
 
 @interface TNArchivedChartSelection : TSPObject <TSKArchivedSelection> {
-    TNChartSelection *mSelection;
+    TNChartSelection * mSelection;
 }
 
 @property (readonly, copy) NSString *debugDescription;

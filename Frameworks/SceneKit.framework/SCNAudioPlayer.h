@@ -3,15 +3,15 @@
  */
 
 @interface SCNAudioPlayer : NSObject {
-    AVAudioNode *_audioNode;
-    AVAudioPlayerNode *_audioPlayer;
-    SCNAudioSource *_audioSource;
-    BOOL _completed;
-    BOOL _customAudioNode;
-    struct __C3DNode { } *_nodeRef;
-    struct __C3DScene { } *_scene;
-    id /* block */ didFinishPlayback;
-    id /* block */ willStartPlayback;
+    AVAudioNode * _audioNode;
+    AVAudioPlayerNode * _audioPlayer;
+    SCNAudioSource * _audioSource;
+    BOOL  _completed;
+    BOOL  _customAudioNode;
+    struct __C3DNode { } * _nodeRef;
+    struct __C3DScene { } * _scene;
+    id /* block */  didFinishPlayback;
+    id /* block */  willStartPlayback;
 }
 
 @property (nonatomic, readonly) AVAudioNode *audioNode;
@@ -26,7 +26,7 @@
 + (id)audioPlayerWithAVAudioNode:(id)arg1;
 + (id)audioPlayerWithSource:(id)arg1;
 
-- (void*)__CFObject;
+- (const void*)__CFObject;
 - (id)audioBufferFormat;
 - (id)audioNode;
 - (id)audioPlayer;

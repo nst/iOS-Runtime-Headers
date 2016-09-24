@@ -3,12 +3,12 @@
  */
 
 @interface CNFavoritesLookupChangeRecord : NSObject {
-    NSString *abDatabaseUUID;
-    int identifier;
-    NSString *label;
-    NSString *name;
-    int uid;
-    NSString *value;
+    NSString * abDatabaseUUID;
+    int  identifier;
+    NSString * label;
+    NSString * name;
+    int  uid;
+    NSString * value;
 }
 
 - (void).cxx_destruct;

@@ -3,11 +3,11 @@
  */
 
 @interface TSWPStyleDiff : TSPObject {
-    TSWPCharacterStylePropertyChangeSet *_changeSet;
-    BOOL _definedChangeSet;
-    BOOL _definedStyle;
-    TSSStylePropertyChangeSet *_previouslyAppliedChangeSet;
-    TSSStyle *_style;
+    TSWPCharacterStylePropertyChangeSet * _changeSet;
+    BOOL  _definedChangeSet;
+    BOOL  _definedStyle;
+    TSSStylePropertyChangeSet * _previouslyAppliedChangeSet;
+    TSSStyle * _style;
 }
 
 @property (nonatomic, retain) TSSStylePropertyChangeSet *changeSet;
@@ -16,6 +16,7 @@
 
 - (id)changeSet;
 - (id)changedPropertyNames;
+- (void)dealloc;
 - (id)description;
 - (void)didInitFromSOS;
 - (unsigned int)hash;

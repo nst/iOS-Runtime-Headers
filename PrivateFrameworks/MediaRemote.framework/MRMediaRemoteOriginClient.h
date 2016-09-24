@@ -3,18 +3,19 @@
  */
 
 @interface MRMediaRemoteOriginClient : NSObject {
-    BOOL _canBeNowPlayingApp;
-    id /* block */ _commandHandlerBlock;
-    NSMutableDictionary *_commandHandlerBlocks;
-    BOOL _isOverrideApp;
-    int _notifyDidLaunchToken;
-    int _notifyRestoreClientStateForLaunch;
-    MRNowPlayingArtwork *_nowPlayingArtwork;
-    NSDictionary *_nowPlayingInfo;
-    struct _MROrigin { } *_origin;
-    id /* block */ _playbackQueueCallback;
-    unsigned int _routeDiscoveryMode;
-    NSArray *_supportedCommands;
+    BOOL  _canBeNowPlayingApp;
+    NSMutableDictionary * _commandHandlerBlocks;
+    BOOL  _isOverrideApp;
+    int  _notifyDidLaunchToken;
+    int  _notifyRestoreClientStateForLaunch;
+    MRNowPlayingArtwork * _nowPlayingArtwork;
+    NSDictionary * _nowPlayingInfo;
+    struct _MROrigin { } * _origin;
+    id /* block */  _playbackQueueCallback;
+    unsigned int  _routeDiscoveryMode;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    NSArray * _supportedCommands;
+    NSMutableDictionary * _transactionCallbacks;
 }
 
 @property (nonatomic) BOOL canBeNowPlayingApp;
@@ -28,6 +29,7 @@
 @property (nonatomic, copy) NSArray *supportedCommands;
 
 - (void)_avSystemControllerServerConnectionDiedNotification:(id)arg1;
+- (void)_registerDefaultCallbacks;
 - (void)addCommandHandlerBlock:(id /* block */)arg1 forKey:(id)arg2;
 - (BOOL)canBeNowPlayingApp;
 - (id)commandHandlerBlocks;
@@ -47,6 +49,8 @@
 - (void)setPlaybackQueueCallback:(id /* block */)arg1;
 - (void)setRouteDiscoveryMode:(unsigned int)arg1;
 - (void)setSupportedCommands:(id)arg1;
+- (void)setTransactionCallback:(id /* block */)arg1 forName:(unsigned int)arg2;
 - (id)supportedCommands;
+- (id /* block */)transactionCallbackForName:(unsigned int)arg1;
 
 @end

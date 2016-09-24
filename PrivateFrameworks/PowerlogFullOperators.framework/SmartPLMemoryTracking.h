@@ -3,8 +3,8 @@
  */
 
 @interface SmartPLMemoryTracking : NSObject {
-    PLEntryNotificationOperatorComposition *_memoryTrackingNotification;
-    PLSmartPLService *_operator;
+    PLEntryNotificationOperatorComposition * _memoryTrackingNotification;
+    PLSmartPLService * _operator;
 }
 
 @property (retain) PLEntryNotificationOperatorComposition *memoryTrackingNotification;

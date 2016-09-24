@@ -14,7 +14,8 @@
 
 @optional
 
-- (id)existingArtworkEffectResultForEffectType:(unsigned int)arg1 catalog:(MPArtworkCatalog *)arg2 options:(NSDictionary *)arg3;
-- (void)loadArtworkEffectResultForEffectType:(void *)arg1 catalog:(void *)arg2 options:(void *)arg3 systemEffectHandler:(void *)arg4 completionHandler:(void *)arg5; // needs 5 arg types, found 28: unsigned int, MPArtworkCatalog *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id /* block */, void*, void, id /* block */, id, void*, inout unsigned short, void*, const const out const void*, void*, void*, id /* block */, void*, void, id /* block */, id, void*, inout unsigned short, void*, const const out const void*, void*
+- (id)existingArtworkEffectResultForEffectType:(int)arg1 catalog:(MPArtworkCatalog *)arg2 options:(NSDictionary *)arg3;
+- (BOOL)hasExistingRepresentationOnDiskForArtworkCatalog:(MPArtworkCatalog *)arg1;
+- (void)loadArtworkEffectResultForEffectType:(void *)arg1 catalog:(void *)arg2 options:(void *)arg3 systemEffectHandler:(void *)arg4 completionHandler:(void *)arg5; // needs 5 arg types, found 28: int, MPArtworkCatalog *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id /* block */, void*, void, id /* block */, id, void*, inout unsigned short, void*, const const out const void*, void*, void*, id /* block */, void*, void, id /* block */, id, void*, inout unsigned short, void*, const const out const void*, void*
 
 @end

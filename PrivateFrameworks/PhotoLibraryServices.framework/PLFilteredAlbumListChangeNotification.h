@@ -3,11 +3,11 @@
  */
 
 @interface PLFilteredAlbumListChangeNotification : PLAssetContainerListChangeNotification <PLIndexMapperDataSource> {
-    PLFilteredAlbumList *_albumList;
-    PLAssetContainerListChangeNotification *_backingNotification;
-    NSIndexSet *_filteredIndexes;
-    PLIndexMapper *_indexMapper;
-    NSIndexSet *_oldFilteredIndexes;
+    PLFilteredAlbumList * _albumList;
+    PLAssetContainerListChangeNotification * _backingNotification;
+    NSIndexSet * _filteredIndexes;
+    PLIndexMapper * _indexMapper;
+    NSIndexSet * _oldFilteredIndexes;
 }
 
 @property (readonly, copy) NSString *debugDescription;

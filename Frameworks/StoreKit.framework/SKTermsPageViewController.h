@@ -3,11 +3,11 @@
  */
 
 @interface SKTermsPageViewController : UIViewController <UINavigationBarDelegate> {
-    <SKTermsPageViewControllerDelegate> *_delegate;
-    UINavigationBar *_navbar;
-    NSString *_terms;
-    UIToolbar *_toolbar;
-    UIWebView *_webview;
+    <SKTermsPageViewControllerDelegate> * _delegate;
+    UINavigationBar * _navbar;
+    NSString * _terms;
+    UIToolbar * _toolbar;
+    UIWebView * _webview;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,9 +3,9 @@
  */
 
 @interface SLAbsintheSigningSession : NSObject {
-    NSString *_certURL;
-    struct NACContextOpaque_ { } *_context;
-    NSString *_sessionURL;
+    NSString * _certURL;
+    struct NACContextOpaque_ { } * _context;
+    NSString * _sessionURL;
 }
 
 - (void).cxx_destruct;

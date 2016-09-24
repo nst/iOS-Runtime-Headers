@@ -3,13 +3,13 @@
  */
 
 @interface PLImageCacheList : NSObject {
-    PLLoadRequestKey *_dummy;
-    id *_images;
-    NSObject<OS_dispatch_queue> *_isolation;
-    unsigned int *_keyHashes;
-    id *_keys;
-    unsigned int _lastFailLocation;
-    unsigned int _length;
+    PLLoadRequestKey * _dummy;
+    id * _images;
+    NSObject<OS_dispatch_queue> * _isolation;
+    unsigned int * _keyHashes;
+    id * _keys;
+    unsigned int  _lastFailLocation;
+    unsigned int  _length;
 }
 
 + (id)newImageCacheList;

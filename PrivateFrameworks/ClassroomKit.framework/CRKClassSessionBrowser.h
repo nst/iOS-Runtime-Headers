@@ -3,16 +3,16 @@
  */
 
 @interface CRKClassSessionBrowser : NSObject <CATNetworkReachabilityDelegate, CRKClassSessionBeaconBrowserDelegate, CRKClassSessionDelegate> {
-    id _clientIdentity;
-    <CRKClassSessionBrowserDelegate> *_delegate;
-    NSSet *_enrolledControlGroupIdentifiers;
-    NSSet *_organizationUUIDs;
-    NSDictionary *_temporarilyEnrolledControlGroupIdentifiersByInstructorIdentifier;
-    NSArray *_trustedCertificates;
-    CRKClassSessionBeaconBrowser *mBeaconBrowser;
-    NSMutableDictionary *mClassSessionsByIdentifier;
-    NSMutableSet *mDisconnectedClassSessionIdentifiers;
-    CATNetworkReachability *mNetworkReachability;
+    id  _clientIdentity;
+    <CRKClassSessionBrowserDelegate> * _delegate;
+    NSSet * _enrolledControlGroupIdentifiers;
+    NSSet * _organizationUUIDs;
+    NSDictionary * _temporarilyEnrolledControlGroupIdentifiersByInstructorIdentifier;
+    NSArray * _trustedCertificates;
+    CRKClassSessionBeaconBrowser * mBeaconBrowser;
+    NSMutableDictionary * mClassSessionsByIdentifier;
+    NSMutableSet * mDisconnectedClassSessionIdentifiers;
+    CATNetworkReachability * mNetworkReachability;
 }
 
 @property (getter=isBrowsing, nonatomic, readonly) BOOL browsing;
@@ -33,6 +33,7 @@
 - (id)browserStateDictionary;
 - (void)classSession:(id)arg1 didChangeState:(int)arg2 previousState:(int)arg3;
 - (void)classSession:(id)arg1 didConnectWithTransport:(id)arg2;
+- (void)classSession:(id)arg1 willLoseBeaconAfterTimeInterval:(double)arg2;
 - (void)classSessionDidDisconnect:(id)arg1;
 - (void)classSessionDidInvalidate:(id)arg1;
 - (void)classSessionInvalidated:(id)arg1;

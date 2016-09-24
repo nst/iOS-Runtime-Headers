@@ -3,10 +3,10 @@
  */
 
 @interface GSTemporaryStorage : NSObject <GSAdditionStoring, GSAdditionStoringPrivate> {
-    NSURL *_documentURL;
-    NSURL *_libraryURL;
-    int _lockFd;
-    NSURL *_stagingURL;
+    NSURL * _documentURL;
+    NSURL * _libraryURL;
+    int  _lockFd;
+    NSURL * _stagingURL;
 }
 
 @property (retain) NSURL *documentURL;
@@ -29,7 +29,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)documentURL;
-- (struct NSEnumerator { Class x1; }*)enumeratorForAdditionsInNameSpace:(id)arg1 withOptions:(unsigned long long)arg2 withoutOptions:(unsigned long long)arg3 ordering:(int)arg4;
+- (struct NSEnumerator { Class x1; }*)enumeratorForAdditionsInNameSpace:(id)arg1 withOptions:(unsigned int)arg2 withoutOptions:(unsigned int)arg3 ordering:(int)arg4;
 - (void)finalize;
 - (id)getAdditionDictionary:(id)arg1 error:(id*)arg2;
 - (unsigned int)hash;
@@ -46,7 +46,7 @@
 - (BOOL)replaceDocumentWithContentsOfItemAtURL:(id)arg1 preservingCurrentVersionWithCreationInfo:(id)arg2 createdAddition:(id*)arg3 error:(id*)arg4;
 - (BOOL)setAdditionDisplayName:(id)arg1 value:(id)arg2 error:(id*)arg3;
 - (id)setAdditionNameSpace:(id)arg1 value:(id)arg2 error:(id*)arg3;
-- (BOOL)setAdditionOptions:(id)arg1 value:(unsigned long long)arg2 error:(id*)arg3;
+- (BOOL)setAdditionOptions:(id)arg1 value:(unsigned int)arg2 error:(id*)arg3;
 - (void)setDocumentURL:(id)arg1;
 - (id)stagingURLforCreatingAdditionWithError:(id*)arg1;
 

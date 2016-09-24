@@ -3,9 +3,9 @@
  */
 
 @interface MSCLAuthorSelectionAlertController : UIAlertController <SKUIArtworkRequestDelegate> {
-    NSMutableArray *_artworkNotificationObservers;
-    UIImage *_placeholderImage;
-    SKUIResourceLoader *_resourceLoader;
+    NSMutableArray * _artworkNotificationObservers;
+    UIImage * _placeholderImage;
+    SKUIResourceLoader * _resourceLoader;
 }
 
 @property (readonly, copy) NSString *debugDescription;

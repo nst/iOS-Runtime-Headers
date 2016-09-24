@@ -3,9 +3,9 @@
  */
 
 @interface FTCServiceMonitor : NSObject {
-    int _availability;
-    int _token;
-    int _type;
+    int  _availability;
+    int  _token;
+    int  _type;
 }
 
 @property (nonatomic, readonly) int serviceType;
@@ -13,7 +13,6 @@
 - (void)_postAvailability:(int)arg1;
 - (void)_updateAvailability;
 - (void)dealloc;
-- (void)handleActiveAccountsChanged:(id)arg1;
 - (id)initWithServiceType:(int)arg1;
 - (int)serviceAvailability;
 - (int)serviceType;

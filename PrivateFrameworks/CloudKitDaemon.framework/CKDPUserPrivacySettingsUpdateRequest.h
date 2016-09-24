@@ -3,8 +3,8 @@
  */
 
 @interface CKDPUserPrivacySettingsUpdateRequest : PBRequest <NSCopying> {
-    NSString *_bundleIdentifier;
-    CKDPUserPrivacySettings *_userPrivacySettings;
+    NSString * _bundleIdentifier;
+    CKDPUserPrivacySettings * _userPrivacySettings;
 }
 
 @property (nonatomic, retain) NSString *bundleIdentifier;

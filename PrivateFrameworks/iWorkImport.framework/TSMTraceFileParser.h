@@ -3,10 +3,10 @@
  */
 
 @interface TSMTraceFileParser : NSObject {
-    NSData *mData;
-    unsigned int mDataLength;
-    unsigned int mOffset;
-    struct TSMTraceRecord_s { struct TSMTraceRecordHeader_s { unsigned char x_1_1_1; unsigned char x_1_1_2; unsigned short x_1_1_3; struct timeval { int x_4_2_1; int x_4_2_2; } x_1_1_4; } x1; BOOL x2[0]; } *mRecordBuffer;
+    NSData * mData;
+    unsigned int  mDataLength;
+    unsigned int  mOffset;
+    struct TSMTraceRecord_s { struct TSMTraceRecordHeader_s { unsigned char x_1_1_1; unsigned char x_1_1_2; unsigned short x_1_1_3; struct timeval { int x_4_2_1; int x_4_2_2; } x_1_1_4; } x1; BOOL x2[0]; } * mRecordBuffer;
 }
 
 + (BOOL)dataIsTraceFile:(id)arg1;

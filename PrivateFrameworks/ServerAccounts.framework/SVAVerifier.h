@@ -3,15 +3,15 @@
  */
 
 @interface SVAVerifier : NSObject <NSURLSessionDataDelegate, NSURLSessionDelegate> {
-    BOOL _canceledByUser;
-    id /* block */ _completionBlock;
-    NSURLSessionDataTask *_dataTask;
-    NSString *_password;
-    NSMutableData *_responseData;
-    NSString *_serverAddress;
-    NSURLSession *_session;
-    NSArray *_trustedCertificates;
-    NSString *_userName;
+    BOOL  _canceledByUser;
+    id /* block */  _completionBlock;
+    NSURLSessionDataTask * _dataTask;
+    NSString * _password;
+    NSMutableData * _responseData;
+    NSString * _serverAddress;
+    NSURLSession * _session;
+    NSArray * _trustedCertificates;
+    NSString * _userName;
 }
 
 @property (nonatomic) BOOL canceledByUser;

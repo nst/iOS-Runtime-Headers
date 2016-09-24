@@ -3,14 +3,14 @@
  */
 
 @interface EKUIInviteesViewRespondedInviteesSection : NSObject <EKUIInviteesViewSection> {
-    NSString *_cachedCellReuseIdentifier;
-    BOOL _editable;
-    EKEvent *_event;
-    id /* block */ _participantRemoved;
-    id /* block */ _participantTapped;
-    NSMutableArray *_participants;
-    unsigned int _reuseIdentifierVersion;
-    id /* block */ _tableViewCellHook;
+    NSString * _cachedCellReuseIdentifier;
+    BOOL  _editable;
+    EKEvent * _event;
+    id /* block */  _participantRemoved;
+    id /* block */  _participantTapped;
+    NSMutableArray * _participants;
+    unsigned int  _reuseIdentifierVersion;
+    id /* block */  _tableViewCellHook;
 }
 
 @property (nonatomic, retain) NSString *cachedCellReuseIdentifier;

@@ -3,16 +3,15 @@
  */
 
 @interface IPFeatureExtractor : NSObject {
-    NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (retain) NSObject<OS_dispatch_queue> *queue;
 
 + (id)defaultExtractor;
-+ (unsigned int)extractorVersion;
 
 - (void).cxx_destruct;
-- (id)featuresForTextUnit:(id)arg1 inMessageUnit:(id)arg2 context:(id)arg3;
+- (id)featuresForTextString:(id)arg1 inMessageUnit:(id)arg2 context:(id)arg3;
 - (id)init;
 - (id)queue;
 - (id)queueType;

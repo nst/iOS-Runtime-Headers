@@ -3,7 +3,7 @@
  */
 
 @interface UIInputViewAnimationStyleDirectional : UIInputViewAnimationStyle {
-    int _outDirection;
+    int  _outDirection;
 }
 
 @property (nonatomic) int outDirection;

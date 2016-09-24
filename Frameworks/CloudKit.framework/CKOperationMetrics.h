@@ -3,8 +3,8 @@
  */
 
 @interface CKOperationMetrics : NSObject <NSSecureCoding> {
-    CKMetric *_MMCSMetrics;
-    CKMetric *_cloudKitMetrics;
+    CKMetric * _MMCSMetrics;
+    CKMetric * _cloudKitMetrics;
 }
 
 @property (nonatomic, retain) CKMetric *MMCSMetrics;

@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptPassbookLibrary : SUScriptObject {
-    PKPassLibrary *_passLibrary;
+    PKPassLibrary * _passLibrary;
 }
 
 @property (readonly) NSArray *passes;

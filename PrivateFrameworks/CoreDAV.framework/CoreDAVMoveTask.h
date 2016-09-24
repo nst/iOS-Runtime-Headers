@@ -3,7 +3,7 @@
  */
 
 @interface CoreDAVMoveTask : CoreDAVCopyOrMoveTask {
-    NSString *_previousETag;
+    NSString * _previousETag;
 }
 
 @property (nonatomic) <CoreDAVMoveTaskDelegate> *delegate;

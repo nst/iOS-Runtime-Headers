@@ -3,15 +3,15 @@
  */
 
 @interface UIDocumentErrorRecoveryAttempter : NSObject {
-    id /* block */ _appModalRecoveryAttempter;
-    id /* block */ _continuerOrNil;
-    UIDocument *_document;
+    id /* block */  _appModalRecoveryAttempter;
+    id /* block */  _continuerOrNil;
+    UIDocument * _document;
     struct { 
         unsigned int attemptedRecovery : 1; 
-    } _errorRecoveryAttempterFlags;
-    id /* block */ _recoveryCancelerOrNil;
-    int _silentRecoveryOptionIndex;
-    id _wrappedRecoveryAttempter;
+    }  _errorRecoveryAttempterFlags;
+    id /* block */  _recoveryCancelerOrNil;
+    int  _silentRecoveryOptionIndex;
+    id  _wrappedRecoveryAttempter;
 }
 
 - (void).cxx_destruct;

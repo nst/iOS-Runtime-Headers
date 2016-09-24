@@ -3,9 +3,9 @@
  */
 
 @interface UITableViewIndexOverlaySelectionView : UIView <UICollectionViewDataSource, UICollectionViewDelegate> {
-    UICollectionView *_collectionView;
-    UITableViewIndexOverlaySelectionViewCollectionViewFlowLayout *_flowLayout;
-    UITableView *_table;
+    UICollectionView * _collectionView;
+    UITableViewIndexOverlaySelectionViewCollectionViewFlowLayout * _flowLayout;
+    UITableView * _table;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -18,7 +18,6 @@
 - (void)_doneTapped;
 - (void)_invalidateTable;
 - (void)_setIndexColor:(id)arg1;
-- (BOOL)canBecomeFirstResponder;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;

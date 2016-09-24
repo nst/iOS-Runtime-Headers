@@ -2,28 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSURemoteDefaults : NSObject {
-    NSObject<OS_dispatch_queue> *_checkQueue;
-    NSObject<OS_dispatch_source> *_updateTimer;
-}
+@interface TSURemoteDefaults : TSURemotePropertyList
 
 @property (nonatomic, readonly) NSURL *downloadableContentURL;
 
 + (id)sharedDefaults;
 
-- (void).cxx_destruct;
-- (id)URLForKey:(id)arg1;
-- (id)URLRequest;
-- (void)checkForUpdate;
-- (void)dealloc;
-- (id)dictionaryForKey:(id)arg1;
 - (id)downloadableContentURL;
-- (id)init;
 - (id)initInternal;
+- (id)initWithRemoteURL:(id)arg1 localURL:(id)arg2;
 - (id)objectForKey:(id)arg1;
-- (void)processResponse:(id)arg1 data:(id)arg2 error:(id)arg3;
+- (void)processPropertyList:(id)arg1;
 - (void)registerDefaults;
-- (id)stringForKey:(id)arg1;
-- (double)timeIntervalUntilNextUpdate;
 
 @end

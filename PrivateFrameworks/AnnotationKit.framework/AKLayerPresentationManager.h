@@ -3,31 +3,31 @@
  */
 
 @interface AKLayerPresentationManager : NSObject {
-    float _alignmentGuidePositionX;
-    float _alignmentGuidePositionY;
-    CAShapeLayer *_alignmentGuideXLayer;
-    CAShapeLayer *_alignmentGuideYLayer;
-    NSMapTable *_annotationsToAdornmentLayers;
-    NSMapTable *_annotationsToAnnotationLayers;
-    CALayer *_cropAdornmentLayer;
-    CALayer *_cropAnnotationLayer;
-    float _currentScaleFactor;
-    BOOL _isObservingModel;
-    AKPageController *_pageController;
-    AKPageModelController *_pageModelController;
-    CALayer *_rootLayer;
-    BOOL _shouldPixelate;
+    double  _alignmentGuidePositionX;
+    double  _alignmentGuidePositionY;
+    CAShapeLayer * _alignmentGuideXLayer;
+    CAShapeLayer * _alignmentGuideYLayer;
+    NSMapTable * _annotationsToAdornmentLayers;
+    NSMapTable * _annotationsToAnnotationLayers;
+    CALayer * _cropAdornmentLayer;
+    CALayer * _cropAnnotationLayer;
+    double  _currentScaleFactor;
+    BOOL  _isObservingModel;
+    AKPageController * _pageController;
+    AKPageModelController * _pageModelController;
+    CALayer * _rootLayer;
+    BOOL  _shouldPixelate;
 }
 
-@property (nonatomic) float alignmentGuidePositionX;
-@property (nonatomic) float alignmentGuidePositionY;
+@property (nonatomic) double alignmentGuidePositionX;
+@property (nonatomic) double alignmentGuidePositionY;
 @property (retain) CAShapeLayer *alignmentGuideXLayer;
 @property (retain) CAShapeLayer *alignmentGuideYLayer;
 @property (retain) NSMapTable *annotationsToAdornmentLayers;
 @property (retain) NSMapTable *annotationsToAnnotationLayers;
 @property (retain) CALayer *cropAdornmentLayer;
 @property (retain) CALayer *cropAnnotationLayer;
-@property float currentScaleFactor;
+@property double currentScaleFactor;
 @property BOOL isObservingModel;
 @property AKPageController *pageController;
 @property (retain) AKPageModelController *pageModelController;

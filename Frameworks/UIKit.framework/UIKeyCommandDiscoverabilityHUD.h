@@ -3,9 +3,9 @@
  */
 
 @interface UIKeyCommandDiscoverabilityHUD : NSObject {
-    NSTimer *_HUDPopTimer;
-    BOOL _commandKeyIsDown;
-    _UIKeyCommandDiscoverabilityHUDWindow *_window;
+    NSTimer * _HUDPopTimer;
+    BOOL  _commandKeyIsDown;
+    _UIKeyCommandDiscoverabilityHUDWindow * _window;
 }
 
 + (id)sharedKeyCommandDiscoverabilityHUD;

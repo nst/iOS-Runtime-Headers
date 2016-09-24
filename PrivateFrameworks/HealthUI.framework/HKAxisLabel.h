@@ -3,9 +3,9 @@
  */
 
 @interface HKAxisLabel : NSObject {
-    BOOL _isMajorTick;
-    id _location;
-    NSString *_text;
+    BOOL  _isMajorTick;
+    id  _location;
+    NSString * _text;
 }
 
 @property (nonatomic) BOOL isMajorTick;

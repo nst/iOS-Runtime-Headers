@@ -3,7 +3,7 @@
  */
 
 @interface DATransaction : NSObject {
-    NSString *_transactionId;
+    NSString * _transactionId;
 }
 
 @property (nonatomic, readonly) NSString *transactionId;

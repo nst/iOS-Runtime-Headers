@@ -3,7 +3,7 @@
  */
 
 @interface CMDiagramListMapper : CMDiagramShapeMapper {
-    float mMaxLineCount;
+    double  mMaxLineCount;
 }
 
 - (void)mapAt:(id)arg1 withState:(id)arg2;
@@ -11,8 +11,8 @@
 - (void)mapListItemAt:(id)arg1 index:(unsigned int)arg2 withState:(id)arg3;
 - (void)setDefaultFonSize;
 - (float)setFonSizeForChildNode:(id)arg1 atIndex:(unsigned int)arg2 level:(int)arg3;
-- (struct CGSize { float x1; float x2; })sizeForNode:(id)arg1 atIndex:(unsigned int)arg2;
+- (struct CGSize { double x1; double x2; })sizeForNode:(id)arg1 atIndex:(unsigned int)arg2;
 - (id)suggestedBoundsForHListItemWithIndex:(unsigned int)arg1;
-- (struct CGSize { float x1; float x2; })textSize;
+- (struct CGSize { double x1; double x2; })textSize;
 
 @end

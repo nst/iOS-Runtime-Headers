@@ -3,12 +3,12 @@
  */
 
 @interface MBRestoreFailure : NSObject <NSCoding, NSCopying> {
-    NSString *_assetType;
-    NSString *_dataclass;
-    NSString *_displayName;
-    NSError *_error;
-    NSData *_icon;
-    NSString *_identifier;
+    NSString * _assetType;
+    NSString * _dataclass;
+    NSString * _displayName;
+    NSError * _error;
+    NSData * _icon;
+    NSString * _identifier;
 }
 
 @property (nonatomic, copy) NSString *assetType;

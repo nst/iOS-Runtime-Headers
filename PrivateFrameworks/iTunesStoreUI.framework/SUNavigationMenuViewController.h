@@ -3,7 +3,7 @@
  */
 
 @interface SUNavigationMenuViewController : SUMenuViewController {
-    SUNavigationMenu *_navigationMenu;
+    SUNavigationMenu * _navigationMenu;
 }
 
 @property (nonatomic, readonly) SUNavigationMenu *navigationMenu;

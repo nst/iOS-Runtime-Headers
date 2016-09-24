@@ -3,28 +3,47 @@
  */
 
 @interface CADisplayMode : NSObject {
-    CADisplay *_dpy;
-    unsigned long _height;
-    void *_priv;
-    unsigned long _width;
+    CADisplay * _dpy;
+    unsigned long  _height;
+    struct Mode { 
+        union { 
+            struct { 
+                unsigned int width : 16; 
+                unsigned int height : 16; 
+                unsigned int refresh_rate : 24; 
+                unsigned int is_virtual : 1; 
+                unsigned int pixel_format : 2; 
+                unsigned int color_range : 2; 
+            } s; 
+            unsigned int uint64; 
+        } u; 
+    }  _mode;
+    unsigned long  _width;
 }
 
+@property (nonatomic, readonly, copy) NSString *colorMode;
 @property (nonatomic, readonly) unsigned long height;
-@property (nonatomic, readonly) float pixelAspectRatio;
+@property (nonatomic, readonly) BOOL isVirtual;
+@property (nonatomic, readonly) double pixelAspectRatio;
+@property (nonatomic, readonly) double refreshRate;
 @property (nonatomic, readonly) unsigned long width;
 
-+ (id)_displayModeWithMode:(int)arg1 display:(id)arg2;
++ (id)_displayModeWithMode:(struct Mode { union { struct { unsigned int x_1_2_1 : 16; unsigned int x_1_2_2 : 16; unsigned int x_1_2_3 : 24; unsigned int x_1_2_4 : 1; unsigned int x_1_2_5 : 2; unsigned int x_1_2_6 : 2; } x_1_1_1; unsigned int x_1_1_2; } x1; })arg1 display:(id)arg2;
 
+- (id).cxx_construct;
 - (id)_display;
-- (id)_initWithMode:(int)arg1 display:(id)arg2;
-- (int)_mode;
+- (id)_initWithMode:(struct Mode { union { struct { unsigned int x_1_2_1 : 16; unsigned int x_1_2_2 : 16; unsigned int x_1_2_3 : 24; unsigned int x_1_2_4 : 1; unsigned int x_1_2_5 : 2; unsigned int x_1_2_6 : 2; } x_1_1_1; unsigned int x_1_1_2; } x1; })arg1 display:(id)arg2;
+- (struct Mode { union { struct { unsigned int x_1_2_1 : 16; unsigned int x_1_2_2 : 16; unsigned int x_1_2_3 : 24; unsigned int x_1_2_4 : 1; unsigned int x_1_2_5 : 2; unsigned int x_1_2_6 : 2; } x_1_1_1; unsigned int x_1_1_2; } x1; })_mode;
 - (void)_setWidth:(unsigned long)arg1 height:(unsigned long)arg2;
+- (id)colorMode;
 - (void)dealloc;
 - (id)description;
 - (unsigned int)hash;
 - (unsigned long)height;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isVirtual;
 - (float)pixelAspectRatio;
+- (double)refreshRate;
 - (unsigned long)width;
 
 @end

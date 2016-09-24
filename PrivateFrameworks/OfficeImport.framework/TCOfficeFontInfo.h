@@ -3,10 +3,10 @@
  */
 
 @interface TCOfficeFontInfo : NSObject {
-    NSString *_alphaFontName;
-    NSString *_fontName;
-    BOOL _isBold;
-    BOOL _isItalic;
+    NSString * _alphaFontName;
+    NSString * _fontName;
+    BOOL  _isBold;
+    BOOL  _isItalic;
 }
 
 @property (nonatomic, readonly) NSString *alphaFontName;

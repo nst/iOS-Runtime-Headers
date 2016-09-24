@@ -3,8 +3,8 @@
  */
 
 @interface OCCEncryptor : NSObject {
-    NSString *mOutputFilename;
-    struct OCCStreamer { int (**x1)(); struct OCCCryptoKey {} *x2; char *x3; } *mStreamer;
+    NSString * mOutputFilename;
+    struct OCCStreamer { int (**x1)(); struct OCCCryptoKey {} *x2; char *x3; } * mStreamer;
 }
 
 @property (nonatomic, readonly) NSString *outputFilename;

@@ -2,14 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBCacheToken_KeyTemplate : UIKBCacheToken_Key {
-    NSString *_annotationString;
-}
+@interface UIKBCacheToken_KeyTemplate : UIKBCacheToken_Key
 
-+ (id)tokenTemplateForKey:(id)arg1 name:(id)arg2 style:(int)arg3 size:(struct CGSize { float x1; float x2; })arg4;
++ (id)tokenTemplateForKey:(id)arg1 name:(id)arg2 style:(int)arg3 size:(struct CGSize { double x1; double x2; })arg4;
 
 - (id)_stringWithAdditionalValues:(id /* block */)arg1;
-- (void)annotateWithBool:(BOOL)arg1;
-- (void)dealloc;
 
 @end

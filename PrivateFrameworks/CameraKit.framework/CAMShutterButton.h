@@ -12,7 +12,7 @@
 
 // Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
 
-+ (id)shutterButtonWithSpec:(struct CAMShutterButtonSpec { float x1; float x2; float x3; float x4; })arg1;
++ (id)shutterButtonWithSpec:(struct CAMShutterButtonSpec { double x1; double x2; double x3; double x4; })arg1;
 
 - (int)mode;
 - (void)setMode:(int)arg1 animated:(BOOL)arg2;

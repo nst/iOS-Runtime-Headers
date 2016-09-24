@@ -3,9 +3,9 @@
  */
 
 @interface DDRemoteTimeLineViewControllerProvider : DDRemoteActionViewControllerProvider <EKDayViewControllerDataSource, EKDayViewControllerDelegate> {
-    EKEvent *_event;
-    NSArray *_events;
-    EKEventStore *_store;
+    EKEvent * _event;
+    NSArray * _events;
+    EKEventStore * _store;
 }
 
 @property (readonly, copy) NSString *debugDescription;

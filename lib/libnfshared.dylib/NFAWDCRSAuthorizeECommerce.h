@@ -3,18 +3,15 @@
  */
 
 @interface NFAWDCRSAuthorizeECommerce : NSObject <NFAWDEventProtocol> {
-    AWDNFCSECRSAuthorizeECommerce *_metric;
-    NSData *aid;
-    unsigned int countryCode;
-    unsigned int currencyCode;
-    unsigned int merchantCapabilities;
-    NSData *merchantId;
-    unsigned int method;
-    unsigned long long otherAmount;
-    unsigned int status;
-    NSData *transactionId;
-    unsigned long long transactionTotal;
-    unsigned int transactionType;
+    unsigned int  _countryCode;
+    unsigned int  _currencyCode;
+    unsigned int  _merchantCapabilities;
+    unsigned int  _method;
+    AWDNFCSECRSAuthorizeECommerce * _metric;
+    unsigned long long  _otherAmount;
+    unsigned int  _status;
+    unsigned long long  _transactionTotal;
+    unsigned int  _transactionType;
 }
 
 @property (nonatomic, retain) NSData *aid;

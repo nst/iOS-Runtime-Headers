@@ -3,19 +3,25 @@
  */
 
 @interface CNContactSuggestionViewController : UITableViewController {
-    CNPropertySuggestionAction *_action;
-    UILabel *_contentLabel;
-    UILabel *_dateLabel;
-    UILabel *_fromLabel;
-    SGOrigin *_origin;
-    CNPropertyCell *_propertyCell;
-    UILabel *_subjectLabel;
+    CNPropertySuggestionAction * _action;
+    UIButton * _addToContactButton;
+    UILabel * _contentLabel;
+    UILabel * _dateLabel;
+    NSString * _foundInAppName;
+    UILabel * _fromLabel;
+    UIButton * _ignoreButton;
+    SGOrigin * _origin;
+    CNPropertyCell * _propertyCell;
+    UILabel * _subjectLabel;
 }
 
 @property (nonatomic, retain) CNPropertySuggestionAction *action;
+@property (nonatomic, retain) UIButton *addToContactButton;
 @property (nonatomic, retain) UILabel *contentLabel;
 @property (nonatomic, retain) UILabel *dateLabel;
+@property (retain) NSString *foundInAppName;
 @property (nonatomic, retain) UILabel *fromLabel;
+@property (nonatomic, retain) UIButton *ignoreButton;
 @property (nonatomic, retain) SGOrigin *origin;
 @property (nonatomic, retain) CNPropertyCell *propertyCell;
 @property (nonatomic, retain) UILabel *subjectLabel;
@@ -25,16 +31,23 @@
 - (void).cxx_destruct;
 - (id)action;
 - (void)addToContact:(id)arg1;
+- (id)addToContactButton;
 - (id)contentLabel;
 - (id)dateLabel;
+- (id)foundInAppName;
 - (id)fromLabel;
 - (void)ignore:(id)arg1;
+- (id)ignoreButton;
+- (int)numberOfSectionsInTableView:(id)arg1;
 - (id)origin;
 - (id)propertyCell;
 - (void)setAction:(id)arg1;
+- (void)setAddToContactButton:(id)arg1;
 - (void)setContentLabel:(id)arg1;
 - (void)setDateLabel:(id)arg1;
+- (void)setFoundInAppName:(id)arg1;
 - (void)setFromLabel:(id)arg1;
+- (void)setIgnoreButton:(id)arg1;
 - (void)setOrigin:(id)arg1;
 - (void)setPropertyCell:(id)arg1;
 - (void)setSubjectLabel:(id)arg1;
@@ -45,8 +58,11 @@
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (BOOL)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)updatePreview;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

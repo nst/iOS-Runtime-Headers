@@ -3,13 +3,28 @@
  */
 
 @interface GEOPDSiriSearchResult : PBCodable <NSCopying> {
-    NSMutableArray *_disambiguationLabels;
+    NSMutableArray * _disambiguationLabels;
+    struct { 
+        unsigned int isChainResultSet : 1; 
+    }  _has;
+    BOOL  _isChainResultSet;
+    NSMutableArray * _resultDetourInfos;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSMutableArray *disambiguationLabels;
+@property (nonatomic) BOOL hasIsChainResultSet;
+@property (nonatomic) BOOL isChainResultSet;
+@property (nonatomic, retain) NSMutableArray *resultDetourInfos;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
+
++ (Class)disambiguationLabelType;
++ (Class)resultDetourInfoType;
 
 - (void)addDisambiguationLabel:(id)arg1;
+- (void)addResultDetourInfo:(id)arg1;
 - (void)clearDisambiguationLabels;
+- (void)clearResultDetourInfos;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -18,11 +33,20 @@
 - (id)disambiguationLabelAtIndex:(unsigned int)arg1;
 - (id)disambiguationLabels;
 - (unsigned int)disambiguationLabelsCount;
+- (BOOL)hasIsChainResultSet;
 - (unsigned int)hash;
+- (BOOL)isChainResultSet;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (id)resultDetourInfoAtIndex:(unsigned int)arg1;
+- (id)resultDetourInfos;
+- (unsigned int)resultDetourInfosCount;
 - (void)setDisambiguationLabels:(id)arg1;
+- (void)setHasIsChainResultSet:(BOOL)arg1;
+- (void)setIsChainResultSet:(BOOL)arg1;
+- (void)setResultDetourInfos:(id)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

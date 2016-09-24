@@ -3,8 +3,8 @@
  */
 
 @interface CalDAVCalendarServerOrganizerItem : CoreDAVItem {
-    CoreDAVLeafItem *_commonName;
-    CoreDAVHrefItem *_href;
+    CoreDAVLeafItem * _commonName;
+    CoreDAVHrefItem * _href;
 }
 
 @property (nonatomic, retain) CoreDAVLeafItem *commonName;

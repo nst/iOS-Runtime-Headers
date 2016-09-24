@@ -3,10 +3,10 @@
  */
 
 @interface MusicModalNavigationStackItem : NSObject {
-    MusicJSManagedObject *_jsNavigationDocumentManagedObject;
-    int _lastNavigationControllerOperation;
-    UINavigationController *_navigationController;
-    SKUINavigationDocumentController *_navigationDocumentController;
+    MusicJSManagedObject * _jsNavigationDocumentManagedObject;
+    int  _lastNavigationControllerOperation;
+    UINavigationController * _navigationController;
+    SKUINavigationDocumentController * _navigationDocumentController;
 }
 
 @property (setter=setJSNavigationDocumentManagedObject:, nonatomic, retain) MusicJSManagedObject *jsNavigationDocumentManagedObject;

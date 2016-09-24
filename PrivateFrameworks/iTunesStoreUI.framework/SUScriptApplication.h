@@ -12,6 +12,7 @@
 @property (readonly) NSNumber *exitStoreReasonOther;
 @property (readonly) NSNumber *exitStoreReasonPurchase;
 @property (retain) id iconBadgeNumber;
+@property (readonly) NSString *identifier;
 @property (getter=wasLaunchedFromLibrary, readonly) id launchedFromLibrary;
 @property (getter=isRunningInStoreDemoMode, readonly) id runningInStoreDemoMode;
 @property (readonly) id screenHeight;
@@ -24,6 +25,7 @@
 @property (readonly) int statusBarStyleBlackOpaque;
 @property (readonly) int statusBarStyleBlackTranslucent;
 @property (readonly) int statusBarStyleDefault;
+@property (readonly) NSString *version;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;
@@ -40,6 +42,7 @@
 - (id)exitStoreReasonPurchase;
 - (void)exitStoreWithReason:(id)arg1;
 - (id)iconBadgeNumber;
+- (id)identifier;
 - (id)isDelayingTerminate;
 - (id)isRunningInStoreDemoMode;
 - (void)returnToLibrary;
@@ -48,10 +51,12 @@
 - (id)scriptAttributeKeys;
 - (void)scrollIconToVisible:(id)arg1 shouldSuspend:(BOOL)arg2;
 - (void)setIconBadgeNumber:(id)arg1;
+- (void)setIdentifier:(id)arg1;
 - (void)setStatusBarHidden:(id)arg1;
 - (void)setStatusBarHidden:(BOOL)arg1 withAnimation:(int)arg2;
 - (void)setStatusBarStyle:(int)arg1;
 - (void)setStatusBarStyle:(int)arg1 animated:(BOOL)arg2;
+- (void)setVersion:(id)arg1;
 - (void)showNewsstand;
 - (int)statusBarAnimationFade;
 - (int)statusBarAnimationNone;
@@ -61,6 +66,7 @@
 - (int)statusBarStyleBlackOpaque;
 - (int)statusBarStyleBlackTranslucent;
 - (int)statusBarStyleDefault;
+- (id)version;
 - (id)wasLaunchedFromLibrary;
 
 @end

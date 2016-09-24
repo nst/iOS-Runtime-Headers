@@ -3,11 +3,11 @@
  */
 
 @interface ACDDatabaseInitializer : NSObject {
-    NSArray *_accessKeys;
-    NSArray *_accountTypes;
-    NSArray *_accounts;
-    ACDDatabase *_database;
-    NSArray *_dataclasses;
+    NSArray * _accessKeys;
+    NSArray * _accountTypes;
+    NSArray * _accounts;
+    ACDDatabase * _database;
+    NSArray * _dataclasses;
 }
 
 - (void).cxx_destruct;
@@ -61,14 +61,17 @@
 - (void)_addLinkedInAccountType;
 - (void)_addLiverpoolAccessKeys;
 - (void)_addLiverpoolAccountType;
+- (void)_addMSOAccountType;
 - (void)_addMadridAccountType;
 - (void)_addMissingAccountTypes;
+- (void)_addNotesDataclassToAASupportedDataclasses;
 - (void)_addOnMyDeviceAccountType;
 - (void)_addPOPAccountType;
 - (void)_addPasswordCredentialTypeToGmailAccountType;
 - (void)_addPasswordCredentialTypeToSMTPAccountType;
 - (void)_addRemindersDataclassToCalDAVAccountType;
 - (void)_addSMTPAccountType;
+- (void)_addSingleSignOnAccountType;
 - (void)_addSubscribedCalendarAccountType;
 - (void)_addSupportsAuthenticationAttributeToAccountTypes;
 - (void)_addSupportsAuthenticationAttributeToAccounts;
@@ -105,15 +108,18 @@
 - (id)_resultsForEntityNamed:(id)arg1;
 - (void)_setCloudKitCredentialType;
 - (void)_setOwningBundleIDForNativeAccountTypes;
+- (void)_setSupportedDataclassesForAOLAccountType;
 - (void)_supportiCloudKeychainSyncDataclass;
 - (void)_supportiCloudNewsDataclass;
 - (void)_switchGoogleToOAuthAuthentication;
+- (void)_switchHotmailToOAuthAuthentication;
 - (void)_switchYahooToOAuthAuthentication;
 - (void)_switchYahooToPasswordAuthentication;
 - (void)_updateAOLAndAddNotificationsDataclass;
 - (void)_updateFlickrCredentialTypeToOAuth;
 - (void)_updateIdentityServicesAccountDescription;
 - (void)_updateIdentityServicesAccountTypeToSupportAuthenticationAndMultipleAccounts;
+- (void)_updateMacOSServerAccountDescription;
 - (void)_updateOSXServerAccountDescription;
 - (void)_updateTencentWeiboCredentialTypeToOAuth2;
 - (void)_updateVimeoCredentialTypeToOAuth;

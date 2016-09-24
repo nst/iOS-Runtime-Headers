@@ -3,7 +3,7 @@
  */
 
 @interface HDBackgroundTask : NSObject {
-    NSObject<OS_xpc_object> *_job;
+    NSObject<OS_xpc_object> * _job;
 }
 
 @property (nonatomic, retain) NSDate *endDate;

@@ -3,21 +3,21 @@
  */
 
 @interface _CKDispatchQueueBlock : NSObject {
-    id /* block */ _block;
-    unsigned int _fifo;
-    NSString *_key;
-    int _priority;
+    id /* block */  _block;
+    unsigned int  _fifo;
+    NSString * _key;
+    int  _priority;
 }
 
 @property (nonatomic, copy) id /* block */ block;
-@property (nonatomic) unsigned int fifo;
+@property (setter=setFIFO:, nonatomic) unsigned int fifo;
 @property (nonatomic, copy) NSString *key;
 @property (nonatomic) int priority;
 
+- (void).cxx_destruct;
 - (id /* block */)block;
 - (void)cancel;
 - (int)compare:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (unsigned int)fifo;
 - (id)initWithBlock:(id /* block */)arg1 key:(id)arg2 priority:(int)arg3 fifo:(unsigned int)arg4;

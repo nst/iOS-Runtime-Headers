@@ -3,9 +3,9 @@
  */
 
 @interface PUVideoEditMakerOptions : NSObject <NSCopying> {
-    BOOL _shouldApplySlomo;
-    BOOL _shouldApplyTrim;
-    BOOL _shouldApplyTrimInPlace;
+    BOOL  _shouldApplySlomo;
+    BOOL  _shouldApplyTrim;
+    BOOL  _shouldApplyTrimInPlace;
 }
 
 @property (nonatomic) BOOL shouldApplySlomo;

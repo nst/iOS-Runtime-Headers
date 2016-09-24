@@ -6,10 +6,10 @@
     struct { 
         unsigned int statusVersion : 1; 
         unsigned int updatedStatus : 1; 
-    } _has;
-    NSString *_messageId;
-    unsigned int _statusVersion;
-    unsigned int _updatedStatus;
+    }  _has;
+    NSString * _messageId;
+    unsigned int  _statusVersion;
+    unsigned int  _updatedStatus;
 }
 
 @property (nonatomic, readonly) BOOL hasMessageId;

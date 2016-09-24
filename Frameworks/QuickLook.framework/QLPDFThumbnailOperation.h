@@ -3,7 +3,7 @@
  */
 
 @interface QLPDFThumbnailOperation : QLThumbnailOperation {
-    struct CGPDFDocument { } *_documentRef;
+    struct CGPDFDocument { } * _documentRef;
 }
 
 - (void)dealloc;

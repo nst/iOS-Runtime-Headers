@@ -3,7 +3,7 @@
  */
 
 @interface CalDAVCalendarServerAccessItem : CoreDAVItem {
-    CoreDAVItemWithNoChildren *_accessLevel;
+    CoreDAVItemWithNoChildren * _accessLevel;
 }
 
 @property (nonatomic, retain) CoreDAVItemWithNoChildren *accessLevel;

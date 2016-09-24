@@ -3,9 +3,9 @@
  */
 
 @interface TKSmartCardSessionRequest : NSObject {
-    NSXPCConnection *_connection;
-    NSDictionary *_parameters;
-    id /* block */ _reply;
+    NSXPCConnection * _connection;
+    NSDictionary * _parameters;
+    id /* block */  _reply;
 }
 
 @property NSXPCConnection *connection;

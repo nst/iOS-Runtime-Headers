@@ -3,31 +3,26 @@
  */
 
 @interface _DECPredictionItem : NSObject <NSCopying, NSSecureCoding> {
-    unsigned int _appDeeplinkHeuristic;
-    double _confidence;
-    _DECItem *_item;
+    double  _confidence;
+    _DECItem * _item;
 }
 
-@property (nonatomic) unsigned int appDeeplinkHeuristic;
 @property (nonatomic) double confidence;
 @property (nonatomic, readonly) _DECItem *item;
 
 + (id)predictionItemWithItem:(id)arg1 confidence:(double)arg2;
-+ (id)predictionItemWithItem:(id)arg1 confidence:(double)arg2 appDeeplinkHeuristic:(unsigned int)arg3;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (unsigned int)appDeeplinkHeuristic;
 - (double)confidence;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithItem:(id)arg1 confidence:(double)arg2 appDeeplinkHeuristic:(unsigned int)arg3;
+- (id)initWithItem:(id)arg1 confidence:(double)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (id)item;
-- (void)setAppDeeplinkHeuristic:(unsigned int)arg1;
 - (void)setConfidence:(double)arg1;
 
 @end

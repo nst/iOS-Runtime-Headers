@@ -3,12 +3,12 @@
  */
 
 @interface NSLinguisticTagger : NSObject {
-    unsigned int _options;
-    id _orthographyArray;
-    id _reserved;
-    NSArray *_schemes;
-    NSString *_string;
-    id _tokenArray;
+    unsigned int  _options;
+    id  _orthographyArray;
+    id  _reserved;
+    NSArray * _schemes;
+    NSString * _string;
+    id  _tokenArray;
 }
 
 @property (retain) NSString *string;

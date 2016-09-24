@@ -2,14 +2,13 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@interface _SFReloadOptionsController : NSObject <RequestDesktopSiteUIProcessListener> {
-    WBUInjectedJavaScriptController *_activityJSController;
-    id _contentBlockersContext;
-    NSMutableSet *_domainsNeedingDesktopUserAgent;
-    BOOL _hasEnabledContentBlockers;
-    _WKRemoteObjectInterface *_requestDesktopSiteUIProcessPlugInListenerInterface;
-    <RequestDesktopSiteWebProcessPlugInListener> *_requestDesktopSiteWebProcessPlugInListener;
-    WKWebView *_webView;
+@interface _SFReloadOptionsController : NSObject <RequestDesktopSiteUIProcessListener, SFContentBlockerManagerObserver> {
+    WBUInjectedJavaScriptController * _activityJSController;
+    NSMutableSet * _domainsNeedingDesktopUserAgent;
+    BOOL  _hasEnabledContentBlockers;
+    _WKRemoteObjectInterface * _requestDesktopSiteUIProcessPlugInListenerInterface;
+    <RequestDesktopSiteWebProcessPlugInListener> * _requestDesktopSiteWebProcessPlugInListener;
+    WKWebView * _webView;
 }
 
 @property (nonatomic, readonly) WBUInjectedJavaScriptController *activityJSController;
@@ -23,6 +22,7 @@
 - (void).cxx_destruct;
 - (void)_checkForContentBlockers;
 - (id)activityJSController;
+- (void)contentBlockerManagerExtensionListDidChange:(id)arg1;
 - (void)dealloc;
 - (void)didMarkURLAsNeedingDesktopUserAgent:(id)arg1;
 - (BOOL)hasEnabledContentBlockers;

@@ -3,16 +3,16 @@
  */
 
 @interface FMFSession : NSObject <FMFXPCInternalClientProtocol> {
-    NSMutableDictionary *_cachedCanShareLocationWithHandleByHandle;
-    NSSet *_cachedGetHandlesFollowingMyLocation;
-    NSSet *_cachedGetHandlesSharingLocationsWithMe;
-    NSMutableDictionary *_cachedLocationForHandleByHandle;
-    NSMutableDictionary *_cachedOfferExpirationForHandleByHandle;
-    NSXPCConnection *_connection;
-    <FMFSessionDelegate> *_delegate;
-    NSOperationQueue *_delegateQueue;
-    NSMutableSet *_internalHandles;
-    BOOL _isModelInitialized;
+    NSMutableDictionary * _cachedCanShareLocationWithHandleByHandle;
+    NSSet * _cachedGetHandlesFollowingMyLocation;
+    NSSet * _cachedGetHandlesSharingLocationsWithMe;
+    NSMutableDictionary * _cachedLocationForHandleByHandle;
+    NSMutableDictionary * _cachedOfferExpirationForHandleByHandle;
+    NSXPCConnection * _connection;
+    <FMFSessionDelegate> * _delegate;
+    NSOperationQueue * _delegateQueue;
+    NSMutableSet * _internalHandles;
+    BOOL  _isModelInitialized;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *cachedCanShareLocationWithHandleByHandle;
@@ -38,7 +38,6 @@
 
 - (void).cxx_destruct;
 - (void)_checkAndDisplayMeDeviceSwitchAlert;
-- (void)_configureLogging;
 - (BOOL)_isNoMappingPacketReturnedError:(id)arg1;
 - (void)_registerForFMFDLaunchedNotification;
 - (void)_sendAutoSwitchMeDevice;
@@ -59,7 +58,9 @@
 - (BOOL)canShareLocationWithHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3;
 - (void)canShareLocationWithHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 completion:(id /* block */)arg4;
 - (id)connection;
+- (void)contactForPayload:(id)arg1 completion:(id /* block */)arg2;
 - (void)crashDaemon;
+- (void)dataForPayload:(id)arg1 completion:(id /* block */)arg2;
 - (void)dealloc;
 - (void)declineFriendshipRequest:(id)arg1 completion:(id /* block */)arg2;
 - (id)delegate;
@@ -91,6 +92,7 @@
 - (id)getAllDevices;
 - (void)getAllDevices:(id /* block */)arg1;
 - (void)getAllLocations:(id /* block */)arg1;
+- (void)getDataForPerformanceRequest:(id /* block */)arg1;
 - (id)getFavoritesSharingLocationWithMe;
 - (id)getHandlesFollowingMyLocation;
 - (void)getHandlesFollowingMyLocation:(id /* block */)arg1;
@@ -105,6 +107,7 @@
 - (void)getPendingFriendshipRequestsWithCompletion:(id /* block */)arg1;
 - (void)getPendingMappingPacketsForHandle:(id)arg1 groupId:(id)arg2 completion:(id /* block */)arg3;
 - (void)getPrettyNameForHandle:(id)arg1 completion:(id /* block */)arg2;
+- (void)handleAndLocationForPayload:(id)arg1 completion:(id /* block */)arg2;
 - (void)handleIncomingAirDropURL:(id)arg1 completion:(id /* block */)arg2;
 - (id)handles;
 - (BOOL)hasModelInitialized;
@@ -140,6 +143,7 @@
 - (void)sendIDSPacket:(id)arg1 toHandle:(id)arg2;
 - (oneway void)sendMappingPacket:(id)arg1 toHandle:(id)arg2;
 - (id)serverProxy;
+- (void)sessionHandleReport:(id /* block */)arg1;
 - (void)sessionWasCreatedRefresh;
 - (void)setActiveDevice:(id)arg1 completion:(id /* block */)arg2;
 - (void)setCachedCanShareLocationWithHandleByHandle:(id)arg1;

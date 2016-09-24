@@ -3,11 +3,11 @@
  */
 
 @interface BasicAccount : NSObject <AccountFullAccountProtocol> {
-    <AccountFullAccountProtocol> *_fullAccount;
-    NSDictionary *_originalProperties;
-    BasicAccount *_parentAccount;
-    NSMutableDictionary *_properties;
-    <AccountRefreshProtocol> *_syncAccount;
+    <AccountFullAccountProtocol> * _fullAccount;
+    NSDictionary * _originalProperties;
+    BasicAccount * _parentAccount;
+    NSMutableDictionary * _properties;
+    <AccountRefreshProtocol> * _syncAccount;
 }
 
 @property (readonly, copy) NSString *debugDescription;

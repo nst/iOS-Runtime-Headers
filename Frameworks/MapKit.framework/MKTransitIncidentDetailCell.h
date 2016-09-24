@@ -2,28 +2,37 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKTransitIncidentDetailCell : MKTableViewCell {
-    UITextView *_descriptionLabel;
-    NSLayoutConstraint *_descriptionToTopConstraint;
-    NSDate *_lastUpdated;
-    UILabel *_lastUpdatedLabel;
-    NSLayoutConstraint *_lastUpdatedToDescriptionConstraint;
+@interface MKTransitIncidentDetailCell : MKTableViewCell <UITextViewDelegate> {
+    NSLayoutConstraint * _descriptionFirstBaselineToTopConstraint;
+    UITextView * _descriptionLabel;
+    NSLayoutConstraint * _descriptionLastBaselineToBottomConstraint;
+    NSDate * _lastUpdated;
+    NSLayoutConstraint * _lastUpdatedFirstBaselineToDescriptionFirstBaselineConstraint;
+    _MKUILabel * _lastUpdatedLabel;
+    NSLayoutConstraint * _lastUpdatedLastBaselineToBottomConstraint;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSString *incidentDescription;
 @property (nonatomic, retain) NSDate *lastUpdated;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange;
+- (void)_setConstraints;
 - (void)_updateConstraintValues;
 - (void)_updateLastUpdatedLabel;
 - (void)dealloc;
 - (void)didMoveToWindow;
 - (id)incidentDescription;
+- (void)infoCardThemeChanged:(id)arg1;
 - (id)initWithReuseIdentifier:(id)arg1;
 - (id)lastUpdated;
-- (void)setConstraints;
 - (void)setIncidentDescription:(id)arg1;
 - (void)setLastUpdated:(id)arg1;
+- (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 interaction:(int)arg4;
+- (void)updateConstraints;
 
 @end

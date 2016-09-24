@@ -3,7 +3,7 @@
  */
 
 @interface VSAudioPreviewDelegate : NSObject <AVAudioPlayerDelegate> {
-    id /* block */ _completion;
+    id /* block */  _completion;
 }
 
 @property (nonatomic, copy) id /* block */ completion;

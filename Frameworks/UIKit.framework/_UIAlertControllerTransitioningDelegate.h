@@ -3,7 +3,7 @@
  */
 
 @interface _UIAlertControllerTransitioningDelegate : NSObject <UIForceTransitioningDelegate> {
-    UIInteractionProgress *interactionProgressForPresentation;
+    UIInteractionProgress * interactionProgressForPresentation;
 }
 
 @property (readonly, copy) NSString *debugDescription;

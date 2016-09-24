@@ -3,8 +3,8 @@
  */
 
 @interface SCRCArgumentSubcommand : NSObject {
-    NSMutableArray *_optionArray;
-    NSString *_subcommandName;
+    NSMutableArray * _optionArray;
+    NSString * _subcommandName;
 }
 
 + (id)subcommandWithName:(id)arg1;

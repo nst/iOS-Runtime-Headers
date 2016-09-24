@@ -3,10 +3,10 @@
  */
 
 @interface HKAnimatableObjectPropertyAnimation : NSObject {
-    id /* block */ _animationTimingFunction;
-    id /* block */ _completionHandler;
-    double _currentAnimationTime;
-    double _duration;
+    id /* block */  _animationTimingFunction;
+    id /* block */  _completionHandler;
+    double  _currentAnimationTime;
+    double  _duration;
 }
 
 @property (nonatomic, readonly) id /* block */ completionHandler;

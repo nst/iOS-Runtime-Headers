@@ -3,9 +3,9 @@
  */
 
 @interface SKUIITunesPassLearnMoreAlertDelegate : NSObject <UIAlertViewDelegate> {
-    SKUIClientContext *_clientContext;
-    UIViewController *_presentingViewController;
-    SKUIRedeemConfiguration *_redeemConfiguration;
+    SKUIClientContext * _clientContext;
+    UIViewController * _presentingViewController;
+    SKUIRedeemConfiguration * _redeemConfiguration;
 }
 
 @property (readonly, copy) NSString *debugDescription;

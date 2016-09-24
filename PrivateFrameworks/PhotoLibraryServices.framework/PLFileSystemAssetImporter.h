@@ -3,14 +3,14 @@
  */
 
 @interface PLFileSystemAssetImporter : NSObject {
-    NSMutableDictionary *_existingOIDsByUUID;
-    NSMutableSet *_existingUUIDs;
-    NSMutableDictionary *_existingUUIDsByPath;
-    BOOL _hasProcessedAnyAssets;
-    PLPhotoLibrary *_photoLibrary;
-    NSString *_photoLibraryStoreUUID;
-    NSMutableIndexSet *_thumbIndexes;
-    unsigned int _thumbnailBatchFetchSize;
+    NSMutableDictionary * _existingOIDsByUUID;
+    NSMutableSet * _existingUUIDs;
+    NSMutableDictionary * _existingUUIDsByPath;
+    BOOL  _hasProcessedAnyAssets;
+    PLPhotoLibrary * _photoLibrary;
+    NSString * _photoLibraryStoreUUID;
+    NSMutableIndexSet * _thumbIndexes;
+    unsigned int  _thumbnailBatchFetchSize;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *existingOIDsByUUID;
@@ -24,7 +24,7 @@
 - (BOOL)_setupPhotoAsset:(id)arg1 withURL:(id)arg2;
 - (BOOL)_setupPhotoAssetAsPhotoIrisIfNeeded:(id)arg1;
 - (BOOL)_setupVideoAsset:(id)arg1 withURL:(id)arg2;
-- (id)addAssetWithURLs:(id)arg1 forceInsert:(BOOL)arg2 forceUpdate:(BOOL)arg3;
+- (id)addAssetWithURLs:(id)arg1 forceInsert:(BOOL)arg2 forceUpdate:(BOOL)arg3 fixAddedDate:(BOOL)arg4;
 - (void)addAvailableThumbnailIndex:(unsigned int)arg1;
 - (id)assetURLisInDatabase:(id)arg1;
 - (void)dealloc;

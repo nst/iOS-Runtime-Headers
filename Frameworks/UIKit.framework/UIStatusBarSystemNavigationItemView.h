@@ -3,22 +3,24 @@
  */
 
 @interface UIStatusBarSystemNavigationItemView : UIStatusBarItemView {
-    UIButton *_button;
-    int _currentLabelCompressionLevel;
-    float _maxWidth;
+    UIButton * _button;
+    int  _currentLabelCompressionLevel;
+    double  _maxWidth;
 }
 
 @property (nonatomic, retain) UIButton *button;
 @property (nonatomic) int currentLabelCompressionLevel;
-@property (nonatomic) float maxWidth;
+@property (nonatomic) double maxWidth;
 @property (nonatomic, retain) NSString *title;
 
 - (void).cxx_destruct;
-- (struct CGSize { float x1; float x2; })_buttonSize;
+- (struct CGSize { double x1; double x2; })_buttonSize;
 - (BOOL)_shouldLayoutImageOnRight;
 - (float)addContentOverlap:(float)arg1;
 - (id)button;
 - (int)currentLabelCompressionLevel;
+- (float)extraLeftPadding;
+- (float)extraRightPadding;
 - (int)labelLineBreakMode;
 - (BOOL)layoutImageOnTrailingEdge;
 - (float)maxWidth;

@@ -3,7 +3,7 @@
  */
 
 @interface _CNDiagnosticResponsePreparer : _CNAutocompleteResponsePreparerDecorator {
-    <CNFuture> *_logFuture;
+    <CNFuture> * _logFuture;
 }
 
 @property (readonly) <CNFuture> *logFuture;

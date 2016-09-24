@@ -3,11 +3,11 @@
  */
 
 @interface PKServicePersonality : PKPlugInCore <PKCorePlugInProtocol, PKSubsystemServicePersonality> {
-    NSXPCConnection *_connection;
-    id _embeddedPrincipal;
-    id _hostPrincipal;
-    id _plugInPrincipal;
-    NSUserDefaults *_preferences;
+    NSXPCConnection * _connection;
+    id  _embeddedPrincipal;
+    id  _hostPrincipal;
+    id  _plugInPrincipal;
+    NSUserDefaults * _preferences;
 }
 
 @property (readonly) NSDictionary *bundleInfoDictionary;

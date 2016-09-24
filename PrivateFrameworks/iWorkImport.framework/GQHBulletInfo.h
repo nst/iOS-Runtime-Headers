@@ -3,14 +3,14 @@
  */
 
 @interface GQHBulletInfo : NSObject {
-    int mBulletIndent;
-    struct __CFString { } *mChar;
-    BOOL mHasNumber;
-    int mLabelType;
-    int mNumber;
-    GQDSStyle *mStyle;
-    int mTextIndent;
-    int mType;
+    int  mBulletIndent;
+    struct __CFString { } * mChar;
+    BOOL  mHasNumber;
+    int  mLabelType;
+    int  mNumber;
+    GQDSStyle * mStyle;
+    int  mTextIndent;
+    int  mType;
 }
 
 - (struct __CFString { }*)bulletChar;

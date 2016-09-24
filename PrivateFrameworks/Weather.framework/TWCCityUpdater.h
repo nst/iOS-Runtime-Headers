@@ -2,26 +2,32 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-@interface TWCCityUpdater : TWCUpdater {
-    NSMutableArray *_parsedCities;
-    NSArray *_requestedCities;
-    id /* block */ _weatherUpdateCompletion;
+@interface TWCCityUpdater : NSObject {
+    <WeatherUpdaterDelegate> * _delegate;
+    WAForecastModelController * _forecastModelController;
+    NSLocale * _locale;
 }
 
-@property (nonatomic, retain) NSMutableArray *parsedCities;
-@property (nonatomic, retain) NSArray *requestedCities;
+@property (nonatomic) <WeatherUpdaterDelegate> *delegate;
+@property (nonatomic, retain) WAForecastModelController *forecastModelController;
+@property (nonatomic, retain) NSLocale *locale;
+@property (nonatomic, retain) NSString *trackingParameter;
 
-+ (void)clearSharedCityUpdater;
 + (id)sharedCityUpdater;
 
 - (void).cxx_destruct;
-- (void)_failed:(unsigned int)arg1;
-- (id)aggregateDictionaryDomain;
-- (void)handleCompletionForCity:(id)arg1 withUpdateDetail:(unsigned int)arg2;
-- (id)parsedCities;
-- (id)requestedCities;
-- (void)setParsedCities:(id)arg1;
-- (void)setRequestedCities:(id)arg1;
+- (void)cancel;
+- (id)delegate;
+- (id)forecastModelController;
+- (id)init;
+- (BOOL)isUpdatingCity:(id)arg1;
+- (id)locale;
+- (void)setDelegate:(id)arg1;
+- (void)setForecastModelController:(id)arg1;
+- (void)setLocale:(id)arg1;
+- (void)setTrackingParameter:(id)arg1;
+- (id)trackingParameter;
+- (void)updateWeatherForCities:(id)arg1;
 - (void)updateWeatherForCities:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)updateWeatherForCity:(id)arg1;
 

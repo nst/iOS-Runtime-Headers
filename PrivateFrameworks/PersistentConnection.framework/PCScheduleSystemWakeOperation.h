@@ -3,12 +3,12 @@
  */
 
 @interface PCScheduleSystemWakeOperation : NSOperation {
-    double _acceptableDelay;
-    BOOL _scheduleOrCancel;
-    NSString *_serviceIdentifier;
-    void *_unqiueIdentifier;
-    BOOL _userVisible;
-    NSDate *_wakeDate;
+    double  _acceptableDelay;
+    BOOL  _scheduleOrCancel;
+    NSString * _serviceIdentifier;
+    void * _unqiueIdentifier;
+    BOOL  _userVisible;
+    NSDate * _wakeDate;
 }
 
 - (void)dealloc;

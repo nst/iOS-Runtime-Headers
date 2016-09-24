@@ -3,13 +3,13 @@
  */
 
 @interface EKUIRecurrenceRuleBuilder : NSObject {
-    unsigned int _count;
-    NSArray *_dayNumbers;
-    int _days;
-    int _frequency;
-    int _interval;
-    NSArray *_monthNumbers;
-    int _ordinalValue;
+    unsigned int  _count;
+    NSArray * _dayNumbers;
+    int  _days;
+    int  _frequency;
+    int  _interval;
+    NSArray * _monthNumbers;
+    int  _ordinalValue;
 }
 
 @property unsigned int count;

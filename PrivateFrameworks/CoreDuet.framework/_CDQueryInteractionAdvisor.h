@@ -3,7 +3,7 @@
  */
 
 @interface _CDQueryInteractionAdvisor : NSObject {
-    _CDInteractionStore *_store;
+    _CDInteractionStore * _store;
 }
 
 @property (retain) _CDInteractionStore *store;

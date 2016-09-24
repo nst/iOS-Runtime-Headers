@@ -3,11 +3,11 @@
  */
 
 @interface SLComposeSheetConfigurationItem : NSObject {
-    <SLComposeSheetConfigurationItemObserving> *_changeObserver;
-    id /* block */ _tapHandler;
-    NSString *_title;
-    NSString *_value;
-    BOOL _valuePending;
+    <SLComposeSheetConfigurationItemObserving> * _changeObserver;
+    id /* block */  _tapHandler;
+    NSString * _title;
+    NSString * _value;
+    BOOL  _valuePending;
 }
 
 @property (nonatomic, copy) id /* block */ tapHandler;

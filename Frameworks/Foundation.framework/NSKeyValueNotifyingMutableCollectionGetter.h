@@ -3,7 +3,7 @@
  */
 
 @interface NSKeyValueNotifyingMutableCollectionGetter : NSKeyValueProxyGetter {
-    NSKeyValueProxyGetter *_mutableCollectionGetter;
+    NSKeyValueProxyGetter * _mutableCollectionGetter;
 }
 
 - (void)dealloc;

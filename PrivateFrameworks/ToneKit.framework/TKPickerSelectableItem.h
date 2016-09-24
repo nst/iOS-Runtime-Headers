@@ -3,26 +3,26 @@
  */
 
 @interface TKPickerSelectableItem : TKPickerRowItem {
-    NSString *_detailText;
-    BOOL _showsCheckmark;
-    BOOL _showsDisclosureIndicator;
-    NSString *_text;
-    BOOL _textCentered;
+    NSString * _detailText;
+    BOOL  _showsCheckmark;
+    BOOL  _showsDisclosureIndicator;
+    NSString * _text;
+    BOOL  _textCentered;
 }
 
-@property (nonatomic, copy) NSString *detailText;
-@property (nonatomic) BOOL showsCheckmark;
-@property (nonatomic) BOOL showsDisclosureIndicator;
-@property (nonatomic, copy) NSString *text;
-@property (getter=isTextCentered, nonatomic) BOOL textCentered;
+@property (setter=_setDetailText:, nonatomic, copy) NSString *detailText;
+@property (setter=_setShowsCheckmark:, nonatomic) BOOL showsCheckmark;
+@property (setter=_setShowsDisclosureIndicator:, nonatomic) BOOL showsDisclosureIndicator;
+@property (setter=_setText:, nonatomic, copy) NSString *text;
+@property (getter=isTextCentered, setter=_setTextCentered:, nonatomic) BOOL textCentered;
 
+- (void).cxx_destruct;
 - (void)_appendDescriptionOfAttributesToString:(id)arg1;
 - (void)_setDetailText:(id)arg1;
 - (void)_setShowsCheckmark:(BOOL)arg1;
 - (void)_setShowsDisclosureIndicator:(BOOL)arg1;
 - (void)_setText:(id)arg1;
 - (void)_setTextCentered:(BOOL)arg1;
-- (void)dealloc;
 - (id)detailText;
 - (BOOL)isTextCentered;
 - (BOOL)showsCheckmark;

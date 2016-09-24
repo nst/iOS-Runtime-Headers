@@ -3,10 +3,10 @@
  */
 
 @interface ACOAuthSigner : NSObject {
-    ACAccount *_account;
-    NSXPCConnection *_connection;
-    <ACDOAuthSignerProtocol> *_proxyShim;
-    BOOL _shouldIncludeAppIdInRequest;
+    ACAccount * _account;
+    NSXPCConnection * _connection;
+    <ACDOAuthSignerProtocol> * _proxyShim;
+    BOOL  _shouldIncludeAppIdInRequest;
 }
 
 @property (nonatomic) BOOL shouldIncludeAppIdInRequest;

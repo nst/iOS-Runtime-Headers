@@ -3,8 +3,8 @@
  */
 
 @interface PUAssetSharedViewModel : PUViewModel {
-    <PUDisplayAsset> *_asset;
-    PUOperationStatus *_loadingStatus;
+    <PUDisplayAsset> * _asset;
+    PUOperationStatus * _loadingStatus;
 }
 
 @property (nonatomic, readonly) <PUDisplayAsset> *asset;

@@ -3,8 +3,8 @@
  */
 
 @interface MusicViewControllerPresenter : NSObject <UIPopoverPresentationControllerDelegate> {
-    id _popoverTarget;
-    UIViewController *_presentationViewController;
+    id  _popoverTarget;
+    UIViewController * _presentationViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

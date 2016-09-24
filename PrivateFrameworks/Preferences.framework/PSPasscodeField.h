@@ -3,17 +3,18 @@
  */
 
 @interface PSPasscodeField : UIView <UIKeyInput> {
-    NSMutableArray *_dashViews;
-    <PSPasscodeFieldDelegate> *_delegate;
-    NSMutableArray *_digitViews;
-    NSMutableArray *_dotViews;
-    BOOL _enabled;
-    NSArray *_fieldSpacing;
-    UIColor *_foregroundColor;
-    int _keyboardAppearance;
-    unsigned int _numberOfEntryFields;
-    BOOL _securePasscodeEntry;
-    NSMutableString *_stringValue;
+    NSMutableArray * _dashViews;
+    <PSPasscodeFieldDelegate> * _delegate;
+    NSMutableArray * _digitViews;
+    NSMutableArray * _dotViews;
+    BOOL  _enabled;
+    NSArray * _fieldSpacing;
+    UIColor * _foregroundColor;
+    int  _keyboardAppearance;
+    unsigned int  _numberOfEntryFields;
+    BOOL  _securePasscodeEntry;
+    BOOL  _shouldBecomeFirstResponderOnTap;
+    NSMutableString * _stringValue;
 }
 
 @property (nonatomic) int autocapitalizationType;
@@ -25,6 +26,7 @@
 @property (nonatomic) BOOL enablesReturnKeyAutomatically;
 @property (nonatomic, retain) NSArray *fieldSpacing;
 @property (nonatomic, retain) UIColor *foregroundColor;
+@property (nonatomic, readonly) BOOL hasText;
 @property (readonly) unsigned int hash;
 @property (nonatomic) int keyboardAppearance;
 @property (nonatomic) int keyboardType;
@@ -32,10 +34,13 @@
 @property (nonatomic) int returnKeyType;
 @property (nonatomic) BOOL securePasscodeEntry;
 @property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
+@property (nonatomic) BOOL shouldBecomeFirstResponderOnTap;
 @property (nonatomic) int spellCheckingType;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *textContentType;
 
 - (void).cxx_destruct;
+- (void)_delegateEnteredPasscode:(id)arg1;
 - (BOOL)becomeFirstResponder;
 - (BOOL)canBecomeFirstResponder;
 - (id)delegate;
@@ -61,8 +66,10 @@
 - (void)setNumberOfEntryFields:(unsigned int)arg1;
 - (void)setSecurePasscodeEntry:(BOOL)arg1;
 - (void)setSecureTextEntry:(BOOL)arg1;
+- (void)setShouldBecomeFirstResponderOnTap:(BOOL)arg1;
 - (void)setStringValue:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)shouldBecomeFirstResponderOnTap;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)stringValue;
 
 @end

@@ -3,11 +3,11 @@
  */
 
 @interface FBUISceneHostBridge : NSObject <FBSceneClient, FBUISceneHost> {
-    FBUISceneIdentity *_identity;
-    BOOL _invalidated;
-    <FBSceneHost> *_legacyHost;
-    FBUISceneParameters *_parameters;
-    <FBUISceneClientProxy> *_sceneClient;
+    FBUISceneIdentity * _identity;
+    BOOL  _invalidated;
+    <FBSceneHost> * _legacyHost;
+    FBSSceneParameters * _parameters;
+    <FBUISceneClientProxy> * _sceneClient;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -19,11 +19,13 @@
 @property (nonatomic, readonly, copy) NSString *sceneIdentifier;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (void)didInvalidateSceneClient:(id)arg1;
+- (void)host:(id)arg1 configureWithDefinition:(id)arg2 parameters:(id)arg3;
 - (void)host:(id)arg1 configureWithInitialClientSettings:(id)arg2;
 - (void)host:(id)arg1 didInvalidateWithTransitionContext:(id)arg2 completion:(id /* block */)arg3;
 - (void)host:(id)arg1 didReceiveActions:(id)arg2;

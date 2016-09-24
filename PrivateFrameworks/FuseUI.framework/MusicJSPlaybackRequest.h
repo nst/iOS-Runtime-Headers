@@ -3,13 +3,13 @@
  */
 
 @interface MusicJSPlaybackRequest : NSObject {
-    MusicStoreItemMetadataContext *_containerItem;
-    NSString *_featureName;
-    NSArray *_items;
-    NSData *_recommendationData;
-    unsigned int _shuffleMode;
-    unsigned int _startIndex;
-    unsigned int _upNextAction;
+    MusicStoreItemMetadataContext * _containerItem;
+    NSString * _featureName;
+    NSArray * _items;
+    NSData * _recommendationData;
+    unsigned int  _shuffleMode;
+    unsigned int  _startIndex;
+    unsigned int  _upNextAction;
 }
 
 @property (nonatomic, readonly) MusicStoreItemMetadataContext *containerItem;

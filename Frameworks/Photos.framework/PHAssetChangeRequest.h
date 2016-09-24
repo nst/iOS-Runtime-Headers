@@ -3,34 +3,48 @@
  */
 
 @interface PHAssetChangeRequest : NSObject <PHUpdateChangeRequest> {
-    NSString *_assetDescription;
-    BOOL _clientEntitled;
-    NSString *_clientName;
-    int _clientProcessID;
-    PHContentEditingOutput *_contentEditingOutput;
-    BOOL _didChangeAdjustments;
-    BOOL _didSetVisibilityState;
-    BOOL _duplicateAllowsPrivateMetadata;
-    NSString *_editorBundleID;
-    NSURL *_editorBundleURL;
-    PHChangeRequestHelper *_helper;
+    BOOL  _allowUnsafeSetProcessed;
+    NSMutableDictionary * _analysisStatesByWorkerType;
+    NSString * _assetDescription;
+    NSString * _clientBundleID;
+    BOOL  _clientEntitled;
+    NSString * _clientName;
+    int  _clientProcessID;
+    PHContentEditingOutput * _contentEditingOutput;
+    BOOL  _didChangeAdjustments;
+    BOOL  _didSetSceneClassifications;
+    BOOL  _didSetVisibilityState;
+    NSData * _distanceIdentity;
+    BOOL  _duplicateAllowsPrivateMetadata;
+    NSString * _editorBundleID;
+    NSURL * _editorBundleURL;
+    PHRelationshipChangeRequestHelper * _facesHelper;
+    PHChangeRequestHelper * _helper;
     struct { 
-        long long value; 
+        int value; 
         int timescale; 
         unsigned int flags; 
-        long long epoch; 
-    } _imageDisplayTime;
-    NSString *_pairingIdentifier;
-    unsigned short _photoIrisVisibilityState;
-    NSIndexSet *_supportedEditOperations;
-    CLLocation *_updatedLocation;
+        int epoch; 
+    }  _imageDisplayTime;
+    BOOL  _incrementPlayCount;
+    BOOL  _incrementShareCount;
+    BOOL  _incrementViewCount;
+    NSDate * _lastSharedDate;
+    PHAsset * _originalAsset;
+    NSString * _pairingIdentifier;
+    unsigned short  _photoIrisVisibilityState;
+    NSDate * _sceneAnalysisTimestamp;
+    short  _sceneAnalysisVersion;
+    NSSet * _sceneClassifications;
+    NSIndexSet * _supportedEditOperations;
+    CLLocation * _updatedLocation;
     struct { 
-        long long value; 
+        int value; 
         int timescale; 
         unsigned int flags; 
-        long long epoch; 
-    } _videoDuration;
-    NSURL *_videoURLForUpdate;
+        int epoch; 
+    }  _videoDuration;
+    NSURL * _videoURLForUpdate;
 }
 
 @property (nonatomic, retain) NSString *assetDescription;
@@ -39,16 +53,20 @@
 @property (nonatomic, readonly) int clientProcessID;
 @property (nonatomic, retain) PHContentEditingOutput *contentEditingOutput;
 @property (nonatomic, retain) NSDate *creationDate;
+@property (nonatomic) double curationScore;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) BOOL didChangeAdjustments;
 @property (nonatomic, readonly) BOOL duplicateAllowsPrivateMetadata;
 @property (nonatomic, readonly, copy) NSString *editorBundleID;
+@property (nonatomic, retain) id faceAdjustmentVersion;
+@property (nonatomic) int faceDetectionState;
+@property (nonatomic, readonly) PHRelationshipChangeRequestHelper *facesHelper;
 @property (getter=isFavorite, nonatomic) BOOL favorite;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) PHChangeRequestHelper *helper;
 @property (getter=isHidden, nonatomic) BOOL hidden;
-@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } imageDisplayTime;
+@property (nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } imageDisplayTime;
 @property (nonatomic, retain) CLLocation *location;
 @property (nonatomic, readonly) NSString *managedEntityName;
 @property (nonatomic, retain) NSDate *modificationDate;
@@ -60,7 +78,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSIndexSet *supportedEditOperations;
 @property (nonatomic, readonly) NSString *uuid;
-@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } videoDuration;
+@property (nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } videoDuration;
 @property (nonatomic, retain) NSURL *videoURLForUpdate;
 
 + (id)_allAssetEditOperations;
@@ -73,7 +91,12 @@
 + (void)deleteAssets:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)_mutableObjectIDsAndUUIDs;
+- (void)_prepareAssetIDsIfNeeded;
+- (void)_prepareWithFetchResult:(id)arg1;
+- (void)_setOriginalAsset:(id)arg1;
 - (BOOL)_validateImageURLForAssetMutation:(id)arg1 error:(id*)arg2;
+- (void)addFaces:(id)arg1;
 - (BOOL)allowMutationToManagedObject:(id)arg1 propertyKey:(id)arg2 error:(id*)arg3;
 - (BOOL)applyMutationsToManagedObject:(id)arg1 error:(id*)arg2;
 - (id)assetDescription;
@@ -81,17 +104,24 @@
 - (int)clientProcessID;
 - (id)contentEditingOutput;
 - (id)creationDate;
+- (double)curationScore;
 - (BOOL)didChangeAdjustments;
 - (void)didMutate;
 - (BOOL)duplicateAllowsPrivateMetadata;
 - (id)editorBundleID;
 - (void)encodeToXPCDict:(id)arg1;
+- (id)faceAdjustmentVersion;
+- (int)faceDetectionState;
+- (id)facesHelper;
 - (id)helper;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })imageDisplayTime;
+- (struct { int x1; int x2; unsigned int x3; int x4; })imageDisplayTime;
+- (void)incrementPlayCount;
+- (void)incrementShareCount;
+- (void)incrementViewCount;
 - (id)init;
 - (id)initWithHelper:(id)arg1;
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2;
-- (id)initWithXPCDict:(id)arg1 clientEntitled:(BOOL)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
+- (id)initWithXPCDict:(id)arg1 clientEntitlements:(id)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
 - (BOOL)isClientEntitled;
 - (BOOL)isFavorite;
 - (BOOL)isHidden;
@@ -107,20 +137,28 @@
 - (id)pairingIdentifier;
 - (unsigned short)photoIrisVisibilityState;
 - (id)placeholderForCreatedAsset;
+- (void)removeFaces:(id)arg1;
 - (void)revertAssetContentToOriginal;
-- (void)setAdjustmentData:(id)arg1 withRenderedJPEGData:(id)arg2 orRenderedContentURL:(id)arg3 penultimateRenderedJPEGData:(id)arg4 isSubstandardRender:(BOOL)arg5 fullSizeRenderSize:(struct CGSize { float x1; float x2; })arg6;
+- (void)setAdjustmentData:(id)arg1 withRenderedJPEGData:(id)arg2 orRenderedContentURL:(id)arg3 penultimateRenderedJPEGData:(id)arg4 isSubstandardRender:(BOOL)arg5 fullSizeRenderSize:(struct CGSize { double x1; double x2; })arg6 renderedVideoComplementURL:(id)arg7 penultimateRenderedVideoComplementURL:(id)arg8;
+- (void)setAnalysisState:(int)arg1 lastIgnoredDate:(id)arg2 ignoreUntilDate:(id)arg3 forWorkerType:(short)arg4;
+- (void)setAnalysisState:(int)arg1 lastIgnoredDate:(id)arg2 ignoreUntilDate:(id)arg3 forWorkerType:(short)arg4 allowUnsafeSetProcessed:(BOOL)arg5;
 - (void)setAssetDescription:(id)arg1;
 - (void)setContentEditingOutput:(id)arg1;
 - (void)setCreationDate:(id)arg1;
+- (void)setCurationScore:(double)arg1;
+- (void)setFaceAdjustmentVersion:(id)arg1;
+- (void)setFaceDetectionState:(int)arg1;
 - (void)setFavorite:(BOOL)arg1;
 - (void)setHidden:(BOOL)arg1;
-- (void)setImageDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setImageDisplayTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
 - (void)setLocation:(id)arg1;
 - (void)setModificationDate:(id)arg1;
 - (void)setPairingIdentifier:(id)arg1;
 - (void)setPhotoIrisVisibilityState:(unsigned short)arg1;
+- (void)setSceneClassifications:(id)arg1 algorithmVersion:(int)arg2 adjustmentVersion:(id)arg3;
+- (void)setSceneClassifications:(id)arg1 algorithmVersion:(int)arg2 distanceIdentity:(id)arg3 adjustmentVersion:(id)arg4;
 - (void)setSupportedEditOperations:(id)arg1;
-- (void)setVideoDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setVideoDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
 - (void)setVideoURLForUpdate:(id)arg1;
 - (id)supportedEditOperations;
 - (id)uuid;
@@ -131,7 +169,7 @@
 - (BOOL)validateReadAccessForContentURL:(id)arg1 assetResource:(id)arg2 error:(id*)arg3;
 - (BOOL)validateVideoURLForAssetMutation:(id)arg1 error:(id*)arg2;
 - (BOOL)validateWriteAccessForContentURL:(id)arg1 error:(id*)arg2;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })videoDuration;
+- (struct { int x1; int x2; unsigned int x3; int x4; })videoDuration;
 - (id)videoURLForUpdate;
 
 @end

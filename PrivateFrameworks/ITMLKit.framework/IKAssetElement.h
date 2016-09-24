@@ -3,7 +3,7 @@
  */
 
 @interface IKAssetElement : IKViewElement {
-    BOOL _infiniteDuration;
+    BOOL  _infiniteDuration;
 }
 
 @property (nonatomic, readonly, retain) NSString *actionParams;

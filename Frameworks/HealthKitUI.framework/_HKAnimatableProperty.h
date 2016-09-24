@@ -3,12 +3,12 @@
  */
 
 @interface _HKAnimatableProperty : NSObject {
-    NSMutableArray *_animations;
-    id _currentValue;
-    id _endValue;
-    id /* block */ _getter;
-    id /* block */ _setter;
-    id _startValue;
+    NSMutableArray * _animations;
+    id  _currentValue;
+    id  _endValue;
+    id /* block */  _getter;
+    id /* block */  _setter;
+    id  _startValue;
 }
 
 @property (nonatomic, retain) id currentValue;
@@ -25,6 +25,7 @@
 - (void)setCurrentValue:(id)arg1;
 - (void)setEndValue:(id)arg1;
 - (void)setStartValue:(id)arg1;
+- (void)setValueImmediate:(id)arg1;
 - (id)startValue;
 - (void)update:(double)arg1;
 

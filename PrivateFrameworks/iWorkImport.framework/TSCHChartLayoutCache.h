@@ -3,8 +3,8 @@
  */
 
 @interface TSCHChartLayoutCache : NSObject {
-    NSMutableArray *mCacheItems;
-    BOOL mIgnoreInvalidation;
+    NSMutableArray * mCacheItems;
+    BOOL  mIgnoreInvalidation;
 }
 
 @property (nonatomic) BOOL ignoreInvalidation;

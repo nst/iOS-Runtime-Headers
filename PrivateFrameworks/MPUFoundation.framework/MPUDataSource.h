@@ -3,9 +3,9 @@
  */
 
 @interface MPUDataSource : NSObject <NSCoding> {
-    int _entityType;
-    int _invalidationIgnoreCount;
-    int _numberOfIgnoredInvalidations;
+    int  _entityType;
+    int  _invalidationIgnoreCount;
+    int  _numberOfIgnoredInvalidations;
 }
 
 @property (nonatomic, readonly) unsigned int count;

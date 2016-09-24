@@ -3,7 +3,7 @@
  */
 
 @interface PLCloudSharingEnablingJob : PLCloudSharingJob {
-    BOOL _enableSharing;
+    BOOL  _enableSharing;
 }
 
 @property (nonatomic) BOOL enableSharing;
@@ -11,7 +11,7 @@
 + (void)deleteAllLocalSharedAlbumsInLibrary:(id)arg1 keepPendingAlbums:(BOOL)arg2 withReason:(id)arg3;
 + (void)enableCloudSharing:(BOOL)arg1;
 
-- (long long)daemonOperation;
+- (int)daemonOperation;
 - (id)description;
 - (BOOL)enableSharing;
 - (void)encodeToXPCObject:(id)arg1;

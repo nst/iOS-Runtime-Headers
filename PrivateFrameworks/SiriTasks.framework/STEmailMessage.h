@@ -3,15 +3,15 @@
  */
 
 @interface STEmailMessage : STSiriModelObject {
-    NSArray *_bccRecipients;
-    NSArray *_ccRecipients;
-    NSString *_messageBody;
-    NSURL *_messageIdentifier;
-    NSArray *_receivingAddresses;
-    STPerson *_sender;
-    NSString *_subject;
-    NSArray *_toRecipients;
-    int _type;
+    NSArray * _bccRecipients;
+    NSArray * _ccRecipients;
+    NSString * _messageBody;
+    NSURL * _messageIdentifier;
+    NSArray * _receivingAddresses;
+    STPerson * _sender;
+    NSString * _subject;
+    NSArray * _toRecipients;
+    int  _type;
 }
 
 @property (nonatomic, retain) NSArray *bccRecipients;

@@ -3,11 +3,11 @@
  */
 
 @interface PDSequentialTimeNode : PDTimeNode {
-    BOOL mConcurrent;
-    int mNextAction;
-    NSMutableArray *mNextConditions;
-    int mPreviousAction;
-    NSMutableArray *mPreviousConditions;
+    BOOL  mConcurrent;
+    int  mNextAction;
+    NSMutableArray * mNextConditions;
+    int  mPreviousAction;
+    NSMutableArray * mPreviousConditions;
 }
 
 @property (nonatomic) BOOL concurrent;

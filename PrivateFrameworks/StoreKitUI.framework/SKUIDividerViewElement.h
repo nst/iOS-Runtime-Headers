@@ -3,10 +3,10 @@
  */
 
 @interface SKUIDividerViewElement : SKUIViewElement {
-    SKUIButtonViewElement *_button;
-    int _dividerType;
-    BOOL _dividerTypeWasInitialized;
-    SKUIViewElementText *_text;
+    SKUIButtonViewElement * _button;
+    int  _dividerType;
+    BOOL  _dividerTypeWasInitialized;
+    SKUIViewElementText * _text;
 }
 
 @property (nonatomic, readonly) SKUIButtonViewElement *button;

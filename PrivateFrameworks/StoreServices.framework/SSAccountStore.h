@@ -3,10 +3,10 @@
  */
 
 @interface SSAccountStore : NSObject {
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    SSKeyValueStore *_keyValueStore;
-    NSObject<OS_dispatch_queue> *_notificationQueue;
-    NSMutableArray *_notifyTokens;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    SSKeyValueStore * _keyValueStore;
+    NSObject<OS_dispatch_queue> * _notificationQueue;
+    NSMutableArray * _notifyTokens;
 }
 
 @property (readonly, copy) NSArray *accounts;
@@ -52,5 +52,6 @@
 - (void)setDefaultAccountName:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)signOutAccount:(id)arg1;
 - (void)signOutAllAccounts;
+- (void)signOutAllAccountsWithCompletionBlock:(id /* block */)arg1;
 
 @end

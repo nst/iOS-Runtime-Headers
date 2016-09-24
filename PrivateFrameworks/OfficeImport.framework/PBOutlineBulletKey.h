@@ -3,9 +3,9 @@
  */
 
 @interface PBOutlineBulletKey : NSObject <NSCopying> {
-    unsigned long mPlaceholderIndex;
-    unsigned long mSlideId;
-    int mTextType;
+    unsigned long  mPlaceholderIndex;
+    unsigned long  mSlideId;
+    int  mTextType;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -3,9 +3,9 @@
  */
 
 @interface CNVCardLineGenerator : NSObject {
-    int *_groupingCount;
-    <CNVCardLineFactory> *_lineFactory;
-    NSString *_lineName;
+    int * _groupingCount;
+    <CNVCardLineFactory> * _lineFactory;
+    NSString * _lineName;
 }
 
 + (id)activityAlertGeneratorWithName:(id)arg1 groupingCount:(int*)arg2;
@@ -19,10 +19,10 @@
 + (id)socialProfileGeneratorWithName:(id)arg1 groupingCount:(int*)arg2;
 + (id)streetAddressGeneratorWithName:(id)arg1 groupingCount:(int*)arg2;
 
+- (void).cxx_destruct;
 - (void)addCustomLabel:(id)arg1 toLine:(id)arg2;
 - (void)addPrimaryValueMarkerToLine:(id)arg1;
 - (void)addStandardLabel:(id)arg1 toLine:(id)arg2;
-- (void)dealloc;
 - (id)initWithName:(id)arg1 groupingCount:(int*)arg2;
 - (id)lineWithValue:(id)arg1 label:(id)arg2;
 - (id)makeLineWithName:(id)arg1 value:(id)arg2;

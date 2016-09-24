@@ -3,12 +3,12 @@
  */
 
 @interface HKAnchoredObjectQuery : HKQuery {
-    HKQueryAnchor *_anchor;
-    id /* block */ _completionHandler;
-    BOOL _includeDeletedObjects;
-    BOOL _initialHandlerCalled;
-    unsigned int _limit;
-    id /* block */ _updateHandler;
+    HKQueryAnchor * _anchor;
+    id /* block */  _completionHandler;
+    BOOL  _includeDeletedObjects;
+    BOOL  _initialHandlerCalled;
+    unsigned int  _limit;
+    id /* block */  _updateHandler;
 }
 
 @property (nonatomic, retain) HKQueryAnchor *anchor;

@@ -3,8 +3,8 @@
  */
 
 @interface PinnedHTTPSSessionDelegate : NSObject <NSURLSessionDataDelegate> {
-    BOOL _failed;
-    NSData *_trustedCertData;
+    BOOL  _failed;
+    NSData * _trustedCertData;
 }
 
 @property (readonly, copy) NSString *debugDescription;

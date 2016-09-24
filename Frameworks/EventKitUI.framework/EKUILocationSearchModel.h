@@ -3,29 +3,30 @@
  */
 
 @interface EKUILocationSearchModel : NSObject <ABSearchOperationDelegate, CLLocationManagerDelegate, MKSearchCompleterDelegate> {
-    ABSearchOperation *_abSearchOperation;
-    NSOperationQueue *_abSearchQueue;
-    MKLocalSearchCompleter *_completer;
-    NSMutableDictionary *_conferenceRoomAddressesToConferenceRooms;
-    NSOperationQueue *_conferenceRoomOperationQueue;
-    NSObject<OS_dispatch_queue> *_conferenceRoomProcessingQueue;
-    NSMutableArray *_contactsSearchResults;
-    EKStructuredLocation *_currentLocation;
-    <EKUILocationSearchModelDelegate> *_delegate;
-    EKEventStore *_eventStore;
-    NSObject<OS_dispatch_queue> *_eventsQueue;
-    EKOccurrenceCacheLocationSearch *_eventsSearch;
-    NSMutableArray *_eventsSearchResults;
-    NSMutableArray *_frequentsSearchResults;
-    CLGeocoder *_geocoder;
-    MKLocalSearch *_localSearch;
-    CLInUseAssertion *_locationAssertion;
-    CLLocationManager *_locationManager;
-    NSArray *_mapCompletionSearchResults;
-    NSMutableArray *_mutableConferenceRoomSearchResults;
-    NSObject<OS_dispatch_queue> *_recentsQueue;
-    NSMutableArray *_recentsSearchResults;
-    NSCharacterSet *_whitespaceAndNewlineCharacterSet;
+    EKUILocationSearchABSearchMatchProcessor * _abSearchMatchProcessor;
+    ABSearchOperation * _abSearchOperation;
+    NSOperationQueue * _abSearchQueue;
+    MKLocalSearchCompleter * _completer;
+    NSMutableDictionary * _conferenceRoomAddressesToConferenceRooms;
+    NSOperationQueue * _conferenceRoomOperationQueue;
+    NSObject<OS_dispatch_queue> * _conferenceRoomProcessingQueue;
+    NSMutableArray * _contactsSearchResults;
+    EKStructuredLocation * _currentLocation;
+    <EKUILocationSearchModelDelegate> * _delegate;
+    EKEventStore * _eventStore;
+    NSObject<OS_dispatch_queue> * _eventsQueue;
+    EKOccurrenceCacheLocationSearch * _eventsSearch;
+    NSMutableArray * _eventsSearchResults;
+    NSMutableArray * _frequentsSearchResults;
+    CLGeocoder * _geocoder;
+    MKLocalSearch * _localSearch;
+    CLInUseAssertion * _locationAssertion;
+    CLLocationManager * _locationManager;
+    NSArray * _mapCompletionSearchResults;
+    NSMutableArray * _mutableConferenceRoomSearchResults;
+    NSObject<OS_dispatch_queue> * _recentsQueue;
+    NSMutableArray * _recentsSearchResults;
+    NSCharacterSet * _whitespaceAndNewlineCharacterSet;
 }
 
 @property (nonatomic, readonly) NSArray *conferenceRoomSearchResults;
@@ -43,7 +44,6 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)CLLocationForDictionary:(id)arg1;
 - (void)_addDiscoveredConferenceRooms:(id)arg1;
 - (void)_handleAvailabilityResults:(id)arg1 forOperation:(id)arg2;
 - (void)_processDirectorySearchResultSet:(id)arg1 forOperation:(id)arg2;
@@ -57,7 +57,6 @@
 - (void)dealloc;
 - (void)dedupeResults;
 - (id)delegate;
-- (id)dictionaryForCLLocation:(id)arg1;
 - (id)eventsSearchResults;
 - (id)frequentsSearchResults;
 - (void)getCurrentLocation;
@@ -66,6 +65,7 @@
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (id)mapCompletionSearchResults;
 - (id)recentsSearchResults;
+- (BOOL)removeRecentLocation:(id)arg1;
 - (void)resetConferenceRoomSearchResults;
 - (void)resetContactsSearchResults;
 - (void)resetEventsSearchResults;

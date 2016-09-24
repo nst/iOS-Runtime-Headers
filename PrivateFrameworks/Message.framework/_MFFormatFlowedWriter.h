@@ -3,12 +3,12 @@
  */
 
 @interface _MFFormatFlowedWriter : NSObject {
-    unsigned int _addedTrailingSpaces;
-    unsigned long _encoding;
-    MFPlainTextDocument *_inputDocument;
-    NSMutableString *_lineString;
-    NSMutableString *_outputString;
-    NSMutableString *_quotedString;
+    unsigned int  _addedTrailingSpaces;
+    unsigned long  _encoding;
+    MFPlainTextDocument * _inputDocument;
+    NSMutableString * _lineString;
+    NSMutableString * _outputString;
+    NSMutableString * _quotedString;
 }
 
 + (id)newWithPlainTextDocument:(id)arg1 encoding:(unsigned long)arg2;

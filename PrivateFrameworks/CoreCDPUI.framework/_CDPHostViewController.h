@@ -3,7 +3,7 @@
  */
 
 @interface _CDPHostViewController : _UIRemoteViewController <CDPHostInterface> {
-    id /* block */ _viewServiceTerminationBlock;
+    id /* block */  _viewServiceTerminationBlock;
 }
 
 @property (nonatomic, copy) id /* block */ viewServiceTerminationBlock;
@@ -17,5 +17,7 @@
 - (void)setViewServiceTerminationBlock:(id /* block */)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (id /* block */)viewServiceTerminationBlock;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

@@ -3,11 +3,12 @@
  */
 
 @interface PLSleepWakeAgent : PLAgent {
-    double _apSOCBasePower;
-    PLSemaphore *_canSleepSemaphore;
-    unsigned int _pmNotifier;
-    unsigned int _rootDomainConnect;
-    struct IONotificationPort { } *_systemPowerPortRef;
+    double  _apSOCBasePower;
+    PLSemaphore * _canSleepSemaphore;
+    unsigned int  _pmNotifier;
+    unsigned int  _rootDomainConnect;
+    struct IONotificationPort { } * _systemPowerPortRef;
+    PLXPCListenerOperatorComposition * _wakeGestureXPCListener;
 }
 
 @property double apSOCBasePower;
@@ -15,24 +16,24 @@
 @property unsigned int pmNotifier;
 @property unsigned int rootDomainConnect;
 @property struct IONotificationPort { }*systemPowerPortRef;
+@property (retain) PLXPCListenerOperatorComposition *wakeGestureXPCListener;
 
-+ (id)entryAggregateDefinitionAPOn;
-+ (id)entryAggregateDefinitions;
 + (id)entryEventBackwardDefinitions;
 + (id)entryEventForwardDefinitionPowerState;
 + (id)entryEventForwardDefinitions;
 + (id)entryEventPointDefinitionCurrentMachWakeTime;
++ (id)entryEventPointDefinitionWakeGesture;
 + (id)entryEventPointDefinitions;
 + (void)load;
 + (id)railDefinitions;
 
 - (void).cxx_destruct;
-- (void)aggregateWakeTimeWithLastCompletedDate:(id)arg1 withNow:(id)arg2;
 - (double)apSOCBasePower;
 - (id)canSleepSemaphore;
 - (id)init;
 - (void)initOperatorDependancies;
 - (void)log;
+- (void)logEventPointWakeGesture:(id)arg1;
 - (unsigned int)pmNotifier;
 - (unsigned int)rootDomainConnect;
 - (void)setApSOCBasePower:(double)arg1;
@@ -40,8 +41,10 @@
 - (void)setPmNotifier:(unsigned int)arg1;
 - (void)setRootDomainConnect:(unsigned int)arg1;
 - (void)setSystemPowerPortRef:(struct IONotificationPort { }*)arg1;
+- (void)setWakeGestureXPCListener:(id)arg1;
 - (struct IONotificationPort { }*)systemPowerPortRef;
 - (void)systemPoweredOn;
+- (id)wakeGestureXPCListener;
 - (id)wakeReasons;
 - (id)wakeReasonsAsNSString;
 

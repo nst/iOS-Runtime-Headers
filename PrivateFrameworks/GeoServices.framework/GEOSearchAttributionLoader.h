@@ -3,7 +3,7 @@
  */
 
 @interface GEOSearchAttributionLoader : NSObject {
-    GEOSearchAttributionManifest *_attributionManifest;
+    GEOSearchAttributionManifest * _attributionManifest;
 }
 
 - (void)dealloc;

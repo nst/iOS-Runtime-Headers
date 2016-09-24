@@ -3,12 +3,14 @@
  */
 
 @interface PFSharingRemakerOptions : NSObject <NSCopying> {
-    NSURL *_outputDirectoryURL;
-    BOOL _shouldConvertToSRGB;
-    BOOL _shouldStripAllMetadata;
-    BOOL _shouldStripLocation;
+    NSString * _customAccessibilityLabel;
+    NSURL * _outputDirectoryURL;
+    BOOL  _shouldConvertToSRGB;
+    BOOL  _shouldStripAllMetadata;
+    BOOL  _shouldStripLocation;
 }
 
+@property (nonatomic, copy) NSString *customAccessibilityLabel;
 @property (nonatomic, copy) NSURL *outputDirectoryURL;
 @property (nonatomic) BOOL shouldConvertToSRGB;
 @property (nonatomic) BOOL shouldStripAllMetadata;
@@ -16,7 +18,9 @@
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)customAccessibilityLabel;
 - (id)outputDirectoryURL;
+- (void)setCustomAccessibilityLabel:(id)arg1;
 - (void)setOutputDirectoryURL:(id)arg1;
 - (void)setShouldConvertToSRGB:(BOOL)arg1;
 - (void)setShouldStripAllMetadata:(BOOL)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface EKUIEventInviteesEditViewController : EKEditItemViewController {
-    EKUIEventInviteesViewController *_controller;
-    EKEvent *_event;
+    EKUIEventInviteesViewController * _controller;
+    EKEvent * _event;
 }
 
 @property (nonatomic, readonly) NSDate *selectedEndDate;

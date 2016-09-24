@@ -3,13 +3,13 @@
  */
 
 @interface RadioPlaybackTimeoutInfoController : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    long long _activeAccountIdentifier;
-    RadioPlaybackTimeoutInfo *_currentTimeoutInfo;
-    NSMutableArray *_currentTimeoutInfoLoadCompletionHandlers;
-    RadioLoadStoreBagRequest *_loadStoreBagRequest;
-    RadioStoreBag *_storeBag;
-    NSDictionary *_syncOverrideTimeoutDictionary;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    int  _activeAccountIdentifier;
+    RadioPlaybackTimeoutInfo * _currentTimeoutInfo;
+    NSMutableArray * _currentTimeoutInfoLoadCompletionHandlers;
+    RadioLoadStoreBagRequest * _loadStoreBagRequest;
+    RadioStoreBag * _storeBag;
+    NSDictionary * _syncOverrideTimeoutDictionary;
 }
 
 + (void)_clearAccountRelatedTimeoutInfo;

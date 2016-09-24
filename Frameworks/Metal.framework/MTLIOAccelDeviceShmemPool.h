@@ -13,7 +13,7 @@
             MTLIOAccelDevice *device; 
             unsigned int shmemSize; 
         } queue; 
-    } _priv;
+    }  _priv;
 }
 
 - (int)availableCount;

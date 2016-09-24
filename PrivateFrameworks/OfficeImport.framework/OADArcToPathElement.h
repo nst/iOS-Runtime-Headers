@@ -6,7 +6,7 @@
     struct OADAdjustCoord { 
         BOOL isFormulaResult; 
         int value; 
-    } mAngleLength;
+    }  mAngleLength;
     struct OADAdjustPoint { 
         struct OADAdjustCoord { 
             BOOL isFormulaResult; 
@@ -16,11 +16,11 @@
             BOOL isFormulaResult; 
             int value; 
         } y; 
-    } mSemiaxes;
+    }  mSemiaxes;
     struct OADAdjustCoord { 
         BOOL isFormulaResult; 
         int value; 
-    } mStartAngle;
+    }  mStartAngle;
 }
 
 - (struct OADAdjustCoord { BOOL x1; int x2; })angleLength;

@@ -3,45 +3,45 @@
  */
 
 @interface PUTileAnimationOptions : NSObject {
-    id /* block */ _customViewAnimatorBlock;
-    double _delay;
-    double _duration;
+    id /* block */  _customViewAnimatorBlock;
+    double  _delay;
+    double  _duration;
     struct PUDisplayVelocity { 
-        float x; 
-        float y; 
-        float scale; 
-        float rotation; 
-    } _initialVelocity;
-    int _kind;
-    float _springDampingRatio;
-    float _springMass;
-    int _springNumberOfOscillations;
-    float _springStiffness;
-    BOOL _synchronizedWithTransition;
+        double x; 
+        double y; 
+        double scale; 
+        double rotation; 
+    }  _initialVelocity;
+    int  _kind;
+    double  _springDampingRatio;
+    double  _springMass;
+    int  _springNumberOfOscillations;
+    double  _springStiffness;
+    BOOL  _synchronizedWithTransition;
 }
 
 @property (nonatomic, copy) id /* block */ customViewAnimatorBlock;
 @property (nonatomic) double delay;
 @property (nonatomic) double duration;
-@property (nonatomic) struct PUDisplayVelocity { float x1; float x2; float x3; float x4; } initialVelocity;
+@property (nonatomic) struct PUDisplayVelocity { double x1; double x2; double x3; double x4; } initialVelocity;
 @property (nonatomic) int kind;
-@property (nonatomic) float springDampingRatio;
-@property (nonatomic) float springMass;
+@property (nonatomic) double springDampingRatio;
+@property (nonatomic) double springMass;
 @property (nonatomic) int springNumberOfOscillations;
-@property (nonatomic) float springStiffness;
+@property (nonatomic) double springStiffness;
 @property (getter=isSynchronizedWithTransition, nonatomic) BOOL synchronizedWithTransition;
 
 - (void).cxx_destruct;
 - (id /* block */)customViewAnimatorBlock;
 - (double)delay;
 - (double)duration;
-- (struct PUDisplayVelocity { float x1; float x2; float x3; float x4; })initialVelocity;
+- (struct PUDisplayVelocity { double x1; double x2; double x3; double x4; })initialVelocity;
 - (BOOL)isSynchronizedWithTransition;
 - (int)kind;
 - (void)setCustomViewAnimatorBlock:(id /* block */)arg1;
 - (void)setDelay:(double)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setInitialVelocity:(struct PUDisplayVelocity { float x1; float x2; float x3; float x4; })arg1;
+- (void)setInitialVelocity:(struct PUDisplayVelocity { double x1; double x2; double x3; double x4; })arg1;
 - (void)setKind:(int)arg1;
 - (void)setSpringDampingRatio:(float)arg1;
 - (void)setSpringMass:(float)arg1;

@@ -3,15 +3,15 @@
  */
 
 @interface NSSQLModel : NSStoreMapping {
-    unsigned int _brokenHashVersion;
-    NSString *_configuration;
-    NSMutableArray *_entities;
-    NSKnownKeysDictionary *_entitiesByName;
-    id *_entityDescriptionToSQLMap;
-    BOOL _hasVirtualToOnes;
-    BOOL _modelHasPrecomputedKeyOrder;
-    NSManagedObjectModel *_mom;
-    BOOL _retainLeopardStyleDictionaries;
+    unsigned int  _brokenHashVersion;
+    NSString * _configuration;
+    NSMutableArray * _entities;
+    NSKnownKeysDictionary * _entitiesByName;
+    id * _entityDescriptionToSQLMap;
+    BOOL  _hasVirtualToOnes;
+    BOOL  _modelHasPrecomputedKeyOrder;
+    NSManagedObjectModel * _mom;
+    BOOL  _retainLeopardStyleDictionaries;
 }
 
 - (void)_addIndexedEntity:(id)arg1;
@@ -21,6 +21,7 @@
 - (id)_precomputedKeyOrderForEntity:(id)arg1;
 - (void)_recordHasVirtualToOnes;
 - (BOOL)_retainHashHack;
+- (BOOL)_runSanityCheckForModel:(id)arg1;
 - (id)_sqlEntityWithRenamingIdentifier:(id)arg1;
 - (BOOL)_useLeopardStyleHashing;
 - (BOOL)_useSnowLeopardStyleHashing;

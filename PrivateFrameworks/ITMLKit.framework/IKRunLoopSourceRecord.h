@@ -3,8 +3,8 @@
  */
 
 @interface IKRunLoopSourceRecord : NSObject {
-    id /* block */ _completionBlock;
-    id /* block */ _evaluateBlock;
+    id /* block */  _completionBlock;
+    id /* block */  _evaluateBlock;
 }
 
 @property (nonatomic, copy) id /* block */ completionBlock;

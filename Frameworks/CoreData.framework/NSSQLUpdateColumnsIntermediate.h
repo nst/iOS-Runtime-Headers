@@ -3,8 +3,8 @@
  */
 
 @interface NSSQLUpdateColumnsIntermediate : NSSQLIntermediate {
-    NSArray *_propertiesToUpdate;
-    NSArray *_valuesToUpdateTo;
+    NSArray * _propertiesToUpdate;
+    NSArray * _valuesToUpdateTo;
 }
 
 - (id)_generateSQLForAttributeUpdate:(id)arg1 sourceAttribute:(id)arg2 inContext:(id)arg3;

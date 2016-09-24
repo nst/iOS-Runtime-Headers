@@ -3,7 +3,7 @@
  */
 
 @interface CNPostalAddressFormatter : NSFormatter {
-    int _style;
+    int  _style;
 }
 
 @property (nonatomic) int style;

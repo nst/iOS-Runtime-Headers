@@ -3,9 +3,9 @@
  */
 
 @interface SKUINetworkErrorViewController : UIViewController <SKUIProductPageChildViewController> {
-    SKUIClientContext *_clientContext;
-    <SKUINetworkErrorDelegate> *_delegate;
-    NSError *_error;
+    SKUIClientContext * _clientContext;
+    <SKUINetworkErrorDelegate> * _delegate;
+    NSError * _error;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

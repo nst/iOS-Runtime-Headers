@@ -3,15 +3,15 @@
  */
 
 @interface SKUITabBarItem : NSObject <NSCopying> {
-    BOOL _alwaysCreatesRootViewController;
-    int _barTintStyle;
-    UIViewController *_customRootViewController;
-    NSString *_metricsIdentifier;
-    NSURL *_rootURL;
-    Class _rootViewControllerClass;
-    NSString *_tabIdentifier;
-    UITabBarItem *_underlyingTabBarItem;
-    UIColor *_userInterfaceTintColor;
+    BOOL  _alwaysCreatesRootViewController;
+    int  _barTintStyle;
+    UIViewController * _customRootViewController;
+    NSString * _metricsIdentifier;
+    NSURL * _rootURL;
+    Class  _rootViewControllerClass;
+    NSString * _tabIdentifier;
+    UITabBarItem * _underlyingTabBarItem;
+    UIColor * _userInterfaceTintColor;
 }
 
 @property (nonatomic) BOOL alwaysCreatesRootViewController;

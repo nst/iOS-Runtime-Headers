@@ -3,8 +3,8 @@
  */
 
 @interface HKHorizontalSingleLineDataSource : HKHealthQueryChartCacheDataSource {
-    HKSampleType *_sampleType;
-    id /* block */ _userInfoCreationBlock;
+    HKSampleType * _sampleType;
+    id /* block */  _userInfoCreationBlock;
 }
 
 @property (nonatomic, retain) HKSampleType *sampleType;

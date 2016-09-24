@@ -3,8 +3,8 @@
  */
 
 @interface TSCHPropertyMutationIndirectTuple : TSCHPropertyMutationTuple {
-    unsigned int mStyleOwnerIndex;
-    int mStyleOwnerType;
+    unsigned int  mStyleOwnerIndex;
+    int  mStyleOwnerType;
 }
 
 @property (nonatomic, readonly) unsigned int index;

@@ -9,11 +9,13 @@
 - (TSWPAttachment *)attachmentAtCharIndex:(unsigned int)arg1;
 - (TSWPAttachment *)attachmentOrFootnoteAtCharIndex:(unsigned int)arg1;
 - (void)attributesAtCharIndex:(void *)arg1 attributesOfInterest:(void *)arg2 attributesTable:(void *)arg3 effectiveRange:(void *)arg4; // needs 4 arg types, found 3: unsigned int, BOOL, /* Warning: unhandled array encoding: '[19@]16^{_NSRange=II}20' */ id
+- (unsigned int)changeCount;
 - (unsigned int)charIndexMappedFromStorage:(unsigned int)arg1;
 - (unsigned int)charIndexMappedToStorage:(unsigned int)arg1;
 - (unsigned int)charIndexRemappedFromStorage:(unsigned int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })charRangeMappedFromStorage:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })charRangeMappedToStorage:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })charRangeRemappedFromStorage:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (unsigned short)characterAtIndex:(unsigned int)arg1;
 - (TSWPCharacterStyle *)characterStyleAtCharIndex:(unsigned int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
 - (TSWPFootnoteReferenceAttachment *)footnoteReferenceAtCharIndex:(unsigned int)arg1;
@@ -29,6 +31,7 @@
 - (NSArray *)smartFieldsWithAttributeKind:(int)arg1 intersectingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (unsigned int)storageLength;
 - (NSString *)string;
+- (void)updateStorageChangeCount;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })wordAtCharIndex:(unsigned int)arg1 includePreviousWord:(BOOL)arg2;
 
 @optional

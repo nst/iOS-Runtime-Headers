@@ -3,9 +3,9 @@
  */
 
 @interface PLLoadRequestKey : NSObject <NSCopying> {
-    unsigned int _hash;
-    NSManagedObjectID *_objectID;
-    unsigned short _sourceID;
+    unsigned int  _hash;
+    NSManagedObjectID * _objectID;
+    unsigned short  _sourceID;
 }
 
 + (id)keyWithSource:(id)arg1 asset:(id)arg2;

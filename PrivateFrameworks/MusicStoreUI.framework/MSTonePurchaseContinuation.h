@@ -2,10 +2,10 @@
    Image: /System/Library/PrivateFrameworks/MusicStoreUI.framework/MusicStoreUI
  */
 
-@interface MSTonePurchaseContinuation : SUPurchaseContinuation <ABPeoplePickerNavigationControllerDelegate, UIActionSheetDelegate, UIAlertViewDelegate> {
-    UIActionSheet *_actionSheet;
-    UIAlertView *_alertView;
-    ABPeoplePickerNavigationController *_peoplePicker;
+@interface MSTonePurchaseContinuation : SUPurchaseContinuation <CNContactPickerDelegate, UIActionSheetDelegate, UIAlertViewDelegate> {
+    UIActionSheet * _actionSheet;
+    UIAlertView * _alertView;
+    CNContactPickerViewController * _contactPicker;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -16,7 +16,7 @@
 - (id)_copyAllowedToneStyles;
 - (void)_destroyActionSheet;
 - (void)_destroyAlertView;
-- (void)_dismissPeoplePicker;
+- (void)_dismissContactPicker;
 - (void)_pickAssigneeToneStyle;
 - (void)_showPeoplePicker;
 - (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
@@ -24,11 +24,10 @@
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)alertViewCancel:(id)arg1;
 - (void)cancel;
+- (void)contactPicker:(id)arg1 didSelectContact:(id)arg2;
+- (void)contactPickerDidCancel:(id)arg1;
 - (void)dealloc;
 - (id)initWithPurchase:(id)arg1;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
 - (void)start;
 
 @end

@@ -3,13 +3,13 @@
  */
 
 @interface CalDAVUpdateGrantedDelegatesTaskGroup : CoreDAVTaskGroup <CoreDAVPropPatchTaskDelegate, CoreDAVTaskGroupDelegate> {
-    NSSet *_addReadURLs;
-    NSSet *_addWriteURLs;
-    CalDAVGetGrantedDelegatesTaskGroup *_getGrantedDelegatesTaskGroup;
-    NSSet *_removeURLs;
-    int _state;
-    NSSet *_updatedReadURLs;
-    NSSet *_updatedWriteURLs;
+    NSSet * _addReadURLs;
+    NSSet * _addWriteURLs;
+    CalDAVGetGrantedDelegatesTaskGroup * _getGrantedDelegatesTaskGroup;
+    NSSet * _removeURLs;
+    int  _state;
+    NSSet * _updatedReadURLs;
+    NSSet * _updatedWriteURLs;
 }
 
 @property (nonatomic, retain) NSSet *addReadURLs;

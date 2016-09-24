@@ -3,7 +3,7 @@
  */
 
 @interface _NSZombie_  {
-    Class isa;
+    Class  isa;
 }
 
 + (void)initialize;

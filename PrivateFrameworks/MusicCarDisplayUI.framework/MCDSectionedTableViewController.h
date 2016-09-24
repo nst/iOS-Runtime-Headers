@@ -3,7 +3,7 @@
  */
 
 @interface MCDSectionedTableViewController : MCD_OLD_TableViewController {
-    unsigned int *_offsetOfSection;
+    unsigned int * _offsetOfSection;
 }
 
 @property (nonatomic, readonly) unsigned int countOfActions;

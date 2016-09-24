@@ -3,10 +3,10 @@
  */
 
 @interface SSPersonalizeOffersResponse : NSObject <SSXPCCoding> {
-    NSMutableDictionary *_actionDisplayNames;
-    NSMutableDictionary *_actionParameters;
-    NSArray *_items;
-    NSMutableDictionary *_priceDisplayNames;
+    NSMutableDictionary * _actionDisplayNames;
+    NSMutableDictionary * _actionParameters;
+    NSArray * _items;
+    NSMutableDictionary * _priceDisplayNames;
 }
 
 @property (readonly, copy) NSString *debugDescription;

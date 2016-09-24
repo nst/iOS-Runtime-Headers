@@ -3,31 +3,21 @@
  */
 
 @interface CRPairedVehicleManager : NSObject {
-    NSMutableArray *_outstandingSemaphores;
-    <CRCarKitService> *_service;
-    NSXPCConnection *_serviceConnection;
+    CRCarKitServiceClient * _serviceClient;
 }
 
-@property (nonatomic, retain) NSMutableArray *outstandingSemaphores;
-@property (nonatomic, retain) <CRCarKitService> *service;
-@property (nonatomic, retain) NSXPCConnection *serviceConnection;
+@property (nonatomic, retain) CRCarKitServiceClient *serviceClient;
 
 - (void).cxx_destruct;
-- (void)_blockOnServiceSemaphore:(id)arg1;
-- (void)_releaseAllServiceSemaphores;
-- (id)_serviceSemaphore;
 - (id)allVehicles;
 - (id)init;
-- (id)outstandingSemaphores;
 - (id)pairedVehicles;
 - (BOOL)removeVehicle:(id)arg1;
 - (id)saveVehicle:(id)arg1;
-- (id)service;
-- (id)serviceConnection;
-- (void)setOutstandingSemaphores:(id)arg1;
-- (void)setService:(id)arg1;
-- (void)setServiceConnection:(id)arg1;
+- (id)serviceClient;
+- (void)setServiceClient:(id)arg1;
 - (id)vehicleForBluetoothAddress:(id)arg1;
+- (id)vehicleForCertificateSerial:(id)arg1;
 - (id)vehicleNameForWiFiUUID:(id)arg1;
 
 @end

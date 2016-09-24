@@ -3,7 +3,7 @@
  */
 
 @interface PLCoreOperator : NSObject {
-    NSMutableDictionary *_operators;
+    NSMutableDictionary * _operators;
 }
 
 @property (retain) NSMutableDictionary *operators;

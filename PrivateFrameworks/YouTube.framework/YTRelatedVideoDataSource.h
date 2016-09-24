@@ -3,7 +3,7 @@
  */
 
 @interface YTRelatedVideoDataSource : YTVideoDataSource {
-    YTVideo *_video;
+    YTVideo * _video;
 }
 
 - (void)dealloc;

@@ -2,10 +2,13 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@interface MTLRenderPassDescriptor : NSObject <NSCopying>
+@interface MTLRenderPassDescriptor : NSObject <NSCopying> {
+    unsigned int  _renderTargetArrayLength;
+}
 
 @property (readonly) MTLRenderPassColorAttachmentDescriptorArray *colorAttachments;
 @property (nonatomic, copy) MTLRenderPassDepthAttachmentDescriptor *depthAttachment;
+@property (nonatomic) unsigned int renderTargetArrayLength;
 @property (nonatomic, copy) MTLRenderPassStencilAttachmentDescriptor *stencilAttachment;
 @property (nonatomic, retain) <MTLBuffer> *visibilityResultBuffer;
 
@@ -14,5 +17,7 @@
 + (id)renderPassDescriptor;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned int)renderTargetArrayLength;
+- (void)setRenderTargetArrayLength:(unsigned int)arg1;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface NSSQLHavingIntermediate : NSSQLIntermediate {
-    NSSQLWhereIntermediate *_whereClause;
+    NSSQLWhereIntermediate * _whereClause;
 }
 
 - (void)dealloc;

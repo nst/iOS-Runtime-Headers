@@ -3,14 +3,14 @@
  */
 
 @interface TSCH3DGetSelectionKnobsPositionsPipelineDelegate : NSObject <TSCH3DChartAllSceneObjectDelegate, TSCH3DChartElementSceneObjectGeometryDelegate, TSCH3DSceneDelegate, TSCHUnretainedParent> {
-    int mCurrentLabelType;
-    TSCH3DGeometry *mGeometry;
-    int mKnobsMode;
-    NSMutableDictionary *mLabelsBoundsForMerging;
-    NSMutableArray *mProjectedPoints;
-    TSCH3DChartRep *mRep;
-    TSCH3DScene *mScene;
-    NSArray *mSelection;
+    int  mCurrentLabelType;
+    TSCH3DGeometry * mGeometry;
+    int  mKnobsMode;
+    NSMutableDictionary * mLabelsBoundsForMerging;
+    NSMutableArray * mProjectedPoints;
+    TSCH3DChartRep * mRep;
+    TSCH3DScene * mScene;
+    NSArray * mSelection;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -21,7 +21,7 @@
 @property (nonatomic, readonly) BOOL shouldMerge;
 @property (readonly) Class superclass;
 
-- (void)addLabelBoundsForMerging:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)addLabelBoundsForMerging:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)clearParent;
 - (void)dealloc;
 - (void)didEndProcessingSceneObject:(id)arg1;
@@ -42,7 +42,7 @@
 - (struct ElementRenderPass { int x1; })renderPassForElement:(const struct RenderElementInfo { id x1; id x2; /* Warning: Unrecognized filer type: 't' using 'void*' */ void*x3; void x4; void*x5; BOOL x6; void*x7; void*x8; int x9; in void*x10; void*x11; void*x12; union { int x_13_1_1; int x_13_1_2; int x_13_1_3; } x13; union { int x_14_1_1; int x_14_1_2; int x_14_1_3; } x14; }*)arg1 sceneObject:(id)arg2;
 - (struct ElementRenderPass { int x1; })renderPassForSceneObject:(id)arg1;
 - (void)setGeometry:(id)arg1;
-- (void)setOffset:(const struct tvec3<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; union { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; }*)arg1 labelType:(int)arg2 boundsIndex:(int)arg3 forSceneObject:(id)arg4;
+- (void)setOffset:(const struct tvec3<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; union { double x_3_1_1; double x_3_1_2; double x_3_1_3; } x3; }*)arg1 labelType:(int)arg2 boundsIndex:(int)arg3 forSceneObject:(id)arg4;
 - (void)setProjectedPoints:(id)arg1;
 - (BOOL)shouldMerge;
 - (void)updateExternalLabelAttribute:(struct ExternalLabelAttribute { }*)arg1 sceneObject:(id)arg2 labelRenderInfo:(const struct ChartLabelsContainingLabelRenderInfo { id x1; /* Warning: Unrecognized filer type: 't' using 'void*' */ void*x2; void x3; void*x4; BOOL x5; void*x6; void*x7; int x8; in void*x9; void*x10; void*x11; union { int x_12_1_1; int x_12_1_2; int x_12_1_3; } x12; union { int x_13_1_1; int x_13_1_2; int x_13_1_3; } x13; }*)arg3;

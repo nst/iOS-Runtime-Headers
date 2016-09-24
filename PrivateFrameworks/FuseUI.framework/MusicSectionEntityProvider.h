@@ -3,7 +3,7 @@
  */
 
 @interface MusicSectionEntityProvider : NSObject <MusicEntityProviding> {
-    <MusicEntityProviding> *_underylingEntityProvider;
+    <MusicEntityProviding> * _underylingEntityProvider;
 }
 
 @property (readonly, copy) NSString *debugDescription;

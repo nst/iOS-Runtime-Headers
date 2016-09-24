@@ -3,12 +3,12 @@
  */
 
 @interface _MPUProtoBufUserActivityContainerItem : PBCodable <NSCopying> {
-    int _containerItemType;
+    int  _containerItemType;
     struct { 
         unsigned int containerItemType : 1; 
-    } _has;
-    MIPMultiverseIdentifier *_selectedMultiverseIdentifier;
-    MIPMultiverseIdentifier *_visualReferenceMultiverseIdentifier;
+    }  _has;
+    MIPMultiverseIdentifier * _selectedMultiverseIdentifier;
+    MIPMultiverseIdentifier * _visualReferenceMultiverseIdentifier;
 }
 
 @property (nonatomic) int containerItemType;

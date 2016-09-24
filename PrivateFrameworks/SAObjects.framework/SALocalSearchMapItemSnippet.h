@@ -4,24 +4,30 @@
 
 @interface SALocalSearchMapItemSnippet : SAUISnippet
 
+@property (nonatomic) BOOL chainResultSet;
 @property (nonatomic, copy) NSArray *items;
 @property (nonatomic, copy) NSArray *providerCommand;
 @property (nonatomic, copy) NSNumber *regionOfInterestRadiusInMiles;
+@property (nonatomic) BOOL searchAlongRoute;
 @property (nonatomic, retain) SALocation *searchRegionCenter;
 @property (nonatomic, copy) NSNumber *userCurrentLocation;
 
 + (id)mapItemSnippet;
 + (id)mapItemSnippetWithDictionary:(id)arg1 context:(id)arg2;
 
+- (BOOL)chainResultSet;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)items;
 - (id)providerCommand;
 - (id)regionOfInterestRadiusInMiles;
+- (BOOL)searchAlongRoute;
 - (id)searchRegionCenter;
+- (void)setChainResultSet:(BOOL)arg1;
 - (void)setItems:(id)arg1;
 - (void)setProviderCommand:(id)arg1;
 - (void)setRegionOfInterestRadiusInMiles:(id)arg1;
+- (void)setSearchAlongRoute:(BOOL)arg1;
 - (void)setSearchRegionCenter:(id)arg1;
 - (void)setUserCurrentLocation:(id)arg1;
 - (id)userCurrentLocation;

@@ -17,6 +17,7 @@
         unsigned int supportsOutgoingInvitations : 1; 
         unsigned int requiresOutgoingInvitationsInDefaultCalendar : 1; 
         unsigned int supportsInvitationModifications : 1; 
+        unsigned int supportsEventForwarding : 1; 
         unsigned int supportsResponseComments : 1; 
         unsigned int deliverySourceOrExternalIDRequiredForResponse : 1; 
         unsigned int proposedStatusRequiredForResponse : 1; 
@@ -57,21 +58,24 @@
         unsigned int prohibitsYearlyRecurrenceInterval : 1; 
         unsigned int requiresOccurrencesConformToRecurrenceRule : 1; 
         unsigned int prohibitsDetachmentOnCommentChange : 1; 
-    } _flags;
-    int _maxAlarmsAllowed;
-    int _maxRecurrencesAllowed;
+        unsigned int allowsProposeNewTime : 1; 
+        unsigned int prohibitsICSImport : 1; 
+    }  _flags;
+    int  _maxAlarmsAllowed;
+    int  _maxRecurrencesAllowed;
 }
 
 @property (nonatomic) BOOL alarmTriggerIntervalConstrainedToRecurrenceInterval;
 @property (nonatomic) BOOL allowsCalendarAddDeleteModify;
 @property (nonatomic) BOOL allowsEvents;
+@property (nonatomic) BOOL allowsProposeNewTime;
 @property (nonatomic) BOOL allowsTasks;
 @property (nonatomic) BOOL canSetAvailability;
 @property (nonatomic) BOOL declinedStatusChangeRequiresNoPendingStatus;
 @property (nonatomic) BOOL deliverySourceOrExternalIDRequiredForResponse;
 @property (nonatomic) BOOL eventAvalabilityLimited;
 @property (nonatomic) BOOL eventDurationConstrainedToRecurrenceInterval;
-@property (nonatomic) struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; unsigned int x42 : 1; unsigned int x43 : 1; unsigned int x44 : 1; unsigned int x45 : 1; unsigned int x46 : 1; unsigned int x47 : 1; unsigned int x48 : 1; unsigned int x49 : 1; unsigned int x50 : 1; unsigned int x51 : 1; unsigned int x52 : 1; unsigned int x53 : 1; } flags;
+@property (nonatomic) struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; unsigned int x42 : 1; unsigned int x43 : 1; unsigned int x44 : 1; unsigned int x45 : 1; unsigned int x46 : 1; unsigned int x47 : 1; } flags;
 @property (nonatomic) BOOL futureStartDateLimitedToOccurrenceCacheBounds;
 @property (nonatomic) BOOL inviteesCanSeeAttendeeStatuses;
 @property (nonatomic) BOOL isFacebook;
@@ -81,6 +85,7 @@
 @property (nonatomic) BOOL occurrencesMustOccurOnSeparateDays;
 @property (nonatomic) BOOL organizerCanSeeAttendeeStatuses;
 @property (nonatomic) BOOL prohibitsDetachmentOnCommentChange;
+@property (nonatomic) BOOL prohibitsICSImport;
 @property (nonatomic) BOOL prohibitsMultipleDaysInMonthlyRecurrence;
 @property (nonatomic) BOOL prohibitsMultipleMonthsInYearlyRecurrence;
 @property (nonatomic) BOOL prohibitsPrivateEventsWithAttendees;
@@ -103,6 +108,7 @@
 @property (nonatomic) BOOL supportsAlarmsTriggeringAfterStartDate;
 @property (nonatomic) BOOL supportsAllDayDueDates;
 @property (nonatomic) BOOL supportsAvailabilityRequests;
+@property (nonatomic) BOOL supportsEventForwarding;
 @property (nonatomic) BOOL supportsIgnoringEventsInAvailabilityRequests;
 @property (nonatomic) BOOL supportsIncomingInvitations;
 @property (nonatomic) BOOL supportsInvitationModifications;
@@ -120,16 +126,17 @@
 - (BOOL)alarmTriggerIntervalConstrainedToRecurrenceInterval;
 - (BOOL)allowsCalendarAddDeleteModify;
 - (BOOL)allowsEvents;
+- (BOOL)allowsProposeNewTime;
 - (BOOL)allowsTasks;
 - (BOOL)canSetAvailability;
 - (BOOL)declinedStatusChangeRequiresNoPendingStatus;
 - (BOOL)deliverySourceOrExternalIDRequiredForResponse;
 - (BOOL)eventAvalabilityLimited;
 - (BOOL)eventDurationConstrainedToRecurrenceInterval;
-- (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; unsigned int x42 : 1; unsigned int x43 : 1; unsigned int x44 : 1; unsigned int x45 : 1; unsigned int x46 : 1; unsigned int x47 : 1; unsigned int x48 : 1; unsigned int x49 : 1; unsigned int x50 : 1; unsigned int x51 : 1; unsigned int x52 : 1; unsigned int x53 : 1; })flags;
+- (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; unsigned int x42 : 1; unsigned int x43 : 1; unsigned int x44 : 1; unsigned int x45 : 1; unsigned int x46 : 1; unsigned int x47 : 1; })flags;
 - (BOOL)futureStartDateLimitedToOccurrenceCacheBounds;
 - (id)init;
-- (id)initWithMaxAlarms:(int)arg1 maxRecurrences:(int)arg2 constraintFlags:(unsigned long long)arg3;
+- (id)initWithMaxAlarms:(int)arg1 maxRecurrences:(int)arg2 constraintFlags:(unsigned int)arg3;
 - (BOOL)inviteesCanSeeAttendeeStatuses;
 - (BOOL)isFacebook;
 - (int)maxAlarmsAllowed;
@@ -138,6 +145,7 @@
 - (BOOL)occurrencesMustOccurOnSeparateDays;
 - (BOOL)organizerCanSeeAttendeeStatuses;
 - (BOOL)prohibitsDetachmentOnCommentChange;
+- (BOOL)prohibitsICSImport;
 - (BOOL)prohibitsMultipleDaysInMonthlyRecurrence;
 - (BOOL)prohibitsMultipleMonthsInYearlyRecurrence;
 - (BOOL)prohibitsPrivateEventsWithAttendees;
@@ -153,13 +161,14 @@
 - (void)setAlarmTriggerIntervalConstrainedToRecurrenceInterval:(BOOL)arg1;
 - (void)setAllowsCalendarAddDeleteModify:(BOOL)arg1;
 - (void)setAllowsEvents:(BOOL)arg1;
+- (void)setAllowsProposeNewTime:(BOOL)arg1;
 - (void)setAllowsTasks:(BOOL)arg1;
 - (void)setCanSetAvailability:(BOOL)arg1;
 - (void)setDeclinedStatusChangeRequiresNoPendingStatus:(BOOL)arg1;
 - (void)setDeliverySourceOrExternalIDRequiredForResponse:(BOOL)arg1;
 - (void)setEventAvalabilityLimited:(BOOL)arg1;
 - (void)setEventDurationConstrainedToRecurrenceInterval:(BOOL)arg1;
-- (void)setFlags:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; unsigned int x42 : 1; unsigned int x43 : 1; unsigned int x44 : 1; unsigned int x45 : 1; unsigned int x46 : 1; unsigned int x47 : 1; unsigned int x48 : 1; unsigned int x49 : 1; unsigned int x50 : 1; unsigned int x51 : 1; unsigned int x52 : 1; unsigned int x53 : 1; })arg1;
+- (void)setFlags:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; unsigned int x42 : 1; unsigned int x43 : 1; unsigned int x44 : 1; unsigned int x45 : 1; unsigned int x46 : 1; unsigned int x47 : 1; })arg1;
 - (void)setFutureStartDateLimitedToOccurrenceCacheBounds:(BOOL)arg1;
 - (void)setInviteesCanSeeAttendeeStatuses:(BOOL)arg1;
 - (void)setIsFacebook:(BOOL)arg1;
@@ -169,6 +178,7 @@
 - (void)setOccurrencesMustOccurOnSeparateDays:(BOOL)arg1;
 - (void)setOrganizerCanSeeAttendeeStatuses:(BOOL)arg1;
 - (void)setProhibitsDetachmentOnCommentChange:(BOOL)arg1;
+- (void)setProhibitsICSImport:(BOOL)arg1;
 - (void)setProhibitsMultipleDaysInMonthlyRecurrence:(BOOL)arg1;
 - (void)setProhibitsMultipleMonthsInYearlyRecurrence:(BOOL)arg1;
 - (void)setProhibitsPrivateEventsWithAttendees:(BOOL)arg1;
@@ -191,6 +201,7 @@
 - (void)setSupportsAlarmsTriggeringAfterStartDate:(BOOL)arg1;
 - (void)setSupportsAllDayDueDates:(BOOL)arg1;
 - (void)setSupportsAvailabilityRequests:(BOOL)arg1;
+- (void)setSupportsEventForwarding:(BOOL)arg1;
 - (void)setSupportsIgnoringEventsInAvailabilityRequests:(BOOL)arg1;
 - (void)setSupportsIncomingInvitations:(BOOL)arg1;
 - (void)setSupportsInvitationModifications:(BOOL)arg1;
@@ -214,6 +225,7 @@
 - (BOOL)supportsAlarmsTriggeringAfterStartDate;
 - (BOOL)supportsAllDayDueDates;
 - (BOOL)supportsAvailabilityRequests;
+- (BOOL)supportsEventForwarding;
 - (BOOL)supportsIgnoringEventsInAvailabilityRequests;
 - (BOOL)supportsIncomingInvitations;
 - (BOOL)supportsInvitationModifications;

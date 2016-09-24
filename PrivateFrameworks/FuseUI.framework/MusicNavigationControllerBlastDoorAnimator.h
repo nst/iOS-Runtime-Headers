@@ -3,7 +3,7 @@
  */
 
 @interface MusicNavigationControllerBlastDoorAnimator : NSObject <UIViewControllerAnimatedTransitioning> {
-    BOOL _reversed;
+    BOOL  _reversed;
 }
 
 @property (readonly, copy) NSString *debugDescription;

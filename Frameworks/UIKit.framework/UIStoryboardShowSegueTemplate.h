@@ -3,7 +3,7 @@
  */
 
 @interface UIStoryboardShowSegueTemplate : UIStoryboardSegueTemplate {
-    NSString *_action;
+    NSString * _action;
 }
 
 @property (nonatomic, copy) NSString *action;

@@ -3,16 +3,16 @@
  */
 
 @interface BLTTestIDSService : NSObject <BLTAbstractIDSService> {
-    NSMutableDictionary *_actionsByRequestType;
-    NSMutableDictionary *_actionsByResponseType;
-    unsigned int _currentIdentifier;
-    NSMutableArray *_delegates;
-    unsigned int _maximumResponseDelay;
-    unsigned int _maximumSendDelay;
-    unsigned int _minimumResponseDelay;
-    unsigned int _minimumSendDelay;
-    BLTPBProtobufSequenceNumberManager *_sequenceNumberManager;
-    NSString *_service;
+    NSMutableDictionary * _actionsByRequestType;
+    NSMutableDictionary * _actionsByResponseType;
+    unsigned int  _currentIdentifier;
+    NSMutableArray * _delegates;
+    unsigned int  _maximumResponseDelay;
+    unsigned int  _maximumSendDelay;
+    unsigned int  _minimumResponseDelay;
+    unsigned int  _minimumSendDelay;
+    BLTPBProtobufSequenceNumberManager * _sequenceNumberManager;
+    NSString * _service;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -29,11 +29,11 @@
 - (void)_callDelegateActionForProtobuf:(id)arg1 delegate:(id)arg2 identifier:(id)arg3 type:(unsigned short)arg4 isResponse:(BOOL)arg5;
 - (void)_handleProtobuf:(id)arg1 identifier:(id)arg2 sendDelay:(unsigned int)arg3;
 - (id)_lightsAndSirensRequestForProtobuf:(id)arg1;
-- (unsigned long long)_nextSequenceNumber;
+- (unsigned int)_nextSequenceNumber;
 - (unsigned int)_randomResponseDelay;
 - (unsigned int)_randomSendDelay;
 - (unsigned int)_randomValueBetweenMin:(unsigned int)arg1 max:(unsigned int)arg2;
-- (void)_sendBlockToAllDelegatesAfterTime:(unsigned long long)arg1 block:(id /* block */)arg2;
+- (void)_sendBlockToAllDelegatesAfterTime:(unsigned int)arg1 block:(id /* block */)arg2;
 - (void)_sendLightsAndSirensRequestForProtobuf:(id)arg1 identifier:(id)arg2 sendDelay:(unsigned int)arg3;
 - (void)_sendSetSectionInfoResponseWithIdentifier:(id)arg1 sendDelay:(unsigned int)arg2;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;

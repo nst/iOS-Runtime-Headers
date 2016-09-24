@@ -3,9 +3,9 @@
  */
 
 @interface CertificateDetailsViewController : UITableViewController {
-    id _certificateTrust;
-    NSArray *_keyValueSectionTitles;
-    NSArray *_keyValueSections;
+    id  _certificateTrust;
+    NSArray * _keyValueSectionTitles;
+    NSArray * _keyValueSections;
 }
 
 @property (nonatomic, retain) id certificateTrust;

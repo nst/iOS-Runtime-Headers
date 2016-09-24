@@ -3,11 +3,12 @@
  */
 
 @interface ICCameraDevice : ICDevice {
-    void *_cameraProperties;
+    void * _cameraProperties;
 }
 
 @property (getter=isAccessRestrictedAppleDevice) BOOL accessRestrictedAppleDevice;
 @property BOOL allowsSyncingClock;
+@property (getter=isApplePTPCapable) BOOL applePTPCapable;
 @property (readonly) unsigned int batteryLevel;
 @property (readonly) BOOL batteryLevelAvailable;
 @property BOOL beingEjected;
@@ -29,6 +30,7 @@
 - (void)addToMetadataFetchQ:(id)arg1;
 - (void)addToThumbnailFetchQ:(id)arg1;
 - (BOOL)allowsSyncingClock;
+- (bool)applePTPCapable;
 - (unsigned int)batteryLevel;
 - (BOOL)batteryLevelAvailable;
 - (BOOL)beingEjected;
@@ -52,6 +54,7 @@
 - (void)incrementNumberOfDownloadableItems;
 - (id)init;
 - (BOOL)isAccessRestrictedAppleDevice;
+- (BOOL)isApplePTPCapable;
 - (BOOL)isEjectable;
 - (BOOL)isLocked;
 - (id)mediaFiles;
@@ -66,10 +69,18 @@
 - (void)requestDeleteFiles:(id)arg1;
 - (void)requestDownloadFile:(id)arg1 options:(id)arg2 downloadDelegate:(id)arg3 didDownloadSelector:(SEL)arg4 contextInfo:(void*)arg5;
 - (void)requestEject;
+- (void)requestMaxMetadata;
+- (void)requestMaxMetadataAndThumbnail;
+- (void)requestMaxThumbnails;
+- (void)requestMetadataOfFiles:(id)arg1;
 - (void)requestOpenSession;
 - (void)requestSyncClock;
+- (void)requestThumbOfFiles:(id)arg1 withPreferredResolution:(unsigned int)arg2;
+- (void)requestThumbWithMetadataOfFiles:(id)arg1 withPreferredResolution:(unsigned int)arg2;
+- (id)requestedFiles;
 - (void)setAccessRestrictedAppleDevice:(BOOL)arg1;
 - (void)setAllowsSyncingClock:(BOOL)arg1;
+- (void)setApplePTPCapable:(BOOL)arg1;
 - (void)setBeingEjected:(BOOL)arg1;
 - (void)setContentCatalogPercentCompleted:(unsigned int)arg1;
 - (void)setEjectable:(BOOL)arg1;
@@ -78,6 +89,7 @@
 - (void)setNumberOfDownloadableItems:(unsigned int)arg1;
 - (void)setVolumePath:(id)arg1;
 - (double)timeOffset;
+- (void)updateFiles:(id)arg1 withThumbnails:(BOOL)arg2 withMetadata:(BOOL)arg3;
 - (id)volumePath;
 
 @end

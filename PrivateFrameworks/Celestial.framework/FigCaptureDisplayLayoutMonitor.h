@@ -3,13 +3,13 @@
  */
 
 @interface FigCaptureDisplayLayoutMonitor : NSObject {
-    struct OpaqueFigSimpleMutex { } *_appsLock;
-    NSMutableArray *_fullScreenApps;
-    int _globalLayoutState;
-    FBSDisplayLayoutMonitor *_layoutMonitor;
-    NSMutableArray *_layoutObservers;
-    struct OpaqueFigSimpleMutex { } *_layoutObserversLock;
-    NSMutableArray *_nonFullScreenApps;
+    struct OpaqueFigSimpleMutex { } * _appsLock;
+    NSMutableArray * _fullScreenApps;
+    int  _globalLayoutState;
+    FBSDisplayLayoutMonitor * _layoutMonitor;
+    NSMutableArray * _layoutObservers;
+    struct OpaqueFigSimpleMutex { } * _layoutObserversLock;
+    NSMutableArray * _nonFullScreenApps;
 }
 
 + (long)_openFrontBoardServicesFramework;

@@ -3,20 +3,16 @@
  */
 
 @interface FBUIApplicationWorkspaceScene : FBWorkspaceScene {
-    NSMutableSet *_allWatchdogs;
-    BOOL _createResponseReceived;
-    BKSProcessAssertion *_deliverMessageProcessAssertion;
-    unsigned int _deliverMessageProcessAssertionCount;
-    BKSProcessAssertion *_launchBoostahAssertion;
-    BKSProcessAssertion *_resumeProcessAssertion;
-    BKSProcessAssertion *_seoProcessAssertion;
-    int _suspendType;
-    BKSProcessAssertion *_suspendingProcessAssertion;
-    BOOL _transitioningToForeground;
-    NSMutableArray *_watchdogStack;
+    NSMutableSet * _allWatchdogs;
+    BOOL  _createResponseReceived;
+    BKSProcessAssertion * _deliverMessageProcessAssertion;
+    unsigned int  _deliverMessageProcessAssertionCount;
+    BKSProcessAssertion * _resumeProcessAssertion;
+    BKSProcessAssertion * _seoProcessAssertion;
+    int  _suspendType;
+    BKSProcessAssertion * _suspendingProcessAssertion;
+    NSMutableArray * _watchdogStack;
 }
-
-@property (getter=_workspaceQueue_isTransitioningToForeground, nonatomic, readonly) BOOL transitioningToForeground;
 
 - (void)_dispatchBlockAfterProcessLaunch:(id /* block */)arg1;
 - (void)_handleDidUpdateSettings:(id)arg1 withDiff:(id)arg2 transitionContext:(id)arg3 completion:(id /* block */)arg4;
@@ -36,9 +32,9 @@
 - (void)_workspaceQueue_dropSEOProcessAssertion;
 - (void)_workspaceQueue_dropSuspendingProcessAssertion;
 - (void)_workspaceQueue_invalidate;
-- (BOOL)_workspaceQueue_isTransitioningToForeground;
 - (int)_workspaceQueue_lifecycleStateForSettings:(id)arg1;
-- (id)_workspaceQueue_newProcessAssertionForReason:(unsigned int)arg1 withName:(id)arg2 transitionContext:(id)arg3;
+- (id)_workspaceQueue_newProcessAssertionForReason:(unsigned int)arg1 withName:(id)arg2 transitionContext:(id)arg3 acquireSynchronously:(BOOL)arg4;
+- (void)_workspaceQueue_performGracefulExitWithDeliveryConfirmation:(id /* block */)arg1;
 - (int)_workspaceQueue_pid;
 - (id)_workspaceQueue_process;
 - (void)_workspaceQueue_takeAssertionsForDeactivation:(BOOL)arg1 transitionContext:(id)arg2;

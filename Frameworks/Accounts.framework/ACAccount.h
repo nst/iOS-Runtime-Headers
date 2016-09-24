@@ -3,40 +3,40 @@
  */
 
 @interface ACAccount : NSObject <NSCopying, NSSecureCoding> {
-    BOOL _accountAccessAvailable;
-    NSString *_accountDescription;
-    id /* block */ _accountPropertiesTransformer;
-    ACAccountType *_accountType;
-    BOOL _active;
-    BOOL _authenticated;
-    NSString *_authenticationType;
-    NSArray *_childAccounts;
-    NSString *_clientToken;
-    BOOL _creatingFromManagedObject;
-    ACAccountCredential *_credential;
-    NSString *_credentialType;
-    id _credentialsDidChangeObserver;
-    NSMutableDictionary *_dataclassProperties;
-    NSDate *_date;
-    NSMutableSet *_dirtyAccountProperties;
-    NSMutableSet *_dirtyDataclassProperties;
-    NSMutableSet *_dirtyProperties;
-    NSMutableSet *_enabledDataclasses;
-    BOOL _haveCheckedForChildAccounts;
-    BOOL _haveCheckedForClientToken;
-    BOOL _haveCheckedForParentAccount;
-    NSString *_identifier;
-    NSDate *_lastCredentialRenewalRejectionDate;
-    NSURL *_objectID;
-    NSString *_owningBundleID;
-    ACAccount *_parentAccount;
-    NSString *_parentAccountIdentifier;
-    NSMutableDictionary *_properties;
-    NSMutableSet *_provisionedDataclasses;
-    ACAccountStore *_store;
-    BOOL _supportsAuthentication;
-    NSString *_username;
-    BOOL _visible;
+    BOOL  _accountAccessAvailable;
+    NSString * _accountDescription;
+    id /* block */  _accountPropertiesTransformer;
+    ACAccountType * _accountType;
+    BOOL  _active;
+    BOOL  _authenticated;
+    NSString * _authenticationType;
+    NSArray * _childAccounts;
+    NSString * _clientToken;
+    BOOL  _creatingFromManagedObject;
+    ACAccountCredential * _credential;
+    NSString * _credentialType;
+    id  _credentialsDidChangeObserver;
+    NSMutableDictionary * _dataclassProperties;
+    NSDate * _date;
+    NSMutableSet * _dirtyAccountProperties;
+    NSMutableSet * _dirtyDataclassProperties;
+    NSMutableSet * _dirtyProperties;
+    NSMutableSet * _enabledDataclasses;
+    BOOL  _haveCheckedForChildAccounts;
+    BOOL  _haveCheckedForClientToken;
+    BOOL  _haveCheckedForParentAccount;
+    NSString * _identifier;
+    NSDate * _lastCredentialRenewalRejectionDate;
+    NSURL * _objectID;
+    NSString * _owningBundleID;
+    ACAccount * _parentAccount;
+    NSString * _parentAccountIdentifier;
+    NSMutableDictionary * _properties;
+    NSMutableSet * _provisionedDataclasses;
+    ACAccountStore * _store;
+    BOOL  _supportsAuthentication;
+    NSString * _username;
+    BOOL  _visible;
 }
 
 @property (setter=_aa_setRawPassword:, nonatomic, copy) NSString *_aa_rawPassword;
@@ -58,8 +58,10 @@
 @property (nonatomic, readonly) NSString *aa_hsaToken;
 @property (setter=aa_setCloudDocsMigrationComplete:, nonatomic) BOOL aa_isCloudDocsMigrationComplete;
 @property (nonatomic, readonly) BOOL aa_isManagedAppleID;
+@property (nonatomic, readonly) BOOL aa_isNotesMigrated;
 @property (setter=aa_setPrimaryAccount:, nonatomic) BOOL aa_isPrimaryAccount;
 @property (setter=aa_setPrimaryEmailVerified:, nonatomic) BOOL aa_isPrimaryEmailVerified;
+@property (nonatomic, readonly) BOOL aa_isSandboxAccount;
 @property (setter=aa_setSyncedAccount:, nonatomic) BOOL aa_isSyncedAccount;
 @property (setter=aa_setUndergoingRepair:, nonatomic) BOOL aa_isUndergoingRepair;
 @property (setter=aa_setUsesCloudDocs:, nonatomic) BOOL aa_isUsingCloudDocs;
@@ -85,6 +87,8 @@
 @property (getter=isActive, nonatomic) BOOL active;
 @property (getter=isAuthenticated, nonatomic) BOOL authenticated;
 @property (nonatomic, readonly) NSString *authenticationType;
+@property BOOL calAttachmentDownloadHasTakenPlace;
+@property (readonly) NSArray *calCalDAVChildAccounts;
 @property (retain) NSString *calCollectionSetName;
 @property (readonly) NSURL *calExchangeWebServicesURL;
 @property (readonly) NSURL *calExternalExchangeWebServicesURL;
@@ -98,6 +102,7 @@
 @property BOOL calIsEnabledForCalendar;
 @property BOOL calIsEnabledForReminders;
 @property (readonly) BOOL calIsExchangeAccount;
+@property (readonly) BOOL calIsGenericCalDAVAccount;
 @property (readonly) BOOL calIsMissingParentAccount;
 @property BOOL calLocalDataMigrationHasTakenPlace;
 @property (copy) NSString *calMainPrincipalUID;
@@ -106,6 +111,7 @@
 @property BOOL calPushDisabled;
 @property int calRefreshInterval;
 @property (copy) NSString *calRootFolderID;
+@property BOOL calServerSyncHasTakenPlace;
 @property (copy) NSURL *calServerURL;
 @property BOOL calSkipCredentialVerification;
 @property BOOL calUseExternalURL;
@@ -115,6 +121,7 @@
 @property (nonatomic, readonly) NSArray *childAccounts;
 @property (nonatomic, readonly) ACAccount *ck_cloudKitAccount;
 @property (nonatomic, readonly) NSString *clientToken;
+@property (nonatomic, retain) NSDictionary *communicationServiceRules;
 @property (nonatomic, retain) NSDate *creationDate;
 @property (nonatomic, retain) ACAccountCredential *credential;
 @property (nonatomic, readonly) NSString *credentialType;
@@ -127,6 +134,7 @@
 @property (nonatomic, retain) NSMutableSet *enabledDataclasses;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, retain) NSDate *lastCredentialRenewalRejectionDate;
+@property (nonatomic, retain) NSString *mcAccountIdentifier;
 @property (nonatomic, retain) NSString *mcPayloadUUID;
 @property (nonatomic, retain) NSString *mcProfileUUID;
 @property (nonatomic, readonly) NSURL *objectID;
@@ -291,8 +299,11 @@
 - (id)aa_hsaTokenWithError:(id*)arg1;
 - (BOOL)aa_isCloudDocsMigrationComplete;
 - (BOOL)aa_isManagedAppleID;
+- (BOOL)aa_isNotesMigrated;
+- (BOOL)aa_isPCSErrorTransient:(struct __CFError { }*)arg1;
 - (BOOL)aa_isPrimaryAccount;
 - (BOOL)aa_isPrimaryEmailVerified;
+- (BOOL)aa_isSandboxAccount;
 - (BOOL)aa_isSyncedAccount;
 - (BOOL)aa_isUndergoingRepair;
 - (BOOL)aa_isUsingCloudDocs;
@@ -355,17 +366,20 @@
 // Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
 
 - (id)_accountPropertiesKeys;
+- (id)_calDAVDataclassProperties;
 - (id)_createExchangeWebServicesURLFromURL:(id)arg1;
 - (BOOL)_dataclassIsEnabled:(id)arg1;
 - (id)_diffAccountPropertiesWithAccount:(id)arg1 firstPropertyOnly:(BOOL)arg2;
 - (id)_diffPropertiesWithAccount:(id)arg1 firstPropertyOnly:(BOOL)arg2;
 - (id)_diffWithAccount:(id)arg1 firstPropertyOnly:(BOOL)arg2;
 - (id)_schemeStringForUseSSL:(BOOL)arg1;
+- (void)_setCalInternalValue:(id)arg1 forAccountPropertyKey:(id)arg2;
 - (void)_setIsEnabled:(BOOL)arg1 forDataclass:(id)arg2;
-- (void)_setValue:(id)arg1 forAccountPropertyKey:(id)arg2;
 - (id)_updateURL:(id)arg1 withHost:(id)arg2 port:(id)arg3 useSSL:(id)arg4;
 - (BOOL)_useSSLForSchemeString:(id)arg1;
 - (void)addPrincipal:(id)arg1 withUID:(id)arg2;
+- (BOOL)calAttachmentDownloadHasTakenPlace;
+- (id)calCalDAVChildAccounts;
 - (id)calCollectionSetName;
 - (id)calExchangeWebServicesURL;
 - (id)calExternalExchangeWebServicesURL;
@@ -379,16 +393,18 @@
 - (BOOL)calIsEnabledForCalendar;
 - (BOOL)calIsEnabledForReminders;
 - (BOOL)calIsExchangeAccount;
+- (BOOL)calIsGenericCalDAVAccount;
 - (BOOL)calIsMissingParentAccount;
 - (BOOL)calLocalDataMigrationHasTakenPlace;
 - (id)calMainPrincipalUID;
 - (id)calPort;
+- (id)calPrincipalURLForMainPrincipal;
 - (id)calPrincipalURLForPrincipalWithUID:(id)arg1;
-- (id)calPrincipalURLForPrincipalWithUID:(id)arg1 serverURL:(id)arg2;
 - (id)calPrincipals;
 - (BOOL)calPushDisabled;
 - (int)calRefreshInterval;
 - (id)calRootFolderID;
+- (BOOL)calServerSyncHasTakenPlace;
 - (id)calServerURL;
 - (BOOL)calSkipCredentialVerification;
 - (BOOL)calUseExternalURL;
@@ -400,6 +416,7 @@
 - (id)firstDifferentPropertyWithAccount:(id)arg1;
 - (void)removeAccountPropertyForKey:(id)arg1;
 - (BOOL)removePrincipalWithUID:(id)arg1;
+- (void)setCalAttachmentDownloadHasTakenPlace:(BOOL)arg1;
 - (void)setCalCollectionSetName:(id)arg1;
 - (void)setCalExternalURL:(id)arg1;
 - (void)setCalHostname:(id)arg1;
@@ -413,6 +430,7 @@
 - (void)setCalPushDisabled:(BOOL)arg1;
 - (void)setCalRefreshInterval:(int)arg1;
 - (void)setCalRootFolderID:(id)arg1;
+- (void)setCalServerSyncHasTakenPlace:(BOOL)arg1;
 - (void)setCalServerURL:(id)arg1;
 - (void)setCalSkipCredentialVerification:(BOOL)arg1;
 - (void)setCalUseExternalURL:(BOOL)arg1;
@@ -425,12 +443,15 @@
 
 // Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
 
+- (id)br_displayName;
 - (id)br_dsid;
 - (id)br_firstName;
 - (BOOL)br_isCloudDocsMigrated;
 - (BOOL)br_isCloudDocsMigrationComplete;
 - (BOOL)br_isEnabledForCloudDocs;
+- (BOOL)br_isEnabledForDesktopSync;
 - (BOOL)br_isEnabledForUbiquity;
+- (BOOL)br_isEnabledForiCloudDesktop;
 - (BOOL)br_isManagedAppleID;
 - (BOOL)br_isPrimaryAccount;
 - (BOOL)br_isPrimaryiCloudAccount;
@@ -438,18 +459,38 @@
 - (id)br_lastName;
 - (void)br_setCloudDocsMigrated:(BOOL)arg1;
 - (void)br_setCloudDocsMigrationComplete:(BOOL)arg1;
+- (void)br_setEnabledForiCloudDesktop:(BOOL)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
 
 - (id)ck_cloudKitAccount;
 
+// Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
+
+- (id)_gkCredentialForEnvironment:(int)arg1;
+- (id)_gkCredentials;
+- (id)_gkCredentialsForEnvironment:(int)arg1;
+- (BOOL)_gkIsPrimaryForEnvironment:(int)arg1;
+- (id)_gkModifiedDateForProperty:(id)arg1 environment:(int)arg2;
+- (id)_gkPerEnvironmentTokens;
+- (id)_gkPlayerInternal;
+- (id)_gkPropertyForKey:(id)arg1 environment:(int)arg2;
+- (void)_gkSetPlayerInternal:(id)arg1;
+- (void)_gkSetProperty:(id)arg1 forKey:(id)arg2 environment:(int)arg3;
+- (void)_gkSetToken:(id)arg1 forEnvironment:(int)arg2;
+- (id)_gkTokenForEnvironment:(int)arg1;
+
 // Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
 
 - (BOOL)MCIsManaged;
+- (id)communicationServiceRules;
+- (id)mcAccountIdentifier;
 - (id)mcBackingPayload;
 - (id)mcBackingProfile;
 - (id)mcPayloadUUID;
 - (id)mcProfileUUID;
+- (void)setCommunicationServiceRules:(id)arg1;
+- (void)setMcAccountIdentifier:(id)arg1;
 - (void)setMcPayloadUUID:(id)arg1;
 - (void)setMcProfileUUID:(id)arg1;
 
@@ -465,5 +506,8 @@
 
 - (BOOL)ic_hasICloudEmailAddress;
 - (BOOL)ic_isManagedAppleID;
+- (BOOL)ic_isNotesMigrated;
+- (BOOL)ic_isPrimaryAppleAccount;
+- (BOOL)ic_supportsHTMLNotes;
 
 @end

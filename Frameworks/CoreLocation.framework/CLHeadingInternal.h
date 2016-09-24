@@ -15,7 +15,7 @@
         double magnitude; 
         double inclination; 
         int calibration; 
-    } fHeading;
+    }  fHeading;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

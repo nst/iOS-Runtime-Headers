@@ -3,7 +3,7 @@
  */
 
 @interface SSVClaimApplicationsRequest : SSRequest <SSXPCCoding> {
-    int _claimStyle;
+    int  _claimStyle;
 }
 
 @property (nonatomic, readonly) int claimStyle;

@@ -3,13 +3,13 @@
  */
 
 @interface NMSIncomingFileTransfer : NSObject <NMSDeviceSourced, NMSObfuscatableDescriptionProviding> {
-    NSURL *_fileURL;
-    NSString *_idsIdentifier;
-    NMSMessageCenter *_messageCenter;
-    NSDictionary *_metadata;
-    id _pbHeaderInfo;
-    unsigned int _priority;
-    NSString *sourceDeviceID;
+    NSURL * _fileURL;
+    NSString * _idsIdentifier;
+    NMSMessageCenter * _messageCenter;
+    NSDictionary * _metadata;
+    id  _pbHeaderInfo;
+    unsigned int  _priority;
+    NSString * sourceDeviceID;
 }
 
 @property (readonly, copy) NSString *debugDescription;

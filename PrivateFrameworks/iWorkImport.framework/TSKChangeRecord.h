@@ -3,8 +3,8 @@
  */
 
 @interface TSKChangeRecord : NSObject {
-    id mDetails;
-    int mKind;
+    id  mDetails;
+    int  mKind;
 }
 
 @property (nonatomic, readonly) BOOL allowedInCommit;

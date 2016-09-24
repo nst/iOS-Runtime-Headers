@@ -3,8 +3,9 @@
  */
 
 @interface CNTestableObserver : NSObject <CNObserver> {
-    NSMutableArray *_results;
-    CNVirtualScheduler *_scheduler;
+    CNObservableContractEnforcement * _enforcement;
+    NSMutableArray * _results;
+    CNVirtualScheduler * _scheduler;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -16,7 +17,7 @@
 
 + (id)observerWithScheduler:(id)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithScheduler:(id)arg1;
 - (void)observerDidComplete;
 - (void)observerDidFailWithError:(id)arg1;

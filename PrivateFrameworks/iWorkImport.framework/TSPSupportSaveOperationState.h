@@ -3,15 +3,15 @@
  */
 
 @interface TSPSupportSaveOperationState : NSObject {
-    NSURL *_URL;
-    BOOL _didWriteSupportBundleSuccessfuly;
-    NSUUID *_documentUUID;
-    NSUUID *_originalDocumentUUID;
-    NSURL *_originalURL;
-    NSUUID *_originalVersionUUID;
-    TSUSafeSaveAssistant *_safeSaveAssistant;
-    BOOL _shouldLeavePendingEndSave;
-    int _updateType;
+    NSURL * _URL;
+    BOOL  _didWriteSupportBundleSuccessfuly;
+    NSUUID * _documentUUID;
+    NSUUID * _originalDocumentUUID;
+    NSURL * _originalURL;
+    NSUUID * _originalVersionUUID;
+    TSUSafeSaveAssistant * _safeSaveAssistant;
+    BOOL  _shouldLeavePendingEndSave;
+    int  _updateType;
 }
 
 @property (nonatomic, copy) NSURL *URL;

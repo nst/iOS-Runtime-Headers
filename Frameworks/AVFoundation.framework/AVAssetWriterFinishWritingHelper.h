@@ -3,8 +3,8 @@
  */
 
 @interface AVAssetWriterFinishWritingHelper : AVAssetWriterHelper {
-    NSArray *_finishWritingOperations;
-    NSOperation *_transitionToTerminalStatusOperation;
+    NSArray * _finishWritingOperations;
+    NSOperation * _transitionToTerminalStatusOperation;
 }
 
 @property (nonatomic, readonly) NSOperation *transitionToTerminalStatusOperation;

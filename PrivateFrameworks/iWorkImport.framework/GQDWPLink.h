@@ -3,8 +3,8 @@
  */
 
 @interface GQDWPLink : GQDWPInlineList {
-    GQDSStyle *mCharStyle;
-    struct __CFString { } *mHref;
+    GQDSStyle * mCharStyle;
+    struct __CFString { } * mHref;
 }
 
 - (id)characterStyle;

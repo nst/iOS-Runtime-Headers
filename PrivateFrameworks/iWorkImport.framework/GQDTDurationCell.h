@@ -3,9 +3,9 @@
  */
 
 @interface GQDTDurationCell : GQDTCell {
-    GQDTComputedFormatSpec *mComputedFormat;
-    struct __CFBundle { } *mProcessorBundle;
-    double mValue;
+    GQDTComputedFormatSpec * mComputedFormat;
+    struct __CFBundle { } * mProcessorBundle;
+    double  mValue;
 }
 
 - (struct __CFString { }*)createStringValue;

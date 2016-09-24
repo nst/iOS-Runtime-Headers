@@ -3,8 +3,8 @@
  */
 
 @interface GQDWPPageMaster : NSObject <GQDNameMappable> {
-    struct __CFString { } *mFooterIdentifier;
-    struct __CFString { } *mHeaderIdentifier;
+    struct __CFString { } * mFooterIdentifier;
+    struct __CFString { } * mHeaderIdentifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;

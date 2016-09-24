@@ -3,10 +3,10 @@
  */
 
 @interface TSAExportableDocumentType : NSObject {
-    TSUColor *_exportFormatChooserItemTextColor;
-    NSString *_exportProgressMessage;
-    NSString *_localizedName;
-    NSString *_type;
+    TSUColor * _exportFormatChooserItemTextColor;
+    NSString * _exportProgressMessage;
+    NSString * _localizedName;
+    NSString * _type;
 }
 
 @property (nonatomic, readonly) TSUColor *exportFormatChooserItemTextColor;

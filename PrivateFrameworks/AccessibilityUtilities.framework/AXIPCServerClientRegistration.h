@@ -3,8 +3,8 @@
  */
 
 @interface AXIPCServerClientRegistration : NSObject {
-    NSString *_identifier;
-    unsigned int _port;
+    NSString * _identifier;
+    unsigned int  _port;
 }
 
 @property (nonatomic, retain) NSString *identifier;

@@ -4,7 +4,7 @@
 
 @interface RadioGenresRequest : RadioGetGenreTreeNodesRequest
 
-+ (id)cacheKeyForGenreWithNodeID:(unsigned long long)arg1;
++ (id)cacheKeyForGenreWithNodeID:(unsigned int)arg1;
 + (id)fallbackRequestPath;
 + (id)requestBagKey;
 + (id)responseContentKey;

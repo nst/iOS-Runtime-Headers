@@ -3,9 +3,9 @@
  */
 
 @interface SUScriptFacebookResponse : SUScriptObject {
-    NSString *_bodyData;
-    SUScriptError *_error;
-    int _statusCode;
+    NSString * _bodyData;
+    SUScriptError * _error;
+    int  _statusCode;
 }
 
 @property (readonly) int HTTPStatusCode;

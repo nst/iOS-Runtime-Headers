@@ -4,15 +4,15 @@
 
 @interface RadioRevision : NSManagedObject
 
-@property (nonatomic) long long revisionID;
+@property (nonatomic) int revisionID;
 @property (nonatomic) int revisionType;
-@property (nonatomic) long long stationID;
+@property (nonatomic) int stationID;
 
-- (long long)revisionID;
+- (int)revisionID;
 - (int)revisionType;
-- (void)setRevisionID:(long long)arg1;
+- (void)setRevisionID:(int)arg1;
 - (void)setRevisionType:(int)arg1;
-- (void)setStationID:(long long)arg1;
-- (long long)stationID;
+- (void)setStationID:(int)arg1;
+- (int)stationID;
 
 @end

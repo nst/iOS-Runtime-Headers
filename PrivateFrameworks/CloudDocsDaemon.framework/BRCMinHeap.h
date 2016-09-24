@@ -3,12 +3,12 @@
  */
 
 @interface BRCMinHeap : NSObject <NSFastEnumeration> {
-    id *_array;
-    id /* block */ _comparator;
-    unsigned int _count;
-    unsigned long _mutation;
-    NSMapTable *_objects;
-    unsigned int _size;
+    id * _array;
+    id /* block */  _comparator;
+    unsigned int  _count;
+    unsigned long  _mutation;
+    NSMapTable * _objects;
+    unsigned int  _size;
 }
 
 @property (nonatomic, readonly) unsigned int count;

@@ -3,7 +3,7 @@
  */
 
 @interface NEHotspotNetwork : NSObject {
-    struct __CNNetwork { } *_network;
+    struct __CNNetwork { } * _network;
 }
 
 @property (readonly) NSString *BSSID;

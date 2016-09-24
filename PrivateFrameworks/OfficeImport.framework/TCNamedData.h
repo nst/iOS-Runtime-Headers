@@ -3,8 +3,8 @@
  */
 
 @interface TCNamedData : NSObject {
-    NSData *mData;
-    NSString *mName;
+    NSData * mData;
+    NSString * mName;
 }
 
 @property (nonatomic, readonly) NSData *data;

@@ -3,11 +3,11 @@
  */
 
 @interface CoreDAVSRVResourceRecord : NSObject {
-    NSNumber *_port;
-    NSNumber *_priority;
-    NSString *_serviceString;
-    NSString *_target;
-    NSNumber *_weight;
+    NSNumber * _port;
+    NSNumber * _priority;
+    NSString * _serviceString;
+    NSString * _target;
+    NSNumber * _weight;
 }
 
 @property (nonatomic, retain) NSNumber *port;

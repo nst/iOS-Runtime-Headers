@@ -3,11 +3,11 @@
  */
 
 @interface WBSCloudHistoryVisitIdentifier : NSObject <NSCopying> {
-    WBSHistoryItem *_associatedHistoryItem;
-    WBSHistoryVisit *_associatedHistoryVisit;
-    unsigned int _hash;
-    NSString *_urlString;
-    double _visitTime;
+    WBSHistoryItem * _associatedHistoryItem;
+    WBSHistoryVisit * _associatedHistoryVisit;
+    unsigned int  _hash;
+    NSString * _urlString;
+    double  _visitTime;
 }
 
 @property (nonatomic, retain) WBSHistoryItem *associatedHistoryItem;

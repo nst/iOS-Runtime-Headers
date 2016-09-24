@@ -3,11 +3,11 @@
  */
 
 @interface PSListItemsController : PSListController {
-    BOOL _deferItemSelection;
-    PSSpecifier *_lastSelectedSpecifier;
-    BOOL _restrictionList;
-    id _retainedTarget;
-    int _rowToSelect;
+    BOOL  _deferItemSelection;
+    PSSpecifier * _lastSelectedSpecifier;
+    BOOL  _restrictionList;
+    id  _retainedTarget;
+    int  _rowToSelect;
 }
 
 - (void).cxx_destruct;

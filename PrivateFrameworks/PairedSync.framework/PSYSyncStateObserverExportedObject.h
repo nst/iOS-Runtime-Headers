@@ -3,7 +3,7 @@
  */
 
 @interface PSYSyncStateObserverExportedObject : NSObject <PSYSyncStateObserverInterface> {
-    <PSYSyncStateObserverInterface> *_delegate;
+    <PSYSyncStateObserverInterface> * _delegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

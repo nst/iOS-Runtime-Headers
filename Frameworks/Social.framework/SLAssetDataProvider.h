@@ -3,14 +3,14 @@
  */
 
 @interface SLAssetDataProvider : NSObject {
-    AVAssetExportSession *_assetExportSession;
-    ALAssetsLibrary *_assetsLibrary;
-    NSMutableArray *_deliveryQueue;
-    NSObject<OS_dispatch_queue> *_downsamplingQueue;
-    id /* block */ _fetchCompletion;
-    NSError *_lastError;
-    unsigned int _maxByteSize;
-    int _numRequestedImages;
+    AVAssetExportSession * _assetExportSession;
+    ALAssetsLibrary * _assetsLibrary;
+    NSMutableArray * _deliveryQueue;
+    NSObject<OS_dispatch_queue> * _downsamplingQueue;
+    id /* block */  _fetchCompletion;
+    NSError * _lastError;
+    unsigned int  _maxByteSize;
+    int  _numRequestedImages;
 }
 
 @property (copy) id /* block */ fetchCompletion;

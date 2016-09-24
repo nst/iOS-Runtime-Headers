@@ -3,14 +3,15 @@
  */
 
 @interface TSTStrokeOrderedLayer : TSTStrokeLayer {
-    TSTStrokeLayer *_majorStrokeLayer;
-    TSTStrokeLayer *_minorStrokeLayer;
+    TSTStrokeLayer * _majorStrokeLayer;
+    TSTStrokeLayer * _minorStrokeLayer;
 }
 
 @property (nonatomic, retain) TSTStrokeLayer *majorStrokeLayer;
 @property (nonatomic, retain) TSTStrokeLayer *minorStrokeLayer;
 
 - (void)appendStroke:(id)arg1 inRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg2 order:(int)arg3;
+- (void)dealloc;
 - (void)enumerateRawStrokesSegmentsUsingBlock:(id /* block */)arg1;
 - (void)enumerateStrokesUsingBlock:(id /* block */)arg1;
 - (id)findStrokeAndRangeAtIndex:(int)arg1;

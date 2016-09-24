@@ -3,8 +3,8 @@
  */
 
 @interface TTVectorTimestampElement : NSObject {
-    unsigned int _clock;
-    unsigned int _subclock;
+    unsigned int  _clock;
+    unsigned int  _subclock;
 }
 
 @property (nonatomic) unsigned int clock;

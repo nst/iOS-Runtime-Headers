@@ -2,17 +2,17 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@interface PHAssetDescriptionProperties : NSObject {
-    PHAsset *_asset;
-    NSString *_assetDescription;
+@interface PHAssetDescriptionProperties : PHAssetPropertySet {
+    NSString * _assetDescription;
 }
 
-@property (nonatomic, readonly) PHAsset *asset;
 @property (nonatomic, readonly, copy) NSString *assetDescription;
 
++ (id)propertiesToFetch;
++ (id)propertySetName;
+
 - (void).cxx_destruct;
-- (id)asset;
 - (id)assetDescription;
-- (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2;
+- (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(BOOL)arg3;
 
 @end

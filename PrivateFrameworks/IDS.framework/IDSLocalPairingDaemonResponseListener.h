@@ -3,7 +3,7 @@
  */
 
 @interface IDSLocalPairingDaemonResponseListener : NSObject <IDSDaemonListenerProtocol> {
-    IDSLocalPairingRequestTimer *_requestTimer;
+    IDSDaemonRequestTimer * _requestTimer;
 }
 
 @property (readonly, copy) NSString *debugDescription;

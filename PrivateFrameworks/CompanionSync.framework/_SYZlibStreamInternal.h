@@ -3,13 +3,15 @@
  */
 
 @interface _SYZlibStreamInternal : _SYStreamGuts <NSLocking> {
-    char *_input;
-    unsigned int _inputSize;
-    int _lock;
-    char *_output;
-    unsigned int _outputSize;
-    unsigned int _readOffset;
-    unsigned int _writeOffset;
+    char * _input;
+    unsigned int  _inputSize;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
+    char * _output;
+    unsigned int  _outputSize;
+    unsigned int  _readOffset;
+    unsigned int  _writeOffset;
     struct z_stream_s { 
         char *next_in; 
         unsigned int avail_in; 
@@ -25,7 +27,7 @@
         int data_type; 
         unsigned int adler; 
         unsigned int reserved; 
-    } _zStream;
+    }  _zStream;
 }
 
 @property (nonatomic, readonly) void*inputPtr;

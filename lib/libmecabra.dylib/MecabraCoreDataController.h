@@ -3,22 +3,20 @@
  */
 
 @interface MecabraCoreDataController : NSObject {
-    NSEntityDescription *_entityDescription;
-    NSURL *_localInfoPlistURL;
-    NSURL *_localStoreURL;
-    NSURL *_localURL;
-    NSString *_localURLLastPartOfName;
-    NSManagedObjectContext *_managedObjectContext;
-    NSManagedObjectModel *_managedObjectModel;
-    NSPersistentStoreCoordinator *_persistentStoreCoordinator;
-    NSURL *_storeURL;
-    NSArray *_storedElementsForMerge;
-    NSString *_type;
+    NSEntityDescription * _entityDescription;
+    NSURL * _localURL;
+    NSString * _localURLLastPartOfName;
+    NSManagedObjectContext * _managedObjectContext;
+    NSManagedObjectModel * _managedObjectModel;
+    NSPersistentStoreCoordinator * _persistentStoreCoordinator;
+    NSURL * _storeURL;
+    NSArray * _storedElementsForMerge;
+    NSString * _type;
 }
 
 @property (nonatomic, readonly) NSEntityDescription *entityDescription;
 @property (nonatomic, readonly) NSURL *localInfoPlistURL;
-@property (nonatomic, retain) NSURL *localStoreURL;
+@property (nonatomic, readonly) NSURL *localStoreURL;
 @property (nonatomic, retain) NSURL *localURL;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain) NSManagedObjectModel *managedObjectModel;
@@ -31,12 +29,9 @@
 
 - (void)addEntry:(id)arg1;
 - (void)clearStoredMergeEntries;
-- (BOOL)containsLegacyUbiquitousInformation:(id)arg1;
-- (BOOL)containsLocalDatabase:(id)arg1;
 - (id)coreDataUbiquityFolderURLforStore:(id)arg1;
 - (id)databaseName;
 - (id)databasePropertyForKey:(id)arg1;
-- (void)databaseSynced:(id)arg1;
 - (void)dealloc;
 - (void)deleteAllElements;
 - (void)deleteAllMatchingEntries:(id)arg1;
@@ -58,11 +53,9 @@
 - (void)logMessage:(id)arg1;
 - (id)managedObjectContext;
 - (id)managedObjectModel;
-- (void)migrateLocallyStoredUbiquitousInformationToLocalDictionary;
 - (id)newPersistentStoreWithURL:(id)arg1 ubiquityContainerIdentifier:(id)arg2 managedObjectModel:(id)arg3;
 - (id)persistentStoreCoordinator;
 - (void)prepareURLForDatabaseFile:(id)arg1;
-- (void)removeCoreDataUbiquitySupportFolder:(id)arg1;
 - (id)removeDuplicatesForEntry:(id)arg1 uniquingKeys:(id)arg2 sortDescriptors:(id)arg3 restrictToNumberOfElements:(unsigned int)arg4 identifierKey:(id)arg5;
 - (void)save;
 - (id)searchResultsWithValueDictionary:(id)arg1;
@@ -70,7 +63,6 @@
 - (id)searchResultsWithValueDictionary:(id)arg1 sortDescriptors:(id)arg2;
 - (void)sendRemoteNotification;
 - (void)setDatabaseProperty:(id)arg1 forKey:(id)arg2;
-- (void)setLocalStoreURL:(id)arg1;
 - (void)setLocalURL:(id)arg1;
 - (void)setManagedObjectContext:(id)arg1;
 - (void)setManagedObjectModel:(id)arg1;

@@ -3,9 +3,9 @@
  */
 
 @interface CPListItem : NSObject <CPDisposable> {
-    CPList *list;
-    int number;
-    struct __CFArray { } *paragraphs;
+    CPList * list;
+    int  number;
+    struct __CFArray { } * paragraphs;
 }
 
 @property (nonatomic, retain) CPList *list;

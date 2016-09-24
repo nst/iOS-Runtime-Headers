@@ -3,10 +3,10 @@
  */
 
 @interface ABPersonLinker : NSObject {
-    void *_addressBook;
-    NSMutableDictionary *_peopleByFirstName;
-    NSMutableDictionary *_peopleByLastName;
-    NSMutableDictionary *_peopleByOrganization;
+    void * _addressBook;
+    NSMutableDictionary * _peopleByFirstName;
+    NSMutableDictionary * _peopleByLastName;
+    NSMutableDictionary * _peopleByOrganization;
 }
 
 + (BOOL)isAutoLinkingEnabled;
@@ -23,7 +23,7 @@
 - (BOOL)linkRecentlyAddedPeopleWithLimit:(int)arg1;
 - (void)makeInitialLinks;
 - (void)makeInitialLinksCountingOuterIterations:(unsigned int*)arg1;
-- (void)makeLinksForAddedPeople:(id)arg1 inInitialLinking:(BOOL)arg2 countingOuterIterations:(unsigned int*)arg3;
+- (void)makeLinksForAddedPeople:(id)arg1 inInitialLinking:(BOOL)arg2 countingOuterIterations:(unsigned int*)arg3 detectedLinkCount:(unsigned int*)arg4;
 - (id)otherPeopleInArray:(id)arg1 matchingPerson:(void*)arg2;
 - (id)otherPeopleInDatabaseMatchingPerson:(void*)arg1 notIncludingPeople:(id)arg2;
 - (void)presortPeople:(id)arg1;

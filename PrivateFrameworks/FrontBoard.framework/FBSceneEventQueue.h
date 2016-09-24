@@ -5,5 +5,7 @@
 @interface FBSceneEventQueue : BSEventQueue
 
 - (void)_noteQueueDidDrain;
+- (void)_noteWillExecuteEvent:(id)arg1;
+- (void)_noteWillPendEvents:(id)arg1 atPosition:(int)arg2;
 
 @end

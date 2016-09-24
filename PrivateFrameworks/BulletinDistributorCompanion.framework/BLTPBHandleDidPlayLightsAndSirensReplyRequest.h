@@ -3,14 +3,14 @@
  */
 
 @interface BLTPBHandleDidPlayLightsAndSirensReplyRequest : PBRequest <NSCopying> {
-    double _date;
-    BOOL _didPlayLightsAndSirens;
+    double  _date;
+    BOOL  _didPlayLightsAndSirens;
     struct { 
         unsigned int date : 1; 
         unsigned int didPlayLightsAndSirens : 1; 
-    } _has;
-    NSString *_phoneSectionID;
-    NSString *_publisherMatchID;
+    }  _has;
+    NSString * _phoneSectionID;
+    NSString * _publisherMatchID;
 }
 
 @property (nonatomic) double date;

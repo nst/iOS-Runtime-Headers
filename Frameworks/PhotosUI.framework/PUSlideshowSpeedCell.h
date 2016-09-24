@@ -3,12 +3,12 @@
  */
 
 @interface PUSlideshowSpeedCell : UITableViewCell {
-    <PUSlideshowSpeedCellDelegate> *_delegate;
-    BOOL _enabled;
-    UIImageView *_fasterGlyphImageView;
-    UISlider *_slider;
-    UIImageView *_slowerGlyphImageView;
-    NSArray *_speedConstraints;
+    <PUSlideshowSpeedCellDelegate> * _delegate;
+    BOOL  _enabled;
+    UIImageView * _fasterGlyphImageView;
+    UISlider * _slider;
+    UIImageView * _slowerGlyphImageView;
+    NSArray * _speedConstraints;
 }
 
 @property (nonatomic) <PUSlideshowSpeedCellDelegate> *delegate;

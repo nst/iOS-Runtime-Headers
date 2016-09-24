@@ -3,8 +3,8 @@
  */
 
 @interface _UIRemoteDictionaryViewController : UITableViewController {
-    NSArray *_availableDictionaries;
-    _UIDictionaryManager *_dictionaryAssetManager;
+    NSArray * _availableDictionaries;
+    _UIDictionaryManager * _dictionaryAssetManager;
 }
 
 @property (nonatomic, retain) _UIDictionaryManager *dictionaryAssetManager;

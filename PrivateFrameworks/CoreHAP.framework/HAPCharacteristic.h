@@ -3,16 +3,16 @@
  */
 
 @interface HAPCharacteristic : NSObject {
-    HAPCharacteristicMetadata *_accessoryMetadata;
-    BOOL _eventNotificationsEnabled;
-    NSNumber *_instanceID;
-    HAPCharacteristicMetadata *_metadata;
-    unsigned int _properties;
-    HAPService *_service;
-    BOOL _shouldValidateValueAfterReading;
-    NSString *_type;
-    id _value;
-    unsigned long long _valueUpdateTime;
+    HAPCharacteristicMetadata * _accessoryMetadata;
+    BOOL  _eventNotificationsEnabled;
+    NSNumber * _instanceID;
+    HAPCharacteristicMetadata * _metadata;
+    unsigned int  _properties;
+    HAPService * _service;
+    BOOL  _shouldValidateValueAfterReading;
+    NSString * _type;
+    id  _value;
+    NSDate * _valueUpdatedTime;
 }
 
 @property (nonatomic, readonly) HAPCharacteristicMetadata *accessoryMetadata;
@@ -26,7 +26,7 @@
 @property (nonatomic, readonly) BOOL supportsAdditionalAuthorizationData;
 @property (nonatomic, copy) NSString *type;
 @property (setter=setValue:, nonatomic, copy) id value;
-@property (nonatomic) unsigned long long valueUpdateTime;
+@property (nonatomic, retain) NSDate *valueUpdatedTime;
 
 - (void).cxx_destruct;
 - (id)_generateValidMetadata:(id)arg1;
@@ -51,12 +51,12 @@
 - (void)setShouldValidateValueAfterReading:(BOOL)arg1;
 - (void)setType:(id)arg1;
 - (void)setValue:(id)arg1;
-- (void)setValueUpdateTime:(unsigned long long)arg1;
+- (void)setValueUpdatedTime:(id)arg1;
 - (BOOL)shouldValidateValueAfterReading;
 - (BOOL)supportsAdditionalAuthorizationData;
 - (id)type;
 - (id)validateValue:(id)arg1 outValue:(id*)arg2;
 - (id)value;
-- (unsigned long long)valueUpdateTime;
+- (id)valueUpdatedTime;
 
 @end

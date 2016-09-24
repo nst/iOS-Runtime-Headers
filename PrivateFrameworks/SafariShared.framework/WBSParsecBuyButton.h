@@ -3,14 +3,14 @@
  */
 
 @interface WBSParsecBuyButton : WBSParsecModel {
-    NSString *_adamID;
-    BOOL _enabled;
-    int _imageAlignment;
-    WBSParsecImageRepresentation *_imageRepresentation;
-    NSString *_offerIdentifier;
-    NSString *_subtitle;
-    NSString *_title;
-    NSURL *_url;
+    NSString * _adamID;
+    BOOL  _enabled;
+    int  _imageAlignment;
+    WBSParsecImageRepresentation * _imageRepresentation;
+    NSString * _offerIdentifier;
+    NSString * _subtitle;
+    NSString * _title;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly, copy) NSString *adamID;

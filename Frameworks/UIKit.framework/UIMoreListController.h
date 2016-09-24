@@ -3,14 +3,14 @@
  */
 
 @interface UIMoreListController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    BOOL _allowsCustomizing;
-    BOOL _disableCustomizing;
-    BOOL _hideNavigationBar;
-    UIMoreListCellLayoutManager *_layoutManager;
-    UIBarButtonItem *_moreEditButtonItem;
-    NSArray *_moreViewControllers;
-    BOOL _moreViewControllersChanged;
-    UITableView *_table;
+    BOOL  _allowsCustomizing;
+    BOOL  _disableCustomizing;
+    BOOL  _hideNavigationBar;
+    UIMoreListCellLayoutManager * _layoutManager;
+    UIBarButtonItem * _moreEditButtonItem;
+    NSArray * _moreViewControllers;
+    BOOL  _moreViewControllersChanged;
+    UITableView * _table;
 }
 
 @property (nonatomic) BOOL allowsCustomizing;

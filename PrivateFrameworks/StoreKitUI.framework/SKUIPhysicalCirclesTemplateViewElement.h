@@ -3,7 +3,7 @@
  */
 
 @interface SKUIPhysicalCirclesTemplateViewElement : SKUIViewElement {
-    SKUIPhysicalCirclesTemplateDOMFeature *_scriptInterface;
+    SKUIPhysicalCirclesTemplateDOMFeature * _scriptInterface;
 }
 
 @property (nonatomic, readonly) NSArray *circleItemElements;

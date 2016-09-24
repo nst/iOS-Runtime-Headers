@@ -4,9 +4,14 @@
 
 @interface IKDOMImplementation : IKJSObject <IKJSDOMImplementation, IKJSDOMImplementationLS>
 
+@property (getter=asynchronousMode, readonly) int MODE_ASYNCHRONOUS;
+@property (getter=synchronousMode, readonly) int MODE_SYNCHRONOUS;
+
+- (int)asynchronousMode;
 - (id)createDocument:(id)arg1 :(id)arg2;
 - (id)createLSInput;
 - (id)createLSParser:(int)arg1 :(id)arg2;
 - (id)createLSSerializer;
+- (int)synchronousMode;
 
 @end

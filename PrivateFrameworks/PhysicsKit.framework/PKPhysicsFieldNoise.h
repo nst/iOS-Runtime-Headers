@@ -4,8 +4,8 @@
 
 @interface PKPhysicsFieldNoise : PKPhysicsField
 
-@property (nonatomic) float animationSpeed;
-@property (nonatomic) float smoothness;
+@property (nonatomic) double animationSpeed;
+@property (nonatomic) double smoothness;
 
 + (id)field;
 

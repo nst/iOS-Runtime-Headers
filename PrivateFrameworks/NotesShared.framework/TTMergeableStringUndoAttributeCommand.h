@@ -3,7 +3,7 @@
  */
 
 @interface TTMergeableStringUndoAttributeCommand : NSObject <TTMergeableStringUndoCommand> {
-    struct vector<std::__1::pair<TopoIDRange, NSDictionary *>, std::__1::allocator<std::__1::pair<TopoIDRange, NSDictionary *> > > { struct pair<TopoIDRange, NSDictionary *> {} *x1; struct pair<TopoIDRange, NSDictionary *> {} *x2; struct __compressed_pair<std::__1::pair<TopoIDRange, NSDictionary *> *, std::__1::allocator<std::__1::pair<TopoIDRange, NSDictionary *> > > { struct pair<TopoIDRange, NSDictionary *> {} *x_3_1_1; } x3; } *_attributeRanges;
+    struct vector<std::__1::pair<TopoIDRange, NSDictionary *>, std::__1::allocator<std::__1::pair<TopoIDRange, NSDictionary *> > > { struct pair<TopoIDRange, NSDictionary *> {} *x1; struct pair<TopoIDRange, NSDictionary *> {} *x2; struct __compressed_pair<std::__1::pair<TopoIDRange, NSDictionary *> *, std::__1::allocator<std::__1::pair<TopoIDRange, NSDictionary *> > > { struct pair<TopoIDRange, NSDictionary *> {} *x_3_1_1; } x3; } * _attributeRanges;
 }
 
 @property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{vector<std::__1::pair<TopoIDRange' */ struct *attributeRanges; /* unknown property attribute:  NSDictionary *>}}} */
@@ -12,9 +12,9 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (BOOL)addToGroup:(id)arg1;
 - (void)applyToString:(id)arg1;
 - (struct vector<std::__1::pair<TopoIDRange, NSDictionary *>, std::__1::allocator<std::__1::pair<TopoIDRange, NSDictionary *> > > { struct pair<TopoIDRange, NSDictionary *> {} *x1; struct pair<TopoIDRange, NSDictionary *> {} *x2; struct __compressed_pair<std::__1::pair<TopoIDRange, NSDictionary *> *, std::__1::allocator<std::__1::pair<TopoIDRange, NSDictionary *> > > { struct pair<TopoIDRange, NSDictionary *> {} *x_3_1_1; } x3; }*)attributeRanges;
-- (BOOL)coalesceWith:(id)arg1 inString:(id)arg2;
 - (void)dealloc;
 - (id)description;
 - (BOOL)hasTopoIDsThatCanChange;

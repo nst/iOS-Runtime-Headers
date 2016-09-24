@@ -3,7 +3,7 @@
  */
 
 @interface PLAccountingDistributionManager : PLAccountingOwnerDependencyManager <PLAccountingDistributionOwnerManager> {
-    <PLAccountingDistributionManagerDelegate> *_delegate;
+    <PLAccountingDistributionManagerDelegate> * _delegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

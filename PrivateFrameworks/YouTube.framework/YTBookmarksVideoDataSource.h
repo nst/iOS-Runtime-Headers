@@ -3,9 +3,9 @@
  */
 
 @interface YTBookmarksVideoDataSource : YTVideoDataSource {
-    NSMutableArray *_bookmarkedShortIDs;
-    YTSearchRequest *_bookmarksSearchRequest;
-    BOOL _lastReloadWasAccountsFavorites;
+    NSMutableArray * _bookmarkedShortIDs;
+    YTSearchRequest * _bookmarksSearchRequest;
+    BOOL  _lastReloadWasAccountsFavorites;
 }
 
 - (void)_nextBatch;

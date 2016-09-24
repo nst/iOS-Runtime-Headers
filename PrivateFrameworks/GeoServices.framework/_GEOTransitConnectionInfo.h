@@ -3,15 +3,15 @@
  */
 
 @interface _GEOTransitConnectionInfo : NSObject <GEOTransitConnectionInfo> {
-    GEOPDTransitConnection *_connection;
-    int _providerID;
+    GEOPDTransitConnection * _connection;
+    int  _providerID;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSArray *labelItems;
-@property (nonatomic, readonly) unsigned long long muid;
+@property (nonatomic, readonly) unsigned int muid;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) int providerID;
 @property (readonly) Class superclass;
@@ -20,7 +20,7 @@
 - (void)dealloc;
 - (id)initWithConnection:(id)arg1 providerID:(int)arg2;
 - (id)labelItems;
-- (unsigned long long)muid;
+- (unsigned int)muid;
 - (id)name;
 - (int)providerID;
 - (id)urlToOpen;

@@ -3,7 +3,7 @@
  */
 
 @interface DCActivityInfo : SDFActivityInfo {
-    NSData *_sharepointDocumentIdentifier;
+    NSData * _sharepointDocumentIdentifier;
 }
 
 @property (readonly, retain) NSData *sharepointDocumentIdentifier;

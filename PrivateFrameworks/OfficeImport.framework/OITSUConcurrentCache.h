@@ -3,7 +3,7 @@
  */
 
 @interface OITSUConcurrentCache : OITSUCache {
-    OITSUReadWriteQueue *mReadWriteQueue;
+    OITSUReadWriteQueue * mReadWriteQueue;
 }
 
 @property (nonatomic, readonly) OITSUReadWriteQueue *readWriteQueue;

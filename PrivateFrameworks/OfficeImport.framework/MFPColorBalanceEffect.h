@@ -3,9 +3,9 @@
  */
 
 @interface MFPColorBalanceEffect : MFPEffect {
-    int mCyanRed;
-    int mMagentaGreen;
-    int mYellowBlue;
+    int  mCyanRed;
+    int  mMagentaGreen;
+    int  mYellowBlue;
 }
 
 + (id)GUID;

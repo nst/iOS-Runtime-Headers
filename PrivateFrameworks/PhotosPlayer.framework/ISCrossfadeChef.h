@@ -3,13 +3,13 @@
  */
 
 @interface ISCrossfadeChef : NSObject {
-    NSOperationQueue *__operationQueue;
-    int __requestCounter;
-    NSObject<OS_dispatch_queue> *_isolationQueue;
-    NSMutableDictionary *_operationsByRequestID;
+    NSOperationQueue * __operationQueue;
+    int  __requestCounter;
+    NSObject<OS_dispatch_queue> * _isolationQueue;
+    NSMutableDictionary * _operationsByRequestID;
 }
 
-@property (setter=_setOperationQueue:, nonatomic, retain) NSOperationQueue *_operationQueue;
+@property (nonatomic, readonly) NSOperationQueue *_operationQueue;
 @property (setter=_setRequestCounter:, nonatomic) int _requestCounter;
 
 + (id)defaultChef;
@@ -18,10 +18,10 @@
 - (id)_operationQueue;
 - (void)_removeOperationForRequestID:(int)arg1;
 - (int)_requestCounter;
-- (void)_setOperationQueue:(id)arg1;
 - (void)_setRequestCounter:(int)arg1;
 - (void)cancelRequestWithID:(int)arg1;
 - (id)init;
-- (int)requestCrossfadeItemForVideoAsset:(id)arg1 sourceStartTime:(double)arg2 stillPhoto:(struct CGImage { }*)arg3 photoEXIFOrientation:(int)arg4 crossfadeDuration:(double)arg5 numberOfFrames:(unsigned int)arg6 targetSize:(struct CGSize { float x1; float x2; })arg7 resultHandler:(id /* block */)arg8;
+- (int)requestCrossfadeItemForVideoAsset:(id)arg1 sourceStartTime:(double)arg2 stillPhoto:(struct CGImage { }*)arg3 photoEXIFOrientation:(int)arg4 crossfadeDuration:(double)arg5 numberOfFrames:(unsigned int)arg6 targetSize:(struct CGSize { double x1; double x2; })arg7 videoComposition:(id)arg8 resultHandler:(id /* block */)arg9;
+- (int)requestCrossfadeItemForVideoAsset:(id)arg1 stillPhoto:(struct CGImage { }*)arg2 stillPhotoEXIFOrientation:(int)arg3 sourceStartTime:(double)arg4 targetSize:(struct CGSize { double x1; double x2; })arg5 videoComposition:(id)arg6 resultHandler:(id /* block */)arg7;
 
 @end

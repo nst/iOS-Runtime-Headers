@@ -3,21 +3,21 @@
  */
 
 @interface TSCEReferenceTracker : TSPObject <TSCEFormulaOwning> {
-    TSCECalculationEngine *mCalculationEngine;
-    <TSCEReferenceTrackerDelegate> *mDelegate;
+    TSCECalculationEngine * mCalculationEngine;
+    <TSCEReferenceTrackerDelegate> * mDelegate;
     struct vector<TSCEFormulaID, std::__1::allocator<TSCEFormulaID> > { 
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
         struct __compressed_pair<TSCEFormulaID *, std::__1::allocator<TSCEFormulaID> > { 
             struct { /* ? */ } *__first_; 
         } __end_cap_; 
-    } mFormulaIDsToRewrite;
-    BOOL mIsRegisteredWithCalculationEngine;
-    unsigned int mNextEmptyTrackedReferencesIndex;
-    unsigned int mNumberOfTrackedReferences;
-    NSMutableArray *mTrackedReferences;
-    NSLock *mTrackedRefsLock;
-    struct __CFUUID { } *mUUID;
+    }  mFormulaIDsToRewrite;
+    BOOL  mIsRegisteredWithCalculationEngine;
+    unsigned int  mNextEmptyTrackedReferencesIndex;
+    unsigned int  mNumberOfTrackedReferences;
+    NSMutableArray * mTrackedReferences;
+    NSLock * mTrackedRefsLock;
+    struct __CFUUID { } * mUUID;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -31,9 +31,9 @@
 - (id)allTrackedReferences;
 - (void)beginRewriteForCalculationEngine:(id)arg1 spec:(id)arg2;
 - (void)beginTrackingReference:(id)arg1;
-- (id)beginTrackingReferenceWithCReference:(struct TSCECReference { int x1; union { struct { struct { unsigned short x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_1_2_1; struct __CFUUID {} *x_1_2_2; } x_2_1_1; struct { struct TSCERangeCoordinate { struct { unsigned short x_1_4_1; unsigned char x_1_4_2; unsigned char x_1_4_3; } x_1_3_1; struct { unsigned short x_2_4_1; unsigned char x_2_4_2; unsigned char x_2_4_3; } x_1_3_2; } x_2_2_1; struct __CFUUID {} *x_2_2_2; } x_2_1_2; struct { struct { struct TSCERangeCoordinate { struct { unsigned short x_1_5_1; unsigned char x_1_5_2; unsigned char x_1_5_3; } x_1_4_1; struct { unsigned short x_2_5_1; unsigned char x_2_5_2; unsigned char x_2_5_3; } x_1_4_2; } x_1_3_1; struct __CFUUID {} *x_1_3_2; } x_3_2_1; int x_3_2_2; } x_2_1_3; struct __CFUUID {} *x_2_1_4; struct { unsigned long long x_5_2_1; unsigned long long x_5_2_2; } x_2_1_5; } x2; })arg1;
+- (id)beginTrackingReferenceWithCReference:(struct TSCECReference { unsigned short x1; union { struct { struct TSUCellCoord { unsigned short x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_1_2_1; struct __CFUUID {} *x_1_2_2; } x_2_1_1; struct { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_4_1; unsigned char x_1_4_2; unsigned char x_1_4_3; } x_1_3_1; struct TSUCellCoord { unsigned short x_2_4_1; unsigned char x_2_4_2; unsigned char x_2_4_3; } x_1_3_2; } x_2_2_1; struct __CFUUID {} *x_2_2_2; } x_2_1_2; struct { struct { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_5_1; unsigned char x_1_5_2; unsigned char x_1_5_3; } x_1_4_1; struct TSUCellCoord { unsigned short x_2_5_1; unsigned char x_2_5_2; unsigned char x_2_5_3; } x_1_4_2; } x_1_3_1; struct __CFUUID {} *x_1_3_2; } x_3_2_1; unsigned char x_3_2_2; } x_2_1_3; struct __CFUUID {} *x_2_1_4; struct { unsigned int x_5_2_1; unsigned int x_5_2_2; } x_2_1_5; } x2; })arg1;
 - (id)calculationEngine;
-- (id)cellRangeWasInserted:(struct { struct TSCERangeCoordinate { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg1;
+- (id)cellRangeWasInserted:(struct { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct TSUCellCoord { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)endTrackingReference:(id)arg1;

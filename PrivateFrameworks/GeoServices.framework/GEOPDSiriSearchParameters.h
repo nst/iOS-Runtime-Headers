@@ -3,23 +3,24 @@
  */
 
 @interface GEOPDSiriSearchParameters : PBCodable <NSCopying> {
-    GEOAddress *_address;
-    NSMutableArray *_businessCategoryFilters;
+    GEOAddress * _address;
+    NSMutableArray * _businessCategoryFilters;
     struct { 
         unsigned int maxResultCount : 1; 
         unsigned int sortOrder : 1; 
         unsigned int isStrictMapRegion : 1; 
         unsigned int structuredSearch : 1; 
-    } _has;
-    GEOPDIndexQueryNode *_indexFilter;
-    BOOL _isStrictMapRegion;
-    unsigned int _maxResultCount;
-    NSString *_searchString;
-    NSMutableArray *_searchSubstringDescriptors;
-    int _sortOrder;
-    BOOL _structuredSearch;
-    GEOPDViewportInfo *_viewportInfo;
-    NSData *_zilchPoints;
+    }  _has;
+    GEOPDIndexQueryNode * _indexFilter;
+    BOOL  _isStrictMapRegion;
+    unsigned int  _maxResultCount;
+    GEOPDRecentRouteInfo * _recentRouteInfo;
+    NSString * _searchString;
+    NSMutableArray * _searchSubstringDescriptors;
+    int  _sortOrder;
+    BOOL  _structuredSearch;
+    PBUnknownFields * _unknownFields;
+    GEOPDViewportInfo * _viewportInfo;
 }
 
 @property (nonatomic, retain) GEOAddress *address;
@@ -28,21 +29,26 @@
 @property (nonatomic, readonly) BOOL hasIndexFilter;
 @property (nonatomic) BOOL hasIsStrictMapRegion;
 @property (nonatomic) BOOL hasMaxResultCount;
+@property (nonatomic, readonly) BOOL hasRecentRouteInfo;
 @property (nonatomic, readonly) BOOL hasSearchString;
 @property (nonatomic) BOOL hasSortOrder;
 @property (nonatomic) BOOL hasStructuredSearch;
 @property (nonatomic, readonly) BOOL hasViewportInfo;
-@property (nonatomic, readonly) BOOL hasZilchPoints;
 @property (nonatomic, retain) GEOPDIndexQueryNode *indexFilter;
 @property (nonatomic) BOOL isStrictMapRegion;
 @property (nonatomic) unsigned int maxResultCount;
+@property (nonatomic, retain) GEOPDRecentRouteInfo *recentRouteInfo;
 @property (nonatomic, retain) NSString *searchString;
 @property (nonatomic, retain) NSMutableArray *searchSubstringDescriptors;
 @property (nonatomic) int sortOrder;
 @property (nonatomic) BOOL structuredSearch;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) GEOPDViewportInfo *viewportInfo;
-@property (nonatomic, retain) NSData *zilchPoints;
 
++ (Class)businessCategoryFilterType;
++ (Class)searchSubstringDescriptorType;
+
+- (int)StringAsSortOrder:(id)arg1;
 - (void)addBusinessCategoryFilter:(id)arg1;
 - (void)addSearchSubstringDescriptor:(id)arg1;
 - (id)address;
@@ -60,11 +66,11 @@
 - (BOOL)hasIndexFilter;
 - (BOOL)hasIsStrictMapRegion;
 - (BOOL)hasMaxResultCount;
+- (BOOL)hasRecentRouteInfo;
 - (BOOL)hasSearchString;
 - (BOOL)hasSortOrder;
 - (BOOL)hasStructuredSearch;
 - (BOOL)hasViewportInfo;
-- (BOOL)hasZilchPoints;
 - (unsigned int)hash;
 - (id)indexFilter;
 - (BOOL)isEqual:(id)arg1;
@@ -72,6 +78,7 @@
 - (unsigned int)maxResultCount;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (id)recentRouteInfo;
 - (id)searchString;
 - (id)searchSubstringDescriptorAtIndex:(unsigned int)arg1;
 - (id)searchSubstringDescriptors;
@@ -85,16 +92,17 @@
 - (void)setIndexFilter:(id)arg1;
 - (void)setIsStrictMapRegion:(BOOL)arg1;
 - (void)setMaxResultCount:(unsigned int)arg1;
+- (void)setRecentRouteInfo:(id)arg1;
 - (void)setSearchString:(id)arg1;
 - (void)setSearchSubstringDescriptors:(id)arg1;
 - (void)setSortOrder:(int)arg1;
 - (void)setStructuredSearch:(BOOL)arg1;
 - (void)setViewportInfo:(id)arg1;
-- (void)setZilchPoints:(id)arg1;
 - (int)sortOrder;
+- (id)sortOrderAsString:(int)arg1;
 - (BOOL)structuredSearch;
+- (id)unknownFields;
 - (id)viewportInfo;
 - (void)writeTo:(id)arg1;
-- (id)zilchPoints;
 
 @end

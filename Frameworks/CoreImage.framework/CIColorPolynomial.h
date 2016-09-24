@@ -3,11 +3,11 @@
  */
 
 @interface CIColorPolynomial : CIFilter {
-    CIVector *inputAlphaCoefficients;
-    CIVector *inputBlueCoefficients;
-    CIVector *inputGreenCoefficients;
-    CIImage *inputImage;
-    CIVector *inputRedCoefficients;
+    CIVector * inputAlphaCoefficients;
+    CIVector * inputBlueCoefficients;
+    CIVector * inputGreenCoefficients;
+    CIImage * inputImage;
+    CIVector * inputRedCoefficients;
 }
 
 @property (nonatomic, retain) CIVector *inputAlphaCoefficients;

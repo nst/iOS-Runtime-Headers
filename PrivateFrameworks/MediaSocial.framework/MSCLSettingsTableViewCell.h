@@ -3,23 +3,23 @@
  */
 
 @interface MSCLSettingsTableViewCell : UITableViewCell {
-    <MSCLSettingsTableViewCellDelegate> *_changeDelegate;
-    BOOL _disabled;
+    <MSCLSettingsTableViewCellDelegate> * _changeDelegate;
+    BOOL  _disabled;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _imageSize;
-    BOOL _titleUsesTintColor;
-    NSObject<NSCopying> *_value;
-    UILabel *_valueLabel;
-    UISwitch *_valueSwitch;
-    int _valueType;
+        double width; 
+        double height; 
+    }  _imageSize;
+    BOOL  _titleUsesTintColor;
+    NSObject<NSCopying> * _value;
+    UILabel * _valueLabel;
+    UISwitch * _valueSwitch;
+    int  _valueType;
 }
 
 @property (nonatomic) <MSCLSettingsTableViewCellDelegate> *changeDelegate;
 @property (getter=isDisabled, nonatomic) BOOL disabled;
 @property (nonatomic, retain) UIImage *image;
-@property (nonatomic) struct CGSize { float x1; float x2; } imageSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } imageSize;
 @property (nonatomic, readonly) UISwitch *switchControl;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic) BOOL titleUsesTintColor;
@@ -31,13 +31,13 @@
 - (void)_valueChanged:(id)arg1;
 - (id)changeDelegate;
 - (id)image;
-- (struct CGSize { float x1; float x2; })imageSize;
+- (struct CGSize { double x1; double x2; })imageSize;
 - (BOOL)isDisabled;
 - (void)layoutSubviews;
 - (void)setChangeDelegate:(id)arg1;
 - (void)setDisabled:(BOOL)arg1;
 - (void)setImage:(id)arg1;
-- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleUsesTintColor:(BOOL)arg1;
 - (void)setValue:(id)arg1;

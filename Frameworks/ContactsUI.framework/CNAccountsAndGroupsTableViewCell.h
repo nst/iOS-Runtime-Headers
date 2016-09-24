@@ -3,7 +3,7 @@
  */
 
 @interface CNAccountsAndGroupsTableViewCell : UITableViewCell {
-    CNAccountsAndGroupsItem *_item;
+    CNAccountsAndGroupsItem * _item;
 }
 
 @property (nonatomic, retain) CNAccountsAndGroupsItem *item;

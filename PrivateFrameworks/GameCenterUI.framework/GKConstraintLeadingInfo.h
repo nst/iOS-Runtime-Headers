@@ -3,12 +3,12 @@
  */
 
 @interface GKConstraintLeadingInfo : NSObject {
-    NSString *_fontTextStyle;
-    float _leading;
+    NSString * _fontTextStyle;
+    double  _leading;
 }
 
 @property (nonatomic, retain) NSString *fontTextStyle;
-@property (nonatomic) float leading;
+@property (nonatomic) double leading;
 
 - (void)dealloc;
 - (id)fontTextStyle;

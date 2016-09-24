@@ -3,12 +3,12 @@
  */
 
 @interface GEORouteHypothesisResponse : PBCodable <NSCopying> {
-    GEODirectionsResponse *_directionsResponse;
-    GEOETAResponse *_etaResponse;
+    GEODirectionsResponse * _directionsResponse;
+    GEOETAResponse * _etaResponse;
     struct { 
         unsigned int updatedTimeStamp : 1; 
-    } _has;
-    double _updatedTimeStamp;
+    }  _has;
+    double  _updatedTimeStamp;
 }
 
 @property (nonatomic, retain) GEODirectionsResponse *directionsResponse;

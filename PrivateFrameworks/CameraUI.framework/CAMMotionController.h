@@ -3,12 +3,11 @@
  */
 
 @interface CAMMotionController : NSObject <BKSAccelerometerDelegate> {
-    BKSAccelerometer *__accelerometer;
-    int __cachedCaptureOrientation;
-    int __numberOfDominantPhysicalButtonObservers;
-    CMMotionManager *__physicalButtonMotionManager;
-    int _deviceOrientation;
-    int _dominantPhysicalButton;
+    BKSAccelerometer * __accelerometer;
+    int  __cachedCaptureOrientation;
+    int  __numberOfDominantPhysicalButtonObservers;
+    CMMotionManager * __physicalButtonMotionManager;
+    int  _dominantPhysicalButton;
 }
 
 @property (setter=_setAccelerometer:, nonatomic, retain) BKSAccelerometer *_accelerometer;
@@ -18,21 +17,19 @@
 @property (nonatomic, readonly) int captureOrientation;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) int deviceOrientation;
-@property (nonatomic) int dominantPhysicalButton;
+@property (setter=_setDominantPhysicalButton:, nonatomic) int dominantPhysicalButton;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int interfaceOrientation;
 @property (nonatomic, readonly) int panoramaCaptureOrientation;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_accelerometer;
-- (int)_applyPanoramaTransformToOrientation:(int)arg1;
 - (int)_cachedCaptureOrientation;
 - (int)_numberOfDominantPhysicalButtonObservers;
 - (id)_physicalButtonMotionManager;
 - (void)_setAccelerometer:(id)arg1;
 - (void)_setCachedCaptureOrientation:(int)arg1;
-- (void)_setDeviceOrientation:(int)arg1;
 - (void)_setDominantPhysicalButton:(int)arg1;
 - (void)_setNumberOfDominantPhysicalButtonObservers:(int)arg1;
 - (void)_updatePhysicalButtonObservation;
@@ -42,10 +39,10 @@
 - (int)captureOrientation;
 - (void)dealloc;
 - (void)deviceDidChangeOrientation:(id)arg1;
-- (int)deviceOrientation;
 - (int)dominantPhysicalButton;
 - (void)endGeneratingDominantPhysicalButtonNotifications;
 - (id)init;
+- (int)interfaceOrientation;
 - (int)panoramaCaptureOrientation;
 
 @end

@@ -3,18 +3,18 @@
  */
 
 @interface GEOTransitEnterExitInfo : PBCodable <NSCopying> {
-    unsigned int _accessPointIndex;
-    BOOL _displayStop;
+    unsigned int  _accessPointIndex;
+    BOOL  _displayStop;
     struct { 
         unsigned int accessPointIndex : 1; 
         unsigned int stopIndex : 1; 
         unsigned int transferTime : 1; 
         unsigned int displayStop : 1; 
         unsigned int uncertainArrival : 1; 
-    } _has;
-    unsigned int _stopIndex;
-    unsigned int _transferTime;
-    BOOL _uncertainArrival;
+    }  _has;
+    unsigned int  _stopIndex;
+    unsigned int  _transferTime;
+    BOOL  _uncertainArrival;
 }
 
 @property (nonatomic) unsigned int accessPointIndex;

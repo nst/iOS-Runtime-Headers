@@ -7,6 +7,7 @@
 @property (nonatomic, copy) NSURL *URL;
 @property (nonatomic, readonly) NSString *UUID;
 @property (nonatomic, copy) NSDictionary *XProperties;
+@property (nonatomic, copy) NSString *externalId;
 @property (nonatomic, copy) NSString *fileFormat;
 @property (nonatomic, copy) NSString *fileName;
 @property (nonatomic, copy) NSNumber *fileSize;
@@ -21,11 +22,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (int)entityType;
+- (id)externalId;
 - (id)fileFormat;
 - (id)fileName;
 - (id)fileSize;
 - (BOOL)isBinary;
 - (id)localURL;
+- (void)setExternalId:(id)arg1;
 - (void)setFileFormat:(id)arg1;
 - (void)setFileName:(id)arg1;
 - (void)setFileSize:(id)arg1;

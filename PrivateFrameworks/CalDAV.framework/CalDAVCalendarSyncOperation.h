@@ -3,12 +3,12 @@
  */
 
 @interface CalDAVCalendarSyncOperation : CalDAVOperation {
-    <CalDAVCalendar> *_calendar;
-    BOOL _getScheduleChanges;
-    BOOL _getScheduleTags;
-    NSString *_nextCtag;
-    NSString *_nextSyncToken;
-    NSError *_savedError;
+    <CalDAVCalendar> * _calendar;
+    BOOL  _getScheduleChanges;
+    BOOL  _getScheduleTags;
+    NSString * _nextCtag;
+    NSString * _nextSyncToken;
+    NSError * _savedError;
 }
 
 @property (nonatomic) <CalDAVCalendarSyncDelegate> *delegate;

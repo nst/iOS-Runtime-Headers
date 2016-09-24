@@ -3,18 +3,18 @@
  */
 
 @interface NEPolicySession : NSObject <NEPrettyDescription> {
-    NSObject<OS_dispatch_io> *_controlIO;
-    int _controlSocket;
-    int _internalPriority;
-    NSObject<OS_dispatch_queue> *_ioQueue;
-    NSData *_lastReceivedResponse;
-    unsigned int _lastSendMessageID;
-    NSMutableDictionary *_policies;
-    NSObject<OS_dispatch_semaphore> *_responseSemaphore;
+    int  _controlSocket;
+    NSObject<OS_dispatch_source> * _controlSource;
+    int  _internalPriority;
+    NSObject<OS_dispatch_queue> * _ioQueue;
+    NSData * _lastReceivedResponse;
+    unsigned int  _lastSendMessageID;
+    NSMutableDictionary * _policies;
+    NSObject<OS_dispatch_semaphore> * _responseSemaphore;
 }
 
-@property (retain) NSObject<OS_dispatch_io> *controlIO;
 @property int controlSocket;
+@property (retain) NSObject<OS_dispatch_source> *controlSource;
 @property int internalPriority;
 @property (retain) NSObject<OS_dispatch_queue> *ioQueue;
 @property (retain) NSData *lastReceivedResponse;
@@ -26,19 +26,23 @@
 + (void)addTLVToMessage:(id)arg1 type:(unsigned char)arg2 length:(unsigned long)arg3 value:(const void*)arg4;
 + (id)copyTLVForBytes:(const char *)arg1 messageLength:(unsigned long)arg2 type:(unsigned char)arg3 includeHeaderOffset:(BOOL)arg4 n:(int)arg5;
 + (id)errorFromMessage:(id)arg1;
++ (unsigned char)getTLVtypeForBytes:(const char *)arg1 includeHeaderOffset:(BOOL)arg2 nextTLVOffset:(unsigned int*)arg3;
 + (unsigned int)messageIDForMessage:(id)arg1;
++ (id)parseTLVResponseForDump:(id)arg1;
++ (id)policyDumpFromData:(id)arg1;
 + (unsigned int)policyIDFromMessage:(id)arg1;
 
 - (void).cxx_destruct;
 - (unsigned int)addPolicy:(id)arg1;
 - (BOOL)apply;
-- (id)controlIO;
 - (int)controlSocket;
+- (id)controlSource;
 - (id)copyReceivedResponseForMessageID:(unsigned int)arg1;
 - (id)createTLVMessage:(unsigned char)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
+- (id)dumpKernelPolicies;
 - (int)dupSocket;
 - (id)init;
 - (id)initWithSocket:(int)arg1;
@@ -47,7 +51,7 @@
 - (id)lastReceivedResponse;
 - (unsigned int)lastSendMessageID;
 - (BOOL)lockSessionToCurrentProcess;
-- (id)openControlIO;
+- (id)openControlSource;
 - (id)policies;
 - (id)policyWithID:(unsigned int)arg1;
 - (int)priority;
@@ -57,8 +61,8 @@
 - (BOOL)removePolicyWithID:(unsigned int)arg1;
 - (id)responseSemaphore;
 - (BOOL)sendMessage:(id)arg1;
-- (void)setControlIO:(id)arg1;
 - (void)setControlSocket:(int)arg1;
+- (void)setControlSource:(id)arg1;
 - (void)setInternalPriority:(int)arg1;
 - (void)setIoQueue:(id)arg1;
 - (void)setLastReceivedResponse:(id)arg1;

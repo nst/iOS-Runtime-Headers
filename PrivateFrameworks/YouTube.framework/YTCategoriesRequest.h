@@ -3,9 +3,9 @@
  */
 
 @interface YTCategoriesRequest : YTXMLHTTPRequest {
-    NSMutableArray *_categories;
-    id _delegate;
-    BOOL _responseIndicatesAuthenticationFailure;
+    NSMutableArray * _categories;
+    id  _delegate;
+    BOOL  _responseIndicatesAuthenticationFailure;
 }
 
 - (id)_categoriesURL;

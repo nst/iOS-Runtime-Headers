@@ -3,17 +3,17 @@
  */
 
 @interface CKQueryOperation : CKDatabaseOperation {
-    CKQueryCursor *_cursor;
-    NSArray *_desiredKeys;
-    BOOL _fetchAllResults;
-    CKQuery *_query;
-    id /* block */ _queryCompletionBlock;
-    id /* block */ _queryCursorFetchedBlock;
-    id /* block */ _recordFetchedBlock;
-    CKQueryCursor *_resultsCursor;
-    unsigned int _resultsLimit;
-    BOOL _shouldFetchAssetContent;
-    CKRecordZoneID *_zoneID;
+    CKQueryCursor * _cursor;
+    NSArray * _desiredKeys;
+    BOOL  _fetchAllResults;
+    CKQuery * _query;
+    id /* block */  _queryCompletionBlock;
+    id /* block */  _queryCursorFetchedBlock;
+    id /* block */  _recordFetchedBlock;
+    CKQueryCursor * _resultsCursor;
+    unsigned int  _resultsLimit;
+    BOOL  _shouldFetchAssetContent;
+    CKRecordZoneID * _zoneID;
 }
 
 @property (nonatomic, copy) CKQueryCursor *cursor;
@@ -33,7 +33,7 @@
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleCompletionCallback:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (id)cursor;
 - (id)desiredKeys;
 - (BOOL)fetchAllResults;

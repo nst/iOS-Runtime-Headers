@@ -3,8 +3,8 @@
  */
 
 @interface PUVideoEditPluginDataSource : NSObject <PUVideoEditPluginSessionDataSource> {
-    BOOL _allowsRevertInSession;
-    PHAsset *_videoAsset;
+    BOOL  _allowsRevertInSession;
+    PHAsset * _videoAsset;
 }
 
 @property (nonatomic) BOOL allowsRevertInSession;

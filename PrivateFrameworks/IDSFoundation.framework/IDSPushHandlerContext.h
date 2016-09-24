@@ -3,9 +3,9 @@
  */
 
 @interface IDSPushHandlerContext : NSObject {
-    NSSet *_commands;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSSet *_topics;
+    NSSet * _commands;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSSet * _topics;
 }
 
 @property (nonatomic, copy) NSSet *commands;

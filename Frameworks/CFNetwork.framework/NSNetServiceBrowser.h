@@ -3,10 +3,10 @@
  */
 
 @interface NSNetServiceBrowser : NSObject {
-    id _delegate;
-    BOOL _includesPeerToPeer;
-    id _netServiceBrowser;
-    void *_reserved;
+    id  _delegate;
+    BOOL  _includesPeerToPeer;
+    id  _netServiceBrowser;
+    void * _reserved;
 }
 
 @property <NSNetServiceBrowserDelegate> *delegate;

@@ -2,11 +2,10 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@interface CBPeripheralManager : NSObject <CBPairingAgentParentDelegate, CBXpcConnectionDelegate> {
-    NSMapTable *_centrals;
-    NSMutableDictionary *_characteristicIDs;
-    CBXpcConnection *_connection;
-    <CBPeripheralManagerDelegate> *_delegate;
+@interface CBPeripheralManager : CBManager {
+    NSMapTable * _centrals;
+    NSMutableDictionary * _characteristicIDs;
+    <CBPeripheralManagerDelegate> * _delegate;
     struct { 
         unsigned int willRestoreState : 1; 
         unsigned int didAddService : 1; 
@@ -18,38 +17,41 @@
         unsigned int isReadyToUpdate : 1; 
         unsigned int centralDidConnect : 1; 
         unsigned int centralDidUpdateConnectionParameters : 1; 
-    } _delegateFlags;
-    BOOL _isAdvertising;
-    CBPairingAgent *_pairingAgent;
-    BOOL _readyForUpdates;
-    NSMutableArray *_services;
-    int _state;
-    NSLock *_updateLock;
-    BOOL _waitingForReady;
+    }  _delegateFlags;
+    BOOL  _isAdvertising;
+    NSNumber * _multipleAdvertisingSupported;
+    BOOL  _readyForUpdates;
+    NSMutableArray * _services;
+    NSLock * _updateLock;
+    BOOL  _waitingForReady;
 }
 
-@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly, retain) NSMapTable *centrals;
+@property (nonatomic, readonly, retain) NSMutableDictionary *characteristicIDs;
 @property (nonatomic) <CBPeripheralManagerDelegate> *delegate;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property BOOL isAdvertising;
-@property (nonatomic, readonly) CBPairingAgent *sharedPairingAgent;
-@property int state;
-@property (readonly) Class superclass;
+@property (nonatomic) BOOL isAdvertising;
+@property (getter=supportsMultipleAdvertising, nonatomic, readonly) BOOL isSupportingMultipleAdvertising;
+@property (nonatomic, retain) NSNumber *multipleAdvertisingSupported;
+@property (nonatomic, readonly) BOOL readyForUpdates;
+@property (nonatomic, readonly, retain) NSMutableArray *services;
+@property (nonatomic, readonly, retain) NSLock *updateLock;
+@property (nonatomic, readonly) BOOL waitingForReady;
 
 + (int)authorizationStatus;
 
+- (void).cxx_destruct;
 - (void)addService:(id)arg1;
 - (id)centralWithInfo:(id)arg1;
+- (id)centrals;
+- (id)characteristicIDs;
 - (void)dealloc;
 - (id)delegate;
 - (void)forEachCentral:(id /* block */)arg1;
 - (void)handleAdvertisingStarted:(id)arg1;
 - (void)handleAdvertisingStopped:(id)arg1;
-- (void)handleCentralMsg:(int)arg1 args:(id)arg2;
 - (void)handleConnectionParametersUpdated:(id)arg1;
 - (void)handleGetAttributeValue:(id)arg1;
-- (void)handleMTUChanged:(id)arg1;
+- (void)handleMsg:(unsigned short)arg1 args:(id)arg2;
 - (void)handleNotificationAdded:(id)arg1;
 - (void)handleNotificationRemoved:(id)arg1;
 - (void)handleReadyForUpdates:(id)arg1;
@@ -57,34 +59,30 @@
 - (void)handleServiceAdded:(id)arg1;
 - (void)handleSetAttributeValues:(id)arg1;
 - (void)handleSolicitedServicesFound:(id)arg1;
-- (void)handleStateUpdated:(id)arg1;
 - (id)init;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2 options:(id)arg3;
 - (BOOL)isAdvertising;
-- (BOOL)isMsgAllowedAlways:(int)arg1;
-- (BOOL)isMsgAllowedWhenOff:(int)arg1;
+- (BOOL)isMsgAllowedAlways:(unsigned short)arg1;
+- (BOOL)isMsgAllowedWhenOff:(unsigned short)arg1;
+- (id)multipleAdvertisingSupported;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)peerWithInfo:(id)arg1;
-- (oneway void)release;
+- (BOOL)readyForUpdates;
 - (void)removeAllServices;
 - (void)removeService:(id)arg1;
 - (void)respondToRequest:(id)arg1 withResult:(int)arg2;
 - (void)respondToTransaction:(id)arg1 value:(id)arg2 attributeID:(id)arg3 result:(int)arg4;
-- (BOOL)sendMsg:(int)arg1 args:(id)arg2;
-- (id)sendSyncMsg:(int)arg1 args:(id)arg2;
+- (id)services;
 - (void)setDelegate:(id)arg1;
 - (void)setDesiredConnectionLatency:(int)arg1 forCentral:(id)arg2;
 - (void)setIsAdvertising:(BOOL)arg1;
-- (void)setState:(int)arg1;
-- (id)sharedPairingAgent;
+- (void)setMultipleAdvertisingSupported:(id)arg1;
 - (void)startAdvertising:(id)arg1;
-- (int)state;
 - (void)stopAdvertising;
+- (BOOL)supportsMultipleAdvertising;
+- (id)updateLock;
 - (BOOL)updateValue:(id)arg1 forCharacteristic:(id)arg2 onSubscribedCentrals:(id)arg3;
-- (void)xpcConnectionDidFinalize;
-- (void)xpcConnectionDidReceiveMsg:(unsigned short)arg1 args:(id)arg2 reply:(id /* block */)arg3;
-- (void)xpcConnectionDidReset;
-- (void)xpcConnectionIsInvalid;
+- (BOOL)waitingForReady;
 
 @end

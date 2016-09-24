@@ -3,11 +3,11 @@
  */
 
 @interface PDTimeCondition : NSObject {
-    int mDelay;
-    BOOL mHasDelay;
-    BOOL mHasTriggerEvent;
-    PDAnimationTarget *mTarget;
-    int mTriggerEvent;
+    int  mDelay;
+    BOOL  mHasDelay;
+    BOOL  mHasTriggerEvent;
+    PDAnimationTarget * mTarget;
+    int  mTriggerEvent;
 }
 
 - (void)dealloc;

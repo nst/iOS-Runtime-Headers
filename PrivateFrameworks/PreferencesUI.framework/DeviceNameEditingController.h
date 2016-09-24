@@ -3,8 +3,8 @@
  */
 
 @interface DeviceNameEditingController : PSListController {
-    id _effectiveSettingsChangedNotificationObserver;
-    NSString *_originalDeviceName;
+    id  _effectiveSettingsChangedNotificationObserver;
+    NSString * _originalDeviceName;
 }
 
 @property (nonatomic, retain) id effectiveSettingsChangedNotificationObserver;

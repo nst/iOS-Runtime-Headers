@@ -3,7 +3,7 @@
  */
 
 @interface WBSHistoryURLCompletionSession : NSObject <WBSURLCompletionSessionProtocol> {
-    WBSHistoryService *_historyService;
+    WBSHistoryService * _historyService;
 }
 
 - (void).cxx_destruct;

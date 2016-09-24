@@ -3,7 +3,7 @@
  */
 
 @interface PDWheelDirectionOptions : PDTransitionOptions {
-    int mSpokes;
+    int  mSpokes;
 }
 
 - (void)setSpokes:(int)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface MCCellularPayload : MCPayload {
-    NSArray *_APNs;
-    MCAPNConfiguration *_attachAPN;
+    NSArray * _APNs;
+    MCAPNConfiguration * _attachAPN;
 }
 
 @property (nonatomic, retain) NSArray *APNs;

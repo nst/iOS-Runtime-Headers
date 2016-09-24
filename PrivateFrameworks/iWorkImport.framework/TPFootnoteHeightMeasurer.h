@@ -3,9 +3,9 @@
  */
 
 @interface TPFootnoteHeightMeasurer : NSObject <TSWPFootnoteHeightMeasurer> {
-    TPFootnoteContainerLayout *_footnoteContainerLayout;
-    TSULRUCache *_footnoteLayoutCache;
-    TSDLayoutController *_layoutController;
+    TPFootnoteContainerLayout * _footnoteContainerLayout;
+    TSULRUCache * _footnoteLayoutCache;
+    TSDLayoutController * _layoutController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

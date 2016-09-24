@@ -3,9 +3,9 @@
  */
 
 @interface PLCachedImage : UIImage {
-    PLLoadRequestKey *_cacheKey;
-    int _format;
-    NSDictionary *_metadata;
+    PLLoadRequestKey * _cacheKey;
+    int  _format;
+    NSDictionary * _metadata;
 }
 
 @property (nonatomic, copy) PLLoadRequestKey *cacheKey;

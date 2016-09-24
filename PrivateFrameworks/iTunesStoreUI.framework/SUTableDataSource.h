@@ -3,10 +3,10 @@
  */
 
 @interface SUTableDataSource : NSObject {
-    id _cellReuseSource;
-    int _columnCount;
-    SUVariableCellConfigurationCache *_configurationCache;
-    int _preferringUserInteractionCount;
+    id  _cellReuseSource;
+    int  _columnCount;
+    SUVariableCellConfigurationCache * _configurationCache;
+    int  _preferringUserInteractionCount;
 }
 
 @property (nonatomic) id cellReuseSource;

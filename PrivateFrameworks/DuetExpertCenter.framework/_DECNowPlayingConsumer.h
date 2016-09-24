@@ -3,13 +3,13 @@
  */
 
 @interface _DECNowPlayingConsumer : _DECInternalConsumer <_DECNowPlayingFeedbackProviderProtocol> {
-    void *_activity;
-    _DECNowPlayingFeedbackProvider *_feedbackProvider;
-    NSObject<OS_dispatch_queue> *_mediaremoteQueue;
-    NSString *_mostRecentPredictionBundleId;
-    int _mostRecentPredictionReason;
-    BOOL _providedEngagementFeedback;
-    NSObject<OS_dispatch_queue> *_queue;
+    void * _activity;
+    _DECNowPlayingFeedbackProvider * _feedbackProvider;
+    NSObject<OS_dispatch_queue> * _mediaremoteQueue;
+    NSString * _mostRecentPredictionBundleId;
+    int  _mostRecentPredictionReason;
+    BOOL  _providedEngagementFeedback;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property void*activity;

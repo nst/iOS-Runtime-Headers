@@ -3,7 +3,7 @@
  */
 
 @interface UIAccessibilityPresentingViewController : UIViewController {
-    UIWindow *_presentationWindow;
+    UIWindow * _presentationWindow;
 }
 
 - (void)_cleanUpPresentationWindow;

@@ -3,10 +3,10 @@
  */
 
 @interface _UIUserDefaultsActivity : UIActivity {
-    NSArray *_availableActivities;
-    UINavigationController *_navigationController;
-    _UIActivityUserDefaults *_userDefaults;
-    UIViewController *_userDefaultsViewController;
+    NSArray * _availableActivities;
+    UINavigationController * _navigationController;
+    _UIActivityUserDefaults * _userDefaults;
+    UIViewController * _userDefaultsViewController;
 }
 
 @property (nonatomic, copy) NSArray *availableActivities;

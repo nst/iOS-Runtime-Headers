@@ -3,10 +3,10 @@
  */
 
 @interface AASigningSession : NSObject {
-    NSString *_certURL;
-    struct NACContextOpaque_ { } *_context;
-    long _error;
-    NSString *_sessionURL;
+    NSString * _certURL;
+    struct NACContextOpaque_ { } * _context;
+    long  _error;
+    NSString * _sessionURL;
 }
 
 @property (nonatomic, readonly) long error;

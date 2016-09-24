@@ -3,7 +3,7 @@
  */
 
 @interface CNCardLinkedCardsGroupItem : CNCardGroupItem {
-    CNContact *_contact;
+    CNContact * _contact;
 }
 
 @property (nonatomic, retain) CNContact *contact;

@@ -3,31 +3,31 @@
  */
 
 @interface SUViewControllerScriptProperties : NSObject <NSCoding, NSCopying> {
-    BOOL _alwaysDispatchesScrollEvents;
-    UIColor *_backgroundColor;
-    NSDictionary *_contextDictionary;
-    BOOL _doubleTapEnabled;
-    BOOL _embedded;
-    BOOL _flashesScrollIndicators;
-    BOOL _inputViewObeysDOMFocus;
-    int _loadingIndicatorStyle;
-    UIColor *_loadingTextColor;
-    UIColor *_loadingTextShadowColor;
-    SUGradient *_placeholderBackgroundGradient;
+    BOOL  _alwaysDispatchesScrollEvents;
+    UIColor * _backgroundColor;
+    NSDictionary * _contextDictionary;
+    BOOL  _doubleTapEnabled;
+    BOOL  _embedded;
+    BOOL  _flashesScrollIndicators;
+    BOOL  _inputViewObeysDOMFocus;
+    int  _loadingIndicatorStyle;
+    UIColor * _loadingTextColor;
+    UIColor * _loadingTextShadowColor;
+    SUGradient * _placeholderBackgroundGradient;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _scrollContentInsets;
-    BOOL _scrollingDisabled;
-    BOOL _shouldLoadProgressively;
-    BOOL _shouldShowFormAccessory;
-    BOOL _showsBackgroundShadow;
-    BOOL _showsHorizontalScrollIndicator;
-    BOOL _showsVerticalScrollIndicator;
-    UIColor *_topExtensionColor;
-    BOOL _usesBlurredBackground;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _scrollContentInsets;
+    BOOL  _scrollingDisabled;
+    BOOL  _shouldLoadProgressively;
+    BOOL  _shouldShowFormAccessory;
+    BOOL  _showsBackgroundShadow;
+    BOOL  _showsHorizontalScrollIndicator;
+    BOOL  _showsVerticalScrollIndicator;
+    UIColor * _topExtensionColor;
+    BOOL  _usesBlurredBackground;
 }
 
 @property (nonatomic) BOOL alwaysDispatchesScrollEvents;
@@ -41,7 +41,7 @@
 @property (nonatomic, retain) UIColor *loadingTextColor;
 @property (nonatomic, retain) UIColor *loadingTextShadowColor;
 @property (nonatomic, retain) SUGradient *placeholderBackgroundGradient;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } scrollContentInsets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } scrollContentInsets;
 @property (getter=isScrollingDisabled, nonatomic) BOOL scrollingDisabled;
 @property (nonatomic) BOOL shouldLoadProgressively;
 @property (nonatomic) BOOL shouldShowFormAccessory;
@@ -67,7 +67,7 @@
 - (id)loadingTextColor;
 - (id)loadingTextShadowColor;
 - (id)placeholderBackgroundGradient;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })scrollContentInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })scrollContentInsets;
 - (void)setAlwaysDispatchesScrollEvents:(BOOL)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setContextDictionary:(id)arg1;
@@ -79,7 +79,7 @@
 - (void)setLoadingTextColor:(id)arg1;
 - (void)setLoadingTextShadowColor:(id)arg1;
 - (void)setPlaceholderBackgroundGradient:(id)arg1;
-- (void)setScrollContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setScrollContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setScrollingDisabled:(BOOL)arg1;
 - (void)setShouldLoadProgressively:(BOOL)arg1;
 - (void)setShouldShowFormAccessory:(BOOL)arg1;

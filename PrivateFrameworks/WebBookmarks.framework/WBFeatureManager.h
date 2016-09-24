@@ -3,17 +3,20 @@
  */
 
 @interface WBFeatureManager : NSObject {
-    int _accessLevel;
-    BOOL _offlineReadingListAvailable;
+    int  _accessLevel;
+    BOOL  _favoritesFolderSelectionShouldSync;
+    BOOL  _offlineReadingListAvailable;
 }
 
 @property (nonatomic, readonly) int accessLevel;
+@property (nonatomic, readonly) BOOL favoritesFolderSelectionShouldSync;
 @property (getter=isOfflineReadingListAvailable, nonatomic, readonly) BOOL offlineReadingListAvailable;
 
 + (id)sharedFeatureManager;
 
 - (void)_updateToAccessLevel:(int)arg1;
 - (int)accessLevel;
+- (BOOL)favoritesFolderSelectionShouldSync;
 - (id)init;
 - (BOOL)isOfflineReadingListAvailable;
 

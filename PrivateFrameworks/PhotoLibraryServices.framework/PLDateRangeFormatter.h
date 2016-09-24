@@ -3,28 +3,28 @@
  */
 
 @interface PLDateRangeFormatter : NSObject {
-    NSLocale *__currentLocale;
-    NSDateFormatter *__dayOfTheWeekDateFormatter;
-    struct UDateIntervalFormat { } *__dayOfTheWeekIntervalFormat;
-    struct UDateIntervalFormat { } *__differentMonthDayIntervalFormat;
-    struct UDateIntervalFormat { } *__differentMonthDayNoYearIntervalFormat;
-    struct UDateIntervalFormat { } *__monthDayIntervalFormat;
-    struct UDateIntervalFormat { } *__monthDayNoYearIntervalFormat;
-    NSDateFormatter *__relativeDateFormatterDay;
-    NSDateFormatter *__sameDayDateFormatter;
-    NSDateFormatter *__sameDayNoYearDateFormatter;
-    struct UDateIntervalFormat { } *__timeIntervalFormat;
-    NSDateFormatter *__yearDateFormatter;
-    struct UDateIntervalFormat { } *__yearIntervalFormat;
-    BOOL _autoUpdateOnChanges;
-    BOOL _includeDayNumbers;
-    BOOL _includeDayNumbersWhenMonthsDiffer;
-    BOOL _timeOnly;
-    BOOL _useRelativeDayFormatting;
-    BOOL _useShortDaysInRanges;
-    BOOL _useShortMonths;
-    BOOL _useTime;
-    BOOL _yearOnly;
+    NSLocale * __currentLocale;
+    NSDateFormatter * __dayOfTheWeekDateFormatter;
+    struct UDateIntervalFormat { } * __dayOfTheWeekIntervalFormat;
+    struct UDateIntervalFormat { } * __differentMonthDayIntervalFormat;
+    struct UDateIntervalFormat { } * __differentMonthDayNoYearIntervalFormat;
+    struct UDateIntervalFormat { } * __monthDayIntervalFormat;
+    struct UDateIntervalFormat { } * __monthDayNoYearIntervalFormat;
+    NSDateFormatter * __relativeDateFormatterDay;
+    NSDateFormatter * __sameDayDateFormatter;
+    NSDateFormatter * __sameDayNoYearDateFormatter;
+    struct UDateIntervalFormat { } * __timeIntervalFormat;
+    NSDateFormatter * __yearDateFormatter;
+    struct UDateIntervalFormat { } * __yearIntervalFormat;
+    BOOL  _autoUpdateOnChanges;
+    BOOL  _includeDayNumbers;
+    BOOL  _includeDayNumbersWhenMonthsDiffer;
+    BOOL  _timeOnly;
+    BOOL  _useRelativeDayFormatting;
+    BOOL  _useShortDaysInRanges;
+    BOOL  _useShortMonths;
+    BOOL  _useTime;
+    BOOL  _yearOnly;
 }
 
 @property (setter=_setCurrentLocale:, nonatomic, retain) NSLocale *_currentLocale;
@@ -66,6 +66,7 @@
 - (struct UDateIntervalFormat { }*)_differentMonthDayNoYearIntervalFormat;
 - (void)_dumpDateCombinationWithStartDate:(id)arg1 endDate:(id)arg2 currentDate:(id)arg3 dateFormatter:(id)arg4;
 - (void)_dumpDateCombinations;
+- (id)_formattedDateRangeWithStartDate:(id)arg1 endDate:(id)arg2 currentDate:(id)arg3;
 - (id)_formattedDateWithUDateFormatter:(struct UDateIntervalFormat { }*)arg1 startDate:(id)arg2 endDate:(id)arg3;
 - (void)_invalidateFormats;
 - (void)_localeChanged:(id)arg1;
@@ -92,7 +93,6 @@
 - (void)dealloc;
 - (id)formattedDate:(id)arg1;
 - (id)formattedDateRangeWithStartDate:(id)arg1 endDate:(id)arg2;
-- (id)formattedDateRangeWithStartDate:(id)arg1 endDate:(id)arg2 currentDate:(id)arg3;
 - (BOOL)includeDayNumbers;
 - (BOOL)includeDayNumbersWhenMonthsDiffer;
 - (id)init;

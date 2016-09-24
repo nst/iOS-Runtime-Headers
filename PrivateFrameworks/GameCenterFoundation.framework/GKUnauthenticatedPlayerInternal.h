@@ -3,7 +3,7 @@
  */
 
 @interface GKUnauthenticatedPlayerInternal : GKLocalPlayerInternal {
-    int _encodingCount;
+    int  _encodingCount;
 }
 
 - (id)alias;

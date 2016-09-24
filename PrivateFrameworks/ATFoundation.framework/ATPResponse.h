@@ -3,7 +3,7 @@
  */
 
 @interface ATPResponse : PBCodable <NSCopying> {
-    ATPError *_error;
+    ATPError * _error;
 }
 
 @property (nonatomic, retain) ATPError *error;

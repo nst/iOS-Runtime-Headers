@@ -3,14 +3,14 @@
  */
 
 @interface SSDownloadMetadata : NSObject <NSCoding, NSCopying, SSXPCCoding> {
-    NSMutableDictionary *_dictionary;
-    int _keyStyle;
-    NSLock *_lock;
+    NSMutableDictionary * _dictionary;
+    int  _keyStyle;
+    NSLock * _lock;
 }
 
 @property (readonly) NSArray *MD5HashStrings;
 @property (readonly, retain) NSData *appReceiptData;
-@property unsigned long long artistIdentifier;
+@property unsigned int artistIdentifier;
 @property (copy) NSString *artistName;
 @property (getter=isAutomaticDownload) BOOL automaticDownload;
 @property (retain) NSURL *cancelDownloadURL;
@@ -26,16 +26,17 @@
 @property (retain) NSString *fileExtension;
 @property (retain) NSURL *fullSizeImageURL;
 @property (retain) NSString *genre;
-@property unsigned long long genreIdentifier;
+@property unsigned int genreIdentifier;
 @property (readonly) unsigned int hash;
-@property unsigned long long itemIdentifier;
+@property (copy) NSURL *hlsPlaylistURL;
+@property unsigned int itemIdentifier;
 @property int keyStyle;
 @property (retain) NSString *kind;
 @property (retain) NSURL *launchExtrasUrl;
 @property (copy) NSString *longDescription;
 @property (readonly) NSNumber *numberOfBytesToHash;
 @property (copy) NSString *pageProgressionDirection;
-@property unsigned long long preOrderIdentifier;
+@property unsigned int preOrderIdentifier;
 @property (copy) NSString *preferredAssetFlavor;
 @property (readonly) NSDictionary *primaryAssetDictionary;
 @property (retain) NSURL *primaryAssetURL;
@@ -44,10 +45,12 @@
 @property (retain) NSDate *releaseDate;
 @property (retain) NSString *releaseDateString;
 @property (retain) NSNumber *releaseYear;
+@property (copy) NSNumber *rentalID;
 @property (copy) id requiredDeviceCapabilities;
 @property (copy) NSString *shortDescription;
 @property BOOL shouldDownloadAutomatically;
 @property (retain) NSArray *sinfs;
+@property (getter=isSoftwareKind, readonly) BOOL softwareKind;
 @property (retain) NSString *sortArtistName;
 @property (retain) NSString *sortCollectionName;
 @property (retain) NSString *sortTitle;
@@ -61,6 +64,7 @@
 @property (retain) NSString *transactionIdentifier;
 @property (copy) NSURL *transitMapDataURL;
 @property (getter=isTvTemplate) BOOL tvTemplate;
+@property (getter=isVideosKind, readonly) BOOL videosKind;
 
 - (id)MD5HashStrings;
 - (id)_assetDictionary;
@@ -76,7 +80,7 @@
 - (id)_valueForFirstAvailableTopLevelKey:(id)arg1;
 - (id)appReceiptData;
 - (id)applicationIdentifier;
-- (unsigned long long)artistIdentifier;
+- (unsigned int)artistIdentifier;
 - (id)artistName;
 - (BOOL)artworkIsPrerendered;
 - (id)betaExternalVersionIdentifier;
@@ -84,10 +88,10 @@
 - (id)cancelDownloadURL;
 - (id)cloudIdentifier;
 - (id)collectionArtistName;
-- (unsigned long long)collectionIdentifier;
+- (unsigned int)collectionIdentifier;
 - (id)collectionIndexInCollectionGroup;
 - (id)collectionName;
-- (unsigned long long)composerIdentifier;
+- (unsigned int)composerIdentifier;
 - (id)composerName;
 - (id)contentRating;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -101,6 +105,7 @@
 - (id)downloadPermalink;
 - (id)downloaderAccountIdentifier;
 - (id)durationInMilliseconds;
+- (id)enableExtensions;
 - (void)encodeWithCoder:(id)arg1;
 - (id)episodeIdentifier;
 - (id)episodeSortIdentifier;
@@ -108,7 +113,9 @@
 - (id)fileExtension;
 - (id)fullSizeImageURL;
 - (id)genre;
-- (unsigned long long)genreIdentifier;
+- (unsigned int)genreIdentifier;
+- (BOOL)hasMessagesExtension;
+- (id)hlsPlaylistURL;
 - (id)indexInCollection;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -127,13 +134,20 @@
 - (BOOL)isRental;
 - (BOOL)isSample;
 - (BOOL)isSharedResource;
+- (BOOL)isSoftwareKind;
 - (BOOL)isTvTemplate;
-- (unsigned long long)itemIdentifier;
+- (BOOL)isVideosKind;
+- (unsigned int)itemIdentifier;
 - (int)keyStyle;
 - (id)kind;
 - (id)launchExtrasUrl;
+- (BOOL)launchProhibited;
 - (id)longDescription;
 - (id)longSeasonDescription;
+- (id)messagesArtworkURL;
+- (id)movementCount;
+- (id)movementName;
+- (id)movementNumber;
 - (id)networkName;
 - (id)newDownloadProperties;
 - (id)numberOfBytesToHash;
@@ -143,7 +157,7 @@
 - (id)podcastEpisodeGUID;
 - (id)podcastFeedURL;
 - (id)podcastType;
-- (unsigned long long)preOrderIdentifier;
+- (unsigned int)preOrderIdentifier;
 - (id)preferredAssetFlavor;
 - (id)primaryAssetDictionary;
 - (id)primaryAssetURL;
@@ -153,11 +167,12 @@
 - (id)releaseDate;
 - (id)releaseDateString;
 - (id)releaseYear;
+- (id)rentalID;
 - (id)requiredDeviceCapabilities;
-- (unsigned long long)sagaIdentifier;
+- (unsigned int)sagaIdentifier;
 - (id)seasonNumber;
 - (id)seriesName;
-- (void)setArtistIdentifier:(unsigned long long)arg1;
+- (void)setArtistIdentifier:(unsigned int)arg1;
 - (void)setArtistName:(id)arg1;
 - (void)setArtworkIsPrerendered:(BOOL)arg1;
 - (void)setAutomaticDownload:(BOOL)arg1;
@@ -166,11 +181,11 @@
 - (void)setCancelDownloadURL:(id)arg1;
 - (void)setCloudIdentifier:(id)arg1;
 - (void)setCollectionArtistName:(id)arg1;
-- (void)setCollectionIdentifier:(unsigned long long)arg1;
+- (void)setCollectionIdentifier:(unsigned int)arg1;
 - (void)setCollectionIndexInCollectionGroup:(id)arg1;
 - (void)setCollectionName:(id)arg1;
 - (void)setCompilation:(BOOL)arg1;
-- (void)setComposerIdentifier:(unsigned long long)arg1;
+- (void)setComposerIdentifier:(unsigned int)arg1;
 - (void)setComposerName:(id)arg1;
 - (void)setContentRating:(id)arg1;
 - (void)setCopyright:(id)arg1;
@@ -180,6 +195,7 @@
 - (void)setDownloadKey:(id)arg1;
 - (void)setDownloadPermalink:(id)arg1;
 - (void)setDurationInMilliseconds:(id)arg1;
+- (void)setEnableExtensions:(id)arg1;
 - (void)setEpisodeIdentifier:(id)arg1;
 - (void)setEpisodeSortIdentifier:(id)arg1;
 - (void)setEpubRightsData:(id)arg1;
@@ -187,16 +203,20 @@
 - (void)setFileExtension:(id)arg1;
 - (void)setFullSizeImageURL:(id)arg1;
 - (void)setGenre:(id)arg1;
-- (void)setGenreIdentifier:(unsigned long long)arg1;
+- (void)setGenreIdentifier:(unsigned int)arg1;
+- (void)setHasMessagesExtension:(BOOL)arg1;
 - (void)setHighDefinition:(BOOL)arg1;
+- (void)setHlsPlaylistURL:(id)arg1;
 - (void)setIndexInCollection:(id)arg1;
-- (void)setItemIdentifier:(unsigned long long)arg1;
+- (void)setItemIdentifier:(unsigned int)arg1;
 - (void)setKeyStyle:(int)arg1;
 - (void)setKind:(id)arg1;
 - (void)setLaunchExtrasUrl:(id)arg1;
+- (void)setLaunchProhibited:(BOOL)arg1;
 - (void)setLongDescription:(id)arg1;
 - (void)setLongSeasonDescription:(id)arg1;
 - (void)setMD5HashStrings:(id)arg1 numberOfBytesToHash:(id)arg2;
+- (void)setMessagesArtworkURL:(id)arg1;
 - (void)setNetworkName:(id)arg1;
 - (void)setNumberOfCollectionsInCollectionGroup:(id)arg1;
 - (void)setNumberOfItemsInCollection:(id)arg1;
@@ -204,7 +224,7 @@
 - (void)setPodcastEpisodeGUID:(id)arg1;
 - (void)setPodcastFeedURL:(id)arg1;
 - (void)setPodcastType:(id)arg1;
-- (void)setPreOrderIdentifier:(unsigned long long)arg1;
+- (void)setPreOrderIdentifier:(unsigned int)arg1;
 - (void)setPreferredAssetFlavor:(id)arg1;
 - (void)setPrimaryAssetURL:(id)arg1;
 - (void)setPublicationVersion:(id)arg1;
@@ -215,8 +235,9 @@
 - (void)setReleaseDateString:(id)arg1;
 - (void)setReleaseYear:(id)arg1;
 - (void)setRental:(BOOL)arg1;
+- (void)setRentalID:(id)arg1;
 - (void)setRequiredDeviceCapabilities:(id)arg1;
-- (void)setSagaIdentifier:(unsigned long long)arg1;
+- (void)setSagaIdentifier:(unsigned int)arg1;
 - (void)setSample:(BOOL)arg1;
 - (void)setSeasonNumber:(id)arg1;
 - (void)setSeriesName:(id)arg1;

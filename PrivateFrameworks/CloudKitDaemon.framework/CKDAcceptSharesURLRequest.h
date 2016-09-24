@@ -3,27 +3,27 @@
  */
 
 @interface CKDAcceptSharesURLRequest : CKDURLRequest {
-    id /* block */ _shareAcceptedBlock;
-    NSMutableDictionary *_shareInfoByRequestID;
-    NSArray *_shareInfosToAccept;
+    id /* block */  _shareAcceptedBlock;
+    NSMutableDictionary * _shareMetadataByRequestID;
+    NSArray * _shareMetadatasToAccept;
 }
 
 @property (nonatomic, copy) id /* block */ shareAcceptedBlock;
-@property (nonatomic, retain) NSMutableDictionary *shareInfoByRequestID;
-@property (nonatomic, retain) NSArray *shareInfosToAccept;
+@property (nonatomic, retain) NSMutableDictionary *shareMetadataByRequestID;
+@property (nonatomic, retain) NSArray *shareMetadatasToAccept;
 
 - (void).cxx_destruct;
-- (id)initWithShareInfosToAccept:(id)arg1;
+- (id)initWithShareMetadatasToAccept:(id)arg1;
 - (int)operationType;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
 - (id)requestOperations;
 - (void)setShareAcceptedBlock:(id /* block */)arg1;
-- (void)setShareInfoByRequestID:(id)arg1;
-- (void)setShareInfosToAccept:(id)arg1;
+- (void)setShareMetadataByRequestID:(id)arg1;
+- (void)setShareMetadatasToAccept:(id)arg1;
 - (id /* block */)shareAcceptedBlock;
-- (id)shareInfoByRequestID;
-- (id)shareInfosToAccept;
+- (id)shareMetadataByRequestID;
+- (id)shareMetadatasToAccept;
 
 @end

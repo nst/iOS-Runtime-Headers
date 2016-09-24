@@ -5,28 +5,28 @@
 @interface TSCH3DRayPickPipeline : TSCH3DSceneRenderPipeline <TSCH3DSceneObjectDelegator> {
     struct tvec2<float> { 
         union { 
-            float x; 
-            float r; 
-            float s; 
+            double x; 
+            double r; 
+            double s; 
         } ; 
         union { 
-            float y; 
-            float g; 
-            float t; 
+            double y; 
+            double g; 
+            double t; 
         } ; 
-    } mPickPosition;
-    TSCH3DRayPickPipelineDelegate *mSceneObjectDelegate;
+    }  mPickPosition;
+    TSCH3DRayPickPipelineDelegate * mSceneObjectDelegate;
 }
 
 @property (nonatomic, readonly) TSCH3DPickedPoint *pickedPoint;
 @property (nonatomic, readonly) NSArray *pickedPoints;
-@property (nonatomic) float slack;
+@property (nonatomic) double slack;
 
-+ (id)pipelineWithScene:(id)arg1 position:(const struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg2;
++ (id)pipelineWithScene:(id)arg1 position:(const struct tvec2<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; }*)arg2;
 
 - (id).cxx_construct;
 - (void)dealloc;
-- (id)initWithScene:(id)arg1 position:(const struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg2;
+- (id)initWithScene:(id)arg1 position:(const struct tvec2<float> { union { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; union { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; }*)arg2;
 - (Class)labelsMeshRendererClassForLabelsRenderer:(id)arg1;
 - (id)makeDelegateWithScene:(id)arg1;
 - (id)makeDelegateWithSceneObject:(id)arg1 scene:(id)arg2;

@@ -3,7 +3,7 @@
  */
 
 @interface AFUITestInput : NSObject {
-    AFUIRequestOptions *_requestOptions;
+    AFUIRequestOptions * _requestOptions;
 }
 
 @property (nonatomic, readonly) AFUIRequestOptions *requestOptions;

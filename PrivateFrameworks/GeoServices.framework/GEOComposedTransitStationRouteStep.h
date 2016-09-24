@@ -3,14 +3,11 @@
  */
 
 @interface GEOComposedTransitStationRouteStep : GEOComposedTransitRouteStep {
-    GEOPBTransitAccessPoint *_accessPoint;
-    GEOPBTransitStop *_destinationStop;
-    GEOTransitEnterExitInfo *_enterExitInfo;
-    unsigned int _expectedTime;
-    BOOL _isArrivalUncertain;
-    GEOPBTransitStop *_originStop;
-    GEOTransitSchedule *_transitSchedule;
-    GEOTransitTransfer *_transitTransfer;
+    GEOPBTransitAccessPoint * _accessPoint;
+    GEOTransitEnterExitInfo * _enterExitInfo;
+    unsigned int  _expectedTime;
+    BOOL  _isArrivalUncertain;
+    GEOTransitTransfer * _transitTransfer;
 }
 
 @property (nonatomic, readonly) GEOPBTransitAccessPoint *accessPoint;
@@ -19,12 +16,10 @@
 @property (nonatomic, readonly) unsigned int expectedTime;
 @property (nonatomic, readonly) BOOL hasDisplayStop;
 @property (nonatomic, readonly) BOOL isArrivalUncertain;
-@property (nonatomic, readonly) GEOTransitSchedule *transitSchedule;
 @property (nonatomic, readonly) GEOTransitTransfer *transitTransfer;
 
 - (id)accessPoint;
 - (void)dealloc;
-- (id)destinationStop;
 - (BOOL)displayStop;
 - (struct { double x1; double x2; })endGeoCoordinate;
 - (id)exitSign;
@@ -32,9 +27,7 @@
 - (BOOL)hasDisplayStop;
 - (id)initWithComposedRoute:(id)arg1 decoderData:(id)arg2 step:(id)arg3 stepIndex:(unsigned int)arg4 duration:(unsigned int)arg5 pointRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg6;
 - (BOOL)isArrivalUncertain;
-- (id)originStop;
 - (struct { double x1; double x2; })startGeoCoordinate;
-- (id)transitSchedule;
 - (id)transitTransfer;
 
 @end

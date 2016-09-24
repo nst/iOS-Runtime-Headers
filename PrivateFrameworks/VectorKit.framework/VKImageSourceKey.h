@@ -3,25 +3,26 @@
  */
 
 @interface VKImageSourceKey : NSObject <GEOTransitArtworkDataSource, GEOTransitIconDataSource, GEOTransitShieldDataSource> {
-    unsigned char _dataType;
-    unsigned int _dataValue;
-    BOOL _hasDataValue;
-    unsigned int _iconAttributeKey;
-    unsigned int _iconAttributeValue;
+    unsigned char  _dataType;
+    unsigned int  _dataValue;
+    NSArray * _fallbackImageKeys;
+    BOOL  _hasDataValue;
+    unsigned int  _iconAttributeKey;
+    unsigned int  _iconAttributeValue;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _imageCenter;
-    NSString *_imageName;
-    unsigned int _keyType;
-    NSString *_relatedText;
+        double x; 
+        double y; 
+    }  _imageCenter;
+    NSString * _imageName;
+    unsigned int  _keyType;
+    NSString * _relatedText;
     struct FixedPointVector<unsigned char, 4> { 
         unsigned char _e[4]; 
-    } _shieldColor;
-    NSString *_shieldText;
-    NSString *_shieldTextLocale;
-    unsigned int _shieldType;
-    NSString *_text;
+    }  _shieldColor;
+    NSString * _shieldText;
+    NSString * _shieldTextLocale;
+    unsigned int  _shieldType;
+    NSString * _text;
 }
 
 @property (nonatomic, readonly) NSString *accessibilityText;
@@ -33,14 +34,16 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) unsigned int defaultTransitType;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSArray *fallbackImageKeys;
 @property (nonatomic, readonly) BOOL hasDataValue;
 @property (nonatomic, readonly) BOOL hasRoutingIncidentBadge;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) unsigned int iconAttributeKey;
 @property (nonatomic, readonly) unsigned int iconAttributeValue;
 @property (nonatomic, readonly) <GEOTransitIconDataSource> *iconDataSource;
+@property (nonatomic, readonly) <GEOTransitShieldDataSource> *iconFallbackShieldDataSource;
 @property (nonatomic, readonly) int iconType;
-@property (nonatomic) struct CGPoint { float x1; float x2; } imageCenter;
+@property (nonatomic) struct CGPoint { double x1; double x2; } imageCenter;
 @property (nonatomic, readonly) NSString *imageName;
 @property (nonatomic, readonly) unsigned int keyType;
 @property (nonatomic, retain) NSString *relatedText;
@@ -49,7 +52,7 @@
 @property (nonatomic, readonly) <GEOTransitShieldDataSource> *shieldDataSource;
 @property (nonatomic, readonly) NSString *shieldText;
 @property (nonatomic, readonly) NSString *shieldTextLocale;
-@property (nonatomic, readonly) long long shieldType;
+@property (nonatomic, readonly) int shieldType;
 @property (nonatomic, readonly) unsigned int shieldType;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *text;
@@ -61,25 +64,27 @@
 - (unsigned char)dataType;
 - (unsigned int)dataValue;
 - (void)dealloc;
+- (id)fallbackImageKeys;
 - (BOOL)hasDataValue;
 - (unsigned int)iconAttributeKey;
 - (unsigned int)iconAttributeValue;
-- (struct CGPoint { float x1; float x2; })imageCenter;
+- (struct CGPoint { double x1; double x2; })imageCenter;
 - (id)imageName;
 - (id)initWithDataType:(unsigned char)arg1;
 - (id)initWithIconAttributeKey:(unsigned int)arg1 attributeValue:(unsigned int)arg2;
 - (id)initWithIconName:(const char *)arg1;
-- (id)initWithLabelImageKey:(const struct shared_ptr<vk::LabelImageKey> { struct LabelImageKey {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
+- (id)initWithLabelImageKey:(const struct shared_ptr<md::LabelImageKey> { struct LabelImageKey {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
 - (id)initWithShieldName:(const char *)arg1 text:(const char *)arg2 locale:(const char *)arg3 color:(struct FixedPointVector<unsigned char, 4> { unsigned char x1[4]; })arg4;
 - (id)initWithShieldText:(const char *)arg1 locale:(const char *)arg2 type:(unsigned int)arg3 color:(struct FixedPointVector<unsigned char, 4> { unsigned char x1[4]; })arg4;
 - (unsigned int)keyType;
 - (id)relatedText;
 - (void)setDataType:(unsigned char)arg1;
 - (void)setDataValue:(unsigned int)arg1;
-- (void)setImageCenter:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setFallbackImageKeys:(id)arg1;
+- (void)setImageCenter:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setRelatedText:(id)arg1;
 - (void)setText:(id)arg1;
-- (struct { struct Matrix<float, 4, 1> { float x_1_1_1[4]; } x1; })shieldColor;
+- (struct { struct Matrix<float, 4, 1> { double x_1_1_1[4]; } x1; })shieldColor;
 - (id)shieldText;
 - (id)shieldTextLocale;
 - (unsigned int)shieldType;
@@ -92,6 +97,7 @@
 - (int)artworkUseType;
 - (BOOL)hasRoutingIncidentBadge;
 - (id)iconDataSource;
+- (id)iconFallbackShieldDataSource;
 - (int)iconType;
 - (id)shieldColorString;
 - (id)shieldDataSource;

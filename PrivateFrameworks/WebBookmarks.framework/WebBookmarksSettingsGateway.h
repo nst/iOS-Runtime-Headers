@@ -3,7 +3,7 @@
  */
 
 @interface WebBookmarksSettingsGateway : NSObject {
-    WebBookmarksXPCConnection *_connection;
+    WebBookmarksXPCConnection * _connection;
 }
 
 - (void).cxx_destruct;
@@ -15,5 +15,6 @@
 - (void)getSafariDataUsageByteCountWithCompletionHandler:(id /* block */)arg1;
 - (void)getSafariWebDataUsageWithCompletion:(id /* block */)arg1;
 - (id)init;
+- (void)scheduleBookmarksDatabaseMaintenance;
 
 @end

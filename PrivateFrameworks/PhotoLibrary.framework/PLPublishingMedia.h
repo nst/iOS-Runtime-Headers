@@ -3,12 +3,12 @@
  */
 
 @interface PLPublishingMedia : NSObject {
-    id _asset;
-    NSURL *_assetURL;
-    double _duration;
-    BOOL _isHDVideo;
-    BOOL _isVideo;
-    NSString *_pathForVideoFile;
+    id  _asset;
+    NSURL * _assetURL;
+    double  _duration;
+    BOOL  _isHDVideo;
+    BOOL  _isVideo;
+    NSString * _pathForVideoFile;
 }
 
 @property (nonatomic, retain) id asset;

@@ -3,19 +3,19 @@
  */
 
 @interface GEORPDetails : PBCodable <NSCopying> {
-    int _directionsType;
-    GEOMapRegion *_displayRegion;
-    int _displayStyle;
+    int  _directionsType;
+    GEOMapRegion * _displayRegion;
+    int  _displayStyle;
     struct { 
         unsigned int directionsType : 1; 
         unsigned int displayStyle : 1; 
         unsigned int mapType : 1; 
-    } _has;
-    GEORPUpdatedLabel *_label;
-    NSString *_localizedDescription;
-    NSString *_localizedTitle;
-    int _mapType;
-    NSMutableArray *_places;
+    }  _has;
+    GEORPUpdatedLabel * _label;
+    NSString * _localizedDescription;
+    NSString * _localizedTitle;
+    int  _mapType;
+    NSMutableArray * _places;
 }
 
 @property (nonatomic) int directionsType;
@@ -34,6 +34,11 @@
 @property (nonatomic) int mapType;
 @property (nonatomic, retain) NSMutableArray *places;
 
++ (Class)placeType;
+
+- (int)StringAsDirectionsType:(id)arg1;
+- (int)StringAsDisplayStyle:(id)arg1;
+- (int)StringAsMapType:(id)arg1;
 - (void)addPlace:(id)arg1;
 - (void)clearPlaces;
 - (void)copyTo:(id)arg1;
@@ -42,8 +47,10 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)directionsType;
+- (id)directionsTypeAsString:(int)arg1;
 - (id)displayRegion;
 - (int)displayStyle;
+- (id)displayStyleAsString:(int)arg1;
 - (BOOL)hasDirectionsType;
 - (BOOL)hasDisplayRegion;
 - (BOOL)hasDisplayStyle;
@@ -57,6 +64,7 @@
 - (id)localizedDescription;
 - (id)localizedTitle;
 - (int)mapType;
+- (id)mapTypeAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)placeAtIndex:(unsigned int)arg1;
 - (id)places;

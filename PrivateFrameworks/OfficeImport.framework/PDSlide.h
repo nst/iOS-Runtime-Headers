@@ -3,9 +3,9 @@
  */
 
 @interface PDSlide : PDSlideChild {
-    NSMutableArray *mComments;
-    PDNotesSlide *mNotesSlide;
-    PDSlideLayout *mSlideLayout;
+    NSMutableArray * mComments;
+    PDNotesSlide * mNotesSlide;
+    PDSlideLayout * mSlideLayout;
 }
 
 - (void)addComment:(id)arg1;

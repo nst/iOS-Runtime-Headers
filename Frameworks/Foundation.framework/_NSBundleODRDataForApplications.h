@@ -3,10 +3,10 @@
  */
 
 @interface _NSBundleODRDataForApplications : _NSBundleODRDataCommon {
-    NSMutableSet *_extensionConnections;
-    NSObject<OS_dispatch_group> *_initialStateGroup;
-    NSString *_rootSandboxPath;
-    NSDictionary *_tagToTagState;
+    NSMutableSet * _extensionConnections;
+    NSObject<OS_dispatch_group> * _initialStateGroup;
+    NSString * _rootSandboxPath;
+    NSDictionary * _tagToTagState;
 }
 
 + (id)dataForBundle:(id)arg1 createIfRequired:(BOOL)arg2;

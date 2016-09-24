@@ -10,6 +10,6 @@
 - (unsigned int)crc32ForEntry:(NSString *)arg1;
 - (BOOL)hasEntryWithName:(NSString *)arg1;
 - (<SFUInputStream> *)inputStreamForEntry:(NSString *)arg1;
-- (long long)lengthOfEntry:(NSString *)arg1;
+- (int)lengthOfEntry:(NSString *)arg1;
 
 @end

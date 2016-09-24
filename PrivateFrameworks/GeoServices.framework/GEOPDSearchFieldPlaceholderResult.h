@@ -3,11 +3,13 @@
  */
 
 @interface GEOPDSearchFieldPlaceholderResult : PBCodable <NSCopying> {
-    NSString *_displayString;
+    NSString * _displayString;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) NSString *displayString;
 @property (nonatomic, readonly) BOOL hasDisplayString;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -21,6 +23,7 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setDisplayString:(id)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -3,13 +3,13 @@
  */
 
 @interface WLMigrationWebService : NSObject {
-    <WLMigrationWebServiceDelegate> *_delegate;
-    WLSourceDevice *_device;
-    unsigned int _expectedRecordCount;
-    unsigned int _importedRecordCount;
-    BOOL _importsNilData;
-    BOOL _needsPreImportPhase;
-    WLURLSessionController *_urlSessionController;
+    <WLMigrationWebServiceDelegate> * _delegate;
+    WLSourceDevice * _device;
+    unsigned int  _expectedRecordCount;
+    unsigned int  _importedRecordCount;
+    BOOL  _importsNilData;
+    BOOL  _needsPreImportPhase;
+    WLURLSessionController * _urlSessionController;
 }
 
 @property (nonatomic, readonly) <WLMigrationWebServiceDelegate> *delegate;

@@ -3,8 +3,8 @@
  */
 
 @interface VKModelObject_DrawPass : NSObject {
-    unsigned char _pass;
-    VKModelObject *_submodel;
+    unsigned char  _pass;
+    VKModelObject * _submodel;
 }
 
 @property (nonatomic) unsigned char pass;

@@ -5,9 +5,9 @@
 @interface CKDPIdentifier : PBCodable <NSCopying> {
     struct { 
         unsigned int type : 1; 
-    } _has;
-    NSString *_name;
-    int _type;
+    }  _has;
+    NSString * _name;
+    int  _type;
 }
 
 @property (nonatomic, readonly) BOOL hasName;
@@ -16,6 +16,7 @@
 @property (nonatomic) int type;
 
 - (void).cxx_destruct;
+- (int)StringAsType:(id)arg1;
 - (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -32,6 +33,7 @@
 - (void)setName:(id)arg1;
 - (void)setType:(int)arg1;
 - (int)type;
+- (id)typeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

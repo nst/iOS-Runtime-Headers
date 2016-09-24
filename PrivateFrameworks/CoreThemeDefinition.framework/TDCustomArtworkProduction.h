@@ -3,7 +3,7 @@
  */
 
 @interface TDCustomArtworkProduction : TDSimpleArtworkElementProduction {
-    BOOL _hasCustomDateOfLastChange;
+    BOOL  _hasCustomDateOfLastChange;
 }
 
 @property (nonatomic) BOOL hasCustomDateOfLastChange;

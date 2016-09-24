@@ -3,11 +3,11 @@
  */
 
 @interface WBSParsecHiddenResultInfo : NSObject {
-    WBSParsecSearchResult *_hiddenResult;
-    <WBSCompletionListItem> *_preferredCompletionListItem;
-    unsigned int _preferredCompletionListItemPositionInCompletionList;
-    unsigned int _preferredCompletionListItemPositionInFrequentlyVisitedSites;
-    int _reasonForHidingResult;
+    WBSParsecSearchResult * _hiddenResult;
+    <WBSCompletionListItem> * _preferredCompletionListItem;
+    unsigned int  _preferredCompletionListItemPositionInCompletionList;
+    unsigned int  _preferredCompletionListItemPositionInFrequentlyVisitedSites;
+    int  _reasonForHidingResult;
 }
 
 @property (nonatomic, readonly) NSDictionary *feedbackDictionaryRepresentation;

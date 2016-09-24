@@ -3,15 +3,15 @@
  */
 
 @interface iAUPServer : NSObject {
-    <iAUPServerDelegate> *_delegate;
-    BOOL _escapeInProgress;
-    unsigned int _firmwareImageBaseTransferAddress;
-    int _parserState;
-    unsigned char _telegramChecksum;
-    NSMutableData *_telegramDataIn;
-    unsigned int _telegramLength;
-    FirmwareBundle *firmwareBundle;
-    unsigned short objectBlockTransferSizes;
+    <iAUPServerDelegate> * _delegate;
+    BOOL  _escapeInProgress;
+    unsigned int  _firmwareImageBaseTransferAddress;
+    int  _parserState;
+    unsigned char  _telegramChecksum;
+    NSMutableData * _telegramDataIn;
+    unsigned int  _telegramLength;
+    FirmwareBundle * firmwareBundle;
+    unsigned short  objectBlockTransferSizes;
 }
 
 @property <iAUPServerDelegate> *delegate;

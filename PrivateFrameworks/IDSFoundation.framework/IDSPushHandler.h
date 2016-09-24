@@ -3,12 +3,13 @@
  */
 
 @interface IDSPushHandler : NSObject <APSConnectionDelegate> {
-    Class _APSConnectionClass;
-    APSConnection *_apsConnection;
-    NSData *_cachedPushToken;
-    NSMapTable *_handlerMap;
-    NSObject<OS_dispatch_queue> *_ivarQueue;
-    NSMutableSet *_topicsCache;
+    Class  _APSConnectionClass;
+    APSConnection * _apsConnection;
+    NSData * _cachedPushToken;
+    NSMapTable * _handlerMap;
+    NSObject<OS_dispatch_queue> * _ivarQueue;
+    BOOL  _shouldWaitToSetTopics;
+    NSMutableSet * _topicsCache;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -16,9 +17,11 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isConnected;
 @property (nonatomic, readonly) NSData *pushToken;
+@property (nonatomic) BOOL shouldWaitToSetTopics;
 @property (readonly) Class superclass;
 
 + (id)sharedInstance;
++ (id)sharedInstanceWithPortName:(id)arg1;
 
 - (void)_recalculateTopicsCacheOnIvarQueue;
 - (void)_updateTopicsOnIvarQueue;
@@ -32,10 +35,13 @@
 - (void)connectionDidReconnect:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)initWithPort:(id)arg1;
 - (BOOL)isConnected;
 - (id)pushToken;
 - (void)removeListener:(id)arg1;
 - (void)setCommands:(id)arg1 forListener:(id)arg2;
+- (void)setShouldWaitToSetTopics:(BOOL)arg1;
 - (void)setTopics:(id)arg1 forListener:(id)arg2;
+- (BOOL)shouldWaitToSetTopics;
 
 @end

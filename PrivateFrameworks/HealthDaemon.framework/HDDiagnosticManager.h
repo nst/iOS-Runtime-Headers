@@ -3,8 +3,10 @@
  */
 
 @interface HDDiagnosticManager : NSObject {
-    int _lock;
-    NSHashTable *_objects;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
+    NSHashTable * _objects;
 }
 
 + (id)sharedDiagnosticManager;

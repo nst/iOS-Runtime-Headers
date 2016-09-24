@@ -3,7 +3,7 @@
  */
 
 @interface MSUUpdateBrainAssetLoader : NSObject {
-    ASAsset *_updateAsset;
+    ASAsset * _updateAsset;
 }
 
 @property (nonatomic, retain) ASAsset *updateAsset;
@@ -14,7 +14,7 @@
 - (id)initWithUpdateAsset:(id)arg1;
 - (void)loadUpdateBrainWithOptions:(id)arg1 progressHandler:(id /* block */)arg2;
 - (bool)purgeUpdateBrains:(id*)arg1;
-- (long long)requiredDiskSpace:(id*)arg1;
+- (int)requiredDiskSpace:(id*)arg1;
 - (void)setUpdateAsset:(id)arg1;
 - (id)updateAsset;
 

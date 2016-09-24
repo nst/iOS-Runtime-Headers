@@ -3,16 +3,16 @@
  */
 
 @interface NMSOutgoingResponse : NSObject <NMSDeviceTargetable, NMSObfuscatableDescriptionProviding> {
-    NSData *_data;
-    NSDictionary *_extraIDSOptions;
-    NSString *_idsIdentifier;
-    id _pbResponse;
-    NSDictionary *_persistentUserInfo;
-    unsigned int _priority;
-    NMSIncomingRequest *_request;
-    double _sendTimeout;
-    BOOL _sent;
-    NSSet *targetDeviceIDs;
+    NSData * _data;
+    NSDictionary * _extraIDSOptions;
+    NSString * _idsIdentifier;
+    id  _pbResponse;
+    NSDictionary * _persistentUserInfo;
+    unsigned int  _priority;
+    NMSIncomingRequest * _request;
+    double  _sendTimeout;
+    BOOL  _sent;
+    NSSet * targetDeviceIDs;
 }
 
 @property (nonatomic, retain) NSData *data;

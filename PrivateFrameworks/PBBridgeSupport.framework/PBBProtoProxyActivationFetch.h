@@ -3,7 +3,7 @@
  */
 
 @interface PBBProtoProxyActivationFetch : PBCodable <NSCopying> {
-    NSData *_request;
+    NSData * _request;
 }
 
 @property (nonatomic, retain) NSData *request;

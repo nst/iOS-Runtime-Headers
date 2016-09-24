@@ -3,14 +3,14 @@
  */
 
 @interface _IMPingPacketData : NSObject {
-    int _error;
-    double _rtt;
-    int _sequenceNumber;
+    int  _error;
+    double  _rtt;
+    int  _sequenceNumber;
     struct timeval { 
         int tv_sec; 
         int tv_usec; 
-    } _timeSent;
-    BOOL _timedOut;
+    }  _timeSent;
+    BOOL  _timedOut;
 }
 
 @property (nonatomic, readonly) int error;

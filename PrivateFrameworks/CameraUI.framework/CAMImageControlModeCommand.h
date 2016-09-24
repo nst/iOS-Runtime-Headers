@@ -3,7 +3,7 @@
  */
 
 @interface CAMImageControlModeCommand : CAMCaptureCommand {
-    int __captureMode;
+    int  __captureMode;
 }
 
 @property (nonatomic, readonly) int _captureMode;

@@ -3,12 +3,12 @@
  */
 
 @interface PKUsageNotificationClient : NSObject <PKUsageNotificationClientExportedInterface> {
-    PKXPCService *_connection;
-    id /* block */ _handler;
-    id /* block */ _paymentHandler;
+    PKXPCService * _connection;
+    id /* block */  _handler;
+    id /* block */  _paymentHandler;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)init;
 - (void)setPassUsageHandler:(id /* block */)arg1;
 - (void)setPaymentUsageHandler:(id /* block */)arg1;

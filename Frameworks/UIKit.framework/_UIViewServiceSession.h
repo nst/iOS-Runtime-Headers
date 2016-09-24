@@ -3,13 +3,13 @@
  */
 
 @interface _UIViewServiceSession : NSObject <NSXPCConnectionDelegate, _UIViewServiceDeputyManagerDelegate, _UIViewServiceViewControllerOperatorDelegate> {
-    BOOL __automatic_invalidation_invalidated;
-    int __automatic_invalidation_retainCount;
-    NSXPCConnection *_connection;
-    _UIViewServiceDeputyManager *_deputyManager;
-    _UIAsyncInvocation *_invalidationInvocation;
-    NSObject<OS_dispatch_queue> *_queue;
-    id /* block */ _terminationHandler;
+    BOOL  __automatic_invalidation_invalidated;
+    int  __automatic_invalidation_retainCount;
+    NSXPCConnection * _connection;
+    _UIViewServiceDeputyManager * _deputyManager;
+    _UIAsyncInvocation * _invalidationInvocation;
+    NSObject<OS_dispatch_queue> * _queue;
+    id /* block */  _terminationHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;

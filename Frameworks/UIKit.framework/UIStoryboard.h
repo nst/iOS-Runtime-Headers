@@ -3,12 +3,12 @@
  */
 
 @interface UIStoryboard : NSObject {
-    NSBundle *bundle;
-    NSString *designatedEntryPointIdentifier;
-    NSDictionary *identifierToExternalStoryboardReferenceMap;
-    NSDictionary *identifierToNibNameMap;
-    NSMutableDictionary *identifierToUINibMap;
-    NSString *storyboardFileName;
+    NSBundle * bundle;
+    NSString * designatedEntryPointIdentifier;
+    NSDictionary * identifierToExternalStoryboardReferenceMap;
+    NSDictionary * identifierToNibNameMap;
+    NSMutableDictionary * identifierToUINibMap;
+    NSString * storyboardFileName;
 }
 
 @property (nonatomic, readonly) NSBundle *bundle;

@@ -3,10 +3,10 @@
  */
 
 @interface AKPageModelController : NSObject {
-    AKCropAnnotation *_cropAnnotation;
-    NSMutableOrderedSet *_mutableAnnotations;
-    NSMutableSet *_mutableSelectedAnnotations;
-    id _representedObject;
+    AKCropAnnotation * _cropAnnotation;
+    NSMutableOrderedSet * _mutableAnnotations;
+    NSMutableSet * _mutableSelectedAnnotations;
+    id  _representedObject;
 }
 
 @property (readonly) NSArray *annotations;
@@ -17,6 +17,7 @@
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)_enableEditObservationForAnnotationIfNew:(id)arg1;
 - (void)addCropToolAnnotation;
 - (void)addSelectedAnnotations:(id)arg1;
 - (void)addSelectedAnnotationsObject:(id)arg1;
@@ -26,12 +27,14 @@
 - (void)bringSelectedAnnotationsToFront;
 - (BOOL)containsAnnotation:(id)arg1;
 - (id)cropAnnotation;
+- (void)establishAnnotationParentChildRelationships;
 - (BOOL)hasMaskBorderAnnotation;
 - (id)init;
 - (id)initWithArchivableRepresentation:(id)arg1;
 - (void)insertAnnotations:(id)arg1 atIndexes:(id)arg2;
 - (void)insertObject:(id)arg1 inAnnotationsAtIndex:(unsigned int)arg2;
 - (void)intersectSelectedAnnotations:(id)arg1;
+- (void)removeAllAnnotations;
 - (void)removeAnnotationsAtIndexes:(id)arg1;
 - (void)removeCropToolAnnotation;
 - (void)removeObjectFromAnnotationsAtIndex:(unsigned int)arg1;

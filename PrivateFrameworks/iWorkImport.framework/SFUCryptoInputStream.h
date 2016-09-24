@@ -3,9 +3,9 @@
  */
 
 @interface SFUCryptoInputStream : NSObject <SFUInputStream> {
-    <SFUInputStream> *mBaseStream;
-    SFUCryptor *mCryptor;
-    long long mOffset;
+    <SFUInputStream> * mBaseStream;
+    SFUCryptor * mCryptor;
+    int  mOffset;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,8 +20,8 @@
 - (void)disableSystemCaching;
 - (void)enableSystemCaching;
 - (id)initForDecryptionWithInputStream:(id)arg1 key:(id)arg2;
-- (long long)offset;
+- (int)offset;
 - (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;
-- (void)seekToOffset:(long long)arg1;
+- (void)seekToOffset:(int)arg1;
 
 @end

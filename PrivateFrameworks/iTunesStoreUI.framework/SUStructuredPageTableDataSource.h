@@ -3,12 +3,12 @@
  */
 
 @interface SUStructuredPageTableDataSource : SUTableDataSource {
-    SUItem *_activeLoadMoreItem;
-    NSMutableArray *_cachedHeaderViews;
-    SUClientInterface *_clientInterface;
-    float _offerButtonWidth;
-    SUStructuredPage *_structuredPage;
-    int _style;
+    SUItem * _activeLoadMoreItem;
+    NSMutableArray * _cachedHeaderViews;
+    SUClientInterface * _clientInterface;
+    double  _offerButtonWidth;
+    SUStructuredPage * _structuredPage;
+    int  _style;
 }
 
 @property (nonatomic, retain) SUItem *activeLoadMoreItem;

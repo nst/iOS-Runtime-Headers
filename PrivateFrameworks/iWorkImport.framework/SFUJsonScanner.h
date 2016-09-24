@@ -3,12 +3,12 @@
  */
 
 @interface SFUJsonScanner : NSObject {
-    unsigned short *mCharacters;
-    NSCharacterSet *mDecimalDigitCharacterSet;
-    unsigned int mLength;
-    unsigned int mOffset;
-    NSString *mString;
-    NSCharacterSet *mWhitespaceCharacterSet;
+    unsigned short * mCharacters;
+    NSCharacterSet * mDecimalDigitCharacterSet;
+    unsigned int  mLength;
+    unsigned int  mOffset;
+    NSString * mString;
+    NSCharacterSet * mWhitespaceCharacterSet;
 }
 
 - (void)appendCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 toString:(id)arg2;

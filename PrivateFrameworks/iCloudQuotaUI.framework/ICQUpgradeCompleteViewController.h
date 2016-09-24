@@ -3,7 +3,7 @@
  */
 
 @interface ICQUpgradeCompleteViewController : ICQViewController {
-    _ICQUpgradeCompletePageSpecification *_upgradeCompletePageSpecification;
+    _ICQUpgradeCompletePageSpecification * _upgradeCompletePageSpecification;
 }
 
 @property (nonatomic, retain) _ICQUpgradeCompletePageSpecification *upgradeCompletePageSpecification;

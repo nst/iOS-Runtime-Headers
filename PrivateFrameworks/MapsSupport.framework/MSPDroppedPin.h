@@ -3,15 +3,21 @@
  */
 
 @interface MSPDroppedPin : PBCodable <NSCopying> {
-    GEOLatLng *_latLng;
-    GEOMapRegion *_mapRegion;
-    PBUnknownFields *_unknownFields;
+    struct { 
+        unsigned int timestamp : 1; 
+    }  _has;
+    GEOLatLng * _latLng;
+    GEOMapRegion * _mapRegion;
+    double  _timestamp;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, readonly) BOOL hasLatLng;
 @property (nonatomic, readonly) BOOL hasMapRegion;
+@property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic, retain) GEOLatLng *latLng;
 @property (nonatomic, retain) GEOMapRegion *mapRegion;
+@property (nonatomic) double timestamp;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (void).cxx_destruct;
@@ -21,14 +27,18 @@
 - (id)dictionaryRepresentation;
 - (BOOL)hasLatLng;
 - (BOOL)hasMapRegion;
+- (BOOL)hasTimestamp;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)latLng;
 - (id)mapRegion;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
 - (void)setLatLng:(id)arg1;
 - (void)setMapRegion:(id)arg1;
+- (void)setTimestamp:(double)arg1;
+- (double)timestamp;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
 

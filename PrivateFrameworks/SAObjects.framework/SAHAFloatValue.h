@@ -4,7 +4,7 @@
 
 @interface SAHAFloatValue : SAHAAttributeValue
 
-@property (nonatomic) float value;
+@property (nonatomic) double value;
 
 // Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 

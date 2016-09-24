@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DGLVBOLoader : TSCH3DResourceLoader {
-    unsigned int mType;
+    unsigned int  mType;
 }
 
 + (id)loaderWithType:(unsigned int)arg1;

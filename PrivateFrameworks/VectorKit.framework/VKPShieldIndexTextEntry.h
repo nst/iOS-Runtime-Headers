@@ -3,12 +3,12 @@
  */
 
 @interface VKPShieldIndexTextEntry : PBCodable <NSCopying> {
-    NSString *_artworkIdentifier;
+    NSString * _artworkIdentifier;
     struct { 
         unsigned int shieldType : 1; 
-    } _has;
-    NSMutableArray *_shieldTexts;
-    int _shieldType;
+    }  _has;
+    NSMutableArray * _shieldTexts;
+    int  _shieldType;
 }
 
 @property (nonatomic, retain) NSString *artworkIdentifier;

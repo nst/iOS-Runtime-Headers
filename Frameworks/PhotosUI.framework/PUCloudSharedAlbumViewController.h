@@ -3,19 +3,19 @@
  */
 
 @interface PUCloudSharedAlbumViewController : PUPhotosAlbumViewController <PLAlbumStreamingOptionsViewControllerDelegate, PUPhotoStreamComposeServiceDelegate, PUVideoTrimQueueControllerDelegate, UIPopoverPresentationControllerDelegate> {
-    BOOL __canContributeToCloudSharedAlbum;
-    UIBarButtonItem *__optionsBarButtonItem;
-    UIBarButtonItem *__optionsBarButtonSpacerItem;
-    UIViewController *__optionsPopoverRootViewController;
-    UIViewController *__optionsViewController;
-    int __selectedItemIndex;
-    UIBarButtonItem *__switcherBarButtonItem;
-    UISegmentedControl *__switcherSegmentedControl;
-    NSArray *__transitioningOptionsViewControllers;
-    PUPhotosPickerViewController *_activePhotosPickerViewController;
-    PUPhotoStreamComposeServiceViewController *_composeServiceController;
-    BOOL _displayingOptions;
-    PUVideoTrimQueueController *_trimController;
+    BOOL  __canContributeToCloudSharedAlbum;
+    UIBarButtonItem * __optionsBarButtonItem;
+    UIBarButtonItem * __optionsBarButtonSpacerItem;
+    UIViewController * __optionsPopoverRootViewController;
+    UIViewController * __optionsViewController;
+    int  __selectedItemIndex;
+    UIBarButtonItem * __switcherBarButtonItem;
+    UISegmentedControl * __switcherSegmentedControl;
+    NSArray * __transitioningOptionsViewControllers;
+    PUPhotosPickerViewController * _activePhotosPickerViewController;
+    PUPhotoStreamComposeServiceViewController * _composeServiceController;
+    BOOL  _displayingOptions;
+    PUVideoTrimQueueController * _trimController;
 }
 
 @property (setter=_setCanContributeToCloudSharedAlbum:, nonatomic) BOOL _canContributeToCloudSharedAlbum;
@@ -79,7 +79,7 @@
 - (void)photoStreamComposeServiceDidCancel:(id)arg1;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (BOOL)prepareForDismissingForced:(BOOL)arg1;
-- (void)setAlbum:(struct NSObject { Class x1; }*)arg1 existingFetchResults:(id)arg2;
+- (void)setAlbum:(struct NSObject { Class x1; }*)arg1 existingFetchResult:(id)arg2;
 - (void)setDisplayingOptions:(BOOL)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)shouldShowTabBar;

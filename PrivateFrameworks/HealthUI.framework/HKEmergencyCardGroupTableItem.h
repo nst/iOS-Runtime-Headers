@@ -3,8 +3,8 @@
  */
 
 @interface HKEmergencyCardGroupTableItem : HKEmergencyCardTableItem {
-    NSMutableArray *_cumulativeRowOffsets;
-    NSArray *_subitems;
+    NSMutableArray * _cumulativeRowOffsets;
+    NSArray * _subitems;
 }
 
 @property (nonatomic, retain) NSArray *subitems;
@@ -25,6 +25,7 @@
 - (id)subitems;
 - (id)tableView:(id)arg1 cellForRowAtIndex:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndex:(int)arg2;
+- (float)tableView:(id)arg1 estimatedHeightForRowAtIndex:(int)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndex:(int)arg2;
 - (id)titleForFooter;
 

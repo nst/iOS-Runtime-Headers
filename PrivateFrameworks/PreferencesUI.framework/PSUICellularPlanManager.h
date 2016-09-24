@@ -3,13 +3,13 @@
  */
 
 @interface PSUICellularPlanManager : NSObject {
-    BOOL _cacheIsValid;
-    BOOL _hasHomePlan;
-    BOOL _hasSubscriptions;
-    BOOL _isMultipleDataPlanSupportAvailable;
-    BOOL _isRoamingPlanSupportAvailable;
-    NSArray *_planItems;
-    CTCellularPlanItem *_selectedPlanItem;
+    BOOL  _cacheIsValid;
+    BOOL  _hasHomePlan;
+    BOOL  _hasSubscriptions;
+    BOOL  _isMultipleDataPlanSupportAvailable;
+    BOOL  _isRoamingPlanSupportAvailable;
+    NSArray * _planItems;
+    CTCellularPlanItem * _selectedPlanItem;
 }
 
 @property (nonatomic, readonly) BOOL hasSubscriptions;

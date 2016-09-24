@@ -3,12 +3,12 @@
  */
 
 @interface MKDebugLocationConsole : UILabel {
-    NSString *_customText;
-    UIColor *_customTextColor;
-    BOOL _customTextEnabled;
-    unsigned int _pageIndex;
-    MKMapView *_parentMapView;
-    NSTimer *_updateTimer;
+    NSString * _customText;
+    UIColor * _customTextColor;
+    BOOL  _customTextEnabled;
+    unsigned int  _pageIndex;
+    MKMapView * _parentMapView;
+    NSTimer * _updateTimer;
 }
 
 @property (nonatomic) BOOL customTextEnabled;
@@ -16,7 +16,7 @@
 
 - (void).cxx_destruct;
 - (void)_consoleTapped:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_debugViewFrameWithMapView:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_debugViewFrameWithMapView:(id)arg1;
 - (void)_showNextPage;
 - (void)_updateCustomText;
 - (void)_updateGPSInfo;
@@ -28,6 +28,6 @@
 - (void)setPageIndex:(unsigned int)arg1;
 - (void)update;
 - (void)updateCustomText:(id)arg1 textColor:(id)arg2;
-- (void)updateFrameWithEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)updateFrameWithEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 
 @end

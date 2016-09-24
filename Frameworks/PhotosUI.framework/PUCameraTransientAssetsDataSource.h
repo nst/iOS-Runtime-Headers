@@ -3,10 +3,10 @@
  */
 
 @interface PUCameraTransientAssetsDataSource : PUAssetsDataSource {
-    NSArray *__assetUUIDs;
-    NSDictionary *__assetsByUUID;
-    NSDictionary *__representativeAssetsByBurstIdentifier;
-    <PUDisplayAssetCollection> *__transientAssetCollection;
+    NSArray * __assetUUIDs;
+    NSDictionary * __assetsByUUID;
+    NSDictionary * __representativeAssetsByBurstIdentifier;
+    <PUDisplayAssetCollection> * __transientAssetCollection;
 }
 
 @property (nonatomic, readonly) NSArray *_assetUUIDs;

@@ -3,12 +3,12 @@
  */
 
 @interface ODDIteratorAttributes : NSObject {
-    int mAxis;
-    unsigned int mCount;
-    BOOL mHideLastTransition;
-    int mPointType;
-    int mStart;
-    int mStep;
+    int  mAxis;
+    unsigned int  mCount;
+    BOOL  mHideLastTransition;
+    int  mPointType;
+    int  mStart;
+    int  mStep;
 }
 
 - (int)axis;

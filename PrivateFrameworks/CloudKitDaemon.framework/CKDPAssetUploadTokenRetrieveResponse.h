@@ -3,10 +3,12 @@
  */
 
 @interface CKDPAssetUploadTokenRetrieveResponse : PBCodable <NSCopying> {
-    NSMutableArray *_uploadTokens;
+    NSMutableArray * _uploadTokens;
 }
 
 @property (nonatomic, retain) NSMutableArray *uploadTokens;
+
++ (Class)uploadTokensType;
 
 - (void).cxx_destruct;
 - (void)addUploadTokens:(id)arg1;

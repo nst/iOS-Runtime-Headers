@@ -3,9 +3,9 @@
  */
 
 @interface VKPTextureAtlas : PBCodable <NSCopying> {
-    unsigned int _quadHeight;
-    unsigned int _quadWidth;
-    NSData *_texture;
+    unsigned int  _quadHeight;
+    unsigned int  _quadWidth;
+    NSData * _texture;
 }
 
 @property (nonatomic) unsigned int quadHeight;

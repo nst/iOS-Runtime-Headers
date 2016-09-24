@@ -5,7 +5,7 @@
 @interface WKDOMNode : NSObject {
     struct RefPtr<WebCore::Node> { 
         struct Node {} *m_ptr; 
-    } _impl;
+    }  _impl;
 }
 
 @property (readonly) WKDOMDocument *document;
@@ -19,7 +19,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (struct OpaqueWKBundleNodeHandle { }*)_copyBundleNodeHandleRef;
-- (id)_initWithImpl:(struct Node { int (**x1)(); struct Weak<WebCore::JSDOMWrapper> { struct WeakImpl {} *x_2_1_1; } x2; int x3; unsigned int x4; struct ContainerNode {} *x5; struct TreeScope {} *x6; struct Node {} *x7; struct Node {} *x8; union DataUnion { struct RenderObject {} *x_9_1_1; struct NodeRareDataBase {} *x_9_1_2; } x9; }*)arg1;
+- (id)_initWithImpl:(struct Node { int (**x1)(); struct Weak<WebCore::JSDOMObject> { struct WeakImpl {} *x_2_1_1; } x2; int x3; unsigned int x4; struct ContainerNode {} *x5; struct TreeScope {} *x6; struct Node {} *x7; struct Node {} *x8; union DataUnion { struct RenderObject {} *x_9_1_1; struct NodeRareDataBase {} *x_9_1_2; } x9; }*)arg1;
 - (void)appendChild:(id)arg1;
 - (void)dealloc;
 - (id)document;

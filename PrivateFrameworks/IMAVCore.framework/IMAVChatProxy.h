@@ -3,7 +3,7 @@
  */
 
 @interface IMAVChatProxy : NSObject {
-    NSDictionary *_info;
+    NSDictionary * _info;
 }
 
 @property (nonatomic, readonly, retain) NSString *GUID;
@@ -15,7 +15,6 @@
 @property (nonatomic, readonly, retain) NSDate *dateEnded;
 @property (nonatomic, readonly) int endedError;
 @property (nonatomic, readonly) unsigned int endedReason;
-@property (nonatomic, readonly) BOOL hasAudioInterruption;
 @property (nonatomic, readonly) BOOL hasReceivedFirstFrame;
 @property (nonatomic, readonly, retain) IMHandle *initiatorIMHandle;
 @property (nonatomic) double invitationTimeoutTime;
@@ -23,6 +22,7 @@
 @property (nonatomic, readonly) BOOL isCaller;
 @property (setter=setMute:, nonatomic) BOOL isMute;
 @property (nonatomic) BOOL isSendingAudio;
+@property (nonatomic) BOOL isSendingVideo;
 @property (nonatomic, readonly) BOOL isStateFinal;
 @property (nonatomic, readonly) BOOL isVideo;
 @property (nonatomic, readonly, retain) IMHandle *otherIMHandle;
@@ -35,8 +35,6 @@
 - (BOOL)_isCallUpgradeTo:(id)arg1;
 - (BOOL)_isProxy;
 - (void)acceptInvitation;
-- (void)acceptInvitationWithHoldMusic;
-- (void)acceptInvitationWithSource:(id)arg1;
 - (id)account;
 - (void)cancelInvitation;
 - (id)conferenceID;
@@ -54,17 +52,18 @@
 - (unsigned int)endedReason;
 - (void)finalUpdate;
 - (void)forwardInvocation:(id)arg1;
-- (BOOL)hasAudioInterruption;
 - (BOOL)hasReceivedFirstFrame;
 - (id)initiatorIMHandle;
 - (double)invitationTimeoutTime;
 - (void)invite:(id)arg1 additionalPeers:(id)arg2;
+- (void)invite:(id)arg1 additionalPeers:(id)arg2 excludingPushTokens:(id)arg3;
 - (void)inviteAll;
 - (BOOL)isActive;
 - (BOOL)isCaller;
 - (BOOL)isMute;
 - (BOOL)isRelayed;
 - (BOOL)isSendingAudio;
+- (BOOL)isSendingVideo;
 - (BOOL)isStateFinal;
 - (BOOL)isVideo;
 - (id)methodSignatureForSelector:(SEL)arg1;
@@ -74,7 +73,8 @@
 - (void)setConnectionTimeoutTime:(double)arg1;
 - (void)setInvitationTimeoutTime:(double)arg1;
 - (void)setIsSendingAudio:(BOOL)arg1;
-- (void)setLocalAspectRatio:(struct CGSize { float x1; float x2; })arg1 cameraOrientation:(unsigned int)arg2 cameraType:(unsigned int)arg3;
+- (void)setIsSendingVideo:(BOOL)arg1;
+- (void)setLocalAspectRatio:(struct CGSize { double x1; double x2; })arg1 cameraOrientation:(unsigned int)arg2 cameraType:(unsigned int)arg3;
 - (void)setMute:(BOOL)arg1;
 - (void)setRelayed:(BOOL)arg1;
 - (unsigned int)state;

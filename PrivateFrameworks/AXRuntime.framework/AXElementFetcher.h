@@ -3,29 +3,29 @@
  */
 
 @interface AXElementFetcher : NSObject {
-    unsigned int _activeFetchEvents;
-    struct __AXObserver { } *_axRuntimeNotificationObserver;
-    NSArray *_currentApps;
-    <AXElementFetcherDelegate> *_delegate;
-    BOOL _didSendFakeScreenChangeOnLastFetch;
-    NSObject<OS_dispatch_queue> *_elementAccessQueue;
-    NSArray *_elementCache;
-    NSObject<OS_dispatch_queue> *_elementFetchQueue;
-    AXElementGroupPruner *_elementGroupPruner;
-    BOOL _enabled;
-    NSObject<OS_dispatch_source> *_eventCoalesceTimer;
-    BOOL _eventManagementEnabled;
-    NSMapTable *_fetchObservers;
-    BOOL _fetchingElements;
-    NSObject<OS_dispatch_queue> *_filterAccessQueue;
-    BOOL _groupingEnabled;
-    AXElementGroup *_keyboardGroupCache;
-    NSMutableDictionary *_postFetchFilters;
-    AXElementGroup *_rootGroupCache;
-    unsigned int _scheduledFetchEvent;
-    BOOL _shouldIncludeNonScannerElements;
-    BOOL _shouldUsePadInterfaceHeuristics;
-    AXVisualElementGrouper *_visualElementGrouper;
+    unsigned int  _activeFetchEvents;
+    struct __AXObserver { } * _axRuntimeNotificationObserver;
+    NSArray * _currentApps;
+    <AXElementFetcherDelegate> * _delegate;
+    BOOL  _didSendFakeScreenChangeOnLastFetch;
+    NSObject<OS_dispatch_queue> * _elementAccessQueue;
+    NSArray * _elementCache;
+    NSObject<OS_dispatch_queue> * _elementFetchQueue;
+    AXElementGroupPruner * _elementGroupPruner;
+    int  _elementGroupingHeuristics;
+    BOOL  _enabled;
+    NSObject<OS_dispatch_source> * _eventCoalesceTimer;
+    BOOL  _eventManagementEnabled;
+    NSMapTable * _fetchObservers;
+    BOOL  _fetchingElements;
+    NSObject<OS_dispatch_queue> * _filterAccessQueue;
+    BOOL  _groupingEnabled;
+    AXElementGroup * _keyboardGroupCache;
+    NSMutableDictionary * _postFetchFilters;
+    AXElementGroup * _rootGroupCache;
+    unsigned int  _scheduledFetchEvent;
+    BOOL  _shouldIncludeNonScannerElements;
+    AXVisualElementGrouper * _visualElementGrouper;
 }
 
 @property (nonatomic) unsigned int activeFetchEvents;
@@ -35,6 +35,7 @@
 @property (nonatomic) BOOL didSendFakeScreenChangeOnLastFetch;
 @property (nonatomic, retain) NSArray *elementCache;
 @property (nonatomic, readonly) AXElementGroupPruner *elementGroupPruner;
+@property (nonatomic) int elementGroupingHeuristics;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
 @property (getter=isEventManagementEnabled, nonatomic) BOOL eventManagementEnabled;
 @property (nonatomic, retain) NSMapTable *fetchObservers;
@@ -44,11 +45,11 @@
 @property (nonatomic, readonly) AXElementGroup *keyboardGroup;
 @property (nonatomic, retain) AXElementGroup *keyboardGroupCache;
 @property (nonatomic, readonly) AXElementGroup *lastKeyboardRow;
+@property (nonatomic, readonly) AXElement *nativeFocusElement;
 @property (nonatomic, retain) NSMutableDictionary *postFetchFilters;
 @property (nonatomic, readonly) AXElementGroup *rootGroup;
 @property (nonatomic, retain) AXElementGroup *rootGroupCache;
 @property (nonatomic) BOOL shouldIncludeNonScannerElements;
-@property (nonatomic) BOOL shouldUsePadInterfaceHeuristics;
 @property (nonatomic, retain) AXVisualElementGrouper *visualElementGrouper;
 @property (nonatomic, readonly) BOOL willFetchElements;
 
@@ -71,9 +72,17 @@
 - (id)_findGroupableMatchingBlock:(id /* block */)arg1 inElementGroup:(id)arg2;
 - (id)_findGroupableMatchingGroupable:(id)arg1 inElementGroup:(id)arg2;
 - (id)_groupWithDictionary:(id)arg1 currentPid:(int)arg2;
-- (id)_groupWithItems:(id)arg1 groupTraits:(int)arg2 label:(id)arg3 currentPid:(int)arg4;
+- (id)_groupWithItems:(id)arg1 groupTraits:(int)arg2 scanningBehaviorTraits:(int)arg3 label:(id)arg4 currentPid:(int)arg5;
+- (void)_handleApplicationWasActivated:(id)arg1;
+- (void)_handleMediaDidBegin:(struct __CFData { }*)arg1;
+- (void)_handleNativeFocusItemDidChange:(struct __CFData { }*)arg1;
+- (void)_handleUpdateElementVisuals:(struct __CFData { }*)arg1;
+- (void)_notifyObserversApplicationWasActivated:(id)arg1;
 - (void)_notifyObserversDidFetchElementsForEvent:(unsigned int)arg1 foundNewElements:(BOOL)arg2;
 - (void)_notifyObserversDidScheduleFetchEvent:(unsigned int)arg1;
+- (void)_notifyObserversMediaDidBegin:(struct __CFData { }*)arg1;
+- (void)_notifyObserversNativeFocusElementDidChange:(id)arg1;
+- (void)_notifyObserversUpdateElementVisuals:(id)arg1;
 - (void)_notifyObserversWillFetchElementsForEvent:(unsigned int)arg1;
 - (int)_priorityForFetchEvent:(unsigned int)arg1;
 - (id)_processAppGroup:(id)arg1 keyboardGroup:(id*)arg2;
@@ -88,7 +97,7 @@
 - (void)addPostFetchFilter:(id /* block */)arg1 withIdentifier:(id)arg2;
 - (id)availableElements;
 - (id)closestElementToElement:(id)arg1;
-- (id)closestElementToPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)closestElementToPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (id)currentApps;
 - (void)dealloc;
 - (id)delegate;
@@ -97,6 +106,7 @@
 - (void)disableEventManagement;
 - (id)elementCache;
 - (id)elementGroupPruner;
+- (int)elementGroupingHeuristics;
 - (void)enableEventManagement;
 - (void)fetchEventOccurred:(unsigned int)arg1;
 - (id)fetchObservers;
@@ -116,6 +126,7 @@
 - (id)keyboardGroupCache;
 - (id)lastElement;
 - (id)lastKeyboardRow;
+- (id)nativeFocusElement;
 - (id)nextSiblingOfElement:(id)arg1 didWrap:(BOOL*)arg2;
 - (id)nextSiblingOfGroupable:(id)arg1 didWrap:(BOOL*)arg2;
 - (id)postFetchFilters;
@@ -133,6 +144,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDidSendFakeScreenChangeOnLastFetch:(BOOL)arg1;
 - (void)setElementCache:(id)arg1;
+- (void)setElementGroupingHeuristics:(int)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setEventManagementEnabled:(BOOL)arg1;
 - (void)setFetchObservers:(id)arg1;
@@ -142,10 +154,8 @@
 - (void)setPostFetchFilters:(id)arg1;
 - (void)setRootGroupCache:(id)arg1;
 - (void)setShouldIncludeNonScannerElements:(BOOL)arg1;
-- (void)setShouldUsePadInterfaceHeuristics:(BOOL)arg1;
 - (void)setVisualElementGrouper:(id)arg1;
 - (BOOL)shouldIncludeNonScannerElements;
-- (BOOL)shouldUsePadInterfaceHeuristics;
 - (void)unregisterAllFetchObservers;
 - (void)unregisterFetchObserver:(id)arg1;
 - (id)visualElementGrouper;

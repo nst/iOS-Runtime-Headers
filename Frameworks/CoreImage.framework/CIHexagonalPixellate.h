@@ -3,9 +3,9 @@
  */
 
 @interface CIHexagonalPixellate : CIFilter {
-    CIVector *inputCenter;
-    CIImage *inputImage;
-    NSNumber *inputScale;
+    CIVector * inputCenter;
+    CIImage * inputImage;
+    NSNumber * inputScale;
 }
 
 + (id)customAttributes;

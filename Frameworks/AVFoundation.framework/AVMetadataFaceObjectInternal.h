@@ -3,39 +3,39 @@
  */
 
 @interface AVMetadataFaceObjectInternal : NSObject {
-    int _faceID;
-    BOOL _hasLeftEyeBounds;
-    BOOL _hasLeftEyeClosedConfidence;
-    BOOL _hasRightEyeBounds;
-    BOOL _hasRightEyeClosedConfidence;
-    BOOL _hasRollAngle;
-    BOOL _hasSmileConfidence;
-    BOOL _hasYawAngle;
+    int  _faceID;
+    BOOL  _hasLeftEyeBounds;
+    BOOL  _hasLeftEyeClosedConfidence;
+    BOOL  _hasRightEyeBounds;
+    BOOL  _hasRightEyeClosedConfidence;
+    BOOL  _hasRollAngle;
+    BOOL  _hasSmileConfidence;
+    BOOL  _hasYawAngle;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _leftEyeBounds;
-    int _leftEyeClosedConfidence;
+    }  _leftEyeBounds;
+    int  _leftEyeClosedConfidence;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _rightEyeBounds;
-    int _rightEyeClosedConfidence;
-    float _rollAngle;
-    int _smileConfidence;
-    float _yawAngle;
+    }  _rightEyeBounds;
+    int  _rightEyeClosedConfidence;
+    double  _rollAngle;
+    int  _smileConfidence;
+    double  _yawAngle;
 }
 
 @property (nonatomic) int faceID;
@@ -46,13 +46,13 @@
 @property (nonatomic) BOOL hasRollAngle;
 @property (nonatomic) BOOL hasSmileConfidence;
 @property (nonatomic) BOOL hasYawAngle;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } leftEyeBounds;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } leftEyeBounds;
 @property (nonatomic) int leftEyeClosedConfidence;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rightEyeBounds;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } rightEyeBounds;
 @property (nonatomic) int rightEyeClosedConfidence;
-@property (nonatomic) float rollAngle;
+@property (nonatomic) double rollAngle;
 @property (nonatomic) int smileConfidence;
-@property (nonatomic) float yawAngle;
+@property (nonatomic) double yawAngle;
 
 - (int)faceID;
 - (BOOL)hasLeftEyeBounds;
@@ -62,9 +62,9 @@
 - (BOOL)hasRollAngle;
 - (BOOL)hasSmileConfidence;
 - (BOOL)hasYawAngle;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })leftEyeBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })leftEyeBounds;
 - (int)leftEyeClosedConfidence;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rightEyeBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rightEyeBounds;
 - (int)rightEyeClosedConfidence;
 - (float)rollAngle;
 - (void)setFaceID:(int)arg1;
@@ -75,9 +75,9 @@
 - (void)setHasRollAngle:(BOOL)arg1;
 - (void)setHasSmileConfidence:(BOOL)arg1;
 - (void)setHasYawAngle:(BOOL)arg1;
-- (void)setLeftEyeBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setLeftEyeBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setLeftEyeClosedConfidence:(int)arg1;
-- (void)setRightEyeBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setRightEyeBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setRightEyeClosedConfidence:(int)arg1;
 - (void)setRollAngle:(float)arg1;
 - (void)setSmileConfidence:(int)arg1;

@@ -3,9 +3,9 @@
  */
 
 @interface PSKeychainSyncViewController : PSListController <KeychainSyncViewController> {
-    <KeychainSyncViewControllerDelegate> *_delegate;
-    PSSpecifier *_groupSpecifier;
-    PSKeychainSyncHeaderView *_headerView;
+    <KeychainSyncViewControllerDelegate> * _delegate;
+    PSSpecifier * _groupSpecifier;
+    PSKeychainSyncHeaderView * _headerView;
 }
 
 @property (nonatomic) <KeychainSyncViewControllerDelegate> *delegate;

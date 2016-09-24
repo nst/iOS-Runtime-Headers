@@ -3,14 +3,14 @@
  */
 
 @interface HKDevice : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_UDIDeviceIdentifier;
-    NSString *_firmwareVersion;
-    NSString *_hardwareVersion;
-    NSString *_localIdentifier;
-    NSString *_manufacturer;
-    NSString *_model;
-    NSString *_name;
-    NSString *_softwareVersion;
+    NSString * _UDIDeviceIdentifier;
+    NSString * _firmwareVersion;
+    NSString * _hardwareVersion;
+    NSString * _localIdentifier;
+    NSString * _manufacturer;
+    NSString * _model;
+    NSString * _name;
+    NSString * _softwareVersion;
 }
 
 @property (readonly) NSString *UDIDeviceIdentifier;

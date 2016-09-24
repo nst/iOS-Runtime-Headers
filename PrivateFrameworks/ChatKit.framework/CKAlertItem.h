@@ -3,10 +3,10 @@
  */
 
 @interface CKAlertItem : SBAlertItem {
-    int _alignment;
-    BOOL _alignmentHasBeenSet;
-    BOOL _displayingEntireMessage;
-    BOOL _shouldHideSMSPreview;
+    int  _alignment;
+    BOOL  _alignmentHasBeenSet;
+    BOOL  _displayingEntireMessage;
+    BOOL  _shouldHideSMSPreview;
 }
 
 - (void)_deactivateAllTaggedAlertItems;
@@ -14,9 +14,6 @@
 - (void)_tag;
 - (id)_taggedAlertItems;
 - (void)_untag;
-- (id)alertSheet;
-- (Class)alertSheetClass;
-- (int)bodyTextAlignmentForAlertSheet:(id)arg1 displayedLineCount:(int)arg2;
 - (void)didDeactivateForReason:(int)arg1;
 - (BOOL)forcesModalAlertAppearance;
 - (id)init;

@@ -3,7 +3,7 @@
  */
 
 @interface TSKAnimatedGIFLayer : CALayer {
-    TSKAnimatedGIFController *mController;
+    TSKAnimatedGIFController * mController;
 }
 
 @property (nonatomic) TSKAnimatedGIFController *controller;

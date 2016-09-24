@@ -2,23 +2,29 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKIdentityViewController : UIViewController <ABPersonViewControllerDelegate, EKEditItemViewControllerProtocol> {
-    <EKIdentityProtocol> *_identity;
-    ABPersonViewController *_personViewController;
+@interface EKIdentityViewController : UIViewController <EKEditItemViewControllerProtocol> {
+    <EKIdentityProtocol> * _identity;
+    CNContactViewController * _personViewController;
+    CNContactStore * _store;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
 @property (nonatomic) <EKEditItemViewControllerDelegate> *editDelegate;
 @property (nonatomic) BOOL editItemShouldBeAskedForInjectableViewController;
-@property (readonly) unsigned int hash;
 @property (nonatomic) BOOL presentModally;
-@property (readonly) Class superclass;
+@property (nonatomic) BOOL useCustomBackButton;
 
 - (void).cxx_destruct;
+- (id)CNContactEmailAddressesKey;
+- (id)CNLabelWork;
+- (Class)_CNContactClass;
+- (Class)_CNContactStoreClass;
+- (Class)_CNContactViewControllerClass;
+- (Class)_CNLabeledValueClass;
+- (Class)_CNMutableContactClass;
+- (id)contactForIdentity:(id)arg1;
 - (id)initWithIdentity:(id)arg1;
 - (void)loadView;
-- (BOOL)personViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
 - (void)setIdentity:(id)arg1;
+- (void)updateControllerWithContact:(id)arg1 isNew:(BOOL)arg2;
 
 @end

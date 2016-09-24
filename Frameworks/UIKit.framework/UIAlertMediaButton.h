@@ -3,9 +3,9 @@
  */
 
 @interface UIAlertMediaButton : UIAlertButton {
-    UIImageView *_checkmarkView;
-    UIImage *_highlightedTableIcon;
-    UIImage *_tableIcon;
+    UIImageView * _checkmarkView;
+    UIImage * _highlightedTableIcon;
+    UIImage * _tableIcon;
 }
 
 @property (nonatomic, readonly) UIImageView *checkmarkView;

@@ -3,12 +3,12 @@
  */
 
 @interface PUSlideshowViewModelChange : PUViewModelChange {
-    BOOL _currentStateDidChange;
-    BOOL _wantsChromeVisibleDidChange;
+    BOOL  _currentStateDidChange;
+    BOOL  _wantsChromeVisibleDidChange;
 }
 
-@property (nonatomic) BOOL currentStateDidChange;
-@property (nonatomic) BOOL wantsChromeVisibleDidChange;
+@property (setter=_setCurrentStateDidChange:, nonatomic) BOOL currentStateDidChange;
+@property (setter=_setWantsChromeVisibleDidChange:, nonatomic) BOOL wantsChromeVisibleDidChange;
 
 - (void)_setCurrentStateDidChange:(BOOL)arg1;
 - (void)_setWantsChromeVisibleDidChange:(BOOL)arg1;

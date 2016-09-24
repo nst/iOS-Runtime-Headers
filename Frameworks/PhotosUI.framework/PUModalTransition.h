@@ -3,7 +3,7 @@
  */
 
 @interface PUModalTransition : PUViewControllerTransition <UIViewControllerTransitioningDelegate> {
-    int __operation;
+    int  __operation;
 }
 
 @property (setter=_setOperation:, nonatomic) int _operation;

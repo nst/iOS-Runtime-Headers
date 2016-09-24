@@ -3,8 +3,8 @@
  */
 
 @interface SKUICheckboxInputViewElement : SKUIInputViewElement {
-    BOOL _disabled;
-    BOOL _selected;
+    BOOL  _disabled;
+    BOOL  _selected;
 }
 
 @property (getter=isSelected, nonatomic) BOOL selected;

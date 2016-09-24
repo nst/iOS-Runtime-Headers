@@ -3,7 +3,7 @@
  */
 
 @interface MCDGlobalQueueManager : NSObject {
-    NSOperationQueue *_globalQueue;
+    NSOperationQueue * _globalQueue;
 }
 
 @property (nonatomic, retain) NSOperationQueue *globalQueue;

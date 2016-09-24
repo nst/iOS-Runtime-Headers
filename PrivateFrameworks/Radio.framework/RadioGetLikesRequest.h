@@ -3,11 +3,11 @@
  */
 
 @interface RadioGetLikesRequest : RadioRequest {
-    unsigned int _numberOfBannedTracks;
-    unsigned int _numberOfLikedTracks;
-    SSURLConnectionRequest *_request;
-    BOOL _shouldProcessItems;
-    RadioStation *_station;
+    unsigned int  _numberOfBannedTracks;
+    unsigned int  _numberOfLikedTracks;
+    SSURLConnectionRequest * _request;
+    BOOL  _shouldProcessItems;
+    RadioStation * _station;
 }
 
 @property (nonatomic) unsigned int numberOfBannedTracks;

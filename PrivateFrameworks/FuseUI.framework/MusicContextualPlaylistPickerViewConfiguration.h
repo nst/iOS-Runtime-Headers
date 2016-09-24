@@ -3,8 +3,8 @@
  */
 
 @interface MusicContextualPlaylistPickerViewConfiguration : MusicPlaylistsWithNewActionViewConfiguration {
-    BOOL _includesRecentlyModifiedPlaylistsSection;
-    <MusicContextualPlaylistPickerDelegate> *_playlistPickerDelegate;
+    BOOL  _includesRecentlyModifiedPlaylistsSection;
+    <MusicContextualPlaylistPickerDelegate> * _playlistPickerDelegate;
 }
 
 @property (nonatomic, readonly) BOOL includesRecentlyModifiedPlaylistsSection;

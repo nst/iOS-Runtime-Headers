@@ -3,7 +3,7 @@
  */
 
 @interface CRSQLRow : NSObject {
-    struct sqlite3_stmt { } *_stmt;
+    struct sqlite3_stmt { } * _stmt;
 }
 
 + (id)dataAtIndex:(int)arg1 copyBytes:(BOOL)arg2 statement:(struct sqlite3_stmt { }*)arg3;

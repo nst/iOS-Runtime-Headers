@@ -3,8 +3,8 @@
  */
 
 @interface FIUIHealthSettingsHeightPickerController : FIUIHealthSettingsPickerController {
-    NSLengthFormatter *_heightFormatter;
-    id /* block */ _heightUpdateHandler;
+    NSLengthFormatter * _heightFormatter;
+    id /* block */  _heightUpdateHandler;
 }
 
 @property (nonatomic, copy) id /* block */ heightUpdateHandler;

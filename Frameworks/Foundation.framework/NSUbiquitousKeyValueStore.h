@@ -3,12 +3,12 @@
  */
 
 @interface NSUbiquitousKeyValueStore : NSObject {
-    int _daemonWakeToken;
-    id _private1;
-    id _private2;
-    id _private3;
-    void *_private4;
-    void *_reserved;
+    int  _daemonWakeToken;
+    id  _private1;
+    id  _private2;
+    id  _private3;
+    void * _private4;
+    void * _reserved;
 }
 
 @property (readonly, copy) NSDictionary *dictionaryRepresentation;
@@ -50,12 +50,11 @@
 - (id)dictionaryForKey:(id)arg1;
 - (id)dictionaryRepresentation;
 - (double)doubleForKey:(id)arg1;
-- (void)finalize;
 - (id)init;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)initWithBundleIdentifier:(id)arg1 storeIdentifier:(id)arg2;
 - (id)initWithBundleIdentifier:(id)arg1 storeIdentifier:(id)arg2 additionalStore:(BOOL)arg3;
-- (long long)longLongForKey:(id)arg1;
+- (int)longLongForKey:(id)arg1;
 - (unsigned int)maximumDataLengthPerKey;
 - (unsigned int)maximumKeyCount;
 - (unsigned int)maximumKeyLength;
@@ -68,7 +67,7 @@
 - (void)setData:(id)arg1 forKey:(id)arg2;
 - (void)setDictionary:(id)arg1 forKey:(id)arg2;
 - (void)setDouble:(double)arg1 forKey:(id)arg2;
-- (void)setLongLong:(long long)arg1 forKey:(id)arg2;
+- (void)setLongLong:(int)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setString:(id)arg1 forKey:(id)arg2;
 - (id)stringForKey:(id)arg1;
@@ -79,5 +78,9 @@
 // Image: /System/Library/PrivateFrameworks/SyncedDefaults.framework/SyncedDefaults
 
 - (void)_printDebugDescription;
+
+// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
++ (void)tsa_coalescedSynchronizeForDefaultStore;
 
 @end

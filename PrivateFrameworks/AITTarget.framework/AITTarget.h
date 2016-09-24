@@ -3,16 +3,16 @@
  */
 
 @interface AITTarget : NSObject <AITXPCConnectionDelegate> {
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    int _notifyToken;
-    NSMutableDictionary *_observerRecords;
-    NSMutableArray *_queuedProbes;
-    NSObject<OS_dispatch_queue> *_rpcDispatchQueue;
-    NSString *_rpcSelectorPrefix;
-    id _rpcTarget;
-    double _startTime;
-    NSObject<OS_dispatch_source> *_watchdogSource;
-    AITXPCConnection *_xpcConnection;
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    int  _notifyToken;
+    NSMutableDictionary * _observerRecords;
+    NSMutableArray * _queuedProbes;
+    NSObject<OS_dispatch_queue> * _rpcDispatchQueue;
+    NSString * _rpcSelectorPrefix;
+    id  _rpcTarget;
+    double  _startTime;
+    NSObject<OS_dispatch_source> * _watchdogSource;
+    AITXPCConnection * _xpcConnection;
 }
 
 @property (readonly, copy) NSString *debugDescription;

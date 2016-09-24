@@ -3,22 +3,24 @@
  */
 
 @interface CalLogMaster : NSObject {
-    CalLogNode *_aslNode;
-    BOOL _autoFlush;
-    NSObject<OS_dispatch_group> *_dispatchGroup;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    BOOL _hasValidNotificationRegistrationToken;
-    int _notificationRegistrationToken;
-    CalLogNode *_rootConfigurationNode;
-    CalLogNode *_standardOutNode;
-    NSArray *_topLevelNodes;
-    CalLogNode *_userNotificationNode;
+    CalLogNode * _aslNode;
+    BOOL  _autoFlush;
+    NSObject<OS_dispatch_group> * _dispatchGroup;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    BOOL  _hasValidNotificationRegistrationToken;
+    int  _notificationRegistrationToken;
+    CalLogNode * _oslogNode;
+    CalLogNode * _rootConfigurationNode;
+    CalLogNode * _standardOutNode;
+    NSArray * _topLevelNodes;
+    CalLogNode * _userNotificationNode;
 }
 
 @property (nonatomic, retain) CalLogNode *aslNode;
 @property (nonatomic) BOOL autoFlush;
 @property (nonatomic) BOOL hasValidNotificationRegistrationToken;
 @property (nonatomic) int notificationRegistrationToken;
+@property (nonatomic, retain) CalLogNode *oslogNode;
 @property (nonatomic, retain) CalLogNode *rootConfigurationNode;
 @property (nonatomic, retain) CalLogNode *standardOutNode;
 @property (nonatomic, retain) NSArray *topLevelNodes;
@@ -30,6 +32,7 @@
 - (id)aslNode;
 - (BOOL)autoFlush;
 - (void)configureASLNode;
+- (void)configureOSLogNode;
 - (void)configureRootConfigurationNode;
 - (void)configureStandardOutNode;
 - (void)configureUserNotificationNode;
@@ -43,6 +46,7 @@
 - (id)init;
 - (void)loadPreferredConfiguration;
 - (int)notificationRegistrationToken;
+- (id)oslogNode;
 - (void)processEnvelope:(id)arg1;
 - (void)registerForConfigUpdateNotifications;
 - (void)reloadTopLevelNodes;
@@ -51,6 +55,7 @@
 - (void)setAutoFlush:(BOOL)arg1;
 - (void)setHasValidNotificationRegistrationToken:(BOOL)arg1;
 - (void)setNotificationRegistrationToken:(int)arg1;
+- (void)setOslogNode:(id)arg1;
 - (void)setRootConfigurationNode:(id)arg1;
 - (void)setStandardOutNode:(id)arg1;
 - (void)setTopLevelNodes:(id)arg1;

@@ -3,9 +3,9 @@
  */
 
 @interface PHEditingExtensionContext : NSExtensionContext <PUEditingExtensionVendor> {
-    PUEditingInitialPayload *__initialPayload;
-    long long _fullSizeImageExtensionHandle;
-    long long _videoPathExtensionHandle;
+    PUEditingInitialPayload * __initialPayload;
+    int  _fullSizeImageExtensionHandle;
+    int  _videoPathExtensionHandle;
 }
 
 @property (readonly) PUEditingInitialPayload *_initialPayload;
@@ -21,7 +21,6 @@
 - (void)cancelContentEditing;
 - (void)dealloc;
 - (void)finishContentEditing;
-- (id)initWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 contextUUID:(id)arg3;
 - (void)queryHandlingCapabilityForAdjustmentData:(id)arg1 withResponseHandler:(id /* block */)arg2;
 - (void)queryShouldShowCancelConfirmationWithResponseHandler:(id /* block */)arg1;
 

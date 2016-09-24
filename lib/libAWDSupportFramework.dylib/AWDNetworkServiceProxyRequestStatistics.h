@@ -3,46 +3,48 @@
  */
 
 @interface AWDNetworkServiceProxyRequestStatistics : PBCodable <NSCopying> {
-    unsigned int _directConnectionCount;
-    unsigned int _directConnectionFailedCount;
+    unsigned int  _directConnectionCount;
+    unsigned int  _directConnectionFailedCount;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _directConnectionFirstByteBuckets;
+    }  _directConnectionFirstByteBuckets;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _directConnectionLastByteBuckets;
+    }  _directConnectionLastByteBuckets;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _firstByteBuckets;
-    NSString *_firstPartyServiceName;
+    }  _firstByteBuckets;
+    NSString * _firstPartyServiceName;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int directConnectionCount : 1; 
         unsigned int directConnectionFailedCount : 1; 
         unsigned int interfaceType : 1; 
+        unsigned int protocolType : 1; 
         unsigned int requestCount : 1; 
         unsigned int requestFailedCount : 1; 
-    } _has;
-    int _interfaceType;
+    }  _has;
+    int  _interfaceType;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _lastByteBuckets;
-    unsigned int _requestCount;
-    unsigned int _requestFailedCount;
-    unsigned long long _timestamp;
+    }  _lastByteBuckets;
+    int  _protocolType;
+    unsigned int  _requestCount;
+    unsigned int  _requestFailedCount;
+    unsigned long long  _timestamp;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _udpRttBuckets;
+    }  _udpRttBuckets;
 }
 
 @property (nonatomic) unsigned int directConnectionCount;
@@ -58,12 +60,14 @@
 @property (nonatomic) BOOL hasDirectConnectionFailedCount;
 @property (nonatomic, readonly) BOOL hasFirstPartyServiceName;
 @property (nonatomic) BOOL hasInterfaceType;
+@property (nonatomic) BOOL hasProtocolType;
 @property (nonatomic) BOOL hasRequestCount;
 @property (nonatomic) BOOL hasRequestFailedCount;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) int interfaceType;
 @property (nonatomic, readonly) unsigned int*lastByteBuckets;
 @property (nonatomic, readonly) unsigned int lastByteBucketsCount;
+@property (nonatomic) int protocolType;
 @property (nonatomic) unsigned int requestCount;
 @property (nonatomic) unsigned int requestFailedCount;
 @property (nonatomic) unsigned long long timestamp;
@@ -71,6 +75,7 @@
 @property (nonatomic, readonly) unsigned int udpRttBucketsCount;
 
 - (int)StringAsInterfaceType:(id)arg1;
+- (int)StringAsProtocolType:(id)arg1;
 - (void)addDirectConnectionFirstByteBuckets:(unsigned int)arg1;
 - (void)addDirectConnectionLastByteBuckets:(unsigned int)arg1;
 - (void)addFirstByteBuckets:(unsigned int)arg1;
@@ -102,6 +107,7 @@
 - (BOOL)hasDirectConnectionFailedCount;
 - (BOOL)hasFirstPartyServiceName;
 - (BOOL)hasInterfaceType;
+- (BOOL)hasProtocolType;
 - (BOOL)hasRequestCount;
 - (BOOL)hasRequestFailedCount;
 - (BOOL)hasTimestamp;
@@ -113,6 +119,8 @@
 - (unsigned int)lastByteBucketsAtIndex:(unsigned int)arg1;
 - (unsigned int)lastByteBucketsCount;
 - (void)mergeFrom:(id)arg1;
+- (int)protocolType;
+- (id)protocolTypeAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)requestCount;
 - (unsigned int)requestFailedCount;
@@ -125,11 +133,13 @@
 - (void)setHasDirectConnectionCount:(BOOL)arg1;
 - (void)setHasDirectConnectionFailedCount:(BOOL)arg1;
 - (void)setHasInterfaceType:(BOOL)arg1;
+- (void)setHasProtocolType:(BOOL)arg1;
 - (void)setHasRequestCount:(BOOL)arg1;
 - (void)setHasRequestFailedCount:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setInterfaceType:(int)arg1;
 - (void)setLastByteBuckets:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (void)setProtocolType:(int)arg1;
 - (void)setRequestCount:(unsigned int)arg1;
 - (void)setRequestFailedCount:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

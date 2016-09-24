@@ -3,8 +3,8 @@
  */
 
 @interface OADTextField : OADTextRun {
-    OADParagraphProperties *mParagraphProperties;
-    NSString *mText;
+    OADParagraphProperties * mParagraphProperties;
+    NSString * mText;
 }
 
 - (unsigned int)characterCount;

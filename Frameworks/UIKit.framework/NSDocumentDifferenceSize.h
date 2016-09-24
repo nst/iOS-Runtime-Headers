@@ -3,8 +3,8 @@
  */
 
 @interface NSDocumentDifferenceSize : NSObject {
-    int _changeCount;
-    int _generationCount;
+    int  _changeCount;
+    int  _generationCount;
 }
 
 @property (nonatomic) int changeCount;

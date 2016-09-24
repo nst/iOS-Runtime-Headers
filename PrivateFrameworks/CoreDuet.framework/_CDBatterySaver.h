@@ -3,7 +3,7 @@
  */
 
 @interface _CDBatterySaver : NSObject {
-    NSXPCConnection *_connection;
+    NSXPCConnection * _connection;
 }
 
 + (id)batterySaver;

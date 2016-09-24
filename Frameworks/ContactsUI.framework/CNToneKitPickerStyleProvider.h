@@ -16,9 +16,9 @@
 @property (nonatomic, readonly) UIColor *tonePickerCustomTableSeparatorColor;
 @property (nonatomic, readonly) UIColor *tonePickerHeaderTextColor;
 @property (nonatomic, readonly) UIFont *tonePickerHeaderTextFont;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } tonePickerHeaderTextPaddingInsets;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } tonePickerHeaderTextPaddingInsets;
 @property (nonatomic, readonly) UIColor *tonePickerHeaderTextShadowColor;
-@property (nonatomic, readonly) struct UIOffset { float x1; float x2; } tonePickerHeaderTextShadowOffset;
+@property (nonatomic, readonly) struct UIOffset { double x1; double x2; } tonePickerHeaderTextShadowOffset;
 @property (nonatomic, readonly) BOOL tonePickerHeaderTextShouldBeUppercase;
 @property (nonatomic, readonly) int tonePickerTableViewSeparatorStyle;
 @property (nonatomic, readonly) BOOL tonePickerUsesOpaqueBackground;
@@ -30,9 +30,9 @@
 @property (nonatomic, readonly) UIColor *vibrationPickerCustomTableSeparatorColor;
 @property (nonatomic, readonly) UIColor *vibrationPickerHeaderTextColor;
 @property (nonatomic, readonly) UIFont *vibrationPickerHeaderTextFont;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } vibrationPickerHeaderTextPaddingInsets;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } vibrationPickerHeaderTextPaddingInsets;
 @property (nonatomic, readonly) UIColor *vibrationPickerHeaderTextShadowColor;
-@property (nonatomic, readonly) struct UIOffset { float x1; float x2; } vibrationPickerHeaderTextShadowOffset;
+@property (nonatomic, readonly) struct UIOffset { double x1; double x2; } vibrationPickerHeaderTextShadowOffset;
 @property (nonatomic, readonly) BOOL vibrationPickerHeaderTextShouldBeUppercase;
 @property (nonatomic, readonly) int vibrationPickerTableViewSeparatorStyle;
 @property (nonatomic, readonly) BOOL vibrationPickerUsesOpaqueBackground;
@@ -51,9 +51,9 @@
 - (id)tonePickerCustomTableSeparatorColor;
 - (id)tonePickerHeaderTextColor;
 - (id)tonePickerHeaderTextFont;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })tonePickerHeaderTextPaddingInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })tonePickerHeaderTextPaddingInsets;
 - (id)tonePickerHeaderTextShadowColor;
-- (struct UIOffset { float x1; float x2; })tonePickerHeaderTextShadowOffset;
+- (struct UIOffset { double x1; double x2; })tonePickerHeaderTextShadowOffset;
 - (BOOL)tonePickerHeaderTextShouldBeUppercase;
 - (int)tonePickerTableViewSeparatorStyle;
 - (BOOL)tonePickerUsesOpaqueBackground;
@@ -65,9 +65,9 @@
 - (id)vibrationPickerCustomTableSeparatorColor;
 - (id)vibrationPickerHeaderTextColor;
 - (id)vibrationPickerHeaderTextFont;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })vibrationPickerHeaderTextPaddingInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })vibrationPickerHeaderTextPaddingInsets;
 - (id)vibrationPickerHeaderTextShadowColor;
-- (struct UIOffset { float x1; float x2; })vibrationPickerHeaderTextShadowOffset;
+- (struct UIOffset { double x1; double x2; })vibrationPickerHeaderTextShadowOffset;
 - (BOOL)vibrationPickerHeaderTextShouldBeUppercase;
 - (int)vibrationPickerTableViewSeparatorStyle;
 - (BOOL)vibrationPickerUsesOpaqueBackground;

@@ -3,9 +3,9 @@
  */
 
 @interface CIConvolution3X3 : CIFilter {
-    NSNumber *inputBias;
-    CIImage *inputImage;
-    CIVector *inputWeights;
+    NSNumber * inputBias;
+    CIImage * inputImage;
+    CIVector * inputWeights;
 }
 
 @property (nonatomic, retain) NSNumber *inputBias;

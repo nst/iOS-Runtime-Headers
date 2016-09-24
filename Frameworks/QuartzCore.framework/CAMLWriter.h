@@ -3,11 +3,11 @@
  */
 
 @interface CAMLWriter : NSObject {
-    struct _CAMLWriterPriv { struct __CFData {} *x1; struct __CFURL {} *x2; id x3; struct _CAMLWriterElement {} x4; struct __CFString {} *x5; struct __CFSet {} *x6; int x7; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; } *_priv;
+    struct _CAMLWriterPriv { struct __CFData {} *x1; struct __CFURL {} *x2; id x3; struct _CAMLWriterElement {} x4; struct __CFString {} *x5; struct __CFSet {} *x6; int x7; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; } * _priv;
 }
 
 @property (retain) NSURL *baseURL;
-@property id delegate;
+@property <CAMLWriterDelegate> *delegate;
 
 + (id)writerWithData:(id)arg1;
 

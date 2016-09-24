@@ -3,25 +3,25 @@
  */
 
 @interface MusicSplitViewController : UIViewController <SKUIProxyScrollViewDelegate> {
-    UIViewController *_detailViewController;
+    UIViewController * _detailViewController;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _detailViewControllerContentInsetAdditions;
-    UIView *_gutterView;
-    BOOL _isHorizontallyCompact;
-    UIViewController *_preservedDetailViewController;
-    UIViewController *_primaryViewController;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _detailViewControllerContentInsetAdditions;
+    UIView * _gutterView;
+    BOOL  _isHorizontallyCompact;
+    UIViewController * _preservedDetailViewController;
+    UIViewController * _primaryViewController;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _primaryViewControllerContentInsetAdditions;
-    SKUIProxyScrollView *_proxyScrollView;
-    float _staticPrimaryColumnWidth;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _primaryViewControllerContentInsetAdditions;
+    SKUIProxyScrollView * _proxyScrollView;
+    double  _staticPrimaryColumnWidth;
 }
 
 @property (nonatomic, readonly) UIViewController *_detailViewController;
@@ -30,12 +30,12 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIViewController *primaryViewController;
-@property (nonatomic) float staticPrimaryColumnWidth;
+@property (nonatomic) double staticPrimaryColumnWidth;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_applyContentInsetsForChildViewControllers;
-- (struct { struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_1_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_1_1_2; } x1; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_2_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; })_childrenLayoutResultsForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct { struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_1_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_1_1_2; } x1; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_2_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_2_1_2; } x2; struct CGRect { struct CGPoint { double x_1_2_1; double x_1_2_2; } x_3_1_1; struct CGSize { double x_2_2_1; double x_2_2_2; } x_3_1_2; } x3; })_childrenLayoutResultsForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)_detailViewController;
 - (id)_detailViewControllerOverrideTraitCollection;
 - (void)_didChangeDetailViewController;
@@ -58,7 +58,7 @@
 - (void)setPrimaryViewController:(id)arg1;
 - (void)setStaticPrimaryColumnWidth:(float)arg1;
 - (void)showDetailViewController:(id)arg1 sender:(id)arg2;
-- (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
+- (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
 - (float)staticPrimaryColumnWidth;
 - (id)targetViewControllerForAction:(SEL)arg1 sender:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;

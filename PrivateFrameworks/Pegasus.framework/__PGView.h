@@ -3,7 +3,7 @@
  */
 
 @interface __PGView : UIView {
-    NSArray *_animatedLayerProperties;
+    NSArray * _animatedLayerProperties;
 }
 
 @property (nonatomic, copy) NSArray *animatedLayerProperties;

@@ -3,14 +3,14 @@
  */
 
 @interface TSKRulerUnits : NSObject {
-    BOOL _centerRulerOrigin;
-    NSFormatter *_formatter;
-    NSFormatter *_highPrecisionFormatter;
-    NSFormatter *_lenientFormatter;
-    NSFormatter *_lenientHighPrecisionFormatter;
-    int _preferredPixelUnit;
-    int _rulerUnits;
-    BOOL _showRulerAsPercentage;
+    BOOL  _centerRulerOrigin;
+    NSFormatter * _formatter;
+    NSFormatter * _highPrecisionFormatter;
+    NSFormatter * _lenientFormatter;
+    NSFormatter * _lenientHighPrecisionFormatter;
+    int  _preferredPixelUnit;
+    int  _rulerUnits;
+    BOOL  _showRulerAsPercentage;
 }
 
 @property (nonatomic) BOOL centerRulerOrigin;

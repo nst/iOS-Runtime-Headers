@@ -5,10 +5,10 @@
 @interface NPKProtoRegistrationDataResponse : PBCodable <NSCopying> {
     struct { 
         unsigned int pending : 1; 
-    } _has;
-    BOOL _pending;
-    NSString *_pushToken;
-    NSData *_registrationDataBytes;
+    }  _has;
+    BOOL  _pending;
+    NSString * _pushToken;
+    NSData * _registrationDataBytes;
 }
 
 @property (nonatomic) BOOL hasPending;

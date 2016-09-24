@@ -3,9 +3,9 @@
  */
 
 @interface TSPDeepCopyObjectMap : NSObject {
-    NSMapTable *_archivedObjects;
-    NSMapTable *_deepCopyIdentifierToOriginalObject;
-    NSMapTable *_originalIdentifierToDeepCopyObject;
+    NSMapTable * _archivedObjects;
+    NSMapTable * _deepCopyIdentifierToOriginalObject;
+    NSMapTable * _originalIdentifierToDeepCopyObject;
 }
 
 - (void).cxx_destruct;

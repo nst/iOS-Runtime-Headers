@@ -3,23 +3,23 @@
  */
 
 @interface UIPrintPanelTableViewController : UITableViewController <UITextFieldDelegate> {
-    UIPrinterBrowserViewController *_browserController;
-    BOOL _contactingPrinter;
-    int _copiesRow;
-    int _duplexRow;
-    int _grayscaleRow;
-    int _jobAccountIDRow;
-    int _paperRow;
-    int _previousPageIndexInCenterOfPreview;
-    UIPrintPanelViewController *_printPanelViewController;
-    UIPrintPreviewViewController *_printPreviewViewController;
-    BOOL _printerWarningWasShown;
-    int _punchRow;
-    int _rangeRow;
-    BOOL _settingsExpanded;
-    int _settingsRow;
-    int _settingsSection;
-    int _stapleRow;
+    UIPrinterBrowserViewController * _browserController;
+    BOOL  _contactingPrinter;
+    int  _copiesRow;
+    int  _duplexRow;
+    int  _grayscaleRow;
+    int  _jobAccountIDRow;
+    int  _paperRow;
+    int  _previousPageIndexInCenterOfPreview;
+    UIPrintPanelViewController * _printPanelViewController;
+    UIPrintPreviewViewController * _printPreviewViewController;
+    BOOL  _printerWarningWasShown;
+    int  _punchRow;
+    int  _rangeRow;
+    BOOL  _settingsExpanded;
+    int  _settingsRow;
+    int  _settingsSection;
+    int  _stapleRow;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -37,6 +37,7 @@
 - (float)heightOfPreviewView;
 - (id)initWithPrintPanelViewController:(id)arg1;
 - (id)jobAccountTextField;
+- (id)keyCommands;
 - (void)moreButtonPushed:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)pdfFileURL;
@@ -65,11 +66,12 @@
 - (void)updatePageRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)updatePageRangeText;
 - (void)updatePunch:(id)arg1;
+- (void)updateSettingsSummaryText;
 - (void)updateStaple:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

@@ -3,9 +3,9 @@
  */
 
 @interface AXAccessQueue : NSObject {
-    NSObject<OS_dispatch_queue> *_concurrentQueue;
-    unsigned int _specialBehaviors;
-    NSString *_threadLocalStorageKey;
+    NSObject<OS_dispatch_queue> * _concurrentQueue;
+    unsigned int  _specialBehaviors;
+    NSString * _threadLocalStorageKey;
 }
 
 @property (nonatomic, readonly) BOOL behavesAsMainQueue;

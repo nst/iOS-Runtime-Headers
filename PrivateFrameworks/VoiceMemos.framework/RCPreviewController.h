@@ -3,26 +3,26 @@
  */
 
 @interface RCPreviewController : NSObject <RCAVPlayerDelegate> {
-    RCAVPlayer *_AVPlayer;
-    AVPlayerItem *_AVPlayerItem;
-    double _AVPlayerItemCachedDuration;
-    RCAVState *_AVState;
-    NSString *_activePlaybackContextName;
-    RCAudioSessionRoutingAssertion *_activePreviewRouteAssertion;
-    double _currentRateTarget;
-    double _currentTimeDelegateUpdateRate;
-    double _currentTimeTarget;
-    BOOL _isPreparingForPreview;
-    NSURL *_lastPlayedAssetReferenceURL;
-    NSString *_lastRouteKeyForRouteUsageLog;
-    BOOL _logNextRouteUsageStatisticForced;
-    NSMutableDictionary *_monitoredDispatchSourcesByURL;
-    RCAudioSessionRoutingAssertion *_preparingToPreviewRouteAssertion;
-    NSUUID *_preparingToPreviewRouteAssertionSessionUUID;
-    BOOL _resetUseVoiceMemoSettingsValue;
-    BOOL _useVoiceMemoSettings;
-    BOOL _voiceMemoSettingEnabledNeedsReset;
-    NSHashTable *_weakObservers;
+    RCAVPlayer * _AVPlayer;
+    AVPlayerItem * _AVPlayerItem;
+    double  _AVPlayerItemCachedDuration;
+    RCAVState * _AVState;
+    NSString * _activePlaybackContextName;
+    RCAudioSessionRoutingAssertion * _activePreviewRouteAssertion;
+    double  _currentRateTarget;
+    double  _currentTimeDelegateUpdateRate;
+    double  _currentTimeTarget;
+    BOOL  _isPreparingForPreview;
+    NSURL * _lastPlayedAssetReferenceURL;
+    NSString * _lastRouteKeyForRouteUsageLog;
+    BOOL  _logNextRouteUsageStatisticForced;
+    NSMutableDictionary * _monitoredDispatchSourcesByURL;
+    RCAudioSessionRoutingAssertion * _preparingToPreviewRouteAssertion;
+    NSUUID * _preparingToPreviewRouteAssertionSessionUUID;
+    BOOL  _resetUseVoiceMemoSettingsValue;
+    BOOL  _useVoiceMemoSettings;
+    BOOL  _voiceMemoSettingEnabledNeedsReset;
+    NSHashTable * _weakObservers;
 }
 
 @property (nonatomic, readonly) RCAVPlayer *AVPlayer;
@@ -34,7 +34,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic) struct { double x1; double x2; } playableTimeRange;
-@property (nonatomic, readonly) float rate;
+@property (nonatomic, readonly) double rate;
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL useVoiceMemoSettings;
 

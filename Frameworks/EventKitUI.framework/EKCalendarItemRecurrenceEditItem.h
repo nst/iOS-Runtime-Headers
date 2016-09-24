@@ -3,22 +3,24 @@
  */
 
 @interface EKCalendarItemRecurrenceEditItem : EKCalendarItemEditItem <EKCellShortener, EKRecurrenceTypeEditItemViewControllerDelegate> {
-    NSString *_customRepeatDescription;
-    unsigned int _disclosedSubitem;
-    NSDate *_originalRepeatEnd;
-    int _originalRepeatType;
-    EKRecurrenceTypeEditItemViewController *_recurrenceTypeVC;
-    NSDate *_repeatEnd;
-    PreferencesValueCell *_repeatEndDateCell;
-    EKCalendarItemRecurrenceEndCell *_repeatEndPickerCell;
-    int _repeatType;
-    int _shorteningStatus;
+    NSString * _customRepeatDescription;
+    unsigned int  _disclosedSubitem;
+    NSDate * _originalRepeatEnd;
+    int  _originalRepeatType;
+    EKRecurrenceTypeEditItemViewController * _recurrenceTypeVC;
+    NSDate * _repeatEnd;
+    PreferencesValueCell * _repeatEndDateCell;
+    EKCalendarItemRecurrenceEndCell * _repeatEndPickerCell;
+    int  _repeatType;
+    int  _shorteningStatus;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
+
++ (id)_neverLocalizedString;
 
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryChanged:(id)arg1;
@@ -31,7 +33,7 @@
 - (BOOL)canBeConfiguredForCalendarConstraints:(id)arg1;
 - (id)cellForSubitemAtIndex:(unsigned int)arg1;
 - (void)dealloc;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned int)arg2;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned int)arg2;
 - (BOOL)editItemViewControllerSave:(id)arg1;
 - (BOOL)editItemViewControllerSave:(id)arg1 notify:(BOOL)arg2;
 - (BOOL)forceRefreshStartAndEndDatesOnSave;

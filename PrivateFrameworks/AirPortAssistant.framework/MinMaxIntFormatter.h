@@ -3,8 +3,8 @@
  */
 
 @interface MinMaxIntFormatter : APFormatter {
-    int _maximum;
-    int _minimum;
+    int  _maximum;
+    int  _minimum;
 }
 
 + (id)formatterForMin:(int)arg1 max:(int)arg2;

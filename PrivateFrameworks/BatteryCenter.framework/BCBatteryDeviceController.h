@@ -3,14 +3,14 @@
  */
 
 @interface BCBatteryDeviceController : NSObject {
-    struct __CFRunLoopSource { } *_accessoriesChangedRunLoopSource;
-    struct __CFRunLoopSource { } *_accessoriesLimitedPowerRunLoopSource;
-    BOOL _chargeChangeHandlingDisabled;
-    NSMutableDictionary *_devicesByIdentifier;
-    NSMapTable *_handlersByIdentifier;
-    struct __CFRunLoopSource { } *_powerSourcesChangedRunLoopSource;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSArray *_sortedDevices;
+    struct __CFRunLoopSource { } * _accessoriesChangedRunLoopSource;
+    struct __CFRunLoopSource { } * _accessoriesLimitedPowerRunLoopSource;
+    BOOL  _chargeChangeHandlingDisabled;
+    NSMutableDictionary * _devicesByIdentifier;
+    NSMapTable * _handlersByIdentifier;
+    struct __CFRunLoopSource { } * _powerSourcesChangedRunLoopSource;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSArray * _sortedDevices;
 }
 
 @property (nonatomic, readonly) NSArray *connectedDevices;
@@ -23,6 +23,7 @@
 + (id)_internalBatteryDeviceGlyph;
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (id)_baseIdentifierFromPowerSourceDescription:(id)arg1;
 - (id)_deviceByCoalescingDevice:(id)arg1;
 - (int)_displayChargePercentForCurrentCapacity:(id)arg1 andMaxCapacity:(id)arg2 updateZeroValue:(BOOL)arg3;
@@ -31,9 +32,10 @@
 - (id)_groupNameForBaseIdentifier:(id)arg1 fromPowerSourceDescription:(id)arg2;
 - (void)_handlePSChange;
 - (id)_identifierFromPowerSourceDescription:(id)arg1;
+- (void)_incrementNumberOfConnectedDevices:(BOOL)arg1;
 - (void)_incrementPercentChargeForConnectedDevices:(BOOL)arg1;
 - (BOOL)_isDevicePartOfPairWithBaseIdentifier:(id)arg1 matchIdentifier:(id)arg2 andPart:(unsigned int)arg3;
-- (struct CGSize { float x1; float x2; })_largestBatteryDeviceGlyphSize;
+- (struct CGSize { double x1; double x2; })_largestBatteryDeviceGlyphSize;
 - (int)_lowBatteryLevelForBaseIdentifier:(id)arg1 fromPowerSourceDescription:(id)arg2;
 - (id)_matchIdentifierFromPowerSourceDescription:(id)arg1;
 - (id)_orderedFirstPartyAccessoryIdentifiers;

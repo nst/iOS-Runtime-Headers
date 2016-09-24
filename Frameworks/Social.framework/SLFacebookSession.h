@@ -3,7 +3,7 @@
  */
 
 @interface SLFacebookSession : NSObject {
-    <SLFacebookRemoteSessionProtocol> *_remoteSession;
+    <SLFacebookRemoteSessionProtocol> * _remoteSession;
 }
 
 + (id)_remoteInterface;

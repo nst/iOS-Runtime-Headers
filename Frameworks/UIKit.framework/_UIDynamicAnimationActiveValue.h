@@ -3,14 +3,14 @@
  */
 
 @interface _UIDynamicAnimationActiveValue : NSObject {
-    id _applier;
-    double _boundaryPull;
-    unsigned int _lowerBoundary;
-    double _maximumActiveValue;
-    double _minimumActiveValue;
-    int _type;
-    unsigned int _upperBoundary;
-    double _value;
+    id  _applier;
+    double  _boundaryPull;
+    unsigned int  _lowerBoundary;
+    double  _maximumActiveValue;
+    double  _minimumActiveValue;
+    int  _type;
+    unsigned int  _upperBoundary;
+    double  _value;
 }
 
 @property (nonatomic) double maximumActiveValue;

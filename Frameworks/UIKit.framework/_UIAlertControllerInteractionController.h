@@ -3,16 +3,19 @@
  */
 
 @interface _UIAlertControllerInteractionController : UIPercentDrivenInteractiveTransition <UIForceInteractionController, UIInteractionProgressObserver> {
-    UIAlertController *_alertController;
-    <UIViewControllerContextTransitioning> *_context;
+    UIAlertController * _alertController;
+    <UIViewControllerContextTransitioning> * _context;
 }
 
 @property (nonatomic, retain) UIAlertController *alertController;
+@property (nonatomic, readonly) int completionCurve;
+@property (nonatomic, readonly) double completionSpeed;
 @property (nonatomic, retain) <UIViewControllerContextTransitioning> *context;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL wantsInteractiveStart;
 
 - (void).cxx_destruct;
 - (id)alertController;

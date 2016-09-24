@@ -3,9 +3,9 @@
  */
 
 @interface VKDynamicAnimation : VKAnimation {
-    id /* block */ _dynamicStepHandler;
-    double _lastTimestamp;
-    BOOL _resuming;
+    id /* block */  _dynamicStepHandler;
+    double  _lastTimestamp;
+    BOOL  _resuming;
 }
 
 @property (nonatomic, copy) id /* block */ dynamicStepHandler;

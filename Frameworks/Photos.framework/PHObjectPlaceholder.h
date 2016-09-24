@@ -3,8 +3,8 @@
  */
 
 @interface PHObjectPlaceholder : PHObject {
-    int _assetMediaType;
-    NSString *_localIdentifier;
+    int  _assetMediaType;
+    NSString * _localIdentifier;
 }
 
 @property int assetMediaType;

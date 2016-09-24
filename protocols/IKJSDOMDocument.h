@@ -17,8 +17,9 @@
 - (IKDOMNodeList *)getElementsByTagName:(NSString *)arg1;
 - (IKDOMImplementation *)implementation;
 - (NSString *)inputEncoding;
+- (NSArray *)matchingImpressions:(NSString *)arg1 :(JSValue *)arg2;
 - (IKJSNavigationDocument *)navigationDocument;
-- (NSArray *)recordedImpressions;
+- (NSArray *)recordedImpressions:(JSValue *)arg1;
 - (void)replace:(IKDOMDocument *)arg1;
 - (void)runTest:(NSString *)arg1 :(NSDictionary *)arg2;
 - (void)scrollToTop;

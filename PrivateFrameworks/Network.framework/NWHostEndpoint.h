@@ -4,9 +4,10 @@
 
 @interface NWHostEndpoint : NWEndpoint
 
-@property (readonly) NSString *hostname;
-@property (readonly) NSString *port;
+@property (nonatomic, readonly) NSString *hostname;
+@property (nonatomic, readonly) NSString *port;
 
++ (unsigned int)endpointType;
 + (id)endpointWithHostname:(id)arg1 port:(id)arg2;
 
 - (id)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;

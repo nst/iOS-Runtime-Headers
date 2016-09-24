@@ -3,60 +3,60 @@
  */
 
 @interface GKConnectionInternal : GKConnection <CDXClientDelegate, CDXClientSessionDelegate> {
-    NSMutableArray *_allowRelayPIDList;
+    NSMutableArray * _allowRelayPIDList;
     struct _opaque_pthread_cond_t { 
         long __sig; 
         BOOL __opaque[24]; 
-    } _cPreblobFetch;
+    }  _cPreblobFetch;
     struct _opaque_pthread_cond_t { 
         long __sig; 
         BOOL __opaque[24]; 
-    } _cPrepareThread;
-    CDXClient *_cdxClient;
-    NSMutableDictionary *_cdxSessions;
-    id _eventDelegate;
-    BOOL _fAllowMoreRelay;
-    int _fPreReleased;
-    int _fPrepareThread;
-    NSMutableArray *_gckEventList;
-    unsigned int _gckPID;
-    struct OpaqueGCKSession { } *_gckSession;
-    NSMutableDictionary *_initRelayQueue;
-    NSObject<OS_dispatch_source> *_localGamingCDXListenSource;
-    unsigned short _localGamingCDXPort;
-    int _localGamingCDXSocket;
-    NSMutableDictionary *_localGamingSocketToConnectionDataMap;
-    NSMutableDictionary *_localGamingSocketToPIDMap;
-    NSMutableArray *_pendingConnectionPIDList;
-    TimingCollection *_perfTimers;
-    NSString *_pidGUID;
-    NSMutableDictionary *_pidToConnectTimeoutSource;
-    NSMutableDictionary *_pidToConnectionDataMap;
-    NSMutableDictionary *_pidToPlayerIDMap;
-    NSMutableDictionary *_pidToPreblobMap;
-    NSMutableDictionary *_pidToRelayConnectionDataMap;
-    NSMutableDictionary *_pidToRelayInitiateInfoMap;
-    NSMutableDictionary *_pidToRelayUpdateInfoMap;
-    NSMutableSet *_pidsPreparedForConnection;
-    NSData *_preblob;
-    id /* block */ _preblobCallback;
-    double _preblobCallbackCancelTime;
-    NSMutableDictionary *_preblobToPIDMap;
-    struct opaqueRTCReporting { } *_reportingAgent;
-    NSMutableDictionary *_updateRelayQueue;
-    double _wakeTime;
+    }  _cPrepareThread;
+    CDXClient * _cdxClient;
+    NSMutableDictionary * _cdxSessions;
+    id  _eventDelegate;
+    BOOL  _fAllowMoreRelay;
+    int  _fPreReleased;
+    int  _fPrepareThread;
+    NSMutableArray * _gckEventList;
+    unsigned int  _gckPID;
+    struct OpaqueGCKSession { } * _gckSession;
+    NSMutableDictionary * _initRelayQueue;
+    NSObject<OS_dispatch_source> * _localGamingCDXListenSource;
+    unsigned short  _localGamingCDXPort;
+    int  _localGamingCDXSocket;
+    NSMutableDictionary * _localGamingSocketToConnectionDataMap;
+    NSMutableDictionary * _localGamingSocketToPIDMap;
+    NSMutableArray * _pendingConnectionPIDList;
+    TimingCollection * _perfTimers;
+    NSString * _pidGUID;
+    NSMutableDictionary * _pidToConnectTimeoutSource;
+    NSMutableDictionary * _pidToConnectionDataMap;
+    NSMutableDictionary * _pidToPlayerIDMap;
+    NSMutableDictionary * _pidToPreblobMap;
+    NSMutableDictionary * _pidToRelayConnectionDataMap;
+    NSMutableDictionary * _pidToRelayInitiateInfoMap;
+    NSMutableDictionary * _pidToRelayUpdateInfoMap;
+    NSMutableSet * _pidsPreparedForConnection;
+    NSData * _preblob;
+    id /* block */  _preblobCallback;
+    double  _preblobCallbackCancelTime;
+    NSMutableDictionary * _preblobToPIDMap;
+    struct opaqueRTCReporting { } * _reportingAgent;
+    NSMutableDictionary * _updateRelayQueue;
+    double  _wakeTime;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _xPreblobFetch;
+    }  _xPreblobFetch;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _xPrepareThread;
+    }  _xPrepareThread;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _xRelay;
+    }  _xRelay;
 }
 
 @property (nonatomic, retain) CDXClient *cdxClient;

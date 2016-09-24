@@ -3,8 +3,8 @@
  */
 
 @interface SGMicrodataDocument : NSObject {
-    NSMutableDictionary *_htmlIds;
-    NSMutableArray *_items;
+    NSMutableDictionary * _htmlIds;
+    NSMutableArray * _items;
 }
 
 @property (nonatomic, readonly) NSDictionary *htmlIds;

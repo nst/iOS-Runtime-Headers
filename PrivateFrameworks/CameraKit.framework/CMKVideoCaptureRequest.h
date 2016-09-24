@@ -3,9 +3,9 @@
  */
 
 @interface CMKVideoCaptureRequest : CMKCaptureRequest <NSCopying, NSMutableCopying> {
-    int _captureDevice;
-    int _deviceOrientation;
-    int _torchMode;
+    int  _captureDevice;
+    int  _deviceOrientation;
+    int  _torchMode;
 }
 
 @property (nonatomic, readonly) int captureDevice;

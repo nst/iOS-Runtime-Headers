@@ -3,33 +3,33 @@
  */
 
 @interface MFComposeBodyField : UIWebDocumentView <WebResourceLoadDelegate> {
-    NSArray *_attachmentURLsToReplaceWithFilenames;
-    DOMHTMLElement *_blockquote;
-    DOMHTMLElement *_body;
-    NSString *_compositionContextID;
-    DOMHTMLDocument *_document;
-    unsigned int _forwardingNotification;
-    unsigned int _imageCount;
-    UIBarButtonItemGroup *_inputAssistantItemGroup;
-    unsigned int _isDirty;
-    unsigned int _isLoading;
+    NSArray * _attachmentURLsToReplaceWithFilenames;
+    DOMHTMLElement * _blockquote;
+    DOMHTMLElement * _body;
+    NSString * _compositionContextID;
+    DOMHTMLDocument * _document;
+    unsigned int  _forwardingNotification;
+    unsigned int  _imageCount;
+    UIBarButtonItemGroup * _inputAssistantItemGroup;
+    unsigned int  _isDirty;
+    unsigned int  _isLoading;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _layoutSize;
-    <MFMailComposeViewDelegate> *_mailComposeViewDelegate;
-    unsigned int _needsReplaceImages;
+        double width; 
+        double height; 
+    }  _layoutSize;
+    <MFMailComposeViewDelegate> * _mailComposeViewDelegate;
+    unsigned int  _needsReplaceImages;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _originalSize;
-    BOOL _prefersFirstLineSelection;
-    int _preventLayout;
+        double width; 
+        double height; 
+    }  _originalSize;
+    BOOL  _prefersFirstLineSelection;
+    int  _preventLayout;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _rangeToSelect;
-    BOOL _shouldShowStandardButtons;
+    }  _rangeToSelect;
+    BOOL  _shouldShowStandardButtons;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -61,6 +61,7 @@
 - (void)_removeInlineAttachment:(id)arg1;
 - (void)_replaceImages;
 - (id)_securityScopeForFileURL:(id)arg1;
+- (id)_selectedAttachmentURLForMarkup;
 - (BOOL)_shouldCreatePlaceholderAttachmentForAttachmentWithSize:(unsigned int)arg1;
 - (void)_showQuoteLevelOptionsPopover:(id)arg1;
 - (void)_webthread_webView:(id)arg1 tileDidDraw:(id)arg2;
@@ -90,7 +91,7 @@
 - (void)ensureSelection;
 - (id)htmlString;
 - (void)htmlString:(id*)arg1 otherHtmlStringsAndAttachments:(id*)arg2 charsets:(id*)arg3;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)insertDocumentWithData:(id)arg1 fileName:(id)arg2 mimeType:(id)arg3 contentID:(id)arg4;
 - (void)insertDocumentWithURL:(id)arg1;
 - (void)insertNode:(id)arg1 parent:(id)arg2 nextSibling:(id)arg3;
@@ -111,7 +112,7 @@
 - (void)prependMarkupString:(id)arg1 quote:(BOOL)arg2;
 - (void)prependMarkupString:(id)arg1 quote:(BOOL)arg2 baseURL:(id)arg3 emptyFirst:(BOOL)arg4;
 - (void)prependString:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectOfElementWithID:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectOfElementWithID:(id)arg1;
 - (void)removeBlockQuoteFromTree:(id)arg1;
 - (void)replaceAttachment:(id)arg1 withDocumentAtURL:(id)arg2 completion:(id /* block */)arg3;
 - (void)replaceAttachment:(id)arg1 withDocumentData:(id)arg2 fileName:(id)arg3 mimeType:(id)arg4;
@@ -126,9 +127,9 @@
 - (void)setCaretPosition:(unsigned int)arg1;
 - (void)setCompositionContextID:(id)arg1;
 - (void)setDirty:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setLayoutInterval:(int)arg1;
-- (void)setLayoutMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setLayoutMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setLoading:(BOOL)arg1;
 - (void)setMailComposeViewDelegate:(id)arg1;
 - (void)setMarkupString:(id)arg1;

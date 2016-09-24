@@ -3,12 +3,11 @@
  */
 
 @interface MTLThreadgroupMemoryArgument : MTLArgumentInternal {
-    unsigned short _alignment;
-    unsigned int _dataSize;
+    unsigned short  _alignment;
+    unsigned int  _dataSize;
 }
 
 - (id)describe;
-- (id)description;
 - (id)initWithName:(id)arg1 type:(unsigned int)arg2 access:(unsigned int)arg3 isActive:(BOOL)arg4 locationIndex:(unsigned int)arg5 arraySize:(unsigned int)arg6 dataSize:(unsigned int)arg7 alignment:(unsigned int)arg8;
 - (unsigned int)threadgroupMemoryAlignment;
 - (unsigned int)threadgroupMemoryDataSize;

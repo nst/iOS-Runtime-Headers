@@ -3,8 +3,8 @@
  */
 
 @interface GKAnonymousGuestPlayerInternal : GKPlayerInternal {
-    NSString *_guestIdentifier;
-    GKPlayerInternal *_hostPlayerInternal;
+    NSString * _guestIdentifier;
+    GKPlayerInternal * _hostPlayerInternal;
 }
 
 @property (nonatomic, retain) GKPlayerInternal *hostPlayerInternal;

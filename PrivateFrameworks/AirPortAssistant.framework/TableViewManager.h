@@ -3,20 +3,20 @@
  */
 
 @interface TableViewManager : NSObject <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
-    float _cellContentWidth;
-    float _cellLeftEdgeOrigin;
-    UIView *_currentFirstResponder;
-    NSIndexPath *_currentFirstResponderCellPath;
-    id _delegate;
-    UIColor *_detailTextColor;
-    UIColor *_editTextColor;
-    ManagedTableViewCell *_gLayoutGenericCell;
-    ManagedTableViewCell *_gLayoutNoBackgroundCell;
-    BOOL _handlingBulkUpdate;
-    UITableView *_managedTableView;
-    UIColor *_selectedTextColor;
-    UIColor *_subtitleColor;
-    NSMutableDictionary *_tableDescriptorDict;
+    double  _cellContentWidth;
+    double  _cellLeftEdgeOrigin;
+    UIView * _currentFirstResponder;
+    NSIndexPath * _currentFirstResponderCellPath;
+    id  _delegate;
+    UIColor * _detailTextColor;
+    UIColor * _editTextColor;
+    ManagedTableViewCell * _gLayoutGenericCell;
+    ManagedTableViewCell * _gLayoutNoBackgroundCell;
+    BOOL  _handlingBulkUpdate;
+    UITableView * _managedTableView;
+    UIColor * _selectedTextColor;
+    UIColor * _subtitleColor;
+    NSMutableDictionary * _tableDescriptorDict;
 }
 
 @property (readonly, copy) NSString *debugDescription;

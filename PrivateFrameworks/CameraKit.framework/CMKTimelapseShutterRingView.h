@@ -3,13 +3,13 @@
  */
 
 @interface CMKTimelapseShutterRingView : UIView {
-    CALayer *__largeTickLayer;
-    CAReplicatorLayer *__largeTickReplicatorLayer;
-    CALayer *__smallTickLayer;
-    CAReplicatorLayer *__smallTickReplicatorLayer;
-    CALayer *__timerHandLayer;
-    CALayer *__timerHandParentLayer;
-    BOOL _animating;
+    CALayer * __largeTickLayer;
+    CAReplicatorLayer * __largeTickReplicatorLayer;
+    CALayer * __smallTickLayer;
+    CAReplicatorLayer * __smallTickReplicatorLayer;
+    CALayer * __timerHandLayer;
+    CALayer * __timerHandParentLayer;
+    BOOL  _animating;
 }
 
 @property (nonatomic, readonly) CALayer *_largeTickLayer;
@@ -27,7 +27,7 @@
 - (id)_largeTickReplicatorLayer;
 - (void)_removeStartAnimations;
 - (void)_removeStopAnimations;
-- (float)_rotationZFromTransform:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg1;
+- (float)_rotationZFromTransform:(struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })arg1;
 - (BOOL)_shouldUseAnimations;
 - (id)_smallTickLayer;
 - (id)_smallTickReplicatorLayer;
@@ -35,10 +35,10 @@
 - (void)_stopAnimating;
 - (id)_timerHandLayer;
 - (id)_timerHandParentLayer;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isAnimating;
 - (void)layoutSublayersOfLayer:(id)arg1;
 - (void)setAnimating:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

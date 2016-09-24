@@ -3,9 +3,9 @@
  */
 
 @interface UIPDFAnnotationParserDelegate : NSObject <NSXMLParserDelegate> {
-    UIPDFAnnotation *_annotation;
-    NSMutableString *_characters;
-    BOOL _parseError;
+    UIPDFAnnotation * _annotation;
+    NSMutableString * _characters;
+    BOOL  _parseError;
 }
 
 @property (nonatomic, retain) UIPDFAnnotation *annotation;

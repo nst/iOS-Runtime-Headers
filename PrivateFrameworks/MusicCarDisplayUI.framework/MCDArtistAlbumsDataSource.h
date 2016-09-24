@@ -3,8 +3,8 @@
  */
 
 @interface MCDArtistAlbumsDataSource : MCDQueryDataSource {
-    NSArray *_sectionEntities;
-    NSMutableDictionary *_sectionRanges;
+    NSArray * _sectionEntities;
+    NSMutableDictionary * _sectionRanges;
 }
 
 - (void).cxx_destruct;

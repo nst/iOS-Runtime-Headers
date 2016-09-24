@@ -57,4 +57,16 @@
 
 - (void)_mapkit_removeObjects:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
+- (void)fc_addObjectsFromArray:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
+
++ (id)pk_weakObjectsHashTableUsingPointerPersonality;
+
+// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
+- (BOOL)tsp_saveDataReferencesToMessage:(struct RepeatedPtrField<TSP::DataInfo> { void **x1; int x2; int x3; int x4; }*)arg1 dataArchiver:(id)arg2;
+
 @end

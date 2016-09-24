@@ -3,7 +3,7 @@
  */
 
 @interface _UIDocumentPickerNavigationBridgeController : UINavigationController <_UIDocumentPickerExtensionViewController> {
-    BOOL _hasSetInitialNavigationItem;
+    BOOL  _hasSetInitialNavigationItem;
 }
 
 @property (readonly, copy) NSString *debugDescription;

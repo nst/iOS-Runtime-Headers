@@ -3,18 +3,22 @@
  */
 
 @interface MCDPCItem : NSObject {
-    struct _MRContentItem { } *_contentItem;
-    MCDPCModel *_model;
+    struct _MRContentItem { } * _contentItem;
+    BOOL  _currentlyPlaying;
+    MCDPCModel * _model;
 }
 
 @property (nonatomic, readonly) NSData *artworkData;
 @property (nonatomic, readonly) UIImage *artworkImage;
 @property (nonatomic) struct _MRContentItem { }*contentItem;
+@property (nonatomic) BOOL currentlyPlaying;
 @property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly) BOOL isCloudItem;
 @property (nonatomic, readonly) BOOL isContainer;
+@property (nonatomic, readonly) BOOL isExplicitItem;
 @property (nonatomic, readonly) BOOL isPlayable;
 @property (nonatomic, readonly) MCDPCModel *model;
-@property (nonatomic, readonly) float playbackProgress;
+@property (nonatomic, readonly) double playbackProgress;
 @property (nonatomic, readonly) NSString *subtitle;
 @property (nonatomic, readonly) NSString *title;
 
@@ -23,14 +27,18 @@
 - (id)artworkData;
 - (id)artworkImage;
 - (struct _MRContentItem { }*)contentItem;
+- (BOOL)currentlyPlaying;
 - (void)dealloc;
 - (id)description;
 - (id)identifier;
+- (BOOL)isCloudItem;
 - (BOOL)isContainer;
+- (BOOL)isExplicitItem;
 - (BOOL)isPlayable;
 - (id)model;
 - (float)playbackProgress;
 - (void)setContentItem:(struct _MRContentItem { }*)arg1;
+- (void)setCurrentlyPlaying:(BOOL)arg1;
 - (id)subtitle;
 - (id)title;
 

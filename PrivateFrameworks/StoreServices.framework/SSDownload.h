@@ -3,10 +3,10 @@
  */
 
 @interface SSDownload : SSEntity <SSXPCCoding> {
-    NSMutableDictionary *_localAssets;
-    SSDownloadMetadata *_metadata;
-    NSNumber *_prioritizeAboveDownload;
-    SSDownloadStatus *_status;
+    NSMutableDictionary * _localAssets;
+    SSDownloadMetadata * _metadata;
+    NSNumber * _prioritizeAboveDownload;
+    SSDownloadStatus * _status;
 }
 
 @property (getter=_XPCConnection, readonly) SSXPCConnection *_XPCConnection;
@@ -16,19 +16,19 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) id downloadIdentifier;
 @property (copy) SSDownloadPolicy *downloadPolicy;
-@property (readonly) long long downloadSizeLimit;
+@property (readonly) int downloadSizeLimit;
 @property (getter=isExternal, nonatomic, readonly) BOOL external;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) SSDownloadMetadata *metadata;
-@property (readonly) long long persistentIdentifier;
+@property (readonly) int persistentIdentifier;
 @property (nonatomic, retain) SSDownloadStatus *status;
 @property (readonly) Class superclass;
 
-+ (long long)_existsMessage;
-+ (long long)_getExternalValuesMessage;
-+ (long long)_getValueMessage;
-+ (long long)_setExternalValuesMessage;
-+ (long long)_setValuesMessage;
++ (int)_existsMessage;
++ (int)_getExternalValuesMessage;
++ (int)_getValueMessage;
++ (int)_setExternalValuesMessage;
++ (int)_setValuesMessage;
 
 - (id)_XPCConnection;
 - (void)_addCachedExternalValues:(id)arg1;
@@ -44,19 +44,19 @@
 - (id)assets;
 - (id)assetsForType:(id)arg1;
 - (id)backgroundNetworkingJobGroupName;
-- (long long)bytesDownloaded;
-- (long long)bytesTotal;
+- (int)bytesDownloaded;
+- (int)bytesTotal;
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)downloadIdentifier;
 - (id)downloadPhaseIdentifier;
 - (id)downloadPolicy;
-- (long long)downloadSizeLimit;
+- (int)downloadSizeLimit;
 - (double)estimatedSecondsRemaining;
 - (id)failureError;
 - (void)handleWithDownloadHandler:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)initWithDownloadMetadata:(id)arg1;
-- (id)initWithPersistentIdentifier:(long long)arg1;
+- (id)initWithPersistentIdentifier:(int)arg1;
 - (BOOL)isBackgroundNetworkingUserInitiated;
 - (BOOL)isCancelable;
 - (BOOL)isEligibleForRestore:(id*)arg1;
@@ -65,7 +65,7 @@
 - (id)networkConstraints;
 - (void)pause;
 - (double)percentComplete;
-- (long long)persistentIdentifier;
+- (int)persistentIdentifier;
 - (void)prioritizeAboveDownload:(id)arg1 completionBlock:(id /* block */)arg2;
 - (BOOL)removeAsset:(id)arg1;
 - (void)restart;

@@ -3,10 +3,10 @@
  */
 
 @interface ATDeviceSyncSessionTask : ATSessionTask <ATMessageLinkRequestHandler> {
-    NSString *_dataClass;
-    NSString *_linkIdentifier;
-    ATConcreteMessageLink *_messageLink;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSString * _dataClass;
+    NSString * _linkIdentifier;
+    ATConcreteMessageLink * _messageLink;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, readonly) NSString *dataClass;

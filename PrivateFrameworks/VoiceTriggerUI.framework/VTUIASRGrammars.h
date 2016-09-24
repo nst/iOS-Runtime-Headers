@@ -3,7 +3,7 @@
  */
 
 @interface VTUIASRGrammars : NSObject <NSURLSessionDelegate> {
-    NSDictionary *_grammar;
+    NSDictionary * _grammar;
 }
 
 @property (readonly, copy) NSString *debugDescription;

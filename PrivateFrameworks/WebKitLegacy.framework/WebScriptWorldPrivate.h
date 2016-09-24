@@ -5,7 +5,7 @@
 @interface WebScriptWorldPrivate : NSObject {
     struct RefPtr<WebCore::DOMWrapperWorld> { 
         struct DOMWrapperWorld {} *m_ptr; 
-    } world;
+    }  world;
 }
 
 - (id).cxx_construct;

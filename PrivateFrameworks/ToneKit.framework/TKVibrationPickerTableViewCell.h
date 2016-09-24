@@ -3,14 +3,12 @@
  */
 
 @interface TKVibrationPickerTableViewCell : TKPickerTableViewCell <UITextFieldDelegate> {
-    <TKVibrationPickerTableViewCellDelegate> *_delegate;
-    BOOL _editable;
-    UIColor *_regularTextColor;
-    UITextField *_removableTextField;
+    <TKVibrationPickerTableViewCellDelegate> * _delegate;
+    BOOL  _editable;
+    UIColor * _regularTextColor;
+    UITextField * _removableTextField;
 }
 
-@property (getter=_isDisplayingRemovableTextField, nonatomic, readonly) BOOL _displayingRemovableTextField;
-@property (setter=_setRemovableTextField:, nonatomic, retain) UITextField *_removableTextField;
 @property (getter=isChecked, nonatomic) BOOL checked;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <TKVibrationPickerTableViewCellDelegate> *delegate;
@@ -24,12 +22,10 @@
 @property (nonatomic, retain) UIFont *regularTextFont;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (BOOL)_isDisplayingRemovableTextField;
 - (void)_layoutRemovableTextField;
 - (void)_makeRemovableTextFieldEditable:(BOOL)arg1;
-- (id)_removableTextField;
-- (void)_setRemovableTextField:(id)arg1;
-- (void)dealloc;
 - (id)delegate;
 - (void)didTransitionToState:(unsigned int)arg1;
 - (id)highlightedTextColor;

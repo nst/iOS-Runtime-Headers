@@ -3,11 +3,11 @@
  */
 
 @interface AVAssetClientURLRequestHelper : NSObject {
-    void *_URLRequestOriginator;
-    id /* block */ _figAssetProvider;
-    AVCMNotificationDispatcher *_figNotificationDispatcher;
-    AVWeakReference *_weakReferenceToResourceLoader;
-    AVWeakReference *_weakReferenceToSelf;
+    void * _URLRequestOriginator;
+    id /* block */  _figAssetProvider;
+    AVCMNotificationDispatcher * _figNotificationDispatcher;
+    AVWeakReference * _weakReferenceToResourceLoader;
+    AVWeakReference * _weakReferenceToSelf;
 }
 
 @property (nonatomic, retain) const void*URLRequestOriginator;

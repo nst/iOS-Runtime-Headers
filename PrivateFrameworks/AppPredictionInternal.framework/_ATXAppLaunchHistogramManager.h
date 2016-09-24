@@ -3,8 +3,8 @@
  */
 
 @interface _ATXAppLaunchHistogramManager : NSObject {
-    NSMutableDictionary *_histograms;
-    BOOL _persistentStore;
+    NSMutableDictionary * _histograms;
+    BOOL  _persistentStore;
 }
 
 + (void)resetSharedInstance;

@@ -3,11 +3,11 @@
  */
 
 @interface _MFLibrarySQLiteConnectionWrapper : NSObject {
-    MFProtectedSQLiteConnection *_connection;
-    BOOL _invalid;
-    unsigned int _refcount;
-    NSArray *_stack;
-    BOOL _writer;
+    MFProtectedSQLiteConnection * _connection;
+    BOOL  _invalid;
+    unsigned int  _refcount;
+    NSArray * _stack;
+    BOOL  _writer;
 }
 
 @property (nonatomic, readonly) MFProtectedSQLiteConnection *connection;

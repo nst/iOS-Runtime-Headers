@@ -3,11 +3,11 @@
  */
 
 @interface WMCharacterRunMapper : CMMapper {
-    float mFontSizeBumpFactor;
-    BOOL mIsDeleted;
-    WMStyle *mStyle;
-    NSString *mText;
-    WDCharacterRun *wdCharacterRun;
+    double  mFontSizeBumpFactor;
+    BOOL  mIsDeleted;
+    WMStyle * mStyle;
+    NSString * mText;
+    WDCharacterRun * wdCharacterRun;
 }
 
 + (void)addNonCollapsableSpanAt:(id)arg1 withState:(id)arg2;

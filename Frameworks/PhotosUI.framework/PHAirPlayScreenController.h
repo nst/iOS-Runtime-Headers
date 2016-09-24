@@ -3,15 +3,15 @@
  */
 
 @interface PHAirPlayScreenController : NSObject <PUAirPlayRouteObserverRegistryDelegate, PUAirPlayScreenReceiver> {
-    PUAirPlayContentRegistry *__contentRegistry;
-    PUAirPlayScreen *__currentScreen;
-    UIViewController *__lastDisplayedContent;
-    NSDate *__lastScreenConnectDate;
-    NSDate *__lastScreenRequestDate;
-    int __lastScreenRequestOrigin;
-    PUAirPlayRootViewController *__rootViewController;
-    PUAirPlayRouteObserverRegistry *__routeObserverRegistry;
-    PUAirPlayScreenDetector *__screenDetector;
+    PUAirPlayContentRegistry * __contentRegistry;
+    PUAirPlayScreen * __currentScreen;
+    UIViewController * __lastDisplayedContent;
+    NSDate * __lastScreenConnectDate;
+    NSDate * __lastScreenRequestDate;
+    int  __lastScreenRequestOrigin;
+    PUAirPlayRootViewController * __rootViewController;
+    PUAirPlayRouteObserverRegistry * __routeObserverRegistry;
+    PUAirPlayScreenDetector * __screenDetector;
 }
 
 @property (setter=_setContentRegistry:, nonatomic, retain) PUAirPlayContentRegistry *_contentRegistry;

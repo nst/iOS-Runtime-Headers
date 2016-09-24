@@ -3,10 +3,10 @@
  */
 
 @interface PLActivityCriterionEntry : PLActivityCriterion {
-    id /* block */ _criterionBlock;
-    NSString *_entryKey;
-    PLEntryNotificationOperatorComposition *_entryListener;
-    NSDictionary *_filter;
+    id /* block */  _criterionBlock;
+    NSString * _entryKey;
+    PLEntryNotificationOperatorComposition * _entryListener;
+    NSDictionary * _filter;
 }
 
 @property (copy) id /* block */ criterionBlock;

@@ -3,8 +3,8 @@
  */
 
 @interface OCPZipPackage : OCPPackage {
-    OISFUZipArchive *mArchive;
-    NSMutableDictionary *mParts;
+    OISFUZipArchive * mArchive;
+    NSMutableDictionary * mParts;
 }
 
 - (void)dealloc;

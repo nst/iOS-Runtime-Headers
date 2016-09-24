@@ -3,7 +3,7 @@
  */
 
 @interface CDPDKeychainSync : NSObject {
-    <CDPDCircleProxy> *_circleProxy;
+    <CDPDCircleProxy> * _circleProxy;
 }
 
 + (id)_defaultUserVisibleViewSet;
@@ -11,8 +11,13 @@
 + (id)keyChainSyncWithProxy:(id)arg1;
 
 - (void).cxx_destruct;
+- (BOOL)_isThisDeviceInCircle;
+- (void)_preflightCircleStatusWithCompletion:(id /* block */)arg1;
+- (void)_processAuthFailure:(id)arg1 completion:(id /* block */)arg2;
+- (BOOL)_setKeychainSyncState:(BOOL)arg1;
 - (BOOL)isUserVisibleKeychainSyncEnabled;
 - (void)removeNonViewAwarePeersFromCircleWithCompletion:(id /* block */)arg1;
 - (void)setUserVisibleKeychainSyncEnabled:(BOOL)arg1 withCompletion:(id /* block */)arg2;
+- (BOOL)synchronizeKeychainViewSetWithOtherPeers:(id*)arg1;
 
 @end

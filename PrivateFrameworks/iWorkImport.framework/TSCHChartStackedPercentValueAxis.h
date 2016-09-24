@@ -3,7 +3,7 @@
  */
 
 @interface TSCHChartStackedPercentValueAxis : TSCHChartValueAxis {
-    TSCHChartAxisAnalysis *mInProgressAnalysisForErrorBarData;
+    TSCHChartAxisAnalysis * mInProgressAnalysisForErrorBarData;
 }
 
 - (void)adjustMinMaxForDataRangeInAnalysis:(id)arg1;

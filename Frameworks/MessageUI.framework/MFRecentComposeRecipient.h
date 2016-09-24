@@ -3,7 +3,7 @@
  */
 
 @interface MFRecentComposeRecipient : MFComposeRecipient {
-    CRRecentContact *_recent;
+    CRRecentContact * _recent;
 }
 
 - (void)dealloc;

@@ -3,34 +3,34 @@
  */
 
 @interface AFAudioAnalyzer : NSObject <Endpointer> {
-    struct OpaqueAudioComponentInstance { } *_audioUnitEPVAD2;
-    double _automaticEndpointingSuspensionEndTime;
-    BOOL _communicatedEndpointDetection;
-    BOOL _communicatedStartPointDetection;
-    <AFAudioAnalyzerDelegate> *_delegate;
-    BOOL _detectedOneShotEndpoint;
-    BOOL _detectedOneShotStartpoint;
-    BOOL _detectedRecurrentEndpoint;
-    BOOL _detectedRecurrentStartpoint;
-    double _endWaitTime;
-    int _endpointMode;
-    NSMutableData *_floatSampleBuffer;
-    unsigned long _frameRate;
-    double _interspeechWaitTime;
-    BOOL _isConfigured;
-    double _lastOneShotEndpoint;
-    double _lastOneShotStartpoint;
-    double _lastRecurrentEndpoint;
-    double _lastRecurrentStartpoint;
-    double _minimumDurationForEndpointer;
-    NSString *_modelDictPath;
-    double _previousSamplesSeen;
-    double _sampleRate;
-    double _samplesSeen;
-    BOOL _saveSampleSeenInReset;
-    double _startWaitTime;
-    int _style;
-    NSDictionary *_topLevelParameterDict;
+    struct OpaqueAudioComponentInstance { } * _audioUnitEPVAD2;
+    double  _automaticEndpointingSuspensionEndTime;
+    BOOL  _communicatedEndpointDetection;
+    BOOL  _communicatedStartPointDetection;
+    <AFAudioAnalyzerDelegate> * _delegate;
+    BOOL  _detectedOneShotEndpoint;
+    BOOL  _detectedOneShotStartpoint;
+    BOOL  _detectedRecurrentEndpoint;
+    BOOL  _detectedRecurrentStartpoint;
+    double  _endWaitTime;
+    int  _endpointMode;
+    NSMutableData * _floatSampleBuffer;
+    unsigned long  _frameRate;
+    double  _interspeechWaitTime;
+    BOOL  _isConfigured;
+    double  _lastOneShotEndpoint;
+    double  _lastOneShotStartpoint;
+    double  _lastRecurrentEndpoint;
+    double  _lastRecurrentStartpoint;
+    double  _minimumDurationForEndpointer;
+    NSString * _modelDictPath;
+    double  _previousSamplesSeen;
+    double  _sampleRate;
+    double  _samplesSeen;
+    BOOL  _saveSampleSeenInReset;
+    double  _startWaitTime;
+    int  _style;
+    NSDictionary * _topLevelParameterDict;
 }
 
 @property (nonatomic) double automaticEndpointingSuspensionEndTime;
@@ -42,6 +42,7 @@
 @property (readonly) unsigned int hash;
 @property double interspeechWaitTime;
 @property (nonatomic, readonly) double lastEndOfVoiceActivityTime;
+@property (nonatomic, readonly) double lastStartOfVoiceActivityTime;
 @property (nonatomic) double minimumDurationForEndpointer;
 @property double startWaitTime;
 @property (nonatomic) int style;
@@ -60,6 +61,7 @@
 - (id)init;
 - (double)interspeechWaitTime;
 - (double)lastEndOfVoiceActivityTime;
+- (double)lastStartOfVoiceActivityTime;
 - (double)minimumDurationForEndpointer;
 - (void)preheat;
 - (void)reset;

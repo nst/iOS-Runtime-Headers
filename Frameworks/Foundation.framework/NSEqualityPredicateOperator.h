@@ -3,8 +3,8 @@
  */
 
 @interface NSEqualityPredicateOperator : NSPredicateOperator {
-    BOOL _negate;
-    unsigned int _options;
+    BOOL  _negate;
+    unsigned int  _options;
 }
 
 + (BOOL)supportsSecureCoding;

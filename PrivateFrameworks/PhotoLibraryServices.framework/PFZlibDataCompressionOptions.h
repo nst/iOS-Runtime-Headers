@@ -3,11 +3,11 @@
  */
 
 @interface PFZlibDataCompressionOptions : NSObject {
-    int _chunkSize;
-    int _compressionLevel;
-    int _memoryLevel;
-    int _strategy;
-    int _windowBits;
+    int  _chunkSize;
+    int  _compressionLevel;
+    int  _memoryLevel;
+    int  _strategy;
+    int  _windowBits;
 }
 
 @property (nonatomic) int chunkSize;

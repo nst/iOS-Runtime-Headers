@@ -3,16 +3,20 @@
  */
 
 @interface MPInsertIntoPlaybackQueueCommandEvent : MPRemoteCommandEvent {
-    int _insertionPosition;
-    MPRemotePlaybackQueue *_playbackQueue;
+    int  _insertionPosition;
+    MPRemotePlaybackQueue * _playbackQueue;
+    NSArray * _supportedInsertionPositions;
 }
 
 @property (nonatomic, readonly) int insertionPosition;
 @property (nonatomic, readonly) MPRemotePlaybackQueue *playbackQueue;
+@property (nonatomic, copy) NSArray *supportedInsertionPositions;
 
 - (void).cxx_destruct;
 - (id)initWithCommand:(id)arg1 mediaRemoteType:(unsigned int)arg2 options:(id)arg3;
 - (int)insertionPosition;
 - (id)playbackQueue;
+- (void)setSupportedInsertionPositions:(id)arg1;
+- (id)supportedInsertionPositions;
 
 @end

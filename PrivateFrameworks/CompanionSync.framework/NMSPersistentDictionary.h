@@ -3,19 +3,19 @@
  */
 
 @interface NMSPersistentDictionary : NSObject <NSLocking> {
-    struct sqlite3_stmt { } *_byDate;
-    struct sqlite3_stmt { } *_byEnqueueDate;
-    struct sqlite3 { } *_db;
-    struct sqlite3_stmt { } *_fetch;
-    struct sqlite3_stmt { } *_insert;
-    NSObject<OS_dispatch_semaphore> *_lock;
-    struct __CFString { } *_loggingFacility;
-    Class _objectClass;
-    NSString *_path;
-    struct sqlite3_stmt { } *_remove;
-    struct sqlite3_stmt { } *_removeAll;
-    struct sqlite3_stmt { } *_reset;
-    _SYSharedServiceDB *_sharedDB;
+    struct sqlite3_stmt { } * _byDate;
+    struct sqlite3_stmt { } * _byEnqueueDate;
+    struct sqlite3 { } * _db;
+    struct sqlite3_stmt { } * _fetch;
+    struct sqlite3_stmt { } * _insert;
+    NSObject<OS_dispatch_semaphore> * _lock;
+    struct __CFString { } * _loggingFacility;
+    Class  _objectClass;
+    NSString * _path;
+    struct sqlite3_stmt { } * _remove;
+    struct sqlite3_stmt { } * _removeAll;
+    struct sqlite3_stmt { } * _reset;
+    _SYSharedServiceDB * _sharedDB;
 }
 
 - (void).cxx_destruct;

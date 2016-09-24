@@ -3,13 +3,13 @@
  */
 
 @interface _UIBarAppearanceStorage : NSObject {
-    NSMutableDictionary *backgroundImages;
+    NSMutableDictionary * _backgroundImages;
 }
 
 + (int)typicalBarPosition;
 
+- (void).cxx_destruct;
 - (id)backgroundImageForBarPosition:(int)arg1 barMetrics:(int)arg2;
-- (void)dealloc;
 - (BOOL)hasAnyCustomBackgroundImage;
 - (void)setBackgroundImage:(id)arg1 forBarPosition:(int)arg2 barMetrics:(int)arg3;
 

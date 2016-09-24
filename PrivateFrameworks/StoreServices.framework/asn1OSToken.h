@@ -3,7 +3,7 @@
  */
 
 @interface asn1OSToken : asn1Token {
-    asn1Token *mValue;
+    asn1Token * mValue;
 }
 
 @property (readonly) asn1Token *value;

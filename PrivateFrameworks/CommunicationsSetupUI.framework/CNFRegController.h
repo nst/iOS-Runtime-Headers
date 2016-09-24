@@ -3,18 +3,18 @@
  */
 
 @interface CNFRegController : NSObject <IMSystemMonitorListener> {
-    id /* block */ _accountActivationChangedBlock;
-    id /* block */ _accountAddedBlock;
-    id /* block */ _accountAuthorizationChangedBlock;
-    NSMutableDictionary *_accountFilterCache;
-    id /* block */ _accountRegistrationBlock;
-    id /* block */ _accountRemovedBlock;
-    NSArray *_accounts;
-    id /* block */ _aliasAddedBlock;
-    id /* block */ _aliasRemovedBlock;
-    id /* block */ _aliasStatusChangedBlock;
-    NSDictionary *_cachedCallerIDMap;
-    id /* block */ _callerIdChangedBlock;
+    id /* block */  _accountActivationChangedBlock;
+    id /* block */  _accountAddedBlock;
+    id /* block */  _accountAuthorizationChangedBlock;
+    NSMutableDictionary * _accountFilterCache;
+    id /* block */  _accountRegistrationBlock;
+    id /* block */  _accountRemovedBlock;
+    NSArray * _accounts;
+    id /* block */  _aliasAddedBlock;
+    id /* block */  _aliasRemovedBlock;
+    id /* block */  _aliasStatusChangedBlock;
+    NSDictionary * _cachedCallerIDMap;
+    id /* block */  _callerIdChangedBlock;
     struct { 
         unsigned int listeningForAccountChanges : 1; 
         unsigned int listeningForCallerIDChanges : 1; 
@@ -24,24 +24,24 @@
         unsigned int showedWifiFirstRunAlert : 1; 
         unsigned int ignoringAccountChanges : 1; 
         unsigned int activatingAccounts : 1; 
-    } _controllerFlags;
-    unsigned int _logIndent;
-    NSString *_logName;
-    unsigned char _originalCellFlag;
-    BOOL _originalUsesBackgroundNetwork;
-    unsigned char _originalWifiFlag;
-    id /* block */ _profileChangedBlock;
-    id /* block */ _profileStatusChangedBlock;
-    int _requiredWifiCount;
-    id /* block */ _resetBlock;
-    id /* block */ _serviceDidBecomeUnsupportedBlock;
-    int _serviceType;
-    NSArray *_services;
-    IMAccount *_systemAccount;
-    int _systemAccountType;
-    id /* block */ _vettedAliasesChangedBlock;
-    NSTimer *_wifiAlertWatchTimer;
-    id /* block */ _willLaunchURLBlock;
+    }  _controllerFlags;
+    unsigned int  _logIndent;
+    NSString * _logName;
+    unsigned char  _originalCellFlag;
+    BOOL  _originalUsesBackgroundNetwork;
+    unsigned char  _originalWifiFlag;
+    id /* block */  _profileChangedBlock;
+    id /* block */  _profileStatusChangedBlock;
+    int  _requiredWifiCount;
+    id /* block */  _resetBlock;
+    id /* block */  _serviceDidBecomeUnsupportedBlock;
+    int  _serviceType;
+    NSArray * _services;
+    IMAccount * _systemAccount;
+    int  _systemAccountType;
+    id /* block */  _vettedAliasesChangedBlock;
+    NSTimer * _wifiAlertWatchTimer;
+    id /* block */  _willLaunchURLBlock;
 }
 
 @property (nonatomic, copy) id /* block */ accountActivationChangedBlock;
@@ -184,6 +184,7 @@
 - (id)displayAccount;
 - (id)displayAlias;
 - (id)emailAliases;
+- (void)enablePhoneNumberRegistration;
 - (id)failedAccounts;
 - (id)firstAccount;
 - (id)firstService;

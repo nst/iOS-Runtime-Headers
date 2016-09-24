@@ -3,8 +3,8 @@
  */
 
 @interface PLAccountingCorrectionManager : PLAccountingOwnerDependencyManager <PLAccountingCorrectionOwnerManager> {
-    <PLAccountingCorrectionManagerDelegate> *_delegate;
-    NSMutableDictionary *_parentEntryIDToChildEnergyEstimates;
+    <PLAccountingCorrectionManagerDelegate> * _delegate;
+    NSMutableDictionary * _parentEntryIDToChildEnergyEstimates;
 }
 
 @property (readonly, copy) NSString *debugDescription;

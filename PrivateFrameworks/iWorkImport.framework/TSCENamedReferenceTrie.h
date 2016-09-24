@@ -3,7 +3,7 @@
  */
 
 @interface TSCENamedReferenceTrie : NSObject {
-    NSLocale *mLocale;
+    NSLocale * mLocale;
     struct TSCENamedReferenceTrieNode { 
         struct __CFDictionary {} *mTrackedReferencesByOwnerID; 
         struct unordered_map<unsigned short, TSCENamedReferenceTrieNode *, std::__1::hash<unsigned short>, std::__1::equal_to<unsigned short>, std::__1::allocator<std::__1::pair<const unsigned short, TSCENamedReferenceTrieNode *> > > { 
@@ -27,11 +27,11 @@
                     unsigned long __first_; 
                 } __p2_; 
                 struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned short, std::__1::__hash_value_type<unsigned short, TSCENamedReferenceTrieNode *>, std::__1::equal_to<unsigned short>, true> > { 
-                    float __first_; 
+                    double __first_; 
                 } __p3_; 
             } __table_; 
         } mChildren; 
-    } mRoot;
+    }  mRoot;
 }
 
 - (id).cxx_construct;

@@ -3,9 +3,9 @@
  */
 
 @interface NSBatchDeleteRequest : NSPersistentStoreRequest {
-    NSFetchRequest *_deleteTarget;
-    void *_reserved;
-    unsigned int _resultType;
+    NSFetchRequest * _deleteTarget;
+    void * _reserved;
+    unsigned int  _resultType;
 }
 
 @property (readonly, copy) NSFetchRequest *fetchRequest;

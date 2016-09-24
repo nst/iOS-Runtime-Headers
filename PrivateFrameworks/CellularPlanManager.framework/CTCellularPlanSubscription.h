@@ -3,20 +3,20 @@
  */
 
 @interface CTCellularPlanSubscription : NSObject <NSCopying, NSSecureCoding> {
-    int _accountStatus;
-    NSString *_accountURL;
-    BOOL _autoRenew;
-    double _billingEndDate;
-    double _billingStartDate;
-    NSString *_carrierName;
-    NSArray *_dataUsage;
-    NSArray *_homeCountryList;
-    NSString *_iccid;
-    NSString *_planDescription;
-    int _planStatus;
-    int _planType;
-    int _subscriptionResult;
-    double _timestamp;
+    int  _accountStatus;
+    NSString * _accountURL;
+    BOOL  _autoRenew;
+    double  _billingEndDate;
+    double  _billingStartDate;
+    NSString * _carrierName;
+    NSArray * _dataUsage;
+    NSArray * _homeCountryList;
+    NSString * _iccid;
+    NSString * _planDescription;
+    int  _planStatus;
+    int  _planType;
+    int  _subscriptionResult;
+    double  _timestamp;
 }
 
 @property (nonatomic, readonly) int accountStatus;

@@ -3,9 +3,9 @@
  */
 
 @interface NSCache : NSObject {
-    id _delegate;
-    void *_private;
-    void *_reserved;
+    id  _delegate;
+    void * _private;
+    void * _reserved;
 }
 
 @property unsigned int countLimit;
@@ -22,7 +22,6 @@
 - (id)delegate;
 - (BOOL)evictsObjectsWhenApplicationEntersBackground;
 - (BOOL)evictsObjectsWithDiscardedContent;
-- (void)finalize;
 - (id)init;
 - (unsigned int)minimumObjectCount;
 - (id)name;
@@ -43,6 +42,11 @@
 // Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
 
 - (id)CALobjectForKey:(id)arg1 calculatedWithBlock:(id /* block */)arg2;
+
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
+
+- (id)objectForKeyedSubscript:(id)arg1;
+- (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 

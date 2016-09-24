@@ -3,8 +3,8 @@
  */
 
 @interface IMAbstractDatabaseArchiver : NSObject {
-    NSString *_destinationPath;
-    NSString *_sourcePath;
+    NSString * _destinationPath;
+    NSString * _sourcePath;
 }
 
 @property (nonatomic, readonly) NSString *destinationPath;

@@ -3,9 +3,9 @@
  */
 
 @interface MPUUserActivityContainerItem : NSObject <NSCopying, NSMutableCopying> {
-    int _containerItemType;
-    MPMediaEntity *_selectedMediaEntity;
-    MPMediaEntity *_visualReferenceMediaEntity;
+    int  _containerItemType;
+    MPMediaEntity * _selectedMediaEntity;
+    MPMediaEntity * _visualReferenceMediaEntity;
 }
 
 @property (nonatomic, readonly) MPUContentItemIdentifierCollection *MPU_selectedContentItemIdentifierCollection;

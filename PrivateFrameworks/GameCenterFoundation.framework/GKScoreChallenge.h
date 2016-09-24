@@ -3,7 +3,7 @@
  */
 
 @interface GKScoreChallenge : GKChallenge {
-    GKScore *_score;
+    GKScore * _score;
 }
 
 @property (nonatomic, readonly) GKLeaderboard *leaderboard;

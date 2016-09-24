@@ -3,14 +3,14 @@
  */
 
 @interface PTIconSettings : _UISettings {
-    float _alphaStrength;
-    BOOL _on;
-    float _radiusStrength;
+    double  _alphaStrength;
+    BOOL  _on;
+    double  _radiusStrength;
 }
 
-@property (nonatomic) float alphaStrength;
+@property (nonatomic) double alphaStrength;
 @property (nonatomic) BOOL on;
-@property (nonatomic) float radiusStrength;
+@property (nonatomic) double radiusStrength;
 
 + (id)archivedSettingsGroup;
 

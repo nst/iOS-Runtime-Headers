@@ -3,7 +3,7 @@
  */
 
 @interface MusicProductTemplateDocumentViewController : SKUIViewController <SKUIDocumentViewController, SKUINavigationBarDisplayConfiguring> {
-    UIViewController<MusicClientContextConsuming><SKUINavigationBarDisplayConfiguring> *_productViewController;
+    UIViewController<MusicClientContextConsuming><SKUINavigationBarDisplayConfiguring> * _productViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

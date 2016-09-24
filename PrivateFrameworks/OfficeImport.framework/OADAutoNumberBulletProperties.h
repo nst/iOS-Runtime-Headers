@@ -3,8 +3,8 @@
  */
 
 @interface OADAutoNumberBulletProperties : OADBulletProperties {
-    int mSchemeType;
-    unsigned int mStartIndex;
+    int  mSchemeType;
+    unsigned int  mStartIndex;
 }
 
 - (int)autoNumberSchemeType;

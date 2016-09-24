@@ -2,40 +2,40 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKDayTimeView : UIView <EKCurrentTimeMarkerViewUpdating> {
-    NSMutableArray *_contentViews;
-    <EKDayTimeViewDelegate> *_delegate;
-    float _designatorSize;
-    double _highlightedHour;
-    float _hourHeight;
-    float _hourHeightScale;
-    float _hourSize;
-    float _hoursToPad;
+@interface EKDayTimeView : EKUIVisualEffectView <EKCurrentTimeMarkerViewUpdating> {
+    NSMutableArray * _contentViews;
+    <EKDayTimeViewDelegate> * _delegate;
+    double  _designatorSize;
+    double  _highlightedHour;
+    double  _hourHeight;
+    double  _hourHeightScale;
+    double  _hourSize;
+    double  _hoursToPad;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _hoursToRender;
-    unsigned int _leftBorder;
-    int _orientation;
-    unsigned int _rightBorder;
-    BOOL _showsTimeMarker;
-    BOOL _showsTimeMarkerExtension;
-    UIColor *_timeColor;
-    EKCurrentTimeMarkerView *_timeMarker;
-    UIView *_timeMarkerExtension;
-    float _timeWidth;
-    BOOL _usesLightText;
+    }  _hoursToRender;
+    unsigned int  _leftBorder;
+    int  _orientation;
+    unsigned int  _rightBorder;
+    BOOL  _showsTimeMarker;
+    BOOL  _showsTimeMarkerExtension;
+    UIColor * _timeColor;
+    EKCurrentTimeMarkerView * _timeMarker;
+    UIView * _timeMarkerExtension;
+    double  _timeWidth;
+    BOOL  _usesLightText;
 }
 
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, readonly) float defaultHeight;
+@property (nonatomic, readonly) double defaultHeight;
 @property (nonatomic) <EKDayTimeViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic) double highlightedHour;
-@property (nonatomic, readonly) float hourHeight;
-@property (nonatomic) float hourHeightScale;
-@property (nonatomic) float hoursToPad;
+@property (nonatomic, readonly) double hourHeight;
+@property (nonatomic) double hourHeightScale;
+@property (nonatomic) double hoursToPad;
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } hoursToRender;
 @property (nonatomic) BOOL showsLeftBorder;
 @property (nonatomic) BOOL showsRightBorder;
@@ -47,21 +47,25 @@
 @property (nonatomic) BOOL usesLightText;
 
 + (id)_boldFontForOrientation:(int)arg1;
-+ (void)_calculateWidthForOrientation:(int)arg1;
++ (void)_calculateWidthForOrientation:(int)arg1 excludeCurrentTime:(BOOL)arg2;
 + (float)_dynamicFontSizeForOrientation:(int)arg1;
-+ (float)_hourWidthForOrientation:(int)arg1;
 + (void)_invalidateCachedValues;
 + (void)_invalidateWidth;
++ (id)_noonLocalizedString;
++ (float)_noonLocalizedWidthForOrientation:(int)arg1;
 + (id)_normalFontForOrientation:(int)arg1;
 + (void)_registerForInvalidation;
++ (float)_timeTextWidthForOrientation:(int)arg1;
 + (id)allDayLabelBoldFont;
 + (id)allDayLabelFont;
 + (float)defaultHeightForOrientation:(int)arg1;
 + (float)defaultHeightForOrientation:(int)arg1 withHourScale:(float)arg2;
 + (float)defaultHourScale;
 + (float)designatorSizeForOrientation:(int)arg1;
++ (float)heightOfHourTextForHour:(int)arg1 orientation:(int)arg2;
 + (float)hourHeightForOrientation:(int)arg1;
 + (float)hourSizeForOrientation:(int)arg1;
++ (float)hourWidthForOrientation:(int)arg1;
 + (void)setVerticalPadding:(float)arg1;
 + (float)timeInsetForOrientation:(int)arg1;
 + (float)timeVerticalInsetForOrientation:(int)arg1;
@@ -79,18 +83,18 @@
 - (void)dealloc;
 - (float)defaultHeight;
 - (id)delegate;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forContentView:(id)arg2 withHourRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forContentView:(id)arg2 withHourRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (double)highlightedHour;
 - (float)hourHeight;
 - (float)hourHeightScale;
 - (float)hoursToPad;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })hoursToRender;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutFrames;
 - (void)layoutSubviews;
 - (float)scaledHourHeight;
 - (void)setDelegate:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setHighlightedHour:(double)arg1;
 - (void)setHourHeightScale:(float)arg1;
 - (void)setHoursToPad:(float)arg1;
@@ -98,6 +102,7 @@
 - (void)setNeedsDisplay;
 - (void)setOpaque:(BOOL)arg1;
 - (void)setOrientation:(int)arg1;
+- (void)setSemanticContentAttribute:(int)arg1;
 - (void)setShowsLeftBorder:(BOOL)arg1;
 - (void)setShowsRightBorder:(BOOL)arg1;
 - (void)setShowsTimeMarker:(BOOL)arg1;
@@ -108,7 +113,8 @@
 - (BOOL)showsRightBorder;
 - (BOOL)showsTimeMarker;
 - (BOOL)showsTimeMarkerExtension;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (void)subTintColorUpdatedToColor:(id)arg1;
 - (id)timeColor;
 - (id)timeMarker;
 - (void)tintColorDidChange;

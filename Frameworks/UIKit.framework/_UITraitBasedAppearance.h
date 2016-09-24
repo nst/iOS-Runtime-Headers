@@ -3,7 +3,7 @@
  */
 
 @interface _UITraitBasedAppearance : _UIAppearance {
-    UITraitCollection *_traitCollection;
+    UITraitCollection * _traitCollection;
 }
 
 + (id)_appearanceForTraitCollection:(id)arg1 forClass:(Class)arg2 withContainerList:(id)arg3;

@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSTCellStyle : TSSStyle <TSDMixing>
+@interface TSTCellStyle : TSSStyle <TSDMixing, TSTCellDiffing>
 
++ (id)cellDiffProperties;
 + (void)initDefaultPropertyMap:(id)arg1 forTableArea:(unsigned int)arg2 presetID:(unsigned int)arg3 colors:(id)arg4 alternate:(int)arg5;
 + (id)nonEmphasisCellProperties;
 + (void)p_initBodyRegionPropertyMap:(id)arg1 presetID:(unsigned int)arg2 colors:(id)arg3 alternate:(int)arg4;
@@ -23,10 +24,12 @@
 - (SEL)mapThemePropertyMapSelector;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
 - (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
+- (id)objectByRemovingPropertiesInMap:(id)arg1 addingPropertiesInMap:(id)arg2 updateInverseResetPropertyMap:(id)arg3 updateInverseSetPropertyMap:(id)arg4;
 - (void)saveCellStylePropertiesToArchive:(struct CellStylePropertiesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct FillArchive {} *x5; struct Deprecated_TableStrokeArchive {} *x6; struct Deprecated_TableStrokeArchive {} *x7; bool x8; int x9; struct Deprecated_TableStrokeArchive {} *x10; struct Deprecated_TableStrokeArchive {} *x11; struct PaddingArchive {} *x12; struct StrokeArchive {} *x13; struct StrokeArchive {} *x14; struct StrokeArchive {} *x15; struct StrokeArchive {} *x16; }*)arg1 archiver:(id)arg2;
 - (void)saveCellStyleToArchive:(struct CellStyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct StyleArchive {} *x5; struct CellStylePropertiesArchive {} *x6; unsigned int x7; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)tstMapCellStylePropertyMap:(id)arg1;
+- (void)upgradeIfNecessary;
 - (void)validate;
 
 @end

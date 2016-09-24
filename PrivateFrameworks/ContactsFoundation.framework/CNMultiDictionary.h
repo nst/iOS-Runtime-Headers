@@ -3,7 +3,7 @@
  */
 
 @interface CNMultiDictionary : NSObject <NSCopying, NSMutableCopying> {
-    NSMutableDictionary *_entries;
+    NSMutableDictionary * _entries;
 }
 
 @property (nonatomic, readonly) NSArray *allKeys;

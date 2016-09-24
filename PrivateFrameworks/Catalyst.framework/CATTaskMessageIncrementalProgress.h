@@ -3,8 +3,8 @@
  */
 
 @interface CATTaskMessageIncrementalProgress : CATTaskMessage {
-    int _completedUnitCount;
-    int _totalUnitCount;
+    int  _completedUnitCount;
+    int  _totalUnitCount;
 }
 
 @property (nonatomic) int completedUnitCount;

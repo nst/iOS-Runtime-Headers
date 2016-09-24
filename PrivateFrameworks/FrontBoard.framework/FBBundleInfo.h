@@ -3,16 +3,16 @@
  */
 
 @interface FBBundleInfo : NSObject {
-    BSCFBundle *_bundle;
-    NSString *_bundleIdentifier;
-    NSString *_bundleType;
-    NSURL *_bundleURL;
-    NSString *_bundleVersion;
-    NSUUID *_cacheGUID;
-    NSString *_displayName;
-    NSDictionary *_extendedInfo;
-    LSApplicationProxy *_proxy;
-    unsigned int _sequenceNumber;
+    BSCFBundle * _bundle;
+    NSString * _bundleIdentifier;
+    NSString * _bundleType;
+    NSURL * _bundleURL;
+    NSString * _bundleVersion;
+    NSUUID * _cacheGUID;
+    NSString * _displayName;
+    NSDictionary * _extendedInfo;
+    LSApplicationProxy * _proxy;
+    unsigned int  _sequenceNumber;
 }
 
 @property (getter=_bundle, nonatomic, readonly, retain) BSCFBundle *bundle;

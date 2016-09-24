@@ -3,25 +3,38 @@
  */
 
 @interface CAMFlipButton : UIButton {
+    UIImageView * __padBackgroundView;
+    int  _layoutStyle;
+    int  _orientation;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _tappableEdgeInsets;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _tappableEdgeInsets;
 }
 
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } tappableEdgeInsets;
+@property (nonatomic, readonly) UIImageView *_padBackgroundView;
+@property (nonatomic) int layoutStyle;
+@property (nonatomic) int orientation;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } tappableEdgeInsets;
 
-+ (id)flipButton;
++ (id)flipButtonWithLayoutStyle:(int)arg1;
 
-- (void)_commonCAMFlipButtonInitialization;
-- (id)_flipImage;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (void)setTappableEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })tappableEdgeInsets;
+- (void).cxx_destruct;
+- (void)_commonCAMFlipButtonInitializationWithStyle:(int)arg1;
+- (id)_padBackgroundView;
+- (void)_updateForLayoutStyle;
+- (void)_updateImages;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (int)layoutStyle;
+- (void)layoutSubviews;
+- (int)orientation;
+- (void)setLayoutStyle:(int)arg1;
+- (void)setOrientation:(int)arg1;
+- (void)setOrientation:(int)arg1 animated:(BOOL)arg2;
+- (void)setTappableEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })tappableEdgeInsets;
 
 @end

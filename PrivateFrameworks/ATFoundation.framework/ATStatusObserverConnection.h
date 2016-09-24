@@ -3,7 +3,7 @@
  */
 
 @interface ATStatusObserverConnection : NSObject <ATStatusMonitorObserver, ATStatusObserverConnectionProtocol> {
-    NSXPCConnection *_connection;
+    NSXPCConnection * _connection;
 }
 
 @property (readonly, copy) NSString *debugDescription;

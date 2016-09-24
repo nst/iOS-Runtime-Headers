@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOVoltaireGeocodeProvider : GEOGeocodeProvider <PBRequesterDelegate> {
-    BOOL _cancelled;
-    GEORequester *_requester;
+@interface GEOVoltaireGeocodeProvider : GEOGeocodeProvider <GEOPBSessionRequesterDelegate> {
+    BOOL  _cancelled;
+    GEORequester * _requester;
 }
 
 @property (readonly, copy) NSString *debugDescription;

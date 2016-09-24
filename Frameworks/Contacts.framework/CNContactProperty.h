@@ -3,9 +3,9 @@
  */
 
 @interface CNContactProperty : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_identifier;
-    CNContact *_internalContact;
-    NSString *_key;
+    NSString * _identifier;
+    CNContact * _internalContact;
+    NSString * _key;
 }
 
 @property (nonatomic, readonly, copy) CNContact *contact;
@@ -31,11 +31,13 @@
 - (id)initWithCoder:(id)arg1;
 - (id)internalContact;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isMultiValueProperty;
 - (id)key;
 - (id)label;
 - (id)labeledValue;
 - (id)labeledValueForContact:(id)arg1;
 - (int)multiValueIdentifier;
+- (id)primitiveValue;
 - (void)setIdentifier:(id)arg1;
 - (void)setInternalContact:(id)arg1;
 - (void)setKey:(id)arg1;

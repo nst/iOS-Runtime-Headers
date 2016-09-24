@@ -3,13 +3,13 @@
  */
 
 @interface StockUpdater : YQLRequest {
-    <StockUpdaterDelegate> *_delegate;
-    BOOL _forceUpdate;
-    BOOL _isComprehensive;
-    NSError *_lastError;
-    NSArray *_pendingStocks;
-    NSArray *_requestStocks;
-    id /* block */ _updateCompletionHandler;
+    <StockUpdaterDelegate> * _delegate;
+    BOOL  _forceUpdate;
+    BOOL  _isComprehensive;
+    NSError * _lastError;
+    NSArray * _pendingStocks;
+    NSArray * _requestStocks;
+    id /* block */  _updateCompletionHandler;
 }
 
 @property (nonatomic) <StockUpdaterDelegate> *delegate;

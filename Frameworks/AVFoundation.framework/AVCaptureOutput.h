@@ -3,7 +3,7 @@
  */
 
 @interface AVCaptureOutput : NSObject {
-    AVCaptureOutputInternal *_outputInternal;
+    AVCaptureOutputInternal * _outputInternal;
 }
 
 @property (nonatomic, readonly) NSArray *connections;
@@ -14,7 +14,7 @@
 
 - (id)_inputForConnection:(id)arg1;
 - (id)_recommendedAudioOutputSettingsForConnection:(id)arg1 sourceSettings:(id)arg2 fileType:(id)arg3;
-- (id)_recommendedVideoOutputSettingsForConnection:(id)arg1 sourceSettings:(id)arg2;
+- (id)_recommendedVideoOutputSettingsForConnection:(id)arg1 sourceSettings:(id)arg2 videoCodec:(id)arg3;
 - (id)addConnection:(id)arg1 error:(id*)arg2;
 - (BOOL)appliesMirroringWithPhysicalFlipForConnection:(id)arg1;
 - (BOOL)appliesOrientationWithPhysicalRotationForConnection:(id)arg1;
@@ -34,15 +34,16 @@
 - (BOOL)hasRequiredOutputFormatForConnection:(id)arg1;
 - (id)init;
 - (id)liveConnections;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })metadataOutputRectOfInterestForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })metadataOutputRectOfInterestForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (struct CGSize { float x1; float x2; })outputSizeForSourceFormat:(id)arg1;
+- (struct CGSize { double x1; double x2; })outputSizeForSourceFormat:(id)arg1;
 - (void)performBlockOnSessionNotifyingThread:(id /* block */)arg1;
 - (void)performFigCaptureSessionOperationSafelyUsingBlock:(id /* block */)arg1;
 - (id)recommendedOutputSettingsForConnection:(id)arg1 sourceSettings:(id)arg2 fileType:(id)arg3;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForMetadataOutputRectOfInterest:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)recommendedVideoOutputSettingsForConnection:(id)arg1 sourceSettings:(id)arg2 videoCodec:(id)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectForMetadataOutputRectOfInterest:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)removeConnection:(id)arg1;
-- (int)requiredOutputFormatForConnection:(id)arg1;
+- (unsigned long)requiredOutputFormatForConnection:(id)arg1;
 - (void)safelyHandleServerConnectionDeathForFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
 - (id)session;
 - (void)setSession:(id)arg1;

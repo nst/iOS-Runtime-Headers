@@ -3,15 +3,13 @@
  */
 
 @interface ATRestoreManager : NSObject <ATEnvironmentMonitorObserver, ATRestoreAssetLinkDelegate, ATSessionObserver> {
-    ATRestoreAssetLink *_applicationDataRestoreLink;
-    ATAssetManager *_assetManager;
-    BOOL _cancelled;
-    NSObject<OS_dispatch_queue> *_queue;
-    ATRestoreAssetLink *_restoreLink;
-    ATSession *_restoreSession;
-    ATDeviceSettings *_settings;
-    ATStoreAssetLink *_storeLink;
-    MSVXPCTransaction *_xpcTransaction;
+    ATRestoreAssetLink * _applicationDataRestoreLink;
+    BOOL  _cancelled;
+    NSObject<OS_dispatch_queue> * _queue;
+    ATRestoreAssetLink * _restoreLink;
+    ATSession * _restoreSession;
+    ATDeviceSettings * _settings;
+    MSVXPCTransaction * _xpcTransaction;
 }
 
 @property (readonly, copy) NSString *debugDescription;

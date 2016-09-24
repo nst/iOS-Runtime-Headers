@@ -3,10 +3,10 @@
  */
 
 @interface BSSettingsDiff : NSObject <BSXPCCoding, NSCopying> {
-    BSMutableSettings *_changes;
-    <BSSettingDescriptionProvider> *_descriptionProvider;
-    NSHashTable *_flagRemovals;
-    NSHashTable *_objectRemovals;
+    BSMutableSettings * _changes;
+    <BSSettingDescriptionProvider> * _descriptionProvider;
+    NSHashTable * _flagRemovals;
+    NSHashTable * _objectRemovals;
 }
 
 @property (readonly, copy) NSString *debugDescription;

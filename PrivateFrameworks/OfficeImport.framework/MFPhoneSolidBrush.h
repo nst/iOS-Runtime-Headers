@@ -3,7 +3,7 @@
  */
 
 @interface MFPhoneSolidBrush : MFPhoneBrush {
-    OITSUColor *m_colour;
+    OITSUColor * m_colour;
 }
 
 + (id)solidBrushWithColour:(id)arg1;

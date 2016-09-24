@@ -3,12 +3,13 @@
  */
 
 @interface GEOPDPopularNearbySearchResult : PBCodable <NSCopying> {
-    GEOMapRegion *_displayMapRegion;
+    GEOMapRegion * _displayMapRegion;
     struct { 
         unsigned int isChainResultSet : 1; 
-    } _has;
-    BOOL _isChainResultSet;
-    NSString *_sectionHeader;
+    }  _has;
+    BOOL  _isChainResultSet;
+    NSString * _sectionHeader;
+    PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) GEOMapRegion *displayMapRegion;
@@ -17,6 +18,7 @@
 @property (nonatomic, readonly) BOOL hasSectionHeader;
 @property (nonatomic) BOOL isChainResultSet;
 @property (nonatomic, retain) NSString *sectionHeader;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -37,6 +39,7 @@
 - (void)setHasIsChainResultSet:(BOOL)arg1;
 - (void)setIsChainResultSet:(BOOL)arg1;
 - (void)setSectionHeader:(id)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

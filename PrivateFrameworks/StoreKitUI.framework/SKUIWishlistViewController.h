@@ -3,16 +3,16 @@
  */
 
 @interface SKUIWishlistViewController : SKUIViewController <SKUIItemListTableDelegate> {
-    _UIBackdropView *_backdropView;
-    <SKUIWishlistDelegate> *_delegate;
-    UIBarButtonItem *_deleteButton;
-    BOOL _editing;
-    _UIContentUnavailableView *_emptyWishlistView;
-    SKUIItemListTableViewController *_itemListViewController;
-    BOOL _reloadOnNextAppear;
-    SKUISyncWishlistOperation *_syncOperation;
-    SKUIWishlist *_wishlist;
-    int _wishlistState;
+    _UIBackdropView * _backdropView;
+    <SKUIWishlistDelegate> * _delegate;
+    UIBarButtonItem * _deleteButton;
+    BOOL  _editing;
+    _UIContentUnavailableView * _emptyWishlistView;
+    SKUIItemListTableViewController * _itemListViewController;
+    BOOL  _reloadOnNextAppear;
+    SKUISyncWishlistOperation * _syncOperation;
+    SKUIWishlist * _wishlist;
+    int  _wishlistState;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -57,5 +57,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

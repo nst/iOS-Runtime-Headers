@@ -3,14 +3,14 @@
  */
 
 @interface RTCReporting : NSObject {
-    NSXPCConnection *_connection;
-    int _counter;
-    NSArray *_enabledBackendNames;
-    int _intervalMultiplier;
-    id /* block */ _loggingBlock;
-    NSMutableDictionary *_periodicServiceDict;
-    NSObject<OS_dispatch_queue> *_reportingQueue;
-    NSObject<OS_dispatch_source> *_timer;
+    NSXPCConnection * _connection;
+    int  _counter;
+    NSArray * _enabledBackendNames;
+    int  _intervalMultiplier;
+    id /* block */  _loggingBlock;
+    NSMutableDictionary * _periodicServiceDict;
+    NSObject<OS_dispatch_queue> * _reportingQueue;
+    NSObject<OS_dispatch_source> * _timer;
 }
 
 @property (nonatomic, copy) id /* block */ messageLoggingBlock;
@@ -23,7 +23,9 @@
 - (void)_myPeriodicTask:(unsigned short)arg1 type:(unsigned short)arg2;
 - (void)dealloc;
 - (void)fetchReportingStatesWithUserInfo:(id)arg1 fetchComplete:(id /* block */)arg2;
+- (void)finishSession;
 - (BOOL)flushMessages;
+- (void)flushMessagesWithCompletion:(id /* block */)arg1;
 - (int)getUploadflag;
 - (id)initWithSessionInfo:(id)arg1 userInfo:(id)arg2 frameworksToCheck:(id)arg3;
 - (id)initWithSessionInfo:(id)arg1 userInfo:(id)arg2 frameworksToCheck:(id)arg3 aggregationBlock:(id /* block */)arg4;

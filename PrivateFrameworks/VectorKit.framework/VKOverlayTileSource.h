@@ -3,8 +3,8 @@
  */
 
 @interface VKOverlayTileSource : VKTileSource {
-    NSMutableArray *_overlays;
-    VKTileSource *_tileSourceToMatch;
+    NSMutableArray * _overlays;
+    VKTileSource * _tileSourceToMatch;
 }
 
 @property (nonatomic, readonly) NSArray *overlays;

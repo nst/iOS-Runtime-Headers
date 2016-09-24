@@ -3,11 +3,11 @@
  */
 
 @interface SPWeatherComplicationData : SPComplicationData <NSSecureCoding> {
-    int _currentConditionsEnum;
-    NSString *_currentConditionsText;
-    NSString *_highLowText;
-    NSString *_locationText;
-    NSString *_temperatureText;
+    int  _currentConditionsEnum;
+    NSString * _currentConditionsText;
+    NSString * _highLowText;
+    NSString * _locationText;
+    NSString * _temperatureText;
 }
 
 @property (nonatomic) int currentConditionsEnum;

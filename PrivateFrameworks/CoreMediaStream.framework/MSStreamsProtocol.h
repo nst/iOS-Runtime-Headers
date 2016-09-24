@@ -3,8 +3,8 @@
  */
 
 @interface MSStreamsProtocol : NSObject {
-    <MSStreamsProtocolDelegate> *_delegate;
-    NSString *_personID;
+    <MSStreamsProtocolDelegate> * _delegate;
+    NSString * _personID;
 }
 
 @property (nonatomic) <MSStreamsProtocolDelegate> *delegate;

@@ -3,7 +3,7 @@
  */
 
 @interface ODDDataPoint : ODDPoint {
-    NSMutableArray *mPresentations;
+    NSMutableArray * mPresentations;
 }
 
 - (void)addAssociatedPresentation:(id)arg1;

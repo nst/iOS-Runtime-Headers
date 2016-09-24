@@ -3,7 +3,7 @@
  */
 
 @interface CUIThemeSchemaPSDLayerGroup : CUIThemeSchemaPSDLayer {
-    BOOL isStart;
+    BOOL  isStart;
 }
 
 @property (nonatomic) BOOL isStart;

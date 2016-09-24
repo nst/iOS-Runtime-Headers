@@ -3,15 +3,15 @@
  */
 
 @interface SSPurchaseResponse : NSObject <SSXPCCoding> {
-    BOOL _cancelsPurchaseBatch;
-    NSArray *_downloadIdentifiers;
-    NSError *_error;
-    SSPurchase *_purchase;
-    double _requestStartTime;
-    SSURLConnectionResponse *_response;
-    double _responseEndTime;
-    double _responseStartTime;
-    NSMutableDictionary *_transactionIdentifiers;
+    BOOL  _cancelsPurchaseBatch;
+    NSArray * _downloadIdentifiers;
+    NSError * _error;
+    SSPurchase * _purchase;
+    double  _requestStartTime;
+    SSURLConnectionResponse * _response;
+    double  _responseEndTime;
+    double  _responseStartTime;
+    NSMutableDictionary * _transactionIdentifiers;
 }
 
 @property (nonatomic, retain) SSURLConnectionResponse *URLResponse;
@@ -27,11 +27,13 @@
 @property (nonatomic) double responseStartTime;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)URLResponse;
 - (BOOL)cancelsPurchaseBatch;
 - (id)copyXPCEncoding;
-- (void)dealloc;
 - (id)downloadIdentifiers;
+- (id)downloadMetadataForItemIdentifier:(int)arg1;
+- (id)downloadsMetadata;
 - (id)error;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)purchase;
@@ -47,6 +49,6 @@
 - (void)setResponseEndTime:(double)arg1;
 - (void)setResponseStartTime:(double)arg1;
 - (void)setURLResponse:(id)arg1;
-- (id)transactionIdentifierForItemIdentifier:(long long)arg1;
+- (id)transactionIdentifierForItemIdentifier:(int)arg1;
 
 @end

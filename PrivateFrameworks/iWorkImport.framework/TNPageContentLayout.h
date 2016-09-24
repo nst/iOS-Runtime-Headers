@@ -3,8 +3,8 @@
  */
 
 @interface TNPageContentLayout : TSDLayout {
-    TNPageLayout *mPageLayout;
-    unsigned int mPageNumber;
+    TNPageLayout * mPageLayout;
+    unsigned int  mPageNumber;
 }
 
 @property TNPageLayout *pageLayout;

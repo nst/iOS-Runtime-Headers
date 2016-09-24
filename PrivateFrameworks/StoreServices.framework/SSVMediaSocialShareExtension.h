@@ -3,7 +3,7 @@
  */
 
 @interface SSVMediaSocialShareExtension : NSObject {
-    SSXPCConnection *_connection;
+    SSXPCConnection * _connection;
 }
 
 @property (nonatomic, readonly, copy) NSString *extensionIdentifier;

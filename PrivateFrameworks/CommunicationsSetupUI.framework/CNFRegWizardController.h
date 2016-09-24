@@ -3,12 +3,12 @@
  */
 
 @interface CNFRegWizardController : PSSetupController <CNFRegFirstRunDelegate> {
-    _UIBackdropView *_backdropView;
-    <CNFRegWizardControllerDelegate> *_firstRunDelegate;
-    CNFRegController *_regController;
-    id _resignListener;
-    id _resumeListener;
-    int _serviceType;
+    _UIBackdropView * _backdropView;
+    <CNFRegWizardControllerDelegate> * _firstRunDelegate;
+    CNFRegController * _regController;
+    id  _resignListener;
+    id  _resumeListener;
+    int  _serviceType;
     struct { 
         unsigned int automaticKeyboardWasDisabled : 1; 
         unsigned int shouldListenForSuspension : 1; 
@@ -21,7 +21,7 @@
         unsigned int allowCancel : 1; 
         unsigned int allowSMS : 1; 
         unsigned int shouldTerminateInBackground : 1; 
-    } _wizardFlags;
+    }  _wizardFlags;
 }
 
 @property (nonatomic) BOOL allowCancel;

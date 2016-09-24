@@ -3,14 +3,27 @@
  */
 
 @interface CNDataMapperContactStore : CNContactStore {
-    <CNDataMapper> *_mapper;
+    <CNDataMapper> * _mapper;
 }
 
 @property (nonatomic, readonly, retain) NSObject<CNDataMapper> *mapper;
 
 + (Class)dataMapperClass;
 
+- (id)_allCustomProperties;
+- (id)_createInfo;
+- (id)_customPropertyValuesForRecordWithIdentifier:(id)arg1 error:(id*)arg2;
+- (id)_groupsMatchingCoreDataPredicate:(id)arg1 error:(id*)arg2;
+- (id)_infosForAccountsWithIdentifiers:(id)arg1 error:(id*)arg2;
+- (id)_persistentStoreURLForRecordWithIdentifier:(id)arg1;
+- (BOOL)_saveAddedCustomProperties:(id)arg1 deletedCustomProperties:(id)arg2 error:(id*)arg3;
+- (BOOL)_saveCustomPropertyValuesForRemoteRecords:(id)arg1 error:(id*)arg2;
+- (id)_smartGroupsForAccountsWithIdentifiers:(id)arg1;
+- (id)_smartGroupsMatchingPredicate:(id)arg1;
 - (id)accountsMatchingPredicate:(id)arg1 error:(id*)arg2;
+- (id)batchEnumeratorForFetchRequest:(id)arg1;
+- (id)changeHistoryWithFetchRequest:(id)arg1 error:(id*)arg2;
+- (BOOL)clearChangeHistoryForClient:(id)arg1 toSequenceNumber:(int)arg2 error:(id*)arg3;
 - (id)contactIdentifiersForFetchRequest:(id)arg1 error:(id*)arg2;
 - (id)contactWithUserActivityUserInfo:(id)arg1 keysToFetch:(id)arg2;
 - (id)contactsInContainerWithIdentifier:(id)arg1 keysToFetch:(id)arg2 error:(id*)arg3;
@@ -20,23 +33,29 @@
 - (BOOL)enumerateContactsAndMatchInfoWithFetchRequest:(id)arg1 error:(id*)arg2 usingBlock:(id /* block */)arg3;
 - (id)executeFetchRequest:(id)arg1 progressiveResults:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (BOOL)executeSaveRequest:(id)arg1 error:(id*)arg2;
+- (BOOL)executeSaveRequest:(id)arg1 response:(id*)arg2 error:(id*)arg3;
 - (id)groupWithIdentifier:(id)arg1 error:(id*)arg2;
 - (id)groupsMatchingPredicate:(id)arg1 error:(id*)arg2;
 - (id)iOSMapper;
+- (id)identifierWithError:(id*)arg1;
 - (id)init;
 - (id)initWithDataMapper:(id)arg1;
+- (id)initWithEnvironment:(id)arg1;
 - (BOOL)isValidSaveRequest:(id)arg1 error:(id*)arg2;
 - (id)mapper;
 - (id)meContactIdentifierWithError:(id*)arg1;
 - (id)membersOfGroupWithIdentifier:(id)arg1 keysToFetch:(id)arg2 error:(id*)arg3;
 - (id)policyForContainerWithIdentifier:(id)arg1 error:(id*)arg2;
-- (void)requestAccessForEntityType:(int)arg1 completionHandler:(id /* block */)arg2;
+- (BOOL)registerClientForChangeHistory:(id)arg1 error:(id*)arg2;
+- (id)requestAccessForEntityType:(int)arg1;
 - (id)serverSearchContainersMatchingPredicate:(id)arg1 error:(id*)arg2;
 - (BOOL)setBestMeIfNeededForGivenName:(id)arg1 familyName:(id)arg2 email:(id)arg3 error:(id*)arg4;
 - (BOOL)setMeContact:(id)arg1 error:(id*)arg2;
 - (BOOL)setMeContact:(id)arg1 forContainer:(id)arg2 error:(id*)arg3;
 - (id)subgroupsOfGroupWithIdentifier:(id)arg1 error:(id*)arg2;
+- (id)unifiedContactCountWithError:(id*)arg1;
 - (id)unifiedContactsMatchingPredicate:(id)arg1 keysToFetch:(id)arg2 error:(id*)arg3;
+- (BOOL)unregisterClientForChangeHistory:(id)arg1 error:(id*)arg2;
 - (id)usedLabelsForPropertyWithKey:(id)arg1 error:(id*)arg2;
 - (id)userActivityUserInfoForContact:(id)arg1;
 

@@ -3,7 +3,7 @@
  */
 
 @interface _SFNavigationBarBackdrop : _UIBackdropView {
-    _SFNavigationBar *_navigationBar;
+    _SFNavigationBar * _navigationBar;
 }
 
 @property (nonatomic) _SFNavigationBar *navigationBar;

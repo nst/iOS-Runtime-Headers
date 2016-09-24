@@ -3,7 +3,7 @@
  */
 
 @interface ML3ChapterTOC : MLITChapterTOC {
-    ML3Track *_track;
+    ML3Track * _track;
 }
 
 - (void).cxx_destruct;

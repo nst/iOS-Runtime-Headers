@@ -3,8 +3,8 @@
  */
 
 @interface IMConnectionMonitor : NSObject {
-    <IMConnectionMonitorDelegate> *_delegate;
-    NSString *_remoteHost;
+    <IMConnectionMonitorDelegate> * _delegate;
+    NSString * _remoteHost;
 }
 
 @property (nonatomic) <IMConnectionMonitorDelegate> *delegate;

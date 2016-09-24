@@ -3,8 +3,8 @@
  */
 
 @interface RCAudioRouteBarButtonItem : UIBarButtonItem <UIAppearanceContainer> {
-    RCAudioRouteBarButton *_button;
-    RCAudioRouteBarButtonContainer *_contentView;
+    RCAudioRouteBarButton * _button;
+    RCAudioRouteBarButtonContainer * _contentView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

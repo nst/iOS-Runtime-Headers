@@ -3,9 +3,9 @@
  */
 
 @interface MFAttachmentPasteboardRepresentation : NSObject <MFAttachmentPasteboardRepresentation, NSCoding> {
-    NSData *_data;
-    NSString *_mimeType;
-    NSString *_name;
+    NSData * _data;
+    NSString * _mimeType;
+    NSString * _name;
 }
 
 @property (nonatomic, retain) NSData *data;

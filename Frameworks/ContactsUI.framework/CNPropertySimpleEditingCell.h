@@ -3,7 +3,7 @@
  */
 
 @interface CNPropertySimpleEditingCell : CNPropertyEditingCell <UITextFieldDelegate> {
-    UITextField *_textField;
+    UITextField * _textField;
 }
 
 @property (readonly, copy) NSString *debugDescription;

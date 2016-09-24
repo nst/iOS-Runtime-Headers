@@ -3,11 +3,11 @@
  */
 
 @interface NNMKMessageContent : NSObject <NSSecureCoding> {
-    NSArray *_attachments;
-    BOOL _mainAlternativeValid;
-    NSString *_messageId;
-    BOOL _partiallyLoaded;
-    NSData *_textData;
+    NSArray * _attachments;
+    BOOL  _mainAlternativeValid;
+    NSString * _messageId;
+    BOOL  _partiallyLoaded;
+    NSData * _textData;
 }
 
 @property (nonatomic, retain) NSArray *attachments;

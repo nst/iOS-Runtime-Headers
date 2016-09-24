@@ -3,34 +3,39 @@
  */
 
 @interface SCNRenderTarget : NSObject {
+    CIImage * _ciImage;
     struct { 
         unsigned char format; 
         unsigned char sampleCount; 
+        unsigned char textureUsage; 
         unsigned int renderToTexture : 1; 
         unsigned int forceTextureRect : 1; 
         unsigned int viewportDependant : 1; 
         unsigned int renderToIOSurface : 1; 
-        unsigned char padding[1]; 
-    } _description;
-    NSString *_name;
-    int _referenceCount;
-    void_size;
-    id _texture;
-    int _timeStamp;
+        unsigned int mipmapped : 1; 
+    }  _description;
+    NSString * _name;
+    int  _referenceCount;
+    void _size;
+    id  _texture;
+    int  _timeStamp;
 }
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) int referenceCount;
+@property (nonatomic, readonly) unsigned char renderBufferFormat;
 @property (nonatomic, retain) id texture;
 @property (nonatomic) int timeStamp;
 @property (nonatomic, readonly) BOOL viewportDependant;
 
+- (id)ciImage;
 - (void)dealloc;
 - (id)description;
-- (id)initWithDescription:(void *)arg1 size:(void *)arg2; // needs 2 arg types, found 1: struct { unsigned char x1; unsigned char x2; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned char x7[1]; }*
-- (BOOL)matchesDescription:(void *)arg1 size:(void *)arg2; // needs 2 arg types, found 1: struct { unsigned char x1; unsigned char x2; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned char x7[1]; }*
+- (id)initWithDescription:(void *)arg1 size:(void *)arg2; // needs 2 arg types, found 1: struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; }*
+- (BOOL)matchesDescription:(void *)arg1 size:(void *)arg2; // needs 2 arg types, found 1: struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; }*
 - (id)name;
 - (int)referenceCount;
+- (unsigned char)renderBufferFormat;
 - (void)setName:(id)arg1;
 - (void)setReferenceCount:(int)arg1;
 - (void)setTexture:(id)arg1;

@@ -3,9 +3,9 @@
  */
 
 @interface WBSParsecTableAlignmentSchema : WBSParsecModel {
-    NSArray *_columnGravities;
-    NSArray *_columnsWithEqualWidths;
-    NSArray *_internalAlignments;
+    NSArray * _columnGravities;
+    NSArray * _columnsWithEqualWidths;
+    NSArray * _internalAlignments;
 }
 
 @property (nonatomic, readonly, copy) NSArray *columnGravities;

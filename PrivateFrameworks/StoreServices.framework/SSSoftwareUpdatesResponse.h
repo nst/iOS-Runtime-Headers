@@ -3,9 +3,9 @@
  */
 
 @interface SSSoftwareUpdatesResponse : NSObject {
-    NSError *_error;
-    BOOL _failed;
-    NSArray *_updateItems;
+    NSError * _error;
+    BOOL  _failed;
+    NSArray * _updateItems;
 }
 
 @property (readonly) NSError *error;

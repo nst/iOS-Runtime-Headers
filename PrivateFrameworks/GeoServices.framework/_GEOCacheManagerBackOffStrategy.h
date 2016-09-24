@@ -3,9 +3,9 @@
  */
 
 @interface _GEOCacheManagerBackOffStrategy : NSObject {
-    double _lastFailure;
-    double _lastSuccess;
-    double _maxTimeInSeconds;
+    double  _lastFailure;
+    double  _lastSuccess;
+    double  _maxTimeInSeconds;
 }
 
 + (id)sharedInstance;

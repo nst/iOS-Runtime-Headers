@@ -3,7 +3,7 @@
  */
 
 @interface AASetupAssistantUpgradeStatusRequest : AARequest {
-    ACAccount *_account;
+    ACAccount * _account;
 }
 
 + (Class)responseClass;

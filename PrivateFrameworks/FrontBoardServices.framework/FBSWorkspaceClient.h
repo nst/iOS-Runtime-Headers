@@ -3,12 +3,13 @@
  */
 
 @interface FBSWorkspaceClient : BSBaseXPCClient <FBSSceneUpdater> {
-    NSObject<OS_dispatch_queue> *_callOutQueue;
-    BSBasicServerClient *_client;
-    <FBSWorkspaceClientDelegate> *_delegate;
-    BOOL _inTransaction;
-    NSMutableArray *_queuedMessages;
-    NSMutableDictionary *_sceneIDToSceneHandlerMap;
+    NSObject<OS_dispatch_queue> * _callOutQueue;
+    BSBasicServerClient * _client;
+    <FBSWorkspaceClientDelegate> * _delegate;
+    BOOL  _inTransaction;
+    FBSProcessHandle * _processHandle;
+    NSMutableArray * _queuedMessages;
+    NSMutableDictionary * _sceneIDToSceneHandlerMap;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *callOutQueue;
@@ -26,6 +27,7 @@
 - (void)_queue_handleCreateScene:(id)arg1;
 - (void)_queue_handleDestroyScene:(id)arg1;
 - (void)_queue_handleSceneActions:(id)arg1;
+- (void)_queue_handleSceneMessage:(id)arg1;
 - (void)_queue_handleSceneUpdate:(id)arg1;
 - (void)_queue_handleTransactionBookEnd;
 - (void)_queue_sendMessage:(int)arg1 withEvent:(id)arg2;
@@ -38,18 +40,20 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
+- (id)hostProcess;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
 - (id)initWithServiceName:(id)arg1 endpoint:(id)arg2;
 - (void)queue_connectionWasInterrupted;
 - (void)queue_handleMessage:(id)arg1;
-- (BOOL)queue_handleMessageWithType:(long long)arg1 message:(id)arg2 client:(id)arg3;
+- (BOOL)queue_handleMessageWithType:(int)arg1 message:(id)arg2 client:(id)arg3;
 - (void)registerDelegate:(id)arg1 forSceneID:(id)arg2;
 - (void)scene:(id)arg1 didAttachLayer:(id)arg2;
 - (void)scene:(id)arg1 didDetachLayer:(id)arg2;
 - (void)scene:(id)arg1 didReceiveActions:(id)arg2;
 - (void)scene:(id)arg1 didUpdateClientSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4;
 - (void)scene:(id)arg1 didUpdateLayer:(id)arg2;
+- (void)scene:(id)arg1 sendMessage:(id)arg2 withResponse:(id /* block */)arg3;
 - (void)sendCreateSceneRequestEvent:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)sendDestroySceneRequestEvent:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)unregisterDelegateForSceneID:(id)arg1;

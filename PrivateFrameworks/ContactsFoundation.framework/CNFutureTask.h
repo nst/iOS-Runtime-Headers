@@ -3,10 +3,10 @@
  */
 
 @interface CNFutureTask : NSObject <CNFuture, CNPromise> {
-    CNFutureCompletionBlocks *_completionBlocks;
-    CNFutureResult *_futureResult;
-    NSConditionLock *_stateLock;
-    CNTask *_task;
+    CNFutureCompletionBlocks * _completionBlocks;
+    CNFutureResult * _futureResult;
+    NSConditionLock * _stateLock;
+    CNTask * _task;
 }
 
 @property (getter=isCancelled, readonly) BOOL cancelled;
@@ -18,9 +18,13 @@
 
 - (void)_flushCompletionBlocks;
 - (void)addFailureBlock:(id /* block */)arg1;
+- (void)addFailureBlock:(id /* block */)arg1 scheduler:(id)arg2;
 - (void)addSuccessBlock:(id /* block */)arg1;
+- (void)addSuccessBlock:(id /* block */)arg1 scheduler:(id)arg2;
+- (id /* block */)boolErrorCompletionHandlerAdapter;
 - (BOOL)cancel;
 - (id /* block */)completionHandlerAdapter;
+- (id /* block */)completionHandlerAdapterWithDefaultValue:(id)arg1;
 - (void)dealloc;
 - (void)didCancel;
 - (id /* block */)errorOnlyCompletionHandlerAdapter;

@@ -3,17 +3,16 @@
  */
 
 @interface TSPPasteboardObject : TSPObject {
-    TSPObject *_appNativeObject;
-    NSArray *_drawables;
-    TSPObject *_guideStorage;
-    BOOL _isCrossAppPaste;
-    BOOL _isCrossDocumentPaste;
-    BOOL _isSmartCopyPaste;
-    BOOL _isTextPrimary;
-    NSArray *_styles;
-    TSPObject *_stylesheet;
-    TSPObject *_theme;
-    TSPObject *_wpStorage;
+    TSPObject * _appNativeObject;
+    NSArray * _drawables;
+    TSPObject * _guideStorage;
+    BOOL  _isCrossAppPaste;
+    BOOL  _isCrossDocumentPaste;
+    BOOL  _isSmartCopyPaste;
+    BOOL  _isTextPrimary;
+    NSArray * _styles;
+    TSPObject * _stylesheet;
+    TSPObject * _wpStorage;
 }
 
 @property (nonatomic, retain) TSPObject *appNativeObject;
@@ -25,7 +24,6 @@
 @property (nonatomic) BOOL isTextPrimary;
 @property (nonatomic, copy) NSArray *styles;
 @property (nonatomic, retain) TSPObject *stylesheet;
-@property (nonatomic, retain) TSPObject *theme;
 @property (nonatomic, retain) TSPObject *wpStorage;
 
 - (void).cxx_destruct;
@@ -46,12 +44,10 @@
 - (void)setIsTextPrimary:(BOOL)arg1;
 - (void)setStyles:(id)arg1;
 - (void)setStylesheet:(id)arg1;
-- (void)setTheme:(id)arg1;
 - (void)setWpStorage:(id)arg1;
 - (id)styles;
 - (id)stylesheet;
-- (id)theme;
-- (long long)tsp_identifier;
+- (int)tsp_identifier;
 - (id)wpStorage;
 
 @end

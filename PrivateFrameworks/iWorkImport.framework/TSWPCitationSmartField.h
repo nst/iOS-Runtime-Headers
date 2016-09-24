@@ -3,9 +3,9 @@
  */
 
 @interface TSWPCitationSmartField : TSWPSmartField <TSWPCitationRecordHosting> {
-    NSArray *_citationRecords;
-    <TSWPCitationSmartFieldEditing> *_editingDelegate;
-    BOOL _isLocalizable;
+    NSArray * _citationRecords;
+    <TSWPCitationSmartFieldEditing> * _editingDelegate;
+    BOOL  _isLocalizable;
 }
 
 @property (nonatomic, copy) NSArray *citationRecords;
@@ -30,6 +30,7 @@
 - (void)setEditingDelegate:(id)arg1;
 - (void)setIsLocalizable:(BOOL)arg1;
 - (int)smartFieldKind;
+- (BOOL)supportsDeepCopyForUndo;
 - (void)willBeRemovedFromDocumentRoot:(id)arg1;
 
 @end

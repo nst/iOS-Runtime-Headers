@@ -6,17 +6,17 @@
     struct { 
         double latitude; 
         double longitude; 
-    } _endCoordinate;
-    <GEOTransitRoutingIncidentMessage> *_routeDetailsIncidentMessage;
-    NSArray *_routeDetailsPrimaryArtwork;
-    <GEOTransitArtworkDataSource> *_routeDetailsSecondaryArtwork;
+    }  _endCoordinate;
+    <GEOTransitRoutingIncidentMessage> * _routeDetailsIncidentMessage;
+    NSArray * _routeDetailsPrimaryArtwork;
+    <GEOTransitArtworkDataSource> * _routeDetailsSecondaryArtwork;
     struct { 
         double latitude; 
         double longitude; 
-    } _startCoordinate;
-    NSArray *_steppingArtwork;
-    <GEOTransitRoutingIncidentMessage> *_steppingIncidentMessage;
-    GEOTransitStep *_transitStep;
+    }  _startCoordinate;
+    NSArray * _steppingArtwork;
+    <GEOTransitRoutingIncidentMessage> * _steppingIncidentMessage;
+    GEOTransitStep * _transitStep;
 }
 
 @property (nonatomic, readonly) <GEOTransitRoutingIncidentMessage> *routeDetailsIncidentMessage;

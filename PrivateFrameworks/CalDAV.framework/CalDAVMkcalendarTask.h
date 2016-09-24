@@ -3,7 +3,7 @@
  */
 
 @interface CalDAVMkcalendarTask : CoreDAVTask {
-    NSSet *_setElements;
+    NSSet * _setElements;
 }
 
 @property (nonatomic) <CalDAVMkcalendarTaskDelegate><CoreDAVTaskDelegate> *delegate;

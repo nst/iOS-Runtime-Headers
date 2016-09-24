@@ -3,7 +3,7 @@
  */
 
 @interface RCDisplayLinkBlockTargetProxy : RCDisplayLinkTargetProxy {
-    id /* block */ _handlerBlock;
+    id /* block */  _handlerBlock;
 }
 
 @property (nonatomic, readonly, copy) id /* block */ handlerBlock;

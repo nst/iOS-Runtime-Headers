@@ -3,11 +3,12 @@
  */
 
 @interface HMHomeInvitation : NSObject <HMObjectMerge, NSSecureCoding> {
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    HMDelegateCaller *_delegateCaller;
-    HMHome *_home;
-    HMHomeInvitationData *_invitationData;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    HMDelegateCaller * _delegateCaller;
+    HMHome * _home;
+    NSURL * _homeObjectURL;
+    HMHomeInvitationData * _invitationData;
+    NSObject<OS_dispatch_queue> * _propertyQueue;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
@@ -17,6 +18,7 @@
 @property (nonatomic, readonly, copy) NSDate *endDate;
 @property (readonly) unsigned int hash;
 @property (nonatomic) HMHome *home;
+@property (nonatomic, readonly) NSURL *homeObjectURL;
 @property (nonatomic, readonly, copy) NSUUID *identifier;
 @property (nonatomic, retain) HMHomeInvitationData *invitationData;
 @property (nonatomic, readonly) int invitationState;
@@ -37,6 +39,7 @@
 - (id)endDate;
 - (unsigned int)hash;
 - (id)home;
+- (id)homeObjectURL;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1 invitationData:(id)arg2;

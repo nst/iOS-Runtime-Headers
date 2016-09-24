@@ -3,38 +3,41 @@
  */
 
 @interface PUBrowsingVideoPlayerChange : PUViewModelChange {
-    BOOL _avPlayerDidChange;
-    BOOL _desiredPlayStateDidChange;
-    BOOL _isActivatedDidChange;
-    BOOL _isAtBeginningDidChange;
-    BOOL _isAtEndDidChange;
-    BOOL _isPlayableDidChange;
-    BOOL _isPlayerLoadingAllowedDidChange;
-    BOOL _isPlayingAllowedDidChange;
-    BOOL _isStalledDidChange;
-    BOOL _playStateDidChange;
-    BOOL _playerItemDidChange;
-    BOOL _shouldRespectMuteSwitchDidChange;
+    BOOL  _avPlayerDidChange;
+    BOOL  _desiredPlayStateDidChange;
+    BOOL  _errorDidChange;
+    BOOL  _isActivatedDidChange;
+    BOOL  _isAtBeginningDidChange;
+    BOOL  _isAtEndDidChange;
+    BOOL  _isPlayableDidChange;
+    BOOL  _isPlayerLoadingAllowedDidChange;
+    BOOL  _isPlayingAllowedDidChange;
+    BOOL  _isStalledDidChange;
+    BOOL  _playStateDidChange;
+    BOOL  _playerItemDidChange;
+    BOOL  _shouldRespectMuteSwitchDidChange;
 }
 
-@property (nonatomic) BOOL avPlayerDidChange;
-@property (nonatomic) BOOL desiredPlayStateDidChange;
-@property (nonatomic) BOOL isActivatedDidChange;
-@property (nonatomic) BOOL isAtBeginningDidChange;
-@property (nonatomic) BOOL isAtEndDidChange;
-@property (nonatomic) BOOL isPlayableDidChange;
-@property (nonatomic) BOOL isPlayerLoadingAllowedDidChange;
-@property (nonatomic) BOOL isPlayingAllowedDidChange;
-@property (nonatomic) BOOL isStalledDidChange;
-@property (nonatomic) BOOL playStateDidChange;
-@property (nonatomic) BOOL playerItemDidChange;
-@property (nonatomic) BOOL shouldRespectMuteSwitchDidChange;
+@property (setter=_setAVPlayerDidChange:, nonatomic) BOOL avPlayerDidChange;
+@property (setter=_setDesiredPlayStateDidChange:, nonatomic) BOOL desiredPlayStateDidChange;
+@property (setter=_setErrorDidChange:, nonatomic) BOOL errorDidChange;
+@property (setter=_setActivatedDidChange:, nonatomic) BOOL isActivatedDidChange;
+@property (setter=_setAtBeginningDidChange:, nonatomic) BOOL isAtBeginningDidChange;
+@property (setter=_setAtEndDidChange:, nonatomic) BOOL isAtEndDidChange;
+@property (setter=_setPlayableDidChange:, nonatomic) BOOL isPlayableDidChange;
+@property (setter=_setPlayerLoadingAllowedDidChange:, nonatomic) BOOL isPlayerLoadingAllowedDidChange;
+@property (setter=_setPlayingAllowedDidChange:, nonatomic) BOOL isPlayingAllowedDidChange;
+@property (setter=_setStalledDidChange:, nonatomic) BOOL isStalledDidChange;
+@property (setter=_setPlayStateDidChange:, nonatomic) BOOL playStateDidChange;
+@property (setter=_setPlayerItemDidChange:, nonatomic) BOOL playerItemDidChange;
+@property (setter=_setShouldRespectMuteSwitchDidChange:, nonatomic) BOOL shouldRespectMuteSwitchDidChange;
 
 - (void)_setAVPlayerDidChange:(BOOL)arg1;
 - (void)_setActivatedDidChange:(BOOL)arg1;
 - (void)_setAtBeginningDidChange:(BOOL)arg1;
 - (void)_setAtEndDidChange:(BOOL)arg1;
 - (void)_setDesiredPlayStateDidChange:(BOOL)arg1;
+- (void)_setErrorDidChange:(BOOL)arg1;
 - (void)_setPlayStateDidChange:(BOOL)arg1;
 - (void)_setPlayableDidChange:(BOOL)arg1;
 - (void)_setPlayerItemDidChange:(BOOL)arg1;
@@ -44,6 +47,7 @@
 - (void)_setStalledDidChange:(BOOL)arg1;
 - (BOOL)avPlayerDidChange;
 - (BOOL)desiredPlayStateDidChange;
+- (BOOL)errorDidChange;
 - (BOOL)hasChanges;
 - (BOOL)isActivatedDidChange;
 - (BOOL)isAtBeginningDidChange;

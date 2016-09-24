@@ -3,9 +3,10 @@
 
 @protocol SPSearchAgentDelegate
 
-@optional
+@required
 
 - (void)searchAgentClearedResults:(SPSearchAgent *)arg1;
+- (void)searchAgentReceivedSuggestions:(NSArray *)arg1;
 - (void)searchAgentUpdatedResults:(SPSearchAgent *)arg1;
 
 @end

@@ -15,10 +15,10 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    } _contentItemTypeOccurrences;
-    bool _hasValidUniformContentItemType;
-    unsigned long _totalNumberOfOccurrences;
-    int _uniformContentItemType;
+    }  _contentItemTypeOccurrences;
+    bool  _hasValidUniformContentItemType;
+    unsigned long  _totalNumberOfOccurrences;
+    int  _uniformContentItemType;
 }
 
 - (id).cxx_construct;

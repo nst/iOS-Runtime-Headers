@@ -19,7 +19,9 @@
 - (BOOL)_mediaQueryMatches;
 - (BOOL)_mediaQueryMatchesForOrientation:(int)arg1;
 - (id)absoluteLinkURL;
+- (id)as;
 - (id)charset;
+- (id)crossOrigin;
 - (BOOL)disabled;
 - (id)href;
 - (id)hreflang;
@@ -27,7 +29,9 @@
 - (id)rel;
 - (id)relList;
 - (id)rev;
+- (void)setAs:(id)arg1;
 - (void)setCharset:(id)arg1;
+- (void)setCrossOrigin:(id)arg1;
 - (void)setDisabled:(BOOL)arg1;
 - (void)setHref:(id)arg1;
 - (void)setHreflang:(id)arg1;

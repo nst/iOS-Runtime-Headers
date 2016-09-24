@@ -6,6 +6,8 @@
 @required
 
 - (void)catalogChanged:(PKCatalog *)arg1 withNewPasses:(NSSet *)arg2;
+- (void)contactlessInterfaceDidDismissFromSource:(int)arg1;
+- (void)contactlessInterfaceDidPresentFromSource:(int)arg1;
 - (void)passAdded:(PKPass *)arg1;
 - (void)passRemoved:(PKPass *)arg1;
 - (void)passUpdated:(PKPass *)arg1;

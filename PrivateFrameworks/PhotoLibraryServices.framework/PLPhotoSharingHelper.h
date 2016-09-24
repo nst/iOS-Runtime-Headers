@@ -11,6 +11,7 @@
 + (id)_phoneInvitationFailureFile;
 + (id)_processPhoneFailuresQueue;
 + (BOOL)_recentlyRequestedDownloadAsset:(id)arg1 cloudPlaceholderKind:(short)arg2;
++ (void)_resetServerSideConfigurationDictionary;
 + (int)_serverLimitValueForKey:(id)arg1 withDefaultResult:(int)arg2;
 + (id)_transactionWithName:(const char *)arg1;
 + (void)acceptPendingInvitationForAlbum:(id)arg1 completion:(id /* block */)arg2;
@@ -35,7 +36,7 @@
 + (void)deleteDebugBreadcrumbsForAlbumGUID:(id)arg1;
 + (void)deleteLocalAlbumsForMSASAlbumsWithGUIDs:(id)arg1;
 + (id)derivativesForMasterAsset:(id)arg1 withSpecifications:(id)arg2;
-+ (struct CGSize { float x1; float x2; })derivedAssetSizeForMasterSizeWidth:(float)arg1 height:(float)arg2 derivativeType:(int)arg3 withSpecificationInfo:(id)arg4;
++ (struct CGSize { double x1; double x2; })derivedAssetSizeForMasterSizeWidth:(float)arg1 height:(float)arg2 derivativeType:(int)arg3 withSpecificationInfo:(id)arg4;
 + (float)derivedAssetSmallDimensionLimitForType:(int)arg1;
 + (id)directoryPathForDownloadActivityForAlbumGUID:(id)arg1 create:(BOOL)arg2;
 + (id)directoryPathForUploadActivityForAlbumGUID:(id)arg1 create:(BOOL)arg2;
@@ -69,8 +70,8 @@
 + (void)prioritizeDownloadsForAlbumGUID:(id)arg1;
 + (void)publishCloudSharedAlbumToServer:(id)arg1;
 + (void)publishCloudSharedCommentToServer:(id)arg1;
-+ (unsigned long long)purgeSpace:(unsigned long long)arg1;
-+ (unsigned long long)purgeableSpace;
++ (unsigned int)purgeSpace:(unsigned int)arg1;
++ (unsigned int)purgeableSpace;
 + (void)refreshSubscriberListForAlbumGUID:(id)arg1;
 + (unsigned int)registerIdleStateChangeObserverWithToken:(int*)arg1 handler:(id /* block */)arg2;
 + (BOOL)removeCloudSharingDirectories:(id*)arg1;
@@ -102,7 +103,7 @@
 + (void)updateLocalAlbumMetadataForMSASAlbum:(id)arg1 info:(id)arg2;
 + (void)updateSharedAlbumsCachedServerConfigurationLimits;
 + (id)videoDerivativesForAssetCollection:(id)arg1 withSpecifications:(id)arg2;
-+ (struct CGSize { float x1; float x2; })videoPosterFrameDimension;
++ (struct CGSize { double x1; double x2; })videoPosterFrameDimension;
 + (void)writeAlbumNameBreadCrumb:(id)arg1 forAlbumGUID:(id)arg2 isUpload:(BOOL)arg3;
 + (void)writeDownloadDebugBreadcrumbForAsset:(id)arg1 albumGUID:(id)arg2 content:(id)arg3 state:(int)arg4 error:(id)arg5;
 + (void)writeUploadDebugBreadcrumbForAssetCollections:(id)arg1 state:(int)arg2 error:(id)arg3;

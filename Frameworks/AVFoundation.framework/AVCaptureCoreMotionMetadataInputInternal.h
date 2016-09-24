@@ -3,8 +3,8 @@
  */
 
 @interface AVCaptureCoreMotionMetadataInputInternal : NSObject {
-    NSArray *ports;
-    NSString *sourceID;
+    NSArray * ports;
+    NSString * sourceID;
 }
 
 @end

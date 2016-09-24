@@ -3,9 +3,9 @@
  */
 
 @interface TSWPTextStylePreset : TSPObject <TSSPreset> {
-    TSWPListStyle *_listStyle;
-    TSWPParagraphStyle *_paragraphStyle;
-    NSString *_presetIdentifier;
+    TSWPListStyle * _listStyle;
+    TSWPParagraphStyle * _paragraphStyle;
+    NSString * _presetIdentifier;
 }
 
 @property (nonatomic, retain) TSWPListStyle *listStyle;

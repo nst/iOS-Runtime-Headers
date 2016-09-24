@@ -3,8 +3,8 @@
  */
 
 @interface RUINavBarSpinnerManager : NSObject {
-    int _activityIndicatorViewStyle;
-    NSMutableDictionary *_savedRecords;
+    int  _activityIndicatorViewStyle;
+    NSMutableDictionary * _savedRecords;
 }
 
 @property (nonatomic) int activityIndicatorViewStyle;

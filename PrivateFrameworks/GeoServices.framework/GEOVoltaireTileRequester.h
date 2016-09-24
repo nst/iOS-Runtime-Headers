@@ -3,10 +3,10 @@
  */
 
 @interface GEOVoltaireTileRequester : GEOTileRequester <GEOResourceManifestTileGroupObserver, GEOTileRequesterDelegate> {
-    NSTimer *_activeTileGroupTimeoutTimer;
-    NSMutableArray *_errors;
-    GEOVoltaireSimpleTileRequester *_simpleRequester;
-    NSThread *_startThread;
+    NSTimer * _activeTileGroupTimeoutTimer;
+    NSMutableArray * _errors;
+    GEOVoltaireSimpleTileRequester * _simpleRequester;
+    NSThread * _startThread;
 }
 
 @property (readonly, copy) NSString *debugDescription;

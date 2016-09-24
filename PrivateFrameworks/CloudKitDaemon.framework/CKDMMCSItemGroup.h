@@ -3,11 +3,11 @@
  */
 
 @interface CKDMMCSItemGroup : NSObject {
-    BOOL _complete;
-    NSError *_error;
-    NSMutableArray *_items;
-    <MMCSOperationMetric> *_metrics;
-    NSArray *_tuple;
+    BOOL  _complete;
+    NSError * _error;
+    NSMutableArray * _items;
+    <MMCSOperationMetric> * _metrics;
+    NSArray * _tuple;
 }
 
 @property (nonatomic) BOOL complete;

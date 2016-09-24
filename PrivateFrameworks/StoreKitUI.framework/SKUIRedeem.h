@@ -3,25 +3,29 @@
  */
 
 @interface SKUIRedeem : NSObject {
-    double _ITunesPassLearnMoreAlertInterval;
-    NSString *_balance;
-    NSString *_credit;
-    SKUIArtworkList *_headerArtworkList;
-    UIImage *_headerImage;
-    BOOL _hideItemView;
-    NSString *_inAppPurchase;
-    NSArray *_items;
-    NSArray *_links;
-    NSString *_message;
-    NSURL *_redirectURL;
-    NSDictionary *_thankYouDictionary;
-    NSString *_title;
+    double  _ITunesPassLearnMoreAlertInterval;
+    NSString * _balance;
+    NSString * _credit;
+    NSURL * _customizedThankyouURL;
+    NSArray * _downloads;
+    <SKUIArtworkProviding> * _headerArtworkProvider;
+    UIImage * _headerImage;
+    BOOL  _hideItemView;
+    NSString * _inAppPurchase;
+    NSArray * _items;
+    NSArray * _links;
+    NSString * _message;
+    NSURL * _redirectURL;
+    NSDictionary * _thankYouDictionary;
+    NSString * _title;
 }
 
 @property (nonatomic) double ITunesPassLearnMoreAlertInterval;
 @property (nonatomic, copy) NSString *balance;
 @property (nonatomic, copy) NSString *credit;
-@property (nonatomic, retain) SKUIArtworkList *headerArtworkList;
+@property (nonatomic, retain) NSURL *customizedThankyouURL;
+@property (nonatomic, retain) NSArray *downloads;
+@property (nonatomic, retain) <SKUIArtworkProviding> *headerArtworkProvider;
 @property (nonatomic, retain) UIImage *headerImage;
 @property (nonatomic) BOOL hideItemView;
 @property (nonatomic, retain) NSString *inAppPurchase;
@@ -36,7 +40,9 @@
 - (double)ITunesPassLearnMoreAlertInterval;
 - (id)balance;
 - (id)credit;
-- (id)headerArtworkList;
+- (id)customizedThankyouURL;
+- (id)downloads;
+- (id)headerArtworkProvider;
 - (id)headerImage;
 - (BOOL)hideItemView;
 - (id)inAppPurchase;
@@ -47,7 +53,9 @@
 - (id)redirectURL;
 - (void)setBalance:(id)arg1;
 - (void)setCredit:(id)arg1;
-- (void)setHeaderArtworkList:(id)arg1;
+- (void)setCustomizedThankyouURL:(id)arg1;
+- (void)setDownloads:(id)arg1;
+- (void)setHeaderArtworkProvider:(id)arg1;
 - (void)setHeaderImage:(id)arg1;
 - (void)setHideItemView:(BOOL)arg1;
 - (void)setITunesPassLearnMoreAlertInterval:(double)arg1;

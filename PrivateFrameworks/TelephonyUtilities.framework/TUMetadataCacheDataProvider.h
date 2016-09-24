@@ -3,8 +3,8 @@
  */
 
 @interface TUMetadataCacheDataProvider : NSObject {
-    NSMutableDictionary *_providerCache;
-    NSObject<OS_dispatch_queue> *_synchronizationQueue;
+    NSMutableDictionary * _providerCache;
+    NSObject<OS_dispatch_queue> * _synchronizationQueue;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *providerCache;

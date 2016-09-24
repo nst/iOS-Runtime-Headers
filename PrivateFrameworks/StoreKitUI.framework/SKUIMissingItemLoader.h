@@ -3,12 +3,12 @@
  */
 
 @interface SKUIMissingItemLoader : NSObject <SKUIItemRequestDelegate> {
-    int _batchSize;
-    <SKUIMissingItemDelegate> *_delegate;
-    NSString *_imageProfile;
-    NSString *_keyProfile;
-    SKUIResourceLoader *_loader;
-    NSMutableDictionary *_requests;
+    int  _batchSize;
+    <SKUIMissingItemDelegate> * _delegate;
+    NSString * _imageProfile;
+    NSString * _keyProfile;
+    SKUIResourceLoader * _loader;
+    NSMutableDictionary * _requests;
 }
 
 @property (nonatomic) int batchSize;

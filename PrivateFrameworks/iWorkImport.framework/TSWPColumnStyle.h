@@ -9,16 +9,15 @@
 @property (nonatomic, readonly) BOOL columnsAreLeftToRight;
 @property (nonatomic, readonly) TSWPPadding *layoutMargins;
 @property (nonatomic, readonly) BOOL shrinkTextToFit;
-@property (nonatomic, readonly) float textScaleFactor;
+@property (nonatomic, readonly) double textScaleFactor;
 
 + (float)defaultFloatValueForProperty:(int)arg1;
 + (int)defaultIntValueForProperty:(int)arg1;
 + (id)defaultStyleWithContext:(id)arg1;
 + (id)defaultValueForProperty:(int)arg1;
 + (id)properties;
-+ (id)propertiesAllowingNSNull;
 
-- (struct CGSize { float x1; float x2; })adjustedInsetsForTarget:(id)arg1;
+- (struct CGSize { double x1; double x2; })adjustedInsetsForTarget:(id)arg1;
 - (BOOL)alwaysStartsNewTarget;
 - (unsigned int)columnCount;
 - (BOOL)columnsAreLeftToRight;

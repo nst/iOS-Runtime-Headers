@@ -3,10 +3,10 @@
  */
 
 @interface _UILazyMapTable : NSObject {
-    NSMapTable *_keysToClientTables;
-    NSMapTable *_keysToValues;
-    id /* block */ _mappingBlock;
-    NSMapTable *_valuesToKeys;
+    NSMapTable * _keysToClientTables;
+    NSMapTable * _keysToValues;
+    id /* block */  _mappingBlock;
+    NSMapTable * _valuesToKeys;
 }
 
 - (void).cxx_destruct;

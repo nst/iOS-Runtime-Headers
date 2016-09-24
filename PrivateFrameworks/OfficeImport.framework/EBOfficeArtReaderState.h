@@ -3,8 +3,8 @@
  */
 
 @interface EBOfficeArtReaderState : OABReaderState {
-    EBReaderState *mReaderState;
-    EXReadState *mXmlDocumentState;
+    EBReaderState * mReaderState;
+    EXReadState * mXmlDocumentState;
 }
 
 - (void)dealloc;

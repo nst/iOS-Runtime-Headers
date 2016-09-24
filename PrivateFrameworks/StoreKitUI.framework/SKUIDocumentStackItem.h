@@ -3,12 +3,12 @@
  */
 
 @interface SKUIDocumentStackItem : NSObject {
-    IKAppDocument *_document;
-    SKUINavigationDocumentController *_navigationDocumentController;
-    UIPopoverPresentationController *_popoverPresentationController;
-    NSDictionary *_presentationOptions;
-    BOOL _usesNavigationControllerForModalPresentation;
-    UIViewController *_viewController;
+    IKAppDocument * _document;
+    SKUINavigationDocumentController * _navigationDocumentController;
+    UIPopoverPresentationController * _popoverPresentationController;
+    NSDictionary * _presentationOptions;
+    BOOL  _usesNavigationControllerForModalPresentation;
+    UIViewController * _viewController;
 }
 
 @property (getter=isAnimated, nonatomic, readonly) BOOL animated;

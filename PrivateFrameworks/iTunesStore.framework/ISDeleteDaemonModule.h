@@ -3,14 +3,12 @@
  */
 
 @interface ISDeleteDaemonModule : NSObject {
-    SSAppPurchaseHistoryCache *_purchaseHistoryCache;
-    struct __CFURLStorageSession { } *_storageSession;
-    struct _CFURLCache { } *_urlCache;
+    SSAppPurchaseHistoryCache * _purchaseHistoryCache;
 }
 
 - (void)dealloc;
 - (id)init;
-- (unsigned long long)purge:(unsigned long long)arg1;
-- (unsigned long long)purgeableSpace;
+- (unsigned int)purge:(unsigned int)arg1;
+- (unsigned int)purgeableSpace;
 
 @end

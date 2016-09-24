@@ -3,12 +3,12 @@
  */
 
 @interface _GEOPlaceSearchAutocompleteTicket : NSObject <GEOMapServiceCompletionTicket> {
-    BOOL _canceled;
-    GEOPDPlaceRequest *_request;
-    GEOPDPlaceResponse *_response;
-    NSString *_searchQuery;
-    GEOMapServiceTraits *_traits;
-    NSDictionary *_userInfo;
+    BOOL  _canceled;
+    GEOPDPlaceRequest * _request;
+    GEOPDPlaceResponse * _response;
+    NSString * _searchQuery;
+    GEOMapServiceTraits * _traits;
+    NSDictionary * _userInfo;
 }
 
 @property (getter=isCanceled, nonatomic, readonly) BOOL canceled;
@@ -19,7 +19,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) GEOMapServiceTraits *traits;
 
-- (void)applyToSuggestionEntry:(id)arg1 withAutocompleteSearchResultMuid:(unsigned long long)arg2;
+- (void)applyToSuggestionEntry:(id)arg1 withAutocompleteSearchResultMuid:(unsigned int)arg2;
 - (void)applyToSuggestionList:(id)arg1;
 - (void)cancel;
 - (void)dealloc;

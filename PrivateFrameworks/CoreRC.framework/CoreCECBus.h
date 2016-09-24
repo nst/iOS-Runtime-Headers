@@ -3,18 +3,18 @@
  */
 
 @interface CoreCECBus : CoreRCBus {
-    BOOL _hasLink;
-    unsigned int _lastStreamPath;
+    BOOL  _hasLink;
+    unsigned int  _lastStreamPath;
     struct CECOSDName { 
         unsigned char length; 
         unsigned char characters[14]; 
-    } _osdNameASCII;
-    unsigned int _physicalAddress;
-    unsigned int _streamPath;
-    unsigned int _systemAudioModeStatus;
+    }  _osdNameASCII;
+    unsigned int  _physicalAddress;
+    unsigned int  _streamPath;
+    unsigned int  _systemAudioModeStatus;
     struct CECLanguage { 
         unsigned char characters[3]; 
-    } _tvLanguageCodeASCII;
+    }  _tvLanguageCodeASCII;
 }
 
 @property (nonatomic, readonly) CoreCECDevice *activeSource;

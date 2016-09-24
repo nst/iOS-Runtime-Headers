@@ -15,7 +15,7 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    } _typesetters;
+    }  _typesetters;
 }
 
 - (id).cxx_construct;

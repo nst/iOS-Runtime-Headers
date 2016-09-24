@@ -3,15 +3,15 @@
  */
 
 @interface NSISLinearExpression : NSObject <NSFastEnumeration, NSISRowBody> {
-    double constant;
+    double  constant;
     union { 
-        /* Warning: unhandled struct encoding: '{?="stored_extern_marker"@"slab"^{?}"capacity"I}"inline_slab"{?="aligner"L}"padding"[36C]"_workaround13455311"^v)' */ struct { 
+        /* Warning: unhandled struct encoding: '{?="stored_extern_marker"@"slab"^{?}"capacity"I}"inline_slab"{?="aligner"L}"padding"[36C])' */ struct { 
             id stored_extern_marker; 
         } extern_data; 
         unsigned int capacity; 
-    } data;
-    unsigned int inline_capacity;
-    unsigned int var_count;
+    }  data;
+    unsigned int  inline_capacity;
+    unsigned int  var_count;
 }
 
 @property double constant;
@@ -21,6 +21,7 @@
 @property (readonly) Class superclass;
 
 + (id)acquireFromPoolForUseCase:(int)arg1;
++ (void)initialize;
 + (id)newExpressionWithCapacity:(unsigned int)arg1;
 
 - (void)addExpression:(id)arg1 times:(double)arg2;
@@ -37,10 +38,12 @@
 - (void)enumerateVariables:(id /* block */)arg1;
 - (void)enumerateVariablesAndCoefficients:(id /* block */)arg1;
 - (BOOL)enumerateVariablesAndCoefficientsUntil:(id /* block */)arg1;
+- (unsigned int)hash;
 - (double)incrementConstant:(double)arg1;
 - (id)init;
 - (id)initWithInlineCapacity:(unsigned int)arg1;
 - (BOOL)isConstant;
+- (BOOL)isEqual:(id)arg1;
 - (void)removeVariable:(id)arg1;
 - (void)replaceVariable:(id)arg1 withExpression:(id)arg2 processVariableNewToReceiver:(id /* block */)arg3 processVariableDroppedFromReceiver:(id /* block */)arg4;
 - (void)replaceVariable:(id)arg1 withVariable:(id)arg2 coefficient:(double)arg3;

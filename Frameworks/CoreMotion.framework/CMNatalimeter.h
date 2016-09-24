@@ -3,7 +3,7 @@
  */
 
 @interface CMNatalimeter : NSObject {
-    CMNatalimeterInternal *_internal;
+    CMNatalimeterInternal * _internal;
 }
 
 @property (nonatomic, readonly) CMNatalimeterInternal *_internal;

@@ -10,6 +10,7 @@
 - (int)artworkUseType;
 - (BOOL)hasRoutingIncidentBadge;
 - (<GEOTransitIconDataSource> *)iconDataSource;
+- (<GEOTransitShieldDataSource> *)iconFallbackShieldDataSource;
 - (<GEOTransitShieldDataSource> *)shieldDataSource;
 
 @end

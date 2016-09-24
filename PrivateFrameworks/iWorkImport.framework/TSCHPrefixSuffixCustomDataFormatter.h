@@ -3,8 +3,8 @@
  */
 
 @interface TSCHPrefixSuffixCustomDataFormatter : TSCHCustomDataFormatter {
-    NSString *mPrefixString;
-    NSString *mSuffixString;
+    NSString * mPrefixString;
+    NSString * mSuffixString;
 }
 
 + (id)dataFormatterWithCustomFormat:(id)arg1 customFormatListKey:(id)arg2 formatType:(int)arg3 prefixString:(id)arg4 suffixString:(id)arg5;

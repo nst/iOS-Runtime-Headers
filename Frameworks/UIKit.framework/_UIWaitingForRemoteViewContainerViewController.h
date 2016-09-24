@@ -3,7 +3,7 @@
  */
 
 @interface _UIWaitingForRemoteViewContainerViewController : UIViewController {
-    UIActivityIndicatorView *_loadingSpinner;
+    UIActivityIndicatorView * _loadingSpinner;
 }
 
 @property (nonatomic, retain) UIActivityIndicatorView *loadingSpinner;

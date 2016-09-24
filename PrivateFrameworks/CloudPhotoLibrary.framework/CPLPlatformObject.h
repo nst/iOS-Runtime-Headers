@@ -3,7 +3,7 @@
  */
 
 @interface CPLPlatformObject : NSObject {
-    <CPLAbstractObject> *_abstractObject;
+    <CPLAbstractObject> * _abstractObject;
 }
 
 @property (nonatomic, readonly) <CPLAbstractObject> *abstractObject;

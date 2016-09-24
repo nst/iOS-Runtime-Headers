@@ -3,7 +3,7 @@
  */
 
 @interface MCUserMDMClient : NSObject {
-    NSXPCConnection *_xpcConnection;
+    NSXPCConnection * _xpcConnection;
 }
 
 @property (nonatomic, retain) NSXPCConnection *xpcConnection;

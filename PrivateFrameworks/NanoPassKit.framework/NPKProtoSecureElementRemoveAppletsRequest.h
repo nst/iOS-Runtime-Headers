@@ -3,10 +3,12 @@
  */
 
 @interface NPKProtoSecureElementRemoveAppletsRequest : PBRequest <NSCopying> {
-    NSMutableArray *_cardAIDs;
+    NSMutableArray * _cardAIDs;
 }
 
 @property (nonatomic, retain) NSMutableArray *cardAIDs;
+
++ (Class)cardAIDsType;
 
 - (void).cxx_destruct;
 - (void)addCardAIDs:(id)arg1;

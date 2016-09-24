@@ -3,10 +3,10 @@
  */
 
 @interface CKDPRecordRetrieveVersionsRequest : PBRequest <NSCopying> {
-    CKDPAssetsToDownload *_assetsToDownload;
-    NSString *_minimumVersionEtag;
-    CKDPRecordIdentifier *_recordIdentifier;
-    CKDPRequestedFields *_requestedFields;
+    CKDPAssetsToDownload * _assetsToDownload;
+    NSString * _minimumVersionEtag;
+    CKDPRecordIdentifier * _recordIdentifier;
+    CKDPRequestedFields * _requestedFields;
 }
 
 @property (nonatomic, retain) CKDPAssetsToDownload *assetsToDownload;

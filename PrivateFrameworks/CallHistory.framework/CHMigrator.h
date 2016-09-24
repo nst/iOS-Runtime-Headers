@@ -3,7 +3,7 @@
  */
 
 @interface CHMigrator : NSObject {
-    CallDBMigrator *_migrator;
+    CallDBMigrator * _migrator;
 }
 
 - (void).cxx_destruct;

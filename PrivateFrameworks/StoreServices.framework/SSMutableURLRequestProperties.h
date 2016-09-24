@@ -21,13 +21,14 @@
 @property (copy) NSString *clientAuditBundleIdentifier;
 @property (copy) NSData *clientAuditTokenData;
 @property (copy) NSString *clientIdentifier;
-@property long long expectedContentLength;
+@property int expectedContentLength;
 @property (getter=isLargeDownload) BOOL largeDownload;
 @property int machineDataStyle;
 @property unsigned int networkServiceType;
 @property (copy) NSDictionary *requestParameters;
 @property BOOL requiresCellularDataNetwork;
 @property BOOL requiresExtendedValidationCertificates;
+@property BOOL requiresExternal;
 @property BOOL requiresHTTPS;
 @property BOOL shouldAddKBSyncData;
 @property BOOL shouldDecodeResponse;
@@ -48,7 +49,7 @@
 - (void)setClientAuditBundleIdentifier:(id)arg1;
 - (void)setClientAuditTokenData:(id)arg1;
 - (void)setClientIdentifier:(id)arg1;
-- (void)setExpectedContentLength:(long long)arg1;
+- (void)setExpectedContentLength:(int)arg1;
 - (void)setHTTPBody:(id)arg1;
 - (void)setHTTPBodyStream:(id)arg1;
 - (void)setHTTPHeaders:(id)arg1;
@@ -62,6 +63,7 @@
 - (void)setRequestParameters:(id)arg1;
 - (void)setRequiresCellularDataNetwork:(BOOL)arg1;
 - (void)setRequiresExtendedValidationCertificates:(BOOL)arg1;
+- (void)setRequiresExternal:(BOOL)arg1;
 - (void)setRequiresHTTPS:(BOOL)arg1;
 - (void)setShouldAddKBSyncData:(BOOL)arg1;
 - (void)setShouldDecodeResponse:(BOOL)arg1;

@@ -3,9 +3,9 @@
  */
 
 @interface GKUIRemoteViewController : _UIRemoteViewController <GKRemoteViewControllerDelegate, GKServiceViewControllerDelegate> {
-    NSExtension *_extension;
-    GKGame *_game;
-    id _requestIdentifier;
+    NSExtension * _extension;
+    GKGame * _game;
+    id  _requestIdentifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;

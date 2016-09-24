@@ -3,20 +3,20 @@
  */
 
 @interface RMSServiceMessage : PBCodable <NSCopying> {
-    NSString *_displayName;
+    NSString * _displayName;
     struct { 
         unsigned int port : 1; 
         unsigned int serviceDiscoverySource : 1; 
         unsigned int serviceLegacyFlags : 1; 
         unsigned int serviceType : 1; 
-    } _has;
-    NSString *_homeSharingGroupKey;
-    NSString *_hostName;
-    NSString *_networkName;
-    int _port;
-    int _serviceDiscoverySource;
-    int _serviceLegacyFlags;
-    int _serviceType;
+    }  _has;
+    NSString * _homeSharingGroupKey;
+    NSString * _hostName;
+    NSString * _networkName;
+    int  _port;
+    int  _serviceDiscoverySource;
+    int  _serviceLegacyFlags;
+    int  _serviceType;
 }
 
 @property (nonatomic, retain) NSString *displayName;

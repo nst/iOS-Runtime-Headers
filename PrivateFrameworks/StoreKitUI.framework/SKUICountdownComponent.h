@@ -3,7 +3,7 @@
  */
 
 @interface SKUICountdownComponent : SKUIPageComponent {
-    SKUICountdown *_countdown;
+    SKUICountdown * _countdown;
 }
 
 @property (nonatomic, retain) SKUICountdown *countdown;

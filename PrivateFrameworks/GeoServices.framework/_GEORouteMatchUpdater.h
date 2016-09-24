@@ -3,16 +3,16 @@
  */
 
 @interface _GEORouteMatchUpdater : NSObject {
-    GEOMapAccess *_mapAccess;
-    GEOMotionContext *_motionContext;
-    GEOComposedRoute *_route;
-    GEOTransitRouteMatcher *_routeMatcher;
-    double _stationRadius;
+    GEOMapAccess * _mapAccess;
+    GEOMotionContext * _motionContext;
+    GEOComposedRoute * _route;
+    GEOTransitRouteMatcher * _routeMatcher;
+    double  _stationRadius;
 }
 
 - (BOOL)_isLocation:(id)arg1 nearStation:(id)arg2;
 - (BOOL)_isLocation:(id)arg1 nearStop:(id)arg2;
-- (BOOL)_isLocation:(id)arg1 nearTransitPoint:(struct { double x1; double x2; })arg2 transitID:(unsigned long long)arg3 featureSize:(double)arg4;
+- (BOOL)_isLocation:(id)arg1 nearTransitPoint:(struct { double x1; double x2; })arg2 transitID:(unsigned int)arg3 featureSize:(double)arg4;
 - (double)_stationRadiusForStation:(id)arg1 accessPoint:(id)arg2 adjacentWalkingLegCoordinate:(struct { double x1; double x2; })arg3;
 - (void)dealloc;
 - (id)initWithTransitRouteMatcher:(id)arg1;

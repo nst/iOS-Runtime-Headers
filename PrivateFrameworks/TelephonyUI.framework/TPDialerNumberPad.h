@@ -3,9 +3,9 @@
  */
 
 @interface TPDialerNumberPad : TPNumberPad <TPDialerKeypadProtocol> {
-    <TPDialerKeypadDelegate> *_delegate;
-    BOOL _playsSounds;
-    TPDialerSoundController *_soundController;
+    <TPDialerKeypadDelegate> * _delegate;
+    BOOL  _playsSounds;
+    TPDialerSoundController * _soundController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -31,8 +31,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)setPlaysSounds:(BOOL)arg1;
 - (void)setSoundController:(id)arg1;
-- (void)setSupportsHardPause:(BOOL)arg1;
 - (id)soundController;
-- (BOOL)supportsHardPause;
 
 @end

@@ -3,10 +3,10 @@
  */
 
 @interface ISPurchaseReceipt : NSObject {
-    NSString *_cancellationReason;
-    NSDate *_expirationDate;
-    NSDate *_receiptCreationDate;
-    NSDate *_renewalDate;
+    NSString * _cancellationReason;
+    NSDate * _expirationDate;
+    NSDate * _receiptCreationDate;
+    NSDate * _renewalDate;
 }
 
 @property (readonly) NSDate *expirationDate;

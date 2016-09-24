@@ -3,14 +3,17 @@
  */
 
 @interface NEProfileIngestionPayloadInfo : NSObject <NEConfigurationLegacySupport, NEPrettyDescription, NSCopying, NSSecureCoding> {
-    BOOL _applicationCreated;
-    BOOL _isSetAside;
-    NSString *_payloadOrganization;
-    NSString *_payloadProtocolType;
-    NSString *_payloadUUID;
-    NSString *_profileIdentifier;
-    NSString *_profileOrganization;
-    NSString *_profileUUID;
+    BOOL  _applicationCreated;
+    BOOL  _isSetAside;
+    NSString * _payloadOrganization;
+    NSString * _payloadProtocolType;
+    NSString * _payloadUUID;
+    NSString * _profileIdentifier;
+    NSDate * _profileIngestionDate;
+    NSString * _profileOrganization;
+    int  _profileSource;
+    NSString * _profileUUID;
+    NSString * _systemVersion;
 }
 
 @property BOOL applicationCreated;
@@ -19,8 +22,11 @@
 @property (copy) NSString *payloadProtocolType;
 @property (copy) NSString *payloadUUID;
 @property (copy) NSString *profileIdentifier;
+@property (copy) NSDate *profileIngestionDate;
 @property (copy) NSString *profileOrganization;
+@property int profileSource;
 @property (copy) NSString *profileUUID;
+@property (copy) NSString *systemVersion;
 
 + (BOOL)supportsSecureCoding;
 
@@ -30,6 +36,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
 - (void)encodeWithCoder:(id)arg1;
+- (id)init;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isSetAside;
@@ -37,7 +44,9 @@
 - (id)payloadProtocolType;
 - (id)payloadUUID;
 - (id)profileIdentifier;
+- (id)profileIngestionDate;
 - (id)profileOrganization;
+- (int)profileSource;
 - (id)profileUUID;
 - (void)setApplicationCreated:(BOOL)arg1;
 - (void)setIsSetAside:(BOOL)arg1;
@@ -45,7 +54,11 @@
 - (void)setPayloadProtocolType:(id)arg1;
 - (void)setPayloadUUID:(id)arg1;
 - (void)setProfileIdentifier:(id)arg1;
+- (void)setProfileIngestionDate:(id)arg1;
 - (void)setProfileOrganization:(id)arg1;
+- (void)setProfileSource:(int)arg1;
 - (void)setProfileUUID:(id)arg1;
+- (void)setSystemVersion:(id)arg1;
+- (id)systemVersion;
 
 @end

@@ -3,11 +3,11 @@
  */
 
 @interface PUContainedDataSourceInfo : NSObject {
-    PUAssetsDataSource *_assetsDataSource;
+    PUAssetsDataSource * _assetsDataSource;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _externalSections;
+    }  _externalSections;
 }
 
 @property (nonatomic, retain) PUAssetsDataSource *assetsDataSource;

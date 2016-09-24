@@ -3,15 +3,15 @@
  */
 
 @interface CoreDAVMoveWithFallbackTaskGroup : CoreDAVTaskGroup {
-    NSString *_dataContentType;
-    NSData *_dataPayload;
-    NSURL *_destinationURL;
-    NSString *_nextETag;
-    int _overwrite;
-    NSString *_previousETag;
-    NSDictionary *_responseHeaders;
-    NSURL *_sourceURL;
-    BOOL _useFallback;
+    NSString * _dataContentType;
+    NSData * _dataPayload;
+    NSURL * _destinationURL;
+    NSString * _nextETag;
+    int  _overwrite;
+    NSString * _previousETag;
+    NSDictionary * _responseHeaders;
+    NSURL * _sourceURL;
+    BOOL  _useFallback;
 }
 
 @property (nonatomic, retain) NSString *dataContentType;

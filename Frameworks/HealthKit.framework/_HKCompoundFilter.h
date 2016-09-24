@@ -3,12 +3,12 @@
  */
 
 @interface _HKCompoundFilter : _HKFilter {
-    unsigned int _compoundType;
-    NSArray *_subfilters;
+    unsigned int  _compoundType;
+    NSArray * _subfilters;
 }
 
 @property (nonatomic, readonly) unsigned int compoundType;
-@property (nonatomic, readonly) NSArray *subfilters;
+@property (nonatomic, readonly, copy) NSArray *subfilters;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
@@ -16,6 +16,8 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_copyWithZone:(struct _NSZone { }*)arg1 subfilters:(id)arg2;
+- (id)_subfilters;
 - (BOOL)acceptsDataObject:(id)arg1;
 - (unsigned int)compoundType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -26,6 +28,6 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
-- (id)predicateWithHealthDaemon:(id)arg1;
+- (id)predicateWithProfile:(id)arg1;
 
 @end

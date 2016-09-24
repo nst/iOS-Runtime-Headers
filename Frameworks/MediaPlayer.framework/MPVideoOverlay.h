@@ -3,27 +3,27 @@
  */
 
 @interface MPVideoOverlay : UIView <MPDetailSliderDelegate, MPVideoOverlay> {
-    BOOL _controlsAutohideDisabled;
-    <MPVideoOverlayDelegate> *_delegate;
-    unsigned long long _desiredParts;
-    unsigned long long _disabledParts;
-    int _interfaceOrientation;
-    MPAVItem *_item;
-    double _lastTickTime;
-    MPAVController *_player;
-    MPDetailSlider *_scrubControl;
-    NSMutableDictionary *_tickTimeEvents;
-    <MPVideoControllerProtocol> *_videoViewController;
-    unsigned long long _visibleParts;
-    BOOL _wantsTick;
+    BOOL  _controlsAutohideDisabled;
+    <MPVideoOverlayDelegate> * _delegate;
+    unsigned int  _desiredParts;
+    unsigned int  _disabledParts;
+    int  _interfaceOrientation;
+    MPAVItem * _item;
+    double  _lastTickTime;
+    MPAVController * _player;
+    MPDetailSlider * _scrubControl;
+    NSMutableDictionary * _tickTimeEvents;
+    <MPVideoControllerProtocol> * _videoViewController;
+    unsigned int  _visibleParts;
+    BOOL  _wantsTick;
 }
 
 @property (nonatomic) BOOL allowsWirelessPlayback;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MPVideoOverlayDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) unsigned long long desiredParts;
-@property (nonatomic) unsigned long long disabledParts;
+@property (nonatomic) unsigned int desiredParts;
+@property (nonatomic) unsigned int disabledParts;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) MPAVItem *item;
 @property (nonatomic, readonly, retain) UINavigationBar *navigationBar;
@@ -31,7 +31,7 @@
 @property (nonatomic, retain) MPAVController *player;
 @property (readonly) Class superclass;
 @property (nonatomic) <MPVideoControllerProtocol> *videoViewController;
-@property (nonatomic) unsigned long long visibleParts;
+@property (nonatomic) unsigned int visibleParts;
 
 - (void).cxx_destruct;
 - (double)_duration;
@@ -43,16 +43,16 @@
 - (void)cancelPreviousPerformTickEventsForSelector:(SEL)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (unsigned long long)desiredParts;
+- (unsigned int)desiredParts;
 - (void)detailSlider:(id)arg1 didChangeValue:(float)arg2;
 - (void)detailSliderTrackingDidBegin:(id)arg1;
 - (void)detailSliderTrackingDidCancel:(id)arg1;
 - (void)detailSliderTrackingDidEnd:(id)arg1;
 - (void)didMoveToSuperview;
-- (unsigned long long)disabledParts;
+- (unsigned int)disabledParts;
 - (void)hideAlternateTracks;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)item;
 - (void)layoutSubviews;
 - (id)navigationBar;
@@ -62,21 +62,21 @@
 - (void)registerForPlayerNotifications;
 - (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDesiredParts:(unsigned long long)arg1;
-- (void)setDesiredParts:(unsigned long long)arg1 animate:(BOOL)arg2;
-- (void)setDisabledParts:(unsigned long long)arg1;
+- (void)setDesiredParts:(unsigned int)arg1;
+- (void)setDesiredParts:(unsigned int)arg1 animate:(BOOL)arg2;
+- (void)setDisabledParts:(unsigned int)arg1;
 - (void)setItem:(id)arg1;
 - (void)setNavigationBarHidden:(BOOL)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setVideoViewController:(id)arg1;
-- (void)setVisibleParts:(unsigned long long)arg1;
-- (void)setVisibleParts:(unsigned long long)arg1 animate:(BOOL)arg2;
+- (void)setVisibleParts:(unsigned int)arg1;
+- (void)setVisibleParts:(unsigned int)arg1 animate:(BOOL)arg2;
 - (void)showAlternateTracks;
 - (void)startTicking;
 - (void)stopTicking;
 - (void)unregisterForPlayerNotifications;
 - (BOOL)updateTimeBasedValues;
 - (id)videoViewController;
-- (unsigned long long)visibleParts;
+- (unsigned int)visibleParts;
 
 @end

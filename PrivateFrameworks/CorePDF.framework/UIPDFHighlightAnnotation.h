@@ -3,7 +3,7 @@
  */
 
 @interface UIPDFHighlightAnnotation : UIPDFMarkupAnnotation {
-    struct CGColor { } *_highLightColor;
+    struct CGColor { } * _highLightColor;
 }
 
 - (int)annotationType;

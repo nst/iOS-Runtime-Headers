@@ -3,7 +3,7 @@
  */
 
 @interface OITSUScaledProgressStorage : NSObject {
-    double mMaxValue;
+    double  mMaxValue;
 }
 
 @property double maxValue;

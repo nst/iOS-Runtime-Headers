@@ -3,7 +3,7 @@
  */
 
 @interface VURemoteSession : SLRemoteSession {
-    ACAccountStore *_accountStore;
+    ACAccountStore * _accountStore;
 }
 
 @property (nonatomic, retain) ACAccountStore *accountStore;

@@ -3,10 +3,10 @@
  */
 
 @interface ML3DatabaseColumn : NSObject {
-    unsigned int _columnConstraints;
-    unsigned int _datatype;
-    id _defaultValue;
-    NSString *_name;
+    unsigned int  _columnConstraints;
+    unsigned int  _datatype;
+    id  _defaultValue;
+    NSString * _name;
 }
 
 @property (nonatomic, readonly) unsigned int columnConstraints;

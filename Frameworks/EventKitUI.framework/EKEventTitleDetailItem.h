@@ -3,16 +3,20 @@
  */
 
 @interface EKEventTitleDetailItem : EKEventDetailItem <EKEventDetailTitleCellDelegate> {
-    UITableViewCell *_cell;
-    BOOL _cellNeedsUpdate;
-    UIColor *_color;
-    NSObject<EKEventTitleDetailItemDelegate> *_editDelegate;
-    BOOL _hidesSeparator;
-    BOOL _showDot;
+    UITableViewCell * _cell;
+    BOOL  _cellNeedsUpdate;
+    UIColor * _color;
+    NSObject<EKEventTitleDetailItemDelegate> * _editDelegate;
+    BOOL  _hasMapItemLaunchOptionFromTimeToLeaveNotification;
+    BOOL  _hidesSeparator;
+    NSDate * _proposedTime;
+    BOOL  _showDot;
 }
 
 @property (nonatomic) NSObject<EKEventTitleDetailItemDelegate> *editDelegate;
+@property (nonatomic) BOOL hasMapItemLaunchOptionFromTimeToLeaveNotification;
 @property (nonatomic) BOOL hidesSeparator;
+@property (nonatomic, retain) NSDate *proposedTime;
 
 - (void).cxx_destruct;
 - (void)_updateCellIfNeededForWidth:(float)arg1;
@@ -21,11 +25,16 @@
 - (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
 - (void)editButtonPressed;
 - (id)editDelegate;
+- (BOOL)hasMapItemLaunchOptionFromTimeToLeaveNotification;
 - (BOOL)hidesSeparator;
+- (void)predictionWasActedOn;
+- (id)proposedTime;
 - (void)reset;
 - (void)setCellPosition:(int)arg1;
 - (void)setEditDelegate:(id)arg1;
+- (void)setHasMapItemLaunchOptionFromTimeToLeaveNotification:(BOOL)arg1;
 - (void)setHidesSeparator:(BOOL)arg1;
+- (void)setProposedTime:(id)arg1;
 - (BOOL)shouldShowEditButtonInline;
 
 @end

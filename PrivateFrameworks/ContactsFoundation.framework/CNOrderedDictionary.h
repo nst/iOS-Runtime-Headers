@@ -3,8 +3,8 @@
  */
 
 @interface CNOrderedDictionary : NSObject <NSCopying, NSMutableCopying> {
-    NSMutableDictionary *_dictionary;
-    NSMutableArray *_orderedKeys;
+    NSMutableDictionary * _dictionary;
+    NSMutableArray * _orderedKeys;
 }
 
 @property (readonly, copy) NSArray *allKeys;

@@ -4,4 +4,6 @@
 
 @interface _UIRevealGestureRecognizer : UILongPressGestureRecognizer
 
+- (void)setDelegate:(id)arg1;
+
 @end

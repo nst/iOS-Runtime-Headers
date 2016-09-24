@@ -3,14 +3,14 @@
  */
 
 @interface IDSSocketPairOTREncryptedMessage : IDSSocketPairMessage {
-    NSData *_data;
-    BOOL _encrypted;
-    BOOL _fileXfer;
-    unsigned int _offset;
-    unsigned short _priority;
-    unsigned int _sequenceNumber;
-    unsigned short _streamID;
-    unsigned char _versionNumber;
+    NSData * _data;
+    BOOL  _encrypted;
+    BOOL  _fileXfer;
+    unsigned int  _offset;
+    unsigned short  _priority;
+    unsigned int  _sequenceNumber;
+    unsigned short  _streamID;
+    unsigned char  _versionNumber;
 }
 
 @property (nonatomic, readonly, retain) NSData *data;

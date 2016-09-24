@@ -3,7 +3,7 @@
  */
 
 @interface CKDPRecordSaveRequestShareIdUpdate : PBCodable <NSCopying> {
-    CKDPShareIdentifier *_shareId;
+    CKDPShareIdentifier * _shareId;
 }
 
 @property (nonatomic, readonly) BOOL hasShareId;

@@ -3,8 +3,8 @@
  */
 
 @interface MKMapItemMetadataImageRequest : MKMapItemMetadataRequest {
-    id /* block */ _imageHandler;
-    GEOPhotoInfo *_info;
+    id /* block */  _imageHandler;
+    GEOPhotoInfo * _info;
 }
 
 @property (nonatomic, copy) id /* block */ imageHandler;

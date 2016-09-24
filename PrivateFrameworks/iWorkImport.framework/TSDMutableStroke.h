@@ -2,23 +2,37 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDMutableStroke : TSDStroke
+@interface TSDMutableStroke : TSDStroke <TSDMutableStroke>
 
-@property (nonatomic) float actualWidth;
+@property (nonatomic) double actualWidth;
 @property (nonatomic) int cap;
 @property (nonatomic, copy) TSUColor *color;
 @property (nonatomic) BOOL dontClearBackground;
 @property (nonatomic) int join;
-@property (nonatomic) float miterLimit;
+@property (nonatomic) double miterLimit;
 @property (nonatomic, copy) TSDStrokePattern *pattern;
-@property (nonatomic) float width;
+@property (nonatomic) double width;
 
 + (id)emptyStroke;
 + (id)stroke;
 
+- (float)actualWidth;
+- (int)cap;
+- (id)color;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (int)join;
+- (float)miterLimit;
+- (id)pattern;
+- (void)setActualWidth:(float)arg1;
+- (void)setCap:(int)arg1;
+- (void)setColor:(id)arg1;
 - (void)setDontClearBackground:(BOOL)arg1;
+- (void)setJoin:(int)arg1;
+- (void)setMiterLimit:(float)arg1;
+- (void)setPattern:(id)arg1;
 - (void)setPatternPropertiesFromStroke:(id)arg1;
 - (void)setPropertiesFromStroke:(id)arg1;
+- (void)setWidth:(float)arg1;
+- (float)width;
 
 @end

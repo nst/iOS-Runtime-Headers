@@ -3,7 +3,7 @@
  */
 
 @interface CISimpleTile : CIFilter {
-    CIImage *inputImage;
+    CIImage * inputImage;
 }
 
 @property (nonatomic, retain) CIImage *inputImage;

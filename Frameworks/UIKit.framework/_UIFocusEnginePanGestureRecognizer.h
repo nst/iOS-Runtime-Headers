@@ -3,7 +3,7 @@
  */
 
 @interface _UIFocusEnginePanGestureRecognizer : UIPanGestureRecognizer {
-    _UIFocusEngine *_focusEngine;
+    _UIFocusEngine * _focusEngine;
 }
 
 @property (nonatomic) _UIFocusEngine *focusEngine;

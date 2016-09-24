@@ -3,7 +3,7 @@
  */
 
 @interface PSDetailController : PSViewController {
-    PSEditingPane *_pane;
+    PSEditingPane * _pane;
 }
 
 @property (nonatomic) PSEditingPane *pane;
@@ -14,7 +14,7 @@
 - (void)loadPane;
 - (void)loadView;
 - (id)pane;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })paneFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })paneFrame;
 - (void)saveChanges;
 - (void)setPane:(id)arg1;
 - (void)statusBarWillAnimateByHeight:(float)arg1;

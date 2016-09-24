@@ -3,13 +3,14 @@
  */
 
 @interface RCCurrentRecordingViewController : UIViewController <RCCurrentRecordingViewControllerDelegate, RCUIServiceCurrentRecordingViewController> {
-    RCAVState *_AVState;
-    <RCCurrentRecordingViewControllerDelegate> *_delegate;
-    BOOL _isDisplayingLockscreenInterface;
-    UIColor *_presentationBackgroundColor;
-    RCCurrentRecordingRemoteViewController *_remoteViewController;
-    BOOL _screenUpdatesDisabled;
-    UIColor *_waveformForegroundColor;
+    RCAVState * _AVState;
+    <RCCurrentRecordingViewControllerDelegate> * _delegate;
+    BOOL  _isDisplayingLockscreenInterface;
+    UIColor * _presentationBackgroundColor;
+    RCCurrentRecordingRemoteViewController * _remoteViewController;
+    BOOL  _screenUpdatesDisabled;
+    UIColor * _waveformBackgroundColor;
+    UIColor * _waveformForegroundColor;
 }
 
 @property (nonatomic, retain) RCAVState *AVState;
@@ -35,7 +36,7 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)insertRemoteViewController:(id)arg1;
 - (void)loadCaptureStateWithCompletionBlock:(id /* block */)arg1;
-- (void)presentLockscreenInterfaceWithBackgroundColor:(id)arg1 waveformForegroundColor:(id)arg2;
+- (void)presentLockscreenInterfaceWithBackgroundColor:(id)arg1 waveformForegroundColor:(id)arg2 waveformBackgroundColor:(id)arg3;
 - (void)setAVState:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setScreenUpdatesDisabled:(BOOL)arg1;

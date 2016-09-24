@@ -3,20 +3,20 @@
  */
 
 @interface MKUserTrackingBarButtonItem : UIBarButtonItem <MKUserTrackingButtonTarget> {
-    UIView *_associatedView;
-    _MKUserTrackingButtonController *_controller;
-    UIButton *_customButton;
-    BOOL _explicitlyEnabled;
-    BOOL _hasCustomAssociatedView;
-    BOOL _internallyEnabled;
-    BOOL _isLegacy;
-    UINavigationBar *_navigationBar;
-    UIToolbar *_toolbar;
-    UIImage *_trackingEmptyImage;
-    UIImage *_trackingFollowImage;
-    UIImage *_trackingFollowWithHeadingImage;
-    UIImage *_trackingNoneImage;
-    _MKUserTrackingButton *_userTrackingButton;
+    UIView * _associatedView;
+    _MKUserTrackingButtonController * _controller;
+    UIButton * _customButton;
+    BOOL  _explicitlyEnabled;
+    BOOL  _hasCustomAssociatedView;
+    BOOL  _internallyEnabled;
+    BOOL  _isLegacy;
+    UINavigationBar * _navigationBar;
+    UIToolbar * _toolbar;
+    UIImage * _trackingEmptyImage;
+    UIImage * _trackingFollowImage;
+    UIImage * _trackingFollowWithHeadingImage;
+    UIImage * _trackingNoneImage;
+    _MKUserTrackingButton * _userTrackingButton;
 }
 
 @property (nonatomic, retain) UIView *_associatedView;

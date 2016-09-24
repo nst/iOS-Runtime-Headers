@@ -3,7 +3,7 @@
  */
 
 @interface TDThemeLook : TDThemeConstant {
-    BOOL _supportsContrastAdjustment;
+    BOOL  _supportsContrastAdjustment;
 }
 
 - (void)setSupportsContrastAdjustment:(BOOL)arg1;

@@ -3,11 +3,11 @@
  */
 
 @interface CNFAccountRegistrar : NSObject {
-    IMAccount *_account;
-    id /* block */ _completionBlock;
-    UIViewController *_presentationViewController;
-    NSTimer *_registrationTimer;
-    int _serviceType;
+    IMAccount * _account;
+    id /* block */  _completionBlock;
+    UIViewController * _presentationViewController;
+    NSTimer * _registrationTimer;
+    int  _serviceType;
 }
 
 @property (retain) IMAccount *account;

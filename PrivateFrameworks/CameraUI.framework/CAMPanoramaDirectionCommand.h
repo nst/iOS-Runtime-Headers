@@ -3,7 +3,7 @@
  */
 
 @interface CAMPanoramaDirectionCommand : CAMCaptureCommand {
-    int __direction;
+    int  __direction;
 }
 
 @property (nonatomic, readonly) int _direction;

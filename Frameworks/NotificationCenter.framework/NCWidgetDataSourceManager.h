@@ -3,12 +3,12 @@
  */
 
 @interface NCWidgetDataSourceManager : NSObject <NCWidgetVisibilityDelegate, _NCDataSourceManager> {
-    id /* block */ _didStartBlock;
-    BOOL _isPublishing;
-    <_NCParentDataSourceManager> *_parentDataSourceManager;
-    id _plugInDiscoveryToken;
-    NCWidgetDataSource *_widgetDataSource;
-    NCWidgetVisibilityManager *_widgetVisbilityManager;
+    id /* block */  _didStartBlock;
+    BOOL  _isPublishing;
+    <_NCParentDataSourceManager> * _parentDataSourceManager;
+    id  _plugInDiscoveryToken;
+    NCWidgetDataSource * _widgetDataSource;
+    NCWidgetVisibilityManager * _widgetVisbilityManager;
 }
 
 @property (nonatomic, readonly) NSArray *dataSources;
@@ -20,6 +20,10 @@
 @property (readonly) Class superclass;
 @property (getter=_widgetVisbilityManager, nonatomic, retain) NCWidgetVisibilityManager *widgetVisbilityManager;
 
++ (id)_widgetExtensionsDiscoveryAttributes;
++ (void)availableWidgetsWithCompletion:(id /* block */)arg1;
+
+- (void).cxx_destruct;
 - (void)_beginContinuousPlugInDiscovery;
 - (void)_endContinuousPlugInDiscovery;
 - (id)_plugInDiscoveryToken;
@@ -30,10 +34,8 @@
 - (void)_stop:(id /* block */)arg1;
 - (void)_updateDataSourceWithExtension:(id)arg1;
 - (void)_updatePublishedWidgetExtensions:(id)arg1;
-- (id)_widgetExtensionsDiscoveryAttributes;
 - (id)_widgetVisbilityManager;
 - (id)dataSources;
-- (void)dealloc;
 - (id)init;
 - (id)parentDataSourceManager;
 - (void)setParentDataSourceManager:(id)arg1;

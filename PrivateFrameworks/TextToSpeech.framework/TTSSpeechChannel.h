@@ -3,7 +3,7 @@
  */
 
 @interface TTSSpeechChannel : NSObject {
-    TTSSpeechVoice *_voice;
+    TTSSpeechVoice * _voice;
 }
 
 @property (nonatomic, retain) TTSSpeechVoice *voice;

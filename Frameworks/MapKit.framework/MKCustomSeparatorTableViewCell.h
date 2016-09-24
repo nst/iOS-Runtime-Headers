@@ -3,18 +3,17 @@
  */
 
 @interface MKCustomSeparatorTableViewCell : MKTableViewCell {
-    float _leftSeparatorInset;
-    float _rightSeparatorInset;
-    BOOL _separatorHidden;
+    double  _leftSeparatorInset;
+    double  _rightSeparatorInset;
 }
 
-@property (nonatomic) float leadingSeparatorInset;
-@property (nonatomic) float leftSeparatorInset;
-@property (nonatomic) float rightSeparatorInset;
+@property (nonatomic) double leadingSeparatorInset;
+@property (nonatomic) double leftSeparatorInset;
+@property (nonatomic) double rightSeparatorInset;
 @property (getter=isSeparatorHidden, nonatomic) BOOL separatorHidden;
-@property (nonatomic) float trailingSeparatorInset;
+@property (nonatomic) double trailingSeparatorInset;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_separatorFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_separatorFrame;
 - (void)_updateSeparatorInset;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (BOOL)isSeparatorHidden;

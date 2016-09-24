@@ -32,13 +32,16 @@
 - (id)_copyConfiguration;
 - (id)_downloadTaskWithRequest:(id)arg1 downloadFilePath:(id)arg2;
 - (void)addDelegateBlock:(id /* block */)arg1;
+- (id)assetDownloadTaskWithURLAsset:(id)arg1 assetTitle:(id)arg2 assetArtworkData:(id)arg3 options:(id)arg4;
 - (id)assetDownloadTaskWithURLAsset:(id)arg1 destinationURL:(id)arg2 options:(id)arg3;
+- (BOOL)can_delegate_AVAssetDownloadTask_didFinishDownloadingToURL;
 - (BOOL)can_delegate_AVAssetDownloadTask_didLoadTimeRange;
 - (BOOL)can_delegate_AVAssetDownloadTask_didReceiveDownloadToken;
 - (BOOL)can_delegate_AVAssetDownloadTask_didResolveMediaSelection;
 - (BOOL)can_delegate_AVAssetDownloadTask_didWriteData;
 - (BOOL)can_delegate_betterRouteDiscoveredForStreamTask;
 - (BOOL)can_delegate_companionAvailabilityChanged;
+- (BOOL)can_delegate_connectionEstablishedForStreamTask;
 - (BOOL)can_delegate_dataTask_didBecomeDownloadTask;
 - (BOOL)can_delegate_dataTask_didBecomeStreamTask;
 - (BOOL)can_delegate_dataTask_didReceiveData;
@@ -51,12 +54,15 @@
 - (BOOL)can_delegate_downloadTask_didReceiveResponse;
 - (BOOL)can_delegate_downloadTask_didResumeAtOffset;
 - (BOOL)can_delegate_downloadTask_didWriteData;
+- (BOOL)can_delegate_needConnectedSocket;
 - (BOOL)can_delegate_openFileAtPath;
 - (BOOL)can_delegate_readClosedForStreamTask;
 - (BOOL)can_delegate_streamTask_didBecomeInputStream_outputStream;
+- (BOOL)can_delegate_task__schemeUpgraded;
 - (BOOL)can_delegate_task_actually_didCompleteWithError;
 - (BOOL)can_delegate_task_conditionalRequirementsChanged;
 - (BOOL)can_delegate_task_didCompleteWithError;
+- (BOOL)can_delegate_task_didFinishCollectingMetrics;
 - (BOOL)can_delegate_task_didReceiveChallenge;
 - (BOOL)can_delegate_task_didSendBodyData;
 - (BOOL)can_delegate_task_isWaitingForConnection;
@@ -75,12 +81,14 @@
 - (id)dataTaskWithRequest:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)dataTaskWithURL:(id)arg1;
 - (id)dataTaskWithURL:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)delegate_AVAssetDownloadTask:(id)arg1 didLoadTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg2 totalTimeRangesLoaded:(id)arg3 timeRangeExpectedToLoad:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg4;
-- (void)delegate_AVAssetDownloadTask:(id)arg1 didReceiveDownloadToken:(unsigned long long)arg2;
+- (void)delegate_AVAssetDownloadTask:(id)arg1 didFinishDownloadingToURL:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)delegate_AVAssetDownloadTask:(id)arg1 didLoadTimeRange:(struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })arg2 totalTimeRangesLoaded:(id)arg3 timeRangeExpectedToLoad:(struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })arg4;
+- (void)delegate_AVAssetDownloadTask:(id)arg1 didReceiveDownloadToken:(unsigned int)arg2;
 - (void)delegate_AVAssetDownloadTask:(id)arg1 didResolveMediaSelection:(id)arg2;
-- (void)delegate_AVAssetDownloadTask:(id)arg1 didWriteData:(long long)arg2 totalBytesWritten:(long long)arg3 totalBytesExpectedToWrite:(long long)arg4;
+- (void)delegate_AVAssetDownloadTask:(id)arg1 didWriteData:(int)arg2 totalBytesWritten:(int)arg3 totalBytesExpectedToWrite:(int)arg4;
 - (void)delegate_betterRouteDiscoveredForStreamTask:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)delegate_companionAvailabilityChanged:(BOOL)arg1;
+- (void)delegate_connectionEstablishedForStreamTask:(id)arg1;
 - (void)delegate_dataTask:(id)arg1 didBecomeDownloadTask:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)delegate_dataTask:(id)arg1 didBecomeStreamTask:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)delegate_dataTask:(id)arg1 didReceiveData:(id)arg2 completionHandler:(id /* block */)arg3;
@@ -90,19 +98,22 @@
 - (void)delegate_didReceiveChallenge:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)delegate_downloadTask:(id)arg1 didFinishDownloadingToURL:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)delegate_downloadTask:(id)arg1 didReceiveResponse:(id)arg2;
-- (void)delegate_downloadTask:(id)arg1 didResumeAtOffset:(long long)arg2 expectedTotalBytes:(long long)arg3;
-- (void)delegate_downloadTask:(id)arg1 didWriteData:(long long)arg2 totalBytesWritten:(long long)arg3 totalBytesExpectedToWrite:(long long)arg4 completionHandler:(id /* block */)arg5;
+- (void)delegate_downloadTask:(id)arg1 didResumeAtOffset:(int)arg2 expectedTotalBytes:(int)arg3;
+- (void)delegate_downloadTask:(id)arg1 didWriteData:(int)arg2 totalBytesWritten:(int)arg3 totalBytesExpectedToWrite:(int)arg4 completionHandler:(id /* block */)arg5;
 - (id)delegate_downloadTaskNeedsDownloadDirectory:(id)arg1;
+- (void)delegate_needConnectedSocketToHost:(id)arg1 port:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
 - (int)delegate_openFileAtPath:(id)arg1 mode:(int)arg2;
 - (void)delegate_readClosedForStreamTask:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)delegate_streamTask:(id)arg1 didBecomeInputStream:(id)arg2 outputStream:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)delegate_task:(id)arg1 _schemeUpgraded:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)delegate_task:(id)arg1 _willSendRequestForEstablishedConnection:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)delegate_task:(id)arg1 conditionalRequirementsChanged:(BOOL)arg2;
 - (void)delegate_task:(id)arg1 didCompleteWithError:(id)arg2;
+- (void)delegate_task:(id)arg1 didFinishCollectingMetrics:(id)arg2 completion:(id /* block */)arg3;
 - (void)delegate_task:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)delegate_task:(id)arg1 didSendBodyData:(long long)arg2 totalBytesSent:(long long)arg3 totalBytesExpectedToSend:(long long)arg4;
+- (void)delegate_task:(id)arg1 didSendBodyData:(int)arg2 totalBytesSent:(int)arg3 totalBytesExpectedToSend:(int)arg4;
 - (void)delegate_task:(id)arg1 isWaitingForConnectionWithError:(id)arg2;
-- (void)delegate_task:(id)arg1 isWaitingForConnectionWithReason:(long long)arg2;
+- (void)delegate_task:(id)arg1 isWaitingForConnectionWithReason:(int)arg2;
 - (void)delegate_task:(id)arg1 needNewBodyStream:(id /* block */)arg2;
 - (void)delegate_task:(id)arg1 willPerformHTTPRedirection:(id)arg2 newRequest:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)delegate_task_isWaitingForConnection:(id)arg1;
@@ -133,10 +144,18 @@
 - (id)uploadTaskWithRequest:(id)arg1 fromFile:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)uploadTaskWithStreamedRequest:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
++ (void)_geo_sendAsynchronousRequest:(id)arg1 connectionProperties:(id)arg2 completionHandler:(id /* block */)arg3;
++ (void)_geo_sendAsynchronousRequest:(id)arg1 queue:(id)arg2 connectionProperties:(id)arg3 completionHandler:(id /* block */)arg4;
++ (id)_geo_sendSynchronousRequest:(id)arg1 connectionProperties:(id)arg2 returningResponse:(id*)arg3 error:(id*)arg4;
+
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 
 + (id)safari_sharedSession;
 
+- (void)_safari_downloadFirstValidImageWithURLs:(id)arg1 failedURLDownloadsToErrorsDictionary:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)safari_downloadFirstValidImageWithURLs:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)safari_downloadImageWithURL:(id)arg1 completionHandler:(id /* block */)arg2;
 
 @end

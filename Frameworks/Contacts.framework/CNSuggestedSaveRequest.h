@@ -3,8 +3,8 @@
  */
 
 @interface CNSuggestedSaveRequest : CNSaveRequest {
-    NSMutableSet *_mutableConfirmedSuggestions;
-    NSMutableSet *_mutableRejectedSuggestions;
+    NSMutableSet * _mutableConfirmedSuggestions;
+    NSMutableSet * _mutableRejectedSuggestions;
 }
 
 @property (nonatomic, readonly, copy) NSSet *confirmedSuggestions;
@@ -14,6 +14,7 @@
 
 - (void)confirmSuggestion:(id)arg1;
 - (id)confirmedSuggestions;
+- (void)dealloc;
 - (id)mutableConfirmedSuggestions;
 - (id)mutableRejectedSuggestions;
 - (void)rejectSuggestion:(id)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface SSVDialogResponse : NSObject <NSCopying, SSXPCCoding> {
-    int _selectedButtonIndex;
-    NSArray *_textFieldValues;
+    int  _selectedButtonIndex;
+    NSArray * _textFieldValues;
 }
 
 @property (readonly, copy) NSString *debugDescription;

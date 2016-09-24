@@ -3,25 +3,26 @@
  */
 
 @interface UIKBRenderTraits : NSObject <NSCopying> {
-    UIKBGradient *_backgroundGradient;
-    int _blendForm;
-    BOOL _blurBlending;
-    BOOL _controlOpacities;
-    UIKBTextStyle *_fallbackSymbolStyle;
-    NSMutableArray *_foregroundRenderEffects;
-    UIKBRenderGeometry *_geometry;
-    NSString *_hashString;
-    UIKBRenderTraits *_highlightedVariantTraits;
-    BOOL _honorControlOpacity;
-    UIKBGradient *_layeredBackgroundGradient;
-    UIKBGradient *_layeredForegroundGradient;
-    NSMutableArray *_renderEffects;
-    NSArray *_renderFlags;
-    BOOL _renderSecondarySymbolsSeparately;
-    NSArray *_secondarySymbolStyles;
-    UIKBTextStyle *_symbolStyle;
-    NSArray *_variantGeometries;
-    UIKBRenderTraits *_variantTraits;
+    UIKBGradient * _backgroundGradient;
+    int  _blendForm;
+    BOOL  _blurBlending;
+    BOOL  _controlOpacities;
+    UIKBTextStyle * _fallbackSymbolStyle;
+    NSMutableArray * _foregroundRenderEffects;
+    UIKBRenderGeometry * _geometry;
+    NSString * _hashString;
+    UIKBRenderTraits * _highlightedVariantTraits;
+    BOOL  _honorControlOpacity;
+    UIKBGradient * _layeredBackgroundGradient;
+    UIKBGradient * _layeredForegroundGradient;
+    NSMutableArray * _renderEffects;
+    NSArray * _renderFlags;
+    int  _renderFlagsForAboveEffects;
+    BOOL  _renderSecondarySymbolsSeparately;
+    NSArray * _secondarySymbolStyles;
+    UIKBTextStyle * _symbolStyle;
+    NSArray * _variantGeometries;
+    UIKBRenderTraits * _variantTraits;
 }
 
 @property (nonatomic, retain) UIKBGradient *backgroundGradient;
@@ -37,6 +38,7 @@
 @property (nonatomic, retain) UIKBGradient *layeredForegroundGradient;
 @property (nonatomic, readonly) NSArray *renderEffects;
 @property (nonatomic, retain) NSArray *renderFlags;
+@property (nonatomic) int renderFlagsForAboveEffects;
 @property (nonatomic) BOOL renderSecondarySymbolsSeparately;
 @property (nonatomic, retain) NSArray *secondarySymbolStyles;
 @property (nonatomic, retain) UIKBTextStyle *symbolStyle;
@@ -69,6 +71,7 @@
 - (void)removeAllRenderEffects;
 - (id)renderEffects;
 - (id)renderFlags;
+- (int)renderFlagsForAboveEffects;
 - (BOOL)renderSecondarySymbolsSeparately;
 - (id)secondarySymbolStyles;
 - (void)setBackgroundGradient:(id)arg1;
@@ -82,6 +85,7 @@
 - (void)setLayeredBackgroundGradient:(id)arg1;
 - (void)setLayeredForegroundGradient:(id)arg1;
 - (void)setRenderFlags:(id)arg1;
+- (void)setRenderFlagsForAboveEffects:(int)arg1;
 - (void)setRenderSecondarySymbolsSeparately:(BOOL)arg1;
 - (void)setSecondarySymbolStyles:(id)arg1;
 - (void)setSymbolStyle:(id)arg1;

@@ -3,10 +3,10 @@
  */
 
 @interface AACloudKitDevicesListResponse : AAResponse {
-    NSArray *_incompatibleDeviceNames;
-    NSArray *_incompatibleDevices;
-    NSArray *_needUpgradeDeviceNames;
-    NSArray *_needUpgradeDevices;
+    NSArray * _incompatibleDeviceNames;
+    NSArray * _incompatibleDevices;
+    NSArray * _needUpgradeDeviceNames;
+    NSArray * _needUpgradeDevices;
 }
 
 @property (nonatomic, readonly) NSArray *incompatibleDeviceNames;

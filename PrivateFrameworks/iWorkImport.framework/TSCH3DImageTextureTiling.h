@@ -3,14 +3,14 @@
  */
 
 @interface TSCH3DImageTextureTiling : TSCH3DBaseImageTextureTiling {
-    int _face;
-    int _mode;
-    BOOL _reveal;
-    int _sContinuity;
-    int _tContinuity;
-    int _wrap;
-    int _xPosition;
-    int _yPosition;
+    int  _face;
+    int  _mode;
+    BOOL  _reveal;
+    int  _sContinuity;
+    int  _tContinuity;
+    int  _wrap;
+    int  _xPosition;
+    int  _yPosition;
 }
 
 @property (nonatomic) int face;

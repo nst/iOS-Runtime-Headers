@@ -3,12 +3,12 @@
  */
 
 @interface WBSSavedPassword : NSObject {
-    NSString *_highLevelDomain;
-    NSString *_password;
-    NSMutableDictionary *_siteToProtectionSpaces;
-    NSMutableArray *_sites;
-    NSString *_user;
-    BOOL _userIsNeverSaveMarker;
+    NSString * _highLevelDomain;
+    NSString * _password;
+    NSMutableDictionary * _siteToProtectionSpaces;
+    NSMutableArray * _sites;
+    NSString * _user;
+    BOOL  _userIsNeverSaveMarker;
 }
 
 @property (nonatomic, readonly) NSString *highLevelDomain;

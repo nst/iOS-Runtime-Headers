@@ -8,6 +8,7 @@
 - (BOOL)textField:(UITextField *)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(NSString *)arg3;
 - (void)textFieldDidBeginEditing:(UITextField *)arg1;
 - (void)textFieldDidEndEditing:(UITextField *)arg1;
+- (void)textFieldDidEndEditing:(UITextField *)arg1 reason:(int)arg2;
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)arg1;
 - (BOOL)textFieldShouldClear:(UITextField *)arg1;
 - (BOOL)textFieldShouldEndEditing:(UITextField *)arg1;

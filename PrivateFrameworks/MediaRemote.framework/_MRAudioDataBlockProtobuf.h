@@ -3,12 +3,12 @@
  */
 
 @interface _MRAudioDataBlockProtobuf : PBCodable <NSCopying> {
-    _MRAudioBufferProtobuf *_buffer;
-    double _gain;
+    _MRAudioBufferProtobuf * _buffer;
+    double  _gain;
     struct { 
         unsigned int gain : 1; 
-    } _has;
-    _MRAudioTimeProtobuf *_time;
+    }  _has;
+    _MRAudioTimeProtobuf * _time;
 }
 
 @property (nonatomic, retain) _MRAudioBufferProtobuf *buffer;

@@ -3,14 +3,14 @@
  */
 
 @interface VKScene : NSObject <NSCopying> {
-    GEOTileKeyList *_debugKeyList;
-    BOOL _fullyLoaded;
-    VKTileKeyList *_keysInView;
-    BOOL _mapIsOpaque;
-    VKTileKeyList *_neighborKeys;
-    NSSet *_neighborTiles;
-    NSMutableArray *_rasterOverlayScenes;
-    NSSet *_tilesToRender;
+    GEOTileKeyList * _debugKeyList;
+    BOOL  _fullyLoaded;
+    VKTileKeyList * _keysInView;
+    BOOL  _mapIsOpaque;
+    VKTileKeyList * _neighborKeys;
+    NSSet * _neighborTiles;
+    NSMutableArray * _rasterOverlayScenes;
+    NSSet * _tilesToRender;
 }
 
 @property (nonatomic, retain) GEOTileKeyList *debugKeyList;
@@ -41,5 +41,6 @@
 - (void)setNeighborTiles:(id)arg1;
 - (void)setTilesToRender:(id)arg1;
 - (id)tilesToRender;
+- (id)unloadedTiles;
 
 @end

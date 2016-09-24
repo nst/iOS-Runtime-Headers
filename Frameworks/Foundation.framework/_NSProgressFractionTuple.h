@@ -3,8 +3,8 @@
  */
 
 @interface _NSProgressFractionTuple : NSObject {
-    _NSProgressFraction *_next;
-    _NSProgressFraction *_previous;
+    _NSProgressFraction * _next;
+    _NSProgressFraction * _previous;
 }
 
 @property (copy) _NSProgressFraction *next;

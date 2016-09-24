@@ -3,8 +3,8 @@
  */
 
 @interface PUEditPlugin : NSObject {
-    _PUEditPluginApplicationExtensionActivity *__applicationExtensionActivity;
-    NSExtension *_extension;
+    _PUEditPluginApplicationExtensionActivity * __applicationExtensionActivity;
+    NSExtension * _extension;
 }
 
 @property (nonatomic, readonly) _PUEditPluginApplicationExtensionActivity *_applicationExtensionActivity;

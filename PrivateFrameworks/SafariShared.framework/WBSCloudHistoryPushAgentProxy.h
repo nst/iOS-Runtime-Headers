@@ -3,7 +3,7 @@
  */
 
 @interface WBSCloudHistoryPushAgentProxy : NSObject <WBSCloudHistoryPushAgent> {
-    NSXPCConnection *_agentConnection;
+    NSXPCConnection * _agentConnection;
 }
 
 @property (readonly, copy) NSString *debugDescription;

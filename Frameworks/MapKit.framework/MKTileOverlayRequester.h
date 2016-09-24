@@ -3,10 +3,10 @@
  */
 
 @interface MKTileOverlayRequester : GEOTileRequester {
-    BOOL _cancelled;
-    NSMutableArray *_errors;
-    NSMutableSet *_running;
-    NSMutableArray *_waiting;
+    BOOL  _cancelled;
+    NSMutableArray * _errors;
+    NSMutableSet * _running;
+    NSMutableArray * _waiting;
 }
 
 + (unsigned int)registerOverlay:(id)arg1;

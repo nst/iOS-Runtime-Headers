@@ -3,8 +3,8 @@
  */
 
 @interface WDFontTable : NSObject {
-    OITSUNoCopyDictionary *mFontTable;
-    NSMutableArray *mFontsInOrderOfInsertion;
+    OITSUNoCopyDictionary * mFontTable;
+    NSMutableArray * mFontsInOrderOfInsertion;
 }
 
 - (void)clear;

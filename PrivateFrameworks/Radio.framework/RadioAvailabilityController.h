@@ -3,14 +3,14 @@
  */
 
 @interface RadioAvailabilityController : NSObject <ISURLBagObserver, MCProfileConnectionObserver> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSObject<OS_dispatch_queue> *_calloutSerialQueue;
-    BOOL _hasSuccessfullyLoadedURLBag;
-    BOOL _isRadioAvailable;
-    BOOL _isRadioAvailableFromBag;
-    BOOL _isRadioRestricted;
-    NSNumber *_lastActiveAccountUniqueIdentifier;
-    NSObject<OS_dispatch_queue> *_restrictionLoadQueue;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSObject<OS_dispatch_queue> * _calloutSerialQueue;
+    BOOL  _hasSuccessfullyLoadedURLBag;
+    BOOL  _isRadioAvailable;
+    BOOL  _isRadioAvailableFromBag;
+    BOOL  _isRadioRestricted;
+    NSNumber * _lastActiveAccountUniqueIdentifier;
+    NSObject<OS_dispatch_queue> * _restrictionLoadQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

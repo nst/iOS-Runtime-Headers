@@ -3,10 +3,11 @@
  */
 
 @interface CKDTokenRegistrationScheduler : NSObject <CKDSystemAvailabilityWatcher> {
-    NSMutableDictionary *_callbackBlocks;
-    NSMutableDictionary *_callbackTimers;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableSet *_requests;
+    NSMutableDictionary * _callbackBlocks;
+    NSMutableDictionary * _callbackTimers;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableSet * _requests;
+    BOOL  _schedulerIsAvailable;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *callbackBlocks;
@@ -16,6 +17,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, retain) NSMutableSet *requests;
+@property (nonatomic) BOOL schedulerIsAvailable;
 @property (readonly) Class superclass;
 
 + (id)sharedScheduler;
@@ -36,11 +38,13 @@
 - (void)refreshAllClientsNow;
 - (void)registerTokenRefreshActivity;
 - (id)requests;
+- (BOOL)schedulerIsAvailable;
 - (void)setCallbackBlocks:(id)arg1;
 - (void)setCallbackTimers:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setRequests:(id)arg1;
 - (void)setSchedulerAvailable:(BOOL)arg1;
+- (void)setSchedulerIsAvailable:(BOOL)arg1;
 - (void)systemAvailabilityChanged:(unsigned int)arg1;
 - (void)tokenRefreshChanged;
 - (void)unregisterAllTokensWithCompletionHandler:(id /* block */)arg1;

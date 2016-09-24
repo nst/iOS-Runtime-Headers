@@ -3,8 +3,8 @@
  */
 
 @interface _SYIncomingBatch : NSObject {
-    SYBatchSyncChunk *_batch;
-    id /* block */ _completion;
+    SYBatchSyncChunk * _batch;
+    id /* block */  _completion;
 }
 
 @property (nonatomic, retain) SYBatchSyncChunk *batch;

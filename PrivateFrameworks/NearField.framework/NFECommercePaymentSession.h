@@ -3,7 +3,7 @@
  */
 
 @interface NFECommercePaymentSession : NFSession <NFECommercePaymentSessionCallbacks> {
-    NSDictionary *_appletsById;
+    NSDictionary * _appletsById;
 }
 
 @property (readonly, copy) NSString *debugDescription;

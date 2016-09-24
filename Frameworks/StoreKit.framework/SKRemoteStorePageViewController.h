@@ -3,7 +3,7 @@
  */
 
 @interface SKRemoteStorePageViewController : _UIRemoteViewController <SKUIClientStorePageViewController> {
-    SKStorePageViewController *_storePageViewController;
+    SKStorePageViewController * _storePageViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

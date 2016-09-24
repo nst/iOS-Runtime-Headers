@@ -3,26 +3,28 @@
  */
 
 @interface NEConfigurationManager : NSObject {
-    NSData *_SCPreferencesSignature;
-    id /* block */ _changedHandler;
-    int _changedNotifyToken;
-    NSObject<OS_dispatch_queue> *_changedQueue;
-    NSString *_configFile;
-    NSDictionary *_currentIndex;
-    NSKeyedUnarchiver *_decoder;
-    <NEConfigurationManagerDelegate> *_delegate;
-    NSString *_description;
-    long long _generation;
-    BOOL _hasReadPermission;
-    BOOL _hasVPNAPIEntitlement;
-    NEHelper *_helper;
-    BOOL _isNEHelper;
-    BOOL _isVPNPublicAPI;
-    NSMutableDictionary *_loadedConfigurations;
-    NSMutableDictionary *_loadedIndex;
-    NSString *_pluginType;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSUUID *_userUUID;
+    NSData * _SCPreferencesSignature;
+    id /* block */  _changedHandler;
+    int  _changedNotifyToken;
+    NSObject<OS_dispatch_queue> * _changedQueue;
+    NSString * _configFile;
+    int  _configurationChangeSource;
+    NSDictionary * _currentIndex;
+    NSKeyedUnarchiver * _decoder;
+    <NEConfigurationManagerDelegate> * _delegate;
+    NSString * _description;
+    int  _generation;
+    BOOL  _hasReadPermission;
+    BOOL  _hasVPNAPIEntitlement;
+    NEHelper * _helper;
+    BOOL  _isNEHelper;
+    BOOL  _isVPNPrivateAPI;
+    BOOL  _isVPNPublicAPI;
+    NSMutableDictionary * _loadedConfigurations;
+    NSMutableDictionary * _loadedIndex;
+    NSString * _pluginType;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSUUID * _userUUID;
 }
 
 @property (retain) NSData *SCPreferencesSignature;
@@ -30,15 +32,17 @@
 @property int changedNotifyToken;
 @property (retain) NSObject<OS_dispatch_queue> *changedQueue;
 @property (nonatomic, copy) NSString *configFile;
+@property int configurationChangeSource;
 @property (retain) NSDictionary *currentIndex;
 @property (retain) NSKeyedUnarchiver *decoder;
 @property (retain) <NEConfigurationManagerDelegate> *delegate;
-@property long long generation;
+@property int generation;
 @property BOOL hasReadPermission;
 @property BOOL hasVPNAPIEntitlement;
 @property (readonly) NEHelper *helper;
 @property (copy) id /* block */ incomingMessageHandler;
 @property BOOL isNEHelper;
+@property BOOL isVPNPrivateAPI;
 @property BOOL isVPNPublicAPI;
 @property (retain) NSMutableDictionary *loadedConfigurations;
 @property (retain) NSMutableDictionary *loadedIndex;
@@ -51,7 +55,7 @@
 + (void)disableConfiguration:(id)arg1 onDemandOnly:(BOOL)arg2;
 + (id)sharedManager;
 + (id)sharedManagerForAllUsers;
-+ (void)updateFlags:(unsigned long long*)arg1 withConfiguration:(id)arg2;
++ (void)updateFlags:(unsigned int*)arg1 withConfiguration:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)SCPreferencesSignature;
@@ -60,6 +64,7 @@
 - (id)changedQueue;
 - (void)clearLoadedConfigurationsWithIDs:(id)arg1;
 - (id)configFile;
+- (int)configurationChangeSource;
 - (BOOL)configurationHasChanged:(id)arg1;
 - (id)copyChangedConfigurationIDs:(id)arg1;
 - (void)copyIdentities:(id)arg1 fromDomain:(int)arg2 withCompletionQueue:(id)arg3 handler:(id /* block */)arg4;
@@ -76,9 +81,9 @@
 - (void)fetchClientListenerWithBundleID:(id)arg1 completionQueue:(id)arg2 handler:(id /* block */)arg3;
 - (void)fetchUpgradeInfoForPluginType:(id)arg1 completionQueue:(id)arg2 handler:(id /* block */)arg3;
 - (id)filterIndexWithFilter:(id)arg1;
-- (long long)generation;
+- (int)generation;
 - (void)getCurrentIndexWithCompletionHandler:(id /* block */)arg1;
-- (void)handleApplicationsRemoved:(id)arg1 pluginTypesRemoved:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)handleApplicationsRemoved:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)handleFileRemovedWithCompletionHandler:(id /* block */)arg1;
 - (void)handlePluginTypesRemoved:(id)arg1 configuration:(id)arg2 vpn:(id)arg3 updateSCPreferences:(struct __SCPreferences { }*)arg4;
 - (BOOL)hasReadPermission;
@@ -89,6 +94,7 @@
 - (id)initWithPluginType:(id)arg1;
 - (id)initWithUserUUID:(id)arg1;
 - (BOOL)isNEHelper;
+- (BOOL)isVPNPrivateAPI;
 - (BOOL)isVPNPublicAPI;
 - (void)loadConfigurationWithID:(id)arg1 withCompletionQueue:(id)arg2 handler:(id /* block */)arg3;
 - (void)loadConfigurations:(id)arg1 withFilter:(id)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
@@ -101,7 +107,7 @@
 - (void)notifyChanges;
 - (id)pluginType;
 - (void)postChangeNotification;
-- (void)postChangeNotificationWithGeneration:(long long)arg1 andFlags:(unsigned long long)arg2;
+- (void)postChangeNotificationWithGeneration:(int)arg1 andFlags:(unsigned int)arg2;
 - (void)postGeneration;
 - (id)queue;
 - (id)readIndexFromDiskWithError:(id*)arg1;
@@ -112,22 +118,24 @@
 - (id)removeConfigurationFromDisk:(id)arg1 updateSCPreferences:(struct __SCPreferences { }*)arg2;
 - (BOOL)resetKeychainItemsAfterProtocolChange:(id)arg1 newConfiguration:(id)arg2;
 - (void)saveConfiguration:(id)arg1 withCompletionQueue:(id)arg2 handler:(id /* block */)arg3;
-- (void)saveConfigurationToDisk:(id)arg1 currentSignature:(id)arg2 userUUID:(id)arg3 completionQueue:(id)arg4 completionHandler:(id /* block */)arg5;
-- (id)saveConfigurationToDisk:(id)arg1 updateSCPreferences:(struct __SCPreferences { }*)arg2 currentSignature:(id)arg3 userUUID:(id)arg4 notifyNow:(BOOL)arg5;
+- (void)saveConfigurationToDisk:(id)arg1 currentSignature:(id)arg2 userUUID:(id)arg3 isUpgrade:(BOOL)arg4 completionQueue:(id)arg5 completionHandler:(id /* block */)arg6;
+- (id)saveConfigurationToDisk:(id)arg1 updateSCPreferences:(struct __SCPreferences { }*)arg2 currentSignature:(id)arg3 userUUID:(id)arg4 notifyNow:(BOOL)arg5 isUpgrade:(BOOL)arg6;
 - (void)sendRequest:(id)arg1 responseHandler:(id /* block */)arg2;
 - (void)setChangedHandler:(id /* block */)arg1;
 - (void)setChangedNotifyToken:(int)arg1;
 - (void)setChangedQueue:(id)arg1;
 - (void)setChangedQueue:(id)arg1 andHandler:(id /* block */)arg2;
 - (void)setConfigFile:(id)arg1;
+- (void)setConfigurationChangeSource:(int)arg1;
 - (void)setCurrentIndex:(id)arg1;
 - (void)setDecoder:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setGeneration:(long long)arg1;
+- (void)setGeneration:(int)arg1;
 - (void)setHasReadPermission:(BOOL)arg1;
 - (void)setHasVPNAPIEntitlement:(BOOL)arg1;
 - (void)setIncomingMessageHandler:(id /* block */)arg1;
 - (void)setIsNEHelper:(BOOL)arg1;
+- (void)setIsVPNPrivateAPI:(BOOL)arg1;
 - (void)setIsVPNPublicAPI:(BOOL)arg1;
 - (void)setLoadedConfigurations:(id)arg1;
 - (void)setLoadedIndex:(id)arg1;

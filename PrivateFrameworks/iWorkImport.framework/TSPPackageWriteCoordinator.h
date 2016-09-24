@@ -3,64 +3,66 @@
  */
 
 @interface TSPPackageWriteCoordinator : NSObject <TSPArchiverManagerDelegate, TSPComponentWriterDelegate, TSPDataArchiver, TSPExternalReferenceDelegate, TSPObjectModifyDelegate, TSPPersistedObjectUUIDMapDelegate> {
-    TSPArchiverManager *_archiverManager;
-    BOOL _captureSnapshots;
-    NSObject<OS_dispatch_group> *_completionGroup;
-    struct hash_map<const long long, TSP::ComponentPropertiesSnapshot, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, TSP::ComponentPropertiesSnapshot> > > { 
-        struct __hash_table<std::__1::pair<const long long, TSP::ComponentPropertiesSnapshot>, __gnu_cxx::__hash_map_hasher<std::__1::pair<const long long, TSP::ComponentPropertiesSnapshot>, TSP::IdentifierHash, true>, __gnu_cxx::__hash_map_equal<std::__1::pair<const long long, TSP::ComponentPropertiesSnapshot>, std::__1::equal_to<const long long>, true>, std::__1::allocator<std::__1::pair<const long long, TSP::ComponentPropertiesSnapshot> > > { 
-            struct unique_ptr<std::__1::__hash_node<std::__1::pair<const long long, TSP::ComponentPropertiesSnapshot>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSP::ComponentPropertiesSnapshot>, void *> *> > > { 
-                struct __compressed_pair<std::__1::__hash_node<std::__1::pair<const long long, TSP::ComponentPropertiesSnapshot>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSP::ComponentPropertiesSnapshot>, void *> *> > > { 
-                    struct __hash_node<std::__1::pair<const long long, TSP::ComponentPropertiesSnapshot>, void *> {} **__first_; 
-                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSP::ComponentPropertiesSnapshot>, void *> *> > { 
-                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSP::ComponentPropertiesSnapshot>, void *> *> > { 
+    TSPArchiverManager * _archiverManager;
+    BOOL  _captureSnapshots;
+    NSObject<OS_dispatch_group> * _completionGroup;
+    struct unordered_map<const int, TSP::ComponentPropertiesSnapshot, TSP::IdentifierHash, std::__1::equal_to<const int>, std::__1::allocator<std::__1::pair<const int, TSP::ComponentPropertiesSnapshot> > > { 
+        struct __hash_table<std::__1::__hash_value_type<const int, TSP::ComponentPropertiesSnapshot>, std::__1::__unordered_map_hasher<const int, std::__1::__hash_value_type<const int, TSP::ComponentPropertiesSnapshot>, TSP::IdentifierHash, true>, std::__1::__unordered_map_equal<const int, std::__1::__hash_value_type<const int, TSP::ComponentPropertiesSnapshot>, std::__1::equal_to<const int>, true>, std::__1::allocator<std::__1::__hash_value_type<const int, TSP::ComponentPropertiesSnapshot> > > { 
+            struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSP::ComponentPropertiesSnapshot>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSP::ComponentPropertiesSnapshot>, void *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSP::ComponentPropertiesSnapshot>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSP::ComponentPropertiesSnapshot>, void *> *> > > { 
+                    struct __hash_node<std::__1::__hash_value_type<const int, TSP::ComponentPropertiesSnapshot>, void *> {} **__first_; 
+                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSP::ComponentPropertiesSnapshot>, void *> *> > { 
+                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSP::ComponentPropertiesSnapshot>, void *> *> > { 
                             unsigned long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
             } __bucket_list_; 
-            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<const long long, TSP::ComponentPropertiesSnapshot>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSP::ComponentPropertiesSnapshot>, void *> > > { 
-                struct __hash_node_base<std::__1::__hash_node<std::__1::pair<const long long, TSP::ComponentPropertiesSnapshot>, void *> *> { 
-                    struct __hash_node<std::__1::pair<const long long, TSP::ComponentPropertiesSnapshot>, void *> {} *__next_; 
+            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSP::ComponentPropertiesSnapshot>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSP::ComponentPropertiesSnapshot>, void *> > > { 
+                struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSP::ComponentPropertiesSnapshot>, void *> *> { 
+                    struct __hash_node<std::__1::__hash_value_type<const int, TSP::ComponentPropertiesSnapshot>, void *> {} *__next_; 
                 } __first_; 
             } __p1_; 
-            struct __compressed_pair<unsigned long, __gnu_cxx::__hash_map_hasher<std::__1::pair<const long long, TSP::ComponentPropertiesSnapshot>, TSP::IdentifierHash, true> > { 
+            struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<const int, std::__1::__hash_value_type<const int, TSP::ComponentPropertiesSnapshot>, TSP::IdentifierHash, true> > { 
                 unsigned long __first_; 
             } __p2_; 
-            struct __compressed_pair<float, __gnu_cxx::__hash_map_equal<std::__1::pair<const long long, TSP::ComponentPropertiesSnapshot>, std::__1::equal_to<const long long>, true> > { 
-                float __first_; 
+            struct __compressed_pair<float, std::__1::__unordered_map_equal<const int, std::__1::__hash_value_type<const int, TSP::ComponentPropertiesSnapshot>, std::__1::equal_to<const int>, true> > { 
+                double __first_; 
             } __p3_; 
         } __table_; 
-    } _componentPropertiesSnapshot;
-    NSObject<OS_dispatch_queue> *_componentQueue;
-    TSPObjectContext *_context;
-    TSPDataAttributesSnapshot *_dataAttributesSnapshot;
-    NSMutableArray *_dataFinalizeHandlers;
-    BOOL _didWriteMetadata;
-    BOOL _didWriteObjectContainer;
-    BOOL _didWriteRootObject;
-    TSPDocumentRevision *_documentRevision;
-    NSURL *_documentTargetURL;
-    TSPComponentExternalReferenceMap *_externalLazyReferencesMap;
-    NSObject<OS_dispatch_queue> *_externalLazyReferencesQueue;
-    NSMutableArray *_externalReferenceBlocks;
-    NSObject<OS_dispatch_queue> *_externalReferenceQueue;
-    unsigned long long _fileFormatVersion;
-    BOOL _isCancelled;
-    BOOL _isRecoverableError;
-    TSPObject *_metadataObject;
-    NSObject<OS_dispatch_queue> *_metadataQueue;
-    NSHashTable *_modifiedObjectsDuringWrite;
-    NSObject<OS_dispatch_queue> *_modifyObjectQueue;
-    TSPObjectContainer *_objectContainer;
-    NSObject<OS_dispatch_queue> *_objectsQueue;
-    unsigned char _packageIdentifier;
-    TSUPathSet *_packageLocatorPathSet;
-    TSPPackageMetadata *_packageMetadata;
-    TSPPersistedObjectUUIDMap *_persistedUUIDMap;
-    int _preferredPackageType;
-    unsigned long long _readVersion;
-    NSHashTable *_referencedDatas;
-    NSURL *_relativeURLForExternalData;
+    }  _componentPropertiesSnapshot;
+    NSObject<OS_dispatch_queue> * _componentQueue;
+    TSPObjectContext * _context;
+    TSPDataAttributesSnapshot * _dataAttributesSnapshot;
+    NSMutableArray * _dataFinalizeHandlers;
+    BOOL  _didWriteMetadata;
+    BOOL  _didWriteObjectContainer;
+    BOOL  _didWriteRootObject;
+    TSPDocumentRevision * _documentRevision;
+    NSURL * _documentTargetURL;
+    NSMutableSet * _duplicateUUIDs;
+    TSPComponentExternalReferenceMap * _externalLazyReferencesMap;
+    NSObject<OS_dispatch_queue> * _externalLazyReferencesQueue;
+    NSMutableArray * _externalReferenceBlocks;
+    NSObject<OS_dispatch_queue> * _externalReferenceQueue;
+    unsigned int  _fileFormatVersion;
+    BOOL  _isCancelled;
+    BOOL  _isRecoverableError;
+    TSPObject * _metadataObject;
+    NSObject<OS_dispatch_queue> * _metadataQueue;
+    NSHashTable * _modifiedObjectsDuringWrite;
+    NSObject<OS_dispatch_queue> * _modifyObjectQueue;
+    TSPObjectContainer * _objectContainer;
+    TSPObjectReferenceMap * _objectReferenceMap;
+    NSObject<OS_dispatch_queue> * _objectsQueue;
+    unsigned char  _packageIdentifier;
+    TSUPathSet * _packageLocatorPathSet;
+    TSPPackageMetadata * _packageMetadata;
+    TSPPersistedObjectUUIDMap * _persistedUUIDMap;
+    int  _preferredPackageType;
+    unsigned int  _readVersion;
+    NSHashTable * _referencedDatas;
+    NSURL * _relativeURLForExternalData;
     struct map<unsigned int, std::__1::queue<TSPComponent *, std::__1::deque<TSPComponent *, std::__1::allocator<TSPComponent *> > >, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, std::__1::queue<TSPComponent *, std::__1::deque<TSPComponent *, std::__1::allocator<TSPComponent *> > > > > > { 
         struct __tree<std::__1::__value_type<unsigned int, std::__1::queue<TSPComponent *, std::__1::deque<TSPComponent *, std::__1::allocator<TSPComponent *> > > >, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, std::__1::queue<TSPComponent *, std::__1::deque<TSPComponent *, std::__1::allocator<TSPComponent *> > > >, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, std::__1::queue<TSPComponent *, std::__1::deque<TSPComponent *, std::__1::allocator<TSPComponent *> > > > > > { 
             struct __tree_node<std::__1::__value_type<unsigned int, std::__1::queue<TSPComponent *, std::__1::deque<TSPComponent *, std::__1::allocator<TSPComponent *> > > >, void *> {} *__begin_node_; 
@@ -73,60 +75,60 @@
                 unsigned long __first_; 
             } __pair3_; 
         } __tree_; 
-    } _remainingComponentsQueue;
-    unsigned long long _saveToken;
-    struct hash_map<const long long, bool, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, bool> > > { 
-        struct __hash_table<std::__1::pair<const long long, bool>, __gnu_cxx::__hash_map_hasher<std::__1::pair<const long long, bool>, TSP::IdentifierHash, true>, __gnu_cxx::__hash_map_equal<std::__1::pair<const long long, bool>, std::__1::equal_to<const long long>, true>, std::__1::allocator<std::__1::pair<const long long, bool> > > { 
-            struct unique_ptr<std::__1::__hash_node<std::__1::pair<const long long, bool>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, bool>, void *> *> > > { 
-                struct __compressed_pair<std::__1::__hash_node<std::__1::pair<const long long, bool>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, bool>, void *> *> > > { 
-                    struct __hash_node<std::__1::pair<const long long, bool>, void *> {} **__first_; 
-                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, bool>, void *> *> > { 
-                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, bool>, void *> *> > { 
+    }  _remainingComponentsQueue;
+    unsigned int  _saveToken;
+    struct unordered_map<const int, bool, TSP::IdentifierHash, std::__1::equal_to<const int>, std::__1::allocator<std::__1::pair<const int, bool> > > { 
+        struct __hash_table<std::__1::__hash_value_type<const int, bool>, std::__1::__unordered_map_hasher<const int, std::__1::__hash_value_type<const int, bool>, TSP::IdentifierHash, true>, std::__1::__unordered_map_equal<const int, std::__1::__hash_value_type<const int, bool>, std::__1::equal_to<const int>, true>, std::__1::allocator<std::__1::__hash_value_type<const int, bool> > > { 
+            struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<const int, bool>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, bool>, void *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<const int, bool>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, bool>, void *> *> > > { 
+                    struct __hash_node<std::__1::__hash_value_type<const int, bool>, void *> {} **__first_; 
+                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, bool>, void *> *> > { 
+                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, bool>, void *> *> > { 
                             unsigned long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
             } __bucket_list_; 
-            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<const long long, bool>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, bool>, void *> > > { 
-                struct __hash_node_base<std::__1::__hash_node<std::__1::pair<const long long, bool>, void *> *> { 
-                    struct __hash_node<std::__1::pair<const long long, bool>, void *> {} *__next_; 
+            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const int, bool>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, bool>, void *> > > { 
+                struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const int, bool>, void *> *> { 
+                    struct __hash_node<std::__1::__hash_value_type<const int, bool>, void *> {} *__next_; 
                 } __first_; 
             } __p1_; 
-            struct __compressed_pair<unsigned long, __gnu_cxx::__hash_map_hasher<std::__1::pair<const long long, bool>, TSP::IdentifierHash, true> > { 
+            struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<const int, std::__1::__hash_value_type<const int, bool>, TSP::IdentifierHash, true> > { 
                 unsigned long __first_; 
             } __p2_; 
-            struct __compressed_pair<float, __gnu_cxx::__hash_map_equal<std::__1::pair<const long long, bool>, std::__1::equal_to<const long long>, true> > { 
-                float __first_; 
+            struct __compressed_pair<float, std::__1::__unordered_map_equal<const int, std::__1::__hash_value_type<const int, bool>, std::__1::equal_to<const int>, true> > { 
+                double __first_; 
             } __p3_; 
         } __table_; 
-    } _skippedComponents;
-    BOOL _writeSuccess;
-    unsigned long long _writeVersion;
-    struct hash_map<const long long, TSP::WrittenComponentInfo, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, TSP::WrittenComponentInfo> > > { 
-        struct __hash_table<std::__1::pair<const long long, TSP::WrittenComponentInfo>, __gnu_cxx::__hash_map_hasher<std::__1::pair<const long long, TSP::WrittenComponentInfo>, TSP::IdentifierHash, true>, __gnu_cxx::__hash_map_equal<std::__1::pair<const long long, TSP::WrittenComponentInfo>, std::__1::equal_to<const long long>, true>, std::__1::allocator<std::__1::pair<const long long, TSP::WrittenComponentInfo> > > { 
-            struct unique_ptr<std::__1::__hash_node<std::__1::pair<const long long, TSP::WrittenComponentInfo>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSP::WrittenComponentInfo>, void *> *> > > { 
-                struct __compressed_pair<std::__1::__hash_node<std::__1::pair<const long long, TSP::WrittenComponentInfo>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSP::WrittenComponentInfo>, void *> *> > > { 
-                    struct __hash_node<std::__1::pair<const long long, TSP::WrittenComponentInfo>, void *> {} **__first_; 
-                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSP::WrittenComponentInfo>, void *> *> > { 
-                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSP::WrittenComponentInfo>, void *> *> > { 
+    }  _skippedComponents;
+    BOOL  _writeSuccess;
+    unsigned int  _writeVersion;
+    struct unordered_map<const int, TSP::WrittenComponentInfo, TSP::IdentifierHash, std::__1::equal_to<const int>, std::__1::allocator<std::__1::pair<const int, TSP::WrittenComponentInfo> > > { 
+        struct __hash_table<std::__1::__hash_value_type<const int, TSP::WrittenComponentInfo>, std::__1::__unordered_map_hasher<const int, std::__1::__hash_value_type<const int, TSP::WrittenComponentInfo>, TSP::IdentifierHash, true>, std::__1::__unordered_map_equal<const int, std::__1::__hash_value_type<const int, TSP::WrittenComponentInfo>, std::__1::equal_to<const int>, true>, std::__1::allocator<std::__1::__hash_value_type<const int, TSP::WrittenComponentInfo> > > { 
+            struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSP::WrittenComponentInfo>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSP::WrittenComponentInfo>, void *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSP::WrittenComponentInfo>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSP::WrittenComponentInfo>, void *> *> > > { 
+                    struct __hash_node<std::__1::__hash_value_type<const int, TSP::WrittenComponentInfo>, void *> {} **__first_; 
+                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSP::WrittenComponentInfo>, void *> *> > { 
+                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSP::WrittenComponentInfo>, void *> *> > { 
                             unsigned long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
             } __bucket_list_; 
-            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<const long long, TSP::WrittenComponentInfo>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSP::WrittenComponentInfo>, void *> > > { 
-                struct __hash_node_base<std::__1::__hash_node<std::__1::pair<const long long, TSP::WrittenComponentInfo>, void *> *> { 
-                    struct __hash_node<std::__1::pair<const long long, TSP::WrittenComponentInfo>, void *> {} *__next_; 
+            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSP::WrittenComponentInfo>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSP::WrittenComponentInfo>, void *> > > { 
+                struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSP::WrittenComponentInfo>, void *> *> { 
+                    struct __hash_node<std::__1::__hash_value_type<const int, TSP::WrittenComponentInfo>, void *> {} *__next_; 
                 } __first_; 
             } __p1_; 
-            struct __compressed_pair<unsigned long, __gnu_cxx::__hash_map_hasher<std::__1::pair<const long long, TSP::WrittenComponentInfo>, TSP::IdentifierHash, true> > { 
+            struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<const int, std::__1::__hash_value_type<const int, TSP::WrittenComponentInfo>, TSP::IdentifierHash, true> > { 
                 unsigned long __first_; 
             } __p2_; 
-            struct __compressed_pair<float, __gnu_cxx::__hash_map_equal<std::__1::pair<const long long, TSP::WrittenComponentInfo>, std::__1::equal_to<const long long>, true> > { 
-                float __first_; 
+            struct __compressed_pair<float, std::__1::__unordered_map_equal<const int, std::__1::__hash_value_type<const int, TSP::WrittenComponentInfo>, std::__1::equal_to<const int>, true> > { 
+                double __first_; 
             } __p3_; 
         } __table_; 
-    } _writtenComponents;
+    }  _writtenComponents;
     struct queue<TSP::WrittenObjectInfo, std::__1::deque<TSP::WrittenObjectInfo, std::__1::allocator<TSP::WrittenObjectInfo> > > { 
         struct deque<TSP::WrittenObjectInfo, std::__1::allocator<TSP::WrittenObjectInfo> > { 
             struct __split_buffer<TSP::WrittenObjectInfo *, std::__1::allocator<TSP::WrittenObjectInfo *> > { 
@@ -142,32 +144,32 @@
                 unsigned long __first_; 
             } __size_; 
         } c; 
-    } _writtenLazyReferences;
-    struct hash_map<const long long, TSP::WrittenObjectInfo, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, TSP::WrittenObjectInfo> > > { 
-        struct __hash_table<std::__1::pair<const long long, TSP::WrittenObjectInfo>, __gnu_cxx::__hash_map_hasher<std::__1::pair<const long long, TSP::WrittenObjectInfo>, TSP::IdentifierHash, true>, __gnu_cxx::__hash_map_equal<std::__1::pair<const long long, TSP::WrittenObjectInfo>, std::__1::equal_to<const long long>, true>, std::__1::allocator<std::__1::pair<const long long, TSP::WrittenObjectInfo> > > { 
-            struct unique_ptr<std::__1::__hash_node<std::__1::pair<const long long, TSP::WrittenObjectInfo>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSP::WrittenObjectInfo>, void *> *> > > { 
-                struct __compressed_pair<std::__1::__hash_node<std::__1::pair<const long long, TSP::WrittenObjectInfo>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSP::WrittenObjectInfo>, void *> *> > > { 
-                    struct __hash_node<std::__1::pair<const long long, TSP::WrittenObjectInfo>, void *> {} **__first_; 
-                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSP::WrittenObjectInfo>, void *> *> > { 
-                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSP::WrittenObjectInfo>, void *> *> > { 
+    }  _writtenLazyReferences;
+    struct unordered_map<const int, TSP::WrittenObjectInfo, TSP::IdentifierHash, std::__1::equal_to<const int>, std::__1::allocator<std::__1::pair<const int, TSP::WrittenObjectInfo> > > { 
+        struct __hash_table<std::__1::__hash_value_type<const int, TSP::WrittenObjectInfo>, std::__1::__unordered_map_hasher<const int, std::__1::__hash_value_type<const int, TSP::WrittenObjectInfo>, TSP::IdentifierHash, true>, std::__1::__unordered_map_equal<const int, std::__1::__hash_value_type<const int, TSP::WrittenObjectInfo>, std::__1::equal_to<const int>, true>, std::__1::allocator<std::__1::__hash_value_type<const int, TSP::WrittenObjectInfo> > > { 
+            struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSP::WrittenObjectInfo>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSP::WrittenObjectInfo>, void *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSP::WrittenObjectInfo>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSP::WrittenObjectInfo>, void *> *> > > { 
+                    struct __hash_node<std::__1::__hash_value_type<const int, TSP::WrittenObjectInfo>, void *> {} **__first_; 
+                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSP::WrittenObjectInfo>, void *> *> > { 
+                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSP::WrittenObjectInfo>, void *> *> > { 
                             unsigned long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
             } __bucket_list_; 
-            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::pair<const long long, TSP::WrittenObjectInfo>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::pair<const long long, TSP::WrittenObjectInfo>, void *> > > { 
-                struct __hash_node_base<std::__1::__hash_node<std::__1::pair<const long long, TSP::WrittenObjectInfo>, void *> *> { 
-                    struct __hash_node<std::__1::pair<const long long, TSP::WrittenObjectInfo>, void *> {} *__next_; 
+            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSP::WrittenObjectInfo>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSP::WrittenObjectInfo>, void *> > > { 
+                struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<const int, TSP::WrittenObjectInfo>, void *> *> { 
+                    struct __hash_node<std::__1::__hash_value_type<const int, TSP::WrittenObjectInfo>, void *> {} *__next_; 
                 } __first_; 
             } __p1_; 
-            struct __compressed_pair<unsigned long, __gnu_cxx::__hash_map_hasher<std::__1::pair<const long long, TSP::WrittenObjectInfo>, TSP::IdentifierHash, true> > { 
+            struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<const int, std::__1::__hash_value_type<const int, TSP::WrittenObjectInfo>, TSP::IdentifierHash, true> > { 
                 unsigned long __first_; 
             } __p2_; 
-            struct __compressed_pair<float, __gnu_cxx::__hash_map_equal<std::__1::pair<const long long, TSP::WrittenObjectInfo>, std::__1::equal_to<const long long>, true> > { 
-                float __first_; 
+            struct __compressed_pair<float, std::__1::__unordered_map_equal<const int, std::__1::__hash_value_type<const int, TSP::WrittenObjectInfo>, std::__1::equal_to<const int>, true> > { 
+                double __first_; 
             } __p3_; 
         } __table_; 
-    } _writtenObjects;
+    }  _writtenObjects;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -180,11 +182,11 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)addDataFinalizeHandlerForSuccessfulSave:(id /* block */)arg1;
-- (void)addDelayedObject:(id)arg1 forComponentRootObject:(id)arg2 claimingComponent:(id)arg3 assertOnFailure:(BOOL)arg4 completion:(id /* block */)arg5;
+- (void)addDelayedObject:(id)arg1 forComponentRootObject:(id)arg2 claimingComponent:(id)arg3 isDelayedObjectReferencedByObjectContainer:(BOOL)arg4 completion:(id /* block */)arg5;
 - (void)archiveComponent:(id)arg1 locator:(id)arg2 storeOutsideObjectArchive:(BOOL)arg3 rootObject:(id)arg4 withPackageWriter:(id)arg5;
 - (void)calculateExternalReferences;
-- (id)componentForObjectIdentifier:(long long)arg1 objectOrNil:(id)arg2;
-- (long long)componentIdentifierForObjectIdentifier:(long long)arg1 objectOrNil:(id)arg2 objectUUIDOrNil:(id)arg3;
+- (id)componentForObjectIdentifier:(int)arg1 objectOrNil:(id)arg2;
+- (int)componentIdentifierForObjectIdentifier:(int)arg1 objectOrNil:(id)arg2 objectUUIDOrNil:(id)arg3;
 - (void)componentWriter:(id)arg1 canSkipArchivingStronglyReferencedObject:(id)arg2 fromComponentRootObject:(id)arg3 completion:(id /* block */)arg4;
 - (void)componentWriter:(id)arg1 locatorForClaimingComponent:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
 - (BOOL)componentWriter:(id)arg1 object:(id)arg2 belongsToLinkedComponent:(id)arg3;
@@ -200,25 +202,26 @@
 - (BOOL)didWriteData:(id)arg1;
 - (BOOL)didWriteObject:(id)arg1 claimingComponent:(id*)arg2;
 - (void)enqueueComponent:(id)arg1 rootObjectOrNil:(id)arg2 forceArchive:(BOOL)arg3;
-- (void)enqueueRootObject:(id)arg1 forceArchive:(BOOL)arg2 completion:(id /* block */)arg3;
-- (void)enqueueRootObjectImpl:(id)arg1 forceArchive:(BOOL)arg2 completion:(id /* block */)arg3;
+- (void)enqueueRootObject:(id)arg1 forceArchive:(BOOL)arg2 isAddingDelayedObjectReferencedByObjectContainer:(BOOL)arg3 completion:(id /* block */)arg4;
+- (void)enqueueRootObjectImpl:(id)arg1 forceArchive:(BOOL)arg2 isAddingDelayedObjectReferencedByObjectContainer:(BOOL)arg3 completion:(id /* block */)arg4;
 - (void)enumerateWrittenObjectsWithBlock:(id /* block */)arg1;
 - (id)explicitComponentRootObjectForObject:(id)arg1;
-- (id)explicitComponentRootObjectForObject:(id)arg1 archiverOrNil:(id)arg2 claimingComponent:(id)arg3 isInComponentQueue:(BOOL)arg4 hasArchiverAccessLock:(BOOL)arg5;
+- (id)explicitComponentRootObjectForObject:(id)arg1 archiverOrNil:(id)arg2 claimingComponent:(id)arg3 newClaimingComponent:(id)arg4 hasArchiverAccessLock:(BOOL)arg5;
 - (id)init;
-- (id)initWithContext:(id)arg1 documentRevision:(id)arg2 saveToken:(unsigned long long)arg3 packageIdentifier:(unsigned char)arg4 fileFormatVersion:(unsigned long long)arg5 preferredPackageType:(int)arg6 metadataObject:(id)arg7 dataAttributesSnapshot:(id)arg8;
-- (id)initWithContext:(id)arg1 documentRevision:(id)arg2 saveToken:(unsigned long long)arg3 packageIdentifier:(unsigned char)arg4 fileFormatVersion:(unsigned long long)arg5 preferredPackageType:(int)arg6 metadataObject:(id)arg7 dataAttributesSnapshot:(id)arg8 packageWriteCoordinator:(id)arg9 captureSnapshots:(BOOL)arg10;
+- (id)initWithContext:(id)arg1 documentRevision:(id)arg2 saveToken:(unsigned int)arg3 packageIdentifier:(unsigned char)arg4 fileFormatVersion:(unsigned int)arg5 preferredPackageType:(int)arg6 metadataObject:(id)arg7 dataAttributesSnapshot:(id)arg8;
+- (id)initWithContext:(id)arg1 documentRevision:(id)arg2 saveToken:(unsigned int)arg3 packageIdentifier:(unsigned char)arg4 fileFormatVersion:(unsigned int)arg5 preferredPackageType:(int)arg6 metadataObject:(id)arg7 dataAttributesSnapshot:(id)arg8 packageWriteCoordinator:(id)arg9 captureSnapshots:(BOOL)arg10;
 - (BOOL)isComponentExternal:(id)arg1 wasWritten:(BOOL*)arg2 wasCopied:(BOOL*)arg3;
 - (BOOL)isComponentPersisted:(id)arg1;
 - (BOOL)isObjectInExternalPackage:(id)arg1 claimingComponent:(id*)arg2;
 - (void)nextComponentAndRootObjectForComponentWriteWithCompletion:(id /* block */)arg1;
-- (id)objectContainer;
-- (id)objectContainerImpl;
-- (id)objectForIdentifier:(long long)arg1;
+- (id)objectForIdentifier:(int)arg1;
+- (unsigned int)objectTargetType;
+- (unsigned int)objectTargetTypeForComponentWriter:(id)arg1;
 - (id)packageMetadata;
-- (id)persistedObjectUUIDMap:(id)arg1 needsDescriptionForComponentIdentifier:(long long)arg2 objectIdentifier:(long long)arg3;
+- (void)persistedObjectUUIDMap:(id)arg1 foundDuplicateUUID:(id)arg2 firstObjectLocation:(struct ObjectLocation { int x1; int x2; })arg3 secondObjectLocation:(struct ObjectLocation { int x1; int x2; })arg4;
+- (id)persistedObjectUUIDMap:(id)arg1 needsDescriptionForComponentIdentifier:(int)arg2 objectIdentifier:(int)arg3;
 - (id)relativeURLForExternalData;
-- (void)setArchivedObjects:(id)arg1 componentObjectUUIDMap:(id)arg2 externalStrongReferences:(id)arg3 externalWeakReferences:(id)arg4 readVersion:(unsigned long long)arg5 writeVersion:(unsigned long long)arg6 dataReferences:(id)arg7 forComponent:(id)arg8;
+- (void)setArchivedObjects:(id)arg1 componentObjectUUIDMap:(id)arg2 objectReferenceMap:(id)arg3 externalStrongReferences:(id)arg4 externalWeakReferences:(id)arg5 featureInfos:(id)arg6 dataReferences:(id)arg7 forComponent:(id)arg8;
 - (BOOL)shouldArchiveComponent:(id)arg1;
 - (BOOL)shouldArchiveComponent:(id)arg1 checkForceArchive:(BOOL)arg2;
 - (BOOL)shouldEnqueueComponent:(id)arg1;

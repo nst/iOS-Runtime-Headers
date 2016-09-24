@@ -2,7 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TPThumbnailImager : TSDImager
+@interface TPThumbnailImager : TSDImager <TSKSearchCanvasDelegate>
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)canvasDidValidateLayouts:(id)arg1;
 - (void)canvasWillLayout:(id)arg1;

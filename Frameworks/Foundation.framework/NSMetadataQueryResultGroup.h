@@ -3,9 +3,9 @@
  */
 
 @interface NSMetadataQueryResultGroup : NSObject {
-    /* Warning: unhandled array encoding: '[9@]' */ id _private;
-    unsigned int _private2;
-    void *_reserved;
+    /* Warning: unhandled array encoding: '[9@]' */ id  _private;
+    unsigned int  _private2;
+    void * _reserved;
 }
 
 @property (readonly, copy) NSString *attribute;

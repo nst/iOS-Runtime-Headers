@@ -3,10 +3,10 @@
  */
 
 @interface DAMoveResponse : NSObject {
-    NSString *_destID;
-    DAMessageMoveRequest *_origRequest;
-    NSString *_sourceID;
-    int _status;
+    NSString * _destID;
+    DAMessageMoveRequest * _origRequest;
+    NSString * _sourceID;
+    int  _status;
 }
 
 @property (nonatomic, copy) NSString *destID;

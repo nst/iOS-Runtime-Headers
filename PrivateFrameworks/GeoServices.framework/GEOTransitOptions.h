@@ -7,21 +7,30 @@
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _avoidedModes;
+    }  _avoidedModes;
+    GEOFareOptions * _fareOptions;
     struct { 
         unsigned int prioritization : 1; 
-    } _has;
-    int _prioritization;
+    }  _has;
+    int  _prioritization;
 }
 
 @property (nonatomic, readonly) int*avoidedModes;
 @property (nonatomic, readonly) unsigned int avoidedModesCount;
+@property (nonatomic, retain) GEOFareOptions *fareOptions;
+@property (nonatomic, readonly) BOOL hasFareOptions;
 @property (nonatomic) BOOL hasPrioritization;
+@property (nonatomic, readonly) BOOL hasSurchargeOption;
 @property (nonatomic) int prioritization;
+@property (nonatomic) BOOL showICFares;
+@property (nonatomic) int surchargeOption;
 
+- (int)StringAsAvoidedModes:(id)arg1;
+- (int)StringAsPrioritization:(id)arg1;
 - (void)addAvoidedMode:(int)arg1;
 - (int)avoidedModeAtIndex:(unsigned int)arg1;
 - (int*)avoidedModes;
+- (id)avoidedModesAsString:(int)arg1;
 - (unsigned int)avoidedModesCount;
 - (void)clearAvoidedModes;
 - (void)copyTo:(id)arg1;
@@ -29,15 +38,24 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)fareOptions;
+- (BOOL)hasFareOptions;
 - (BOOL)hasPrioritization;
+- (BOOL)hasSurchargeOption;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)prioritization;
+- (id)prioritizationAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAvoidedModes:(int*)arg1 count:(unsigned int)arg2;
+- (void)setFareOptions:(id)arg1;
 - (void)setHasPrioritization:(BOOL)arg1;
 - (void)setPrioritization:(int)arg1;
+- (void)setShowICFares:(BOOL)arg1;
+- (void)setSurchargeOption:(int)arg1;
+- (BOOL)showICFares;
+- (int)surchargeOption;
 - (void)writeTo:(id)arg1;
 
 @end

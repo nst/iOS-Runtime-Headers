@@ -3,7 +3,7 @@
  */
 
 @interface NFAWDTransactionLastRADPU : NSObject <NFAWDEventProtocol> {
-    AWDNFCTransactionLastAPDUSentEvent *_metric;
+    AWDNFCTransactionLastAPDUSentEvent * _metric;
 }
 
 @property (readonly, copy) NSString *debugDescription;

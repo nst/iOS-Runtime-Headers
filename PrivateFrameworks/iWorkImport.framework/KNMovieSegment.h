@@ -3,8 +3,8 @@
  */
 
 @interface KNMovieSegment : NSObject {
-    TSPData *mMovieData;
-    double mStartTime;
+    TSPData * mMovieData;
+    double  mStartTime;
 }
 
 @property (getter=isEmptySegment, nonatomic, readonly) BOOL emptySegment;

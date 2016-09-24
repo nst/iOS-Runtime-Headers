@@ -3,19 +3,19 @@
  */
 
 @interface _UILocationResultsTableViewCell : UITableViewCell {
-    float _additionalLeftSidePadding;
-    NSLayoutConstraint *_bottomMarginConstraint;
-    UIView *_cellHeightStrut;
-    UIImage *_customLocationImage;
-    NSLayoutConstraint *_interLabelSpaceConstraint;
-    int _locationImageType;
-    UILabel *_searchDetailTextLabel;
-    UIImageView *_searchImageView;
-    UILabel *_searchTextLabel;
-    NSLayoutConstraint *_topMarginConstraint;
+    double  _additionalLeftSidePadding;
+    NSLayoutConstraint * _bottomMarginConstraint;
+    UIView * _cellHeightStrut;
+    UIImage * _customLocationImage;
+    NSLayoutConstraint * _interLabelSpaceConstraint;
+    int  _locationImageType;
+    UILabel * _searchDetailTextLabel;
+    UIImageView * _searchImageView;
+    UILabel * _searchTextLabel;
+    NSLayoutConstraint * _topMarginConstraint;
 }
 
-@property (nonatomic) float additionalLeftSidePadding;
+@property (nonatomic) double additionalLeftSidePadding;
 @property (nonatomic, retain) NSLayoutConstraint *bottomMarginConstraint;
 @property (nonatomic, retain) UIView *cellHeightStrut;
 @property (nonatomic, copy) UIImage *customLocationImage;

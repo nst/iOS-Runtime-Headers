@@ -3,11 +3,11 @@
  */
 
 @interface TKSmartCardUserInteractionForPINOperation : TKSmartCardUserInteraction <NSSecureCoding> {
-    unsigned int _PINCompletion;
-    NSArray *_PINMessageIndices;
-    NSLocale *_locale;
-    NSData *_resultData;
-    unsigned short _resultSW;
+    unsigned int  _PINCompletion;
+    NSArray * _PINMessageIndices;
+    NSLocale * _locale;
+    NSData * _resultData;
+    unsigned short  _resultSW;
 }
 
 @property unsigned int PINCompletion;
@@ -21,7 +21,6 @@
 - (void).cxx_destruct;
 - (unsigned int)PINCompletion;
 - (id)PINMessageIndices;
-- (BOOL)decodeResponse:(id)arg1 sw:(unsigned short*)arg2 appendTo:(id)arg3 error:(id*)arg4;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

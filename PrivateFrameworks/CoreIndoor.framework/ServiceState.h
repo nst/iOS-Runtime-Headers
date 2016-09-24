@@ -3,10 +3,10 @@
  */
 
 @interface ServiceState : NSObject {
-    IndoorProtocolProxy *_delegateProxy;
-    bool _pausedLocalization;
-    NSSet *_selectedVenues;
-    bool _updateLocation;
+    IndoorProtocolProxy * _delegateProxy;
+    bool  _pausedLocalization;
+    NSSet * _selectedVenues;
+    bool  _updateLocation;
 }
 
 @property (nonatomic, retain) IndoorProtocolProxy *delegateProxy;

@@ -3,14 +3,16 @@
  */
 
 @interface CallDBManager : NSObject {
-    unsigned char _dataStoreType;
-    DBManager *_dbManager;
-    BOOL _deviceUnlocked;
-    unsigned char _notifyDataStoreChangeReason;
+    unsigned char  _dataStoreType;
+    DBManager * _dbManager;
+    id  _deviceUnlockNotificationRef;
+    BOOL  _deviceUnlocked;
+    unsigned char  _notifyDataStoreChangeReason;
 }
 
 @property unsigned char dataStoreType;
 @property (retain) DBManager *dbManager;
+@property (retain) id deviceUnlockNotificationRef;
 @property BOOL deviceUnlocked;
 @property unsigned char notifyDataStoreChangeReason;
 
@@ -25,6 +27,8 @@
 - (void)createTemporary;
 - (unsigned char)dataStoreType;
 - (id)dbManager;
+- (void)dealloc;
+- (id)deviceUnlockNotificationRef;
 - (BOOL)deviceUnlocked;
 - (void)handlePermanentCreated;
 - (void)handleTemporaryCreated;
@@ -37,6 +41,7 @@
 - (void)registerForNotifications;
 - (void)setDataStoreType:(unsigned char)arg1;
 - (void)setDbManager:(id)arg1;
+- (void)setDeviceUnlockNotificationRef:(id)arg1;
 - (void)setDeviceUnlocked:(BOOL)arg1;
 - (void)setNotifyDataStoreChangeReason:(unsigned char)arg1;
 - (BOOL)shouldCreatePermanent;

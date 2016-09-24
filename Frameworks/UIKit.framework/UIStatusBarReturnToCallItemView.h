@@ -3,12 +3,14 @@
  */
 
 @interface UIStatusBarReturnToCallItemView : UIStatusBarAppIconItemView {
-    UILabel *_textLabel;
+    UILabel * _textLabel;
 }
 
 - (void).cxx_destruct;
 - (id)_appBundleIdentifier;
+- (int)buttonType;
 - (void)layoutSubviews;
+- (float)neededSizeForImageSet:(id)arg1;
 - (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

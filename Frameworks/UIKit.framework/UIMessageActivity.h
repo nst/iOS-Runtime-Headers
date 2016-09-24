@@ -3,14 +3,15 @@
  */
 
 @interface UIMessageActivity : UIActivity {
-    MFMessageComposeViewController *_messageComposeViewController;
-    BOOL _sourceIsManaged;
+    MFMessageComposeViewController * _messageComposeViewController;
+    BOOL  _sourceIsManaged;
 }
 
 @property (nonatomic, retain) MFMessageComposeViewController *messageComposeViewController;
 @property (nonatomic) BOOL sourceIsManaged;
 
 + (int)activityCategory;
++ (id)applicationBundleID;
 
 - (void).cxx_destruct;
 - (id)_activityImage;

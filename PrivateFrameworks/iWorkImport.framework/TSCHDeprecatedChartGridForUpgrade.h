@@ -3,7 +3,7 @@
  */
 
 @interface TSCHDeprecatedChartGridForUpgrade : TSPObject {
-    TSCHChartGrid *mGrid;
+    TSCHChartGrid * mGrid;
 }
 
 @property (nonatomic, readonly, retain) TSCHChartGrid *grid;

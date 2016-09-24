@@ -3,10 +3,10 @@
  */
 
 @interface CICircleGenerator : CIFilter {
-    CIVector *inputCenter;
-    CIColor *inputColor;
-    NSNumber *inputEdgeBlur;
-    NSNumber *inputRadius;
+    CIVector * inputCenter;
+    CIColor * inputColor;
+    NSNumber * inputEdgeBlur;
+    NSNumber * inputRadius;
 }
 
 + (id)customAttributes;

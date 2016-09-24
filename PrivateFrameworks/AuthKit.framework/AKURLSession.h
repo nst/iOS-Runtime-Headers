@@ -3,10 +3,10 @@
  */
 
 @interface AKURLSession : NSObject <NSURLSessionDataDelegate, NSURLSessionDelegate> {
-    BOOL __usesAppleIDContext;
-    NSObject<OS_dispatch_queue> *_sessionQueue;
-    NSMutableDictionary *_tasksByIdentifier;
-    NSURLSession *_urlSession;
+    BOOL  __usesAppleIDContext;
+    NSObject<OS_dispatch_queue> * _sessionQueue;
+    NSMutableDictionary * _tasksByIdentifier;
+    NSURLSession * _urlSession;
 }
 
 @property (nonatomic) BOOL _usesAppleIDContext;

@@ -3,8 +3,8 @@
  */
 
 @interface _UICachedSceneProperties : NSObject {
-    BOOL _isBackgrounded;
-    BOOL _isOccluded;
+    BOOL  _isBackgrounded;
+    BOOL  _isOccluded;
 }
 
 @property (nonatomic) BOOL isBackgrounded;

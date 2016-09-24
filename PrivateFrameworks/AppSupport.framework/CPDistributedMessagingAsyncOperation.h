@@ -3,18 +3,18 @@
  */
 
 @interface CPDistributedMessagingAsyncOperation : NSOperation {
-    NSThread *_calloutThread;
-    CPDistributedMessagingCenter *_center;
-    void *_context;
-    NSError *_error;
-    BOOL _makeServer;
-    NSString *_name;
-    NSData *_oolData;
-    NSString *_oolKey;
-    NSDictionary *_reply;
-    SEL _selector;
-    id _target;
-    NSData *_userInfoData;
+    NSThread * _calloutThread;
+    CPDistributedMessagingCenter * _center;
+    void * _context;
+    NSError * _error;
+    BOOL  _makeServer;
+    NSString * _name;
+    NSData * _oolData;
+    NSString * _oolKey;
+    NSDictionary * _reply;
+    SEL  _selector;
+    id  _target;
+    NSData * _userInfoData;
 }
 
 - (void)_performCallout;

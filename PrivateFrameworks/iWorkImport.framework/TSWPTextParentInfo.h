@@ -25,6 +25,7 @@
 - (BOOL)isAttachedToBodyText;
 - (BOOL)isFloatingAboveText;
 - (BOOL)isInlineWithText;
+- (BOOL)isSelectable;
 - (BOOL)isThemeContent;
 - (Class)layoutClass;
 - (id)owningAttachment;

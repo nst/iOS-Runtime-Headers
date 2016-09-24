@@ -3,10 +3,10 @@
  */
 
 @interface IMPurgableObject : NSObject {
-    id /* block */ _cleanupBlock;
-    id _instanceObject;
-    NSObject<OS_dispatch_queue> *_queue;
-    id /* block */ _setupBlock;
+    id /* block */  _cleanupBlock;
+    id  _instanceObject;
+    NSObject<OS_dispatch_queue> * _queue;
+    id /* block */  _setupBlock;
 }
 
 - (void)_cleanupInstance;

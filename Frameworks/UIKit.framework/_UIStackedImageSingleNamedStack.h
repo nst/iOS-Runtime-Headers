@@ -3,7 +3,7 @@
  */
 
 @interface _UIStackedImageSingleNamedStack : NSObject <UINamedLayerStack> {
-    _UIStackedImageSingleNamedLayerImage *_layerImage;
+    _UIStackedImageSingleNamedLayerImage * _layerImage;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,9 +15,9 @@
 @property (nonatomic, readonly) NSArray *layers;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) id radiosityImage;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } radiosityImageScale;
-@property (nonatomic, readonly) float scale;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } radiosityImageScale;
+@property (nonatomic, readonly) double scale;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -27,6 +27,6 @@
 - (id)name;
 - (float)scale;
 - (void)setLayerImage:(id)arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { double x1; double x2; })size;
 
 @end

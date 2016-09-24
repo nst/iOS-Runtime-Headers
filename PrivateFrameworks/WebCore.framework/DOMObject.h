@@ -3,7 +3,7 @@
  */
 
 @interface DOMObject : WebScriptObject <NSCopying> {
-    struct DOMObjectInternal { } *_internal;
+    struct DOMObjectInternal { } * _internal;
 }
 
 @property (readonly) DOMStyleSheet *sheet;

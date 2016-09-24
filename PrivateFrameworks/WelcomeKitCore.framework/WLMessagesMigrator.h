@@ -3,8 +3,8 @@
  */
 
 @interface WLMessagesMigrator : WLMigrationWebService {
-    NSString *_accountGuid;
-    struct sqlite3 { } *_database;
+    NSString * _accountGuid;
+    struct sqlite3 { } * _database;
 }
 
 + (id)_attachmentPersistentPathForGuid:(id)arg1 fileName:(id)arg2 mimeType:(id)arg3 uti:(id)arg4;
@@ -18,7 +18,7 @@
 - (id)_chatGUIDWithGroupRoomName:(id)arg1;
 - (id)_chatGUIDWithNonGroupMessage:(id)arg1;
 - (id)_chatGroupIDWithNonGroupMessage:(id)arg1;
-- (long long)_chatIDForHandleIDs:(id)arg1 groupRoomName:(id)arg2 groupID:(id)arg3 message:(id)arg4;
+- (int)_chatIDForHandleIDs:(id)arg1 groupRoomName:(id)arg2 groupID:(id)arg3 message:(id)arg4;
 - (id)_chatIdentifierWithNonGroupMessage:(id)arg1;
 - (id)_chatLastAddressedHandleWithMessage:(id)arg1;
 - (id)_chatPropertiesDataWithMessage:(id)arg1;
@@ -27,14 +27,14 @@
 - (int)_chatStyleWithMessage:(id)arg1;
 - (BOOL)_commitTransaction;
 - (id)_databaseFilename;
-- (long long)_handleIDFromNonGroupMessageHandleIDs:(id)arg1;
+- (int)_handleIDFromNonGroupMessageHandleIDs:(id)arg1;
 - (id)_handleIDsForMessage:(id)arg1;
-- (BOOL)_insertChatHandleJoinRowWithChatID:(long long)arg1 handleID:(long long)arg2 duplicateMightExist:(BOOL)arg3;
-- (BOOL)_insertChatMessageJoinRowWithChatID:(long long)arg1 messageID:(long long)arg2;
+- (BOOL)_insertChatHandleJoinRowWithChatID:(int)arg1 handleID:(int)arg2 duplicateMightExist:(BOOL)arg3;
+- (BOOL)_insertChatMessageJoinRowWithChatID:(int)arg1 messageID:(int)arg2;
 - (BOOL)_insertMessage:(id)arg1;
-- (BOOL)_insertMessageAttachmentJoinRowWithMessageID:(long long)arg1 attachmentID:(long long)arg2;
-- (long long)_insertMessageRowWithMessage:(id)arg1 handleIDs:(id)arg2 groupRoomName:(id)arg3;
-- (long long)_insertRowWithAttachment:(id)arg1 filePath:(id)arg2 forMessage:(id)arg3;
+- (BOOL)_insertMessageAttachmentJoinRowWithMessageID:(int)arg1 attachmentID:(int)arg2;
+- (int)_insertMessageRowWithMessage:(id)arg1 handleIDs:(id)arg2 groupRoomName:(id)arg3;
+- (int)_insertRowWithAttachment:(id)arg1 filePath:(id)arg2 forMessage:(id)arg3;
 - (id)_messageAccountGUIDWithMessage:(id)arg1;
 - (id)_messageAccountWithMessage:(id)arg1;
 - (id)_messageAttributedBodyDataWithMessage:(id)arg1;
@@ -53,7 +53,7 @@
 - (id)_ourAddressWithMessage:(id)arg1;
 - (BOOL)_performSimpleQuery:(id)arg1;
 - (BOOL)_rollbackTransaction;
-- (long long)_senderHandleIDFromReceviedGroupMessageHandleIDs:(id)arg1;
+- (int)_senderHandleIDFromReceviedGroupMessageHandleIDs:(id)arg1;
 - (id)_serviceStringWithMessage:(id)arg1;
 - (id)_sortedHandleIDs:(id)arg1;
 - (id)_uncanonicalizedIDWithMessage:(id)arg1;

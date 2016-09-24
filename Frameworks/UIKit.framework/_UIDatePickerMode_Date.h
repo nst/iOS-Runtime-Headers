@@ -3,12 +3,12 @@
  */
 
 @interface _UIDatePickerMode_Date : _UIDatePickerMode {
-    float _dateDayWidth;
-    float _dateMonthWidth;
-    float _dateYearWidth;
-    NSString *_dayFormat;
-    NSString *_monthFormat;
-    NSString *_yearFormat;
+    double  _dateDayWidth;
+    double  _dateMonthWidth;
+    double  _dateYearWidth;
+    NSString * _dayFormat;
+    NSString * _monthFormat;
+    NSString * _yearFormat;
 }
 
 + (int)datePickerMode;

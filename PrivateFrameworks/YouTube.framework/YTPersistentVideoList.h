@@ -3,8 +3,8 @@
  */
 
 @interface YTPersistentVideoList : NSObject {
-    NSString *_categoryName;
-    NSMutableArray *_videos;
+    NSString * _categoryName;
+    NSMutableArray * _videos;
 }
 
 + (id)persistPathWithCategoryName:(id)arg1;

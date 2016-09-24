@@ -3,14 +3,14 @@
  */
 
 @interface AWDSiriServerConnectionOpen : PBCodable <NSCopying> {
-    int _connectionType;
-    unsigned long long _duration;
+    int  _connectionType;
+    unsigned long long  _duration;
     struct { 
         unsigned int duration : 1; 
         unsigned int timestamp : 1; 
         unsigned int connectionType : 1; 
-    } _has;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) int connectionType;

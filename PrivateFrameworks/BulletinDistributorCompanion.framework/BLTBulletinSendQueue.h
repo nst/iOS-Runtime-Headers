@@ -2,23 +2,28 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@interface BLTBulletinSendQueue : NSObject {
-    <BLTBulletinSendQueueDelegate> *_delegate;
+@interface BLTBulletinSendQueue : BLTBulletinSendQueuePassthrough {
+    BLTBulletinSendQueueAttachmentSender * _attachmentSender;
+    NSMutableArray * _completionHandlers;
+    PBCodable * _firstRequest;
+    unsigned short  _firstRequestType;
+    NSDate * _lastItemDate;
+    NSDate * _lastQueueSendDate;
+    NSObject<OS_dispatch_queue> * _queue;
+    BLTSendQueueSerializer * _queueSerializer;
+    NSMutableArray * _queuedBlockHandlers;
+    NSNumber * _timeout;
+    PCPersistentTimer * _timeoutTimer;
 }
 
-@property (nonatomic) <BLTBulletinSendQueueDelegate> *delegate;
-
-+ (id)bulletinSendQueue;
-
 - (void).cxx_destruct;
-- (id)delegate;
+- (void)_queue_performSend;
+- (void)_queue_queuePending;
+- (void)_queue_startTimerWithFireDate:(id)arg1;
+- (void)_sendRequest:(id)arg1 type:(unsigned short)arg2 withTimeout:(id)arg3 isTrafficRestricted:(BOOL)arg4 attachmentURL:(id)arg5 attachmentKey:(id)arg6 didSend:(id /* block */)arg7 didQueue:(id /* block */)arg8;
 - (void)handleFileURL:(id)arg1;
+- (id)init;
 - (void)queuePending;
 - (void)sendNow;
-- (void)sendRequest:(id)arg1 type:(unsigned short)arg2 didSend:(id /* block */)arg3;
-- (void)sendRequest:(id)arg1 type:(unsigned short)arg2 didSend:(id /* block */)arg3 didQueue:(id /* block */)arg4;
-- (void)sendRequest:(id)arg1 type:(unsigned short)arg2 withTimeout:(id)arg3 isTrafficRestricted:(BOOL)arg4 didSend:(id /* block */)arg5;
-- (void)sendRequest:(id)arg1 type:(unsigned short)arg2 withTimeout:(id)arg3 isTrafficRestricted:(BOOL)arg4 didSend:(id /* block */)arg5 didQueue:(id /* block */)arg6;
-- (void)setDelegate:(id)arg1;
 
 @end

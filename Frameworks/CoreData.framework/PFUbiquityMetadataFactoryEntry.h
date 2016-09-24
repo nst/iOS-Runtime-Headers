@@ -3,10 +3,10 @@
  */
 
 @interface PFUbiquityMetadataFactoryEntry : NSObject {
-    PFUbiquityMetadataFactoryFilePresenter *_filePresenter;
-    PFUbiquityLocation *_metadataStoreFileLocation;
-    NSPersistentStoreCoordinator *_psc;
-    NSPersistentStore *_store;
+    PFUbiquityMetadataFactoryFilePresenter * _filePresenter;
+    PFUbiquityLocation * _metadataStoreFileLocation;
+    NSPersistentStoreCoordinator * _psc;
+    NSPersistentStore * _store;
 }
 
 @property (nonatomic, readonly) PFUbiquityMetadataFactoryFilePresenter *filePresenter;

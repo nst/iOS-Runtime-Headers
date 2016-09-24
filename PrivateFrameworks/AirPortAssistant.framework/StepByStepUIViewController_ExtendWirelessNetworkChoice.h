@@ -3,7 +3,7 @@
  */
 
 @interface StepByStepUIViewController_ExtendWirelessNetworkChoice : StepByStepUIViewController_DevicePicker <StepByStepUIDevicePicker> {
-    int _selectorChoice;
+    int  _selectorChoice;
 }
 
 - (void)addBrowsedRecords:(id)arg1 toDestList:(id)arg2;

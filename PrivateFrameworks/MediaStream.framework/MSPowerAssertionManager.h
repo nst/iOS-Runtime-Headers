@@ -3,11 +3,11 @@
  */
 
 @interface MSPowerAssertionManager : NSObject {
-    int _UIBusyCount;
-    unsigned int _assertionID;
-    int _busyCount;
-    BOOL _isAssertingPowerAssertion;
-    BOOL _isBusy;
+    int  _UIBusyCount;
+    unsigned int  _assertionID;
+    int  _busyCount;
+    BOOL  _isAssertingPowerAssertion;
+    BOOL  _isBusy;
 }
 
 @property (nonatomic) int UIBusyCount;

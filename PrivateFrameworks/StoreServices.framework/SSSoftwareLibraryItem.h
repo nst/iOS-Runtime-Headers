@@ -3,17 +3,19 @@
  */
 
 @interface SSSoftwareLibraryItem : NSObject <SSXPCCoding> {
-    BOOL _beta;
-    NSMutableDictionary *_etags;
-    BOOL _placeholder;
-    BOOL _profileValidated;
-    NSMutableDictionary *_propertyValues;
+    BOOL  _beta;
+    NSMutableDictionary * _etags;
+    BOOL  _launchProhibited;
+    BOOL  _placeholder;
+    BOOL  _profileValidated;
+    NSMutableDictionary * _propertyValues;
 }
 
 @property (getter=isBeta, nonatomic) BOOL beta;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (getter=isLaunchProhibited, nonatomic) BOOL launchProhibited;
 @property (getter=isPlaceholder, nonatomic) BOOL placeholder;
 @property (getter=isProfileValidated, nonatomic) BOOL profileValidated;
 @property (readonly) Class superclass;
@@ -25,10 +27,12 @@
 - (void)dealloc;
 - (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isBeta;
+- (BOOL)isLaunchProhibited;
 - (BOOL)isPlaceholder;
 - (BOOL)isProfileValidated;
 - (void)setBeta:(BOOL)arg1;
 - (BOOL)setETag:(id)arg1 forAssetType:(id)arg2 error:(id*)arg3;
+- (void)setLaunchProhibited:(BOOL)arg1;
 - (void)setPlaceholder:(BOOL)arg1;
 - (void)setProfileValidated:(BOOL)arg1;
 - (id)valueForProperty:(id)arg1;

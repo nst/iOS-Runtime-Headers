@@ -3,29 +3,30 @@
  */
 
 @interface CoreThemeDocument : TDPersistentDocument {
-    <TDAssetManagementDelegate> *_assetManagementDelegate;
-    int _capabilities;
-    <TDCustomAssetProvider> *_customAssetProvider;
-    NSMutableDictionary *_explicitlyPackedContents;
-    NSMutableDictionary *_explicitlyPackedIdentifiers;
-    NSMutableDictionary *_explicitlyPackedPackings;
-    int _majorVersion;
-    NSString *_minimumDeploymentVersion;
-    int _minorVersion;
-    TDDeviceTraits *_optimizeForDeviceTraits;
-    NSMutableDictionary *_packableRenditions;
-    int _patchVersion;
-    NSString *_relativePathToProductionData;
-    NSString *_targetPlatform;
-    int _updateVersionMetadataState;
-    NSMutableDictionary *cachedConstantArrays;
-    int cachedMaxIdentifierInUse;
-    NSMutableDictionary *constantArrayControllers;
-    BOOL m_didMigrate;
-    TDHistorian *m_historian;
-    NSManagedObjectModel *m_managedObjectModel;
-    TDThreadMOCOrganizer *m_mocOrganizer;
-    NSString *pathToRepresentedDocument;
+    <TDAssetManagementDelegate> * _assetManagementDelegate;
+    int  _capabilities;
+    <TDCustomAssetProvider> * _customAssetProvider;
+    NSMutableDictionary * _explicitlyPackedContents;
+    NSMutableDictionary * _explicitlyPackedIdentifiers;
+    NSMutableDictionary * _explicitlyPackedPackings;
+    struct _renditionkeyfmt { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4[0]; } * _keyFormat;
+    int  _majorVersion;
+    NSString * _minimumDeploymentVersion;
+    int  _minorVersion;
+    TDDeviceTraits * _optimizeForDeviceTraits;
+    NSMutableDictionary * _packableRenditions;
+    int  _patchVersion;
+    NSString * _relativePathToProductionData;
+    NSString * _targetPlatform;
+    int  _updateVersionMetadataState;
+    NSMutableDictionary * cachedConstantArrays;
+    int  cachedMaxIdentifierInUse;
+    NSMutableDictionary * constantArrayControllers;
+    BOOL  m_didMigrate;
+    TDHistorian * m_historian;
+    NSManagedObjectModel * m_managedObjectModel;
+    TDThreadMOCOrganizer * m_mocOrganizer;
+    NSString * pathToRepresentedDocument;
 }
 
 @property (nonatomic) BOOL allowsVibrancy;
@@ -50,6 +51,7 @@
 + (id)dataModelNameForVersion:(int)arg1;
 + (int)dataModelVersion;
 + (int)dataModelVersionFromMetadata:(id)arg1;
++ (BOOL)defaultAllowsExtendedRangePixelFormats;
 + (int)defaultTargetPlatform;
 + (id)defaultThemeBitSourceURLForDocumentURL:(id)arg1;
 + (void)doneWithColorConversion;
@@ -66,6 +68,9 @@
 - (id)_addAssetsAtFileURLs:(id)arg1 createProductions:(BOOL)arg2 referenceFiles:(BOOL)arg3 bitSource:(id)arg4 customInfos:(id)arg5 sortedCustomInfos:(id*)arg6;
 - (id)_addAssetsFromCustomAssetInfos:(id)arg1 bitSource:(id)arg2 error:(id*)arg3;
 - (void)_addResolvedLayerReferenceToFlattenedImageRendition:(id)arg1 usingArtworkRendition:(id)arg2 andLayerReference:(id)arg3;
+- (void)_automaticP3GenerationFromSRGB;
+- (void)_automaticSRGBGenerationFromP3;
+- (void)_backwardsCompatibilityPatchForLayoutDirection;
 - (id)_cachedConstantsForEntity:(id)arg1;
 - (id)_catalogGlobals;
 - (int)_compareFlattenedKeySpec1:(id)arg1 toKeySpec2:(id)arg2;
@@ -80,6 +85,7 @@
 - (void)_groupPackableRenditions;
 - (void)_insertRendition:(id)arg1 forKey:(id)arg2;
 - (void)_makeRadiosityImages;
+- (BOOL)_matchesAllExceptGamut:(id)arg1 andKeySpec:(id)arg2;
 - (id)_namedImageEffectPartDefinition;
 - (id)_namedImagePartDefinition;
 - (id)_namedTextEffectPartDefinition;
@@ -92,6 +98,7 @@
 - (id)_themeBitSource:(id*)arg1;
 - (id)_themeBitSourceForReferencedFilesAtURLs:(id)arg1 createIfNecessary:(BOOL)arg2;
 - (void)_tidyUpLayerStacks;
+- (void)_updateKeyFormat;
 - (void)_updateRenditionPackings:(id)arg1;
 - (id)addAssetsAtFileURLs:(id)arg1;
 - (id)addAssetsAtFileURLs:(id)arg1 createProductions:(BOOL)arg2;
@@ -101,6 +108,7 @@
 - (id)allObjectsForEntity:(id)arg1 withSortDescriptors:(id)arg2;
 - (id)allObjectsForEntity:(id)arg1 withSortDescriptors:(id)arg2 error:(id*)arg3;
 - (BOOL)allowMultipleInstancesOfElementID:(int)arg1;
+- (BOOL)allowsExtendedRangePixelFormats;
 - (BOOL)allowsVibrancy;
 - (id)artworkDraftTypeWithIdentifier:(int)arg1;
 - (id)artworkFormat;
@@ -113,6 +121,7 @@
 - (void)checkVersionsAndUpdateIfNecessary;
 - (unsigned int)checksum;
 - (unsigned int)colorSpaceID;
+- (id)compressionTypeWithIdentifier:(int)arg1;
 - (BOOL)configurePersistentStoreCoordinatorForURL:(id)arg1 ofType:(id)arg2 modelConfiguration:(id)arg3 storeOptions:(id)arg4 error:(id*)arg5;
 - (id)constantWithName:(id)arg1 forIdentifier:(int)arg2;
 - (void)convertColorsFromColorSpaceWithIdentifier:(unsigned int)arg1 toIdentifier:(unsigned int)arg2;
@@ -128,6 +137,7 @@
 - (id)createElementProductionWithAsset:(id)arg1;
 - (id)createNamedArtworkProductionsForAssets:(id)arg1 customInfos:(id)arg2 error:(id*)arg3;
 - (id)createNamedEffectProductionWithName:(id)arg1 isText:(BOOL)arg2;
+- (void)createNamedTexturesForCustomInfos:(id)arg1 referenceFiles:(BOOL)arg2 bitSource:(id)arg3 error:(id*)arg4;
 - (BOOL)createPSDReferenceArtworkForRenditionGroup:(id)arg1 atDestination:(id)arg2 error:(id*)arg3;
 - (id)createProductionWithRenditionGroup:(id)arg1 forPartDefinition:(id)arg2 artworkFormat:(id)arg3 nameElement:(id)arg4 shouldReplaceExisting:(BOOL)arg5 error:(id*)arg6;
 - (id)createProductionWithRenditionGroup:(id)arg1 forPartDefinition:(id)arg2 artworkFormat:(id)arg3 shouldReplaceExisting:(BOOL)arg4 error:(id*)arg5;
@@ -151,8 +161,10 @@
 - (void)deleteObjects:(id)arg1;
 - (void)deleteProduction:(id)arg1 shouldDeleteAssetFiles:(BOOL)arg2;
 - (void)deleteProductions:(id)arg1 shouldDeleteAssetFiles:(BOOL)arg2;
+- (id)deploymentTargetWithIdentifier:(int)arg1;
 - (BOOL)didMigrate;
 - (id)directionWithIdentifier:(int)arg1;
+- (id)displayGamutWithIdentifier:(int)arg1;
 - (int)documentCapabilities;
 - (id)drawingLayerWithIdentifier:(int)arg1;
 - (id)effectComponentWithType:(unsigned int)arg1 inRendition:(id)arg2 createIfNeeded:(BOOL)arg3;
@@ -204,6 +216,7 @@
 - (id)pathToAsset:(id)arg1;
 - (id)pathToRepresentedDocument;
 - (id)persistentStoreTypeForFileType:(id)arg1;
+- (id)pixelFormatWithIdentifier:(int)arg1;
 - (id)presentationStateWithIdentifier:(int)arg1;
 - (id)previousStateWithIdentifier:(int)arg1;
 - (id)previousValueWithIdentifier:(int)arg1;
@@ -224,6 +237,7 @@
 - (id)schemaCategoryWithIdentifier:(int)arg1;
 - (id)schemaDefinitionWithElementID:(int)arg1;
 - (id)schemaPartDefinitionWithElementID:(int)arg1 partID:(int)arg2;
+- (void)setAllowsExtendedRangePixelFormats:(BOOL)arg1;
 - (void)setAllowsVibrancy:(BOOL)arg1;
 - (void)setArtworkFormat:(id)arg1;
 - (void)setAssetManagementDelegate:(id)arg1;
@@ -239,12 +253,16 @@
 - (void)setUuid:(id)arg1;
 - (id)sizeClassWithIdentifier:(int)arg1;
 - (id)sizeWithIdentifier:(int)arg1;
-- (id)slicesComputedForImageSize:(struct CGSize { float x1; float x2; })arg1 usingSliceInsets:(struct { float x1; float x2; float x3; float x4; })arg2 resizableSliceSize:(struct CGSize { float x1; float x2; })arg3 withRenditionType:(int)arg4;
+- (id)slicesComputedForImageSize:(struct CGSize { double x1; double x2; })arg1 usingSliceInsets:(struct { double x1; double x2; double x3; double x4; })arg2 resizableSliceSize:(struct CGSize { double x1; double x2; })arg3 withRenditionType:(int)arg4;
 - (id)stateWithIdentifier:(int)arg1;
 - (int)targetPlatform;
 - (id)templateRenderingModeWithIdentifier:(int)arg1;
+- (id)textureFaceWithIdentifier:(int)arg1;
+- (id)textureInterpretaitionWithIdentifier:(unsigned int)arg1;
 - (id)themeBitSourceURL;
 - (id)themeConstant:(id)arg1 withIdentifier:(int)arg2;
+- (const struct _renditionkeyfmt { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4[0]; }*)untrimmedRenditionKeyFormat;
+- (id)updateAutomaticTexturesForCustomInfos:(id)arg1 allTextureInfos:(id)arg2;
 - (void)updateRenditionSpec:(id)arg1;
 - (id)updateToEmbeddedSchemaVersion2AndReturnAlertString:(id*)arg1;
 - (id)updatedVersionsMetadataFromMetadata:(id)arg1;

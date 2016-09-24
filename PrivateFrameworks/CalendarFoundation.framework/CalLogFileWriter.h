@@ -3,9 +3,9 @@
  */
 
 @interface CalLogFileWriter : CalLogWriter {
-    int _fileDescriptor;
-    BOOL _fileDescriptorIsValid;
-    NSString *_path;
+    int  _fileDescriptor;
+    BOOL  _fileDescriptorIsValid;
+    NSString * _path;
 }
 
 @property (nonatomic) int fileDescriptor;

@@ -3,7 +3,7 @@
  */
 
 @interface SSVKeybagSyncRequest : SSRequest <SSXPCCoding> {
-    NSNumber *_accountID;
+    NSNumber * _accountID;
 }
 
 @property (nonatomic, readonly) NSNumber *accountIdentifier;

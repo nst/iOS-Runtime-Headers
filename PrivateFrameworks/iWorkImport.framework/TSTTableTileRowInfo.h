@@ -3,14 +3,14 @@
  */
 
 @interface TSTTableTileRowInfo : TSPContainedObject {
-    unsigned short mBufferSize;
-    unsigned short mCellCount;
-    unsigned char mMaxTileColumnIndex;
-    BOOL mMaxTileColumnIndexValid;
-    struct __CFData { } *mStorageBuffer;
-    unsigned short mStorageOffsets;
-    unsigned char mStorageVersion;
-    unsigned short mTileRowIndex;
+    unsigned short  mBufferSize;
+    unsigned short  mCellCount;
+    unsigned char  mMaxTileColumnIndex;
+    BOOL  mMaxTileColumnIndexValid;
+    struct __CFData { } * mStorageBuffer;
+    unsigned short  mStorageOffsets;
+    unsigned char  mStorageVersion;
+    unsigned short  mTileRowIndex;
 }
 
 @property (nonatomic, readonly) unsigned short cellCount;

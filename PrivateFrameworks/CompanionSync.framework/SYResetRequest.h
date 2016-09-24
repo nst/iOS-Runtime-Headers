@@ -3,8 +3,8 @@
  */
 
 @interface SYResetRequest : PBRequest <NSCopying> {
-    NSString *_cancelSessionID;
-    SYMessageHeader *_header;
+    NSString * _cancelSessionID;
+    SYMessageHeader * _header;
 }
 
 @property (nonatomic, retain) NSString *cancelSessionID;

@@ -3,7 +3,7 @@
  */
 
 @interface CAStateController : NSObject {
-    struct _CAStateControllerData { id x1; struct __CFDictionary {} x2; id x3; } *_data;
+    struct _CAStateControllerData { id x1; struct __CFDictionary {} x2; id x3; } * _data;
 }
 
 @property NSObject<CAStateControllerDelegate> *delegate;

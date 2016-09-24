@@ -3,10 +3,10 @@
  */
 
 @interface GKCache : NSObject <GKCache> {
-    GKLinkedList *_cacheList;
-    unsigned int _count;
-    NSMutableDictionary *_dictionary;
-    unsigned int _maxCount;
+    GKLinkedList * _cacheList;
+    unsigned int  _count;
+    NSMutableDictionary * _dictionary;
+    unsigned int  _maxCount;
 }
 
 @property (nonatomic, retain) GKLinkedList *cacheList;

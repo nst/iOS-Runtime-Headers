@@ -3,18 +3,18 @@
  */
 
 @interface CPGuideFinder : NSObject <CPDisposable> {
-    double *anchorArray;
-    CPCluster *anchors;
-    CPZone *contentZone;
-    unsigned int countOfWordsInZone;
-    struct { float x1; float x2; float x3; float x4; int x5; int *x6; struct CPPDFStyle {} *x7; } *crossingWordArray;
-    NSMutableArray *gutters;
-    NSMutableArray *leftGuides;
-    float medianFontSizeOfFirstCharacter;
-    float medianFontSizeOfLastCharacter;
-    NSMutableArray *rightGuides;
-    double *rightHandSideArray;
-    CPCluster *rightHandSides;
+    double * anchorArray;
+    CPCluster * anchors;
+    CPZone * contentZone;
+    unsigned int  countOfWordsInZone;
+    struct { double x1; double x2; double x3; double x4; int x5; int *x6; struct CPPDFStyle {} *x7; } * crossingWordArray;
+    NSMutableArray * gutters;
+    NSMutableArray * leftGuides;
+    double  medianFontSizeOfFirstCharacter;
+    double  medianFontSizeOfLastCharacter;
+    NSMutableArray * rightGuides;
+    double * rightHandSideArray;
+    CPCluster * rightHandSides;
 }
 
 + (BOOL)guideSeparates:(id)arg1 from:(id)arg2;
@@ -41,13 +41,13 @@
 - (float)medianFontSizeOfFirstCharacter;
 - (float)medianFontSizeOfLastCharacter;
 - (id)rightGuides;
-- (void)setAlignForWordWithExtent:(struct { float x1; float x2; float x3; float x4; int x5; int *x6; struct CPPDFStyle {} *x7; }*)arg1 stripArray:(id)arg2 stripMax:(double)arg3;
+- (void)setAlignForWordWithExtent:(struct { double x1; double x2; double x3; double x4; int x5; int *x6; struct CPPDFStyle {} *x7; }*)arg1 stripArray:(id)arg2 stripMax:(double)arg3;
 - (void)splitTextLines;
 - (void)splitTextLinesAtBorderWords;
 - (void)splitTextLinesBetweenBorderWords;
 - (void)subdivideGutterFrom:(unsigned int)arg1 to:(unsigned int)arg2;
 - (void)subdivideLeftGuideAt:(unsigned int)arg1;
 - (void)subdivideRightGuideAt:(unsigned int)arg1;
-- (void)subdivideStripInto:(id)arg1 from:(double)arg2 to:(double)arg3 borderedBy:(struct { float x1; float x2; float x3; float x4; int x5; int *x6; struct CPPDFStyle {} *x7; }*)arg4 ofCount:(unsigned int)arg5 crossedBy:(struct { float x1; float x2; float x3; float x4; int x5; int *x6; struct CPPDFStyle {} *x7; }*)arg6 ofCount:(unsigned int)arg7;
+- (void)subdivideStripInto:(id)arg1 from:(double)arg2 to:(double)arg3 borderedBy:(struct { double x1; double x2; double x3; double x4; int x5; int *x6; struct CPPDFStyle {} *x7; }*)arg4 ofCount:(unsigned int)arg5 crossedBy:(struct { double x1; double x2; double x3; double x4; int x5; int *x6; struct CPPDFStyle {} *x7; }*)arg6 ofCount:(unsigned int)arg7;
 
 @end

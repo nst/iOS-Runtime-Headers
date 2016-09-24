@@ -3,31 +3,31 @@
  */
 
 @interface VKRouteContext : NSObject {
-    NSString *_accessPointEntryName;
-    NSString *_accessPointExitName;
-    int _currentLegIndex;
-    int _currentStepIndex;
-    BOOL _hasContextChangedForLabels;
-    BOOL _hasContextChangedForRouteLine;
-    int _inspectedLegIndex;
-    int _inspectedStepIndex;
-    NSHashTable *_labelObservers;
-    NSString *_locale;
+    NSString * _accessPointEntryName;
+    NSString * _accessPointExitName;
+    int  _currentLegIndex;
+    int  _currentStepIndex;
+    BOOL  _hasContextChangedForLabels;
+    BOOL  _hasContextChangedForRouteLine;
+    int  _inspectedLegIndex;
+    int  _inspectedStepIndex;
+    NSHashTable * _labelObservers;
+    NSString * _locale;
     struct { 
         double latitude; 
         double longitude; 
-    } _puckLocation;
-    float _puckRadius;
-    unsigned long long _puckSnappedStopID;
-    GEOComposedRoute *_route;
-    NSHashTable *_routeLineObservers;
+    }  _puckLocation;
+    double  _puckRadius;
+    unsigned int  _puckSnappedStopID;
+    GEOComposedRoute * _route;
+    NSHashTable * _routeLineObservers;
     struct PolylineCoordinate { 
         unsigned int index; 
-        float offset; 
-    } _routeOffset;
-    BOOL _snappingToTransitLines;
-    unsigned char _useType;
-    unsigned char useType;
+        double offset; 
+    }  _routeOffset;
+    BOOL  _snappingToTransitLines;
+    unsigned char  _useType;
+    unsigned char  useType;
 }
 
 @property (nonatomic, retain) NSString *accessPointEntryName;
@@ -38,10 +38,10 @@
 @property (nonatomic) int inspectedStepIndex;
 @property (nonatomic, retain) NSString *locale;
 @property (nonatomic) struct { double x1; double x2; } puckLocation;
-@property (nonatomic) float puckRadius;
-@property (nonatomic) unsigned long long puckSnappedStopID;
+@property (nonatomic) double puckRadius;
+@property (nonatomic) unsigned int puckSnappedStopID;
 @property (nonatomic, readonly) GEOComposedRoute *route;
-@property (nonatomic) struct PolylineCoordinate { unsigned int x1; float x2; } routeOffset;
+@property (nonatomic) struct PolylineCoordinate { unsigned int x1; double x2; } routeOffset;
 @property (nonatomic) BOOL snappingToTransitLines;
 @property (nonatomic, readonly) unsigned char useType;
 
@@ -60,11 +60,11 @@
 - (id)locale;
 - (struct { double x1; double x2; })puckLocation;
 - (float)puckRadius;
-- (unsigned long long)puckSnappedStopID;
+- (unsigned int)puckSnappedStopID;
 - (void)removeObserver:(id)arg1 withType:(unsigned char)arg2;
 - (void)resetNotificationsForObserverType:(unsigned char)arg1;
 - (id)route;
-- (struct PolylineCoordinate { unsigned int x1; float x2; })routeOffset;
+- (struct PolylineCoordinate { unsigned int x1; double x2; })routeOffset;
 - (void)setAccessPointEntryName:(id)arg1;
 - (void)setAccessPointExitName:(id)arg1;
 - (void)setCurrentLegIndex:(int)arg1;
@@ -74,8 +74,8 @@
 - (void)setLocale:(id)arg1;
 - (void)setPuckLocation:(struct { double x1; double x2; })arg1;
 - (void)setPuckRadius:(float)arg1;
-- (void)setPuckSnappedStopID:(unsigned long long)arg1;
-- (void)setRouteOffset:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1;
+- (void)setPuckSnappedStopID:(unsigned int)arg1;
+- (void)setRouteOffset:(struct PolylineCoordinate { unsigned int x1; double x2; })arg1;
 - (void)setSnappingToTransitLines:(BOOL)arg1;
 - (BOOL)snappingToTransitLines;
 - (unsigned char)useType;

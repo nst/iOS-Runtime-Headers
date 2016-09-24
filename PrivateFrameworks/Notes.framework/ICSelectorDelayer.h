@@ -3,12 +3,12 @@
  */
 
 @interface ICSelectorDelayer : NSObject {
-    double _delay;
-    BOOL _forceMainThread;
-    SEL _selector;
-    id _target;
-    NSTimer *_timer;
-    BOOL _waitToFireUntilRequestsStop;
+    double  _delay;
+    BOOL  _forceMainThread;
+    SEL  _selector;
+    id  _target;
+    NSTimer * _timer;
+    BOOL  _waitToFireUntilRequestsStop;
 }
 
 @property double delay;

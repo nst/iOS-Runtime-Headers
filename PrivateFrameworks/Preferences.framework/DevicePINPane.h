@@ -3,21 +3,21 @@
  */
 
 @interface DevicePINPane : PSEditingPane <PSPINEntryViewDelegate, UIKeyInput, UITextInputTraits> {
-    unsigned int _PINLength;
-    int _autocapitalizationType;
-    int _autocorrectionType;
-    BOOL _isBlocked;
-    int _keyboardAppearance;
-    int _keyboardType;
-    UIKeyboard *_keypad;
-    BOOL _keypadActive;
-    BOOL _numericKeyboard;
-    id /* block */ _passcodeOptionsHandler;
-    UIView<PINEntryView> *_pinView;
-    BOOL _playSound;
-    BOOL _simplePIN;
-    UITransitionView *_transitionView;
-    BOOL _transitioning;
+    unsigned int  _PINLength;
+    int  _autocapitalizationType;
+    int  _autocorrectionType;
+    BOOL  _isBlocked;
+    int  _keyboardAppearance;
+    int  _keyboardType;
+    UIKeyboard * _keypad;
+    BOOL  _keypadActive;
+    BOOL  _numericKeyboard;
+    id /* block */  _passcodeOptionsHandler;
+    UIView<PINEntryView> * _pinView;
+    BOOL  _playSound;
+    BOOL  _simplePIN;
+    UITransitionView * _transitionView;
+    BOOL  _transitioning;
 }
 
 @property (nonatomic) unsigned int PINLength;
@@ -26,6 +26,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL enablesReturnKeyAutomatically;
+@property (nonatomic, readonly) BOOL hasText;
 @property (readonly) unsigned int hash;
 @property (nonatomic) int keyboardAppearance;
 @property (nonatomic) int keyboardType;
@@ -35,6 +36,7 @@
 @property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
 @property (nonatomic) int spellCheckingType;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *textContentType;
 
 - (void).cxx_destruct;
 - (unsigned int)PINLength;
@@ -54,7 +56,7 @@
 - (BOOL)hasText;
 - (void)hideError;
 - (void)hideFailedAttempts;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)insertText:(id)arg1;
 - (BOOL)isSecureTextEntry;
 - (int)keyboardAppearance;

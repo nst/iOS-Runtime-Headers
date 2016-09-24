@@ -3,11 +3,11 @@
  */
 
 @interface CNPropertyDescription : NSObject <NSCopying, NSSecureCoding> {
-    BOOL _isNonnull;
-    NSString *_key;
-    SEL _readSelector;
-    id /* block */ _valueForKeyTransform;
-    SEL _writeSelector;
+    BOOL  _isNonnull;
+    NSString * _key;
+    SEL  _readSelector;
+    id /* block */  _valueForKeyTransform;
+    SEL  _writeSelector;
 }
 
 @property (nonatomic, readonly) NSArray *equivalentLabelSets;
@@ -16,6 +16,7 @@
 @property (nonatomic, readonly) BOOL isSingleValue;
 @property (nonatomic, readonly) BOOL isWritable;
 @property (nonatomic, readonly, copy) NSString *key;
+@property (nonatomic, readonly) id nilValue;
 @property (nonatomic, readonly) SEL readSelector;
 @property (nonatomic, readonly) Class valueClass;
 @property (nonatomic, readonly, copy) id /* block */ valueForKeyTransform;
@@ -48,9 +49,10 @@
 - (BOOL)isValue:(id)arg1 preferredToEquivalentValue:(id)arg2;
 - (BOOL)isWritable;
 - (id)key;
+- (id)nilValue;
 - (SEL)readSelector;
 - (BOOL)setABValue:(void*)arg1 onABPerson:(void*)arg2 error:(struct __CFError {}**)arg3;
-- (BOOL)setCNValue:(id)arg1 onABPerson:(void*)arg2 withSaveContext:(id)arg3 error:(id*)arg4;
+- (BOOL)setCNValue:(id)arg1 onABPerson:(void*)arg2 withDependentPropertiesContext:(id)arg3 error:(id*)arg4;
 - (void)setCNValue:(id)arg1 onContact:(id)arg2;
 - (id)stringForIndexingForContact:(id)arg1;
 - (Class)valueClass;

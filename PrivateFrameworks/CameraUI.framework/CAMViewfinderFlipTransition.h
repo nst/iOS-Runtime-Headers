@@ -3,28 +3,28 @@
  */
 
 @interface CAMViewfinderFlipTransition : NSObject {
-    CAMSnapshotView *__backSnapshotView;
-    CAMSnapshotView *__frontSnapshotView;
-    CAMPreviewView *__previewView;
-    CAMSnapshotView *__targetSnapshotView;
+    CAMSnapshotView * __backSnapshotView;
+    CAMSnapshotView * __frontSnapshotView;
+    CAMSnapshotView * __targetSnapshotView;
+    CAMViewfinderView * __viewfinderView;
 }
 
 @property (setter=_setBackSnapshotView:, nonatomic, retain) CAMSnapshotView *_backSnapshotView;
 @property (setter=_setFrontSnapshotView:, nonatomic, retain) CAMSnapshotView *_frontSnapshotView;
-@property (nonatomic, readonly) CAMPreviewView *_previewView;
 @property (setter=_setTargetSnapshotView:, nonatomic, retain) CAMSnapshotView *_targetSnapshotView;
+@property (nonatomic, readonly) CAMViewfinderView *_viewfinderView;
 
 - (void).cxx_destruct;
 - (id)_backSnapshotView;
 - (void)_cleanupFromFlipTransition;
 - (id)_frontSnapshotView;
-- (id)_previewView;
 - (void)_setBackSnapshotView:(id)arg1;
 - (void)_setFrontSnapshotView:(id)arg1;
 - (void)_setTargetSnapshotView:(id)arg1;
 - (id)_targetSnapshotView;
+- (id)_viewfinderView;
 - (void)completeTransitionToLivePreviewWithCompletionHandler:(id /* block */)arg1;
-- (id)initWithPreviewView:(id)arg1;
+- (id)initWithViewfinderView:(id)arg1;
 - (void)performFlipTransitionWithCompletionHandler:(id /* block */)arg1;
 
 @end

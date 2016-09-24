@@ -3,12 +3,12 @@
  */
 
 @interface PLSmartConnectorAgent : PLAgent {
-    NSString *_curAccessoryName;
-    NSNumber *_curStatus;
-    PLIOKitOperatorComposition *_iokitOrion;
-    NSString *_preAccessoryName;
-    NSNumber *_preStatus;
-    NSTimer *_timer;
+    NSString * _curAccessoryName;
+    NSNumber * _curStatus;
+    PLIOKitOperatorComposition * _iokitOrion;
+    NSString * _preAccessoryName;
+    NSNumber * _preStatus;
+    NSTimer * _timer;
 }
 
 @property (retain) NSString *curAccessoryName;

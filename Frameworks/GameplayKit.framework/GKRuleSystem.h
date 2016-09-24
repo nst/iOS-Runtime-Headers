@@ -3,12 +3,12 @@
  */
 
 @interface GKRuleSystem : NSObject {
-    NSMutableArray *_agenda;
-    NSMutableArray *_executed;
-    NSMapTable *_gradeByFact;
-    NSMutableArray *_rules;
-    NSMutableDictionary *_state;
-    NSMutableArray *_toBeExecuted;
+    NSMutableArray * _agenda;
+    NSMutableArray * _executed;
+    NSMapTable * _gradeByFact;
+    NSMutableArray * _rules;
+    NSMutableDictionary * _state;
+    NSMutableArray * _toBeExecuted;
 }
 
 @property (nonatomic, readonly, retain) NSArray *agenda;

@@ -3,7 +3,7 @@
  */
 
 @interface MSVMultiCallback : NSObject {
-    NSMutableArray *_callbacks;
+    NSMutableArray * _callbacks;
 }
 
 - (void).cxx_destruct;

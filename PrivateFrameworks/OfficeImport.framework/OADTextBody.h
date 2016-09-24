@@ -3,9 +3,9 @@
  */
 
 @interface OADTextBody : NSObject {
-    NSMutableArray *mParagraphs;
-    OADTextBodyProperties *mProperties;
-    OADTextListStyle *mTextListStyle;
+    NSMutableArray * mParagraphs;
+    OADTextBodyProperties * mProperties;
+    OADTextListStyle * mTextListStyle;
 }
 
 - (id)addParagraph;

@@ -3,7 +3,7 @@
  */
 
 @interface NSURLCache : NSObject {
-    NSURLCacheInternal *_internal;
+    NSURLCacheInternal * _internal;
 }
 
 @property (readonly) unsigned int currentDiskUsage;
@@ -11,15 +11,18 @@
 @property unsigned int diskCapacity;
 @property unsigned int memoryCapacity;
 
++ (void)_setVaryHeaderSupport;
 + (void)setSharedURLCache:(id)arg1;
 + (id)sharedURLCache;
 
-- (struct _CFURLCache { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct shared_ptr<__CFURLCache> { struct __CFURLCache {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)_CFURLCache;
+- (const struct _CFURLCache { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct shared_ptr<__CFURLCache> { struct __CFURLCache {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)_CFURLCache;
 - (id)_cacheDirectory;
 - (id)_diskCacheDefaultPath;
+- (id)_initVaryHeaderEnabledWithPath:(id)arg1;
 - (id)_initWithExistingCFURLCache:(struct _CFURLCache { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct shared_ptr<__CFURLCache> { struct __CFURLCache {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg1;
 - (id)_initWithIdentifier:(id)arg1 memoryCapacity:(int)arg2 diskCapacity:(int)arg3 private:(bool)arg4;
 - (id)_initWithMemoryCapacity:(unsigned int)arg1 diskCapacity:(unsigned int)arg2 relativePath:(id)arg3;
+- (BOOL)_isVaryHeaderSupportEnabled;
 - (struct _CFCachedURLResponse { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFCachedURLResponse {} *x2; }*)_nscfBridgeURLCacheCopyResponseForRequest:(struct _CFURLRequest { }*)arg1;
 - (long)_nscfBridgeURLCacheCurrentDiskUsage;
 - (long)_nscfBridgeURLCacheCurrentMemoryUsage;
@@ -30,6 +33,8 @@
 - (void)_nscfBridgeURLCacheSetDiskCapacity:(long)arg1;
 - (void)_nscfBridgeURLCacheSetMemoryCapacity:(long)arg1;
 - (void)_nscfBridgeURLCacheStoreCachedResponse:(struct _CFCachedURLResponse { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFCachedURLResponse {} *x2; }*)arg1 forRequest:(struct _CFURLRequest { }*)arg2;
+- (void)_updateVaryState:(id)arg1 forURL:(id)arg2;
+- (id)_varyStateForURL:(id)arg1;
 - (id)cachedResponseForRequest:(id)arg1;
 - (unsigned int)currentDiskUsage;
 - (unsigned int)currentMemoryUsage;

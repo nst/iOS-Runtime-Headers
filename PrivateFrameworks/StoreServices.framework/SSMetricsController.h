@@ -3,13 +3,13 @@
  */
 
 @interface SSMetricsController : NSObject {
-    SSMetricsConfiguration *_configuration;
-    SSXPCConnection *_connection;
-    NSTimer *_flushEventsTimer;
-    BOOL _flushOnForeground;
-    NSObject<OS_dispatch_queue> *_flushSerialQueue;
-    BOOL _flushTimerEnabled;
-    NSObject<OS_dispatch_queue> *_serialQueue;
+    SSMetricsConfiguration * _configuration;
+    SSXPCConnection * _connection;
+    NSTimer * _flushEventsTimer;
+    BOOL  _flushOnForeground;
+    NSObject<OS_dispatch_queue> * _flushSerialQueue;
+    BOOL  _flushTimerEnabled;
+    NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
 @property (getter=isFlushTimerEnabled, nonatomic) BOOL flushTimerEnabled;

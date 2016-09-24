@@ -6,11 +6,11 @@
     struct { 
         unsigned int maneuverType : 1; 
         unsigned int zilchIndex : 1; 
-    } _has;
-    int _maneuverType;
-    GEONameInfo *_name;
-    NSMutableArray *_signposts;
-    int _zilchIndex;
+    }  _has;
+    int  _maneuverType;
+    GEONameInfo * _name;
+    NSMutableArray * _signposts;
+    int  _zilchIndex;
 }
 
 @property (nonatomic) BOOL hasManeuverType;
@@ -21,6 +21,9 @@
 @property (nonatomic, retain) NSMutableArray *signposts;
 @property (nonatomic) int zilchIndex;
 
++ (Class)signpostType;
+
+- (int)StringAsManeuverType:(id)arg1;
 - (void)addSignpost:(id)arg1;
 - (void)clearSignposts;
 - (void)copyTo:(id)arg1;
@@ -34,6 +37,7 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (int)maneuverType;
+- (id)maneuverTypeAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
 - (BOOL)readFrom:(id)arg1;

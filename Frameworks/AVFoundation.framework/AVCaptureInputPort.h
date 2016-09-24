@@ -3,7 +3,7 @@
  */
 
 @interface AVCaptureInputPort : NSObject {
-    AVCaptureInputPortInternal *_internal;
+    AVCaptureInputPortInternal * _internal;
 }
 
 @property (nonatomic, readonly) struct OpaqueCMClock { }*clock;

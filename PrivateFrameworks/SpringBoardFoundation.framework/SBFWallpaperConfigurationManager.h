@@ -3,21 +3,23 @@
  */
 
 @interface SBFWallpaperConfigurationManager : NSObject <BSDescriptionProviding> {
-    BOOL _cachedVariantsShareWallpaperConfiguration;
-    BOOL _cachedVariantsShareWallpaperConfigurationValid;
-    NSArray *_dataStores;
-    <SBFWallpaperConfigurationManagerDelegate> *_delegate;
-    int _externalNotificationToken;
-    SBFMagnifyMode *_magnifyMode;
-    NSMutableDictionary *_proceduralWallpaperCache;
-    <SBFProceduralWallpaperProvider> *_proceduralWallpaperProvider;
-    NSMutableDictionary *_wallpaperImageCache;
-    float _wallpaperScale;
+    unsigned int  _batchChangeCount;
+    int  _batchNotifyVariants;
+    BOOL  _cachedVariantsShareWallpaperConfiguration;
+    BOOL  _cachedVariantsShareWallpaperConfigurationValid;
+    NSArray * _dataStores;
+    <SBFWallpaperConfigurationManagerDelegate> * _delegate;
+    int  _externalNotificationToken;
+    SBFMagnifyMode * _magnifyMode;
+    NSMutableDictionary * _proceduralWallpaperCache;
+    <SBFProceduralWallpaperProvider> * _proceduralWallpaperProvider;
+    NSMutableDictionary * _wallpaperImageCache;
+    double  _wallpaperScale;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _wallpaperSize;
-    int _wallpaperSizeType;
+        double width; 
+        double height; 
+    }  _wallpaperSize;
+    int  _wallpaperSizeType;
 }
 
 @property (nonatomic) BOOL cachedVariantsShareWallpaperConfiguration;
@@ -34,32 +36,38 @@
 @property (nonatomic) <SBFProceduralWallpaperProvider> *proceduralWallpaperProvider;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) BOOL variantsShareWallpaperConfiguration;
-@property (nonatomic, readonly) float wallpaperScale;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } wallpaperSize;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } wallpaperSizeIncludingParallaxOverhang;
+@property (nonatomic, readonly) double wallpaperScale;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } wallpaperSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } wallpaperSizeIncludingParallaxOverhang;
 @property (nonatomic, readonly) int wallpaperSizeType;
 
 + (int)currentDeviceWallpaperSizeType;
 + (void)initialize;
 
 - (void).cxx_destruct;
+- (void)beginChangeBatch;
 - (id)cachedProceduralWallpaperWithIdentifier:(id)arg1 options:(id)arg2 forVariant:(int)arg3;
 - (BOOL)cachedVariantsShareWallpaperConfiguration;
 - (void)clearCacheForVariants:(int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cropRectForOldCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 portrait:(BOOL)arg2 zoomScale:(float)arg3 oldParallaxFactor:(float)arg4 forImageSize:(struct CGSize { float x1; float x2; })arg5 newZoomScale:(float*)arg6;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cropRectForViewPort:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 portrait:(BOOL)arg2 zoomScale:(float)arg3 parallaxFactor:(float)arg4 forImageSize:(struct CGSize { float x1; float x2; })arg5 contentScaleFactor:(float)arg6;
+- (void)clearDelayedChangeNotifications;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRectForOldCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 portrait:(BOOL)arg2 zoomScale:(float)arg3 oldParallaxFactor:(float)arg4 forImageSize:(struct CGSize { double x1; double x2; })arg5 newZoomScale:(float*)arg6;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRectForViewPort:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 portrait:(BOOL)arg2 zoomScale:(float)arg3 parallaxFactor:(float)arg4 forImageSize:(struct CGSize { double x1; double x2; })arg5 contentScaleFactor:(float)arg6;
 - (id)dataStores;
 - (void)dealloc;
+- (void)delayNotifyingChangeForVariants:(int)arg1;
 - (id)delegate;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (int)effectiveSharedVariantForVariants:(int)arg1;
+- (void)endChangeBatch;
+- (void)getBestCropRect:(out struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 zoomScale:(out float*)arg2 forImageSize:(struct CGSize { double x1; double x2; })arg3 portrait:(BOOL)arg4 parallaxFactor:(float)arg5;
 - (id)homeScreenWallpaperConfiguration;
 - (id)init;
 - (id)initWithWallpaperDataStores:(id)arg1;
-- (id)initWithWallpaperDataStores:(id)arg1 wallpaperSize:(struct CGSize { float x1; float x2; })arg2 scale:(float)arg3 sizeType:(int)arg4;
+- (id)initWithWallpaperDataStores:(id)arg1 wallpaperSize:(struct CGSize { double x1; double x2; })arg2 scale:(float)arg3 sizeType:(int)arg4;
 - (BOOL)isCachedVariantsShareWallpaperConfigurationValid;
+- (BOOL)isInChangeBatch;
 - (BOOL)isProceduralWallpaperInfoValid:(id)arg1;
 - (BOOL)isVideoSupportedByDefaultForVariant:(int)arg1;
 - (BOOL)isVideoSupportedForVariant:(int)arg1;
@@ -67,9 +75,10 @@
 - (id)magnifyMode;
 - (void)migrateWallpaperOptionsForImageIfNecessaryForVariant:(int)arg1;
 - (id)normalizeImage:(id)arg1;
+- (void)notifyDelegateOfChangesToVariants:(int)arg1;
 - (unsigned int)numberOfCachedStaticImages;
 - (int)parallaxDeviceType;
-- (float)parallaxFactorForCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 portrait:(BOOL)arg2 forImageSize:(struct CGSize { float x1; float x2; })arg3 zoomScale:(float)arg4;
+- (float)parallaxFactorForCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 portrait:(BOOL)arg2 forImageSize:(struct CGSize { double x1; double x2; })arg3 zoomScale:(float)arg4;
 - (void)performMigrationWithFailureHandler:(id /* block */)arg1;
 - (void)preheatImageCacheForVariant:(int)arg1;
 - (Class)proceduralWallpaperClassForIdentifier:(id)arg1;
@@ -85,8 +94,8 @@
 - (void)removeWallpaperOptionsForVariants:(int)arg1;
 - (void)restoreDefaultWallpaperForAllVariantsAndNotify:(BOOL)arg1;
 - (void)safeMigrateWallpaperImageIfNecessary;
-- (BOOL)safeMigrateWallpaperImageIfNecessaryForVariant:(int)arg1;
-- (void)saveCroppedVideo:(id)arg1 toURL:(id)arg2 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 completionHandler:(id /* block */)arg4;
+- (BOOL)safeMigrateWallpaperImageIfNecessaryForVariant:(int)arg1 representingVariants:(int)arg2;
+- (void)saveCroppedVideo:(id)arg1 toURL:(id)arg2 cropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 completionHandler:(id /* block */)arg4;
 - (void)setCachedVariantsShareWallpaperConfiguration:(BOOL)arg1;
 - (void)setCachedVariantsShareWallpaperConfigurationValid:(BOOL)arg1;
 - (void)setDataStores:(id)arg1;
@@ -94,7 +103,7 @@
 - (void)setMagnifyMode:(id)arg1;
 - (BOOL)setProceduralWallpaperIdentifier:(id)arg1 options:(id)arg2 forVariants:(int)arg3;
 - (void)setProceduralWallpaperProvider:(id)arg1;
-- (BOOL)setVideoURL:(id)arg1 forVariant:(int)arg2 shoudCrop:(BOOL)arg3 relativeCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
+- (BOOL)setVideoURL:(id)arg1 forVariant:(int)arg2 shoudCrop:(BOOL)arg3 relativeCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
 - (BOOL)setWallpaperImage:(id)arg1 originalImage:(id)arg2 forVariants:(int)arg3 options:(unsigned int)arg4;
 - (BOOL)setWallpaperImage:(id)arg1 originalImage:(id)arg2 wallpaperOptions:(id)arg3 forVariants:(int)arg4 options:(unsigned int)arg5;
 - (BOOL)setWallpaperImage:(id)arg1 wallpaperOptions:(id)arg2 forVariants:(int)arg3;
@@ -112,11 +121,12 @@
 - (id)wallpaperOptionsForVariant:(int)arg1;
 - (id)wallpaperOriginalImageForVariant:(int)arg1;
 - (float)wallpaperScale;
-- (struct CGSize { float x1; float x2; })wallpaperSize;
-- (struct CGSize { float x1; float x2; })wallpaperSizeIncludingParallaxOverhang;
+- (struct CGSize { double x1; double x2; })wallpaperSize;
+- (struct CGSize { double x1; double x2; })wallpaperSizeIncludingParallaxOverhang;
 - (int)wallpaperSizeType;
 - (id)wallpaperThumbnailImageDataForVariant:(int)arg1;
 - (id)wallpaperThumbnailImageForVariant:(int)arg1;
+- (int)wallpaperTypeForSharedWallpaperConfigurationForTypes:(unsigned int)arg1;
 - (void)wallpaperWillChangeForVariants:(int)arg1;
 
 @end

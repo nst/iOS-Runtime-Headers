@@ -3,7 +3,7 @@
  */
 
 @interface FBSystemGestureManager : NSObject <UIGestureRecognizerDelegate> {
-    NSMapTable *_displayToManagerMap;
+    NSMapTable * _displayToManagerMap;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -19,5 +19,6 @@
 - (id)description;
 - (id)init;
 - (void)removeGestureRecognizer:(id)arg1 fromDisplay:(id)arg2;
+- (id)windowForSystemGesturesForDisplay:(id)arg1;
 
 @end

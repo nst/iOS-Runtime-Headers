@@ -3,7 +3,7 @@
  */
 
 @interface BLTPBActionInformation : PBCodable <NSCopying> {
-    NSData *_context;
+    NSData * _context;
 }
 
 @property (nonatomic, retain) NSData *context;

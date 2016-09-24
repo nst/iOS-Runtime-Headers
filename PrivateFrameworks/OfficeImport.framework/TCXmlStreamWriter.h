@@ -3,10 +3,10 @@
  */
 
 @interface TCXmlStreamWriter : NSObject {
-    NSMutableSet *mAddedIds;
-    BOOL mContentAdded;
-    unsigned int mCurrentDepth;
-    struct _xmlTextWriter { } *mStreamAPI;
+    NSMutableSet * mAddedIds;
+    BOOL  mContentAdded;
+    unsigned int  mCurrentDepth;
+    struct _xmlTextWriter { } * mStreamAPI;
 }
 
 + (BOOL)cleanUpXmlTextWriter:(struct _xmlTextWriter { }*)arg1;

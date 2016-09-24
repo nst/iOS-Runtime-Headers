@@ -3,7 +3,7 @@
  */
 
 @interface CRKFetchResourceRequest : CATTaskRequest {
-    NSURL *_resourceURL;
+    NSURL * _resourceURL;
 }
 
 @property (nonatomic, copy) NSURL *resourceURL;

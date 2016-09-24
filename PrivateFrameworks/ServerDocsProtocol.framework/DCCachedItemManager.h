@@ -3,12 +3,12 @@
  */
 
 @interface DCCachedItemManager : NSObject {
-    NSMutableDictionary *_items;
-    NSOperationQueue *_operationQueue;
-    NSOperationQueue *_presentedItemOperationQueue;
-    NSURL *_presentedItemURL;
-    NSString *_purposeIdentifier;
-    DCService *_service;
+    NSMutableDictionary * _items;
+    NSOperationQueue * _operationQueue;
+    NSOperationQueue * _presentedItemOperationQueue;
+    NSURL * _presentedItemURL;
+    NSString * _purposeIdentifier;
+    DCService * _service;
 }
 
 @property (readonly, retain) NSOperationQueue *presentedItemOperationQueue;

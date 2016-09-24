@@ -3,8 +3,8 @@
  */
 
 @interface _DKCategory : _DKObject <_DKHasComparableValue, _DKHasObjectType, _DKHasPrimaryValue> {
-    _DKCategoryType *_categoryType;
-    int _integerValue;
+    _DKCategoryType * _categoryType;
+    int  _integerValue;
 }
 
 @property (retain) _DKCategoryType *categoryType;
@@ -14,25 +14,26 @@
 @property int integerValue;
 @property (readonly) Class superclass;
 
++ (id)_categoryFromManagedObject:(id)arg1 readMetadata:(BOOL)arg2 cache:(id)arg3;
 + (id)categoryWithInteger:(int)arg1 type:(id)arg2;
 + (id)entityName;
++ (id)objectFromManagedObject:(id)arg1 readMetadata:(BOOL)arg2 cache:(id)arg3;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)categoryType;
 - (int)compareValue:(id)arg1;
-- (BOOL)copyFromManagedObject:(id)arg1 readMetadata:(BOOL)arg2;
 - (BOOL)copyToManagedObject:(id)arg1;
 - (id)description;
+- (double)doubleValue;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithInteger:(int)arg1 type:(id)arg2;
+- (id)initWithInteger:(int)arg1 type:(id)arg2 cache:(id)arg3;
 - (int)integerValue;
 - (id)objectType;
 - (id)primaryValue;
 - (void)setCategoryType:(id)arg1;
 - (void)setIntegerValue:(int)arg1;
-- (double)valueDouble;
-- (long long)valueInteger;
+- (id)stringValue;
 
 @end

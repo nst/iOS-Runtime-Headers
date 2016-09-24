@@ -3,17 +3,17 @@
  */
 
 @interface MIPTVShow : PBCodable <NSCopying> {
-    MIPArtist *_artist;
-    NSString *_episodeId;
-    NSString *_episodeSortId;
+    MIPArtist * _artist;
+    NSString * _episodeId;
+    NSString * _episodeSortId;
     struct { 
         unsigned int seasonNumber : 1; 
         unsigned int videoQuality : 1; 
-    } _has;
-    NSString *_networkName;
-    int _seasonNumber;
-    MIPSeries *_series;
-    int _videoQuality;
+    }  _has;
+    NSString * _networkName;
+    int  _seasonNumber;
+    MIPSeries * _series;
+    int  _videoQuality;
 }
 
 @property (nonatomic, retain) MIPArtist *artist;

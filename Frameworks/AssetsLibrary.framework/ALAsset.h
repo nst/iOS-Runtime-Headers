@@ -3,14 +3,14 @@
  */
 
 @interface ALAsset : NSObject {
-    id _internal;
+    id  _internal;
 }
 
 @property (getter=isEditable, nonatomic, readonly) BOOL editable;
 @property (nonatomic, retain) ALAssetPrivate *internal;
 @property (nonatomic, readonly) ALAsset *originalAsset;
 
-+ (struct CGSize { float x1; float x2; })largePreviewImageSizeForSize:(struct CGSize { float x1; float x2; })arg1;
++ (struct CGSize { double x1; double x2; })largePreviewImageSizeForSize:(struct CGSize { double x1; double x2; })arg1;
 
 - (id)_newContentEditingOutputWithType:(int)arg1;
 - (id)_typeAsString;

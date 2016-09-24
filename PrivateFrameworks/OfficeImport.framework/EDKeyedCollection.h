@@ -3,7 +3,7 @@
  */
 
 @interface EDKeyedCollection : EDCollection {
-    OITSUIntegerKeyDictionary *mMap;
+    OITSUIntegerKeyDictionary * mMap;
 }
 
 - (unsigned int)addObject:(id)arg1;

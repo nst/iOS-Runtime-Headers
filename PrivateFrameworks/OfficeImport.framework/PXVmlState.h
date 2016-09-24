@@ -3,8 +3,8 @@
  */
 
 @interface PXVmlState : OAVReadState {
-    PBPresentationReaderState *mLegacyPresentationState;
-    ESDObject *mLegacyTextGlobals;
+    PBPresentationReaderState * mLegacyPresentationState;
+    ESDObject * mLegacyTextGlobals;
 }
 
 - (void)dealloc;

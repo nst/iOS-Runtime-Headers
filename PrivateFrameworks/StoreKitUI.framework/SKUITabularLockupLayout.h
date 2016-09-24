@@ -3,7 +3,7 @@
  */
 
 @interface SKUITabularLockupLayout : NSObject {
-    NSArray *_columns;
+    NSArray * _columns;
 }
 
 @property (nonatomic, readonly) NSArray *columns;

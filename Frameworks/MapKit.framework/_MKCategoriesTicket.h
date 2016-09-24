@@ -3,7 +3,7 @@
  */
 
 @interface _MKCategoriesTicket : NSObject <MKMapServiceCategoriesTicket> {
-    <GEOMapServiceCategoriesTicket> *_ticket;
+    <GEOMapServiceCategoriesTicket> * _ticket;
 }
 
 @property (readonly, copy) NSString *debugDescription;

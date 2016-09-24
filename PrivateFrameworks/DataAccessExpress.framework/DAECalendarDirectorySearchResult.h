@@ -3,8 +3,8 @@
  */
 
 @interface DAECalendarDirectorySearchResult : NSObject <NSSecureCoding> {
-    NSString *_displayName;
-    NSString *_preferredAddress;
+    NSString * _displayName;
+    NSString * _preferredAddress;
 }
 
 @property (nonatomic, retain) NSString *displayName;

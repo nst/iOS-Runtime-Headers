@@ -3,10 +3,10 @@
  */
 
 @interface MBFileInfo : NSObject <NSCoding, NSCopying> {
-    NSDictionary *_extendedAttributes;
-    BOOL _isDirectory;
-    NSString *_path;
-    int _priority;
+    NSDictionary * _extendedAttributes;
+    BOOL  _isDirectory;
+    NSString * _path;
+    int  _priority;
 }
 
 @property (nonatomic, copy) NSDictionary *extendedAttributes;

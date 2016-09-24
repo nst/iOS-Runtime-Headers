@@ -3,10 +3,10 @@
  */
 
 @interface CalDAVCalendarServerActionItem : CoreDAVItem {
-    CalDAVCalendarServerCancelItem *_cancel;
-    CoreDAVItemWithNoChildren *_create;
-    CalDAVCalendarServerReplyItem *_reply;
-    CalDAVCalendarServerUpdateItem *_update;
+    CalDAVCalendarServerCancelItem * _cancel;
+    CoreDAVItemWithNoChildren * _create;
+    CalDAVCalendarServerReplyItem * _reply;
+    CalDAVCalendarServerUpdateItem * _update;
 }
 
 @property (nonatomic, retain) CalDAVCalendarServerCancelItem *cancel;

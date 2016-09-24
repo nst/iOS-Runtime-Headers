@@ -9,32 +9,32 @@
         struct __compressed_pair<TSTWidthHeightCache_Private::WHCCol *, std::__1::allocator<TSTWidthHeightCache_Private::WHCCol> > { 
             struct WHCCol {} *__first_; 
         } __end_cap_; 
-    } mFittingColumnWidth;
+    }  mFittingColumnWidth;
     struct vector<TSTWidthHeightCache_Private::WHCRow, std::__1::allocator<TSTWidthHeightCache_Private::WHCRow> > { 
         struct WHCRow {} *__begin_; 
         struct WHCRow {} *__end_; 
         struct __compressed_pair<TSTWidthHeightCache_Private::WHCRow *, std::__1::allocator<TSTWidthHeightCache_Private::WHCRow> > { 
             struct WHCRow {} *__first_; 
         } __end_cap_; 
-    } mFittingRowHeight;
+    }  mFittingRowHeight;
     struct _opaque_pthread_rwlock_t { 
         long __sig; 
         BOOL __opaque[124]; 
-    } mLock;
+    }  mLock;
     struct vector<float, std::__1::allocator<float> > { 
-        float *__begin_; 
-        float *__end_; 
-        struct __compressed_pair<float *, std::__1::allocator<float> > { 
-            float *__first_; 
+        double *__begin_; 
+        double *__end_; 
+        struct __compressed_pair<double *, std::__1::allocator<float> > { 
+            double *__first_; 
         } __end_cap_; 
-    } mModelColumnWidth;
+    }  mModelColumnWidth;
     struct vector<float, std::__1::allocator<float> > { 
-        float *__begin_; 
-        float *__end_; 
-        struct __compressed_pair<float *, std::__1::allocator<float> > { 
-            float *__first_; 
+        double *__begin_; 
+        double *__end_; 
+        struct __compressed_pair<double *, std::__1::allocator<float> > { 
+            double *__first_; 
         } __end_cap_; 
-    } mModelRowHeight;
+    }  mModelRowHeight;
 }
 
 - (id).cxx_construct;
@@ -53,23 +53,23 @@
 - (BOOL)insertCols:(unsigned short)arg1 atColumn:(unsigned char)arg2;
 - (BOOL)insertRows:(unsigned short)arg1 atRow:(unsigned short)arg2;
 - (void)logInternalState;
-- (BOOL)moveColsFrom:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 toCol:(unsigned char)arg2;
-- (BOOL)moveRowsFrom:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 toRow:(unsigned short)arg2;
-- (void)p_resetFittingWidthsHeightsForRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (BOOL)moveColsFrom:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 toCol:(unsigned char)arg2;
+- (BOOL)moveRowsFrom:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 toRow:(unsigned short)arg2;
+- (void)p_resetFittingWidthsHeightsForRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (void)resetAllCol;
 - (void)resetAllRow;
 - (void)resetColWidthsStartingWith:(unsigned char)arg1 upToColumn:(unsigned char)arg2;
 - (void)resetFittingHeightsFromCollection:(id)arg1;
 - (BOOL)resetModelCache;
-- (BOOL)resetModelCacheRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (BOOL)resetModelCacheRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (void)resetRowHeightsStartingWith:(unsigned short)arg1 upToRow:(unsigned short)arg2;
-- (BOOL)setFitDims:(struct CGSize { float x1; float x2; })arg1 forCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
-- (BOOL)setFitHeight:(float)arg1 forCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
-- (BOOL)setFitWidth:(float)arg1 forCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
+- (BOOL)setFitDims:(struct CGSize { double x1; double x2; })arg1 forCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
+- (BOOL)setFitHeight:(float)arg1 forCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
+- (BOOL)setFitWidth:(float)arg1 forCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (void)setFittingHeightsFromCollection:(id)arg1;
 - (BOOL)setModelHeight:(float)arg1 forRow:(unsigned short)arg2;
 - (BOOL)setModelWidth:(float)arg1 forColumn:(unsigned char)arg2;
 - (id)validateChangeDescriptors:(id)arg1;
-- (BOOL)verifyDims:(struct CGSize { float x1; float x2; })arg1 forCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
+- (BOOL)verifyDims:(struct CGSize { double x1; double x2; })arg1 forCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 
 @end

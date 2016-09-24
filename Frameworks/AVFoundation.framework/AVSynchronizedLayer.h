@@ -3,7 +3,7 @@
  */
 
 @interface AVSynchronizedLayer : CALayer {
-    AVSynchronizedLayerInternal *_syncLayer;
+    AVSynchronizedLayerInternal * _syncLayer;
 }
 
 @property (nonatomic, retain) AVPlayerItem *playerItem;

@@ -3,7 +3,7 @@
  */
 
 @interface CHDAutomaticObject : NSObject {
-    NSString *mName;
+    NSString * mName;
 }
 
 + (id)automaticEffects;

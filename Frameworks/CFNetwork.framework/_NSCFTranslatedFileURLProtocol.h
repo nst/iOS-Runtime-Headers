@@ -3,7 +3,7 @@
  */
 
 @interface _NSCFTranslatedFileURLProtocol : NSURLProtocol {
-    const struct CFURLProtocolInstanceCallbacks { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); int (*x13)(); void *x14; } *_callbacks;
+    const struct CFURLProtocolInstanceCallbacks { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); int (*x13)(); void *x14; } * _callbacks;
     struct CFURLProtocolClient { 
         int version; 
         void *client; 
@@ -17,8 +17,8 @@
         int (*didFinishLoading)(); 
         int (*didFail)(); 
         int (*didReceiveAuthenticationChallenge)(); 
-    } _cfurlClient;
-    const void *_info;
+    }  _cfurlClient;
+    const void * _info;
 }
 
 + (BOOL)canInitWithRequest:(id)arg1;

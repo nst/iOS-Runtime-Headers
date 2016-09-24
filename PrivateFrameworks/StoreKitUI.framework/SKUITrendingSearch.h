@@ -3,8 +3,8 @@
  */
 
 @interface SKUITrendingSearch : NSObject {
-    NSString *_URLString;
-    NSString *_term;
+    NSString * _URLString;
+    NSString * _term;
 }
 
 @property (nonatomic, retain) NSString *URLString;

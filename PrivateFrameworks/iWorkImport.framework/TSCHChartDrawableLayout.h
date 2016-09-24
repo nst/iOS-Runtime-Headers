@@ -6,19 +6,19 @@
     struct { 
         unsigned int chartLayoutState : 1; 
         unsigned int chartLayoutStructure : 1; 
-    } mChartInvalidFlags;
-    TSCHChartLayout *mChartLayout;
-    BOOL mInResize;
-    TSDLayoutGeometry *mLastChartAreaGeometry;
-    TSDLayoutGeometry *mLastPureGeometry;
-    TSDLayoutGeometry *mLayoutGeometryWhileCallingSuperComputeLayoutGeometry;
-    TSDLayoutGeometry *mLegendGeometryForResize;
-    TSCHChartDrawableLayoutLegendResizer *mLegendResizer;
+    }  mChartInvalidFlags;
+    TSCHChartLayout * mChartLayout;
+    BOOL  mInResize;
+    TSDLayoutGeometry * mLastChartAreaGeometry;
+    TSDLayoutGeometry * mLastPureGeometry;
+    TSDLayoutGeometry * mLayoutGeometryWhileCallingSuperComputeLayoutGeometry;
+    TSDLayoutGeometry * mLegendGeometryForResize;
+    TSCHChartDrawableLayoutLegendResizer * mLegendResizer;
     struct CGSize { 
-        float width; 
-        float height; 
-    } mMinSizeCache;
-    BOOL mSuppressChartLayoutInvalidation;
+        double width; 
+        double height; 
+    }  mMinSizeCache;
+    BOOL  mSuppressChartLayoutInvalidation;
 }
 
 @property (nonatomic, readonly) TSCHChartInfo *chartInfo;
@@ -38,26 +38,27 @@
 @property (nonatomic, copy) NSArray *pieWedgeExplosions;
 @property (nonatomic, copy) NSDictionary *seriesIndexedPieWedgeExplosions;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentFrame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentFrameForProvidingGuidesInRoot;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForStandardKnobs;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsInfluencingExteriorWrap;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alignmentFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alignmentFrameForProvidingGuidesInRoot;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsForStandardKnobs;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsInfluencingExteriorWrap;
 - (BOOL)canRotateChildLayout:(id)arg1;
 - (BOOL)changesShouldClearLayout:(id)arg1;
 - (BOOL)changesShouldSetNeedsLayout:(id)arg1;
 - (id)chartDrawableInfo;
 - (id)chartInfo;
 - (id)chartLayout;
+- (id)childSearchTargets;
 - (id)computeInfoGeometryDuringResize;
 - (id)computeInfoGeometryFromPureLayoutGeometry:(id)arg1;
 - (id)computeLayoutGeometry;
 - (unsigned int)dataSetIndex;
 - (void)dealloc;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForCulling;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForCulling;
 - (id)i_computeUnitedWrapPath;
 - (id)i_computeWrapPath;
 - (id)initWithInfo:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })insertionFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })insertionFrame;
 - (void)invalidate;
 - (void)invalidateChartLayoutState;
 - (void)invalidateChartLayoutStructure;
@@ -66,15 +67,15 @@
 - (id)layoutGeometryFromInfo;
 - (id)legendGeometry;
 - (id)legendModelGeometry;
-- (struct CGSize { float x1; float x2; })minimumSize;
+- (struct CGSize { double x1; double x2; })minimumSize;
 - (id)model;
-- (void)offsetGeometryBy:(struct CGPoint { float x1; float x2; })arg1;
-- (void)p_addEdgeAlignmentGuidesForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 array:(id)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_addMultiDataControlToInlineWrapBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)offsetGeometryBy:(struct CGPoint { double x1; double x2; })arg1;
+- (void)p_addEdgeAlignmentGuidesForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 array:(id)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })p_addMultiDataControlToInlineWrapBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (float)p_approximateMultiDataControlUnscaledHeight;
 - (float)p_approximateMultiDataControlUnscaledMinimumWidth;
 - (float)p_approximatedAdditionalHeightForMultiDataControlWithMinimumAccommodatingScale:(float)arg1;
-- (struct CGSize { float x1; float x2; })p_calcMinSize;
+- (struct CGSize { double x1; double x2; })p_calcMinSize;
 - (id)p_chartLayout;
 - (id)p_chartLayout2D;
 - (id)p_chartLayoutNoCreate;
@@ -89,8 +90,8 @@
 - (id)p_legendGeometryForResize;
 - (id)p_legendResizer;
 - (void)p_postLayoutPropertyValueDidChangeNotification;
-- (void)p_setLegendGeometry:(id)arg1 fromTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 onLayout:(id)arg3 shouldUpdateLayoutItemSize:(BOOL)arg4;
-- (void)p_setLegendSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)p_setLegendGeometry:(id)arg1 fromTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2 onLayout:(id)arg3 shouldUpdateLayoutItemSize:(BOOL)arg4;
+- (void)p_setLegendSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)p_validateChartLayout;
 - (id)pieWedgeExplosionSeriesIndices;
 - (id)pieWedgeExplosions;
@@ -115,7 +116,9 @@
 - (BOOL)supportsParentRotation;
 - (void)take3DDepth;
 - (void)validate;
+- (float)viewScaleForZoomingToSelectionPath:(id)arg1 targetPointSize:(float)arg2;
 - (id)visibleGeometries;
+- (void)willBeAddedToLayoutController:(id)arg1;
 - (int)wrapFitType;
 
 @end

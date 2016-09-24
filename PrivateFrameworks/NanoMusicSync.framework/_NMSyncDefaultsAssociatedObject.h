@@ -3,7 +3,7 @@
  */
 
 @interface _NMSyncDefaultsAssociatedObject : NSObject {
-    MPMediaPlaylist *_assetSyncPlaylist;
+    MPMediaPlaylist * _assetSyncPlaylist;
 }
 
 @property (nonatomic, retain) MPMediaPlaylist *assetSyncPlaylist;

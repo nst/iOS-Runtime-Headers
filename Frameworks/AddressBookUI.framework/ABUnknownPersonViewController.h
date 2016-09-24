@@ -3,14 +3,14 @@
  */
 
 @interface ABUnknownPersonViewController : UIViewController <UIActionSheetDelegate> {
-    ABPersonTableViewActionsDelegate *_actionsDelegate;
-    BOOL _allowsContactBlocking;
-    ABContactViewController *_contactViewController;
-    ABPersonTableViewDataSource *_dataSource;
-    id _helper;
-    id _reserved;
-    ABPersonTableViewSharingDelegate *_sharingDelegate;
-    <ABUnknownPersonViewControllerDelegate> *_unknownPersonViewDelegate;
+    ABPersonTableViewActionsDelegate * _actionsDelegate;
+    BOOL  _allowsContactBlocking;
+    ABContactViewController * _contactViewController;
+    ABPersonTableViewDataSource * _dataSource;
+    id  _helper;
+    id  _reserved;
+    ABPersonTableViewSharingDelegate * _sharingDelegate;
+    <ABUnknownPersonViewControllerDelegate> * _unknownPersonViewDelegate;
 }
 
 @property (nonatomic, readonly) ABPersonTableViewActionsDelegate *actionsDelegate;
@@ -67,7 +67,7 @@
 - (void)_createNewContacts;
 - (id)_findMatchingCardsForRecord:(void*)arg1;
 - (id)_forwarder;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
+- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; int x7; }*)arg1;
 - (void)_showCardViewerForIndex:(int)arg1;
 - (void)_showUnmergedContactsAlert;
 - (id)_unmergedAlertSheet;

@@ -3,8 +3,8 @@
  */
 
 @interface WBSParsecSearchTwitterResult : WBSParsecSearchResult {
-    WBSParsecImageRepresentation *_sectionHeaderGlyph;
-    NSString *_sectionHeaderSubscript;
+    WBSParsecImageRepresentation * _sectionHeaderGlyph;
+    NSString * _sectionHeaderSubscript;
 }
 
 @property (nonatomic, readonly) NSString *sectionHeaderSubscript;

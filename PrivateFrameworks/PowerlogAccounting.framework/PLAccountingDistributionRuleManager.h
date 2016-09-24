@@ -3,9 +3,9 @@
  */
 
 @interface PLAccountingDistributionRuleManager : PLAccountingRuleManager {
-    NSMutableDictionary *_distributionIDToDistributionRules;
-    NSRegularExpression *_regex;
-    NSMutableDictionary *_rootNodeIDToNodeIDToDistributionRule;
+    NSMutableDictionary * _distributionIDToDistributionRules;
+    NSRegularExpression * _regex;
+    NSMutableDictionary * _rootNodeIDToNodeIDToDistributionRule;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *distributionIDToDistributionRules;

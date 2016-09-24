@@ -3,16 +3,16 @@
  */
 
 @interface YahooDoppelganger : NSObject {
-    BOOL _cancelled;
-    NSURLSessionDataTask *_dataTask;
-    <NSURLSessionDataDelegate> *_delegate;
-    NSString *_expectedRequestPattern;
-    NSData *_response;
-    unsigned int _responseChunkDelay;
-    unsigned int _responseChunkInitialDelay;
-    unsigned int _responseChunkSize;
-    unsigned int _responseOffset;
-    NSURLSession *_session;
+    BOOL  _cancelled;
+    NSURLSessionDataTask * _dataTask;
+    <NSURLSessionDataDelegate> * _delegate;
+    NSString * _expectedRequestPattern;
+    NSData * _response;
+    unsigned int  _responseChunkDelay;
+    unsigned int  _responseChunkInitialDelay;
+    unsigned int  _responseChunkSize;
+    unsigned int  _responseOffset;
+    NSURLSession * _session;
 }
 
 @property (nonatomic) <NSURLSessionDataDelegate> *delegate;

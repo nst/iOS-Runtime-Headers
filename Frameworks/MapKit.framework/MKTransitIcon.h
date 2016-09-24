@@ -3,8 +3,8 @@
  */
 
 @interface MKTransitIcon : NSObject <GEOTransitIconDataSource> {
-    unsigned int _cartoID;
-    unsigned int _defaultTransitType;
+    unsigned int  _cartoID;
+    unsigned int  _defaultTransitType;
 }
 
 @property (nonatomic, readonly) unsigned int cartoID;

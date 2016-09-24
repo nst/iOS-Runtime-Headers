@@ -3,18 +3,18 @@
  */
 
 @interface NGSGlance : NSObject <NSCopying> {
-    BOOL _active;
-    NSString *_appBundleIdentifier;
-    BOOL _cannotBeDisabled;
-    BOOL _defaultGlance;
-    NSString *_glanceBundleIdentifier;
-    NSString *_glanceBundlePath;
-    unsigned int _installState;
-    NSString *_name;
-    BOOL _prelaunch;
-    NSString *_sockPuppetIdentifier;
-    BOOL _systemGlance;
-    unsigned int _watchKitVersion;
+    BOOL  _active;
+    NSString * _appBundleIdentifier;
+    BOOL  _cannotBeDisabled;
+    BOOL  _defaultGlance;
+    NSString * _glanceBundleIdentifier;
+    NSString * _glanceBundlePath;
+    unsigned int  _installState;
+    NSString * _name;
+    BOOL  _prelaunch;
+    NSString * _sockPuppetIdentifier;
+    BOOL  _systemGlance;
+    unsigned int  _watchKitVersion;
 }
 
 @property (getter=isActive, nonatomic) BOOL active;

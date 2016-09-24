@@ -3,18 +3,18 @@
  */
 
 @interface PFUbiquityImportContext : NSObject {
-    PFUbiquityPeer *_actingPeer;
-    PFUbiquitySwitchboardCacheWrapper *_cacheWrapper;
-    PFUbiquityKnowledgeVector *_currentKnowledgeVector;
-    NSString *_exportingPeerID;
-    NSMutableDictionary *_globalIDToFetchedObject;
-    NSDictionary *_globalIDToLocalIDURICache;
-    PFUbiquityBaselineHeuristics *_heuristics;
-    PFUbiquityKnowledgeVector *_kv;
-    _PFUbiquityStack *_stack;
-    PFUbiquityStoreMetadata *_storeMetadata;
-    PFUbiquityStoreSaveSnapshot *_storeSaveSnapshot;
-    PFUbiquityTransactionLog *_transactionLog;
+    PFUbiquityPeer * _actingPeer;
+    PFUbiquitySwitchboardCacheWrapper * _cacheWrapper;
+    PFUbiquityKnowledgeVector * _currentKnowledgeVector;
+    NSString * _exportingPeerID;
+    NSMutableDictionary * _globalIDToFetchedObject;
+    NSDictionary * _globalIDToLocalIDURICache;
+    PFUbiquityBaselineHeuristics * _heuristics;
+    PFUbiquityKnowledgeVector * _kv;
+    _PFUbiquityStack * _stack;
+    PFUbiquityStoreMetadata * _storeMetadata;
+    PFUbiquityStoreSaveSnapshot * _storeSaveSnapshot;
+    PFUbiquityTransactionLog * _transactionLog;
 }
 
 @property (nonatomic, readonly) PFUbiquityPeer *actingPeer;

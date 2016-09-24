@@ -3,11 +3,10 @@
  */
 
 @interface AVQueuePlayer : AVPlayer {
-    AVQueuePlayerInternal *_queuePlayer;
+    AVQueuePlayerInternal * _queuePlayer;
 }
 
 + (void)initialize;
-+ (id)playerWithPlayerItem:(id)arg1;
 + (id)queuePlayerWithItems:(id)arg1;
 
 - (int)_defaultActionAtItemEnd;

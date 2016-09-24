@@ -3,7 +3,7 @@
  */
 
 @interface SKJSUIAnimatorDOMFeature : IKJSObject <SKJSUIAnimatorDOMFeature> {
-    SKUIAnimatorDOMFeature *_feature;
+    SKUIAnimatorDOMFeature * _feature;
 }
 
 - (void).cxx_destruct;

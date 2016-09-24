@@ -3,10 +3,10 @@
  */
 
 @interface MPStoreCollectionCompletionOffering : NSObject {
-    MPMediaQuery *_localItemsQuery;
-    MPStoreOfferMediaItemCollection *_mergedCollection;
-    MPStoreOfferMediaItemCollection *_offeredCollection;
-    int _preferredStoreOfferVariant;
+    MPMediaQuery * _localItemsQuery;
+    MPStoreOfferMediaItemCollection * _mergedCollection;
+    MPStoreOfferMediaItemCollection * _offeredCollection;
+    int  _preferredStoreOfferVariant;
 }
 
 @property (nonatomic, readonly) MPStoreOfferMediaItemCollection *itemsWithCompletionsCollection;

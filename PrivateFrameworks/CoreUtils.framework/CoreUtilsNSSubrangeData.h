@@ -3,13 +3,14 @@
  */
 
 @interface CoreUtilsNSSubrangeData : NSData {
-    NSData *_data;
+    NSData * _data;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
+    }  _range;
 }
 
+- (void).cxx_destruct;
 - (BOOL)_isCompact;
 - (const void*)bytes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

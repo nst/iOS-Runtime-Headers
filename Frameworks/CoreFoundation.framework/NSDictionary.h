@@ -2,9 +2,11 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSDictionary : NSObject <CKDParsedObject, CSCoderEncoder, NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable>
+@interface NSDictionary : NSObject <CKDParsedObject, CSCoderEncoder, NSCopying, NSFastEnumeration, NSFetchRequestResult, NSMutableCopying, NSSecureCoding, PHFetchDictionaryAccessing, PQLBindable>
 
-@property (nonatomic, readonly) float averageRating;
+@property (nonatomic, readonly) NSNumber *__im_associatedMessageContentType;
+@property (nonatomic, readonly) NSString *__im_associatedMessageSummary;
+@property (nonatomic, readonly) double averageRating;
 @property (nonatomic, readonly) NSString *bundleId;
 @property (nonatomic, readonly) NSArray *categories;
 @property (readonly) unsigned int count;
@@ -12,13 +14,19 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) unsigned short fileHFSFlags;
-@property (nonatomic, readonly) unsigned long long fileHFSResourceForkSize;
+@property (nonatomic, readonly) unsigned int fileHFSResourceForkSize;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *hk_bundleId;
+@property (nonatomic, readonly) NSArray *hk_categories;
+@property (nonatomic, readonly) BOOL hk_isInstalled;
+@property (nonatomic, readonly) NSString *hk_priceFormatted;
+@property (nonatomic, readonly) NSNumber *hk_storeID;
+@property (nonatomic, readonly) NSString *hk_title;
 @property (nonatomic, readonly) BOOL isInstalled;
 @property (nonatomic, readonly) BOOL isOfficialApp;
-@property (nonatomic) unsigned long long lastClientRevision;
-@property (nonatomic) unsigned long long lastServerRevision;
-@property (nonatomic) unsigned long long newRevision;
+@property (nonatomic) unsigned int lastClientRevision;
+@property (nonatomic) unsigned int lastServerRevision;
+@property (nonatomic) unsigned int newRevision;
 @property (readonly) NSString *npkRelevancyRelevantText;
 @property (readonly) NSString *npkRelevancyUniqueID;
 @property (nonatomic, readonly) NSString *priceFormatted;
@@ -101,6 +109,7 @@
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
 - (void)CKAssignToContainerWithID:(id)arg1;
+- (id)CKPropertiesToDescribe:(BOOL)arg1;
 
 // Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
 
@@ -112,7 +121,14 @@
 
 // Image: /System/Library/Frameworks/CoreSpotlight.framework/CoreSpotlight
 
+- (void)encodeKeysAndValuesWithCSCoder:(id)arg1 filterBlock:(id /* block */)arg2;
 - (void)encodeWithCSCoder:(id)arg1;
+
+// Image: /System/Library/Frameworks/EventKit.framework/EventKit
+
+- (id)dictionaryByMergingWithDictionary:(id)arg1;
+- (id)objectForKey:(id)arg1 withDefaultValueBlock:(id /* block */)arg2;
+- (id)objectOrDefaultValueForKey:(id)arg1;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
@@ -143,7 +159,7 @@
 - (id)fileOwnerAccountName;
 - (unsigned int)fileOwnerAccountNumber;
 - (unsigned int)filePosixPermissions;
-- (unsigned long long)fileSize;
+- (unsigned int)fileSize;
 - (unsigned int)fileSystemFileNumber;
 - (int)fileSystemNumber;
 - (id)fileType;
@@ -158,50 +174,17 @@
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
-+ (Class)_hk_expectedClassForKey:(id)arg1;
 + (BOOL)_hk_validateMetadataValueContent:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
-+ (id)hk_acceptedMetadataKeyClasses;
 + (id)hk_acceptedMetadataValueClasses;
-+ (BOOL)hk_acceptsMetadataKey:(id)arg1;
 + (BOOL)hk_acceptsMetadataValue:(id)arg1;
 + (id)hk_secureCodingClasses;
 
-- (BOOL)hk_validateMetadataKeysAndValuesWithError:(id*)arg1;
+- (BOOL)hk_validateMetadataKeysAndValuesAllowingPrivateMetadataKeys:(BOOL)arg1 error:(id*)arg2;
 
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
-- (id)arrayForKey:(id)arg1;
-- (id)base64EncodedDataForKey:(id)arg1;
-- (BOOL)boolForKey:(id)arg1;
-- (BOOL)boolForKey:(id)arg1 keyPresent:(BOOL*)arg2;
-- (id)calendarForKey:(id)arg1;
-- (id)calendarFromDataForKey:(id)arg1;
-- (id)dataForKey:(id)arg1;
-- (id)dateComponentsForKey:(id)arg1;
-- (id)dateComponentsFromDataForKey:(id)arg1;
-- (id)dateForKey:(id)arg1;
-- (id)dictionaryForKey:(id)arg1;
-- (id)errorForKey:(id)arg1;
-- (id)errorFromDataForKey:(id)arg1;
 - (id)locationFromDataForKey:(id)arg1;
-- (id)mutableArrayForKey:(id)arg1;
-- (id)mutableDictionaryForKey:(id)arg1;
-- (id)mutableSetForKey:(id)arg1;
-- (id)nsValueForKey:(id)arg1;
-- (id)nullForKey:(id)arg1;
-- (id)numberForKey:(id)arg1;
-- (id)predicateFromDataForKey:(id)arg1;
 - (id)regionFromDataForKey:(id)arg1;
-- (id)secureDescriptionWithBlacklistKeys:(id)arg1;
-- (id)secureDescriptionWithIndent:(id)arg1 newLine:(BOOL)arg2 blacklistedKeys:(id)arg3;
-- (id)setForKey:(id)arg1;
-- (id)shortDescription;
-- (id)stringForKey:(id)arg1;
-- (id)timeZoneForKey:(id)arg1;
-- (id)timeZoneFromDataForKey:(id)arg1;
-- (id)urlForKey:(id)arg1;
-- (id)uuidForKey:(id)arg1;
-- (id)uuidFromStringForKey:(id)arg1;
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
@@ -226,6 +209,13 @@
 
 - (id)mf_filterUsingMap:(id)arg1 inverse:(BOOL)arg2;
 
+// Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
+
+- (unsigned int)_hashQuery;
+- (id)_parseQueryForIdentifiers:(id)arg1;
+- (id)insertExtensionPointVersion:(id)arg1;
+- (id)ls_resolvePlugInKitInfoPlistWithDictionary:(id)arg1;
+
 // Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
 
 - (id)CAMLType;
@@ -234,10 +224,10 @@
 
 // Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
 
-- (struct SCNMatrix4 { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })SCNMatrix4Value;
+- (struct SCNMatrix4 { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })SCNMatrix4Value;
 - (id)SCNMutableDeepCopy;
-- (struct SCNVector3 { float x1; float x2; float x3; })SCNVector3Value;
-- (struct SCNVector4 { float x1; float x2; float x3; float x4; })SCNVector4Value;
+- (struct SCNVector3 { double x1; double x2; double x3; })SCNVector3Value;
+- (struct SCNVector4 { double x1; double x2; double x3; double x4; })SCNVector4Value;
 - (unsigned int)SCN_safeHash;
 
 // Image: /System/Library/Frameworks/Social.framework/Social
@@ -255,9 +245,28 @@
 - (id)_web_messageText;
 - (int)_web_messageType;
 
+// Image: /System/Library/Frameworks/UserNotifications.framework/UserNotifications
+
+- (id)un_nonEmptyCopy;
+- (id)un_safeCastObjectForKey:(id)arg1 class:(Class)arg2;
+
+// Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
+
+- (id)vs_arrayForKey:(id)arg1;
+- (id)vs_dictionaryForKey:(id)arg1;
+- (id)vs_numberForKey:(id)arg1;
+- (id)vs_objectOfClass:(Class)arg1 forKey:(id)arg2;
+- (id)vs_stringForKey:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AccessibilitySharedSupport.framework/AccessibilitySharedSupport
+
+- (id)axssDecodeArrayOfClass:(Class)arg1 forKey:(id)arg2;
+- (BOOL)axssDecodeBoolForKey:(id)arg1;
+- (id)axssDecodeObjectOfClass:(Class)arg1 forKey:(id)arg2;
+
 // Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
 
-+ (id)dictionaryWithAXAuditIssue:(long)arg1 description:(id)arg2 resolution:(id)arg3 element:(id)arg4;
++ (id)dictionaryWithAXAuditIssue:(long)arg1 element:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
 
@@ -270,20 +279,20 @@
 - (id)displayName;
 - (id)enabledDataClasses;
 - (id)grappaInfo;
-- (unsigned long long)lastClientRevision;
-- (unsigned long long)lastServerRevision;
+- (unsigned int)lastClientRevision;
+- (unsigned int)lastServerRevision;
 - (id)model;
-- (unsigned long long)newRevision;
+- (unsigned int)newRevision;
 - (id)osType;
 - (id)osVersion;
 - (void)setDevicePairingId:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setEnabledDataClasses:(id)arg1;
 - (void)setGrappaInfo:(id)arg1;
-- (void)setLastClientRevision:(unsigned long long)arg1;
-- (void)setLastServerRevision:(unsigned long long)arg1;
+- (void)setLastClientRevision:(unsigned int)arg1;
+- (void)setLastServerRevision:(unsigned int)arg1;
 - (void)setModel:(id)arg1;
-- (void)setNewRevision:(unsigned long long)arg1;
+- (void)setNewRevision:(unsigned int)arg1;
 - (void)setOsType:(id)arg1;
 - (void)setOsVersion:(id)arg1;
 - (void)setVersionToken:(id)arg1;
@@ -297,13 +306,24 @@
 
 - (BOOL)bs_boolForKey:(id)arg1;
 - (id)bs_dictionaryByAddingEntriesFromDictionary:(id)arg1;
-- (void)bs_eachValue:(id /* block */)arg1;
+- (void)bs_each:(id /* block */)arg1;
+- (id)bs_filter:(id /* block */)arg1;
+- (id)bs_safeArrayForKey:(id)arg1;
+- (BOOL)bs_safeBOOLForKey:(id)arg1;
+- (id)bs_safeDictionaryForKey:(id)arg1;
 - (id)bs_safeObjectForKey:(id)arg1 ofType:(Class)arg2;
+- (id)bs_safeStringForKey:(id)arg1;
+- (id)bs_safeURLForKey:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
 
 - (BOOL)bb_boolForKey:(id)arg1;
 - (int)bb_integerForKey:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
+
+- (id)idsMetadataFileKey;
+- (int)idsMetadataFileURLType;
 
 // Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
 
@@ -358,7 +378,12 @@
 
 // Image: /System/Library/PrivateFrameworks/ContactsFoundation.framework/ContactsFoundation
 
+- (void)_cn_each:(id /* block */)arg1;
 - (id)_cn_filter:(id /* block */)arg1;
+- (id)_cn_keysAndValues;
+- (id)_cn_map:(id /* block */)arg1;
+- (id)_cn_mapKeys:(id /* block */)arg1;
+- (id)_cn_mapValues:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
 
@@ -366,13 +391,125 @@
 - (id)CDVObjectForKeyCaseInsensitive:(id)arg1;
 - (id)CDVObjectForKeyWithNameSpace:(id)arg1 andName:(id)arg2;
 
-// Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
+// Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
 
-- (id)_cd_queryItems;
+- (id)MSASAlbumResetSyncAlbumGUID;
+- (id)MSASEventIsDueToAlbumDeletionAlbumGUID;
+- (id)MSASEventIsDueToAssetCollectionDeletionAssetCollectionGUID;
+- (BOOL)MSASIsErrorRecovery;
+- (BOOL)MSASIsGlobalResetSync;
+- (BOOL)MSASIsLocalChange;
+- (BOOL)MSASIsNotInteresting;
+- (id)MSDeepCopy;
+- (id)MSDeepCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)MSMutableDeepCopy;
+- (id)MSMutableDeepCopyWithZone:(struct _NSZone { }*)arg1;
 
-// Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
+// Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
+
+- (id)parsec_URLForKey:(id)arg1;
+- (id)parsec_UUIDForKey:(id)arg1;
+- (id)parsec_arrayForKey:(id)arg1;
+- (BOOL)parsec_boolForKey:(id)arg1;
+- (id)parsec_dataForKey:(id)arg1;
+- (id)parsec_dateForKey:(id)arg1;
+- (id)parsec_dictionaryForKey:(id)arg1;
+- (id)parsec_numberForKey:(id)arg1;
+- (id)parsec_stringForKey:(id)arg1;
+- (id)sf_asActionItem:(id)arg1;
+- (id)sf_asAppLink:(id)arg1;
+- (id)sf_asAppLinkCardSection:(id)arg1;
+- (id)sf_asDescriptionCardSection:(id)arg1;
+- (id)sf_asFormattedText:(id)arg1;
+- (id)sf_asImage:(id)arg1;
+- (id)sf_asKeyValueDataCardSection:(id)arg1;
+- (id)sf_asMediaDetail:(id)arg1;
+- (id)sf_asMediaInfoCardSection:(id)arg1;
+- (id)sf_asMediaItem:(id)arg1;
+- (id)sf_asMediaOffer:(id)arg1;
+- (id)sf_asMediaPlayerCardSection:(id)arg1;
+- (id)sf_asMetaInfoCardSection:(id)arg1;
+- (id)sf_asNowPlayingCardSection:(id)arg1;
+- (id)sf_asPunchout;
+- (id)sf_asPunchout:(id)arg1;
+- (id)sf_asRichText:(id)arg1;
+- (id)sf_asRichTitleCardSection:(id)arg1;
+- (id)sf_asRowCardSection:(id)arg1;
+- (id)sf_asScoreboardCardSection:(id)arg1;
+- (id)sf_asSocialMediaPostCardSection:(id)arg1;
+- (id)sf_asStockChartCardSection:(id)arg1;
+- (id)sf_asTableAlignmentSchema;
+- (id)sf_asTableRowCardSection:(id)arg1;
+- (id)sf_asTextColumnsCardSection:(id)arg1;
+- (id)sf_asTitleCardSection:(id)arg1;
+- (id)sf_asTrack:(id)arg1;
+- (id)sf_asTrackListCardSection:(id)arg1;
+- (void)sf_baseCardSection:(id)arg1;
+- (id)sf_imageForKey:(id)arg1 reply:(id)arg2;
+- (unsigned int)sf_textColorForKey:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
+
+- (BOOL)getLinkState:(BOOL*)arg1 physicalAddress:(unsigned int*)arg2;
+
+// Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
+
+- (BOOL)hasCaseIgnoringKey:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
+
+- (id)DAMergeOverrideDictionary:(id)arg1;
+- (id)DAObjectForKeyCaseInsensitive:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/FMCoreLite.framework/FMCoreLite
+
++ (id)dictionaryWithContentsOfData:(id)arg1;
++ (id)dictionaryWithContentsOfURL:(id)arg1 error:(id*)arg2;
++ (id)fm_dictionaryWithContentsOfData:(id)arg1;
++ (id)fm_dictionaryWithContentsOfURL:(id)arg1 error:(id*)arg2;
+
+- (id)dictionaryWithLowercaseKeys;
+- (id)fm_dictionaryByMappingValues:(id /* block */)arg1;
+- (id)fm_dictionaryWithLowercaseKeys;
+- (id)fm_filter:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
+
+- (id)_FTFilteredDictionaryForAPS;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
+
++ (id)_gkClientImageDictionaryForServerImageURLs:(id)arg1;
++ (id)_gkDictionaryWithFormEncodedString:(id)arg1;
++ (id)_gkImageCacheKeyPathsByKey;
+
+- (id)_gkDescriptionWithChildren:(int)arg1;
+- (id)_gkDictionaryByRemovingObjectForKey:(id)arg1;
+- (id)_gkDictionaryByRemovingObjectsForKeys:(id)arg1;
+- (id)_gkImageURLForSize:(int)arg1 scale:(float)arg2;
+- (id)_gkImageURLForSize:(int)arg1 scale:(float)arg2 foundSize:(out unsigned int*)arg3;
+- (id)_gkSubDictionaryWithKeys:(id)arg1;
+- (id)_gkSubDictionaryWithKeys:(id)arg1 mappedToNewKeys:(id)arg2;
+- (id)_gkValuesForKeys:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/GameKitServices.framework/Frameworks/AVConference.framework/AVConference
+
+- (id)copyGKSDeep;
+- (id)copyGKSDeepMutable;
+
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
++ (id)_geo_dictionaryFromXPCObject:(id)arg1;
++ (id)_geo_replyDictionaryForError:(id)arg1 key:(id)arg2;
+
+- (id)_geo_errorForKey:(id)arg1;
+- (id)_geo_newXPCObject;
+- (id)_placeOrCurrentLocation:(BOOL*)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
 
 - (id)arrayForKey:(id)arg1;
+- (id)arrayOfDateComponentsFromDataForKey:(id)arg1;
 - (id)base64EncodedDataForKey:(id)arg1;
 - (BOOL)boolForKey:(id)arg1;
 - (BOOL)boolForKey:(id)arg1 keyPresent:(BOOL*)arg2;
@@ -403,82 +540,35 @@
 - (id)uuidForKey:(id)arg1;
 - (id)uuidFromStringForKey:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
-
-- (id)MSASAlbumResetSyncAlbumGUID;
-- (id)MSASEventIsDueToAlbumDeletionAlbumGUID;
-- (id)MSASEventIsDueToAssetCollectionDeletionAssetCollectionGUID;
-- (BOOL)MSASIsErrorRecovery;
-- (BOOL)MSASIsGlobalResetSync;
-- (BOOL)MSASIsLocalChange;
-- (BOOL)MSASIsNotInteresting;
-- (id)MSDeepCopy;
-- (id)MSDeepCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)MSMutableDeepCopy;
-- (id)MSMutableDeepCopyWithZone:(struct _NSZone { }*)arg1;
-
-// Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
-
-- (BOOL)getLinkState:(BOOL*)arg1 physicalAddress:(unsigned int*)arg2;
-
-// Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
-
-- (BOOL)hasCaseIgnoringKey:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
-
-- (id)DAMergeOverrideDictionary:(id)arg1;
-- (id)DAObjectForKeyCaseInsensitive:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/FMCore.framework/FMCore
-
-+ (id)dictionaryWithContentsOfData:(id)arg1;
-
-- (id)dictionaryWithLowercaseKeys;
-
-// Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
-
-- (id)_FTFilteredDictionaryForAPS;
-
-// Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
-
-+ (id)_gkClientImageDictionaryForServerImageURLs:(id)arg1;
-+ (id)_gkDictionaryWithFormEncodedString:(id)arg1;
-+ (id)_gkImageCacheKeyPathsByKey;
-
-- (id)_gkDescriptionWithChildren:(int)arg1;
-- (id)_gkDictionaryByRemovingObjectForKey:(id)arg1;
-- (id)_gkDictionaryByRemovingObjectsForKeys:(id)arg1;
-- (id)_gkImageURLForSize:(int)arg1 scale:(float)arg2;
-- (id)_gkImageURLForSize:(int)arg1 scale:(float)arg2 foundSize:(out unsigned int*)arg3;
-- (id)_gkSubDictionaryWithKeys:(id)arg1;
-- (id)_gkSubDictionaryWithKeys:(id)arg1 mappedToNewKeys:(id)arg2;
-- (id)_gkValuesForKeys:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/GameKitServices.framework/Frameworks/AVConference.framework/AVConference
-
-- (id)deepCopy;
-- (id)gksDeepMutableCopy;
-
-// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
-
-+ (id)_geo_dictionaryFromXPCObject:(id)arg1;
-+ (id)_geo_replyDictionaryForError:(id)arg1 key:(id)arg2;
-
-- (id)_geo_errorForKey:(id)arg1;
-- (id)_geo_newXPCObject;
-- (id)_placeOrCurrentLocation:(BOOL*)arg1;
-
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 + (id)hk_dictionaryWithCodableMetadata:(id)arg1;
 
 - (id)hk_codableMetadata;
 
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
+
+- (id)_defaultOffer;
+- (id)_hk_artwork;
+- (id)_hk_bestImageURLForWidth:(float)arg1 fromArtworkArray:(id)arg2;
+- (id)_hk_circularArtwork;
+- (id)hk_bestCircularImageURLForWidth:(float)arg1;
+- (id)hk_bestImageURLForWidth:(float)arg1;
+- (id)hk_bundleId;
+- (id)hk_categories;
+- (BOOL)hk_isInstalled;
+- (id)hk_priceFormatted;
+- (id)hk_storeID;
+- (id)hk_title;
+
 // Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
 
 - (id)locationFromDataForKey:(id)arg1;
 - (id)regionFromDataForKey:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
+
+- (float)hucc_constantForSizeSubclass:(unsigned int)arg1;
 
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
@@ -498,15 +588,28 @@
 - (id)archiveData;
 - (id)dictionaryFromChanges:(id)arg1;
 - (unsigned short)fileHFSFlags;
-- (unsigned long long)fileHFSResourceForkSize;
+- (unsigned int)fileHFSResourceForkSize;
 - (id)keysOfChangedEntriesComparedTo:(id)arg1;
 - (id)plistData;
+
+// Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/IMSharedUtilities
+
++ (id)dictionaryWithAssociatedMessageSummary:(id)arg1 contentType:(unsigned char)arg2;
++ (id)dictionaryWithMessageSummaryInfoData:(id)arg1;
+
+- (id)__im_associatedMessageContentType;
+- (id)__im_associatedMessageSummary;
 
 // Image: /System/Library/PrivateFrameworks/IntlPreferences.framework/IntlPreferences
 
 - (id)invertedDictionary;
 
 // Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
+
++ (id)MCShortenedArray:(id)arg1;
++ (id)MCShortenedData:(id)arg1;
++ (id)MCShortenedDictionary:(id)arg1;
++ (id)MCShortenedObject:(id)arg1;
 
 - (id)MCDeepCopy;
 - (id)MCDeepCopyWithZone:(struct _NSZone { }*)arg1;
@@ -521,6 +624,7 @@
 - (BOOL)MCSCWriteToFile:(id)arg1 atomically:(BOOL)arg2 mode:(unsigned short)arg3 error:(id*)arg4;
 - (BOOL)MCSCWriteToURL:(id)arg1 atomically:(BOOL)arg2 error:(id*)arg3;
 - (BOOL)MCSCWriteToURL:(id)arg1 atomically:(BOOL)arg2 mode:(unsigned short)arg3 error:(id*)arg4;
+- (id)MCShortenedPlistDescription;
 
 // Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
 
@@ -550,10 +654,35 @@
 - (id)npkRelevancyRelevantText;
 - (id)npkRelevancyUniqueID;
 
-// Image: /System/Library/PrivateFrameworks/NetAppsUtilitiesUI.framework/NetAppsUtilitiesUI
+// Image: /System/Library/PrivateFrameworks/NetAppsUtilities.framework/NetAppsUtilities
 
-- (id)naui_dictionaryByMappingValues:(id /* block */)arg1;
-- (id)naui_filter:(id /* block */)arg1;
+- (id)na_dictionaryByMappingValues:(id /* block */)arg1;
+- (id)na_filter:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
++ (id)fc_dictionary:(id /* block */)arg1;
++ (id)fc_dictionaryByAddingEntriesFromDictionary:(id)arg1 toDictionary:(id)arg2;
++ (id)fc_dictionaryFromArray:(id)arg1 keyBlock:(id /* block */)arg2 valueBlock:(id /* block */)arg3;
++ (id)fc_dictionaryFromJSON:(id)arg1;
++ (id)fc_dictionaryWithKeys:(id)arg1 valueBlock:(id /* block */)arg2;
++ (id)fc_dictionaryWithKeys:(id)arg1 valueWithIndexBlock:(id /* block */)arg2;
++ (id)fc_dictionaryWithObjects:(id)arg1 keyBlock:(id /* block */)arg2;
+
+- (id)fc_actionTypes;
+- (id)fc_deepCopy;
+- (id)fc_dictionaryByRemovingObjectForKey:(id)arg1;
+- (id)fc_dictionaryBySwappingValuesAndKeys;
+- (id)fc_dictionaryByTransformingKeysWithBlock:(id /* block */)arg1;
+- (id)fc_dictionaryByTransformingKeysWithKeyAndValueBlock:(id /* block */)arg1;
+- (id)fc_dictionaryByTransformingValuesWithBlock:(id /* block */)arg1;
+- (id)fc_dictionaryByTransformingValuesWithKeyAndValueBlock:(id /* block */)arg1;
+- (BOOL)fc_localDataHint;
+- (id)fc_objectsForKeysWithoutMarker:(id)arg1;
+- (id)fc_subdictionaryWithCopiesForKeys:(id)arg1;
+- (id)fc_subdictionaryWithKeys:(id)arg1;
+- (id)fr_descriptionWithKeyComparator:(id /* block */)arg1;
+- (id)jsonString;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
@@ -604,7 +733,7 @@
 
 // Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
 
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })bl_affineTransformForKey:(id)arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })bl_affineTransformForKey:(id)arg1;
 - (BOOL)bl_boolForKey:(id)arg1;
 - (BOOL)bl_boolForKey:(id)arg1 defaultValue:(BOOL)arg2;
 - (id)bl_dictionaryByRemovingValuesForKey:(id)arg1;
@@ -621,12 +750,12 @@
 - (id)bl_objectForIndex:(int)arg1;
 - (id)bl_objectForKey:(id)arg1 defaultValue:(id)arg2;
 - (id)bl_objectOrNullForKey:(id)arg1;
-- (struct CGPoint { float x1; float x2; })bl_pointFromStringForKey:(id)arg1;
-- (struct CGPoint { float x1; float x2; })bl_pointFromStringForKey:(id)arg1 defaultValue:(struct CGPoint { float x1; float x2; })arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bl_rectForKey:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bl_rectForKey:(id)arg1 defaultValue:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bl_rectFromStringForKey:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bl_rectFromStringForKey:(id)arg1 defaultValue:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (struct CGPoint { double x1; double x2; })bl_pointFromStringForKey:(id)arg1;
+- (struct CGPoint { double x1; double x2; })bl_pointFromStringForKey:(id)arg1 defaultValue:(struct CGPoint { double x1; double x2; })arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bl_rectForKey:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bl_rectForKey:(id)arg1 defaultValue:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bl_rectFromStringForKey:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bl_rectFromStringForKey:(id)arg1 defaultValue:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 
 // Image: /System/Library/PrivateFrameworks/PlugInKit.framework/PlugInKit
 
@@ -685,7 +814,15 @@
 
 // Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
 
-- (id)objectForKey:(id)arg1 ofClass:(Class)arg2;
+- (id)yql_objectForKey:(id)arg1 ofClass:(Class)arg2;
+
+// Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
+
++ (id)sk_dictionaryWithSize:(struct CGSize { double x1; double x2; })arg1;
+
+// Image: /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
+
+- (id)_swiftInitWithDictionary_NSDictionary:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
 
@@ -695,28 +832,63 @@
 
 - (id)_accessibilityLeafDescendantsWithCount:(unsigned int)arg1 shouldStopAtRemoteElement:(BOOL)arg2 options:(id)arg3 treeLogger:(id)arg4;
 
+// Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
+
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })uns_CGRectForKey:(id)arg1;
+- (struct { int x1; int x2; unsigned int x3; int x4; })uns_CMTimeForKey:(id)arg1;
+- (id)uns_nonEmptyCopy;
+- (id)uns_nonNilArrayForKey:(id)arg1;
+- (id)uns_nonNilDictionaryForKey:(id)arg1;
+- (id)uns_nonNilStringForKey:(id)arg1;
+- (id)uns_notificationIdentifier;
+- (id)uns_safeCastObjectForKey:(id)arg1 class:(Class)arg2;
+- (id)uns_safeCastObjectForKey:(id)arg1 classes:(id)arg2;
+
 // Image: /System/Library/PrivateFrameworks/VideoProcessing.framework/VideoProcessing
 
-- (id)dateAnalyzed;
-- (id)dateModified;
-- (BOOL)degraded;
-- (unsigned int)flags;
-- (id)initWithImageURL:(id)arg1;
-- (double)quality;
-- (id)results;
-- (float)scaledExposureTime;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })syncPoint;
-- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timerange;
-- (unsigned int)types;
-- (int)version;
++ (id)vcp_exifFromImageURL:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
+- (id)vcp_dateAnalyzed;
+- (id)vcp_dateModified;
+- (BOOL)vcp_degraded;
+- (id)vcp_fingerprint;
+- (unsigned int)vcp_flags;
+- (BOOL)vcp_flashFired;
+- (double)vcp_quality;
+- (id)vcp_results;
+- (float)vcp_scaledExposureTime;
+- (struct { int x1; int x2; unsigned int x3; int x4; })vcp_syncPoint;
+- (struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })vcp_timerange;
+- (unsigned int)vcp_types;
+- (int)vcp_version;
 
-- (id)_objectOfKind:(Class)arg1 forKeyPath:(id)arg2;
-- (float)floatForKeyPath:(id)arg1;
-- (id)numberForKeyPath:(id)arg1;
-- (id)objectForKeyPath:(id)arg1;
-- (id)stringForKeyPath:(id)arg1;
+// Image: /System/Library/PrivateFrameworks/VisualVoicemail.framework/VisualVoicemail
+
+- (BOOL)writeToFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
+
+// Image: /System/Library/PrivateFrameworks/WeatherFoundation.framework/WeatherFoundation
+
+- (id)wf_URLForKeyPath:(id)arg1;
+- (id)wf_arrayForKeyPath:(id)arg1;
+- (id)wf_dictionaryForKeyPath:(id)arg1;
+- (double)wf_doubleForKeyPath:(id)arg1;
+- (float)wf_floatForKeyPath:(id)arg1;
+- (int)wf_integerForKeyPath:(id)arg1;
+- (id)wf_numberForKeyPath:(id)arg1;
+- (id)wf_objectForKeyPath:(id)arg1;
+- (id)wf_objectOfKind:(Class)arg1 forKeyPath:(id)arg2;
+- (id)wf_stringForKeyPath:(id)arg1;
+- (id)wf_temperatureWithCelsiusKeyPath:(id)arg1 fahrenheitKeyPath:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
+
+- (id)wb_arrayForKey:(id)arg1 isValid:(BOOL*)arg2;
+- (BOOL)wb_boolForKey:(id)arg1;
+- (id)wb_dictionaryForKey:(id)arg1 isValid:(BOOL*)arg2;
+- (id)wb_numberForKey:(id)arg1;
+- (id)wb_numberForKey:(id)arg1 isValid:(BOOL*)arg2;
+- (id)wb_objectOfType:(Class)arg1 forKey:(id)arg2 isValid:(BOOL*)arg3;
+- (id)wb_stringForKey:(id)arg1 isValid:(BOOL*)arg2;
 
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 
@@ -747,9 +919,14 @@
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
++ (id)tsp_decoderDataInfoDictionaryFromMessage:(const struct RepeatedPtrField<TSP::DataInfo> { void **x1; int x2; int x3; int x4; }*)arg1;
++ (id)tsp_identifierToObjectUUIDDictionaryFromMessage:(const struct RepeatedPtrField<TSP::ObjectUUIDMapEntry> { void **x1; int x2; int x3; int x4; }*)arg1;
++ (id)tsp_identifierToObjectUUIDDictionaryFromWeakExternalReferences:(id)arg1 updatingComponentInfo:(struct ComponentInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned int x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct RepeatedField<unsigned int> { unsigned int *x_8_1_1; int x_8_1_2; int x_8_1_3; } x8; int x9; struct RepeatedField<unsigned int> { unsigned int *x_10_1_1; int x_10_1_2; int x_10_1_3; } x10; int x11; struct RepeatedPtrField<TSP::ComponentExternalReference> { void **x_12_1_1; int x_12_1_2; int x_12_1_3; int x_12_1_4; } x12; struct RepeatedPtrField<TSP::ComponentDataReference> { void **x_13_1_1; int x_13_1_2; int x_13_1_3; int x_13_1_4; } x13; struct RepeatedPtrField<TSP::ObjectUUIDMapEntry> { void **x_14_1_1; int x_14_1_2; int x_14_1_3; int x_14_1_4; } x14; struct RepeatedPtrField<TSP::FeatureInfo> { void **x_15_1_1; int x_15_1_2; int x_15_1_3; int x_15_1_4; } x15; }*)arg2 failIfReferenceIsNotPersisted:(BOOL)arg3 context:(id)arg4 error:(id*)arg5;
 + (id)tsu_dictionaryByInvertingDictionary:(id)arg1;
 
 - (void)sfu_appendJsonStringToString:(id)arg1;
+- (void)tsp_saveIdentifierToObjectUUIDDictionaryToMessage:(struct RepeatedPtrField<TSP::ObjectUUIDMapEntry> { void **x1; int x2; int x3; int x4; }*)arg1;
+- (id)tsu_allKeysAsSet;
 - (BOOL)tsu_boolValueForKey:(id)arg1;
 - (id)tsu_objectOfClass:(Class)arg1 forKey:(id)arg2;
 

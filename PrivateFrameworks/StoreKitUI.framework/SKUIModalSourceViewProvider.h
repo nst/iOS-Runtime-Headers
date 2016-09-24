@@ -3,12 +3,12 @@
  */
 
 @interface SKUIModalSourceViewProvider : NSObject {
-    <SKUIModalSourceViewProviderDelegate> *_delegate;
-    BOOL _hideOriginalSourceView;
-    UIView *_originalSourceView;
-    UIBarButtonItem *_sourceButtonBarItem;
-    UIView *_sourceView;
-    id _userInfo;
+    <SKUIModalSourceViewProviderDelegate> * _delegate;
+    BOOL  _hideOriginalSourceView;
+    UIView * _originalSourceView;
+    UIBarButtonItem * _sourceButtonBarItem;
+    UIView * _sourceView;
+    id  _userInfo;
 }
 
 @property (nonatomic) <SKUIModalSourceViewProviderDelegate> *delegate;

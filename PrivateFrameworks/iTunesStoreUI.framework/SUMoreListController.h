@@ -3,7 +3,7 @@
  */
 
 @interface SUMoreListController : UIMoreListController {
-    UITabBarItem *_tabBarItem;
+    UITabBarItem * _tabBarItem;
 }
 
 - (int)ITunesStoreUIBarStyle;

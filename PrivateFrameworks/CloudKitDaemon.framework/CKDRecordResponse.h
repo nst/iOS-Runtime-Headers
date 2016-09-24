@@ -3,9 +3,9 @@
  */
 
 @interface CKDRecordResponse : NSObject {
-    NSString *_etag;
-    CKRecord *_record;
-    CKRecordID *_recordID;
+    NSString * _etag;
+    CKRecord * _record;
+    CKRecordID * _recordID;
 }
 
 @property (nonatomic, retain) NSString *etag;

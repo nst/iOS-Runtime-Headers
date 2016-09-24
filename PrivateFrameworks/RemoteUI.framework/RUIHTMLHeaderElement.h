@@ -3,7 +3,7 @@
  */
 
 @interface RUIHTMLHeaderElement : RUIElement {
-    NSString *_HTMLContent;
+    NSString * _HTMLContent;
 }
 
 @property (nonatomic, copy) NSString *HTMLContent;

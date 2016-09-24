@@ -3,7 +3,7 @@
  */
 
 @interface SCRCMathLongDivisionExpression : SCRCMathArrayExpression {
-    SCRCMathExpression *_divisor;
+    SCRCMathExpression * _divisor;
 }
 
 @property (nonatomic, retain) SCRCMathExpression *divisor;

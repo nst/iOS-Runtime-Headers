@@ -6,7 +6,6 @@
 
 @property (nonatomic, copy) NSNumber *fileSize;
 @property (nonatomic, retain) SAUIImageResource *imageResource;
-@property (nonatomic, copy) NSArray *thumbnails;
 
 + (id)imageLinkedAnswer;
 + (id)imageLinkedAnswerWithDictionary:(id)arg1 context:(id)arg2;
@@ -17,7 +16,5 @@
 - (id)imageResource;
 - (void)setFileSize:(id)arg1;
 - (void)setImageResource:(id)arg1;
-- (void)setThumbnails:(id)arg1;
-- (id)thumbnails;
 
 @end

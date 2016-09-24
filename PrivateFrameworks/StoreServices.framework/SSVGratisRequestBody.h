@@ -3,13 +3,13 @@
  */
 
 @interface SSVGratisRequestBody : NSObject <NSCopying> {
-    NSNumber *_accountID;
-    NSMutableDictionary *_additionalParameters;
-    NSArray *_applications;
-    BOOL _backgroundRequest;
-    NSArray *_bundleIdentifiers;
-    NSArray *_itemIdentifiers;
-    int _style;
+    NSNumber * _accountID;
+    NSMutableDictionary * _additionalParameters;
+    NSArray * _applications;
+    BOOL  _backgroundRequest;
+    NSArray * _bundleIdentifiers;
+    NSArray * _itemIdentifiers;
+    int  _style;
 }
 
 @property (nonatomic, readonly) NSData *JSONBodyData;

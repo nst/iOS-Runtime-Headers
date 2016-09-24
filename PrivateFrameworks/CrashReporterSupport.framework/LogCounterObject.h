@@ -3,7 +3,7 @@
  */
 
 @interface LogCounterObject : NSObject {
-    unsigned int _count;
+    unsigned int  _count;
 }
 
 @property (nonatomic) unsigned int count;

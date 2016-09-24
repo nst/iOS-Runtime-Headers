@@ -3,8 +3,8 @@
  */
 
 @interface SCRCMathRadicalExpression : SCRCMathExpression {
-    SCRCMathExpression *_radicand;
-    SCRCMathExpression *_rootIndex;
+    SCRCMathExpression * _radicand;
+    SCRCMathExpression * _rootIndex;
 }
 
 @property (nonatomic, retain) SCRCMathExpression *radicand;

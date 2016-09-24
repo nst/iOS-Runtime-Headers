@@ -3,15 +3,15 @@
  */
 
 @interface AWDWiProxLeAdvertiseStartRequest : PBRequest <NSCopying> {
-    unsigned int _dataLength;
+    unsigned int  _dataLength;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int dataLength : 1; 
         unsigned int type : 1; 
-    } _has;
-    NSString *_sessionId;
-    unsigned long long _timestamp;
-    int _type;
+    }  _has;
+    NSString * _sessionId;
+    unsigned long long  _timestamp;
+    int  _type;
 }
 
 @property (nonatomic) unsigned int dataLength;

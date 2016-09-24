@@ -3,7 +3,7 @@
  */
 
 @interface OADPointBulletSize : OADBulletSize {
-    int mPoints;
+    int  mPoints;
 }
 
 - (unsigned int)hash;

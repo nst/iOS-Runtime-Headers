@@ -3,8 +3,8 @@
  */
 
 @interface BFFNavigationController : PSRootController {
-    BOOL _animating;
-    NSMutableArray *_observers;
+    BOOL  _animating;
+    NSMutableArray * _observers;
 }
 
 @property (getter=isAnimating, nonatomic, readonly) BOOL animating;

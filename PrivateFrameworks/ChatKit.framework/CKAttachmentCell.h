@@ -3,16 +3,16 @@
  */
 
 @interface CKAttachmentCell : UICollectionViewCell <CKAnimationTimerObserver, UIGestureRecognizerDelegate> {
-    CKAnimatedImage *_animatedImage;
-    UIImageView *_checkmarkView;
-    NSObject<CKAttachmentCellDelegate> *_delegate;
-    BOOL _editing;
-    NSArray *_frames;
-    UIImage *_image;
-    UIImageView *_irisBadgeView;
-    BOOL _isIrisAsset;
-    CKAttachmentItem *_representedObject;
-    UITapGestureRecognizer *_tapRecognizer;
+    CKAnimatedImage * _animatedImage;
+    UIImageView * _checkmarkView;
+    NSObject<CKAttachmentCellDelegate> * _delegate;
+    BOOL  _editing;
+    NSArray * _frames;
+    UIImage * _image;
+    UIImageView * _irisBadgeView;
+    BOOL  _isIrisAsset;
+    CKAttachmentItem * _representedObject;
+    UITapGestureRecognizer * _tapRecognizer;
 }
 
 @property (nonatomic, retain) CKAnimatedImage *animatedImage;
@@ -31,6 +31,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UITapGestureRecognizer *tapRecognizer;
 
+- (void).cxx_destruct;
 - (struct CGImage { }*)_cgImageForUIImage:(id)arg1;
 - (id)animatedImage;
 - (void)animationTimerFired:(unsigned int)arg1;
@@ -43,7 +44,7 @@
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)iconImage;
 - (id)image;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)irisBadgeView;
 - (BOOL)isEditing;
 - (BOOL)isIrisAsset;

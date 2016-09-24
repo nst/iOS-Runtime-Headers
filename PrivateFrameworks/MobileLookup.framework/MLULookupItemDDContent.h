@@ -3,7 +3,7 @@
  */
 
 @interface MLULookupItemDDContent : MLULookupItemContent {
-    DDPreviewAction *_previewAction;
+    DDPreviewAction * _previewAction;
 }
 
 - (void).cxx_destruct;

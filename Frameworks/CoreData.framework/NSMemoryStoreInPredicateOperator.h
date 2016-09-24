@@ -3,7 +3,7 @@
  */
 
 @interface NSMemoryStoreInPredicateOperator : NSInPredicateOperator {
-    NSManagedObjectContext *_context;
+    NSManagedObjectContext * _context;
 }
 
 - (void)dealloc;

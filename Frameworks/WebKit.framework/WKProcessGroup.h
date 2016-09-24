@@ -5,13 +5,13 @@
 @interface WKProcessGroup : NSObject {
     /* Warning: unhandled struct encoding: '{WeakObjCPtr<id<WKProcessGroupDelegate> >="m_weakReference"@}' */ struct WeakObjCPtr<id<WKProcessGroupDelegate> > { 
         id m_weakReference; 
-    } _delegate;
+    }  _delegate;
     struct RetainPtr<WKGeolocationProviderIOS> { 
         void *m_ptr; 
-    } _geolocationProvider;
+    }  _geolocationProvider;
     struct RefPtr<WebKit::WebProcessPool> { 
         struct WebProcessPool {} *m_ptr; 
-    } _processPool;
+    }  _processPool;
 }
 
 @property (readonly) struct OpaqueWKContext { }*_contextRef;

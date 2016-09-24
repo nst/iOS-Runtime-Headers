@@ -3,7 +3,7 @@
  */
 
 @interface SKProductsRequestInternal : NSObject {
-    NSSet *_productIdentifiers;
+    NSSet * _productIdentifiers;
 }
 
 - (void)dealloc;

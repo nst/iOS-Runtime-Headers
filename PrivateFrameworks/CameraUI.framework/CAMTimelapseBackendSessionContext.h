@@ -3,10 +3,10 @@
  */
 
 @interface CAMTimelapseBackendSessionContext : NSObject {
-    NSArray *_filesToDelete;
-    NSArray *_filesToWrite;
-    CAMTimelapseState *_state;
-    NSString *_timelapseUUID;
+    NSArray * _filesToDelete;
+    NSArray * _filesToWrite;
+    CAMTimelapseState * _state;
+    NSString * _timelapseUUID;
 }
 
 @property (nonatomic, retain) NSArray *filesToDelete;

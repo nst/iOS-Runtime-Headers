@@ -3,9 +3,9 @@
  */
 
 @interface SKUIShelfMenuBarViewElement : SKUIShelfViewElement <SKUIMenuBarViewElement, _SKUIMenuBarViewElementConfigurationReloadDelegate> {
-    SKUIMenuBarViewElementConfiguration *_configuration;
-    NSArray *_focusedViewElements;
-    NSArray *_regularViewElements;
+    SKUIMenuBarViewElementConfiguration * _configuration;
+    NSArray * _focusedViewElements;
+    NSArray * _regularViewElements;
 }
 
 @property (nonatomic, retain) SKUIMenuBarViewElementConfiguration *configuration;

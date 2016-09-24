@@ -3,16 +3,16 @@
  */
 
 @interface PUPhotoKitAssetsDataSource : PUAssetsDataSource {
-    NSCache *__assetReferenceByIndexPathCache;
-    PUPhotosDataSourceChange *_change;
-    NSString *_changeFromDataSourceIdentifier;
-    PUPhotosDataSource *_photosDataSource;
+    NSCache * __assetReferenceByIndexPathCache;
+    PXPhotosDataSourceChange * _change;
+    NSString * _changeFromDataSourceIdentifier;
+    PXPhotosDataSource * _photosDataSource;
 }
 
 @property (nonatomic, readonly) NSCache *_assetReferenceByIndexPathCache;
-@property (nonatomic, readonly) PUPhotosDataSourceChange *change;
+@property (nonatomic, readonly) PXPhotosDataSourceChange *change;
 @property (nonatomic, readonly) NSString *changeFromDataSourceIdentifier;
-@property (nonatomic, readonly) PUPhotosDataSource *photosDataSource;
+@property (nonatomic, readonly) PXPhotosDataSource *photosDataSource;
 
 - (void).cxx_destruct;
 - (id)_assetReferenceByIndexPathCache;

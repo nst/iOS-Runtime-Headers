@@ -3,18 +3,21 @@
  */
 
 @interface CNQuickAction : NSObject {
-    BOOL _cached;
-    NSString *_category;
-    BOOL _dismissesWithAnimation;
-    BOOL _enabled;
-    NSString *_identifier;
-    UIImage *_image;
-    CNQuickActionsManager *_manager;
-    id /* block */ _performBlock;
-    CNContactStyle *_previousStyle;
-    unsigned int _score;
-    UIView *_sourceView;
-    NSString *_title;
+    BOOL  _cached;
+    NSString * _category;
+    BOOL  _dismissesWithAnimation;
+    BOOL  _enabled;
+    NSString * _identifier;
+    UIImage * _image;
+    UIColor * _imageTintColor;
+    BOOL  _isLongPress;
+    CNQuickActionsManager * _manager;
+    id /* block */  _performBlock;
+    CNContactStyle * _previousStyle;
+    unsigned int  _score;
+    UIView * _sourceView;
+    NSString * _title;
+    BOOL  _useDuetIfAvailable;
 }
 
 @property (getter=isBackAction, nonatomic) BOOL backAction;
@@ -25,12 +28,15 @@
 @property (nonatomic, readonly) NSString *globalIdentifier;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) UIImage *image;
+@property (nonatomic, retain) UIColor *imageTintColor;
+@property (nonatomic) BOOL isLongPress;
 @property (nonatomic) CNQuickActionsManager *manager;
 @property (nonatomic, copy) id /* block */ performBlock;
 @property (nonatomic, retain) CNContactStyle *previousStyle;
 @property (nonatomic) unsigned int score;
 @property (nonatomic) UIView *sourceView;
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic) BOOL useDuetIfAvailable;
 
 + (id)actionWithTitle:(id)arg1 image:(id)arg2 block:(id /* block */)arg3;
 + (id)defaultTitleForActionInCategory:(id)arg1 context:(int)arg2;
@@ -57,6 +63,7 @@
 - (id)init;
 - (BOOL)isBackAction;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isLongPress;
 - (id)manager;
 - (BOOL)matchesDuetInteraction:(id)arg1;
 - (void)perform;
@@ -71,15 +78,20 @@
 - (void)setEnabled:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setImage:(id)arg1;
+- (void)setImageTintColor:(id)arg1;
+- (void)setIsLongPress:(BOOL)arg1;
 - (void)setManager:(id)arg1;
 - (void)setPerformBlock:(id /* block */)arg1;
 - (void)setPreviousStyle:(id)arg1;
 - (void)setScore:(unsigned int)arg1;
 - (void)setSourceView:(id)arg1;
 - (void)setTitle:(id)arg1;
+- (void)setUseDuetIfAvailable:(BOOL)arg1;
 - (id)sourceView;
 - (id)subtitleForContext:(int)arg1;
 - (id)title;
 - (id)titleForContext:(int)arg1;
+- (BOOL)useDuetIfAvailable;
+- (id)userActionType;
 
 @end

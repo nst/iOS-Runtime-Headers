@@ -3,11 +3,11 @@
  */
 
 @interface RadioRecentStationsRequest : RadioRequest {
-    RadioStation *_currentStation;
-    NSString *_currentStationStringID;
-    SSURLConnectionRequest *_request;
-    BOOL _shouldGroupResponses;
-    unsigned int _stationCount;
+    RadioStation * _currentStation;
+    NSString * _currentStationStringID;
+    SSURLConnectionRequest * _request;
+    BOOL  _shouldGroupResponses;
+    unsigned int  _stationCount;
 }
 
 @property (nonatomic) BOOL shouldGroupResponses;

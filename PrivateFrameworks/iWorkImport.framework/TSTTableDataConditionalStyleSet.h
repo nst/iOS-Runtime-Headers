@@ -3,13 +3,16 @@
  */
 
 @interface TSTTableDataConditionalStyleSet : TSTTableDataObject {
-    TSTConditionalStyleSet *mConditionalStyleSet;
+    TSTConditionalStyleSet * mConditionalStyleSet;
 }
 
+@property (nonatomic, readonly) TSTConditionalStyleSet *conditionalStyleSet;
+
+- (id)conditionalStyleSet;
 - (void)dealloc;
 - (id)description;
 - (unsigned int)hash;
-- (id)initObjectWithConditionalStyleSet:(id)arg1;
+- (id)initObjectWithConditionalStyleSet:(id)arg1 refCount:(unsigned int)arg2;
 - (BOOL)isEqual:(id)arg1;
 
 @end

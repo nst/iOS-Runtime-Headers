@@ -3,20 +3,20 @@
  */
 
 @interface MSSharingManager : NSObject <MSSharingManager, MSSharingProtocolDelegate> {
-    MSMediaStreamDaemon *_daemon;
-    <MSSharingManagerDelegate> *_delegate;
-    NSMutableArray *_deleteQueue;
-    NSMutableArray *_invitationQueue;
-    NSMutableArray *_invitationResponseQueue;
-    NSMutableDictionary *_manageShareByPersonID;
-    NSTimer *_manageShareDebounceTimer;
-    NSString *_manifestPath;
-    NSString *_personID;
-    MSSharingProtocol *_protocol;
-    BOOL _requestCurrentStateRequested;
-    NSArray *_shares;
-    NSMutableArray *_sharesWithLocalModifications;
-    int _state;
+    MSMediaStreamDaemon * _daemon;
+    <MSSharingManagerDelegate> * _delegate;
+    NSMutableArray * _deleteQueue;
+    NSMutableArray * _invitationQueue;
+    NSMutableArray * _invitationResponseQueue;
+    NSMutableDictionary * _manageShareByPersonID;
+    NSTimer * _manageShareDebounceTimer;
+    NSString * _manifestPath;
+    NSString * _personID;
+    MSSharingProtocol * _protocol;
+    BOOL  _requestCurrentStateRequested;
+    NSArray * _shares;
+    NSMutableArray * _sharesWithLocalModifications;
+    int  _state;
 }
 
 @property (nonatomic) MSMediaStreamDaemon *daemon;

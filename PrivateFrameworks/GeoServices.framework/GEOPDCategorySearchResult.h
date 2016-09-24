@@ -3,34 +3,68 @@
  */
 
 @interface GEOPDCategorySearchResult : PBCodable <NSCopying> {
-    GEOMapRegion *_displayMapRegion;
+    GEOPDRelatedSearchSuggestion * _defaultRelatedSearchSuggestion;
+    GEOMapRegion * _displayMapRegion;
     struct { 
         unsigned int isChainResultSet : 1; 
-    } _has;
-    BOOL _isChainResultSet;
+    }  _has;
+    BOOL  _isChainResultSet;
+    NSMutableArray * _relatedSearchSuggestions;
+    NSMutableArray * _resultDetourInfos;
+    GEOPDSearchClientBehavior * _searchClientBehavior;
+    PBUnknownFields * _unknownFields;
 }
 
+@property (nonatomic, retain) GEOPDRelatedSearchSuggestion *defaultRelatedSearchSuggestion;
 @property (nonatomic, retain) GEOMapRegion *displayMapRegion;
+@property (nonatomic, readonly) BOOL hasDefaultRelatedSearchSuggestion;
 @property (nonatomic, readonly) BOOL hasDisplayMapRegion;
 @property (nonatomic) BOOL hasIsChainResultSet;
+@property (nonatomic, readonly) BOOL hasSearchClientBehavior;
 @property (nonatomic) BOOL isChainResultSet;
+@property (nonatomic, retain) NSMutableArray *relatedSearchSuggestions;
+@property (nonatomic, retain) NSMutableArray *resultDetourInfos;
+@property (nonatomic, retain) GEOPDSearchClientBehavior *searchClientBehavior;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
++ (Class)relatedSearchSuggestionType;
++ (Class)resultDetourInfoType;
+
+- (void)addRelatedSearchSuggestion:(id)arg1;
+- (void)addResultDetourInfo:(id)arg1;
+- (void)clearRelatedSearchSuggestions;
+- (void)clearResultDetourInfos;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)defaultRelatedSearchSuggestion;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)displayMapRegion;
+- (BOOL)hasDefaultRelatedSearchSuggestion;
 - (BOOL)hasDisplayMapRegion;
 - (BOOL)hasIsChainResultSet;
+- (BOOL)hasSearchClientBehavior;
 - (unsigned int)hash;
 - (BOOL)isChainResultSet;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (id)relatedSearchSuggestionAtIndex:(unsigned int)arg1;
+- (id)relatedSearchSuggestions;
+- (unsigned int)relatedSearchSuggestionsCount;
+- (id)resultDetourInfoAtIndex:(unsigned int)arg1;
+- (id)resultDetourInfos;
+- (unsigned int)resultDetourInfosCount;
+- (id)searchClientBehavior;
+- (void)setDefaultRelatedSearchSuggestion:(id)arg1;
 - (void)setDisplayMapRegion:(id)arg1;
 - (void)setHasIsChainResultSet:(BOOL)arg1;
 - (void)setIsChainResultSet:(BOOL)arg1;
+- (void)setRelatedSearchSuggestions:(id)arg1;
+- (void)setResultDetourInfos:(id)arg1;
+- (void)setSearchClientBehavior:(id)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

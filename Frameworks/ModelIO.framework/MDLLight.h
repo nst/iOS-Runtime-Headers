@@ -3,21 +3,28 @@
  */
 
 @interface MDLLight : MDLObject {
-    struct RTLight { int (**x1)(); struct RTColor { int x_2_1_1; } x2; id x3; } *_light;
-    unsigned int _lightType;
+    struct CGColorSpace { } * _cgColorSpace;
+    NSString * _colorSpace;
+    struct RTLight { int (**x1)(); struct CGColor {} *x2; id x3; } * _light;
+    unsigned int  _lightType;
 }
 
+@property (nonatomic, copy) NSString *colorSpace;
 @property (nonatomic) unsigned int lightType;
-@property (nonatomic, readonly) struct RTLight { int (**x1)(); struct RTColor { int x_2_1_1; } x2; id x3; }*rtLight;
+@property (nonatomic, readonly) struct RTLight { int (**x1)(); struct CGColor {} *x2; id x3; }*rtLight;
 
 // Image: /System/Library/Frameworks/ModelIO.framework/ModelIO
 
+- (void).cxx_destruct;
+- (id)colorSpace;
 - (void)dealloc;
 - (id)init;
 - (struct CGColor { }*)irradianceAtPoint;
 - (struct CGColor { }*)irradianceAtPoint:(void *)arg1 colorSpace:(void *)arg2; // needs 2 arg types, found 1: struct CGColorSpace { }*
 - (unsigned int)lightType;
-- (struct RTLight { int (**x1)(); struct RTColor { int x_2_1_1; } x2; id x3; }*)rtLight;
+- (void)position;
+- (struct RTLight { int (**x1)(); struct CGColor {} *x2; id x3; }*)rtLight;
+- (void)setColorSpace:(id)arg1;
 - (void)setLightType:(unsigned int)arg1;
 - (void)setTransform:(id)arg1;
 

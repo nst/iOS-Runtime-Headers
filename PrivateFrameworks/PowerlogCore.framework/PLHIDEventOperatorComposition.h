@@ -3,9 +3,9 @@
  */
 
 @interface PLHIDEventOperatorComposition : NSObject {
-    struct __IOHIDEventSystemClient { } *_eventSystemClient;
-    PLOperator *_operator;
-    id /* block */ _operatorBlock;
+    struct __IOHIDEventSystemClient { } * _eventSystemClient;
+    PLOperator * _operator;
+    id /* block */  _operatorBlock;
 }
 
 @property struct __IOHIDEventSystemClient { }*eventSystemClient;

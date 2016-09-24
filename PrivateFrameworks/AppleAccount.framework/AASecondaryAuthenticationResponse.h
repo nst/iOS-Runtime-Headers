@@ -3,8 +3,8 @@
  */
 
 @interface AASecondaryAuthenticationResponse : AAResponse {
-    NSData *_buddyML;
-    NSString *_secondFactorToken;
+    NSData * _buddyML;
+    NSString * _secondFactorToken;
 }
 
 @property (nonatomic, readonly) NSData *buddyML;

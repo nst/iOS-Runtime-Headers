@@ -3,7 +3,7 @@
  */
 
 @interface GKLeaderboardSet : NSObject <NSCoding, NSSecureCoding> {
-    GKLeaderboardSetInternal *_internal;
+    GKLeaderboardSetInternal * _internal;
 }
 
 @property (nonatomic, readonly, retain) NSString *groupIdentifier;

@@ -3,17 +3,17 @@
  */
 
 @interface SKUIBannerViewController : UIViewController <SKUIItemStateCenterObserver> {
-    SKUIBannerView *_bannerView;
-    SKUIClientContext *_clientContext;
-    <SKUIBannerViewDelegate> *_delegate;
-    UIImage *_iconImage;
-    SSLookupItem *_item;
-    SKUIItemArtworkContext *_itemArtworkContext;
-    long long _itemIdentifier;
-    SKUIItemStateCenter *_itemStateCenter;
-    NSOperationQueue *_resourceOperationQueue;
-    NSMutableArray *_screenshotImages;
-    NSDictionary *_scriptContextDictionary;
+    SKUIBannerView * _bannerView;
+    SKUIClientContext * _clientContext;
+    <SKUIBannerViewDelegate> * _delegate;
+    UIImage * _iconImage;
+    SSLookupItem * _item;
+    SKUIItemArtworkContext * _itemArtworkContext;
+    int  _itemIdentifier;
+    SKUIItemStateCenter * _itemStateCenter;
+    NSOperationQueue * _resourceOperationQueue;
+    NSMutableArray * _screenshotImages;
+    NSDictionary * _scriptContextDictionary;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
@@ -36,7 +36,7 @@
 - (void)_launchURL:(id)arg1 withBundleIdentifier:(id)arg2;
 - (void)_loadImages;
 - (void)_reloadBannerView;
-- (id)_screenshotConsumerWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)_screenshotConsumerWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_setIcon:(id)arg1 error:(id)arg2;
 - (void)_setScreenshot:(id)arg1 forIndex:(int)arg2 error:(id)arg3;
 - (void)_warmItemStateCenter;

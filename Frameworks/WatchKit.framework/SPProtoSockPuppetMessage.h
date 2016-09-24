@@ -3,8 +3,8 @@
  */
 
 @interface SPProtoSockPuppetMessage : PBCodable <NSCopying> {
-    SPProtoAudioFilePlayerMessage *_audioFilePlayerMessage;
-    SPProtoSockPuppetPlist *_plist;
+    SPProtoAudioFilePlayerMessage * _audioFilePlayerMessage;
+    SPProtoSockPuppetPlist * _plist;
 }
 
 @property (nonatomic, retain) SPProtoAudioFilePlayerMessage *audioFilePlayerMessage;

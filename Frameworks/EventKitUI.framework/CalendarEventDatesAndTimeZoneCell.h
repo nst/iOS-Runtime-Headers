@@ -3,8 +3,8 @@
  */
 
 @interface CalendarEventDatesAndTimeZoneCell : PreferencesDoubleTwoPartValueCell {
-    UILabel *_detailLabel3;
-    UILabel *_textLabel3;
+    UILabel * _detailLabel3;
+    UILabel * _textLabel3;
 }
 
 @property (nonatomic, readonly, retain) UILabel *detailLabel3;

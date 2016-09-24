@@ -3,8 +3,8 @@
  */
 
 @interface ACUISettingsPluginManager : NSObject {
-    PSViewController<ACUISettingsPluginParentProtocol> *_parentViewController;
-    NSMutableDictionary *_pluginCache;
+    PSViewController<ACUISettingsPluginParentProtocol> * _parentViewController;
+    NSMutableDictionary * _pluginCache;
 }
 
 - (void).cxx_destruct;

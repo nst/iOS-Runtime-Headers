@@ -3,8 +3,8 @@
  */
 
 @interface MFPlaceholderMailDeliveryUI : MFOutgoingMessageDelivery <MFMessageRewriterPlaceholderResolver> {
-    NSString *_contextID;
-    MFPlaceholderMessageRewriter *_rewriter;
+    NSString * _contextID;
+    MFPlaceholderMessageRewriter * _rewriter;
 }
 
 @property (readonly, copy) NSString *debugDescription;

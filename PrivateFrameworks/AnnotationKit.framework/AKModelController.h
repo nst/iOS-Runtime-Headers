@@ -3,14 +3,14 @@
  */
 
 @interface AKModelController : NSObject {
-    NSMutableOrderedSet *_mutablePageModelControllers;
+    NSMutableOrderedSet * _mutablePageModelControllers;
 }
 
 @property (readonly) NSArray *pageModelControllers;
 
 - (void).cxx_destruct;
 - (id)allSelectedAnnotations;
-- (id)archivablePageModelControllers;
+- (id)archivedPageModelControllers;
 - (void)deleteAllSelectedAnnotations;
 - (void)deselectAllAnnotations;
 - (id)init;
@@ -19,7 +19,7 @@
 - (id)pageModelControllerForAnnotation:(id)arg1;
 - (id)pageModelControllerForPage:(unsigned int)arg1;
 - (id)pageModelControllers;
-- (void)populateFromArchivablePageModelControllers:(id)arg1;
+- (void)populateFromArchivedPageModelControllers:(id)arg1;
 - (void)removeObjectFromPageModelControllersAtIndex:(unsigned int)arg1;
 - (void)removePageModelControllersAtIndexes:(id)arg1;
 - (void)replaceObjectInPageModelControllersAtIndex:(unsigned int)arg1 withObject:(id)arg2;

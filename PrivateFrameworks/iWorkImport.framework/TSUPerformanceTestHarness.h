@@ -3,15 +3,15 @@
  */
 
 @interface TSUPerformanceTestHarness : NSObject {
-    BOOL mPassed;
-    int mPassingTests;
-    BOOL mQuiet;
+    BOOL  mPassed;
+    int  mPassingTests;
+    BOOL  mQuiet;
     struct timeval { 
         int tv_sec; 
         int tv_usec; 
-    } mSetupTime;
-    NSMutableArray *mTestCases;
-    int mTotalTests;
+    }  mSetupTime;
+    NSMutableArray * mTestCases;
+    int  mTotalTests;
 }
 
 @property (nonatomic, readonly) BOOL passed;

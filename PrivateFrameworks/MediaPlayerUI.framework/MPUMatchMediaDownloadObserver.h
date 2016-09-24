@@ -3,7 +3,7 @@
  */
 
 @interface MPUMatchMediaDownloadObserver : MPUMediaDownloadObserver <MPStoreDownloadManagerObserver> {
-    MPStoreDownload *_storeDownload;
+    MPStoreDownload * _storeDownload;
 }
 
 @property (readonly, copy) NSString *debugDescription;

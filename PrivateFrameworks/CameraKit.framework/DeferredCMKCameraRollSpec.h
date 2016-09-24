@@ -3,9 +3,9 @@
  */
 
 @interface DeferredCMKCameraRollSpec : CMKCameraRollSpec {
-    BOOL _isPad;
-    DeferredFrameworkLoader *_loader;
-    CMKCameraRollSpec *_spec;
+    BOOL  _isPad;
+    DeferredFrameworkLoader * _loader;
+    CMKCameraRollSpec * _spec;
 }
 
 @property (nonatomic) BOOL isPad;

@@ -3,9 +3,9 @@
  */
 
 @interface HDSQLitePropertyComparisonPredicate : HDSQLitePredicate <NSCopying> {
-    int _comparisonType;
-    NSString *_lhObjectPropertyName;
-    NSString *_rhObjectPropertyName;
+    int  _comparisonType;
+    NSString * _lhObjectPropertyName;
+    NSString * _rhObjectPropertyName;
 }
 
 @property (nonatomic, readonly) int comparisonType;

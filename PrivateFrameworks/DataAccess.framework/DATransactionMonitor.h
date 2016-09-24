@@ -3,9 +3,9 @@
  */
 
 @interface DATransactionMonitor : NSObject {
-    int _transactionCount;
-    <DATransactionMonitorDelegate> *_transactionMonitorDelegate;
-    NSMutableArray *_transactions;
+    int  _transactionCount;
+    <DATransactionMonitorDelegate> * _transactionMonitorDelegate;
+    NSMutableArray * _transactions;
 }
 
 @property (nonatomic) int transactionCount;

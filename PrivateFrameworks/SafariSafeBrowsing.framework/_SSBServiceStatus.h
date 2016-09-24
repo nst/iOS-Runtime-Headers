@@ -43,7 +43,7 @@
             } __end_cap_; 
         } m_connections; 
         int m_databaseUpdaterState; 
-    } _serviceStatus;
+    }  _serviceStatus;
 }
 
 @property (nonatomic, readonly, copy) NSArray *activeTransactions;
@@ -58,7 +58,7 @@
 - (id)bundleIdentifierForConnectionAtIndex:(unsigned int)arg1;
 - (unsigned int)connectionCount;
 - (unsigned int)databaseUpdaterState;
-- (id)initWithServiceStatus:(struct ServiceStatus { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_1_1_1; } x1; int x2; struct vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char> > > { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x_3_1_1; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x_3_1_2; struct __compressed_pair<std::__1::basic_string<char> *, std::__1::allocator<std::__1::basic_string<char> > > { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x_3_2_1; } x_3_1_3; } x3; struct vector<SafeBrowsing::ServiceStatus::Connection, std::__1::allocator<SafeBrowsing::ServiceStatus::Connection> > { struct Connection {} *x_4_1_1; struct Connection {} *x_4_1_2; struct __compressed_pair<SafeBrowsing::ServiceStatus::Connection *, std::__1::allocator<SafeBrowsing::ServiceStatus::Connection> > { struct Connection {} *x_3_2_1; } x_4_1_3; } x4; int x5; })arg1;
+- (id)initWithServiceStatus:(struct ServiceStatus { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_1_1_1; } x1; int x2; struct vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char> > > { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x_3_1_1; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x_3_1_2; struct __compressed_pair<std::__1::basic_string<char> *, std::__1::allocator<std::__1::basic_string<char> > > { struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x_3_2_1; } x_3_1_3; } x3; })arg1;
 - (id)name;
 - (int)processIdentifier;
 - (int)processIdentifierForConnectionAtIndex:(unsigned int)arg1;

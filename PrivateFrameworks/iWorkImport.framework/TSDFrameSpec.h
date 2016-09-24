@@ -4,32 +4,33 @@
 
 @interface TSDFrameSpec : NSObject <NSCopying> {
     struct CGPoint { 
-        float x; 
-        float y; 
-    } mAdornmentPosition;
+        double x; 
+        double y; 
+    }  mAdornmentPosition;
     struct CGSize { 
-        float width; 
-        float height; 
-    } mAdornmentSize;
-    float mBottomHeight;
-    float mBottomInset;
-    NSBundle *mBundle;
-    BOOL mDisplayInPicker;
-    NSString *mFrameName;
-    BOOL mHasAdornment;
-    BOOL mHasImages;
-    BOOL mHasMask;
-    int mInterest;
-    float mLeftInset;
-    float mLeftWidth;
-    BOOL mLoadedImageMetrics;
-    float mMinimumAssetScale;
-    NSMutableDictionary *mProvidersByKey;
-    float mRightInset;
-    float mRightWidth;
-    int mTilingMode;
-    float mTopHeight;
-    float mTopInset;
+        double width; 
+        double height; 
+    }  mAdornmentSize;
+    double  mBottomHeight;
+    double  mBottomInset;
+    NSBundle * mBundle;
+    BOOL  mDisplayInPicker;
+    NSString * mFrameName;
+    BOOL  mHasAdornment;
+    BOOL  mHasImages;
+    BOOL  mHasMask;
+    int  mInterest;
+    double  mLeftInset;
+    double  mLeftWidth;
+    BOOL  mLoadedImageMetrics;
+    double  mMinimumAssetScale;
+    BOOL  mProviderWasInvalid;
+    NSMutableDictionary * mProvidersByKey;
+    double  mRightInset;
+    double  mRightWidth;
+    int  mTilingMode;
+    double  mTopHeight;
+    double  mTopInset;
 }
 
 @property (nonatomic, readonly) BOOL displayInPicker;
@@ -44,8 +45,8 @@
 - (BOOL)displayInPicker;
 - (id)frameName;
 - (void)i_addInterestInProviders;
-- (struct CGPoint { float x1; float x2; })i_adornmentPosition;
-- (struct CGSize { float x1; float x2; })i_adornmentSize;
+- (struct CGPoint { double x1; double x2; })i_adornmentPosition;
+- (struct CGSize { double x1; double x2; })i_adornmentSize;
 - (float)i_bottomHeight;
 - (float)i_bottomInset;
 - (BOOL)i_hasAdornment;

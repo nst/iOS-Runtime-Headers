@@ -6,22 +6,22 @@
     struct timespec { 
         int tv_sec; 
         long tv_nsec; 
-    } _createdDate;
-    BOOL _isDirectory;
-    unsigned long long _length;
-    BOOL _locked;
+    }  _createdDate;
+    BOOL  _isDirectory;
+    unsigned int  _length;
+    BOOL  _locked;
     struct timespec { 
         int tv_sec; 
         long tv_nsec; 
-    } _modifiedDate;
-    NSString *_name;
-    NSString *_path;
-    UserFSVolume *_volume;
+    }  _modifiedDate;
+    NSString * _name;
+    NSString * _path;
+    UserFSVolume * _volume;
 }
 
 @property (nonatomic) struct timespec { int x1; long x2; } createdDate;
 @property (nonatomic) BOOL isDirectory;
-@property (nonatomic) unsigned long long length;
+@property (nonatomic) unsigned int length;
 @property (getter=isLocked, nonatomic) BOOL locked;
 @property (nonatomic) struct timespec { int x1; long x2; } modifiedDate;
 @property (nonatomic, copy) NSString *name;
@@ -34,13 +34,13 @@
 - (struct timespec { int x1; long x2; })createdDate;
 - (BOOL)isDirectory;
 - (BOOL)isLocked;
-- (unsigned long long)length;
+- (unsigned int)length;
 - (struct timespec { int x1; long x2; })modifiedDate;
 - (id)name;
 - (id)path;
 - (void)setCreatedDate:(struct timespec { int x1; long x2; })arg1;
 - (void)setIsDirectory:(BOOL)arg1;
-- (void)setLength:(unsigned long long)arg1;
+- (void)setLength:(unsigned int)arg1;
 - (void)setLocked:(BOOL)arg1;
 - (void)setModifiedDate:(struct timespec { int x1; long x2; })arg1;
 - (void)setName:(id)arg1;

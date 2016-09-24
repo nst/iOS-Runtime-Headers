@@ -3,7 +3,7 @@
  */
 
 @interface PLAccountingDistributionEventEntry : PLAccountingEventEntry {
-    NSDictionary *_childNodeIDToWeight;
+    NSDictionary * _childNodeIDToWeight;
 }
 
 @property (nonatomic, readonly) NSDictionary *childNodeIDToWeight;

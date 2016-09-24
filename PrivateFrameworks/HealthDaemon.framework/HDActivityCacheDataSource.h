@@ -3,33 +3,34 @@
  */
 
 @interface HDActivityCacheDataSource : NSObject <HDActivityCacheStatisticsBuilderSourceOrderDelegate, HDDataObserver> {
-    NSSet *_allObservedTypes;
-    <HDHealthDaemon> *_healthDaemon;
-    long long _nonQuantitySampleAnchor;
-    NSString *_nonQuantitySamplesQueryString;
-    NSSet *_observedQuantityTypes;
-    _HKTimePeriod *_previousDayDateRange;
-    HDActivityCacheStatisticsBuilder *_previousDayStatisticsBuilder;
-    NSString *_previousDayStatisticsBuilderTag;
-    BOOL _previousWatchActivationLogEntryIsSet;
+    NSSet * _allObservedTypes;
+    HKCategoryType * _deepBreathingSessionType;
+    int  _nonQuantitySampleAnchor;
+    NSString * _nonQuantitySamplesQueryString;
+    NSSet * _observedQuantityTypes;
+    _HKTimePeriod * _previousDayDateRange;
+    HDActivityCacheStatisticsBuilder * _previousDayStatisticsBuilder;
+    NSString * _previousDayStatisticsBuilderTag;
+    BOOL  _previousWatchActivationLogEntryIsSet;
     struct vector<HDActivityCacheStatisticsBuilderSample, std::__1::allocator<HDActivityCacheStatisticsBuilderSample> > { 
         struct HDActivityCacheStatisticsBuilderSample {} *__begin_; 
         struct HDActivityCacheStatisticsBuilderSample {} *__end_; 
         struct __compressed_pair<HDActivityCacheStatisticsBuilderSample *, std::__1::allocator<HDActivityCacheStatisticsBuilderSample> > { 
             struct HDActivityCacheStatisticsBuilderSample {} *__first_; 
         } __end_cap_; 
-    } _previousWatchActivationLogEntryVector;
-    long long _quantitySampleAnchor;
-    NSString *_quantitySamplesQueryString;
-    NSObject<OS_dispatch_queue> *_queue;
-    _HKDelayedOperation *_rebuildOperation;
-    HKCategoryType *_standHoursType;
-    _HKTimePeriod *_targetDayDateRange;
-    HDActivityCacheStatisticsBuilder *_targetDayStatisticsBuilder;
-    NSString *_targetDayStatisticsBuilderTag;
-    _HKDelayedOperation *_updateOperation;
-    HKCategoryType *_watchActivationType;
-    HKWorkoutType *_workoutType;
+    }  _previousWatchActivationLogEntryVector;
+    HDProfile * _profile;
+    int  _quantitySampleAnchor;
+    NSString * _quantitySamplesQueryString;
+    NSObject<OS_dispatch_queue> * _queue;
+    _HKDelayedOperation * _rebuildOperation;
+    HKCategoryType * _standHoursType;
+    _HKTimePeriod * _targetDayDateRange;
+    HDActivityCacheStatisticsBuilder * _targetDayStatisticsBuilder;
+    NSString * _targetDayStatisticsBuilderTag;
+    _HKDelayedOperation * _updateOperation;
+    HKCategoryType * _watchActivationType;
+    HKWorkoutType * _workoutType;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -46,14 +47,16 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (BOOL)_nonQuantitySampleRequiresWatchSource:(int)arg1;
 - (id)_nonQuantitySamplesQueryStringWithSampleTypes:(id)arg1;
 - (id)_overallTimePeriod;
 - (id)_parameterStringWithCount:(int)arg1;
 - (BOOL)_primeNonQuantitySamplesWithError:(id*)arg1;
 - (BOOL)_primePreviousActivationLogEntryWithError:(id*)arg1;
 - (BOOL)_primeQuantitySamplesWithError:(id*)arg1;
-- (BOOL)_quantitySampleIsValidWithTypeCode:(int)arg1 workoutSourceIdentifier:(long long)arg2 isWatchSource:(BOOL)arg3;
+- (BOOL)_quantitySampleIsValidWithTypeCode:(int)arg1 workoutSourceIdentifier:(int)arg2 isWatchSource:(BOOL)arg3;
 - (id)_quantitySamplesQueryStringWithQuatityTypes:(id)arg1;
+- (BOOL)_quantityTypeRequiresWatchSource:(int)arg1;
 - (void)_queue_deregisterForSamplesAdded;
 - (void)_queue_registerForSamplesAdded;
 - (BOOL)_readyToPrimeActivationLogEntries;
@@ -63,11 +66,11 @@
 - (void)_resetStatisticsBuilders;
 - (void)_samplesAddedToWorkoutNotification:(id)arg1;
 - (BOOL)_timePeriodsAreSet;
-- (BOOL)_typeRequiresWatchSource:(int)arg1;
+- (BOOL)_typeIsValidFromCompanionWithoutWorkout:(int)arg1;
 - (BOOL)_updateStatisticsBuildersWithError:(id*)arg1;
 - (id)activityCacheStatisticsBuilder:(id)arg1 sourceOrderForObjectType:(id)arg2;
 - (void)dealloc;
-- (id)initWithHealthDaemon:(id)arg1 observedQuantityTypes:(id)arg2 updateOperation:(id)arg3 rebuildOperation:(id)arg4 queue:(id)arg5;
+- (id)initWithProfile:(id)arg1 observedQuantityTypes:(id)arg2 updateOperation:(id)arg3 rebuildOperation:(id)arg4 queue:(id)arg5;
 - (id)observedQuantityTypes;
 - (void)pauseUpdates;
 - (id)previousDayDateRange;

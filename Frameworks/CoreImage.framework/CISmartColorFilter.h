@@ -3,14 +3,14 @@
  */
 
 @interface CISmartColorFilter : CIFilter {
-    CIContext *_cubeContext;
-    CIImage *_cubeImage;
-    NSNumber *inputCast;
-    NSNumber *inputContrast;
-    CIImage *inputImage;
-    NSNumber *inputUseCube;
-    id inputUseCubeColorSpace;
-    NSNumber *inputVibrancy;
+    CIContext * _cubeContext;
+    CIImage * _cubeImage;
+    NSNumber * inputCast;
+    NSNumber * inputContrast;
+    CIImage * inputImage;
+    NSNumber * inputUseCube;
+    id  inputUseCubeColorSpace;
+    NSNumber * inputVibrancy;
 }
 
 @property (nonatomic, retain) NSNumber *inputCast;

@@ -3,7 +3,7 @@
  */
 
 @interface _LSIconCacheClient : _LSIconCache {
-    NSXPCConnection *_connection;
+    NSXPCConnection * _connection;
 }
 
 @property (readonly) NSXPCConnection *connection;

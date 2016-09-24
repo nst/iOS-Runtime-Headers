@@ -3,15 +3,15 @@
  */
 
 @interface CHDView3D : NSObject {
-    bool mAutoscale;
-    bool mCluster;
-    int mDepthPercent;
-    int mGapDepthPercent;
-    int mHeightPercent;
-    int mPerspective;
-    bool mRightAngleAxes;
-    int mRotationX;
-    int mRotationY;
+    bool  mAutoscale;
+    bool  mCluster;
+    int  mDepthPercent;
+    int  mGapDepthPercent;
+    int  mHeightPercent;
+    int  mPerspective;
+    bool  mRightAngleAxes;
+    int  mRotationX;
+    int  mRotationY;
 }
 
 - (int)depthPercent;

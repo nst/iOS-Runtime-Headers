@@ -3,8 +3,8 @@
  */
 
 @interface MFPhoneHatchBrush : MFPhoneBrush {
-    OITSUColor *m_colour;
-    int m_style;
+    OITSUColor * m_colour;
+    int  m_style;
 }
 
 + (id)hatchBrushWithColour:(id)arg1 :(int)arg2;

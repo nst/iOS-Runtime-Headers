@@ -3,31 +3,31 @@
  */
 
 @interface TSCH3DTexCoordGeneration : NSObject {
-    TSCH3DNormalDirectionMapper *mNormalDirectionMapper;
+    TSCH3DNormalDirectionMapper * mNormalDirectionMapper;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
-                float x; 
-                float r; 
-                float s; 
+                double x; 
+                double r; 
+                double s; 
             } ; 
             union { 
-                float y; 
-                float g; 
-                float t; 
+                double y; 
+                double g; 
+                double t; 
             } ; 
             union { 
-                float z; 
-                float b; 
-                float p; 
+                double z; 
+                double b; 
+                double p; 
             } ; 
             union { 
-                float w; 
-                float a; 
-                float q; 
+                double w; 
+                double a; 
+                double q; 
             } ; 
         } value[4]; 
-    } mTransform;
+    }  mTransform;
 }
 
 @property (nonatomic, retain) TSCH3DNormalDirectionMapper *normalDirectionMapper;
@@ -35,7 +35,7 @@
 - (id).cxx_construct;
 - (void)dealloc;
 - (id)init;
-- (id)initWithTransform:(const struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; }*)arg1;
+- (id)initWithTransform:(const struct tmat4x4<float> { struct tvec4<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; union { double x_4_2_1; double x_4_2_2; double x_4_2_3; } x_1_1_4; } x1[4]; }*)arg1;
 - (id)normalDirectionMapper;
 - (void)setNormalDirectionMapper:(id)arg1;
 

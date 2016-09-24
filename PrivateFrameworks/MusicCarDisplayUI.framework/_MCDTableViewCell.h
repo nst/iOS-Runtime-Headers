@@ -5,5 +5,6 @@
 @interface _MCDTableViewCell : UITableViewCell
 
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)layoutSubviews;
 
 @end

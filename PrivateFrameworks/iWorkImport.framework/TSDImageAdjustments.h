@@ -3,36 +3,38 @@
  */
 
 @interface TSDImageAdjustments : NSObject <NSCopying, NSMutableCopying, TSDMixing> {
-    float mBottomLevel;
-    float mContrast;
-    float mDenoise;
-    BOOL mEnhance;
-    float mExposure;
-    float mGamma;
-    float mHighlights;
-    BOOL mRepresentsSageAdjustments;
-    float mSaturation;
-    float mShadows;
-    float mSharpness;
-    float mTemperature;
-    float mTint;
-    float mTopLevel;
+    double  mBottomLevel;
+    double  mContrast;
+    double  mDenoise;
+    BOOL  mEnhance;
+    double  mExposure;
+    double  mGamma;
+    double  mHighlights;
+    BOOL  mRepresentsSageAdjustments;
+    double  mSaturation;
+    double  mShadows;
+    double  mSharpness;
+    double  mTemperature;
+    double  mTint;
+    double  mTopLevel;
 }
 
-@property (nonatomic, readonly) float bottomLevel;
-@property (nonatomic, readonly) float contrast;
-@property (nonatomic, readonly) float denoise;
+@property (nonatomic, readonly) double bottomLevel;
+@property (nonatomic, readonly) double contrast;
+@property (nonatomic, readonly) double denoise;
 @property (nonatomic, readonly) BOOL enhance;
-@property (nonatomic, readonly) float exposure;
-@property (nonatomic, readonly) float gamma;
-@property (nonatomic, readonly) float highlights;
+@property (nonatomic, readonly) double exposure;
+@property (nonatomic, readonly) double gamma;
+@property (nonatomic, readonly) double highlights;
 @property (nonatomic, readonly) BOOL representsSageAdjustments;
-@property (nonatomic, readonly) float saturation;
-@property (nonatomic, readonly) float shadows;
-@property (nonatomic, readonly) float sharpness;
-@property (nonatomic, readonly) float temperature;
-@property (nonatomic, readonly) float tint;
-@property (nonatomic, readonly) float topLevel;
+@property (nonatomic, readonly) double saturation;
+@property (nonatomic, readonly) double shadows;
+@property (nonatomic, readonly) double sharpness;
+@property (nonatomic, readonly) double temperature;
+@property (nonatomic, readonly) double tint;
+@property (nonatomic, readonly) double topLevel;
+
++ (BOOL)canMixWithNilObjects;
 
 - (float)bottomLevel;
 - (float)contrast;
@@ -47,14 +49,14 @@
 - (void)i_initFromDefaultArchive;
 - (id)imageAdjustmentsWithoutEnhance;
 - (id)init;
-- (id)initWithArchive:(const struct ImageAdjustmentsArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; bool x17; bool x18; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct ImageAdjustmentsArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; bool x17; bool x18; }*)arg1 unarchiver:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
 - (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)representsSageAdjustments;
 - (float)saturation;
-- (void)saveToArchive:(struct ImageAdjustmentsArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; bool x17; bool x18; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct ImageAdjustmentsArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; bool x17; bool x18; }*)arg1 archiver:(id)arg2;
 - (float)shadows;
 - (float)sharpness;
 - (float)temperature;

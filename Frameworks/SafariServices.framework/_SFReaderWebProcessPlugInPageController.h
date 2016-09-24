@@ -3,13 +3,13 @@
  */
 
 @interface _SFReaderWebProcessPlugInPageController : WBUWebProcessPlugInPageController {
-    WKWebProcessPlugInScriptWorld *_isolatedWorldForNextPageDetection;
-    _SFWebProcessPlugInReaderEnabledPageController *_originalPageController;
+    WKWebProcessPlugInScriptWorld * _isolatedWorldForNextPageDetection;
+    _SFWebProcessPlugInReaderEnabledPageController * _originalPageController;
     struct unique_ptr<SafariServices::WebProcessPlugInReaderJSController, std::__1::default_delete<SafariServices::WebProcessPlugInReaderJSController> > { 
         struct __compressed_pair<SafariServices::WebProcessPlugInReaderJSController *, std::__1::default_delete<SafariServices::WebProcessPlugInReaderJSController> > { 
             struct WebProcessPlugInReaderJSController {} *__first_; 
         } __ptr_; 
-    } _readerJSController;
+    }  _readerJSController;
 }
 
 @property (nonatomic) _SFWebProcessPlugInReaderEnabledPageController *originalPageController;

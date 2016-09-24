@@ -3,8 +3,8 @@
  */
 
 @interface WKSelectSinglePicker : UIPickerView <UIPickerViewDataSource, UIPickerViewDelegate, WKFormControl> {
-    int _selectedIndex;
-    WKContentView *_view;
+    int  _selectedIndex;
+    WKContentView * _view;
 }
 
 @property (readonly, copy) NSString *debugDescription;

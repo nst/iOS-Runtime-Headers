@@ -3,10 +3,10 @@
  */
 
 @interface ATLegacySyncSessionTask : ATSessionTask {
-    <ATClient> *_client;
-    NSString *_dataClass;
-    unsigned long _grappaSessionID;
-    NSObject<OS_dispatch_queue> *_queue;
+    <ATClient> * _client;
+    NSString * _dataClass;
+    unsigned long  _grappaSessionID;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, readonly, copy) NSString *dataClass;

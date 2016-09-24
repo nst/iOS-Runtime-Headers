@@ -3,17 +3,28 @@
  */
 
 @interface _UIViewControllerNullAnimationTransitionCoordinator : NSObject <UIViewControllerTransitionCoordinator> {
-    NSMutableArray *_alongsideAnimations;
-    NSMutableArray *_alongsideCompletions;
-    UIView *_containerView;
-    BOOL _transitionIsInFlight;
+    NSMutableArray * _alongsideAnimations;
+    NSMutableArray * _alongsideCompletions;
+    UIView * _containerView;
+    BOOL  _transitionIsInFlight;
 }
 
+@property (getter=isAnimated, nonatomic, readonly) BOOL animated;
+@property (getter=isCancelled, nonatomic, readonly) BOOL cancelled;
+@property (nonatomic, readonly) int completionCurve;
+@property (nonatomic, readonly) double completionVelocity;
 @property (nonatomic) UIView *containerView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL initiallyInteractive;
+@property (getter=isInteractive, nonatomic, readonly) BOOL interactive;
+@property (nonatomic, readonly) BOOL isInterruptible;
+@property (nonatomic, readonly) double percentComplete;
+@property (nonatomic, readonly) int presentationStyle;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } targetTransform;
+@property (nonatomic, readonly) double transitionDuration;
 
 - (void).cxx_destruct;
 - (id)_alongsideAnimations:(BOOL)arg1;
@@ -22,6 +33,7 @@
 - (void)_applyBlocks:(id)arg1 releaseBlocks:(id /* block */)arg2;
 - (id)_mainContext;
 - (void)_runAlongsideAnimations;
+- (void)_runAlongsideCompletions;
 - (void)_runAlongsideCompletionsAfterCommit;
 - (BOOL)animateAlongsideTransition:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (BOOL)animateAlongsideTransitionInView:(id)arg1 animation:(id /* block */)arg2 completion:(id /* block */)arg3;
@@ -32,12 +44,14 @@
 - (BOOL)isAnimated;
 - (BOOL)isCancelled;
 - (BOOL)isInteractive;
+- (BOOL)isInterruptible;
 - (BOOL)isRotating;
+- (void)notifyWhenInteractionChangesUsingBlock:(id /* block */)arg1;
 - (void)notifyWhenInteractionEndsUsingBlock:(id /* block */)arg1;
 - (float)percentComplete;
 - (int)presentationStyle;
 - (void)setContainerView:(id)arg1;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })targetTransform;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })targetTransform;
 - (double)transitionDuration;
 - (id)viewControllerForKey:(id)arg1;
 - (id)viewForKey:(id)arg1;

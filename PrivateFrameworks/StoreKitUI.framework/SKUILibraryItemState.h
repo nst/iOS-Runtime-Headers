@@ -3,17 +3,17 @@
  */
 
 @interface SKUILibraryItemState : NSObject <NSCopying> {
-    unsigned int _avTypes;
-    int _availability;
-    NSString *_bundleIdentifier;
-    NSString *_bundleVersion;
-    BOOL _highDefinition;
-    BOOL _preview;
-    BOOL _rental;
-    NSNumber *_storeAccountIdentifier;
-    NSString *_storeFlavorIdentifier;
-    NSString *_storePlatformKind;
-    NSNumber *_storeVersionIdentifier;
+    unsigned int  _avTypes;
+    int  _availability;
+    NSString * _bundleIdentifier;
+    NSString * _bundleVersion;
+    BOOL  _highDefinition;
+    BOOL  _preview;
+    BOOL  _rental;
+    NSNumber * _storeAccountIdentifier;
+    NSString * _storeFlavorIdentifier;
+    NSString * _storePlatformKind;
+    NSNumber * _storeVersionIdentifier;
 }
 
 @property (nonatomic) unsigned int AVTypes;

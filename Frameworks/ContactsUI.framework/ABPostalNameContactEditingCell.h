@@ -3,7 +3,7 @@
  */
 
 @interface ABPostalNameContactEditingCell : CNContactCell <UITextFieldDelegate> {
-    UITextField *_editingTextField;
+    UITextField * _editingTextField;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,6 +12,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_cnui_applyContactStyle;
 - (void)dealloc;
 - (id)firstResponderItem;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;

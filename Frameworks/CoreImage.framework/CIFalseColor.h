@@ -3,9 +3,9 @@
  */
 
 @interface CIFalseColor : CIFilter {
-    CIColor *inputColor0;
-    CIColor *inputColor1;
-    CIImage *inputImage;
+    CIColor * inputColor0;
+    CIColor * inputColor1;
+    CIImage * inputImage;
 }
 
 @property (nonatomic, retain) CIColor *inputColor0;

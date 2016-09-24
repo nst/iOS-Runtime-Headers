@@ -3,14 +3,14 @@
  */
 
 @interface SKUISettingsGroupDescription : NSObject {
-    SKUISettingsGroupController *_controller;
-    NSMutableSet *_editableSettings;
-    SKUISettingsHeaderFooterDescription *_footerDescription;
-    SKUISettingsHeaderFooterDescription *_headerDescription;
-    SKUISettingsGroupsDescription *_parent;
-    SKUISettingsObjectStore *_settingDescriptions;
-    SKUISettingsContext *_settingsContext;
-    SKUIGroupViewElement *_viewElement;
+    SKUISettingsGroupController * _controller;
+    NSMutableSet * _editableSettings;
+    SKUISettingsHeaderFooterDescription * _footerDescription;
+    SKUISettingsHeaderFooterDescription * _headerDescription;
+    SKUISettingsGroupsDescription * _parent;
+    SKUISettingsObjectStore * _settingDescriptions;
+    SKUISettingsContext * _settingsContext;
+    SKUIGroupViewElement * _viewElement;
 }
 
 @property (nonatomic, readonly) SKUIClientContext *clientContext;

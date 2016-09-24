@@ -3,15 +3,15 @@
  */
 
 @interface HTTPSASLClientSession : NSObject {
-    id /* block */ _authCompletionHandler;
-    NSString *_authMechanism;
-    NSString *_authPassword;
-    NSURLSession *_authSession;
-    NSURL *_authURL;
-    NSString *_authUsername;
-    NSString *_authenticatedCookie;
-    PinnedHTTPSSessionDelegate *_authenticatedSessionDelegate;
-    struct srp_context { } *_srpContext;
+    id /* block */  _authCompletionHandler;
+    NSString * _authMechanism;
+    NSString * _authPassword;
+    NSURLSession * _authSession;
+    NSURL * _authURL;
+    NSString * _authUsername;
+    NSString * _authenticatedCookie;
+    PinnedHTTPSSessionDelegate * _authenticatedSessionDelegate;
+    struct srp_context { } * _srpContext;
 }
 
 @property (retain) NSString *authMechanism;

@@ -3,15 +3,15 @@
  */
 
 @interface TSDGLDataBufferAttribute : NSObject {
-    unsigned int _bufferOffset;
-    unsigned int _bufferUsage;
-    int _componentCount;
-    TSDGLDataArrayBuffer *_dataArrayBuffer;
-    TSDGLDataBuffer *_dataBuffer;
-    int _dataType;
-    BOOL _isNormalized;
-    int _locationInShader;
-    NSString *_name;
+    unsigned int  _bufferOffset;
+    unsigned int  _bufferUsage;
+    int  _componentCount;
+    TSDGLDataArrayBuffer * _dataArrayBuffer;
+    TSDGLDataBuffer * _dataBuffer;
+    int  _dataType;
+    BOOL  _isNormalized;
+    int  _locationInShader;
+    NSString * _name;
 }
 
 @property (nonatomic) unsigned int bufferOffset;

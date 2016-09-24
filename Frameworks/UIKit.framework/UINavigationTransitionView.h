@@ -3,16 +3,16 @@
  */
 
 @interface UINavigationTransitionView : UIView <NSCoding> {
-    id _delegate;
-    UIResponder *_firstResponderToRestore;
-    UIView *_fromView;
-    float _fromViewAlpha;
-    unsigned int _isTransitioning;
-    UIWindow *_originalWindow;
-    unsigned int _popoverWillCleanUpNavigationTransition;
-    UIView *_toView;
-    int _transition;
-    unsigned int _usesRoundedCorners;
+    id  _delegate;
+    UIResponder * _firstResponderToRestore;
+    UIView * _fromView;
+    double  _fromViewAlpha;
+    unsigned int  _isTransitioning;
+    UIWindow * _originalWindow;
+    unsigned int  _popoverWillCleanUpNavigationTransition;
+    UIView * _toView;
+    int  _transition;
+    unsigned int  _usesRoundedCorners;
 }
 
 @property (nonatomic) id delegate;
@@ -34,7 +34,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)fromView;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isTransitioning;
 - (BOOL)popoverWillCleanUpNavigationTransition;
 - (void)setDelegate:(id)arg1;

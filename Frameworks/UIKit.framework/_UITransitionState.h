@@ -3,9 +3,9 @@
  */
 
 @interface _UITransitionState : NSObject {
-    NSDate *_beginDate;
-    id /* block */ _completion;
-    int _transitionDirection;
+    NSDate * _beginDate;
+    id /* block */  _completion;
+    int  _transitionDirection;
 }
 
 @property (getter=isActive, nonatomic, readonly) BOOL active;

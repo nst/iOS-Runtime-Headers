@@ -3,10 +3,10 @@
  */
 
 @interface VSTextPreProcessorRule : NSObject {
-    BOOL _caseSensitive;
-    BOOL _eatPunctuation;
-    NSString *_matchPattern;
-    NSString *_replacement;
+    BOOL  _caseSensitive;
+    BOOL  _eatPunctuation;
+    NSString * _matchPattern;
+    NSString * _replacement;
 }
 
 - (void)dealloc;

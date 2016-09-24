@@ -3,36 +3,68 @@
  */
 
 @interface _GEOCandidateRouteMatch : NSObject {
-    double _distanceFromRoute;
+    double  _courseDelta;
+    double  _courseMatchScore;
+    double  _courseWeight;
+    double  _distanceFromRoute;
+    double  _distanceMatchScore;
+    double  _distanceWeight;
+    BOOL  _isGoodMatch;
     struct { 
         double latitude; 
         double longitude; 
-    } _locationCoordinate;
+    }  _locationCoordinate;
+    double  _maxCourseDelta;
+    double  _maxDistance;
     struct PolylineCoordinate { 
         unsigned int index; 
-        float offset; 
-    } _routeCoordinate;
-    double _score;
-    unsigned int _stepIndex;
+        double offset; 
+    }  _routeCoordinate;
+    double  _score;
+    unsigned int  _stepIndex;
 }
 
+@property (nonatomic) double courseDelta;
+@property (nonatomic) double courseMatchScore;
+@property (nonatomic) double courseWeight;
 @property (nonatomic) double distanceFromRoute;
+@property (nonatomic) double distanceMatchScore;
+@property (nonatomic) double distanceWeight;
+@property (nonatomic) BOOL isGoodMatch;
 @property (nonatomic) struct { double x1; double x2; } locationCoordinate;
-@property (nonatomic) struct PolylineCoordinate { unsigned int x1; float x2; } routeCoordinate;
+@property (nonatomic) double maxCourseDelta;
+@property (nonatomic) double maxDistance;
+@property (nonatomic) struct PolylineCoordinate { unsigned int x1; double x2; } routeCoordinate;
 @property (nonatomic) double score;
 @property (nonatomic) unsigned int stepIndex;
 
 - (id).cxx_construct;
+- (double)courseDelta;
+- (double)courseMatchScore;
+- (double)courseWeight;
 - (void)dealloc;
 - (id)description;
 - (double)distanceFromRoute;
+- (double)distanceMatchScore;
+- (double)distanceWeight;
 - (id)initWithRoute:(id)arg1;
+- (BOOL)isGoodMatch;
 - (struct { double x1; double x2; })locationCoordinate;
-- (struct PolylineCoordinate { unsigned int x1; float x2; })routeCoordinate;
+- (double)maxCourseDelta;
+- (double)maxDistance;
+- (struct PolylineCoordinate { unsigned int x1; double x2; })routeCoordinate;
 - (double)score;
+- (void)setCourseDelta:(double)arg1;
+- (void)setCourseMatchScore:(double)arg1;
+- (void)setCourseWeight:(double)arg1;
 - (void)setDistanceFromRoute:(double)arg1;
+- (void)setDistanceMatchScore:(double)arg1;
+- (void)setDistanceWeight:(double)arg1;
+- (void)setIsGoodMatch:(BOOL)arg1;
 - (void)setLocationCoordinate:(struct { double x1; double x2; })arg1;
-- (void)setRouteCoordinate:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1;
+- (void)setMaxCourseDelta:(double)arg1;
+- (void)setMaxDistance:(double)arg1;
+- (void)setRouteCoordinate:(struct PolylineCoordinate { unsigned int x1; double x2; })arg1;
 - (void)setScore:(double)arg1;
 - (void)setStepIndex:(unsigned int)arg1;
 - (unsigned int)stepIndex;

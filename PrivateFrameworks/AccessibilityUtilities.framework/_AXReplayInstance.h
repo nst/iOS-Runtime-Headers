@@ -3,17 +3,17 @@
  */
 
 @interface _AXReplayInstance : NSObject {
-    BOOL _async;
-    int _attemptsRemaining;
-    id /* block */ _completionBlock;
-    BOOL _didSucceed;
-    double _interval;
-    int _maxAttempts;
-    NSString *_name;
-    NSObject<OS_dispatch_queue> *_queue;
-    id /* block */ _replayBlock;
-    NSError *_underlyingError;
-    id _underlyingResult;
+    BOOL  _async;
+    int  _attemptsRemaining;
+    id /* block */  _completionBlock;
+    BOOL  _didSucceed;
+    double  _interval;
+    int  _maxAttempts;
+    NSString * _name;
+    NSObject<OS_dispatch_queue> * _queue;
+    id /* block */  _replayBlock;
+    NSError * _underlyingError;
+    id  _underlyingResult;
 }
 
 @property (nonatomic) BOOL async;

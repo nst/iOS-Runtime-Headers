@@ -3,23 +3,23 @@
  */
 
 @interface UIPageControl : UIControl {
-    UIVisualEffectView *_backgroundVisualEffectView;
-    int _currentPage;
-    UIImage *_currentPageImage;
-    NSMutableArray *_currentPageImages;
-    UIColor *_currentPageIndicatorTintColor;
-    int _displayedPage;
-    NSMutableArray *_indicators;
-    int _lastUserInterfaceIdiom;
-    _UILegibilitySettings *_legibilitySettings;
-    int _numberOfPages;
+    UIVisualEffectView * _backgroundVisualEffectView;
+    int  _currentPage;
+    UIImage * _currentPageImage;
+    NSMutableArray * _currentPageImages;
+    UIColor * _currentPageIndicatorTintColor;
+    int  _displayedPage;
+    NSMutableArray * _indicators;
+    int  _lastUserInterfaceIdiom;
+    _UILegibilitySettings * _legibilitySettings;
+    int  _numberOfPages;
     struct { 
         unsigned int hideForSinglePage : 1; 
         unsigned int defersCurrentPageDisplay : 1; 
-    } _pageControlFlags;
-    UIImage *_pageImage;
-    NSMutableArray *_pageImages;
-    UIColor *_pageIndicatorTintColor;
+    }  _pageControlFlags;
+    UIImage * _pageImage;
+    NSMutableArray * _pageImages;
+    UIColor * _pageIndicatorTintColor;
 }
 
 @property (nonatomic) int currentPage;
@@ -49,14 +49,14 @@
 - (void)_drawModernIndicatorInView:(id)arg1 enabled:(BOOL)arg2;
 - (id)_effectiveContentView;
 - (BOOL)_hasCustomImageForPage:(int)arg1 enabled:(BOOL)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_indicatorFrameAtIndex:(int)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_indicatorFrameAtIndex:(int)arg1;
 - (float)_indicatorSpacing;
 - (id)_indicatorViewEnabled:(BOOL)arg1 index:(int)arg2;
 - (id)_indicatorViewEnabled:(BOOL)arg1 index:(int)arg2 legible:(BOOL)arg3;
 - (void)_invalidateIndicators;
 - (id)_legibilitySettings;
 - (int)_legibilityStyle;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_modernBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_modernBounds;
 - (id)_modernColorEnabled:(BOOL)arg1;
 - (float)_modernCornerRadius;
 - (id)_modernIndicatorImageEnabled:(BOOL)arg1;
@@ -82,8 +82,8 @@
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)hidesForSinglePage;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (void)layoutSubviews;
 - (int)numberOfPages;
@@ -94,8 +94,8 @@
 - (void)setHidesForSinglePage:(BOOL)arg1;
 - (void)setNumberOfPages:(int)arg1;
 - (void)setPageIndicatorTintColor:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeForNumberOfPages:(int)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeForNumberOfPages:(int)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)updateCurrentPageDisplay;
 
 @end

@@ -3,11 +3,11 @@
  */
 
 @interface _CIScreenFilter : CIFilter {
-    NSNumber *inputAngle;
-    CIVector *inputCenter;
-    CIImage *inputImage;
-    NSNumber *inputSharpness;
-    NSNumber *inputWidth;
+    NSNumber * inputAngle;
+    CIVector * inputCenter;
+    CIImage * inputImage;
+    NSNumber * inputSharpness;
+    NSNumber * inputWidth;
 }
 
 @property (nonatomic, retain) NSNumber *inputAngle;

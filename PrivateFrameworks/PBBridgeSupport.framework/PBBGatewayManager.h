@@ -3,13 +3,13 @@
  */
 
 @interface PBBGatewayManager : NSObject {
-    NSString *_allowedGroupName;
-    NSArray *_bbSections;
-    NSDateComponents *_dndFromComponents;
-    NSDateComponents *_dndToComponents;
-    BOOL _isScheduled;
-    unsigned int _privilegedSenderType;
-    BBSettingsGateway *_settingsGateway;
+    NSString * _allowedGroupName;
+    NSArray * _bbSections;
+    NSDateComponents * _dndFromComponents;
+    NSDateComponents * _dndToComponents;
+    BOOL  _isScheduled;
+    unsigned int  _privilegedSenderType;
+    BBSettingsGateway * _settingsGateway;
 }
 
 @property (nonatomic, readonly) NSString *allowedGroupName;

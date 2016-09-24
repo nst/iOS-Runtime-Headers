@@ -3,7 +3,7 @@
  */
 
 @interface STWorkoutSetStateRequest : AFSiriRequest {
-    int _workoutState;
+    int  _workoutState;
 }
 
 + (BOOL)supportsSecureCoding;

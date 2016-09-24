@@ -3,8 +3,8 @@
  */
 
 @interface TILexiconEntry : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_documentText;
-    NSString *_userInput;
+    NSString * _documentText;
+    NSString * _userInput;
 }
 
 @property (nonatomic, readonly) NSString *documentText;

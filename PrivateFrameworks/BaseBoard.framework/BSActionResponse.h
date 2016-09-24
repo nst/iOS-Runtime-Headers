@@ -3,8 +3,8 @@
  */
 
 @interface BSActionResponse : NSObject <BSDescriptionProviding, BSSettingDescriptionProvider, BSXPCCoding, NSCopying> {
-    NSError *_error;
-    BSSettings *_info;
+    NSError * _error;
+    BSSettings * _info;
 }
 
 @property (readonly, copy) NSString *debugDescription;

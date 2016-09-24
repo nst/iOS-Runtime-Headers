@@ -3,7 +3,7 @@
  */
 
 @interface CKQueryOperationResult : CKOperationResult <NSSecureCoding> {
-    CKQueryCursor *_cursor;
+    CKQueryCursor * _cursor;
 }
 
 @property (nonatomic, retain) CKQueryCursor *cursor;

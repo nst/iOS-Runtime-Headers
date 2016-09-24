@@ -3,7 +3,7 @@
  */
 
 @interface VKInternedString : NSString {
-    NSString *original;
+    NSString * original;
 }
 
 + (void)initialize;

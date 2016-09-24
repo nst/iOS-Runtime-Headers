@@ -3,16 +3,14 @@
  */
 
 @interface MTLToolsObject : NSObject {
-    id _baseObject;
-    struct ILayerLockingPolicy { int (**x1)(); } *_lockingPolicy;
-    MTLToolsObject *_parent;
-    MTLToolsObject *_strongParent;
+    id  _baseObject;
+    struct ILayerLockingPolicy { int (**x1)(); } * _lockingPolicy;
+    MTLToolsObject * _parent;
+    MTLToolsObject * _strongParent;
 }
 
 @property (nonatomic, retain) id baseObject;
 @property (nonatomic) struct ILayerLockingPolicy { int (**x1)(); }*lockingPolicy;
-@property (nonatomic, readonly) MTLToolsObject *parent;
-@property (nonatomic, readonly) MTLToolsObject *strongParent;
 
 + (id)dispatchQueue;
 + (void)visitObjects:(id)arg1 withVisitor:(id)arg2;

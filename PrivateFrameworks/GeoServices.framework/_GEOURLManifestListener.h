@@ -3,9 +3,9 @@
  */
 
 @interface _GEOURLManifestListener : NSObject {
-    NSMutableArray *_handlers;
-    NSLock *_lock;
-    NSObject<OS_dispatch_source> *_timeoutTimer;
+    NSMutableArray * _handlers;
+    NSLock * _lock;
+    NSObject<OS_dispatch_source> * _timeoutTimer;
 }
 
 + (id)sharedListener;

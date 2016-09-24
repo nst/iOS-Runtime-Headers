@@ -3,8 +3,8 @@
  */
 
 @interface AFUIPreferences : NSObject {
-    <AFUIPreferencesDelegate> *_delegate;
-    NSUserDefaults *_userDefaults;
+    <AFUIPreferencesDelegate> * _delegate;
+    NSUserDefaults * _userDefaults;
 }
 
 @property (nonatomic) <AFUIPreferencesDelegate> *delegate;

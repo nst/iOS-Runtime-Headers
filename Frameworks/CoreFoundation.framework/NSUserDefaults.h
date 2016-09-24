@@ -3,16 +3,17 @@
  */
 
 @interface NSUserDefaults : NSObject {
-    struct __CFString { } *_container_;
-    struct __CFString { } *_identifier_;
-    id _kvo_;
-    void *_reserved;
+    struct __CFString { } * _container_;
+    struct __CFString { } * _identifier_;
+    id  _kvo_;
+    void * _reserved;
 }
 
 // Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
 
 - (struct __CFString { }*)_container;
 - (struct __CFString { }*)_identifier;
+- (BOOL)_observingCFPreferences;
 - (void)_setContainer:(struct __CFURL { }*)arg1;
 - (void)_setIdentifier:(struct __CFString { }*)arg1;
 
@@ -43,7 +44,7 @@
 - (id)initWithSuiteName:(id)arg1;
 - (id)initWithUser:(id)arg1;
 - (int)integerForKey:(id)arg1;
-- (long long)longForKey:(id)arg1;
+- (int)longForKey:(id)arg1;
 - (id)objectForKey:(id)arg1;
 - (id)objectForKey:(id)arg1 inDomain:(id)arg2;
 - (BOOL)objectIsForcedForKey:(id)arg1;
@@ -62,7 +63,7 @@
 - (void)setDouble:(double)arg1 forKey:(id)arg2;
 - (void)setFloat:(float)arg1 forKey:(id)arg2;
 - (void)setInteger:(int)arg1 forKey:(id)arg2;
-- (void)setLong:(long long)arg1 forKey:(id)arg2;
+- (void)setLong:(int)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2 inDomain:(id)arg3;
 - (void)setObservationInfo:(void*)arg1;
@@ -85,13 +86,17 @@
 
 // Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
 
++ (id)_sf_safariDefaults;
+
 - (id)_sf_dateForKey:(id)arg1;
+- (BOOL)_sf_javaScriptCanOpenWindowsAutomatically;
+- (BOOL)_sf_javaScriptEnabled;
+- (void)_sf_registerSafariDefaults;
 - (id)_sf_stringForKey:(id)arg1 defaultValue:(id)arg2;
+- (BOOL)_sf_warnAboutFraudulentWebsites;
 
 // Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
 
-+ (id)_akColorForData:(id)arg1;
-+ (id)_akFontForData:(id)arg1;
 + (id)akDataForColor:(id)arg1;
 + (id)akDataForFont:(id)arg1;
 + (id)akDataForTextAttributes:(id)arg1;
@@ -134,8 +139,8 @@
 - (BOOL)boolValueSafeForKey:(id)arg1 status:(int*)arg2;
 - (double)doubleValueSafeForKey:(id)arg1;
 - (double)doubleValueSafeForKey:(id)arg1 status:(int*)arg2;
-- (long long)int64ValueSafeForKey:(id)arg1;
-- (long long)int64ValueSafeForKey:(id)arg1 status:(int*)arg2;
+- (int)int64ValueSafeForKey:(id)arg1;
+- (int)int64ValueSafeForKey:(id)arg1 status:(int*)arg2;
 - (id)stringValueSafeForKey:(id)arg1;
 - (id)stringValueSafeForKey:(id)arg1 status:(int*)arg2;
 - (const char *)utf8ValueSafeForKey:(id)arg1;
@@ -143,8 +148,9 @@
 
 // Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
 
-+ (void)FU_backupStandardUserDefaultsKey:(id)arg1;
 + (id)_npsManager;
++ (void)fu_backupStandardUserDefaultsKey:(id)arg1;
++ (void)fu_synchronizeStandardUserDefaultsKey:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/IMDaemonCore.framework/IMDaemonCore
 

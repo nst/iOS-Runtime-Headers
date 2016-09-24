@@ -3,10 +3,10 @@
  */
 
 @interface JSVirtualMachine : NSObject {
-    NSMapTable *m_contextCache;
-    NSMapTable *m_externalObjectGraph;
-    NSMapTable *m_externalRememberedSet;
-    struct OpaqueJSContextGroup { } *m_group;
+    NSMapTable * m_contextCache;
+    NSMapTable * m_externalObjectGraph;
+    NSMapTable * m_externalRememberedSet;
+    struct OpaqueJSContextGroup { } * m_group;
 }
 
 + (id)virtualMachineWithContextGroupRef:(struct OpaqueJSContextGroup { }*)arg1;

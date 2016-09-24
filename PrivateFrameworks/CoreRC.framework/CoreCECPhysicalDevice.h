@@ -3,10 +3,10 @@
  */
 
 @interface CoreCECPhysicalDevice : NSObject {
-    NSMutableArray *_children;
-    NSMutableSet *_logicalDevices;
-    CoreCECPhysicalDevice *_parent;
-    unsigned int _physicalAddress;
+    NSMutableArray * _children;
+    NSMutableSet * _logicalDevices;
+    CoreCECPhysicalDevice * _parent;
+    unsigned int  _physicalAddress;
 }
 
 @property (nonatomic, readonly) NSArray *children;

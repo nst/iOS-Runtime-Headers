@@ -3,14 +3,14 @@
  */
 
 @interface SUSectionsResponse : NSObject {
-    BOOL _cacheable;
-    SUClientInterface *_clientInterface;
-    UIImage *_moreListImage;
-    UIImage *_moreListSelectedImage;
-    NSMutableDictionary *_rawResponseDictionary;
-    int _responseType;
-    NSMutableDictionary *_sectionsCache;
-    NSNumber *_shouldResetUserOrdering;
+    BOOL  _cacheable;
+    SUClientInterface * _clientInterface;
+    UIImage * _moreListImage;
+    UIImage * _moreListSelectedImage;
+    NSMutableDictionary * _rawResponseDictionary;
+    int  _responseType;
+    NSMutableDictionary * _sectionsCache;
+    NSNumber * _shouldResetUserOrdering;
 }
 
 @property (nonatomic, readonly) NSArray *allSections;

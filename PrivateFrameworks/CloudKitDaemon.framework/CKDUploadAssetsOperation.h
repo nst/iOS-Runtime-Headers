@@ -3,17 +3,17 @@
  */
 
 @interface CKDUploadAssetsOperation : CKDDatabaseOperation {
-    NSMutableArray *_MMCSItemsToUpload;
-    NSArray *_assetsToUpload;
-    CKDCancelTokenGroup *_cancelTokens;
-    unsigned int _maxPackageUploadsPerBatch;
-    NSMutableArray *_openedPackages;
-    NSMutableArray *_packageManifests;
-    NSObject<OS_dispatch_queue> *_queue;
-    id /* block */ _uploadCompletionBlock;
-    id /* block */ _uploadPreparationBlock;
-    id /* block */ _uploadProgressBlock;
-    NSMapTable *_uploadTasksByPackages;
+    NSMutableArray * _MMCSItemsToUpload;
+    NSArray * _assetsToUpload;
+    CKDCancelTokenGroup * _cancelTokens;
+    unsigned int  _maxPackageUploadsPerBatch;
+    NSMutableArray * _openedPackages;
+    NSMutableArray * _packageManifests;
+    NSObject<OS_dispatch_queue> * _queue;
+    id /* block */  _uploadCompletionBlock;
+    id /* block */  _uploadPreparationBlock;
+    id /* block */  _uploadProgressBlock;
+    NSMapTable * _uploadTasksByPackages;
 }
 
 @property (nonatomic, retain) NSMutableArray *MMCSItemsToUpload;
@@ -29,6 +29,7 @@
 @property (nonatomic, retain) NSMapTable *uploadTasksByPackages;
 
 - (void).cxx_destruct;
+- (id)CKStatusReportLogGroups;
 - (id)MMCSItemsToUpload;
 - (void)_closeAllPackages;
 - (void)_closePackage:(id)arg1;

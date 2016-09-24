@@ -3,11 +3,11 @@
  */
 
 @interface HMDAccessoryTransportInformation : NSObject <NSSecureCoding> {
-    HAPAccessory *_hapAccessory;
-    NSNumber *_instanceID;
-    int _linkType;
-    BOOL _reachable;
-    NSString *_serverIdentifier;
+    HAPAccessory * _hapAccessory;
+    NSNumber * _instanceID;
+    int  _linkType;
+    BOOL  _reachable;
+    NSString * _serverIdentifier;
 }
 
 @property (nonatomic, retain) HAPAccessory *hapAccessory;

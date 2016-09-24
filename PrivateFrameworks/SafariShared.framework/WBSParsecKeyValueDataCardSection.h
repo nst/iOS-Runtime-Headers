@@ -3,9 +3,9 @@
  */
 
 @interface WBSParsecKeyValueDataCardSection : WBSParsecCardSection {
-    WBSParsecImageRepresentation *_accessoryImageRepresentation;
-    NSArray *_keys;
-    NSArray *_values;
+    WBSParsecImageRepresentation * _accessoryImageRepresentation;
+    NSArray * _keys;
+    NSArray * _values;
 }
 
 @property (nonatomic, readonly, copy) WBSParsecImageRepresentation *accessoryImageRepresentation;

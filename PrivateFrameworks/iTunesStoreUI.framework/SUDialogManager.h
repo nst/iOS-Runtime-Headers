@@ -2,8 +2,8 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUDialogManager : NSObject <ISSingleton, SUDialogDelegate> {
-    NSMutableArray *_dialogs;
+@interface SUDialogManager : NSObject <ISSingleton> {
+    NSMutableArray * _dialogs;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -17,11 +17,9 @@
 + (id)sharedInstance;
 
 - (void)_finishDialog:(id)arg1 withButtonIndex:(int)arg2;
-- (BOOL)_haveEquivalentDialog:(id)arg1;
+- (BOOL)_isDisplayingEquivalentDialog:(id)arg1;
 - (void)_performDefaultActionForDialog:(id)arg1 buttonIndex:(int)arg2;
 - (void)dealloc;
-- (void)dialog:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)dialogDidCancel:(id)arg1;
 - (int)numberOfPendingDialogs;
 - (BOOL)presentDialog:(id)arg1;
 - (BOOL)presentDialog:(id)arg1 withCompletionBlock:(id /* block */)arg2;

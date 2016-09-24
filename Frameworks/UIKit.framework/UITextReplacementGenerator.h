@@ -3,8 +3,8 @@
  */
 
 @interface UITextReplacementGenerator : NSObject {
-    UITextRange *_replacementRange;
-    NSString *_stringToReplace;
+    UITextRange * _replacementRange;
+    NSString * _stringToReplace;
 }
 
 @property (nonatomic, retain) UITextRange *replacementRange;
@@ -12,6 +12,7 @@
 
 - (void).cxx_destruct;
 - (void)addPlaceholderForEmptyReplacements:(id)arg1;
+- (BOOL)isStringToReplaceMisspelled;
 - (id)replacementRange;
 - (id)replacementWithText:(id)arg1;
 - (id)replacements;

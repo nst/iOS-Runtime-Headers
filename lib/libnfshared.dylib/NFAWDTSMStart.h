@@ -3,12 +3,11 @@
  */
 
 @interface NFAWDTSMStart : NSObject <NFAWDEventProtocol> {
-    AWDNFCTSMStartEvent *_metric;
-    unsigned int memoryIndexTable;
-    unsigned int memoryPersistent;
-    unsigned int memoryTransientDeselect;
-    unsigned int memoryTransientReset;
-    NSString *url;
+    unsigned int  _memoryIndexTable;
+    unsigned int  _memoryPersistent;
+    unsigned int  _memoryTransientDeselect;
+    unsigned int  _memoryTransientReset;
+    AWDNFCTSMStartEvent * _metric;
 }
 
 @property (readonly, copy) NSString *debugDescription;

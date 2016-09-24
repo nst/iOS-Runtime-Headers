@@ -3,12 +3,12 @@
  */
 
 @interface MKRouteStepPolyline : MKPolyline {
-    MKRoutePolyline *_fullRoute;
+    MKRoutePolyline * _fullRoute;
 }
 
 - (void).cxx_destruct;
 - (id)_initWithRoute:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (struct { double x1; double x2; })coordinate;
+- (struct CLLocationCoordinate2D { double x1; double x2; })coordinate;
 - (void)dealloc;
 
 @end

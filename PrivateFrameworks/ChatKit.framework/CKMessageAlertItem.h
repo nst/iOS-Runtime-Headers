@@ -3,12 +3,12 @@
  */
 
 @interface CKMessageAlertItem : CKAlertItem <NCInteractiveNotificationHostDelegate, SBBannerPresentingAlertItem> {
-    NCInteractiveNotificationHostViewController *_audioPlaybackViewController;
-    BBBulletin *_bulletin;
-    CKIMDBMessage *_message;
-    BOOL _playedSound;
-    BOOL _showingImage;
-    <SBBannerPresentingAlertItemDelegate> *bannerPresenterDelegate;
+    NCInteractiveNotificationHostViewController * _audioPlaybackViewController;
+    BBBulletin * _bulletin;
+    CKIMDBMessage * _message;
+    BOOL  _playedSound;
+    BOOL  _showingImage;
+    <SBBannerPresentingAlertItemDelegate> * bannerPresenterDelegate;
 }
 
 @property (nonatomic, retain) NCInteractiveNotificationHostViewController *audioPlaybackViewController;
@@ -25,12 +25,11 @@
 + (void)setLastMessageSenderID:(int)arg1;
 + (void)stopPlayingCurrentAlertTone;
 
+- (void).cxx_destruct;
 - (id)_groupID;
 - (id)accessoryView;
 - (id)address;
 - (id)alertImage;
-- (Class)alertSheetClass;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (BOOL)allowMenuButtonDismissal;
 - (id)audioPlaybackViewController;
 - (id)bannerPresenterDelegate;
@@ -50,7 +49,7 @@
 - (void)setMessage:(id)arg1;
 - (void)setShowingImage:(BOOL)arg1;
 - (BOOL)showingImage;
-- (void)willPresentAlertView:(id)arg1;
+- (void)willActivate;
 - (void)willRelockForButtonPress:(BOOL)arg1;
 
 @end

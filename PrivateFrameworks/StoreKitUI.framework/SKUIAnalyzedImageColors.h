@@ -3,10 +3,10 @@
  */
 
 @interface SKUIAnalyzedImageColors : NSObject {
-    UIColor *_backgroundColor;
-    BOOL _isBackgroundLight;
-    UIColor *_textPrimaryColor;
-    UIColor *_textSecondaryColor;
+    UIColor * _backgroundColor;
+    BOOL  _isBackgroundLight;
+    UIColor * _textPrimaryColor;
+    UIColor * _textSecondaryColor;
 }
 
 @property (nonatomic, retain) UIColor *backgroundColor;

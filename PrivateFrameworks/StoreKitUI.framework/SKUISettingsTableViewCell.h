@@ -4,14 +4,14 @@
 
 @interface SKUISettingsTableViewCell : UITableViewCell {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _contentInset;
-    UIImageView *_disclosureChevron;
-    BOOL _hasDisclosureChevron;
-    SKUISettingDescriptionView *_settingDescriptionView;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _contentInset;
+    UIImageView * _disclosureChevron;
+    BOOL  _hasDisclosureChevron;
+    SKUISettingDescriptionView * _settingDescriptionView;
 }
 
 @property (nonatomic, readonly) SKUISettingDescriptionView *settingDescriptionView;

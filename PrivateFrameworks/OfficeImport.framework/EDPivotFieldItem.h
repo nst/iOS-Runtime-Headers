@@ -3,14 +3,14 @@
  */
 
 @interface EDPivotFieldItem : NSObject {
-    bool mCalculatedMember;
-    bool mChildItems;
-    bool mDetailsHidden;
-    bool mExpanded;
-    bool mHidden;
-    unsigned long mItemIndex;
-    bool mMissed;
-    int mType;
+    bool  mCalculatedMember;
+    bool  mChildItems;
+    bool  mDetailsHidden;
+    bool  mExpanded;
+    bool  mHidden;
+    unsigned long  mItemIndex;
+    bool  mMissed;
+    int  mType;
 }
 
 + (id)pivotFieldItem;

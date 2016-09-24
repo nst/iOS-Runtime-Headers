@@ -3,10 +3,10 @@
  */
 
 @interface _CNBlockObservable : CNObservable {
-    id /* block */ _block;
+    id /* block */  _block;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithBlock:(id /* block */)arg1;
 - (id)subscribe:(id)arg1;
 

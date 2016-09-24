@@ -3,8 +3,8 @@
  */
 
 @interface FMAPSDelegateInfo : NSObject {
-    <FMAPSDelegate> *_delegate;
-    NSString *_topic;
+    <FMAPSDelegate> * _delegate;
+    NSString * _topic;
 }
 
 @property (nonatomic) <FMAPSDelegate> *delegate;

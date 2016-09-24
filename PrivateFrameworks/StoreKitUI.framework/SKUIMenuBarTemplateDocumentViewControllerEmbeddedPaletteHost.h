@@ -3,7 +3,7 @@
  */
 
 @interface SKUIMenuBarTemplateDocumentViewControllerEmbeddedPaletteHost : UIView {
-    UIView *_titleView;
+    UIView * _titleView;
 }
 
 @property (nonatomic, retain) UIView *titleView;

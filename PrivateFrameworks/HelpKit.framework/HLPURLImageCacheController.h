@@ -3,7 +3,7 @@
  */
 
 @interface HLPURLImageCacheController : HLPURLDataCacheController {
-    NSCache *_inMemoryImageCache;
+    NSCache * _inMemoryImageCache;
 }
 
 @property (nonatomic, retain) NSCache *inMemoryImageCache;

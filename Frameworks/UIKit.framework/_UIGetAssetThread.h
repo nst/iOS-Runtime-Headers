@@ -3,10 +3,10 @@
  */
 
 @interface _UIGetAssetThread : NSThread {
-    ALAsset *_asset;
-    NSCondition *_condition;
-    ALAssetsLibrary *_library;
-    NSURL *_url;
+    ALAsset * _asset;
+    NSCondition * _condition;
+    ALAssetsLibrary * _library;
+    NSURL * _url;
 }
 
 @property (retain) ALAsset *asset;

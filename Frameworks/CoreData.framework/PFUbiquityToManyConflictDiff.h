@@ -3,9 +3,9 @@
  */
 
 @interface PFUbiquityToManyConflictDiff : NSObject {
-    NSMutableSet *_deletedObjectIDs;
-    NSMutableSet *_insertedObjectIDs;
-    NSString *_relationshipKey;
+    NSMutableSet * _deletedObjectIDs;
+    NSMutableSet * _insertedObjectIDs;
+    NSString * _relationshipKey;
 }
 
 @property (nonatomic, readonly) NSMutableSet *deletedObjectIDs;

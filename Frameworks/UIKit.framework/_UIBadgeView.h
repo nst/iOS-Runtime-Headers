@@ -3,20 +3,32 @@
  */
 
 @interface _UIBadgeView : UIView {
-    UIView *_alternate;
-    UIView *_background;
-    UIView *_value;
+    UIImageView * _background;
+    UIColor * _backgroundColor;
+    UILabel * _label;
+    NSMutableDictionary * _mergedTextAttributes;
+    NSString * _text;
+    NSDictionary * _textAttributes;
 }
 
+@property (nonatomic, copy) UIColor *backgroundColor;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic, copy) NSDictionary *textAttributes;
+
 - (void).cxx_destruct;
+- (void)_applyTextToLabel;
 - (void)_didChangeFromIdiom:(int)arg1 onScreen:(id)arg2 traverseHierarchy:(BOOL)arg3;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
-- (void)_updateBackgroundBlinks:(BOOL)arg1;
-- (void)_updateLabelFont;
-- (id)initWithValue:(id)arg1 blinks:(BOOL)arg2;
+- (void)_setupLabelIfNecessary;
+- (void)_updateBackground;
+- (id)backgroundColor;
+- (id)initWithText:(id)arg1;
 - (void)layoutSubviews;
-- (void)setBlinks:(BOOL)arg1;
-- (void)setValue:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setBackgroundColor:(id)arg1;
+- (void)setText:(id)arg1;
+- (void)setTextAttributes:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)text;
+- (id)textAttributes;
 
 @end

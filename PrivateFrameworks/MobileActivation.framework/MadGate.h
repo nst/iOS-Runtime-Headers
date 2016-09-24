@@ -3,7 +3,7 @@
  */
 
 @interface MadGate : NSObject {
-    NSXPCConnection *_connection;
+    NSXPCConnection * _connection;
 }
 
 @property (nonatomic, readonly) NSXPCConnection *connection;
@@ -12,6 +12,7 @@
 - (id)connection;
 - (id)copyActivationRecord:(id*)arg1;
 - (id)copyRegulatoryImages:(id*)arg1;
+- (id)copyUCRTToken:(id*)arg1;
 - (id)createActivationInfo:(id*)arg1;
 - (id)createRecertInfo:(id*)arg1;
 - (id)createTunnel1ActivationInfo:(id)arg1 error:(id*)arg2;
@@ -25,6 +26,8 @@
 - (BOOL)handleReCertInfo:(id)arg1 withError:(id*)arg2;
 - (id)init;
 - (BOOL)isDeviceABrick:(id*)arg1;
+- (BOOL)isUCRTAvailable:(id*)arg1;
+- (id)issueClientCertificate:(id)arg1 error:(id*)arg2;
 - (BOOL)reactivateDevice:(id*)arg1;
 - (BOOL)recertifyDevice:(BOOL)arg1 withError:(id*)arg2;
 - (BOOL)unbrickDevice:(id*)arg1;

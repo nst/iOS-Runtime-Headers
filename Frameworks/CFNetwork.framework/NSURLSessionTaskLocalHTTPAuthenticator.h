@@ -3,7 +3,7 @@
  */
 
 @interface NSURLSessionTaskLocalHTTPAuthenticator : NSURLSessionTaskHTTPAuthenticator {
-    <NSURLSessionAppleIDContext> *_externalAuthenticator;
+    <NSURLSessionAppleIDContext> * _externalAuthenticator;
 }
 
 @property (copy) <NSURLSessionAppleIDContext> *externalAuthenticator;

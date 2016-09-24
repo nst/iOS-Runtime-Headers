@@ -3,36 +3,36 @@
  */
 
 @interface CalDAVContainer : CoreDAVContainer {
-    NSString *_alarms;
-    BOOL _autoprovisioned;
-    NSString *_calendarColor;
-    NSString *_calendarDescription;
-    NSString *_calendarOrder;
-    BOOL _canBePublished;
-    BOOL _canBeShared;
-    NSString *_ctag;
-    NSString *_defaultAllDayAlarms;
-    NSString *_defaultTimedAlarms;
-    NSSet *_freeBusySet;
-    BOOL _isMarkedImmutableSharees;
-    BOOL _isMarkedUndeletable;
-    BOOL _isScheduleTransparent;
-    NSString *_languageCode;
-    NSString *_locationCode;
-    BOOL _overrideSupportsFreebusy;
-    NSURL *_prePublishURL;
-    NSURL *_publishURL;
-    NSURL *_scheduleDefaultCalendarURL;
-    NSSet *_sharees;
-    NSURL *_source;
-    ICSDuration *_subscribedRefreshRate;
-    BOOL _subscribedStripAlarms;
-    BOOL _subscribedStripAttachments;
-    BOOL _subscribedStripTodos;
-    NSSet *_supportedCalendarComponentSet;
-    NSString *_supportedCalendarComponentSets;
-    NSString *_symbolicColorName;
-    NSTimeZone *_timeZone;
+    NSString * _alarms;
+    BOOL  _autoprovisioned;
+    NSString * _calendarColor;
+    NSString * _calendarDescription;
+    NSString * _calendarOrder;
+    BOOL  _canBePublished;
+    BOOL  _canBeShared;
+    NSString * _ctag;
+    NSString * _defaultAllDayAlarms;
+    NSString * _defaultTimedAlarms;
+    NSSet * _freeBusySet;
+    BOOL  _isMarkedImmutableSharees;
+    BOOL  _isMarkedUndeletable;
+    BOOL  _isScheduleTransparent;
+    NSString * _languageCode;
+    NSString * _locationCode;
+    BOOL  _overrideSupportsFreebusy;
+    NSURL * _prePublishURL;
+    NSURL * _publishURL;
+    NSURL * _scheduleDefaultCalendarURL;
+    NSSet * _sharees;
+    NSURL * _source;
+    ICSDuration * _subscribedRefreshRate;
+    BOOL  _subscribedStripAlarms;
+    BOOL  _subscribedStripAttachments;
+    BOOL  _subscribedStripTodos;
+    NSSet * _supportedCalendarComponentSet;
+    NSString * _supportedCalendarComponentSets;
+    NSString * _symbolicColorName;
+    NSTimeZone * _timeZone;
 }
 
 @property (nonatomic, retain) NSString *alarms;

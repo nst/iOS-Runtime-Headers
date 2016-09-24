@@ -3,8 +3,8 @@
  */
 
 @interface WDSpecialCharacter : WDRun {
-    WDCharacterProperties *mProperties;
-    int mType;
+    WDCharacterProperties * mProperties;
+    int  mType;
 }
 
 - (int)characterType;

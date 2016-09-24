@@ -3,7 +3,7 @@
  */
 
 @interface _MFLibrarySearchableIndexPendingRemovals : NSObject {
-    NSMutableDictionary *_reasonsByIdentifier;
+    NSMutableDictionary * _reasonsByIdentifier;
 }
 
 @property (readonly) unsigned int count;
@@ -16,7 +16,6 @@
 - (unsigned int)count;
 - (void)dealloc;
 - (id)deletedIdentifiers;
-- (void)getPurgingReasons:(id*)arg1 excluding:(id*)arg2;
 - (id)identifiers;
 - (id)init;
 - (id)purgedIdentifiers;

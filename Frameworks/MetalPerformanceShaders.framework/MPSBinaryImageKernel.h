@@ -3,7 +3,7 @@
  */
 
 @interface MPSBinaryImageKernel : MPSKernel {
-    int _checkFlags;
+    int  _checkFlags;
     struct { 
         struct { 
             unsigned int x; 
@@ -15,19 +15,22 @@
             unsigned int height; 
             unsigned int depth; 
         } size; 
-    } _clipRect;
-    unsigned int _primaryEdgeMode;
+    }  _clipRect;
+    int (* _encode;
+    void * _encodeData;
+    const struct { unsigned int x1; unsigned int x2; unsigned int x3; } * _preferredTileSize;
+    unsigned int  _primaryEdgeMode;
     struct { 
         int x; 
         int y; 
         int z; 
-    } _primaryOffset;
-    unsigned int _secondaryEdgeMode;
+    }  _primaryOffset;
+    unsigned int  _secondaryEdgeMode;
     struct { 
         int x; 
         int y; 
         int z; 
-    } _secondaryOffset;
+    }  _secondaryOffset;
 }
 
 @property (nonatomic) struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; } clipRect;
@@ -42,15 +45,14 @@
 - (BOOL)encodeToCommandBuffer:(id)arg1 inPlacePrimaryTexture:(id*)arg2 secondaryTexture:(id)arg3 fallbackCopyAllocator:(id /* block */)arg4;
 - (BOOL)encodeToCommandBuffer:(id)arg1 primaryTexture:(id)arg2 inPlaceSecondaryTexture:(id*)arg3 fallbackCopyAllocator:(id /* block */)arg4;
 - (void)encodeToCommandBuffer:(id)arg1 primaryTexture:(id)arg2 secondaryTexture:(id)arg3 destinationTexture:(id)arg4;
-- (long)encodeWithComputeEncoder:(id)arg1 commandBuffer:(id)arg2 primaryTexture:(id)arg3 secondaryTexture:(id)arg4 destinationTexture:(id)arg5 callInfo:(const struct { struct MIPixelInfo {} *x1; struct MIPixelInfo {} *x2; struct MIPixelInfo {} *x3; struct { struct { unsigned int x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; } x_4_1_1; struct { unsigned int x_2_2_1; unsigned int x_2_2_2; unsigned int x_2_2_3; } x_4_1_2; } x4; }*)arg6;
 - (id)init;
 - (id)initWithDevice:(id)arg1;
 - (unsigned int)primaryEdgeMode;
 - (struct { int x1; int x2; int x3; })primaryOffset;
-- (struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; })primarySourceRegionForDestinationSize:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg1;
+- (struct MPSRegion { struct MPSOrigin { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct MPSSize { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; })primarySourceRegionForDestinationSize:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg1;
 - (unsigned int)secondaryEdgeMode;
 - (struct { int x1; int x2; int x3; })secondaryOffset;
-- (struct { struct { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; })secondarySourceRegionForDestinationSize:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg1;
+- (struct MPSRegion { struct MPSOrigin { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct MPSSize { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; })secondarySourceRegionForDestinationSize:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg1;
 - (void)setClipRect:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; })arg1;
 - (void)setPrimaryEdgeMode:(unsigned int)arg1;
 - (void)setPrimaryOffset:(struct { int x1; int x2; int x3; })arg1;

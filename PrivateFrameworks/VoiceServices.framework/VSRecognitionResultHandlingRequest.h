@@ -3,9 +3,9 @@
  */
 
 @interface VSRecognitionResultHandlingRequest : NSObject {
-    VSRecognitionAction *_action;
-    <VSRecognitionResultHandler> *_handler;
-    NSArray *_results;
+    VSRecognitionAction * _action;
+    <VSRecognitionResultHandler> * _handler;
+    NSArray * _results;
 }
 
 - (void)dealloc;

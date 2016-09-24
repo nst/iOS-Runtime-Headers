@@ -3,13 +3,13 @@
  */
 
 @interface HAPBTLEResponse : NSObject {
-    NSMutableData *__internalBody;
-    NSData *_body;
-    unsigned int _bodyLength;
-    BOOL _headerComplete;
-    HAPBTLETransactionIdentifier *_identifier;
-    HAPBTLERequest *_request;
-    unsigned char _statusCode;
+    NSMutableData * __internalBody;
+    NSData * _body;
+    unsigned int  _bodyLength;
+    BOOL  _headerComplete;
+    HAPBTLETransactionIdentifier * _identifier;
+    HAPBTLERequest * _request;
+    unsigned char  _statusCode;
 }
 
 @property (setter=_setInternalBody:, nonatomic, retain) NSMutableData *_internalBody;

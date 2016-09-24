@@ -3,7 +3,7 @@
  */
 
 @interface HKBloodTypeObject : NSObject <NSCopying, NSSecureCoding> {
-    int _bloodType;
+    int  _bloodType;
 }
 
 @property (readonly) int bloodType;

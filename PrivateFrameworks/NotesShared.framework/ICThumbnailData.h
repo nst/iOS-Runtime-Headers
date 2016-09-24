@@ -3,10 +3,10 @@
  */
 
 @interface ICThumbnailData : NSObject {
-    struct UIImage { Class x1; } *_image;
-    unsigned int _imageScaling;
-    BOOL _isMovie;
-    BOOL _showAsFileIcon;
+    struct UIImage { Class x1; } * _image;
+    unsigned int  _imageScaling;
+    BOOL  _isMovie;
+    BOOL  _showAsFileIcon;
 }
 
 @property (nonatomic, retain) UIImage *image;

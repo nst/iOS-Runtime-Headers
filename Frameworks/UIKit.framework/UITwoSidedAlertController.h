@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITwoSidedAlertController : NSObject <UIAlertViewDelegate> {
-    UIAlertView *_back;
-    UIAlertView *_currentAlert;
-    id _delegate;
-    UIAlertView *_front;
+@interface UITwoSidedAlertController : NSObject <CAAnimationDelegate, UIAlertViewDelegate> {
+    UIAlertView * _back;
+    UIAlertView * _currentAlert;
+    id  _delegate;
+    UIAlertView * _front;
 }
 
 @property (readonly, copy) NSString *debugDescription;

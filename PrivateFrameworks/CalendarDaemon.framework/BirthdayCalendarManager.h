@@ -3,18 +3,18 @@
  */
 
 @interface BirthdayCalendarManager : NSObject {
-    BOOL _abSyncActive;
-    void *_addressBook;
-    BOOL _calSyncActive;
-    unsigned int _failedAlarmUpdateAttempts;
-    unsigned int _failedPopulateAttempts;
-    BOOL _isAlarmUpdatePending;
-    BOOL _isPopulatePending;
-    NSOperationQueue *_queue;
-    BOOL _running;
-    NSTimer *_syncTimer;
-    NSTimer *_throttleTimer;
-    BOOL _wantsUpdatedWhileThrottled;
+    BOOL  _abSyncActive;
+    void * _addressBook;
+    BOOL  _calSyncActive;
+    unsigned int  _failedAlarmUpdateAttempts;
+    unsigned int  _failedPopulateAttempts;
+    BOOL  _isAlarmUpdatePending;
+    BOOL  _isPopulatePending;
+    NSOperationQueue * _queue;
+    BOOL  _running;
+    NSTimer * _syncTimer;
+    NSTimer * _throttleTimer;
+    BOOL  _wantsUpdatedWhileThrottled;
 }
 
 + (void)setStateInPrefs:(int)arg1 withLastABSequence:(int)arg2;

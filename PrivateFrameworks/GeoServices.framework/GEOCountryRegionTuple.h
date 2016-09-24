@@ -3,8 +3,8 @@
  */
 
 @interface GEOCountryRegionTuple : PBCodable <NSCopying> {
-    NSString *_countryCode;
-    NSString *_region;
+    NSString * _countryCode;
+    NSString * _region;
 }
 
 @property (nonatomic, retain) NSString *countryCode;

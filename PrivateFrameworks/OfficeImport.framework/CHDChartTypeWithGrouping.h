@@ -3,7 +3,7 @@
  */
 
 @interface CHDChartTypeWithGrouping : CHDChartType {
-    int mGrouping;
+    int  mGrouping;
 }
 
 - (id)chdGroupingString;

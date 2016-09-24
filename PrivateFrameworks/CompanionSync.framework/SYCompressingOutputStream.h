@@ -3,20 +3,20 @@
  */
 
 @interface SYCompressingOutputStream : NSOutputStream <NSStreamDelegate, SYCompressionBufferOptimization, SYOutputCompressor, SYStreamEventHandlerBlocks, SYStreamProgress, SYStreamThroughputCounter, _SYStreamRunLoopSourceHandler> {
-    unsigned long long _byteCount;
-    _SYZlibStreamInternal *_internal;
-    int _level;
-    id /* block */ _onBytesAvailable;
-    id /* block */ _onClose;
-    id /* block */ _onEndOfFile;
-    id /* block */ _onError;
-    id /* block */ _onOpenComplete;
-    id /* block */ _onSpaceAvailable;
-    NSProgress *_progress;
-    NSOutputStream *_stream;
+    unsigned int  _byteCount;
+    _SYZlibStreamInternal * _internal;
+    int  _level;
+    id /* block */  _onBytesAvailable;
+    id /* block */  _onClose;
+    id /* block */  _onEndOfFile;
+    id /* block */  _onError;
+    id /* block */  _onOpenComplete;
+    id /* block */  _onSpaceAvailable;
+    NSProgress * _progress;
+    NSOutputStream * _stream;
 }
 
-@property (nonatomic, readonly) unsigned long long bytesThroughput;
+@property (nonatomic, readonly) unsigned int bytesThroughput;
 @property (nonatomic) int compressionLevel;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -39,7 +39,7 @@
 - (int)_handlePendingInput;
 - (id)_internal;
 - (void)_postEventToDelegate:(unsigned int)arg1;
-- (unsigned long long)bytesThroughput;
+- (unsigned int)bytesThroughput;
 - (void)close;
 - (int)compressionLevel;
 - (void)dealloc;

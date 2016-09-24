@@ -3,24 +3,24 @@
  */
 
 @interface AKInlineSignInViewController : UIViewController <UITextFieldDelegate> {
-    AKTextField *_appleIDField;
-    AKAppleIDAuthenticationController *_authenticationController;
-    int _blurEffectStyle;
-    AKAppleIDAuthenticationInAppContext *_context;
-    UIButton *_createAppleIDButton;
-    <AKInlineSignInViewControllerDelegate> *_delegate;
-    UIButton *_iforgotButton;
-    BOOL _isAuthInProgress;
-    UIView *_loginFieldsContainer;
-    AKTextField *_passwordField;
-    NSString *_primaryButtonTitle;
-    NSString *_secondaryButtonTitle;
-    UIButton *_signInButton;
-    UIActivityIndicatorView *_spinner;
-    NSString *_tertiaryButtonTitle;
-    BOOL _usesDarkMode;
-    BOOL _usesVibrancy;
-    BOOL _wantsAuthenticationProgress;
+    AKTextField * _appleIDField;
+    AKAppleIDAuthenticationController * _authenticationController;
+    int  _blurEffectStyle;
+    AKAppleIDAuthenticationInAppContext * _context;
+    UIButton * _createAppleIDButton;
+    <AKInlineSignInViewControllerDelegate> * _delegate;
+    UIButton * _iforgotButton;
+    BOOL  _isAuthInProgress;
+    UIView * _loginFieldsContainer;
+    AKTextField * _passwordField;
+    NSString * _primaryButtonTitle;
+    NSString * _secondaryButtonTitle;
+    UIButton * _signInButton;
+    UIActivityIndicatorView * _spinner;
+    NSString * _tertiaryButtonTitle;
+    BOOL  _usesDarkMode;
+    BOOL  _usesVibrancy;
+    BOOL  _wantsAuthenticationProgress;
 }
 
 @property (retain) AKTextField *appleIDField;

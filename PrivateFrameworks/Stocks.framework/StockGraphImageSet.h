@@ -3,9 +3,9 @@
  */
 
 @interface StockGraphImageSet : NSObject {
-    UIImage *_highlightOverlayImage;
-    UIImage *_lineGraphImage;
-    UIImage *_volumeGraphImage;
+    UIImage * _highlightOverlayImage;
+    UIImage * _lineGraphImage;
+    UIImage * _volumeGraphImage;
 }
 
 @property (nonatomic, retain) UIImage *highlightOverlayImage;

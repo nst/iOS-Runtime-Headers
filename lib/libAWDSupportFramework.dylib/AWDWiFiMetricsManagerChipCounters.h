@@ -3,19 +3,19 @@
  */
 
 @interface AWDWiFiMetricsManagerChipCounters : PBCodable <NSCopying> {
-    AWDWiFiMetricsManagerFrameCounterStats *_frameCounters;
+    AWDWiFiMetricsManagerFrameCounterStats * _frameCounters;
     struct { 
         unsigned int timestamp : 1; 
-    } _has;
-    AWDWPA2Counters *_mcastWPA2Counters;
-    AWDChipCountersRx *_rxGeneralStats;
-    AWDMacCountersRx *_rxMACCounterStats;
-    AWDMacCountersRxErrors *_rxMACErrorStats;
-    AWDRxPhyErrors *_rxPhyErrors;
-    unsigned long long _timestamp;
-    AWDChipErrorCountersTx *_txErrorStats;
-    AWDChipCountersTx *_txGeneralStats;
-    AWDWPA2Counters *_ucastWPA2Counters;
+    }  _has;
+    AWDWPA2Counters * _mcastWPA2Counters;
+    AWDChipCountersRx * _rxGeneralStats;
+    AWDMacCountersRx * _rxMACCounterStats;
+    AWDMacCountersRxErrors * _rxMACErrorStats;
+    AWDRxPhyErrors * _rxPhyErrors;
+    unsigned long long  _timestamp;
+    AWDChipErrorCountersTx * _txErrorStats;
+    AWDChipCountersTx * _txGeneralStats;
+    AWDWPA2Counters * _ucastWPA2Counters;
 }
 
 @property (nonatomic, retain) AWDWiFiMetricsManagerFrameCounterStats *frameCounters;

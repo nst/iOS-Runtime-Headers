@@ -3,13 +3,13 @@
  */
 
 @interface OCImporter : OCMapper {
-    NSString *_docPassphrase;
-    NSData *mData;
-    OITSUProgressContext *mProgressContext;
-    OCDReader *mReader;
-    TCImportTracing *mTracing;
-    BOOL mTryAlternateReader;
-    NSURL *mURL;
+    NSString * _docPassphrase;
+    NSData * mData;
+    OITSUProgressContext * mProgressContext;
+    OCDReader * mReader;
+    TCImportTracing * mTracing;
+    BOOL  mTryAlternateReader;
+    NSURL * mURL;
 }
 
 @property (nonatomic, retain) NSString *docPassphrase;

@@ -3,15 +3,15 @@
  */
 
 @interface GEOActionComponentMapEntry : PBCodable <NSCopying> {
-    int _actionComponent;
+    int  _actionComponent;
     struct { 
         unsigned int actionComponent : 1; 
-    } _has;
+    }  _has;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _placeDataComponents;
+    }  _placeDataComponents;
 }
 
 @property (nonatomic) int actionComponent;
@@ -19,7 +19,9 @@
 @property (nonatomic, readonly) int*placeDataComponents;
 @property (nonatomic, readonly) unsigned int placeDataComponentsCount;
 
+- (int)StringAsActionComponent:(id)arg1;
 - (int)actionComponent;
+- (id)actionComponentAsString:(int)arg1;
 - (void)addPlaceDataComponents:(int)arg1;
 - (void)clearPlaceDataComponents;
 - (void)copyTo:(id)arg1;

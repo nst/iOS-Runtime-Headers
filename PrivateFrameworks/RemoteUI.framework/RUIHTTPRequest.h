@@ -3,10 +3,10 @@
  */
 
 @interface RUIHTTPRequest : NSObject <NSURLSessionTaskDelegate> {
-    NSURLSessionDataTask *_dataTask;
-    id _delegate;
-    NSURLRequest *_request;
-    NSURLSession *_urlSession;
+    NSURLSessionDataTask * _dataTask;
+    id  _delegate;
+    NSURLRequest * _request;
+    NSURLSession * _urlSession;
 }
 
 @property (readonly, copy) NSString *debugDescription;

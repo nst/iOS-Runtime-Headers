@@ -3,14 +3,14 @@
  */
 
 @interface MobileAssetUpdater : NSObject {
-    ASAsset *_asset;
-    BOOL _assetDownloaded;
-    NSString *_assetType;
-    id /* block */ _logger;
-    NSString *_overrideFile;
-    NSString *_purgeOverrideFile;
-    ASAssetQuery *_query;
-    BOOL _requireAssetMetadata;
+    ASAsset * _asset;
+    BOOL  _assetDownloaded;
+    NSString * _assetType;
+    id /* block */  _logger;
+    NSString * _overrideFile;
+    NSString * _purgeOverrideFile;
+    ASAssetQuery * _query;
+    BOOL  _requireAssetMetadata;
 }
 
 @property (retain) ASAsset *asset;

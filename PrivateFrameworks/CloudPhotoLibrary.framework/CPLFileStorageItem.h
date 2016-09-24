@@ -3,10 +3,10 @@
  */
 
 @interface CPLFileStorageItem : NSObject <NSCopying> {
-    CPLResourceIdentity *_identity;
-    NSDate *_lastAccessDate;
-    BOOL _markedForDelete;
-    BOOL _original;
+    CPLResourceIdentity * _identity;
+    NSDate * _lastAccessDate;
+    BOOL  _markedForDelete;
+    BOOL  _original;
 }
 
 @property (nonatomic, readonly) CPLResourceIdentity *identity;

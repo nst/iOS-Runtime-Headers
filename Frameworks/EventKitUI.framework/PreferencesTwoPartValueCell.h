@@ -3,9 +3,9 @@
  */
 
 @interface PreferencesTwoPartValueCell : EKUIConstrainedFontsTableViewCell {
-    unsigned int _notifiedShort;
-    <EKCellShortener> *_shortener;
-    TwoPartTextLabel *_twoPartLabel;
+    unsigned int  _notifiedShort;
+    <EKCellShortener> * _shortener;
+    TwoPartTextLabel * _twoPartLabel;
 }
 
 @property (nonatomic) <EKCellShortener> *shortener;

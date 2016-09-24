@@ -3,11 +3,11 @@
  */
 
 @interface AirPortAssistantController : NSObject {
-    NSString *_configuredSSID;
-    id _context;
-    id _delegate;
-    NSDictionary *_unconfiguredWACDevices;
-    id _viewController;
+    NSString * _configuredSSID;
+    id  _context;
+    id  _delegate;
+    NSDictionary * _unconfiguredWACDevices;
+    id  _viewController;
 }
 
 @property (retain) NSString *configuredSSID;

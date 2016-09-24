@@ -3,10 +3,10 @@
  */
 
 @interface MPTiledArtworkDataSource : NSObject <MPArtworkDataSource> {
-    NSCountedSet *_loadingTiledArtworkRequests;
-    NSObject<OS_dispatch_queue> *_loadingTiledArtworkRequestsAccessQueue;
-    NSCache *_tiledArtworkRepresentationFallbackCache;
-    NSOperationQueue *_tilingArtworkCatalogOperationQueue;
+    NSCountedSet * _loadingTiledArtworkRequests;
+    NSObject<OS_dispatch_queue> * _loadingTiledArtworkRequestsAccessQueue;
+    NSCache * _tiledArtworkRepresentationFallbackCache;
+    NSOperationQueue * _tilingArtworkCatalogOperationQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -17,7 +17,7 @@
 + (id)_errorWithDescription:(id)arg1;
 + (id)_loadingRequestForArtworkCatalog:(id)arg1;
 + (id)_representationCacheKeyForArtworkCatalog:(id)arg1 forAnyRevision:(BOOL)arg2;
-+ (struct CGSize { float x1; float x2; })_tileSizeForFittingSize:(struct CGSize { float x1; float x2; })arg1 rows:(unsigned int)arg2 columns:(unsigned int)arg3 spacing:(float)arg4;
++ (struct CGSize { double x1; double x2; })_tileSizeForFittingSize:(struct CGSize { double x1; double x2; })arg1 rows:(unsigned int)arg2 columns:(unsigned int)arg3 spacing:(float)arg4;
 + (id)sharedDataSource;
 
 - (void).cxx_destruct;
@@ -28,9 +28,11 @@
 - (void)_removeLoadingRequestForArtworkCatalog:(id)arg1;
 - (BOOL)areRepresentationsAvailableForCatalog:(id)arg1;
 - (void)cancelLoadingRepresentationForArtworkCatalog:(id)arg1;
+- (id)existingArtworkEffectResultForEffectType:(int)arg1 catalog:(id)arg2 options:(id)arg3;
 - (id)existingRepresentationForArtworkCatalog:(id)arg1;
 - (id)init;
 - (BOOL)isRepresentation:(id)arg1 bestRepresentationForArtworkCatalog:(id)arg2;
+- (void)loadArtworkEffectResultForEffectType:(int)arg1 catalog:(id)arg2 options:(id)arg3 systemEffectHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
 - (void)loadRepresentationForArtworkCatalog:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)visualIdenticalityIdentifierForCatalog:(id)arg1;
 

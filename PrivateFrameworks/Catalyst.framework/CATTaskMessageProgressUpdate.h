@@ -3,7 +3,7 @@
  */
 
 @interface CATTaskMessageProgressUpdate : CATTaskMessage {
-    CATTaskProgress *_progress;
+    CATTaskProgress * _progress;
 }
 
 @property (nonatomic, copy) CATTaskProgress *progress;

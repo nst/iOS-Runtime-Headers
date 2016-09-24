@@ -3,15 +3,15 @@
  */
 
 @interface ATMessageParser : NSObject {
-    unsigned int _curObjectLength;
-    Class _messageClass;
-    void *_objectDataBuffer;
-    unsigned int _objectDataLen;
-    id /* block */ _objectParsedBlock;
-    NSMutableData *_parserData;
-    NSError *_parserError;
-    BOOL _varIntBuf;
-    unsigned int _varIntDataLen;
+    unsigned int  _curObjectLength;
+    Class  _messageClass;
+    void * _objectDataBuffer;
+    unsigned int  _objectDataLen;
+    id /* block */  _objectParsedBlock;
+    NSMutableData * _parserData;
+    NSError * _parserError;
+    BOOL  _varIntBuf;
+    unsigned int  _varIntDataLen;
 }
 
 @property (nonatomic, readonly) Class messageClass;

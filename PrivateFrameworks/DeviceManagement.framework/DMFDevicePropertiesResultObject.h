@@ -3,8 +3,8 @@
  */
 
 @interface DMFDevicePropertiesResultObject : CATTaskResultObject {
-    NSDictionary *_errorsByPropertyKey;
-    NSDictionary *_valuesByPropertyKey;
+    NSDictionary * _errorsByPropertyKey;
+    NSDictionary * _valuesByPropertyKey;
 }
 
 @property (nonatomic, copy) NSDictionary *errorsByPropertyKey;
@@ -13,7 +13,6 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)errorsByPropertyKey;
 - (id)initWithCoder:(id)arg1;

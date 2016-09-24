@@ -3,24 +3,24 @@
  */
 
 @interface SKUISwooshPageComponent : SKUIPageComponent {
-    NSArray *_bricks;
-    int _fcKind;
+    NSArray * _bricks;
+    int  _fcKind;
     struct SKUILockupStyle { 
         int artworkSize; 
         int layoutStyle; 
         unsigned int visibleFields; 
-    } _lockupStyle;
-    NSArray *_lockups;
-    NSArray *_mediaComponents;
-    int _missingDataCount;
-    NSString *_platformKeyProfile;
-    int _seeAllStyle;
-    NSString *_seeAllTitle;
-    NSURL *_seeAllURL;
-    BOOL _showsIndexNumbers;
-    BOOL _showsItemTitles;
-    int _swooshType;
-    NSString *_title;
+    }  _lockupStyle;
+    NSArray * _lockups;
+    NSArray * _mediaComponents;
+    int  _missingDataCount;
+    NSString * _platformKeyProfile;
+    int  _seeAllStyle;
+    NSString * _seeAllTitle;
+    NSURL * _seeAllURL;
+    BOOL  _showsIndexNumbers;
+    BOOL  _showsItemTitles;
+    int  _swooshType;
+    NSString * _title;
 }
 
 @property (nonatomic, readonly) NSArray *bricks;

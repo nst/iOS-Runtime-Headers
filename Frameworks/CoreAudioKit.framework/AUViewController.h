@@ -3,7 +3,7 @@
  */
 
 @interface AUViewController : UIViewController <NSExtensionRequestHandling> {
-    NSExtensionContext *_context;
+    NSExtensionContext * _context;
 }
 
 @property NSExtensionContext *context;

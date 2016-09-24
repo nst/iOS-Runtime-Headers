@@ -3,13 +3,16 @@
  */
 
 @interface TSTTableDataMultipleChoiceList : TSTTableDataObject {
-    TSTPopUpMenuModel *mPopUpMenuModel;
+    TSTPopUpMenuModel * mPopUpMenuModel;
 }
+
+@property (nonatomic, readonly) TSTPopUpMenuModel *popUpMenuModel;
 
 - (void)dealloc;
 - (id)description;
 - (unsigned int)hash;
-- (id)initObjectWithPopUpMenuModel:(id)arg1;
+- (id)initObjectWithPopUpMenuModel:(id)arg1 refCount:(unsigned int)arg2;
 - (BOOL)isEqual:(id)arg1;
+- (id)popUpMenuModel;
 
 @end

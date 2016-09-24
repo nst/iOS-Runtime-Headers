@@ -3,8 +3,8 @@
  */
 
 @interface EKUITextAndHeaderItem : NSObject {
-    NSString *_header;
-    NSString *_text;
+    NSString * _header;
+    NSString * _text;
 }
 
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;

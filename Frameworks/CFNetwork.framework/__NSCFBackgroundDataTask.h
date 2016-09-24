@@ -3,17 +3,17 @@
  */
 
 @interface __NSCFBackgroundDataTask : __NSCFBackgroundSessionTask <NSStreamDelegate> {
-    unsigned int _bytesRead;
-    BOOL _finishedOpen;
-    NSInputStream *_initialStream;
-    BOOL _openedStreamDuringNeedNewBodyStream;
-    NSObject<OS_dispatch_io> *_pipeIO;
-    NSFileHandle *_readHandle;
-    NSInputStream *_requestBodyStream;
-    BOOL _streamBased;
-    NSObject<OS_dispatch_semaphore> *_streamOpenedSema;
-    id /* block */ _streamWriteCompletion;
-    NSObject<OS_dispatch_queue> *_writeQueue;
+    unsigned int  _bytesRead;
+    BOOL  _finishedOpen;
+    NSInputStream * _initialStream;
+    BOOL  _openedStreamDuringNeedNewBodyStream;
+    NSObject<OS_dispatch_io> * _pipeIO;
+    NSFileHandle * _readHandle;
+    NSInputStream * _requestBodyStream;
+    BOOL  _streamBased;
+    NSObject<OS_dispatch_semaphore> * _streamOpenedSema;
+    id /* block */  _streamWriteCompletion;
+    NSObject<OS_dispatch_queue> * _writeQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

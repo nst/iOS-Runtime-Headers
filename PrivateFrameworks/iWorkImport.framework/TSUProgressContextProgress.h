@@ -3,9 +3,9 @@
  */
 
 @interface TSUProgressContextProgress : TSUProgress {
-    BOOL hasAddedProgressContextObserver;
-    TSUProgressContext *mProgressContext;
-    NSObject<OS_dispatch_queue> *mProgressContextObserverQueue;
+    BOOL  hasAddedProgressContextObserver;
+    TSUProgressContext * mProgressContext;
+    NSObject<OS_dispatch_queue> * mProgressContextObserverQueue;
 }
 
 - (id)addProgressObserverWithValueInterval:(double)arg1 queue:(id)arg2 handler:(id /* block */)arg3;

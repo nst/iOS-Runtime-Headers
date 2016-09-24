@@ -3,10 +3,10 @@
  */
 
 @interface StepByStepUIViewController_Create_Guest : StepByStepUIViewController <TableViewManagerDelegate> {
-    int _guestNetSecMode;
-    BOOL _guestNetworkEnabled;
-    NSString *_wifiName;
-    NSString *_wifiPassword;
+    int  _guestNetSecMode;
+    BOOL  _guestNetworkEnabled;
+    NSString * _wifiName;
+    NSString * _wifiPassword;
 }
 
 @property (nonatomic) int guestNetSecMode;

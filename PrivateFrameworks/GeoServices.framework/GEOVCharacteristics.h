@@ -3,7 +3,7 @@
  */
 
 @interface GEOVCharacteristics : PBCodable <NSCopying> {
-    NSMutableArray *_pointCharacteristics;
+    NSMutableArray * _pointCharacteristics;
 }
 
 @property (nonatomic, retain) NSMutableArray *pointCharacteristics;

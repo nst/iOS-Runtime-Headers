@@ -3,17 +3,17 @@
  */
 
 @interface PHCloudInvitation : PHObject {
-    NSString *_albumGUID;
-    NSString *_cloudGUID;
-    int _invitationState;
-    int _invitationStateLocal;
-    NSNumber *_inviteeEmailKey;
-    NSString *_inviteeFirstName;
-    NSString *_inviteeFullName;
-    NSString *_inviteeHashedPersonID;
-    NSString *_inviteeLastName;
-    NSDate *_inviteeSubscriptionDate;
-    BOOL _isMine;
+    NSString * _albumGUID;
+    NSString * _cloudGUID;
+    int  _invitationState;
+    int  _invitationStateLocal;
+    NSNumber * _inviteeEmailKey;
+    NSString * _inviteeFirstName;
+    NSString * _inviteeFullName;
+    NSString * _inviteeHashedPersonID;
+    NSString * _inviteeLastName;
+    NSDate * _inviteeSubscriptionDate;
+    BOOL  _isMine;
 }
 
 @property (nonatomic, readonly) NSString *albumGUID;
@@ -31,6 +31,7 @@
 @property (nonatomic, readonly) NSDate *inviteeSubscriptionDate;
 @property (nonatomic, readonly) BOOL isMine;
 
++ (id)fetchType;
 + (id)managedEntityName;
 + (id)propertiesToFetchWithHint:(unsigned int)arg1;
 

@@ -3,56 +3,67 @@
  */
 
 @interface NCLaunchStats : NSObject {
-    NSArray *activitySlots;
-    CDDHistoryWindow *allTimeWindow;
-    id /* block */ asyncRecommendHandler;
-    bool backgroundAppRefreshSwitchedOn;
-    CDAttribute *bundleAttr;
-    int classCLockedToken;
-    CDBudget *dataBudget;
-    CDBudget *energyBudget;
-    NSMutableArray *fireDates;
-    NSDate *fireWakeupDate;
-    NSDate *forecastStartDate;
-    bool isClassCLocked;
-    bool kEnableSyslog;
-    unsigned int kTimeGuardBand;
-    NSDate *lastFetchDate;
-    NSDate *lastLaunchDate;
-    NSDate *lastTriggerTime;
-    NSMutableDictionary *launchTracker;
-    NSObject<OS_dispatch_queue> *ncLaunchStatsQueue;
-    int numPrewarmedLaunches;
-    int numRepeatedPrewarms;
-    PCPersistentTimer *pcpTimer;
-    NSMutableDictionary *prewarmTimeTracker;
-    id /* block */ recommendHandler;
-    NSMutableDictionary *seqTracker;
-    CDSession *sessionDuet;
-    int timeZoneSecondsFromGMT;
-    CDAttribute *userEventAttr;
+    NSMutableDictionary * appUpdateTimes;
+    NSMutableDictionary * appsRequestingRefresh;
+    id /* block */  asyncRecommendHandler;
+    BOOL  backgroundAppRefreshSwitchedOn;
+    CDAttribute * bundleAttr;
+    int  classCLockedToken;
+    NSDate * earliestRequestedRefresh;
+    NSDate * forecastStartDate;
+    BOOL  isClassCLocked;
+    double  kTimeGuardBand;
+    NSDate * lastTriggerTime;
+    NSMutableDictionary * launchTracker;
+    NSObject<OS_dispatch_queue> * ncLaunchStatsQueue;
+    NSObject<OS_os_log> * ncLog;
+    int  numPrewarmedLaunches;
+    int  numRepeatedPrewarms;
+    int  predictedWidgetsToken;
+    NSMutableDictionary * prewarmDurationTracker;
+    NSMutableDictionary * prewarmTimeTracker;
+    id /* block */  recommendHandler;
+    PCPersistentTimer * refreshTimer;
+    NSMutableDictionary * seqTracker;
+    CDSession * sessionDuet;
+    NSMutableDictionary * slotToWidgetMap;
+    CDAttribute * userEventAttr;
 }
 
+// Image: /System/Library/PrivateFrameworks/NCLaunchStats.framework/NCLaunchStats
+
++ (id)sharedInstance;
+
 - (void).cxx_destruct;
-- (void)addSlotToForecastList:(unsigned int)arg1;
-- (void)checkTimeZone;
-- (void)complete:(id)arg1;
-- (void)computeFireDateQueue;
+- (void)addWidget:(id)arg1 forSlot:(unsigned int)arg2;
+- (BOOL)canUpdateWidgetsUnsafe;
+- (void)cancelRequestedRefreshForWidget:(id)arg1;
 - (void)dealloc;
 - (void)endEvent:(id)arg1;
+- (void)getPredictedSlots;
+- (BOOL)immediateUpdatesAllowedForWidgetUnsafe:(id)arg1;
 - (id)init;
 - (void)initAfterClassCUnlocked;
-- (BOOL)isForecasted:(id)arg1;
 - (void)ncTriggerObserver:(id)arg1;
-- (void)preWarmHasEnded:(id)arg1 withResult:(unsigned int)arg2 withTriggerType:(int)arg3 withSequence:(unsigned long long)arg4;
-- (void)preWarmHasStarted:(id)arg1 withResult:(unsigned int)arg2 withTriggerType:(int)arg3 withSequence:(unsigned long long)arg4;
-- (void)programTimer;
+- (void)preWarmHasEnded:(id)arg1 withResult:(unsigned int)arg2 withTriggerType:(int)arg3 withSequence:(unsigned int)arg4;
+- (void)preWarmHasStarted:(id)arg1 withResult:(unsigned int)arg2 withTriggerType:(int)arg3 withSequence:(unsigned int)arg4;
+- (id)predictedWidgetsForDate:(id)arg1;
+- (id)predictedWidgetsForSlot:(unsigned int)arg1;
 - (void)recordPrewarmStatisticsRaw:(id)arg1;
+- (void)refreshTimerFired:(id)arg1;
+- (void)requestRefreshForWidget:(id)arg1 afterDate:(id)arg2;
+- (void)scheduleTimerAtDate:(id)arg1;
 - (void)setNCLaunchRecommendationHandler:(id /* block */)arg1;
 - (void)setNCLaunchRecommendationHandlerWithCompletion:(id /* block */)arg1;
-- (BOOL)slotIsPredictedForLaunch:(unsigned int)arg1;
 - (void)startEvent:(id)arg1;
-- (void)timerFired:(id)arg1;
+- (id)unprotectedFindNextDateForTimer;
+- (void)unprotectedRemoveRequestsForWidget:(id)arg1 beforeDate:(id)arg2;
 - (void)updateBARSwitch;
+- (id)widgetsToRefreshAtDate:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Widgets.framework/Widgets
+
++ (void)wg_configureSharedInstanceWithRecommendationHandler:(id /* block */)arg1;
++ (id)wg_sharedInstance;
 
 @end

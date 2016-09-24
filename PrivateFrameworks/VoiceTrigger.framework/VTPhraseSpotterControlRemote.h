@@ -3,9 +3,9 @@
  */
 
 @interface VTPhraseSpotterControlRemote : NSObject <VTPeerRemoteConnectionDelegate> {
-    <VTPhraseSpotterControlRemoteDelegate> *_delegate;
-    VTPeerRemoteConnection *_peerConnection;
-    NSObject<OS_dispatch_queue> *_queue;
+    <VTPhraseSpotterControlRemoteDelegate> * _delegate;
+    VTPeerRemoteConnection * _peerConnection;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

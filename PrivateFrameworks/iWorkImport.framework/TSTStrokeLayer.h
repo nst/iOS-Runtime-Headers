@@ -3,14 +3,14 @@
  */
 
 @interface TSTStrokeLayer : TSPObject <NSCopying, NSMutableCopying> {
-    unsigned short _columnOrRowIndex;
+    unsigned short  _columnOrRowIndex;
     struct vector<TSTStrokeLayerRun, std::__1::allocator<TSTStrokeLayerRun> > { 
         struct TSTStrokeLayerRun {} *__begin_; 
         struct TSTStrokeLayerRun {} *__end_; 
         struct __compressed_pair<TSTStrokeLayerRun *, std::__1::allocator<TSTStrokeLayerRun> > { 
             struct TSTStrokeLayerRun {} *__first_; 
         } __end_cap_; 
-    } mStrokeRuns;
+    }  mStrokeRuns;
 }
 
 @property (nonatomic) unsigned short columnOrRowIndex;

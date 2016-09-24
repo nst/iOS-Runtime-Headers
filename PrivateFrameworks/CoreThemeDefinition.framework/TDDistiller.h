@@ -3,23 +3,23 @@
  */
 
 @interface TDDistiller : NSObject {
-    NSString *_accumulatedErrorDescription;
-    CUIMutableCommonAssetStorage *_assetStore;
-    int _assetStoreVersionNumber;
-    NSString *_assetStoreVersionString;
-    NSThread *_callbackThread;
-    BOOL _cancelled;
-    NSArray *_changedProductions;
-    id /* block */ _completionHandler;
-    CoreThemeDocument *_document;
-    int _fileCompression;
-    BOOL _finished;
-    BOOL _incremental;
-    TDLogger *_logger;
-    NSArray *_mainThreadPerformRunLoopModes;
-    id /* block */ _oldCompletionHandler;
-    NSMutableArray *_renditionEntries;
-    BOOL _successful;
+    NSString * _accumulatedErrorDescription;
+    CUIMutableCommonAssetStorage * _assetStore;
+    int  _assetStoreVersionNumber;
+    NSString * _assetStoreVersionString;
+    NSThread * _callbackThread;
+    BOOL  _cancelled;
+    NSArray * _changedProductions;
+    id /* block */  _completionHandler;
+    CoreThemeDocument * _document;
+    int  _fileCompression;
+    BOOL  _finished;
+    BOOL  _incremental;
+    TDLogger * _logger;
+    NSArray * _mainThreadPerformRunLoopModes;
+    id /* block */  _oldCompletionHandler;
+    NSMutableArray * _renditionEntries;
+    BOOL  _successful;
 }
 
 @property (nonatomic, retain) NSString *accumulatedErrorDescription;
@@ -44,6 +44,7 @@
 - (BOOL)_distillCursorFacetDefinitions:(id)arg1;
 - (BOOL)_distillFonts:(id)arg1;
 - (BOOL)_distillNamedElements:(id)arg1;
+- (id)_filterRenditions:(id)arg1;
 - (id)_keyDataFromKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
 - (id)_keySpecsToRemoveFromKeySpecs:(id)arg1;
 - (void)_logError:(id)arg1;
@@ -60,6 +61,7 @@
 - (BOOL)_setupWithOutputPath:(id)arg1 attemptIncremental:(BOOL)arg2;
 - (BOOL)_sortRenditionEntries;
 - (void)_storeRenditions;
+- (id)_textureFaceExclusionPredicate;
 - (id)accumulatedErrorDescription;
 - (int)assetStoreVersionNumber;
 - (id)assetStoreVersionString;

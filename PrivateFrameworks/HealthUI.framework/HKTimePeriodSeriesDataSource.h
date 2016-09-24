@@ -3,9 +3,9 @@
  */
 
 @interface HKTimePeriodSeriesDataSource : HKHealthQueryChartCacheDataSource {
-    NSPredicate *_queryPredicate;
-    HKSampleType *_sampleType;
-    id /* block */ _userInfoCreationBlock;
+    NSPredicate * _queryPredicate;
+    HKSampleType * _sampleType;
+    id /* block */  _userInfoCreationBlock;
 }
 
 @property (nonatomic, retain) NSPredicate *queryPredicate;

@@ -3,21 +3,21 @@
  */
 
 @interface AWDIDSLocalDeliverySocketOpened : PBCodable <NSCopying> {
-    NSString *_guid;
+    NSString * _guid;
     struct { 
         unsigned int isToDefaultPairedDevice : 1; 
         unsigned int openError : 1; 
         unsigned int priority : 1; 
         unsigned int socketError : 1; 
         unsigned int timestamp : 1; 
-    } _has;
-    unsigned long long _isToDefaultPairedDevice;
-    unsigned long long _openError;
-    unsigned long long _priority;
-    NSString *_service;
-    unsigned long long _socketError;
-    NSString *_streamName;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _isToDefaultPairedDevice;
+    unsigned long long  _openError;
+    unsigned long long  _priority;
+    NSString * _service;
+    unsigned long long  _socketError;
+    NSString * _streamName;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic, retain) NSString *guid;

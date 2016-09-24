@@ -3,32 +3,32 @@
  */
 
 @interface _CDInteractionAdvisorSettings : NSObject <NSCopying, NSSecureCoding> {
-    BOOL _aggregateByIdentifier;
-    NSString *_callerBundleId;
-    NSSet *_constrainAccounts;
-    NSSet *_constrainBundleIds;
-    NSSet *_constrainDirections;
-    NSSet *_constrainDomainIdentifiers;
-    NSSet *_constrainIdentifiers;
-    NSSet *_constrainKeywords;
-    NSSet *_constrainLocationUUIDs;
-    int _constrainMaxRecipientCount;
-    NSSet *_constrainMechanisms;
-    NSSet *_constrainPersonIdType;
-    NSSet *_constrainPersonIds;
-    NSSet *_constrainRecipients;
-    NSSet *_constrainSenders;
-    NSString *_consumerIdentifier;
-    NSString *_contactPrefix;
-    NSSet *_ignoreContactIdentifiers;
-    NSSet *_ignoreInteractionUUIDs;
-    NSDate *_interactionDate;
-    NSString *_interactionLocationUUID;
-    NSString *_interactionTitle;
-    BOOL _requireOutgoingInteraction;
-    unsigned int _resultLimit;
-    NSSet *_seedIdentifiers;
-    BOOL _useFuture;
+    BOOL  _aggregateByIdentifier;
+    NSString * _callerBundleId;
+    NSSet * _constrainAccounts;
+    NSSet * _constrainBundleIds;
+    NSSet * _constrainDirections;
+    NSSet * _constrainDomainIdentifiers;
+    NSSet * _constrainIdentifiers;
+    NSSet * _constrainKeywords;
+    NSSet * _constrainLocationUUIDs;
+    int  _constrainMaxRecipientCount;
+    NSSet * _constrainMechanisms;
+    NSSet * _constrainPersonIdType;
+    NSSet * _constrainPersonIds;
+    NSSet * _constrainRecipients;
+    NSSet * _constrainSenders;
+    NSString * _consumerIdentifier;
+    NSString * _contactPrefix;
+    NSSet * _ignoreContactIdentifiers;
+    NSSet * _ignoreInteractionUUIDs;
+    NSDate * _interactionDate;
+    NSString * _interactionLocationUUID;
+    NSString * _interactionTitle;
+    BOOL  _requireOutgoingInteraction;
+    unsigned int  _resultLimit;
+    NSSet * _seedIdentifiers;
+    BOOL  _useFuture;
 }
 
 @property BOOL aggregateByIdentifier;

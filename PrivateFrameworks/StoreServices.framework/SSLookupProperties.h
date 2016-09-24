@@ -3,10 +3,10 @@
  */
 
 @interface SSLookupProperties : NSObject <NSCopying, SSXPCCoding> {
-    int _localizationStyle;
-    CLLocation *_location;
-    NSMutableDictionary *_requestParameters;
-    NSNumber *_timeoutInterval;
+    int  _localizationStyle;
+    CLLocation * _location;
+    NSMutableDictionary * _requestParameters;
+    NSNumber * _timeoutInterval;
 }
 
 @property (readonly, copy) NSString *debugDescription;

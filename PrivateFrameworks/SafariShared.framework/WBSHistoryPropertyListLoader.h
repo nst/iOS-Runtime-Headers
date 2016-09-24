@@ -3,16 +3,15 @@
  */
 
 @interface WBSHistoryPropertyListLoader : NSObject <WBSHistoryLoader> {
-    double _ageLimit;
-    <WBSHistoryLoaderDelegate> *_delegate;
-    Class _historyItemClass;
-    unsigned int _itemCountLimit;
-    BOOL _loadInProgress;
-    NSMutableArray *_loadedDiscardedItems;
-    NSMutableArray *_loadedItems;
-    NSCountedSet *_loadedStringsForUserTypedDomainExpansion;
-    NSObject<OS_dispatch_queue> *_loadingQueue;
-    NSURL *_url;
+    <WBSHistoryLoaderDelegate> * _delegate;
+    Class  _historyItemClass;
+    unsigned int  _itemCountLimit;
+    BOOL  _loadInProgress;
+    NSMutableArray * _loadedDiscardedItems;
+    NSMutableArray * _loadedItems;
+    NSCountedSet * _loadedStringsForUserTypedDomainExpansion;
+    NSObject<OS_dispatch_queue> * _loadingQueue;
+    NSURL * _url;
 }
 
 @property (readonly, copy) NSString *debugDescription;

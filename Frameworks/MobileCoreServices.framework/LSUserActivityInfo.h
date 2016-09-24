@@ -3,27 +3,27 @@
  */
 
 @interface LSUserActivityInfo : NSObject <NSCopying, NSSecureCoding> {
-    NSDate *_activityDate;
-    NSData *_activityPayload;
-    NSData *_activityPayloadOld;
-    unsigned int _changeCount;
-    NSString *_dynamicIdentifier;
-    NSError *_error;
-    NSDictionary *_options;
-    NSUUID *_parentUserActivityUUID;
-    NSSet *_requiredUserActivityKeys;
-    NSData *_streamsData;
-    NSString *_title;
-    unsigned int _type;
-    NSString *_typeIdentifier;
-    NSDictionary *_userInfo;
-    NSUUID *_uuid;
-    NSURL *_webpageURL;
-    BOOL eligibleForHandoff;
-    BOOL eligibleForPublicIndex;
-    BOOL eligibleForSearch;
-    NSUUID *parentUserActivityUUID;
-    NSString *subtitle;
+    NSDate * _activityDate;
+    NSData * _activityPayload;
+    NSData * _activityPayloadOld;
+    unsigned int  _changeCount;
+    NSString * _dynamicIdentifier;
+    NSError * _error;
+    NSDictionary * _options;
+    NSUUID * _parentUserActivityUUID;
+    NSSet * _requiredUserActivityKeys;
+    NSData * _streamsData;
+    NSString * _title;
+    unsigned int  _type;
+    NSString * _typeIdentifier;
+    NSDictionary * _userInfo;
+    NSUUID * _uuid;
+    NSURL * _webpageURL;
+    BOOL  eligibleForHandoff;
+    BOOL  eligibleForPublicIndex;
+    BOOL  eligibleForSearch;
+    NSUUID * parentUserActivityUUID;
+    NSString * subtitle;
 }
 
 @property (copy) NSDate *activityDate;

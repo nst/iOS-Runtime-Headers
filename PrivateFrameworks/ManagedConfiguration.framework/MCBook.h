@@ -3,17 +3,17 @@
  */
 
 @interface MCBook : NSObject <NSCopying> {
-    NSString *_author;
-    NSString *_buyParams;
-    NSNumber *_downloadIdentifier;
-    NSString *_fullPath;
-    NSNumber *_iTunesStoreID;
-    NSString *_kind;
-    NSString *_persistentID;
-    MCBook *_previousVersion;
-    NSString *_state;
-    NSString *_title;
-    NSString *_version;
+    NSString * _author;
+    NSString * _buyParams;
+    NSNumber * _downloadIdentifier;
+    NSString * _fullPath;
+    NSNumber * _iTunesStoreID;
+    NSString * _kind;
+    NSString * _persistentID;
+    MCBook * _previousVersion;
+    NSString * _state;
+    NSString * _title;
+    NSString * _version;
 }
 
 @property (nonatomic, copy) NSString *author;

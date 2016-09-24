@@ -2,30 +2,35 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@interface CKDQueryOperation : CKDDatabaseOperation {
-    CKQueryCursor *_cursor;
-    NSSet *_desiredKeySet;
-    BOOL _fetchAllResults;
-    NSObject<OS_dispatch_group> *_fetchRecordsGroup;
-    BOOL _hasCalledQueryCursorUpdatedBlock;
-    unsigned int _numRequestsSent;
-    CKQuery *_query;
-    id /* block */ _queryCursorUpdatedBlock;
-    id /* block */ _recordFetchedBlock;
-    CKDRecordFetchAggregator *_recordFetcher;
-    NSMutableArray *_requestInfos;
-    CKQueryCursor *_resultsCursor;
-    unsigned int _resultsLimit;
-    BOOL _shouldFetchAssetContent;
-    CKRecordZoneID *_zoneID;
+@interface CKDQueryOperation : CKDDatabaseOperation <CKDOperationPipelining> {
+    CKQueryCursor * _cursor;
+    NSSet * _desiredKeySet;
+    BOOL  _fetchAllResults;
+    NSObject<OS_dispatch_group> * _fetchRecordsGroup;
+    BOOL  _hasCalledQueryCursorUpdatedBlock;
+    unsigned int  _numRequestsSent;
+    CKQuery * _query;
+    id /* block */  _queryCursorUpdatedBlock;
+    id /* block */  _recordFetchedBlock;
+    CKDRecordFetchAggregator * _recordFetcher;
+    NSMutableArray * _requestInfos;
+    CKQueryCursor * _resultsCursor;
+    unsigned int  _resultsLimit;
+    BOOL  _shouldFetchAssetContent;
+    CKRecordZoneID * _zoneID;
 }
 
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
 @property (nonatomic, readonly) CKQueryCursor *cursor;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSSet *desiredKeySet;
 @property (nonatomic) BOOL fetchAllResults;
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *fetchRecordsGroup;
 @property (nonatomic) BOOL hasCalledQueryCursorUpdatedBlock;
+@property (readonly) unsigned int hash;
 @property (nonatomic) unsigned int numRequestsSent;
+@property (nonatomic, readonly) NSString *pipeliningDescription;
 @property (nonatomic, readonly) CKQuery *query;
 @property (nonatomic, copy) id /* block */ queryCursorUpdatedBlock;
 @property (nonatomic, copy) id /* block */ recordFetchedBlock;
@@ -34,6 +39,7 @@
 @property (nonatomic, retain) CKQueryCursor *resultsCursor;
 @property (nonatomic, readonly) unsigned int resultsLimit;
 @property (nonatomic) BOOL shouldFetchAssetContent;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) CKRecordZoneID *zoneID;
 
 - (void).cxx_destruct;
@@ -41,7 +47,7 @@
 - (void)_handleQueryRequestFinishedWithSchedulerInfo:(id)arg1;
 - (void)_handleRecordResponse:(id)arg1 perRequestSchedulerInfo:(id)arg2;
 - (void)_sendQueryRequestWithCursor:(id)arg1 previousRequestSchedulerInfo:(id)arg2;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (id)cursor;
 - (id)desiredKeySet;
 - (BOOL)fetchAllResults;
@@ -52,6 +58,7 @@
 - (void)main;
 - (unsigned int)numRequestsSent;
 - (Class)operationResultClass;
+- (id)pipeliningDescription;
 - (id)query;
 - (id /* block */)queryCursorUpdatedBlock;
 - (id /* block */)recordFetchedBlock;

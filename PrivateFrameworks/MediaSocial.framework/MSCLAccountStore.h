@@ -3,9 +3,9 @@
  */
 
 @interface MSCLAccountStore : NSObject {
-    ACAccountStore *_accountStore;
-    SKUIMediaSocialAuthor *_author;
-    NSMutableDictionary *_externalServices;
+    ACAccountStore * _accountStore;
+    SKUIMediaSocialAuthor * _author;
+    NSMutableDictionary * _externalServices;
 }
 
 @property (nonatomic, readonly) SKUIMediaSocialAuthor *author;

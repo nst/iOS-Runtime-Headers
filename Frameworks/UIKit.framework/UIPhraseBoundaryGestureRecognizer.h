@@ -3,11 +3,11 @@
  */
 
 @interface UIPhraseBoundaryGestureRecognizer : UILongPressGestureRecognizer {
-    double _secondDelay;
-    BOOL _secondDelayElapsed;
-    UIDelayedAction *_secondDelayTimer;
-    UIResponder<UITextInput> *_textInput;
-    id _userData;
+    double  _secondDelay;
+    BOOL  _secondDelayElapsed;
+    UIDelayedAction * _secondDelayTimer;
+    UIResponder<UITextInput> * _textInput;
+    id  _userData;
 }
 
 @property (nonatomic) double secondDelay;

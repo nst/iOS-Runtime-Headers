@@ -2,23 +2,32 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOStorageRouteRequestStorage : PBCodable <NSCopying> {
+@interface GEOStorageRouteRequestStorage : PBCodable <MSPRouteInformationSource, NSCopying> {
     struct { 
         unsigned int transportType : 1; 
-    } _has;
-    GEOURLRouteHandle *_routeHandle;
-    int _transportType;
-    PBUnknownFields *_unknownFields;
-    NSMutableArray *_waypoints;
+    }  _has;
+    GEOURLRouteHandle * _routeHandle;
+    int  _transportType;
+    PBUnknownFields * _unknownFields;
+    NSMutableArray * _waypoints;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) BOOL hasRouteHandle;
 @property (nonatomic) BOOL hasTransportType;
+@property (readonly) unsigned int hash;
 @property (nonatomic, retain) GEOURLRouteHandle *routeHandle;
+@property (readonly) Class superclass;
 @property (nonatomic) int transportType;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) NSMutableArray *waypoints;
 
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
++ (Class)waypointsType;
+
+- (int)StringAsTransportType:(id)arg1;
 - (void)addWaypoints:(id)arg1;
 - (void)clearWaypoints;
 - (void)copyTo:(id)arg1;
@@ -38,10 +47,16 @@
 - (void)setTransportType:(int)arg1;
 - (void)setWaypoints:(id)arg1;
 - (int)transportType;
+- (id)transportTypeAsString:(int)arg1;
 - (id)unknownFields;
 - (id)waypoints;
 - (id)waypointsAtIndex:(unsigned int)arg1;
 - (unsigned int)waypointsCount;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/MapsSupport.framework/MapsSupport
+
+- (id)ifGEOStorageRouteRequestStorage;
+- (id)ifRidesharingInformationSource;
 
 @end

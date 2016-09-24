@@ -3,9 +3,9 @@
  */
 
 @interface TIKeyboardCandidateSingle : TIKeyboardCandidate {
-    NSString *_candidate;
-    BOOL _extensionCandidate;
-    NSString *_input;
+    NSString * _candidate;
+    BOOL  _extensionCandidate;
+    NSString * _input;
 }
 
 @property (nonatomic, copy) NSString *candidate;
@@ -15,10 +15,12 @@
 + (id)candidateWithCandidate:(id)arg1 forInput:(id)arg2;
 + (id)candidateWithCandidate:(id)arg1 forInput:(id)arg2 extensionCandidate:(BOOL)arg3;
 + (id)candidateWithUnchangedInput:(id)arg1;
++ (id)secureCandidateForInput:(id)arg1 slotID:(unsigned int)arg2;
 + (BOOL)supportsSecureCoding;
 + (int)type;
 
 - (id)candidate;
+- (id)candidateByReplacingWithCandidate:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

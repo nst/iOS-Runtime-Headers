@@ -3,14 +3,14 @@
  */
 
 @interface CIStarShineGenerator : CIFilter {
-    CIVector *inputCenter;
-    CIColor *inputColor;
-    NSNumber *inputCrossAngle;
-    NSNumber *inputCrossOpacity;
-    NSNumber *inputCrossScale;
-    NSNumber *inputCrossWidth;
-    NSNumber *inputEpsilon;
-    NSNumber *inputRadius;
+    CIVector * inputCenter;
+    CIColor * inputColor;
+    NSNumber * inputCrossAngle;
+    NSNumber * inputCrossOpacity;
+    NSNumber * inputCrossScale;
+    NSNumber * inputCrossWidth;
+    NSNumber * inputEpsilon;
+    NSNumber * inputRadius;
 }
 
 @property (nonatomic, retain) CIVector *inputCenter;

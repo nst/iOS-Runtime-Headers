@@ -3,8 +3,8 @@
  */
 
 @interface NSURLQueryItem : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_name;
-    NSString *_value;
+    NSString * _name;
+    NSString * _value;
 }
 
 @property (readonly) NSString *name;
@@ -20,7 +20,6 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (void)finalize;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

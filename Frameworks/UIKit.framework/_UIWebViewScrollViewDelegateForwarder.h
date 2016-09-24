@@ -3,8 +3,8 @@
  */
 
 @interface _UIWebViewScrollViewDelegateForwarder : NSObject <UIScrollViewDelegate> {
-    <UIScrollViewDelegate> *_delegate;
-    UIWebView *_webView;
+    <UIScrollViewDelegate> * _delegate;
+    UIWebView * _webView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

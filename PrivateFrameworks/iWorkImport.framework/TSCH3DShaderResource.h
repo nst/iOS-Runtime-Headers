@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DShaderResource : TSCH3DResource {
-    TSCH3DShaderProgram *mProgram;
+    TSCH3DShaderProgram * mProgram;
 }
 
 @property (nonatomic, readonly) TSCH3DShaderProgram *program;

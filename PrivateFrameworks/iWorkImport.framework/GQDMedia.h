@@ -3,11 +3,11 @@
  */
 
 @interface GQDMedia : GQDGraphic <GQDNameMappable> {
-    struct CGPath { } *mAlphaMaskBezier;
-    GQDAffineGeometry *mCropGeometry;
-    GQDFilteredImage *mFilteredImage;
-    GQDPath *mMaskingShapePath;
-    GQDImageBinary *mOriginalImageBinary;
+    struct CGPath { } * mAlphaMaskBezier;
+    GQDAffineGeometry * mCropGeometry;
+    GQDFilteredImage * mFilteredImage;
+    GQDPath * mMaskingShapePath;
+    GQDImageBinary * mOriginalImageBinary;
 }
 
 @property (readonly, copy) NSString *debugDescription;

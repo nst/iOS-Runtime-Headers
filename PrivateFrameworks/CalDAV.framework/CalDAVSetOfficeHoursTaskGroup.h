@@ -3,8 +3,8 @@
  */
 
 @interface CalDAVSetOfficeHoursTaskGroup : CoreDAVTaskGroup <CoreDAVPropPatchTaskDelegate> {
-    ICSDocument *_calendarAvailability;
-    NSURL *_inboxURL;
+    ICSDocument * _calendarAvailability;
+    NSURL * _inboxURL;
 }
 
 @property (nonatomic, retain) ICSDocument *calendarAvailability;

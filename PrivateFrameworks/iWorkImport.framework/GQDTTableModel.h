@@ -3,20 +3,20 @@
  */
 
 @interface GQDTTableModel : NSObject <GQDNameMappable> {
-    struct __CFArray { } *mCells;
-    unsigned short mColumnCount;
-    struct __CFArray { } *mColumnGroupDisplayTypes;
-    struct __CFArray { } *mColumnVisibilities;
-    struct __CFArray { } *mColumnWidths;
-    unsigned short mFooterRowCount;
-    unsigned short mHeaderColumnCount;
-    unsigned short mHeaderRowCount;
-    struct __CFString { } *mName;
-    BOOL mNameVisible;
-    int mNumGroupLevels;
-    unsigned short mRowCount;
-    struct __CFArray { } *mRowHeights;
-    struct __CFArray { } *mRowVisibilities;
+    struct __CFArray { } * mCells;
+    unsigned short  mColumnCount;
+    struct __CFArray { } * mColumnGroupDisplayTypes;
+    struct __CFArray { } * mColumnVisibilities;
+    struct __CFArray { } * mColumnWidths;
+    unsigned short  mFooterRowCount;
+    unsigned short  mHeaderColumnCount;
+    unsigned short  mHeaderRowCount;
+    struct __CFString { } * mName;
+    BOOL  mNameVisible;
+    int  mNumGroupLevels;
+    unsigned short  mRowCount;
+    struct __CFArray { } * mRowHeights;
+    struct __CFArray { } * mRowVisibilities;
 }
 
 @property (readonly, copy) NSString *debugDescription;

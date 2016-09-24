@@ -3,10 +3,10 @@
  */
 
 @interface TIKeyboardIntermediateText : NSObject <NSSecureCoding> {
-    NSString *_displayString;
-    NSString *_inputString;
-    NSString *_searchString;
-    unsigned int _selectionOffset;
+    NSString * _displayString;
+    NSString * _inputString;
+    NSString * _searchString;
+    unsigned int  _selectionOffset;
 }
 
 @property (nonatomic, readonly) NSString *displayString;

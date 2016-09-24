@@ -3,9 +3,9 @@
  */
 
 @interface AVAssetWriterInputFigAssetWriterEndPassOperation : AVOperation {
-    struct OpaqueFigAssetWriter { } *_figAssetWriter;
-    AVAssetWriterInputPassDescription *_nextPassDescription;
-    int _trackID;
+    struct OpaqueFigAssetWriter { } * _figAssetWriter;
+    AVAssetWriterInputPassDescription * _nextPassDescription;
+    int  _trackID;
 }
 
 @property (nonatomic, readonly) AVAssetWriterInputPassDescription *descriptionForNextPass;

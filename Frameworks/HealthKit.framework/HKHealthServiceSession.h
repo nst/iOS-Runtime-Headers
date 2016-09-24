@@ -3,13 +3,13 @@
  */
 
 @interface HKHealthServiceSession : NSObject {
-    id /* block */ _characteristicsHandler;
-    NSArray *_interestedTransitoryKeys;
-    NSLock *_propertyLock;
-    HKHealthService *_service;
-    id /* block */ _sessionHandler;
-    unsigned int _sessionIdentifier;
-    id /* block */ _transitoryDataHandler;
+    id /* block */  _characteristicsHandler;
+    NSArray * _interestedTransitoryKeys;
+    NSLock * _propertyLock;
+    HKHealthService * _service;
+    id /* block */  _sessionHandler;
+    unsigned int  _sessionIdentifier;
+    id /* block */  _transitoryDataHandler;
 }
 
 @property (nonatomic, copy) id /* block */ characteristicsHandler;

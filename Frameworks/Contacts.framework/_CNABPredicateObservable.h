@@ -3,12 +3,12 @@
  */
 
 @interface _CNABPredicateObservable : CNObservable <ABPredicateDelegate> {
-    void *_addressBook;
-    CNCancelationToken *_cancelationToken;
-    <CNObserver> *_observer;
-    unsigned int _options;
-    ABPredicate *_predicate;
-    unsigned int _sortOrdering;
+    void * _addressBook;
+    CNCancelationToken * _cancelationToken;
+    <CNObserver> * _observer;
+    unsigned int  _options;
+    ABPredicate * _predicate;
+    unsigned int  _sortOrdering;
 }
 
 @property (nonatomic) void*addressBook;

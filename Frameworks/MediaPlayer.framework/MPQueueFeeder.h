@@ -3,22 +3,24 @@
  */
 
 @interface MPQueueFeeder : NSObject <MPQueueBehaviorManaging, MusicEntityValueProviding, NSCoding> {
-    unsigned int _activeShuffleType;
-    <MPQueueFeederDelegate> *_delegate;
-    NSMutableDictionary *_nextStartTimes;
-    unsigned int _repeatType;
-    BOOL _requiresQueueChangeVerification;
-    unsigned int _shuffleType;
+    int  _activeShuffleType;
+    <MPQueueFeederDelegate> * _delegate;
+    MPModelPlayEvent * _modelPlayEvent;
+    NSMutableDictionary * _nextStartTimes;
+    int  _repeatType;
+    BOOL  _requiresQueueChangeVerification;
+    int  _shuffleType;
     struct { 
         int numberOfAvailableSkips; 
         int skipFrequency; 
         double skipInterval; 
-    } _skipLimit;
-    unsigned int _state;
+    }  _skipLimit;
+    unsigned int  _state;
 }
 
+@property (nonatomic, readonly) MPCContentItemIdentifierCollection *MPC_contentItemIdentifierCollection;
 @property (nonatomic, readonly) MPUContentItemIdentifierCollection *MPU_contentItemIdentifierCollection;
-@property (nonatomic) unsigned int activeShuffleType;
+@property (nonatomic) int activeShuffleType;
 @property (nonatomic, readonly) BOOL allowsUserVisibleUpcomingItems;
 @property (nonatomic, readonly) BOOL canReorder;
 @property (nonatomic, readonly) BOOL canSeek;
@@ -29,15 +31,16 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) Class itemClass;
 @property (nonatomic, readonly) unsigned int itemCount;
-@property (setter=mpuReporting_setFeatureName:, nonatomic, copy) NSString *mpuReporting_featureName;
-@property (setter=mpuReporting_setRecommendationData:, nonatomic, copy) NSData *mpuReporting_recommendationData;
+@property (nonatomic, readonly) MPModelPlayEvent *modelPlayEvent;
+@property (setter=mpcReporting_setFeatureName:, nonatomic, copy) NSString *mpcReporting_featureName;
+@property (setter=mpcReporting_setRecommendationData:, nonatomic, copy) NSData *mpcReporting_recommendationData;
 @property (nonatomic, readonly) int playbackMode;
 @property (nonatomic, readonly) BOOL playerPreparesItemsForPlaybackAsynchronously;
-@property (nonatomic, readonly) unsigned int realRepeatType;
-@property (nonatomic, readonly) unsigned int realShuffleType;
-@property (nonatomic) unsigned int repeatType;
+@property (nonatomic, readonly) int realRepeatType;
+@property (nonatomic, readonly) int realShuffleType;
+@property (nonatomic) int repeatType;
 @property (nonatomic) BOOL requiresQueueChangeVerification;
-@property (nonatomic) unsigned int shuffleType;
+@property (nonatomic) int shuffleType;
 @property (nonatomic) struct { int x1; int x2; double x3; } skipLimit;
 @property (nonatomic) unsigned int state;
 @property (nonatomic, readonly) RadioStation *station;
@@ -51,7 +54,7 @@
 
 - (void).cxx_destruct;
 - (BOOL)_canPurgeNextStartTimes;
-- (unsigned int)activeShuffleType;
+- (int)activeShuffleType;
 - (BOOL)allowsUserVisibleUpcomingItems;
 - (id)audioSessionModeForItemAtIndex:(unsigned int)arg1;
 - (BOOL)canReorder;
@@ -73,15 +76,18 @@
 - (id)initWithCoder:(id)arg1;
 - (unsigned int)initialPlaybackQueueDepthForStartingIndex:(unsigned int)arg1;
 - (void)invalidateAssets;
+- (void)invalidateRealRepeatType;
+- (void)invalidateRealShuffleType;
 - (Class)itemClass;
 - (unsigned int)itemCount;
 - (id)itemForIdentifier:(id)arg1;
 - (id)itemForIndex:(unsigned int)arg1;
-- (unsigned int)itemTypeForIndex:(unsigned int)arg1;
+- (int)itemTypeForIndex:(unsigned int)arg1;
 - (id)localizedAttributedPositionInPlaylistStringForItem:(id)arg1 withRegularTextAttributes:(id)arg2 emphasizedTextAttributes:(id)arg3;
 - (id)localizedPositionInPlaylistString:(id)arg1;
 - (id)mediaItemAtIndex:(unsigned int)arg1;
 - (id)metadataItemForIdentifier:(id)arg1;
+- (id)modelPlayEvent;
 - (id)pathAtIndex:(unsigned int)arg1;
 - (id)playbackInfoForIdentifier:(id)arg1;
 - (int)playbackMode;
@@ -90,23 +96,25 @@
 - (BOOL)player:(id)arg1 shouldContinuePlaybackForNetworkType:(int)arg2 returningError:(id*)arg3;
 - (BOOL)playerPreparesItemsForPlaybackAsynchronously;
 - (id)preferredLanguages;
-- (unsigned int)realRepeatType;
-- (unsigned int)realShuffleType;
+- (int)realRepeatType;
+- (int)realShuffleType;
 - (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(id /* block */)arg2;
-- (unsigned int)repeatType;
+- (void)reloadWithPlaybackContext:(id)arg1 requireFinalTracklist:(BOOL)arg2 completionHandler:(id /* block */)arg3;
+- (int)repeatType;
 - (BOOL)requiresQueueChangeVerification;
-- (void)setActiveShuffleType:(unsigned int)arg1;
+- (void)restoreState:(id /* block */)arg1;
+- (void)setActiveShuffleType:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setNextStartTime:(double)arg1 forIndentifier:(id)arg2;
-- (void)setRepeatType:(unsigned int)arg1;
+- (void)setRepeatType:(int)arg1;
 - (void)setRequiresQueueChangeVerification:(BOOL)arg1;
-- (void)setShuffleType:(unsigned int)arg1;
+- (void)setShuffleType:(int)arg1;
 - (void)setSkipLimit:(struct { int x1; int x2; double x3; })arg1;
 - (void)setState:(unsigned int)arg1;
 - (BOOL)shouldBeginPlaybackOfItem:(id)arg1 error:(id*)arg2;
 - (BOOL)shouldReuseQueueFeederForPlaybackContext:(id)arg1;
 - (void)shuffleItemsWithAnchor:(unsigned int*)arg1;
-- (unsigned int)shuffleType;
+- (int)shuffleType;
 - (struct { int x1; int x2; double x3; })skipLimit;
 - (unsigned int)state;
 - (BOOL)trackChangesCanEndPlayback;
@@ -115,21 +123,22 @@
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 
 - (id)entityUniqueIdentifier;
-- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { float x1; float x2; })arg2 destinationScale:(float)arg3;
+- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { double x1; double x2; })arg2 destinationScale:(float)arg3;
 - (id)valueForEntityProperty:(id)arg1;
 - (id)valuesForEntityProperties:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
 
 - (id)MPU_contentItemIdentifierCollection;
-- (id)mpuReporting_featureName;
-- (id)mpuReporting_recommendationData;
-- (void)mpuReporting_setFeatureName:(id)arg1;
-- (void)mpuReporting_setRecommendationData:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
+// Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
 
+- (id)MPC_contentItemIdentifierCollection;
 - (BOOL)isRadioQueueFeeder;
+- (id)mpcReporting_featureName;
+- (id)mpcReporting_recommendationData;
+- (void)mpcReporting_setFeatureName:(id)arg1;
+- (void)mpcReporting_setRecommendationData:(id)arg1;
 - (id)station;
 
 @end

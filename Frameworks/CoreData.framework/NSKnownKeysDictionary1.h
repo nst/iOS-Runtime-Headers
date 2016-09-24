@@ -3,10 +3,10 @@
  */
 
 @interface NSKnownKeysDictionary1 : NSKnownKeysDictionary {
-    int _cd_rc;
-    int _count;
-    NSKnownKeysMappingStrategy *_keySearch;
-    /* Warning: unhandled array encoding: '[0@]' */ id _values;
+    int  _cd_rc;
+    int  _count;
+    NSKnownKeysMappingStrategy * _keySearch;
+    /* Warning: unhandled array encoding: '[0@]' */ id  _values;
 }
 
 + (BOOL)accessInstanceVariablesDirectly;

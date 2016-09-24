@@ -3,9 +3,9 @@
  */
 
 @interface IKDOMNodeList : IKJSObject <IKDOMObserver, IKJSDOMNodeList> {
-    IKDOMNode *_contextNode;
-    id /* block */ _evaluationBlock;
-    NSArray *_nodes;
+    IKDOMNode * _contextNode;
+    id /* block */  _evaluationBlock;
+    NSArray * _nodes;
 }
 
 @property (nonatomic, retain) IKDOMNode *contextNode;

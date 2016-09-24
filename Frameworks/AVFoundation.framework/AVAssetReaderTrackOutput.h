@@ -3,11 +3,11 @@
  */
 
 @interface AVAssetReaderTrackOutput : AVAssetReaderOutput {
-    AVAssetReaderTrackOutputInternal *_trackOutputInternal;
+    AVAssetReaderTrackOutputInternal * _trackOutputInternal;
 }
 
 @property (nonatomic) BOOL appliesPreferredTrackTransform;
-@property (getter=_isAttachedToMetadataAdaptor, nonatomic, readonly) BOOL attachedToMetadataAdaptor;
+@property (getter=_isAttachedToAdaptor, nonatomic, readonly) BOOL attachedToAdaptor;
 @property (nonatomic, copy) NSString *audioTimePitchAlgorithm;
 @property (nonatomic, readonly) NSDictionary *outputSettings;
 @property (nonatomic, readonly) AVAssetTrack *track;
@@ -15,11 +15,14 @@
 + (id)assetReaderTrackOutputWithTrack:(id)arg1 outputSettings:(id)arg2;
 
 - (id)_asset;
-- (void)_attachToMetadataAdaptor:(id)arg1;
-- (struct opaqueCMSampleBuffer { }*)_copyNextSampleBufferForMetadataAdaptor;
+- (id)_attachedAdaptor;
+- (struct opaqueCMSampleBuffer { }*)_copyNextSampleBufferForAdaptor;
 - (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
 - (id)_figAssetReaderExtractionOptions;
-- (BOOL)_isAttachedToMetadataAdaptor;
+- (id)_formatDescriptions;
+- (unsigned long)_getUniformMediaSubtypeIfExists;
+- (BOOL)_isAttachedToAdaptor;
+- (void)_setAttachedAdaptor:(id)arg1;
 - (BOOL)_trimsSampleDurations;
 - (BOOL)appliesPreferredTrackTransform;
 - (id)audioTimePitchAlgorithm;

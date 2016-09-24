@@ -3,7 +3,7 @@
  */
 
 @interface _UIAlertControllerVisualStyleAlertTVCustomCurveFactory : NSObject <_UIBasicAnimationFactory> {
-    unsigned int _curve;
+    unsigned int  _curve;
 }
 
 @property (nonatomic) unsigned int curve;

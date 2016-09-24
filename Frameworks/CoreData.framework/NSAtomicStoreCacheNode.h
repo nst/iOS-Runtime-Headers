@@ -3,10 +3,10 @@
  */
 
 @interface NSAtomicStoreCacheNode : NSObject {
-    unsigned long __versionNumber;
-    NSManagedObjectID *_objectID;
-    NSMutableDictionary *_propertyCache;
-    void *_reserved1;
+    unsigned long  __versionNumber;
+    NSManagedObjectID * _objectID;
+    NSMutableDictionary * _propertyCache;
+    void * _reserved1;
 }
 
 @property (nonatomic, readonly) NSManagedObjectID *objectID;

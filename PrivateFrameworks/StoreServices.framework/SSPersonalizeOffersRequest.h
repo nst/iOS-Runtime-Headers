@@ -3,7 +3,7 @@
  */
 
 @interface SSPersonalizeOffersRequest : SSRequest <SSXPCCoding> {
-    NSArray *_items;
+    NSArray * _items;
 }
 
 @property (readonly, copy) NSString *debugDescription;

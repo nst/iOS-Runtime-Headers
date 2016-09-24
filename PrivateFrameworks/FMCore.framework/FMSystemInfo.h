@@ -6,7 +6,6 @@
 
 + (id)sharedInstance;
 
-- (void)authTokenOfType:(int)arg1 completionBlock:(id /* block */)arg2;
 - (id)btMacAddress;
 - (id)deviceClass;
 - (id)deviceModelName;

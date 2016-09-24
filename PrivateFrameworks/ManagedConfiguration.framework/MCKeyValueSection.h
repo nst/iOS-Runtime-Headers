@@ -3,9 +3,9 @@
  */
 
 @interface MCKeyValueSection : NSObject {
-    NSString *_sectionFooter;
-    NSArray *_sectionKeyValues;
-    NSString *_sectionTitle;
+    NSString * _sectionFooter;
+    NSArray * _sectionKeyValues;
+    NSString * _sectionTitle;
 }
 
 @property (nonatomic, retain) NSString *sectionFooter;

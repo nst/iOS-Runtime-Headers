@@ -8,6 +8,8 @@
 @property (readonly) unsigned int attributeIndex;
 @property (readonly) unsigned int attributeType;
 @property (readonly) NSString *name;
+@property (getter=isPatchControlPointData, readonly) BOOL patchControlPointData;
+@property (getter=isPatchData, readonly) BOOL patchData;
 
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

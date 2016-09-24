@@ -3,8 +3,8 @@
  */
 
 @interface SKUIQuicklinksPageComponent : SKUIPageComponent <SSMetricsEventFieldProvider> {
-    NSArray *_links;
-    NSString *_title;
+    NSArray * _links;
+    NSString * _title;
 }
 
 @property (readonly, copy) NSString *debugDescription;

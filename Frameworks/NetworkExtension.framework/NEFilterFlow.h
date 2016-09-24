@@ -3,11 +3,11 @@
  */
 
 @interface NEFilterFlow : NSObject <NSCopying, NSSecureCoding> {
-    NSURL *_URL;
-    NEFilterAbsoluteVerdict *_currentVerdict;
-    BOOL _isOpen;
-    BOOL _isRemediationFlow;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSURL * _URL;
+    NEFilterAbsoluteVerdict * _currentVerdict;
+    BOOL  _isOpen;
+    BOOL  _isRemediationFlow;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly) NSURL *URL;

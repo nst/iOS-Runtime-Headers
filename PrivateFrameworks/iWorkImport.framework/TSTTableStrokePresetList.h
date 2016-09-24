@@ -3,8 +3,8 @@
  */
 
 @interface TSTTableStrokePresetList : NSObject {
-    unsigned int mCount;
-    TSTTableStrokePresetData *mPresets;
+    unsigned int  mCount;
+    TSTTableStrokePresetData * mPresets;
 }
 
 + (id)init;

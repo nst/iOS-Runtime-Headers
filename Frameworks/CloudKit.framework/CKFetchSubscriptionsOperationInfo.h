@@ -3,8 +3,8 @@
  */
 
 @interface CKFetchSubscriptionsOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    BOOL _isFetchAllSubscriptionsOperation;
-    NSArray *_subscriptionIDs;
+    BOOL  _isFetchAllSubscriptionsOperation;
+    NSArray * _subscriptionIDs;
 }
 
 @property (nonatomic) BOOL isFetchAllSubscriptionsOperation;

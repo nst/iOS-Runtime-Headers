@@ -3,19 +3,19 @@
  */
 
 @interface _UIRemoteViewControllerConnectionInfo : NSObject {
-    _UIHostedWindowHostingHandle *_hostedWindowHostingHandle;
-    _UIViewServiceInterface *_interface;
-    int _preferredStatusBarStyle;
-    BOOL _prefersStatusBarHidden;
-    _UIHostedWindowHostingHandle *_remoteKeyboardsWindowHostingHandle;
-    BSMachPortSendRight *_serviceAccessibilityServerPortWrapper;
-    id _serviceViewControllerControlMessageProxy;
-    id _serviceViewControllerProxy;
-    NSArray *_serviceViewControllerSupportedInterfaceOrientations;
-    id _textEffectsOperatorProxy;
-    _UIHostedWindowHostingHandle *_textEffectsWindowAboveStatusBarHostingHandle;
-    _UIHostedWindowHostingHandle *_textEffectsWindowHostingHandle;
-    id _viewControllerOperatorProxy;
+    _UIHostedWindowHostingHandle * _hostedWindowHostingHandle;
+    _UIViewServiceInterface * _interface;
+    int  _preferredStatusBarStyle;
+    BOOL  _prefersStatusBarHidden;
+    _UIHostedWindowHostingHandle * _remoteKeyboardsWindowHostingHandle;
+    BSMachPortSendRight * _serviceAccessibilityServerPortWrapper;
+    id  _serviceViewControllerControlMessageProxy;
+    id  _serviceViewControllerProxy;
+    NSArray * _serviceViewControllerSupportedInterfaceOrientations;
+    id  _textEffectsOperatorProxy;
+    _UIHostedWindowHostingHandle * _textEffectsWindowAboveStatusBarHostingHandle;
+    _UIHostedWindowHostingHandle * _textEffectsWindowHostingHandle;
+    id  _viewControllerOperatorProxy;
 }
 
 @property (retain) _UIHostedWindowHostingHandle *hostedWindowHostingHandle;

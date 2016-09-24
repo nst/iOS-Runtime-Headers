@@ -3,9 +3,9 @@
  */
 
 @interface STShowMapsSearchResultsRequest : AFSiriRequest {
-    NSString *_extSessionGuid;
-    NSDate *_extSessionGuidCreatedTimestamp;
-    STSiriLocation *_searchResults;
+    NSString * _extSessionGuid;
+    NSDate * _extSessionGuidCreatedTimestamp;
+    STSiriLocation * _searchResults;
 }
 
 + (BOOL)supportsSecureCoding;

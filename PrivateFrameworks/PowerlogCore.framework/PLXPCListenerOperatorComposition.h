@@ -3,9 +3,9 @@
  */
 
 @interface PLXPCListenerOperatorComposition : NSObject {
-    PLOperator *_operator;
-    id /* block */ _operatorBlock;
-    NSDictionary *_registration;
+    PLOperator * _operator;
+    id /* block */  _operatorBlock;
+    NSDictionary * _registration;
 }
 
 @property PLOperator *operator;

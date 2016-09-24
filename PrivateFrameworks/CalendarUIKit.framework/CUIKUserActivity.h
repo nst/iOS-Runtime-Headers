@@ -3,11 +3,11 @@
  */
 
 @interface CUIKUserActivity : NSObject {
-    NSSet *_activityKeywords;
-    NSString *_activitySubtitle;
-    NSString *_activityTitle;
-    unsigned int _type;
-    unsigned int _version;
+    NSSet * _activityKeywords;
+    NSString * _activitySubtitle;
+    NSString * _activityTitle;
+    unsigned int  _type;
+    unsigned int  _version;
 }
 
 @property (nonatomic, retain) NSSet *activityKeywords;

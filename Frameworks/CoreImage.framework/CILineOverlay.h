@@ -3,12 +3,12 @@
  */
 
 @interface CILineOverlay : CIFilter {
-    NSNumber *inputContrast;
-    NSNumber *inputEdgeIntensity;
-    CIImage *inputImage;
-    NSNumber *inputNRNoiseLevel;
-    NSNumber *inputNRSharpness;
-    NSNumber *inputThreshold;
+    NSNumber * inputContrast;
+    NSNumber * inputEdgeIntensity;
+    CIImage * inputImage;
+    NSNumber * inputNRNoiseLevel;
+    NSNumber * inputNRSharpness;
+    NSNumber * inputThreshold;
 }
 
 + (id)customAttributes;

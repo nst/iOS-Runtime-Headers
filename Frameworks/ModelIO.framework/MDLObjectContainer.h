@@ -3,7 +3,7 @@
  */
 
 @interface MDLObjectContainer : NSObject <MDLObjectContainerComponent> {
-    NSMutableArray *_objects;
+    NSMutableArray * _objects;
 }
 
 @property (readonly, copy) NSString *debugDescription;

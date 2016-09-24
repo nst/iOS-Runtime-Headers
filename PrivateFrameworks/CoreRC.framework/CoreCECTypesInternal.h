@@ -3,18 +3,18 @@
  */
 
 @interface CoreCECTypesInternal : NSObject {
-    NSArray *deckControlConstants;
-    NSArray *deckControlStrings;
-    NSArray *deckInfoConstants;
-    NSArray *deckInfoStrings;
-    NSArray *deviceTypesConstants;
-    NSArray *deviceTypesStrings;
-    NSArray *playModeConstants;
-    NSArray *playModeStrings;
-    NSArray *requestTypeConstants;
-    NSArray *requestTypeStrings;
-    NSArray *systemAudioModeStatusConstants;
-    NSArray *systemAudioModeStatusStrings;
+    NSArray * deckControlConstants;
+    NSArray * deckControlStrings;
+    NSArray * deckInfoConstants;
+    NSArray * deckInfoStrings;
+    NSArray * deviceTypesConstants;
+    NSArray * deviceTypesStrings;
+    NSArray * playModeConstants;
+    NSArray * playModeStrings;
+    NSArray * requestTypeConstants;
+    NSArray * requestTypeStrings;
+    NSArray * systemAudioModeStatusConstants;
+    NSArray * systemAudioModeStatusStrings;
 }
 
 + (id)defaultTypes;

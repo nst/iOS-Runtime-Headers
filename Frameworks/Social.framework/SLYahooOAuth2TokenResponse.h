@@ -3,14 +3,14 @@
  */
 
 @interface SLYahooOAuth2TokenResponse : NSObject {
-    NSDictionary *_data;
-    NSError *_error;
-    NSString *_errorMessage;
-    NSDate *_expiryDate;
-    NSString *_refreshToken;
-    int _statusCode;
-    NSString *_token;
-    NSString *_yahooGUID;
+    NSDictionary * _data;
+    NSError * _error;
+    NSString * _errorMessage;
+    NSDate * _expiryDate;
+    NSString * _refreshToken;
+    int  _statusCode;
+    NSString * _token;
+    NSString * _yahooGUID;
 }
 
 @property (readonly) NSDictionary *data;

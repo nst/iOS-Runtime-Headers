@@ -3,9 +3,9 @@
  */
 
 @interface HKEnumeratedValueChartPoint : NSObject <HKChartPoint> {
-    NSArray *_indices;
-    id _userInfo;
-    NSDate *_xValue;
+    NSArray * _indices;
+    id  _userInfo;
+    NSDate * _xValue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

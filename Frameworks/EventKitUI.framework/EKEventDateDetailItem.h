@@ -3,10 +3,10 @@
  */
 
 @interface EKEventDateDetailItem : EKEventDetailItem <EKCellShortener> {
-    PreferencesDoubleTwoPartValueCell *_cell;
-    NSDate *_endDate;
-    BOOL _indent;
-    NSDate *_startDate;
+    PreferencesDoubleTwoPartValueCell * _cell;
+    NSDate * _endDate;
+    BOOL  _indent;
+    NSDate * _startDate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

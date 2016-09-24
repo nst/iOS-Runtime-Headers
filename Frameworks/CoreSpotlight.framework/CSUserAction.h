@@ -3,17 +3,19 @@
  */
 
 @interface CSUserAction : NSObject <CSCoderEncoder, NSSecureCoding> {
-    NSString *_contentAction;
-    unsigned int _eligibility;
-    NSString *_itemIdentifier;
-    NSSet *_keywords;
-    NSDictionary *_userInfo;
+    NSString * _contentAction;
+    unsigned int  _eligibility;
+    NSString * _itemIdentifier;
+    NSSet * _keywords;
+    NSUUID * _uaIdentifier;
+    NSDictionary * _userInfo;
 }
 
 @property (copy) NSString *contentAction;
 @property unsigned int eligibility;
 @property (copy) NSString *itemIdentifier;
 @property (retain) NSSet *keywords;
+@property (nonatomic, retain) NSUUID *uaIdentifier;
 @property (retain) NSDictionary *userInfo;
 
 + (id)actionFromUserActivity:(id)arg1 searchableItem:(id)arg2;
@@ -37,7 +39,9 @@
 - (void)setEligibility:(unsigned int)arg1;
 - (void)setItemIdentifier:(id)arg1;
 - (void)setKeywords:(id)arg1;
+- (void)setUaIdentifier:(id)arg1;
 - (void)setUserInfo:(id)arg1;
+- (id)uaIdentifier;
 - (id)userInfo;
 
 @end

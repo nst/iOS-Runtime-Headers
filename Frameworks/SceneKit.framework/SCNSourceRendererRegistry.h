@@ -3,13 +3,12 @@
  */
 
 @interface SCNSourceRendererRegistry : NSObject {
-    struct __CFDictionary { } *_registry;
+    struct __CFDictionary { } * _registry;
 }
 
 + (id)sharedRegistry;
 
 - (void)dealloc;
-- (void)finalize;
 - (id)init;
 - (void)removeSourceRenderersForEngineContext:(struct __C3DEngineContext { }*)arg1;
 - (void)removeSourceRenderersForSource:(id)arg1;

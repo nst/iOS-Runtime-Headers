@@ -13,7 +13,7 @@
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
 
-- (void)didFinishWithPlayerInternals:(id)arg1 message:(id)arg2;
+- (void)didFinishWithPlayerIDs:(id)arg1 message:(id)arg2;
 - (id)extensionObjectProxy;
 - (void)setChallenge:(id)arg1 playerInternals:(id)arg2 defaultMessage:(id)arg3 forcePicker:(BOOL)arg4;
 

@@ -3,13 +3,13 @@
  */
 
 @interface CIDepthOfField : CIFilter {
-    CIImage *inputImage;
-    CIVector *inputPoint0;
-    CIVector *inputPoint1;
-    NSNumber *inputRadius;
-    NSNumber *inputSaturation;
-    NSNumber *inputUnsharpMaskIntensity;
-    NSNumber *inputUnsharpMaskRadius;
+    CIImage * inputImage;
+    CIVector * inputPoint0;
+    CIVector * inputPoint1;
+    NSNumber * inputRadius;
+    NSNumber * inputSaturation;
+    NSNumber * inputUnsharpMaskIntensity;
+    NSNumber * inputUnsharpMaskRadius;
 }
 
 + (id)customAttributes;

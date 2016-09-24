@@ -3,9 +3,9 @@
  */
 
 @interface MPUSharedLibrariesViewController : UIViewController {
-    UINavigationController *_navigationController;
-    _MPUSharedLibrariesViewController *_sharedLibariesViewController;
-    BOOL _showsCancelButton;
+    UINavigationController * _navigationController;
+    _MPUSharedLibrariesViewController * _sharedLibariesViewController;
+    BOOL  _showsCancelButton;
 }
 
 @property (nonatomic) BOOL showsCancelButton;

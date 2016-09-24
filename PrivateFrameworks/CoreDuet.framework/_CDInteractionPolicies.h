@@ -3,11 +3,11 @@
  */
 
 @interface _CDInteractionPolicies : NSObject {
-    _CDInteractionPolicy *_defaultPolicy;
-    double _maxLifespanInSeconds;
-    unsigned int _maxNumberOfInteractions;
-    unsigned int _maxNumberOfInteractionsDeletedInBatch;
-    NSDictionary *_specialPolicies;
+    _CDInteractionPolicy * _defaultPolicy;
+    double  _maxLifespanInSeconds;
+    unsigned int  _maxNumberOfInteractions;
+    unsigned int  _maxNumberOfInteractionsDeletedInBatch;
+    NSDictionary * _specialPolicies;
 }
 
 @property (readonly) NSDate *dateOfOldestAllowedInteraction;

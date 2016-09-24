@@ -3,10 +3,10 @@
  */
 
 @interface EDTokenTreeNode : NSObject {
-    EDTokenTreeNode *mFirstChild;
-    EDTokenTreeNode *mSibling;
-    unsigned int mTokenIndex;
-    int mTokenType;
+    EDTokenTreeNode * mFirstChild;
+    EDTokenTreeNode * mSibling;
+    unsigned int  mTokenIndex;
+    int  mTokenType;
 }
 
 + (id)tokenTreeNodeWithIndexAndType:(unsigned int)arg1 type:(int)arg2;

@@ -3,11 +3,11 @@
  */
 
 @interface PFUbiquityExportContext : NSObject {
-    NSString *_localPeerID;
-    NSMutableDictionary *_storeNameToStoreExportContext;
-    PFUbiquityLocation *_ubiquityRootLocation;
-    NSMutableDictionary *_ubiquityRootPathToStack;
-    BOOL _useLocalStorage;
+    NSString * _localPeerID;
+    NSMutableDictionary * _storeNameToStoreExportContext;
+    PFUbiquityLocation * _ubiquityRootLocation;
+    NSMutableDictionary * _ubiquityRootPathToStack;
+    BOOL  _useLocalStorage;
 }
 
 @property (nonatomic, readonly) NSString *localPeerID;

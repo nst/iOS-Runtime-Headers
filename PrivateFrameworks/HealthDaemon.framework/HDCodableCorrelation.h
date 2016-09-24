@@ -2,14 +2,19 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDCodableCorrelation : PBCodable <NSCopying> {
-    HDCodableSample *_sample;
+@interface HDCodableCorrelation : PBCodable <HDDecoding, NSCopying> {
+    HDCodableSample * _sample;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) BOOL hasSample;
+@property (readonly) unsigned int hash;
 @property (nonatomic, retain) HDCodableSample *sample;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (BOOL)applyToObject:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

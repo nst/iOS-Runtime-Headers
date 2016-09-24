@@ -3,8 +3,8 @@
  */
 
 @interface BKSHIDEventRouter : NSObject <NSSecureCoding> {
-    int _destination;
-    NSSet *_hidEventDescriptors;
+    int  _destination;
+    NSSet * _hidEventDescriptors;
 }
 
 @property (readonly) int destination;

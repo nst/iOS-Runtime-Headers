@@ -3,12 +3,12 @@
  */
 
 @interface MFOfflineCache : NSObject {
-    int _accountLibraryID;
-    NSMutableArray *_deferredOperations;
-    BOOL _isReplaying;
-    unsigned int _lastTemporaryMessageID;
-    MFMailMessageLibrary *_library;
-    MFOfflineCacheReplayContext *_replayContext;
+    int  _accountLibraryID;
+    NSMutableArray * _deferredOperations;
+    BOOL  _isReplaying;
+    unsigned int  _lastTemporaryMessageID;
+    MFMailMessageLibrary * _library;
+    MFOfflineCacheReplayContext * _replayContext;
 }
 
 @property (nonatomic, readonly) NSString *nextTemporaryMessageID;

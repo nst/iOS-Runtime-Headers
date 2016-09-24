@@ -3,62 +3,73 @@
  */
 
 @interface BWFigCaptureDeviceSourceNode : BWSourceNode <BWFigCameraSourceNode> {
-    float _aeMaxGain;
-    BOOL _automaticallyEnablesLowLightBoostWhenAvailable;
-    BWFigVideoCaptureDevice *_captureDevice;
-    BOOL _chromaNoiseReductionEnabled;
-    BWNodeOutput *_detectedFacesOutput;
-    BOOL _detectedFacesOutputEnabled;
-    BOOL _lowLightBoostSupportedForFormat;
-    float _maxFrameRate;
-    int _maxIntegrationTimeOverride;
-    float _minFrameRate;
+    double  _aeMaxGain;
+    BOOL  _automaticallyEnablesLowLightBoostWhenAvailable;
+    NSObject<OS_dispatch_queue> * _bufferServicingQueue;
+    BWFigVideoCaptureDevice * _captureDevice;
+    BWFigVideoCaptureStream * _captureStream;
+    BOOL  _chromaNoiseReductionEnabled;
+    BOOL  _deferMetadataDictionaryCreation;
+    BWNodeOutput * _detectedFacesOutput;
+    BOOL  _detectedFacesOutputEnabled;
+    NSMutableDictionary * _dutyCycleMetadataCache;
+    BOOL  _lowLightBoostSupportedForFormat;
+    double  _maxFrameRate;
+    int  _maxIntegrationTimeOverride;
+    double  _minFrameRate;
     struct { 
         int width; 
         int height; 
-    } _minOutputDimensions;
-    int _minOutputDimensionsSensorFormatIndex;
-    int _motionAttachmentsSource;
-    int _offlineConfigurationSeed;
+    }  _minOutputDimensions;
+    int  _minOutputDimensionsSensorFormatIndex;
+    int  _motionAttachmentsSource;
+    int  _offlineConfigurationSeed;
     struct { 
         int width; 
         int height; 
-    } _outputDimensions;
-    BOOL _requiresOverscan;
-    int _resolvedOfflineConfigurationSeed;
-    int _resolvedSensorFormatIndex;
+    }  _outputDimensions;
+    BOOL  _requiresOverscan;
+    int  _resolvedOfflineConfigurationSeed;
+    int  _resolvedSensorFormatIndex;
     struct { 
         int width; 
         int height; 
-    } _sensorDimensions;
-    int _sensorFormatIndex;
+    }  _sensorDimensions;
+    int  _sensorFormatIndex;
     struct { 
         int width; 
         int height; 
-    } _sensorOverscanDimensions;
-    unsigned long _sensorPixelFormat;
-    BWNodeOutput *_stillImageOutput;
-    id /* block */ _stillImageSBufHandler;
-    NSObject<OS_dispatch_queue> *_streamEventDispatchQueue;
-    NSObject<OS_dispatch_group> *_streamEventNotificationGroup;
-    BOOL _streamFormatChangeInFlight;
+    }  _sensorOverscanDimensions;
+    unsigned long  _sensorPixelFormat;
+    BWNodeOutput * _stillImageOutput;
+    struct opaqueCMBufferQueue { } * _stillImageQueue;
+    struct opaqueCMBufferQueueTriggerToken { } * _stillImageQueueTriggerToken;
+    NSObject<OS_dispatch_queue> * _stillImageServicingQueue;
+    struct OpaqueFigCaptureStream { } * _stream;
+    NSObject<OS_dispatch_queue> * _streamEventDispatchQueue;
+    NSObject<OS_dispatch_group> * _streamEventNotificationGroup;
+    BOOL  _streamFormatChangeInFlight;
     struct { 
         int width; 
         int height; 
-    } _streamOutputDimensions;
+    }  _streamOutputDimensions;
     struct { 
         int width; 
         int height; 
-    } _streamOutputDimensionsAfterFormatChange;
-    int _streamSensorFormatIndex;
-    unsigned long _streamSensorPixelFormat;
-    unsigned long _streamSensorPixelFormatAfterFormatChange;
-    BOOL _temporalNoiseReductionEnabled;
-    BWNodeOutput *_videoCaptureOutput;
-    id /* block */ _videoSBufHandler;
+    }  _streamOutputDimensionsAfterFormatChange;
+    struct opaqueCMBufferQueue { } * _streamQueue;
+    struct opaqueCMBufferQueueTriggerToken { } * _streamQueueTriggerToken;
+    int  _streamSensorFormatIndex;
+    unsigned long  _streamSensorPixelFormat;
+    unsigned long  _streamSensorPixelFormatAfterFormatChange;
+    BOOL  _temporalNoiseReductionEnabled;
+    BWNodeOutput * _videoCaptureOutput;
+    NSDictionary * _videoCaptureOutputColorInfoOverride;
+    BOOL  _videoCaptureOutputPixelBufferAttachmentModificationAllowed;
 }
 
 @property (readonly) BWFigVideoCaptureDevice *captureDevice;
+@property (readonly) BWFigVideoCaptureStream *captureStream;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) BWNodeOutput *detectedFacesOutput;
@@ -66,12 +77,15 @@
 @property (readonly) BWNodeOutput *stillImageOutput;
 @property (readonly) Class superclass;
 @property (readonly) BWNodeOutput *videoCaptureOutput;
+@property (nonatomic, copy) NSDictionary *videoCaptureOutputColorInfoOverride;
+@property (nonatomic) BOOL videoCaptureOutputPixelBufferAttachmentModificationAllowed;
 
 + (int)_indexOfFormatInFormatsArray:(id)arg1 matchingSensorDimensions:(struct { int x1; int x2; })arg2 sensorPixelFormat:(unsigned long)arg3 sensorFormatIndex:(int)arg4;
 + (id)captureDeviceSourceNodeWithCaptureDevice:(id)arg1;
 + (void)initialize;
 
-- (void)_bringStreamFormatIndexUpToDate;
+- (long)_addCaptureStreamMetadata:(struct opaqueCMSampleBuffer { }*)arg1;
+- (long)_bringStreamFormatIndexUpToDate;
 - (void)_bringStreamPixelFormatUpToDate;
 - (long)_bringStreamUpToDate;
 - (void)_handleSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
@@ -79,15 +93,23 @@
 - (id)_initWithCaptureDevice:(id)arg1;
 - (long)_lockFramerateToMaxSupportedByCurrentSensorFormat;
 - (struct { int x1; int x2; })_maxOutputDimensionsForResolvedSensorFormatIndex;
+- (long)_prepareStillImageQueue;
+- (BOOL)_prepareStreamQueue;
 - (void)_registerForStreamNotifications;
 - (void)_resolveOfflineConfiguration;
+- (long)_startStreaming;
+- (long)_stopStreaming;
+- (void)_unprepareStillImageQueue;
+- (void)_unprepareStreamQueue;
 - (void)_unregisterFromStreamNotifications;
+- (void)_updateDutyCycleMetadataCacheForActiveFormatIndex:(int)arg1;
 - (void)_updateMetadataConfigurations;
 - (void)_updateMinOutputDimensionsForResolvedSensorFormatIndex;
 - (long)_updateStreamOutputDimensions;
 - (float)aeMaxGain;
 - (BOOL)automaticallyEnablesLowLightBoostWhenAvailable;
 - (id)captureDevice;
+- (id)captureStream;
 - (BOOL)chromaNoiseReductionEnabled;
 - (struct OpaqueCMClock { }*)clock;
 - (id)colorInfoForOutput:(id)arg1;
@@ -125,12 +147,16 @@
 - (void)setSensorFormatIndex:(int)arg1;
 - (void)setSensorPixelFormat:(unsigned long)arg1;
 - (void)setTemporalNoiseReductionEnabled:(BOOL)arg1;
+- (void)setVideoCaptureOutputColorInfoOverride:(id)arg1;
+- (void)setVideoCaptureOutputPixelBufferAttachmentModificationAllowed:(BOOL)arg1;
 - (BOOL)start:(id*)arg1;
 - (id)stillImageOutput;
 - (BOOL)stop:(id*)arg1;
 - (BOOL)temporalNoiseReductionEnabled;
 - (void)updateOutputRequirements;
 - (id)videoCaptureOutput;
+- (id)videoCaptureOutputColorInfoOverride;
+- (BOOL)videoCaptureOutputPixelBufferAttachmentModificationAllowed;
 - (void)willStop;
 
 @end

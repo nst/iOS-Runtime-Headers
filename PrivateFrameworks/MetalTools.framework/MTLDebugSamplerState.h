@@ -3,7 +3,7 @@
  */
 
 @interface MTLDebugSamplerState : MTLToolsSamplerState {
-    MTLSamplerDescriptor *_descriptor;
+    MTLSamplerDescriptor * _descriptor;
 }
 
 @property (nonatomic, readonly, copy) MTLSamplerDescriptor *descriptor;

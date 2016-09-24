@@ -3,14 +3,14 @@
  */
 
 @interface WUIDynamicWeatherBackgroundInteractiveTransaction : NSObject {
-    CALayer *_layer;
-    float _progress;
-    int _swipeDirection;
-    CALayer *_toLayer;
+    CALayer * _layer;
+    double  _progress;
+    int  _swipeDirection;
+    CALayer * _toLayer;
 }
 
 @property (nonatomic) CALayer *layer;
-@property (nonatomic) float progress;
+@property (nonatomic) double progress;
 @property (nonatomic) int swipeDirection;
 @property (nonatomic) CALayer *toLayer;
 

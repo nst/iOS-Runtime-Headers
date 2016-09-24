@@ -3,9 +3,9 @@
  */
 
 @interface SLTwitterRequestMultiPart : NSObject {
-    NSString *_name;
-    NSData *_payload;
-    NSString *_type;
+    NSString * _name;
+    NSData * _payload;
+    NSString * _type;
 }
 
 @property (nonatomic, copy) NSString *name;

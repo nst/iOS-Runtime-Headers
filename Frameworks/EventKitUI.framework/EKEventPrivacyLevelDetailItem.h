@@ -3,9 +3,9 @@
  */
 
 @interface EKEventPrivacyLevelDetailItem : EKEventDetailItem {
-    UITableViewCell *_cell;
-    UISwitch *_control;
-    BOOL _switchStateIsOn;
+    UITableViewCell * _cell;
+    UISwitch * _control;
+    BOOL  _switchStateIsOn;
 }
 
 - (void).cxx_destruct;

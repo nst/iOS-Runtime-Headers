@@ -3,9 +3,9 @@
  */
 
 @interface _TRUserNotification : NSObject {
-    long _response;
-    unsigned long _responseFlags;
-    struct __CFUserNotification { } *_userNotification;
+    long  _response;
+    unsigned long  _responseFlags;
+    struct __CFUserNotification { } * _userNotification;
 }
 
 @property (nonatomic, readonly) struct __CFUserNotification { }*CFUserNotification;

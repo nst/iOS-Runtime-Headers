@@ -3,7 +3,7 @@
  */
 
 @interface CoreDAVSupportedReportSetItem : CoreDAVItem {
-    NSMutableSet *_supportedReports;
+    NSMutableSet * _supportedReports;
 }
 
 @property (nonatomic, retain) NSMutableSet *supportedReports;

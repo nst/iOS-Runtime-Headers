@@ -3,8 +3,8 @@
  */
 
 @interface AXAutoForwardingLocalNotificationHandler : AXLocalNotificationHandler {
-    SEL *_possibleHandlers;
-    unsigned long _possibleHandlersCount;
+    SEL * _possibleHandlers;
+    unsigned long  _possibleHandlersCount;
 }
 
 - (id)_forwardDistributedNotificationNameForHandler:(SEL)arg1;

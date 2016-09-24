@@ -3,10 +3,10 @@
  */
 
 @interface AVCMNotificationDispatcherListenerKey : NSObject <NSCopying> {
-    int (*_callback;
-    NSString *_name;
-    const void *_object;
-    AVWeakReference *_weakReferenceToListener;
+    int (* _callback;
+    NSString * _name;
+    const void * _object;
+    AVWeakReference * _weakReferenceToListener;
 }
 
 + (id)listenerKeyWithWeakReferenceToListener:(id)arg1 callback:(int (*)arg2 name:(id)arg3 object:(const void*)arg4;

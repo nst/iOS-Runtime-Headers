@@ -3,8 +3,8 @@
  */
 
 @interface SBKGenericKeyValuePair : NSObject <SBKKeyValuePayloadPair> {
-    NSString *_kvsKey;
-    NSData *_kvsPayload;
+    NSString * _kvsKey;
+    NSData * _kvsPayload;
 }
 
 @property (readonly, copy) NSString *debugDescription;

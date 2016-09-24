@@ -3,10 +3,10 @@
  */
 
 @interface MusicLibraryActionDeleteOperation : NSOperation {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    MPUContentItemIdentifierCollection *_contentItemIdentifierCollection;
-    NSError *_resultError;
-    BOOL _success;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    MPUContentItemIdentifierCollection * _contentItemIdentifierCollection;
+    NSError * _resultError;
+    BOOL  _success;
 }
 
 @property (readonly, copy) MPUContentItemIdentifierCollection *contentItemIdentifierCollection;

@@ -3,8 +3,8 @@
  */
 
 @interface PKBundle : NSObject {
-    NSObject<OS_xpc_object> *__bundle;
-    NSString *_supportPath;
+    NSObject<OS_xpc_object> * __bundle;
+    NSString * _supportPath;
 }
 
 @property (retain) NSObject<OS_xpc_object> *_bundle;

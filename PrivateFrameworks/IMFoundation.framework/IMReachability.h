@@ -3,12 +3,12 @@
  */
 
 @interface IMReachability : NSObject {
-    <IMReachabilityDelegate> *_delegate;
-    NSString *_description;
-    unsigned int _flags;
-    BOOL _gettingFlags;
-    NSObject<OS_dispatch_queue> *_queue;
-    void *_reachabilityRef;
+    <IMReachabilityDelegate> * _delegate;
+    NSString * _description;
+    unsigned int  _flags;
+    BOOL  _gettingFlags;
+    NSObject<OS_dispatch_queue> * _queue;
+    void * _reachabilityRef;
 }
 
 @property (nonatomic) NSObject<OS_dispatch_queue> *_queue;

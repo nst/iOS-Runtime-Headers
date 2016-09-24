@@ -3,11 +3,11 @@
  */
 
 @interface WBSHistoryService : NSObject <NSXPCListenerDelegate> {
-    NSMutableSet *_connectionsReceivingHistoryNotifications;
-    WBSHistoryDatabaseAccessBroker *_databaseAccessBroker;
-    NSObject<OS_dispatch_queue> *_historyServiceQueue;
-    NSXPCListener *_listener;
-    WBSHistoryURLCompletionDataStore *_urlCompletionDataStore;
+    NSMutableSet * _connectionsReceivingHistoryNotifications;
+    WBSHistoryDatabaseAccessBroker * _databaseAccessBroker;
+    NSObject<OS_dispatch_queue> * _historyServiceQueue;
+    NSXPCListener * _listener;
+    WBSHistoryURLCompletionDataStore * _urlCompletionDataStore;
 }
 
 @property (nonatomic, readonly) WBSHistoryDatabaseAccessBroker *databaseAccessBroker;

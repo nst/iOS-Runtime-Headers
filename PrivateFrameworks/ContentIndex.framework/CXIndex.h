@@ -3,9 +3,9 @@
  */
 
 @interface CXIndex : NSObject {
-    int _cancel;
-    NSString *_path;
-    struct __SI { } *_skRef;
+    int  _cancel;
+    NSString * _path;
+    struct __SI { } * _skRef;
 }
 
 @property (nonatomic) int cancel;

@@ -3,7 +3,7 @@
  */
 
 @interface MTLDebugDepthStencilState : MTLToolsDepthStencilState {
-    MTLDepthStencilDescriptor *_descriptor;
+    MTLDepthStencilDescriptor * _descriptor;
 }
 
 @property (nonatomic, readonly) MTLDepthStencilDescriptor *descriptor;

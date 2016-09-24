@@ -3,12 +3,12 @@
  */
 
 @interface MFFileArchiveDirectory : NSObject {
-    NSData *_contents;
-    NSMutableDictionary *_entries;
-    NSError *_error;
-    MFFileArchiveEntry *_mainEntry;
-    NSMutableDictionary *_scrubbedEntries;
-    NSURL *_url;
+    NSData * _contents;
+    NSMutableDictionary * _entries;
+    NSError * _error;
+    MFFileArchiveEntry * _mainEntry;
+    NSMutableDictionary * _scrubbedEntries;
+    NSURL * _url;
 }
 
 @property (nonatomic, retain) NSData *contents;

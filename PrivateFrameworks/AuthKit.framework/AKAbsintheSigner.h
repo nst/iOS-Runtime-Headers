@@ -3,8 +3,8 @@
  */
 
 @interface AKAbsintheSigner : NSObject {
-    struct NACContextOpaque_ { } *_context;
-    NSDate *_contextCreationDate;
+    struct NACContextOpaque_ { } * _context;
+    NSDate * _contextCreationDate;
 }
 
 + (id)sharedSigner;

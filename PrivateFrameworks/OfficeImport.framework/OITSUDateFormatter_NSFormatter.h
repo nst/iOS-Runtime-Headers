@@ -3,15 +3,15 @@
  */
 
 @interface OITSUDateFormatter_NSFormatter : NSFormatter {
-    BOOL isDateOnly;
-    BOOL isTimeOnly;
-    TSULocale *locale;
-    NSString *mPreferredFormat;
+    BOOL  isDateOnly;
+    BOOL  isTimeOnly;
+    OITSULocale * locale;
+    NSString * mPreferredFormat;
 }
 
 @property (nonatomic) BOOL isDateOnly;
 @property (nonatomic) BOOL isTimeOnly;
-@property (nonatomic, retain) TSULocale *locale;
+@property (nonatomic, retain) OITSULocale *locale;
 @property (nonatomic, retain) NSString *preferredFormat;
 
 - (void)dealloc;

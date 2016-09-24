@@ -3,8 +3,8 @@
  */
 
 @interface __NSArrayReversed : NSArray {
-    id _array;
-    unsigned int _cnt;
+    id  _array;
+    unsigned int  _cnt;
 }
 
 - (unsigned int)count;

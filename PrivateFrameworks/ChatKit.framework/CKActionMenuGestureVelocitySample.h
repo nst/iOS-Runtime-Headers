@@ -3,15 +3,15 @@
  */
 
 @interface CKActionMenuGestureVelocitySample : NSObject {
-    double dt;
+    double  dt;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } end;
+        double x; 
+        double y; 
+    }  end;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } start;
+        double x; 
+        double y; 
+    }  start;
 }
 
 @end

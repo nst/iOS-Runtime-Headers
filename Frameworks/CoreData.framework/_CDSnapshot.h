@@ -6,11 +6,11 @@
     struct _snapshotFlags_st { 
         unsigned int _readOnly : 1; 
         unsigned int _reservedFlags : 31; 
-    } _cd_flags;
-    unsigned int _cd_nullFlags_;
-    NSManagedObjectID *_cd_objectID;
-    int _cd_rc;
-    int _cd_version;
+    }  _cd_flags;
+    unsigned int  _cd_nullFlags_;
+    NSManagedObjectID * _cd_objectID;
+    int  _cd_rc;
+    int  _cd_version;
 }
 
 @property (nonatomic, readonly) NSEntityDescription *entity;

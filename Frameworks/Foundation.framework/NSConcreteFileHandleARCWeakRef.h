@@ -3,7 +3,7 @@
  */
 
 @interface NSConcreteFileHandleARCWeakRef : NSObject {
-    id ref;
+    id  ref;
 }
 
 - (void)dealloc;

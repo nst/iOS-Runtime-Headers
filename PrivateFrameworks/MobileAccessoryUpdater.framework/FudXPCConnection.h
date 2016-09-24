@@ -3,14 +3,14 @@
  */
 
 @interface FudXPCConnection : NSObject <FudConnection> {
-    NSString *clientIdentifier;
-    NSObject<OS_xpc_object> *connection;
-    NSObject<OS_dispatch_queue> *connectionQueue;
-    BOOL didStop;
-    id /* block */ messageHandler;
-    int notifyToken;
-    NSObject<OS_dispatch_queue> *replyQueue;
-    NSObject<OS_dispatch_queue> *sessionQueue;
+    NSString * clientIdentifier;
+    NSObject<OS_xpc_object> * connection;
+    NSObject<OS_dispatch_queue> * connectionQueue;
+    BOOL  didStop;
+    id /* block */  messageHandler;
+    int  notifyToken;
+    NSObject<OS_dispatch_queue> * replyQueue;
+    NSObject<OS_dispatch_queue> * sessionQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

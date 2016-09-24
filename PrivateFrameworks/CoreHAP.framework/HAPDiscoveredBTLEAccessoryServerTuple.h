@@ -3,8 +3,8 @@
  */
 
 @interface HAPDiscoveredBTLEAccessoryServerTuple : NSObject {
-    HAPAccessoryServerBTLE *_accessoryServer;
-    double _lastSeen;
+    HAPAccessoryServerBTLE * _accessoryServer;
+    double  _lastSeen;
 }
 
 @property (nonatomic, readonly) HAPAccessoryServerBTLE *accessoryServer;

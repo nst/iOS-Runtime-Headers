@@ -3,16 +3,16 @@
  */
 
 @interface YTFavoritesController : NSObject {
-    YTAccountFeedRequest *_accountFeedRequest;
-    YTAuthenticatedAccountPost *_accountPost;
-    NSURL *_batchURL;
-    NSMutableArray *_bookmarkShortIDs;
-    NSMutableArray *_bookmarkVideos;
-    <YTFavoritesControllerDelegate> *_mergeBookmarksDelegate;
-    NSMutableArray *_mergedFavorites;
-    NSMutableArray *_pendingFavoritesShortIDs;
-    BOOL _shouldOfferMergeOfLocalBookmarks;
-    BOOL _usingAccountFavorites;
+    YTAccountFeedRequest * _accountFeedRequest;
+    YTAuthenticatedAccountPost * _accountPost;
+    NSURL * _batchURL;
+    NSMutableArray * _bookmarkShortIDs;
+    NSMutableArray * _bookmarkVideos;
+    <YTFavoritesControllerDelegate> * _mergeBookmarksDelegate;
+    NSMutableArray * _mergedFavorites;
+    NSMutableArray * _pendingFavoritesShortIDs;
+    BOOL  _shouldOfferMergeOfLocalBookmarks;
+    BOOL  _usingAccountFavorites;
 }
 
 + (id)sharedFavoritesController;

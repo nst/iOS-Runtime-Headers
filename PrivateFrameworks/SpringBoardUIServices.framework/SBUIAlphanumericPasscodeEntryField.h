@@ -3,17 +3,17 @@
  */
 
 @interface SBUIAlphanumericPasscodeEntryField : SBUIPasscodeEntryField {
-    UIView *_leftPaddingView;
-    UIView *_rightPaddingView;
-    UIView *_springView;
-    UIView *_springViewParent;
+    UIView * _leftPaddingView;
+    UIView * _rightPaddingView;
+    UIView * _springView;
+    UIView * _springViewParent;
 }
 
 @property (nonatomic, readonly) UITextInputTraits *textInputTraits;
 
 - (void).cxx_destruct;
 - (void)_autofillForMesaWithCompletion:(id /* block */)arg1;
-- (void)_resetForFailedPasscode:(BOOL)arg1 playUnlockFailedSound:(BOOL)arg2;
+- (void)_resetForFailedPasscode:(BOOL)arg1;
 - (id)initWithDefaultSizeAndLightStyle:(BOOL)arg1;
 - (void)layoutSubviews;
 - (void)notePasscodeFieldTextDidChange;

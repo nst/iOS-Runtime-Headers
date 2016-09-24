@@ -3,10 +3,10 @@
  */
 
 @interface IKDOMLSInput : IKJSObject <IKJSDOMLSInput> {
-    id _byteStream;
-    BOOL _certifiedText;
-    NSString *_encoding;
-    NSString *_stringData;
+    id  _byteStream;
+    BOOL  _certifiedText;
+    NSString * _encoding;
+    NSString * _stringData;
 }
 
 @property (nonatomic, retain) id byteStream;

@@ -3,7 +3,7 @@
  */
 
 @interface GKTurnBasedMatchmakerHostViewController : GKUIRemoteViewController <GKTurnBasedMatchmakerHostProtocol, GKTurnBasedMatchmakerServiceProtocol> {
-    GKTurnBasedMatchmakerViewController *_delegateWeak;
+    GKTurnBasedMatchmakerViewController * _delegateWeak;
 }
 
 @property (readonly, copy) NSString *debugDescription;

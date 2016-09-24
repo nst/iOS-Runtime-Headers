@@ -3,11 +3,11 @@
  */
 
 @interface CRKClassSessionBeacon : NSObject <CBPeripheralManagerDelegate> {
-    DMFControlSessionIdentifier *_advertisedIdentifier;
-    unsigned short _flags;
-    BOOL _isAdvertising;
-    NSDictionary *mBeaconAdvertisement;
-    CBPeripheralManager *mPeripheralManager;
+    DMFControlSessionIdentifier * _advertisedIdentifier;
+    unsigned short  _flags;
+    BOOL  _isAdvertising;
+    NSDictionary * mBeaconAdvertisement;
+    CBPeripheralManager * mPeripheralManager;
 }
 
 @property (nonatomic, copy) DMFControlSessionIdentifier *advertisedIdentifier;

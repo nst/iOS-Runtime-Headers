@@ -3,8 +3,8 @@
  */
 
 @interface MCNearbyPeerTableViewHeader : UIView {
-    UIActivityIndicatorView *_spinner;
-    UILabel *_text;
+    UIActivityIndicatorView * _spinner;
+    UILabel * _text;
 }
 
 - (void)dealloc;

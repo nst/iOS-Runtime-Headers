@@ -3,7 +3,7 @@
  */
 
 @interface CUIPSDGradientLayer : CUIPSDLayer {
-    CUIPSDGradient *_gradient;
+    CUIPSDGradient * _gradient;
 }
 
 @property (nonatomic, readonly) CUIPSDGradient *gradient;

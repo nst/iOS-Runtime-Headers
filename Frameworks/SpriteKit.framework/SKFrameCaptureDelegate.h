@@ -9,6 +9,8 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
++ (id)sharedInstance;
+
 - (void)archiver:(id)arg1 didEncodeObject:(id)arg2;
 - (id)archiver:(id)arg1 willEncodeObject:(id)arg2;
 

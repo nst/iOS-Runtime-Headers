@@ -3,9 +3,9 @@
  */
 
 @interface CKDProxyOperation : CKDOperation <CKDOperationInfoDelegate> {
-    CKOperationResult *_cachedResult;
-    BOOL _didHandleCancel;
-    id /* block */ _operationProgressedBlock;
+    CKOperationResult * _cachedResult;
+    BOOL  _didHandleCancel;
+    id /* block */  _operationProgressedBlock;
 }
 
 @property (nonatomic, retain) CKOperationResult *cachedResult;

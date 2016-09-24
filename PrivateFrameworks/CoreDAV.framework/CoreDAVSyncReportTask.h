@@ -3,10 +3,10 @@
  */
 
 @interface CoreDAVSyncReportTask : CoreDAVPropertyFindBaseTask {
-    BOOL _moreToSync;
-    NSString *_nextSyncToken;
-    NSString *_previousSyncToken;
-    BOOL _wasInvalidSyncToken;
+    BOOL  _moreToSync;
+    NSString * _nextSyncToken;
+    NSString * _previousSyncToken;
+    BOOL  _wasInvalidSyncToken;
 }
 
 @property (nonatomic, readonly) BOOL moreToSync;

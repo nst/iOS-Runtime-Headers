@@ -3,21 +3,21 @@
  */
 
 @interface MCEDUClassroomPayload : MCPayload {
-    NSArray *_departments;
-    NSArray *_deviceGroups;
-    NSArray *_groups;
-    NSArray *_leaderPayloadCertificateAnchorPersistentID;
-    NSArray *_leaderPayloadCertificateAnchorUUID;
-    NSArray *_memberPayloadCertificateAnchorPersistentID;
-    NSArray *_memberPayloadCertificateAnchorUUID;
-    NSString *_organizationName;
-    NSString *_organizationUUID;
-    NSData *_payloadCertificatePersistentID;
-    NSString *_payloadCertificateUUID;
-    NSData *_resourcePayloadCertificatePersistentID;
-    NSString *_resourcePayloadCertificateUUID;
-    NSString *_userIdentifier;
-    NSArray *_users;
+    NSArray * _departments;
+    NSArray * _deviceGroups;
+    NSArray * _groups;
+    NSArray * _leaderPayloadCertificateAnchorPersistentID;
+    NSArray * _leaderPayloadCertificateAnchorUUID;
+    NSArray * _memberPayloadCertificateAnchorPersistentID;
+    NSArray * _memberPayloadCertificateAnchorUUID;
+    NSString * _organizationName;
+    NSString * _organizationUUID;
+    NSData * _payloadCertificatePersistentID;
+    NSString * _payloadCertificateUUID;
+    NSData * _resourcePayloadCertificatePersistentID;
+    NSString * _resourcePayloadCertificateUUID;
+    NSString * _userIdentifier;
+    NSArray * _users;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *configuration;
@@ -54,10 +54,10 @@
 - (id)memberPayloadCertificateAnchorUUID;
 - (id)organizationName;
 - (id)organizationUUID;
-- (id)parseDepartmentFromDictionary:(id)arg1 outError:(id*)arg2;
-- (id)parseDeviceGroupFromDictionary:(id)arg1 outError:(id*)arg2;
-- (id)parseGroupFromDictionary:(id)arg1 outError:(id*)arg2;
-- (id)parseUserFromDictionary:(id)arg1 outError:(id*)arg2;
+- (id)parseDepartmentFromDictionary:(id)arg1 isStub:(BOOL)arg2 outError:(id*)arg3;
+- (id)parseDeviceGroupFromDictionary:(id)arg1 isStub:(BOOL)arg2 outError:(id*)arg3;
+- (id)parseGroupFromDictionary:(id)arg1 isStub:(BOOL)arg2 outError:(id*)arg3;
+- (id)parseUserFromDictionary:(id)arg1 isStub:(BOOL)arg2 outError:(id*)arg3;
 - (id)payloadCertificatePersistentID;
 - (id)payloadCertificateUUID;
 - (id)payloadDescriptionKeyValueSections;

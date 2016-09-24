@@ -3,8 +3,8 @@
  */
 
 @interface VKPGenericShieldVariant : PBCodable <NSCopying> {
-    NSString *_fontName;
-    float _fontSize;
+    NSString * _fontName;
+    double  _fontSize;
     struct { 
         unsigned int fontSize : 1; 
         unsigned int leftCapWidth : 1; 
@@ -14,21 +14,21 @@
         unsigned int rightCapWidth : 1; 
         unsigned int rightPadding : 1; 
         unsigned int textBaseline : 1; 
-    } _has;
-    struct { unsigned int x1; float x2; unsigned int x3; unsigned int x4; int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; } *_layers;
-    unsigned int _layersCount;
-    unsigned int _layersSpace;
-    float _leftCapWidth;
-    float _leftPadding;
-    float _lineSpacing;
-    unsigned int _numberOfLines;
-    float _rightCapWidth;
-    float _rightPadding;
-    float _textBaseline;
+    }  _has;
+    struct { unsigned int x1; double x2; unsigned int x3; unsigned int x4; int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; } * _layers;
+    unsigned int  _layersCount;
+    unsigned int  _layersSpace;
+    double  _leftCapWidth;
+    double  _leftPadding;
+    double  _lineSpacing;
+    unsigned int  _numberOfLines;
+    double  _rightCapWidth;
+    double  _rightPadding;
+    double  _textBaseline;
 }
 
 @property (nonatomic, retain) NSString *fontName;
-@property (nonatomic) float fontSize;
+@property (nonatomic) double fontSize;
 @property (nonatomic, readonly) BOOL hasFontName;
 @property (nonatomic) BOOL hasFontSize;
 @property (nonatomic) BOOL hasLeftCapWidth;
@@ -38,18 +38,18 @@
 @property (nonatomic) BOOL hasRightCapWidth;
 @property (nonatomic) BOOL hasRightPadding;
 @property (nonatomic) BOOL hasTextBaseline;
-@property (nonatomic, readonly) struct { unsigned int x1; float x2; unsigned int x3; unsigned int x4; int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; }*layers;
+@property (nonatomic, readonly) struct { unsigned int x1; double x2; unsigned int x3; unsigned int x4; int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; }*layers;
 @property (nonatomic, readonly) unsigned int layersCount;
-@property (nonatomic) float leftCapWidth;
-@property (nonatomic) float leftPadding;
-@property (nonatomic) float lineSpacing;
+@property (nonatomic) double leftCapWidth;
+@property (nonatomic) double leftPadding;
+@property (nonatomic) double lineSpacing;
 @property (nonatomic) unsigned int numberOfLines;
-@property (nonatomic) float rightCapWidth;
-@property (nonatomic) float rightPadding;
-@property (nonatomic) float textBaseline;
+@property (nonatomic) double rightCapWidth;
+@property (nonatomic) double rightPadding;
+@property (nonatomic) double textBaseline;
 
-- (struct CGSize { float x1; float x2; })_imageSizeWithTextureAtlases:(id)arg1;
-- (void)addLayer:(struct { unsigned int x1; float x2; unsigned int x3; unsigned int x4; int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; })arg1;
+- (struct CGSize { double x1; double x2; })_imageSizeWithTextureAtlases:(id)arg1;
+- (void)addLayer:(struct { unsigned int x1; double x2; unsigned int x3; unsigned int x4; int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; })arg1;
 - (void)clearLayers;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -69,8 +69,8 @@
 - (BOOL)hasTextBaseline;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (struct { unsigned int x1; float x2; unsigned int x3; unsigned int x4; int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; })layerAtIndex:(unsigned int)arg1;
-- (struct { unsigned int x1; float x2; unsigned int x3; unsigned int x4; int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; }*)layers;
+- (struct { unsigned int x1; double x2; unsigned int x3; unsigned int x4; int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; })layerAtIndex:(unsigned int)arg1;
+- (struct { unsigned int x1; double x2; unsigned int x3; unsigned int x4; int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; }*)layers;
 - (unsigned int)layersCount;
 - (float)leftCapWidth;
 - (float)leftPadding;
@@ -91,7 +91,7 @@
 - (void)setHasRightCapWidth:(BOOL)arg1;
 - (void)setHasRightPadding:(BOOL)arg1;
 - (void)setHasTextBaseline:(BOOL)arg1;
-- (void)setLayers:(struct { unsigned int x1; float x2; unsigned int x3; unsigned int x4; int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; }*)arg1 count:(unsigned int)arg2;
+- (void)setLayers:(struct { unsigned int x1; double x2; unsigned int x3; unsigned int x4; int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; }*)arg1 count:(unsigned int)arg2;
 - (void)setLeftCapWidth:(float)arg1;
 - (void)setLeftPadding:(float)arg1;
 - (void)setLineSpacing:(float)arg1;

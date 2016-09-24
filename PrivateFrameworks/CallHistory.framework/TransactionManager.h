@@ -3,10 +3,10 @@
  */
 
 @interface TransactionManager : CHSynchronizedLoggable {
-    NSXPCConnection *_connection;
-    NSXPCInterface *_interface;
-    NSMutableArray *_queuedTransactions;
-    id _syncHelperReadyNotificationRef;
+    NSXPCConnection * _connection;
+    NSXPCInterface * _interface;
+    NSMutableArray * _queuedTransactions;
+    id  _syncHelperReadyNotificationRef;
 }
 
 + (id)instance;

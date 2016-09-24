@@ -3,9 +3,9 @@
  */
 
 @interface NFMIDSMessageInstance : NSObject {
-    id /* block */ _retryAction;
-    int _retryCount;
-    double _retryInterval;
+    id /* block */  _retryAction;
+    int  _retryCount;
+    double  _retryInterval;
 }
 
 @property (nonatomic, copy) id /* block */ retryAction;

@@ -3,19 +3,19 @@
  */
 
 @interface SLRequest : NSObject {
-    OACredential *_OAuthCredential;
-    ACAccount *_account;
-    NSString *_applicationID;
-    int _callingPID;
-    NSString *_contentType;
-    NSString *_multiPartBoundary;
-    NSMutableArray *_multiParts;
-    unsigned int _networkServiceType;
-    NSMutableDictionary *_parameters;
-    NSData *_payload;
-    int _requestMethod;
-    SLService *_service;
-    NSURL *_url;
+    OACredential * _OAuthCredential;
+    ACAccount * _account;
+    NSString * _applicationID;
+    int  _callingPID;
+    NSString * _contentType;
+    NSString * _multiPartBoundary;
+    NSMutableArray * _multiParts;
+    unsigned int  _networkServiceType;
+    NSMutableDictionary * _parameters;
+    NSData * _payload;
+    int  _requestMethod;
+    SLService * _service;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

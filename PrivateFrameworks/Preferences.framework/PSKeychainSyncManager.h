@@ -3,37 +3,37 @@
  */
 
 @interface PSKeychainSyncManager : NSObject <KeychainSyncViewControllerDelegate> {
-    KeychainSyncAdvancedSecurityCodeController *_advancedSecurityCodeChoiceController;
-    NSString *_appleIDPasswordOrEquivalentToken;
-    NSString *_appleIDRawPassword;
-    NSString *_appleIDUsername;
-    PSRootController *_buddyNavigationController;
-    id /* block */ _changeSecurityCodeCompletion;
-    id /* block */ _circleJoinCompletion;
-    int _circleNotificationToken;
-    BOOL _circleWasReset;
-    id /* block */ _completion;
-    PSKeychainSyncSecurityCodeController *_complexSecurityCodeController;
-    NSTimer *_credentialExpirationTimer;
-    KeychainSyncDevicePINController *_devicePinController;
-    int _flow;
-    UIViewController *_hostViewController;
-    NSTimer *_joinAfterRecoveryTimeoutTimer;
-    BOOL _joiningCircle;
-    BOOL _joiningCircleAfterRecovery;
-    id /* block */ _passwordPromptCompletion;
-    KeychainSyncPhoneNumberController *_phoneNumberController;
-    id /* block */ _resetCompletion;
-    UIViewController *_resetPromptControllerHost;
-    NSString *_securityCodeRecoveryAttempt;
-    PSKeychainSyncSecurityCodeController *_securityCodeRecoveryController;
-    PSSetupController *_settingsSetupController;
-    PSKeychainSyncSecurityCodeController *_simpleSecurityCodeController;
-    KeychainSyncSMSVerificationController *_smsValidationController;
-    unsigned int _spinnerCount;
-    UIView *_spinningView;
-    NSString *_stagedSecurityCode;
-    int _stagedSecurityCodeType;
+    KeychainSyncAdvancedSecurityCodeController * _advancedSecurityCodeChoiceController;
+    NSString * _appleIDPasswordOrEquivalentToken;
+    NSString * _appleIDRawPassword;
+    NSString * _appleIDUsername;
+    PSRootController * _buddyNavigationController;
+    id /* block */  _changeSecurityCodeCompletion;
+    id /* block */  _circleJoinCompletion;
+    int  _circleNotificationToken;
+    BOOL  _circleWasReset;
+    id /* block */  _completion;
+    PSKeychainSyncSecurityCodeController * _complexSecurityCodeController;
+    NSTimer * _credentialExpirationTimer;
+    KeychainSyncDevicePINController * _devicePinController;
+    int  _flow;
+    UIViewController * _hostViewController;
+    NSTimer * _joinAfterRecoveryTimeoutTimer;
+    BOOL  _joiningCircle;
+    BOOL  _joiningCircleAfterRecovery;
+    id /* block */  _passwordPromptCompletion;
+    KeychainSyncPhoneNumberController * _phoneNumberController;
+    id /* block */  _resetCompletion;
+    UIViewController * _resetPromptControllerHost;
+    NSString * _securityCodeRecoveryAttempt;
+    PSKeychainSyncSecurityCodeController * _securityCodeRecoveryController;
+    PSSetupController * _settingsSetupController;
+    PSKeychainSyncSecurityCodeController * _simpleSecurityCodeController;
+    KeychainSyncSMSVerificationController * _smsValidationController;
+    unsigned int  _spinnerCount;
+    UIView * _spinningView;
+    NSString * _stagedSecurityCode;
+    int  _stagedSecurityCodeType;
 }
 
 @property (nonatomic, readonly) NSString *appleIDPasswordOrEquivalentToken;

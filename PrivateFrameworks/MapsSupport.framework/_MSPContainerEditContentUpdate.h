@@ -3,8 +3,8 @@
  */
 
 @interface _MSPContainerEditContentUpdate : _MSPContainerEdit <MSPContainerEditContentUpdate> {
-    <MSPImmutableObject> *_updatedImmutableObject;
-    <MSPMutableObject> *_updatedObject;
+    <MSPImmutableObject> * _updatedImmutableObject;
+    <MSPMutableObject> * _updatedObject;
 }
 
 @property (readonly, copy) NSString *debugDescription;

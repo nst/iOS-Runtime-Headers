@@ -3,15 +3,15 @@
  */
 
 @interface TSUDownloadManager : NSObject <NSURLSessionDownloadDelegate> {
-    NSMutableDictionary *_activeTasks;
-    NSObject<OS_dispatch_queue> *_activeTasksQueue;
-    NSMutableArray *_completionHandlers;
-    NSURLSession *_defaultURLSession;
-    NSMapTable *_downloadResults;
-    NSHashTable *_downloadSessions;
-    NSOperationQueue *_downloadSessionsQueue;
-    NSMutableArray *_inProcessDownloadQueue;
-    NSMutableDictionary *_inProgressDownloadItems;
+    NSMutableDictionary * _activeTasks;
+    NSObject<OS_dispatch_queue> * _activeTasksQueue;
+    NSMutableArray * _completionHandlers;
+    NSURLSession * _defaultURLSession;
+    NSMapTable * _downloadResults;
+    NSHashTable * _downloadSessions;
+    NSOperationQueue * _downloadSessionsQueue;
+    NSMutableArray * _inProcessDownloadQueue;
+    NSMutableDictionary * _inProgressDownloadItems;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -28,8 +28,8 @@
 - (void).cxx_destruct;
 - (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
 - (void)URLSession:(id)arg1 downloadTask:(id)arg2 didFinishDownloadingToURL:(id)arg3;
-- (void)URLSession:(id)arg1 downloadTask:(id)arg2 didResumeAtOffset:(long long)arg3 expectedTotalBytes:(long long)arg4;
-- (void)URLSession:(id)arg1 downloadTask:(id)arg2 didWriteData:(long long)arg3 totalBytesWritten:(long long)arg4 totalBytesExpectedToWrite:(long long)arg5;
+- (void)URLSession:(id)arg1 downloadTask:(id)arg2 didResumeAtOffset:(int)arg3 expectedTotalBytes:(int)arg4;
+- (void)URLSession:(id)arg1 downloadTask:(id)arg2 didWriteData:(int)arg3 totalBytesWritten:(int)arg4 totalBytesExpectedToWrite:(int)arg5;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (BOOL)beginDownloadTaskForDownloadItem:(id)arg1 isInProcessDownloadTask:(BOOL)arg2 taskDescription:(id)arg3 urlOrNil:(id)arg4;
 - (void)cancelTasksWithDescriptions:(id)arg1 forDownloadSession:(id)arg2;

@@ -3,9 +3,9 @@
  */
 
 @interface FBUIApplicationSceneDeactivationManager : NSObject <BSDescriptionProviding, FBSceneManagerInternalObserver, FBSceneManagerObserver> {
-    NSMutableArray *_activeBands;
-    NSMutableSet *_eligibleScenes;
-    FBScene *_updatingScene;
+    NSMutableArray * _activeBands;
+    NSMutableSet * _eligibleScenes;
+    FBScene * _updatingScene;
 }
 
 @property (readonly, copy) NSString *debugDescription;

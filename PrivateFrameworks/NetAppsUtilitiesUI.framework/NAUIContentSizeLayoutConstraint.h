@@ -3,23 +3,23 @@
  */
 
 @interface NAUIContentSizeLayoutConstraint : NSLayoutConstraint {
-    float _additionalConstant;
-    BOOL _allowsAccessibilityTextStyleSizes;
-    BOOL _autoUpdatingConstantShrinks;
-    id _autoitem;
-    id /* block */ _constantLoadingBlock;
-    float _defaultConstant;
-    NAUITextStyleDescriptor *_dynamicTextStyleDescriptor;
-    BOOL _isConstantUpdatingConstraint;
-    id _preferredContentSizeDidChangeObserver;
-    NSString *_textStyle;
-    float _textStyleDefaultBodyLeading;
+    double  _additionalConstant;
+    BOOL  _allowsAccessibilityTextStyleSizes;
+    BOOL  _autoUpdatingConstantShrinks;
+    id  _autoitem;
+    id /* block */  _constantLoadingBlock;
+    double  _defaultConstant;
+    NAUITextStyleDescriptor * _dynamicTextStyleDescriptor;
+    BOOL  _isConstantUpdatingConstraint;
+    id  _preferredContentSizeDidChangeObserver;
+    NSString * _textStyle;
+    double  _textStyleDefaultBodyLeading;
 }
 
-@property (nonatomic) float additionalConstant;
+@property (nonatomic) double additionalConstant;
 @property (nonatomic) BOOL autoUpdatingConstantShrinks;
 @property (nonatomic, copy) id /* block */ constantLoadingBlock;
-@property (nonatomic) float defaultConstant;
+@property (nonatomic) double defaultConstant;
 @property (nonatomic, copy) NSString *textStyle;
 
 + (id)_constraintForAutoitem:(id)arg1 constrainedItem:(id)arg2 attribute:(int)arg3 relatedBy:(int)arg4 toItem:(id)arg5 attribute:(int)arg6 multiplier:(float)arg7 defaultConstant:(float)arg8 additionalConstant:(float)arg9 initialize:(BOOL)arg10;

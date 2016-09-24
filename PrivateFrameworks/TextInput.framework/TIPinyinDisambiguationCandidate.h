@@ -3,7 +3,7 @@
  */
 
 @interface TIPinyinDisambiguationCandidate : TIKeyboardCandidateSingle {
-    NSString *_label;
+    NSString * _label;
 }
 
 + (id)candidateWithPinyinSyllable:(id)arg1;

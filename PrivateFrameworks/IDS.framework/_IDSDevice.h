@@ -3,21 +3,23 @@
  */
 
 @interface _IDSDevice : NSObject <IDSDaemonListenerProtocol> {
-    CUTWeakReference *_account;
-    BOOL _connected;
-    NSDictionary *_info;
-    NSInputStream *_inputStreamForSocket;
-    int _lastActivityToken;
-    BOOL _nearby;
-    int _nearbyToken;
-    id /* block */ _openSocketCompletionHandler;
-    NSString *_openSocketCompletionHandlerID;
-    NSObject<OS_dispatch_queue> *_openSocketCompletionHandlerQueue;
-    NSOutputStream *_outputStreamForSocket;
-    NSString *_serviceToken;
-    int _socket;
+    CUTWeakReference * _account;
+    BOOL  _cloudConnected;
+    BOOL  _connected;
+    BOOL  _immutableCloudConnected;
+    NSDictionary * _info;
+    NSInputStream * _inputStreamForSocket;
+    BOOL  _nearby;
+    int  _nearbyToken;
+    id /* block */  _openSocketCompletionHandler;
+    NSString * _openSocketCompletionHandlerID;
+    NSObject<OS_dispatch_queue> * _openSocketCompletionHandlerQueue;
+    NSOutputStream * _outputStreamForSocket;
+    NSString * _serviceToken;
+    int  _socket;
 }
 
+@property (getter=isCloudConnected, nonatomic, readonly) BOOL cloudConnected;
 @property (getter=isConnected, nonatomic, readonly) BOOL connected;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -44,7 +46,9 @@
 @property (nonatomic, readonly) NSString *productVersion;
 @property (nonatomic, readonly, retain) NSData *pushToken;
 @property (nonatomic, readonly, retain) NSString *service;
+@property (nonatomic, readonly) unsigned int serviceMinCompatibilityVersion;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL supportsApplePay;
 @property (nonatomic, readonly) BOOL supportsHandoff;
 @property (nonatomic, readonly) BOOL supportsMMSRelay;
 @property (nonatomic, readonly) BOOL supportsPhoneCalls;
@@ -55,11 +59,11 @@
 @property (nonatomic, readonly, retain) NSString *uniqueIDOverride;
 
 - (void)_addIdentity:(id)arg1;
+- (void)_cloudConnectedStateChanged;
 - (void)_connect;
 - (void)_connectedStateChanged;
 - (void)_nearbyStateChanged;
 - (void)_setAccount:(id)arg1;
-- (void)_updateNSUUID:(id)arg1;
 - (void)closeSocket:(int)arg1;
 - (void)closeSocketForDomain:(id)arg1;
 - (void)closeStreamPairWithInputStream:(id)arg1 outputStream:(id)arg2;
@@ -67,9 +71,11 @@
 - (id)description;
 - (id)deviceColor;
 - (id)enclosureColor;
+- (id)fullDescription;
 - (id)identities;
 - (id)initWithDictionary:(id)arg1;
 - (BOOL)isActive;
+- (BOOL)isCloudConnected;
 - (BOOL)isConnected;
 - (BOOL)isDefaultPairedDevice;
 - (BOOL)isHSATrusted;
@@ -90,9 +96,11 @@
 - (id)productVersion;
 - (id)pushToken;
 - (id)service;
+- (unsigned int)serviceMinCompatibilityVersion;
 - (void)setNSUUID:(id)arg1;
 - (void)setStreamPairWithInputStream:(id)arg1 outputStream:(id)arg2;
 - (int)socketForDomain:(id)arg1;
+- (BOOL)supportsApplePay;
 - (BOOL)supportsHandoff;
 - (BOOL)supportsMMSRelay;
 - (BOOL)supportsPhoneCalls;

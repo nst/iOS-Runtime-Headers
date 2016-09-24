@@ -6,5 +6,6 @@
 @optional
 
 - (void)deleteSheet:(PKPassDeleteSheet *)arg1 didComplete:(BOOL)arg2;
+- (void)deleteSheetWillBeginDeleteAnimation:(PKPassDeleteSheet *)arg1;
 
 @end

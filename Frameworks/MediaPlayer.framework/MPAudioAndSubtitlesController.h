@@ -3,8 +3,8 @@
  */
 
 @interface MPAudioAndSubtitlesController : UIViewController {
-    UINavigationController *_navController;
-    _MPAudioAndSubtitlesController *_viewController;
+    UINavigationController * _navController;
+    _MPAudioAndSubtitlesController * _viewController;
 }
 
 - (void).cxx_destruct;

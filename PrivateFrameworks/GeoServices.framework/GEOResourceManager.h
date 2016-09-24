@@ -3,7 +3,7 @@
  */
 
 @interface GEOResourceManager : NSObject {
-    GEOResourceManifestConfiguration *_configuration;
+    GEOResourceManifestConfiguration * _configuration;
 }
 
 + (id)sharedManager;

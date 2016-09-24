@@ -3,9 +3,9 @@
  */
 
 @interface MFProgressFilterDataConsumer : MFBaseFilterDataConsumer {
-    unsigned int _currentBytes;
-    unsigned int _expectedSize;
-    id /* block */ _progressBlock;
+    unsigned int  _currentBytes;
+    unsigned int  _expectedSize;
+    id /* block */  _progressBlock;
 }
 
 @property (readonly) unsigned int expectedSize;

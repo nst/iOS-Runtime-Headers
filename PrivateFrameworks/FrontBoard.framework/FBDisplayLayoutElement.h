@@ -3,11 +3,11 @@
  */
 
 @interface FBDisplayLayoutElement : NSObject <BSDescriptionProviding> {
-    BOOL _activated;
-    unsigned int _displayType;
-    FBSDisplayLayoutElement *_element;
-    Class _elementClass;
-    NSString *_identifier;
+    BOOL  _activated;
+    unsigned int  _displayType;
+    FBSDisplayLayoutElement * _element;
+    Class  _elementClass;
+    NSString * _identifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,9 +3,9 @@
  */
 
 @interface SKUIGallerySwooshCollectionViewCell : UICollectionViewCell {
-    UIView *_contentChildView;
-    UIColor *_titleColor;
-    UILabel *_titleLabel;
+    UIView * _contentChildView;
+    UIColor * _titleColor;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) UIView *contentChildView;

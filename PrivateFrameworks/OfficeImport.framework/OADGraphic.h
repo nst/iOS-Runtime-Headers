@@ -3,7 +3,7 @@
  */
 
 @interface OADGraphic : OADDrawable {
-    OADGraphic *mMasterGraphic;
+    OADGraphic * mMasterGraphic;
 }
 
 - (id)description;

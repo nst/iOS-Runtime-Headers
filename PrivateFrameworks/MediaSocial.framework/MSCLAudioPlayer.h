@@ -3,15 +3,15 @@
  */
 
 @interface MSCLAudioPlayer : NSObject {
-    AVAsset *_asset;
-    <MSCLAudioPlayerDelegate> *_delegate;
-    CADisplayLink *_displayLink;
-    AVPlayer *_player;
-    AVPlayerItem *_playerItem;
-    id _representedObject;
-    MSCLAudioPlayerStatus *_status;
-    id _timeObserver;
-    BOOL _usesCADisplayLink;
+    AVAsset * _asset;
+    <MSCLAudioPlayerDelegate> * _delegate;
+    CADisplayLink * _displayLink;
+    AVPlayer * _player;
+    AVPlayerItem * _playerItem;
+    id  _representedObject;
+    MSCLAudioPlayerStatus * _status;
+    id  _timeObserver;
+    BOOL  _usesCADisplayLink;
 }
 
 @property (nonatomic) <MSCLAudioPlayerDelegate> *delegate;

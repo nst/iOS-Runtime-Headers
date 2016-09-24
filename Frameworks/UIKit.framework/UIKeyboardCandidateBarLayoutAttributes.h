@@ -3,8 +3,8 @@
  */
 
 @interface UIKeyboardCandidateBarLayoutAttributes : UICollectionViewLayoutAttributes <NSCopying> {
-    BOOL _beginsFirstPage;
-    BOOL _endsLastPage;
+    BOOL  _beginsFirstPage;
+    BOOL  _endsLastPage;
 }
 
 @property (nonatomic) BOOL beginsFirstPage;

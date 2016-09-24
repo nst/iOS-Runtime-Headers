@@ -3,8 +3,8 @@
  */
 
 @interface SKUIBackgroundImageWrapperForHorizontalLockup : SKUIImageView {
-    SKUIImageView *_imageView;
-    SKUIHorizontalLockupView *_lockup;
+    SKUIImageView * _imageView;
+    SKUIHorizontalLockupView * _lockup;
 }
 
 @property (nonatomic) SKUIImageView *imageView;

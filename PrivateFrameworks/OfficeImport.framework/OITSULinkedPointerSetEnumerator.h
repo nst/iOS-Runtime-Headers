@@ -3,8 +3,8 @@
  */
 
 @interface OITSULinkedPointerSetEnumerator : NSEnumerator {
-    OITSULinkedPointerSetEntry *mHead;
-    OITSULinkedPointerSetEntry *mLastUsed;
+    OITSULinkedPointerSetEntry * mHead;
+    OITSULinkedPointerSetEntry * mLastUsed;
 }
 
 - (id)initWithFirstEntry:(id)arg1;

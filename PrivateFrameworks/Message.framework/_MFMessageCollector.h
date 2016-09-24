@@ -3,9 +3,9 @@
  */
 
 @interface _MFMessageCollector : NSObject <MessageConsumer, QueryProgressMonitor> {
-    NSMutableArray *_messages;
-    MFActivityMonitor *_monitor;
-    id /* block */ _transmogrifier;
+    NSMutableArray * _messages;
+    MFActivityMonitor * _monitor;
+    id /* block */  _transmogrifier;
 }
 
 @property (nonatomic, copy) id /* block */ transmogrifier;

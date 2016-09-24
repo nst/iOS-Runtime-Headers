@@ -3,38 +3,30 @@
  */
 
 @interface CBXpcConnection : NSObject {
-    BOOL _appIsBackgrounded;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    <CBXpcConnectionDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_eventQueue;
-    NSMutableDictionary *_options;
-    int _type;
-    NSObject<OS_xpc_object> *_xpcConnection;
-    BOOL _xpcIsFinalizing;
-    NSObject<OS_dispatch_queue> *_xpcQueue;
-    NSObject<OS_dispatch_semaphore> *_xpcSendBarrier;
+    <CBXpcConnectionDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _eventQueue;
+    NSMutableDictionary * _options;
+    int  _sessionType;
+    BOOL  _uiAppIsBackgrounded;
+    NSObject<OS_xpc_object> * _xpcConnection;
+    NSObject<OS_dispatch_queue> * _xpcQueue;
 }
 
-@property (getter=isSetupOnUIThread, nonatomic, readonly) BOOL setupOnUIThread;
-
 - (void).cxx_destruct;
-- (id)allocXpcMsg:(unsigned short)arg1 args:(id)arg2;
-- (void)applicationDidEnterBackgroundNotification;
-- (void)applicationWillEnterForegroundNotification;
-- (void)checkIn;
-- (void)checkOut;
+- (id)_allocXpcMsg:(unsigned short)arg1 args:(id)arg2;
+- (void)_applicationDidEnterBackgroundNotification;
+- (void)_applicationWillEnterForegroundNotification;
+- (void)_checkIn;
+- (void)_checkOut;
+- (void)_handleConnectionEvent:(id)arg1;
+- (void)_handleFinalized;
+- (void)_handleInvalid;
+- (void)_handleMsg:(id)arg1;
+- (void)_handleReset;
+- (id)_nameForMessage:(unsigned short)arg1;
+- (void)_sendBarrier;
 - (void)disconnect;
-- (void)handleConnectionEvent:(id)arg1;
-- (void)handleFinalized;
-- (void)handleInvalid;
-- (void)handleMsg:(id)arg1;
-- (void)handleReset;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2 options:(id)arg3 sessionType:(int)arg4;
-- (BOOL)isSetupOnUIThread;
-- (id)nameForMessage:(unsigned short)arg1;
-- (id /* block */)replyBlockWithXpcReply:(id)arg1;
-- (void)sendAsyncMsg:(unsigned short)arg1 args:(id)arg2;
-- (void)sendBarrier;
 - (void)sendMsg:(unsigned short)arg1 args:(id)arg2;
 - (id)sendSyncMsg:(unsigned short)arg1 args:(id)arg2;
 - (void)setTargetQueue:(id)arg1;

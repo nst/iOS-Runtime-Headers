@@ -3,9 +3,9 @@
  */
 
 @interface CNContactChangesNotifier : NSObject {
-    CNContactStore *_contactStore;
-    BOOL _observingNotification;
-    CNMutableMultiDictionary *_registeredObservers;
+    CNContactStore * _contactStore;
+    BOOL  _observingNotification;
+    CNMutableMultiDictionary * _registeredObservers;
 }
 
 @property (nonatomic, retain) CNContactStore *contactStore;

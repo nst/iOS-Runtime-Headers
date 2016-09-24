@@ -3,9 +3,9 @@
  */
 
 @interface MFDAMailAccountConsumer : NSObject <DAActionConsumer> {
-    BOOL _alwaysReportFailures;
-    NSConditionLock *_doneCondition;
-    BOOL _shouldRetryRequest;
+    BOOL  _alwaysReportFailures;
+    NSConditionLock * _doneCondition;
+    BOOL  _shouldRetryRequest;
 }
 
 - (void)actionFailed:(int)arg1 forTask:(id)arg2 error:(id)arg3;

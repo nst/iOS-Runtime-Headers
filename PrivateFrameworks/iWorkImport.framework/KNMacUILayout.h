@@ -3,39 +3,44 @@
  */
 
 @interface KNMacUILayout : NSObject <NSCopying, NSMutableCopying> {
-    int mInspectorPaneViewMode;
-    BOOL mShowingInspectorPane;
-    BOOL mShowingLightTable;
-    BOOL mShowingMasterSlides;
-    BOOL mShowingNavigatorViewInSidebar;
-    BOOL mShowingPresenterNotes;
-    BOOL mShowingSidebar;
+    BOOL  mInspectorPaneAutoHidden;
+    int  mInspectorPaneViewMode;
+    BOOL  mShowingInspectorPane;
+    BOOL  mShowingLightTable;
+    BOOL  mShowingMasterSlides;
+    BOOL  mShowingNavigatorViewInSidebar;
+    BOOL  mShowingPresenterNotes;
+    BOOL  mShowingSidebar;
 }
 
+@property (nonatomic, readonly) int inspectorPaneHiddenState;
 @property (nonatomic, readonly) int inspectorPaneViewMode;
 @property (getter=p_isShowingNavigatorViewInSidebar, nonatomic, readonly) BOOL p_showingNavigatorViewInSidebar;
-@property (getter=isShowingInspectorPane, nonatomic, readonly) BOOL showingInspectorPane;
 @property (getter=isShowingLightTable, nonatomic, readonly) BOOL showingLightTable;
 @property (getter=isShowingMasterSlides, nonatomic, readonly) BOOL showingMasterSlides;
 @property (getter=isShowingPresenterNotes, nonatomic, readonly) BOOL showingPresenterNotes;
 @property (getter=isShowingSidebar, nonatomic, readonly) BOOL showingSidebar;
 @property (nonatomic, readonly) int sidebarViewMode;
 
-+ (id)uiLayoutFromArchive:(const struct DesktopUILayoutArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; int x5; bool x6; bool x7; bool x8; bool x9; int x10; bool x11; }*)arg1 unarchiver:(id)arg2 context:(id)arg3;
++ (id)uiLayoutFromArchive:(const struct DesktopUILayoutArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; int x5; bool x6; bool x7; bool x8; bool x9; int x10; bool x11; bool x12; }*)arg1 unarchiver:(id)arg2 context:(id)arg3;
 
 - (id)archivedUILayoutInContext:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)hash;
+- (BOOL)inspectorPaneAutoHidden;
+- (int)inspectorPaneHiddenState;
 - (int)inspectorPaneViewMode;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isShowingInspectorPane;
 - (BOOL)isShowingLightTable;
 - (BOOL)isShowingMasterSlides;
 - (BOOL)isShowingPresenterNotes;
 - (BOOL)isShowingSidebar;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)p_isShowingNavigatorViewInSidebar;
-- (void)saveToArchive:(struct DesktopUILayoutArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; int x5; bool x6; bool x7; bool x8; bool x9; int x10; bool x11; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct DesktopUILayoutArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; int x5; bool x6; bool x7; bool x8; bool x9; int x10; bool x11; bool x12; }*)arg1 archiver:(id)arg2;
+- (void)setInspectorPaneAutoHidden:(BOOL)arg1;
+- (void)setShowingInspectorPane:(BOOL)arg1;
+- (BOOL)showingInspectorPane;
 - (int)sidebarViewMode;
 
 @end

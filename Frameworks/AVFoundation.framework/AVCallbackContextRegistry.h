@@ -3,9 +3,9 @@
  */
 
 @interface AVCallbackContextRegistry : NSObject {
-    NSMutableDictionary *_contextsForTokens;
-    unsigned long _currentToken;
-    NSObject<OS_dispatch_queue> *_readWriteQueue;
+    NSMutableDictionary * _contextsForTokens;
+    unsigned long  _currentToken;
+    NSObject<OS_dispatch_queue> * _readWriteQueue;
 }
 
 + (void)initialize;

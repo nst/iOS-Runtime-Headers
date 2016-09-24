@@ -3,10 +3,12 @@
  */
 
 @interface GEOLogMessageCollectionRequest : PBRequest <NSCopying> {
-    NSMutableArray *_logMessages;
+    NSMutableArray * _logMessages;
 }
 
 @property (nonatomic, retain) NSMutableArray *logMessages;
+
++ (Class)logMessageType;
 
 - (void)addLogMessage:(id)arg1;
 - (void)clearLogMessages;

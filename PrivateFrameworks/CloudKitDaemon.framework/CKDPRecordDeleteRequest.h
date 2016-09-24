@@ -3,8 +3,8 @@
  */
 
 @interface CKDPRecordDeleteRequest : PBRequest <NSCopying> {
-    NSString *_etag;
-    CKDPRecordIdentifier *_recordIdentifier;
+    NSString * _etag;
+    CKDPRecordIdentifier * _recordIdentifier;
 }
 
 @property (nonatomic, retain) NSString *etag;

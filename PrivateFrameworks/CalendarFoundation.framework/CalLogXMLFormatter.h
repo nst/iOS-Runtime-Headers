@@ -3,8 +3,8 @@
  */
 
 @interface CalLogXMLFormatter : NSObject <CalLogFormatter> {
-    BOOL _shouldPrettyPrint;
-    BOOL _useTinyElementNames;
+    BOOL  _shouldPrettyPrint;
+    BOOL  _useTinyElementNames;
 }
 
 @property (readonly, copy) NSString *debugDescription;

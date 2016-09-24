@@ -3,7 +3,7 @@
  */
 
 @interface SKUIColumnViewElement : SKUIViewElement {
-    int _columnSpan;
+    int  _columnSpan;
 }
 
 @property (nonatomic, readonly) int columnSpan;

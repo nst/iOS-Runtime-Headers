@@ -3,7 +3,7 @@
  */
 
 @interface TSPUnknownFieldTree : NSObject {
-    TSPUnknownFieldTreeNodeWithChildren *_rootNode;
+    TSPUnknownFieldTreeNodeWithChildren * _rootNode;
 }
 
 - (void).cxx_destruct;

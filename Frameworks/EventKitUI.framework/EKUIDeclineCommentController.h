@@ -3,8 +3,8 @@
  */
 
 @interface EKUIDeclineCommentController : NSObject {
-    UIAlertView *_alertView;
-    id /* block */ _completionBlock;
+    UIAlertView * _alertView;
+    id /* block */  _completionBlock;
 }
 
 + (id)_newDeclineCommentControllerWithCompletionBlock:(id /* block */)arg1;

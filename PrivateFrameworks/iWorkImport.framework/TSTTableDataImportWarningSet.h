@@ -3,13 +3,16 @@
  */
 
 @interface TSTTableDataImportWarningSet : TSTTableDataObject {
-    TSTImportWarningSet *mImportWarningSet;
+    TSTImportWarningSet * mImportWarningSet;
 }
+
+@property (nonatomic, readonly) TSTImportWarningSet *importWarningSet;
 
 - (void)dealloc;
 - (id)description;
 - (unsigned int)hash;
-- (id)initObjectWithImportWarningSet:(id)arg1;
+- (id)importWarningSet;
+- (id)initObjectWithImportWarningSet:(id)arg1 refCount:(unsigned int)arg2;
 - (BOOL)isEqual:(id)arg1;
 
 @end

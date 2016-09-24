@@ -5,6 +5,6 @@
 
 @required
 
-- (void)toggleExpansionForSection:(unsigned int)arg1;
+- (void)toggleExpansionForSection:(SFResultSection *)arg1;
 
 @end

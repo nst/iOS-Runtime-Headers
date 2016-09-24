@@ -5,10 +5,10 @@
 @interface CKDPResponseOperationResultErrorClient : PBCodable <NSCopying> {
     struct { 
         unsigned int type : 1; 
-    } _has;
-    CKDPOplockFailure *_oplockFailure;
-    int _type;
-    CKDPUniqueFieldFailure *_uniqueFieldFailure;
+    }  _has;
+    CKDPOplockFailure * _oplockFailure;
+    int  _type;
+    CKDPUniqueFieldFailure * _uniqueFieldFailure;
 }
 
 @property (nonatomic, readonly) BOOL hasOplockFailure;
@@ -19,7 +19,8 @@
 @property (nonatomic, retain) CKDPUniqueFieldFailure *uniqueFieldFailure;
 
 - (void).cxx_destruct;
-- (id)_prettyDictionaryRepresentation;
+- (int)StringAsType:(id)arg1;
+- (id)_typeCKLogValue;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -37,6 +38,7 @@
 - (void)setType:(int)arg1;
 - (void)setUniqueFieldFailure:(id)arg1;
 - (int)type;
+- (id)typeAsString:(int)arg1;
 - (id)uniqueFieldFailure;
 - (void)writeTo:(id)arg1;
 

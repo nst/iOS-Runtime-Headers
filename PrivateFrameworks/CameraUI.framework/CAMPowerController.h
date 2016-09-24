@@ -3,11 +3,11 @@
  */
 
 @interface CAMPowerController : NSObject {
-    int __assertionIdentifierGenerator;
-    NSMutableDictionary *__assertionsByIdentifier;
-    NSObject<OS_dispatch_queue> *__assertionsQueue;
-    unsigned int __backgroundTaskIdentifier;
-    BOOL __isBackgrounded;
+    int  __assertionIdentifierGenerator;
+    NSMutableDictionary * __assertionsByIdentifier;
+    NSObject<OS_dispatch_queue> * __assertionsQueue;
+    unsigned int  __backgroundTaskIdentifier;
+    BOOL  __isBackgrounded;
 }
 
 @property (nonatomic, readonly) int _assertionIdentifierGenerator;
@@ -27,11 +27,11 @@
 - (BOOL)_isBackgrounded;
 - (void)_setBackgrounded:(BOOL)arg1;
 - (void)_startBackgroundTaskIfNeeded;
-- (void)addAssertionForIndentifier:(unsigned int)arg1 withReason:(unsigned short)arg2;
+- (void)addAssertionForIndentifier:(unsigned int)arg1 withReason:(unsigned int)arg2;
 - (void)dealloc;
 - (id)description;
 - (unsigned int)generateAssertionIdentifier;
 - (id)init;
-- (void)removeAssertionForIdentifier:(unsigned int)arg1 withReason:(unsigned short)arg2;
+- (void)removeAssertionForIdentifier:(unsigned int)arg1 withReason:(unsigned int)arg2;
 
 @end

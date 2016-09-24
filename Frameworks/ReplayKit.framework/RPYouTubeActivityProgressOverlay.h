@@ -3,8 +3,8 @@
  */
 
 @interface RPYouTubeActivityProgressOverlay : UIView {
-    UIActivityIndicatorView *_activityIndicator;
-    BOOL _isShowing;
+    UIActivityIndicatorView * _activityIndicator;
+    BOOL  _isShowing;
 }
 
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;

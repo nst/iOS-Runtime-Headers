@@ -3,31 +3,31 @@
  */
 
 @interface GEOStructuredAddress : PBCodable <GEOURLSerializable, NSCopying> {
-    NSString *_administrativeArea;
-    NSString *_administrativeAreaCode;
-    NSMutableArray *_areaOfInterests;
-    NSString *_country;
-    NSString *_countryCode;
-    NSMutableArray *_dependentLocalitys;
-    NSString *_fullThoroughfare;
+    NSString * _administrativeArea;
+    NSString * _administrativeAreaCode;
+    NSMutableArray * _areaOfInterests;
+    NSString * _country;
+    NSString * _countryCode;
+    NSMutableArray * _dependentLocalitys;
+    NSString * _fullThoroughfare;
     struct { 
-        long long *list; 
+        int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _geoIds;
-    NSString *_inlandWater;
-    NSString *_locality;
-    NSString *_ocean;
-    NSString *_postCode;
-    NSString *_postCodeExtension;
-    NSString *_postCodeFull;
-    NSString *_premise;
-    NSString *_premises;
-    NSString *_subAdministrativeArea;
-    NSString *_subLocality;
-    NSMutableArray *_subPremises;
-    NSString *_subThoroughfare;
-    NSString *_thoroughfare;
+    }  _geoIds;
+    NSString * _inlandWater;
+    NSString * _locality;
+    NSString * _ocean;
+    NSString * _postCode;
+    NSString * _postCodeExtension;
+    NSString * _postCodeFull;
+    NSString * _premise;
+    NSString * _premises;
+    NSString * _subAdministrativeArea;
+    NSString * _subLocality;
+    NSMutableArray * _subPremises;
+    NSString * _subThoroughfare;
+    NSString * _thoroughfare;
 }
 
 @property (nonatomic, retain) NSString *administrativeArea;
@@ -39,7 +39,7 @@
 @property (nonatomic, retain) NSMutableArray *dependentLocalitys;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSString *fullThoroughfare;
-@property (nonatomic, readonly) long long*geoIds;
+@property (nonatomic, readonly) int*geoIds;
 @property (nonatomic, readonly) unsigned int geoIdsCount;
 @property (nonatomic, readonly) BOOL hasAdministrativeArea;
 @property (nonatomic, readonly) BOOL hasAdministrativeAreaCode;
@@ -74,10 +74,16 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *thoroughfare;
 
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
++ (Class)areaOfInterestType;
++ (Class)dependentLocalityType;
++ (Class)subPremiseType;
+
 - (BOOL)_isEquivalentURLRepresentationTo:(id)arg1;
 - (void)addAreaOfInterest:(id)arg1;
 - (void)addDependentLocality:(id)arg1;
-- (void)addGeoId:(long long)arg1;
+- (void)addGeoId:(int)arg1;
 - (void)addSubPremise:(id)arg1;
 - (id)administrativeArea;
 - (id)administrativeAreaCode;
@@ -99,8 +105,8 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)fullThoroughfare;
-- (long long)geoIdAtIndex:(unsigned int)arg1;
-- (long long*)geoIds;
+- (int)geoIdAtIndex:(unsigned int)arg1;
+- (int*)geoIds;
 - (unsigned int)geoIdsCount;
 - (BOOL)hasAdministrativeArea;
 - (BOOL)hasAdministrativeAreaCode;
@@ -140,7 +146,7 @@
 - (void)setCountryCode:(id)arg1;
 - (void)setDependentLocalitys:(id)arg1;
 - (void)setFullThoroughfare:(id)arg1;
-- (void)setGeoIds:(long long*)arg1 count:(unsigned int)arg2;
+- (void)setGeoIds:(int*)arg1 count:(unsigned int)arg2;
 - (void)setInlandWater:(id)arg1;
 - (void)setLocality:(id)arg1;
 - (void)setOcean:(id)arg1;
@@ -163,5 +169,9 @@
 - (id)thoroughfare;
 - (id)urlRepresentation;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
+
+- (id)singleLineAddress;
 
 @end

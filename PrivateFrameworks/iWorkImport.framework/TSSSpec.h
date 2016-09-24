@@ -9,8 +9,10 @@
 - (id)apply:(id)arg1;
 - (BOOL)canApplyOnObject:(id)arg1;
 - (id)getUnsetSpec;
+- (unsigned int)hash;
 - (id)initUnsetSpec;
 - (id)initWithCurrentProperty:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isUnsetSpec;
 - (id)operationPropertyName;
 - (id)specWithCurrentProperty:(id)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface CIStraightenFilter : CIFilter {
-    NSNumber *inputAngle;
-    CIImage *inputImage;
+    NSNumber * inputAngle;
+    CIImage * inputImage;
 }
 
 @property (nonatomic, retain) NSNumber *inputAngle;

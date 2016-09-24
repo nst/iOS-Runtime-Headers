@@ -3,16 +3,16 @@
  */
 
 @interface NSHTMLWriter : NSObject {
-    NSAttributedString *_attrStr;
-    NSMutableArray *_blockStyleStrings;
-    NSMutableString *_bodyStr;
-    NSMutableArray *_charStyleArrays;
-    NSMutableOrderedSet *_charStyleStrings;
-    unsigned int _characterEncoding;
-    NSDictionary *_documentAttrs;
-    unsigned int _excludedElements1;
-    unsigned int _excludedElements2;
-    NSFileWrapper *_fileWrapper;
+    NSAttributedString * _attrStr;
+    NSMutableArray * _blockStyleStrings;
+    NSMutableString * _bodyStr;
+    NSMutableArray * _charStyleArrays;
+    NSMutableOrderedSet * _charStyleStrings;
+    unsigned int  _characterEncoding;
+    NSDictionary * _documentAttrs;
+    unsigned int  _excludedElements1;
+    unsigned int  _excludedElements2;
+    NSFileWrapper * _fileWrapper;
     struct { 
         unsigned int interchangeNewline : 1; 
         unsigned int noDefaultFonts : 1; 
@@ -21,26 +21,26 @@
         unsigned int usedTabSpan : 1; 
         unsigned int encodingIsUnicode : 1; 
         unsigned int pad : 26; 
-    } _flags;
-    NSMutableDictionary *_fontDescriptions;
-    NSMutableDictionary *_fontNames;
-    NSMutableArray *_fontStrings;
-    NSData *_htmlData;
-    int _level;
-    NSMutableIndexSet *_listItemStyleIndexes;
-    NSMutableArray *_olistStyleStrings;
-    NSURL *_outputBaseURL;
-    NSMutableArray *_paraStyleArrays;
-    NSMutableIndexSet *_paraStyleIndexes;
-    NSMutableArray *_paraStyleStrings;
-    int _prefixSpaces;
-    id _resourceHandler;
-    NSMutableDictionary *_subresources;
-    NSMutableArray *_tableCellStyleStrings;
-    NSMutableArray *_tableStyleStrings;
-    NSString *_textEncodingName;
-    NSMutableArray *_ulistStyleStrings;
-    NSData *_webArchiveData;
+    }  _flags;
+    NSMutableDictionary * _fontDescriptions;
+    NSMutableDictionary * _fontNames;
+    NSMutableArray * _fontStrings;
+    NSData * _htmlData;
+    int  _level;
+    NSMutableIndexSet * _listItemStyleIndexes;
+    NSMutableArray * _olistStyleStrings;
+    NSURL * _outputBaseURL;
+    NSMutableArray * _paraStyleArrays;
+    NSMutableIndexSet * _paraStyleIndexes;
+    NSMutableArray * _paraStyleStrings;
+    int  _prefixSpaces;
+    id  _resourceHandler;
+    NSMutableDictionary * _subresources;
+    NSMutableArray * _tableCellStyleStrings;
+    NSMutableArray * _tableStyleStrings;
+    NSString * _textEncodingName;
+    NSMutableArray * _ulistStyleStrings;
+    NSData * _webArchiveData;
 }
 
 - (id)HTMLData;

@@ -3,7 +3,7 @@
  */
 
 @interface CalLogWriter : NSObject <CalLogWriter> {
-    <CalLogFormatter> *_formatter;
+    <CalLogFormatter> * _formatter;
 }
 
 @property (readonly, copy) NSString *debugDescription;

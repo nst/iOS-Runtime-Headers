@@ -3,10 +3,10 @@
  */
 
 @interface GEODirectionsProvider : NSObject {
-    id /* block */ _errorHandler;
-    id /* block */ _finishedHandler;
-    BOOL _isLoading;
-    int _requestType;
+    id /* block */  _errorHandler;
+    id /* block */  _finishedHandler;
+    BOOL  _isLoading;
+    int  _requestType;
 }
 
 @property (nonatomic, copy) id /* block */ errorHandler;
@@ -20,8 +20,8 @@
 - (id /* block */)finishedHandler;
 - (BOOL)isLoading;
 - (void)providerDidCancel;
-- (void)providerReceivedError:(id)arg1 problemDetails:(struct { int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg2;
-- (void)providerReceivedErrorCode:(int)arg1 userInfo:(id)arg2 problemDetails:(struct { int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*)arg3;
+- (void)providerReceivedError:(id)arg1 directionsError:(id)arg2;
+- (void)providerReceivedErrorCode:(int)arg1 userInfo:(id)arg2 directionsError:(id)arg3;
 - (void)providerReceivedResponse:(id)arg1;
 - (void)requestCompleted;
 - (void)setErrorHandler:(id /* block */)arg1;

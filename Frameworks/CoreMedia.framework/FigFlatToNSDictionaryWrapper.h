@@ -3,12 +3,12 @@
  */
 
 @interface FigFlatToNSDictionaryWrapper : NSDictionary {
-    id /* block */ _deallocatorBlock;
-    void *_dictionaryBacking;
-    void *_exportedKeySpec;
-    struct OpaqueFigFlatDictionary { } *_flatDictionary;
-    int _keySpace;
-    struct OpaqueFigFlatDictionaryKeySpec { } *_keySpec;
+    id /* block */  _deallocatorBlock;
+    void * _dictionaryBacking;
+    void * _exportedKeySpec;
+    struct OpaqueFigFlatDictionary { } * _flatDictionary;
+    int  _keySpace;
+    struct OpaqueFigFlatDictionaryKeySpec { } * _keySpec;
 }
 
 - (void)_initializeFlatDictionary;

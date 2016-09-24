@@ -3,12 +3,12 @@
  */
 
 @interface CADCalSearchOperation : NSOperation <CalSearchDataSink> {
-    <NSObject> *_boostToken;
-    ClientConnection *_connection;
-    NSObject<OS_dispatch_semaphore> *_finishedSemaphore;
-    long _lastIndex;
-    unsigned int _replyID;
-    CalSearch *_search;
+    <NSObject> * _boostToken;
+    ClientConnection * _connection;
+    NSObject<OS_dispatch_semaphore> * _finishedSemaphore;
+    long  _lastIndex;
+    unsigned int  _replyID;
+    CalSearch * _search;
 }
 
 @property (readonly, copy) NSString *debugDescription;

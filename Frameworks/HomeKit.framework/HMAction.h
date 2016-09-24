@@ -3,13 +3,13 @@
  */
 
 @interface HMAction : NSObject <HMObjectMerge> {
-    HMActionSet *_actionSet;
-    unsigned int _actionType;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    HMDelegateCaller *_delegateCaller;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
-    NSUUID *_uniqueIdentifier;
-    NSUUID *_uuid;
+    HMActionSet * _actionSet;
+    unsigned int  _actionType;
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    HMDelegateCaller * _delegateCaller;
+    NSObject<OS_dispatch_queue> * _propertyQueue;
+    NSUUID * _uniqueIdentifier;
+    NSUUID * _uuid;
 }
 
 @property (nonatomic) HMActionSet *actionSet;

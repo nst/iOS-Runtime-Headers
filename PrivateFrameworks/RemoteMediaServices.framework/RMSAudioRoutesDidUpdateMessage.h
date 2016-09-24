@@ -3,11 +3,11 @@
  */
 
 @interface RMSAudioRoutesDidUpdateMessage : PBCodable <NSCopying> {
-    NSMutableArray *_audioRoutes;
+    NSMutableArray * _audioRoutes;
     struct { 
         unsigned int sessionIdentifier : 1; 
-    } _has;
-    int _sessionIdentifier;
+    }  _has;
+    int  _sessionIdentifier;
 }
 
 @property (nonatomic, retain) NSMutableArray *audioRoutes;

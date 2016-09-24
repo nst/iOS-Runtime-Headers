@@ -3,17 +3,17 @@
  */
 
 @interface RadioGetHistoryRequest : RadioRequest {
-    NSNumber *_accountUniqueIdentifier;
-    BOOL _aggregateSessions;
-    BOOL _fetchForAccount;
-    BOOL _includesAds;
-    unsigned int _maxNumberOfTracks;
-    NSArray *_playActivityEvents;
-    RadioPlayEventCollection *_playEventCollection;
-    SSURLConnectionRequest *_request;
-    BOOL _shouldProcessCategories;
-    NSString *_stationHash;
-    long long _stationID;
+    NSNumber * _accountUniqueIdentifier;
+    BOOL  _aggregateSessions;
+    BOOL  _fetchForAccount;
+    BOOL  _includesAds;
+    unsigned int  _maxNumberOfTracks;
+    NSArray * _playActivityEvents;
+    RadioPlayEventCollection * _playEventCollection;
+    SSURLConnectionRequest * _request;
+    BOOL  _shouldProcessCategories;
+    NSString * _stationHash;
+    int  _stationID;
 }
 
 @property (nonatomic, readonly, copy) NSNumber *accountUniqueIdentifier;
@@ -25,7 +25,7 @@
 @property (nonatomic, copy) RadioPlayEventCollection *playEventCollection;
 @property (nonatomic) BOOL shouldProcessCategories;
 @property (nonatomic, copy) NSString *stationHash;
-@property (nonatomic) long long stationID;
+@property (nonatomic) int stationID;
 
 - (void).cxx_destruct;
 - (id)_newHistoryCategoryWithDictionary:(id)arg1;
@@ -47,11 +47,11 @@
 - (void)setPlayEventCollection:(id)arg1;
 - (void)setShouldProcessCategories:(BOOL)arg1;
 - (void)setStationHash:(id)arg1;
-- (void)setStationID:(long long)arg1;
+- (void)setStationID:(int)arg1;
 - (BOOL)shouldProcessCategories;
 - (void)startWithCompletionHandler:(id /* block */)arg1;
 - (void)startWithHistoryCompletionHandler:(id /* block */)arg1;
 - (id)stationHash;
-- (long long)stationID;
+- (int)stationID;
 
 @end

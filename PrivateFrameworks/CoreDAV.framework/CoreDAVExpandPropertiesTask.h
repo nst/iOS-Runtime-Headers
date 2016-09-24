@@ -3,7 +3,7 @@
  */
 
 @interface CoreDAVExpandPropertiesTask : CoreDAVPropertyFindBaseTask {
-    NSMutableSet *_propertiesToExpand;
+    NSMutableSet * _propertiesToExpand;
 }
 
 @property (nonatomic, retain) NSMutableSet *propertiesToExpand;

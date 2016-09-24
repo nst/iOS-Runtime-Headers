@@ -6,7 +6,9 @@
 
 + (id)actionCellConfigurationClassesForLocation:(unsigned int)arg1;
 
+- (void)_limitedUIDidChange;
 - (id)sectionIndexTitlesForTableView:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 
 @end

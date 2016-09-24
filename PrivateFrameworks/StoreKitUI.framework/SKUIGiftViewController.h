@@ -3,14 +3,14 @@
  */
 
 @interface SKUIGiftViewController : UINavigationController {
-    SKUIClientContext *_clientContext;
-    SKUIGift *_gift;
-    SKUIGiftConfiguration *_giftConfiguration;
-    <SKUIGiftViewControllerDelegate> *_giftDelegate;
-    int _initialBarStyle;
-    NSOperationQueue *_operationQueue;
-    UIViewController *_placeholderViewController;
-    SKUIGiftComposeViewController *_rootViewController;
+    SKUIClientContext * _clientContext;
+    SKUIGift * _gift;
+    SKUIGiftConfiguration * _giftConfiguration;
+    <SKUIGiftViewControllerDelegate> * _giftDelegate;
+    int  _initialBarStyle;
+    NSOperationQueue * _operationQueue;
+    UIViewController * _placeholderViewController;
+    SKUIGiftComposeViewController * _rootViewController;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
@@ -31,7 +31,7 @@
 - (id)giftDelegate;
 - (id)initWithGift:(id)arg1;
 - (id)operationQueue;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)setClientContext:(id)arg1;
 - (void)setGiftDelegate:(id)arg1;
 - (void)setOperationQueue:(id)arg1;

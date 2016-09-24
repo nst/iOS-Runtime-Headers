@@ -3,12 +3,12 @@
  */
 
 @interface GEOPBTransitIcon : PBCodable <GEOTransitIconDataSource, NSCopying> {
-    unsigned int _cartoId;
+    unsigned int  _cartoId;
     struct { 
         unsigned int cartoId : 1; 
         unsigned int transitTypeEnumValue : 1; 
-    } _has;
-    unsigned int _transitTypeEnumValue;
+    }  _has;
+    unsigned int  _transitTypeEnumValue;
 }
 
 @property (nonatomic, readonly) unsigned int cartoID;
@@ -35,6 +35,8 @@
 - (BOOL)hasCartoId;
 - (BOOL)hasTransitTypeEnumValue;
 - (unsigned int)hash;
+- (unsigned int)iconAttributeKey;
+- (unsigned int)iconAttributeValue;
 - (int)iconType;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;

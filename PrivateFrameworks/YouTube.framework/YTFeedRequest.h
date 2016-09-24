@@ -3,13 +3,13 @@
  */
 
 @interface YTFeedRequest : YTXMLHTTPRequest {
-    NSURL *_batchURL;
-    id _delegate;
-    BOOL _invalidatedToken;
-    unsigned int _startIndex;
-    unsigned int _totalResults;
-    NSMutableArray *_videos;
-    unsigned int _videosPerPage;
+    NSURL * _batchURL;
+    id  _delegate;
+    BOOL  _invalidatedToken;
+    unsigned int  _startIndex;
+    unsigned int  _totalResults;
+    NSMutableArray * _videos;
+    unsigned int  _videosPerPage;
 }
 
 + (int)partialFeedType;

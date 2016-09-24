@@ -12,6 +12,7 @@
 + (id)_cachedPowerLevelsForKey:(id)arg1;
 + (id)attachmentSummary:(unsigned int)arg1;
 + (id)fallbackFilenamePrefix;
++ (id)generateThumbnailForWidth:(float)arg1 color:(id)arg2 powerLevels:(id)arg3 fileURL:(id)arg4;
 
 - (BOOL)canExport;
 - (Class)coloredBalloonViewClass;
@@ -23,6 +24,7 @@
 - (BOOL)isLikeAudioMessage;
 - (int)mediaType;
 - (id)powerLevels;
+- (id)previewFilenameExtension;
 - (id)previewItemTitle;
 - (void)savePreview:(id)arg1 toURL:(id)arg2 forOrientation:(BOOL)arg3;
 - (id)savedPreviewFromURL:(id)arg1 forOrientation:(BOOL)arg2;

@@ -5,6 +5,7 @@
 
 @required
 
+- (void)addTileSetStyle:(int)arg1 betweenZoom:(unsigned int)arg2 andZoom:(unsigned int)arg3;
 - (void)beginLoading;
 - (<GEORoutePreloadSessionDelegate> *)delegate;
 - (BOOL)fullDebuggingEnabled;

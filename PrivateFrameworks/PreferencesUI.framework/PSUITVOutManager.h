@@ -3,7 +3,7 @@
  */
 
 @interface PSUITVOutManager : NSObject {
-    int _connectedAdapterType;
+    int  _connectedAdapterType;
 }
 
 - (int)connectedAdapterType;

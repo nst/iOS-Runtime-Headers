@@ -2,38 +2,39 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@interface CKDPublicIdentityLookupRequest : NSObject {
-    NSMutableDictionary *_emailsToProtectionInfo;
-    NSMutableDictionary *_emailsToUserInfo;
-    BOOL _isCancelled;
-    id /* block */ _lookupCompletionBlock;
-    id /* block */ _perEmailProgressBlock;
-    NSMutableSet *_remainingEmailsToFetch;
+@interface CKDPublicIdentityLookupRequest : CKDCacheBasedRequest {
+    id /* block */  _lookupCompletionBlock;
+    NSMutableArray * _lookupInfosToFetch;
+    NSArray * _originalLookupInfosToFetch;
+    id /* block */  _perLookupInfoProgressBlock;
 }
 
-@property (nonatomic, retain) NSMutableDictionary *emailsToProtectionInfo;
-@property (nonatomic, retain) NSMutableDictionary *emailsToUserInfo;
-@property (nonatomic) BOOL isCancelled;
 @property (nonatomic, copy) id /* block */ lookupCompletionBlock;
-@property (nonatomic, copy) id /* block */ perEmailProgressBlock;
-@property (nonatomic, retain) NSMutableSet *remainingEmailsToFetch;
+@property (nonatomic, retain) NSMutableArray *lookupInfosToFetch;
+@property (nonatomic, retain) NSArray *originalLookupInfosToFetch;
+@property (nonatomic, copy) id /* block */ perLookupInfoProgressBlock;
+
++ (void)removeCacheForLookupInfos:(id)arg1 inCache:(id)arg2;
 
 - (void).cxx_destruct;
-- (void)cancel;
-- (id)emailsToProtectionInfo;
-- (id)emailsToUserInfo;
+- (id)CKPropertiesDescription;
+- (id)_generateOONPrivateKeyWithError:(id*)arg1;
+- (void)_receivedUserIdentity:(id)arg1 forLookupInfo:(id)arg2 error:(id)arg3;
+- (void)_saveUserIdentity:(id)arg1 forLookupInfo:(id)arg2;
+- (BOOL)_tryComplete;
+- (id)ckShortDescription;
+- (id)description;
 - (void)finishWithError:(id)arg1;
-- (id)initWithEmails:(id)arg1;
-- (BOOL)isCancelled;
+- (id)initWithLookupInfos:(id)arg1;
 - (id /* block */)lookupCompletionBlock;
-- (id /* block */)perEmailProgressBlock;
-- (void)receivedProtectionInfo:(id)arg1 userInfo:(id)arg2 forEmail:(id)arg3;
-- (id)remainingEmailsToFetch;
-- (void)setEmailsToProtectionInfo:(id)arg1;
-- (void)setEmailsToUserInfo:(id)arg1;
-- (void)setIsCancelled:(BOOL)arg1;
+- (id)lookupInfosToFetch;
+- (id)originalLookupInfosToFetch;
+- (id /* block */)perLookupInfoProgressBlock;
+- (void)performRequest;
 - (void)setLookupCompletionBlock:(id /* block */)arg1;
-- (void)setPerEmailProgressBlock:(id /* block */)arg1;
-- (void)setRemainingEmailsToFetch:(id)arg1;
+- (void)setLookupInfosToFetch:(id)arg1;
+- (void)setOriginalLookupInfosToFetch:(id)arg1;
+- (void)setPerLookupInfoProgressBlock:(id /* block */)arg1;
+- (id)spawnURLRequests;
 
 @end

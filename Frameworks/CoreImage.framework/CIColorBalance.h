@@ -3,11 +3,11 @@
  */
 
 @interface CIColorBalance : CIFilter {
-    CIColor *inputColor;
-    NSNumber *inputDamping;
-    CIImage *inputImage;
-    NSNumber *inputStrength;
-    NSNumber *inputWarmth;
+    CIColor * inputColor;
+    NSNumber * inputDamping;
+    CIImage * inputImage;
+    NSNumber * inputStrength;
+    NSNumber * inputWarmth;
 }
 
 @property (nonatomic, retain) CIColor *inputColor;

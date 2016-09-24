@@ -2,9 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@interface FBSScene : NSObject {
-    NSArray *_layers;
-}
+@interface FBSScene : NSObject
 
 @property (nonatomic, readonly, retain) FBSSceneClientSettings *clientSettings;
 @property (nonatomic, readonly, retain) NSArray *contexts;
@@ -17,7 +15,10 @@
 
 // Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
 
+- (void)_didCreateWithTransitionContext:(id)arg1 completion:(id /* block */)arg2;
+- (BOOL)_hasAgent;
 - (id)_init;
+- (void)_willDestroyWithTransitionContext:(id)arg1 completion:(id /* block */)arg2;
 - (void)attachContext:(id)arg1;
 - (void)attachLayer:(id)arg1;
 - (void)attachSceneContext:(id)arg1;

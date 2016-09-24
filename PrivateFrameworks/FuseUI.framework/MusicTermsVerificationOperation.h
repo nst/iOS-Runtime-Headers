@@ -3,14 +3,14 @@
  */
 
 @interface MusicTermsVerificationOperation : NSOperation <MusicTermsAgreementViewControllerDelegate> {
-    SSVFairPlaySAPSession *_SAPSession;
-    unsigned long long _acceptingTermsVersion;
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    id /* block */ _additionalPresentationHandler;
-    NSError *_error;
-    BOOL _executing;
-    BOOL _finished;
-    MusicTermsAgreementViewController *_termsAgreementViewController;
+    SSVFairPlaySAPSession * _SAPSession;
+    unsigned int  _acceptingTermsVersion;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    id /* block */  _additionalPresentationHandler;
+    NSError * _error;
+    BOOL  _executing;
+    BOOL  _finished;
+    MusicTermsAgreementViewController * _termsAgreementViewController;
 }
 
 @property (retain) SSVFairPlaySAPSession *SAPSession;
@@ -28,7 +28,7 @@
 - (void)_cleanUpTermsAgreementViewController:(id)arg1;
 - (void)_dismissTermsAgreementViewControllerWithCompletionHandler:(id /* block */)arg1;
 - (void)_finishWithError:(id)arg1;
-- (id)_newTermsUpdateOperationWithAcceptedStoreTermsVersion:(unsigned long long)arg1;
+- (id)_newTermsUpdateOperationWithAcceptedStoreTermsVersion:(unsigned int)arg1;
 - (void)_updateSubscriptionStatus;
 - (id /* block */)additionalPresentationHandler;
 - (id)error;

@@ -3,8 +3,8 @@
  */
 
 @interface ML3StatementCacheList : NSObject {
-    ML3StatementCacheNode *_firstNode;
-    ML3StatementCacheNode *_lastNode;
+    ML3StatementCacheNode * _firstNode;
+    ML3StatementCacheNode * _lastNode;
 }
 
 @property (nonatomic, readonly) unsigned int count;

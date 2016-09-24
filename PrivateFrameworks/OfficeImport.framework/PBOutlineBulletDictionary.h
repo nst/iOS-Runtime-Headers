@@ -3,7 +3,7 @@
  */
 
 @interface PBOutlineBulletDictionary : NSObject {
-    NSMutableDictionary *mDictionary;
+    NSMutableDictionary * mDictionary;
 }
 
 - (void)dealloc;

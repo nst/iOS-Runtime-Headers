@@ -3,17 +3,17 @@
  */
 
 @interface DMFAssignUserRequest : CATTaskRequest {
-    NSString *_appleID;
-    NSString *_displayName;
-    NSArray *_enrolledGroupIdentifiers;
-    NSString *_familyName;
-    NSString *_fullScreenImageURL;
-    NSString *_givenName;
-    NSNumber *_groupID;
-    NSString *_imageURL;
-    NSString *_passcodeType;
-    NSString *_password;
-    NSString *_userIdentifier;
+    NSString * _appleID;
+    NSString * _displayName;
+    NSArray * _enrolledGroupIdentifiers;
+    NSString * _familyName;
+    NSString * _fullScreenImageURL;
+    NSString * _givenName;
+    NSNumber * _groupID;
+    NSString * _imageURL;
+    NSString * _passcodeType;
+    NSString * _password;
+    NSString * _userIdentifier;
 }
 
 @property (nonatomic, copy) NSString *appleID;

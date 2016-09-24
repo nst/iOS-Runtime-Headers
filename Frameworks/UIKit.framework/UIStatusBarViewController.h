@@ -3,11 +3,11 @@
  */
 
 @interface UIStatusBarViewController : UIViewController {
-    BOOL _iPhoneWS;
-    BOOL _keyboardVisible;
-    UIView *_statusBar;
-    UIClassicStatusBarView *_statusBarBackgroundView;
-    UIWindow *_window;
+    BOOL  _iPhoneWS;
+    BOOL  _keyboardVisible;
+    UIView * _statusBar;
+    UIClassicStatusBarView * _statusBarBackgroundView;
+    UIWindow * _window;
 }
 
 + (double)statusBarOrientationAnimationDurationFrom:(int)arg1 to:(int)arg2;
@@ -18,7 +18,7 @@
 - (void)_finishStatusBarOrientationChange;
 - (void)_prepareForZoom:(BOOL)arg1;
 - (void)_statusBarHideAnimationFinished:(id)arg1 finished:(BOOL)arg2 hidden:(id)arg3;
-- (struct CGSize { float x1; float x2; })_statusBarSizeForOrientation:(int)arg1;
+- (struct CGSize { double x1; double x2; })_statusBarSizeForOrientation:(int)arg1;
 - (void)_statusBarViewControllerKeyboardDidHide:(id)arg1;
 - (void)_statusBarViewControllerKeyboardWillShow:(id)arg1;
 - (void)_updateStatusBarForRotationFromInterfaceOrientation:(int)arg1 toInterfaceOrientation:(int)arg2 style:(int)arg3 hidden:(BOOL)arg4 slideUp:(BOOL)arg5;

@@ -3,8 +3,8 @@
  */
 
 @interface CPDistributedMessagingDelayedReplyContext : NSObject {
-    BOOL _portPassing;
-    unsigned int _replyPort;
+    BOOL  _portPassing;
+    unsigned int  _replyPort;
 }
 
 @property (nonatomic) BOOL portPassing;

@@ -3,7 +3,7 @@
  */
 
 @interface GKTurnBasedParticipant : NSObject {
-    GKTurnBasedParticipantInternal *_internal;
+    GKTurnBasedParticipantInternal * _internal;
 }
 
 @property (readonly, retain) GKTurnBasedParticipantInternal *internal;

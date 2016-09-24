@@ -3,7 +3,7 @@
  */
 
 @interface OITSUIntToIntDictionary : NSObject <NSCopying, NSMutableCopying> {
-    struct __CFDictionary { } *mDictionary;
+    struct __CFDictionary { } * mDictionary;
 }
 
 - (id)allKeys;

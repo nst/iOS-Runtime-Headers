@@ -3,7 +3,7 @@
  */
 
 @interface TILexicon : NSObject <NSCopying, NSSecureCoding> {
-    NSArray *_entries;
+    NSArray * _entries;
 }
 
 @property (nonatomic, readonly) NSArray *entries;

@@ -2,27 +2,32 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDCodableQuantitySample : PBCodable <NSCopying> {
+@interface HDCodableQuantitySample : PBCodable <HDDecoding, NSCopying> {
     struct { 
         unsigned int valueInCanonicalUnit : 1; 
         unsigned int valueInOriginalUnit : 1; 
-    } _has;
-    NSString *_originalUnitString;
-    HDCodableSample *_sample;
-    double _valueInCanonicalUnit;
-    double _valueInOriginalUnit;
+    }  _has;
+    NSString * _originalUnitString;
+    HDCodableSample * _sample;
+    double  _valueInCanonicalUnit;
+    double  _valueInOriginalUnit;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) BOOL hasOriginalUnitString;
 @property (nonatomic, readonly) BOOL hasSample;
 @property (nonatomic) BOOL hasValueInCanonicalUnit;
 @property (nonatomic) BOOL hasValueInOriginalUnit;
+@property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSString *originalUnitString;
 @property (nonatomic, retain) HDCodableSample *sample;
+@property (readonly) Class superclass;
 @property (nonatomic) double valueInCanonicalUnit;
 @property (nonatomic) double valueInOriginalUnit;
 
 - (void).cxx_destruct;
+- (BOOL)applyToObject:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

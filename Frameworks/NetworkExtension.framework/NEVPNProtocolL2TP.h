@@ -3,12 +3,12 @@
  */
 
 @interface NEVPNProtocolL2TP : NEVPNProtocolPPP {
-    NSString *_localIdentifier;
-    int _machineAuthenticationMethod;
-    NEIdentityKeychainItem *_machineIdentity;
-    BOOL _machineIdentityDataImported;
-    NSData *_machineIdentityDataInternal;
-    NEKeychainItem *_sharedSecretKeychainItem;
+    NSString * _localIdentifier;
+    int  _machineAuthenticationMethod;
+    NEIdentityKeychainItem * _machineIdentity;
+    BOOL  _machineIdentityDataImported;
+    NSData * _machineIdentityDataInternal;
+    NEKeychainItem * _sharedSecretKeychainItem;
 }
 
 @property (copy) NSString *localIdentifier;
@@ -38,6 +38,7 @@
 - (id)machineIdentityDataInternal;
 - (id)machineIdentityReference;
 - (void)migratePasswordsFromPreferences:(struct __SCPreferences { }*)arg1;
+- (BOOL)needToUpdateKeychain;
 - (void)removeKeychainItemsInDomain:(int)arg1 keepIdentity:(bool)arg2;
 - (void)setIPSecSettingsFromLegacyDictionary:(id)arg1;
 - (void)setLocalIdentifier:(id)arg1;

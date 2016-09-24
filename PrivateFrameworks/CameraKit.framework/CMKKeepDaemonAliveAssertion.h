@@ -3,7 +3,7 @@
  */
 
 @interface CMKKeepDaemonAliveAssertion : NSObject {
-    NSObject<OS_xpc_object> *_keepaliveConnection;
+    NSObject<OS_xpc_object> * _keepaliveConnection;
 }
 
 + (id)assertion;

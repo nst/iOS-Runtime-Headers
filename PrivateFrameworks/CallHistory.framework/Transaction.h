@@ -3,8 +3,8 @@
  */
 
 @interface Transaction : NSObject <NSSecureCoding> {
-    NSData *_record;
-    unsigned int _transactionType;
+    NSData * _record;
+    unsigned int  _transactionType;
 }
 
 @property (retain) NSData *record;

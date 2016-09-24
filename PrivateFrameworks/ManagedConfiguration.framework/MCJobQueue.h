@@ -3,11 +3,11 @@
  */
 
 @interface MCJobQueue : NSObject {
-    NSObject<OS_dispatch_queue> *_executionQueue;
-    id /* block */ _executionQueueAbortCompletionBlock;
-    NSObject<OS_dispatch_group> *_jobGroup;
-    NSObject<OS_dispatch_queue> *_jobQueue;
-    <MCJobQueueObserver> *_observer;
+    NSObject<OS_dispatch_queue> * _executionQueue;
+    id /* block */  _executionQueueAbortCompletionBlock;
+    NSObject<OS_dispatch_group> * _jobGroup;
+    NSObject<OS_dispatch_queue> * _jobQueue;
+    <MCJobQueueObserver> * _observer;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *executionQueue;

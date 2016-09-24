@@ -3,12 +3,12 @@
  */
 
 @interface SGRealtimeContact : NSObject <NSCopying, NSSecureCoding> {
-    int _abPersonId;
-    NSString *_cnContactIdentifier;
-    SGContact *_contact;
-    unsigned int _extractionType;
-    BOOL _isHarvested;
-    int _state;
+    int  _abPersonId;
+    NSString * _cnContactIdentifier;
+    SGContact * _contact;
+    unsigned int  _extractionType;
+    BOOL  _isHarvested;
+    int  _state;
 }
 
 @property (nonatomic, readonly) int abPersonId;

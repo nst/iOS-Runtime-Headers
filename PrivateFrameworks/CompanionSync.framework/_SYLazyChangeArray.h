@@ -3,11 +3,11 @@
  */
 
 @interface _SYLazyChangeArray : NSArray {
-    int _compatibilityVersion;
-    <SYChangeSerializer> *_decoder;
-    BOOL _isSYObjectDataArray;
-    NSArray *_source;
-    NSArray *_types;
+    int  _compatibilityVersion;
+    <SYChangeSerializer> * _decoder;
+    BOOL  _isSYObjectDataArray;
+    NSArray * _source;
+    NSArray * _types;
 }
 
 @property (nonatomic) int compatibilityVersion;

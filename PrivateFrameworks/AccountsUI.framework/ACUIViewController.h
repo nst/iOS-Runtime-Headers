@@ -3,18 +3,18 @@
  */
 
 @interface ACUIViewController : PSListController <ACUIAccountOperationsDelegate, UIActionSheetDelegate> {
-    <ACUIViewControllerAccountChangeObserver> *_accountChangeObserver;
-    ACUIAccountOperationsHelper *_accountOperationsHelper;
-    ACAccountStore *_accountStore;
-    BOOL _activityInProgress;
-    BOOL _addedToTaskList;
-    UIBarButtonItem *_cancelButton;
-    id /* block */ _confirmationViewCompletion;
-    UIBarButtonItem *_doneButton;
-    UIProgressHUD *_hud;
-    NSTimer *_idleJiggleTimer;
-    void *_powerAssertion;
-    BOOL _validationInProgress;
+    <ACUIViewControllerAccountChangeObserver> * _accountChangeObserver;
+    ACUIAccountOperationsHelper * _accountOperationsHelper;
+    ACAccountStore * _accountStore;
+    BOOL  _activityInProgress;
+    BOOL  _addedToTaskList;
+    UIBarButtonItem * _cancelButton;
+    id /* block */  _confirmationViewCompletion;
+    UIBarButtonItem * _doneButton;
+    UIProgressHUD * _hud;
+    NSTimer * _idleJiggleTimer;
+    void * _powerAssertion;
+    BOOL  _validationInProgress;
 }
 
 @property (nonatomic) <ACUIViewControllerAccountChangeObserver> *accountChangeObserver;

@@ -3,7 +3,7 @@
  */
 
 @interface RTEventAgentHelper : NSObject {
-    NSString *_restorationIdentifier;
+    NSString * _restorationIdentifier;
 }
 
 @property (nonatomic, retain) NSString *restorationIdentifier;

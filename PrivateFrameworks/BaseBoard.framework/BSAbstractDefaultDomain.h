@@ -3,11 +3,11 @@
  */
 
 @interface BSAbstractDefaultDomain : NSObject {
-    BOOL _boundDefaults;
-    NSMutableDictionary *_defaultKeyToDefaultValue;
-    NSObject<OS_dispatch_queue> *_observerQueue;
-    NSMutableSet *_observerQueue_observers;
-    NSUserDefaults *_userDefaults;
+    BOOL  _boundDefaults;
+    NSMutableDictionary * _defaultKeyToDefaultValue;
+    NSObject<OS_dispatch_queue> * _observerQueue;
+    NSMutableSet * _observerQueue_observers;
+    NSUserDefaults * _userDefaults;
 }
 
 + (void)__assignPropertyImplementations:(id)arg1;
@@ -30,7 +30,6 @@
 - (BOOL)_isCollectionEmpty:(id)arg1;
 - (id)_propertyFromSelector:(SEL)arg1;
 - (void)_removeObserver:(id)arg1;
-- (void)_resetAllDefaults;
 - (void)_setUserDefaults:(id)arg1;
 - (id)_store;
 - (void)dealloc;
@@ -40,6 +39,7 @@
 - (id)init;
 - (id)observeDefault:(id)arg1 onQueue:(id)arg2 withBlock:(id /* block */)arg3;
 - (id)observeDefaults:(id)arg1 onQueue:(id)arg2 withBlock:(id /* block */)arg3;
+- (void)resetAllDefaults;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
 - (void)synchronizeDefaults;

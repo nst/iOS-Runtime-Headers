@@ -3,11 +3,11 @@
  */
 
 @interface UITableViewFocusUpdateContext : UIFocusUpdateContext {
-    BOOL _didSetNextFocusedIndexPath;
-    BOOL _didSetPreviouslyFocusedIndexPath;
-    NSIndexPath *_nextFocusedIndexPath;
-    NSIndexPath *_previouslyFocusedIndexPath;
-    UITableView *_tableView;
+    BOOL  _didSetNextFocusedIndexPath;
+    BOOL  _didSetPreviouslyFocusedIndexPath;
+    NSIndexPath * _nextFocusedIndexPath;
+    NSIndexPath * _previouslyFocusedIndexPath;
+    UITableView * _tableView;
 }
 
 @property (nonatomic, readonly) NSIndexPath *nextFocusedIndexPath;
@@ -18,8 +18,7 @@
 
 - (void).cxx_destruct;
 - (id)_initWithContext:(id)arg1 tableView:(id)arg2;
-- (void)_setInitialDestinationEnvironment:(id)arg1;
-- (void)_setSourceView:(id)arg1;
+- (void)_setSourceItemInfo:(id)arg1;
 - (id)nextFocusedIndexPath;
 - (id)previouslyFocusedIndexPath;
 - (id)tableView;

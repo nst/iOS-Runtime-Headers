@@ -3,7 +3,7 @@
  */
 
 @interface GKRule : NSObject {
-    int _salience;
+    int  _salience;
 }
 
 @property (nonatomic) int salience;

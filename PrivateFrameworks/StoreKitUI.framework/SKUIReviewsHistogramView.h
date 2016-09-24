@@ -3,23 +3,23 @@
  */
 
 @interface SKUIReviewsHistogramView : UIView {
-    UIButton *_appSupportButton;
-    UIView *_bottomSeparatorView;
-    SKUIClientContext *_clientContext;
-    SKUIColorScheme *_colorScheme;
-    UILabel *_countLabel;
-    UIImageView *_histogramImageView;
-    NSArray *_histogramValues;
-    int _numberOfUserRatings;
-    NSMutableDictionary *_ratings;
-    UISegmentedControl *_segmentedControl;
-    SKUIStarRatingControl *_starRatingControl;
-    UILabel *_starRatingControlLabel;
-    UILabel *_titleLabel;
-    float _userRating;
-    UIImageView *_userRatingStarsView;
-    NSString *_versionString;
-    UIButton *_writeAReviewButton;
+    UIButton * _appSupportButton;
+    UIView * _bottomSeparatorView;
+    SKUIClientContext * _clientContext;
+    SKUIColorScheme * _colorScheme;
+    UILabel * _countLabel;
+    UIImageView * _histogramImageView;
+    NSArray * _histogramValues;
+    int  _numberOfUserRatings;
+    NSMutableDictionary * _ratings;
+    UISegmentedControl * _segmentedControl;
+    SKUIStarRatingControl * _starRatingControl;
+    UILabel * _starRatingControlLabel;
+    UILabel * _titleLabel;
+    double  _userRating;
+    UIImageView * _userRatingStarsView;
+    NSString * _versionString;
+    UIButton * _writeAReviewButton;
 }
 
 @property (nonatomic, readonly) UIControl *appSupportButton;
@@ -32,7 +32,7 @@
 @property (nonatomic) int selectedSegmentIndex;
 @property (nonatomic, readonly) UIControl *starRatingControl;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic) float userRating;
+@property (nonatomic) double userRating;
 @property (nonatomic, copy) NSString *versionString;
 @property (nonatomic, readonly) UIControl *writeAReviewButton;
 
@@ -59,7 +59,7 @@
 - (void)setTitle:(id)arg1;
 - (void)setUserRating:(float)arg1;
 - (void)setVersionString:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)starRatingControl;
 - (id)title;
 - (float)userRating;

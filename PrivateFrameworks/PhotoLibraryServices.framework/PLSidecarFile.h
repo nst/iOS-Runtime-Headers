@@ -7,6 +7,5 @@
 @property (nonatomic, readonly, retain) NSURL *fileURL;
 
 - (id)fileURL;
-- (void)setCaptureDateFromExifDictionary:(id)arg1;
 
 @end

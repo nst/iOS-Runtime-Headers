@@ -3,14 +3,14 @@
  */
 
 @interface _SFSafeBrowsingController : NSObject <_SFSafeBrowsingWarningResponseObserver> {
-    <_SFSafeBrowsingControllerDelegate> *_delegate;
-    BOOL _loadingSecurityWarningPage;
-    _SFSecurityInfo *_provisionalSecurityInfo;
-    unsigned int _safeBrowsingCheckSeed;
-    <_SFSafeBrowsingWebProcessController> *_safeBrowsingControllerProxy;
-    _WKRemoteObjectInterface *_safeBrowsingResponseObserverInterface;
-    BOOL _showingSecurityWarningPage;
-    WKWebView *_webView;
+    <_SFSafeBrowsingControllerDelegate> * _delegate;
+    BOOL  _loadingSecurityWarningPage;
+    _SFSecurityInfo * _provisionalSecurityInfo;
+    unsigned int  _safeBrowsingCheckSeed;
+    <_SFSafeBrowsingWebProcessController> * _safeBrowsingControllerProxy;
+    _WKRemoteObjectInterface * _safeBrowsingResponseObserverInterface;
+    BOOL  _showingSecurityWarningPage;
+    WKWebView * _webView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

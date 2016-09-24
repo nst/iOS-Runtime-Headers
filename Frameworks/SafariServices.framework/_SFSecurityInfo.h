@@ -3,9 +3,9 @@
  */
 
 @interface _SFSecurityInfo : NSObject <NSSecureCoding> {
-    NSURL *_assessedURL;
-    BOOL _hasWarnedUser;
-    SSBLookupResult *_result;
+    NSURL * _assessedURL;
+    BOOL  _hasWarnedUser;
+    SSBLookupResult * _result;
 }
 
 @property (nonatomic, retain) NSURL *assessedURL;

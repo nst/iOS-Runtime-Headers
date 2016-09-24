@@ -4,10 +4,12 @@
 
 @interface ICSUserAddress : ICSProperty
 
+@property (nonatomic) ICSAlternateTimeProposal *alternateTimeProposal;
 @property (nonatomic, retain) NSString *cn;
 @property (nonatomic) int cutype;
 @property (nonatomic, retain) NSString *dir;
 @property (nonatomic, retain) NSString *email;
+@property (nonatomic, retain) NSString *likenessDataString;
 @property (nonatomic) int partstat;
 @property (nonatomic, retain) ICSDateValue *partstatModified;
 @property (nonatomic) int role;
@@ -15,6 +17,7 @@
 @property (nonatomic) int scheduleagent;
 @property (nonatomic) int scheduleforcesend;
 @property (nonatomic) int schedulestatus;
+@property (nonatomic, retain) NSString *x_apple_inviterName;
 @property (nonatomic) BOOL x_apple_self_invited;
 
 + (id)ICSStringFromCalendarUser:(int)arg1;
@@ -31,6 +34,7 @@
 + (int)scheduleForceSendFromICSString:(id)arg1;
 + (int)scheduleStatusFromICSString:(id)arg1;
 
+- (id)alternateTimeProposal;
 - (id)cn;
 - (int)cutype;
 - (id)dir;
@@ -44,6 +48,7 @@
 - (BOOL)isEmailAddress;
 - (BOOL)isHTTPAddress;
 - (BOOL)isHTTPSAddress;
+- (id)likenessDataString;
 - (id)parametersToObscure;
 - (int)partstat;
 - (id)partstatModified;
@@ -53,10 +58,12 @@
 - (int)scheduleagent;
 - (int)scheduleforcesend;
 - (int)schedulestatus;
+- (void)setAlternateTimeProposal:(id)arg1;
 - (void)setCn:(id)arg1;
 - (void)setCutype:(int)arg1;
 - (void)setDir:(id)arg1;
 - (void)setEmail:(id)arg1;
+- (void)setLikenessDataString:(id)arg1;
 - (void)setPartstat:(int)arg1;
 - (void)setPartstatModified:(id)arg1;
 - (void)setRole:(int)arg1;
@@ -65,9 +72,11 @@
 - (void)setScheduleforcesend:(int)arg1;
 - (void)setSchedulestatus:(int)arg1;
 - (void)setURL:(id)arg1;
+- (void)setX_apple_inviterName:(id)arg1;
 - (void)setX_apple_self_invited:(BOOL)arg1;
 - (void)setX_calendarserver_email:(id)arg1;
 - (BOOL)shouldObscureValue;
+- (id)x_apple_inviterName;
 - (BOOL)x_apple_self_invited;
 - (id)x_calendarserver_email;
 

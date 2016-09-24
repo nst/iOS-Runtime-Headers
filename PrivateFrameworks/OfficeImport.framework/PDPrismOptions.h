@@ -3,8 +3,8 @@
  */
 
 @interface PDPrismOptions : PDSideDirectionOptions {
-    BOOL mIsContent;
-    BOOL mIsInverted;
+    BOOL  mIsContent;
+    BOOL  mIsInverted;
 }
 
 - (BOOL)isContent;

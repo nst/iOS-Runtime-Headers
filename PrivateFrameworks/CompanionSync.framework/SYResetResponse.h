@@ -3,9 +3,9 @@
  */
 
 @interface SYResetResponse : PBCodable <NSCopying> {
-    BOOL _accepted;
-    SYErrorInfo *_error;
-    SYMessageHeader *_header;
+    BOOL  _accepted;
+    SYErrorInfo * _error;
+    SYMessageHeader * _header;
 }
 
 @property (nonatomic) BOOL accepted;

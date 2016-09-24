@@ -3,25 +3,29 @@
  */
 
 @interface CKOperationInfo : NSObject <NSSecureCoding> {
-    NSDictionary *_additionalRequestHTTPHeaders;
-    BOOL _allowsBackgroundNetworking;
-    BOOL _allowsCellularAccess;
-    NSString *_authPromptReason;
-    NSString *_deviceIdentifier;
-    BOOL _isLongLived;
-    BOOL _isOutstandingOperation;
-    NSString *_name;
-    NSString *_operationClass;
-    NSString *_operationID;
-    id _parentOperation;
-    NSString *_parentSectionID;
-    BOOL _preferAnonymousRequests;
-    int _qualityOfService;
-    CKContainerSetupInfo *_setupInfo;
-    NSString *_sourceApplicationBundleIdentifier;
-    NSString *_sourceApplicationSecondaryIdentifier;
+    NSDictionary * _MMCSRequestOptions;
+    NSDictionary * _additionalRequestHTTPHeaders;
+    BOOL  _allowsBackgroundNetworking;
+    BOOL  _allowsCellularAccess;
+    NSString * _authPromptReason;
+    NSString * _deviceIdentifier;
+    BOOL  _isLongLived;
+    BOOL  _isOutstandingOperation;
+    NSString * _name;
+    NSString * _operationClass;
+    NSString * _operationID;
+    id  _parentOperation;
+    NSString * _parentSectionID;
+    BOOL  _preferAnonymousRequests;
+    int  _qualityOfService;
+    CKContainerSetupInfo * _setupInfo;
+    NSString * _sourceApplicationBundleIdentifier;
+    NSString * _sourceApplicationSecondaryIdentifier;
+    double  _timeoutIntervalForRequest;
+    double  _timeoutIntervalForResource;
 }
 
+@property (nonatomic, retain) NSDictionary *MMCSRequestOptions;
 @property (nonatomic, retain) NSDictionary *additionalRequestHTTPHeaders;
 @property (nonatomic) BOOL allowsBackgroundNetworking;
 @property (nonatomic) BOOL allowsCellularAccess;
@@ -39,10 +43,13 @@
 @property (nonatomic, retain) CKContainerSetupInfo *setupInfo;
 @property (nonatomic, retain) NSString *sourceApplicationBundleIdentifier;
 @property (nonatomic, retain) NSString *sourceApplicationSecondaryIdentifier;
+@property (nonatomic) double timeoutIntervalForRequest;
+@property (nonatomic) double timeoutIntervalForResource;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)MMCSRequestOptions;
 - (id)additionalRequestHTTPHeaders;
 - (BOOL)allowsBackgroundNetworking;
 - (BOOL)allowsCellularAccess;
@@ -67,6 +74,7 @@
 - (void)setDeviceIdentifier:(id)arg1;
 - (void)setIsLongLived:(BOOL)arg1;
 - (void)setIsOutstandingOperation:(BOOL)arg1;
+- (void)setMMCSRequestOptions:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setOperationClass:(id)arg1;
 - (void)setOperationID:(id)arg1;
@@ -77,8 +85,12 @@
 - (void)setSetupInfo:(id)arg1;
 - (void)setSourceApplicationBundleIdentifier:(id)arg1;
 - (void)setSourceApplicationSecondaryIdentifier:(id)arg1;
+- (void)setTimeoutIntervalForRequest:(double)arg1;
+- (void)setTimeoutIntervalForResource:(double)arg1;
 - (id)setupInfo;
 - (id)sourceApplicationBundleIdentifier;
 - (id)sourceApplicationSecondaryIdentifier;
+- (double)timeoutIntervalForRequest;
+- (double)timeoutIntervalForResource;
 
 @end

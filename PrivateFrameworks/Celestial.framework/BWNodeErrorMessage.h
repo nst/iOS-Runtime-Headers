@@ -3,7 +3,7 @@
  */
 
 @interface BWNodeErrorMessage : BWNodeMessage {
-    BWNodeError *_nodeError;
+    BWNodeError * _nodeError;
 }
 
 @property (readonly) BWNodeError *nodeError;

@@ -3,11 +3,11 @@
  */
 
 @interface DCDatabase : NSObject {
-    NSURL *_databaseURL;
-    NSManagedObjectContext *_managedObjectContext;
-    NSManagedObjectModel *_model;
-    NSPersistentStoreCoordinator *_persistentStoreCoordinator;
-    DCService *_service;
+    NSURL * _databaseURL;
+    NSManagedObjectContext * _managedObjectContext;
+    NSManagedObjectModel * _model;
+    NSPersistentStoreCoordinator * _persistentStoreCoordinator;
+    DCService * _service;
 }
 
 @property (nonatomic, retain) NSURL *databaseURL;

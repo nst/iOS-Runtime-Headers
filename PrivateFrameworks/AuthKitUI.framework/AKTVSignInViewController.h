@@ -2,6 +2,11 @@
    Image: /System/Library/PrivateFrameworks/AuthKitUI.framework/AuthKitUI
  */
 
-@interface AKTVSignInViewController : UINavigationController
+@interface AKTVSignInViewController : UIViewController {
+    NSString * _currentSubtitle;
+    NSString * _currentTitle;
+}
+
+- (void).cxx_destruct;
 
 @end

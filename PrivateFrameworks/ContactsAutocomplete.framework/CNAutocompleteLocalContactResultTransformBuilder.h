@@ -3,9 +3,9 @@
  */
 
 @interface CNAutocompleteLocalContactResultTransformBuilder : NSObject {
-    unsigned int _builtContactType;
-    CNAutocompleteResultFactory *_factory;
-    NSMutableArray *_transforms;
+    unsigned int  _builtContactType;
+    CNAutocompleteResultFactory * _factory;
+    NSMutableArray * _transforms;
 }
 
 @property unsigned int builtContactType;

@@ -3,10 +3,10 @@
  */
 
 @interface SSLookupResponse : NSObject <SSXPCCoding> {
-    NSDate *_expirationDate;
-    NSMutableArray *_itemOrder;
-    SSMetricsPageEvent *_metricsPageEvent;
-    NSDictionary *_response;
+    NSDate * _expirationDate;
+    NSMutableArray * _itemOrder;
+    SSMetricsPageEvent * _metricsPageEvent;
+    NSDictionary * _response;
 }
 
 @property (nonatomic, readonly) NSArray *allItems;
@@ -15,7 +15,7 @@
 @property (nonatomic, copy) NSDate *expirationDate;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) SSMetricsConfiguration *metricsConfiguration;
-@property (nonatomic, retain) SSMetricsPageEvent *metricsPageEvent;
+@property (setter=_setMetricsPageEvent:, nonatomic, retain) SSMetricsPageEvent *metricsPageEvent;
 @property (nonatomic, readonly) BOOL mpIsPersonalizedOffer;
 @property (nonatomic, readonly) NSDictionary *responseDictionary;
 @property (readonly) Class superclass;

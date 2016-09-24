@@ -2,27 +2,32 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@interface AXEventKeyInfoRepresentation : NSObject <NSCopying, NSSecureCoding> {
-    unsigned short _keyCode;
-    BOOL _keyDown;
-    NSString *_modifiedInput;
-    unsigned int _modifierState;
-    NSString *_shiftModifiedInput;
-    NSString *_unmodifiedInput;
-    unsigned int _usagePage;
+@interface AXEventKeyInfoRepresentation : NSObject <AXEventRepresentationDescription, NSCopying, NSSecureCoding> {
+    unsigned short  _keyCode;
+    BOOL  _keyDown;
+    NSString * _modifiedInput;
+    unsigned int  _modifierState;
+    NSString * _shiftModifiedInput;
+    NSString * _unmodifiedInput;
+    unsigned int  _usagePage;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic) unsigned short keyCode;
 @property (nonatomic) BOOL keyDown;
 @property (nonatomic, retain) NSString *modifiedInput;
 @property (nonatomic) unsigned int modifierState;
 @property (nonatomic, retain) NSString *shiftModifiedInput;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *unmodifiedInput;
 @property (nonatomic) unsigned int usagePage;
 
 + (BOOL)supportsSecureCoding;
 
 - (id)_hardwareKeyboardLayout;
+- (id)accessibilityEventRepresentationTabularDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

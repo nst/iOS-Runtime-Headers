@@ -3,9 +3,9 @@
  */
 
 @interface SCNMTLSemanticResourceBinding : SCNMTLResourceBinding {
-    struct { id /* block */ x1; unsigned int x2; unsigned int x3; } *_semantics;
-    int bufferSize;
-    int semanticsCount;
+    struct { id /* block */ x1; unsigned int x2; unsigned int x3; } * _semantics;
+    int  bufferSize;
+    int  semanticsCount;
 }
 
 @property (nonatomic) int bufferSize;

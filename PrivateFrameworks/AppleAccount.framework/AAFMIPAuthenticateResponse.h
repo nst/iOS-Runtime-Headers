@@ -3,8 +3,8 @@
  */
 
 @interface AAFMIPAuthenticateResponse : AAResponse {
-    NSDictionary *_appleAccountInfo;
-    NSDictionary *_tokens;
+    NSDictionary * _appleAccountInfo;
+    NSDictionary * _tokens;
 }
 
 @property (nonatomic, readonly) NSString *fmipWipeToken;

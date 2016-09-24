@@ -3,7 +3,7 @@
  */
 
 @interface IKCSSSelectorList : NSObject {
-    NSMutableArray *selectors;
+    NSMutableArray * selectors;
 }
 
 - (void).cxx_destruct;

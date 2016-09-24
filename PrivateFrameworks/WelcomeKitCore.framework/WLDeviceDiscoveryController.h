@@ -3,15 +3,15 @@
  */
 
 @interface WLDeviceDiscoveryController : NSObject <WLDeviceDiscoverySocketHandlerDelegate> {
-    NSString *_allowedAddress;
-    unsigned int _countOfPairingAttemptsWithCurrentSecret;
-    NSObject<OS_dispatch_queue> *_discoveryRequestSerialQueue;
-    NSObject<OS_dispatch_source> *_incomingConnSource;
-    int _listenerSocket;
-    id /* block */ _nextIncomingConnectionHandler;
-    NSString *_pairingSecret;
-    NSMutableArray *_socketHandlers;
-    NSMutableArray *_sourceDevices;
+    NSString * _allowedAddress;
+    unsigned int  _countOfPairingAttemptsWithCurrentSecret;
+    NSObject<OS_dispatch_queue> * _discoveryRequestSerialQueue;
+    NSObject<OS_dispatch_source> * _incomingConnSource;
+    int  _listenerSocket;
+    id /* block */  _nextIncomingConnectionHandler;
+    NSString * _pairingSecret;
+    NSMutableArray * _socketHandlers;
+    NSMutableArray * _sourceDevices;
 }
 
 @property (nonatomic, readonly, copy) NSArray *sourceDevices;

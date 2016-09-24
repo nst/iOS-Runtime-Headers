@@ -3,9 +3,9 @@
  */
 
 @interface BBBehaviorOverride : NSObject <NSCopying, NSSecureCoding> {
-    NSArray *_effectiveIntervals;
-    unsigned int _mode;
-    unsigned int _overrideType;
+    NSArray * _effectiveIntervals;
+    unsigned int  _mode;
+    unsigned int  _overrideType;
 }
 
 @property (nonatomic, copy) NSArray *effectiveIntervals;
@@ -14,6 +14,7 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

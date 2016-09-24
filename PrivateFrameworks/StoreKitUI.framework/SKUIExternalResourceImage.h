@@ -3,9 +3,9 @@
  */
 
 @interface SKUIExternalResourceImage : NSObject {
-    BOOL _alwaysTemplate;
-    NSBundle *_bundle;
-    NSString *_imageName;
+    BOOL  _alwaysTemplate;
+    NSBundle * _bundle;
+    NSString * _imageName;
 }
 
 @property (nonatomic) BOOL alwaysTemplate;

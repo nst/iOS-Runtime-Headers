@@ -3,9 +3,9 @@
  */
 
 @interface TSCH3DSceneRenderCacheObject : NSObject {
-    BOOL mCachingEnabled;
-    NSMutableArray *mChildCacheObjects;
-    NSMutableArray *mDynamicResources;
+    BOOL  mCachingEnabled;
+    NSMutableArray * mChildCacheObjects;
+    NSMutableArray * mDynamicResources;
 }
 
 @property (nonatomic) BOOL cachingEnabled;

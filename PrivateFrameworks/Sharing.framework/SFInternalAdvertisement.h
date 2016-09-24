@@ -3,15 +3,15 @@
  */
 
 @interface SFInternalAdvertisement : NSObject {
-    NSData *_advertisementPayload;
-    NSDictionary *_options;
+    NSData * _advertisementPayload;
+    NSDictionary * _options;
 }
 
 @property (copy) NSData *advertisementPayload;
 @property (copy) NSDictionary *options;
 
+- (void).cxx_destruct;
 - (id)advertisementPayload;
-- (void)dealloc;
 - (id)description;
 - (id)initWithAdvertisementPayload:(id)arg1 options:(id)arg2;
 - (id)options;

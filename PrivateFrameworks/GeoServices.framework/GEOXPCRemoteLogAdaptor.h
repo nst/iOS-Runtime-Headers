@@ -2,17 +2,18 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOXPCRemoteLogAdaptor : GEOBaseLogAdaptor <PBRequesterDelegate> {
-    NSString *_adaptorIdentifier;
-    NSString *_debugRequestName;
-    NSString *_logMessageCacheFilePath;
-    GEOLogMessageCacheManager *_logMessageCacheManager;
-    GEORequester *_logMessageCollectionRequester;
-    NSLock *_logMessageCollectionRequesterLock;
-    NSObject<OS_dispatch_queue> *_logMessageSendQueue;
-    NSURL *_remoteURL;
-    NSLock *_xpcActivityInfoLock;
-    NSString *_xpcActivityName;
+@interface GEOXPCRemoteLogAdaptor : GEOBaseLogAdaptor <GEOPBSessionRequesterDelegate> {
+    NSString * _adaptorIdentifier;
+    NSString * _debugRequestName;
+    NSString * _logMessageCacheFilePath;
+    GEOLogMessageCacheManager * _logMessageCacheManager;
+    BOOL  _logMessageCollectionRequestPending;
+    GEORequester * _logMessageCollectionRequester;
+    NSLock * _logMessageCollectionRequesterLock;
+    NSObject<OS_dispatch_queue> * _logMessageSendQueue;
+    NSURL * _remoteURL;
+    NSLock * _xpcActivityInfoLock;
+    NSString * _xpcActivityName;
 }
 
 @property (readonly) NSString *adaptorIdentifier;
@@ -22,7 +23,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSURL *remoteURL;
 @property (readonly) Class superclass;
-@property (nonatomic) long long xpcActivityTriggerCount;
+@property (nonatomic) int xpcActivityTriggerCount;
 
 - (void)_beginSendingLogMessageChunks;
 - (void)_cleanupLogMessageCollectionRequester;
@@ -32,16 +33,17 @@
 - (BOOL)_isLogMessageCollectionRequesterPending;
 - (void)_purgeAndSendLogMessages;
 - (void)_purgeExpiredLogMessagesFromCache;
+- (void)_purgeMapsSuggestionsCacheFile;
 - (void)_queueNextLogMessagesChunkForSending;
 - (void)_registerXPCActivityTimer;
 - (void)_requesterDidCompleteHandler:(id)arg1;
-- (void)_requesterStartSend;
+- (void)_requesterStartSendRequest:(id)arg1;
 - (void)_sendLogMessageRequest:(id)arg1;
 - (void)_sendNextLogMessageChunk;
 - (void)_setupLogMessageCache;
 - (void)_setupQueueAndNotifications;
 - (void)_setupXPCActivity;
-- (long long)_sizeOfLogMessageRequest:(id)arg1;
+- (int)_sizeOfLogMessageRequest:(id)arg1;
 - (void)_unregisterXPCActivityTimer;
 - (BOOL)_useInMemoryLogMessageCache;
 - (id)adaptorIdentifier;
@@ -58,7 +60,7 @@
 - (void)requesterDidFinish:(id)arg1;
 - (void)setDebugRequestName:(id)arg1;
 - (void)setRemoteURL:(id)arg1;
-- (void)setXpcActivityTriggerCount:(long long)arg1;
-- (long long)xpcActivityTriggerCount;
+- (void)setXpcActivityTriggerCount:(int)arg1;
+- (int)xpcActivityTriggerCount;
 
 @end

@@ -3,38 +3,38 @@
  */
 
 @interface MusicStoreBrowseResponseParser : NSObject {
-    MPUSectionedCollection *_additionalContentIdentifiers;
-    MusicStoreItemMetadataResponse *_additionalStoreItemMetadataResponse;
-    NSArray *_allAdditionalContentIdentifiersNeedingLookup;
-    MPUChangeDetails *_changeDetails;
-    MusicStoreBrowseContentItemBuilder *_contentItemBuilder;
+    MPSectionedCollection * _additionalContentIdentifiers;
+    MPStoreItemMetadataResponse * _additionalStoreItemMetadataResponse;
+    NSArray * _allAdditionalContentIdentifiersNeedingLookup;
+    MPChangeDetails * _changeDetails;
+    MusicStoreBrowseContentItemBuilder * _contentItemBuilder;
     struct { 
         BOOL useCarPlayBrowseTopLevelContentOnly; 
         BOOL useCarPlayBrowseTopLevelRequestReorderingHeuristics; 
-    } _options;
-    long _parseOnceToken;
-    MusicStoreBrowseResponseParser *_previousParser;
-    id _rawResponseOutput;
-    MPUSectionedCollection *_results;
-    MusicStoreBrowseSectionBuilder *_sectionBuilder;
-    NSDictionary *_storePlatformDataResults;
-    NSSet *_unavailableContentIdentifiers;
+    }  _options;
+    long  _parseOnceToken;
+    MusicStoreBrowseResponseParser * _previousParser;
+    id  _rawResponseOutput;
+    MPSectionedCollection * _results;
+    MusicStoreBrowseSectionBuilder * _sectionBuilder;
+    NSDictionary * _storePlatformDataResults;
+    NSSet * _unavailableContentIdentifiers;
 }
 
-@property (nonatomic, readonly) MPUSectionedCollection *additionalContentIdentifiers;
-@property (nonatomic, readonly) MusicStoreItemMetadataResponse *additionalStoreItemMetadataResponse;
+@property (nonatomic, readonly) MPSectionedCollection *additionalContentIdentifiers;
+@property (nonatomic, readonly) MPStoreItemMetadataResponse *additionalStoreItemMetadataResponse;
 @property (nonatomic, readonly) NSArray *allAdditionalContentIdentifiersNeedingLookup;
-@property (nonatomic, readonly) MPUChangeDetails *changeDetails;
+@property (nonatomic, readonly) MPChangeDetails *changeDetails;
 @property (nonatomic, readonly) MusicStoreBrowseContentItemBuilder *contentItemBuilder;
 @property (nonatomic, readonly) struct { BOOL x1; BOOL x2; } options;
 @property (nonatomic, readonly) MusicStoreBrowseResponseParser *previousParser;
 @property (nonatomic, readonly) id rawResponseOutput;
-@property (nonatomic, readonly) MPUSectionedCollection *results;
+@property (nonatomic, readonly) MPSectionedCollection *results;
 @property (nonatomic, readonly) MusicStoreBrowseSectionBuilder *sectionBuilder;
 
 - (void).cxx_destruct;
 - (void)_parse;
-- (BOOL)_parseFeaturedContentChild:(id)arg1 isMemberOfChartSet:(BOOL)arg2 insertingResultsToSectionedCollection:(id)arg3 atSectionIndex:(unsigned int)arg4 additionalContentIdentifiers:(id)arg5 allAdditionalContentIdentifiersNeedingLookup:(id)arg6;
+- (BOOL)_parseFeaturedContentChild:(id)arg1 isMemberOfChartSet:(BOOL)arg2 insertingResultsToSectionedCollection:(id)arg3 atSectionIndex:(int)arg4 additionalContentIdentifiers:(id)arg5 allAdditionalContentIdentifiersNeedingLookup:(id)arg6;
 - (void)_parseFeaturedContentStructureModelChildren:(id)arg1;
 - (void)_parseSingleContentListFromPageDataDictionary:(id)arg1 isMemberOfChartSet:(BOOL)arg2;
 - (void)_parseUsingAdditionalContentIdentifiersFromPreviousParser;

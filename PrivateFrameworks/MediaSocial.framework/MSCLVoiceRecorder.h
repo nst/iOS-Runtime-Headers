@@ -3,16 +3,16 @@
  */
 
 @interface MSCLVoiceRecorder : NSObject <AVVoiceControllerRecordDelegate> {
-    NSString *_assetPath;
-    id _capturedSelf;
-    <MSCLVoiceRecorderDelegate> *_delegate;
-    struct OpaqueAudioFileID { } *_fileID;
-    double _maximumRecordingDuration;
-    NSObject<OS_dispatch_source> *_powerMeterTimer;
-    NSObject<OS_dispatch_source> *_recordingTimeoutTimer;
-    NSMutableArray *_stopBlocks;
-    long long _totalRecordedPacketCount;
-    AVVoiceController *_voiceController;
+    NSString * _assetPath;
+    id  _capturedSelf;
+    <MSCLVoiceRecorderDelegate> * _delegate;
+    struct OpaqueAudioFileID { } * _fileID;
+    double  _maximumRecordingDuration;
+    NSObject<OS_dispatch_source> * _powerMeterTimer;
+    NSObject<OS_dispatch_source> * _recordingTimeoutTimer;
+    NSMutableArray * _stopBlocks;
+    int  _totalRecordedPacketCount;
+    AVVoiceController * _voiceController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

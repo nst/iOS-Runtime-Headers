@@ -3,8 +3,8 @@
  */
 
 @interface fetchFilterEntry : NSObject {
-    NSDictionary *_what;
-    NSDate *_when;
+    NSDictionary * _what;
+    NSDate * _when;
 }
 
 @property (retain) NSDictionary *what;

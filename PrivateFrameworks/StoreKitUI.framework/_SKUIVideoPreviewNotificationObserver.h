@@ -3,7 +3,7 @@
  */
 
 @interface _SKUIVideoPreviewNotificationObserver : NSObject {
-    NSArray *_observers;
+    NSArray * _observers;
 }
 
 - (void).cxx_destruct;

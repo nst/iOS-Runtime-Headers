@@ -3,12 +3,12 @@
  */
 
 @interface SCNMTLBufferAllocator : NSObject {
-    NSObject<OS_dispatch_semaphore> *_allocatorLock;
-    unsigned int _bufferSize;
-    SCNFixedSizePage *_currentAllocatorPage;
-    <MTLDevice> *_device;
-    unsigned int _elementSize;
-    NSMutableArray *_pages;
+    NSObject<OS_dispatch_semaphore> * _allocatorLock;
+    unsigned int  _bufferSize;
+    SCNFixedSizePage * _currentAllocatorPage;
+    <MTLDevice> * _device;
+    unsigned int  _elementSize;
+    NSMutableArray * _pages;
 }
 
 @property (nonatomic, readonly) unsigned int bufferSize;

@@ -3,7 +3,7 @@
  */
 
 @interface IMAVMicrophone : NSObject {
-    id _internalDevice;
+    id  _internalDevice;
 }
 
 @property (nonatomic, readonly, retain) NSString *name;

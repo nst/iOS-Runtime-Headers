@@ -2,33 +2,29 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSNumber : NSValue <CKDParsedObject, CKRecordValue, PQLValuable, TSCHChartGridValue, TSDMixing>
+@interface NSNumber : NSValue <CKDParsedObject, CKRecordValue, LPCSSText, NSFetchRequestResult, PQLValuable, TSCHChartGridValue, TSDMixing>
 
+@property (nonatomic, readonly) unsigned int PXDataSourceIdentifierValue;
 @property (readonly) BOOL boolValue;
-@property (nonatomic, readonly) NSNumber *brc_documentID;
-@property (nonatomic, readonly) NSNumber *brc_folderID;
-@property (nonatomic, readonly) BOOL brc_isDocumentID;
-@property (nonatomic, readonly) BOOL brc_isFolderOrAliasID;
-@property (nonatomic, readonly) unsigned long long brc_rawID;
 @property (readonly) BOOL charValue;
 @property (nonatomic, readonly) int chartGridValueType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly) struct { unsigned int x1 : 8; unsigned int x2 : 4; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 18; unsigned short x6[8]; } decimalValue;
 @property (readonly, copy) NSString *description;
 @property (readonly) double doubleValue;
-@property (readonly) float floatValue;
+@property (readonly) double floatValue;
 @property (readonly) unsigned int hash;
 @property (readonly) int intValue;
 @property (readonly) int integerValue;
-@property (readonly) long long longLongValue;
-@property (readonly) long longValue;
+@property (readonly) int longLongValue;
+@property (readonly) intValue;
 @property (readonly) short shortValue;
 @property (readonly, copy) NSString *stringValue;
 @property (readonly) Class superclass;
 @property (readonly) unsigned char unsignedCharValue;
 @property (readonly) unsigned int unsignedIntValue;
 @property (readonly) unsigned int unsignedIntegerValue;
-@property (readonly) unsigned long long unsignedLongLongValue;
+@property (readonly) unsigned int unsignedLongLongValue;
 @property (readonly) unsigned long unsignedLongValue;
 @property (readonly) unsigned short unsignedShortValue;
 
@@ -42,13 +38,13 @@
 + (id)numberWithInt:(int)arg1;
 + (id)numberWithInteger:(int)arg1;
 + (id)numberWithLong:(long)arg1;
-+ (id)numberWithLongLong:(long long)arg1;
++ (id)numberWithLongLong:(int)arg1;
 + (id)numberWithShort:(short)arg1;
 + (id)numberWithUnsignedChar:(unsigned char)arg1;
 + (id)numberWithUnsignedInt:(unsigned int)arg1;
 + (id)numberWithUnsignedInteger:(unsigned int)arg1;
 + (id)numberWithUnsignedLong:(unsigned long)arg1;
-+ (id)numberWithUnsignedLongLong:(unsigned long long)arg1;
++ (id)numberWithUnsignedLongLong:(unsigned int)arg1;
 + (id)numberWithUnsignedShort:(unsigned short)arg1;
 + (BOOL)supportsSecureCoding;
 
@@ -78,27 +74,27 @@
 - (id)initWithInt:(int)arg1;
 - (id)initWithInteger:(int)arg1;
 - (id)initWithLong:(long)arg1;
-- (id)initWithLongLong:(long long)arg1;
+- (id)initWithLongLong:(int)arg1;
 - (id)initWithShort:(short)arg1;
 - (id)initWithUnsignedChar:(unsigned char)arg1;
 - (id)initWithUnsignedInt:(unsigned int)arg1;
 - (id)initWithUnsignedInteger:(unsigned int)arg1;
 - (id)initWithUnsignedLong:(unsigned long)arg1;
-- (id)initWithUnsignedLongLong:(unsigned long long)arg1;
+- (id)initWithUnsignedLongLong:(unsigned int)arg1;
 - (id)initWithUnsignedShort:(unsigned short)arg1;
 - (int)intValue;
 - (int)integerValue;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToNumber:(id)arg1;
 - (BOOL)isNSNumber__;
-- (long long)longLongValue;
+- (int)longLongValue;
 - (long)longValue;
 - (short)shortValue;
 - (id)stringValue;
 - (unsigned char)unsignedCharValue;
 - (unsigned int)unsignedIntValue;
 - (unsigned int)unsignedIntegerValue;
-- (unsigned long long)unsignedLongLongValue;
+- (unsigned int)unsignedLongLongValue;
 - (unsigned long)unsignedLongValue;
 - (unsigned short)unsignedShortValue;
 
@@ -142,18 +138,6 @@
 
 - (id)__ck_localizedString;
 
-// Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
-
-+ (id)brc_fileObjectIDForURL:(id)arg1 allocateDocID:(BOOL)arg2;
-+ (id)brc_fileObjectIDWithDocumentID:(unsigned int)arg1;
-+ (id)brc_fileObjectIDWithFolderOrAliasID:(unsigned long long)arg1;
-
-- (id)brc_documentID;
-- (id)brc_folderID;
-- (BOOL)brc_isDocumentID;
-- (BOOL)brc_isFolderOrAliasID;
-- (unsigned long long)brc_rawID;
-
 // Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
 
 - (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;
@@ -169,15 +153,20 @@
 
 - (int)_cnac_autocompleteAddressTypeValue;
 
+// Image: /System/Library/PrivateFrameworks/CoreParsec.framework/CoreParsec
+
+- (int)sf_asRowAlignment;
+- (unsigned int)sf_asTopHit;
+
 // Image: /System/Library/PrivateFrameworks/CoreRecents.framework/CoreRecents
 
 + (id)cr_numberWithCRContactGroupKind:(unsigned int)arg1;
-+ (id)cr_numberWithCRContactID:(long long)arg1;
-+ (id)cr_numberWithCRRecentID:(long long)arg1;
++ (id)cr_numberWithCRContactID:(int)arg1;
++ (id)cr_numberWithCRRecentID:(int)arg1;
 
 - (unsigned int)cr_CRContactGroupKindValue;
-- (long long)cr_CRContactIDValue;
-- (long long)cr_CRRecentIDValue;
+- (int)cr_CRContactIDValue;
+- (int)cr_CRRecentIDValue;
 
 // Image: /System/Library/PrivateFrameworks/FMCore.framework/FMCore
 
@@ -200,11 +189,27 @@
 
 - (id)localizedString;
 
+// Image: /System/Library/PrivateFrameworks/LinkPresentation.framework/LinkPresentation
+
+- (id)_lp_CSSText;
+
 // Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
 
 - (void)ml_bindToSQLiteStatement:(struct sqlite3_stmt { }*)arg1 atPosition:(int)arg2;
 - (BOOL)ml_matchesValue:(id)arg1 usingComparison:(int)arg2;
 - (id)ml_stringValueForSQL;
+
+// Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
+
+- (float)cgFloatValue;
+
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
+- (BOOL)fc_isGreaterThan:(id)arg1;
+- (BOOL)fc_isLessThan:(id)arg1;
+- (BOOL)fc_isLessThanOrEqualTo:(id)arg1;
+- (id)fc_largerNumber:(id)arg1;
+- (id)fc_smallerNumber:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
@@ -214,20 +219,30 @@
 - (BOOL)isFloatingPointType;
 - (void)sfu_appendJsonStringToString:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
+
+- (unsigned int)PXDataSourceIdentifierValue;
+
 // Image: /System/Library/PrivateFrameworks/ServerDocsProtocol.framework/ServerDocsProtocol
 
 - (BOOL)sd_isEqualToNumber:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
 
-+ (id)numberWithItemIdentifier:(unsigned long long)arg1;
++ (id)numberWithItemIdentifier:(unsigned int)arg1;
 
-- (id)initWithItemIdentifier:(unsigned long long)arg1;
-- (unsigned long long)itemIdentifierValue;
+- (id)initWithItemIdentifier:(unsigned int)arg1;
+- (unsigned int)itemIdentifierValue;
+
+// Image: /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
+
+- (id)initWithBooleanLiteral:(BOOL)arg1;
+- (id)initWithFloatLiteral:(double)arg1;
+- (id)initWithIntegerLiteral:(long)arg1;
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 
-- (long long)rc_persistentIDValue;
+- (int)rc_persistentIDValue;
 
 // Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
 
@@ -262,6 +277,7 @@
 - (int)tsch_styleIntValue;
 - (int)tsch_stylePropertyValue;
 - (int)tss_propertyValue;
+- (BOOL)tsu_isAlmostEqual:(id)arg1;
 
 // Image: /usr/lib/libprequelite.dylib
 

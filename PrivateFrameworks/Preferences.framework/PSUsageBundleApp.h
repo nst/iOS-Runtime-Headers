@@ -3,17 +3,17 @@
  */
 
 @interface PSUsageBundleApp : NSObject {
-    NSString *_bundleIdentifier;
-    NSArray *_categories;
-    NSString *_name;
-    PSWeakReference *_storageReporterReference;
-    float _totalSize;
+    NSString * _bundleIdentifier;
+    NSArray * _categories;
+    NSString * _name;
+    PSWeakReference * _storageReporterReference;
+    double  _totalSize;
 }
 
 @property (nonatomic, retain) NSString *bundleIdentifier;
 @property (nonatomic, retain) NSArray *categories;
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic) float totalSize;
+@property (nonatomic) double totalSize;
 @property (nonatomic) <PSStorageReporting> *usageBundleStorageReporter;
 
 + (id)usageBundleAppForBundleWithIdentifier:(id)arg1 withTotalSize:(float)arg2;

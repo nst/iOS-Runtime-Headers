@@ -3,8 +3,8 @@
  */
 
 @interface TSPPackageWriterComponentWriteChannel : NSObject <TSPComponentWriteChannel> {
-    TSUZipFileWriter *_archiveWriter;
-    BOOL _isClosed;
+    TSUZipFileWriter * _archiveWriter;
+    BOOL  _isClosed;
 }
 
 @property (readonly, copy) NSString *debugDescription;

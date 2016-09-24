@@ -3,11 +3,11 @@
  */
 
 @interface SSVLeaseCertificateRequestOperation : SSVComplexOperation {
-    NSObject<OS_dispatch_semaphore> *_bagLoadSemaphore;
-    NSString *_certificateURLBagKey;
-    SSVPlaybackLeaseConfiguration *_configuration;
-    id /* block */ _outputBlock;
-    SSURLBag *_urlBag;
+    NSObject<OS_dispatch_semaphore> * _bagLoadSemaphore;
+    NSString * _certificateURLBagKey;
+    SSVPlaybackLeaseConfiguration * _configuration;
+    id /* block */  _outputBlock;
+    SSURLBag * _urlBag;
 }
 
 @property (copy) NSString *certificateURLBagKey;

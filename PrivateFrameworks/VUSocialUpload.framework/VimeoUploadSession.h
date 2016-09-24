@@ -3,7 +3,7 @@
  */
 
 @interface VimeoUploadSession : NSObject {
-    <VimeoRemoteSessionProtocol> *_remoteSession;
+    <VimeoRemoteSessionProtocol> * _remoteSession;
 }
 
 + (id)sharedSession;

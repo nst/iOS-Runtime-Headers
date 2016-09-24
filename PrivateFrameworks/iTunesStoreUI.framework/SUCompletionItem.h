@@ -3,9 +3,9 @@
  */
 
 @interface SUCompletionItem : NSObject {
-    NSString *_alternateTitle;
-    NSString *_title;
-    NSURL *_url;
+    NSString * _alternateTitle;
+    NSString * _title;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

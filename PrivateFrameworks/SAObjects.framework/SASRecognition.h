@@ -10,6 +10,7 @@
 @property (nonatomic, copy) NSArray *phrases;
 @property (nonatomic) int sentenceConfidence;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) NSArray *utterances;
 
 // Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 
@@ -22,9 +23,12 @@
 - (int)sentenceConfidence;
 - (void)setPhrases:(id)arg1;
 - (void)setSentenceConfidence:(int)arg1;
+- (void)setUtterances:(id)arg1;
+- (id)utterances;
 
 // Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
 
 - (id)af_speechPhrases;
+- (id)af_speechUtterances;
 
 @end

@@ -2,43 +2,37 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicMediaProductDetailViewController : MusicMediaDetailViewController <MusicClientContextConsuming, MusicEntityProviderDownloadInformationControllerObserver, MusicJSNativeViewControllerFactory, MusicJSProductNativeViewControllerDelegate, MusicMediaProductHeaderContentViewControllerDelegate, MusicTransferObserver, UIViewControllerRestoration> {
-    BOOL _allowsProductHairline;
-    MPArtworkCatalog *_artworkCatalog;
-    UIBarButtonItem *_cancelButtonItem;
-    MusicClientContext *_clientContext;
-    <MusicEntityProviding> *_containerEntityProvider;
-    MusicEntityValueContext *_containerEntityValueContext;
-    MusicMediaProductDetailHeaderConfiguration *_detailHeaderConfiguration;
-    struct MusicEntityDownloadInformation { 
-        int downloadStatus; 
-        float downloadProgress; 
-    } _downloadInformation;
-    UIImage *_editedContentArtworkImage;
-    BOOL _editingWasCancelled;
-    MusicEntityProviderDownloadInformationController *_entityProviderDownloadInformationController;
-    BOOL _forContentCreation;
-    BOOL _hasDetailTintInformation;
-    BOOL _hasPresentedExplicitByDefaultAlert;
-    BOOL _hasReceivedViewWillAppearAtLeastOnce;
-    BOOL _isObservingClientContextTransferAggregatorDidChangeNotification;
-    BOOL _isViewFullyVisible;
-    MusicMediaDetailHeaderViewController *_mediaDetailHeaderViewController;
-    MusicMediaProductHeaderContentViewController *_mediaProductHeaderContentViewController;
-    BOOL _needsArtworkCatalogUpdate;
-    BOOL _needsColorAnalysisUpdate;
-    BOOL _needsEffectiveNavigationItemUpdateForEditingStateChangeUponViewWillAppear;
-    NSArray *_nonEditingLeftBarButtonItems;
-    NSArray *_nonEditingRightBarButtonItems;
-    NSMutableArray *_pendingTintInformationDispatchEvents;
-    int _presentationSource;
+@interface MusicMediaProductDetailViewController : MusicMediaDetailViewController <MusicClientContextConsuming, MusicJSNativeViewControllerFactory, MusicJSProductNativeViewControllerDelegate, MusicMediaProductHeaderContentViewControllerDelegate, UIViewControllerRestoration> {
+    BOOL  _allowsProductHairline;
+    MPArtworkCatalog * _artworkCatalog;
+    UIBarButtonItem * _cancelButtonItem;
+    MusicClientContext * _clientContext;
+    <MusicEntityProviding> * _containerEntityProvider;
+    MusicEntityValueContext * _containerEntityValueContext;
+    MusicMediaProductDetailHeaderConfiguration * _detailHeaderConfiguration;
+    UIImage * _editedContentArtworkImage;
+    BOOL  _editingWasCancelled;
+    BOOL  _forContentCreation;
+    BOOL  _hasDetailTintInformation;
+    BOOL  _hasPresentedExplicitByDefaultAlert;
+    BOOL  _hasReceivedViewWillAppearAtLeastOnce;
+    BOOL  _isObservingClientContextTransferAggregatorDidChangeNotification;
+    BOOL  _isViewFullyVisible;
+    MusicMediaDetailHeaderViewController * _mediaDetailHeaderViewController;
+    MusicMediaProductHeaderContentViewController * _mediaProductHeaderContentViewController;
+    BOOL  _needsArtworkCatalogUpdate;
+    BOOL  _needsColorAnalysisUpdate;
+    BOOL  _needsEffectiveNavigationItemUpdateForEditingStateChangeUponViewWillAppear;
+    NSArray * _nonEditingLeftBarButtonItems;
+    NSArray * _nonEditingRightBarButtonItems;
+    NSMutableArray * _pendingTintInformationDispatchEvents;
+    int  _presentationSource;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _previousMaximumHeaderSize;
-    UIViewController *_relatedContentViewController;
-    <MusicEntityProviding> *_tracklistEntityProvider;
-    MusicTransferAggregator *_transferAggregator;
+        double width; 
+        double height; 
+    }  _previousMaximumHeaderSize;
+    UIViewController * _relatedContentViewController;
+    <MusicEntityProviding> * _tracklistEntityProvider;
 }
 
 @property (nonatomic, readonly) MusicEntityValueContext *_containerEntityValueContext;
@@ -70,7 +64,6 @@
 - (BOOL)_editingWasCancelled;
 - (id)_effectiveNavigationItem;
 - (void)_handleCancelButtonTapped:(id)arg1;
-- (void)_handleClientContextTransferAggregatorDidChangeNotification:(id)arg1;
 - (void)_handleContainerEntityProviderDidInvalidateNotification:(id)arg1;
 - (id)_loadDetailHeaderConfiguration;
 - (id)_loadProductHeaderContentViewController;
@@ -80,9 +73,7 @@
 - (id)_mediaProductHeaderContentViewController;
 - (void)_presentExplicitByDefaultAlertIfNeeded;
 - (int)_productDescriptionTextStyle;
-- (void)_registerForClientContextTransferAggregatorDidChangeNotification;
 - (void)_reloadContainerEntityValueContextProperties;
-- (void)_reloadTransferAggregator;
 - (void)_sendPendingTintInformationDispatchEvents;
 - (void)_setNeedsDetailHeaderConfigurationUpdate;
 - (BOOL)_shouldAutomaticallyPopForMissingContainerEntityValueProvider;
@@ -99,7 +90,6 @@
 - (id)containerScrollView;
 - (void)dealloc;
 - (void)detailTintInformationDidChange;
-- (void)downloadInformationController:(id)arg1 downloadInformationDidChange:(struct MusicEntityDownloadInformation { int x1; float x2; })arg2;
 - (id)editedContentArtworkImage;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)initWithContainerEntityProvider:(id)arg1 tracklistEntityProvider:(id)arg2 clientContext:(id)arg3 existingJSProductNativeViewController:(id)arg4;
@@ -107,7 +97,7 @@
 - (BOOL)isForContentCreation;
 - (void)jsProductNativeViewController:(id)arg1 presentShareDocument:(id)arg2 options:(id)arg3;
 - (void)jsProductNativeViewController:(id)arg1 setProductEntityValueProviderData:(id)arg2;
-- (void)jsProductNativeViewController:(id)arg1 setProminentTrackStoreID:(long long)arg2;
+- (void)jsProductNativeViewController:(id)arg1 setProminentTrackStoreID:(int)arg2;
 - (void)jsProductNativeViewController:(id)arg1 setRelatedContentDocument:(id)arg2 options:(id)arg3;
 - (void)jsProductNativeViewController:(id)arg1 setReportingInformation:(id)arg2;
 - (void)jsProductNativeViewController:(id)arg1 setTracklistItems:(id)arg2;
@@ -125,8 +115,6 @@
 - (void)showingSplitDetailViewControllerDidChange;
 - (id)tracklistEntityProvider;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)transferAggregator:(id)arg1 downloadStatusChangedAtIndexes:(id)arg2;
-- (void)transferAggregatorDownloadsDidChange:(id)arg1;
 - (void)updateWithHeaderHeight:(float)arg1 maximumHeaderHeight:(float)arg2 headerVerticalOffset:(float)arg3 transitionProgress:(float)arg4;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

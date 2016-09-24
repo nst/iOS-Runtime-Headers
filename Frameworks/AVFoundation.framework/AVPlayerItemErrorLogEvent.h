@@ -3,7 +3,7 @@
  */
 
 @interface AVPlayerItemErrorLogEvent : NSObject <NSCopying> {
-    AVPlayerItemErrorLogEventInternal *_playerItemErrorLogEvent;
+    AVPlayerItemErrorLogEventInternal * _playerItemErrorLogEvent;
 }
 
 @property (nonatomic, readonly) NSString *URI;
@@ -15,6 +15,7 @@
 @property (nonatomic, readonly) NSString *serverAddress;
 
 - (id)URI;
+- (id)_common_init;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
 - (void)dealloc;

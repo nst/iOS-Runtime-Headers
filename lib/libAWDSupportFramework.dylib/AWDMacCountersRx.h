@@ -18,21 +18,21 @@
         unsigned int rxmfrmucastmbss : 1; 
         unsigned int rxrtsocast : 1; 
         unsigned int rxrtsucast : 1; 
-    } _has;
-    unsigned long long _rxackucast;
-    unsigned long long _rxcfrmmcast;
-    unsigned long long _rxcfrmocast;
-    unsigned long long _rxcfrmucast;
-    unsigned long long _rxctsocast;
-    unsigned long long _rxctsucast;
-    unsigned long long _rxdfrmmcast;
-    unsigned long long _rxdfrmocast;
-    unsigned long long _rxdfrmucastmbss;
-    unsigned long long _rxmfrmmcast;
-    unsigned long long _rxmfrmocast;
-    unsigned long long _rxmfrmucastmbss;
-    unsigned long long _rxrtsocast;
-    unsigned long long _rxrtsucast;
+    }  _has;
+    unsigned long long  _rxackucast;
+    unsigned long long  _rxcfrmmcast;
+    unsigned long long  _rxcfrmocast;
+    unsigned long long  _rxcfrmucast;
+    unsigned long long  _rxctsocast;
+    unsigned long long  _rxctsucast;
+    unsigned long long  _rxdfrmmcast;
+    unsigned long long  _rxdfrmocast;
+    unsigned long long  _rxdfrmucastmbss;
+    unsigned long long  _rxmfrmmcast;
+    unsigned long long  _rxmfrmocast;
+    unsigned long long  _rxmfrmucastmbss;
+    unsigned long long  _rxrtsocast;
+    unsigned long long  _rxrtsucast;
 }
 
 @property (nonatomic) BOOL hasRxackucast;

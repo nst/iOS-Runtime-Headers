@@ -3,8 +3,8 @@
  */
 
 @interface WLSQLController : NSObject {
-    struct sqlite3 { } *_database;
-    NSObject<OS_dispatch_queue> *_databaseQueue;
+    struct sqlite3 { } * _database;
+    NSObject<OS_dispatch_queue> * _databaseQueue;
 }
 
 + (id)downloadsPath;
@@ -20,8 +20,8 @@
 - (void)_insertStatistics_onDatabaseQueue:(id)arg1;
 - (id)_migratableAppsForDevice:(id)arg1;
 - (void)_openDatabase;
-- (long long)_performQuery:(id)arg1 rowHandler:(id /* block */)arg2;
-- (long long)_schemaVersion;
+- (int)_performQuery:(id)arg1 rowHandler:(id /* block */)arg2;
+- (int)_schemaVersion;
 - (int)_sqlite3_bind_NSDate:(id)arg1 forStatement:(struct sqlite3_stmt { }*)arg2 position:(int)arg3;
 - (id)_sqlite3_column_NSDateForStatement:(struct sqlite3_stmt { }*)arg1 column:(int)arg2;
 - (id)accountsForMigrator:(id)arg1 device:(id)arg2;

@@ -3,7 +3,7 @@
  */
 
 @interface PLEduAgent : PLAgent {
-    PLXPCListenerOperatorComposition *_syncBubbleStatusNotification;
+    PLXPCListenerOperatorComposition * _syncBubbleStatusNotification;
 }
 
 @property (retain) PLXPCListenerOperatorComposition *syncBubbleStatusNotification;

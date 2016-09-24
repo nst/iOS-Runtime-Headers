@@ -3,7 +3,7 @@
  */
 
 @interface SKUISearchBarController__MAKE_IT_RAIN__ : NSObject {
-    UISearchController *_searchController;
+    UISearchController * _searchController;
 }
 
 @property (nonatomic, readonly) UISearchController *searchController;

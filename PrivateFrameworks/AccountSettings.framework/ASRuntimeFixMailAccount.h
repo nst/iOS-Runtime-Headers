@@ -3,8 +3,8 @@
  */
 
 @interface ASRuntimeFixMailAccount : NSObject <ASRuntimeFixProtocol> {
-    BOOL _shouldNotifyMobileMail;
-    NSSet *_supportedMailClasses;
+    BOOL  _shouldNotifyMobileMail;
+    NSSet * _supportedMailClasses;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,8 +3,8 @@
  */
 
 @interface IKCSSParseRule : IKCSSParseObject {
-    IKCSSParseBlock *_block;
-    NSArray *_prelude;
+    IKCSSParseBlock * _block;
+    NSArray * _prelude;
 }
 
 @property (nonatomic, retain) IKCSSParseBlock *block;

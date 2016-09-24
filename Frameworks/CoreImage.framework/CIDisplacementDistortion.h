@@ -3,9 +3,9 @@
  */
 
 @interface CIDisplacementDistortion : CIFilter {
-    CIImage *inputDisplacementImage;
-    CIImage *inputImage;
-    NSNumber *inputScale;
+    CIImage * inputDisplacementImage;
+    CIImage * inputImage;
+    NSNumber * inputScale;
 }
 
 + (id)customAttributes;

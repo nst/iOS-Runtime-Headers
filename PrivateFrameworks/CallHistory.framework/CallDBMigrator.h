@@ -3,8 +3,8 @@
  */
 
 @interface CallDBMigrator : NSObject {
-    NSXPCConnection *_connection;
-    NSXPCInterface *_interface;
+    NSXPCConnection * _connection;
+    NSXPCInterface * _interface;
 }
 
 - (void).cxx_destruct;

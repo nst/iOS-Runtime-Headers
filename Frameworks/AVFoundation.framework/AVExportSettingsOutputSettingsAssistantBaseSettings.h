@@ -3,7 +3,7 @@
  */
 
 @interface AVExportSettingsOutputSettingsAssistantBaseSettings : NSObject <AVOutputSettingsAssistantBaseSettingsProvider> {
-    NSDictionary *_exportSettings;
+    NSDictionary * _exportSettings;
 }
 
 @property (nonatomic, readonly) NSDictionary *baseAudioSettings;

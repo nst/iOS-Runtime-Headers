@@ -15,7 +15,6 @@
 - (void)detach;
 - (BOOL)expandEntityReferences;
 - (id)filter;
-- (void)finalize;
 - (id)nextNode;
 - (BOOL)pointerBeforeReferenceNode;
 - (id)previousNode;

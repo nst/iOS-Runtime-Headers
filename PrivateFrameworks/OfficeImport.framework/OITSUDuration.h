@@ -3,7 +3,7 @@
  */
 
 @interface OITSUDuration : NSObject <NSCopying> {
-    double mTimeInterval;
+    double  mTimeInterval;
 }
 
 + (id)durationWithTimeInterval:(double)arg1;

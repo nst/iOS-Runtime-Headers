@@ -3,15 +3,15 @@
  */
 
 @interface CAMFocusResult : NSObject {
-    BOOL _contrastBasedFocusDidEnd;
-    BOOL _contrastBasedFocusDidStart;
-    BOOL _deviceSupportsFocus;
-    int _focusMode;
-    BOOL _performingContrastDetection;
+    BOOL  _contrastBasedFocusDidEnd;
+    BOOL  _contrastBasedFocusDidStart;
+    BOOL  _deviceSupportsFocus;
+    int  _focusMode;
+    BOOL  _performingContrastDetection;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _pointOfInterest;
+        double x; 
+        double y; 
+    }  _pointOfInterest;
 }
 
 @property (nonatomic, readonly) BOOL contrastBasedFocusDidEnd;
@@ -19,15 +19,15 @@
 @property (nonatomic, readonly) BOOL deviceSupportsFocus;
 @property (nonatomic, readonly) int focusMode;
 @property (getter=isPerformingContrastDetection, nonatomic, readonly) BOOL performingContrastDetection;
-@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } pointOfInterest;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } pointOfInterest;
 
 - (BOOL)contrastBasedFocusDidEnd;
 - (BOOL)contrastBasedFocusDidStart;
 - (id)description;
 - (BOOL)deviceSupportsFocus;
 - (int)focusMode;
-- (id)initWithMode:(int)arg1 pointOfInterest:(struct CGPoint { float x1; float x2; })arg2 performingContrastDetection:(BOOL)arg3 contrastBasedFocusDidStart:(BOOL)arg4 contrastBasedFocusDidEnd:(BOOL)arg5 deviceSupportsFocus:(BOOL)arg6;
+- (id)initWithMode:(int)arg1 pointOfInterest:(struct CGPoint { double x1; double x2; })arg2 performingContrastDetection:(BOOL)arg3 contrastBasedFocusDidStart:(BOOL)arg4 contrastBasedFocusDidEnd:(BOOL)arg5 deviceSupportsFocus:(BOOL)arg6;
 - (BOOL)isPerformingContrastDetection;
-- (struct CGPoint { float x1; float x2; })pointOfInterest;
+- (struct CGPoint { double x1; double x2; })pointOfInterest;
 
 @end

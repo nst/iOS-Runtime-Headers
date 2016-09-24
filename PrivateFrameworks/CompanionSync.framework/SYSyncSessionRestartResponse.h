@@ -3,10 +3,10 @@
  */
 
 @interface SYSyncSessionRestartResponse : PBCodable <NSCopying> {
-    BOOL _accepted;
-    SYErrorInfo *_error;
-    SYMessageHeader *_header;
-    NSString *_sessionID;
+    BOOL  _accepted;
+    SYErrorInfo * _error;
+    SYMessageHeader * _header;
+    NSString * _sessionID;
 }
 
 @property (nonatomic) BOOL accepted;

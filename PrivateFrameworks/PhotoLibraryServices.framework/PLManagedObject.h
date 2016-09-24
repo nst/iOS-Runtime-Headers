@@ -10,9 +10,11 @@
 @property (nonatomic, readonly, copy) NSString *shortObjectIDURI;
 
 - (BOOL)isRegisteredWithUserInterfaceContext;
+- (BOOL)isSyncableChange;
 - (id)photoLibrary;
 - (id)pl_shortDescription;
 - (id)shortObjectIDURI;
+- (BOOL)supportsCloudUpload;
 - (void)willSave;
 
 @end

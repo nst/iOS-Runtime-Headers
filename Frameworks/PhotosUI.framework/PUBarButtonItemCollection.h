@@ -3,16 +3,16 @@
  */
 
 @interface PUBarButtonItemCollection : NSObject {
-    NSMutableDictionary *__barButtonItems;
-    NSCache *__configurationsCache;
-    UIBarButtonItem *__flexibleSpaceBarButtonItem;
-    unsigned int __options;
-    UIBarButtonItem *__placeholderBarButtonItem;
-    NSIndexSet *__previousRequestedSet;
-    NSArray *__previousResult;
-    NSIndexSet *_centeredItemIdentifiers;
-    <PUBarButtonItemCollectionDataSource> *_dataSource;
-    NSArray *_identifiersOrder;
+    NSMutableDictionary * __barButtonItems;
+    NSCache * __configurationsCache;
+    UIBarButtonItem * __flexibleSpaceBarButtonItem;
+    unsigned int  __options;
+    UIBarButtonItem * __placeholderBarButtonItem;
+    NSIndexSet * __previousRequestedSet;
+    NSArray * __previousResult;
+    NSIndexSet * _centeredItemIdentifiers;
+    <PUBarButtonItemCollectionDataSource> * _dataSource;
+    NSArray * _identifiersOrder;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *_barButtonItems;

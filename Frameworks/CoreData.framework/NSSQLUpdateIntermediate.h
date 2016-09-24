@@ -3,7 +3,7 @@
  */
 
 @interface NSSQLUpdateIntermediate : NSSQLStatementIntermediate {
-    NSSQLUpdateColumnsIntermediate *_updateColumns;
+    NSSQLUpdateColumnsIntermediate * _updateColumns;
 }
 
 - (void)dealloc;

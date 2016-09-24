@@ -3,16 +3,16 @@
  */
 
 @interface PSUIColorTemperatureController : PSListController <PSTimeRangeCellDelegate> {
-    NSTimer *_blueLightReductionLabelRefreshTimer;
-    CBClient *_brightnessClient;
-    PSSpecifier *_manualSwitchSpecifier;
-    PSSpecifier *_scheduleRangeSpecifier;
-    PSSpecifier *_scheduleSwitchSpecifier;
-    BOOL _showColorTemperature;
-    BOOL _showingScheduleRange;
-    PSSpecifier *_temperatureSlider;
-    BOOL _temperatureSliderWasTracking;
-    NSDateFormatter *_timeFormatter;
+    NSTimer * _blueLightReductionLabelRefreshTimer;
+    CBClient * _brightnessClient;
+    PSSpecifier * _manualSwitchSpecifier;
+    PSSpecifier * _scheduleRangeSpecifier;
+    PSSpecifier * _scheduleSwitchSpecifier;
+    BOOL  _showColorTemperature;
+    BOOL  _showingScheduleRange;
+    PSSpecifier * _temperatureSlider;
+    BOOL  _temperatureSliderWasTracking;
+    NSDateFormatter * _timeFormatter;
 }
 
 - (void).cxx_destruct;

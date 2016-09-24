@@ -3,9 +3,9 @@
  */
 
 @interface HAPAccessoryServerBrowser : NSObject {
-    <HAPKeyStore> *_keyStore;
-    int _linkType;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    <HAPKeyStore> * _keyStore;
+    int  _linkType;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic, retain) <HAPKeyStore> *keyStore;

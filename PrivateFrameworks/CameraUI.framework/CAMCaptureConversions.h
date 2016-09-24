@@ -8,14 +8,12 @@
 + (int)captureFlashModeForFlashMode:(int)arg1;
 + (int)captureFocusModeForFocusMode:(int)arg1;
 + (int)captureHDRModeForHDRMode:(int)arg1;
-+ (int)captureIrisModeForIrisMode:(int)arg1;
 + (int)captureTorchModeForTorchMode:(int)arg1;
 + (int)captureWhiteBalanceModeForWhiteBalanceMode:(int)arg1;
 + (int)exposureModeForCaptureExposureMode:(int)arg1;
 + (int)flashModeForCaptureFlashMode:(int)arg1;
 + (int)focusModeForCaptureFocusMode:(int)arg1;
 + (int)hdrModeForCaptureHDRMode:(int)arg1;
-+ (int)irisModeForCaptureIrisMode:(int)arg1;
 + (id)previewLayerVideoGravityForPreviewViewAspectMode:(int)arg1;
 + (int)torchModeForCaptureTorchMode:(int)arg1;
 + (int)viewContentModeForPreviewViewAspectMode:(int)arg1;

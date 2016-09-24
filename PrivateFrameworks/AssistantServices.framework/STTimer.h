@@ -3,8 +3,8 @@
  */
 
 @interface STTimer : STSiriModelObject {
-    int _state;
-    NSNumber *_value;
+    int  _state;
+    NSNumber * _value;
 }
 
 @property (nonatomic) int state;

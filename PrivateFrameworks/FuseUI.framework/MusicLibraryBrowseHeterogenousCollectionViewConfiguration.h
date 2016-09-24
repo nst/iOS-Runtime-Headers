@@ -3,7 +3,7 @@
  */
 
 @interface MusicLibraryBrowseHeterogenousCollectionViewConfiguration : MusicLibraryBrowseCollectionViewConfiguration {
-    NSArray *_libraryViewConfigurations;
+    NSArray * _libraryViewConfigurations;
 }
 
 @property (nonatomic, readonly) MusicEntityCollectionViewDescriptor *entityCollectionViewDescriptor;

@@ -3,16 +3,15 @@
  */
 
 @interface PXPresentationState : OCXReadState {
-    CXNamespace *_PXPresentationMLNamespace;
-    <TCCancelDelegate> *mCancel;
-    NSMutableDictionary *mCommentAuthorIdToIndexMap;
-    NSMutableDictionary *mModelObjects;
-    OAVReadState *mOAVState;
-    OAXDrawingState *mOfficeArtState;
-    CXNamespace *mPXPresentationMLNamespace;
-    NSMutableDictionary *mSlideURLToIndexMap;
-    OAXTableStyleCache *mTableStyleCache;
-    PDPresentation *mTgtPresentation;
+    <TCCancelDelegate> * mCancel;
+    NSMutableDictionary * mCommentAuthorIdToIndexMap;
+    NSMutableDictionary * mModelObjects;
+    OAVReadState * mOAVState;
+    OAXDrawingState * mOfficeArtState;
+    CXNamespace * mPXPresentationMLNamespace;
+    NSMutableDictionary * mSlideURLToIndexMap;
+    OAXTableStyleCache * mTableStyleCache;
+    PDPresentation * mTgtPresentation;
 }
 
 @property (nonatomic, retain) CXNamespace *PXPresentationMLNamespace;

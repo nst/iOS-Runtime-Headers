@@ -3,7 +3,7 @@
  */
 
 @interface AVKVODispatcher : NSObject {
-    AVCallbackContextRegistry *_callbackContextRegistry;
+    AVCallbackContextRegistry * _callbackContextRegistry;
 }
 
 + (id)sharedKVODispatcher;

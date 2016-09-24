@@ -3,13 +3,15 @@
  */
 
 @interface MusicCarPlayManager : NSObject <MCDCarDisplayServiceProvider> {
-    MCDRootController *_carDisplayController;
-    RadioRecentStationsController *_recentStationsController;
+    MCDRootController * _carDisplayController;
+    MPCMediaPlayerLegacyPlayer * _legacyPlayer;
+    RadioRecentStationsController * _recentStationsController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) MPCMediaPlayerLegacyPlayer *legacyPlayer;
 @property (nonatomic) RadioRecentStationsController *recentStationsController;
 @property (readonly) Class superclass;
 
@@ -22,16 +24,16 @@
 - (void)_screenDidDisconnectNotification:(id)arg1;
 - (void)_setupPlaybackForPlayer:(id)arg1 context:(id)arg2 completion:(id /* block */)arg3;
 - (void)attachToAvailableScreen;
-- (void)changeRepeatType:(unsigned int)arg1;
-- (void)changeShuffleType:(unsigned int)arg1;
+- (void)changeRepeatType:(int)arg1;
+- (void)changeShuffleType:(int)arg1;
 - (void)dealloc;
 - (void)detachFromScreen;
-- (id)init;
+- (id)legacyPlayer;
 - (id)recentStationsController;
-- (void)reloadPlayer:(id)arg1 geniusMixPlaylist:(id)arg2 options:(id)arg3;
 - (void)reloadPlayer:(id)arg1 mediaQuery:(id)arg2 options:(id)arg3;
 - (void)reloadPlayer:(id)arg1 radioMetadata:(id)arg2 options:(id)arg3 completion:(id /* block */)arg4;
 - (void)reloadPlayer:(id)arg1 radioStation:(id)arg2 options:(id)arg3 completion:(id /* block */)arg4;
+- (void)setLegacyPlayer:(id)arg1;
 - (void)setRecentStationsController:(id)arg1;
 - (void)showNowPlaying:(BOOL)arg1;
 

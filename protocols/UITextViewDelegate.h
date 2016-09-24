@@ -7,7 +7,9 @@
 
 - (BOOL)textView:(UITextView *)arg1 shouldChangeTextInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(NSString *)arg3;
 - (BOOL)textView:(UITextView *)arg1 shouldInteractWithTextAttachment:(NSTextAttachment *)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (BOOL)textView:(UITextView *)arg1 shouldInteractWithTextAttachment:(NSTextAttachment *)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 interaction:(int)arg4;
 - (BOOL)textView:(UITextView *)arg1 shouldInteractWithURL:(NSURL *)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (BOOL)textView:(UITextView *)arg1 shouldInteractWithURL:(NSURL *)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 interaction:(int)arg4;
 - (void)textViewDidBeginEditing:(UITextView *)arg1;
 - (void)textViewDidChange:(UITextView *)arg1;
 - (void)textViewDidChangeSelection:(UITextView *)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface SLFacebookPostPrivacyCategory : NSObject {
-    NSArray *_audiencePrivacySettings;
-    NSString *_name;
+    NSArray * _audiencePrivacySettings;
+    NSString * _name;
 }
 
 @property (retain) NSArray *audiencePrivacySettings;

@@ -3,10 +3,10 @@
  */
 
 @interface MPUDataSourceConfiguration : NSObject {
-    NSString *_dataSourceCachingKey;
-    Class _dataSourceClass;
-    id /* block */ _defaultQueryCreationBlock;
-    int _entityType;
+    NSString * _dataSourceCachingKey;
+    Class  _dataSourceClass;
+    id /* block */  _defaultQueryCreationBlock;
+    int  _entityType;
 }
 
 @property (nonatomic, copy) NSString *dataSourceCachingKey;

@@ -2,20 +2,25 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDCodableCategorySample : PBCodable <NSCopying> {
+@interface HDCodableCategorySample : PBCodable <HDDecoding, NSCopying> {
     struct { 
         unsigned int value : 1; 
-    } _has;
-    HDCodableSample *_sample;
-    long long _value;
+    }  _has;
+    HDCodableSample * _sample;
+    int  _value;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) BOOL hasSample;
 @property (nonatomic) BOOL hasValue;
+@property (readonly) unsigned int hash;
 @property (nonatomic, retain) HDCodableSample *sample;
-@property (nonatomic) long long value;
+@property (readonly) Class superclass;
+@property (nonatomic) int value;
 
 - (void).cxx_destruct;
+- (BOOL)applyToObject:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -29,8 +34,8 @@
 - (id)sample;
 - (void)setHasValue:(BOOL)arg1;
 - (void)setSample:(id)arg1;
-- (void)setValue:(long long)arg1;
-- (long long)value;
+- (void)setValue:(int)arg1;
+- (int)value;
 - (void)writeTo:(id)arg1;
 
 @end

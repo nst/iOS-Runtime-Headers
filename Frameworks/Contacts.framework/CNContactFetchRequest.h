@@ -2,16 +2,18 @@
    Image: /System/Library/Frameworks/Contacts.framework/Contacts
  */
 
-@interface CNContactFetchRequest : NSObject {
-    NSArray *_keysToFetch;
-    BOOL _mutableObjects;
-    BOOL _onlyMainStore;
-    NSPredicate *_predicate;
-    int _sortOrder;
-    BOOL _unifyResults;
-    BOOL rankSort;
+@interface CNContactFetchRequest : NSObject <NSSecureCoding> {
+    BOOL  _allowsBatching;
+    NSArray * _keysToFetch;
+    BOOL  _mutableObjects;
+    BOOL  _onlyMainStore;
+    NSPredicate * _predicate;
+    BOOL  _rankSort;
+    int  _sortOrder;
+    BOOL  _unifyResults;
 }
 
+@property (nonatomic) BOOL allowsBatching;
 @property (nonatomic, copy) NSArray *keysToFetch;
 @property (nonatomic) BOOL mutableObjects;
 @property (nonatomic) BOOL onlyMainStore;
@@ -20,17 +22,23 @@
 @property (nonatomic) int sortOrder;
 @property (nonatomic) BOOL unifyResults;
 
++ (BOOL)supportsSecureCoding;
+
+- (BOOL)allowsBatching;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)effectiveKeysToFetch;
+- (void)encodeWithCoder:(id)arg1;
 - (void)executeFetchWithDataMapper:(id)arg1 observer:(id)arg2;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithKeysToFetch:(id)arg1;
 - (id)keysToFetch;
 - (BOOL)mutableObjects;
 - (BOOL)onlyMainStore;
 - (id)predicate;
 - (BOOL)rankSort;
+- (void)setAllowsBatching:(BOOL)arg1;
 - (void)setKeysToFetch:(id)arg1;
 - (void)setMutableObjects:(BOOL)arg1;
 - (void)setOnlyMainStore:(BOOL)arg1;

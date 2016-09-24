@@ -3,23 +3,23 @@
  */
 
 @interface PDPresentation : OCDDocument {
-    NSMutableArray *mBulletBlips;
-    NSMutableArray *mCommentAuthors;
-    BOOL mIsAutoPlay;
-    BOOL mIsCommentsVisible;
-    BOOL mIsKiosk;
-    BOOL mIsLooping;
-    NSMutableArray *mNotesMasters;
+    NSMutableArray * mBulletBlips;
+    NSMutableArray * mCommentAuthors;
+    BOOL  mIsAutoPlay;
+    BOOL  mIsCommentsVisible;
+    BOOL  mIsKiosk;
+    BOOL  mIsLooping;
+    NSMutableArray * mNotesMasters;
     struct CGSize { 
-        float width; 
-        float height; 
-    } mNotesSize;
-    NSMutableArray *mSlideMasters;
+        double width; 
+        double height; 
+    }  mNotesSize;
+    NSMutableArray * mSlideMasters;
     struct CGSize { 
-        float width; 
-        float height; 
-    } mSlideSize;
-    NSMutableArray *mSlides;
+        double width; 
+        double height; 
+    }  mSlideSize;
+    NSMutableArray * mSlides;
 }
 
 - (unsigned long)addBulletBlip:(id)arg1;
@@ -46,19 +46,19 @@
 - (BOOL)isLooping;
 - (id)notesMasterAtIndex:(unsigned int)arg1;
 - (unsigned int)notesMasterCount;
-- (struct CGSize { float x1; float x2; })notesSize;
+- (struct CGSize { double x1; double x2; })notesSize;
 - (void)removeUnnecessaryOverrides;
 - (void)setIsAutoPlay:(BOOL)arg1;
 - (void)setIsCommentsVisible:(BOOL)arg1;
 - (void)setIsKiosk:(BOOL)arg1;
 - (void)setIsLooping:(BOOL)arg1;
-- (void)setNotesSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setSlideSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setNotesSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSlideSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setUpPropertyHierarchyPreservingEffectiveValues;
 - (id)slideAtIndex:(unsigned int)arg1;
 - (unsigned int)slideCount;
 - (id)slideMasterAtIndex:(unsigned int)arg1;
 - (unsigned int)slideMasterCount;
-- (struct CGSize { float x1; float x2; })slideSize;
+- (struct CGSize { double x1; double x2; })slideSize;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface AFSiriTaskContextProvider : NSObject <AFSiriAppContextProviding> {
-    AFSiriTaskmaster *_taskmaster;
+    AFSiriTaskmaster * _taskmaster;
 }
 
 @property (readonly, copy) NSString *debugDescription;

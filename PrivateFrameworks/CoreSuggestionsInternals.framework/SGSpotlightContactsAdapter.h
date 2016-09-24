@@ -3,9 +3,9 @@
  */
 
 @interface SGSpotlightContactsAdapter : NSObject <SGJournalContactsObserver> {
-    NSObject<OS_dispatch_queue> *_spotlightWriteQueue;
-    SGSqlEntityStore *_store;
-    NSURL *_vCardsDirectoryURL;
+    NSOperationQueue * _spotlightWriteQueue;
+    SGSqlEntityStore * _store;
+    NSURL * _vCardsDirectoryURL;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,7 +14,6 @@
 @property (nonatomic) SGSqlEntityStore *store;
 @property (readonly) Class superclass;
 
-+ (id)coreSpotlightAttributeSetForContact:(id)arg1;
 + (id)entityIdentifiersFromCNIdentifiers:(id)arg1;
 + (id)searchableIndex;
 
@@ -22,6 +21,7 @@
 - (void)addContact:(id)arg1;
 - (void)confirmContact:(id)arg1;
 - (void)confirmOrRejectContact:(id)arg1;
+- (id)coreSpotlightAttributeSetForContact:(id)arg1;
 - (id)init;
 - (id)initWithSGSqlEntityStore:(id)arg1;
 - (void)rejectContact:(id)arg1;
@@ -31,5 +31,6 @@
 - (void)sendContactToSpotlight:(id)arg1;
 - (void)setStore:(id)arg1;
 - (id)store;
+- (void)storeClosing;
 
 @end

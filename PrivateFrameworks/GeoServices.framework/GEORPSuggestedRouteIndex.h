@@ -3,21 +3,21 @@
  */
 
 @interface GEORPSuggestedRouteIndex : PBCodable <NSCopying> {
-    unsigned int _clientSuggestedRoutesIndex;
+    unsigned int  _clientSuggestedRoutesIndex;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _clusteredRouteRideSelections;
-    unsigned int _directionsResponseIndex;
-    unsigned int _directionsResponseSuggestedRoutesIndex;
+    }  _clusteredRouteRideSelections;
+    unsigned int  _directionsResponseIndex;
+    unsigned int  _directionsResponseSuggestedRoutesIndex;
     struct { 
         unsigned int clientSuggestedRoutesIndex : 1; 
         unsigned int directionsResponseIndex : 1; 
         unsigned int directionsResponseSuggestedRoutesIndex : 1; 
         unsigned int origin : 1; 
-    } _has;
-    int _origin;
+    }  _has;
+    int  _origin;
 }
 
 @property (nonatomic) unsigned int clientSuggestedRoutesIndex;
@@ -31,6 +31,7 @@
 @property (nonatomic) BOOL hasOrigin;
 @property (nonatomic) int origin;
 
+- (int)StringAsOrigin:(id)arg1;
 - (void)addClusteredRouteRideSelections:(unsigned int)arg1;
 - (void)clearClusteredRouteRideSelections;
 - (unsigned int)clientSuggestedRoutesIndex;
@@ -52,6 +53,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)origin;
+- (id)originAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setClientSuggestedRoutesIndex:(unsigned int)arg1;
 - (void)setClusteredRouteRideSelections:(unsigned int*)arg1 count:(unsigned int)arg2;

@@ -3,15 +3,15 @@
  */
 
 @interface RadioSyncRequest : RadioRequest {
-    NSObject<OS_dispatch_queue> *_artworkQueue;
-    BOOL _disableArtworkLoading;
-    unsigned long long _globalVersion;
-    BOOL _includeCleanTracksOnly;
-    BOOL _isAutomaticUpdate;
-    NSString *_referer;
-    SSURLConnectionRequest *_request;
-    NSDictionary *_responseDictionary;
-    NSDictionary *_resultingOverrideBagDictionary;
+    NSObject<OS_dispatch_queue> * _artworkQueue;
+    BOOL  _disableArtworkLoading;
+    unsigned int  _globalVersion;
+    BOOL  _includeCleanTracksOnly;
+    BOOL  _isAutomaticUpdate;
+    NSString * _referer;
+    SSURLConnectionRequest * _request;
+    NSDictionary * _responseDictionary;
+    NSDictionary * _resultingOverrideBagDictionary;
 }
 
 @property (nonatomic) BOOL disableArtworkLoading;
@@ -29,7 +29,7 @@
 - (BOOL)disableArtworkLoading;
 - (BOOL)includeCleanTracksOnly;
 - (id)init;
-- (id)initWithGlobalVersion:(unsigned long long)arg1;
+- (id)initWithGlobalVersion:(unsigned int)arg1;
 - (BOOL)isAutomaticUpdate;
 - (id)matchDictionary;
 - (id)referer;

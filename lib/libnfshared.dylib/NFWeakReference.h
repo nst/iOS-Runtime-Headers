@@ -3,7 +3,7 @@
  */
 
 @interface NFWeakReference : NSObject {
-    id _store;
+    id  _store;
 }
 
 + (id)weakReferenceWithObject:(id)arg1;

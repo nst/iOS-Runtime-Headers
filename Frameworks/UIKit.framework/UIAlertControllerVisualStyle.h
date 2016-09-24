@@ -3,47 +3,50 @@
  */
 
 @interface UIAlertControllerVisualStyle : NSObject {
-    UIAlertControllerDescriptor *_descriptor;
-    UITraitCollection *_traitCollection;
+    UIAlertControllerDescriptor * _descriptor;
+    int  _forcedInterfaceIdiom;
+    UIInterfaceActionVisualStyle * _interfaceActionVisualStyle;
+    UITraitCollection * _traitCollection;
 }
 
 @property (nonatomic, retain) UIAlertControllerDescriptor *descriptor;
+@property (nonatomic) int forcedInterfaceIdiom;
+@property (nonatomic, readonly) UIInterfaceActionVisualStyle *interfaceActionVisualStyle;
 @property (nonatomic, retain) UITraitCollection *traitCollection;
+
++ (int)interfaceActionPresentationStyle;
 
 - (void).cxx_destruct;
 - (id)_detailMessageFont;
+- (id)_keyCommandInputForCancelAction;
 - (float)_marginAboveDetailMessageFirstBaseline;
+- (void)_reloadInterfaceActionVisualStyle;
 - (float)_scaledMarginAboveDetailMessageFirstBaseline;
 - (float)_scaledMarginAboveMessageLabelFirstBaseline;
-- (float)_scaledMarginAboveTitleLabelFirstBaseline;
+- (float)_scaledMarginAboveTitleLabelFirstBaselineInAlertControllerView:(id)arg1;
 - (float)_scaledMarginBelowLastLabelLastBaseline;
 - (float)_scaledMarginBelowMessageLabelLastBaseline;
 - (float)_scaledMarginBelowTitleLabelLastBaseline;
 - (BOOL)_shouldReverseActions;
-- (id)actionContentColorForAction:(id)arg1 withViewRepresentation:(id)arg2 inAlertController:(id)arg3;
-- (BOOL)actionContentInheritsTextColor;
-- (float)actionHorizontalContentMargin;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })actionImageMarginForAction:(id)arg1 withViewRepresentation:(id)arg2 inAlertController:(id)arg3;
-- (BOOL)actionLabelsMayAdjustFontsToFit;
-- (BOOL)actionLabelsMayUseMarqueeWhenFocused;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })actionImageMarginForAction;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })actionSequenceEdgeInsets;
 - (float)actionWidthForMinimumActionWidth:(float)arg1;
 - (void)animateAlertControllerView:(id)arg1 ofAlertController:(id)arg2 forPresentation:(BOOL)arg3 inContainerView:(id)arg4 descendantOfContainerView:(id)arg5 duration:(double)arg6 completionBlock:(id /* block */)arg7;
 - (void)animateRevealOfAlertControllerView:(id)arg1 alertController:(id)arg2 inContainerView:(id)arg3 duration:(double)arg4 completionBlock:(id /* block */)arg5;
-- (float)backgroundCornerRadius;
-- (id)backgroundView;
-- (id)backgroundViewForAction:(id)arg1 withViewRepresentation:(id)arg2 inAlertController:(id)arg3;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionViewContentInsets;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionViewGradientMaskInsets;
-- (struct CGSize { float x1; float x2; })collectionViewOutsetSize;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
+- (struct CGSize { double x1; double x2; })collectionViewOutsetSize;
+- (void)configureAttributesForImageView:(id)arg1 imageProperty:(id)arg2 actionViewState:(id)arg3;
+- (void)configureAttributesForTitleLabel:(id)arg1 classificationLabel:(id)arg2 actionViewState:(id)arg3;
+- (float)contentHorizontalMargin;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (id)defaultActionFont;
-- (id)descriptiveFontForAction:(id)arg1 inAlertController:(id)arg2;
 - (id)descriptor;
 - (id)dimmingViewForAlertController:(id)arg1;
-- (BOOL)hideActionSeparators;
+- (int)forcedInterfaceIdiom;
 - (BOOL)hideCancelAction:(id)arg1 inAlertController:(id)arg2;
-- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })highlightedActionTransformForActionSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)init;
 - (id)interactionProgressForTransitionOfType:(int)arg1 forAlertController:(id)arg2;
+- (id)interfaceActionVisualStyle;
+- (Class)interfaceActionVisualStyleClassForManagingConcreteVisualStyle;
 - (BOOL)isEqual:(id)arg1;
 - (float)marginAboveMessageLabelFirstBaseline;
 - (float)marginAboveTitleLabelFirstBaseline;
@@ -57,20 +60,21 @@
 - (float)maximumWidthForTitleAndMessageContentView;
 - (id)messageLabelColor;
 - (id)messageLabelFont;
-- (float)minimumActionHeight;
+- (struct CGSize { double x1; double x2; })minimumActionContentSize;
 - (float)minimumWidth;
-- (id)motionEffects;
 - (int)permittedActionLayoutDirection;
+- (BOOL)placementAvoidsKeyboard;
 - (void)positionAlertControllerView:(id)arg1 ofAlertController:(id)arg2 inAvailableSpaceView:(id)arg3;
 - (id)preferredActionFont;
+- (id)preferredActionForActions:(id)arg1 suggestedPreferredAction:(id)arg2;
 - (id)regularActionFont;
-- (float)sectionDelimitingSeparatorDimension;
 - (void)setDescriptor:(id)arg1;
+- (void)setForcedInterfaceIdiom:(int)arg1;
 - (void)setTraitCollection:(id)arg1;
 - (BOOL)shouldOccludeDuringPresentation;
 - (BOOL)shouldPreserveRespondersAcrossWindows;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textFieldCollectionViewContentInset;
 - (id)textFieldContainingViewWithTextField:(id)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })textFieldContentInset;
 - (float)textFieldHorizontalMargin;
 - (id)tintColorForAlertController:(id)arg1;
 - (id)titleLabelColor;

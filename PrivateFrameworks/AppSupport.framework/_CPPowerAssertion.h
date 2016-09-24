@@ -3,10 +3,10 @@
  */
 
 @interface _CPPowerAssertion : NSObject {
-    unsigned int _assertion;
-    NSString *_identifier;
-    NSArray *_stack;
-    double _timeout;
+    unsigned int  _assertion;
+    NSString * _identifier;
+    NSArray * _stack;
+    double  _timeout;
 }
 
 @property (nonatomic) double timeout;

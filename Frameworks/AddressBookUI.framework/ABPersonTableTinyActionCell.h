@@ -3,10 +3,10 @@
  */
 
 @interface ABPersonTableTinyActionCell : UITableViewCell {
-    ABPersonTableActionDataSource *_actionDataSource;
-    <ABPersonTableTinyActionDelegate> *_delegate;
-    <ABStyleProvider> *_styleProvider;
-    UIView *_tinyActionContentView;
+    ABPersonTableActionDataSource * _actionDataSource;
+    <ABPersonTableTinyActionDelegate> * _delegate;
+    <ABStyleProvider> * _styleProvider;
+    UIView * _tinyActionContentView;
 }
 
 @property (nonatomic, retain) ABPersonTableActionDataSource *actionDataSource;
@@ -27,7 +27,7 @@
 - (void)setBackgroundView:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)styleProvider;
 
 @end

@@ -3,17 +3,17 @@
  */
 
 @interface UIPrintingProgress : NSObject {
-    UIAlertView *_alert;
-    id /* block */ _cancelHandler;
-    BOOL _creatingPDF;
-    double _displayTime;
-    BOOL _donePrinting;
-    BOOL _forceDisplayAsAlert;
-    double _lastPageUpdate;
-    NSString *_printerName;
-    double _progressAlertDelay;
-    double _startTime;
-    UIPrintingProgressViewController *_viewController;
+    UIAlertView * _alert;
+    id /* block */  _cancelHandler;
+    BOOL  _creatingPDF;
+    double  _displayTime;
+    BOOL  _donePrinting;
+    BOOL  _forceDisplayAsAlert;
+    double  _lastPageUpdate;
+    NSString * _printerName;
+    double  _progressAlertDelay;
+    double  _startTime;
+    UIPrintingProgressViewController * _viewController;
 }
 
 @property BOOL creatingPDF;

@@ -3,21 +3,38 @@
  */
 
 @interface RPPreviewViewController : UIViewController <RPVideoEditorViewControllerDelegate> {
-    <RPPreviewViewControllerDelegate> *_previewControllerDelegate;
+    RPVideoEditorHostViewController * _hostViewController;
+    int  _mode;
+    NSURL * _movieURL;
+    <RPPreviewViewControllerDelegate> * _previewControllerDelegate;
+    BOOL  _wasStatusBarHidden;
 }
 
+@property (nonatomic, retain) RPVideoEditorHostViewController *hostViewController;
+@property (nonatomic) int mode;
+@property (nonatomic, retain) NSURL *movieURL;
 @property (nonatomic) <RPPreviewViewControllerDelegate> *previewControllerDelegate;
+@property (nonatomic) BOOL wasStatusBarHidden;
 
-+ (void)loadPreviewViewControllerWithMovieURL:(id)arg1 attachmentURL:(id)arg2 overrideShareMessage:(id)arg3 completion:(id /* block */)arg4;
++ (void)loadPreviewViewControllerWithMovieURL:(id)arg1 attachmentURL:(id)arg2 overrideShareMessage:(id)arg3 overrideTintColor:(id)arg4 completion:(id /* block */)arg5;
 + (void)loadPreviewViewControllerWithMovieURL:(id)arg1 completion:(id /* block */)arg2;
 + (void)viewControllerForExtension:(id)arg1 inputItems:(id)arg2 completionHandler:(id /* block */)arg3;
 
 - (void).cxx_destruct;
 - (void)extensionDidFinishWithActivityTypes:(id)arg1;
+- (id)hostViewController;
+- (int)mode;
+- (id)movieURL;
 - (id)previewControllerDelegate;
+- (void)setHostViewController:(id)arg1;
+- (void)setMode:(int)arg1;
+- (void)setMovieURL:(id)arg1;
 - (void)setPreviewControllerDelegate:(id)arg1;
+- (void)setWasStatusBarHidden:(BOOL)arg1;
 - (void)videoEditor:(id)arg1 didFinishWithActivityTypes:(id)arg2;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (BOOL)wasStatusBarHidden;
 
 @end

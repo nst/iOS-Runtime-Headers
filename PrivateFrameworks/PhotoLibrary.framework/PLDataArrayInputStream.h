@@ -3,27 +3,27 @@
  */
 
 @interface PLDataArrayInputStream : NSInputStream {
-    NSMutableData *_bodyData;
-    int (*_clientCallback;
+    NSMutableData * _bodyData;
+    int (* _clientCallback;
     struct { 
         int version; 
         void *info; 
         int (*retain)(); 
         int (*release)(); 
         int (*copyDescription)(); 
-    } _clientContext;
-    unsigned int _currentIndex;
-    unsigned int _currentLength;
-    unsigned int _currentOffset;
-    NSArray *_dataArray;
-    unsigned int _dataCount;
-    unsigned int _dataLength;
-    unsigned int _dataOffset;
-    id _delegate;
-    BOOL _openEventSent;
-    <PLDataArrayInputStreamProgressDelegate> *_progressDelegate;
-    struct __CFRunLoopSource { } *_rls;
-    unsigned int _streamStatus;
+    }  _clientContext;
+    unsigned int  _currentIndex;
+    unsigned int  _currentLength;
+    unsigned int  _currentOffset;
+    NSArray * _dataArray;
+    unsigned int  _dataCount;
+    unsigned int  _dataLength;
+    unsigned int  _dataOffset;
+    id  _delegate;
+    BOOL  _openEventSent;
+    <PLDataArrayInputStreamProgressDelegate> * _progressDelegate;
+    struct __CFRunLoopSource { } * _rls;
+    unsigned int  _streamStatus;
 }
 
 @property (nonatomic) <PLDataArrayInputStreamProgressDelegate> *progressDelegate;

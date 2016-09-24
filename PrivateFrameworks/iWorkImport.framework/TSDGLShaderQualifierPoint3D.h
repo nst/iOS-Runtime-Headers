@@ -4,24 +4,24 @@
 
 @interface TSDGLShaderQualifierPoint3D : TSDGLShaderQualifier {
     struct { 
-        float x; 
-        float y; 
-        float z; 
-    } _GLPoint3DValue;
+        double x; 
+        double y; 
+        double z; 
+    }  _GLPoint3DValue;
     struct { 
-        float x; 
-        float y; 
-        float z; 
-    } _proposedGLPoint3DValue;
+        double x; 
+        double y; 
+        double z; 
+    }  _proposedGLPoint3DValue;
 }
 
-@property (nonatomic, readonly) struct { float x1; float x2; float x3; } GLPoint3DValue;
-@property (nonatomic) struct { float x1; float x2; float x3; } proposedGLPoint3DValue;
+@property (nonatomic, readonly) struct { double x1; double x2; double x3; } GLPoint3DValue;
+@property (nonatomic) struct { double x1; double x2; double x3; } proposedGLPoint3DValue;
 
-- (struct { float x1; float x2; float x3; })GLPoint3DValue;
+- (struct { double x1; double x2; double x3; })GLPoint3DValue;
 - (id)description;
-- (struct { float x1; float x2; float x3; })proposedGLPoint3DValue;
+- (struct { double x1; double x2; double x3; })proposedGLPoint3DValue;
 - (void)setGLUniformWithShader:(id)arg1;
-- (void)setProposedGLPoint3DValue:(struct { float x1; float x2; float x3; })arg1;
+- (void)setProposedGLPoint3DValue:(struct { double x1; double x2; double x3; })arg1;
 
 @end

@@ -4,23 +4,23 @@
 
 @interface SKUIEditorialLockupCellLayout : SKUIItemCellLayout {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _contentInsets;
-    SKUIEditorialCellLayout *_editorialCellLayout;
-    UIView *_editorialContainerView;
-    float _editorialHeight;
-    int _layoutStyle;
-    SKUILockupItemCellLayout *_lockupLayout;
-    SKUICellLayoutView *_lockupView;
-    UIColor *_offerNoticeTextColor;
-    SKUITextBoxView *_textBoxView;
-    unsigned int _visibleFields;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _contentInsets;
+    SKUIEditorialCellLayout * _editorialCellLayout;
+    UIView * _editorialContainerView;
+    double  _editorialHeight;
+    int  _layoutStyle;
+    SKUILockupItemCellLayout * _lockupLayout;
+    SKUICellLayoutView * _lockupView;
+    UIColor * _offerNoticeTextColor;
+    SKUITextBoxView * _textBoxView;
+    unsigned int  _visibleFields;
 }
 
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
 @property (nonatomic) int layoutStyle;
 @property (nonatomic, readonly) SKUILockupItemCellLayout *lockupCellLayout;
 @property (nonatomic, readonly) SKUITextBoxView *textBoxView;
@@ -36,7 +36,7 @@
 - (id)_lockupView;
 - (BOOL)_showsItemOfferUnderEditorial;
 - (void)applyEditorialLayout:(id)arg1 withOrientation:(int)arg2;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (id)iconImage;
 - (id)iconImageView;
 - (BOOL)isIconImageHidden;
@@ -50,7 +50,7 @@
 - (void)setBackgroundColor:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setColoringWithColorScheme:(id)arg1;
-- (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setContentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setIconImage:(id)arg1;
 - (void)setIconImageHidden:(BOOL)arg1;
 - (void)setItemOffer:(id)arg1;

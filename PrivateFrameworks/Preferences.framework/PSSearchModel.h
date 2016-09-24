@@ -3,28 +3,28 @@
  */
 
 @interface PSSearchModel : NSObject <PSSearchIndexOperationDelegate, PSSearchOperationDelegate, PSSpecifierObserver> {
-    PSSearchOperation *_activeSearchOperation;
-    NSString *_currentQuery;
-    PSSearchResults *_currentResults;
-    <PSSearchModelDataSource> *_dataSource;
-    NSMutableArray *_deferredSpecifierUpdates;
-    NSMutableSet *_delegates;
-    NSMutableSet *_entriesBeingIndexed;
-    NSMutableSet *_entriesPendingSearch;
-    BOOL _hasLoadedRootEntries;
-    BOOL _hasStartedIndexing;
-    NSOperationQueue *_indexOperationQueue;
-    BOOL _indexing;
-    NSMutableSet *_indexingEntriesWithLoadedDataSources;
-    NSString *_queryForCurrentResults;
-    NSMutableSet *_removedEntriesStillIndexing;
-    NSMutableSet *_removedEntriesStillSearching;
-    NSMutableArray *_rootEntries;
-    NSOperationQueue *_searchOperationQueue;
-    NSObject<OS_dispatch_queue> *_searchStateAccessQueue;
-    BOOL _showSectionInDetailText;
-    NSMapTable *_specifierDataSources;
-    BOOL _waitUntilFinished;
+    PSSearchOperation * _activeSearchOperation;
+    NSString * _currentQuery;
+    PSSearchResults * _currentResults;
+    <PSSearchModelDataSource> * _dataSource;
+    NSMutableArray * _deferredSpecifierUpdates;
+    NSMutableSet * _delegates;
+    NSMutableSet * _entriesBeingIndexed;
+    NSMutableSet * _entriesPendingSearch;
+    BOOL  _hasLoadedRootEntries;
+    BOOL  _hasStartedIndexing;
+    NSOperationQueue * _indexOperationQueue;
+    BOOL  _indexing;
+    NSMutableSet * _indexingEntriesWithLoadedDataSources;
+    NSString * _queryForCurrentResults;
+    NSMutableSet * _removedEntriesStillIndexing;
+    NSMutableSet * _removedEntriesStillSearching;
+    NSMutableArray * _rootEntries;
+    NSOperationQueue * _searchOperationQueue;
+    NSObject<OS_dispatch_queue> * _searchStateAccessQueue;
+    BOOL  _showSectionInDetailText;
+    NSMapTable * _specifierDataSources;
+    BOOL  _waitUntilFinished;
 }
 
 @property (retain) PSSearchOperation *activeSearchOperation;

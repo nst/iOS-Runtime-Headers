@@ -3,10 +3,10 @@
  */
 
 @interface TSDFPSCACounter : TSDFPSCounter {
-    BOOL _shouldRunTimer;
-    unsigned int mCAFrameCount;
-    unsigned int mMaxFrameDelta;
-    NSTimer *mTimer;
+    unsigned int  _CAFrameCount;
+    unsigned int  _maxFrameDelta;
+    BOOL  _shouldRunTimer;
+    NSTimer * _timer;
 }
 
 @property (nonatomic) BOOL shouldRunTimer;

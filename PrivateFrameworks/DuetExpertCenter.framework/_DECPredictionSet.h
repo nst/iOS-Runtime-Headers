@@ -3,7 +3,7 @@
  */
 
 @interface _DECPredictionSet : NSObject {
-    NSMutableDictionary *_predictionSet;
+    NSMutableDictionary * _predictionSet;
 }
 
 @property (getter=allValues, nonatomic, readonly) NSArray *allValues;

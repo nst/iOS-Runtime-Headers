@@ -3,8 +3,8 @@
  */
 
 @interface GKRouter : NSObject {
-    NSMutableArray *_handlers;
-    NSMutableArray *_routes;
+    NSMutableArray * _handlers;
+    NSMutableArray * _routes;
 }
 
 - (void)dealloc;

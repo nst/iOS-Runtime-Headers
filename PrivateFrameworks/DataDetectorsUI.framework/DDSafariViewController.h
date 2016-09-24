@@ -3,14 +3,14 @@
  */
 
 @interface DDSafariViewController : SFSafariViewController {
-    NSArray *_ddActions;
+    NSArray * _ddActions;
 }
 
 @property (nonatomic, retain) NSArray *ddActions;
 
 - (void).cxx_destruct;
 - (id)ddActions;
-- (id)previewMenuItems;
+- (id)previewActionItems;
 - (void)setDdActions:(id)arg1;
 
 @end

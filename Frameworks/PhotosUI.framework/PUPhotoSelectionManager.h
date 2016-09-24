@@ -3,12 +3,12 @@
  */
 
 @interface PUPhotoSelectionManager : NSObject <NSCopying> {
-    <PHAssetCollectionDataSource> *_dataSource;
-    <PUPhotoSelectionManagerDelegate> *_delegate;
-    int _options;
-    int _selectionChangeCount;
-    NSMapTable *_selectionEntriesByAssetCollection;
-    NSMutableSet *_uniqueAssetSelection;
+    <PHAssetCollectionDataSource> * _dataSource;
+    <PUPhotoSelectionManagerDelegate> * _delegate;
+    int  _options;
+    int  _selectionChangeCount;
+    NSMapTable * _selectionEntriesByAssetCollection;
+    NSMutableSet * _uniqueAssetSelection;
 }
 
 @property (nonatomic) <PHAssetCollectionDataSource> *dataSource;
@@ -17,6 +17,7 @@
 @property (nonatomic, readonly) NSOrderedSet *orderedSelectedAssets;
 @property (nonatomic, readonly) NSSet *selectedAssets;
 @property (nonatomic, readonly) NSDictionary *selectedAssetsByAssetCollection;
+@property (nonatomic, readonly) PXSelectionSnapshot *selectionSnapshot;
 
 - (void).cxx_destruct;
 - (void)_beginSelectionChange;
@@ -50,6 +51,7 @@
 - (id)selectedAssets;
 - (id)selectedAssetsByAssetCollection;
 - (id)selectedAssetsWithAssetCollectionOrdering:(id)arg1;
+- (id)selectionSnapshot;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 

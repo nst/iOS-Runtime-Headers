@@ -3,28 +3,28 @@
  */
 
 @interface PUAssetDisplayDescriptorNavigationRequest : NSObject <PUBrowsingViewModelChangeObserver> {
-    BOOL __arrived;
-    PUAssetReference *__foundTargetAssetReference;
-    BOOL __isPerformingChanges;
-    BOOL __isUpdating;
-    BOOL __needsUpdateArrived;
-    BOOL __needsUpdateDone;
-    BOOL __needsUpdateFoundTargetAssetReference;
-    BOOL __seeked;
-    BOOL __timedOut;
-    id /* block */ _completionHandler;
-    BOOL _hasSeenContentChange;
-    PUAssetReference *_targetAssetReference;
-    NSDate *_targetModificationDate;
+    BOOL  __arrived;
+    PUAssetReference * __foundTargetAssetReference;
+    BOOL  __isPerformingChanges;
+    BOOL  __isUpdating;
+    BOOL  __needsUpdateArrived;
+    BOOL  __needsUpdateDone;
+    BOOL  __needsUpdateFoundTargetAssetReference;
+    BOOL  __seeked;
+    BOOL  __timedOut;
+    id /* block */  _completionHandler;
+    BOOL  _hasSeenContentChange;
+    PUAssetReference * _targetAssetReference;
+    NSDate * _targetModificationDate;
     struct { 
-        long long value; 
+        int value; 
         int timescale; 
         unsigned int flags; 
-        long long epoch; 
-    } _targetSeekTime;
-    double _timeOut;
-    NSTimer *_timeOutTimer;
-    PUBrowsingViewModel *_viewModel;
+        int epoch; 
+    }  _targetSeekTime;
+    double  _timeOut;
+    NSTimer * _timeOutTimer;
+    PUBrowsingViewModel * _viewModel;
 }
 
 @property (setter=_setArrived:, nonatomic) BOOL _arrived;
@@ -43,7 +43,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) PUAssetReference *targetAssetReference;
 @property (nonatomic, retain) NSDate *targetModificationDate;
-@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } targetSeekTime;
+@property (nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } targetSeekTime;
 @property (nonatomic) double timeOut;
 @property (nonatomic, retain) PUBrowsingViewModel *viewModel;
 
@@ -90,12 +90,12 @@
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setTargetAssetReference:(id)arg1;
 - (void)setTargetModificationDate:(id)arg1;
-- (void)setTargetSeekTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setTargetSeekTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
 - (void)setTimeOut:(double)arg1;
 - (void)setViewModel:(id)arg1;
 - (id)targetAssetReference;
 - (id)targetModificationDate;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })targetSeekTime;
+- (struct { int x1; int x2; unsigned int x3; int x4; })targetSeekTime;
 - (double)timeOut;
 - (id)viewModel;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;

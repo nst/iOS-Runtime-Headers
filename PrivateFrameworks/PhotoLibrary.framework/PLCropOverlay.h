@@ -3,49 +3,49 @@
  */
 
 @interface PLCropOverlay : UIView {
-    PLCropOverlayBottomBar *__bottomBar;
-    UIButton *__cameraCancelButton;
-    UIImageView *_bottomShineView;
-    PLContactPhotoOverlay *_contactPhotoOverlay;
-    unsigned int _controlsAreVisible;
+    PLCropOverlayBottomBar * __bottomBar;
+    UIButton * __cameraCancelButton;
+    UIImageView * _bottomShineView;
+    PLContactPhotoOverlay * _contactPhotoOverlay;
+    unsigned int  _controlsAreVisible;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _cropRect;
-    unsigned int _cropRectIsVisible;
-    PLCropOverlayCropView *_cropView;
-    UIToolbar *_customToolbar;
-    NSString *_defaultOKButtonTitle;
-    id _delegate;
-    BOOL _displayedInPopover;
-    PLProgressHUD *_hud;
-    BOOL _isEditingHomeScreen;
-    BOOL _isEditingLockScreen;
-    int _mode;
-    BOOL _motionToggleIsOn;
-    unsigned int _offsetStatusBar;
-    UIButton *_okButton;
-    UIView *_overlayContainerView;
-    unsigned int _previewMode;
-    UIImageView *_shadowView;
-    unsigned int _showsCropRegion;
-    float _statusBarHeight;
-    UILabel *_titleLabel;
-    unsigned int _tookPhoto;
-    UIImageView *_topShineView;
-    UIView *_wildcatPickerBottomView;
-    UIView *_wildcatPickerTopView;
+    }  _cropRect;
+    unsigned int  _cropRectIsVisible;
+    PLCropOverlayCropView * _cropView;
+    UIToolbar * _customToolbar;
+    NSString * _defaultOKButtonTitle;
+    id  _delegate;
+    BOOL  _displayedInPopover;
+    PLProgressHUD * _hud;
+    BOOL  _isEditingHomeScreen;
+    BOOL  _isEditingLockScreen;
+    int  _mode;
+    BOOL  _motionToggleIsOn;
+    unsigned int  _offsetStatusBar;
+    UIButton * _okButton;
+    UIView * _overlayContainerView;
+    unsigned int  _previewMode;
+    UIImageView * _shadowView;
+    unsigned int  _showsCropRegion;
+    double  _statusBarHeight;
+    UILabel * _titleLabel;
+    unsigned int  _tookPhoto;
+    UIImageView * _topShineView;
+    UIView * _wildcatPickerBottomView;
+    UIView * _wildcatPickerTopView;
 }
 
 @property (nonatomic, readonly) PLCropOverlayBottomBar *_bottomBar;
 @property (nonatomic, readonly) UIButton *_cameraCancelButton;
-@property (nonatomic, retain) CMKBottomBar *cameraBottomBar;
+@property (nonatomic, retain) UIView *cameraBottomBar;
 @property (nonatomic, readonly) PLContactPhotoOverlay *contactPhotoOverlay;
 @property (nonatomic, copy) NSString *defaultOKButtonTitle;
 @property (getter=isDisplayedInPopover, nonatomic) BOOL displayedInPopover;
@@ -61,8 +61,7 @@
 - (id)_cameraCancelButton;
 - (void)_createCropView;
 - (void)_fadeOutCompleted:(id)arg1;
-- (id)_irisView;
-- (id)_newOverlayViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 lighterEdgeOnTop:(BOOL)arg2;
+- (id)_newOverlayViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 lighterEdgeOnTop:(BOOL)arg2;
 - (void)_pauseButtonPressed:(id)arg1;
 - (void)_playButtonPressed:(id)arg1;
 - (void)_savePhotoFinished:(id)arg1;
@@ -74,7 +73,7 @@
 - (void)_tappedBottomBarSetBothButton;
 - (void)_tappedBottomBarSetHomeButton;
 - (void)_tappedBottomBarSetLockButton;
-- (void)_updateCropRectInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_updateCropRectInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_updateEditImageDoneButtonTitle;
 - (void)_updateMotionToggle;
 - (void)_updateTitle;
@@ -82,14 +81,14 @@
 - (void)_updateWallpaperBottomBarSettingButtons;
 - (void)beginBackgroundSaveWithTile:(id)arg1 progressTitle:(id)arg2 completionCallbackTarget:(id)arg3 options:(int)arg4;
 - (id)bottomBar;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bottomBarFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bottomBarFrame;
 - (id)cameraBottomBar;
 - (void)cancelButtonClicked:(id)arg1;
 - (id)contactPhotoOverlay;
 - (BOOL)controlsAreVisible;
 - (void)cropOverlayBottomBarPauseButtonClicked:(id)arg1;
 - (void)cropOverlayBottomBarPlayButtonClicked:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cropRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRect;
 - (void)dealloc;
 - (id)defaultOKButtonTitle;
 - (void)didCapturePhoto;
@@ -97,10 +96,10 @@
 - (void)didPauseVideo;
 - (void)didPlayVideo;
 - (void)dismiss;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 mode:(int)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 mode:(int)arg2 offsettingStatusBar:(BOOL)arg3;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 mode:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 mode:(int)arg2 offsettingStatusBar:(BOOL)arg3;
 - (void)insertIrisView:(id)arg1;
 - (BOOL)isDisplayedInPopover;
 - (BOOL)isEditingHomeScreen;
@@ -137,7 +136,7 @@
 - (void)setTitle:(id)arg1 okButtonTitle:(id)arg2;
 - (void)setTitleHidden:(BOOL)arg1 animationDuration:(float)arg2;
 - (void)statusBarHeightDidChange:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })titleRect;
 - (id)wallpaperBottomBar;
 
 @end

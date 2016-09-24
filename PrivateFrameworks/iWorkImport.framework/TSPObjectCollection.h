@@ -3,7 +3,7 @@
  */
 
 @interface TSPObjectCollection : TSPObject {
-    NSArray *_objects;
+    NSArray * _objects;
 }
 
 @property (nonatomic, readonly) NSArray *objects;

@@ -3,15 +3,15 @@
  */
 
 @interface MFMailComposeContactsSearchController : NSObject <MFContactsSearchConsumer> {
-    NSMutableArray *_autocompleteSearchResults;
-    NSMutableArray *_corecipientSearchResults;
-    NSNumber *_corecipientSearchTaskID;
-    <MFMailComposeContactsSearchControllerDelegate> *_delegate;
-    BOOL _foundAnySearchResults;
-    MFContactsSearchManager *_manager;
-    MFContactsSearchResultsModel *_model;
-    NSNumber *_taskID;
-    unsigned int _waitingOnSearchResultsCount;
+    NSMutableArray * _autocompleteSearchResults;
+    NSMutableArray * _corecipientSearchResults;
+    NSNumber * _corecipientSearchTaskID;
+    <MFMailComposeContactsSearchControllerDelegate> * _delegate;
+    BOOL  _foundAnySearchResults;
+    MFContactsSearchManager * _manager;
+    MFContactsSearchResultsModel * _model;
+    NSNumber * _taskID;
+    unsigned int  _waitingOnSearchResultsCount;
 }
 
 @property (readonly, copy) NSString *debugDescription;

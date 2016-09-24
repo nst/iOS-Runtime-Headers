@@ -3,19 +3,19 @@
  */
 
 @interface SSVPlaybackLeaseRequest : NSObject <NSCopying> {
-    int _actionType;
-    NSData *_certificateData;
-    NSURL *_certificateURL;
-    unsigned long long _kdChannelIdentifier;
-    unsigned long long _kdMovieIdentifier;
-    int _leaseType;
-    NSMutableDictionary *_parameters;
-    BOOL _startsLeaseSession;
-    NSURL *_url;
+    int  _actionType;
+    NSData * _certificateData;
+    NSURL * _certificateURL;
+    unsigned int  _kdChannelIdentifier;
+    unsigned int  _kdMovieIdentifier;
+    int  _leaseType;
+    NSMutableDictionary * _parameters;
+    BOOL  _startsLeaseSession;
+    NSURL * _url;
 }
 
-@property (nonatomic) unsigned long long KDChannelIdentifier;
-@property (getter=_KDMovieIdentifier, setter=_setKDMovieIdentifier:, nonatomic) unsigned long long _KDMovieIdentifier;
+@property (nonatomic) unsigned int KDChannelIdentifier;
+@property (getter=_KDMovieIdentifier, setter=_setKDMovieIdentifier:, nonatomic) unsigned int _KDMovieIdentifier;
 @property (getter=_URL, setter=_setURL:, nonatomic, copy) NSURL *_URL;
 @property (getter=_URLBagKey, nonatomic, readonly, copy) NSString *_URLBagKey;
 @property (getter=_actionParameterValue, nonatomic, readonly, copy) NSString *_actionParameterValue;
@@ -28,8 +28,8 @@
 + (id)_requestWithType:(int)arg1;
 
 - (void).cxx_destruct;
-- (unsigned long long)KDChannelIdentifier;
-- (unsigned long long)_KDMovieIdentifier;
+- (unsigned int)KDChannelIdentifier;
+- (unsigned int)_KDMovieIdentifier;
 - (id)_URL;
 - (id)_URLBagKey;
 - (id)_actionParameterValue;
@@ -41,11 +41,11 @@
 - (int)_leaseType;
 - (void)_setActionType:(int)arg1;
 - (void)_setCertificateData:(id)arg1;
-- (void)_setKDMovieIdentifier:(unsigned long long)arg1;
+- (void)_setKDMovieIdentifier:(unsigned int)arg1;
 - (void)_setURL:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)parameterValues;
-- (void)setKDChannelIdentifier:(unsigned long long)arg1;
+- (void)setKDChannelIdentifier:(unsigned int)arg1;
 - (void)setParameterValues:(id)arg1;
 - (void)setStartsLeaseSession:(BOOL)arg1;
 - (void)setValue:(id)arg1 forParameter:(id)arg2;

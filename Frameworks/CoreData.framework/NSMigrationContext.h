@@ -3,14 +3,14 @@
  */
 
 @interface NSMigrationContext : NSObject {
-    NSMutableDictionary *_byDestinationAssociationTable;
-    NSMutableDictionary *_byMappingByDestinationAssociationTable;
-    NSMutableDictionary *_byMappingBySourceAssociationTable;
-    NSMutableDictionary *_bySourceAssociationTable;
-    NSEntityMapping *_currentMapping;
-    NSPropertyMapping *_currentPropertyMapping;
-    unsigned int _currentStep;
-    NSMigrationManager *_migrationManager;
+    NSMutableDictionary * _byDestinationAssociationTable;
+    NSMutableDictionary * _byMappingByDestinationAssociationTable;
+    NSMutableDictionary * _byMappingBySourceAssociationTable;
+    NSMutableDictionary * _bySourceAssociationTable;
+    NSEntityMapping * _currentMapping;
+    NSPropertyMapping * _currentPropertyMapping;
+    unsigned int  _currentStep;
+    NSMigrationManager * _migrationManager;
 }
 
 @property (retain) NSEntityMapping *currentEntityMapping;

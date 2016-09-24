@@ -3,14 +3,14 @@
  */
 
 @interface GKDiscoveryManager : NSObject {
-    GKDiscoveryBonjour *_bonjour;
-    NSString *_deviceID;
-    NSMutableDictionary *_peers;
-    NSObject<OS_dispatch_queue> *_peersQueue;
-    id /* block */ _playerFoundHandler;
-    NSString *_playerID;
-    id /* block */ _playerLostHandler;
-    id /* block */ _receiveDataHandler;
+    GKDiscoveryBonjour * _bonjour;
+    NSString * _deviceID;
+    NSMutableDictionary * _peers;
+    NSObject<OS_dispatch_queue> * _peersQueue;
+    id /* block */  _playerFoundHandler;
+    NSString * _playerID;
+    id /* block */  _playerLostHandler;
+    id /* block */  _receiveDataHandler;
 }
 
 @property (nonatomic, retain) GKDiscoveryBonjour *bonjour;

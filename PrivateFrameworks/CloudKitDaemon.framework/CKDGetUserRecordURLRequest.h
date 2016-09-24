@@ -3,8 +3,8 @@
  */
 
 @interface CKDGetUserRecordURLRequest : CKDURLRequest {
-    id /* block */ _recordFetchedBlock;
-    CKRecord *_userRecord;
+    id /* block */  _recordFetchedBlock;
+    CKRecord * _userRecord;
 }
 
 @property (nonatomic, copy) id /* block */ recordFetchedBlock;

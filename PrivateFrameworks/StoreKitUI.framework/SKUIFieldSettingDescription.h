@@ -3,9 +3,9 @@
  */
 
 @interface SKUIFieldSettingDescription : SKUISettingDescription <SKUIControllableSettingDescription> {
-    SKUISettingsGroupController *_controller;
-    int _fieldType;
-    NSMutableDictionary *_fieldValues;
+    SKUISettingsGroupController * _controller;
+    int  _fieldType;
+    NSMutableDictionary * _fieldValues;
 }
 
 @property (nonatomic) SKUISettingsGroupController *controller;

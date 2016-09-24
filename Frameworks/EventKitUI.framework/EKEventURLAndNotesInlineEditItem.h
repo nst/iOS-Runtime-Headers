@@ -3,8 +3,8 @@
  */
 
 @interface EKEventURLAndNotesInlineEditItem : EKEventEditItem {
-    EKEventNotesInlineEditItem *_notesEditItem;
-    EKEventURLInlineEditItem *_urlEditItem;
+    EKEventNotesInlineEditItem * _notesEditItem;
+    EKEventURLInlineEditItem * _urlEditItem;
 }
 
 - (void).cxx_destruct;

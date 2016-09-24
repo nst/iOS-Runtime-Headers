@@ -3,24 +3,28 @@
  */
 
 @interface BBResponse : NSObject <NSSecureCoding> {
-    NSString *_actionID;
-    int _actionType;
-    BOOL _activated;
-    NSString *_bulletinID;
-    NSString *_buttonID;
-    NSDictionary *_context;
-    BBAssertion *_lifeAssertion;
-    NSArray *_lifeAssertions;
-    NSString *_originID;
-    NSString *_replyText;
-    id /* block */ _sendBlock;
-    BOOL _sent;
+    unsigned int  _actionActivationMode;
+    int  _actionBehavior;
+    NSString * _actionID;
+    int  _actionType;
+    BOOL  _activated;
+    NSString * _bulletinID;
+    NSString * _buttonID;
+    NSDictionary * _context;
+    BBAssertion * _lifeAssertion;
+    NSArray * _lifeAssertions;
+    NSString * _originID;
+    NSString * _replyText;
+    id /* block */  _sendBlock;
+    BOOL  _sent;
 }
 
+@property (nonatomic) unsigned int actionActivationMode;
+@property (nonatomic) int actionBehavior;
 @property (nonatomic, copy) NSString *actionID;
 @property (nonatomic) int actionType;
 @property (nonatomic) BOOL activated;
-@property (nonatomic, retain) NSString *bulletinID;
+@property (nonatomic, copy) NSString *bulletinID;
 @property (nonatomic, copy) NSString *buttonID;
 @property (nonatomic, copy) NSDictionary *context;
 @property (nonatomic, copy) NSArray *lifeAssertions;
@@ -30,13 +34,15 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
+- (unsigned int)actionActivationMode;
+- (int)actionBehavior;
 - (id)actionID;
 - (int)actionType;
 - (BOOL)activated;
 - (id)bulletinID;
 - (id)buttonID;
 - (id)context;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)lifeAssertions;
@@ -44,6 +50,8 @@
 - (id)replyText;
 - (void)send;
 - (id /* block */)sendBlock;
+- (void)setActionActivationMode:(unsigned int)arg1;
+- (void)setActionBehavior:(int)arg1;
 - (void)setActionID:(id)arg1;
 - (void)setActionType:(int)arg1;
 - (void)setActivated:(BOOL)arg1;

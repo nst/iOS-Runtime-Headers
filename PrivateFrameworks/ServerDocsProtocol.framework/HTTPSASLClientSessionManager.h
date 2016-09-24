@@ -3,8 +3,8 @@
  */
 
 @interface HTTPSASLClientSessionManager : NSObject {
-    HTTPSASLClientSession *_clientSession;
-    DCService *_service;
+    HTTPSASLClientSession * _clientSession;
+    DCService * _service;
 }
 
 @property (nonatomic, retain) HTTPSASLClientSession *clientSession;

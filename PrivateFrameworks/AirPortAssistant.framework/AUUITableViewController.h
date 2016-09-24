@@ -3,7 +3,7 @@
  */
 
 @interface AUUITableViewController : UITableViewController <TableViewManagerDelegate> {
-    TableViewManager *_tableManager;
+    TableViewManager * _tableManager;
 }
 
 @property (nonatomic) <TableViewManagerDelegate> *delegate;

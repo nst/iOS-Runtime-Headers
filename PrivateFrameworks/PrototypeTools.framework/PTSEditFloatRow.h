@@ -3,7 +3,7 @@
  */
 
 @interface PTSEditFloatRow : PTSRow {
-    unsigned int _precision;
+    unsigned int  _precision;
 }
 
 @property (nonatomic) unsigned int precision;

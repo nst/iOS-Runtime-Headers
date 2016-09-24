@@ -3,9 +3,9 @@
  */
 
 @interface _BKSShareTouchesTouchDeliveryPolicy : BKSTouchDeliveryPolicy {
-    NSObject<OS_xpc_object> *_assertionEndpoint;
-    unsigned int _childContextId;
-    unsigned int _hostContextId;
+    NSObject<OS_xpc_object> * _assertionEndpoint;
+    unsigned int  _childContextId;
+    unsigned int  _hostContextId;
 }
 
 @property (nonatomic, readonly) unsigned int childContextId;

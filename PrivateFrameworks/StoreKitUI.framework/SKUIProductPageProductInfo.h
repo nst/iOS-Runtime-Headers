@@ -3,8 +3,8 @@
  */
 
 @interface SKUIProductPageProductInfo : NSObject {
-    NSMutableArray *_labels;
-    NSMutableArray *_values;
+    NSMutableArray * _labels;
+    NSMutableArray * _values;
 }
 
 @property (nonatomic, readonly) int numberOfEntries;

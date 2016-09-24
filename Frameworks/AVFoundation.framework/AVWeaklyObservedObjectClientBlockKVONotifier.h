@@ -3,14 +3,14 @@
  */
 
 @interface AVWeaklyObservedObjectClientBlockKVONotifier : NSObject <AVKVONotifier> {
-    id /* block */ _block;
-    AVCallbackContextRegistry *_callbackContextRegistry;
-    void *_callbackContextToken;
-    NSString *_keyPath;
-    NSObject *_observer;
-    unsigned int _options;
-    NSObject<AVWeakObservable> *_unsafeUnretainedObject;
-    AVWeakReference *_weakReferenceToObject;
+    id /* block */  _block;
+    AVCallbackContextRegistry * _callbackContextRegistry;
+    void * _callbackContextToken;
+    NSString * _keyPath;
+    NSObject * _observer;
+    unsigned int  _options;
+    NSObject<AVWeakObservable> * _unsafeUnretainedObject;
+    AVWeakReference * _weakReferenceToObject;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,8 +3,8 @@
  */
 
 @interface _AFUIAssertingDelayedActionCommand : NSObject {
-    BKSProcessAssertion *_assertion;
-    SAUIDelayedActionCommand *_command;
+    BKSProcessAssertion * _assertion;
+    SAUIDelayedActionCommand * _command;
 }
 
 @property (nonatomic, readonly) BKSProcessAssertion *assertion;

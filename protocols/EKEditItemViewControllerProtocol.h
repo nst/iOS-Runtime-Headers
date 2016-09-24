@@ -12,5 +12,7 @@
 - (void)setEditDelegate:(id <EKEditItemViewControllerDelegate>)arg1;
 - (void)setEditItemShouldBeAskedForInjectableViewController:(BOOL)arg1;
 - (void)setPresentModally:(BOOL)arg1;
+- (void)setUseCustomBackButton:(BOOL)arg1;
+- (BOOL)useCustomBackButton;
 
 @end

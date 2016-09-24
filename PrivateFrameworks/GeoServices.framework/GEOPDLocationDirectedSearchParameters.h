@@ -5,34 +5,47 @@
 @interface GEOPDLocationDirectedSearchParameters : PBCodable <NSCopying> {
     struct { 
         unsigned int maxResults : 1; 
+        unsigned int searchType : 1; 
         unsigned int sortOrder : 1; 
-    } _has;
-    unsigned int _maxResults;
-    GEOLatLng *_searchLocation;
-    NSString *_searchString;
-    int _sortOrder;
-    GEOPDViewportInfo *_viewportInfo;
+    }  _has;
+    unsigned int  _maxResults;
+    GEOPDNearestTransitParameters * _nearestTransitParameters;
+    GEOLatLng * _searchLocation;
+    NSString * _searchString;
+    int  _searchType;
+    int  _sortOrder;
+    PBUnknownFields * _unknownFields;
+    GEOPDViewportInfo * _viewportInfo;
 }
 
 @property (nonatomic) BOOL hasMaxResults;
+@property (nonatomic, readonly) BOOL hasNearestTransitParameters;
 @property (nonatomic, readonly) BOOL hasSearchLocation;
 @property (nonatomic, readonly) BOOL hasSearchString;
+@property (nonatomic) BOOL hasSearchType;
 @property (nonatomic) BOOL hasSortOrder;
 @property (nonatomic, readonly) BOOL hasViewportInfo;
 @property (nonatomic) unsigned int maxResults;
+@property (nonatomic, retain) GEOPDNearestTransitParameters *nearestTransitParameters;
 @property (nonatomic, retain) GEOLatLng *searchLocation;
 @property (nonatomic, retain) NSString *searchString;
+@property (nonatomic) int searchType;
 @property (nonatomic) int sortOrder;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) GEOPDViewportInfo *viewportInfo;
 
+- (int)StringAsSearchType:(id)arg1;
+- (int)StringAsSortOrder:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasMaxResults;
+- (BOOL)hasNearestTransitParameters;
 - (BOOL)hasSearchLocation;
 - (BOOL)hasSearchString;
+- (BOOL)hasSearchType;
 - (BOOL)hasSortOrder;
 - (BOOL)hasViewportInfo;
 - (unsigned int)hash;
@@ -40,17 +53,25 @@
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)maxResults;
 - (void)mergeFrom:(id)arg1;
+- (id)nearestTransitParameters;
 - (BOOL)readFrom:(id)arg1;
 - (id)searchLocation;
 - (id)searchString;
+- (int)searchType;
+- (id)searchTypeAsString:(int)arg1;
 - (void)setHasMaxResults:(BOOL)arg1;
+- (void)setHasSearchType:(BOOL)arg1;
 - (void)setHasSortOrder:(BOOL)arg1;
 - (void)setMaxResults:(unsigned int)arg1;
+- (void)setNearestTransitParameters:(id)arg1;
 - (void)setSearchLocation:(id)arg1;
 - (void)setSearchString:(id)arg1;
+- (void)setSearchType:(int)arg1;
 - (void)setSortOrder:(int)arg1;
 - (void)setViewportInfo:(id)arg1;
 - (int)sortOrder;
+- (id)sortOrderAsString:(int)arg1;
+- (id)unknownFields;
 - (id)viewportInfo;
 - (void)writeTo:(id)arg1;
 

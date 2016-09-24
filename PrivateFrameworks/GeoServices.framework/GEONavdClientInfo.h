@@ -3,8 +3,8 @@
  */
 
 @interface GEONavdClientInfo : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_canonicalName;
-    NSString *_uniqueClientId;
+    NSString * _canonicalName;
+    NSString * _uniqueClientId;
 }
 
 @property (nonatomic, copy) NSString *canonicalName;

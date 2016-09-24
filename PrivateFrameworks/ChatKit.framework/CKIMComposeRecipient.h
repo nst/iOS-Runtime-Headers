@@ -3,20 +3,20 @@
  */
 
 @interface CKIMComposeRecipient : MFComposeRecipient <CKIMComposeRecipient> {
-    IMHandle *_handle;
+    IMHandle * _handle;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly, retain) IMHandle *handle;
+@property (nonatomic, readonly) IMHandle *handle;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)address;
 - (id)commentedAddress;
 - (id)compositeName;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)displayString;
 - (id)handle;
 - (unsigned int)hash;

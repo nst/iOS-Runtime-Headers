@@ -3,8 +3,8 @@
  */
 
 @interface MFWebKitMainThread : NSObject {
-    struct __CFDictionary { } *_visibleDict;
-    MFLock *_visibleDictLock;
+    struct __CFDictionary { } * _visibleDict;
+    MFLock * _visibleDictLock;
 }
 
 + (id)sharedInstance;

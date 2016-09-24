@@ -3,29 +3,23 @@
  */
 
 @interface SGDaemonConnection : NSObject {
-    int _abortCounter;
-    int _abortLock;
-    NSMutableDictionary *_aborts;
-    NSObject<OS_dispatch_queue> *_connectLock;
-    int _disconnectCount;
-    NSString *_machServiceName;
-    NSMutableSet *_outstandingAsyncCallbacks0;
-    NSMutableSet *_outstandingAsyncCallbacks1;
-    int _outstandingAsyncCallbacksLock;
-    NSXPCConnection *_xpcConnection;
-    NSXPCInterface *_xpcInterface;
+    NSMutableArray * _abortBlocks;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
+    }  _abortLock;
+    NSObject<OS_dispatch_queue> * _connectLock;
+    NSString * _machServiceName;
+    NSXPCConnection * _xpcConnection;
+    NSXPCInterface * _xpcInterface;
 }
 
 - (void).cxx_destruct;
-- (void)_cancelAllOutstandingAsyncCallbacks;
 - (void)_connectToServer;
-- (BOOL)addOutstandingAsyncCallback0:(id /* block */)arg1;
-- (BOOL)addOutstandingAsyncCallback1:(id /* block */)arg1;
+- (void)addConnectionInterruptedHandler:(id /* block */)arg1;
 - (void)dealloc;
 - (void)disconnect;
 - (id)initWithMachServiceName:(id)arg1 xpcInterface:(id)arg2;
-- (BOOL)removeOutstandingAsyncCallback0:(id /* block */)arg1;
-- (BOOL)removeOutstandingAsyncCallback1:(id /* block */)arg1;
 - (id)waitUntilReturn:(id /* block */)arg1 error:(id*)arg2;
 - (id)xpcConnection;
 

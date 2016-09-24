@@ -3,8 +3,8 @@
  */
 
 @interface IKCSSParseDeclaration : IKCSSParseObject {
-    BOOL _important;
-    NSString *_name;
+    BOOL  _important;
+    NSString * _name;
 }
 
 @property (nonatomic) BOOL important;

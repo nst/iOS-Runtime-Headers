@@ -3,37 +3,37 @@
  */
 
 @interface QLPreviewParts : NSObject {
-    NSURLConnection *_connection;
-    void *_convertFunction;
-    NSData *_data;
-    id _delegate;
-    NSString *_fileName;
-    int _pageCount;
-    float _pageHeight;
-    float _pageWidth;
-    NSString *_password;
-    BOOL _progressive;
-    NSURL *_url;
-    NSString *_uti;
-    BOOL cancelled;
-    BOOL computed;
-    NSThread *delegateCallbackThread;
-    NSMutableDictionary *encodingsForURLs;
-    BOOL htmlErrorDisabled;
-    NSError *mainError;
-    NSMutableSet *outstandingURLs;
-    NSURLResponse *previewResponse;
-    NSURL *previewURL;
-    NSMutableSet *registeredURLs;
-    const void *representedObject;
+    NSURLConnection * _connection;
+    void * _convertFunction;
+    NSData * _data;
+    id  _delegate;
+    NSString * _fileName;
+    int  _pageCount;
+    double  _pageHeight;
+    double  _pageWidth;
+    NSString * _password;
+    BOOL  _progressive;
+    NSURL * _url;
+    NSString * _uti;
+    BOOL  cancelled;
+    BOOL  computed;
+    NSThread * delegateCallbackThread;
+    NSMutableDictionary * encodingsForURLs;
+    BOOL  htmlErrorDisabled;
+    NSError * mainError;
+    NSMutableSet * outstandingURLs;
+    NSURLResponse * previewResponse;
+    NSURL * previewURL;
+    NSMutableSet * registeredURLs;
+    const void * representedObject;
     struct { 
         int version; 
         int (*retain)(); 
         int (*release)(); 
         int (*copyDescription)(); 
         int (*equal)(); 
-    } representedObjectCallbacks;
-    long representedObjectProtection;
+    }  representedObjectCallbacks;
+    long  representedObjectProtection;
 }
 
 @property (nonatomic, readonly) NSSet *attachmentURLs;
@@ -45,8 +45,8 @@
 @property (nonatomic, retain) NSString *fileName;
 @property BOOL htmlErrorDisabled;
 @property (readonly) int pageCount;
-@property (readonly) float pageHeight;
-@property (readonly) float pageWidth;
+@property (readonly) double pageHeight;
+@property (readonly) double pageWidth;
 @property (nonatomic, retain) NSString *password;
 @property (nonatomic, readonly) NSURLRequest *previewRequest;
 @property (nonatomic, readonly) NSURLResponse *previewResponse;
@@ -62,6 +62,7 @@
 + (id)safeURLScheme;
 + (void)unregisterPreview:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_discardRepresentedObjectSafely;
 - (void)_protectRepresentedObjectSafely;
 - (void)_registerURL:(id)arg1 mimeType:(id)arg2 textEncoding:(id)arg3;

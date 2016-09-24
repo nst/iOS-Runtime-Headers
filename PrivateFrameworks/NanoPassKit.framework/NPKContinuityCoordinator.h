@@ -3,12 +3,12 @@
  */
 
 @interface NPKContinuityCoordinator : NSObject {
-    NSUserActivity *_currentUserActivity;
-    NSUserActivity *_getPaymentPassesUserActivity;
-    NSUserActivity *_individualPassUserActivity;
-    NSUserActivity *_passListUserActivity;
-    NSUserActivity *_provisionPassUserActivity;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSUserActivity * _currentUserActivity;
+    NSUserActivity * _getPaymentPassesUserActivity;
+    NSUserActivity * _individualPassUserActivity;
+    NSUserActivity * _passListUserActivity;
+    NSUserActivity * _provisionPassUserActivity;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic) NSUserActivity *currentUserActivity;

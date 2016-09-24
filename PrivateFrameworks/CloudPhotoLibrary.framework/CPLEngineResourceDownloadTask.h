@@ -3,19 +3,19 @@
  */
 
 @interface CPLEngineResourceDownloadTask : CPLResourceTransferTask {
-    BOOL _backgroundTask;
-    id /* block */ _cancelHandler;
-    BOOL _cancelledByEngine;
-    NSString *_clientBundleID;
-    CPLResource *_cloudResource;
-    id /* block */ _completionHandler;
-    id /* block */ _didStartHandler;
-    id /* block */ _launchHandler;
-    id /* block */ _progressHandler;
-    unsigned int _taskIdentifierForQueue;
-    BOOL _transportOwnsTask;
-    <CPLEngineTransportTask> *_transportTask;
-    BOOL _wantsTransportTask;
+    BOOL  _backgroundTask;
+    id /* block */  _cancelHandler;
+    BOOL  _cancelledByEngine;
+    NSString * _clientBundleID;
+    CPLResource * _cloudResource;
+    id /* block */  _completionHandler;
+    id /* block */  _didStartHandler;
+    id /* block */  _launchHandler;
+    id /* block */  _progressHandler;
+    unsigned int  _taskIdentifierForQueue;
+    BOOL  _transportOwnsTask;
+    <CPLEngineTransportTask> * _transportTask;
+    BOOL  _wantsTransportTask;
 }
 
 @property (getter=isBackgroundTask, nonatomic) BOOL backgroundTask;

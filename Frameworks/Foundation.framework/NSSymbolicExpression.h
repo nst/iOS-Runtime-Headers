@@ -3,7 +3,7 @@
  */
 
 @interface NSSymbolicExpression : NSExpression {
-    NSString *_token;
+    NSString * _token;
 }
 
 + (BOOL)supportsSecureCoding;

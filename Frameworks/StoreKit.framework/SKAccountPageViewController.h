@@ -3,12 +3,12 @@
  */
 
 @interface SKAccountPageViewController : UIViewController {
-    NSURL *_accountURL;
-    _UIAsyncInvocation *_cancelRequest;
-    <SKAccountPageViewControllerDelegate> *_delegate;
-    id /* block */ _prepareBlock;
-    SKRemoteAccountPageViewController *_remoteViewController;
-    SKInvocationQueueProxy<SKUIServiceAccountPageViewController> *_serviceProxy;
+    NSURL * _accountURL;
+    _UIAsyncInvocation * _cancelRequest;
+    <SKAccountPageViewControllerDelegate> * _delegate;
+    id /* block */  _prepareBlock;
+    SKRemoteAccountPageViewController * _remoteViewController;
+    SKInvocationQueueProxy<SKUIServiceAccountPageViewController> * _serviceProxy;
 }
 
 @property (nonatomic) <SKAccountPageViewControllerDelegate> *delegate;

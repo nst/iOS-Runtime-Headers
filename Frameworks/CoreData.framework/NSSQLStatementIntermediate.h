@@ -3,12 +3,12 @@
  */
 
 @interface NSSQLStatementIntermediate : NSSQLIntermediate {
-    NSString *_correlationToken;
-    NSString *_governingAlias;
-    NSSQLEntity *_governingEntity;
-    NSSQLLimitIntermediate *_limitClause;
-    NSSQLOrderIntermediate *_orderIntermediate;
-    NSSQLWhereIntermediate *_whereClause;
+    NSString * _correlationToken;
+    NSString * _governingAlias;
+    NSSQLEntity * _governingEntity;
+    NSSQLLimitIntermediate * _limitClause;
+    NSSQLOrderIntermediate * _orderIntermediate;
+    NSSQLWhereIntermediate * _whereClause;
 }
 
 - (void)dealloc;

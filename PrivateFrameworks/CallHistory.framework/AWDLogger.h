@@ -3,7 +3,7 @@
  */
 
 @interface AWDLogger : CHLogger {
-    AWDServerConnection *_awdServer;
+    AWDServerConnection * _awdServer;
 }
 
 @property (nonatomic, retain) AWDServerConnection *awdServer;

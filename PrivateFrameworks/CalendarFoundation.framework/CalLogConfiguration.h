@@ -3,8 +3,8 @@
  */
 
 @interface CalLogConfiguration : NSObject {
-    NSString *_name;
-    NSMutableArray *_nodes;
+    NSString * _name;
+    NSMutableArray * _nodes;
 }
 
 @property (nonatomic, retain) NSString *name;

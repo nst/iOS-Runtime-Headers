@@ -3,19 +3,19 @@
  */
 
 @interface PHCollectionList : PHCollection {
-    id /* block */ _childCollectionsSortingComparator;
-    int _collectionListSubtype;
-    int _collectionListType;
-    NSArray *_collections;
-    NSDate *_endDate;
-    unsigned int _estimatedChildCollectionCount;
-    NSArray *_localizedLocationNames;
-    NSString *_localizedTitle;
-    int _plAlbumKind;
-    PHQuery *_query;
-    NSDate *_startDate;
-    NSString *_transientIdentifier;
-    unsigned int _unreadAssetCollectionsCount;
+    id /* block */  _childCollectionsSortingComparator;
+    int  _collectionListSubtype;
+    int  _collectionListType;
+    NSArray * _collections;
+    NSDate * _endDate;
+    unsigned int  _estimatedChildCollectionCount;
+    NSArray * _localizedLocationNames;
+    NSString * _localizedTitle;
+    int  _plAlbumKind;
+    PHQuery * _query;
+    NSDate * _startDate;
+    NSString * _transientIdentifier;
+    unsigned int  _unreadAssetCollectionsCount;
 }
 
 @property (nonatomic, readonly, copy) id /* block */ childCollectionsSortingComparator;
@@ -24,6 +24,7 @@
 @property (nonatomic, readonly) NSArray *collections;
 @property (nonatomic, readonly) NSDate *endDate;
 @property (nonatomic, readonly) unsigned int estimatedChildCollectionCount;
+@property (nonatomic, readonly) BOOL keyCollectionsAtEnd;
 @property (nonatomic, readonly) NSArray *localizedLocationNames;
 @property (nonatomic, readonly) PHQuery *query;
 @property (nonatomic, readonly) NSDate *startDate;
@@ -34,11 +35,13 @@
 + (id)fetchCollectionListsContainingCollection:(id)arg1 options:(id)arg2;
 + (id)fetchCollectionListsWithCloudIdentifiers:(id)arg1 options:(id)arg2;
 + (id)fetchCollectionListsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
++ (id)fetchCollectionListsWithType:(int)arg1 localIdentifiers:(id)arg2 options:(id)arg3;
 + (id)fetchCollectionListsWithType:(int)arg1 subtype:(int)arg2 options:(id)arg3;
 + (id)fetchMomentListsWithSubtype:(int)arg1 containingMoment:(id)arg2 options:(id)arg3;
 + (id)fetchMomentListsWithSubtype:(int)arg1 options:(id)arg2;
 + (id)fetchPredicateFromComparisonPredicate:(id)arg1 options:(id)arg2;
 + (id)fetchRootAlbumCollectionListWithOptions:(id)arg1;
++ (id)fetchType;
 + (id)identifierCode;
 + (id)managedEntityName;
 + (BOOL)managedObjectSupportsTrashedState;
@@ -57,6 +60,7 @@
 - (BOOL)canPerformEditOperation:(int)arg1;
 - (Class)changeRequestClass;
 - (id /* block */)childCollectionsSortingComparator;
+- (unsigned int)collectionFixedOrderPriority;
 - (BOOL)collectionHasFixedOrder;
 - (int)collectionListSubtype;
 - (int)collectionListType;
@@ -66,6 +70,7 @@
 - (unsigned int)estimatedChildCollectionCount;
 - (id)initTransientWithCollections:(id)arg1 orQuery:(id)arg2 title:(id)arg3 identifier:(id)arg4;
 - (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;
+- (BOOL)keyCollectionsAtEnd;
 - (id)localizedLocationNames;
 - (id)localizedTitle;
 - (id)pl_assetContainerList;

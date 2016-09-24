@@ -3,8 +3,8 @@
  */
 
 @interface SKUIMediaSocialAdminPermissionsOperation : SSVComplexOperation {
-    SKUIClientContext *_clientContext;
-    id /* block */ _outputBlock;
+    SKUIClientContext * _clientContext;
+    id /* block */  _outputBlock;
 }
 
 @property (copy) id /* block */ outputBlock;

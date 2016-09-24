@@ -3,7 +3,7 @@
  */
 
 @interface DMFFetchInstalledApplicationsRequest : CATTaskRequest {
-    NSArray *_bundleIdentifiers;
+    NSArray * _bundleIdentifiers;
 }
 
 @property (nonatomic, copy) NSArray *bundleIdentifiers;

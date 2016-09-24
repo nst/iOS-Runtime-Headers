@@ -3,12 +3,12 @@
  */
 
 @interface UIKeyCommandDiscoverabilityHUDVisualStyleCompact : UIKeyCommandDiscoverabilityHUDVisualStyleRegular {
-    UIFont *_summaryFont;
+    UIFont * _summaryFont;
 }
 
 - (void).cxx_destruct;
 - (float)HUDPageControlBottomMargin;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })HUDViewInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })HUDViewInsets;
 - (float)maxHUDWidthForWidth:(float)arg1;
 - (float)summaryDescriptionToModifiersSpacing;
 - (id)summaryFont;

@@ -3,8 +3,8 @@
  */
 
 @interface PUSearchModalTransition : PUModalTransition {
-    PUPhotosGridViewController *_searchResultsViewController;
-    PUSearchViewController *_searchViewController;
+    PUPhotosGridViewController * _searchResultsViewController;
+    PUSearchViewController * _searchViewController;
 }
 
 @property (nonatomic, retain) PUPhotosGridViewController *searchResultsViewController;

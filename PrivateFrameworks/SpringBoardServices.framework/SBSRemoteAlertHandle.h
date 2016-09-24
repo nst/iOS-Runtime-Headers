@@ -3,11 +3,11 @@
  */
 
 @interface SBSRemoteAlertHandle : NSObject <SBSRemoteAlertClientHandle> {
-    BOOL _active;
-    SBSRemoteAlertClient *_client;
-    NSHashTable *_observers;
-    NSObject<OS_dispatch_queue> *_queue;
-    BSMachPortSendRight *_token;
+    BOOL  _active;
+    SBSRemoteAlertClient * _client;
+    NSHashTable * _observers;
+    NSObject<OS_dispatch_queue> * _queue;
+    BSMachPortSendRight * _token;
 }
 
 @property (getter=isActive, nonatomic, readonly) BOOL active;

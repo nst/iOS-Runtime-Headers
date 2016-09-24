@@ -10,7 +10,7 @@
 @property (nonatomic) int displayStyle;
 @property (nonatomic) BOOL hasAdditionalChildNodes;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic) long long nodeID;
+@property (nonatomic) int nodeID;
 @property (nonatomic, copy) NSDictionary *stationDictionary;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -20,7 +20,7 @@
 - (void)setDisplayStyle:(int)arg1;
 - (void)setHasAdditionalChildNodes:(BOOL)arg1;
 - (void)setName:(id)arg1;
-- (void)setNodeID:(long long)arg1;
+- (void)setNodeID:(int)arg1;
 - (void)setStationDictionary:(id)arg1;
 
 @end

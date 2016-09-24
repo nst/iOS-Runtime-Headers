@@ -3,18 +3,18 @@
  */
 
 @interface PUAlbumStreamActivity : PUActivity <PUPhotoStreamComposeServiceDelegate, PUVideoTrimQueueControllerDelegate> {
-    UIViewController *_activityController;
-    <PUAlbumStreamActivityDelegate> *_delegate;
-    BOOL _destinationAlbumWasCreated;
-    NSObject<PLUserEditableAlbumProtocol> *_destinationStreamingAlbum;
-    double _endTime;
-    BOOL _isPresentedFromActivityViewController;
-    PUActivityItemSourceController *_itemSourceController;
-    UIViewController *_presenterViewController;
-    UIViewController *_referenceViewController;
-    double _startTime;
-    PUPhotoStreamComposeServiceViewController *_streamComposeVc;
-    PUVideoTrimQueueController *_trimController;
+    UIViewController * _activityController;
+    <PUAlbumStreamActivityDelegate> * _delegate;
+    BOOL  _destinationAlbumWasCreated;
+    NSObject<PLUserEditableAlbumProtocol> * _destinationStreamingAlbum;
+    double  _endTime;
+    BOOL  _isPresentedFromActivityViewController;
+    PUActivityItemSourceController * _itemSourceController;
+    UIViewController * _presenterViewController;
+    UIViewController * _referenceViewController;
+    double  _startTime;
+    PUPhotoStreamComposeServiceViewController * _streamComposeVc;
+    PUVideoTrimQueueController * _trimController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

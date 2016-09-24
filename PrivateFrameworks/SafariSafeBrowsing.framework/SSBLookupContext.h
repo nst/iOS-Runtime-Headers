@@ -6,8 +6,8 @@
     struct shared_ptr<SafeBrowsing::LookupContext> { 
         struct LookupContext {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _lookupContext;
-    unsigned int _observerToken;
+    }  _lookupContext;
+    unsigned int  _observerToken;
 }
 
 + (id)sharedLookupContext;

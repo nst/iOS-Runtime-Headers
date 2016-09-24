@@ -3,20 +3,20 @@
  */
 
 @interface PKPaymentConfigurationResponse : PKPaymentWebServiceResponse {
-    NSDictionary *_configuration;
-    NSData *_data;
-    NSData *_signature;
-    NSString *_version;
+    NSDictionary * _configuration;
+    NSData * _data;
+    NSData * _signature;
+    NSString * _version;
 }
 
-@property (nonatomic, readonly) NSDictionary *configuration;
-@property (nonatomic, readonly) NSData *data;
-@property (nonatomic, readonly) NSData *signature;
-@property (nonatomic, readonly) NSString *version;
+@property (nonatomic, readonly, copy) NSDictionary *configuration;
+@property (nonatomic, readonly, copy) NSData *data;
+@property (nonatomic, readonly, copy) NSData *signature;
+@property (nonatomic, readonly, copy) NSString *version;
 
+- (void).cxx_destruct;
 - (id)configuration;
 - (id)data;
-- (void)dealloc;
 - (id)initWithData:(id)arg1;
 - (id)signature;
 - (id)version;

@@ -3,9 +3,9 @@
  */
 
 @interface _SYStreamerThread : NSThread {
-    NSConditionLock *_startupLock;
-    struct __CFRunLoopSource { } *_stopRLS;
-    NSRunLoop *_threadRunLoop;
+    NSConditionLock * _startupLock;
+    struct __CFRunLoopSource { } * _stopRLS;
+    NSRunLoop * _threadRunLoop;
 }
 
 @property (nonatomic, readonly) NSRunLoop *runLoop;

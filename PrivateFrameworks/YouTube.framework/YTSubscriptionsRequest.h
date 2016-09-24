@@ -3,12 +3,12 @@
  */
 
 @interface YTSubscriptionsRequest : YTXMLHTTPRequest {
-    id _delegate;
-    int _mode;
-    int _resultsPerPage;
-    int _startIndex;
-    NSMutableArray *_subscriptions;
-    int _totalResults;
+    id  _delegate;
+    int  _mode;
+    int  _resultsPerPage;
+    int  _startIndex;
+    NSMutableArray * _subscriptions;
+    int  _totalResults;
 }
 
 + (id)URLForSubscription:(id)arg1;

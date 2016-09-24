@@ -3,17 +3,17 @@
  */
 
 @interface TSTTableHeaderInfo : NSObject {
-    TSTCellStyle *mCellStyle;
-    unsigned char mHidingState;
-    unsigned short mNumberOfCells;
-    float mSize;
-    TSWPParagraphStyle *mTextStyle;
+    TSTCellStyle * mCellStyle;
+    unsigned char  mHidingState;
+    unsigned short  mNumberOfCells;
+    double  mSize;
+    TSWPParagraphStyle * mTextStyle;
 }
 
 @property (nonatomic, retain) TSTCellStyle *cellStyle;
 @property (nonatomic) unsigned char hidingState;
 @property (nonatomic) unsigned short numberOfCells;
-@property (nonatomic) float size;
+@property (nonatomic) double size;
 @property (nonatomic, retain) TSWPParagraphStyle *textStyle;
 
 - (id)cellStyle;

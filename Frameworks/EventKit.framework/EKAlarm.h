@@ -3,23 +3,22 @@
  */
 
 @interface EKAlarm : EKObject <NSCopying> {
-    NSString *_emailAddress;
-    EKObjectToOneRelation *_locationRelation;
-    NSString *_soundName;
-    int _type;
-    NSURL *_url;
+    NSString * _emailAddress;
+    EKObjectToOneRelation * _locationRelation;
+    NSString * _soundName;
+    int  _type;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly) NSString *UUID;
 @property (nonatomic, copy) NSDate *absoluteDate;
-@property (nonatomic, copy) NSDate *acknowledgedDate;
 @property (nonatomic, retain) EKCalendarItem *calendarItemOwner;
 @property (nonatomic, retain) EKCalendar *calendarOwner;
 @property (getter=isDefaultAlarm, nonatomic) BOOL defaultAlarm;
 @property (nonatomic, copy) NSString *emailAddress;
 @property (nonatomic, readonly) NSString *externalID;
 @property (nonatomic, readonly) BOOL isAbsolute;
-@property (nonatomic, readonly) BOOL isSnoozedAlarm;
+@property (nonatomic) BOOL isSnoozed;
 @property (nonatomic, retain) EKObjectToOneRelation *locationRelation;
 @property (nonatomic, retain) EKAlarm *originalAlarm;
 @property (nonatomic, readonly) EKObject *owner;
@@ -35,6 +34,7 @@
 
 + (int)_currentAuthorizationStatus;
 + (id)alarmWithAbsoluteDate:(id)arg1;
++ (id)alarmWithAlarm:(id)arg1;
 + (id)alarmWithRelativeOffset:(double)arg1;
 + (BOOL)areLocationsAllowed;
 + (BOOL)areLocationsAllowedWithAuthorizationStatus:(int)arg1;
@@ -42,7 +42,9 @@
 + (BOOL)areLocationsCurrentlyEnabled;
 + (double)defaultGeofencedReminderRadius;
 + (int)maxPublicProximity;
++ (id)noneTriggerDate;
 
+- (void).cxx_destruct;
 - (id)UUID;
 - (id)_locationRelation;
 - (id)_originalAlarmRelation;
@@ -54,7 +56,6 @@
 - (id)calendarOwner;
 - (int)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)emailAddress;
 - (id)externalID;
@@ -63,8 +64,10 @@
 - (id)initWithRelativeOffset:(double)arg1;
 - (BOOL)isAbsolute;
 - (BOOL)isDefaultAlarm;
-- (BOOL)isSnoozedAlarm;
+- (BOOL)isSnoozed;
+- (BOOL)isTimeToLeaveAlarm;
 - (BOOL)isTopographicallyEqualToAlarm:(id)arg1;
+- (BOOL)isVehicleAlarm;
 - (id)lazyLoadRelationForKey:(id)arg1;
 - (id)locationRelation;
 - (id)originalAlarm;
@@ -78,6 +81,8 @@
 - (void)setAcknowledgedDate:(id)arg1;
 - (void)setDefaultAlarm:(BOOL)arg1;
 - (void)setEmailAddress:(id)arg1;
+- (void)setIsSnoozed:(BOOL)arg1;
+- (void)setIsTimeToLeaveAlarm:(BOOL)arg1;
 - (void)setLocationRelation:(id)arg1;
 - (void)setOriginalAlarm:(id)arg1;
 - (void)setProximity:(int)arg1;
@@ -85,10 +90,13 @@
 - (void)setSnoozedAlarms:(id)arg1;
 - (void)setSoundName:(id)arg1;
 - (void)setStructuredLocation:(id)arg1;
+- (void)setTriggerIsNotRelativeToTravelTime:(BOOL)arg1;
 - (void)setUrl:(id)arg1;
+- (BOOL)shouldIncludeInNormalAlarms;
 - (id)snoozedAlarms;
 - (id)soundName;
 - (id)structuredLocation;
+- (BOOL)triggerIsNotRelativeToTravelTime;
 - (int)type;
 - (id)url;
 - (BOOL)validate:(id*)arg1;

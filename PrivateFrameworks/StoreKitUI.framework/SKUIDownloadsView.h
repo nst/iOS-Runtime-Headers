@@ -3,8 +3,8 @@
  */
 
 @interface SKUIDownloadsView : UIView {
-    UIView *_contentView;
-    UIView *_overlayView;
+    UIView * _contentView;
+    UIView * _overlayView;
 }
 
 @property (nonatomic, retain) UIView *contentView;

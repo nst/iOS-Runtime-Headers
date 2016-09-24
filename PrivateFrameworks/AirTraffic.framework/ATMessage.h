@@ -3,12 +3,12 @@
  */
 
 @interface ATMessage : NSObject <NSSecureCoding> {
-    NSInputStream *_dataStream;
-    unsigned int _messageID;
-    NSDictionary *_parameters;
-    unsigned int _sessionID;
-    ATCodableStream *_stream;
-    double _timestamp;
+    NSInputStream * _dataStream;
+    unsigned int  _messageID;
+    NSDictionary * _parameters;
+    unsigned int  _sessionID;
+    ATCodableStream * _stream;
+    double  _timestamp;
 }
 
 @property (nonatomic, retain) NSInputStream *dataStream;

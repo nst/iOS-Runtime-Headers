@@ -3,7 +3,7 @@
  */
 
 @interface MusicLibraryCollectionBasedTableViewConfiguration : MusicLibraryBrowseTableViewConfiguration {
-    MusicLibraryBrowseCollectionViewConfiguration *_collectionViewConfiguration;
+    MusicLibraryBrowseCollectionViewConfiguration * _collectionViewConfiguration;
 }
 
 - (void).cxx_destruct;

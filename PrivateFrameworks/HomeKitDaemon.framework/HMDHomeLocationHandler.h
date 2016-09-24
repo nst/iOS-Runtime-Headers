@@ -2,17 +2,22 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDHomeLocationHandler : NSObject <HMDLocationDelegate, HMMessageReceiver, NSSecureCoding> {
-    HMDHome *_home;
-    CLLocation *_location;
-    int _locationAuthorization;
-    NSDate *_locationUpdateTimestamp;
-    HMMessageDispatcher *_msgDispatcher;
-    NSObject<OS_dispatch_queue> *_workQueue;
+@interface HMDHomeLocationHandler : NSObject <HMDLocationDelegate, HMFMessageReceiver, NSSecureCoding> {
+    BOOL  _expectingLocationUpdateForHome;
+    HMDHome * _home;
+    CLLocation * _location;
+    int  _locationAuthorization;
+    NSDate * _locationUpdateTimestamp;
+    HMFMessageDispatcher * _msgDispatcher;
+    CLRegion * _region;
+    BOOL  _shouldEvaluateRegionState;
+    NSTimeZone * _timeZone;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (getter=isExpectingLocationUpdateForHome, nonatomic) BOOL expectingLocationUpdateForHome;
 @property (readonly) unsigned int hash;
 @property (nonatomic) HMDHome *home;
 @property (nonatomic, retain) CLLocation *location;
@@ -20,8 +25,11 @@
 @property (nonatomic, retain) NSDate *locationUpdateTimestamp;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
-@property (nonatomic, retain) HMMessageDispatcher *msgDispatcher;
+@property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
+@property (nonatomic, retain) CLRegion *region;
+@property (nonatomic) BOOL shouldEvaluateRegionState;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) NSTimeZone *timeZone;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 + (BOOL)mergeLocationDataForLocalHome:(id)arg1 withCloudHome:(id)arg2;
@@ -29,39 +37,51 @@
 
 - (void).cxx_destruct;
 - (BOOL)_canExtractLocation;
+- (void)_evaluateHomeRegionState:(id)arg1;
 - (void)_evaluateLocationExtraction;
 - (void)_handleLocationAuthorization:(int)arg1;
 - (void)_handleLocationAuthorizationMessage:(id)arg1;
 - (void)_handleRetrieveLocation:(id)arg1;
 - (BOOL)_needToExtractLocation;
 - (void)_registerForMessages;
+- (void)_registerForRegionUpdate;
 - (void)_saveToLocalstoreWithLocalChange:(BOOL)arg1;
 - (void)_sendLocationUpdate;
 - (void)_setNewlocation:(id)arg1;
 - (void)_updateLocation:(id)arg1;
+- (void)_updateTimeZone:(id)arg1;
 - (void)accessoriesReachabilityStateChanged;
 - (void)accessoryAdded;
 - (void)configure:(id)arg1 queue:(id)arg2 messageDispatcher:(id)arg3;
 - (void)dealloc;
 - (id)description;
 - (void)didDetermineLocation:(id)arg1;
+- (void)didDetermineState:(int)arg1 forRegion:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (void)extractHomeLocation:(id /* block */)arg1;
 - (id)home;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)isExpectingLocationUpdateForHome;
 - (id)location;
 - (int)locationAuthorization;
 - (id)locationUpdateTimestamp;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
 - (id)msgDispatcher;
+- (id)region;
+- (void)setExpectingLocationUpdateForHome:(BOOL)arg1;
 - (void)setHome:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setLocationAuthorization:(int)arg1;
 - (void)setLocationUpdateTimestamp:(id)arg1;
 - (void)setMsgDispatcher:(id)arg1;
+- (void)setRegion:(id)arg1;
+- (void)setShouldEvaluateRegionState:(BOOL)arg1;
+- (void)setTimeZone:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
+- (BOOL)shouldEvaluateRegionState;
+- (id)timeZone;
 - (id)workQueue;
 
 @end

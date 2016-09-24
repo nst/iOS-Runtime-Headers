@@ -3,18 +3,18 @@
  */
 
 @interface CLIndoorXPCProvider : NSObject {
-    NSXPCConnection *_connection;
-    NSObject<OS_dispatch_queue> *_frameworkQueue;
-    NSObject<OS_dispatch_source> *_interruptReconnection;
-    struct optional<std::__1::chrono::time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > > { 
+    NSXPCConnection * _connection;
+    NSObject<OS_dispatch_queue> * _frameworkQueue;
+    NSObject<OS_dispatch_source> * _interruptReconnection;
+    struct optional<std::__1::chrono::time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<int, std::__1::ratio<1, 1000000000> > > > { 
         bool m_initialized; 
-        struct aligned_storage<std::__1::chrono::time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > > { 
+        struct aligned_storage<std::__1::chrono::time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<int, std::__1::ratio<1, 1000000000> > > > { 
             union dummy_u { 
                 BOOL data[8]; 
                 struct a4 { } aligner_; 
             } dummy_; 
         } m_storage; 
-    } _lastReconnectTime;
+    }  _lastReconnectTime;
 }
 
 + (id)newConnectionFor:(id)arg1;
@@ -29,13 +29,13 @@
 - (id)initWithConnection:(id)arg1;
 - (id)initWithEndpoint:(id)arg1;
 - (void)invalidate;
-- (void)withinQueueHandleReconnect:(struct time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > { struct duration<long long, std::__1::ratio<1, 1000000000> > { long long x_1_1_1; } x1; })arg1;
+- (void)withinQueueHandleReconnect:(struct time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<int, std::__1::ratio<1, 1000000000> > > { struct duration<int, std::__1::ratio<1, 1000000000> > { int x_1_1_1; } x1; })arg1;
 - (void)withinQueueInitializeConnection;
 - (void)withinQueueInterruptionHandler;
 - (void)withinQueueInvalidate;
 - (void)withinQueueReconnectInvalidatedConnection;
 - (void)withinQueueReinitializeRemoteState;
-- (void)withinQueueScheduleReconnect:(struct duration<long long, std::__1::ratio<1, 1000000000> > { long long x1; })arg1 reason:(id)arg2 reinitializeConnection:(BOOL)arg3;
-- (int)withinQueueShouldReinitializeRemote:(struct time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > { struct duration<long long, std::__1::ratio<1, 1000000000> > { long long x_1_1_1; } x1; })arg1;
+- (void)withinQueueScheduleReconnect:(struct duration<int, std::__1::ratio<1, 1000000000> > { int x1; })arg1 reason:(id)arg2 reinitializeConnection:(BOOL)arg3;
+- (int)withinQueueShouldReinitializeRemote:(struct time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<int, std::__1::ratio<1, 1000000000> > > { struct duration<int, std::__1::ratio<1, 1000000000> > { int x_1_1_1; } x1; })arg1;
 
 @end

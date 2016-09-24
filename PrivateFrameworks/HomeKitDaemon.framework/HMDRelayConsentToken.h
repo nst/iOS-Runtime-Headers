@@ -3,13 +3,13 @@
  */
 
 @interface HMDRelayConsentToken : NSObject <NSSecureCoding> {
-    HMDAccessory *_accessory;
-    NSUUID *_accessoryIdentifier;
-    NSData *_consentToken;
-    NSDate *_expirationDate;
-    NSUUID *_identifier;
-    HMDUser *_user;
-    NSUUID *_userIdentifier;
+    HMDAccessory * _accessory;
+    NSUUID * _accessoryIdentifier;
+    NSData * _consentToken;
+    NSDate * _expirationDate;
+    NSUUID * _identifier;
+    HMDUser * _user;
+    NSUUID * _userIdentifier;
 }
 
 @property (nonatomic) HMDAccessory *accessory;

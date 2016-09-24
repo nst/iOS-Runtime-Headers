@@ -2,58 +2,84 @@
    Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
  */
 
-@interface CNContactHeaderDisplayView : CNContactHeaderView {
-    NSString *_alternateName;
-    BOOL _centersPhotoAndLabels;
-    CNContactFormatter *_contactFormatter;
-    UILabel *_fakeTaglineAlignmentLabel;
-    UIView *_markerView;
-    NSString *_message;
-    UILabel *_nameLabel;
-    UIView *_personHeaderView;
-    UILabel *_taglineLabel;
-    NSDictionary *_taglineTextAttributes;
+@interface CNContactHeaderDisplayView : CNContactHeaderView <CNUIReusableView> {
+    NSString * _alternateName;
+    NSLayoutConstraint * _avatarNameSpacingConstraint;
+    BOOL  _centersPhotoAndLabels;
+    CNContactFormatter * _contactFormatter;
+    double  _maxHeight;
+    NSString * _message;
+    UIView * _personHeaderView;
+    NSLayoutConstraint * _photoHeightConstraint;
+    NSLayoutConstraint * _photoTopConstraint;
+    UILabel * _taglineLabel;
+    NSDictionary * _taglineTextAttributes;
 }
 
 @property (nonatomic, retain) NSString *alternateName;
+@property (retain) NSLayoutConstraint *avatarNameSpacingConstraint;
 @property (nonatomic) BOOL centersPhotoAndLabels;
 @property (nonatomic, retain) CNContactFormatter *contactFormatter;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) double maxHeight;
 @property (nonatomic, retain) NSString *message;
+@property (nonatomic, readonly) double minHeight;
 @property (nonatomic, retain) UIView *personHeaderView;
-@property (nonatomic, readonly) float photoLabelSpacing;
+@property (retain) NSLayoutConstraint *photoHeightConstraint;
+@property (nonatomic, readonly) double photoLabelSpacing;
+@property (retain) NSLayoutConstraint *photoTopConstraint;
+@property (readonly) Class superclass;
+@property (retain) UILabel *taglineLabel;
 @property (nonatomic, copy) NSDictionary *taglineTextAttributes;
 
-+ (id)contactHeaderViewWithContact:(id)arg1 personHeaderView:(id)arg2;
++ (id)contactHeaderViewWithContact:(id)arg1;
++ (id)descriptorForRequiredKeysForContactFormatter:(id)arg1 includingAvatarViewDescriptors:(BOOL)arg2;
 
 - (void).cxx_destruct;
 - (id)_headerStringForContacts:(id)arg1;
 - (id)_taglineStringForContacts:(id)arg1;
 - (void)_updatePhotoView;
 - (id)alternateName;
+- (id)avatarNameSpacingConstraint;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (BOOL)centersPhotoAndLabels;
 - (id)contactFormatter;
 - (void)copy:(id)arg1;
+- (id)descriptorForRequiredKeys;
 - (void)disablePhotoTapGesture;
 - (void)handleNameLabelLongPress:(id)arg1;
-- (id)initWithContact:(id)arg1 personHeaderView:(id)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (id)initWithContact:(id)arg1 personHeaderView:(id)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 monogrammerStyle:(int)arg4;
+- (id)initWithContact:(id)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (id)initWithContact:(id)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 monogrammerStyle:(int)arg3;
+- (void)layoutSubviews;
+- (float)maxHeight;
 - (void)menuWillHide:(id)arg1;
 - (id)message;
+- (float)minHeight;
 - (id)personHeaderView;
+- (id)photoHeightConstraint;
 - (float)photoLabelSpacing;
+- (id)photoTopConstraint;
 - (void)reloadDataPreservingChanges:(BOOL)arg1;
 - (void)setAlternateName:(id)arg1;
-- (void)setBackgroundColor:(id)arg1;
+- (void)setAvatarNameSpacingConstraint:(id)arg1;
 - (void)setCentersPhotoAndLabels:(BOOL)arg1;
 - (void)setContactFormatter:(id)arg1;
+- (void)setMaxHeight:(float)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setNameTextAttributes:(id)arg1;
 - (void)setPersonHeaderView:(id)arg1;
+- (void)setPhotoHeightConstraint:(id)arg1;
+- (void)setPhotoTopConstraint:(id)arg1;
+- (void)setTaglineLabel:(id)arg1;
 - (void)setTaglineTextAttributes:(id)arg1;
+- (id)taglineLabel;
 - (id)taglineTextAttributes;
 - (void)tintColorDidChange;
 - (void)updateConstraints;
 - (void)updateFontSizes;
+- (void)updateSizeDependentAttributes;
+- (void)updateWithContacts:(id)arg1;
 
 @end

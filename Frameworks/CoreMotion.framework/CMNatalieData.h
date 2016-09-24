@@ -3,13 +3,13 @@
  */
 
 @interface CMNatalieData : CMLogItem {
-    double fBasalNatalies;
-    double fMets;
-    double fNatalies;
-    int fRecordId;
-    int fSession;
-    NSUUID *fSourceId;
-    double fStartDate;
+    double  fBasalNatalies;
+    double  fMets;
+    double  fNatalies;
+    int  fRecordId;
+    int  fSession;
+    NSUUID * fSourceId;
+    double  fStartDate;
 }
 
 @property (nonatomic, readonly) NSNumber *basalNatalies;

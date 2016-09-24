@@ -3,9 +3,9 @@
  */
 
 @interface IMAVMicrophoneController : NSObject {
-    id _internal;
-    NSMutableArray *_microphones;
-    NSObject<OS_dispatch_queue> *_queue;
+    id  _internal;
+    NSMutableArray * _microphones;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, retain) IMAVMicrophone *currentMicrophone;

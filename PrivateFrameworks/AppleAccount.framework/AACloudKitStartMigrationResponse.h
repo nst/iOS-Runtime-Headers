@@ -3,7 +3,7 @@
  */
 
 @interface AACloudKitStartMigrationResponse : AAResponse {
-    NSNumber *_status;
+    NSNumber * _status;
 }
 
 @property (nonatomic, readonly) NSNumber *status;

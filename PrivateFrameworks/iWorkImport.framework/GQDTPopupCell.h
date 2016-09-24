@@ -3,7 +3,7 @@
  */
 
 @interface GQDTPopupCell : GQDTCell {
-    GQDTCell *mResultCell;
+    GQDTCell * mResultCell;
 }
 
 - (void)dealloc;

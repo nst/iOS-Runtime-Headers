@@ -3,9 +3,9 @@
  */
 
 @interface FigCameraViewfinderSessionRemote : FigCameraViewfinderSession {
-    <FigCameraViewfinderSessionRemoteObject> *_remoteViewfinderSession;
-    unsigned int _state;
-    FigStateMachine *_stateMachine;
+    <FigCameraViewfinderSessionRemoteObject> * _remoteViewfinderSession;
+    unsigned int  _state;
+    FigStateMachine * _stateMachine;
 }
 
 - (void)_clientDisconnectedFromServer;

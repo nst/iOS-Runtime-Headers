@@ -7,7 +7,7 @@
         struct __compressed_pair<SafeBrowsing::SafeHashCache *, std::__1::default_delete<SafeBrowsing::SafeHashCache> > { 
             struct SafeHashCache {} *__first_; 
         } __ptr_; 
-    } _cache;
+    }  _cache;
 }
 
 - (id).cxx_construct;

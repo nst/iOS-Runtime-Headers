@@ -3,11 +3,17 @@
  */
 
 @interface MSPDirectionsSearch : PBCodable <NSCopying> {
-    GEOStorageRouteRequestStorage *_routeRequestStorage;
-    PBUnknownFields *_unknownFields;
+    struct { 
+        unsigned int navigationInterrupted : 1; 
+    }  _has;
+    BOOL  _navigationInterrupted;
+    GEOStorageRouteRequestStorage * _routeRequestStorage;
+    PBUnknownFields * _unknownFields;
 }
 
+@property (nonatomic) BOOL hasNavigationInterrupted;
 @property (nonatomic, readonly) BOOL hasRouteRequestStorage;
+@property (nonatomic) BOOL navigationInterrupted;
 @property (nonatomic, retain) GEOStorageRouteRequestStorage *routeRequestStorage;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
@@ -16,12 +22,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasNavigationInterrupted;
 - (BOOL)hasRouteRequestStorage;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (BOOL)navigationInterrupted;
 - (BOOL)readFrom:(id)arg1;
 - (id)routeRequestStorage;
+- (void)setHasNavigationInterrupted:(BOOL)arg1;
+- (void)setNavigationInterrupted:(BOOL)arg1;
 - (void)setRouteRequestStorage:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;

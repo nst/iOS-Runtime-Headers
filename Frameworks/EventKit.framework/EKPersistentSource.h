@@ -3,10 +3,10 @@
  */
 
 @interface EKPersistentSource : EKPersistentObject {
-    CDBSourceConstraints *_constraints;
+    CDBSourceConstraints * _constraints;
 }
 
-@property (nonatomic) NSString *UUID;
+@property (nonatomic, retain) NSString *UUID;
 @property (nonatomic, readonly) CDBSourceConstraints *constraints;
 @property (nonatomic, copy) NSNumber *defaultAlarmOffset;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
@@ -23,9 +23,9 @@
 + (id)defaultPropertiesToLoad;
 + (id)relations;
 
+- (void).cxx_destruct;
 - (id)UUID;
 - (id)constraints;
-- (void)dealloc;
 - (id)defaultAlarmOffset;
 - (id)description;
 - (int)entityType;

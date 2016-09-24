@@ -3,13 +3,13 @@
  */
 
 @interface GKTable : NSObject {
-    unsigned long _count;
-    struct _gktableitem { unsigned int x1; id x2; double x3; } *_items;
+    unsigned long  _count;
+    struct _gktableitem { unsigned int x1; id x2; double x3; } * _items;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _lock;
-    unsigned long _size;
+    }  _lock;
+    unsigned long  _size;
 }
 
 @property (readonly) unsigned long count;

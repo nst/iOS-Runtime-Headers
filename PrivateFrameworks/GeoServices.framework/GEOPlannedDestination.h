@@ -3,10 +3,10 @@
  */
 
 @interface GEOPlannedDestination : NSObject <NSSecureCoding> {
-    NSDate *_arrivalDate;
-    NSDate *_expirationDate;
-    NSData *_handle;
-    int _transportType;
+    NSDate * _arrivalDate;
+    NSDate * _expirationDate;
+    NSData * _handle;
+    int  _transportType;
 }
 
 @property (nonatomic, retain) NSDate *arrivalDate;

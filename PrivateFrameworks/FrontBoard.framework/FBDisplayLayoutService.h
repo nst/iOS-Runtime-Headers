@@ -3,8 +3,8 @@
  */
 
 @interface FBDisplayLayoutService : NSObject <FBDisplayLayoutDelegate, FBDisplayLayoutServiceServerDelegate> {
-    NSMutableDictionary *_layoutByDisplayType;
-    FBDisplayLayoutServiceServer *_server;
+    NSMutableDictionary * _layoutByDisplayType;
+    FBDisplayLayoutServiceServer * _server;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -22,6 +22,7 @@
 - (void)flushLayoutForDisplayType:(unsigned int)arg1;
 - (id)init;
 - (BOOL)isTransitioningForDisplayType:(unsigned int)arg1;
+- (id)layoutForDisplayType:(unsigned int)arg1;
 - (void)publishDisplayLayout:(id)arg1;
 - (void)removeLayoutElementAssertion:(id)arg1;
 - (id)server:(id)arg1 displayLayoutForDisplayType:(unsigned int)arg2;

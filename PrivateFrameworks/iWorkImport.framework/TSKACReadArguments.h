@@ -3,10 +3,10 @@
  */
 
 @interface TSKACReadArguments : NSObject {
-    void *_argument;
-    id _argument2;
-    SEL _selector;
-    id _target;
+    void * _argument;
+    id  _argument2;
+    SEL  _selector;
+    id  _target;
 }
 
 @property (nonatomic, readonly) void*argument;

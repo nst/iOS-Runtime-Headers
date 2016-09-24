@@ -3,8 +3,8 @@
  */
 
 @interface ODDShapeAdjustment : NSObject {
-    unsigned int mIndex;
-    double mValue;
+    unsigned int  mIndex;
+    double  mValue;
 }
 
 - (id)description;

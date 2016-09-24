@@ -3,10 +3,10 @@
  */
 
 @interface OccurrenceCacheDataSource : NSObject <OccurrenceCacheDataSourceProtocol> {
-    NSArray *_cachedDays;
-    int _cachedDaysSeed;
-    NSSet *_calendars;
-    EKEventStore *_eventStore;
+    NSArray * _cachedDays;
+    int  _cachedDaysSeed;
+    NSSet * _calendars;
+    EKEventStore * _eventStore;
 }
 
 @property (readonly, copy) NSString *debugDescription;

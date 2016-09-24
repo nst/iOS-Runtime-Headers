@@ -3,10 +3,10 @@
  */
 
 @interface WBSAutomaticReadingListWebFeedItem : WBSAutomaticReadingListItem {
-    NSString *_feedURLString;
-    NSURL *_homepageURL;
-    NSString *_originatorProfileImageURLString;
-    NSString *_title;
+    NSString * _feedURLString;
+    NSURL * _homepageURL;
+    NSString * _originatorProfileImageURLString;
+    NSString * _title;
 }
 
 @property (nonatomic, copy) NSString *feedURLString;

@@ -3,8 +3,8 @@
  */
 
 @interface _HKCalendarDayCellIconConfiguration : NSObject <NSCopying> {
-    UIColor *_color;
-    int _dateIndex;
+    UIColor * _color;
+    int  _dateIndex;
 }
 
 + (id)configurationWithDateIndex:(int)arg1 color:(id)arg2;

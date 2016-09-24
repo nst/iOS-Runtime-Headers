@@ -4,19 +4,18 @@
 
 @interface CLCircularRegion : CLRegion
 
-@property (nonatomic, readonly) struct { double x1; double x2; } center;
+@property (nonatomic, readonly) struct CLLocationCoordinate2D { double x1; double x2; } center;
 @property (nonatomic, readonly) double radius;
 
 // Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
 
 + (BOOL)supportsSecureCoding;
 
-- (struct { double x1; double x2; })center;
-- (BOOL)containsCoordinate:(struct { double x1; double x2; })arg1;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (struct CLLocationCoordinate2D { double x1; double x2; })center;
+- (BOOL)containsCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithCenter:(struct { double x1; double x2; })arg1 radius:(double)arg2 identifier:(id)arg3;
+- (id)initWithCenter:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 radius:(double)arg2 identifier:(id)arg3;
 - (id)initWithCoder:(id)arg1;
 - (double)radius;
 

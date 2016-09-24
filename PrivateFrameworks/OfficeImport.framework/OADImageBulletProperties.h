@@ -3,7 +3,7 @@
  */
 
 @interface OADImageBulletProperties : OADBulletProperties {
-    OADBlipRef *mImage;
+    OADBlipRef * mImage;
 }
 
 - (void)dealloc;

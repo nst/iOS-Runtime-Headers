@@ -3,11 +3,11 @@
  */
 
 @interface MFLANContinuationAgent : NSObject {
-    id /* block */ _connectCallbackBlock;
-    MFLANContinuationContext *_continuationContext;
-    struct __CFRunLoopSource { } *_serverRunLoopSource;
-    BOOL _serverRunning;
-    struct __CFSocket { } *_socket;
+    id /* block */  _connectCallbackBlock;
+    MFLANContinuationContext * _continuationContext;
+    struct __CFRunLoopSource { } * _serverRunLoopSource;
+    BOOL  _serverRunning;
+    struct __CFSocket { } * _socket;
 }
 
 @property (nonatomic, readonly) MFLANContinuationContext *continuationContext;

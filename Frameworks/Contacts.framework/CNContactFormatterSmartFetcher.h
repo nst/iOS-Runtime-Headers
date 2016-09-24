@@ -3,16 +3,18 @@
  */
 
 @interface CNContactFormatterSmartFetcher : CNSmartPropertyFetcher {
-    NSDictionary *_fallBackNamePropertyByNameKey;
-    BOOL _ignoresNickname;
-    BOOL _ignoresOrganization;
-    NSSet *_mandatoryNameProperties;
+    NSDictionary * _fallBackNamePropertyByNameKey;
+    BOOL  _ignoresNickname;
+    BOOL  _ignoresOrganization;
+    NSSet * _mandatoryNameProperties;
 }
 
 @property (nonatomic, copy) NSDictionary *fallBackNamePropertyByNameKey;
 @property (nonatomic) BOOL ignoresNickname;
 @property (nonatomic) BOOL ignoresOrganization;
 @property (nonatomic, copy) NSSet *mandatoryNameProperties;
+
++ (BOOL)supportsSecureCoding;
 
 - (void)_cn_executeGetterForRepresentedKeys:(id /* block */)arg1;
 - (id)_cn_requiredKeys;

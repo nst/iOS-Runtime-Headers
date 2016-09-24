@@ -3,8 +3,8 @@
  */
 
 @interface GEOAddressCorrectionRequester : NSObject {
-    NSMapTable *_pendingRequests;
-    NSLock *_pendingRequestsLock;
+    NSMapTable * _pendingRequests;
+    NSLock * _pendingRequestsLock;
 }
 
 + (id)sharedRequester;

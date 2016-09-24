@@ -5,10 +5,10 @@
 @interface GEOPDTransitLabel : PBCodable <GEOTransitLabelItem, NSCopying> {
     struct { 
         unsigned int labelType : 1; 
-    } _has;
-    GEOPBTransitArtwork *_labelArtwork;
-    NSString *_labelTextString;
-    int _labelType;
+    }  _has;
+    GEOPBTransitArtwork * _labelArtwork;
+    NSString * _labelTextString;
+    int  _labelType;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -25,6 +25,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) int type;
 
+- (int)StringAsLabelType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -39,6 +40,7 @@
 - (id)labelString;
 - (id)labelTextString;
 - (int)labelType;
+- (id)labelTypeAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasLabelType:(BOOL)arg1;

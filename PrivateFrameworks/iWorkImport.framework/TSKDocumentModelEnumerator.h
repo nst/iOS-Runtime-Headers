@@ -3,10 +3,10 @@
  */
 
 @interface TSKDocumentModelEnumerator : NSEnumerator {
-    NSMutableArray *_enumeratorStack;
-    id /* block */ _filter;
-    <TSKModel> *_root;
-    BOOL _stop;
+    NSMutableArray * _enumeratorStack;
+    id /* block */  _filter;
+    <TSKModel> * _root;
+    BOOL  _stop;
 }
 
 @property (nonatomic, retain) NSMutableArray *enumeratorStack;

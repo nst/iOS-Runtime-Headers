@@ -3,7 +3,7 @@
  */
 
 @interface CLIndoorPositionProvider : CLIndoorXPCProvider <CLIndoorXPCProviderImplementation> {
-    ServiceState *_state;
+    ServiceState * _state;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,12 +15,15 @@
 + (int)locationType:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)changeOrSetVenues:(id)arg1 isChange:(bool)arg2;
+- (void)changeVenues:(id)arg1;
 - (id)endpointName;
 - (void)gpsEstimateAvailable:(id)arg1;
 - (void)gpsSignalQualityAvailable:(id)arg1;
 - (id)initWithApiKey:(id)arg1;
 - (id)initWithApiKey:(id)arg1 onServer:(id)arg2;
 - (id)initWithConnection:(id)arg1;
+- (void)outdoorLocationAvailable:(id)arg1;
 - (void)playbackDatarun:(id)arg1;
 - (id)remoteObjectProtocol;
 - (void)setApiKey:(id)arg1;

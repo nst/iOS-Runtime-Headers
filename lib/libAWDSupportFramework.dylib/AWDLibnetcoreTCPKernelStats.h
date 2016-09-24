@@ -15,18 +15,18 @@
         unsigned int numTfoSynDataRcv : 1; 
         unsigned int numTfoSynDataSent : 1; 
         unsigned int timestamp : 1; 
-    } _has;
-    unsigned long long _numTfoBlackholed;
-    unsigned long long _numTfoCookieInvalid;
-    unsigned long long _numTfoCookieRcv;
-    unsigned long long _numTfoCookieReq;
-    unsigned long long _numTfoCookieReqRcv;
-    unsigned long long _numTfoCookieSent;
-    unsigned long long _numTfoFallback;
-    unsigned long long _numTfoSynDataAcked;
-    unsigned long long _numTfoSynDataRcv;
-    unsigned long long _numTfoSynDataSent;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _numTfoBlackholed;
+    unsigned long long  _numTfoCookieInvalid;
+    unsigned long long  _numTfoCookieRcv;
+    unsigned long long  _numTfoCookieReq;
+    unsigned long long  _numTfoCookieReqRcv;
+    unsigned long long  _numTfoCookieSent;
+    unsigned long long  _numTfoFallback;
+    unsigned long long  _numTfoSynDataAcked;
+    unsigned long long  _numTfoSynDataRcv;
+    unsigned long long  _numTfoSynDataSent;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL hasNumTfoBlackholed;

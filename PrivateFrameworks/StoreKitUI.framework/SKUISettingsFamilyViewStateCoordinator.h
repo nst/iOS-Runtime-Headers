@@ -3,7 +3,7 @@
  */
 
 @interface SKUISettingsFamilyViewStateCoordinator : NSObject {
-    id /* block */ _completionBlock;
+    id /* block */  _completionBlock;
 }
 
 - (void).cxx_destruct;

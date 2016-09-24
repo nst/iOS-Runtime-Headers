@@ -2,22 +2,17 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicEntityVerticalLockupView : MusicEntityAbstractLockupView <MusicEntityContentDescriptorViewConfiguring, MusicEntityViewDownloadInformationObserving> {
-    UIImageView *_availableOfflineBadgeImageView;
-    <MusicEntityVerticalLockupViewDelegate> *_delegate;
-    struct MusicEntityDownloadInformation { 
-        int downloadStatus; 
-        float downloadProgress; 
-    } _downloadInformation;
-    BOOL _isAvailableOffline;
-    float _textLateralEdgePadding;
+@interface MusicEntityVerticalLockupView : MusicEntityAbstractLockupView <MusicEntityContentDescriptorViewConfiguring> {
+    UIImageView * _availableOfflineBadgeImageView;
+    <MusicEntityVerticalLockupViewDelegate> * _delegate;
+    BOOL  _isAvailableOffline;
+    double  _textLateralEdgePadding;
 }
 
 @property (nonatomic, retain) MusicEntityViewContentDescriptor *contentDescriptor;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MusicEntityVerticalLockupViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) struct MusicEntityDownloadInformation { int x1; float x2; } downloadInformation;
 @property (nonatomic, retain) <MusicEntityValueProviding> *entityValueProvider;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
@@ -26,16 +21,13 @@
 
 - (void).cxx_destruct;
 - (void)_contentDescriptorDidChange:(id)arg1;
-- (void)_handlePlayButtonTappedWithAction:(unsigned int)arg1;
 - (BOOL)_shouldArtworkViewRespectHighlightProperty;
 - (BOOL)_shouldEnableArtworkViewUserInteraction;
 - (id)contentDescriptor;
 - (id)delegate;
-- (struct MusicEntityDownloadInformation { int x1; float x2; })downloadInformation;
 - (void)layoutSubviews;
 - (void)setContentDescriptor:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDownloadInformation:(struct MusicEntityDownloadInformation { int x1; float x2; })arg1;
 - (void)setTextLateralEdgePadding:(float)arg1;
 
 @end

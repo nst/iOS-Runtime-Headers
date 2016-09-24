@@ -3,9 +3,9 @@
  */
 
 @interface CNPropertyLinkedCardsAction : CNPropertyAction {
-    CNContactContentViewController *_contactController;
-    <CNContactContentViewControllerDelegate> *_contactDelegate;
-    CNMutableContact *_linkedContact;
+    CNContactContentViewController * _contactController;
+    <CNContactContentViewControllerDelegate> * _contactDelegate;
+    CNMutableContact * _linkedContact;
 }
 
 @property (retain) CNContactContentViewController *contactController;

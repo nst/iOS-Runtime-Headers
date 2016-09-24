@@ -3,8 +3,8 @@
  */
 
 @interface AVAssetWriterHelper : NSObject {
-    AVAssetWriterConfigurationState *_configurationState;
-    AVWeakReference *_weakReferenceToAssetWriter;
+    AVAssetWriterConfigurationState * _configurationState;
+    AVWeakReference * _weakReferenceToAssetWriter;
 }
 
 @property (nonatomic, readonly) NSArray *availableMediaTypes;
@@ -15,13 +15,13 @@
 @property (nonatomic, readonly) NSArray *inputs;
 @property (nonatomic, readonly) AVMediaFileType *mediaFileType;
 @property (nonatomic, copy) NSArray *metadata;
-@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } movieFragmentInterval;
+@property (nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } movieFragmentInterval;
 @property (nonatomic) int movieTimeScale;
 @property (nonatomic, readonly) NSURL *outputURL;
-@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } overallDurationHint;
-@property (nonatomic) float preferredRate;
-@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
-@property (nonatomic) float preferredVolume;
+@property (nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } overallDurationHint;
+@property (nonatomic) double preferredRate;
+@property (nonatomic) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } preferredTransform;
+@property (nonatomic) double preferredVolume;
 @property (nonatomic) BOOL shouldOptimizeForNetworkUse;
 @property (nonatomic, readonly) int status;
 @property (retain) AVWeakReference *weakReferenceToAssetWriter;
@@ -39,7 +39,7 @@
 - (id)configurationState;
 - (void)dealloc;
 - (id)directoryForTemporaryFiles;
-- (void)endSessionAtSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)endSessionAtSourceTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
 - (id)error;
 - (void)finishWriting;
 - (void)finishWritingWithCompletionHandler:(id /* block */)arg1;
@@ -49,25 +49,25 @@
 - (id)inputs;
 - (id)mediaFileType;
 - (id)metadata;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
+- (struct { int x1; int x2; unsigned int x3; int x4; })movieFragmentInterval;
 - (int)movieTimeScale;
 - (id)outputURL;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })overallDurationHint;
+- (struct { int x1; int x2; unsigned int x3; int x4; })overallDurationHint;
 - (float)preferredRate;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })preferredTransform;
 - (float)preferredVolume;
 - (void)setDirectoryForTemporaryFiles:(id)arg1;
 - (void)setMetadata:(id)arg1;
-- (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setMovieFragmentInterval:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
 - (void)setMovieTimeScale:(int)arg1;
-- (void)setOverallDurationHint:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setOverallDurationHint:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
 - (void)setPreferredRate:(float)arg1;
-- (void)setPreferredTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setPreferredTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (void)setPreferredVolume:(float)arg1;
 - (void)setShouldOptimizeForNetworkUse:(BOOL)arg1;
 - (void)setWeakReferenceToAssetWriter:(id)arg1;
 - (BOOL)shouldOptimizeForNetworkUse;
-- (void)startSessionAtSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)startSessionAtSourceTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
 - (void)startWriting;
 - (int)status;
 - (void)transitionToFailedStatusWithError:(id)arg1;

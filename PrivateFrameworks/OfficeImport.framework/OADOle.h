@@ -3,17 +3,17 @@
  */
 
 @interface OADOle : NSObject {
-    NSString *mAnsiClipboardFormatName;
-    NSString *mAnsiProgID;
-    NSString *mAnsiUserType;
-    NSString *mCLSID;
-    BOOL mIconic;
-    NSString *mMacClipboardFormat;
-    id mObject;
-    NSString *mUnicodeClipboardFormatName;
-    NSString *mUnicodeProgID;
-    NSString *mUnicodeUserType;
-    unsigned long mWinClipboardFormat;
+    NSString * mAnsiClipboardFormatName;
+    NSString * mAnsiProgID;
+    NSString * mAnsiUserType;
+    NSString * mCLSID;
+    BOOL  mIconic;
+    NSString * mMacClipboardFormat;
+    id  mObject;
+    NSString * mUnicodeClipboardFormatName;
+    NSString * mUnicodeProgID;
+    NSString * mUnicodeUserType;
+    unsigned long  mWinClipboardFormat;
 }
 
 + (BOOL)isCLSIDSupported:(id)arg1;

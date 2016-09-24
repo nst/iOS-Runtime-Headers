@@ -3,9 +3,9 @@
  */
 
 @interface DDAddToContactsViewController : UINavigationController <CNContactViewControllerDelegate, DDRemoteActionViewService> {
-    DDAction *_action;
-    CNContactViewController *_personViewController;
-    <DDRemoteActionPresenter> *_proxy;
+    DDAction * _action;
+    CNContactViewController * _personViewController;
+    <DDRemoteActionPresenter> * _proxy;
 }
 
 @property (retain) DDAction *action;
@@ -18,7 +18,7 @@
 + (id)_remoteViewControllerInterface;
 + (id)alternateNameForContact:(id)arg1;
 
-- (void)_augmentRecord:(void*)arg1 withResultsFromAction:(id)arg2;
+- (void)_augmentContact:(id)arg1 withResultsFromAction:(id)arg2;
 - (id)action;
 - (void)adaptForPresentationInPopover:(BOOL)arg1;
 - (void)cancelPressed:(id)arg1;
@@ -28,5 +28,6 @@
 - (void)prepareForAction:(id)arg1;
 - (void)setAction:(id)arg1;
 - (void)setCancelButtonVisible:(BOOL)arg1;
+- (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
 @end

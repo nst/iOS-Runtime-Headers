@@ -3,11 +3,11 @@
  */
 
 @interface TPHeaderFragmentImportHelper : NSObject {
-    id *_fragments;
-    NSCharacterSet *_nonWhitespaceCharacterSet;
-    TSPObjectContext *_objectsContext;
-    TSPObjectContext *_storageContext;
-    NSCharacterSet *_whitespaceCharacterSet;
+    id * _fragments;
+    NSCharacterSet * _nonWhitespaceCharacterSet;
+    TSPObjectContext * _objectsContext;
+    TSPObjectContext * _storageContext;
+    NSCharacterSet * _whitespaceCharacterSet;
 }
 
 - (unsigned int)countOfWhitespaceRunsInString:(id)arg1 ranges:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;

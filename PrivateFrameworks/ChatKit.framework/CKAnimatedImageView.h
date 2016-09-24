@@ -3,8 +3,8 @@
  */
 
 @interface CKAnimatedImageView : UIImageView <CKAnimationTimerObserver> {
-    CKAnimatedImage *_animatedImage;
-    NSArray *_frames;
+    CKAnimatedImage * _animatedImage;
+    NSArray * _frames;
 }
 
 @property (nonatomic, retain) CKAnimatedImage *animatedImage;
@@ -14,6 +14,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)animatedImage;
 - (void)animationTimerFired:(unsigned int)arg1;
 - (void)dealloc;

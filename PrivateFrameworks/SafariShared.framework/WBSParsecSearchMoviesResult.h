@@ -3,8 +3,8 @@
  */
 
 @interface WBSParsecSearchMoviesResult : WBSParsecSearchResult {
-    NSString *_descriptionLeadInText;
-    NSMutableArray *_posterRepresentations;
+    NSString * _descriptionLeadInText;
+    NSMutableArray * _posterRepresentations;
 }
 
 @property (nonatomic, readonly) NSString *descriptionLeadInText;

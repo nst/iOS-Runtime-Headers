@@ -3,8 +3,8 @@
  */
 
 @interface _UIAssociationTable : NSObject {
-    NSMapTable *_leftToRightHashTables;
-    NSMapTable *_rightToLeftHashTables;
+    NSMapTable * _leftToRightHashTables;
+    NSMapTable * _rightToLeftHashTables;
 }
 
 - (void).cxx_destruct;

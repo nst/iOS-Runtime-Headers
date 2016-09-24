@@ -3,7 +3,7 @@
  */
 
 @interface EKCalendarTitleEditItem : EKCalendarEditItem <UITextFieldDelegate> {
-    UITableViewCell *_cell;
+    UITableViewCell * _cell;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,26 +3,26 @@
  */
 
 @interface CMKTimelapseState : NSObject <NSCoding, NSCopying> {
-    BOOL _allFramesWritten;
-    int _captureOrientation;
-    double _captureTimeInterval;
-    float _focusLensPosition;
-    int _frameIndexStride;
-    NSDate *_lastFrameResponseTime;
-    int _nextFrameIndex;
-    CLLocation *_startLocation;
-    NSDate *_startTime;
-    int _stopReasons;
-    NSDate *_stopTime;
-    NSString *_timelapseUUID;
-    BOOL _usingFrontCamera;
+    BOOL  _allFramesWritten;
+    int  _captureOrientation;
+    double  _captureTimeInterval;
+    double  _focusLensPosition;
+    int  _frameIndexStride;
+    NSDate * _lastFrameResponseTime;
+    int  _nextFrameIndex;
+    CLLocation * _startLocation;
+    NSDate * _startTime;
+    int  _stopReasons;
+    NSDate * _stopTime;
+    NSString * _timelapseUUID;
+    BOOL  _usingFrontCamera;
 }
 
 @property (nonatomic) BOOL allFramesWritten;
 @property (nonatomic) int captureOrientation;
 @property (nonatomic, readonly) double captureTimeInterval;
 @property (nonatomic, readonly) int connectionMode;
-@property (nonatomic) float focusLensPosition;
+@property (nonatomic) double focusLensPosition;
 @property (nonatomic, readonly) int frameIndexStride;
 @property (nonatomic, retain) NSDate *lastFrameResponseTime;
 @property (nonatomic, readonly) int nextFrameIndex;

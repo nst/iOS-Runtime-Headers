@@ -3,33 +3,34 @@
  */
 
 @interface TSDGLFrameBuffer : NSObject {
-    int _currentBindingOption;
-    int _currentDrawBufferCount;
-    unsigned int _currentDrawBuffers;
-    unsigned int _currentReadBuffer;
-    NSMutableArray *_currentTextureLookupInfoByAttachment;
-    NSMutableArray *_desiredTextureLookupInfoByAttachment;
-    unsigned int _framebuffer;
-    BOOL _isBound;
-    BOOL _isUsingNonDefaultAttachments;
-    NSString *_name;
-    NSDictionary *_namesToTextureDict;
-    BOOL _shouldDeleteTexturesOnTeardown;
+    int  _currentBindingOption;
+    int  _currentDrawBufferCount;
+    unsigned int  _currentDrawBuffers;
+    unsigned int  _currentReadBuffer;
+    NSMutableArray * _currentTextureLookupInfoByAttachment;
+    NSMutableArray * _desiredTextureLookupInfoByAttachment;
+    unsigned int  _framebuffer;
+    BOOL  _isBound;
+    BOOL  _isUsingNonDefaultAttachments;
+    NSString * _name;
+    NSDictionary * _namesToTextureDict;
+    BOOL  _shouldDeleteTexturesOnTeardown;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _size;
-    NSArray *_textureConfigs;
-    NSArray *_textureConfigsByAttachment;
-    NSArray *_textureLookupInfosByAttachment;
+        double width; 
+        double height; 
+    }  _size;
+    NSArray * _textureConfigs;
+    NSArray * _textureConfigsByAttachment;
+    NSArray * _textureLookupInfosByAttachment;
 }
 
 @property (nonatomic, readonly) unsigned int currentGLTexture;
 @property (nonatomic, readonly) NSString *currentGLTextureName;
+@property (nonatomic, readonly) unsigned int framebuffer;
 @property (nonatomic, readonly) BOOL isBound;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) BOOL shouldDeleteTexturesOnTeardown;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
 
 + (int)currentGLFramebuffer;
 + (int)currentGLFramebufferWithBindingOption:(int)arg1;
@@ -47,9 +48,10 @@
 - (int)currentTextureIndexAtAttachment:(unsigned int)arg1;
 - (void)dealloc;
 - (id)description;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 textureConfigs:(id)arg2;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 textureCount:(unsigned int)arg2;
+- (unsigned int)framebuffer;
+- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 textureConfigs:(id)arg2;
+- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 textureCount:(unsigned int)arg2;
 - (BOOL)isBound;
 - (id)name;
 - (id)p_currentTextureLookupInfoAtAttachment:(unsigned int)arg1;
@@ -66,8 +68,8 @@
 - (void)setShouldDeleteTexturesOnTeardown:(BOOL)arg1;
 - (void)setupFramebufferIfNecessary;
 - (BOOL)shouldDeleteTexturesOnTeardown;
-- (struct CGSize { float x1; float x2; })size;
-- (struct CGSize { float x1; float x2; })sizeOfGLTextureNamed:(id)arg1;
+- (struct CGSize { double x1; double x2; })size;
+- (struct CGSize { double x1; double x2; })sizeOfGLTextureNamed:(id)arg1;
 - (void)teardown;
 - (void)unbindFramebufferAndBindGLFramebuffer:(int)arg1;
 - (void)unbindFramebufferAndBindGLFramebuffer:(int)arg1 withBindingOption:(int)arg2;

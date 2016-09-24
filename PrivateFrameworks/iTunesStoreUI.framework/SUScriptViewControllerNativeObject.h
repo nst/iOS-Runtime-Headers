@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptViewControllerNativeObject : SUScriptNativeObject <SKUIPassbookLoaderDelegate> {
-    SKUIPassbookLoader *_passbookLoader;
+    SKUIPassbookLoader * _passbookLoader;
 }
 
 @property (readonly, copy) NSString *debugDescription;

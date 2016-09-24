@@ -3,9 +3,9 @@
  */
 
 @interface ICSDateTimeValue : ICSDateValue <NSCoding> {
-    int _hour;
-    int _minute;
-    int _second;
+    int  _hour;
+    int  _minute;
+    int  _second;
 }
 
 @property (readonly) int hour;

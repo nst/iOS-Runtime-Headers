@@ -16,6 +16,7 @@
 
 + (BOOL)supportsUSBInterfaceProtocol:(unsigned char)arg1;
 
+- (BOOL)allowsRotation;
 - (id)button0;
 - (id)button1;
 - (id)button2;
@@ -29,11 +30,14 @@
 - (id)initWithController:(id)arg1;
 - (id)inputForElement:(struct __IOHIDElement { }*)arg1;
 - (id)leftShoulder;
+- (BOOL)reportsAbsoluteDpadValues;
 - (id)rightShoulder;
 - (id)saveSnapshot;
+- (void)setAllowsRotation:(BOOL)arg1;
 - (void)setButton:(id)arg1 pressed:(BOOL)arg2;
 - (void)setButton:(id)arg1 value:(double)arg2;
 - (void)setDpad:(id)arg1 x:(double)arg2 y:(double)arg3;
+- (void)setReportsAbsoluteDpadValues:(BOOL)arg1;
 - (void)setValueChangedHandler:(id /* block */)arg1;
 - (id /* block */)valueChangedHandler;
 

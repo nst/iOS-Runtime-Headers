@@ -2,49 +2,40 @@
    Image: /System/Library/PrivateFrameworks/WirelessProximity.framework/WirelessProximity
  */
 
-@interface WPAWDL : NSObject <XPCClientDelegate> {
-    XPCClient *_connection;
-    <WPAWDLDelegate> *_delegate;
-    NSObject<OS_xpc_object> *_server;
-    int _state;
+@interface WPAWDL : WPClient {
+    <WPAWDLDelegate> * _delegate;
+    BOOL  _useSmallerAirDrop;
 }
 
-@property (nonatomic, retain) XPCClient *connection;
-@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <WPAWDLDelegate> *delegate;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (retain) NSObject<OS_xpc_object> *server;
-@property int state;
-@property (readonly) Class superclass;
+@property BOOL useSmallerAirDrop;
 
 + (id)generateDataFromEmails:(id)arg1;
 + (id)hashEmail:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)allowAWDLConnection;
-- (void)cancelAWDLConnection;
-- (id)connection;
-- (void)connectionDied;
-- (void)connectionInterrupted;
-- (void)dealloc;
+- (void)advertisingFailedToStart:(id)arg1 ofType:(unsigned char)arg2;
+- (void)advertisingPendingOfType:(unsigned char)arg1;
+- (void)advertisingStartedOfType:(unsigned char)arg1;
+- (void)advertisingStoppedOfType:(unsigned char)arg1;
+- (id)clientAsString;
 - (id)delegate;
-- (id)description;
+- (void)deviceDiscovered:(id)arg1;
 - (id)initWithDelegate:(id)arg1;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2 machName:(id)arg3;
-- (void)initXPCHandler:(id)arg1;
-- (void)messageArrived:(id)arg1;
-- (id)server;
-- (void)setConnection:(id)arg1;
+- (void)invalidate;
+- (void)scanningFailedToStart:(id)arg1 ofType:(unsigned char)arg2;
+- (void)scanningStartedOfType:(unsigned char)arg1;
+- (void)scanningStoppedOfType:(unsigned char)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setServer:(id)arg1;
-- (void)setState:(int)arg1;
+- (void)setUseSmallerAirDrop:(BOOL)arg1;
 - (void)startConnectionlessAWDLServiceAdvertisingWithData:(id)arg1;
 - (void)startConnectionlessAWDLServiceScanning;
-- (int)state;
+- (void)stateDidChange:(int)arg1;
 - (void)stopConnectionlessAWDLServiceAdvertising;
 - (void)stopConnectionlessAWDLServiceScanning;
-- (void)updateState:(int)arg1;
+- (void)updateAdvertisingRequest:(id)arg1 withUpdate:(id /* block */)arg2;
+- (BOOL)useSmallerAirDrop;
 
 @end

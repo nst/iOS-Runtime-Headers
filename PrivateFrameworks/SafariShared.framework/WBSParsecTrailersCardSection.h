@@ -3,8 +3,8 @@
  */
 
 @interface WBSParsecTrailersCardSection : WBSParsecCardSection {
-    NSString *_title;
-    NSArray *_trailers;
+    NSString * _title;
+    NSArray * _trailers;
 }
 
 @property (nonatomic, readonly, copy) NSString *title;

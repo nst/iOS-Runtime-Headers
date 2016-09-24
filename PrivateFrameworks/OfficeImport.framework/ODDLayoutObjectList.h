@@ -3,7 +3,7 @@
  */
 
 @interface ODDLayoutObjectList : ODDLayoutObject {
-    NSMutableArray *mChildren;
+    NSMutableArray * mChildren;
 }
 
 - (void)addChild:(id)arg1;

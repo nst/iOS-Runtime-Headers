@@ -3,7 +3,7 @@
  */
 
 @interface CKDPMescalSignatureRequest : PBRequest <NSCopying> {
-    NSData *_mescalData;
+    NSData * _mescalData;
 }
 
 @property (nonatomic, readonly) BOOL hasMescalData;

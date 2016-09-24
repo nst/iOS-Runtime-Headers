@@ -3,16 +3,16 @@
  */
 
 @interface FBApplicationTerminationAssertion : NSObject {
-    NSString *_bundleID;
-    id _plugInHoldToken;
-    NSString *_reason;
-    unsigned long long _serialNumber;
+    NSString * _bundleID;
+    id  _plugInHoldToken;
+    NSString * _reason;
+    unsigned int  _serialNumber;
 }
 
 @property (nonatomic, copy) NSString *bundleID;
 @property (nonatomic, retain) id plugInHoldToken;
 @property (nonatomic, copy) NSString *reason;
-@property (nonatomic) unsigned long long serialNumber;
+@property (nonatomic) unsigned int serialNumber;
 
 - (id)bundleID;
 - (void)dealloc;
@@ -21,10 +21,10 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)plugInHoldToken;
 - (id)reason;
-- (unsigned long long)serialNumber;
+- (unsigned int)serialNumber;
 - (void)setBundleID:(id)arg1;
 - (void)setPlugInHoldToken:(id)arg1;
 - (void)setReason:(id)arg1;
-- (void)setSerialNumber:(unsigned long long)arg1;
+- (void)setSerialNumber:(unsigned int)arg1;
 
 @end

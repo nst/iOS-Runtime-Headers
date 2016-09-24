@@ -3,10 +3,10 @@
  */
 
 @interface TSCHChartMediator : NSObject <NSCopying, TSCHUnretainedParent> {
-    TSCHChartInfo *mChartInfo;
-    TSUIntToIntDictionary *mGridSeriesIndexForRemoteSeriesIndex;
-    <TSCHNotifyOnModify> *mObjectToNotify;
-    TSUIntToIntDictionary *mRemoteSeriesIndexForGridSeriesIndex;
+    TSCHChartInfo * mChartInfo;
+    TSUIntToIntDictionary * mGridSeriesIndexForRemoteSeriesIndex;
+    <TSCHNotifyOnModify> * mObjectToNotify;
+    TSUIntToIntDictionary * mRemoteSeriesIndexForGridSeriesIndex;
 }
 
 @property (nonatomic) TSCHChartInfo *chartInfo;

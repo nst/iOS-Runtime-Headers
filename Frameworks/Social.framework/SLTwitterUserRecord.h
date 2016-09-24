@@ -3,8 +3,8 @@
  */
 
 @interface SLTwitterUserRecord : SLMicroBlogUserRecord <NSSecureCoding> {
-    NSString *_id_str;
-    NSURL *_objectID;
+    NSString * _id_str;
+    NSURL * _objectID;
 }
 
 @property (nonatomic, retain) NSString *id_str;

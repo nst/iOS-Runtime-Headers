@@ -3,26 +3,26 @@
  */
 
 @interface MPAVQueueCoordinator : NSObject {
-    unsigned int _activeQueueDepth;
-    NSOperationQueue *_assetQueue;
-    unsigned int _backgroundTaskIdentifier;
-    unsigned int _backgroundTasks;
-    MPAVItem *_currentItem;
-    <MPAVQueueCoordinatorDataSource> *_dataSource;
-    id /* block */ _equilibriumAchievedHandler;
-    BOOL _holdingPlaybackTransactionForFirstItem;
-    BOOL _isPendingPlayerItemSync;
-    BOOL _isSyncingPlayerItems;
-    NSArray *_items;
-    NSHashTable *_itemsPendingAssetLoading;
-    MPAVItem *_lastItemAnchor;
-    NSDate *_lastPausedDate;
-    unsigned int _maximumQueueDepth;
-    BOOL _needsCurrentItemUpdateAfterPlayerItemSync;
-    MPQueuePlayer *_player;
-    BOOL _preventLoadingItems;
-    double _rateQueueDepthAdjustmentDelay;
-    NSMutableSet *_reusableItems;
+    unsigned int  _activeQueueDepth;
+    NSOperationQueue * _assetQueue;
+    unsigned int  _backgroundTaskIdentifier;
+    unsigned int  _backgroundTasks;
+    MPAVItem * _currentItem;
+    <MPAVQueueCoordinatorDataSource> * _dataSource;
+    id /* block */  _equilibriumAchievedHandler;
+    BOOL  _holdingPlaybackTransactionForFirstItem;
+    BOOL  _isPendingPlayerItemSync;
+    BOOL  _isSyncingPlayerItems;
+    NSArray * _items;
+    NSHashTable * _itemsPendingAssetLoading;
+    MPAVItem * _lastItemAnchor;
+    NSDate * _lastPausedDate;
+    unsigned int  _maximumQueueDepth;
+    BOOL  _needsCurrentItemUpdateAfterPlayerItemSync;
+    MPQueuePlayer * _player;
+    BOOL  _preventLoadingItems;
+    double  _rateQueueDepthAdjustmentDelay;
+    NSMutableSet * _reusableItems;
 }
 
 @property (nonatomic, readonly) unsigned int activeQueueDepth;

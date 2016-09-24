@@ -3,9 +3,9 @@
  */
 
 @interface MusicProductDescription : NSObject <NSCopying> {
-    int _format;
-    NSString *_storeEditorNotes;
-    NSString *_text;
+    int  _format;
+    NSString * _storeEditorNotes;
+    NSString * _text;
 }
 
 @property (getter=isEmpty, nonatomic, readonly) BOOL empty;

@@ -3,7 +3,7 @@
  */
 
 @interface PUDefaultChromeVisibilityChangeTileTransitionCoordinator : PUDefaultTileTransitionCoordinator {
-    PUBrowsingViewModel *_viewModel;
+    PUBrowsingViewModel * _viewModel;
 }
 
 @property (nonatomic, retain) PUBrowsingViewModel *viewModel;

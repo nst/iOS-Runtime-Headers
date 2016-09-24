@@ -3,8 +3,8 @@
  */
 
 @interface OADColorScheme : NSObject <NSCopying> {
-    NSMutableDictionary *mColors;
-    NSString *mName;
+    NSMutableDictionary * mColors;
+    NSString * mName;
 }
 
 @property (nonatomic, copy) NSString *name;

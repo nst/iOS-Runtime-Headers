@@ -5,18 +5,18 @@
 @interface BWDeferredMetadataCache : NSObject {
     struct BWDeferredMetadataCacheEntry { 
         struct { 
-            long long value; 
+            int value; 
             int timescale; 
             unsigned int flags; 
-            long long epoch; 
+            int epoch; 
         } pts; 
         struct __CFDictionary {} *metadataDict; 
         short useCount; 
         short age; 
-    } _cache;
-    struct OpaqueFigSimpleMutex { } *_lock;
-    int _numberOfExpectedSampleBuffersForEachPTS;
-    struct OpaqueFigCaptureStream { } *_stream;
+    }  _cache;
+    struct OpaqueFigSimpleMutex { } * _lock;
+    int  _numberOfExpectedSampleBuffersForEachPTS;
+    struct OpaqueFigCaptureStream { } * _stream;
 }
 
 @property (nonatomic) int numberOfExpectedSampleBuffersForEachPTS;

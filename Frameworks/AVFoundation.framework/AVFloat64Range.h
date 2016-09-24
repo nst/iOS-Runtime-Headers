@@ -3,8 +3,8 @@
  */
 
 @interface AVFloat64Range : NSObject <NSCopying> {
-    double _maximum;
-    double _minimum;
+    double  _maximum;
+    double  _minimum;
 }
 
 @property (nonatomic, readonly) double maximum;

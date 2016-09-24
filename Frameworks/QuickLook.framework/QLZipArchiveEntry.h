@@ -3,21 +3,21 @@
  */
 
 @interface QLZipArchiveEntry : NSObject {
-    QLZipArchive *_archive;
-    NSData *_data;
-    struct archive_entry { } *_entry;
-    NSError *_error;
-    NSURL *_url;
+    QLZipArchive * _archive;
+    NSData * _data;
+    struct archive_entry { } * _entry;
+    NSError * _error;
+    NSURL * _url;
 }
 
 @property QLZipArchive *archive;
-@property NSData *data;
+@property (retain) NSData *data;
 @property struct archive_entry { }*entry;
-@property (nonatomic) NSURL *url;
+@property (nonatomic, retain) NSURL *url;
 
+- (void).cxx_destruct;
 - (id)archive;
 - (id)data;
-- (void)dealloc;
 - (struct archive_entry { }*)entry;
 - (id)readDataWithError:(id*)arg1;
 - (void)setArchive:(id)arg1;

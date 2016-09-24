@@ -3,21 +3,21 @@
  */
 
 @interface MSCLWaveformImageProducer : NSObject {
-    float _powerBarSpacing;
-    float _powerBarWidth;
-    NSMutableArray *_powerLevels;
-    int _waveformMode;
+    double  _powerBarSpacing;
+    double  _powerBarWidth;
+    NSMutableArray * _powerLevels;
+    int  _waveformMode;
 }
 
-@property (nonatomic) float powerBarSpacing;
-@property (nonatomic) float powerBarWidth;
+@property (nonatomic) double powerBarSpacing;
+@property (nonatomic) double powerBarWidth;
 @property (nonatomic, copy) NSArray *powerLevels;
 @property (nonatomic) int waveformMode;
 
 - (void).cxx_destruct;
 - (id)_averagedPowerLevelsWithCount:(int)arg1;
 - (void)appendPowerLevel:(float)arg1;
-- (id)imageWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)imageWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)init;
 - (float)powerBarSpacing;
 - (float)powerBarWidth;

@@ -3,15 +3,15 @@
  */
 
 @interface _ICQPersistedOffer : NSObject {
-    NSString *_accountAltDSID;
-    double _callbackInterval;
-    BOOL _failedToFetchFromServer;
-    NSDictionary *_failureDetails;
-    NSString *_notificationID;
-    NSDate *_retrievalDate;
-    NSDictionary *_serverDictionary;
-    int _testKind;
-    int _testLevel;
+    NSString * _accountAltDSID;
+    double  _callbackInterval;
+    BOOL  _failedToFetchFromServer;
+    NSDictionary * _failureDetails;
+    NSString * _notificationID;
+    NSDate * _retrievalDate;
+    NSDictionary * _serverDictionary;
+    int  _testKind;
+    int  _testLevel;
 }
 
 @property (nonatomic, retain) NSString *accountAltDSID;

@@ -3,7 +3,7 @@
  */
 
 @interface NSPullChangeHistoryRequest : NSPersistentStoreRequest {
-    NSArray *_generationTokens;
+    NSArray * _generationTokens;
 }
 
 - (void)dealloc;

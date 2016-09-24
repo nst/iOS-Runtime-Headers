@@ -3,9 +3,9 @@
  */
 
 @interface TSKTreeNode : TSPObject {
-    NSMutableArray *mChildren;
-    NSString *mDisplayName;
-    id mObject;
+    NSMutableArray * mChildren;
+    NSString * mDisplayName;
+    id  mObject;
 }
 
 @property (nonatomic, retain) NSMutableArray *children;

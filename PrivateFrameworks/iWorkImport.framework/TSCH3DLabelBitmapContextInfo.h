@@ -3,9 +3,9 @@
  */
 
 @interface TSCH3DLabelBitmapContextInfo : NSObject <NSCopying> {
-    BOOL mHasSuppressedBackgrounds;
-    BOOL mIsPDF;
-    BOOL mIsPrinting;
+    BOOL  mHasSuppressedBackgrounds;
+    BOOL  mIsPDF;
+    BOOL  mIsPrinting;
 }
 
 @property (nonatomic, readonly) BOOL hasSuppressedBackgrounds;

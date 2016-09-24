@@ -83,6 +83,7 @@
 - (id)detachedItems;
 - (id)endTimeZone;
 - (id)exceptionDates;
+- (id)exportToICS;
 - (id)externalData;
 - (id)externalID;
 - (id)externalModificationTag;

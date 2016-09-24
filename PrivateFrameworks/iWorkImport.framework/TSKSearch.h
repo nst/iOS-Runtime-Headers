@@ -3,10 +3,10 @@
  */
 
 @interface TSKSearch : NSObject {
-    id /* block */ _hitBlock;
-    BOOL _isComplete;
-    unsigned int _options;
-    NSString *_string;
+    id /* block */  _hitBlock;
+    BOOL  _isComplete;
+    unsigned int  _options;
+    NSString * _string;
 }
 
 @property (nonatomic, copy) id /* block */ hitBlock;

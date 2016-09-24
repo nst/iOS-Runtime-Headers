@@ -3,13 +3,13 @@
  */
 
 @interface CNAutocompleteObservableBuilder : NSObject <CNAutocompleteObservableBuilder> {
-    <CNAutocompleteObservableBuilderBatchingHelper> *_batchingHelper;
-    id /* block */ _networkActivityDidStartHandler;
-    id /* block */ _networkActivityDidStopHandler;
-    double _networkActivityStartDelay;
-    <CNAutocompleteProbeProvider> *_probeProvider;
-    <CNScheduler> *_scheduler;
-    BOOL _supplementalResultsUseNetwork;
+    <CNAutocompleteObservableBuilderBatchingHelper> * _batchingHelper;
+    id /* block */  _networkActivityDidStartHandler;
+    id /* block */  _networkActivityDidStopHandler;
+    double  _networkActivityStartDelay;
+    <CNAutocompleteProbeProvider> * _probeProvider;
+    <CNScheduler> * _scheduler;
+    BOOL  _supplementalResultsUseNetwork;
 }
 
 @property (nonatomic, readonly) <CNAutocompleteObservableBuilderBatchingHelper> *batchingHelper;

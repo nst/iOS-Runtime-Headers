@@ -3,9 +3,9 @@
  */
 
 @interface KeychainWrapper : NSObject {
-    NSString *_accountName;
-    NSLock *_lock;
-    NSString *_serviceName;
+    NSString * _accountName;
+    NSLock * _lock;
+    NSString * _serviceName;
 }
 
 @property (nonatomic, copy) NSString *accountName;

@@ -3,7 +3,7 @@
  */
 
 @interface NSRTFD : NSMutableDictionary {
-    NSMutableDictionary *dict;
+    NSMutableDictionary * dict;
 }
 
 + (void)initialize;

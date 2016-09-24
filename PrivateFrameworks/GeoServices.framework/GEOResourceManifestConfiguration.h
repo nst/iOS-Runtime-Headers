@@ -3,24 +3,27 @@
  */
 
 @interface GEOResourceManifestConfiguration : NSObject {
-    NSString *_applicationIdentifier;
-    NSString *_applicationVersion;
-    NSString *_countryCode;
-    NSString *_dataDirectory;
-    NSString *_disputedBorderCountryOverride;
-    NSString *_disputedBorderRegionOverride;
-    NSString *_environment;
-    NSString *_hardwareIdentifier;
-    NSString *_os;
-    NSString *_osBuild;
-    NSString *_osVersion;
-    unsigned int _tileGroupIdentifier;
+    NSString * _applicationIdentifier;
+    NSString * _applicationVersion;
+    NSString * _countryCode;
+    NSString * _dataDirectory;
+    int  _defaultScale;
+    NSString * _disputedBorderCountryOverride;
+    NSString * _disputedBorderRegionOverride;
+    NSString * _environment;
+    NSString * _hardwareIdentifier;
+    NSString * _os;
+    NSString * _osBuild;
+    NSString * _osVersion;
+    BOOL  _requiresLegacyFormat;
+    unsigned int  _tileGroupIdentifier;
 }
 
 @property (nonatomic, copy) NSString *applicationIdentifier;
 @property (nonatomic, copy) NSString *applicationVersion;
 @property (nonatomic, copy) NSString *countryCode;
 @property (nonatomic, copy) NSString *dataDirectory;
+@property (nonatomic, readonly) int defaultScale;
 @property (nonatomic, readonly) NSString *directorySuffix;
 @property (nonatomic, copy) NSString *disputedBorderCountryOverride;
 @property (nonatomic, copy) NSString *disputedBorderRegionOverride;
@@ -29,6 +32,7 @@
 @property (nonatomic, copy) NSString *os;
 @property (nonatomic, copy) NSString *osBuild;
 @property (nonatomic, copy) NSString *osVersion;
+@property (nonatomic, readonly) BOOL requiresLegacyFormat;
 @property (nonatomic) unsigned int tileGroupIdentifier;
 
 + (id)configurationWithPairedDevice:(id)arg1;
@@ -40,6 +44,7 @@
 - (id)countryCode;
 - (id)dataDirectory;
 - (void)dealloc;
+- (int)defaultScale;
 - (id)directorySuffix;
 - (id)disputedBorderCountryOverride;
 - (id)disputedBorderRegionOverride;
@@ -53,6 +58,7 @@
 - (id)os;
 - (id)osBuild;
 - (id)osVersion;
+- (BOOL)requiresLegacyFormat;
 - (void)setApplicationIdentifier:(id)arg1;
 - (void)setApplicationVersion:(id)arg1;
 - (void)setCountryCode:(id)arg1;

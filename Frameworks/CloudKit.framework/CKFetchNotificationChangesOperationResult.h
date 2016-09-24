@@ -3,8 +3,8 @@
  */
 
 @interface CKFetchNotificationChangesOperationResult : CKOperationResult <NSSecureCoding> {
-    BOOL _moreComing;
-    CKServerChangeToken *_serverChangeToken;
+    BOOL  _moreComing;
+    CKServerChangeToken * _serverChangeToken;
 }
 
 @property (nonatomic) BOOL moreComing;

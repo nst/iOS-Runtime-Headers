@@ -3,8 +3,8 @@
  */
 
 @interface _GCGamepadSnapshot : _GCGamepad <_GCSnapshot> {
-    GCMotion *_motion;
-    NSData *_snapshotData;
+    GCMotion * _motion;
+    NSData * _snapshotData;
 }
 
 @property (readonly, copy) NSString *debugDescription;

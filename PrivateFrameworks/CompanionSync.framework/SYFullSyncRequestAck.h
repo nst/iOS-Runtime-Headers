@@ -3,11 +3,11 @@
  */
 
 @interface SYFullSyncRequestAck : PBCodable <NSCopying> {
-    BOOL _accepted;
-    SYErrorInfo *_error;
-    SYMessageHeader *_header;
-    NSString *_inProgressSyncID;
-    NSString *_requestSyncID;
+    BOOL  _accepted;
+    SYErrorInfo * _error;
+    SYMessageHeader * _header;
+    NSString * _inProgressSyncID;
+    NSString * _requestSyncID;
 }
 
 @property (nonatomic) BOOL accepted;

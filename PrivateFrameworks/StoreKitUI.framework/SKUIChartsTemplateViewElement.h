@@ -3,7 +3,7 @@
  */
 
 @interface SKUIChartsTemplateViewElement : SKUIViewElement {
-    NSString *_type;
+    NSString * _type;
 }
 
 @property (nonatomic, readonly) SKUIActivityIndicatorViewElement *activityIndicator;

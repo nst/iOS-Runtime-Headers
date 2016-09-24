@@ -3,12 +3,12 @@
  */
 
 @interface TSUHTMLTable : NSObject {
-    NSMutableDictionary *_cellAttributes;
-    NSMutableDictionary *_columnAttributes;
-    NSMutableArray *_columnHeaders;
-    unsigned int _rowClassStride;
-    NSMutableDictionary *_rowClasses;
-    NSMutableArray *_rows;
+    NSMutableDictionary * _cellAttributes;
+    NSMutableDictionary * _columnAttributes;
+    NSMutableArray * _columnHeaders;
+    unsigned int  _rowClassStride;
+    NSMutableDictionary * _rowClasses;
+    NSMutableArray * _rows;
 }
 
 @property (nonatomic, readonly) unsigned int count;

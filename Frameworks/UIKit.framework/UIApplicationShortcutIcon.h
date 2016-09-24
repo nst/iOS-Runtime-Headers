@@ -3,15 +3,15 @@
  */
 
 @interface UIApplicationShortcutIcon : NSObject <NSCopying> {
-    SBSApplicationShortcutIcon *_sbsShortcutIcon;
+    SBSApplicationShortcutIcon * _sbsShortcutIcon;
 }
 
-@property (nonatomic) BOOL flipsForRightToLeftLayoutDirection;
 @property (nonatomic, readonly) SBSApplicationShortcutIcon *sbsShortcutIcon;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)iconWithCustomImage:(id)arg1;
++ (id)iconWithCustomImage:(id)arg1 isTemplate:(BOOL)arg2;
 + (id)iconWithTemplateImageName:(id)arg1;
 + (id)iconWithType:(int)arg1;
 + (int)sbsIconTypeForIconType:(int)arg1;
@@ -19,12 +19,10 @@
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)flipsForRightToLeftLayoutDirection;
 - (unsigned int)hash;
 - (id)initWithSBSApplicationShortcutIcon:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)sbsShortcutIcon;
-- (void)setFlipsForRightToLeftLayoutDirection:(BOOL)arg1;
 
 // Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
 

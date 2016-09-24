@@ -3,13 +3,13 @@
  */
 
 @interface MKMapSnapshotter : NSObject {
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    id /* block */ _completionHandler;
-    int _loadingFlag;
-    BOOL _needsResume;
-    MKMapSnapshotOptions *_options;
-    VKMapSnapshotCreator *_snapshotCreator;
-    NSXPCConnection *_snapshotService;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    id /* block */  _completionHandler;
+    int  _loadingFlag;
+    BOOL  _needsResume;
+    MKMapSnapshotOptions * _options;
+    VKMapSnapshotCreator * _snapshotCreator;
+    NSXPCConnection * _snapshotService;
 }
 
 @property (getter=isLoading, nonatomic, readonly) BOOL loading;

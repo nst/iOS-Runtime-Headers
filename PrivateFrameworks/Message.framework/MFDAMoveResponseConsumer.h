@@ -3,10 +3,10 @@
  */
 
 @interface MFDAMoveResponseConsumer : MFDAMailAccountConsumer <DAMessageMoveRequestConsumer> {
-    MFError *_error;
-    NSMutableSet *_failures;
-    NSSet *_messagesIDs;
-    NSMutableDictionary *_newRemoteIDsByMessageID;
+    MFError * _error;
+    NSMutableSet * _failures;
+    NSSet * _messagesIDs;
+    NSMutableDictionary * _newRemoteIDsByMessageID;
 }
 
 @property (nonatomic, retain) MFError *error;

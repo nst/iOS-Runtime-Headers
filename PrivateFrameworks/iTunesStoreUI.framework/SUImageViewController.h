@@ -3,8 +3,8 @@
  */
 
 @interface SUImageViewController : SUViewController {
-    SUTouchCaptureView *_backstopView;
-    UIImageView *_imageView;
+    SUTouchCaptureView * _backstopView;
+    UIImageView * _imageView;
 }
 
 - (void)_backstopAction:(id)arg1;

@@ -2,21 +2,27 @@
    Image: /System/Library/Frameworks/Contacts.framework/Contacts
  */
 
-@interface CNContactChangeRequest : NSObject {
-    NSArray *_contacts;
-    int _kind;
+@interface CNContactChangeRequest : NSObject <NSSecureCoding> {
+    NSArray * _contacts;
+    int  _kind;
+    NSString * _linkIdentifier;
 }
 
 @property (nonatomic, readonly, copy) NSArray *contactIdentifiers;
 @property (nonatomic, readonly, copy) NSArray *contacts;
 @property (nonatomic, readonly) int kind;
+@property (nonatomic, readonly, copy) NSString *linkIdentifier;
 
-+ (id)contactChangeRequestWithKind:(int)arg1 contacts:(id)arg2;
++ (id)contactChangeRequestWithKind:(int)arg1 contacts:(id)arg2 linkIdentifier:(id)arg3;
++ (BOOL)supportsSecureCoding;
 
 - (id)contactIdentifiers;
 - (id)contacts;
 - (void)dealloc;
-- (id)initWithKind:(int)arg1 contacts:(id)arg2;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithKind:(int)arg1 contacts:(id)arg2 linkIdentifier:(id)arg3;
 - (int)kind;
+- (id)linkIdentifier;
 
 @end

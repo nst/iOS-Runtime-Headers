@@ -3,10 +3,10 @@
  */
 
 @interface _HDAuthorizationRequest : NSObject {
-    id /* block */ _completionHandler;
-    NSUUID *_identifier;
-    NSSet *_typesToRead;
-    NSSet *_typesToWrite;
+    id /* block */  _completionHandler;
+    NSUUID * _identifier;
+    NSSet * _typesToRead;
+    NSSet * _typesToWrite;
 }
 
 @property (nonatomic, readonly) NSUUID *identifier;

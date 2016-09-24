@@ -3,10 +3,10 @@
  */
 
 @interface SKUIITunesStoreUIPageViewController : SUStorePageViewController {
-    SUBarButtonItem *_cancelButtonItem;
-    NSString *_cancelButtonTitle;
-    SKProductPageViewController *_productPageViewController;
-    BOOL _showsCancelButton;
+    SUBarButtonItem * _cancelButtonItem;
+    NSString * _cancelButtonTitle;
+    SKProductPageViewController * _productPageViewController;
+    BOOL  _showsCancelButton;
 }
 
 @property (nonatomic, copy) NSString *cancelButtonTitle;

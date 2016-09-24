@@ -3,11 +3,12 @@
  */
 
 @interface _CTGCommonCache : NSObject {
-    void *_cacheBytes;
+    struct type { 
+        unsigned char __lx[168]; 
+    }  _cacheBytes;
 }
 
 - (void)dealloc;
-- (void)finalize;
 - (id)init;
 
 @end

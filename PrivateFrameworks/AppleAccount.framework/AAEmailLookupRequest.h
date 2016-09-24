@@ -3,8 +3,8 @@
  */
 
 @interface AAEmailLookupRequest : AARequest {
-    ACAccount *_account;
-    NSArray *_emailAddresses;
+    ACAccount * _account;
+    NSArray * _emailAddresses;
 }
 
 @property (nonatomic, retain) ACAccount *account;

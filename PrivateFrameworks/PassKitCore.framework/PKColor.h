@@ -3,11 +3,11 @@
  */
 
 @interface PKColor : NSObject <NSCopying, NSSecureCoding> {
-    float _alpha;
-    float _blue;
-    struct CGColor { } *_colorRef;
-    float _green;
-    float _red;
+    double  _alpha;
+    double  _blue;
+    struct CGColor { } * _colorRef;
+    double  _green;
+    double  _red;
 }
 
 @property (nonatomic, readonly) struct CGColor { }*CGColor;

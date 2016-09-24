@@ -3,21 +3,21 @@
  */
 
 @interface AppLaunchStatsStateHandlerQueue : NSObject <DuetLoggerProtocol> {
-    NSMutableArray *appForecastHandlerQueue;
-    NSMutableArray *bgDataReadHandlerQueue;
-    NSMutableArray *bgNDISCDataReadHandlerQueue;
-    NSMutableArray *dataBudgetHandlerQueue;
-    NSMutableArray *dataForecastHandlerQueue;
-    NSMutableArray *dataReadHandlerQueue;
-    NSMutableArray *databaseAgeHandlerQueue;
-    NSMutableArray *noprewarmListHandlerQueue;
-    NSMutableArray *ok2LaunchHandlerQueue;
-    NSMutableArray *powerFetchBudgetHandlerQueue;
-    NSMutableArray *powerForecastHandlerQueue;
-    NSMutableArray *powerPushBudgetHandlerQueue;
-    NSMutableArray *queryHandlerQueue;
-    NSMutableArray *scoreHandlerQueue;
-    NSMutableArray *trendHandlerQueue;
+    NSMutableArray * appForecastHandlerQueue;
+    NSMutableArray * bgDataReadHandlerQueue;
+    NSMutableArray * bgNDISCDataReadHandlerQueue;
+    NSMutableArray * dataBudgetHandlerQueue;
+    NSMutableArray * dataForecastHandlerQueue;
+    NSMutableArray * dataReadHandlerQueue;
+    NSMutableArray * databaseAgeHandlerQueue;
+    NSMutableArray * noprewarmListHandlerQueue;
+    NSMutableArray * ok2LaunchHandlerQueue;
+    NSMutableArray * powerFetchBudgetHandlerQueue;
+    NSMutableArray * powerForecastHandlerQueue;
+    NSMutableArray * powerPushBudgetHandlerQueue;
+    NSMutableArray * queryHandlerQueue;
+    NSMutableArray * scoreHandlerQueue;
+    NSMutableArray * trendHandlerQueue;
 }
 
 @property (nonatomic, readonly) NSMutableArray *appForecastHandlerQueue;

@@ -3,7 +3,7 @@
  */
 
 @interface PSUITVOutController : PSListController {
-    PSUITVOutManager *_tvOutManager;
+    PSUITVOutManager * _tvOutManager;
 }
 
 - (void).cxx_destruct;

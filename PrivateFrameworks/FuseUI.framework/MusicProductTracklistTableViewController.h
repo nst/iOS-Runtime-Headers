@@ -3,7 +3,7 @@
  */
 
 @interface MusicProductTracklistTableViewController : MusicLibraryBrowseTableViewController {
-    float _trackNumberColumnWidth;
+    double  _trackNumberColumnWidth;
 }
 
 - (void)_updateTrackNumberColumnWidthAllowingVisibleCellUpdate:(BOOL)arg1;

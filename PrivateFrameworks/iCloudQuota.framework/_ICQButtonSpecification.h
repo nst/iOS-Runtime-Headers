@@ -3,9 +3,9 @@
  */
 
 @interface _ICQButtonSpecification : NSObject {
-    ICQLink *_buttonLink;
-    NSDictionary *_linkForBundleIdentifier;
-    NSDictionary *_serverDict;
+    ICQLink * _buttonLink;
+    NSDictionary * _linkForBundleIdentifier;
+    NSDictionary * _serverDict;
 }
 
 @property (nonatomic, retain) NSDictionary *linkForBundleIdentifier;

@@ -3,9 +3,9 @@
  */
 
 @interface WDShading : NSObject <NSCopying> {
-    OITSUColor *mBackgroundColor;
-    OITSUColor *mForegroundColor;
-    int mStyle;
+    OITSUColor * mBackgroundColor;
+    OITSUColor * mForegroundColor;
+    int  mStyle;
 }
 
 + (id)autoBackgroundColor;

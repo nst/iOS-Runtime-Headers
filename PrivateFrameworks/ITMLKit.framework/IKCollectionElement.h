@@ -3,7 +3,7 @@
  */
 
 @interface IKCollectionElement : IKViewElement {
-    NSArray *_sections;
+    NSArray * _sections;
 }
 
 @property (nonatomic, readonly, retain) IKHeaderElement *header;

@@ -3,7 +3,7 @@
  */
 
 @interface SSItemContentRating : NSObject <NSCopying, SSXPCCoding> {
-    NSMutableDictionary *_dictionary;
+    NSMutableDictionary * _dictionary;
 }
 
 @property (nonatomic, readonly) NSDictionary *contentRatingDictionary;

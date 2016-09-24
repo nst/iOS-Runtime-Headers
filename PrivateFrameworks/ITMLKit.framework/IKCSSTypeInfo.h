@@ -5,6 +5,7 @@
 @interface IKCSSTypeInfo : NSObject
 
 + (id)getTypeInfoForPropertyName:(id)arg1;
-+ (void)initPropertyInfo;
++ (void)registerStyle:(id)arg1 type:(unsigned int)arg2;
++ (void)unregisterStyles;
 
 @end

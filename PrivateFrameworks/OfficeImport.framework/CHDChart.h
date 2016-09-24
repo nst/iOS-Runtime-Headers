@@ -3,37 +3,37 @@
  */
 
 @interface CHDChart : OADGraphic <OADDrawableContainer> {
-    bool mAutoTitleDeleted;
-    OADGraphicProperties *mBackWallGraphicProperties;
-    OADGraphicProperties *mChartAreaGraphicProperties;
-    int mChartDirection;
-    CHDDefaultTextProperties *mDefaultTextProperties;
-    bool mDirectionChanged;
-    int mDisplayBlankCellsAs;
-    NSMutableArray *mDrawables;
-    EDWorkbook *mExternalData;
-    OADGraphicProperties *mFloorGraphicProperties;
-    bool mHasSharedXValues;
-    bool mHasVisibleSeriesNames;
-    CHDLegend *mLegend;
+    bool  mAutoTitleDeleted;
+    OADGraphicProperties * mBackWallGraphicProperties;
+    OADGraphicProperties * mChartAreaGraphicProperties;
+    int  mChartDirection;
+    CHDDefaultTextProperties * mDefaultTextProperties;
+    bool  mDirectionChanged;
+    int  mDisplayBlankCellsAs;
+    NSMutableArray * mDrawables;
+    EDWorkbook * mExternalData;
+    OADGraphicProperties * mFloorGraphicProperties;
+    bool  mHasSharedXValues;
+    bool  mHasVisibleSeriesNames;
+    CHDLegend * mLegend;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } mLogicalBounds;
-    bool mMSGraph;
-    CHDPlotArea *mPlotArea;
-    bool mPlotVisibleCellsOnly;
-    EDSheet *mSheet;
-    OADGraphicProperties *mSideWallGraphicProperties;
-    int mStyleId;
-    CHDTitle *mTitle;
-    CHDView3D *mView3D;
+    }  mLogicalBounds;
+    bool  mMSGraph;
+    CHDPlotArea * mPlotArea;
+    bool  mPlotVisibleCellsOnly;
+    EDSheet * mSheet;
+    OADGraphicProperties * mSideWallGraphicProperties;
+    int  mStyleId;
+    CHDTitle * mTitle;
+    CHDView3D * mView3D;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -79,7 +79,7 @@
 - (bool)isPlotVisibleCellsOnly;
 - (bool)isScatterOrBubble;
 - (id)legend;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })logicalBounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })logicalBounds;
 - (id)mainType;
 - (id)plotArea;
 - (id)processors;
@@ -97,7 +97,7 @@
 - (void)setFloorGraphicProperties:(id)arg1;
 - (void)setHasSharedXValues:(bool)arg1;
 - (void)setLegend:(id)arg1;
-- (void)setLogicalBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setLogicalBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setMSGraph:(bool)arg1;
 - (void)setParentTextListStyle:(id)arg1;
 - (void)setPlotArea:(id)arg1;

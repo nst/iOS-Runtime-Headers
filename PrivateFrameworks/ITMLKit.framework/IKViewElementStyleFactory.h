@@ -3,8 +3,8 @@
  */
 
 @interface IKViewElementStyleFactory : NSObject {
-    IKStyleFactory *_styleFactory;
-    IKTemplateStyleSheet *_styleSheet;
+    IKStyleFactory * _styleFactory;
+    IKTemplateStyleSheet * _styleSheet;
 }
 
 @property (nonatomic, readonly, retain) IKStyleFactory *styleFactory;

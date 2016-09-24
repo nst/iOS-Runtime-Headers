@@ -3,22 +3,22 @@
  */
 
 @interface MCEmailAccountPayloadBase : MCPayload {
-    BOOL _SMIMEEnabled;
-    NSNumber *_SMIMEEnabledNum;
-    NSData *_SMIMEEncryptionIdentityPersistentID;
-    NSString *_SMIMEEncryptionIdentityUUID;
-    BOOL _SMIMEPerMessageSwitchEnabled;
-    NSNumber *_SMIMEPerMessageSwitchEnabledNum;
-    NSData *_SMIMESigningIdentityPersistentID;
-    NSString *_SMIMESigningIdentityUUID;
-    BOOL _isMailDropEnabled;
-    NSNumber *_isMailDropEnabledNum;
-    BOOL _isRecentsSyncingDisabled;
-    NSNumber *_isRecentsSyncingDisabledNum;
-    BOOL _preventAppSheet;
-    NSNumber *_preventAppSheetNum;
-    BOOL _preventMove;
-    NSNumber *_preventMoveNum;
+    BOOL  _SMIMEEnabled;
+    NSNumber * _SMIMEEnabledNum;
+    NSData * _SMIMEEncryptionIdentityPersistentID;
+    NSString * _SMIMEEncryptionIdentityUUID;
+    BOOL  _SMIMEPerMessageSwitchEnabled;
+    NSNumber * _SMIMEPerMessageSwitchEnabledNum;
+    NSData * _SMIMESigningIdentityPersistentID;
+    NSString * _SMIMESigningIdentityUUID;
+    BOOL  _isMailDropEnabled;
+    NSNumber * _isMailDropEnabledNum;
+    BOOL  _isRecentsSyncingDisabled;
+    NSNumber * _isRecentsSyncingDisabledNum;
+    BOOL  _preventAppSheet;
+    NSNumber * _preventAppSheetNum;
+    BOOL  _preventMove;
+    NSNumber * _preventMoveNum;
 }
 
 @property (nonatomic) BOOL SMIMEEnabled;

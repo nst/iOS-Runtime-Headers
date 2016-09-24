@@ -3,10 +3,10 @@
  */
 
 @interface SDFFreshObjectQueue : NSObject {
-    unsigned int _expired;
-    NSObject<OS_dispatch_source> *_flusher;
-    double _lifetime;
-    NSMutableArray *_queue;
+    unsigned int  _expired;
+    NSObject<OS_dispatch_source> * _flusher;
+    double  _lifetime;
+    NSMutableArray * _queue;
 }
 
 - (void).cxx_destruct;

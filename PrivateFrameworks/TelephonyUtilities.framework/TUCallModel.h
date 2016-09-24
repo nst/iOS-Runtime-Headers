@@ -2,48 +2,45 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@interface TUCallModel : NSObject {
-    BOOL _addCallAllowed;
-    int _ambiguityState;
-    BOOL _ambiguous;
-    BOOL _endAndAnswerAllowed;
-    BOOL _hardPauseAvailable;
-    BOOL _holdAllowed;
-    BOOL _holdAndAnswerAllowed;
-    BOOL _mergeable;
-    BOOL _sendToVoicemailAllowed;
-    BOOL _swappable;
-    BOOL _takingCallsPrivateAllowed;
+@interface TUCallModel : NSObject <NSCopying, NSSecureCoding> {
+    BOOL  _supportsAddCall;
+    BOOL  _supportsDTMF;
+    BOOL  _supportsGrouping;
+    BOOL  _supportsHolding;
+    BOOL  _supportsSendingToVoicemail;
+    BOOL  _supportsUnambiguousMultiPartyState;
+    BOOL  _supportsUngrouping;
 }
 
-@property (getter=isAddCallAllowed, nonatomic, readonly) BOOL addCallAllowed;
-@property (nonatomic, readonly) int ambiguityState;
-@property (getter=isAmbiguous, nonatomic, readonly) BOOL ambiguous;
-@property (getter=isEndAndAnswerAllowed, nonatomic, readonly) BOOL endAndAnswerAllowed;
-@property (getter=isHardPauseAvailable, nonatomic, readonly) BOOL hardPauseAvailable;
-@property (getter=isHoldAllowed, nonatomic, readonly) BOOL holdAllowed;
-@property (getter=isHoldAndAnswerAllowed, nonatomic, readonly) BOOL holdAndAnswerAllowed;
-@property (getter=isMergeable, nonatomic, readonly) BOOL mergeable;
-@property (getter=isSendToVoicemailAllowed, nonatomic, readonly) BOOL sendToVoicemailAllowed;
-@property (getter=isSwappable, nonatomic, readonly) BOOL swappable;
-@property (getter=isTakingCallsPrivateAllowed, nonatomic, readonly) BOOL takingCallsPrivateAllowed;
+@property (nonatomic) BOOL supportsAddCall;
+@property (nonatomic) BOOL supportsDTMF;
+@property (nonatomic) BOOL supportsGrouping;
+@property (nonatomic) BOOL supportsHolding;
+@property (nonatomic) BOOL supportsSendingToVoicemail;
+@property (nonatomic) BOOL supportsUnambiguousMultiPartyState;
+@property (nonatomic) BOOL supportsUngrouping;
 
-+ (id)sharedInstance;
++ (BOOL)supportsSecureCoding;
 
-- (int)ambiguityState;
-- (id)audioCategoryForCall:(id)arg1;
-- (id)audioModeForCall:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (BOOL)isAddCallAllowed;
-- (BOOL)isAmbiguous;
-- (BOOL)isEndAndAnswerAllowed;
-- (BOOL)isHardPauseAvailable;
-- (BOOL)isHoldAllowed;
-- (BOOL)isHoldAndAnswerAllowed;
-- (BOOL)isMergeable;
-- (BOOL)isSendToVoicemailAllowed;
-- (BOOL)isSwappable;
-- (BOOL)isTakingCallsPrivateAllowed;
-- (BOOL)shouldPlayDTMFToneForCall:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned int)hash;
+- (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (void)setSupportsAddCall:(BOOL)arg1;
+- (void)setSupportsDTMF:(BOOL)arg1;
+- (void)setSupportsGrouping:(BOOL)arg1;
+- (void)setSupportsHolding:(BOOL)arg1;
+- (void)setSupportsSendingToVoicemail:(BOOL)arg1;
+- (void)setSupportsUnambiguousMultiPartyState:(BOOL)arg1;
+- (void)setSupportsUngrouping:(BOOL)arg1;
+- (BOOL)supportsAddCall;
+- (BOOL)supportsDTMF;
+- (BOOL)supportsGrouping;
+- (BOOL)supportsHolding;
+- (BOOL)supportsSendingToVoicemail;
+- (BOOL)supportsUnambiguousMultiPartyState;
+- (BOOL)supportsUngrouping;
 
 @end

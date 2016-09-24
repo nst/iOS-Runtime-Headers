@@ -3,7 +3,7 @@
  */
 
 @interface TUCallGroup : NSObject {
-    NSArray *_calls;
+    NSArray * _calls;
 }
 
 @property (retain) NSArray *calls;

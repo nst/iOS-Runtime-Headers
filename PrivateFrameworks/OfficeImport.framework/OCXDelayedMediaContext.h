@@ -3,8 +3,8 @@
  */
 
 @interface OCXDelayedMediaContext : NSObject <OCDDelayedMediaContext> {
-    OCPPackage *mPackage;
-    NSURL *mTargetLocation;
+    OCPPackage * mPackage;
+    NSURL * mTargetLocation;
 }
 
 @property (readonly, copy) NSString *debugDescription;

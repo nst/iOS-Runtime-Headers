@@ -3,7 +3,7 @@
  */
 
 @interface CKDProxyOperationQueue : NSOperationQueue {
-    CKDClientProxy *_proxy;
+    CKDClientProxy * _proxy;
 }
 
 @property (nonatomic) CKDClientProxy *proxy;

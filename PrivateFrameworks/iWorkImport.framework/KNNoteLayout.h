@@ -3,12 +3,12 @@
  */
 
 @interface KNNoteLayout : TSDLayout <TSWPColumnMetrics, TSWPLayoutParent> {
-    TSWPLayout *mContainedLayout;
-    TSWPPadding *mPadding;
+    TSWPLayout * mContainedLayout;
+    TSWPPadding * mPadding;
     struct CGSize { 
-        float width; 
-        float height; 
-    } mSizeOfScrollViewEnclosingCanvas;
+        double width; 
+        double height; 
+    }  mSizeOfScrollViewEnclosingCanvas;
 }
 
 @property (nonatomic, readonly) BOOL alwaysStartsNewTarget;
@@ -18,14 +18,14 @@
 @property (nonatomic, readonly) TSWPPadding *layoutMargins;
 @property (nonatomic, readonly) TSWPPadding *padding;
 @property (nonatomic, readonly) BOOL shrinkTextToFit;
-@property (nonatomic, readonly) float textScaleFactor;
+@property (nonatomic, readonly) double textScaleFactor;
 
 - (void)addChild:(id)arg1;
-- (struct CGSize { float x1; float x2; })adjustedInsetsForTarget:(id)arg1;
+- (struct CGSize { double x1; double x2; })adjustedInsetsForTarget:(id)arg1;
 - (BOOL)alwaysStartsNewTarget;
 - (unsigned int)autosizeFlagsForTextLayout:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })autosizedFrameForTextLayout:(id)arg1 textSize:(struct CGSize { float x1; float x2; })arg2;
-- (struct CGPoint { float x1; float x2; })capturedInfoPositionForAttachment;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })autosizedFrameForTextLayout:(id)arg1 textSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGPoint { double x1; double x2; })capturedInfoPositionForAttachment;
 - (id)children;
 - (unsigned int)columnCount;
 - (id)columnMetricsForCharIndex:(unsigned int)arg1 outRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
@@ -45,7 +45,7 @@
 - (id)layoutGeometryFromInfo;
 - (id)layoutMargins;
 - (float)maxAutoGrowHeightForTextLayout:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })nonAutosizedFrameForTextLayout:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })nonAutosizedFrameForTextLayout:(id)arg1;
 - (id)p_adjustedPaddingForBodyWidth:(float)arg1;
 - (float)p_enclosingScrollViewScrollerWidthForLayoutController:(id)arg1;
 - (BOOL)p_isForPrint;

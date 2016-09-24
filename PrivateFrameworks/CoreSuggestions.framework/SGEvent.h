@@ -3,23 +3,26 @@
  */
 
 @interface SGEvent : SGObject <SGEventForGeocode> {
-    NSDate *_creationDate;
-    NSDate *_end;
-    NSTimeZone *_endTimeZone;
-    NSObject<OS_dispatch_queue> *_geocodeQueue;
-    SGEvent *_geocoded;
-    BOOL _isAllDay;
-    NSDate *_lastModifiedDate;
-    NSArray *_locations;
-    NSString *_notes;
-    NSString *_opaqueKey;
-    NSDate *_start;
-    NSTimeZone *_startTimeZone;
-    NSArray *_tags;
-    NSString *_title;
-    NSString *_uniqueKey;
+    NSURL * _URL;
+    NSDate * _creationDate;
+    NSDate * _end;
+    NSTimeZone * _endTimeZone;
+    NSObject<OS_dispatch_queue> * _geocodeQueue;
+    SGEvent * _geocoded;
+    BOOL  _isAllDay;
+    NSDate * _lastModifiedDate;
+    NSArray * _locations;
+    NSString * _naturalLanguageEventTypeIdentifier;
+    NSString * _notes;
+    NSString * _opaqueKey;
+    NSDate * _start;
+    NSTimeZone * _startTimeZone;
+    NSArray * _tags;
+    NSString * _title;
+    NSString * _uniqueKey;
 }
 
+@property (nonatomic, readonly) NSURL *URL;
 @property (nonatomic, readonly) NSDate *creationDate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -30,6 +33,8 @@
 @property (nonatomic, readonly) BOOL isAllDay;
 @property (nonatomic, readonly) NSDate *lastModifiedDate;
 @property (nonatomic, readonly) NSArray *locations;
+@property (getter=isNaturalLanguageEvent, nonatomic, readonly) BOOL naturalLanguageEvent;
+@property (nonatomic, readonly) NSString *naturalLanguageEventTypeIdentifier;
 @property (nonatomic, readonly) NSString *notes;
 @property (nonatomic, readonly) NSString *opaqueKey;
 @property (nonatomic, readonly) NSDate *start;
@@ -39,12 +44,13 @@
 @property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) NSString *uniqueKey;
 
-+ (id)eventWithRecordId:(id)arg1 origin:(id)arg2 uniqueKey:(id)arg3 opaqueKey:(id)arg4 title:(id)arg5 notes:(id)arg6 start:(id)arg7 startTimeZone:(id)arg8 end:(id)arg9 endTimeZone:(id)arg10 isAllDay:(BOOL)arg11 creationDate:(id)arg12 lastModifiedDate:(id)arg13 locations:(id)arg14 tags:(id)arg15;
++ (id)eventWithRecordId:(id)arg1 origin:(id)arg2 uniqueKey:(id)arg3 opaqueKey:(id)arg4 title:(id)arg5 notes:(id)arg6 start:(id)arg7 startTimeZone:(id)arg8 end:(id)arg9 endTimeZone:(id)arg10 isAllDay:(BOOL)arg11 creationDate:(id)arg12 lastModifiedDate:(id)arg13 locations:(id)arg14 tags:(id)arg15 URL:(id)arg16;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)URL;
 - (void)_applyTimeRangeToEKEvent:(id)arg1;
-- (id)_componentsForDate:(id)arg1 timeZone:(id)arg2 isEnd:(BOOL)arg3;
+- (id)_componentsForDate:(id)arg1 timeZone:(id)arg2 isEnd:(BOOL)arg3 calendar:(id)arg4;
 - (id)creationDate;
 - (id)dateForUTCDate:(id)arg1 withTimeZone:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
@@ -61,16 +67,20 @@
 - (id)geocodedEventWithStartDate:(id)arg1 startTimeZone:(id)arg2 endDate:(id)arg3 endTimeZone:(id)arg4 locations:(id)arg5;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithRecordId:(id)arg1 origin:(id)arg2 uniqueKey:(id)arg3 opaqueKey:(id)arg4 title:(id)arg5 notes:(id)arg6 start:(id)arg7 startTimeZone:(id)arg8 end:(id)arg9 endTimeZone:(id)arg10 isAllDay:(BOOL)arg11 creationDate:(id)arg12 lastModifiedDate:(id)arg13 locations:(id)arg14 tags:(id)arg15;
+- (id)initWithRecordId:(id)arg1 origin:(id)arg2 uniqueKey:(id)arg3 opaqueKey:(id)arg4 title:(id)arg5 notes:(id)arg6 start:(id)arg7 startTimeZone:(id)arg8 end:(id)arg9 endTimeZone:(id)arg10 isAllDay:(BOOL)arg11 creationDate:(id)arg12 lastModifiedDate:(id)arg13 locations:(id)arg14 tagStrings:(id)arg15 URL:(id)arg16 naturalLanguageEventIdentifier:(id)arg17;
+- (id)initWithRecordId:(id)arg1 origin:(id)arg2 uniqueKey:(id)arg3 opaqueKey:(id)arg4 title:(id)arg5 notes:(id)arg6 start:(id)arg7 startTimeZone:(id)arg8 end:(id)arg9 endTimeZone:(id)arg10 isAllDay:(BOOL)arg11 creationDate:(id)arg12 lastModifiedDate:(id)arg13 locations:(id)arg14 tags:(id)arg15 URL:(id)arg16;
 - (BOOL)isAllDay;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToEvent:(id)arg1;
 - (BOOL)isGeocodeCandidate;
+- (BOOL)isNaturalLanguageEvent;
 - (id)lastModifiedDate;
 - (id)locations;
 - (void)mergeIntoEKEvent:(id)arg1;
 - (void)mergeIntoEKEvent:(id)arg1 withStore:(id)arg2;
 - (void)mergeIntoEKEvent:(id)arg1 withStore:(id)arg2 preservingValuesDifferentFrom:(id)arg3;
+- (id)naturalLanguageEventTypeIdentifier;
+- (id)naturalLanguageEventTypeIdentifierInTags:(id)arg1;
 - (id)notes;
 - (id)opaqueKey;
 - (id)start;

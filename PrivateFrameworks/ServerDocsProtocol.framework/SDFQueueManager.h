@@ -3,7 +3,7 @@
  */
 
 @interface SDFQueueManager : NSObject {
-    NSMutableDictionary *_serviceQueues;
+    NSMutableDictionary * _serviceQueues;
 }
 
 + (id)sharedQueueManager;

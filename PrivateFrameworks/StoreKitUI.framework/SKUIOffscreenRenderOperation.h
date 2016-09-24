@@ -3,9 +3,9 @@
  */
 
 @interface SKUIOffscreenRenderOperation : NSOperation {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    id /* block */ _createLayerBlock;
-    UIImage *_outputImage;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    id /* block */  _createLayerBlock;
+    UIImage * _outputImage;
 }
 
 @property (nonatomic, copy) id /* block */ createLayerBlock;

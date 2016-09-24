@@ -3,16 +3,16 @@
  */
 
 @interface DDResultTracker : NSObject {
-    unsigned int countRemainingByCategory;
-    struct __DDResult { } *existingAddressResult;
-    unsigned int maximumDistance;
-    unsigned int maximumDistanceForEmails;
-    struct __DDResult { } *referenceResult;
-    unsigned int referenceResultLocation;
-    NSMutableArray *resultsAfter;
-    NSMutableArray *resultsBefore;
-    bool sortByProximity;
-    unsigned int totalCountRemaining;
+    unsigned int  countRemainingByCategory;
+    struct __DDResult { } * existingAddressResult;
+    unsigned int  maximumDistance;
+    unsigned int  maximumDistanceForEmails;
+    struct __DDResult { } * referenceResult;
+    unsigned int  referenceResultLocation;
+    NSMutableArray * resultsAfter;
+    NSMutableArray * resultsBefore;
+    bool  sortByProximity;
+    unsigned int  totalCountRemaining;
 }
 
 @property unsigned int maximumDistance;

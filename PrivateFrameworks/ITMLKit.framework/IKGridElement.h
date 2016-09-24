@@ -3,7 +3,7 @@
  */
 
 @interface IKGridElement : IKCollectionElement {
-    BOOL _paged;
+    BOOL  _paged;
 }
 
 @property (nonatomic, readonly) unsigned int columnCount;

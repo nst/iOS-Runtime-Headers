@@ -3,22 +3,26 @@
  */
 
 @interface PKPaymentDeviceConfigurationData : NSObject <NSSecureCoding> {
-    BOOL _devSigned;
-    NSString *_secureElementIdentifier;
+    BOOL  _devSigned;
+    NSNumber * _primaryJSBLSequenceCounter;
+    NSString * _secureElementIdentifier;
 }
 
 @property (nonatomic) BOOL devSigned;
+@property (nonatomic, copy) NSNumber *primaryJSBLSequenceCounter;
 @property (nonatomic, copy) NSString *secureElementIdentifier;
 
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (BOOL)devSigned;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)primaryJSBLSequenceCounter;
 - (id)secureElementIdentifier;
 - (void)setDevSigned:(BOOL)arg1;
+- (void)setPrimaryJSBLSequenceCounter:(id)arg1;
 - (void)setSecureElementIdentifier:(id)arg1;
 
 @end

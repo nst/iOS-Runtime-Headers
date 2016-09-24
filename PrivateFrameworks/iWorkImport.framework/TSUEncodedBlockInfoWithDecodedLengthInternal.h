@@ -3,7 +3,7 @@
  */
 
 @interface TSUEncodedBlockInfoWithDecodedLengthInternal : TSUEncodedBlockInfoInternal {
-    unsigned long _decodedLength;
+    unsigned long  _decodedLength;
 }
 
 - (unsigned long)decodedLength;

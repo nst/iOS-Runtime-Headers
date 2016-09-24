@@ -3,8 +3,8 @@
  */
 
 @interface WDParagraph : WDBlock {
-    WDParagraphProperties *mProperties;
-    NSMutableArray *mRuns;
+    WDParagraphProperties * mProperties;
+    NSMutableArray * mRuns;
 }
 
 - (id)addAnnotation:(int)arg1;

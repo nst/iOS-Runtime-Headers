@@ -3,7 +3,7 @@
  */
 
 @interface CAMPanoramaConfigurationCommand : CAMCaptureCommand {
-    CAMPanoramaConfiguration *__configuration;
+    CAMPanoramaConfiguration * __configuration;
 }
 
 @property (nonatomic, readonly) CAMPanoramaConfiguration *_configuration;

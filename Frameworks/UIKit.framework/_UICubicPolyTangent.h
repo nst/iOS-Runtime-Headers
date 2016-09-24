@@ -3,14 +3,14 @@
  */
 
 @interface _UICubicPolyTangent : NSObject <_UISettingsKeyObserver> {
-    double _cubicGain;
-    double _initialLinearGain;
-    double _parabolicGain;
-    double _quarticGain;
-    double _tangentCbrtSpeed;
-    double _tangentHyperCbrtSpeed;
-    double _tangentLineSpeed;
-    double _tangentSqrtSpeed;
+    double  _cubicGain;
+    double  _initialLinearGain;
+    double  _parabolicGain;
+    double  _quarticGain;
+    double  _tangentCbrtSpeed;
+    double  _tangentHyperCbrtSpeed;
+    double  _tangentLineSpeed;
+    double  _tangentSqrtSpeed;
 }
 
 @property (nonatomic) double cubicGain;

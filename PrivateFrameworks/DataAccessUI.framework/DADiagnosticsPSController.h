@@ -3,9 +3,9 @@
  */
 
 @interface DADiagnosticsPSController : PSListController <DADiagnosticSaveNotesDelegate, UIAlertViewDelegate> {
-    UIAlertView *_savingDataAlert;
-    UIAlertView *_simpleAlert;
-    SEL _simpleConfirmSheetDismissedSEL;
+    UIAlertView * _savingDataAlert;
+    UIAlertView * _simpleAlert;
+    SEL  _simpleConfirmSheetDismissedSEL;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,43 +3,86 @@
  */
 
 @interface VKSkyModel : VKModelObject <VKMapLayer, VKStyleManagerObserver> {
+    struct Matrix<float, 4, 1> { 
+        double _e[4]; 
+    }  _fillColor;
+    struct shared_ptr<ggl::ConstantDataTyped<ggl::Fog::Skyfog> > { 
+        struct ConstantDataTyped<ggl::Fog::Skyfog> {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    }  _fogConstantData;
+    bool  _fogEnabled;
+    struct FogInfo { 
+        struct shared_ptr<ggl::ConstantDataTyped<ggl::Fog::Skyfog> > { 
+            struct ConstantDataTyped<ggl::Fog::Skyfog> {} *__ptr_; 
+            struct __shared_weak_count {} *__cntrl_; 
+        } _fogConstantData; 
+    }  _fogInfo;
+    struct shared_ptr<ggl::PolygonBase::MeshMesh> { 
+        struct MeshMesh {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    }  _fogMesh;
+    struct unique_ptr<ggl::Fog::FogPipelineSetup, std::__1::default_delete<ggl::Fog::FogPipelineSetup> > { 
+        struct __compressed_pair<ggl::Fog::FogPipelineSetup *, std::__1::default_delete<ggl::Fog::FogPipelineSetup> > { 
+            struct FogPipelineSetup {} *__first_; 
+        } __ptr_; 
+    }  _fogPipelineSetup;
+    struct shared_ptr<ggl::Fog::FogPipelineState> { 
+        struct FogPipelineState {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    }  _fogPipelineState;
+    struct unique_ptr<ggl::RenderItem, std::__1::default_delete<ggl::RenderItem> > { 
+        struct __compressed_pair<ggl::RenderItem *, std::__1::default_delete<ggl::RenderItem> > { 
+            struct RenderItem {} *__first_; 
+        } __ptr_; 
+    }  _fogRenderItem;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    }  _fogRenderState;
+    struct shared_ptr<ggl::ConstantDataTyped<ggl::Tile::View> > { 
+        struct ConstantDataTyped<ggl::Tile::View> {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    }  _fogViewConstantData;
+    struct Matrix<float, 4, 1> { 
+        double _e[4]; 
+    }  _horizonColor;
+    VKMapModel * _mapModel;
+    BOOL  _needsNewStyle;
     struct shared_ptr<ggl::ConstantDataTyped<ggl::Sky::Style> > { 
         struct ConstantDataTyped<ggl::Sky::Style> {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _constantData;
-    struct Matrix<float, 4, 1> { 
-        float _e[4]; 
-    } _fillColor;
-    struct shared_ptr<ggl::RenderState> { 
-        struct RenderState {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    } _gglRenderState;
-    struct Matrix<float, 4, 1> { 
-        float _e[4]; 
-    } _horizonColor;
+    }  _skyConstantData;
     struct shared_ptr<ggl::IndexDataTyped<unsigned short> > { 
         struct IndexDataTyped<unsigned short> {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _indexData;
-    VKMapModel *_mapModel;
+    }  _skyIndexData;
     struct shared_ptr<ggl::Sky::SkyMesh> { 
         struct SkyMesh {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _mesh;
-    BOOL _needsNewStyle;
-    struct RenderItem { int (**x1)(); char *x2; struct RenderState {} *x3; struct ShaderSetup {} *x4; unsigned int x5; unsigned int x6; float x7; struct Mesh {} *x8; struct Range { unsigned int x_9_1_1; unsigned int x_9_1_2; } x9; struct Range {} *x10; unsigned int x11; } *_renderItem;
-    struct shared_ptr<ggl::Sky::Shader::Setup> { 
-        struct Setup {} *__ptr_; 
+    }  _skyMesh;
+    struct shared_ptr<ggl::Sky::SkyPipelineSetup> { 
+        struct SkyPipelineSetup {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _shaderSetup;
-    float _skyStartOffset;
+    }  _skyPipelineSetup;
+    struct shared_ptr<ggl::Sky::SkyPipelineState> { 
+        struct SkyPipelineState {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    }  _skyPipelineState;
+    struct RenderItem { int (**x1)(); char *x2; struct RenderState {} *x3; struct PipelineSetup {} *x4; unsigned int x5; unsigned int x6; double x7; struct Mesh {} *x8; struct Range { unsigned int x_9_1_1; unsigned int x_9_1_2; } x9; struct Range {} *x10; unsigned int x11; } * _skyRenderItem;
+    struct shared_ptr<ggl::RenderState> { 
+        struct RenderState {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    }  _skyRenderState;
+    double  _skyStartOffset;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) bool fogEnabled;
 @property (readonly) unsigned int hash;
 @property (nonatomic) VKMapModel *mapModel;
-@property (nonatomic, readonly) struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; } styleManager;
+@property (nonatomic, readonly) struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { struct StylesheetManager<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; } styleManager;
 @property (readonly) Class superclass;
 
 + (BOOL)reloadOnStylesheetChange;
@@ -47,17 +90,21 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (struct Matrix<float, 4, 1> { float x1[4]; })fillColor;
-- (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
-- (struct Matrix<float, 4, 1> { float x1[4]; })horizonColor;
-- (id)init;
-- (unsigned long long)mapLayerPosition;
+- (struct Matrix<float, 4, 1> { double x1[4]; })fillColor;
+- (bool)fogEnabled;
+- (void)generateFogForScene:(id)arg1 context:(struct LayoutContext { id x1; short x2; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x3; void*x4; const void*x5; double x6; void*x7; void*x8; void*x9; const void*x10; void*x11; double x12; SEL x13; SEL x14; oneway int x15; void*x16; void*x17; void*x18; const void*x19; in short x20; double x21; out const void*x22; void*x23; void*x24; struct ViewTransform {} *x25; struct __shared_weak_count {} *x26; }*)arg2 commandBuffer:(/* Warning: unhandled struct encoding: '{CommandBuffer=^^?*C^{RenderQueue}^{ClearItem}{vector<ggl::RenderItem *, std::__1::allocator<ggl::RenderItem *> >=^^{RenderItem}^^{RenderItem}{__compressed_pair<ggl::RenderItem **, std::__1::allocator<ggl::RenderItem *> >=^^{RenderItem}}}{vector<ggl::Texture2DLoadItem, std::__1::allocator<ggl::Texture2DLoadItem> >=^{Texture2DLoadItem}^{Texture2DLoadItem}{__compressed_pair<ggl::Texture2DLoadItem *, std::__1::allocator<ggl::Texture2DLoadItem> >=^{Texture2DLoadItem}}}{vector<ggl::BufferLoadItem, std::__1::allocator<ggl::BufferLoadItem> >=^{BufferLoadItem}^{BufferLoadItem}{__compressed_pair<ggl::BufferLoadItem *, std::__1::allocator<ggl::BufferLoadItem> >=^{BufferLoadItem}}}{deque<geo::fast_shared_ptr<ggl::QueryItem>, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > >={__split_buffer<geo::fast_shared_ptr<ggl::QueryItem> *, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> >=^^{fast_shared_ptr<ggl::QueryItem>}^^{fast_shared_ptr<ggl::QueryItem>}^^{fast_shared_ptr<ggl::QueryItem>}{__compressed_pair<geo::fast_shared_ptr<ggl::QueryItem> **, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> >=^^{fast_shared_ptr<ggl::QueryItem>}}}I{__compressed_pair<unsigned long, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > >=L}}{deque<ggl::PendingQuery, std::__1::allocator<ggl::PendingQuery> >={__split_buffer<ggl::PendingQuery *, std::__1::allocator<ggl::PendingQuery *> >=^^{PendingQuery}^^{PendingQuery}^^{PendingQuery}{__compressed_pair<ggl::PendingQuery **, std::__1::allocator<ggl::PendingQuery *> >=^^{PendingQuery}}}I{__compressed_pair<unsigned long, std::__1::allocator<ggl::PendingQuery> >=L}}@}' */ struct CommandBuffer { int (**x1)(); char *x2; unsigned char x3; struct RenderQueue {} *x4; struct ClearItem {} *x5; struct vector<ggl::RenderItem *, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_6_1_1; struct RenderItem {} **x_6_1_2; struct __compressed_pair<ggl::RenderItem **, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_3_2_1; } x_6_1_3; } x6; struct vector<ggl::Texture2DLoadItem, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_7_1_1; struct Texture2DLoadItem {} *x_7_1_2; struct __compressed_pair<ggl::Texture2DLoadItem *, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_3_2_1; } x_7_1_3; } x7; struct vector<ggl::BufferLoadItem, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_8_1_1; struct BufferLoadItem {} *x_8_1_2; struct __compressed_pair<ggl::BufferLoadItem *, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_3_2_1; } x_8_1_3; } x8; struct deque<geo::fast_shared_ptr<ggl::QueryItem>, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { struct __split_buffer<geo::fast_shared_ptr<ggl::QueryItem> *, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_1; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_2; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_3; struct __compressed_pair<geo::fast_shared_ptr<ggl::QueryItem> **, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_4_3_1; } x_1_2_4; } x_9_1_1; unsigned int x_9_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { unsigned long x_3_2_1; } x_9_1_3; } x9; }*)arg3;
+- (void)generateSkyForScene:(id)arg1 context:(struct LayoutContext { id x1; short x2; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x3; void*x4; const void*x5; double x6; void*x7; void*x8; void*x9; const void*x10; void*x11; double x12; SEL x13; SEL x14; oneway int x15; void*x16; void*x17; void*x18; const void*x19; in short x20; double x21; out const void*x22; void*x23; void*x24; struct ViewTransform {} *x25; struct __shared_weak_count {} *x26; }*)arg2 commandBuffer:(/* Warning: unhandled struct encoding: '{CommandBuffer=^^?*C^{RenderQueue}^{ClearItem}{vector<ggl::RenderItem *, std::__1::allocator<ggl::RenderItem *> >=^^{RenderItem}^^{RenderItem}{__compressed_pair<ggl::RenderItem **, std::__1::allocator<ggl::RenderItem *> >=^^{RenderItem}}}{vector<ggl::Texture2DLoadItem, std::__1::allocator<ggl::Texture2DLoadItem> >=^{Texture2DLoadItem}^{Texture2DLoadItem}{__compressed_pair<ggl::Texture2DLoadItem *, std::__1::allocator<ggl::Texture2DLoadItem> >=^{Texture2DLoadItem}}}{vector<ggl::BufferLoadItem, std::__1::allocator<ggl::BufferLoadItem> >=^{BufferLoadItem}^{BufferLoadItem}{__compressed_pair<ggl::BufferLoadItem *, std::__1::allocator<ggl::BufferLoadItem> >=^{BufferLoadItem}}}{deque<geo::fast_shared_ptr<ggl::QueryItem>, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > >={__split_buffer<geo::fast_shared_ptr<ggl::QueryItem> *, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> >=^^{fast_shared_ptr<ggl::QueryItem>}^^{fast_shared_ptr<ggl::QueryItem>}^^{fast_shared_ptr<ggl::QueryItem>}{__compressed_pair<geo::fast_shared_ptr<ggl::QueryItem> **, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> >=^^{fast_shared_ptr<ggl::QueryItem>}}}I{__compressed_pair<unsigned long, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > >=L}}{deque<ggl::PendingQuery, std::__1::allocator<ggl::PendingQuery> >={__split_buffer<ggl::PendingQuery *, std::__1::allocator<ggl::PendingQuery *> >=^^{PendingQuery}^^{PendingQuery}^^{PendingQuery}{__compressed_pair<ggl::PendingQuery **, std::__1::allocator<ggl::PendingQuery *> >=^^{PendingQuery}}}I{__compressed_pair<unsigned long, std::__1::allocator<ggl::PendingQuery> >=L}}@}' */ struct CommandBuffer { int (**x1)(); char *x2; unsigned char x3; struct RenderQueue {} *x4; struct ClearItem {} *x5; struct vector<ggl::RenderItem *, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_6_1_1; struct RenderItem {} **x_6_1_2; struct __compressed_pair<ggl::RenderItem **, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_3_2_1; } x_6_1_3; } x6; struct vector<ggl::Texture2DLoadItem, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_7_1_1; struct Texture2DLoadItem {} *x_7_1_2; struct __compressed_pair<ggl::Texture2DLoadItem *, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_3_2_1; } x_7_1_3; } x7; struct vector<ggl::BufferLoadItem, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_8_1_1; struct BufferLoadItem {} *x_8_1_2; struct __compressed_pair<ggl::BufferLoadItem *, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_3_2_1; } x_8_1_3; } x8; struct deque<geo::fast_shared_ptr<ggl::QueryItem>, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { struct __split_buffer<geo::fast_shared_ptr<ggl::QueryItem> *, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_1; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_2; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_3; struct __compressed_pair<geo::fast_shared_ptr<ggl::QueryItem> **, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_4_3_1; } x_1_2_4; } x_9_1_1; unsigned int x_9_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { unsigned long x_3_2_1; } x_9_1_3; } x9; }*)arg3;
+- (void)gglLayoutScene:(id)arg1 withContext:(struct LayoutContext { id x1; short x2; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x3; void*x4; const void*x5; double x6; void*x7; void*x8; void*x9; const void*x10; void*x11; double x12; SEL x13; SEL x14; oneway int x15; void*x16; void*x17; void*x18; const void*x19; in short x20; double x21; out const void*x22; void*x23; void*x24; struct ViewTransform {} *x25; struct __shared_weak_count {} *x26; }*)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
+- (struct Matrix<float, 4, 1> { double x1[4]; })horizonColor;
+- (id)initWithTarget:(id)arg1 sharedResources:(id)arg2;
+- (unsigned int)mapLayerPosition;
 - (id)mapModel;
-- (void)setFillColor:(struct Matrix<float, 4, 1> { float x1[4]; })arg1;
-- (void)setHorizonColor:(struct Matrix<float, 4, 1> { float x1[4]; })arg1;
+- (void)setFillColor:(struct Matrix<float, 4, 1> { double x1[4]; })arg1;
+- (void)setFogEnabled:(bool)arg1;
+- (void)setHorizonColor:(struct Matrix<float, 4, 1> { double x1[4]; })arg1;
 - (void)setMapModel:(id)arg1;
 - (BOOL)shouldLayoutWithoutStyleManager;
-- (struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; })styleManager;
+- (struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { struct StylesheetManager<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; })styleManager;
 - (void)stylesheetDidChange;
 - (void)updateStyle;
 

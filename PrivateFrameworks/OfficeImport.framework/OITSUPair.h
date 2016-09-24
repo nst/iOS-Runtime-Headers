@@ -3,8 +3,8 @@
  */
 
 @interface OITSUPair : NSObject <NSCoding, NSCopying, NSMutableCopying> {
-    id mFirst;
-    id mSecond;
+    id  mFirst;
+    id  mSecond;
 }
 
 + (id)pair;

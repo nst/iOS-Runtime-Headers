@@ -3,11 +3,11 @@
  */
 
 @interface _SFBookmarkTextEntryTableViewController : UITableViewController {
-    int _autocapitalizationType;
-    int _autocorrectionType;
-    <_SFBookmarkTextEntryTableViewControllerDelegate> *_delegate;
-    NSString *_initialText;
-    SFBookmarkTextEntryTableViewCell *_textEntryCell;
+    int  _autocapitalizationType;
+    int  _autocorrectionType;
+    <_SFBookmarkTextEntryTableViewControllerDelegate> * _delegate;
+    NSString * _initialText;
+    SFBookmarkTextEntryTableViewCell * _textEntryCell;
 }
 
 - (void).cxx_destruct;

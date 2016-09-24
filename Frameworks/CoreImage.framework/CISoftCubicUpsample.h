@@ -3,8 +3,8 @@
  */
 
 @interface CISoftCubicUpsample : CIFilter {
-    CIImage *inputImage;
-    NSNumber *inputScale;
+    CIImage * inputImage;
+    NSNumber * inputScale;
 }
 
 @property (nonatomic, retain) CIImage *inputImage;
@@ -14,6 +14,7 @@
 
 - (BOOL)_isIdentity;
 - (id)_kernel;
+- (struct vec2 { double x1; double x2; })_scale;
 - (id)inputImage;
 - (id)inputScale;
 - (id)outputImage;

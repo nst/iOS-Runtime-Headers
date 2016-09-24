@@ -3,11 +3,11 @@
  */
 
 @interface CNFRegServerWebViewController : UIViewController <RUIObjectModelDelegate, UIWebViewDelegate> {
-    RUILoader *_loader;
-    CNFRegLoadingView *_loadingView;
-    NSMutableArray *_objectModels;
-    CNFRegController *_regController;
-    NSTimer *_timeoutTimer;
+    RUILoader * _loader;
+    CNFRegLoadingView * _loadingView;
+    NSMutableArray * _objectModels;
+    CNFRegController * _regController;
+    NSTimer * _timeoutTimer;
     struct { 
         unsigned int isLoading : 1; 
         unsigned int isLoaded : 1; 
@@ -17,8 +17,8 @@
         unsigned int checkedLogState : 1; 
         unsigned int shouldLog : 1; 
         unsigned int timedOut; 
-    } _webControllerFlags;
-    UIWebView *_webView;
+    }  _webControllerFlags;
+    UIWebView * _webView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -51,7 +51,7 @@
 - (void)loadURL:(id)arg1;
 - (void)loadView;
 - (void)loader:(id)arg1 didFailWithError:(id)arg2;
-- (void)loader:(id)arg1 receivedObjectModel:(id)arg2 actionSignal:(int)arg3;
+- (void)loader:(id)arg1 receivedObjectModel:(id)arg2 actionSignal:(unsigned int)arg3;
 - (id)logName;
 - (void)objectModel:(id)arg1 pressedButton:(id)arg2 attributes:(id)arg3;
 - (void)objectModel:(id)arg1 pressedLink:(id)arg2 httpMethod:(id)arg3;

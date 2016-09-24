@@ -3,15 +3,15 @@
  */
 
 @interface RCSSavedRecordingService : NSObject <RCSSavedRecordingServiceClientProtocol, RCSSavedRecordingServiceProtocol> {
-    NSObject<OS_dispatch_queue> *_completionQueue;
-    NSSet *_compositionAVURLsBeingExported;
-    int _compositionAVURLsBeingExportedDistributedNotificationToken;
-    NSSet *_compositionAVURLsBeingModified;
-    int _compositionAVURLsBeingModifiedDistributedNotificationToken;
-    NSMutableDictionary *_pendingServiceCompletionHandlers;
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    <RCSSavedRecordingServiceProtocol> *_serviceProxy;
-    NSXPCConnection *_xpcConnection;
+    NSObject<OS_dispatch_queue> * _completionQueue;
+    NSSet * _compositionAVURLsBeingExported;
+    int  _compositionAVURLsBeingExportedDistributedNotificationToken;
+    NSSet * _compositionAVURLsBeingModified;
+    int  _compositionAVURLsBeingModifiedDistributedNotificationToken;
+    NSMutableDictionary * _pendingServiceCompletionHandlers;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    <RCSSavedRecordingServiceProtocol> * _serviceProxy;
+    NSXPCConnection * _xpcConnection;
 }
 
 @property (nonatomic, retain) NSSet *compositionAVURLsBeingExported;

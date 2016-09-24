@@ -3,8 +3,8 @@
  */
 
 @interface CNCFPreferencesPrimitiveUserDefaults : NSObject <CNPrimitiveUserDefaults> {
-    NSString *_applicationID;
-    long _autosyncTimerIsActive;
+    NSString * _applicationID;
+    long  _autosyncTimerIsActive;
 }
 
 @property (readonly, copy) NSString *debugDescription;

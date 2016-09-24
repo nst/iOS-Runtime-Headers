@@ -3,10 +3,10 @@
  */
 
 @interface SCROBrailleDisplayHistory : NSObject {
-    struct __CFArray { } *_announcements;
-    long _currentIndex;
-    long _unreadCount;
-    struct __CFArray { } *_unreadSnapshot;
+    struct __CFArray { } * _announcements;
+    long  _currentIndex;
+    long  _unreadCount;
+    struct __CFArray { } * _unreadSnapshot;
 }
 
 + (void)initialize;

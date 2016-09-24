@@ -3,7 +3,7 @@
  */
 
 @interface CTFeatureSetting : NSDictionary {
-    NSDictionary *_dictionary;
+    NSDictionary * _dictionary;
 }
 
 - (unsigned int)count;

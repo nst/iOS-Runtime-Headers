@@ -26,9 +26,13 @@
 @optional
 
 - (BOOL)assertAgentWithOptions:(NSDictionary *)arg1;
+- (void)closeNexusWithOptions:(NSDictionary *)arg1;
 - (BOOL)isNetworkProvider;
+- (BOOL)isNexusProvider;
 - (BOOL)isSpecificUseOnly;
+- (BOOL)requestNexusWithOptions:(NSDictionary *)arg1;
 - (void)setNetworkProvider:(BOOL)arg1;
+- (void)setNexusProvider:(BOOL)arg1;
 - (void)setSpecificUseOnly:(BOOL)arg1;
 - (BOOL)startAgentWithOptions:(NSDictionary *)arg1;
 - (void)unassertAgentWithOptions:(NSDictionary *)arg1;

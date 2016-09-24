@@ -3,11 +3,11 @@
  */
 
 @interface EventsFolderItemsSyncContext : NSObject {
-    int _calAlarmChangeId;
-    int _calAttendeeChangeId;
-    int _calEventChangeId;
-    int _calRecurrenceChangeId;
-    int _highestSequenceNumber;
+    int  _calAlarmChangeId;
+    int  _calAttendeeChangeId;
+    int  _calEventChangeId;
+    int  _calRecurrenceChangeId;
+    int  _highestSequenceNumber;
 }
 
 @property (nonatomic) int calAlarmChangeId;

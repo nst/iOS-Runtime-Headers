@@ -6,21 +6,21 @@
 
 @property int handBias;
 
-+ (void)handleSpecificHardwareKeyboard;
 + (id)sharedPreferencesController;
 
+- (id)_domainForType:(int)arg1;
 - (BOOL)boolForKey:(int)arg1;
+- (BOOL)boolForKeyString:(id)arg1 domainType:(int)arg2 default:(BOOL)arg3;
 - (BOOL)costlyCapture;
 - (void)dealloc;
 - (int)handBias;
 - (id)init;
+- (int)intForKeyString:(id)arg1 domainType:(int)arg2 default:(int)arg3;
 - (BOOL)isKeyLockedDown:(int)arg1;
 - (void)preferencesControllerChanged:(id)arg1;
-- (void)releaseDontSynchronizePreferences;
 - (float)rivenSizeFactor:(float)arg1;
 - (void)saveInputModes:(id)arg1;
 - (void)setHandBias:(int)arg1;
-- (void)setInputModeLastUsed:(id)arg1;
 - (void)setLanguageAwareInputModeLastUsed:(id)arg1;
 - (void)setValue:(id)arg1 forKey:(int)arg2;
 - (BOOL)spaceConfirmationEnabled;
@@ -28,5 +28,6 @@
 - (void)touchSynchronizePreferencesTimer;
 - (BOOL)typologyEnabled;
 - (id)valueForKey:(int)arg1;
+- (id)valueForKeyString:(id)arg1 domainType:(int)arg2 default:(id)arg3;
 
 @end

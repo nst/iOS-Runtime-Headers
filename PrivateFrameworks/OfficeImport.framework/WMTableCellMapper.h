@@ -3,12 +3,12 @@
  */
 
 @interface WMTableCellMapper : CMMapper {
-    unsigned int mColSpan;
-    double mHeight;
-    double mLeftPadding;
-    double mRightPadding;
-    WDTableCell *mWdTableCell;
-    double mWidth;
+    unsigned int  mColSpan;
+    double  mHeight;
+    double  mLeftPadding;
+    double  mRightPadding;
+    WDTableCell * mWdTableCell;
+    double  mWidth;
 }
 
 - (unsigned int)colSpan;

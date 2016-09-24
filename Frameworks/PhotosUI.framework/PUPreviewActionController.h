@@ -3,12 +3,17 @@
  */
 
 @interface PUPreviewActionController : NSObject <PUAssetActionPerformerDelegate, PUBrowsingViewModelChangeObserver> {
-    PUAssetActionPerformer *__activeActionPerformer;
-    BOOL __needsUpdateActions;
-    PUBrowsingSession *_browsingSession;
-    <PUPreviewActionControllerDelegate> *_delegate;
-    UIViewController *_presentingViewController;
-    NSArray *_previewActions;
+    PUAssetActionPerformer * __activeActionPerformer;
+    BOOL  __needsUpdateActions;
+    PUBrowsingSession * _browsingSession;
+    <PUPreviewActionControllerDelegate> * _delegate;
+    struct { 
+        BOOL didDismissWithIdentifiedAction; 
+        BOOL preventRevealInMomentAction; 
+    }  _delegateRespondsTo;
+    PXActionManager * _photosUICoreActionManager;
+    UIViewController * _presentingViewController;
+    NSArray * _previewActions;
 }
 
 @property (setter=_setActiveActionPerformer:, nonatomic, retain) PUAssetActionPerformer *_activeActionPerformer;
@@ -18,8 +23,9 @@
 @property (nonatomic) <PUPreviewActionControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) PXActionManager *photosUICoreActionManager;
 @property (nonatomic) UIViewController *presentingViewController;
-@property (nonatomic, retain) NSArray *previewActions;
+@property (setter=_setPreviewActions:, nonatomic, retain) NSArray *previewActions;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -33,6 +39,8 @@
 - (void)_performCopyAction;
 - (void)_performFavoriteAction:(BOOL)arg1;
 - (void)_performRestoreAction;
+- (void)_performRevealInMomentAction;
+- (void)_performSimpleActionWithType:(unsigned int)arg1;
 - (void)_performTrashAction;
 - (void)_setActiveActionPerformer:(id)arg1;
 - (void)_setNeedsUpdateActions:(BOOL)arg1;
@@ -43,10 +51,12 @@
 - (BOOL)assetActionPerformer:(id)arg1 presentViewController:(id)arg2;
 - (id)browsingSession;
 - (id)delegate;
+- (id)photosUICoreActionManager;
 - (id)presentingViewController;
 - (id)previewActions;
 - (void)setBrowsingSession:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setPhotosUICoreActionManager:(id)arg1;
 - (void)setPresentingViewController:(id)arg1;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 

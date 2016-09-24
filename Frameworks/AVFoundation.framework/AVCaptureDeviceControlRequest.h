@@ -3,9 +3,9 @@
  */
 
 @interface AVCaptureDeviceControlRequest : NSObject {
-    id /* block */ _completionBlock;
-    long _errorCode;
-    int _requestID;
+    id /* block */  _completionBlock;
+    long  _errorCode;
+    int  _requestID;
 }
 
 @property (nonatomic, readonly, copy) id /* block */ completionBlock;

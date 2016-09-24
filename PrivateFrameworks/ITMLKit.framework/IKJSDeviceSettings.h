@@ -3,24 +3,24 @@
  */
 
 @interface IKJSDeviceSettings : IKJSObject <IKJSDeviceSettings, JSExport> {
-    <IKAppDeviceConfig> *_deviceConfig;
-    id _restrictionDidChangeToken;
+    <IKAppDeviceConfig> * _deviceConfig;
+    id  _restrictionDidChangeToken;
 }
 
 @property (nonatomic, readonly) IKJSRestrictions *Restrictions;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } Screen;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } Screen;
 @property (nonatomic) <IKAppDeviceConfig> *deviceConfig;
 @property (nonatomic, readonly, retain) NSString *language;
 @property (nonatomic, readonly, retain) NSString *name;
 @property (nonatomic, readonly, retain) NSString *preferredVideoFormat;
 @property (nonatomic, readonly, retain) NSString *preferredVideoPreviewFormat;
 @property (nonatomic, readonly) IKJSRestrictions *restrictions;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } screen;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } screen;
 @property (nonatomic, readonly, retain) NSString *storefrontCountryCode;
 
 - (void).cxx_destruct;
 - (id)Restrictions;
-- (struct CGSize { float x1; float x2; })Screen;
+- (struct CGSize { double x1; double x2; })Screen;
 - (id)_formatStringForVideoFormat:(unsigned int)arg1;
 - (void)_restrictionsDidChangeNotification:(id)arg1;
 - (void)dealloc;
@@ -31,7 +31,7 @@
 - (id)preferredVideoFormat;
 - (id)preferredVideoPreviewFormat;
 - (id)restrictions;
-- (struct CGSize { float x1; float x2; })screen;
+- (struct CGSize { double x1; double x2; })screen;
 - (void)setDeviceConfig:(id)arg1;
 - (id)storefrontCountryCode;
 

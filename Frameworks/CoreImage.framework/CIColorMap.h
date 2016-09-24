@@ -3,8 +3,8 @@
  */
 
 @interface CIColorMap : CIFilter {
-    CIImage *inputGradientImage;
-    CIImage *inputImage;
+    CIImage * inputGradientImage;
+    CIImage * inputImage;
 }
 
 @property (nonatomic, retain) CIImage *inputGradientImage;

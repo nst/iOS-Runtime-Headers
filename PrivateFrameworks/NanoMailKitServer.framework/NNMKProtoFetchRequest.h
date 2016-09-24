@@ -3,42 +3,62 @@
  */
 
 @interface NNMKProtoFetchRequest : PBRequest <NSCopying> {
-    NSString *_conversationId;
-    unsigned int _fullSyncVersion;
+    NSString * _conversationId;
+    NSData * _currentDateForRequestingMoreMessages;
+    NSData * _currentMessageIdsAndStatus;
+    unsigned int  _fullSyncVersion;
     struct { 
         unsigned int fullSyncVersion : 1; 
-        unsigned int manuallyTriggered : 1; 
-    } _has;
-    BOOL _manuallyTriggered;
+        unsigned int wantsBatchedResponse : 1; 
+        unsigned int willTrimDatabaseAfterResults : 1; 
+    }  _has;
+    BOOL  _wantsBatchedResponse;
+    BOOL  _willTrimDatabaseAfterResults;
 }
 
 @property (nonatomic, retain) NSString *conversationId;
+@property (nonatomic, retain) NSData *currentDateForRequestingMoreMessages;
+@property (nonatomic, retain) NSData *currentMessageIdsAndStatus;
 @property (nonatomic) unsigned int fullSyncVersion;
 @property (nonatomic, readonly) BOOL hasConversationId;
+@property (nonatomic, readonly) BOOL hasCurrentDateForRequestingMoreMessages;
+@property (nonatomic, readonly) BOOL hasCurrentMessageIdsAndStatus;
 @property (nonatomic) BOOL hasFullSyncVersion;
-@property (nonatomic) BOOL hasManuallyTriggered;
-@property (nonatomic) BOOL manuallyTriggered;
+@property (nonatomic) BOOL hasWantsBatchedResponse;
+@property (nonatomic) BOOL hasWillTrimDatabaseAfterResults;
+@property (nonatomic) BOOL wantsBatchedResponse;
+@property (nonatomic) BOOL willTrimDatabaseAfterResults;
 
 - (void).cxx_destruct;
 - (id)conversationId;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)currentDateForRequestingMoreMessages;
+- (id)currentMessageIdsAndStatus;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)fullSyncVersion;
 - (BOOL)hasConversationId;
+- (BOOL)hasCurrentDateForRequestingMoreMessages;
+- (BOOL)hasCurrentMessageIdsAndStatus;
 - (BOOL)hasFullSyncVersion;
-- (BOOL)hasManuallyTriggered;
+- (BOOL)hasWantsBatchedResponse;
+- (BOOL)hasWillTrimDatabaseAfterResults;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)manuallyTriggered;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setConversationId:(id)arg1;
+- (void)setCurrentDateForRequestingMoreMessages:(id)arg1;
+- (void)setCurrentMessageIdsAndStatus:(id)arg1;
 - (void)setFullSyncVersion:(unsigned int)arg1;
 - (void)setHasFullSyncVersion:(BOOL)arg1;
-- (void)setHasManuallyTriggered:(BOOL)arg1;
-- (void)setManuallyTriggered:(BOOL)arg1;
+- (void)setHasWantsBatchedResponse:(BOOL)arg1;
+- (void)setHasWillTrimDatabaseAfterResults:(BOOL)arg1;
+- (void)setWantsBatchedResponse:(BOOL)arg1;
+- (void)setWillTrimDatabaseAfterResults:(BOOL)arg1;
+- (BOOL)wantsBatchedResponse;
+- (BOOL)willTrimDatabaseAfterResults;
 - (void)writeTo:(id)arg1;
 
 @end

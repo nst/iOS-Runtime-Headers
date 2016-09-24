@@ -3,7 +3,7 @@
  */
 
 @interface NSStringPredicateOperator : NSPredicateOperator {
-    unsigned int _flags;
+    unsigned int  _flags;
 }
 
 + (BOOL)supportsSecureCoding;

@@ -3,9 +3,9 @@
  */
 
 @interface MFBufferedDataConsumer : NSObject <MFGuaranteedCollectingDataConsumer> {
-    NSMutableData *_data;
-    int _fd;
-    NSString *_path;
+    NSMutableData * _data;
+    int  _fd;
+    NSString * _path;
 }
 
 @property (readonly, copy) NSString *debugDescription;

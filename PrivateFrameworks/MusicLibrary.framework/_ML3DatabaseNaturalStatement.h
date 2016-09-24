@@ -3,8 +3,8 @@
  */
 
 @interface _ML3DatabaseNaturalStatement : NSObject {
-    NSMutableArray *_parameters;
-    NSString *_sql;
+    NSMutableArray * _parameters;
+    NSString * _sql;
 }
 
 @property (nonatomic, retain) NSMutableArray *parameters;

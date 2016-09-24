@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DLightUniformArrayShaderVariables : NSObject {
-    TSCH3DUniformArrayShaderVariables *mVariables;
+    TSCH3DUniformArrayShaderVariables * mVariables;
 }
 
 - (void)addUniformsToShaderProgram:(id)arg1 size:(unsigned int)arg2;

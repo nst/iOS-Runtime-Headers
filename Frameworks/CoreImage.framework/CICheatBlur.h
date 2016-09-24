@@ -3,8 +3,8 @@
  */
 
 @interface CICheatBlur : CIFilter {
-    NSNumber *inputAmount;
-    CIImage *inputImage;
+    NSNumber * inputAmount;
+    CIImage * inputImage;
 }
 
 + (id)customAttributes;

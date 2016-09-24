@@ -3,17 +3,17 @@
  */
 
 @interface UITouchesEvent : UIEvent {
-    struct __CFDictionary { } *_coalescedTouches;
-    struct __CFDictionary { } *_finalTouches;
-    struct __CFDictionary { } *_gestureRecognizersByWindow;
-    struct __CFDictionary { } *_keyedTouches;
-    struct __CFDictionary { } *_keyedTouchesByWindow;
-    NSMapTable *_latentSystemGestureWindows;
-    struct __CFDictionary { } *_observedTouches;
-    struct __CFDictionary { } *_predictedTouches;
-    _UITouchPredictionManager *_predictionManager;
-    long _singleAllowableExternalTouchPathIndex;
-    NSMutableSet *_touches;
+    struct __CFDictionary { } * _coalescedTouches;
+    struct __CFDictionary { } * _finalTouches;
+    struct __CFDictionary { } * _gestureRecognizersByWindow;
+    struct __CFDictionary { } * _keyedTouches;
+    struct __CFDictionary { } * _keyedTouchesByWindow;
+    NSMapTable * _latentSystemGestureWindows;
+    struct __CFDictionary { } * _observedTouches;
+    struct __CFDictionary { } * _predictedTouches;
+    _UITouchPredictionManager * _predictionManager;
+    long  _singleAllowableExternalTouchPathIndex;
+    NSMutableSet * _touches;
 }
 
 @property (nonatomic, readonly) double _initialTouchTimestamp;
@@ -32,7 +32,7 @@
 - (void)_clearViewForTouch:(id)arg1;
 - (id)_cloneEvent;
 - (struct __CFDictionary { }*)_coalescedTouchesForHidEvent:(struct __IOHIDEvent { }*)arg1;
-- (struct CGPoint { float x1; float x2; })_digitizerLocation;
+- (struct CGPoint { double x1; double x2; })_digitizerLocation;
 - (id)_firstTouchForView:(id)arg1;
 - (id)_gestureRecognizersForWindow:(id)arg1;
 - (id)_init;

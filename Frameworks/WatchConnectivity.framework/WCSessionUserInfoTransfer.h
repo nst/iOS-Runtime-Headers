@@ -3,13 +3,13 @@
  */
 
 @interface WCSessionUserInfoTransfer : NSObject <NSSecureCoding> {
-    NSString *_complicationTransferIdentifier;
-    NSDate *_creationDate;
-    BOOL _currentComplicationInfo;
-    NSError *_transferError;
-    NSString *_transferIdentifier;
-    BOOL _transferring;
-    WCUserInfo *_userInfoStorage;
+    NSString * _complicationTransferIdentifier;
+    NSDate * _creationDate;
+    BOOL  _currentComplicationInfo;
+    NSError * _transferError;
+    NSString * _transferIdentifier;
+    BOOL  _transferring;
+    WCUserInfo * _userInfoStorage;
 }
 
 @property (copy) NSString *complicationTransferIdentifier;

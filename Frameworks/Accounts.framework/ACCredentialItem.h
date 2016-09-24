@@ -3,13 +3,13 @@
  */
 
 @interface ACCredentialItem : NSObject <NSSecureCoding> {
-    NSString *_accountIdentifier;
-    ACAccountStore *_accountStore;
-    NSMutableSet *_dirtyProperties;
-    NSDate *_expirationDate;
-    NSURL *_objectID;
-    BOOL _persistent;
-    NSString *_serviceName;
+    NSString * _accountIdentifier;
+    ACAccountStore * _accountStore;
+    NSMutableSet * _dirtyProperties;
+    NSDate * _expirationDate;
+    NSURL * _objectID;
+    BOOL  _persistent;
+    NSString * _serviceName;
 }
 
 @property (nonatomic, readonly) NSString *accountIdentifier;

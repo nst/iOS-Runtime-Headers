@@ -5,14 +5,14 @@
 @interface GEOPBTransitRoutingIncidentMessage : PBCodable <NSCopying> {
     struct { 
         unsigned int routingIncidentMessageIndex : 1; 
-    } _has;
-    unsigned int _routingIncidentMessageIndex;
-    NSString *_routingMessage;
+    }  _has;
+    unsigned int  _routingIncidentMessageIndex;
+    NSString * _routingMessage;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _transitIncidentIndexs;
+    }  _transitIncidentIndexs;
 }
 
 @property (nonatomic) BOOL hasRoutingIncidentMessageIndex;

@@ -3,8 +3,8 @@
  */
 
 @interface HTSHTTPMessageRequest : HTSHTTPMessage {
-    NSString *_requestMethod;
-    NSURL *_requestURL;
+    NSString * _requestMethod;
+    NSURL * _requestURL;
 }
 
 @property (nonatomic, copy) NSString *requestMethod;

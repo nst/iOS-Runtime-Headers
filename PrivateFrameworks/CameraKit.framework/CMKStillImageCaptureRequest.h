@@ -3,14 +3,14 @@
  */
 
 @interface CMKStillImageCaptureRequest : CMKCaptureRequest <NSCopying, NSMutableCopying> {
-    int _captureDevice;
-    <CMKStillImageCaptureRequestDelegate> *_delegate;
-    int _deviceOrientation;
-    int _flashMode;
-    int _hdrMode;
-    BOOL _transient;
-    BOOL _usesStillImageStabilization;
-    BOOL _wantsAudioForCapture;
+    int  _captureDevice;
+    <CMKStillImageCaptureRequestDelegate> * _delegate;
+    int  _deviceOrientation;
+    int  _flashMode;
+    int  _hdrMode;
+    BOOL  _transient;
+    BOOL  _usesStillImageStabilization;
+    BOOL  _wantsAudioForCapture;
 }
 
 @property (nonatomic, readonly) int captureDevice;

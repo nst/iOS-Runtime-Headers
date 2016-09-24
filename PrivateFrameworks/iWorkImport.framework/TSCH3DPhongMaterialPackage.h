@@ -3,11 +3,11 @@
  */
 
 @interface TSCH3DPhongMaterialPackage : TSCH3DMaterialPackage {
-    TSCH3DDiffuseMaterial *_diffuse;
-    TSCH3DEmissiveMaterial *_emissive;
-    TSCH3DModulateMaterial *_modulate;
-    TSCH3DShininessMaterial *_shininess;
-    TSCH3DSpecularMaterial *_specular;
+    TSCH3DDiffuseMaterial * _diffuse;
+    TSCH3DEmissiveMaterial * _emissive;
+    TSCH3DModulateMaterial * _modulate;
+    TSCH3DShininessMaterial * _shininess;
+    TSCH3DSpecularMaterial * _specular;
 }
 
 @property (nonatomic, retain) TSCH3DDiffuseMaterial *diffuse;

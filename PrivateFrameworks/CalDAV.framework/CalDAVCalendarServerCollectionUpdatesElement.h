@@ -3,7 +3,7 @@
  */
 
 @interface CalDAVCalendarServerCollectionUpdatesElement : CalDAVCalendarServerResourceChangeElement {
-    int _state;
+    int  _state;
 }
 
 @property (nonatomic, readonly) int state;

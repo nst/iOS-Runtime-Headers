@@ -3,7 +3,7 @@
  */
 
 @interface AVOutputSettingsAssistant : NSObject {
-    AVOutputSettingsAssistantInternal *_internal;
+    AVOutputSettingsAssistantInternal * _internal;
 }
 
 @property (nonatomic, readonly) NSDictionary *audioSettings;
@@ -25,13 +25,13 @@
 - (id)initWithPreset:(id)arg1;
 - (id)outputFileType;
 - (void)setSourceAudioFormat:(struct opaqueCMFormatDescription { }*)arg1;
-- (void)setSourceVideoAverageFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setSourceVideoAverageFrameDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
 - (void)setSourceVideoFormat:(struct opaqueCMFormatDescription { }*)arg1;
-- (void)setSourceVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setSourceVideoMinFrameDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
 - (const struct opaqueCMFormatDescription { }*)sourceAudioFormat;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })sourceVideoAverageFrameDuration;
+- (struct { int x1; int x2; unsigned int x3; int x4; })sourceVideoAverageFrameDuration;
 - (const struct opaqueCMFormatDescription { }*)sourceVideoFormat;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })sourceVideoMinFrameDuration;
+- (struct { int x1; int x2; unsigned int x3; int x4; })sourceVideoMinFrameDuration;
 - (id)videoSettings;
 
 @end

@@ -3,10 +3,10 @@
  */
 
 @interface DAWaiterWrapper : NSObject {
-    id /* block */ _completionHandler;
-    int _dataclasses;
-    <DADataclassLockWatcher> *_waiter;
-    int _waiterNum;
+    id /* block */  _completionHandler;
+    int  _dataclasses;
+    <DADataclassLockWatcher> * _waiter;
+    int  _waiterNum;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;

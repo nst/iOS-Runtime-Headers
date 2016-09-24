@@ -3,10 +3,10 @@
  */
 
 @interface EDString : NSObject <EDImmutableObject, NSCopying> {
-    bool mDoNotModify;
-    EDPhoneticInfo *mPhoneticInfo;
-    EDRunsCollection *mRuns;
-    NSString *mString;
+    bool  mDoNotModify;
+    EDPhoneticInfo * mPhoneticInfo;
+    EDRunsCollection * mRuns;
+    NSString * mString;
 }
 
 @property (readonly, copy) NSString *debugDescription;

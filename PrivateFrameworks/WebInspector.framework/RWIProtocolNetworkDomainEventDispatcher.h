@@ -3,7 +3,7 @@
  */
 
 @interface RWIProtocolNetworkDomainEventDispatcher : NSObject {
-    struct AugmentableInspectorController { int (**x1)(); } *_controller;
+    struct AugmentableInspectorController { int (**x1)(); } * _controller;
 }
 
 - (void)dataReceivedWithRequestId:(id)arg1 timestamp:(double)arg2 dataLength:(int)arg3 encodedDataLength:(int)arg4;

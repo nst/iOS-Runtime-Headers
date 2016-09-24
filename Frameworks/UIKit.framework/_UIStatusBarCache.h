@@ -3,8 +3,8 @@
  */
 
 @interface _UIStatusBarCache : NSObject {
-    CPBitmapStore *_store;
-    BOOL _writeable;
+    CPBitmapStore * _store;
+    BOOL  _writeable;
 }
 
 @property (getter=isWriteable, nonatomic, readonly) BOOL writeable;

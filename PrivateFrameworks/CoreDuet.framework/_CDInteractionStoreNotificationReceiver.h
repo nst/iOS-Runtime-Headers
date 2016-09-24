@@ -3,8 +3,8 @@
  */
 
 @interface _CDInteractionStoreNotificationReceiver : NSObject {
-    int _notifierToken;
-    NSObject<OS_dispatch_queue> *_queue;
+    int  _notifierToken;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 - (void).cxx_destruct;

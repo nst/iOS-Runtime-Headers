@@ -3,8 +3,8 @@
  */
 
 @interface BRCContainerCellularSettings : NSObject {
-    NSNumber *_isCellularEnabledForDocumentsAndData;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSNumber * _isCellularEnabledForDocumentsAndData;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 + (id)containerCellularSettings;

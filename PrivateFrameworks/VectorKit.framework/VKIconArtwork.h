@@ -3,22 +3,29 @@
  */
 
 @interface VKIconArtwork : NSObject {
-    NSMutableArray *_completionHandlers;
-    float _contentScale;
-    BOOL _hasIcon;
-    VKImage *_image;
+    NSMutableArray * _completionHandlers;
+    double  _contentScale;
+    struct CGColor { } * _fullBleedColor;
+    BOOL  _hasIcon;
+    VKImage * _image;
+    double  _leftCapWidth;
+    double  _rightCapWidth;
+    double  _textOffsetY;
 }
 
-@property (nonatomic, readonly) float contentScale;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) double contentScale;
+@property (nonatomic) struct CGColor { }*fullBleedColor;
 
 - (void)_cleanUpAfterDrawing;
 - (id)_newImage;
+- (id)_newImageWithText:(id)arg1 fontName:(id)arg2;
 - (float)contentScale;
 - (void)dealloc;
+- (struct CGColor { }*)fullBleedColor;
 - (void)getImage:(id /* block */)arg1;
 - (id)image;
+- (id)imageWithText:(id)arg1 fontName:(id)arg2;
 - (id)initWithImage:(struct CGImage { }*)arg1 contentScale:(float)arg2;
-- (struct CGSize { float x1; float x2; })size;
+- (void)setFullBleedColor:(struct CGColor { }*)arg1;
 
 @end

@@ -3,9 +3,9 @@
  */
 
 @interface PFUbiquityMetadataFactory : NSObject {
-    NSManagedObjectModel *_cachedModel;
-    NSMutableDictionary *_rootLocationToPeerIDToEntry;
-    NSRecursiveLock *_rootLocationToPeerIDToEntryLock;
+    NSManagedObjectModel * _cachedModel;
+    NSMutableDictionary * _rootLocationToPeerIDToEntry;
+    NSRecursiveLock * _rootLocationToPeerIDToEntryLock;
 }
 
 + (void)initialize;

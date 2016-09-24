@@ -3,9 +3,9 @@
  */
 
 @interface CAStateAddElement : CAStateElement {
-    id _beforeObject;
-    NSString *_keyPath;
-    id _object;
+    id  _beforeObject;
+    NSString * _keyPath;
+    id  _object;
 }
 
 @property (nonatomic, retain) id beforeObject;

@@ -3,9 +3,9 @@
  */
 
 @interface SKUIOnboardingFooterView : UIView {
-    UIButton *_leftButton;
-    SKUIOnboardingProgressView *_progressView;
-    UIButton *_rightButton;
+    UIButton * _leftButton;
+    SKUIOnboardingProgressView * _progressView;
+    UIButton * _rightButton;
 }
 
 @property (nonatomic, readonly) UIButton *leftButton;
@@ -25,6 +25,6 @@
 - (void)setProgressView:(id)arg1;
 - (void)showLeftButtonWithTitle:(id)arg1 animation:(int)arg2;
 - (void)showRightButtonWithTitle:(id)arg1 animation:(int)arg2;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

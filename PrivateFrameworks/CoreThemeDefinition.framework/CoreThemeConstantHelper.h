@@ -3,9 +3,9 @@
  */
 
 @interface CoreThemeConstantHelper : NSObject {
-    NSString *_displayName;
-    unsigned int _identifier;
-    NSString *_label;
+    NSString * _displayName;
+    unsigned int  _identifier;
+    NSString * _label;
 }
 
 + (id)helperForStructAtIndex:(int)arg1 inAssociatedGlobalList:(void*)arg2;

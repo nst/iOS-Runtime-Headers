@@ -3,7 +3,7 @@
  */
 
 @interface BWMetadataFormat : BWFormat {
-    struct opaqueCMFormatDescription { } *_desc;
+    struct opaqueCMFormatDescription { } * _desc;
 }
 
 + (id)formatWithMetadataFormatDescription:(struct opaqueCMFormatDescription { }*)arg1;

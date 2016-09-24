@@ -3,7 +3,7 @@
  */
 
 @interface OITSUBasicProgress : OITSUProgress {
-    OITSUBasicProgressStorage *mStorage;
+    OITSUBasicProgressStorage * mStorage;
 }
 
 @property (getter=isIndeterminate) BOOL indeterminate;

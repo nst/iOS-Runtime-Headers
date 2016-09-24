@@ -3,9 +3,9 @@
  */
 
 @interface ICSColor : NSObject <NSCoding> {
-    unsigned char _blue;
-    unsigned char _green;
-    unsigned char _red;
+    unsigned char  _blue;
+    unsigned char  _green;
+    unsigned char  _red;
 }
 
 + (BOOL)colorDetailsAreEffectivelyDifferentFirstColor:(id)arg1 secondColor:(id)arg2 firstSymbolicName:(id)arg3 secondSymbolicName:(id)arg4;

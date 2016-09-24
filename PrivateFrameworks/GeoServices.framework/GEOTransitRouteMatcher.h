@@ -3,12 +3,12 @@
  */
 
 @interface GEOTransitRouteMatcher : GEORouteMatcher {
-    double _distanceToClosestWalkingSegment;
-    GEOMapAccess *_mapAccess;
-    GEOMotionContext *_motionContext;
-    NSArray *_routeMatchUpdaters;
-    NSArray *_stationsOnRoute;
-    NSArray *_stepRanges;
+    double  _distanceToClosestWalkingSegment;
+    GEOMapAccess * _mapAccess;
+    GEOMotionContext * _motionContext;
+    NSArray * _routeMatchUpdaters;
+    NSArray * _stationsOnRoute;
+    NSArray * _stepRanges;
 }
 
 @property (nonatomic, readonly) double distanceToClosestWalkingSegment;
@@ -19,6 +19,7 @@
 - (double)_scoreModifierForStep:(id)arg1 previousStep:(id)arg2;
 - (BOOL)_shouldConsiderCourseForLocation:(id)arg1;
 - (void)_startRouteMatch;
+- (id)_stepForPointIndex:(unsigned int)arg1 previousStep:(id)arg2;
 - (BOOL)_stepsInSameRange:(id)arg1 nextStep:(id)arg2;
 - (void)dealloc;
 - (double)distanceToClosestWalkingSegment;

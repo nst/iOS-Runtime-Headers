@@ -3,8 +3,8 @@
  */
 
 @interface SUSimpleTableDataSource : SUTableDataSource {
-    Class _cellConfigurationClass;
-    NSArray *_objects;
+    Class  _cellConfigurationClass;
+    NSArray * _objects;
 }
 
 @property (nonatomic, retain) Class cellConfigurationClass;

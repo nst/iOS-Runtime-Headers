@@ -3,12 +3,12 @@
  */
 
 @interface PLOperator : NSObject {
-    NSMutableArray *_bufferedEntries;
-    NSMutableDictionary *_filterDefinitions;
-    NSMutableDictionary *_filterDeltaLastEntryIDs;
-    NSMutableDictionary *_lastLogDateForEntryKey;
-    NSMutableDictionary *_localCache;
-    PLTimer *_triggerBufferFlush;
+    NSMutableArray * _bufferedEntries;
+    NSMutableDictionary * _filterDefinitions;
+    NSMutableDictionary * _filterDeltaLastEntryIDs;
+    NSMutableDictionary * _lastLogDateForEntryKey;
+    NSMutableDictionary * _localCache;
+    PLTimer * _triggerBufferFlush;
 }
 
 @property (retain) NSMutableArray *bufferedEntries;

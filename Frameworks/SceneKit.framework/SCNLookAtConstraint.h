@@ -3,12 +3,12 @@
  */
 
 @interface SCNLookAtConstraint : SCNConstraint {
-    BOOL _gimbalLockEnabled;
-    SCNNode *_target;
+    BOOL  _gimbalLockEnabled;
+    SCNNode * _target;
 }
 
 @property (nonatomic) BOOL gimbalLockEnabled;
-@property (nonatomic, readonly) SCNNode *target;
+@property (nonatomic, retain) SCNNode *target;
 
 + (id)lookAtConstraintWithTarget:(id)arg1;
 + (BOOL)supportsSecureCoding;
@@ -22,6 +22,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTarget:(id)arg1;
 - (void)setGimbalLockEnabled:(BOOL)arg1;
+- (void)setTarget:(id)arg1;
 - (id)target;
 
 @end

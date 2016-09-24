@@ -3,9 +3,9 @@
  */
 
 @interface IKCSSMediaQueryAndList : IKCSSMediaQueryList {
-    BOOL _negated;
-    NSMutableArray *_queryList;
-    NSString *_type;
+    BOOL  _negated;
+    NSMutableArray * _queryList;
+    NSString * _type;
 }
 
 @property BOOL negated;

@@ -3,37 +3,37 @@
  */
 
 @interface PLBBMavHwRfLTELogMsg : PLBBMsgRoot {
-    NSArray *_actRxTxCnt;
-    NSArray *_actRxTxPriCCCnt;
-    NSArray *_actRxTxPriSecCCCnt;
-    NSArray *_actRxTxSecCCCnt;
-    NSArray *_arxStateCnt;
-    NSArray *_bpeStats;
-    NSArray *_caFreqInfo;
-    NSArray *_caPriCCCnt;
-    NSArray *_caPriSecCCCnt;
-    NSArray *_caSCCCnt;
-    NSArray *_caSecCCCnt;
-    NSMutableDictionary *_commonInfo;
-    NSArray *_dlC0TBSzCnt;
-    NSArray *_dlC1TBSzCnt;
-    NSNumber *_dupMode;
-    NSString *_error;
-    NSMutableArray *_groupArrEntries;
-    NSString *_groupEntryKey;
-    NSString *_groupID;
-    unsigned char _inited;
-    NSMutableDictionary *_kvPairs;
-    NSNumber *_logDuration;
-    NSArray *_nlicStateCnt;
-    NSArray *_rsrpConnCnt;
-    NSArray *_rsrpIdleCnt;
-    NSArray *_sinrConnCnt;
-    NSArray *_sinrIdleCnt;
-    NSArray *_sleepStateCnt;
-    NSArray *_sleepStateConnCnt;
-    NSArray *_sleepStateIdleCnt;
-    NSArray *_txPwrCnt;
+    NSArray * _actRxTxCnt;
+    NSArray * _actRxTxPriCCCnt;
+    NSArray * _actRxTxPriSecCCCnt;
+    NSArray * _actRxTxSecCCCnt;
+    NSArray * _arxStateCnt;
+    NSArray * _bpeStats;
+    NSArray * _caFreqInfo;
+    NSArray * _caPriCCCnt;
+    NSArray * _caPriSecCCCnt;
+    NSArray * _caSCCCnt;
+    NSArray * _caSecCCCnt;
+    NSMutableDictionary * _commonInfo;
+    NSArray * _dlC0TBSzCnt;
+    NSArray * _dlC1TBSzCnt;
+    NSNumber * _dupMode;
+    NSString * _error;
+    NSMutableArray * _groupArrEntries;
+    NSString * _groupEntryKey;
+    NSString * _groupID;
+    unsigned char  _inited;
+    NSMutableDictionary * _kvPairs;
+    NSNumber * _logDuration;
+    NSArray * _nlicStateCnt;
+    NSArray * _rsrpConnCnt;
+    NSArray * _rsrpIdleCnt;
+    NSArray * _sinrConnCnt;
+    NSArray * _sinrIdleCnt;
+    NSArray * _sleepStateCnt;
+    NSArray * _sleepStateConnCnt;
+    NSArray * _sleepStateIdleCnt;
+    NSArray * _txPwrCnt;
 }
 
 @property (retain) NSArray *actRxTxCnt;

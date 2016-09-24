@@ -3,7 +3,7 @@
  */
 
 @interface IKColumnCollectionElement : IKViewElement {
-    NSArray *_columns;
+    NSArray * _columns;
 }
 
 @property (nonatomic, readonly, retain) NSArray *columns;

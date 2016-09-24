@@ -3,14 +3,14 @@
  */
 
 @interface CKPlaceholderOperation : NSOperation {
-    id _context;
-    id /* block */ _daemonInvokeBlock;
-    NSObject<OS_dispatch_group> *_group;
-    BOOL _isExecuting;
-    BOOL _isFinished;
-    NSString *_operationID;
-    NSString *_sectionID;
-    NSDate *_startDate;
+    id  _context;
+    id /* block */  _daemonInvokeBlock;
+    NSObject<OS_dispatch_group> * _group;
+    BOOL  _isExecuting;
+    BOOL  _isFinished;
+    NSString * _operationID;
+    NSString * _sectionID;
+    NSDate * _startDate;
 }
 
 @property (nonatomic, retain) id context;

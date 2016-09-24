@@ -3,16 +3,16 @@
  */
 
 @interface WBSCloudHistoryMergeOperation : NSObject {
-    NSSet *_existingVisits;
-    WBSCloudHistoryFetchResult *_fetchResult;
-    WBSHistory *_history;
-    BOOL _mergeStarted;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableSet *_redirectChainEarliestVisits;
-    NSSet *_redirectChainSourceVisits;
-    NSSet *_tombstones;
-    NSMutableDictionary *_tombstonesByURLString;
-    NSMutableDictionary *_visitsByVisitIdentifiers;
+    NSSet * _existingVisits;
+    WBSCloudHistoryFetchResult * _fetchResult;
+    WBSHistory * _history;
+    BOOL  _mergeStarted;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableSet * _redirectChainEarliestVisits;
+    NSSet * _redirectChainSourceVisits;
+    NSSet * _tombstones;
+    NSMutableDictionary * _tombstonesByURLString;
+    NSMutableDictionary * _visitsByVisitIdentifiers;
 }
 
 - (void).cxx_destruct;

@@ -3,11 +3,12 @@
  */
 
 @interface MDLVertexAttribute : NSObject <NSCopying> {
-    unsigned int _bufferIndex;
-    unsigned int _format;
-    void_initializationValue;
-    NSString *_name;
-    unsigned int _offset;
+    unsigned int  _bufferIndex;
+    unsigned int  _format;
+    void _initializationValue;
+    NSString * _name;
+    unsigned int  _offset;
+    double  _time;
 }
 
 @property (nonatomic) unsigned int bufferIndex;
@@ -15,10 +16,12 @@
 @property (nonatomic) void initializationValue;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) unsigned int offset;
+@property (nonatomic) double time;
 
 - (void).cxx_destruct;
 - (unsigned int)bufferIndex;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (unsigned int)format;
 - (unsigned int)hash;
 - (id)init;
@@ -32,5 +35,7 @@
 - (void)setInitializationValue;
 - (void)setName:(id)arg1;
 - (void)setOffset:(unsigned int)arg1;
+- (void)setTime:(double)arg1;
+- (double)time;
 
 @end

@@ -3,17 +3,17 @@
  */
 
 @interface AppLaunchStatsLogFormater : NSObject {
-    NSMutableString *blacklistCandidate;
-    NSMutableString *fetchBlackList;
-    NSMutableString *fetchCandidatesStr;
-    NSMutableString *fetchForeground;
-    NSMutableString *fetchRecentLaunch;
-    NSMutableString *filteredCandidates;
-    NSMutableString *filteredCandidatesTrend;
-    NSMutableString *foregroundCandidate;
-    NSMutableString *prewarmCandidate;
-    NSMutableString *resourceRestrictCandidates;
-    NSMutableString *trendingCandidates;
+    NSMutableString * blacklistCandidate;
+    NSMutableString * fetchBlackList;
+    NSMutableString * fetchCandidatesStr;
+    NSMutableString * fetchForeground;
+    NSMutableString * fetchRecentLaunch;
+    NSMutableString * filteredCandidates;
+    NSMutableString * filteredCandidatesTrend;
+    NSMutableString * foregroundCandidate;
+    NSMutableString * prewarmCandidate;
+    NSMutableString * resourceRestrictCandidates;
+    NSMutableString * trendingCandidates;
 }
 
 - (void).cxx_destruct;

@@ -3,11 +3,11 @@
  */
 
 @interface FigDisplayMirroringChangeObserver : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSArray *_baseDisplayList;
-    NSMutableSet *_clonedDisplays;
-    NSMutableSet *_cloningSupportedDisplays;
-    struct OpaqueFigPlayer { } *_player;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSArray * _baseDisplayList;
+    NSMutableSet * _clonedDisplays;
+    NSMutableSet * _cloningSupportedDisplays;
+    struct OpaqueFigPlayer { } * _player;
 }
 
 - (void)dealloc;

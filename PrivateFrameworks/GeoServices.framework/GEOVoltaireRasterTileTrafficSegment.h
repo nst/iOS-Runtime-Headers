@@ -3,12 +3,12 @@
  */
 
 @interface GEOVoltaireRasterTileTrafficSegment : NSObject {
-    BOOL _hasSpeed;
-    BOOL _hasWidth;
-    int _speed;
-    int _vertexCount;
-    struct { int x1; int x2; } *_vertices;
-    int _width;
+    BOOL  _hasSpeed;
+    BOOL  _hasWidth;
+    int  _speed;
+    int  _vertexCount;
+    struct { int x1; int x2; } * _vertices;
+    int  _width;
 }
 
 @property (nonatomic) BOOL hasSpeed;

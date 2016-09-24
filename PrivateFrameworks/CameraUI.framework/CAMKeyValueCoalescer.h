@@ -3,12 +3,12 @@
  */
 
 @interface CAMKeyValueCoalescer : NSObject {
-    NSObject<OS_dispatch_queue> *__coalescingQueue;
-    id /* block */ __handler;
-    double __interval;
-    NSMutableDictionary *__previousValues;
-    NSMutableDictionary *__values;
-    NSObject<OS_dispatch_source> *_coalescingTimer;
+    NSObject<OS_dispatch_queue> * __coalescingQueue;
+    id /* block */  __handler;
+    double  __interval;
+    NSMutableDictionary * __previousValues;
+    NSMutableDictionary * __values;
+    NSObject<OS_dispatch_source> * _coalescingTimer;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_coalescingQueue;

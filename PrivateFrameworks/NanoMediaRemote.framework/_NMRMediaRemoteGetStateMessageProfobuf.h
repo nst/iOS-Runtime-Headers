@@ -3,27 +3,30 @@
  */
 
 @interface _NMRMediaRemoteGetStateMessageProfobuf : PBCodable <NSCopying> {
-    NSData *_applicationInfoDigest;
+    NSData * _applicationInfoDigest;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int state : 1; 
-    } _has;
-    NSData *_knownDigest;
-    NSData *_nowPlayingInfoDigest;
-    int _state;
-    NSData *_supportedCommandsDigest;
-    double _timestamp;
+    }  _has;
+    NSData * _knownDigest;
+    NSData * _nowPlayingInfoDigest;
+    NSData * _playbackQueueDigest;
+    int  _state;
+    NSData * _supportedCommandsDigest;
+    double  _timestamp;
 }
 
 @property (nonatomic, retain) NSData *applicationInfoDigest;
 @property (nonatomic, readonly) BOOL hasApplicationInfoDigest;
 @property (nonatomic, readonly) BOOL hasKnownDigest;
 @property (nonatomic, readonly) BOOL hasNowPlayingInfoDigest;
+@property (nonatomic, readonly) BOOL hasPlaybackQueueDigest;
 @property (nonatomic) BOOL hasState;
 @property (nonatomic, readonly) BOOL hasSupportedCommandsDigest;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic, retain) NSData *knownDigest;
 @property (nonatomic, retain) NSData *nowPlayingInfoDigest;
+@property (nonatomic, retain) NSData *playbackQueueDigest;
 @property (nonatomic) int state;
 @property (nonatomic, retain) NSData *supportedCommandsDigest;
 @property (nonatomic) double timestamp;
@@ -37,6 +40,7 @@
 - (BOOL)hasApplicationInfoDigest;
 - (BOOL)hasKnownDigest;
 - (BOOL)hasNowPlayingInfoDigest;
+- (BOOL)hasPlaybackQueueDigest;
 - (BOOL)hasState;
 - (BOOL)hasSupportedCommandsDigest;
 - (BOOL)hasTimestamp;
@@ -45,12 +49,14 @@
 - (id)knownDigest;
 - (void)mergeFrom:(id)arg1;
 - (id)nowPlayingInfoDigest;
+- (id)playbackQueueDigest;
 - (BOOL)readFrom:(id)arg1;
 - (void)setApplicationInfoDigest:(id)arg1;
 - (void)setHasState:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setKnownDigest:(id)arg1;
 - (void)setNowPlayingInfoDigest:(id)arg1;
+- (void)setPlaybackQueueDigest:(id)arg1;
 - (void)setState:(int)arg1;
 - (void)setSupportedCommandsDigest:(id)arg1;
 - (void)setTimestamp:(double)arg1;

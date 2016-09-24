@@ -3,26 +3,26 @@
  */
 
 @interface CUTWiFiManager : NSObject <CUTPowerMonitorDelegate> {
-    void *_currentNetwork;
-    NSHashTable *_delegateMap;
-    void *_dynamicStore;
-    BOOL _isHostingHotSpot;
-    BOOL _isPrimaryCellularCached;
-    BOOL _isWakeOnWiFiEnabled;
-    BOOL _isWakeOnWiFiSupported;
-    BOOL _isWifiEnabled;
-    NSDictionary *_lastWiFiPowerInfo;
-    int _linkToken;
-    NSRecursiveLock *_lock;
-    struct __CFRunLoopSource { } *_runLoopSource;
-    NSObject<OS_dispatch_queue> *_scUpdateQueue;
-    BOOL _shouldAutoAssociateAsForeground;
-    NSMutableSet *_wiFiAutoAssociationTokens;
-    void *_wifiDevice;
-    void *_wifiManager;
-    NSRunLoop *_wifiRunLoop;
-    NSThread *_wifiThread;
-    NSHashTable *_wowClients;
+    void * _currentNetwork;
+    NSHashTable * _delegateMap;
+    void * _dynamicStore;
+    BOOL  _isHostingHotSpot;
+    BOOL  _isPrimaryCellularCached;
+    BOOL  _isWakeOnWiFiEnabled;
+    BOOL  _isWakeOnWiFiSupported;
+    BOOL  _isWifiEnabled;
+    NSDictionary * _lastWiFiPowerInfo;
+    int  _linkToken;
+    NSRecursiveLock * _lock;
+    struct __CFRunLoopSource { } * _runLoopSource;
+    NSObject<OS_dispatch_queue> * _scUpdateQueue;
+    BOOL  _shouldAutoAssociateAsForeground;
+    NSMutableSet * _wiFiAutoAssociationTokens;
+    void * _wifiDevice;
+    void * _wifiManager;
+    NSRunLoop * _wifiRunLoop;
+    NSThread * _wifiThread;
+    NSHashTable * _wowClients;
 }
 
 @property (nonatomic, readonly) BOOL autoAssociateWiFi;

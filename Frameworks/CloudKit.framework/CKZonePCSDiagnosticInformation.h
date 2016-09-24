@@ -3,10 +3,10 @@
  */
 
 @interface CKZonePCSDiagnosticInformation : NSObject <NSSecureCoding> {
-    NSString *_pcsDiagnosticString;
-    NSError *_pcsError;
-    int _pcsStatus;
-    BOOL _wasRepaired;
+    NSString * _pcsDiagnosticString;
+    NSError * _pcsError;
+    int  _pcsStatus;
+    BOOL  _wasRepaired;
 }
 
 @property (nonatomic, retain) NSString *pcsDiagnosticString;

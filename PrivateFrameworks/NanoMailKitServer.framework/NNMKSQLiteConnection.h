@@ -3,10 +3,10 @@
  */
 
 @interface NNMKSQLiteConnection : NSObject {
-    NSMutableDictionary *_cachedPreparedStatementsKeyedBySQLPattern;
-    struct sqlite3 { } *_db;
-    NSObject<OS_dispatch_queue> *_dbQueue;
-    BOOL _isInTransaction;
+    NSMutableDictionary * _cachedPreparedStatementsKeyedBySQLPattern;
+    struct sqlite3 { } * _db;
+    NSObject<OS_dispatch_queue> * _dbQueue;
+    BOOL  _isInTransaction;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *cachedPreparedStatementsKeyedBySQLPattern;

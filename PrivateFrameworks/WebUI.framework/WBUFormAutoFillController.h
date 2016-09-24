@@ -3,13 +3,13 @@
  */
 
 @interface WBUFormAutoFillController : NSObject <WBUFormMetadataObserver> {
-    <WBUFormAutoFiller> *_autoFiller;
-    <WBUFormAutoFillControllerDelegate> *_delegate;
-    NSMutableDictionary *_metadataReplyIdentifierToCompletion;
-    NSTimer *_prefillTimer;
-    _WKRemoteObjectInterface *_remoteObjectInterface;
-    WBUFormAutocompleteStateWK2 *_state;
-    WBUFormAutoFillWebView *_webView;
+    <WBUFormAutoFiller> * _autoFiller;
+    <WBUFormAutoFillControllerDelegate> * _delegate;
+    NSMutableDictionary * _metadataReplyIdentifierToCompletion;
+    NSTimer * _prefillTimer;
+    _WKRemoteObjectInterface * _remoteObjectInterface;
+    WBUFormAutocompleteStateWK2 * _state;
+    WBUFormAutoFillWebView * _webView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -26,6 +26,8 @@
 - (void)autoFill;
 - (void)autoFillForm:(id)arg1 inFrame:(id)arg2 withGeneratedPassword:(id)arg3;
 - (void)autoFillFormInFrame:(id)arg1 withValues:(id)arg2 setAutoFilled:(BOOL)arg3 andFocusField:(id)arg4;
+- (void)autoFillFormInFrame:(id)arg1 withValues:(id)arg2 setAutoFilled:(BOOL)arg3 focusFieldAfterFilling:(BOOL)arg4 fieldToFocus:(id)arg5;
+- (void)autoFillFromSuggestion:(id)arg1;
 - (void)dealloc;
 - (void)didCollectFormMetadata:(id)arg1 textFieldMetadata:(id)arg2 replyIdentifier:(id)arg3;
 - (void)didCollectFormMetadataForPreFilling:(id)arg1 atURL:(id)arg2 ancestorFramesOfFormToPreFill:(id)arg3;

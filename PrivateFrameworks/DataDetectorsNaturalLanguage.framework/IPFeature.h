@@ -3,23 +3,24 @@
  */
 
 @interface IPFeature : NSObject {
-    float _confidence;
+    double  _confidence;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _matchRange;
-    NSString *_textUnit;
-    float _weight;
+    }  _matchRange;
+    NSString * _textUnit;
+    double  _weight;
 }
 
-@property float confidence;
+@property double confidence;
 @property struct _NSRange { unsigned int x1; unsigned int x2; } matchRange;
 @property (copy) NSString *textUnit;
-@property float weight;
+@property double weight;
 
 - (void).cxx_destruct;
 - (float)confidence;
 - (id)description;
+- (BOOL)isMatchStringInsideQuotationMarks;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })matchRange;
 - (id)matchString;
 - (void)setConfidence:(float)arg1;

@@ -5,9 +5,9 @@
 @interface RMSUpdatePairedNetworNamesMessage : PBCodable <NSCopying> {
     struct { 
         unsigned int sessionIdentifier : 1; 
-    } _has;
-    NSMutableArray *_pairedNetworkNames;
-    int _sessionIdentifier;
+    }  _has;
+    NSMutableArray * _pairedNetworkNames;
+    int  _sessionIdentifier;
 }
 
 @property (nonatomic) BOOL hasSessionIdentifier;

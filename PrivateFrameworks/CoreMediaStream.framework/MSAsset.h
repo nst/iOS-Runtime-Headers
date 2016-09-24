@@ -3,25 +3,25 @@
  */
 
 @interface MSAsset : NSObject <MMCSAsset, NSCopying, NSSecureCoding> {
-    NSString *_GUID;
-    NSString *_MMCSAccessHeader;
-    NSDate *_MMCSAccessHeaderTimeStamp;
-    NSString *_MMCSReceipt;
-    NSURL *_MMCSURL;
-    NSString *_assetCollectionGUID;
-    BOOL _assetDataAvailableOnServer;
-    NSDate *_batchCreationDate;
-    NSError *_error;
-    NSData *_fileData;
-    NSData *_fileHash;
-    NSData *_masterAssetHash;
-    unsigned int _mediaAssetType;
-    NSDictionary *_metadata;
-    NSString *_path;
-    NSDate *_photoCreationDate;
-    unsigned long long _protocolFileSize;
-    NSString *_type;
-    <NSCoding> *_userInfo;
+    NSString * _GUID;
+    NSString * _MMCSAccessHeader;
+    NSDate * _MMCSAccessHeaderTimeStamp;
+    NSString * _MMCSReceipt;
+    NSURL * _MMCSURL;
+    NSString * _assetCollectionGUID;
+    BOOL  _assetDataAvailableOnServer;
+    NSDate * _batchCreationDate;
+    NSError * _error;
+    NSData * _fileData;
+    NSData * _fileHash;
+    NSData * _masterAssetHash;
+    unsigned int  _mediaAssetType;
+    NSDictionary * _metadata;
+    NSString * _path;
+    NSDate * _photoCreationDate;
+    unsigned int  _protocolFileSize;
+    NSString * _type;
+    <NSCoding> * _userInfo;
 }
 
 @property (nonatomic, retain) NSString *GUID;
@@ -30,8 +30,8 @@
 @property (nonatomic, retain) NSError *MMCSError;
 @property (nonatomic, retain) NSData *MMCSHash;
 @property (nonatomic) unsigned long MMCSItemFlags;
-@property (nonatomic) unsigned long long MMCSItemID;
-@property (nonatomic) unsigned long long MMCSItemSize;
+@property (nonatomic) unsigned int MMCSItemID;
+@property (nonatomic) unsigned int MMCSItemSize;
 @property (nonatomic, retain) NSString *MMCSReceipt;
 @property (nonatomic, retain) NSURL *MMCSURL;
 @property (nonatomic, retain) NSString *MMCSUTI;
@@ -49,7 +49,7 @@
 @property (nonatomic, retain) NSDictionary *metadata;
 @property (nonatomic, retain) NSString *path;
 @property (nonatomic, retain) NSDate *photoCreationDate;
-@property (nonatomic) unsigned long long protocolFileSize;
+@property (nonatomic) unsigned int protocolFileSize;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *type;
 @property (nonatomic, retain) <NSCoding> *userInfo;
@@ -66,16 +66,16 @@
 - (id)MMCSError;
 - (id)MMCSHash;
 - (unsigned long)MMCSItemFlags;
-- (unsigned long long)MMCSItemID;
-- (unsigned long long)MMCSItemSize;
+- (unsigned int)MMCSItemID;
+- (unsigned int)MMCSItemSize;
 - (id)MMCSItemType;
 - (int)MMCSOpenNewFileDescriptor;
 - (id)MMCSReceipt;
 - (id)MMCSURL;
 - (id)MMCSUTI;
 - (id)MSASPProtocolDictionary;
-- (unsigned long long)_fileSize;
-- (unsigned long long)_fileSizeOnDisk;
+- (unsigned int)_fileSize;
+- (unsigned int)_fileSizeOnDisk;
 - (void)addMetadataValue:(id)arg1 forKey:(id)arg2;
 - (id)assetCollectionGUID;
 - (BOOL)assetDataAvailableOnServer;
@@ -99,7 +99,7 @@
 - (id)metadataValueForKey:(id)arg1;
 - (id)path;
 - (id)photoCreationDate;
-- (unsigned long long)protocolFileSize;
+- (unsigned int)protocolFileSize;
 - (void)setAssetCollectionGUID:(id)arg1;
 - (void)setAssetDataAvailableOnServer:(BOOL)arg1;
 - (void)setBatchCreationDate:(id)arg1;
@@ -113,8 +113,8 @@
 - (void)setMMCSError:(id)arg1;
 - (void)setMMCSHash:(id)arg1;
 - (void)setMMCSItemFlags:(unsigned long)arg1;
-- (void)setMMCSItemID:(unsigned long long)arg1;
-- (void)setMMCSItemSize:(unsigned long long)arg1;
+- (void)setMMCSItemID:(unsigned int)arg1;
+- (void)setMMCSItemSize:(unsigned int)arg1;
 - (void)setMMCSReceipt:(id)arg1;
 - (void)setMMCSURL:(id)arg1;
 - (void)setMMCSUTI:(id)arg1;
@@ -124,7 +124,7 @@
 - (void)setMetadataValue:(id)arg1 forKey:(id)arg2;
 - (void)setPath:(id)arg1;
 - (void)setPhotoCreationDate:(id)arg1;
-- (void)setProtocolFileSize:(unsigned long long)arg1;
+- (void)setProtocolFileSize:(unsigned int)arg1;
 - (void)setType:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (id)type;

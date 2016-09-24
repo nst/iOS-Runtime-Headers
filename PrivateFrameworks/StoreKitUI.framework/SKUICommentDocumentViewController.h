@@ -3,29 +3,29 @@
  */
 
 @interface SKUICommentDocumentViewController : SKUIViewController <SKUIArtworkRequestDelegate, SKUICommentDelegate, SKUIDocumentViewController, SKUILayoutCacheDelegate> {
-    SKUIMediaSocialAuthor *_authorForActiveAccount;
-    SKUIStackDocumentViewController *_childViewController;
-    NSArray *_commenters;
-    BOOL _didShowKeyboard;
+    SKUIMediaSocialAuthor * _authorForActiveAccount;
+    SKUIStackDocumentViewController * _childViewController;
+    NSArray * _commenters;
+    BOOL  _didShowKeyboard;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _keyboardRect;
-    BOOL _keyboardVisible;
-    SKUIViewElementLayoutContext *_layoutContext;
-    NSMutableSet *_observedArtworkRequestIDs;
-    SKUICommentPostBarView *_postView;
-    BOOL _scrollNewCommentToView;
-    int _selectedCommenter;
-    SKUIStackTemplateElement *_stackTemplateElement;
-    SKUICommentTemplateViewElement *_templateElement;
-    SKUILayoutCache *_textLayoutCache;
+    }  _keyboardRect;
+    BOOL  _keyboardVisible;
+    SKUIViewElementLayoutContext * _layoutContext;
+    NSMutableSet * _observedArtworkRequestIDs;
+    SKUICommentPostBarView * _postView;
+    BOOL  _scrollNewCommentToView;
+    int  _selectedCommenter;
+    SKUIStackTemplateElement * _stackTemplateElement;
+    SKUICommentTemplateViewElement * _templateElement;
+    SKUILayoutCache * _textLayoutCache;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -63,6 +63,6 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

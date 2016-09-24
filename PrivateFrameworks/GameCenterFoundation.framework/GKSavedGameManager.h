@@ -3,12 +3,12 @@
  */
 
 @interface GKSavedGameManager : NSObject {
-    NSMutableDictionary *_documents;
-    NSMutableArray *_fetchHandlers;
-    NSMetadataQuery *_query;
-    int _queryDisableCount;
-    NSURL *_ubiquityURL;
-    BOOL _ubiquityUnavailable;
+    NSMutableDictionary * _documents;
+    NSMutableArray * _fetchHandlers;
+    NSMetadataQuery * _query;
+    int  _queryDisableCount;
+    NSURL * _ubiquityURL;
+    BOOL  _ubiquityUnavailable;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *documents;

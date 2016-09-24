@@ -2,9 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASyncGetAnchorsResponse : SABaseClientBoundCommand
+@interface SASyncGetAnchorsResponse : SABaseClientBoundCommand <SAServerBoundCommand>
 
+@property (nonatomic, copy) NSString *aceId;
 @property (nonatomic, copy) NSArray *anchors;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *refId;
+@property (readonly) Class superclass;
 
 + (id)getAnchorsResponse;
 + (id)getAnchorsResponseWithDictionary:(id)arg1 context:(id)arg2;

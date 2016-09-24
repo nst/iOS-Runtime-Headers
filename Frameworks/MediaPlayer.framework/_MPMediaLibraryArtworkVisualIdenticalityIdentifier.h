@@ -3,9 +3,9 @@
  */
 
 @interface _MPMediaLibraryArtworkVisualIdenticalityIdentifier : NSObject <NSCopying> {
-    int _artworkType;
-    NSString *_availableArtworkToken;
-    NSString *_fetchableArtworkToken;
+    int  _artworkType;
+    NSString * _availableArtworkToken;
+    NSString * _fetchableArtworkToken;
 }
 
 @property (nonatomic, readonly) int artworkType;

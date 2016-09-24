@@ -3,37 +3,37 @@
  */
 
 @interface CSSearchableItemAttributeSet : NSObject <NSCopying, NSSecureCoding> {
-    NSDictionary *_attributes;
+    NSDictionary * _attributes;
     struct { 
         char *containerBytes; 
         struct { 
             unsigned int embeddedReference; 
             unsigned char type; 
         } reference; 
-    } _codedAttributes;
+    }  _codedAttributes;
     struct { 
         char *containerBytes; 
         struct { 
             unsigned int embeddedReference; 
             unsigned char type; 
         } reference; 
-    } _codedCustomAttributes;
-    CSDecoder *_contentDecoder;
+    }  _codedCustomAttributes;
+    CSDecoder * _contentDecoder;
     struct { 
         char *containerBytes; 
         struct { 
             unsigned int embeddedReference; 
             unsigned char type; 
         } reference; 
-    } _contentObj;
-    NSString *_contentType;
-    NSMutableDictionary *_customAttributes;
-    CSDecoder *_decoder;
-    BOOL _hasCodedCustomAttributes;
-    NSMutableDictionary *_mutableAttributes;
-    int _searchableItemFlags;
+    }  _contentObj;
+    NSMutableDictionary * _customAttributes;
+    CSDecoder * _decoder;
+    BOOL  _hasCodedCustomAttributes;
+    NSMutableDictionary * _mutableAttributes;
+    int  _searchableItemFlags;
 }
 
+@property (readonly) NSData *HTMLContentDataNoCopy;
 @property (copy) NSString *accountType;
 @property (copy) NSString *adamID;
 @property (copy) NSString *albumPersistentID;
@@ -44,11 +44,10 @@
 @property (nonatomic, readonly) struct { char *x1; struct { unsigned int x_2_1_1; unsigned char x_2_1_2; } x2; } codedCustomAttributes;
 @property (nonatomic, readonly) CSDecoder *contentDecoder;
 @property (nonatomic, readonly) struct { char *x1; struct { unsigned int x_2_1_1; unsigned char x_2_1_2; } x2; } contentObj;
-@property (readonly) NSString *contentType;
+@property (readonly) NSString *contentSnippet;
 @property (readonly) NSMutableDictionary *customAttributes;
 @property (nonatomic, readonly) CSDecoder *decoder;
 @property (retain) NSNumber *documentIdentifier;
-@property (copy) NSString *domainIdentifier;
 @property (getter=isExistingThread, retain) NSNumber *existingThread;
 @property (retain) NSDate *expirationDate;
 @property (retain) NSNumber *extendedContentRating;
@@ -60,23 +59,26 @@
 @property (copy) NSArray *mailAttachmentKinds;
 @property (copy) NSArray *mailAttachmentNames;
 @property (copy) NSArray *mailAttachmentTypes;
-@property (copy) NSDate *mailDateLastViewed;
-@property (copy) NSDate *mailDateReceived;
-@property (copy) NSNumber *mailFlagColor;
-@property (copy) NSNumber *mailFlagged;
+@property (copy) NSString *mailCategory;
+@property (retain) NSDate *mailDateLastViewed;
+@property (retain) NSDate *mailDateReceived;
+@property (retain) NSNumber *mailFlagColor;
+@property (retain) NSNumber *mailFlagged;
 @property (copy) NSArray *mailGMailLabels;
 @property (copy) NSString *mailMessageID;
-@property (copy) NSNumber *mailPriority;
-@property (copy) NSNumber *mailRead;
-@property (copy) NSNumber *mailRepliedTo;
+@property (retain) NSNumber *mailPriority;
+@property (retain) NSNumber *mailRead;
+@property (retain) NSNumber *mailRepliedTo;
 @property (readonly) NSMutableDictionary *mutableAttributes;
 @property (retain) NSNumber *parentFileIdentifier;
 @property (getter=isPartiallyDownloaded, retain) NSNumber *partiallyDownloaded;
 @property (copy) NSString *protectionClass;
 @property (readonly) NSArray *queryResultMatchedFields;
 @property (copy) NSString *queryResultRelevance;
+@property (copy) NSString *relatedAppBundleIdentifier;
 @property int searchableItemFlags;
 @property (copy) NSString *subtitle;
+@property (readonly) NSString *textContentNoCopy;
 @property (copy) NSString *textSelected;
 @property (copy) NSString *uniqueIdentifier;
 @property (copy) NSString *userActivityType;
@@ -106,12 +108,18 @@
 - (id)GPSStatus;
 - (id)GPSTrack;
 - (id)HTMLContentData;
+- (id)HTMLContentDataNoCopy;
 - (id)ISOSpeed;
 - (id)URL;
 - (id)_getNonNullValueForKey:(id)arg1;
-- (void)_setOrRemoveValue:(id)arg1 forKey:(id)arg2;
-- (void)_setOrRemoveValue:(id)arg1 forKey:(id)arg2 copy:(BOOL)arg3;
-- (void)_stripContentURLAndEncodeWithCoder:(id)arg1;
+- (void)_setArrayValue:(id)arg1 withItemClass:(Class)arg2 forKey:(id)arg3;
+- (void)_setDataValue:(id)arg1 forKey:(id)arg2;
+- (void)_setDateValue:(id)arg1 forKey:(id)arg2;
+- (void)_setNumberValue:(id)arg1 forKey:(id)arg2;
+- (void)_setStringValue:(id)arg1 forKey:(id)arg2;
+- (void)_setURLValue:(id)arg1 forKey:(id)arg2;
+- (void)_setValue:(id)arg1 withClass:(Class)arg2 forKey:(id)arg3;
+- (void)_setValue:(id)arg1 withClass:(Class)arg2 forKey:(id)arg3 copy:(BOOL)arg4;
 - (void)_updateDocumentInfoForContentURL:(id)arg1;
 - (id)accountHandles;
 - (id)accountIdentifier;
@@ -136,6 +144,9 @@
 - (id)applicationCategories;
 - (id)applicationName;
 - (id)artist;
+- (id)attachmentNames;
+- (id)attachmentPaths;
+- (id)attachmentTypes;
 - (id)attributeDictionary;
 - (id)attributeForKey:(id)arg1;
 - (id)attributes;
@@ -152,6 +163,7 @@
 - (id)bitsPerSample;
 - (id)bundleID;
 - (id)bundleIdentifier;
+- (id)calendarHolidayIdentifier;
 - (id)cameraOwner;
 - (id)city;
 - (id)codecs;
@@ -172,8 +184,8 @@
 - (id)contentModificationDate;
 - (struct { char *x1; struct { unsigned int x_2_1_1; unsigned char x_2_1_2; } x2; })contentObj;
 - (id)contentRating;
+- (id)contentSnippet;
 - (id)contentSources;
-- (id)contentType;
 - (id)contentType;
 - (id)contentTypeTree;
 - (id)contentURL;
@@ -219,6 +231,7 @@
 - (id)finderComment;
 - (id)focalLength;
 - (id)fontNames;
+- (id)fullyFormattedAddress;
 - (id)genre;
 - (id)hasAlphaChannel;
 - (BOOL)hasCodedCustomAttributes;
@@ -230,8 +243,8 @@
 - (id)importantDates;
 - (id)information;
 - (id)init;
+- (id)initWithAttributeSet:(id)arg1;
 - (id)initWithAttributes:(id)arg1;
-- (id)initWithAttributesSet:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDecoder:(id)arg1 obj:(struct { char *x1; struct { unsigned int x_2_1_1; unsigned char x_2_1_2; } x2; })arg2;
 - (id)initWithItemContentType:(id)arg1;
@@ -263,6 +276,7 @@
 - (id)mailAttachmentKinds;
 - (id)mailAttachmentNames;
 - (id)mailAttachmentTypes;
+- (id)mailCategory;
 - (id)mailDateLastViewed;
 - (id)mailDateReceived;
 - (id)mailFlagColor;
@@ -298,6 +312,7 @@
 - (id)pixelHeight;
 - (id)pixelWidth;
 - (id)playCount;
+- (id)postalCode;
 - (id)primaryRecipients;
 - (id)producer;
 - (id)profileName;
@@ -312,6 +327,7 @@
 - (id)recipientEmailAddresses;
 - (id)recipientNames;
 - (id)recordingDate;
+- (id)relatedAppBundleIdentifier;
 - (id)relatedUniqueIdentifier;
 - (id)requiredAttributes;
 - (id)resolutionHeightDPI;
@@ -343,6 +359,9 @@
 - (void)setApplicationManaged:(id)arg1;
 - (void)setApplicationName:(id)arg1;
 - (void)setArtist:(id)arg1;
+- (void)setAttachmentNames:(id)arg1;
+- (void)setAttachmentPaths:(id)arg1;
+- (void)setAttachmentTypes:(id)arg1;
 - (void)setAttribute:(id)arg1 forKey:(id)arg2;
 - (void)setAudiences:(id)arg1;
 - (void)setAudioBitRate:(id)arg1;
@@ -357,6 +376,7 @@
 - (void)setBitsPerSample:(id)arg1;
 - (void)setBundleID:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
+- (void)setCalendarHolidayIdentifier:(id)arg1;
 - (void)setCameraOwner:(id)arg1;
 - (void)setCity:(id)arg1;
 - (void)setCodecs:(id)arg1;
@@ -416,6 +436,7 @@
 - (void)setFocalLength35mm:(id)arg1;
 - (void)setFocalLength:(id)arg1;
 - (void)setFontNames:(id)arg1;
+- (void)setFullyFormattedAddress:(id)arg1;
 - (void)setGPSAreaInformation:(id)arg1;
 - (void)setGPSDOP:(id)arg1;
 - (void)setGPSDateStamp:(id)arg1;
@@ -457,6 +478,7 @@
 - (void)setMailAttachmentKinds:(id)arg1;
 - (void)setMailAttachmentNames:(id)arg1;
 - (void)setMailAttachmentTypes:(id)arg1;
+- (void)setMailCategory:(id)arg1;
 - (void)setMailDateLastViewed:(id)arg1;
 - (void)setMailDateReceived:(id)arg1;
 - (void)setMailFlagColor:(id)arg1;
@@ -492,6 +514,7 @@
 - (void)setPixelHeight:(id)arg1;
 - (void)setPixelWidth:(id)arg1;
 - (void)setPlayCount:(id)arg1;
+- (void)setPostalCode:(id)arg1;
 - (void)setPrimaryRecipients:(id)arg1;
 - (void)setProducer:(id)arg1;
 - (void)setProfileName:(id)arg1;
@@ -507,6 +530,7 @@
 - (void)setRecipientNames:(id)arg1;
 - (void)setRecordingDate:(id)arg1;
 - (void)setRedEyeOn:(id)arg1;
+- (void)setRelatedAppBundleIdentifier:(id)arg1;
 - (void)setRelatedUniqueIdentifier:(id)arg1;
 - (void)setResolutionHeightDPI:(id)arg1;
 - (void)setResolutionWidthDPI:(id)arg1;
@@ -518,6 +542,7 @@
 - (void)setStartDate:(id)arg1;
 - (void)setStateOrProvince:(id)arg1;
 - (void)setStreamable:(id)arg1;
+- (void)setSubThoroughfare:(id)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setSupportFileType:(id)arg1;
@@ -527,6 +552,7 @@
 - (void)setTextContent:(id)arg1;
 - (void)setTextSelected:(id)arg1;
 - (void)setTheme:(id)arg1;
+- (void)setThoroughfare:(id)arg1;
 - (void)setThumbnailData:(id)arg1;
 - (void)setThumbnailURL:(id)arg1;
 - (void)setTimeSignature:(id)arg1;
@@ -538,12 +564,15 @@
 - (void)setUserActivityType:(id)arg1;
 - (void)setUserTags:(id)arg1;
 - (void)setValue:(id)arg1 forCustomKey:(id)arg2;
+- (void)setVendorName:(id)arg1;
 - (void)setVersion:(id)arg1;
 - (void)setVideoBitRate:(id)arg1;
+- (void)setWeakRelatedUniqueIdentifier:(id)arg1;
 - (void)setWhiteBalance:(id)arg1;
 - (id)speed;
 - (id)startDate;
 - (id)stateOrProvince;
+- (id)subThoroughfare;
 - (id)subject;
 - (id)subtitle;
 - (id)supportFileType;
@@ -551,8 +580,10 @@
 - (id)supportsPhoneCall;
 - (id)tempo;
 - (id)textContent;
+- (id)textContentNoCopy;
 - (id)textSelected;
 - (id)theme;
+- (id)thoroughfare;
 - (id)thumbnailData;
 - (id)thumbnailURL;
 - (id)timeSignature;
@@ -563,9 +594,17 @@
 - (id)userActivityType;
 - (id)userTags;
 - (id)valueForCustomKey:(id)arg1;
+- (id)vendorName;
 - (id)version;
 - (id)videoBitRate;
+- (id)weakRelatedUniqueIdentifier;
 - (id)whiteBalance;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (id)__ck_itemContentCreationDate;
+- (id)__ck_privateMutableAttributesDictionary;
+- (id)__ck_spotlightItemSnippet;
 
 // Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
 

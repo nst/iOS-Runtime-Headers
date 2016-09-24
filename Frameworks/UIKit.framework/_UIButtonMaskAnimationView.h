@@ -2,19 +2,23 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIButtonMaskAnimationView : UIView {
-    UIButton *_delegate;
-    unsigned int _hardEdge;
-    UIView *_hardEdgeLine;
+@interface _UIButtonMaskAnimationView : UIView <CAAnimationDelegate> {
+    UIButton * _delegate;
+    unsigned int  _hardEdge;
+    UIView * _hardEdgeLine;
 }
 
 @property (nonatomic) UIColor *borderColor;
-@property float borderWidth;
+@property double borderWidth;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) UIButton *delegate;
+@property (readonly, copy) NSString *description;
 @property unsigned int hardEdge;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForLine;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForLine;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (id)borderColor;

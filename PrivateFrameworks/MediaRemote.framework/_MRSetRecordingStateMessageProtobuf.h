@@ -5,13 +5,14 @@
 @interface _MRSetRecordingStateMessageProtobuf : PBCodable <NSCopying> {
     struct { 
         unsigned int state : 1; 
-    } _has;
-    int _state;
+    }  _has;
+    int  _state;
 }
 
 @property (nonatomic) BOOL hasState;
 @property (nonatomic) int state;
 
+- (int)StringAsState:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -24,6 +25,7 @@
 - (void)setHasState:(BOOL)arg1;
 - (void)setState:(int)arg1;
 - (int)state;
+- (id)stateAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

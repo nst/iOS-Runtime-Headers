@@ -3,10 +3,10 @@
  */
 
 @interface BLRetouchSaturationLayer : BLRetouchEffectLayer {
-    float _saturation;
+    double  _saturation;
 }
 
-@property (nonatomic) float saturation;
+@property (nonatomic) double saturation;
 
 + (id)layerWithSaturation:(float)arg1;
 

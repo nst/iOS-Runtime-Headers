@@ -20,6 +20,7 @@
 + (id)metrics;
 + (id)metricsWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)_descriptionHint;
 - (id)category;
 - (id)encodedClassName;
 - (id)eventInformation;
@@ -31,10 +32,10 @@
 - (void)setTimings:(id)arg1;
 - (id)timings;
 
-// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
+// Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
 
-- (void)af_addSendCompletion:(id /* block */)arg1;
-- (void)af_dispatchSendCompletionsWithResult:(int)arg1 error:(id)arg2;
-- (BOOL)af_supportsSendCompletions;
+- (void)siriCore_addSendCompletion:(id /* block */)arg1;
+- (void)siriCore_dispatchSendCompletionsWithResult:(int)arg1 error:(id)arg2;
+- (BOOL)siriCore_supportsSendCompletions;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface PUTuple : NSObject {
-    unsigned int _hash;
-    NSArray *_objects;
+    unsigned int  _hash;
+    NSArray * _objects;
 }
 
 @property (nonatomic, readonly) NSArray *objects;

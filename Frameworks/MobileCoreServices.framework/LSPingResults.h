@@ -3,10 +3,10 @@
  */
 
 @interface LSPingResults : NSObject <NSSecureCoding> {
-    NSMutableDictionary *_devices;
-    NSMutableDictionary *_errorsMap;
-    double _pingAvg;
-    NSMutableDictionary *_resultsMap;
+    NSMutableDictionary * _devices;
+    NSMutableDictionary * _errorsMap;
+    double  _pingAvg;
+    NSMutableDictionary * _resultsMap;
 }
 
 @property (retain) NSMutableDictionary *devices;

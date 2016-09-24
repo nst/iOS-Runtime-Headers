@@ -3,7 +3,7 @@
  */
 
 @interface AFSetSettingsResponse : AFSiriResponse {
-    NSArray *_settingChanges;
+    NSArray * _settingChanges;
 }
 
 + (BOOL)supportsSecureCoding;

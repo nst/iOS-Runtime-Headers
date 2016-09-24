@@ -3,7 +3,7 @@
  */
 
 @interface WebVisiblePosition : NSObject {
-    struct WebObjectInternal { } *_internal;
+    struct WebObjectInternal { } * _internal;
 }
 
 @property (nonatomic) int affinity;

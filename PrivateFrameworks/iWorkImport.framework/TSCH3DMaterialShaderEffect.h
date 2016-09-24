@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DMaterialShaderEffect : TSCH3DShaderEffect {
-    TSCH3DTexturesMaterial *mMaterial;
-    TSCH3DTexturePool *mPool;
+    TSCH3DTexturesMaterial * mMaterial;
+    TSCH3DTexturePool * mPool;
     struct MaterialShaderVariables { 
         TSCH3DShaderVariable *texture; 
         TSCH3DShaderVariable *intensity; 
@@ -14,7 +14,7 @@
         TSCH3DShaderVariable *modulation; 
         TSCH3DShaderVariable *texcoords; 
         TSCH3DShaderVariable *textureMatrix; 
-    } mVariables;
+    }  mVariables;
 }
 
 + (id)effectWithPool:(id)arg1 material:(id)arg2 variables:(const struct MaterialShaderVariables { id x1; id x2; id x3; id x4; }*)arg3;

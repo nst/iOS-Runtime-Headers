@@ -3,7 +3,7 @@
  */
 
 @interface _HKUUIDFilter : _HKFilter {
-    NSSet *_UUIDs;
+    NSSet * _UUIDs;
 }
 
 @property (nonatomic, readonly) NSSet *UUIDs;
@@ -26,6 +26,6 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
-- (id)predicateWithHealthDaemon:(id)arg1;
+- (id)predicateWithProfile:(id)arg1;
 
 @end

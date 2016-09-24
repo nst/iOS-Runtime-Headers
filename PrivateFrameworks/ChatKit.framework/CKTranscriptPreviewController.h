@@ -3,52 +3,66 @@
  */
 
 @interface CKTranscriptPreviewController : CKViewController <CKTranscriptCollectionViewControllerDelegate> {
-    CKConversation *_conversation;
-    NSObject<CKTranscriptPreviewControllerDelegate> *_delegate;
+    CKTranscriptCollectionView * _collectionView;
+    CKConversation * _conversation;
+    NSObject<CKTranscriptPreviewControllerDelegate> * _delegate;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _layoutMargins;
-    float _transcriptWidth;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _layoutMargins;
+    double  _transcriptWidth;
 }
 
+@property (nonatomic, retain) CKTranscriptCollectionView *collectionView;
 @property (nonatomic, retain) CKConversation *conversation;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) NSObject<CKTranscriptPreviewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } layoutMargins;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } layoutMargins;
 @property (readonly) Class superclass;
-@property (nonatomic) float transcriptWidth;
+@property (nonatomic) double transcriptWidth;
 
+- (void).cxx_destruct;
+- (id)collectionView;
 - (id)conversation;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithConversation:(id)arg1 transcriptWidth:(float)arg2 layoutMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })layoutMargins;
+- (id)initWithConversation:(id)arg1 transcriptWidth:(float)arg2 layoutMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })layoutMargins;
 - (void)loadView;
-- (id)previewMenuItems;
+- (id)previewActions;
+- (void)setCollectionView:(id)arg1;
 - (void)setConversation:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setLayoutMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setLayoutMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setTranscriptWidth:(float)arg1;
 - (id)textInputContextIdentifier;
-- (void)transcriptCollectionViewController:(id)arg1 balloonViewTappedForItemWithIndexPath:(id)arg2;
+- (void)transcriptCollectionViewController:(id)arg1 balloonView:(id)arg2 doubleTappedItemAtIndexPath:(id)arg3;
+- (void)transcriptCollectionViewController:(id)arg1 balloonView:(id)arg2 longPressedForItemWithIndexPath:(id)arg3;
+- (void)transcriptCollectionViewController:(id)arg1 balloonView:(id)arg2 tappedForChatItem:(id)arg3;
 - (void)transcriptCollectionViewController:(id)arg1 balloonViewTitleTappedForItemWithIndexPath:(id)arg2;
-- (void)transcriptCollectionViewController:(id)arg1 collectionViewContentSizeDidChange:(struct CGSize { float x1; float x2; })arg2;
+- (void)transcriptCollectionViewController:(id)arg1 collectionViewContentSizeDidChange:(struct CGSize { double x1; double x2; })arg2;
 - (void)transcriptCollectionViewController:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
+- (void)transcriptCollectionViewController:(id)arg1 didEndImpactEffectAnimationWithSendAnimationContext:(id)arg2;
 - (void)transcriptCollectionViewController:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (void)transcriptCollectionViewController:(id)arg1 moreButtonTappedForRowAtIndexPath:(id)arg2;
-- (void)transcriptCollectionViewController:(id)arg1 replyButtonTappedForRowAtIndexPath:(id)arg2;
+- (BOOL)transcriptCollectionViewController:(id)arg1 shouldCleanupFullscreenEffectUI:(id)arg2;
+- (BOOL)transcriptCollectionViewController:(id)arg1 shouldSetupFullscreenEffectUI:(id)arg2;
+- (void)transcriptCollectionViewController:(id)arg1 willBeginImpactEffectAnimationWithSendAnimationContext:(id)arg2;
+- (id)transcriptCollectionViewControllerAdditionalFullscreenEffectViews:(id)arg1;
 - (void)transcriptCollectionViewControllerChatItemsDidChange:(id)arg1;
+- (void)transcriptCollectionViewControllerDidInsertAssociatedChatItem:(id)arg1;
 - (void)transcriptCollectionViewControllerDidInset:(id)arg1;
 - (void)transcriptCollectionViewControllerPlayingAudioDidChange:(id)arg1;
 - (void)transcriptCollectionViewControllerReportSpamButtonTapped:(id)arg1;
+- (BOOL)transcriptCollectionViewControllerShouldLayoutFullscreenEffects:(id)arg1;
 - (BOOL)transcriptCollectionViewControllerShouldPlayAudio:(id)arg1;
-- (void)transcriptCollectionViewControllerWillInset:(id)arg1 targetContentInset:(inout struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2;
+- (void)transcriptCollectionViewControllerWillDisplayLastBalloon:(id)arg1;
+- (void)transcriptCollectionViewControllerWillInset:(id)arg1 targetContentInset:(inout struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
 - (void)transcriptCollectionViewControllerWillScrollToBottom:(id)arg1;
 - (float)transcriptWidth;
+- (void)viewDidLayoutSubviews;
 
 @end

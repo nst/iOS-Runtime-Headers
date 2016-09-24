@@ -3,10 +3,10 @@
  */
 
 @interface PKContent : NSObject <NSSecureCoding> {
-    NSURL *_appLaunchURL;
-    PKBarcode *_barcode;
-    NSString *_localizedDescription;
-    NSArray *_storeIdentifiers;
+    NSURL * _appLaunchURL;
+    PKBarcode * _barcode;
+    NSString * _localizedDescription;
+    NSArray * _storeIdentifiers;
 }
 
 @property (nonatomic, copy) NSURL *appLaunchURL;
@@ -17,9 +17,9 @@
 + (id)contentWithFileURL:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)appLaunchURL;
 - (id)barcode;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (void)flushFormattedFieldValues;
 - (id)initWithCoder:(id)arg1;

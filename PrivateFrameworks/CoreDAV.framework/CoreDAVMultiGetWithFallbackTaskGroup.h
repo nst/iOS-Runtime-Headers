@@ -3,12 +3,12 @@
  */
 
 @interface CoreDAVMultiGetWithFallbackTaskGroup : CoreDAVTaskGroup <CoreDAVContainerMultiGetSubmittable> {
-    id /* block */ _getBlock;
-    CoreDAVContainerMultiGetTask *_multiGetTask;
-    NSMutableSet *_parsedContents;
-    BOOL _shouldIgnoreResponseErrors;
-    NSMutableSet *_urls;
-    BOOL _usingMultiGet;
+    id /* block */  _getBlock;
+    CoreDAVContainerMultiGetTask * _multiGetTask;
+    NSMutableSet * _parsedContents;
+    BOOL  _shouldIgnoreResponseErrors;
+    NSMutableSet * _urls;
+    BOOL  _usingMultiGet;
 }
 
 @property (nonatomic) <CoreDAVAccountInfoProvider> *accountInfoProvider;

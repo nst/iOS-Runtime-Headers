@@ -3,10 +3,10 @@
  */
 
 @interface SUScriptAudioPlayer : SUScriptObject {
-    NSURL *_certificateUrl;
-    NSURL *_keyUrl;
-    SUPlayerStatus *_playerStatus;
-    NSURL *_url;
+    NSURL * _certificateUrl;
+    NSURL * _keyUrl;
+    SUPlayerStatus * _playerStatus;
+    NSURL * _url;
 }
 
 @property (readonly) NSString *URL;

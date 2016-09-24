@@ -4,10 +4,11 @@
 
 @interface _CDLogging : NSObject
 
-+ (int)defaultLogLevel;
-+ (BOOL)isInternalBuild;
-+ (int)logLevel;
-+ (id)nameForLogLevel:(int)arg1;
-+ (id)timestampString;
++ (id)admissionCheckChannel;
++ (id)autoSUChannel;
++ (id)contextChannel;
++ (id)instrumentationChannel;
++ (id)interactionChannel;
++ (id)knowledgeChannel;
 
 @end

@@ -3,9 +3,9 @@
  */
 
 @interface PLSubmissions : NSObject {
-    PLSQLiteConnection *_connection;
-    PLStorageOperator *_storageOperator;
-    PLTimer *_watchdog;
+    PLSQLiteConnection * _connection;
+    PLStorageOperator * _storageOperator;
+    PLTimer * _watchdog;
 }
 
 @property (retain) PLSQLiteConnection *connection;
@@ -16,7 +16,7 @@
 
 - (void).cxx_destruct;
 - (id)connection;
-- (void)filterDatabaseAtPath:(id)arg1 withMaxOutputFileSize:(long long)arg2 removingTables:(id)arg3 hashingTableKeys:(id)arg4 usingTrimmingQueries:(id)arg5;
+- (void)filterDatabaseAtPath:(id)arg1 withMaxOutputFileSize:(int)arg2 removingTables:(id)arg3 hashingTableKeys:(id)arg4 usingTrimmingQueries:(id)arg5;
 - (void)generateInternalOTASubmission;
 - (void)generateSubmissionWithPayload:(id)arg1;
 - (void)generateTaskedOTASubmission;

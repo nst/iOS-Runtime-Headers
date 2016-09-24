@@ -3,72 +3,75 @@
  */
 
 @interface BRCPackageItem : NSObject {
-    long long _assetRank;
-    BRCLocalContainer *_container;
-    NSData *_contentSignature;
-    unsigned long long _fileID;
-    BRCGenerationID *_generationID;
-    BOOL _isDirty;
-    BOOL _mode;
-    long long _mtime;
-    unsigned long long _packageID;
-    NSString *_pathInPackage;
-    NSData *_quarantineInfo;
-    long long _size;
-    NSString *_symlinkContent;
-    int _type;
+    int  _assetRank;
+    NSData * _contentSignature;
+    unsigned int  _fileID;
+    BRCGenerationID * _generationID;
+    BOOL  _isDirty;
+    BOOL  _mode;
+    int  _mtime;
+    unsigned int  _packageID;
+    NSString * _pathInPackage;
+    NSData * _quarantineInfo;
+    int  _size;
+    NSString * _symlinkContent;
+    int  _type;
+    NSData * _xattrs;
 }
 
-@property (nonatomic, readonly) long long assetRank;
+@property (nonatomic, readonly) int assetRank;
 @property (nonatomic, readonly) NSData *contentSignature;
-@property (nonatomic, readonly) unsigned long long fileID;
+@property (nonatomic, readonly) unsigned int fileID;
 @property (nonatomic, readonly) BRCGenerationID *generationID;
 @property (nonatomic, readonly) BOOL isDirectory;
 @property (nonatomic, readonly) BOOL isFile;
-@property (nonatomic, readonly) BOOL isSymlink;
+@property (nonatomic, readonly) BOOL isSymLink;
 @property (nonatomic, readonly) BOOL mode;
-@property (nonatomic, readonly) long long mtime;
-@property (nonatomic, readonly) unsigned long long packageDocumentID;
+@property (nonatomic, readonly) int mtime;
+@property (nonatomic, readonly) unsigned int packageDocumentID;
 @property (nonatomic, readonly) NSString *pathInPackage;
 @property (nonatomic, readonly) NSData *quarantineInfo;
-@property (nonatomic, readonly) long long size;
+@property (nonatomic, readonly) int size;
 @property (nonatomic, readonly) NSString *symlinkContent;
 @property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) NSData *xattrs;
 
 + (BOOL)_deleteSnapshotAtPath:(id)arg1 error:(id*)arg2;
 + (BOOL)_rescanDirectoryInPackage:(id)arg1 error:(id*)arg2;
-+ (long long)aggregatePackageSizeInContainer:(id)arg1 packageID:(unsigned int)arg2;
-+ (BOOL)dumpContainer:(id)arg1 toContext:(id)arg2 error:(id*)arg3;
-+ (long long)largestPackageItemSizeInContainer:(id)arg1 documentID:(unsigned int)arg2;
++ (int)aggregatePackageSizeForPackageID:(unsigned int)arg1 session:(id)arg2;
++ (BOOL)dumpSession:(id)arg1 toContext:(id)arg2 db:(id)arg3 error:(id*)arg4;
++ (int)largestPackageItemSizeInDocumentID:(unsigned int)arg1 session:(id)arg2;
 + (BOOL)packageChangedAtRelativePath:(id)arg1;
 + (id)packageItemForRelpath:(id)arg1;
-+ (id)packageItemInContainer:(id)arg1 documentID:(unsigned int)arg2 relativePath:(id)arg3;
-+ (struct PQLResultSet { Class x1; }*)packageItemsForDocumentID:(unsigned int)arg1 order:(unsigned int)arg2 container:(id)arg3;
++ (id)packageItemWithDocumentID:(unsigned int)arg1 relativePath:(id)arg2 session:(id)arg3;
++ (struct PQLResultSet { Class x1; }*)packageItemsForDocumentID:(unsigned int)arg1 order:(unsigned int)arg2 session:(id)arg3;
 + (struct PQLResultSet { Class x1; }*)packageItemsForItem:(id)arg1 order:(unsigned int)arg2;
 + (BOOL)updateSignaturesForFilesInItem:(id)arg1 fromCKPackage:(id)arg2 error:(id*)arg3;
 + (BOOL)updateSnapshotAtPath:(id)arg1 error:(id*)arg2;
 
 - (void).cxx_destruct;
-- (long long)assetRank;
+- (int)assetRank;
 - (BOOL)changedAtRelpath:(id)arg1;
 - (id)contentSignature;
 - (id)description;
-- (unsigned long long)fileID;
+- (unsigned int)fileID;
 - (id)generationID;
-- (id)initFromPQLResultSet:(id)arg1 container:(id)arg2 error:(id*)arg3;
+- (id)initFromPQLResultSet:(id)arg1 session:(id)arg2 error:(id*)arg3;
 - (id)initWithPBItem:(id)arg1 forLocalItem:(id)arg2;
 - (id)initWithRelativePath:(id)arg1 markDirty:(BOOL)arg2;
 - (BOOL)isDirectory;
 - (BOOL)isFile;
-- (BOOL)isSymlink;
+- (BOOL)isSymLink;
 - (BOOL)mode;
-- (long long)mtime;
-- (unsigned long long)packageDocumentID;
+- (int)mtime;
+- (unsigned int)packageDocumentID;
 - (id)pathInPackage;
 - (id)quarantineInfo;
-- (BOOL)saveToDB;
-- (long long)size;
+- (BOOL)saveToDBWithSession:(id)arg1;
+- (BOOL)setDirty:(BOOL)arg1 session:(id)arg2;
+- (int)size;
 - (id)symlinkContent;
 - (int)type;
+- (id)xattrs;
 
 @end

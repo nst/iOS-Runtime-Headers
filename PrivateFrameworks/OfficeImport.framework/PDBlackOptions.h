@@ -3,7 +3,7 @@
  */
 
 @interface PDBlackOptions : PDTransitionOptions {
-    BOOL mIsThroughBlack;
+    BOOL  mIsThroughBlack;
 }
 
 - (BOOL)isThroughBlack;

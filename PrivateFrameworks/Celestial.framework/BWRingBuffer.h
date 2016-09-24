@@ -3,11 +3,11 @@
  */
 
 @interface BWRingBuffer : NSObject <NSFastEnumeration> {
-    int _inputIndex;
-    int _length;
-    int _outputIndex;
-    void *_ringBuffer;
-    unsigned long _typeSize;
+    int  _inputIndex;
+    int  _length;
+    int  _outputIndex;
+    void * _ringBuffer;
+    unsigned long  _typeSize;
 }
 
 - (void)appendElement:(void*)arg1;

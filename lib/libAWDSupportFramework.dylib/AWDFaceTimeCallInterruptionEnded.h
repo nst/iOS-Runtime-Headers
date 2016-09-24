@@ -3,7 +3,7 @@
  */
 
 @interface AWDFaceTimeCallInterruptionEnded : PBCodable <NSCopying> {
-    NSString *_guid;
+    NSString * _guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int interruptionDuration : 1; 
@@ -12,14 +12,14 @@
         unsigned int isVideoResumed : 1; 
         unsigned int linkQuality : 1; 
         unsigned int onLockScreen : 1; 
-    } _has;
-    unsigned int _interruptionDuration;
-    unsigned int _isAudioResumed;
-    unsigned int _isVideo;
-    unsigned int _isVideoResumed;
-    int _linkQuality;
-    unsigned int _onLockScreen;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned int  _interruptionDuration;
+    unsigned int  _isAudioResumed;
+    unsigned int  _isVideo;
+    unsigned int  _isVideoResumed;
+    int  _linkQuality;
+    unsigned int  _onLockScreen;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic, retain) NSString *guid;

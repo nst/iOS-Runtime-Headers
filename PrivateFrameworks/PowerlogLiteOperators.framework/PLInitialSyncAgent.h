@@ -3,7 +3,7 @@
  */
 
 @interface PLInitialSyncAgent : PLAgent {
-    PLXPCListenerOperatorComposition *_xpcHandler;
+    PLXPCListenerOperatorComposition * _xpcHandler;
 }
 
 @property (retain) PLXPCListenerOperatorComposition *xpcHandler;

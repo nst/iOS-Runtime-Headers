@@ -3,13 +3,13 @@
  */
 
 @interface BKSAlternateSystemApp : NSObject <BKSAlternateSystemAppClientProtocol> {
-    NSString *_bundleId;
-    NSXPCConnection *_connection;
-    <BKSAlternateSystemAppDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_queue;
-    int _state;
-    NSObject<OS_dispatch_semaphore> *_stateChangeSemaphore;
-    BOOL _stateChangeWaiter;
+    NSString * _bundleId;
+    NSXPCConnection * _connection;
+    <BKSAlternateSystemAppDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _queue;
+    int  _state;
+    NSObject<OS_dispatch_semaphore> * _stateChangeSemaphore;
+    BOOL  _stateChangeWaiter;
 }
 
 @property (nonatomic, copy) NSString *bundleId;
@@ -26,12 +26,12 @@
 
 - (void)_handleInterruptedConnection;
 - (void)_handleInvalidatedConnection;
-- (void)_invalidate;
 - (void)_queue_changeState:(int)arg1;
 - (void)_queue_ensureConnection;
+- (void)_queue_invalidate;
 - (void)_waitForState:(int)arg1;
 - (void)activate;
-- (void)alternateSystemAppWithBundleID:(id)arg1 didExitWithReason:(unsigned long long)arg2;
+- (void)alternateSystemAppWithBundleID:(id)arg1 didExitWithReason:(unsigned int)arg2;
 - (void)alternateSystemAppWithBundleID:(id)arg1 failedToOpenWithResult:(id)arg2;
 - (void)alternateSystemAppWithBundleIDDidOpen:(id)arg1;
 - (void)alternateSystemAppWithBundleIDDidTerminate:(id)arg1;

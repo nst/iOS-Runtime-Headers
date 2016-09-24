@@ -3,24 +3,25 @@
  */
 
 @interface NSKeyedUnarchiver : NSCoder {
-    const char *_bytes;
-    id _containers;
-    id _data;
-    id _delegate;
-    unsigned int _flags;
-    int _genericKey;
-    id _helper;
-    unsigned long long _len;
-    id _nameClassMap;
-    id _objRefMap;
-    id _objects;
-    void *_offsetData;
-    id _refObjMap;
-    id _replacementMap;
-    void *_reserved0;
-    id _tmpRefObjMap;
+    const char * _bytes;
+    id  _containers;
+    id  _data;
+    id  _delegate;
+    unsigned int  _flags;
+    int  _genericKey;
+    id  _helper;
+    unsigned int  _len;
+    id  _nameClassMap;
+    id  _objRefMap;
+    id  _objects;
+    void * _offsetData;
+    id  _refObjMap;
+    id  _replacementMap;
+    void * _reserved0;
+    id  _tmpRefObjMap;
 }
 
+@property int decodingFailurePolicy;
 @property <NSKeyedUnarchiverDelegate> *delegate;
 @property BOOL requiresSecureCoding;
 
@@ -36,6 +37,7 @@
 
 - (void)__setError:(id)arg1;
 - (id)_allowedClassNames;
+- (BOOL)_allowsValueCoding;
 - (id)_blobForCurrentObject;
 - (unsigned int)_currentUniqueIdentifier;
 - (id)_decodeArrayOfObjectsForKey:(id)arg1;
@@ -44,6 +46,7 @@
 - (void)_replaceObject:(id)arg1 withObject:(id)arg2;
 - (void)_setAllowedClassNames:(id)arg1;
 - (void)_temporaryMapReplaceObject:(id)arg1 withObject:(id)arg2;
+- (BOOL)_validatePropertyListClass:(Class)arg1 forKey:(id)arg2;
 - (id)allowedClasses;
 - (BOOL)allowsKeyedCoding;
 - (Class)classForClassName:(id)arg1;
@@ -57,7 +60,7 @@
 - (double)decodeDoubleForKey:(id)arg1;
 - (float)decodeFloatForKey:(id)arg1;
 - (int)decodeInt32ForKey:(id)arg1;
-- (long long)decodeInt64ForKey:(id)arg1;
+- (int)decodeInt64ForKey:(id)arg1;
 - (int)decodeIntForKey:(id)arg1;
 - (id)decodeObject;
 - (id)decodeObjectForKey:(id)arg1;
@@ -69,7 +72,6 @@
 - (id)delegate;
 - (id)description;
 - (id)error;
-- (void)finalize;
 - (void)finishDecoding;
 - (id)init;
 - (id)initForReadingWithData:(id)arg1;
@@ -84,14 +86,13 @@
 - (unsigned int)systemVersion;
 - (int)versionForClassName:(id)arg1;
 
-// Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
-
-+ (id)deserializeObjectWithData:(id)arg1 allowedClass:(Class)arg2 frameworkClasses:(id)arg3;
-+ (id)deserializeObjectWithData:(id)arg1 allowedClasses:(id)arg2;
-
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
 + (id)_mapkit_safeUnarchiveObjectWithData:(id)arg1;
+
+// Image: /System/Library/Frameworks/Messages.framework/Messages
+
++ (id)__ms_unarchiveObjectOfClasses:(id)arg1 data:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
 
@@ -110,11 +111,6 @@
 
 - (id)cpl_safeInitForReadingWithData:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
-
-+ (id)deserializeObjectWithData:(id)arg1 allowedClass:(Class)arg2 frameworkClasses:(id)arg3;
-+ (id)deserializeObjectWithData:(id)arg1 allowedClasses:(id)arg2;
-
 // Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
 
 + (id)MSSafeUnarchiveObjectWithData:(id)arg1;
@@ -122,10 +118,25 @@
 + (id)MSSafeUnarchiveObjectWithFile:(id)arg1;
 + (id)MSSafeUnarchiveObjectWithFile:(id)arg1 outError:(id*)arg2;
 
+// Image: /System/Library/PrivateFrameworks/DigitalTouchShared.framework/DigitalTouchShared
+
++ (id)_et_secureUnarchiveObjectOfClass:(Class)arg1 withData:(id)arg2;
++ (id)_et_secureUnarchiveObjectOfClasses:(id)arg1 withData:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
+
++ (id)deserializeObjectWithData:(id)arg1 allowedClass:(Class)arg2 frameworkClasses:(id)arg3;
++ (id)deserializeObjectWithData:(id)arg1 allowedClasses:(id)arg2;
+
 // Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
 
 + (id)unarchiveObjectOfClass:(Class)arg1 withData:(id)arg2;
 + (id)unarchiveObjectOfClasses:(id)arg1 withData:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/PairedSync.framework/PairedSync
+
++ (id)secureUnarchiveObjectOfClasses:(id)arg1 withData:(id)arg2;
++ (id)secureUnarchiveObjectOfClasses:(id)arg1 withFile:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
 
@@ -133,9 +144,5 @@
 + (id)pl_safeUnarchiveObjectWithFile:(id)arg1;
 
 - (id)pl_safeInitForReadingWithData:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/Search.framework/Search
-
-+ (id)_sp_secureUnarchiveObjectWithData:(id)arg1;
 
 @end

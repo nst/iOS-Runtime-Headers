@@ -3,7 +3,7 @@
  */
 
 @interface AVCaptureConnection : NSObject {
-    AVCaptureConnectionInternal *_internal;
+    AVCaptureConnectionInternal * _internal;
 }
 
 @property (getter=isActive, nonatomic, readonly) BOOL active;
@@ -20,13 +20,13 @@
 @property (getter=isVideoMirroringSupported, nonatomic, readonly) BOOL supportsVideoMirroring;
 @property (getter=isVideoOrientationSupported, nonatomic, readonly) BOOL supportsVideoOrientation;
 @property (getter=isVideoStabilizationSupported, nonatomic, readonly) BOOL supportsVideoStabilization;
-@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } videoMaxFrameDuration;
-@property (nonatomic, readonly) float videoMaxScaleAndCropFactor;
-@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } videoMinFrameDuration;
+@property (nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } videoMaxFrameDuration;
+@property (nonatomic, readonly) double videoMaxScaleAndCropFactor;
+@property (nonatomic) struct { int x1; int x2; unsigned int x3; int x4; } videoMinFrameDuration;
 @property (getter=isVideoMirrored, nonatomic) BOOL videoMirrored;
 @property (nonatomic) int videoOrientation;
 @property (nonatomic, readonly) AVCaptureVideoPreviewLayer *videoPreviewLayer;
-@property (nonatomic) float videoScaleAndCropFactor;
+@property (nonatomic) double videoScaleAndCropFactor;
 @property (getter=isVideoStabilizationEnabled, nonatomic, readonly) BOOL videoStabilizationEnabled;
 
 + (id)connectionWithInputPort:(id)arg1 videoPreviewLayer:(id)arg2;
@@ -35,13 +35,13 @@
 
 - (int)_resolveActiveVideoStabilizationMode:(int)arg1 format:(id)arg2;
 - (void)_setActive:(BOOL)arg1;
-- (void)_setVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)_setVideoMinFrameDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
 - (void)_setVideoMirrored:(BOOL)arg1;
 - (void)_updateActiveVideoStabilizationMode:(int)arg1 bumpChangeSeed:(BOOL)arg2;
 - (void)_updateMaxScaleAndCropFactorForFormat:(id)arg1;
 - (void)_updatePropertiesForFormat:(id)arg1;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })_videoMaxFrameDuration;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })_videoMinFrameDuration;
+- (struct { int x1; int x2; unsigned int x3; int x4; })_videoMaxFrameDuration;
+- (struct { int x1; int x2; unsigned int x3; int x4; })_videoMinFrameDuration;
 - (int)activeVideoStabilizationMode;
 - (id)audioChannels;
 - (BOOL)automaticallyAdjustsVideoMirroring;
@@ -79,8 +79,8 @@
 - (void)setEnabled:(BOOL)arg1;
 - (void)setEnablesVideoStabilizationWhenAvailable:(BOOL)arg1;
 - (void)setPreferredVideoStabilizationMode:(int)arg1;
-- (void)setVideoMaxFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (void)setVideoMinFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setVideoMaxFrameDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (void)setVideoMinFrameDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
 - (void)setVideoMirrored:(BOOL)arg1;
 - (void)setVideoOrientation:(int)arg1;
 - (void)setVideoRetainedBufferCountHint:(int)arg1;
@@ -92,9 +92,9 @@
 - (void)teardownObservers;
 - (void)updateAudioChannelsArray;
 - (void)updateAudioLevelsArray;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })videoMaxFrameDuration;
+- (struct { int x1; int x2; unsigned int x3; int x4; })videoMaxFrameDuration;
 - (float)videoMaxScaleAndCropFactor;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })videoMinFrameDuration;
+- (struct { int x1; int x2; unsigned int x3; int x4; })videoMinFrameDuration;
 - (int)videoOrientation;
 - (id)videoPreviewLayer;
 - (int)videoRetainedBufferCountHint;

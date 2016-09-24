@@ -3,7 +3,7 @@
  */
 
 @interface _GEOTransitLineMarker : NSObject <MKTransitLineMarker> {
-    <GEOTransitLine> *_line;
+    <GEOTransitLine> * _line;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -13,7 +13,7 @@
 
 - (void).cxx_destruct;
 - (id)artwork;
-- (unsigned long long)featureID;
+- (unsigned int)featureID;
 - (id)initWithGEOTransitLine:(id)arg1;
 - (id)labelText;
 

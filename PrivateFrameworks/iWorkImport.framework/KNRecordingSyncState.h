@@ -3,8 +3,8 @@
  */
 
 @interface KNRecordingSyncState : NSObject <NSCopying> {
-    BOOL _canClearOutOfSyncToken;
-    NSUUID *_outOfSyncToken;
+    BOOL  _canClearOutOfSyncToken;
+    NSUUID * _outOfSyncToken;
 }
 
 @property (nonatomic, readonly) NSUUID *outOfSyncToken;

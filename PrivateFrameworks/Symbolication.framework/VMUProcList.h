@@ -3,11 +3,11 @@
  */
 
 @interface VMUProcList : NSObject {
-    NSMapTable *allProcs;
-    BOOL appsOnly;
-    NSMapTable *filteredProcs;
-    BOOL ownedOnly;
-    NSLock *procLock;
+    NSMapTable * allProcs;
+    BOOL  appsOnly;
+    NSMapTable * filteredProcs;
+    BOOL  ownedOnly;
+    NSLock * procLock;
 }
 
 - (void)_populateFromSystem;

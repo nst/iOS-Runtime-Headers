@@ -3,8 +3,8 @@
  */
 
 @interface GQDGroup : GQDDrawable <GQDNameMappable> {
-    struct __CFArray { } *mDrawables;
-    GQDWPExternalTextWrap *mExternalTextWrap;
+    struct __CFArray { } * mDrawables;
+    GQDWPExternalTextWrap * mExternalTextWrap;
 }
 
 @property (readonly, copy) NSString *debugDescription;

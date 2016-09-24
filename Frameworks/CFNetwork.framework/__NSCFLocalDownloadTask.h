@@ -3,22 +3,22 @@
  */
 
 @interface __NSCFLocalDownloadTask : __NSCFLocalSessionTask <NSURLSessionDownloadTaskSubclass, __NSCFLocalDownloadFileOpener> {
-    id /* block */ _afterDidReportProgressOnQueue;
-    BOOL _canWrite;
-    id /* block */ _dataAckCompletion;
-    BOOL _didIssueNeedFinish;
-    __NSCFLocalDownloadFile *_downloadFile;
-    id /* block */ _fileCompletion;
-    long long _initialResumeSize;
-    unsigned int _ioSuspend;
-    BOOL _needFinish;
-    NSDictionary *_originalResumeInfo;
-    id /* block */ _resumeCallback;
-    int _seqNo;
-    BOOL _suppressProgress;
-    unsigned long _totalWrote;
-    unsigned long _transientWriteProgress;
-    NSObject<OS_dispatch_data> *_writeBuffer;
+    id /* block */  _afterDidReportProgressOnQueue;
+    BOOL  _canWrite;
+    id /* block */  _dataAckCompletion;
+    BOOL  _didIssueNeedFinish;
+    __NSCFLocalDownloadFile * _downloadFile;
+    id /* block */  _fileCompletion;
+    int  _initialResumeSize;
+    unsigned int  _ioSuspend;
+    BOOL  _needFinish;
+    NSDictionary * _originalResumeInfo;
+    id /* block */  _resumeCallback;
+    int  _seqNo;
+    BOOL  _suppressProgress;
+    unsigned long  _totalWrote;
+    unsigned long  _transientWriteProgress;
+    NSObject<OS_dispatch_data> * _writeBuffer;
 }
 
 @property (copy) id /* block */ _afterDidReportProgressOnQueue;
@@ -31,7 +31,12 @@
 @property (copy) id /* block */ resumeCallback;
 @property (readonly) Class superclass;
 
++ (id)_expandResumeData:(id)arg1;
++ (id)_requestFromResumeDataDictionary:(id)arg1;
++ (id)_requestFromResumeDataDictionary:(id)arg1 key:(id)arg2;
+
 - (id /* block */)_afterDidReportProgressOnQueue;
+- (struct __CFDictionary { }*)_copySocketStreamProperties;
 - (void)_onqueue_cancelByProducingResumeData:(id /* block */)arg1;
 - (void)_onqueue_completeInitialization;
 - (void)_onqueue_didReceiveResponse:(id)arg1 completion:(id /* block */)arg2;

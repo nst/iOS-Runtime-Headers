@@ -3,11 +3,11 @@
  */
 
 @interface WFUserSettings : NSObject {
-    WFWhitelistSiteBuffer *_contentFilterOverriddenBlackListedSitesBuffer;
-    WFWhitelistSiteBuffer *_contentFilterOverriddenWhiteListedSitesBuffer;
-    NSString *_userName;
-    NSDictionary *_userSettings;
-    WFWhitelistSiteBuffer *_whiteListedSitesBuffer;
+    WFWhitelistSiteBuffer * _contentFilterOverriddenBlackListedSitesBuffer;
+    WFWhitelistSiteBuffer * _contentFilterOverriddenWhiteListedSitesBuffer;
+    NSString * _userName;
+    NSDictionary * _userSettings;
+    WFWhitelistSiteBuffer * _whiteListedSitesBuffer;
 }
 
 @property (nonatomic, readonly) BOOL canEditContentFilterOverriddenBlackListedSites;

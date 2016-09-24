@@ -3,22 +3,22 @@
  */
 
 @interface FIUIWorkoutStatistics : NSObject {
-    HKQuantity *_averageActiveEnergyBurn;
-    HKQuantity *_averageCyclingDistance;
-    HKQuantity *_averageWalkRunDistance;
-    double _averageWorkoutDuration;
-    BOOL _isAllOutdoorCycling;
-    BOOL _isAllRunning;
-    int _numberOfCyclingWorkouts;
-    int _numberOfWalkRunWorkouts;
-    NSDate *_startOfMonth;
-    HKQuantity *_totalActiveEnergyBurn;
-    HKQuantity *_totalCyclingDistance;
-    double _totalCyclingDuration;
-    HKQuantity *_totalWalkRunDistance;
-    double _totalWalkRunDuration;
-    double _totalWorkoutDuration;
-    NSArray *_workouts;
+    HKQuantity * _averageActiveEnergyBurn;
+    HKQuantity * _averageCyclingDistance;
+    HKQuantity * _averageWalkRunDistance;
+    double  _averageWorkoutDuration;
+    BOOL  _isAllOutdoorCycling;
+    BOOL  _isAllRunning;
+    int  _numberOfCyclingWorkouts;
+    int  _numberOfWalkRunWorkouts;
+    NSDate * _startOfMonth;
+    HKQuantity * _totalActiveEnergyBurn;
+    HKQuantity * _totalCyclingDistance;
+    double  _totalCyclingDuration;
+    HKQuantity * _totalWalkRunDistance;
+    double  _totalWalkRunDuration;
+    double  _totalWorkoutDuration;
+    NSArray * _workouts;
 }
 
 @property (nonatomic, readonly) HKQuantity *averageActiveEnergyBurn;

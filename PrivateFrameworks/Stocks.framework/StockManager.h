@@ -3,15 +3,15 @@
  */
 
 @interface StockManager : NSObject {
-    NSMutableArray *_chartDataLRUCache;
-    NSMutableArray *_defaultListStockSymbols;
-    double _lastModifiedTime;
-    BOOL _needRemoteAddNotification;
-    BOOL _needRemoteDeleteNotification;
-    BOOL _needRemoteMoveNotification;
-    BOOL _shouldPostSyncNotifications;
-    NSMutableArray *_stocksList;
-    NSUbiquitousKeyValueStore *_syncedKVStore;
+    NSMutableArray * _chartDataLRUCache;
+    NSMutableArray * _defaultListStockSymbols;
+    double  _lastModifiedTime;
+    BOOL  _needRemoteAddNotification;
+    BOOL  _needRemoteDeleteNotification;
+    BOOL  _needRemoteMoveNotification;
+    BOOL  _shouldPostSyncNotifications;
+    NSMutableArray * _stocksList;
+    NSUbiquitousKeyValueStore * _syncedKVStore;
 }
 
 + (void)clearSharedManager;

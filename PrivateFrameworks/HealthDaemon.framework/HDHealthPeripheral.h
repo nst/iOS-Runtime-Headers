@@ -3,8 +3,8 @@
  */
 
 @interface HDHealthPeripheral : NSObject <CBPeripheralDelegate> {
-    CBPeripheral *_cbPeripheral;
-    NSMutableArray *_delegates;
+    CBPeripheral * _cbPeripheral;
+    NSMutableArray * _delegates;
 }
 
 @property (nonatomic, readonly) CBPeripheral *cbPeripheral;

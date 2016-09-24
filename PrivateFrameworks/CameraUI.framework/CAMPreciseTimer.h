@@ -3,10 +3,10 @@
  */
 
 @interface CAMPreciseTimer : NSObject {
-    NSObject<OS_dispatch_source> *__currentTimer;
-    id /* block */ __handler;
-    double _delay;
-    double _interval;
+    NSObject<OS_dispatch_source> * __currentTimer;
+    id /* block */  __handler;
+    double  _delay;
+    double  _interval;
 }
 
 @property (setter=_setCurrentTimer:, nonatomic, retain) NSObject<OS_dispatch_source> *_currentTimer;

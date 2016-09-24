@@ -3,13 +3,13 @@
  */
 
 @interface CKDPGetCommentsResponse : PBCodable <NSCopying> {
-    NSMutableArray *_comments;
-    NSData *_continuationMarker;
+    NSMutableArray * _comments;
+    NSData * _continuationMarker;
     struct { 
         unsigned int totalCount : 1; 
-    } _has;
-    CKDPCommentSummary *_summary;
-    int _totalCount;
+    }  _has;
+    CKDPCommentSummary * _summary;
+    int  _totalCount;
 }
 
 @property (nonatomic, retain) NSMutableArray *comments;
@@ -19,6 +19,8 @@
 @property (nonatomic) BOOL hasTotalCount;
 @property (nonatomic, retain) CKDPCommentSummary *summary;
 @property (nonatomic) int totalCount;
+
++ (Class)commentsType;
 
 - (void).cxx_destruct;
 - (void)addComments:(id)arg1;

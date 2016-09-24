@@ -3,17 +3,17 @@
  */
 
 @interface SearchUICardSectionView : UIView {
-    SearchUICardViewController *_controller;
-    BOOL _fullWidthSeparator;
-    BOOL _hideSeparatorBelow;
-    <SearchUICardSection> *_section;
-    NSURL *_url;
+    SearchUICardViewController * _controller;
+    BOOL  _fullWidthSeparator;
+    BOOL  _hideSeparatorBelow;
+    SFCardSection * _section;
+    NSURL * _url;
 }
 
 @property SearchUICardViewController *controller;
 @property (nonatomic) BOOL fullWidthSeparator;
 @property (nonatomic) BOOL hideSeparatorBelow;
-@property (nonatomic, retain) <SearchUICardSection> *section;
+@property (nonatomic, retain) SFCardSection *section;
 @property (retain) NSURL *url;
 
 + (Class)classForSection:(id)arg1;

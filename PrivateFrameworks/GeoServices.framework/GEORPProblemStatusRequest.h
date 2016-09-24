@@ -3,15 +3,18 @@
  */
 
 @interface GEORPProblemStatusRequest : PBRequest <NSCopying> {
-    GEOPDAnalyticMetadata *_analyticMetadata;
-    GEORPClientCapabilities *_clientCapabilities;
-    NSMutableArray *_problemIds;
-    NSString *_statusNotificationId;
-    GEORPUserCredentials *_userCredentials;
+    GEOABSecondPartyPlaceRequestClientMetaData * _abAssignmentMetadata;
+    GEOPDAnalyticMetadata * _analyticMetadata;
+    GEORPClientCapabilities * _clientCapabilities;
+    NSMutableArray * _problemIds;
+    NSString * _statusNotificationId;
+    GEORPUserCredentials * _userCredentials;
 }
 
+@property (nonatomic, retain) GEOABSecondPartyPlaceRequestClientMetaData *abAssignmentMetadata;
 @property (nonatomic, retain) GEOPDAnalyticMetadata *analyticMetadata;
 @property (nonatomic, retain) GEORPClientCapabilities *clientCapabilities;
+@property (nonatomic, readonly) BOOL hasAbAssignmentMetadata;
 @property (nonatomic, readonly) BOOL hasAnalyticMetadata;
 @property (nonatomic, readonly) BOOL hasClientCapabilities;
 @property (nonatomic, readonly) BOOL hasStatusNotificationId;
@@ -20,6 +23,9 @@
 @property (nonatomic, retain) NSString *statusNotificationId;
 @property (nonatomic, retain) GEORPUserCredentials *userCredentials;
 
++ (Class)problemIdType;
+
+- (id)abAssignmentMetadata;
 - (void)addProblemId:(id)arg1;
 - (id)analyticMetadata;
 - (void)clearProblemIds;
@@ -29,6 +35,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasAbAssignmentMetadata;
 - (BOOL)hasAnalyticMetadata;
 - (BOOL)hasClientCapabilities;
 - (BOOL)hasStatusNotificationId;
@@ -43,6 +50,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
+- (void)setAbAssignmentMetadata:(id)arg1;
 - (void)setAnalyticMetadata:(id)arg1;
 - (void)setClientCapabilities:(id)arg1;
 - (void)setProblemIds:(id)arg1;

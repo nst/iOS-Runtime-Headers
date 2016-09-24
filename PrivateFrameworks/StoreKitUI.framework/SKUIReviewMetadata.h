@@ -3,21 +3,21 @@
  */
 
 @interface SKUIReviewMetadata : NSObject <NSCopying> {
-    NSString *_body;
-    unsigned int _bodyMaxLength;
-    NSString *_nickname;
-    unsigned int _nicknameMaxLength;
-    float _rating;
-    NSURL *_submitURL;
-    NSString *_title;
-    unsigned int _titleMaxLength;
+    NSString * _body;
+    unsigned int  _bodyMaxLength;
+    NSString * _nickname;
+    unsigned int  _nicknameMaxLength;
+    double  _rating;
+    NSURL * _submitURL;
+    NSString * _title;
+    unsigned int  _titleMaxLength;
 }
 
 @property (nonatomic, copy) NSString *body;
 @property (nonatomic, readonly) unsigned int bodyMaxLength;
 @property (nonatomic, copy) NSString *nickname;
 @property (nonatomic, readonly) unsigned int nicknameMaxLength;
-@property (nonatomic) float rating;
+@property (nonatomic) double rating;
 @property (nonatomic, readonly) NSURL *submitURL;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, readonly) unsigned int titleMaxLength;

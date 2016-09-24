@@ -3,36 +3,36 @@
  */
 
 @interface CPReadingModel : NSObject {
-    NSAttributedString *_cachedAttributedString;
-    NSString *_cachedString;
-    long _count;
-    RMList *_currentList;
-    struct CGPDFDocument { } *_document;
-    NSMutableArray *_headings;
-    NSMutableArray *_lists;
-    long _numberOfColumns;
-    long _numberOfLayoutAreas;
-    long _numberOfLines;
-    long _numberOfParagraphs;
-    long _pageNumber;
-    int _pageNumberMemo;
-    int *_pageNumbers;
+    NSAttributedString * _cachedAttributedString;
+    NSString * _cachedString;
+    long  _count;
+    RMList * _currentList;
+    struct CGPDFDocument { } * _document;
+    NSMutableArray * _headings;
+    NSMutableArray * _lists;
+    long  _numberOfColumns;
+    long  _numberOfLayoutAreas;
+    long  _numberOfLines;
+    long  _numberOfParagraphs;
+    long  _pageNumber;
+    int  _pageNumberMemo;
+    int * _pageNumbers;
     struct { 
         int location; 
         int length; 
-    } _pageRange;
-    long _pos;
+    }  _pageRange;
+    long  _pos;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _rangeMemo;
-    struct { int x1; int x2; } *_stringLineRanges;
-    NSMutableArray *_tables;
-    struct { int x1; int x2; } *_textLineRanges;
+    }  _rangeMemo;
+    struct { int x1; int x2; } * _stringLineRanges;
+    NSMutableArray * _tables;
+    struct { int x1; int x2; } * _textLineRanges;
     struct { 
         int location; 
         int length; 
-    } _textRangeMemo;
+    }  _textRangeMemo;
 }
 
 - (void)addListsInColumn:(struct CGPDFNode { }*)arg1;
@@ -59,17 +59,17 @@
 - (id)initWithDocument:(struct CGPDFDocument { }*)arg1 withPageRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (unsigned int)lineCount;
 - (unsigned int)lineForIndex:(unsigned int)arg1;
-- (int)lineIndexForPoint:(struct CGPoint { float x1; float x2; })arg1 onPage:(unsigned int)arg2;
+- (int)lineIndexForPoint:(struct CGPoint { double x1; double x2; })arg1 onPage:(unsigned int)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })linesForPage:(unsigned int)arg1;
 - (id)lists;
 - (void)lists:(struct CGPDFNode { }*)arg1 layout:(struct CGPDFLayout { }*)arg2;
 - (struct { int x1; int x2; })mapStringRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (unsigned int)pageNumberForLine:(unsigned int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })pageRangeForStringRange:(struct { int x1; int x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pdfBoundsForCursor:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pdfBoundsForLine:(unsigned int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pdfBoundsForNewLine:(struct { int x1; int x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pdfBoundsForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })pdfBoundsForCursor:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })pdfBoundsForLine:(unsigned int)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })pdfBoundsForNewLine:(struct { int x1; int x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })pdfBoundsForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeForLine:(unsigned int)arg1;
 - (id)string;
 - (id)stringForLine:(unsigned int)arg1;

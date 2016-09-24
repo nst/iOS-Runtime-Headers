@@ -3,29 +3,29 @@
  */
 
 @interface MusicProfileDetailView : UIView {
-    BOOL _adminEnabled;
-    UIButton *_contextualActionsButton;
-    <MusicProfileDetailViewDelegate> *_delegate;
-    MusicMediaDetailTintInformation *_detailTintInformation;
-    MusicProfileFollowButton *_editButton;
-    NSString *_editText;
-    MusicProfileFollowButton *_followButton;
-    BOOL _followHidden;
-    NSString *_followText;
-    UILabel *_followersCountLabel;
-    NSString *_followersCountText;
-    UILabel *_followersLabel;
-    NSString *_followersText;
-    BOOL _following;
-    BOOL _followingInitialized;
-    NSString *_followingText;
-    UILabel *_profileLabel;
-    UITapGestureRecognizer *_profileLabelTapGestureRecognizer;
-    UIButton *_shareActionsButton;
-    BOOL _sharingHidden;
-    int _tintStyle;
-    NSString *_title;
-    BOOL _titleShouldAllowSelection;
+    BOOL  _adminEnabled;
+    UIButton * _contextualActionsButton;
+    <MusicProfileDetailViewDelegate> * _delegate;
+    MusicMediaDetailTintInformation * _detailTintInformation;
+    MusicProfileFollowButton * _editButton;
+    NSString * _editText;
+    MusicProfileFollowButton * _followButton;
+    BOOL  _followHidden;
+    NSString * _followText;
+    UILabel * _followersCountLabel;
+    NSString * _followersCountText;
+    UILabel * _followersLabel;
+    NSString * _followersText;
+    BOOL  _following;
+    BOOL  _followingInitialized;
+    NSString * _followingText;
+    UILabel * _profileLabel;
+    UITapGestureRecognizer * _profileLabelTapGestureRecognizer;
+    UIButton * _shareActionsButton;
+    BOOL  _sharingHidden;
+    int  _tintStyle;
+    NSString * _title;
+    BOOL  _titleShouldAllowSelection;
 }
 
 @property (getter=isAdminEnabled, nonatomic) BOOL adminEnabled;
@@ -66,8 +66,8 @@
 - (id)followersCountText;
 - (id)followersText;
 - (id)followingText;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isAdminEnabled;
 - (BOOL)isFollowHidden;
 - (BOOL)isFollowHidden;
@@ -90,7 +90,7 @@
 - (void)setTitle:(id)arg1;
 - (void)setTitleShouldAllowSelection:(BOOL)arg1;
 - (id)shareActionsButton;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)tintColorDidChange;
 - (int)tintStyle;
 - (id)title;

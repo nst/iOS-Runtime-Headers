@@ -3,11 +3,11 @@
  */
 
 @interface _GEOBatchPopularNearbyTicket : NSObject <GEOMapServiceBatchNearbyTicket> {
-    BOOL _canceled;
-    NSArray *_categories;
-    GEOPDPlaceRequest *_request;
-    GEOPDPlaceResponse *_response;
-    GEOMapServiceTraits *_traits;
+    BOOL  _canceled;
+    NSArray * _categories;
+    GEOPDPlaceRequest * _request;
+    GEOPDPlaceResponse * _response;
+    GEOMapServiceTraits * _traits;
 }
 
 @property (readonly, copy) NSString *debugDescription;

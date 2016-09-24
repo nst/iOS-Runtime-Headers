@@ -3,9 +3,9 @@
  */
 
 @interface SUBManager : NSObject {
-    <SUBManagerDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_xpc_object> *_serverConnection;
+    <SUBManagerDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_xpc_object> * _serverConnection;
 }
 
 @property (nonatomic) <SUBManagerDelegate> *delegate;

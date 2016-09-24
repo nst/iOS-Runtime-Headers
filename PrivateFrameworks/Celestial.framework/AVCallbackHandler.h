@@ -3,11 +3,11 @@
  */
 
 @interface AVCallbackHandler : NSObject {
-    SEL _action;
-    NSCondition *_condition;
-    SEL _mainThreadAction;
-    id _params;
-    id _target;
+    SEL  _action;
+    NSCondition * _condition;
+    SEL  _mainThreadAction;
+    id  _params;
+    id  _target;
 }
 
 @property SEL action;

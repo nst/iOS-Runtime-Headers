@@ -3,12 +3,12 @@
  */
 
 @interface PLProcessPortMap : NSObject {
-    struct proc_fdinfo { int x1; unsigned int x2; } *_Fds;
-    int _NbFds;
-    int _NbPids;
-    int *_Pids;
-    NSMutableDictionary *_localPortToPidAndProcessName;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    struct proc_fdinfo { int x1; unsigned int x2; } * _Fds;
+    int  _NbFds;
+    int  _NbPids;
+    int * _Pids;
+    NSMutableDictionary * _localPortToPidAndProcessName;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property struct proc_fdinfo { int x1; unsigned int x2; }*Fds;
@@ -26,7 +26,7 @@
 - (int)NbPids;
 - (int*)Pids;
 - (void)dealloc;
-- (int)getFds:(struct proc_taskallinfo { struct proc_bsdinfo { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; unsigned int x_1_1_9; unsigned int x_1_1_10; unsigned int x_1_1_11; unsigned int x_1_1_12; BOOL x_1_1_13[16]; BOOL x_1_1_14[32]; unsigned int x_1_1_15; unsigned int x_1_1_16; unsigned int x_1_1_17; unsigned int x_1_1_18; unsigned int x_1_1_19; int x_1_1_20; unsigned long long x_1_1_21; unsigned long long x_1_1_22; } x1; struct proc_taskinfo { unsigned long long x_2_1_1; unsigned long long x_2_1_2; unsigned long long x_2_1_3; unsigned long long x_2_1_4; unsigned long long x_2_1_5; unsigned long long x_2_1_6; int x_2_1_7; int x_2_1_8; int x_2_1_9; int x_2_1_10; int x_2_1_11; int x_2_1_12; int x_2_1_13; int x_2_1_14; int x_2_1_15; int x_2_1_16; int x_2_1_17; int x_2_1_18; } x2; })arg1 withPid:(int)arg2;
+- (int)getFds:(struct proc_taskallinfo { struct proc_bsdinfo { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; unsigned int x_1_1_9; unsigned int x_1_1_10; unsigned int x_1_1_11; unsigned int x_1_1_12; BOOL x_1_1_13[16]; BOOL x_1_1_14[32]; unsigned int x_1_1_15; unsigned int x_1_1_16; unsigned int x_1_1_17; unsigned int x_1_1_18; unsigned int x_1_1_19; int x_1_1_20; unsigned int x_1_1_21; unsigned int x_1_1_22; } x1; struct proc_taskinfo { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; unsigned int x_2_1_4; unsigned int x_2_1_5; unsigned int x_2_1_6; int x_2_1_7; int x_2_1_8; int x_2_1_9; int x_2_1_10; int x_2_1_11; int x_2_1_12; int x_2_1_13; int x_2_1_14; int x_2_1_15; int x_2_1_16; int x_2_1_17; int x_2_1_18; } x2; })arg1 withPid:(int)arg2;
 - (int)getPids;
 - (id)init;
 - (id)localPortToPidAndProcessName;

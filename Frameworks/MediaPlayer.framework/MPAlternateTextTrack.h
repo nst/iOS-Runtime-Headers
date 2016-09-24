@@ -3,10 +3,10 @@
  */
 
 @interface MPAlternateTextTrack : MPAlternateTrack {
-    NSLocale *_locale;
-    NSString *_name;
-    int _tag;
-    int _type;
+    NSLocale * _locale;
+    NSString * _name;
+    int  _tag;
+    int  _type;
 }
 
 @property (nonatomic, readonly) BOOL isInBand;

@@ -3,15 +3,16 @@
  */
 
 @interface TSPObject : NSObject {
-    NSUUID *_UUID;
-    TSPComponent *_component;
-    <TSPObjectDelegate> *_delegate;
-    long long _identifier;
-    long long _modifyObjectToken;
-    long long _unarchiverIdentifier;
-    TSPUnknownContent *_unknownContent;
+    NSUUID * _UUID;
+    TSPComponent * _component;
+    <TSPObjectDelegate> * _delegate;
+    int  _identifier;
+    int  _modifyObjectToken;
+    int  _unarchiverIdentifier;
+    TSPUnknownContent * _unknownContent;
 }
 
+@property (nonatomic, readonly) unsigned int allowedObjectTargetTypes;
 @property (nonatomic, readonly) BOOL allowsImplicitComponentOwnership;
 @property (nonatomic, readonly) TSPObject *componentRootObject;
 @property (nonatomic, readonly) TSPObjectContext *context;
@@ -27,17 +28,20 @@
 @property (nonatomic) TSPComponent *tsp_component;
 @property (nonatomic) <TSPObjectDelegate> *tsp_delegate;
 @property (nonatomic, readonly) NSString *tsp_description;
-@property (nonatomic) long long tsp_identifier;
+@property (nonatomic) int tsp_identifier;
 @property (nonatomic, readonly) BOOL tsp_isInDocument;
-@property (nonatomic) long long tsp_modifyObjectToken;
-@property (nonatomic, readonly) long long tsp_unarchiverIdentifier;
+@property (nonatomic, readonly) BOOL tsp_isPersisted;
+@property (nonatomic) int tsp_modifyObjectToken;
+@property (nonatomic, readonly) int tsp_unarchiverIdentifier;
 @property (nonatomic, readonly) TSPUnknownContent *tsp_unknownContent;
 
 + (BOOL)needsObjectUUID;
 + (id)newObjectForUnarchiver:(id)arg1;
-+ (BOOL)tsp_isTransientObjectIdentifier:(long long)arg1;
++ (id)tsp_deserializeFromData:(id)arg1 options:(id)arg2 context:(id)arg3 error:(id*)arg4;
++ (BOOL)tsp_isTransientObjectIdentifier:(int)arg1;
 
 - (void).cxx_destruct;
+- (unsigned int)allowedObjectTargetTypes;
 - (BOOL)allowsImplicitComponentOwnership;
 - (id)componentRootObject;
 - (id)context;
@@ -66,12 +70,14 @@
 - (id)owningDocument;
 - (id)packageLocator;
 - (void)performBlockIgnoringModifications:(id /* block */)arg1;
+- (void)resetObjectUUIDWithoutUpdatingObjectUUIDMap;
 - (void)saveToArchiver:(id)arg1;
 - (void)setObjectUUID:(id)arg1;
+- (void)setObjectUUID:(id)arg1 updatingObjectUUIDMap:(BOOL)arg2;
 - (void)setTsp_component:(id)arg1;
 - (void)setTsp_delegate:(id)arg1;
-- (void)setTsp_identifier:(long long)arg1;
-- (void)setTsp_modifyObjectToken:(long long)arg1;
+- (void)setTsp_identifier:(int)arg1;
+- (void)setTsp_modifyObjectToken:(int)arg1;
 - (BOOL)shouldDelayArchiving;
 - (BOOL)storeOutsideObjectArchive;
 - (id)tsp_component;
@@ -83,19 +89,23 @@
 - (id)tsp_delegate;
 - (id)tsp_description;
 - (id)tsp_descriptionWithDepth:(unsigned int)arg1;
-- (long long)tsp_identifier;
+- (int)tsp_identifier;
 - (BOOL)tsp_isInDocument;
-- (long long)tsp_modifyObjectToken;
+- (BOOL)tsp_isPersisted;
+- (int)tsp_modifyObjectToken;
 - (id)tsp_objectInfoWithDepth:(unsigned int)arg1;
 - (id)tsp_referencedData;
+- (id)tsp_referencedObjectUUIDs;
 - (id)tsp_referencedObjects;
-- (long long)tsp_unarchiverIdentifier;
+- (id)tsp_serializeToDataWithOptions:(id)arg1 dataReferences:(id*)arg2 error:(id*)arg3;
+- (id)tsp_serializeToDataWithOptions:(id)arg1 error:(id*)arg2;
+- (int)tsp_unarchiverIdentifier;
 - (id)tsp_unknownContent;
-- (void)wasAddedToDocument;
-- (void)wasAddedToDocumentDuringImport;
-- (void)wasAddedToDocumentDuringUnarchive;
-- (void)wasAddedToDocumentWithOptions:(unsigned int)arg1;
-- (void)willBeRemovedFromDocument;
+- (void)wasAddedToDocumentDuringImportWithContext:(id)arg1;
+- (void)wasAddedToDocumentDuringUnarchiveWithContext:(id)arg1;
+- (void)wasAddedToDocumentWithContext:(id)arg1;
+- (void)wasAddedToDocumentWithContext:(id)arg1 options:(unsigned int)arg2;
+- (void)willBeRemovedFromDocumentWithContext:(id)arg1;
 - (void)willModify;
 - (void)willModifyForUpgrade;
 - (void)willModifyToComponentRootObject:(id)arg1;

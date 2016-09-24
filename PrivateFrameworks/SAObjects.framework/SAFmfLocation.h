@@ -2,26 +2,21 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAFmfLocation : SALocation {
-    NSString *_emailAddress;
-}
+@interface SAFmfLocation : SALocation
 
-@property (nonatomic, retain) NSNumber *distance;
-@property (nonatomic, copy) NSString *emailAddress;
+@property (nonatomic, copy) NSNumber *distance;
 @property (nonatomic, retain) SAPersonAttribute *friend;
-@property (nonatomic, retain) NSNumber *locationDate;
+@property (nonatomic, copy) NSNumber *locationDate;
 
 + (id)location;
 + (id)locationWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)distance;
-- (id)emailAddress;
 - (id)encodedClassName;
 - (id)friend;
 - (id)groupIdentifier;
 - (id)locationDate;
 - (void)setDistance:(id)arg1;
-- (void)setEmailAddress:(id)arg1;
 - (void)setFriend:(id)arg1;
 - (void)setLocationDate:(id)arg1;
 

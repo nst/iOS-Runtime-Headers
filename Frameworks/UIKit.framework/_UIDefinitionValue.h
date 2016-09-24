@@ -3,11 +3,11 @@
  */
 
 @interface _UIDefinitionValue : NSObject {
-    NSAttributedString *_definition;
-    NSString *_localizedDictionaryName;
-    NSString *_longDefinition;
-    ASAsset *_rawAsset;
-    NSString *_term;
+    NSAttributedString * _definition;
+    NSString * _localizedDictionaryName;
+    NSString * _longDefinition;
+    ASAsset * _rawAsset;
+    NSString * _term;
 }
 
 @property (readonly) NSAttributedString *definition;

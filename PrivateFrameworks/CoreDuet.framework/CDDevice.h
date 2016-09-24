@@ -3,12 +3,12 @@
  */
 
 @interface CDDevice : NSObject {
-    BOOL _defaultPaired;
-    unsigned int _identifier;
-    BOOL _isDefaultPaired;
-    NSString *_modelIdentifier;
-    CDSession *_session;
-    int remoteDataNotificationToken;
+    BOOL  _defaultPaired;
+    unsigned int  _identifier;
+    BOOL  _isDefaultPaired;
+    NSString * _modelIdentifier;
+    CDSession * _session;
+    int  remoteDataNotificationToken;
 }
 
 @property (readonly) unsigned int identifier;

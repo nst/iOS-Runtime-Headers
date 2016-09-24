@@ -3,21 +3,17 @@
  */
 
 @interface NSCachedFetchRequestThunk : NSObject {
-    NSSQLStatement *_limitedStatement;
-    long long _refCount;
-    NSSQLStatement *_unlimitedStatement;
+    id  _connection;
+    NSSQLiteStatement * _limitedStatement;
+    NSSQLiteStatement * _unlimitedStatement;
 }
 
-@property (readonly) long long inUseCounter;
-@property (nonatomic, retain) NSSQLStatement *limitedStatement;
-@property (nonatomic, retain) NSSQLStatement *unlimitedStatement;
+@property (nonatomic, retain) NSSQLiteStatement *limitedStatement;
+@property (nonatomic, retain) NSSQLiteStatement *unlimitedStatement;
 
 - (void)clearCaches;
 - (void)dealloc;
-- (void)decrementInUseCounter;
-- (long long)inUseCounter;
-- (void)incrementInUseCounter;
-- (id)init;
+- (id)initForConnection:(id)arg1;
 - (id)limitedStatement;
 - (void)setLimitedStatement:(id)arg1;
 - (void)setUnlimitedStatement:(id)arg1;

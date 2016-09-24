@@ -3,7 +3,7 @@
  */
 
 @interface IMHandleRegistrar : NSObject {
-    id _internal;
+    id  _internal;
 }
 
 @property (nonatomic) int nameStyle;

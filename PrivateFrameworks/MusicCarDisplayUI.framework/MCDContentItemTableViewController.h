@@ -3,14 +3,14 @@
  */
 
 @interface MCDContentItemTableViewController : MCD_OLD_TableViewController <UITableViewDelegate> {
-    UIActivityIndicatorView *_activityIndicator;
-    NSArray *_dataSource;
-    UINavigationController *_nowPlayingNavigationController;
-    NSArray *_queuedDataSource;
-    BOOL _rankedList;
-    NSIndexPath *_selectedIndexPath;
-    BOOL _shouldQueueDataSource;
-    MCDNewPlaylistsTableViewController *_viewController;
+    UIActivityIndicatorView * _activityIndicator;
+    NSArray * _dataSource;
+    UINavigationController * _nowPlayingNavigationController;
+    NSArray * _queuedDataSource;
+    BOOL  _rankedList;
+    NSIndexPath * _selectedIndexPath;
+    BOOL  _shouldQueueDataSource;
+    MCDNewPlaylistsTableViewController * _viewController;
 }
 
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
@@ -27,9 +27,10 @@
 @property (nonatomic, retain) MCDNewPlaylistsTableViewController *viewController;
 
 - (void).cxx_destruct;
-- (void)_addTrackNumberAndArtworkToCell:(id)arg1 artworkCatalog:(id)arg2 trackNumber:(unsigned int)arg3;
+- (void)_addTrackNumberAndArtworkToCell:(id)arg1 artworkCatalog:(id)arg2 trackNumber:(unsigned int)arg3 currentlyPlaying:(BOOL)arg4;
 - (void)_animateActivityIndicatorForCell:(id)arg1 shouldBegin:(BOOL)arg2;
 - (void)_initiatePlaybackWithError:(id)arg1 forCell:(id)arg2;
+- (void)_itemDidChange;
 - (void)_limitedUIDidChange;
 - (id)_normalizedStringStoreIDForContentItem:(id)arg1;
 - (void)_removeTrackNumberAndArtworkFromCell:(id)arg1;

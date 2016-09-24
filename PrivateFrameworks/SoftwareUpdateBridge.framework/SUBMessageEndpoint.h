@@ -3,13 +3,13 @@
  */
 
 @interface SUBMessageEndpoint : NSObject <IDSServiceDelegate, SUBMessageEndpoint> {
-    NSMutableDictionary *_messageHandlers;
-    NSObject<OS_dispatch_queue> *_messageQueue;
-    NSMutableDictionary *_pendingMessageCompletions;
-    NSMutableDictionary *_pendingMessageReplies;
-    NSObject<OS_dispatch_queue> *_processingQueue;
-    NSObject<OS_dispatch_queue> *_queue;
-    IDSService *_service;
+    NSMutableDictionary * _messageHandlers;
+    NSObject<OS_dispatch_queue> * _messageQueue;
+    NSMutableDictionary * _pendingMessageCompletions;
+    NSMutableDictionary * _pendingMessageReplies;
+    NSObject<OS_dispatch_queue> * _processingQueue;
+    NSObject<OS_dispatch_queue> * _queue;
+    IDSService * _service;
 }
 
 @property (readonly, copy) NSString *debugDescription;

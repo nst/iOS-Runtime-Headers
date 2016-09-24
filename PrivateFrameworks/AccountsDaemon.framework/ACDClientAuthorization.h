@@ -3,10 +3,10 @@
  */
 
 @interface ACDClientAuthorization : NSObject {
-    ACDClient *_client;
-    NSSet *_grantedPermissions;
-    BOOL _isGranted;
-    NSDictionary *_options;
+    ACDClient * _client;
+    NSSet * _grantedPermissions;
+    BOOL  _isGranted;
+    NSDictionary * _options;
 }
 
 @property (nonatomic, retain) ACDClient *client;

@@ -3,11 +3,11 @@
  */
 
 @interface CMOdometerData : NSObject <NSCopying, NSSecureCoding> {
-    NSNumber *_averageSpeed;
-    NSNumber *_currentSpeed;
-    NSNumber *_distance;
-    NSDate *_endDate;
-    NSDate *_startDate;
+    NSNumber * _averageSpeed;
+    NSNumber * _currentSpeed;
+    NSNumber * _distance;
+    NSDate * _endDate;
+    NSDate * _startDate;
 }
 
 @property (nonatomic, readonly) NSNumber *averageSpeed;

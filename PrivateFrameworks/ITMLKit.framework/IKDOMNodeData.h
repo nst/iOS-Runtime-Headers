@@ -3,12 +3,12 @@
  */
 
 @interface IKDOMNodeData : NSObject {
-    BOOL _autoHighlightRead;
-    BOOL _childrenUpdated;
-    NSMutableDictionary *_featuresMap;
-    IKDOMNode *_ownerJSNode;
-    BOOL _subtreeUpdated;
-    BOOL _updated;
+    BOOL  _autoHighlightRead;
+    BOOL  _childrenUpdated;
+    NSMutableDictionary * _featuresMap;
+    IKDOMNode * _ownerJSNode;
+    BOOL  _subtreeUpdated;
+    BOOL  _updated;
 }
 
 @property (getter=isAutoHighlightRead, nonatomic) BOOL autoHighlightRead;

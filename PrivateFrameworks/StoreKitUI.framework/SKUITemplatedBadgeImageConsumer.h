@@ -3,7 +3,7 @@
  */
 
 @interface SKUITemplatedBadgeImageConsumer : SKUIImageDataConsumer {
-    UIColor *_templateColor;
+    UIColor * _templateColor;
 }
 
 @property (nonatomic, retain) UIColor *templateColor;

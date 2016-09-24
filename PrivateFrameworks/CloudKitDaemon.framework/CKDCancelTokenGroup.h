@@ -3,7 +3,7 @@
  */
 
 @interface CKDCancelTokenGroup : NSObject <CKDCancelling> {
-    NSMutableArray *_cancelTokens;
+    NSMutableArray * _cancelTokens;
 }
 
 @property (nonatomic, retain) NSMutableArray *cancelTokens;

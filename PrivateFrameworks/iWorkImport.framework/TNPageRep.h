@@ -3,17 +3,17 @@
  */
 
 @interface TNPageRep : TSWPPageRep {
-    struct CGPath { } *_shadowPath;
+    struct CGPath { } * _shadowPath;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _shadowPathRect;
+    }  _shadowPathRect;
 }
 
 - (void)dealloc;
@@ -23,7 +23,7 @@
 - (BOOL)isOpaque;
 - (id)p_childRepForInfo:(id)arg1;
 - (BOOL)p_headerFooterIsVisibleAndInteractive:(int)arg1;
-- (int)p_hitHeaderFooterFragment:(int)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (int)p_hitHeaderFooterFragment:(int)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2;
 - (id)p_repForHeaderLayout:(id)arg1;
 
 @end

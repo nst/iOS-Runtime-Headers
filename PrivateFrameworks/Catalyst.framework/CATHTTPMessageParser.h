@@ -3,9 +3,9 @@
  */
 
 @interface CATHTTPMessageParser : NSObject {
-    <CATHTTPMessageParserDelegate> *_delegate;
-    NSDictionary *mAllHeaderFields;
-    struct __CFHTTPMessage { } *mCurrentMessage;
+    <CATHTTPMessageParserDelegate> * _delegate;
+    NSDictionary * mAllHeaderFields;
+    struct __CFHTTPMessage { } * mCurrentMessage;
 }
 
 @property (nonatomic) <CATHTTPMessageParserDelegate> *delegate;

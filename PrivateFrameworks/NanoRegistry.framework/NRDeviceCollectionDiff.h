@@ -3,7 +3,7 @@
  */
 
 @interface NRDeviceCollectionDiff : NRDiffBase <NSFastEnumeration> {
-    NSDictionary *_diffDeviceDiffs;
+    NSDictionary * _diffDeviceDiffs;
 }
 
 @property (nonatomic, readonly) NSDictionary *diffDeviceDiffs;

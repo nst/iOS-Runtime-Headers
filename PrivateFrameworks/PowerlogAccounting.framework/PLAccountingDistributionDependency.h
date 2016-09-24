@@ -3,7 +3,7 @@
  */
 
 @interface PLAccountingDistributionDependency : PLAccountingDependency {
-    PLAccountingDistributionEventEntry *_distributionEvent;
+    PLAccountingDistributionEventEntry * _distributionEvent;
 }
 
 @property (retain) PLAccountingDistributionEventEntry *distributionEvent;

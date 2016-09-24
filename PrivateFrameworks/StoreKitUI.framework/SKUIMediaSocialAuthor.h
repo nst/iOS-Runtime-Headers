@@ -3,13 +3,13 @@
  */
 
 @interface SKUIMediaSocialAuthor : NSObject <NSCopying> {
-    NSString *_authorType;
-    NSString *_dsid;
-    NSString *_identifier;
-    NSString *_name;
-    NSArray *_permissions;
-    NSDictionary *_storePlatformData;
-    NSURL *_thumbnailImageURL;
+    NSString * _authorType;
+    NSString * _dsid;
+    NSString * _identifier;
+    NSString * _name;
+    NSArray * _permissions;
+    NSDictionary * _storePlatformData;
+    NSURL * _thumbnailImageURL;
 }
 
 @property (nonatomic, copy) NSString *authorType;

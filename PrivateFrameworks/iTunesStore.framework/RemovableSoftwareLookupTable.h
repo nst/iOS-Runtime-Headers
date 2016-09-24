@@ -3,11 +3,16 @@
  */
 
 @interface RemovableSoftwareLookupTable : NSObject {
-    NSDictionary *_bundleDictionary;
-    NSLock *_lock;
+    NSDictionary * _bundleDictionary;
+    NSLock * _lock;
 }
 
 @property (readonly, copy) NSDictionary *bundleDictionary;
+
++ (id)_fallbackItemIdentifier:(id)arg1;
++ (id)_urlForBundleIdentifier:(id)arg1;
++ (BOOL)isRestrictedAppBundleIdentifier:(id)arg1;
++ (id)urlForBundleIdentifier:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_identifierForBundleIdentifier:(id)arg1;

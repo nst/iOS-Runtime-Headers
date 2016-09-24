@@ -5,7 +5,7 @@
 @interface WebNotification : NSObject {
     struct RetainPtr<WebNotificationPrivate> { 
         void *m_ptr; 
-    } _private;
+    }  _private;
 }
 
 - (id).cxx_construct;
@@ -19,7 +19,7 @@
 - (id)iconURL;
 - (id)init;
 - (id)lang;
-- (unsigned long long)notificationID;
+- (unsigned int)notificationID;
 - (id)origin;
 - (id)tag;
 - (id)title;

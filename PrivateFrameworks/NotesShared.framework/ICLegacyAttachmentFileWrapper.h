@@ -3,7 +3,7 @@
  */
 
 @interface ICLegacyAttachmentFileWrapper : NSFileWrapper <NSSecureCoding> {
-    NSURL *_cidURL;
+    NSURL * _cidURL;
 }
 
 @property (nonatomic, readonly) NSString *attachmentIdentifier;

@@ -2,14 +2,14 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPPlaceholderAVItem : MPAVItem <RURadioItemIdentifier> {
-    NSString *_album;
-    NSString *_artist;
-    double _durationFromExternalMetadata;
-    BOOL _explicitTrack;
-    BOOL _likeStateEnabled;
-    NSString *_mainTitle;
-    BOOL _supportsLikedState;
+@interface MPPlaceholderAVItem : MPAVItem <MPCRadioItemIdentifier> {
+    NSString * _album;
+    NSString * _artist;
+    double  _durationFromExternalMetadata;
+    BOOL  _explicitTrack;
+    BOOL  _likeStateEnabled;
+    NSString * _mainTitle;
+    BOOL  _supportsLikedState;
 }
 
 @property (nonatomic, retain) NSString *album;
@@ -46,12 +46,9 @@
 - (BOOL)supportsSettingCurrentTime;
 - (BOOL)supportsSkip;
 
-// Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
+// Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
 
-- (BOOL)mpuReporting_isValidReportingItem;
-
-// Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
-
+- (BOOL)mpcReporting_isValidReportingItem;
 - (id)radioIdentifier;
 
 @end

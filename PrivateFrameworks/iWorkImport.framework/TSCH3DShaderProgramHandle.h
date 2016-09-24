@@ -3,11 +3,11 @@
  */
 
 @interface TSCH3DShaderProgramHandle : TSCH3DGLHandle {
-    NSMutableDictionary *mAttributeLocations;
-    TSCH3DShaderEffectsStates *mCurrentEffectsStates;
-    TSCH3DShaderHandle *mFragmentShader;
-    NSMutableDictionary *mUniformLocations;
-    TSCH3DShaderHandle *mVertexShader;
+    NSMutableDictionary * mAttributeLocations;
+    TSCH3DShaderEffectsStates * mCurrentEffectsStates;
+    TSCH3DShaderHandle * mFragmentShader;
+    NSMutableDictionary * mUniformLocations;
+    TSCH3DShaderHandle * mVertexShader;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *attributeLocations;

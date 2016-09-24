@@ -3,9 +3,9 @@
  */
 
 @interface PUMapAnnotationQuadtreeAddress : NSObject <NSCopying> {
-    unsigned int _quantizedX;
-    unsigned int _quantizedY;
-    unsigned int _treeLevel;
+    unsigned int  _quantizedX;
+    unsigned int  _quantizedY;
+    unsigned int  _treeLevel;
 }
 
 @property (nonatomic, readonly) unsigned int quantizedX;

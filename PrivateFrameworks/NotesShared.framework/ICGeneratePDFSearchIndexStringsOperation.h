@@ -3,7 +3,7 @@
  */
 
 @interface ICGeneratePDFSearchIndexStringsOperation : ICGenerateSearchIndexStringsOperation {
-    NSURL *_url;
+    NSURL * _url;
 }
 
 @property (nonatomic, copy) NSURL *url;

@@ -3,8 +3,8 @@
  */
 
 @interface WebMainThreadInvoker : NSProxy {
-    id exception;
-    id target;
+    id  exception;
+    id  target;
 }
 
 - (void)forwardInvocation:(id)arg1;

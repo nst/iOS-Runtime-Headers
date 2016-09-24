@@ -3,7 +3,7 @@
  */
 
 @interface _UITextInputControllerLayoutManagerConnection : NSObject {
-    UITextInputController *_textInputController;
+    UITextInputController * _textInputController;
 }
 
 @property (nonatomic, retain) UITextInputController *textInputController;

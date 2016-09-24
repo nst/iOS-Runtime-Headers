@@ -3,16 +3,16 @@
  */
 
 @interface MPArtworkResizeOperation : NSOperation {
-    NSURL *_destinationURL;
-    NSError *_error;
-    UIImage *_image;
-    NSObject<OS_dispatch_group> *_operationGroup;
-    UIImage *_resizedImage;
+    NSURL * _destinationURL;
+    NSError * _error;
+    UIImage * _image;
+    NSObject<OS_dispatch_group> * _operationGroup;
+    UIImage * _resizedImage;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _scaledFittingSize;
-    BOOL _usesExactFittingSizeAsDestinationSize;
+        double width; 
+        double height; 
+    }  _scaledFittingSize;
+    BOOL  _usesExactFittingSizeAsDestinationSize;
 }
 
 @property (nonatomic, readonly) NSURL *destinationURL;
@@ -20,24 +20,24 @@
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic, readonly) NSObject<OS_dispatch_group> *operationGroup;
 @property (nonatomic, readonly) UIImage *resizedImage;
-@property (nonatomic) struct CGSize { float x1; float x2; } scaledFittingSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } scaledFittingSize;
 @property (nonatomic) BOOL usesExactFittingSizeAsDestinationSize;
 
 - (void).cxx_destruct;
-- (struct CGSize { float x1; float x2; })_resizedScaledSizeForScaledImageSize:(struct CGSize { float x1; float x2; })arg1 scaledFittingSize:(struct CGSize { float x1; float x2; })arg2;
+- (struct CGSize { double x1; double x2; })_resizedScaledSizeForScaledImageSize:(struct CGSize { double x1; double x2; })arg1 scaledFittingSize:(struct CGSize { double x1; double x2; })arg2;
 - (id)destinationURL;
 - (id)error;
 - (id)image;
 - (id)init;
-- (id)initWithImage:(id)arg1 scaledFittingSize:(struct CGSize { float x1; float x2; })arg2;
-- (id)initWithImage:(id)arg1 scaledFittingSize:(struct CGSize { float x1; float x2; })arg2 destinationURL:(id)arg3;
-- (id)initWithImage:(id)arg1 scaledFittingSize:(struct CGSize { float x1; float x2; })arg2 useExactFittingSizeAsDestinationSize:(BOOL)arg3 destinationURL:(id)arg4;
+- (id)initWithImage:(id)arg1 scaledFittingSize:(struct CGSize { double x1; double x2; })arg2;
+- (id)initWithImage:(id)arg1 scaledFittingSize:(struct CGSize { double x1; double x2; })arg2 destinationURL:(id)arg3;
+- (id)initWithImage:(id)arg1 scaledFittingSize:(struct CGSize { double x1; double x2; })arg2 useExactFittingSizeAsDestinationSize:(BOOL)arg3 destinationURL:(id)arg4;
 - (void)main;
 - (id)operationGroup;
 - (id)resizedImage;
-- (struct CGSize { float x1; float x2; })scaledFittingSize;
+- (struct CGSize { double x1; double x2; })scaledFittingSize;
 - (void)setImage:(id)arg1;
-- (void)setScaledFittingSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setScaledFittingSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setUsesExactFittingSizeAsDestinationSize:(BOOL)arg1;
 - (BOOL)usesExactFittingSizeAsDestinationSize;
 

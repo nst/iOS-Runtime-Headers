@@ -3,11 +3,12 @@
  */
 
 @interface IDSDeviceConnection : NSObject {
-    _IDSDeviceConnection *_internal;
+    _IDSDeviceConnection * _internal;
 }
 
 @property (nonatomic, readonly, retain) _IDSDeviceConnection *_internal;
 @property (nonatomic, readonly, retain) NSInputStream *inputStream;
+@property (nonatomic, readonly) unsigned int mtu;
 @property (nonatomic, readonly, retain) NSOutputStream *outputStream;
 @property (nonatomic, readonly) int socket;
 
@@ -18,6 +19,7 @@
 - (id)initSocketWithDevice:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3 queue:(id)arg4;
 - (id)initStreamWithDevice:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3 queue:(id)arg4;
 - (id)inputStream;
+- (unsigned int)mtu;
 - (id)outputStream;
 - (void)setStreamPairWithInputStream:(id)arg1 outputStream:(id)arg2;
 - (int)socket;

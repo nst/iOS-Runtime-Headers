@@ -3,7 +3,7 @@
  */
 
 @interface AMSBTLEAdvertisementManager : NSObject <CBPeripheralManagerDelegate> {
-    CBPeripheralManager *peripheralManager;
+    CBPeripheralManager * peripheralManager;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,13 +3,12 @@
  */
 
 @interface MusicLibrarySongsViewConfiguration : MusicLibraryBrowseTableViewConfiguration {
-    NSMutableSet *_additionalQueryFilterPredicates;
+    NSMutableSet * _additionalQueryFilterPredicates;
 }
 
 - (void).cxx_destruct;
 - (void)addQueryFilterPredicate:(id)arg1;
 - (int)handleSelectionOfEntityValueContext:(id)arg1 fromViewController:(id)arg2;
-- (int)handleSelectionOfUnplayableEntityValueContext:(id)arg1 withPlayabilityResult:(unsigned int)arg2 fromViewController:(id)arg3;
 - (id)init;
 - (id)loadEntityViewDescriptor;
 

@@ -3,14 +3,14 @@
  */
 
 @interface MKETAResponse : NSObject {
-    MKMapItem *_destination;
-    double _distance;
-    NSDate *_expectedArrivalDate;
-    NSDate *_expectedDepartureDate;
-    double _expectedTravelTime;
-    NSArray *_sortedETAs;
-    MKMapItem *_source;
-    unsigned int _transportType;
+    MKMapItem * _destination;
+    double  _distance;
+    NSDate * _expectedArrivalDate;
+    NSDate * _expectedDepartureDate;
+    double  _expectedTravelTime;
+    NSArray * _sortedETAs;
+    MKMapItem * _source;
+    unsigned int  _transportType;
 }
 
 @property (nonatomic, readonly) MKMapItem *destination;

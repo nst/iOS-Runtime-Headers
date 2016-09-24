@@ -3,17 +3,17 @@
  */
 
 @interface KNOffscreenController : NSObject {
-    CALayer *_baseLayer;
-    KNAnimatedSlideView *mAnimator;
-    BOOL mFirstEvent;
-    BOOL mIsImageGenerationCancelled;
+    CALayer * _baseLayer;
+    KNAnimatedSlideView * mAnimator;
+    BOOL  mFirstEvent;
+    BOOL  mIsImageGenerationCancelled;
     struct CGSize { 
-        float width; 
-        float height; 
-    } mOutputSize;
-    KNPlaybackSession *mSession;
-    KNShow *mShow;
-    unsigned int mSlideIndex;
+        double width; 
+        double height; 
+    }  mOutputSize;
+    KNPlaybackSession * mSession;
+    KNShow * mShow;
+    unsigned int  mSlideIndex;
 }
 
 @property (nonatomic, readonly) KNAnimatedSlideView *animatedSlideView;
@@ -22,7 +22,7 @@
 @property (nonatomic, readonly) KNSlideNode *currentSlideNode;
 @property (nonatomic, readonly) unsigned int eventCount;
 @property (nonatomic, readonly) unsigned int eventIndex;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } outputSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } outputSize;
 @property (nonatomic, readonly) int playMode;
 @property (nonatomic, readonly) KNPlaybackSession *playbackSession;
 @property (nonatomic, readonly) KNShow *show;
@@ -36,7 +36,7 @@
 - (id)currentSlide;
 - (id)currentSlideNode;
 - (void)dealloc;
-- (void)drawCurrentEventIntoContext:(struct CGContext { }*)arg1 intoRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 ignoreBuildVisibility:(BOOL)arg3;
+- (void)drawCurrentEventIntoContext:(struct CGContext { }*)arg1 intoRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 ignoreBuildVisibility:(BOOL)arg3;
 - (unsigned int)eventCount;
 - (unsigned int)eventIndex;
 - (void)generateImageOfCurrentEventWithCompletonHandler:(id /* block */)arg1;
@@ -48,8 +48,8 @@
 - (BOOL)gotoPreviousSlide;
 - (BOOL)gotoSlideNode:(id)arg1 andEvent:(unsigned int)arg2;
 - (id)initWithShow:(id)arg1 canvasDelegate:(id)arg2;
-- (id)initWithShow:(id)arg1 canvasDelegate:(id)arg2 outputSize:(struct CGSize { float x1; float x2; })arg3;
-- (struct CGSize { float x1; float x2; })outputSize;
+- (id)initWithShow:(id)arg1 canvasDelegate:(id)arg2 outputSize:(struct CGSize { double x1; double x2; })arg3;
+- (struct CGSize { double x1; double x2; })outputSize;
 - (void)p_setAnimator:(id)arg1;
 - (int)playMode;
 - (id)playbackSession;

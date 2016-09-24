@@ -3,8 +3,8 @@
  */
 
 @interface AUAudioUnitPreset : NSObject <NSSecureCoding> {
-    NSString *_name;
-    int _number;
+    NSString * _name;
+    int  _number;
 }
 
 @property (nonatomic, copy) NSString *name;

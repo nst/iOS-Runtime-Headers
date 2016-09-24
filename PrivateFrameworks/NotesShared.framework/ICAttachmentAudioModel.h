@@ -3,9 +3,9 @@
  */
 
 @interface ICAttachmentAudioModel : ICAttachmentModel {
-    NSDate *_creationDate;
-    BOOL _recordedInNotes;
-    NSString *_title;
+    NSDate * _creationDate;
+    BOOL  _recordedInNotes;
+    NSString * _title;
 }
 
 @property (nonatomic, copy) NSDate *creationDate;

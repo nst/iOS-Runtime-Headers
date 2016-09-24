@@ -3,28 +3,37 @@
  */
 
 @interface UIPressInfo : NSObject {
-    float _force;
-    unsigned int _gameControllerComponent;
-    int _phase;
-    unsigned int _source;
-    double _timestamp;
-    int _type;
+    unsigned int  _clickCount;
+    double  _force;
+    unsigned int  _gameControllerComponent;
+    BOOL  _longClick;
+    int  _phase;
+    unsigned int  _source;
+    double  _timestamp;
+    int  _type;
 }
 
-@property (nonatomic) float force;
+@property (nonatomic) unsigned int clickCount;
+@property (nonatomic) double force;
 @property (nonatomic) unsigned int gameControllerComponent;
+@property (getter=isLongClick, nonatomic) BOOL longClick;
 @property (nonatomic) int phase;
 @property (nonatomic) unsigned int source;
 @property (nonatomic) double timestamp;
 @property (nonatomic) int type;
 
 - (id)_sourceDescription;
+- (unsigned int)clickCount;
 - (id)description;
 - (float)force;
 - (unsigned int)gameControllerComponent;
+- (id)init;
+- (BOOL)isLongClick;
 - (int)phase;
+- (void)setClickCount:(unsigned int)arg1;
 - (void)setForce:(float)arg1;
 - (void)setGameControllerComponent:(unsigned int)arg1;
+- (void)setLongClick:(BOOL)arg1;
 - (void)setPhase:(int)arg1;
 - (void)setSource:(unsigned int)arg1;
 - (void)setTimestamp:(double)arg1;

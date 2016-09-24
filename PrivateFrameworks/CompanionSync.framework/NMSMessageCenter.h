@@ -3,31 +3,33 @@
  */
 
 @interface NMSMessageCenter : NSObject <IDSServiceDelegate> {
-    BOOL _checkedForQWS;
-    unsigned int _currentBytesInFlight;
-    <NMSMessageCenterDelegate> *_delegate;
-    BOOL _delegateRequiresACKs;
-    BOOL _enableTransmissionWindow;
-    NSMutableDictionary *_errorHandlers;
-    NSObject<OS_dispatch_source> *_expireTimer;
-    NSObject<OS_dispatch_queue> *_idsIncomingQueue;
-    NSString *_launchNotification;
-    struct __CFString { } *_loggingFacility;
-    unsigned int _maxBytesInFlight;
-    unsigned int _maxMessagesInFlight;
-    unsigned int _minMessagesInFlight;
-    NSDate *_nextExpireTimerFireDate;
-    NSMutableDictionary *_pbMapping;
-    NMSPersistentDictionary *_persistentContextStore;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_requestHandlers;
-    NSMutableDictionary *_responseHandlers;
-    IDSService *_service;
-    NSString *_serviceIdentifier;
-    NMSWindowData *_windowData;
-    _NMSDispatchQueue *_windowQueue;
-    double _windowResponseTimeout;
-    NSObject<OS_dispatch_source> *_windowTimeout;
+    BOOL  _checkedForQWS;
+    unsigned int  _currentBytesInFlight;
+    <NMSMessageCenterDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    BOOL  _delegateRequiresACKs;
+    BOOL  _enableTransmissionWindow;
+    NSMutableDictionary * _errorHandlers;
+    NSObject<OS_dispatch_source> * _expireTimer;
+    _SYMultiSuspendableQueue * _idsIncomingQueue;
+    NSString * _launchNotification;
+    struct __CFString { } * _loggingFacility;
+    unsigned int  _maxBytesInFlight;
+    unsigned int  _maxMessagesInFlight;
+    unsigned int  _minMessagesInFlight;
+    NSDate * _nextExpireTimerFireDate;
+    NSMutableDictionary * _pbMapping;
+    NMSPersistentDictionary * _persistentContextStore;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableDictionary * _requestHandlers;
+    NSMutableDictionary * _responseHandlers;
+    IDSService * _service;
+    NSString * _serviceIdentifier;
+    NSObject<OS_os_activity> * _transportActivity;
+    NMSWindowData * _windowData;
+    _NMSDispatchQueue * _windowQueue;
+    double  _windowResponseTimeout;
+    NSObject<OS_dispatch_source> * _windowTimeout;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *actionQ;
@@ -45,6 +47,7 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, retain) IDSService *service;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) NSObject<OS_os_activity> *transportActivity;
 @property (nonatomic) double windowResponseTimeout;
 
 + (BOOL)messageWindowCountEnabled;
@@ -107,8 +110,10 @@
 - (void)setMinMessagesInFlight:(unsigned int)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setService:(id)arg1;
+- (void)setTransportActivity:(id)arg1;
 - (void)setWindowResponseTimeout:(double)arg1;
 - (void)suspendIncomingMessages;
+- (id)transportActivity;
 - (double)windowResponseTimeout;
 
 @end

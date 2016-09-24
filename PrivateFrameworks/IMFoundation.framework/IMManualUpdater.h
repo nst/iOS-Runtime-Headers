@@ -3,9 +3,9 @@
  */
 
 @interface IMManualUpdater : NSObject {
-    SEL _action;
-    unsigned int _needsUpdate;
-    id _target;
+    SEL  _action;
+    unsigned int  _needsUpdate;
+    id  _target;
 }
 
 @property (nonatomic) SEL action;

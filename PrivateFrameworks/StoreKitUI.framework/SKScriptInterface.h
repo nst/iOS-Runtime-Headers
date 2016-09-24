@@ -3,7 +3,7 @@
  */
 
 @interface SKScriptInterface : SUScriptInterface {
-    SKProductPageViewController *_parentProductPageViewController;
+    SKProductPageViewController * _parentProductPageViewController;
 }
 
 @property (nonatomic) SKProductPageViewController *parentProductPageViewController;

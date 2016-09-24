@@ -3,10 +3,10 @@
  */
 
 @interface UIDocumentPasswordView : UIView <UITextFieldDelegate> {
-    UIImageView *_iconView;
-    UILabel *_label;
-    UIDocumentPasswordField *_passwordTextField;
-    NSObject<UIDocumentPasswordViewDelegate> *passwordDelegate;
+    UIImageView * _iconView;
+    UILabel * _label;
+    UIDocumentPasswordField * _passwordTextField;
+    NSObject<UIDocumentPasswordViewDelegate> * passwordDelegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -17,14 +17,14 @@
 @property (readonly) Class superclass;
 
 - (BOOL)_canDrawContent;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_iconRectForContainerRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_iconRectForContainerRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)_labelFont;
 - (float)_labelHorizontalOffset;
 - (id)_labelTextColor;
 - (void)_passwordEntered:(id)arg1;
 - (float)_textFieldWidth;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithDocumentName:(id)arg1;
 - (void)layoutSubviews;
 - (id)passwordDelegate;

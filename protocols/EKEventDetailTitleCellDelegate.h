@@ -6,6 +6,8 @@
 @required
 
 - (void)editButtonPressed;
+- (void)predictionWasActedOn;
+- (NSDate *)proposedTime;
 - (BOOL)shouldShowEditButtonInline;
 
 @end

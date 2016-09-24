@@ -3,8 +3,8 @@
  */
 
 @interface MusicMediaSectionEntityValueProvider : NSObject <MusicEntityValueProviding> {
-    <MusicEntityValueProviding> *_mediaEntityValueProvider;
-    NSString *_sectionTitle;
+    <MusicEntityValueProviding> * _mediaEntityValueProvider;
+    NSString * _sectionTitle;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -16,7 +16,7 @@
 
 - (void).cxx_destruct;
 - (id)entityUniqueIdentifier;
-- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { float x1; float x2; })arg2 destinationScale:(float)arg3;
+- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { double x1; double x2; })arg2 destinationScale:(float)arg3;
 - (id)mediaEntityValueProvider;
 - (id)sectionTitle;
 - (void)setMediaEntityValueProvider:(id)arg1;

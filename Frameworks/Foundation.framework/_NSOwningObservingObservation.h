@@ -3,7 +3,7 @@
  */
 
 @interface _NSOwningObservingObservation : _NSConcreteObservation <NSOwningObserver> {
-    NSObservation *_ownedObservation;
+    NSObservation * _ownedObservation;
 }
 
 @property (readonly, copy) NSString *debugDescription;

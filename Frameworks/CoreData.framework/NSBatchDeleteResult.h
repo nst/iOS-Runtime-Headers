@@ -3,8 +3,8 @@
  */
 
 @interface NSBatchDeleteResult : NSPersistentStoreResult {
-    id _aggregatedResult;
-    unsigned int _resultType;
+    id  _aggregatedResult;
+    unsigned int  _resultType;
 }
 
 @property (readonly) id result;

@@ -3,7 +3,7 @@
  */
 
 @interface ECIntTwoIntKeyDictionary : OITSUNoCopyDictionary {
-    id mNilKeyObject;
+    id  mNilKeyObject;
 }
 
 - (id)initWithCapacity:(unsigned int)arg1;

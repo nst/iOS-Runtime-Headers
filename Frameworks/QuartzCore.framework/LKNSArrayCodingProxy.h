@@ -3,7 +3,7 @@
  */
 
 @interface LKNSArrayCodingProxy : CACodingProxy {
-    NSArray *_array;
+    NSArray * _array;
 }
 
 - (void)dealloc;

@@ -3,8 +3,8 @@
  */
 
 @interface ABMultiCellContentView_Simple : ABMultiCellContentView <UITextFieldDelegate> {
-    NSString *_previousValue;
-    ABHighlightingTextField *_textField;
+    NSString * _previousValue;
+    ABHighlightingTextField * _textField;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -13,7 +13,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *text;
 
-+ (struct CGSize { float x1; float x2; })layoutSubviewsForView:(id)arg1 usingSize:(struct CGSize { float x1; float x2; })arg2 propertyGroup:(id)arg3 info:(id)arg4 styleProvider:(id)arg5 whenEditing:(BOOL)arg6;
++ (struct CGSize { double x1; double x2; })layoutSubviewsForView:(id)arg1 usingSize:(struct CGSize { double x1; double x2; })arg2 propertyGroup:(id)arg3 info:(id)arg4 styleProvider:(id)arg5 whenEditing:(BOOL)arg6;
 
 - (BOOL)canHandleProperty:(int)arg1;
 - (void)dealloc;

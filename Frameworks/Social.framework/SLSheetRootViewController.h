@@ -3,14 +3,14 @@
  */
 
 @interface SLSheetRootViewController : UIViewController <SLComposeSheetConfigurationItemObserving, UITableViewDataSource, UITableViewDelegate> {
-    UIViewController *_autoCompletionViewController;
-    NSArray *_configurationItems;
-    UIView *_contentView;
-    SLComposeServiceViewController *_delegate;
-    UINavigationItem *_navItem;
-    UIImage *_serviceIconImage;
-    UITableViewController *_tableViewController;
-    SLSheetTitleView *_titleView;
+    UIViewController * _autoCompletionViewController;
+    NSArray * _configurationItems;
+    UIView * _contentView;
+    SLComposeServiceViewController * _delegate;
+    UINavigationItem * _navItem;
+    UIImage * _serviceIconImage;
+    UITableViewController * _tableViewController;
+    SLSheetTitleView * _titleView;
 }
 
 @property (nonatomic, copy) NSArray *configurationItems;
@@ -52,7 +52,7 @@
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)updateContentViewSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)updateContentViewSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 

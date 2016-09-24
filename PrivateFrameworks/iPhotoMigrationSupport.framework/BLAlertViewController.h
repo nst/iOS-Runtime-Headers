@@ -3,26 +3,26 @@
  */
 
 @interface BLAlertViewController : UIViewController {
-    UIActivityIndicatorView *_activityIndicator;
-    UIButton *_cancelButton;
-    NSString *_cancelButtonTitle;
-    <BLAlertViewControllerDelegate> *_delegate;
-    UIButton *_firstOtherButton;
-    NSString *_firstOtherButtonTitle;
+    UIActivityIndicatorView * _activityIndicator;
+    UIButton * _cancelButton;
+    NSString * _cancelButtonTitle;
+    <BLAlertViewControllerDelegate> * _delegate;
+    UIButton * _firstOtherButton;
+    NSString * _firstOtherButtonTitle;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _formSize;
-    BOOL _hasActivity;
-    NSString *_message;
-    UILabel *_messageLabel;
-    float _progress;
-    UIProgressView *_progressView;
-    UIButton *_secondOtherButton;
-    NSString *_secondOtherButtonTitle;
-    BOOL _showsActivityIndicator;
-    BOOL _showsProgressIndicator;
-    UILabel *_titleLabel;
+        double width; 
+        double height; 
+    }  _formSize;
+    BOOL  _hasActivity;
+    NSString * _message;
+    UILabel * _messageLabel;
+    double  _progress;
+    UIProgressView * _progressView;
+    UIButton * _secondOtherButton;
+    NSString * _secondOtherButtonTitle;
+    BOOL  _showsActivityIndicator;
+    BOOL  _showsProgressIndicator;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
@@ -32,11 +32,11 @@
 @property (nonatomic) <BLAlertViewControllerDelegate> *delegate;
 @property (nonatomic, retain) UIButton *firstOtherButton;
 @property (nonatomic, retain) NSString *firstOtherButtonTitle;
-@property (nonatomic) struct CGSize { float x1; float x2; } formSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } formSize;
 @property (nonatomic) BOOL hasActivity;
 @property (nonatomic, retain) NSString *message;
 @property (nonatomic, retain) UILabel *messageLabel;
-@property (nonatomic) float progress;
+@property (nonatomic) double progress;
 @property (nonatomic, retain) UIProgressView *progressView;
 @property (nonatomic, retain) UIButton *secondOtherButton;
 @property (nonatomic, retain) NSString *secondOtherButtonTitle;
@@ -56,8 +56,8 @@
 - (id)firstOtherButton;
 - (void)firstOtherButtonAction:(id)arg1;
 - (id)firstOtherButtonTitle;
-- (struct CGSize { float x1; float x2; })formSize;
-- (struct CGSize { float x1; float x2; })formSizeForOrientation:(int)arg1;
+- (struct CGSize { double x1; double x2; })formSize;
+- (struct CGSize { double x1; double x2; })formSizeForOrientation:(int)arg1;
 - (BOOL)hasActivity;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 cancelButtonTitle:(id)arg3 firstOtherButtonTitle:(id)arg4 secondOtherButtonTitle:(id)arg5;
 - (id)message;
@@ -73,7 +73,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setFirstOtherButton:(id)arg1;
 - (void)setFirstOtherButtonTitle:(id)arg1;
-- (void)setFormSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setFormSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setHasActivity:(BOOL)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setMessageLabel:(id)arg1;

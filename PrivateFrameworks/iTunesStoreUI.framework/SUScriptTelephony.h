@@ -3,8 +3,8 @@
  */
 
 @interface SUScriptTelephony : SUScriptObject {
-    NSObject<OS_dispatch_queue> *_telephonyQueue;
-    struct __CTServerConnection { } *_telephonyServer;
+    NSObject<OS_dispatch_queue> * _telephonyQueue;
+    struct __CTServerConnection { } * _telephonyServer;
 }
 
 @property (getter=isCellularRoaming, nonatomic, readonly) id cellularRoaming;

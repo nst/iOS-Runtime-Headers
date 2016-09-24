@@ -3,8 +3,8 @@
  */
 
 @interface OperationQueueInvocationTrampoline : InvocationTrampoline {
-    int _priority;
-    NSOperationQueue *_queue;
+    int  _priority;
+    NSOperationQueue * _queue;
 }
 
 - (void)dealloc;

@@ -3,8 +3,8 @@
  */
 
 @interface PLTimeReferenceKernel : PLTimeReference {
-    NSDate *_lastKernelTimeRecalibrated;
-    NSDate *_lastSystemTimeRecalibrated;
+    NSDate * _lastKernelTimeRecalibrated;
+    NSDate * _lastSystemTimeRecalibrated;
 }
 
 @property (retain) NSDate *lastKernelTimeRecalibrated;

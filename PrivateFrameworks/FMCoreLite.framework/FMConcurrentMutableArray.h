@@ -3,8 +3,8 @@
  */
 
 @interface FMConcurrentMutableArray : NSObject {
-    FMReadWriteLock *_lock;
-    NSMutableArray *_underlyingArray;
+    FMReadWriteLock * _lock;
+    NSMutableArray * _underlyingArray;
 }
 
 @property (nonatomic, readonly) unsigned int count;

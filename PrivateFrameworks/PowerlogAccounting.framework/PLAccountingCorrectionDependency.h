@@ -3,7 +3,7 @@
  */
 
 @interface PLAccountingCorrectionDependency : PLAccountingDependency {
-    PLAccountingEnergyEventEntry *_energyEvent;
+    PLAccountingEnergyEventEntry * _energyEvent;
 }
 
 @property (retain) PLAccountingEnergyEventEntry *energyEvent;

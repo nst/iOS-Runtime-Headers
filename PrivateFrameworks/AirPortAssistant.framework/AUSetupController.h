@@ -3,26 +3,26 @@
  */
 
 @interface AUSetupController : AssistantCallbackController <AutoGuessSetup, BaseStationSetup, SetupUIConfigDelegateResult> {
-    BOOL _activeTask;
-    NSString *_autoGuessSetupRecommendation;
-    BOOL _autoJoinState;
-    BOOL _busy;
-    struct BSConfigurationContext { } *_configContext;
-    id _context;
-    BOOL _initializedBasePasswordFlag;
-    NSString *_keychainBasePassword;
-    NSString *_keychainDiskPassword;
-    NSString *_keychainWiFiPassword;
-    NSString *_lastDNSName;
-    NSDate *_lastHeardFromDevice;
-    NSDictionary *_lastInstrumentation;
-    NSString *_lastSystemName;
-    BOOL _needToNilBonjour;
-    BOOL _performingManualRead;
-    BOOL _rememberDiskPassword;
-    BOOL _scanningState;
-    NSMutableSet *_setupDelegates;
-    id _uiConfigDelegate;
+    BOOL  _activeTask;
+    NSString * _autoGuessSetupRecommendation;
+    BOOL  _autoJoinState;
+    BOOL  _busy;
+    struct BSConfigurationContext { } * _configContext;
+    id  _context;
+    BOOL  _initializedBasePasswordFlag;
+    NSString * _keychainBasePassword;
+    NSString * _keychainDiskPassword;
+    NSString * _keychainWiFiPassword;
+    NSString * _lastDNSName;
+    NSDate * _lastHeardFromDevice;
+    NSDictionary * _lastInstrumentation;
+    NSString * _lastSystemName;
+    BOOL  _needToNilBonjour;
+    BOOL  _performingManualRead;
+    BOOL  _rememberDiskPassword;
+    BOOL  _scanningState;
+    NSMutableSet * _setupDelegates;
+    id  _uiConfigDelegate;
 }
 
 @property (nonatomic) BOOL activeTask;

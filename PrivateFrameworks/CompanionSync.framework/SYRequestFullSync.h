@@ -3,8 +3,8 @@
  */
 
 @interface SYRequestFullSync : PBCodable <NSCopying> {
-    SYMessageHeader *_header;
-    NSString *_syncID;
+    SYMessageHeader * _header;
+    NSString * _syncID;
 }
 
 @property (nonatomic, retain) SYMessageHeader *header;

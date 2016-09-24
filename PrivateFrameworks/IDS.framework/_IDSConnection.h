@@ -3,15 +3,15 @@
  */
 
 @interface _IDSConnection : NSObject <IDSAccountDelegate, IDSDaemonListenerProtocol> {
-    IDSAccount *_account;
-    NSSet *_commands;
-    unsigned int _delegateCapabilities;
-    id _delegateContext;
-    NSMapTable *_delegateToInfo;
-    BOOL _indirectDelegateCallouts;
-    id _messageContext;
-    NSMutableDictionary *_pendingSends;
-    NSString *_serviceToken;
+    IDSAccount * _account;
+    NSSet * _commands;
+    unsigned int  _delegateCapabilities;
+    id  _delegateContext;
+    NSMapTable * _delegateToInfo;
+    BOOL  _indirectDelegateCallouts;
+    id  _messageContext;
+    NSMutableDictionary * _pendingSends;
+    NSString * _serviceToken;
 }
 
 @property (nonatomic, readonly, retain) IDSAccount *account;

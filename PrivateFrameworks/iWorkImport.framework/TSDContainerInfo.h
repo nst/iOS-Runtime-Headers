@@ -3,9 +3,9 @@
  */
 
 @interface TSDContainerInfo : TSPObject <TSDMutableContainerInfo, TSKDocumentObject> {
-    NSMutableArray *mChildInfos;
-    TSDInfoGeometry *mGeometry;
-    NSObject<TSDContainerInfo> *mParentInfo;
+    NSMutableArray * mChildInfos;
+    TSDInfoGeometry * mGeometry;
+    NSObject<TSDContainerInfo> * mParentInfo;
 }
 
 @property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;
@@ -38,6 +38,7 @@
 - (BOOL)isAttachedToBodyText;
 - (BOOL)isFloatingAboveText;
 - (BOOL)isInlineWithText;
+- (BOOL)isSelectable;
 - (BOOL)isThemeContent;
 - (Class)layoutClass;
 - (void)loadFromArchive:(const struct ContainerArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct GeometryArchive {} *x5; struct Reference {} *x6; struct RepeatedPtrField<TSP::Reference> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; }*)arg1 unarchiver:(id)arg2;

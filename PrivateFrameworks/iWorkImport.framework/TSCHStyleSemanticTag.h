@@ -3,8 +3,8 @@
  */
 
 @interface TSCHStyleSemanticTag : NSObject <NSCopying> {
-    unsigned int mIndex;
-    int mType;
+    unsigned int  mIndex;
+    int  mType;
 }
 
 @property (nonatomic, readonly) unsigned int index;

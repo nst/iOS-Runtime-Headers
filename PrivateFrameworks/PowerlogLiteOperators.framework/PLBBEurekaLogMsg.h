@@ -3,15 +3,15 @@
  */
 
 @interface PLBBEurekaLogMsg : PLBasebandMessage {
-    NSDate *_bbDate;
-    NSNumber *_bbSeqNum;
-    double *_bbTimeCal;
-    NSMutableDictionary *_commonInfo;
-    unsigned char _inited;
-    NSMutableDictionary *_kvPairs;
-    NSMutableString *_sdAct;
-    NSMutableString *_sdEvent;
-    NSMutableString *_sdState;
+    NSDate * _bbDate;
+    NSNumber * _bbSeqNum;
+    double * _bbTimeCal;
+    NSMutableDictionary * _commonInfo;
+    unsigned char  _inited;
+    NSMutableDictionary * _kvPairs;
+    NSMutableString * _sdAct;
+    NSMutableString * _sdEvent;
+    NSMutableString * _sdState;
 }
 
 @property (retain) NSDate *bbDate;

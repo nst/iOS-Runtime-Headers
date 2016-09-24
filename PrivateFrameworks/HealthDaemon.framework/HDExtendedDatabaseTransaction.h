@@ -3,19 +3,19 @@
  */
 
 @interface HDExtendedDatabaseTransaction : NSObject {
-    NSObject<OS_dispatch_source> *_automaticRollbackTimer;
-    NSObject<OS_dispatch_semaphore> *_completionSemaphore;
-    double _continuationTimeout;
-    NSObject<OS_dispatch_queue> *_dataQueue;
-    <HDHealthDatabase> *_healthDatabase;
-    NSError *_lastError;
-    id /* block */ _pendingWork;
-    BOOL _pendingWorkDidSucceed;
-    NSObject<OS_dispatch_semaphore> *_pendingWorkSemaphore;
-    unsigned int _status;
-    NSUUID *_transactionIdentifier;
-    NSObject<OS_dispatch_queue> *_transactionQueue;
-    double _transactionTimeout;
+    NSObject<OS_dispatch_source> * _automaticRollbackTimer;
+    NSObject<OS_dispatch_semaphore> * _completionSemaphore;
+    double  _continuationTimeout;
+    NSObject<OS_dispatch_queue> * _dataQueue;
+    <HDHealthDatabase> * _healthDatabase;
+    NSError * _lastError;
+    id /* block */  _pendingWork;
+    BOOL  _pendingWorkDidSucceed;
+    NSObject<OS_dispatch_semaphore> * _pendingWorkSemaphore;
+    unsigned int  _status;
+    NSUUID * _transactionIdentifier;
+    NSObject<OS_dispatch_queue> * _transactionQueue;
+    double  _transactionTimeout;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *automaticRollbackTimer;

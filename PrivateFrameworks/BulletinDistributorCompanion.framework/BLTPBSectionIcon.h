@@ -3,7 +3,7 @@
  */
 
 @interface BLTPBSectionIcon : PBCodable <NSCopying> {
-    NSMutableArray *_variants;
+    NSMutableArray * _variants;
 }
 
 @property (nonatomic, retain) NSMutableArray *variants;

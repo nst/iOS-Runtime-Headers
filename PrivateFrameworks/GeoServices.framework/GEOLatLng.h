@@ -3,8 +3,8 @@
  */
 
 @interface GEOLatLng : PBCodable <NSCopying> {
-    double _lat;
-    double _lng;
+    double  _lat;
+    double  _lng;
 }
 
 @property (nonatomic, readonly) struct { double x1; double x2; } coordinate;

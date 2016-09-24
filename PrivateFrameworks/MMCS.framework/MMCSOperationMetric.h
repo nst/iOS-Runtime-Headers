@@ -3,15 +3,15 @@
  */
 
 @interface MMCSOperationMetric : NSObject <MMCSOperationMetric> {
-    unsigned int _bytesDownloaded;
-    unsigned int _bytesUploaded;
-    unsigned int _connections;
-    unsigned int _connectionsCreated;
-    double _duration;
-    double _executing;
-    double _queueing;
-    NSMutableArray *_ranges;
-    NSDate *_startDate;
+    unsigned int  _bytesDownloaded;
+    unsigned int  _bytesUploaded;
+    unsigned int  _connections;
+    unsigned int  _connectionsCreated;
+    double  _duration;
+    double  _executing;
+    double  _queueing;
+    NSMutableArray * _ranges;
+    NSDate * _startDate;
 }
 
 @property unsigned int bytesDownloaded;
@@ -26,7 +26,7 @@
 @property double queueing;
 @property (nonatomic, retain) NSMutableArray *ranges;
 @property (readonly) NSArray *rangesCopy;
-@property (retain) NSDate *startDate;
+@property (nonatomic, retain) NSDate *startDate;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

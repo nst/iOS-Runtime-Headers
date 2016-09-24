@@ -3,7 +3,7 @@
  */
 
 @interface SLInternalTencentWeiboRequest : SLRequest {
-    BOOL _shouldSign;
+    BOOL  _shouldSign;
 }
 
 @property BOOL shouldSign;

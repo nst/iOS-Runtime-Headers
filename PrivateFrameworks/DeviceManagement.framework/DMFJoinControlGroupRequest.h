@@ -3,9 +3,9 @@
  */
 
 @interface DMFJoinControlGroupRequest : CATTaskRequest {
-    NSDate *_expirationDate;
-    DMFControlGroupIdentifier *_groupIdentifier;
-    NSArray *_leaderIdentifiers;
+    NSDate * _expirationDate;
+    DMFControlGroupIdentifier * _groupIdentifier;
+    NSArray * _leaderIdentifiers;
 }
 
 @property (nonatomic, copy) NSDate *expirationDate;

@@ -3,12 +3,12 @@
  */
 
 @interface TSWPStorageRangeProvider : NSObject {
-    NSString *_identifier;
-    NSObject *_object;
+    NSString * _identifier;
+    NSObject * _object;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
+    }  _range;
 }
 
 @property (nonatomic, readonly) NSString *identifier;

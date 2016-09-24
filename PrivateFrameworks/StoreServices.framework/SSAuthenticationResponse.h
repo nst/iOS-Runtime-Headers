@@ -3,9 +3,9 @@
  */
 
 @interface SSAuthenticationResponse : NSObject {
-    NSDictionary *_responseDictionary;
-    int _urlBagType;
-    NSHTTPURLResponse *_urlResponse;
+    NSDictionary * _responseDictionary;
+    int  _urlBagType;
+    NSHTTPURLResponse * _urlResponse;
 }
 
 @property int URLBagType;

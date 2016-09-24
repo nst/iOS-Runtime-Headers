@@ -3,10 +3,10 @@
  */
 
 @interface _UITextDocumentInterface : UIInputViewControllerInterface <UITextDocumentProxy> {
-    _UIInputViewControllerOutput *_controllerOutput;
-    _UIInputViewControllerState *_controllerState;
-    <_UITextDocumentInterfaceDelegate> *_delegate;
-    TIKeyboardOutput *_keyboardOutput;
+    _UIInputViewControllerOutput * _controllerOutput;
+    _UIInputViewControllerState * _controllerState;
+    <_UITextDocumentInterfaceDelegate> * _delegate;
+    TIKeyboardOutput * _keyboardOutput;
 }
 
 @property (nonatomic) int autocapitalizationType;
@@ -18,8 +18,10 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *documentContextAfterInput;
 @property (nonatomic, readonly) NSString *documentContextBeforeInput;
+@property (nonatomic, readonly) UITextInputMode *documentInputMode;
 @property (getter=_documentState, nonatomic, readonly) TIDocumentState *documentState;
 @property (nonatomic) BOOL enablesReturnKeyAutomatically;
+@property (nonatomic, readonly) BOOL hasText;
 @property (readonly) unsigned int hash;
 @property (nonatomic) int keyboardAppearance;
 @property (getter=_keyboardOutput, nonatomic, readonly) TIKeyboardOutput *keyboardOutput;
@@ -28,6 +30,7 @@
 @property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
 @property (nonatomic) int spellCheckingType;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *textContentType;
 @property (getter=_textInputTraits, nonatomic, readonly) TITextInputTraits *textInputTraits;
 
 - (id)_controllerOutput;
@@ -38,6 +41,7 @@
 - (id)_documentState;
 - (void)_handleInputViewControllerState:(id)arg1;
 - (id)_keyboardOutput;
+- (void)_setInputModeList:(int)arg1 touchBegan:(double)arg2 fromLocation:(struct CGPoint { double x1; double x2; })arg3 updatePoint:(struct CGPoint { double x1; double x2; })arg4;
 - (void)_setPrimaryLanguage:(id)arg1;
 - (void)_setShouldAdvanceInputMode;
 - (void)_setShouldDismiss;
@@ -50,6 +54,7 @@
 - (void)deleteBackward;
 - (id)documentContextAfterInput;
 - (id)documentContextBeforeInput;
+- (id)documentInputMode;
 - (BOOL)enablesReturnKeyAutomatically;
 - (BOOL)hasText;
 - (void)insertText:(id)arg1;
@@ -62,5 +67,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)setForwardingInterface:(id)arg1;
 - (int)spellCheckingType;
+- (id)textContentType;
 
 @end

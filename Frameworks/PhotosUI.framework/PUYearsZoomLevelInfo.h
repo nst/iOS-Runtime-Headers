@@ -3,8 +3,8 @@
  */
 
 @interface PUYearsZoomLevelInfo : PUGridZoomLevelInfo <PUSectionedGridLayoutDelegate> {
-    NSMutableDictionary *_resultsForCollectionList;
-    PHFetchResult *_yearsFetchResult;
+    NSMutableDictionary * _resultsForCollectionList;
+    PHFetchResult * _yearsFetchResult;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -19,8 +19,10 @@
 - (double)cellAspectRatioHint;
 - (int)cellFillMode;
 - (void)configureSectionHeaderView:(id)arg1 forVisualSection:(int)arg2;
+- (unsigned int)dateRangeFormatterPreset;
 - (id)diagnosticsProviderForVisualSection:(int)arg1;
 - (id)displayTitle;
+- (void)getPhotosDataSource:(id*)arg1 displayTitleInfo:(id*)arg2 forDetailsForVisualSection:(int)arg3;
 - (int)imageDeliveryMode;
 - (id)initWithZoomLevel:(unsigned int)arg1 zoomLevelManager:(id)arg2 baseZoomLevelInfo:(id)arg3;
 - (int)maxRowsPerSection;
@@ -32,7 +34,7 @@
 - (id)sectionHeaderElementKind;
 - (id)sectionedGridLayout:(id)arg1 sectionsForVisualSection:(int)arg2;
 - (BOOL)supportsIncrementalChangeNotifications;
-- (struct CGSize { float x1; float x2; })thumbnailImageSize;
+- (struct CGSize { double x1; double x2; })thumbnailImageSize;
 - (void)updateLayoutMetricsForWidth:(float)arg1;
 - (void)willShowMagnifiedViewController:(id)arg1;
 

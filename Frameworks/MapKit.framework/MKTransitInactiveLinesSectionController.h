@@ -3,19 +3,16 @@
  */
 
 @interface MKTransitInactiveLinesSectionController : MKTransitSectionController {
-    NSArray *_inactiveLines;
-    BOOL _linesWithServiceResumesDataOnly;
+    NSArray * _inactiveLines;
 }
 
 @property (nonatomic, readonly) NSArray *inactiveLines;
-@property (nonatomic) BOOL linesWithServiceResumesDataOnly;
 
 - (void).cxx_destruct;
 - (void)_buildRows;
+- (id)_pagingFilter;
 - (void)_setNeedsBuildRows;
 - (id)inactiveLines;
 - (id)init;
-- (BOOL)linesWithServiceResumesDataOnly;
-- (void)setLinesWithServiceResumesDataOnly:(BOOL)arg1;
 
 @end

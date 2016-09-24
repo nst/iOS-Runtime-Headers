@@ -5,9 +5,9 @@
 @interface AWDITesterTestLoad : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
-    } _has;
-    NSMutableArray *_testNames;
-    unsigned long long _timestamp;
+    }  _has;
+    NSMutableArray * _testNames;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) BOOL hasTimestamp;

@@ -3,11 +3,11 @@
  */
 
 @interface _CDRateLimiter : NSObject <_CDRateLimiting> {
-    int _balance;
-    int _count;
-    NSDate *_lastRecorded;
-    double _period;
-    NSObject<OS_dispatch_queue> *_queue;
+    int  _balance;
+    int  _count;
+    NSDate * _lastRecorded;
+    double  _period;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly) int count;

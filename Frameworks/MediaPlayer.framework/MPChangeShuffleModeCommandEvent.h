@@ -3,12 +3,15 @@
  */
 
 @interface MPChangeShuffleModeCommandEvent : MPRemoteCommandEvent {
-    unsigned int _shuffleType;
+    BOOL  _preservesShuffleMode;
+    int  _shuffleType;
 }
 
-@property (nonatomic, readonly) unsigned int shuffleType;
+@property (nonatomic, readonly) BOOL preservesShuffleMode;
+@property (nonatomic, readonly) int shuffleType;
 
 - (id)initWithCommand:(id)arg1 mediaRemoteType:(unsigned int)arg2 options:(id)arg3;
-- (unsigned int)shuffleType;
+- (BOOL)preservesShuffleMode;
+- (int)shuffleType;
 
 @end

@@ -3,11 +3,11 @@
  */
 
 @interface SKUIPreviewDocumentController : NSObject <IKAppDocumentDelegate, SKUIStatusOverlayProvider> {
-    SUAudioPlayer *_audioPlayer;
-    SKUIClientContext *_clientContext;
-    IKAppDocument *_document;
-    NSOperationQueue *_operationQueue;
-    NSHashTable *_viewControllers;
+    SUAudioPlayer * _audioPlayer;
+    SKUIClientContext * _clientContext;
+    IKAppDocument * _document;
+    NSOperationQueue * _operationQueue;
+    NSHashTable * _viewControllers;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

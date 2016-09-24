@@ -3,20 +3,20 @@
  */
 
 @interface DADConnection : NSObject {
-    NSMutableSet *_accountIdsWithAlreadyResetCerts;
-    NSMutableSet *_accountIdsWithAlreadyResetThrottleTimers;
-    NSObject<OS_xpc_object> *_conn;
-    NSMutableDictionary *_inFlightAttachmentDownloads;
-    NSMutableDictionary *_inFlightCalendarAvailabilityRequests;
-    NSMutableDictionary *_inFlightCalendarDirectorySearches;
-    NSMutableDictionary *_inFlightFolderChanges;
-    NSMutableDictionary *_inFlightOofSettingsRequests;
-    NSMutableDictionary *_inFlightSearchQueries;
-    NSMutableDictionary *_inFlightShareRequests;
-    NSObject<OS_dispatch_queue> *_muckingWithConn;
-    NSObject<OS_dispatch_queue> *_muckingWithInFlightCollections;
-    BOOL _registered;
-    id /* block */ _statusReportBlock;
+    NSMutableSet * _accountIdsWithAlreadyResetCerts;
+    NSMutableSet * _accountIdsWithAlreadyResetThrottleTimers;
+    NSObject<OS_xpc_object> * _conn;
+    NSMutableDictionary * _inFlightAttachmentDownloads;
+    NSMutableDictionary * _inFlightCalendarAvailabilityRequests;
+    NSMutableDictionary * _inFlightCalendarDirectorySearches;
+    NSMutableDictionary * _inFlightFolderChanges;
+    NSMutableDictionary * _inFlightOofSettingsRequests;
+    NSMutableDictionary * _inFlightSearchQueries;
+    NSMutableDictionary * _inFlightShareRequests;
+    NSObject<OS_dispatch_queue> * _muckingWithConn;
+    NSObject<OS_dispatch_queue> * _muckingWithInFlightCollections;
+    BOOL  _registered;
+    id /* block */  _statusReportBlock;
 }
 
 @property (nonatomic) BOOL registered;
@@ -102,5 +102,6 @@
 - (BOOL)updateFolderListForAccountID:(id)arg1 andDataclasses:(int)arg2 requireChangedFolders:(BOOL)arg3 isUserRequested:(BOOL)arg4;
 - (BOOL)updateOofSettingsRequest:(id)arg1 forAccountWithID:(id)arg2;
 - (BOOL)watchFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
+- (BOOL)watchFoldersWithKeys:(id)arg1 forAccountID:(id)arg2 persistent:(BOOL)arg3;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface BFFPreferencesController : NSObject {
-    NSMutableDictionary *_preferences;
+    NSMutableDictionary * _preferences;
 }
 
 + (id)buddyPreferences;

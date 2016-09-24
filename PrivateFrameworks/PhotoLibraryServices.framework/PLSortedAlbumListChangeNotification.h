@@ -3,8 +3,8 @@
  */
 
 @interface PLSortedAlbumListChangeNotification : PLAssetContainerListChangeNotification {
-    PLSortedAlbumList *_albumList;
-    PLAssetContainerListChangeNotification *_backingNotification;
+    PLSortedAlbumList * _albumList;
+    PLAssetContainerListChangeNotification * _backingNotification;
 }
 
 + (id)notificationForDerivedObject:(id)arg1 priorChangeState:(id)arg2 forBackingObjectNotification:(id)arg3;

@@ -3,8 +3,8 @@
  */
 
 @interface TKDataSource : NSObject {
-    NSData *_data;
-    const char *_ptr;
+    NSData * _data;
+    const char * _ptr;
 }
 
 @property (readonly) NSData *data;
@@ -12,7 +12,7 @@
 @property (readonly) const char *ptr;
 
 - (void).cxx_destruct;
-- (BOOL)containsOffset:(int)arg1;
+- (BOOL)bytesSafeToRead:(int)arg1;
 - (id)data;
 - (const char *)end;
 - (unsigned char)fetchByte;

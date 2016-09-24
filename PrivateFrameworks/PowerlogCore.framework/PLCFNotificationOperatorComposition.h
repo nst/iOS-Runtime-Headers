@@ -3,13 +3,13 @@
  */
 
 @interface PLCFNotificationOperatorComposition : NSObject {
-    BOOL _isStateRequired;
-    BOOL _listeningForNotifications;
-    NSString *_notificationName;
-    PLOperator *_operator;
-    id /* block */ _operatorBlock;
-    int _stateToken;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    BOOL  _isStateRequired;
+    BOOL  _listeningForNotifications;
+    NSString * _notificationName;
+    PLOperator * _operator;
+    id /* block */  _operatorBlock;
+    int  _stateToken;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property BOOL isStateRequired;

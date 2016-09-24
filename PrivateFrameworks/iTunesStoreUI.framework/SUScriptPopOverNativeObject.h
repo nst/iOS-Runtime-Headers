@@ -3,9 +3,9 @@
  */
 
 @interface SUScriptPopOverNativeObject : SUScriptNativeObject {
-    BOOL _redisplayAfterRotation;
-    UIBarButtonItem *_sourceButtonItem;
-    SUDOMElement *_sourceDOMElement;
+    BOOL  _redisplayAfterRotation;
+    UIBarButtonItem * _sourceButtonItem;
+    SUDOMElement * _sourceDOMElement;
 }
 
 @property (nonatomic, retain) UIBarButtonItem *sourceButtonItem;

@@ -3,10 +3,10 @@
  */
 
 @interface _ATXAppIconState : NSObject {
-    NSDictionary *_appLocation;
-    NSSet *_dockedApps;
-    NSSet *_folderApps;
-    NSObject<OS_dispatch_queue> *_syncQueue;
+    NSDictionary * _appLocation;
+    NSSet * _dockedApps;
+    NSSet * _folderApps;
+    NSObject<OS_dispatch_queue> * _syncQueue;
 }
 
 + (id)sharedInstance;

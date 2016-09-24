@@ -3,13 +3,13 @@
  */
 
 @interface CertUIItemDetail : NSObject {
-    UIColor *_checkmarkHighlightColor;
-    NSString *_checkmarkText;
-    NSString *_detail;
-    UIColor *_detailHighlightColor;
-    NSString *_detailTitle;
-    BOOL _showCheckmark;
-    BOOL _showCheckmarkView;
+    UIColor * _checkmarkHighlightColor;
+    NSString * _checkmarkText;
+    NSString * _detail;
+    UIColor * _detailHighlightColor;
+    NSString * _detailTitle;
+    BOOL  _showCheckmark;
+    BOOL  _showCheckmarkView;
 }
 
 @property (nonatomic, retain) UIColor *checkmarkHighlightColor;

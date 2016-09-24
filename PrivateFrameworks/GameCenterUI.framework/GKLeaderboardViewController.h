@@ -3,7 +3,7 @@
  */
 
 @interface GKLeaderboardViewController : GKGameCenterViewController {
-    <GKLeaderboardViewControllerDelegate> *_leaderboardDelegate;
+    <GKLeaderboardViewControllerDelegate> * _leaderboardDelegate;
 }
 
 @property (nonatomic, copy) NSString *category;

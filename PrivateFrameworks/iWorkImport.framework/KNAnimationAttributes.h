@@ -3,8 +3,8 @@
  */
 
 @interface KNAnimationAttributes : NSObject <NSCopying> {
-    NSDictionary *mAttributes;
-    NSString *mEffect;
+    NSDictionary * mAttributes;
+    NSString * mEffect;
 }
 
 @property (nonatomic, readonly) NSDictionary *attributes;
@@ -16,6 +16,7 @@
 
 - (id)attributes;
 - (id)attributesAdjustedForTheme:(id)arg1;
+- (id)attributesByAddingAttributes:(id)arg1;
 - (id)attributesByAddingAttributesFromDictionary:(id)arg1;
 - (id)attributesByAddingMissingAttributesFromDictionary:(id)arg1;
 - (id)attributesByChangingEffectToEffect:(id)arg1;

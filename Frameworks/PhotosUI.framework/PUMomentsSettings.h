@@ -3,8 +3,8 @@
  */
 
 @interface PUMomentsSettings : PUSettings <UIAlertViewDelegate> {
-    BOOL _allowCollectionInfluence;
-    unsigned int _order;
+    BOOL  _allowCollectionInfluence;
+    unsigned int  _order;
 }
 
 @property (nonatomic) BOOL allowCollectionInfluence;

@@ -3,7 +3,7 @@
  */
 
 @interface AVMetadataItemValueRequest : NSObject {
-    AVMetadataItemValueRequestInternal *_valueRequest;
+    AVMetadataItemValueRequestInternal * _valueRequest;
 }
 
 @property (readonly) AVMetadataItem *metadataItem;

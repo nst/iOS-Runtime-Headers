@@ -3,7 +3,7 @@
  */
 
 @interface BLTSupplementaryActionInfo : BLTActionInfo {
-    NSString *_identifier;
+    NSString * _identifier;
 }
 
 @property (nonatomic, copy) NSString *identifier;

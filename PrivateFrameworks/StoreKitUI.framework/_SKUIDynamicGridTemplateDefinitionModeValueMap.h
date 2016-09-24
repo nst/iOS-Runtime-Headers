@@ -3,8 +3,8 @@
  */
 
 @interface _SKUIDynamicGridTemplateDefinitionModeValueMap : NSObject {
-    NSMutableArray *_defaultTemplateDefinitionViewElements;
-    NSMutableDictionary *_modeToTemplateDefinitionViewElements;
+    NSMutableArray * _defaultTemplateDefinitionViewElements;
+    NSMutableDictionary * _modeToTemplateDefinitionViewElements;
 }
 
 - (void).cxx_destruct;

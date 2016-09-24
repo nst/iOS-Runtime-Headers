@@ -3,8 +3,8 @@
  */
 
 @interface BWAudioFormat : BWFormat {
-    struct opaqueCMFormatDescription { } *_audioFormatDescription;
-    NSDictionary *_avAudioSettings;
+    struct opaqueCMFormatDescription { } * _audioFormatDescription;
+    NSDictionary * _avAudioSettings;
 }
 
 @property (readonly) NSDictionary *audioCompressionSBPOptions;

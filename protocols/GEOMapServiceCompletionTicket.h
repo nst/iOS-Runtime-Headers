@@ -5,7 +5,7 @@
 
 @required
 
-- (void)applyToSuggestionEntry:(GEORPSuggestionEntry *)arg1 withAutocompleteSearchResultMuid:(unsigned long long)arg2;
+- (void)applyToSuggestionEntry:(GEORPSuggestionEntry *)arg1 withAutocompleteSearchResultMuid:(unsigned int)arg2;
 - (void)applyToSuggestionList:(GEORPSuggestionList *)arg1;
 - (void)cancel;
 - (BOOL)isRapEnabled;

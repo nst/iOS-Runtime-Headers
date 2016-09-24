@@ -3,7 +3,7 @@
  */
 
 @interface MSCLFacebookServiceSetupTableViewSection : MSCLSocialServiceSetupTableViewSection {
-    int _displayState;
+    int  _displayState;
 }
 
 - (int)_cellTypeForIndexPath:(id)arg1;

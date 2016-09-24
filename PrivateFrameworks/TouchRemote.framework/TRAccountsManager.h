@@ -3,7 +3,7 @@
  */
 
 @interface TRAccountsManager : NSObject {
-    ACAccountStore *_iCloudAccountStore;
+    ACAccountStore * _iCloudAccountStore;
 }
 
 @property (nonatomic, readonly) ACAccount *activeiCloudAccount;

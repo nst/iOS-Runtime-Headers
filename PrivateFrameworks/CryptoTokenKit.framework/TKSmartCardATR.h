@@ -3,13 +3,14 @@
  */
 
 @interface TKSmartCardATR : NSObject {
-    NSData *_bytes;
-    NSData *_historicalBytes;
-    NSMutableArray *_interfaces;
+    NSData * _bytes;
+    NSData * _historicalBytes;
+    NSMutableArray * _interfaces;
 }
 
 @property (nonatomic, readonly) NSData *bytes;
 @property (nonatomic, readonly) NSData *historicalBytes;
+@property (nonatomic, readonly) NSArray *historicalRecords;
 @property (nonatomic, readonly) NSArray *protocols;
 
 - (void).cxx_destruct;

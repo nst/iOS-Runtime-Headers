@@ -3,8 +3,8 @@
  */
 
 @interface ECIntToIntNilDictionary : OITSUIntToIntDictionary {
-    int mNilValue;
-    BOOL mNilValueSet;
+    int  mNilValue;
+    BOOL  mNilValueSet;
 }
 
 - (BOOL)intIsPresentForKey:(int)arg1 outValue:(int*)arg2;

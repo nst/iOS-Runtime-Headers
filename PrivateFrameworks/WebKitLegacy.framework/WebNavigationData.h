@@ -3,7 +3,7 @@
  */
 
 @interface WebNavigationData : NSObject {
-    WebNavigationDataPrivate *_private;
+    WebNavigationDataPrivate * _private;
 }
 
 - (id)clientRedirectSource;

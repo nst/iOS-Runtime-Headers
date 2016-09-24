@@ -3,12 +3,12 @@
  */
 
 @interface AWDCoreRoutineTransitionMotionType : PBCodable <NSCopying> {
-    unsigned int _coreRoutineTransitionMotionTypeAutomotive;
-    unsigned int _coreRoutineTransitionMotionTypeCycling;
-    unsigned int _coreRoutineTransitionMotionTypeRunning;
-    unsigned int _coreRoutineTransitionMotionTypeStationary;
-    unsigned int _coreRoutineTransitionMotionTypeUnknown;
-    unsigned int _coreRoutineTransitionMotionTypeWalking;
+    unsigned int  _coreRoutineTransitionMotionTypeAutomotive;
+    unsigned int  _coreRoutineTransitionMotionTypeCycling;
+    unsigned int  _coreRoutineTransitionMotionTypeRunning;
+    unsigned int  _coreRoutineTransitionMotionTypeStationary;
+    unsigned int  _coreRoutineTransitionMotionTypeUnknown;
+    unsigned int  _coreRoutineTransitionMotionTypeWalking;
     struct { 
         unsigned int coreRoutineTransitionMotionTypeAutomotive : 1; 
         unsigned int coreRoutineTransitionMotionTypeCycling : 1; 
@@ -16,7 +16,7 @@
         unsigned int coreRoutineTransitionMotionTypeStationary : 1; 
         unsigned int coreRoutineTransitionMotionTypeUnknown : 1; 
         unsigned int coreRoutineTransitionMotionTypeWalking : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic) unsigned int coreRoutineTransitionMotionTypeAutomotive;

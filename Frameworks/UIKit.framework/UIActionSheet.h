@@ -3,21 +3,21 @@
  */
 
 @interface UIActionSheet : UIView <UIPopoverControllerDelegate> {
-    int _actionSheetStyle;
-    NSMutableArray *_actions;
-    UIAlertController *_alertController;
-    BOOL _alertControllerShouldDismiss;
-    int _cancelIndex;
-    id _context;
-    <UIActionSheetDelegate> *_delegate;
-    int _destructiveButtonIndex;
-    BOOL _dismissingAlertController;
-    int _firstOtherButtonIndex;
-    BOOL _handlingAlertActionShouldDismiss;
-    BOOL _hasPreparedAlertActions;
-    BOOL _isPresented;
-    _UIAlertControllerShimPresenter *_presenter;
-    UIActionSheet *_retainedSelf;
+    int  _actionSheetStyle;
+    NSMutableArray * _actions;
+    UIAlertController * _alertController;
+    BOOL  _alertControllerShouldDismiss;
+    int  _cancelIndex;
+    id  _context;
+    <UIActionSheetDelegate> * _delegate;
+    int  _destructiveButtonIndex;
+    BOOL  _dismissingAlertController;
+    int  _firstOtherButtonIndex;
+    BOOL  _handlingAlertActionShouldDismiss;
+    BOOL  _hasPreparedAlertActions;
+    BOOL  _isPresented;
+    _UIAlertControllerShimPresenter * _presenter;
+    UIActionSheet * _retainedSelf;
 }
 
 @property (nonatomic) int actionSheetStyle;
@@ -32,6 +32,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *title;
 @property (getter=isVisible, nonatomic, readonly) BOOL visible;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (BOOL)_isAlertControllerShimClass;
 + (Class)_popoverControllerClass;
@@ -57,7 +59,7 @@
 - (void)_setFirstOtherButtonIndex:(int)arg1;
 - (void)_setIndexesOfSelectedButtons:(id)arg1;
 - (void)_setIsPresented:(BOOL)arg1;
-- (void)_showFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 direction:(unsigned int)arg3 animated:(BOOL)arg4;
+- (void)_showFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2 direction:(unsigned int)arg3 animated:(BOOL)arg4;
 - (id)_titleLabel;
 - (void)_toggleButtonSelectionAtIndex:(unsigned int)arg1;
 - (int)actionSheetStyle;
@@ -74,7 +76,7 @@
 - (int)destructiveButtonIndex;
 - (void)dismissWithClickedButtonIndex:(int)arg1 animated:(BOOL)arg2;
 - (int)firstOtherButtonIndex;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithTitle:(id)arg1 delegate:(id)arg2 cancelButtonTitle:(id)arg3 destructiveButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
 - (BOOL)isVisible;
 - (id)message;
@@ -82,7 +84,7 @@
 - (int)numberOfLinesInTitle;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)presentFromBarButtonItem:(id)arg1 direction:(unsigned int)arg2 allowInteractionWithViews:(id)arg3 backgroundStyle:(int)arg4 animated:(BOOL)arg5;
-- (void)presentFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 direction:(unsigned int)arg3 allowInteractionWithViews:(id)arg4 backgroundStyle:(int)arg5 animated:(BOOL)arg6;
+- (void)presentFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2 direction:(unsigned int)arg3 allowInteractionWithViews:(id)arg4 backgroundStyle:(int)arg5 animated:(BOOL)arg6;
 - (void)presentSheetInContentView:(id)arg1;
 - (void)presentSheetInView:(id)arg1;
 - (void)setActionSheetStyle:(int)arg1;
@@ -105,12 +107,16 @@
 - (void)setTitleMaxLineCount:(int)arg1;
 - (void)setUseThreeColumnsButtonsLayout:(BOOL)arg1;
 - (void)showFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
-- (void)showFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3;
+- (void)showFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3;
 - (void)showFromTabBar:(id)arg1;
 - (void)showFromToolbar:(id)arg1;
 - (void)showInView:(id)arg1;
 - (id)subtitle;
 - (id)title;
 - (BOOL)useThreeColumnsButtonsLayout;
+
+// Image: /System/Library/PrivateFrameworks/Swift/libswiftUIKit.dylib
+
+- (id)initWithTitle:(id)arg1 delegate:(id)arg2 cancelButtonTitle:(id)arg3 destructiveButtonTitle:(id)arg4;
 
 @end

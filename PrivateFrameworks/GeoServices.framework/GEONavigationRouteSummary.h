@@ -3,15 +3,15 @@
  */
 
 @interface GEONavigationRouteSummary : PBCodable <NSCopying> {
-    GEOComposedWaypoint *_destination;
-    NSString *_destinationName;
+    GEOComposedWaypoint * _destination;
+    NSString * _destinationName;
     struct { 
         unsigned int travelTime : 1; 
         unsigned int transportType : 1; 
-    } _has;
-    GEOComposedWaypoint *_origin;
-    int _transportType;
-    double _travelTime;
+    }  _has;
+    GEOComposedWaypoint * _origin;
+    int  _transportType;
+    double  _travelTime;
 }
 
 @property (nonatomic, retain) GEOComposedWaypoint *destination;
@@ -25,6 +25,7 @@
 @property (nonatomic) int transportType;
 @property (nonatomic) double travelTime;
 
+- (int)StringAsTransportType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -52,6 +53,7 @@
 - (void)setTransportType:(int)arg1;
 - (void)setTravelTime:(double)arg1;
 - (int)transportType;
+- (id)transportTypeAsString:(int)arg1;
 - (double)travelTime;
 - (void)writeTo:(id)arg1;
 

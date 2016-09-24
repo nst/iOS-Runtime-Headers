@@ -3,7 +3,7 @@
  */
 
 @interface CMActivityManager : NSObject {
-    id _internal;
+    id  _internal;
 }
 
 @property (getter=isActivityAvailable, nonatomic, readonly) BOOL activityAvailable;

@@ -3,7 +3,7 @@
  */
 
 @interface GKState : NSObject {
-    GKStateMachine *_stateMachine;
+    GKStateMachine * _stateMachine;
 }
 
 @property (nonatomic, readonly) GKStateMachine *stateMachine;

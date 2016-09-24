@@ -3,10 +3,10 @@
  */
 
 @interface SUScriptFacebookRequest : SUScriptObject {
-    SLRequest *_request;
-    int _requestMethod;
-    SUScriptAppleAccount *_scriptAccount;
-    NSURL *_url;
+    SLRequest * _request;
+    int  _requestMethod;
+    SUScriptAppleAccount * _scriptAccount;
+    NSURL * _url;
 }
 
 @property (readonly, copy) NSURL *URL;

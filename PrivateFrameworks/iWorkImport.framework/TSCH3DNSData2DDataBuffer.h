@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DNSData2DDataBuffer : TSCH3D2DDataBuffer {
-    NSData *mConstData;
-    NSMutableData *mMutableData;
+    NSData * mConstData;
+    NSMutableData * mMutableData;
 }
 
 @property (nonatomic, readonly) NSData *NSData;

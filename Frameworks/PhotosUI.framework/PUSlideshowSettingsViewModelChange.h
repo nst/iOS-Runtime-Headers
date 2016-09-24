@@ -3,18 +3,18 @@
  */
 
 @interface PUSlideshowSettingsViewModelChange : PUViewModelChange {
-    BOOL _mediaItemDidChange;
-    BOOL _musicOnDidChange;
-    BOOL _presetDidChange;
-    BOOL _shouldRepeatDidChange;
-    BOOL _stepDurationDidChange;
+    BOOL  _mediaItemDidChange;
+    BOOL  _musicOnDidChange;
+    BOOL  _presetDidChange;
+    BOOL  _shouldRepeatDidChange;
+    BOOL  _stepDurationDidChange;
 }
 
-@property (nonatomic) BOOL mediaItemDidChange;
-@property (nonatomic) BOOL musicOnDidChange;
-@property (nonatomic) BOOL presetDidChange;
-@property (nonatomic) BOOL shouldRepeatDidChange;
-@property (nonatomic) BOOL stepDurationDidChange;
+@property (setter=_setMediaItemDidChange:, nonatomic) BOOL mediaItemDidChange;
+@property (setter=_setMusicOnDidChange:, nonatomic) BOOL musicOnDidChange;
+@property (setter=_setPresetDidChange:, nonatomic) BOOL presetDidChange;
+@property (setter=_setRepeatDidChange:, nonatomic) BOOL shouldRepeatDidChange;
+@property (setter=_setStepDurationDidChange:, nonatomic) BOOL stepDurationDidChange;
 
 - (void)_setMediaItemDidChange:(BOOL)arg1;
 - (void)_setMusicOnDidChange:(BOOL)arg1;

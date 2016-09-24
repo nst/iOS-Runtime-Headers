@@ -3,7 +3,7 @@
  */
 
 @interface _UIUCBBarButtonVisualProviderIOS : _UIButtonBarButtonVisualProvider {
-    UIButton *_contentButton;
+    UIButton * _contentButton;
 }
 
 + (id)_defaultTitleAttributes;

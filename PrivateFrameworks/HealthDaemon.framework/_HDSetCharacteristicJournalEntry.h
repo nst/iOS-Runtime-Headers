@@ -3,15 +3,14 @@
  */
 
 @interface _HDSetCharacteristicJournalEntry : HDJournalEntry {
-    HKCharacteristicType *_dataType;
-    id _value;
+    HKCharacteristicType * _dataType;
+    id  _value;
 }
 
 @property (nonatomic, readonly) HKCharacteristicType *dataType;
 @property (nonatomic, readonly) id value;
 
-+ (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
-+ (int)behavior;
++ (void)applyEntries:(id)arg1 withProfile:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;

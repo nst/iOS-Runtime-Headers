@@ -3,42 +3,48 @@
  */
 
 @interface PQLConnection : NSObject {
-    id /* block */ _autoRollbackHandler;
-    NSObject<OS_os_transaction> *_batchStarted;
-    int _batchingChangesCount;
-    int _batchingChangesLimit;
-    double _batchingPeriod;
-    NSObject<OS_dispatch_source> *_batchingTimer;
-    int _cacheSize;
-    BOOL _crashIfUsedAfterClose;
-    struct sqlite3 { } *_db;
-    NSMutableArray *_flushNotifications;
-    NSString *_label;
-    NSError *_lastError;
-    id /* block */ _lockedHandler;
-    BOOL _needsFullSync;
-    id /* block */ _postFlushHook;
-    id /* block */ _preFlushHook;
-    struct cache_s { } *_preparedStatements;
-    id /* block */ _profilingHook;
-    int _savePointLevel;
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    int _skipBatchStop;
-    id /* block */ _sqliteErrorHandler;
-    NSMutableArray *_stmtCacheCleanupQueue;
-    NSObject<OS_dispatch_source> *_stmtCacheSource;
-    int _suspendCaching;
-    BOOL _traced;
-    NSURL *_url;
-    BOOL _useBatching;
-    BOOL _useQueue;
-    int _vacuumTracker;
+    id /* block */  _autoRollbackHandler;
+    NSObject<OS_os_transaction> * _batchStarted;
+    int  _batchTransactionType;
+    int  _batchingChangesCount;
+    int  _batchingChangesLimit;
+    double  _batchingPeriod;
+    id /* block */  _batchingPolicyHandler;
+    NSObject<OS_dispatch_source> * _batchingTimer;
+    int  _cacheSize;
+    BOOL  _crashIfUsedAfterClose;
+    unsigned long long  _currentStmtStart;
+    struct sqlite3 { } * _db;
+    NSMutableArray * _flushNotifications;
+    NSString * _label;
+    NSError * _lastError;
+    id /* block */  _lockedHandler;
+    BOOL  _needsFullSync;
+    id /* block */  _postFlushHook;
+    id /* block */  _preFlushHook;
+    struct cache_s { } * _preparedStatements;
+    id /* block */  _profilingHook;
+    int  _savePointLevel;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    int  _skipBatchStop;
+    id /* block */  _sqliteErrorHandler;
+    NSMutableArray * _stmtCacheCleanupQueue;
+    NSObject<OS_dispatch_source> * _stmtCacheSource;
+    int  _suspendCaching;
+    BOOL  _traced;
+    NSURL * _url;
+    BOOL  _useBatching;
+    BOOL  _useQueue;
+    int  _vacuumTracker;
 }
 
 @property (nonatomic, copy) id /* block */ autoRollbackHandler;
+@property (nonatomic) int batchTransactionType;
 @property (nonatomic, readonly) long long changes;
 @property (nonatomic) BOOL crashIfUsedAfterClose;
+@property (nonatomic, readonly) double currentOperationDuration;
 @property (nonatomic, readonly) struct sqlite3 { }*dbHandle;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) BOOL isBatchSuspended;
 @property (nonatomic, readonly) BOOL isInBatch;
 @property (nonatomic, readonly) BOOL isInTransaction;
@@ -59,7 +65,7 @@
 + (void)initialize;
 
 - (void).cxx_destruct;
-- (void)_batchStartIfNeeded;
+- (void)_batchStartIfNeeded:(int)arg1;
 - (void)_batchStopIfNeeded;
 - (void)_clearCleanupCacheQueueIfNeeded;
 - (void)_clearStatementCache;
@@ -68,16 +74,20 @@
 - (BOOL)_execute:(id)arg1 mustSucceed:(BOOL)arg2 bindings:(void*)arg3;
 - (void)_fireFlushNotifications;
 - (BOOL)_fullSync;
+- (BOOL)_incrementalVacuum:(unsigned long long)arg1;
 - (id)_newStatementForFormat:(id)arg1 arguments:(void*)arg2;
 - (BOOL)_performWithFlags:(unsigned int)arg1 action:(id /* block */)arg2 whenFlushed:(id /* block */)arg3;
 - (void)_resetState;
 - (void)_vacuumIfNeeded;
 - (int)_vacuumMode;
 - (id /* block */)autoRollbackHandler;
+- (int)autovacuumableSpaceInBytes;
 - (BOOL)backupToURL:(id)arg1 progress:(id /* block */)arg2;
+- (int)batchTransactionType;
 - (long long)changes;
 - (BOOL)close:(id*)arg1;
 - (BOOL)crashIfUsedAfterClose;
+- (double)currentOperationDuration;
 - (struct sqlite3 { }*)dbHandle;
 - (void)dealloc;
 - (id)debugDescription;
@@ -98,6 +108,7 @@
 - (void)forceBatchStart;
 - (void)groupInBatch:(id /* block */)arg1;
 - (BOOL)groupInTransaction:(id /* block */)arg1;
+- (BOOL)incrementalVacuum:(int)arg1;
 - (id)init;
 - (BOOL)isBatchSuspended;
 - (BOOL)isInBatch;
@@ -118,6 +129,7 @@
 - (BOOL)registerFunction:(id)arg1 nArgs:(int)arg2 handler:(id /* block */)arg3;
 - (id)serialQueue;
 - (void)setAutoRollbackHandler:(id /* block */)arg1;
+- (void)setBatchTransactionType:(int)arg1;
 - (void)setCrashIfUsedAfterClose:(BOOL)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setLastError:(id)arg1;
@@ -136,6 +148,7 @@
 - (unsigned int)synchronousMode;
 - (id)url;
 - (void)useBatchingWithDelay:(double)arg1 changeCount:(int)arg2;
+- (void)useBatchingWithPolicyHandler:(id /* block */)arg1;
 - (void)useSerialQueue;
 - (id)userVersion;
 

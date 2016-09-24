@@ -3,7 +3,7 @@
  */
 
 @interface BLTPBImage : PBCodable <NSCopying> {
-    NSData *_data;
+    NSData * _data;
 }
 
 @property (nonatomic, retain) NSData *data;

@@ -3,7 +3,7 @@
  */
 
 @interface MFOutgoingLibraryMessageContent : MFOutgoingMessageContent {
-    MFLibraryMessage *_libraryMessage;
+    MFLibraryMessage * _libraryMessage;
 }
 
 @property (nonatomic, retain) MFLibraryMessage *libraryMessage;

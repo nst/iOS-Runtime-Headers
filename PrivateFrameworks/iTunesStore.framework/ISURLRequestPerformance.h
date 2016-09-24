@@ -3,12 +3,12 @@
  */
 
 @interface ISURLRequestPerformance : NSObject {
-    double _finishTime;
-    double _receivedResponseTime;
-    double _renderBeginTime;
-    double _renderEndTime;
-    double _startTime;
-    NSURLResponse *_urlResponse;
+    double  _finishTime;
+    double  _receivedResponseTime;
+    double  _renderBeginTime;
+    double  _renderEndTime;
+    double  _startTime;
+    NSURLResponse * _urlResponse;
 }
 
 @property (nonatomic, copy) NSURLResponse *URLResponse;

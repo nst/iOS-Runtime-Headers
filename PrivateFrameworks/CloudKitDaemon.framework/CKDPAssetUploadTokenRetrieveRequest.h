@@ -3,10 +3,10 @@
  */
 
 @interface CKDPAssetUploadTokenRetrieveRequest : PBRequest <NSCopying> {
-    NSMutableArray *_assets;
-    CKDPRecordFieldIdentifier *_field;
-    CKDPRecordType *_type;
-    NSMutableArray *_uploads;
+    NSMutableArray * _assets;
+    CKDPRecordFieldIdentifier * _field;
+    CKDPRecordType * _type;
+    NSMutableArray * _uploads;
 }
 
 @property (nonatomic, retain) NSMutableArray *assets;
@@ -16,7 +16,9 @@
 @property (nonatomic, retain) CKDPRecordType *type;
 @property (nonatomic, retain) NSMutableArray *uploads;
 
++ (Class)assetsType;
 + (id)options;
++ (Class)uploadsType;
 
 - (void).cxx_destruct;
 - (void)addAssets:(id)arg1;

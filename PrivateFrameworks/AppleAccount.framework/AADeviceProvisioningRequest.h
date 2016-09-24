@@ -3,9 +3,9 @@
  */
 
 @interface AADeviceProvisioningRequest : AARequest {
-    NSData *_data;
-    NSString *_dsid;
-    NSString *_url;
+    NSData * _data;
+    NSString * _dsid;
+    NSString * _url;
 }
 
 - (void).cxx_destruct;

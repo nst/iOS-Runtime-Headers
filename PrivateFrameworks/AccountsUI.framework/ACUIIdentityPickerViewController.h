@@ -3,11 +3,11 @@
  */
 
 @interface ACUIIdentityPickerViewController : PSListController {
-    BOOL _allowEditing;
-    <ACUIIdentityPickerViewControllerDelegate> *_delegate;
-    NSArray *_emailAddresses;
-    NSArray *_identities;
-    NSString *_property;
+    BOOL  _allowEditing;
+    <ACUIIdentityPickerViewControllerDelegate> * _delegate;
+    NSArray * _emailAddresses;
+    NSArray * _identities;
+    NSString * _property;
 }
 
 @property (nonatomic, readonly) NSString *property;

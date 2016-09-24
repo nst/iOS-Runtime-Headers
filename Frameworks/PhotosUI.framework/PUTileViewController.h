@@ -3,19 +3,19 @@
  */
 
 @interface PUTileViewController : PUTileController {
-    BOOL __edgeAntialiasingEnabled;
-    BOOL __loadingView;
-    UIView *__maskView;
-    id /* block */ __onReadyToDisplayBlock;
-    NSTimer *__readinessTimer;
-    UIView *__tintView;
-    UIView *__visibleRectView;
-    UIView *_contentView;
-    BOOL _contentViewEnabled;
-    NSArray *_gestureRecognizers;
-    BOOL _isReadyForDisplay;
-    UIView *_loadedView;
-    UIView *_view;
+    BOOL  __edgeAntialiasingEnabled;
+    BOOL  __loadingView;
+    UIView * __maskView;
+    id /* block */  __onReadyToDisplayBlock;
+    NSTimer * __readinessTimer;
+    UIView * __tintView;
+    UIView * __visibleRectView;
+    UIView * _contentView;
+    BOOL  _contentViewEnabled;
+    NSArray * _gestureRecognizers;
+    BOOL  _isReadyForDisplay;
+    UIView * _loadedView;
+    UIView * _view;
 }
 
 @property (setter=_setEdgeAntialiasingEnabled:, nonatomic) BOOL _edgeAntialiasingEnabled;
@@ -25,13 +25,13 @@
 @property (setter=_setReadinessTimer:, nonatomic, retain) NSTimer *_readinessTimer;
 @property (setter=_setTintView:, nonatomic, retain) UIView *_tintView;
 @property (setter=_setVisibleRectView:, nonatomic, retain) UIView *_visibleRectView;
-@property (nonatomic, retain) UIView *contentView;
+@property (setter=_setContentView:, nonatomic, retain) UIView *contentView;
 @property (getter=isContentViewEnabled, nonatomic) BOOL contentViewEnabled;
-@property (nonatomic, retain) NSArray *gestureRecognizers;
+@property (setter=_setGestureRecognizers:, nonatomic, retain) NSArray *gestureRecognizers;
 @property (setter=_setReadyForDisplay:, nonatomic) BOOL isReadyForDisplay;
 @property (nonatomic, readonly) BOOL isViewLoaded;
 @property (setter=_setLoadedView:, nonatomic, retain) UIView *loadedView;
-@property (nonatomic, retain) UIView *view;
+@property (setter=_setView:, nonatomic, retain) UIView *view;
 
 - (void).cxx_destruct;
 - (BOOL)_edgeAntialiasingEnabled;
@@ -78,7 +78,7 @@
 - (void)setEdgeAntialiasingEnabled:(BOOL)arg1;
 - (id)view;
 - (void)viewDidLoad;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleRect;
 - (BOOL)wantsVisibleRectChanges;
 
 @end

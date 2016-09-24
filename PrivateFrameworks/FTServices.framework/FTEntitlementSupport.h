@@ -3,8 +3,8 @@
  */
 
 @interface FTEntitlementSupport : NSObject {
-    struct __CTServerConnection { } *_ctServerConnection;
-    struct __CFString { } *_entitlementStatus;
+    struct __CTServerConnection { } * _ctServerConnection;
+    struct __CFString { } * _entitlementStatus;
 }
 
 @property (nonatomic, readonly) BOOL faceTimeNonWiFiEntitled;

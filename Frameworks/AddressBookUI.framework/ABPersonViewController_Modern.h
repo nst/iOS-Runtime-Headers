@@ -3,26 +3,26 @@
  */
 
 @interface ABPersonViewController_Modern : UIViewController <ABContactViewControllerDelegate, CNContactViewControllerPrivateDelegate, UIViewControllerRestoration> {
-    const void *_addressBook;
-    BOOL _allowsActions;
-    BOOL _allowsAddToFavorites;
-    BOOL _allowsConferencing;
-    BOOL _allowsContactBlocking;
-    BOOL _allowsDeletion;
-    BOOL _allowsEditing;
-    BOOL _allowsSharing;
-    BOOL _badgeEmailPropertiesForMailVIP;
-    CNContactViewController *_cnContactViewController;
-    ABContactViewController *_contactViewController;
-    const void *_displayedPerson;
-    NSArray *_displayedProperties;
-    BOOL _highlightedImportant;
-    int _highlightedMultiValueIdentifier;
-    int _highlightedProperty;
-    UIView *_personHeaderView;
-    <ABPersonViewControllerDelegate> *_personViewDelegate;
-    BOOL _shouldShowLinkedPeople;
-    int _style;
+    const void * _addressBook;
+    BOOL  _allowsActions;
+    BOOL  _allowsAddToFavorites;
+    BOOL  _allowsConferencing;
+    BOOL  _allowsContactBlocking;
+    BOOL  _allowsDeletion;
+    BOOL  _allowsEditing;
+    BOOL  _allowsSharing;
+    BOOL  _badgeEmailPropertiesForMailVIP;
+    CNContactViewController * _cnContactViewController;
+    ABContactViewController * _contactViewController;
+    const void * _displayedPerson;
+    NSArray * _displayedProperties;
+    BOOL  _highlightedImportant;
+    int  _highlightedMultiValueIdentifier;
+    int  _highlightedProperty;
+    UIView * _personHeaderView;
+    <ABPersonViewControllerDelegate> * _personViewDelegate;
+    BOOL  _shouldShowLinkedPeople;
+    int  _style;
 }
 
 @property (nonatomic) const void*addressBook;
@@ -97,6 +97,7 @@
 - (void)cancelEditing:(BOOL)arg1;
 - (id)cnContactViewController;
 - (id)contactViewController;
+- (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
 - (BOOL)contactViewController:(id)arg1 shouldPerformDefaultActionForContact:(id)arg2 property:(id)arg3 labeledValue:(id)arg4;
 - (BOOL)contactViewController:(id)arg1 shouldPerformDefaultActionForContactProperty:(id)arg2;
 - (id)customFooterView;
@@ -131,7 +132,7 @@
 - (id)personHeaderView;
 - (void)personViewController:(id)arg1 willSetEditing:(BOOL)arg2 animated:(BOOL)arg3;
 - (id)personViewDelegate;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)reloadContactViewController;
 - (void)removeActionWithSelector:(SEL)arg1 target:(id)arg2 forProperty:(int)arg3 withActionGrouping:(int)arg4 ordering:(int)arg5;
 - (void)removeActionWithSelector:(SEL)arg1 target:(id)arg2 location:(int)arg3;

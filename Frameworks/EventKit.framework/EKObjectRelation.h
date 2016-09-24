@@ -3,21 +3,21 @@
  */
 
 @interface EKObjectRelation : NSObject {
-    BOOL _dirty;
-    NSString *_inverseName;
-    BOOL _loaded;
-    EKObject *_owner;
-    NSString *_relationName;
+    BOOL  _dirty;
+    NSString * _inverseName;
+    BOOL  _loaded;
+    EKObject * _owner;
+    NSString * _relationName;
 }
 
 @property (nonatomic, readonly) NSString *inverseName;
 @property (nonatomic, readonly) EKObject *owner;
 @property (nonatomic, readonly) NSString *relationName;
 
+- (void).cxx_destruct;
 - (void)_addRelatedObject:(id)arg1 setInverse:(BOOL)arg2 dirty:(BOOL)arg3;
 - (void)_removeRelatedObject:(id)arg1 setInverse:(BOOL)arg2 dirty:(BOOL)arg3;
 - (id)committedValue;
-- (void)dealloc;
 - (void)didCommit;
 - (unsigned int)hash;
 - (id)initWithOwner:(id)arg1 relationName:(id)arg2 inverseRelationName:(id)arg3;

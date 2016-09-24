@@ -3,7 +3,7 @@
  */
 
 @interface CNContactRelation : NSObject <CNObjectValidation, NSCopying, NSSecureCoding> {
-    NSString *_name;
+    NSString * _name;
 }
 
 @property (readonly, copy) NSString *debugDescription;

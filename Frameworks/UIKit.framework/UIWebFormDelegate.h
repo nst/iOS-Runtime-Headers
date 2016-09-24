@@ -3,8 +3,8 @@
  */
 
 @interface UIWebFormDelegate : NSObject <WebFormDelegate> {
-    _UIWebFormDelegateEditedFormsMap *_editedForms;
-    UIWebBrowserView *_webBrowserView;
+    _UIWebFormDelegateEditedFormsMap * _editedForms;
+    UIWebBrowserView * _webBrowserView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

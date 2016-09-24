@@ -3,11 +3,11 @@
  */
 
 @interface FlickrPhotoSetController : UITableViewController <FlickrPhotoSetTableDelegate> {
-    <FlickrComposeOptionViewDelegate> *_delegate;
-    FlickrPhotoSetManager *_manager;
-    long long _photoSetID;
-    NSString *_photoSetTitle;
-    int _selectedIndexRow;
+    <FlickrComposeOptionViewDelegate> * _delegate;
+    FlickrPhotoSetManager * _manager;
+    int  _photoSetID;
+    NSString * _photoSetTitle;
+    int  _selectedIndexRow;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) FlickrPhotoSetManager *manager;
-@property (nonatomic, readonly) long long photoSetID;
+@property (nonatomic, readonly) int photoSetID;
 @property (nonatomic, readonly) NSString *photoSetTitle;
 @property (nonatomic) int selectedIndexRow;
 @property (readonly) Class superclass;
@@ -25,7 +25,7 @@
 - (id)initWithPhotoSetManager:(id)arg1;
 - (void)loadView;
 - (id)manager;
-- (long long)photoSetID;
+- (int)photoSetID;
 - (id)photoSetTitle;
 - (void)reloadData;
 - (int)selectedIndexRow;

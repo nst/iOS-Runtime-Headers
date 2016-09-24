@@ -3,9 +3,9 @@
  */
 
 @interface TSCHTrendDataPoint : NSObject {
-    double mDataPointX;
-    double mDataPointY;
-    unsigned int mGroupIndex;
+    double  mDataPointX;
+    double  mDataPointY;
+    unsigned int  mGroupIndex;
 }
 
 - (double)dataPointX;

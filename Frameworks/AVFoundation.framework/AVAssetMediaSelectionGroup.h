@@ -3,12 +3,12 @@
  */
 
 @interface AVAssetMediaSelectionGroup : AVMediaSelectionGroup {
-    AVAsset *_asset;
-    AVMediaSelectionOption *_defaultOption;
-    NSDictionary *_dictionary;
-    NSArray *_groupMediaCharacteristics;
-    BOOL _isStreamingGroup;
-    NSArray *_options;
+    AVAsset * _asset;
+    AVMediaSelectionOption * _defaultOption;
+    NSDictionary * _dictionary;
+    NSArray * _groupMediaCharacteristics;
+    BOOL  _isStreamingGroup;
+    NSArray * _options;
 }
 
 - (id)_groupMediaCharacteristics;

@@ -3,13 +3,14 @@
  */
 
 @interface ACDDatabase : NSObject {
-    NSManagedObjectContext *_context;
-    id _contextDidSaveNotificationObserver;
-    NSManagedObjectModel *_model;
-    NSString *_path;
-    NSPersistentStore *_store;
+    NSManagedObjectContext * _context;
+    id  _contextDidSaveNotificationObserver;
+    NSManagedObjectModel * _model;
+    NSString * _path;
+    NSPersistentStore * _store;
 }
 
+@property (nonatomic) int keychainVersion;
 @property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, readonly) NSString *path;
 @property (nonatomic) int version;
@@ -41,6 +42,7 @@
 - (id)initWithDefaultPath;
 - (id)initWithPath:(id)arg1;
 - (id)initWithTimeMachineHomeFolderPath:(id)arg1;
+- (int)keychainVersion;
 - (id)managedObjectContext;
 - (id)managedObjectIDForURI:(id)arg1;
 - (id)objectForObjectURI:(id)arg1;
@@ -48,6 +50,7 @@
 - (BOOL)saveWithError:(id*)arg1;
 - (BOOL)saveWithError:(id*)arg1 rollbackOnFailure:(BOOL)arg2;
 - (void)setAccountPropertyWithKey:(id)arg1 value:(id)arg2 owner:(id)arg3;
+- (void)setKeychainVersion:(int)arg1;
 - (void)setVersion:(int)arg1;
 - (int)version;
 

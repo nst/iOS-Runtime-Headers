@@ -3,7 +3,7 @@
  */
 
 @interface NEHasher : NSCoder {
-    struct CC_SHA1state_st { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8[16]; int x9; } *_sha1Context;
+    struct CC_SHA1state_st { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8[16]; int x9; } * _sha1Context;
 }
 
 @property struct CC_SHA1state_st { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8[16]; int x9; }*sha1Context;
@@ -19,7 +19,7 @@
 - (double)decodeDoubleForKey:(id)arg1;
 - (float)decodeFloatForKey:(id)arg1;
 - (int)decodeInt32ForKey:(id)arg1;
-- (long long)decodeInt64ForKey:(id)arg1;
+- (int)decodeInt64ForKey:(id)arg1;
 - (int)decodeIntForKey:(id)arg1;
 - (int)decodeIntegerForKey:(id)arg1;
 - (id)decodeObjectForKey:(id)arg1;
@@ -35,7 +35,7 @@
 - (void)encodeDouble:(double)arg1 forKey:(id)arg2;
 - (void)encodeFloat:(float)arg1 forKey:(id)arg2;
 - (void)encodeInt32:(int)arg1 forKey:(id)arg2;
-- (void)encodeInt64:(long long)arg1 forKey:(id)arg2;
+- (void)encodeInt64:(int)arg1 forKey:(id)arg2;
 - (void)encodeInt:(int)arg1 forKey:(id)arg2;
 - (void)encodeInteger:(int)arg1 forKey:(id)arg2;
 - (void)encodeObject:(id)arg1 forKey:(id)arg2;

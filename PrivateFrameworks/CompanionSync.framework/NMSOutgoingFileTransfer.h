@@ -3,16 +3,16 @@
  */
 
 @interface NMSOutgoingFileTransfer : NSObject <NMSDeviceTargetable, NMSObfuscatableDescriptionProviding> {
-    NSDictionary *_extraIDSOptions;
-    NSURL *_fileURL;
-    NSString *_idsIdentifier;
-    NMSMessageCenter *_messageCenter;
-    NSDictionary *_metadata;
-    id _pbHeaderInfo;
-    NSDictionary *_persistentUserInfo;
-    unsigned int _priority;
-    double _sendTimeout;
-    NSSet *targetDeviceIDs;
+    NSDictionary * _extraIDSOptions;
+    NSURL * _fileURL;
+    NSString * _idsIdentifier;
+    NMSMessageCenter * _messageCenter;
+    NSDictionary * _metadata;
+    id  _pbHeaderInfo;
+    NSDictionary * _persistentUserInfo;
+    unsigned int  _priority;
+    double  _sendTimeout;
+    NSSet * targetDeviceIDs;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,9 +3,9 @@
  */
 
 @interface AVConcreteValueTiming : AVValueTiming {
-    double _rate;
-    double _timeStamp;
-    double _value;
+    double  _rate;
+    double  _timeStamp;
+    double  _value;
 }
 
 - (struct { double x1; double x2; })_timing;

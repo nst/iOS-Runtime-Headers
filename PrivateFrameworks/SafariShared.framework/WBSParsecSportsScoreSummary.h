@@ -3,8 +3,8 @@
  */
 
 @interface WBSParsecSportsScoreSummary : WBSParsecModel {
-    NSArray *_images;
-    NSString *_subtitle;
+    NSArray * _images;
+    NSString * _subtitle;
 }
 
 @property (nonatomic, readonly, copy) NSArray *images;

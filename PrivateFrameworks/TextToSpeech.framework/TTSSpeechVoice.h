@@ -2,32 +2,40 @@
    Image: /System/Library/PrivateFrameworks/TextToSpeech.framework/TextToSpeech
  */
 
-@interface TTSSpeechVoice : NSObject <NSSecureCoding> {
-    int _footprint;
-    int _gender;
-    NSString *_identifier;
-    BOOL _isCustomVoice;
-    BOOL _isDefault;
-    NSString *_language;
-    NSString *_name;
-    <TTSSpeechService> *_service;
-    BOOL _useVoiceBooster;
+@interface TTSSpeechVoice : NSObject <NSCopying, NSSecureCoding> {
+    BOOL  _canBeDownloaded;
+    int  _footprint;
+    int  _gender;
+    NSString * _identifier;
+    BOOL  _isCombinedFootprint;
+    BOOL  _isDefault;
+    NSString * _language;
+    NSString * _name;
+    NSString * _nonCombinedVoiceId;
+    <TTSSpeechService> * _service;
+    NSString * _serviceIdentifier;
+    BOOL  _useVoiceBooster;
 }
 
+@property (nonatomic) BOOL canBeDownloaded;
 @property (nonatomic) int footprint;
 @property (nonatomic) int gender;
 @property (nonatomic, retain) NSString *identifier;
-@property (nonatomic) BOOL isCustomVoice;
+@property (nonatomic, readonly) BOOL isCombinedFootprint;
 @property (nonatomic, readonly) BOOL isDefault;
 @property (nonatomic, retain) NSString *language;
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic, readonly) BOOL useVoiceBooster;
+@property (nonatomic, retain) NSString *nonCombinedVoiceId;
+@property (nonatomic, retain) NSString *serviceIdentifier;
+@property (nonatomic) BOOL useVoiceBooster;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_initializeVoiceBooster;
 - (void)_routeChange:(id)arg1;
+- (BOOL)canBeDownloaded;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (int)footprint;
@@ -35,19 +43,24 @@
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isCustomVoice;
+- (BOOL)isCombinedFootprint;
 - (BOOL)isDefault;
 - (BOOL)isEqual:(id)arg1;
 - (id)language;
 - (id)name;
+- (id)nonCombinedVoiceId;
 - (id)service;
+- (id)serviceIdentifier;
+- (void)setCanBeDownloaded:(BOOL)arg1;
 - (void)setFootprint:(int)arg1;
 - (void)setGender:(int)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setIsCustomVoice:(BOOL)arg1;
 - (void)setLanguage:(id)arg1;
 - (void)setName:(id)arg1;
+- (void)setNonCombinedVoiceId:(id)arg1;
 - (void)setService:(id)arg1;
+- (void)setServiceIdentifier:(id)arg1;
+- (void)setUseVoiceBooster:(BOOL)arg1;
 - (BOOL)useVoiceBooster;
 
 @end

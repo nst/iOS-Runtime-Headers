@@ -3,7 +3,7 @@
  */
 
 @interface NSSQLFetchDictionaryCountIntermediate : NSSQLStatementIntermediate {
-    NSSQLFetchIntermediate *_realFetch;
+    NSSQLFetchIntermediate * _realFetch;
 }
 
 - (void)dealloc;

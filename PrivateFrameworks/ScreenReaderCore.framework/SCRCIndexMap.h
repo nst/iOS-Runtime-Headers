@@ -3,7 +3,7 @@
  */
 
 @interface SCRCIndexMap : NSObject <NSCoding, NSCopying> {
-    struct __CFDictionary { } *_map;
+    struct __CFDictionary { } * _map;
 }
 
 - (unsigned int*)_createIndexesWithSize:(unsigned int*)arg1;

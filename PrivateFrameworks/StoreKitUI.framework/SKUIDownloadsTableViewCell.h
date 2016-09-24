@@ -3,7 +3,7 @@
  */
 
 @interface SKUIDownloadsTableViewCell : UITableViewCell {
-    SKUIDownloadsCellView *_cellView;
+    SKUIDownloadsCellView * _cellView;
 }
 
 @property (nonatomic, readonly) SKUIDownloadsCellView *cellView;

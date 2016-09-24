@@ -3,7 +3,7 @@
  */
 
 @interface MusicPlayableContentDelegate : NSObject <MPPlayableContentDelegate> {
-    MusicAVPlayer *_player;
+    MusicAVPlayer * _player;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,11 +3,11 @@
  */
 
 @interface SUActivityItemProvider : UIActivityItemProvider {
-    UIActivity *_activity;
-    <SUActivityItemProviderDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    id _lastProvidedItem;
-    UIImage *_previewImage;
+    UIActivity * _activity;
+    <SUActivityItemProviderDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    id  _lastProvidedItem;
+    UIImage * _previewImage;
 }
 
 @property <SUActivityItemProviderDelegate> *delegate;

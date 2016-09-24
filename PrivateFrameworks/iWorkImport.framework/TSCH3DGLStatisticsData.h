@@ -3,9 +3,9 @@
  */
 
 @interface TSCH3DGLStatisticsData : NSObject {
-    unsigned int mFrames;
-    TSCH3DGLPointerCountedSet *mGeometryUseCount;
-    TSCH3DGLPointerCountedSet *mShadersUseCount;
+    unsigned int  mFrames;
+    TSCH3DGLPointerCountedSet * mGeometryUseCount;
+    TSCH3DGLPointerCountedSet * mShadersUseCount;
 }
 
 @property (nonatomic) unsigned int frames;

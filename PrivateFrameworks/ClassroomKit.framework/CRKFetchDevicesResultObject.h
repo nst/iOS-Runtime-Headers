@@ -3,7 +3,7 @@
  */
 
 @interface CRKFetchDevicesResultObject : CATTaskResultObject {
-    NSArray *_connectedDevices;
+    NSArray * _connectedDevices;
 }
 
 @property (nonatomic, copy) NSArray *connectedDevices;
@@ -12,7 +12,6 @@
 
 - (void).cxx_destruct;
 - (id)connectedDevices;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setConnectedDevices:(id)arg1;

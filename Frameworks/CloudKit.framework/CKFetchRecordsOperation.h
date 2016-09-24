@@ -3,26 +3,31 @@
  */
 
 @interface CKFetchRecordsOperation : CKDatabaseOperation {
-    NSArray *_desiredKeys;
-    NSDictionary *_desiredPackageFileIndices;
-    id /* block */ _fetchRecordsCompletionBlock;
-    BOOL _isFetchCurrentUserOperation;
-    id /* block */ _perRecordCompletionBlock;
-    id /* block */ _perRecordProgressBlock;
-    NSMutableDictionary *_recordErrors;
-    NSArray *_recordIDs;
-    NSDictionary *_recordIDsToETags;
-    NSMutableDictionary *_recordIDsToRecords;
-    NSDictionary *_recordIDsToVersionETags;
-    BOOL _shouldFetchAssetContent;
-    NSMutableDictionary *_signaturesOfAssetsByRecordIDAndKey;
-    NSDictionary *_webSharingIdentityDataByRecordID;
+    NSMutableDictionary * _assetInfoByArrayIndexByRecordKeyByRecordID;
+    NSArray * _desiredKeys;
+    NSDictionary * _desiredPackageFileIndices;
+    id /* block */  _fetchRecordsCompletionBlock;
+    BOOL  _isFetchCurrentUserOperation;
+    NSMutableSet * _packagesToDestroy;
+    id /* block */  _perRecordCompletionBlock;
+    id /* block */  _perRecordProgressBlock;
+    NSMutableDictionary * _recordErrors;
+    NSArray * _recordIDs;
+    NSDictionary * _recordIDsToETags;
+    NSMutableDictionary * _recordIDsToRecords;
+    NSDictionary * _recordIDsToVersionETags;
+    BOOL  _shouldFetchAssetContent;
+    BOOL  _shouldFetchAssetContentInMemory;
+    NSMutableDictionary * _signaturesOfAssetsByRecordIDAndKey;
+    NSDictionary * _webSharingIdentityDataByRecordID;
 }
 
+@property (nonatomic, retain) NSMutableDictionary *assetInfoByArrayIndexByRecordKeyByRecordID;
 @property (nonatomic, copy) NSArray *desiredKeys;
 @property (nonatomic, copy) NSDictionary *desiredPackageFileIndices;
 @property (nonatomic, copy) id /* block */ fetchRecordsCompletionBlock;
 @property (nonatomic) BOOL isFetchCurrentUserOperation;
+@property (nonatomic, retain) NSMutableSet *packagesToDestroy;
 @property (nonatomic, copy) id /* block */ perRecordCompletionBlock;
 @property (nonatomic, copy) id /* block */ perRecordProgressBlock;
 @property (nonatomic, retain) NSMutableDictionary *recordErrors;
@@ -31,6 +36,7 @@
 @property (nonatomic, retain) NSMutableDictionary *recordIDsToRecords;
 @property (nonatomic, retain) NSDictionary *recordIDsToVersionETags;
 @property (nonatomic) BOOL shouldFetchAssetContent;
+@property (nonatomic) BOOL shouldFetchAssetContentInMemory;
 @property (nonatomic, retain) NSMutableDictionary *signaturesOfAssetsByRecordIDAndKey;
 @property (nonatomic, retain) NSDictionary *webSharingIdentityDataByRecordID;
 
@@ -42,7 +48,10 @@
 - (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
-- (unsigned long long)activityStart;
+- (id)activityCreate;
+- (id)assetInfoByArrayIndexByRecordKeyByRecordID;
+- (id)assetInfoForRecordID:(id)arg1 recordKey:(id)arg2 arrayIndex:(id)arg3;
+- (BOOL)claimPackagesInRecord:(id)arg1 error:(id*)arg2;
 - (id)desiredKeys;
 - (id)desiredPackageFileIndices;
 - (id /* block */)fetchRecordsCompletionBlock;
@@ -52,6 +61,7 @@
 - (id)init;
 - (id)initWithRecordIDs:(id)arg1;
 - (BOOL)isFetchCurrentUserOperation;
+- (id)packagesToDestroy;
 - (id /* block */)perRecordCompletionBlock;
 - (id /* block */)perRecordProgressBlock;
 - (void)performCKOperation;
@@ -60,10 +70,12 @@
 - (id)recordIDsToETags;
 - (id)recordIDsToRecords;
 - (id)recordIDsToVersionETags;
+- (void)setAssetInfoByArrayIndexByRecordKeyByRecordID:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;
 - (void)setDesiredPackageFileIndices:(id)arg1;
 - (void)setFetchRecordsCompletionBlock:(id /* block */)arg1;
 - (void)setIsFetchCurrentUserOperation:(BOOL)arg1;
+- (void)setPackagesToDestroy:(id)arg1;
 - (void)setPerRecordCompletionBlock:(id /* block */)arg1;
 - (void)setPerRecordProgressBlock:(id /* block */)arg1;
 - (void)setRecordErrors:(id)arg1;
@@ -72,9 +84,11 @@
 - (void)setRecordIDsToRecords:(id)arg1;
 - (void)setRecordIDsToVersionETags:(id)arg1;
 - (void)setShouldFetchAssetContent:(BOOL)arg1;
+- (void)setShouldFetchAssetContentInMemory:(BOOL)arg1;
 - (void)setSignaturesOfAssetsByRecordIDAndKey:(id)arg1;
 - (void)setWebSharingIdentityDataByRecordID:(id)arg1;
 - (BOOL)shouldFetchAssetContent;
+- (BOOL)shouldFetchAssetContentInMemory;
 - (id)signaturesOfAssetsByRecordIDAndKey;
 - (id)webSharingIdentityDataByRecordID;
 

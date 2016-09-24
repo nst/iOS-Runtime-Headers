@@ -3,14 +3,14 @@
  */
 
 @interface SLWeiboSession : NSObject <SLMicroBlogSheetDelegate, SLWeiboClientSessionProtocol> {
-    id /* block */ _connectionResetBlock;
-    CLInUseAssertion *_locationInUseAssertion;
-    id /* block */ _locationInformationChangedBlock;
-    NSCache *_profileImageCache;
-    SLRemoteSessionProxy<SLWeiboRemoteSessionProtocol> *_remoteSession;
-    NSObject<OS_dispatch_queue> *_remoteSessionQueue;
-    NSObject<OS_dispatch_semaphore> *_remoteSessionQueueSemaphore;
-    NSBundle *_serviceBundle;
+    id /* block */  _connectionResetBlock;
+    CLInUseAssertion * _locationInUseAssertion;
+    id /* block */  _locationInformationChangedBlock;
+    NSCache * _profileImageCache;
+    SLRemoteSessionProxy<SLWeiboRemoteSessionProtocol> * _remoteSession;
+    NSObject<OS_dispatch_queue> * _remoteSessionQueue;
+    NSObject<OS_dispatch_semaphore> * _remoteSessionQueueSemaphore;
+    NSBundle * _serviceBundle;
 }
 
 @property (nonatomic, copy) id /* block */ connectionResetBlock;

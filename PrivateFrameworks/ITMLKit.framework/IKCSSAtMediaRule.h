@@ -3,7 +3,7 @@
  */
 
 @interface IKCSSAtMediaRule : IKCSSRule {
-    IKCSSMediaQuery *_mediaQuery;
+    IKCSSMediaQuery * _mediaQuery;
 }
 
 - (void).cxx_destruct;

@@ -3,7 +3,7 @@
  */
 
 @interface SKUIDynamicShelfMenuBarViewElement : SKUIShelfMenuBarViewElement <SKUIDynamicShelfViewElement> {
-    SKUIViewElement *_cellTemplateViewElement;
+    SKUIViewElement * _cellTemplateViewElement;
 }
 
 @property (nonatomic, readonly) SKUIViewElement *cellTemplateViewElement;

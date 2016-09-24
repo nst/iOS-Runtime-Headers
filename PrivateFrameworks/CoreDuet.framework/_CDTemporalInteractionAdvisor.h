@@ -3,10 +3,10 @@
  */
 
 @interface _CDTemporalInteractionAdvisor : NSObject {
-    NSMutableDictionary *_consumerToModelMap;
-    NSObject<OS_dispatch_queue> *_dataQueue;
-    int _settingsNotifyToken;
-    _CDInteractionStore *_store;
+    NSMutableDictionary * _consumerToModelMap;
+    NSObject<OS_dispatch_queue> * _dataQueue;
+    int  _settingsNotifyToken;
+    _CDInteractionStore * _store;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *consumerToModelMap;

@@ -3,7 +3,7 @@
  */
 
 @interface SKUICellImageView : UIImageView {
-    UIColor *_cachedBackgroundColor;
+    UIColor * _cachedBackgroundColor;
 }
 
 - (void).cxx_destruct;

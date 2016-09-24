@@ -3,9 +3,9 @@
  */
 
 @interface CalDAVCalendarServerChangedPropertyItem : CoreDAVItem {
-    NSMutableSet *_changedParameters;
-    NSString *_nameAttribute;
-    NSString *_typeAttribute;
+    NSMutableSet * _changedParameters;
+    NSString * _nameAttribute;
+    NSString * _typeAttribute;
 }
 
 @property (nonatomic, retain) NSMutableSet *changedParameters;

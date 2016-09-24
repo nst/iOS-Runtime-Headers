@@ -7,7 +7,7 @@
 
 - (float)angle;
 - (float)scale;
-- (struct CGPoint { float x1; float x2; })translation;
+- (struct CGPoint { double x1; double x2; })translation;
 - (float)velocity;
 
 @end

@@ -3,37 +3,64 @@
  */
 
 @interface HMDHomeData : NSObject {
-    NSArray *_accessories;
-    unsigned int _assistantGenerationCounter;
-    NSUUID *_dataTag;
-    int _dataVersion;
-    NSArray *_homes;
-    NSArray *_incomingInvitations;
-    NSArray *_pendingUserManagementOperations;
-    NSUUID *_primaryHomeUUID;
-    NSArray *_uuidsOfRemovedHomes;
+    BOOL  _accessAllowedWhenLocked;
+    NSArray * _accessories;
+    HMDAccount * _account;
+    HMDApplicationData * _applicationData;
+    unsigned int  _assistantGenerationCounter;
+    NSString * _currentDevice;
+    NSUUID * _dataTag;
+    int  _dataVersion;
+    NSDictionary * _demoAccessories;
+    BOOL  _demoFinalized;
+    NSArray * _homes;
+    NSArray * _incomingInvitations;
+    NSUUID * _lastCurrentHomeUUID;
+    NSArray * _pendingReasonSaved;
+    NSArray * _pendingUserManagementOperations;
+    NSUUID * _primaryHomeUUID;
+    int  _residentEnabledState;
+    NSArray * _uuidsOfRemovedHomes;
 }
 
+@property (nonatomic, readonly) BOOL accessAllowedWhenLocked;
 @property (nonatomic, readonly, copy) NSArray *accessories;
+@property (nonatomic, readonly) HMDAccount *account;
+@property (nonatomic, readonly, copy) HMDApplicationData *applicationData;
 @property (nonatomic, readonly) unsigned int assistantGenerationCounter;
+@property (nonatomic, readonly, copy) NSString *currentDevice;
 @property (nonatomic, readonly, copy) NSUUID *dataTag;
 @property (nonatomic, readonly) int dataVersion;
+@property (nonatomic, readonly, copy) NSDictionary *demoAccessories;
+@property (nonatomic, readonly) BOOL demoFinalized;
 @property (nonatomic, readonly, copy) NSArray *homes;
 @property (nonatomic, readonly, copy) NSArray *incomingInvitations;
+@property (nonatomic, readonly, copy) NSUUID *lastCurrentHomeUUID;
+@property (nonatomic, readonly, copy) NSArray *pendingReasonSaved;
 @property (nonatomic, readonly, copy) NSArray *pendingUserManagementOperations;
 @property (nonatomic, readonly, copy) NSUUID *primaryHomeUUID;
+@property (nonatomic, readonly) int residentEnabledState;
 @property (nonatomic, readonly, copy) NSArray *uuidsOfRemovedHomes;
 
 - (void).cxx_destruct;
+- (BOOL)accessAllowedWhenLocked;
 - (id)accessories;
+- (id)account;
+- (id)applicationData;
 - (unsigned int)assistantGenerationCounter;
+- (id)currentDevice;
 - (id)dataTag;
 - (int)dataVersion;
+- (id)demoAccessories;
+- (BOOL)demoFinalized;
 - (id)homes;
 - (id)incomingInvitations;
-- (id)initWithHomes:(id)arg1 accessories:(id)arg2 primaryHomeUUID:(id)arg3 dataVersion:(int)arg4 dataTag:(id)arg5 uuidsOfRemovedHomes:(id)arg6 incomingInvitations:(id)arg7 assistantGenerationCounter:(unsigned int)arg8 pendingUserManagementOperations:(id)arg9;
+- (id)initWithHomes:(id)arg1 accessories:(id)arg2 primaryHomeUUID:(id)arg3 lastCurrentHomeUUID:(id)arg4 dataVersion:(int)arg5 dataTag:(id)arg6 uuidsOfRemovedHomes:(id)arg7 incomingInvitations:(id)arg8 assistantGenerationCounter:(unsigned int)arg9 currentDevice:(id)arg10 pendingReasonSaved:(id)arg11 pendingUserManagementOperations:(id)arg12 applicationData:(id)arg13 residentEnabledState:(int)arg14 account:(id)arg15 accessAllowedWhenLocked:(BOOL)arg16 demoAccessories:(id)arg17 demoFinalized:(BOOL)arg18;
+- (id)lastCurrentHomeUUID;
+- (id)pendingReasonSaved;
 - (id)pendingUserManagementOperations;
 - (id)primaryHomeUUID;
+- (int)residentEnabledState;
 - (id)uuidsOfRemovedHomes;
 
 @end

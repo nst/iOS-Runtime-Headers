@@ -3,14 +3,14 @@
  */
 
 @interface _SFPageLoadErrorController : NSObject {
-    NSMutableArray *_alerts;
-    NSTimer *_crashCountResetTimer;
-    unsigned int _crashesSinceLastSuccessfulLoad;
-    <_SFPageLoadErrorControllerDelegate> *_delegate;
-    NSURLRequest *_failedRequest;
-    BOOL _reloadAfterResume;
-    BOOL _reloadingFailedRequest;
-    WKWebView *_webView;
+    NSMutableArray * _alerts;
+    NSTimer * _crashCountResetTimer;
+    unsigned int  _crashesSinceLastSuccessfulLoad;
+    <_SFPageLoadErrorControllerDelegate> * _delegate;
+    NSURLRequest * _failedRequest;
+    BOOL  _reloadAfterResume;
+    BOOL  _reloadingFailedRequest;
+    WKWebView * _webView;
 }
 
 @property (nonatomic, readonly) unsigned int crashesSinceLastSuccessfulLoad;

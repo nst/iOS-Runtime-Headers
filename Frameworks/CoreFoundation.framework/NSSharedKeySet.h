@@ -3,20 +3,19 @@
  */
 
 @interface NSSharedKeySet : NSObject <NSCopying, NSFastEnumeration, NSSecureCoding> {
-    unsigned int _M;
-    double _c;
-    unsigned int _factor;
-    char *_g;
-    id *_keys;
-    unsigned int _numKey;
-    void *_rankTable;
-    unsigned int *_seeds;
-    unsigned char _select;
-    NSSharedKeySet *_subSharedKeySet;
+    unsigned int  _M;
+    unsigned char  _algorithmType;
+    unsigned int  _factor;
+    char * _g;
+    id * _keys;
+    unsigned int  _numKey;
+    void * _rankTable;
+    unsigned int * _seeds;
+    unsigned char  _select;
+    NSSharedKeySet * _subSharedKeySet;
 }
 
 @property unsigned int M;
-@property double c;
 @property unsigned int factor;
 @property char *g;
 @property id*keys;
@@ -31,14 +30,13 @@
 
 - (unsigned int)M;
 - (id)allKeys;
-- (double)c;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
+- (id)debugDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)factor;
-- (void)finalize;
 - (char *)g;
 - (unsigned int)hash;
 - (unsigned int)indexForKey:(id)arg1;
@@ -55,7 +53,6 @@
 - (void*)rankTable;
 - (unsigned int*)seeds;
 - (unsigned char)select;
-- (void)setC:(double)arg1;
 - (void)setFactor:(unsigned int)arg1;
 - (void)setG:(char *)arg1;
 - (void)setKeys:(id*)arg1;

@@ -3,11 +3,11 @@
  */
 
 @interface NSConcretePointerArray : NSPointerArray {
-    unsigned int capacity;
-    unsigned int count;
-    unsigned int mutations;
-    BOOL needsCompaction;
-    unsigned int options;
+    unsigned int  capacity;
+    unsigned int  count;
+    unsigned int  mutations;
+    BOOL  needsCompaction;
+    unsigned int  options;
     struct NSSlice { 
         void **items; 
         BOOL wantsStrong; 
@@ -21,7 +21,6 @@
         BOOL pointerPersonality; 
         BOOL integerPersonality; 
         BOOL simpleReadClear; 
-        NSWeakCallback *callback; 
         int (*sizeFunction)(); 
         int (*hashFunction)(); 
         int (*isEqualFunction)(); 
@@ -33,10 +32,9 @@
         int (*readAt)(); 
         int (*clearAt)(); 
         int (*storeAt)(); 
-    } slice;
+    }  slice;
 }
 
-- (void)_initBlock;
 - (void)_markNeedsCompaction;
 - (void)addPointer:(void*)arg1;
 - (void)arrayGrow:(unsigned int)arg1;
@@ -47,7 +45,6 @@
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (void)finalize;
 - (unsigned int)hash;
 - (unsigned int)indexOfPointer:(void*)arg1;
 - (id)init;

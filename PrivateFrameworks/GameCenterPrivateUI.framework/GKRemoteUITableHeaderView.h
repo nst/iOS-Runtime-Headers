@@ -3,14 +3,14 @@
  */
 
 @interface GKRemoteUITableHeaderView : UIView <RUIPageAccessory> {
-    NSDictionary *_attributes;
-    GKButton *_button;
-    <GKRemoteUIAuxiliaryViewDelegate> *_delegate;
-    float _height;
-    GKLabel *_label;
-    int _layoutStyle;
-    NSArray *_replaceableConstraints;
-    GKLabel *_subLabel;
+    NSDictionary * _attributes;
+    GKButton * _button;
+    <GKRemoteUIAuxiliaryViewDelegate> * _delegate;
+    double  _height;
+    GKLabel * _label;
+    int  _layoutStyle;
+    NSArray * _replaceableConstraints;
+    GKLabel * _subLabel;
 }
 
 @property (nonatomic, retain) NSDictionary *attributes;
@@ -19,7 +19,7 @@
 @property (nonatomic) <GKRemoteUIAuxiliaryViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) float height;
+@property (nonatomic) double height;
 @property (nonatomic, retain) GKLabel *label;
 @property (nonatomic) int layoutStyle;
 @property (nonatomic, retain) NSArray *replaceableConstraints;
@@ -38,7 +38,7 @@
 - (id)delegate;
 - (float)height;
 - (id)initWithAttributes:(id)arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (id)label;
 - (float)labelBaselineOffset;
 - (float)labelBaselineToButtonBaselineOffset;
@@ -57,7 +57,7 @@
 - (void)setLayoutStyle:(int)arg1;
 - (void)setReplaceableConstraints:(id)arg1;
 - (void)setSubLabel:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)subLabel;
 
 @end

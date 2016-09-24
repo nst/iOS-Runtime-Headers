@@ -3,7 +3,7 @@
  */
 
 @interface IKJSLegacyPlayer : IKJSObject <IKJSLegacyPlayer, JSExport> {
-    <IKJSPlayerAppBridge> *_appBridge;
+    <IKJSPlayerAppBridge> * _appBridge;
 }
 
 @property (nonatomic) <IKJSPlayerAppBridge> *appBridge;

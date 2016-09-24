@@ -2,17 +2,18 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDXpcServer : HMMessageDispatcher <HMDApplicationMonitorDelegate, HMMessageReceiver, NSXPCListenerDelegate> {
-    NSObject<OS_dispatch_group> *_activeMessageTracker;
-    HMDApplicationMonitor *_appMonitor;
-    HMDApplicationRegistry *_appRegistry;
-    HMDBackgroundAppMessageFilter *_backgroundAppMsgFilter;
-    HMMessageDispatcher *_notificationRelayDispatcher;
-    HMDIDSMessageDispatcher *_recvDispatcher;
-    NSUUID *_uuid;
-    NSMutableSet *_xpcClients;
-    NSXPCListener *_xpcListener;
-    NSObject<OS_dispatch_queue> *_xpcWorkQueue;
+@interface HMDXpcServer : HMFMessageDispatcher <HMDApplicationMonitorDelegate, HMFMessageReceiver, NSXPCListenerDelegate> {
+    NSObject<OS_dispatch_group> * _activeMessageTracker;
+    HMDApplicationMonitor * _appMonitor;
+    HMDApplicationRegistry * _appRegistry;
+    HMDBackgroundAppMessageFilter * _backgroundAppMsgFilter;
+    HMDLostModeMessageFilter * _lostModeMessageFilter;
+    HMFMessageDispatcher * _notificationRelayDispatcher;
+    HMDCentralMessageDispatcher * _recvDispatcher;
+    NSUUID * _uuid;
+    NSMutableSet * _xpcClients;
+    NSXPCListener * _xpcListener;
+    NSObject<OS_dispatch_queue> * _xpcWorkQueue;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *activeMessageTracker;
@@ -22,10 +23,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) HMDLostModeMessageFilter *lostModeMessageFilter;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
-@property (nonatomic, retain) HMMessageDispatcher *notificationRelayDispatcher;
-@property (nonatomic, retain) HMDIDSMessageDispatcher *recvDispatcher;
+@property (nonatomic, retain) HMFMessageDispatcher *notificationRelayDispatcher;
+@property (nonatomic, retain) HMDCentralMessageDispatcher *recvDispatcher;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSUUID *uuid;
 @property (nonatomic, retain) NSMutableSet *xpcClients;
@@ -36,33 +38,34 @@
 - (void)_handleResumeXPCConnectionRequest:(id)arg1;
 - (void)_handleSuspendXPCConnectionRequest:(id)arg1;
 - (void)_registerForMessages;
-- (void)_sendMessage:(id)arg1 target:(id)arg2 andInvokeCompletionHandler:(id /* block */)arg3 withDeliveryCompletion:(id /* block */)arg4;
+- (void)_sendMessage:(id)arg1 andInvokeCompletionHandler:(id /* block */)arg2 withDeliveryCompletion:(id /* block */)arg3;
 - (id)activeMessageTracker;
 - (id)appMonitor;
 - (id)appRegistry;
 - (void)applicationMonitorDidChangeActiveHomeKitAppStatus:(BOOL)arg1;
 - (void)applicationMonitorDidChangeAppState:(id)arg1;
 - (id)backgroundAppMsgFilter;
+- (void)dealloc;
 - (void)deregisterForMessage:(id)arg1 receiver:(id)arg2;
 - (void)deregisterReceiver:(id)arg1;
 - (void)dispatchMessage:(id)arg1 target:(id)arg2;
 - (id)endPoint;
 - (id)initWithQueue:(id)arg1 receiveDispatcher:(id)arg2 notificationRelayDispatcher:(id)arg3 messageFilterChain:(id)arg4 registerAsMachService:(BOOL)arg5;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (id)lostModeMessageFilter;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
 - (id)notificationRelayDispatcher;
 - (id)recvDispatcher;
 - (void)registerForMessage:(id)arg1 receiver:(id)arg2 messageHandler:(id /* block */)arg3;
 - (void)reset;
-- (void)sendMessage:(id)arg1 target:(id)arg2;
-- (void)sendMessage:(id)arg1 target:(id)arg2 andInvokeCompletionHandler:(id /* block */)arg3;
+- (void)sendMessage:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)sendMessage:(id)arg1 target:(id)arg2 completionQueue:(id)arg3 deliveryCompletionHandler:(id /* block */)arg4;
-- (void)sendMessage:(id)arg1 target:(id)arg2 responseQueue:(id)arg3 responseHandler:(id /* block */)arg4;
 - (void)setActiveMessageTracker:(id)arg1;
 - (void)setAppMonitor:(id)arg1;
 - (void)setAppRegistry:(id)arg1;
 - (void)setBackgroundAppMsgFilter:(id)arg1;
+- (void)setLostModeMessageFilter:(id)arg1;
 - (void)setNotificationRelayDispatcher:(id)arg1;
 - (void)setRecvDispatcher:(id)arg1;
 - (void)setUuid:(id)arg1;

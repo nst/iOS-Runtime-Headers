@@ -5,7 +5,7 @@
 @interface NSConcreteArrayChanges : NSArrayChanges {
     /* Warning: unhandled struct encoding: '{?="objects"@"isMutable"c"list"{?="buffer"^{_NSOrderedChange}"availableIndex"I"capacity"I"changesIndex"I"lastIndex"I"count"I}}' */ struct { 
         id objects; 
-    } _changes;
+    }  _changes;
 }
 
 - (void)_enumerateChanges:(unsigned int)arg1 stop:(BOOL*)arg2 usingBlock:(id /* block */)arg3;
@@ -18,7 +18,6 @@
 - (void)dealloc;
 - (void)enumerateChanges:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
 - (void)enumerateChangesUsingBlock:(id /* block */)arg1;
-- (void)finalize;
 - (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)init;
 - (id)initWithCapacity:(unsigned int)arg1;

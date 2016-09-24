@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DStrokePatternTexture : TSCH3DResource {
-    TSDStroke *mStroke;
+    TSDStroke * mStroke;
 }
 
 @property (nonatomic, readonly) TSDStroke *stroke;

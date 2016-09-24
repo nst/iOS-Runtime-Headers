@@ -3,15 +3,20 @@
  */
 
 @interface IMAttachment : NSObject {
-    NSString *_guid;
-    NSString *_path;
+    NSDate * _createdDate;
+    NSString * _guid;
+    BOOL  _isSticker;
+    NSString * _path;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
+- (id)createdDate;
 - (id)description;
 - (id)fileTransfer;
 - (id)guid;
 - (id)initWithPath:(id)arg1 guid:(id)arg2;
+- (id)initWithPath:(id)arg1 guid:(id)arg2 createdDate:(id)arg3 isSticker:(BOOL)arg4;
+- (BOOL)isSticker;
 - (id)path;
 
 @end

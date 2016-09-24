@@ -3,7 +3,7 @@
  */
 
 @interface SSXPCData : NSData {
-    NSObject<OS_xpc_object> *_xpcData;
+    NSObject<OS_xpc_object> * _xpcData;
 }
 
 @property (nonatomic, readonly) NSObject<OS_xpc_object> *xpcData;

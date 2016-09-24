@@ -3,9 +3,9 @@
  */
 
 @interface PUVideoEditScrubberController : NSObject <PLSlalomRegionEditorDelegate, UIMovieScrubberDataSource, UIMovieScrubberDelegate> {
-    UIMovieScrubber *__movieScrubber;
-    PLSlalomRegionEditor *__slomoRegionEditor;
-    <PUVideoEditScrubberControllerDelegate> *_delegate;
+    UIMovieScrubber * __movieScrubber;
+    PLSlalomRegionEditor * __slomoRegionEditor;
+    <PUVideoEditScrubberControllerDelegate> * _delegate;
     struct { 
         BOOL respondsToDidBeginScrubbing; 
         BOOL respondsToDidEndScrubbing; 
@@ -15,15 +15,16 @@
         BOOL respondsToDidBeginEditingSlomoRegions; 
         BOOL respondsToDidEndEditingSlomoRegions; 
         BOOL respondsToSlomoRegionsDidChangewithHandle; 
-    } _delegateFlags;
-    UIView *_scrubberView;
-    BOOL _showsSlomoRegionEditor;
-    PUVideoEditScrubberImageSource *_thumbnailSource;
-    double _videoDuration;
+    }  _delegateFlags;
+    double  _edgeInset;
+    UIView * _scrubberView;
+    BOOL  _showsSlomoRegionEditor;
+    PUVideoEditScrubberImageSource * _thumbnailSource;
+    double  _videoDuration;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _videoSize;
+        double width; 
+        double height; 
+    }  _videoSize;
 }
 
 @property (setter=_setMovieScrubber:, nonatomic, retain) UIMovieScrubber *_movieScrubber;
@@ -32,9 +33,10 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUVideoEditScrubberControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) double edgeInset;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isEditing;
-@property (nonatomic, retain) UIView *scrubberView;
+@property (setter=_setScrubberView:, nonatomic, retain) UIView *scrubberView;
 @property (nonatomic) BOOL showsSlomoRegionEditor;
 @property (nonatomic) double slomoEndTime;
 @property (nonatomic) double slomoMaxTime;
@@ -45,8 +47,8 @@
 @property (nonatomic, retain) PUVideoEditScrubberImageSource *thumbnailSource;
 @property (nonatomic) double trimEndTime;
 @property (nonatomic) double trimStartTime;
-@property (nonatomic) double videoDuration;
-@property (nonatomic) struct CGSize { float x1; float x2; } videoSize;
+@property (setter=_setVideoDuration:, nonatomic) double videoDuration;
+@property (setter=_setVideoSize:, nonatomic) struct CGSize { double x1; double x2; } videoSize;
 
 - (void).cxx_destruct;
 - (void)_createView;
@@ -55,13 +57,14 @@
 - (void)_setScrubberView:(id)arg1;
 - (void)_setSlomoRegionEditor:(id)arg1;
 - (void)_setVideoDuration:(double)arg1;
-- (void)_setVideoSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_setVideoSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)_slomoRegionEditor;
 - (void)_updateSlomoRegionEditor;
 - (double)currentTime;
 - (id)delegate;
+- (float)edgeInset;
 - (id)init;
-- (id)initWithVideoDuration:(double)arg1 andSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)initWithVideoDuration:(double)arg1 andSize:(struct CGSize { double x1; double x2; })arg2;
 - (BOOL)isEditing;
 - (void)movieScrubber:(id)arg1 editingEndValueDidChange:(double)arg2;
 - (void)movieScrubber:(id)arg1 editingStartValueDidChange:(double)arg2;
@@ -83,6 +86,7 @@
 - (void)setCurrentTime:(double)arg1;
 - (void)setCurrentTime:(double)arg1 animated:(BOOL)arg2;
 - (void)setDelegate:(id)arg1;
+- (void)setEdgeInset:(float)arg1;
 - (void)setShowsSlomoRegionEditor:(BOOL)arg1;
 - (void)setSlomoEndTime:(double)arg1;
 - (void)setSlomoMaxTime:(double)arg1;
@@ -108,6 +112,6 @@
 - (double)trimEndTime;
 - (double)trimStartTime;
 - (double)videoDuration;
-- (struct CGSize { float x1; float x2; })videoSize;
+- (struct CGSize { double x1; double x2; })videoSize;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface MFOutgoingMessage : MFMailMessage {
-    MFMessageBody *_messageBody;
-    MFMutableMessageHeaders *_messageHeaders;
+    MFMessageBody * _messageBody;
+    MFMutableMessageHeaders * _messageHeaders;
 }
 
 - (void)dealloc;

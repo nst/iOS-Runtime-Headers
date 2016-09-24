@@ -3,11 +3,11 @@
  */
 
 @interface MPRadioStationRemotePlaybackQueue : MPRemotePlaybackQueue {
-    long long _stationID;
-    NSString *_stationStringID;
+    int  _stationID;
+    NSString * _stationStringID;
 }
 
-@property (nonatomic, readonly) long long stationID;
+@property (nonatomic, readonly) int stationID;
 @property (nonatomic, readonly) NSString *stationStringID;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)initWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue { }*)arg1;
-- (long long)stationID;
+- (int)stationID;
 - (id)stationStringID;
 - (BOOL)verifyWithError:(id*)arg1;
 

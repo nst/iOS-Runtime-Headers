@@ -3,8 +3,8 @@
  */
 
 @interface FBWaitForSceneDestructionTransaction : FBTransaction <FBSceneManagerObserver> {
-    FBSceneManager *_sceneManager;
-    FBScene *_sceneToWaitForDeath;
+    FBSceneManager * _sceneManager;
+    FBScene * _sceneToWaitForDeath;
 }
 
 @property (readonly, copy) NSString *debugDescription;

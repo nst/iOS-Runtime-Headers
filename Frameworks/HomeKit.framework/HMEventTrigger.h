@@ -2,15 +2,24 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMEventTrigger : HMTrigger <NSSecureCoding> {
-    HMThreadSafeMutableArrayCollection *_currentEvents;
-    NSPredicate *_predicate;
+@interface HMEventTrigger : HMTrigger <HFTriggerProtocol, NSSecureCoding> {
+    HMThreadSafeMutableArrayCollection * _currentEvents;
+    NSPredicate * _predicate;
+    NSArray * _recurrences;
 }
 
 @property (nonatomic, retain) HMThreadSafeMutableArrayCollection *currentEvents;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSArray *events;
+@property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSPredicate *predicate;
+@property (nonatomic, readonly, copy) NSArray *recurrences;
+@property (readonly) Class superclass;
 
+// Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
+
++ (BOOL)__validateRecurrences:(id)arg1;
 + (id)_predicateForEvaluatingTriggerWithCharacteristic:(id)arg1 value:(id)arg2 valueFormatString:(id)arg3;
 + (id)_rewritePredicateForClient:(id)arg1 home:(id)arg2;
 + (id)_rewritePredicateForDaemon:(id)arg1 characteristicIsInvalid:(BOOL*)arg2;
@@ -29,6 +38,7 @@
 - (void)_addEvent:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_configure:(id)arg1 uuid:(id)arg2 messageDispatcher:(id)arg3 clientQueue:(id)arg4 delegateCaller:(id)arg5;
 - (void)_handleEventTriggerConditionNotification:(id)arg1;
+- (void)_handleEventTriggerRecurrencesNotification:(id)arg1;
 - (BOOL)_isPredicateValid;
 - (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)_registerNotificationHandlers;
@@ -39,11 +49,14 @@
 - (id)_serializeEvent:(id)arg1;
 - (id)_serializeForAdd;
 - (BOOL)_updateCharacterisiticReferenceInNewEvent:(id)arg1;
+- (void)_updateCharacteristicReference;
 - (void)_updatePredicate:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_updateRecurrences:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_updateRegion:(id)arg1 forLocationEvent:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_updateTriggerValue:(id)arg1 forCharacteristicEvent:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)addEvent:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)currentEvents;
+- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)events;
 - (void)handleEventAddedNotification:(id)arg1;
@@ -51,10 +64,26 @@
 - (void)handleEventsRemovedNotification:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1 events:(id)arg2 predicate:(id)arg3;
+- (id)initWithName:(id)arg1 events:(id)arg2 recurrences:(id)arg3 predicate:(id)arg4;
 - (id)predicate;
+- (id)recurrences;
 - (void)removeEvent:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setCurrentEvents:(id)arg1;
 - (void)setPredicate:(id)arg1;
+- (void)setRecurrences:(id)arg1;
 - (void)updatePredicate:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)updateRecurrences:(id)arg1 completionHandler:(id /* block */)arg2;
+
+// Image: /System/Library/PrivateFrameworks/Home.framework/Home
+
++ (id)_hf_localizedStringOrNilIfNotFoundForKey:(id)arg1;
++ (id)_hf_naturalLanguageNameWithHome:(id)arg1 alarmCharacteristics:(id)arg2 triggerValue:(id)arg3 type:(unsigned int)arg4;
++ (id)_hf_naturalLanguageNameWithHome:(id)arg1 nonAlarmCharacteristics:(id)arg2 triggerValue:(id)arg3 type:(unsigned int)arg4;
++ (id)hf_naturalLanguageNameWithHome:(id)arg1 characteristics:(id)arg2 triggerValue:(id)arg3 type:(unsigned int)arg4;
++ (id)hf_naturalLanguageNameWithHome:(id)arg1 region:(id)arg2 type:(unsigned int)arg3;
++ (id)hf_triggerValueNaturalLanguageDescriptionWithCharacteristics:(id)arg1 triggerValue:(id)arg2;
+
+- (id)hf_naturalLanguageNameWithHome:(id)arg1 type:(unsigned int)arg2;
+- (unsigned int)hf_triggerType;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface AUAudioUnitBusArray_XH : AUAudioUnitBusArray {
-    BOOL _countWritable;
+    BOOL  _countWritable;
 }
 
 - (id)initWithOwner:(id)arg1 scope:(unsigned long)arg2 busses:(id)arg3 countWritable:(BOOL)arg4;

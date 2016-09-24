@@ -3,10 +3,10 @@
  */
 
 @interface NNMKAccount : NSObject <NSSecureCoding> {
-    NSString *_accountId;
-    NSString *_displayName;
-    NSArray *_emailAddresses;
-    BOOL _shouldArchive;
+    NSString * _accountId;
+    NSString * _displayName;
+    NSArray * _emailAddresses;
+    BOOL  _shouldArchive;
 }
 
 @property (nonatomic, retain) NSString *accountId;

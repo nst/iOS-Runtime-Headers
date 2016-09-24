@@ -3,20 +3,20 @@
  */
 
 @interface CAMTestModeChangeListener : NSObject {
-    int _desiredDevice;
-    int _desiredMode;
-    id /* block */ _handler;
+    int  _desiredDevicePosition;
+    int  _desiredMode;
+    id /* block */  _handler;
 }
 
-@property (nonatomic) int desiredDevice;
+@property (nonatomic) int desiredDevicePosition;
 @property (nonatomic) int desiredMode;
 @property (nonatomic, copy) id /* block */ handler;
 
 - (void).cxx_destruct;
-- (int)desiredDevice;
+- (int)desiredDevicePosition;
 - (int)desiredMode;
 - (id /* block */)handler;
-- (void)setDesiredDevice:(int)arg1;
+- (void)setDesiredDevicePosition:(int)arg1;
 - (void)setDesiredMode:(int)arg1;
 - (void)setHandler:(id /* block */)arg1;
 

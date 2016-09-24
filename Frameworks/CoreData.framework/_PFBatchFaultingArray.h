@@ -3,19 +3,19 @@
  */
 
 @interface _PFBatchFaultingArray : NSArray {
-    unsigned int *_LRUBatches;
-    _PFArray *_array;
-    unsigned int _batchSize;
-    int _cd_rc;
-    unsigned int _count;
-    unsigned int *_entryFlags;
+    unsigned int * _LRUBatches;
+    _PFArray * _array;
+    unsigned int  _batchSize;
+    int  _cd_rc;
+    unsigned int  _count;
+    unsigned int * _entryFlags;
     struct _PFBatchFaultingArrayFlags { 
         unsigned int _LRUIndex : 8; 
         unsigned int _uniformEntity : 1; 
         unsigned int _RESERVED : 23; 
-    } _flags;
-    NSManagedObjectContext *_moc;
-    NSCachingFetchRequest *_request;
+    }  _flags;
+    NSManagedObjectContext * _moc;
+    NSCachingFetchRequest * _request;
 }
 
 + (BOOL)accessInstanceVariablesDirectly;
@@ -26,6 +26,7 @@
 - (void)_internalDealloc;
 - (BOOL)_isDeallocating;
 - (id)_newSubArrayInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 asMutable:(BOOL)arg2;
+- (id)_pinnedObjectAtIndex:(unsigned int)arg1;
 - (BOOL)_tryRetain;
 - (void)_turnAllBatchesIntoFaults;
 - (void)_turnAllBatchesIntoObjects;
@@ -60,6 +61,7 @@
 - (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;
+- (id)retainedObjectAtIndex:(unsigned int)arg1;
 - (id)sortedArrayUsingComparator:(id /* block */)arg1;
 - (id)sortedArrayUsingDescriptors:(id)arg1;
 - (id)sortedArrayUsingFunction:(int (*)arg1 context:(void*)arg2;

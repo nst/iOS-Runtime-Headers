@@ -3,11 +3,11 @@
  */
 
 @interface PBBProtoPushControllerType : PBCodable <NSCopying> {
-    unsigned int _controllerType;
+    unsigned int  _controllerType;
     struct { 
         unsigned int intendedFireDate : 1; 
-    } _has;
-    double _intendedFireDate;
+    }  _has;
+    double  _intendedFireDate;
 }
 
 @property (nonatomic) unsigned int controllerType;

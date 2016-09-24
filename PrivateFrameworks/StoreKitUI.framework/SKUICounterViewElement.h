@@ -3,14 +3,14 @@
  */
 
 @interface SKUICounterViewElement : SKUIViewElement {
-    double _changeRatePerSecond;
-    int _counterType;
-    int _dateFormatType;
-    NSDate *_endDate;
-    NSString *_numberFormat;
-    long long _startValue;
-    NSDate *_startValueDate;
-    long long _stopValue;
+    double  _changeRatePerSecond;
+    int  _counterType;
+    int  _dateFormatType;
+    NSDate * _endDate;
+    NSString * _numberFormat;
+    int  _startValue;
+    NSDate * _startValueDate;
+    int  _stopValue;
 }
 
 @property (nonatomic, readonly) SKUIImageViewElement *backgroundImageElement;
@@ -19,22 +19,22 @@
 @property (nonatomic, readonly) int dateFormatType;
 @property (nonatomic, readonly) NSDate *endDate;
 @property (nonatomic, readonly) NSString *numberFormat;
-@property (nonatomic, readonly) long long startValue;
+@property (nonatomic, readonly) int startValue;
 @property (nonatomic, readonly) NSDate *startValueDate;
-@property (nonatomic, readonly) long long stopValue;
+@property (nonatomic, readonly) int stopValue;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)backgroundImageElement;
 - (double)changeRatePerSecond;
 - (int)counterType;
-- (long long)currentNumberValue;
+- (int)currentNumberValue;
 - (int)dateFormatType;
 - (id)endDate;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (id)numberFormat;
-- (long long)startValue;
+- (int)startValue;
 - (id)startValueDate;
-- (long long)stopValue;
+- (int)stopValue;
 
 @end

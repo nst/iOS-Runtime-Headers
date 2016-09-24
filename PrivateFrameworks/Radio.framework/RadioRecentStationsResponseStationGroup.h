@@ -3,7 +3,7 @@
  */
 
 @interface RadioRecentStationsResponseStationGroup : NSObject {
-    NSDictionary *_responseDictionary;
+    NSDictionary * _responseDictionary;
 }
 
 @property (getter=isActive, nonatomic, readonly) BOOL active;

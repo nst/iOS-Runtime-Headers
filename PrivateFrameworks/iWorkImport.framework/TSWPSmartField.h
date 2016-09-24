@@ -2,15 +2,21 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSWPSmartField : TSPObject <TSKDocumentObject, TSPCopying> {
-    unsigned int _lastTableIndex;
-    TSWPStorage *_parentStorage;
+@interface TSWPSmartField : TSPObject <TSKDocumentObject, TSPCopying, TSWPTextSpanningObject> {
+    unsigned int  _lastTableIndex;
+    TSWPStorage * _parentStorage;
+    NSString * _textAttributeUUIDString;
 }
 
 @property (nonatomic, readonly) int attributeArrayKind;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic) TSWPStorage *parentStorage;
 @property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
 @property (nonatomic, readonly) int styleAttributeArrayKind;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *textAttributeUUIDString;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)defaultFieldStyleIdentifier;
@@ -22,16 +28,20 @@
 - (BOOL)canCopy:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
+- (void)i_setTextAttributeUUIDString:(id)arg1;
 - (id)initWithContext:(id)arg1;
-- (void)loadFromArchive:(const struct SmartFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; }*)arg1 unarchiver:(id)arg2;
+- (BOOL)isEquivalentToObject:(id)arg1;
+- (void)loadFromArchive:(const struct SmartFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; }*)arg1 unarchiver:(id)arg2;
 - (id)parentStorage;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
-- (void)saveToArchive:(struct SmartFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; }*)arg1 archiver:(id)arg2;
+- (void)resetTextAttributeUUIDString;
+- (void)saveToArchive:(struct SmartFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setParentStorage:(id)arg1;
 - (int)smartFieldKind;
 - (int)styleAttributeArrayKind;
 - (id)text;
+- (id)textAttributeUUIDString;
 - (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
 - (void)willBeAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;

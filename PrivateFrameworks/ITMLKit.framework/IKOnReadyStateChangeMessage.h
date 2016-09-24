@@ -3,10 +3,10 @@
  */
 
 @interface IKOnReadyStateChangeMessage : NSObject {
-    NSError *_error;
-    unsigned int _readyState;
-    unsigned int _statusCode;
-    NSString *_statusText;
+    NSError * _error;
+    unsigned int  _readyState;
+    unsigned int  _statusCode;
+    NSString * _statusText;
 }
 
 @property (nonatomic, copy) NSError *error;

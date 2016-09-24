@@ -3,65 +3,64 @@
  */
 
 @interface TKSmartCardSlot : NSObject {
-    TKSmartCardATR *_ATR;
-    NSXPCConnection *_connection;
-    int _maxInputLength;
-    int _maxOutputLength;
-    NSString *_name;
-    int _powerState;
-    TKSmartCardSlotProxy *_proxy;
-    BOOL _securePINChangeSupported;
-    BOOL _securePINVerificationSupported;
-    int _shareState;
-    int _state;
+    TKSmartCardATR * _ATR;
+    NSXPCConnection * _connection;
+    int  _maxInputLength;
+    int  _maxOutputLength;
+    NSString * _name;
+    int  _powerState;
+    int  _previousState;
+    TKSmartCardSlotProxy * _proxy;
+    BOOL  _securePINChangeSupported;
+    BOOL  _securePINVerificationSupported;
+    int  _shareState;
+    int  _state;
 }
 
 @property (retain) TKSmartCardATR *ATR;
 @property (nonatomic, readonly) int maxInputLength;
 @property (nonatomic, readonly) int maxOutputLength;
 @property (nonatomic, readonly) NSString *name;
-@property (readonly) int powerState;
 @property int powerState;
+@property int previousState;
 @property (nonatomic, readonly) TKSmartCardSlotProxy *proxy;
 @property (readonly) NSObject<OS_dispatch_queue> *queue;
-@property (readonly) TKSmartCardSlotScreen *screen;
-@property (readonly) BOOL securePINChangeSupported;
 @property BOOL securePINChangeSupported;
-@property (readonly) BOOL securePINVerificationSupported;
 @property BOOL securePINVerificationSupported;
-@property (readonly) int shareState;
 @property int shareState;
 @property int state;
 
-+ (void)slotWithEndpoint:(id)arg1 reply:(id /* block */)arg2;
-
 - (void).cxx_destruct;
 - (id)ATR;
-- (void)connectToEndpoint:(id)arg1 reply:(id /* block */)arg2;
+- (void)connectToEndpoint:(id)arg1 synchronous:(BOOL)arg2 reply:(id /* block */)arg3;
 - (void)control:(id)arg1 data:(id)arg2 expectedLength:(unsigned long)arg3 reply:(id /* block */)arg4;
 - (void)dealloc;
-- (void)getAttrib:(unsigned long)arg1 expectedLength:(unsigned long)arg2 reply:(id /* block */)arg3;
+- (id)description;
+- (void)getAttrib:(unsigned long)arg1 reply:(id /* block */)arg2;
+- (id)initWithEndpoint:(id)arg1 error:(id*)arg2;
 - (void)invalidate;
 - (id)makeSmartCard;
 - (int)maxInputLength;
 - (int)maxOutputLength;
 - (id)name;
 - (int)powerState;
+- (int)previousState;
 - (id)proxy;
 - (id)queue;
-- (id)remoteSlotWithErrorHandler:(id /* block */)arg1;
 - (id)screen;
 - (BOOL)securePINChangeSupported;
 - (BOOL)securePINVerificationSupported;
 - (void)setATR:(id)arg1;
 - (void)setAttrib:(unsigned long)arg1 data:(id)arg2 reply:(id /* block */)arg3;
 - (void)setPowerState:(int)arg1;
+- (void)setPreviousState:(int)arg1;
 - (void)setSecurePINChangeSupported:(BOOL)arg1;
 - (void)setSecurePINVerificationSupported:(BOOL)arg1;
 - (void)setShareState:(int)arg1;
 - (void)setState:(int)arg1;
 - (int)shareState;
 - (int)state;
+- (id)synchronous:(BOOL)arg1 remoteSlotWithErrorHandler:(id /* block */)arg2;
 - (id)userInteractionForConfirmation;
 - (id)userInteractionForStringEntry;
 

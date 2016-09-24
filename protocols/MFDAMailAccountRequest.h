@@ -6,7 +6,7 @@
 @required
 
 - (MFOfflineCacheOperation<MFDAOfflineCacheOperation> *)deferredOperation;
-- (unsigned long long)generationNumber;
+- (unsigned int)generationNumber;
 - (BOOL)isUserRequested;
 - (BOOL)shouldSend;
 

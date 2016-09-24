@@ -3,7 +3,7 @@
  */
 
 @interface _MRRegisterVoiceInputDeviceMessageProtobuf : PBCodable <NSCopying> {
-    _MRVoiceInputDeviceDescriptorProtobuf *_descriptor;
+    _MRVoiceInputDeviceDescriptorProtobuf * _descriptor;
 }
 
 @property (nonatomic, retain) _MRVoiceInputDeviceDescriptorProtobuf *descriptor;

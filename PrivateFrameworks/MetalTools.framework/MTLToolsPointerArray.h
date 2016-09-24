@@ -3,9 +3,9 @@
  */
 
 @interface MTLToolsPointerArray : NSObject {
-    unsigned int _pointerAdditions;
-    NSPointerArray *_pointerArray;
-    NSObject<OS_dispatch_semaphore> *_semaphore;
+    unsigned int  _pointerAdditions;
+    NSPointerArray * _pointerArray;
+    NSObject<OS_dispatch_semaphore> * _semaphore;
 }
 
 - (void).cxx_destruct;

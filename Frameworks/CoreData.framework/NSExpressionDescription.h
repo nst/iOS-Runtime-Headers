@@ -3,17 +3,17 @@
  */
 
 @interface NSExpressionDescription : NSPropertyDescription {
-    NSExpression *_expression;
-    unsigned int _expressionResultType;
-    id _reservedtype1_1;
-    id _reservedtype1_2;
-    unsigned int _reservedtype1_3;
-    id _reservedtype1_4;
-    unsigned int _reservedtype1_5;
-    id _reservedtype1_6;
-    void *_reservedtype2_1;
-    void *_reservedtype2_2;
-    void *_reservedtype2_3;
+    NSExpression * _expression;
+    unsigned int  _expressionResultType;
+    id  _reservedtype1_1;
+    id  _reservedtype1_2;
+    unsigned int  _reservedtype1_3;
+    id  _reservedtype1_4;
+    unsigned int  _reservedtype1_5;
+    id  _reservedtype1_6;
+    void * _reservedtype2_1;
+    void * _reservedtype2_2;
+    void * _reservedtype2_3;
 }
 
 @property (retain) NSExpression *expression;

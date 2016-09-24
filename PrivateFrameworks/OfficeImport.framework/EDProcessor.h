@@ -3,9 +3,9 @@
  */
 
 @interface EDProcessor : NSObject {
-    NSMutableArray *mObjects;
-    EDResources *mResources;
-    EDWorkbook *mWorkbook;
+    NSMutableArray * mObjects;
+    EDResources * mResources;
+    EDWorkbook * mWorkbook;
 }
 
 - (void)applyProcessorToObject:(id)arg1 sheet:(id)arg2;

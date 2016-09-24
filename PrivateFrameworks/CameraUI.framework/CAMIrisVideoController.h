@@ -3,18 +3,15 @@
  */
 
 @interface CAMIrisVideoController : NSObject {
-    NSObject<OS_dispatch_queue> *__mutexQueue;
-    NSMutableDictionary *__mutexQueue_pendingJobsByMasterVideoURL;
-    CAMNebulaDaemonProxyManager *__nebulaDaemonProxyManager;
+    NSObject<OS_dispatch_queue> * __mutexQueue;
+    CAMNebulaDaemonProxyManager * __nebulaDaemonProxyManager;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_mutexQueue;
-@property (nonatomic, readonly) NSMutableDictionary *_mutexQueue_pendingJobsByMasterVideoURL;
 @property (nonatomic, readonly) CAMNebulaDaemonProxyManager *_nebulaDaemonProxyManager;
 
 - (void).cxx_destruct;
 - (id)_mutexQueue;
-- (id)_mutexQueue_pendingJobsByMasterVideoURL;
 - (id)_nebulaDaemonProxyManager;
 - (id)init;
 - (id)initWithNebulaDaemonProxyManager:(id)arg1;

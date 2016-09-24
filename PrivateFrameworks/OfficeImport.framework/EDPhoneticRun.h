@@ -3,9 +3,9 @@
  */
 
 @interface EDPhoneticRun : NSObject {
-    unsigned int mBaseCharCount;
-    unsigned int mBaseCharIndex;
-    unsigned int mCharIndex;
+    unsigned int  mBaseCharCount;
+    unsigned int  mBaseCharIndex;
+    unsigned int  mCharIndex;
 }
 
 - (void)adjustIndex:(unsigned int)arg1;

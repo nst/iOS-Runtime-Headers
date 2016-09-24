@@ -3,18 +3,18 @@
  */
 
 @interface RCCaptureInputWaveformDataSource : RCWaveformDataSource <AVCaptureAudioDataOutputSampleBufferDelegate> {
-    RCWaveform *_baseWaveform;
-    BOOL _canUpdateCaptureComposition;
-    NSArray *_captureInitialDecomposedFragments;
-    double _captureInsertionDurationInComposition;
-    double _captureInsertionTimeInComposition;
-    RCMutableComposition *_capturedComposition;
-    RCMutableCompositionFragment *_capturedFragment;
-    RCComposition *_destinationComposition;
-    RCCompositionFragment *_destinationFragment;
-    double _finalCapturedFragmentDuration;
-    BOOL _overdub;
-    double _updatedCapturedFragmentDuration;
+    RCWaveform * _baseWaveform;
+    BOOL  _canUpdateCaptureComposition;
+    NSArray * _captureInitialDecomposedFragments;
+    double  _captureInsertionDurationInComposition;
+    double  _captureInsertionTimeInComposition;
+    RCMutableComposition * _capturedComposition;
+    RCMutableCompositionFragment * _capturedFragment;
+    RCComposition * _destinationComposition;
+    RCCompositionFragment * _destinationFragment;
+    double  _finalCapturedFragmentDuration;
+    BOOL  _overdub;
+    double  _updatedCapturedFragmentDuration;
 }
 
 @property (nonatomic, readonly) RCWaveform *baseWaveform;

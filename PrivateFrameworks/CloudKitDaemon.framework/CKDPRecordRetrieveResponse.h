@@ -3,11 +3,11 @@
  */
 
 @interface CKDPRecordRetrieveResponse : PBCodable <NSCopying> {
-    BOOL _clientVersionETagMatch;
+    BOOL  _clientVersionETagMatch;
     struct { 
         unsigned int clientVersionETagMatch : 1; 
-    } _has;
-    CKDPRecord *_record;
+    }  _has;
+    CKDPRecord * _record;
 }
 
 @property (nonatomic) BOOL clientVersionETagMatch;

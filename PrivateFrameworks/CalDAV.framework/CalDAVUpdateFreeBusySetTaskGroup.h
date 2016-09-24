@@ -3,11 +3,11 @@
  */
 
 @interface CalDAVUpdateFreeBusySetTaskGroup : CoreDAVTaskGroup <CoreDAVPropFindTaskDelegate, CoreDAVPropPatchTaskDelegate> {
-    CoreDAVPropFindTask *_fetchTask;
-    NSURL *_inboxURL;
-    int _state;
-    NSString *_suffixToFilterOut;
-    NSURL *_urlToAdd;
+    CoreDAVPropFindTask * _fetchTask;
+    NSURL * _inboxURL;
+    int  _state;
+    NSString * _suffixToFilterOut;
+    NSURL * _urlToAdd;
 }
 
 @property (readonly, copy) NSString *debugDescription;

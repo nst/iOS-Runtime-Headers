@@ -5,8 +5,8 @@
 @interface PBBProtoDevicesLockedOn : PBCodable <NSCopying> {
     struct { 
         unsigned int intendedFireDate : 1; 
-    } _has;
-    double _intendedFireDate;
+    }  _has;
+    double  _intendedFireDate;
 }
 
 @property (nonatomic) BOOL hasIntendedFireDate;

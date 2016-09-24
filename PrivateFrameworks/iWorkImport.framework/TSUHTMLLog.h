@@ -3,14 +3,14 @@
  */
 
 @interface TSUHTMLLog : NSObject {
-    NSFileHandle *_handle;
-    BOOL _logStarted;
-    NSString *_path;
-    NSString *_script;
-    NSString *_stylesheet;
-    unsigned int _tableRow;
-    NSString *_title;
-    unsigned int _uniquifier;
+    NSFileHandle * _handle;
+    BOOL  _logStarted;
+    NSString * _path;
+    NSString * _script;
+    NSString * _stylesheet;
+    unsigned int  _tableRow;
+    NSString * _title;
+    unsigned int  _uniquifier;
 }
 
 @property (nonatomic, readonly) NSString *path;

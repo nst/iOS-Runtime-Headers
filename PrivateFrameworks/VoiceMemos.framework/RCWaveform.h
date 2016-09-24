@@ -3,8 +3,8 @@
  */
 
 @interface RCWaveform : NSObject <NSCoding, NSCopying, NSMutableCopying> {
-    unsigned int _decodedVersion;
-    NSMutableArray *_segments;
+    unsigned int  _decodedVersion;
+    NSMutableArray * _segments;
 }
 
 @property (nonatomic, readonly) unsigned int averagePowerLevelsRate;

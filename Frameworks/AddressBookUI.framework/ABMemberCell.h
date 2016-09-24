@@ -3,9 +3,9 @@
  */
 
 @interface ABMemberCell : UITableViewCell {
-    BOOL _isMeCard;
-    ABUIPerson *_person;
-    ABStyleProvider *_styleProvider;
+    BOOL  _isMeCard;
+    ABUIPerson * _person;
+    ABStyleProvider * _styleProvider;
 }
 
 @property (nonatomic) BOOL isMeCard;

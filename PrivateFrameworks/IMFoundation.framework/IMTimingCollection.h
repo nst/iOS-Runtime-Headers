@@ -3,8 +3,8 @@
  */
 
 @interface IMTimingCollection : NSObject {
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_timings;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableDictionary * _timings;
 }
 
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation

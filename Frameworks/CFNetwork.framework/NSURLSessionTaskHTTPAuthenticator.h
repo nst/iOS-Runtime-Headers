@@ -3,7 +3,7 @@
  */
 
 @interface NSURLSessionTaskHTTPAuthenticator : NSObject <NSCopying> {
-    NSSet *_statusCodes;
+    NSSet * _statusCodes;
 }
 
 @property (copy) NSSet *statusCodes;

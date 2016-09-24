@@ -3,9 +3,9 @@
  */
 
 @interface OADTableStyleCollection : NSObject {
-    NSString *_defaultTableStyleId;
-    NSMutableDictionary *_styleMap;
-    NSMutableArray *_styles;
+    NSString * _defaultTableStyleId;
+    NSMutableDictionary * _styleMap;
+    NSMutableArray * _styles;
 }
 
 @property (nonatomic, copy) NSString *defaultTableStyleId;

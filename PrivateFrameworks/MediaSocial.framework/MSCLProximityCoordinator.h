@@ -3,8 +3,8 @@
  */
 
 @interface MSCLProximityCoordinator : NSObject {
-    NSHashTable *_observers;
-    BOOL _originalUIDeviceState;
+    NSHashTable * _observers;
+    BOOL  _originalUIDeviceState;
 }
 
 + (id)coordinator;

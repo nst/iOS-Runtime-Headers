@@ -5,6 +5,7 @@
 @interface MTLIOAccelCommandEncoder : _MTLCommandEncoder
 
 - (void)endEncoding;
+- (unsigned int)globalTraceObjectID;
 - (id)initWithCommandBuffer:(id)arg1;
 - (void)popDebugGroup;
 - (void)pushDebugGroup:(id)arg1;

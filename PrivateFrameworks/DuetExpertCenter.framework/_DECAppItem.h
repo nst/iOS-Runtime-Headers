@@ -3,22 +3,37 @@
  */
 
 @interface _DECAppItem : _DECItem {
-    NSString *_bundleIdentifier;
+    NSString * _bundleIdentifier;
+    int  _reason;
+    int  _sources;
 }
 
 @property (nonatomic, readonly) NSString *bundleIdentifier;
+@property (nonatomic) int reason;
+@property (nonatomic, readonly) int sources;
 
 + (id)appWithBundleIdentifier:(id)arg1;
++ (id)appWithBundleIdentifier:(id)arg1 sources:(int)arg2;
++ (unsigned int)category;
++ (id)fromSearchResult:(id)arg1;
++ (BOOL)isSearchFoundationCompliant;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (BOOL)_isEqualToDECAppItem:(id)arg1;
 - (id)bundleIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
-- (id)initWithBundleIdentifier:(id)arg1;
+- (id)initWithBundleIdentifier:(id)arg1 sources:(int)arg2;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isEquivalent:(id)arg1;
+- (BOOL)isEquivalent:(id)arg1;
+- (int)reason;
+- (void)setReason:(int)arg1;
+- (int)sources;
+- (id)toSearchResult;
 
 @end

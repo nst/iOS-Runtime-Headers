@@ -3,8 +3,8 @@
  */
 
 @interface MusicStoreEntityValueProvider : NSObject <MusicEntityValueProviding> {
-    <MusicEntityProviding> *_childrenEntityProvider;
-    MusicStoreItemMetadataContext *_storeItemMetadataContext;
+    <MusicEntityProviding> * _childrenEntityProvider;
+    MusicStoreItemMetadataContext * _storeItemMetadataContext;
 }
 
 @property (nonatomic, retain) <MusicEntityProviding> *childrenEntityProvider;
@@ -26,7 +26,7 @@
 - (id)contentItemIdentifierCollection;
 - (id)entityUniqueIdentifier;
 - (unsigned int)hash;
-- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { float x1; float x2; })arg2 destinationScale:(float)arg3;
+- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { double x1; double x2; })arg2 destinationScale:(float)arg3;
 - (id)initWithStoreItemMetadataContext:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)setChildrenEntityProvider:(id)arg1;

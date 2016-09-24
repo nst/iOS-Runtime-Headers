@@ -3,10 +3,10 @@
  */
 
 @interface WBSCreditCardData : NSObject {
-    NSString *_cardName;
-    NSString *_cardNumber;
-    NSString *_cardholderName;
-    NSDate *_expirationDate;
+    NSString * _cardName;
+    NSString * _cardNumber;
+    NSString * _cardholderName;
+    NSDate * _expirationDate;
 }
 
 @property (nonatomic, copy) NSString *cardName;

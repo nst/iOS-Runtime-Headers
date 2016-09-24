@@ -3,7 +3,7 @@
  */
 
 @interface PLCloudFeedEntriesManager : NSObject {
-    PLPhotoLibrary *__library;
+    PLPhotoLibrary * __library;
 }
 
 @property (nonatomic, readonly, retain) PLPhotoLibrary *_library;

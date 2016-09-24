@@ -3,14 +3,14 @@
  */
 
 @interface TSWPStorageIterationEvent : NSObject {
-    NSObject *_object;
-    NSString *_providerIdentifier;
+    NSObject * _object;
+    NSString * _providerIdentifier;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
-    TSWPStorage *_storage;
-    int _type;
+    }  _range;
+    TSWPStorage * _storage;
+    int  _type;
 }
 
 @property (nonatomic, readonly) NSString *identifier;

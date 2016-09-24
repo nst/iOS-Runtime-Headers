@@ -3,29 +3,31 @@
  */
 
 @interface GEOPBTransitIncident : PBCodable <NSCopying> {
-    NSMutableArray *_affectedEntitys;
-    BOOL _blocking;
-    unsigned int _creationDatetime;
-    unsigned int _endDatetime;
+    NSMutableArray * _affectedEntitys;
+    BOOL  _blocking;
+    unsigned int  _creationDatetime;
+    unsigned int  _endDatetime;
     struct { 
         unsigned int incidentMuid : 1; 
         unsigned int creationDatetime : 1; 
         unsigned int endDatetime : 1; 
         unsigned int iconEnum : 1; 
+        unsigned int incidentIndex : 1; 
         unsigned int startDatetime : 1; 
         unsigned int updatedDatetime : 1; 
         unsigned int blocking : 1; 
-    } _has;
-    int _iconEnum;
-    unsigned long long _incidentMuid;
-    NSString *_longDescriptionString;
-    NSString *_messageForAllBlocking;
-    NSString *_messageForIncidentType;
-    NSString *_messageString;
-    NSString *_shortDescriptionString;
-    unsigned int _startDatetime;
-    NSString *_titleString;
-    unsigned int _updatedDatetime;
+    }  _has;
+    int  _iconEnum;
+    unsigned int  _incidentIndex;
+    unsigned int  _incidentMuid;
+    NSString * _longDescriptionString;
+    NSString * _messageForAllBlocking;
+    NSString * _messageForIncidentType;
+    NSString * _messageString;
+    NSString * _shortDescriptionString;
+    unsigned int  _startDatetime;
+    NSString * _titleString;
+    unsigned int  _updatedDatetime;
 }
 
 @property (nonatomic, retain) NSMutableArray *affectedEntitys;
@@ -36,6 +38,7 @@
 @property (nonatomic) BOOL hasCreationDatetime;
 @property (nonatomic) BOOL hasEndDatetime;
 @property (nonatomic) BOOL hasIconEnum;
+@property (nonatomic) BOOL hasIncidentIndex;
 @property (nonatomic) BOOL hasIncidentMuid;
 @property (nonatomic, readonly) BOOL hasLongDescriptionString;
 @property (nonatomic, readonly) BOOL hasMessageForAllBlocking;
@@ -46,7 +49,8 @@
 @property (nonatomic, readonly) BOOL hasTitleString;
 @property (nonatomic) BOOL hasUpdatedDatetime;
 @property (nonatomic) int iconEnum;
-@property (nonatomic) unsigned long long incidentMuid;
+@property (nonatomic) unsigned int incidentIndex;
+@property (nonatomic) unsigned int incidentMuid;
 @property (nonatomic, retain) NSString *longDescriptionString;
 @property (nonatomic, retain) NSString *messageForAllBlocking;
 @property (nonatomic, retain) NSString *messageForIncidentType;
@@ -56,6 +60,9 @@
 @property (nonatomic, retain) NSString *titleString;
 @property (nonatomic) unsigned int updatedDatetime;
 
++ (Class)affectedEntityType;
+
+- (int)StringAsIconEnum:(id)arg1;
 - (void)addAffectedEntity:(id)arg1;
 - (id)affectedEntityAtIndex:(unsigned int)arg1;
 - (id)affectedEntitys;
@@ -73,6 +80,7 @@
 - (BOOL)hasCreationDatetime;
 - (BOOL)hasEndDatetime;
 - (BOOL)hasIconEnum;
+- (BOOL)hasIncidentIndex;
 - (BOOL)hasIncidentMuid;
 - (BOOL)hasLongDescriptionString;
 - (BOOL)hasMessageForAllBlocking;
@@ -84,7 +92,9 @@
 - (BOOL)hasUpdatedDatetime;
 - (unsigned int)hash;
 - (int)iconEnum;
-- (unsigned long long)incidentMuid;
+- (id)iconEnumAsString:(int)arg1;
+- (unsigned int)incidentIndex;
+- (unsigned int)incidentMuid;
 - (BOOL)isEqual:(id)arg1;
 - (id)longDescriptionString;
 - (void)mergeFrom:(id)arg1;
@@ -100,11 +110,13 @@
 - (void)setHasCreationDatetime:(BOOL)arg1;
 - (void)setHasEndDatetime:(BOOL)arg1;
 - (void)setHasIconEnum:(BOOL)arg1;
+- (void)setHasIncidentIndex:(BOOL)arg1;
 - (void)setHasIncidentMuid:(BOOL)arg1;
 - (void)setHasStartDatetime:(BOOL)arg1;
 - (void)setHasUpdatedDatetime:(BOOL)arg1;
 - (void)setIconEnum:(int)arg1;
-- (void)setIncidentMuid:(unsigned long long)arg1;
+- (void)setIncidentIndex:(unsigned int)arg1;
+- (void)setIncidentMuid:(unsigned int)arg1;
 - (void)setLongDescriptionString:(id)arg1;
 - (void)setMessageForAllBlocking:(id)arg1;
 - (void)setMessageForIncidentType:(id)arg1;

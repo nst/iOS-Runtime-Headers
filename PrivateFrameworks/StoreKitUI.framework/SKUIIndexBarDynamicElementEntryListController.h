@@ -3,11 +3,11 @@
  */
 
 @interface SKUIIndexBarDynamicElementEntryListController : SKUIIndexBarEntryListController {
-    SKUIDynamicPageSectionIndexMapper *_dynamicIndexMapper;
-    <SKUIEntityProviding> *_entityProvider;
-    SKUIIndexBarEntryListViewElement *_entryListViewElement;
-    SKUIIndexBarEntryViewElement *_indexBarEntryViewElement;
-    SKUIViewElement *_templateElement;
+    SKUIDynamicPageSectionIndexMapper * _dynamicIndexMapper;
+    <SKUIEntityProviding> * _entityProvider;
+    SKUIIndexBarEntryListViewElement * _entryListViewElement;
+    SKUIIndexBarEntryViewElement * _indexBarEntryViewElement;
+    SKUIViewElement * _templateElement;
 }
 
 @property (nonatomic, readonly) SKUIIndexBarEntryListViewElement *entryListViewElement;

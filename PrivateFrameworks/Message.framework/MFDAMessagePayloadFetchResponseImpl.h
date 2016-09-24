@@ -3,9 +3,9 @@
  */
 
 @interface MFDAMessagePayloadFetchResponseImpl : NSObject <MFDAMessagePayloadFetchResponse> {
-    NSData *data;
-    BOOL streaming;
-    BOOL streamingDone;
+    NSData * data;
+    BOOL  streaming;
+    BOOL  streamingDone;
 }
 
 - (id)data;

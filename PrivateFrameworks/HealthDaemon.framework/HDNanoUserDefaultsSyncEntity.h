@@ -5,6 +5,6 @@
 @interface HDNanoUserDefaultsSyncEntity : HDKeyValueSyncEntity
 
 + (id)_didReceiveKeysAndValuesNotificationName;
-+ (void)didReceiveKeysAndValuesWithHealthDaemon:(id)arg1;
++ (void)didReceiveKeysAndValuesWithProfile:(id)arg1;
 
 @end

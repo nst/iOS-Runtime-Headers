@@ -3,11 +3,11 @@
  */
 
 @interface ABRefreshController : NSObject {
-    NSMutableDictionary *_accountGroupListsToRefreshByObserver;
-    ACAccountStore *_accountStore;
-    NSMutableDictionary *_contactsFiltersToRefreshByObserver;
-    double _refreshDelay;
-    NSTimer *_refreshTimer;
+    NSMutableDictionary * _accountGroupListsToRefreshByObserver;
+    ACAccountStore * _accountStore;
+    NSMutableDictionary * _contactsFiltersToRefreshByObserver;
+    double  _refreshDelay;
+    NSTimer * _refreshTimer;
 }
 
 + (id)sharedInstance;

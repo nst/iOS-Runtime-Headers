@@ -3,8 +3,8 @@
  */
 
 @interface IMMultiDict : NSObject {
-    unsigned int _count;
-    NSMutableDictionary *_dictionary;
+    unsigned int  _count;
+    NSMutableDictionary * _dictionary;
 }
 
 @property (nonatomic, readonly) NSArray *allKeys;

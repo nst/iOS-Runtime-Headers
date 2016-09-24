@@ -3,7 +3,7 @@
  */
 
 @interface ODDIteratorSpecification : NSObject {
-    NSMutableArray *mAttributesList;
+    NSMutableArray * mAttributesList;
 }
 
 - (void)addAttributes:(id)arg1;

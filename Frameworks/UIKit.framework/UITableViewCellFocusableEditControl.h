@@ -3,12 +3,14 @@
  */
 
 @interface UITableViewCellFocusableEditControl : UITableViewCellEditControl {
-    _UIFloatingContentView *_focusedFloatingContentView;
+    _UIFloatingContentView * _focusedFloatingContentView;
 }
 
 - (void).cxx_destruct;
+- (id)_currentImage;
 - (void)_ensureFocusedFloatingContentView;
 - (BOOL)_shouldHandlePressEvent:(id)arg1;
+- (void)_updateFloatingViewForCurrentTraits;
 - (void)focusedViewDidChange;
 - (void)layoutSubviews;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
@@ -16,6 +18,7 @@
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (BOOL)wantsImageShadow;
 - (BOOL)wantsMaskingWhileAnimatingDisabled;
 

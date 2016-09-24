@@ -3,8 +3,8 @@
  */
 
 @interface _DECItem : NSObject <NSCopying, NSSecureCoding, _DECItemEquivalency> {
-    NSUUID *_identifier;
-    NSMutableDictionary *_metadata;
+    NSUUID * _identifier;
+    NSMutableDictionary * _metadata;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,6 +14,9 @@
 @property (nonatomic, retain) NSMutableDictionary *metadata;
 @property (readonly) Class superclass;
 
++ (unsigned int)category;
++ (id)fromSearchResult:(id)arg1;
++ (BOOL)isSearchFoundationCompliant;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -23,10 +26,14 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToItem:(id)arg1;
+- (BOOL)isEqualToItem:(id)arg1;
+- (BOOL)isEquivalent:(id)arg1;
 - (BOOL)isEquivalent:(id)arg1;
 - (id)metadata;
 - (void)setIdentifier:(id)arg1;
 - (void)setMetadata:(id)arg1;
+- (id)toSearchResult;
 
 @end

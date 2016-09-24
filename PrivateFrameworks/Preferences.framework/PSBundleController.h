@@ -3,7 +3,7 @@
  */
 
 @interface PSBundleController : NSObject {
-    PSListController *_parent;
+    PSListController * _parent;
 }
 
 - (void).cxx_destruct;

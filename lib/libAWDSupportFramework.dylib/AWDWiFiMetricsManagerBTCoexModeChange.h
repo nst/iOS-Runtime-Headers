@@ -3,8 +3,8 @@
  */
 
 @interface AWDWiFiMetricsManagerBTCoexModeChange : PBCodable <NSCopying> {
-    unsigned int _a2dpConnectionCount;
-    unsigned int _coexMode;
+    unsigned int  _a2dpConnectionCount;
+    unsigned int  _coexMode;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int a2dpConnectionCount : 1; 
@@ -14,13 +14,13 @@
         unsigned int wifiInfraChainConfig : 1; 
         unsigned int wifiInfraChannel : 1; 
         unsigned int wifiInfraPhyMode : 1; 
-    } _has;
-    unsigned int _hidConnectionCount;
-    unsigned int _scoConnectionCount;
-    unsigned long long _timestamp;
-    unsigned int _wifiInfraChainConfig;
-    unsigned int _wifiInfraChannel;
-    unsigned int _wifiInfraPhyMode;
+    }  _has;
+    unsigned int  _hidConnectionCount;
+    unsigned int  _scoConnectionCount;
+    unsigned long long  _timestamp;
+    unsigned int  _wifiInfraChainConfig;
+    unsigned int  _wifiInfraChannel;
+    unsigned int  _wifiInfraPhyMode;
 }
 
 @property (nonatomic) unsigned int a2dpConnectionCount;

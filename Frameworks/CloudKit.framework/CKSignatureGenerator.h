@@ -3,8 +3,8 @@
  */
 
 @interface CKSignatureGenerator : NSObject {
-    void *_generator;
-    BOOL _valid;
+    void * _generator;
+    BOOL  _valid;
 }
 
 @property (nonatomic) void*generator;

@@ -3,35 +3,35 @@
  */
 
 @interface TSCH3DLightShaderEffectState : NSObject {
-    NSMutableArray *mLights;
+    NSMutableArray * mLights;
     struct LightingPackageShaderEffectState { 
         struct array<glm::detail::tmat4x4<float>, 2> { 
             struct tmat4x4<float> { 
                 struct tvec4<float> { 
                     union { 
-                        float x; 
-                        float r; 
-                        float s; 
+                        double x; 
+                        double r; 
+                        double s; 
                     } ; 
                     union { 
-                        float y; 
-                        float g; 
-                        float t; 
+                        double y; 
+                        double g; 
+                        double t; 
                     } ; 
                     union { 
-                        float z; 
-                        float b; 
-                        float p; 
+                        double z; 
+                        double b; 
+                        double p; 
                     } ; 
                     union { 
-                        float w; 
-                        float a; 
-                        float q; 
+                        double w; 
+                        double a; 
+                        double q; 
                     } ; 
                 } value[4]; 
             } __elems_[2]; 
         } transforms; 
-    } mPackageState;
+    }  mPackageState;
 }
 
 + (id)effectState;
@@ -45,8 +45,8 @@
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (id)objectAtIndex:(unsigned int)arg1;
-- (const struct LightingPackageShaderEffectState { struct array<glm::detail::tmat4x4<float>, 2> { struct tmat4x4<float> { struct tvec4<float> { union { float x_1_4_1; float x_1_4_2; float x_1_4_3; } x_1_3_1; union { float x_2_4_1; float x_2_4_2; float x_2_4_3; } x_1_3_2; union { float x_3_4_1; float x_3_4_2; float x_3_4_3; } x_1_3_3; union { float x_4_4_1; float x_4_4_2; float x_4_4_3; } x_1_3_4; } x_1_2_1[4]; } x_1_1_1[2]; } x1; }*)packageState;
+- (const struct LightingPackageShaderEffectState { struct array<glm::detail::tmat4x4<float>, 2> { struct tmat4x4<float> { struct tvec4<float> { union { double x_1_4_1; double x_1_4_2; double x_1_4_3; } x_1_3_1; union { double x_2_4_1; double x_2_4_2; double x_2_4_3; } x_1_3_2; union { double x_3_4_1; double x_3_4_2; double x_3_4_3; } x_1_3_3; union { double x_4_4_1; double x_4_4_2; double x_4_4_3; } x_1_3_4; } x_1_2_1[4]; } x_1_1_1[2]; } x1; }*)packageState;
 - (void)removeAllObjects;
-- (void)setPackageState:(const struct LightingPackageShaderEffectState { struct array<glm::detail::tmat4x4<float>, 2> { struct tmat4x4<float> { struct tvec4<float> { union { float x_1_4_1; float x_1_4_2; float x_1_4_3; } x_1_3_1; union { float x_2_4_1; float x_2_4_2; float x_2_4_3; } x_1_3_2; union { float x_3_4_1; float x_3_4_2; float x_3_4_3; } x_1_3_3; union { float x_4_4_1; float x_4_4_2; float x_4_4_3; } x_1_3_4; } x_1_2_1[4]; } x_1_1_1[2]; } x1; }*)arg1;
+- (void)setPackageState:(const struct LightingPackageShaderEffectState { struct array<glm::detail::tmat4x4<float>, 2> { struct tmat4x4<float> { struct tvec4<float> { union { double x_1_4_1; double x_1_4_2; double x_1_4_3; } x_1_3_1; union { double x_2_4_1; double x_2_4_2; double x_2_4_3; } x_1_3_2; union { double x_3_4_1; double x_3_4_2; double x_3_4_3; } x_1_3_3; union { double x_4_4_1; double x_4_4_2; double x_4_4_3; } x_1_3_4; } x_1_2_1[4]; } x_1_1_1[2]; } x1; }*)arg1;
 
 @end

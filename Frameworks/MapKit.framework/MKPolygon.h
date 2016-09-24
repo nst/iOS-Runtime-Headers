@@ -3,17 +3,17 @@
  */
 
 @interface MKPolygon : MKMultiPoint <MKOverlay> {
-    struct { 
+    struct CLLocationCoordinate2D { 
         double latitude; 
         double longitude; 
-    } _centroid;
-    NSArray *_interiorPolygons;
-    BOOL _isDefinitelyConvex;
+    }  _centroid;
+    NSArray * _interiorPolygons;
+    BOOL  _isDefinitelyConvex;
 }
 
 @property (nonatomic) BOOL _isDefinitelyConvex;
 @property (nonatomic, readonly) struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } boundingMapRect;
-@property (nonatomic, readonly) struct { double x1; double x2; } coordinate;
+@property (nonatomic, readonly) struct CLLocationCoordinate2D { double x1; double x2; } coordinate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -24,15 +24,15 @@
 
 + (id)_polygonWithMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 + (id)polygonEnclosingMapPoints:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2;
-+ (id)polygonWithCoordinates:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2;
-+ (id)polygonWithCoordinates:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2 interiorPolygons:(id)arg3;
-+ (id)polygonWithPoints:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2;
-+ (id)polygonWithPoints:(struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2 interiorPolygons:(id)arg3;
++ (id)polygonWithCoordinates:(const struct CLLocationCoordinate2D { double x1; double x2; }*)arg1 count:(unsigned int)arg2;
++ (id)polygonWithCoordinates:(const struct CLLocationCoordinate2D { double x1; double x2; }*)arg1 count:(unsigned int)arg2 interiorPolygons:(id)arg3;
++ (id)polygonWithPoints:(const struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2;
++ (id)polygonWithPoints:(const struct { double x1; double x2; }*)arg1 count:(unsigned int)arg2 interiorPolygons:(id)arg3;
 
 - (void).cxx_destruct;
 - (BOOL)_isDefinitelyConvex;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })boundingMapRect;
-- (struct { double x1; double x2; })coordinate;
+- (struct CLLocationCoordinate2D { double x1; double x2; })coordinate;
 - (id)interiorPolygons;
 - (BOOL)intersectsMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)set_isDefinitelyConvex:(BOOL)arg1;

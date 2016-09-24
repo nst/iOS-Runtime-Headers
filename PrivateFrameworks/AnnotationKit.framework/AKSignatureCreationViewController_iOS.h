@@ -3,13 +3,13 @@
  */
 
 @interface AKSignatureCreationViewController_iOS : UIViewController <UINavigationBarDelegate> {
-    AKSignatureBaselineView *_baselineView;
-    AKController *_controller;
-    <AKSignatureCreationControllerDelegate> *_delegate;
-    UILabel *_label;
-    UINavigationBar *_navBar;
-    AKSmoothPathView *_pathView;
-    AKSignatureView *_signatureView;
+    AKSignatureBaselineView * _baselineView;
+    AKController * _controller;
+    <AKSignatureCreationControllerDelegate> * _delegate;
+    UILabel * _label;
+    UINavigationBar * _navBar;
+    AKSmoothPathView * _pathView;
+    AKSignatureView * _signatureView;
 }
 
 @property (nonatomic, retain) AKSignatureBaselineView *baselineView;
@@ -28,7 +28,6 @@
 - (void)_cancel:(id)arg1;
 - (void)_clear:(id)arg1;
 - (void)_done:(id)arg1;
-- (void)_showDebugMenu:(id)arg1;
 - (void)_validateButtons;
 - (id)baselineView;
 - (id)controller;

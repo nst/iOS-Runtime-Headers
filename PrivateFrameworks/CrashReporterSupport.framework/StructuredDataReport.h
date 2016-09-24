@@ -3,11 +3,11 @@
  */
 
 @interface StructuredDataReport : AppleErrorReport {
-    int _log_type;
-    NSString *_raw_logfile;
+    int  _log_type;
+    NSString * _raw_logfile;
 }
 
-- (id)appleCareCSVFieldsWithCount:(unsigned int)arg1;
+- (id)appleCareDetails;
 - (void)dealloc;
 - (void)generateCustomLogAtLevel:(BOOL)arg1 withBlock:(id /* block */)arg2;
 - (void)generateLogAtLevel:(BOOL)arg1 withBlock:(id /* block */)arg2;

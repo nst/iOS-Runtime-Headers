@@ -3,7 +3,7 @@
  */
 
 @interface GLKMeshBufferHolder : NSObject {
-    GLKMeshBuffer *_buffer;
+    GLKMeshBuffer * _buffer;
 }
 
 @property GLKMeshBuffer *buffer;

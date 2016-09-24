@@ -8,6 +8,8 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSData *routeAsZilchBinary;
+@property (nonatomic, copy) NSData *routeId;
+@property (nonatomic, copy) NSData *sessionState;
 @property (readonly) Class superclass;
 
 + (id)route;
@@ -16,6 +18,10 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)routeAsZilchBinary;
+- (id)routeId;
+- (id)sessionState;
 - (void)setRouteAsZilchBinary:(id)arg1;
+- (void)setRouteId:(id)arg1;
+- (void)setSessionState:(id)arg1;
 
 @end

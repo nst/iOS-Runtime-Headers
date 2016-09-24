@@ -3,7 +3,7 @@
  */
 
 @interface TCTracing : NSObject {
-    NSString *mFilename;
+    NSString * mFilename;
 }
 
 - (void)dealloc;

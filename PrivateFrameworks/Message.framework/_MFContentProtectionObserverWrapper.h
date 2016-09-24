@@ -3,8 +3,8 @@
  */
 
 @interface _MFContentProtectionObserverWrapper : NSObject {
-    MFWeakReferenceHolder *_observerReference;
-    NSObject<OS_dispatch_queue> *_queue;
+    MFWeakReferenceHolder * _observerReference;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, readonly) <MFContentProtectionObserver> *observer;

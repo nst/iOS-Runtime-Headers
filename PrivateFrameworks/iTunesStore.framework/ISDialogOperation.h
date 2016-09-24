@@ -3,11 +3,11 @@
  */
 
 @interface ISDialogOperation : ISOperation {
-    ISDialog *_dialog;
-    BOOL _performDefaultActions;
-    ISDialogButton *_selectedButton;
-    NSArray *_textFieldValues;
-    id _userNotification;
+    ISDialog * _dialog;
+    BOOL  _performDefaultActions;
+    ISDialogButton * _selectedButton;
+    NSArray * _textFieldValues;
+    id  _userNotification;
 }
 
 @property <ISDialogOperationDelegate> *delegate;

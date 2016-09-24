@@ -3,8 +3,8 @@
  */
 
 @interface _UIRemoteViewControllerWeakWrapperProxy : NSObject {
-    id _target;
-    Class _targetClass;
+    id  _target;
+    Class  _targetClass;
 }
 
 + (id)wrapperWithTarget:(id)arg1;

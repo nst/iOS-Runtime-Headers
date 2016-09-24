@@ -3,8 +3,8 @@
  */
 
 @interface PUChangeDirectionValueFilter : PUValueFilter {
-    double _minimumChangeValue;
-    double _threshold;
+    double  _minimumChangeValue;
+    double  _threshold;
 }
 
 @property (nonatomic) double minimumChangeValue;

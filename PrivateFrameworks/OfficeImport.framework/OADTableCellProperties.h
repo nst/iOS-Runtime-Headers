@@ -3,30 +3,30 @@
  */
 
 @interface OADTableCellProperties : NSObject {
-    OADStroke *mBottomLeftToTopRightStroke;
-    float mBottomMargin;
-    OADStroke *mBottomStroke;
-    OADFill *mFill;
-    BOOL mIsBottomMarginOverridden;
-    BOOL mIsLeftMarginOverridden;
-    BOOL mIsRightMarginOverridden;
-    BOOL mIsTextAnchorCenterOverridden;
-    BOOL mIsTextAnchorOverridden;
-    BOOL mIsTextFlowOverridden;
-    BOOL mIsTextHorizontalOverflowOverridden;
-    BOOL mIsTopMarginOverridden;
-    float mLeftMargin;
-    OADStroke *mLeftStroke;
-    float mRightMargin;
-    OADStroke *mRightStroke;
-    unsigned char mTextAnchor;
-    BOOL mTextAnchorCenter;
-    unsigned char mTextFlow;
-    unsigned char mTextHorizontalOverflow;
-    OADTableCell3DProperties *mThreeDProperties;
-    OADStroke *mTopLeftToBottomRightStroke;
-    float mTopMargin;
-    OADStroke *mTopStroke;
+    OADStroke * mBottomLeftToTopRightStroke;
+    double  mBottomMargin;
+    OADStroke * mBottomStroke;
+    OADFill * mFill;
+    BOOL  mIsBottomMarginOverridden;
+    BOOL  mIsLeftMarginOverridden;
+    BOOL  mIsRightMarginOverridden;
+    BOOL  mIsTextAnchorCenterOverridden;
+    BOOL  mIsTextAnchorOverridden;
+    BOOL  mIsTextFlowOverridden;
+    BOOL  mIsTextHorizontalOverflowOverridden;
+    BOOL  mIsTopMarginOverridden;
+    double  mLeftMargin;
+    OADStroke * mLeftStroke;
+    double  mRightMargin;
+    OADStroke * mRightStroke;
+    unsigned char  mTextAnchor;
+    BOOL  mTextAnchorCenter;
+    unsigned char  mTextFlow;
+    unsigned char  mTextHorizontalOverflow;
+    OADTableCell3DProperties * mThreeDProperties;
+    OADStroke * mTopLeftToBottomRightStroke;
+    double  mTopMargin;
+    OADStroke * mTopStroke;
 }
 
 - (id)bottomLeftToTopRightStroke;

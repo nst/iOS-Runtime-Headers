@@ -3,12 +3,12 @@
  */
 
 @interface ABAccountsAndGroupsViewController : ABAbstractViewController <UITableViewDelegate> {
-    ABAccountsAndGroupDataSource *_dataSource;
-    BOOL _needsReload;
-    ABPeoplePickerNavigationController *_peoplePickerNavigationController;
-    UIRefreshControl *_refreshControl;
-    BOOL _showsRefreshButton;
-    BOOL _tableViewNeedsReloadAfterResume;
+    ABAccountsAndGroupDataSource * _dataSource;
+    BOOL  _needsReload;
+    ABPeoplePickerNavigationController * _peoplePickerNavigationController;
+    UIRefreshControl * _refreshControl;
+    BOOL  _showsRefreshButton;
+    BOOL  _tableViewNeedsReloadAfterResume;
 }
 
 @property (nonatomic, readonly) ABAccountsAndGroupDataSource *dataSource;

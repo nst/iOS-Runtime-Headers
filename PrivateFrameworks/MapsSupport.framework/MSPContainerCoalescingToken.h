@@ -3,9 +3,9 @@
  */
 
 @interface MSPContainerCoalescingToken : NSObject <MSPContainerCoalescingToken> {
-    MSPContainer *_container;
-    <NSObject><NSCopying> *_context;
-    BOOL _invalidated;
+    MSPContainer * _container;
+    <NSObject><NSCopying> * _context;
+    BOOL  _invalidated;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,13 +3,13 @@
  */
 
 @interface GEOLogManager : NSObject {
-    NSMutableArray *_logAdaptors;
-    NSObject<OS_dispatch_queue> *_loggingQueue;
-    void *_loggingQueueIdentityKey;
-    void *_loggingQueueIdentityValue;
-    NSMutableArray *_remoteAdaptorOptions;
-    NSLock *_remoteAdaptorOptionsLock;
-    <GEOLogAdaptor> *_serverLogAdaptorManager;
+    NSMutableArray * _logAdaptors;
+    NSObject<OS_dispatch_queue> * _loggingQueue;
+    void * _loggingQueueIdentityKey;
+    void * _loggingQueueIdentityValue;
+    NSMutableArray * _remoteAdaptorOptions;
+    NSLock * _remoteAdaptorOptionsLock;
+    <GEOLogAdaptor> * _serverLogAdaptorManager;
 }
 
 @property (nonatomic, retain) <GEOLogAdaptor> *serverLogAdaptorManager;
@@ -19,30 +19,35 @@
 - (void)_addLogAdaptor:(id)arg1;
 - (void)_applicationDeactivating:(id)arg1;
 - (void)_applicationWillTerminate:(id)arg1;
-- (void)_disableLogMsgInstrumentation;
+- (void)_disableLogMsgInstrumentationWithBlock:(id /* block */)arg1;
 - (BOOL)_disableUsageLoggingForCountry;
 - (void)_enableLogMsgInstrumentation;
 - (void)_flushLogs;
 - (id)_logMessageUsageURL;
 - (void)_queueLogMessage:(id)arg1;
+- (void)_registerLogMsgState:(id)arg1;
 - (void)_removeAllLogAdaptors;
 - (void)_removeLogAdaptor:(id)arg1;
 - (void)_setupDefaultAdaptors;
 - (void)_setupXPCRemoteAdators;
+- (void)_unregisterLogMsgStateOfType:(int)arg1;
 - (void)_updateAndSetupRemoteAdaptors;
 - (BOOL)_updateRemoteAdaptorOptions;
 - (void)addLogAdaptor:(id)arg1;
 - (void)dealloc;
 - (void)disableLogMsgInstrumentation;
+- (void)disableLogMsgInstrumentationWithBlock:(id /* block */)arg1;
 - (void)enableLogMsgInstrumentation;
 - (void)flushLogs;
 - (id)init;
 - (void)queueLogMessage:(id)arg1;
+- (void)registerLogMsgState:(id)arg1;
 - (void)removeAllLogAdators;
 - (void)removeLogAdaptor:(id)arg1;
 - (id)serverLogAdaptorManager;
 - (void)setServerLogAdaptorManager:(id)arg1;
 - (BOOL)shouldSendUsageUsingNewLogManager;
+- (void)unregisterLogMsgStateOfType:(int)arg1;
 - (void)waitForEmptyLoggingQueue:(id /* block */)arg1;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface SCNSceneDatabase : NSObject <NSSecureCoding> {
-    NSMutableDictionary *_db;
+    NSMutableDictionary * _db;
 }
 
 + (id)lookUpKeyForObjectNamed:(id)arg1 class:(Class)arg2;

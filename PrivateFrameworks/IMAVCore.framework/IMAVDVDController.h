@@ -3,7 +3,7 @@
  */
 
 @interface IMAVDVDController : NSObject {
-    BOOL _didPause;
+    BOOL  _didPause;
 }
 
 + (id)sharedInstance;

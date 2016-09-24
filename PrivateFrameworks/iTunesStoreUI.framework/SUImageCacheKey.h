@@ -3,8 +3,8 @@
  */
 
 @interface SUImageCacheKey : NSObject <NSCopying> {
-    SUImageDataProvider *_dataProvider;
-    NSURL *_url;
+    SUImageDataProvider * _dataProvider;
+    NSURL * _url;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

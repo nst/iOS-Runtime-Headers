@@ -3,7 +3,7 @@
  */
 
 @interface CECFakeInterface : CECInterface {
-    NSMutableDictionary *_properties;
+    NSMutableDictionary * _properties;
 }
 
 + (id)defaultPlaybackDeviceProperties;

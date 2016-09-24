@@ -3,20 +3,20 @@
  */
 
 @interface PLGeoLocationShifter : NSObject {
-    NSMutableOrderedSet *_assetsToShift;
-    PLGeoLocationShiftResult *_currentBatchResult;
-    <PLGeoLocationShifterDelegate> *_delegate;
-    NSMutableSet *_inFlightRequestIDs;
-    BOOL _isRunning;
-    NSObject<OS_dispatch_queue> *_locationShiftQueue;
-    GEOLocationShifter *_locationShifter;
-    BOOL _shiftOperationInProgress;
+    NSMutableOrderedSet * _assetsToShift;
+    PLGeoLocationShiftResult * _currentBatchResult;
+    <PLGeoLocationShifterDelegate> * _delegate;
+    NSMutableSet * _inFlightRequestIDs;
+    BOOL  _isRunning;
+    NSObject<OS_dispatch_queue> * _locationShiftQueue;
+    GEOLocationShifter * _locationShifter;
+    BOOL  _shiftOperationInProgress;
 }
 
 @property (nonatomic) <PLGeoLocationShifterDelegate> *delegate;
 @property (nonatomic, readonly) BOOL hasWork;
 
-+ (BOOL)isLocationShiftRequiredForCoordinate:(struct { double x1; double x2; })arg1;
++ (BOOL)isLocationShiftRequiredForCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
 + (unsigned int)locationShiftFunctionVersion;
 
 - (void)_beginBatch:(id)arg1;

@@ -3,13 +3,13 @@
  */
 
 @interface SUItemContentRating : NSObject <NSCopying> {
-    NSDictionary *_dictionary;
-    int _rank;
-    NSString *_ratingDescription;
-    NSString *_ratingLabel;
-    int _ratingSystem;
-    SSItemArtworkImage *_ratingSystemLogo;
-    BOOL _shouldHideWhenRestricted;
+    NSDictionary * _dictionary;
+    int  _rank;
+    NSString * _ratingDescription;
+    NSString * _ratingLabel;
+    int  _ratingSystem;
+    SSItemArtworkImage * _ratingSystemLogo;
+    BOOL  _shouldHideWhenRestricted;
 }
 
 @property (getter=isExplicitContent, nonatomic, readonly) BOOL explicitContent;

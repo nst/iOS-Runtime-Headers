@@ -3,7 +3,7 @@
  */
 
 @interface IKJSInspectorDOMAgent : NSObject <RWIProtocolDOMDomainHandler> {
-    IKJSInspectorController *_controller;
+    IKJSInspectorController * _controller;
 }
 
 @property (nonatomic, readonly) IKJSInspectorController *controller;

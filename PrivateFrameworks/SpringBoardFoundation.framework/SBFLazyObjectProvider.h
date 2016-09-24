@@ -3,8 +3,8 @@
  */
 
 @interface SBFLazyObjectProvider : NSObject {
-    id /* block */ _generator;
-    id _object;
+    id /* block */  _generator;
+    id  _object;
 }
 
 @property (nonatomic, copy) id /* block */ generator;

@@ -14,7 +14,6 @@
 - (unsigned int)changedFields;
 - (BOOL)changesAcknowledged;
 - (id)copy;
-- (void)dealloc;
 - (id)description;
 - (id)initWithEventStore:(id)arg1 opaqueKey:(id)arg2 uniqueKey:(id)arg3;
 - (id)lazyLoadRelationForKey:(id)arg1;

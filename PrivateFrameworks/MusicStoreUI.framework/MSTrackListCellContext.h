@@ -3,8 +3,8 @@
  */
 
 @interface MSTrackListCellContext : SUMediaItemCellContext {
-    BOOL _shouldHideContentRating;
-    BOOL _showSubtitle;
+    BOOL  _shouldHideContentRating;
+    BOOL  _showSubtitle;
 }
 
 @property (nonatomic) BOOL shouldHideContentRating;

@@ -3,7 +3,7 @@
  */
 
 @interface UIStatusBarOrientationAnimationParameters : UIStatusBarAnimationParameters {
-    int _orientationAnimation;
+    int  _orientationAnimation;
 }
 
 @property (nonatomic) int orientationAnimation;

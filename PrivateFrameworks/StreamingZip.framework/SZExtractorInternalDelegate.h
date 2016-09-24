@@ -3,7 +3,7 @@
  */
 
 @interface SZExtractorInternalDelegate : NSObject <StreamingUnzipDelegateProtocol> {
-    <SZExtractorDelegate> *delegate;
+    <SZExtractorDelegate> * delegate;
 }
 
 @property <SZExtractorDelegate> *delegate;

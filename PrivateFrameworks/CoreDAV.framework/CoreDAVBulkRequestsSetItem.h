@@ -3,8 +3,8 @@
  */
 
 @interface CoreDAVBulkRequestsSetItem : CoreDAVItem {
-    CoreDAVBulkRequestsItem *_crudItem;
-    CoreDAVBulkRequestsItem *_simpleItem;
+    CoreDAVBulkRequestsItem * _crudItem;
+    CoreDAVBulkRequestsItem * _simpleItem;
 }
 
 @property (nonatomic, retain) CoreDAVBulkRequestsItem *crudItem;

@@ -3,14 +3,14 @@
  */
 
 @interface TPNumberPadButton : UIControl <TPNumberPadButtonProtocol> {
-    UIColor *_color;
-    CALayer *_glyphLayer;
-    CALayer *_highlightedGlyphLayer;
-    TPRevealingRingView *_revealingRingView;
-    unsigned int character;
+    UIColor * _color;
+    CALayer * _glyphLayer;
+    CALayer * _highlightedGlyphLayer;
+    TPRevealingRingView * _revealingRingView;
+    unsigned int  character;
 }
 
-@property (nonatomic) float alphaOutsideAndInsideRing;
+@property (nonatomic) double alphaOutsideAndInsideRing;
 @property unsigned int character;
 @property (nonatomic, retain) UIColor *color;
 @property (readonly, copy) NSString *debugDescription;
@@ -21,7 +21,7 @@
 @property (nonatomic, readonly) TPRevealingRingView *revealingRingView;
 @property (readonly) Class superclass;
 
-+ (struct CGSize { float x1; float x2; })defaultSize;
++ (struct CGSize { double x1; double x2; })defaultSize;
 + (float)highlightCrossfadeHighlightBeginTime;
 + (float)highlightCrossfadeHighlightFadeDuration;
 + (float)highlightCrossfadeNormalBeginTime;
@@ -30,8 +30,13 @@
 + (id)imageForCharacter:(unsigned int)arg1;
 + (id)imageForCharacter:(unsigned int)arg1 highlighted:(BOOL)arg2;
 + (id)imageForCharacter:(unsigned int)arg1 highlighted:(BOOL)arg2 whiteVersion:(BOOL)arg3;
++ (void)loadNumberPadKeyPrototypeView;
++ (id)localizedLettersForCharacter:(unsigned int)arg1;
 + (float)outerCircleDiameter;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })paddingOutsideRing;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })paddingOutsideRing;
++ (void)resetLocale;
++ (void)resetLocaleIfNeeded;
++ (id)scriptKey;
 + (float)unhighlightCrossfadeHighlightBeginTime;
 + (float)unhighlightCrossfadeHighlightFadeDuration;
 + (float)unhighlightCrossfadeNormalBeginTime;
@@ -47,8 +52,9 @@
 - (id)defaultColor;
 - (id)glyphLayer;
 - (id)highlightedGlyphLayer;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)initForCharacter:(unsigned int)arg1;
+- (void)loadImagesForCurrentCharacter;
 - (id)revealingRingView;
 - (void)setAlphaOutsideAndInsideRing:(float)arg1;
 - (void)setCharacter:(unsigned int)arg1;

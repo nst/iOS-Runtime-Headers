@@ -2,36 +2,41 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKPlaceAttributionCell : ABContactCell {
-    UILabel *_label;
-    NSArray *_marginConstraints;
-    NSMutableArray *_scaledConstraints;
+@interface MKPlaceAttributionCell : MKPlaceSectionRowView {
+    <MKPlaceAttributionCellDelegate> * _cellDelegate;
+    NSLayoutConstraint * _collapsedConstraint;
+    _MKUILabel * _label;
+    NSLayoutConstraint * _labelBaselineToTop;
+    UIButton * _labelButton;
+    NSLayoutConstraint * _labelLastBaselineToBottom;
+    NSArray * _visibleConstraints;
 }
 
-@property (nonatomic, retain) NSAttributedString *attributionString;
-@property (nonatomic, retain) UILabel *label;
-@property (nonatomic, retain) NSArray *marginConstraints;
-@property (nonatomic, retain) NSMutableArray *scaledConstraints;
+@property (nonatomic) <MKPlaceAttributionCellDelegate> *cellDelegate;
+@property (nonatomic, retain) _MKUILabel *label;
+@property (nonatomic, retain) NSLayoutConstraint *labelBaselineToTop;
+@property (nonatomic, retain) UIButton *labelButton;
+@property (nonatomic, retain) NSLayoutConstraint *labelLastBaselineToBottom;
 
 + (id)fontForLabel;
-+ (float)intrinsicContentHeight;
 
 - (void).cxx_destruct;
-- (id)attributionString;
-- (void)contentSizeDidChange;
+- (void)_contentSizeDidChange;
+- (void)attributionClicked;
+- (id)cellDelegate;
+- (void)createConstraints;
 - (void)dealloc;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)label;
-- (void)layoutMarginsDidChange;
-- (id)marginConstraints;
-- (void)refreshMarginConstraints;
-- (id)scaledConstraints;
+- (id)labelBaselineToTop;
+- (id)labelButton;
+- (id)labelLastBaselineToBottom;
 - (void)setAttributionString:(id)arg1;
+- (void)setCellDelegate:(id)arg1;
 - (void)setLabel:(id)arg1;
-- (void)setMarginConstraints:(id)arg1;
-- (void)setScaledConstraints:(id)arg1;
-- (void)tintColorDidChange;
+- (void)setLabelBaselineToTop:(id)arg1;
+- (void)setLabelButton:(id)arg1;
+- (void)setLabelLastBaselineToBottom:(id)arg1;
 - (void)updateConstraints;
-- (id)updatedAttributionStringFromString:(id)arg1 updateColorOnly:(BOOL)arg2;
 
 @end

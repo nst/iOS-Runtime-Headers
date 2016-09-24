@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptMenuViewController : SUScriptViewController {
-    SUScriptFunction *_action;
+    SUScriptFunction * _action;
 }
 
 @property (retain) WebScriptObject *action;

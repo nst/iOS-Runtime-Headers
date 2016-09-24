@@ -3,8 +3,8 @@
  */
 
 @interface _NSTemporaryObjectID2 : NSTemporaryObjectID {
-    id _store;
-    _NS128bitWrapper *_uuid128;
+    id  _store;
+    _NS128bitWrapper * _uuid128;
 }
 
 + (id)initWithEntity:(id)arg1 andUUIDString:(id)arg2;

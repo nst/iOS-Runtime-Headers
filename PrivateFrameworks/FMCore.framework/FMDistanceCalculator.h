@@ -3,8 +3,8 @@
  */
 
 @interface FMDistanceCalculator : NSObject {
-    NSLocale *_locale;
-    NSUserDefaults *_userDefaults;
+    NSLocale * _locale;
+    NSUserDefaults * _userDefaults;
 }
 
 @property (nonatomic, retain) NSLocale *locale;

@@ -3,7 +3,7 @@
  */
 
 @interface MSASPConnectionGate : NSObject {
-    NSError *_error;
+    NSError * _error;
 }
 
 @property (nonatomic, retain) NSError *error;

@@ -6,10 +6,10 @@
     struct { 
         unsigned int delegateDidAccelerate : 1; 
         unsigned int reserved : 31; 
-    } _accelerometerFlags;
-    <UIAccelerometerDelegate> *_delegate;
-    CMMotionManager *_motionManager;
-    double _updateInterval;
+    }  _accelerometerFlags;
+    <UIAccelerometerDelegate> * _delegate;
+    CMMotionManager * _motionManager;
+    double  _updateInterval;
 }
 
 @property (nonatomic) <UIAccelerometerDelegate> *delegate;

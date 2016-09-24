@@ -3,7 +3,7 @@
  */
 
 @interface QLThumbnailAdditionCache : NSObject {
-    NSCache *_additionsCache;
+    NSCache * _additionsCache;
 }
 
 + (id)sharedInstance;

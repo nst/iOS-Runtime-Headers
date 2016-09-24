@@ -3,21 +3,21 @@
  */
 
 @interface APTargetBTLEDevice : NSObject {
-    NSUUID *_deviceID;
-    BOOL _isSoloCapable;
-    unsigned long long _lastBeaconTicks;
+    NSUUID * _deviceID;
+    BOOL  _isSoloCapable;
+    unsigned int  _lastBeaconTicks;
     struct { 
         unsigned char flags; 
         unsigned char config; 
         unsigned char ipv4[4]; 
-    } _lastData;
-    int _lastRSSI;
-    BOOL _supportsMediaControlPort;
+    }  _lastData;
+    int  _lastRSSI;
+    BOOL  _supportsMediaControlPort;
 }
 
 @property (nonatomic, retain) NSUUID *deviceID;
 @property (nonatomic) BOOL isSoloCapable;
-@property (nonatomic) unsigned long long lastBeaconTicks;
+@property (nonatomic) unsigned int lastBeaconTicks;
 @property (nonatomic) struct { unsigned char x1; unsigned char x2; unsigned char x3[4]; } lastData;
 @property (nonatomic) int lastRSSI;
 @property (nonatomic) BOOL supportsMediaControlPort;
@@ -25,12 +25,12 @@
 - (void)dealloc;
 - (id)deviceID;
 - (BOOL)isSoloCapable;
-- (unsigned long long)lastBeaconTicks;
+- (unsigned int)lastBeaconTicks;
 - (struct { unsigned char x1; unsigned char x2; unsigned char x3[4]; })lastData;
 - (int)lastRSSI;
 - (void)setDeviceID:(id)arg1;
 - (void)setIsSoloCapable:(BOOL)arg1;
-- (void)setLastBeaconTicks:(unsigned long long)arg1;
+- (void)setLastBeaconTicks:(unsigned int)arg1;
 - (void)setLastData:(struct { unsigned char x1; unsigned char x2; unsigned char x3[4]; })arg1;
 - (void)setLastRSSI:(int)arg1;
 - (void)setSupportsMediaControlPort:(BOOL)arg1;

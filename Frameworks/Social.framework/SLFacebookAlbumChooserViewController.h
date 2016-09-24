@@ -3,11 +3,11 @@
  */
 
 @interface SLFacebookAlbumChooserViewController : UITableViewController <SLFacebookAlbumManagerDelegate> {
-    SLFacebookAlbumManager *_albumManager;
-    NSArray *_albums;
-    NSCache *_coverImageCache;
-    <SLFacebookAlbumChooserViewControllerDelegate> *_delegate;
-    UIButton *_flipBackButton;
+    SLFacebookAlbumManager * _albumManager;
+    NSArray * _albums;
+    NSCache * _coverImageCache;
+    <SLFacebookAlbumChooserViewControllerDelegate> * _delegate;
+    UIButton * _flipBackButton;
 }
 
 @property (retain) SLFacebookAlbumManager *albumManager;

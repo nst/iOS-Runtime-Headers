@@ -3,15 +3,15 @@
  */
 
 @interface CAMDeviceSwitchTestHarness : CAMPerformanceTestHarness {
-    int _desiredDevice;
-    CAMViewfinderViewController *_viewfinder;
+    int  _desiredDevicePosition;
+    CAMViewfinderViewController * _viewfinder;
 }
 
-+ (id)harnessWithTestName:(id)arg1 viewfinder:(id)arg2 device:(int)arg3;
++ (id)harnessWithTestName:(id)arg1 viewfinder:(id)arg2 devicePosition:(int)arg3;
 
 - (void).cxx_destruct;
-- (void)ensureCaptureDevice:(int)arg1 thenPerform:(id /* block */)arg2;
-- (id)initWithTestName:(id)arg1 viewfinder:(id)arg2 device:(int)arg3;
+- (void)ensureCaptureDevicePosition:(int)arg1 thenPerform:(id /* block */)arg2;
+- (id)initWithTestName:(id)arg1 viewfinder:(id)arg2 devicePosition:(int)arg3;
 - (void)runConfiguredTest;
 
 @end

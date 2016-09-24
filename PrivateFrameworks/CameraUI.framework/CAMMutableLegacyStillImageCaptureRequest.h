@@ -4,7 +4,6 @@
 
 @interface CAMMutableLegacyStillImageCaptureRequest : CAMLegacyStillImageCaptureRequest <CAMMutableCaptureRequestLocation, CAMMutableCaptureRequestPersistence, CAMMutableCaptureRequestPower>
 
-@property (nonatomic, copy) NSString *HDREV0PersistenceUUID;
 @property (nonatomic) unsigned int assertionIdentifier;
 @property (nonatomic, copy) NSString *burstIdentifier;
 @property (nonatomic) int captureDevice;
@@ -21,6 +20,7 @@
 @property (nonatomic, copy) NSURL *localDestinationURL;
 @property (nonatomic, retain) CLLocation *location;
 @property (nonatomic) unsigned int maximumBurstLength;
+@property (nonatomic, copy) NSString *originalPersistenceUUID;
 @property (nonatomic) int persistenceOptions;
 @property (nonatomic, copy) NSString *persistenceUUID;
 @property (nonatomic) int physicalButtonType;
@@ -28,6 +28,7 @@
 @property (nonatomic) BOOL shouldExtractDiagnosticsFromMetadata;
 @property (nonatomic) BOOL shouldPersistDiagnosticsToSidecar;
 @property (readonly) Class superclass;
+@property (nonatomic) int temporaryPersistenceOptions;
 @property (getter=isTransient, nonatomic) BOOL transient;
 @property (nonatomic) BOOL usesStillImageStabilization;
 @property (nonatomic) BOOL wantsAudioForCapture;
@@ -44,18 +45,18 @@
 - (void)setDelegate:(id)arg1;
 - (void)setEffectFilterType:(int)arg1;
 - (void)setFlashMode:(int)arg1;
-- (void)setHDREV0PersistenceUUID:(id)arg1;
 - (void)setHdrMode:(int)arg1;
 - (void)setLocalDestinationURL:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setMaximumBurstLength:(unsigned int)arg1;
-- (void)setParameter:(id)arg1 forKey:(id)arg2;
+- (void)setOriginalPersistenceUUID:(id)arg1;
 - (void)setPersistenceOptions:(int)arg1;
 - (void)setPersistenceUUID:(id)arg1;
 - (void)setPhysicalButtonType:(int)arg1;
 - (void)setShouldDelayRemotePersistence:(BOOL)arg1;
 - (void)setShouldExtractDiagnosticsFromMetadata:(BOOL)arg1;
 - (void)setShouldPersistDiagnosticsToSidecar:(BOOL)arg1;
+- (void)setTemporaryPersistenceOptions:(int)arg1;
 - (void)setTransient:(BOOL)arg1;
 - (void)setUsesStillImageStabilization:(BOOL)arg1;
 - (void)setWantsAudioForCapture:(BOOL)arg1;

@@ -3,16 +3,16 @@
  */
 
 @interface AKAdornmentLayer : CALayer {
-    AKAnnotation *_annotation;
-    float _currentScaleFactor;
-    CALayer *_handleContainerLayer;
-    BOOL _isObservingAnnotation;
-    BOOL _isObservingEventHandling;
-    AKPageController *_pageController;
+    AKAnnotation * _annotation;
+    double  _currentScaleFactor;
+    CALayer * _handleContainerLayer;
+    BOOL  _isObservingAnnotation;
+    BOOL  _isObservingEventHandling;
+    AKPageController * _pageController;
 }
 
 @property (retain) AKAnnotation *annotation;
-@property float currentScaleFactor;
+@property double currentScaleFactor;
 @property (retain) CALayer *handleContainerLayer;
 @property BOOL isObservingAnnotation;
 @property BOOL isObservingEventHandling;
@@ -22,7 +22,7 @@
 + (id)newAdornmentLayerForAnnotation:(id)arg1 withPageController:(id)arg2;
 
 - (void).cxx_destruct;
-- (void)_addHandleSublayerAtPoint:(struct CGPoint { float x1; float x2; })arg1 withStyle:(unsigned int)arg2;
+- (void)_addHandleSublayerAtPoint:(struct CGPoint { double x1; double x2; })arg1 withStyle:(unsigned int)arg2;
 - (id)_initWithAnnotation:(id)arg1 andPageController:(id)arg2;
 - (void)_startObservingAnnotation;
 - (void)_startObservingAnnotationEventHandlers;

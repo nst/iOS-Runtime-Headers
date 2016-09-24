@@ -3,7 +3,7 @@
  */
 
 @interface AVDateRangeMetadataGroup : AVMetadataGroup <NSCopying, NSMutableCopying> {
-    AVDateRangeMetadataGroupInternal *_priv;
+    AVDateRangeMetadataGroupInternal * _priv;
 }
 
 @property (getter=_dateRangeMetadataGroupInternal, nonatomic, readonly) AVDateRangeMetadataGroupInternal *dateRangeMetadataGroupInternal;

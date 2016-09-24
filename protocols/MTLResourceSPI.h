@@ -6,9 +6,14 @@
 @required
 
 - (MTLResourceAllocationInfo *)cachedAllocationInfo;
+- (BOOL)doesAliasAllResources:(const id*)arg1 count:(unsigned int)arg2;
+- (BOOL)doesAliasAnyResources:(const id*)arg1 count:(unsigned int)arg2;
+- (BOOL)doesAliasResource:(id <MTLResource>)arg1;
+- (BOOL)isComplete;
 - (BOOL)isPurgeable;
 - (int)responsibleProcess;
 - (void)setResponsibleProcess:(int)arg1;
 - (MTLResourceAllocationInfo *)sharedAllocationInfo;
+- (void)waitUntilComplete;
 
 @end

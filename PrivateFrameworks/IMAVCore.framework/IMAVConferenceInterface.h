@@ -3,17 +3,17 @@
  */
 
 @interface IMAVConferenceInterface : IMAVInterface <AVConferenceDelegate> {
-    NSMutableDictionary *_avConferences;
-    NSLock *_avConferencesLock;
-    NSMutableArray *_avConferencesToCleanup;
-    BOOL _duringInit;
-    BOOL _pendingCleanup;
+    NSMutableDictionary * _avConferences;
+    NSLock * _avConferencesLock;
+    NSMutableArray * _avConferencesToCleanup;
+    BOOL  _duringInit;
+    BOOL  _pendingCleanup;
 }
 
 @property (nonatomic, readonly) AVConference *controller;
 
-+ (void)_postParticipantMediaChangeNotification:(id)arg1 cameraChanged:(BOOL)arg2 orientationChanged:(BOOL)arg3 aspectChanged:(BOOL)arg4 contentRectChanged:(BOOL)arg5 cameraWillSwitch:(BOOL)arg6 camera:(unsigned int)arg7 orentation:(unsigned int)arg8 aspect:(struct CGSize { float x1; float x2; })arg9 contentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg10;
-+ (void)_postParticipantScreenAttributesChangeNotification:(id)arg1 cameraChanged:(BOOL)arg2 orientationChanged:(BOOL)arg3 aspectChanged:(BOOL)arg4 cameraWillSwitch:(BOOL)arg5 camera:(unsigned int)arg6 orentation:(unsigned int)arg7 aspect:(struct CGSize { float x1; float x2; })arg8;
++ (void)_postParticipantMediaChangeNotification:(id)arg1 cameraChanged:(BOOL)arg2 orientationChanged:(BOOL)arg3 aspectChanged:(BOOL)arg4 contentRectChanged:(BOOL)arg5 cameraWillSwitch:(BOOL)arg6 camera:(unsigned int)arg7 orentation:(unsigned int)arg8 aspect:(struct CGSize { double x1; double x2; })arg9 contentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg10;
++ (void)_postParticipantScreenAttributesChangeNotification:(id)arg1 cameraChanged:(BOOL)arg2 orientationChanged:(BOOL)arg3 aspectChanged:(BOOL)arg4 cameraWillSwitch:(BOOL)arg5 camera:(unsigned int)arg6 orentation:(unsigned int)arg7 aspect:(struct CGSize { double x1; double x2; })arg8;
 + (BOOL)_useMultipleAVConference;
 
 - (void)_avChatDealloc:(id)arg1;
@@ -27,25 +27,25 @@
 - (int)_deviceRoleForAVChat:(id)arg1;
 - (id)_existingConferenceForAVChat:(id)arg1;
 - (id)_existingConferenceForAVChatGUID:(id)arg1;
-- (id)_getFaceTimeUUID;
+- (id)_faceTimeUUID;
 - (BOOL)_hasAVConferenceObjectsForChatsOtherThan:(id)arg1;
 - (id)_imAVChatParticipantForConference:(id)arg1 callID:(int)arg2 errorString:(id)arg3;
 - (void)_notifyAboutPotentialCallForChat:(id)arg1;
 - (void)_queueAVConferenceForCleanup:(id)arg1;
-- (void)_setAudioSessionPropertiesForChat:(id)arg1;
 - (BOOL)_submitEndCallMetric:(id)arg1 forCallID:(int)arg2;
 - (BOOL)_submitLoggingInformation:(id)arg1 forChat:(id)arg2;
 - (int)avChat:(id)arg1 endConferenceForUserID:(id)arg2;
 - (BOOL)avChat:(id)arg1 generateCallInfoForID:(id)arg2 service:(id)arg3 usingRelay:(BOOL)arg4 callInfo:(id)arg5;
 - (void)avChat:(id)arg1 prepareConnectionWithCallInfo:(id)arg2;
-- (void)avChat:(id)arg1 setLocalLandscapeAspectRatio:(struct CGSize { float x1; float x2; })arg2 localPortraitAspectRatio:(struct CGSize { float x1; float x2; })arg3;
+- (void)avChat:(id)arg1 setLocalLandscapeAspectRatio:(struct CGSize { double x1; double x2; })arg2 localPortraitAspectRatio:(struct CGSize { double x1; double x2; })arg3;
 - (void)avChat:(id)arg1 setMute:(BOOL)arg2;
 - (void)avChat:(id)arg1 setPaused:(BOOL)arg2;
 - (void)avChat:(id)arg1 setSendingAudio:(BOOL)arg2;
 - (void)avChat:(id)arg1 setSendingVideo:(BOOL)arg2;
-- (unsigned long long)capabilities;
-- (unsigned long long)capabilitiesOfCPU;
-- (unsigned long long)capabilitiesOfNetwork;
+- (void)cancelConferenceForAVChat:(id)arg1;
+- (unsigned int)capabilities;
+- (unsigned int)capabilitiesOfCPU;
+- (unsigned int)capabilitiesOfNetwork;
 - (void)chatRelayedStatusChanged:(id)arg1;
 - (void)chatStateUpdated;
 - (void)conference:(id)arg1 cancelRelayRequest:(int)arg2 requestDict:(id)arg3;
@@ -95,12 +95,12 @@
 - (void)setRemoteVideoBackLayer:(void*)arg1 forChat:(id)arg2;
 - (void)setRemoteVideoLayer:(void*)arg1 forChat:(id)arg2;
 - (void)setRemoteVideoLayersFromChat:(id)arg1 toChat:(id)arg2;
-- (void)setRemoteVideoPresentationSize:(struct CGSize { float x1; float x2; })arg1 forChat:(id)arg2;
+- (void)setRemoteVideoPresentationSize:(struct CGSize { double x1; double x2; })arg1 forChat:(id)arg2;
 - (void)setRemoteVideoPresentationState:(unsigned int)arg1 forChat:(id)arg2;
 - (BOOL)startPreviewWithError:(id*)arg1;
 - (BOOL)stopPreview;
 - (BOOL)supportsLayers;
 - (BOOL)supportsRelay;
-- (void)updateAVChat:(id)arg1 withCallMetadata:(id)arg2;
+- (void)updateAVChat:(id)arg1 withCallMetadata:(id)arg2 isFinalUpdate:(BOOL)arg3;
 
 @end

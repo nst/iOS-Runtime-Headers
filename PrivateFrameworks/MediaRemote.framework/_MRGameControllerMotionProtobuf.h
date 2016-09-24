@@ -3,8 +3,8 @@
  */
 
 @interface _MRGameControllerMotionProtobuf : PBCodable <NSCopying> {
-    _MRGameControllerAccelerationProtobuf *_gravity;
-    _MRGameControllerAccelerationProtobuf *_userAcceleration;
+    _MRGameControllerAccelerationProtobuf * _gravity;
+    _MRGameControllerAccelerationProtobuf * _userAcceleration;
 }
 
 @property (nonatomic, retain) _MRGameControllerAccelerationProtobuf *gravity;

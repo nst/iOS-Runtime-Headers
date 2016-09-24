@@ -3,7 +3,7 @@
 
 @protocol InterfaceListenerDelegate
 
-@required
+@optional
 
 - (void)interfaceStateDidChangeWithWifiUp:(BOOL)arg1 cellUp:(BOOL)arg2;
 - (void)networkStateDidChange;

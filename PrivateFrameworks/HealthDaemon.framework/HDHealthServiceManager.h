@@ -3,23 +3,23 @@
  */
 
 @interface HDHealthServiceManager : NSObject <CBCentralManagerPrivateDelegate> {
-    NSMutableArray *_allServicesArray;
-    CBUUID *_allServicesUUID;
-    NSMutableDictionary *_bluetoothUpdateHandlers;
-    CBCentralManager *_central;
-    NSMutableDictionary *_connectedPeripheralsByPeripheralUUID;
-    NSMutableDictionary *_connectionInfosByPeripheralUUID;
-    HDIdentifierTable *_connectionInfosTable;
-    NSLock *_connectionLock;
-    <HDHealthDaemon> *_daemon;
-    <HDHealthDataCollectionManager> *_dataCollectionManager;
-    NSMutableDictionary *_discoveryInfosByServiceUUID;
-    HDIdentifierTable *_discoveryInfosTable;
-    NSLock *_discoveryLock;
-    NSMutableDictionary *_healthServicesByPeripheralUUID;
-    NSMutableDictionary *_propertyManagerByPeripheralUUID;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSSet *_scanServiceUUIDs;
+    NSMutableArray * _allServicesArray;
+    CBUUID * _allServicesUUID;
+    NSMutableDictionary * _bluetoothUpdateHandlers;
+    CBCentralManager * _central;
+    NSMutableDictionary * _connectedPeripheralsByPeripheralUUID;
+    NSMutableDictionary * _connectionInfosByPeripheralUUID;
+    HDIdentifierTable * _connectionInfosTable;
+    NSLock * _connectionLock;
+    <HDHealthDaemon> * _daemon;
+    <HDHealthDataCollectionManager> * _dataCollectionManager;
+    NSMutableDictionary * _discoveryInfosByServiceUUID;
+    HDIdentifierTable * _discoveryInfosTable;
+    NSLock * _discoveryLock;
+    NSMutableDictionary * _healthServicesByPeripheralUUID;
+    NSMutableDictionary * _propertyManagerByPeripheralUUID;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSSet * _scanServiceUUIDs;
 }
 
 @property (nonatomic, retain) NSMutableArray *allServicesArray;
@@ -100,7 +100,7 @@
 - (void)reportTransitoryData:(id)arg1 fromDevice:(id)arg2 withError:(id)arg3;
 - (id)reviewSavedHealthServiceSessions:(id)arg1 withError:(id*)arg2;
 - (id)scanServiceUUIDs;
-- (void)sendBluetoothStatusUpdatesForServer:(id)arg1 withHandler:(id /* block */)arg2 completion:(id /* block */)arg3;
+- (void)sendBluetoothStatusUpdatesForServer:(id)arg1 updateHandler:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (void)servicesInvalidatedForDevice:(id)arg1 withError:(id)arg2;
 - (void)setAllServicesArray:(id)arg1;
 - (void)setAllServicesUUID:(id)arg1;

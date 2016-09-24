@@ -3,14 +3,14 @@
  */
 
 @interface GEOTransitRoutePreloader : GEORoutePreloader {
-    GEOTransitDecoderData *_decoderData;
-    double _endRoutePosition;
-    NSTimer *_geodCrashTimer;
-    int _indexOfLastStepWithPreparedBatch;
-    double _radialDistanceToImplicateTilesMeters;
-    _GEOTransitRoutePreloaderData *_reserved;
-    GEOTransitSuggestedRoute *_suggestedRoute;
-    GEOMapServiceTraits *_traits;
+    GEOTransitDecoderData * _decoderData;
+    double  _endRoutePosition;
+    NSTimer * _geodCrashTimer;
+    int  _indexOfLastStepWithPreparedBatch;
+    double  _radialDistanceToImplicateTilesMeters;
+    _GEOTransitRoutePreloaderData * _reserved;
+    GEOTransitSuggestedRoute * _suggestedRoute;
+    GEOMapServiceTraits * _traits;
 }
 
 - (void)_cancelAllBatches;
@@ -26,7 +26,7 @@
 - (void)_makePreloadBatchForSteps:(id)arg1;
 - (void)_makePreloadBatchForTilesOnRouteWithSteps:(id)arg1 andPriority:(unsigned int)arg2;
 - (void)_performNextRequests;
-- (struct PolylineCoordinate { unsigned int x1; float x2; })_polylineCoordinateForDouble:(double)arg1;
+- (struct PolylineCoordinate { unsigned int x1; double x2; })_polylineCoordinateForDouble:(double)arg1;
 - (void)_processBatches;
 - (void)_processedFinishedBatch:(id)arg1 withPartialStatus:(unsigned int)arg2;
 - (void)_resetErrorCounts;

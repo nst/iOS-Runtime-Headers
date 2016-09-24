@@ -3,7 +3,7 @@
  */
 
 @interface _CDEventStream : NSObject {
-    _CDEventStreamProperties *eventStreamProperties;
+    _CDEventStreamProperties * eventStreamProperties;
 }
 
 @property (readonly) _CDEventStreamProperties *eventStreamProperties;

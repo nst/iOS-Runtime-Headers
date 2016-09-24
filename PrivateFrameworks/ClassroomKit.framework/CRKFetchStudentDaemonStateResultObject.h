@@ -3,7 +3,7 @@
  */
 
 @interface CRKFetchStudentDaemonStateResultObject : CATTaskResultObject {
-    NSString *_stateDescription;
+    NSString * _stateDescription;
 }
 
 @property (nonatomic, copy) NSString *stateDescription;
@@ -11,7 +11,6 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setStateDescription:(id)arg1;

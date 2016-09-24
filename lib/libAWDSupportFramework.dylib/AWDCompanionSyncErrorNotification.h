@@ -3,14 +3,14 @@
  */
 
 @interface AWDCompanionSyncErrorNotification : PBCodable <NSCopying> {
-    long long _errorCode;
-    NSString *_errorDomain;
+    long long  _errorCode;
+    NSString * _errorDomain;
     struct { 
         unsigned int errorCode : 1; 
         unsigned int timestamp : 1; 
-    } _has;
-    NSString *_service;
-    unsigned long long _timestamp;
+    }  _has;
+    NSString * _service;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) long long errorCode;

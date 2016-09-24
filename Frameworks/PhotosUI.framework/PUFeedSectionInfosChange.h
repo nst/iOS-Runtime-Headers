@@ -3,12 +3,12 @@
  */
 
 @interface PUFeedSectionInfosChange : NSObject {
-    NSIndexSet *_deletedIndexes;
-    NSIndexSet *_insertedIndexes;
-    NSSet *_sectionInfosWithCommentChanges;
-    BOOL _shouldReload;
-    NSSet *_updatedAssets;
-    NSIndexSet *_updatedIndexes;
+    NSIndexSet * _deletedIndexes;
+    NSIndexSet * _insertedIndexes;
+    NSSet * _sectionInfosWithCommentChanges;
+    BOOL  _shouldReload;
+    NSSet * _updatedAssets;
+    NSIndexSet * _updatedIndexes;
 }
 
 @property (nonatomic, retain) NSIndexSet *deletedIndexes;

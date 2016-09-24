@@ -3,11 +3,11 @@
  */
 
 @interface AVAssetReaderVideoCompositionOutputInternal : NSObject {
-    AVCustomVideoCompositorSession *customVideoCompositorSession;
-    void *figVideoCompositor;
-    AVVideoComposition *videoComposition;
-    AVVideoOutputSettings *videoOutputSettings;
-    NSArray *videoTracks;
+    AVCustomVideoCompositorSession * customVideoCompositorSession;
+    void * figVideoCompositor;
+    AVVideoComposition * videoComposition;
+    AVVideoOutputSettings * videoOutputSettings;
+    NSArray * videoTracks;
 }
 
 @end

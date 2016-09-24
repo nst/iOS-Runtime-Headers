@@ -3,8 +3,8 @@
  */
 
 @interface MusicProviderListEntityProvider : NSObject <MusicClientContextConsuming, MusicEntityProviding> {
-    MusicClientContext *_clientContext;
-    NSArray *_entityProviderList;
+    MusicClientContext * _clientContext;
+    NSArray * _entityProviderList;
 }
 
 @property (nonatomic, retain) MusicClientContext *clientContext;

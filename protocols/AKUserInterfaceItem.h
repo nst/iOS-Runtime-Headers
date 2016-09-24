@@ -7,4 +7,8 @@
 
 - (int)tag;
 
+@optional
+
+- (int)tagForSegment:(int)arg1;
+
 @end

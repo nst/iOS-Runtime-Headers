@@ -3,7 +3,7 @@
  */
 
 @interface MPUCollectionViewController : MPUDataSourceViewController <MPStoreDownloadManagerObserver, UICollectionViewDataSource, UICollectionViewDelegate> {
-    UICollectionView *_collectionView;
+    UICollectionView * _collectionView;
 }
 
 @property (nonatomic, readonly) UICollectionView *collectionView;

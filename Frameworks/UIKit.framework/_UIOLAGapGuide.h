@@ -3,8 +3,8 @@
  */
 
 @interface _UIOLAGapGuide : _UILayoutSpacer {
-    id _followingItem;
-    unsigned int _followingItemIndex;
+    id  _followingItem;
+    unsigned int  _followingItemIndex;
 }
 
 @property (nonatomic) id followingItem;

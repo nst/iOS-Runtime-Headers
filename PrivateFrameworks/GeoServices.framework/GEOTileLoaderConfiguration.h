@@ -3,13 +3,13 @@
  */
 
 @interface GEOTileLoaderConfiguration : NSObject <NSCopying> {
-    NSString *_diskCacheLocation;
-    NSLocale *_locale;
-    GEOResourceManifestConfiguration *_manifestConfiguration;
-    unsigned int _memoryCacheCostLimit;
-    unsigned int _memoryCacheCountLimit;
-    Class _serverProxyClass;
-    BOOL _trackUsage;
+    NSString * _diskCacheLocation;
+    NSLocale * _locale;
+    GEOResourceManifestConfiguration * _manifestConfiguration;
+    unsigned int  _memoryCacheCostLimit;
+    unsigned int  _memoryCacheCountLimit;
+    Class  _serverProxyClass;
+    BOOL  _trackUsage;
 }
 
 @property (nonatomic, copy) NSString *diskCacheLocation;

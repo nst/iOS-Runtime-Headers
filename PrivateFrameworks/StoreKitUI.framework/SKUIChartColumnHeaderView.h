@@ -3,11 +3,11 @@
  */
 
 @interface SKUIChartColumnHeaderView : UIControl {
-    NSArray *_buttons;
-    int _selectedTitleIndex;
+    NSArray * _buttons;
+    int  _selectedTitleIndex;
 }
 
-@property (nonatomic, readonly) float edgePadding;
+@property (nonatomic, readonly) double edgePadding;
 @property (nonatomic) int selectedTitleIndex;
 @property (nonatomic, copy) NSArray *titles;
 

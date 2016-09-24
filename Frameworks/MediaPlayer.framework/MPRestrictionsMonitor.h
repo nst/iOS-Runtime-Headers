@@ -3,14 +3,14 @@
  */
 
 @interface MPRestrictionsMonitor : NSObject <MCProfileConnectionObserver> {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    BOOL _allowsAccountModification;
-    BOOL _allowsDeletion;
-    BOOL _allowsExplicitContent;
-    BOOL _allowsRadioPurchases;
-    BOOL _allowsStorePurchases;
-    NSMutableDictionary *_cachedSettings;
-    MCProfileConnection *_connection;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    BOOL  _allowsAccountModification;
+    BOOL  _allowsDeletion;
+    BOOL  _allowsExplicitContent;
+    BOOL  _allowsRadioPurchases;
+    BOOL  _allowsStorePurchases;
+    NSMutableDictionary * _cachedSettings;
+    MCProfileConnection * _connection;
 }
 
 @property (nonatomic, readonly) BOOL allowsAccountModification;

@@ -3,16 +3,16 @@
  */
 
 @interface SKUIItemState : NSObject <NSCopying> {
-    unsigned int _downloadContentFlags;
-    NSArray *_downloadIdentifiers;
-    NSString *_downloadPhase;
-    float _downloadProgress;
-    NSNumber *_itemIdentifier;
-    unsigned int _libraryContentFlags;
-    int _mediaCategory;
-    unsigned int _state;
-    SKUIStoreIdentifier *_storeIdentifier;
-    NSString *_variantIdentifier;
+    unsigned int  _downloadContentFlags;
+    NSArray * _downloadIdentifiers;
+    NSString * _downloadPhase;
+    double  _downloadProgress;
+    NSNumber * _itemIdentifier;
+    unsigned int  _libraryContentFlags;
+    int  _mediaCategory;
+    unsigned int  _state;
+    SKUIStoreIdentifier * _storeIdentifier;
+    NSString * _variantIdentifier;
 }
 
 @property (nonatomic, readonly) BOOL activeStateIsPreview;
@@ -20,7 +20,7 @@
 @property (nonatomic) unsigned int downloadContentFlags;
 @property (nonatomic, copy) NSArray *downloadIdentifiers;
 @property (nonatomic, copy) NSString *downloadPhase;
-@property (nonatomic) float downloadProgress;
+@property (nonatomic) double downloadProgress;
 @property (nonatomic, copy) NSNumber *itemIdentifier;
 @property (nonatomic) unsigned int libraryContentFlags;
 @property (nonatomic) int mediaCategory;

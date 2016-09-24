@@ -3,17 +3,14 @@
  */
 
 @interface UIMovieClosedCaptionData : NSObject {
-    NSMutableArray *_data;
-    NSString *_language;
+    NSMutableArray * _data;
+    NSString * _language;
 }
 
 @property (nonatomic, retain) NSString *language;
 
 - (void).cxx_destruct;
-- (void)addCaptionText:(id)arg1 startTime:(double)arg2 endTime:(double)arg3;
-- (id)description;
 - (id)language;
 - (void)setLanguage:(id)arg1;
-- (id)timeMarkers;
 
 @end

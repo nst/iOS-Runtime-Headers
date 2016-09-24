@@ -3,14 +3,14 @@
  */
 
 @interface CKDRecordCachePool : NSObject {
-    NSObject<OS_dispatch_source> *_expiryTimer;
-    NSMutableDictionary *_pools;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableDictionary * _pools;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_queue> * _recordExpiryQueue;
 }
 
-@property (nonatomic, retain) NSObject<OS_dispatch_source> *expiryTimer;
 @property (nonatomic, retain) NSMutableDictionary *pools;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *recordExpiryQueue;
 
 + (void)performWithClientContext:(id)arg1 scope:(int)arg2 block:(id /* block */)arg3;
 + (id)sharedPool;
@@ -19,14 +19,13 @@
 - (id)_poolForContext:(id)arg1;
 - (void)_purgeRecordCachesForApplicationContainerPaths:(id)arg1 expiryDate:(id)arg2;
 - (id)acquireCacheWithContext:(id)arg1 scope:(int)arg2;
-- (void)clearAllCachesForContext:(id)arg1;
-- (id)expiryTimer;
 - (id)init;
 - (id)pools;
 - (id)queue;
+- (id)recordExpiryQueue;
 - (void)releaseCache:(id)arg1;
-- (void)setExpiryTimer:(id)arg1;
 - (void)setPools:(id)arg1;
 - (void)setQueue:(id)arg1;
+- (void)setRecordExpiryQueue:(id)arg1;
 
 @end

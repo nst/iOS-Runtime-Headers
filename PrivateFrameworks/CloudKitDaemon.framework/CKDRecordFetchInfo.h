@@ -3,15 +3,15 @@
  */
 
 @interface CKDRecordFetchInfo : NSObject {
-    id /* block */ _completionBlock;
-    NSError *_error;
-    NSString *_etag;
-    unsigned int _fetchOrder;
-    CKRecord *_record;
-    CKRecordID *_recordID;
-    NSObject<OS_dispatch_source> *_recordReadySource;
-    double _startDate;
-    unsigned int _state;
+    id /* block */  _completionBlock;
+    NSError * _error;
+    NSString * _etag;
+    unsigned int  _fetchOrder;
+    CKRecord * _record;
+    CKRecordID * _recordID;
+    NSObject<OS_dispatch_source> * _recordReadySource;
+    double  _startDate;
+    unsigned int  _state;
 }
 
 @property (nonatomic, copy) id /* block */ completionBlock;

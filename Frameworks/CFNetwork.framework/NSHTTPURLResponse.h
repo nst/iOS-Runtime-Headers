@@ -3,7 +3,7 @@
  */
 
 @interface NSHTTPURLResponse : NSURLResponse {
-    NSHTTPURLResponseInternal *_httpInternal;
+    NSHTTPURLResponseInternal * _httpInternal;
 }
 
 @property (readonly, copy) NSDictionary *allHeaderFields;
@@ -44,6 +44,10 @@
 - (double)_maxAge;
 - (id)getSAPSignature;
 
+// Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
+
+- (id)pk_valueForHTTPHeaderField:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
 
 - (id)radio_decompressedDataWithBodyData:(id)arg1;
@@ -55,7 +59,7 @@
 - (id)_iTunesStore_valueForHTTPHeader:(id)arg1;
 - (id)expirationDate;
 - (double)expirationInterval;
-- (long long)maxExpectedContentLength;
+- (int)maxExpectedContentLength;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 

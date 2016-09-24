@@ -3,13 +3,13 @@
  */
 
 @interface SSVLoadNearbyAppsOperation : NSOperation {
-    NSString *_baseURLString;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    CLLocation *_location;
-    NSMutableDictionary *_parameters;
-    id /* block */ _responseBlock;
-    NSString *_storeFrontSuffix;
-    NSString *_userAgent;
+    NSString * _baseURLString;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    CLLocation * _location;
+    NSMutableDictionary * _parameters;
+    id /* block */  _responseBlock;
+    NSString * _storeFrontSuffix;
+    NSString * _userAgent;
 }
 
 @property (readonly) CLLocation *location;

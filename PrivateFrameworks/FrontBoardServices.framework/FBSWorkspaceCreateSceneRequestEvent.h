@@ -3,8 +3,8 @@
  */
 
 @interface FBSWorkspaceCreateSceneRequestEvent : FBSWorkspaceEvent {
-    FBSSceneClientSettingsDiff *_clientSettings;
-    NSString *_identifier;
+    FBSSceneClientSettingsDiff * _clientSettings;
+    NSString * _identifier;
 }
 
 @property (nonatomic, retain) FBSSceneClientSettingsDiff *clientSettingsDiff;

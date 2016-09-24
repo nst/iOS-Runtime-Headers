@@ -3,7 +3,7 @@
  */
 
 @interface CKDPTokenUnregistrationRequest : PBRequest <NSCopying> {
-    CKDPTokenRegistrationBody *_tokenRegistrationBody;
+    CKDPTokenRegistrationBody * _tokenRegistrationBody;
 }
 
 @property (nonatomic, readonly) BOOL hasTokenRegistrationBody;
@@ -21,6 +21,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (unsigned int)requestTypeCode;
+- (Class)responseClass;
 - (void)setTokenRegistrationBody:(id)arg1;
 - (id)tokenRegistrationBody;
 - (void)writeTo:(id)arg1;

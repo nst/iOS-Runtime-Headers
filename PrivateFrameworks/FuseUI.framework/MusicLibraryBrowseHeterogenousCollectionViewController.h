@@ -3,9 +3,9 @@
  */
 
 @interface MusicLibraryBrowseHeterogenousCollectionViewController : MusicLibraryBrowseCollectionViewController {
-    MusicEntityValueContext *_itemEntityValueContext;
-    NSMutableDictionary *_layoutMetricsPerSection;
-    MusicSectionEntityValueContext *_sectionEntityValueContext;
+    MusicEntityValueContext * _itemEntityValueContext;
+    NSMutableDictionary * _layoutMetricsPerSection;
+    MusicSectionEntityValueContext * _sectionEntityValueContext;
 }
 
 @property (nonatomic, readonly) MusicLibraryBrowseHeterogenousCollectionViewConfiguration *libraryViewConfiguration;
@@ -21,8 +21,8 @@
 - (void)collectionView:(id)arg1 didSelectAddButtonForCell:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (float)collectionView:(id)arg1 layout:(id)arg2 minimumInteritemSpacingForSectionAtIndex:(int)arg3;
-- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(int)arg3;
-- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(int)arg3;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (BOOL)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 willDisplaySupplementaryView:(id)arg2 forElementKind:(id)arg3 atIndexPath:(id)arg4;

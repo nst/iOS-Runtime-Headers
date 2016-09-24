@@ -7,19 +7,19 @@
         unsigned int sessionId : 1; 
         unsigned int relativeTimestamp : 1; 
         unsigned int sequenceNumber : 1; 
-    } _has;
-    GEOPlaceDataCacheLogMessage *_placeDataCacheLogMessage;
-    double _relativeTimestamp;
-    unsigned int _sequenceNumber;
-    struct { 
-        unsigned long long _high; 
-        unsigned long long _low; 
-    } _sessionId;
-    GEOStateTimingUsageLogMessage *_stateTimingLogMessage;
-    GEOSuggestionsUsageLogMessage *_suggestionsLogMessage;
-    GEOTileSetStateUsageLogMessage *_tileSetStateUsageLogMessage;
-    GEOABExperimentAssignment *_tilesAbExperimentAssignment;
-    GEOUserActionUsageLogMessage *_userActionLogMessage;
+    }  _has;
+    GEOPlaceDataCacheLogMessage * _placeDataCacheLogMessage;
+    double  _relativeTimestamp;
+    unsigned int  _sequenceNumber;
+    struct GEOSessionID { 
+        unsigned int _high; 
+        unsigned int _low; 
+    }  _sessionId;
+    GEOStateTimingUsageLogMessage * _stateTimingLogMessage;
+    GEOSuggestionsUsageLogMessage * _suggestionsLogMessage;
+    GEOTileSetStateUsageLogMessage * _tileSetStateUsageLogMessage;
+    GEOABExperimentAssignment * _tilesAbExperimentAssignment;
+    GEOUserActionUsageLogMessage * _userActionLogMessage;
 }
 
 @property (nonatomic, readonly) BOOL hasPlaceDataCacheLogMessage;
@@ -34,7 +34,7 @@
 @property (nonatomic, retain) GEOPlaceDataCacheLogMessage *placeDataCacheLogMessage;
 @property (nonatomic) double relativeTimestamp;
 @property (nonatomic) unsigned int sequenceNumber;
-@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; } sessionId;
+@property (nonatomic) struct GEOSessionID { unsigned int x1; unsigned int x2; } sessionId;
 @property (nonatomic, retain) GEOStateTimingUsageLogMessage *stateTimingLogMessage;
 @property (nonatomic, retain) GEOSuggestionsUsageLogMessage *suggestionsLogMessage;
 @property (nonatomic, retain) GEOTileSetStateUsageLogMessage *tileSetStateUsageLogMessage;
@@ -62,14 +62,14 @@
 - (BOOL)readFrom:(id)arg1;
 - (double)relativeTimestamp;
 - (unsigned int)sequenceNumber;
-- (struct { unsigned long long x1; unsigned long long x2; })sessionId;
+- (struct GEOSessionID { unsigned int x1; unsigned int x2; })sessionId;
 - (void)setHasRelativeTimestamp:(BOOL)arg1;
 - (void)setHasSequenceNumber:(BOOL)arg1;
 - (void)setHasSessionId:(BOOL)arg1;
 - (void)setPlaceDataCacheLogMessage:(id)arg1;
 - (void)setRelativeTimestamp:(double)arg1;
 - (void)setSequenceNumber:(unsigned int)arg1;
-- (void)setSessionId:(struct { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setSessionId:(struct GEOSessionID { unsigned int x1; unsigned int x2; })arg1;
 - (void)setStateTimingLogMessage:(id)arg1;
 - (void)setSuggestionsLogMessage:(id)arg1;
 - (void)setTileSetStateUsageLogMessage:(id)arg1;

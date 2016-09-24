@@ -3,9 +3,9 @@
  */
 
 @interface _BKSCancelTouchesTouchDeliveryPolicy : BKSTouchDeliveryPolicy {
-    NSObject<OS_xpc_object> *_assertionEndpoint;
-    unsigned int _contextId;
-    double _initialTouchTimestamp;
+    NSObject<OS_xpc_object> * _assertionEndpoint;
+    unsigned int  _contextId;
+    double  _initialTouchTimestamp;
 }
 
 @property (nonatomic, readonly) unsigned int contextId;

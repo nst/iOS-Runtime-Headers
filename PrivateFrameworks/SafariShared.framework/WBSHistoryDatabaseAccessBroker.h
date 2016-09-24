@@ -3,8 +3,8 @@
  */
 
 @interface WBSHistoryDatabaseAccessBroker : NSObject {
-    NSURL *_historyDatabaseURL;
-    NSObject<OS_dispatch_queue> *_writeRequestQueue;
+    NSURL * _historyDatabaseURL;
+    NSObject<OS_dispatch_queue> * _writeRequestQueue;
 }
 
 - (void).cxx_destruct;

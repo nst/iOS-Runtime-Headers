@@ -3,12 +3,12 @@
  */
 
 @interface CoreDAVParseRule : NSObject {
-    NSString *_elementName;
-    int _maximumNumber;
-    int _minimumNumber;
-    NSString *_nameSpace;
-    Class _objectClass;
-    SEL _setterMethod;
+    NSString * _elementName;
+    int  _maximumNumber;
+    int  _minimumNumber;
+    NSString * _nameSpace;
+    Class  _objectClass;
+    SEL  _setterMethod;
 }
 
 @property (nonatomic, readonly) NSString *elementName;

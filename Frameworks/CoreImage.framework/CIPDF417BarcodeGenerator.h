@@ -3,17 +3,17 @@
  */
 
 @interface CIPDF417BarcodeGenerator : CICodeGenerator {
-    NSNumber *inputAlwaysSpecifyCompaction;
-    NSNumber *inputCompactStyle;
-    NSNumber *inputCompactionMode;
-    NSNumber *inputCorrectionLevel;
-    NSNumber *inputDataColumns;
-    NSNumber *inputMaxHeight;
-    NSNumber *inputMaxWidth;
-    NSNumber *inputMinHeight;
-    NSNumber *inputMinWidth;
-    NSNumber *inputPreferredAspectRatio;
-    NSNumber *inputRows;
+    NSNumber * inputAlwaysSpecifyCompaction;
+    NSNumber * inputCompactStyle;
+    NSNumber * inputCompactionMode;
+    NSNumber * inputCorrectionLevel;
+    NSNumber * inputDataColumns;
+    NSNumber * inputMaxHeight;
+    NSNumber * inputMaxWidth;
+    NSNumber * inputMinHeight;
+    NSNumber * inputMinWidth;
+    NSNumber * inputPreferredAspectRatio;
+    NSNumber * inputRows;
 }
 
 @property (nonatomic, copy) NSNumber *inputAlwaysSpecifyCompaction;

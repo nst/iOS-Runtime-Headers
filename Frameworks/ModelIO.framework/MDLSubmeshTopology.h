@@ -3,16 +3,16 @@
  */
 
 @interface MDLSubmeshTopology : NSObject {
-    unsigned int _edgeCreaseCount;
-    <MDLMeshBuffer> *_edgeCreaseIndices;
-    <MDLMeshBuffer> *_edgeCreases;
-    unsigned int _faceCount;
-    <MDLMeshBuffer> *_faceTopology;
-    unsigned int _holeCount;
-    <MDLMeshBuffer> *_holes;
-    unsigned int _vertexCreaseCount;
-    <MDLMeshBuffer> *_vertexCreaseIndices;
-    <MDLMeshBuffer> *_vertexCreases;
+    unsigned int  _edgeCreaseCount;
+    <MDLMeshBuffer> * _edgeCreaseIndices;
+    <MDLMeshBuffer> * _edgeCreases;
+    unsigned int  _faceCount;
+    <MDLMeshBuffer> * _faceTopology;
+    unsigned int  _holeCount;
+    <MDLMeshBuffer> * _holes;
+    unsigned int  _vertexCreaseCount;
+    <MDLMeshBuffer> * _vertexCreaseIndices;
+    <MDLMeshBuffer> * _vertexCreases;
 }
 
 @property (nonatomic) unsigned int edgeCreaseCount;

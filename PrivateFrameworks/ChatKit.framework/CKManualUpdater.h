@@ -3,9 +3,9 @@
  */
 
 @interface CKManualUpdater : NSObject {
-    SEL _action;
-    BOOL _needsUpdate;
-    id _target;
+    SEL  _action;
+    BOOL  _needsUpdate;
+    id  _target;
 }
 
 @property (nonatomic) SEL action;

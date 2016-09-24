@@ -3,14 +3,14 @@
  */
 
 @interface DAFolderChange : NSObject <NSSecureCoding> {
-    int _changeType;
-    <DAFolderChangeConsumer> *_consumer;
-    int _dataclass;
-    NSString *_displayName;
-    NSString *_folderId;
-    NSString *_parentFolderId;
-    BOOL _renameOnCollision;
-    unsigned int _taskId;
+    int  _changeType;
+    <DAFolderChangeConsumer> * _consumer;
+    int  _dataclass;
+    NSString * _displayName;
+    NSString * _folderId;
+    NSString * _parentFolderId;
+    BOOL  _renameOnCollision;
+    unsigned int  _taskId;
 }
 
 @property (nonatomic) int changeType;

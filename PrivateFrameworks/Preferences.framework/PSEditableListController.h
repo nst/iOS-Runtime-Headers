@@ -3,8 +3,8 @@
  */
 
 @interface PSEditableListController : PSListController {
-    BOOL _editable;
-    BOOL _editingDisabled;
+    BOOL  _editable;
+    BOOL  _editingDisabled;
 }
 
 - (id)_editButtonBarItem;

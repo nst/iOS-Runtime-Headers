@@ -3,7 +3,7 @@
  */
 
 @interface PFUbiquityBaselineRollOperation : PFUbiquityBaselineOperation {
-    PFUbiquityBaselineHeuristics *_heuristics;
+    PFUbiquityBaselineHeuristics * _heuristics;
 }
 
 @property NSObject<PFUbiquityBaselineRollOperationDelegate> *delegate;

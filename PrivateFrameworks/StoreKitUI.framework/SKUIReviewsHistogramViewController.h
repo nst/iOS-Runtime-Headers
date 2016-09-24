@@ -3,9 +3,9 @@
  */
 
 @interface SKUIReviewsHistogramViewController : UIViewController {
-    SKUIClientContext *_clientContext;
-    SKUIReviewsHistogramView *_histogramView;
-    SKUIReviewList *_reviewList;
+    SKUIClientContext * _clientContext;
+    SKUIReviewsHistogramView * _histogramView;
+    SKUIReviewList * _reviewList;
 }
 
 @property (nonatomic, readonly) UIControl *appSupportButton;

@@ -3,11 +3,11 @@
  */
 
 @interface WCQueueManager : NSObject {
-    BOOL _canSend;
-    NSMutableDictionary *_inFlightMessages;
-    BOOL _messageOutstanding;
-    NSMutableArray *_messageQueue;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    BOOL  _canSend;
+    NSMutableDictionary * _inFlightMessages;
+    BOOL  _messageOutstanding;
+    NSMutableArray * _messageQueue;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property BOOL canSend;

@@ -3,9 +3,9 @@
  */
 
 @interface TSUSafeSaveAssistant : NSObject {
-    NSURL *_saveURL;
-    NSURL *_temporaryDirectoryURL;
-    NSURL *_writeURL;
+    NSURL * _saveURL;
+    NSURL * _temporaryDirectoryURL;
+    NSURL * _writeURL;
 }
 
 @property (nonatomic, readonly) NSURL *writeURL;

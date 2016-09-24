@@ -3,8 +3,8 @@
  */
 
 @interface _WBUPasswordDetailViewController : UITableViewController {
-    BOOL _hidesPassword;
-    WBSSavedPassword *_savedPassword;
+    BOOL  _hidesPassword;
+    WBSSavedPassword * _savedPassword;
 }
 
 - (void).cxx_destruct;
@@ -14,6 +14,7 @@
 - (id)initWithSavedPassword:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;

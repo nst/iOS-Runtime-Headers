@@ -3,34 +3,34 @@
  */
 
 @interface CPMLModelEvaluate : NSObject {
-    struct CPMLDelegate { void *x1; void *x2; } *_cpmlDelegate;
-    <CPMLAlgorithmProtocol> *_delegateAlgorithm;
-    struct CPMLDelegateEngine { void *x1; void *x2; } *_delegateEngine;
-    CPMLStorageManager *_storageManager;
+    struct CPMLDelegate { void *x1; void *x2; } * _cpmlDelegate;
+    <CPMLAlgorithmProtocol> * _delegateAlgorithm;
+    struct CPMLDelegateEngine { void *x1; void *x2; } * _delegateEngine;
+    CPMLStorageManager * _storageManager;
     struct vector<int, std::__1::allocator<int> > { 
         int *__begin_; 
         int *__end_; 
         struct __compressed_pair<int *, std::__1::allocator<int> > { 
             int *__first_; 
         } __end_cap_; 
-    } boundedRemappedValues;
-    int countRows;
-    struct CPMLAlgorithm { int (**x1)(); BOOL x2[32]; void *x3; struct CPMLCDB {} *x4; struct CPMLDelegate {} *x5; struct CPMLDelegateEngine {} *x6; struct CPMLTunableData {} *x7; struct CPMLIterator {} *x8; struct CPMLSerialization {} *x9; } *cpMLAlgo;
-    struct CPMLRemapper { bool x1; bool x2; bool x3; struct sqlite3 {} *x4; struct CPMLStatistics {} *x5; struct vector<int, std::__1::allocator<int> > {} *x6; struct vector<int, std::__1::allocator<int> > {} *x7; } *cpRemapper;
-    struct CPMLTunableData { int x1; void *x2; void *x3; } *cpTuneableData;
-    CPMLSchema *cpmlSchema;
-    struct sqlite3 { } *db;
-    BOOL enableCacheString;
-    BOOL keepInMemory;
-    NSString *machineLearningAlgo;
-    int mapFunction;
-    NSNumber *maxRemoveTrainingRow;
-    NSMutableArray *modelSchema;
-    NSString *serializeFunction;
-    BOOL shouldFail;
-    struct CPMLSerialization { int (**x1)(); bool x2; int x3; int x4; void *x5; struct sqlite3 {} *x6; } *trainerCPDeSerializer;
-    struct CPMLStatistics { struct vector<int, std::__1::allocator<int> > { int *x_1_1_1; int *x_1_1_2; struct __compressed_pair<int *, std::__1::allocator<int> > { int *x_3_2_1; } x_1_1_3; } x1; struct vector<double, std::__1::allocator<double> > { double *x_2_1_1; double *x_2_1_2; struct __compressed_pair<double *, std::__1::allocator<double> > { double *x_3_2_1; } x_2_1_3; } x2; struct vector<int, std::__1::allocator<int> > { int *x_3_1_1; int *x_3_1_2; struct __compressed_pair<int *, std::__1::allocator<int> > { int *x_3_2_1; } x_3_1_3; } x3; struct vector<int, std::__1::allocator<int> > { int *x_4_1_1; int *x_4_1_2; struct __compressed_pair<int *, std::__1::allocator<int> > { int *x_3_2_1; } x_4_1_3; } x4; struct vector<int, std::__1::allocator<int> > { int *x_5_1_1; int *x_5_1_2; struct __compressed_pair<int *, std::__1::allocator<int> > { int *x_3_2_1; } x_5_1_3; } x5; int x6; int x7; int x8; int x9; bool x10; struct vector<double, std::__1::allocator<double> > { double *x_11_1_1; double *x_11_1_2; struct __compressed_pair<double *, std::__1::allocator<double> > { double *x_3_2_1; } x_11_1_3; } x11; struct vector<double, std::__1::allocator<double> > { double *x_12_1_1; double *x_12_1_2; struct __compressed_pair<double *, std::__1::allocator<double> > { double *x_3_2_1; } x_12_1_3; } x12; struct vector<double, std::__1::allocator<double> > { double *x_13_1_1; double *x_13_1_2; struct __compressed_pair<double *, std::__1::allocator<double> > { double *x_3_2_1; } x_13_1_3; } x13; struct vector<double, std::__1::allocator<double> > { double *x_14_1_1; double *x_14_1_2; struct __compressed_pair<double *, std::__1::allocator<double> > { double *x_3_2_1; } x_14_1_3; } x14; struct vector<double, std::__1::allocator<double> > { double *x_15_1_1; double *x_15_1_2; struct __compressed_pair<double *, std::__1::allocator<double> > { double *x_3_2_1; } x_15_1_3; } x15; void *x16; } *trainerCPStatistics;
-    NSMutableArray *vectorPositions;
+    }  boundedRemappedValues;
+    int  countRows;
+    struct CPMLAlgorithm { int (**x1)(); BOOL x2[32]; void *x3; struct CPMLCDB {} *x4; struct CPMLDelegate {} *x5; struct CPMLDelegateEngine {} *x6; struct CPMLTunableData {} *x7; struct CPMLIterator {} *x8; struct CPMLSerialization {} *x9; } * cpMLAlgo;
+    struct CPMLRemapper { bool x1; bool x2; bool x3; struct sqlite3 {} *x4; struct CPMLStatistics {} *x5; struct vector<int, std::__1::allocator<int> > {} *x6; struct vector<int, std::__1::allocator<int> > {} *x7; } * cpRemapper;
+    struct CPMLTunableData { int x1; void *x2; void *x3; } * cpTuneableData;
+    CPMLSchema * cpmlSchema;
+    struct sqlite3 { } * db;
+    BOOL  enableCacheString;
+    BOOL  keepInMemory;
+    NSString * machineLearningAlgo;
+    int  mapFunction;
+    NSNumber * maxRemoveTrainingRow;
+    NSMutableArray * modelSchema;
+    NSString * serializeFunction;
+    BOOL  shouldFail;
+    struct CPMLSerialization { int (**x1)(); bool x2; int x3; int x4; void *x5; struct sqlite3 {} *x6; } * trainerCPDeSerializer;
+    struct CPMLStatistics { struct vector<int, std::__1::allocator<int> > { int *x_1_1_1; int *x_1_1_2; struct __compressed_pair<int *, std::__1::allocator<int> > { int *x_3_2_1; } x_1_1_3; } x1; struct vector<double, std::__1::allocator<double> > { double *x_2_1_1; double *x_2_1_2; struct __compressed_pair<double *, std::__1::allocator<double> > { double *x_3_2_1; } x_2_1_3; } x2; struct vector<int, std::__1::allocator<int> > { int *x_3_1_1; int *x_3_1_2; struct __compressed_pair<int *, std::__1::allocator<int> > { int *x_3_2_1; } x_3_1_3; } x3; struct vector<int, std::__1::allocator<int> > { int *x_4_1_1; int *x_4_1_2; struct __compressed_pair<int *, std::__1::allocator<int> > { int *x_3_2_1; } x_4_1_3; } x4; struct vector<int, std::__1::allocator<int> > { int *x_5_1_1; int *x_5_1_2; struct __compressed_pair<int *, std::__1::allocator<int> > { int *x_3_2_1; } x_5_1_3; } x5; int x6; int x7; int x8; int x9; bool x10; struct vector<double, std::__1::allocator<double> > { double *x_11_1_1; double *x_11_1_2; struct __compressed_pair<double *, std::__1::allocator<double> > { double *x_3_2_1; } x_11_1_3; } x11; } * trainerCPStatistics;
+    NSMutableArray * vectorPositions;
 }
 
 - (id).cxx_construct;

@@ -4,31 +4,33 @@
 
 @interface BWIrisDiscontinuity : NSObject {
     struct { 
-        long long value; 
+        int value; 
         int timescale; 
         unsigned int flags; 
-        long long epoch; 
-    } _discontinuityTime;
-    NSArray *_recipe;
+        int epoch; 
+    }  _discontinuityTime;
+    NSArray * _recipe;
     struct { 
-        long long value; 
+        int value; 
         int timescale; 
         unsigned int flags; 
-        long long epoch; 
-    } _targetFrameDuration;
-    NSArray *_timeSkews;
+        int epoch; 
+    }  _targetFrameDuration;
+    NSArray * _timeSkews;
 }
 
-@property (readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } time;
+@property (readonly) struct { int x1; int x2; unsigned int x3; int x4; } time;
 @property (nonatomic, retain) NSArray *timeSkews;
 
-- (int)_offsetIndexFromDiscontinuityForTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (BOOL)containsVideoBufferTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
++ (int)maximumNumberOfConsecutiveDroppedFrames;
+
+- (int)_offsetIndexFromDiscontinuityForTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
+- (BOOL)containsVideoBufferTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
 - (void)dealloc;
-- (id)initWithTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 duration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 targetFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 timeSkews:(id)arg4;
+- (id)initWithTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 duration:(struct { int x1; int x2; unsigned int x3; int x4; })arg2 targetFrameDuration:(struct { int x1; int x2; unsigned int x3; int x4; })arg3 timeSkews:(id)arg4;
 - (void)setTimeSkews:(id)arg1;
-- (BOOL)shouldKeepBufferWithTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 nextAdjustedTimeInOut:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })time;
+- (BOOL)shouldKeepBufferWithTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 nextAdjustedTimeInOut:(struct { int x1; int x2; unsigned int x3; int x4; }*)arg2;
+- (struct { int x1; int x2; unsigned int x3; int x4; })time;
 - (id)timeSkews;
 
 @end

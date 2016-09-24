@@ -3,18 +3,18 @@
  */
 
 @interface AWDIDSSessionEnded : PBCodable <NSCopying> {
-    unsigned int _callDuration;
-    unsigned int _conferenceMiscError;
-    unsigned int _connectDuration;
-    unsigned int _connectionType;
-    unsigned int _currentNatType;
-    unsigned int _dataRate;
-    unsigned int _endedReason;
-    unsigned int _gameKitError;
-    int _genericError;
-    int _gksError;
-    int _gksReturnCode;
-    NSString *_guid;
+    unsigned int  _callDuration;
+    unsigned int  _conferenceMiscError;
+    unsigned int  _connectDuration;
+    unsigned int  _connectionType;
+    unsigned int  _currentNatType;
+    unsigned int  _dataRate;
+    unsigned int  _endedReason;
+    unsigned int  _gameKitError;
+    int  _genericError;
+    int  _gksError;
+    int  _gksReturnCode;
+    NSString * _guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int callDuration : 1; 
@@ -39,19 +39,19 @@
         unsigned int remoteNatType : 1; 
         unsigned int remoteNetworkConnection : 1; 
         unsigned int usesRelay : 1; 
-    } _has;
-    unsigned int _isInitiator;
-    unsigned int _isNetworkActive;
-    unsigned int _isNetworkEnabled;
-    unsigned int _isNetworkReachable;
-    int _linkQuality;
-    unsigned int _localNetworkConnection;
-    unsigned int _networkCheckResult;
-    unsigned int _relayConnectDuration;
-    unsigned int _remoteNatType;
-    unsigned int _remoteNetworkConnection;
-    unsigned long long _timestamp;
-    unsigned int _usesRelay;
+    }  _has;
+    unsigned int  _isInitiator;
+    unsigned int  _isNetworkActive;
+    unsigned int  _isNetworkEnabled;
+    unsigned int  _isNetworkReachable;
+    int  _linkQuality;
+    unsigned int  _localNetworkConnection;
+    unsigned int  _networkCheckResult;
+    unsigned int  _relayConnectDuration;
+    unsigned int  _remoteNatType;
+    unsigned int  _remoteNetworkConnection;
+    unsigned long long  _timestamp;
+    unsigned int  _usesRelay;
 }
 
 @property (nonatomic) unsigned int callDuration;

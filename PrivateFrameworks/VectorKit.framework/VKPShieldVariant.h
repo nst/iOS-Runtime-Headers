@@ -3,29 +3,30 @@
  */
 
 @interface VKPShieldVariant : PBCodable <NSCopying> {
-    unsigned int _atlasIndex;
-    unsigned int _backgroundColor;
-    unsigned int _borderColor;
-    float _capWidthLeft;
-    float _capWidthRight;
-    float _centerOffsetX;
+    unsigned int  _atlasIndex;
+    unsigned int  _backgroundColor;
+    unsigned int  _borderColor;
+    double  _capWidthLeft;
+    double  _capWidthRight;
+    double  _centerOffsetX;
     struct { 
-        float *list; 
+        double *list; 
         unsigned int count; 
         unsigned int size; 
-    } _centerPoints;
+    }  _centerPoints;
     struct { 
-        float _a; 
+        double _a; 
         unsigned int _b; 
         unsigned int _g; 
         unsigned int _r; 
-    } _fontColor;
-    NSString *_fontName;
-    float _fontSize;
+    }  _fontColor;
+    NSString * _fontName;
+    double  _fontSize;
     struct { 
         unsigned int textShadow : 1; 
         unsigned int textStroke : 1; 
         unsigned int fontColor : 1; 
+        unsigned int nonDigitFontColor : 1; 
         unsigned int atlasIndex : 1; 
         unsigned int backgroundColor : 1; 
         unsigned int borderColor : 1; 
@@ -33,6 +34,7 @@
         unsigned int capWidthRight : 1; 
         unsigned int centerOffsetX : 1; 
         unsigned int fontSize : 1; 
+        unsigned int lineSpacing : 1; 
         unsigned int maxDigits : 1; 
         unsigned int minDigits : 1; 
         unsigned int nonDigitFontSize : 1; 
@@ -41,56 +43,63 @@
         unsigned int quadIndex : 1; 
         unsigned int textBaseline : 1; 
         unsigned int textMaskColor : 1; 
-    } _has;
-    struct { unsigned int x1; int x2; int x3; float x4; unsigned int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; } *_layers;
-    unsigned int _layersCount;
-    unsigned int _layersSpace;
-    unsigned int _maxDigits;
-    unsigned int _minDigits;
-    NSString *_nonDigitFontName;
-    float _nonDigitFontSize;
-    float _paddingLeft;
-    float _paddingRight;
-    unsigned int _quadIndex;
-    float _textBaseline;
-    int _textMaskColor;
+    }  _has;
+    struct { unsigned int x1; int x2; int x3; double x4; unsigned int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; } * _layers;
+    unsigned int  _layersCount;
+    unsigned int  _layersSpace;
+    double  _lineSpacing;
+    unsigned int  _maxDigits;
+    unsigned int  _minDigits;
+    struct { 
+        double _a; 
+        unsigned int _b; 
+        unsigned int _g; 
+        unsigned int _r; 
+    }  _nonDigitFontColor;
+    NSString * _nonDigitFontName;
+    double  _nonDigitFontSize;
+    double  _paddingLeft;
+    double  _paddingRight;
+    unsigned int  _quadIndex;
+    double  _textBaseline;
+    int  _textMaskColor;
     struct { 
         struct { 
-            float _a; 
+            double _a; 
             unsigned int _b; 
             unsigned int _g; 
             unsigned int _r; 
         } _color; 
-        float _offsetX; 
-        float _offsetY; 
-        float _size; 
+        double _offsetX; 
+        double _offsetY; 
+        double _size; 
         struct { 
             unsigned int offsetX : 1; 
             unsigned int offsetY : 1; 
         } _has; 
-    } _textShadow;
+    }  _textShadow;
     struct { 
         struct { 
-            float _a; 
+            double _a; 
             unsigned int _b; 
             unsigned int _g; 
             unsigned int _r; 
         } _color; 
-        float _width; 
-    } _textStroke;
+        double _width; 
+    }  _textStroke;
 }
 
 @property (nonatomic) unsigned int atlasIndex;
 @property (nonatomic) unsigned int backgroundColor;
 @property (nonatomic) unsigned int borderColor;
-@property (nonatomic) float capWidthLeft;
-@property (nonatomic) float capWidthRight;
-@property (nonatomic) float centerOffsetX;
+@property (nonatomic) double capWidthLeft;
+@property (nonatomic) double capWidthRight;
+@property (nonatomic) double centerOffsetX;
 @property (nonatomic, readonly) float*centerPoints;
 @property (nonatomic, readonly) unsigned int centerPointsCount;
-@property (nonatomic) struct { float x1; unsigned int x2; unsigned int x3; unsigned int x4; } fontColor;
+@property (nonatomic) struct { double x1; unsigned int x2; unsigned int x3; unsigned int x4; } fontColor;
 @property (nonatomic, retain) NSString *fontName;
-@property (nonatomic) float fontSize;
+@property (nonatomic) double fontSize;
 @property (nonatomic) BOOL hasAtlasIndex;
 @property (nonatomic) BOOL hasBackgroundColor;
 @property (nonatomic) BOOL hasBorderColor;
@@ -100,8 +109,10 @@
 @property (nonatomic) BOOL hasFontColor;
 @property (nonatomic, readonly) BOOL hasFontName;
 @property (nonatomic) BOOL hasFontSize;
+@property (nonatomic) BOOL hasLineSpacing;
 @property (nonatomic) BOOL hasMaxDigits;
 @property (nonatomic) BOOL hasMinDigits;
+@property (nonatomic) BOOL hasNonDigitFontColor;
 @property (nonatomic, readonly) BOOL hasNonDigitFontName;
 @property (nonatomic) BOOL hasNonDigitFontSize;
 @property (nonatomic) BOOL hasPaddingLeft;
@@ -111,23 +122,25 @@
 @property (nonatomic) BOOL hasTextMaskColor;
 @property (nonatomic) BOOL hasTextShadow;
 @property (nonatomic) BOOL hasTextStroke;
-@property (nonatomic, readonly) struct { unsigned int x1; int x2; int x3; float x4; unsigned int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; }*layers;
+@property (nonatomic, readonly) struct { unsigned int x1; int x2; int x3; double x4; unsigned int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; }*layers;
 @property (nonatomic, readonly) unsigned int layersCount;
+@property (nonatomic) double lineSpacing;
 @property (nonatomic) unsigned int maxDigits;
 @property (nonatomic) unsigned int minDigits;
+@property (nonatomic) struct { double x1; unsigned int x2; unsigned int x3; unsigned int x4; } nonDigitFontColor;
 @property (nonatomic, retain) NSString *nonDigitFontName;
-@property (nonatomic) float nonDigitFontSize;
-@property (nonatomic) float paddingLeft;
-@property (nonatomic) float paddingRight;
+@property (nonatomic) double nonDigitFontSize;
+@property (nonatomic) double paddingLeft;
+@property (nonatomic) double paddingRight;
 @property (nonatomic) unsigned int quadIndex;
-@property (nonatomic) float textBaseline;
+@property (nonatomic) double textBaseline;
 @property (nonatomic) int textMaskColor;
-@property (nonatomic) struct { struct { float x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; float x2; float x3; float x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; } x5; } textShadow;
-@property (nonatomic) struct { struct { float x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; float x2; } textStroke;
+@property (nonatomic) struct { struct { double x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; double x2; double x3; double x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; } x5; } textShadow;
+@property (nonatomic) struct { struct { double x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; double x2; } textStroke;
 
-- (struct Matrix<float, 4, 1> { float x1[4]; })_colorForMaskColor:(int)arg1 colors:(struct { struct Matrix<float, 4, 1> { float x_1_1_1[4]; } x1; }*)arg2;
+- (struct Matrix<float, 4, 1> { double x1[4]; })_colorForMaskColor:(int)arg1 colors:(struct { struct Matrix<float, 4, 1> { double x_1_1_1[4]; } x1; }*)arg2;
 - (void)addCenterPoint:(float)arg1;
-- (void)addLayer:(struct { unsigned int x1; int x2; int x3; float x4; unsigned int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; })arg1;
+- (void)addLayer:(struct { unsigned int x1; int x2; int x3; double x4; unsigned int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; })arg1;
 - (unsigned int)atlasIndex;
 - (unsigned int)backgroundColor;
 - (unsigned int)borderColor;
@@ -144,7 +157,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (struct { float x1; unsigned int x2; unsigned int x3; unsigned int x4; })fontColor;
+- (struct { double x1; unsigned int x2; unsigned int x3; unsigned int x4; })fontColor;
 - (id)fontName;
 - (float)fontSize;
 - (BOOL)hasAtlasIndex;
@@ -156,8 +169,10 @@
 - (BOOL)hasFontColor;
 - (BOOL)hasFontName;
 - (BOOL)hasFontSize;
+- (BOOL)hasLineSpacing;
 - (BOOL)hasMaxDigits;
 - (BOOL)hasMinDigits;
+- (BOOL)hasNonDigitFontColor;
 - (BOOL)hasNonDigitFontName;
 - (BOOL)hasNonDigitFontSize;
 - (BOOL)hasPaddingLeft;
@@ -169,13 +184,15 @@
 - (BOOL)hasTextStroke;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (struct { unsigned int x1; int x2; int x3; float x4; unsigned int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; })layerAtIndex:(unsigned int)arg1;
-- (struct { unsigned int x1; int x2; int x3; float x4; unsigned int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; }*)layers;
+- (struct { unsigned int x1; int x2; int x3; double x4; unsigned int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; })layerAtIndex:(unsigned int)arg1;
+- (struct { unsigned int x1; int x2; int x3; double x4; unsigned int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; }*)layers;
 - (unsigned int)layersCount;
+- (float)lineSpacing;
 - (unsigned int)maxDigits;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)minDigits;
-- (struct CGImage { }*)newImageWithTextureAtlases:(id)arg1 atlasToImageCache:(id)arg2 atlasToImageCacheLock:(id)arg3 contentScale:(float)arg4 colors:(struct { struct Matrix<float, 4, 1> { float x_1_1_1[4]; } x1; }*)arg5;
+- (struct CGImage { }*)newImageWithTextureAtlases:(id)arg1 atlasToImageCache:(id)arg2 atlasToImageCacheLock:(id)arg3 contentScale:(float)arg4 colors:(struct { struct Matrix<float, 4, 1> { double x_1_1_1[4]; } x1; }*)arg5;
+- (struct { double x1; unsigned int x2; unsigned int x3; unsigned int x4; })nonDigitFontColor;
 - (id)nonDigitFontName;
 - (float)nonDigitFontSize;
 - (float)paddingLeft;
@@ -189,7 +206,7 @@
 - (void)setCapWidthRight:(float)arg1;
 - (void)setCenterOffsetX:(float)arg1;
 - (void)setCenterPoints:(float*)arg1 count:(unsigned int)arg2;
-- (void)setFontColor:(struct { float x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1;
+- (void)setFontColor:(struct { double x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1;
 - (void)setFontName:(id)arg1;
 - (void)setFontSize:(float)arg1;
 - (void)setHasAtlasIndex:(BOOL)arg1;
@@ -200,8 +217,10 @@
 - (void)setHasCenterOffsetX:(BOOL)arg1;
 - (void)setHasFontColor:(BOOL)arg1;
 - (void)setHasFontSize:(BOOL)arg1;
+- (void)setHasLineSpacing:(BOOL)arg1;
 - (void)setHasMaxDigits:(BOOL)arg1;
 - (void)setHasMinDigits:(BOOL)arg1;
+- (void)setHasNonDigitFontColor:(BOOL)arg1;
 - (void)setHasNonDigitFontSize:(BOOL)arg1;
 - (void)setHasPaddingLeft:(BOOL)arg1;
 - (void)setHasPaddingRight:(BOOL)arg1;
@@ -210,9 +229,11 @@
 - (void)setHasTextMaskColor:(BOOL)arg1;
 - (void)setHasTextShadow:(BOOL)arg1;
 - (void)setHasTextStroke:(BOOL)arg1;
-- (void)setLayers:(struct { unsigned int x1; int x2; int x3; float x4; unsigned int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; }*)arg1 count:(unsigned int)arg2;
+- (void)setLayers:(struct { unsigned int x1; int x2; int x3; double x4; unsigned int x5; struct { unsigned int x_6_1_1 : 1; unsigned int x_6_1_2 : 1; unsigned int x_6_1_3 : 1; unsigned int x_6_1_4 : 1; unsigned int x_6_1_5 : 1; } x6; }*)arg1 count:(unsigned int)arg2;
+- (void)setLineSpacing:(float)arg1;
 - (void)setMaxDigits:(unsigned int)arg1;
 - (void)setMinDigits:(unsigned int)arg1;
+- (void)setNonDigitFontColor:(struct { double x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1;
 - (void)setNonDigitFontName:(id)arg1;
 - (void)setNonDigitFontSize:(float)arg1;
 - (void)setPaddingLeft:(float)arg1;
@@ -220,12 +241,12 @@
 - (void)setQuadIndex:(unsigned int)arg1;
 - (void)setTextBaseline:(float)arg1;
 - (void)setTextMaskColor:(int)arg1;
-- (void)setTextShadow:(struct { struct { float x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; float x2; float x3; float x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; } x5; })arg1;
-- (void)setTextStroke:(struct { struct { float x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; float x2; })arg1;
+- (void)setTextShadow:(struct { struct { double x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; double x2; double x3; double x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; } x5; })arg1;
+- (void)setTextStroke:(struct { struct { double x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; double x2; })arg1;
 - (float)textBaseline;
 - (int)textMaskColor;
-- (struct { struct { float x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; float x2; float x3; float x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; } x5; })textShadow;
-- (struct { struct { float x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; float x2; })textStroke;
+- (struct { struct { double x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; double x2; double x3; double x4; struct { unsigned int x_5_1_1 : 1; unsigned int x_5_1_2 : 1; } x5; })textShadow;
+- (struct { struct { double x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; } x1; double x2; })textStroke;
 - (void)writeTo:(id)arg1;
 
 @end

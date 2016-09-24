@@ -3,7 +3,7 @@
  */
 
 @interface OADIndexedColor : OADColor {
-    unsigned int mIndex;
+    unsigned int  mIndex;
 }
 
 + (id)indexedColorWithIndex:(unsigned int)arg1;

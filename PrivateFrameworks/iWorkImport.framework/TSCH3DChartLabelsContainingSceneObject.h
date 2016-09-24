@@ -3,7 +3,7 @@
  */
 
 @interface TSCH3DChartLabelsContainingSceneObject : TSCH3DSceneObject {
-    TSCH3DLabelsRenderer *mLabelsRenderer;
+    TSCH3DLabelsRenderer * mLabelsRenderer;
 }
 
 - (void)dealloc;

@@ -3,10 +3,10 @@
  */
 
 @interface NSConcreteHashTable : NSHashTable {
-    unsigned int capacity;
-    unsigned int count;
-    unsigned int mutations;
-    unsigned int options;
+    unsigned int  capacity;
+    unsigned int  count;
+    unsigned int  mutations;
+    unsigned int  options;
     struct NSSlice { 
         void **items; 
         BOOL wantsStrong; 
@@ -20,7 +20,6 @@
         BOOL pointerPersonality; 
         BOOL integerPersonality; 
         BOOL simpleReadClear; 
-        NSWeakCallback *callback; 
         int (*sizeFunction)(); 
         int (*hashFunction)(); 
         int (*isEqualFunction)(); 
@@ -32,10 +31,9 @@
         int (*readAt)(); 
         int (*clearAt)(); 
         int (*storeAt)(); 
-    } slice;
+    }  slice;
 }
 
-- (void)_initBlock;
 - (void)addObject:(id)arg1;
 - (id)allObjects;
 - (void)assign:(unsigned int)arg1 key:(const void*)arg2;
@@ -46,7 +44,6 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (void)finalize;
 - (void*)getItem:(const void*)arg1;
 - (void)getKeys:(const void**)arg1 count:(unsigned int*)arg2;
 - (unsigned int)hash;

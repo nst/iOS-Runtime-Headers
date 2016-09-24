@@ -3,7 +3,7 @@
  */
 
 @interface HKNumericClampingAxisScalingRule : NSObject <HKInteractiveChartsAxisScalingRule> {
-    NSArray *_chartBoundsRuleChoices;
+    NSArray * _chartBoundsRuleChoices;
 }
 
 @property (readonly, copy) NSString *debugDescription;

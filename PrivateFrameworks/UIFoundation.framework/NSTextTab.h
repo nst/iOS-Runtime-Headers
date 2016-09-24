@@ -7,13 +7,13 @@
         unsigned int alignment : 4; 
         unsigned int refCount : 24; 
         unsigned int unused : 4; 
-    } _flags;
-    float _location;
-    id _reserved;
+    }  _flags;
+    double  _location;
+    id  _reserved;
 }
 
 @property (nonatomic, readonly) int alignment;
-@property (nonatomic, readonly) float location;
+@property (nonatomic, readonly) double location;
 @property (nonatomic, readonly) NSDictionary *options;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

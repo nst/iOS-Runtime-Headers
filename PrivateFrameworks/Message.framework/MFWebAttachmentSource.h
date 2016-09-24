@@ -3,8 +3,8 @@
  */
 
 @interface MFWebAttachmentSource : NSObject {
-    NSMutableDictionary *_attachmentsByURL;
-    MFLock *_attachmentsLock;
+    NSMutableDictionary * _attachmentsByURL;
+    MFLock * _attachmentsLock;
 }
 
 + (id)_setOfAllSources;

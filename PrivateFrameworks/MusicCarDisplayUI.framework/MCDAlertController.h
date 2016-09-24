@@ -3,7 +3,7 @@
  */
 
 @interface MCDAlertController : UIAlertController {
-    UIView *_presentingViewControllerView;
+    UIView * _presentingViewControllerView;
 }
 
 - (void).cxx_destruct;

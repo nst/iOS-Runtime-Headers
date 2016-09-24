@@ -3,7 +3,7 @@
  */
 
 @interface RCPlaceholderComposition : RCComposition {
-    RCComposition *_underlyingComposition;
+    RCComposition * _underlyingComposition;
 }
 
 @property (nonatomic, readonly) RCComposition *underlyingComposition;

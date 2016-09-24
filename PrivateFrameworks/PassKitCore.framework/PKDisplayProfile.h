@@ -3,7 +3,7 @@
  */
 
 @interface PKDisplayProfile : NSObject <NSCopying, NSSecureCoding> {
-    int _type;
+    int  _type;
 }
 
 @property (nonatomic, readonly) int type;

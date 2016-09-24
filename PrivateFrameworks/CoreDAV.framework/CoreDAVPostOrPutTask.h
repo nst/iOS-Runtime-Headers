@@ -3,13 +3,13 @@
  */
 
 @interface CoreDAVPostOrPutTask : CoreDAVActionBackedTask {
-    int _absoluteOrder;
-    BOOL _forceToServer;
-    NSString *_previousETag;
-    NSURL *_priorOrderedURL;
-    NSString *_requestDataContentType;
-    NSData *_requestDataPayload;
-    BOOL _sendOrder;
+    int  _absoluteOrder;
+    BOOL  _forceToServer;
+    NSString * _previousETag;
+    NSURL * _priorOrderedURL;
+    NSString * _requestDataContentType;
+    NSData * _requestDataPayload;
+    BOOL  _sendOrder;
 }
 
 @property (nonatomic) int absoluteOrder;

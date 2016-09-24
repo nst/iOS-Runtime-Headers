@@ -3,11 +3,11 @@
  */
 
 @interface PLCloudPhotoLibraryBatchManager : NSObject {
-    NSMutableArray *_batches;
-    PLCloudPhotoLibraryBatchContainer *_currentBatch;
-    NSMutableSet *_masterHistory;
-    unsigned long long _resourceBudget;
-    BOOL _wasDrained;
+    NSMutableArray * _batches;
+    PLCloudPhotoLibraryBatchContainer * _currentBatch;
+    NSMutableSet * _masterHistory;
+    unsigned int  _resourceBudget;
+    BOOL  _wasDrained;
 }
 
 - (void)addRecord:(id)arg1;

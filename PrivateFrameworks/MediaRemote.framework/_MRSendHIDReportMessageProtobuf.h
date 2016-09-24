@@ -3,8 +3,8 @@
  */
 
 @interface _MRSendHIDReportMessageProtobuf : PBCodable <NSCopying> {
-    NSData *_report;
-    NSString *_virtualDeviceID;
+    NSData * _report;
+    NSString * _virtualDeviceID;
 }
 
 @property (nonatomic, readonly) BOOL hasReport;

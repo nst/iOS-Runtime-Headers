@@ -3,13 +3,13 @@
  */
 
 @interface PLAccountingEngine : NSObject <PLAccountingCorrectionManagerDelegate, PLAccountingDistributionManagerDelegate, PLAccountingQualificationManagerDelegate> {
-    PLEntryNotificationOperatorComposition *_batteryListener;
-    PLActivity *_chunkActivity;
-    PLAccountingCorrectionManager *_correctionManager;
-    PLAccountingDistributionManager *_distributionManager;
-    BOOL _pluggedIn;
-    PLAccountingQualificationManager *_qualificationManager;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    PLEntryNotificationOperatorComposition * _batteryListener;
+    PLActivity * _chunkActivity;
+    PLAccountingCorrectionManager * _correctionManager;
+    PLAccountingDistributionManager * _distributionManager;
+    BOOL  _pluggedIn;
+    PLAccountingQualificationManager * _qualificationManager;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (retain) PLEntryNotificationOperatorComposition *batteryListener;
@@ -75,20 +75,19 @@
 - (void)createQualificationEventForwardWithQualificationID:(int)arg1 withRemovingChildNodeName:(id)arg2 withStartDate:(id)arg3;
 - (void)createQualificationEventIntervalWithQualificationID:(int)arg1 withChildNodeNames:(id)arg2 withStartDate:(id)arg3 withEndDate:(id)arg4;
 - (void)createQualificationEventPointWithQualificationID:(int)arg1 withChildNodeNames:(id)arg2 withStartDate:(id)arg3;
+- (id)currentDistributionEventForwardWithDistributionID:(int)arg1;
 - (void)didCorrectEnergyEstimate:(id)arg1;
 - (void)didCreateChildEnergyEstimate:(id)arg1 withParentEnergyEstimate:(id)arg2;
 - (void)didDistributeEnergyEstimate:(id)arg1;
 - (void)didQualifyEnergyEvent:(id)arg1 withRootNodeID:(id)arg2 withQualificationID:(id)arg3;
 - (id)distributionManager;
 - (id)init;
-- (double)oldestTimeInterval;
 - (BOOL)pluggedIn;
 - (id)qualificationManager;
 - (void)reload;
 - (void)reloadLastDistributionEventsWithLastDeviceBootDate:(id)arg1;
 - (void)reloadLastPowerEventsWithLastDeviceBootDate:(id)arg1;
 - (void)reloadLastQualificationEventsWithLastDeviceBootDate:(id)arg1;
-- (void)reloadUnfinishedEnergyEventsWithLastDeviceBootDate:(id)arg1;
 - (void)reset;
 - (void)setBatteryListener:(id)arg1;
 - (void)setChunkActivity:(id)arg1;

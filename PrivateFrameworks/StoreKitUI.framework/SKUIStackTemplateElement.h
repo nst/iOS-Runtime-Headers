@@ -3,9 +3,9 @@
  */
 
 @interface SKUIStackTemplateElement : SKUIViewElement {
-    NSMutableArray *_collectionElements;
-    SKUIViewElement *_collectionHeaderViewElement;
-    BOOL _needsStateReset;
+    NSMutableArray * _collectionElements;
+    SKUIViewElement * _collectionHeaderViewElement;
+    BOOL  _needsStateReset;
 }
 
 @property (nonatomic, readonly) NSArray *collectionElements;

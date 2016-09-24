@@ -3,10 +3,10 @@
  */
 
 @interface CoreThemeConstantEnumerator : NSObject {
-    void *_globalListPointer;
-    int _indexOfLastEntry;
-    BOOL _isPastLastEntry;
-    int _listIndex;
+    void * _globalListPointer;
+    int  _indexOfLastEntry;
+    BOOL  _isPastLastEntry;
+    int  _listIndex;
 }
 
 + (id)enumeratorForGlobalListAtAddress:(void*)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface ICDrawingVersionedDocument : TTVersionedDocument {
-    ICDrawing *_drawing;
+    ICDrawing * _drawing;
 }
 
 @property (nonatomic, retain) ICDrawing *drawing;

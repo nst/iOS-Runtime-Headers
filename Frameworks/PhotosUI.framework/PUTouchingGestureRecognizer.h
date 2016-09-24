@@ -3,7 +3,7 @@
  */
 
 @interface PUTouchingGestureRecognizer : UIGestureRecognizer {
-    unsigned int __touchCount;
+    unsigned int  __touchCount;
 }
 
 @property (setter=_setTouchCount:, nonatomic) unsigned int _touchCount;

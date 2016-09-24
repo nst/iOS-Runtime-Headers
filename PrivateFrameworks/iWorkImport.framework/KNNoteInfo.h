@@ -3,19 +3,19 @@
  */
 
 @interface KNNoteInfo : TSPObject <TSDContainerInfo, TSKDocumentObject, TSKTransformableObject, TSWPStorageParent> {
-    TSWPStorage *mContainedStorage;
+    TSWPStorage * mContainedStorage;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } mFrameForPrinting;
-    NSObject<TSDContainerInfo> *mParentInfo;
-    BOOL mShrinkTextForPrinting;
+    }  mFrameForPrinting;
+    NSObject<TSDContainerInfo> * mParentInfo;
+    BOOL  mShrinkTextForPrinting;
 }
 
 @property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;
@@ -25,7 +25,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (getter=isFloatingAboveText, nonatomic, readonly) BOOL floatingAboveText;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frameForPrinting;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } frameForPrinting;
 @property (nonatomic, copy) TSDInfoGeometry *geometry;
 @property (readonly) unsigned int hash;
 @property (getter=isInlineWithText, nonatomic, readonly) BOOL inlineWithText;
@@ -49,7 +49,7 @@
 - (int)contentWritingDirection;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForPrinting;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForPrinting;
 - (id)geometry;
 - (id)infoForSelectionPath:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;
@@ -59,6 +59,7 @@
 - (BOOL)isAttachedToBodyText;
 - (BOOL)isFloatingAboveText;
 - (BOOL)isInlineWithText;
+- (BOOL)isSelectable;
 - (BOOL)isThemeContent;
 - (Class)layoutClass;
 - (void)loadFromArchive:(const struct NoteArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; }*)arg1 unarchiver:(id)arg2;
@@ -70,7 +71,7 @@
 - (void)saveToArchive:(struct NoteArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setContainedStorage:(id)arg1;
-- (void)setFrameForPrinting:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrameForPrinting:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setGeometry:(id)arg1;
 - (void)setOwningAttachment:(id)arg1;
 - (void)setParentInfo:(id)arg1;

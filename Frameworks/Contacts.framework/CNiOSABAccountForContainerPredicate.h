@@ -3,7 +3,7 @@
  */
 
 @interface CNiOSABAccountForContainerPredicate : CNPredicate <CNiOSAccountPredicate> {
-    NSString *_containerIdentifier;
+    NSString * _containerIdentifier;
 }
 
 @property (nonatomic, readonly, copy) NSString *containerIdentifier;
@@ -12,9 +12,14 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
++ (BOOL)supportsSecureCoding;
+
 - (struct __CFArray { }*)cn_copyAccountsInAddressBook:(void*)arg1 error:(struct __CFError {}**)arg2;
 - (id)containerIdentifier;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithContainerIdentifier:(id)arg1;
+- (id)initWithPredicate:(id)arg1;
 
 @end

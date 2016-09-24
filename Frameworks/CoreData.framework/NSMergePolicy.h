@@ -3,15 +3,20 @@
  */
 
 @interface NSMergePolicy : NSObject {
-    void *_reserved2;
-    void *_reserved3;
-    unsigned int _type;
+    void * _reserved2;
+    void * _reserved3;
+    unsigned int  _type;
 }
 
 @property (readonly) unsigned int mergeType;
 
 + (BOOL)accessInstanceVariablesDirectly;
++ (id)errorMergePolicy;
 + (void)load;
++ (id)mergeByPropertyObjectTrumpMergePolicy;
++ (id)mergeByPropertyStoreTrumpMergePolicy;
++ (id)overwriteMergePolicy;
++ (id)rollbackMergePolicy;
 
 - (BOOL)_byPropertyObjectTrumpMergeObject:(id)arg1 ontoObject:(id)arg2 writeAll:(BOOL)arg3;
 - (BOOL)_byPropertyObjectTrumpResolveConstraintConflict:(id)arg1;

@@ -3,9 +3,9 @@
  */
 
 @interface DDRange : NSObject {
-    long _endOffset;
-    DOMNode *_node;
-    long _startOffset;
+    long  _endOffset;
+    DOMNode * _node;
+    long  _startOffset;
 }
 
 @property (nonatomic) long endOffset;

@@ -3,7 +3,7 @@
  */
 
 @interface GKPeerPickerController : NSObject {
-    id _picker;
+    id  _picker;
 }
 
 @property (nonatomic) unsigned int connectionTypesMask;

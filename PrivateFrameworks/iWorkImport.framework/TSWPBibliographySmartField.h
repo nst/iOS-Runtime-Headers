@@ -3,8 +3,8 @@
  */
 
 @interface TSWPBibliographySmartField : TSWPSmartField <TSWPCitationRecordHosting> {
-    NSArray *_citationRecords;
-    BOOL _isLocalizable;
+    NSArray * _citationRecords;
+    BOOL  _isLocalizable;
 }
 
 @property (nonatomic, copy) NSArray *citationRecords;

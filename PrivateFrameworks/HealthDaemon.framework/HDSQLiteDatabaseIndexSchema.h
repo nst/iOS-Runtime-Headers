@@ -3,9 +3,9 @@
  */
 
 @interface HDSQLiteDatabaseIndexSchema : NSObject {
-    NSArray *_columns;
-    BOOL _isUnique;
-    NSString *_name;
+    NSArray * _columns;
+    BOOL  _isUnique;
+    NSString * _name;
 }
 
 @property (nonatomic, retain) NSArray *columns;

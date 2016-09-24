@@ -3,8 +3,8 @@
  */
 
 @interface SYStoreDeltaSessionOwner : SYStoreSessionOwner {
-    NSArray *_changes;
-    unsigned int _currentIdx;
+    NSArray * _changes;
+    unsigned int  _currentIdx;
 }
 
 @property (nonatomic, readonly) unsigned int changeCount;

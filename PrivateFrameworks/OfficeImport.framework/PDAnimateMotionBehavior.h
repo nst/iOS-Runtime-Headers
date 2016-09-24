@@ -3,19 +3,19 @@
  */
 
 @interface PDAnimateMotionBehavior : PDAnimateScaleBehavior {
-    double mAngle;
-    BOOL mHasAngle;
-    BOOL mHasOriginType;
-    BOOL mHasPathEditMode;
-    BOOL mHasRotationCenter;
-    int mOriginType;
-    NSString *mPath;
-    int mPathEditMode;
-    NSString *mPointsTypes;
+    double  mAngle;
+    BOOL  mHasAngle;
+    BOOL  mHasOriginType;
+    BOOL  mHasPathEditMode;
+    BOOL  mHasRotationCenter;
+    int  mOriginType;
+    NSString * mPath;
+    int  mPathEditMode;
+    NSString * mPointsTypes;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } mRotationCenter;
+        double x; 
+        double y; 
+    }  mRotationCenter;
 }
 
 - (double)angle;
@@ -30,12 +30,12 @@
 - (id)path;
 - (int)pathEditMode;
 - (id)pointsTypes;
-- (struct CGPoint { float x1; float x2; })rotationCenter;
+- (struct CGPoint { double x1; double x2; })rotationCenter;
 - (void)setAngle:(double)arg1;
 - (void)setOriginType:(int)arg1;
 - (void)setPath:(id)arg1;
 - (void)setPathEditMode:(int)arg1;
 - (void)setPointsTypes:(id)arg1;
-- (void)setRotationCenter:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setRotationCenter:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

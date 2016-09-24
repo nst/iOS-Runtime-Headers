@@ -3,10 +3,10 @@
  */
 
 @interface CIGaussianGradient : CIFilter {
-    CIVector *inputCenter;
-    CIColor *inputColor0;
-    CIColor *inputColor1;
-    NSNumber *inputRadius;
+    CIVector * inputCenter;
+    CIColor * inputColor0;
+    CIColor * inputColor1;
+    NSNumber * inputRadius;
 }
 
 @property (nonatomic, retain) CIVector *inputCenter;

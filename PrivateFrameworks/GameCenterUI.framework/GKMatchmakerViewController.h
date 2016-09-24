@@ -3,14 +3,14 @@
  */
 
 @interface GKMatchmakerViewController : UINavigationController <GKExtensionParentViewControllerProtocol, GKMatchDelegate> {
-    GKInvite *_acceptedInvite;
-    UIAlertController *_alertController;
-    BOOL _hosted;
-    NSMutableArray *_hostedPlayers;
-    GKMatch *_match;
-    GKMatchRequest *_matchRequest;
-    <GKMatchmakerViewControllerDelegate> *_matchmakerDelegateWeak;
-    GKMatchmakerHostViewController *_remoteViewController;
+    GKInvite * _acceptedInvite;
+    UIAlertController * _alertController;
+    BOOL  _hosted;
+    NSMutableArray * _hostedPlayers;
+    GKMatch * _match;
+    GKMatchRequest * _matchRequest;
+    <GKMatchmakerViewControllerDelegate> * _matchmakerDelegateWeak;
+    GKMatchmakerHostViewController * _remoteViewController;
 }
 
 @property (nonatomic, retain) GKInvite *acceptedInvite;
@@ -75,7 +75,9 @@
 - (void)setMatch:(id)arg1;
 - (void)setMatchmakerDelegate:(id)arg1;
 - (void)setRemoteViewController:(id)arg1;
+- (void)setShareInvitees:(id)arg1;
 - (void)setupNotifications;
+- (void)shareMatchWithRequest:(id)arg1 handler:(id /* block */)arg2;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)startMatchingWithRequest:(id)arg1;
 - (unsigned int)supportedInterfaceOrientations;

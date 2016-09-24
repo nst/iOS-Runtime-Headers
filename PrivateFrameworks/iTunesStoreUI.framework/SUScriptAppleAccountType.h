@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptAppleAccountType : SUScriptObject {
-    ACAccountType *_accountType;
+    ACAccountType * _accountType;
 }
 
 @property (readonly) id accessGranted;

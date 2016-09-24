@@ -3,17 +3,17 @@
  */
 
 @interface SKUIUber : NSObject {
-    SKUIArtworkList *_artworkList;
-    SKUIColorScheme *_colorScheme;
-    NSString *_text;
+    <SKUIArtworkProviding> * _artworkProvider;
+    SKUIColorScheme * _colorScheme;
+    NSString * _text;
 }
 
-@property (nonatomic, readonly) SKUIArtworkList *artworkList;
+@property (nonatomic, readonly) <SKUIArtworkProviding> *artworkProvider;
 @property (nonatomic, readonly) SKUIColorScheme *colorScheme;
 @property (nonatomic, readonly) NSString *text;
 
 - (void).cxx_destruct;
-- (id)artworkList;
+- (id)artworkProvider;
 - (id)colorScheme;
 - (id)initWithUberDictionary:(id)arg1;
 - (id)text;

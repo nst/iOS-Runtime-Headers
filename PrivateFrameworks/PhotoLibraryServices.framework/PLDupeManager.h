@@ -3,18 +3,18 @@
  */
 
 @interface PLDupeManager : NSObject {
-    NSMutableArray *_assetsWithUpdatedVisibility;
-    NSMutableDictionary *_cloudAssetsToAnalyze;
-    NSMutableSet *_cloudInserts;
-    BOOL _doneWithCloudAssets;
-    BOOL _isRebuilding;
-    NSMutableArray *_normalAssetsObjectIDsToAnalyze;
-    NSMutableSet *_normalInserts;
-    long _once;
-    NSCountedSet *_pauseReasons;
-    PLPhotoLibrary *_photoLibrary;
-    double _rebuildStartTime;
-    NSSet *_softPauseReasons;
+    NSMutableArray * _assetsWithUpdatedVisibility;
+    NSMutableDictionary * _cloudAssetsToAnalyze;
+    NSMutableSet * _cloudInserts;
+    BOOL  _doneWithCloudAssets;
+    BOOL  _isRebuilding;
+    NSMutableArray * _normalAssetsObjectIDsToAnalyze;
+    NSMutableSet * _normalInserts;
+    long  _once;
+    NSCountedSet * _pauseReasons;
+    PLPhotoLibrary * _photoLibrary;
+    double  _rebuildStartTime;
+    NSSet * _softPauseReasons;
 }
 
 @property (nonatomic, readonly) PLPhotoLibrary *photoLibrary;

@@ -3,14 +3,14 @@
  */
 
 @interface NSIncrementalStoreNode : NSObject {
-    NSManagedObjectID *_objectID;
-    id _propertyCache;
-    void *_reserved1;
-    unsigned long long _versionNumber;
+    NSManagedObjectID * _objectID;
+    id  _propertyCache;
+    void * _reserved1;
+    unsigned int  _versionNumber;
 }
 
 @property (nonatomic, readonly) NSManagedObjectID *objectID;
-@property (nonatomic, readonly) unsigned long long version;
+@property (nonatomic, readonly) unsigned int version;
 
 + (void)initialize;
 
@@ -20,12 +20,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)initWithObjectID:(id)arg1 fromSQLRow:(id)arg2;
-- (id)initWithObjectID:(id)arg1 withValues:(id)arg2 version:(unsigned long long)arg3;
+- (id)initWithObjectID:(id)arg1 withValues:(id)arg2 version:(unsigned int)arg3;
 - (const id*)knownKeyValuesPointer;
 - (id)objectID;
 - (void)updateFromSQLRow:(id)arg1;
-- (void)updateWithValues:(id)arg1 version:(unsigned long long)arg2;
+- (void)updateWithValues:(id)arg1 version:(unsigned int)arg2;
 - (id)valueForPropertyDescription:(id)arg1;
-- (unsigned long long)version;
+- (unsigned int)version;
 
 @end

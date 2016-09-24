@@ -3,9 +3,9 @@
  */
 
 @interface PURepeater : NSObject {
-    id /* block */ _block;
-    NSObject<OS_dispatch_queue> *_queue;
-    double _timeInterval;
+    id /* block */  _block;
+    NSObject<OS_dispatch_queue> * _queue;
+    double  _timeInterval;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;

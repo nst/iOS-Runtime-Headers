@@ -3,20 +3,20 @@
  */
 
 @interface MSVFileBufferedPipe : NSObject {
-    unsigned int _dataPendingOffset;
-    NSData *_dataPendingWrite;
-    NSFileHandle *_fileHandleForReading;
-    NSFileHandle *_fileHandleForWriting;
-    BOOL _hasBufferedData;
-    NSPipe *_inputPipe;
-    NSPipe *_outputPipe;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSFileHandle *_readBufferFileHandle;
-    NSObject<OS_dispatch_source> *_readSource;
-    BOOL _readSourceClosed;
-    BOOL _readyForData;
-    NSFileHandle *_writeBufferFileHandle;
-    NSObject<OS_dispatch_source> *_writeSource;
+    unsigned int  _dataPendingOffset;
+    NSData * _dataPendingWrite;
+    NSFileHandle * _fileHandleForReading;
+    NSFileHandle * _fileHandleForWriting;
+    BOOL  _hasBufferedData;
+    NSPipe * _inputPipe;
+    NSPipe * _outputPipe;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSFileHandle * _readBufferFileHandle;
+    NSObject<OS_dispatch_source> * _readSource;
+    BOOL  _readSourceClosed;
+    BOOL  _readyForData;
+    NSFileHandle * _writeBufferFileHandle;
+    NSObject<OS_dispatch_source> * _writeSource;
 }
 
 @property (readonly, retain) NSFileHandle *fileHandleForReading;

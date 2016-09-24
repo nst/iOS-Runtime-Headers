@@ -13,9 +13,9 @@
         unsigned int Nh; 
         unsigned int data[16]; 
         int num; 
-    } _ctx;
-    BOOL _isOpen;
-    unsigned char _sig;
+    }  _ctx;
+    BOOL  _isOpen;
+    unsigned char  _sig;
 }
 
 @property (nonatomic, readonly) NSData *signature;

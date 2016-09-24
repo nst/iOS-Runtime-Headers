@@ -3,8 +3,8 @@
  */
 
 @interface SSVSAPSignaturePolicy : NSObject <NSCopying> {
-    int _policyType;
-    NSArray *_signatureComponents;
+    int  _policyType;
+    NSArray * _signatureComponents;
 }
 
 @property (nonatomic, readonly) int policyType;

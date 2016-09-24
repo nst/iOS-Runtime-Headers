@@ -3,12 +3,12 @@
  */
 
 @interface _DKLocationHistoryCache : NSObject {
-    double _earliestTime;
-    unsigned int _index;
-    double _latestTime;
-    BOOL _needsSorting;
-    NSMutableSet *_visitSet;
-    NSMutableArray *_visits;
+    double  _earliestTime;
+    unsigned int  _index;
+    double  _latestTime;
+    BOOL  _needsSorting;
+    NSMutableSet * _visitSet;
+    NSMutableArray * _visits;
 }
 
 @property (readonly) unsigned int count;

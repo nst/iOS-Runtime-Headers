@@ -3,8 +3,8 @@
  */
 
 @interface WDStory : NSObject {
-    OADDrawable *mHead;
-    BOOL mOle;
+    OADDrawable * mHead;
+    BOOL  mOle;
 }
 
 - (void)dealloc;

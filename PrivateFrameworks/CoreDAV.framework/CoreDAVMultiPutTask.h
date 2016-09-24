@@ -3,18 +3,18 @@
  */
 
 @interface CoreDAVMultiPutTask : CoreDAVTask {
-    NSString *_appSpecificDataProp;
-    NSString *_appSpecificNamespace;
-    NSString *_checkCTag;
-    NSMutableDictionary *_hrefToETag;
-    NSMutableDictionary *_hrefToErrorItems;
-    NSMutableDictionary *_hrefToStatus;
-    NSString *_nextCTag;
-    CoreDAVXMLData *_pushedData;
-    NSMutableDictionary *_uuidToErrorItems;
-    NSMutableDictionary *_uuidToHREF;
-    NSMutableDictionary *_uuidToStatus;
-    BOOL _validCTag;
+    NSString * _appSpecificDataProp;
+    NSString * _appSpecificNamespace;
+    NSString * _checkCTag;
+    NSMutableDictionary * _hrefToETag;
+    NSMutableDictionary * _hrefToErrorItems;
+    NSMutableDictionary * _hrefToStatus;
+    NSString * _nextCTag;
+    CoreDAVXMLData * _pushedData;
+    NSMutableDictionary * _uuidToErrorItems;
+    NSMutableDictionary * _uuidToHREF;
+    NSMutableDictionary * _uuidToStatus;
+    BOOL  _validCTag;
 }
 
 @property (nonatomic, readonly) NSDictionary *hrefToETag;

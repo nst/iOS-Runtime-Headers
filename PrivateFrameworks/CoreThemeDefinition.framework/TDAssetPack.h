@@ -3,11 +3,11 @@
  */
 
 @interface TDAssetPack : NSObject <NSCopying> {
-    NSString *assetPackIdentifier;
-    CUIMutableCommonAssetStorage *assetStore;
-    NSString *outputPath;
-    NSSet *tags;
-    BOOL wasModified;
+    NSString * assetPackIdentifier;
+    CUIMutableCommonAssetStorage * assetStore;
+    NSString * outputPath;
+    NSSet * tags;
+    BOOL  wasModified;
 }
 
 @property (nonatomic, copy) NSString *assetPackIdentifier;

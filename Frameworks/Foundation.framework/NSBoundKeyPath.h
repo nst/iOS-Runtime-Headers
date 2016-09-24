@@ -3,10 +3,11 @@
  */
 
 @interface NSBoundKeyPath : NSObject {
-    NSString *_keyPath;
-    id _rootObject;
+    NSString * _keyPath;
+    id  _rootObject;
 }
 
+@property (readonly) NSString *keyPath;
 @property id rootObject;
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
@@ -14,9 +15,9 @@
 + (id)newKeyPathWithRootObject:(id)arg1 keyPathString:(id)arg2;
 
 - (void)dealloc;
-- (void)finalize;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
+- (id)keyPath;
 - (id)mutableArrayValue;
 - (id)mutableOrderedSetValue;
 - (id)mutableSetValue;

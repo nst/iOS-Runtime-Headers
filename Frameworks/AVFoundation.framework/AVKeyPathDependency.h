@@ -3,12 +3,12 @@
  */
 
 @interface AVKeyPathDependency : NSObject {
-    AVKVODispatcher *_KVODispatcher;
-    AVTwoPartKeyPath *_dependencyKeyPath;
-    NSString *_dependentKey;
-    <AVCallbackCancellation> *_leafPropertyChangeNotifier;
-    NSObject<OS_dispatch_queue> *_subObjectRegistrationQueue;
-    AVWeakReference *_weakReferenceToObject;
+    AVKVODispatcher * _KVODispatcher;
+    AVTwoPartKeyPath * _dependencyKeyPath;
+    NSString * _dependentKey;
+    <AVCallbackCancellation> * _leafPropertyChangeNotifier;
+    NSObject<OS_dispatch_queue> * _subObjectRegistrationQueue;
+    AVWeakReference * _weakReferenceToObject;
 }
 
 + (void)initialize;

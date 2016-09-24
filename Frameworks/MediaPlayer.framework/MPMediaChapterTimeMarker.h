@@ -3,9 +3,9 @@
  */
 
 @interface MPMediaChapterTimeMarker : MPTimeMarker {
-    unsigned int _chapterIndex;
-    NSArray *_chapters;
-    BOOL _hasArtworkAtPlaybackTime;
+    unsigned int  _chapterIndex;
+    NSArray * _chapters;
+    BOOL  _hasArtworkAtPlaybackTime;
 }
 
 @property (nonatomic) unsigned int chapterIndex;

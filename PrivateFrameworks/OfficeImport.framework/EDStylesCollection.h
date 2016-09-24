@@ -3,7 +3,7 @@
  */
 
 @interface EDStylesCollection : EDCollection {
-    unsigned int mDefaultWorkbookStyleIndex;
+    unsigned int  mDefaultWorkbookStyleIndex;
 }
 
 - (unsigned int)addObject:(id)arg1;

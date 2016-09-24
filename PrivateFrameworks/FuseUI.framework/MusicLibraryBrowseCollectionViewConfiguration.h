@@ -3,7 +3,7 @@
  */
 
 @interface MusicLibraryBrowseCollectionViewConfiguration : MusicLibraryViewConfiguration {
-    MusicEntityCollectionViewDescriptor *_entityCollectionViewDescriptor;
+    MusicEntityCollectionViewDescriptor * _entityCollectionViewDescriptor;
 }
 
 @property (nonatomic, readonly) MusicEntityCollectionViewDescriptor *entityViewDescriptor;

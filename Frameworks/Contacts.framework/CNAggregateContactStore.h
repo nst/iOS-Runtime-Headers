@@ -3,8 +3,8 @@
  */
 
 @interface CNAggregateContactStore : CNContactStore {
-    NSArray *_contactStores;
-    CNContactStore *_mainStore;
+    NSArray * _contactStores;
+    CNContactStore * _mainStore;
 }
 
 @property (nonatomic, copy) NSArray *contactStores;
@@ -13,6 +13,8 @@
 - (id)_allStoreResultsWithError:(id*)arg1 withBlock:(id /* block */)arg2;
 - (id)_unifiedContactsFromContacts:(id)arg1 unifyContactsFromMainStore:(BOOL)arg2 keysToFetch:(id)arg3 error:(id*)arg4;
 - (id)accountsMatchingPredicate:(id)arg1 error:(id*)arg2;
+- (id)changeHistoryWithFetchRequest:(id)arg1 error:(id*)arg2;
+- (BOOL)clearChangeHistoryForClient:(id)arg1 toSequenceNumber:(int)arg2 error:(id*)arg3;
 - (id)contactIdentifiersForFetchRequest:(id)arg1 error:(id*)arg2;
 - (id)contactStores;
 - (id)contactWithUserActivityUserInfo:(id)arg1 keysToFetch:(id)arg2;
@@ -31,11 +33,16 @@
 - (id)membersOfGroupWithIdentifier:(id)arg1 keysToFetch:(id)arg2 error:(id*)arg3;
 - (id)originForSuggestion:(id)arg1 error:(id*)arg2;
 - (id)policyForContainerWithIdentifier:(id)arg1 error:(id*)arg2;
+- (BOOL)registerClientForChangeHistory:(id)arg1 error:(id*)arg2;
+- (id)requestAccessForEntityType:(int)arg1;
 - (id)serverSearchContainersMatchingPredicate:(id)arg1 error:(id*)arg2;
 - (void)setContactStores:(id)arg1;
 - (BOOL)store:(id)arg1 supportsSelector:(SEL)arg2;
 - (id)subgroupsOfGroupWithIdentifier:(id)arg1 error:(id*)arg2;
+- (BOOL)supportsSaveRequest:(id)arg1;
+- (id)unifiedContactCountWithError:(id*)arg1;
 - (id)unifiedContactsMatchingPredicate:(id)arg1 keysToFetch:(id)arg2 error:(id*)arg3;
+- (BOOL)unregisterClientForChangeHistory:(id)arg1 error:(id*)arg2;
 - (id)usedLabelsForPropertyWithKey:(id)arg1 error:(id*)arg2;
 - (id)userActivityUserInfoForContact:(id)arg1;
 

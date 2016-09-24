@@ -3,8 +3,8 @@
  */
 
 @interface BLTPairedSyncState : NSObject {
-    BOOL _initialSyncComplete;
-    unsigned int _state;
+    BOOL  _initialSyncComplete;
+    unsigned int  _state;
 }
 
 @property (getter=isInitialSyncComplete, nonatomic, readonly) BOOL initialSyncComplete;

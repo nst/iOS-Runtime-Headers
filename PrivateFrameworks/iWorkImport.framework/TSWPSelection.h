@@ -3,29 +3,29 @@
  */
 
 @interface TSWPSelection : TSKSelection <TSDTextSelection> {
-    int _caretAffinity;
-    unsigned int _headChar;
-    unsigned int _leadingCharIndex;
-    BOOL _leadingEdge;
+    int  _caretAffinity;
+    unsigned int  _headChar;
+    unsigned int  _leadingCharIndex;
+    BOOL  _leadingEdge;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
+    }  _range;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _smartFieldRange;
-    int _styleInsertionBehavior;
-    unsigned int _tailChar;
-    int _type;
-    BOOL _validVisualRanges;
+    }  _smartFieldRange;
+    int  _styleInsertionBehavior;
+    unsigned int  _tailChar;
+    int  _type;
+    BOOL  _validVisualRanges;
     struct TSWPRangeVector { 
         struct _NSRange {} *__begin_; 
         struct _NSRange {} *__end_; 
         struct __compressed_pair<_NSRange *, std::__1::allocator<_NSRange> > { 
             struct _NSRange {} *__first_; 
         } __end_cap_; 
-    } _visualRanges;
+    }  _visualRanges;
 }
 
 @property (nonatomic, readonly) int caretAffinity;
@@ -73,6 +73,7 @@
 - (id)copyWithVisualRanges:(const struct TSWPRangeVector { struct _NSRange {} *x1; struct _NSRange {} *x2; struct __compressed_pair<_NSRange *, std::__1::allocator<_NSRange> > { struct _NSRange {} *x_3_1_1; } x3; }*)arg1 headChar:(unsigned int)arg2 tailChar:(unsigned int)arg3 rightToLeft:(BOOL)arg4 sameLine:(BOOL)arg5;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (unsigned int)end;
 - (unsigned int)headChar;
 - (void)i_setVisualRanges:(const struct TSWPRangeVector { struct _NSRange {} *x1; struct _NSRange {} *x2; struct __compressed_pair<_NSRange *, std::__1::allocator<_NSRange> > { struct _NSRange {} *x_3_1_1; } x3; }*)arg1;

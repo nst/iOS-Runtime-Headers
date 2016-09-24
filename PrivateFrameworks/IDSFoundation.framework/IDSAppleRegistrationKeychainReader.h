@@ -3,10 +3,10 @@
  */
 
 @interface IDSAppleRegistrationKeychainReader : NSObject {
-    id /* block */ _purgeCancelBlock;
-    id /* block */ _purgeEnqueueBlock;
-    IMTimer *_purgeTimer;
-    NSMutableArray *_registrationData;
+    id /* block */  _purgeCancelBlock;
+    id /* block */  _purgeEnqueueBlock;
+    IMTimer * _purgeTimer;
+    NSMutableArray * _registrationData;
 }
 
 + (id)keychainAccessGroupForVersion:(unsigned int)arg1;

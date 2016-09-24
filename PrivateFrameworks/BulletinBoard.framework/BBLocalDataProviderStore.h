@@ -3,12 +3,12 @@
  */
 
 @interface BBLocalDataProviderStore : NSObject <BBDataProviderStore, BBLocalDataProviderFactoryStore> {
-    NSMutableDictionary *_dataProvidersBySectionID;
-    NSMutableDictionary *_dataProvidersByUniversalSectionID;
-    <BBDataProviderStoreDelegate> *_delegate;
-    NSMutableArray *_localFactories;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_queue> *_serverQueue;
+    NSMutableDictionary * _dataProvidersBySectionID;
+    NSMutableDictionary * _dataProvidersByUniversalSectionID;
+    <BBDataProviderStoreDelegate> * _delegate;
+    NSMutableArray * _localFactories;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_queue> * _serverQueue;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *dataProvidersBySectionID;
@@ -21,6 +21,7 @@
 
 + (id)localDataProviderStoreWithDelegate:(id)arg1 dataProviderQueue:(id)arg2;
 
+- (void).cxx_destruct;
 - (void)_addDataProviderClass:(Class)arg1 performMigration:(BOOL)arg2;
 - (void)_addLocalDataProviderFactoryOfClass:(Class)arg1;
 - (void)_loadDataProviderPluginBundle:(id)arg1 performMigration:(BOOL)arg2;
@@ -33,7 +34,6 @@
 - (id)dataProviderForUniversalSectionID:(id)arg1;
 - (id)dataProvidersBySectionID;
 - (id)dataProvidersByUniversalSectionID;
-- (void)dealloc;
 - (id)debugDescription;
 - (id)debugDescriptionWithChildren:(unsigned int)arg1;
 - (id)initWithDelegate:(id)arg1 dataProviderQueue:(id)arg2;

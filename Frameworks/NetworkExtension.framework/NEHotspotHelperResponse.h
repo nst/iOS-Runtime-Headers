@@ -3,7 +3,7 @@
  */
 
 @interface NEHotspotHelperResponse : NSObject {
-    struct __CNPluginResponse { } *_response;
+    struct __CNPluginResponse { } * _response;
 }
 
 @property struct __CNPluginResponse { }*response;

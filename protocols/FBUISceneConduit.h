@@ -7,6 +7,6 @@
 
 - (<FBUISceneClientProxy> *)sceneClient;
 - (<FBUISceneHostProxy> *)sceneHost;
-- (void)sceneHost:(id <FBUISceneHostProxy>)arg1 registerSceneClient:(id <FBUISceneClientProxy>)arg2 withInitialParameters:(FBUISceneParameters *)arg3;
+- (void)sceneHost:(id <FBUISceneHostProxy>)arg1 registerSceneClient:(id <FBUISceneClientProxy>)arg2 withInitialParameters:(FBSSceneParameters *)arg3;
 
 @end

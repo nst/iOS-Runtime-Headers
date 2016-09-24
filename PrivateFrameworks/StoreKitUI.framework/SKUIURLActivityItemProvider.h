@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIURLActivityItemProvider : UIActivityItemProvider {
-    SKUIClientContext *_clientContext;
-    SKUIProductPageItem *_item;
-}
+@interface SKUIURLActivityItemProvider : SKUIDeferredActivityItemProvider
 
-- (void).cxx_destruct;
++ (id)placeholderItem;
+
 - (id)activityViewController:(id)arg1 subjectForActivityType:(id)arg2;
-- (id)activityViewController:(id)arg1 thumbnailImageForActivityType:(id)arg2 suggestedSize:(struct CGSize { float x1; float x2; })arg3;
-- (id)initWithProductPageItem:(id)arg1 clientContext:(id)arg2;
+- (id)activityViewController:(id)arg1 thumbnailImageForActivityType:(id)arg2 suggestedSize:(struct CGSize { double x1; double x2; })arg3;
 - (id)item;
 
 @end

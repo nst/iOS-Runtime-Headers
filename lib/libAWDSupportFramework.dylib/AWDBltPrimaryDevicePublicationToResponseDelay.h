@@ -3,17 +3,17 @@
  */
 
 @interface AWDBltPrimaryDevicePublicationToResponseDelay : PBCodable <NSCopying> {
-    unsigned int _connectionType;
-    unsigned int _delayMs;
+    unsigned int  _connectionType;
+    unsigned int  _delayMs;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int connectionType : 1; 
         unsigned int delayMs : 1; 
         unsigned int publicationDate : 1; 
-    } _has;
-    unsigned int _publicationDate;
-    unsigned long long _timestamp;
-    NSString *_uniqueid;
+    }  _has;
+    unsigned int  _publicationDate;
+    unsigned long long  _timestamp;
+    NSString * _uniqueid;
 }
 
 @property (nonatomic) unsigned int connectionType;

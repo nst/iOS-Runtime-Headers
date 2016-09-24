@@ -3,13 +3,13 @@
  */
 
 @interface MusicStoreEntityProvider : NSObject <MusicEntityProviding, NSCopying, NSSecureCoding> {
-    int _entityType;
-    NSArray *_filteredPlayableItemMetadataContexts;
-    BOOL _shouldIncludeUnplayableContent;
-    BOOL _shouldReloadEntityValueProvidersForInvalidation;
-    BOOL _shouldRespectSystemContentRestrictions;
-    MPSparseArray *_storeEntityValueProviders;
-    NSArray *_storeItemMetadataContexts;
+    int  _entityType;
+    NSArray * _filteredPlayableItemMetadataContexts;
+    BOOL  _shouldIncludeUnplayableContent;
+    BOOL  _shouldReloadEntityValueProvidersForInvalidation;
+    BOOL  _shouldRespectSystemContentRestrictions;
+    MPSparseArray * _storeEntityValueProviders;
+    NSArray * _storeItemMetadataContexts;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -55,7 +55,6 @@
 - (id)indexPathForStoreItemMetadataContext:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)newDownloadInformationController;
 - (unsigned int)numberOfEntitiesInSection:(unsigned int)arg1;
 - (unsigned int)numberOfIndexBarEntries;
 - (unsigned int)numberOfSections;

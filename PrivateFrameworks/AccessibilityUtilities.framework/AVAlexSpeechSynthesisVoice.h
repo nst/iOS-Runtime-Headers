@@ -7,6 +7,7 @@
 - (id)identifier;
 - (id)language;
 - (id)name;
+- (id)nameWithoutQuality;
 - (int)quality;
 
 @end

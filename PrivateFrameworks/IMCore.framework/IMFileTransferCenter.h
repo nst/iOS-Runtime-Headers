@@ -3,13 +3,13 @@
  */
 
 @interface IMFileTransferCenter : NSObject {
-    NSMutableDictionary *_accountIDToTransferGUIDsMap;
-    NSMutableSet *_activeTransfers;
-    NSMutableDictionary *_guidToRemovedTransferMap;
-    NSMutableDictionary *_guidToTransferMap;
-    NSMutableSet *_pendingTransfers;
-    NSMutableArray *_preauthorizedGUIDs;
-    NSMutableArray *_preauthorizedInfos;
+    NSMutableDictionary * _accountIDToTransferGUIDsMap;
+    NSMutableSet * _activeTransfers;
+    NSMutableDictionary * _guidToRemovedTransferMap;
+    NSMutableDictionary * _guidToTransferMap;
+    NSMutableSet * _pendingTransfers;
+    NSMutableArray * _preauthorizedGUIDs;
+    NSMutableArray * _preauthorizedInfos;
 }
 
 @property (nonatomic, readonly) NSArray *activeTransferGUIDs;
@@ -25,15 +25,18 @@
 + (id)sharedInstance;
 + (Class)transferCenterClass;
 
+- (void).cxx_destruct;
 - (void)_addActiveTransfer:(id)arg1;
 - (void)_addPendingTransfer:(id)arg1;
+- (void)_addSpotlightProperties:(id)arg1 sender:(id)arg2 recipients:(id)arg3 incoming:(BOOL)arg4;
 - (void)_addTransfer:(id)arg1;
 - (void)_addTransfer:(id)arg1 toAccount:(id)arg2;
 - (void)_clearTransfers;
 - (void)_handleAllFileTransfers:(id)arg1;
 - (void)_handleFileTransfer:(id)arg1 createdWithProperties:(id)arg2;
-- (void)_handleFileTransfer:(id)arg1 updatedWithCurrentBytes:(unsigned long long)arg2 totalBytes:(unsigned long long)arg3 averageTransferRate:(unsigned long long)arg4;
+- (void)_handleFileTransfer:(id)arg1 updatedWithCurrentBytes:(unsigned int)arg2 totalBytes:(unsigned int)arg3 averageTransferRate:(unsigned int)arg4;
 - (void)_handleFileTransfer:(id)arg1 updatedWithProperties:(id)arg2;
+- (void)_handleFileTransfers:(id)arg1 createdWithLocalPaths:(id)arg2;
 - (void)_handleStandaloneFileTransferRegistered:(id)arg1;
 - (void)_removeActiveTransfer:(id)arg1;
 - (void)_removeAllActiveTransfers;
@@ -49,10 +52,10 @@
 - (void)assignTransfer:(id)arg1 toMessage:(id)arg2 account:(id)arg3;
 - (id)chatForTransfer:(id)arg1;
 - (void)clearFinishedTransfers;
-- (void)dealloc;
 - (void)deleteTransfer:(id)arg1;
 - (BOOL)doesLocalURLRequireArchiving:(id)arg1 toHandle:(id)arg2;
 - (id)guidForNewOutgoingTransferWithLocalURL:(id)arg1;
+- (id)guidsForStoredAttachmentPayloadData:(id)arg1 messageGUID:(id)arg2;
 - (BOOL)hasActiveFileTransfers;
 - (BOOL)hasPendingFileTransfers;
 - (BOOL)isFileTransfer:(id)arg1 preauthorizedWithDictionary:(id)arg2;

@@ -3,12 +3,12 @@
  */
 
 @interface SiriUIDownloadableImageView : UIView {
-    NSURL *_imageURL;
-    UIImageView *_imageView;
-    NSBundle *_placeHolderImageBundle;
-    NSString *_placeHolderImageName;
-    float _placeHolderVerticalOffset;
-    BOOL _showingPlaceHolderImage;
+    NSURL * _imageURL;
+    UIImageView * _imageView;
+    NSBundle * _placeHolderImageBundle;
+    NSString * _placeHolderImageName;
+    double  _placeHolderVerticalOffset;
+    BOOL  _showingPlaceHolderImage;
 }
 
 - (void).cxx_destruct;

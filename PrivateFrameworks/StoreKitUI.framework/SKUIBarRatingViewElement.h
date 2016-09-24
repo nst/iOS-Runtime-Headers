@@ -3,10 +3,10 @@
  */
 
 @interface SKUIBarRatingViewElement : SKUIViewElement {
-    float _ratingValue;
+    double  _ratingValue;
 }
 
-@property (nonatomic, readonly) float ratingValue;
+@property (nonatomic, readonly) double ratingValue;
 
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;

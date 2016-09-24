@@ -3,7 +3,7 @@
  */
 
 @interface NMRSendCommandMessage : NSObject <NMRMediaRemoteProtobufCodable> {
-    _NMRSendCommandMessageProtobuf *_protobuf;
+    _NMRSendCommandMessageProtobuf * _protobuf;
 }
 
 @property (nonatomic, readonly) unsigned int command;

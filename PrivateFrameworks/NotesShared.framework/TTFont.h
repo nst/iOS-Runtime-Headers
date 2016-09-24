@@ -3,15 +3,15 @@
  */
 
 @interface TTFont : NSObject {
-    unsigned int _fontHints;
-    NSString *_fontName;
-    struct UIFont { Class x1; } *_nativeFont;
-    float _pointSize;
+    unsigned int  _fontHints;
+    NSString * _fontName;
+    struct UIFont { Class x1; } * _nativeFont;
+    double  _pointSize;
 }
 
 @property (nonatomic, readonly) unsigned int fontHints;
 @property (nonatomic, readonly) NSString *fontName;
-@property (nonatomic, readonly) float pointSize;
+@property (nonatomic, readonly) double pointSize;
 
 + (struct UIFont { Class x1; }*)convertFont:(struct UIFont { Class x1; }*)arg1 toBold:(BOOL)arg2 toItalic:(BOOL)arg3;
 + (void)font:(struct UIFont { Class x1; }*)arg1 isBold:(BOOL*)arg2 isItalic:(BOOL*)arg3;
@@ -24,6 +24,7 @@
 - (id)initWithName:(id)arg1 size:(float)arg2 hints:(unsigned int)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (struct UIFont { Class x1; }*)nativeFontForStyle:(unsigned int)arg1;
+- (struct UIFont { Class x1; }*)nativeFontForStyle:(unsigned int)arg1 contentSizeCategory:(id)arg2;
 - (float)pointSize;
 
 @end

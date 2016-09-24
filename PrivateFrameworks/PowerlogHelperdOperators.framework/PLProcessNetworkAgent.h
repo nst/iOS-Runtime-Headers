@@ -3,13 +3,13 @@
  */
 
 @interface PLProcessNetworkAgent : PLAgent {
-    PLEntryNotificationOperatorComposition *_batteryLevelChanged;
-    NSDate *_lastEntryDate;
-    NSDictionary *_lastProcessNameToNetworkUsageEntry;
-    PLMonotonicTimer *_logUsageTimer;
-    NSMutableSet *_processes;
-    struct __NStatManager { } *_statManagerRef;
-    UsageFeed *_usageFeed;
+    PLEntryNotificationOperatorComposition * _batteryLevelChanged;
+    NSDate * _lastEntryDate;
+    NSDictionary * _lastProcessNameToNetworkUsageEntry;
+    PLMonotonicTimer * _logUsageTimer;
+    NSMutableSet * _processes;
+    struct __NStatManager { } * _statManagerRef;
+    UsageFeed * _usageFeed;
 }
 
 @property (retain) PLEntryNotificationOperatorComposition *batteryLevelChanged;

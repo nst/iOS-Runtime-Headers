@@ -3,18 +3,18 @@
  */
 
 @interface TSPReaderReferenceInfo : NSObject {
-    long long _componentIdentifier;
-    long long _objectIdentifier;
+    int  _componentIdentifier;
+    int  _objectIdentifier;
 }
 
-@property (nonatomic, readonly) long long componentIdentifier;
-@property (nonatomic, readonly) long long objectIdentifier;
+@property (nonatomic, readonly) int componentIdentifier;
+@property (nonatomic, readonly) int objectIdentifier;
 
-+ (id)newReferenceInfoWithObjectIdentifier:(long long)arg1 componentIdentifier:(long long)arg2;
++ (id)newReferenceInfoWithObjectIdentifier:(int)arg1 componentIdentifier:(int)arg2;
 
-- (long long)componentIdentifier;
+- (int)componentIdentifier;
 - (id)init;
-- (id)initWithObjectIdentifier:(long long)arg1 componentIdentifier:(long long)arg2;
-- (long long)objectIdentifier;
+- (id)initWithObjectIdentifier:(int)arg1 componentIdentifier:(int)arg2;
+- (int)objectIdentifier;
 
 @end

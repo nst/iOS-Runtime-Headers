@@ -3,9 +3,9 @@
  */
 
 @interface MFPColorCurveEffect : MFPEffect {
-    int mAdjustValue;
-    int mAdjustment;
-    int mChannel;
+    int  mAdjustValue;
+    int  mAdjustment;
+    int  mChannel;
 }
 
 + (id)GUID;

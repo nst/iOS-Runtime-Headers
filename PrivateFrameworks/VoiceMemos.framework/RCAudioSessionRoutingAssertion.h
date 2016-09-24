@@ -3,10 +3,10 @@
  */
 
 @interface RCAudioSessionRoutingAssertion : NSObject {
-    NSString *_debugLabel;
-    int _priority;
-    BOOL _requireAudioCategoryActive;
-    int _routeDirection;
+    NSString * _debugLabel;
+    int  _priority;
+    BOOL  _requireAudioCategoryActive;
+    int  _routeDirection;
 }
 
 @property (nonatomic, readonly) int priority;

@@ -3,12 +3,12 @@
  */
 
 @interface SKUIComposeReviewHeaderView : UIView <SKUIComposeTextFieldListViewDelegate> {
-    <SKUIComposeReviewHeaderDelegate> *_delegate;
-    SKStarRatingControl *_ratingControl;
-    SKUIReviewMetadata *_review;
-    BOOL _showNicknameField;
-    int _style;
-    SKUIComposeTextFieldListView *_textFieldListView;
+    <SKUIComposeReviewHeaderDelegate> * _delegate;
+    SKStarRatingControl * _ratingControl;
+    SKUIReviewMetadata * _review;
+    BOOL  _showNicknameField;
+    int  _style;
+    SKUIComposeTextFieldListView * _textFieldListView;
 }
 
 @property (nonatomic, readonly) int composeReviewStyle;
@@ -18,7 +18,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) UIResponder *initialFirstResponder;
 @property (nonatomic, readonly) NSString *nickname;
-@property (nonatomic) float rating;
+@property (nonatomic) double rating;
 @property (nonatomic, retain) SKUIReviewMetadata *review;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *title;
@@ -27,7 +27,7 @@
 - (int)composeReviewStyle;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 style:(int)arg2;
 - (id)initialFirstResponder;
 - (void)layoutSubviews;
 - (id)nickname;

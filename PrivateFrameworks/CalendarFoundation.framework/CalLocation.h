@@ -3,17 +3,17 @@
  */
 
 @interface CalLocation : NSObject <NSSecureCoding> {
-    NSString *_abURLString;
-    NSString *_address;
-    NSString *_displayName;
-    BOOL _isCurrentLocation;
-    CLLocation *_location;
-    NSData *_mapKitHandle;
-    CLPlacemark *_placemark;
-    double _radius;
-    NSString *_routeType;
-    NSString *_title;
-    int _type;
+    NSString * _abURLString;
+    NSString * _address;
+    NSString * _displayName;
+    BOOL  _isCurrentLocation;
+    CLLocation * _location;
+    NSData * _mapKitHandle;
+    CLPlacemark * _placemark;
+    double  _radius;
+    NSString * _routeType;
+    NSString * _title;
+    int  _type;
 }
 
 @property (copy) NSString *abURLString;
@@ -29,6 +29,7 @@
 @property int type;
 
 + (id)coordinatesFromGeoURLString:(id)arg1;
++ (id)displayStringForAddress:(id)arg1 withoutTitle:(id)arg2;
 + (id)fullDisplayStringWithTitle:(id)arg1 address:(id)arg2;
 + (id)geoURLStringFromCoordinates:(id)arg1;
 + (id)routeTypeStringForCalLocationRoutingMode:(int)arg1;

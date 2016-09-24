@@ -3,22 +3,27 @@
  */
 
 @interface GEOComposedRouteStep : NSObject {
-    GEOComposedRoute *_composedRoute;
-    GEOStep *_geoStep;
+    GEOComposedRoute * _composedRoute;
+    int  _drivingSide;
+    GEOStep * _geoStep;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _maneuverPointRange;
+    }  _maneuverPointRange;
+    NSString * _maneuverRoadName;
+    NSString * _maneuverRoadOrExitName;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _pointRange;
-    int _routeLegType;
-    unsigned int _stepIndex;
+    }  _pointRange;
+    int  _routeLegType;
+    unsigned int  _stepIndex;
 }
 
+@property (nonatomic, readonly) GEOComposedTransitTripRouteStep *closestLogicalBoardOrAlightStep;
 @property (nonatomic) GEOComposedRoute *composedRoute;
 @property (nonatomic, readonly) unsigned int distance;
+@property (nonatomic, readonly) int drivingSide;
 @property (nonatomic, readonly) unsigned int duration;
 @property (nonatomic, readonly) struct { double x1; double x2; } endGeoCoordinate;
 @property (nonatomic, readonly) unsigned int endPointIndex;
@@ -31,6 +36,8 @@
 @property (nonatomic, readonly) GEOComposedRouteLeg *leg;
 @property (nonatomic, readonly) unsigned int maneuverEndPointIndex;
 @property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } maneuverPointRange;
+@property (nonatomic, readonly) NSString *maneuverRoadName;
+@property (nonatomic, readonly) NSString *maneuverRoadOrExitName;
 @property (nonatomic, readonly) unsigned int maneuverStartPointIndex;
 @property (nonatomic, readonly) GEOComposedTransitTripRouteStep *nextAlightingStep;
 @property (nonatomic, readonly) GEOComposedTransitTripRouteStep *nextBoardingStep;
@@ -55,16 +62,23 @@
 @property (nonatomic, readonly) unsigned int startPointIndex;
 @property (nonatomic, readonly) unsigned int startTime;
 @property (nonatomic, readonly) GEOPBTransitStop *startingStop;
+@property (nonatomic, readonly) unsigned int stepID;
 @property (nonatomic, readonly) unsigned int stepIndex;
 @property (nonatomic, readonly) NSArray *steppingArtwork;
+@property (nonatomic, readonly) NSTimeZone *timeZoneForFormattedString;
+@property (nonatomic, readonly) NSTimeZone *timeZoneForStartingOrEndingStop;
 @property (nonatomic, readonly) GEOTransitStep *transitStep;
 @property (nonatomic, readonly) int transportType;
 
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
 - (BOOL)_belongsToTransferGroup;
+- (id)closestLogicalBoardOrAlightStep;
 - (id)composedRoute;
 - (void)dealloc;
 - (id)description;
 - (unsigned int)distance;
+- (int)drivingSide;
 - (unsigned int)duration;
 - (struct { double x1; double x2; })endGeoCoordinate;
 - (unsigned int)endPointIndex;
@@ -83,6 +97,8 @@
 - (int)maneuver;
 - (unsigned int)maneuverEndPointIndex;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })maneuverPointRange;
+- (id)maneuverRoadName;
+- (id)maneuverRoadOrExitName;
 - (unsigned int)maneuverStartPointIndex;
 - (id)nextAlightingStep;
 - (id)nextBoardingStep;
@@ -107,9 +123,17 @@
 - (unsigned int)startPointIndex;
 - (unsigned int)startTime;
 - (id)startingStop;
+- (unsigned int)stepID;
 - (unsigned int)stepIndex;
 - (id)steppingArtwork;
+- (id)timeZoneForFormattedString;
+- (id)timeZoneForStartingOrEndingStop;
 - (id)transitStep;
 - (int)transportType;
+
+// Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
+
+- (id)contentsForContext:(int)arg1;
+- (id)instructionForSpokenManeuverWithNextStep:(BOOL)arg1 withOptions:(struct { int x1; double x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; int x7; int x8; }*)arg2;
 
 @end

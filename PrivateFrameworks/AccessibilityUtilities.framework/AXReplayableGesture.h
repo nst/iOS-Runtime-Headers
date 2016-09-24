@@ -3,11 +3,11 @@
  */
 
 @interface AXReplayableGesture : NSObject <NSCoding> {
-    NSArray *_allEvents;
-    BOOL _arePointsDeviceRelative;
+    NSArray * _allEvents;
+    BOOL  _arePointsDeviceRelative;
 }
 
-+ (id)tapGestureForInterfaceOrientedPoint:(struct CGPoint { float x1; float x2; })arg1;
++ (id)tapGestureForInterfaceOrientedPoint:(struct CGPoint { double x1; double x2; })arg1;
 
 - (BOOL)arePointsDeviceRelative;
 - (void)dealloc;
@@ -17,7 +17,7 @@
 - (float)forceForFingerIdentifier:(id)arg1 atEventIndex:(unsigned int)arg2;
 - (id)initWithCoder:(id)arg1;
 - (unsigned int)numberOfEvents;
-- (struct CGPoint { float x1; float x2; })pointForFingerIdentifier:(id)arg1 atEventIndex:(unsigned int)arg2;
+- (struct CGPoint { double x1; double x2; })pointForFingerIdentifier:(id)arg1 atEventIndex:(unsigned int)arg2;
 - (double)timeAtEventIndex:(unsigned int)arg1;
 - (void)updateForLandscape:(BOOL)arg1;
 

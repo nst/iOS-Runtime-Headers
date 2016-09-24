@@ -5,11 +5,11 @@
 @interface DOMProgressEvent : DOMEvent
 
 @property (readonly) BOOL lengthComputable;
-@property (readonly) unsigned long long loaded;
-@property (readonly) unsigned long long total;
+@property (readonly) unsigned int loaded;
+@property (readonly) unsigned int total;
 
 - (BOOL)lengthComputable;
-- (unsigned long long)loaded;
-- (unsigned long long)total;
+- (unsigned int)loaded;
+- (unsigned int)total;
 
 @end

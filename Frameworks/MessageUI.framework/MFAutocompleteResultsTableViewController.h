@@ -3,17 +3,17 @@
  */
 
 @interface MFAutocompleteResultsTableViewController : UITableViewController {
-    BOOL _cellAnimationsEnabled;
-    UIColor *_cellBackgroundColor;
-    BOOL _deferTableViewUpdates;
-    <MFAutocompleteResultsTableViewControllerDelegate> *_delegate;
-    NSMutableArray *_searchResults;
-    NSMutableArray *_serverSearchResults;
-    BOOL _shouldDimIrrelevantInformation;
-    BOOL _shouldHighlightCompleteMatches;
-    NSMutableArray *_suggestedSearchResults;
-    _MFAutocompleteResultsTableViewModel *_tableViewModel;
-    BOOL _tableViewNeedsReload;
+    BOOL  _cellAnimationsEnabled;
+    UIColor * _cellBackgroundColor;
+    BOOL  _deferTableViewUpdates;
+    <MFAutocompleteResultsTableViewControllerDelegate> * _delegate;
+    NSMutableArray * _searchResults;
+    NSMutableArray * _serverSearchResults;
+    BOOL  _shouldDimIrrelevantInformation;
+    BOOL  _shouldHighlightCompleteMatches;
+    NSMutableArray * _suggestedSearchResults;
+    _MFAutocompleteResultsTableViewModel * _tableViewModel;
+    BOOL  _tableViewNeedsReload;
 }
 
 @property (nonatomic, readonly) NSArray *allRecipients;

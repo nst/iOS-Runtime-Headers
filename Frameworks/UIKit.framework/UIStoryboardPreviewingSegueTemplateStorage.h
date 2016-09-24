@@ -3,9 +3,9 @@
  */
 
 @interface UIStoryboardPreviewingSegueTemplateStorage : NSObject <NSCoding> {
-    UIStoryboardSegueTemplate *_commitTemplate;
-    UIStoryboardPreviewingSegueTemplate *_previewTemplate;
-    UIView *_sender;
+    UIStoryboardSegueTemplate * _commitTemplate;
+    UIStoryboardPreviewingSegueTemplate * _previewTemplate;
+    UIView * _sender;
 }
 
 @property (nonatomic) UIStoryboardSegueTemplate *commitTemplate;

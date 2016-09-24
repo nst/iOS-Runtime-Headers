@@ -3,13 +3,13 @@
  */
 
 @interface EDHyperlink : NSObject {
-    EDString *mDescriptionText;
-    EDString *mDosPath;
-    EDString *mPath;
-    EDReference *mReference;
-    EDString *mTextMark;
-    EDString *mToolTip;
-    int mType;
+    EDString * mDescriptionText;
+    EDString * mDosPath;
+    EDString * mPath;
+    EDReference * mReference;
+    EDString * mTextMark;
+    EDString * mToolTip;
+    int  mType;
 }
 
 + (id)hyperlink;

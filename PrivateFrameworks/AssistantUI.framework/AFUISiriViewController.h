@@ -3,34 +3,37 @@
  */
 
 @interface AFUISiriViewController : UIViewController <AFUIDelayedActionCommandCacheDelegate, AFUISiriRemoteViewControllerDataSource, AFUISiriRemoteViewControllerDelegate, AFUISiriSessionLocalDataSource, AFUISiriSessionLocalDelegate, AFUISiriViewDelegate, SiriUIAudioRoutePickerControllerDelegate> {
-    BOOL _active;
-    BOOL _attemptingRemoteViewControllerPresentation;
-    SiriUIConfiguration *_configuration;
-    AFUIRequestOptions *_currentRequestOptions;
-    int _currentRequestSource;
-    <AFUISiriViewControllerDataSource> *_dataSource;
-    AFUIDelayedActionCommandCache *_delayedActionCommandCache;
-    <AFUISiriViewControllerDelegate> *_delegate;
-    BOOL _eyesFree;
-    BOOL _hasCalledBeginAppearanceTransition;
-    BOOL _hasCalledEndAppearanceTransition;
-    BOOL _inHoldToTalkMode;
-    BOOL _isStark;
-    BOOL _mapsGatekeeperEnabled;
-    NSNumber *_recordingStartedTimeValue;
-    AFUISiriRemoteViewController *_remoteViewController;
-    NSObject<OS_dispatch_queue> *_remoteViewControllerDispatchQueue;
-    BOOL _remoteViewControllerDispatchQueueSuspended;
-    SiriUIAudioRoutePickerController *_routePickerController;
-    AFUISiriSession *_session;
-    BOOL _showsStatusBar;
-    BOOL _siriSessionWantsToEnd;
-    UIStatusBar *_statusBar;
-    BOOL _statusBarEnabled;
-    id /* block */ _triggerUpdater;
-    double _viewDidAppearTime;
-    BOOL _visible;
-    int _vtEnabledCount;
+    BOOL  _active;
+    BOOL  _attemptingRemoteViewControllerPresentation;
+    SiriUIConfiguration * _configuration;
+    SACarPlaySupportedOEMAppIdList * _currentCarPlaySupportedOEMAppIdList;
+    AFUIRequestOptions * _currentRequestOptions;
+    int  _currentRequestSource;
+    <AFUISiriViewControllerDataSource> * _dataSource;
+    AFUIDelayedActionCommandCache * _delayedActionCommandCache;
+    <AFUISiriViewControllerDelegate> * _delegate;
+    BOOL  _eyesFree;
+    BOOL  _hasCalledBeginAppearanceTransition;
+    BOOL  _hasCalledEndAppearanceTransition;
+    BOOL  _inHoldToTalkMode;
+    BOOL  _isStark;
+    BOOL  _mapsGatekeeperEnabled;
+    NSNumber * _recordingStartedTimeValue;
+    AFUISiriRemoteViewController * _remoteViewController;
+    NSObject<OS_dispatch_queue> * _remoteViewControllerDispatchQueue;
+    BOOL  _remoteViewControllerDispatchQueueSuspended;
+    SiriUIAudioRoutePickerController * _routePickerController;
+    AFUISiriSession * _session;
+    BOOL  _showsStatusBar;
+    BOOL  _siriSessionWantsToEnd;
+    UIStatusBar * _statusBar;
+    BOOL  _statusBarEnabled;
+    id /* block */  _triggerUpdater;
+    NSObject<OS_dispatch_queue> * _uiAppearanceCoreDuetQueue;
+    NSString * _uiAppearanceUUIDString;
+    double  _viewDidAppearTime;
+    BOOL  _visible;
+    int  _vtEnabledCount;
 }
 
 @property (getter=_currentRequestOptions, setter=_setCurrentRequestOptions:, nonatomic, copy) AFUIRequestOptions *currentRequestOptions;
@@ -80,6 +83,8 @@
 - (double)_manualEndpointingThreshold;
 - (void)_presentDeferredFlamesViewIfNecessary;
 - (void)_presentRemoteViewController;
+- (void)_recordUIAppearance;
+- (void)_recordUIDismissal;
 - (id)_recordingStartedTimeValue;
 - (id)_remoteViewController;
 - (id)_remoteViewControllerDispatchQueue;
@@ -100,7 +105,7 @@
 - (void)_setVoiceTriggerEnabled:(BOOL)arg1;
 - (id)_siriView;
 - (id)_statusBar;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_statusBarFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_statusBarFrame;
 - (void)_statusBarFrameDidChange:(id)arg1;
 - (void)_suspendRemoteViewControllerDispatchQueue;
 - (void)_transitionToAutomaticEndpointMode;
@@ -135,6 +140,7 @@
 - (BOOL)isProcessingAcousticIdRequest;
 - (BOOL)isStark;
 - (BOOL)isVisible;
+- (id)lastAppUpdateTimeForSiriRemoteViewController:(id)arg1;
 - (void)loadView;
 - (unsigned int)lockStateForSiriRemoteViewController:(id)arg1;
 - (unsigned int)lockStateForSiriSession:(id)arg1;
@@ -147,8 +153,8 @@
 - (id)routePickerController;
 - (void)routePickerController:(id)arg1 hasRoutesToPick:(BOOL)arg2;
 - (void)routePickerControllerPickedNewRoute:(id)arg1 isBluetooth:(BOOL)arg2;
-- (void)sendReplyCommand:(id)arg1 forCommandCache:(id)arg2;
 - (void)setAlertContext;
+- (void)setCurrentCarPlaySupportedOEMAppIdList:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEyesFree:(BOOL)arg1;
@@ -167,6 +173,7 @@
 - (void)siriDidActivateFromSource:(int)arg1;
 - (void)siriDidDeactivate;
 - (id)siriRemoteViewController:(id)arg1 bulletinWithIdentifier:(id)arg2;
+- (void)siriRemoteViewController:(id)arg1 canLoadPreviousConversation:(id /* block */)arg2;
 - (void)siriRemoteViewController:(id)arg1 didChangePresentationPeekMode:(unsigned int)arg2;
 - (void)siriRemoteViewController:(id)arg1 didEncounterUnexpectedServiceError:(id)arg2;
 - (void)siriRemoteViewController:(id)arg1 didReadBulletinWithIdentifier:(id)arg2;
@@ -198,8 +205,8 @@
 - (void)siriSession:(id)arg1 didReceiveDeviceUnlockRequestWithCompletion:(id /* block */)arg2;
 - (BOOL)siriSessionCanEnd:(id)arg1;
 - (void)siriSessionDidEnd:(id)arg1;
-- (void)siriSessionDidReceiveDelayedActionCancelCommand:(id)arg1;
-- (void)siriSessionDidReceiveDelayedActionCommand:(id)arg1;
+- (void)siriSessionDidReceiveDelayedActionCancelCommand:(id)arg1 completion:(id /* block */)arg2;
+- (void)siriSessionDidReceiveDelayedActionCommand:(id)arg1 completion:(id /* block */)arg2;
 - (void)siriSessionDidResetContext:(id)arg1;
 - (void)siriSessionRecordingPreparationHasFinished:(id)arg1;
 - (void)siriSessionWillEnd:(id)arg1;

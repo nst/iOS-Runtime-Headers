@@ -3,10 +3,10 @@
  */
 
 @interface WBSParsecTrailer : WBSParsecModel {
-    NSString *_caption;
-    WBSParsecImageRepresentation *_image;
-    WBSParsecImageRepresentation *_overlayImage;
-    NSURL *_url;
+    NSString * _caption;
+    WBSParsecImageRepresentation * _image;
+    WBSParsecImageRepresentation * _overlayImage;
+    NSURL * _url;
 }
 
 @property (nonatomic, readonly, copy) NSString *caption;

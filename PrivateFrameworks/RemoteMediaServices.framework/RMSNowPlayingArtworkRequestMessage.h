@@ -3,19 +3,19 @@
  */
 
 @interface RMSNowPlayingArtworkRequestMessage : PBCodable <NSCopying> {
-    NSString *_artworkIdentifier;
-    float _compressionQuality;
+    NSString * _artworkIdentifier;
+    double  _compressionQuality;
     struct { 
         unsigned int compressionQuality : 1; 
         unsigned int height : 1; 
         unsigned int width : 1; 
-    } _has;
-    unsigned int _height;
-    unsigned int _width;
+    }  _has;
+    unsigned int  _height;
+    unsigned int  _width;
 }
 
 @property (nonatomic, retain) NSString *artworkIdentifier;
-@property (nonatomic) float compressionQuality;
+@property (nonatomic) double compressionQuality;
 @property (nonatomic, readonly) BOOL hasArtworkIdentifier;
 @property (nonatomic) BOOL hasCompressionQuality;
 @property (nonatomic) BOOL hasHeight;

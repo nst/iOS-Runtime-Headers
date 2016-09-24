@@ -5,7 +5,7 @@
 @interface WKDateTimePopoverViewController : UIViewController {
     struct RetainPtr<NSObject<WKFormControl> > { 
         void *m_ptr; 
-    } _innerControl;
+    }  _innerControl;
 }
 
 - (id).cxx_construct;

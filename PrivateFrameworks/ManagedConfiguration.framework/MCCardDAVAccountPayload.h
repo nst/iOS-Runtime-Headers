@@ -3,20 +3,22 @@
  */
 
 @interface MCCardDAVAccountPayload : MCPayload {
-    NSString *_accountDescription;
-    NSString *_accountPersistentUUID;
-    NSString *_hostname;
-    NSString *_password;
-    int _port;
-    NSNumber *_portNum;
-    NSString *_principalURL;
-    BOOL _useSSL;
-    NSNumber *_useSSLNum;
-    NSString *_username;
+    NSString * _accountDescription;
+    NSString * _accountPersistentUUID;
+    NSDictionary * _communicationServiceRules;
+    NSString * _hostname;
+    NSString * _password;
+    int  _port;
+    NSNumber * _portNum;
+    NSString * _principalURL;
+    BOOL  _useSSL;
+    NSNumber * _useSSLNum;
+    NSString * _username;
 }
 
 @property (nonatomic, readonly, retain) NSString *accountDescription;
 @property (nonatomic, copy) NSString *accountPersistentUUID;
+@property (nonatomic, readonly) NSDictionary *communicationServiceRules;
 @property (nonatomic, readonly, retain) NSString *hostname;
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, readonly) int port;
@@ -33,6 +35,7 @@
 - (void).cxx_destruct;
 - (id)accountDescription;
 - (id)accountPersistentUUID;
+- (id)communicationServiceRules;
 - (BOOL)containsSensitiveUserInformation;
 - (id)description;
 - (id)hostname;
@@ -42,6 +45,7 @@
 - (int)port;
 - (id)portNum;
 - (id)principalURL;
+- (id)restrictions;
 - (void)setAccountPersistentUUID:(id)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setUsername:(id)arg1;

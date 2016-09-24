@@ -3,12 +3,12 @@
  */
 
 @interface CUIPattern : NSObject {
-    float _alpha;
-    struct CGPattern { } *_pattern;
-    struct CGImage { } *_patternImage;
+    double  _alpha;
+    struct CGPattern { } * _pattern;
+    struct CGImage { } * _patternImage;
 }
 
-@property (nonatomic) float alpha;
+@property (nonatomic) double alpha;
 
 - (struct CGPattern { }*)_newPattern;
 - (float)alpha;

@@ -3,10 +3,10 @@
  */
 
 @interface ODDNodePoint : ODDDataPoint {
-    NSMutableArray *mChildren;
-    ODDNodePoint *mParent;
-    ODDTransitionPoint *mParentTransition;
-    ODDTransitionPoint *mSiblingTransition;
+    NSMutableArray * mChildren;
+    ODDNodePoint * mParent;
+    ODDTransitionPoint * mParentTransition;
+    ODDTransitionPoint * mSiblingTransition;
 }
 
 - (void)addChild:(id)arg1 order:(unsigned int)arg2;

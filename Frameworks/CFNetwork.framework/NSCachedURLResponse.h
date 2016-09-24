@@ -3,7 +3,7 @@
  */
 
 @interface NSCachedURLResponse : NSObject <NSCopying, NSSecureCoding> {
-    NSCachedURLResponseInternal *_internal;
+    NSCachedURLResponseInternal * _internal;
 }
 
 @property (readonly, copy) NSData *data;
@@ -15,7 +15,7 @@
 
 + (BOOL)supportsSecureCoding;
 
-- (struct _CFCachedURLResponse { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFCachedURLResponse {} *x2; }*)_CFCachedURLResponse;
+- (const struct _CFCachedURLResponse { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFCachedURLResponse {} *x2; }*)_CFCachedURLResponse;
 - (void)_deallocInternalCFCachedURLResponse;
 - (id)_initWithCFCachedURLResponse:(struct _CFCachedURLResponse { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFCachedURLResponse {} *x2; }*)arg1;
 - (void)_reestablishInternalCFCachedURLResponse:(struct _CFCachedURLResponse { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFCachedURLResponse {} *x2; }*)arg1;

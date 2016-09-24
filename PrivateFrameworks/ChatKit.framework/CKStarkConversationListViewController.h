@@ -3,11 +3,12 @@
  */
 
 @interface CKStarkConversationListViewController : UITableViewController {
-    CKConversation *_selectedConversation;
+    CKConversation * _selectedConversation;
 }
 
 @property (nonatomic, retain) CKConversation *selectedConversation;
 
+- (void).cxx_destruct;
 - (void)_handleNewComposePressed:(id)arg1;
 - (void)conversationListDidChange:(id)arg1;
 - (void)dealloc;

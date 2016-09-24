@@ -3,11 +3,11 @@
  */
 
 @interface AAURLSession : NSObject <NSURLSessionDataDelegate, NSURLSessionDelegate> {
-    NSMutableDictionary *_pendingCompletionsByTask;
-    NSMutableDictionary *_receivedDataByTask;
-    NSMutableDictionary *_retryCountByURL;
-    NSObject<OS_dispatch_queue> *_sessionQueue;
-    NSURLSession *_urlSession;
+    NSMutableDictionary * _pendingCompletionsByTask;
+    NSMutableDictionary * _receivedDataByTask;
+    NSMutableDictionary * _retryCountByURL;
+    NSObject<OS_dispatch_queue> * _sessionQueue;
+    NSURLSession * _urlSession;
 }
 
 @property (readonly, copy) NSString *debugDescription;

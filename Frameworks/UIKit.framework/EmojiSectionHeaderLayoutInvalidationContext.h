@@ -3,8 +3,8 @@
  */
 
 @interface EmojiSectionHeaderLayoutInvalidationContext : UICollectionViewFlowLayoutInvalidationContext {
-    struct __CFDictionary { } *_headerWidthDict;
-    NSMutableIndexSet *_invalidatedSections;
+    struct __CFDictionary { } * _headerWidthDict;
+    NSMutableIndexSet * _invalidatedSections;
 }
 
 @property (nonatomic, readonly) NSIndexSet *invalidatedSections;

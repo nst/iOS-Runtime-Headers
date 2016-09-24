@@ -3,14 +3,14 @@
  */
 
 @interface _CDPeopleSuggester : NSObject {
-    <_CDInteractionAdvising> *_advisor;
-    _CDCachedPeopleSuggestion *_cache;
-    double _cacheTimeoutSeconds;
-    _CDPeopleSuggesterContext *_context;
-    BOOL _enableCaching;
-    NSObject<OS_dispatch_queue> *_queue;
-    _CDInteractionStoreNotificationReceiver *_receiver;
-    _CDPeopleSuggesterSettings *_settings;
+    <_CDInteractionAdvising> * _advisor;
+    _CDCachedPeopleSuggestion * _cache;
+    double  _cacheTimeoutSeconds;
+    _CDPeopleSuggesterContext * _context;
+    BOOL  _enableCaching;
+    NSObject<OS_dispatch_queue> * _queue;
+    _CDInteractionStoreNotificationReceiver * _receiver;
+    _CDPeopleSuggesterSettings * _settings;
 }
 
 @property double cacheTimeoutSeconds;

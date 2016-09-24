@@ -3,11 +3,11 @@
  */
 
 @interface CNFoundationSocialProfile : NSObject <NSCopying> {
-    NSString *_displayName;
-    NSString *_service;
-    NSString *_urlString;
-    NSString *_userIdentifier;
-    NSString *_username;
+    NSString * _displayName;
+    NSString * _service;
+    NSString * _urlString;
+    NSString * _userIdentifier;
+    NSString * _username;
 }
 
 @property (readonly, copy) NSString *displayName;

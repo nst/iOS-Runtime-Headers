@@ -3,8 +3,8 @@
  */
 
 @interface _SKUIDynamicGridSizeCacheKey : NSObject <NSCopying> {
-    int _position;
-    SKUIViewElement *_viewElement;
+    int  _position;
+    SKUIViewElement * _viewElement;
 }
 
 @property (nonatomic) int position;

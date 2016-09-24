@@ -3,18 +3,18 @@
  */
 
 @interface _PFUbiquityRecordsExporter : NSObject {
-    BOOL _allowTempLogStorage;
-    NSDate *_lastTransactionDate;
-    NSString *_localPeerID;
-    PFUbiquityLocation *_localRootLocation;
-    BOOL _pendingTempLogMove;
-    NSMutableDictionary *_pendingTransactionsToStoreNameAndTransactionNumber;
-    NSObject<OS_dispatch_queue> *_processingQueue;
-    NSString *_storeName;
-    BOOL _throwOptimisticLockingException;
-    NSLock *_transactionLock;
-    PFUbiquityLocation *_ubiquityRootLocation;
-    BOOL _useLocalStorage;
+    BOOL  _allowTempLogStorage;
+    NSDate * _lastTransactionDate;
+    NSString * _localPeerID;
+    PFUbiquityLocation * _localRootLocation;
+    BOOL  _pendingTempLogMove;
+    NSMutableDictionary * _pendingTransactionsToStoreNameAndTransactionNumber;
+    NSObject<OS_dispatch_queue> * _processingQueue;
+    NSString * _storeName;
+    BOOL  _throwOptimisticLockingException;
+    NSLock * _transactionLock;
+    PFUbiquityLocation * _ubiquityRootLocation;
+    BOOL  _useLocalStorage;
 }
 
 @property (nonatomic) BOOL allowTempLogStorage;
@@ -30,6 +30,7 @@
 - (BOOL)allowTempLogStorage;
 - (void)beginWatchingForChangesFromStore:(id)arg1;
 - (void)cleanUpFromRolledbackPendingTransaction:(id)arg1 withNotification:(id)arg2;
+- (id)createArrayForExternalDataReferencesInSaveNotification:(id)arg1 withExportContext:(id)arg2 andSaveSnapshot:(id)arg3;
 - (id)createDictionaryForObjectsInSaveNotification:(id)arg1 forTransactionOfType:(int)arg2 withExportContext:(id)arg3 andSaveSnapshot:(id)arg4;
 - (id)currentRootLocation;
 - (void)dealloc;

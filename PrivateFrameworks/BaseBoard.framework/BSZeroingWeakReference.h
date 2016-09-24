@@ -3,9 +3,9 @@
  */
 
 @interface BSZeroingWeakReference : NSObject {
-    id _object;
-    unsigned long _objectAddress;
-    Class _objectClass;
+    id  _object;
+    unsigned long  _objectAddress;
+    Class  _objectClass;
 }
 
 @property (nonatomic, readonly) id object;

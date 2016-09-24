@@ -3,8 +3,8 @@
  */
 
 @interface _UIScreenEdgePanRecognizerCornerSettings : _UISettings {
-    double _cornerAngleWindow;
-    double _cornerSize;
+    double  _cornerAngleWindow;
+    double  _cornerSize;
 }
 
 @property (nonatomic) double cornerAngleWindow;

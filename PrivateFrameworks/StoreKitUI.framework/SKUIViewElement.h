@@ -3,12 +3,12 @@
  */
 
 @interface SKUIViewElement : IKViewElement {
-    <SKUIEntityProviding> *_entityProvider;
-    <IKEntityValueProviding> *_entityValueProvider;
-    <IKEntityValueProviding> *_explicitEntityValueProvider;
-    NSMutableArray *_flattenedChildren;
-    BOOL _hasValidEntityProvider;
-    int _pinStyle;
+    <SKUIEntityProviding> * _entityProvider;
+    <IKEntityValueProviding> * _entityValueProvider;
+    <IKEntityValueProviding> * _explicitEntityValueProvider;
+    NSMutableArray * _flattenedChildren;
+    BOOL  _hasValidEntityProvider;
+    int  _pinStyle;
 }
 
 @property (getter=isDynamicContainer, nonatomic, readonly) BOOL dynamicContainer;

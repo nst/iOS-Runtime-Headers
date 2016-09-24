@@ -3,9 +3,9 @@
  */
 
 @interface _NSNotifyingWrapperMutableOrderedSet : NSMutableOrderedSet {
-    NSManagedObject *_container;
-    NSString *_key;
-    NSMutableOrderedSet *_mutableOrderedSet;
+    NSManagedObject * _container;
+    NSString * _key;
+    NSMutableOrderedSet * _mutableOrderedSet;
 }
 
 - (id)_orderedObjectsAndKeys;

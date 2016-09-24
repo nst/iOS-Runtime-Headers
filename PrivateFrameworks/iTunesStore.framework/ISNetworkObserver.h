@@ -3,19 +3,19 @@
  */
 
 @interface ISNetworkObserver : NSObject <SSDownloadQueueObserver> {
-    NSString *_dataStatusIndicator;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    BOOL _isCellularRestricted;
-    double _lastNetworkTypeChangeTime;
-    unsigned int _networkReachabilityFlags;
-    int _networkType;
-    int _networkUsageCount;
-    NSObject<OS_dispatch_queue> *_notificationQueue;
-    NSMutableSet *_observedDownloadQueues;
-    NSString *_operatorName;
-    struct __SCNetworkReachability { } *_reachability;
-    NSString *_registrationStatus;
-    struct __CTServerConnection { } *_telephonyServer;
+    NSString * _dataStatusIndicator;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    BOOL  _isCellularRestricted;
+    double  _lastNetworkTypeChangeTime;
+    unsigned int  _networkReachabilityFlags;
+    int  _networkType;
+    int  _networkUsageCount;
+    NSObject<OS_dispatch_queue> * _notificationQueue;
+    NSMutableSet * _observedDownloadQueues;
+    NSString * _operatorName;
+    struct __SCNetworkReachability { } * _reachability;
+    NSString * _registrationStatus;
+    struct __CTServerConnection { } * _telephonyServer;
 }
 
 @property (readonly) NSString *connectionTypeHeader;

@@ -3,8 +3,8 @@
  */
 
 @interface _DRTopicInterestSummary : NSObject <NSCoding, NSCopying> {
-    unsigned int _topicPresentationsCount;
-    unsigned int _topicSelectionsCount;
+    unsigned int  _topicPresentationsCount;
+    unsigned int  _topicSelectionsCount;
 }
 
 @property unsigned int topicPresentationsCount;

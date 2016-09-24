@@ -3,8 +3,8 @@
  */
 
 @interface DAUserNotificationInfo : NSObject {
-    NSString *_groupIdentifier;
-    id /* block */ _handler;
+    NSString * _groupIdentifier;
+    id /* block */  _handler;
 }
 
 @property (nonatomic, copy) NSString *groupIdentifier;

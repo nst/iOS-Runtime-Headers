@@ -3,7 +3,7 @@
  */
 
 @interface AVCaptureStillImageOutput : AVCaptureOutput {
-    AVCaptureStillImageOutputInternal *_internal;
+    AVCaptureStillImageOutputInternal * _internal;
 }
 
 @property (nonatomic) BOOL automaticallyEnablesStillImageStabilizationWhenAvailable;
@@ -15,7 +15,7 @@
 @property (getter=isStillImageStabilizationActive, nonatomic, readonly) BOOL stillImageStabilizationActive;
 @property (getter=isStillImageStabilizationSupported, nonatomic, readonly) BOOL stillImageStabilizationSupported;
 
-+ (struct CGImage { }*)cgImageForBGRASurface:(struct __IOSurface { }*)arg1 size:(unsigned long)arg2;
++ (struct __CFDictionary { }*)_copyAttachmentsAndPropagateFaceRegionsToExifAuxDictionaryForSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 + (void)initialize;
 + (id)jpegStillImageNSDataRepresentation:(struct opaqueCMSampleBuffer { }*)arg1;
 + (id)jpegStillImageNSDataRepresentationForSurface:(struct __IOSurface { }*)arg1 size:(unsigned long)arg2 metadata:(id)arg3;
@@ -51,7 +51,6 @@
 - (id)init;
 - (BOOL)isCapturingStillImage;
 - (BOOL)isEV0CaptureEnabled;
-- (BOOL)isHDRCaptureEnabled;
 - (BOOL)isHDRSupported;
 - (BOOL)isHighResolutionStillImageOutputEnabled;
 - (BOOL)isLensStabilizationDuringBracketedCaptureEnabled;
@@ -64,21 +63,20 @@
 - (unsigned int)maxBracketedCaptureStillImageCount;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)outputSettings;
-- (struct CGSize { float x1; float x2; })outputSizeForSourceFormat:(id)arg1;
+- (struct CGSize { double x1; double x2; })outputSizeForSourceFormat:(id)arg1;
 - (void)prepareToCaptureStillImageBracketFromConnection:(id)arg1 withSettingsArray:(id)arg2 completionHandler:(id /* block */)arg3;
-- (struct CGSize { float x1; float x2; })previewImageSize;
+- (struct CGSize { double x1; double x2; })previewImageSize;
 - (void)removeConnection:(id)arg1;
 - (BOOL)resumeVideoProcessing;
 - (void)safelyHandleServerConnectionDeathForFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
 - (void)setAutomaticallyEnablesStillImageStabilizationWhenAvailable:(BOOL)arg1;
 - (void)setEV0CaptureEnabled:(BOOL)arg1;
-- (void)setHDRCaptureEnabled:(BOOL)arg1;
 - (void)setHDRMode:(int)arg1;
 - (void)setHighResolutionStillImageOutputEnabled:(BOOL)arg1;
 - (void)setLensStabilizationDuringBracketedCaptureEnabled:(BOOL)arg1;
 - (void)setNoiseReductionEnabled:(BOOL)arg1;
 - (void)setOutputSettings:(id)arg1;
-- (void)setPreviewImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setPreviewImageSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setRawCaptureEnabled:(BOOL)arg1;
 - (void)setShutterSound:(unsigned long)arg1;
 - (void)setSquareCropEnabled:(BOOL)arg1;

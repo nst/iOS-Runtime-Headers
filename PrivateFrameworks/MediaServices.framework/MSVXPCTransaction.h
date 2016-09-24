@@ -3,8 +3,8 @@
  */
 
 @interface MSVXPCTransaction : NSObject {
-    NSUUID *_identifier;
-    NSString *_name;
+    NSUUID * _identifier;
+    NSString * _name;
 }
 
 @property (getter=isActive, nonatomic, readonly) BOOL active;

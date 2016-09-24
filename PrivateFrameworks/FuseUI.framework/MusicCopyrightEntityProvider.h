@@ -3,10 +3,10 @@
  */
 
 @interface MusicCopyrightEntityProvider : NSObject <MusicEntityProviding> {
-    <MusicEntityValueProviding> *_copyrightEntityValueProvider;
-    BOOL _hasCopyright;
-    BOOL _isContainerCopyEntityValueProvider;
-    <MusicEntityProviding> *_sourceEntityProvider;
+    <MusicEntityValueProviding> * _copyrightEntityValueProvider;
+    BOOL  _hasCopyright;
+    BOOL  _isContainerCopyEntityValueProvider;
+    <MusicEntityProviding> * _sourceEntityProvider;
 }
 
 @property (readonly, copy) NSString *debugDescription;

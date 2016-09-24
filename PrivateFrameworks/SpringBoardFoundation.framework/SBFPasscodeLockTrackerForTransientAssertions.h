@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@interface SBFPasscodeLockTrackerForTransientAssertions : SBFPasscodeLockAssertionTracker
+@interface SBFPasscodeLockTrackerForTransientAssertions : SBFAuthenticationAssertionTracker
 
 - (BOOL)isAssertionValid:(id)arg1;
 - (id)mkbAssertionOptions;

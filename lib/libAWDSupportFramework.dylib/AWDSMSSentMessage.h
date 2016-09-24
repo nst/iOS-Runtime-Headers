@@ -3,9 +3,9 @@
  */
 
 @interface AWDSMSSentMessage : PBCodable <NSCopying> {
-    int _ctError;
-    int _fzError;
-    NSString *_guid;
+    int  _ctError;
+    int  _fzError;
+    NSString * _guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int ctError : 1; 
@@ -15,13 +15,13 @@
         unsigned int isToEmail : 1; 
         unsigned int isToPhoneNumber : 1; 
         unsigned int sendDuration : 1; 
-    } _has;
-    unsigned int _hasAttachments;
-    unsigned int _isGroupMessage;
-    unsigned int _isToEmail;
-    unsigned int _isToPhoneNumber;
-    unsigned int _sendDuration;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned int  _hasAttachments;
+    unsigned int  _isGroupMessage;
+    unsigned int  _isToEmail;
+    unsigned int  _isToPhoneNumber;
+    unsigned int  _sendDuration;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) int ctError;

@@ -3,7 +3,7 @@
  */
 
 @interface HDSQLiteDatabaseSchema : NSObject {
-    NSDictionary *_tables;
+    NSDictionary * _tables;
 }
 
 @property (nonatomic, retain) NSDictionary *tables;

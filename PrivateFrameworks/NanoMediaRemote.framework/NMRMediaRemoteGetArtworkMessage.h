@@ -3,7 +3,7 @@
  */
 
 @interface NMRMediaRemoteGetArtworkMessage : NSObject <NMRMediaRemoteProtobufCodable> {
-    _NMRMediaRemoteGetArtworkMessage *_protobuf;
+    _NMRMediaRemoteGetArtworkMessage * _protobuf;
 }
 
 @property (readonly, copy) NSString *debugDescription;

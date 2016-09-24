@@ -3,7 +3,7 @@
  */
 
 @interface GKRemoteUINavigationController : UINavigationController <GKBubbleFlowableViewController> {
-    GKRemoteUIController *_remoteUIController;
+    GKRemoteUIController * _remoteUIController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

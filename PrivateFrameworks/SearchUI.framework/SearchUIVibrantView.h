@@ -4,6 +4,8 @@
 
 @interface SearchUIVibrantView : UIView
 
++ (void)applyVibrancyToView:(id)arg1 forStyle:(unsigned int)arg2;
++ (id)backgroundColorForStyle:(unsigned int)arg1;
 + (id)compositingFilterForStyle:(unsigned int)arg1;
 + (id)separatorColorForStyle:(unsigned int)arg1;
 

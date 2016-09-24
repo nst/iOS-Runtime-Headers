@@ -3,9 +3,9 @@
  */
 
 @interface SKUIBadgeTextAttachmentLoader : NSObject <SKUIArtworkRequestDelegate> {
-    NSMapTable *_imageRequests;
-    SKUIResourceLoader *_resourceLoader;
-    NSHashTable *_stringViews;
+    NSMapTable * _imageRequests;
+    SKUIResourceLoader * _resourceLoader;
+    NSHashTable * _stringViews;
 }
 
 @property (readonly, copy) NSString *debugDescription;

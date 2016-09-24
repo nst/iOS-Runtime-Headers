@@ -3,12 +3,12 @@
  */
 
 @interface UIViewKeyframeAnimationState : UIViewAnimationState {
-    int _calculationMode;
-    double _frameDuration;
-    double _frameStartTime;
-    BOOL _inFrame;
-    NSMutableSet *_keyframeLayers;
-    NSMutableDictionary *_keyframeLayersForCurrentKeyFrameDict;
+    int  _calculationMode;
+    double  _frameDuration;
+    double  _frameStartTime;
+    BOOL  _inFrame;
+    NSMutableSet * _keyframeLayers;
+    NSMutableDictionary * _keyframeLayersForCurrentKeyFrameDict;
 }
 
 - (void).cxx_destruct;

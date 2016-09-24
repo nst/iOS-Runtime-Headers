@@ -2,22 +2,18 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@interface BBAppearance : NSObject <BBUniquableObject, NSCopying, NSSecureCoding> {
-    BBColor *_color;
-    BBImage *_image;
-    int _style;
-    NSString *_title;
-    BBColor *_titleColor;
-    NSString *_viewClassName;
+@interface BBAppearance : NSObject <NSCopying, NSSecureCoding> {
+    BBColor * _color;
+    BBImage * _image;
+    int  _style;
+    NSString * _title;
+    BBColor * _titleColor;
+    NSString * _viewClassName;
 }
 
 @property (nonatomic, copy) BBColor *color;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
 @property (nonatomic, copy) BBImage *image;
 @property (nonatomic) int style;
-@property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) BBColor *titleColor;
 @property (nonatomic, copy) NSString *viewClassName;
@@ -25,14 +21,16 @@
 + (id)appearanceWithTitle:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
+- (id)awakeAfterUsingCoder:(id)arg1;
 - (id)color;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)image;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (id)replacementObjectForCoder:(id)arg1;
 - (void)setColor:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setStyle:(int)arg1;
@@ -42,7 +40,6 @@
 - (int)style;
 - (id)title;
 - (id)titleColor;
-- (id)uniqueIdentifier;
 - (id)viewClassName;
 
 @end

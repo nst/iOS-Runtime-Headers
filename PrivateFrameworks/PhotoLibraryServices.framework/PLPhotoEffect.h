@@ -3,9 +3,9 @@
  */
 
 @interface PLPhotoEffect : NSObject {
-    NSString *_CIFilterName;
-    NSString *_displayName;
-    NSString *_filterIdentifier;
+    NSString * _CIFilterName;
+    NSString * _displayName;
+    NSString * _filterIdentifier;
 }
 
 @property (nonatomic, readonly, copy) NSString *CIFilterName;

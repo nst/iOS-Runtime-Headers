@@ -3,9 +3,9 @@
  */
 
 @interface GEOTrafficRerouteFeedback : PBCodable <NSCopying> {
-    int _actionType;
-    int _alertType;
-    BOOL _backgrounded;
+    int  _actionType;
+    int  _alertType;
+    BOOL  _backgrounded;
     struct { 
         unsigned int actionType : 1; 
         unsigned int alertType : 1; 
@@ -14,14 +14,14 @@
         unsigned int reroutedRouteHistoricTravelTime : 1; 
         unsigned int reroutedRouteTravelTime : 1; 
         unsigned int backgrounded : 1; 
-    } _has;
-    unsigned int _oldRouteHistoricTravelTime;
-    NSData *_oldRouteID;
-    NSMutableArray *_oldRouteIncidents;
-    unsigned int _oldRouteTravelTime;
-    unsigned int _reroutedRouteHistoricTravelTime;
-    NSData *_reroutedRouteID;
-    unsigned int _reroutedRouteTravelTime;
+    }  _has;
+    unsigned int  _oldRouteHistoricTravelTime;
+    NSData * _oldRouteID;
+    NSMutableArray * _oldRouteIncidents;
+    unsigned int  _oldRouteTravelTime;
+    unsigned int  _reroutedRouteHistoricTravelTime;
+    NSData * _reroutedRouteID;
+    unsigned int  _reroutedRouteTravelTime;
 }
 
 @property (nonatomic) int actionType;
@@ -44,9 +44,15 @@
 @property (nonatomic, retain) NSData *reroutedRouteID;
 @property (nonatomic) unsigned int reroutedRouteTravelTime;
 
++ (Class)oldRouteIncidentsType;
+
+- (int)StringAsActionType:(id)arg1;
+- (int)StringAsAlertType:(id)arg1;
 - (int)actionType;
+- (id)actionTypeAsString:(int)arg1;
 - (void)addOldRouteIncidents:(id)arg1;
 - (int)alertType;
+- (id)alertTypeAsString:(int)arg1;
 - (BOOL)backgrounded;
 - (void)clearOldRouteIncidents;
 - (void)copyTo:(id)arg1;

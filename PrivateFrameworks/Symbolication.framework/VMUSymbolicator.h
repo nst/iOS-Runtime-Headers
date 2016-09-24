@@ -6,7 +6,7 @@
     struct _CSTypeRef { 
         unsigned int _opaque_1; 
         unsigned int _opaque_2; 
-    } _symbolicator;
+    }  _symbolicator;
 }
 
 + (id)symbolicatorForPid:(int)arg1;
@@ -14,7 +14,7 @@
 
 - (void)dealloc;
 - (id)initWithTask:(unsigned int)arg1;
-- (id)sourceInfoForAddress:(unsigned long long)arg1;
-- (id)symbolForAddress:(unsigned long long)arg1;
+- (id)sourceInfoForAddress:(unsigned int)arg1;
+- (id)symbolForAddress:(unsigned int)arg1;
 
 @end

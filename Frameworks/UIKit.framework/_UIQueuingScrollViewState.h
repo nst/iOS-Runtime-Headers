@@ -3,9 +3,9 @@
  */
 
 @interface _UIQueuingScrollViewState : _UITransitionState {
-    BOOL _manual;
-    UIView *_view;
-    UIViewController *_viewController;
+    BOOL  _manual;
+    UIView * _view;
+    UIViewController * _viewController;
 }
 
 @property (getter=isManual, nonatomic, readonly) BOOL manual;

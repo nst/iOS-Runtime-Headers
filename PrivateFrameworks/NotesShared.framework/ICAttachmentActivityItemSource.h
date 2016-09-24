@@ -3,7 +3,7 @@
  */
 
 @interface ICAttachmentActivityItemSource : NSObject <UIActivityItemSource, UIActivityItemSourceAttachment> {
-    ICAttachment *_attachment;
+    ICAttachment * _attachment;
 }
 
 @property (nonatomic) ICAttachment *attachment;

@@ -3,11 +3,11 @@
  */
 
 @interface SLFacebookAlbumManager : NSObject {
-    ACAccount *_account;
-    <SLFacebookAlbumManagerDelegate> *_delegate;
-    BOOL _isCanceled;
-    SLFacebookAlbum *_selectedAlbum;
-    NSOperationQueue *photoQueue;
+    ACAccount * _account;
+    <SLFacebookAlbumManagerDelegate> * _delegate;
+    BOOL  _isCanceled;
+    SLFacebookAlbum * _selectedAlbum;
+    NSOperationQueue * photoQueue;
 }
 
 @property (retain) ACAccount *account;

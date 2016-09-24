@@ -3,11 +3,11 @@
  */
 
 @interface NSBundleResourceRequest : NSObject <NSProgressReporting> {
-    NSBundle *_bundle;
-    long long _fetchState;
-    double _priority;
-    NSProgress *_progress;
-    NSSet *_tags;
+    NSBundle * _bundle;
+    int  _fetchState;
+    double  _priority;
+    NSProgress * _progress;
+    NSSet * _tags;
 }
 
 @property (readonly) NSBundle *bundle;

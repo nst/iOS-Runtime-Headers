@@ -3,14 +3,14 @@
  */
 
 @interface VSRecognitionAction : NSObject {
-    NSString *_resultString;
-    VSRecognitionSession *_session;
+    NSString * _resultString;
+    VSRecognitionSession * _session;
     /* Warning: unhandled union encoding: '(?="stringValue"@"NSString""attributedStringValue"@"NSAttributedString")' */ union { 
         NSString *stringValue; 
         id attributedStringValue; 
-    } _spokenString;
-    unsigned int _spokenStringIsAttributed;
-    NSString *_statusString;
+    }  _spokenString;
+    unsigned int  _spokenStringIsAttributed;
+    NSString * _statusString;
 }
 
 - (void)_continueAfterDeferredStart;

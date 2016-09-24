@@ -3,10 +3,10 @@
  */
 
 @interface CAMSetVideoZoomFactorCommand : CAMCaptureCommand {
-    float __videoZoomFactor;
+    double  __videoZoomFactor;
 }
 
-@property (nonatomic, readonly) float _videoZoomFactor;
+@property (nonatomic, readonly) double _videoZoomFactor;
 
 - (float)_videoZoomFactor;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

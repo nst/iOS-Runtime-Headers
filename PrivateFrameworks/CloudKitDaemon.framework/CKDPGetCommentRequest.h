@@ -3,7 +3,7 @@
  */
 
 @interface CKDPGetCommentRequest : PBRequest <NSCopying> {
-    CKDPIdentifier *_commentId;
+    CKDPIdentifier * _commentId;
 }
 
 @property (nonatomic, retain) CKDPIdentifier *commentId;
@@ -22,6 +22,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (unsigned int)requestTypeCode;
+- (Class)responseClass;
 - (void)setCommentId:(id)arg1;
 - (void)writeTo:(id)arg1;
 

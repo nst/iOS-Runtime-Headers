@@ -3,9 +3,9 @@
  */
 
 @interface CIPixellate : CIFilter {
-    CIVector *inputCenter;
-    CIImage *inputImage;
-    NSNumber *inputScale;
+    CIVector * inputCenter;
+    CIImage * inputImage;
+    NSNumber * inputScale;
 }
 
 @property (nonatomic, retain) CIVector *inputCenter;

@@ -3,14 +3,17 @@
  */
 
 @interface EKObjectToOneRelation : EKObjectRelation {
-    EKObject *_relatedObject;
-    BOOL _weak;
+    EKObject * _strongRelatedObject;
+    BOOL  _weak;
+    EKObject * _weakRelatedObject;
 }
 
+- (void).cxx_destruct;
 - (void)_addRelatedObject:(id)arg1 setInverse:(BOOL)arg2 dirty:(BOOL)arg3;
 - (void)_clear;
 - (void)_removeRelatedObject:(id)arg1 setInverse:(BOOL)arg2 dirty:(BOOL)arg3;
 - (void)_setRelatedObject:(id)arg1 setInverse:(BOOL)arg2 dirty:(BOOL)arg3;
+- (void)_setWeakRelatedObjectTo:(id)arg1 andStrongRelatedObjectTo:(id)arg2;
 - (void)_unload;
 - (id)committedValue;
 - (void)dealloc;

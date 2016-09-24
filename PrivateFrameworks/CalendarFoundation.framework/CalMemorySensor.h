@@ -3,10 +3,10 @@
  */
 
 @interface CalMemorySensor : NSObject {
-    id /* block */ _fireBlock;
-    unsigned int _interval;
-    NSObject<OS_dispatch_source> *_timer;
-    unsigned int _usage;
+    id /* block */  _fireBlock;
+    unsigned int  _interval;
+    NSObject<OS_dispatch_source> * _timer;
+    unsigned int  _usage;
 }
 
 @property (nonatomic, copy) id /* block */ fireBlock;

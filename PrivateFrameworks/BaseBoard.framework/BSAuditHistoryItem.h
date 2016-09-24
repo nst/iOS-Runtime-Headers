@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@interface BSAuditHistoryItem : NSObject <BSXPCCoding> {
-    NSDate *_date;
-    NSString *_description;
+@interface BSAuditHistoryItem : NSObject <BSXPCCoding, NSSecureCoding> {
+    NSDate * _date;
+    NSString * _description;
 }
 
 @property (nonatomic, retain) NSDate *date;
@@ -16,12 +16,15 @@
 
 + (id)itemWithString:(id)arg1;
 + (id)itemWithWithFormat:(id)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (id)_timeFormatter;
 - (id)date;
 - (void)dealloc;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)itemWithString:(id)arg1;
 - (void)setDate:(id)arg1;

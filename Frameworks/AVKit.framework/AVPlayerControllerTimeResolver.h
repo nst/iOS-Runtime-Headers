@@ -3,28 +3,34 @@
  */
 
 @interface AVPlayerControllerTimeResolver : NSObject <NSCoding> {
-    double _currentTime;
-    double _interval;
-    AVPlayerController *_playerController;
-    double _resolution;
-    NSTimer *_timer;
+    double  _currentTime;
+    double  _interval;
+    AVPlayerController * _playerController;
+    double  _resolution;
+    AVTimer * _timer;
 }
 
 @property double currentTime;
 @property (getter=isCurrentTimeAtEndOfSeekableTimeRanges, readonly) BOOL currentTimeAtEndOfSeekableTimeRanges;
 @property double currentTimeWithinEndTimes;
 @property double interval;
-@property (retain) AVPlayerController *playerController;
+@property (retain) <AVTimeControlling> *playerController;
+@property (readonly) double remainingTargetTimeWithinEndTimes;
 @property (readonly) double remainingTime;
 @property (readonly) double remainingTimeWithinEndTimes;
 @property double resolution;
+@property double targetTime;
+@property double targetTimeWithinEndTimes;
 @property (getter=isThirtySecondsBeforeCurrentTimeWithinSeekableTimeRanges, readonly) BOOL thirtySecondsBeforeCurrentTimeWithinSeekableTimeRanges;
 
 + (BOOL)automaticallyNotifiesObserversOfCurrentTime;
 + (id)keyPathsForValuesAffectingCurrentTimeAtEndOfSeekableTimeRanges;
 + (id)keyPathsForValuesAffectingCurrentTimeWithinEndTimes;
++ (id)keyPathsForValuesAffectingRemainingTargetTimeWithinEndTimes;
 + (id)keyPathsForValuesAffectingRemainingTime;
 + (id)keyPathsForValuesAffectingRemainingTimeWithinEndTimes;
++ (id)keyPathsForValuesAffectingTargetTime;
++ (id)keyPathsForValuesAffectingTargetTimeWithinEndTimes;
 + (id)keyPathsForValuesAffectingThirtySecondsBeforeCurrentTimeWithinSeekableTimeRanges;
 
 - (void).cxx_destruct;
@@ -39,6 +45,7 @@
 - (BOOL)isThirtySecondsBeforeCurrentTimeWithinSeekableTimeRanges;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)playerController;
+- (double)remainingTargetTimeWithinEndTimes;
 - (double)remainingTime;
 - (double)remainingTimeWithinEndTimes;
 - (double)resolution;
@@ -47,5 +54,9 @@
 - (void)setInterval:(double)arg1;
 - (void)setPlayerController:(id)arg1;
 - (void)setResolution:(double)arg1;
+- (void)setTargetTime:(double)arg1;
+- (void)setTargetTimeWithinEndTimes:(double)arg1;
+- (double)targetTime;
+- (double)targetTimeWithinEndTimes;
 
 @end

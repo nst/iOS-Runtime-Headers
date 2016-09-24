@@ -3,11 +3,11 @@
  */
 
 @interface KeychainSyncDevicePINController : PSKeychainSyncTextEntryController {
-    DevicePINController *_devicePINController;
-    UIKeyboard *_disabledKeyboard;
-    NSString *_enterPasscodeReason;
-    NSString *_enterPasscodeTitle;
-    BOOL _showingBlockedMessage;
+    DevicePINController * _devicePINController;
+    UIKeyboard * _disabledKeyboard;
+    NSString * _enterPasscodeReason;
+    NSString * _enterPasscodeTitle;
+    BOOL  _showingBlockedMessage;
 }
 
 @property (nonatomic, retain) UIKeyboard *disabledKeyboard;

@@ -3,7 +3,7 @@
  */
 
 @interface RCSavedRecordingCompositionController : RCCompositionController {
-    NSURL *_savedRecordingURI;
+    NSURL * _savedRecordingURI;
 }
 
 @property (nonatomic, readonly) NSURL *savedRecordingURI;

@@ -3,7 +3,7 @@
  */
 
 @interface AAUIFamilyPaymentInfoResponse : AAResponse {
-    AAUIFamilyCreditCard *_creditCard;
+    AAUIFamilyCreditCard * _creditCard;
 }
 
 @property (nonatomic, retain) AAUIFamilyCreditCard *creditCard;

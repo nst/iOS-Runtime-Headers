@@ -3,30 +3,30 @@
  */
 
 @interface IDSSocketPairResourceTransferSender : IDSSocketPairMessage {
-    BOOL _compressPayload;
-    BOOL _compressed;
-    BOOL _done;
-    BOOL _expectsPeerResponse;
-    int _fileDescriptor;
-    unsigned int _maxChunkSize;
-    NSString *_messageUUID;
-    NSDictionary *_metadata;
-    unsigned long long _nextByte;
-    NSString *_peerResponseIdentifier;
-    NSDictionary *_resourceAttributes;
-    NSString *_resourcePath;
-    BOOL _resumeResourceTransfers;
-    BOOL _sentFirstMessage;
-    unsigned int _sequenceNumber;
-    unsigned short _streamID;
-    unsigned long long _totalBytes;
-    BOOL _wantsAppAck;
+    BOOL  _compressPayload;
+    BOOL  _compressed;
+    BOOL  _done;
+    BOOL  _expectsPeerResponse;
+    int  _fileDescriptor;
+    unsigned int  _maxChunkSize;
+    NSString * _messageUUID;
+    NSDictionary * _metadata;
+    unsigned int  _nextByte;
+    NSString * _peerResponseIdentifier;
+    NSDictionary * _resourceAttributes;
+    NSString * _resourcePath;
+    BOOL  _resumeResourceTransfers;
+    BOOL  _sentFirstMessage;
+    unsigned int  _sequenceNumber;
+    unsigned short  _streamID;
+    unsigned int  _totalBytes;
+    BOOL  _wantsAppAck;
 }
 
 @property (nonatomic, readonly) BOOL isDone;
 @property (nonatomic) unsigned int maxChunkSize;
 @property (nonatomic, readonly, retain) NSString *messageUUID;
-@property (nonatomic) unsigned long long nextByte;
+@property (nonatomic) unsigned int nextByte;
 @property (nonatomic) BOOL resumeResourceTransfers;
 @property (nonatomic, readonly) BOOL sentFirstMessage;
 @property (nonatomic) unsigned int sequenceNumber;
@@ -39,17 +39,17 @@
 - (BOOL)isDone;
 - (unsigned int)maxChunkSize;
 - (id)messageUUID;
-- (unsigned long long)nextByte;
+- (unsigned int)nextByte;
 - (id)nextMessage;
 - (id)nextMessage_old;
 - (id)readNextBytes;
-- (BOOL)readNextBytes:(id*)arg1 byteOffset:(unsigned long long*)arg2;
+- (BOOL)readNextBytes:(id*)arg1 byteOffset:(unsigned int*)arg2;
 - (void)reset;
 - (BOOL)resumeResourceTransfers;
 - (BOOL)sentFirstMessage;
 - (unsigned int)sequenceNumber;
 - (void)setMaxChunkSize:(unsigned int)arg1;
-- (void)setNextByte:(unsigned long long)arg1;
+- (void)setNextByte:(unsigned int)arg1;
 - (void)setResumeResourceTransfers:(BOOL)arg1;
 - (void)setSequenceNumber:(unsigned int)arg1;
 - (void)setStreamID:(unsigned short)arg1;

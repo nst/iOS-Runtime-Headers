@@ -3,40 +3,44 @@
  */
 
 @interface GEOResourceLoader : NSObject {
-    NSString *_additionalDirectoryToConsider;
-    BOOL _allowResumingPartialDownloads;
-    NSData *_auditToken;
-    NSString *_baseURLString;
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    BOOL _canceled;
-    id /* block */ _completionHandler;
-    NSString *_directory;
-    NSMapTable *_inProgressResourceDownloads;
-    NSMutableArray *_loadedResources;
-    unsigned int _maxConcurrentLoads;
-    int _numberOfCopiesInProgress;
-    int _numberOfDownloadsInProgress;
-    GEOPowerAssertion *_powerAssertion;
-    NSArray *_resourceInfos;
-    NSMutableArray *_resourcesToLoad;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    NSString * _additionalDirectoryToConsider;
+    BOOL  _allowResumingPartialDownloads;
+    NSData * _auditToken;
+    NSString * _baseURLString;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    BOOL  _canceled;
+    id /* block */  _completionHandler;
+    NSString * _directory;
+    NSMapTable * _inProgressResourceDownloads;
+    NSMutableArray * _loadedResources;
+    unsigned int  _maxConcurrentLoads;
+    int  _numberOfCopiesInProgress;
+    int  _numberOfDownloadsInProgress;
+    GEOPowerAssertion * _powerAssertion;
+    BOOL  _requiresWiFi;
+    NSArray * _resourceInfos;
+    NSMutableArray * _resourcesToLoad;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic, retain) NSData *auditToken;
-@property (nonatomic, readonly) NSArray *loadedResources;
+@property (nonatomic) BOOL requiresWiFi;
 
 + (Class)resourceLoadOperationClass;
 
 - (void)_cleanup;
+- (BOOL)_copyResource:(id)arg1 fromPath:(id)arg2 allowCreatingHardLink:(BOOL)arg3 error:(id*)arg4;
 - (BOOL)_establishHardLinkIfPossibleForResource:(id)arg1 toResource:(id)arg2 error:(id*)arg3;
-- (void)_loadNextResource;
-- (void)_writeResourceToDisk:(id)arg1 withData:(id)arg2 orExistingPathOnDisk:(id)arg3 allowCreatingHardLink:(BOOL)arg4 checksum:(id)arg5 completionHandler:(id /* block */)arg6 callbackQueue:(id)arg7;
+- (void)_loadNextResourceFromNetwork;
+- (void)_loadResourcesFromDisk;
+- (void)_writeResourceToDisk:(id)arg1 withData:(id)arg2 checksum:(id)arg3 completionHandler:(id /* block */)arg4 callbackQueue:(id)arg5;
 - (id)auditToken;
 - (void)cancel;
 - (void)dealloc;
 - (id)initWithTargetDirectory:(id)arg1 baseURLString:(id)arg2 resources:(id)arg3 maximumConcurrentLoads:(unsigned int)arg4 additionalDirectoryToConsider:(id)arg5;
-- (id)loadedResources;
+- (BOOL)requiresWiFi;
 - (void)setAuditToken:(id)arg1;
+- (void)setRequiresWiFi:(BOOL)arg1;
 - (void)startWithCompletionHandler:(id /* block */)arg1 callbackQueue:(id)arg2;
 
 @end

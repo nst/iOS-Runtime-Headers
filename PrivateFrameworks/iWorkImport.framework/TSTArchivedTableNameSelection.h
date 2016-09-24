@@ -3,7 +3,7 @@
  */
 
 @interface TSTArchivedTableNameSelection : TSPObject <TSKArchivedSelection> {
-    TSTTableNameSelection *mTableNameSelection;
+    TSTTableNameSelection * mTableNameSelection;
 }
 
 @property (readonly, copy) NSString *debugDescription;

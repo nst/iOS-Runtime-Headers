@@ -3,13 +3,13 @@
  */
 
 @interface WDFormField : WDRun {
-    NSString *mDosName;
-    BOOL mLinkAbsolute;
-    BOOL mLinkSpecifyingNamedLocation;
-    NSString *mMacName;
-    NSString *mNamedLocation;
-    unsigned int mPosition;
-    NSString *mURI;
+    NSString * mDosName;
+    BOOL  mLinkAbsolute;
+    BOOL  mLinkSpecifyingNamedLocation;
+    NSString * mMacName;
+    NSString * mNamedLocation;
+    unsigned int  mPosition;
+    NSString * mURI;
 }
 
 - (id)URI;

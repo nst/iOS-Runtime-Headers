@@ -3,7 +3,7 @@
  */
 
 @interface GKHairlineView : UIView {
-    int _alignment;
+    int  _alignment;
 }
 
 @property (nonatomic) int alignment;
@@ -12,7 +12,7 @@
 
 - (int)alignment;
 - (id)init;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)setAlignment:(int)arg1;
 - (void)sizeToFit;
 

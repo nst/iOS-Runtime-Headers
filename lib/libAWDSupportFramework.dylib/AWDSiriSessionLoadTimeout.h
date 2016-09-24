@@ -3,19 +3,19 @@
  */
 
 @interface AWDSiriSessionLoadTimeout : PBCodable <NSCopying> {
-    unsigned long long _connectionTechnology;
-    NSString *_connectionURL;
+    unsigned long long  _connectionTechnology;
+    NSString * _connectionURL;
     struct { 
         unsigned int connectionTechnology : 1; 
         unsigned int interfaceIndex : 1; 
         unsigned int sendBufferSize : 1; 
         unsigned int timestamp : 1; 
         unsigned int wwanPreferred : 1; 
-    } _has;
-    unsigned long long _interfaceIndex;
-    unsigned long long _sendBufferSize;
-    unsigned long long _timestamp;
-    BOOL _wwanPreferred;
+    }  _has;
+    unsigned long long  _interfaceIndex;
+    unsigned long long  _sendBufferSize;
+    unsigned long long  _timestamp;
+    BOOL  _wwanPreferred;
 }
 
 @property (nonatomic) unsigned long long connectionTechnology;

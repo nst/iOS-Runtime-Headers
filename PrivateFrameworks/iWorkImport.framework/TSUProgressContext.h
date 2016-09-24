@@ -3,10 +3,10 @@
  */
 
 @interface TSUProgressContext : NSObject {
-    TSUProgressStage *m_currentStage;
-    double m_lastOverallProgress;
-    double m_lastProgressReport;
-    NSDate *m_lastReportTime;
+    TSUProgressStage * m_currentStage;
+    double  m_lastOverallProgress;
+    double  m_lastProgressReport;
+    NSDate * m_lastReportTime;
 }
 
 - (void)addProgressObserver:(id)arg1 selector:(SEL)arg2;

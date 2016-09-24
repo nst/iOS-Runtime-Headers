@@ -3,7 +3,7 @@
  */
 
 @interface AVItemAccessLogInternal : NSObject {
-    NSArray *logArray;
+    NSArray * logArray;
 }
 
 @end

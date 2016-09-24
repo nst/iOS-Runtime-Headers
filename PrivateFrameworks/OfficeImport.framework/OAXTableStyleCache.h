@@ -3,9 +3,9 @@
  */
 
 @interface OAXTableStyleCache : NSObject {
-    NSMutableDictionary *mCache;
-    NSString *mDefaultStyleId;
-    OCPPackagePart *mStylesPart;
+    NSMutableDictionary * mCache;
+    NSString * mDefaultStyleId;
+    OCPPackagePart * mStylesPart;
 }
 
 - (void)dealloc;

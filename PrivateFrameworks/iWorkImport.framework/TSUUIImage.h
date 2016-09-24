@@ -3,15 +3,15 @@
  */
 
 @interface TSUUIImage : TSUImage {
-    TSUUIImageAutoreleasePoolGuard *mGuard;
-    UIImage *mUIImage;
+    TSUUIImageAutoreleasePoolGuard * mGuard;
+    UIImage * mUIImage;
 }
 
 + (void)i_performBlockWithUIImageLock:(id /* block */)arg1;
 + (id)imageNamed:(id)arg1;
 
 - (struct CGImage { }*)CGImage;
-- (struct CGImage { }*)CGImageForSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGImage { }*)CGImageForSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)UIImage;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -20,6 +20,6 @@
 - (id)initWithUIImage:(id)arg1;
 - (id)p_initWithUIImage:(id)arg1 needsGuard:(BOOL)arg2;
 - (float)scale;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { double x1; double x2; })size;
 
 @end

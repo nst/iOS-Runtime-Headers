@@ -3,8 +3,8 @@
  */
 
 @interface BBBulletinTransaction : NSObject {
-    NSString *_bulletinID;
-    unsigned int _transactionID;
+    NSString * _bulletinID;
+    unsigned int  _transactionID;
 }
 
 @property (nonatomic, readonly, copy) NSString *bulletinID;
@@ -12,8 +12,8 @@
 
 + (id)transactionWithBulletinID:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)bulletinID;
-- (void)dealloc;
 - (id)description;
 - (unsigned int)incrementTransactionID;
 - (id)initWithBulletinID:(id)arg1;

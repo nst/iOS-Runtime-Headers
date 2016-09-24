@@ -3,12 +3,12 @@
  */
 
 @interface HMEvent : NSObject <HMObjectMerge, NSSecureCoding> {
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    HMDelegateCaller *_delegateCaller;
-    HMEventTrigger *_eventTrigger;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
-    NSUUID *_uniqueIdentifier;
-    NSUUID *_uuid;
+    NSObject<OS_dispatch_queue> * _clientQueue;
+    HMDelegateCaller * _delegateCaller;
+    HMEventTrigger * _eventTrigger;
+    NSObject<OS_dispatch_queue> * _propertyQueue;
+    NSUUID * _uniqueIdentifier;
+    NSUUID * _uuid;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;

@@ -3,11 +3,11 @@
  */
 
 @interface ABTCC : NSObject {
-    BOOL _calledExternalChangeCallbacks;
-    BOOL _simulateAccessPrompt;
-    unsigned int _simulateAccessPromptDelay;
-    BOOL _simulateAccessPromptGranted;
-    int _simulateType;
+    BOOL  _calledExternalChangeCallbacks;
+    BOOL  _simulateAccessPrompt;
+    unsigned int  _simulateAccessPromptDelay;
+    BOOL  _simulateAccessPromptGranted;
+    int  _simulateType;
 }
 
 + (id)sharedInstance;

@@ -3,16 +3,16 @@
  */
 
 @interface BWFileSinkNode : BWSinkNode {
-    <BWNodeFileWriterStatusDelegate> *_recordingStatusDelegate;
+    <BWNodeFileWriterStatusDelegate> * _recordingStatusDelegate;
 }
 
-@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } lastFileDuration;
-@property (nonatomic, readonly) unsigned long long lastFileSize;
+@property (nonatomic, readonly) struct { int x1; int x2; unsigned int x3; int x4; } lastFileDuration;
+@property (nonatomic, readonly) unsigned int lastFileSize;
 @property (nonatomic) <BWNodeFileWriterStatusDelegate> *recordingStatusDelegate;
 
 - (id)init;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })lastFileDuration;
-- (unsigned long long)lastFileSize;
+- (struct { int x1; int x2; unsigned int x3; int x4; })lastFileDuration;
+- (unsigned int)lastFileSize;
 - (id)recordingStatusDelegate;
 - (void)setRecordingStatusDelegate:(id)arg1;
 

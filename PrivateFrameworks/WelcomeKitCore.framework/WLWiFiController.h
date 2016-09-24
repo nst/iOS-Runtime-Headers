@@ -3,14 +3,14 @@
  */
 
 @interface WLWiFiController : NSObject {
-    NSNumber *_channel;
-    struct __WiFiManagerClient { } *_managerClientRef;
-    struct NETRBClient { } *_netrbClientRef;
-    NSString *_password;
-    NSString *_ssid;
-    struct __WiFiNetwork { } *_startedNetwork;
-    id /* block */ _wifiStartCompletionBlock;
-    id /* block */ _wifiStopCompletionBlock;
+    NSNumber * _channel;
+    struct __WiFiManagerClient { } * _managerClientRef;
+    struct NETRBClient { } * _netrbClientRef;
+    NSString * _password;
+    NSString * _ssid;
+    struct __WiFiNetwork { } * _startedNetwork;
+    id /* block */  _wifiStartCompletionBlock;
+    id /* block */  _wifiStopCompletionBlock;
 }
 
 @property (nonatomic, readonly) BOOL hasSoftAPCapability;

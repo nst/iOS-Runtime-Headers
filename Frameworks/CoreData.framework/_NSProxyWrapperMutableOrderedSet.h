@@ -3,7 +3,7 @@
  */
 
 @interface _NSProxyWrapperMutableOrderedSet : _NSNotifyingWrapperMutableOrderedSet {
-    _NSFaultingMutableOrderedSetMutationMethods *_mutationMethods;
+    _NSFaultingMutableOrderedSetMutationMethods * _mutationMethods;
 }
 
 - (void)addObject:(id)arg1;

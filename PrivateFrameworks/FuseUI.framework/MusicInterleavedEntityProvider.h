@@ -3,12 +3,12 @@
  */
 
 @interface MusicInterleavedEntityProvider : NSObject <MusicClientContextConsuming, MusicEntityProviding> {
-    MusicClientContext *_clientContext;
-    BOOL _didRequireMerging;
-    NSArray *_dynamicPageSectionIndexMappers;
-    NSArray *_entityProviders;
-    id /* block */ _entityUniqueIdentifierMergeInformationBlock;
-    NSArray *_sortedMergeInformation;
+    MusicClientContext * _clientContext;
+    BOOL  _didRequireMerging;
+    NSArray * _dynamicPageSectionIndexMappers;
+    NSArray * _entityProviders;
+    id /* block */  _entityUniqueIdentifierMergeInformationBlock;
+    NSArray * _sortedMergeInformation;
 }
 
 @property (nonatomic, retain) MusicClientContext *clientContext;

@@ -17,7 +17,6 @@
 - (double)expectedGpsUpdateInterval;
 - (int)headingOrientation;
 - (BOOL)isLocationServicesPreferencesDialogEnabled;
-- (BOOL)isSimulation;
 - (BOOL)isTracePlayer;
 - (BOOL)matchInfoEnabled;
 - (void)requestWhenInUseAuthorization;
@@ -32,6 +31,7 @@
 - (void)setHeadingOrientation:(int)arg1;
 - (void)setLocationServicesPreferencesDialogEnabled:(BOOL)arg1;
 - (void)setMatchInfoEnabled:(BOOL)arg1;
+- (BOOL)shouldShiftIfNecessary;
 - (void)startUpdatingHeading;
 - (void)startUpdatingLocation;
 - (void)startUpdatingVehicleHeading;

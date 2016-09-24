@@ -3,20 +3,38 @@
  */
 
 @interface UIStatusBarBatteryItemView : UIStatusBarItemView {
-    UIView *_accessoryView;
-    BOOL _batterySaverModeActive;
-    int _capacity;
-    int _state;
+    UIView * _accessoryView;
+    BOOL  _batterySaverModeActive;
+    unsigned int  _cachedBatteryStyle;
+    int  _cachedCapacity;
+    BOOL  _cachedImageHasAccessoryImage;
+    _UILegibilityImageSet * _cachedImageSet;
+    int  _capacity;
+    int  _state;
 }
+
+@property (nonatomic) unsigned int cachedBatteryStyle;
+@property (nonatomic) int cachedCapacity;
+@property (nonatomic) BOOL cachedImageHasAccessoryImage;
+@property (nonatomic, retain) _UILegibilityImageSet *cachedImageSet;
 
 - (void).cxx_destruct;
 - (id)_accessoryImage;
-- (struct CGSize { float x1; float x2; })_batteryOffsetWithBackground:(id)arg1;
+- (struct CGSize { double x1; double x2; })_batteryOffsetWithBackground:(id)arg1;
+- (id)_contentsImage;
 - (BOOL)_needsAccessoryImage;
 - (void)_updateAccessoryImage;
+- (unsigned int)cachedBatteryStyle;
+- (int)cachedCapacity;
+- (BOOL)cachedImageHasAccessoryImage;
+- (id)cachedImageSet;
 - (id)contentsImage;
 - (float)extraRightPadding;
 - (float)legibilityStrength;
+- (void)setCachedBatteryStyle:(unsigned int)arg1;
+- (void)setCachedCapacity:(int)arg1;
+- (void)setCachedImageHasAccessoryImage:(BOOL)arg1;
+- (void)setCachedImageSet:(id)arg1;
 - (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

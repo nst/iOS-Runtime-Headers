@@ -3,31 +3,31 @@
  */
 
 @interface SKUIScalingFlipView : UIView {
-    UIView *_backView;
-    id /* block */ _completionBlock;
-    int _direction;
-    double _duration;
+    UIView * _backView;
+    id /* block */  _completionBlock;
+    int  _direction;
+    double  _duration;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _fromFrame;
-    UIView *_frontView;
+    }  _fromFrame;
+    UIView * _frontView;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _toFrame;
+    }  _toFrame;
 }
 
 @property (nonatomic) int direction;

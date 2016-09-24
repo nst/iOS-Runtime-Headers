@@ -4,14 +4,14 @@
 
 @interface PKPhysicsJointDistance : PKPhysicsJoint {
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _anchorA;
+        double x; 
+        double y; 
+    }  _anchorA;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _anchorB;
-    struct b2DistanceJoint { int (**x1)(); int x2; struct b2Joint {} *x3; struct b2Joint {} *x4; struct b2JointEdge { struct b2Body {} *x_5_1_1; struct b2Joint {} *x_5_1_2; struct b2JointEdge {} *x_5_1_3; struct b2JointEdge {} *x_5_1_4; } x5; struct b2JointEdge { struct b2Body {} *x_6_1_1; struct b2Joint {} *x_6_1_2; struct b2JointEdge {} *x_6_1_3; struct b2JointEdge {} *x_6_1_4; } x6; struct b2Body {} *x7; struct b2Body {} *x8; bool x9; bool x10; void *x11; float x12; float x13; float x14; struct b2Vec2 { float x_15_1_1; float x_15_1_2; } x15; struct b2Vec2 { float x_16_1_1; float x_16_1_2; } x16; float x17; float x18; float x19; int x20; int x21; struct b2Vec2 { float x_22_1_1; float x_22_1_2; } x22; struct b2Vec2 { float x_23_1_1; float x_23_1_2; } x23; struct b2Vec2 { float x_24_1_1; float x_24_1_2; } x24; struct b2Vec2 { float x_25_1_1; float x_25_1_2; } x25; struct b2Vec2 { float x_26_1_1; float x_26_1_2; } x26; float x27; float x28; float x29; float x30; float x31; } *_joint;
+        double x; 
+        double y; 
+    }  _anchorB;
+    struct b2DistanceJoint { int (**x1)(); int x2; struct b2Joint {} *x3; struct b2Joint {} *x4; struct b2JointEdge { struct b2Body {} *x_5_1_1; struct b2Joint {} *x_5_1_2; struct b2JointEdge {} *x_5_1_3; struct b2JointEdge {} *x_5_1_4; } x5; struct b2JointEdge { struct b2Body {} *x_6_1_1; struct b2Joint {} *x_6_1_2; struct b2JointEdge {} *x_6_1_3; struct b2JointEdge {} *x_6_1_4; } x6; struct b2Body {} *x7; struct b2Body {} *x8; bool x9; bool x10; void *x11; double x12; double x13; double x14; struct b2Vec2 { double x_15_1_1; double x_15_1_2; } x15; struct b2Vec2 { double x_16_1_1; double x_16_1_2; } x16; double x17; double x18; double x19; int x20; int x21; struct b2Vec2 { double x_22_1_1; double x_22_1_2; } x22; struct b2Vec2 { double x_23_1_1; double x_23_1_2; } x23; struct b2Vec2 { double x_24_1_1; double x_24_1_2; } x24; struct b2Vec2 { double x_25_1_1; double x_25_1_2; } x25; struct b2Vec2 { double x_26_1_1; double x_26_1_2; } x26; double x27; double x28; double x29; double x30; double x31; } * _joint;
     struct b2DistanceJointDef { 
         int type; 
         void *userData; 
@@ -19,26 +19,26 @@
         struct b2Body {} *bodyB; 
         bool collideConnected; 
         struct b2Vec2 { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } localAnchorA; 
         struct b2Vec2 { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } localAnchorB; 
-        float length; 
-        float frequencyHz; 
-        float dampingRatio; 
-    } _jointDef;
+        double length; 
+        double frequencyHz; 
+        double dampingRatio; 
+    }  _jointDef;
 }
 
 @property (nonatomic) BOOL collideConnected;
-@property (nonatomic) float damping;
-@property (nonatomic) float frequency;
-@property (nonatomic) float length;
+@property (nonatomic) double damping;
+@property (nonatomic) double frequency;
+@property (nonatomic) double length;
 
-+ (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 anchorA:(struct CGPoint { float x1; float x2; })arg3 anchorB:(struct CGPoint { float x1; float x2; })arg4;
-+ (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 localAnchorA:(struct CGPoint { float x1; float x2; })arg3 localAnchorB:(struct CGPoint { float x1; float x2; })arg4;
++ (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 anchorA:(struct CGPoint { double x1; double x2; })arg3 anchorB:(struct CGPoint { double x1; double x2; })arg4;
++ (id)jointWithBodyA:(id)arg1 bodyB:(id)arg2 localAnchorA:(struct CGPoint { double x1; double x2; })arg3 localAnchorB:(struct CGPoint { double x1; double x2; })arg4;
 
 - (id).cxx_construct;
 - (struct b2Joint { int (**x1)(); int x2; struct b2Joint {} *x3; struct b2Joint {} *x4; struct b2JointEdge { struct b2Body {} *x_5_1_1; struct b2Joint {} *x_5_1_2; struct b2JointEdge {} *x_5_1_3; struct b2JointEdge {} *x_5_1_4; } x5; struct b2JointEdge { struct b2Body {} *x_6_1_1; struct b2Joint {} *x_6_1_2; struct b2JointEdge {} *x_6_1_3; struct b2JointEdge {} *x_6_1_4; } x6; struct b2Body {} *x7; struct b2Body {} *x8; bool x9; bool x10; void *x11; }*)_joint;
@@ -48,8 +48,8 @@
 - (float)damping;
 - (void)encodeWithCoder:(id)arg1;
 - (float)frequency;
-- (id)initWithBodyA:(id)arg1 bodyB:(id)arg2 anchorA:(struct CGPoint { float x1; float x2; })arg3 anchorB:(struct CGPoint { float x1; float x2; })arg4;
-- (id)initWithBodyA:(id)arg1 bodyB:(id)arg2 localAnchorA:(struct CGPoint { float x1; float x2; })arg3 localAnchorB:(struct CGPoint { float x1; float x2; })arg4;
+- (id)initWithBodyA:(id)arg1 bodyB:(id)arg2 anchorA:(struct CGPoint { double x1; double x2; })arg3 anchorB:(struct CGPoint { double x1; double x2; })arg4;
+- (id)initWithBodyA:(id)arg1 bodyB:(id)arg2 localAnchorA:(struct CGPoint { double x1; double x2; })arg3 localAnchorB:(struct CGPoint { double x1; double x2; })arg4;
 - (id)initWithCoder:(id)arg1;
 - (float)length;
 - (void)setCollideConnected:(BOOL)arg1;

@@ -3,10 +3,10 @@
  */
 
 @interface CAMIntervalometerTestHarness : CAMPerformanceTestHarness <CAMCaptureRequestIntervalometerDelegate, CAMStillImageCaptureRequestDelegate> {
-    CUCaptureController *_captureController;
-    BOOL _hasOutstandingCapture;
-    BOOL _nextCaptureIsMyLast;
-    CAMCaptureRequestIntervalometer *_testIntervalometer;
+    CUCaptureController * _captureController;
+    BOOL  _hasOutstandingCapture;
+    BOOL  _nextCaptureIsMyLast;
+    CAMCaptureRequestIntervalometer * _testIntervalometer;
 }
 
 @property (readonly, copy) NSString *debugDescription;

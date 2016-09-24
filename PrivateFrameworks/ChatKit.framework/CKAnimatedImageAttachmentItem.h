@@ -3,30 +3,29 @@
  */
 
 @interface CKAnimatedImageAttachmentItem : CKImageAttachmentItem {
-    NSURL *_animatedPreviewURL;
+    NSURL * _animatedPreviewURL;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _imageSize;
+        double width; 
+        double height; 
+    }  _imageSize;
 }
 
 @property (nonatomic, retain) NSURL *animatedPreviewURL;
-@property struct CGSize { float x1; float x2; } imageSize;
+@property struct CGSize { double x1; double x2; } imageSize;
 
 + (id)UTITypes;
 + (BOOL)shouldScaleUpPreview;
 
+- (void).cxx_destruct;
 - (id)_newImageData;
 - (id)_savedPreviewFromURL:(id)arg1;
 - (id)animatedPreviewURL;
-- (void)dealloc;
-- (id)generateAnimatedPreviewFromThumbnails:(id)arg1 width:(float)arg2 withImageData:(id)arg3;
 - (id)generatePreviewFromThumbnail:(id)arg1 width:(float)arg2;
 - (void)generatePreviewWithCompletion:(id /* block */)arg1;
-- (id)generateThumbnailsForWidth:(float)arg1 withImageData:(id)arg2;
-- (struct CGSize { float x1; float x2; })imageSize;
+- (struct CGSize { double x1; double x2; })imageSize;
 - (void)setAnimatedPreviewURL:(id)arg1;
-- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })size;
+- (id)thumbnailAtIndex:(unsigned int)arg1 forWidth:(float)arg2 withImageData:(id)arg3;
 
 @end

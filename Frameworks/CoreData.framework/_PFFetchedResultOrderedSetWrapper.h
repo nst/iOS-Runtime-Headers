@@ -3,9 +3,9 @@
  */
 
 @interface _PFFetchedResultOrderedSetWrapper : NSOrderedSet {
-    int _cd_rc;
-    NSArray *_underlyingArray;
-    _PFWeakReference *_weakmoc;
+    int  _cd_rc;
+    NSArray * _underlyingArray;
+    _PFWeakReference * _weakmoc;
 }
 
 + (BOOL)accessInstanceVariablesDirectly;

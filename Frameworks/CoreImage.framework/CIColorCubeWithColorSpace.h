@@ -3,7 +3,7 @@
  */
 
 @interface CIColorCubeWithColorSpace : CIColorCube {
-    id inputColorSpace;
+    id  inputColorSpace;
 }
 
 @property (nonatomic, retain) id inputColorSpace;

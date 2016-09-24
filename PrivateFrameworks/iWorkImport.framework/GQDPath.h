@@ -3,7 +3,7 @@
  */
 
 @interface GQDPath : NSObject {
-    char *mPathString;
+    char * mPathString;
 }
 
 - (struct CGPath { }*)createBezierPath;

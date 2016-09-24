@@ -3,7 +3,7 @@
  */
 
 @interface DDFlightAction : DDAction {
-    UINavigationController *_navigationController;
+    UINavigationController * _navigationController;
 }
 
 - (void)adaptForPresentationInPopover:(BOOL)arg1;

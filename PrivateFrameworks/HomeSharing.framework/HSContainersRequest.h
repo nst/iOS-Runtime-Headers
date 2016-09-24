@@ -3,7 +3,7 @@
  */
 
 @interface HSContainersRequest : HSRequest {
-    BOOL _shouldParseResponse;
+    BOOL  _shouldParseResponse;
 }
 
 @property (nonatomic) BOOL shouldParseResponse;

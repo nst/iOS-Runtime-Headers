@@ -13,7 +13,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
 - (void)dealloc;
-- (void)finalize;
 - (void)getObjects:(id*)arg1 andKeys:(id*)arg2 count:(unsigned int)arg3;
 - (id)init;
 - (id)keyEnumerator;

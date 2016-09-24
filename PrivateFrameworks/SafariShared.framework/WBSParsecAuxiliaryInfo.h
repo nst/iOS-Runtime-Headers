@@ -3,10 +3,10 @@
  */
 
 @interface WBSParsecAuxiliaryInfo : WBSParsecModel {
-    NSString *_bottomText;
-    NSString *_bottomTextColor;
-    NSString *_middleText;
-    NSString *_topText;
+    NSString * _bottomText;
+    NSString * _bottomTextColor;
+    NSString * _middleText;
+    NSString * _topText;
 }
 
 @property (nonatomic, readonly, copy) NSString *bottomText;

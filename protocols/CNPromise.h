@@ -5,7 +5,9 @@
 
 @required
 
+- (id /* block */)boolErrorCompletionHandlerAdapter:(void *)arg1; // needs 1 arg types, found 6: id /* block */, BOOL, NSError *, void*, id, SEL
 - (id /* block */)completionHandlerAdapter:(void *)arg1; // needs 1 arg types, found 9: id /* block */, id, void*, inout unsigned short, void*, const const out const void*, void*, id, SEL
+- (id /* block */)completionHandlerAdapterWithDefaultValue:(void *)arg1; // needs 1 arg types, found 10: id /* block */, id, void*, inout unsigned short, void*, const const out const void*, void*, id, SEL, id
 - (id /* block */)errorOnlyCompletionHandlerAdapter:(void *)arg1; // needs 1 arg types, found 5: id /* block */, NSError *, void*, id, SEL
 - (BOOL)finishWithError:(NSError *)arg1;
 - (BOOL)finishWithResult:(id)arg1;

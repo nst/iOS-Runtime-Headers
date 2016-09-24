@@ -3,10 +3,10 @@
  */
 
 @interface IKCSSTokenizer : NSObject {
-    unsigned int currentOffset;
-    IKCSSToken *reconsumeToken;
-    unsigned short *textBytes;
-    unsigned int textBytesCharCount;
+    unsigned int  currentOffset;
+    IKCSSToken * reconsumeToken;
+    unsigned short * textBytes;
+    unsigned int  textBytesCharCount;
 }
 
 + (BOOL)isDigit:(unsigned short)arg1;

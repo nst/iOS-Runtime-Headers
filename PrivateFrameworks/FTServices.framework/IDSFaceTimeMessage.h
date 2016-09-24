@@ -3,7 +3,7 @@
  */
 
 @interface IDSFaceTimeMessage : FTIDSMessage <NSCopying> {
-    NSData *_sessionToken;
+    NSData * _sessionToken;
 }
 
 @property (copy) NSData *sessionToken;

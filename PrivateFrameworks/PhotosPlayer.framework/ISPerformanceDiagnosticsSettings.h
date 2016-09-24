@@ -3,7 +3,7 @@
  */
 
 @interface ISPerformanceDiagnosticsSettings : ISSettings {
-    BOOL _shouldTracePerformance;
+    BOOL  _shouldTracePerformance;
 }
 
 @property (nonatomic) BOOL shouldTracePerformance;

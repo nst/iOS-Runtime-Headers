@@ -3,8 +3,8 @@
  */
 
 @interface SiriUIHelpButton : SiriUIContentButton {
-    BOOL _animatingEmphasis;
-    BOOL _emphasized;
+    BOOL  _animatingEmphasis;
+    BOOL  _emphasized;
 }
 
 + (id)buttonWithHelpImageMask;

@@ -3,8 +3,8 @@
  */
 
 @interface UIPrintingMessageView : UIView {
-    UILabel *_message;
-    UILabel *_title;
+    UILabel * _message;
+    UILabel * _title;
 }
 
 - (void).cxx_destruct;

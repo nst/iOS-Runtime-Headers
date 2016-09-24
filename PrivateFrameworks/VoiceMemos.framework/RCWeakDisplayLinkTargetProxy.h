@@ -3,8 +3,8 @@
  */
 
 @interface RCWeakDisplayLinkTargetProxy : RCDisplayLinkTargetProxy {
-    RCWeakRef *_weakTarget;
-    SEL _weakTargetSelector;
+    RCWeakRef * _weakTarget;
+    SEL  _weakTargetSelector;
 }
 
 - (void)dealloc;

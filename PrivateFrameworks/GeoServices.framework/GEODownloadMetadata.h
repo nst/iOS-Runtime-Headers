@@ -3,9 +3,9 @@
  */
 
 @interface GEODownloadMetadata : PBCodable <NSCopying> {
-    NSString *_etag;
-    double _timestamp;
-    NSString *_url;
+    NSString * _etag;
+    double  _timestamp;
+    NSString * _url;
 }
 
 @property (nonatomic, retain) NSString *etag;

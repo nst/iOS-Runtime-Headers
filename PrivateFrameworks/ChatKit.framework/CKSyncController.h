@@ -3,9 +3,9 @@
  */
 
 @interface CKSyncController : NSObject {
-    int _attachmentRestoredToken;
-    int _restoreStateChangedToken;
-    BOOL _restoring;
+    int  _attachmentRestoredToken;
+    int  _restoreStateChangedToken;
+    BOOL  _restoring;
 }
 
 @property (getter=isRestoring, nonatomic) BOOL restoring;

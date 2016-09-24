@@ -3,20 +3,20 @@
  */
 
 @interface AFAccount : NSObject {
-    NSString *_aceHost;
-    NSString *_assistantIdentifier;
-    NSDictionary *_connectionPolicy;
-    NSDate *_connectionPolicyDate;
-    NSString *_connectionPolicyHostname;
-    NSString *_group;
-    NSString *_hostname;
-    NSString *_identifier;
-    BOOL _isActive;
-    NSString *_label;
-    NSDictionary *_lastSyncDates;
-    NSString *_localeIdentifier;
-    NSString *_predefinedServer;
-    NSString *_speechIdentifier;
+    NSString * _aceHost;
+    NSString * _assistantIdentifier;
+    NSDictionary * _connectionPolicy;
+    NSDate * _connectionPolicyDate;
+    NSString * _connectionPolicyHostname;
+    NSString * _group;
+    NSString * _hostname;
+    NSString * _identifier;
+    BOOL  _isActive;
+    NSString * _label;
+    NSDictionary * _lastSyncDates;
+    NSString * _localeIdentifier;
+    NSString * _predefinedServer;
+    NSString * _speechIdentifier;
 }
 
 @property (nonatomic, copy) NSString *aceHost;

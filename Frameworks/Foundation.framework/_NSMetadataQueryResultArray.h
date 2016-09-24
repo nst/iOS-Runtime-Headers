@@ -3,14 +3,13 @@
  */
 
 @interface _NSMetadataQueryResultArray : NSArray {
-    id _query;
-    int _rc;
+    id  _query;
+    int  _rc;
 }
 
 - (id)_init:(id)arg1;
 - (unsigned int)count;
 - (void)dealloc;
-- (void)finalize;
 - (id)objectAtIndex:(unsigned int)arg1;
 - (oneway void)release;
 - (id)retain;

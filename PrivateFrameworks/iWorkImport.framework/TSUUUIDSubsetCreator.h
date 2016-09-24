@@ -9,9 +9,9 @@
         struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
             struct UUIDData<TSP::UUIDData> {} *__first_; 
         } __end_cap_; 
-    } _baseUuidVector;
-    NSMutableDictionary *_createdSubsetsByRange;
-    TSUUUIDSetStore *_uuidSetStore;
+    }  _baseUuidVector;
+    NSMutableDictionary * _createdSubsetsByRange;
+    TSUUUIDSetStore * _uuidSetStore;
 }
 
 @property (readonly) const /* Warning: unhandled struct encoding: '{vector<TSU::UUIDData<TSP::UUIDData>' */ struct *baseUuidVector; /* unknown property attribute:  std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > >=^{UUIDData<TSP::UUIDData>}}} */

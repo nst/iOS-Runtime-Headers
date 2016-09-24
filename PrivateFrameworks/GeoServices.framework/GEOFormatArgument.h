@@ -3,69 +3,114 @@
  */
 
 @interface GEOFormatArgument : PBCodable <GEOServerFormatToken, NSCopying> {
-    int _format;
+    GEOPBTransitArtwork * _artwork;
+    int  _format;
     struct { 
         unsigned int format : 1; 
         unsigned int valInt1 : 1; 
         unsigned int valInt2 : 1; 
-    } _has;
-    GEOPrice *_price;
-    NSString *_token;
-    unsigned int _valInt1;
-    unsigned int _valInt2;
+    }  _has;
+    GEOPrice * _price;
+    NSMutableArray * _timestampDatas;
+    NSString * _token;
+    unsigned int  _valInt1;
+    unsigned int  _valInt2;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    }  _valInt3s;
+    NSString * _valString;
 }
 
+@property (nonatomic, retain) GEOPBTransitArtwork *artwork;
+@property (nonatomic, readonly) <GEOTransitArtworkDataSource> *artworkValue;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) int format;
+@property (nonatomic, readonly) BOOL hasArtwork;
 @property (nonatomic) BOOL hasFormat;
 @property (nonatomic, readonly) BOOL hasPrice;
 @property (nonatomic, readonly) BOOL hasToken;
 @property (nonatomic) BOOL hasValInt1;
 @property (nonatomic) BOOL hasValInt2;
+@property (nonatomic, readonly) BOOL hasValString;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) GEOPrice *price;
 @property (nonatomic, readonly) <GEOServerFormatTokenPriceValue> *priceValue;
+@property (nonatomic, readonly) NSString *stringValue;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) NSArray *timeStampValues;
+@property (nonatomic, retain) NSMutableArray *timestampDatas;
 @property (nonatomic, readonly) NSString *token;
 @property (nonatomic, retain) NSString *token;
 @property (nonatomic, readonly) int type;
 @property (nonatomic) unsigned int valInt1;
 @property (nonatomic) unsigned int valInt2;
+@property (nonatomic, readonly) unsigned int*valInt3s;
+@property (nonatomic, readonly) unsigned int valInt3sCount;
+@property (nonatomic, retain) NSString *valString;
 @property (nonatomic, readonly) unsigned int value1;
 @property (nonatomic, readonly) unsigned int value2;
+@property (nonatomic, readonly) NSArray *value3s;
 
++ (Class)timestampDataType;
+
+- (int)StringAsFormat:(id)arg1;
+- (void)addTimestampData:(id)arg1;
+- (void)addValInt3:(unsigned int)arg1;
+- (id)artwork;
+- (id)artworkValue;
+- (void)clearTimestampDatas;
+- (void)clearValInt3s;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)format;
+- (id)formatAsString:(int)arg1;
+- (BOOL)hasArtwork;
 - (BOOL)hasFormat;
 - (BOOL)hasPrice;
 - (BOOL)hasToken;
 - (BOOL)hasValInt1;
 - (BOOL)hasValInt2;
+- (BOOL)hasValString;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)price;
 - (id)priceValue;
 - (BOOL)readFrom:(id)arg1;
+- (void)setArtwork:(id)arg1;
 - (void)setFormat:(int)arg1;
 - (void)setHasFormat:(BOOL)arg1;
 - (void)setHasValInt1:(BOOL)arg1;
 - (void)setHasValInt2:(BOOL)arg1;
 - (void)setPrice:(id)arg1;
+- (void)setTimestampDatas:(id)arg1;
 - (void)setToken:(id)arg1;
 - (void)setValInt1:(unsigned int)arg1;
 - (void)setValInt2:(unsigned int)arg1;
+- (void)setValInt3s:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (void)setValString:(id)arg1;
+- (id)stringValue;
+- (id)timeStampValues;
+- (id)timestampDataAtIndex:(unsigned int)arg1;
+- (id)timestampDatas;
+- (unsigned int)timestampDatasCount;
 - (id)token;
 - (int)type;
 - (unsigned int)valInt1;
 - (unsigned int)valInt2;
+- (unsigned int)valInt3AtIndex:(unsigned int)arg1;
+- (unsigned int*)valInt3s;
+- (unsigned int)valInt3sCount;
+- (id)valString;
 - (unsigned int)value1;
 - (unsigned int)value2;
+- (id)value3s;
 - (void)writeTo:(id)arg1;
 
 @end

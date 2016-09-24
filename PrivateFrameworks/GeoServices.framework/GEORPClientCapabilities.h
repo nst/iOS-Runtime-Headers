@@ -4,50 +4,60 @@
 
 @interface GEORPClientCapabilities : PBCodable <NSCopying> {
     struct { 
+        unsigned int transitMarketSupport : 1; 
+        unsigned int hasConstrainedProblemStatusSize : 1; 
         unsigned int hasFeatureHandle : 1; 
         unsigned int hasNoOptInRequest : 1; 
         unsigned int hasSupportForIdsBasedNotifications : 1; 
-        unsigned int hasUnconstrainedProblemStatusSize : 1; 
-    } _has;
-    BOOL _hasFeatureHandle;
-    BOOL _hasNoOptInRequest;
-    BOOL _hasSupportForIdsBasedNotifications;
-    BOOL _hasUnconstrainedProblemStatusSize;
+    }  _has;
+    BOOL  _hasConstrainedProblemStatusSize;
+    BOOL  _hasFeatureHandle;
+    BOOL  _hasNoOptInRequest;
+    BOOL  _hasSupportForIdsBasedNotifications;
+    int  _transitMarketSupport;
 }
 
+@property (nonatomic) BOOL hasConstrainedProblemStatusSize;
 @property (nonatomic) BOOL hasFeatureHandle;
+@property (nonatomic) BOOL hasHasConstrainedProblemStatusSize;
 @property (nonatomic) BOOL hasHasFeatureHandle;
 @property (nonatomic) BOOL hasHasNoOptInRequest;
 @property (nonatomic) BOOL hasHasSupportForIdsBasedNotifications;
-@property (nonatomic) BOOL hasHasUnconstrainedProblemStatusSize;
 @property (nonatomic) BOOL hasNoOptInRequest;
 @property (nonatomic) BOOL hasSupportForIdsBasedNotifications;
-@property (nonatomic) BOOL hasUnconstrainedProblemStatusSize;
+@property (nonatomic) BOOL hasTransitMarketSupport;
+@property (nonatomic) int transitMarketSupport;
 
+- (int)StringAsTransitMarketSupport:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasConstrainedProblemStatusSize;
 - (BOOL)hasFeatureHandle;
+- (BOOL)hasHasConstrainedProblemStatusSize;
 - (BOOL)hasHasFeatureHandle;
 - (BOOL)hasHasNoOptInRequest;
 - (BOOL)hasHasSupportForIdsBasedNotifications;
-- (BOOL)hasHasUnconstrainedProblemStatusSize;
 - (BOOL)hasNoOptInRequest;
 - (BOOL)hasSupportForIdsBasedNotifications;
-- (BOOL)hasUnconstrainedProblemStatusSize;
+- (BOOL)hasTransitMarketSupport;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)setHasConstrainedProblemStatusSize:(BOOL)arg1;
 - (void)setHasFeatureHandle:(BOOL)arg1;
+- (void)setHasHasConstrainedProblemStatusSize:(BOOL)arg1;
 - (void)setHasHasFeatureHandle:(BOOL)arg1;
 - (void)setHasHasNoOptInRequest:(BOOL)arg1;
 - (void)setHasHasSupportForIdsBasedNotifications:(BOOL)arg1;
-- (void)setHasHasUnconstrainedProblemStatusSize:(BOOL)arg1;
 - (void)setHasNoOptInRequest:(BOOL)arg1;
 - (void)setHasSupportForIdsBasedNotifications:(BOOL)arg1;
-- (void)setHasUnconstrainedProblemStatusSize:(BOOL)arg1;
+- (void)setHasTransitMarketSupport:(BOOL)arg1;
+- (void)setTransitMarketSupport:(int)arg1;
+- (int)transitMarketSupport;
+- (id)transitMarketSupportAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

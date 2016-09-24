@@ -3,13 +3,16 @@
  */
 
 @interface TSDSpecSetShadow : TSDSpecShadow {
-    TSDShadow *_shadow;
-    BOOL _unset;
+    TSDShadow * _shadow;
+    BOOL  _unset;
 }
 
 - (id)apply:(id)arg1;
+- (id)description;
+- (unsigned int)hash;
 - (id)initUnsetSpec;
 - (id)initWithCurrentProperty:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isUnsetSpec;
 - (id)operationPropertyName;
 

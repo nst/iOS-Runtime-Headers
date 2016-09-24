@@ -3,7 +3,7 @@
  */
 
 @interface MPArtworkConfiguration : NSObject {
-    ML3ArtworkConfiguration *_artworkConfiguration;
+    ML3ArtworkConfiguration * _artworkConfiguration;
 }
 
 @property (nonatomic, retain) ML3ArtworkConfiguration *artworkConfiguration;

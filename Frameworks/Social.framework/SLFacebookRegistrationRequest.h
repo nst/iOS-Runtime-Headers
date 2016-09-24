@@ -3,7 +3,7 @@
  */
 
 @interface SLFacebookRegistrationRequest : SLFacebookRequest {
-    SLFacebookRegistrationInfo *_registrationInfo;
+    SLFacebookRegistrationInfo * _registrationInfo;
 }
 
 - (void).cxx_destruct;

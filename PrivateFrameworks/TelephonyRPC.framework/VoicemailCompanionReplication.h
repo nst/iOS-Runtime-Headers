@@ -3,31 +3,32 @@
  */
 
 @interface VoicemailCompanionReplication : NSObject <NPHVMSessionDelegate, PSYSyncCoordinatorDelegate, SYServiceDelegate> {
-    NSObject<OS_dispatch_queue> *_companionSyncQueue;
-    NSObject<OS_dispatch_queue> *_concurrentQueue;
-    PSYSyncCoordinator *_coordinator;
-    NSObject<OS_dispatch_semaphore> *_deltaSyncInProgress;
-    BOOL _deltaSyncSuccessful;
-    BOOL _didSuspendCompanionSyncQueue;
-    NPSDomainAccessor *_domainAccessor;
+    NSObject<OS_dispatch_queue> * _companionSyncQueue;
+    NSObject<OS_dispatch_queue> * _concurrentQueue;
+    PSYSyncCoordinator * _coordinator;
+    NSObject<OS_dispatch_semaphore> * _deltaSyncInProgress;
+    BOOL  _deltaSyncSuccessful;
+    BOOL  _didSuspendCompanionSyncQueue;
+    NPSDomainAccessor * _domainAccessor;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _domainAccessorMutexLock;
-    NanoTelephonyIDSProxy *_proxy;
-    BOOL _sigtermCalled;
-    BOOL _syncRestrictionsAtStartup;
-    NSObject<OS_os_transaction> *_syncTransaction;
+    }  _domainAccessorMutexLock;
+    BOOL  _sigtermCalled;
+    BOOL  _syncRestrictionsAtStartup;
+    NSObject<OS_os_transaction> * _syncTransaction;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _syncTransactionMutex;
-    NSMutableArray *_vmAfterSyncComplete;
-    SYService *_vmSyncService;
-    NSObject<OS_dispatch_queue> *_vmSyncServiceQueue;
-    NPHVMSyncSessionManager *_vmSyncSessionManager;
-    NSObject<OS_dispatch_semaphore> *vmdIsReadySemaphore;
-    NSObject<OS_dispatch_semaphore> *waitForFirstSyncRestrictionSemaphore;
+    }  _syncTransactionMutex;
+    NSMutableArray * _vmAfterSyncComplete;
+    PSYServiceSyncSession * _vmServiceSyncSession;
+    SYService * _vmSyncService;
+    NSObject<OS_dispatch_queue> * _vmSyncServiceQueue;
+    NPHVMSyncSessionManager * _vmSyncSessionManager;
+    VMVoicemailManager * _voicemailManager;
+    NSObject<OS_dispatch_semaphore> * vmdIsReadySemaphore;
+    NSObject<OS_dispatch_semaphore> * waitForFirstSyncRestrictionSemaphore;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -38,14 +39,10 @@
 @property (nonatomic, retain) SYService *vmSyncService;
 
 - (void).cxx_destruct;
-- (void)_deltaSyncForce:(BOOL)arg1;
+- (void)_deltaSyncIsReunion:(BOOL)arg1;
 - (void)_enqueueAllVoicemailsAndLockSyncTransactionMutex;
-- (void)_handleVoicemailDataAvailableNotification:(id)arg1;
-- (void)_handleVoicemailFlagsChanged:(id)arg1;
-- (void)_handleVoicemailServiceRecordsAdded:(id)arg1;
-- (void)_handleVoicemailStoreChanged:(id)arg1;
-- (void)_handleVoicemailStoreRemovedAllVoicemails:(id)arg1;
-- (void)_handleVoicemailStoreRemovedVoicemails:(id)arg1;
+- (void)_handleVoicemailSubscriptionStateStatusChanged:(id)arg1;
+- (void)_handleVoicemailsChangedNotification:(id)arg1;
 - (void)_initializeDomainAccessor;
 - (void)_performAfterFirstDeviceUnlockAndSyncRestrictionNone:(id /* block */)arg1;
 - (void)_registerForNotifications;
@@ -53,7 +50,7 @@
 - (void)dealloc;
 - (void)handleSIGTERM;
 - (int)indexOfVoicemail:(id)arg1 inArray:(id)arg2;
-- (id)initWithIDSProxy:(id)arg1;
+- (id)init;
 - (id)listOfVoicemailsToSync;
 - (int)maxVoicemailCount;
 - (int)maxVoicemailTotalBytes;
@@ -69,6 +66,7 @@
 - (void)setVmSyncService:(id)arg1;
 - (BOOL)sigtermCalled;
 - (void)syncCoordinator:(id)arg1 beginSyncSession:(id)arg2;
+- (void)syncCoordinator:(id)arg1 didInvalidateSyncSession:(id)arg2;
 - (void)syncCoordinatorDidChangeSyncRestriction:(id)arg1;
 - (void)syncSession:(id)arg1 applyChanges:(id)arg2 completion:(id /* block */)arg3;
 - (void)syncSession:(id)arg1 didEndWithError:(id)arg2;

@@ -3,13 +3,13 @@
  */
 
 @interface EDColumnInfo : NSObject <EDKeyedObject, NSCopying> {
-    bool mHidden;
-    unsigned char mOutlineLevel;
-    EDReference *mRange;
-    EDResources *mResources;
-    unsigned int mStyleIndex;
-    int mWidth;
-    EDWorksheet *mWorksheet;
+    bool  mHidden;
+    unsigned char  mOutlineLevel;
+    EDReference * mRange;
+    EDResources * mResources;
+    unsigned int  mStyleIndex;
+    int  mWidth;
+    EDWorksheet * mWorksheet;
 }
 
 @property (readonly, copy) NSString *debugDescription;

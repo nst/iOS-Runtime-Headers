@@ -3,18 +3,18 @@
  */
 
 @interface StepByStepUIViewController_Create_Config : StepByStepUIViewController <TableViewManagerDelegate, UIPopoverControllerDelegate> {
-    NSString *_basePassword;
-    NSString *_basePasswordVerify;
-    NSString *_diskPassword;
-    NSString *_diskPasswordVerify;
-    NSString *_personalizedBaseName;
-    NSString *_wifiName;
-    NSString *_wifiPassword;
-    NSString *_wifiPasswordVerify;
-    RecommendationActionController *actionController;
-    BOOL hasDisk;
-    BOOL useDifferentDiskPassword;
-    BOOL useSinglePassword;
+    NSString * _basePassword;
+    NSString * _basePasswordVerify;
+    NSString * _diskPassword;
+    NSString * _diskPasswordVerify;
+    NSString * _personalizedBaseName;
+    NSString * _wifiName;
+    NSString * _wifiPassword;
+    NSString * _wifiPasswordVerify;
+    RecommendationActionController * actionController;
+    BOOL  hasDisk;
+    BOOL  useDifferentDiskPassword;
+    BOOL  useSinglePassword;
 }
 
 @property (nonatomic, retain) RecommendationActionController *actionController;

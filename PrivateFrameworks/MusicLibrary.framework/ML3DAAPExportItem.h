@@ -10,7 +10,7 @@
 - (int)_daapSortTypeForTrackOrder:(unsigned long)arg1;
 - (id)exportData;
 - (int)longValueForProperty:(unsigned int)arg1;
-- (long long)longlongValueForProperty:(unsigned int)arg1;
+- (int)longlongValueForProperty:(unsigned int)arg1;
 - (id)valueForProperty:(unsigned int)arg1;
 
 @end

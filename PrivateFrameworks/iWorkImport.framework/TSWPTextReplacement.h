@@ -3,8 +3,8 @@
  */
 
 @interface TSWPTextReplacement : NSObject <TSWPReplaceAction> {
-    TSWPSelection *_selection;
-    NSString *_string;
+    TSWPSelection * _selection;
+    NSString * _string;
 }
 
 @property (readonly, copy) NSString *debugDescription;

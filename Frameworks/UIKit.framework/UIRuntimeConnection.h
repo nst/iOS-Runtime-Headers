@@ -3,9 +3,9 @@
  */
 
 @interface UIRuntimeConnection : NSObject <NSCoding> {
-    id _destination;
-    NSString *_label;
-    id _source;
+    id  _destination;
+    NSString * _label;
+    id  _source;
 }
 
 @property (nonatomic, retain) id destination;

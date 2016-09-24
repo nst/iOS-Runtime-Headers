@@ -3,45 +3,45 @@
  */
 
 @interface SKUIStyledButton : UIControl <SKUIViewElementOfferButton> {
-    SKUIAttributedStringView *_attributedStringView;
+    SKUIAttributedStringView * _attributedStringView;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _bigHitInsets;
-    SKUIButtonBorderStyle *_borderStyle;
-    SKUIShapeView *_borderView;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _bigHitInsets;
+    SKUIButtonBorderStyle * _borderStyle;
+    SKUIShapeView * _borderView;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _buttonPadding;
-    int _buttonType;
-    BOOL _didInitialHighlightForTouch;
-    UIImageView *_disclosureImageView;
-    float _imageTextPaddingInterior;
-    SKUIImageView *_imageView;
-    float _imageYAdjustment;
-    SKUIItemOfferButton *_itemOfferButton;
-    <SKUIItemOfferButtonDelegate> *_itemOfferDelegate;
-    BOOL _useBigHitTarget;
-    BOOL _usesTintColor;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _buttonPadding;
+    int  _buttonType;
+    BOOL  _didInitialHighlightForTouch;
+    UIImageView * _disclosureImageView;
+    double  _imageTextPaddingInterior;
+    SKUIImageView * _imageView;
+    double  _imageYAdjustment;
+    SKUIItemOfferButton * _itemOfferButton;
+    <SKUIItemOfferButtonDelegate> * _itemOfferDelegate;
+    BOOL  _useBigHitTarget;
+    BOOL  _usesTintColor;
 }
 
-@property (nonatomic, readonly) float baselineOffset;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } bigHitInsets;
+@property (nonatomic, readonly) double baselineOffset;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } bigHitInsets;
 @property (nonatomic, copy) SKUIButtonBorderStyle *borderStyle;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } buttonPadding;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } buttonPadding;
 @property (nonatomic) int buttonType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) float firstBaselineOffset;
+@property (nonatomic, readonly) double firstBaselineOffset;
 @property (readonly) unsigned int hash;
-@property (nonatomic) float imageTextPaddingInterior;
+@property (nonatomic) double imageTextPaddingInterior;
 @property (nonatomic, readonly) SKUIImageView *imageView;
-@property (nonatomic) float imageYAdjustment;
+@property (nonatomic) double imageYAdjustment;
 @property (nonatomic) <SKUIItemOfferButtonDelegate> *itemOfferDelegate;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) SKUIAttributedStringLayout *titleLayout;
@@ -50,9 +50,9 @@
 @property (getter=isUsingItemOfferAppearance, nonatomic, readonly) BOOL usingItemOfferAppearance;
 
 + (int)buttonTypeForElement:(id)arg1;
-+ (struct CGSize { float x1; float x2; })sizeForTextSize:(struct CGSize { float x1; float x2; })arg1 buttonType:(int)arg2;
-+ (struct CGSize { float x1; float x2; })sizeForTextSize:(struct CGSize { float x1; float x2; })arg1 buttonType:(int)arg2 borderStyle:(id)arg3;
-+ (struct CGSize { float x1; float x2; })sizeForTextSize:(struct CGSize { float x1; float x2; })arg1 buttonType:(int)arg2 borderStyle:(id)arg3 interiorPadding:(float)arg4;
++ (struct CGSize { double x1; double x2; })sizeForTextSize:(struct CGSize { double x1; double x2; })arg1 buttonType:(int)arg2;
++ (struct CGSize { double x1; double x2; })sizeForTextSize:(struct CGSize { double x1; double x2; })arg1 buttonType:(int)arg2 borderStyle:(id)arg3;
++ (struct CGSize { double x1; double x2; })sizeForTextSize:(struct CGSize { double x1; double x2; })arg1 buttonType:(int)arg2 borderStyle:(id)arg3 interiorPadding:(float)arg4;
 + (BOOL)usesItemOfferAppearanceForButtonType:(int)arg1 itemState:(id)arg2;
 
 - (void).cxx_destruct;
@@ -69,25 +69,25 @@
 - (BOOL)_usesTintColor;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (float)baselineOffset;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })bigHitInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })bigHitInsets;
 - (id)borderStyle;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })buttonPadding;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })buttonPadding;
 - (int)buttonType;
 - (void)dealloc;
 - (float)firstBaselineOffset;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hitRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })hitRect;
 - (float)imageTextPaddingInterior;
 - (id)imageView;
 - (float)imageYAdjustment;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isUsingItemOfferAppearance;
 - (id)itemOfferDelegate;
 - (void)layoutSubviews;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (BOOL)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setBigHitInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setBigHitInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setBorderStyle:(id)arg1;
-- (void)setButtonPadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setButtonPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setButtonType:(int)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
@@ -99,7 +99,7 @@
 - (void)setUseBigHitTarget:(BOOL)arg1;
 - (void)setUsesTintColor:(BOOL)arg1;
 - (BOOL)setValuesUsingBuyButtonDescriptor:(id)arg1 itemState:(id)arg2 clientContext:(id)arg3 animated:(BOOL)arg4;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)tintColorDidChange;
 - (id)titleLayout;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

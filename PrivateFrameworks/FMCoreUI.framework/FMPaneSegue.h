@@ -3,7 +3,7 @@
  */
 
 @interface FMPaneSegue : UIStoryboardSegue {
-    BOOL _disableAnimation;
+    BOOL  _disableAnimation;
 }
 
 @property (nonatomic) BOOL disableAnimation;

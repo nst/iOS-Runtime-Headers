@@ -6,12 +6,12 @@
 
 - (unsigned int)getDestination:(struct CGPDFDictionary { }*)arg1;
 - (unsigned int)getNamedDestination:(struct CGPDFDictionary { }*)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })linkRectangle;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })linkRectangle;
 - (id)newBaseURL;
 - (unsigned int)pageNumber;
-- (BOOL)quadPoints:(struct CGPDFArray { }*)arg1 within:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (BOOL)quadPoints:(struct CGPDFArray { }*)arg1 within:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (BOOL)recognizeGestures;
-- (BOOL)shouldRecognizeTapOrPress:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)shouldRecognizeTapOrPress:(struct CGPoint { double x1; double x2; })arg1;
 - (id)url;
 
 @end

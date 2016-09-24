@@ -3,7 +3,7 @@
  */
 
 @interface CRKSetActiveControlGroupRequest : CATTaskRequest {
-    DMFControlGroupIdentifier *_groupIdentifier;
+    DMFControlGroupIdentifier * _groupIdentifier;
 }
 
 @property (nonatomic, copy) DMFControlGroupIdentifier *groupIdentifier;

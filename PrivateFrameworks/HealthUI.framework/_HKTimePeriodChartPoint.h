@@ -3,9 +3,9 @@
  */
 
 @interface _HKTimePeriodChartPoint : NSObject <HKChartPoint> {
-    id _userInfo;
-    NSDate *_xValue;
-    NSNumber *_yValue;
+    id  _userInfo;
+    NSDate * _xValue;
+    NSNumber * _yValue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

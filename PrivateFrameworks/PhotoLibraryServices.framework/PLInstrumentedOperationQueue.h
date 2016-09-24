@@ -3,7 +3,7 @@
  */
 
 @interface PLInstrumentedOperationQueue : NSOperationQueue {
-    id /* block */ _pl_operationCountChangedBlock;
+    id /* block */  _pl_operationCountChangedBlock;
 }
 
 @property (copy) id /* block */ pl_operationCountChangedBlock;

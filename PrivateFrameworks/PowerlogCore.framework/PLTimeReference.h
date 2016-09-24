@@ -3,10 +3,10 @@
  */
 
 @interface PLTimeReference : NSObject {
-    NSString *_entryDefinitionKey;
-    double _offset;
-    <PLTimeReferenceManager> *_timeManager;
-    int _timeReferenceType;
+    NSString * _entryDefinitionKey;
+    double  _offset;
+    <PLTimeReferenceManager> * _timeManager;
+    int  _timeReferenceType;
 }
 
 @property (retain) NSString *entryDefinitionKey;

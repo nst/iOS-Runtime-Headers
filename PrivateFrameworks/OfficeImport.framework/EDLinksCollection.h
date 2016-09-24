@@ -3,8 +3,8 @@
  */
 
 @interface EDLinksCollection : NSObject {
-    NSMutableArray *mLinks;
-    NSMutableArray *mReferences;
+    NSMutableArray * mLinks;
+    NSMutableArray * mReferences;
 }
 
 - (unsigned int)addLink:(id)arg1;

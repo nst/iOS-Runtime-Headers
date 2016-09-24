@@ -3,15 +3,15 @@
  */
 
 @interface GLKMeshBuffer : NSObject <MDLMeshBuffer> {
-    GLKMeshBufferAllocator *_allocator;
-    unsigned int _glBufferName;
-    unsigned int _length;
-    unsigned int _mapCount;
-    void *_mapPtr;
-    unsigned int _offset;
-    unsigned int _target;
-    unsigned int _type;
-    GLKMeshBufferZone *_zone;
+    GLKMeshBufferAllocator * _allocator;
+    unsigned int  _glBufferName;
+    unsigned int  _length;
+    unsigned int  _mapCount;
+    void * _mapPtr;
+    unsigned int  _offset;
+    unsigned int  _target;
+    unsigned int  _type;
+    GLKMeshBufferZone * _zone;
 }
 
 @property (nonatomic, readonly) GLKMeshBufferAllocator *allocator;

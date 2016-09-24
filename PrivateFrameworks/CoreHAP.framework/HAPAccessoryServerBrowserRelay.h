@@ -3,9 +3,9 @@
  */
 
 @interface HAPAccessoryServerBrowserRelay : HAPAccessoryServerBrowser {
-    <HAPAccessoryServerBrowserDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    NSMutableArray *_discoveredAccessoryServers;
+    <HAPAccessoryServerBrowserDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    NSMutableArray * _discoveredAccessoryServers;
 }
 
 @property (nonatomic) <HAPAccessoryServerBrowserDelegate> *delegate;

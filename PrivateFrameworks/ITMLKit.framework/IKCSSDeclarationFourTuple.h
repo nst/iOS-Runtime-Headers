@@ -3,7 +3,7 @@
  */
 
 @interface IKCSSDeclarationFourTuple : IKCSSDeclaration {
-    IKFourTuple *_fourTuple;
+    IKFourTuple * _fourTuple;
 }
 
 @property (nonatomic, retain) IKFourTuple *fourTuple;

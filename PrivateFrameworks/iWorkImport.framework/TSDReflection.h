@@ -3,15 +3,15 @@
  */
 
 @interface TSDReflection : NSObject <NSCopying, NSMutableCopying, TSDMixing> {
-    float mFadeAcceleration;
-    float mOpacity;
+    double  mFadeAcceleration;
+    double  mOpacity;
 }
 
-@property (nonatomic, readonly) float fadeAcceleration;
-@property (nonatomic, readonly) float opacity;
+@property (nonatomic, readonly) double fadeAcceleration;
+@property (nonatomic, readonly) double opacity;
 
 + (BOOL)canMixWithNilObjects;
-+ (id)instanceWithArchive:(const struct ReflectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; float x5; }*)arg1 unarchiver:(id)arg2;
++ (id)instanceWithArchive:(const struct ReflectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; }*)arg1 unarchiver:(id)arg2;
 + (id)reflection;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -19,7 +19,7 @@
 - (float)fadeAcceleration;
 - (unsigned int)hash;
 - (id)init;
-- (id)initWithArchive:(const struct ReflectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; float x5; }*)arg1 unarchiver:(id)arg2;
+- (id)initWithArchive:(const struct ReflectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithOpacity:(float)arg1;
 - (id)initWithOpacity:(float)arg1 fadeAcceleration:(float)arg2;
 - (BOOL)isEqual:(id)arg1;
@@ -27,6 +27,6 @@
 - (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (float)opacity;
-- (void)saveToArchive:(struct ReflectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; float x5; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct ReflectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; }*)arg1 archiver:(id)arg2;
 
 @end

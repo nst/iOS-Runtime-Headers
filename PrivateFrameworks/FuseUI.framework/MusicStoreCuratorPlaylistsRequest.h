@@ -2,24 +2,25 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicStoreCuratorPlaylistsRequest : MusicStoreModelRequest {
-    long long _curatorStoreAdamID;
-    unsigned int _requestType;
+@interface MusicStoreCuratorPlaylistsRequest : MPStoreModelRequest {
+    int  _curatorStoreAdamID;
+    MusicStoreCuratorPlaylistsResponse * _previousResponse;
 }
 
-@property long long curatorStoreAdamID;
+@property (nonatomic) int curatorStoreAdamID;
 @property (nonatomic, retain) MusicStoreCuratorPlaylistsResponse *previousResponse;
-@property (nonatomic, copy) id /* block */ responseHandler;
 
 + (id)allSupportedItemProperties;
 + (id)allSupportedSectionProperties;
 
-- (void)_produceIncrementalResponseWithLoadedItemMetadataResponse:(id)arg1 completion:(id /* block */)arg2;
-- (void)_produceInitialResponseWithLoadedItemMetadataResponse:(id)arg1 completion:(id /* block */)arg2;
-- (id)configurationForLoadingModelDataWithStoreBag:(id)arg1 error:(id*)arg2;
-- (long long)curatorStoreAdamID;
-- (id)init;
-- (void)produceResponseWithLoadedOutput:(id)arg1 completion:(id /* block */)arg2;
-- (void)setCuratorStoreAdamID:(long long)arg1;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (int)curatorStoreAdamID;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)newOperationWithResponseHandler:(id /* block */)arg1;
+- (id)previousResponse;
+- (void)setCuratorStoreAdamID:(int)arg1;
+- (void)setPreviousResponse:(id)arg1;
 
 @end

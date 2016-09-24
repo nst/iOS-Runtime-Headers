@@ -3,9 +3,9 @@
  */
 
 @interface CHDMarker : NSObject {
-    OADGraphicProperties *mGraphicProperties;
-    unsigned int mSize;
-    int mStyle;
+    OADGraphicProperties * mGraphicProperties;
+    unsigned int  mSize;
+    int  mStyle;
 }
 
 - (void)dealloc;

@@ -3,28 +3,28 @@
  */
 
 @interface EDFont : NSObject <EDImmutableObject, NSCopying> {
-    bool mBold;
-    bool mBoldOverridden;
-    int mCharSet;
-    EDColorReference *mColorReference;
-    bool mDoNotModify;
-    int mFamily;
-    double mHeightInTwips;
-    bool mHeightOverridden;
-    bool mItalic;
-    bool mItalicOverridden;
-    NSString *mName;
-    bool mNameOverridden;
-    bool mOutline;
-    EDResources *mResources;
-    int mScript;
-    bool mShadow;
-    bool mStrike;
-    bool mStrikeOverridden;
-    int mUnderline;
-    bool mUnderlineOverridden;
-    unsigned int mWeight;
-    bool mWeightOverridden;
+    bool  mBold;
+    bool  mBoldOverridden;
+    int  mCharSet;
+    EDColorReference * mColorReference;
+    bool  mDoNotModify;
+    int  mFamily;
+    double  mHeightInTwips;
+    bool  mHeightOverridden;
+    bool  mItalic;
+    bool  mItalicOverridden;
+    NSString * mName;
+    bool  mNameOverridden;
+    bool  mOutline;
+    EDResources * mResources;
+    int  mScript;
+    bool  mShadow;
+    bool  mStrike;
+    bool  mStrikeOverridden;
+    int  mUnderline;
+    bool  mUnderlineOverridden;
+    unsigned int  mWeight;
+    bool  mWeightOverridden;
 }
 
 @property (readonly, copy) NSString *debugDescription;

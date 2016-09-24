@@ -3,20 +3,20 @@
  */
 
 @interface SCNLevelOfDetail : NSObject <NSCopying, NSSecureCoding> {
-    SCNGeometry *_geometry;
-    struct __C3DLOD { } *_lod;
-    int _mode;
+    SCNGeometry * _geometry;
+    struct __C3DLOD { } * _lod;
+    int  _mode;
 }
 
 @property (readonly) SCNGeometry *geometry;
-@property (readonly) float screenSpaceRadius;
-@property (readonly) float worldSpaceDistance;
+@property (readonly) double screenSpaceRadius;
+@property (readonly) double worldSpaceDistance;
 
 + (id)levelOfDetailWithGeometry:(id)arg1 screenSpaceRadius:(float)arg2;
 + (id)levelOfDetailWithGeometry:(id)arg1 worldSpaceDistance:(float)arg2;
 + (BOOL)supportsSecureCoding;
 
-- (void*)__CFObject;
+- (const void*)__CFObject;
 - (void)_customEncodingOfSCNLevelOfDetail:(id)arg1;
 - (void)_didDecodeSCNLevelOfDetail:(id)arg1;
 - (void)_setupWithGeometry:(id)arg1 thresholdMode:(int)arg2 value:(float)arg3;

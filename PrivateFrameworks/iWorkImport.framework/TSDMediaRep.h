@@ -3,22 +3,22 @@
  */
 
 @interface TSDMediaRep : TSDStyledRep {
-    CALayer *mFrameMaskLayer;
-    TSDFrameRep *mFrameRep;
-    BOOL mIsZooming;
+    CALayer * mFrameMaskLayer;
+    TSDFrameRep * mFrameRep;
+    BOOL  mIsZooming;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } mLastPictureFrameLayerRect;
-    CAShapeLayer *mMaskLayer;
-    CAShapeLayer *mStrokeLayer;
-    CALayer *mTapToReplaceLayer;
+    }  mLastPictureFrameLayerRect;
+    CAShapeLayer * mMaskLayer;
+    CAShapeLayer * mStrokeLayer;
+    CALayer * mTapToReplaceLayer;
 }
 
 @property (nonatomic, readonly) TSDMediaInfo *mediaInfo;

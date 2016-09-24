@@ -3,17 +3,15 @@
  */
 
 @interface HDDemoData : NSObject {
-    NSString *_baselineDemoDataPath;
-    NSString *_demoDataPath;
-    NSFileManager *_fileManager;
+    NSString * _demoDataPath;
+    NSFileManager * _fileManager;
 }
 
 + (id)demoDataDirectory;
 
 - (void).cxx_destruct;
-- (BOOL)_baselineDataDemoAvailable;
-- (BOOL)_createAndPopulateDemoDataDirectoryIfNeeded;
 - (id)_directoryPath;
-- (id)initWithProfile:(id)arg1;
+- (BOOL)_resetDemoDataDB;
+- (id)initWithProfileType:(int)arg1;
 
 @end

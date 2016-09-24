@@ -3,8 +3,8 @@
  */
 
 @interface ICQViewController : UIViewController <ICQPageDelegate> {
-    <ICQPageDelegate> *_delegate;
-    _ICQPageSpecification *_pageSpecification;
+    <ICQPageDelegate> * _delegate;
+    _ICQPageSpecification * _pageSpecification;
 }
 
 @property (readonly, copy) NSString *debugDescription;

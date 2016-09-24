@@ -3,7 +3,7 @@
  */
 
 @interface MRRegisterHIDDeviceMessage : MRProtocolMessage {
-    MRVirtualTouchDeviceDescriptor *_deviceDescriptor;
+    MRVirtualTouchDeviceDescriptor * _deviceDescriptor;
 }
 
 @property (nonatomic, readonly, copy) MRVirtualTouchDeviceDescriptor *deviceDescriptor;

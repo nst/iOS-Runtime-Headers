@@ -3,8 +3,8 @@
  */
 
 @interface ISAuthenticationChallengeOperation : ISDialogOperation {
-    ISAuthenticationChallenge *_challenge;
-    NSURLCredential *_credential;
+    ISAuthenticationChallenge * _challenge;
+    NSURLCredential * _credential;
 }
 
 @property (retain) ISAuthenticationChallenge *challenge;

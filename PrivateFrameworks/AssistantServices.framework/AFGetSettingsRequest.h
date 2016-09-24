@@ -3,7 +3,7 @@
  */
 
 @interface AFGetSettingsRequest : AFSiriRequest {
-    NSArray *_settings;
+    NSArray * _settings;
 }
 
 @property (nonatomic, copy) NSArray *settings;

@@ -3,8 +3,8 @@
  */
 
 @interface OCMapper : NSObject {
-    OCCancel *mCancel;
-    OITSUTemporaryDirectory *mTemporaryDirectoryObject;
+    OCCancel * mCancel;
+    OITSUTemporaryDirectory * mTemporaryDirectoryObject;
 }
 
 + (id)mapperForCurrentThread;

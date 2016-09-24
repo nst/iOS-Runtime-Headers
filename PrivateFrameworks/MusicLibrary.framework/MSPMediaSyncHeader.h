@@ -6,9 +6,9 @@
     struct { 
         unsigned int syncType : 1; 
         unsigned int totalPackages : 1; 
-    } _has;
-    int _syncType;
-    int _totalPackages;
+    }  _has;
+    int  _syncType;
+    int  _totalPackages;
 }
 
 @property (nonatomic) BOOL hasSyncType;
@@ -16,6 +16,7 @@
 @property (nonatomic) int syncType;
 @property (nonatomic) int totalPackages;
 
+- (int)StringAsSyncType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -31,6 +32,7 @@
 - (void)setSyncType:(int)arg1;
 - (void)setTotalPackages:(int)arg1;
 - (int)syncType;
+- (id)syncTypeAsString:(int)arg1;
 - (int)totalPackages;
 - (void)writeTo:(id)arg1;
 

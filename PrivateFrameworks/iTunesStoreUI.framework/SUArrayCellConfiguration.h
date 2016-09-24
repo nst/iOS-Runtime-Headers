@@ -3,19 +3,19 @@
  */
 
 @interface SUArrayCellConfiguration : SUCellConfiguration {
-    struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } *_imageFrames;
-    id *_images;
-    unsigned int _numberOfImages;
-    unsigned int _numberOfStrings;
-    id *_selectedImages;
-    struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } *_stringFrames;
-    id *_strings;
+    struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } * _imageFrames;
+    id * _images;
+    unsigned int  _numberOfImages;
+    unsigned int  _numberOfStrings;
+    id * _selectedImages;
+    struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } * _stringFrames;
+    id * _strings;
 }
 
 - (id)_accessibilityStringsArrayPointer;
 - (void)dealloc;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForImageAtIndex:(unsigned int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForLabelAtIndex:(unsigned int)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForImageAtIndex:(unsigned int)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForLabelAtIndex:(unsigned int)arg1;
 - (id)imageAtIndex:(unsigned int)arg1 withModifiers:(unsigned int)arg2;
 - (id)initWithStringCount:(unsigned int)arg1 imageCount:(unsigned int)arg2;
 - (unsigned int)numberOfImages;
@@ -24,7 +24,7 @@
 - (void)reloadImages;
 - (void)reloadLayoutInformation;
 - (void)reloadStrings;
-- (void)setLayoutSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setLayoutSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)stringForLabelAtIndex:(unsigned int)arg1;
 
 @end

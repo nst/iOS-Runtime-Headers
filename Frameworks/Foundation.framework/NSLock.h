@@ -3,7 +3,7 @@
  */
 
 @interface NSLock : NSObject <NSLocking> {
-    void *_priv;
+    void * _priv;
 }
 
 @property (copy) NSString *name;
@@ -14,7 +14,6 @@
 
 - (void)dealloc;
 - (id)description;
-- (void)finalize;
 - (id)init;
 - (void)lock;
 - (BOOL)lockBeforeDate:(id)arg1;

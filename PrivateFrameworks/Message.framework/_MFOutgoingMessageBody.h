@@ -3,10 +3,10 @@
  */
 
 @interface _MFOutgoingMessageBody : MFMessageBody <MFCollectingDataConsumer> {
-    MFBufferedDataConsumer *_consumer;
-    unsigned long _count;
-    BOOL _lastNewLine;
-    NSData *_rawData;
+    MFBufferedDataConsumer * _consumer;
+    unsigned long  _count;
+    BOOL  _lastNewLine;
+    NSData * _rawData;
 }
 
 @property (readonly, copy) NSString *debugDescription;

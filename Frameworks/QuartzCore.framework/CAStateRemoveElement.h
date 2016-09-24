@@ -3,8 +3,8 @@
  */
 
 @interface CAStateRemoveElement : CAStateElement {
-    NSString *_keyPath;
-    id _object;
+    NSString * _keyPath;
+    id  _object;
 }
 
 @property (nonatomic, copy) NSString *keyPath;

@@ -3,12 +3,12 @@
  */
 
 @interface PLCommentsFontCache : NSObject {
-    UIFontDescriptor *__bodyFontDescriptor;
-    UIFontDescriptor *__emphasizedBodyFontDescriptor;
-    UIFontDescriptor *__emphasizedShortCaptionFontDescriptor;
-    UIFontDescriptor *__shortBodyFontDescriptor;
-    UIFontDescriptor *__shortCaptionFontDescriptor;
-    UIFontDescriptor *__shortSubheadlineFontDescriptor;
+    UIFontDescriptor * __bodyFontDescriptor;
+    UIFontDescriptor * __emphasizedBodyFontDescriptor;
+    UIFontDescriptor * __emphasizedShortCaptionFontDescriptor;
+    UIFontDescriptor * __shortBodyFontDescriptor;
+    UIFontDescriptor * __shortCaptionFontDescriptor;
+    UIFontDescriptor * __shortSubheadlineFontDescriptor;
 }
 
 @property (nonatomic, readonly) UIFont *commentAttributionDateFont;

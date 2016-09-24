@@ -3,14 +3,14 @@
  */
 
 @interface STCity : NSObject <NSSecureCoding> {
-    NSNumber *_alCityID;
-    NSString *_countryName;
-    NSNumber *_latitude;
-    NSNumber *_longitude;
-    NSString *_name;
-    NSString *_timeZone;
-    NSString *_unlocalizedCountryName;
-    NSString *_unlocalizedName;
+    NSNumber * _alCityID;
+    NSString * _countryName;
+    NSNumber * _latitude;
+    NSNumber * _longitude;
+    NSString * _name;
+    NSString * _timeZone;
+    NSString * _unlocalizedCountryName;
+    NSString * _unlocalizedName;
 }
 
 + (BOOL)supportsSecureCoding;

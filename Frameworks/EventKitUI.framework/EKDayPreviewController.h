@@ -3,23 +3,25 @@
  */
 
 @interface EKDayPreviewController : UIViewController <EKDayViewDataSource, EKEditItemViewControllerProtocol> {
-    NSArray *_cachedTimedEvents;
-    NSDate *_date;
-    EKDayView *_dayView;
-    EKEvent *_event;
-    BOOL _firstshow;
-    BOOL _hasOverriddenEventDates;
-    BOOL _hidesAllDayEvents;
-    UIViewController *_hostingViewController;
-    BOOL _isAnimating;
-    BOOL _isInline;
-    NSDate *_originalEventEndDate;
-    NSDate *_originalEventStartDate;
-    NSDate *_overriddenEventEndDate;
-    NSDate *_overriddenEventStartDate;
-    BOOL _respectsSelectedCalendarsFilter;
-    UIView *_roundedView;
-    BOOL _userHasTappedToExpand;
+    NSArray * _cachedTimedEvents;
+    NSDate * _date;
+    EKDayView * _dayView;
+    EKEvent * _event;
+    BOOL  _firstshow;
+    BOOL  _hasOverriddenEventDates;
+    BOOL  _hasOverriddenStatus;
+    BOOL  _hidesAllDayEvents;
+    UIViewController * _hostingViewController;
+    BOOL  _isAnimating;
+    NSDate * _originalEventEndDate;
+    NSDate * _originalEventStartDate;
+    NSDate * _overriddenEventEndDate;
+    NSDate * _overriddenEventStartDate;
+    int  _overriddenParticipantStatus;
+    BOOL  _respectsSelectedCalendarsFilter;
+    UIView * _roundedView;
+    unsigned int  _style;
+    BOOL  _userHasTappedToExpand;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -29,10 +31,12 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL hidesAllDayEvents;
 @property (nonatomic) UIViewController *hostingViewController;
-@property (nonatomic) BOOL isInline;
+@property (nonatomic) int overriddenParticipantStatus;
 @property (nonatomic) BOOL presentModally;
 @property (nonatomic) BOOL respectsSelectedCalendarsFilter;
+@property (nonatomic) unsigned int style;
 @property (readonly) Class superclass;
+@property (nonatomic) BOOL useCustomBackButton;
 
 - (void).cxx_destruct;
 - (id)_anchorEvent;
@@ -51,15 +55,17 @@
 - (BOOL)hidesAllDayEvents;
 - (id)hostingViewController;
 - (id)initWithDate:(id)arg1 event:(id)arg2 overriddenEventStartDate:(id)arg3 overriddenEventEndDate:(id)arg4;
-- (BOOL)isInline;
 - (void)loadView;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (int)overriddenParticipantStatus;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)renderPressHighlight:(BOOL)arg1;
 - (BOOL)respectsSelectedCalendarsFilter;
 - (void)setHidesAllDayEvents:(BOOL)arg1;
 - (void)setHostingViewController:(id)arg1;
-- (void)setIsInline:(BOOL)arg1;
+- (void)setOverriddenParticipantStatus:(int)arg1;
 - (void)setRespectsSelectedCalendarsFilter:(BOOL)arg1;
+- (void)setStyle:(unsigned int)arg1;
+- (unsigned int)style;
 - (unsigned int)supportedInterfaceOrientations;
 - (void)toggleExpandedState;
 - (void)viewDidLoad;

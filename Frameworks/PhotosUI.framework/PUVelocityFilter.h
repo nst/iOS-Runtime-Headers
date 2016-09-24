@@ -3,13 +3,13 @@
  */
 
 @interface PUVelocityFilter : PUDynamicValueFilter {
-    double __minimumSampleInterval;
-    double __previousVelocityWeight;
-    double _filteredVelocity;
-    double _lastTime;
-    double _lastValue;
-    double _previousVelocity;
-    double _velocity;
+    double  __minimumSampleInterval;
+    double  __previousVelocityWeight;
+    double  _filteredVelocity;
+    double  _lastTime;
+    double  _lastValue;
+    double  _previousVelocity;
+    double  _velocity;
 }
 
 @property (setter=_setMinimumSampleInterval:, nonatomic) double _minimumSampleInterval;

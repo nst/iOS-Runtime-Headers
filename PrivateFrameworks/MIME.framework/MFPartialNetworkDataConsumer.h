@@ -3,10 +3,10 @@
  */
 
 @interface MFPartialNetworkDataConsumer : NSObject <MFDataConsumer> {
-    unsigned int _length;
-    <MFGuaranteedCollectingDataConsumer> *_rawDataConsumer;
-    unsigned int _seenNetworkLineEndings;
-    NSData *_strippedData;
+    unsigned int  _length;
+    <MFGuaranteedCollectingDataConsumer> * _rawDataConsumer;
+    unsigned int  _seenNetworkLineEndings;
+    NSData * _strippedData;
 }
 
 @property (readonly, copy) NSString *debugDescription;

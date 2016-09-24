@@ -3,10 +3,10 @@
  */
 
 @interface AUHALOutputUnit : AUAudioUnitV2Bridge {
-    id /* block */ _inputHandler;
-    bool _inputWasEnabled;
-    id /* block */ _outputProvider;
-    bool _outputWasEnabled;
+    id /* block */  _inputHandler;
+    bool  _inputWasEnabled;
+    id /* block */  _outputProvider;
+    bool  _outputWasEnabled;
 }
 
 @property (getter=isInputEnabled, nonatomic) BOOL inputEnabled;

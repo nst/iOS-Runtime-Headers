@@ -3,16 +3,22 @@
  */
 
 @interface CKContainerSetupInfo : NSObject <NSSecureCoding> {
-    CKAccountInfo *_accountInfoOverride;
-    BOOL _captureResponseHTTPHeaders;
-    CKContainerID *_containerID;
-    NSString *_sourceApplicationBundleIdentifier;
+    CKAccountInfo * _accountInfoOverride;
+    BOOL  _captureResponseHTTPHeaders;
+    CKContainerID * _containerID;
+    NSDictionary * _fakeEntitlements;
+    BOOL  _holdAllOperations;
+    NSString * _sourceApplicationBundleIdentifier;
+    BOOL  _wantsSiloedContext;
 }
 
 @property (nonatomic, retain) CKAccountInfo *accountInfoOverride;
 @property (nonatomic) BOOL captureResponseHTTPHeaders;
 @property (nonatomic, retain) CKContainerID *containerID;
+@property (nonatomic, retain) NSDictionary *fakeEntitlements;
+@property (nonatomic) BOOL holdAllOperations;
 @property (nonatomic, retain) NSString *sourceApplicationBundleIdentifier;
+@property (nonatomic) BOOL wantsSiloedContext;
 
 + (BOOL)supportsSecureCoding;
 
@@ -21,11 +27,17 @@
 - (BOOL)captureResponseHTTPHeaders;
 - (id)containerID;
 - (void)encodeWithCoder:(id)arg1;
+- (id)fakeEntitlements;
+- (BOOL)holdAllOperations;
 - (id)initWithCoder:(id)arg1;
 - (void)setAccountInfoOverride:(id)arg1;
 - (void)setCaptureResponseHTTPHeaders:(BOOL)arg1;
 - (void)setContainerID:(id)arg1;
+- (void)setFakeEntitlements:(id)arg1;
+- (void)setHoldAllOperations:(BOOL)arg1;
 - (void)setSourceApplicationBundleIdentifier:(id)arg1;
+- (void)setWantsSiloedContext:(BOOL)arg1;
 - (id)sourceApplicationBundleIdentifier;
+- (BOOL)wantsSiloedContext;
 
 @end

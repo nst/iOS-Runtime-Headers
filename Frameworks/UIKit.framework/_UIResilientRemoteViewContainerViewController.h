@@ -3,13 +3,13 @@
  */
 
 @interface _UIResilientRemoteViewContainerViewController : UIViewController {
-    UIViewController *_containedViewController;
-    BOOL _delayingDisplayOfRemoteView;
-    UIViewController *_errorViewController;
-    NSExtension *_extension;
-    <NSCopying> *_extensionRequestIdentifier;
-    UIViewController *_remoteViewController;
-    _UIWaitingForRemoteViewContainerViewController *_waitingController;
+    UIViewController * _containedViewController;
+    BOOL  _delayingDisplayOfRemoteView;
+    UIViewController * _errorViewController;
+    NSExtension * _extension;
+    <NSCopying> * _extensionRequestIdentifier;
+    UIViewController * _remoteViewController;
+    _UIWaitingForRemoteViewContainerViewController * _waitingController;
 }
 
 @property (nonatomic, retain) UIViewController *containedViewController;
@@ -34,6 +34,7 @@
 - (id)extension;
 - (id)extensionRequestIdentifier;
 - (id)initWithExtension:(id)arg1 completion:(id /* block */)arg2;
+- (void)invalidate;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (id)remoteViewController;
 - (void)setContainedViewController:(id)arg1;

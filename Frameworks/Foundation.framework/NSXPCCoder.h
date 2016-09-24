@@ -3,12 +3,14 @@
  */
 
 @interface NSXPCCoder : NSCoder {
-    id _reserved1;
-    <NSObject> *_userInfo;
+    id  _reserved1;
+    <NSObject> * _userInfo;
 }
 
+@property (readonly) NSXPCConnection *connection;
 @property (retain) <NSObject> *userInfo;
 
+- (id)connection;
 - (void)dealloc;
 - (id)decodeXPCObjectForKey:(id)arg1;
 - (id)decodeXPCObjectOfType:(struct _xpc_type_s { }*)arg1 forKey:(id)arg2;

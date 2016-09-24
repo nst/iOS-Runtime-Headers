@@ -3,13 +3,13 @@
  */
 
 @interface AITXPCConnection : NSObject {
-    NSString *_bundleId;
-    NSObject<OS_xpc_object> *_connection;
-    NSObject<OS_xpc_object> *_currentMessage;
-    <AITXPCConnectionDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    NSObject<OS_dispatch_queue> *_internalQueue;
-    int _pid;
+    NSString * _bundleId;
+    NSObject<OS_xpc_object> * _connection;
+    NSObject<OS_xpc_object> * _currentMessage;
+    <AITXPCConnectionDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    NSObject<OS_dispatch_queue> * _internalQueue;
+    int  _pid;
 }
 
 @property (nonatomic, readonly) BOOL available;

@@ -3,9 +3,9 @@
  */
 
 @interface IKCSSMediaQuery : NSObject {
-    BOOL _evaluated;
-    BOOL _evaluationResult;
-    IKCSSMediaQueryList *_queryList;
+    BOOL  _evaluated;
+    BOOL  _evaluationResult;
+    IKCSSMediaQueryList * _queryList;
 }
 
 @property (readonly) BOOL evaluated;

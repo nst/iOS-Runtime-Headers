@@ -3,49 +3,33 @@
  */
 
 @interface PSUITCCAccessController : PSListController {
-    NSString *_explanation;
-    NSString *_footer;
-    NSString *_header;
-    HMHomeManager *_homeManager;
-    BOOL _iCloudURLIsReachable;
-    struct __SCNetworkReachability { } *_reachability;
-    NSString *_serviceKey;
+    NSString * _explanation;
+    NSString * _footer;
+    NSString * _header;
+    NSString * _serviceKey;
 }
 
 @property (nonatomic, copy) NSString *explanation;
 @property (nonatomic, copy) NSString *footer;
 @property (nonatomic, copy) NSString *header;
-@property (nonatomic, retain) HMHomeManager *homeManager;
-@property (nonatomic) BOOL iCloudURLIsReachable;
-@property (nonatomic) struct __SCNetworkReachability { }*reachability;
 @property (nonatomic, readonly) NSString *serviceKey;
 
 + (BOOL)isServiceRestricted:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_confirmResetWillowData;
-- (void)_resetWillowData;
 - (id)accesssForSpecifier:(id)arg1;
-- (void)dealloc;
 - (id)explanation;
 - (id)footer;
 - (id)header;
-- (id)homeManager;
-- (BOOL)iCloudURLIsReachable;
 - (id)init;
-- (struct __SCNetworkReachability { }*)reachability;
 - (id)serviceKey;
 - (void)setAccess:(id)arg1 forSpecifier:(id)arg2;
 - (void)setExplanation:(id)arg1;
 - (void)setFooter:(id)arg1;
 - (void)setHeader:(id)arg1;
-- (void)setHomeManager:(id)arg1;
-- (void)setICloudURLIsReachable:(BOOL)arg1;
-- (void)setReachability:(struct __SCNetworkReachability { }*)arg1;
 - (void)setSpecifier:(id)arg1;
 - (id)specifiers;
 - (void)updateSpecifiersForImposedSettings;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

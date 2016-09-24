@@ -3,14 +3,14 @@
  */
 
 @interface EKICSPreviewModel : NSObject {
-    unsigned int _actionsState;
-    NSData *_data;
-    EKEventStore *_destStore;
-    NSMutableArray *_importedEvents;
-    unsigned int _options;
-    BOOL _shouldUpdate;
-    EKEventStore *_tempStore;
-    NSMutableArray *_unimportedEvents;
+    unsigned int  _actionsState;
+    NSData * _data;
+    EKEventStore * _destStore;
+    NSMutableArray * _importedEvents;
+    unsigned int  _options;
+    BOOL  _shouldUpdate;
+    EKEventStore * _tempStore;
+    NSMutableArray * _unimportedEvents;
 }
 
 @property (nonatomic, readonly) unsigned int actionsState;

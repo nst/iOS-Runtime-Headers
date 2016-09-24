@@ -3,7 +3,7 @@
  */
 
 @interface MSSearch : MSXPCService <MSDSearchResultsProtocol> {
-    <MSSearchDelegate> *_delegate;
+    <MSSearchDelegate> * _delegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

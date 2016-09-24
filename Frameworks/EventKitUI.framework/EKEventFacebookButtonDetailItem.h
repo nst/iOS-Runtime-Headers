@@ -3,7 +3,7 @@
  */
 
 @interface EKEventFacebookButtonDetailItem : EKEventDetailItem {
-    UITableViewCell *_cell;
+    UITableViewCell * _cell;
 }
 
 - (void).cxx_destruct;

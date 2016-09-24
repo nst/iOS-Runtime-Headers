@@ -3,7 +3,7 @@
  */
 
 @interface PUSlideshowContextRegistry : NSObject {
-    NSMutableArray *__displayContexts;
+    NSMutableArray * __displayContexts;
 }
 
 @property (setter=_setDisplayContexts:, nonatomic, retain) NSMutableArray *_displayContexts;

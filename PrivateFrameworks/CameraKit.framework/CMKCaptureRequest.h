@@ -3,8 +3,8 @@
  */
 
 @interface CMKCaptureRequest : NSObject <NSCopying, NSMutableCopying> {
-    NSMutableDictionary *__parameterStorage;
-    int _type;
+    NSMutableDictionary * __parameterStorage;
+    int  _type;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *_customParameterStorage;

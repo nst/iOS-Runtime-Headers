@@ -3,13 +3,13 @@
  */
 
 @interface GKHostedViewController : UIViewController {
-    GKGame *_game;
-    BOOL _gkIsDisappearing;
-    BOOL _isRequestingRemoteViewController;
-    BOOL _presentingRemoteViewController;
-    GKRemoteViewController *_remoteViewController;
-    id /* block */ _remoteViewReadyHandler;
-    BOOL _shouldPresentRemoteViewController;
+    GKGame * _game;
+    BOOL  _gkIsDisappearing;
+    BOOL  _isRequestingRemoteViewController;
+    BOOL  _presentingRemoteViewController;
+    GKRemoteViewController * _remoteViewController;
+    id /* block */  _remoteViewReadyHandler;
+    BOOL  _shouldPresentRemoteViewController;
 }
 
 @property (nonatomic, retain) GKGame *game;

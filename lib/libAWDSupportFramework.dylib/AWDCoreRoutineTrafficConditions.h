@@ -9,12 +9,12 @@
         unsigned int trafficDensity : 1; 
         unsigned int predictedLocationOfInterest : 1; 
         unsigned int vehicleConnected : 1; 
-    } _has;
-    int _precisionRecall;
-    BOOL _predictedLocationOfInterest;
-    unsigned long long _timestamp;
-    int _trafficDensity;
-    BOOL _vehicleConnected;
+    }  _has;
+    int  _precisionRecall;
+    BOOL  _predictedLocationOfInterest;
+    unsigned long long  _timestamp;
+    int  _trafficDensity;
+    BOOL  _vehicleConnected;
 }
 
 @property (nonatomic) BOOL hasPrecisionRecall;

@@ -3,12 +3,12 @@
  */
 
 @interface SLRequestMultiPartInputStream : NSInputStream {
-    unsigned int _bytesReadInState;
-    int _currentState;
-    SLRequestMultiPart *_multiPart;
-    NSData *_srcData;
-    unsigned int _streamStatus;
-    unsigned int _totalBytesRead;
+    unsigned int  _bytesReadInState;
+    int  _currentState;
+    SLRequestMultiPart * _multiPart;
+    NSData * _srcData;
+    unsigned int  _streamStatus;
+    unsigned int  _totalBytesRead;
 }
 
 - (void).cxx_destruct;

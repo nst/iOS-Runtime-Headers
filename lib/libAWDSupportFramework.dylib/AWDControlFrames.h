@@ -3,12 +3,12 @@
  */
 
 @interface AWDControlFrames : PBCodable <NSCopying> {
-    unsigned long long _ack;
-    unsigned long long _blockAck;
-    unsigned long long _blockAckRequest;
-    unsigned long long _cFend;
-    unsigned long long _cFendCFack;
-    unsigned long long _cts;
+    unsigned long long  _ack;
+    unsigned long long  _blockAck;
+    unsigned long long  _blockAckRequest;
+    unsigned long long  _cFend;
+    unsigned long long  _cFendCFack;
+    unsigned long long  _cts;
     struct { 
         unsigned int ack : 1; 
         unsigned int blockAck : 1; 
@@ -18,9 +18,9 @@
         unsigned int cts : 1; 
         unsigned int psPoll : 1; 
         unsigned int rts : 1; 
-    } _has;
-    unsigned long long _psPoll;
-    unsigned long long _rts;
+    }  _has;
+    unsigned long long  _psPoll;
+    unsigned long long  _rts;
 }
 
 @property (nonatomic) unsigned long long ack;

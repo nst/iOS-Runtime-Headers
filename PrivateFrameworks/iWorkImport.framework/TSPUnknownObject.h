@@ -6,11 +6,11 @@
     struct shared_ptr<TSP::ArchiveInfo> { 
         struct ArchiveInfo {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _archiveInfo;
-    NSArray *_datas;
-    NSObject<OS_dispatch_data> *_messagesData;
-    TSPLazyReferenceArray *_objects;
-    NSString *_packageLocator;
+    }  _archiveInfo;
+    NSArray * _datas;
+    NSObject<OS_dispatch_data> * _messagesData;
+    TSPLazyReferenceArray * _objects;
+    NSString * _packageLocator;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_data> *serializedData;

@@ -3,7 +3,7 @@
  */
 
 @interface RTScenarioTriggerStayedLate : RTScenarioTrigger {
-    double _secondsLate;
+    double  _secondsLate;
 }
 
 @property (nonatomic, readonly) double secondsLate;

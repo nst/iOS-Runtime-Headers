@@ -3,17 +3,18 @@
  */
 
 @interface GEOStepFeedback : PBCodable <NSCopying> {
-    BOOL _completedStep;
-    double _completionTimeStamp;
+    BOOL  _completedStep;
+    double  _completionTimeStamp;
     struct { 
         unsigned int completionTimeStamp : 1; 
         unsigned int routeIndex : 1; 
         unsigned int stepID : 1; 
         unsigned int completedStep : 1; 
-    } _has;
-    NSData *_routeID;
-    unsigned int _routeIndex;
-    unsigned int _stepID;
+    }  _has;
+    NSMutableArray * _instructionErrors;
+    NSData * _routeID;
+    unsigned int  _routeIndex;
+    unsigned int  _stepID;
 }
 
 @property (nonatomic) BOOL completedStep;
@@ -23,10 +24,15 @@
 @property (nonatomic, readonly) BOOL hasRouteID;
 @property (nonatomic) BOOL hasRouteIndex;
 @property (nonatomic) BOOL hasStepID;
+@property (nonatomic, retain) NSMutableArray *instructionErrors;
 @property (nonatomic, retain) NSData *routeID;
 @property (nonatomic) unsigned int routeIndex;
 @property (nonatomic) unsigned int stepID;
 
++ (Class)instructionErrorType;
+
+- (void)addInstructionError:(id)arg1;
+- (void)clearInstructionErrors;
 - (BOOL)completedStep;
 - (double)completionTimeStamp;
 - (void)copyTo:(id)arg1;
@@ -40,6 +46,9 @@
 - (BOOL)hasRouteIndex;
 - (BOOL)hasStepID;
 - (unsigned int)hash;
+- (id)instructionErrorAtIndex:(unsigned int)arg1;
+- (id)instructionErrors;
+- (unsigned int)instructionErrorsCount;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
@@ -51,6 +60,7 @@
 - (void)setHasCompletionTimeStamp:(BOOL)arg1;
 - (void)setHasRouteIndex:(BOOL)arg1;
 - (void)setHasStepID:(BOOL)arg1;
+- (void)setInstructionErrors:(id)arg1;
 - (void)setRouteID:(id)arg1;
 - (void)setRouteIndex:(unsigned int)arg1;
 - (void)setStepID:(unsigned int)arg1;

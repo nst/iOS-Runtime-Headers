@@ -3,9 +3,9 @@
  */
 
 @interface _UIInteractiveAnimationRecord : NSObject <UIInteractionProgressObserver> {
-    NSUUID *_UUID;
-    BOOL _completed;
-    NSMapTable *_pausedTimes;
+    NSUUID * _UUID;
+    BOOL  _completed;
+    NSMapTable * _pausedTimes;
 }
 
 @property (nonatomic, readonly) NSUUID *UUID;

@@ -3,7 +3,7 @@
  */
 
 @interface SSVMediaSocialPostRequest : SSRequest <SSXPCCoding> {
-    SSVMediaSocialPostDescription *_postDescription;
+    SSVMediaSocialPostDescription * _postDescription;
 }
 
 @property (readonly, copy) NSString *debugDescription;

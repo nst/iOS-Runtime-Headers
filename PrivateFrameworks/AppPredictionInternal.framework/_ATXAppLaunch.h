@@ -3,10 +3,10 @@
  */
 
 @interface _ATXAppLaunch : NSObject {
-    NSString *_bundleId;
-    NSDate *_date;
-    NSString *_reason;
-    NSTimeZone *_timeZone;
+    NSString * _bundleId;
+    NSDate * _date;
+    NSString * _reason;
+    NSTimeZone * _timeZone;
 }
 
 @property (nonatomic, readonly) NSString *bundleId;

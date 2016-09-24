@@ -3,11 +3,11 @@
  */
 
 @interface CBAdaptationClient : NSObject {
-    int _mode;
-    BOOL _modeSet;
-    BOOL _supported;
-    BrightnessSystemClient *bsc;
-    BOOL ownsClient;
+    int  _mode;
+    BOOL  _modeSet;
+    BOOL  _supported;
+    BrightnessSystemClient * bsc;
+    BOOL  ownsClient;
 }
 
 @property BOOL supported;

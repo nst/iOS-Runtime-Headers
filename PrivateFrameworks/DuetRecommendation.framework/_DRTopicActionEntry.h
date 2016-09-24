@@ -3,9 +3,9 @@
  */
 
 @interface _DRTopicActionEntry : NSObject {
-    unsigned int _action;
-    NSString *_topic;
-    NSDate *_when;
+    unsigned int  _action;
+    NSString * _topic;
+    NSDate * _when;
 }
 
 @property (readonly) unsigned int action;

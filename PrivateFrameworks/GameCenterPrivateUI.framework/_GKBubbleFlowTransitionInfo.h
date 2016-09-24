@@ -3,14 +3,14 @@
  */
 
 @interface _GKBubbleFlowTransitionInfo : NSObject <NSCopying> {
-    UIViewController *_containingViewController;
-    double _crossfadeDuration;
-    BOOL _disableInteractionDuringTransition;
-    double _duration;
-    double _fadeInDuration;
-    double _fadeOutDuration;
-    BOOL _fadedOutRealFromView;
-    GKBubbleSet *_fromBubbles;
+    UIViewController * _containingViewController;
+    double  _crossfadeDuration;
+    BOOL  _disableInteractionDuringTransition;
+    double  _duration;
+    double  _fadeInDuration;
+    double  _fadeOutDuration;
+    BOOL  _fadedOutRealFromView;
+    GKBubbleSet * _fromBubbles;
     struct { 
         unsigned int respondsTo_bubbleAnimatorForTransitionFromViewController : 1; 
         unsigned int respondsTo_bubbleAnimatorForTransitionToViewController : 1; 
@@ -39,21 +39,21 @@
         unsigned int respondsTo_readyToAppearWithBubbleFlow : 1; 
         unsigned int respondsTo_delayDisappearingWithBubbleFlowUntil : 1; 
         unsigned int respondsTo_delayAppearingWithBubbleFlowUntil : 1; 
-    } _fromFlags;
-    int _fromFocusBubbleType;
-    GKBubblePathAnimator *_fromPathAnimator;
-    _GKBubbleFlowPathTransitionInfo *_fromPathTransitionInfo;
-    UIViewController<GKBubbleFlowableViewController> *_fromVC;
-    UIViewController *_fromWrapperVC;
-    GKBubblePathAnimator *_onlyPathAnimator;
-    _GKBubbleFlowPathTransitionInfo *_onlyPathTransitionInfo;
-    double _relativeCrossfadeDuration;
-    double _relativeDuration;
-    double _relativeFadeInDuration;
-    double _relativeFadeOutDuration;
-    double _relativeStartTime;
-    double _startTime;
-    GKBubbleSet *_toBubbles;
+    }  _fromFlags;
+    int  _fromFocusBubbleType;
+    GKBubblePathAnimator * _fromPathAnimator;
+    _GKBubbleFlowPathTransitionInfo * _fromPathTransitionInfo;
+    UIViewController<GKBubbleFlowableViewController> * _fromVC;
+    UIViewController * _fromWrapperVC;
+    GKBubblePathAnimator * _onlyPathAnimator;
+    _GKBubbleFlowPathTransitionInfo * _onlyPathTransitionInfo;
+    double  _relativeCrossfadeDuration;
+    double  _relativeDuration;
+    double  _relativeFadeInDuration;
+    double  _relativeFadeOutDuration;
+    double  _relativeStartTime;
+    double  _startTime;
+    GKBubbleSet * _toBubbles;
     struct { 
         unsigned int respondsTo_bubbleAnimatorForTransitionFromViewController : 1; 
         unsigned int respondsTo_bubbleAnimatorForTransitionToViewController : 1; 
@@ -82,14 +82,14 @@
         unsigned int respondsTo_readyToAppearWithBubbleFlow : 1; 
         unsigned int respondsTo_delayDisappearingWithBubbleFlowUntil : 1; 
         unsigned int respondsTo_delayAppearingWithBubbleFlowUntil : 1; 
-    } _toFlags;
-    int _toFocusBubbleType;
-    GKBubblePathAnimator *_toPathAnimator;
-    _GKBubbleFlowPathTransitionInfo *_toPathTransitionInfo;
-    UIViewController<GKBubbleFlowableViewController> *_toVC;
-    UIViewController *_toWrapperVC;
-    int _transitionPhase;
-    int _transitionType;
+    }  _toFlags;
+    int  _toFocusBubbleType;
+    GKBubblePathAnimator * _toPathAnimator;
+    _GKBubbleFlowPathTransitionInfo * _toPathTransitionInfo;
+    UIViewController<GKBubbleFlowableViewController> * _toVC;
+    UIViewController * _toWrapperVC;
+    int  _transitionPhase;
+    int  _transitionType;
 }
 
 @property (nonatomic, readonly) BOOL animated;

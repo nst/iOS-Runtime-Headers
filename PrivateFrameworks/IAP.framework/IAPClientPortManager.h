@@ -3,10 +3,10 @@
  */
 
 @interface IAPClientPortManager : NSObject {
-    BOOL _iaptransportdIsRunning;
-    NSObject<OS_xpc_object> *_iaptransportdXPCConnection;
-    NSMutableDictionary *_portList;
-    NSObject<OS_dispatch_queue> *_portListQueue;
+    BOOL  _iaptransportdIsRunning;
+    NSObject<OS_xpc_object> * _iaptransportdXPCConnection;
+    NSMutableDictionary * _portList;
+    NSObject<OS_dispatch_queue> * _portListQueue;
 }
 
 @property (nonatomic) BOOL iaptransportdIsRunning;

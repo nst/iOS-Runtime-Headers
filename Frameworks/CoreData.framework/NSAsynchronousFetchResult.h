@@ -3,9 +3,9 @@
  */
 
 @interface NSAsynchronousFetchResult : NSPersistentStoreAsynchronousResult {
-    NSAsynchronousFetchRequest *_fetchRequest;
-    NSArray *_finalResult;
-    id _intermediateResultCallback;
+    NSAsynchronousFetchRequest * _fetchRequest;
+    NSArray * _finalResult;
+    id  _intermediateResultCallback;
 }
 
 @property (readonly) NSAsynchronousFetchRequest *fetchRequest;

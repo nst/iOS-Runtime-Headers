@@ -3,25 +3,26 @@
  */
 
 @interface _SFNavigationBarItem : NSObject {
-    NSString *_customPlaceholderText;
-    BOOL _lockIconHasEVCertificateTint;
-    _SFNavigationBar *_navigationBar;
-    BOOL _overrideBarStyleForSecurityWarning;
-    _SFFluidProgressView *_progressView;
-    BOOL _readerButtonSelected;
-    BOOL _showsLockIcon;
-    BOOL _showsReaderButton;
-    BOOL _showsSearchIndicator;
-    BOOL _showsStopReloadButtons;
-    unsigned int _startIndexOfTextInExpandedText;
-    BOOL _stopReloadButtonShowsStop;
-    NSString *_text;
-    BOOL _textHasEVCertificateTint;
-    NSString *_textWhenExpanded;
+    NSString * _customPlaceholderText;
+    BOOL  _lockIconHasEVCertificateTint;
+    _SFNavigationBar * _navigationBar;
+    BOOL  _overrideBarStyleForSecurityWarning;
+    _SFFluidProgressView * _progressView;
+    BOOL  _readerButtonSelected;
+    BOOL  _showsLockIcon;
+    BOOL  _showsReaderButton;
+    BOOL  _showsSearchIndicator;
+    BOOL  _showsStopReloadButtons;
+    unsigned int  _startIndexOfTextInExpandedText;
+    BOOL  _stopReloadButtonShowsStop;
+    NSString * _text;
+    BOOL  _textHasEVCertificateTint;
+    NSString * _textWhenExpanded;
 }
 
 @property (nonatomic, copy) NSString *customPlaceholderText;
 @property (nonatomic) BOOL lockIconHasEVCertificateTint;
+@property (setter=_setNavigationBar:, nonatomic) _SFNavigationBar *navigationBar;
 @property (nonatomic) BOOL overrideBarStyleForSecurityWarning;
 @property (nonatomic, retain) _SFFluidProgressView *progressView;
 @property (nonatomic) BOOL readerButtonSelected;
@@ -40,6 +41,7 @@
 - (id)customPlaceholderText;
 - (id)init;
 - (BOOL)lockIconHasEVCertificateTint;
+- (id)navigationBar;
 - (BOOL)overrideBarStyleForSecurityWarning;
 - (id)progressView;
 - (BOOL)readerButtonSelected;

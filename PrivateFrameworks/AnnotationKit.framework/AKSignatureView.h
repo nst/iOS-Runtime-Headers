@@ -5,131 +5,133 @@
 @interface AKSignatureView : UIView {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _aggregateInvalid;
-    CHBoxcarFilterPointFIFO *_boxcarFIFO;
-    struct CGColor { } *_cgColor;
-    AKRichBrushStroke *_currentBrushStroke;
-    float _currentWeight;
-    CHQuadCurvePointFIFO *_interpolatingFIFO;
-    BOOL _isAddingPointWithoutSmoothing;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    } _lastPoint;
-    void_lastVectorPoint;
-    float _maxPressure;
-    float _maxThickness;
-    float _minPressure;
-    float _minThickness;
-    UIColor *_strokeColor;
-    CHPointStrokeFIFO *_strokeFIFO;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    } _strokeLastLocation;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    } _strokeStartLocation;
-    double _strokeStartTime;
-    NSMutableArray *_strokes;
-    unsigned int _totalPointsAdded;
-    id _trackingTouchID;
+    }  _accumulatedSignatureDirtyRect;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _unionDrawingRect;
+    }  _aggregateInvalid;
+    AKBitmapFIFO * _bitmapFifo;
+    CHBoxcarFilterPointFIFO * _boxcarFIFO;
+    struct CGColor { } * _cgColor;
+    double  _currentWeight;
+    CHQuadCurvePointFIFO * _interpolatingFIFO;
+    BOOL  _isAddingPointWithoutSmoothing;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _lastPoint;
+    double  _lastSetNeedsDisplayCallToSuperTime;
+    double  _maxPressure;
+    double  _maxThickness;
+    double  _minPressure;
+    double  _minThickness;
+    UIColor * _strokeColor;
+    CHPointStrokeFIFO * _strokeFIFO;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _strokeLastLocation;
+    struct CGPoint { 
+        double x; 
+        double y; 
+    }  _strokeStartLocation;
+    double  _strokeStartTime;
+    unsigned int  _totalPointsAdded;
+    id  _trackingTouchID;
+    struct CGRect { 
+        struct CGPoint { 
+            double x; 
+            double y; 
+        } origin; 
+        struct CGSize { 
+            double width; 
+            double height; 
+        } size; 
+    }  _unionDrawingRect;
 }
 
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } aggregateInvalid;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } aggregateInvalid;
+@property (nonatomic, retain) AKBitmapFIFO *bitmapFifo;
 @property (nonatomic, retain) CHBoxcarFilterPointFIFO *boxcarFIFO;
-@property (nonatomic, retain) AKRichBrushStroke *currentBrushStroke;
-@property (nonatomic) float currentWeight;
-@property (nonatomic, readonly) float interfaceScale;
+@property (nonatomic) double currentWeight;
+@property (nonatomic, readonly) double interfaceScale;
 @property (nonatomic, retain) CHQuadCurvePointFIFO *interpolatingFIFO;
 @property BOOL isAddingPointWithoutSmoothing;
-@property void lastVectorPoint;
-@property (nonatomic) float maxPressure;
-@property (nonatomic) float maxThickness;
-@property (nonatomic) float minPressure;
-@property (nonatomic) float minThickness;
+@property (nonatomic) double maxPressure;
+@property (nonatomic) double maxThickness;
+@property (nonatomic) double minPressure;
+@property (nonatomic) double minThickness;
 @property (nonatomic, retain) UIColor *strokeColor;
 @property (nonatomic, retain) CHPointStrokeFIFO *strokeFIFO;
-@property struct CGPoint { float x1; float x2; } strokeLastLocation;
-@property struct CGPoint { float x1; float x2; } strokeStartLocation;
+@property struct CGPoint { double x1; double x2; } strokeLastLocation;
+@property struct CGPoint { double x1; double x2; } strokeStartLocation;
 @property double strokeStartTime;
-@property (nonatomic, retain) NSArray *strokes;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } strokesBounds;
 @property unsigned int totalPointsAdded;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } unionDrawingRect;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } unionDrawingRect;
 
 - (void).cxx_destruct;
 - (void)_commonInit;
+- (void)_forceRedisplay;
 - (float)_windowBackingScaleFactor;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })aggregateInvalid;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })aggregateInvalid;
 - (BOOL)ak_forceAvailableForTouch:(id)arg1;
+- (id)bitmapFifo;
 - (id)boxcarFIFO;
 - (void)clear;
 - (void)continueStroke;
 - (void)continueStrokeWithoutSmoothing;
 - (struct CGPath { }*)copyStrokedInterpolatedPath;
-- (id)currentBrushStroke;
 - (float)currentWeight;
 - (void)dealloc;
-- (void)deferredInvalidate:(id)arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)handleCoalescedTouches:(id)arg1 forTouch:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (float)interfaceScale;
 - (id)interpolatingFIFO;
 - (BOOL)isAddingPointWithoutSmoothing;
-- (void)lastVectorPoint;
 - (float)maxPressure;
 - (float)maxThickness;
 - (float)minPressure;
 - (float)minThickness;
-- (void)setAggregateInvalid:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setAggregateInvalid:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBitmapFifo:(id)arg1;
 - (void)setBoxcarFIFO:(id)arg1;
-- (void)setCurrentBrushStroke:(id)arg1;
 - (void)setCurrentWeight:(float)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setInterpolatingFIFO:(id)arg1;
 - (void)setIsAddingPointWithoutSmoothing:(BOOL)arg1;
-- (void)setLastVectorPoint;
 - (void)setMaxPressure:(float)arg1;
 - (void)setMaxThickness:(float)arg1;
 - (void)setMinPressure:(float)arg1;
 - (void)setMinThickness:(float)arg1;
+- (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setStrokeColor:(id)arg1;
 - (void)setStrokeFIFO:(id)arg1;
-- (void)setStrokeLastLocation:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setStrokeStartLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setStrokeLastLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setStrokeStartLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setStrokeStartTime:(double)arg1;
-- (void)setStrokes:(id)arg1;
 - (void)setTotalPointsAdded:(unsigned int)arg1;
-- (void)setUnionDrawingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setUnionDrawingRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)startStroke;
 - (id)strokeColor;
 - (id)strokeFIFO;
-- (struct CGPoint { float x1; float x2; })strokeLastLocation;
-- (struct CGPoint { float x1; float x2; })strokeStartLocation;
+- (struct CGPoint { double x1; double x2; })strokeLastLocation;
+- (struct CGPoint { double x1; double x2; })strokeStartLocation;
 - (double)strokeStartTime;
-- (id)strokes;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })strokesBounds;
 - (void)teardown;
 - (void)terminateStroke;
 - (unsigned int)totalPointsAdded;
@@ -137,7 +139,7 @@
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })unionDrawingRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })unionDrawingRect;
 - (float)weightForTouch:(id)arg1;
 - (float)weightForValue:(float)arg1;
 

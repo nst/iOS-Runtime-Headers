@@ -3,7 +3,7 @@
  */
 
 @interface UIAccessibilityLegacyCustomAction : UIAccessibilityCustomAction {
-    unsigned int _actionIndex;
+    unsigned int  _actionIndex;
 }
 
 @property (nonatomic) unsigned int actionIndex;

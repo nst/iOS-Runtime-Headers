@@ -3,10 +3,10 @@
  */
 
 @interface AAUIFamilySharingFeaturesView : UIView {
-    int _context;
-    UIButton *_learnMoreButton;
-    BOOL _shouldHideLocationSharing;
-    UIStackView *_stack;
+    int  _context;
+    UIButton * _learnMoreButton;
+    BOOL  _shouldHideLocationSharing;
+    UIStackView * _stack;
 }
 
 + (id)rowForIcon:(id)arg1 andLabel:(id)arg2;

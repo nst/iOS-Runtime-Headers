@@ -3,18 +3,18 @@
  */
 
 @interface BSPropertyMetadata : NSObject {
-    Class _classType;
-    NSString *_defaultKey;
-    id _defaultValue;
-    NSString *_getterName;
-    NSString *_name;
-    unsigned int _options;
-    NSString *_setterName;
-    BOOL _type;
-    NSString *_typeString;
+    Class  _classType;
+    NSString * _defaultKey;
+    id  _defaultValue;
+    NSString * _getterName;
+    NSString * _name;
+    unsigned int  _options;
+    NSString * _setterName;
+    BOOL  _type;
+    NSString * _typeString;
 }
 
-@property (nonatomic) Class classType;
+@property (nonatomic, retain) Class classType;
 @property (nonatomic, copy) NSString *defaultKey;
 @property (nonatomic, retain) id defaultValue;
 @property (nonatomic, copy) NSString *getterName;
@@ -26,7 +26,7 @@
 @property (nonatomic, copy) NSString *setterName;
 @property (nonatomic, readonly) BOOL synchronizeOnSet;
 @property (nonatomic) BOOL type;
-@property (nonatomic) NSString *typeString;
+@property (nonatomic, copy) NSString *typeString;
 
 - (Class)classType;
 - (void)dealloc;

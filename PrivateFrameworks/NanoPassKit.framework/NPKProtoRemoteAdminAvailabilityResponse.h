@@ -5,8 +5,8 @@
 @interface NPKProtoRemoteAdminAvailabilityResponse : PBCodable <NSCopying> {
     struct { 
         unsigned int isAvailable : 1; 
-    } _has;
-    BOOL _isAvailable;
+    }  _has;
+    BOOL  _isAvailable;
 }
 
 @property (nonatomic) BOOL hasIsAvailable;

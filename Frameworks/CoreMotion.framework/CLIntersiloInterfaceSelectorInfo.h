@@ -3,13 +3,13 @@
  */
 
 @interface CLIntersiloInterfaceSelectorInfo : NSObject {
-    int _numArguments;
-    int _replyBlockIndex;
-    int _returnAddressIndex;
-    int _returnValueSize;
-    SEL _sel;
-    NSMethodSignature *_sig;
-    NSString *_str;
+    int  _numArguments;
+    int  _replyBlockIndex;
+    int  _returnAddressIndex;
+    int  _returnValueSize;
+    SEL  _sel;
+    NSMethodSignature * _sig;
+    NSString * _str;
 }
 
 @property (nonatomic, readonly) int numArguments;

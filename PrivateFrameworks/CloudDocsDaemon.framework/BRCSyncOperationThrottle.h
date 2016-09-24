@@ -3,11 +3,11 @@
  */
 
 @interface BRCSyncOperationThrottle : NSObject <NSSecureCoding> {
-    NSString *_containerID;
-    double _delay;
-    BOOL _isSyncDown;
-    int _lastErrorKind;
-    double _nextTry;
+    NSString * _containerID;
+    double  _delay;
+    BOOL  _isSyncDown;
+    int  _lastErrorKind;
+    double  _nextTry;
 }
 
 @property (nonatomic, retain) NSString *containerID;

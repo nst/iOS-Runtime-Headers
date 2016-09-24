@@ -3,7 +3,7 @@
  */
 
 @interface GKFixedSizeImageView : UIImageView {
-    UIImage *_actualImage;
+    UIImage * _actualImage;
 }
 
 @property (nonatomic, retain) UIImage *actualImage;

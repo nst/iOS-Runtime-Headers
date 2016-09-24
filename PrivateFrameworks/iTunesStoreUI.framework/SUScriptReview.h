@@ -3,8 +3,8 @@
  */
 
 @interface SUScriptReview : SUScriptObject {
-    NSURL *_infoURL;
-    SKUIReviewMetadata *_review;
+    NSURL * _infoURL;
+    SKUIReviewMetadata * _review;
 }
 
 @property (readonly) NSNumber *adamID;

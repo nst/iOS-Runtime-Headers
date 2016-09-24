@@ -3,7 +3,7 @@
  */
 
 @interface PLRemoteDiagnosticsClient : NSObject <NSXPCListenerDelegate> {
-    NSXPCConnection *_connection;
+    NSXPCConnection * _connection;
 }
 
 @property (readonly, copy) NSString *debugDescription;

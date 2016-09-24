@@ -3,10 +3,10 @@
  */
 
 @interface CKFetchRecordVersionsOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    NSArray *_desiredKeys;
-    NSString *_minimumVersionETag;
-    NSArray *_recordIDs;
-    BOOL _shouldFetchAssetContent;
+    NSArray * _desiredKeys;
+    NSString * _minimumVersionETag;
+    NSArray * _recordIDs;
+    BOOL  _shouldFetchAssetContent;
 }
 
 @property (nonatomic, retain) NSArray *desiredKeys;

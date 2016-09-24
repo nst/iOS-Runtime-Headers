@@ -3,23 +3,23 @@
  */
 
 @interface CMKBlurredSnapshotView : UIView {
-    UIView *__dimmingView;
-    UIView *__lowQualityBlurView;
-    BOOL __supportsBlur;
-    BOOL _blurred;
-    BOOL _dimmed;
-    UIView *_snapshotView;
-    int _style;
+    UIView * __dimmingView;
+    UIView * __lowQualityBlurView;
+    BOOL  __supportsBlur;
+    BOOL  _blurred;
+    BOOL  _dimmed;
+    UIView * _snapshotView;
+    int  _style;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _targetFrame;
+    }  _targetFrame;
 }
 
 @property (nonatomic, readonly) UIView *_dimmingView;
@@ -29,7 +29,7 @@
 @property (nonatomic) BOOL dimmed;
 @property (nonatomic, readonly) UIView *snapshotView;
 @property (nonatomic) int style;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } targetFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } targetFrame;
 
 - (void).cxx_destruct;
 - (void)_applyLowQualityBlurAnimated:(BOOL)arg1 withCompletionBlock:(id /* block */)arg2;
@@ -54,9 +54,9 @@
 - (void)setDimmed:(BOOL)arg1;
 - (void)setDimmed:(BOOL)arg1 animated:(BOOL)arg2 withCompletionBlock:(id /* block */)arg3;
 - (void)setStyle:(int)arg1;
-- (void)setTargetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setTargetFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)snapshotView;
 - (int)style;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })targetFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })targetFrame;
 
 @end

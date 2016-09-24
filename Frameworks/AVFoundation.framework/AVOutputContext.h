@@ -3,12 +3,13 @@
  */
 
 @interface AVOutputContext : NSObject <NSSecureCoding> {
-    AVOutputContextInternal *_outputContext;
+    AVOutputContextInternal * _outputContext;
 }
 
 @property (nonatomic, readonly) NSString *deviceName;
 
 + (struct OpaqueFigEndpointPicker { }*)copySystemVideoPicker;
++ (id)iTunesAudioContext;
 + (id)outputContext;
 + (BOOL)outputContextExistsWithRemoteOutputDevice;
 + (void)resetOutputDeviceForAllOutputContexts;
@@ -22,6 +23,7 @@
 - (void)_removeFigEndpointPickerNotifications;
 - (id)_weakReference;
 - (int)applicationProcessID;
+- (id)associatedAudioDeviceID;
 - (id)contextUUID;
 - (void)dealloc;
 - (id)deviceName;

@@ -3,7 +3,7 @@
  */
 
 @interface TSCELegacyGlobalID : NSObject <NSCoding, NSCopying> {
-    unsigned char mBytes;
+    unsigned char  mBytes;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

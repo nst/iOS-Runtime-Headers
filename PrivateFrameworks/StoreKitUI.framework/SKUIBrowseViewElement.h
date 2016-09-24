@@ -3,7 +3,7 @@
  */
 
 @interface SKUIBrowseViewElement : SKUIViewElement {
-    NSString *_title;
+    NSString * _title;
 }
 
 @property (nonatomic, readonly) NSString *title;

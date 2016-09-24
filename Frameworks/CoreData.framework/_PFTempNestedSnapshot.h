@@ -3,8 +3,8 @@
  */
 
 @interface _PFTempNestedSnapshot : NSObject {
-    NSKnownKeysDictionary *_snapshot;
-    unsigned long _version;
+    NSKnownKeysDictionary * _snapshot;
+    unsigned long  _version;
 }
 
 - (id)_snapshot_;

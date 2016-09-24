@@ -3,7 +3,7 @@
  */
 
 @interface EMFReader : NSObject <MFReader> {
-    EMFPlayer *m_player;
+    EMFPlayer * m_player;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,9 +3,13 @@
  */
 
 @interface ICCameraFolder : ICCameraItem {
-    int _filesLock;
-    void *_folderProperties;
-    int _foldersLock;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _filesLock;
+    void * _folderProperties;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _foldersLock;
 }
 
 @property (readonly) NSArray *contents;

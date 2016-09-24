@@ -3,7 +3,7 @@
  */
 
 @interface CNAutocompleteSuggestionsSearch : NSObject <CNAutocompleteSearch> {
-    CNContactStore *_contactStore;
+    CNContactStore * _contactStore;
 }
 
 @property (nonatomic, readonly) CNContactStore *contactStore;

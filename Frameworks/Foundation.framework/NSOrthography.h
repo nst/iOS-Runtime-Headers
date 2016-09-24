@@ -7,6 +7,7 @@
 @property (readonly, copy) NSString *dominantScript;
 @property (readonly, copy) NSDictionary *languageMap;
 
++ (id)_scriptNameForScriptIndex:(unsigned int)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
 + (id)orthographyWithDominantScript:(id)arg1 languageMap:(id)arg2;

@@ -3,11 +3,11 @@
  */
 
 @interface MTKMeshBufferZone : NSObject <MDLMeshBufferZone> {
-    MTKMeshBufferAllocator *_allocator;
-    <MTLBuffer> *_buffer;
-    NSMutableOrderedSet *_buffers;
-    unsigned int _capacity;
-    BOOL _destroyInvoked;
+    MTKMeshBufferAllocator * _allocator;
+    <MTLBuffer> * _buffer;
+    NSMutableOrderedSet * _buffers;
+    unsigned int  _capacity;
+    BOOL  _destroyInvoked;
 }
 
 @property (nonatomic, readonly) <MDLMeshBufferAllocator> *allocator;

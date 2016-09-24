@@ -10,12 +10,8 @@
 
 @optional
 
-+ (long long)finalAnchorForNanoSyncRestoreSession:(HDNanoSyncRestoreSession *)arg1 healthDaemon:(id <HDHealthDaemon>)arg2 error:(id*)arg3;
 + (HDSQLitePredicate *)nanoSyncPredicateForSession:(HDNanoSyncSession *)arg1;
-+ (NSArray *)objectsForNanoSyncRestoreSession:(HDNanoSyncRestoreSession *)arg1 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg2 lastSyncAnchor:(long long*)arg3 healthDaemon:(id <HDHealthDaemon>)arg4 error:(id*)arg5;
-+ (int)outgoingNanoSyncObjectTypeForNanoSyncProtocolVersion:(int)arg1;
-+ (Class)receivingSyncEntityClassForNanoSyncProtocolVersion:(int)arg1;
 + (BOOL)supportsSpeculativeNanoSyncChanges;
-+ (unsigned int)syncObjectLimitForNanoSyncMessage;
++ (NSSet *)syncEntityDependenciesForNanoSyncProtocolVersion:(int)arg1;
 
 @end

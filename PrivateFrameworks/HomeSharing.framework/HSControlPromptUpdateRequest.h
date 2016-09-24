@@ -3,7 +3,7 @@
  */
 
 @interface HSControlPromptUpdateRequest : HSRequest {
-    unsigned int _promptID;
+    unsigned int  _promptID;
 }
 
 + (id)requestWithInterfaceID:(unsigned int)arg1 promptID:(unsigned int)arg2;

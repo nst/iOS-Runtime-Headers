@@ -2,27 +2,27 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@interface BSAction : NSObject <BSDescriptionProviding, BSSettingDescriptionProvider, BSXPCCoding> {
-    BOOL _expectsResponse;
-    BOOL _hasTimeout;
-    BSSettings *_info;
-    BOOL _originatingAction;
-    NSObject<OS_dispatch_queue> *_queue;
-    BSAuditHistory *_queue_auditHistory;
-    id /* block */ _queue_handler;
-    BOOL _queue_hasBeenNeutered;
-    BOOL _queue_invalidated;
-    id /* block */ _queue_invalidationHandler;
+@interface BSAction : NSObject <BSDescriptionProviding, BSInvalidatable, BSSettingDescriptionProvider, BSXPCCoding, NSSecureCoding> {
+    BOOL  _expectsResponse;
+    BOOL  _hasTimeout;
+    BSSettings * _info;
+    BOOL  _originatingAction;
+    NSObject<OS_dispatch_queue> * _queue;
+    BSAuditHistory * _queue_auditHistory;
+    id /* block */  _queue_handler;
+    BOOL  _queue_hasBeenNeutered;
+    BOOL  _queue_invalidated;
+    id /* block */  _queue_invalidationHandler;
     struct { 
         unsigned int port; 
         NSObject<OS_xpc_object> *endpoint; 
-    } _queue_listenerTokens;
-    BSPortDeathWatcher *_queue_portDeathWatcher;
-    BSMachPortReceiveRight *_queue_receiveRight;
-    BSActionResponse *_queue_response;
-    BSMachPortTransferableSendRight *_queue_sendRight;
-    BSTimer *_queue_timer;
-    unsigned long long _timeout;
+    }  _queue_listenerTokens;
+    BSPortDeathWatcher * _queue_portDeathWatcher;
+    BSMachPortReceiveRight * _queue_receiveRight;
+    BSActionResponse * _queue_response;
+    BSMachPortTransferableSendRight * _queue_sendRight;
+    BSTimer * _queue_timer;
+    unsigned int  _timeout;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -33,11 +33,16 @@
 
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 
++ (BOOL)supportsSecureCoding;
+
 - (id)_descriptionBuilderWithMultilinePrefix:(id)arg1 safely:(BOOL)arg2;
+- (id)_initWithInfo:(id)arg1 invalidated:(BOOL)arg2 expectsResponse:(BOOL)arg3 auditHistory:(id)arg4 xPort:(id)arg5 xEndpoint:(id)arg6 sendRight:(id)arg7;
 - (void)_queue_addAuditHistoryWithFormat:(id)arg1;
 - (void)_queue_callHandlerWithResponse:(id)arg1;
+- (id)_queue_encodedSendRight;
 - (id)_queue_handlerDescription;
 - (void)_queue_setInvalidatedAndNotify:(BOOL)arg1 errorCode:(int)arg2;
+- (void)_queue_tryExecuteQueueHandler;
 - (BOOL)canSendResponse;
 - (void)dealloc;
 - (id)debugDescription;
@@ -45,10 +50,12 @@
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (unsigned int)hash;
 - (id)info;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithInfo:(id)arg1 timeout:(double)arg2 forResponseOnQueue:(id)arg3 withHandler:(id /* block */)arg4;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)invalidate;

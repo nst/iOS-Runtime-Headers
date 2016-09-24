@@ -3,10 +3,10 @@
  */
 
 @interface MusicJSManagedObject : NSObject {
-    IKAppContext *_appContext;
-    JSManagedValue *_managedValue;
-    id _object;
-    id _owner;
+    IKAppContext * _appContext;
+    JSManagedValue * _managedValue;
+    id  _object;
+    id  _owner;
 }
 
 @property (nonatomic, readonly) IKAppContext *appContext;

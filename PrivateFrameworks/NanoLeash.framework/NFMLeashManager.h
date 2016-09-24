@@ -3,23 +3,23 @@
  */
 
 @interface NFMLeashManager : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate, CBScalablePipeManagerDelegate> {
-    CBCentralManager *_centralManager;
-    int _centralPhase;
-    NSObject<OS_dispatch_queue> *_centralQueue;
-    BOOL _connected;
-    CBPeripheral *_discoveredPeripheral;
-    NSObject<OS_dispatch_queue> *_externalQueue;
-    <NFMLLeashBreakDelegate> *_leashDelegate;
-    NSObject<OS_dispatch_source> *_leashDispatchSourceTimer;
-    NSString *_leashIdentifier;
-    int _leashMode;
-    BOOL _needsToScanForPeripheral;
-    CBPeripheral *_peripheral;
-    CBScalablePipe *_pipe;
-    CBScalablePipeManager *_pipeManager;
-    id /* block */ _proximityChangeHandler;
-    NSString *_serviceUUID;
-    BOOL _testMode;
+    CBCentralManager * _centralManager;
+    int  _centralPhase;
+    NSObject<OS_dispatch_queue> * _centralQueue;
+    BOOL  _connected;
+    CBPeripheral * _discoveredPeripheral;
+    NSObject<OS_dispatch_queue> * _externalQueue;
+    <NFMLLeashBreakDelegate> * _leashDelegate;
+    NSObject<OS_dispatch_source> * _leashDispatchSourceTimer;
+    NSString * _leashIdentifier;
+    int  _leashMode;
+    BOOL  _needsToScanForPeripheral;
+    CBPeripheral * _peripheral;
+    CBScalablePipe * _pipe;
+    CBScalablePipeManager * _pipeManager;
+    id /* block */  _proximityChangeHandler;
+    NSString * _serviceUUID;
+    BOOL  _testMode;
 }
 
 @property (nonatomic, retain) CBCentralManager *centralManager;

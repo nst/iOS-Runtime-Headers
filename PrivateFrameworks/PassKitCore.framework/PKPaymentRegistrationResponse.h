@@ -3,32 +3,35 @@
  */
 
 @interface PKPaymentRegistrationResponse : PKPaymentWebServiceResponse {
-    NSURL *_brokerURL;
-    NSNumber *_cardsOnFile;
-    NSArray *_certificates;
-    NSString *_deviceIdentifier;
-    NSNumber *_maxCards;
-    NSURL *_paymentServicesURL;
-    NSString *_primaryRegion;
-    NSDictionary *_regions;
-    NSURL *_trustedServiceManagerURL;
+    NSURL * _brokerURL;
+    NSNumber * _cardsOnFile;
+    NSArray * _certificates;
+    NSString * _deviceIdentifier;
+    NSString * _environmentName;
+    NSNumber * _maxCards;
+    NSURL * _paymentServicesURL;
+    NSString * _primaryRegion;
+    NSDictionary * _regions;
+    NSURL * _trustedServiceManagerURL;
 }
 
-@property (nonatomic, retain) NSURL *brokerURL;
-@property (nonatomic, retain) NSNumber *cardsOnFile;
-@property (nonatomic, retain) NSArray *certificates;
-@property (nonatomic, retain) NSString *deviceIdentifier;
-@property (nonatomic, retain) NSNumber *maxCards;
-@property (nonatomic, retain) NSURL *paymentServicesURL;
-@property (nonatomic, readonly) NSString *primaryRegion;
-@property (nonatomic, retain) NSDictionary *regions;
-@property (nonatomic, retain) NSURL *trustedServiceManagerURL;
+@property (nonatomic, copy) NSURL *brokerURL;
+@property (nonatomic, copy) NSNumber *cardsOnFile;
+@property (nonatomic, copy) NSArray *certificates;
+@property (nonatomic, copy) NSString *deviceIdentifier;
+@property (nonatomic, copy) NSString *environmentName;
+@property (nonatomic, copy) NSNumber *maxCards;
+@property (nonatomic, copy) NSURL *paymentServicesURL;
+@property (nonatomic, readonly, copy) NSString *primaryRegion;
+@property (nonatomic, copy) NSDictionary *regions;
+@property (nonatomic, copy) NSURL *trustedServiceManagerURL;
 
+- (void).cxx_destruct;
 - (id)brokerURL;
 - (id)cardsOnFile;
 - (id)certificates;
-- (void)dealloc;
 - (id)deviceIdentifier;
+- (id)environmentName;
 - (id)initWithData:(id)arg1;
 - (id)maxCards;
 - (id)paymentServicesURL;
@@ -38,6 +41,7 @@
 - (void)setCardsOnFile:(id)arg1;
 - (void)setCertificates:(id)arg1;
 - (void)setDeviceIdentifier:(id)arg1;
+- (void)setEnvironmentName:(id)arg1;
 - (void)setMaxCards:(id)arg1;
 - (void)setPaymentServicesURL:(id)arg1;
 - (void)setRegions:(id)arg1;

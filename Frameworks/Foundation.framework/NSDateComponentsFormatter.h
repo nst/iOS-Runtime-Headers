@@ -3,26 +3,26 @@
  */
 
 @interface NSDateComponentsFormatter : NSFormatter <NSObservable, NSObserver> {
-    unsigned int _allowedUnits;
-    BOOL _allowsFractionalUnits;
-    NSCalendar *_calendar;
-    BOOL _collapsesLargestUnit;
-    void *_fmt;
-    NSString *_fmtLocaleIdent;
-    int _formattingContext;
-    BOOL _includesApproximationPhrase;
-    BOOL _includesTimeRemainingPhrase;
+    unsigned int  _allowedUnits;
+    BOOL  _allowsFractionalUnits;
+    NSCalendar * _calendar;
+    BOOL  _collapsesLargestUnit;
+    void * _fmt;
+    NSString * _fmtLocaleIdent;
+    int  _formattingContext;
+    BOOL  _includesApproximationPhrase;
+    BOOL  _includesTimeRemainingPhrase;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
-    } _lock;
-    int _maximumUnitCount;
-    NSDate *_referenceDate;
-    void *_reserved;
-    NSNumberFormatter *_unitFormatter;
-    int _unitsStyle;
-    void *_unused;
-    unsigned int _zeroFormattingBehavior;
+    }  _lock;
+    int  _maximumUnitCount;
+    NSDate * _referenceDate;
+    void * _reserved;
+    NSNumberFormatter * _unitFormatter;
+    int  _unitsStyle;
+    void * _unused;
+    unsigned int  _zeroFormattingBehavior;
 }
 
 @property unsigned int allowedUnits;
@@ -40,6 +40,8 @@
 @property (readonly) Class superclass;
 @property int unitsStyle;
 @property unsigned int zeroFormattingBehavior;
+
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 + (id)localizedStringFromDateComponents:(id)arg1 unitsStyle:(int)arg2;
 
@@ -86,5 +88,9 @@
 - (id)stringFromTimeInterval:(double)arg1;
 - (int)unitsStyle;
 - (unsigned int)zeroFormattingBehavior;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
++ (id)__ck_durationFormatter;
 
 @end

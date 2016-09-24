@@ -3,26 +3,28 @@
  */
 
 @interface BookmarkDAVSyncDriver : NSObject <CoreDAVContainerInfoTaskGroupDelegate, CoreDAVDeleteTaskDelegate, CoreDAVGetAccountPropertiesTaskGroupDelegate, CoreDAVLocalDBTreeInfoProvider> {
-    <CoreDAVAccountInfoProvider> *_accountInfoProvider;
-    void *_changeToken;
-    id /* block */ _closeDBBlock;
-    BOOL _forceSafariOrdering;
-    BOOL _forceSave;
-    id /* block */ _getAccountPropertiesHandler;
-    id /* block */ _getDBBlock;
-    NSURL *_homeURL;
-    id /* block */ _openDBBlock;
-    NSMutableSet *_outstandingTaskGroups;
-    NSString *_pushKey;
-    NSDictionary *_pushTransport;
-    id /* block */ _registerForPush;
-    id /* block */ _saveDBBlock;
-    id /* block */ _syncHandler;
-    <CoreDAVTaskManager> *_taskManager;
-    BookmarkDAVSyncData *_topLevelSyncData;
+    <CoreDAVAccountInfoProvider> * _accountInfoProvider;
+    unsigned int  _accountPropertyFetchAttempt;
+    void * _changeToken;
+    id /* block */  _closeDBBlock;
+    BOOL  _forceSafariOrdering;
+    BOOL  _forceSave;
+    id /* block */  _getAccountPropertiesHandler;
+    id /* block */  _getDBBlock;
+    NSURL * _homeURL;
+    id /* block */  _openDBBlock;
+    NSMutableSet * _outstandingTaskGroups;
+    NSString * _pushKey;
+    NSDictionary * _pushTransport;
+    id /* block */  _registerForPush;
+    id /* block */  _saveDBBlock;
+    id /* block */  _syncHandler;
+    <CoreDAVTaskManager> * _taskManager;
+    BookmarkDAVSyncData * _topLevelSyncData;
 }
 
 @property (nonatomic, readonly) <CoreDAVAccountInfoProvider> *accountInfoProvider;
+@property (nonatomic) unsigned int accountPropertyFetchAttempt;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ getAccountPropertiesHandler;
@@ -61,6 +63,7 @@
 - (void)_setServerIdOnItem:(void*)arg1 isBookmark:(BOOL)arg2 suggestedId:(id)arg3;
 - (void)_syncWithRemoteChanges:(BOOL)arg1 completionHandler:(id /* block */)arg2 skipAddChanges:(BOOL)arg3;
 - (id)accountInfoProvider;
+- (unsigned int)accountPropertyFetchAttempt;
 - (void)containerInfoTask:(id)arg1 completedWithContainers:(id)arg2 error:(id)arg3;
 - (id)copyAllLocalURLsInFolderWithURL:(id)arg1;
 - (id)copyLocalETagsForURLs:(id)arg1;
@@ -79,6 +82,7 @@
 - (void)recursiveContainerSyncTask:(id)arg1 completedSyncOfFolderWithURL:(id)arg2 newCTag:(id)arg3 newPTag:(id)arg4 addedOrModified:(id)arg5 removed:(id)arg6 error:(id)arg7;
 - (void)recursiveContainerSyncTask:(id)arg1 receivedAddedOrModifiedFolder:(id)arg2;
 - (void)recursiveContainerSyncTask:(id)arg1 retrievedAddedOrModifiedActions:(id)arg2 removed:(id)arg3;
+- (void)setAccountPropertyFetchAttempt:(unsigned int)arg1;
 - (void)setGetAccountPropertiesHandler:(id /* block */)arg1;
 - (void)setHomeURL:(id)arg1;
 - (BOOL)setLocalETag:(id)arg1 forItemWithURL:(id)arg2;

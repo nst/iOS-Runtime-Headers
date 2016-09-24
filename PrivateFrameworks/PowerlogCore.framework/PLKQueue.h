@@ -3,14 +3,14 @@
  */
 
 @interface PLKQueue : NSObject {
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    BOOL _enabled;
-    int _fileDescriptor;
-    int _kQueue;
-    id /* block */ _kQueueBlock;
-    struct __CFFileDescriptor { } *_kqueueDescriptorRef;
-    struct __CFRunLoopSource { } *_kqueueDescriptorSource;
-    NSString *_path;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    BOOL  _enabled;
+    int  _fileDescriptor;
+    int  _kQueue;
+    id /* block */  _kQueueBlock;
+    struct __CFFileDescriptor { } * _kqueueDescriptorRef;
+    struct __CFRunLoopSource { } * _kqueueDescriptorSource;
+    NSString * _path;
 }
 
 @property (retain) NSObject<OS_dispatch_queue> *dispatchQueue;

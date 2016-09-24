@@ -3,24 +3,27 @@
  */
 
 @interface CKVOBlockHelper : NSObject {
-    NSMutableDictionary *blocksForIdentifier;
-    id observedObject;
+    int  _nextIdentifier;
+    id  _observedObject;
+    NSMutableDictionary * _tokensByContext;
 }
 
-@property (nonatomic, readonly) NSMutableDictionary *blocksForIdentifier;
+@property (nonatomic) int nextIdentifier;
 @property (nonatomic, readonly) id observedObject;
-
-+ (id)helperForObject:(id)arg1 create:(BOOL)arg2;
+@property (nonatomic, readonly) NSMutableDictionary *tokensByContext;
 
 - (void).cxx_destruct;
-- (id)blocksForIdentifier;
-- (id)canonicalKeyForKey:(id)arg1;
+- (id)allKVOObservers;
 - (void)dealloc;
 - (id)debugDescription;
+- (void)dump;
 - (id)initWithObject:(id)arg1;
-- (id)keyForKeyPath:(id)arg1 identifier:(id)arg2;
-- (id)keypathForKey:(id)arg1;
+- (id)insertNewTokenForKeyPath:(id)arg1 block:(id /* block */)arg2;
+- (int)nextIdentifier;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)observedObject;
+- (void)removeHandlerForKey:(id)arg1;
+- (void)setNextIdentifier:(int)arg1;
+- (id)tokensByContext;
 
 @end

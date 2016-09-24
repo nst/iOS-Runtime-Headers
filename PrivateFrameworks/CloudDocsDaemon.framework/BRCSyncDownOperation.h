@@ -3,9 +3,8 @@
  */
 
 @interface BRCSyncDownOperation : _BRCOperation <BRCOperationSubclass> {
-    unsigned int _editedAndDeletedRecordsCount;
-    BRCServerZone *_serverZone;
-    BOOL _wantsCrossZoneMove;
+    unsigned int  _editedAndDeletedRecordsCount;
+    BRCServerZone * _serverZone;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -17,10 +16,10 @@
 - (void)_performAfterFetchingRecordChanges:(id /* block */)arg1;
 - (void)_startCreateZoneAndSubscriptionAndSyncDown;
 - (void)_startSyncDown;
+- (id)createActivity;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)initWithServerZone:(id)arg1;
 - (void)main;
 - (BOOL)shouldRetryForError:(id)arg1;
-- (unsigned long long)startActivity;
 
 @end

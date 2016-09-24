@@ -3,11 +3,11 @@
  */
 
 @interface ACUIAppInstallCell : PSTableCell {
-    UIImageView *_iconView;
-    SKUIItemOfferButton *_installButton;
-    int _installState;
-    UILabel *_nameLabel;
-    UILabel *_publisherLabel;
+    UIImageView * _iconView;
+    SKUIItemOfferButton * _installButton;
+    int  _installState;
+    UILabel * _nameLabel;
+    UILabel * _publisherLabel;
 }
 
 @property (nonatomic) int installState;

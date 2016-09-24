@@ -3,17 +3,19 @@
  */
 
 @interface BBSectionInfoSettings : NSObject <NSCopying, NSSecureCoding> {
-    unsigned int _alertType;
-    BOOL _allowsNotifications;
-    unsigned int _pushSettings;
-    BOOL _showsInLockScreen;
-    BOOL _showsInNotificationCenter;
-    BOOL _showsMessagePreview;
-    BOOL _showsOnExternalDevices;
+    unsigned int  _alertType;
+    BOOL  _allowsNotifications;
+    int  _carPlaySetting;
+    unsigned int  _pushSettings;
+    BOOL  _showsInLockScreen;
+    BOOL  _showsInNotificationCenter;
+    BOOL  _showsMessagePreview;
+    BOOL  _showsOnExternalDevices;
 }
 
 @property (nonatomic) unsigned int alertType;
 @property (nonatomic) BOOL allowsNotifications;
+@property (nonatomic) int carPlaySetting;
 @property (nonatomic) unsigned int pushSettings;
 @property (nonatomic) BOOL showsInLockScreen;
 @property (nonatomic) BOOL showsInNotificationCenter;
@@ -26,8 +28,8 @@
 - (id)_alertTypeDescription;
 - (unsigned int)alertType;
 - (BOOL)allowsNotifications;
+- (int)carPlaySetting;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
@@ -38,6 +40,7 @@
 - (unsigned int)pushSettings;
 - (void)setAlertType:(unsigned int)arg1;
 - (void)setAllowsNotifications:(BOOL)arg1;
+- (void)setCarPlaySetting:(int)arg1;
 - (void)setPushSettings:(unsigned int)arg1;
 - (void)setShowsInLockScreen:(BOOL)arg1;
 - (void)setShowsInNotificationCenter:(BOOL)arg1;
@@ -47,6 +50,5 @@
 - (BOOL)showsInNotificationCenter;
 - (BOOL)showsMessagePreview;
 - (BOOL)showsOnExternalDevices;
-- (id)uniqueIdentifier;
 
 @end

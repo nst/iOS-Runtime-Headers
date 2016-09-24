@@ -3,7 +3,7 @@
  */
 
 @interface STGenericIntentResponse : AFSiriResponse {
-    int _responseCode;
+    int  _responseCode;
 }
 
 @property (nonatomic) int responseCode;

@@ -3,7 +3,7 @@
  */
 
 @interface AFManagedStorageConnection : NSObject <AFManagedStore> {
-    NSXPCConnection *_connection;
+    NSXPCConnection * _connection;
 }
 
 @property (readonly, copy) NSString *debugDescription;

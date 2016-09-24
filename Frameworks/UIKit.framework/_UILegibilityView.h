@@ -3,36 +3,32 @@
  */
 
 @interface _UILegibilityView : UIView {
-    BOOL _hidesImage;
-    UIImage *_image;
-    CAFilter *_imageColorFilter;
-    UIImageView *_imageView;
-    int _options;
-    _UILegibilitySettings *_settings;
-    UIImage *_shadowImage;
-    CAFilter *_shadowImageColorFilter;
-    UIImageView *_shadowImageView;
-    float _strength;
+    BOOL  _hidesImage;
+    UIImage * _image;
+    UIImageView * _imageView;
+    int  _options;
+    _UILegibilitySettings * _settings;
+    UIImage * _shadowImage;
+    UIImageView * _shadowImageView;
+    double  _strength;
 }
 
 @property (nonatomic) BOOL hidesImage;
 @property (nonatomic, retain) UIImage *image;
-@property (nonatomic, retain) CAFilter *imageColorFilter;
 @property (nonatomic, retain) UIImageView *imageView;
 @property (nonatomic) int options;
 @property (nonatomic, retain) _UILegibilitySettings *settings;
 @property (nonatomic, retain) UIImage *shadowImage;
-@property (nonatomic, retain) CAFilter *shadowImageColorFilter;
 @property (nonatomic, retain) UIImageView *shadowImageView;
-@property (nonatomic) float strength;
+@property (nonatomic) double strength;
 @property (nonatomic, readonly) int style;
 @property (nonatomic, readonly) BOOL usesColorFilters;
 
+- (void)_updateFilters;
 - (void)dealloc;
 - (id)drawingColor;
 - (BOOL)hidesImage;
 - (id)image;
-- (id)imageColorFilter;
 - (id)imageView;
 - (id)initWithSettings:(id)arg1 strength:(float)arg2 image:(id)arg3;
 - (id)initWithSettings:(id)arg1 strength:(float)arg2 image:(id)arg3 shadowImage:(id)arg4;
@@ -44,21 +40,18 @@
 - (void)setHidesImage:(BOOL)arg1;
 - (void)setImage:(id)arg1;
 - (void)setImage:(id)arg1 shadowImage:(id)arg2;
-- (void)setImageColorFilter:(id)arg1;
 - (void)setImageView:(id)arg1;
 - (void)setOptions:(int)arg1;
 - (void)setSettings:(id)arg1;
 - (void)setSettings:(id)arg1 image:(id)arg2 shadowImage:(id)arg3;
 - (void)setShadowImage:(id)arg1;
-- (void)setShadowImageColorFilter:(id)arg1;
 - (void)setShadowImageView:(id)arg1;
 - (void)setStrength:(float)arg1;
 - (void)setStyle:(int)arg1 image:(id)arg2 shadowImage:(id)arg3;
 - (id)settings;
 - (id)shadowImage;
-- (id)shadowImageColorFilter;
 - (id)shadowImageView;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (float)strength;
 - (int)style;
 - (void)updateForChangedSettings:(id)arg1;

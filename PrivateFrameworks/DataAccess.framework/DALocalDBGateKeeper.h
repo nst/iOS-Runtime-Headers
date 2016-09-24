@@ -3,23 +3,23 @@
  */
 
 @interface DALocalDBGateKeeper : NSObject {
-    <DADataclassLockWatcher> *_bookmarksLockHolder;
-    NSMutableArray *_bookmarksWaiters;
-    BOOL _claimedOwnershipOfBookmarks;
-    BOOL _claimedOwnershipOfContacts;
-    BOOL _claimedOwnershipOfEvents;
-    BOOL _claimedOwnershipOfNotes;
-    <DADataclassLockWatcher> *_contactsLockHolder;
-    NSMutableArray *_contactsWaiters;
-    <DADataclassLockWatcher> *_eventsLockHolder;
-    NSMutableArray *_eventsWaiters;
-    <DADataclassLockWatcher> *_notesLockHolder;
-    NSMutableArray *_notesWaiters;
-    NSString *_unitTestHackRunLoopMode;
-    NSMutableSet *_waiterIDsExpectingBookmarksLock;
-    NSMutableSet *_waiterIDsExpectingContactsLock;
-    NSMutableSet *_waiterIDsExpectingEventsLock;
-    NSMutableSet *_waiterIDsExpectingNotesLock;
+    <DADataclassLockWatcher> * _bookmarksLockHolder;
+    NSMutableArray * _bookmarksWaiters;
+    BOOL  _claimedOwnershipOfBookmarks;
+    BOOL  _claimedOwnershipOfContacts;
+    BOOL  _claimedOwnershipOfEvents;
+    BOOL  _claimedOwnershipOfNotes;
+    <DADataclassLockWatcher> * _contactsLockHolder;
+    NSMutableArray * _contactsWaiters;
+    <DADataclassLockWatcher> * _eventsLockHolder;
+    NSMutableArray * _eventsWaiters;
+    <DADataclassLockWatcher> * _notesLockHolder;
+    NSMutableArray * _notesWaiters;
+    NSString * _unitTestHackRunLoopMode;
+    NSMutableSet * _waiterIDsExpectingBookmarksLock;
+    NSMutableSet * _waiterIDsExpectingContactsLock;
+    NSMutableSet * _waiterIDsExpectingEventsLock;
+    NSMutableSet * _waiterIDsExpectingNotesLock;
 }
 
 @property (nonatomic, retain) <DADataclassLockWatcher> *bookmarksLockHolder;

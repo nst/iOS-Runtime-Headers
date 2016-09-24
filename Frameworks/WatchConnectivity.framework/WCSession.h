@@ -3,36 +3,40 @@
  */
 
 @interface WCSession : NSObject <WCXPCManagerDelegate> {
-    int _activationState;
-    NSDictionary *_applicationContext;
-    NSOperationQueue *_backgroundWorkOperationQueue;
-    BOOL _complicationEnabled;
-    WCSessionUserInfoTransfer *_currentComplicationUserInfoTransfer;
-    NSMutableSet *_currentMessageIdentifiersAwaitingReply;
-    NSMutableDictionary *_currentMessages;
-    <WCSessionDelegate> *_delegate;
-    NSOperationQueue *_delegateOperationQueue;
-    BOOL _delegateSupportsActiveDeviceSwitch;
-    BOOL _delegateSupportsAsyncActivate;
-    BOOL _hasCompletedInitialActivation;
-    BOOL _iOSDeviceNeedsUnlockAfterRebootForReachability;
-    NSMutableDictionary *_internalOutstandingFileTransfers;
-    NSMutableDictionary *_internalOutstandingUserInfoTransfers;
-    BOOL _paired;
-    NSString *_pairingID;
-    WCQueueManager *_queueManager;
-    BOOL _reachable;
-    NSDictionary *_receivedApplicationContext;
-    NSMutableArray *_switchTasksQueue;
-    BOOL _watchAppInstalled;
-    NSURL *_watchDirectoryURL;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    int  _activationState;
+    NSDictionary * _applicationContext;
+    NSOperationQueue * _backgroundWorkOperationQueue;
+    BOOL  _complicationEnabled;
+    BOOL  _connectionWasInterrupted;
+    WCSessionUserInfoTransfer * _currentComplicationUserInfoTransfer;
+    NSMutableSet * _currentMessageIdentifiersAwaitingReply;
+    NSMutableDictionary * _currentMessages;
+    <WCSessionDelegate> * _delegate;
+    NSOperationQueue * _delegateOperationQueue;
+    BOOL  _delegateSupportsActiveDeviceSwitch;
+    BOOL  _delegateSupportsAsyncActivate;
+    BOOL  _hasCompletedInitialActivation;
+    BOOL  _hasContentPending;
+    BOOL  _iOSDeviceNeedsUnlockAfterRebootForReachability;
+    NSMutableDictionary * _internalOutstandingFileTransfers;
+    NSMutableDictionary * _internalOutstandingUserInfoTransfers;
+    BOOL  _paired;
+    NSString * _pairingID;
+    WCQueueManager * _queueManager;
+    BOOL  _reachable;
+    NSDictionary * _receivedApplicationContext;
+    unsigned int  _remainingComplicationUserInfoTransfers;
+    NSMutableArray * _switchTasksQueue;
+    BOOL  _watchAppInstalled;
+    NSURL * _watchDirectoryURL;
+    NSOperationQueue * _workOperationQueue;
 }
 
 @property (nonatomic) int activationState;
 @property (nonatomic, copy) NSDictionary *applicationContext;
 @property (readonly) NSOperationQueue *backgroundWorkOperationQueue;
 @property (getter=isComplicationEnabled, nonatomic) BOOL complicationEnabled;
+@property (nonatomic) BOOL connectionWasInterrupted;
 @property (retain) WCSessionUserInfoTransfer *currentComplicationUserInfoTransfer;
 @property (retain) NSMutableSet *currentMessageIdentifiersAwaitingReply;
 @property (readonly) NSMutableDictionary *currentMessages;
@@ -43,6 +47,7 @@
 @property (nonatomic) BOOL delegateSupportsAsyncActivate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL hasCompletedInitialActivation;
+@property (nonatomic) BOOL hasContentPending;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL iOSDeviceNeedsUnlockAfterRebootForReachability;
 @property (nonatomic, retain) NSMutableDictionary *internalOutstandingFileTransfers;
@@ -54,11 +59,12 @@
 @property (retain) WCQueueManager *queueManager;
 @property (getter=isReachable, nonatomic) BOOL reachable;
 @property (nonatomic, copy) NSDictionary *receivedApplicationContext;
+@property (nonatomic) unsigned int remainingComplicationUserInfoTransfers;
 @property (readonly) Class superclass;
 @property (retain) NSMutableArray *switchTasksQueue;
 @property (getter=isWatchAppInstalled, nonatomic) BOOL watchAppInstalled;
 @property (nonatomic, retain) NSURL *watchDirectoryURL;
-@property (readonly) NSObject<OS_dispatch_queue> *workQueue;
+@property (readonly) NSOperationQueue *workOperationQueue;
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)defaultSession;
@@ -74,6 +80,7 @@
 - (id)backgroundWorkOperationQueue;
 - (void)cancelFileTransfer:(id)arg1;
 - (void)cancelUserInfo:(id)arg1;
+- (BOOL)connectionWasInterrupted;
 - (id)createAndStartTimerOnWorkQueueWithHandler:(id /* block */)arg1;
 - (id)currentComplicationUserInfoTransfer;
 - (id)currentMessageIdentifiersAwaitingReply;
@@ -103,6 +110,7 @@
 - (void)handleSessionStateChanged:(id)arg1;
 - (void)handleUserInfoResultWithPairingID:(id)arg1;
 - (BOOL)hasCompletedInitialActivation;
+- (BOOL)hasContentPending;
 - (unsigned int)hash;
 - (BOOL)iOSDeviceNeedsUnlockAfterRebootForReachability;
 - (id)init;
@@ -150,17 +158,20 @@
 - (id)pairingID;
 - (id)queueManager;
 - (id)receivedApplicationContext;
+- (unsigned int)remainingComplicationUserInfoTransfers;
 - (void)sendMessage:(id)arg1 replyHandler:(id /* block */)arg2 errorHandler:(id /* block */)arg3;
 - (void)sendMessageData:(id)arg1 replyHandler:(id /* block */)arg2 errorHandler:(id /* block */)arg3;
 - (void)setActivationState:(int)arg1;
 - (void)setApplicationContext:(id)arg1;
 - (void)setComplicationEnabled:(BOOL)arg1;
+- (void)setConnectionWasInterrupted:(BOOL)arg1;
 - (void)setCurrentComplicationUserInfoTransfer:(id)arg1;
 - (void)setCurrentMessageIdentifiersAwaitingReply:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegateSupportsActiveDeviceSwitch:(BOOL)arg1;
 - (void)setDelegateSupportsAsyncActivate:(BOOL)arg1;
 - (void)setHasCompletedInitialActivation:(BOOL)arg1;
+- (void)setHasContentPending:(BOOL)arg1;
 - (void)setIOSDeviceNeedsUnlockAfterRebootForReachability:(BOOL)arg1;
 - (void)setInternalOutstandingFileTransfers:(id)arg1;
 - (void)setInternalOutstandingUserInfoTransfers:(id)arg1;
@@ -169,6 +180,7 @@
 - (void)setQueueManager:(id)arg1;
 - (void)setReachable:(BOOL)arg1;
 - (void)setReceivedApplicationContext:(id)arg1;
+- (void)setRemainingComplicationUserInfoTransfers:(unsigned int)arg1;
 - (void)setSwitchTasksQueue:(id)arg1;
 - (void)setWatchAppInstalled:(BOOL)arg1;
 - (void)setWatchDirectoryURL:(id)arg1;
@@ -183,7 +195,8 @@
 - (void)updatePairingID:(id)arg1;
 - (BOOL)verifySessionFile:(id)arg1;
 - (id)watchDirectoryURL;
-- (id)workQueue;
+- (id)workOperationQueue;
 - (void)xpcConnectionInterrupted;
+- (void)xpcConnectionRestoredWithState:(id)arg1;
 
 @end

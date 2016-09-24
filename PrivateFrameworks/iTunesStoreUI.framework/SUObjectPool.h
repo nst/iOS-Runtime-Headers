@@ -3,8 +3,8 @@
  */
 
 @interface SUObjectPool : NSObject {
-    NSMutableDictionary *_poolObjects;
-    NSMutableArray *_vendedObjects;
+    NSMutableDictionary * _poolObjects;
+    NSMutableArray * _vendedObjects;
 }
 
 @property (nonatomic, readonly) NSArray *vendedObjects;

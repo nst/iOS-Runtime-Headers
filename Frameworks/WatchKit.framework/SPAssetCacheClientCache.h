@@ -3,11 +3,11 @@
  */
 
 @interface SPAssetCacheClientCache : NSObject {
-    NSMutableDictionary *_assets;
-    unsigned int _cacheType;
-    NSString *_gizmoCacheIdentifier;
-    NSMutableArray *_keys;
-    int _size;
+    NSMutableDictionary * _assets;
+    unsigned int  _cacheType;
+    NSString * _gizmoCacheIdentifier;
+    NSMutableArray * _keys;
+    int  _size;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *assets;

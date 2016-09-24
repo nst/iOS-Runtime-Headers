@@ -3,27 +3,37 @@
  */
 
 @interface CNPickerController : UINavigationController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
-    BOOL _allowsCustomItems;
-    NSArray *_builtinItems;
-    NSArray *_customItems;
-    id /* block */ _itemLocalizationBlock;
-    NSString *_itemLocalizationKey;
-    NSIndexPath *_selectedIndexPath;
-    NSString *_selectedItem;
-    UITableViewController *_tableViewController;
+    BOOL  _allowsCustomItems;
+    BOOL  _allowsDiscoveredItems;
+    NSArray * _builtinItems;
+    int  _builtinItemsSection;
+    NSArray * _customItems;
+    int  _customItemsSection;
+    NSArray * _discoveredItems;
+    int  _discoveredItemsSection;
+    id /* block */  _itemLocalizationBlock;
+    NSString * _itemLocalizationKey;
+    NSIndexPath * _selectedIndexPath;
+    id  _selectedItem;
+    UITableViewController * _tableViewController;
 }
 
 @property (nonatomic) BOOL allowsCustomItems;
+@property (nonatomic) BOOL allowsDiscoveredItems;
 @property (nonatomic, copy) NSArray *builtinItems;
+@property (nonatomic) int builtinItemsSection;
 @property (nonatomic, copy) NSArray *customItems;
+@property (nonatomic) int customItemsSection;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CNPickerControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSArray *discoveredItems;
+@property (nonatomic) int discoveredItemsSection;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) id /* block */ itemLocalizationBlock;
 @property (nonatomic, copy) NSString *itemLocalizationKey;
 @property (nonatomic, retain) NSIndexPath *selectedIndexPath;
-@property (nonatomic, retain) NSString *selectedItem;
+@property (nonatomic, retain) id selectedItem;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UITableViewController *tableViewController;
 
@@ -33,11 +43,16 @@
 - (id)_titleForPickerItem:(id)arg1;
 - (void)_updateRightButtonItem;
 - (BOOL)allowsCustomItems;
+- (BOOL)allowsDiscoveredItems;
 - (id)builtinItems;
+- (int)builtinItemsSection;
 - (void)cancelPicker:(id)arg1;
 - (id)customItems;
+- (int)customItemsSection;
 - (void)customLabelUpdated:(id)arg1;
 - (void)dealloc;
+- (id)discoveredItems;
+- (int)discoveredItemsSection;
 - (void)donePicker:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)isEditing;
@@ -48,8 +63,13 @@
 - (id)selectedIndexPath;
 - (id)selectedItem;
 - (void)setAllowsCustomItems:(BOOL)arg1;
+- (void)setAllowsDiscoveredItems:(BOOL)arg1;
 - (void)setBuiltinItems:(id)arg1;
+- (void)setBuiltinItemsSection:(int)arg1;
 - (void)setCustomItems:(id)arg1;
+- (void)setCustomItemsSection:(int)arg1;
+- (void)setDiscoveredItems:(id)arg1;
+- (void)setDiscoveredItemsSection:(int)arg1;
 - (void)setItemLocalizationBlock:(id /* block */)arg1;
 - (void)setItemLocalizationKey:(id)arg1;
 - (void)setSelectedIndexPath:(id)arg1;

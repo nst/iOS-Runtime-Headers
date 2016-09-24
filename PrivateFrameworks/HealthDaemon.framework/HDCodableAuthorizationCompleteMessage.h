@@ -3,9 +3,9 @@
  */
 
 @interface HDCodableAuthorizationCompleteMessage : PBCodable <NSCopying> {
-    NSString *_appBundleIdentifier;
-    NSString *_errorDescription;
-    NSData *_requestIdentifier;
+    NSString * _appBundleIdentifier;
+    NSString * _errorDescription;
+    NSData * _requestIdentifier;
 }
 
 @property (nonatomic, retain) NSString *appBundleIdentifier;

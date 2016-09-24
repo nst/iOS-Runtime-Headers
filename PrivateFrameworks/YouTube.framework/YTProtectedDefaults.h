@@ -3,9 +3,9 @@
  */
 
 @interface YTProtectedDefaults : NSObject {
-    NSMutableDictionary *_internalDictionary;
-    NSString *_plistPath;
-    BOOL _shouldSynchronize;
+    NSMutableDictionary * _internalDictionary;
+    NSString * _plistPath;
+    BOOL  _shouldSynchronize;
 }
 
 + (id)sharedInstance;

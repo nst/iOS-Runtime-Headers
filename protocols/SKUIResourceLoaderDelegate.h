@@ -5,6 +5,8 @@
 
 @optional
 
+- (void)resourceLoader:(SKUIResourceLoader *)arg1 didLoadAllForReason:(int)arg2;
+- (void)resourceLoaderDidBeginLoading:(SKUIResourceLoader *)arg1;
 - (void)resourceLoaderDidIdle:(SKUIResourceLoader *)arg1;
 
 @end

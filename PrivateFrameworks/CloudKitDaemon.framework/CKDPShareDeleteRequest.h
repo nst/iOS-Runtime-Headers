@@ -3,16 +3,16 @@
  */
 
 @interface CKDPShareDeleteRequest : PBRequest <NSCopying> {
-    NSString *_etag;
-    CKDPProtectionInfo *_selfAddedPcs;
-    CKDPShareIdentifier *_shareId;
+    NSString * _etag;
+    CKDPProtectionInfo * _oBSOLETESelfAddedPcs;
+    CKDPShareIdentifier * _shareId;
 }
 
 @property (nonatomic, retain) NSString *etag;
 @property (nonatomic, readonly) BOOL hasEtag;
-@property (nonatomic, readonly) BOOL hasSelfAddedPcs;
+@property (nonatomic, readonly) BOOL hasOBSOLETESelfAddedPcs;
 @property (nonatomic, readonly) BOOL hasShareId;
-@property (nonatomic, retain) CKDPProtectionInfo *selfAddedPcs;
+@property (nonatomic, retain) CKDPProtectionInfo *oBSOLETESelfAddedPcs;
 @property (nonatomic, retain) CKDPShareIdentifier *shareId;
 
 + (id)options;
@@ -24,17 +24,17 @@
 - (id)dictionaryRepresentation;
 - (id)etag;
 - (BOOL)hasEtag;
-- (BOOL)hasSelfAddedPcs;
+- (BOOL)hasOBSOLETESelfAddedPcs;
 - (BOOL)hasShareId;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (id)oBSOLETESelfAddedPcs;
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
-- (id)selfAddedPcs;
 - (void)setEtag:(id)arg1;
-- (void)setSelfAddedPcs:(id)arg1;
+- (void)setOBSOLETESelfAddedPcs:(id)arg1;
 - (void)setShareId:(id)arg1;
 - (id)shareId;
 - (void)writeTo:(id)arg1;

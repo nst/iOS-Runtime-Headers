@@ -3,14 +3,14 @@
  */
 
 @interface FirmwareBundle : NSObject {
-    NSString *_bundleDescription;
-    NSData *_certificate;
-    NSData *_firmwareImage;
-    unsigned int _firmwareImageBaseAddress;
-    unsigned int _firmwareImageSize;
-    NSData *_hash;
-    unsigned int _productIDCode;
-    NSData *_signature;
+    NSString * _bundleDescription;
+    NSData * _certificate;
+    NSData * _firmwareImage;
+    unsigned int  _firmwareImageBaseAddress;
+    unsigned int  _firmwareImageSize;
+    NSData * _hash;
+    unsigned int  _productIDCode;
+    NSData * _signature;
 }
 
 @property (readonly) NSData *certificate;

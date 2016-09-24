@@ -2,12 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface AceObject : NSObject <AceObject> {
-    NSString *_aceId;
-    NSNumber *_deserializationDuration;
-    NSMutableDictionary *_dict;
-    NSData *_plistData;
-    NSString *_refId;
+@interface AceObject : NSObject <AceObject, SiriCoreThunking> {
+    NSString * _aceId;
+    NSNumber * _deserializationDuration;
+    NSMutableDictionary * _dict;
+    NSData * _plistData;
+    NSString * _refId;
 }
 
 @property (nonatomic, copy) NSString *aceId;
@@ -37,7 +37,8 @@
 + (id)newAceObjectWithGenericCommand:(id)arg1 context:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
-- (void)_appendDescriptionOfObject:(id)arg1 toString:(id)arg2 atDepth:(int)arg3 withPrefixes:(id)arg4;
+- (void)_appendDescriptionOfObject:(id)arg1 toString:(id)arg2 atDepth:(unsigned int)arg3 withPrefixes:(id)arg4 hint:(id)arg5;
+- (id)_descriptionHint;
 - (void)_deserializeFromPlistData;
 - (id)_dict;
 - (id)_initWithMutableDictionary:(id)arg1;
@@ -53,6 +54,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)encodedClassName;
 - (id)forceEagerDeserialization;
+- (id)fullDescription;
 - (id)groupIdentifier;
 - (BOOL)hasArrayForPropertyForKey:(id)arg1;
 - (unsigned int)hash;
@@ -74,8 +76,18 @@
 - (id)topLevelPropertyForKey:(id)arg1;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
+// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
+
+- (id)af_dialogIdentifier;
+- (BOOL)af_isUserUtterance;
+- (BOOL)af_isUtterance;
+
 // Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
 
 - (int)_afui_usefulUserResultType;
+
+// Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
+
+- (void)siriCore_invokeThunk;
 
 @end

@@ -3,23 +3,23 @@
  */
 
 @interface ABPersonNameDisplayView : ABPasteboardControl {
-    BOOL _alignOnBottom;
-    NSString *_customHeadline;
-    NSString *_customMessage;
-    NSString *_customMessageDetail;
-    UIView *_customMessageView;
-    NSString *_customTagLine;
-    UILabel *_headlineLabel;
-    UIFont *_messageDetailFont;
-    UILabel *_messageDetailLabel;
-    UIFont *_messageFont;
-    UILabel *_messageLabel;
-    float _minimumHeight;
-    ABNamePropertyGroup *_namePropertyGroup;
-    int _primaryProperty;
-    NSString *_primaryPropertyFormattingCountryCode;
-    ABStyleProvider *_styleProvider;
-    UILabel *_tagLineLabel;
+    BOOL  _alignOnBottom;
+    NSString * _customHeadline;
+    NSString * _customMessage;
+    NSString * _customMessageDetail;
+    UIView * _customMessageView;
+    NSString * _customTagLine;
+    UILabel * _headlineLabel;
+    UIFont * _messageDetailFont;
+    UILabel * _messageDetailLabel;
+    UIFont * _messageFont;
+    UILabel * _messageLabel;
+    double  _minimumHeight;
+    ABNamePropertyGroup * _namePropertyGroup;
+    int  _primaryProperty;
+    NSString * _primaryPropertyFormattingCountryCode;
+    ABStyleProvider * _styleProvider;
+    UILabel * _tagLineLabel;
 }
 
 @property (nonatomic) BOOL alignOnBottom;
@@ -29,7 +29,7 @@
 @property (nonatomic, copy) NSString *messageDetail;
 @property (nonatomic, retain) UIFont *messageDetailFont;
 @property (nonatomic, retain) UIFont *messageFont;
-@property (nonatomic) float minimumHeight;
+@property (nonatomic) double minimumHeight;
 @property (nonatomic, retain) ABNamePropertyGroup *namePropertyGroup;
 @property (nonatomic) int primaryProperty;
 @property (nonatomic, copy) NSString *primaryPropertyFormattingCountryCode;
@@ -57,7 +57,7 @@
 - (id)customMessageView;
 - (void)dealloc;
 - (id)headline;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)initializeHeadlineAndTaglineIfNeeded;
 - (void)layoutSubviews;
 - (id)message;
@@ -65,14 +65,14 @@
 - (id)messageDetailFont;
 - (id)messageFont;
 - (float)minimumHeight;
-- (struct CGSize { float x1; float x2; })multilineLabel:(id)arg1 sizeThatFits:(struct CGSize { float x1; float x2; })arg2;
+- (struct CGSize { double x1; double x2; })multilineLabel:(id)arg1 sizeThatFits:(struct CGSize { double x1; double x2; })arg2;
 - (id)namePropertyGroup;
 - (int)primaryProperty;
 - (id)primaryPropertyFormattingCountryCode;
 - (void)reloadNameDataAnimated:(BOOL)arg1;
 - (void)setAlignOnBottom:(BOOL)arg1;
 - (void)setCustomMessageView:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setHeadline:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setMessageDetail:(id)arg1;
@@ -84,7 +84,7 @@
 - (void)setPrimaryPropertyFormattingCountryCode:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (void)setTagLine:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)styleProvider;
 - (id)tagLine;
 

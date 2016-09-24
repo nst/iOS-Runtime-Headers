@@ -3,8 +3,8 @@
  */
 
 @interface OISFURegularExpression : NSObject <NSCoding, NSCopying> {
-    NSString *_expressionString;
-    void *_reserved;
+    NSString * _expressionString;
+    void * _reserved;
 }
 
 + (void)initialize;

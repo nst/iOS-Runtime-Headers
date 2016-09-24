@@ -3,22 +3,19 @@
  */
 
 @interface GEOPDResultSnippet : PBCodable <NSCopying> {
-    NSString *_category;
-    GEOLatLng *_center;
-    unsigned int _distanceDisplayThreshold;
+    NSString * _category;
+    unsigned int  _distanceDisplayThreshold;
     struct { 
         unsigned int distanceDisplayThreshold : 1; 
-    } _has;
-    NSString *_locationString;
-    NSString *_name;
-    GEOPDRating *_priceRange;
+    }  _has;
+    NSString * _locationString;
+    NSString * _name;
+    GEOPDRating * _priceRange;
 }
 
 @property (nonatomic, retain) NSString *category;
-@property (nonatomic, retain) GEOLatLng *center;
 @property (nonatomic) unsigned int distanceDisplayThreshold;
 @property (nonatomic, readonly) BOOL hasCategory;
-@property (nonatomic, readonly) BOOL hasCenter;
 @property (nonatomic) BOOL hasDistanceDisplayThreshold;
 @property (nonatomic, readonly) BOOL hasLocationString;
 @property (nonatomic, readonly) BOOL hasName;
@@ -30,7 +27,6 @@
 + (id)resultSnippetForPlaceData:(id)arg1;
 
 - (id)category;
-- (id)center;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -38,7 +34,6 @@
 - (id)dictionaryRepresentation;
 - (unsigned int)distanceDisplayThreshold;
 - (BOOL)hasCategory;
-- (BOOL)hasCenter;
 - (BOOL)hasDistanceDisplayThreshold;
 - (BOOL)hasLocationString;
 - (BOOL)hasName;
@@ -51,7 +46,6 @@
 - (id)priceRange;
 - (BOOL)readFrom:(id)arg1;
 - (void)setCategory:(id)arg1;
-- (void)setCenter:(id)arg1;
 - (void)setDistanceDisplayThreshold:(unsigned int)arg1;
 - (void)setHasDistanceDisplayThreshold:(BOOL)arg1;
 - (void)setLocationString:(id)arg1;

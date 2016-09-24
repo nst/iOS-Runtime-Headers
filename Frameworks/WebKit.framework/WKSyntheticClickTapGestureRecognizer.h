@@ -3,10 +3,10 @@
  */
 
 @interface WKSyntheticClickTapGestureRecognizer : UITapGestureRecognizer {
-    SEL _gestureRecognizedAction;
-    id _gestureRecognizedTarget;
-    SEL _resetAction;
-    id _resetTarget;
+    SEL  _gestureRecognizedAction;
+    id  _gestureRecognizedTarget;
+    SEL  _resetAction;
+    id  _resetTarget;
 }
 
 - (void)reset;

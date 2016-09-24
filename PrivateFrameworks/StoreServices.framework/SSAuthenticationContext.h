@@ -3,34 +3,34 @@
  */
 
 @interface SSAuthenticationContext : NSObject <NSCopying, NSMutableCopying, SSXPCCoding> {
-    NSString *_accountName;
-    BOOL _accountNameEditable;
-    int _accountScope;
-    BOOL _allowsBioAuthentication;
-    BOOL _allowsBootstrapCellularData;
-    BOOL _allowsRetry;
-    NSString *_altDSID;
-    BOOL _canCreateNewAccount;
-    BOOL _canSetActiveAccount;
-    NSString *_clientIdentifierHeader;
-    BOOL _demoAccount;
-    BOOL _displaysOnLockScreen;
-    NSDictionary *_httpHeaders;
-    NSString *_initialPassword;
-    BOOL _persistsAcrossDeviceLock;
-    BOOL _persistsPasswordFallback;
-    NSString *_preferredITunesStoreClient;
-    int _promptStyle;
-    NSString *_reasonDescription;
-    NSDictionary *_requestParameters;
-    NSNumber *_requiredUniqueIdentifier;
-    BOOL _shouldCreateNewSession;
-    BOOL _shouldFollowAccountButtons;
-    BOOL _shouldIgnoreProtocol;
-    BOOL _shouldSuppressDialogs;
-    NSDictionary *_signupRequestParameters;
-    int _tokenType;
-    NSArray *_userAgentComponents;
+    NSString * _accountName;
+    BOOL  _accountNameEditable;
+    int  _accountScope;
+    BOOL  _allowsBioAuthentication;
+    BOOL  _allowsBootstrapCellularData;
+    BOOL  _allowsRetry;
+    NSString * _altDSID;
+    BOOL  _canCreateNewAccount;
+    BOOL  _canSetActiveAccount;
+    NSString * _clientIdentifierHeader;
+    BOOL  _demoAccount;
+    BOOL  _displaysOnLockScreen;
+    NSDictionary * _httpHeaders;
+    NSString * _initialPassword;
+    BOOL  _persistsAcrossDeviceLock;
+    BOOL  _persistsPasswordFallback;
+    NSString * _preferredITunesStoreClient;
+    int  _promptStyle;
+    NSString * _reasonDescription;
+    NSDictionary * _requestParameters;
+    NSNumber * _requiredUniqueIdentifier;
+    BOOL  _shouldCreateNewSession;
+    BOOL  _shouldFollowAccountButtons;
+    BOOL  _shouldIgnoreProtocol;
+    BOOL  _shouldSuppressDialogs;
+    NSDictionary * _signupRequestParameters;
+    int  _tokenType;
+    NSArray * _userAgentComponents;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *HTTPHeaders;

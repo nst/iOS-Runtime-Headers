@@ -3,17 +3,20 @@
  */
 
 @interface EKEventDetailOrganizerCell : EKEventDetailCell {
-    NSString *_organizerName;
-    UILabel *_organizerView;
-    UILabel *_titleView;
+    UILabel * _organizerLabel;
+    NSString * _organizerName;
+    <EKIdentityProtocol> * _organizerOverride;
+    EKUILabeledAvatarView * _organizerView;
+    UILabel * _titleView;
 }
 
++ (float)detailsCellDefaultHeight;
+
 - (void).cxx_destruct;
+- (id)_organizerLabel;
 - (id)_organizerView;
 - (id)_titleView;
-- (BOOL)hasCustomLayout;
-- (id)initWithEvent:(id)arg1 editable:(BOOL)arg2;
-- (void)layoutForWidth:(float)arg1 position:(int)arg2;
+- (id)initWithEvent:(id)arg1 editable:(BOOL)arg2 organizerOverride:(id)arg3;
 - (BOOL)shouldDisplayForEvent;
 - (BOOL)update;
 

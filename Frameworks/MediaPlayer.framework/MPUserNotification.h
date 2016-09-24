@@ -3,14 +3,14 @@
  */
 
 @interface MPUserNotification : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSObject<OS_dispatch_queue> *_callbackInvocationQueue;
-    struct __CFUserNotification { } *_cfUserNotification;
-    BOOL _isShowing;
-    struct __CFRunLoopSource { } *_runLoopSource;
-    NSMutableArray *_showingCompletionHandlers;
-    id /* block */ _willShowNotificationHandler;
-    id strongSelf;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSObject<OS_dispatch_queue> * _callbackInvocationQueue;
+    struct __CFUserNotification { } * _cfUserNotification;
+    BOOL  _isShowing;
+    struct __CFRunLoopSource { } * _runLoopSource;
+    NSMutableArray * _showingCompletionHandlers;
+    id /* block */  _willShowNotificationHandler;
+    id  strongSelf;
 }
 
 @property (nonatomic, readonly) struct __CFUserNotification { }*cfUserNotification;

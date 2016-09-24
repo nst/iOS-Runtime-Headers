@@ -3,12 +3,12 @@
  */
 
 @interface CKDModifyBadgeOperation : CKDOperation {
-    unsigned int _badgeValue;
+    unsigned int  _badgeValue;
 }
 
 @property (nonatomic, readonly) unsigned int badgeValue;
 
-- (unsigned long long)activityStart;
+- (id)activityCreate;
 - (unsigned int)badgeValue;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;

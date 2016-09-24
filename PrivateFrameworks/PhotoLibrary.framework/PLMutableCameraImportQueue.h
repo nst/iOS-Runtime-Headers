@@ -3,7 +3,7 @@
  */
 
 @interface PLMutableCameraImportQueue : NSObject {
-    NSMutableArray *_items;
+    NSMutableArray * _items;
 }
 
 - (id)currentItem;

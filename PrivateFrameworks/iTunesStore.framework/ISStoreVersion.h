@@ -3,7 +3,7 @@
  */
 
 @interface ISStoreVersion : NSObject {
-    NSURL *_redirectURL;
+    NSURL * _redirectURL;
 }
 
 @property (nonatomic, retain) NSURL *redirectURL;

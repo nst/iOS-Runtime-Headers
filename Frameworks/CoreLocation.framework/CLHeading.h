@@ -3,11 +3,10 @@
  */
 
 @interface CLHeading : NSObject <NSCopying, NSSecureCoding> {
-    id _internal;
+    id  _internal;
 }
 
 @property (nonatomic, readonly, retain) NSString *compactDescription;
-@property (nonatomic, readonly, copy) NSString *description;
 @property (nonatomic, readonly) BOOL hasGeomagneticVector;
 @property (nonatomic, readonly) double heading;
 @property (nonatomic, readonly) double headingAccuracy;

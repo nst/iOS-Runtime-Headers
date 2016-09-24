@@ -3,7 +3,7 @@
  */
 
 @interface CoreDAVSetItem : CoreDAVItem {
-    CoreDAVItem *_prop;
+    CoreDAVItem * _prop;
 }
 
 @property (nonatomic, retain) CoreDAVItem *prop;

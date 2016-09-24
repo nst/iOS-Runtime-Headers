@@ -3,7 +3,7 @@
  */
 
 @interface MPStoreAVPlayerItem : AVPlayerItem {
-    id /* block */ _deallocationHandler;
+    id /* block */  _deallocationHandler;
 }
 
 @property (nonatomic, copy) id /* block */ deallocationHandler;

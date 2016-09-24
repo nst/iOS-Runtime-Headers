@@ -3,15 +3,15 @@
  */
 
 @interface TSPSupportPackageReadCoordinator : TSPPackageReadCoordinator {
-    NSObject<OS_dispatch_queue> *_documentComponentReadQueue;
-    TSPPackage *_documentPackage;
+    NSObject<OS_dispatch_queue> * _documentComponentReadQueue;
+    TSPPackage * _documentPackage;
 }
 
 - (void).cxx_destruct;
 - (BOOL)endReading;
 - (id)initWithContext:(id)arg1 package:(id)arg2 packageURLOrNil:(id)arg3 finalizeHandlerQueue:(id)arg4 documentResourceDataProvider:(id)arg5 areExternalDataReferencesAllowed:(BOOL)arg6 skipDocumentUpgrade:(BOOL)arg7;
 - (id)initWithContext:(id)arg1 package:(id)arg2 packageURLOrNil:(id)arg3 finalizeHandlerQueue:(id)arg4 documentResourceDataProvider:(id)arg5 areExternalDataReferencesAllowed:(BOOL)arg6 skipDocumentUpgrade:(BOOL)arg7 documentPackage:(id)arg8;
-- (long long)metadataObjectIdentifier;
-- (void)prepareToReadComponentWithIdentifier:(long long)arg1 forObjectIdentifier:(long long)arg2 isWeakReference:(BOOL)arg3 queue:(id)arg4 completion:(id /* block */)arg5;
+- (int)metadataObjectIdentifier;
+- (void)prepareToReadComponentWithIdentifier:(int)arg1 forObjectIdentifier:(int)arg2 isWeakReference:(BOOL)arg3 queue:(id)arg4 completion:(id /* block */)arg5;
 
 @end

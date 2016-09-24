@@ -8,7 +8,7 @@
         double green; 
         double blue; 
         double alpha; 
-    } gradientColor;
+    }  gradientColor;
 }
 
 + (id)colorStopWithLocation:(float)arg1 gradientColor:(struct _psdGradientColor { double x1; double x2; double x3; double x4; })arg2;

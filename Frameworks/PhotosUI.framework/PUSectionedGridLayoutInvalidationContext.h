@@ -3,10 +3,10 @@
  */
 
 @interface PUSectionedGridLayoutInvalidationContext : UICollectionViewLayoutInvalidationContext {
-    BOOL _invalidateForVerticalScroll;
-    BOOL _invalidationHasBeenRedispatched;
-    BOOL _samplingIsPreserved;
-    BOOL _sectioningIsPreserved;
+    BOOL  _invalidateForVerticalScroll;
+    BOOL  _invalidationHasBeenRedispatched;
+    BOOL  _samplingIsPreserved;
+    BOOL  _sectioningIsPreserved;
 }
 
 @property (nonatomic) BOOL invalidateForVerticalScroll;

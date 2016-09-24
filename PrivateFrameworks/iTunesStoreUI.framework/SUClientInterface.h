@@ -3,27 +3,31 @@
  */
 
 @interface SUClientInterface : NSObject {
-    SUUIAppearance *_appearance;
-    NSString *_askToBuyApprovalPrompt;
-    NSString *_clientIdentifier;
-    UIColor *_darkKeyColor;
-    <SUClientInterfaceDelegatePrivate> *_delegate;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    BOOL _ignoresExpectedClientsProtocol;
-    BOOL _inAskToBuyApprovalFlow;
-    UIColor *_lightKeyColor;
-    NSString *_localStoragePath;
-    SUPurchaseManager *_purchaseManager;
-    SUQueueSessionManager *_queueSessionManager;
-    NSMutableDictionary *_urlBagKeys;
-    NSString *_userAgent;
-    SUViewControllerFactory *_viewControllerFactory;
-    BOOL _wasLaunchedFromLibrary;
-    BOOL inAskToBuyApprovalFlow;
+    SUUIAppearance * _appearance;
+    NSString * _applicationIdentifier;
+    NSString * _applicationVersion;
+    NSString * _askToBuyApprovalPrompt;
+    NSString * _clientIdentifier;
+    UIColor * _darkKeyColor;
+    <SUClientInterfaceDelegatePrivate> * _delegate;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    BOOL  _ignoresExpectedClientsProtocol;
+    BOOL  _inAskToBuyApprovalFlow;
+    UIColor * _lightKeyColor;
+    NSString * _localStoragePath;
+    SUPurchaseManager * _purchaseManager;
+    SUQueueSessionManager * _queueSessionManager;
+    NSMutableDictionary * _urlBagKeys;
+    NSString * _userAgent;
+    SUViewControllerFactory * _viewControllerFactory;
+    BOOL  _wasLaunchedFromLibrary;
+    BOOL  inAskToBuyApprovalFlow;
 }
 
 @property (getter=_ignoresExpectedClientsProtocol, setter=_setIgnoresExpectedClientsProtocol:) BOOL _ignoresExpectedClientsProtocol;
 @property (copy) SUUIAppearance *appearance;
+@property (copy) NSString *applicationIdentifier;
+@property (copy) NSString *applicationVersion;
 @property (nonatomic, copy) NSString *askToBuyApprovalPrompt;
 @property (copy) NSString *clientIdentifier;
 @property (nonatomic, copy) UIColor *darkKeyColor;
@@ -39,6 +43,9 @@
 @property (retain) SUViewControllerFactory *viewControllerFactory;
 @property BOOL wasLaunchedFromLibrary;
 
++ (id)_defaultApplicationIdentifier;
++ (id)_defaultApplicationVersion;
+
 - (id)URLBagKeyForIdentifier:(id)arg1;
 - (void)_dismissModalViewControllerFromViewController:(id)arg1 withTransition:(int)arg2;
 - (void)_dismissViewControllerFromViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
@@ -49,7 +56,6 @@
 - (BOOL)_ignoresExpectedClientsProtocol;
 - (void)_mediaPlayerViewControllerWillDismiss:(id)arg1 animated:(BOOL)arg2;
 - (id)_newScriptInterface;
-- (id)_newUIAlertView;
 - (void)_presentDialog:(id)arg1;
 - (void)_presentViewController:(id)arg1 fromViewController:(id)arg2 withTransition:(int)arg3;
 - (void)_returnToLibrary;
@@ -58,6 +64,8 @@
 - (void)_setStatusBarStyle:(int)arg1 animated:(BOOL)arg2;
 - (void)_showPreviewOverlayAnimated:(BOOL)arg1;
 - (id)appearance;
+- (id)applicationIdentifier;
+- (id)applicationVersion;
 - (id)askToBuyApprovalPrompt;
 - (id)clientIdentifier;
 - (id)darkKeyColor;
@@ -71,6 +79,8 @@
 - (id)purchaseManager;
 - (id)queueSessionManager;
 - (void)setAppearance:(id)arg1;
+- (void)setApplicationIdentifier:(id)arg1;
+- (void)setApplicationVersion:(id)arg1;
 - (void)setAskToBuyApprovalPrompt:(id)arg1;
 - (void)setClientIdentifier:(id)arg1;
 - (void)setDarkKeyColor:(id)arg1;

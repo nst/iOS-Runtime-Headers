@@ -3,14 +3,14 @@
  */
 
 @interface AppLaunchStatsStateHandler : NSObject {
-    id /* block */ budgetHandler;
-    id /* block */ forecastHandler;
-    id /* block */ messageStatusHandler;
-    id /* block */ noprewarmHandler;
-    id /* block */ olderHandler;
-    id /* block */ queryHandler;
-    id /* block */ scoreHandler;
-    id /* block */ trendHandler;
+    id /* block */  budgetHandler;
+    id /* block */  forecastHandler;
+    id /* block */  messageStatusHandler;
+    id /* block */  noprewarmHandler;
+    id /* block */  olderHandler;
+    id /* block */  queryHandler;
+    id /* block */  scoreHandler;
+    id /* block */  trendHandler;
 }
 
 @property (copy) id /* block */ budgetHandler;

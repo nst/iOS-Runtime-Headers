@@ -3,39 +3,39 @@
  */
 
 @interface TNChartSelection : TSDDrawableSelection {
-    TSCHChartDrawableInfo *mChart;
+    TSCHChartDrawableInfo * mChart;
     struct { 
         struct TSCERangeCoordinate { 
-            struct { 
+            struct TSUCellCoord { 
                 unsigned short row; 
                 unsigned char column; 
                 unsigned char reserved; 
             } mTopLeft; 
-            struct { 
+            struct TSUCellCoord { 
                 unsigned short row; 
                 unsigned char column; 
                 unsigned char reserved; 
             } mBottomRight; 
         } range; 
         struct __CFUUID {} *tableID; 
-    } mReference;
+    }  mReference;
 }
 
 @property (nonatomic, readonly) TSCHChartDrawableInfo *chart;
-@property (nonatomic, readonly) struct { struct TSCERangeCoordinate { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; } reference;
+@property (nonatomic, readonly) struct { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct TSUCellCoord { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; } reference;
 
 + (Class)archivedSelectionClass;
 
 - (id)chart;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)initFromArchive:(const struct ChartSelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RangeReferenceArchive {} *x5; struct ChartSelectionArchive {} *x6; struct Reference {} *x7; }*)arg1 unarchiver:(id)arg2;
+- (id)initFromArchive:(const struct ChartSelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RangeReferenceArchive {} *x5; struct ChartSelectionArchive {} *x6; struct Reference {} *x7; struct DrawableSelectionArchive {} *x8; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithChartInfo:(id)arg1;
-- (id)initWithChartInfo:(id)arg1 reference:(struct { struct TSCERangeCoordinate { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg2;
+- (id)initWithChartInfo:(id)arg1 reference:(struct { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct TSUCellCoord { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg2;
 - (BOOL)isEqual:(id)arg1;
-- (struct { struct TSCERangeCoordinate { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })reference;
+- (struct { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct TSUCellCoord { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })reference;
 - (BOOL)returnChartFrameForAutoscroll;
-- (void)saveToArchive:(struct ChartSelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RangeReferenceArchive {} *x5; struct ChartSelectionArchive {} *x6; struct Reference {} *x7; }*)arg1 archiver:(id)arg2;
-- (void)setReference:(struct { struct TSCERangeCoordinate { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg1;
+- (void)saveToArchive:(struct ChartSelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RangeReferenceArchive {} *x5; struct ChartSelectionArchive {} *x6; struct Reference {} *x7; struct DrawableSelectionArchive {} *x8; }*)arg1 archiver:(id)arg2;
+- (void)setReference:(struct { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct TSUCellCoord { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg1;
 
 @end

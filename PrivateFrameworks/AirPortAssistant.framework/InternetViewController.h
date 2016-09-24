@@ -3,17 +3,17 @@
  */
 
 @interface InternetViewController : AssistantSubUIViewController <UIScrollViewDelegate> {
-    NSString *_swapDescriptionText;
-    NSString *_swapSourceLabelText;
-    UIImageView *cablingImageLastFrame;
-    UIView *descriptionContainerView;
-    UILabel *descriptionLabel;
-    UIView *diagramContainerView;
-    unsigned int internetFlow;
-    UILabel *spinnerWithStatusAdjacentLabel;
-    UIActivityIndicatorView *spinnerWithStatusAdjacentSpinner;
-    UIView *spinnerWithStatusAdjacentView;
-    UIView *tableHeaderContainerView;
+    NSString * _swapDescriptionText;
+    NSString * _swapSourceLabelText;
+    UIImageView * cablingImageLastFrame;
+    UIView * descriptionContainerView;
+    UILabel * descriptionLabel;
+    UIView * diagramContainerView;
+    unsigned int  internetFlow;
+    UILabel * spinnerWithStatusAdjacentLabel;
+    UIActivityIndicatorView * spinnerWithStatusAdjacentSpinner;
+    UIView * spinnerWithStatusAdjacentView;
+    UIView * tableHeaderContainerView;
 }
 
 @property (nonatomic, retain) UIImageView *cablingImageLastFrame;

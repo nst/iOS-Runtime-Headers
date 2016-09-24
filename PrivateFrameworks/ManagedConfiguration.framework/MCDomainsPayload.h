@@ -3,7 +3,7 @@
  */
 
 @interface MCDomainsPayload : MCPayload {
-    NSDictionary *_restrictions;
+    NSDictionary * _restrictions;
 }
 
 @property (nonatomic, retain) NSDictionary *restrictions;

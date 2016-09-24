@@ -3,14 +3,14 @@
  */
 
 @interface PFUbiquityTransactionEntryLight : NSObject {
-    NSString *_actingPeerID;
-    PFUbiquityGlobalObjectID *_globalID;
-    PFUbiquityKnowledgeVector *_kv;
-    NSString *_storeName;
-    NSDate *_transactionDate;
-    PFUbiquityLocation *_transactionLogLocation;
-    NSNumber *_transactionNumber;
-    int _transactionType;
+    NSString * _actingPeerID;
+    PFUbiquityGlobalObjectID * _globalID;
+    PFUbiquityKnowledgeVector * _kv;
+    NSString * _storeName;
+    NSDate * _transactionDate;
+    PFUbiquityLocation * _transactionLogLocation;
+    NSNumber * _transactionNumber;
+    int  _transactionType;
 }
 
 @property (nonatomic, retain) NSString *actingPeerID;

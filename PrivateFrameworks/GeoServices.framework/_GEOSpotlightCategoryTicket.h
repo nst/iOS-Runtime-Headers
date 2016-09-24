@@ -3,8 +3,8 @@
  */
 
 @interface _GEOSpotlightCategoryTicket : NSObject <GEOMapServiceCategoriesTicket> {
-    BOOL _canceled;
-    GEOMapServiceTraits *_traits;
+    BOOL  _canceled;
+    GEOMapServiceTraits * _traits;
 }
 
 @property (readonly, copy) NSString *debugDescription;

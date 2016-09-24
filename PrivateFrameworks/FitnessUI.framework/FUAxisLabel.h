@@ -3,9 +3,9 @@
  */
 
 @interface FUAxisLabel : NSObject {
-    UIColor *_labelColor;
-    id _location;
-    NSString *_text;
+    UIColor * _labelColor;
+    id  _location;
+    NSString * _text;
 }
 
 @property (nonatomic, retain) UIColor *labelColor;

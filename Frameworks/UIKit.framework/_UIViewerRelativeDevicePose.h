@@ -3,22 +3,22 @@
  */
 
 @interface _UIViewerRelativeDevicePose : NSObject <NSCoding, NSCopying> {
-    _UIMotionEffectAcceleratedOutputRange *_acceleratedOutputRange;
-    float _planarRotationAngle;
+    _UIMotionEffectAcceleratedOutputRange * _acceleratedOutputRange;
+    double  _planarRotationAngle;
     struct UIOffset { 
-        float horizontal; 
-        float vertical; 
-    } _viewerOffset;
+        double horizontal; 
+        double vertical; 
+    }  _viewerOffset;
 }
 
-@property (nonatomic) float planarRotationAngle;
-@property (nonatomic) struct UIOffset { float x1; float x2; } viewerOffset;
+@property (nonatomic) double planarRotationAngle;
+@property (nonatomic) struct UIOffset { double x1; double x2; } viewerOffset;
 
 - (void).cxx_destruct;
-- (struct UIOffset { float x1; float x2; })_acceleratedOutputForViewerOffset:(struct UIOffset { float x1; float x2; })arg1 accelerationBoostFactor:(struct CGPoint { float x1; float x2; })arg2;
+- (struct UIOffset { double x1; double x2; })_acceleratedOutputForViewerOffset:(struct UIOffset { double x1; double x2; })arg1 accelerationBoostFactor:(struct CGPoint { double x1; double x2; })arg2;
 - (id)_acceleratedOutputRange;
 - (void)_reset;
-- (void)_setAcceleration:(struct CGPoint { float x1; float x2; })arg1 fixingOutputForViewerOffset:(struct UIOffset { float x1; float x2; })arg2;
+- (void)_setAcceleration:(struct CGPoint { double x1; double x2; })arg1 fixingOutputForViewerOffset:(struct UIOffset { double x1; double x2; })arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -27,7 +27,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (float)planarRotationAngle;
 - (void)setPlanarRotationAngle:(float)arg1;
-- (void)setViewerOffset:(struct UIOffset { float x1; float x2; })arg1;
-- (struct UIOffset { float x1; float x2; })viewerOffset;
+- (void)setViewerOffset:(struct UIOffset { double x1; double x2; })arg1;
+- (struct UIOffset { double x1; double x2; })viewerOffset;
 
 @end

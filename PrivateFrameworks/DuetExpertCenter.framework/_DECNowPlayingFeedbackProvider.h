@@ -3,16 +3,17 @@
  */
 
 @interface _DECNowPlayingFeedbackProvider : NSObject {
-    NSString *_bundleId;
-    <_DECNowPlayingFeedbackProviderProtocol> *_delegate;
-    double _engagementTimeout;
-    BOOL _engagementTimerTimedOut;
-    double _minimumPlayDuration;
-    NSObject<OS_dispatch_source> *_minimumPlayDurationTimer;
-    NSDate *_mostRecentPredictionPlaybackTime;
-    NSObject<OS_dispatch_source> *_predictionEngagementTimer;
-    NSObject<OS_dispatch_queue> *_queue;
-    BOOL _userEngaged;
+    NSString * _bundleId;
+    <_DECNowPlayingFeedbackProviderProtocol> * _delegate;
+    double  _engagementTimeout;
+    BOOL  _engagementTimerTimedOut;
+    double  _minimumPlayDuration;
+    NSObject<OS_dispatch_source> * _minimumPlayDurationTimer;
+    BOOL  _monitoringForFeedback;
+    NSDate * _mostRecentPredictionPlaybackTime;
+    NSObject<OS_dispatch_source> * _predictionEngagementTimer;
+    NSObject<OS_dispatch_queue> * _queue;
+    BOOL  _userEngaged;
 }
 
 @property (nonatomic, retain) NSString *bundleId;
@@ -21,6 +22,7 @@
 @property (nonatomic) BOOL engagementTimerTimedOut;
 @property (nonatomic) double minimumPlayDuration;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *minimumPlayDurationTimer;
+@property (nonatomic) BOOL monitoringForFeedback;
 @property (nonatomic, retain) NSDate *mostRecentPredictionPlaybackTime;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *predictionEngagementTimer;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
@@ -45,6 +47,7 @@
 - (id)initWithBundleId:(id)arg1 engagementTimeout:(double)arg2 minimumPlayDuration:(double)arg3;
 - (double)minimumPlayDuration;
 - (id)minimumPlayDurationTimer;
+- (BOOL)monitoringForFeedback;
 - (id)mostRecentPredictionPlaybackTime;
 - (id)predictionEngagementTimer;
 - (id)queue;
@@ -54,11 +57,14 @@
 - (void)setEngagementTimerTimedOut:(BOOL)arg1;
 - (void)setMinimumPlayDuration:(double)arg1;
 - (void)setMinimumPlayDurationTimer:(id)arg1;
+- (void)setMonitoringForFeedback:(BOOL)arg1;
 - (void)setMostRecentPredictionPlaybackTime:(id)arg1;
 - (void)setPlaybackState:(unsigned int)arg1;
 - (void)setPredictionEngagementTimer:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setUserEngaged:(BOOL)arg1;
+- (void)startMonitoringForFeedback;
+- (void)stopMonitoringForFeedback;
 - (BOOL)userDidEngage;
 - (BOOL)userEngaged;
 

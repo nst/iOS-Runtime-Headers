@@ -3,15 +3,15 @@
  */
 
 @interface HDCodableNanoSyncChangeSet : PBCodable <HDNanoSyncDescription, HDNanoSyncPersistentUserInfoCopying, NSCopying> {
-    NSMutableArray *_changes;
+    NSMutableArray * _changes;
     struct { 
         unsigned int sessionStartDate : 1; 
         unsigned int statusCode : 1; 
-    } _has;
-    HDCodableError *_sessionError;
-    double _sessionStartDate;
-    NSData *_sessionUUID;
-    int _statusCode;
+    }  _has;
+    HDCodableError * _sessionError;
+    double  _sessionStartDate;
+    NSData * _sessionUUID;
+    int  _statusCode;
 }
 
 @property (nonatomic, retain) NSMutableArray *changes;

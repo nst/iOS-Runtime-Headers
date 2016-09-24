@@ -3,15 +3,15 @@
  */
 
 @interface CMProgressiveArchiveManager : CMArchiveManager {
-    struct { int (*x1)(); int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); } *mCallBacks;
-    const void *mClient;
-    NSMutableString *mCssString;
-    NSMutableDictionary *mDataCache;
-    NSMutableString *mHtmlLogString;
-    NSDate *mLastCommitDate;
-    BOOL mMainDataInited;
-    NSDate *mStartDate;
-    NSMutableDictionary *mStyleCache;
+    struct { int (*x1)(); int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); } * mCallBacks;
+    const void * mClient;
+    NSMutableString * mCssString;
+    NSMutableDictionary * mDataCache;
+    NSMutableString * mHtmlLogString;
+    NSDate * mLastCommitDate;
+    BOOL  mMainDataInited;
+    NSDate * mStartDate;
+    NSMutableDictionary * mStyleCache;
 }
 
 - (id)addCssStyle:(id)arg1;

@@ -3,16 +3,17 @@
  */
 
 @interface CUINamedImageAtlas : CUINamedLookup {
-    struct __CFArray { } *_atlasImages;
-    NSDictionary *_images;
-    NSArray *_renditions;
+    struct __CFArray { } * _atlasImages;
+    NSDictionary * _images;
+    NSArray * _renditions;
 }
 
 @property (nonatomic, readonly) struct CGImage { }*image;
 @property (nonatomic, readonly) NSArray *imageNames;
 @property (nonatomic, readonly) struct __CFArray { }*images;
-@property (nonatomic, readonly) float scale;
+@property (nonatomic, readonly) double scale;
 
+- (BOOL)_dimension1ExistsInKeyFormatForThemeRef:(unsigned int)arg1;
 - (id)_renditionForKey:(id)arg1 inThemeRef:(unsigned int)arg2;
 - (void)dealloc;
 - (struct CGImage { }*)image;

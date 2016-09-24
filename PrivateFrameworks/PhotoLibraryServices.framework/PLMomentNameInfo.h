@@ -3,10 +3,10 @@
  */
 
 @interface PLMomentNameInfo : NSObject {
-    NSArray *__orderedNames;
-    PLRevGeoCompoundNameInfo *__primaryNameInfo;
-    PLRevGeoCompoundNameInfo *__secondaryNameInfo;
-    BOOL _locationInfoIsValid;
+    NSArray * __orderedNames;
+    PLRevGeoCompoundNameInfo * __primaryNameInfo;
+    PLRevGeoCompoundNameInfo * __secondaryNameInfo;
+    BOOL  _locationInfoIsValid;
 }
 
 @property (setter=_setOrderedNames:, nonatomic, retain) NSArray *_orderedNames;

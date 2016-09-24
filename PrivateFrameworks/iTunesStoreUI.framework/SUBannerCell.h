@@ -3,8 +3,8 @@
  */
 
 @interface SUBannerCell : SUTableCell <SUCellConfigurationView> {
-    UIButton *_leftButton;
-    UIButton *_rightButton;
+    UIButton * _leftButton;
+    UIButton * _rightButton;
 }
 
 @property (readonly, copy) NSString *debugDescription;

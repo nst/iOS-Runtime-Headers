@@ -3,7 +3,7 @@
  */
 
 @interface MFMailboxMessageIterationFilter : NSObject <MFMessageIterationFilter> {
-    NSIndexSet *_mailboxes;
+    NSIndexSet * _mailboxes;
 }
 
 @property (readonly, copy) NSString *debugDescription;

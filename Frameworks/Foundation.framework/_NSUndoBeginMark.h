@@ -3,8 +3,8 @@
  */
 
 @interface _NSUndoBeginMark : _NSUndoObject {
-    id _groupIdentifier;
-    BOOL _isDiscardable;
+    id  _groupIdentifier;
+    BOOL  _isDiscardable;
 }
 
 - (void)dealloc;

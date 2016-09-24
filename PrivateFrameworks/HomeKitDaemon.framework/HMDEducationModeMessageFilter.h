@@ -3,17 +3,17 @@
  */
 
 @interface HMDEducationModeMessageFilter : HMDMessageFilter {
-    BOOL _ephemeralMultiUser;
-    BOOL _managedAppleID;
+    BOOL  _ephemeralMultiUser;
+    BOOL  _managedAppleID;
 }
 
 @property (getter=isEphemeralMultiUser, nonatomic) BOOL ephemeralMultiUser;
 @property (getter=isManagedAppleID, nonatomic) BOOL managedAppleID;
 
-- (void)_handleActiveAccountChanged:(id)arg1;
 - (void)_update;
 - (BOOL)acceptMessage:(id)arg1 target:(id)arg2 errorReason:(id*)arg3;
 - (void)dealloc;
+- (void)handleActiveAccountChanged:(id)arg1;
 - (id)initWithName:(id)arg1;
 - (BOOL)isEphemeralMultiUser;
 - (BOOL)isManagedAppleID;

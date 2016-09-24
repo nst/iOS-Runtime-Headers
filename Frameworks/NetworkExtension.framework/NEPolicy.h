@@ -3,9 +3,9 @@
  */
 
 @interface NEPolicy : NSObject <NEPrettyDescription> {
-    NSArray *_conditions;
-    unsigned int _order;
-    NEPolicyResult *_result;
+    NSArray * _conditions;
+    unsigned int  _order;
+    NEPolicyResult * _result;
 }
 
 @property (copy) NSArray *conditions;

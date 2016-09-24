@@ -3,20 +3,20 @@
  */
 
 @interface RCAudioTrimmingModalItem : NSObject {
-    BOOL _cancelTrimRequested;
-    <RCAudioTrimmingModalItemDelegate> *_delegate;
-    BOOL _deletesDestinationPathWhenDone;
-    NSString *_destinationPath;
-    AVAssetExportSession *_exportSession;
-    BOOL _isBeingDismissed;
-    double _maximumTrimmedDuration;
-    BOOL _playing;
-    RCActionSheetController *_presentedActionSheetController;
-    RCSavedRecording *_recording;
-    NSString *_sourcePath;
-    RCTrimTimeRangeOperation *_trimOperation;
-    NSOperationQueue *_trimOperationQueue;
-    RCAudioTrimmingModalItemViewController *_trimmingViewController;
+    BOOL  _cancelTrimRequested;
+    <RCAudioTrimmingModalItemDelegate> * _delegate;
+    BOOL  _deletesDestinationPathWhenDone;
+    NSString * _destinationPath;
+    AVAssetExportSession * _exportSession;
+    BOOL  _isBeingDismissed;
+    double  _maximumTrimmedDuration;
+    BOOL  _playing;
+    RCActionSheetController * _presentedActionSheetController;
+    RCSavedRecording * _recording;
+    NSString * _sourcePath;
+    RCTrimTimeRangeOperation * _trimOperation;
+    NSOperationQueue * _trimOperationQueue;
+    RCAudioTrimmingModalItemViewController * _trimmingViewController;
 }
 
 @property (nonatomic) <RCAudioTrimmingModalItemDelegate> *delegate;

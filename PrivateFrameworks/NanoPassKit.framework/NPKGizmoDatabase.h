@@ -3,25 +3,25 @@
  */
 
 @interface NPKGizmoDatabase : NSObject {
-    struct sqlite3 { } *_database;
-    NSObject<OS_dispatch_queue> *_dbQueue;
-    struct sqlite3_stmt { } *_deleteStatement;
-    int _externallyChangedBroadcasts;
-    struct sqlite3_stmt { } *_insertDiffStatement;
-    struct sqlite3_stmt { } *_insertStatement;
-    BOOL _isInTransaction;
-    NSArray *_libraryHashes;
-    NSMutableDictionary *_manifest;
-    BOOL _needsMoreLocalNotifyDatabaseChanged;
-    BOOL _passDBIsAvailable;
-    NSMutableArray *_passDescriptions;
-    struct sqlite3_stmt { } *_selectDeletePendingStatement;
-    struct sqlite3_stmt { } *_selectPassDataStatement;
-    struct sqlite3_stmt { } *_selectPassDiffStatement;
-    struct sqlite3_stmt { } *_selectPreferredAIDStatement;
-    BOOL _sendingLocalNotifyDatabaseChanged;
-    struct sqlite3_stmt { } *_updateDeletePendingStatment;
-    struct sqlite3_stmt { } *_updatePreferredAIDStatement;
+    struct sqlite3 { } * _database;
+    NSObject<OS_dispatch_queue> * _dbQueue;
+    struct sqlite3_stmt { } * _deleteStatement;
+    int  _externallyChangedBroadcasts;
+    struct sqlite3_stmt { } * _insertDiffStatement;
+    struct sqlite3_stmt { } * _insertStatement;
+    BOOL  _isInTransaction;
+    NSArray * _libraryHashes;
+    NSMutableDictionary * _manifest;
+    BOOL  _needsMoreLocalNotifyDatabaseChanged;
+    BOOL  _passDBIsAvailable;
+    NSMutableArray * _passDescriptions;
+    struct sqlite3_stmt { } * _selectDeletePendingStatement;
+    struct sqlite3_stmt { } * _selectPassDataStatement;
+    struct sqlite3_stmt { } * _selectPassDiffStatement;
+    struct sqlite3_stmt { } * _selectPreferredAIDStatement;
+    BOOL  _sendingLocalNotifyDatabaseChanged;
+    struct sqlite3_stmt { } * _updateDeletePendingStatment;
+    struct sqlite3_stmt { } * _updatePreferredAIDStatement;
 }
 
 @property (readonly) struct sqlite3 { }*database;
@@ -49,7 +49,8 @@
 - (void).cxx_destruct;
 - (void)_attemptDatabaseOpen;
 - (int)_databaseVersionExists:(BOOL*)arg1 valid:(BOOL*)arg2;
-- (id)_decodeObjectOfClass:(Class)arg1 fromStatment:(struct sqlite3_stmt { }*)arg2 column:(int)arg3;
+- (id)_decodeObjectOfClass:(Class)arg1 fromStatement:(struct sqlite3_stmt { }*)arg2 column:(int)arg3;
+- (id)_decodeObjectOfClasses:(id)arg1 fromStatement:(struct sqlite3_stmt { }*)arg2 column:(int)arg3;
 - (id)_diffForUniqueIDLocked:(id)arg1;
 - (void)_enumerateAllPassesForMigration:(id /* block */)arg1;
 - (BOOL)_executeSQL:(id)arg1;
@@ -77,6 +78,7 @@
 - (BOOL)_updateCompleteHashesDuringMigration:(id)arg1;
 - (void)_updateDatabaseVersionRow:(int)arg1;
 - (BOOL)_updateDeviceAndPreferredPaymentApplicationsDuringMigration:(id)arg1;
+- (BOOL)_updateDevicePaymentApplicationsDuringMigration:(id)arg1;
 - (BOOL)_updateEffectivePaymentApplicationStateDuringMigration:(id)arg1;
 - (BOOL)_updateEncodedPaymentPassDuringMigration:(id)arg1;
 - (BOOL)_updateHasStoredValueDuringMigration:(id)arg1;
@@ -91,6 +93,8 @@
 - (id)diffForUniqueID:(id)arg1;
 - (void)enumerateAllPassesAndDescriptionsWithBlock:(id /* block */)arg1;
 - (void)enumerateAllPassesWithBlock:(id /* block */)arg1;
+- (id)filteredPassesUsingPassDescriptionPredicate:(id)arg1;
+- (BOOL)hasPassesMatchingPassDescriptionPredicate:(id)arg1;
 - (id)init;
 - (struct sqlite3_stmt { }*)insertDiffStatement;
 - (struct sqlite3_stmt { }*)insertStatement;

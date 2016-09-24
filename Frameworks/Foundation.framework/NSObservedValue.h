@@ -3,9 +3,9 @@
  */
 
 @interface NSObservedValue : NSObject {
-    id _contents;
-    id _lastOriginator;
-    int _tag;
+    id  _contents;
+    id  _lastOriginator;
+    int  _tag;
 }
 
 @property (retain) NSError *error;

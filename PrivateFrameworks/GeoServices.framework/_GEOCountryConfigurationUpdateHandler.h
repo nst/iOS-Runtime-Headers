@@ -3,8 +3,8 @@
  */
 
 @interface _GEOCountryConfigurationUpdateHandler : NSObject {
-    id /* block */ _callback;
-    NSObject<OS_dispatch_queue> *_callbackQueue;
+    id /* block */  _callback;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
 }
 
 @property (nonatomic, copy) id /* block */ callback;

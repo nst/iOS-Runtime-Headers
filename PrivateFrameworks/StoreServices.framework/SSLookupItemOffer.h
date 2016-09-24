@@ -3,7 +3,7 @@
  */
 
 @interface SSLookupItemOffer : NSObject {
-    NSDictionary *_dictionary;
+    NSDictionary * _dictionary;
 }
 
 @property (nonatomic, readonly) NSString *buyParameters;
@@ -11,6 +11,8 @@
 @property (nonatomic, readonly) NSDictionary *lookupDictionary;
 @property (nonatomic, readonly) NSString *offerType;
 @property (nonatomic, readonly) NSNumber *price;
+
+// Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
 
 - (id)actionTextForType:(id)arg1;
 - (id)buyParameters;
@@ -20,5 +22,9 @@
 - (id)lookupDictionary;
 - (id)offerType;
 - (id)price;
+
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
+- (id)storeExternalVersion;
 
 @end

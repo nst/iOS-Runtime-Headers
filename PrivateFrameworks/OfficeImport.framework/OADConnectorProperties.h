@@ -3,8 +3,8 @@
  */
 
 @interface OADConnectorProperties : OADShapeProperties {
-    OADConnection *mFrom;
-    OADConnection *mTo;
+    OADConnection * mFrom;
+    OADConnection * mTo;
 }
 
 + (id)defaultProperties;

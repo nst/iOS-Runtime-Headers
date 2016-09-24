@@ -3,7 +3,7 @@
  */
 
 @interface VKTilePool : VKTileKeyMap {
-    NSLock *_lock;
+    NSLock * _lock;
 }
 
 - (unsigned long)count;

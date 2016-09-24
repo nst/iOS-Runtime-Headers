@@ -3,13 +3,13 @@
  */
 
 @interface SBKPullValueTransaction : SBKTransaction {
-    <SBKKeyValuePayloadPair> *_clientItemPayloadPair;
-    NSString *_clientItemVersionAnchor;
-    NSString *_requestedKey;
-    NSString *_resultDomainVersion;
-    <SBKKeyValuePayloadPair> *_resultItemPayloadPair;
-    NSString *_resultItemVersionAnchor;
-    BOOL _success;
+    <SBKKeyValuePayloadPair> * _clientItemPayloadPair;
+    NSString * _clientItemVersionAnchor;
+    NSString * _requestedKey;
+    NSString * _resultDomainVersion;
+    <SBKKeyValuePayloadPair> * _resultItemPayloadPair;
+    NSString * _resultItemVersionAnchor;
+    BOOL  _success;
 }
 
 @property (readonly) <SBKKeyValuePayloadPair> *clientItemPayloadPair;

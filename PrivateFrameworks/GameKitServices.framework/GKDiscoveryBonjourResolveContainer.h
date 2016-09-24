@@ -3,9 +3,9 @@
  */
 
 @interface GKDiscoveryBonjourResolveContainer : NSObject {
-    GKDiscoveryBonjour *_context;
-    id /* block */ _resolveCompletionHandler;
-    NSMutableArray *_serviceRefList;
+    GKDiscoveryBonjour * _context;
+    id /* block */  _resolveCompletionHandler;
+    NSMutableArray * _serviceRefList;
 }
 
 @property (nonatomic) GKDiscoveryBonjour *context;

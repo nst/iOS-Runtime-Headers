@@ -3,7 +3,7 @@
  */
 
 @interface MFMessageBody : NSObject {
-    MFMessage *_message;
+    MFMessage * _message;
 }
 
 - (id)attachmentURLs;

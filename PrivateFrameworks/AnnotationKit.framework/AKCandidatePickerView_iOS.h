@@ -3,20 +3,20 @@
  */
 
 @interface AKCandidatePickerView_iOS : UIView {
-    SEL _action;
-    NSArray *_annotations;
-    int _blurStyle;
-    UIView *_buttonContainer;
-    NSArray *_buttons;
-    NSArray *_itemTags;
-    id _target;
-    UIVisualEffectView *_visualEffectView;
+    SEL  _action;
+    NSArray * _annotations;
+    int  _blurStyle;
+    UIStackView * _buttonContainer;
+    NSArray * _buttons;
+    NSArray * _itemTags;
+    id  _target;
+    UIVisualEffectView * _visualEffectView;
 }
 
 @property (nonatomic) SEL action;
 @property (nonatomic, retain) NSArray *annotations;
 @property (nonatomic) int blurStyle;
-@property (nonatomic, retain) UIView *buttonContainer;
+@property (nonatomic, retain) UIStackView *buttonContainer;
 @property (nonatomic, retain) NSArray *buttons;
 @property (nonatomic, retain) NSArray *itemTags;
 @property (nonatomic) id target;
@@ -31,8 +31,8 @@
 - (int)blurStyle;
 - (id)buttonContainer;
 - (id)buttons;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 items:(id)arg2 annotations:(id)arg3 target:(id)arg4 action:(SEL)arg5 visualStyle:(int)arg6;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 items:(id)arg2 annotations:(id)arg3 target:(id)arg4 action:(SEL)arg5 visualStyle:(int)arg6;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (id)itemTags;
 - (void)setAction:(SEL)arg1;
 - (void)setAnnotations:(id)arg1;

@@ -3,13 +3,13 @@
  */
 
 @interface PDAnimateTimeBehavior : PDAnimateBehavior {
-    NSString *mBy;
-    int mCalcMode;
-    NSString *mFrom;
-    BOOL mHasCalcMode;
-    BOOL mHasValueType;
-    NSString *mTo;
-    int mValueType;
+    NSString * mBy;
+    int  mCalcMode;
+    NSString * mFrom;
+    BOOL  mHasCalcMode;
+    BOOL  mHasValueType;
+    NSString * mTo;
+    int  mValueType;
 }
 
 - (id)by;

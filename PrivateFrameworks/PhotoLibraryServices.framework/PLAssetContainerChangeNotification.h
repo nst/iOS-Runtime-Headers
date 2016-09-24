@@ -3,9 +3,9 @@
  */
 
 @interface PLAssetContainerChangeNotification : PLContainerChangeNotification {
-    BOOL _keyAssetDidChange;
-    BOOL _titleDidChange;
-    NSDictionary *_userInfo;
+    BOOL  _keyAssetDidChange;
+    BOOL  _titleDidChange;
+    NSDictionary * _userInfo;
 }
 
 @property (nonatomic, readonly, retain) NSObject<PLAlbumProtocol> *album;

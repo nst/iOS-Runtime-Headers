@@ -11,6 +11,7 @@
 - (void)fetchHostAppCustomActivitiesForURL:(NSURL *)arg1 title:(NSString *)arg2;
 - (void)setRemoteSwipeGestureEnabled:(BOOL)arg1;
 - (void)willDismissServiceViewController;
+- (void)willOpenURLInHostApplication:(NSURL *)arg1;
 - (void)willUpdateStatusBarStyle:(NSNumber *)arg1;
 
 @end

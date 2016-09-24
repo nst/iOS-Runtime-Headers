@@ -3,8 +3,8 @@
  */
 
 @interface WLMessageSMILPart : NSObject {
-    NSDictionary *_attributes;
-    NSString *_elementName;
+    NSDictionary * _attributes;
+    NSString * _elementName;
 }
 
 @property (nonatomic, readonly) NSDictionary *attributes;

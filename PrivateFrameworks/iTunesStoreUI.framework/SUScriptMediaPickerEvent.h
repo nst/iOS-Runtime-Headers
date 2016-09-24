@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptMediaPickerEvent : SUScriptObject {
-    SUScriptMediaItemCollection *_collection;
+    SUScriptMediaItemCollection * _collection;
 }
 
 @property (readonly) SUScriptMediaItemCollection *collection;

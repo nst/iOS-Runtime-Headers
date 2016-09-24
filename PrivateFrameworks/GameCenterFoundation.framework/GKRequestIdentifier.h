@@ -3,9 +3,9 @@
  */
 
 @interface GKRequestIdentifier : NSObject <NSCopying> {
-    NSArray *_arguments;
-    unsigned int _savedHash;
-    SEL _selector;
+    NSArray * _arguments;
+    unsigned int  _savedHash;
+    SEL  _selector;
 }
 
 + (id)requestIdentifierForInvocation:(id)arg1;

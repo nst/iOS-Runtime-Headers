@@ -3,9 +3,9 @@
  */
 
 @interface TSCH3DUniformArrayShaderVariables : NSObject {
-    unsigned int mArraySize;
-    NSString *mPrefix;
-    NSMutableDictionary *mVariables;
+    unsigned int  mArraySize;
+    NSString * mPrefix;
+    NSMutableDictionary * mVariables;
 }
 
 @property (nonatomic, readonly) unsigned int arraySize;

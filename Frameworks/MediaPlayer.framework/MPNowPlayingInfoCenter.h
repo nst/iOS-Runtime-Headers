@@ -3,12 +3,13 @@
  */
 
 @interface MPNowPlayingInfoCenter : NSObject {
-    NSDictionary *_nowPlayingInfo;
-    MPNowPlayingPlaybackQueueCache *_playbackQueueCache;
-    <MPNowPlayingPlaybackQueueDataSource> *_playbackQueueDataSource;
-    NSDate *_pushDate;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSDictionary *_queuedNowPlayingInfo;
+    NSDictionary * _convertedNowPlayingInfo;
+    NSDictionary * _nowPlayingInfo;
+    MPNowPlayingPlaybackQueueCache * _playbackQueueCache;
+    <MPNowPlayingPlaybackQueueDataSource> * _playbackQueueDataSource;
+    NSDate * _pushDate;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSDictionary * _queuedNowPlayingInfo;
 }
 
 @property (copy) NSDictionary *nowPlayingInfo;
@@ -22,7 +23,7 @@
 - (id)init;
 - (void)invalidatePlaybackQueue;
 - (id)nowPlayingInfo;
-- (id)nowPlayingPlaybackQueueDataSource;
+- (id)playbackQueueDataSource;
 - (void)setNowPlayingInfo:(id)arg1;
 - (void)setPlaybackQueueDataSource:(id)arg1;
 

@@ -3,7 +3,7 @@
  */
 
 @interface SKUIMediaQueryNetworkTypeFeature : SKUIMediaQueryFeature {
-    NSString *_value;
+    NSString * _value;
 }
 
 + (BOOL)supportsFeatureName:(id)arg1;

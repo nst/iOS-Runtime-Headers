@@ -3,27 +3,27 @@
  */
 
 @interface HMDBridgeInformation : NSObject {
-    NSMapTable *_addAssociatingAccessoryCompletionBlock;
-    NSMapTable *_addDisAssociatingAccessoryCompletionBlock;
-    NSMapTable *_addDiscoveredAccessoryCompletionBlock;
-    HMDAccessory *_associatingAccessory;
-    HAPTimer *_associatingAccessoryTimer;
-    HAPTimer *_disAssociatingAccessoryTimer;
-    HMDAccessory *_disassociatingAccessory;
-    HAPTimer *_discoveryAccessoryTimer;
-    NSMutableSet *_identifiersForDiscoveredBridgeableAccessories;
-    NSUUID *_messageIdentifier;
-    BOOL _startDiscovery;
+    NSMapTable * _addAssociatingAccessoryCompletionBlock;
+    NSMapTable * _addDisAssociatingAccessoryCompletionBlock;
+    NSMapTable * _addDiscoveredAccessoryCompletionBlock;
+    HMDAccessory * _associatingAccessory;
+    HMFTimer * _associatingAccessoryTimer;
+    HMFTimer * _disAssociatingAccessoryTimer;
+    HMDAccessory * _disassociatingAccessory;
+    HMFTimer * _discoveryAccessoryTimer;
+    NSMutableSet * _identifiersForDiscoveredBridgeableAccessories;
+    NSUUID * _messageIdentifier;
+    BOOL  _startDiscovery;
 }
 
 @property (nonatomic, retain) NSMapTable *addAssociatingAccessoryCompletionBlock;
 @property (nonatomic, retain) NSMapTable *addDisAssociatingAccessoryCompletionBlock;
 @property (nonatomic, retain) NSMapTable *addDiscoveredAccessoryCompletionBlock;
 @property (nonatomic) HMDAccessory *associatingAccessory;
-@property (nonatomic, retain) HAPTimer *associatingAccessoryTimer;
-@property (nonatomic, retain) HAPTimer *disAssociatingAccessoryTimer;
+@property (nonatomic, retain) HMFTimer *associatingAccessoryTimer;
+@property (nonatomic, retain) HMFTimer *disAssociatingAccessoryTimer;
 @property (nonatomic) HMDAccessory *disassociatingAccessory;
-@property (nonatomic, retain) HAPTimer *discoveryAccessoryTimer;
+@property (nonatomic, retain) HMFTimer *discoveryAccessoryTimer;
 @property (nonatomic, retain) NSMutableSet *identifiersForDiscoveredBridgeableAccessories;
 @property (nonatomic, retain) NSUUID *messageIdentifier;
 @property (nonatomic) BOOL startDiscovery;

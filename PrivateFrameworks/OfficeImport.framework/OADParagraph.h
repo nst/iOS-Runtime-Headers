@@ -3,9 +3,9 @@
  */
 
 @interface OADParagraph : NSObject {
-    OADCharacterProperties *mParagraphEndCharacterProperties;
-    OADParagraphProperties *mProperties;
-    NSMutableArray *mTextRuns;
+    OADCharacterProperties * mParagraphEndCharacterProperties;
+    OADParagraphProperties * mProperties;
+    NSMutableArray * mTextRuns;
 }
 
 - (id)addDateTimeFieldWithFormat:(int)arg1;

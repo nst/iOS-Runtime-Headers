@@ -3,19 +3,19 @@
  */
 
 @interface NSConcreteTask : NSTask {
-    NSMutableDictionary *_dictionary;
-    NSObject<OS_dispatch_source> *_dsrc;
-    BOOL _hasExeced;
-    BOOL _hasPostedDeathNotification;
-    BOOL _isRunning;
-    NSObject<OS_dispatch_semaphore> *_lock;
-    int _pid;
-    int _platformExitInfo;
-    BOOL _qos;
-    int _suspendCount;
-    id /* block */ _terminationHandler;
-    BOOL _terminationRun;
-    NSPort *_tmpPort;
+    NSMutableDictionary * _dictionary;
+    NSObject<OS_dispatch_source> * _dsrc;
+    BOOL  _hasExeced;
+    BOOL  _hasPostedDeathNotification;
+    BOOL  _isRunning;
+    NSObject<OS_dispatch_semaphore> * _lock;
+    int  _pid;
+    int  _platformExitInfo;
+    BOOL  _qos;
+    int  _suspendCount;
+    id /* block */  _terminationHandler;
+    BOOL  _terminationRun;
+    NSPort * _tmpPort;
 }
 
 - (int)_platformExitInformation;
@@ -26,7 +26,6 @@
 - (id)currentDirectoryPath;
 - (void)dealloc;
 - (id)environment;
-- (void)finalize;
 - (id)init;
 - (void)interrupt;
 - (BOOL)isRunning;

@@ -3,8 +3,8 @@
  */
 
 @interface SKUITrendingSearchPage : NSObject {
-    NSArray *_searches;
-    NSString *_title;
+    NSArray * _searches;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) NSArray *searches;

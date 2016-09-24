@@ -3,7 +3,7 @@
  */
 
 @interface TTVectorMultiTimestamp : NSObject <NSCopying> {
-    NSArray *_timestamps;
+    NSArray * _timestamps;
 }
 
 @property (nonatomic, readonly) NSArray *timestamps;

@@ -3,9 +3,9 @@
  */
 
 @interface FMXPCTransactionManager : NSObject {
-    NSCountedSet *_activeTransactions;
-    NSString *_keepAliveActivityIdentifier;
-    NSObject<OS_dispatch_queue> *_txn_ops_queue;
+    NSCountedSet * _activeTransactions;
+    NSString * _keepAliveActivityIdentifier;
+    NSObject<OS_dispatch_queue> * _txn_ops_queue;
 }
 
 @property (nonatomic, retain) NSCountedSet *activeTransactions;

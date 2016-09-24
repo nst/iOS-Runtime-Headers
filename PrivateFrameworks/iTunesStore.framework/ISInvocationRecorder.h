@@ -3,7 +3,7 @@
  */
 
 @interface ISInvocationRecorder : NSObject {
-    id _target;
+    id  _target;
 }
 
 - (id)adjustedTargetForSelector:(SEL)arg1;

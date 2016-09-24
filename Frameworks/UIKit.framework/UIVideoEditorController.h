@@ -7,9 +7,9 @@
         unsigned int visible : 1; 
         unsigned int isCleaningUp : 1; 
         unsigned int didRevertStatusBar : 1; 
-    } _flags;
-    int _previousStatusBarStyle;
-    NSMutableDictionary *_properties;
+    }  _flags;
+    int  _previousStatusBarStyle;
+    NSMutableDictionary * _properties;
 }
 
 @property (nonatomic) <UINavigationControllerDelegate><UIVideoEditorControllerDelegate> *delegate;

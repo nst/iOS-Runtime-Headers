@@ -3,11 +3,11 @@
  */
 
 @interface PUSlideshowSettingsViewModel : PUViewModel {
-    PUSlideshowMediaItem *_mediaItem;
-    BOOL _musicOn;
-    OKProducerPreset *_preset;
-    BOOL _shouldRepeat;
-    double _stepDuration;
+    PUSlideshowMediaItem * _mediaItem;
+    BOOL  _musicOn;
+    OKProducerPreset * _preset;
+    BOOL  _shouldRepeat;
+    double  _stepDuration;
 }
 
 @property (nonatomic, retain) PUSlideshowMediaItem *mediaItem;

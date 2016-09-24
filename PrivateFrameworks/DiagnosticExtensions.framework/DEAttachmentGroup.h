@@ -3,8 +3,8 @@
  */
 
 @interface DEAttachmentGroup : DEAttachmentItem <NSSecureCoding> {
-    NSArray *_attachmentItems;
-    NSURL *_rootURL;
+    NSArray * _attachmentItems;
+    NSURL * _rootURL;
 }
 
 @property (nonatomic, retain) NSArray *attachmentItems;

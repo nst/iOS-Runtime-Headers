@@ -3,9 +3,9 @@
  */
 
 @interface IMDoubleLinkedListNode : NSObject {
-    IMDoubleLinkedListNode *_next;
-    id _object;
-    IMDoubleLinkedListNode *_prev;
+    IMDoubleLinkedListNode * _next;
+    id  _object;
+    IMDoubleLinkedListNode * _prev;
 }
 
 @property (retain) IMDoubleLinkedListNode *next;

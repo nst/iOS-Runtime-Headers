@@ -3,9 +3,9 @@
  */
 
 @interface _NSConstantArrayEnumerator : NSEnumerator {
-    unsigned int capacity;
-    unsigned int index;
-    id *objects;
+    unsigned int  capacity;
+    unsigned int  index;
+    id * objects;
 }
 
 - (id)allObjects;

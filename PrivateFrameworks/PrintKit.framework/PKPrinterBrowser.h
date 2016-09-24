@@ -2,55 +2,40 @@
    Image: /System/Library/PrivateFrameworks/PrintKit.framework/PrintKit
  */
 
-@interface PKPrinterBrowser : NSObject {
-    <PKPrinterBrowserDelegate> *delegate;
-    NSFileHandle *handle;
-    struct _DNSServiceRef_t { } *ippBrowserRef;
-    struct _DNSServiceRef_t { } *ippsBrowserRef;
-    struct _DNSServiceRef_t { } *localippBrowserRef;
-    struct _DNSServiceRef_t { } *localippsBrowserRef;
-    struct _DNSServiceRef_t { } *mainBrowserRef;
-    unsigned char originalCellFlag;
-    unsigned char originalWifiFlag;
-    NSMutableArray *pendingList;
-    NSMutableDictionary *printers;
-    NSMutableDictionary *printersByUUID;
-    NSObject<OS_dispatch_queue> *printersQueue;
+@interface PKPrinterBrowser : NSObject <PKBrowserClientProtocol> {
+    NSMutableDictionary * _btDevices;
+    <PKPrinterBrowserDelegate> * _delegate;
+    BOOL  _delegateRespondsToProximityUpdate;
+    unsigned char  _originalCellFlag;
+    unsigned char  _originalWifiFlag;
+    NSXPCConnection * _pkBrowseConnection;
+    NSMutableDictionary * _printers;
 }
 
+@property (nonatomic, retain) NSMutableDictionary *btDevices;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKPrinterBrowserDelegate> *delegate;
-@property (nonatomic, retain) NSFileHandle *handle;
-@property (nonatomic, retain) NSMutableArray *pendingList;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSXPCConnection *pkBrowseConnection;
 @property (nonatomic, retain) NSMutableDictionary *printers;
-@property (nonatomic, retain) NSMutableDictionary *printersByUUID;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *printersQueue;
+@property (readonly) Class superclass;
 
 + (id)browserWithDelegate:(id)arg1;
 
-- (void)addBlockToPendingList:(id /* block */)arg1;
-- (void)addLimboPrinter:(id)arg1 local:(BOOL)arg2;
-- (void)addQueryResult:(id)arg1 toPrinter:(id)arg2;
-- (void)addWithPrinterURI:(id)arg1 andBonjourURI:(id)arg2 andDisplayName:(id)arg3 isMCProfile:(BOOL)arg4;
-- (void)addWithPrinterURI:(id)arg1 andDisplayName:(id)arg2 isMCProfile:(BOOL)arg3;
-- (void)browseCallback:(unsigned int)arg1 interface:(unsigned int)arg2 name:(const char *)arg3 regType:(const char *)arg4 domain:(const char *)arg5;
-- (void)browseLocalCallback:(unsigned int)arg1 interface:(unsigned int)arg2 name:(const char *)arg3 regType:(const char *)arg4 domain:(const char *)arg5;
+- (id)btDevices;
+- (void)btlePrinterFound:(id)arg1;
+- (void)btleRssiUpdated:(id)arg1 rssi:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
-- (id)handle;
 - (id)initWithDelegate:(id)arg1;
-- (id)pendingList;
+- (id)pkBrowseConnection;
+- (void)printerAdded:(id)arg1 more:(BOOL)arg2;
+- (void)printerRemoved:(id)arg1 more:(BOOL)arg2;
 - (id)printers;
-- (id)printersByUUID;
-- (id)printersQueue;
-- (void)queryCallback:(int)arg1 flags:(unsigned int)arg2 fullName:(const char *)arg3 rdlen:(unsigned short)arg4 rdata:(const void*)arg5;
-- (void)queryHardcodedPrinters;
-- (void)reissueTXTQuery:(id)arg1;
-- (void)removePrinter:(id)arg1;
+- (void)setBtDevices:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setHandle:(id)arg1;
-- (void)setPendingList:(id)arg1;
+- (void)setPkBrowseConnection:(id)arg1;
 - (void)setPrinters:(id)arg1;
-- (void)setPrintersByUUID:(id)arg1;
-- (void)setPrintersQueue:(id)arg1;
 
 @end

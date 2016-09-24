@@ -3,8 +3,8 @@
  */
 
 @interface PLAccountingOperator : PLOperator {
-    NSMutableDictionary *_ruleIDToPendingJobs;
-    NSSet *_rules;
+    NSMutableDictionary * _ruleIDToPendingJobs;
+    NSSet * _rules;
 }
 
 @property (retain) NSMutableDictionary *ruleIDToPendingJobs;

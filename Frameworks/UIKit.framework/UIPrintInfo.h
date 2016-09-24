@@ -3,21 +3,24 @@
  */
 
 @interface UIPrintInfo : NSObject <NSCoding, NSCopying> {
-    int _copies;
-    int _duplex;
-    NSString *_jobAccountID;
-    NSString *_jobName;
-    int _orientation;
-    int _outputType;
-    NSString *_pdfPassword;
-    NSString *_printerID;
-    BOOL _punch;
-    BOOL _scaleUp;
-    BOOL _staple;
+    int  _copies;
+    int  _duplex;
+    BOOL  _imagePDFAnnotations;
+    NSString * _jobAccountID;
+    NSString * _jobName;
+    int  _orientation;
+    int  _outputType;
+    NSString * _pdfPassword;
+    NSString * _printerID;
+    BOOL  _punch;
+    BOOL  _scaleUp;
+    BOOL  _staple;
 }
 
 @property (nonatomic) int copies;
+@property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 @property (nonatomic) int duplex;
+@property (nonatomic) BOOL imagePDFAnnotations;
 @property (nonatomic, retain) NSString *jobAccountID;
 @property (nonatomic, copy) NSString *jobName;
 @property (nonatomic) int orientation;
@@ -40,6 +43,7 @@
 - (id)dictionaryRepresentation;
 - (int)duplex;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)imagePDFAnnotations;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)jobAccountID;
@@ -52,6 +56,7 @@
 - (BOOL)scaleUp;
 - (void)setCopies:(int)arg1;
 - (void)setDuplex:(int)arg1;
+- (void)setImagePDFAnnotations:(BOOL)arg1;
 - (void)setJobAccountID:(id)arg1;
 - (void)setJobName:(id)arg1;
 - (void)setOrientation:(int)arg1;

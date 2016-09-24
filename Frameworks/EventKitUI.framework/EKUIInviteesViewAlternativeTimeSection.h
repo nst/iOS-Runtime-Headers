@@ -3,27 +3,28 @@
  */
 
 @interface EKUIInviteesViewAlternativeTimeSection : NSObject <EKUIInviteesViewConflictResolutionSection> {
-    NSArray *_alternativeTimes;
-    BOOL _availabilityRequestInProgress;
-    EKUIInviteeAlternativeTimeSearcher *_availabilitySearcher;
-    NSString *_cachedConflictSearchCellReuseIdentifier;
-    NSString *_cachedTimeCellReuseIdentifier;
-    BOOL _hasCheckedRow;
-    BOOL _initialSearchInProgress;
-    int _lastCheckedRow;
-    unsigned int _maximumNumberOfTimeSlotsToShow;
-    id /* block */ _newTimeChosen;
-    unsigned int _reuseIdentifierVersion;
-    NSMutableSet *_rowsShowingAllParticipants;
-    BOOL _searchExhausted;
-    id /* block */ _showMoreAlternativeTimesTapped;
-    id /* block */ _showPreviewOfEventAtTime;
-    id /* block */ _tableViewCellHook;
+    NSArray * _alternativeTimes;
+    BOOL  _availabilityRequestInProgress;
+    EKInviteeAlternativeTimeSearcher * _availabilitySearcher;
+    NSString * _cachedConflictSearchCellReuseIdentifier;
+    NSString * _cachedTimeCellReuseIdentifier;
+    BOOL  _hasCheckedRow;
+    BOOL  _initialSearchInProgress;
+    int  _lastCheckedRow;
+    unsigned int  _maximumNumberOfTimeSlotsToShow;
+    id /* block */  _newTimeChosen;
+    unsigned int  _reuseIdentifierVersion;
+    NSMutableSet * _rowsShowingAllParticipants;
+    BOOL  _searchExhausted;
+    id /* block */  _showMoreAlternativeTimesTapped;
+    id /* block */  _showPreviewOfEventAtTime;
+    id /* block */  _tableViewCellHook;
+    NSTimeZone * _timeZone;
 }
 
 @property (nonatomic, retain) NSArray *alternativeTimes;
 @property (nonatomic) BOOL availabilityRequestInProgress;
-@property (nonatomic, retain) EKUIInviteeAlternativeTimeSearcher *availabilitySearcher;
+@property (nonatomic, retain) EKInviteeAlternativeTimeSearcher *availabilitySearcher;
 @property (nonatomic, retain) NSString *cachedConflictSearchCellReuseIdentifier;
 @property (nonatomic, retain) NSString *cachedTimeCellReuseIdentifier;
 @property (nonatomic, readonly) Class customTimeCellClass;
@@ -45,6 +46,7 @@
 @property (nonatomic, copy) id /* block */ showPreviewOfEventAtTime;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) id /* block */ tableViewCellHook;
+@property (nonatomic, retain) NSTimeZone *timeZone;
 
 - (void).cxx_destruct;
 - (id)_alternativeTimeAtIndex:(int)arg1;
@@ -103,9 +105,11 @@
 - (void)setShowMoreAlternativeTimesTapped:(id /* block */)arg1;
 - (void)setShowPreviewOfEventAtTime:(id /* block */)arg1;
 - (void)setTableViewCellHook:(id /* block */)arg1;
+- (void)setTimeZone:(id)arg1;
 - (id /* block */)showMoreAlternativeTimesTapped;
 - (id /* block */)showPreviewOfEventAtTime;
 - (id /* block */)tableViewCellHook;
+- (id)timeZone;
 - (id)titleForDeleteConfirmationButtonForRow:(id)arg1;
 
 @end

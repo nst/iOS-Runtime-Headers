@@ -3,8 +3,8 @@
  */
 
 @interface YTAuthenticatorDeferredRequest : NSObject {
-    BOOL _accountAuthRequired;
-    NSMutableURLRequest *_request;
+    BOOL  _accountAuthRequired;
+    NSMutableURLRequest * _request;
 }
 
 - (BOOL)accountAuthRequired;

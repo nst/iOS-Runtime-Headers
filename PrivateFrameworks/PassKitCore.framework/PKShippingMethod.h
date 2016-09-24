@@ -3,25 +3,30 @@
  */
 
 @interface PKShippingMethod : PKPaymentSummaryItem <NSCopying, NSSecureCoding> {
-    NSString *_detail;
-    NSString *_identifier;
+    NSString * _detail;
+    NSString * _identifier;
 }
 
 @property (nonatomic, copy) NSString *detail;
 @property (nonatomic, copy) NSString *identifier;
 
++ (id)shippingMethodWithProtobuf:(id)arg1;
 + (BOOL)supportsSecureCoding;
++ (int)version;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)detail;
+- (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)formattedString;
 - (unsigned int)hash;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithDictionary:(id)arg1 error:(id*)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToShippingMethod:(id)arg1;
+- (id)protobuf;
 - (void)setDetail:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 

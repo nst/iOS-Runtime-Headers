@@ -3,9 +3,9 @@
  */
 
 @interface _RCUIViewNamedConstraints : NSObject {
-    NSArray *_constraints;
-    NSString *_name;
-    id _stalenessToken;
+    NSArray * _constraints;
+    NSString * _name;
+    id  _stalenessToken;
 }
 
 @property (nonatomic, readonly) NSArray *constraints;

@@ -3,8 +3,8 @@
  */
 
 @interface SSRedeemCodesResponse : NSObject <SSXPCCoding> {
-    NSDictionary *_errors;
-    NSDictionary *_redeemedCodes;
+    NSDictionary * _errors;
+    NSDictionary * _redeemedCodes;
 }
 
 @property (readonly, copy) NSString *debugDescription;

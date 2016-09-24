@@ -3,19 +3,19 @@
  */
 
 @interface MPUContentSizeLayoutConstraint : NSLayoutConstraint {
-    float _defaultSizeConstant;
-    float _fontSizeMultiplier;
-    BOOL _isBaselineConstraint;
-    BOOL _isLineNumberConstraint;
-    unsigned int _numberOfLines;
-    MPUNotificationObserver *_preferredContentSizeDidChangeObserver;
-    UILabel *_targetLabel;
-    NSString *_textStyle;
-    float _textStyleDefaultLeading;
+    double  _defaultSizeConstant;
+    double  _fontSizeMultiplier;
+    BOOL  _isBaselineConstraint;
+    BOOL  _isLineNumberConstraint;
+    unsigned int  _numberOfLines;
+    MPUNotificationObserver * _preferredContentSizeDidChangeObserver;
+    UILabel * _targetLabel;
+    NSString * _textStyle;
+    double  _textStyleDefaultLeading;
 }
 
-@property (nonatomic) float defaultSizeConstant;
-@property (nonatomic) float fontSizeMultiplier;
+@property (nonatomic) double defaultSizeConstant;
+@property (nonatomic) double fontSizeMultiplier;
 @property (nonatomic, copy) NSString *textStyle;
 
 + (id)constraintWithAutoupdatingBaselineOfView:(id)arg1 relation:(int)arg2 toView:(id)arg3 attribute:(int)arg4 withTextStyle:(id)arg5 multiplier:(float)arg6 nonStandardLeading:(float)arg7;

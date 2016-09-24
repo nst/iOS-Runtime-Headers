@@ -3,8 +3,8 @@
  */
 
 @interface GEOVJunction : PBCodable <NSCopying> {
-    NSMutableArray *_connectingRoads;
-    NSMutableArray *_laneConnections;
+    NSMutableArray * _connectingRoads;
+    NSMutableArray * _laneConnections;
 }
 
 @property (nonatomic, retain) NSMutableArray *connectingRoads;

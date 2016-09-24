@@ -3,10 +3,10 @@
  */
 
 @interface CLServiceVendorHeartbeatRecord : NSObject {
-    int _ackCount;
-    <CLIntersiloServiceProtocol> *_service;
-    CLSilo *_silo;
-    int _synCount;
+    int  _ackCount;
+    <CLIntersiloServiceProtocol> * _service;
+    CLSilo * _silo;
+    int  _synCount;
 }
 
 @property (nonatomic, readonly) int ackCount;

@@ -3,23 +3,24 @@
  */
 
 @interface AUAudioUnitBus : NSObject {
-    int _busType;
-    double _contextPresentationLatency;
-    BOOL _enabled;
-    AVAudioFormat *_format;
-    unsigned int _index;
-    unsigned int _maximumChannelCount;
-    NSString *_name;
+    int  _busType;
+    double  _contextPresentationLatency;
+    BOOL  _enabled;
+    AVAudioFormat * _format;
+    unsigned int  _index;
+    unsigned int  _maximumChannelCount;
+    NSString * _name;
     struct vector<BusPropertyObserver, std::__1::allocator<BusPropertyObserver> > { 
         struct BusPropertyObserver {} *__begin_; 
         struct BusPropertyObserver {} *__end_; 
         struct __compressed_pair<BusPropertyObserver *, std::__1::allocator<BusPropertyObserver> > { 
             struct BusPropertyObserver {} *__first_; 
         } __end_cap_; 
-    } _observers;
-    AUAudioUnit *_ownerAudioUnit;
-    NSArray *_supportedChannelCounts;
-    NSArray *_supportedChannelLayoutTags;
+    }  _observers;
+    AUAudioUnit * _ownerAudioUnit;
+    bool  _removingObserverWithContext;
+    NSArray * _supportedChannelCounts;
+    NSArray * _supportedChannelLayoutTags;
 }
 
 @property (nonatomic, readonly) int busType;
@@ -46,6 +47,7 @@
 - (id)name;
 - (struct vector<BusPropertyObserver, std::__1::allocator<BusPropertyObserver> > { struct BusPropertyObserver {} *x1; struct BusPropertyObserver {} *x2; struct __compressed_pair<BusPropertyObserver *, std::__1::allocator<BusPropertyObserver> > { struct BusPropertyObserver {} *x_3_1_1; } x3; })observers;
 - (id)ownerAudioUnit;
+- (void)removeObserver:(id)arg1 forKeyPath:(id)arg2;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2 context:(void*)arg3;
 - (void)setBusType:(int)arg1;
 - (void)setContextPresentationLatency:(double)arg1;

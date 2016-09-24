@@ -3,10 +3,10 @@
  */
 
 @interface SKUIIncompatibleAppView : UIView {
-    NSMutableArray *_buttons;
-    UIImageView *_iconView;
-    UILabel *_messageLabel;
-    UILabel *_titleLabel;
+    NSMutableArray * _buttons;
+    UIImageView * _iconView;
+    UILabel * _messageLabel;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) UIImage *iconImage;

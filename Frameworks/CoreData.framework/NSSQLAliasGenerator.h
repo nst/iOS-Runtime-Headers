@@ -3,11 +3,11 @@
  */
 
 @interface NSSQLAliasGenerator : NSObject {
-    unsigned int _nextTableAlias;
-    unsigned int _nextTempTableAlias;
-    unsigned int _nextVariableAlias;
-    NSString *_tableBase;
-    NSString *_variableBase;
+    unsigned int  _nextTableAlias;
+    unsigned int  _nextTempTableAlias;
+    unsigned int  _nextVariableAlias;
+    NSString * _tableBase;
+    NSString * _variableBase;
 }
 
 - (void)dealloc;

@@ -3,9 +3,9 @@
  */
 
 @interface CTPhoneNumber : NSObject <CTMessageAddress, NSCopying> {
-    NSString *_countryCode;
-    NSString *_digits;
-    BOOL _isShortCode;
+    NSString * _countryCode;
+    NSString * _digits;
+    BOOL  _isShortCode;
 }
 
 @property (readonly) NSString *countryCode;

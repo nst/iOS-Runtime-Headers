@@ -2,12 +2,19 @@
    Image: /System/Library/PrivateFrameworks/Catalyst.framework/Catalyst
  */
 
-@interface CATTaskRequest : NSObject <NSSecureCoding>
+@interface CATTaskRequest : NSObject <NSSecureCoding> {
+    BOOL  _handlesNotifications;
+}
+
+@property (nonatomic) BOOL handlesNotifications;
 
 + (BOOL)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
++ (id)whitelistedNotificationNames;
 
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)handlesNotifications;
 - (id)initWithCoder:(id)arg1;
+- (void)setHandlesNotifications:(BOOL)arg1;
 
 @end

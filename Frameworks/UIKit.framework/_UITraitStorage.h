@@ -3,9 +3,9 @@
  */
 
 @interface _UITraitStorage : NSObject <NSCoding> {
-    NSString *_keyPath;
-    id _object;
-    NSMutableArray *_records;
+    NSString * _keyPath;
+    id  _object;
+    NSMutableArray * _records;
 }
 
 @property (nonatomic, readonly) NSString *keyPath;

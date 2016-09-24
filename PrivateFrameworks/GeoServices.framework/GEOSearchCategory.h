@@ -3,9 +3,9 @@
  */
 
 @interface GEOSearchCategory : NSObject <NSSecureCoding> {
-    GEOPDAutocompleteEntry *_autocompleteEntry;
-    GEOPDBrowseCategory *_browseCategory;
-    NSArray *_subcategories;
+    GEOPDAutocompleteEntry * _autocompleteEntry;
+    GEOPDBrowseCategory * _browseCategory;
+    NSArray * _subcategories;
 }
 
 @property (getter=_autocompleteEntry, nonatomic, readonly) GEOPDAutocompleteEntry *autocompleteEntry;
@@ -34,6 +34,7 @@
 - (id)mapsURL;
 - (id)popularTokenString;
 - (void)sendFeedback;
+- (id)serverMetadata;
 - (id)shortDisplayString;
 - (id)styleAttributes;
 - (id)subcategories;

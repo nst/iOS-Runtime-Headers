@@ -3,12 +3,12 @@
  */
 
 @interface ICCloudThrottlingPolicy : NSObject {
-    unsigned int _currentBatchCount;
-    unsigned int _currentLevelIndex;
-    NSTimer *_policyResetTimer;
-    NSDate *_policyStartDate;
-    double _resetInterval;
-    NSArray *_throttlingLevels;
+    unsigned int  _currentBatchCount;
+    unsigned int  _currentLevelIndex;
+    NSTimer * _policyResetTimer;
+    NSDate * _policyStartDate;
+    double  _resetInterval;
+    NSArray * _throttlingLevels;
 }
 
 @property (nonatomic, readonly) double batchInterval;

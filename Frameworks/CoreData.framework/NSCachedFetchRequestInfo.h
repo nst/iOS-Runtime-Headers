@@ -3,8 +3,8 @@
  */
 
 @interface NSCachedFetchRequestInfo : NSObject {
-    NSArray *_substIntarrayBindOrdering;
-    NSArray *_substVarBindOrdering;
+    NSArray * _substIntarrayBindOrdering;
+    NSArray * _substVarBindOrdering;
 }
 
 @property (nonatomic, retain) NSArray *substitutionBindIntarrayOrder;

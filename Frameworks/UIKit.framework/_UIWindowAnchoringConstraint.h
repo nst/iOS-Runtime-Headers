@@ -3,7 +3,7 @@
  */
 
 @interface _UIWindowAnchoringConstraint : NSAutoresizingMaskLayoutConstraint {
-    UIWindow *_window;
+    UIWindow * _window;
 }
 
 @property (nonatomic) UIWindow *window;

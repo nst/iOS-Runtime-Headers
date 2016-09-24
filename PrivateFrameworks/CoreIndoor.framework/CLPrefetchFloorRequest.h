@@ -3,9 +3,9 @@
  */
 
 @interface CLPrefetchFloorRequest : NSObject <NSSecureCoding> {
-    NSString *_floorUuid;
-    NSDate *_relevancy;
-    NSString *_venueUuid;
+    NSString * _floorUuid;
+    NSDate * _relevancy;
+    NSString * _venueUuid;
 }
 
 @property (nonatomic, retain) NSString *floorUuid;

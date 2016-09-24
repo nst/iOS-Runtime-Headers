@@ -3,7 +3,7 @@
  */
 
 @interface SSWatchMetricsConfiguration : NSObject <NSCopying> {
-    BOOL _enabled;
+    BOOL  _enabled;
 }
 
 @property (getter=isEnabled, nonatomic) BOOL enabled;

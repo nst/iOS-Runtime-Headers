@@ -3,10 +3,10 @@
  */
 
 @interface GQZArchive : NSObject {
-    NSMutableDictionary *mEntries;
-    NSString *mFilename;
-    <GQZArchiveInputStream> *mInput;
-    BOOL mIsEncrypted;
+    NSMutableDictionary * mEntries;
+    NSString * mFilename;
+    <GQZArchiveInputStream> * mInput;
+    BOOL  mIsEncrypted;
 }
 
 - (void)collapseCommonRootDirectory;
@@ -17,12 +17,12 @@
 - (id)initWithData:(id)arg1 collapseCommonRootDirectory:(BOOL)arg2;
 - (id)initWithPath:(id)arg1 collapseCommonRootDirectory:(BOOL)arg2;
 - (BOOL)isEncrypted;
-- (struct GQZEndOfCentralDirectory { unsigned int x1; long long x2; long long x3; })readEndOfCentralDirectory;
+- (struct GQZEndOfCentralDirectory { unsigned int x1; int x2; int x3; })readEndOfCentralDirectory;
 - (void)readEntries;
 - (void)readExtraFieldFromBuffer:(const char *)arg1 size:(unsigned long)arg2 entry:(id)arg3;
 - (id)readFilenameFromBuffer:(const char *)arg1 size:(unsigned long)arg2;
-- (struct GQZEndOfCentralDirectory { unsigned int x1; long long x2; long long x3; })readZip64EndOfCentralDirectoryFromOffset:(long long)arg1;
-- (struct GQZEndOfCentralDirectory { unsigned int x1; long long x2; long long x3; })readZip64EndOfCentralDirectoryWithEocdOffset:(long long)arg1;
-- (const char *)searchForEndOfCentralDirectoryOffset:(long long*)arg1;
+- (struct GQZEndOfCentralDirectory { unsigned int x1; int x2; int x3; })readZip64EndOfCentralDirectoryFromOffset:(int)arg1;
+- (struct GQZEndOfCentralDirectory { unsigned int x1; int x2; int x3; })readZip64EndOfCentralDirectoryWithEocdOffset:(int)arg1;
+- (const char *)searchForEndOfCentralDirectoryOffset:(int*)arg1;
 
 @end

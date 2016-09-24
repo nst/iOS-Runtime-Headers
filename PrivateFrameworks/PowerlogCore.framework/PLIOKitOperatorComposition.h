@@ -3,12 +3,13 @@
  */
 
 @interface PLIOKitOperatorComposition : NSObject {
-    struct IONotificationPort { } *_ioNotifyPort;
-    unsigned int _notificationRef;
-    PLOperator *_operator;
-    id /* block */ _operatorBlock;
-    unsigned int _service;
-    NSString *_serviceName;
+    struct IONotificationPort { } * _ioNotifyPort;
+    unsigned int  _notificationRef;
+    PLOperator * _operator;
+    id /* block */  _operatorBlock;
+    unsigned int  _service;
+    NSString * _serviceClassName;
+    NSString * _serviceName;
 }
 
 @property struct IONotificationPort { }*ioNotifyPort;
@@ -16,6 +17,7 @@
 @property (retain) PLOperator *operator;
 @property (nonatomic, copy) id /* block */ operatorBlock;
 @property unsigned int service;
+@property (retain) NSString *serviceClassName;
 @property (retain) NSString *serviceName;
 
 + (id)snapshotFromIOEntry:(unsigned int)arg1;
@@ -25,6 +27,8 @@
 - (void)dealloc;
 - (id)initWithOperator:(id)arg1 forService:(id)arg2;
 - (id)initWithOperator:(id)arg1 forService:(id)arg2 withBlock:(id /* block */)arg3;
+- (id)initWithOperator:(id)arg1 forServiceClass:(id)arg2;
+- (id)initWithOperator:(id)arg1 forServiceClass:(id)arg2 withBlock:(id /* block */)arg3;
 - (struct IONotificationPort { }*)ioNotifyPort;
 - (unsigned int)notificationRef;
 - (id)operator;
@@ -34,12 +38,14 @@
 - (id)propertiesFromIOEntry:(unsigned int)arg1;
 - (id)propertiesFromIOEntry:(unsigned int)arg1 forKey:(id)arg2;
 - (unsigned int)service;
+- (id)serviceClassName;
 - (id)serviceName;
 - (void)setIoNotifyPort:(struct IONotificationPort { }*)arg1;
 - (void)setNotificationRef:(unsigned int)arg1;
 - (void)setOperator:(id)arg1;
 - (void)setOperatorBlock:(id /* block */)arg1;
 - (void)setService:(unsigned int)arg1;
+- (void)setServiceClassName:(id)arg1;
 - (void)setServiceName:(id)arg1;
 
 @end

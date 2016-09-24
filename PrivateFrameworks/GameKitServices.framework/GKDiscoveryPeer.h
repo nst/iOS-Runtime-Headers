@@ -3,22 +3,22 @@
  */
 
 @interface GKDiscoveryPeer : NSObject <GKSimpleTimerDelegate> {
-    NSMutableArray *_attemptedInterfaces;
-    NSNumber *_chosenInterface;
-    GKDiscoveryPeerConnection *_connection;
-    NSString *_deviceID;
-    double _discoveryTimeStamp;
-    NSMutableSet *_interfaces;
-    NSMutableArray *_orderedInterfaces;
-    NSString *_playerID;
-    id /* block */ _resolveTimeoutHandler;
-    GKSimpleTimer *_resolveTimer;
-    NSMutableArray *_sendDataBuffer;
-    NSString *_serviceName;
-    BOOL _shouldSignalDiscovery;
-    int _state;
-    NSObject<OS_dispatch_queue> *_syncQueue;
-    GKDiscoveryPeerConnection *_trialConnection;
+    NSMutableArray * _attemptedInterfaces;
+    NSNumber * _chosenInterface;
+    GKDiscoveryPeerConnection * _connection;
+    NSString * _deviceID;
+    double  _discoveryTimeStamp;
+    NSMutableSet * _interfaces;
+    NSMutableArray * _orderedInterfaces;
+    NSString * _playerID;
+    id /* block */  _resolveTimeoutHandler;
+    GKSimpleTimer * _resolveTimer;
+    NSMutableArray * _sendDataBuffer;
+    NSString * _serviceName;
+    BOOL  _shouldSignalDiscovery;
+    int  _state;
+    NSObject<OS_dispatch_queue> * _syncQueue;
+    GKDiscoveryPeerConnection * _trialConnection;
 }
 
 @property (nonatomic, retain) NSMutableArray *attemptedInterfaces;
@@ -35,7 +35,7 @@
 @property (nonatomic, copy) NSString *serviceName;
 @property (nonatomic) BOOL shouldSignalDiscovery;
 @property (nonatomic) int state;
-@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *syncQueue;
+@property (nonatomic, readonly, retain) NSObject<OS_dispatch_queue> *syncQueue;
 @property (nonatomic, retain) GKDiscoveryPeerConnection *trialConnection;
 
 - (id)attemptedInterfaces;

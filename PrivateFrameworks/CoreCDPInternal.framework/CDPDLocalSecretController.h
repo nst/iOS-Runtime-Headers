@@ -3,38 +3,42 @@
  */
 
 @interface CDPDLocalSecretController : NSObject <CDPDCircleDelegate, CDPDSecureBackupDelegate> {
-    CDPDCircleController *_circleController;
-    CDPContext *_context;
-    CDPDSecureBackupController *_secureBackupController;
-    <CDPStateUIProviderInternal> *_uiProvider;
+    CDPDCircleController * _circleController;
+    CDPContext * _context;
+    <CDPLocalSecretFollowUpProvider> * _followUpProvider;
+    CDPDSecureBackupController * _secureBackupController;
+    <CDPStateUIProviderInternal> * _uiProvider;
 }
 
 @property (nonatomic, retain) CDPDCircleController *circleController;
 @property (nonatomic, retain) CDPContext *context;
+@property (nonatomic, retain) <CDPLocalSecretFollowUpProvider> *followUpProvider;
 @property (nonatomic, retain) CDPDSecureBackupController *secureBackupController;
 @property (nonatomic, retain) <CDPStateUIProviderInternal> *uiProvider;
 
 - (void).cxx_destruct;
 - (id)_cdpStateMachine;
-- (void)_deleteFollowUpItemForOfflineLocalSecretChange;
-- (void)_finishOfflineLocalSecretChange:(id /* block */)arg1;
+- (void)_collectLocalSecretWithCompletion:(id /* block */)arg1;
+- (void)_createContextWithCompletion:(id /* block */)arg1;
+- (void)_handleCompletionStatus:(BOOL)arg1;
 - (void)_localSecretChangedTo:(id)arg1 secretType:(unsigned int)arg2 completion:(id /* block */)arg3;
-- (void)_postFollowUpItemForOfflineLocalSecretChange;
+- (void)_repairWithStateMachine:(id)arg1 completion:(id /* block */)arg2;
 - (id)circleController;
 - (void)circleController:(id)arg1 secureBackupRecordsArePresentWithCompletion:(id /* block */)arg2;
 - (id)circlePeerIDForSecureBackupController:(id)arg1;
 - (id)context;
+- (id)contextForController:(id)arg1;
 - (void)dealloc;
 - (void)finishOfflineLocalSecretChangeWithCompletion:(id /* block */)arg1;
+- (id)followUpProvider;
 - (id)initWithContext:(id)arg1;
-- (void)joinCircleAfterRecoveryWithCompletion:(id /* block */)arg1;
 - (void)localSecretChangedTo:(id)arg1 secretType:(unsigned int)arg2 completion:(id /* block */)arg3;
-- (void)prepareCircleStateForRecoveryWithCompletion:(id /* block */)arg1;
 - (void)promotForLocalSecretWithCompletion:(id /* block */)arg1;
 - (void)promptForAdoptionOfMultipleICSCWithCompletion:(id /* block */)arg1;
 - (id)secureBackupController;
 - (void)setCircleController:(id)arg1;
 - (void)setContext:(id)arg1;
+- (void)setFollowUpProvider:(id)arg1;
 - (void)setSecureBackupController:(id)arg1;
 - (void)setUiProvider:(id)arg1;
 - (BOOL)synchronizeCircleViewsForSecureBackupController:(id)arg1;

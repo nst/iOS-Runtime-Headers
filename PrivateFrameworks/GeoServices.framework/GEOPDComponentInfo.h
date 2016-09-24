@@ -3,19 +3,19 @@
  */
 
 @interface GEOPDComponentInfo : PBCodable <NSCopying> {
-    unsigned int _count;
-    GEOPDComponentFilter *_filter;
+    unsigned int  _count;
+    GEOPDComponentFilter * _filter;
     struct { 
         unsigned int count : 1; 
         unsigned int startIndex : 1; 
         unsigned int type : 1; 
         unsigned int urgency : 1; 
         unsigned int includeSource : 1; 
-    } _has;
-    BOOL _includeSource;
-    unsigned int _startIndex;
-    int _type;
-    int _urgency;
+    }  _has;
+    BOOL  _includeSource;
+    unsigned int  _startIndex;
+    int  _type;
+    int  _urgency;
 }
 
 @property (nonatomic) unsigned int count;
@@ -31,6 +31,8 @@
 @property (nonatomic) int type;
 @property (nonatomic) int urgency;
 
+- (int)StringAsType:(id)arg1;
+- (int)StringAsUrgency:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
@@ -63,7 +65,9 @@
 - (void)setUrgency:(int)arg1;
 - (unsigned int)startIndex;
 - (int)type;
+- (id)typeAsString:(int)arg1;
 - (int)urgency;
+- (id)urgencyAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

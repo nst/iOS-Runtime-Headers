@@ -3,8 +3,8 @@
  */
 
 @interface AAAuthenticationResponse : AAResponse {
-    NSDictionary *_appleAccount;
-    NSDictionary *_tokens;
+    NSDictionary * _appleAccount;
+    NSDictionary * _tokens;
 }
 
 @property (nonatomic, readonly) NSString *HSAAction;

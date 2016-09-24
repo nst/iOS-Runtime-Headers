@@ -3,19 +3,19 @@
  */
 
 @interface CoreDAVBulkUploadTaskGroup : CoreDAVTaskGroup <CoreDAVTaskDelegate> {
-    NSURL *_folderURL;
-    NSMutableDictionary *_hrefToETag;
-    NSMutableDictionary *_hrefToErrorItems;
-    NSMutableDictionary *_hrefToStatus;
-    NSString *_lastKnownCTag;
-    unsigned int _multiPutBatchMaxNumResources;
-    unsigned int _multiPutBatchMaxSize;
-    NSMutableDictionary *_remainingHREFsToModDeleteActions;
-    NSMutableDictionary *_remainingUUIDsToAddActions;
-    NSMutableDictionary *_uuidToErrorItems;
-    NSMutableDictionary *_uuidToHREF;
-    NSMutableDictionary *_uuidToStatus;
-    BOOL _validCTag;
+    NSURL * _folderURL;
+    NSMutableDictionary * _hrefToETag;
+    NSMutableDictionary * _hrefToErrorItems;
+    NSMutableDictionary * _hrefToStatus;
+    NSString * _lastKnownCTag;
+    unsigned int  _multiPutBatchMaxNumResources;
+    unsigned int  _multiPutBatchMaxSize;
+    NSMutableDictionary * _remainingHREFsToModDeleteActions;
+    NSMutableDictionary * _remainingUUIDsToAddActions;
+    NSMutableDictionary * _uuidToErrorItems;
+    NSMutableDictionary * _uuidToHREF;
+    NSMutableDictionary * _uuidToStatus;
+    BOOL  _validCTag;
 }
 
 @property (readonly, copy) NSString *debugDescription;

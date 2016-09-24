@@ -3,7 +3,7 @@
  */
 
 @interface PUGroupValueFilter : PUValueFilter {
-    NSArray *_filters;
+    NSArray * _filters;
 }
 
 @property (nonatomic, copy) NSArray *filters;

@@ -3,7 +3,7 @@
  */
 
 @interface WFWebPageToTrainingText : WFWebPageDecorator {
-    NSString *categorySignature;
+    NSString * categorySignature;
 }
 
 + (id)documentSignature;

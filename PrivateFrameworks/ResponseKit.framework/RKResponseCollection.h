@@ -3,10 +3,10 @@
  */
 
 @interface RKResponseCollection : NSObject {
-    <RKDisplayStringsProvider> *_displayStringsProvider;
-    NSURL *_dynamicDataURL;
-    NSMutableDictionary *_personalizersByLanguageID;
-    NSMutableDictionary *_responseCatalog;
+    <RKDisplayStringsProvider> * _displayStringsProvider;
+    NSURL * _dynamicDataURL;
+    NSMutableDictionary * _personalizersByLanguageID;
+    NSMutableDictionary * _responseCatalog;
 }
 
 @property (readonly) <RKDisplayStringsProvider> *displayStringsProvider;
@@ -15,6 +15,7 @@
 @property (retain) NSMutableDictionary *responseCatalog;
 
 + (id)responsesForFixedPhrase:(id)arg1 withLanguage:(id)arg2;
++ (id)responsesForFullScreenMoments:(id)arg1 withLanguage:(id)arg2;
 + (id)speechActsForCategory:(unsigned int)arg1 platform:(id)arg2;
 
 - (void).cxx_destruct;

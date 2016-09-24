@@ -3,20 +3,23 @@
  */
 
 @interface _NMRNowPlayingApplicationStateProtobuf : PBCodable <NSCopying> {
-    NSString *_companionBundleIdentifier;
+    NSString * _companionBundleIdentifier;
     struct { 
         unsigned int playbackState : 1; 
-    } _has;
-    NSString *_localizedDisplayName;
-    unsigned int _playbackState;
-    NSString *_watchBundleIdentifier;
+    }  _has;
+    NSData * _iconDigest;
+    NSString * _localizedDisplayName;
+    unsigned int  _playbackState;
+    NSString * _watchBundleIdentifier;
 }
 
 @property (nonatomic, retain) NSString *companionBundleIdentifier;
 @property (nonatomic, readonly) BOOL hasCompanionBundleIdentifier;
+@property (nonatomic, readonly) BOOL hasIconDigest;
 @property (nonatomic, readonly) BOOL hasLocalizedDisplayName;
 @property (nonatomic) BOOL hasPlaybackState;
 @property (nonatomic, readonly) BOOL hasWatchBundleIdentifier;
+@property (nonatomic, retain) NSData *iconDigest;
 @property (nonatomic, retain) NSString *localizedDisplayName;
 @property (nonatomic) unsigned int playbackState;
 @property (nonatomic, retain) NSString *watchBundleIdentifier;
@@ -28,10 +31,12 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasCompanionBundleIdentifier;
+- (BOOL)hasIconDigest;
 - (BOOL)hasLocalizedDisplayName;
 - (BOOL)hasPlaybackState;
 - (BOOL)hasWatchBundleIdentifier;
 - (unsigned int)hash;
+- (id)iconDigest;
 - (BOOL)isEqual:(id)arg1;
 - (id)localizedDisplayName;
 - (void)mergeFrom:(id)arg1;
@@ -39,6 +44,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setCompanionBundleIdentifier:(id)arg1;
 - (void)setHasPlaybackState:(BOOL)arg1;
+- (void)setIconDigest:(id)arg1;
 - (void)setLocalizedDisplayName:(id)arg1;
 - (void)setPlaybackState:(unsigned int)arg1;
 - (void)setWatchBundleIdentifier:(id)arg1;

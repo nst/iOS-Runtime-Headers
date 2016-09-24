@@ -4,10 +4,10 @@
 
 @interface MRUnregisterGameControllerMessage : MRProtocolMessage
 
-@property (nonatomic, readonly) unsigned long long controllerID;
+@property (nonatomic, readonly) unsigned int controllerID;
 
-- (unsigned long long)controllerID;
-- (id)initWithControllerID:(unsigned long long)arg1;
+- (unsigned int)controllerID;
+- (id)initWithControllerID:(unsigned int)arg1;
 - (unsigned int)type;
 
 @end

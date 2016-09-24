@@ -3,9 +3,9 @@
  */
 
 @interface AVPlayerQueueModificationDescription : NSObject {
-    AVPlayerItem *_afterItem;
-    AVPlayerItem *_item;
-    int _modificationType;
+    AVPlayerItem * _afterItem;
+    AVPlayerItem * _item;
+    int  _modificationType;
 }
 
 @property (nonatomic, readonly) AVPlayerItem *afterItem;

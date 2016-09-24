@@ -3,8 +3,8 @@
  */
 
 @interface CNContactFilter : NSObject <NSCopying> {
-    NSString *_fullTextString;
-    BOOL _rankSortedResults;
+    NSString * _fullTextString;
+    BOOL  _rankSortedResults;
 }
 
 @property (nonatomic, copy) NSString *fullTextString;

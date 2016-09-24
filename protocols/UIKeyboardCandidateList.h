@@ -10,10 +10,9 @@
 - (unsigned int)currentIndex;
 - (BOOL)hasCandidates;
 - (BOOL)isExtendedList;
-- (BOOL)isHiddenCandidatesList;
 - (TIKeyboardBehaviors *)keyboardBehaviors;
 - (unsigned int)selectedSortIndex;
-- (void)setCandidates:(TIKeyboardCandidateResultSet *)arg1 inlineText:(NSString *)arg2 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
+- (void)setCandidates:(TIKeyboardCandidateResultSet *)arg1 inlineText:(NSString *)arg2 inlineRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 maxX:(float)arg4 layout:(BOOL)arg5;
 - (void)setUIKeyboardCandidateListDelegate:(id <UIKeyboardCandidateListDelegate>)arg1;
 - (BOOL)showCandidate:(TIKeyboardCandidate *)arg1;
 - (void)showCandidateAtIndex:(unsigned int)arg1;
@@ -36,7 +35,8 @@
 - (NSString *)inlineText;
 - (void)jumpToCompositions;
 - (void)revealHiddenCandidates;
-- (void)setCandidates:(TIKeyboardCandidateResultSet *)arg1 type:(int)arg2 inlineText:(NSString *)arg3 inlineRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 maxX:(float)arg5 layout:(BOOL)arg6;
+- (TIKeyboardSecureCandidateRenderTraits *)secureCandidateRenderTraits;
+- (void)setCandidates:(TIKeyboardCandidateResultSet *)arg1 type:(int)arg2 inlineText:(NSString *)arg3 inlineRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4 maxX:(float)arg5 layout:(BOOL)arg6;
 - (void)setCompletionContext:(NSString *)arg1;
 - (void)setInlineText:(NSString *)arg1;
 - (void)showCaret:(BOOL)arg1 gradually:(BOOL)arg2;

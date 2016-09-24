@@ -3,12 +3,12 @@
  */
 
 @interface SKUISettingsEditTransaction : NSObject {
-    NSSet *_all;
-    id /* block */ _commitBlock;
-    <SKUISettingsEditTransactionDelegate> *_delegate;
-    NSLock *_lock;
-    NSMutableSet *_pending;
-    BOOL _success;
+    NSSet * _all;
+    id /* block */  _commitBlock;
+    <SKUISettingsEditTransactionDelegate> * _delegate;
+    NSLock * _lock;
+    NSMutableSet * _pending;
+    BOOL  _success;
 }
 
 @property (nonatomic) <SKUISettingsEditTransactionDelegate> *delegate;

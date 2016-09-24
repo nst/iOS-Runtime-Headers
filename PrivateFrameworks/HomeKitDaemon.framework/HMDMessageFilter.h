@@ -3,8 +3,8 @@
  */
 
 @interface HMDMessageFilter : NSObject {
-    NSString *_name;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    NSString * _name;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic, readonly, copy) NSString *name;

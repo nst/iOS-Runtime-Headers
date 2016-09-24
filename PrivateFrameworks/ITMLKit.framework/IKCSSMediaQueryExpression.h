@@ -3,12 +3,12 @@
  */
 
 @interface IKCSSMediaQueryExpression : NSObject {
-    NSString *_dimension;
-    double _doubleValue;
-    NSString *_key;
-    NSString *_mediaType;
-    NSString *_stringValue;
-    int _type;
+    NSString * _dimension;
+    double  _doubleValue;
+    NSString * _key;
+    NSString * _mediaType;
+    NSString * _stringValue;
+    int  _type;
 }
 
 @property (nonatomic, retain) NSString *dimension;

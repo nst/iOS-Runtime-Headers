@@ -3,21 +3,22 @@
  */
 
 @interface NCWidgetVisibilityManager : NSObject {
-    <NCWidgetVisibilityDelegate> *_delegate;
-    BOOL _delegateRespondsToWidgetVisibilityDidChange;
-    NSMutableDictionary *_extensionHashByIdentifier;
-    NSMutableDictionary *_mobileGestaltAnswerByWidgetTag;
-    struct MGNotificationTokenStruct { } *_mobileGestaltNotificationToken;
-    NSMutableSet *_mobileGestaltQuestions;
-    NSMutableDictionary *_visibilityDefaultValueByIdentifier;
-    NSMutableSet *_visibilityOverridenIdentifiers;
-    NSMutableDictionary *_visibilityPreferenceByIdentifier;
-    NSMutableDictionary *_widgetTagsByIdentifier;
+    <NCWidgetVisibilityDelegate> * _delegate;
+    BOOL  _delegateRespondsToWidgetVisibilityDidChange;
+    NSMutableDictionary * _extensionHashByIdentifier;
+    NSMutableDictionary * _mobileGestaltAnswerByWidgetTag;
+    struct MGNotificationTokenStruct { } * _mobileGestaltNotificationToken;
+    NSMutableSet * _mobileGestaltQuestions;
+    NSMutableDictionary * _visibilityDefaultValueByIdentifier;
+    NSMutableSet * _visibilityOverridenIdentifiers;
+    NSMutableDictionary * _visibilityPreferenceByIdentifier;
+    NSMutableDictionary * _widgetTagsByIdentifier;
 }
 
 @property (nonatomic) <NCWidgetVisibilityDelegate> *delegate;
 @property (getter=_mobileGestaltAnswerByWidgetTag, nonatomic, retain) NSMutableDictionary *mobileGestaltAnswerByWidgetTag;
 
+- (void).cxx_destruct;
 - (id)_allWidgetTags;
 - (id)_mobileGestaltAnswerByWidgetTag;
 - (void)_registerForVisiblityPreferenceChanges;

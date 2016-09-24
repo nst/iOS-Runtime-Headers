@@ -3,21 +3,27 @@
  */
 
 @interface GEOTFTrafficSnapshot : PBCodable <NSCopying> {
-    NSString *_feedId;
-    long long _feedUpdateTime;
+    NSMutableArray * _compactSpeeds;
+    NSString * _feedId;
+    unsigned int  _feedPublishTime;
+    int  _feedUpdateTime;
     struct { 
+        unsigned int feedPublishTime : 1; 
         unsigned int feedUpdateTime : 1; 
         unsigned int trafficVersion : 1; 
-    } _has;
-    NSMutableArray *_incidents;
-    NSMutableArray *_regions;
-    NSMutableArray *_speeds;
-    unsigned int _trafficVersion;
+    }  _has;
+    NSMutableArray * _incidents;
+    NSMutableArray * _regions;
+    NSMutableArray * _speeds;
+    unsigned int  _trafficVersion;
 }
 
+@property (nonatomic, retain) NSMutableArray *compactSpeeds;
 @property (nonatomic, retain) NSString *feedId;
-@property (nonatomic) long long feedUpdateTime;
+@property (nonatomic) unsigned int feedPublishTime;
+@property (nonatomic) int feedUpdateTime;
 @property (nonatomic, readonly) BOOL hasFeedId;
+@property (nonatomic) BOOL hasFeedPublishTime;
 @property (nonatomic) BOOL hasFeedUpdateTime;
 @property (nonatomic) BOOL hasTrafficVersion;
 @property (nonatomic, retain) NSMutableArray *incidents;
@@ -25,20 +31,32 @@
 @property (nonatomic, retain) NSMutableArray *speeds;
 @property (nonatomic) unsigned int trafficVersion;
 
++ (Class)compactSpeedsType;
++ (Class)incidentsType;
++ (Class)regionType;
++ (Class)speedsType;
+
+- (void)addCompactSpeeds:(id)arg1;
 - (void)addIncidents:(id)arg1;
 - (void)addRegion:(id)arg1;
 - (void)addSpeeds:(id)arg1;
+- (void)clearCompactSpeeds;
 - (void)clearIncidents;
 - (void)clearRegions;
 - (void)clearSpeeds;
+- (id)compactSpeeds;
+- (id)compactSpeedsAtIndex:(unsigned int)arg1;
+- (unsigned int)compactSpeedsCount;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)feedId;
-- (long long)feedUpdateTime;
+- (unsigned int)feedPublishTime;
+- (int)feedUpdateTime;
 - (BOOL)hasFeedId;
+- (BOOL)hasFeedPublishTime;
 - (BOOL)hasFeedUpdateTime;
 - (BOOL)hasTrafficVersion;
 - (unsigned int)hash;
@@ -51,8 +69,11 @@
 - (id)regionAtIndex:(unsigned int)arg1;
 - (id)regions;
 - (unsigned int)regionsCount;
+- (void)setCompactSpeeds:(id)arg1;
 - (void)setFeedId:(id)arg1;
-- (void)setFeedUpdateTime:(long long)arg1;
+- (void)setFeedPublishTime:(unsigned int)arg1;
+- (void)setFeedUpdateTime:(int)arg1;
+- (void)setHasFeedPublishTime:(BOOL)arg1;
 - (void)setHasFeedUpdateTime:(BOOL)arg1;
 - (void)setHasTrafficVersion:(BOOL)arg1;
 - (void)setIncidents:(id)arg1;

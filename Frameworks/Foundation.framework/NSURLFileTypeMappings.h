@@ -3,7 +3,7 @@
  */
 
 @interface NSURLFileTypeMappings : NSObject {
-    NSURLFileTypeMappingsInternal *_internal;
+    NSURLFileTypeMappingsInternal * _internal;
 }
 
 + (id)sharedMappings;

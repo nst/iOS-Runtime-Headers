@@ -3,9 +3,9 @@
  */
 
 @interface WebUIDownloadManager : NSObject <WebDownloadDelegate> {
-    id _delegate;
-    NSURLDownload *_download;
-    NSString *_downloadPath;
+    id  _delegate;
+    NSURLDownload * _download;
+    NSString * _downloadPath;
 }
 
 @property (readonly, copy) NSString *debugDescription;

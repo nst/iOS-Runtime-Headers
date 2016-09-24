@@ -3,11 +3,11 @@
  */
 
 @interface CommunicationsFilterBlockList : NSObject {
-    CommunicationsFilterBlockListCache *_cache;
-    NSObject<OS_xpc_object> *_connection;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableArray *_recentObjectsTested;
-    int _retries;
+    CommunicationsFilterBlockListCache * _cache;
+    NSObject<OS_xpc_object> * _connection;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableArray * _recentObjectsTested;
+    int  _retries;
 }
 
 + (id)sharedInstance;

@@ -3,10 +3,10 @@
  */
 
 @interface NPKLoyaltyEngine : NSObject {
-    NSArray *_greylistedLoyaltyCardDescriptions;
-    NSObject<OS_dispatch_queue> *_internalQueue;
-    NSArray *_storedValueCardDescriptions;
-    NSArray *_whitelistedLoyaltyCardDescriptions;
+    NSArray * _greylistedLoyaltyCardDescriptions;
+    NSObject<OS_dispatch_queue> * _internalQueue;
+    NSArray * _storedValueCardDescriptions;
+    NSArray * _whitelistedLoyaltyCardDescriptions;
 }
 
 @property (readonly) NSArray *greylistedLoyaltyCardDescriptions;

@@ -3,20 +3,22 @@
  */
 
 @interface PHChange : NSObject {
-    NSObject<OS_dispatch_queue> *_changeDetailIsolation;
-    NSMutableDictionary *_changeDetailsForObjects;
-    NSMapTable *_changeHandlingMap;
-    NSDictionary *_changedAttributesByOID;
-    NSSet *_changedObjectIDs;
-    NSArray *_changedObjectIDsArray;
-    NSDictionary *_changedRelationshipsByOID;
-    NSMutableDictionary *_collectionChangeDetailsForObjects;
-    NSSet *_deletedObjectIDs;
-    NSSet *_insertedObjectIDs;
-    BOOL _unknownMergeEvent;
-    NSMutableDictionary *_updatedObjectsChangedAttributesByEntityName;
-    NSMutableDictionary *_updatedObjectsChangedRelationshipsByEntityName;
+    NSObject<OS_dispatch_queue> * _changeDetailIsolation;
+    NSMutableDictionary * _changeDetailsForObjects;
+    NSMapTable * _changeHandlingMap;
+    NSDictionary * _changedAttributesByOID;
+    NSSet * _changedObjectIDs;
+    NSArray * _changedObjectIDsArray;
+    NSDictionary * _changedRelationshipsByOID;
+    NSMutableDictionary * _collectionChangeDetailsForObjects;
+    NSSet * _deletedObjectIDs;
+    NSSet * _insertedObjectIDs;
+    BOOL  _unknownMergeEvent;
+    NSMutableDictionary * _updatedObjectsChangedAttributesByEntityName;
+    NSMutableDictionary * _updatedObjectsChangedRelationshipsByEntityName;
 }
+
+@property (nonatomic, readonly) BOOL hasIncrementalChanges;
 
 + (id)handlerQueue;
 + (void)pl_simulateChangeWithAssetContainerList:(id)arg1 handler:(id /* block */)arg2;
@@ -25,20 +27,25 @@
 - (id)_preloadChangeDetailsWithClearCacheForFetchResults:(id)arg1 inManagedObjectContext:(id)arg2;
 - (id)_preloadChangeDetailsWithRefetchForFetchResults:(id)arg1 inManagedObjectContext:(id)arg2;
 - (void)_prepareCachedValuesForEntity:(id)arg1;
-- (BOOL)anyUpdatedObjectsWithChangedAttributes:(unsigned long long)arg1 ofEntity:(id)arg2;
-- (BOOL)anyUpdatedObjectsWithChangedRelationships:(unsigned long long)arg1 ofEntity:(id)arg2;
+- (BOOL)anyUpdatedObjectsWithChangedAttributes:(unsigned int)arg1 ofEntity:(id)arg2;
+- (BOOL)anyUpdatedObjectsWithChangedRelationships:(unsigned int)arg1 ofEntity:(id)arg2;
 - (id)changeDetailsForFetchResult:(id)arg1;
 - (id)changeDetailsForObject:(id)arg1;
 - (id)changedAttributesByOID;
 - (id)changedRelationshipsByOID;
+- (BOOL)containsChangesForEntityClass:(Class)arg1;
+- (BOOL)contentOrThumbnailChangedForAsset:(id)arg1;
 - (BOOL)contentOrThumbnailChangedForPHAssetOID:(id)arg1;
 - (id)deletedObjectIDs;
 - (id)description;
+- (BOOL)hasIncrementalChanges;
+- (BOOL)hiddenStateChangedForPHAssetOID:(id)arg1;
 - (id)init;
 - (id)initWithChangedIdentifiers:(id)arg1 unknownMergeEvent:(BOOL)arg2;
 - (id)insertedObjectIDs;
 - (void)preloadChangeDetailsForFetchResults:(id)arg1 inManagedObjectContext:(id)arg2 handler:(id /* block */)arg3;
 - (void)preloadSimulatedChangeDetailsForManualFetchResults:(id)arg1 handler:(id /* block */)arg2;
+- (BOOL)trashedStateChangedForPHAssetOID:(id)arg1;
 - (id)updatedObjectIDs;
 
 @end

@@ -3,12 +3,12 @@
  */
 
 @interface XPCServiceListener : NSObject {
-    unsigned long _clientCount;
-    <XPCServiceListenerDelegate> *_delegate;
-    NSObject<OS_xpc_object> *_listener;
-    NSMutableSet *_serviceConnections;
-    NSString *_serviceName;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    unsigned long  _clientCount;
+    <XPCServiceListenerDelegate> * _delegate;
+    NSObject<OS_xpc_object> * _listener;
+    NSMutableSet * _serviceConnections;
+    NSString * _serviceName;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic) unsigned long clientCount;

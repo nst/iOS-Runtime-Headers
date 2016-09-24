@@ -3,7 +3,7 @@
  */
 
 @interface CKDPMescalSessionInfoRequest : PBRequest <NSCopying> {
-    NSData *_requestData;
+    NSData * _requestData;
 }
 
 @property (nonatomic, readonly) BOOL hasRequestData;
@@ -22,6 +22,8 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (id)requestData;
+- (unsigned int)requestTypeCode;
+- (Class)responseClass;
 - (void)setRequestData:(id)arg1;
 - (void)writeTo:(id)arg1;
 

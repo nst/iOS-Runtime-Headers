@@ -3,13 +3,14 @@
  */
 
 @interface RTSourceAudio : RTSource <NSCopying, NSSecureCoding> {
-    int _audioSource;
-    NSString *_deviceName;
+    int  _audioSource;
+    NSString * _deviceName;
 }
 
 @property (nonatomic, readonly) int audioSource;
 @property (nonatomic, readonly) NSString *deviceName;
 
++ (id)allowedKeys;
 + (id)stringFromAudioSource:(int)arg1;
 + (BOOL)supportsSecureCoding;
 

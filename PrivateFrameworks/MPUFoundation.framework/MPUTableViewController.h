@@ -3,19 +3,19 @@
  */
 
 @interface MPUTableViewController : MPUDataSourceViewController <MPStoreDownloadManagerObserver, MPUActionTableViewDataSource, UITableViewDelegate> {
-    Class _cellConfigurationClass;
-    BOOL _hasAppearedOnce;
-    int _numberOfBottomActionRows;
-    int _numberOfTopActionRows;
-    BOOL _shouldDeselectImmediately;
-    BOOL _shouldUpdateVisibleCellsWhenVisible;
-    UITableView *_tableView;
-    NSMutableArray *_visibleBottomActionRows;
-    NSMutableArray *_visibleTopActionRows;
+    Class  _cellConfigurationClass;
+    BOOL  _hasAppearedOnce;
+    int  _numberOfBottomActionRows;
+    int  _numberOfTopActionRows;
+    BOOL  _shouldDeselectImmediately;
+    BOOL  _shouldUpdateVisibleCellsWhenVisible;
+    UITableView * _tableView;
+    NSMutableArray * _visibleBottomActionRows;
+    NSMutableArray * _visibleTopActionRows;
 }
 
 @property (nonatomic, readonly) Class cellConfigurationClass;
-@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } contentOffsetRevealingFirstDataSourceSection;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } contentOffsetRevealingFirstDataSourceSection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -40,12 +40,13 @@
 - (void)_recreateTableView;
 - (void)_reloadActionRowsAnimated:(BOOL)arg1 skipTableViewUpdates:(BOOL)arg2;
 - (void)_setCellConfigurationClass:(Class)arg1;
+- (int)_totalNumberOfSections;
 - (void)_updateVisibleCellsForDownloads:(id)arg1 updateAllCells:(BOOL)arg2;
 - (Class)actionCellConfigurationClassForIndexPath:(id)arg1;
 - (Class)cellConfigurationClass;
 - (Class)cellConfigurationForIndexPath:(id)arg1;
 - (void)configureCell:(id)arg1 atIndexPath:(id)arg2 withEntity:(id)arg3 invalidationContext:(id)arg4;
-- (struct CGPoint { float x1; float x2; })contentOffsetRevealingFirstDataSourceSection;
+- (struct CGPoint { double x1; double x2; })contentOffsetRevealingFirstDataSourceSection;
 - (int)dataSourceIndexForIndexPath:(id)arg1;
 - (int)dataSourceSectionForSection:(int)arg1;
 - (void)dealloc;

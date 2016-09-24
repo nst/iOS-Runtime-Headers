@@ -3,7 +3,7 @@
  */
 
 @interface FUErrorView : UIView {
-    FULabel *_errorLabel;
+    FULabel * _errorLabel;
 }
 
 @property (retain) FULabel *errorLabel;

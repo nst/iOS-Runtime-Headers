@@ -3,9 +3,9 @@
  */
 
 @interface MFWeakSet : NSMutableSet {
-    unsigned long _gen;
-    NSLock *_lock;
-    struct __CFDictionary { } *_objects;
+    unsigned long  _gen;
+    NSLock * _lock;
+    struct __CFDictionary { } * _objects;
 }
 
 + (id)set;

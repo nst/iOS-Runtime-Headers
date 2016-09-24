@@ -3,33 +3,31 @@
  */
 
 @interface XBLaunchStateRequest : NSObject <BSXPCCoding, NSCopying> {
-    FBSDisplay *_display;
-    int _interfaceOrientation;
-    BOOL _isMainScene;
-    NSString *_launchInterfaceIdentifier;
+    FBSDisplay * _display;
+    NSString * _groupID;
+    int  _interfaceOrientation;
+    NSString * _launchInterfaceIdentifier;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _naturalSize;
+        double width; 
+        double height; 
+    }  _naturalSize;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _referenceSize;
-    NSString *_sceneID;
-    unsigned int _statusBarState;
-    NSString *_urlSchemeName;
+        double width; 
+        double height; 
+    }  _referenceSize;
+    unsigned int  _statusBarState;
+    NSString * _urlSchemeName;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) FBSDisplay *display;
+@property (nonatomic, copy) NSString *groupID;
 @property (readonly) unsigned int hash;
 @property (nonatomic) int interfaceOrientation;
-@property (nonatomic) BOOL isMainScene;
 @property (nonatomic, copy) NSString *launchInterfaceIdentifier;
-@property (nonatomic) struct CGSize { float x1; float x2; } naturalSize;
-@property (nonatomic) struct CGSize { float x1; float x2; } referenceSize;
-@property (nonatomic, copy) NSString *sceneID;
+@property (nonatomic) struct CGSize { double x1; double x2; } naturalSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } referenceSize;
 @property (nonatomic) unsigned int statusBarState;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *urlSchemeName;
@@ -39,21 +37,19 @@
 - (id)description;
 - (id)display;
 - (void)encodeWithXPCDictionary:(id)arg1;
+- (id)groupID;
 - (id)initWithXPCDictionary:(id)arg1;
 - (int)interfaceOrientation;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isMainScene;
 - (id)launchInterfaceIdentifier;
-- (struct CGSize { float x1; float x2; })naturalSize;
-- (struct CGSize { float x1; float x2; })referenceSize;
-- (id)sceneID;
+- (struct CGSize { double x1; double x2; })naturalSize;
+- (struct CGSize { double x1; double x2; })referenceSize;
 - (void)setDisplay:(id)arg1;
+- (void)setGroupID:(id)arg1;
 - (void)setInterfaceOrientation:(int)arg1;
-- (void)setIsMainScene:(BOOL)arg1;
 - (void)setLaunchInterfaceIdentifier:(id)arg1;
-- (void)setNaturalSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setReferenceSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setSceneID:(id)arg1;
+- (void)setNaturalSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setReferenceSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setStatusBarState:(unsigned int)arg1;
 - (void)setUrlSchemeName:(id)arg1;
 - (unsigned int)statusBarState;

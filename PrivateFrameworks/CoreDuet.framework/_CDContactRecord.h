@@ -3,12 +3,14 @@
  */
 
 @interface _CDContactRecord : NSManagedObject {
-    _CDContact *contact;
+    _CDContact * contact;
 }
 
 @property (retain) _CDContact *contact;
 @property (nonatomic) double creationDate;
+@property (nonatomic, retain) NSString *customIdentifier;
 @property (nonatomic, retain) NSString *displayName;
+@property (nonatomic) int displayType;
 @property (nonatomic) double firstIncomingRecipientDate;
 @property (nonatomic) double firstIncomingSenderDate;
 @property (nonatomic) double firstOutgoingRecipientDate;

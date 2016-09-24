@@ -3,26 +3,26 @@
  */
 
 @interface MusicProfileFollowButton : UIControl {
-    double _animationDuration;
-    MPUSpringAnimationFactory *_animationFactory;
-    _UIBackdropView *_backdropView;
-    MusicMediaDetailTintInformation *_detailTintInformation;
-    BOOL _following;
-    NSString *_followingText;
-    NSString *_initialText;
-    float _maximumWidth;
-    int _style;
-    UILabel *_titleLabel;
+    double  _animationDuration;
+    _UIBackdropView * _backdropView;
+    MusicMediaDetailTintInformation * _detailTintInformation;
+    BOOL  _following;
+    NSString * _followingText;
+    NSString * _initialText;
+    double  _maximumWidth;
+    int  _style;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic) double animationDuration;
-@property (nonatomic, retain) MPUSpringAnimationFactory *animationFactory;
 @property (nonatomic, copy) MusicMediaDetailTintInformation *detailTintInformation;
 @property (nonatomic) BOOL following;
 @property (nonatomic, copy) NSString *followingText;
 @property (nonatomic, copy) NSString *initialText;
-@property (nonatomic) float maximumWidth;
+@property (nonatomic) double maximumWidth;
 @property (nonatomic) int style;
+
++ (float)defaultHeight;
 
 - (void).cxx_destruct;
 - (float)_followingButtonBackdropViewAlphaForState:(BOOL)arg1 withStyle:(int)arg2;
@@ -40,17 +40,15 @@
 - (void)_updateLabelSize;
 - (void)_updateLabelString;
 - (double)animationDuration;
-- (id)animationFactory;
 - (id)detailTintInformation;
 - (BOOL)following;
 - (id)followingText;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithStyle:(int)arg1;
 - (id)initialText;
 - (void)layoutSubviews;
 - (float)maximumWidth;
 - (void)setAnimationDuration:(double)arg1;
-- (void)setAnimationFactory:(id)arg1;
 - (void)setDetailTintInformation:(id)arg1;
 - (void)setFollowing:(BOOL)arg1;
 - (void)setFollowing:(BOOL)arg1 animated:(bool)arg2;

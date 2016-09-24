@@ -3,10 +3,10 @@
  */
 
 @interface CKFileOpenResult : NSObject <NSSecureCoding> {
-    NSFileHandle *_encryptedFileHandle;
-    NSFileHandle *_fileHandle;
-    NSNumber *_fileSize;
-    struct _mkbbackupref { } *_handle;
+    NSFileHandle * _encryptedFileHandle;
+    NSFileHandle * _fileHandle;
+    NSNumber * _fileSize;
+    struct _mkbbackupref { } * _handle;
 }
 
 @property (nonatomic, retain) NSFileHandle *encryptedFileHandle;

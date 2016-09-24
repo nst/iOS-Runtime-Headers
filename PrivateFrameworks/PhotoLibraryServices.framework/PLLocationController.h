@@ -3,13 +3,13 @@
  */
 
 @interface PLLocationController : NSObject <CLLocationManagerDelegate> {
-    NSDictionary *_exifDictionary;
-    BOOL _isEnabled;
-    BOOL _isHeadingEnabled;
-    BOOL _isUpdating;
-    CLLocationManager *_locationManager;
-    NSMutableArray *_locationPendingAssets;
-    NSString *_locationStr;
+    NSDictionary * _exifDictionary;
+    BOOL  _isEnabled;
+    BOOL  _isHeadingEnabled;
+    BOOL  _isUpdating;
+    CLLocationManager * _locationManager;
+    NSMutableArray * _locationPendingAssets;
+    NSString * _locationStr;
 }
 
 @property (readonly, copy) NSString *debugDescription;

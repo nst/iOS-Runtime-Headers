@@ -3,10 +3,10 @@
  */
 
 @interface CalDAVCalendarServerAllowedSharingModesItem : CoreDAVItem {
-    CoreDAVItemWithNoChildren *_canBePublished;
-    CoreDAVItemWithNoChildren *_canBeShared;
-    CoreDAVItemWithNoChildren *_isMarkedImmutableSharees;
-    CoreDAVItemWithNoChildren *_isMarkedUndeletable;
+    CoreDAVItemWithNoChildren * _canBePublished;
+    CoreDAVItemWithNoChildren * _canBeShared;
+    CoreDAVItemWithNoChildren * _isMarkedImmutableSharees;
+    CoreDAVItemWithNoChildren * _isMarkedUndeletable;
 }
 
 @property (nonatomic, retain) CoreDAVItemWithNoChildren *canBePublished;

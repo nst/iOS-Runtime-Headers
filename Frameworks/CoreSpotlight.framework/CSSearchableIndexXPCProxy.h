@@ -3,7 +3,7 @@
  */
 
 @interface CSSearchableIndexXPCProxy : NSObject <CSSearchableIndexServiceInterface> {
-    CSSearchableIndex *_index;
+    CSSearchableIndex * _index;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,8 +3,8 @@
  */
 
 @interface WMTableCellStyle : WMStyle {
-    double mLeftPadding;
-    double mRightPadding;
+    double  mLeftPadding;
+    double  mRightPadding;
 }
 
 + (id)dominantColorOf:(id)arg1;

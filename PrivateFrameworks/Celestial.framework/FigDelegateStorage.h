@@ -3,9 +3,9 @@
  */
 
 @interface FigDelegateStorage : NSObject {
-    id _delegate;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    int _lock;
+    id  _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    int  _lock;
 }
 
 @property (readonly) id delegate;

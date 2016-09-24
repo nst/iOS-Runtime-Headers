@@ -3,12 +3,12 @@
  */
 
 @interface _PFUbiquityStack : NSObject {
-    NSString *_localPeerID;
-    PFUbiquityMetadataFactoryEntry *_metadataEntry;
-    NSManagedObjectContext *_metadataMOC;
-    PFUbiquityLocation *_metadataStoreFileLocation;
-    NSString *_storeName;
-    PFUbiquityLocation *_ubiquityRootURL;
+    NSString * _localPeerID;
+    PFUbiquityMetadataFactoryEntry * _metadataEntry;
+    NSManagedObjectContext * _metadataMOC;
+    PFUbiquityLocation * _metadataStoreFileLocation;
+    NSString * _storeName;
+    PFUbiquityLocation * _ubiquityRootURL;
 }
 
 @property (nonatomic, readonly) NSString *localPeerID;

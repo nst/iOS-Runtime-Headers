@@ -3,11 +3,11 @@
  */
 
 @interface XBLaunchInterface : NSObject <BSXPCCoding, NSCoding> {
-    BOOL _default;
-    NSString *_identifier;
-    NSString *_name;
-    unsigned int _type;
-    NSArray *_urlSchemes;
+    BOOL  _default;
+    NSString * _identifier;
+    NSString * _name;
+    unsigned int  _type;
+    NSArray * _urlSchemes;
 }
 
 @property (getter=_isDefault, nonatomic) BOOL _default;

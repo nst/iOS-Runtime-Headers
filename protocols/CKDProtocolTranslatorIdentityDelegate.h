@@ -5,6 +5,6 @@
 
 @required
 
-- (NSData *)userIdentityFingerprint;
+- (NSArray *)sharingIdentityFingerprints;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface _UISimpleTransitioningDelegate : NSObject <UINavigationControllerDelegate, UIViewControllerTransitioningDelegate> {
-    BOOL __suppressCrossFadeNavigationBarAnimation;
-    <UIViewControllerAnimatedTransitioning> *_animator;
+    BOOL  __suppressCrossFadeNavigationBarAnimation;
+    <UIViewControllerAnimatedTransitioning> * _animator;
 }
 
 @property (setter=_setSuppressCrossFadeNavigationBarAnimation:, nonatomic) BOOL _suppressCrossFadeNavigationBarAnimation;

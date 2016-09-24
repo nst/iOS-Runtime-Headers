@@ -3,7 +3,7 @@
  */
 
 @interface CATTaskMessage : CATMessage {
-    NSUUID *_taskUUID;
+    NSUUID * _taskUUID;
 }
 
 @property (nonatomic, copy) NSUUID *taskUUID;

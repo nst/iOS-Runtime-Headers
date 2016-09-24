@@ -3,10 +3,10 @@
  */
 
 @interface SLMicroBlogUserRecord : NSObject <NSSecureCoding> {
-    NSString *_name;
-    UIImage *_profileImageCache;
-    NSString *_profile_image_url;
-    NSString *_screen_name;
+    NSString * _name;
+    UIImage * _profileImageCache;
+    NSString * _profile_image_url;
+    NSString * _screen_name;
 }
 
 @property (nonatomic, retain) NSString *name;

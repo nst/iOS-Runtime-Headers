@@ -3,10 +3,10 @@
  */
 
 @interface CNStarkFaceTimeCell : CNContactCell {
-    <CNPropertyCellDelegate> *_delegate;
-    UILabel *_faceTimeLabel;
-    NSDictionary *_labelTextAttributes;
-    CNTransportButton *_transportIcon;
+    <CNPropertyCellDelegate> * _delegate;
+    UILabel * _faceTimeLabel;
+    NSDictionary * _labelTextAttributes;
+    CNTransportButton * _transportIcon;
 }
 
 @property (nonatomic) <CNPropertyCellDelegate> *delegate;

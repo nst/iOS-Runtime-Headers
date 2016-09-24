@@ -3,15 +3,15 @@
  */
 
 @interface HKCacheBackedChartSeriesDataSource : HKGraphSeriesDataSource <HKChartDataCacheObserver> {
-    HKChartCache *_chartCache;
+    HKChartCache * _chartCache;
     struct { 
         int index; 
         int zoom; 
-    } _lastEndPath;
+    }  _lastEndPath;
     struct { 
         int index; 
         int zoom; 
-    } _lastStartPath;
+    }  _lastStartPath;
 }
 
 @property (nonatomic, retain) HKChartCache *chartCache;

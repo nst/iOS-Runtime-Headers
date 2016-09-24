@@ -3,22 +3,22 @@
  */
 
 @interface PFUbiquitySwitchboardEntryMetadata : NSObject {
-    NSString *_activeModelVersionHash;
-    PFUbiquityBaselineHeuristics *_baselineHeuristics;
-    PFUbiquitySwitchboardCacheWrapper *_cacheWrapper;
-    _PFUbiquityRecordsExporter *_exporter;
-    _PFUbiquityRecordsImporter *_importer;
-    NSString *_localPeerID;
-    PFUbiquityLocation *_localRootLocation;
-    NSPersistentStoreCoordinator *_privatePSC;
-    NSObject<OS_dispatch_queue> *_privateQueue;
-    NSSQLCore *_privateStore;
-    PFUbiquityRecordsImporterSchedulingContext *_schedulingContext;
-    NSString *_storeName;
-    NSMutableSet *_stores;
-    PFUbiquityLocation *_ubiquityRootLocation;
-    BOOL _useLocaAccount;
-    BOOL _useLocalStorage;
+    NSString * _activeModelVersionHash;
+    PFUbiquityBaselineHeuristics * _baselineHeuristics;
+    PFUbiquitySwitchboardCacheWrapper * _cacheWrapper;
+    _PFUbiquityRecordsExporter * _exporter;
+    _PFUbiquityRecordsImporter * _importer;
+    NSString * _localPeerID;
+    PFUbiquityLocation * _localRootLocation;
+    NSPersistentStoreCoordinator * _privatePSC;
+    NSObject<OS_dispatch_queue> * _privateQueue;
+    NSSQLCore * _privateStore;
+    PFUbiquityRecordsImporterSchedulingContext * _schedulingContext;
+    NSString * _storeName;
+    NSMutableSet * _stores;
+    PFUbiquityLocation * _ubiquityRootLocation;
+    BOOL  _useLocaAccount;
+    BOOL  _useLocalStorage;
 }
 
 @property (nonatomic, readonly) NSString *activeModelVersionHash;

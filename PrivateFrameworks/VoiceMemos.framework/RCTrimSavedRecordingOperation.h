@@ -3,8 +3,8 @@
  */
 
 @interface RCTrimSavedRecordingOperation : RCTrimCompositionOperation {
-    RCSavedRecording *_destinationRecording;
-    RCSavedRecording *_sourceRecording;
+    RCSavedRecording * _destinationRecording;
+    RCSavedRecording * _sourceRecording;
 }
 
 @property (nonatomic, readonly) RCSavedRecording *destinationRecording;

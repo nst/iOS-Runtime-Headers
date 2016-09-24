@@ -3,8 +3,8 @@
  */
 
 @interface SSVPlaybackResponse : NSObject <NSCopying> {
-    NSDictionary *_responseDictionary;
-    NSHTTPURLResponse *_urlResponse;
+    NSDictionary * _responseDictionary;
+    NSHTTPURLResponse * _urlResponse;
 }
 
 @property (nonatomic, readonly) NSHTTPURLResponse *URLResponse;

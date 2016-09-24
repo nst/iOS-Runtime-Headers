@@ -3,12 +3,14 @@
  */
 
 @interface ISProtocolDataProvider : ISDataProvider <NSCopying> {
-    BOOL _shouldPostFooterSectionChanged;
-    BOOL _shouldProcessAccount;
-    BOOL _shouldProcessAuthenticationDialogs;
-    BOOL _shouldProcessDialogs;
-    BOOL _shouldProcessProtocol;
-    BOOL _shouldTriggerDownloads;
+    ISBiometricAuthenticationContext * _biometricAuthenticationContext;
+    BOOL  _shouldPostFooterSectionChanged;
+    BOOL  _shouldProcessAccount;
+    BOOL  _shouldProcessAuthenticationDialogs;
+    BOOL  _shouldProcessDialogs;
+    BOOL  _shouldProcessProtocol;
+    BOOL  _shouldProcessTouchIDDialogs;
+    BOOL  _shouldTriggerDownloads;
 }
 
 @property BOOL shouldPostFooterSectionChanged;
@@ -16,8 +18,10 @@
 @property BOOL shouldProcessAuthenticationDialogs;
 @property BOOL shouldProcessDialogs;
 @property BOOL shouldProcessProtocol;
+@property (readonly) BOOL shouldProcessTouchIDDialogs;
 @property BOOL shouldTriggerDownloads;
 
+- (void).cxx_destruct;
 - (void)_checkDownloadQueues;
 - (void)_checkInAppPurchaseQueueForAction:(id)arg1;
 - (void)_performActionsForResponse:(id)arg1;
@@ -42,6 +46,7 @@
 - (BOOL)shouldProcessAuthenticationDialogs;
 - (BOOL)shouldProcessDialogs;
 - (BOOL)shouldProcessProtocol;
+- (BOOL)shouldProcessTouchIDDialogs;
 - (BOOL)shouldTriggerDownloads;
 
 @end

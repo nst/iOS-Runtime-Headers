@@ -3,16 +3,16 @@
  */
 
 @interface MFDAMessageContentConsumer : NSObject <MFDAStreamingContentConsumer> {
-    <MFCollectingDataConsumer> *_alternatePartConsumer;
-    NSMutableData *_bodyData;
-    <MFMessageDataConsumerFactory> *_consumerFactory;
-    <MFCollectingDataConsumer> *_dataConsumer;
-    BOOL _didBeginStreaming;
-    DAMailMessage *_message;
-    int _requestedFormat;
-    BOOL _succeeded;
-    double _timeOfLastActivity;
-    BOOL _triedCreatingAlternatePartConsumer;
+    <MFCollectingDataConsumer> * _alternatePartConsumer;
+    NSMutableData * _bodyData;
+    <MFMessageDataConsumerFactory> * _consumerFactory;
+    <MFCollectingDataConsumer> * _dataConsumer;
+    BOOL  _didBeginStreaming;
+    DAMailMessage * _message;
+    int  _requestedFormat;
+    BOOL  _succeeded;
+    double  _timeOfLastActivity;
+    BOOL  _triedCreatingAlternatePartConsumer;
 }
 
 @property (nonatomic, retain) <MFCollectingDataConsumer> *alternatePartConsumer;

@@ -3,7 +3,7 @@
  */
 
 @interface TSWPShapeInfo : TSDShapeInfo <TSDContainerInfo, TSDMixing, TSDSelectionStatisticsContributor, TSWPStorageParent> {
-    TSWPStorage *_containedStorage;
+    TSWPStorage * _containedStorage;
 }
 
 @property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;
@@ -47,9 +47,9 @@
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 - (BOOL)autoListRecognition;
 - (BOOL)autoListTermination;
-- (struct CGPoint { float x1; float x2; })autosizePositionOffset;
-- (struct CGPoint { float x1; float x2; })autosizePositionOffsetForGeometry:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })autosizedTransformForInfoGeometry:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (struct CGPoint { double x1; double x2; })autosizePositionOffset;
+- (struct CGPoint { double x1; double x2; })autosizePositionOffsetForGeometry:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })autosizedTransformForInfoGeometry:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 - (id)childEnumerator;
 - (id)childInfos;
 - (unsigned int)chunkCountForTextureDeliveryStyle:(unsigned int)arg1 byGlyphStyle:(int)arg2 animationFilter:(id)arg3;
@@ -67,6 +67,7 @@
 - (void)fixPositionOfImportedAutosizedShape;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2;
+- (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 pathSource:(id)arg4;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 pathSource:(id)arg4 wpStorage:(id)arg5;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 wpStorage:(id)arg4;
@@ -79,8 +80,8 @@
 - (id)localizedChunkNameForTextureDeliveryStyle:(unsigned int)arg1 animationFilter:(id)arg2 chunkIndex:(unsigned int)arg3;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
 - (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
-- (float)pOffsetForParagraphAlignment:(struct CGSize { float x1; float x2; })arg1;
-- (float)pOffsetForVerticalAlignment:(struct CGSize { float x1; float x2; })arg1;
+- (float)pOffsetForParagraphAlignment:(struct CGSize { double x1; double x2; })arg1;
+- (float)pOffsetForVerticalAlignment:(struct CGSize { double x1; double x2; })arg1;
 - (unsigned int)p_chunkCountForByBullet;
 - (unsigned int)p_chunkCountForByBulletGroup;
 - (id)p_chunkTitleByRemovingAdditionalLinesFromTitle:(id)arg1;
@@ -103,13 +104,12 @@
 - (BOOL)shouldHideEmptyBullets;
 - (BOOL)shrinkTextToFit;
 - (Class)styleClass;
-- (id)styleIdentifierTemplateForNewPreset;
 - (id)stylesForCopyStyle;
 - (BOOL)supportsShrinkTextToFit;
 - (BOOL)supportsTextInset;
 - (BOOL)textIsVertical;
 - (id)textureDeliveryStylesLocalized:(BOOL)arg1 animationFilter:(id)arg2;
-- (struct CGPoint { float x1; float x2; })transformableObjectAnchorPoint;
+- (struct CGPoint { double x1; double x2; })transformableObjectAnchorPoint;
 - (id)tswpShapeStyle;
 - (int)verticalAlignment;
 - (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;

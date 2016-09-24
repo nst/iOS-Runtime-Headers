@@ -3,11 +3,10 @@
  */
 
 @interface SKUIShareTemplateImageItemProvider : UIActivityItemProvider {
-    SKUIShareTemplateViewElement *_templateElement;
+    SKUIShareTemplateViewElement * _templateElement;
 }
 
 - (void).cxx_destruct;
-- (BOOL)_validActivityType:(id)arg1;
 - (id)initWithTemplateElement:(id)arg1;
 - (id)item;
 

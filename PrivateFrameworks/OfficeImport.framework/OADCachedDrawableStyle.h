@@ -3,12 +3,12 @@
  */
 
 @interface OADCachedDrawableStyle : NSObject {
-    int mFillCategory;
-    unsigned int mFillIndex;
-    unsigned char mReflectionOpacity;
-    unsigned int mShadowIndex;
-    unsigned int mStrokeIndex;
-    unsigned int mTextStyleIndex;
+    int  mFillCategory;
+    unsigned int  mFillIndex;
+    unsigned char  mReflectionOpacity;
+    unsigned int  mShadowIndex;
+    unsigned int  mStrokeIndex;
+    unsigned int  mTextStyleIndex;
 }
 
 @property (nonatomic, readonly) int fillCategory;

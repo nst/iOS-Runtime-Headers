@@ -3,8 +3,8 @@
  */
 
 @interface TSATemplateInfo : NSObject {
-    NSString *_displayName;
-    NSString *_identifier;
+    NSString * _displayName;
+    NSString * _identifier;
 }
 
 @property (nonatomic, copy) NSString *displayName;

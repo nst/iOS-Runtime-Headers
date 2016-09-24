@@ -3,26 +3,34 @@
  */
 
 @interface IDSSession : NSObject {
-    _IDSSession *_internal;
+    _IDSSession * _internal;
 }
 
+@property (nonatomic, readonly) NSString *destination;
 @property (nonatomic) int invitationTimeOut;
 @property (nonatomic) BOOL isAudioEnabled;
 @property (nonatomic) BOOL isMuted;
 @property (nonatomic, readonly) unsigned int sessionEndedReason;
+@property (nonatomic, readonly) NSString *sessionID;
 @property (nonatomic, readonly) int socket;
 
+- (unsigned int)MTUForAddressFamily:(unsigned int)arg1;
 - (id)_initWithAccount:(id)arg1 destinations:(id)arg2 transportType:(int)arg3 uniqueID:(id)arg4;
 - (id)_internal;
+- (id)_streamPreferences;
 - (void)acceptInvitation;
 - (void)acceptInvitationWithData:(id)arg1;
 - (void)cancelInvitation;
 - (void)cancelInvitationWithData:(id)arg1;
+- (void)cancelInvitationWithRemoteEndedReasonOverride:(unsigned int)arg1;
 - (void)dealloc;
 - (void)declineInvitation;
 - (void)declineInvitationWithData:(id)arg1;
+- (id)description;
+- (id)destination;
 - (void)endSession;
 - (void)endSessionWithData:(id)arg1;
+- (id)initWithAccount:(id)arg1 destinations:(id)arg2 options:(id)arg3;
 - (id)initWithAccount:(id)arg1 destinations:(id)arg2 transportType:(int)arg3;
 - (int)invitationTimeOut;
 - (BOOL)isAudioEnabled;
@@ -34,10 +42,14 @@
 - (void)sendInvitationWithOptions:(id)arg1;
 - (void)sendSessionMessage:(id)arg1;
 - (unsigned int)sessionEndedReason;
+- (id)sessionID;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setInvitationTimeOut:(int)arg1;
 - (void)setIsAudioEnabled:(BOOL)arg1;
 - (void)setIsMuted:(BOOL)arg1;
+- (void)setPreferences:(id)arg1;
+- (void)setStreamPreferences:(id)arg1;
+- (BOOL)shouldUseSocketForTransport;
 - (int)socket;
 - (unsigned int)state;
 

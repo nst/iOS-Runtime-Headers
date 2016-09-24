@@ -6,8 +6,8 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _editRange;
-    NSString *_replacementText;
+    }  _editRange;
+    NSString * _replacementText;
 }
 
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } editRange;

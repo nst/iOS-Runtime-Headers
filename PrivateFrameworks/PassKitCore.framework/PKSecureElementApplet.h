@@ -3,8 +3,8 @@
  */
 
 @interface PKSecureElementApplet : NSObject <NSSecureCoding> {
-    NSString *_identifier;
-    unsigned int _lifecycleState;
+    NSString * _identifier;
+    unsigned int  _lifecycleState;
 }
 
 @property (nonatomic, readonly) NSString *identifier;
@@ -13,7 +13,7 @@
 + (id)secureElementAppletWithInternalApplet:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;

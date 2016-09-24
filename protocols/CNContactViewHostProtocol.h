@@ -5,6 +5,7 @@
 
 @required
 
+- (void)didChangePreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)didCompleteWithContact:(CNContact *)arg1;
 - (void)didDeleteContact:(CNContact *)arg1;
 - (void)isPresentingFullscreen:(BOOL)arg1;

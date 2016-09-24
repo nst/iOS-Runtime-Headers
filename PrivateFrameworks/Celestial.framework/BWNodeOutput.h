@@ -3,47 +3,52 @@
  */
 
 @interface BWNodeOutput : NSObject {
-    long long _configurationID;
-    <BWNodeOutputConsumer> *_consumer;
-    BOOL _consumerIsANodeConnection;
-    BOOL _discardsSampleData;
-    BOOL _dropsSampleBuffersWithUnexpectedPTS;
-    BWFormat *_format;
-    BWFormatRequirements *_formatRequirements;
-    int _indexOfInputWhichDrivesThisOutput;
+    int  _configurationID;
+    <BWNodeOutputConsumer> * _consumer;
+    BOOL  _consumerIsANodeConnection;
+    BOOL  _discardsSampleData;
+    BOOL  _dropsSampleBuffersWithUnexpectedPTS;
+    BWFormat * _format;
+    BWFormatRequirements * _formatRequirements;
+    int  _indexOfInputWhichDrivesThisOutput;
     struct { 
-        long long value; 
+        int value; 
         int timescale; 
         unsigned int flags; 
-        long long epoch; 
-    } _lastEmittedPTS;
+        int epoch; 
+    }  _lastEmittedPTS;
     struct { 
-        long long value; 
+        int value; 
         int timescale; 
         unsigned int flags; 
-        long long epoch; 
-    } _lastValidPTS;
-    long long _liveConfigurationID;
-    BWFormat *_liveFormat;
-    BWPixelBufferPool *_livePixelBufferPool;
-    unsigned long _livePixelBufferPoolSize;
-    float _maxSampleDataOutputRate;
-    unsigned long _mediaType;
-    BOOL _mediaTypeIsVideo;
-    NSString *_name;
-    BWNode *_node;
-    unsigned int _numberOfBuffersDropped;
-    unsigned int _numberOfBuffersEmitted;
-    unsigned long _owningNodeRetainedBufferCount;
-    int _passthroughMode;
-    unsigned long _preparedBufferPoolSize;
-    BWPixelBufferPool *_preparedPixelBufferPool;
-    BOOL _providesPixelBufferPool;
-    unsigned long _retainedBufferCount;
+        int epoch; 
+    }  _lastValidPTS;
+    int  _liveConfigurationID;
+    BWFormat * _liveFormat;
+    BWPixelBufferPool * _livePixelBufferPool;
+    unsigned long  _livePixelBufferPoolSize;
+    double  _maxSampleDataOutputRate;
+    unsigned long  _mediaType;
+    BOOL  _mediaTypeIsVideo;
+    NSString * _name;
+    BWNode * _node;
+    unsigned int  _numberOfBuffersDropped;
+    unsigned int  _numberOfBuffersEmitted;
+    unsigned long  _owningNodeRetainedBufferCount;
+    int  _passthroughMode;
+    NSMutableArray * _poolPreallocationCompletionHandlers;
+    BOOL  _poolPreallocationDone;
+    struct OpaqueFigSimpleMutex { } * _poolPreallocationMutex;
+    BOOL  _prefetchesPixelBufferPool;
+    unsigned long  _preparedBufferPoolSize;
+    BWPixelBufferPool * _preparedPixelBufferPool;
+    BOOL  _providesPixelBufferPool;
+    BOOL  _receivedEOD;
+    unsigned long  _retainedBufferCount;
 }
 
 @property (nonatomic) BOOL buffersOriginateUpstream;
-@property (nonatomic) long long configurationID;
+@property (nonatomic) int configurationID;
 @property (nonatomic, readonly) BWNodeConnection *connection;
 @property (nonatomic) <BWNodeOutputConsumer> *consumer;
 @property (nonatomic) BOOL discardsSampleData;
@@ -51,10 +56,10 @@
 @property (nonatomic, copy) BWFormat *format;
 @property (nonatomic, copy) BWFormatRequirements *formatRequirements;
 @property (nonatomic) int indexOfInputWhichDrivesThisOutput;
-@property (nonatomic, readonly) long long liveConfigurationID;
+@property (nonatomic, readonly) int liveConfigurationID;
 @property (nonatomic, retain) BWFormat *liveFormat;
 @property (nonatomic, readonly) BWPixelBufferPool *livePixelBufferPool;
-@property (nonatomic) float maxSampleDataOutputRate;
+@property (nonatomic) double maxSampleDataOutputRate;
 @property (nonatomic, readonly) unsigned long mediaType;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) BWNode *node;
@@ -62,6 +67,7 @@
 @property (nonatomic, readonly) unsigned int numberOfBuffersEmitted;
 @property (nonatomic) unsigned long owningNodeRetainedBufferCount;
 @property (nonatomic) int passthroughMode;
+@property (nonatomic) BOOL prefetchesPixelBufferPool;
 @property (nonatomic, readonly) BWPixelBufferPool *preparedPixelBufferPool;
 @property (nonatomic) BOOL providesPixelBufferPool;
 @property (nonatomic) unsigned long retainedBufferCount;
@@ -70,8 +76,9 @@
 + (void)initialize;
 
 - (id)_poolName;
+- (void)addPoolPreallocationCompletionHandler:(id /* block */)arg1;
 - (BOOL)buffersOriginateUpstream;
-- (long long)configurationID;
+- (int)configurationID;
 - (id)connection;
 - (id)consumer;
 - (void)dealloc;
@@ -82,12 +89,13 @@
 - (void)emitIrisReferenceMovieRequestWithInfo:(id)arg1;
 - (void)emitNodeError:(id)arg1;
 - (void)emitSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
+- (void)emitStillImageReferenceFrameBracketedCaptureSequenceNumberMessageWithSequenceNumber:(int)arg1;
 - (id)format;
 - (id)formatRequirements;
 - (int)indexOfInputWhichDrivesThisOutput;
 - (id)initWithMediaType:(unsigned long)arg1 node:(id)arg2;
 - (void)invalidate;
-- (long long)liveConfigurationID;
+- (int)liveConfigurationID;
 - (id)liveFormat;
 - (id)livePixelBufferPool;
 - (void)makeConfiguredFormatLive;
@@ -100,12 +108,13 @@
 - (unsigned int)numberOfBuffersEmitted;
 - (unsigned long)owningNodeRetainedBufferCount;
 - (int)passthroughMode;
+- (BOOL)prefetchesPixelBufferPool;
 - (void)prepareForConfiguredFormatToBecomeLive;
 - (id)preparedPixelBufferPool;
 - (BOOL)providesPixelBufferPool;
 - (unsigned long)retainedBufferCount;
 - (void)setBuffersOriginateUpstream:(BOOL)arg1;
-- (void)setConfigurationID:(long long)arg1;
+- (void)setConfigurationID:(int)arg1;
 - (void)setConsumer:(id)arg1;
 - (void)setDiscardsSampleData:(BOOL)arg1;
 - (void)setDropsSampleBuffersWithUnexpectedPTS:(BOOL)arg1;
@@ -118,6 +127,7 @@
 - (void)setNodePreparedPixelBufferPool:(id)arg1;
 - (void)setOwningNodeRetainedBufferCount:(unsigned long)arg1;
 - (void)setPassthroughMode:(int)arg1;
+- (void)setPrefetchesPixelBufferPool:(BOOL)arg1;
 - (void)setPreparedSharedPixelBufferPool:(id)arg1;
 - (void)setProvidesPixelBufferPool:(BOOL)arg1;
 - (void)setRetainedBufferCount:(unsigned long)arg1;

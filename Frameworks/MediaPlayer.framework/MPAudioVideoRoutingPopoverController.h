@@ -3,25 +3,29 @@
  */
 
 @interface MPAudioVideoRoutingPopoverController : UIPopoverController <MPAVRoutingViewControllerDelegate> {
-    int _airPlayPasswordAlertDidAppearToken;
-    BOOL _airPlayPasswordAlertDidAppearTokenIsValid;
-    BOOL _mirroringIncluded;
-    MPAVRoutingViewController *_routingViewController;
+    int  _airPlayPasswordAlertDidAppearToken;
+    BOOL  _airPlayPasswordAlertDidAppearTokenIsValid;
+    BOOL  _mirroringIncluded;
+    BOOL  _mirroringOnly;
+    MPAVRoutingViewController * _routingViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic) BOOL mirroringOnly;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_tableViewController;
 - (void)dealloc;
 - (id)initWithContentViewController:(id)arg1;
-- (id)initWithType:(unsigned int)arg1;
-- (id)initWithType:(unsigned int)arg1 includeMirroring:(BOOL)arg2;
+- (id)initWithType:(int)arg1;
+- (id)initWithType:(int)arg1 includeMirroring:(BOOL)arg2;
+- (BOOL)mirroringOnly;
 - (id)routingController;
 - (void)routingViewController:(id)arg1 didPickRoute:(id)arg2;
 - (void)routingViewControllerDidUpdateContents:(id)arg1;
+- (void)setMirroringOnly:(BOOL)arg1;
 
 @end

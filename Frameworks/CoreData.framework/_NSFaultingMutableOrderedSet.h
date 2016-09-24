@@ -3,7 +3,7 @@
  */
 
 @interface _NSFaultingMutableOrderedSet : NSMutableOrderedSet {
-    int _cd_rc;
+    int  _cd_rc;
     struct _NSFaultingMutableOrderedSetFlags { 
         unsigned int _isFault : 1; 
         unsigned int _mustPropagateDelete : 1; 
@@ -12,12 +12,12 @@
         unsigned int _isImmutableCopy : 1; 
         unsigned int _reserved : 11; 
         unsigned int _relationship : 16; 
-    } _flags;
-    NSMutableDictionary *_forcedKeys;
-    id _grottyHack;
-    unsigned int *_orderKeys;
-    id _realSet;
-    NSManagedObject *_source;
+    }  _flags;
+    NSMutableDictionary * _forcedKeys;
+    id  _grottyHack;
+    unsigned int * _orderKeys;
+    id  _realSet;
+    NSManagedObject * _source;
 }
 
 @property (getter=isFault, nonatomic, readonly) BOOL fault;

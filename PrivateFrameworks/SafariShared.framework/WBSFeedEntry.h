@@ -3,13 +3,13 @@
  */
 
 @interface WBSFeedEntry : NSObject <NSSecureCoding> {
-    NSString *_content;
-    NSDate *_datePublished;
-    NSDate *_dateUpdated;
-    NSString *_entryDescription;
-    NSString *_identifier;
-    NSString *_title;
-    NSString *_urlString;
+    NSString * _content;
+    NSDate * _datePublished;
+    NSDate * _dateUpdated;
+    NSString * _entryDescription;
+    NSString * _identifier;
+    NSString * _title;
+    NSString * _urlString;
 }
 
 @property (nonatomic, copy) NSString *content;

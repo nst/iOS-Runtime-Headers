@@ -3,11 +3,11 @@
  */
 
 @interface PUTilingLayoutInvalidationContext : NSObject {
-    NSMutableDictionary *__invalidatedIndexPathsByTileKind;
-    BOOL _invalidatedAllTiles;
-    BOOL _invalidatedAnyTile;
-    BOOL _invalidatedContentBounds;
-    NSMutableSet *_invalidatedTileKinds;
+    NSMutableDictionary * __invalidatedIndexPathsByTileKind;
+    BOOL  _invalidatedAllTiles;
+    BOOL  _invalidatedAnyTile;
+    BOOL  _invalidatedContentBounds;
+    NSMutableSet * _invalidatedTileKinds;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *_invalidatedIndexPathsByTileKind;

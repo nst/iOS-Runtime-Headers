@@ -3,10 +3,10 @@
  */
 
 @interface TSUScaledProgress : TSUProgress {
-    TSUProgress *mProgress;
-    id mProgressObserver;
-    NSObject<OS_dispatch_queue> *mProgressQueue;
-    TSUScaledProgressStorage *mStorage;
+    TSUProgress * mProgress;
+    id  mProgressObserver;
+    NSObject<OS_dispatch_queue> * mProgressQueue;
+    TSUScaledProgressStorage * mStorage;
 }
 
 @property double maxValue;

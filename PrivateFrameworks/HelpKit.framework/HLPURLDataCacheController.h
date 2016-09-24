@@ -3,15 +3,15 @@
  */
 
 @interface HLPURLDataCacheController : NSObject {
-    int _URLSessionDataType;
-    NSString *_cacheDirectory;
-    unsigned int _cacheSize;
-    NSMutableArray *_dataCacheArray;
-    NSMutableDictionary *_dataCacheMap;
-    NSString *_identifier;
-    BOOL _loaded;
-    NSString *_locale;
-    unsigned int _maxDataCacheSize;
+    int  _URLSessionDataType;
+    NSString * _cacheDirectory;
+    unsigned int  _cacheSize;
+    NSMutableArray * _dataCacheArray;
+    NSMutableDictionary * _dataCacheMap;
+    NSString * _identifier;
+    BOOL  _loaded;
+    NSString * _locale;
+    unsigned int  _maxDataCacheSize;
 }
 
 @property (nonatomic, retain) NSMutableArray *dataCacheArray;

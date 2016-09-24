@@ -3,11 +3,11 @@
  */
 
 @interface SKUIDonationAmountViewController : SKUIDonationStepViewController <SKUIDonationConfigurationObserver> {
-    SKUIDonationAmountView *_amountView;
-    SKUIGiftValidationResponse *_lastValidationResponse;
-    SKUIGiftPurchaseRequest *_purchaseRequest;
-    BOOL _tappedNextWhileValidating;
-    SKUIGiftValidator *_validator;
+    SKUIDonationAmountView * _amountView;
+    SKUIGiftValidationResponse * _lastValidationResponse;
+    SKUIGiftPurchaseRequest * _purchaseRequest;
+    BOOL  _tappedNextWhileValidating;
+    SKUIGiftValidator * _validator;
 }
 
 @property (readonly, copy) NSString *debugDescription;

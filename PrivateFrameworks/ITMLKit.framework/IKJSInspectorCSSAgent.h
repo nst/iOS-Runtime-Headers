@@ -3,10 +3,10 @@
  */
 
 @interface IKJSInspectorCSSAgent : NSObject <RWIProtocolCSSDomainHandler> {
-    IKJSInspectorController *_controller;
-    NSURL *_defaultStyleSheetURL;
-    IKViewElementStyleFactory *_styleFactory;
-    IKCSSStylesheet *_stylesheet;
+    IKJSInspectorController * _controller;
+    NSURL * _defaultStyleSheetURL;
+    IKViewElementStyleFactory * _styleFactory;
+    IKCSSStylesheet * _stylesheet;
 }
 
 @property (nonatomic, readonly) IKJSInspectorController *controller;

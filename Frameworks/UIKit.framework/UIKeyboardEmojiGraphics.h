@@ -10,10 +10,11 @@
 + (id)emojiFontAttributes;
 + (id)emojiFontAttributesForPortrait:(BOOL)arg1;
 + (float)emojiPageControlYOffset:(BOOL)arg1;
-+ (struct CGSize { float x1; float x2; })emojiSize:(BOOL)arg1;
-+ (struct CGPoint { float x1; float x2; })margin:(BOOL)arg1;
++ (struct CGSize { double x1; double x2; })emojiSize:(BOOL)arg1;
++ (BOOL)isWildcatKeyboard;
++ (struct CGPoint { double x1; double x2; })margin:(BOOL)arg1;
 + (float)optionalDescriptionPadding:(BOOL)arg1;
-+ (struct CGPoint { float x1; float x2; })padding:(BOOL)arg1;
++ (struct CGPoint { double x1; double x2; })padding:(BOOL)arg1;
 + (float)recentLableVerticalPadding:(BOOL)arg1;
 + (unsigned char)rowCount:(BOOL)arg1;
 + (id)sharedInstance;

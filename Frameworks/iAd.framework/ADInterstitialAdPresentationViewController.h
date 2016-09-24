@@ -3,8 +3,8 @@
  */
 
 @interface ADInterstitialAdPresentationViewController : UIViewController {
-    ADCountdownButton *_closeButton;
-    ADInterstitialAd *_interstitialAd;
+    ADCountdownButton * _closeButton;
+    ADInterstitialAd * _interstitialAd;
 }
 
 @property (nonatomic, retain) ADCountdownButton *closeButton;
@@ -17,7 +17,7 @@
 - (void)loadView;
 - (BOOL)prefersStatusBarHidden;
 - (void)setCloseButton:(id)arg1;
-- (BOOL)shouldTestVisibilityAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)shouldTestVisibilityAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;

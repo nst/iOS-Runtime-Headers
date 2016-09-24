@@ -3,9 +3,9 @@
  */
 
 @interface StocksStyle : NSObject {
-    UIColor *_chartHighlightColor;
-    UIFont *_chartLabelFont;
-    UIFont *_mainFont;
+    UIColor * _chartHighlightColor;
+    UIFont * _chartLabelFont;
+    UIFont * _mainFont;
 }
 
 + (id)sharedStyle;

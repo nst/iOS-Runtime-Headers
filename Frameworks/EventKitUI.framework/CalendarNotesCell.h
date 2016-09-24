@@ -3,8 +3,8 @@
  */
 
 @interface CalendarNotesCell : EKUIConstrainedFontsTableViewCell {
-    NSString *_text;
-    UITextView *_textView;
+    NSString * _text;
+    UITextView * _textView;
 }
 
 @property (nonatomic, retain) NSString *placeholder;

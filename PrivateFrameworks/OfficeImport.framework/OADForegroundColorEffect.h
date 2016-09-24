@@ -3,7 +3,7 @@
  */
 
 @interface OADForegroundColorEffect : OADBlipEffect {
-    OADColor *mForegroundColor;
+    OADColor * mForegroundColor;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

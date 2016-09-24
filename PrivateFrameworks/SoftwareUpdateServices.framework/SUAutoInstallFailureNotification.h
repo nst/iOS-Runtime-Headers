@@ -3,7 +3,7 @@
  */
 
 @interface SUAutoInstallFailureNotification : NSObject <SUAutoInstallFailureNotification> {
-    struct __CFUserNotification { } *_notification;
+    struct __CFUserNotification { } * _notification;
 }
 
 @property (readonly, copy) NSString *debugDescription;

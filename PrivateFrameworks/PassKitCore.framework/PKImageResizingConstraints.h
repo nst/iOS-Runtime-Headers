@@ -3,38 +3,38 @@
  */
 
 @interface PKImageResizingConstraints : NSObject {
-    int _constraintType;
-    float _fixedDimension;
-    float _maxAspectRatio;
-    float _minAspectRatio;
-    float _outputBorderTrim;
-    BOOL _outputMirrored;
-    float _outputScale;
-    BOOL _respectAspectRatioRange;
+    int  _constraintType;
+    double  _fixedDimension;
+    double  _maxAspectRatio;
+    double  _minAspectRatio;
+    double  _outputBorderTrim;
+    BOOL  _outputMirrored;
+    double  _outputScale;
+    BOOL  _respectAspectRatioRange;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _size;
+        double width; 
+        double height; 
+    }  _size;
 }
 
-@property (nonatomic) float outputBorderTrim;
+@property (nonatomic) double outputBorderTrim;
 @property (nonatomic) BOOL outputMirrored;
-@property (nonatomic) float outputScale;
+@property (nonatomic) double outputScale;
 
 + (id)constraintsWithFixedHeight:(float)arg1 minAspectRatio:(float)arg2 maxAspectRatio:(float)arg3;
 + (id)constraintsWithFixedLargeDimenstion:(float)arg1 minAspectRatio:(float)arg2 maxAspectRatio:(float)arg3;
-+ (id)constraintsWithFixedSize:(struct CGSize { float x1; float x2; })arg1;
++ (id)constraintsWithFixedSize:(struct CGSize { double x1; double x2; })arg1;
 + (id)constraintsWithFixedSmallDimenstion:(float)arg1 minAspectRatio:(float)arg2 maxAspectRatio:(float)arg3;
 + (id)constraintsWithFixedWidth:(float)arg1 minAspectRatio:(float)arg2 maxAspectRatio:(float)arg3;
-+ (id)constraintsWithMaxSize:(struct CGSize { float x1; float x2; })arg1;
-+ (id)constraintsWithMaxSize:(struct CGSize { float x1; float x2; })arg1 minAspectRatio:(float)arg2 maxAspectRatio:(float)arg3;
-+ (id)constraintsWithMinSize:(struct CGSize { float x1; float x2; })arg1;
-+ (id)constraintsWithMinSize:(struct CGSize { float x1; float x2; })arg1 minAspectRatio:(float)arg2 maxAspectRatio:(float)arg3;
++ (id)constraintsWithMaxSize:(struct CGSize { double x1; double x2; })arg1;
++ (id)constraintsWithMaxSize:(struct CGSize { double x1; double x2; })arg1 minAspectRatio:(float)arg2 maxAspectRatio:(float)arg3;
++ (id)constraintsWithMinSize:(struct CGSize { double x1; double x2; })arg1;
++ (id)constraintsWithMinSize:(struct CGSize { double x1; double x2; })arg1 minAspectRatio:(float)arg2 maxAspectRatio:(float)arg3;
 
 - (id)_flippedConstraints;
-- (BOOL)_getPixelCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 pixelOutputSize:(struct CGSize { float x1; float x2; }*)arg2 forImageSize:(struct CGSize { float x1; float x2; })arg3 scale:(float)arg4;
+- (BOOL)_getPixelCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 pixelOutputSize:(struct CGSize { double x1; double x2; }*)arg2 forImageSize:(struct CGSize { double x1; double x2; })arg3 scale:(float)arg4;
 - (BOOL)_reasonable;
-- (BOOL)getPixelCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 pixelOutputSize:(struct CGSize { float x1; float x2; }*)arg2 forImage:(id)arg3;
+- (BOOL)getPixelCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 pixelOutputSize:(struct CGSize { double x1; double x2; }*)arg2 forImage:(id)arg3;
 - (id)init;
 - (float)outputBorderTrim;
 - (BOOL)outputMirrored;

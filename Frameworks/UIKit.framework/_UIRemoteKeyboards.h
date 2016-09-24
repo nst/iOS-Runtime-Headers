@@ -3,25 +3,26 @@
  */
 
 @interface _UIRemoteKeyboards : NSObject <_UIKeyboardArbitrationClient, _UIRemoteKeyboardControllerDelegate, _UIRemoteKeyboardDistributedViewSource> {
-    NSMutableArray *_activePIDs;
-    NSXPCConnection *_connection;
-    BOOL _currentKeyboard;
-    _UIKeyboardChangedInformation *_currentState;
-    BOOL _expectedSuppression;
-    BOOL _expectingInitialState;
-    int _externalSuppression;
-    BOOL _hadFocusBeforeOverlay;
-    BOOL _handlingRemoteEvent;
-    BOOL _hasFocus;
-    int _hostedCount;
-    int _ignoreLayoutSubviews;
-    UIView *_keyboardSnapshot;
-    NSMutableSet *_pendingKeyboardGrabs;
-    int _recursionCheck;
-    float _requiredLevel;
-    BOOL _takingSnapshot;
-    BOOL _updatingHeight;
-    NSHashTable *_windowControllers;
+    NSMutableArray * _activePIDs;
+    NSXPCConnection * _connection;
+    BOOL  _currentKeyboard;
+    _UIKeyboardChangedInformation * _currentState;
+    BOOL  _expectedSuppression;
+    BOOL  _expectingInitialState;
+    int  _externalSuppression;
+    BOOL  _hadFocusBeforeOverlay;
+    BOOL  _handlingRemoteEvent;
+    BOOL  _hasFocus;
+    int  _hostedCount;
+    int  _ignoreLayoutSubviews;
+    UIView * _keyboardSnapshot;
+    NSMutableSet * _pendingKeyboardGrabs;
+    int  _recursionCheck;
+    double  _requiredLevel;
+    BOOL  _takingSnapshot;
+    BOOL  _updatingHeight;
+    NSHashTable * _windowControllers;
+    BOOL  _windowEnabled;
 }
 
 @property (retain) NSXPCConnection *connection;
@@ -32,7 +33,8 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) BOOL handlingRemoteEvent;
 @property (readonly) unsigned int hash;
-@property (readonly) float intersectionHeight;
+@property (readonly) double iavHeight;
+@property (readonly) double intersectionHeight;
 @property (nonatomic) BOOL isSnapshotting;
 @property (readonly) BOOL keyboardActive;
 @property (readonly) BOOL keyboardVisible;
@@ -68,6 +70,7 @@
 - (void)finishWithHostedWindow;
 - (void)forceKeyboardAway;
 - (BOOL)handlingRemoteEvent;
+- (float)iavHeight;
 - (void)ignoreLayoutNotifications:(id /* block */)arg1;
 - (id)init;
 - (float)intersectionHeight;
@@ -85,10 +88,11 @@
 - (void)performOnControllers:(id /* block */)arg1;
 - (void)performOnDistributedControllers:(id /* block */)arg1;
 - (id)prepareForHostedWindow;
-- (void)prepareToMoveKeyboard:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 showing:(BOOL)arg2 forScreen:(id)arg3;
+- (void)prepareToMoveKeyboard:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withIAV:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 showing:(BOOL)arg3 forScreen:(id)arg4;
 - (id)proxy;
 - (void)queue_applicationLostFocusWithCompletion:(id /* block */)arg1;
 - (void)queue_failedConnection:(id)arg1;
+- (void)queue_getDebugInfoWithCompletion:(id /* block */)arg1;
 - (void)queue_keyboardChanged:(id)arg1 onComplete:(id /* block */)arg2;
 - (void)queue_keyboardChangedWithCompletion:(id /* block */)arg1;
 - (void)queue_keyboardSuppressed:(BOOL)arg1 withCompletion:(id /* block */)arg2;

@@ -3,10 +3,10 @@
  */
 
 @interface EDRun : NSObject <EDKeyedObject> {
-    unsigned int mCharIndex;
-    NSArray *mEffects;
-    unsigned int mFontIndex;
-    EDResources *mResources;
+    unsigned int  mCharIndex;
+    NSArray * mEffects;
+    unsigned int  mFontIndex;
+    EDResources * mResources;
 }
 
 @property (readonly, copy) NSString *debugDescription;

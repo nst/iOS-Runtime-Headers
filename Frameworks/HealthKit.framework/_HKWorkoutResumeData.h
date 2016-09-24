@@ -3,9 +3,9 @@
  */
 
 @interface _HKWorkoutResumeData : NSObject <NSSecureCoding> {
-    NSMutableArray *_gaps;
-    NSUUID *_lastUUID;
-    BOOL _lastUUIDInJournal;
+    NSMutableArray * _gaps;
+    NSUUID * _lastUUID;
+    BOOL  _lastUUIDInJournal;
 }
 
 @property (nonatomic, retain) NSMutableArray *gaps;

@@ -3,13 +3,13 @@
  */
 
 @interface SPExtensionDaemonManager : NSObject {
-    BOOL _active;
-    NSMutableDictionary *_coreLocationAsserts;
-    NSObject<OS_dispatch_queue> *_coreLocationAssertsQueue;
-    int _refCount;
-    NSMutableSet *_transactionObservers;
-    NSObject<OS_dispatch_queue> *_transactionQueue;
-    NSObject<OS_dispatch_source> *_transactionTimer;
+    BOOL  _active;
+    NSMutableDictionary * _coreLocationAsserts;
+    NSObject<OS_dispatch_queue> * _coreLocationAssertsQueue;
+    int  _refCount;
+    NSMutableSet * _transactionObservers;
+    NSObject<OS_dispatch_queue> * _transactionQueue;
+    NSObject<OS_dispatch_source> * _transactionTimer;
 }
 
 @property (nonatomic) BOOL active;

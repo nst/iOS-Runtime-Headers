@@ -3,16 +3,16 @@
  */
 
 @interface CKNotificationInfo : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_alertActionLocalizationKey;
-    NSString *_alertBody;
-    NSString *_alertLaunchImage;
-    NSArray *_alertLocalizationArgs;
-    NSString *_alertLocalizationKey;
-    NSString *_category;
-    NSArray *_desiredKeys;
-    BOOL _shouldBadge;
-    BOOL _shouldSendContentAvailable;
-    NSString *_soundName;
+    NSString * _alertActionLocalizationKey;
+    NSString * _alertBody;
+    NSString * _alertLaunchImage;
+    NSArray * _alertLocalizationArgs;
+    NSString * _alertLocalizationKey;
+    NSString * _category;
+    NSArray * _desiredKeys;
+    BOOL  _shouldBadge;
+    BOOL  _shouldSendContentAvailable;
+    NSString * _soundName;
 }
 
 @property (nonatomic, copy) NSString *alertActionLocalizationKey;

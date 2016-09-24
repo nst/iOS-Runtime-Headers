@@ -3,8 +3,8 @@
  */
 
 @interface SGEKCalendarAdapter : NSObject <SGJournalCalendarObserver> {
-    EKEventStore *_externalEKStore;
-    SGSqlEntityStore *_store;
+    EKEventStore * _externalEKStore;
+    SGSqlEntityStore * _store;
 }
 
 @property (readonly, copy) NSString *debugDescription;

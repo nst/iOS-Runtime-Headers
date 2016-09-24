@@ -3,19 +3,21 @@
  */
 
 @interface AWDNetworkServiceProxyProbeStatistics : PBCodable <NSCopying> {
-    unsigned long long _alternateProbeTimeMsecs;
-    unsigned long long _genericDNSProbeTimeMsecs;
-    unsigned long long _genericProbeTimeMsecs;
+    unsigned long long  _alternateProbeTimeMsecs;
+    unsigned long long  _genericDNSProbeTimeMsecs;
+    unsigned long long  _genericProbeTimeMsecs;
     struct { 
         unsigned int alternateProbeTimeMsecs : 1; 
         unsigned int genericDNSProbeTimeMsecs : 1; 
         unsigned int genericProbeTimeMsecs : 1; 
         unsigned int timestamp : 1; 
         unsigned int interfaceType : 1; 
-    } _has;
-    int _interfaceType;
-    NSString *_label;
-    unsigned long long _timestamp;
+        unsigned int protocolType : 1; 
+    }  _has;
+    int  _interfaceType;
+    NSString * _label;
+    int  _protocolType;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned long long alternateProbeTimeMsecs;
@@ -26,12 +28,15 @@
 @property (nonatomic) BOOL hasGenericProbeTimeMsecs;
 @property (nonatomic) BOOL hasInterfaceType;
 @property (nonatomic, readonly) BOOL hasLabel;
+@property (nonatomic) BOOL hasProtocolType;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) int interfaceType;
 @property (nonatomic, retain) NSString *label;
+@property (nonatomic) int protocolType;
 @property (nonatomic) unsigned long long timestamp;
 
 - (int)StringAsInterfaceType:(id)arg1;
+- (int)StringAsProtocolType:(id)arg1;
 - (unsigned long long)alternateProbeTimeMsecs;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -45,6 +50,7 @@
 - (BOOL)hasGenericProbeTimeMsecs;
 - (BOOL)hasInterfaceType;
 - (BOOL)hasLabel;
+- (BOOL)hasProtocolType;
 - (BOOL)hasTimestamp;
 - (unsigned int)hash;
 - (int)interfaceType;
@@ -52,6 +58,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)label;
 - (void)mergeFrom:(id)arg1;
+- (int)protocolType;
+- (id)protocolTypeAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAlternateProbeTimeMsecs:(unsigned long long)arg1;
 - (void)setGenericDNSProbeTimeMsecs:(unsigned long long)arg1;
@@ -60,9 +68,11 @@
 - (void)setHasGenericDNSProbeTimeMsecs:(BOOL)arg1;
 - (void)setHasGenericProbeTimeMsecs:(BOOL)arg1;
 - (void)setHasInterfaceType:(BOOL)arg1;
+- (void)setHasProtocolType:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setInterfaceType:(int)arg1;
 - (void)setLabel:(id)arg1;
+- (void)setProtocolType:(int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;

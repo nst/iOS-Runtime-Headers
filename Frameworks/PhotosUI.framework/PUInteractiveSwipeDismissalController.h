@@ -3,12 +3,14 @@
  */
 
 @interface PUInteractiveSwipeDismissalController : PUInteractiveDismissalController <UIGestureRecognizerDelegate> {
-    PUChangeDirectionValueFilter *__dismissGestureDirectionValueFilter;
-    UIPanGestureRecognizer *__panGestureRecognizer;
-    PUSwipedDownTileTracker *__swipedDownTileTracker;
-    BOOL _handlingPanGestureRecognizer;
+    NSHashTable * __dependentScrollViews;
+    PUChangeDirectionValueFilter * __dismissGestureDirectionValueFilter;
+    UIPanGestureRecognizer * __panGestureRecognizer;
+    PUSwipedDownTileTracker * __swipedDownTileTracker;
+    BOOL  _handlingPanGestureRecognizer;
 }
 
+@property (nonatomic, readonly) NSHashTable *_dependentScrollViews;
 @property (setter=_setDismissGestureDirectionValueFilter:, nonatomic, retain) PUChangeDirectionValueFilter *_dismissGestureDirectionValueFilter;
 @property (setter=_setPanGestureRecognizer:, nonatomic, retain) UIPanGestureRecognizer *_panGestureRecognizer;
 @property (setter=_setSwipedDownTileTracker:, nonatomic, retain) PUSwipedDownTileTracker *_swipedDownTileTracker;
@@ -19,6 +21,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)_dependentScrollViews;
 - (id)_dismissGestureDirectionValueFilter;
 - (void)_handlePanGestureRecognizer:(id)arg1;
 - (BOOL)_isHandlingPanGestureRecognizer;
@@ -31,6 +34,7 @@
 - (void)dealloc;
 - (BOOL)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (id)init;
 - (void)updateGestureRecognizersWithHostingView:(id)arg1;
 
 @end

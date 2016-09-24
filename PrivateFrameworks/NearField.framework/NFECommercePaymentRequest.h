@@ -3,14 +3,14 @@
  */
 
 @interface NFECommercePaymentRequest : NSObject <NSSecureCoding> {
-    NSString *_appletIdentifier;
-    NSString *_countryCode;
-    NSString *_currencyCode;
-    unsigned char _merchantCapabilities;
-    NSData *_merchantData;
-    NSDecimalNumber *_transactionAmount;
-    NSDate *_transactionDate;
-    unsigned int _unpredictableNumber;
+    NSString * _appletIdentifier;
+    NSString * _countryCode;
+    NSString * _currencyCode;
+    unsigned char  _merchantCapabilities;
+    NSData * _merchantData;
+    NSDecimalNumber * _transactionAmount;
+    NSDate * _transactionDate;
+    unsigned int  _unpredictableNumber;
 }
 
 @property (nonatomic, retain) NSString *appletIdentifier;

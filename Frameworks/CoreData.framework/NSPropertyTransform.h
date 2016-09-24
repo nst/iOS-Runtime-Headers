@@ -3,10 +3,10 @@
  */
 
 @interface NSPropertyTransform : NSObject {
-    NSPropertyTransform *_prerequisiteTransform;
-    NSString *_propertyName;
-    BOOL _replaceMissingValueOnly;
-    NSExpression *_valueExpression;
+    NSPropertyTransform * _prerequisiteTransform;
+    NSString * _propertyName;
+    BOOL  _replaceMissingValueOnly;
+    NSExpression * _valueExpression;
 }
 
 @property (nonatomic, retain) NSPropertyTransform *prerequisiteTransform;

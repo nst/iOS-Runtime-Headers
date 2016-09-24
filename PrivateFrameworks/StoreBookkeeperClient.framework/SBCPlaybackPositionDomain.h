@@ -3,10 +3,10 @@
  */
 
 @interface SBCPlaybackPositionDomain : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_domainIdentifier;
-    NSString *_foreignDatabasePath;
-    BOOL _supportsSyncProtocol;
-    NSString *_ubiquitousDatabasePath;
+    NSString * _domainIdentifier;
+    NSString * _foreignDatabasePath;
+    BOOL  _supportsSyncProtocol;
+    NSString * _ubiquitousDatabasePath;
 }
 
 @property (nonatomic, readonly) NSString *domainIdentifier;

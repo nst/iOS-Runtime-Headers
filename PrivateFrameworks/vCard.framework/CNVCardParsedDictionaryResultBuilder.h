@@ -3,7 +3,7 @@
  */
 
 @interface CNVCardParsedDictionaryResultBuilder : NSObject <CNVCardParsedResultBuilder> {
-    NSMutableDictionary *_dictionaryRep;
+    NSMutableDictionary * _dictionaryRep;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -11,6 +11,9 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
++ (id)factory;
+
+- (void).cxx_destruct;
 - (id)build;
 - (BOOL)canSetValueForProperty:(id)arg1;
 - (id)init;

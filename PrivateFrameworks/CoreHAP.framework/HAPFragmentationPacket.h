@@ -3,10 +3,10 @@
  */
 
 @interface HAPFragmentationPacket : NSObject {
-    NSData *_data;
-    unsigned int _length;
-    unsigned int _offset;
-    unsigned short _transactionIdentifier;
+    NSData * _data;
+    unsigned int  _length;
+    unsigned int  _offset;
+    unsigned short  _transactionIdentifier;
 }
 
 @property (nonatomic, readonly, copy) NSData *data;

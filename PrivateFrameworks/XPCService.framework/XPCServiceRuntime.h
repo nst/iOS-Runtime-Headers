@@ -3,7 +3,7 @@
  */
 
 @interface XPCServiceRuntime : NSObject {
-    NSDictionary *_entitlements;
+    NSDictionary * _entitlements;
 }
 
 + (id)defaultRuntime;

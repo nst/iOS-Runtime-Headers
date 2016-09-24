@@ -3,9 +3,9 @@
  */
 
 @interface MPUTabBarController : UITabBarController {
-    NSArray *_customizableViewControllerIdentifiers;
-    Class _viewControllerFactoryClass;
-    NSArray *_viewControllerIdentifiers;
+    NSArray * _customizableViewControllerIdentifiers;
+    Class  _viewControllerFactoryClass;
+    NSArray * _viewControllerIdentifiers;
 }
 
 @property (nonatomic, copy) NSArray *customizableViewControllerIdentifiers;

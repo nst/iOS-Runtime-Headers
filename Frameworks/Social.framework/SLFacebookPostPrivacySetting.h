@@ -3,10 +3,10 @@
  */
 
 @interface SLFacebookPostPrivacySetting : NSObject <NSSecureCoding> {
-    NSString *_identifier;
-    NSString *_name;
-    NSDictionary *_parameters;
-    int _type;
+    NSString * _identifier;
+    NSString * _name;
+    NSDictionary * _parameters;
+    int  _type;
 }
 
 @property (retain) NSString *identifier;

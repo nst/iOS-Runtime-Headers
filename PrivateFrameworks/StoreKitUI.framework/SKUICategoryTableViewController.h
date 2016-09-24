@@ -3,16 +3,16 @@
  */
 
 @interface SKUICategoryTableViewController : UITableViewController <SKUICategoryArtworkLoaderObserver, SKUICategoryTableViewControllerDelegate> {
-    SKUICategoryArtworkLoader *_artworkLoader;
-    SKUICategory *_category;
-    BOOL _childrenHaveArtwork;
-    SKUIClientContext *_clientContext;
-    NSURL *_defaultURL;
-    <SKUICategoryTableViewControllerDelegate> *_delegate;
-    BOOL _isRoot;
-    NSArray *_metricsLocations;
-    int _numberOfHiddenRows;
-    NSURL *_selectedURL;
+    SKUICategoryArtworkLoader * _artworkLoader;
+    SKUICategory * _category;
+    BOOL  _childrenHaveArtwork;
+    SKUIClientContext * _clientContext;
+    NSURL * _defaultURL;
+    <SKUICategoryTableViewControllerDelegate> * _delegate;
+    BOOL  _isRoot;
+    NSArray * _metricsLocations;
+    int  _numberOfHiddenRows;
+    NSURL * _selectedURL;
 }
 
 @property (nonatomic, retain) SKUICategoryArtworkLoader *artworkLoader;

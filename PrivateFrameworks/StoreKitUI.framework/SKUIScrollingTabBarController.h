@@ -3,74 +3,74 @@
  */
 
 @interface SKUIScrollingTabBarController : SKUIViewController <SKUIDynamicBarAnimatorDelegate, SKUIProxyScrollViewDelegate, SKUIScrollViewDelegateObserver, SKUIScrollingTabBarContentCollectionViewDelegate, SKUIScrollingTabBarControllerItemContextDelegate, SKUIScrollingTabBarPaletteDelegate, SKUITabBarController, UICollectionViewDataSource, UICollectionViewDelegate> {
-    unsigned int _activePaletteTransitions;
-    unsigned int _additionalPositionOffsetsAtomicUpdateRequestCount;
+    unsigned int  _activePaletteTransitions;
+    unsigned int  _additionalPositionOffsetsAtomicUpdateRequestCount;
     struct { 
         BOOL didUpdateAdditionalTabBarButtonsContainerPositionOffset; 
         struct UIOffset { 
-            float horizontal; 
-            float vertical; 
+            double horizontal; 
+            double vertical; 
         } oldAdditionalTabBarButtonsContainerPositionOffset; 
         BOOL didUpdateAdditionalTabBarPalettePositionOffset; 
         struct UIOffset { 
-            float horizontal; 
-            float vertical; 
+            double horizontal; 
+            double vertical; 
         } oldAdditionalTabBarPalettePositionOffset; 
-    } _additionalPositionOffsetsUpdateRecord;
+    }  _additionalPositionOffsetsUpdateRecord;
     struct UIOffset { 
-        float horizontal; 
-        float vertical; 
-    } _additionalTabBarButtonsContainerPositionOffset;
+        double horizontal; 
+        double vertical; 
+    }  _additionalTabBarButtonsContainerPositionOffset;
     struct UIOffset { 
-        float horizontal; 
-        float vertical; 
-    } _additionalTabBarPalettePositionOffset;
-    BOOL _canHideBarsOnSwipe;
-    BOOL _chargeEnabledOnTabBarButtonsContainer;
-    SKUIScrollingTabBarContentCollectionView *_contentCollectionView;
+        double horizontal; 
+        double vertical; 
+    }  _additionalTabBarPalettePositionOffset;
+    BOOL  _canHideBarsOnSwipe;
+    BOOL  _chargeEnabledOnTabBarButtonsContainer;
+    SKUIScrollingTabBarContentCollectionView * _contentCollectionView;
     struct CGSize { 
-        float width; 
-        float height; 
-    } _contentCollectionViewItemSize;
-    <SKUITabBarControllerDelegate> *_delegate;
-    SKUIDynamicBarAnimator *_dynamicBarAnimator;
-    UIScrollView *_focusedContentScrollView;
-    BOOL _focusedScrollViewIsDragging;
-    UIViewController *_focusedViewController;
-    int _indexOfViewControllerWithUpdatedContentSize;
-    BOOL _isDelegatingPresentedViewControllerLogicToSelectedViewController;
-    SKUIProxyScrollView *_proxyScrollView;
+        double width; 
+        double height; 
+    }  _contentCollectionViewItemSize;
+    <SKUITabBarControllerDelegate> * _delegate;
+    SKUIDynamicBarAnimator * _dynamicBarAnimator;
+    UIScrollView * _focusedContentScrollView;
+    BOOL  _focusedScrollViewIsDragging;
+    UIViewController * _focusedViewController;
+    int  _indexOfViewControllerWithUpdatedContentSize;
+    BOOL  _isDelegatingPresentedViewControllerLogicToSelectedViewController;
+    SKUIProxyScrollView * _proxyScrollView;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _proxyScrollViewContentInsetAdjustment;
-    unsigned int _referenceCountForIgnoringContentOffsetUpdateRequests;
-    BOOL _scrollEnabled;
-    BOOL _shouldPreserveFocusUponNextContentCollectionViewItemSizeChange;
-    BOOL _shouldShowBarsAfterDraggingDownward;
-    SKUICrossFadingTabBar *_tabBar;
-    UIView *_tabBarContainerView;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _proxyScrollViewContentInsetAdjustment;
+    unsigned int  _referenceCountForIgnoringContentOffsetUpdateRequests;
+    BOOL  _scrollEnabled;
+    BOOL  _shouldPreserveFocusUponNextContentCollectionViewItemSizeChange;
+    BOOL  _shouldShowBarsAfterDraggingDownward;
+    SKUICrossFadingTabBar * _tabBar;
+    UIView * _tabBarContainerView;
     struct UIOffset { 
-        float horizontal; 
-        float vertical; 
-    } _tabBarExplicitHidingOffset;
-    BOOL _tabBarExplicitlyHidden;
-    SKUIScrollingTabBarBackgroundView *_tabBarExtendedBackgroundView;
-    SKUIScrollingTabBarPalette *_tabBarPalette;
-    UIViewController *_topLevelFocusedViewController;
-    UIViewController *_transientViewController;
-    SKUIScrollingTabBarControllerItemContext *_transientViewControllerItemContext;
-    NSMapTable *_viewControllerToItemContext;
-    NSArray *_viewControllers;
+        double horizontal; 
+        double vertical; 
+    }  _tabBarExplicitHidingOffset;
+    BOOL  _tabBarExplicitlyHidden;
+    SKUIScrollingTabBarBackgroundView * _tabBarExtendedBackgroundView;
+    SKUIScrollingTabBarPalette * _tabBarPalette;
+    UIViewController * _topLevelFocusedViewController;
+    UIViewController * _transientViewController;
+    SKUIScrollingTabBarControllerItemContext * _transientViewControllerItemContext;
+    NSMapTable * _viewControllerToItemContext;
+    NSArray * _viewControllers;
 }
 
-@property (nonatomic) struct UIOffset { float x1; float x2; } additionalTabBarButtonsContainerPositionOffset;
-@property (nonatomic) struct UIOffset { float x1; float x2; } additionalTabBarPalettePositionOffset;
+@property (nonatomic) struct UIOffset { double x1; double x2; } additionalTabBarButtonsContainerPositionOffset;
+@property (nonatomic) struct UIOffset { double x1; double x2; } additionalTabBarPalettePositionOffset;
 @property (nonatomic, readonly) NSArray *allViewControllers;
 @property (nonatomic) BOOL chargeEnabledOnTabBarButtonsContainer;
-@property (nonatomic, readonly) float contentViewControllerBottomInsetAdjustment;
+@property (nonatomic, readonly) double contentViewControllerBottomInsetAdjustment;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKUITabBarControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -82,8 +82,8 @@
 @property (nonatomic) UIViewController *selectedViewController;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIView *tabBar;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } tabBarButtonsContainerFrame;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } tabBarPaletteFrame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } tabBarButtonsContainerFrame;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } tabBarPaletteFrame;
 @property (nonatomic, retain) UIViewController *transientViewController;
 @property (nonatomic, copy) NSArray *viewControllers;
 
@@ -94,25 +94,25 @@
 - (void)_animatePaletteWithSetup:(id /* block */)arg1 animations:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (id)_backdropBarGroupName;
 - (id)_deepestFocusedViewControllerWithTopLevelFocusedViewController:(id)arg1;
-- (void)_discardUndesirableLastSelectedPageIndexesWithHorizontalLayoutContext:(struct { unsigned int x1; unsigned int x2; float x3; })arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(BOOL*)arg2;
+- (void)_discardUndesirableLastSelectedPageIndexesWithHorizontalLayoutContext:(struct { unsigned int x1; unsigned int x2; double x3; })arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(BOOL*)arg2;
 - (float)_effectiveBottomBarOffset;
 - (float)_effectiveTopBarHeight;
 - (BOOL)_focusedContentScrollViewIsScrolledToOrPastBottom;
-- (void)_invalidateContentCollectionViewLayoutForUpdatedContentSizeWithHorizontalLayoutContext:(struct { unsigned int x1; unsigned int x2; float x3; })arg1 indexOfViewControllerWithUpdatedContentSize:(unsigned int)arg2;
-- (void)_notifyViewControllerAppearanceProgressUpdateWithHorizontalLayoutContext:(struct { unsigned int x1; unsigned int x2; float x3; })arg1;
+- (void)_invalidateContentCollectionViewLayoutForUpdatedContentSizeWithHorizontalLayoutContext:(struct { unsigned int x1; unsigned int x2; double x3; })arg1 indexOfViewControllerWithUpdatedContentSize:(unsigned int)arg2;
+- (void)_notifyViewControllerAppearanceProgressUpdateWithHorizontalLayoutContext:(struct { unsigned int x1; unsigned int x2; double x3; })arg1;
 - (id)_parentCellForViewController:(id)arg1;
-- (void)_popVisibleNavigationStacksToRootWithHorizontalLayoutContext:(struct { unsigned int x1; unsigned int x2; float x3; })arg1;
-- (struct UIOffset { float x1; float x2; })_roundedOffsetFromOffset:(struct UIOffset { float x1; float x2; })arg1;
+- (void)_popVisibleNavigationStacksToRootWithHorizontalLayoutContext:(struct { unsigned int x1; unsigned int x2; double x3; })arg1;
+- (struct UIOffset { double x1; double x2; })_roundedOffsetFromOffset:(struct UIOffset { double x1; double x2; })arg1;
 - (void)_selectTabAtIndex:(unsigned int)arg1 shouldFallbackToPoppingToTabRootContent:(BOOL)arg2;
 - (void)_setFocusedViewController:(id)arg1 showBarsIfNeeded:(BOOL)arg2 animated:(BOOL)arg3 notifyDelegate:(BOOL)arg4;
 - (void)_setViewControllers:(id)arg1 collectionViewsUpdateHandler:(id /* block */)arg2 forFinalTearDown:(BOOL)arg3;
 - (id)_tabBarBackdropGroupName;
 - (void)_tabBarButtonTapped:(id)arg1;
-- (void)_updateAdditionalPositionOffsetsWithUpdateRecord:(struct { BOOL x1; struct UIOffset { float x_2_1_1; float x_2_1_2; } x2; BOOL x3; struct UIOffset { float x_4_1_1; float x_4_1_2; } x4; })arg1;
+- (void)_updateAdditionalPositionOffsetsWithUpdateRecord:(struct { BOOL x1; struct UIOffset { double x_2_1_1; double x_2_1_2; } x2; BOOL x3; struct UIOffset { double x_4_1_1; double x_4_1_2; } x4; })arg1;
 - (void)_updateDynamicBarGeometry;
 - (void)_updateFocusedViewControllerInsetsForVerticalLayoutChange;
-- (void)_updateFocusedViewControllerWithHorizontalLayoutContext:(struct { unsigned int x1; unsigned int x2; float x3; })arg1;
+- (void)_updateFocusedViewControllerWithHorizontalLayoutContext:(struct { unsigned int x1; unsigned int x2; double x3; })arg1;
 - (void)_updateForHorizontalLayoutChange;
 - (void)_updateHidesBarsOnSwipeAvailability;
 - (void)_updateHorizontalScrollingAvailability;
@@ -124,12 +124,12 @@
 - (void)_updateStatusBarPositionForcingVisible:(BOOL)arg1;
 - (void)_updateTabBarBackgroundsAndHairlines;
 - (void)_updateTabBarButtons;
-- (void)_updateTabBarButtonsSelectionProgressWithHorizontalLayoutContext:(struct { unsigned int x1; unsigned int x2; float x3; })arg1;
+- (void)_updateTabBarButtonsSelectionProgressWithHorizontalLayoutContext:(struct { unsigned int x1; unsigned int x2; double x3; })arg1;
 - (void)_updateViewControllerContentScrollViewInset;
-- (struct { struct UIEdgeInsets { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; float x2; })_viewControllerContentScrollViewContentInsetDescriptor;
+- (struct { struct UIEdgeInsets { double x_1_1_1; double x_1_1_2; double x_1_1_3; double x_1_1_4; } x1; double x2; })_viewControllerContentScrollViewContentInsetDescriptor;
 - (void)_viewControllerNeedsNestedPagingScrollViewUpdate:(id)arg1;
-- (struct UIOffset { float x1; float x2; })additionalTabBarButtonsContainerPositionOffset;
-- (struct UIOffset { float x1; float x2; })additionalTabBarPalettePositionOffset;
+- (struct UIOffset { double x1; double x2; })additionalTabBarButtonsContainerPositionOffset;
+- (struct UIOffset { double x1; double x2; })additionalTabBarPalettePositionOffset;
 - (id)allViewControllers;
 - (void)attachTabBarPalette:(id)arg1;
 - (void)attachTabBarPalette:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
@@ -138,7 +138,7 @@
 - (id)childViewControllerForStatusBarStyle;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
-- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (id)contentScrollView;
@@ -158,7 +158,7 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)observedScrollViewDidScroll:(id)arg1;
 - (void)observedScrollViewWillBeginDragging:(id)arg1;
-- (void)observedScrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(struct CGPoint { float x1; float x2; })arg3;
+- (void)observedScrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(struct CGPoint { double x1; double x2; })arg3;
 - (id)presentedViewController;
 - (id)rotatingSnapshotViewForWindow:(id)arg1;
 - (BOOL)scrollEnabled;
@@ -169,8 +169,8 @@
 - (void)scrollingTabBarControllerItemContextRequestsContentSizeUpdate:(id)arg1;
 - (unsigned int)selectedIndex;
 - (id)selectedViewController;
-- (void)setAdditionalTabBarButtonsContainerPositionOffset:(struct UIOffset { float x1; float x2; })arg1;
-- (void)setAdditionalTabBarPalettePositionOffset:(struct UIOffset { float x1; float x2; })arg1;
+- (void)setAdditionalTabBarButtonsContainerPositionOffset:(struct UIOffset { double x1; double x2; })arg1;
+- (void)setAdditionalTabBarPalettePositionOffset:(struct UIOffset { double x1; double x2; })arg1;
 - (void)setChargeEnabledOnTabBarButtonsContainer:(BOOL)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -185,8 +185,8 @@
 - (unsigned int)supportedInterfaceOrientations;
 - (id)tabBar;
 - (void)tabBarBackgroundExtendsBehindPaletteDidChangeForPalette:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })tabBarButtonsContainerFrame;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })tabBarPaletteFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })tabBarButtonsContainerFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })tabBarPaletteFrame;
 - (id)tabBarPaletteWithHeight:(float)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)transientViewController;
@@ -196,7 +196,7 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willUpdateAdditionalTabBarComponentsPositionOffsets;
 
 @end

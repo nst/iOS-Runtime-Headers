@@ -3,18 +3,18 @@
  */
 
 @interface NNMKProtoSendMessageRequest : PBRequest <NSCopying> {
-    NSString *_body;
-    NSMutableArray *_ccs;
-    NSString *_composedMessageId;
+    NSString * _body;
+    NSMutableArray * _ccs;
+    NSString * _composedMessageId;
     struct { 
         unsigned int sendingType : 1; 
         unsigned int includeAttachments : 1; 
-    } _has;
-    BOOL _includeAttachments;
-    NSString *_referenceMessageId;
-    unsigned int _sendingType;
-    NSString *_subject;
-    NSMutableArray *_tos;
+    }  _has;
+    BOOL  _includeAttachments;
+    NSString * _referenceMessageId;
+    unsigned int  _sendingType;
+    NSString * _subject;
+    NSMutableArray * _tos;
 }
 
 @property (nonatomic, retain) NSString *body;

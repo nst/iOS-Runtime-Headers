@@ -3,9 +3,9 @@
  */
 
 @interface NEAppProxyFlow : NSObject {
-    struct _NEFlow { } *_flow;
-    NEFlowMetaData *_metaData;
-    NSObject<OS_dispatch_queue> *_queue;
+    struct _NEFlow { } * _flow;
+    NEFlowMetaData * _metaData;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (retain) NSData *applicationData;

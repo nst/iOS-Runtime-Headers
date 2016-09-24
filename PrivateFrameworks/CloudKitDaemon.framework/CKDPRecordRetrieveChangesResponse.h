@@ -3,14 +3,14 @@
  */
 
 @interface CKDPRecordRetrieveChangesResponse : PBCodable <NSCopying> {
-    NSMutableArray *_changedRecords;
-    NSMutableArray *_changedShares;
-    NSData *_clientChangeToken;
+    NSMutableArray * _changedRecords;
+    NSMutableArray * _changedShares;
+    NSData * _clientChangeToken;
     struct { 
         unsigned int status : 1; 
-    } _has;
-    int _status;
-    NSData *_syncContinuationToken;
+    }  _has;
+    int  _status;
+    NSData * _syncContinuationToken;
 }
 
 @property (nonatomic, retain) NSMutableArray *changedRecords;
@@ -22,7 +22,11 @@
 @property (nonatomic) int status;
 @property (nonatomic, retain) NSData *syncContinuationToken;
 
++ (Class)changedRecordType;
++ (Class)changedShareType;
+
 - (void).cxx_destruct;
+- (int)StringAsStatus:(id)arg1;
 - (void)addChangedRecord:(id)arg1;
 - (void)addChangedShare:(id)arg1;
 - (id)changedRecordAtIndex:(unsigned int)arg1;
@@ -52,6 +56,7 @@
 - (void)setStatus:(int)arg1;
 - (void)setSyncContinuationToken:(id)arg1;
 - (int)status;
+- (id)statusAsString:(int)arg1;
 - (id)syncContinuationToken;
 - (void)writeTo:(id)arg1;
 

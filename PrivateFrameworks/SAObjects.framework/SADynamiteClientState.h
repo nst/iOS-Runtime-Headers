@@ -6,6 +6,7 @@
 
 @property (nonatomic, retain) SACalendar *expirationDate;
 @property (nonatomic, copy) NSString *status;
+@property (nonatomic, copy) NSString *userToken;
 
 + (id)deliveryDeadline;
 + (id)dynamiteClientState;
@@ -19,6 +20,8 @@
 - (id)groupIdentifier;
 - (void)setExpirationDate:(id)arg1;
 - (void)setStatus:(id)arg1;
+- (void)setUserToken:(id)arg1;
 - (id)status;
+- (id)userToken;
 
 @end

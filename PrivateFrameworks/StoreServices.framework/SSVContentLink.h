@@ -3,13 +3,13 @@
  */
 
 @interface SSVContentLink : NSObject {
-    NSString *_categoryName;
-    int _contentKind;
-    NSNumber *_itemIdentifier;
-    NSString *_itemTitle;
-    NSString *_providerName;
-    NSString *_searchTerm;
-    int _targetApplication;
+    NSString * _categoryName;
+    int  _contentKind;
+    NSNumber * _itemIdentifier;
+    NSString * _itemTitle;
+    NSString * _providerName;
+    NSString * _searchTerm;
+    int  _targetApplication;
 }
 
 @property (nonatomic, readonly) NSURL *URL;

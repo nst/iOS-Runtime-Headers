@@ -3,7 +3,7 @@
  */
 
 @interface EKCalendarDate : NSObject <NSCopying, NSMutableCopying> {
-    double _dateAbs;
+    double  _dateAbs;
     struct { 
         int year; 
         BOOL month; 
@@ -11,9 +11,9 @@
         BOOL hour; 
         BOOL minute; 
         double second; 
-    } _dateGr;
-    unsigned int _flags;
-    EKTimeZone *_timeZone;
+    }  _dateGr;
+    unsigned int  _flags;
+    EKTimeZone * _timeZone;
 }
 
 + (id)calendarDateWithAbsoluteTime:(double)arg1 timeZone:(id)arg2;

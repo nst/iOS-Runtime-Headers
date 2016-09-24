@@ -3,54 +3,57 @@
  */
 
 @interface TKSmartCard : NSObject {
-    unsigned int _allowedProtocols;
-    NSObject<OS_dispatch_queue> *_beginSessionQueue;
-    unsigned char _cla;
-    id _context;
-    unsigned int _currentProtocol;
-    NSNumber *_reservationId;
-    BOOL _sensitive;
-    id _session;
-    int _sessionCounter;
-    int _sessionEndPolicy;
-    TKSmartCardSlot *_slot;
-    BOOL _someoneWantsSession;
-    BOOL _useCommandChaining;
-    BOOL _useExtendedLength;
-    BOOL _valid;
+    unsigned int  _allowedProtocols;
+    NSObject<OS_dispatch_queue> * _beginSessionQueue;
+    unsigned char  _cla;
+    NSMutableDictionary * _contexts;
+    unsigned int  _currentProtocol;
+    NSNumber * _reservationId;
+    BOOL  _sensitive;
+    BOOL  _sensitiveRequired;
+    id  _session;
+    int  _sessionCounter;
+    int  _sessionEndPolicy;
+    TKSmartCardSlot * _slot;
+    BOOL  _someoneWantsSession;
+    BOOL  _synchronous;
+    BOOL  _useCommandChaining;
+    BOOL  _useExtendedLength;
+    BOOL  _valid;
 }
 
 @property unsigned int allowedProtocols;
-@property unsigned char cla;
 @property (retain) id context;
 @property unsigned int currentProtocol;
 @property BOOL sensitive;
-@property (nonatomic) int sessionEndPolicy;
 @property (nonatomic, readonly) TKSmartCardSlot *slot;
-@property BOOL useCommandChaining;
-@property BOOL useExtendedLength;
 @property BOOL valid;
+
++ (id)_localizedString:(id)arg1;
++ (BOOL)decodeResponse:(id)arg1 sw:(unsigned short*)arg2 appendTo:(id)arg3 error:(id*)arg4;
 
 - (void).cxx_destruct;
 - (unsigned int)allowedProtocols;
 - (void)beginSessionWithReply:(id /* block */)arg1;
 - (id)buildIns:(unsigned char)arg1 p1:(unsigned char)arg2 p2:(unsigned char)arg3 data:(id)arg4 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5 le:(id)arg6 protocol:(unsigned int)arg7 chained:(BOOL)arg8 extended:(BOOL*)arg9 realLe:(unsigned int*)arg10;
+- (BOOL)checkAPDUResponse:(id)arg1 error:(id*)arg2;
 - (unsigned char)cla;
 - (id)context;
+- (id)contextForKey:(id)arg1;
 - (unsigned int)currentProtocol;
 - (void)dealloc;
-- (BOOL)decodeResponse:(id)arg1 sw:(unsigned short*)arg2 appendTo:(id)arg3 error:(id*)arg4;
 - (void)encodeLength:(unsigned int)arg1 into:(id)arg2 sized:(int)arg3;
 - (void)endSession;
 - (void)endSessionWithReply:(id /* block */)arg1;
 - (void)handleApduResponse:(id)arg1 body:(id)arg2 le:(unsigned int)arg3 isCase4:(BOOL)arg4 error:(id)arg5 reply:(id /* block */)arg6;
-- (BOOL)inSessionWithError:(id*)arg1 do:(id /* block */)arg2;
+- (BOOL)inSessionWithError:(id*)arg1 executeBlock:(id /* block */)arg2;
 - (id)initWithSlot:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)releaseSessionWithReply:(id /* block */)arg1;
 - (id)remoteSessionWithErrorHandler:(id /* block */)arg1;
 - (void)reserveExclusive:(BOOL)arg1 reply:(id /* block */)arg2;
 - (BOOL)revalidate;
+- (BOOL)selectApplication:(id)arg1 error:(id*)arg2;
 - (void)sendIns:(unsigned char)arg1 p1:(unsigned char)arg2 p2:(unsigned char)arg3 data:(id)arg4 le:(id)arg5 reply:(id /* block */)arg6;
 - (id)sendIns:(unsigned char)arg1 p1:(unsigned char)arg2 p2:(unsigned char)arg3 data:(id)arg4 le:(id)arg5 sw:(unsigned short*)arg6 error:(id*)arg7;
 - (BOOL)sensitive;
@@ -59,13 +62,16 @@
 - (void)setAllowedProtocols:(unsigned int)arg1;
 - (void)setCla:(unsigned char)arg1;
 - (void)setContext:(id)arg1;
+- (void)setContext:(id)arg1 forKey:(id)arg2;
 - (void)setCurrentProtocol:(unsigned int)arg1;
 - (void)setSensitive:(BOOL)arg1;
 - (void)setSessionEndPolicy:(int)arg1;
+- (void)setSynchronous:(BOOL)arg1;
 - (void)setUseCommandChaining:(BOOL)arg1;
 - (void)setUseExtendedLength:(BOOL)arg1;
 - (void)setValid:(BOOL)arg1;
 - (id)slot;
+- (BOOL)synchronous;
 - (void)transmitChunkedIns:(unsigned char)arg1 p1:(unsigned char)arg2 p2:(unsigned char)arg3 data:(id)arg4 fromOffset:(unsigned int)arg5 realLe:(unsigned int)arg6 chained:(BOOL)arg7 isCase4:(BOOL)arg8 reply:(id /* block */)arg9;
 - (void)transmitRequest:(id)arg1 reply:(id /* block */)arg2;
 - (void)unreserve;

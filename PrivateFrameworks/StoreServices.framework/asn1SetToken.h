@@ -3,7 +3,7 @@
  */
 
 @interface asn1SetToken : asn1Token {
-    const char *mReadPointer;
+    const char * mReadPointer;
 }
 
 - (id)_initWithID:(unsigned int)arg1 class:(unsigned char)arg2 length:(unsigned int)arg3 content:(const char *)arg4 opaque:(BOOL)arg5;

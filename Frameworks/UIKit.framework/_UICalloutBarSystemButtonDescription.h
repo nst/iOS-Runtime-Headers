@@ -3,11 +3,11 @@
  */
 
 @interface _UICalloutBarSystemButtonDescription : NSObject {
-    SEL m_action;
-    id /* block */ m_configurationBlock;
-    UIImage *m_image;
-    NSString *m_title;
-    int m_type;
+    SEL  m_action;
+    id /* block */  m_configurationBlock;
+    UIImage * m_image;
+    NSString * m_title;
+    int  m_type;
 }
 
 @property (nonatomic, readonly) SEL action;

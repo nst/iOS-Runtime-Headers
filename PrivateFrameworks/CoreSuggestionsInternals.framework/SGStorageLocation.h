@@ -3,14 +3,14 @@
  */
 
 @interface SGStorageLocation : NSObject <NSCopying, NSSecureCoding, SGEventLocationForGeocode> {
-    double _accuracy;
-    NSString *_address;
-    NSData *_handle;
-    NSString *_label;
-    double _latitude;
-    unsigned int _locationType;
-    double _longitude;
-    double _quality;
+    double  _accuracy;
+    NSString * _address;
+    NSData * _handle;
+    NSString * _label;
+    double  _latitude;
+    unsigned int  _locationType;
+    double  _longitude;
+    double  _quality;
 }
 
 @property (nonatomic, readonly) double accuracy;

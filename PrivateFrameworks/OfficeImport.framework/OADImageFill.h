@@ -3,14 +3,14 @@
  */
 
 @interface OADImageFill : OADFill {
-    OADBlipRef *mBlipRef;
-    long mDpi;
-    BOOL mIsBlipRefOverridden;
-    BOOL mIsDpiOverridden;
-    BOOL mIsRotateWithShapeOverridden;
-    BOOL mRotateWithShape;
-    OADRelativeRect *mSourceRect;
-    OADImageFillTechnique *mTechnique;
+    OADBlipRef * mBlipRef;
+    long  mDpi;
+    BOOL  mIsBlipRefOverridden;
+    BOOL  mIsDpiOverridden;
+    BOOL  mIsRotateWithShapeOverridden;
+    BOOL  mRotateWithShape;
+    OADRelativeRect * mSourceRect;
+    OADImageFillTechnique * mTechnique;
 }
 
 + (id)defaultProperties;

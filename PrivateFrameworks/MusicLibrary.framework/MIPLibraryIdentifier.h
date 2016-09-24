@@ -5,14 +5,14 @@
 @interface MIPLibraryIdentifier : PBCodable <NSCopying> {
     struct { 
         unsigned int libraryId : 1; 
-    } _has;
-    long long _libraryId;
-    NSString *_libraryName;
+    }  _has;
+    int  _libraryId;
+    NSString * _libraryName;
 }
 
 @property (nonatomic) BOOL hasLibraryId;
 @property (nonatomic, readonly) BOOL hasLibraryName;
-@property (nonatomic) long long libraryId;
+@property (nonatomic) int libraryId;
 @property (nonatomic, retain) NSString *libraryName;
 
 - (void).cxx_destruct;
@@ -24,12 +24,12 @@
 - (BOOL)hasLibraryName;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (long long)libraryId;
+- (int)libraryId;
 - (id)libraryName;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasLibraryId:(BOOL)arg1;
-- (void)setLibraryId:(long long)arg1;
+- (void)setLibraryId:(int)arg1;
 - (void)setLibraryName:(id)arg1;
 - (void)writeTo:(id)arg1;
 

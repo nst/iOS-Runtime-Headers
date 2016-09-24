@@ -3,18 +3,18 @@
  */
 
 @interface CoreDAVXMLElementGenerator : NSObject <NSXMLParserDelegate> {
-    NSURL *_baseURL;
-    NSMutableData *_cDATA;
-    NSDictionary *_cachedElementParseRules;
-    NSMutableData *_characters;
-    BOOL _checkedElementValidityIfRootElement;
-    CoreDAVXMLElementGenerator *_currentlyParsingSubItem;
-    CoreDAVItem *_element;
-    BOOL _isUnrecognized;
-    CoreDAVItem *_parentElement;
-    SEL _parentElementSetter;
-    CoreDAVXMLElementGenerator *_parentGenerator;
-    int _parsingState;
+    NSURL * _baseURL;
+    NSMutableData * _cDATA;
+    NSDictionary * _cachedElementParseRules;
+    NSMutableData * _characters;
+    BOOL  _checkedElementValidityIfRootElement;
+    CoreDAVXMLElementGenerator * _currentlyParsingSubItem;
+    CoreDAVItem * _element;
+    BOOL  _isUnrecognized;
+    CoreDAVItem * _parentElement;
+    SEL  _parentElementSetter;
+    CoreDAVXMLElementGenerator * _parentGenerator;
+    int  _parsingState;
 }
 
 @property (nonatomic, retain) NSURL *baseURL;

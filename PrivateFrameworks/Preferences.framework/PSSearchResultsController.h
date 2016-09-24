@@ -3,11 +3,11 @@
  */
 
 @interface PSSearchResultsController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    <PSSearchResultsControllerDelegate> *_delegate;
-    NSMutableDictionary *_iconViewMap;
-    NSMutableArray *_reusableIconViews;
-    PSSearchResults *_searchResults;
-    UITableView *_tableView;
+    <PSSearchResultsControllerDelegate> * _delegate;
+    NSMutableDictionary * _iconViewMap;
+    NSMutableArray * _reusableIconViews;
+    PSSearchResults * _searchResults;
+    UITableView * _tableView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -36,5 +36,6 @@
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)tableViewDidFinishReload:(id)arg1;
+- (void)viewWillLayoutSubviews;
 
 @end

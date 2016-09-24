@@ -3,10 +3,10 @@
  */
 
 @interface BLTPBFileURLMetaData : NSObject {
-    NSDictionary *_extraMetadata;
-    NSDictionary *_metadata;
-    int _sequenceNumberError;
-    unsigned int _sessionState;
+    NSDictionary * _extraMetadata;
+    NSDictionary * _metadata;
+    int  _sequenceNumberError;
+    unsigned int  _sessionState;
 }
 
 @property (nonatomic, readonly) NSDictionary *extraMetadata;

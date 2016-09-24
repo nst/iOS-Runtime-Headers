@@ -5,8 +5,8 @@
 @interface NFMProtoPlaySoundAndFlashLEDRequest : PBRequest <NSCopying> {
     struct { 
         unsigned int timeStamp : 1; 
-    } _has;
-    double _timeStamp;
+    }  _has;
+    double  _timeStamp;
 }
 
 @property (nonatomic) BOOL hasTimeStamp;

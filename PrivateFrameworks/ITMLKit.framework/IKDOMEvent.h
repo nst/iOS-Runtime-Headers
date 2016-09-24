@@ -3,17 +3,17 @@
  */
 
 @interface IKDOMEvent : IKJSObject <IKJSDOMEvent> {
-    BOOL _bubbles;
-    BOOL _cancelable;
-    IKDOMNode *_currentTarget;
-    BOOL _defaultPrevented;
-    int _dispatchState;
-    int _eventPhase;
-    BOOL _inUse;
-    IKDOMNode *_target;
-    NSDate *_timeStamp;
-    NSString *_type;
-    NSString *_xmlAttribute;
+    BOOL  _bubbles;
+    BOOL  _cancelable;
+    IKDOMNode * _currentTarget;
+    BOOL  _defaultPrevented;
+    int  _dispatchState;
+    int  _eventPhase;
+    BOOL  _inUse;
+    IKDOMNode * _target;
+    NSDate * _timeStamp;
+    NSString * _type;
+    NSString * _xmlAttribute;
 }
 
 @property (nonatomic, readonly) BOOL bubbles;

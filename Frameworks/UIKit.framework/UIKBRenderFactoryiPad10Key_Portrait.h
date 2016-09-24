@@ -4,19 +4,20 @@
 
 @interface UIKBRenderFactoryiPad10Key_Portrait : UIKBRenderFactory10Key_Landscape
 
-- (void)_customizeTraits:(id)arg1 forPopupForKey:(id)arg2 withRenderConfig:(id)arg3 keycapsFontName:(id)arg4;
+- (void)_customizeTraits:(id)arg1 forPopupForKey:(id)arg2 withRenderingContext:(id)arg3 keycapsFontName:(id)arg4;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (id)backgroundTraitsForKeyplane:(id)arg1;
 - (float)controlColumnWidthFactor;
 - (unsigned int)edgesAdjustedForTranslucentGapsForGeometry:(id)arg1 key:(id)arg2 onKeyplane:(id)arg3;
 - (float)keyCornerRadius;
 - (id)lightKeycapsFontName;
+- (id)messagesWriteboardKeyImageName;
 - (id)multitapCompleteKeyImageName;
 - (id)muttitapReverseKeyImageName;
 - (id)shiftKeyImageName;
 - (id)shiftLockImageName;
 - (id)shiftOnKeyImageName;
 - (id)thinKeycapsFontName;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })topEdgeAdjustmentInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })topEdgeAdjustmentInsets;
 
 @end

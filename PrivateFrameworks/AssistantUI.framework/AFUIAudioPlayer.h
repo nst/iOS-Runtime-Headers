@@ -3,10 +3,10 @@
  */
 
 @interface AFUIAudioPlayer : NSObject <AVAudioPlayerDelegate> {
-    NSUUID *_conversationItemIdentifier;
-    <AFUIAudioPlayerDelegate> *_delegate;
-    AceObject *_playbackCommand;
-    AVAudioPlayer *_player;
+    NSUUID * _conversationItemIdentifier;
+    <AFUIAudioPlayerDelegate> * _delegate;
+    AceObject * _playbackCommand;
+    AVAudioPlayer * _player;
 }
 
 @property (nonatomic) NSUUID *conversationItemIdentifier;

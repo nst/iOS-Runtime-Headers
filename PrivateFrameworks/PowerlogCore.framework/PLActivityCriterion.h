@@ -3,8 +3,8 @@
  */
 
 @interface PLActivityCriterion : NSObject {
-    <PLActivityCriterionDelegate> *_delegate;
-    BOOL _satisfied;
+    <PLActivityCriterionDelegate> * _delegate;
+    BOOL  _satisfied;
 }
 
 @property <PLActivityCriterionDelegate> *delegate;

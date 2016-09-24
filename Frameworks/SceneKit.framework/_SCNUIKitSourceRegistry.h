@@ -3,7 +3,7 @@
  */
 
 @interface _SCNUIKitSourceRegistry : NSObject {
-    NSMutableArray *_sources;
+    NSMutableArray * _sources;
 }
 
 + (void)registerUIKitSource:(id)arg1;

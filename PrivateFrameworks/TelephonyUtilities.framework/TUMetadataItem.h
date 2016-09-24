@@ -3,7 +3,7 @@
  */
 
 @interface TUMetadataItem : NSObject {
-    NSMutableDictionary *_callMetadata;
+    NSMutableDictionary * _callMetadata;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *callMetadata;

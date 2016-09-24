@@ -3,14 +3,14 @@
  */
 
 @interface CallHistoryDBHandle : CHLogger {
-    id _dataStoreAddedRef;
-    id _moveCallRecordsFromTempStoreRef;
-    id _observerCallDBPropRef;
-    id _observerCallRecordRef;
-    CallDBManager *callDBManager;
-    NSManagedObjectContext *fCallDBPropertiesContext;
-    NSManagedObjectContext *fCallRecordContext;
-    NSString *objectId;
+    id  _dataStoreAddedRef;
+    id  _moveCallRecordsFromTempStoreRef;
+    id  _observerCallDBPropRef;
+    id  _observerCallRecordRef;
+    CallDBManager * callDBManager;
+    NSManagedObjectContext * fCallDBPropertiesContext;
+    NSManagedObjectContext * fCallRecordContext;
+    NSString * objectId;
 }
 
 @property (nonatomic, readonly) CallDBManager *callDBManager;
@@ -46,7 +46,7 @@
 - (id)initWithDBManager:(id)arg1;
 - (void)mergeCallDBPropChangesFromRemoteAppSave;
 - (void)mergeCallRecordChangesFromRemoteAppSave;
-- (BOOL)moveCallRecordsFromDatabaseAtURL:(id)arg1 withVersion:(int)arg2;
+- (BOOL)moveCallRecordsFromDatabaseAtURL:(id)arg1;
 - (id)objectId;
 - (BOOL)performSaveWithBackgroundTaskAssertion:(id)arg1 error:(id*)arg2;
 - (void)postTimersChangedNotification;
@@ -55,6 +55,8 @@
 - (void)resetTimers;
 - (BOOL)save:(id*)arg1;
 - (BOOL)saveTimers:(id /* block */)arg1;
+- (void)setHandleTypeIn:(id)arg1 using:(id)arg2 havingVersion:(int)arg3;
+- (void)setServiceProviderIn:(id)arg1 using:(id)arg2 havingVersion:(int)arg3;
 - (id)timerIncoming;
 - (id)timerLastReset;
 - (id)timerLifetime;

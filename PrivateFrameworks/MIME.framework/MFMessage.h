@@ -3,27 +3,28 @@
  */
 
 @interface MFMessage : NSObject <NSCopying> {
-    NSArray *_bcc;
-    NSString *_cachedMessageIDHeader;
-    unsigned int _calculatedAttachmentInfo;
-    NSArray *_cc;
-    NSString *_contentType;
-    long long _conversationID;
-    unsigned int _dateReceivedInterval;
-    unsigned int _dateSentInterval;
-    NSString *_externalID;
-    unsigned long long _generationNumber;
-    long long _messageIDHeaderHash;
-    NSURL *_messageURL;
-    unsigned short _numberOfAttachments;
-    MFMimePart *_parentPart;
-    unsigned long _preferredEncoding;
-    NSArray *_sender;
-    NSString *_senderAddressComment;
-    MFMessageStore *_store;
-    NSString *_subject;
-    NSString *_summary;
-    NSArray *_to;
+    NSArray * _bcc;
+    NSString * _cachedMessageIDHeader;
+    unsigned int  _calculatedAttachmentInfo;
+    NSArray * _cc;
+    NSString * _contentType;
+    int  _conversationID;
+    unsigned int  _dateReceivedInterval;
+    unsigned int  _dateSentInterval;
+    NSString * _externalID;
+    unsigned int  _generationNumber;
+    int  _listIDHash;
+    int  _messageIDHeaderHash;
+    NSURL * _messageURL;
+    unsigned short  _numberOfAttachments;
+    MFMimePart * _parentPart;
+    unsigned long  _preferredEncoding;
+    NSArray * _sender;
+    NSString * _senderAddressComment;
+    MFMessageStore * _store;
+    NSString * _subject;
+    NSString * _summary;
+    NSArray * _to;
 }
 
 @property (nonatomic, retain) MFMimePart *parentPart;
@@ -37,7 +38,7 @@
 - (id)_copyDateFromDateHeaderInHeaders:(id)arg1;
 - (id)_copyDateFromReceivedHeadersInHeaders:(id)arg1;
 - (BOOL)_doesDateAppearToBeSane:(id)arg1;
-- (long long)_messageIDHeaderHashIvar;
+- (int)_messageIDHeaderHashIvar;
 - (void)_setDateReceivedFromHeaders:(id)arg1;
 - (void)_setDateSentFromHeaders:(id)arg1;
 - (id)additionalHeadersForForward;
@@ -56,7 +57,7 @@
 - (id)cc;
 - (id)ccIfCached;
 - (id)contentType;
-- (long long)conversationID;
+- (int)conversationID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataConsumerForMimePart:(id)arg1;
 - (id)dataForMimePart:(id)arg1;
@@ -74,7 +75,7 @@
 - (BOOL)fetchDataForMimePart:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 withConsumer:(id)arg3 isComplete:(BOOL*)arg4 downloadIfNecessary:(BOOL)arg5;
 - (id)firstSender;
 - (int)generationCompare:(id)arg1;
-- (unsigned long long)generationNumber;
+- (unsigned int)generationNumber;
 - (id)headerData;
 - (id)headerDataDownloadIfNecessary:(BOOL)arg1;
 - (id)headers;
@@ -82,6 +83,7 @@
 - (id)init;
 - (BOOL)isLibraryMessage;
 - (BOOL)isMessageContentsLocallyAvailable;
+- (int)listIDHash;
 - (void)loadCachedHeaderValuesFromHeaders:(id)arg1;
 - (id)messageBody;
 - (id)messageBodyIfAvailable;
@@ -94,7 +96,7 @@
 - (id)messageDataHolderIsComplete:(BOOL*)arg1 downloadIfNecessary:(BOOL)arg2;
 - (id)messageDataIsComplete:(BOOL*)arg1 downloadIfNecessary:(BOOL)arg2;
 - (id)messageID;
-- (long long)messageIDHash;
+- (int)messageIDHash;
 - (id)messageIDHeader;
 - (id)messageIDHeaderInFortyBytesOrLess;
 - (unsigned int)messageSize;
@@ -114,15 +116,16 @@
 - (void)setBcc:(id)arg1;
 - (void)setCc:(id)arg1;
 - (void)setContentType:(id)arg1;
-- (void)setConversationID:(long long)arg1;
+- (void)setConversationID:(int)arg1;
 - (void)setDateReceivedTimeIntervalSince1970:(double)arg1;
 - (void)setDateSentTimeIntervalSince1970:(double)arg1;
 - (void)setExternalID:(id)arg1;
-- (void)setGenerationNumber:(unsigned long long)arg1;
+- (void)setGenerationNumber:(unsigned int)arg1;
+- (void)setListIDHash:(int)arg1;
 - (void)setMessageData:(id)arg1 isPartial:(BOOL)arg2;
-- (void)setMessageIDHash:(long long)arg1;
+- (void)setMessageIDHash:(int)arg1;
 - (void)setMessageIDHeader:(id)arg1;
-- (void)setMessageInfo:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceivedTimeIntervalSince1970:(double)arg6 dateSentTimeIntervalSince1970:(double)arg7 messageIDHash:(long long)arg8 conversationID:(long long)arg9 summary:(id)arg10;
+- (void)setMessageInfo:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceivedTimeIntervalSince1970:(double)arg6 dateSentTimeIntervalSince1970:(double)arg7 messageIDHash:(int)arg8 conversationID:(int)arg9 summary:(id)arg10;
 - (void)setMessageInfoFromMessage:(id)arg1;
 - (void)setMessageStore:(id)arg1;
 - (void)setMessageURL:(id)arg1;
@@ -132,7 +135,7 @@
 - (void)setPreferredEncoding:(unsigned long)arg1;
 - (void)setSender:(id)arg1;
 - (void)setSubject:(id)arg1;
-- (void)setSubject:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceived:(double)arg6 dateSent:(double)arg7 messageIDHash:(long long)arg8 conversationIDHash:(long long)arg9 summary:(id)arg10 withOptions:(unsigned int)arg11;
+- (void)setSubject:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceived:(double)arg6 dateSent:(double)arg7 messageIDHash:(int)arg8 conversationIDHash:(int)arg9 summary:(id)arg10 withOptions:(unsigned int)arg11;
 - (void)setTo:(id)arg1;
 - (id)subject;
 - (id)subjectIfCached;

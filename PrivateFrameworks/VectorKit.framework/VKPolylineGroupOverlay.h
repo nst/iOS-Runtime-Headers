@@ -3,11 +3,11 @@
  */
 
 @interface VKPolylineGroupOverlay : NSObject <VKOverlay> {
-    GEOMapRegion *_boundingMapRegion;
-    BOOL _containsTransit;
-    struct __CFSet { } *_observers;
-    NSMutableSet *_polylines;
-    VKPolylineOverlay *_selectedPolyline;
+    GEOMapRegion * _boundingMapRegion;
+    BOOL  _containsTransit;
+    struct __CFSet { } * _observers;
+    NSMutableSet * _polylines;
+    VKPolylineOverlay * _selectedPolyline;
 }
 
 @property (nonatomic, readonly) GEOMapRegion *boundingMapRegion;

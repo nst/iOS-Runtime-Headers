@@ -3,13 +3,13 @@
  */
 
 @interface BRCSyncOperationThrottleParams : NSObject {
-    double inactivityKickbackDelay;
-    double inactivityKickbackRatio;
-    double maxWait;
-    double minWait;
-    double ratioOnFailure;
-    double ratioOnQuotaErrorClear;
-    double ratioOnSuccess;
+    double  inactivityKickbackDelay;
+    double  inactivityKickbackRatio;
+    double  maxWait;
+    double  minWait;
+    double  ratioOnFailure;
+    double  ratioOnQuotaErrorClear;
+    double  ratioOnSuccess;
 }
 
 @property (nonatomic) double inactivityKickbackDelay;

@@ -3,15 +3,15 @@
  */
 
 @interface RadioPlayEvent : NSObject <NSCopying, NSMutableCopying> {
-    NSDate *_datePlayed;
-    int _endReason;
-    double _endTimeInTrack;
-    NSString *_externalIdentifier;
-    double _startTimeInTrack;
-    long long _storeID;
-    NSData *_timedMetadata;
-    NSDictionary *_trackInfo;
-    int _type;
+    NSDate * _datePlayed;
+    int  _endReason;
+    double  _endTimeInTrack;
+    NSString * _externalIdentifier;
+    double  _startTimeInTrack;
+    int  _storeID;
+    NSData * _timedMetadata;
+    NSDictionary * _trackInfo;
+    int  _type;
 }
 
 @property (nonatomic, readonly) NSDate *datePlayed;
@@ -19,7 +19,7 @@
 @property (nonatomic, readonly) double endTimeInTrack;
 @property (nonatomic, readonly, copy) NSString *externalIdentifier;
 @property (nonatomic, readonly) double startTimeInTrack;
-@property (nonatomic, readonly) long long storeID;
+@property (nonatomic, readonly) int storeID;
 @property (nonatomic, readonly, copy) NSData *timedMetadata;
 @property (nonatomic, readonly, copy) NSDictionary *trackInfo;
 @property (nonatomic, readonly) int type;
@@ -37,7 +37,7 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)playDictionary;
 - (double)startTimeInTrack;
-- (long long)storeID;
+- (int)storeID;
 - (id)timedMetadata;
 - (id)trackInfo;
 - (int)type;

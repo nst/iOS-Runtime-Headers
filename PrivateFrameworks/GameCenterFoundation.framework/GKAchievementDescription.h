@@ -3,8 +3,8 @@
  */
 
 @interface GKAchievementDescription : NSObject <NSCoding, NSSecureCoding> {
-    UIImage *_image;
-    GKAchievementInternal *_internal;
+    UIImage * _image;
+    GKAchievementInternal * _internal;
 }
 
 @property (nonatomic, readonly, copy) NSString *achievedDescription;

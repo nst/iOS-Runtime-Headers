@@ -3,8 +3,8 @@
  */
 
 @interface NSSimpleCString : NSString {
-    char *bytes;
-    int numBytes;
+    char * bytes;
+    int  numBytes;
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
@@ -18,7 +18,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (unsigned int)fastestEncoding;
-- (void)finalize;
 - (BOOL)getBytes:(void*)arg1 maxLength:(unsigned int)arg2 usedLength:(unsigned int*)arg3 encoding:(unsigned int)arg4 options:(unsigned int)arg5 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg6 remainingRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg7;
 - (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (BOOL)hasPrefix:(id)arg1;

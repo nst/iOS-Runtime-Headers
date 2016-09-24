@@ -3,22 +3,22 @@
  */
 
 @interface JSONHTTPRequest : NSObject <NSURLConnectionDelegate> {
-    int _HTTPMethod;
-    NSString *_HTTPRequestBoundary;
-    BOOL _allowsCellularAccess;
-    NSURLConnection *_connection;
-    <JSONHTTPRequestDelegate> *_delegate;
-    NSDictionary *_getParams;
-    NSData *_overridePostBody;
-    NSDictionary *_postParams;
-    NSMutableData *_rawData;
-    BOOL _receivedValidResponse;
-    NSMutableURLRequest *_request;
-    NSHTTPURLResponse *_response;
-    int _responseType;
-    OAURLRequestSigner *_signer;
-    BOOL _signsMultipartPOSTData;
-    NSDictionary *_unsignedPostParams;
+    int  _HTTPMethod;
+    NSString * _HTTPRequestBoundary;
+    BOOL  _allowsCellularAccess;
+    NSURLConnection * _connection;
+    <JSONHTTPRequestDelegate> * _delegate;
+    NSDictionary * _getParams;
+    NSData * _overridePostBody;
+    NSDictionary * _postParams;
+    NSMutableData * _rawData;
+    BOOL  _receivedValidResponse;
+    NSMutableURLRequest * _request;
+    NSHTTPURLResponse * _response;
+    int  _responseType;
+    OAURLRequestSigner * _signer;
+    BOOL  _signsMultipartPOSTData;
+    NSDictionary * _unsignedPostParams;
 }
 
 @property (nonatomic) int HTTPMethod;

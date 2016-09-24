@@ -3,18 +3,18 @@
  */
 
 @interface AAUIGenericTermsRemoteUI : NSObject <RUIObjectModelDelegate> {
-    ACAccount *_account;
-    ACAccountStore *_accountStore;
-    NSString *_agreeURL;
-    <AAUIGenericTermsRemoteUIDelegate> *_delegate;
-    UINavigationController *_genericTermsUIViewController;
-    BOOL _isModal;
-    BOOL _isPreferringPassword;
-    RUILoader *_loader;
-    NSMutableArray *_objectModels;
-    UIViewController *_originatingViewController;
-    UINavigationController *_parentNavController;
-    UIAlertView *_tcConfirmationAlert;
+    ACAccount * _account;
+    ACAccountStore * _accountStore;
+    NSString * _agreeURL;
+    <AAUIGenericTermsRemoteUIDelegate> * _delegate;
+    UINavigationController * _genericTermsUIViewController;
+    BOOL  _isModal;
+    BOOL  _isPreferringPassword;
+    RUILoader * _loader;
+    NSMutableArray * _objectModels;
+    UIViewController * _originatingViewController;
+    UINavigationController * _parentNavController;
+    UIAlertView * _tcConfirmationAlert;
 }
 
 @property (nonatomic, retain) ACAccount *account;
@@ -37,7 +37,7 @@
 - (id)delegate;
 - (id)initWithAccount:(id)arg1 inStore:(id)arg2;
 - (void)loader:(id)arg1 didFailWithError:(id)arg2;
-- (void)loader:(id)arg1 receivedObjectModel:(id)arg2 actionSignal:(int)arg3;
+- (void)loader:(id)arg1 receivedObjectModel:(id)arg2 actionSignal:(unsigned int)arg3;
 - (void)objectModel:(id)arg1 pressedButton:(id)arg2 attributes:(id)arg3;
 - (void)objectModel:(id)arg1 pressedLink:(id)arg2 httpMethod:(id)arg3;
 - (void)objectModelPressedBack:(id)arg1;

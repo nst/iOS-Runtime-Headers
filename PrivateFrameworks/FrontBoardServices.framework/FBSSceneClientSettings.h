@@ -3,11 +3,11 @@
  */
 
 @interface FBSSceneClientSettings : NSObject <BSDescriptionProviding, NSCopying, NSMutableCopying> {
-    NSSet *_occlusions;
-    BSSettings *_otherSettings;
-    int _preferredInterfaceOrientation;
-    float _preferredLevel;
-    NSString *_preferredSceneHostIdentifier;
+    NSSet * _occlusions;
+    BSSettings * _otherSettings;
+    int  _preferredInterfaceOrientation;
+    double  _preferredLevel;
+    NSString * _preferredSceneHostIdentifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,7 +15,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly, copy) NSSet *occlusions;
 @property (nonatomic, readonly) int preferredInterfaceOrientation;
-@property (nonatomic, readonly) float preferredLevel;
+@property (nonatomic, readonly) double preferredLevel;
 @property (nonatomic, readonly, copy) NSString *preferredSceneHostIdentifier;
 @property (readonly) Class superclass;
 

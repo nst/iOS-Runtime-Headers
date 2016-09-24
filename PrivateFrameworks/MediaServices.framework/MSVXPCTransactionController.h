@@ -3,10 +3,10 @@
  */
 
 @interface MSVXPCTransactionController : NSObject {
-    BOOL _inTransaction;
-    NSMapTable *_openTransactions;
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    NSObject<OS_dispatch_source> *_signalUSR2DispatchSource;
+    BOOL  _inTransaction;
+    NSMapTable * _openTransactions;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    NSObject<OS_dispatch_source> * _signalUSR2DispatchSource;
 }
 
 @property (getter=isInTransaction, nonatomic, readonly) BOOL inTransaction;

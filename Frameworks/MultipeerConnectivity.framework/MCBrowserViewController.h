@@ -3,25 +3,27 @@
  */
 
 @interface MCBrowserViewController : UIViewController <MCNearbyServiceBrowserDelegate, MCSessionPrivateDelegate, UIAlertViewDelegate, UINavigationBarDelegate, UITableViewDataSource, UITableViewDelegate> {
-    MCNearbyServiceBrowser *_browser;
-    UIBarButtonItem *_cancelButton;
-    unsigned int _declinedPeersCount;
-    <MCBrowserViewControllerDelegate> *_delegate;
-    UIBarButtonItem *_doneButton;
-    NSMutableArray *_foundPeers;
-    NSBundle *_frameworkBundle;
-    NSMutableArray *_invitedPeersSection;
-    NSMutableDictionary *_invitedPeersState;
-    unsigned int _maximumNumberOfPeers;
-    unsigned int _minimumNumberOfPeers;
-    MCPeerID *_myPeerID;
-    UINavigationBar *_navigationBar;
-    NSMutableArray *_nearbyPeersSection;
-    MCSession *_session;
-    UITableView *_tableView;
+    MCNearbyServiceBrowser * _browser;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    UIBarButtonItem * _cancelButton;
+    unsigned int  _declinedPeersCount;
+    <MCBrowserViewControllerDelegate> * _delegate;
+    UIBarButtonItem * _doneButton;
+    NSMutableArray * _foundPeers;
+    NSBundle * _frameworkBundle;
+    NSMutableArray * _invitedPeersSection;
+    NSMutableDictionary * _invitedPeersState;
+    unsigned int  _maximumNumberOfPeers;
+    unsigned int  _minimumNumberOfPeers;
+    MCPeerID * _myPeerID;
+    UINavigationBar * _navigationBar;
+    NSMutableArray * _nearbyPeersSection;
+    MCSession * _session;
+    UITableView * _tableView;
 }
 
 @property (nonatomic, retain) MCNearbyServiceBrowser *browser;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
 @property (nonatomic, retain) UIBarButtonItem *cancelButton;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) unsigned int declinedPeersCount;
@@ -44,9 +46,12 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UITableView *tableView;
 
+- (void)applicationDidEnterBackgroundNotification:(id)arg1;
+- (void)applicationWillEnterForegroundNotification:(id)arg1;
 - (id)browser;
 - (void)browser:(id)arg1 foundPeer:(id)arg2 withDiscoveryInfo:(id)arg3;
 - (void)browser:(id)arg1 lostPeer:(id)arg2;
+- (id)callbackQueue;
 - (id)cancelButton;
 - (void)cancelTapped:(id)arg1;
 - (void)dealloc;
@@ -59,6 +64,8 @@
 - (void)doneTapped:(id)arg1;
 - (id)foundPeers;
 - (id)frameworkBundle;
+- (void)handleViewDidDisappear;
+- (void)handleViewWillAppear;
 - (id)init;
 - (id)initWithBrowser:(id)arg1 session:(id)arg2;
 - (id)initWithCoder:(id)arg1;
@@ -66,6 +73,7 @@
 - (id)initWithServiceType:(id)arg1 session:(id)arg2;
 - (id)invitedPeersSection;
 - (id)invitedPeersState;
+- (BOOL)isVisible;
 - (unsigned int)maximumNumberOfPeers;
 - (BOOL)maximumNumberOfPeersReached;
 - (unsigned int)minimumNumberOfPeers;
@@ -85,6 +93,7 @@
 - (void)session:(id)arg1 didStartReceivingResourceWithName:(id)arg2 fromPeer:(id)arg3 withProgress:(id)arg4 propagate:(BOOL*)arg5;
 - (void)session:(id)arg1 peer:(id)arg2 didChangeState:(int)arg3 propagate:(BOOL*)arg4;
 - (void)setBrowser:(id)arg1;
+- (void)setCallbackQueue:(id)arg1;
 - (void)setCancelButton:(id)arg1;
 - (void)setDeclinedPeersCount:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;

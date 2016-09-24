@@ -3,12 +3,12 @@
  */
 
 @interface _CNAutocompleteCachingSearchProvider : NSObject <CNAutocompleteSearchProvider> {
-    <CNFuture> *_calendarServerSearchFuture;
-    <CNFuture> *_directoryServerSearchFuture;
-    <CNFuture> *_duetSearchFuture;
-    <CNFuture> *_localSearchFuture;
-    <CNFuture> *_recentsSearchFuture;
-    <CNFuture> *_suggestionsSearchFuture;
+    <CNFuture> * _calendarServerSearchFuture;
+    <CNFuture> * _directoryServerSearchFuture;
+    <CNFuture> * _duetSearchFuture;
+    <CNFuture> * _localSearchFuture;
+    <CNFuture> * _recentsSearchFuture;
+    <CNFuture> * _suggestionsSearchFuture;
 }
 
 @property (readonly, copy) NSString *debugDescription;

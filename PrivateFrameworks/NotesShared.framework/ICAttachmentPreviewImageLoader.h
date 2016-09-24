@@ -3,15 +3,15 @@
  */
 
 @interface ICAttachmentPreviewImageLoader : NSObject {
-    NSData *_data;
-    BOOL _delayLoadingURLs;
-    struct UIImage { Class x1; } *_image;
-    id /* block */ _imageDidLoadBlock;
-    int _imageOrientation;
-    struct UIImage { Class x1; } *_orientedImage;
-    struct UIImage { Class x1; } *_originalImage;
-    NSArray *_previewImageURLs;
-    float _scale;
+    NSData * _data;
+    BOOL  _delayLoadingURLs;
+    struct UIImage { Class x1; } * _image;
+    id /* block */  _imageDidLoadBlock;
+    int  _imageOrientation;
+    struct UIImage { Class x1; } * _orientedImage;
+    struct UIImage { Class x1; } * _originalImage;
+    NSArray * _previewImageURLs;
+    double  _scale;
 }
 
 @property (nonatomic, retain) NSData *data;
@@ -22,9 +22,9 @@
 @property (nonatomic, retain) UIImage *orientedImage;
 @property (nonatomic, retain) UIImage *originalImage;
 @property (nonatomic, copy) NSArray *previewImageURLs;
-@property (nonatomic) float scale;
+@property (nonatomic) double scale;
 
-+ (struct UIImage { Class x1; }*)orientedImage:(struct UIImage { Class x1; }*)arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 background:(int)arg3 backgroundTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg4;
++ (struct UIImage { Class x1; }*)orientedImage:(struct UIImage { Class x1; }*)arg1 withTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2 background:(int)arg3 backgroundTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg4;
 
 - (void).cxx_destruct;
 - (BOOL)canLoadImage;

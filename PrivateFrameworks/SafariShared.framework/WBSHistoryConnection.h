@@ -3,10 +3,11 @@
  */
 
 @interface WBSHistoryConnection : NSObject <WBSHistoryServiceProtocol> {
-    WBSHistoryService *_historyService;
+    WBSHistoryService * _historyService;
 }
 
 - (void).cxx_destruct;
+- (void)beginHistoryAccessSession:(id /* block */)arg1;
 - (void)beginURLCompletionSession:(id /* block */)arg1;
 - (void)clearHistoryVisitsAddedAfterDate:(id)arg1 endDate:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)clearHistoryWithCompletionHandler:(id /* block */)arg1;

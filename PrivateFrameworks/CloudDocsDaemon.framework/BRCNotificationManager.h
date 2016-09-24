@@ -3,42 +3,48 @@
  */
 
 @interface BRCNotificationManager : NSObject <BRCModule> {
-    unsigned int _activeAliasQueries;
-    NSObject<OS_dispatch_queue> *_cacheQueue;
-    BRCXPCClient *_client;
-    BOOL _isCancelled;
-    BRNotificationQueue *_notifs;
-    NSHashTable *_pipes;
-    NSObject<OS_dispatch_queue> *_queue;
-    BRCAccountSession *_session;
-    BRCClientRanksPersistedState *_state;
-    NSMutableDictionary *_transferCache;
+    unsigned int  _activeAliasQueries;
+    NSMutableSet * _additionalUpdatesItemRowID;
+    NSObject<OS_dispatch_queue> * _cacheQueue;
+    BRCXPCClient * _client;
+    BOOL  _isCancelled;
+    BRNotificationQueue * _notifs;
+    NSHashTable * _pipes;
+    NSObject<OS_dispatch_queue> * _queue;
+    BRCAccountSession * _session;
+    BRCClientRanksPersistedState * _state;
+    NSMutableDictionary * _transferCache;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) BOOL hasActiveAliasWatchers;
 @property (readonly) unsigned int hash;
-@property (nonatomic) BOOL isCancelled;
+@property (nonatomic, readonly) BOOL isCancelled;
 @property (nonatomic, readonly) BRCAccountSession *session;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_dispatchUpdatesToPipes;
+- (void)_queueAdditionalUpdates;
 - (void)cancel;
 - (void)close;
 - (void)flushUpdates;
-- (void)getPipeWithXPCReceiver:(id)arg1 client:(id)arg2 root:(id)arg3 reply:(id /* block */)arg4;
+- (void)getPipeWithXPCReceiver:(id)arg1 client:(id)arg2 reply:(id /* block */)arg3;
 - (BOOL)hasActiveAliasWatchers;
 - (id)initWithAccountSession:(id)arg1;
-- (void)invalidatePipesWatchingContainerID:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)invalidatePipeReceiversWatchingAppLibraryIDs:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)invalidatePipesWatchingAppLibraryIDs:(id)arg1;
 - (BOOL)isCancelled;
-- (id)pipeWithReceiver:(id)arg1 root:(id)arg2;
+- (void)pipeDelegateInvalidated:(id)arg1;
+- (id)pipeWithReceiver:(id)arg1;
+- (void)queueProgressUpdates:(id)arg1;
 - (void)queueUpdate:(id)arg1;
-- (void)registerContainers:(id)arg1 forFlags:(unsigned int)arg2;
+- (void)queueUpdateForItemAtRowID:(unsigned int)arg1;
+- (void)registerAppLibraries:(id)arg1 forFlags:(unsigned int)arg2;
 - (void)resume;
 - (id)session;
-- (void)setIsCancelled:(BOOL)arg1;
 - (void)suspend;
-- (void)unregisterContainers:(id)arg1 forFlags:(unsigned int)arg2;
+- (void)unregisterAppLibraries:(id)arg1 forFlags:(unsigned int)arg2;
 
 @end

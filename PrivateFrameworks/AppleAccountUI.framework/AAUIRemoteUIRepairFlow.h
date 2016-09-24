@@ -3,10 +3,10 @@
  */
 
 @interface AAUIRemoteUIRepairFlow : NSObject <AAUIAccountRepairRemoteUIDelegate> {
-    ACAccount *_account;
-    id /* block */ _completion;
-    <AAUIRemoteUIRepairFlowDelegate> *_delegate;
-    AAUIAccountRepairRemoteUI *_remoteUI;
+    ACAccount * _account;
+    id /* block */  _completion;
+    <AAUIRemoteUIRepairFlowDelegate> * _delegate;
+    AAUIAccountRepairRemoteUI * _remoteUI;
 }
 
 @property (readonly, copy) NSString *debugDescription;

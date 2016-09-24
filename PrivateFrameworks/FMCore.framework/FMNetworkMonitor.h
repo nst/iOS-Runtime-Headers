@@ -3,7 +3,7 @@
  */
 
 @interface FMNetworkMonitor : NSObject {
-    NWPathEvaluator *_evaluator;
+    NWPathEvaluator * _evaluator;
 }
 
 @property (nonatomic, retain) NWPathEvaluator *evaluator;

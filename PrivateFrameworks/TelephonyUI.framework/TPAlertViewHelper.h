@@ -3,8 +3,8 @@
  */
 
 @interface TPAlertViewHelper : NSObject <UIAlertViewDelegate> {
-    UIAlertView *_alertView;
-    id /* block */ _completionHandler;
+    UIAlertView * _alertView;
+    id /* block */  _completionHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;

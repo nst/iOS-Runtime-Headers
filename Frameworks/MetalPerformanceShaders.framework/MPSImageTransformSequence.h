@@ -3,10 +3,10 @@
  */
 
 @interface MPSImageTransformSequence : MPSImageTransform <NSCopying> {
-    <MTLDevice> *_device;
+    <MTLDevice> * _device;
 }
 
-@property (readonly) <MTLDevice> *device;
+@property (nonatomic, readonly) <MTLDevice> *device;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1 device:(id)arg2;

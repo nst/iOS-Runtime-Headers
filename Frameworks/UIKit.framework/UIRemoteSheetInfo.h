@@ -3,12 +3,12 @@
  */
 
 @interface UIRemoteSheetInfo : NSObject {
-    void *_context;
-    id _delegate;
-    UISpringBoardHostedView *_remoteView;
-    int _returnCode;
-    SEL _selector;
-    UIView *_sheetView;
+    void * _context;
+    id  _delegate;
+    UISpringBoardHostedView * _remoteView;
+    int  _returnCode;
+    SEL  _selector;
+    UIView * _sheetView;
 }
 
 @property (nonatomic) void*context;

@@ -3,8 +3,8 @@
  */
 
 @interface SKUIShakeAnimation : NSObject {
-    BOOL _shouldErase;
-    BOOL _shouldVibrate;
+    BOOL  _shouldErase;
+    BOOL  _shouldVibrate;
 }
 
 - (void)animatePINInputControl:(id)arg1;

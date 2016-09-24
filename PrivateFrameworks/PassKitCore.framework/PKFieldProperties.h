@@ -3,10 +3,10 @@
  */
 
 @interface PKFieldProperties : NSObject <NSSecureCoding> {
-    NSError *_error;
-    NSArray *_merchantIdentifiers;
-    unsigned int _mode;
-    unsigned int _technology;
+    NSError * _error;
+    NSArray * _merchantIdentifiers;
+    unsigned int  _mode;
+    unsigned int  _technology;
 }
 
 @property (nonatomic, readonly) NSError *error;
@@ -16,7 +16,7 @@
 
 + (BOOL)supportsSecureCoding;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)error;

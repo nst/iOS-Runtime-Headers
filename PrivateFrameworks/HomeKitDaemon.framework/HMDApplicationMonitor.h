@@ -3,11 +3,11 @@
  */
 
 @interface HMDApplicationMonitor : NSObject {
-    HMDApplicationRegistry *_appRegistry;
-    <HMDApplicationMonitorDelegate> *_delegate;
-    BKSApplicationStateMonitor *_monitor;
-    NSMutableSet *_processes;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    HMDApplicationRegistry * _appRegistry;
+    <HMDApplicationMonitorDelegate> * _delegate;
+    BKSApplicationStateMonitor * _monitor;
+    NSMutableSet * _processes;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic, readonly) BOOL activeHomeKitApps;
@@ -27,14 +27,18 @@
 - (BOOL)_delegateConformsAndRespondsToSelector:(SEL)arg1;
 - (void)_handleAppStateChangedInfo:(id)arg1;
 - (unsigned int)_translateApplicationState:(unsigned int)arg1;
+- (void)_updateProcessInfo:(id)arg1 info:(id)arg2;
 - (BOOL)activeHomeKitApps;
 - (id)activeRequests;
 - (void)addProcess:(id)arg1;
 - (id)appRegistry;
+- (id)applicationInfoForApplication:(id)arg1;
 - (id)applicationInfoForPID:(int)arg1;
 - (id)backgroundApps;
+- (id)backgroundToForegroundApps;
 - (void)dealloc;
 - (id)delegate;
+- (id)foregroundAppIdentifiers;
 - (id)foregroundApps;
 - (BOOL)infoIsForViewService:(id)arg1;
 - (id)init;

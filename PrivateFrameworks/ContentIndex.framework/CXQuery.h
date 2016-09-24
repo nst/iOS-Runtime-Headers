@@ -3,18 +3,18 @@
  */
 
 @interface CXQuery : NSObject {
-    struct { int x1; struct __SIJobRef {} *x2; struct { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; unsigned char x_3_1_4; unsigned char x_3_1_5; unsigned char x_3_1_6; unsigned char x_3_1_7; unsigned char x_3_1_8; unsigned char x_3_1_9; unsigned char x_3_1_10; unsigned char x_3_1_11; unsigned char x_3_1_12; unsigned char x_3_1_13; unsigned char x_3_1_14; unsigned char x_3_1_15; unsigned char x_3_1_16; } x3; union { struct { struct __MDStoreOIDArray {} *x_1_2_1; struct __MDPlistBytes {} *x_1_2_2; int x_1_2_3; } x_4_1_1; struct { int x_2_2_1; } x_4_1_2; struct { struct __MDStoreOIDArray {} *x_3_2_1; struct __MDPlistBytes {} *x_3_2_2; int x_3_2_3; int x_3_2_4; } x_4_1_3; struct __MDPlistBytes {} *x_4_1_4; struct __MDPlistBytes {} *x_4_1_5; struct { char *x_6_2_1; unsigned int x_6_2_2; } x_4_1_6; struct { double x_7_2_1; } x_4_1_7; } x4; } *_batch;
-    long _batchOffset;
-    NSArray *_batchValues;
-    bool _canceled;
-    bool _complete;
-    CXIndex *_index;
-    struct __SIJobRef { } *_job;
-    struct __SIResultQueue { } *_resultQueue;
-    NSObject<OS_dispatch_semaphore> *_semaphore;
-    struct __SIQuery { } *_siQuery;
-    bool _started;
-    bool _waiting;
+    struct { int x1; struct __SIJobRef {} *x2; struct { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; unsigned char x_3_1_4; unsigned char x_3_1_5; unsigned char x_3_1_6; unsigned char x_3_1_7; unsigned char x_3_1_8; unsigned char x_3_1_9; unsigned char x_3_1_10; unsigned char x_3_1_11; unsigned char x_3_1_12; unsigned char x_3_1_13; unsigned char x_3_1_14; unsigned char x_3_1_15; unsigned char x_3_1_16; } x3; union { struct { struct __MDStoreOIDArray {} *x_1_2_1; struct __MDPlistBytes {} *x_1_2_2; int x_1_2_3; } x_4_1_1; struct { int x_2_2_1; } x_4_1_2; struct { struct __MDStoreOIDArray {} *x_3_2_1; struct __MDPlistBytes {} *x_3_2_2; int x_3_2_3; int x_3_2_4; } x_4_1_3; struct __MDPlistBytes {} *x_4_1_4; struct __MDPlistBytes {} *x_4_1_5; struct { char *x_6_2_1; unsigned int x_6_2_2; } x_4_1_6; struct { double x_7_2_1; } x_4_1_7; } x4; } * _batch;
+    long  _batchOffset;
+    NSArray * _batchValues;
+    bool  _canceled;
+    bool  _complete;
+    CXIndex * _index;
+    struct __SIJobRef { } * _job;
+    struct __SIResultQueue { } * _resultQueue;
+    NSObject<OS_dispatch_semaphore> * _semaphore;
+    struct __SIQuery { } * _siQuery;
+    bool  _started;
+    bool  _waiting;
 }
 
 @property (nonatomic, readonly) struct { int x1; struct __SIJobRef {} *x2; struct { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; unsigned char x_3_1_4; unsigned char x_3_1_5; unsigned char x_3_1_6; unsigned char x_3_1_7; unsigned char x_3_1_8; unsigned char x_3_1_9; unsigned char x_3_1_10; unsigned char x_3_1_11; unsigned char x_3_1_12; unsigned char x_3_1_13; unsigned char x_3_1_14; unsigned char x_3_1_15; unsigned char x_3_1_16; } x3; union { struct { struct __MDStoreOIDArray {} *x_1_2_1; struct __MDPlistBytes {} *x_1_2_2; int x_1_2_3; } x_4_1_1; struct { int x_2_2_1; } x_4_1_2; struct { struct __MDStoreOIDArray {} *x_3_2_1; struct __MDPlistBytes {} *x_3_2_2; int x_3_2_3; int x_3_2_4; } x_4_1_3; struct __MDPlistBytes {} *x_4_1_4; struct __MDPlistBytes {} *x_4_1_5; struct { char *x_6_2_1; unsigned int x_6_2_2; } x_4_1_6; struct { double x_7_2_1; } x_4_1_7; } x4; }*batch;

@@ -3,23 +3,23 @@
  */
 
 @interface GEOTileCacheReserved : NSObject {
-    unsigned int _reservedCurrentCost;
-    unsigned int _reservedCurrentCount;
+    unsigned int  _reservedCurrentCost;
+    unsigned int  _reservedCurrentCount;
     struct list<CacheItem, std::__1::allocator<CacheItem> > { 
         struct __list_node_base<CacheItem, void *> { 
-            struct __list_node<CacheItem, void *> {} *__prev_; 
-            struct __list_node<CacheItem, void *> {} *__next_; 
+            struct __list_node_base<CacheItem, void *> {} *__prev_; 
+            struct __list_node_base<CacheItem, void *> {} *__next_; 
         } __end_; 
         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<CacheItem, void *> > > { 
             unsigned long __first_; 
         } __size_alloc_; 
-    } _reservedList;
+    }  _reservedList;
     struct mutex { 
         struct _opaque_pthread_mutex_t { 
             long __sig; 
             BOOL __opaque[40]; 
         } __m_; 
-    } _reservedLock;
+    }  _reservedLock;
     struct unordered_map<_GEOTileKey, std::__1::__list_iterator<CacheItem, void *>, hashkey, eqkey, std::__1::allocator<std::__1::pair<const _GEOTileKey, std::__1::__list_iterator<CacheItem, void *> > > > { 
         struct __hash_table<std::__1::__hash_value_type<_GEOTileKey, std::__1::__list_iterator<CacheItem, void *> >, std::__1::__unordered_map_hasher<_GEOTileKey, std::__1::__hash_value_type<_GEOTileKey, std::__1::__list_iterator<CacheItem, void *> >, hashkey, true>, std::__1::__unordered_map_equal<_GEOTileKey, std::__1::__hash_value_type<_GEOTileKey, std::__1::__list_iterator<CacheItem, void *> >, eqkey, true>, std::__1::allocator<std::__1::__hash_value_type<_GEOTileKey, std::__1::__list_iterator<CacheItem, void *> > > > { 
             struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<_GEOTileKey, std::__1::__list_iterator<CacheItem, void *> >, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<_GEOTileKey, std::__1::__list_iterator<CacheItem, void *> >, void *> *> > > { 
@@ -41,12 +41,12 @@
                 unsigned long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<_GEOTileKey, std::__1::__hash_value_type<_GEOTileKey, std::__1::__list_iterator<CacheItem, void *> >, eqkey, true> > { 
-                float __first_; 
+                double __first_; 
             } __p3_; 
         } __table_; 
-    } _reservedMap;
-    unsigned int _reservedMaxCapacity;
-    unsigned int _reservedMaxCost;
+    }  _reservedMap;
+    unsigned int  _reservedMaxCapacity;
+    unsigned int  _reservedMaxCost;
 }
 
 - (id).cxx_construct;

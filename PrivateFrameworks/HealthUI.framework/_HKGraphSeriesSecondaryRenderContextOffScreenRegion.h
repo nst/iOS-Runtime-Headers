@@ -3,14 +3,14 @@
  */
 
 @interface _HKGraphSeriesSecondaryRenderContextOffScreenRegion : NSObject {
-    UIColor *_color;
-    float _end;
-    float _start;
+    UIColor * _color;
+    double  _end;
+    double  _start;
 }
 
 @property (nonatomic, retain) UIColor *color;
-@property (nonatomic) float end;
-@property (nonatomic) float start;
+@property (nonatomic) double end;
+@property (nonatomic) double start;
 
 - (void).cxx_destruct;
 - (id)color;

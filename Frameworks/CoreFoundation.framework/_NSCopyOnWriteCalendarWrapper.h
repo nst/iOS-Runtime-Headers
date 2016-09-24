@@ -3,9 +3,9 @@
  */
 
 @interface _NSCopyOnWriteCalendarWrapper : NSCalendar {
-    _NSRefcountedPthreadMutex *_lock;
-    NSCalendar *cal;
-    BOOL needsToCopy;
+    _NSRefcountedPthreadMutex * _lock;
+    NSCalendar * cal;
+    BOOL  needsToCopy;
 }
 
 + (id)currentCalendar;
@@ -21,7 +21,6 @@
 - (id)dateFromComponents:(id)arg1;
 - (void)dealloc;
 - (void)enumerateDatesStartingAfterDate:(id)arg1 matchingComponents:(id)arg2 options:(unsigned int)arg3 usingBlock:(id /* block */)arg4;
-- (void)finalize;
 - (unsigned int)firstWeekday;
 - (unsigned int)hash;
 - (BOOL)isDateInWeekend:(id)arg1;

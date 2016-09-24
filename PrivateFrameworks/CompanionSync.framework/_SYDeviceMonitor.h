@@ -3,14 +3,15 @@
  */
 
 @interface _SYDeviceMonitor : NSObject {
-    NSUUID *_currentTargetDeviceUUID;
-    NSMutableSet *_devices;
-    NSObject<OS_dispatch_queue> *_syncQ;
+    NSUUID * _currentTargetDeviceUUID;
+    NSMutableSet * _devices;
+    NSObject<OS_dispatch_queue> * _syncQ;
 }
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
+- (void)_clearDeviceList;
 - (void)_deviceDidPair:(id)arg1;
 - (void)_deviceDidUnpair:(id)arg1;
 - (void)_rebuildDeviceList;

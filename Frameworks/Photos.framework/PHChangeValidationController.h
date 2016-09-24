@@ -3,21 +3,21 @@
  */
 
 @interface PHChangeValidationController : NSObject {
-    NSArray *_albumsToDelete;
-    NSArray *_assetsToChangeContent;
-    NSArray *_assetsToDelete;
-    NSArray *_assetsToHide;
-    NSArray *_assetsToRevert;
-    NSString *_clientName;
-    BOOL _confirmationRequired;
-    NSSet *_deleteRequests;
-    BOOL _didPrepare;
-    NSArray *_foldersToDelete;
-    NSSet *_insertRequests;
-    NSManagedObjectContext *_managedObjectContext;
-    PLPhotoLibrary *_photoLibrary;
-    NSArray *_renderedContentURLs;
-    NSSet *_updateRequests;
+    NSArray * _albumsToDelete;
+    NSArray * _assetsToChangeContent;
+    NSArray * _assetsToDelete;
+    NSArray * _assetsToHide;
+    NSArray * _assetsToRevert;
+    NSString * _clientName;
+    BOOL  _confirmationRequired;
+    NSSet * _deleteRequests;
+    BOOL  _didPrepare;
+    NSArray * _foldersToDelete;
+    NSSet * _insertRequests;
+    NSManagedObjectContext * _managedObjectContext;
+    PLPhotoLibrary * _photoLibrary;
+    NSArray * _renderedContentURLs;
+    NSSet * _updateRequests;
 }
 
 @property (nonatomic, readonly) NSArray *albumsToDelete;

@@ -3,19 +3,22 @@
  */
 
 @interface BLTWatchKitAppDefinition : NSObject {
-    NSString *_containerBundleID;
-    BOOL _isInstalled;
-    NSString *_watchKitAppBundleID;
+    NSString * _containerBundleID;
+    BOOL  _isInstalled;
+    BOOL  _runsOnWatch;
+    NSString * _watchKitAppBundleID;
 }
 
 @property (nonatomic, readonly) NSString *containerBundleID;
 @property (nonatomic, readonly) BOOL isInstalled;
+@property (nonatomic, readonly) BOOL runsOnWatch;
 @property (nonatomic, readonly) NSString *watchKitAppBundleID;
 
 - (void).cxx_destruct;
 - (id)containerBundleID;
-- (id)initWithContainerBundleID:(id)arg1 watchKitAppBundleID:(id)arg2 isInstalled:(BOOL)arg3;
+- (id)initWithContainerBundleID:(id)arg1 watchKitAppBundleID:(id)arg2 isInstalled:(BOOL)arg3 runsOnWatch:(BOOL)arg4;
 - (BOOL)isInstalled;
+- (BOOL)runsOnWatch;
 - (id)watchKitAppBundleID;
 
 @end

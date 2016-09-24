@@ -3,8 +3,8 @@
  */
 
 @interface WBSCredentialMatch : WBSFormAutoFillItem {
-    NSURLCredential *_credential;
-    NSURLProtectionSpace *_protectionSpace;
+    NSURLCredential * _credential;
+    NSURLProtectionSpace * _protectionSpace;
 }
 
 @property (nonatomic, readonly) NSURLCredential *credential;

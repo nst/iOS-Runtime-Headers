@@ -3,8 +3,8 @@
  */
 
 @interface SearchUICardDetailsView : UIView {
-    UITextView *_detailsTextView;
-    UILabel *_titleLabel;
+    UITextView * _detailsTextView;
+    UILabel * _titleLabel;
 }
 
 @property (retain) UITextView *detailsTextView;

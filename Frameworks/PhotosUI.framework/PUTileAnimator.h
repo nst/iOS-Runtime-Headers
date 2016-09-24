@@ -3,7 +3,7 @@
  */
 
 @interface PUTileAnimator : NSObject {
-    <PUTilingViewControllerTransition> *_currentTransition;
+    <PUTilingViewControllerTransition> * _currentTransition;
 }
 
 @property (nonatomic, readonly) <PUTilingViewControllerTransition> *currentTransition;

@@ -3,13 +3,13 @@
  */
 
 @interface IMInvocationQueue : NSObject {
-    id _delegate;
-    double _dequeueRate;
-    BOOL _holdQueue;
-    NSMutableArray *_options;
-    NSProtocolChecker *_protocolChecker;
-    NSMutableArray *_queue;
-    id _target;
+    id  _delegate;
+    double  _dequeueRate;
+    BOOL  _holdQueue;
+    NSMutableArray * _options;
+    NSProtocolChecker * _protocolChecker;
+    NSMutableArray * _queue;
+    id  _target;
 }
 
 @property (nonatomic, readonly) unsigned int count;

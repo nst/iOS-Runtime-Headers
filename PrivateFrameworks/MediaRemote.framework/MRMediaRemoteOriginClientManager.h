@@ -3,8 +3,8 @@
  */
 
 @interface MRMediaRemoteOriginClientManager : NSObject {
-    NSMutableDictionary *_originClients;
-    NSObject<OS_dispatch_queue> *_serialQueue;
+    NSMutableDictionary * _originClients;
+    NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
 + (id)sharedManager;

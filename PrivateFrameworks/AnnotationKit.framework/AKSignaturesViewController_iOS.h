@@ -3,18 +3,18 @@
  */
 
 @interface AKSignaturesViewController_iOS : UIViewController <AKSignatureCreationControllerDelegate, UINavigationBarDelegate, UITableViewDataSource, UITableViewDelegate> {
-    BOOL _allowsEdits;
-    AKController *_controller;
-    <AKSignaturesViewControllerDelegate> *_delegate;
-    NSArray *_editingLeftBarItems;
-    NSArray *_leftBarItems;
-    UINavigationBar *_navBar;
-    BOOL _presentedInAlert;
-    NSArray *_rightBarItems;
-    BOOL _showAddEditButtonRow;
-    BOOL _showsNavigationBar;
-    UIColor *_tableBackgroundColor;
-    UITableView *_tableView;
+    BOOL  _allowsEdits;
+    AKController * _controller;
+    <AKSignaturesViewControllerDelegate> * _delegate;
+    NSArray * _editingLeftBarItems;
+    NSArray * _leftBarItems;
+    UINavigationBar * _navBar;
+    BOOL  _presentedInAlert;
+    NSArray * _rightBarItems;
+    BOOL  _showAddEditButtonRow;
+    BOOL  _showsNavigationBar;
+    UIColor * _tableBackgroundColor;
+    UITableView * _tableView;
 }
 
 @property (nonatomic) BOOL allowsEdits;
@@ -24,7 +24,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSArray *editingLeftBarItems;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) float idealHeight;
+@property (nonatomic, readonly) double idealHeight;
 @property (nonatomic, retain) NSArray *leftBarItems;
 @property (nonatomic, retain) UINavigationBar *navBar;
 @property (nonatomic) BOOL presentedInAlert;
@@ -50,7 +50,7 @@
 - (id)leftBarItems;
 - (id)navBar;
 - (int)positionForBar:(id)arg1;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (BOOL)presentedInAlert;
 - (id)rightBarItems;
 - (void)setAllowsEdits:(BOOL)arg1;

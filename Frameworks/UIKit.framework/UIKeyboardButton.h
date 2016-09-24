@@ -3,7 +3,7 @@
  */
 
 @interface UIKeyboardButton : UIButton {
-    int _keyboardButtonStyle;
+    int  _keyboardButtonStyle;
 }
 
 @property (nonatomic, readonly) int keyboardButtonStyle;

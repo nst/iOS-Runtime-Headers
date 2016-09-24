@@ -3,11 +3,11 @@
  */
 
 @interface ATCodableStream : NSObject <NSSecureCoding> {
-    NSFileHandle *_fileHandleForReading;
-    NSInputStream *_inputStream;
-    NSObject<OS_dispatch_queue> *_queue;
-    MSVStreamReader *_reader;
-    MSVStreamWriter *_writer;
+    NSFileHandle * _fileHandleForReading;
+    NSInputStream * _inputStream;
+    NSObject<OS_dispatch_queue> * _queue;
+    MSVStreamReader * _reader;
+    MSVStreamWriter * _writer;
 }
 
 @property (nonatomic, readonly) NSFileHandle *fileHandleForReading;

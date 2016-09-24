@@ -3,18 +3,18 @@
  */
 
 @interface PTPTCPIPConnection : NSObject {
-    unsigned int _bytesReceived;
-    unsigned int _bytesSent;
-    struct __CFReadStream { } *_inStream;
-    NSTimer *_inactivityTimer;
-    struct __CFWriteStream { } *_outStream;
-    NSObject<OS_dispatch_semaphore> *_receiveBufferSemaphore;
-    NSTimer *_receiveTimer;
-    NSMutableData *_recieveBuffer;
-    NSMutableData *_transmitBuffer;
-    NSObject<OS_dispatch_semaphore> *_transmitBufferSemaphore;
-    NSTimer *_transmitTimer;
-    PTPTCPIPTransport *_transport;
+    unsigned int  _bytesReceived;
+    unsigned int  _bytesSent;
+    struct __CFReadStream { } * _inStream;
+    NSTimer * _inactivityTimer;
+    struct __CFWriteStream { } * _outStream;
+    NSObject<OS_dispatch_semaphore> * _receiveBufferSemaphore;
+    NSTimer * _receiveTimer;
+    NSMutableData * _recieveBuffer;
+    NSMutableData * _transmitBuffer;
+    NSObject<OS_dispatch_semaphore> * _transmitBufferSemaphore;
+    NSTimer * _transmitTimer;
+    PTPTCPIPTransport * _transport;
 }
 
 - (void)close;

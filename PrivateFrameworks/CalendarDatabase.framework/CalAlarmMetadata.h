@@ -3,10 +3,10 @@
  */
 
 @interface CalAlarmMetadata : NSObject <NSCoding> {
-    NSArray *_attach;
-    NSArray *_attendee;
-    NSString *_description;
-    NSString *_summary;
+    NSArray * _attach;
+    NSArray * _attendee;
+    NSString * _description;
+    NSString * _summary;
 }
 
 @property (retain) NSArray *attach;
@@ -16,11 +16,11 @@
 
 + (id)metadataWithData:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)applyToAlarm:(id)arg1;
 - (id)attach;
 - (id)attendee;
 - (id)dataRepresentation;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

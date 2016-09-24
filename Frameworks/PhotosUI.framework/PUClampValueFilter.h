@@ -3,8 +3,8 @@
  */
 
 @interface PUClampValueFilter : PUValueFilter {
-    double _maximumValue;
-    double _minimumValue;
+    double  _maximumValue;
+    double  _minimumValue;
 }
 
 @property (nonatomic) double maximumValue;

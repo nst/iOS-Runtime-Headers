@@ -16,7 +16,6 @@
         BOOL pointerPersonality; 
         BOOL integerPersonality; 
         BOOL simpleReadClear; 
-        NSWeakCallback *callback; 
         int (*sizeFunction)(); 
         int (*hashFunction)(); 
         int (*isEqualFunction)(); 
@@ -28,11 +27,11 @@
         int (*readAt)(); 
         int (*clearAt)(); 
         int (*storeAt)(); 
-    } slice;
+    }  slice;
 }
 
-+ (void)initializeBackingStore:(struct NSSlice { void **x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; BOOL x11; BOOL x12; id x13; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x14; int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); int (*x23)(); int (*x24)(); }*)arg1 sentinel:(BOOL)arg2 compactable:(BOOL)arg3;
-+ (bool)initializeSlice:(struct NSSlice { void **x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; BOOL x11; BOOL x12; id x13; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x14; int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); int (*x23)(); int (*x24)(); }*)arg1 withOptions:(unsigned int)arg2;
++ (void)initializeBackingStore:(struct NSSlice { void **x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; BOOL x11; BOOL x12; int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); int (*x23)(); }*)arg1 sentinel:(BOOL)arg2;
++ (bool)initializeSlice:(struct NSSlice { void **x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; BOOL x11; BOOL x12; int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); int (*x23)(); }*)arg1 withOptions:(unsigned int)arg2;
 
 - (int (*)acquireFunction;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

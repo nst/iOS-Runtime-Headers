@@ -3,16 +3,16 @@
  */
 
 @interface HAPBTLERequest : NSObject {
-    NSData *_body;
-    HAPCharacteristic *_characteristic;
-    HAPBTLEControlOutputStream *_controlOutputStream;
-    BOOL _encrypted;
-    BOOL _finished;
-    HAPBTLETransactionIdentifier *_identifier;
-    HAPBlockOperation *_operation;
-    HAPTimer *_responseTimer;
-    double _timeoutInterval;
-    unsigned char _type;
+    NSData * _body;
+    HAPCharacteristic * _characteristic;
+    HAPBTLEControlOutputStream * _controlOutputStream;
+    BOOL  _encrypted;
+    BOOL  _finished;
+    HAPBTLETransactionIdentifier * _identifier;
+    HMFBlockOperation * _operation;
+    HMFTimer * _responseTimer;
+    double  _timeoutInterval;
+    unsigned char  _type;
 }
 
 @property (nonatomic, readonly, copy) NSData *body;
@@ -21,8 +21,8 @@
 @property (getter=isEncrypted, nonatomic, readonly) BOOL encrypted;
 @property (getter=isFinished, nonatomic, readonly) BOOL finished;
 @property (nonatomic, readonly) HAPBTLETransactionIdentifier *identifier;
-@property (nonatomic) HAPBlockOperation *operation;
-@property (nonatomic, retain) HAPTimer *responseTimer;
+@property (nonatomic) HMFBlockOperation *operation;
+@property (nonatomic, retain) HMFTimer *responseTimer;
 @property (nonatomic, readonly) double timeoutInterval;
 @property (nonatomic, readonly) unsigned char type;
 

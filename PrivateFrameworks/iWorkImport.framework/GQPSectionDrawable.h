@@ -6,8 +6,8 @@
     struct { 
         int location; 
         int length; 
-    } mPageRange;
-    GQDSStyle *mStyle;
+    }  mPageRange;
+    GQDSStyle * mStyle;
 }
 
 - (void)dealloc;

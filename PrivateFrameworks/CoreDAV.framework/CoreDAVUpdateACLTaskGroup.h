@@ -3,10 +3,10 @@
  */
 
 @interface CoreDAVUpdateACLTaskGroup : CoreDAVTaskGroup <CoreDAVACLTaskDelegate, CoreDAVPropFindTaskDelegate> {
-    NSSet *_aceItems;
-    CoreDAVPropFindTask *_fetchTask;
-    int _state;
-    NSURL *_url;
+    NSSet * _aceItems;
+    CoreDAVPropFindTask * _fetchTask;
+    int  _state;
+    NSURL * _url;
 }
 
 @property (nonatomic, retain) NSSet *aceItems;

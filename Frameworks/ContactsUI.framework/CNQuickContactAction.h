@@ -3,9 +3,9 @@
  */
 
 @interface CNQuickContactAction : CNQuickAction <CNContactActionDelegate> {
-    id /* block */ _completionBlock;
-    CNContactAction *_contactAction;
-    <CNQuickContactActionDelegate> *_delegate;
+    id /* block */  _completionBlock;
+    CNContactAction * _contactAction;
+    <CNQuickContactActionDelegate> * _delegate;
 }
 
 @property (nonatomic, copy) id /* block */ completionBlock;

@@ -3,10 +3,10 @@
  */
 
 @interface VSKeepAlive : NSObject {
-    BOOL _active;
-    int _audioType;
-    BOOL _keepAudioSessionActive;
-    NSXPCConnection *_serverConnection;
+    BOOL  _active;
+    int  _audioType;
+    BOOL  _keepAudioSessionActive;
+    NSXPCConnection * _serverConnection;
 }
 
 @property (nonatomic) BOOL active;

@@ -3,25 +3,26 @@
  */
 
 @interface SWCManager : NSObject <NSURLSessionDelegate, NSXPCListenerDelegate, SWCXPCServer> {
-    BOOL _addedAllApps;
-    BOOL _allowUnsigned;
-    NSMutableArray *_database;
-    NSMutableArray *_deferredRequests;
-    unsigned int _maxNetRequests;
-    NSMutableArray *_netRequests;
-    long long _recheckFailureMaxCount;
-    long long _recheckFailureSecs;
-    double _recheckForceTime;
-    long long _recheckSuccessSecs;
-    BOOL _recheckVersionChange;
-    BOOL _redirects;
-    BOOL _started;
-    NSURLSession *_urlSession;
-    BOOL _verifyEV;
-    BOOL _wellKnown;
-    BOOL _wildcardDomains;
-    NSXPCListener *_xpcListener;
-    NSMutableArray *_xpcRequests;
+    BOOL  _addedAllApps;
+    BOOL  _allowUnsigned;
+    NSMutableArray * _database;
+    NSMutableArray * _deferredRequests;
+    unsigned int  _maxNetRequests;
+    NSMutableArray * _netRequests;
+    BOOL  _rebuildDatabase;
+    int  _recheckFailureMaxCount;
+    int  _recheckFailureSecs;
+    double  _recheckForceTime;
+    int  _recheckSuccessSecs;
+    BOOL  _recheckVersionChange;
+    BOOL  _redirects;
+    BOOL  _started;
+    NSURLSession * _urlSession;
+    BOOL  _verifyEV;
+    BOOL  _wellKnown;
+    BOOL  _wildcardDomains;
+    NSXPCListener * _xpcListener;
+    NSMutableArray * _xpcRequests;
 }
 
 @property (readonly, copy) NSString *debugDescription;

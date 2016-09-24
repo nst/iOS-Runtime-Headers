@@ -3,11 +3,11 @@
  */
 
 @interface MSCLAccountTokenRegisterOperation : SSVComplexOperation {
-    MSCLAccount *_account;
-    SKUIMediaSocialAuthor *_author;
-    SSVMediaSocialPostExternalDestination *_externalDestination;
-    NSLock *_lock;
-    id /* block */ _outputBlock;
+    MSCLAccount * _account;
+    SKUIMediaSocialAuthor * _author;
+    SSVMediaSocialPostExternalDestination * _externalDestination;
+    NSLock * _lock;
+    id /* block */  _outputBlock;
 }
 
 @property (copy) id /* block */ outputBlock;

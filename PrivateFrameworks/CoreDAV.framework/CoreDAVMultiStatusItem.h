@@ -3,8 +3,8 @@
  */
 
 @interface CoreDAVMultiStatusItem : CoreDAVItem {
-    NSMutableArray *_orderedResponses;
-    CoreDAVLeafItem *_responseDescription;
+    NSMutableArray * _orderedResponses;
+    CoreDAVLeafItem * _responseDescription;
 }
 
 @property (nonatomic, retain) NSMutableArray *orderedResponses;

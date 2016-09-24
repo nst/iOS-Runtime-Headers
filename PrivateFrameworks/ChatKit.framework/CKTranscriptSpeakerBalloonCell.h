@@ -3,20 +3,24 @@
  */
 
 @interface CKTranscriptSpeakerBalloonCell : CKTranscriptBalloonCell {
-    BOOL _shouldShowText;
-    CKSpeakerButton *_speakerButton;
-    BOOL _speakerEnabled;
+    BOOL  _adjustSpeakerForAcknowledgment;
+    BOOL  _shouldShowText;
+    CKSpeakerButton * _speakerButton;
+    BOOL  _speakerEnabled;
 }
 
+@property (nonatomic) BOOL adjustSpeakerForAcknowledgment;
 @property (nonatomic) BOOL shouldShowText;
 @property (nonatomic, retain) CKSpeakerButton *speakerButton;
 @property (getter=isSpeakerEnabled, nonatomic) BOOL speakerEnabled;
 @property (getter=isSpeakerHidden, nonatomic) BOOL speakerHidden;
 
-- (void)dealloc;
+- (void).cxx_destruct;
+- (BOOL)adjustSpeakerForAcknowledgment;
 - (BOOL)isSpeakerEnabled;
 - (BOOL)isSpeakerHidden;
 - (void)layoutSubviewsForAlignmentContents;
+- (void)setAdjustSpeakerForAcknowledgment:(BOOL)arg1;
 - (void)setOrientation:(BOOL)arg1;
 - (void)setShouldShowText:(BOOL)arg1;
 - (void)setSpeakerButton:(id)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface ATServiceProxyConnection : NSObject <ATServiceObserver, ATServiceProxyConnection> {
-    NSXPCConnection *_connection;
-    ATService *_service;
+    NSXPCConnection * _connection;
+    ATService * _service;
 }
 
 @property (nonatomic, retain) NSXPCConnection *connection;

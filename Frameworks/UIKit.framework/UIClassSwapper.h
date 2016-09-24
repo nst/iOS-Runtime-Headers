@@ -3,8 +3,8 @@
  */
 
 @interface UIClassSwapper : NSObject {
-    NSString *className;
-    id object;
+    NSString * className;
+    id  object;
 }
 
 + (id)swapperForObject:(id)arg1 withClassName:(id)arg2;

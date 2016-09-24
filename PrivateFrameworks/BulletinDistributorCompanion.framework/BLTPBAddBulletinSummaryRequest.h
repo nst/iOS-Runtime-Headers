@@ -3,7 +3,7 @@
  */
 
 @interface BLTPBAddBulletinSummaryRequest : PBRequest <NSCopying> {
-    BLTPBBulletinSummary *_bulletin;
+    BLTPBBulletinSummary * _bulletin;
 }
 
 @property (nonatomic, retain) BLTPBBulletinSummary *bulletin;

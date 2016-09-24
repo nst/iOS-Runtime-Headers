@@ -3,8 +3,8 @@
  */
 
 @interface CKModifyRecordAccessOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    NSArray *_recordIDsToGrant;
-    NSArray *_recordIDsToRevoke;
+    NSArray * _recordIDsToGrant;
+    NSArray * _recordIDsToRevoke;
 }
 
 @property (nonatomic, retain) NSArray *recordIDsToGrant;

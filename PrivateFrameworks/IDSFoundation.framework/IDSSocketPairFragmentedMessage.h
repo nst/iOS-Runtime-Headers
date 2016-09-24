@@ -3,11 +3,11 @@
  */
 
 @interface IDSSocketPairFragmentedMessage : IDSSocketPairMessage {
-    NSData *_data;
-    unsigned int _fragmentIndex;
-    unsigned int _fragmentedMessageID;
-    unsigned int _offset;
-    unsigned int _totalFragmentCount;
+    NSData * _data;
+    unsigned int  _fragmentIndex;
+    unsigned int  _fragmentedMessageID;
+    unsigned int  _offset;
+    unsigned int  _totalFragmentCount;
 }
 
 @property (nonatomic, readonly, retain) NSData *data;

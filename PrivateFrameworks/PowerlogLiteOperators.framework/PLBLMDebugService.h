@@ -3,15 +3,15 @@
  */
 
 @interface PLBLMDebugService : PLService {
-    PLEntryNotificationOperatorComposition *_bbCallback;
-    PLEntryNotificationOperatorComposition *_btCallback;
-    PLTimer *_debugTimers;
-    PLEntryNotificationOperatorComposition *_ioreportCallback;
-    PLEntryNotificationOperatorComposition *_processmonitorCallback;
-    PLEntryNotificationOperatorComposition *_processnetworkCallback;
-    NSMutableDictionary *_triggers;
-    PLEntryNotificationOperatorComposition *_wifiCallback;
-    PLXPCListenerOperatorComposition *_xpcListenerBLMDebugTrigger;
+    PLEntryNotificationOperatorComposition * _bbCallback;
+    PLEntryNotificationOperatorComposition * _btCallback;
+    PLTimer * _debugTimers;
+    PLEntryNotificationOperatorComposition * _ioreportCallback;
+    PLEntryNotificationOperatorComposition * _processmonitorCallback;
+    PLEntryNotificationOperatorComposition * _processnetworkCallback;
+    NSMutableDictionary * _triggers;
+    PLEntryNotificationOperatorComposition * _wifiCallback;
+    PLXPCListenerOperatorComposition * _xpcListenerBLMDebugTrigger;
 }
 
 @property (retain) PLEntryNotificationOperatorComposition *bbCallback;

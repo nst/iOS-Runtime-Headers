@@ -3,10 +3,16 @@
  */
 
 @interface IKFormatting : NSObject {
-    NSMutableDictionary *_dateFormatters;
-    NSNumberFormatter *_durationFormatter;
-    NSNumberFormatter *_durationPaddedFormatter;
-    NSMutableDictionary *_numberFormatters;
+    NSMutableDictionary * _dateFormatters;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _dateFormattersLock;
+    NSNumberFormatter * _durationFormatter;
+    NSNumberFormatter * _durationPaddedFormatter;
+    NSMutableDictionary * _numberFormatters;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _numberFormattersLock;
 }
 
 + (id)isoDateFormatter;

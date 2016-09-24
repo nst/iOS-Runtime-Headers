@@ -3,21 +3,21 @@
  */
 
 @interface SKUISlideshowViewController : UIViewController <SKUISlideshowItemViewControllerDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIViewControllerTransitioningDelegate> {
-    SKUIClientContext *_clientContext;
-    int _currentIndex;
-    <SKUISlideshowViewControllerDataSource> *_dataSource;
-    <SKUISlideshowViewControllerDelegate> *_delegate;
-    NSMutableDictionary *_itemViewControllersCache;
-    BOOL _lockOverlayControlsVisible;
-    BOOL _overlayVisibilityWillChangeWithDelay;
-    BOOL _overlayVisible;
-    UIPageViewController *_pageViewController;
-    NSOperationQueue *_remoteLoadQueue;
+    SKUIClientContext * _clientContext;
+    int  _currentIndex;
+    <SKUISlideshowViewControllerDataSource> * _dataSource;
+    <SKUISlideshowViewControllerDelegate> * _delegate;
+    NSMutableDictionary * _itemViewControllersCache;
+    BOOL  _lockOverlayControlsVisible;
+    BOOL  _overlayVisibilityWillChangeWithDelay;
+    BOOL  _overlayVisible;
+    UIPageViewController * _pageViewController;
+    NSOperationQueue * _remoteLoadQueue;
     struct { 
         int style; 
         BOOL hidden; 
-    } _savedStatusBarState;
-    BOOL _shouldCancelDelayedOverlayVisibilityChange;
+    }  _savedStatusBarState;
+    BOOL  _shouldCancelDelayedOverlayVisibilityChange;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

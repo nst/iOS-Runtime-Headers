@@ -3,21 +3,21 @@
  */
 
 @interface SKUIMetricsController : NSObject {
-    SKUIMetricsImpressionSession *_activeImpressionsSession;
-    NSString *_applicationIdentifier;
-    SSMetricsController *_controller;
-    BOOL _flushesImmediately;
-    SSMetricsConfiguration *_globalConfiguration;
-    NSString *_hostApplicationIdentifier;
-    BOOL _impressionsEnabled;
-    NSObject<OS_dispatch_source> *_impressionsTimer;
-    BOOL _loggingEnabled;
-    SSMetricsConfiguration *_pageConfiguration;
-    NSString *_pageContext;
-    NSString *_pageURL;
-    NSString *_topic;
-    NSString *_userAgent;
-    NSString *_windowOrientation;
+    SKUIMetricsImpressionSession * _activeImpressionsSession;
+    NSString * _applicationIdentifier;
+    SSMetricsController * _controller;
+    BOOL  _flushesImmediately;
+    SSMetricsConfiguration * _globalConfiguration;
+    NSString * _hostApplicationIdentifier;
+    BOOL  _impressionsEnabled;
+    NSObject<OS_dispatch_source> * _impressionsTimer;
+    BOOL  _loggingEnabled;
+    SSMetricsConfiguration * _pageConfiguration;
+    NSString * _pageContext;
+    NSString * _pageURL;
+    NSString * _topic;
+    NSString * _userAgent;
+    NSString * _windowOrientation;
 }
 
 @property (nonatomic, readonly) NSNumber *accountIdentifier;

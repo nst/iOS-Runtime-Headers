@@ -3,8 +3,8 @@
  */
 
 @interface WeatherInMemoryDefaults : NSObject <WeatherPreferencesPersistence> {
-    NSMutableDictionary *_inMemoryStore;
-    BOOL _synchronizeWasCalled;
+    NSMutableDictionary * _inMemoryStore;
+    BOOL  _synchronizeWasCalled;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -26,7 +26,7 @@
 - (void)setInMemoryStore:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)stringForKey:(id)arg1;
-- (void)synchronize;
+- (BOOL)synchronize;
 - (BOOL)synchronizeWasCalled;
 
 @end

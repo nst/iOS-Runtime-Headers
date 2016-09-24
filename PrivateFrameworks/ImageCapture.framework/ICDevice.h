@@ -3,7 +3,7 @@
  */
 
 @interface ICDevice : NSObject {
-    void *_deviceProperties;
+    void * _deviceProperties;
 }
 
 @property (copy) NSString *UUIDString;

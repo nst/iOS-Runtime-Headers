@@ -3,13 +3,13 @@
  */
 
 @interface PFUbiquityImportOperation : NSOperation {
-    NSObject *_delegate;
-    NSLock *_delegateLock;
-    NSString *_localPeerID;
-    BOOL _lockedDelegateLock;
-    NSPersistentStore *_store;
-    NSString *_storeName;
-    PFUbiquityLocation *_ubiquityRootLocation;
+    NSObject * _delegate;
+    NSLock * _delegateLock;
+    NSString * _localPeerID;
+    BOOL  _lockedDelegateLock;
+    NSPersistentStore * _store;
+    NSString * _storeName;
+    PFUbiquityLocation * _ubiquityRootLocation;
 }
 
 @property NSObject *delegate;

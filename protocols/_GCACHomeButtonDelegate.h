@@ -5,6 +5,7 @@
 
 @required
 
+- (_GCACHomeButton *)menuButton;
 - (void)toggleSuspendResume;
 
 @end

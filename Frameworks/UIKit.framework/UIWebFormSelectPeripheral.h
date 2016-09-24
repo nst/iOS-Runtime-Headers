@@ -3,8 +3,8 @@
  */
 
 @interface UIWebFormSelectPeripheral : NSObject <UIFormPeripheral> {
-    <UIWebFormControl> *_selectControl;
-    DOMHTMLSelectElement *_selectionNode;
+    <UIWebFormControl> * _selectControl;
+    DOMHTMLSelectElement * _selectionNode;
 }
 
 @property (nonatomic, retain) <UIWebFormControl> *_selectControl;

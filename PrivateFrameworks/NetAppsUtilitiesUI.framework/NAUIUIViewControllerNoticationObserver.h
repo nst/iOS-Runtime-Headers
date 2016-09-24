@@ -3,8 +3,8 @@
  */
 
 @interface NAUIUIViewControllerNoticationObserver : NSObject {
-    NSMutableArray *_observations;
-    UIViewController *_viewController;
+    NSMutableArray * _observations;
+    UIViewController * _viewController;
 }
 
 @property (nonatomic) UIViewController *viewController;

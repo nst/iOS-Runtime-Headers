@@ -3,7 +3,7 @@
  */
 
 @interface SCROIOHIDElement : SCROIOElement <SCROIOHIDElementProtocol> {
-    struct __IOHIDDevice { } *_hidDevice;
+    struct __IOHIDDevice { } * _hidDevice;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -7,7 +7,7 @@
         struct __compressed_pair<WebCore::DeviceOrientationClientMock *, std::__1::default_delete<WebCore::DeviceOrientationClientMock> > { 
             struct DeviceOrientationClientMock {} *__first_; 
         } __ptr_; 
-    } m_core;
+    }  m_core;
 }
 
 - (id).cxx_construct;

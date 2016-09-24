@@ -3,8 +3,8 @@
  */
 
 @interface WBSParsecSearchSportsResult : WBSParsecSearchResult {
-    WBSParsecSearchSportsAttributionExtraCompletionItem *_extraCompletionItem;
-    WBSParsecSportsScoreSummary *_scoreSummary;
+    WBSParsecSearchSportsAttributionExtraCompletionItem * _extraCompletionItem;
+    WBSParsecSportsScoreSummary * _scoreSummary;
 }
 
 @property (nonatomic, readonly) WBSParsecSearchSportsAttributionExtraCompletionItem *extraCompletionItem;

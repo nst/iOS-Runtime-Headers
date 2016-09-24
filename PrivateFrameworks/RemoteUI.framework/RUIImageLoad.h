@@ -3,9 +3,9 @@
  */
 
 @interface RUIImageLoad : NSObject {
-    NSURL *_URL;
-    NSURLSessionDataTask *_dataTask;
-    NSURLSession *_urlSession;
+    NSURL * _URL;
+    NSURLSessionDataTask * _dataTask;
+    NSURLSession * _urlSession;
 }
 
 @property (nonatomic, copy) NSURL *URL;

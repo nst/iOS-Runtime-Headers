@@ -3,9 +3,9 @@
  */
 
 @interface MUPayloadEncryption : NSObject {
-    BOOL _haveKey;
-    unsigned char _key;
-    BOOL _keyInitialized;
+    BOOL  _haveKey;
+    unsigned char  _key;
+    BOOL  _keyInitialized;
 }
 
 + (id)sharedInstance;

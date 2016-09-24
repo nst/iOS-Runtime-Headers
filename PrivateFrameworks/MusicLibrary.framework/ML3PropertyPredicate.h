@@ -3,7 +3,7 @@
  */
 
 @interface ML3PropertyPredicate : ML3Predicate {
-    NSString *_property;
+    NSString * _property;
 }
 
 @property (nonatomic, copy) NSString *property;

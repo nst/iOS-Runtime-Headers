@@ -3,7 +3,7 @@
  */
 
 @interface CPDocument : NSObject {
-    NSMutableArray *pages;
+    NSMutableArray * pages;
 }
 
 - (void)addPage:(id)arg1;

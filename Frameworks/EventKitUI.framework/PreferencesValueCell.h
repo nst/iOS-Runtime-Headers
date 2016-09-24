@@ -3,7 +3,7 @@
  */
 
 @interface PreferencesValueCell : EKUIConstrainedFontsTableViewCell {
-    <EKCellShortener> *_shortener;
+    <EKCellShortener> * _shortener;
 }
 
 @property (nonatomic) <EKCellShortener> *shortener;

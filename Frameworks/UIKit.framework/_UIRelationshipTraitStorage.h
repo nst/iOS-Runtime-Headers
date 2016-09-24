@@ -3,7 +3,7 @@
  */
 
 @interface _UIRelationshipTraitStorage : _UITraitStorage {
-    NSOrderedSet *_relationshipCandidates;
+    NSOrderedSet * _relationshipCandidates;
 }
 
 - (void).cxx_destruct;

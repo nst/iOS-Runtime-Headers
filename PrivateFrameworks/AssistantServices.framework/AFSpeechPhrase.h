@@ -3,8 +3,8 @@
  */
 
 @interface AFSpeechPhrase : NSObject <NSSecureCoding> {
-    NSArray *_interpretations;
-    BOOL _isLowConfidence;
+    NSArray * _interpretations;
+    BOOL  _isLowConfidence;
 }
 
 @property (nonatomic, copy) NSArray *interpretations;
@@ -13,11 +13,14 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (struct NSDictionary { Class x1; }*)allInterpretationStringsAndScores;
 - (id)bestInterpretation;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (id)firstInterpretation;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithInterpretations:(id)arg1 isLowConfidence:(BOOL)arg2;
 - (id)interpretations;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isLowConfidence;

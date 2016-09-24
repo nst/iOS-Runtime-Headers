@@ -3,13 +3,13 @@
  */
 
 @interface CNContactSection : NSObject <NSCopying> {
-    NSString *_identifier;
+    NSString * _identifier;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
-    NSString *_sortKey;
-    NSString *_title;
+    }  _range;
+    NSString * _sortKey;
+    NSString * _title;
 }
 
 @property (nonatomic, retain) NSString *identifier;

@@ -3,20 +3,20 @@
  */
 
 @interface FMLocationShifterItem : NSObject {
-    double _accuracy;
-    id _context;
-    struct { 
+    double  _accuracy;
+    id  _context;
+    struct CLLocationCoordinate2D { 
         double latitude; 
         double longitude; 
-    } _coordinate;
-    NSError *_error;
-    BOOL _shifted;
-    NSDate *_timestamp;
+    }  _coordinate;
+    NSError * _error;
+    BOOL  _shifted;
+    NSDate * _timestamp;
 }
 
 @property (nonatomic) double accuracy;
 @property (nonatomic, readonly) id context;
-@property (nonatomic) struct { double x1; double x2; } coordinate;
+@property (nonatomic) struct CLLocationCoordinate2D { double x1; double x2; } coordinate;
 @property (nonatomic, retain) NSError *error;
 @property (nonatomic) BOOL shifted;
 @property (nonatomic, readonly) NSDate *timestamp;
@@ -24,13 +24,13 @@
 - (void).cxx_destruct;
 - (double)accuracy;
 - (id)context;
-- (struct { double x1; double x2; })coordinate;
+- (struct CLLocationCoordinate2D { double x1; double x2; })coordinate;
 - (id)description;
 - (id)error;
 - (id)init;
-- (id)initWithCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 timestamp:(id)arg3 context:(id)arg4;
+- (id)initWithCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 accuracy:(double)arg2 timestamp:(id)arg3 context:(id)arg4;
 - (void)setAccuracy:(double)arg1;
-- (void)setCoordinate:(struct { double x1; double x2; })arg1;
+- (void)setCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
 - (void)setError:(id)arg1;
 - (void)setShifted:(BOOL)arg1;
 - (BOOL)shifted;

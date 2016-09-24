@@ -4,34 +4,18 @@
 
 @interface CoreUI : NSObject
 
-+ (void)_changeToLookGradation:(int)arg1 forceRedraw:(BOOL)arg2;
-+ (id)_customLookDelegate;
 + (void)_determineCompatibilityMode;
 + (BOOL)_hasDarkMenuBarForLook:(struct _themelook { int x1; char *x2; }*)arg1;
 + (void)_invalidateVisibleWindows;
 + (BOOL)_isCurrentLook:(struct _themelook { int x1; char *x2; }*)arg1;
-+ (BOOL)_isInIBCocoaSimulator;
 + (void)_setCurrentSystemThemeLook:(struct _themelook { int x1; char *x2; }*)arg1;
-+ (void)_setCustomLookDelegate:(id)arg1;
 + (void)_setThemeLookDelegate:(id)arg1;
 + (id)_themeLookDelegate;
 + (void)_updateMenuBarDrawingStyleForLook:(struct _themelook { int x1; char *x2; }*)arg1;
-+ (BOOL)boolForDefaultsKey:(id)arg1;
 + (void)changeToLook:(struct _themelook { int x1; char *x2; }*)arg1;
-+ (void)changeToLookGradation:(int)arg1;
 + (int)currentLookGradation;
 + (struct _themelook { int x1; char *x2; }*)currentSystemThemeLook;
-+ (BOOL)defaultExistsForKey:(id)arg1;
-+ (id)defaultsDomainName;
-+ (void)install;
-+ (void)installForCustomLook:(id)arg1;
-+ (int)integerForDefaultsKey:(id)arg1;
-+ (BOOL)isSharedCacheSizeTestEnabled;
 + (int)lookCongruencyForObject:(id)arg1;
 + (int)maximumLookGradation;
-+ (void)setBool:(BOOL)arg1 forDefaultsKey:(id)arg2;
-+ (void)setValue:(id)arg1 forDefaultsKey:(id)arg2;
-+ (id)stringForDefaultsKey:(id)arg1;
-+ (id)versionCreditsString;
 
 @end

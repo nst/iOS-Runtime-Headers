@@ -3,7 +3,7 @@
  */
 
 @interface ISCrossfadeChefA2Operation : ISCrossfadeChefOperation {
-    AVAssetImageGenerator *_imageGenerator;
+    AVAssetImageGenerator * _imageGenerator;
 }
 
 - (void).cxx_destruct;

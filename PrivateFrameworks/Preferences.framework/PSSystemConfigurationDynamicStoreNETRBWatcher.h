@@ -3,10 +3,10 @@
  */
 
 @interface PSSystemConfigurationDynamicStoreNETRBWatcher : NSObject {
-    int _netrbReason;
-    int _netrbState;
-    struct __SCDynamicStore { } *_scDynamicStore;
-    struct __CFRunLoopSource { } *_scRunLoopSource;
+    int  _netrbReason;
+    int  _netrbState;
+    struct __SCDynamicStore { } * _scDynamicStore;
+    struct __CFRunLoopSource { } * _scRunLoopSource;
 }
 
 + (id)sharedManager;

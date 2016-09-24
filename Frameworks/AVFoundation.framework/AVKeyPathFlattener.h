@@ -3,9 +3,9 @@
  */
 
 @interface AVKeyPathFlattener : NSObject <AVKeyPathDependencyHost, AVWeakObservable> {
-    AVTwoPartKeyPath *_dependencyKeyPath;
-    AVKeyPathDependencyManager *_dependencyManager;
-    NSObject *_observedObject;
+    AVTwoPartKeyPath * _dependencyKeyPath;
+    AVKeyPathDependencyManager * _dependencyManager;
+    NSObject * _observedObject;
 }
 
 @property (readonly, copy) NSString *debugDescription;

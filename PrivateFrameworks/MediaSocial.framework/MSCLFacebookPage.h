@@ -3,11 +3,11 @@
  */
 
 @interface MSCLFacebookPage : NSObject <NSCopying> {
-    NSString *_accessToken;
-    NSString *_categoryName;
-    NSString *_identifier;
-    NSString *_name;
-    int _numberOfLikes;
+    NSString * _accessToken;
+    NSString * _categoryName;
+    NSString * _identifier;
+    NSString * _name;
+    int  _numberOfLikes;
 }
 
 @property (nonatomic, copy) NSString *accessToken;

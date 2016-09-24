@@ -3,8 +3,8 @@
  */
 
 @interface SSVMediaContentTasteItemUpdate : NSObject <NSSecureCoding, SSXPCCoding> {
-    SSVMediaContentTasteItem *_item;
-    NSDate *_updateDate;
+    SSVMediaContentTasteItem * _item;
+    NSDate * _updateDate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

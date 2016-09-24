@@ -3,8 +3,8 @@
  */
 
 @interface ICGenerateSearchIndexStringsOperation : NSOperation {
-    NSMutableArray *_mutableSearchStrings;
-    ICSearchIndexableIdentifier *_searchIndexableIdentifier;
+    NSMutableArray * _mutableSearchStrings;
+    ICSearchIndexableIdentifier * _searchIndexableIdentifier;
 }
 
 @property (nonatomic, retain) NSMutableArray *mutableSearchStrings;

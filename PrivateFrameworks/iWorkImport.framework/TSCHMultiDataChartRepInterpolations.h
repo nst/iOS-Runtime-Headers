@@ -3,8 +3,8 @@
  */
 
 @interface TSCHMultiDataChartRepInterpolations : NSObject {
-    CAMediaTimingFunction *mIndividualTimingFunction;
-    CAMediaTimingFunction *mOverallTimingFunction;
+    CAMediaTimingFunction * mIndividualTimingFunction;
+    CAMediaTimingFunction * mOverallTimingFunction;
 }
 
 @property (nonatomic, readonly) CAMediaTimingFunction *individual;

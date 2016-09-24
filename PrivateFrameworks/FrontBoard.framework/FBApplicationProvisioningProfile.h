@@ -3,15 +3,15 @@
  */
 
 @interface FBApplicationProvisioningProfile : NSObject {
-    NSString *_UUID;
-    NSString *_allowedApplicationIdentifierEntitlement;
-    BOOL _appleInternalProfile;
-    BOOL _beta;
-    NSDate *_expirationDate;
-    BOOL _freeDeveloperProfile;
-    BOOL _provisionsAllDevices;
-    BOOL _provisionsThisDevice;
-    NSString *_signerIdentity;
+    NSString * _UUID;
+    NSString * _allowedApplicationIdentifierEntitlement;
+    BOOL  _appleInternalProfile;
+    BOOL  _beta;
+    NSDate * _expirationDate;
+    BOOL  _freeDeveloperProfile;
+    BOOL  _provisionsAllDevices;
+    BOOL  _provisionsThisDevice;
+    NSString * _signerIdentity;
 }
 
 @property (nonatomic, readonly, copy) NSString *UUID;

@@ -3,13 +3,16 @@
  */
 
 @interface TSTTableDataCommentStorage : TSTTableDataObject {
-    TSDCommentStorage *mCommentStorage;
+    TSDCommentStorage * mCommentStorage;
 }
 
+@property (nonatomic, readonly) TSDCommentStorage *commentStorage;
+
+- (id)commentStorage;
 - (void)dealloc;
 - (id)description;
 - (unsigned int)hash;
-- (id)initObjectWithCommentStorage:(id)arg1;
+- (id)initObjectWithCommentStorage:(id)arg1 refCount:(unsigned int)arg2;
 - (BOOL)isEqual:(id)arg1;
 
 @end

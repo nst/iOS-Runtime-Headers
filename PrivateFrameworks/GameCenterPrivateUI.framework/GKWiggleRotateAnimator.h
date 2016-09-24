@@ -3,7 +3,7 @@
  */
 
 @interface GKWiggleRotateAnimator : GKBubblePathAnimator {
-    BOOL _aggroBubbles;
+    BOOL  _aggroBubbles;
 }
 
 @property (nonatomic) BOOL aggroBubbles;

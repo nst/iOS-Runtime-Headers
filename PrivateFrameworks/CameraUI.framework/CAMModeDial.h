@@ -3,13 +3,15 @@
  */
 
 @interface CAMModeDial : UIControl {
-    NSDictionary *__items;
-    UIView *__itemsContainerView;
-    CAGradientLayer *__maskLayer;
-    UIView *__meshTransformView;
-    NSArray *__modes;
-    <CAMModeDialDataSource> *_dataSource;
-    int _selectedMode;
+    NSDictionary * __items;
+    UIView * __itemsContainerView;
+    CAGradientLayer * __maskLayer;
+    UIView * __meshTransformView;
+    NSArray * __modes;
+    UIView * __selectedItemBackgroundView;
+    <CAMModeDialDataSource> * _dataSource;
+    int  _layoutStyle;
+    int  _selectedMode;
 }
 
 @property (setter=_setItems:, nonatomic, retain) NSDictionary *_items;
@@ -17,47 +19,54 @@
 @property (nonatomic, readonly) CAGradientLayer *_maskLayer;
 @property (nonatomic, readonly) UIView *_meshTransformView;
 @property (setter=_setModes:, nonatomic, retain) NSArray *_modes;
+@property (nonatomic, readonly) UIView *_selectedItemBackgroundView;
 @property (nonatomic) <CAMModeDialDataSource> *dataSource;
+@property (nonatomic) int layoutStyle;
 @property (nonatomic) int selectedMode;
 
-+ (BOOL)wantsVerticalModeDialForTraitCollection:(id)arg1;
++ (BOOL)wantsVerticalModeDialForLayoutStyle:(int)arg1;
 
 - (void).cxx_destruct;
 - (float)_centeringNudgeForMode:(int)arg1;
-- (void)_commonCAMModeDialInitialization;
-- (void)_configureMaskForTraitCollection:(id)arg1;
-- (void)_configureMeshTransformForTraitCollection:(id)arg1;
-- (id)_fontForTraitCollection:(id)arg1;
-- (struct CGPoint { float x1; float x2; })_horizontalContainerOriginForMode:(int)arg1;
+- (void)_commonCAMModeDialInitializationWithLayoutStyle:(int)arg1;
+- (void)_configureMaskForLayoutStyle:(int)arg1;
+- (void)_configureMeshTransformForLayoutStyle:(int)arg1;
+- (id)_fontForLayoutStyle:(int)arg1;
+- (struct CGPoint { double x1; double x2; })_horizontalContainerOriginForMode:(int)arg1;
 - (id)_horizontalMeshTransform;
-- (struct CGSize { float x1; float x2; })_interpolatedHorizontalMeshTransformSize;
+- (struct CGSize { double x1; double x2; })_interpolatedHorizontalMeshTransformSize;
 - (id)_items;
 - (id)_itemsContainerView;
 - (void)_layoutHorizontalModeDial;
 - (void)_layoutVerticalModeDial;
 - (id)_maskLayer;
-- (id)_meshTransformForTraitCollection:(id)arg1;
+- (id)_meshTransformForLayoutStyle:(int)arg1;
 - (id)_meshTransformView;
 - (id)_modes;
 - (id)_selectedItem;
+- (id)_selectedItemBackgroundView;
 - (void)_setItems:(id)arg1;
 - (void)_setModes:(id)arg1;
 - (id)_titleForMode:(int)arg1;
 - (void)_updateContainerOriginFromSelectedMode;
-- (void)_updateItemsForTraitCollection:(id)arg1;
-- (struct CGPoint { float x1; float x2; })_verticalContainerOriginForMode:(int)arg1;
-- (id)_verticalMeshTransform;
+- (void)_updateForLayoutStyle;
+- (void)_updateItemsForLayoutStyle:(int)arg1;
+- (void)_updateSelectedItemBackgroundForLayoutStyle:(int)arg1;
+- (struct CGPoint { double x1; double x2; })_verticalContainerOriginForMode:(int)arg1;
 - (id)dataSource;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithLayoutStyle:(int)arg1;
+- (int)layoutStyle;
 - (void)layoutSubviews;
 - (void)reloadData;
 - (int)selectedMode;
 - (void)setDataSource:(id)arg1;
+- (void)setLayoutStyle:(int)arg1;
 - (void)setSelectedMode:(int)arg1;
 - (void)setSelectedMode:(int)arg1 animated:(BOOL)arg2;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)traitCollectionDidChange:(id)arg1;
 - (void)updateToContentSize:(id)arg1;
 
 @end

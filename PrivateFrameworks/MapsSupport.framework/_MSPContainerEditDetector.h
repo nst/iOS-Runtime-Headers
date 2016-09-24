@@ -3,13 +3,22 @@
  */
 
 @interface _MSPContainerEditDetector : NSProxy {
-    <MSPMutableObject> *_object;
-    _MSPContainerEditsRecorder *_owner;
+    <MSPMutableObject> * _object;
+    _MSPContainerEditsRecorder * _owner;
 }
 
++ (id)arrayOfOriginalObjectsFromArray:(id)arg1;
++ (id)originalObjectFromProxyOrObject:(id)arg1;
+
 - (void).cxx_destruct;
+- (id)_maps_MSPContainerEditDetectorOriginalObject;
+- (id)description;
 - (void)forwardInvocation:(id)arg1;
+- (unsigned int)hash;
 - (id)initWithObject:(id)arg1 owner:(id)arg2;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isKindOfClass:(Class)arg1;
+- (BOOL)isMemberOfClass:(Class)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 

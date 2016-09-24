@@ -3,9 +3,9 @@
  */
 
 @interface TSCHMultiDataChartRepElement : NSObject {
-    CALayer<TSCHMultiDataElementShapeLayer> *mElementLayer;
-    BOOL mElementUndefined;
-    TSCHMultiDataAnimatingFrameLayer *mLabelLayer;
+    CALayer<TSCHMultiDataElementShapeLayer> * mElementLayer;
+    BOOL  mElementUndefined;
+    TSCHMultiDataAnimatingFrameLayer * mLabelLayer;
 }
 
 @property (nonatomic, readonly) CALayer<TSCHMultiDataElementShapeLayer> *elementLayer;

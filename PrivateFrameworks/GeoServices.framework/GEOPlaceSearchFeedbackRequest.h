@@ -3,8 +3,8 @@
  */
 
 @interface GEOPlaceSearchFeedbackRequest : PBRequest <NSCopying> {
-    long long _businessID;
-    int _feedbackType;
+    int  _businessID;
+    int  _feedbackType;
     struct { 
         unsigned int sessionGUID : 1; 
         unsigned int businessID : 1; 
@@ -14,19 +14,19 @@
         unsigned int numberOfResults : 1; 
         unsigned int positionInResults : 1; 
         unsigned int sequenceNumber : 1; 
-    } _has;
-    int _localSearchProviderID;
-    int _numberOfResults;
-    int _positionInResults;
-    int _sequenceNumber;
-    struct { 
-        unsigned long long _high; 
-        unsigned long long _low; 
-    } _sessionGUID;
-    double _timestamp;
+    }  _has;
+    int  _localSearchProviderID;
+    int  _numberOfResults;
+    int  _positionInResults;
+    int  _sequenceNumber;
+    struct GEOSessionID { 
+        unsigned int _high; 
+        unsigned int _low; 
+    }  _sessionGUID;
+    double  _timestamp;
 }
 
-@property (nonatomic) long long businessID;
+@property (nonatomic) int businessID;
 @property (nonatomic) int feedbackType;
 @property (nonatomic) BOOL hasBusinessID;
 @property (nonatomic) BOOL hasFeedbackType;
@@ -40,15 +40,17 @@
 @property (nonatomic) int numberOfResults;
 @property (nonatomic) int positionInResults;
 @property (nonatomic) int sequenceNumber;
-@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; } sessionGUID;
+@property (nonatomic) struct GEOSessionID { unsigned int x1; unsigned int x2; } sessionGUID;
 @property (nonatomic) double timestamp;
 
-- (long long)businessID;
+- (int)StringAsFeedbackType:(id)arg1;
+- (int)businessID;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)feedbackType;
+- (id)feedbackTypeAsString:(int)arg1;
 - (BOOL)hasBusinessID;
 - (BOOL)hasFeedbackType;
 - (BOOL)hasLocalSearchProviderID;
@@ -67,8 +69,8 @@
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (int)sequenceNumber;
-- (struct { unsigned long long x1; unsigned long long x2; })sessionGUID;
-- (void)setBusinessID:(long long)arg1;
+- (struct GEOSessionID { unsigned int x1; unsigned int x2; })sessionGUID;
+- (void)setBusinessID:(int)arg1;
 - (void)setFeedbackType:(int)arg1;
 - (void)setHasBusinessID:(BOOL)arg1;
 - (void)setHasFeedbackType:(BOOL)arg1;
@@ -82,7 +84,7 @@
 - (void)setNumberOfResults:(int)arg1;
 - (void)setPositionInResults:(int)arg1;
 - (void)setSequenceNumber:(int)arg1;
-- (void)setSessionGUID:(struct { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setSessionGUID:(struct GEOSessionID { unsigned int x1; unsigned int x2; })arg1;
 - (void)setTimestamp:(double)arg1;
 - (double)timestamp;
 - (void)writeTo:(id)arg1;

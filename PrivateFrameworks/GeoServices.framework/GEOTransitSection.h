@@ -7,28 +7,32 @@
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _actionSheetArtworkIndexs;
-    NSString *_actionSheetName;
+    }  _actionSheetArtworkIndexs;
+    NSString * _actionSheetName;
+    BOOL  _disableAlightNotifications;
     struct { 
         unsigned int nextOptionsIndex : 1; 
-    } _has;
-    int _nextOptionsIndex;
+        unsigned int disableAlightNotifications : 1; 
+    }  _has;
+    int  _nextOptionsIndex;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _routeDetailsArtworkIndexs;
+    }  _routeDetailsArtworkIndexs;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _stepIndexs;
+    }  _stepIndexs;
 }
 
 @property (nonatomic, readonly) unsigned int*actionSheetArtworkIndexs;
 @property (nonatomic, readonly) unsigned int actionSheetArtworkIndexsCount;
 @property (nonatomic, retain) NSString *actionSheetName;
+@property (nonatomic) BOOL disableAlightNotifications;
 @property (nonatomic, readonly) BOOL hasActionSheetName;
+@property (nonatomic) BOOL hasDisableAlightNotifications;
 @property (nonatomic) BOOL hasNextOptionsIndex;
 @property (nonatomic) int nextOptionsIndex;
 @property (nonatomic, readonly) unsigned int*routeDetailsArtworkIndexs;
@@ -51,7 +55,9 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)disableAlightNotifications;
 - (BOOL)hasActionSheetName;
+- (BOOL)hasDisableAlightNotifications;
 - (BOOL)hasNextOptionsIndex;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -63,6 +69,8 @@
 - (unsigned int)routeDetailsArtworkIndexsCount;
 - (void)setActionSheetArtworkIndexs:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)setActionSheetName:(id)arg1;
+- (void)setDisableAlightNotifications:(BOOL)arg1;
+- (void)setHasDisableAlightNotifications:(BOOL)arg1;
 - (void)setHasNextOptionsIndex:(BOOL)arg1;
 - (void)setNextOptionsIndex:(int)arg1;
 - (void)setRouteDetailsArtworkIndexs:(unsigned int*)arg1 count:(unsigned int)arg2;

@@ -3,8 +3,8 @@
  */
 
 @interface SGTuple2 : NSObject <NSCopying> {
-    NSObject *_first;
-    NSObject *_second;
+    NSObject * _first;
+    NSObject * _second;
 }
 
 @property (nonatomic, readonly) NSObject *first;
@@ -14,6 +14,7 @@
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (id)first;
 - (unsigned int)hash;
 - (id)init;

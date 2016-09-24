@@ -3,8 +3,8 @@
  */
 
 @interface UIKBKeyInterval : NSObject {
-    double _interval;
-    UIKBTree *_key;
+    double  _interval;
+    UIKBTree * _key;
 }
 
 @property (nonatomic) double interval;

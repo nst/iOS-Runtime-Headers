@@ -3,8 +3,8 @@
  */
 
 @interface NFMIDSServiceDelegate : NSObject <IDSServiceDelegate> {
-    NSMutableDictionary *_inflightMessages;
-    NSMutableDictionary *_pendingMessages;
+    NSMutableDictionary * _inflightMessages;
+    NSMutableDictionary * _pendingMessages;
 }
 
 @property (readonly, copy) NSString *debugDescription;

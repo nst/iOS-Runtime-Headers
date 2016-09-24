@@ -3,9 +3,9 @@
  */
 
 @interface AVAssetTrackEnumerator : NSEnumerator {
-    NSEnumerator *_enumerator;
-    NSArray *_mediaCharacteristics;
-    NSString *_mediaType;
+    NSEnumerator * _enumerator;
+    NSArray * _mediaCharacteristics;
+    NSString * _mediaType;
 }
 
 + (id)trackEnumeratorWithAsset:(id)arg1;

@@ -3,10 +3,10 @@
  */
 
 @interface SSReadingList : NSObject {
-    BOOL _batchScheduled;
-    NSObject<OS_xpc_object> *_batchedReadingListItems;
-    WebBookmarksXPCConnection *_connection;
-    NSObject<OS_dispatch_queue> *_serialQueue;
+    BOOL  _batchScheduled;
+    NSObject<OS_xpc_object> * _batchedReadingListItems;
+    WebBookmarksXPCConnection * _connection;
+    NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
 + (id)defaultReadingList;

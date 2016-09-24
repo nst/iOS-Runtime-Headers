@@ -3,12 +3,12 @@
  */
 
 @interface RCCaptureInputDevice : NSObject <RCCaptureSessionObserver> {
-    NSString *_activeInputRouteName;
-    _RCCaptureInputDeviceSession *_activeInputSession;
-    RCAudioSessionRoutingController *_audioRouteController;
-    BOOL _inputAvailable;
-    _RCCaptureInputDeviceSession *_pendingInputSession;
-    _RCCaptureInputDeviceSession *_preparingInputSession;
+    NSString * _activeInputRouteName;
+    _RCCaptureInputDeviceSession * _activeInputSession;
+    RCAudioSessionRoutingController * _audioRouteController;
+    BOOL  _inputAvailable;
+    _RCCaptureInputDeviceSession * _pendingInputSession;
+    _RCCaptureInputDeviceSession * _preparingInputSession;
 }
 
 @property (nonatomic, readonly) RCCaptureSession *activeCaptureSession;

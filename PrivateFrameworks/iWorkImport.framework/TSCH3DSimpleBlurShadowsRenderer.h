@@ -3,9 +3,9 @@
  */
 
 @interface TSCH3DSimpleBlurShadowsRenderer : NSObject <TSCH3DShadowsRenderer> {
-    TSCH3DFBOResource *mBlurFBOResource;
-    NSArray *mBlurParametersArray;
-    TSCH3DFBOResource *mShadowsFBOResource;
+    TSCH3DFBOResource * mBlurFBOResource;
+    NSArray * mBlurParametersArray;
+    TSCH3DFBOResource * mShadowsFBOResource;
     struct tvec2<int> { 
         union { 
             int x; 
@@ -17,7 +17,7 @@
             int g; 
             int t; 
         } ; 
-    } mShadowsSize;
+    }  mShadowsSize;
 }
 
 - (id).cxx_construct;

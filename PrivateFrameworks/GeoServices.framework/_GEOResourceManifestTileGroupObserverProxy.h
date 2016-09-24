@@ -3,12 +3,12 @@
  */
 
 @interface _GEOResourceManifestTileGroupObserverProxy : NSObject {
-    NSHashTable *_observers;
-    NSLock *_observersLock;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSHashTable * _observers;
+    NSLock * _observersLock;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
-@property (nonatomic) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
 - (void)addObserver:(id)arg1;
 - (void)dealloc;

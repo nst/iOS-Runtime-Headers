@@ -3,7 +3,7 @@
  */
 
 @interface OADTextRun : NSObject {
-    OADCharacterProperties *mProperties;
+    OADCharacterProperties * mProperties;
 }
 
 - (unsigned int)characterCount;

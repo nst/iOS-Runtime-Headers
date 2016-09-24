@@ -3,7 +3,7 @@
  */
 
 @interface TSTRichTextPayload : TSPObject <TSPCopying> {
-    TSWPStorage *mStorage;
+    TSWPStorage * mStorage;
 }
 
 @property (nonatomic, retain) TSWPStorage *storage;

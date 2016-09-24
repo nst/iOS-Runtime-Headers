@@ -2,29 +2,30 @@
    Image: /System/Library/PrivateFrameworks/VoiceTriggerUI.framework/VoiceTriggerUI
  */
 
-@interface VTUITrainingManager : NSObject <AFAudioAnalyzerDelegate, VTUIAudioSessionDelegate, VTUIRMSDelegate> {
-    AFAudioAnalyzer *_audioAnalyzer;
-    <VTUIAudioSession> *_audioSession;
-    id /* block */ _cleanupCompletion;
-    VTUITrainingSession *_currentTrainingSession;
-    <VTUITrainingManagerDelegate> *_delegate;
-    NSString *_locale;
-    BOOL _performRMS;
-    VTPhraseSpotter *_phraseSpotter;
-    NSObject<OS_dispatch_queue> *_queue;
-    float _rms;
-    int _sessionNumber;
-    SFSpeechRecognizer *_speechRecognizer;
-    BOOL _speechRecognizerAvailable;
-    BOOL _suspendAudio;
-    NSMutableArray *_trainingSessions;
+@interface VTUITrainingManager : NSObject <AFAudioAnalyzerDelegate, VTUIAudioSessionDelegate, VTUITrainingSessionDelegate> {
+    AFAudioAnalyzer * _audioAnalyzer;
+    <VTUIAudioSession> * _audioSession;
+    id /* block */  _cleanupCompletion;
+    VTUITrainingSession * _currentTrainingSession;
+    <VTUITrainingManagerDelegate> * _delegate;
+    NSString * _locale;
+    BOOL  _performRMS;
+    VTPhraseSpotter * _phraseSpotter;
+    NSObject<OS_dispatch_queue> * _queue;
+    double  _rms;
+    int  _sessionNumber;
+    SFSpeechRecognizer * _speechRecognizer;
+    BOOL  _speechRecognizerAvailable;
+    BOOL  _suspendAudio;
+    NSMutableArray * _trainingSessions;
 }
 
+@property (readonly) int audioSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <VTUITrainingManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property float rms;
+@property double rms;
 @property (readonly) BOOL speechRecognizerAvailable;
 @property (readonly) Class superclass;
 @property BOOL suspendAudio;
@@ -34,6 +35,9 @@
 
 - (void).cxx_destruct;
 - (void)VTUITrainingSessionRMSAvailable:(float)arg1;
+- (void)VTUITrainingSessionStopListen;
+- (void)_beginOfSpeechDetected;
+- (void)_endOfSpeechDetected;
 - (void)audioAnalyzer:(id)arg1 didDetectHardEndpointAtTime:(double)arg2;
 - (void)audioAnalyzer:(id)arg1 didDetectStartpointAtTime:(double)arg2;
 - (void)audioSessionDidStartRecording:(BOOL)arg1 error:(id)arg2;
@@ -41,15 +45,17 @@
 - (void)audioSessionErrorDidOccur:(id)arg1;
 - (void)audioSessionRecordBufferAvailable:(id)arg1;
 - (void)audioSessionUnsupportedAudioRoute;
+- (int)audioSource;
 - (BOOL)cancelTrainingForID:(int)arg1;
 - (id)cleanupWithCompletion:(id /* block */)arg1;
-- (void)closeSessionBeforeStartWithStatus:(int)arg1 withCompletion:(id /* block */)arg2;
+- (void)closeSessionBeforeStartWithStatus:(int)arg1 successfully:(BOOL)arg2 withCompletion:(id /* block */)arg3;
 - (BOOL)createAudioAnalyzer;
 - (void)createSpeechRecognizer;
 - (BOOL)createVoiceTrigger;
 - (id)delegate;
 - (void)destroyAudioSession;
 - (void)destroyVoiceTrigger;
+- (void)didDetectForceEndPoint;
 - (id)initWithLocaleIdentifier:(id)arg1 withAudioSession:(id)arg2;
 - (void)reset;
 - (float)rms;

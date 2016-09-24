@@ -3,7 +3,7 @@
  */
 
 @interface AAAccountManagementUIResponse : AAResponse {
-    NSData *_responseData;
+    NSData * _responseData;
 }
 
 @property (nonatomic, readonly) NSData *responseData;

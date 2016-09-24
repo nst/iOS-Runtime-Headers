@@ -3,12 +3,12 @@
  */
 
 @interface NSEncodingDetectionPlaceholder : NSObject {
-    char *bytes;
-    unsigned long bytesLength;
-    char *bytesStart;
-    unsigned long cfEncoding;
-    unsigned int nsEncoding;
-    NSString *string;
+    char * bytes;
+    unsigned long  bytesLength;
+    char * bytesStart;
+    unsigned long  cfEncoding;
+    unsigned int  nsEncoding;
+    NSString * string;
 }
 
 @property (readonly) char *bytes;
@@ -24,7 +24,6 @@
 - (unsigned long)cfEncoding;
 - (void)dealloc;
 - (id)debugDescription;
-- (void)finalize;
 - (unsigned int)nsEncoding;
 - (id)string;
 

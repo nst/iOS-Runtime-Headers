@@ -3,10 +3,10 @@
  */
 
 @interface GEOEditionEntry : NSObject {
-    unsigned int _edition;
-    BOOL _invalidateOnly;
-    unsigned int _provider;
-    unsigned int _tileset;
+    unsigned int  _edition;
+    BOOL  _invalidateOnly;
+    unsigned int  _provider;
+    unsigned int  _tileset;
 }
 
 @property unsigned int edition;

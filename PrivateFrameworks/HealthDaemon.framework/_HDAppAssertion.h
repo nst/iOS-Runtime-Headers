@@ -3,17 +3,17 @@
  */
 
 @interface _HDAppAssertion : NSObject {
-    HDAppAssertionManager *_assertionManager;
-    NSString *_bundleIdentifier;
-    HDDaemon *_daemon;
-    BOOL _invalidated;
-    double _lastLaunchAttempt;
-    int _launchErrorCount;
-    NSMutableArray *_pendingDataTypeCodes;
-    NSMutableDictionary *_pendingLaunchCompletions;
-    NSMutableSet *_processAssertions;
-    NSObject<OS_dispatch_source> *_processDeathSource;
-    NSObject<OS_dispatch_queue> *_queue;
+    HDAppAssertionManager * _assertionManager;
+    NSString * _bundleIdentifier;
+    HDDaemon * _daemon;
+    BOOL  _invalidated;
+    double  _lastLaunchAttempt;
+    int  _launchErrorCount;
+    NSMutableArray * _pendingDataTypeCodes;
+    NSMutableDictionary * _pendingLaunchCompletions;
+    NSMutableSet * _processAssertions;
+    NSObject<OS_dispatch_source> * _processDeathSource;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic) HDAppAssertionManager *assertionManager;

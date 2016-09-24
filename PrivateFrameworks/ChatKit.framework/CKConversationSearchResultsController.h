@@ -3,10 +3,10 @@
  */
 
 @interface CKConversationSearchResultsController : UITableViewController <UISearchResultsUpdating> {
-    CKSpotlightQuery *_currentQuery;
-    <CKConversationResultsControllerDelegate> *_delegate;
-    NSArray *_searchResults;
-    NSString *_selectedChatGUID;
+    CKSpotlightQuery * _currentQuery;
+    <CKConversationResultsControllerDelegate> * _delegate;
+    NSArray * _searchResults;
+    NSString * _selectedChatGUID;
 }
 
 @property (nonatomic, retain) CKSpotlightQuery *currentQuery;
@@ -18,12 +18,14 @@
 @property (nonatomic, retain) NSString *selectedChatGUID;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)_selectChatGUID:(id)arg1;
 - (void)cancelCurrentQuery;
 - (id)currentQuery;
 - (void)dealloc;
 - (id)delegate;
+- (void)loadView;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)searchEnded;
 - (id)searchResults;

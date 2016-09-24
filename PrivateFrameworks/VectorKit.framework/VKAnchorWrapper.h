@@ -3,20 +3,27 @@
  */
 
 @interface VKAnchorWrapper : NSObject <VKAnchorDelegate> {
-    VKAnchor *_anchor;
-    MDDisplayLayer *_displayLayer;
-    BOOL _followsTerrain;
-    BOOL _isUpdating;
-    struct { 
-        double latitude; 
-        double longitude; 
-    } _lastCoordinate;
-    VKLayoutContext *_lastLayoutContext;
-    double _pointsPerMeter;
+    struct shared_ptr<md::Anchor> { 
+        struct Anchor {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    }  _anchor;
+    MDDisplayLayer * _displayLayer;
+    BOOL  _followsTerrain;
+    BOOL  _isUpdating;
+    struct Coordinate2D<Degrees, double> { 
+        struct Unit<DegreeUnitDescription, double> { 
+            double _value; 
+        } latitude; 
+        struct Unit<DegreeUnitDescription, double> { 
+            double _value; 
+        } longitude; 
+    }  _lastCoordinate;
+    struct LayoutContext { id x1; short x2; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x3; void*x4; const void*x5; double x6; void*x7; void*x8; void*x9; const void*x10; void*x11; double x12; SEL x13; SEL x14; oneway int x15; void*x16; void*x17; void*x18; const void*x19; in short x20; double x21; out const void*x22; void*x23; void*x24; struct ViewTransform {} *x25; struct __shared_weak_count {} *x26; } * _lastLayoutContext;
+    double  _pointsPerMeter;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _screenPointInCanvas;
+        double x; 
+        double y; 
+    }  _screenPointInCanvas;
 }
 
 @property (nonatomic, readonly) struct { double x1; double x2; } coordinate;
@@ -27,15 +34,18 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (id)_anchorWithContext:(id)arg1;
-- (void)_updateCachedPointWithContext:(id)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (struct shared_ptr<md::Anchor> { struct Anchor {} *x1; struct __shared_weak_count {} *x2; })_anchorWithContext:(struct LayoutContext { id x1; short x2; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x3; void*x4; const void*x5; double x6; void*x7; void*x8; void*x9; const void*x10; void*x11; double x12; SEL x13; SEL x14; oneway int x15; void*x16; void*x17; void*x18; const void*x19; in short x20; double x21; out const void*x22; void*x23; void*x24; struct ViewTransform {} *x25; struct __shared_weak_count {} *x26; }*)arg1;
+- (void)_updateCachedPointWithContext:(struct LayoutContext { id x1; short x2; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x3; void*x4; const void*x5; double x6; void*x7; void*x8; void*x9; const void*x10; void*x11; double x12; SEL x13; SEL x14; oneway int x15; void*x16; void*x17; void*x18; const void*x19; in short x20; double x21; out const void*x22; void*x23; void*x24; struct ViewTransform {} *x25; struct __shared_weak_count {} *x26; }*)arg1;
 - (void)anchorWorldPointDidChange:(void*)arg1;
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
+- (void)destroyAnchor;
 - (id)displayLayer;
 - (BOOL)followsTerrain;
-- (void)layoutWithContext:(id)arg1;
-- (struct CGPoint { float x1; float x2; })pointInLayer:(id)arg1;
+- (void)layoutWithContext:(struct LayoutContext { id x1; short x2; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x3; void*x4; const void*x5; double x6; void*x7; void*x8; void*x9; const void*x10; void*x11; double x12; SEL x13; SEL x14; oneway int x15; void*x16; void*x17; void*x18; const void*x19; in short x20; double x21; out const void*x22; void*x23; void*x24; struct ViewTransform {} *x25; struct __shared_weak_count {} *x26; }*)arg1;
+- (struct CGPoint { double x1; double x2; })pointInLayer:(id)arg1;
 - (float)pointOffsetForDistanceOffset:(double)arg1;
 - (void)setDisplayLayer:(id)arg1;
 - (void)setFollowsTerrain:(BOOL)arg1;

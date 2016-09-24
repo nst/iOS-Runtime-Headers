@@ -3,7 +3,7 @@
  */
 
 @interface HDCodableMetadataDictionary : PBCodable <NSCopying> {
-    NSMutableArray *_keyValuePairs;
+    NSMutableArray * _keyValuePairs;
 }
 
 @property (nonatomic, retain) NSMutableArray *keyValuePairs;

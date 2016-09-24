@@ -3,7 +3,7 @@
  */
 
 @interface CoreDAVCalendarServerPushTransportsItem : CoreDAVItem {
-    NSMutableSet *_transports;
+    NSMutableSet * _transports;
 }
 
 @property (nonatomic, retain) NSMutableSet *transports;

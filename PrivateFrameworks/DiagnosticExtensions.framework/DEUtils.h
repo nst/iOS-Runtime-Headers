@@ -6,6 +6,7 @@
 
 + (id)copyPath:(id)arg1 toDestinationDir:(id)arg2 zipped:(BOOL)arg3;
 + (id)copyPaths:(id)arg1 toDestinationDir:(id)arg2 withZipName:(id)arg3;
++ (id)findEntriesInDirectory:(id)arg1 createdAfter:(id)arg2 matchingPattern:(id)arg3;
 + (id)processErrorResponse:(id)arg1;
 + (void)removeFile:(id)arg1;
 + (id)uniqueDateString;

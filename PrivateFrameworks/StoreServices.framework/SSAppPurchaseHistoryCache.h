@@ -3,9 +3,9 @@
  */
 
 @interface SSAppPurchaseHistoryCache : NSObject {
-    SSAccount *_account;
-    SSDatabaseCache *_databaseCache;
-    SSAppPurchaseHistoryDatabase *_purchaseHistoryDatabase;
+    SSAccount * _account;
+    SSDatabaseCache * _databaseCache;
+    SSAppPurchaseHistoryDatabase * _purchaseHistoryDatabase;
 }
 
 - (id)allUncachedImages;
@@ -15,8 +15,8 @@
 - (id)imageDataForAdamID:(id)arg1;
 - (id)init;
 - (id)initWithAccount:(id)arg1;
-- (unsigned long long)purge:(unsigned long long)arg1;
-- (unsigned long long)purgeableSpace;
+- (unsigned int)purge:(unsigned int)arg1;
+- (unsigned int)purgeableSpace;
 - (BOOL)setImageData:(id)arg1 forAdamID:(id)arg2 imageToken:(id)arg3;
 
 @end

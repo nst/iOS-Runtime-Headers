@@ -6,9 +6,9 @@
     struct { 
         unsigned int sessionIdentifier : 1; 
         unsigned int wifiAvailable : 1; 
-    } _has;
-    int _sessionIdentifier;
-    BOOL _wifiAvailable;
+    }  _has;
+    int  _sessionIdentifier;
+    BOOL  _wifiAvailable;
 }
 
 @property (nonatomic) BOOL hasSessionIdentifier;

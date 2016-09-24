@@ -10,6 +10,10 @@
 + (id)whitelistedBundles;
 
 - (void)CADPushItemsToSpotlight:(id)arg1 reply:(id /* block */)arg2;
+- (id)_gatherAllCalendarItemUUIDs;
+- (void)_pushUpdatesForCalendarItemsWithUUIDs:(id)arg1;
+- (void)_pushUpdatesForCalendarItemsWithUUIDs:(id)arg1 inBatchesOf:(unsigned int)arg2;
+- (void)_resetDatabase;
 - (BOOL)accessGrantedToPerformSelector:(SEL)arg1;
 
 @end

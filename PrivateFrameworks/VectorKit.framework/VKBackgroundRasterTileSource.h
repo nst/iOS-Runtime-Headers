@@ -5,7 +5,7 @@
 @interface VKBackgroundRasterTileSource : VKRasterTileSource
 
 - (int)defaultMaximumZoomLevel;
-- (unsigned long long)mapLayerForZoomLevelRange;
+- (unsigned int)mapLayerForZoomLevelRange;
 - (BOOL)maximumZoomLevelBoundsCamera;
 
 @end

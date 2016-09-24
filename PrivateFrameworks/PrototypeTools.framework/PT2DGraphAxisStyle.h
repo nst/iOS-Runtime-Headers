@@ -3,23 +3,23 @@
  */
 
 @interface PT2DGraphAxisStyle : NSObject {
-    UIColor *_color;
-    UIColor *_gridlineColor;
-    unsigned int _gridlineCount;
-    float _hashmarkInterval;
-    float _lineWidth;
-    BOOL _showsGridlines;
-    BOOL _showsHashmarks;
-    BOOL _showsTitle;
-    NSString *_title;
-    UIColor *_titleColor;
+    UIColor * _color;
+    UIColor * _gridlineColor;
+    unsigned int  _gridlineCount;
+    double  _hashmarkInterval;
+    double  _lineWidth;
+    BOOL  _showsGridlines;
+    BOOL  _showsHashmarks;
+    BOOL  _showsTitle;
+    NSString * _title;
+    UIColor * _titleColor;
 }
 
 @property (nonatomic, retain) UIColor *color;
 @property (nonatomic, retain) UIColor *gridlineColor;
 @property (nonatomic) unsigned int gridlineCount;
-@property (nonatomic) float hashmarkInterval;
-@property (nonatomic) float lineWidth;
+@property (nonatomic) double hashmarkInterval;
+@property (nonatomic) double lineWidth;
 @property (nonatomic) BOOL showsGridlines;
 @property (nonatomic) BOOL showsHashmarks;
 @property (nonatomic) BOOL showsTitle;

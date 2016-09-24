@@ -3,9 +3,9 @@
  */
 
 @interface NFHardwareBoosterInfo : NSObject <NSSecureCoding> {
-    NSData *_dynamicConfig;
-    unsigned int _siliconVersion;
-    NSData *_staticConfig;
+    NSData * _dynamicConfig;
+    unsigned int  _siliconVersion;
+    NSData * _staticConfig;
 }
 
 @property (nonatomic, readonly) NSData *dynamicConfig;

@@ -3,15 +3,15 @@
  */
 
 @interface NEUtilConfigurationClient : NSObject <NEConfigurationCommandHandling> {
-    NSString *_clientName;
-    NSString *_configFile;
-    NSString *_configFileLast;
-    NSMutableArray *_createdConfigurations;
-    NEConfiguration *_currentConfiguration;
-    NSMutableArray *_currentConfigurations;
-    NSMutableArray *_identities;
-    BOOL _isAlwaysOn;
-    NEConfigurationManager *_manager;
+    NSString * _clientName;
+    NSString * _configFile;
+    NSString * _configFileLast;
+    NSMutableArray * _createdConfigurations;
+    NEConfiguration * _currentConfiguration;
+    NSMutableArray * _currentConfigurations;
+    NSMutableArray * _identities;
+    BOOL  _isAlwaysOn;
+    NEConfigurationManager * _manager;
 }
 
 @property (readonly) NSString *clientName;

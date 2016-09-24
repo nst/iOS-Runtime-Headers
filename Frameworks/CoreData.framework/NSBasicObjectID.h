@@ -3,8 +3,8 @@
  */
 
 @interface NSBasicObjectID : _NSCoreManagedObjectID {
-    int _cd_rc;
-    id _referenceData;
+    int  _cd_rc;
+    id  _referenceData;
 }
 
 + (char *)generatedNameSuffix;

@@ -19,7 +19,7 @@
             int b; 
             int p; 
         } ; 
-    } mFullSize;
+    }  mFullSize;
     struct tvec3<int> { 
         union { 
             int x; 
@@ -36,8 +36,8 @@
             int b; 
             int p; 
         } ; 
-    } mLevel0Size;
-    unsigned int mTarget;
+    }  mLevel0Size;
+    unsigned int  mTarget;
 }
 
 @property (nonatomic) struct tvec3<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; union { int x_3_1_1; int x_3_1_2; int x_3_1_3; } x3; } fullSize;

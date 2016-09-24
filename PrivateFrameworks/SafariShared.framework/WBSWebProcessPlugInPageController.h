@@ -3,8 +3,8 @@
  */
 
 @interface WBSWebProcessPlugInPageController : NSObject <WKWebProcessPlugInLoadDelegate> {
-    WKWebProcessPlugInBrowserContextController *_browserContextController;
-    WBSWebProcessPlugIn *_webProcessPlugIn;
+    WKWebProcessPlugInBrowserContextController * _browserContextController;
+    WBSWebProcessPlugIn * _webProcessPlugIn;
 }
 
 @property (nonatomic, readonly) WKWebProcessPlugInBrowserContextController *browserContextController;

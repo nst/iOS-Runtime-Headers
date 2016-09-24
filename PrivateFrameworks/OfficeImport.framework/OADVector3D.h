@@ -3,9 +3,9 @@
  */
 
 @interface OADVector3D : NSObject <NSCopying> {
-    float mDx;
-    float mDy;
-    float mDz;
+    double  mDx;
+    double  mDy;
+    double  mDz;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

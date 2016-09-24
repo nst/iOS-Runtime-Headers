@@ -3,8 +3,8 @@
  */
 
 @interface GEORPCorrectedCoordinate : PBCodable <NSCopying> {
-    GEOLatLng *_correctedCoordinate;
-    GEOLatLng *_originalCoordinate;
+    GEOLatLng * _correctedCoordinate;
+    GEOLatLng * _originalCoordinate;
 }
 
 @property (nonatomic, retain) GEOLatLng *correctedCoordinate;

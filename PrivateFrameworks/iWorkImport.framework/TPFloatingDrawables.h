@@ -3,9 +3,9 @@
  */
 
 @interface TPFloatingDrawables : TSPObject <TSKDocumentObject> {
-    TPDocumentRoot *_documentRoot;
-    NSMutableDictionary *_drawablesByPageIndex;
-    TSUPointerKeyDictionary *_pageIndexByDrawable;
+    TPDocumentRoot * _documentRoot;
+    NSMutableDictionary * _drawablesByPageIndex;
+    TSUPointerKeyDictionary * _pageIndexByDrawable;
 }
 
 @property (nonatomic, readonly) TPDocumentRoot *documentRoot;

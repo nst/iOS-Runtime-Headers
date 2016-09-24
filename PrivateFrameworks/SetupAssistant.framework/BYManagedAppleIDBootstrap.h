@@ -3,8 +3,8 @@
  */
 
 @interface BYManagedAppleIDBootstrap : NSObject <AKAppleIDAuthenticationDelegate> {
-    AKAppleIDAuthenticationContext *_authContext;
-    UMUserSwitchContext *_userSwitchContext;
+    AKAppleIDAuthenticationContext * _authContext;
+    UMUserSwitchContext * _userSwitchContext;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,8 +20,9 @@
 + (id)sharedManager;
 
 - (void).cxx_destruct;
+- (void)_createAppleAccountWithUsername:(id)arg1 password:(id)arg2 rawPassword:(id)arg3 completion:(id /* block */)arg4;
 - (id)_languageConfigurationDictionary;
-- (void)_silentSignInInFailedWithError:(id)arg1;
+- (void)_runSilentLoginUpgradeWithCompletion:(id /* block */)arg1;
 - (void)_upgradeShortLivedTokenCompletion:(id /* block */)arg1;
 - (void)dealloc;
 - (void)ingestManagedBuddyData;
@@ -29,11 +30,11 @@
 - (BOOL)isLoginUser;
 - (BOOL)needsToUpgradeShortLivedToken;
 - (BOOL)passwordChangeFlowNeedsToRun;
+- (void)postUserSwitchContextHasBeenUsed;
 - (void)recoverEMCSWithCompletion:(id /* block */)arg1;
 - (void)runSilentLoginUpgradeIfNeededWithCompletion:(id /* block */)arg1;
 - (id)shortLivedToken;
 - (void)switchToLoginWindowDueToError:(id)arg1;
-- (void)tokenUpgradeFinishedWithError:(id)arg1;
 - (id)userSwitchContext;
 - (void)userSwitchContextHasBeenUsed;
 - (void)writeAccountConfigurationIfNeededWithCompletion:(id /* block */)arg1;

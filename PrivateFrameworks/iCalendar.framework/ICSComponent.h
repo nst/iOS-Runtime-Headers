@@ -3,9 +3,9 @@
  */
 
 @interface ICSComponent : NSObject <ICSWriting> {
-    NSMutableArray *_components;
-    NSMutableDictionary *_properties;
-    NSString *_unrecognizedComponentName;
+    NSMutableArray * _components;
+    NSMutableDictionary * _properties;
+    NSString * _unrecognizedComponentName;
 }
 
 @property (retain) NSArray *attach;
@@ -38,6 +38,7 @@
 @property (retain) NSString *uid;
 @property (retain) NSString *unrecognizedComponentName;
 @property (retain) NSURL *url;
+@property (retain) NSString *x_apple_contactIdentifiers;
 @property (retain) NSString *x_apple_dropbox;
 @property (retain) NSString *x_apple_etag;
 @property (retain) NSString *x_apple_ews_changekey;
@@ -45,6 +46,7 @@
 @property BOOL x_apple_ews_needsserverconfirmation;
 @property (retain) NSString *x_apple_ews_permission;
 @property BOOL x_apple_ignore_on_restore;
+@property (retain) NSString *x_apple_relatedExternalID;
 @property (retain) NSString *x_apple_scheduletag;
 @property (retain) NSString *x_apple_serverFilename;
 @property (retain) ICSStructuredLocation *x_apple_structured_location;
@@ -53,6 +55,7 @@
 @property (retain) NSString *x_apple_suggestionInfoOpaqueKey;
 @property ICSDate *x_apple_suggestionInfoTimestamp;
 @property (retain) NSString *x_apple_suggestionInfoUniqueKey;
+@property (retain) NSString *x_apple_universalID;
 @property int x_calendarserver_access;
 
 + (id)inheritanceKeywords;
@@ -150,6 +153,7 @@
 - (void)setUid:(id)arg1;
 - (void)setUnrecognizedComponentName:(id)arg1;
 - (void)setUrl:(id)arg1;
+- (void)setX_apple_contactIdentifiers:(id)arg1;
 - (void)setX_apple_dropbox:(id)arg1;
 - (void)setX_apple_end_location:(id)arg1;
 - (void)setX_apple_etag:(id)arg1;
@@ -158,6 +162,7 @@
 - (void)setX_apple_ews_needsserverconfirmation:(BOOL)arg1;
 - (void)setX_apple_ews_permission:(id)arg1;
 - (void)setX_apple_ignore_on_restore:(BOOL)arg1;
+- (void)setX_apple_relatedExternalID:(id)arg1;
 - (void)setX_apple_scheduletag:(id)arg1;
 - (void)setX_apple_serverFilename:(id)arg1;
 - (void)setX_apple_structured_location:(id)arg1;
@@ -169,6 +174,7 @@
 - (void)setX_apple_travel_advisory_behavior:(id)arg1;
 - (void)setX_apple_travel_duration:(id)arg1;
 - (void)setX_apple_travel_start:(id)arg1;
+- (void)setX_apple_universalID:(id)arg1;
 - (void)setX_calendarserver_access:(int)arg1;
 - (BOOL)shouldObscureValue;
 - (int)status;
@@ -179,6 +185,7 @@
 - (id)unrecognizedComponentName;
 - (id)url;
 - (BOOL)validate:(id*)arg1;
+- (id)x_apple_contactIdentifiers;
 - (id)x_apple_dropbox;
 - (id)x_apple_end_location;
 - (id)x_apple_etag;
@@ -187,6 +194,7 @@
 - (BOOL)x_apple_ews_needsserverconfirmation;
 - (id)x_apple_ews_permission;
 - (BOOL)x_apple_ignore_on_restore;
+- (id)x_apple_relatedExternalID;
 - (id)x_apple_scheduletag;
 - (id)x_apple_serverFilename;
 - (id)x_apple_structured_location;
@@ -198,6 +206,7 @@
 - (id)x_apple_travel_advisory_behavior;
 - (id)x_apple_travel_duration;
 - (id)x_apple_travel_start;
+- (id)x_apple_universalID;
 - (int)x_calendarserver_access;
 
 @end

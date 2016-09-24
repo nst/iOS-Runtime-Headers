@@ -3,16 +3,19 @@
  */
 
 @interface CKImageAnimationTimer : NSObject {
-    CADisplayLink *_displayLink;
-    unsigned int _frame;
-    NSMutableSet *_observers;
+    CADisplayLink * _displayLink;
+    unsigned int  _frame;
+    NSMutableSet * _observers;
+    BOOL  _shouldStopWhenBackgrounded;
 }
 
 @property (nonatomic, retain) CADisplayLink *displayLink;
 @property (nonatomic, retain) NSMutableSet *observers;
+@property (nonatomic) BOOL shouldStopWhenBackgrounded;
 
 + (id)sharedTimer;
 
+- (void).cxx_destruct;
 - (void)addAnimationTimerObserver:(id)arg1;
 - (void)animationTimerFired;
 - (void)dealloc;
@@ -23,6 +26,8 @@
 - (void)removeAnimationTimerObserver:(id)arg1;
 - (void)setDisplayLink:(id)arg1;
 - (void)setObservers:(id)arg1;
+- (void)setShouldStopWhenBackgrounded:(BOOL)arg1;
+- (BOOL)shouldStopWhenBackgrounded;
 - (void)updateDisplayLink;
 
 @end

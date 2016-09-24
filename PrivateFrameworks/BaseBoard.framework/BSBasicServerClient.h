@@ -3,10 +3,10 @@
  */
 
 @interface BSBasicServerClient : NSObject <BSXPCServerClient> {
-    int _cancelled;
-    NSObject<OS_xpc_object> *_connection;
-    BOOL _managingResumeState;
-    int _resumed;
+    int  _cancelled;
+    NSObject<OS_xpc_object> * _connection;
+    BOOL  _managingResumeState;
+    int  _resumed;
 }
 
 @property (nonatomic, retain) NSObject<OS_xpc_object> *connection;

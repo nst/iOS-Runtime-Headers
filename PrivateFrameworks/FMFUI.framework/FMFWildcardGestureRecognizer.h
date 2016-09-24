@@ -3,8 +3,8 @@
  */
 
 @interface FMFWildcardGestureRecognizer : UIGestureRecognizer {
-    id /* block */ _touchesBeganCallback;
-    id /* block */ _touchesEndedCallback;
+    id /* block */  _touchesBeganCallback;
+    id /* block */  _touchesEndedCallback;
 }
 
 @property (nonatomic, copy) id /* block */ touchesBeganCallback;

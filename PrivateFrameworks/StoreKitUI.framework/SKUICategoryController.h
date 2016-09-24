@@ -3,21 +3,21 @@
  */
 
 @interface SKUICategoryController : NSObject <SKUICategoryTableViewControllerDelegate, UIPopoverControllerDelegate> {
-    SKUICategoryArtworkLoader *_artworkLoader;
-    UIBarButtonItem *_button;
-    SKUIClientContext *_clientContext;
-    UIViewController *_contentsController;
-    NSURL *_defaultURL;
-    <SKUICategoryControllerDelegate> *_delegate;
-    SSVLoadURLOperation *_loadOperation;
-    NSOperationQueue *_operationQueue;
-    UIPopoverController *_popover;
-    SKUICategory *_rootCategory;
-    SKUISegmentedControl *_segmentedControl;
-    int _segmentedControlLength;
-    NSArray *_segmentedControlSegments;
-    NSURL *_selectedURL;
-    SKUICategoryTableViewController *_tableViewController;
+    SKUICategoryArtworkLoader * _artworkLoader;
+    UIBarButtonItem * _button;
+    SKUIClientContext * _clientContext;
+    UIViewController * _contentsController;
+    NSURL * _defaultURL;
+    <SKUICategoryControllerDelegate> * _delegate;
+    SSVLoadURLOperation * _loadOperation;
+    NSOperationQueue * _operationQueue;
+    UIPopoverController * _popover;
+    SKUICategory * _rootCategory;
+    SKUISegmentedControl * _segmentedControl;
+    int  _segmentedControlLength;
+    NSArray * _segmentedControlSegments;
+    NSURL * _selectedURL;
+    SKUICategoryTableViewController * _tableViewController;
 }
 
 @property (nonatomic, retain) SKUICategory *category;

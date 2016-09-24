@@ -3,17 +3,17 @@
  */
 
 @interface AWDIDSRegistrationPhoneNumberValidationFinished : PBCodable <NSCopying> {
-    NSString *_guid;
+    NSString * _guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int numberOfSMSSent : 1; 
         unsigned int registrationError : 1; 
         unsigned int validationDuration : 1; 
-    } _has;
-    unsigned int _numberOfSMSSent;
-    int _registrationError;
-    unsigned long long _timestamp;
-    unsigned int _validationDuration;
+    }  _has;
+    unsigned int  _numberOfSMSSent;
+    int  _registrationError;
+    unsigned long long  _timestamp;
+    unsigned int  _validationDuration;
 }
 
 @property (nonatomic, retain) NSString *guid;

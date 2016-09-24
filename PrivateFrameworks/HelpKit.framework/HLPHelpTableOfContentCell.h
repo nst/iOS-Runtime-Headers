@@ -3,27 +3,27 @@
  */
 
 @interface HLPHelpTableOfContentCell : UITableViewCell {
-    BOOL _RTL;
-    UIImageView *_arrowImageView;
-    NSLayoutConstraint *_arrowImageViewLeadingConstraint;
-    NSLayoutConstraint *_arrowImageViewWidthConstraint;
-    BOOL _closed;
-    HLPHelpItem *_helpItem;
-    float _minNameLabelHeight;
-    UILabel *_nameLabel;
-    NSLayoutConstraint *_nameLabelMinHeightConstraint;
-    NSLayoutConstraint *_sectionImageLeadingConstraint;
-    HLPURLSession *_sectionImageURLSession;
-    UIImageView *_sectionImageView;
-    NSLayoutConstraint *_sectionImageWidthConstraint;
-    BOOL _showFirstLevelIcon;
+    BOOL  _RTL;
+    UIImageView * _arrowImageView;
+    NSLayoutConstraint * _arrowImageViewLeadingConstraint;
+    NSLayoutConstraint * _arrowImageViewWidthConstraint;
+    BOOL  _closed;
+    HLPHelpItem * _helpItem;
+    double  _minNameLabelHeight;
+    UILabel * _nameLabel;
+    NSLayoutConstraint * _nameLabelMinHeightConstraint;
+    NSLayoutConstraint * _sectionImageLeadingConstraint;
+    HLPURLSession * _sectionImageURLSession;
+    UIImageView * _sectionImageView;
+    NSLayoutConstraint * _sectionImageWidthConstraint;
+    BOOL  _showFirstLevelIcon;
 }
 
 @property (nonatomic) BOOL RTL;
 @property (nonatomic, retain) UIImageView *arrowImageView;
 @property (nonatomic) BOOL closed;
 @property (nonatomic, retain) HLPHelpItem *helpItem;
-@property (nonatomic) float minNameLabelHeight;
+@property (nonatomic) double minNameLabelHeight;
 @property (nonatomic, retain) UILabel *nameLabel;
 @property (nonatomic, retain) UIImageView *sectionImageView;
 @property (nonatomic) BOOL showFirstLevelIcon;

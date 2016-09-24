@@ -2,19 +2,19 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDRelayActivationSession : NSObject <HAPTimerDelegate, HMDFairPlaySAPSessionDelegate> {
-    HMDFairPlaySAPSession *_fairPlaySAPSession;
-    HAPTimer *_fairPlaySessionTimer;
-    NSOperationQueue *_requestOperationQueue;
-    unsigned int _state;
-    NSURLSession *_urlSession;
-    NSObject<OS_dispatch_queue> *_workQueue;
+@interface HMDRelayActivationSession : NSObject <HMDFairPlaySAPSessionDelegate, HMFLogging, HMFTimerDelegate> {
+    HMDFairPlaySAPSession * _fairPlaySAPSession;
+    HMFTimer * _fairPlaySessionTimer;
+    NSOperationQueue * _requestOperationQueue;
+    unsigned int  _state;
+    NSURLSession * _urlSession;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) HMDFairPlaySAPSession *fairPlaySAPSession;
-@property (nonatomic, retain) HAPTimer *fairPlaySessionTimer;
+@property (nonatomic, retain) HMFTimer *fairPlaySessionTimer;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSOperationQueue *requestOperationQueue;
 @property (nonatomic) unsigned int state;
@@ -22,6 +22,7 @@
 @property (nonatomic, readonly) NSURLSession *urlSession;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
 
++ (id)logCategory;
 + (id)sharedSession;
 
 - (void).cxx_destruct;

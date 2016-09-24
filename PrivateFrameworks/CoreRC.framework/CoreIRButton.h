@@ -3,8 +3,8 @@
  */
 
 @interface CoreIRButton : NSObject <NSCopying, NSSecureCoding> {
-    unsigned long _usageID;
-    unsigned long _usagePage;
+    unsigned long  _usageID;
+    unsigned long  _usagePage;
 }
 
 @property (nonatomic, readonly) unsigned long usageID;

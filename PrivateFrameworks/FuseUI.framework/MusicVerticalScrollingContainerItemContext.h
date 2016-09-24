@@ -3,20 +3,20 @@
  */
 
 @interface MusicVerticalScrollingContainerItemContext : NSObject {
-    UICollectionViewCell *_containerCell;
-    UICollectionView *_containerCollectionView;
-    UIScrollView *_contentScrollView;
-    BOOL _contentScrollViewCanPanVertically;
-    BOOL _contentScrollViewScrollsToTop;
-    <MusicVerticalScrollingContainerItemContextDelegate> *_delegate;
-    BOOL _hasSetupContentScrollView;
-    BOOL _isChangingContentScrollViewContentOffset;
-    MusicVerticalScrollingContainerItem *_item;
-    float _lastSeenContentHeight;
-    unsigned int _originalAutoresizingMask;
-    NSMutableArray *_overriddenContentHeightStack;
-    BOOL _readyForDisplay;
-    BOOL _shouldIgnoreContentScrollViewChanges;
+    UICollectionViewCell * _containerCell;
+    UICollectionView * _containerCollectionView;
+    UIScrollView * _contentScrollView;
+    BOOL  _contentScrollViewCanPanVertically;
+    BOOL  _contentScrollViewScrollsToTop;
+    <MusicVerticalScrollingContainerItemContextDelegate> * _delegate;
+    BOOL  _hasSetupContentScrollView;
+    BOOL  _isChangingContentScrollViewContentOffset;
+    MusicVerticalScrollingContainerItem * _item;
+    double  _lastSeenContentHeight;
+    unsigned int  _originalAutoresizingMask;
+    NSMutableArray * _overriddenContentHeightStack;
+    BOOL  _readyForDisplay;
+    BOOL  _shouldIgnoreContentScrollViewChanges;
 }
 
 @property (nonatomic) <MusicVerticalScrollingContainerItemContextDelegate> *delegate;

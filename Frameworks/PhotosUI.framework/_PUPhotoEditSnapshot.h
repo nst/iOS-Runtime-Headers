@@ -3,10 +3,10 @@
  */
 
 @interface _PUPhotoEditSnapshot : NSObject {
-    PHAdjustmentData *_adjustmentData;
-    NSData *_baseImageData;
-    NSData *_imageData;
-    int _workImageVersion;
+    PHAdjustmentData * _adjustmentData;
+    NSData * _baseImageData;
+    NSData * _imageData;
+    int  _workImageVersion;
 }
 
 @property (nonatomic, retain) PHAdjustmentData *adjustmentData;

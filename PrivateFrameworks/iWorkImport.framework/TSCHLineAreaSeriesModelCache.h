@@ -3,31 +3,31 @@
  */
 
 @interface TSCHLineAreaSeriesModelCache : NSObject {
-    float mDataPointSize;
-    TSCHChartAxis *mGroupAxis;
-    unsigned int mLabelPosition;
-    int mLineType;
-    float mOpacity;
-    TSWPParagraphStyle *mParagraphStyle;
-    TSCHChartSeries *mSeries;
-    id mSeriesFill;
-    unsigned int mSeriesIndex;
-    TSDShadow *mSeriesShadow;
-    TSDStroke *mSeriesStroke;
-    BOOL mShowLabelsInFront;
-    BOOL mShowValueLabels;
-    id mSymbolFill;
-    TSDStroke *mSymbolStroke;
-    int mSymbolType;
-    struct CGPath { } *mUnitSymbolPath;
-    TSCHChartValueAxis *mValueAxis;
+    double  mDataPointSize;
+    TSCHChartAxis * mGroupAxis;
+    unsigned int  mLabelPosition;
+    int  mLineType;
+    double  mOpacity;
+    TSWPParagraphStyle * mParagraphStyle;
+    TSCHChartSeries * mSeries;
+    id  mSeriesFill;
+    unsigned int  mSeriesIndex;
+    TSDShadow * mSeriesShadow;
+    TSDStroke * mSeriesStroke;
+    BOOL  mShowLabelsInFront;
+    BOOL  mShowValueLabels;
+    id  mSymbolFill;
+    TSDStroke * mSymbolStroke;
+    int  mSymbolType;
+    struct CGPath { } * mUnitSymbolPath;
+    TSCHChartValueAxis * mValueAxis;
 }
 
-@property (readonly) float dataPointSize;
+@property (readonly) double dataPointSize;
 @property (readonly) TSCHChartAxis *groupAxis;
 @property (readonly) unsigned int labelPosition;
 @property (readonly) int lineType;
-@property (readonly) float opacity;
+@property (readonly) double opacity;
 @property (readonly) TSWPParagraphStyle *paragraphStyle;
 @property (readonly) TSCHChartSeries *series;
 @property (readonly) id seriesFill;

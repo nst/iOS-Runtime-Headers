@@ -3,8 +3,8 @@
  */
 
 @interface CalItemMetadata : NSObject <NSCoding> {
-    int _classification;
-    NSDictionary *_x_props;
+    int  _classification;
+    NSDictionary * _x_props;
 }
 
 @property int classification;
@@ -13,10 +13,10 @@
 + (id)metadataWithData:(id)arg1;
 + (id)metadataWithICSComponent:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)applyToComponent:(id)arg1;
 - (int)classification;
 - (id)dataRepresentationWithExistingMetaData:(id)arg1;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

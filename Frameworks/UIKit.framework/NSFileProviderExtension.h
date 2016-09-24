@@ -3,10 +3,10 @@
  */
 
 @interface NSFileProviderExtension : NSObject <NSExtensionRequestHandling> {
-    NSObject<OS_dispatch_queue> *_extensionDispatchQueue;
-    NSObject<OS_dispatch_queue> *_memberQueue;
-    NSURL *_memberQueueDocumentStorageURL;
-    NSString *_memberQueueProviderIdentifier;
+    NSObject<OS_dispatch_queue> * _extensionDispatchQueue;
+    NSObject<OS_dispatch_queue> * _memberQueue;
+    NSURL * _memberQueueDocumentStorageURL;
+    NSString * _memberQueueProviderIdentifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;

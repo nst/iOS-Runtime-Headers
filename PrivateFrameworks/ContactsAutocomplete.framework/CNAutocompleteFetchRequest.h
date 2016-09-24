@@ -3,16 +3,16 @@
  */
 
 @interface CNAutocompleteFetchRequest : NSObject <NSCopying> {
-    CNAutocompleteFetchContext *_fetchContext;
-    BOOL _includeCalendarServers;
-    BOOL _includeContacts;
-    BOOL _includeDirectoryServers;
-    BOOL _includePredictions;
-    BOOL _includeRecents;
-    BOOL _includeSuggestions;
-    NSString *_priorityDomainForSorting;
-    NSString *_searchString;
-    unsigned int _searchType;
+    CNAutocompleteFetchContext * _fetchContext;
+    BOOL  _includeCalendarServers;
+    BOOL  _includeContacts;
+    BOOL  _includeDirectoryServers;
+    BOOL  _includePredictions;
+    BOOL  _includeRecents;
+    BOOL  _includeSuggestions;
+    NSString * _priorityDomainForSorting;
+    NSString * _searchString;
+    unsigned int  _searchType;
 }
 
 @property (copy) CNAutocompleteFetchContext *fetchContext;
@@ -33,7 +33,6 @@
 + (id)searchablePropertiesForSearchType:(unsigned int)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)canExecute;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)executeWithDelegate:(id)arg1;
@@ -49,6 +48,7 @@
 - (BOOL)includeSuggestions;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isValid:(id*)arg1;
 - (id)priorityDomainForSorting;
 - (id)searchString;
 - (unsigned int)searchType;

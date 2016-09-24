@@ -3,10 +3,10 @@
  */
 
 @interface SPCacheAsset : NSObject {
-    double _accessDate;
-    NSString *_key;
-    unsigned int _size;
-    unsigned int _state;
+    double  _accessDate;
+    NSString * _key;
+    unsigned int  _size;
+    unsigned int  _state;
 }
 
 @property (nonatomic) double accessDate;

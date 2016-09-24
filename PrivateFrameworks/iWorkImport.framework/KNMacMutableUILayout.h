@@ -4,16 +4,16 @@
 
 @interface KNMacMutableUILayout : KNMacUILayout
 
+@property (nonatomic) int inspectorPaneHiddenState;
 @property (nonatomic) int inspectorPaneViewMode;
-@property (getter=isShowingInspectorPane, nonatomic) BOOL showingInspectorPane;
 @property (getter=isShowingLightTable, nonatomic) BOOL showingLightTable;
 @property (getter=isShowingMasterSlides, nonatomic) BOOL showingMasterSlides;
 @property (getter=isShowingPresenterNotes, nonatomic) BOOL showingPresenterNotes;
 @property (getter=isShowingSidebar, nonatomic) BOOL showingSidebar;
 @property (nonatomic) int sidebarViewMode;
 
+- (void)setInspectorPaneHiddenState:(int)arg1;
 - (void)setInspectorPaneViewMode:(int)arg1;
-- (void)setShowingInspectorPane:(BOOL)arg1;
 - (void)setShowingLightTable:(BOOL)arg1;
 - (void)setShowingMasterSlides:(BOOL)arg1;
 - (void)setShowingPresenterNotes:(BOOL)arg1;

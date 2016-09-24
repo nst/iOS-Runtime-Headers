@@ -3,18 +3,24 @@
  */
 
 @interface MTLDebugCommandBuffer : MTLToolsCommandBuffer {
-    _MTLCommandEncoder *_currentEncoder;
+    NSMutableSet * _buffersBoundForWrite;
+    _MTLCommandEncoder * _currentEncoder;
 }
+
+@property (nonatomic, readonly) NSMutableSet *buffersBoundForWrite;
 
 - (void).cxx_destruct;
 - (id)blitCommandEncoder;
+- (id)buffersBoundForWrite;
+- (void)commit;
 - (id)computeCommandEncoder;
 - (id)fragmentRenderCommandEncoderWithDescriptor:(id)arg1;
 - (id)initWithCommandBuffer:(id)arg1 commandQueue:(id)arg2;
 - (id)parallelRenderCommandEncoderWithDescriptor:(id)arg1;
 - (id)renderCommandEncoderWithDescriptor:(id)arg1;
-- (id)sampledComputeCommandEncoderWithProgramInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned long long x4; unsigned long long x5; }*)arg1 capacity:(unsigned int)arg2;
-- (id)sampledRenderCommandEncoderWithDescriptor:(id)arg1 programInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned long long x4; unsigned long long x5; }*)arg2 capacity:(unsigned int)arg3;
+- (id)sampledComputeCommandEncoderWithProgramInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg1 capacity:(unsigned int)arg2;
+- (id)sampledFragmentRenderCommandEncoderWithDescriptor:(id)arg1 programInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg2 capacity:(unsigned int)arg3;
+- (id)sampledRenderCommandEncoderWithDescriptor:(id)arg1 programInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned int x4; unsigned int x5; }*)arg2 capacity:(unsigned int)arg3;
 - (void)waitUntilCompleted;
 - (void)waitUntilScheduled;
 

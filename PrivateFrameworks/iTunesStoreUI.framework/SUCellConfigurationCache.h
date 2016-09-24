@@ -3,8 +3,8 @@
  */
 
 @interface SUCellConfigurationCache : NSObject {
-    id _cellContext;
-    NSMutableArray *_configurations;
+    id  _cellContext;
+    NSMutableArray * _configurations;
 }
 
 @property (nonatomic, retain) id cellContext;

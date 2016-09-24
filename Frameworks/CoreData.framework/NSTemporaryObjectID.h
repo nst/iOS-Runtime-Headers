@@ -3,9 +3,9 @@
  */
 
 @interface NSTemporaryObjectID : NSManagedObjectID {
-    int _cd_rc;
-    int _counter;
-    NSEntityDescription *_entity;
+    int  _cd_rc;
+    int  _counter;
+    NSEntityDescription * _entity;
 }
 
 + (void)_release_1;

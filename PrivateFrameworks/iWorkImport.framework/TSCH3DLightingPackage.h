@@ -3,8 +3,8 @@
  */
 
 @interface TSCH3DLightingPackage : NSObject <NSCopying> {
-    NSArray *_lights;
-    NSString *_name;
+    NSArray * _lights;
+    NSString * _name;
 }
 
 @property (nonatomic, readonly, copy) NSString *localizedName;

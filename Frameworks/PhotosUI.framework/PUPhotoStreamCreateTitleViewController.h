@@ -3,15 +3,15 @@
  */
 
 @interface PUPhotoStreamCreateTitleViewController : UIViewController <UITextViewDelegate> {
-    NSArray *_constraints;
-    UILabel *_descriptionLabel;
-    UILabel *_instructionLabel;
-    UINavigationItem *_navItem;
-    UIColor *_placeholderColor;
-    UILabel *_textPlaceholderLabel;
-    UITextView *_textView;
-    <PUPhotoStreamCreateTitleDelegate> *_titleDelegate;
-    UITextField *_titleField;
+    NSArray * _constraints;
+    UILabel * _descriptionLabel;
+    UILabel * _instructionLabel;
+    UINavigationItem * _navItem;
+    UIColor * _placeholderColor;
+    UILabel * _textPlaceholderLabel;
+    UITextView * _textView;
+    <PUPhotoStreamCreateTitleDelegate> * _titleDelegate;
+    UITextField * _titleField;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -25,7 +25,7 @@
 - (void)_cancelPost:(id)arg1;
 - (id)_placeholderColor;
 - (void)_setTitle:(id)arg1;
-- (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
+- (struct CGSize { double x1; double x2; })contentSizeForViewInPopover;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;

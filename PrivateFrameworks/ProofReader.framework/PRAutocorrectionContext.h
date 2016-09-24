@@ -3,15 +3,17 @@
  */
 
 @interface PRAutocorrectionContext : NSObject {
-    unsigned int _modificationMask;
+    unsigned int  _modificationMask;
 }
 
 + (id)autocorrectionContextOfType:(unsigned int)arg1;
++ (void)clearCaches;
 
 - (void)addInputCharacter:(unsigned short)arg1 geometryData:(id)arg2;
 - (void)addInputCharacter:(unsigned short)arg1 geometryModel:(void*)arg2 geometryData:(id)arg3;
 - (id)addedModifications;
 - (id)completions;
+- (id)correction;
 - (id)currentModifications;
 - (id)guesses;
 - (unsigned int)modificationMask;

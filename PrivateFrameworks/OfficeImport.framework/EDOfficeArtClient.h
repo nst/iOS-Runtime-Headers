@@ -3,23 +3,23 @@
  */
 
 @interface EDOfficeArtClient : NSObject <OADClient, OADTextClient> {
-    EDAnchor *mAnchor;
+    EDAnchor * mAnchor;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } mBounds;
-    id mClientState;
-    EDComment *mComment;
-    bool mIsBoundsSet;
-    EDSheet *mSheet;
-    NSMutableDictionary *mTableModels;
-    EDTextBox *mTextBox;
+    }  mBounds;
+    id  mClientState;
+    EDComment * mComment;
+    bool  mIsBoundsSet;
+    EDSheet * mSheet;
+    NSMutableDictionary * mTableModels;
+    EDTextBox * mTextBox;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -29,7 +29,7 @@
 
 - (id)anchor;
 - (bool)areBoundsSet;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
 - (id)clientState;
 - (id)comment;
 - (void)dealloc;
@@ -37,7 +37,7 @@
 - (BOOL)hasBounds;
 - (BOOL)hasText;
 - (void)setAnchor:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setClientState:(id)arg1;
 - (void)setComment:(id)arg1;
 - (void)setSheet:(id)arg1;

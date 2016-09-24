@@ -3,20 +3,16 @@
  */
 
 @interface SKUIIPhoneSlideshowViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
-    SKUIClientContext *_clientContext;
-    SKUIGiftThemeCollectionView *_collectionView;
-    <SKUISlideshowViewControllerDataSource> *_dataSource;
-    <SKUISlideshowViewControllerDelegate> *_delegate;
-    NSMutableArray *_images;
-    int _indexToScrollToOnLoadView;
-    NSOperationQueue *_operationQueue;
-    UIPageControl *_pageControl;
-    NSMutableDictionary *_placeholderImages;
-    NSOperationQueue *_placeholderQueue;
-    BOOL _respondsToCount;
-    BOOL _respondsToImage;
-    BOOL _respondsToURL;
-    SKUIScreenshotDataConsumer *_screenshotConsumer;
+    SKUIClientContext * _clientContext;
+    SKUIGiftThemeCollectionView * _collectionView;
+    <SKUISlideshowViewControllerDataSource> * _dataSource;
+    <SKUISlideshowViewControllerDelegate> * _delegate;
+    NSMutableArray * _images;
+    int  _indexToScrollToOnLoadView;
+    NSOperationQueue * _operationQueue;
+    UIPageControl * _pageControl;
+    NSMutableDictionary * _placeholderImages;
+    NSOperationQueue * _placeholderQueue;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
@@ -35,7 +31,6 @@
 - (void)_reloadPageControl;
 - (void)_reloadSize;
 - (void)_setImage:(id)arg1 atIndex:(int)arg2;
-- (void)_setLowResImage:(id)arg1 atIndex:(int)arg2;
 - (id)clientContext;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;

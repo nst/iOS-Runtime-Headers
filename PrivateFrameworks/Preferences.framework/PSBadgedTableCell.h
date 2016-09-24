@@ -3,9 +3,9 @@
  */
 
 @interface PSBadgedTableCell : PSTableCell {
-    UIImageView *_badgeImageView;
-    int _badgeInt;
-    UILabel *_badgeNumberLabel;
+    UIImageView * _badgeImageView;
+    int  _badgeInt;
+    UILabel * _badgeNumberLabel;
 }
 
 + (id)badgeNumberLabelHighlightedTextColor;
@@ -16,6 +16,7 @@
 + (id)unreadBubbleImage;
 
 - (void).cxx_destruct;
+- (BOOL)_shouldUseRoundStyle;
 - (void)badgeWithInteger:(int)arg1;
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;

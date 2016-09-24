@@ -9,6 +9,7 @@
 + (BOOL)parseHandoffTokenResponseData:(id)arg1 intoHandoffToken:(id*)arg2 error:(id*)arg3;
 + (BOOL)parseInitiatePurchaseResponseData:(id)arg1 intoShouldPurchase:(BOOL*)arg2 responseCode:(int*)arg3 responseText:(id*)arg4 buddyML:(id*)arg5 error:(id*)arg6;
 + (BOOL)parsePurchaseResponseData:(id)arg1 intoShouldDownloadProfile:(BOOL*)arg2 iccid:(id*)arg3 responseCode:(int*)arg4 responseText:(id*)arg5 error:(id*)arg6;
++ (BOOL)parseResponseJson:(id)arg1 setUrl:(id*)arg2 setParameters:(id*)arg3;
 + (BOOL)parseSubscriptionsResponseData:(id)arg1 intoSubscriptions:(id*)arg2 error:(id*)arg3;
 + (id)sessionIdFromJsonData:(id)arg1;
 + (id)sessionIdFromObject:(id)arg1;

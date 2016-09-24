@@ -3,7 +3,7 @@
  */
 
 @interface UIStoryboardScene : NSObject {
-    UIViewController *sceneViewController;
+    UIViewController * sceneViewController;
 }
 
 @property (nonatomic, retain) UIViewController *sceneViewController;

@@ -3,20 +3,20 @@
  */
 
 @interface EDResources : NSObject {
-    EDCollection *mAlignmentInfos;
-    EDCollection *mBorder;
-    EDCollection *mBorders;
-    EDColorsCollection *mColors;
-    EDContentFormatsCollection *mContentFormats;
-    EDCollection *mDifferentialStyles;
-    EDCollection *mFills;
-    EDFontsCollection *mFonts;
-    EDLinksCollection *mLinks;
-    EDCollection *mNames;
-    EDCollection *mStrings;
-    EDStylesCollection *mStyles;
-    EDTableStylesCollection *mTableStyles;
-    EDColorsCollection *mThemes;
+    EDCollection * mAlignmentInfos;
+    EDCollection * mBorder;
+    EDCollection * mBorders;
+    EDColorsCollection * mColors;
+    EDContentFormatsCollection * mContentFormats;
+    EDCollection * mDifferentialStyles;
+    EDCollection * mFills;
+    EDFontsCollection * mFonts;
+    EDLinksCollection * mLinks;
+    EDCollection * mNames;
+    EDCollection * mStrings;
+    EDStylesCollection * mStyles;
+    EDTableStylesCollection * mTableStyles;
+    EDColorsCollection * mThemes;
 }
 
 - (id)alignmentInfos;

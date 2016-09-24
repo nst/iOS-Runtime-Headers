@@ -3,11 +3,11 @@
  */
 
 @interface TSPDataObserverInfo : NSObject {
-    id /* block */ _completionHandler;
-    TSPData *_data;
-    BOOL _isInternalObserver;
-    id _observer;
-    unsigned int _options;
+    id /* block */  _completionHandler;
+    TSPData * _data;
+    BOOL  _isInternalObserver;
+    id  _observer;
+    unsigned int  _options;
 }
 
 @property (nonatomic, readonly) BOOL isInternalObserver;

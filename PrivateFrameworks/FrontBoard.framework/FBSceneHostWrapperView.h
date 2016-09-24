@@ -3,18 +3,18 @@
  */
 
 @interface FBSceneHostWrapperView : UIView <BSDescriptionProviding, FBSceneHostView, FBSceneLayerHostContainerViewDataSource, FBSceneLayerManagerObserver, _FBSceneGeometryObserver> {
-    unsigned int _appearanceStyle;
-    UIColor *_backgroundColorWhileHosting;
-    UIColor *_backgroundColorWhileNotHosting;
-    <FBSceneHostViewDelegate> *_delegate;
-    NSMutableSet *_hiddenLayers;
-    FBSceneLayerHostContainerView *_hostContainerView;
-    unsigned int _hostedLayerTypes;
-    FBSceneLayerManager *_layerManager;
-    FBSceneHostManager *_manager;
-    NSString *_requester;
-    FBScene *_scene;
-    BOOL _usingDefaultLayerTypes;
+    unsigned int  _appearanceStyle;
+    UIColor * _backgroundColorWhileHosting;
+    UIColor * _backgroundColorWhileNotHosting;
+    <FBSceneHostViewDelegate> * _delegate;
+    NSMutableSet * _hiddenLayers;
+    FBSceneLayerHostContainerView * _hostContainerView;
+    unsigned int  _hostedLayerTypes;
+    FBSceneLayerManager * _layerManager;
+    FBSceneHostManager * _manager;
+    NSString * _requester;
+    FBScene * _scene;
+    BOOL  _usingDefaultLayerTypes;
 }
 
 @property (nonatomic) unsigned int appearanceStyle;
@@ -30,15 +30,16 @@
 @property (nonatomic) unsigned int hostedLayerTypes;
 @property (getter=isHosting, nonatomic, readonly) BOOL hosting;
 @property (nonatomic, readonly, retain) NSSet *hostingDisabledLayers;
-@property (nonatomic, readonly) float level;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } referenceFrame;
+@property (nonatomic, readonly) double level;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } referenceFrame;
 @property (nonatomic, readonly, copy) NSString *requester;
 @property (nonatomic, readonly, retain) FBScene *scene;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)_backgroundColorWhileHosting;
 - (id)_backgroundColorWhileNotHosting;
-- (id)_hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2 windowServerHitTestWindow:(id)arg3;
+- (id)_hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2 windowServerHitTestWindow:(id)arg3;
 - (void)_hostingStatusChanged;
 - (BOOL)_isReallyHosting;
 - (void)_scene:(id)arg1 didChangeLayoutWithAnimationSettings:(id)arg2;
@@ -64,7 +65,7 @@
 - (BOOL)isHosting;
 - (id)layersForHostContainerView:(id)arg1;
 - (float)level;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })referenceFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })referenceFrame;
 - (id)requester;
 - (id)scene;
 - (void)sceneLayerManager:(id)arg1 didRepositionLayer:(id)arg2 fromIndex:(unsigned int)arg3 toIndex:(unsigned int)arg4;

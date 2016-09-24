@@ -3,7 +3,7 @@
  */
 
 @interface MFObjectTable : NSObject {
-    NSMutableArray *m_objects;
+    NSMutableArray * m_objects;
 }
 
 - (void)clear;

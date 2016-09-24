@@ -5,7 +5,7 @@
 @interface WebUndoStep : NSObject {
     struct RefPtr<WebCore::UndoStep> { 
         struct UndoStep {} *m_ptr; 
-    } m_step;
+    }  m_step;
 }
 
 + (void)initialize;
@@ -14,7 +14,6 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)finalize;
 - (id)initWithUndoStep:(struct PassRefPtr<WebCore::UndoStep> { struct UndoStep {} *x1; })arg1;
 - (struct UndoStep { int (**x1)(); unsigned int x2; }*)step;
 

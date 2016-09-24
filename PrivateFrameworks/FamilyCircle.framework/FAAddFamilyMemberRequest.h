@@ -3,9 +3,9 @@
  */
 
 @interface FAAddFamilyMemberRequest : FAFamilyCircleRequest {
-    NSString *_memberAppleID;
-    BOOL _memberIsUnder13;
-    NSString *_memberPassword;
+    NSString * _memberAppleID;
+    BOOL  _memberIsUnder13;
+    NSString * _memberPassword;
 }
 
 @property (readonly, copy) NSString *memberAppleID;

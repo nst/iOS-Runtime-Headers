@@ -3,11 +3,11 @@
  */
 
 @interface GLKMeshBufferZone : NSObject <MDLMeshBufferZone> {
-    GLKMeshBufferAllocator *_allocator;
-    NSMutableOrderedSet *_buffers;
-    unsigned int _capacity;
-    BOOL _destroyInvoked;
-    unsigned int _glBufferName;
+    GLKMeshBufferAllocator * _allocator;
+    NSMutableOrderedSet * _buffers;
+    unsigned int  _capacity;
+    BOOL  _destroyInvoked;
+    unsigned int  _glBufferName;
 }
 
 @property (nonatomic, readonly) <MDLMeshBufferAllocator> *allocator;

@@ -3,27 +3,25 @@
  */
 
 @interface FMCommandBase : NSOperation {
-    NSDictionary *_caseInsensitiveHeaders;
-    BOOL _commandTaskComplete;
-    NSURLConnection *_connection;
-    NSError *_error;
-    NSString *_host;
-    NSString *_originalHostname;
-    NSString *_password;
-    NSNumber *_port;
-    unsigned int _redirectCount;
-    NSString *_redirectedHostname;
-    NSURLRequest *_request;
-    NSHTTPURLResponse *_response;
-    NSData *_responseData;
-    NSString *_scheme;
-    FMServerInteractionController *_serverInteractionController;
-    NSURLSessionDataTask *_task;
-    double _timeout;
-    NSString *_username;
+    BOOL  _commandTaskComplete;
+    NSURLConnection * _connection;
+    NSError * _error;
+    NSString * _host;
+    NSString * _originalHostname;
+    NSString * _password;
+    NSNumber * _port;
+    unsigned int  _redirectCount;
+    NSString * _redirectedHostname;
+    NSURLRequest * _request;
+    NSHTTPURLResponse * _response;
+    NSData * _responseData;
+    NSString * _scheme;
+    FMServerInteractionController * _serverInteractionController;
+    NSURLSessionDataTask * _task;
+    double  _timeout;
+    NSString * _username;
 }
 
-@property (nonatomic, retain) NSDictionary *caseInsensitiveHeaders;
 @property (nonatomic) BOOL commandTaskComplete;
 @property (nonatomic, retain) NSURLConnection *connection;
 @property (copy) NSError *error;
@@ -47,7 +45,6 @@
 - (id)authHeaders;
 - (id)body;
 - (void)cancel;
-- (id)caseInsensitiveHeaders;
 - (BOOL)commandTaskComplete;
 - (id)connection;
 - (id)error;
@@ -73,7 +70,6 @@
 - (id)scheme;
 - (void)sendRequest;
 - (id)serverInteractionController;
-- (void)setCaseInsensitiveHeaders:(id)arg1;
 - (void)setCommandTaskComplete:(BOOL)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setError:(id)arg1;

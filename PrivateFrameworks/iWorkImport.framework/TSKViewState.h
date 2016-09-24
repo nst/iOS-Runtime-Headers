@@ -3,7 +3,7 @@
  */
 
 @interface TSKViewState : TSPObject {
-    TSPObject *_viewStateRoot;
+    TSPObject * _viewStateRoot;
 }
 
 @property (nonatomic, retain) TSPObject *viewStateRoot;

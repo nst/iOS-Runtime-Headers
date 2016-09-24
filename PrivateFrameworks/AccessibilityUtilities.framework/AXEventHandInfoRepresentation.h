@@ -2,37 +2,42 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@interface AXEventHandInfoRepresentation : NSObject <NSCopying, NSSecureCoding> {
-    unsigned short _currentFingerCount;
-    unsigned int _eventType;
-    unsigned int _handEventMask;
-    unsigned int _handIdentity;
-    unsigned int _handIndex;
+@interface AXEventHandInfoRepresentation : NSObject <AXEventRepresentationDescription, NSCopying, NSSecureCoding> {
+    unsigned short  _currentFingerCount;
+    unsigned int  _eventType;
+    unsigned int  _handEventMask;
+    unsigned int  _handIdentity;
+    unsigned int  _handIndex;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _handPosition;
-    unsigned short _initialFingerCount;
-    NSArray *_paths;
-    unsigned char _swipe;
-    unsigned char _systemGesturePossible;
+        double x; 
+        double y; 
+    }  _handPosition;
+    unsigned short  _initialFingerCount;
+    NSArray * _paths;
+    unsigned char  _swipe;
+    unsigned char  _systemGesturePossible;
 }
 
 @property (nonatomic) unsigned short currentFingerCount;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) unsigned int eventType;
 @property (nonatomic) unsigned int handEventMask;
 @property (nonatomic) unsigned int handIdentity;
 @property (nonatomic) unsigned int handIndex;
-@property (nonatomic) struct CGPoint { float x1; float x2; } handPosition;
+@property (nonatomic) struct CGPoint { double x1; double x2; } handPosition;
+@property (readonly) unsigned int hash;
 @property (nonatomic) unsigned short initialFingerCount;
+@property (nonatomic, readonly) unsigned long length;
 @property (nonatomic, retain) NSArray *paths;
+@property (readonly) Class superclass;
 @property (nonatomic) unsigned char swipe;
 @property (nonatomic) unsigned char systemGesturePossible;
 
-+ (id)representationWithHandInfo:(struct { int x1; unsigned short x2; unsigned short x3; float x4; float x5; float x6; float x7; float x8; float x9; unsigned char x10; unsigned char x11; unsigned char x12; struct { unsigned char x_13_1_1; unsigned char x_13_1_2; unsigned char x_13_1_3; float x_13_1_4; float x_13_1_5; struct CGPoint { float x_6_2_1; float x_6_2_2; } x_13_1_6; unsigned int x_13_1_7; void *x_13_1_8; } x13[0]; }*)arg1;
++ (id)representationWithHandInfo:(struct { int x1; unsigned short x2; unsigned short x3; double x4; double x5; double x6; double x7; double x8; double x9; unsigned char x10; unsigned char x11; unsigned char x12; struct { unsigned char x_13_1_1; unsigned char x_13_1_2; unsigned char x_13_1_3; double x_13_1_4; double x_13_1_5; struct CGPoint { double x_6_2_1; double x_6_2_2; } x_13_1_6; unsigned int x_13_1_7; void *x_13_1_8; } x13[0]; }*)arg1;
 + (BOOL)supportsSecureCoding;
 
-- (id)_tabularDescription;
+- (id)accessibilityEventRepresentationTabularDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned short)currentFingerCount;
 - (void)dealloc;
@@ -42,7 +47,7 @@
 - (unsigned int)handEventMask;
 - (unsigned int)handIdentity;
 - (unsigned int)handIndex;
-- (struct CGPoint { float x1; float x2; })handPosition;
+- (struct CGPoint { double x1; double x2; })handPosition;
 - (id)initWithCoder:(id)arg1;
 - (unsigned short)initialFingerCount;
 - (unsigned long)length;
@@ -52,13 +57,13 @@
 - (void)setHandEventMask:(unsigned int)arg1;
 - (void)setHandIdentity:(unsigned int)arg1;
 - (void)setHandIndex:(unsigned int)arg1;
-- (void)setHandPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setHandPosition:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setInitialFingerCount:(unsigned short)arg1;
 - (void)setPaths:(id)arg1;
 - (void)setSwipe:(unsigned char)arg1;
 - (void)setSystemGesturePossible:(unsigned char)arg1;
 - (unsigned char)swipe;
 - (unsigned char)systemGesturePossible;
-- (void)writeToHandInfo:(struct { int x1; unsigned short x2; unsigned short x3; float x4; float x5; float x6; float x7; float x8; float x9; unsigned char x10; unsigned char x11; unsigned char x12; struct { unsigned char x_13_1_1; unsigned char x_13_1_2; unsigned char x_13_1_3; float x_13_1_4; float x_13_1_5; struct CGPoint { float x_6_2_1; float x_6_2_2; } x_13_1_6; unsigned int x_13_1_7; void *x_13_1_8; } x13[0]; }*)arg1;
+- (void)writeToHandInfo:(struct { int x1; unsigned short x2; unsigned short x3; double x4; double x5; double x6; double x7; double x8; double x9; unsigned char x10; unsigned char x11; unsigned char x12; struct { unsigned char x_13_1_1; unsigned char x_13_1_2; unsigned char x_13_1_3; double x_13_1_4; double x_13_1_5; struct CGPoint { double x_6_2_1; double x_6_2_2; } x_13_1_6; unsigned int x_13_1_7; void *x_13_1_8; } x13[0]; }*)arg1;
 
 @end

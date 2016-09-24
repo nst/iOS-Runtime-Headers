@@ -3,11 +3,11 @@
  */
 
 @interface STGenericIntentRequest : AFSiriRequest {
-    BOOL __launchToForeground;
-    NSString *_appIdentifier;
-    NSDictionary *_info;
-    NSString *_intentString;
-    NSString *_utterance;
+    BOOL  __launchToForeground;
+    NSString * _appIdentifier;
+    NSDictionary * _info;
+    NSString * _intentString;
+    NSString * _utterance;
 }
 
 @property (setter=_setLaunchToForeground:, nonatomic) BOOL _launchToForeground;

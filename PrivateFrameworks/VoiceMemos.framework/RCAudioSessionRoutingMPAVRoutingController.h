@@ -3,13 +3,13 @@
  */
 
 @interface RCAudioSessionRoutingMPAVRoutingController : MPAVRoutingController {
-    AVAudioSession *_audioSession;
-    NSString *_audioSessionCategory;
-    unsigned int _audioSessionCategoryOptions;
-    NSArray *_cachedPickableOutputRoutes;
-    AVAudioSessionPortDescription *_cachedPickedInputRoutePortDescription;
-    MPAVRoute *_cachedPickedOutputRoute;
-    BOOL _hasCategoryEverBeenActive;
+    AVAudioSession * _audioSession;
+    NSString * _audioSessionCategory;
+    unsigned int  _audioSessionCategoryOptions;
+    NSArray * _cachedPickableOutputRoutes;
+    AVAudioSessionPortDescription * _cachedPickedInputRoutePortDescription;
+    MPAVRoute * _cachedPickedOutputRoute;
+    BOOL  _hasCategoryEverBeenActive;
 }
 
 @property (nonatomic, readonly) NSArray *cachedPickableOutputRoutes;

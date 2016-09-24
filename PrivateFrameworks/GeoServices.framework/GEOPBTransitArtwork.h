@@ -3,18 +3,18 @@
  */
 
 @interface GEOPBTransitArtwork : PBCodable <GEOTransitArtworkDataSource, NSCopying> {
-    NSString *_accessibilityString;
-    int _artworkType;
-    int _artworkUse;
-    int _badge;
+    NSString * _accessibilityString;
+    int  _artworkType;
+    int  _artworkUse;
+    int  _badge;
     struct { 
         unsigned int artworkType : 1; 
         unsigned int artworkUse : 1; 
         unsigned int badge : 1; 
-    } _has;
-    GEOPBTransitIcon *_icon;
-    GEOPBTransitShield *_iconFallbackShield;
-    GEOPBTransitShield *_shield;
+    }  _has;
+    GEOPBTransitIcon * _icon;
+    GEOPBTransitShield * _iconFallbackShield;
+    GEOPBTransitShield * _shield;
 }
 
 @property (nonatomic, retain) NSString *accessibilityString;
@@ -38,17 +38,24 @@
 @property (nonatomic, retain) GEOPBTransitIcon *icon;
 @property (nonatomic, readonly) <GEOTransitIconDataSource> *iconDataSource;
 @property (nonatomic, retain) GEOPBTransitShield *iconFallbackShield;
+@property (nonatomic, readonly) <GEOTransitShieldDataSource> *iconFallbackShieldDataSource;
 @property (nonatomic, retain) GEOPBTransitShield *shield;
 @property (nonatomic, readonly) <GEOTransitShieldDataSource> *shieldDataSource;
 @property (readonly) Class superclass;
 
+- (int)StringAsArtworkType:(id)arg1;
+- (int)StringAsArtworkUse:(id)arg1;
+- (int)StringAsBadge:(id)arg1;
 - (id)accessibilityString;
 - (id)accessibilityText;
 - (int)artworkSourceType;
 - (int)artworkType;
+- (id)artworkTypeAsString:(int)arg1;
 - (int)artworkUse;
+- (id)artworkUseAsString:(int)arg1;
 - (int)artworkUseType;
 - (int)badge;
+- (id)badgeAsString:(int)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -66,6 +73,7 @@
 - (id)icon;
 - (id)iconDataSource;
 - (id)iconFallbackShield;
+- (id)iconFallbackShieldDataSource;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;

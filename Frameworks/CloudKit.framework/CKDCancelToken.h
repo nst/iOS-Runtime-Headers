@@ -3,8 +3,8 @@
  */
 
 @interface CKDCancelToken : NSObject <CKDCancelling> {
-    id /* block */ _cancelAction;
-    BOOL _isCancelled;
+    id /* block */  _cancelAction;
+    BOOL  _isCancelled;
 }
 
 @property (nonatomic, copy) id /* block */ cancelAction;

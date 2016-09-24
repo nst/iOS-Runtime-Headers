@@ -3,26 +3,26 @@
  */
 
 @interface NSFileAccessNode : NSObject {
-    id _accessClaimOrClaims;
-    NSMutableDictionary *_childrenByNormalizedName;
-    BOOL _isArbitrationBoundary;
-    BOOL _isFilePackage;
-    BOOL _isFilePackageIsFigured;
-    NSFileAccessNode *_lastRequestedChild;
-    NSString *_lastRequestedChildName;
-    NSString *_name;
-    NSString *_normalizedName;
-    NSFileAccessNode *_parent;
-    id _presenterOrPresenters;
-    id _progressPublisherOrPublishers;
-    id _progressSubscriberOrSubscribers;
-    id _provider;
-    NSFileAccessNode *_symbolicLinkDestination;
-    unsigned int _symbolicLinkReferenceCount;
+    id  _accessClaimOrClaims;
+    NSMutableDictionary * _childrenByNormalizedName;
+    BOOL  _isArbitrationBoundary;
+    BOOL  _isFilePackage;
+    BOOL  _isFilePackageIsFigured;
+    NSFileAccessNode * _lastRequestedChild;
+    NSString * _lastRequestedChildName;
+    NSString * _name;
+    NSString * _normalizedName;
+    NSFileAccessNode * _parent;
+    id  _presenterOrPresenters;
+    id  _progressPublisherOrPublishers;
+    id  _progressSubscriberOrSubscribers;
+    NSFileProviderProxy * _provider;
+    NSFileAccessNode * _symbolicLinkDestination;
+    unsigned int  _symbolicLinkReferenceCount;
 }
 
-- (id)_childrenExcludingExcessNodes:(BOOL)arg1;
-- (BOOL)_mayContainCriticalDebuggingInformation;
+- (id)_childrenExcludingExcessNodes:(BOOL)arg1 excludingReactors:(BOOL)arg2;
+- (BOOL)_mayContainCriticalDebuggingInformationExcludingReactors:(BOOL)arg1;
 - (void)addAccessClaim:(id)arg1;
 - (void)addPresenter:(id)arg1;
 - (void)addProgressPublisher:(id)arg1;
@@ -37,7 +37,7 @@
 - (id)descendantAtPath:(id)arg1 componentRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 forAddingLeafNode:(id)arg3 create:(BOOL)arg4;
 - (id)descendantForFileURL:(id)arg1;
 - (id)description;
-- (id)descriptionWithIndenting:(id)arg1 excludingExcessNodes:(BOOL)arg2;
+- (id)descriptionWithIndenting:(id)arg1 excludingExcessNodes:(BOOL)arg2 excludingReactors:(BOOL)arg3;
 - (void)forEachAccessClaimOnItemOrContainedItemPerformProcedure:(id /* block */)arg1;
 - (void)forEachAccessClaimOnItemPerformProcedure:(id /* block */)arg1;
 - (void)forEachDescendantPerformProcedure:(id /* block */)arg1;
@@ -70,14 +70,17 @@
 - (void)removePresenter:(id)arg1;
 - (void)removeProgressPublisher:(id)arg1;
 - (void)removeProgressSubscriber:(id)arg1;
+- (void)removeProvider:(id)arg1;
 - (void)removeSelfIfUseless;
 - (id)sensitiveDescription;
+- (id)sensitiveSubarbiterDescription;
 - (void)setArbitrationBoundary;
 - (void)setChild:(id)arg1 forName:(id)arg2 normalizedName:(id)arg3;
 - (void)setParent:(id)arg1 name:(id)arg2;
-- (void)setProvider:(id)arg1;
+- (BOOL)setProvider:(id)arg1;
 - (void)setSymbolicLinkDestination:(id)arg1;
 - (id)standardizedURL;
+- (id)subarbiterDescription;
 - (id)url;
 - (id)urlOfSubitemAtPath:(id)arg1 plusPath:(id)arg2;
 

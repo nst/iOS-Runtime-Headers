@@ -3,13 +3,13 @@
  */
 
 @interface SYRejectedVersion : PBCodable <NSCopying> {
-    SYMessageHeader *_header;
-    NSString *_inReplyTo;
+    SYMessageHeader * _header;
+    NSString * _inReplyTo;
     struct { 
         unsigned int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _supportedVersions;
+    }  _supportedVersions;
 }
 
 @property (nonatomic, retain) SYMessageHeader *header;

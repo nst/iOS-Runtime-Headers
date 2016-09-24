@@ -3,11 +3,11 @@
  */
 
 @interface BSStackFrameInfo : NSObject {
-    unsigned long _address;
-    NSString *_className;
-    NSString *_executablePath;
-    NSString *_functionName;
-    NSString *_realFunctionName;
+    unsigned long  _address;
+    NSString * _className;
+    NSString * _executablePath;
+    NSString * _functionName;
+    NSString * _realFunctionName;
 }
 
 @property (nonatomic, readonly) unsigned long address;

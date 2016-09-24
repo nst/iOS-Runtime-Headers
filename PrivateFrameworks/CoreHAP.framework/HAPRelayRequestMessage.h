@@ -3,18 +3,18 @@
  */
 
 @interface HAPRelayRequestMessage : NSObject {
-    NSData *_body;
-    HAPBlockOperation *_operation;
-    NSMutableSet *_requestIdentifiers;
-    double _timeout;
-    unsigned short _transactionIdentifier;
-    unsigned int _type;
+    NSData * _body;
+    HMFBlockOperation * _operation;
+    NSMutableSet * _requestIdentifiers;
+    double  _timeout;
+    unsigned short  _transactionIdentifier;
+    unsigned int  _type;
 }
 
 @property (nonatomic, readonly, copy) NSData *body;
 @property (getter=isEncrypted, nonatomic, readonly) BOOL encrypted;
 @property (getter=isFinished, nonatomic, readonly) BOOL finished;
-@property (nonatomic) HAPBlockOperation *operation;
+@property (nonatomic) HMFBlockOperation *operation;
 @property (nonatomic, readonly) NSSet *requestIdentifiers;
 @property (nonatomic, readonly) BOOL sent;
 @property (nonatomic, readonly) double timeout;

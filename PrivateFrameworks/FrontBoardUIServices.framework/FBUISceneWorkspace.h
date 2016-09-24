@@ -3,10 +3,10 @@
  */
 
 @interface FBUISceneWorkspace : NSObject <BSDescriptionProviding, FBUISceneWorkspace> {
-    NSString *_identifier;
-    FBSScene *_parentScene;
-    NSMutableDictionary *_scenes;
-    BOOL _valid;
+    NSString * _identifier;
+    FBSScene * _parentScene;
+    NSMutableDictionary * _scenes;
+    BOOL  _valid;
 }
 
 @property (readonly, copy) NSString *debugDescription;

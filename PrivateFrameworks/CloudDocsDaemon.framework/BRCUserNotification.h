@@ -2,16 +2,19 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@interface BRCUserNotification : NSObject {
-    struct __CFUserNotification { } *_cfUserNotification;
-    NSMutableDictionary *_dialogInfo;
-    NSObject<OS_dispatch_source> *_displaySource;
-    unsigned long long _nextDisplayBeginTime;
-    id _progressSubscriber;
-    struct __CFRunLoopSource { } *_source;
+@interface BRCUserNotification : NSObject <BRCUserNotifier> {
+    struct __CFUserNotification { } * _cfUserNotification;
+    NSMutableDictionary * _dialogInfo;
+    NSObject<OS_dispatch_source> * _displaySource;
+    unsigned int  _nextDisplayBeginTime;
+    id  _progressSubscriber;
+    struct __CFRunLoopSource { } * _source;
 }
 
-+ (void)showUploadNotificationForDocWithName:(id)arg1;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_displayDialogWithType:(unsigned long)arg1 dict:(id)arg2 options:(id)arg3 userReplyBlock:(id /* block */)arg4;
@@ -19,26 +22,23 @@
 - (void)_hideCurrentDialog;
 - (id)_localizationKey:(id)arg1 forDocumentKindOfApplication:(id)arg2;
 - (id)_localizationKey:(id)arg1 forOSAndDocumentKindOfApplication:(id)arg2;
+- (id /* block */)_logWrapUserReplyBlock:(id /* block */)arg1;
 - (void)_updateDialogWithType:(unsigned long)arg1 dict:(id)arg2;
 - (void)_updateDialogWithType:(unsigned long)arg1 dict:(id)arg2 userReplyBlock:(id /* block */)arg3;
 - (void)close;
 - (void)dealloc;
 - (id)init;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)showCloudDriveAppUpSellNotificationWithUserReplyBlock:(id /* block */)arg1;
-- (void)showErrorApplicationNotInstalledForShareURL:(id)arg1 userReplyBlock:(id /* block */)arg2;
-- (void)showErrorApplicationProfileDisabledForShareURL:(id)arg1 userReplyBlock:(id /* block */)arg2;
-- (void)showErrorDeviceOfflineForShareURL:(id)arg1 userReplyBlock:(id /* block */)arg2;
-- (void)showErrorItemIsNoLongerSharedForShareURL:(id)arg1 userReplyBlock:(id /* block */)arg2;
-- (void)showErrorParticipantLimitReachedForShareURL:(id)arg1 userReplyBlock:(id /* block */)arg2;
-- (void)showErrorSetupiCloudForShareURL:(id)arg1 userReplyBlock:(id /* block */)arg2;
-- (void)showErrorTurnOniCloudDriveForShareURL:(id)arg1 userReplyBlock:(id /* block */)arg2;
-- (void)showErroriCloudNotReachableForShareURL:(id)arg1 userReplyBlock:(id /* block */)arg2;
-- (void)showGenericErrorForURL:(id)arg1 userReplyBlock:(id /* block */)arg2;
-- (void)showShareConnectingUndeterminedProgressWithUserCancelReplyBlock:(id /* block */)arg1;
-- (void)showShareDownloadingProgressForDocument:(id)arg1 withUserCancelReplyBlock:(id /* block */)arg2;
-- (void)showShareDownloadingUndeterminedProgressWithUserCancelReplyBlock:(id /* block */)arg1;
-- (void)showShareOpenDialogForShareURL:(id)arg1 shareInfo:(id)arg2 userReplyBlock:(id /* block */)arg3;
-- (void)updateUndeterminedProgressCancelBlock:(id /* block */)arg1;
+- (void)moveToFront;
+- (void)showErrorDeviceOfflineForShareURL:(id)arg1 reply:(id /* block */)arg2;
+- (void)showErrorInstallNativeAppForShareMetadata:(id)arg1 reply:(id /* block */)arg2;
+- (void)showErrorItemUnavailableOrAccessRestrictedForShareURL:(id)arg1 reply:(id /* block */)arg2;
+- (void)showErrorNativeAppDisabledByProfileForShareMetadata:(id)arg1 reply:(id /* block */)arg2;
+- (void)showErrorParticipantLimitReachedForShareURL:(id)arg1 reply:(id /* block */)arg2;
+- (void)showErrorReasonUnknownForShareURL:(id)arg1 reply:(id /* block */)arg2;
+- (void)showErrorServerNotReachableForShareURL:(id)arg1 reply:(id /* block */)arg2;
+- (void)showErrorSignInToiCloudForShareMetadata:(id)arg1 reply:(id /* block */)arg2;
+- (void)showErrorTurnOniCloudDriveForShareMetadata:(id)arg1 reply:(id /* block */)arg2;
+- (void)showErroriCloudDriveAppNotVisibleForShareURL:(id)arg1 reply:(id /* block */)arg2;
+- (void)showJoinDialogForShareMetadata:(id)arg1 session:(id)arg2 reply:(id /* block */)arg3;
 
 @end

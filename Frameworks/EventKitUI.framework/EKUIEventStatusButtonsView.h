@@ -3,24 +3,24 @@
  */
 
 @interface EKUIEventStatusButtonsView : UIView {
-    NSArray *_actions;
-    float _baselineFromBoundsTop;
-    NSArray *_buttons;
-    float _buttonsCharge;
-    NSArray *_currentConstraints;
-    <EKUIEventStatusButtonsViewDelegate> *_delegate;
-    BOOL _disableButtonHighlights;
-    UIFont *_font;
-    BOOL _forcesSingleButtonToCenter;
-    NSLayoutConstraint *_leadingMarginConstraint;
-    float _outsideMargin;
-    int _selectedAction;
-    int _textSizeMode;
-    NSLayoutConstraint *_trailingMarginConstraint;
+    NSArray * _actions;
+    double  _baselineFromBoundsTop;
+    NSArray * _buttons;
+    double  _buttonsCharge;
+    NSArray * _currentConstraints;
+    <EKUIEventStatusButtonsViewDelegate> * _delegate;
+    BOOL  _disableButtonHighlights;
+    UIFont * _font;
+    BOOL  _forcesSingleButtonToCenter;
+    NSLayoutConstraint * _leadingMarginConstraint;
+    double  _outsideMargin;
+    int  _selectedAction;
+    int  _textSizeMode;
+    NSLayoutConstraint * _trailingMarginConstraint;
 }
 
 @property (nonatomic, retain) NSArray *actions;
-@property (nonatomic) float buttonsCharge;
+@property (nonatomic) double buttonsCharge;
 @property (nonatomic, readonly) UIButton *centerButton;
 @property (nonatomic) <EKUIEventStatusButtonsViewDelegate> *delegate;
 @property (nonatomic) BOOL disableButtonHighlights;
@@ -51,8 +51,8 @@
 - (id)delegate;
 - (BOOL)disableButtonHighlights;
 - (id)font;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 actions:(id)arg2 delegate:(id)arg3;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 actions:(id)arg2 delegate:(id)arg3 centerSingleButton:(BOOL)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 actions:(id)arg2 delegate:(id)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 actions:(id)arg2 delegate:(id)arg3 centerSingleButton:(BOOL)arg4;
 - (void)layoutSubviews;
 - (int)selectedAction;
 - (void)setActions:(id)arg1;

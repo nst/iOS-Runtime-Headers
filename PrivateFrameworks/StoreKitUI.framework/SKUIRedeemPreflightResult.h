@@ -3,12 +3,12 @@
  */
 
 @interface SKUIRedeemPreflightResult : NSObject {
-    SSAccount *_account;
-    SKUIClientContext *_clientContext;
-    SSVRedeemCodeMetadata *_codeMetadata;
-    NSError *_error;
-    SKUIRedeemConfiguration *_redeemConfiguration;
-    int _resultType;
+    SSAccount * _account;
+    SKUIClientContext * _clientContext;
+    SSVRedeemCodeMetadata * _codeMetadata;
+    NSError * _error;
+    SKUIRedeemConfiguration * _redeemConfiguration;
+    int  _resultType;
 }
 
 @property (nonatomic, retain) SSAccount *account;

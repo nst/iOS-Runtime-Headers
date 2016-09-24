@@ -3,8 +3,8 @@
  */
 
 @interface ML3WeakReference : NSObject {
-    id _object;
-    unsigned int _objectAddress;
+    id  _object;
+    unsigned int  _objectAddress;
 }
 
 + (id)weakReferenceWithObject:(id)arg1;

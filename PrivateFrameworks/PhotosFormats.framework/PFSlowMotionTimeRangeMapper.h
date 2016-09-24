@@ -3,9 +3,9 @@
  */
 
 @interface PFSlowMotionTimeRangeMapper : NSObject {
-    NSMutableArray *_originalLengths;
-    NSMutableArray *_scaledLengths;
-    NSMutableArray *_scaledRegions;
+    NSMutableArray * _originalLengths;
+    NSMutableArray * _scaledLengths;
+    NSMutableArray * _scaledRegions;
 }
 
 - (void).cxx_destruct;

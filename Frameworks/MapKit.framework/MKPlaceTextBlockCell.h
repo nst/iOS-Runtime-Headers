@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKPlaceTextBlockCell : MKTableViewCell {
-    BOOL _constraintsAdded;
-    NSArray *_marginConstraints;
-    MKExpandingLabel *_textBlock;
-    NSString *_textBlockText;
+@interface MKPlaceTextBlockCell : MKPlaceSectionRowView {
+    BOOL  _constraintsAdded;
+    NSArray * _marginConstraints;
+    MKExpandingLabel * _textBlock;
+    NSString * _textBlockText;
 }
 
 @property (nonatomic) BOOL constraintsAdded;
@@ -16,16 +16,15 @@
 @property (nonatomic, copy) id /* block */ textBlockResizedBlock;
 @property (nonatomic, copy) NSString *textBlockText;
 
-+ (id)reuseIdentifier;
-
 - (void).cxx_destruct;
+- (void)_contentSizeDidChange;
 - (void)_refreshLayoutMargins;
 - (BOOL)constraintsAdded;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)dealloc;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)isTextBlockExpanded;
 - (void)layoutMarginsDidChange;
 - (id)marginConstraints;
-- (void)prepareForReuse;
 - (void)setConstraintsAdded:(BOOL)arg1;
 - (void)setMarginConstraints:(id)arg1;
 - (void)setTextBlock:(id)arg1;

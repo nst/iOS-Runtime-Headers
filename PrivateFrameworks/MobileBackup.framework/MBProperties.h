@@ -3,9 +3,11 @@
  */
 
 @interface MBProperties : NSObject {
-    id _plist;
-    BOOL _protect;
-    BOOL _protected;
+    double  _maxSupportedVersion;
+    double  _minSupportedVersion;
+    id  _plist;
+    BOOL  _protect;
+    BOOL  _protected;
 }
 
 @property (nonatomic, retain) NSString *activeAppleID;
@@ -15,10 +17,13 @@
 @property (nonatomic, retain) NSDate *date;
 @property (nonatomic, readonly) NSString *deviceID;
 @property (nonatomic, readonly) NSString *deviceName;
-@property (getter=isEncrypted, nonatomic) BOOL encrypted;
+@property (nonatomic) BOOL encrypted;
 @property (nonatomic, readonly) BOOL hasCorruptSQLiteDBs;
+@property (nonatomic, readonly) BOOL hasManifestDB;
 @property (nonatomic, retain) NSData *keybagData;
 @property (nonatomic, retain) NSDictionary *lockdownKeys;
+@property (nonatomic) double maxSupportedVersion;
+@property (nonatomic) double minSupportedVersion;
 @property (getter=wasPasscodeSet, nonatomic) BOOL passcodeSet;
 @property (nonatomic, readonly) NSString *productType;
 @property (nonatomic, readonly) id propertyList;
@@ -51,17 +56,22 @@
 - (id)description;
 - (id)deviceID;
 - (id)deviceName;
+- (BOOL)encrypted;
 - (BOOL)hasCorruptSQLiteDBs;
+- (BOOL)hasManifestDB;
 - (id)init;
 - (id)initWithData:(id)arg1 error:(id*)arg2;
 - (id)initWithFile:(id)arg1 error:(id*)arg2;
-- (BOOL)isEncrypted;
+- (id)initWithVersion:(double)arg1 minVersion:(double)arg2 maxVersion:(double)arg3;
 - (BOOL)isProtected;
 - (id)keybagData;
 - (id)lockdownKeys;
+- (double)maxSupportedVersion;
+- (double)minSupportedVersion;
 - (id)objectForKey:(id)arg1;
 - (id)productType;
 - (id)propertyList;
+- (void)removeAllContainers;
 - (void)removeObjectForKey:(id)arg1;
 - (id)serialNumber;
 - (void)setActiveAppleID:(id)arg1;
@@ -69,6 +79,8 @@
 - (void)setEncrypted:(BOOL)arg1;
 - (void)setKeybagData:(id)arg1;
 - (void)setLockdownKeys:(id)arg1;
+- (void)setMaxSupportedVersion:(double)arg1;
+- (void)setMinSupportedVersion:(double)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setPasscodeSet:(BOOL)arg1;
 - (void)setProtected:(BOOL)arg1;

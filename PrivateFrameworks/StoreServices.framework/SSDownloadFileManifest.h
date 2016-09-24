@@ -3,8 +3,8 @@
  */
 
 @interface SSDownloadFileManifest : NSObject {
-    SSXPCConnection *_connection;
-    int _manifestType;
+    SSXPCConnection * _connection;
+    int  _manifestType;
 }
 
 @property (readonly) int manifestType;

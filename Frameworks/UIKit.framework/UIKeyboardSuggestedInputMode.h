@@ -3,7 +3,7 @@
  */
 
 @interface UIKeyboardSuggestedInputMode : UIKeyboardInputMode {
-    BOOL enabled;
+    BOOL  enabled;
 }
 
 @property (nonatomic) BOOL enabled;

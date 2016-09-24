@@ -3,18 +3,18 @@
  */
 
 @interface UIModalView : UIView <UITextFieldDelegate> {
-    float _bodyTextHeight;
-    UILabel *_bodyTextLabel;
-    NSMutableArray *_buttons;
-    int _cancelButton;
-    id _context;
-    int _defaultButton;
-    <UIModalViewDelegate> *_delegate;
-    UIView *_dimView;
-    UIWindow *_dimWindow;
-    int _dismissButtonIndex;
-    int _firstOtherButton;
-    UIView *_keyboard;
+    double  _bodyTextHeight;
+    UILabel * _bodyTextLabel;
+    NSMutableArray * _buttons;
+    int  _cancelButton;
+    id  _context;
+    int  _defaultButton;
+    <UIModalViewDelegate> * _delegate;
+    UIView * _dimView;
+    UIWindow * _dimWindow;
+    int  _dismissButtonIndex;
+    int  _firstOtherButton;
+    UIView * _keyboard;
     struct { 
         unsigned int numberOfRows : 7; 
         unsigned int delegateAlertSheetButtonClicked : 1; 
@@ -53,18 +53,18 @@
         unsigned int useAutomaticKB : 1; 
         unsigned int shouldHandleFirstKeyUpEvent : 1; 
         unsigned int cancelWhenDoneAnimating : 1; 
-    } _modalViewFlags;
-    UIWindow *_originalWindow;
-    UIView *_sheetView;
-    float _startX;
-    float _startY;
-    UILabel *_subtitleLabel;
-    int _suspendTag;
-    UIView *_table;
-    UILabel *_taglineTextLabel;
-    NSMutableArray *_textFields;
-    UILabel *_titleLabel;
-    UIToolbar *_toolbar;
+    }  _modalViewFlags;
+    UIWindow * _originalWindow;
+    UIView * _sheetView;
+    double  _startX;
+    double  _startY;
+    UILabel * _subtitleLabel;
+    int  _suspendTag;
+    UIView * _table;
+    UILabel * _taglineTextLabel;
+    NSMutableArray * _textFields;
+    UILabel * _titleLabel;
+    UIToolbar * _toolbar;
 }
 
 @property (nonatomic) int cancelButtonIndex;
@@ -81,8 +81,7 @@
 
 + (id)_popupAlertBackground;
 + (BOOL)atLeastOneAlertVisible;
-+ (struct CGSize { float x1; float x2; })minimumSize;
-+ (void)noteOrientationChangingTo:(int)arg1;
++ (struct CGSize { double x1; double x2; })minimumSize;
 + (id)topMostAlert;
 + (id)visibleAlert;
 
@@ -144,12 +143,12 @@
 - (float)_titleHorizontalInset;
 - (float)_titleVerticalBottomInset;
 - (float)_titleVerticalTopInset;
-- (void)_truncateViewHeight:(id)arg1 toFitInFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withMinimumHeight:(float)arg3;
+- (void)_truncateViewHeight:(id)arg1 toFitInFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 withMinimumHeight:(float)arg3;
 - (int)addButtonWithTitle:(id)arg1;
 - (id)addButtonWithTitle:(id)arg1 label:(id)arg2;
 - (id)addTextFieldWithValue:(id)arg1 label:(id)arg2;
 - (int)alertSheetStyle;
-- (struct CGSize { float x1; float x2; })backgroundSize;
+- (struct CGSize { double x1; double x2; })backgroundSize;
 - (BOOL)blocksInteraction;
 - (int)bodyMaxLineCount;
 - (id)bodyText;
@@ -169,10 +168,10 @@
 - (void)dismiss;
 - (void)dismissAnimated:(BOOL)arg1;
 - (void)dismissWithClickedButtonIndex:(int)arg1 animated:(BOOL)arg2;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (int)firstOtherButtonIndex;
 - (BOOL)groupsTextFields;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithTitle:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(int)arg3 delegate:(id)arg4 context:(id)arg5;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 defaultButton:(id)arg4 cancelButton:(id)arg5 otherButtons:(id)arg6;
 - (BOOL)isBodyTextTruncated;
@@ -230,7 +229,7 @@
 - (int)textFieldCount;
 - (id)title;
 - (int)titleMaxLineCount;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })titleRect;
 - (void)userDidCancelPopoverView:(id)arg1;
 
 @end

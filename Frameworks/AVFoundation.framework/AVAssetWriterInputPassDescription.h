@@ -3,7 +3,7 @@
  */
 
 @interface AVAssetWriterInputPassDescription : NSObject {
-    AVAssetWriterInputPassDescriptionInternal *_internal;
+    AVAssetWriterInputPassDescriptionInternal * _internal;
 }
 
 @property (nonatomic, readonly) NSArray *sourceTimeRanges;

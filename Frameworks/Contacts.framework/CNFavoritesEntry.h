@@ -3,47 +3,63 @@
  */
 
 @interface CNFavoritesEntry : NSObject <CNContactChangesObserver> {
-    NSString *_abDatabaseUUID;
-    int _abIdentifier;
-    int _abUid;
-    CNContact *_contact;
-    BOOL _dirty;
-    NSString *_identifier;
-    NSString *_label;
-    NSString *_name;
-    NSString *_propertyKey;
-    CNContactStore *_store;
-    int _type;
-    NSString *_value;
+    NSString * _abDatabaseUUID;
+    int  _abIdentifier;
+    int  _abUid;
+    NSString * _actionType;
+    NSString * _bundleIdentifier;
+    CNContact * _contact;
+    BOOL  _dirty;
+    NSString * _label;
+    NSString * _labeledValueIdentifier;
+    NSString * _name;
+    NSString * _originalName;
+    NSString * _propertyKey;
+    CNContactStore * _store;
+    int  _type;
+    NSString * _value;
 }
 
 @property (nonatomic, retain) NSString *abDatabaseUUID;
 @property (nonatomic) int abIdentifier;
 @property (nonatomic) int abUid;
+@property (nonatomic, retain) NSString *actionType;
+@property (nonatomic, retain) NSString *bundleIdentifier;
 @property (nonatomic, retain) CNContact *contact;
 @property (nonatomic, readonly) CNContactProperty *contactProperty;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL dirty;
 @property (readonly) unsigned int hash;
-@property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSString *label;
+@property (nonatomic, retain) NSString *labeledValueIdentifier;
+@property (nonatomic, readonly, copy) NSString *localizedContactPropertyLabel;
 @property (nonatomic, readonly) NSString *name;
+@property (nonatomic, copy) NSString *originalName;
 @property (nonatomic, retain) NSString *propertyKey;
 @property (nonatomic, retain) CNContactStore *store;
 @property (readonly) Class superclass;
 @property (nonatomic) int type;
 @property (nonatomic, retain) NSString *value;
 
-+ (void)_runLookup;
+// Image: /System/Library/Frameworks/Contacts.framework/Contacts
+
++ (void)_runLookupWithStore:(id)arg1;
 + (id)contactFormatter;
 + (id)createLabeledValueForFavoritesEntryValue:(id)arg1 label:(id)arg2 iOSLegacyIdentifier:(int)arg3 propertyKey:(id)arg4;
 + (id)descriptorsForRequiredKeysForPropertyKey:(id)arg1;
 + (id)favoritesEntryValueForLabeledValueValue:(id)arg1 propertyKey:(id)arg2;
++ (id)instantMessageAddressForFavoritesEntryValue:(id)arg1;
 + (id)labeledValueValueForFavoritesEntryValue:(id)arg1 propertyKey:(id)arg2;
 + (id)sharedContactStore;
++ (id)socialProfileForFavoritesEntryValue:(id)arg1;
++ (id)valueStringFromInstantMessageAddress:(id)arg1;
++ (id)valueStringFromSocialProfile:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)_convertFromEntryType:(int)arg1 toActionType:(id*)arg2 bundleIdentifier:(id*)arg3;
+- (int)_entryTypeForActionType:(id)arg1 bundleIdentifier:(id)arg2;
+- (id)_initWithContact:(id)arg1 propertyKey:(id)arg2 labeledValueIdentifier:(id)arg3 entryType:(int)arg4 actionType:(id)arg5 bundleIdentifier:(id)arg6 store:(id)arg7;
 - (void)_lookupChanged:(id)arg1;
 - (void)_lookupNotFound;
 - (void)_postEntryChanged;
@@ -52,6 +68,8 @@
 - (id)abDatabaseUUID;
 - (int)abIdentifier;
 - (int)abUid;
+- (id)actionType;
+- (id)bundleIdentifier;
 - (id)contact;
 - (void)contactDidChange:(id)arg1;
 - (id)contactProperty;
@@ -59,22 +77,27 @@
 - (id)dictionaryRepresentation;
 - (void)dictionaryRepresentation:(id*)arg1 isDirty:(BOOL*)arg2;
 - (BOOL)dirty;
-- (id)identifier;
 - (id)initWithContact:(id)arg1 propertyKey:(id)arg2 identifier:(id)arg3 type:(int)arg4;
 - (id)initWithContact:(id)arg1 propertyKey:(id)arg2 identifier:(id)arg3 type:(int)arg4 store:(id)arg5;
+- (id)initWithContact:(id)arg1 propertyKey:(id)arg2 labeledValueIdentifier:(id)arg3 actionType:(id)arg4 bundleIdentifier:(id)arg5 store:(id)arg6;
 - (id)initWithDictionaryRepresentation:(id)arg1 store:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (id)label;
+- (id)labeledValueIdentifier;
 - (id)name;
+- (id)originalName;
 - (id)propertyKey;
 - (void)recheckContactStore;
 - (void)setAbDatabaseUUID:(id)arg1;
 - (void)setAbIdentifier:(int)arg1;
 - (void)setAbUid:(int)arg1;
+- (void)setActionType:(id)arg1;
+- (void)setBundleIdentifier:(id)arg1;
 - (void)setContact:(id)arg1;
 - (void)setDirty:(BOOL)arg1;
-- (void)setIdentifier:(id)arg1;
 - (void)setLabel:(id)arg1;
+- (void)setLabeledValueIdentifier:(id)arg1;
+- (void)setOriginalName:(id)arg1;
 - (void)setPropertyKey:(id)arg1;
 - (void)setStore:(id)arg1;
 - (void)setType:(int)arg1;
@@ -82,5 +105,20 @@
 - (id)store;
 - (int)type;
 - (id)value;
+
+// Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
+
+- (void)performActionWithCompletion:(id /* block */)arg1;
+- (void)performActionWithContext:(id)arg1 completion:(id /* block */)arg2;
+- (void)performActionWithExtensionContext:(id)arg1 completion:(id /* block */)arg2;
+
+// Image: /System/Library/PrivateFrameworks/ContactsUICore.framework/ContactsUICore
+
++ (id)favoritesEntryForUserActionItem:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
+
+- (id)localizedBundleName;
+- (id)localizedContactPropertyLabel;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface SiriUIPrivatePeoplePickerViewController : SiriUISnippetViewController <SiriUIObjectPickerViewControllerDelegate> {
-    SAABPersonPicker *_picker;
-    SiriUIObjectPickerViewController *_pickerController;
+    SAABPersonPicker * _picker;
+    SiriUIObjectPickerViewController * _pickerController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

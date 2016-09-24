@@ -3,10 +3,10 @@
  */
 
 @interface DCCachedItem : NSObject <DCCachedItem> {
-    NSData *_documentIdentifier;
-    BOOL _hasBeenRemoved;
-    DCRelativePath *_path;
-    DCService *_service;
+    NSData * _documentIdentifier;
+    BOOL  _hasBeenRemoved;
+    DCRelativePath * _path;
+    DCService * _service;
 }
 
 @property (readonly, retain) NSData *documentIdentifier;

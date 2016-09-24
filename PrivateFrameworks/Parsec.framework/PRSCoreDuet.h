@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/Parsec.framework/Parsec
  */
 
-@interface PRSCoreDuet : PRSSharedPredictionService {
-    CDSession *_cdSession;
-    CDAttribute *_spotlightAttr;
+@interface PRSCoreDuet : NSObject {
+    CDSession * _cdSession;
+    CDAttribute * _spotlightAttr;
 }
 
 @property (retain) CDSession *cdSession;

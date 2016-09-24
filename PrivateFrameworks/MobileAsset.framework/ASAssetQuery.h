@@ -3,11 +3,11 @@
  */
 
 @interface ASAssetQuery : NSObject {
-    NSString *_assetType;
-    double _networkTimeout;
-    NSPredicate *_predicate;
-    BOOL _queriesLocalAssetInformationOnly;
-    NSArray *_results;
+    NSString * _assetType;
+    double  _networkTimeout;
+    NSPredicate * _predicate;
+    BOOL  _queriesLocalAssetInformationOnly;
+    NSArray * _results;
 }
 
 @property (nonatomic, copy) NSString *assetType;

@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptTextFieldDelegate : NSObject <SUScriptTextFieldDelegate> {
-    NSHashTable *_delegates;
+    NSHashTable * _delegates;
 }
 
 @property (readonly, copy) NSString *debugDescription;

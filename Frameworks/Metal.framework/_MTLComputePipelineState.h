@@ -3,8 +3,8 @@
  */
 
 @interface _MTLComputePipelineState : NSObject {
-    <MTLDevice> *_device;
-    NSString *_label;
+    <MTLDevice> * _device;
+    NSString * _label;
 }
 
 @property (readonly) <MTLDevice> *device;

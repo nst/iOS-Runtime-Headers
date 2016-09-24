@@ -3,15 +3,16 @@
  */
 
 @interface UIDatePicker : UIControl <NSCoding, UIPickerViewScrollTesting> {
-    _UIDatePickerView *_pickerView;
-    BOOL _useCurrentDateDuringDecoding;
+    _UIDatePickerView * _pickerView;
+    BOOL  _useCurrentDateDuringDecoding;
+    BOOL  shouldAnimateSetDateCall;
 }
 
 @property (getter=_usesModernStyle, setter=_setUsesModernStyle:, nonatomic) BOOL _usesModernStyle;
 @property (getter=_allowsZeroCountDownDuration, setter=_setAllowsZeroCountDownDuration:, nonatomic) BOOL allowsZeroCountDownDuration;
 @property (getter=_allowsZeroTimeInterval, setter=_setAllowsZeroTimeInterval:, nonatomic) BOOL allowsZeroTimeInterval;
 @property (nonatomic, copy) NSCalendar *calendar;
-@property (getter=_contentWidth, nonatomic, readonly) float contentWidth;
+@property (getter=_contentWidth, nonatomic, readonly) double contentWidth;
 @property (nonatomic) double countDownDuration;
 @property (nonatomic, retain) NSDate *date;
 @property (nonatomic) int datePickerMode;
@@ -23,6 +24,7 @@
 @property (nonatomic, retain) NSDate *maximumDate;
 @property (nonatomic, retain) NSDate *minimumDate;
 @property (nonatomic) int minuteInterval;
+@property (getter=_shouldAnimateSetDateCall, setter=_setShouldAnimateSetDateCall:, nonatomic) BOOL shouldAnimateSetDateCall;
 @property (getter=_textColor, setter=_setTextColor:, nonatomic, retain) UIColor *textColor;
 @property (getter=_textShadowColor, setter=_setTextShadowColor:, nonatomic, retain) UIColor *textShadowColor;
 @property (nonatomic) double timeInterval;
@@ -38,11 +40,13 @@
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
 - (float)_contentWidth;
+- (unsigned int)_controlEventsForActionTriggered;
 - (id)_dateUnderSelectionBar;
 - (BOOL)_drawsBackground;
+- (void)_emitValueChanged;
 - (id)_highlightColor;
 - (void)_installPickerView:(id)arg1;
-- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })_intrinsicSizeWithinSize:(struct CGSize { double x1; double x2; })arg1;
 - (BOOL)_isTimeIntervalMode;
 - (id)_labelTextForCalendarUnit:(unsigned int)arg1;
 - (id)_locale;
@@ -56,12 +60,14 @@
 - (void)_setHighlightColor:(id)arg1;
 - (void)_setHighlightsToday:(BOOL)arg1;
 - (void)_setLocale:(id)arg1;
+- (void)_setShouldAnimateSetDateCall:(BOOL)arg1;
 - (void)_setTextColor:(id)arg1;
 - (void)_setTextShadowColor:(id)arg1;
 - (void)_setUpInitialValues;
 - (void)_setUseCurrentDateDuringDecoding:(BOOL)arg1;
 - (void)_setUsesBlackChrome:(BOOL)arg1;
 - (void)_setUsesModernStyle:(BOOL)arg1;
+- (BOOL)_shouldAnimateSetDateCall;
 - (id)_textColor;
 - (id)_textShadowColor;
 - (BOOL)_useCurrentDateDuringDecoding;
@@ -73,11 +79,12 @@
 - (id)date;
 - (id)dateComponents;
 - (int)datePickerMode;
+- (void)didReceiveBindingsUpdate;
 - (void)encodeWithCoder:(id)arg1;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (int)hour;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)invalidateIntrinsicContentSize;
 - (id)locale;
 - (id)maximumDate;
@@ -86,7 +93,7 @@
 - (int)minuteInterval;
 - (int)second;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setCalendar:(id)arg1;
 - (void)setCountDownDuration:(double)arg1;
 - (void)setDate:(id)arg1;
@@ -95,7 +102,8 @@
 - (void)setDateComponents:(id)arg1;
 - (void)setDatePickerMode:(int)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setEnabled:(BOOL)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setHighlightsToday:(BOOL)arg1;
 - (void)setLocale:(id)arg1;
 - (void)setMaximumDate:(id)arg1;
@@ -104,14 +112,15 @@
 - (void)setStaggerTimeIntervals:(BOOL)arg1;
 - (void)setTimeInterval:(double)arg1;
 - (void)setTimeZone:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (double)timeInterval;
 - (id)timeZone;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)willReceiveBindingsUpdate;
 
-// Image: /System/Library/Frameworks/PassKit.framework/PassKit
+// Image: /System/Library/PrivateFrameworks/PassKitUI.framework/PassKitUI
 
-- (void)pk_applyAppearance:(struct _PKAppearanceSpecifier { BOOL x1; id x2; id x3; id x4; id x5; id x6; id x7; id x8; id x9; id x10; id x11; id x12; id x13; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; id x27; long x28; void*x29; void*x30; void*x31; void*x32; void*x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; void*x50; void*x51; void*x52; void*x53; void*x54; void*x55; void*x56; void*x57; void*x58; void*x59; void*x60; void*x61; void*x62; void*x63; void*x64; void*x65; void*x66; void*x67; void*x68; void*x69; void*x70; void*x71; void*x72; void*x73; void*x74; void*x75; void*x76; void*x77; void*x78; void*x79; void*x80; void*x81; double x82; void*x83; struct x84; void*x85; void*x86; void*x87; void*x88; void*x89; void*x90; void*x91; void*x92; void*x93; void*x94; void*x95; void*x96; void*x97; void*x98; void*x99; void*x100; void*x101; void*x102; void*x103; void*x104; void*x105; void*x106; void*x107; void*x108; void x109; void*x110; void*x111; void*x112; void*x113; void*x114; void*x115; void*x116; void*x117; long x118; void*x119; void*x120; void*x121; const unsigned int x122; void*x123; void*x124; void*x125; void*x126; const const out const unsigned long x127; out void*x128; void*x129; void x130; void*x131; in void*x132; unsigned int x133; in void*x134; void*x135; const in void*x136; long x137; void*x138; void*x139; void*x140; void*x141; void*x142; void*x143; void*x144; void*x145; void*x146; void*x147; void*x148; void*x149; void*x150; void*x151; void*x152; void*x153; void*x154; void*x155; void*x156; void*x157; void*x158; void*x159; void*x160; void*x161; void*x162; void*x163; void*x164; void*x165; void*x166; void*x167; void*x168; void*x169; void*x170; void*x171; void*x172; void*x173; void*x174; void*x175; void*x176; void*x177; void*x178; void*x179; void*x180; void*x181; void*x182; void*x183; void*x184; void*x185; void*x186; void*x187; void*x188; void*x189; void*x190; void*x191; void*x192; void*x193; void*x194; void*x195; long doublex196; inout bycopy unsigned char x197; void*x198; void*x199; void*x200; void*x201; void*x202; void*x203; void*x204; void*x205; void*x206; void*x207; void*x208; void*x209; void*x210; void*x211; void*x212; void*x213; void*x214; void*x215; void*x216; void*x217; void*x218; void*x219; void*x220; void*x221; void*x222; void*x223; void*x224; void*x225; Class x226; void*x227; void*x228; void*x229; void*x230; void*x231; void*x232; void*x233; void*x234; void*x235; void*x236; void*x237; void*x238; bycopy void*x239; void*x240; void*x241; void*x242; void*x243; void*x244; void*x245; void*x246; void*x247; void*x248; void*x249; void*x250; void*x251; void*x252; void*x253; void*x254; void*x255; void*x256; void*x257; void*x258; void*x259; void*x260; void*x261; void*x262; void*x263; void*x264; void*x265; void**x266; unsigned char x267; void*x268; void*x269; void*x270; id x271; void*x272; void*x273; void*x274; void*x275; void*x276; void*x277; void*x278; void*x279; void*x280; void*x281; void*x282; void*x283; void*x284; void*x285; void*x286; void*x287; void*x288; void*x289; void*x290; void*x291; void*x292; void*x293; void*x294; void*x295; void**x296; unsigned char x297; void*x298; void*x299; void*x300; id x301; void*x302; void*x303; void*x304; void*x305; void*x306; void*x307; void*x308; void*x309; void*x310; void*x311; void*x312; void*x313; void*x314; void*x315; void*x316; void*x317; void*x318; void*x319; void*x320; void*x321; void*x322; void*x323; void*x324; void*x325; void**x326; unsigned char x327; void*x328; void*x329; void*x330; id x331; void*x332; void*x333; void*x334; void*x335; void*x336; void*x337; void*x338; void*x339; void*x340; void*x341; void*x342; void*x343; void*x344; void*x345; void*x346; void*x347; void*x348; void*x349; void*x350; void*x351; void*x352; void*x353; void*x354; void*x355; void*x356; void*x357; void*x358; void*x359; void*x360; void*x361; void*x362; void*x363; void*x364; void*x365; void*x366; void*x367; void*x368; void*x369; void*x370; void*x371; void*x372; void*x373; void*x374; void*x375; void*x376; void*x377; void*x378; void*x379; void*x380; void*x381; void*x382; void*x383; void*x384; void*x385; void*x386; void*x387; void*x388; void*x389; void*x390; void*x391; void*x392; void*x393; void*x394; void*x395; void*x396; void*x397; void*x398; void*x399; void*x400; void*x401; void*x402; void*x403; void*x404; void*x405; void*x406; void*x407; void x408; void*x409; void*x410; void*x411; void*x412; void*x413; void*x414; void*x415; void*x416; void*x417; void*x418; void*x419; void*x420; const void*x421; void*x422; in BOOL x423; void*x424; unsigned char x425; void*x426; const double x427; unsigned short x428; void*x429; void*x430; void*x431; void*x432; const void*x433; void*x434; void*x435; unsigned int x436/* : ? */; long x437; void*x438; unsigned int x439; void*x440; void*x441; void*x442; void*x443; void*x444; void*x445; void*x446; void*x447; void*x448; void*x449; void*x450; void*x451; void x452; void*x453; void*x454; void*x455; void*x456; void*x457; void*x458; void*x459; void*x460; void*x461; void*x462; void*x463; void*x464; const void*x465; void*x466; in BOOL x467; void*x468; unsigned char x469; void*x470; const double x471; unsigned short x472; void*x473; void*x474; void*x475; void*x476; const void*x477; void*x478; void*x479; unsigned int x480/* : ? */; long x481; void*x482; unsigned int x483; void*x484; void*x485; void*x486; void*x487; void*x488; void*x489; void*x490; void*x491; void*x492; void*x493; void*x494; void*x495; void*x496; void*x497; void*x498; void*x499; void*x500; void*x501; void*x502; void*x503; void*x504; void*x505; void*x506; void*x507; void*x508; void*x509; void*x510; void*x511; void*x512; void*x513; void*x514; void*x515; void*x516; void*x517; void*x518; void*x519; void*x520; void*x521; void*x522; void*x523; void*x524; void*x525; void*x526; void*x527; void*x528; }*)arg1;
+- (void)pk_applyAppearance:(id)arg1;
 - (id)pk_childrenForAppearance;
 
 @end

@@ -3,10 +3,10 @@
  */
 
 @interface CIProSharpenEdges : CIFilter {
-    NSNumber *inputEdgeScale;
-    NSNumber *inputFalloff;
-    CIImage *inputImage;
-    NSNumber *inputSharpness;
+    NSNumber * inputEdgeScale;
+    NSNumber * inputFalloff;
+    CIImage * inputImage;
+    NSNumber * inputSharpness;
 }
 
 + (id)customAttributes;

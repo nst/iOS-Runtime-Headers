@@ -3,24 +3,28 @@
  */
 
 @interface PKPaymentRequest : NSObject <NSSecureCoding> {
-    NSData *_applicationData;
-    const void *_billingAddress;
-    PKContact *_billingContact;
-    NSString *_countryCode;
-    NSString *_currencyCode;
-    unsigned int _merchantCapabilities;
-    NSString *_merchantIdentifier;
-    NSArray *_paymentSummaryItems;
-    unsigned int _requiredBillingAddressFields;
-    unsigned int _requiredShippingAddressFields;
-    BOOL _requiresAddressPrecision;
-    const void *_shippingAddress;
-    PKContact *_shippingContact;
-    BOOL _shippingEditable;
-    NSString *_shippingEditableMessage;
-    NSArray *_shippingMethods;
-    unsigned int _shippingType;
-    NSArray *_supportedNetworks;
+    NSData * _applicationData;
+    const void * _billingAddress;
+    PKContact * _billingContact;
+    NSString * _countryCode;
+    NSString * _currencyCode;
+    BOOL  _expectsMerchantSession;
+    unsigned int  _merchantCapabilities;
+    NSString * _merchantIdentifier;
+    PKPaymentMerchantSession * _merchantSession;
+    NSURL * _originatingURL;
+    NSArray * _paymentSummaryItems;
+    unsigned int  _requiredBillingAddressFields;
+    unsigned int  _requiredShippingAddressFields;
+    BOOL  _requiresAddressPrecision;
+    const void * _shippingAddress;
+    PKContact * _shippingContact;
+    BOOL  _shippingEditable;
+    NSString * _shippingEditableMessage;
+    NSArray * _shippingMethods;
+    unsigned int  _shippingType;
+    NSArray * _supportedNetworks;
+    NSArray * _thumbnailURLs;
 }
 
 @property (nonatomic, copy) NSData *applicationData;
@@ -28,8 +32,11 @@
 @property (nonatomic, retain) PKContact *billingContact;
 @property (nonatomic, copy) NSString *countryCode;
 @property (nonatomic, copy) NSString *currencyCode;
+@property (nonatomic) BOOL expectsMerchantSession;
 @property (nonatomic) unsigned int merchantCapabilities;
 @property (nonatomic, copy) NSString *merchantIdentifier;
+@property (nonatomic, retain) PKPaymentMerchantSession *merchantSession;
+@property (nonatomic, retain) NSURL *originatingURL;
 @property (nonatomic, copy) NSArray *paymentSummaryItems;
 @property (nonatomic) unsigned int requiredBillingAddressFields;
 @property (nonatomic) unsigned int requiredShippingAddressFields;
@@ -41,9 +48,14 @@
 @property (nonatomic, copy) NSArray *shippingMethods;
 @property (nonatomic) unsigned int shippingType;
 @property (nonatomic, copy) NSArray *supportedNetworks;
+@property (nonatomic, retain) NSArray *thumbnailURLs;
 
++ (id)availableNetworks;
++ (id)requestWithProtobuf:(id)arg1;
 + (BOOL)supportsSecureCoding;
++ (int)version;
 
+- (void).cxx_destruct;
 - (id)_shippingTypeToString;
 - (id)_transactionAmount;
 - (id)applicationData;
@@ -51,14 +63,20 @@
 - (id)billingContact;
 - (id)countryCode;
 - (id)currencyCode;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)expectsMerchantSession;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithDictionary:(id)arg1 error:(id*)arg2;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToPaymentRequest:(id)arg1;
 - (BOOL)isShippingEditable;
 - (unsigned int)merchantCapabilities;
 - (id)merchantIdentifier;
+- (id)merchantSession;
+- (id)originatingURL;
 - (id)paymentSummaryItems;
+- (id)protobuf;
 - (unsigned int)requiredBillingAddressFields;
 - (unsigned int)requiredShippingAddressFields;
 - (BOOL)requiresAddressPrecision;
@@ -67,8 +85,11 @@
 - (void)setBillingContact:(id)arg1;
 - (void)setCountryCode:(id)arg1;
 - (void)setCurrencyCode:(id)arg1;
+- (void)setExpectsMerchantSession:(BOOL)arg1;
 - (void)setMerchantCapabilities:(unsigned int)arg1;
 - (void)setMerchantIdentifier:(id)arg1;
+- (void)setMerchantSession:(id)arg1;
+- (void)setOriginatingURL:(id)arg1;
 - (void)setPaymentSummaryItems:(id)arg1;
 - (void)setRequiredBillingAddressFields:(unsigned int)arg1;
 - (void)setRequiredShippingAddressFields:(unsigned int)arg1;
@@ -80,11 +101,13 @@
 - (void)setShippingMethods:(id)arg1;
 - (void)setShippingType:(unsigned int)arg1;
 - (void)setSupportedNetworks:(id)arg1;
+- (void)setThumbnailURLs:(id)arg1;
 - (const void*)shippingAddress;
 - (id)shippingContact;
 - (id)shippingEditableMessage;
 - (id)shippingMethods;
 - (unsigned int)shippingType;
 - (id)supportedNetworks;
+- (id)thumbnailURLs;
 
 @end

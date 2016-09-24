@@ -3,8 +3,8 @@
  */
 
 @interface BirthdayRecord : NSObject {
-    BOOL _isEmpty;
-    NSMutableDictionary *_record;
+    BOOL  _isEmpty;
+    NSMutableDictionary * _record;
 }
 
 @property (nonatomic, readonly) BOOL isEmpty;

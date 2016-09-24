@@ -2,9 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartCategoryAxis : TSCHChartAxis {
-    int mRangeContinuousCache;
-}
+@interface TSCHChartCategoryAxis : TSCHChartAxis
 
 + (id)axisForInfo:(id)arg1;
 + (unsigned char)styleOwnerPathType;

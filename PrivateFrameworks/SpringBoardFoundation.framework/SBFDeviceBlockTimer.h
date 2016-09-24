@@ -3,40 +3,35 @@
  */
 
 @interface SBFDeviceBlockTimer : NSObject {
-    NSString *_cachedLocalizedPlatformName;
-    SBFDeviceLockController *_deviceLockController;
-    BOOL _enabled;
-    id /* block */ _handler;
-    NSString *_subtitleText;
-    NSTimer *_timer;
-    NSString *_titleText;
+    <SBFBlockStatusProvider> * _blockStatusProvider;
+    BOOL  _enabled;
+    id /* block */  _handler;
+    NSString * _subtitleText;
+    NSTimer * _timer;
+    NSString * _titleText;
 }
 
-@property (nonatomic, copy) NSString *cachedLocalizedPlatformName;
-@property (nonatomic, retain) SBFDeviceLockController *deviceLockController;
-@property (nonatomic) BOOL enabled;
+@property (setter=_setBlockStatusProvider:, nonatomic, retain) <SBFBlockStatusProvider> *blockStatusProvider;
+@property (getter=_isEnabled, setter=_setEnabled:, nonatomic) BOOL enabled;
 @property (nonatomic, copy) id /* block */ handler;
 @property (nonatomic, copy) NSString *subtitleText;
-@property (nonatomic, retain) NSTimer *timer;
+@property (setter=_setTimer:, nonatomic, retain) NSTimer *timer;
 @property (nonatomic, copy) NSString *titleText;
 
 - (void).cxx_destruct;
 - (void)_clearTimer;
-- (id)_localizedPlatformName;
+- (BOOL)_isEnabled;
 - (void)_scheduleTimerIfNecessaryAndUpdateState;
-- (id)cachedLocalizedPlatformName;
+- (void)_setBlockStatusProvider:(id)arg1;
+- (void)_setEnabled:(BOOL)arg1;
+- (void)_setTimer:(id)arg1;
+- (id)blockStatusProvider;
 - (void)dealloc;
-- (id)deviceLockController;
-- (BOOL)enabled;
 - (id /* block */)handler;
-- (id)initWithDeviceLockController:(id)arg1;
+- (id)initWithDeviceBlockStatusProvider:(id)arg1;
 - (void)invalidate;
-- (void)setCachedLocalizedPlatformName:(id)arg1;
-- (void)setDeviceLockController:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
 - (void)setHandler:(id /* block */)arg1;
 - (void)setSubtitleText:(id)arg1;
-- (void)setTimer:(id)arg1;
 - (void)setTitleText:(id)arg1;
 - (void)start;
 - (id)subtitleText;

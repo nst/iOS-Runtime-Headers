@@ -3,7 +3,7 @@
  */
 
 @interface SLSafeLocationManagerDelegate : NSObject <CLLocationManagerDelegate> {
-    <CLLocationManagerDelegate> *_delegate;
+    <CLLocationManagerDelegate> * _delegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -5,9 +5,9 @@
 @interface AWDITesterApplicationUUID : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
-    } _has;
-    unsigned long long _timestamp;
-    NSString *_uuid;
+    }  _has;
+    unsigned long long  _timestamp;
+    NSString * _uuid;
 }
 
 @property (nonatomic) BOOL hasTimestamp;

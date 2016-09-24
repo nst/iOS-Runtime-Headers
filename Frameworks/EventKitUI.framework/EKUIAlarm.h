@@ -3,8 +3,8 @@
  */
 
 @interface EKUIAlarm : NSObject {
-    EKAlarm *_alarm;
-    BOOL _isLeaveNowAlarm;
+    EKAlarm * _alarm;
+    BOOL  _isLeaveNowAlarm;
 }
 
 @property (nonatomic, readonly) EKAlarm *alarm;

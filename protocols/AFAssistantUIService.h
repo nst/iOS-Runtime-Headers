@@ -9,10 +9,13 @@
 - (void)assistantConnection:(AFConnection *)arg1 didFinishAcousticIDRequestWithSuccess:(BOOL)arg2;
 - (void)assistantConnection:(void *)arg1 openApplicationWithBundleID:(void *)arg2 URL:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 9: AFConnection *, NSString *, NSURL *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
 - (void)assistantConnection:(void *)arg1 openURL:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: AFConnection *, NSURL *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
-- (void)assistantConnection:(AFConnection *)arg1 receivedCommand:(id <SAAceCommand>)arg2;
+- (void)assistantConnection:(void *)arg1 receivedCommand:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: AFConnection *, AceObject<SAAceCommand> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, AceObject<SAAceCommand> *, void*
 - (void)assistantConnection:(AFConnection *)arg1 requestFailedWithError:(NSError *)arg2 requestClass:(NSString *)arg3;
 - (void)assistantConnection:(AFConnection *)arg1 setUserActivtiyInfoAndMakeCurrent:(NSDictionary *)arg2 webpageURL:(NSURL *)arg3;
 - (void)assistantConnection:(AFConnection *)arg1 shouldSpeak:(BOOL)arg2;
+- (void)assistantConnection:(AFConnection *)arg1 wantsToCacheImage:(INImage *)arg2;
+- (void)assistantConnectionAudioSessionDidBeginInterruption:(AFConnection *)arg1;
+- (void)assistantConnectionAudioSessionDidEndInterruption:(AFConnection *)arg1 shouldResume:(BOOL)arg2;
 - (void)assistantConnectionDidDetectMusic:(AFConnection *)arg1;
 - (void)assistantConnectionDismissAssistant:(AFConnection *)arg1;
 - (void)assistantConnectionInvalidateCurrentUserActivity:(AFConnection *)arg1;

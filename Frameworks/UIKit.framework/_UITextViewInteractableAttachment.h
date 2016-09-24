@@ -3,7 +3,7 @@
  */
 
 @interface _UITextViewInteractableAttachment : _UITextViewInteractableItem {
-    NSTextAttachment *_attachment;
+    NSTextAttachment * _attachment;
 }
 
 @property (nonatomic, retain) NSTextAttachment *attachment;
@@ -15,7 +15,7 @@
 - (id)_image;
 - (void)_saveToCameraRoll;
 - (id)actions;
-- (BOOL)allowInteraction;
+- (BOOL)allowInteraction:(int)arg1;
 - (id)attachment;
 - (id)defaultAction;
 - (id)localizedTitle;

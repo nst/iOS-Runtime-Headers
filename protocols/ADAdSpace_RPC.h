@@ -7,6 +7,7 @@
 
 - (void)_remote_actionViewControllerReadyForPresentation;
 - (void)_remote_adImpressionDidLoadWithPublicAttributes:(ADAdImpressionPublicAttributes *)arg1;
+- (void)_remote_changeBannerViewState:(int)arg1;
 - (void)_remote_close;
 - (void)_remote_creativeDidFailWithError:(NSError *)arg1;
 - (void)_remote_creativeWillLoad;
@@ -16,6 +17,7 @@
 - (void)_remote_openURL:(NSURL *)arg1;
 - (void)_remote_pauseBannerMedia;
 - (void)_remote_requestPortraitOnlyViewController;
+- (void)_remote_requestPresentationForMRAIDOpenEvent;
 - (void)_remote_requestViewControllerWithClassName:(NSString *)arg1 forAdSpaceControllerWithIdentifier:(NSString *)arg2;
 - (void)_remote_resumeBannerMedia;
 - (void)_remote_setRequiresFastVisibilityTestOnly:(BOOL)arg1;

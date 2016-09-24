@@ -3,10 +3,10 @@
  */
 
 @interface CKQueryNotification : CKNotification <NSSecureCoding> {
-    int _databaseScope;
-    int _queryNotificationReason;
-    NSDictionary *_recordFields;
-    CKRecordID *_recordID;
+    int  _databaseScope;
+    int  _queryNotificationReason;
+    NSDictionary * _recordFields;
+    CKRecordID * _recordID;
 }
 
 @property (nonatomic) int databaseScope;

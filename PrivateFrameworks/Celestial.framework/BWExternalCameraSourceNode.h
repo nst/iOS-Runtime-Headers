@@ -3,21 +3,22 @@
  */
 
 @interface BWExternalCameraSourceNode : BWSourceNode <BWFigCameraSourceNode> {
-    BWFigExternalVideoCaptureDevice *_captureDevice;
-    int _livePreviewFormatIndex;
-    BOOL _makeCurrentConfigurationLive;
+    BWFigExternalVideoCaptureDevice * _captureDevice;
+    int  _livePreviewFormatIndex;
+    BOOL  _makeCurrentConfigurationLive;
     struct { 
         int width; 
         int height; 
-    } _outputDimensions;
-    int _stillImageCaptureFormatIndex;
-    BWNodeOutput *_stillImageOutput;
-    id /* block */ _stillImageSBufHandler;
-    BWNodeOutput *_videoCaptureOutput;
-    id /* block */ _videoSBufHandler;
+    }  _outputDimensions;
+    int  _stillImageCaptureFormatIndex;
+    BWNodeOutput * _stillImageOutput;
+    id /* block */  _stillImageSBufHandler;
+    BWNodeOutput * _videoCaptureOutput;
+    id /* block */  _videoSBufHandler;
 }
 
 @property (readonly) BWFigVideoCaptureDevice *captureDevice;
+@property (readonly) BWFigVideoCaptureStream *captureStream;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) BWNodeOutput *detectedFacesOutput;
@@ -25,6 +26,8 @@
 @property (readonly) BWNodeOutput *stillImageOutput;
 @property (readonly) Class superclass;
 @property (readonly) BWNodeOutput *videoCaptureOutput;
+@property (nonatomic, copy) NSDictionary *videoCaptureOutputColorInfoOverride;
+@property (nonatomic) BOOL videoCaptureOutputPixelBufferAttachmentModificationAllowed;
 
 + (id)cameraSourceNodeWithCaptureDevice:(id)arg1;
 + (void)initialize;
@@ -34,6 +37,7 @@
 - (void)_resolveSensorFormatIndex;
 - (void)_updateFormatRequirements;
 - (id)captureDevice;
+- (id)captureStream;
 - (id)colorInfoForOutput:(id)arg1;
 - (void)dealloc;
 - (id)detectedFacesOutput;
@@ -44,11 +48,15 @@
 - (void)setLivePreviewFormatIndex:(int)arg1;
 - (void)setOutputDimensions:(struct { int x1; int x2; })arg1;
 - (void)setStillImageCaptureFormatIndex:(int)arg1;
+- (void)setVideoCaptureOutputColorInfoOverride:(id)arg1;
+- (void)setVideoCaptureOutputPixelBufferAttachmentModificationAllowed:(BOOL)arg1;
 - (BOOL)start:(id*)arg1;
 - (int)stillImageCaptureFormatIndex;
 - (id)stillImageOutput;
 - (BOOL)stop:(id*)arg1;
 - (id)videoCaptureOutput;
+- (id)videoCaptureOutputColorInfoOverride;
+- (BOOL)videoCaptureOutputPixelBufferAttachmentModificationAllowed;
 - (void)willStop;
 
 @end

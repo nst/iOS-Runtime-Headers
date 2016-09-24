@@ -5,8 +5,8 @@
 @interface GEOPBTransitLineDisplayHints : PBCodable <NSCopying> {
     struct { 
         unsigned int showVehicleNumber : 1; 
-    } _has;
-    BOOL _showVehicleNumber;
+    }  _has;
+    BOOL  _showVehicleNumber;
 }
 
 @property (nonatomic) BOOL hasShowVehicleNumber;

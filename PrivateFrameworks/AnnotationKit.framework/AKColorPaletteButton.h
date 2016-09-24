@@ -3,7 +3,7 @@
  */
 
 @interface AKColorPaletteButton : UIButton {
-    UIColor *_color;
+    UIColor * _color;
 }
 
 @property (nonatomic, retain) UIColor *color;

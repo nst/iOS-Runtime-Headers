@@ -12,6 +12,8 @@
 
 @optional
 
+- (BOOL)annotationManager:(MKAnnotationManager *)arg1 canSelectAnnotationRepresentation:(id <MKAnnotationRepresentation>)arg2;
+- (BOOL)annotationManager:(MKAnnotationManager *)arg1 shouldAnimateDeselectionOfAnnotation:(id <MKAnnotation>)arg2 forSelectionOfAnnotation:(id <MKAnnotation>)arg3;
 - (void)annotationManager:(MKAnnotationManager *)arg1 willDeselectAnnotationRepresentation:(id <MKAnnotationRepresentation>)arg2;
 
 @end

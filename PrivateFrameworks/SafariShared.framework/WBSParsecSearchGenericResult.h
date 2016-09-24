@@ -3,15 +3,15 @@
  */
 
 @interface WBSParsecSearchGenericResult : WBSParsecSearchResult {
-    WBSParsecActionButton *_actionButton;
-    WBSParsecAuxiliaryInfo *_auxiliaryInfo;
-    NSArray *_descriptionRichTexts;
-    NSString *_footnote;
-    NSArray *_rowSections;
-    NSString *_secondaryTitle;
-    WBSParsecImageRepresentation *_secondaryTitleGlyph;
-    WBSParsecImageRepresentation *_thumbnail;
-    NSNumber *_titleMaximumLines;
+    WBSParsecActionButton * _actionButton;
+    WBSParsecAuxiliaryInfo * _auxiliaryInfo;
+    NSArray * _descriptionRichTexts;
+    NSString * _footnote;
+    NSArray * _rowSections;
+    NSString * _secondaryTitle;
+    WBSParsecImageRepresentation * _secondaryTitleGlyph;
+    WBSParsecImageRepresentation * _thumbnail;
+    NSNumber * _titleMaximumLines;
 }
 
 @property (nonatomic, readonly) WBSParsecAuxiliaryInfo *auxiliaryInfo;

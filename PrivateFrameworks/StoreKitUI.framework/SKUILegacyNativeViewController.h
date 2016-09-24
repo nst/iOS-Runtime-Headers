@@ -3,12 +3,12 @@
  */
 
 @interface SKUILegacyNativeViewController : SKUIViewController <SKUICategoryControllerDelegate> {
-    NSURL *_activeURL;
-    SKUICategoryController *_categoryController;
-    NSURL *_defaultURL;
-    NSData *_initialData;
-    SSVLoadURLOperation *_initialOperation;
-    SKUIStorePageViewController *_storePageViewController;
+    NSURL * _activeURL;
+    SKUICategoryController * _categoryController;
+    NSURL * _defaultURL;
+    NSData * _initialData;
+    SSVLoadURLOperation * _initialOperation;
+    SKUIStorePageViewController * _storePageViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;

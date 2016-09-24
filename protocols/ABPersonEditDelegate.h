@@ -5,7 +5,7 @@
 
 @optional
 
-- (struct CGSize { float x1; float x2; })adjustedPopoverContentSizeForPersonView:(ABPersonViewController *)arg1 suggestedSize:(struct CGSize { float x1; float x2; })arg2;
+- (struct CGSize { double x1; double x2; })adjustedPopoverContentSizeForPersonView:(ABPersonViewController *)arg1 suggestedSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)didRemoveDeleteButtonAtIndexPath:(NSIndexPath *)arg1;
 - (void)imageUpdatedForPerson:(void*)arg1;
 - (void)insertProperty:(int*)arg1 insertValue:(id*)arg2 insertLabel:(id*)arg3;

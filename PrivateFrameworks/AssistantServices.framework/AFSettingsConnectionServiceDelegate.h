@@ -3,7 +3,7 @@
  */
 
 @interface AFSettingsConnectionServiceDelegate : NSObject <AFSettingsServiceDelegate> {
-    AFSettingsConnection *_connection;
+    AFSettingsConnection * _connection;
 }
 
 @property (readonly, copy) NSString *debugDescription;

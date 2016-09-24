@@ -3,16 +3,16 @@
  */
 
 @interface AWDCoreRoutineStateModelConfidence : PBCodable <NSCopying> {
-    unsigned int _confidence;
+    unsigned int  _confidence;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int confidence : 1; 
         unsigned int impossibleTransitions : 1; 
         unsigned int nearbyLocations : 1; 
-    } _has;
-    unsigned int _impossibleTransitions;
-    unsigned int _nearbyLocations;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned int  _impossibleTransitions;
+    unsigned int  _nearbyLocations;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int confidence;

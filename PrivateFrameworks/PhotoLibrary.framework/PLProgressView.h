@@ -3,19 +3,19 @@
  */
 
 @interface PLProgressView : UIView {
-    _UIBackdropView *_backgroundBlurredView;
-    UIView *_backgroundTintedView;
-    int _backgroundType;
-    UIView *_backgroundView;
-    UIButton *_cancelButton;
-    id /* block */ _cancelationHandler;
-    unsigned int _didLayout;
-    unsigned int _didSetPermanantTextOnLabelView;
-    UILabel *_labelView;
-    NSNumberFormatter *_progressFormatter;
-    UIProgressView *_progressView;
-    BOOL _showsCancelButton;
-    UIView *_topDivider;
+    _UIBackdropView * _backgroundBlurredView;
+    UIView * _backgroundTintedView;
+    int  _backgroundType;
+    UIView * _backgroundView;
+    UIButton * _cancelButton;
+    id /* block */  _cancelationHandler;
+    unsigned int  _didLayout;
+    unsigned int  _didSetPermanantTextOnLabelView;
+    UILabel * _labelView;
+    NSNumberFormatter * _progressFormatter;
+    UIProgressView * _progressView;
+    BOOL  _showsCancelButton;
+    UIView * _topDivider;
 }
 
 @property (nonatomic, retain) _UIBackdropView *backgroundBlurredView;
@@ -23,7 +23,7 @@
 @property (nonatomic) int backgroundType;
 @property (nonatomic, retain) UIView *backgroundView;
 @property (nonatomic, copy) id /* block */ cancelationHandler;
-@property (nonatomic) float percentComplete;
+@property (nonatomic) double percentComplete;
 @property (nonatomic) BOOL showsCancelButton;
 
 - (void)_cancel:(id)arg1;
@@ -39,7 +39,7 @@
 - (id)backgroundView;
 - (id /* block */)cancelationHandler;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (float)percentComplete;
 - (void)setBackgroundBlurredView:(id)arg1;

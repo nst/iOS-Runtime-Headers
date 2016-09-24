@@ -3,7 +3,7 @@
  */
 
 @interface TCXmlEnumMap : NSObject {
-    struct __CFDictionary { } *mNameToValueMap;
+    struct __CFDictionary { } * mNameToValueMap;
 }
 
 - (void)dealloc;

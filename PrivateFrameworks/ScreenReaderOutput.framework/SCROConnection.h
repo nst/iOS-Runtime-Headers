@@ -3,13 +3,13 @@
  */
 
 @interface SCROConnection : NSObject {
-    SCROWeakReferenceContainer *_delegate;
-    int _handlerType;
-    unsigned int _identifier;
-    struct __CFRunLoopSource { } *_invalidationSource;
-    BOOL _isConnectionStarted;
-    unsigned int _pingPort;
-    struct __CFRunLoopSource { } *_pingSource;
+    SCROWeakReferenceContainer * _delegate;
+    int  _handlerType;
+    unsigned int  _identifier;
+    struct __CFRunLoopSource { } * _invalidationSource;
+    BOOL  _isConnectionStarted;
+    unsigned int  _pingPort;
+    struct __CFRunLoopSource { } * _pingSource;
 }
 
 + (void)_addConnectionToRunLoop:(id)arg1;

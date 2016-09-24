@@ -3,7 +3,7 @@
  */
 
 @interface UITextAttachmentAccessibilityElement : UIAccessibilityElement {
-    NSTextAttachment *_attachment;
+    NSTextAttachment * _attachment;
 }
 
 @property (nonatomic, retain) NSTextAttachment *attachment;

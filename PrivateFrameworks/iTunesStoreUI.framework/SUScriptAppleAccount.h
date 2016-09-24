@@ -3,8 +3,8 @@
  */
 
 @interface SUScriptAppleAccount : SUScriptObject {
-    ACAccount *_account;
-    ACAccountStore *_accountStore;
+    ACAccount * _account;
+    ACAccountStore * _accountStore;
 }
 
 @property (readonly) NSString *accountDescription;

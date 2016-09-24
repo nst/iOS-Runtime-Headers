@@ -3,7 +3,7 @@
  */
 
 @interface SKUICollectionListViewElement : SKUIViewElement {
-    SKUISearchBarViewElement *_searchHeader;
+    SKUISearchBarViewElement * _searchHeader;
 }
 
 @property (nonatomic, readonly) SKUISearchBarViewElement *searchHeader;

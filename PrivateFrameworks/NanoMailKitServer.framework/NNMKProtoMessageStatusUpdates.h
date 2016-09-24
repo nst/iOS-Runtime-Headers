@@ -3,12 +3,12 @@
  */
 
 @interface NNMKProtoMessageStatusUpdates : PBCodable <NSCopying> {
-    NSData *_dateSynced;
-    unsigned int _fullSyncVersion;
+    NSData * _dateSynced;
+    unsigned int  _fullSyncVersion;
     struct { 
         unsigned int fullSyncVersion : 1; 
-    } _has;
-    NSMutableArray *_messageStatusUpdates;
+    }  _has;
+    NSMutableArray * _messageStatusUpdates;
 }
 
 @property (nonatomic, retain) NSData *dateSynced;

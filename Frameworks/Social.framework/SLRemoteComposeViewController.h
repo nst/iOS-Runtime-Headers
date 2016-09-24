@@ -3,7 +3,7 @@
  */
 
 @interface SLRemoteComposeViewController : _UIRemoteViewController {
-    <SLRemoteComposeViewControllerDelegateProtocol> *_delegate;
+    <SLRemoteComposeViewControllerDelegateProtocol> * _delegate;
 }
 
 @property (nonatomic) <SLRemoteComposeViewControllerDelegateProtocol> *delegate;

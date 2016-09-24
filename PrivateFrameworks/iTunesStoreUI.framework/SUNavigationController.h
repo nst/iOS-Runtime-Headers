@@ -3,19 +3,19 @@
  */
 
 @interface SUNavigationController : UINavigationController <SUScriptNativeObject> {
-    BOOL _canBeWeakScriptReference;
-    SUClientInterface *_clientInterface;
-    BOOL _loading;
-    SUSection *_section;
-    int _storeBarStyle;
+    BOOL  _canBeWeakScriptReference;
+    SUClientInterface * _clientInterface;
+    SUSection * _section;
+    BOOL  _skLoading;
+    int  _storeBarStyle;
 }
 
 @property (nonatomic, retain) SUClientInterface *clientInterface;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (getter=isLoading, nonatomic) BOOL loading;
 @property (nonatomic, retain) SUSection *section;
+@property (getter=isSkLoading, nonatomic) BOOL skLoading;
 @property (readonly) Class superclass;
 
 - (int)ITunesStoreUIBarStyle;
@@ -33,7 +33,7 @@
 - (id)initWithRootViewController:(id)arg1;
 - (id)initWithSection:(id)arg1;
 - (id)initWithSection:(id)arg1 rootViewController:(id)arg2;
-- (BOOL)isLoading;
+- (BOOL)isSkLoading;
 - (void)loadView;
 - (id)moreListImage;
 - (id)moreListSelectedImage;
@@ -41,9 +41,9 @@
 - (void)restoreArchivableContext:(id)arg1;
 - (id)section;
 - (void)setClientInterface:(id)arg1;
-- (void)setLoading:(BOOL)arg1;
 - (void)setParentViewController:(id)arg1;
 - (void)setSection:(id)arg1;
+- (void)setSkLoading:(BOOL)arg1;
 - (void)setToolbarHidden:(BOOL)arg1;
 - (void)setToolbarHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setViewControllers:(id)arg1;

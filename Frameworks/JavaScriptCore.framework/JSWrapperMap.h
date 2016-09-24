@@ -7,10 +7,10 @@
         struct __compressed_pair<JSC::WeakGCMap<id, JSC::JSObject, WTF::PtrHash<id>, WTF::HashTraits<id> > *, std::__1::default_delete<JSC::WeakGCMap<id, JSC::JSObject, WTF::PtrHash<id>, WTF::HashTraits<id> > > > { 
             struct WeakGCMap<id, JSC::JSObject, WTF::PtrHash<id>, WTF::HashTraits<id> > {} *__first_; 
         } __ptr_; 
-    } m_cachedJSWrappers;
-    NSMapTable *m_cachedObjCWrappers;
-    NSMutableDictionary *m_classMap;
-    JSContext *m_context;
+    }  m_cachedJSWrappers;
+    NSMapTable * m_cachedObjCWrappers;
+    NSMutableDictionary * m_classMap;
+    JSContext * m_context;
 }
 
 - (id).cxx_construct;

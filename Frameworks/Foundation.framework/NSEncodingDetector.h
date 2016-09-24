@@ -3,28 +3,28 @@
  */
 
 @interface NSEncodingDetector : NSObject {
-    unsigned long _cfEncoding;
-    unsigned long _givenNumBytes;
-    BOOL _hasBOM;
-    BOOL _hasBase64;
-    BOOL _isBigEndian;
-    unsigned long _mostFrqChars;
-    unsigned int _nsEncoding;
-    unsigned long _numBase64;
-    unsigned long _numBigrams;
-    unsigned long _numChars;
-    unsigned long _numDirect;
-    unsigned long _numHigher;
-    unsigned long _numLower;
-    unsigned long _numMultiByteChars;
-    unsigned long _numRep;
-    unsigned long _numSeq;
-    unsigned long _numSingleBytechars;
-    unsigned long _numTrigram;
-    unsigned long _numZeroBytes;
-    unsigned long _skipBytes;
-    unsigned int _tag;
-    double _weight;
+    unsigned long  _cfEncoding;
+    unsigned long  _givenNumBytes;
+    BOOL  _hasBOM;
+    BOOL  _hasBase64;
+    BOOL  _isBigEndian;
+    unsigned long  _mostFrqChars;
+    unsigned int  _nsEncoding;
+    unsigned long  _numBase64;
+    unsigned long  _numBigrams;
+    unsigned long  _numChars;
+    unsigned long  _numDirect;
+    unsigned long  _numHigher;
+    unsigned long  _numLower;
+    unsigned long  _numMultiByteChars;
+    unsigned long  _numRep;
+    unsigned long  _numSeq;
+    unsigned long  _numSingleBytechars;
+    unsigned long  _numTrigram;
+    unsigned long  _numZeroBytes;
+    unsigned long  _skipBytes;
+    unsigned int  _tag;
+    double  _weight;
 }
 
 @property (readonly) unsigned long cfEncoding;

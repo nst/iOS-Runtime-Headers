@@ -3,9 +3,9 @@
  */
 
 @interface GKFriendPlayerInternal : GKFamiliarPlayerInternal {
-    NSDate *_lastPlayedDate;
-    GKGameInternal *_lastPlayedGame;
-    NSString *_status;
+    NSDate * _lastPlayedDate;
+    GKGameInternal * _lastPlayedGame;
+    NSString * _status;
 }
 
 + (id)secureCodedPropertyKeys;

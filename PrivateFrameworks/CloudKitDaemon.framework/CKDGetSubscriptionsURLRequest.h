@@ -3,16 +3,16 @@
  */
 
 @interface CKDGetSubscriptionsURLRequest : CKDURLRequest {
-    id /* block */ _subscriptionFetchedBlock;
-    NSMutableDictionary *_subscriptionIDByRequestID;
-    NSArray *_subscriptionIDs;
-    NSMutableArray *_subscriptions;
+    id /* block */  _subscriptionFetchedBlock;
+    NSMutableDictionary * _subscriptionIDByRequestID;
+    NSArray * _subscriptionIDs;
+    NSMutableArray * _subscriptions;
 }
 
 @property (nonatomic, copy) id /* block */ subscriptionFetchedBlock;
 @property (nonatomic, retain) NSMutableDictionary *subscriptionIDByRequestID;
 @property (nonatomic, retain) NSArray *subscriptionIDs;
-@property (nonatomic, retain) NSArray *subscriptions;
+@property (nonatomic, retain) NSMutableArray *subscriptions;
 
 - (void).cxx_destruct;
 - (id)initWithSubscriptionIDs:(id)arg1;

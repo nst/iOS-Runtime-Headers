@@ -3,8 +3,8 @@
  */
 
 @interface SUBDownload : NSObject <NSSecureCoding> {
-    SUBDescriptor *_descriptor;
-    SUBProgress *_progress;
+    SUBDescriptor * _descriptor;
+    SUBProgress * _progress;
 }
 
 @property (nonatomic, retain) SUBDescriptor *descriptor;

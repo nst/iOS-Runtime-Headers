@@ -3,12 +3,12 @@
  */
 
 @interface GEOAddress : PBCodable <GEOURLSerializable, NSCopying> {
-    NSMutableArray *_formattedAddressLines;
-    int _formattedAddressType;
+    NSMutableArray * _formattedAddressLines;
+    int  _formattedAddressType;
     struct { 
         unsigned int formattedAddressType : 1; 
-    } _has;
-    GEOStructuredAddress *_structuredAddress;
+    }  _has;
+    GEOStructuredAddress * _structuredAddress;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -23,8 +23,10 @@
 
 // Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
 
++ (Class)formattedAddressLineType;
 + (id)geoAddressForPlaceData:(id)arg1;
 
+- (int)StringAsFormattedAddressType:(id)arg1;
 - (BOOL)_isEquivalentURLRepresentationTo:(id)arg1;
 - (void)addFormattedAddressLine:(id)arg1;
 - (id)addressDictionary;
@@ -39,6 +41,7 @@
 - (id)formattedAddressLines;
 - (unsigned int)formattedAddressLinesCount;
 - (int)formattedAddressType;
+- (id)formattedAddressTypeAsString:(int)arg1;
 - (BOOL)hasFormattedAddressType;
 - (BOOL)hasStructuredAddress;
 - (unsigned int)hash;
@@ -55,7 +58,7 @@
 - (id)urlRepresentation;
 - (void)writeTo:(id)arg1;
 
-// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+// Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
 
 - (id)singleLineAddress;
 

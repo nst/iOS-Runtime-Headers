@@ -3,15 +3,15 @@
  */
 
 @interface CNPropertyEditingCell : CNPropertyCell <CNPickerControllerDelegate> {
-    UIButton *_labelButton;
-    CNRepeatingGradientSeparatorView *_vseparator;
+    UIButton * _labelButton;
+    CNRepeatingGradientSeparatorView * _vseparator;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) UIButton *labelButton;
-@property (nonatomic, readonly) float leftValueMargin;
+@property (nonatomic, readonly) double leftValueMargin;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) CNRepeatingGradientSeparatorView *vseparator;
 

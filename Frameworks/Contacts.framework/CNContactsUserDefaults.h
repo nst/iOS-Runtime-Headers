@@ -13,13 +13,15 @@
 
 + (void)flushSharedInstance;
 + (id)sharedDefaults;
-+ (Class)userDefaultsClass;
 
 - (id)countryCode;
 - (int)displayNameOrder;
+- (id)filteredGroupAndContainerIDs;
+- (id)init;
 - (BOOL)isShortNameFormatEnabled;
 - (int)newContactDisplayNameOrder;
 - (void)setDisplayNameOrder:(int)arg1;
+- (void)setFilteredGroupAndContainerIDs:(id)arg1;
 - (void)setShortNameFormat:(int)arg1;
 - (void)setShortNameFormatEnabled:(BOOL)arg1;
 - (void)setShortNameFormatPrefersNicknames:(BOOL)arg1;

@@ -3,9 +3,9 @@
  */
 
 @interface BWDetectedFacesRingBuffer : NSObject {
-    int _depth;
-    struct OpaqueFigSimpleMutex { } *_mutex;
-    NSMutableArray *_ringBuffer;
+    int  _depth;
+    struct OpaqueFigSimpleMutex { } * _mutex;
+    NSMutableArray * _ringBuffer;
 }
 
 - (void)addFacesFromSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;

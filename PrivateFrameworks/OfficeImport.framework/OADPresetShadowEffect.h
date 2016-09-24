@@ -3,7 +3,7 @@
  */
 
 @interface OADPresetShadowEffect : OADShadowEffect {
-    int mPresetShadowType;
+    int  mPresetShadowType;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

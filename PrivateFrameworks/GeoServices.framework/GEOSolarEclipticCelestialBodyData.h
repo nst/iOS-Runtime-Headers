@@ -3,8 +3,8 @@
  */
 
 @interface GEOSolarEclipticCelestialBodyData : NSObject {
-    double _latitude;
-    double _longitude;
+    double  _latitude;
+    double  _longitude;
 }
 
 @property (nonatomic, readonly) double latitude;

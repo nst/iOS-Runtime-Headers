@@ -11,6 +11,7 @@
 + (id)imageFillProperties;
 + (int)muxDefaultPropertyForSpecificProperty:(int)arg1;
 + (id)properties;
++ (BOOL)shouldWarnWithPersistingWithoutStylesheet;
 
 - (id)initFromPreUFFArchiveWithUnarchiver:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;

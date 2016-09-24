@@ -3,9 +3,9 @@
  */
 
 @interface _NMRCommandInfoProtobuf : PBCodable <NSCopying> {
-    BOOL _active;
-    int _command;
-    BOOL _enabled;
+    BOOL  _active;
+    int  _command;
+    BOOL  _enabled;
     struct { 
         unsigned int command : 1; 
         unsigned int maximumRating : 1; 
@@ -15,24 +15,24 @@
         unsigned int shuffleMode : 1; 
         unsigned int active : 1; 
         unsigned int enabled : 1; 
-    } _has;
-    NSString *_localizedShortTitle;
-    NSString *_localizedTitle;
-    float _maximumRating;
-    float _minimumRating;
+    }  _has;
+    NSString * _localizedShortTitle;
+    NSString * _localizedTitle;
+    double  _maximumRating;
+    double  _minimumRating;
     struct { 
         double *list; 
         unsigned int count; 
         unsigned int size; 
-    } _preferredIntervals;
-    int _presentationStyle;
-    int _repeatMode;
-    int _shuffleMode;
+    }  _preferredIntervals;
+    int  _presentationStyle;
+    int  _repeatMode;
+    int  _shuffleMode;
     struct { 
-        float *list; 
+        double *list; 
         unsigned int count; 
         unsigned int size; 
-    } _supportedRates;
+    }  _supportedRates;
 }
 
 @property (nonatomic) BOOL active;
@@ -50,8 +50,8 @@
 @property (nonatomic) BOOL hasShuffleMode;
 @property (nonatomic, retain) NSString *localizedShortTitle;
 @property (nonatomic, retain) NSString *localizedTitle;
-@property (nonatomic) float maximumRating;
-@property (nonatomic) float minimumRating;
+@property (nonatomic) double maximumRating;
+@property (nonatomic) double minimumRating;
 @property (nonatomic, readonly) double*preferredIntervals;
 @property (nonatomic, readonly) unsigned int preferredIntervalsCount;
 @property (nonatomic) int presentationStyle;
@@ -61,12 +61,16 @@
 @property (nonatomic, readonly) unsigned int supportedRatesCount;
 
 - (void).cxx_destruct;
+- (int)StringAsCommand:(id)arg1;
+- (int)StringAsRepeatMode:(id)arg1;
+- (int)StringAsShuffleMode:(id)arg1;
 - (BOOL)active;
 - (void)addPreferredInterval:(double)arg1;
 - (void)addSupportedRate:(float)arg1;
 - (void)clearPreferredIntervals;
 - (void)clearSupportedRates;
 - (int)command;
+- (id)commandAsString:(int)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -96,6 +100,7 @@
 - (int)presentationStyle;
 - (BOOL)readFrom:(id)arg1;
 - (int)repeatMode;
+- (id)repeatModeAsString:(int)arg1;
 - (void)setActive:(BOOL)arg1;
 - (void)setCommand:(int)arg1;
 - (void)setEnabled:(BOOL)arg1;
@@ -117,6 +122,7 @@
 - (void)setShuffleMode:(int)arg1;
 - (void)setSupportedRates:(float*)arg1 count:(unsigned int)arg2;
 - (int)shuffleMode;
+- (id)shuffleModeAsString:(int)arg1;
 - (float)supportedRateAtIndex:(unsigned int)arg1;
 - (float*)supportedRates;
 - (unsigned int)supportedRatesCount;

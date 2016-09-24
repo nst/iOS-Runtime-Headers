@@ -8,6 +8,7 @@
 @property (nonatomic, readonly) Class CKCNContactFetchRequest;
 @property (nonatomic, readonly) Class CKCNContactStore;
 @property (nonatomic, readonly) Class CKCNMutableContact;
+@property (nonatomic, readonly) Class CKCNPhoneNumber;
 
 + (id)sharedInstance;
 
@@ -15,5 +16,6 @@
 - (Class)CKCNContactFetchRequest;
 - (Class)CKCNContactStore;
 - (Class)CKCNMutableContact;
+- (Class)CKCNPhoneNumber;
 
 @end

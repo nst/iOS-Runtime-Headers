@@ -3,14 +3,14 @@
  */
 
 @interface NetPreferences : NSObject {
-    NSString *_UUID;
-    NSString *_acceptLanguageCode;
-    NSString *_buildVersion;
-    BOOL _isNetworkReachable;
-    NSString *_productVersion;
-    NSString *_requestCountryCode;
-    NSString *_requestLanguageCode;
-    BOOL _serviceDebugging;
+    NSString * _UUID;
+    NSString * _acceptLanguageCode;
+    NSString * _buildVersion;
+    BOOL  _isNetworkReachable;
+    NSString * _productVersion;
+    NSString * _requestCountryCode;
+    NSString * _requestLanguageCode;
+    BOOL  _serviceDebugging;
 }
 
 @property (retain) NSString *acceptLanguageCode;
@@ -46,7 +46,6 @@
 - (void)setNetworkReachable:(BOOL)arg1;
 - (void)setRequestCountryCode:(id)arg1;
 - (void)setRequestLanguageCode:(id)arg1;
-- (void)setupLogging;
 - (id)signedRequestForURL:(id)arg1 parameters:(id)arg2;
 - (id)stocksCountryCode;
 - (id)stocksLanguageCode;

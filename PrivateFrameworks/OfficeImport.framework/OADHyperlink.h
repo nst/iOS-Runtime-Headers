@@ -3,15 +3,15 @@
  */
 
 @interface OADHyperlink : NSObject {
-    NSString *mAction;
-    BOOL mDoAddToHistory;
-    BOOL mDoEndSound;
-    NSString *mInvalidUrl;
-    BOOL mIsVisited;
-    NSString *mTargetFrame;
-    NSURL *mTargetLocation;
-    int mTargetMode;
-    NSString *mTooltip;
+    NSString * mAction;
+    BOOL  mDoAddToHistory;
+    BOOL  mDoEndSound;
+    NSString * mInvalidUrl;
+    BOOL  mIsVisited;
+    NSString * mTargetFrame;
+    NSURL * mTargetLocation;
+    int  mTargetMode;
+    NSString * mTooltip;
 }
 
 @property (nonatomic) BOOL doAddToHistory;

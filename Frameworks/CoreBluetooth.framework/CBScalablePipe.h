@@ -3,18 +3,20 @@
  */
 
 @interface CBScalablePipe : NSObject {
-    CBCentral *_central;
-    NSInputStream *_input;
-    NSString *_name;
-    NSOutputStream *_output;
-    CBPeer *_peer;
-    CBScalablePipeManager *_pipeManager;
-    int _priority;
-    int _socket;
-    int _type;
+    CBCentral * _central;
+    void * _channel;
+    NSInputStream * _input;
+    NSString * _name;
+    NSOutputStream * _output;
+    CBPeer * _peer;
+    CBScalablePipeManager * _pipeManager;
+    int  _priority;
+    int  _socket;
+    int  _type;
 }
 
 @property (nonatomic, readonly) CBCentral *central;
+@property (nonatomic, readonly) void*channel;
 @property (nonatomic, readonly) NSInputStream *input;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSOutputStream *output;
@@ -22,7 +24,9 @@
 @property (nonatomic, readonly) int priority;
 @property (nonatomic, readonly) int type;
 
+- (void).cxx_destruct;
 - (id)central;
+- (void*)channel;
 - (void)dealloc;
 - (id)description;
 - (id)initWithPipeManager:(id)arg1 info:(id)arg2;

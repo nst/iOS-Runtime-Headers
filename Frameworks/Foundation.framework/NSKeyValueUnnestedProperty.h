@@ -3,9 +3,9 @@
  */
 
 @interface NSKeyValueUnnestedProperty : NSKeyValueProperty {
-    NSArray *_affectingProperties;
-    Class _cachedIsaForAutonotifying;
-    BOOL _cachedIsaForAutonotifyingIsValid;
+    NSArray * _affectingProperties;
+    Class  _cachedIsaForAutonotifying;
+    BOOL  _cachedIsaForAutonotifyingIsValid;
 }
 
 - (void)_addDependentValueKey:(id)arg1;

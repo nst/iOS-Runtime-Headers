@@ -3,16 +3,16 @@
  */
 
 @interface _NSActivityAssertion : NSObject {
-    unsigned char _adoptPreviousVoucher;
-    long long _ended;
-    id /* block */ _expirationHandler;
-    unsigned long long _options;
-    NSObject<OS_voucher> *_previousVoucher;
-    BKSProcessAssertion *_processAssertion;
-    NSString *_reason;
-    unsigned int _systemSleepAssertionID;
-    NSObject<OS_voucher> *_voucher;
-    <NSObject> *_xpcBoost;
+    unsigned char  _adoptPreviousVoucher;
+    int  _ended;
+    id /* block */  _expirationHandler;
+    unsigned int  _options;
+    NSObject<OS_voucher> * _previousVoucher;
+    BKSProcessAssertion * _processAssertion;
+    NSString * _reason;
+    unsigned int  _systemSleepAssertionID;
+    NSObject<OS_voucher> * _voucher;
+    <NSObject> * _xpcBoost;
 }
 
 + (void)_dumpExpiringActivitives;
@@ -21,12 +21,12 @@
 + (id)_expiringActivities;
 + (id)_expiringAssertionManagementQueue;
 + (id)_expiringTaskExecutionQueue;
-+ (void)_performActivityWithOptions:(unsigned long long)arg1 reason:(id)arg2 usingBlock:(id /* block */)arg3;
++ (void)_performActivityWithOptions:(unsigned int)arg1 reason:(id)arg2 usingBlock:(id /* block */)arg3;
 + (void)_performExpiringActivityWithReason:(id)arg1 usingBlock:(id /* block */)arg2;
 
 - (void)_end;
 - (void)_fireExpirationHandler;
-- (id)_initWithActivityOptions:(unsigned long long)arg1 reason:(id)arg2 expirationHandler:(id /* block */)arg3;
+- (id)_initWithActivityOptions:(unsigned int)arg1 reason:(id)arg2 expirationHandler:(id /* block */)arg3;
 - (void)_reactivate;
 - (void)dealloc;
 - (id)debugDescription;

@@ -3,16 +3,16 @@
  */
 
 @interface VSRecognitionSession : NSObject {
-    NSString *_audioInputPath;
-    VSRecognitionAction *_currentAction;
-    NSString *_debugDumpPath;
-    <VSRecognitionSessionDelegate> *_delegate;
-    id _handlingThread;
-    VSKeepAlive *_keepAlive;
-    unsigned int _keywordPhase;
-    NSString *_languageID;
-    double _levelInterval;
-    NSString *_modelIdentifier;
+    NSString * _audioInputPath;
+    VSRecognitionAction * _currentAction;
+    NSString * _debugDumpPath;
+    <VSRecognitionSessionDelegate> * _delegate;
+    id  _handlingThread;
+    VSKeepAlive * _keepAlive;
+    unsigned int  _keywordPhase;
+    NSString * _languageID;
+    double  _levelInterval;
+    NSString * _modelIdentifier;
     struct { 
         unsigned int delegateWillBegin : 1; 
         unsigned int delegateBegin : 1; 
@@ -31,9 +31,9 @@
         unsigned int actionBeginDeferred : 1; 
         unsigned int invalid : 1; 
         unsigned int observeKeywordChange : 1; 
-    } _sessionFlags;
-    VSSpeechSynthesizer *_synthesizer;
-    NSArray *_topLevelKeywords;
+    }  _sessionFlags;
+    VSSpeechSynthesizer * _synthesizer;
+    NSArray * _topLevelKeywords;
 }
 
 - (void)_actionCompleted:(id)arg1 nextAction:(id)arg2 error:(id)arg3;

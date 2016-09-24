@@ -3,11 +3,11 @@
  */
 
 @interface WBSParsecFormattedText : WBSParsecModel {
-    BOOL _emphasized;
-    WBSParsecImageRepresentation *_glyphRepresentation;
-    NSNumber *_spaceAfterInPoints;
-    NSNumber *_spaceBeforeInPoints;
-    NSString *_text;
+    BOOL  _emphasized;
+    WBSParsecImageRepresentation * _glyphRepresentation;
+    NSNumber * _spaceAfterInPoints;
+    NSNumber * _spaceBeforeInPoints;
+    NSString * _text;
 }
 
 @property (getter=isEmphasized, nonatomic, readonly) BOOL emphasized;

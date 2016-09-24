@@ -3,13 +3,13 @@
  */
 
 @interface GEOSearchAttributionManifest : PBCodable <NSCopying> {
-    NSMutableArray *_actionComponentMapEntries;
+    NSMutableArray * _actionComponentMapEntries;
     struct { 
         unsigned int timestamp : 1; 
-    } _has;
-    NSMutableArray *_searchAttributionSources;
-    NSString *_sourceURL;
-    double _timestamp;
+    }  _has;
+    NSMutableArray * _searchAttributionSources;
+    NSString * _sourceURL;
+    double  _timestamp;
 }
 
 @property (nonatomic, retain) NSMutableArray *actionComponentMapEntries;
@@ -18,6 +18,9 @@
 @property (nonatomic, retain) NSMutableArray *searchAttributionSources;
 @property (nonatomic, retain) NSString *sourceURL;
 @property (nonatomic) double timestamp;
+
++ (Class)actionComponentMapEntriesType;
++ (Class)searchAttributionSourcesType;
 
 - (id)actionComponentMapEntries;
 - (id)actionComponentMapEntriesAtIndex:(unsigned int)arg1;

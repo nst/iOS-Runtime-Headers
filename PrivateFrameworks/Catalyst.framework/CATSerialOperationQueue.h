@@ -3,7 +3,7 @@
  */
 
 @interface CATSerialOperationQueue : CATOperationQueue {
-    NSOperation *mLastOperation;
+    NSOperation * mLastOperation;
 }
 
 - (void).cxx_destruct;

@@ -5,16 +5,19 @@
 @interface GEOMapMatchRequest : PBRequest <NSCopying> {
     struct { 
         unsigned int searchThreshold : 1; 
-    } _has;
-    NSMutableArray *_locations;
-    double _searchThreshold;
-    NSMutableArray *_waypoints;
+    }  _has;
+    NSMutableArray * _locations;
+    double  _searchThreshold;
+    NSMutableArray * _waypoints;
 }
 
 @property (nonatomic) BOOL hasSearchThreshold;
 @property (nonatomic, retain) NSMutableArray *locations;
 @property (nonatomic) double searchThreshold;
 @property (nonatomic, retain) NSMutableArray *waypoints;
+
++ (Class)locationType;
++ (Class)waypointType;
 
 - (void)addLocation:(id)arg1;
 - (void)addWaypoint:(id)arg1;

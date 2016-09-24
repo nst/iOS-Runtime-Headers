@@ -3,10 +3,10 @@
  */
 
 @interface WBSHistorySessionController : NSObject {
-    WBSHistorySessionIntervalCache *_intervalCache;
-    NSMutableDictionary *_itemsBySession;
-    NSArray *_orderedSessions;
-    NSObject<OS_dispatch_queue> *_sessionCacheAccessQueue;
+    WBSHistorySessionIntervalCache * _intervalCache;
+    NSMutableDictionary * _itemsBySession;
+    NSArray * _orderedSessions;
+    NSObject<OS_dispatch_queue> * _sessionCacheAccessQueue;
 }
 
 + (id)sharedSessionController;

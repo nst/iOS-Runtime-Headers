@@ -3,34 +3,33 @@
  */
 
 @interface ATConcreteMessageLink : ATMessageLink <ATSocketDelegate> {
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    NSMutableDictionary *_completionHandlersByRequestID;
-    NSMutableDictionary *_completionHandlersByResponseID;
-    int _endpointType;
-    NSString *_guid;
-    NSObject<OS_dispatch_queue> *_handlerAccessQueue;
-    NSString *_identifier;
-    int _idleTimeoutExceptionCount;
-    BOOL _initialized;
-    int _keepAliveExceptionCount;
-    double _lastActivityTime;
-    unsigned int _nextMessageID;
-    NSHashTable *_observers;
-    BOOL _open;
-    NSMapTable *_outputStreamsToInputStreams;
-    ATMessageParser *_parser;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_receivedRequestsByID;
-    NSMutableDictionary *_receivedResponsesByID;
-    NSMutableDictionary *_requestHandlersByDataClass;
-    NSObject<OS_dispatch_source> *_requestTimeoutTimer;
-    NSMutableDictionary *_requestWritersByID;
-    NSMutableDictionary *_responseWritersByID;
-    NSMutableDictionary *_sentRequestsByID;
-    ATSignatureProvider *_signatureProvider;
-    ATSocket *_socket;
-    NSMutableSet *_streamReaders;
-    NSMutableSet *_streamWriters;
+    NSObject<OS_dispatch_queue> * _callbackQueue;
+    NSMutableDictionary * _completionHandlersByRequestID;
+    NSMutableDictionary * _completionHandlersByResponseID;
+    int  _endpointType;
+    NSString * _guid;
+    NSObject<OS_dispatch_queue> * _handlerAccessQueue;
+    NSString * _identifier;
+    int  _idleTimeoutExceptionCount;
+    BOOL  _initialized;
+    int  _keepAliveExceptionCount;
+    double  _lastActivityTime;
+    unsigned int  _nextMessageID;
+    NSHashTable * _observers;
+    BOOL  _open;
+    NSMapTable * _outputStreamsToInputStreams;
+    ATMessageParser * _parser;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableDictionary * _receivedRequestsByID;
+    NSMutableDictionary * _receivedResponsesByID;
+    NSMutableDictionary * _requestHandlersByDataClass;
+    NSObject<OS_dispatch_source> * _requestTimeoutTimer;
+    NSMutableDictionary * _requestWritersByID;
+    NSMutableDictionary * _responseWritersByID;
+    NSMutableDictionary * _sentRequestsByID;
+    ATSignatureProvider * _signatureProvider;
+    ATSocket * _socket;
+    NSMutableDictionary * _streamReadersByID;
 }
 
 @property (readonly, copy) NSString *debugDescription;

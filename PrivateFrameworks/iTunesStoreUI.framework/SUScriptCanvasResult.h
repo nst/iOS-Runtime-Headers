@@ -3,8 +3,8 @@
  */
 
 @interface SUScriptCanvasResult : NSObject {
-    UIImage *_image;
-    struct CGPath { } *_path;
+    UIImage * _image;
+    struct CGPath { } * _path;
 }
 
 @property (nonatomic, readonly) UIImage *canvasImage;

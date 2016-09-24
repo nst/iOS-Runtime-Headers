@@ -3,7 +3,7 @@
  */
 
 @interface _TMBlockDebugger : NSObject {
-    NSString *_name;
+    NSString * _name;
 }
 
 - (void)dealloc;

@@ -6,7 +6,7 @@
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _charRange;
+    }  _charRange;
 }
 
 @property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } charRange;
@@ -20,6 +20,7 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })charRange;
 - (id)copyForArchiving;
 - (id)firstChildHint;
+- (id)init;
 - (id)initWithArchive:(const struct TOCLayoutHintArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Range {} *x5; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (BOOL)isFirstHint;

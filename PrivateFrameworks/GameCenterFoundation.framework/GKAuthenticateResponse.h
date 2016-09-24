@@ -3,11 +3,11 @@
  */
 
 @interface GKAuthenticateResponse : GKInternalRepresentation {
-    GKPlayerCredential *_credential;
-    BOOL _loginDisabled;
-    BOOL _passwordChangeRequired;
-    NSURL *_passwordChangeURL;
-    BOOL _shouldShowLinkAccountsUI;
+    GKPlayerCredential * _credential;
+    BOOL  _loginDisabled;
+    BOOL  _passwordChangeRequired;
+    NSURL * _passwordChangeURL;
+    BOOL  _shouldShowLinkAccountsUI;
 }
 
 @property (nonatomic, retain) GKPlayerCredential *credential;

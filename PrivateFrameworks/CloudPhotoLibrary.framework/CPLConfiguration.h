@@ -3,12 +3,12 @@
  */
 
 @interface CPLConfiguration : NSObject {
-    NSDictionary *_configuration;
-    NSURL *_configurationFileURL;
-    NSURLSession *_currentSession;
-    NSDate *_lastUpdate;
-    NSObject<OS_dispatch_queue> *_lock;
-    double _updateInterval;
+    NSDictionary * _configuration;
+    NSURL * _configurationFileURL;
+    NSURLSession * _currentSession;
+    NSDate * _lastUpdate;
+    NSObject<OS_dispatch_queue> * _lock;
+    double  _updateInterval;
 }
 
 + (void)disableConfigurationFetching;

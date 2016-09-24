@@ -3,7 +3,7 @@
  */
 
 @interface ISReviewProvider : ISDataProvider <NSCopying> {
-    BOOL _backgroundReview;
+    BOOL  _backgroundReview;
 }
 
 @property (getter=isBackgroundReview) BOOL backgroundReview;

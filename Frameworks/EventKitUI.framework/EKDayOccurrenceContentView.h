@@ -3,63 +3,63 @@
  */
 
 @interface EKDayOccurrenceContentView : UIView {
-    BOOL _allDay;
-    BOOL _allDayDrawingStyle;
-    NSAttributedString *_attributedContentString;
-    BOOL _birthday;
-    float _cachedLineHeight;
-    UIFont *_cachedPrimaryFont;
-    float _cachedPrimaryFontBottomOutset;
-    float _cachedPrimaryFontTopOutset;
-    UIFont *_cachedSecondaryFont;
-    float _cachedSecondaryLineHeight;
-    BOOL _cancelled;
-    UIColor *_color;
-    BOOL _declined;
-    BOOL _facebook;
-    unsigned int _fontCompressionDegree;
+    BOOL  _allDay;
+    BOOL  _allDayDrawingStyle;
+    NSAttributedString * _attributedContentString;
+    BOOL  _birthday;
+    double  _cachedLineHeight;
+    UIFont * _cachedPrimaryFont;
+    double  _cachedPrimaryFontBottomOutset;
+    double  _cachedPrimaryFontTopOutset;
+    UIFont * _cachedSecondaryFont;
+    double  _cachedSecondaryLineHeight;
+    BOOL  _cancelled;
+    UIColor * _color;
+    BOOL  _declined;
+    BOOL  _facebook;
+    unsigned int  _fontCompressionDegree;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _fullTextRect;
-    BOOL _hideText;
-    NSString *_location;
-    float _minimumCachedLineHeight;
-    BOOL _needsReply;
-    int _occurrenceBackgroundStyle;
-    BOOL _reduceProcessingForAnimation;
-    UIColor *_secondaryTextColor;
-    BOOL _selected;
-    UIColor *_statusTextColor;
-    BOOL _tentative;
-    UIColor *_textBackgroundColor;
-    float _textEndY;
-    NSString *_time;
-    UIColor *_timeTextColor;
-    NSString *_title;
+    }  _fullTextRect;
+    BOOL  _hideText;
+    NSString * _location;
+    double  _minimumCachedLineHeight;
+    BOOL  _needsReply;
+    int  _occurrenceBackgroundStyle;
+    BOOL  _reduceProcessingForAnimation;
+    UIColor * _secondaryTextColor;
+    BOOL  _selected;
+    UIColor * _statusTextColor;
+    BOOL  _tentative;
+    UIColor * _textBackgroundColor;
+    double  _textEndY;
+    NSString * _time;
+    UIColor * _timeTextColor;
+    NSString * _title;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _titleEndPoint;
-    NSIndexSet *_titleMetrics;
+        double x; 
+        double y; 
+    }  _titleEndPoint;
+    NSIndexSet * _titleMetrics;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _titleRect;
-    UIColor *_titleTextColor;
-    BOOL _usesSmallText;
+    }  _titleRect;
+    UIColor * _titleTextColor;
+    BOOL  _usesSmallText;
 }
 
 @property (getter=isAllDay, nonatomic) BOOL allDay;
@@ -91,7 +91,7 @@
 
 - (void).cxx_destruct;
 - (float)_attributedStringMinimumLineHeightBasedOnCurrentFontMetrics;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForText;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForText;
 - (void)_getLanguageAwareOutsets;
 - (void)_invalidateCachedFonts;
 - (void)_invalidateMetrics;
@@ -101,7 +101,7 @@
 - (float)_secondaryFontLineHeight;
 - (id)_secondaryText;
 - (id)_secondaryTextFont;
-- (struct CGSize { float x1; float x2; })_spaceForText;
+- (struct CGSize { double x1; double x2; })_spaceForText;
 - (id)_statusText;
 - (id)_statusTextFont;
 - (id)_timeText;
@@ -112,11 +112,11 @@
 - (float)bottomTextOutset;
 - (id)color;
 - (void)displayLayer:(id)arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (BOOL)hasIcon;
 - (BOOL)hideText;
 - (id)initWithContentView:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)invalidateCachedFontMetrics;
 - (BOOL)isAllDay;
 - (BOOL)isAllDayDrawingStyle;
@@ -136,12 +136,12 @@
 - (void)setAllDay:(BOOL)arg1;
 - (void)setAllDayDrawingStyle:(BOOL)arg1;
 - (void)setBirthday:(BOOL)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setCancelled:(BOOL)arg1;
 - (void)setColor:(id)arg1;
 - (void)setDeclined:(BOOL)arg1;
 - (void)setFacebook:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setHideText:(BOOL)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setNeedsDisplay;
@@ -157,7 +157,7 @@
 - (void)setTitle:(id)arg1;
 - (void)setTitleTextColor:(id)arg1;
 - (void)setUsesSmallText:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)statusTextColor;
 - (id)strikethroughColor;
 - (id)stringDrawingContext;

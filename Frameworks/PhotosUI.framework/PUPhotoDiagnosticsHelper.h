@@ -3,9 +3,9 @@
  */
 
 @interface PUPhotoDiagnosticsHelper : NSObject <MFMailComposeViewControllerDelegate, UIAlertViewDelegate> {
-    PUPhotoDiagnosticsHelper *__keepSelf;
-    <PUPhotoDiagnosticsHelperDelegate> *_delegate;
-    UIViewController *_referenceViewController;
+    PUPhotoDiagnosticsHelper * __keepSelf;
+    <PUPhotoDiagnosticsHelperDelegate> * _delegate;
+    UIViewController * _referenceViewController;
 }
 
 @property (setter=_setKeepSelf:, nonatomic, retain) PUPhotoDiagnosticsHelper *_keepSelf;

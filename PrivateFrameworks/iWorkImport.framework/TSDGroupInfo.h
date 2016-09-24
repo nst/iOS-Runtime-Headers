@@ -3,8 +3,8 @@
  */
 
 @interface TSDGroupInfo : TSDDrawableInfo <TSDMixing, TSDMutableContainerInfo, TSDSelectionStatisticsContributor, TSKDocumentObject> {
-    NSMutableArray *mChildInfos;
-    BOOL mIsInDocument;
+    NSMutableArray * mChildInfos;
+    BOOL  mIsInDocument;
 }
 
 @property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;
@@ -55,6 +55,7 @@
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
 - (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (void)moveChildren:(id)arg1 toIndexes:(id)arg2;
+- (BOOL)needsDownload;
 - (void)processSelectedStoragesWithStatisticsController:(id)arg1;
 - (void)removeAllChildrenInDocument:(BOOL)arg1;
 - (void)removeChildInfo:(id)arg1;

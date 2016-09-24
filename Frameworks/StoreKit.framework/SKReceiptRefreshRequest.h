@@ -3,7 +3,7 @@
  */
 
 @interface SKReceiptRefreshRequest : SKRequest {
-    NSDictionary *_properties;
+    NSDictionary * _properties;
 }
 
 @property (nonatomic, readonly) NSDictionary *receiptProperties;

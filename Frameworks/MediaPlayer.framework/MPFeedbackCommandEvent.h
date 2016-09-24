@@ -3,7 +3,7 @@
  */
 
 @interface MPFeedbackCommandEvent : MPRemoteCommandEvent {
-    BOOL _negative;
+    BOOL  _negative;
 }
 
 @property (getter=isNegative, nonatomic, readonly) BOOL negative;

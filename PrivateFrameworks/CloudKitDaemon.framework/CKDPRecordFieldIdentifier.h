@@ -3,7 +3,7 @@
  */
 
 @interface CKDPRecordFieldIdentifier : PBCodable <NSCopying> {
-    NSString *_name;
+    NSString * _name;
 }
 
 @property (nonatomic, readonly) BOOL hasName;

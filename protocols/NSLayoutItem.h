@@ -6,8 +6,8 @@
 @required
 
 - (unsigned int)nsli_autoresizingMask;
-- (struct CGSize { float x1; float x2; })nsli_convertSizeFromEngineSpace:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })nsli_convertSizeToEngineSpace:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })nsli_convertSizeFromEngineSpace:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })nsli_convertSizeToEngineSpace:(struct CGSize { double x1; double x2; })arg1;
 - (NSString *)nsli_description;
 - (BOOL)nsli_descriptionIncludesPointer;
 - (BOOL)nsli_isFlipped;
@@ -21,8 +21,18 @@
 
 - (void)nsli_addConstraint:(NSLayoutConstraint *)arg1;
 - (void)nsli_addConstraint:(NSLayoutConstraint *)arg1 mutuallyExclusiveConstraints:(id*)arg2;
+- (<NSLayoutItem> *)nsli_ancestorSharedWithItem:(id <NSLayoutItem>)arg1;
+- (NSISVariable *)nsli_boundsHeightVariable;
+- (NSISVariable *)nsli_boundsWidthVariable;
+- (BOOL)nsli_canHostIndependentVariableAnchor;
+- (struct CGSize { double x1; double x2; })nsli_engineToUserScalingCoefficients;
 - (NSISVariable *)nsli_heightVariable;
 - (NSArray *)nsli_installedConstraints;
+- (BOOL)nsli_isLegalConstraintItem;
+- (BOOL)nsli_isRTL;
+- (<NSLayoutItem> *)nsli_itemDescribingLayoutDirectionForConstraint:(NSLayoutConstraint *)arg1 toItem:(id <NSLayoutItem>)arg2;
+- (NSLayoutAnchor *)nsli_layoutAnchorForAttribute:(int)arg1;
+- (BOOL)nsli_lowersExpressionRelativeToConstraintContainer;
 - (float)nsli_marginOffsetForAttribute:(int)arg1;
 - (NSISVariable *)nsli_minXVariable;
 - (NSISVariable *)nsli_minYVariable;

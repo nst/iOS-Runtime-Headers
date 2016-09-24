@@ -3,14 +3,14 @@
  */
 
 @interface MFMessageFileWrapper : NSObject {
-    NSMutableDictionary *_attributes;
-    NSData *_data;
-    NSString *_filename;
-    NSString *_linkDestination;
-    NSString *_path;
-    NSString *_preferredFilename;
-    int _type;
-    NSString *_url;
+    NSMutableDictionary * _attributes;
+    NSData * _data;
+    NSString * _filename;
+    NSString * _linkDestination;
+    NSString * _path;
+    NSString * _preferredFilename;
+    int  _type;
+    NSString * _url;
 }
 
 // Image: /System/Library/PrivateFrameworks/MIME.framework/MIME

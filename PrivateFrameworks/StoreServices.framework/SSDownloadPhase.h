@@ -3,7 +3,7 @@
  */
 
 @interface SSDownloadPhase : NSObject <NSCopying, SSXPCCoding> {
-    SSOperationProgress *_operationProgress;
+    SSOperationProgress * _operationProgress;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,11 +12,11 @@
 @property (readonly) unsigned int hash;
 @property (readonly) SSOperationProgress *operationProgress;
 @property (readonly) int phaseType;
-@property (readonly) float progressChangeRate;
+@property (readonly) double progressChangeRate;
 @property (readonly) int progressUnits;
-@property (readonly) long long progressValue;
+@property (readonly) int progressValue;
 @property (readonly) Class superclass;
-@property (readonly) long long totalProgressValue;
+@property (readonly) int totalProgressValue;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
@@ -29,7 +29,7 @@
 - (int)phaseType;
 - (float)progressChangeRate;
 - (int)progressUnits;
-- (long long)progressValue;
-- (long long)totalProgressValue;
+- (int)progressValue;
+- (int)totalProgressValue;
 
 @end

@@ -3,21 +3,21 @@
  */
 
 @interface ISVitalityFilter : NSObject {
-    BOOL __isPerformingInputChanges;
-    BOOL __isPerformingOutputChanges;
-    BOOL __outputDidChange;
-    NSDate *_estimatedScrollEndDate;
-    BOOL _hasTargetVisibilityOffset;
-    BOOL _isDecelerating;
-    BOOL _isScrolling;
-    BOOL _isVisible;
-    id /* block */ _outputChangeHandler;
-    double _playRate;
-    double _scrubOffset;
-    BOOL _scrubbing;
-    <ISVitalitySettings> *_settings;
-    double _targetVisibilityOffset;
-    double _visibilityOffset;
+    BOOL  __isPerformingInputChanges;
+    BOOL  __isPerformingOutputChanges;
+    BOOL  __outputDidChange;
+    NSDate * _estimatedScrollEndDate;
+    BOOL  _hasTargetVisibilityOffset;
+    BOOL  _isDecelerating;
+    BOOL  _isScrolling;
+    BOOL  _isVisible;
+    id /* block */  _outputChangeHandler;
+    double  _playRate;
+    double  _scrubOffset;
+    BOOL  _scrubbing;
+    <ISVitalitySettings> * _settings;
+    double  _targetVisibilityOffset;
+    double  _visibilityOffset;
 }
 
 @property (setter=_setPerformingInputChanges:, nonatomic) BOOL _isPerformingInputChanges;

@@ -3,11 +3,11 @@
  */
 
 @interface MusicContextualPlaylistPickerNavigationController : MusicNavigationController <MusicContextualPlaylistPickerDelegate> {
-    id /* block */ _playlistSelectionHandler;
-    MusicContextualPlaylistPickerViewConfiguration *_playlistsViewConfiguration;
-    UIViewController *_playlistsViewController;
-    MusicEntityValueContext *_prepopulatedItemsEntityValueContext;
-    NSArray *_prepopulatedMediaItems;
+    id /* block */  _playlistSelectionHandler;
+    MusicContextualPlaylistPickerViewConfiguration * _playlistsViewConfiguration;
+    UIViewController * _playlistsViewController;
+    MusicEntityValueContext * _prepopulatedItemsEntityValueContext;
+    NSArray * _prepopulatedMediaItems;
 }
 
 @property (readonly, copy) NSString *debugDescription;

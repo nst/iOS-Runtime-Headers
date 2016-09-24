@@ -3,7 +3,7 @@
  */
 
 @interface FUGradientView : UIView {
-    FUShapeView *_maskView;
+    FUShapeView * _maskView;
 }
 
 + (Class)layerClass;

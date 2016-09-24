@@ -3,9 +3,9 @@
  */
 
 @interface CNContactSuggestionMatch : NSObject {
-    SGContact *_contact;
-    SGContactMatch *_contactMatch;
-    NSString *_mainStoreLinkedIdentifier;
+    SGContact * _contact;
+    SGContactMatch * _contactMatch;
+    NSString * _mainStoreLinkedIdentifier;
 }
 
 @property (nonatomic, retain) SGContact *contact;

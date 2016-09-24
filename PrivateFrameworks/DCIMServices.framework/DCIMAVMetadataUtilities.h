@@ -8,5 +8,6 @@
 + (id)_captureModeStringFromAssetTrack:(id)arg1;
 + (BOOL)isTimelapseAsset:(id)arg1;
 + (id)metadataItemForTimelapse;
++ (id)montageStringForAsset:(id)arg1;
 
 @end

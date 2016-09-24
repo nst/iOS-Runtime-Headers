@@ -3,7 +3,7 @@
  */
 
 @interface _CFXNotificationDistributedTokenQueueRegistration : _CFXNotificationDistributedTokenRegistration {
-    id _queue;
+    id  _queue;
 }
 
 @property (retain) id queue;

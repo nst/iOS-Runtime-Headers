@@ -3,10 +3,10 @@
  */
 
 @interface SSVGratisApplication : NSObject <NSCopying> {
-    NSString *_bundleIdentifier;
-    NSString *_bundleVersion;
-    NSNumber *_externalVersionIdentifier;
-    NSString *_itemIdentifier;
+    NSString * _bundleIdentifier;
+    NSString * _bundleVersion;
+    NSNumber * _externalVersionIdentifier;
+    NSString * _itemIdentifier;
 }
 
 @property (nonatomic, copy) NSString *bundleIdentifier;

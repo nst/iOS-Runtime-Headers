@@ -3,7 +3,7 @@
  */
 
 @interface ABSteadfastLineView : UIView {
-    BOOL disappearsOnHighlight;
+    BOOL  disappearsOnHighlight;
 }
 
 @property (nonatomic) BOOL disappearsOnHighlight;

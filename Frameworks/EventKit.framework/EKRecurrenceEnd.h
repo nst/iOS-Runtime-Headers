@@ -3,8 +3,8 @@
  */
 
 @interface EKRecurrenceEnd : NSObject <NSCopying> {
-    NSDate *_endDate;
-    unsigned int _occurrenceCount;
+    NSDate * _endDate;
+    unsigned int  _occurrenceCount;
 }
 
 @property (nonatomic, readonly) NSDate *endDate;
@@ -14,8 +14,8 @@
 + (id)recurrenceEndWithEndDate:(id)arg1;
 + (id)recurrenceEndWithOccurrenceCount:(unsigned int)arg1;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;

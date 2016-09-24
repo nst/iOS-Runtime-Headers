@@ -3,10 +3,10 @@
  */
 
 @interface MFMimeEnrichedReader : NSObject {
-    struct __CFArray { } *_commandStack;
-    long _currentIndex;
-    unsigned int _eatOneNewline;
-    float _indentWidth;
+    struct __CFArray { } * _commandStack;
+    long  _currentIndex;
+    unsigned int  _eatOneNewline;
+    double  _indentWidth;
     struct { 
         unsigned short buffer[64]; 
         struct __CFString {} *theString; 
@@ -18,16 +18,16 @@
         } rangeToBuffer; 
         int bufferedRangeStart; 
         int bufferedRangeEnd; 
-    } _inputBuffer;
-    long _inputLength;
-    unsigned int _insideComment;
-    int _lastQuoteLevel;
-    unsigned int _noFillLevel;
-    NSMutableString *_outputBuffer;
-    id _outputString;
-    struct __CFString { } *_postpendHTML;
-    struct __CFString { } *_prependHTML;
-    unsigned int _wantsPlainText;
+    }  _inputBuffer;
+    long  _inputLength;
+    unsigned int  _insideComment;
+    int  _lastQuoteLevel;
+    unsigned int  _noFillLevel;
+    NSMutableString * _outputBuffer;
+    id  _outputString;
+    struct __CFString { } * _postpendHTML;
+    struct __CFString { } * _prependHTML;
+    unsigned int  _wantsPlainText;
 }
 
 + (struct __CFCharacterSet { }*)parenSet;
@@ -50,6 +50,6 @@
 - (int)readTokenInto:(id*)arg1;
 - (void)resetStateWithString:(id)arg1 outputString:(id)arg2;
 - (void)setWantsHTML:(BOOL)arg1;
-- (void)setupFontStackEntry:(struct _CommandStackEntry { struct { /* ? */ } *x1; id x2; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x3; void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; }*)arg1;
+- (void)setupFontStackEntry:(/* Warning: unhandled struct encoding: '{_CommandStackEntry=^{?}@}' */ struct _CommandStackEntry { struct { /* ? */ } *x1; id x2; }*)arg1;
 
 @end

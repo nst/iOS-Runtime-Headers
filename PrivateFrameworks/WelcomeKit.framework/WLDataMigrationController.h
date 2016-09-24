@@ -3,11 +3,11 @@
  */
 
 @interface WLDataMigrationController : WLDaemonController {
-    WLDeviceAuthentication *_auth;
-    unsigned int _dataTypes;
-    <WLDataMigrationDelegate> *_delegate;
-    WLSourceDevice *_device;
-    <WLDataMigratorProtocol> *_migrator;
+    WLDeviceAuthentication * _auth;
+    unsigned int  _dataTypes;
+    <WLDataMigrationDelegate> * _delegate;
+    WLSourceDevice * _device;
+    <WLDataMigratorProtocol> * _migrator;
 }
 
 @property (nonatomic, readonly, retain) WLDeviceAuthentication *auth;

@@ -4,14 +4,10 @@
 
 @interface SACFProviderCompleted : SACFAbstractClientCommandCompleted
 
-@property (nonatomic, copy) NSString *results;
-
 + (id)providerCompleted;
 + (id)providerCompletedWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (id)results;
-- (void)setResults:(id)arg1;
 
 @end

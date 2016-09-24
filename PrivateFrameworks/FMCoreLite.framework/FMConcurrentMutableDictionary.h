@@ -3,8 +3,8 @@
  */
 
 @interface FMConcurrentMutableDictionary : NSObject {
-    FMReadWriteLock *_lock;
-    NSMutableDictionary *_underlyingDictionary;
+    FMReadWriteLock * _lock;
+    NSMutableDictionary * _underlyingDictionary;
 }
 
 @property (nonatomic, readonly) unsigned int count;

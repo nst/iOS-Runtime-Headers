@@ -3,39 +3,40 @@
  */
 
 @interface SSURLRequestProperties : NSObject <NSCoding, NSCopying, NSMutableCopying, SSXPCCoding> {
-    int _allowedRetryCount;
-    BOOL _allowsBootstrapCellularData;
-    unsigned int _cachePolicy;
-    NSString *_clientAuditBundleIdentifier;
-    NSData *_clientAuditTokenData;
-    NSString *_clientIdentifier;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    long long _expectedContentLength;
-    NSData *_httpBody;
-    NSInputStream *_httpBodyStream;
-    NSDictionary *_httpHeaders;
-    NSString *_httpMethod;
-    BOOL _isITunesStoreRequest;
-    int _kbsyncType;
-    BOOL _largeDownload;
-    int _machineDataStyle;
-    unsigned int _networkServiceType;
-    NSDictionary *_requestParameters;
-    BOOL _requiresCellularDataNetwork;
-    BOOL _requiresExtendedValidationCertificates;
-    BOOL _requiresHTTPS;
-    BOOL _shouldDecodeResponse;
-    BOOL _shouldDisableCellular;
-    BOOL _shouldDisableCellularFallback;
-    BOOL _shouldProcessProtocol;
-    BOOL _shouldSendSecureToken;
-    BOOL _shouldSetCookies;
-    double _timeoutInterval;
-    NSString *_urlBagKey;
-    int _urlBagType;
-    id /* block */ _urlBagURLBlock;
-    NSArray *_urls;
-    NSArray *_userAgentComponents;
+    int  _allowedRetryCount;
+    BOOL  _allowsBootstrapCellularData;
+    unsigned int  _cachePolicy;
+    NSString * _clientAuditBundleIdentifier;
+    NSData * _clientAuditTokenData;
+    NSString * _clientIdentifier;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    int  _expectedContentLength;
+    NSData * _httpBody;
+    NSInputStream * _httpBodyStream;
+    NSDictionary * _httpHeaders;
+    NSString * _httpMethod;
+    BOOL  _isITunesStoreRequest;
+    int  _kbsyncType;
+    BOOL  _largeDownload;
+    int  _machineDataStyle;
+    unsigned int  _networkServiceType;
+    NSDictionary * _requestParameters;
+    BOOL  _requiresCellularDataNetwork;
+    BOOL  _requiresExtendedValidationCertificates;
+    BOOL  _requiresExternal;
+    BOOL  _requiresHTTPS;
+    BOOL  _shouldDecodeResponse;
+    BOOL  _shouldDisableCellular;
+    BOOL  _shouldDisableCellularFallback;
+    BOOL  _shouldProcessProtocol;
+    BOOL  _shouldSendSecureToken;
+    BOOL  _shouldSetCookies;
+    double  _timeoutInterval;
+    NSString * _urlBagKey;
+    int  _urlBagType;
+    id /* block */  _urlBagURLBlock;
+    NSArray * _urls;
+    NSArray * _userAgentComponents;
 }
 
 @property (readonly, copy) NSData *HTTPBody;
@@ -55,10 +56,11 @@
 @property (readonly) BOOL canBeResolved;
 @property (readonly, copy) NSString *clientAuditBundleIdentifier;
 @property (readonly, copy) NSData *clientAuditTokenData;
+@property (readonly) NSString *clientBundleIdentifier;
 @property (readonly, copy) NSString *clientIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) long long expectedContentLength;
+@property (readonly) int expectedContentLength;
 @property (readonly) unsigned int hash;
 @property (getter=isLargeDownload, readonly) BOOL largeDownload;
 @property (readonly) int machineDataStyle;
@@ -66,6 +68,7 @@
 @property (readonly, copy) NSDictionary *requestParameters;
 @property (readonly) BOOL requiresCellularDataNetwork;
 @property (readonly) BOOL requiresExtendedValidationCertificates;
+@property (readonly) BOOL requiresExternal;
 @property (readonly) BOOL requiresHTTPS;
 @property (readonly) BOOL shouldAddKBSyncData;
 @property (readonly) BOOL shouldDecodeResponse;
@@ -78,6 +81,7 @@
 @property (readonly) double timeoutInterval;
 @property (readonly, copy) NSArray *userAgentComponents;
 
+- (void).cxx_destruct;
 - (id)HTTPBody;
 - (id)HTTPBodyStream;
 - (id)HTTPHeaders;
@@ -95,14 +99,14 @@
 - (BOOL)canBeResolved;
 - (id)clientAuditBundleIdentifier;
 - (id)clientAuditTokenData;
+- (id)clientBundleIdentifier;
 - (id)clientIdentifier;
 - (id)copyURLRequest;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (long long)expectedContentLength;
+- (int)expectedContentLength;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithURL:(id)arg1;
@@ -117,6 +121,7 @@
 - (id)requestParameters;
 - (BOOL)requiresCellularDataNetwork;
 - (BOOL)requiresExtendedValidationCertificates;
+- (BOOL)requiresExternal;
 - (BOOL)requiresHTTPS;
 - (BOOL)shouldAddKBSyncData;
 - (BOOL)shouldDecodeResponse;

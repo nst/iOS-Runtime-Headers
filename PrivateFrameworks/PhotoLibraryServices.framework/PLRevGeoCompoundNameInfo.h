@@ -3,11 +3,11 @@
  */
 
 @interface PLRevGeoCompoundNameInfo : NSObject {
-    BOOL _isContinuation;
-    NSString *_namePrefix;
-    NSString *_nameSuffix;
-    NSArray *_sortedNames;
-    BOOL _suffixWhenPrefixOnly;
+    BOOL  _isContinuation;
+    NSString * _namePrefix;
+    NSString * _nameSuffix;
+    NSArray * _sortedNames;
+    BOOL  _suffixWhenPrefixOnly;
 }
 
 @property (nonatomic) BOOL isContinuation;

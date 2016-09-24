@@ -3,12 +3,12 @@
  */
 
 @interface PLCameraImportManager : NSObject <ICDeviceBrowserDelegate> {
-    ICDeviceBrowser *_deviceBrowser;
-    NSMutableArray *_importers;
-    NSMutableArray *_importersToEject;
-    SEL _stopListeningCallbackSelector;
-    id _stopListeningCallbackTarget;
-    BOOL _wantsToStopListening;
+    ICDeviceBrowser * _deviceBrowser;
+    NSMutableArray * _importers;
+    NSMutableArray * _importersToEject;
+    SEL  _stopListeningCallbackSelector;
+    id  _stopListeningCallbackTarget;
+    BOOL  _wantsToStopListening;
 }
 
 @property (readonly, copy) NSString *debugDescription;

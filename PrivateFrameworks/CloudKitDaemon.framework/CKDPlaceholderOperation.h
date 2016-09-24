@@ -3,12 +3,12 @@
  */
 
 @interface CKDPlaceholderOperation : NSOperation {
-    NSObject<OS_dispatch_group> *_group;
-    BOOL _isExecuting;
-    BOOL _isFinished;
-    CKDOperation *_realOperation;
-    NSDate *_startDate;
-    NSOperationQueue *_targetOperationQueue;
+    NSObject<OS_dispatch_group> * _group;
+    BOOL  _isExecuting;
+    BOOL  _isFinished;
+    CKDOperation * _realOperation;
+    NSDate * _startDate;
+    NSOperationQueue * _targetOperationQueue;
 }
 
 @property (nonatomic, readonly) CKDClientContext *context;
@@ -17,12 +17,13 @@
 @property (nonatomic, readonly) NSString *operationID;
 @property (nonatomic, readonly) CKDClientProxy *proxy;
 @property (nonatomic, readonly) CKDOperation *realOperation;
-@property (nonatomic, readonly) NSString *sectionID;
 @property (nonatomic, retain) NSDate *startDate;
 @property (nonatomic, readonly) NSOperationQueue *targetOperationQueue;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
+- (id)_runDurationString;
+- (id)_startDateString;
 - (void)cancel;
 - (id)ckShortDescription;
 - (id)context;
@@ -35,12 +36,12 @@
 - (id)operationID;
 - (id)proxy;
 - (id)realOperation;
-- (id)sectionID;
 - (void)setIsExecuting:(BOOL)arg1;
 - (void)setIsFinished:(BOOL)arg1;
 - (void)setStartDate:(id)arg1;
 - (void)start;
 - (id)startDate;
+- (id)statusReportWithIndent:(unsigned int)arg1;
 - (id)targetOperationQueue;
 
 @end

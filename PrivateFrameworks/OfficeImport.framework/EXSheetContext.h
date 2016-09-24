@@ -3,9 +3,9 @@
  */
 
 @interface EXSheetContext : NSObject <OCDDelayedNodeContext> {
-    NSURL *mPackageLocation;
-    EXReadState *mSheetState;
-    NSString *mType;
+    NSURL * mPackageLocation;
+    EXReadState * mSheetState;
+    NSString * mType;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,8 +3,8 @@
  */
 
 @interface NSConstraintValidator : NSObject {
-    id *_cachesByEntity;
-    NSManagedObjectModel *_model;
+    id * _cachesByEntity;
+    NSManagedObjectModel * _model;
 }
 
 - (void)_addConstraintRoot:(id)arg1 forEntity:(id)arg2;

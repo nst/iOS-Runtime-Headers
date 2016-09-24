@@ -3,13 +3,13 @@
  */
 
 @interface WUIAsynchronousAssetLoader : NSObject {
-    NSCache *_caDataCache;
-    NSObject<OS_dispatch_queue> *_caml_parsing_queue;
-    NSCache *_dataCache;
-    <WAAssetLoaderDelegate> *_delegate;
-    NSTimer *_opportunityTimer;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSCache *_resourceCache;
+    NSCache * _caDataCache;
+    NSObject<OS_dispatch_queue> * _caml_parsing_queue;
+    NSCache * _dataCache;
+    <WAAssetLoaderDelegate> * _delegate;
+    NSTimer * _opportunityTimer;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSCache * _resourceCache;
 }
 
 @property (nonatomic, retain) NSCache *caDataCache;
@@ -26,6 +26,7 @@
 - (void)CAMLParser:(id)arg1 formatErrorString:(const char *)arg2 arguments:(void*)arg3 lineNumber:(unsigned long)arg4;
 - (void)CAMLParser:(id)arg1 formatWarningString:(const char *)arg2 arguments:(void*)arg3 lineNumber:(unsigned long)arg4;
 - (id)CAMLParser:(id)arg1 resourceForURL:(id)arg2;
+- (void)_asynchronouslyPreheatCADataForCity:(id)arg1;
 - (void)_opportunisticallyLoad;
 - (void)_primeOpportunisticLoad;
 - (void)beginLoading;
@@ -38,7 +39,6 @@
 - (void)didReceivedMemoryWarning;
 - (id)filenameForCondition:(int)arg1 isDay:(BOOL)arg2;
 - (id)init;
-- (void)loadCADataForCity:(id)arg1;
 - (void)loadRootLayerForFile:(id)arg1 completion:(id /* block */)arg2;
 - (id)opportunityTimer;
 - (id)queue;

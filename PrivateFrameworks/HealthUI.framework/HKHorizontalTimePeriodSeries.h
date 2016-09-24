@@ -3,14 +3,14 @@
  */
 
 @interface HKHorizontalTimePeriodSeries : HKGraphSeries <HKAxisLabelDataSource> {
-    NSArray *_cachedAxisLabels;
-    NSArray *_enumerationValueOrdering;
-    UIColor *_fillColor;
-    float _lineSpacingPercentage;
-    float _lineWidth;
-    UIImage *_selectedPointMarkerImage;
-    float _topInsetPercentage;
-    NSDictionary *_valueLabels;
+    NSArray * _cachedAxisLabels;
+    NSArray * _enumerationValueOrdering;
+    UIColor * _fillColor;
+    double  _lineSpacingPercentage;
+    double  _lineWidth;
+    UIImage * _selectedPointMarkerImage;
+    double  _topInsetPercentage;
+    NSDictionary * _valueLabels;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -18,24 +18,24 @@
 @property (nonatomic, retain) NSArray *enumerationValueOrdering;
 @property (nonatomic, retain) UIColor *fillColor;
 @property (readonly) unsigned int hash;
-@property (nonatomic) float lineSpacingPercentage;
-@property (nonatomic) float lineWidth;
+@property (nonatomic) double lineSpacingPercentage;
+@property (nonatomic) double lineWidth;
 @property (nonatomic, retain) UIImage *selectedPointMarkerImage;
 @property (readonly) Class superclass;
-@property (nonatomic) float topInsetPercentage;
+@property (nonatomic) double topInsetPercentage;
 @property (nonatomic, retain) NSDictionary *valueLabels;
 
 - (void).cxx_destruct;
 - (id)_generateAxisLabels;
 - (id)coordinatesForBlock:(id)arg1 blockPath:(struct { int x1; int x2; })arg2 xAxis:(id)arg3 yAxis:(id)arg4;
-- (float)distanceFromPoint:(struct CGPoint { float x1; float x2; })arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (void)drawSeriesWithBlockCoordinates:(id)arg1 axisRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 zoomLevelConfiguration:(id)arg3 pointTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg4 renderContext:(struct CGContext { }*)arg5 secondaryRenderContext:(id)arg6;
+- (float)distanceFromPoint:(struct CGPoint { double x1; double x2; })arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (void)drawSeriesWithBlockCoordinates:(id)arg1 axisRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 zoomLevelConfiguration:(id)arg3 pointTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg4 renderContext:(struct CGContext { }*)arg5 secondaryRenderContext:(id)arg6;
 - (id)enumerationValueOrdering;
 - (id)fillColor;
-- (id)labelsForChartRange:(struct HKRange { float x1; float x2; })arg1 zoomScale:(float)arg2;
+- (id)labelsForChartRange:(struct HKRange { double x1; double x2; })arg1 zoomScale:(float)arg2;
 - (float)lineSpacingPercentage;
 - (float)lineWidth;
-- (struct CGPoint { float x1; float x2; })renderPositionForLabel:(id)arg1 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 zoomScale:(float)arg3 contentOffset:(struct CGPoint { float x1; float x2; })arg4 constantOffset:(float)arg5 isHorizontal:(BOOL)arg6;
+- (struct CGPoint { double x1; double x2; })renderPositionForLabel:(id)arg1 rect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 zoomScale:(float)arg3 contentOffset:(struct CGPoint { double x1; double x2; })arg4 constantOffset:(float)arg5 isHorizontal:(BOOL)arg6;
 - (id)selectedPointMarkerImage;
 - (void)setEnumerationValueOrdering:(id)arg1;
 - (void)setFillColor:(id)arg1;
@@ -47,9 +47,9 @@
 - (void)setYAxis:(id)arg1;
 - (float)topInsetPercentage;
 - (id)valueLabels;
-- (float)xAxisDistanceFromPoint:(struct CGPoint { float x1; float x2; })arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (float)xAxisSelectedCoordinate:(float)arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (float)yAxisDifferenceToPoint:(struct CGPoint { float x1; float x2; })arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (float)yCoordinateForLevel:(id)arg1 axisRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (float)xAxisDistanceFromPoint:(struct CGPoint { double x1; double x2; })arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (float)xAxisSelectedCoordinate:(float)arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (float)yAxisDifferenceToPoint:(struct CGPoint { double x1; double x2; })arg1 blockCoordinate:(id)arg2 chartRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (float)yCoordinateForLevel:(id)arg1 axisRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 
 @end

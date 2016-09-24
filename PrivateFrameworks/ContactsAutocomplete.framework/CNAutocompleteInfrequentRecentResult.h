@@ -3,7 +3,7 @@
  */
 
 @interface CNAutocompleteInfrequentRecentResult : CNAutocompleteRecentResult {
-    unsigned int _dateCount;
+    unsigned int  _dateCount;
 }
 
 @property unsigned int dateCount;

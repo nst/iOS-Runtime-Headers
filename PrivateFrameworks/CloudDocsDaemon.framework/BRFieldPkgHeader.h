@@ -3,7 +3,7 @@
  */
 
 @interface BRFieldPkgHeader : PBCodable <NSCopying> {
-    int _version;
+    int  _version;
 }
 
 @property (nonatomic) int version;

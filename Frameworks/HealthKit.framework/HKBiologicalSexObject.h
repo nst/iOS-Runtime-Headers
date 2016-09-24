@@ -3,7 +3,7 @@
  */
 
 @interface HKBiologicalSexObject : NSObject <NSCopying, NSSecureCoding> {
-    int _biologicalSex;
+    int  _biologicalSex;
 }
 
 @property (readonly) int biologicalSex;

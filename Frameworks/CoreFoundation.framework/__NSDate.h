@@ -3,7 +3,7 @@
  */
 
 @interface __NSDate : NSDate {
-    double _time;
+    double  _time;
 }
 
 + (id)__new:(double)arg1;

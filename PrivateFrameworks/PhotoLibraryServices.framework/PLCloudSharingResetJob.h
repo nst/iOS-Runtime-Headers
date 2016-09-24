@@ -6,7 +6,7 @@
 
 + (void)resetAllLocalState;
 
-- (long long)daemonOperation;
+- (int)daemonOperation;
 - (void)run;
 - (void)runDaemonSide;
 

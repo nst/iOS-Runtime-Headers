@@ -3,7 +3,7 @@
  */
 
 @interface AFSearchAlarmsResponse : AFSiriResponse {
-    NSArray *_results;
+    NSArray * _results;
 }
 
 @property (nonatomic, copy) NSArray *results;

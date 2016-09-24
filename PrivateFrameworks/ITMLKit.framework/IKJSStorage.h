@@ -3,10 +3,10 @@
  */
 
 @interface IKJSStorage : IKJSObject <IKJSStorage> {
-    <IKAppDataStoring> *_appStorage;
-    NSMutableDictionary *_storageDict;
-    NSObject<OS_dispatch_queue> *_storageQueue;
-    unsigned int _usesExternalDataStore;
+    <IKAppDataStoring> * _appStorage;
+    NSMutableDictionary * _storageDict;
+    NSObject<OS_dispatch_queue> * _storageQueue;
+    unsigned int  _usesExternalDataStore;
 }
 
 @property (nonatomic) <IKAppDataStoring> *appStorage;

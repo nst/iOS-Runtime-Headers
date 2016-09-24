@@ -3,7 +3,7 @@
  */
 
 @interface _MPRemoteCommandTarget : NSObject {
-    id /* block */ _block;
+    id /* block */  _block;
 }
 
 @property (nonatomic, copy) id /* block */ block;

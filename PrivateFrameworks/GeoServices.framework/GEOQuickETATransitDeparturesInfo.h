@@ -3,12 +3,12 @@
  */
 
 @interface GEOQuickETATransitDeparturesInfo : NSObject {
-    double _departureFrequency;
-    NSDate *_departureFrequencyValidUntil;
-    NSArray *_departures;
-    BOOL _departuresHaveFrequency;
-    NSString *_direction;
-    NSString *_headsign;
+    double  _departureFrequency;
+    NSDate * _departureFrequencyValidUntil;
+    NSArray * _departures;
+    BOOL  _departuresHaveFrequency;
+    NSString * _direction;
+    NSString * _headsign;
 }
 
 @property (nonatomic, readonly) double departureFrequency;

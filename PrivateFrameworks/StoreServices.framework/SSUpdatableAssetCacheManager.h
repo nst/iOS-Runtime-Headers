@@ -3,7 +3,7 @@
  */
 
 @interface SSUpdatableAssetCacheManager : NSObject {
-    NSString *_clientIdentifier;
+    NSString * _clientIdentifier;
 }
 
 - (void).cxx_destruct;

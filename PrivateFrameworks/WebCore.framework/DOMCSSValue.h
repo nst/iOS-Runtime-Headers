@@ -10,7 +10,6 @@
 - (id)cssText;
 - (unsigned short)cssValueType;
 - (void)dealloc;
-- (void)finalize;
 - (void)setCssText:(id)arg1;
 
 @end

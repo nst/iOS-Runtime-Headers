@@ -3,8 +3,8 @@
  */
 
 @interface MPMediaItemArray : NSObject <NSSecureCoding> {
-    Class _itemArrayCoderPIDDataCodingClass;
-    NSArray *_items;
+    Class  _itemArrayCoderPIDDataCodingClass;
+    NSArray * _items;
 }
 
 @property (nonatomic, readonly, retain) NSArray *items;

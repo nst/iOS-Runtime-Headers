@@ -3,12 +3,12 @@
  */
 
 @interface PSSpecifierUpdates : NSObject <NSCopying> {
-    PSSpecifierUpdateContext *_context;
-    NSMutableArray *_currentSpecifiers;
-    PSSpecifierGroupIndex *_groupIndex;
-    NSArray *_originalSpecifiers;
-    NSMutableArray *_updates;
-    BOOL _wantsDebugCallbacks;
+    PSSpecifierUpdateContext * _context;
+    NSMutableArray * _currentSpecifiers;
+    PSSpecifierGroupIndex * _groupIndex;
+    NSArray * _originalSpecifiers;
+    NSMutableArray * _updates;
+    BOOL  _wantsDebugCallbacks;
 }
 
 @property (nonatomic, copy) PSSpecifierUpdateContext *context;

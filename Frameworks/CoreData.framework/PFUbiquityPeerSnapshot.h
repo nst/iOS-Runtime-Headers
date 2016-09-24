@@ -3,12 +3,12 @@
  */
 
 @interface PFUbiquityPeerSnapshot : NSObject {
-    NSMutableDictionary *_diffFromPrevious;
-    NSString *_exportingPeerID;
-    PFUbiquityKnowledgeVector *_kv;
-    NSDictionary *_logSnapshot;
-    NSDate *_transactionDate;
-    NSNumber *_transactionNumber;
+    NSMutableDictionary * _diffFromPrevious;
+    NSString * _exportingPeerID;
+    PFUbiquityKnowledgeVector * _kv;
+    NSDictionary * _logSnapshot;
+    NSDate * _transactionDate;
+    NSNumber * _transactionNumber;
 }
 
 @property (nonatomic, readonly) NSDictionary *diffFromPrevious;

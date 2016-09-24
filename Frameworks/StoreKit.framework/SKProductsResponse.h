@@ -3,7 +3,7 @@
  */
 
 @interface SKProductsResponse : NSObject {
-    id _internal;
+    id  _internal;
 }
 
 @property (nonatomic, readonly) NSArray *invalidProductIdentifiers;

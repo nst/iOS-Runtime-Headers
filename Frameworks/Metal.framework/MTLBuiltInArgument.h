@@ -3,8 +3,8 @@
  */
 
 @interface MTLBuiltInArgument : MTLArgumentInternal {
-    unsigned short _builtInDataType;
-    unsigned short _builtInType;
+    unsigned short  _builtInDataType;
+    unsigned short  _builtInType;
 }
 
 - (unsigned int)builtInDataType;

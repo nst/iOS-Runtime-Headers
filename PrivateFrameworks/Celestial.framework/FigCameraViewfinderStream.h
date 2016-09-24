@@ -3,13 +3,13 @@
  */
 
 @interface FigCameraViewfinderStream : NSObject {
-    FigDelegateStorage *_delegateStorage;
-    struct OpaqueFigVirtualDisplaySource { } *_displaySource;
-    struct OpaqueFigEndpoint { } *_endpoint;
-    id _endpointsChangedNotificationToken;
-    FigStateMachine *_stateMachine;
-    struct OpaqueFigEndpointStream { } *_stream;
-    id _streamsChangedNotificationToken;
+    FigDelegateStorage * _delegateStorage;
+    struct OpaqueFigVirtualDisplaySource { } * _displaySource;
+    struct OpaqueFigEndpoint { } * _endpoint;
+    id  _endpointsChangedNotificationToken;
+    FigStateMachine * _stateMachine;
+    struct OpaqueFigEndpointStream { } * _stream;
+    id  _streamsChangedNotificationToken;
 }
 
 + (void)initialize;

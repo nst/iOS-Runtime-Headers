@@ -3,10 +3,10 @@
  */
 
 @interface SSLookupRequest : SSRequest <SSXPCCoding> {
-    SSAuthenticationContext *_authenticationContext;
-    int _personalizationStyle;
-    SSLookupProperties *_properties;
-    int _resultFilters;
+    SSAuthenticationContext * _authenticationContext;
+    int  _personalizationStyle;
+    SSLookupProperties * _properties;
+    int  _resultFilters;
 }
 
 @property (nonatomic, readonly, copy) SSLookupProperties *_lookupProperties;

@@ -3,23 +3,25 @@
  */
 
 @interface CAMApplicationDelegate : UIResponder <UIApplicationDelegate> {
-    CAMBurstController *_burstController;
-    CUCaptureController *_captureController;
-    CAMIrisVideoController *_irisVideoController;
-    CAMKeepAliveController *_keepAliveController;
-    CAMLocationController *_locationController;
-    CAMMotionController *_motionController;
-    CAMNebulaDaemonProxyManager *_nebulaDaemonProxyManager;
-    CAMPersistenceController *_persistenceController;
-    CAMPowerController *_powerController;
-    CAMProtectionController *_protectionController;
-    CAMRemoteShutterController *_remoteShutterController;
-    CAMTimelapseController *_timelapseController;
-    CAMViewfinderViewController *_viewfinderViewController;
-    UIWindow *_window;
+    CAMBurstController * _burstController;
+    CAMCameraRollController * _cameraRollController;
+    CUCaptureController * _captureController;
+    CAMIrisVideoController * _irisVideoController;
+    CAMKeepAliveController * _keepAliveController;
+    CAMLocationController * _locationController;
+    CAMMotionController * _motionController;
+    CAMNebulaDaemonProxyManager * _nebulaDaemonProxyManager;
+    CAMPersistenceController * _persistenceController;
+    CAMPowerController * _powerController;
+    CAMProtectionController * _protectionController;
+    CAMRemoteShutterController * _remoteShutterController;
+    CAMTimelapseController * _timelapseController;
+    CAMViewfinderViewController * _viewfinderViewController;
+    UIWindow * _window;
 }
 
 @property (nonatomic, readonly) CAMBurstController *burstController;
+@property (nonatomic, readonly) CAMCameraRollController *cameraRollController;
 @property (nonatomic, readonly) CUCaptureController *captureController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -41,6 +43,7 @@
 - (void).cxx_destruct;
 - (BOOL)_createSubsystemsWithLaunchOptions:(id)arg1;
 - (BOOL)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
+- (BOOL)application:(id)arg1 openURL:(id)arg2 options:(id)arg3;
 - (void)application:(id)arg1 performActionForShortcutItem:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)applicationDidBecomeActive:(id)arg1;
 - (void)applicationDidEnterBackground:(id)arg1;
@@ -48,6 +51,7 @@
 - (void)applicationWillResignActive:(id)arg1;
 - (void)applicationWillTerminate:(id)arg1;
 - (id)burstController;
+- (id)cameraRollController;
 - (id)captureController;
 - (id)irisVideoController;
 - (id)keepAliveController;

@@ -3,8 +3,8 @@
  */
 
 @interface SUStorePageRotationController : SURotationController {
-    SURotationController *_childRotationController;
-    SUViewController *_childViewController;
+    SURotationController * _childRotationController;
+    SUViewController * _childViewController;
 }
 
 - (id)_childRotationController;

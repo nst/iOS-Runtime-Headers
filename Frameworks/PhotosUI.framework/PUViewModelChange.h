@@ -3,7 +3,7 @@
  */
 
 @interface PUViewModelChange : NSObject {
-    BOOL _hasChanges;
+    BOOL  _hasChanges;
 }
 
 @property (nonatomic, readonly) BOOL hasChanges;

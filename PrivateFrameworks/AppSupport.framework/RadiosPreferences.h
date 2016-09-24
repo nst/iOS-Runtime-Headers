@@ -3,13 +3,13 @@
  */
 
 @interface RadiosPreferences : NSObject {
-    int _applySkipCount;
-    BOOL _cachedAirplaneMode;
-    <RadiosPreferencesDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    BOOL _isCachedAirplaneModeValid;
-    struct __SCPreferences { } *_prefs;
-    BOOL notifyForExternalChangeOnly;
+    int  _applySkipCount;
+    BOOL  _cachedAirplaneMode;
+    <RadiosPreferencesDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    BOOL  _isCachedAirplaneModeValid;
+    struct __SCPreferences { } * _prefs;
+    BOOL  notifyForExternalChangeOnly;
 }
 
 @property (nonatomic) BOOL airplaneMode;

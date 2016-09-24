@@ -3,12 +3,12 @@
  */
 
 @interface CoreDAVResourceTypeItem : CoreDAVItem {
-    CoreDAVItemWithNoChildren *_addressBook;
-    CoreDAVItemWithNoChildren *_collection;
-    CoreDAVItemWithNoChildren *_principal;
-    CoreDAVItemWithNoChildren *_searchAddressBook;
-    CoreDAVItemWithNoChildren *_shared;
-    CoreDAVItemWithNoChildren *_unauthenticated;
+    CoreDAVItemWithNoChildren * _addressBook;
+    CoreDAVItemWithNoChildren * _collection;
+    CoreDAVItemWithNoChildren * _principal;
+    CoreDAVItemWithNoChildren * _searchAddressBook;
+    CoreDAVItemWithNoChildren * _shared;
+    CoreDAVItemWithNoChildren * _unauthenticated;
 }
 
 @property (nonatomic, retain) CoreDAVItemWithNoChildren *addressBook;

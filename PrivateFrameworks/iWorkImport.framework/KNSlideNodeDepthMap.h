@@ -3,8 +3,8 @@
  */
 
 @interface KNSlideNodeDepthMap : NSObject {
-    NSArray *_depthsOfSlideNodes;
-    NSArray *_slideNodes;
+    NSArray * _depthsOfSlideNodes;
+    NSArray * _slideNodes;
 }
 
 @property (nonatomic, readonly) NSArray *depthsOfSlideNodes;

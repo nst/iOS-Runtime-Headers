@@ -3,21 +3,21 @@
  */
 
 @interface UIMotionEvent : UIEvent {
-    double _highLevelTime;
-    float _highPassState;
-    unsigned int _highPassStateIndex;
-    NSTimer *_idleTimer;
-    double _lastMovementTime;
-    double _lowEndTimeout;
-    float _lowPassState;
-    unsigned int _lowPassStateIndex;
-    id _motionAccelerometer;
-    BOOL _sentMotionBegan;
-    double _shakeStartTime;
-    int _shakeState;
-    int _stateMachineState;
-    int _subtype;
-    int notifyToken;
+    double  _highLevelTime;
+    double  _highPassState;
+    unsigned int  _highPassStateIndex;
+    NSTimer * _idleTimer;
+    double  _lastMovementTime;
+    double  _lowEndTimeout;
+    double  _lowPassState;
+    unsigned int  _lowPassStateIndex;
+    id  _motionAccelerometer;
+    BOOL  _sentMotionBegan;
+    double  _shakeStartTime;
+    int  _shakeState;
+    int  _stateMachineState;
+    int  _subtype;
+    int  notifyToken;
 }
 
 @property (nonatomic) int shakeState;

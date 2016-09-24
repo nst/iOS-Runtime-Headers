@@ -3,8 +3,8 @@
  */
 
 @interface MusicCollectionView : UICollectionView {
-    UITraitCollection *_cachedTraitCollection;
-    BOOL _shouldTreatContentOffsetChangesAsDeltas;
+    UITraitCollection * _cachedTraitCollection;
+    BOOL  _shouldTreatContentOffsetChangesAsDeltas;
 }
 
 @property (nonatomic) <MusicCollectionViewDelegate> *delegate;

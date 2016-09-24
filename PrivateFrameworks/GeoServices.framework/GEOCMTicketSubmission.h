@@ -3,19 +3,19 @@
  */
 
 @interface GEOCMTicketSubmission : PBCodable <NSCopying> {
-    NSData *_devicePushToken;
+    NSData * _devicePushToken;
     struct { 
         unsigned int problemType : 1; 
-    } _has;
-    GEORPProblemContext *_problemContext;
-    GEORPProblemCorrections *_problemCorrections;
-    int _problemType;
-    NSString *_userEmail;
+    }  _has;
+    GEORPProblemContext * _problemContext;
+    GEORPProblemCorrections * _problemCorrections;
+    int  _problemType;
+    NSString * _userEmail;
     struct { 
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _userPaths;
+    }  _userPaths;
 }
 
 @property (nonatomic, retain) NSData *devicePushToken;
@@ -31,6 +31,8 @@
 @property (nonatomic, readonly) int*userPaths;
 @property (nonatomic, readonly) unsigned int userPathsCount;
 
+- (int)StringAsProblemType:(id)arg1;
+- (int)StringAsUserPaths:(id)arg1;
 - (void)addUserPath:(int)arg1;
 - (void)clearUserPaths;
 - (void)copyTo:(id)arg1;
@@ -50,6 +52,7 @@
 - (id)problemContext;
 - (id)problemCorrections;
 - (int)problemType;
+- (id)problemTypeAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setDevicePushToken:(id)arg1;
 - (void)setHasProblemType:(BOOL)arg1;
@@ -61,6 +64,7 @@
 - (id)userEmail;
 - (int)userPathAtIndex:(unsigned int)arg1;
 - (int*)userPaths;
+- (id)userPathsAsString:(int)arg1;
 - (unsigned int)userPathsCount;
 - (void)writeTo:(id)arg1;
 

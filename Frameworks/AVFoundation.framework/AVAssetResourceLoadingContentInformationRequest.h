@@ -3,15 +3,15 @@
  */
 
 @interface AVAssetResourceLoadingContentInformationRequest : NSObject {
-    AVAssetResourceLoadingContentInformationRequestInternal *_contentInformationRequest;
+    AVAssetResourceLoadingContentInformationRequestInternal * _contentInformationRequest;
 }
 
 @property (getter=isByteRangeAccessSupported, nonatomic) BOOL byteRangeAccessSupported;
-@property (nonatomic) long long contentLength;
+@property (nonatomic) int contentLength;
 @property (nonatomic, copy) NSString *contentType;
 @property (nonatomic, copy) NSDate *renewalDate;
 
-- (long long)contentLength;
+- (int)contentLength;
 - (id)contentType;
 - (void)dealloc;
 - (id)description;
@@ -23,7 +23,7 @@
 - (id)propertyList;
 - (id)renewalDate;
 - (void)setByteRangeAccessSupported:(BOOL)arg1;
-- (void)setContentLength:(long long)arg1;
+- (void)setContentLength:(int)arg1;
 - (void)setContentType:(id)arg1;
 - (void)setDiskCachingPermitted:(BOOL)arg1;
 - (void)setRenewalDate:(id)arg1;

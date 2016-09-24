@@ -3,21 +3,21 @@
  */
 
 @interface WBSAutomaticReadingListItem : NSObject {
-    UIImage *_fallbackProfileImage;
-    BOOL _fetchingProfileImage;
-    NSString *_originatorDisplayName;
-    id _originatorID;
-    UIImage *_originatorProfileImage;
-    BOOL _repostedByAuthenticatedUser;
-    NSString *_reposterDisplayName;
-    NSString *_reposterScreenName;
-    UIImage *_serviceImage;
-    NSString *_socialSourceAccountIdentifier;
-    NSDate *_sourceRecordCreationDate;
-    id _sourceRecordID;
-    NSString *_sourceRecordText;
-    NSString *_uniqueIdentifier;
-    NSString *_urlString;
+    UIImage * _fallbackProfileImage;
+    BOOL  _fetchingProfileImage;
+    NSString * _originatorDisplayName;
+    id  _originatorID;
+    UIImage * _originatorProfileImage;
+    BOOL  _repostedByAuthenticatedUser;
+    NSString * _reposterDisplayName;
+    NSString * _reposterScreenName;
+    UIImage * _serviceImage;
+    NSString * _socialSourceAccountIdentifier;
+    NSDate * _sourceRecordCreationDate;
+    id  _sourceRecordID;
+    NSString * _sourceRecordText;
+    NSString * _uniqueIdentifier;
+    NSString * _urlString;
 }
 
 @property (nonatomic, readonly) NSURL *biggerOriginatorProfileImageURL;
@@ -49,9 +49,9 @@
 + (id)keyPathsForValuesAffectingDomainString;
 
 - (void).cxx_destruct;
-- (void)_fetchOriginatorProfileImageForSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_fetchOriginatorProfileImageForSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_getFallbackImage;
-- (id)bestOriginatorProfileImageForSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)bestOriginatorProfileImageForSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)biggerOriginatorProfileImageURL;
 - (id)continuousBannerDisplayString;
 - (id)continuousBannerTitle;

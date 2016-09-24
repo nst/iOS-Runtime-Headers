@@ -3,17 +3,17 @@
  */
 
 @interface BLTPBAddBulletinRequest : PBRequest <NSCopying> {
-    BLTPBBulletin *_bulletin;
-    double _date;
+    BLTPBBulletin * _bulletin;
+    double  _date;
     struct { 
         unsigned int date : 1; 
         unsigned int updateType : 1; 
         unsigned int shouldPlayLightsAndSirens : 1; 
         unsigned int trafficRestricted : 1; 
-    } _has;
-    BOOL _shouldPlayLightsAndSirens;
-    BOOL _trafficRestricted;
-    unsigned int _updateType;
+    }  _has;
+    BOOL  _shouldPlayLightsAndSirens;
+    BOOL  _trafficRestricted;
+    unsigned int  _updateType;
 }
 
 @property (nonatomic, retain) BLTPBBulletin *bulletin;

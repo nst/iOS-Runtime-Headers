@@ -3,10 +3,10 @@
  */
 
 @interface OCCDecryptor : NSObject {
-    NSString *mBaseStringForOutputFilename;
-    NSString *mOutputFilename;
-    struct OCCStreamer { int (**x1)(); struct OCCCryptoKey {} *x2; char *x3; } *mStreamer;
-    OITSUTemporaryDirectory *mTempDirectory;
+    NSString * mBaseStringForOutputFilename;
+    NSString * mOutputFilename;
+    struct OCCStreamer { int (**x1)(); struct OCCCryptoKey {} *x2; char *x3; } * mStreamer;
+    OITSUTemporaryDirectory * mTempDirectory;
 }
 
 @property (nonatomic, readonly) NSString *outputFilename;

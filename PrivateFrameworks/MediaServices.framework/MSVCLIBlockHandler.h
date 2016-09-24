@@ -3,7 +3,7 @@
  */
 
 @interface MSVCLIBlockHandler : NSObject {
-    id /* block */ _block;
+    id /* block */  _block;
 }
 
 @property (nonatomic, readonly) id /* block */ block;

@@ -3,8 +3,8 @@
  */
 
 @interface WBSSearchHelperConnectionManager : NSObject {
-    NSMutableSet *_clients;
-    NSXPCConnection *_searchHelperConnection;
+    NSMutableSet * _clients;
+    NSXPCConnection * _searchHelperConnection;
 }
 
 @property (nonatomic, retain) NSXPCConnection *searchHelperConnection;

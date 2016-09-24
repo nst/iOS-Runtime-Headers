@@ -3,10 +3,10 @@
  */
 
 @interface TKSmartCardSlotManager : NSObject <TKProtocolSlotClientNotification> {
-    NSXPCConnection *_connection;
-    NSMutableDictionary *_endpoints;
-    NSArray *_slotNames;
-    NSObject<OS_dispatch_queue> *_slotNamesQueue;
+    NSXPCConnection * _connection;
+    NSMutableDictionary * _endpoints;
+    NSArray * _slotNames;
+    NSObject<OS_dispatch_queue> * _slotNamesQueue;
 }
 
 @property (readonly) NSArray *slotNames;

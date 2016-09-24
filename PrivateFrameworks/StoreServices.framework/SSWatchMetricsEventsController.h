@@ -3,8 +3,8 @@
  */
 
 @interface SSWatchMetricsEventsController : NSObject {
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    SSWatchMetricsEventTable *_table;
+    NSObject<OS_dispatch_queue> * _serialQueue;
+    SSWatchMetricsEventTable * _table;
 }
 
 @property (readonly) NSObject<OS_dispatch_queue> *serialQueue;
@@ -19,6 +19,6 @@
 - (void)markAsFailed:(id)arg1;
 - (id)serialQueue;
 - (id)table;
-- (id)unreportedEventsSinceTimestamp:(long long)arg1;
+- (id)unreportedEventsSinceTimestamp:(int)arg1;
 
 @end

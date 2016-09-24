@@ -3,14 +3,15 @@
  */
 
 @interface EKEventDetailItem : NSObject <EKEditItemViewControllerDelegate> {
-    BOOL _allowsEditing;
-    int _cellPosition;
-    <EKEventDetailItemDelegate> *_delegate;
-    EKEvent *_event;
-    EKUIRecurrenceAlertController *_recurrenceAlertController;
-    BOOL _shouldIndent;
-    EKEventStore *_store;
-    UIViewController<EKEditItemViewControllerProtocol> *_viewController;
+    BOOL  _allowsEditing;
+    int  _cellPosition;
+    <EKEventDetailItemDelegate> * _delegate;
+    EKEvent * _event;
+    EKUIRecurrenceAlertController * _recurrenceAlertController;
+    BOOL  _shouldIndent;
+    EKEventStore * _store;
+    UIViewController<EKEditItemViewControllerProtocol> * _viewController;
+    UIViewController * _viewControllerToPresentFrom;
 }
 
 @property (nonatomic) BOOL allowsEditing;
@@ -24,6 +25,7 @@
 @property (nonatomic) BOOL shouldIndent;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIViewController *viewController;
+@property (nonatomic) UIViewController *viewControllerToPresentFrom;
 
 - (void).cxx_destruct;
 - (BOOL)allowsEditing;
@@ -33,7 +35,7 @@
 - (void)dealloc;
 - (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
 - (id)delegate;
-- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned int)arg2;
+- (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned int)arg2;
 - (void)editItemViewController:(id)arg1 didCompleteWithAction:(int)arg2;
 - (BOOL)editItemViewControllerSave:(id)arg1;
 - (BOOL)editItemViewControllerShouldShowDetachAlert;
@@ -57,7 +59,9 @@
 - (void)setEvent:(id)arg1 store:(id)arg2;
 - (void)setShouldIndent:(BOOL)arg1;
 - (void)setViewController:(id)arg1;
+- (void)setViewControllerToPresentFrom:(id)arg1;
 - (BOOL)shouldIndent;
 - (id)viewController;
+- (id)viewControllerToPresentFrom;
 
 @end

@@ -3,17 +3,17 @@
  */
 
 @interface CKObjCProperty : NSObject {
-    Class _classHandle;
-    unsigned int _flags;
-    NSMethodSignature *_getterMethodSignature;
-    SEL _getterSelector;
-    NSString *_getterSelectorName;
-    NSString *_instanceVariableName;
-    NSString *_name;
-    NSMethodSignature *_setterMethodSignature;
-    SEL _setterSelector;
-    NSString *_setterSelectorName;
-    CKObjCType *_type;
+    Class  _classHandle;
+    unsigned int  _flags;
+    NSMethodSignature * _getterMethodSignature;
+    SEL  _getterSelector;
+    NSString * _getterSelectorName;
+    NSString * _instanceVariableName;
+    NSString * _name;
+    NSMethodSignature * _setterMethodSignature;
+    SEL  _setterSelector;
+    NSString * _setterSelectorName;
+    CKObjCType * _type;
 }
 
 @property (nonatomic, readonly) Class classHandle;

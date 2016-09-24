@@ -3,11 +3,11 @@
  */
 
 @interface MPUAnimationFactory : NSObject <_UIBasicAnimationFactory> {
-    NSArray *_allowedKeyPaths;
-    NSString *_fillMode;
-    BOOL _removedOnCompletion;
-    double _timeOffset;
-    CAMediaTimingFunction *_timingFunction;
+    NSArray * _allowedKeyPaths;
+    NSString * _fillMode;
+    BOOL  _removedOnCompletion;
+    double  _timeOffset;
+    CAMediaTimingFunction * _timingFunction;
 }
 
 @property (nonatomic, copy) NSArray *allowedKeyPaths;

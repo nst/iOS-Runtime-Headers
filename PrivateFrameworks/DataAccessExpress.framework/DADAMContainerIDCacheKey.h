@@ -3,8 +3,8 @@
  */
 
 @interface DADAMContainerIDCacheKey : NSObject <NSCopying> {
-    NSString *_accountID;
-    int _dataclass;
+    NSString * _accountID;
+    int  _dataclass;
 }
 
 @property (nonatomic, readonly) NSString *accountID;

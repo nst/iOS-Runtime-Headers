@@ -3,8 +3,8 @@
  */
 
 @interface PLAssetImageGenerator : NSObject {
-    AVAssetImageGenerator *_imageGenerator;
-    BOOL _inUse;
+    AVAssetImageGenerator * _imageGenerator;
+    BOOL  _inUse;
 }
 
 @property (nonatomic, retain) AVAssetImageGenerator *imageGenerator;

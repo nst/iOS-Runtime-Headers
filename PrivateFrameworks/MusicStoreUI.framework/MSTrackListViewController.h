@@ -3,7 +3,7 @@
  */
 
 @interface MSTrackListViewController : MSStructuredPageViewController <MSTrackListHeaderDelegate> {
-    MSTrackListHeaderView *_headerView;
+    MSTrackListHeaderView * _headerView;
 }
 
 @property (readonly, copy) NSString *debugDescription;

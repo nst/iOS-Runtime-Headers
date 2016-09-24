@@ -3,7 +3,7 @@
  */
 
 @interface GKChallenge : NSObject <NSCoding, NSSecureCoding> {
-    GKChallengeInternal *_internal;
+    GKChallengeInternal * _internal;
 }
 
 @property (nonatomic, readonly, copy) NSString *bundleID;

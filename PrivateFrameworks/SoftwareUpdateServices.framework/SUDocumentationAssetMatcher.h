@@ -3,7 +3,7 @@
  */
 
 @interface SUDocumentationAssetMatcher : SUAssetStateMatcher {
-    ASAsset *_suAsset;
+    ASAsset * _suAsset;
 }
 
 + (id)matcherDocumentationFromAsset:(id)arg1;

@@ -3,15 +3,15 @@
  */
 
 @interface SGContactDetail : NSObject <NSCopying> {
-    NSString *_context;
-    SGDuplicateKey *_duplicateKey;
-    unsigned int _extractionType;
-    NSString *_label;
-    NSString *_normalizedValue;
-    SGRecordId *_recordId;
-    NSString *_sourceKey;
-    unsigned int _type;
-    NSString *_value;
+    NSString * _context;
+    SGDuplicateKey * _duplicateKey;
+    unsigned int  _extractionType;
+    NSString * _label;
+    NSString * _normalizedValue;
+    SGRecordId * _recordId;
+    NSString * _sourceKey;
+    unsigned int  _type;
+    NSString * _value;
 }
 
 @property (nonatomic, readonly) NSString *context;

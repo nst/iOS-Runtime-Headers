@@ -3,9 +3,9 @@
  */
 
 @interface SKUIDonationResultView : UIView {
-    UIImageView *_imageView;
-    UILabel *_messageLabel;
-    UILabel *_titleLabel;
+    UIImageView * _imageView;
+    UILabel * _messageLabel;
+    UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) UIImage *image;

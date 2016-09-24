@@ -3,14 +3,14 @@
  */
 
 @interface MusicStoreQueueFeeder : MPQueueFeeder <MPShuffleControllerDataSource, MPStoreAVItemDownloadMetadataConsuming> {
-    MusicEntityValueContext *_containerEntityValueContext;
-    unsigned int _feederRevisionID;
-    MusicStorePlaybackContext *_pendingLoadPlaybackContext;
-    MPPlaceholderAVItem *_placeholderAVItem;
-    BOOL _shouldIgnoreEntityProviderInvalidationForContentsChange;
-    MPShuffleController *_shuffleController;
-    MusicStoreEntityProvider *_storeEntityProvider;
-    NSArray *_storeMetadataContexts;
+    MusicEntityValueContext * _containerEntityValueContext;
+    unsigned int  _feederRevisionID;
+    MusicStorePlaybackContext * _pendingLoadPlaybackContext;
+    MPPlaceholderAVItem * _placeholderAVItem;
+    BOOL  _shouldIgnoreEntityProviderInvalidationForContentsChange;
+    MPShuffleController * _shuffleController;
+    MusicStoreEntityProvider * _storeEntityProvider;
+    NSArray * _storeMetadataContexts;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -48,11 +48,11 @@
 - (Class)itemClass;
 - (unsigned int)itemCount;
 - (unsigned int)itemCountForShuffleController:(id)arg1;
-- (unsigned int)itemTypeForIndex:(unsigned int)arg1;
+- (int)itemTypeForIndex:(unsigned int)arg1;
 - (id)mediaItemAtIndex:(unsigned int)arg1;
 - (BOOL)playerPreparesItemsForPlaybackAsynchronously;
-- (unsigned int)realRepeatType;
-- (unsigned int)realShuffleType;
+- (int)realRepeatType;
+- (int)realShuffleType;
 - (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(id /* block */)arg2;
 - (unsigned int)shuffleController:(id)arg1 countOfItemIdentifier:(id)arg2 withMaximumCount:(unsigned int)arg3;
 - (id)shuffleController:(id)arg1 identifierForItemAtIndex:(unsigned int)arg2;

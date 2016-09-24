@@ -3,11 +3,11 @@
  */
 
 @interface TSULRUCache : NSObject {
-    SEL mCallback;
-    id mCallbackTarget;
-    TSUNoCopyDictionary *mData;
-    unsigned int mMax;
-    NSMutableArray *mOrderedKeys;
+    SEL  mCallback;
+    id  mCallbackTarget;
+    TSUNoCopyDictionary * mData;
+    unsigned int  mMax;
+    NSMutableArray * mOrderedKeys;
 }
 
 @property (nonatomic, readonly) NSArray *allKeys;

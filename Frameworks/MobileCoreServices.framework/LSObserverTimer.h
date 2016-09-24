@@ -3,15 +3,15 @@
  */
 
 @interface LSObserverTimer : NSObject {
-    SEL _appObserverSelector;
-    NSMutableSet *_applications;
-    NSDate *_lastFiredDate;
-    double _latency;
-    double _minInterval;
-    NSString *_name;
-    NSMutableSet *_plugins;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSTimer *_timer;
+    SEL  _appObserverSelector;
+    NSMutableSet * _applications;
+    NSDate * _lastFiredDate;
+    double  _latency;
+    double  _minInterval;
+    NSString * _name;
+    NSMutableSet * _plugins;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSTimer * _timer;
 }
 
 @property SEL appObserverSelector;

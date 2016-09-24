@@ -3,10 +3,10 @@
  */
 
 @interface ATGrappaSession : NSObject {
-    unsigned long _sessionId;
-    NSData *_sessionRequestData;
-    NSData *_sessionResponseData;
-    unsigned int _sessionType;
+    unsigned long  _sessionId;
+    NSData * _sessionRequestData;
+    NSData * _sessionResponseData;
+    unsigned int  _sessionType;
 }
 
 - (void).cxx_destruct;

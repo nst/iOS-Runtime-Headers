@@ -3,8 +3,8 @@
  */
 
 @interface PLImageCache : NSObject {
-    PLImageCacheList *_cacheList;
-    PLImageLoadingThread *_loader;
+    PLImageCacheList * _cacheList;
+    PLImageLoadingThread * _loader;
 }
 
 - (void)_addImageToCache:(id)arg1;

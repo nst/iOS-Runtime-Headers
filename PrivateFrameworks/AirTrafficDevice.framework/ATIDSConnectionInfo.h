@@ -3,13 +3,13 @@
  */
 
 @interface ATIDSConnectionInfo : NSObject {
-    unsigned int _connectionState;
-    IDSDevice *_device;
-    unsigned int _failureCount;
-    int _priority;
-    ATIDSSocket *_socket;
-    double _wakeupTimestamp;
-    MSVXPCTransaction *_xpcTransaction;
+    unsigned int  _connectionState;
+    IDSDevice * _device;
+    unsigned int  _failureCount;
+    int  _priority;
+    ATIDSSocket * _socket;
+    double  _wakeupTimestamp;
+    MSVXPCTransaction * _xpcTransaction;
 }
 
 @property (nonatomic) unsigned int connectionState;

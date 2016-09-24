@@ -3,10 +3,10 @@
  */
 
 @interface SUScriptEventListener : NSObject {
-    WebScriptObject *_callback;
-    NSLock *_lock;
-    NSString *_name;
-    BOOL _useCapture;
+    WebScriptObject * _callback;
+    NSLock * _lock;
+    NSString * _name;
+    BOOL  _useCapture;
 }
 
 @property (retain) WebScriptObject *callback;

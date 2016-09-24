@@ -3,7 +3,7 @@
  */
 
 @interface NCWidgetDatum : NSObject <NCDatum> {
-    NSExtension *_representedExtension;
+    NSExtension * _representedExtension;
 }
 
 @property (nonatomic, readonly, copy) NSString *datumIdentifier;
@@ -13,8 +13,8 @@
 @property (nonatomic, readonly) NSExtension *representedExtension;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)datumIdentifier;
-- (void)dealloc;
 - (id)description;
 - (unsigned int)hash;
 - (id)initWithExtension:(id)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface HDBatteryService : HDHealthService {
-    CBCharacteristic *_batteryCharacteristic;
-    HDHealthServicePropertyManager *_propertyManager;
+    CBCharacteristic * _batteryCharacteristic;
+    HDHealthServicePropertyManager * _propertyManager;
 }
 
 @property (nonatomic, retain) CBCharacteristic *batteryCharacteristic;

@@ -3,13 +3,13 @@
  */
 
 @interface FigHUDLayer : CALayer {
-    struct __CTFont { } *_Font;
-    float _FontSize;
-    struct __CFArray { } *_LabelColors;
-    struct __CFArray { } *_Labels;
-    struct __CFDictionary { } *_TextAttributes;
-    struct __CFArray { } *_ValueColors;
-    struct __CFArray { } *_Values;
+    struct __CTFont { } * _Font;
+    double  _FontSize;
+    struct __CFArray { } * _LabelColors;
+    struct __CFArray { } * _Labels;
+    struct __CFDictionary { } * _TextAttributes;
+    struct __CFArray { } * _ValueColors;
+    struct __CFArray { } * _Values;
 }
 
 - (long)addLine:(struct __CFString { }*)arg1 withColorIndex:(int)arg2;

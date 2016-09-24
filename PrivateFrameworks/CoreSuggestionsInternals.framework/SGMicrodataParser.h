@@ -3,7 +3,7 @@
  */
 
 @interface SGMicrodataParser : NSObject {
-    SGMicrodataParserStackItem *_stackItem;
+    SGMicrodataParserStackItem * _stackItem;
 }
 
 @property (nonatomic, readonly) SGMicrodataParserStackItem *stackItem;

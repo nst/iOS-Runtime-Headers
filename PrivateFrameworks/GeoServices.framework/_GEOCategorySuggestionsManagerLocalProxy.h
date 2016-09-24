@@ -3,7 +3,7 @@
  */
 
 @interface _GEOCategorySuggestionsManagerLocalProxy : NSObject <GEOCategorySuggestionsManagerServerProxy> {
-    int _urlsChangedToken;
+    int  _urlsChangedToken;
 }
 
 @property (readonly, copy) NSString *debugDescription;

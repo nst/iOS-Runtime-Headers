@@ -3,8 +3,8 @@
  */
 
 @interface PBMasterLayoutMap : NSObject {
-    NSMutableDictionary *mMasterIdToMasterInfoMap;
-    NSMutableDictionary *mTitleIdToMasterIdMap;
+    NSMutableDictionary * mMasterIdToMasterInfoMap;
+    NSMutableDictionary * mTitleIdToMasterIdMap;
 }
 
 + (id)masterLayoutMap;

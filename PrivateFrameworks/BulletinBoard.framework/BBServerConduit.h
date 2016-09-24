@@ -3,7 +3,7 @@
  */
 
 @interface BBServerConduit : NSObject <BBServerConduitClientInterface> {
-    NSXPCConnection *_connection;
+    NSXPCConnection * _connection;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,6 +15,7 @@
 + (id)serverInterface;
 + (id)sharedConduit;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 - (void)invalidate;

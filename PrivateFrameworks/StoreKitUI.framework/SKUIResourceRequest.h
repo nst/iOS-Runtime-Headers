@@ -3,8 +3,8 @@
  */
 
 @interface SKUIResourceRequest : NSObject <NSCopying> {
-    id _cacheKey;
-    unsigned int _requestID;
+    id  _cacheKey;
+    unsigned int  _requestID;
 }
 
 @property (nonatomic, retain) id cacheKey;

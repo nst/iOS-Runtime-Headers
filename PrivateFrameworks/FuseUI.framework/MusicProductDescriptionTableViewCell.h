@@ -3,22 +3,22 @@
  */
 
 @interface MusicProductDescriptionTableViewCell : UITableViewCell <UITextViewDelegate> {
-    <MusicProductDescriptionTableViewCellDelegate> *_delegate;
+    <MusicProductDescriptionTableViewCellDelegate> * _delegate;
     struct { 
         unsigned int productDescriptionDidChange : 1; 
-    } _delegateRespondsToSelector;
-    UILabel *_descriptionHeaderLabel;
-    MusicMediaDetailTintInformation *_detailTintInformation;
-    BOOL _expanded;
-    BOOL _hasValidMoreButtonSize;
-    UIButton *_moreButton;
-    BOOL _needsForcedTextViewUpdate;
-    UITextView *_placeholderTextView;
-    MusicProductDescription *_productDescription;
-    int _productDescriptionMaximumLengthForTextInput;
-    int _productDescriptionTextStyle;
-    NSString *_productDescriptionTitle;
-    UITextView *_textView;
+    }  _delegateRespondsToSelector;
+    UILabel * _descriptionHeaderLabel;
+    MusicMediaDetailTintInformation * _detailTintInformation;
+    BOOL  _expanded;
+    BOOL  _hasValidMoreButtonSize;
+    UIButton * _moreButton;
+    BOOL  _needsForcedTextViewUpdate;
+    UITextView * _placeholderTextView;
+    MusicProductDescription * _productDescription;
+    int  _productDescriptionMaximumLengthForTextInput;
+    int  _productDescriptionTextStyle;
+    NSString * _productDescriptionTitle;
+    UITextView * _textView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -35,8 +35,8 @@
 
 - (void).cxx_destruct;
 - (id)_attributedTextWithProductDescriptionStoreEditorNotes:(id)arg1 textColor:(id)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_calculateContentBoundsWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_calculateHeaderLabelFrameWithinContentBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_calculateContentBoundsWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_calculateHeaderLabelFrameWithinContentBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (unsigned int)_calculateTextViewMaximumNumberOfLinesWithEditing:(BOOL)arg1;
 - (void)_handlePreferredContentSizeDidChangeNotification:(id)arg1;
 - (id)_loadTextAttributes;
@@ -45,7 +45,7 @@
 - (id)_placeholderAttributedText;
 - (void)_updateForPreferredFontChange;
 - (void)_updateMaximumNumberOfLinesWithEditing:(BOOL)arg1;
-- (void)_updateMoreButtonPropertiesWithTextViewSize:(struct CGSize { float x1; float x2; })arg1 positionYDelta:(float)arg2;
+- (void)_updateMoreButtonPropertiesWithTextViewSize:(struct CGSize { double x1; double x2; })arg1 positionYDelta:(float)arg2;
 - (void)_updatePlaceholderTextViewVisibility;
 - (void)_updateTextViewEditabilityForced:(BOOL)arg1 withEditing:(BOOL)arg2;
 - (void)_updateTextViewWithProductDescriptionWithLayout:(BOOL)arg1;
@@ -67,7 +67,7 @@
 - (void)setProductDescriptionMaximumLengthForTextInput:(int)arg1;
 - (void)setProductDescriptionTextStyle:(int)arg1;
 - (void)setProductDescriptionTitle:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (BOOL)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(id)arg3;
 - (void)textViewDidChange:(id)arg1;
 - (void)willTransitionToState:(unsigned int)arg1;

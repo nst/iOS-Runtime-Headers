@@ -2,20 +2,18 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUCommentsTableDataController : NSObject <PLCloudCommentsChangeObserver, PLPhotoCommentEntryViewDelegate, UITableViewDataSource, UITableViewDelegate> {
-    BOOL __beginningToEdit;
-    PHAsset *_asset;
-    NSCache *_commentsHeightCache;
-    <PUCommentsTableDataControllerDelegate> *_delegate;
-    BOOL _editing;
-    PLPhotoCommentEntryView *_entryView;
-    PLCloudSharedComment *_justInsertedComment;
-    PLManagedAsset *_managedAsset;
-    BOOL _shouldUseCompactCommentSeparators;
-    UITableView *_tableView;
+@interface PUCommentsTableDataController : NSObject <PLCloudCommentsChangeObserver, PUPhotoCommentEntryViewDelegate, UITableViewDataSource, UITableViewDelegate> {
+    PHAsset * _asset;
+    NSCache * _commentsHeightCache;
+    <PUCommentsTableDataControllerDelegate> * _delegate;
+    BOOL  _editing;
+    PUPhotoCommentEntryView * _entryView;
+    PLCloudSharedComment * _justInsertedComment;
+    PLManagedAsset * _managedAsset;
+    BOOL  _shouldUseCompactCommentSeparators;
+    UITableView * _tableView;
 }
 
-@property (getter=_isBeginningToEdit, setter=_setBeginningToEdit:, nonatomic) BOOL _beginningToEdit;
 @property (nonatomic, retain) PHAsset *asset;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUCommentsTableDataControllerDelegate> *delegate;
@@ -24,6 +22,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) PLCloudSharedComment *justInsertedComment;
 @property (nonatomic, retain) PLManagedAsset *managedAsset;
+@property (nonatomic, readonly) double minimumHeight;
 @property (nonatomic) BOOL shouldUseCompactCommentSeparators;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UITableView *tableView;
@@ -36,12 +35,10 @@
 - (void)_fontCacheDidChange:(id)arg1;
 - (float)_heightForComment:(id)arg1 forWidth:(float)arg2 forInterfaceOrientation:(int)arg3;
 - (BOOL)_isAssetOwnerSectionVisible;
-- (BOOL)_isBeginningToEdit;
 - (BOOL)_isEditingAllowed;
 - (int)_postCommentSection;
 - (void)_postCommentWithText:(id)arg1;
 - (void)_scrollToComment:(id)arg1 animated:(BOOL)arg2;
-- (void)_setBeginningToEdit:(BOOL)arg1;
 - (int)_smileCommentSection;
 - (int)_textCommentSection;
 - (void)_updateFirstResponder;
@@ -55,6 +52,7 @@
 - (BOOL)isEditing;
 - (id)justInsertedComment;
 - (id)managedAsset;
+- (float)minimumHeight;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)photoCommentEntryViewDidBeginEditing:(id)arg1;
 - (void)photoCommentEntryViewDidEndEditing:(id)arg1;

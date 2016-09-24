@@ -3,7 +3,7 @@
  */
 
 @interface CalDAVItemWithRecurrenceChildren : CoreDAVItem {
-    NSMutableSet *_recurrences;
+    NSMutableSet * _recurrences;
 }
 
 @property (nonatomic, retain) NSMutableSet *recurrences;

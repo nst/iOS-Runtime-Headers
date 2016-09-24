@@ -3,7 +3,7 @@
  */
 
 @interface WBUFormAutoFillWhiteList : NSObject {
-    NSCache *_cache;
+    NSCache * _cache;
 }
 
 + (id)sharedAutoFillWhiteList;

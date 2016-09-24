@@ -3,11 +3,11 @@
  */
 
 @interface MPStoreCompletionOfferingLookupItem : NSObject {
-    MPMediaQuery *_albumItemsQuery;
-    id /* block */ _responseBlock;
-    NSNumber *_storeLookupID;
-    unsigned int _tokenID;
-    BOOL _wantsArtwork;
+    MPMediaQuery * _albumItemsQuery;
+    id /* block */  _responseBlock;
+    NSNumber * _storeLookupID;
+    unsigned int  _tokenID;
+    BOOL  _wantsArtwork;
 }
 
 @property (nonatomic, readonly) MPMediaQuery *albumItemsQuery;

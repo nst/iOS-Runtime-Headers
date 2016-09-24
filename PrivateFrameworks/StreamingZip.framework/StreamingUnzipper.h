@@ -3,14 +3,14 @@
  */
 
 @interface StreamingUnzipper : NSObject <StreamingUnzipProtocol> {
-    int _activeCallbacks;
-    StreamingUnzipState *_currentState;
-    void *_decompressionOutputBuffer;
-    double _lastExtractionProgressSent;
-    long long _sandboxToken;
-    NSObject<OS_dispatch_queue> *inProcessDelegateQueue;
-    <StreamingUnzipDelegateProtocol> *inProcessExtractorDelegate;
-    NSXPCConnection *xpcConnection;
+    int  _activeCallbacks;
+    StreamingUnzipState * _currentState;
+    void * _decompressionOutputBuffer;
+    double  _lastExtractionProgressSent;
+    int  _sandboxToken;
+    NSObject<OS_dispatch_queue> * inProcessDelegateQueue;
+    <StreamingUnzipDelegateProtocol> * inProcessExtractorDelegate;
+    NSXPCConnection * xpcConnection;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *inProcessDelegateQueue;

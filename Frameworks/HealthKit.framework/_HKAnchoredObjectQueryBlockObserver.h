@@ -3,9 +3,9 @@
  */
 
 @interface _HKAnchoredObjectQueryBlockObserver : NSObject <_HKAnchoredObjectQueryObserver> {
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    NSOperationQueue *_operationQueue;
-    id /* block */ _updateHandler;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    NSOperationQueue * _operationQueue;
+    id /* block */  _updateHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;

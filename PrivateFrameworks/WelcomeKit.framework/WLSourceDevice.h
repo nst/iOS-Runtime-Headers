@@ -3,18 +3,18 @@
  */
 
 @interface WLSourceDevice : NSObject <NSSecureCoding> {
-    unsigned int _dataTypes;
-    NSString *_hardwareBrand;
-    NSString *_hardwareDesign;
-    NSString *_hardwareMaker;
-    NSString *_hardwareModel;
-    NSString *_hardwareProduct;
-    unsigned short _httpPort;
-    NSString *_ipAddress;
-    NSString *_name;
-    NSString *_osAPIVersion;
-    NSString *_persistentIdentifier;
-    unsigned short _socketPort;
+    unsigned int  _dataTypes;
+    NSString * _hardwareBrand;
+    NSString * _hardwareDesign;
+    NSString * _hardwareMaker;
+    NSString * _hardwareModel;
+    NSString * _hardwareProduct;
+    unsigned short  _httpPort;
+    NSString * _ipAddress;
+    NSString * _name;
+    NSString * _osAPIVersion;
+    NSString * _persistentIdentifier;
+    unsigned short  _socketPort;
 }
 
 @property (nonatomic) unsigned int dataTypes;

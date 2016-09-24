@@ -3,18 +3,18 @@
  */
 
 @interface TSCEFormulaRewriteInfo_RangeEntry : NSObject {
-    unsigned short _offset;
+    unsigned short  _offset;
     struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
         struct UUIDData<TSP::UUIDData> {} *__begin_; 
         struct UUIDData<TSP::UUIDData> {} *__end_; 
         struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
             struct UUIDData<TSP::UUIDData> {} *__first_; 
         } __end_cap_; 
-    } _orderedUuids;
+    }  _orderedUuids;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
+    }  _range;
 }
 
 @property unsigned short offset;

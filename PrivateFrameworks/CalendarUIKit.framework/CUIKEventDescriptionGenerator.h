@@ -3,9 +3,9 @@
  */
 
 @interface CUIKEventDescriptionGenerator : CUIKDescriptionGenerator {
-    NSDataDetector *_addressDetector;
-    NSDateFormatter *_dateFormatter;
-    NSNumberFormatter *_numberFormatter;
+    NSDataDetector * _addressDetector;
+    NSDateFormatter * _dateFormatter;
+    NSNumberFormatter * _numberFormatter;
 }
 
 + (id)sharedGenerator;
@@ -21,7 +21,7 @@
 - (id)_locationStringForEvent:(id)arg1;
 - (id)_naturalLanguageDescriptionForEvent:(id)arg1 isFirstInDay:(BOOL)arg2;
 - (id)_noonDateForEvents:(id)arg1;
-- (id)_notReallyRandomNumberBetween1AndN:(int)arg1;
+- (int)_notReallyRandomNumberBetween1AndN:(int)arg1;
 - (BOOL)_prepareToUseMessageWithID:(id)arg1 shouldAllowWeekendUsage:(BOOL)arg2;
 - (BOOL)_prependBusyDayMessageToEventSummaryIfPossible:(id)arg1;
 - (BOOL)_prependEarlyStartMessageToEventSummaryIfPossible:(id)arg1;

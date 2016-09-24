@@ -3,10 +3,10 @@
  */
 
 @interface STWeatherHourlyForecast : STSiriModelObject {
-    NSNumber *_chanceOfPrecipitation;
-    int _conditionCode;
-    NSNumber *_temperature;
-    int _timeIndex;
+    NSNumber * _chanceOfPrecipitation;
+    int  _conditionCode;
+    NSNumber * _temperature;
+    int  _timeIndex;
 }
 
 + (BOOL)supportsSecureCoding;

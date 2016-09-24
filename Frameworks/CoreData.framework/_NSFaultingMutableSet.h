@@ -3,15 +3,15 @@
  */
 
 @interface _NSFaultingMutableSet : NSMutableSet {
-    int _cd_rc;
+    int  _cd_rc;
     struct _NSFaultingMutableSetFlags { 
         unsigned int _isFault : 1; 
         unsigned int _mustPropagateDelete : 1; 
         unsigned int _reserved : 14; 
         unsigned int _relationship : 16; 
-    } _flags;
-    id _realSet;
-    NSManagedObject *_source;
+    }  _flags;
+    id  _realSet;
+    NSManagedObject * _source;
 }
 
 @property (getter=isFault, nonatomic, readonly) BOOL fault;

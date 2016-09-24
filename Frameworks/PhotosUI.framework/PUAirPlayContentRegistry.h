@@ -3,14 +3,14 @@
  */
 
 @interface PUAirPlayContentRegistry : NSObject {
-    UIViewController *__cachedCurrentContent;
-    NSPointerArray *__contentProviders;
-    <PHAirPlayControllerContentProvider> *_currentContentProvider;
+    UIViewController * __cachedCurrentContent;
+    NSPointerArray * __contentProviders;
+    <PHAirPlayControllerContentProvider> * _currentContentProvider;
 }
 
 @property (setter=_setCachedCurrentContent:, nonatomic, retain) UIViewController *_cachedCurrentContent;
 @property (setter=_setContentProviders:, nonatomic, retain) NSPointerArray *_contentProviders;
-@property (nonatomic, retain) <PHAirPlayControllerContentProvider> *currentContentProvider;
+@property (setter=_setCurrentContentProvider:, nonatomic) <PHAirPlayControllerContentProvider> *currentContentProvider;
 
 - (void).cxx_destruct;
 - (id)_cachedCurrentContent;

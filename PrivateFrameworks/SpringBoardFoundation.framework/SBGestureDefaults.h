@@ -4,7 +4,6 @@
 
 @interface SBGestureDefaults : SBAbstractSpringBoardDefaultDomain
 
-@property (getter=isMotionGestureLoggingEnabled, nonatomic, readonly) BOOL motionGestureLoggingEnabled;
 @property (nonatomic, retain) NSArray *systemGestureLoggingOptions;
 @property (getter=isSystemGesturesAllowed, nonatomic, readonly) BOOL systemGesturesAllowed;
 

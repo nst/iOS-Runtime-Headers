@@ -3,8 +3,8 @@
  */
 
 @interface DAOofSettingsInfo : DAOofParams {
-    <DAOofResponseDelegate> *_consumer;
-    NSString *_requestID;
+    <DAOofResponseDelegate> * _consumer;
+    NSString * _requestID;
 }
 
 @property (nonatomic) <DAOofResponseDelegate> *consumer;

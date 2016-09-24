@@ -3,7 +3,7 @@
  */
 
 @interface FBSCAContextSceneLayer : FBSSceneLayer {
-    unsigned int _contextID;
+    unsigned int  _contextID;
 }
 
 @property (nonatomic, readonly, retain) CAContext *CAContext;

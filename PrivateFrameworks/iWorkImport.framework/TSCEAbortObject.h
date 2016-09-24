@@ -3,7 +3,7 @@
  */
 
 @interface TSCEAbortObject : NSObject {
-    BOOL _isAborted;
+    BOOL  _isAborted;
 }
 
 @property (readonly) BOOL isAborted;

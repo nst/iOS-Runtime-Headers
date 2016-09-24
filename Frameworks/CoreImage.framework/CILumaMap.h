@@ -3,8 +3,8 @@
  */
 
 @interface CILumaMap : CIFilter {
-    CIImage *_tableImage;
-    CIImage *inputImage;
+    CIImage * _tableImage;
+    CIImage * inputImage;
 }
 
 @property (nonatomic, retain) CIImage *inputImage;

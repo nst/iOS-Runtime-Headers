@@ -3,14 +3,14 @@
  */
 
 @interface CHDLegend : NSObject {
-    unsigned int mFontIndex;
-    OADGraphicProperties *mGraphicProperties;
-    bool mIsOverlay;
-    bool mIsVertical;
-    NSArray *mLabelEffects;
-    EDCollection *mLegendEntries;
-    int mLegendPosition;
-    EDResources *mResources;
+    unsigned int  mFontIndex;
+    OADGraphicProperties * mGraphicProperties;
+    bool  mIsOverlay;
+    bool  mIsVertical;
+    NSArray * mLabelEffects;
+    EDCollection * mLegendEntries;
+    int  mLegendPosition;
+    EDResources * mResources;
 }
 
 - (void)dealloc;

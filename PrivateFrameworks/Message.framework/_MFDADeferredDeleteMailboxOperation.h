@@ -3,7 +3,7 @@
  */
 
 @interface _MFDADeferredDeleteMailboxOperation : MFOfflineCacheOperation <MFDADeferredFolderChangeOperation> {
-    NSString *_folderID;
+    NSString * _folderID;
 }
 
 - (void)applyToFolderMap:(id)arg1;

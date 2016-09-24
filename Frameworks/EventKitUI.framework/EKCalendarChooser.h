@@ -3,14 +3,14 @@
  */
 
 @interface EKCalendarChooser : UIViewController {
-    _UIAccessDeniedView *_accessDeniedView;
-    NSIndexPath *_checkedRow;
-    int _chooserMode;
-    NSMutableDictionary *_customGroupMap;
-    <EKCalendarChooserDelegate> *_delegate;
-    BOOL _disableCalendarEditing;
-    unsigned int _entityType;
-    EKEventStore *_eventStore;
+    _UIAccessDeniedView * _accessDeniedView;
+    NSIndexPath * _checkedRow;
+    int  _chooserMode;
+    NSMutableDictionary * _customGroupMap;
+    <EKCalendarChooserDelegate> * _delegate;
+    BOOL  _disableCalendarEditing;
+    unsigned int  _entityType;
+    EKEventStore * _eventStore;
     struct { 
         unsigned int listIsFlat : 1; 
         unsigned int showAll : 1; 
@@ -23,20 +23,20 @@
         unsigned int showsWritableCalendarsOnly : 1; 
         unsigned int showsRefreshButton : 1; 
         unsigned int allowsPullToRefresh : 1; 
-    } _flags;
-    NSMutableArray *_groups;
-    int _lastAuthorizationStatus;
-    EKSource *_limitedToSource;
-    UIRefreshControl *_refreshControl;
-    int _refreshCounter;
-    NSMutableSet *_selectedCalendars;
-    BOOL _showDefaultCalendarExplanatoryText;
-    BOOL _showDetailAccessories;
-    BOOL _showsDeclinedEventsSetting;
-    NSMutableDictionary *_storeGroupMap;
-    int _style;
-    <EKStyleProvider> *_styleProvider;
-    UITableView *_tableView;
+    }  _flags;
+    NSMutableArray * _groups;
+    int  _lastAuthorizationStatus;
+    EKSource * _limitedToSource;
+    UIRefreshControl * _refreshControl;
+    int  _refreshCounter;
+    NSMutableSet * _selectedCalendars;
+    BOOL  _showDefaultCalendarExplanatoryText;
+    BOOL  _showDetailAccessories;
+    BOOL  _showsDeclinedEventsSetting;
+    NSMutableDictionary * _storeGroupMap;
+    int  _style;
+    <EKStyleProvider> * _styleProvider;
+    UITableView * _tableView;
 }
 
 @property (nonatomic, retain) _UIAccessDeniedView *accessDeniedView;
@@ -69,6 +69,8 @@
 @property (nonatomic, retain) NSMutableDictionary *storeGroupMap;
 @property (nonatomic, retain) <EKStyleProvider> *styleProvider;
 @property (nonatomic, retain) UITableView *tableView;
+
++ (id)_subscribedLocalizedString;
 
 - (void).cxx_destruct;
 - (void)_applySelection;
@@ -134,7 +136,7 @@
 - (void)loadView;
 - (float)marginForTableView:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)refresh:(id)arg1;
 - (id)refreshControl;
 - (int)refreshCounter;

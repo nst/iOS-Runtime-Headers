@@ -3,9 +3,9 @@
  */
 
 @interface XPCNSServiceConnection : NSObject <XPCServiceConnectionDelegate> {
-    <NSObject> *_context;
-    <XPCNSServiceConnectionDelegate> *_delegate;
-    XPCServiceConnection *_serviceConnection;
+    <NSObject> * _context;
+    <XPCNSServiceConnectionDelegate> * _delegate;
+    XPCServiceConnection * _serviceConnection;
 }
 
 @property (nonatomic, retain) <NSObject> *context;

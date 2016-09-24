@@ -3,18 +3,18 @@
  */
 
 @interface CMKInflightAsset : NSObject {
-    BOOL __didPersistAvalanche;
-    BOOL __hasPendingAvalanchePersistenceUpdate;
-    int _avalanchePickType;
-    NSString *_avalancheUUID;
-    int _captureDeviceDuringCapture;
-    NSDate *_dateCreated;
-    int _deviceOrientationDuringCapture;
-    NSString *_directory;
-    NSString *_filename;
-    BOOL _isVideo;
-    NSString *_uuid;
-    short _visibilityState;
+    BOOL  __didPersistAvalanche;
+    BOOL  __hasPendingAvalanchePersistenceUpdate;
+    int  _avalanchePickType;
+    NSString * _avalancheUUID;
+    int  _captureDeviceDuringCapture;
+    NSDate * _dateCreated;
+    int  _deviceOrientationDuringCapture;
+    NSString * _directory;
+    NSString * _filename;
+    BOOL  _isVideo;
+    NSString * _uuid;
+    short  _visibilityState;
 }
 
 @property (nonatomic, readonly) BOOL _didPersistAvalanche;

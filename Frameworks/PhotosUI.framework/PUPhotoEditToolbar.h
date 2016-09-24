@@ -3,28 +3,31 @@
  */
 
 @interface PUPhotoEditToolbar : UIView <PUPhotoEditLayoutStaticAdaptable> {
-    _UIBackdropView *_backdropBackgroundView;
-    NSArray *_basicViewsConstraints;
-    int _layoutOrientation;
-    float _longSideMargin;
-    UIButton *_mainActionButton;
-    NSArray *_mainActionButtonConstraints;
-    UIView *_mainToolbarContainer;
-    UIButton *_secondaryActionButton;
-    NSArray *_secondaryActionButtonConstraints;
-    UIView *_solidBackgroundView;
-    UIView *_stretchableView;
-    NSArray *_toolButtons;
-    NSArray *_toolButtonsConstraints;
-    BOOL _useLargeShortSideHeight;
-    BOOL _useTranslucentBackground;
+    _UIBackdropView * _backdropBackgroundView;
+    NSArray * _basicViewsConstraints;
+    int  _buttonSpacing;
+    int  _layoutOrientation;
+    double  _longSideMargin;
+    UIButton * _mainActionButton;
+    NSArray * _mainActionButtonConstraints;
+    UIView * _mainToolbarContainer;
+    UIButton * _secondaryActionButton;
+    NSArray * _secondaryActionButtonConstraints;
+    UIView * _solidBackgroundView;
+    UIView * _stretchableView;
+    NSArray * _toolButtonLayoutGuides;
+    NSArray * _toolButtons;
+    NSArray * _toolButtonsConstraints;
+    BOOL  _useLargeShortSideHeight;
+    BOOL  _useTranslucentBackground;
 }
 
+@property (nonatomic, readonly) int buttonSpacing;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) int layoutOrientation;
-@property (nonatomic) float longSideMargin;
+@property (nonatomic) double longSideMargin;
 @property (nonatomic, readonly) UIButton *mainActionButton;
 @property (nonatomic, readonly) UIButton *secondaryActionButton;
 @property (nonatomic, readonly) UIView *stretchableView;
@@ -34,14 +37,17 @@
 @property (nonatomic) BOOL useTranslucentBackground;
 
 - (void).cxx_destruct;
+- (void)_setToolButtons:(id)arg1 buttonSpacing:(int)arg2 mainActionButton:(id)arg3 secondaryActionButton:(id)arg4 stretchableView:(id)arg5;
 - (float)_shortSideSize;
 - (void)_updateBackgroundAnimated:(BOOL)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (int)buttonSpacing;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (int)layoutOrientation;
 - (float)longSideMargin;
 - (id)mainActionButton;
 - (id)secondaryActionButton;
 - (void)setLongSideMargin:(float)arg1;
+- (void)setToolButtons:(id)arg1 buttonSpacing:(int)arg2 mainActionButton:(id)arg3 secondaryActionButton:(id)arg4;
 - (void)setToolButtons:(id)arg1 mainActionButton:(id)arg2 secondaryActionButton:(id)arg3 stretchableView:(id)arg4;
 - (void)setUseLargeShortSideHeight:(BOOL)arg1;
 - (void)setUseTranslucentBackground:(BOOL)arg1;

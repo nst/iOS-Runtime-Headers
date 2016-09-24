@@ -3,7 +3,7 @@
  */
 
 @interface UIPDFViewManager : NSObject {
-    UIView *_activeView;
+    UIView * _activeView;
 }
 
 + (id)sharedViewManager;

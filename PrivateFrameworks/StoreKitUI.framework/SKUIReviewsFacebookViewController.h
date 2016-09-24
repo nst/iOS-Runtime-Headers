@@ -3,10 +3,10 @@
  */
 
 @interface SKUIReviewsFacebookViewController : UIViewController {
-    SKUIClientContext *_clientContext;
-    <SKUIReviewsFacebookViewControllerDelegate> *_delegate;
-    SKUIFacebookLikeStatus *_facebookLikeStatus;
-    SKUIReviewsFacebookView *_facebookView;
+    SKUIClientContext * _clientContext;
+    <SKUIReviewsFacebookViewControllerDelegate> * _delegate;
+    SKUIFacebookLikeStatus * _facebookLikeStatus;
+    SKUIReviewsFacebookView * _facebookView;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

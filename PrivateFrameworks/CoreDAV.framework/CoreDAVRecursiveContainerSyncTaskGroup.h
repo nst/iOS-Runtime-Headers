@@ -3,27 +3,27 @@
  */
 
 @interface CoreDAVRecursiveContainerSyncTaskGroup : CoreDAVTaskGroup <CoreDAVDeleteTaskDelegate, CoreDAVMkcolTaskDelegate, CoreDAVPropPatchTaskDelegate, CoreDAVPutTaskDelegate, CoreDAVTaskGroupDelegate> {
-    NSArray *_actions;
-    NSURL *_addMemberURL;
-    Class _appSpecificContainerItemClass;
-    Class _appSpecificDataItemClass;
-    NSMutableArray *_childCollectionURL;
-    NSURL *_folderURL;
-    NSMutableDictionary *_folderURLToChildrenURLOrder;
-    NSMutableDictionary *_leafURLToETag;
-    unsigned int _multiGetBatchSize;
-    NSString *_nextCTag;
-    NSString *_nextPTag;
-    NSString *_nextSyncToken;
-    int _phase;
-    BOOL _preflightCTag;
-    NSString *_previousCTag;
-    NSString *_previousPTag;
-    NSString *_previousSyncToken;
-    BOOL _syncItemOrder;
-    NSMutableSet *_syncReportDeletedURLs;
-    NSMutableArray *_unsubmittedTasks;
-    BOOL _useMultiGet;
+    NSArray * _actions;
+    NSURL * _addMemberURL;
+    Class  _appSpecificContainerItemClass;
+    Class  _appSpecificDataItemClass;
+    NSMutableArray * _childCollectionURL;
+    NSURL * _folderURL;
+    NSMutableDictionary * _folderURLToChildrenURLOrder;
+    NSMutableDictionary * _leafURLToETag;
+    unsigned int  _multiGetBatchSize;
+    NSString * _nextCTag;
+    NSString * _nextPTag;
+    NSString * _nextSyncToken;
+    int  _phase;
+    BOOL  _preflightCTag;
+    NSString * _previousCTag;
+    NSString * _previousPTag;
+    NSString * _previousSyncToken;
+    BOOL  _syncItemOrder;
+    NSMutableSet * _syncReportDeletedURLs;
+    NSMutableArray * _unsubmittedTasks;
+    BOOL  _useMultiGet;
 }
 
 @property (readonly, copy) NSString *debugDescription;

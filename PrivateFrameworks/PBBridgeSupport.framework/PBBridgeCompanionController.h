@@ -3,32 +3,32 @@
  */
 
 @interface PBBridgeCompanionController : PBBridgeIDSServiceDelegate <IDSServiceDelegate, NSURLConnectionDelegate, PBBridgeCompanionProtocol, RUILoaderDelegate> {
-    NSURLConnection *_activationConnection;
-    NSMutableData *_activationData;
-    NSMutableURLRequest *_activationRequest;
-    int _activationState;
-    NSTimer *_activationTimeout;
-    BOOL _allowAnyHTTPSCertificate;
-    BOOL _awaitingCustomResponse;
-    BOOL _connectionFailed;
-    NSString *_contentType;
-    <PBBridgeConnectionDelegate> *_delegate;
-    unsigned short _granularActivationState;
-    id /* block */ _initialSyncPrepCompletion;
-    NSString *_internalLastSendMessageID;
-    BOOL _isEstablishingPairing;
-    id /* block */ _lockedOnAnimationCompletion;
-    BOOL _nonSilentActivation;
-    BOOL _passcodeSet;
-    NSString *_remoteActivationUserAgent;
-    RUIStyle *_remoteUIStyle;
-    NSMutableDictionary *_reportMapping;
-    <RUILoaderDelegate> *_ruiDelegate;
-    RUILoader *_ruiLoader;
-    BOOL _selectedPairedUnlock;
-    BOOL _sentActivationRequest;
-    BOOL _sentSessionRequest;
-    struct __MKBAssertion { } *_unlockPairingAssertion;
+    NSURLConnection * _activationConnection;
+    NSMutableData * _activationData;
+    NSMutableURLRequest * _activationRequest;
+    int  _activationState;
+    NSTimer * _activationTimeout;
+    BOOL  _allowAnyHTTPSCertificate;
+    BOOL  _awaitingCustomResponse;
+    BOOL  _connectionFailed;
+    NSString * _contentType;
+    <PBBridgeConnectionDelegate> * _delegate;
+    unsigned short  _granularActivationState;
+    id /* block */  _initialSyncPrepCompletion;
+    NSString * _internalLastSendMessageID;
+    BOOL  _isEstablishingPairing;
+    id /* block */  _lockedOnAnimationCompletion;
+    BOOL  _nonSilentActivation;
+    BOOL  _passcodeSet;
+    NSString * _remoteActivationUserAgent;
+    RUIStyle * _remoteUIStyle;
+    NSMutableDictionary * _reportMapping;
+    <RUILoaderDelegate> * _ruiDelegate;
+    RUILoader * _ruiLoader;
+    BOOL  _selectedPairedUnlock;
+    BOOL  _sentActivationRequest;
+    BOOL  _sentSessionRequest;
+    struct __MKBAssertion { } * _unlockPairingAssertion;
 }
 
 @property (nonatomic, retain) NSURLConnection *activationConnection;
@@ -68,7 +68,7 @@
 - (void).cxx_destruct;
 - (void)_cleanup;
 - (id)_connectionWithRequest:(id)arg1;
-- (BOOL)_dumpCustomRequestBody;
+- (BOOL)_dumpActivationResquests;
 - (BOOL)_sendRemoteCommandWithMessageID:(unsigned short)arg1 withArguments:(id)arg2;
 - (BOOL)_sendResponseToMessage:(id)arg1 withResponseMessageID:(unsigned short)arg2 withArguments:(id)arg3;
 - (unsigned short)_testActivationResponseType;
@@ -116,7 +116,7 @@
 - (BOOL)isEstablishingPairing;
 - (void)loader:(id)arg1 didFailWithError:(id)arg2;
 - (void)loader:(id)arg1 didReceiveHTTPResponse:(id)arg2;
-- (void)loader:(id)arg1 receivedObjectModel:(id)arg2 actionSignal:(int)arg3;
+- (void)loader:(id)arg1 receivedObjectModel:(id)arg2 actionSignal:(unsigned int)arg3;
 - (id /* block */)lockedOnAnimationCompletion;
 - (BOOL)nonSilentActivation;
 - (void)objectModel:(id)arg1 pressedButton:(id)arg2 attributes:(id)arg3;
@@ -168,6 +168,7 @@
 - (void)startEstablishingPairing;
 - (void)tellGizmoToBeginActivation;
 - (void)tellGizmoToDeleteWarrantySentinel;
+- (void)tellGizmoToKeepAliveForActivationEvent;
 - (void)tellGizmoToPopToControllerType:(unsigned int)arg1;
 - (void)tellGizmoToPrepareForInitialSyncWithCompletion:(id /* block */)arg1;
 - (void)tellGizmoToPushControllerType:(unsigned int)arg1;

@@ -3,51 +3,71 @@
  */
 
 @interface SCNMetalResourceManager : NSObject <SCNResourceManager> {
-    struct __C3DEngineStats { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; unsigned int x19; unsigned int x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; double x25; double x26; double x27; double x28; double x29; double x30; double x31; double x32; double x33; double x34; double x35; double x36; double x37; double x38; unsigned int x39; unsigned int x40; unsigned int x41; unsigned int x42; unsigned int x43; unsigned int x44; unsigned int x45; unsigned int x46; unsigned int x47; unsigned int x48; unsigned int x49; unsigned int x50; unsigned int x51; unsigned int x52; unsigned int x53; unsigned int x54; double x55; double x56; double x57; double x58[60]; unsigned int x59; double x60; double x61; } *__engineStats;
+    struct __C3DEngineStats { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; unsigned int x19; unsigned int x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; double x25; double x26; double x27; double x28; double x29; double x30; double x31; double x32; double x33; double x34; double x35; double x36; double x37; double x38; unsigned int x39; unsigned int x40; unsigned int x41; unsigned int x42; unsigned int x43; unsigned int x44; unsigned int x45; unsigned int x46; unsigned int x47; unsigned int x48; unsigned int x49; unsigned int x50; unsigned int x51; unsigned int x52; unsigned int x53; unsigned int x54; double x55; double x56; double x57; double x58[60]; unsigned int x59; double x60; double x61; } * __engineStats;
     struct { 
         NSMapTable *registry; 
         NSObject<OS_dispatch_semaphore> *lock; 
-    } _availableBuffers;
+    }  _availableBuffers;
     struct { 
         NSMapTable *registry; 
         NSObject<OS_dispatch_semaphore> *lock; 
-    } _availableImageProxy;
+    }  _availableComputePipelines;
     struct { 
         NSMapTable *registry; 
         NSObject<OS_dispatch_semaphore> *lock; 
-    } _availableImages;
+    }  _availableImageProxy;
     struct { 
         NSMapTable *registry; 
         NSObject<OS_dispatch_semaphore> *lock; 
-    } _availableMeshElements;
+    }  _availableImages;
     struct { 
         NSMapTable *registry; 
         NSObject<OS_dispatch_semaphore> *lock; 
-    } _availableMeshSources;
+    }  _availableIrradianceTextures;
     struct { 
         NSMapTable *registry; 
         NSObject<OS_dispatch_semaphore> *lock; 
-    } _availableMeshes;
+    }  _availableMeshElements;
     struct { 
         NSMapTable *registry; 
         NSObject<OS_dispatch_semaphore> *lock; 
-    } _availableRasterizerStates;
+    }  _availableMeshSources;
     struct { 
         NSMapTable *registry; 
         NSObject<OS_dispatch_semaphore> *lock; 
-    } _availableSamplers;
+    }  _availableMeshes;
     struct { 
         NSMapTable *registry; 
         NSObject<OS_dispatch_semaphore> *lock; 
-    } _availableShadables;
-    SCNMTLShadableKey *_availableShadablesSearchKey;
-    NSMutableArray *_availableShaderManagers;
-    SCNMTLBufferAllocator *_commonProfileBuffersAllocator;
-    <MTLTexture> *_defaultTexture;
-    <MTLDevice> *_device;
-    SCNMetalLibraryManager *_libraryManager;
-    <MTLCommandQueue> *_resourceQueue;
-    NSObject<OS_dispatch_semaphore> *_shaderManagerLock;
+    }  _availableMorphs;
+    struct { 
+        NSMapTable *registry; 
+        NSObject<OS_dispatch_semaphore> *lock; 
+    }  _availableRadianceTextures;
+    struct { 
+        NSMapTable *registry; 
+        NSObject<OS_dispatch_semaphore> *lock; 
+    }  _availableRasterizerStates;
+    struct { 
+        NSMapTable *registry; 
+        NSObject<OS_dispatch_semaphore> *lock; 
+    }  _availableSamplers;
+    struct { 
+        NSMapTable *registry; 
+        NSObject<OS_dispatch_semaphore> *lock; 
+    }  _availableShadables;
+    SCNMTLShadableKey * _availableShadablesSearchKey;
+    NSMutableArray * _availableShaderManagers;
+    SCNMTLBufferAllocator * _commonProfileBuffersAllocator;
+    <MTLTexture> * _defaultCubeTexture;
+    <MTLTexture> * _defaultTexture;
+    <MTLTexture> * _defaultTexture3D;
+    <MTLDevice> * _device;
+    SCNMetalLibraryManager * _libraryManager;
+    MTKTextureLoader * _mtkTextureLoader;
+    <MTLCommandQueue> * _resourceQueue;
+    NSObject<OS_dispatch_semaphore> * _shaderManagerLock;
+    <MTLTexture> * _specularDFGTexture;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -60,10 +80,12 @@
 + (id)resourceManagerForDevice:(id)arg1;
 + (void)unregisterManagerForDevice:(id)arg1;
 
-- (void)__updateMutableMesh:(struct __C3DMesh { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct __CFArray {} *x2[9]; struct C3DSphere {} *x3; struct __CFArray {} **x4; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 4; int x9; }*)arg1 withMetalMesh:(id)arg2;
-- (id)_bufferForData:(struct __CFData { }*)arg1 convert8bitsIndices:(BOOL)arg2;
+- (void)__updateMutableMesh:(struct __C3DMesh { }*)arg1 withMetalMesh:(id)arg2;
+- (void)_bakeSphericalHamonicsBasedIrradianceTexture:(id)arg1 forEnvironmentTexture:(id)arg2;
+- (void)_bakeStochasticIrradianceTexture:(id)arg1 forEnvironmentTexture:(id)arg2 mipmapLevelForSampling:(unsigned int)arg3 useTextureView:(BOOL)arg4;
+- (id)_bufferForData:(struct __CFData { }*)arg1 bytesPerIndex:(unsigned long)arg2;
 - (void)_enqueueMipmapGenerationForTexture:(id)arg1;
-- (id)_fillTexture:(id)arg1 slice:(int)arg2 image:(struct __C3DImage { }*)arg3 textureImageType:(long)arg4 needsMipMap:(BOOL)arg5;
+- (id)_fillTexture:(id)arg1 withImage:(struct __C3DImage { }*)arg2 needsMipMap:(BOOL)arg3 textureOptions:(long)arg4;
 - (void)_geometryWillDie:(id)arg1;
 - (void)_imageProxyWillDie:(id)arg1;
 - (void)_imageWillDie:(id)arg1;
@@ -71,27 +93,47 @@
 - (void)_meshElementWillDie:(id)arg1;
 - (void)_meshSourceWillDie:(id)arg1;
 - (void)_meshWillDie:(id)arg1;
+- (void)_morphWillDie:(id)arg1;
 - (id)_newTextureWithDescriptor:(id)arg1;
 - (void)_passWillDie:(id)arg1;
 - (void)_programWillDie:(id)arg1;
+- (id)computePipelineStateForKernel:(id)arg1;
+- (id)convertTextureToCubeMapIfApplicable:(id)arg1 needsMipmap:(BOOL)arg2;
+- (id)cubemapTextureForLatlongTexture:(id)arg1 pixelFormat:(unsigned int)arg2 needsMipmap:(BOOL)arg3;
 - (void)dealloc;
+- (id)defaultCubeTexture;
 - (id)defaultTexture;
+- (id)defaultTexture3D;
 - (id)device;
+- (void)dispatchForCubemap:(id)arg1 computeEncoder:(id)arg2 pipelineState:(id)arg3;
+- (void)dispatchForTexture:(id)arg1 computeEncoder:(id)arg2 pipelineState:(id)arg3;
 - (void)flush;
 - (id)initWithDevice:(id)arg1;
+- (id)irradianceTextureForEnvironmentTexture:(id)arg1;
+- (id)latlongTextureForCubemap:(id)arg1 pixelFormat:(unsigned int)arg2 needsMipmap:(BOOL)arg3;
 - (id)libraryManager;
 - (id)newConstantBufferWithLength:(unsigned int)arg1 options:(unsigned int)arg2;
-- (id)renderResourceForImage:(struct __C3DImage { }*)arg1 sampler:(struct __C3DTextureSampler { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; int x4; int x5; int x6; int x7; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_8_1_1; } x8; float x9; unsigned char x10; int x11; unsigned int x12; }*)arg2;
-- (id)renderResourceForImageProxy:(struct __C3DImageProxy { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct { int (*x_2_1_1)(); int (*x_2_1_2)(); int (*x_2_1_3)(); } x2; void *x3; }*)arg1 sampler:(struct __C3DTextureSampler { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; int x4; int x5; int x6; int x7; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_8_1_1; } x8; float x9; unsigned char x10; int x11; unsigned int x12; }*)arg2 engineContext:(struct __C3DEngineContext { }*)arg3;
-- (id)renderResourceForMaterial:(struct __C3DMaterial { }*)arg1 geometry:(struct __C3DGeometry { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct __C3DMesh {} *x2; struct __C3DMaterial {} *x3; struct __CFArray {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; struct __C3DAABB {} *x7; unsigned int x8 : 1; int (*x9)(); struct { bool x_10_1_1; bool x_10_1_2; unsigned short x_10_1_3; unsigned short x_10_1_4; float x_10_1_5; float x_10_1_6; unsigned char x_10_1_7; unsigned char x_10_1_8; unsigned char x_10_1_9; unsigned char x_10_1_10; struct __C3DMeshElement {} *x_10_1_11; struct __C3DMeshSource {} *x_10_1_12; struct __C3DMesh {} *x_10_1_13; bool x_10_1_14; bool x_10_1_15; void *x_10_1_16; void *x_10_1_17; } x10; }*)arg2 renderPipeline:(id)arg3 engineContext:(struct __C3DEngineContext { }*)arg4;
-- (id)renderResourceForMesh:(struct __C3DMesh { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct __CFArray {} *x2[9]; struct C3DSphere {} *x3; struct __CFArray {} **x4; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 4; int x9; }*)arg1;
-- (id)renderResourceForMeshElement:(struct __C3DMeshElement { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct __CFData {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; struct __C3DMeshElement {} *x6; unsigned char x7; unsigned char x8; unsigned char x9; BOOL x10; void *x11; struct __C3DMeshSource {} *x12; /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x13[2]; void*x14; void*x15; void*x16; void*x17; void x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; void*x29; BOOL x30; void*x31; void*x32; in void*x33; void*x34; unsigned char x35; out in in void*x36; BOOL x37; void*x38; int x39; out in void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; void*x50; void*x51; void*x52; void*x53; void*x54; void*x55; void*x56; void*x57; void*x58; void*x59; void*x60; void*x61; void*x62; void*x63; void*x64; void*x65; void*x66; void*x67; void*x68; void*x69; void*x70; void*x71; void*x72; void*x73; void*x74; void*x75; void*x76; short x77; void*x78; void*x79; void*x80; long long x81; void*x82; void*x83; void*x84; void*x85; void*x86; void*x87; void*x88; void*x89; void*x90; void*x91; void x92; void*x93; void*x94; void*x95; void*x96; void*x97; void*x98; void*x99; void*x100; unsigned int x101; void*x102; out long x103; void*x104; in out void*x105; int x106; void*x107; long x108; void*x109; out const BOOL x110; void*x111; unsigned long x112; void*x113; void x114; void*x115; long x116; unsigned char x117; long x118; void*x119; short x120; short x121; int x122; float x123; int x124; void*x125; const void*x126; void*x127; void*x128; void*x129; void*x130; void*x131; void*x132; void*x133; void*x134; long long x135; void*x136; void**x137; void*x138; void*x139; void*x140; void*x141; void*x142; void*x143; void*x144; void*x145; void*x146; void*x147; void*x148; void*x149; void*x150; void*x151; void*x152; void*x153; void*x154; void*x155; void*x156; void*x157; void*x158; void*x159; void*x160; void*x161; void*x162; void*x163; void x164; void*x165; void*x166; void*x167; void*x168; void*x169; void*x170; void*x171; void*x172; void*x173; void*x174; void*x175; void*x176; void*x177; void*x178; void*x179; void*x180; void*x181; void*x182; void*x183; void*x184; void*x185; void*x186; void*x187; void*x188; void*x189; void*x190; void*x191; void*x192; void*x193; void*x194; void*x195; void*x196; void*x197; id x198; void*x199; void*x200; id x201; void*x202; void*x203; void*x204; void*x205; void*x206; void*x207; void*x208; void*x209; void*x210; void*x211; void*x212; void*x213; void*x214; void*x215; void*x216; void*x217; void*x218; void*x219; void*x220; void*x221; void*x222; void*x223; void*x224; void*x225; void x226; void*x227; void*x228; void*x229; void*x230; void*x231; void*x232; void*x233; void*x234; void*x235; void*x236; void*x237; void*x238; void*x239; void*x240; void*x241; void*x242; void*x243; void*x244; void*x245; void*x246; void*x247; void*x248; void*x249; void*x250; void*x251; void*x252; void*x253; void*x254; void*x255; void*x256; void*x257; void x258; void*x259; void*x260; void*x261; void*x262; void*x263; void*x264; void*x265; void*x266; void*x267; void*x268; void*x269; void*x270; void*x271; void*x272; void*x273; void*x274; void*x275; void*x276; void*x277; void*x278; void*x279; void*x280; void*x281; void*x282; void*x283; void*x284; void*x285; void*x286; void*x287; void*x288; void*x289; void x290; void*x291; void*x292; void*x293; void*x294; void*x295; void*x296; void*x297; void*x298; unsigned short x299; void*x300; short x301; void*x302; void*x303; void*x304; void*x305; unsigned long x306; int x307; unsigned int x308/* : ? */; const void*x309; const void*x310; void*x311; void*x312; const int x313; void x314; void*x315; void*x316; void*x317; void*x318; const void*x319; void*x320; void*x321; void*x322; out const void*x323; short x324; void*x325; unsigned short x326; void*x327; unsigned int x328/* : ? */; void*x329; void*x330; BOOL x331; void*x332; short x333; void*x334; float x335; const void*x336; void*x337; void*x338; void*x339; out const void*x340; void*x341; unsigned short x342; void*x343; unsigned int x344/* : ? */; void*x345; void*x346; BOOL x347; void*x348; short x349; void*x350; void*x351; void*x352; void*x353; void*x354; void*x355; void*x356; void*x357; void*x358; void*x359; long x360; void*x361; void*x362; void*x363; void*x364; void*x365; void*x366; void*x367; void*x368; void*x369; void*x370; void*x371; void*x372; void*x373; void*x374; void*x375; void*x376; void*x377; void*x378; void*x379; void*x380; void*x381; void*x382; void*x383; void*x384; void*x385; void*x386; void*x387; void*x388; void*x389; void*x390; void*x391; id x392; void*x393; void*x394; void*x395; void*x396; void*x397; void*x398; unsigned short x399; void*x400; BOOL x401; void*x402; int x403; out in void*x404; void*x405; void*x406; const int x407; BOOL x408; short x409; void*x410; void*x411; void*x412; void*x413; void*x414; void*x415; void*x416; void*x417; void*x418; void*x419; id x420; void*x421; void*x422; void*x423; void*x424; void*x425; unsigned short x426; void*x427; short x428; void*x429; void*x430; void*x431; void*x432; unsigned long x433; int x434; unsigned int x435/* : ? */; const void*x436; const void*x437; void*x438; void*x439; const int x440; void x441; void*x442; void*x443; void*x444; void*x445; const void*x446; void*x447; void*x448; void*x449; out const void*x450; short x451; void*x452; void*x453; void*x454; void*x455; void*x456; unsigned char x457; void*x458; in void*x459; void*x460; const void*x461; const int x462; void x463; void*x464; void*x465; void*x466; void*x467; unsigned int x468; void*x469; float x470; const void*x471; void*x472; void*x473; void*x474; out const void*x475; void*x476; void*x477; void*x478; void*x479; void*x480; unsigned char x481; void*x482; in void*x483; void*x484; const void*x485; const int x486; void x487; void*x488; void*x489; void*x490; void*x491; unsigned int x492; void*x493; void*x494; void*x495; void*x496; void*x497; void*x498; void*x499; id x500; void*x501; void*x502; long long x503; void*x504; void*x505; void*x506; void*x507; void*x508; void*x509; void*x510; void*x511; void*x512; void*x513; void*x514; void*x515; void*x516; void*x517; void*x518; void*x519; void*x520; void*x521; void*x522; void*x523; void*x524; void*x525; void*x526; void*x527; void*x528; }*)arg1;
+- (id)newRenderPipelineStateWithPixelFormat:(unsigned int)arg1 vertexFunctionName:(id)arg2 fragmentFunctionName:(id)arg3 library:(id)arg4;
+- (id)newRenderPipelineStateWithPixelFormat:(unsigned int)arg1 vertexFunctionName:(id)arg2 fragmentFunctionName:(id)arg3 library:(id)arg4 vertexConstantValues:(id)arg5 fragmentConstantValues:(id)arg6;
+- (id)radianceTextureForEnvironmentTexture:(id)arg1;
+- (void)removeAllShaders;
+- (id)renderResourceForImage:(struct __C3DImage { }*)arg1 sampler:(struct __C3DTextureSampler { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; int x4; int x5; int x6; int x7; struct C3DColor4 { union { double x_1_2_1[4]; struct { double x_2_3_1; double x_2_3_2; double x_2_3_3; double x_2_3_4; } x_1_2_2; } x_8_1_1; } x8; double x9; unsigned char x10; int x11; unsigned int x12; }*)arg2 options:(long)arg3;
+- (id)renderResourceForImageProxy:(struct __C3DImageProxy { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct { int (*x_2_1_1)(); int (*x_2_1_2)(); int (*x_2_1_3)(); } x2; void *x3; }*)arg1 sampler:(struct __C3DTextureSampler { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; int x4; int x5; int x6; int x7; struct C3DColor4 { union { double x_1_2_1[4]; struct { double x_2_3_1; double x_2_3_2; double x_2_3_3; double x_2_3_4; } x_1_2_2; } x_8_1_1; } x8; double x9; unsigned char x10; int x11; unsigned int x12; }*)arg2 engineContext:(struct __C3DEngineContext { }*)arg3;
+- (id)renderResourceForMaterial:(struct __C3DMaterial { }*)arg1 geometry:(struct __C3DGeometry { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct __C3DMesh {} *x2; struct __C3DMaterial {} *x3; struct __CFArray {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; struct __C3DAABB {} *x7; unsigned int x8 : 1; int (*x9)(); struct { unsigned short x_10_1_1; struct { bool x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; } x_10_1_2; struct __C3DMeshElement {} *x_10_1_3; struct __C3DMeshSource {} *x_10_1_4; struct __C3DMesh {} *x_10_1_5; } x10; }*)arg2 renderPipeline:(id)arg3 engineContext:(struct __C3DEngineContext { }*)arg4;
+- (id)renderResourceForMesh:(struct __C3DMesh { }*)arg1;
+- (id)renderResourceForMeshElement:(struct __C3DMeshElement { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; unsigned int x2; unsigned int x3; struct __C3DMeshElement {} *x4; unsigned char x5; unsigned char x6; unsigned char x7; struct { BOOL x_8_1_1; struct __CFData {} *x_8_1_2; unsigned int x_8_1_3; } x8; struct { BOOL x_9_1_1; struct __CFData {} *x_9_1_2; unsigned int x_9_1_3; } x9; void *x10; struct __C3DMeshSource {} *x11; /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x12[2]; }*)arg1;
 - (id)renderResourceForMeshSource:(struct __C3DMeshSource { struct __C3DGenericSource { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_3_1; unsigned char x_1_3_2[4]; } x_1_2_1; void *x_1_2_2; struct __CFString {} *x_1_2_3; struct __CFString {} *x_1_2_4; struct __CFDictionary {} *x_1_2_5; int x_1_2_6; int x_1_2_7; } x_1_1_1; struct __C3DSourceAccessor {} *x_1_1_2; union { struct __CFData {} *x_3_2_1; void *x_3_2_2; void *x_3_2_3; } x_1_1_3; int x_1_1_4; unsigned int x_1_1_5 : 1; unsigned int x_1_1_6 : 1; unsigned int x_1_1_7 : 1; } x1; unsigned short x2; unsigned char x3; unsigned char x4; }*)arg1;
+- (id)renderResourceForMorph:(struct __C3DMorph { }*)arg1 baseMesh:(struct __C3DMesh { }*)arg2;
 - (id)renderResourceForRasterizerState:(struct __C3DRasterizerStates { }*)arg1;
-- (id)renderResourceForSampler:(struct __C3DTextureSampler { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; int x4; int x5; int x6; int x7; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_8_1_1; } x8; float x9; unsigned char x10; int x11; unsigned int x12; }*)arg1;
-- (id)renderResourcesForEffectSlot:(struct __C3DEffectSlot { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_2_1_1; } x2; void *x3; union { struct __C3DImage {} *x_4_1_1; void *x_4_1_2; struct __C3DImageProxy {} *x_4_1_3; struct __C3DTexture {} *x_4_1_4; } x4; unsigned int x5 : 8; unsigned int x6 : 1; int x7; struct __C3DTextureSampler {} *x8; struct __C3DTransforms {} *x9; float x10; int x11; void *x12; }*)arg1 withEngineContext:(struct __C3DEngineContext { }*)arg2;
+- (id)renderResourceForSampler:(struct __C3DTextureSampler { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; int x2; int x3; int x4; int x5; int x6; int x7; struct C3DColor4 { union { double x_1_2_1[4]; struct { double x_2_3_1; double x_2_3_2; double x_2_3_3; double x_2_3_4; } x_1_2_2; } x_8_1_1; } x8; double x9; unsigned char x10; int x11; unsigned int x12; }*)arg1;
+- (id)renderResourcesForEffectSlot:(struct __C3DEffectSlot { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct C3DColor4 { union { double x_1_2_1[4]; struct { double x_2_3_1; double x_2_3_2; double x_2_3_3; double x_2_3_4; } x_1_2_2; } x_2_1_1; } x2; void *x3; union { struct __C3DImage {} *x_4_1_1; void *x_4_1_2; struct __C3DImageProxy {} *x_4_1_3; struct __C3DTexture {} *x_4_1_4; } x4; unsigned int x5 : 8; unsigned int x6 : 1; unsigned int x7 : 1; int x8; struct __C3DTextureSampler {} *x9; struct __C3DTransforms {} *x10; double x11; int x12; void *x13; }*)arg1 withEngineContext:(struct __C3DEngineContext { }*)arg2;
 - (void)setLibraryManager:(id)arg1;
+- (id)shFromCPU:(id)arg1;
 - (id)shaderManagerForPassDescriptor:(id)arg1;
+- (id)specularDFGTexture;
+- (id)sphericalHarmonicsForEnvironmentTexture:(id)arg1 order:(unsigned int)arg2 commandBuffer:(id)arg3;
 - (struct __C3DEngineStats { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; unsigned int x19; unsigned int x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; double x25; double x26; double x27; double x28; double x29; double x30; double x31; double x32; double x33; double x34; double x35; double x36; double x37; double x38; unsigned int x39; unsigned int x40; unsigned int x41; unsigned int x42; unsigned int x43; unsigned int x44; unsigned int x45; unsigned int x46; unsigned int x47; unsigned int x48; unsigned int x49; unsigned int x50; unsigned int x51; unsigned int x52; unsigned int x53; unsigned int x54; double x55; double x56; double x57; double x58[60]; unsigned int x59; double x60; double x61; }*)stats;
+- (id)textureForSamplingTexture:(id)arg1 atSize:(unsigned int)arg2 mipmapLevelCount:(unsigned int*)arg3;
+- (id)unstageTexture:(id)arg1;
 
 @end

@@ -10,7 +10,7 @@
 
 @optional
 
-- (BOOL)interactiveDismissalControllerCanBeginDismissal:(PUInteractiveDismissalController *)arg1;
+- (BOOL)interactiveDismissalController:(PUInteractiveDismissalController *)arg1 canBeginDismissalAtLocationFromProvider:(id <PUDisplayLocationProvider>)arg2;
 - (PUTileController *)interactiveDismissalControllerDesignatedTileController:(PUInteractiveDismissalController *)arg1;
 - (PUTilingView *)interactiveDismissalControllerTilingView:(PUInteractiveDismissalController *)arg1;
 

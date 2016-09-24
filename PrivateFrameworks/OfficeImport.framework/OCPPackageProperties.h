@@ -3,10 +3,10 @@
  */
 
 @interface OCPPackageProperties : NSObject {
-    NSString *mCreator;
-    NSString *mDescription;
-    NSString *mKeywords;
-    NSString *mTitle;
+    NSString * mCreator;
+    NSString * mDescription;
+    NSString * mKeywords;
+    NSString * mTitle;
 }
 
 - (id)creator;

@@ -3,7 +3,7 @@
  */
 
 @interface _UIMotionEffectEvent : NSObject {
-    double _timestamp;
+    double  _timestamp;
 }
 
 @property (nonatomic, readonly) double timestamp;

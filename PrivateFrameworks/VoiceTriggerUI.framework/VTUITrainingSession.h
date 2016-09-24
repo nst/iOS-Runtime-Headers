@@ -2,27 +2,27 @@
    Image: /System/Library/PrivateFrameworks/VoiceTriggerUI.framework/VoiceTriggerUI
  */
 
-@interface VTUITrainingSession : NSObject <AFAudioAnalyzerDelegate, SFSpeechRecognitionTaskDelegate, VTUIAudioSessionDelegate> {
-    BOOL _ASRErrorOccured;
-    <VTUIAudioSession> *_audioSession;
-    NSString *_locale;
-    NSTimer *_masterTimer;
-    int _numRequiredTrailingSamples;
-    int _numTrailingSamples;
-    NSMutableArray *_pcmBufArray;
-    VTPhraseSpotter *_phraseSpotter;
-    NSObject<OS_dispatch_queue> *_queue;
-    BOOL _resultReported;
-    <VTUIRMSDelegate> *_rmsDelegate;
-    int _sessionNumber;
-    BOOL _sessionProcess;
-    BOOL _sessionSuspended;
-    SFSpeechAudioBufferRecognitionRequest *_speechRecognitionRequest;
-    SFSpeechRecognitionTask *_speechRecognitionTask;
-    SFSpeechRecognizer *_speechRecognizer;
-    int _status;
-    id /* block */ _trainingCompletion;
-    int _utteranceId;
+@interface VTUITrainingSession : NSObject <SFSpeechRecognitionTaskDelegate, VTUIAudioSessionDelegate, VTUIEndPointDelegate> {
+    BOOL  _ASRErrorOccured;
+    <VTUIAudioSession> * _audioSession;
+    NSString * _locale;
+    NSTimer * _masterTimer;
+    int  _numRequiredTrailingSamples;
+    int  _numTrailingSamples;
+    NSMutableArray * _pcmBufArray;
+    VTPhraseSpotter * _phraseSpotter;
+    NSObject<OS_dispatch_queue> * _queue;
+    BOOL  _resultReported;
+    <VTUITrainingSessionDelegate> * _sessionDelegate;
+    int  _sessionNumber;
+    BOOL  _sessionProcess;
+    BOOL  _sessionSuspended;
+    SFSpeechAudioBufferRecognitionRequest * _speechRecognitionRequest;
+    SFSpeechRecognitionTask * _speechRecognitionTask;
+    SFSpeechRecognizer * _speechRecognizer;
+    int  _status;
+    id /* block */  _trainingCompletion;
+    int  _utteranceId;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -31,25 +31,26 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)audioAnalyzer:(id)arg1 didDetectHardEndpointAtTime:(double)arg2;
-- (void)audioAnalyzer:(id)arg1 didDetectStartpointAtTime:(double)arg2;
 - (void)audioSessionDidStartRecording:(BOOL)arg1 error:(id)arg2;
 - (void)audioSessionDidStopRecording:(int)arg1;
 - (void)audioSessionErrorDidOccur:(id)arg1;
 - (void)audioSessionRecordBufferAvailable:(id)arg1;
 - (void)audioSessionUnsupportedAudioRoute;
+- (void)checkAudioRoute;
 - (void)closeSessionWithCompletion:(id /* block */)arg1;
-- (void)closeSessionWithStatus:(int)arg1;
+- (void)closeSessionWithStatus:(int)arg1 successfully:(BOOL)arg2;
+- (void)closeSessionWithStatus:(int)arg1 successfully:(BOOL)arg2 complete:(id /* block */)arg3;
 - (void)computeRequiredTrailingSamples;
 - (id)createAVAudioPCMBufferWithNSData:(id)arg1;
+- (void)didDetectBeginOfSpeech;
+- (void)didDetectEndOfSpeech:(int)arg1;
 - (void)feedSpeechRecognitionTrailingSamplesWithCompletedBlock:(id /* block */)arg1;
 - (void)feedSpeechRecognitionWithPCMBuffer;
 - (void)finishSpeechRecognitionTask;
 - (void)handleAudioBufferForVTWithAudioInput:(id)arg1 withDetectedBlock:(id /* block */)arg2;
 - (void)handleAudioInput:(id)arg1;
 - (void)handleMasterTimeout:(id)arg1;
-- (void)handleRMSDelegate;
-- (id)initWithUtteranceId:(int)arg1 sessionNumber:(int)arg2 Locale:(id)arg3 audioSession:(id)arg4 phraseSpotter:(id)arg5 speechRecognizer:(id)arg6 speechRecognitionRequest:(id)arg7 RMSDelegate:(id)arg8 sessionDispatchQueue:(id)arg9 completion:(id /* block */)arg10;
+- (id)initWithUtteranceId:(int)arg1 sessionNumber:(int)arg2 Locale:(id)arg3 audioSession:(id)arg4 phraseSpotter:(id)arg5 speechRecognizer:(id)arg6 speechRecognitionRequest:(id)arg7 sessionDelegate:(id)arg8 sessionDispatchQueue:(id)arg9 completion:(id /* block */)arg10;
 - (int)numSamplesInPCMBuffer;
 - (void)pushAudioInputIntoPCMBuffer:(id)arg1;
 - (BOOL)resultAlreadyReported;
@@ -57,10 +58,11 @@
 - (BOOL)setupPhraseSpotter;
 - (void)setupSpeechRecognitionTaskWithVoiceTriggerEventInfo:(id)arg1;
 - (void)speechRecognitionTask:(id)arg1 didHypothesizeTranscription:(id)arg2;
-- (void)startMasterTimer;
+- (void)startMasterTimerWithTimeout:(float)arg1;
 - (void)startTraining;
 - (void)stopMasterTimer;
 - (void)suspendTraining;
 - (void)trimBeginingOfPCMBufferWithVoiceTriggerEventInfo:(id)arg1;
+- (void)updateMeterAndForward;
 
 @end

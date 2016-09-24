@@ -9,12 +9,12 @@
         unsigned int metricState : 1; 
         unsigned int metricType : 1; 
         unsigned int retryCount : 1; 
-    } _has;
-    unsigned int _messageCount;
-    unsigned long long _messageSize;
-    int _metricState;
-    int _metricType;
-    unsigned int _retryCount;
+    }  _has;
+    unsigned int  _messageCount;
+    unsigned int  _messageSize;
+    int  _metricState;
+    int  _metricType;
+    unsigned int  _retryCount;
 }
 
 @property (nonatomic) BOOL hasMessageCount;
@@ -23,11 +23,13 @@
 @property (nonatomic) BOOL hasMetricType;
 @property (nonatomic) BOOL hasRetryCount;
 @property (nonatomic) unsigned int messageCount;
-@property (nonatomic) unsigned long long messageSize;
+@property (nonatomic) unsigned int messageSize;
 @property (nonatomic) int metricState;
 @property (nonatomic) int metricType;
 @property (nonatomic) unsigned int retryCount;
 
+- (int)StringAsMetricState:(id)arg1;
+- (int)StringAsMetricType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -41,9 +43,11 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)messageCount;
-- (unsigned long long)messageSize;
+- (unsigned int)messageSize;
 - (int)metricState;
+- (id)metricStateAsString:(int)arg1;
 - (int)metricType;
+- (id)metricTypeAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)retryCount;
 - (void)setHasMessageCount:(BOOL)arg1;
@@ -52,7 +56,7 @@
 - (void)setHasMetricType:(BOOL)arg1;
 - (void)setHasRetryCount:(BOOL)arg1;
 - (void)setMessageCount:(unsigned int)arg1;
-- (void)setMessageSize:(unsigned long long)arg1;
+- (void)setMessageSize:(unsigned int)arg1;
 - (void)setMetricState:(int)arg1;
 - (void)setMetricType:(int)arg1;
 - (void)setRetryCount:(unsigned int)arg1;

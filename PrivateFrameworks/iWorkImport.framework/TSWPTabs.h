@@ -3,7 +3,7 @@
  */
 
 @interface TSWPTabs : NSObject <NSCopying, NSFastEnumeration, TSDMixing> {
-    NSMutableArray *_tabs;
+    NSMutableArray * _tabs;
 }
 
 + (id)tabs;

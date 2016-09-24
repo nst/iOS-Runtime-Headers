@@ -3,18 +3,18 @@
  */
 
 @interface _UITableViewReorderingSupport : NSObject {
-    NSTimer *_autoscrollTimer;
-    UIShadowView *_bottomShadowView;
-    NSIndexPath *_initialIndexPath;
-    unsigned int _oldShowHorizontalScrollIndicator;
-    unsigned int _oldShowVerticalScrollIndicator;
-    unsigned int _reloadDataCalled;
-    UITableViewCell *_reorderedCell;
-    unsigned int _reorderingCancelled;
-    unsigned int _reserved;
-    NSIndexPath *_targetIndexPath;
-    UIShadowView *_topShadowView;
-    BOOL _wasScrollingEnabled;
+    NSTimer * _autoscrollTimer;
+    UIShadowView * _bottomShadowView;
+    NSIndexPath * _initialIndexPath;
+    unsigned int  _oldShowHorizontalScrollIndicator;
+    unsigned int  _oldShowVerticalScrollIndicator;
+    unsigned int  _reloadDataCalled;
+    UITableViewCell * _reorderedCell;
+    unsigned int  _reorderingCancelled;
+    unsigned int  _reserved;
+    NSIndexPath * _targetIndexPath;
+    UIShadowView * _topShadowView;
+    BOOL  _wasScrollingEnabled;
 }
 
 - (void).cxx_destruct;

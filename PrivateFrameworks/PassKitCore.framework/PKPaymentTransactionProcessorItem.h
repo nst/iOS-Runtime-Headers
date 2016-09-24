@@ -3,16 +3,16 @@
  */
 
 @interface PKPaymentTransactionProcessorItem : NSObject {
-    NSString *_passUniqueIdentifier;
-    PKPaymentApplication *_paymentApplication;
-    PKPaymentTransaction *_paymentTransaction;
+    NSString * _passUniqueIdentifier;
+    PKPaymentApplication * _paymentApplication;
+    PKPaymentTransaction * _paymentTransaction;
 }
 
 @property (nonatomic, retain) NSString *passUniqueIdentifier;
 @property (nonatomic, retain) PKPaymentApplication *paymentApplication;
 @property (nonatomic, retain) PKPaymentTransaction *paymentTransaction;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)passUniqueIdentifier;
 - (id)paymentApplication;
 - (id)paymentTransaction;

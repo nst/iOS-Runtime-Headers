@@ -3,7 +3,7 @@
  */
 
 @interface IMUserNotification : NSObject {
-    id _reserved;
+    id  _reserved;
 }
 
 @property (nonatomic, readonly) unsigned int displayFlags;

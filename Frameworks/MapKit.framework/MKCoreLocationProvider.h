@@ -3,17 +3,17 @@
  */
 
 @interface MKCoreLocationProvider : NSObject <CLLocationManagerDelegate, CLLocationManagerVehicleDelegate, MKLocationProvider> {
-    BOOL _alternate;
-    NSLock *_authorizationLock;
-    id /* block */ _authorizationRequestBlock;
-    int _authorizationStatus;
-    CLLocationManager *_clLocationManager;
-    <MKLocationProviderDelegate> *_delegate;
-    NSBundle *_effectiveBundle;
-    NSString *_effectiveBundleIdentifier;
-    BOOL _hasQueriedAuthorization;
-    BOOL _locationServicesPreferencesDialogEnabled;
-    BOOL _waitingForAuthorization;
+    BOOL  _alternate;
+    NSLock * _authorizationLock;
+    id /* block */  _authorizationRequestBlock;
+    int  _authorizationStatus;
+    CLLocationManager * _clLocationManager;
+    <MKLocationProviderDelegate> * _delegate;
+    NSBundle * _effectiveBundle;
+    NSString * _effectiveBundleIdentifier;
+    BOOL  _hasQueriedAuthorization;
+    BOOL  _locationServicesPreferencesDialogEnabled;
+    BOOL  _waitingForAuthorization;
 }
 
 @property (nonatomic, readonly) CLLocationManager *_clLocationManager;
@@ -30,11 +30,11 @@
 @property (nonatomic, readonly) double expectedGpsUpdateInterval;
 @property (readonly) unsigned int hash;
 @property (nonatomic) int headingOrientation;
-@property (nonatomic, readonly) BOOL isSimulation;
 @property (nonatomic, readonly) BOOL isTracePlayer;
 @property (nonatomic, readonly) CLLocation *lastLocation;
 @property (getter=isLocationServicesPreferencesDialogEnabled, nonatomic) BOOL locationServicesPreferencesDialogEnabled;
 @property (nonatomic) BOOL matchInfoEnabled;
+@property (nonatomic, readonly) BOOL shouldShiftIfNecessary;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) double timeScale;
 @property (nonatomic, readonly) BOOL usesCLMapCorrection;
@@ -58,7 +58,6 @@
 - (int)headingOrientation;
 - (id)init;
 - (BOOL)isLocationServicesPreferencesDialogEnabled;
-- (BOOL)isSimulation;
 - (BOOL)isTracePlayer;
 - (id)lastLocation;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
@@ -83,6 +82,7 @@
 - (void)setHeadingOrientation:(int)arg1;
 - (void)setLocationServicesPreferencesDialogEnabled:(BOOL)arg1;
 - (void)setMatchInfoEnabled:(BOOL)arg1;
+- (BOOL)shouldShiftIfNecessary;
 - (void)startUpdatingHeading;
 - (void)startUpdatingLocation;
 - (void)startUpdatingVehicleHeading;

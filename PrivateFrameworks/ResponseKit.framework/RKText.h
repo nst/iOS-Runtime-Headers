@@ -3,12 +3,12 @@
  */
 
 @interface RKText : NSObject {
-    NSMutableArray *_annotations;
-    NSString *_languageID;
-    NSString *_processedText;
-    NSString *_string;
-    BOOL _trainVerbatim;
-    double _trainingWeight;
+    NSMutableArray * _annotations;
+    NSString * _languageID;
+    NSString * _processedText;
+    NSString * _string;
+    BOOL  _trainVerbatim;
+    double  _trainingWeight;
 }
 
 @property (retain) NSMutableArray *annotations;

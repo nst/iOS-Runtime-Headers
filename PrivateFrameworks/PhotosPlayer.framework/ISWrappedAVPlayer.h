@@ -3,24 +3,27 @@
  */
 
 @interface ISWrappedAVPlayer : NSObject {
-    NSObject<OS_dispatch_queue> *_avPlayerQueue;
-    <ISWrappedAVPlayerDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    NSObject<OS_dispatch_queue> *_ivarQueue;
-    AVPlayerItem *_ivarQueue_currentItem;
-    NSError *_ivarQueue_error;
+    NSObject<OS_dispatch_queue> * _avPlayerQueue;
+    <ISWrappedAVPlayerDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    NSObject<OS_dispatch_queue> * _ivarQueue;
+    void * _ivarQueueIdentifier;
+    AVPlayerItem * _ivarQueue_currentItem;
+    NSError * _ivarQueue_error;
+    NSError * _ivarQueue_itemError;
     struct { 
-        long long value; 
+        int value; 
         int timescale; 
         unsigned int flags; 
-        long long epoch; 
-    } _ivarQueue_itemForwardPlaybackEndTime;
-    int _ivarQueue_itemStatus;
-    float _ivarQueue_rate;
-    int _ivarQueue_status;
-    float _ivarQueue_volume;
-    NSMutableDictionary *_observersByID;
-    AVPlayer *_playerQueue_avPlayer;
+        int epoch; 
+    }  _ivarQueue_itemForwardPlaybackEndTime;
+    int  _ivarQueue_itemStatus;
+    double  _ivarQueue_rate;
+    int  _ivarQueue_status;
+    double  _ivarQueue_volume;
+    NSMutableDictionary * _observersByID;
+    void * _playerQueueIdentifier;
+    AVPlayer * _playerQueue_avPlayer;
 }
 
 @property <ISWrappedAVPlayerDelegate> *delegate;
@@ -43,17 +46,18 @@
 - (void)_playerQueue_startObservingPlayerItem:(id)arg1;
 - (void)_playerQueue_stopObservingPlayerItem:(id)arg1;
 - (id)addBoundaryTimeObserverForTimes:(id)arg1 queue:(id)arg2 usingBlock:(id /* block */)arg3;
-- (id)addPeriodicTimeObserverForInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 queue:(id)arg2 usingBlock:(id /* block */)arg3;
+- (id)addPeriodicTimeObserverForInterval:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 queue:(id)arg2 usingBlock:(id /* block */)arg3;
 - (void)attachToPlayerLayerIfNeeded:(id)arg1;
 - (void)cancelPendingPrerolls;
 - (id)currentItem;
+- (id)currentItemError;
 - (int)currentItemStatus;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })currentTime;
+- (struct { int x1; int x2; unsigned int x3; int x4; })currentTime;
 - (void)dealloc;
 - (id)delegate;
 - (id)error;
 - (id)init;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })itemForwardPlaybackEndTime;
+- (struct { int x1; int x2; unsigned int x3; int x4; })itemForwardPlaybackEndTime;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)pause;
 - (void)prepareForReuseWithCompletion:(id /* block */)arg1;
@@ -62,12 +66,15 @@
 - (void)removeTimeObserver:(id)arg1;
 - (void)replaceCurrentItemWithPlayerItem:(id)arg1;
 - (void)replaceCurrentItemWithPlayerItem:(id)arg1 thenCall:(id /* block */)arg2;
-- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 completionHandler:(id /* block */)arg4;
+- (void)seekToTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1 toleranceBefore:(struct { int x1; int x2; unsigned int x3; int x4; })arg2 toleranceAfter:(struct { int x1; int x2; unsigned int x3; int x4; })arg3 completionHandler:(id /* block */)arg4;
 - (void)setAllowsExternalPlayback:(BOOL)arg1;
+- (void)setAudioSession:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setItemForwardEndPlaybackTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setDimensionsOfReservedVideoMemory:(struct CGSize { double x1; double x2; })arg1;
+- (void)setItemBlendsVideoFrames:(BOOL)arg1;
+- (void)setItemForwardEndPlaybackTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg1;
 - (void)setRate:(float)arg1;
-- (void)setRate:(float)arg1 time:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 atHostTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
+- (void)setRate:(float)arg1 time:(struct { int x1; int x2; unsigned int x3; int x4; })arg2 atHostTime:(struct { int x1; int x2; unsigned int x3; int x4; })arg3;
 - (void)setVolume:(float)arg1;
 - (int)status;
 - (float)volume;

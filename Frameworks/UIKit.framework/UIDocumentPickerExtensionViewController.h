@@ -3,22 +3,22 @@
  */
 
 @interface UIDocumentPickerExtensionViewController : UIViewController <_UIDocumentPickerExtensionViewController> {
-    unsigned int _documentPickerMode;
-    NSURL *_documentStorageURL;
-    NSURL *_originalURL;
-    NSString *_providerIdentifier;
-    NSArray *_validTypes;
+    unsigned int  _documentPickerMode;
+    NSURL * _documentStorageURL;
+    NSURL * _originalURL;
+    NSString * _providerIdentifier;
+    NSArray * _validTypes;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) unsigned int documentPickerMode;
-@property (nonatomic, copy) NSURL *documentStorageURL;
+@property (setter=_setPickerMode:, nonatomic) unsigned int documentPickerMode;
+@property (setter=_setDocumentStorageURL:, nonatomic, copy) NSURL *documentStorageURL;
 @property (readonly) unsigned int hash;
-@property (nonatomic, copy) NSURL *originalURL;
-@property (nonatomic, copy) NSString *providerIdentifier;
+@property (setter=_setUploadURL:, nonatomic, copy) NSURL *originalURL;
+@property (setter=_setProviderIdentifier:, nonatomic, copy) NSString *providerIdentifier;
 @property (readonly) Class superclass;
-@property (nonatomic, copy) NSArray *validTypes;
+@property (setter=_setPickableTypes:, nonatomic, copy) NSArray *validTypes;
 
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;

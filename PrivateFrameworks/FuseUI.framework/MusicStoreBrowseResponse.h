@@ -2,16 +2,20 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicStoreBrowseResponse : MPUModelResponse {
-    MusicStoreBrowseResponseParser *_parser;
+@interface MusicStoreBrowseResponse : MPModelResponse {
+    MPChangeDetails * _changeDetails;
+    MusicStoreBrowseResponseParser * _parser;
 }
 
+@property (nonatomic, retain) MPChangeDetails *changeDetails;
 @property (nonatomic, readonly) BOOL hasAdditionalContentItems;
 @property (nonatomic, retain) MusicStoreBrowseResponseParser *parser;
 
 - (void).cxx_destruct;
+- (id)changeDetails;
 - (BOOL)hasAdditionalContentItems;
 - (id)parser;
+- (void)setChangeDetails:(id)arg1;
 - (void)setParser:(id)arg1;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface CHPointStrokeFIFO : CHPointFIFO {
-    CHDrawing *_drawing;
-    CHDrawing *_strokes;
+    CHDrawing * _drawing;
+    CHDrawing * _strokes;
 }
 
 @property (nonatomic) CHDrawing *drawing;

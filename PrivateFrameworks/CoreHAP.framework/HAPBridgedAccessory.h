@@ -3,9 +3,9 @@
  */
 
 @interface HAPBridgedAccessory : HAPAccessory <HAPAccessoryServerInternalDelegate> {
-    HAPCharacteristic *_categoryCharacteristic;
-    BOOL _discoveredBridgeableAccessory;
-    HAPCharacteristic *_reachabilityCharacteristic;
+    HAPCharacteristic * _categoryCharacteristic;
+    BOOL  _discoveredBridgeableAccessory;
+    HAPCharacteristic * _reachabilityCharacteristic;
 }
 
 @property (nonatomic) HAPCharacteristic *categoryCharacteristic;

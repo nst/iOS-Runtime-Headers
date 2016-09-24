@@ -3,9 +3,9 @@
  */
 
 @interface PSUIAccessoryDetailsController : PSListController <EAAccessoryDelegate> {
-    EAAccessory *_accessory;
-    BOOL _finishedAppearing;
-    BOOL _shouldEscape;
+    EAAccessory * _accessory;
+    BOOL  _finishedAppearing;
+    BOOL  _shouldEscape;
 }
 
 @property (readonly, copy) NSString *debugDescription;

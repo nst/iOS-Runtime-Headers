@@ -3,25 +3,25 @@
  */
 
 @interface UIPushBehavior : UIDynamicBehavior {
-    BOOL _active;
-    float _angle;
+    BOOL  _active;
+    double  _angle;
     struct CGVector { 
-        float dx; 
-        float dy; 
-    } _forceVector;
-    int _i;
-    float _magnitude;
-    int _mode;
-    NSMutableDictionary *_targetPoints;
-    double _timeInterval;
+        double dx; 
+        double dy; 
+    }  _forceVector;
+    int  _i;
+    double  _magnitude;
+    int  _mode;
+    NSMutableDictionary * _targetPoints;
+    double  _timeInterval;
 }
 
 @property (nonatomic) BOOL active;
-@property (nonatomic) float angle;
+@property (nonatomic) double angle;
 @property (nonatomic, readonly, copy) NSArray *items;
-@property (nonatomic) float magnitude;
+@property (nonatomic) double magnitude;
 @property (nonatomic, readonly) int mode;
-@property (nonatomic) struct CGVector { float x1; float x2; } pushDirection;
+@property (nonatomic) struct CGVector { double x1; double x2; } pushDirection;
 
 + (BOOL)_isPrimitiveBehavior;
 
@@ -39,20 +39,20 @@
 - (id)items;
 - (float)magnitude;
 - (int)mode;
-- (struct CGVector { float x1; float x2; })pushDirection;
+- (struct CGVector { double x1; double x2; })pushDirection;
 - (void)removeItem:(id)arg1;
 - (void)setActive:(BOOL)arg1;
 - (void)setAngle:(float)arg1;
 - (void)setAngle:(float)arg1 magnitude:(float)arg2;
 - (void)setMagnitude:(float)arg1;
-- (void)setPushDirection:(struct CGVector { float x1; float x2; })arg1;
-- (void)setTargetOffsetFromCenter:(struct UIOffset { float x1; float x2; })arg1 forItem:(id)arg2;
-- (void)setTargetPoint:(struct CGPoint { float x1; float x2; })arg1 forItem:(id)arg2;
+- (void)setPushDirection:(struct CGVector { double x1; double x2; })arg1;
+- (void)setTargetOffsetFromCenter:(struct UIOffset { double x1; double x2; })arg1 forItem:(id)arg2;
+- (void)setTargetPoint:(struct CGPoint { double x1; double x2; })arg1 forItem:(id)arg2;
 - (void)setXComponent:(float)arg1;
 - (void)setXComponent:(float)arg1 yComponent:(float)arg2;
 - (void)setYComponent:(float)arg1;
-- (struct UIOffset { float x1; float x2; })targetOffsetFromCenterForItem:(id)arg1;
-- (struct CGPoint { float x1; float x2; })targetPointForItem:(id)arg1;
+- (struct UIOffset { double x1; double x2; })targetOffsetFromCenterForItem:(id)arg1;
+- (struct CGPoint { double x1; double x2; })targetPointForItem:(id)arg1;
 - (float)xComponent;
 - (float)yComponent;
 

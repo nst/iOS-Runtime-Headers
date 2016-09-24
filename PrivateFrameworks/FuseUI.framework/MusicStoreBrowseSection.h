@@ -2,24 +2,31 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicStoreBrowseSection : MPUModelObject {
-    BOOL _brick;
-    NSURL *_loadAdditionalContentURL;
-    BOOL _memberOfChartSet;
-    MusicStoreBrowseResponse *_previouslyRetrievedNestedResponse;
-    int _sectionType;
-    NSString *_title;
-    int _uniformContentItemType;
+@interface MusicStoreBrowseSection : MPModelObject {
+    BOOL  _brick;
+    NSURL * _loadAdditionalContentURL;
+    BOOL  _memberOfChartSet;
+    MusicStoreBrowseResponse * _previouslyRetrievedNestedResponse;
+    int  _sectionType;
+    NSString * _title;
+    int  _uniformContentItemType;
 }
 
 @property (getter=isBrick, nonatomic) BOOL brick;
-@property (nonatomic, retain) NSURL *loadAdditionalContentURL;
+@property (nonatomic, copy) NSURL *loadAdditionalContentURL;
 @property (getter=isMemberOfChartSet, nonatomic) BOOL memberOfChartSet;
 @property (nonatomic, retain) MusicStoreBrowseResponse *previouslyRetrievedNestedResponse;
 @property (nonatomic) int sectionType;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic) int uniformContentItemType;
 
++ (id)__MusicStoreBrowseSectionPropertyBrick__PROPERTY;
++ (id)__MusicStoreBrowseSectionPropertyLoadAdditionalContentURL__PROPERTY;
++ (id)__MusicStoreBrowseSectionPropertyMemberOfChartSet__PROPERTY;
++ (id)__MusicStoreBrowseSectionPropertyPreviouslyRetrievedNestedResponse__PROPERTY;
++ (id)__MusicStoreBrowseSectionPropertyTitle__PROPERTY;
++ (id)__MusicStoreBrowseSectionPropertyType__PROPERTY;
++ (id)__MusicStoreBrowseSectionPropertyUniformContentItemType__PROPERTY;
 + (id)__brick__KEY;
 + (id)__loadAdditionalContentURL__KEY;
 + (id)__memberOfChartSet__KEY;
@@ -29,7 +36,7 @@
 + (id)__uniformContentItemType__KEY;
 
 - (void).cxx_destruct;
-- (id)descriptionWithType:(unsigned int)arg1;
+- (id)descriptionWithType:(int)arg1;
 - (unsigned int)hash;
 - (BOOL)isBrick;
 - (BOOL)isEqual:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface _UIUserNotificationRestrictedAlertViewProxy : _UITargetedProxy <UIAlertViewDelegate> {
-    id _delegate;
+    id  _delegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;

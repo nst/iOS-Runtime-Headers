@@ -3,8 +3,8 @@
  */
 
 @interface NSPredicateOperator : NSObject <NSCopying, NSSecureCoding> {
-    unsigned int _modifier;
-    unsigned int _operatorType;
+    unsigned int  _modifier;
+    unsigned int  _operatorType;
 }
 
 + (SEL)_getSelectorForType:(unsigned int)arg1;

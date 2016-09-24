@@ -3,12 +3,12 @@
  */
 
 @interface MTDateFormatting : NSObject {
-    NSString *_amString;
-    NSDateFormatter *_dateOnlyFormatter;
-    NSString *_pmString;
-    BOOL _timeDesignatorAppearsBeforeTime;
-    NSDateFormatter *_timeOnlyFormatter;
-    BOOL _use24HourTime;
+    NSString * _amString;
+    NSDateFormatter * _dateOnlyFormatter;
+    NSString * _pmString;
+    BOOL  _timeDesignatorAppearsBeforeTime;
+    NSDateFormatter * _timeOnlyFormatter;
+    BOOL  _use24HourTime;
 }
 
 @property (nonatomic, readonly) NSString *amString;

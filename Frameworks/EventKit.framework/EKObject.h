@@ -3,18 +3,19 @@
  */
 
 @interface EKObject : NSObject {
-    NSMutableDictionary *_cachedProperties;
-    NSMutableDictionary *_dirtyProperties;
-    unsigned long _flags;
-    EKObjectRelation *_owningRelation;
-    EKPersistentObject *_persistentObject;
-    NSString *_propertyName;
-    NSMutableDictionary *_relations;
-    NSMutableSet *_weakRelations;
+    NSMutableDictionary * _cachedProperties;
+    NSMutableDictionary * _dirtyProperties;
+    unsigned long  _flags;
+    EKObjectRelation * _owningRelation;
+    EKPersistentObject * _persistentObject;
+    NSString * _propertyName;
+    NSMutableDictionary * _relations;
+    NSMutableSet * _weakRelations;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *cachedProperties;
 @property (nonatomic, retain) NSMutableDictionary *dirtyProperties;
+@property (nonatomic, retain) EKEventStore *eventStore;
 @property (nonatomic) unsigned long flags;
 @property (nonatomic, readonly) BOOL hasChanges;
 @property (getter=isNew, nonatomic, readonly) BOOL new;
@@ -24,6 +25,7 @@
 @property (nonatomic, retain) NSMutableDictionary *relations;
 @property (nonatomic, retain) NSMutableSet *weakRelations;
 
+- (void).cxx_destruct;
 - (void)addWeakRelation:(id)arg1;
 - (BOOL)boolPropertyForKey:(id)arg1 withPersistentFallback:(id /* block */)arg2;
 - (void)cachePropertyValue:(id)arg1 forKey:(id)arg2;
@@ -65,6 +67,7 @@
 - (void)rollback;
 - (void)setCachedProperties:(id)arg1;
 - (void)setDirtyProperties:(id)arg1;
+- (void)setEventStore:(id)arg1;
 - (void)setFlags:(unsigned long)arg1;
 - (void)setOwningRelation:(id)arg1;
 - (void)setPersistentObject:(id)arg1;
@@ -73,6 +76,7 @@
 - (void)setRelations:(id)arg1;
 - (void)setWeakRelations:(id)arg1;
 - (void)updatePersistentObject;
+- (void)updatePersistentObjectSkippingProperties:(id)arg1;
 - (void)updatePersistentValueForKeyIfNeeded:(id)arg1;
 - (BOOL)validate:(id*)arg1;
 - (id)weakRelations;

@@ -3,14 +3,14 @@
  */
 
 @interface MPUMediaControlsVolumeView : UIView <MPVolumeControllerDelegate> {
-    UISlider *_slider;
-    int _style;
-    double _timeStoppedTracking;
-    NSTimer *_volumeCommitTimer;
-    MPVolumeController *_volumeController;
-    NSTimer *_warningBlinkTimer;
-    BOOL _warningIndicatorBlinking;
-    UIView *_warningView;
+    UISlider * _slider;
+    int  _style;
+    double  _timeStoppedTracking;
+    NSTimer * _volumeCommitTimer;
+    MPVolumeController * _volumeController;
+    NSTimer * _warningBlinkTimer;
+    BOOL  _warningIndicatorBlinking;
+    UIView * _warningView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -26,22 +26,24 @@
 - (void)_beginVolumeCommitTimer;
 - (void)_blinkWarningView;
 - (void)_commitCurrentVolumeValue;
+- (void)_configureVolumeSliderView:(id)arg1;
 - (id)_createVolumeSliderView;
 - (void)_layoutVolumeWarningView;
 - (void)_removeVolumeSliderInertia;
 - (BOOL)_shouldStartBlinkingVolumeWarningIndicator;
 - (void)_stopBlinkingWarningView;
 - (void)_stopVolumeCommitTimer;
+- (id)_trackImageWithAlternateStyle:(BOOL)arg1 rounded:(BOOL)arg2;
 - (void)_volumeSliderBeganChanging:(id)arg1;
 - (BOOL)_volumeSliderDynamicsEnabled;
 - (void)_volumeSliderStoppedChanging:(id)arg1;
 - (void)_volumeSliderValueChanged:(id)arg1;
 - (id)_warningTrackImage;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithStyle:(int)arg1;
 - (void)layoutSubviews;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)slider;
 - (int)style;
 - (void)updateSystemVolumeLevel;

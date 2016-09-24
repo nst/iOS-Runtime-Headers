@@ -3,10 +3,10 @@
  */
 
 @interface AXIPCOutstandingAsyncRequest : NSObject {
-    id /* block */ _replyHandler;
-    struct __CFRunLoopSource { } *_replyMachPortSource;
-    unsigned int _replyPort;
-    NSObject<OS_dispatch_queue> *_replyQueue;
+    id /* block */  _replyHandler;
+    struct __CFRunLoopSource { } * _replyMachPortSource;
+    unsigned int  _replyPort;
+    NSObject<OS_dispatch_queue> * _replyQueue;
 }
 
 @property (nonatomic, readonly) id /* block */ replyHandler;

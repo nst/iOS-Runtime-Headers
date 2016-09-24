@@ -6,6 +6,8 @@
 
 + (id)cellForRecipient:(id)arg1;
 
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)layoutSubviews;
 - (void)setServiceColor:(BOOL)arg1 animated:(BOOL)arg2;
 
 @end

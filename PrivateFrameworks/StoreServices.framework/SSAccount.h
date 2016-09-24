@@ -3,31 +3,31 @@
  */
 
 @interface SSAccount : NSObject <NSCopying, SSXPCCoding> {
-    int _accountKind;
-    NSString *_accountName;
-    int _accountScope;
-    int _accountSource;
-    BOOL _active;
-    BOOL _activeLockerAccount;
-    NSString *_altDSID;
-    int _availableServiceTypes;
-    NSData *_bioToken;
-    NSString *_creditsString;
-    BOOL _demo;
-    BOOL _didFallbackToPassword;
-    int _enabledServiceTypes;
-    NSString *_firstName;
-    int _freeDownloadsPasswordSetting;
-    NSString *_itunesPassSerialNumber;
-    NSString *_lastName;
-    NSLock *_lock;
-    BOOL _managedAppleID;
-    BOOL _newCustomer;
-    int _paidPurchasesPasswordSetting;
-    NSString *_secureToken;
-    NSMutableDictionary *_serviceEligibility;
-    NSString *_storeFrontID;
-    NSNumber *_uniqueIdentifier;
+    int  _accountKind;
+    NSString * _accountName;
+    int  _accountScope;
+    int  _accountSource;
+    BOOL  _active;
+    BOOL  _activeLockerAccount;
+    NSString * _altDSID;
+    int  _availableServiceTypes;
+    NSData * _bioToken;
+    NSString * _creditsString;
+    BOOL  _demo;
+    BOOL  _didFallbackToPassword;
+    int  _enabledServiceTypes;
+    NSString * _firstName;
+    int  _freeDownloadsPasswordSetting;
+    NSString * _itunesPassSerialNumber;
+    NSString * _lastName;
+    NSLock * _lock;
+    BOOL  _managedAppleID;
+    BOOL  _newCustomer;
+    int  _paidPurchasesPasswordSetting;
+    NSString * _secureToken;
+    NSMutableDictionary * _serviceEligibility;
+    NSString * _storeFrontID;
+    NSNumber * _uniqueIdentifier;
 }
 
 @property (copy) NSString *ITunesPassSerialNumber;

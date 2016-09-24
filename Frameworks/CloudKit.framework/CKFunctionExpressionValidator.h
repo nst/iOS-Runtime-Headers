@@ -3,8 +3,8 @@
  */
 
 @interface CKFunctionExpressionValidator : CKPredicateValidatorInstance {
-    NSArray *_argumentValidators;
-    NSString *_functionName;
+    NSArray * _argumentValidators;
+    NSString * _functionName;
 }
 
 @property (nonatomic, retain) NSArray *argumentValidators;

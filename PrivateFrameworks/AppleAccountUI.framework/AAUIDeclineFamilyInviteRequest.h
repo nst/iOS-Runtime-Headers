@@ -3,7 +3,7 @@
  */
 
 @interface AAUIDeclineFamilyInviteRequest : AAFamilyRequest {
-    NSString *_inviteCode;
+    NSString * _inviteCode;
 }
 
 @property (nonatomic, copy) NSString *inviteCode;

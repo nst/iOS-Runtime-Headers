@@ -3,12 +3,12 @@
  */
 
 @interface HSResponse : NSObject {
-    NSString *_MIMEType;
-    NSError *_error;
-    unsigned int _responseCode;
-    NSData *_responseData;
-    NSURL *_responseDataFileURL;
-    NSDictionary *_responseHeaderFields;
+    NSString * _MIMEType;
+    NSError * _error;
+    unsigned int  _responseCode;
+    NSData * _responseData;
+    NSURL * _responseDataFileURL;
+    NSDictionary * _responseHeaderFields;
 }
 
 @property (nonatomic, readonly) NSString *MIMEType;

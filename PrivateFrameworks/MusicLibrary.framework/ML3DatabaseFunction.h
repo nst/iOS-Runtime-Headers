@@ -3,8 +3,8 @@
  */
 
 @interface ML3DatabaseFunction : NSObject {
-    int _argumentCount;
-    NSString *_name;
+    int  _argumentCount;
+    NSString * _name;
 }
 
 @property (nonatomic) int argumentCount;

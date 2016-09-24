@@ -5,10 +5,10 @@
 @interface GEOPBTransitZoomRangeString : PBCodable <NSCopying> {
     struct { 
         unsigned int minZoom : 1; 
-    } _has;
-    NSString *_labelLanguage;
-    NSString *_labelText;
-    unsigned int _minZoom;
+    }  _has;
+    NSString * _labelLanguage;
+    NSString * _labelText;
+    unsigned int  _minZoom;
 }
 
 @property (nonatomic, readonly) BOOL hasLabelLanguage;

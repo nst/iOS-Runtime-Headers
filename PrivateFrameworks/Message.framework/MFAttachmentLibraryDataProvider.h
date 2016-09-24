@@ -3,7 +3,7 @@
  */
 
 @interface MFAttachmentLibraryDataProvider : MFAttachmentDataProvider {
-    MFWeakReferenceHolder *_messageLibraryHolder;
+    MFWeakReferenceHolder * _messageLibraryHolder;
 }
 
 @property (nonatomic) MFMessageLibrary *messageLibrary;

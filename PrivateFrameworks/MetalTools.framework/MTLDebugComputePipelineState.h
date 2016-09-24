@@ -3,21 +3,29 @@
  */
 
 @interface MTLDebugComputePipelineState : MTLToolsComputePipelineState {
-    MTLComputePipelineDescriptor *_descriptor;
-    <MTLFunction> *_function;
-    MTLComputePipelineReflection *_reflection;
+    MTLComputePipelineDescriptor * _descriptor;
+    <MTLFunction> * _function;
+    struct { bool x1; unsigned int x2; struct { /* ? */ } *x3; } * _imageFilterFunctionInfo;
+    NSArray * _imageFilterFunctions;
+    MTLComputePipelineReflection * _reflection;
 }
 
 @property (nonatomic, readonly) MTLComputePipelineDescriptor *descriptor;
 @property (nonatomic, readonly) <MTLFunction> *function;
+@property (nonatomic, readonly) struct { bool x1; unsigned int x2; struct { /* ? */ } *x3; }*imageFilterFunctionInfo;
+@property (nonatomic, readonly) NSArray *imageFilterFunctions;
 @property (nonatomic, readonly) MTLComputePipelineReflection *reflection;
 
 - (void).cxx_destruct;
+- (void)dealloc;
 - (id)description;
 - (id)descriptor;
 - (id)function;
 - (id)getParameter:(id)arg1;
+- (struct { bool x1; unsigned int x2; struct { /* ? */ } *x3; }*)imageFilterFunctionInfo;
+- (id)imageFilterFunctions;
 - (id)initWithComputePipelineState:(id)arg1 reflection:(id)arg2 parent:(id)arg3 descriptor:(id)arg4;
 - (id)reflection;
+- (void)setImageFilterFunctions:(id)arg1 imageFilterFunctionInfo:(const struct { bool x1; unsigned int x2; struct { /* ? */ } *x3; }*)arg2;
 
 @end

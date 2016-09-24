@@ -3,9 +3,9 @@
  */
 
 @interface WLDeviceAuthenticationController : WLDaemonController {
-    <WLDeviceAuthenticatorProtocol> *_authenticator;
-    <WLDeviceAuthenticationDelegate> *_delegate;
-    WLSourceDevice *_device;
+    <WLDeviceAuthenticatorProtocol> * _authenticator;
+    <WLDeviceAuthenticationDelegate> * _delegate;
+    WLSourceDevice * _device;
 }
 
 @property (nonatomic, readonly) <WLDeviceAuthenticationDelegate> *delegate;

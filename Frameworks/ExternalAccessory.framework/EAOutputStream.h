@@ -3,21 +3,21 @@
  */
 
 @interface EAOutputStream : NSOutputStream {
-    EAAccessory *_accessory;
-    struct __CFSocket { } *_cfSocket;
-    id _delegate;
-    BOOL _hasSpaceAvailable;
-    BOOL _hasSpaceAvailableEventSent;
-    BOOL _isAtEndEventSent;
-    BOOL _isOpenCompletedEventSent;
-    struct __CFRunLoop { } *_runLoop;
-    struct __CFRunLoopSource { } *_runLoopSource;
-    NSRecursiveLock *_runloopLock;
-    EASession *_session;
-    int _sock;
-    struct __CFRunLoopSource { } *_socketRunLoopSource;
-    NSRecursiveLock *_statusLock;
-    unsigned int _streamStatus;
+    EAAccessory * _accessory;
+    struct __CFSocket { } * _cfSocket;
+    id  _delegate;
+    BOOL  _hasSpaceAvailable;
+    BOOL  _hasSpaceAvailableEventSent;
+    BOOL  _isAtEndEventSent;
+    BOOL  _isOpenCompletedEventSent;
+    struct __CFRunLoop { } * _runLoop;
+    struct __CFRunLoopSource { } * _runLoopSource;
+    NSRecursiveLock * _runloopLock;
+    EASession * _session;
+    int  _sock;
+    struct __CFRunLoopSource { } * _socketRunLoopSource;
+    NSRecursiveLock * _statusLock;
+    unsigned int  _streamStatus;
 }
 
 - (void)_accessoryDidDisconnect:(id)arg1;

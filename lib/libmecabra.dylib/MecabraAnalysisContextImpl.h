@@ -3,11 +3,11 @@
  */
 
 @interface MecabraAnalysisContextImpl : NSObject {
-    NSMutableArray *_candidateContext;
-    NSMutableString *_candidateContextString;
-    BOOL _rebuildCandidateContextString;
-    NSString *_stringBeforeCaret;
-    NSString *_stringContext;
+    NSMutableArray * _candidateContext;
+    NSMutableString * _candidateContextString;
+    BOOL  _rebuildCandidateContextString;
+    NSString * _stringBeforeCaret;
+    NSString * _stringContext;
 }
 
 @property (nonatomic, retain) NSMutableArray *candidateContext;

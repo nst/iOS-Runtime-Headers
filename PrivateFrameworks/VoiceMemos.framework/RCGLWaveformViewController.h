@@ -3,57 +3,58 @@
  */
 
 @interface RCGLWaveformViewController : UIViewController <RCGLWaveformRendererDelegate, RCWaveformSelectionOverlayDelegate, UIScrollViewDelegate> {
-    RCUIConfiguration *_UIConfiguration;
-    RCAcousticAnnotationView *_acousticAnnotationView;
-    UIView *_bottomLineView;
-    BOOL _capturing;
-    BOOL _clipTimeMarkersToDuration;
-    double _currentTime;
-    unsigned int _currentTimeDisplayOptions;
-    <RCGLWaveformViewDelegate> *_delegate;
-    BOOL _dragEnding;
-    double _duration;
+    RCUIConfiguration * _UIConfiguration;
+    RCAcousticAnnotationView * _acousticAnnotationView;
+    UIView * _backgroundView;
+    UIView * _bottomLineView;
+    BOOL  _capturing;
+    BOOL  _clipTimeMarkersToDuration;
+    double  _currentTime;
+    unsigned int  _currentTimeDisplayOptions;
+    <RCGLWaveformViewDelegate> * _delegate;
+    BOOL  _dragEnding;
+    double  _duration;
     struct { 
         double beginTime; 
         double endTime; 
-    } _highlightTimeRange;
-    BOOL _isScrollViewAutoScrolling;
-    BOOL _isScrollViewAutoScrollingBeginning;
-    BOOL _isScrollViewAutoScrollingPaused;
-    RCLayoutMetrics *_layoutMetrics;
-    float _layoutWidth;
-    double _maximumSelectionDuration;
-    double _overlayAutoscrollBaseDuration;
-    double _overlayAutoscrollRateForSelectionTracking;
-    NSTimer *_overlayAutoscrollTimer;
-    BOOL _playing;
-    RCGLWaveformRenderer *_rendererController;
-    float _resumingToForegroundAutoscrollRate;
-    RCWaveformScrollView *_scrollView;
-    BOOL _scrubbing;
-    BOOL _scrubbingEnabled;
+    }  _highlightTimeRange;
+    BOOL  _isScrollViewAutoScrolling;
+    BOOL  _isScrollViewAutoScrollingBeginning;
+    BOOL  _isScrollViewAutoScrollingPaused;
+    RCLayoutMetrics * _layoutMetrics;
+    double  _layoutWidth;
+    double  _maximumSelectionDuration;
+    double  _overlayAutoscrollBaseDuration;
+    double  _overlayAutoscrollRateForSelectionTracking;
+    NSTimer * _overlayAutoscrollTimer;
+    BOOL  _playing;
+    RCGLWaveformRenderer * _rendererController;
+    double  _resumingToForegroundAutoscrollRate;
+    RCWaveformScrollView * _scrollView;
+    BOOL  _scrubbing;
+    BOOL  _scrubbingEnabled;
     struct { 
         double beginTime; 
         double endTime; 
-    } _selectedTimeRange;
-    BOOL _selectedTimeRangeEditingEnabled;
-    BOOL _selectedTimeRangeScrubbingEnabled;
-    RCWaveformSelectionOverlay *_selectionOverlay;
-    float _selectionVisibleMargin;
-    BOOL _shouldUpdateInDisplayLink;
-    double _timeBeganAutoscrolling;
-    NSMutableArray *_timeMarkerViews;
-    BOOL _timeMarkerViewsNeedInitialLayout;
-    BOOL _timeMarkerViewsUpdatesDisabled;
-    UIView *_topLineView;
+    }  _selectedTimeRange;
+    BOOL  _selectedTimeRangeEditingEnabled;
+    BOOL  _selectedTimeRangeScrubbingEnabled;
+    RCWaveformSelectionOverlay * _selectionOverlay;
+    double  _selectionVisibleMargin;
+    BOOL  _shouldUpdateInDisplayLink;
+    double  _timeBeganAutoscrolling;
+    NSMutableArray * _timeMarkerViews;
+    BOOL  _timeMarkerViewsNeedInitialLayout;
+    BOOL  _timeMarkerViewsUpdatesDisabled;
+    UIView * _topLineView;
     struct { 
         double beginTime; 
         double endTime; 
-    } _visibleTimeRange;
+    }  _visibleTimeRange;
     struct { 
         double beginTime; 
         double endTime; 
-    } _visibleTimeRangeBeforeSelectionTracking;
+    }  _visibleTimeRangeBeforeSelectionTracking;
 }
 
 @property (nonatomic, copy) RCUIConfiguration *UIConfiguration;
@@ -76,7 +77,7 @@
 @property (nonatomic) struct { double x1; double x2; } selectedTimeRange;
 @property (getter=isSelectedTimeRangeEditingEnabled, nonatomic) BOOL selectedTimeRangeEditingEnabled;
 @property (getter=isSelectedTimeRangeEditingEnabled, nonatomic) BOOL selectedTimeRangeScrubbingEnabled;
-@property (nonatomic) float selectionVisibleMargin;
+@property (nonatomic) double selectionVisibleMargin;
 @property (readonly) Class superclass;
 @property (nonatomic) struct { double x1; double x2; } visibleTimeRange;
 
@@ -85,7 +86,7 @@
 - (void)_applyUIConfiguration;
 - (void)_autoscrollOverlayIfNecessary;
 - (void)_displayLinkDidUpdate:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForTimeMarkerView:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForTimeMarkerView:(id)arg1;
 - (BOOL)_isScrubbing;
 - (BOOL)_isScrubbingSelectionTimeRange;
 - (void)_layoutTimeMarkerViewsForCurrentlyVisibleTimeRange;
@@ -131,12 +132,12 @@
 - (void)rc_screenUpdatesDisabledDidChange;
 - (void)reloadOverlayOffsets;
 - (void)resumeAutoscrollingIfPaused;
-- (void)scrollView:(id)arg1 didChangeContentOffsetToOffset:(struct CGPoint { float x1; float x2; })arg2;
-- (void)scrollView:(id)arg1 willChangeContentOffsetToOffset:(struct CGPoint { float x1; float x2; })arg2;
+- (void)scrollView:(id)arg1 didChangeContentOffsetToOffset:(struct CGPoint { double x1; double x2; })arg2;
+- (void)scrollView:(id)arg1 willChangeContentOffsetToOffset:(struct CGPoint { double x1; double x2; })arg2;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
 - (BOOL)scrubbingEnabled;
 - (struct { double x1; double x2; })selectedTimeRange;
 - (float)selectionVisibleMargin;
@@ -168,7 +169,7 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
 - (struct { double x1; double x2; })visibleTimeRange;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })waveformRectForLayoutBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })waveformRectForLayoutBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)waveformRenderer:(id)arg1 contentWidthDidChange:(float)arg2;
 - (void)waveformRendererContentDidFinishLoading:(id)arg1;
 - (void)waveformRendererDidSynchronizeToDisplayLink:(id)arg1;

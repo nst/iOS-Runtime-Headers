@@ -3,16 +3,16 @@
  */
 
 @interface RKLexicalEntity : NSObject {
-    NSString *_internalWord;
-    NSString *_language;
-    NSString *_lemma;
-    NSString *_partOfSpeech;
-    NSString *_string;
+    NSString * _internalWord;
+    NSString * _language;
+    NSString * _lemma;
+    NSString * _partOfSpeech;
+    NSString * _string;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _tokenRange;
-    NSString *_tokenType;
+    }  _tokenRange;
+    NSString * _tokenType;
 }
 
 @property (retain) NSString *internalWord;

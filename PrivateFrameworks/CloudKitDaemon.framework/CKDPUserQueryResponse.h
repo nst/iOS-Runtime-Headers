@@ -3,7 +3,7 @@
  */
 
 @interface CKDPUserQueryResponse : PBCodable <NSCopying> {
-    CKDPUser *_user;
+    CKDPUser * _user;
 }
 
 @property (nonatomic, readonly) BOOL hasUser;

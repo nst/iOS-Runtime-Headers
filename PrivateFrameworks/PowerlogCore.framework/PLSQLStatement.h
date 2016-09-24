@@ -3,12 +3,12 @@
  */
 
 @interface PLSQLStatement : NSObject {
-    struct sqlite3 { } *_dbConnection;
-    NSObject<OS_dispatch_semaphore> *_dbSem;
-    BOOL _isDelete;
-    BOOL _isInsert;
-    NSString *_sqlQuery;
-    struct sqlite3_stmt { } *_statement;
+    struct sqlite3 { } * _dbConnection;
+    NSObject<OS_dispatch_semaphore> * _dbSem;
+    BOOL  _isDelete;
+    BOOL  _isInsert;
+    NSString * _sqlQuery;
+    struct sqlite3_stmt { } * _statement;
 }
 
 @property struct sqlite3 { }*dbConnection;

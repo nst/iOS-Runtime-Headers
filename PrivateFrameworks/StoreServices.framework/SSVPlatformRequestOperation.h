@@ -3,18 +3,18 @@
  */
 
 @interface SSVPlatformRequestOperation : NSOperation {
-    NSMutableDictionary *_additionalParameters;
-    NSString *_caller;
-    SSVPlatformContext *_context;
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
-    NSString *_imageProfile;
-    NSArray *_itemIdentifiers;
-    NSString *_keyProfile;
-    int _personalizationStyle;
-    id /* block */ _responseBlock;
-    NSString *_storeFrontSuffix;
-    NSNumber *_timeoutInterval;
-    NSString *_userAgent;
+    NSMutableDictionary * _additionalParameters;
+    NSString * _caller;
+    SSVPlatformContext * _context;
+    NSObject<OS_dispatch_queue> * _dispatchQueue;
+    NSString * _imageProfile;
+    NSArray * _itemIdentifiers;
+    NSString * _keyProfile;
+    int  _personalizationStyle;
+    id /* block */  _responseBlock;
+    NSString * _storeFrontSuffix;
+    NSNumber * _timeoutInterval;
+    NSString * _userAgent;
 }
 
 @property (copy) NSString *imageProfile;

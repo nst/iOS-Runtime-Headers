@@ -3,14 +3,14 @@
  */
 
 @interface MusicJSNativeViewController : IKJSEventListenerObject <IKDOMFeature, MusicJSNativeViewController> {
-    BOOL _configured;
-    NSString *_featureName;
-    NSString *_nativeViewIdentifier;
-    IKDOMElement *_ownerDOMElement;
-    IKJSObject *_ownerForScriptObjectGraph;
-    UIViewController<MusicClientContextConsuming> *_ownerViewController;
-    SKUIViewElement *_ownerViewElement;
-    int _presentationSource;
+    BOOL  _configured;
+    NSString * _featureName;
+    NSString * _nativeViewIdentifier;
+    IKDOMElement * _ownerDOMElement;
+    IKJSObject * _ownerForScriptObjectGraph;
+    UIViewController<MusicClientContextConsuming> * _ownerViewController;
+    SKUIViewElement * _ownerViewElement;
+    int  _presentationSource;
 }
 
 @property (nonatomic, readonly) IKAppContext *appContext;

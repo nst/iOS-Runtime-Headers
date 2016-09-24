@@ -3,9 +3,9 @@
  */
 
 @interface FigIOSurfaceData : NSData {
-    const void *_bytes;
-    unsigned int _length;
-    struct __IOSurface { } *_surface;
+    const void * _bytes;
+    unsigned int  _length;
+    struct __IOSurface { } * _surface;
 }
 
 + (id)dataWithIOSurface:(struct __IOSurface { }*)arg1;

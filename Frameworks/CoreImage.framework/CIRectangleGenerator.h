@@ -3,9 +3,9 @@
  */
 
 @interface CIRectangleGenerator : CIFilter {
-    CIColor *inputColor;
-    NSNumber *inputEdgeBlur;
-    CIVector *inputRectangle;
+    CIColor * inputColor;
+    NSNumber * inputEdgeBlur;
+    CIVector * inputRectangle;
 }
 
 + (id)customAttributes;

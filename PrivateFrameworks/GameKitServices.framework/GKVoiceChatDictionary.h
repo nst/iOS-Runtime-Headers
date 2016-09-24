@@ -3,9 +3,9 @@
  */
 
 @interface GKVoiceChatDictionary : NSObject {
-    NSMutableDictionary *actualDictionary;
-    unsigned long orignalCallID;
-    unsigned int type;
+    NSMutableDictionary * actualDictionary;
+    unsigned long  orignalCallID;
+    unsigned int  type;
 }
 
 @property unsigned long callID;

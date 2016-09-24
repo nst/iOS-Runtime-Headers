@@ -3,21 +3,21 @@
  */
 
 @interface PCInterfaceUsabilityMonitor : NSObject <PCInterfaceUsabilityMonitorProtocol> {
-    NSObject<OS_dispatch_queue> *_delegateQueue;
-    CUTWeakReference *_delegateReference;
-    void *_dynamicStore;
-    int _interfaceIdentifier;
-    NSString *_interfaceName;
-    BOOL _isInternetReachable;
-    NSObject<OS_dispatch_queue> *_ivarQueue;
-    int _linkQuality;
-    struct __CFRunLoopSource { } *_linkQualitySource;
-    struct __CFString { } *_lqKey;
-    NSMutableArray *_offTransitions;
-    void *_reachability;
-    unsigned int _thresholdOffTransitionCount;
-    BOOL _trackUsability;
-    double _trackedTimeInterval;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    CUTWeakReference * _delegateReference;
+    void * _dynamicStore;
+    int  _interfaceIdentifier;
+    NSString * _interfaceName;
+    BOOL  _isInternetReachable;
+    NSObject<OS_dispatch_queue> * _ivarQueue;
+    int  _linkQuality;
+    struct __CFRunLoopSource { } * _linkQualitySource;
+    struct __CFString { } * _lqKey;
+    NSMutableArray * _offTransitions;
+    void * _reachability;
+    unsigned int  _thresholdOffTransitionCount;
+    BOOL  _trackUsability;
+    double  _trackedTimeInterval;
 }
 
 @property (nonatomic, readonly) struct __CFString { }*currentRAT;

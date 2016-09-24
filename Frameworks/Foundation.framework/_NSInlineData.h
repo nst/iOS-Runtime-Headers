@@ -3,7 +3,7 @@
  */
 
 @interface _NSInlineData : NSData {
-    unsigned short _length;
+    unsigned short  _length;
 }
 
 - (id)_createDispatchData;

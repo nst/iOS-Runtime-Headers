@@ -3,22 +3,22 @@
  */
 
 @interface TSTCellBorder : NSObject <NSCopying, TSSPropertyCommandSerializing, TSTCellDiffing> {
-    TSDStroke *_bottomStroke;
-    int _bottomStrokeOrder;
-    BOOL _definedBottomStroke;
-    BOOL _definedBottomStrokeOrder;
-    BOOL _definedLeftStroke;
-    BOOL _definedLeftStrokeOrder;
-    BOOL _definedRightStroke;
-    BOOL _definedRightStrokeOrder;
-    BOOL _definedTopStroke;
-    BOOL _definedTopStrokeOrder;
-    TSDStroke *_leftStroke;
-    int _leftStrokeOrder;
-    TSDStroke *_rightStroke;
-    int _rightStrokeOrder;
-    TSDStroke *_topStroke;
-    int _topStrokeOrder;
+    TSDStroke * _bottomStroke;
+    int  _bottomStrokeOrder;
+    BOOL  _definedBottomStroke;
+    BOOL  _definedBottomStrokeOrder;
+    BOOL  _definedLeftStroke;
+    BOOL  _definedLeftStrokeOrder;
+    BOOL  _definedRightStroke;
+    BOOL  _definedRightStrokeOrder;
+    BOOL  _definedTopStroke;
+    BOOL  _definedTopStrokeOrder;
+    TSDStroke * _leftStroke;
+    int  _leftStrokeOrder;
+    TSDStroke * _rightStroke;
+    int  _rightStrokeOrder;
+    TSDStroke * _topStroke;
+    int  _topStrokeOrder;
 }
 
 @property (nonatomic, readonly, retain) TSDStroke *bottomStroke;

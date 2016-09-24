@@ -3,17 +3,17 @@
  */
 
 @interface RCAudioSessionRoutingController : NSObject <RCAudioSessionRoutingMPAVRoutingControllerDelegate> {
-    NSArray *_cachedPickableOutputRoutes;
-    AVAudioSessionPortDescription *_cachedPickedInputRoutePortDescription;
-    MPAVRoute *_cachedPickedOutputRoute;
-    BOOL _canReportStateUsingCachedPickedOutputRoute;
-    BOOL _enableProximityMonitorIfAppropriateForInputRoute;
-    BOOL _enableProximityMonitorIfAppropriateForOutputRoute;
-    BOOL _hasYetToPickARouteAndHeadphonesArePresent;
-    RCAudioSessionRoutingMPAVRoutingController *_mpRoutingController;
-    BOOL _shouldInitializeRouteUsingUserDefaults;
-    BOOL _useVoiceMemoSettings;
-    struct __CFArray { } *_weakSessionRoutingAssertions;
+    NSArray * _cachedPickableOutputRoutes;
+    AVAudioSessionPortDescription * _cachedPickedInputRoutePortDescription;
+    MPAVRoute * _cachedPickedOutputRoute;
+    BOOL  _canReportStateUsingCachedPickedOutputRoute;
+    BOOL  _enableProximityMonitorIfAppropriateForInputRoute;
+    BOOL  _enableProximityMonitorIfAppropriateForOutputRoute;
+    BOOL  _hasYetToPickARouteAndHeadphonesArePresent;
+    RCAudioSessionRoutingMPAVRoutingController * _mpRoutingController;
+    BOOL  _shouldInitializeRouteUsingUserDefaults;
+    BOOL  _useVoiceMemoSettings;
+    struct __CFArray { } * _weakSessionRoutingAssertions;
 }
 
 @property (nonatomic, readonly) NSString *activeInputRouteName;

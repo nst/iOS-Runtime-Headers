@@ -3,11 +3,11 @@
  */
 
 @interface EDPane : NSObject {
-    int mActivePane;
-    int mPaneState;
-    EDReference *mTopLeftCell;
-    double mXSplitPosition;
-    double mYSplitPosition;
+    int  mActivePane;
+    int  mPaneState;
+    EDReference * mTopLeftCell;
+    double  mXSplitPosition;
+    double  mYSplitPosition;
 }
 
 + (id)pane;

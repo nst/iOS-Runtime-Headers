@@ -3,7 +3,7 @@
  */
 
 @interface _UIActivityBundleHelper : NSObject {
-    LSBundleProxy *_bundleProxy;
+    LSBundleProxy * _bundleProxy;
 }
 
 @property (nonatomic, retain) LSBundleProxy *bundleProxy;

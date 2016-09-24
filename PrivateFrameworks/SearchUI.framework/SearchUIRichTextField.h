@@ -2,46 +2,47 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUIRichTextField : UIView {
-    UIView *_contentAdvisoryView;
-    BOOL _hasIcons;
-    NSArray *_orderedLayoutItems;
-    SearchUIRichTextData *_richTextData;
-    UIView *_starRatingView;
-    unsigned int _style;
-    UILabel *_textLabel;
+@interface SearchUIRichTextField : NUIContainerStackView <NUIContainerStackViewDelegate> {
+    SearchUIContentAdvisoryView * _contentAdvisoryView;
+    SearchUIImageView * _iconView;
+    SFRichText * _richText;
+    SearchUIStarView * _starRatingView;
+    unsigned int  _style;
+    SearchUIVibrantLabel * _textLabel;
 }
 
-@property (retain) UIView *contentAdvisoryView;
-@property BOOL hasIcons;
-@property (retain) NSArray *orderedLayoutItems;
-@property (retain) SearchUIRichTextData *richTextData;
-@property (retain) UIView *starRatingView;
+@property (retain) SearchUIContentAdvisoryView *contentAdvisoryView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (retain) SearchUIImageView *iconView;
+@property (retain) SFRichText *richText;
+@property (retain) SearchUIStarView *starRatingView;
 @property unsigned int style;
-@property (retain) UILabel *textLabel;
+@property (readonly) Class superclass;
+@property (retain) SearchUIVibrantLabel *textLabel;
 
-+ (BOOL)richTextIsSingleTextField:(id)arg1;
-+ (BOOL)richTextNeedsFancyVibrancy:(id)arg1;
++ (id)font;
 
 - (void).cxx_destruct;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })containerStackView:(id)arg1 layoutFrameForArrangedSubview:(id)arg2 withProposedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })containerStackView:(id)arg1 minimumSpacingAdjecentToArrangedSubview:(id)arg2;
 - (id)contentAdvisoryView;
-- (BOOL)hasIcons;
-- (id)initWithRichText:(id)arg1 font:(id)arg2 style:(unsigned int)arg3;
-- (void)layoutViewsHorizontally;
-- (id)orderedLayoutItems;
-- (id)richTextData;
+- (id)iconView;
+- (id)initWithStyle:(unsigned int)arg1;
+- (id)richText;
 - (void)setContentAdvisoryView:(id)arg1;
-- (void)setHasIcons:(BOOL)arg1;
-- (void)setOrderedLayoutItems:(id)arg1;
-- (void)setPreferredMaxLayoutWidth:(float)arg1;
-- (void)setRichTextData:(id)arg1;
+- (void)setIconView:(id)arg1;
+- (void)setRichText:(id)arg1;
 - (void)setStarRatingView:(id)arg1;
 - (void)setStyle:(unsigned int)arg1;
 - (void)setTextLabel:(id)arg1;
 - (id)starRatingView;
 - (unsigned int)style;
 - (id)textLabel;
-- (BOOL)updateWithRichText:(id)arg1;
-- (id)viewForLastBaselineLayout;
+- (void)updateContentRating:(id)arg1;
+- (void)updateIcon:(id)arg1;
+- (void)updateStarViewWithRating:(float)arg1;
+- (void)updateWithRichText:(id)arg1;
 
 @end

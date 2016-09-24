@@ -3,10 +3,10 @@
  */
 
 @interface ESDBlipContext : NSObject <OCDDelayedMediaContext> {
-    unsigned int mByteCount;
-    unsigned int mStartOffset;
-    struct SsrwOOStream { int (**x1)(); } *mStream;
-    unsigned int mStreamID;
+    unsigned int  mByteCount;
+    unsigned int  mStartOffset;
+    struct SsrwOOStream { int (**x1)(); } * mStream;
+    unsigned int  mStreamID;
 }
 
 @property (readonly, copy) NSString *debugDescription;

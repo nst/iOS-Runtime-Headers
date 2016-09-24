@@ -3,26 +3,26 @@
  */
 
 @interface HDCodableAuthorization : PBCodable <NSCopying> {
-    long long _authorizationRequest;
-    long long _authorizationStatus;
+    int  _authorizationRequest;
+    int  _authorizationStatus;
     struct { 
         unsigned int authorizationRequest : 1; 
         unsigned int authorizationStatus : 1; 
         unsigned int modificationDate : 1; 
         unsigned int objectType : 1; 
-    } _has;
-    double _modificationDate;
-    long long _objectType;
+    }  _has;
+    double  _modificationDate;
+    int  _objectType;
 }
 
-@property (nonatomic) long long authorizationRequest;
-@property (nonatomic) long long authorizationStatus;
+@property (nonatomic) int authorizationRequest;
+@property (nonatomic) int authorizationStatus;
 @property (nonatomic) BOOL hasAuthorizationRequest;
 @property (nonatomic) BOOL hasAuthorizationStatus;
 @property (nonatomic) BOOL hasModificationDate;
 @property (nonatomic) BOOL hasObjectType;
 @property (nonatomic) double modificationDate;
-@property (nonatomic) long long objectType;
+@property (nonatomic) int objectType;
 
 - (int)_authorizationRequest;
 - (int)_authorizationStatus;
@@ -32,8 +32,8 @@
 - (void)_setAuthorizationStatusWithNumber:(id)arg1;
 - (void)_setDataTypeCodeWithObjectType:(id)arg1;
 - (void)_setModificationDate:(id)arg1;
-- (long long)authorizationRequest;
-- (long long)authorizationStatus;
+- (int)authorizationRequest;
+- (int)authorizationStatus;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -46,16 +46,16 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (double)modificationDate;
-- (long long)objectType;
+- (int)objectType;
 - (BOOL)readFrom:(id)arg1;
-- (void)setAuthorizationRequest:(long long)arg1;
-- (void)setAuthorizationStatus:(long long)arg1;
+- (void)setAuthorizationRequest:(int)arg1;
+- (void)setAuthorizationStatus:(int)arg1;
 - (void)setHasAuthorizationRequest:(BOOL)arg1;
 - (void)setHasAuthorizationStatus:(BOOL)arg1;
 - (void)setHasModificationDate:(BOOL)arg1;
 - (void)setHasObjectType:(BOOL)arg1;
 - (void)setModificationDate:(double)arg1;
-- (void)setObjectType:(long long)arg1;
+- (void)setObjectType:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

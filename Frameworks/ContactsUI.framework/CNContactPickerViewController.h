@@ -3,27 +3,27 @@
  */
 
 @interface CNContactPickerViewController : UIViewController <CNContactPickerContentDelegate> {
-    BOOL _allowsCancel;
-    BOOL _allowsEditing;
-    BOOL _autocloses;
-    NSString *_bannerTitle;
-    NSString *_bannerValue;
-    int _behavior;
-    int _cardActions;
-    BOOL _defaultViewControllerVisible;
-    <CNContactPickerDelegate> *_delegate;
-    NSArray *_displayedPropertyKeys;
-    BOOL _hidesPromptInLandscape;
-    BOOL _hidesSearchableSources;
-    BOOL _ignoreViewWillBePresented;
-    int _mode;
-    BOOL _onlyRealContacts;
-    NSPredicate *_predicateForEnablingContact;
-    NSPredicate *_predicateForSelectionOfContact;
-    NSPredicate *_predicateForSelectionOfProperty;
-    NSString *_prompt;
-    CNContact *_scrollContact;
-    UIViewController<CNContactPickerContentViewController> *_viewController;
+    BOOL  _allowsCancel;
+    BOOL  _allowsEditing;
+    BOOL  _autocloses;
+    NSString * _bannerTitle;
+    NSString * _bannerValue;
+    int  _behavior;
+    int  _cardActions;
+    BOOL  _defaultViewControllerVisible;
+    <CNContactPickerDelegate> * _delegate;
+    NSArray * _displayedPropertyKeys;
+    BOOL  _hidesPromptInLandscape;
+    BOOL  _hidesSearchableSources;
+    BOOL  _ignoreViewWillBePresented;
+    int  _mode;
+    BOOL  _onlyRealContacts;
+    NSPredicate * _predicateForEnablingContact;
+    NSPredicate * _predicateForSelectionOfContact;
+    NSPredicate * _predicateForSelectionOfProperty;
+    NSString * _prompt;
+    CNContact * _scrollContact;
+    UIViewController<CNContactPickerContentViewController> * _viewController;
 }
 
 @property (nonatomic) BOOL allowsCancel;

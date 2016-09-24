@@ -3,7 +3,7 @@
  */
 
 @interface CPLEngineClientCache : CPLEngineStorage <CPLAbstractObject> {
-    NSArray *__lastModifiedProperties;
+    NSArray * __lastModifiedProperties;
 }
 
 @property (setter=_setLastModifiedProperties:, copy) NSArray *_lastModifiedProperties;
@@ -18,7 +18,7 @@
 - (id)_relatedIdentifierForRecordWithIdentifier:(id)arg1;
 - (void)_setLastModifiedProperties:(id)arg1;
 - (BOOL)addRecord:(id)arg1 error:(id*)arg2;
-- (BOOL)applyBatch:(id)arg1 withError:(id*)arg2;
+- (BOOL)applyBatch:(id)arg1 direction:(unsigned int)arg2 withError:(id*)arg3;
 - (id)compactedBatchFromExpandedBatch:(id)arg1;
 - (BOOL)deleteRecordWithIdentifier:(id)arg1 error:(id*)arg2;
 - (BOOL)hasRecordWithIdentifier:(id)arg1;

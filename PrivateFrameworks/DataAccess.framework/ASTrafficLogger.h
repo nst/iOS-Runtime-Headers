@@ -3,10 +3,10 @@
  */
 
 @interface ASTrafficLogger : NSObject {
-    BOOL _didFlushLogs;
-    BOOL _isOutgoingTraffic;
-    NSFileHandle *_lookasideFileHandle;
-    NSString *_lookasideFilePath;
+    BOOL  _didFlushLogs;
+    BOOL  _isOutgoingTraffic;
+    NSFileHandle * _lookasideFileHandle;
+    NSString * _lookasideFilePath;
 }
 
 @property (nonatomic) BOOL isOutgoingTraffic;

@@ -9,12 +9,12 @@
 - (NSArray *)layers;
 - (NSString *)name;
 - (float)scale;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { double x1; double x2; })size;
 
 @optional
 
 - (BOOL)flatImageContainsCornerRadius;
 - (id)radiosityImage;
-- (struct CGSize { float x1; float x2; })radiosityImageScale;
+- (struct CGSize { double x1; double x2; })radiosityImageScale;
 
 @end

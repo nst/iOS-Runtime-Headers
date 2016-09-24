@@ -3,7 +3,7 @@
  */
 
 @interface HDDemoManager : NSObject {
-    _HDDataFaker *_faker;
+    _HDDataFaker * _faker;
 }
 
 - (void).cxx_destruct;

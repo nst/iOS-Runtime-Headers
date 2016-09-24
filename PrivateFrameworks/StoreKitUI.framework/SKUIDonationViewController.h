@@ -3,11 +3,11 @@
  */
 
 @interface SKUIDonationViewController : UINavigationController {
-    NSString *_charityID;
-    SKUIClientContext *_clientContext;
-    SKUIDonationConfiguration *_donationConfiguration;
-    NSOperationQueue *_operationQueue;
-    UIViewController *_placeholderViewController;
+    NSString * _charityID;
+    SKUIClientContext * _clientContext;
+    SKUIDonationConfiguration * _donationConfiguration;
+    NSOperationQueue * _operationQueue;
+    UIViewController * _placeholderViewController;
 }
 
 @property (nonatomic, readonly) NSString *charityIdentifier;

@@ -3,99 +3,99 @@
  */
 
 @interface TSCH3DPrefilteredLineRenderer : NSObject {
-    TSCH3DOrderedDictionary *mCacheObjects;
+    TSCH3DOrderedDictionary * mCacheObjects;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
-                float x; 
-                float r; 
-                float s; 
+                double x; 
+                double r; 
+                double s; 
             } ; 
             union { 
-                float y; 
-                float g; 
-                float t; 
+                double y; 
+                double g; 
+                double t; 
             } ; 
             union { 
-                float z; 
-                float b; 
-                float p; 
+                double z; 
+                double b; 
+                double p; 
             } ; 
             union { 
-                float w; 
-                float a; 
-                float q; 
+                double w; 
+                double a; 
+                double q; 
             } ; 
         } value[4]; 
-    } mModelMatrix;
+    }  mModelMatrix;
     struct tmat3x3<float> { 
         struct tvec3<float> { 
             union { 
-                float x; 
-                float r; 
-                float s; 
+                double x; 
+                double r; 
+                double s; 
             } ; 
             union { 
-                float y; 
-                float g; 
-                float t; 
+                double y; 
+                double g; 
+                double t; 
             } ; 
             union { 
-                float z; 
-                float b; 
-                float p; 
+                double z; 
+                double b; 
+                double p; 
             } ; 
         } value[3]; 
-    } mNormalMatrix;
+    }  mNormalMatrix;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
-                float x; 
-                float r; 
-                float s; 
+                double x; 
+                double r; 
+                double s; 
             } ; 
             union { 
-                float y; 
-                float g; 
-                float t; 
+                double y; 
+                double g; 
+                double t; 
             } ; 
             union { 
-                float z; 
-                float b; 
-                float p; 
+                double z; 
+                double b; 
+                double p; 
             } ; 
             union { 
-                float w; 
-                float a; 
-                float q; 
+                double w; 
+                double a; 
+                double q; 
             } ; 
         } value[4]; 
-    } mNormalizedProjection;
-    TSCH3DSceneRenderPipeline *mPipeline;
+    }  mNormalizedProjection;
+    TSCH3DSceneRenderPipeline * mPipeline;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 
-                float x; 
-                float r; 
-                float s; 
+                double x; 
+                double r; 
+                double s; 
             } ; 
             union { 
-                float y; 
-                float g; 
-                float t; 
+                double y; 
+                double g; 
+                double t; 
             } ; 
             union { 
-                float z; 
-                float b; 
-                float p; 
+                double z; 
+                double b; 
+                double p; 
             } ; 
             union { 
-                float w; 
-                float a; 
-                float q; 
+                double w; 
+                double a; 
+                double q; 
             } ; 
         } value[4]; 
-    } mProjection;
+    }  mProjection;
     struct box<glm::detail::tvec2<int> > { 
         struct tvec2<int> { 
             union { 
@@ -121,14 +121,14 @@
                 int t; 
             } ; 
         } mMax; 
-    } mViewport;
+    }  mViewport;
 }
 
-@property (nonatomic, readonly) struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; } modelMatrix;
-@property (nonatomic, readonly) struct tmat3x3<float> { struct tvec3<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; } x1[3]; } normalMatrix;
-@property (nonatomic, readonly) struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; } normalizedProjection;
+@property (nonatomic, readonly) struct tmat4x4<float> { struct tvec4<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; union { double x_4_2_1; double x_4_2_2; double x_4_2_3; } x_1_1_4; } x1[4]; } modelMatrix;
+@property (nonatomic, readonly) struct tmat3x3<float> { struct tvec3<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; } x1[3]; } normalMatrix;
+@property (nonatomic, readonly) struct tmat4x4<float> { struct tvec4<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; union { double x_4_2_1; double x_4_2_2; double x_4_2_3; } x_1_1_4; } x1[4]; } normalizedProjection;
 @property (nonatomic, readonly) TSCH3DSceneRenderPipeline *pipeline;
-@property (nonatomic, readonly) struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; } projection;
+@property (nonatomic, readonly) struct tmat4x4<float> { struct tvec4<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; union { double x_4_2_1; double x_4_2_2; double x_4_2_3; } x_1_1_4; } x1[4]; } projection;
 @property (nonatomic, readonly) struct box<glm::detail::tvec2<int> > { struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_1_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_1_1_2; } x1; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_2_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_2_1_2; } x2; } viewport;
 
 + (id)renderCacheKey;
@@ -139,17 +139,17 @@
 - (void)dealloc;
 - (void)endWithDidGenerateShaderEffectsBlock:(id /* block */)arg1;
 - (id)init;
-- (struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; })modelMatrix;
-- (struct tmat3x3<float> { struct tvec3<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; } x1[3]; })normalMatrix;
-- (struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; })normalizedProjection;
+- (struct tmat4x4<float> { struct tvec4<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; union { double x_4_2_1; double x_4_2_2; double x_4_2_3; } x_1_1_4; } x1[4]; })modelMatrix;
+- (struct tmat3x3<float> { struct tvec3<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; } x1[3]; })normalMatrix;
+- (struct tmat4x4<float> { struct tvec4<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; union { double x_4_2_1; double x_4_2_2; double x_4_2_3; } x_1_1_4; } x1[4]; })normalizedProjection;
 - (id)p_renderCacheIDFromSetting:(id)arg1;
 - (id)p_renderCacheKey;
 - (void)p_setupShaderEffectsForSetting:(id)arg1;
 - (BOOL)p_shouldRenderWithSetting:(id)arg1 returningCacheObject:(id*)arg2;
 - (id)pipeline;
-- (struct tmat4x4<float> { struct tvec4<float> { union { float x_1_2_1; float x_1_2_2; float x_1_2_3; } x_1_1_1; union { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_1_1_2; union { float x_3_2_1; float x_3_2_2; float x_3_2_3; } x_1_1_3; union { float x_4_2_1; float x_4_2_2; float x_4_2_3; } x_1_1_4; } x1[4]; })projection;
+- (struct tmat4x4<float> { struct tvec4<float> { union { double x_1_2_1; double x_1_2_2; double x_1_2_3; } x_1_1_1; union { double x_2_2_1; double x_2_2_2; double x_2_2_3; } x_1_1_2; union { double x_3_2_1; double x_3_2_2; double x_3_2_3; } x_1_1_3; union { double x_4_2_1; double x_4_2_2; double x_4_2_3; } x_1_1_4; } x1[4]; })projection;
 - (void)renderLineBufferWithSetting:(id)arg1 vertices:(id)arg2 normals:(id)arg3 diffuseTexcoords:(id)arg4;
-- (void)renderWithSetting:(id)arg1 fromVertex:(const struct PrefilteredLineVertexProperties { struct tvec3<float> {} *x1; struct tvec3<float> {} *x2; struct tvec4<float> {} *x3; int x4; struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; } x_5_1_1; struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_2_2_2; } x_5_1_2; } x5; }*)arg2 toVertex:(const struct PrefilteredLineVertexProperties { struct tvec3<float> {} *x1; struct tvec3<float> {} *x2; struct tvec4<float> {} *x3; int x4; struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_1_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_1_2_2; } x_5_1_1; struct tvec2<float> { union { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_2_2_1; union { float x_2_3_1; float x_2_3_2; float x_2_3_3; } x_2_2_2; } x_5_1_2; } x5; }*)arg3;
+- (void)renderWithSetting:(id)arg1 fromVertex:(const struct PrefilteredLineVertexProperties { struct tvec3<float> {} *x1; struct tvec3<float> {} *x2; struct tvec4<float> {} *x3; int x4; struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { double x_1_3_1; double x_1_3_2; double x_1_3_3; } x_1_2_1; union { double x_2_3_1; double x_2_3_2; double x_2_3_3; } x_1_2_2; } x_5_1_1; struct tvec2<float> { union { double x_1_3_1; double x_1_3_2; double x_1_3_3; } x_2_2_1; union { double x_2_3_1; double x_2_3_2; double x_2_3_3; } x_2_2_2; } x_5_1_2; } x5; }*)arg2 toVertex:(const struct PrefilteredLineVertexProperties { struct tvec3<float> {} *x1; struct tvec3<float> {} *x2; struct tvec4<float> {} *x3; int x4; struct box<glm::detail::tvec2<float> > { struct tvec2<float> { union { double x_1_3_1; double x_1_3_2; double x_1_3_3; } x_1_2_1; union { double x_2_3_1; double x_2_3_2; double x_2_3_3; } x_1_2_2; } x_5_1_1; struct tvec2<float> { union { double x_1_3_1; double x_1_3_2; double x_1_3_3; } x_2_2_1; union { double x_2_3_1; double x_2_3_2; double x_2_3_3; } x_2_2_2; } x_5_1_2; } x5; }*)arg3;
 - (struct box<glm::detail::tvec2<int> > { struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_1_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_1_1_2; } x1; struct tvec2<int> { union { int x_1_2_1; int x_1_2_2; int x_1_2_3; } x_2_1_1; union { int x_2_2_1; int x_2_2_2; int x_2_2_3; } x_2_1_2; } x2; })viewport;
 
 @end

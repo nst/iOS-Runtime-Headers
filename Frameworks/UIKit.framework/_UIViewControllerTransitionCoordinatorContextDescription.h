@@ -3,35 +3,35 @@
  */
 
 @interface _UIViewControllerTransitionCoordinatorContextDescription : NSObject <NSSecureCoding> {
-    BOOL _animated;
-    BOOL _cancelled;
-    int _completionCurve;
-    float _completionVelocity;
-    int _fromOrientation;
-    BOOL _interactive;
-    float _percentComplete;
+    BOOL  _animated;
+    BOOL  _cancelled;
+    int  _completionCurve;
+    double  _completionVelocity;
+    int  _fromOrientation;
+    BOOL  _interactive;
+    double  _percentComplete;
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    } _targetTransform;
-    int _toOrientation;
-    float _transitionDuration;
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
+    }  _targetTransform;
+    int  _toOrientation;
+    double  _transitionDuration;
 }
 
 @property (getter=isAnimated, nonatomic) BOOL animated;
 @property (getter=isCancelled, nonatomic) BOOL cancelled;
 @property (nonatomic) int completionCurve;
-@property (nonatomic) float completionVelocity;
+@property (nonatomic) double completionVelocity;
 @property (nonatomic) int fromOrientation;
 @property (getter=isInteractive, nonatomic) BOOL interactive;
-@property (nonatomic) float percentComplete;
-@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } targetTransform;
+@property (nonatomic) double percentComplete;
+@property (nonatomic) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } targetTransform;
 @property (nonatomic) int toOrientation;
-@property (nonatomic) float transitionDuration;
+@property (nonatomic) double transitionDuration;
 
 + (id)descriptionForTransitionCoordinatorContext:(id)arg1;
 + (BOOL)supportsSecureCoding;
@@ -52,10 +52,10 @@
 - (void)setFromOrientation:(int)arg1;
 - (void)setInteractive:(BOOL)arg1;
 - (void)setPercentComplete:(float)arg1;
-- (void)setTargetTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setTargetTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (void)setToOrientation:(int)arg1;
 - (void)setTransitionDuration:(float)arg1;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })targetTransform;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })targetTransform;
 - (int)toOrientation;
 - (float)transitionDuration;
 

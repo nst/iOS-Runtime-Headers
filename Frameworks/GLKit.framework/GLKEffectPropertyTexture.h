@@ -4,27 +4,27 @@
 
 @interface GLKEffectPropertyTexture : GLKEffectProperty {
     struct GLKBigInt_s { 
-        unsigned long long n0; 
-        unsigned long long n1; 
-    } _allFshMasks;
-    unsigned char _enabled;
-    int _envMode;
-    NSString *_filePath;
-    unsigned char _matrixEnabled;
-    unsigned int _name;
-    unsigned int _target;
-    NSMutableArray *_texGenArray;
-    GLKEffectPropertyTexGen *_texGenR;
-    GLKEffectPropertyTexGen *_texGenS;
-    GLKEffectPropertyTexGen *_texGenT;
-    int _textureIndex;
-    int _unit2dLoc;
-    char *_unit2dNameString;
-    int _unitCubeLoc;
-    char *_unitCubeNameString;
+        unsigned int n0; 
+        unsigned int n1; 
+    }  _allFshMasks;
+    unsigned char  _enabled;
+    int  _envMode;
+    NSString * _filePath;
+    unsigned char  _matrixEnabled;
+    unsigned int  _name;
+    unsigned int  _target;
+    NSMutableArray * _texGenArray;
+    GLKEffectPropertyTexGen * _texGenR;
+    GLKEffectPropertyTexGen * _texGenS;
+    GLKEffectPropertyTexGen * _texGenT;
+    int  _textureIndex;
+    int  _unit2dLoc;
+    char * _unit2dNameString;
+    int  _unitCubeLoc;
+    char * _unitCubeNameString;
 }
 
-@property (nonatomic, readonly) struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; } allFshMasks;
+@property (nonatomic, readonly) struct GLKBigInt_s { unsigned int x1; unsigned int x2; } allFshMasks;
 @property (nonatomic) unsigned char enabled;
 @property (nonatomic) int envMode;
 @property (nonatomic, readonly) NSString *filePath;
@@ -45,10 +45,10 @@
 @property (nonatomic, readonly) unsigned char vNormalEyeMask;
 @property (nonatomic, readonly) unsigned char vPositionEyeMask;
 
-+ (void)clearAllTexturingMasks:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)arg1 fshMask:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)arg2;
++ (void)clearAllTexturingMasks:(struct GLKBigInt_s { unsigned int x1; unsigned int x2; }*)arg1 fshMask:(struct GLKBigInt_s { unsigned int x1; unsigned int x2; }*)arg2;
 + (void)setStaticMasksWithVshRoot:(id)arg1 fshRoot:(id)arg2;
 
-- (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })allFshMasks;
+- (struct GLKBigInt_s { unsigned int x1; unsigned int x2; })allFshMasks;
 - (void)bind;
 - (void)dealloc;
 - (id)description;

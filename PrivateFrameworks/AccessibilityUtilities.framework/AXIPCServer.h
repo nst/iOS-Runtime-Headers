@@ -3,21 +3,21 @@
  */
 
 @interface AXIPCServer : NSObject {
-    unsigned int _assignedServerPort;
-    id /* block */ _clientInvalidationHandler;
-    unsigned int _clientInvalidationPort;
-    struct __CFRunLoopSource { } *_clientInvalidationSource;
-    NSMutableSet *_connectedClients;
-    unsigned int _customQueueSize;
-    id /* block */ _defaultHandler;
-    NSMutableDictionary *_entitlements;
-    NSMutableDictionary *_handlers;
-    BOOL _perPidService;
-    BOOL _running;
-    unsigned int _serverPort;
-    struct __CFRunLoopSource { } *_serverRunLoopSource;
-    NSString *_serviceName;
-    NSMutableDictionary *_validSecurityTokens;
+    unsigned int  _assignedServerPort;
+    id /* block */  _clientInvalidationHandler;
+    unsigned int  _clientInvalidationPort;
+    struct __CFRunLoopSource { } * _clientInvalidationSource;
+    NSMutableSet * _connectedClients;
+    unsigned int  _customQueueSize;
+    id /* block */  _defaultHandler;
+    NSMutableDictionary * _entitlements;
+    NSMutableDictionary * _handlers;
+    BOOL  _perPidService;
+    BOOL  _running;
+    unsigned int  _serverPort;
+    struct __CFRunLoopSource { } * _serverRunLoopSource;
+    NSString * _serviceName;
+    NSMutableDictionary * _validSecurityTokens;
 }
 
 @property (nonatomic, copy) id /* block */ clientInvalidationCallback;

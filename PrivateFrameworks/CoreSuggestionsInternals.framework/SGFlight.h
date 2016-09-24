@@ -3,10 +3,10 @@
  */
 
 @interface SGFlight : NSObject {
-    NSString *_airline;
-    NSString *_arrivalAirportDescription;
-    NSString *_departureAirportDescription;
-    NSString *_flightno;
+    NSString * _airline;
+    NSString * _arrivalAirportDescription;
+    NSString * _departureAirportDescription;
+    NSString * _flightno;
 }
 
 @property (nonatomic, readonly) NSString *airline;

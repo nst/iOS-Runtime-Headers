@@ -3,32 +3,32 @@
  */
 
 @interface NSMigrationManager : NSObject {
-    NSDictionary *_destinationEntitiesByVersionHash;
-    NSManagedObjectContext *_destinationManagedObjectContext;
-    NSManagedObjectModel *_destinationModel;
-    NSMappingModel *_mappingModel;
-    NSError *_migrationCancellationError;
-    NSMigrationContext *_migrationContext;
+    NSDictionary * _destinationEntitiesByVersionHash;
+    NSManagedObjectContext * _destinationManagedObjectContext;
+    NSManagedObjectModel * _destinationModel;
+    NSMappingModel * _mappingModel;
+    NSError * _migrationCancellationError;
+    NSMigrationContext * _migrationContext;
     struct _migrationManagerFlags { 
         unsigned int _migrationWasCancelled : 1; 
         unsigned int _usesStoreSpecificMigrationManager : 1; 
         unsigned int _reservedMigrationManager : 30; 
-    } _migrationManagerFlags;
-    id _reserved1;
-    id _reserved2;
-    id _reserved3;
-    id _reserved4;
-    NSDictionary *_sourceEntitiesByVersionHash;
-    NSManagedObjectContext *_sourceManagedObjectContext;
-    NSManagedObjectModel *_sourceModel;
-    NSDictionary *_userInfo;
+    }  _migrationManagerFlags;
+    id  _reserved1;
+    id  _reserved2;
+    id  _reserved3;
+    id  _reserved4;
+    NSDictionary * _sourceEntitiesByVersionHash;
+    NSManagedObjectContext * _sourceManagedObjectContext;
+    NSManagedObjectModel * _sourceModel;
+    NSDictionary * _userInfo;
 }
 
 @property (readonly) NSEntityMapping *currentEntityMapping;
 @property (readonly) NSManagedObjectContext *destinationContext;
 @property (readonly) NSManagedObjectModel *destinationModel;
 @property (readonly) NSMappingModel *mappingModel;
-@property (readonly) float migrationProgress;
+@property (readonly) double migrationProgress;
 @property (readonly) NSManagedObjectContext *sourceContext;
 @property (readonly) NSManagedObjectModel *sourceModel;
 @property (nonatomic, retain) NSDictionary *userInfo;

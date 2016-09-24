@@ -3,7 +3,7 @@
  */
 
 @interface IKCSSRuleList : NSObject {
-    NSMutableArray *rules;
+    NSMutableArray * rules;
 }
 
 - (void).cxx_destruct;

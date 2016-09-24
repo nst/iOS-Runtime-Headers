@@ -3,10 +3,10 @@
  */
 
 @interface PLXPCResponderOperatorComposition : NSObject {
-    PLOperator *_operator;
-    id /* block */ _operatorBlock;
-    NSDictionary *_registration;
-    NSObject<OS_dispatch_queue> *_workQueue;
+    PLOperator * _operator;
+    id /* block */  _operatorBlock;
+    NSDictionary * _registration;
+    NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property PLOperator *operator;

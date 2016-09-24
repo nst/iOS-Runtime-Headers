@@ -3,7 +3,7 @@
  */
 
 @interface RTCReportingAggregationObject : NSObject <ClientSessionReplyInterface> {
-    id /* block */ _aggregationBlock;
+    id /* block */  _aggregationBlock;
 }
 
 - (void)dealloc;

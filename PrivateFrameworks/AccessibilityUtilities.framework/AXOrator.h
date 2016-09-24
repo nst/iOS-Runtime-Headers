@@ -3,38 +3,43 @@
  */
 
 @interface AXOrator : NSObject <AVSpeechSynthesizerDelegate> {
-    BOOL _contentIsSpeakable;
-    <AXOratorDelegate> *_delegate;
-    BOOL _didRequestPauseSpeakingDuringAudioInterruption;
-    BOOL _didRequestResumeSpeakingDuringAudioInterruption;
-    BOOL _didRequestStartSpeakingDuringAudioInterruption;
-    BOOL _isAudioSessionActive;
-    BOOL _isInAudioInterruption;
+    double  _audioInterruptionStartedTime;
+    AXDispatchTimer * _audioSessionTimer;
+    BOOL  _contentIsSpeakable;
+    <AXOratorDelegate> * _delegate;
+    BOOL  _didRequestPauseSpeakingDuringAudioInterruption;
+    BOOL  _didRequestResumeSpeakingDuringAudioInterruption;
+    BOOL  _didRequestStartSpeakingDuringAudioInterruption;
+    BOOL  _isAudioSessionActive;
+    BOOL  _isInAudioInterruption;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _lastSpokenSubstringRange;
-    AVSpeechUtterance *_lastUtterance;
-    NSString *_lastUtteranceLanguageCode;
-    AXLanguageTag *_lastUtteranceLanguageTag;
+    }  _lastSpokenSubstringRange;
+    AVSpeechUtterance * _lastUtterance;
+    NSString * _lastUtteranceLanguageCode;
+    AXLanguageTag * _lastUtteranceLanguageTag;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _lastUtteranceSubstringRange;
-    unsigned int _numberOfTokensToSkip;
-    NSString *_requestedLanguageCodeDuringAudioInterruption;
-    AXLanguageTaggedContent *_selectedContent;
-    BOOL _shouldSpeakNextItemOnResume;
-    AXLanguageTaggedContent *_speakingContent;
-    NSArray *_speakingContentTokenRanges;
-    int _speakingContext;
-    NSMutableArray *_speechSequenceItems;
-    AVSpeechSynthesizer *_speechSynthesizer;
-    AVSpeechUtterance *_statusUtterance;
-    NSString *_voiceIdentifier;
-    BOOL _wasSpeakingBeforeAudioInterruption;
+    }  _lastUtteranceSubstringRange;
+    unsigned int  _numberOfTokensToSkip;
+    BOOL  _pendingAudioSessionActive;
+    NSString * _requestedLanguageCodeDuringAudioInterruption;
+    AXLanguageTaggedContent * _selectedContent;
+    BOOL  _shouldSpeakNextItemOnResume;
+    AXLanguageTaggedContent * _speakingContent;
+    NSArray * _speakingContentTokenRanges;
+    int  _speakingContext;
+    NSMutableArray * _speechSequenceItems;
+    AVSpeechSynthesizer * _speechSynthesizer;
+    BOOL  _spellOutContent;
+    AVSpeechUtterance * _statusUtterance;
+    NSString * _voiceIdentifier;
+    BOOL  _wasSpeakingBeforeAudioInterruption;
 }
 
+@property (nonatomic) double audioInterruptionStartedTime;
 @property (nonatomic, copy) NSString *content;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <AXOratorDelegate> *delegate;
@@ -51,6 +56,7 @@
 @property (nonatomic, retain) AXLanguageTag *lastUtteranceLanguageTag;
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } lastUtteranceSubstringRange;
 @property (nonatomic) unsigned int numberOfTokensToSkip;
+@property (nonatomic) BOOL pendingAudioSessionActive;
 @property (nonatomic, copy) NSString *requestedLanguageCodeDuringAudioInterruption;
 @property (nonatomic, retain) AXLanguageTaggedContent *selectedContent;
 @property (nonatomic) BOOL shouldSpeakNextItemOnResume;
@@ -59,6 +65,7 @@
 @property (nonatomic) int speakingContext;
 @property (nonatomic, retain) NSMutableArray *speechSequenceItems;
 @property (nonatomic, retain) AVSpeechSynthesizer *speechSynthesizer;
+@property (nonatomic) BOOL spellOutContent;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *voiceIdentifier;
 @property (nonatomic) BOOL wasSpeakingBeforeAudioInterruption;
@@ -82,6 +89,8 @@
 - (BOOL)_successWithCode:(int)arg1 error:(id*)arg2;
 - (void)_tokenizeContentIfNeeded;
 - (void)_updateAudioSessionCategory;
+- (void)_updateSequenceForSpellOutBehavior;
+- (double)audioInterruptionStartedTime;
 - (BOOL)canResumeWithContent:(id)arg1;
 - (void)clearSelectedContent;
 - (id)content;
@@ -104,11 +113,13 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })lastUtteranceSubstringRange;
 - (unsigned int)numberOfTokensToSkip;
 - (BOOL)pauseSpeaking:(id*)arg1;
+- (BOOL)pendingAudioSessionActive;
 - (id)requestedLanguageCodeDuringAudioInterruption;
 - (BOOL)resumeSpeaking:(id*)arg1;
 - (BOOL)resumeSpeakingAfterDelay:(double)arg1 error:(id*)arg2;
 - (BOOL)rewindWithBoundary:(unsigned int)arg1;
 - (id)selectedContent;
+- (void)setAudioInterruptionStartedTime:(double)arg1;
 - (void)setContent:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDidRequestPauseSpeakingDuringAudioInterruption:(BOOL)arg1;
@@ -122,6 +133,7 @@
 - (void)setLastUtteranceLanguageTag:(id)arg1;
 - (void)setLastUtteranceSubstringRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setNumberOfTokensToSkip:(unsigned int)arg1;
+- (void)setPendingAudioSessionActive:(BOOL)arg1;
 - (void)setRequestedLanguageCodeDuringAudioInterruption:(id)arg1;
 - (void)setSelectedContent:(id)arg1;
 - (void)setShouldSpeakNextItemOnResume:(BOOL)arg1;
@@ -130,12 +142,13 @@
 - (void)setSpeakingContext:(int)arg1;
 - (void)setSpeechSequenceItems:(id)arg1;
 - (void)setSpeechSynthesizer:(id)arg1;
+- (void)setSpellOutContent:(BOOL)arg1;
 - (void)setVoiceIdentifier:(id)arg1;
 - (void)setWasSpeakingBeforeAudioInterruption:(BOOL)arg1;
 - (BOOL)shouldSpeakNextItemOnResume;
 - (BOOL)speakFaster;
 - (BOOL)speakSlower;
-- (void)speakStatusWithLanguage:(id)arg1 rate:(id)arg2 useCompactVoice:(BOOL)arg3 alternateIdentifier:(id)arg4;
+- (void)speakStatusWithLanguage:(id)arg1 rate:(id)arg2;
 - (id)speakingContent;
 - (id)speakingContentTokenRanges;
 - (int)speakingContext;
@@ -148,8 +161,9 @@
 - (void)speechSynthesizer:(id)arg1 didPauseSpeechUtterance:(id)arg2;
 - (void)speechSynthesizer:(id)arg1 didStartSpeechUtterance:(id)arg2;
 - (void)speechSynthesizer:(id)arg1 willSpeakRangeOfSpeechString:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 utterance:(id)arg3;
-- (BOOL)startSpeakingWithPreferredLanguage:(id)arg1 alternativeVoiceId:(id)arg2 delayBeforeStart:(double)arg3 error:(id*)arg4;
-- (BOOL)startSpeakingWithPreferredLanguage:(id)arg1 alternativeVoiceId:(id)arg2 error:(id*)arg3;
+- (BOOL)spellOutContent;
+- (BOOL)startSpeakingWithPreferredLanguage:(id)arg1 delayBeforeStart:(double)arg2 error:(id*)arg3;
+- (BOOL)startSpeakingWithPreferredLanguage:(id)arg1 error:(id*)arg2;
 - (BOOL)stopSpeaking:(id*)arg1;
 - (id)voiceIdentifier;
 - (BOOL)wasSpeakingBeforeAudioInterruption;

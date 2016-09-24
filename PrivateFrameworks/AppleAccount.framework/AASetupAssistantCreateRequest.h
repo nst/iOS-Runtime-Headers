@@ -3,9 +3,9 @@
  */
 
 @interface AASetupAssistantCreateRequest : AARequest {
-    ACAccount *_account;
-    NSDictionary *appleIDParameters;
-    AASigningSession *signingSession;
+    ACAccount * _account;
+    NSDictionary * appleIDParameters;
+    AASigningSession * signingSession;
 }
 
 + (Class)responseClass;

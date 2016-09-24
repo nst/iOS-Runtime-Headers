@@ -3,30 +3,34 @@
  */
 
 @interface UIPress : NSObject <_UIResponderForwardable> {
-    BOOL _abandonForwardingRecord;
-    float _force;
-    NSMutableArray *_forwardingRecord;
-    unsigned int _gameControllerComponent;
-    NSMutableArray *_gestureRecognizers;
-    BOOL _isDelayed;
-    int _phase;
-    UIResponder *_responder;
-    BOOL _sentPressesEnded;
-    unsigned int _source;
-    double _timestamp;
-    int _type;
-    UIWindow *_window;
+    BOOL  _abandonForwardingRecord;
+    unsigned int  _clickCount;
+    double  _force;
+    NSMutableArray * _forwardingRecord;
+    unsigned int  _gameControllerComponent;
+    NSMutableArray * _gestureRecognizers;
+    BOOL  _isDelayed;
+    BOOL  _longClick;
+    int  _phase;
+    UIResponder * _responder;
+    BOOL  _sentPressesEnded;
+    unsigned int  _source;
+    double  _timestamp;
+    int  _type;
+    UIWindow * _window;
 }
 
 @property (setter=_setForwardablePhase:, nonatomic) int _forwardablePhase;
 @property (setter=_setResponder:, nonatomic, retain) UIResponder *_responder;
+@property (nonatomic) unsigned int clickCount;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) float force;
+@property (nonatomic) double force;
 @property (getter=_gameControllerComponent, setter=_setGameControllerComponent:, nonatomic) unsigned int gameControllerComponent;
 @property (nonatomic, copy) NSArray *gestureRecognizers;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isDelayed;
+@property (getter=isLongClick, nonatomic) BOOL longClick;
 @property (nonatomic) int phase;
 @property (nonatomic, retain) UIResponder *responder;
 @property (nonatomic) BOOL sentPressesEnded;
@@ -57,16 +61,20 @@
 - (void)_setSource:(unsigned int)arg1;
 - (unsigned int)_source;
 - (BOOL)_wantsForwardingFromResponder:(id)arg1 toNextResponder:(id)arg2 withEvent:(id)arg3;
+- (unsigned int)clickCount;
 - (id)description;
 - (float)force;
 - (id)gestureRecognizers;
 - (BOOL)isDelayed;
+- (BOOL)isLongClick;
 - (int)phase;
 - (id)responder;
 - (BOOL)sentPressesEnded;
+- (void)setClickCount:(unsigned int)arg1;
 - (void)setForce:(float)arg1;
 - (void)setGestureRecognizers:(id)arg1;
 - (void)setIsDelayed:(BOOL)arg1;
+- (void)setLongClick:(BOOL)arg1;
 - (void)setPhase:(int)arg1;
 - (void)setResponder:(id)arg1;
 - (void)setSentPressesEnded:(BOOL)arg1;

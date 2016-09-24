@@ -3,7 +3,7 @@
  */
 
 @interface SUReviewsListingViewController : SUStructuredPageViewController {
-    SUButtonAccessoryView *_accessoryView;
+    SUButtonAccessoryView * _accessoryView;
 }
 
 - (id)_accessoryView;

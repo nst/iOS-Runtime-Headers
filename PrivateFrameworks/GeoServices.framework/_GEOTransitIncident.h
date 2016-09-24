@@ -3,7 +3,7 @@
  */
 
 @interface _GEOTransitIncident : NSObject <GEOTransitIncident> {
-    GEOPBTransitIncident *_incident;
+    GEOPBTransitIncident * _incident;
 }
 
 @property (nonatomic, readonly) NSArray *affectedEntities;
@@ -19,6 +19,7 @@
 @property (nonatomic, readonly) NSString *messageForNonRoutable;
 @property (nonatomic, readonly) NSString *messageForRoutePlanning;
 @property (nonatomic, readonly) NSString *messageForRouteStepping;
+@property (nonatomic, readonly) unsigned int muid;
 @property (nonatomic, readonly) NSDate *startDate;
 @property (nonatomic, readonly) NSString *summary;
 @property (readonly) Class superclass;
@@ -38,6 +39,7 @@
 - (id)messageForNonRoutable;
 - (id)messageForRoutePlanning;
 - (id)messageForRouteStepping;
+- (unsigned int)muid;
 - (id)startDate;
 - (id)summary;
 - (id)title;

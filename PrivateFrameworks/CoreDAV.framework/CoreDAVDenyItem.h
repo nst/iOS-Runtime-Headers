@@ -3,7 +3,7 @@
  */
 
 @interface CoreDAVDenyItem : CoreDAVItem {
-    NSMutableSet *_privileges;
+    NSMutableSet * _privileges;
 }
 
 @property (nonatomic, retain) NSMutableSet *privileges;

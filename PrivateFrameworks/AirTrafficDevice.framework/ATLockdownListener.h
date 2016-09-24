@@ -3,8 +3,8 @@
  */
 
 @interface ATLockdownListener : ATMessageLinkListener {
-    NSObject<OS_xpc_object> *_connection;
-    NSString *_serviceName;
+    NSObject<OS_xpc_object> * _connection;
+    NSString * _serviceName;
 }
 
 @property (nonatomic, readonly, copy) NSString *serviceName;

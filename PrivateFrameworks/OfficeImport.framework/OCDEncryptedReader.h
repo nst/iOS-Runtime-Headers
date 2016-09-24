@@ -3,7 +3,7 @@
  */
 
 @interface OCDEncryptedReader : OCDReader {
-    OCCDecryptor *mDecryptor;
+    OCCDecryptor * mDecryptor;
 }
 
 @property (nonatomic, readonly) OCCDecryptor *decryptor;

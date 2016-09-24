@@ -3,9 +3,9 @@
  */
 
 @interface NSWeakObjectValue : NSValue {
-    id _object;
-    BOOL _useFallback;
-    void *_value;
+    id  _object;
+    BOOL  _useFallback;
+    void * _value;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

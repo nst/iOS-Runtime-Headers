@@ -3,18 +3,18 @@
  */
 
 @interface ATSocket : NSObject <NSSecureCoding> {
-    NSMutableArray *_delegates;
-    int _descriptor;
-    NSObject<OS_dispatch_queue> *_queue;
-    BOOL _readBuffer;
-    int _socketMode;
-    NSObject<OS_dispatch_source> *_source;
-    unsigned int _suggestedBufferSize;
-    int _transportUpdgradeExceptionCount;
-    id _userInfo;
-    char *_writeBuffer;
-    unsigned int _writeBufferOffset;
-    unsigned int _writeBufferSize;
+    NSMutableArray * _delegates;
+    int  _descriptor;
+    NSObject<OS_dispatch_queue> * _queue;
+    BOOL  _readBuffer;
+    int  _socketMode;
+    NSObject<OS_dispatch_source> * _source;
+    unsigned int  _suggestedBufferSize;
+    int  _transportUpdgradeExceptionCount;
+    id  _userInfo;
+    char * _writeBuffer;
+    unsigned int  _writeBufferOffset;
+    unsigned int  _writeBufferSize;
 }
 
 @property (nonatomic) int descriptor;

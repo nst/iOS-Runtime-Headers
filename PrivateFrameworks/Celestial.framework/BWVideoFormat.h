@@ -3,20 +3,22 @@
  */
 
 @interface BWVideoFormat : BWFormat {
-    unsigned long _bytesPerRowAlignment;
-    unsigned int _cacheMode;
-    unsigned long _extendedHeight;
-    unsigned long _extendedWidth;
-    unsigned long _height;
-    NSDictionary *_pixelBufferAttributes;
-    unsigned long _pixelFormat;
-    unsigned long _planeAlignment;
-    BOOL _prewireBuffers;
-    unsigned long _width;
+    unsigned long  _bytesPerRowAlignment;
+    unsigned int  _cacheMode;
+    int  _colorSpaceProperties;
+    unsigned long  _extendedHeight;
+    unsigned long  _extendedWidth;
+    unsigned long  _height;
+    NSDictionary * _pixelBufferAttributes;
+    unsigned long  _pixelFormat;
+    unsigned long  _planeAlignment;
+    BOOL  _prewireBuffers;
+    unsigned long  _width;
 }
 
 @property (nonatomic) unsigned long bytesPerRowAlignment;
 @property (nonatomic) unsigned int cacheMode;
+@property (nonatomic, readonly) int colorSpaceProperties;
 @property (nonatomic) unsigned long extendedHeight;
 @property (nonatomic) unsigned long extendedWidth;
 @property (nonatomic) unsigned long height;
@@ -27,12 +29,16 @@
 @property (nonatomic) unsigned long width;
 
 + (id)_formatRequirementsByResolvingFormatRequirements:(id)arg1 withFormatRequirements:(id)arg2;
++ (int)colorSpacePropertiesForSourceThatSupportsWideColor:(BOOL)arg1 sourceColorSpace:(int)arg2 sourcePixelFormat:(unsigned long)arg3 sourceDimensions:(struct { int x1; int x2; })arg4 requestedPixelFormat:(unsigned long)arg5;
++ (int)colorSpacePropertiesWithSourceColorSpace:(int)arg1 sourcePixelFormat:(unsigned long)arg2 sourceDimensions:(struct { int x1; int x2; })arg3 requestedPixelFormat:(unsigned long)arg4;
 + (id)formatByResolvingRequirements:(id)arg1;
 + (void)initialize;
++ (id)pixelBufferAttachmentsForColorSpaceProperties:(int)arg1;
 
-- (id)_initWithResolvedPixelBufferAttributes:(id)arg1;
+- (id)_initWithResolvedPixelBufferAttributes:(id)arg1 colorSpaceProperties:(int)arg2;
 - (unsigned long)bytesPerRowAlignment;
 - (unsigned int)cacheMode;
+- (int)colorSpaceProperties;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)description;

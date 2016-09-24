@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptSoftwareApplication : SUScriptObject {
-    ISSoftwareApplication *_application;
+    ISSoftwareApplication * _application;
 }
 
 @property (readonly) NSNumber *adamID;

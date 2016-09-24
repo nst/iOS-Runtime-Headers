@@ -3,8 +3,8 @@
  */
 
 @interface NFAWDFieldOn : NSObject <NFAWDEventProtocol> {
-    AWDNFCFieldOnEvent *_metric;
-    unsigned int technology;
+    AWDNFCFieldOnEvent * _metric;
+    unsigned int  _technology;
 }
 
 @property (readonly, copy) NSString *debugDescription;

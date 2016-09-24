@@ -3,8 +3,8 @@
  */
 
 @interface TPTextImporter : NSObject <TSKImporter> {
-    TSUProgressContext *mProgressContext;
-    NSURL *mURL;
+    TSUProgressContext * mProgressContext;
+    NSURL * mURL;
 }
 
 @property (readonly, copy) NSString *debugDescription;

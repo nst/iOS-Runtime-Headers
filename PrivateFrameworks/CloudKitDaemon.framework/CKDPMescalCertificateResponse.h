@@ -3,7 +3,7 @@
  */
 
 @interface CKDPMescalCertificateResponse : PBCodable <NSCopying> {
-    NSData *_certificate;
+    NSData * _certificate;
 }
 
 @property (nonatomic, retain) NSData *certificate;

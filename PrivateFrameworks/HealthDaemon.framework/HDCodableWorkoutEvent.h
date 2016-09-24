@@ -3,18 +3,22 @@
  */
 
 @interface HDCodableWorkoutEvent : PBCodable <NSCopying> {
-    double _date;
+    double  _date;
     struct { 
         unsigned int date : 1; 
         unsigned int type : 1; 
-    } _has;
-    long long _type;
+        unsigned int wStepStyle : 1; 
+    }  _has;
+    int  _type;
+    int  _wStepStyle;
 }
 
 @property (nonatomic) double date;
 @property (nonatomic) BOOL hasDate;
 @property (nonatomic) BOOL hasType;
-@property (nonatomic) long long type;
+@property (nonatomic) BOOL hasWStepStyle;
+@property (nonatomic) int type;
+@property (nonatomic) int wStepStyle;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -24,6 +28,7 @@
 - (id)dictionaryRepresentation;
 - (BOOL)hasDate;
 - (BOOL)hasType;
+- (BOOL)hasWStepStyle;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
@@ -31,8 +36,11 @@
 - (void)setDate:(double)arg1;
 - (void)setHasDate:(BOOL)arg1;
 - (void)setHasType:(BOOL)arg1;
-- (void)setType:(long long)arg1;
-- (long long)type;
+- (void)setHasWStepStyle:(BOOL)arg1;
+- (void)setType:(int)arg1;
+- (void)setWStepStyle:(int)arg1;
+- (int)type;
+- (int)wStepStyle;
 - (void)writeTo:(id)arg1;
 
 @end

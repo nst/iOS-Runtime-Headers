@@ -3,14 +3,14 @@
  */
 
 @interface PUSlideshowViewControllerSpec : PUViewControllerSpec {
-    BOOL _isAirplayRouteAvailable;
-    BOOL _isAirplayScreenAvailable;
-    BOOL _isChromeVisible;
-    unsigned int _mode;
-    BOOL _shouldObserveAirplayRoute;
-    BOOL _shouldShowAirplayButton;
-    BOOL _shouldShowChromeBars;
-    BOOL _shouldShowPlaceholder;
+    BOOL  _isAirplayRouteAvailable;
+    BOOL  _isAirplayScreenAvailable;
+    BOOL  _isChromeVisible;
+    unsigned int  _mode;
+    BOOL  _shouldObserveAirplayRoute;
+    BOOL  _shouldShowAirplayButton;
+    BOOL  _shouldShowChromeBars;
+    BOOL  _shouldShowPlaceholder;
 }
 
 @property (nonatomic, readonly) PUSlideshowViewControllerSpecChange *currentChange;
@@ -18,12 +18,12 @@
 @property (setter=setAirplayScreenAvailable:, nonatomic) BOOL isAirplayScreenAvailable;
 @property (setter=setChromeVisible:, nonatomic) BOOL isChromeVisible;
 @property (nonatomic, readonly) unsigned int mode;
-@property (nonatomic) BOOL shouldObserveAirplayRoute;
+@property (setter=_setShouldObserveAirplayRoute:, nonatomic) BOOL shouldObserveAirplayRoute;
 @property (nonatomic, readonly) BOOL shouldPauseWhenAppResignsActive;
 @property (nonatomic, readonly) BOOL shouldRegisterToAirplay;
-@property (nonatomic) BOOL shouldShowAirplayButton;
-@property (nonatomic) BOOL shouldShowChromeBars;
-@property (nonatomic) BOOL shouldShowPlaceholder;
+@property (setter=_setShouldShowAirplayButton:, nonatomic) BOOL shouldShowAirplayButton;
+@property (setter=_setShouldShowChromeBars:, nonatomic) BOOL shouldShowChromeBars;
+@property (setter=_setShouldShowPlaceholder:, nonatomic) BOOL shouldShowPlaceholder;
 @property (nonatomic, readonly) BOOL shouldUseChromeBars;
 @property (nonatomic, readonly) BOOL shouldUseTapGesture;
 

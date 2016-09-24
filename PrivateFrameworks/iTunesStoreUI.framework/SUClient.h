@@ -3,14 +3,14 @@
  */
 
 @interface SUClient : NSObject {
-    struct __CFArray { } *_assetTypes;
-    SUClientInterface *_clientInterface;
-    <SUClientDelegate> *_delegate;
-    BOOL _dontSaveNavigationPath;
-    SUImageCache *_imageCache;
-    ISURLOperationPool *_imagePool;
-    NSLock *_lock;
-    SUScriptExecutionContext *_scriptExecutionContext;
+    struct __CFArray { } * _assetTypes;
+    SUClientInterface * _clientInterface;
+    <SUClientDelegate> * _delegate;
+    BOOL  _dontSaveNavigationPath;
+    SUImageCache * _imageCache;
+    ISURLOperationPool * _imagePool;
+    NSLock * _lock;
+    SUScriptExecutionContext * _scriptExecutionContext;
 }
 
 @property (readonly) SUClientInterface *clientInterface;

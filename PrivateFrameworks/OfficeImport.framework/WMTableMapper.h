@@ -3,10 +3,10 @@
  */
 
 @interface WMTableMapper : CMMapper {
-    WMTableColumnInfo *mColumnInfo;
-    WMBordersProperty *mInsideBorders;
-    WMTableStyle *mStyle;
-    WDTable *mWdTable;
+    WMTableColumnInfo * mColumnInfo;
+    WMBordersProperty * mInsideBorders;
+    WMTableStyle * mStyle;
+    WDTable * mWdTable;
 }
 
 + (BOOL)isTableDeleted:(id)arg1;

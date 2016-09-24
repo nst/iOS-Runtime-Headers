@@ -3,14 +3,14 @@
  */
 
 @interface GQDArcPath : GQDPath {
-    double mArcWidth;
-    double mArrowLength;
-    double mArrowWidth;
-    double mHeadAngle;
+    double  mArcWidth;
+    double  mArrowLength;
+    double  mArrowWidth;
+    double  mHeadAngle;
     struct CGSize { 
-        float width; 
-        float height; 
-    } mSize;
+        double width; 
+        double height; 
+    }  mSize;
 }
 
 - (double)arcWidth;
@@ -19,6 +19,6 @@
 - (struct CGPath { }*)createBezierPath;
 - (double)headAngle;
 - (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { double x1; double x2; })size;
 
 @end

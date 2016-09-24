@@ -3,22 +3,22 @@
  */
 
 @interface GEOCelestialEphemeris : NSObject {
-    int _body;
+    int  _body;
     struct { 
         double latitude; 
         double longitude; 
-    } _coordinate;
-    NSDate *_date;
-    GEOSolarEclipticCelestialBodyData *_eclipticCoord;
-    double _elongation;
-    GEOEquatorialCelestialBodyData *_equatorialCoord;
-    GEOHorizontalCelestialBodyData *_horizontalCoord;
-    double _illuminatedFraction;
-    double _parallacticAngle;
-    double _phaseAngle;
-    NSDate *_rise;
-    NSDate *_set;
-    NSDate *_transit;
+    }  _coordinate;
+    NSDate * _date;
+    GEOSolarEclipticCelestialBodyData * _eclipticCoord;
+    double  _elongation;
+    GEOEquatorialCelestialBodyData * _equatorialCoord;
+    GEOHorizontalCelestialBodyData * _horizontalCoord;
+    double  _illuminatedFraction;
+    double  _parallacticAngle;
+    double  _phaseAngle;
+    NSDate * _rise;
+    NSDate * _set;
+    NSDate * _transit;
 }
 
 @property (nonatomic, readonly) GEOSolarEclipticCelestialBodyData *eclipticCoord;

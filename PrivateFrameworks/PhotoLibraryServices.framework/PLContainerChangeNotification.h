@@ -3,17 +3,17 @@
  */
 
 @interface PLContainerChangeNotification : PLChangeNotification {
-    NSIndexSet *_changedIndexes;
-    NSArray *_changedObjects;
-    BOOL _countDidChange;
-    NSIndexSet *_deletedIndexes;
-    BOOL _didCalculateDiffs;
-    NSIndexSet *_insertedIndexes;
-    struct __CFArray { } *_movedFromIndexes;
-    NSIndexSet *_movedIndexes;
-    id _object;
-    BOOL _shouldReload;
-    PLObjectSnapshot *_snapshot;
+    NSIndexSet * _changedIndexes;
+    NSArray * _changedObjects;
+    BOOL  _countDidChange;
+    NSIndexSet * _deletedIndexes;
+    BOOL  _didCalculateDiffs;
+    NSIndexSet * _insertedIndexes;
+    struct __CFArray { } * _movedFromIndexes;
+    NSIndexSet * _movedIndexes;
+    id  _object;
+    BOOL  _shouldReload;
+    PLObjectSnapshot * _snapshot;
 }
 
 @property (nonatomic, readonly, retain) NSArray *_changedObjects;

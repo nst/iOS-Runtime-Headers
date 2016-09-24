@@ -3,8 +3,8 @@
  */
 
 @interface TSPClassRegistry : NSObject {
-    BOOL _didFinishRegistration;
-    NSMutableDictionary *_registry;
+    BOOL  _didFinishRegistration;
+    NSMutableDictionary * _registry;
 }
 
 - (void).cxx_destruct;

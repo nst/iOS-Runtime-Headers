@@ -3,28 +3,29 @@
  */
 
 @interface PKPaymentTransaction : NSObject <NSSecureCoding> {
-    NSString *_administrativeArea;
-    NSDecimalNumber *_amount;
-    NSString *_currencyCode;
-    BOOL _hasAssociatedPaymentApplication;
-    NSString *_identifier;
-    NSString *_locality;
-    double _locationAltitude;
-    NSDate *_locationDate;
-    double _locationHorizontalAccuracy;
-    double _locationLatitude;
-    double _locationLongitude;
-    double _locationVerticalAccuracy;
-    PKMerchant *_merchant;
-    BOOL _processedForLocation;
-    BOOL _processedForMerchantCleanup;
-    NSString *_serviceIdentifier;
-    int _technologyType;
-    NSDate *_transactionDate;
-    NSString *_transactionIdentifier;
-    unsigned int _transactionSources;
-    int _transactionStatus;
-    int _transactionType;
+    NSString * _administrativeArea;
+    NSDecimalNumber * _amount;
+    NSString * _currencyCode;
+    BOOL  _hasAssociatedPaymentApplication;
+    BOOL  _hasNotificationServiceData;
+    NSString * _identifier;
+    NSString * _locality;
+    double  _locationAltitude;
+    NSDate * _locationDate;
+    double  _locationHorizontalAccuracy;
+    double  _locationLatitude;
+    double  _locationLongitude;
+    double  _locationVerticalAccuracy;
+    PKMerchant * _merchant;
+    BOOL  _processedForLocation;
+    BOOL  _processedForMerchantCleanup;
+    NSString * _serviceIdentifier;
+    int  _technologyType;
+    NSDate * _transactionDate;
+    NSString * _transactionIdentifier;
+    unsigned int  _transactionSource;
+    int  _transactionStatus;
+    int  _transactionType;
 }
 
 @property (nonatomic, retain) NSString *administrativeArea;
@@ -32,8 +33,9 @@
 @property (nonatomic, copy) NSString *currencyCode;
 @property (nonatomic, readonly) NSString *displayLocation;
 @property (nonatomic) BOOL hasAssociatedPaymentApplication;
-@property (nonatomic, readonly) BOOL hasLocalDeviceSource;
-@property (nonatomic, readonly) BOOL hasNotificationServiceSource;
+@property (nonatomic, readonly) BOOL hasBackingData;
+@property (nonatomic) BOOL hasNotificationServiceData;
+@property (nonatomic, readonly) BOOL hasTransactionSource;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, retain) NSString *locality;
 @property (nonatomic, retain) CLLocation *location;
@@ -50,24 +52,30 @@
 @property (nonatomic) int technologyType;
 @property (nonatomic, copy) NSDate *transactionDate;
 @property (nonatomic, copy) NSString *transactionIdentifier;
-@property (nonatomic) unsigned int transactionSources;
+@property (nonatomic) unsigned int transactionSource;
 @property (nonatomic) int transactionStatus;
 @property (nonatomic) int transactionType;
 
 + (id)paymentTransactionFromSource:(unsigned int)arg1;
-+ (id)paymentTransactionFromSource:(unsigned int)arg1 withDictionary:(id)arg2;
++ (id)paymentTransactionWithSource:(unsigned int)arg1;
++ (id)paymentTransactionWithSource:(unsigned int)arg1 dictionary:(id)arg2 hasNotificationServiceData:(BOOL)arg3;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
+- (id)_transactionSourceString;
+- (id)_transactionStatusString;
+- (id)_transactionTypeString;
 - (id)administrativeArea;
 - (id)amount;
 - (id)currencyCode;
-- (void)dealloc;
 - (id)description;
+- (id)dictionaryRepresentation;
 - (id)displayLocation;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)hasAssociatedPaymentApplication;
-- (BOOL)hasLocalDeviceSource;
-- (BOOL)hasNotificationServiceSource;
+- (BOOL)hasBackingData;
+- (BOOL)hasNotificationServiceData;
+- (BOOL)hasTransactionSource;
 - (unsigned int)hash;
 - (id)identifier;
 - (id)init;
@@ -90,6 +98,7 @@
 - (void)setAmount:(id)arg1;
 - (void)setCurrencyCode:(id)arg1;
 - (void)setHasAssociatedPaymentApplication:(BOOL)arg1;
+- (void)setHasNotificationServiceData:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setLocality:(id)arg1;
 - (void)setLocation:(id)arg1;
@@ -106,13 +115,13 @@
 - (void)setTechnologyType:(int)arg1;
 - (void)setTransactionDate:(id)arg1;
 - (void)setTransactionIdentifier:(id)arg1;
-- (void)setTransactionSources:(unsigned int)arg1;
+- (void)setTransactionSource:(unsigned int)arg1;
 - (void)setTransactionStatus:(int)arg1;
 - (void)setTransactionType:(int)arg1;
 - (int)technologyType;
 - (id)transactionDate;
 - (id)transactionIdentifier;
-- (unsigned int)transactionSources;
+- (unsigned int)transactionSource;
 - (int)transactionStatus;
 - (int)transactionType;
 

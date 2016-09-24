@@ -3,9 +3,9 @@
  */
 
 @interface OABFillPropertiesManager : NSObject <OABFillPropertiesManager> {
-    const struct EshFill { int (**x1)(); unsigned short x2; struct EshContentData {} *x3; } *mFill;
-    <OABPropertiesManager> *mMasterManager;
-    int mShapeType;
+    const struct EshFill { int (**x1)(); unsigned short x2; struct EshContentData {} *x3; } * mFill;
+    <OABPropertiesManager> * mMasterManager;
+    int  mShapeType;
 }
 
 @property (readonly, copy) NSString *debugDescription;

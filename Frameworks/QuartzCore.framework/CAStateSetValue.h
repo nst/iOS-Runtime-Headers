@@ -3,8 +3,8 @@
  */
 
 @interface CAStateSetValue : CAStateElement {
-    NSString *_keyPath;
-    id _value;
+    NSString * _keyPath;
+    id  _value;
 }
 
 @property (nonatomic, copy) NSString *keyPath;

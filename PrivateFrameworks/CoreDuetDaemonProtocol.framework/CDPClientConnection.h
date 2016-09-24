@@ -3,11 +3,11 @@
  */
 
 @interface CDPClientConnection : NSObject {
-    BOOL _admissionOverride;
-    BOOL _admissionResult;
-    NSString *_clientName;
-    CDDXPCConnection *_connection;
-    CDDebug *_debug;
+    BOOL  _admissionOverride;
+    BOOL  _admissionResult;
+    NSString * _clientName;
+    CDDXPCConnection * _connection;
+    CDDebug * _debug;
 }
 
 @property BOOL admissionOverride;
@@ -28,7 +28,6 @@
 - (id)debug;
 - (id)init;
 - (id)initWithPluginName:(id)arg1 error:(id*)arg2;
-- (id)messageWithError:(id*)arg1;
 - (BOOL)sendMessage:(int)arg1 withXPCdictionaryKey:(id)arg2 dictionary:(id)arg3 admissionId:(id)arg4 options:(id)arg5 error:(id*)arg6 replyHandler:(id /* block */)arg7;
 - (void)setAdmissionOverride:(BOOL)arg1;
 - (void)setAdmissionResult:(BOOL)arg1;

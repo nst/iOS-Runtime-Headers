@@ -3,13 +3,13 @@
  */
 
 @interface _MRGameControllerButtonsProtobuf : PBCodable <NSCopying> {
-    float _buttonA;
-    float _buttonB;
-    float _buttonPause;
-    float _buttonX;
-    float _buttonY;
-    float _dpadX;
-    float _dpadY;
+    double  _buttonA;
+    double  _buttonB;
+    double  _buttonPause;
+    double  _buttonX;
+    double  _buttonY;
+    double  _dpadX;
+    double  _dpadY;
     struct { 
         unsigned int buttonA : 1; 
         unsigned int buttonB : 1; 
@@ -26,24 +26,24 @@
         unsigned int rightThumbstickX : 1; 
         unsigned int rightThumbstickY : 1; 
         unsigned int rightTrigger : 1; 
-    } _has;
-    float _leftShoulder;
-    float _leftThumbstickX;
-    float _leftThumbstickY;
-    float _leftTrigger;
-    float _rightShoulder;
-    float _rightThumbstickX;
-    float _rightThumbstickY;
-    float _rightTrigger;
+    }  _has;
+    double  _leftShoulder;
+    double  _leftThumbstickX;
+    double  _leftThumbstickY;
+    double  _leftTrigger;
+    double  _rightShoulder;
+    double  _rightThumbstickX;
+    double  _rightThumbstickY;
+    double  _rightTrigger;
 }
 
-@property (nonatomic) float buttonA;
-@property (nonatomic) float buttonB;
-@property (nonatomic) float buttonPause;
-@property (nonatomic) float buttonX;
-@property (nonatomic) float buttonY;
-@property (nonatomic) float dpadX;
-@property (nonatomic) float dpadY;
+@property (nonatomic) double buttonA;
+@property (nonatomic) double buttonB;
+@property (nonatomic) double buttonPause;
+@property (nonatomic) double buttonX;
+@property (nonatomic) double buttonY;
+@property (nonatomic) double dpadX;
+@property (nonatomic) double dpadY;
 @property (nonatomic) BOOL hasButtonA;
 @property (nonatomic) BOOL hasButtonB;
 @property (nonatomic) BOOL hasButtonPause;
@@ -59,14 +59,14 @@
 @property (nonatomic) BOOL hasRightThumbstickX;
 @property (nonatomic) BOOL hasRightThumbstickY;
 @property (nonatomic) BOOL hasRightTrigger;
-@property (nonatomic) float leftShoulder;
-@property (nonatomic) float leftThumbstickX;
-@property (nonatomic) float leftThumbstickY;
-@property (nonatomic) float leftTrigger;
-@property (nonatomic) float rightShoulder;
-@property (nonatomic) float rightThumbstickX;
-@property (nonatomic) float rightThumbstickY;
-@property (nonatomic) float rightTrigger;
+@property (nonatomic) double leftShoulder;
+@property (nonatomic) double leftThumbstickX;
+@property (nonatomic) double leftThumbstickY;
+@property (nonatomic) double leftTrigger;
+@property (nonatomic) double rightShoulder;
+@property (nonatomic) double rightThumbstickX;
+@property (nonatomic) double rightThumbstickY;
+@property (nonatomic) double rightTrigger;
 
 - (float)buttonA;
 - (float)buttonB;

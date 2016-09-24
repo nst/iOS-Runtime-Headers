@@ -3,7 +3,7 @@
  */
 
 @interface AVVideoCompositionInstruction : NSObject <AVVideoCompositionInstruction, NSCopying, NSMutableCopying, NSSecureCoding> {
-    AVVideoCompositionInstructionInternal *_instruction;
+    AVVideoCompositionInstructionInternal * _instruction;
 }
 
 @property (nonatomic, readonly, retain) struct CGColor { }*backgroundColor;
@@ -16,7 +16,7 @@
 @property (nonatomic, readonly) int passthroughTrackID;
 @property (nonatomic, readonly) NSArray *requiredSourceTrackIDs;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } timeRange;
+@property (nonatomic, readonly) struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; } timeRange;
 
 + (void)initialize;
 + (BOOL)supportsSecureCoding;
@@ -41,7 +41,7 @@
 - (void)setBackgroundColor:(struct CGColor { }*)arg1;
 - (void)setEnablePostProcessing:(BOOL)arg1;
 - (void)setLayerInstructions:(id)arg1;
-- (void)setTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1;
-- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
+- (void)setTimeRange:(struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })arg1;
+- (struct { struct { int x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; } x1; struct { int x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; int x_2_1_4; } x2; })timeRange;
 
 @end

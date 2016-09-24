@@ -3,16 +3,15 @@
  */
 
 @interface CABTMIDICentralViewController : UITableViewController <BTLEConnectionTable, UITableViewDataSource, UITableViewDelegate> {
-    UIBarButtonItem *cancelButton;
-    AMSBTLEConnectionManager *connectionManager;
-    NSTimer *connectionTimer;
-    BOOL didCleanup;
-    UIBarButtonItem *editButton;
-    UIBarButtonItem *forgetButton;
-    BOOL inEditingMode;
-    NSMutableArray *incompleteConnectionList;
-    UIActivityIndicatorView *indicator;
-    NSMutableArray *peripheralList;
+    UIBarButtonItem * cancelButton;
+    AMSBTLEConnectionManager * connectionManager;
+    NSTimer * connectionTimer;
+    BOOL  didCleanup;
+    UIBarButtonItem * editButton;
+    UIBarButtonItem * forgetButton;
+    BOOL  inEditingMode;
+    UIActivityIndicatorView * indicator;
+    NSMutableArray * peripheralList;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,13 +19,10 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (void)activateController:(id)arg1;
 - (void)cancelAction:(id)arg1;
 - (void)centralTimerFired:(id)arg1;
 - (void)cleanup;
-- (void)deactivateController:(id)arg1;
 - (void)dealloc;
-- (void)didChangePreferredContentSize:(id)arg1;
 - (void)didReceiveMemoryWarning;
 - (void)editAction:(id)arg1;
 - (void)forgetAction:(id)arg1;
@@ -52,6 +48,7 @@
 - (id)title;
 - (void)updateButtonsToMatchTableState;
 - (void)updatePeripheralTable;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 

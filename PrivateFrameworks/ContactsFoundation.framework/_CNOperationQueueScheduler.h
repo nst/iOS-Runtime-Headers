@@ -3,7 +3,7 @@
  */
 
 @interface _CNOperationQueueScheduler : NSObject <CNScheduler> {
-    NSOperationQueue *_queue;
+    NSOperationQueue * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -11,10 +11,19 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
++ (id)operationWithQualityOfService:(unsigned int)arg1 block:(id /* block */)arg2;
+
+- (void).cxx_destruct;
 - (id)afterDelay:(double)arg1 performBlock:(id /* block */)arg2;
-- (void)dealloc;
-- (id)initWithMaxConcurrentOperationCount:(unsigned int)arg1;
+- (id)afterDelay:(double)arg1 performBlock:(id /* block */)arg2 qualityOfService:(unsigned int)arg3;
+- (id)init;
+- (id)initWithMaxConcurrentOperationCount:(int)arg1;
+- (id)initWithMaxConcurrentOperationCount:(int)arg1 qualityOfService:(unsigned int)arg2;
+- (id)initWithQualityOfService:(unsigned int)arg1;
 - (void)performBlock:(id /* block */)arg1;
+- (void)performBlock:(id /* block */)arg1 qualityOfService:(unsigned int)arg2;
 - (id)performCancelableBlock:(id /* block */)arg1;
+- (id)performCancelableBlock:(id /* block */)arg1 qualityOfService:(unsigned int)arg2;
+- (double)timestamp;
 
 @end

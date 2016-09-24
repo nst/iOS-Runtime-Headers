@@ -3,10 +3,10 @@
  */
 
 @interface TSTTableStrokePresetData : NSObject {
-    TSDStroke *mExteriorStroke;
-    TSDStroke *mHorizontalStroke;
-    TSDStroke *mVerticalStroke;
-    unsigned int mVisibleMask;
+    TSDStroke * mExteriorStroke;
+    TSDStroke * mHorizontalStroke;
+    TSDStroke * mVerticalStroke;
+    unsigned int  mVisibleMask;
 }
 
 @property (nonatomic, retain) TSDStroke *exteriorStroke;

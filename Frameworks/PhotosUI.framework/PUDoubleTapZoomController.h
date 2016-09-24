@@ -3,15 +3,15 @@
  */
 
 @interface PUDoubleTapZoomController : NSObject <UIGestureRecognizerDelegate> {
-    UITapGestureRecognizer *__doubleTapGestureRecognizer;
-    BOOL __needsUpdateGestureRecognizers;
-    <PUDoubleTapZoomControllerDelegate> *_delegate;
+    UITapGestureRecognizer * __doubleTapGestureRecognizer;
+    BOOL  __needsUpdateGestureRecognizers;
+    <PUDoubleTapZoomControllerDelegate> * _delegate;
     struct { 
         BOOL respondsToViewHostingGestureRecognizers; 
         BOOL respondsToTilingView; 
         BOOL respondsToDelegateForGestureRecognizer; 
         BOOL respondsToCanDoubleTapBeginAtLocationFromProvider; 
-    } _delegateFlags;
+    }  _delegateFlags;
 }
 
 @property (setter=_setDoubleTapGestureRecognizer:, nonatomic, retain) UITapGestureRecognizer *_doubleTapGestureRecognizer;

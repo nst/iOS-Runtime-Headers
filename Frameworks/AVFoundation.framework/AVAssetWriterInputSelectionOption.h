@@ -3,16 +3,16 @@
  */
 
 @interface AVAssetWriterInputSelectionOption : AVMediaSelectionOption {
-    BOOL _displaysNonForcedSubtitles;
-    BOOL _enabled;
-    NSString *_extendedLanguageTag;
-    AVAssetWriterInput *_input;
-    NSString *_languageCode;
-    NSString *_mediaType;
-    NSArray *_metadata;
-    NSDictionary *_outputSettings;
-    struct opaqueCMFormatDescription { } *_sourceFormatHint;
-    NSDictionary *_trackReferences;
+    BOOL  _displaysNonForcedSubtitles;
+    BOOL  _enabled;
+    NSString * _extendedLanguageTag;
+    AVAssetWriterInput * _input;
+    NSString * _languageCode;
+    NSString * _mediaType;
+    NSArray * _metadata;
+    NSDictionary * _outputSettings;
+    struct opaqueCMFormatDescription { } * _sourceFormatHint;
+    NSDictionary * _trackReferences;
 }
 
 @property (nonatomic, readonly) BOOL displaysNonForcedSubtitles;

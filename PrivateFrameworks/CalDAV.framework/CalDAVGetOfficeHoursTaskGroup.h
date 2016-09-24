@@ -3,9 +3,9 @@
  */
 
 @interface CalDAVGetOfficeHoursTaskGroup : CoreDAVTaskGroup <CoreDAVPropFindTaskDelegate> {
-    ICSDocument *_calendarAvailability;
-    CoreDAVPropFindTask *_fetchTask;
-    NSURL *_inboxURL;
+    ICSDocument * _calendarAvailability;
+    CoreDAVPropFindTask * _fetchTask;
+    NSURL * _inboxURL;
 }
 
 @property (nonatomic, retain) ICSDocument *calendarAvailability;

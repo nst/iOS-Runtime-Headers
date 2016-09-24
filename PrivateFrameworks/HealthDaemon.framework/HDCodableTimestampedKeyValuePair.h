@@ -3,17 +3,17 @@
  */
 
 @interface HDCodableTimestampedKeyValuePair : PBCodable <NSCopying> {
-    NSData *_bytesValue;
+    NSData * _bytesValue;
     struct { 
         unsigned int numberDoubleValue : 1; 
         unsigned int numberIntValue : 1; 
         unsigned int timestamp : 1; 
-    } _has;
-    NSString *_key;
-    double _numberDoubleValue;
-    long long _numberIntValue;
-    NSString *_stringValue;
-    double _timestamp;
+    }  _has;
+    NSString * _key;
+    double  _numberDoubleValue;
+    int  _numberIntValue;
+    NSString * _stringValue;
+    double  _timestamp;
 }
 
 @property (nonatomic, retain) NSData *bytesValue;
@@ -25,7 +25,7 @@
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic, retain) NSString *key;
 @property (nonatomic) double numberDoubleValue;
-@property (nonatomic) long long numberIntValue;
+@property (nonatomic) int numberIntValue;
 @property (nonatomic, retain) NSString *stringValue;
 @property (nonatomic) double timestamp;
 
@@ -50,7 +50,7 @@
 - (id)key;
 - (void)mergeFrom:(id)arg1;
 - (double)numberDoubleValue;
-- (long long)numberIntValue;
+- (int)numberIntValue;
 - (BOOL)readFrom:(id)arg1;
 - (void)setBytesValue:(id)arg1;
 - (void)setHasNumberDoubleValue:(BOOL)arg1;
@@ -58,7 +58,7 @@
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setKey:(id)arg1;
 - (void)setNumberDoubleValue:(double)arg1;
-- (void)setNumberIntValue:(long long)arg1;
+- (void)setNumberIntValue:(int)arg1;
 - (void)setStringValue:(id)arg1;
 - (void)setTimestamp:(double)arg1;
 - (void)setTimestampWithDate:(id)arg1;

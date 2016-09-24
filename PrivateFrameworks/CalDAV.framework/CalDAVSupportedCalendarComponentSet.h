@@ -3,7 +3,7 @@
  */
 
 @interface CalDAVSupportedCalendarComponentSet : CoreDAVItem {
-    NSMutableSet *_comps;
+    NSMutableSet * _comps;
 }
 
 @property (nonatomic, readonly) NSSet *compNames;

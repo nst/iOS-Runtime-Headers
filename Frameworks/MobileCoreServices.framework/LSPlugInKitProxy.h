@@ -3,16 +3,13 @@
  */
 
 @interface LSPlugInKitProxy : LSBundleProxy <NSSecureCoding> {
-    NSDictionary *_infoPlist;
-    BOOL _isOnSystemPartition;
-    NSString *_originalIdentifier;
-    LSBundleProxy *_parentBundle;
-    unsigned long _parentBundleID;
-    NSString *_pluginIdentifier;
-    NSDictionary *_pluginKitDictionary;
-    NSUUID *_pluginUUID;
-    NSString *_protocol;
-    NSDate *_registrationDate;
+    LSBundleProxy * _containingBundle;
+    BOOL  _isOnSystemPartition;
+    NSString * _originalIdentifier;
+    NSString * _pluginIdentifier;
+    NSUUID * _pluginUUID;
+    NSString * _protocol;
+    NSDate * _registrationDate;
 }
 
 @property (nonatomic, readonly) LSBundleProxy *containingBundle;
@@ -24,17 +21,25 @@
 @property (nonatomic, readonly) NSUUID *pluginUUID;
 @property (nonatomic, readonly) NSString *protocol;
 @property (nonatomic, readonly) NSDate *registrationDate;
+@property (nonatomic, readonly) NSString *teamID;
 
-+ (id)plugInKitProxyForPlugin:(unsigned long)arg1;
+// Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
+
++ (id)containingBundleIdentifiersForPlugInBundleIdentifiers:(id)arg1 error:(id*)arg2;
++ (id)plugInKitProxyForPlugin:(unsigned int)arg1;
++ (id)plugInKitProxyForPlugin:(unsigned int)arg1 withContext:(const struct LSContext { struct LSDatabase {} *x1; }*)arg2;
 + (id)plugInKitProxyForUUID:(id)arg1 bundleIdentifier:(id)arg2 pluginIdentifier:(id)arg3 effectiveIdentifier:(id)arg4 version:(id)arg5 bundleURL:(id)arg6;
 + (id)pluginKitProxyForIdentifier:(id)arg1;
 + (id)pluginKitProxyForURL:(id)arg1;
 + (id)pluginKitProxyForUUID:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
-- (id)_initWithPlugin:(unsigned long)arg1;
+- (BOOL)UPPValidated;
+- (id)_initWithPlugin:(unsigned int)arg1;
+- (id)_initWithPlugin:(unsigned int)arg1 andContext:(const struct LSContext { struct LSDatabase {} *x1; }*)arg2;
 - (id)_initWithUUID:(id)arg1 bundleIdentifier:(id)arg2 pluginIdentifier:(id)arg3 effectiveIdentifier:(id)arg4 version:(id)arg5 bundleURL:(id)arg6;
-- (id)appStoreReceiptURL;
+- (id)_valueForEqualityTesting;
+- (id)boundIconsDictionary;
 - (id)containingBundle;
 - (void)dealloc;
 - (id)description;
@@ -42,15 +47,22 @@
 - (id)iconDataForVariant:(int)arg1;
 - (id)infoPlist;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
 - (BOOL)isOnSystemPartition;
 - (id)localizedName;
 - (id)localizedShortName;
+- (id)objectForInfoDictionaryKey:(id)arg1 ofClass:(Class)arg2 inScope:(unsigned int)arg3;
 - (id)originalIdentifier;
+- (BOOL)pluginCanProvideIcon;
 - (id)pluginIdentifier;
 - (id)pluginKitDictionary;
 - (id)pluginUUID;
+- (BOOL)profileValidated;
 - (id)protocol;
 - (id)registrationDate;
+- (id)teamID;
+
+// Image: /System/Library/Frameworks/UserNotifications.framework/UserNotifications
+
+- (id)_un_applicationBundleURL;
 
 @end

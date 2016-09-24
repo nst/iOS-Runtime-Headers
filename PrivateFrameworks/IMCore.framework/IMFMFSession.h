@@ -3,9 +3,9 @@
  */
 
 @interface IMFMFSession : NSObject <FMFSessionDelegate> {
-    FMFDevice *_activeDevice;
-    NSString *_establishingAccountID;
-    FMFSession *_session;
+    FMFDevice * _activeDevice;
+    NSString * _establishingAccountID;
+    FMFSession * _session;
 }
 
 @property (nonatomic, retain) FMFDevice *activeDevice;
@@ -20,6 +20,7 @@
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (Class)__FMFSessionClass;
 - (id)_bestAccountForAddresses:(id)arg1;
 - (id)_callerIDForChat:(id)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface SKUICarouselViewElement : SKUIViewElement {
-    double _displayInterval;
+    double  _displayInterval;
 }
 
 @property (nonatomic, readonly) double displayInterval;

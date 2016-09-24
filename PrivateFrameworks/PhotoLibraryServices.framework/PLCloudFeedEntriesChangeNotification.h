@@ -3,10 +3,10 @@
  */
 
 @interface PLCloudFeedEntriesChangeNotification : PLChangeNotification {
-    NSSet *_deletedEntries;
-    NSSet *_insertedEntries;
-    BOOL _shouldReload;
-    NSSet *_updatedEntries;
+    NSSet * _deletedEntries;
+    NSSet * _insertedEntries;
+    BOOL  _shouldReload;
+    NSSet * _updatedEntries;
 }
 
 @property (nonatomic, copy) NSSet *deletedEntries;

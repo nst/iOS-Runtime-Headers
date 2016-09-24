@@ -2,54 +2,51 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@interface BBSectionParameters : NSObject <BBUniquableObject, NSSecureCoding> {
-    NSMutableDictionary *_allSubtypeParameters;
-    BBSectionSubtypeParameters *_defaultSubtypeParameters;
-    NSString *_displayName;
-    BOOL _displaysCriticalBulletins;
-    BBSectionIcon *_icon;
-    NSLock *_lock;
-    unsigned int _messageNumberOfLines;
-    BOOL _orderSectionUsingRecencyDate;
-    BOOL _showsDateInFloatingLockScreenAlert;
-    BOOL _showsSubtitle;
-    NSString *_uniqueIdentifier;
-    BOOL _usesVariableLayout;
+@interface BBSectionParameters : NSObject <NSSecureCoding> {
+    NSUUID * _UUID;
+    NSMutableDictionary * _allSubtypeParameters;
+    BBSectionSubtypeParameters * _defaultSubtypeParameters;
+    NSString * _displayName;
+    BOOL  _displaysCriticalBulletins;
+    BBSectionIcon * _icon;
+    unsigned int  _messageNumberOfLines;
+    BOOL  _orderSectionUsingRecencyDate;
+    BOOL  _showsDateInFloatingLockScreenAlert;
+    BOOL  _showsSubtitle;
+    BOOL  _usesVariableLayout;
 }
 
+@property (nonatomic, retain) NSUUID *UUID;
 @property (nonatomic, retain) NSMutableDictionary *allSubtypeParameters;
-@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) BBSectionSubtypeParameters *defaultSubtypeParameters;
-@property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *displayName;
 @property (nonatomic) BOOL displaysCriticalBulletins;
-@property (readonly) unsigned int hash;
 @property (nonatomic, retain) BBSectionIcon *icon;
 @property (nonatomic) unsigned int messageNumberOfLines;
 @property (nonatomic) BOOL orderSectionUsingRecencyDate;
 @property (nonatomic) BOOL showsDateInFloatingLockScreenAlert;
 @property (nonatomic) BOOL showsSubtitle;
-@property (readonly) Class superclass;
 @property (nonatomic) BOOL usesVariableLayout;
 
-+ (id)addSectionParametersToCache:(id)arg1;
-+ (id)copyCachedSectionParametersWithIdentifier:(id)arg1;
-+ (void)removeSectionParametersFromCache:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
+- (id)UUID;
 - (id)allSubtypeParameters;
 - (id)allSubtypes;
-- (void)dealloc;
 - (id)defaultSubtypeParameters;
 - (id)displayName;
 - (BOOL)displaysCriticalBulletins;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned int)hash;
 - (id)icon;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (unsigned int)messageNumberOfLines;
 - (BOOL)orderSectionUsingRecencyDate;
 - (id)parametersForSubtype:(int)arg1;
+- (id)replacementObjectForCoder:(id)arg1;
 - (void)setAllSubtypeParameters:(id)arg1;
 - (void)setDefaultSubtypeParameters:(id)arg1;
 - (void)setDisplayName:(id)arg1;
@@ -59,10 +56,10 @@
 - (void)setOrderSectionUsingRecencyDate:(BOOL)arg1;
 - (void)setShowsDateInFloatingLockScreenAlert:(BOOL)arg1;
 - (void)setShowsSubtitle:(BOOL)arg1;
+- (void)setUUID:(id)arg1;
 - (void)setUsesVariableLayout:(BOOL)arg1;
 - (BOOL)showsDateInFloatingLockScreenAlert;
 - (BOOL)showsSubtitle;
-- (id)uniqueIdentifier;
 - (BOOL)usesVariableLayout;
 
 @end

@@ -3,9 +3,9 @@
  */
 
 @interface CKDPRecordSaveResponse : PBCodable <NSCopying> {
-    NSString *_etag;
-    CKDPRecord *_serverFields;
-    CKDPDateStatistics *_timeStatistics;
+    NSString * _etag;
+    CKDPRecord * _serverFields;
+    CKDPDateStatistics * _timeStatistics;
 }
 
 @property (nonatomic, retain) NSString *etag;

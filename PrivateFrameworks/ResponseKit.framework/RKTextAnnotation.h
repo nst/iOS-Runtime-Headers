@@ -3,12 +3,12 @@
  */
 
 @interface RKTextAnnotation : NSObject {
-    BOOL _machineGenerated;
+    BOOL  _machineGenerated;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
-    unsigned int _type;
+    }  _range;
+    unsigned int  _type;
 }
 
 @property BOOL machineGenerated;

@@ -3,14 +3,14 @@
  */
 
 @interface PURedeyeToolController : PUPhotoEditToolController <UIGestureRecognizerDelegate> {
-    BOOL _failureAnimationIsInProgress;
-    PUPhotoEditOverlayBadge *_failureLabel;
-    NSArray *_failureLabelConstraints;
-    PUPhotoEditOverlayBadge *_instructionLabel;
-    NSArray *_instructionLabelConstraints;
-    BOOL _isModelChangeLocal;
-    NSMutableArray *_knownCorrections;
-    UITapGestureRecognizer *_tapGestureRecognizer;
+    BOOL  _failureAnimationIsInProgress;
+    PUPhotoEditOverlayBadge * _failureLabel;
+    NSArray * _failureLabelConstraints;
+    PUPhotoEditOverlayBadge * _instructionLabel;
+    NSArray * _instructionLabelConstraints;
+    BOOL  _isModelChangeLocal;
+    NSMutableArray * _knownCorrections;
+    UITapGestureRecognizer * _tapGestureRecognizer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -22,14 +22,14 @@
 - (void).cxx_destruct;
 - (void)_animateFailureAppearance;
 - (void)_animateInstructionAppearance;
-- (void)_correctRedEyeAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_correctRedEyeAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_handleRedeyeButton:(id)arg1;
 - (void)_handleTapGesture:(id)arg1;
 - (void)_loadCorrectionsFromModelAnimated:(BOOL)arg1;
-- (struct CGPoint { float x1; float x2; })_locationInCroppedImage:(struct CGPoint { float x1; float x2; })arg1 YCoordinateIsFlipped:(BOOL)arg2;
-- (struct CGPoint { float x1; float x2; })_locationInOriginalImage:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)_removeCorrectionAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)_showChangeIndicatorAtPoint:(struct CGPoint { float x1; float x2; })arg1 YCoordinateIsFlipped:(BOOL)arg2 isFailure:(BOOL)arg3;
+- (struct CGPoint { double x1; double x2; })_locationInCroppedImage:(struct CGPoint { double x1; double x2; })arg1 YCoordinateIsFlipped:(BOOL)arg2;
+- (struct CGPoint { double x1; double x2; })_locationInOriginalImage:(struct CGPoint { double x1; double x2; })arg1;
+- (BOOL)_removeCorrectionAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_showChangeIndicatorAtPoint:(struct CGPoint { double x1; double x2; })arg1 YCoordinateIsFlipped:(BOOL)arg2 isFailure:(BOOL)arg3;
 - (void)dealloc;
 - (void)didBecomeActiveTool;
 - (void)didResignActiveTool;
@@ -44,7 +44,6 @@
 - (id)toolbarIcon;
 - (void)updateViewConstraints;
 - (void)viewDidLoad;
-- (BOOL)wantsIrisAutoDisableWarning;
 - (BOOL)wantsSecondaryToolbarVisible;
 - (BOOL)wantsZoomAndPanEnabled;
 

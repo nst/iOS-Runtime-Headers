@@ -3,12 +3,14 @@
  */
 
 @interface SYChangeMessage : PBCodable <NSCopying> {
-    NSMutableArray *_changes;
-    SYMessageHeader *_header;
+    NSMutableArray * _changes;
+    SYMessageHeader * _header;
 }
 
 @property (nonatomic, retain) NSMutableArray *changes;
 @property (nonatomic, retain) SYMessageHeader *header;
+
++ (Class)changesType;
 
 - (void).cxx_destruct;
 - (void)addChanges:(id)arg1;

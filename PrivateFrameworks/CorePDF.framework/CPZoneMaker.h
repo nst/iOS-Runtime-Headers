@@ -3,7 +3,7 @@
  */
 
 @interface CPZoneMaker : NSObject {
-    CPCharSequence *charactersOnPage;
+    CPCharSequence * charactersOnPage;
 }
 
 - (void)addObjectsToStraddler:(id)arg1 from:(id)arg2;

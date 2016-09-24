@@ -3,8 +3,8 @@
  */
 
 @interface NSComparisonPredicateOperator : NSPredicateOperator {
-    unsigned int _options;
-    unsigned int _variant;
+    unsigned int  _options;
+    unsigned int  _variant;
 }
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation

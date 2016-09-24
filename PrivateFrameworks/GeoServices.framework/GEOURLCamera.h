@@ -3,18 +3,18 @@
  */
 
 @interface GEOURLCamera : PBCodable <NSCopying> {
-    double _altitude;
+    double  _altitude;
     struct { 
         unsigned int altitude : 1; 
         unsigned int heading : 1; 
         unsigned int latitude : 1; 
         unsigned int longitude : 1; 
         unsigned int pitch : 1; 
-    } _has;
-    double _heading;
-    double _latitude;
-    double _longitude;
-    double _pitch;
+    }  _has;
+    double  _heading;
+    double  _latitude;
+    double  _longitude;
+    double  _pitch;
 }
 
 @property (nonatomic) double altitude;

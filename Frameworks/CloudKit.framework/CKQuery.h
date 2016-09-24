@@ -3,9 +3,9 @@
  */
 
 @interface CKQuery : NSObject <NSCopying, NSSecureCoding> {
-    NSPredicate *_predicate;
-    NSString *_recordType;
-    NSArray *_sortDescriptors;
+    NSPredicate * _predicate;
+    NSString * _recordType;
+    NSArray * _sortDescriptors;
 }
 
 @property (nonatomic, copy) NSPredicate *predicate;

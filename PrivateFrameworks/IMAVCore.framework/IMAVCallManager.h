@@ -3,19 +3,19 @@
  */
 
 @interface IMAVCallManager : NSObject {
-    unsigned int _acCallState;
-    NSMutableArray *_acChatProxyArray;
-    int _acToken;
-    unsigned int _avCallState;
-    NSMutableArray *_avChatProxyArray;
-    int _avToken;
-    NSMutableArray *_chatArray;
-    unsigned int _globalCallState;
-    NSMutableDictionary *_guidToACChatProxyMap;
-    NSMutableDictionary *_guidToAVChatProxyMap;
-    NSDate *_lastCallStateChange;
-    IMPowerAssertion *_powerAssertion;
-    unsigned int _telephonyCallState;
+    unsigned int  _acCallState;
+    NSMutableArray * _acChatProxyArray;
+    int  _acToken;
+    unsigned int  _avCallState;
+    NSMutableArray * _avChatProxyArray;
+    int  _avToken;
+    NSMutableArray * _chatArray;
+    unsigned int  _globalCallState;
+    NSMutableDictionary * _guidToACChatProxyMap;
+    NSMutableDictionary * _guidToAVChatProxyMap;
+    NSDate * _lastCallStateChange;
+    IMPowerAssertion * _powerAssertion;
+    unsigned int  _telephonyCallState;
 }
 
 @property (nonatomic, readonly, retain) NSArray *_FTCalls;

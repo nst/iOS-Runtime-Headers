@@ -3,33 +3,29 @@
  */
 
 @interface TKTokenEndpoint : NSObject {
-    NSObject<OS_xpc_object> *_listener;
-    NSObject<OS_dispatch_queue> *_queue;
-    int _referenceCount;
-    <TKTokenDelegate> *_token;
-    NSString *_tokenID;
+    int  _clientCount;
+    NSObject<OS_xpc_object> * _listener;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMapTable * _sessionMap;
+    TKToken * _token;
+    NSError * _tokenError;
+    NSString * _tokenID;
 }
 
 @property (readonly) NSXPCListenerEndpoint *endpoint;
-@property int referenceCount;
+@property (readonly) TKToken *token;
+@property (readonly) NSString *tokenID;
 
 - (void).cxx_destruct;
 - (void)acceptNewConnection:(id)arg1;
-- (void)accessControlCompleteWithConstraints:(id)arg1 reply:(id)arg2 error:(id)arg3 completionHandler:(id /* block */)arg4;
-- (void)completeWithReturnedAttributes:(id)arg1 reply:(id)arg2 objectID:(id)arg3 session:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)addClientWithReplyNotification:(id /* block */)arg1;
+- (void)dealloc;
 - (id)endpoint;
-- (void)handleCreateObjectEvent:(id)arg1 reply:(id)arg2 attributes:(id)arg3 session:(id)arg4 completionHandler:(id /* block */)arg5;
-- (void)handleDeleteObjectEvent:(id)arg1 reply:(id)arg2 objectID:(id)arg3 session:(id)arg4 completionHandler:(id /* block */)arg5;
-- (void)handleEvaluateAccessControlEvent:(id)arg1 reply:(id)arg2 session:(id)arg3 completionHandler:(id /* block */)arg4;
-- (void)handleGetObjectAccessControlEvent:(id)arg1 reply:(id)arg2 objectID:(id)arg3 completionHandler:(id /* block */)arg4;
-- (void)handleGetObjectCreationAccessControlEvent:(id)arg1 reply:(id)arg2 attributes:(id)arg3 completionHandler:(id /* block */)arg4;
-- (void)handleGetPublicKeyEvent:(id)arg1 reply:(id)arg2 objectID:(id)arg3 session:(id)arg4 completionHandler:(id /* block */)arg5;
-- (void)handleOperation:(int)arg1 session:(id)arg2 event:(id)arg3 reply:(id)arg4 completionHandler:(id /* block */)arg5;
-- (void)handleReadDataEvent:(id)arg1 reply:(id)arg2 objectID:(id)arg3 session:(id)arg4 completionHandler:(id /* block */)arg5;
-- (void)handleSignDataEvent:(id)arg1 reply:(id)arg2 objectID:(id)arg3 session:(id)arg4 completionHandler:(id /* block */)arg5;
-- (void)handleUpdateObjectEvent:(id)arg1 reply:(id)arg2 objectID:(id)arg3 attributes:(id)arg4 session:(id)arg5 completionHandler:(id /* block */)arg6;
-- (id)initWithToken:(id)arg1 tokenID:(id)arg2 instanceID:(id)arg3;
-- (int)referenceCount;
-- (void)setReferenceCount:(int)arg1;
+- (id)initWithTokenID:(id)arg1;
+- (void)resumeWithToken:(id)arg1 tokenError:(id)arg2;
+- (id)sessionForEvent:(id)arg1 error:(id*)arg2;
+- (void)terminateAfterRemovingClientWithNotification:(id /* block */)arg1;
+- (id)token;
+- (id)tokenID;
 
 @end

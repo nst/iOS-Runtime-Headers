@@ -3,8 +3,8 @@
  */
 
 @interface BSCopyingCacheSet : NSObject {
-    NSSet *_immutable;
-    NSMutableSet *_mutable;
+    NSSet * _immutable;
+    NSMutableSet * _mutable;
 }
 
 @property (readonly) unsigned int count;

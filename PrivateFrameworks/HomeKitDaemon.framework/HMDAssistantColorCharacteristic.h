@@ -3,10 +3,10 @@
  */
 
 @interface HMDAssistantColorCharacteristic : NSObject {
-    NSString *_format;
-    BOOL _mandatory;
-    NSString *_readCharacteristicType;
-    NSString *_writeCharacteristicType;
+    NSString * _format;
+    BOOL  _mandatory;
+    NSString * _readCharacteristicType;
+    NSString * _writeCharacteristicType;
 }
 
 @property (nonatomic, readonly) NSString *format;

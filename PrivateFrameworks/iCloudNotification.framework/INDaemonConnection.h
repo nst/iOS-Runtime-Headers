@@ -3,7 +3,7 @@
  */
 
 @interface INDaemonConnection : NSObject {
-    NSXPCConnection *_connection;
+    NSXPCConnection * _connection;
 }
 
 - (void).cxx_destruct;

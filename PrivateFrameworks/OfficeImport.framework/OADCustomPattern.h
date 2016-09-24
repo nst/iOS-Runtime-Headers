@@ -3,8 +3,8 @@
  */
 
 @interface OADCustomPattern : OADPattern {
-    OADBlipRef *mBlipRef;
-    BOOL mIsBlipRefOverridden;
+    OADBlipRef * mBlipRef;
+    BOOL  mIsBlipRefOverridden;
 }
 
 + (id)defaultProperties;

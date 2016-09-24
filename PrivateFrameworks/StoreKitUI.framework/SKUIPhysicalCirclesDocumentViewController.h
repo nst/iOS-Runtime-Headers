@@ -3,13 +3,13 @@
  */
 
 @interface SKUIPhysicalCirclesDocumentViewController : SKUIViewController <SKUIArtworkRequestDelegate, SKUIDocumentViewController, SKUIOnboardingAffiliationCirclesDelegate, SKUIPhysicalCirclesTemplateDelegate, UIGestureRecognizerDelegate> {
-    SKUIOnboardingAffiliationCirclesViewController *_circlesViewController;
-    SKUIOnboardingFooterView *_footerView;
-    NSMapTable *_imageRequests;
-    UIGestureRecognizer *_interactivePopGestureRecognizer;
-    SKUIOnboardingProgressView *_progressView;
-    SKUIResourceLoader *_resourceLoader;
-    SKUIPhysicalCirclesTemplateViewElement *_templateElement;
+    SKUIOnboardingAffiliationCirclesViewController * _circlesViewController;
+    SKUIOnboardingFooterView * _footerView;
+    NSMapTable * _imageRequests;
+    UIGestureRecognizer * _interactivePopGestureRecognizer;
+    SKUIOnboardingProgressView * _progressView;
+    SKUIResourceLoader * _resourceLoader;
+    SKUIPhysicalCirclesTemplateViewElement * _templateElement;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -38,6 +38,7 @@
 - (void)onboardingCircles:(id)arg1 didSelectAffiliationItem:(id)arg2 atIndex:(int)arg3;
 - (void)physicalCirclesDOMFeature:(id)arg1 didRequestAnimation:(id)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillDisappear:(BOOL)arg1;
 

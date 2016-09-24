@@ -3,42 +3,84 @@
  */
 
 @interface GEOPDSearchResult : PBCodable <NSCopying> {
-    NSMutableArray *_disambiguationLabels;
-    GEOMapRegion *_displayMapRegion;
+    GEOPDRelatedSearchSuggestion * _defaultRelatedSearchSuggestion;
+    NSMutableArray * _disambiguationLabels;
+    GEOMapRegion * _displayMapRegion;
     struct { 
+        unsigned int searchResultType : 1; 
         unsigned int isChainResultSet : 1; 
-    } _has;
-    BOOL _isChainResultSet;
+    }  _has;
+    BOOL  _isChainResultSet;
+    NSMutableArray * _relatedSearchSuggestions;
+    NSString * _resultDisplayHeader;
+    GEOPDSearchClientBehavior * _searchClientBehavior;
+    int  _searchResultType;
+    PBUnknownFields * _unknownFields;
 }
 
+@property (nonatomic, retain) GEOPDRelatedSearchSuggestion *defaultRelatedSearchSuggestion;
 @property (nonatomic, retain) NSMutableArray *disambiguationLabels;
 @property (nonatomic, retain) GEOMapRegion *displayMapRegion;
+@property (nonatomic, readonly) BOOL hasDefaultRelatedSearchSuggestion;
 @property (nonatomic, readonly) BOOL hasDisplayMapRegion;
 @property (nonatomic) BOOL hasIsChainResultSet;
+@property (nonatomic, readonly) BOOL hasResultDisplayHeader;
+@property (nonatomic, readonly) BOOL hasSearchClientBehavior;
+@property (nonatomic) BOOL hasSearchResultType;
 @property (nonatomic) BOOL isChainResultSet;
+@property (nonatomic, retain) NSMutableArray *relatedSearchSuggestions;
+@property (nonatomic, retain) NSString *resultDisplayHeader;
+@property (nonatomic, retain) GEOPDSearchClientBehavior *searchClientBehavior;
+@property (nonatomic) int searchResultType;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
++ (Class)disambiguationLabelType;
++ (Class)relatedSearchSuggestionType;
+
+- (int)StringAsSearchResultType:(id)arg1;
 - (void)addDisambiguationLabel:(id)arg1;
+- (void)addRelatedSearchSuggestion:(id)arg1;
 - (void)clearDisambiguationLabels;
+- (void)clearRelatedSearchSuggestions;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)defaultRelatedSearchSuggestion;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)disambiguationLabelAtIndex:(unsigned int)arg1;
 - (id)disambiguationLabels;
 - (unsigned int)disambiguationLabelsCount;
 - (id)displayMapRegion;
+- (BOOL)hasDefaultRelatedSearchSuggestion;
 - (BOOL)hasDisplayMapRegion;
 - (BOOL)hasIsChainResultSet;
+- (BOOL)hasResultDisplayHeader;
+- (BOOL)hasSearchClientBehavior;
+- (BOOL)hasSearchResultType;
 - (unsigned int)hash;
 - (BOOL)isChainResultSet;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (id)relatedSearchSuggestionAtIndex:(unsigned int)arg1;
+- (id)relatedSearchSuggestions;
+- (unsigned int)relatedSearchSuggestionsCount;
+- (id)resultDisplayHeader;
+- (id)searchClientBehavior;
+- (int)searchResultType;
+- (id)searchResultTypeAsString:(int)arg1;
+- (void)setDefaultRelatedSearchSuggestion:(id)arg1;
 - (void)setDisambiguationLabels:(id)arg1;
 - (void)setDisplayMapRegion:(id)arg1;
 - (void)setHasIsChainResultSet:(BOOL)arg1;
+- (void)setHasSearchResultType:(BOOL)arg1;
 - (void)setIsChainResultSet:(BOOL)arg1;
+- (void)setRelatedSearchSuggestions:(id)arg1;
+- (void)setResultDisplayHeader:(id)arg1;
+- (void)setSearchClientBehavior:(id)arg1;
+- (void)setSearchResultType:(int)arg1;
+- (id)unknownFields;
 - (void)writeTo:(id)arg1;
 
 @end

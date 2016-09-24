@@ -3,15 +3,15 @@
  */
 
 @interface PLMomentAnalyzerGeoRequestInfo : NSObject {
-    NSArray *_assetIds;
-    NSArray *_extraAssetIds;
-    NSArray *_extraLocations;
-    unsigned int _failureCount;
-    NSObject<NSCopying> *_momentId;
-    NSString *_momentUuid;
-    unsigned int _requestType;
-    PLRevGeoLocationInfo *_revGeoLocationInfo;
-    <GEOMapServiceTicket> *_reverseGeocodeRequest;
+    NSArray * _assetIds;
+    NSArray * _extraAssetIds;
+    NSArray * _extraLocations;
+    unsigned int  _failureCount;
+    NSObject<NSCopying> * _momentId;
+    NSString * _momentUuid;
+    unsigned int  _requestType;
+    PLRevGeoLocationInfo * _revGeoLocationInfo;
+    <GEOMapServiceTicket> * _reverseGeocodeRequest;
 }
 
 @property (nonatomic, copy) NSArray *assetIds;

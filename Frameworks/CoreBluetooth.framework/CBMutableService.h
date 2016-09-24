@@ -3,13 +3,14 @@
  */
 
 @interface CBMutableService : CBService {
-    NSNumber *_ID;
+    NSNumber * _ID;
 }
 
 @property (retain) NSNumber *ID;
 @property (retain) NSArray *characteristics;
 @property (retain) NSArray *includedServices;
 
+- (void).cxx_destruct;
 - (id)ID;
 - (void)dealloc;
 - (id)description;

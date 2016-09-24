@@ -3,10 +3,10 @@
  */
 
 @interface CIEnhancementCalculator : CIEnhancementCalculation {
-    BOOL curvesEnabled;
-    BOOL faceBalanceEnabled;
-    BOOL shadowsEnabled;
-    BOOL vibranceEnabled;
+    BOOL  curvesEnabled;
+    BOOL  faceBalanceEnabled;
+    BOOL  shadowsEnabled;
+    BOOL  vibranceEnabled;
 }
 
 @property BOOL curvesEnabled;

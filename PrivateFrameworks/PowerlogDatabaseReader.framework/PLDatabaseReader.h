@@ -3,7 +3,7 @@
  */
 
 @interface PLDatabaseReader : NSObject {
-    struct sqlite3 { } *_dbConnection;
+    struct sqlite3 { } * _dbConnection;
 }
 
 @property struct sqlite3 { }*dbConnection;

@@ -3,10 +3,10 @@
  */
 
 @interface _UIPickerViewTestParameters : NSObject {
-    int _componentToScroll;
-    int _remainingIterations;
-    int _rowsToScroll;
-    NSString *_testName;
+    int  _componentToScroll;
+    int  _remainingIterations;
+    int  _rowsToScroll;
+    NSString * _testName;
 }
 
 - (void).cxx_destruct;

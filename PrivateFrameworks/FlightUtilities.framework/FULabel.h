@@ -3,17 +3,19 @@
  */
 
 @interface FULabel : UILabel {
-    FULabel *_associatedScalingLabel;
-    NSAttributedString *_attributedStringValue;
-    id /* block */ _onTap;
-    FULabel *_realAssociatedScalingLabel;
-    NSString *_stringValue;
-    BOOL _uppercase;
+    FULabel * _associatedScalingLabel;
+    NSAttributedString * _attributedStringValue;
+    id /* block */  _onTap;
+    FULabel * _realAssociatedScalingLabel;
+    NSString * _stringValue;
+    BOOL  _uppercase;
+    BOOL  _useCurrentLocale;
 }
 
 @property (nonatomic) FULabel *associatedScalingLabel;
 @property (copy) id /* block */ onTap;
-@property (nonatomic) BOOL uppercase;
+@property (nonatomic, readonly) BOOL uppercase;
+@property (readonly) BOOL useCurrentLocale;
 
 - (void).cxx_destruct;
 - (id)_associatedScalingLabel;
@@ -27,7 +29,8 @@
 - (void)setAttributedText:(id)arg1;
 - (void)setOnTap:(id /* block */)arg1;
 - (void)setText:(id)arg1;
-- (void)setUppercase:(BOOL)arg1;
+- (void)setUppercase:(BOOL)arg1 usingCurrentLocale:(BOOL)arg2;
 - (BOOL)uppercase;
+- (BOOL)useCurrentLocale;
 
 @end

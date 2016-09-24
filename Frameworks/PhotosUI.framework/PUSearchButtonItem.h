@@ -3,27 +3,27 @@
  */
 
 @interface PUSearchButtonItem : UIBarButtonItem {
-    PUSearchButtonItemCustomView *_customView;
-    UINavigationItem *_navigationItem;
-    BOOL _nudgesSearchIcon;
-    UISearchBar *_searchBar;
-    <UISearchBarDelegate> *_searchBarDelegate;
-    UIView *_searchIcon;
+    PUSearchButtonItemCustomView * _customView;
+    UINavigationItem * _navigationItem;
+    BOOL  _nudgesSearchIcon;
+    UISearchBar * _searchBar;
+    <UISearchBarDelegate> * _searchBarDelegate;
+    UIView * _searchIcon;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _searchIconDefaultBounds;
-    BOOL _showingSearchBar;
-    BOOL _wantsShowingSearchBar;
+    }  _searchIconDefaultBounds;
+    BOOL  _showingSearchBar;
+    BOOL  _wantsShowingSearchBar;
 }
 
-@property (nonatomic) float maxSearchBarWidth;
+@property (nonatomic) double maxSearchBarWidth;
 @property (nonatomic, readonly) UINavigationItem *navigationItem;
 @property (nonatomic) BOOL nudgesSearchIcon;
 @property (nonatomic, readonly) UISearchBar *searchBar;
@@ -32,7 +32,7 @@
 
 - (void).cxx_destruct;
 - (id)_allNavigationButtonItems;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_targetBoundsForSearchBarInNavigationBar:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_targetBoundsForSearchBarInNavigationBar:(id)arg1;
 - (id)initWithNavigationItem:(id)arg1 target:(id)arg2 action:(SEL)arg3;
 - (float)maxSearchBarWidth;
 - (void)navigationBarDidUpdate;

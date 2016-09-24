@@ -3,10 +3,10 @@
  */
 
 @interface _UIViewServiceReplyControlProxy : NSObject <_UIViewServiceProxy_ReplyControl> {
-    _UIViewServiceReplyAwaitingTrampoline *_awaitingTrampoline;
-    _UIViewServiceReplyControlTrampoline *_controlTrampoline;
-    NSLock *_lock;
-    id _target;
+    _UIViewServiceReplyAwaitingTrampoline * _awaitingTrampoline;
+    _UIViewServiceReplyControlTrampoline * _controlTrampoline;
+    NSLock * _lock;
+    id  _target;
 }
 
 + (id)proxyWithTarget:(id)arg1;

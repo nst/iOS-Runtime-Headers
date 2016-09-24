@@ -3,12 +3,12 @@
  */
 
 @interface ATDeviceDiskUsageProvider : NSObject {
-    ATClientController *_clientController;
-    ATUserDefaults *_defaults;
-    NSMutableDictionary *_diskUsageInfo;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_queue> *_usageInfoAccessQueue;
-    NSObject<OS_dispatch_group> *_usageUpdateGroup;
+    ATClientController * _clientController;
+    ATUserDefaults * _defaults;
+    NSMutableDictionary * _diskUsageInfo;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_queue> * _usageInfoAccessQueue;
+    NSObject<OS_dispatch_group> * _usageUpdateGroup;
 }
 
 + (id)sharedInstance;

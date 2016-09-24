@@ -3,56 +3,56 @@
  */
 
 @interface SKUIGridViewElementPageSectionConfiguration : NSObject {
-    int _cardVerticalSpacingStyle;
-    float _cellContentWidth;
-    SKUIViewElementLayoutContext *_cellLayoutContext;
-    float _cellPaddingInteriorHorizontal;
-    float _cellPaddingLeftEdgeHorizontal;
-    BOOL _cellPaddingNeedsReloading;
-    float _cellPaddingRightEdgeHorizontal;
-    <SKUIGridViewElementPageSectionConfigurationDataSource> *_dataSource;
+    int  _cardVerticalSpacingStyle;
+    double  _cellContentWidth;
+    SKUIViewElementLayoutContext * _cellLayoutContext;
+    double  _cellPaddingInteriorHorizontal;
+    double  _cellPaddingLeftEdgeHorizontal;
+    BOOL  _cellPaddingNeedsReloading;
+    double  _cellPaddingRightEdgeHorizontal;
+    <SKUIGridViewElementPageSectionConfigurationDataSource> * _dataSource;
     struct { 
         unsigned int configurePositionForItemAtIndexPath : 1; 
-    } _dataSourceRespondsToSelectorFlags;
-    BOOL _gridIsEdgeToEdge;
+    }  _dataSourceRespondsToSelectorFlags;
+    BOOL  _gridIsEdgeToEdge;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _gridViewElementStyleElementPadding;
-    float _gridViewElementStyleItemWidth;
-    BOOL _gridViewElementStyleItemWidthIsPercentage;
-    BOOL _hasGridViewElementStyle;
-    BOOL _hasHeader;
-    int _lockupType;
-    float _minimumCellHeight;
-    int _numberOfColumns;
-    unsigned int _numberOfGridItems;
-    SKUIStorePageSectionContext *_pageSectionContext;
-    NSArray *_positions;
-    BOOL _rendersWithPerspective;
-    UIColor *_separatorColor;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _gridViewElementStyleElementPadding;
+    double  _gridViewElementStyleItemWidth;
+    BOOL  _gridViewElementStyleItemWidthIsPercentage;
+    BOOL  _hasGridViewElementStyle;
+    BOOL  _hasHeader;
+    int  _lockupType;
+    double  _minimumCellHeight;
+    int  _numberOfColumns;
+    unsigned int  _numberOfGridItems;
+    SKUIStorePageSectionContext * _pageSectionContext;
+    NSArray * _positions;
+    BOOL  _rendersWithPerspective;
+    UIColor * _separatorColor;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _separatorMargins;
-    int _separatorStyle;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _separatorMargins;
+    int  _separatorStyle;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    } _separatorWidths;
-    BOOL _showsEditMode;
-    NSArray *_viewElements;
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
+    }  _separatorWidths;
+    BOOL  _showsEditMode;
+    NSArray * _viewElements;
 }
 
 @property (nonatomic, retain) SKUIViewElementLayoutContext *cellLayoutContext;
-@property (nonatomic, readonly) float columnContentWidth;
-@property (nonatomic, readonly) float columnWidth;
+@property (nonatomic, readonly) double columnContentWidth;
+@property (nonatomic, readonly) double columnWidth;
 @property (nonatomic) <SKUIGridViewElementPageSectionConfigurationDataSource> *dataSource;
 @property (nonatomic) int numberOfColumns;
 @property (nonatomic, retain) SKUIStorePageSectionContext *pageSectionContext;
@@ -64,7 +64,7 @@
 - (Class)_cardCellClassForCard:(id)arg1;
 - (float)_cellContentWidth;
 - (float)_cellHeightForViewElement:(id)arg1 width:(float)arg2;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_cellInsetsForViewElement:(id)arg1 indexPath:(id)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_cellInsetsForViewElement:(id)arg1 indexPath:(id)arg2;
 - (float)_cellPaddingInteriorHorizontal;
 - (float)_cellPaddingLeftEdgeHorizontal;
 - (float)_cellPaddingRightEdgeHorizontal;
@@ -73,7 +73,7 @@
 - (BOOL)_isContainedWithinExploreTemplateWithGridViewElement:(id)arg1;
 - (id)_lockupCellReuseIdentifierWithLockup:(id)arg1;
 - (int)_lockupTypeForLockup:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_normalizedContentInsetForViewElement:(id)arg1 indexPath:(id)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_normalizedContentInsetForViewElement:(id)arg1 indexPath:(id)arg2;
 - (int)_numberOfColumnsForWidth:(float)arg1 style:(id)arg2;
 - (void)_reloadCellPaddingIfNeeded;
 - (BOOL)_useOrdinalPadding;
@@ -81,7 +81,7 @@
 - (Class)cellClassForViewElement:(id)arg1;
 - (id)cellForViewElement:(id)arg1 indexPath:(id)arg2;
 - (id)cellLayoutContext;
-- (struct CGSize { float x1; float x2; })cellSizeForViewElement:(id)arg1 indexPath:(id)arg2;
+- (struct CGSize { double x1; double x2; })cellSizeForViewElement:(id)arg1 indexPath:(id)arg2;
 - (void)collectionViewWillApplyLayoutAttributes:(id)arg1;
 - (float)columnContentWidth;
 - (float)columnWidth;
@@ -95,7 +95,7 @@
 - (void)reloadCellWithIndexPath:(id)arg1 forViewElement:(id)arg2 reason:(int)arg3;
 - (BOOL)rendersWithPerspective;
 - (void)requestCellLayoutForViewElement:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionContentInsetAdjustedFromValue:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 forGridViewElement:(id)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionContentInsetAdjustedFromValue:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 forGridViewElement:(id)arg2;
 - (void)setCellLayoutContext:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setNumberOfColumns:(int)arg1;

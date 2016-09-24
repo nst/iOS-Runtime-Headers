@@ -3,8 +3,8 @@
  */
 
 @interface NSOperationQueue : NSObject {
-    id _private;
-    void *_reserved;
+    id  _private;
+    void * _reserved;
 }
 
 @property int maxConcurrentOperationCount;
@@ -13,6 +13,7 @@
 @property (readonly, copy) NSArray *operations;
 @property int qualityOfService;
 @property (getter=isSuspended) BOOL suspended;
+@property (nonatomic, readonly) BOOL tsu_isCurrentQueue;
 @property NSObject<OS_dispatch_queue> *underlyingQueue;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
@@ -45,9 +46,17 @@
 - (id)underlyingQueue;
 - (void)waitUntilAllOperationsAreFinished;
 
-// Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
+// Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
 
 - (void)cancelAllOperationsWithError:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
++ (id)fc_ckRequestOperationQueue;
++ (id)fc_sharedConcurrentQueue;
++ (id)fc_sharedSerialQueue;
+
+- (void)addAsyncOperationWithBlock:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
@@ -61,5 +70,12 @@
 // Image: /System/Library/PrivateFrameworks/SpotlightUI.framework/SpotlightUI
 
 - (void)logStateOperationCountGreaterThan:(int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
++ (id)tsu_newSerialOperationQueueWithName:(id)arg1;
+
+- (BOOL)tsu_isCurrentQueue;
+- (void)tsu_performBlock:(id /* block */)arg1;
 
 @end

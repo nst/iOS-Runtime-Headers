@@ -3,7 +3,7 @@
  */
 
 @interface SSPurchaseReceipt : NSObject {
-    ISPurchaseReceipt *_purchaseReceipt;
+    ISPurchaseReceipt * _purchaseReceipt;
 }
 
 @property (readonly) NSDate *expirationDate;

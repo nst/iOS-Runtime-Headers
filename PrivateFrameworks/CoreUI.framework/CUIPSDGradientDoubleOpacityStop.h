@@ -3,7 +3,7 @@
  */
 
 @interface CUIPSDGradientDoubleOpacityStop : CUIPSDGradientOpacityStop <NSCoding> {
-    float leadOutOpacity;
+    double  leadOutOpacity;
 }
 
 + (id)doubleOpacityStopWithLocation:(float)arg1 leadInOpacity:(float)arg2 leadOutOpacity:(float)arg3;

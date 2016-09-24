@@ -3,8 +3,8 @@
  */
 
 @interface SKUITracklistViewElement : SKUIViewElement {
-    NSMutableArray *_sections;
-    NSMutableArray *_tracks;
+    NSMutableArray * _sections;
+    NSMutableArray * _tracks;
 }
 
 @property (nonatomic, readonly) SKUIHeaderViewElement *header;

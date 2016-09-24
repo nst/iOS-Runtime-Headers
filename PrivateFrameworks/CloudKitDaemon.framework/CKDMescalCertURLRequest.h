@@ -3,7 +3,7 @@
  */
 
 @interface CKDMescalCertURLRequest : CKDURLRequest {
-    NSData *_mescalCert;
+    NSData * _mescalCert;
 }
 
 @property (nonatomic, retain) NSData *mescalCert;
@@ -14,6 +14,7 @@
 - (id)httpMethod;
 - (id)mescalCert;
 - (int)partitionType;
+- (void)requestDidParse509CertObject:(id)arg1;
 - (void)requestDidParsePlaintextObject:(id)arg1;
 - (BOOL)requiresDeviceID;
 - (BOOL)requiresSignature;

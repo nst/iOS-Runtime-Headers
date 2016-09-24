@@ -3,8 +3,8 @@
  */
 
 @interface QLPDFHanderDelegateForwarder : NSObject <UIWebPDFViewHandlerDelegate> {
-    <NSObject><UIWebPDFViewHandlerDelegate> *_delegate;
-    UIWebView *_webView;
+    <NSObject><UIWebPDFViewHandlerDelegate> * _delegate;
+    UIWebView * _webView;
 }
 
 @property (nonatomic) <NSObject><UIWebPDFViewHandlerDelegate> *delegate;

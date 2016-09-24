@@ -3,13 +3,13 @@
  */
 
 @interface IDSInitiateMessage : IDSFaceTimeMessage <NSCopying> {
-    NSArray *_canonicalizedPeers;
-    NSArray *_peers;
-    NSDictionary *_regionInformation;
-    NSData *_selfBlob;
-    NSNumber *_selfNATType;
-    NSData *_selfNatIP;
-    NSData *_selfPushToken;
+    NSArray * _canonicalizedPeers;
+    NSArray * _peers;
+    NSDictionary * _regionInformation;
+    NSData * _selfBlob;
+    NSNumber * _selfNATType;
+    NSData * _selfNatIP;
+    NSData * _selfPushToken;
 }
 
 @property (copy) NSArray *canonicalizedPeers;

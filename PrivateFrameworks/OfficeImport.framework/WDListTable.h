@@ -3,11 +3,11 @@
  */
 
 @interface WDListTable : NSObject {
-    WDList *mDefaultList;
-    WDDocument *mDocument;
-    NSMutableDictionary *mListMapById;
-    NSMutableArray *mLists;
-    WDList *mNullList;
+    WDList * mDefaultList;
+    WDDocument * mDocument;
+    NSMutableDictionary * mListMapById;
+    NSMutableArray * mLists;
+    WDList * mNullList;
 }
 
 - (id)addListWithListId:(long)arg1 listDefinitionId:(long)arg2;

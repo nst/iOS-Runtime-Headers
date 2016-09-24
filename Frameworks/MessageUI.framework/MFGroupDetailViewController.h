@@ -3,8 +3,8 @@
  */
 
 @interface MFGroupDetailViewController : UITableViewController {
-    <MFGroupDetailViewControllerDelegate> *_delegate;
-    MFRecentComposeRecipientGroup *_group;
+    <MFGroupDetailViewControllerDelegate> * _delegate;
+    MFRecentComposeRecipientGroup * _group;
 }
 
 @property (nonatomic) <MFGroupDetailViewControllerDelegate> *delegate;

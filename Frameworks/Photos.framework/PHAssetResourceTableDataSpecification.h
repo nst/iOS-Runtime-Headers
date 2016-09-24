@@ -3,12 +3,12 @@
  */
 
 @interface PHAssetResourceTableDataSpecification : NSObject {
-    int _bytesPerRow;
-    int _dataHeight;
-    int _dataWidth;
-    int _height;
-    int _imageDataOffset;
-    int _width;
+    int  _bytesPerRow;
+    int  _dataHeight;
+    int  _dataWidth;
+    int  _height;
+    int  _imageDataOffset;
+    int  _width;
 }
 
 @property (nonatomic) int bytesPerRow;

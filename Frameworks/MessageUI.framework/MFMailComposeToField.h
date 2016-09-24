@@ -3,10 +3,10 @@
  */
 
 @interface MFMailComposeToField : MFMailComposeRecipientView {
-    MFComposeSMIMELockButton *_smimeButton;
-    BOOL _smimeButtonEnabled;
-    BOOL _smimeButtonVisible;
-    <MFMailComposeToFieldDelegate> *_toFieldDelegate;
+    MFComposeSMIMELockButton * _smimeButton;
+    BOOL  _smimeButtonEnabled;
+    BOOL  _smimeButtonVisible;
+    <MFMailComposeToFieldDelegate> * _toFieldDelegate;
 }
 
 @property (nonatomic, readonly) MFComposeSMIMELockButton *SMIMEButton;

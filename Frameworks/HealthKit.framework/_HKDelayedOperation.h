@@ -3,12 +3,12 @@
  */
 
 @interface _HKDelayedOperation : NSObject {
-    id /* block */ _block;
-    int _blockEnqueued;
-    double _delay;
-    double _lastExecution;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_source> *_timerSource;
+    id /* block */  _block;
+    int  _blockEnqueued;
+    double  _delay;
+    double  _lastExecution;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSObject<OS_dispatch_source> * _timerSource;
 }
 
 - (void).cxx_destruct;

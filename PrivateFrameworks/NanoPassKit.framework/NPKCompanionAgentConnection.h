@@ -2,22 +2,28 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@interface NPKCompanionAgentConnection : NSObject {
-    NSObject<OS_dispatch_queue> *_cacheQueue;
-    NSMutableDictionary *_cachedPasses;
-    NSMutableSet *_cachedUniqueIDs;
-    NSMutableDictionary *_connectionAvailableActions;
-    PKPaymentWebServiceContext *_connectionUnavailableWebServiceContext;
-    BOOL _queueAppropriateFailedActions;
-    NSXPCConnection *_xpcConnection;
-    NSObject<OS_dispatch_queue> *_xpcConnectionQueue;
+@interface NPKCompanionAgentConnection : NSObject <NPKCompanionClientProtocol> {
+    NSObject<OS_dispatch_queue> * _cacheQueue;
+    NSMutableDictionary * _cachedPasses;
+    NSMutableSet * _cachedUniqueIDs;
+    NSMutableDictionary * _connectionAvailableActions;
+    PKPaymentWebServiceContext * _connectionUnavailableWebServiceContext;
+    <NPKCompanionAgentConnectionDelegate> * _delegate;
+    BOOL  _queueAppropriateFailedActions;
+    NSXPCConnection * _xpcConnection;
+    NSObject<OS_dispatch_queue> * _xpcConnectionQueue;
 }
 
 @property (retain) NSMutableDictionary *cachedPasses;
 @property (retain) NSMutableSet *cachedUniqueIDs;
 @property (nonatomic, retain) NSMutableDictionary *connectionAvailableActions;
 @property (nonatomic, retain) PKPaymentWebServiceContext *connectionUnavailableWebServiceContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <NPKCompanionAgentConnectionDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic) BOOL queueAppropriateFailedActions;
+@property (readonly) Class superclass;
 @property (readonly) NSXPCConnection *xpcConnection;
 
 + (BOOL)isIssuerAppProvisioningSupported;
@@ -27,7 +33,7 @@
 
 - (void).cxx_destruct;
 - (void)_addPassToCache:(id)arg1;
-- (void)_applyDataAccessorToPass:(id)arg1;
+- (void)_applyPropertiesToPass:(id)arg1;
 - (id)_cachedPassForUniqueID:(id)arg1;
 - (id)_cachedUniqueIDs;
 - (void)_clearCaches;
@@ -49,9 +55,11 @@
 - (void)dealloc;
 - (void)defaultCardUniqueID:(id /* block */)arg1;
 - (void)defaultPaymentApplicationForPassWithUniqueID:(id)arg1 completion:(id /* block */)arg2;
+- (id)delegate;
 - (void)handlePendingUnpairingWithCompletion:(id /* block */)arg1;
 - (void)handlePendingiCloudSignoutWithCompletion:(id /* block */)arg1;
 - (id)init;
+- (void)initiateLostModeExitAuthWithCompletion:(id /* block */)arg1;
 - (void)noteProvisioningPreflightCompleteWithSuccess:(BOOL)arg1 error:(id)arg2 completion:(id /* block */)arg3;
 - (void)noteWatchOfferShownForPaymentPass:(id)arg1;
 - (void)paymentPassUniqueIDs:(id /* block */)arg1;
@@ -68,6 +76,7 @@
 - (void)setConnectionUnavailableWebServiceContext:(id)arg1;
 - (void)setDefaultCardUniqueID:(id)arg1 completion:(id /* block */)arg2;
 - (void)setDefaultPaymentApplication:(id)arg1 forPassWithUniqueID:(id)arg2 completion:(id /* block */)arg3;
+- (void)setDelegate:(id)arg1;
 - (void)setQueueAppropriateFailedActions:(BOOL)arg1;
 - (void)setSharedPaymentWebServiceContext:(id)arg1 forDevice:(id)arg2;
 - (id)sharedPaymentWebServiceContext;

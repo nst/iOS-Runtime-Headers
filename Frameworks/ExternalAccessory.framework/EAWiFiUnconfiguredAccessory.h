@@ -3,12 +3,12 @@
  */
 
 @interface EAWiFiUnconfiguredAccessory : NSObject {
-    NSString *_macAddress;
-    NSString *_manufacturer;
-    NSString *_model;
-    NSString *_name;
-    unsigned int _properties;
-    NSString *_ssid;
+    NSString * _macAddress;
+    NSString * _manufacturer;
+    NSString * _model;
+    NSString * _name;
+    unsigned int  _properties;
+    NSString * _ssid;
 }
 
 @property (nonatomic, readonly, copy) NSString *macAddress;

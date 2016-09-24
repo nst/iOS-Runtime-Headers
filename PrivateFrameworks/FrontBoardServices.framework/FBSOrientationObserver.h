@@ -3,10 +3,10 @@
  */
 
 @interface FBSOrientationObserver : NSObject <FBSOrientationObserverClientDelegate> {
-    NSObject<OS_dispatch_queue> *_callback_queue;
-    FBSOrientationObserverClient *_client;
-    id /* block */ _handler;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> * _callback_queue;
+    FBSOrientationObserverClient * _client;
+    id /* block */  _handler;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

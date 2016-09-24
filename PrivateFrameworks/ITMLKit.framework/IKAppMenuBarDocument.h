@@ -3,15 +3,15 @@
  */
 
 @interface IKAppMenuBarDocument : NSObject <IKDOMFeature, IKJSMenuBarDocumentAppBridge> {
-    IKAppContext *_appContext;
-    <IKAppMenuBarDocumentDelegate> *_delegate;
-    NSMutableDictionary *_documentOptionsByEntityUniqueIdentifier;
-    NSMutableDictionary *_documentsByEntityUniqueIdentifier;
-    NSString *_featureName;
-    NSMutableDictionary *_jsDocumentsByEntityUniqueIdentifier;
-    IKViewElement *_menuBarElement;
-    IKDOMNode *_parentDOMNode;
-    <NSCopying> *_selectedEntityUniqueIdentifier;
+    IKAppContext * _appContext;
+    <IKAppMenuBarDocumentDelegate> * _delegate;
+    NSMutableDictionary * _documentOptionsByEntityUniqueIdentifier;
+    NSMutableDictionary * _documentsByEntityUniqueIdentifier;
+    NSString * _featureName;
+    NSMutableDictionary * _jsDocumentsByEntityUniqueIdentifier;
+    IKViewElement * _menuBarElement;
+    IKDOMNode * _parentDOMNode;
+    <NSCopying> * _selectedEntityUniqueIdentifier;
 }
 
 @property (nonatomic, readonly) IKAppContext *appContext;

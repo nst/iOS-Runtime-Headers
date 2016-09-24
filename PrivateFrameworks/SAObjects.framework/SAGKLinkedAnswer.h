@@ -15,6 +15,7 @@
 @property (nonatomic, copy) NSString *query;
 @property (nonatomic, copy) NSURL *searchUri;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) NSArray *thumbnails;
 
 + (id)linkedAnswer;
 + (id)linkedAnswerWithDictionary:(id)arg1 context:(id)arg2;
@@ -35,5 +36,7 @@
 - (void)setPunchOut:(id)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setSearchUri:(id)arg1;
+- (void)setThumbnails:(id)arg1;
+- (id)thumbnails;
 
 @end

@@ -3,19 +3,19 @@
  */
 
 @interface IMAVDaemonController : NSObject {
-    BOOL _acquiringDaemonConnection;
-    NSLock *_connectionLock;
-    IMAVDaemonListener *_daemonListener;
-    BOOL _hasCheckedForDaemon;
-    NSString *_listenerID;
-    NSObject<OS_dispatch_queue> *_listenerLockQueue;
-    NSMutableArray *_listeners;
-    IMLocalObject *_localObject;
-    NSObject<OS_dispatch_queue> *_localObjectLockQueue;
-    NSObject<OS_dispatch_queue> *_remoteDaemonLockQueue;
-    NSObject<OS_dispatch_queue> *_remoteMessageQueue;
-    IMRemoteObject<IMAVDaemonProtocol> *_remoteObject;
-    struct __CFRunLoopSource { } *_runLoopSource;
+    BOOL  _acquiringDaemonConnection;
+    NSLock * _connectionLock;
+    IMAVDaemonListener * _daemonListener;
+    BOOL  _hasCheckedForDaemon;
+    NSString * _listenerID;
+    NSObject<OS_dispatch_queue> * _listenerLockQueue;
+    NSMutableArray * _listeners;
+    IMLocalObject * _localObject;
+    NSObject<OS_dispatch_queue> * _localObjectLockQueue;
+    NSObject<OS_dispatch_queue> * _remoteDaemonLockQueue;
+    NSObject<OS_dispatch_queue> * _remoteMessageQueue;
+    IMRemoteObject<IMAVDaemonProtocol> * _remoteObject;
+    struct __CFRunLoopSource { } * _runLoopSource;
 }
 
 @property (nonatomic, readonly) IMAVDaemonListener *listener;

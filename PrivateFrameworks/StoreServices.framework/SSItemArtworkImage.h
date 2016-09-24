@@ -3,8 +3,8 @@
  */
 
 @interface SSItemArtworkImage : NSObject <NSCopying, SSXPCCoding> {
-    NSMutableDictionary *_dictionary;
-    NSString *_imageKind;
+    NSMutableDictionary * _dictionary;
+    NSString * _imageKind;
 }
 
 @property (nonatomic, retain) NSURL *URL;
@@ -15,8 +15,8 @@
 @property (nonatomic, readonly) int height;
 @property (nonatomic, copy) NSString *imageKind;
 @property (nonatomic, readonly) int imageOrientation;
-@property (nonatomic, readonly) float imageScale;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } imageSize;
+@property (nonatomic, readonly) double imageScale;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } imageSize;
 @property (getter=isPrerendered, nonatomic, readonly) BOOL prerendered;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) int width;
@@ -33,7 +33,7 @@
 - (id)imageKind;
 - (int)imageOrientation;
 - (float)imageScale;
-- (struct CGSize { float x1; float x2; })imageSize;
+- (struct CGSize { double x1; double x2; })imageSize;
 - (id)initWithArtworkDictionary:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

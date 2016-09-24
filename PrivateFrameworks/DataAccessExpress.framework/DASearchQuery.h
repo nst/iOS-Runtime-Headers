@@ -3,21 +3,23 @@
  */
 
 @interface DASearchQuery : NSObject {
-    <DASearchQueryConsumer> *_consumer;
+    <DASearchQueryConsumer> * _consumer;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _range;
-    NSString *_searchID;
-    NSString *_searchString;
-    int _state;
-    int _timeLimit;
+    }  _range;
+    NSString * _searchID;
+    NSPredicate * _searchPredicate;
+    NSString * _searchString;
+    int  _state;
+    int  _timeLimit;
 }
 
 @property (nonatomic) <DASearchQueryConsumer> *consumer;
 @property (nonatomic) unsigned int maxResults;
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } range;
 @property (nonatomic, copy) NSString *searchID;
+@property (nonatomic, copy) NSPredicate *searchPredicate;
 @property (nonatomic, copy) NSString *searchString;
 @property (nonatomic) int state;
 @property (nonatomic) int timeLimit;
@@ -30,10 +32,12 @@
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1 consumer:(id)arg2;
 - (id)initWithSearchString:(id)arg1 consumer:(id)arg2;
+- (id)initWithSearchString:(id)arg1 predicate:(id)arg2 consumer:(id)arg3;
 - (BOOL)isQueryRunning;
 - (unsigned int)maxResults;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (id)searchID;
+- (id)searchPredicate;
 - (id)searchString;
 - (void)sendFinishedToConsumerWithError:(id)arg1;
 - (void)sendResultsToConsumer:(id)arg1;
@@ -41,6 +45,7 @@
 - (void)setMaxResults:(unsigned int)arg1;
 - (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setSearchID:(id)arg1;
+- (void)setSearchPredicate:(id)arg1;
 - (void)setSearchString:(id)arg1;
 - (void)setState:(int)arg1;
 - (void)setTimeLimit:(int)arg1;

@@ -3,10 +3,10 @@
  */
 
 @interface GEOTileUsageInfo : NSObject {
-    unsigned int _dataLength;
-    double _endTime;
-    double _startTime;
-    NSMapTable *_tileStyleToCount;
+    unsigned int  _dataLength;
+    double  _endTime;
+    double  _startTime;
+    NSMapTable * _tileStyleToCount;
 }
 
 @property (nonatomic, readonly) unsigned int dataLength;

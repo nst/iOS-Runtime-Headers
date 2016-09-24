@@ -3,7 +3,7 @@
  */
 
 @interface AARemoteServer : NSObject {
-    AAURLSession *_session;
+    AAURLSession * _session;
 }
 
 + (id)newSigningSessionWithError:(id*)arg1;

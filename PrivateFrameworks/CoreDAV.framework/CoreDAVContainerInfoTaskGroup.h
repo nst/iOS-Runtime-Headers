@@ -3,12 +3,12 @@
  */
 
 @interface CoreDAVContainerInfoTaskGroup : CoreDAVTaskGroup <CoreDAVPropFindTaskDelegate> {
-    NSString *_appSpecificHomeSetPropName;
-    NSString *_appSpecificHomeSetPropNameSpace;
-    int _containerInfoDepth;
-    NSMutableSet *_containerURLs;
-    NSMutableSet *_containers;
-    int _phase;
+    NSString * _appSpecificHomeSetPropName;
+    NSString * _appSpecificHomeSetPropNameSpace;
+    int  _containerInfoDepth;
+    NSMutableSet * _containerURLs;
+    NSMutableSet * _containers;
+    int  _phase;
 }
 
 @property (nonatomic) int containerInfoDepth;

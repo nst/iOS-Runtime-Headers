@@ -3,15 +3,15 @@
  */
 
 @interface AAFamilyInvite : NSObject {
-    NSString *_childFirstName;
-    NSString *_childLastName;
-    NSString *_code;
-    BOOL _isChildTransferInvite;
-    NSNumber *_organizerDSID;
-    NSString *_organizerEmail;
-    NSString *_organizerFirstName;
-    NSString *_organizerLastName;
-    NSNumber *_recepientDSID;
+    NSString * _childFirstName;
+    NSString * _childLastName;
+    NSString * _code;
+    BOOL  _isChildTransferInvite;
+    NSNumber * _organizerDSID;
+    NSString * _organizerEmail;
+    NSString * _organizerFirstName;
+    NSString * _organizerLastName;
+    NSNumber * _recepientDSID;
 }
 
 @property (nonatomic, copy) NSString *childFirstName;

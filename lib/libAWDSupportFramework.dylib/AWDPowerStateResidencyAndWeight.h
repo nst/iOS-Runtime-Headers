@@ -6,9 +6,9 @@
     struct { 
         unsigned int residency : 1; 
         unsigned int weight : 1; 
-    } _has;
-    unsigned int _residency;
-    unsigned int _weight;
+    }  _has;
+    unsigned int  _residency;
+    unsigned int  _weight;
 }
 
 @property (nonatomic) BOOL hasResidency;

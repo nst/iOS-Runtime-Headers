@@ -3,11 +3,11 @@
  */
 
 @interface UITextReplacement : NSObject {
-    NSString *_menuTitle;
-    NSString *_originalText;
-    UITextRange *_range;
-    NSString *_replacementText;
-    unsigned int _usageTrackingMask;
+    NSString * _menuTitle;
+    NSString * _originalText;
+    UITextRange * _range;
+    NSString * _replacementText;
+    unsigned int  _usageTrackingMask;
 }
 
 @property (nonatomic, readonly) NSString *menuTitle;

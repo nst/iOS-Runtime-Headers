@@ -3,12 +3,13 @@
  */
 
 @interface SSMachineDataRequest : SSRequest <SSXPCCoding> {
-    NSNumber *_accountID;
-    NSData *_actionData;
-    NSString *_actionName;
-    BOOL _allowsBootstrapCellularData;
-    int _protocolVersion;
-    BOOL _waitsForPurchaseOperations;
+    NSNumber * _accountID;
+    NSData * _actionData;
+    NSString * _actionName;
+    BOOL  _allowsBootstrapCellularData;
+    int  _protocolVersion;
+    NSString * _userAgent;
+    BOOL  _waitsForPurchaseOperations;
 }
 
 @property (copy) NSNumber *accountIdentifier;
@@ -20,6 +21,7 @@
 @property (readonly) unsigned int hash;
 @property int protocolVersion;
 @property (readonly) Class superclass;
+@property (copy) NSString *userAgent;
 @property BOOL waitsForPurchaseOperations;
 
 - (id)accountIdentifier;
@@ -36,8 +38,11 @@
 - (void)setActionName:(id)arg1;
 - (void)setAllowsBootstrapCellularData:(BOOL)arg1;
 - (void)setProtocolVersion:(int)arg1;
+- (void)setUserAgent:(id)arg1;
 - (void)setWaitsForPurchaseOperations:(BOOL)arg1;
 - (void)startWithCompletionBlock:(id /* block */)arg1;
+- (void)startWithDetailedCompletionBlock:(id /* block */)arg1;
+- (id)userAgent;
 - (BOOL)waitsForPurchaseOperations;
 
 @end

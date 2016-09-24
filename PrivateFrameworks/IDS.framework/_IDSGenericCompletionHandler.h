@@ -3,7 +3,7 @@
  */
 
 @interface _IDSGenericCompletionHandler : IDSDelegateInfo {
-    id /* block */ _handler;
+    id /* block */  _handler;
 }
 
 @property (nonatomic, copy) id /* block */ handler;

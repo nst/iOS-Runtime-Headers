@@ -3,14 +3,14 @@
  */
 
 @interface BLTPBCancelBulletinRequest : PBRequest <NSCopying> {
-    double _date;
-    unsigned int _feed;
+    double  _date;
+    unsigned int  _feed;
     struct { 
         unsigned int date : 1; 
         unsigned int feed : 1; 
-    } _has;
-    NSString *_publisherMatchID;
-    NSString *_universalSectionID;
+    }  _has;
+    NSString * _publisherMatchID;
+    NSString * _universalSectionID;
 }
 
 @property (nonatomic) double date;

@@ -3,7 +3,7 @@
  */
 
 @interface WBSCreditCardDataController : NSObject {
-    NSMapTable *_creditCardDataKeychainReferences;
+    NSMapTable * _creditCardDataKeychainReferences;
 }
 
 @property (nonatomic, readonly) NSArray *creditCardData;

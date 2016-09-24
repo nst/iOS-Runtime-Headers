@@ -3,22 +3,25 @@
  */
 
 @interface PLSearchIndexManager : NSObject {
-    BOOL __indexing;
-    id /* block */ __inqAfterIndexingDidIterate;
-    NSCountedSet *__pauseReasons;
-    PLSearchIndexDateFormatter *_dateFormatter;
-    PSIDatabase *_db;
-    BOOL _hasScheduledCloseIndex;
-    BOOL _hasValidSearchIndex;
-    PLKeywordManager *_keywordManager;
-    PLPhotoLibrary *_photoLibrary;
-    NSObject<OS_dispatch_queue> *_queue;
-    BOOL _receivedUpdatesWhileIndexing;
-    NSString *_searchIndexDirectory;
-    NSDictionary *_searchMetadata;
-    PLClientServerTransaction *_serverTransaction;
-    PLThrottleTimer *_throttleTimer;
-    NSDictionary *_uuidsToProcess;
+    BOOL  __indexing;
+    id /* block */  __inqAfterIndexingDidIterate;
+    NSCountedSet * __pauseReasons;
+    PLSearchIndexDateFormatter * _dateFormatter;
+    PSIDatabase * _db;
+    BOOL  _hasScheduledCloseIndex;
+    BOOL  _hasValidSearchIndex;
+    BOOL  _isTrackingRebuild;
+    PLKeywordManager * _keywordManager;
+    PLPhotoLibrary * _photoLibrary;
+    NSObject<OS_dispatch_queue> * _queue;
+    int  _rebuildReason;
+    BOOL  _receivedUpdatesWhileIndexing;
+    NSString * _searchIndexDirectory;
+    NSDictionary * _searchMetadata;
+    PLClientServerTransaction * _serverTransaction;
+    PLThrottleTimer * _throttleTimer;
+    int  _updateState;
+    NSDictionary * _uuidsToProcess;
 }
 
 @property (getter=_isIndexing, setter=_setIndexing:) BOOL _indexing;
@@ -30,17 +33,24 @@
 + (id)_databasePathInDirectory:(id)arg1;
 + (id)_defaultDatabaseDirectory;
 + (id)defaultDatabasePath;
++ (id)fetchAlbumUUIDsToPopulateSearchIndexWithManagedObjectContext:(id)arg1 error:(id*)arg2;
++ (id)fetchAlbumsWithUUIDs:(id)arg1 managedObjectContext:(id)arg2 error:(id*)arg3;
++ (id)fetchAssetUUIDsToPopulateSearchIndexWithManagedObjectContext:(id)arg1 error:(id*)arg2;
++ (id)fetchAssetsWithUUIDs:(id)arg1 managedObjectContext:(id)arg2 error:(id*)arg3;
++ (id)fetchMemoriesWithUUIDs:(id)arg1 managedObjectContext:(id)arg2 error:(id*)arg3;
++ (id)fetchMemoryUUIDsToPopulateSearchIndexWithManagedObjectContext:(id)arg1 error:(id*)arg2;
 + (id)sharedInstance;
 
 - (id)_cxindexProgressPath;
 - (id)_dbMetadataPath;
 - (id)_dbPath;
 - (void)_inqAddUpdatesWithUUIDs:(id)arg1 forKey:(id)arg2;
-- (void)_inqAddUpdatesWithUUIDsArray:(id)arg1 forKey:(id)arg2;
 - (id /* block */)_inqAfterIndexingDidIterate;
 - (void)_inqCloseIndexIfAbleOrForce:(BOOL)arg1 isDelete:(BOOL)arg2;
 - (void)_inqCloseSearchIndexAndDelete:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (void)_inqDropClientServerTransactionIfNeeded;
+- (void)_inqEndTrackingRebuildIfNeeded;
+- (void)_inqEndTrackingUpdateIfNeeded;
 - (unsigned int)_inqEnqueuedUUIDsCountForceLoad:(BOOL)arg1;
 - (void)_inqEnsurePhotoLibraryExists;
 - (void)_inqEnsureSearchIndexExists;
@@ -48,15 +58,19 @@
 - (void)_inqEnsureSearchProgressExists;
 - (BOOL)_inqHasValidSearchIndex;
 - (BOOL)_inqIsIndexingPaused;
+- (void)_inqResetSearchIndexWithReason:(int)arg1 dropCompletion:(id /* block */)arg2;
 - (void)_inqResumeIndexingIfNeeded;
 - (void)_inqScheduleCloseIndexIfNeeded;
 - (void)_inqSetIndexingPaused:(BOOL)arg1 reason:(id)arg2;
+- (void)_inqStartTrackingRebuildWithReason:(int)arg1;
+- (void)_inqStartTrackingUpdateIfAble;
 - (void)_inqTakeClientServerTransactionIfNeeded;
+- (void)_inqTrackTransitionFromUpdateScheduledToUpdatingIfAble;
 - (BOOL)_inqUpdateLocale;
+- (BOOL)_inqUpdateMetadata:(id)arg1 forKey:(id)arg2 logMessage:(id)arg3;
+- (BOOL)_inqUpdateSceneTaxonomySHA:(id)arg1;
 - (BOOL)_isIndexing;
 - (void)_localeDidChange:(id)arg1;
-- (id)_moc:(id)arg1 fetchAlbumsWithUUIDs:(id)arg2;
-- (id)_moc:(id)arg1 fetchAssetsWithUUIDs:(id)arg2;
 - (id)_oldDbPath;
 - (void)_onQueueAsync:(id /* block */)arg1;
 - (void)_onQueueAsyncWithDelay:(double)arg1 perform:(id /* block */)arg2;
@@ -67,6 +81,9 @@
 - (void)_setIndexingPaused:(BOOL)arg1 synchronously:(BOOL)arg2 reason:(id)arg3;
 - (void)_setInqAfterIndexingDidIterate:(id /* block */)arg1;
 - (void)_throttleTimerFire:(id)arg1;
+- (id)_updatesAfterConvertingDetectedFacesToAssetsInUpdates:(id)arg1;
+- (id)_updatesAfterConvertingPersonsToAssetsInUpdates:(id)arg1;
+- (id)_uuidsToRemoveFromUUIDsToProcess:(id)arg1;
 - (void)applyUpdates:(id)arg1 completion:(id /* block */)arg2;
 - (void)closeSearchIndexWithCompletion:(id /* block */)arg1;
 - (void)dealloc;
@@ -76,7 +93,8 @@
 - (id)initWithSearchIndexDirectory:(id)arg1;
 - (BOOL)isIndexingPaused;
 - (void)pauseIndexingWithReason:(id)arg1;
-- (void)resetSearchIndex;
+- (void)registerSceneTaxonomySHA:(id)arg1;
+- (void)resetSearchIndexWithReason:(int)arg1 dropCompletion:(id /* block */)arg2;
 - (void)unpauseIndexingWithReason:(id)arg1;
 
 @end

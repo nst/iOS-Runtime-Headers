@@ -3,19 +3,21 @@
  */
 
 @interface GEOTransitArrivalInfo : PBCodable <NSCopying> {
-    int _destinationLocation;
+    int  _destinationLocation;
     struct { 
         unsigned int destinationLocation : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic) int destinationLocation;
 @property (nonatomic) BOOL hasDestinationLocation;
 
+- (int)StringAsDestinationLocation:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (int)destinationLocation;
+- (id)destinationLocationAsString:(int)arg1;
 - (id)dictionaryRepresentation;
 - (BOOL)hasDestinationLocation;
 - (unsigned int)hash;

@@ -10,7 +10,6 @@
 - (void)appendMedium:(id)arg1;
 - (void)dealloc;
 - (void)deleteMedium:(id)arg1;
-- (void)finalize;
 - (id)item:(unsigned int)arg1;
 - (unsigned int)length;
 - (id)mediaText;

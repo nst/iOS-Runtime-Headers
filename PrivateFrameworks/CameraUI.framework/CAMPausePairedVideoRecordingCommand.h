@@ -3,7 +3,7 @@
  */
 
 @interface CAMPausePairedVideoRecordingCommand : CAMCaptureCommand {
-    BOOL __recordingPaused;
+    BOOL  __recordingPaused;
 }
 
 @property (getter=_isRecordingPaused, nonatomic, readonly) BOOL _recordingPaused;

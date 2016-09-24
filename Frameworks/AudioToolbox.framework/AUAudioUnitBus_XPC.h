@@ -3,12 +3,13 @@
  */
 
 @interface AUAudioUnitBus_XPC : AUAudioUnitBus <NSSecureCoding> {
-    AUAudioUnit_XH *_audioUnit;
-    unsigned long _element;
-    AVAudioFormat *_format;
-    <AUAudioUnitXPCProtocol> *_remoteAU;
-    unsigned long _scope;
-    NSArray *_supportedChannelLayoutTags;
+    AUAudioUnit_XH * _audioUnit;
+    unsigned long  _element;
+    AVAudioFormat * _format;
+    <AUAudioUnitXPCProtocol> * _remoteAU;
+    bool  _removingObserverWithContext;
+    unsigned long  _scope;
+    NSArray * _supportedChannelLayoutTags;
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
@@ -21,6 +22,7 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEnabled;
 - (void)propertyChanged:(id)arg1;
+- (void)removeObserver:(id)arg1 forKeyPath:(id)arg2;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2 context:(void*)arg3;
 - (void)setEnabled:(BOOL)arg1;
 - (BOOL)setFormat:(id)arg1 error:(id*)arg2;

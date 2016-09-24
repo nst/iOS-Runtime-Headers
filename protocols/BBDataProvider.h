@@ -22,7 +22,11 @@
 - (NSArray *)defaultSubsectionInfos;
 - (NSString *)displayNameForFilterID:(NSString *)arg1;
 - (NSString *)displayNameForSubsectionID:(NSString *)arg1;
+- (void)getAspectRatioForAttachmentUUID:(void *)arg1 recordID:(void *)arg2 withCompletionHandler:(void *)arg3; // needs 3 arg types, found 8: NSUUID *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, float, void*
+- (void)getDataForAttachmentUUID:(void *)arg1 recordID:(void *)arg2 withCompletionHandler:(void *)arg3; // needs 3 arg types, found 8: NSUUID *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSData *, void*
+- (void)getPNGDataForAttachmentUUID:(void *)arg1 recordID:(void *)arg2 sizeConstraints:(void *)arg3 withCompletionHandler:(void *)arg4; // needs 4 arg types, found 9: NSUUID *, NSString *, BBThumbnailSizeConstraints *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSData *, void*
 - (void)handleBulletinActionResponse:(BBActionResponse *)arg1;
+- (void)handleBulletinActionResponse:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 7: BBActionResponse *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
 - (BOOL)migrateSectionInfo:(BBSectionInfo *)arg1 oldSectionInfo:(BBSectionInfo *)arg2;
 - (void)noteSectionInfoDidChange:(BBSectionInfo *)arg1;
 - (NSData *)primaryAttachmentDataForRecordID:(NSString *)arg1;

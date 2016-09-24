@@ -3,13 +3,13 @@
  */
 
 @interface STStartNavigationRequest : AFSiriRequest {
-    NSDate *_arrivalDate;
-    NSDate *_departureDate;
-    STSiriLocation *_destinationLocation;
-    int _directionsType;
-    NSString *_extSessionGuid;
-    NSDate *_extSessionGuidCreatedTimestamp;
-    STSiriLocation *_startLocation;
+    NSDate * _arrivalDate;
+    NSDate * _departureDate;
+    STSiriLocation * _destinationLocation;
+    int  _directionsType;
+    NSString * _extSessionGuid;
+    NSDate * _extSessionGuidCreatedTimestamp;
+    STSiriLocation * _startLocation;
 }
 
 + (BOOL)supportsSecureCoding;

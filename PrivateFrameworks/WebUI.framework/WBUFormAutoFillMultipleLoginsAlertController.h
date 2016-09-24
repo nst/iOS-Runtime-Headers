@@ -3,9 +3,9 @@
  */
 
 @interface WBUFormAutoFillMultipleLoginsAlertController : UIAlertController {
-    id _appDidEnterBackgroundObserver;
-    UIAlertAction *_cancelAction;
-    BOOL _cancelsWhenAppEntersBackground;
+    id  _appDidEnterBackgroundObserver;
+    UIAlertAction * _cancelAction;
+    BOOL  _cancelsWhenAppEntersBackground;
 }
 
 @property (nonatomic) BOOL cancelsWhenAppEntersBackground;

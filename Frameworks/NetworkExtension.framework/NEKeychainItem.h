@@ -3,16 +3,16 @@
  */
 
 @interface NEKeychainItem : NSObject <NEPrettyDescription, NSCopying, NSSecureCoding> {
-    NSString *_accessGroup;
-    int _domain;
-    NSString *_identifier;
-    BOOL _legacy;
-    NEKeychainItem *_oldItem;
-    NSString *_password;
-    NSData *_persistentReference;
+    NSString * _accessGroup;
+    int  _domain;
+    NSString * _identifier;
+    BOOL  _legacy;
+    NEKeychainItem * _oldItem;
+    NSString * _password;
+    NSData * _persistentReference;
 }
 
-@property (readonly) NSString *accessGroup;
+@property (copy) NSString *accessGroup;
 @property int domain;
 @property (copy) NSString *identifier;
 @property (readonly) BOOL legacy;
@@ -49,6 +49,7 @@
 - (id)password;
 - (id)persistentReference;
 - (void)remove;
+- (void)setAccessGroup:(id)arg1;
 - (void)setDomain:(int)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setIdentifierInternal:(id)arg1;

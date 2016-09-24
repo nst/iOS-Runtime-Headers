@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAUpdateRestrictions : SABaseCommand <SAServerBoundCommand>
+@interface SAUpdateRestrictions : SABaseCommand <SAClientStateServerBoundCommand, SAServerBoundCommand>
 
 @property (nonatomic, copy) NSString *aceId;
 @property (readonly, copy) NSString *debugDescription;

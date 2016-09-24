@@ -3,8 +3,8 @@
  */
 
 @interface TIKeyboardInput : NSObject <NSSecureCoding> {
-    TIKeyboardCandidate *_acceptedCandidate;
-    BOOL _backspace;
+    TIKeyboardCandidate * _acceptedCandidate;
+    BOOL  _backspace;
     union { 
         int integerValue; 
         struct { 
@@ -15,11 +15,11 @@
             unsigned int flick : 1; 
             unsigned int synthesizedByAcceptingCandidate : 1; 
         } fields; 
-    } _flags;
-    NSString *_inputManagerHint;
-    <NSCopying><NSObject><NSSecureCoding> *_object;
-    NSString *_string;
-    TIKeyboardTouchEvent *_touchEvent;
+    }  _flags;
+    NSString * _inputManagerHint;
+    <NSCopying><NSObject><NSSecureCoding> * _object;
+    NSString * _string;
+    TIKeyboardTouchEvent * _touchEvent;
 }
 
 @property (nonatomic, retain) TIKeyboardCandidate *acceptedCandidate;

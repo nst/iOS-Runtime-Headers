@@ -3,12 +3,12 @@
  */
 
 @interface GEOTileSetUsage : PBCodable <NSCopying> {
-    unsigned int _count;
+    unsigned int  _count;
     struct { 
         unsigned int count : 1; 
         unsigned int style : 1; 
-    } _has;
-    int _style;
+    }  _has;
+    int  _style;
 }
 
 @property (nonatomic) unsigned int count;
@@ -16,6 +16,7 @@
 @property (nonatomic) BOOL hasStyle;
 @property (nonatomic) int style;
 
+- (int)StringAsStyle:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
@@ -32,6 +33,7 @@
 - (void)setHasStyle:(BOOL)arg1;
 - (void)setStyle:(int)arg1;
 - (int)style;
+- (id)styleAsString:(int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

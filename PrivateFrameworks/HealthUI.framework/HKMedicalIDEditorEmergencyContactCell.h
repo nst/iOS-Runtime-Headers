@@ -3,7 +3,7 @@
  */
 
 @interface HKMedicalIDEditorEmergencyContactCell : HKMedicalIDEditorCell {
-    _HKEmergencyContact *_contact;
+    _HKEmergencyContact * _contact;
 }
 
 @property (nonatomic, retain) _HKEmergencyContact *contact;

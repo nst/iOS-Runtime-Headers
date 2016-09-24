@@ -3,7 +3,7 @@
  */
 
 @interface SBKRequestData : NSObject {
-    SBKTransaction *_transaction;
+    SBKTransaction * _transaction;
 }
 
 @property (retain) SBKTransaction *transaction;

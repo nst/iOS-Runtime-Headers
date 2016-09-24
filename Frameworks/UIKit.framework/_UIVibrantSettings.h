@@ -3,15 +3,15 @@
  */
 
 @interface _UIVibrantSettings : NSObject {
-    UIColor *_chevronShimmerColor;
-    UIColor *_highlightColor;
-    UIColor *_highlightLimitingColor;
-    _UILegibilitySettings *_legibilitySettings;
-    UIColor *_referenceColor;
-    float _referenceContrast;
-    UIColor *_shimmerColor;
-    int _style;
-    UIColor *_tintColor;
+    UIColor * _chevronShimmerColor;
+    UIColor * _highlightColor;
+    UIColor * _highlightLimitingColor;
+    _UILegibilitySettings * _legibilitySettings;
+    UIColor * _referenceColor;
+    double  _referenceContrast;
+    UIColor * _shimmerColor;
+    int  _style;
+    UIColor * _tintColor;
 }
 
 @property (nonatomic, retain) UIColor *chevronShimmerColor;
@@ -19,7 +19,7 @@
 @property (nonatomic, retain) UIColor *highlightLimitingColor;
 @property (nonatomic, readonly) _UILegibilitySettings *legibilitySettings;
 @property (nonatomic, readonly) UIColor *referenceColor;
-@property (nonatomic, readonly) float referenceContrast;
+@property (nonatomic, readonly) double referenceContrast;
 @property (nonatomic, retain) UIColor *shimmerColor;
 @property (nonatomic, readonly) int style;
 @property (nonatomic, retain) UIColor *tintColor;
@@ -33,7 +33,7 @@
 - (unsigned int)hash;
 - (id)highlightColor;
 - (id)highlightLimitingColor;
-- (id)highlightLimitingViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)highlightLimitingViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithReferenceColor:(id)arg1 referenceContrast:(float)arg2 legibilitySettings:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (id)legibilitySettings;
@@ -47,6 +47,6 @@
 - (id)shimmerColor;
 - (int)style;
 - (id)tintColor;
-- (id)tintViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)tintViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 @end

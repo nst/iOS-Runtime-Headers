@@ -3,8 +3,8 @@
  */
 
 @interface UIGestureAnimation : UIAnimation {
-    int _gestureType;
-    SEL _progressSelector;
+    int  _gestureType;
+    SEL  _progressSelector;
 }
 
 - (int)gestureType;

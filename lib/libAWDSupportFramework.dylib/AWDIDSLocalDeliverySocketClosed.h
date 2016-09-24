@@ -3,10 +3,10 @@
  */
 
 @interface AWDIDSLocalDeliverySocketClosed : PBCodable <NSCopying> {
-    unsigned long long _bytesReceived;
-    unsigned long long _bytesSent;
-    unsigned long long _closeError;
-    NSString *_guid;
+    unsigned long long  _bytesReceived;
+    unsigned long long  _bytesSent;
+    unsigned long long  _closeError;
+    NSString * _guid;
     struct { 
         unsigned int bytesReceived : 1; 
         unsigned int bytesSent : 1; 
@@ -17,15 +17,15 @@
         unsigned int priority : 1; 
         unsigned int socketError : 1; 
         unsigned int timestamp : 1; 
-    } _has;
-    unsigned long long _isToDefaultPairedDevice;
-    unsigned long long _packetsReceived;
-    unsigned long long _packetsSent;
-    unsigned long long _priority;
-    NSString *_service;
-    unsigned long long _socketError;
-    NSString *_streamName;
-    unsigned long long _timestamp;
+    }  _has;
+    unsigned long long  _isToDefaultPairedDevice;
+    unsigned long long  _packetsReceived;
+    unsigned long long  _packetsSent;
+    unsigned long long  _priority;
+    NSString * _service;
+    unsigned long long  _socketError;
+    NSString * _streamName;
+    unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned long long bytesReceived;

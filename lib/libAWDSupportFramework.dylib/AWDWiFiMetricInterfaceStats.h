@@ -3,9 +3,9 @@
  */
 
 @interface AWDWiFiMetricInterfaceStats : PBCodable <NSCopying> {
-    unsigned int _a2dpAssocMinutes;
-    unsigned int _cellularDataRxBytes;
-    unsigned int _cellularDataTxBytes;
+    unsigned int  _a2dpAssocMinutes;
+    unsigned int  _cellularDataRxBytes;
+    unsigned int  _cellularDataTxBytes;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int a2dpAssocMinutes : 1; 
@@ -23,20 +23,20 @@
         unsigned int wifiScoRxBytes : 1; 
         unsigned int wifiScoTxBytes : 1; 
         unsigned int wifiTxBytes : 1; 
-    } _has;
-    unsigned int _hidAssocMinutes;
-    unsigned int _scoAssocMinutes;
-    unsigned int _statsCollectionMinutes;
-    unsigned long long _timestamp;
-    unsigned int _wifiA2dpRxBytes;
-    unsigned int _wifiA2dpTxBytes;
-    unsigned int _wifiAssocMinutes;
-    unsigned int _wifiHidRxBytes;
-    unsigned int _wifiHidTxBytes;
-    unsigned int _wifiRxBytes;
-    unsigned int _wifiScoRxBytes;
-    unsigned int _wifiScoTxBytes;
-    unsigned int _wifiTxBytes;
+    }  _has;
+    unsigned int  _hidAssocMinutes;
+    unsigned int  _scoAssocMinutes;
+    unsigned int  _statsCollectionMinutes;
+    unsigned long long  _timestamp;
+    unsigned int  _wifiA2dpRxBytes;
+    unsigned int  _wifiA2dpTxBytes;
+    unsigned int  _wifiAssocMinutes;
+    unsigned int  _wifiHidRxBytes;
+    unsigned int  _wifiHidTxBytes;
+    unsigned int  _wifiRxBytes;
+    unsigned int  _wifiScoRxBytes;
+    unsigned int  _wifiScoTxBytes;
+    unsigned int  _wifiTxBytes;
 }
 
 @property (nonatomic) unsigned int a2dpAssocMinutes;

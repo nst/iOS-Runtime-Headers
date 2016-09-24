@@ -3,7 +3,7 @@
  */
 
 @interface _NSMetadataQuerySortingPseudoItem : NSObject {
-    id _attr;
+    id  _attr;
 }
 
 - (id)valueForKey:(id)arg1;

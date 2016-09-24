@@ -3,13 +3,15 @@
  */
 
 @interface CKDPGetLikesResponse : PBCodable <NSCopying> {
-    CKDPLikeInfo *_likeInfo;
-    NSMutableArray *_likes;
+    CKDPLikeInfo * _likeInfo;
+    NSMutableArray * _likes;
 }
 
 @property (nonatomic, readonly) BOOL hasLikeInfo;
 @property (nonatomic, retain) CKDPLikeInfo *likeInfo;
 @property (nonatomic, retain) NSMutableArray *likes;
+
++ (Class)likeType;
 
 - (void).cxx_destruct;
 - (void)addLike:(id)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface RadioGetWishListRequest : RadioRequest {
-    unsigned int _maxNumberOfTracks;
-    SSURLConnectionRequest *_request;
+    unsigned int  _maxNumberOfTracks;
+    SSURLConnectionRequest * _request;
 }
 
 @property (nonatomic) unsigned int maxNumberOfTracks;

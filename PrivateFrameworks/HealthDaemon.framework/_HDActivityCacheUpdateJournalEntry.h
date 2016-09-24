@@ -3,13 +3,12 @@
  */
 
 @interface _HDActivityCacheUpdateJournalEntry : HDJournalEntry {
-    HKActivityCache *_activityCache;
+    HKActivityCache * _activityCache;
 }
 
 @property (nonatomic, readonly) HKActivityCache *activityCache;
 
-+ (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
-+ (int)behavior;
++ (void)applyEntries:(id)arg1 withProfile:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;

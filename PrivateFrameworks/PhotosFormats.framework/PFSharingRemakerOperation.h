@@ -3,20 +3,20 @@
  */
 
 @interface PFSharingRemakerOperation : NSObject {
-    PFPhotoSharingOperation *__imageOperation;
-    int __inputType;
-    NSString *__uuid;
-    PFVideoSharingOperation *__videoOperation;
-    NSURL *_imageOutputURL;
-    NSURL *_videoOutputURL;
+    PFPhotoSharingOperation * __imageOperation;
+    int  __inputType;
+    NSString * __uuid;
+    PFVideoSharingOperation * __videoOperation;
+    NSURL * _imageOutputURL;
+    NSURL * _videoOutputURL;
 }
 
 @property (setter=_setImageOperation:, nonatomic, retain) PFPhotoSharingOperation *_imageOperation;
 @property (setter=_setInputType:, nonatomic) int _inputType;
 @property (setter=_setUUID:, nonatomic, copy) NSString *_uuid;
 @property (setter=_setVideoOperation:, nonatomic, retain) PFVideoSharingOperation *_videoOperation;
-@property (nonatomic, copy) NSURL *imageOutputURL;
-@property (nonatomic, copy) NSURL *videoOutputURL;
+@property (setter=_setImageOutputURL:, nonatomic, copy) NSURL *imageOutputURL;
+@property (setter=_setVideoOutputURL:, nonatomic, copy) NSURL *videoOutputURL;
 
 + (id)remakerOperationWithInputType:(int)arg1 videoURL:(id)arg2 imageURL:(id)arg3 adjustmentData:(id)arg4;
 

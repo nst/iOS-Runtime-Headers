@@ -3,10 +3,10 @@
  */
 
 @interface WCQueuedMessage : NSObject {
-    id /* block */ _completionHandler;
-    NSDate *_creationDate;
-    WCMessage *_message;
-    int _retryCount;
+    id /* block */  _completionHandler;
+    NSDate * _creationDate;
+    WCMessage * _message;
+    int  _retryCount;
 }
 
 @property (copy) id /* block */ completionHandler;

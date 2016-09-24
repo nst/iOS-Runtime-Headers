@@ -3,11 +3,11 @@
  */
 
 @interface IKCSSToken : NSObject {
-    unsigned short _charValue;
-    double _doubleValue;
-    NSDictionary *_properties;
-    NSString *_stringValue;
-    int _type;
+    unsigned short  _charValue;
+    double  _doubleValue;
+    NSDictionary * _properties;
+    NSString * _stringValue;
+    int  _type;
 }
 
 @property (nonatomic) unsigned short charValue;

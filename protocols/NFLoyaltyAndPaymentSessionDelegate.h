@@ -9,6 +9,8 @@
 - (void)loyaltyAndPaymentSession:(NFLoyaltyAndPaymentSession *)arg1 didDetectTechnology:(NFTechnologyEvent *)arg2;
 - (void)loyaltyAndPaymentSession:(NFLoyaltyAndPaymentSession *)arg1 didEndTransaction:(NFContactlessPaymentEndEvent *)arg2;
 - (void)loyaltyAndPaymentSession:(NFLoyaltyAndPaymentSession *)arg1 didExpireTransactionForApplet:(NFApplet *)arg2;
+- (void)loyaltyAndPaymentSession:(NFLoyaltyAndPaymentSession *)arg1 didFailDeferredAuthorization:(BOOL)arg2;
+- (void)loyaltyAndPaymentSession:(NFLoyaltyAndPaymentSession *)arg1 didFelicaStateChange:(NSDictionary *)arg2;
 - (void)loyaltyAndPaymentSession:(NFLoyaltyAndPaymentSession *)arg1 didPerformValueAddedServiceTransactions:(NSArray *)arg2;
 - (void)loyaltyAndPaymentSession:(NFLoyaltyAndPaymentSession *)arg1 didReceiveButtonPressForApplet:(NFApplet *)arg2;
 - (void)loyaltyAndPaymentSession:(NFLoyaltyAndPaymentSession *)arg1 didSelectApplet:(NFApplet *)arg2;

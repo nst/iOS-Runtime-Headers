@@ -3,15 +3,15 @@
  */
 
 @interface CNVCardDateScanner : NSObject {
-    unsigned int _position;
-    NSString *_string;
+    unsigned int  _position;
+    NSString * _string;
 }
 
 @property (readonly) unsigned int position;
 
 + (id)scannerWithString:(id)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithString:(id)arg1;
 - (BOOL)isAtEnd;
 - (unsigned int)lengthOfCalendarUnit:(unsigned int)arg1;

@@ -3,15 +3,15 @@
  */
 
 @interface GSPermanentStorage : NSObject <GSAdditionStoring, GSAdditionStoringPrivate> {
-    GSDocumentIdentifier *_documentID;
-    NSURL *_documentURL;
-    NSData *_privExtension;
-    long long _privHandle;
-    NSData *_pubExtension;
-    long long _pubHandle;
-    unsigned long long _remoteID;
-    GSStagingPrefix *_stagingPrefix;
-    unsigned long long _storageID;
+    GSDocumentIdentifier * _documentID;
+    NSURL * _documentURL;
+    NSData * _privExtension;
+    int  _privHandle;
+    NSData * _pubExtension;
+    int  _pubHandle;
+    unsigned int  _remoteID;
+    GSStagingPrefix * _stagingPrefix;
+    unsigned int  _storageID;
 }
 
 @property (nonatomic, readonly) GSDocumentIdentifier *documentID;
@@ -19,9 +19,9 @@
 @property (nonatomic, readonly) <NSCopying><NSSecureCoding> *persistentIdentifier;
 @property (retain) NSData *privExtension;
 @property (retain) NSData *pubExtension;
-@property (nonatomic, readonly) long long remoteID;
+@property (nonatomic, readonly) int remoteID;
 @property (nonatomic, retain) GSStagingPrefix *stagingPrefix;
-@property (nonatomic, readonly) unsigned long long storageID;
+@property (nonatomic, readonly) unsigned int storageID;
 
 + (id)storageIDForItemAtURL:(id)arg1 error:(id*)arg2;
 + (id)storagePrefixForFileDescriptor:(int)arg1 error:(id*)arg2;
@@ -38,7 +38,7 @@
 - (id)description;
 - (id)documentID;
 - (id)documentURL;
-- (struct NSEnumerator { Class x1; }*)enumeratorForAdditionsInNameSpace:(id)arg1 withOptions:(unsigned long long)arg2 withoutOptions:(unsigned long long)arg3 ordering:(int)arg4;
+- (struct NSEnumerator { Class x1; }*)enumeratorForAdditionsInNameSpace:(id)arg1 withOptions:(unsigned int)arg2 withoutOptions:(unsigned int)arg3 ordering:(int)arg4;
 - (void)finalize;
 - (id)getAdditionDictionary:(id)arg1 error:(id*)arg2;
 - (unsigned int)hash;
@@ -50,21 +50,21 @@
 - (id)prepareAdditionCreationWithItemAtURL:(id)arg1 byMoving:(BOOL)arg2 creationInfo:(id)arg3 error:(id*)arg4;
 - (id)privExtension;
 - (id)pubExtension;
-- (long long)remoteID;
+- (int)remoteID;
 - (void)removeAdditions:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)removeAllAdditionsForNamespaces:(id)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)replaceDocumentWithContentsOfAddition:(id)arg1 preservingCurrentVersionWithCreationInfo:(id)arg2 createdAddition:(id*)arg3 error:(id*)arg4;
 - (BOOL)replaceDocumentWithContentsOfItemAtURL:(id)arg1 preservingCurrentVersionWithCreationInfo:(id)arg2 createdAddition:(id*)arg3 error:(id*)arg4;
 - (BOOL)setAdditionDisplayName:(id)arg1 value:(id)arg2 error:(id*)arg3;
 - (id)setAdditionNameSpace:(id)arg1 value:(id)arg2 error:(id*)arg3;
-- (BOOL)setAdditionOptions:(id)arg1 value:(unsigned long long)arg2 error:(id*)arg3;
+- (BOOL)setAdditionOptions:(id)arg1 value:(unsigned int)arg2 error:(id*)arg3;
 - (void)setDocumentURL:(id)arg1;
 - (void)setPrivExtension:(id)arg1;
 - (void)setPubExtension:(id)arg1;
 - (void)setStagingPrefix:(id)arg1;
 - (id)stagingPrefix;
 - (id)stagingURLforCreatingAdditionWithError:(id*)arg1;
-- (unsigned long long)storageID;
+- (unsigned int)storageID;
 - (BOOL)transferToItemAtURL:(id)arg1 error:(id*)arg2;
 
 @end

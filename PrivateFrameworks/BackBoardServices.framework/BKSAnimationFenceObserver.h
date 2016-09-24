@@ -3,15 +3,14 @@
  */
 
 @interface BKSAnimationFenceObserver : NSObject {
-    unsigned long long _encodeCount;
-    NSMapTable *_fencePointerToCAPortMap;
-    NSMapTable *_fencePointerToTraceMap;
-    NSMapTable *_fencePointerToTriggerPortMap;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSHashTable *_reportableFencePointers;
-    NSMapTable *_triggerPortToDeathWatcherMap;
-    NSMapTable *_triggerPortToFencePointersMap;
-    NSHashTable *_validDeathWatchersTable;
+    unsigned int  _encodeCount;
+    NSMapTable * _fencePointerToCAPortMap;
+    NSMapTable * _fencePointerToTraceMap;
+    NSMapTable * _fencePointerToTriggerPortMap;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMapTable * _triggerPortToDeathWatcherMap;
+    NSMapTable * _triggerPortToFencePointersMap;
+    NSHashTable * _validDeathWatchersTable;
 }
 
 + (id)sharedInstance;
@@ -20,7 +19,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (unsigned long long)nextEncodeIdentifier;
+- (unsigned int)nextEncodeIdentifier;
 - (void)removeFencePointer:(void*)arg1;
 
 @end

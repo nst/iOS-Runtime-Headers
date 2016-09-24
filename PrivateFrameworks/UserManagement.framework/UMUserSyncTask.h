@@ -3,17 +3,12 @@
  */
 
 @interface UMUserSyncTask : UMTask {
-    unsigned int _contentSize;
+    unsigned int  _contentSize;
 }
 
 @property (nonatomic) unsigned int contentSize;
 
-+ (id)taskFromDictionaryRepresentation:(id)arg1;
-
-- (void)begin;
 - (unsigned int)contentSize;
-- (id)dictionaryRepresentation;
-- (void)end;
 - (void)setContentSize:(unsigned int)arg1;
 
 @end

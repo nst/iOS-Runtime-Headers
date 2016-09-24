@@ -3,19 +3,23 @@
  */
 
 @interface CNChangesNotifier : NSObject {
-    CNChangesNotifierProxy *_notifierProxy;
+    CNChangesNotifierProxy * _notifierProxy;
 }
 
 @property (nonatomic, retain) CNChangesNotifierProxy *notifierProxy;
 
 + (void)flushSharedNotifier;
 + (id)sharedNotifier;
++ (id)sharedNotifierWithNotificationWrapper:(id)arg1;
 
 - (void)dealloc;
-- (void)didChangeMeContactSuccessfully:(BOOL)arg1 fromContactStore:(id)arg2;
-- (void)didSaveChangesSuccessfully:(BOOL)arg1 fromContactStore:(id)arg2;
+- (void)didChangeMeContactSuccessfully:(BOOL)arg1 fromContactStore:(id)arg2 requestIdentifier:(id)arg3;
+- (void)didSaveChangesSuccessfully:(BOOL)arg1 fromContactStore:(id)arg2 requestIdentifier:(id)arg3;
+- (BOOL)forwardsSelfGeneratedDistributedSaveNotifications;
 - (id)init;
+- (id)initWithNotificationWrapper:(id)arg1;
 - (id)notifierProxy;
+- (void)setForwardsSelfGeneratedDistributedSaveNotifications:(BOOL)arg1;
 - (void)setNotifierProxy:(id)arg1;
 - (void)waitForCurrentTasksToFinish;
 - (void)willSaveChanges;

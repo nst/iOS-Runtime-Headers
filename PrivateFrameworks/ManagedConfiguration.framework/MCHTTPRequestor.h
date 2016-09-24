@@ -3,15 +3,15 @@
  */
 
 @interface MCHTTPRequestor : NSObject <NSURLConnectionDataDelegate> {
-    NSArray *_anchorCertificates;
-    id /* block */ _completionBlock;
-    NSURLConnection *_connection;
-    BOOL _didFailDueToMissingCredentials;
-    NSString *_password;
-    NSMutableData *_responseData;
-    id _selfReference;
-    BOOL _shouldUseResponseBodyAsLoginPrompt;
-    NSString *_username;
+    NSArray * _anchorCertificates;
+    id /* block */  _completionBlock;
+    NSURLConnection * _connection;
+    BOOL  _didFailDueToMissingCredentials;
+    NSString * _password;
+    NSMutableData * _responseData;
+    id  _selfReference;
+    BOOL  _shouldUseResponseBodyAsLoginPrompt;
+    NSString * _username;
 }
 
 @property (nonatomic, retain) NSArray *anchorCertificates;

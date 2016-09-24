@@ -3,7 +3,7 @@
  */
 
 @interface FIUIFitnessTrackingDisabledViewController : UIViewController {
-    UITextView *_textView;
+    UITextView * _textView;
 }
 
 - (void).cxx_destruct;

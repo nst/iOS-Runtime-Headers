@@ -3,8 +3,8 @@
  */
 
 @interface CalDAVPostStreamTask : CoreDAVPostTask {
-    NSString *_filename;
-    NSString *_previousScheduleTag;
+    NSString * _filename;
+    NSString * _previousScheduleTag;
 }
 
 @property (nonatomic, retain) NSString *filename;

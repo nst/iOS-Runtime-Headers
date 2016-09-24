@@ -9,6 +9,7 @@
 - (oneway void)speechRequestDidPause;
 - (oneway void)speechRequestDidStart;
 - (oneway void)speechRequestDidStopWithSuccess:(BOOL)arg1 phonemesSpoken:(NSString *)arg2 error:(NSError *)arg3;
-- (oneway void)speechRequestMark:(int)arg1 didStartForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (oneway void)speechRequestMark:(long)arg1 didStartForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (oneway void)speechRequestSuccessWithInstrumentMetrics:(VSInstrumentMetrics *)arg1;
 
 @end

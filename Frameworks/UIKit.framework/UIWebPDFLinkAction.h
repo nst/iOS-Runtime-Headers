@@ -3,9 +3,9 @@
  */
 
 @interface UIWebPDFLinkAction : NSObject {
-    id /* block */ handler;
-    NSString *title;
-    int type;
+    id /* block */  handler;
+    NSString * title;
+    int  type;
 }
 
 @property (nonatomic, copy) id /* block */ handler;

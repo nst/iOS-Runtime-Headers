@@ -3,11 +3,11 @@
  */
 
 @interface UIPrintingProgressViewController : UITableViewController {
-    UIPrintingMessageView *_messageView;
-    UINavigationController *_navController;
-    UIPrintingProgress *_printingProgress;
-    double _rotationDelay;
-    UIWindow *_window;
+    UIPrintingMessageView * _messageView;
+    UINavigationController * _navController;
+    UIPrintingProgress * _printingProgress;
+    double  _rotationDelay;
+    UIWindow * _window;
 }
 
 - (void).cxx_destruct;

@@ -3,8 +3,8 @@
  */
 
 @interface ATServiceProxyListener : NSObject <NSXPCListenerDelegate> {
-    NSXPCListener *_listener;
-    ATService *_service;
+    NSXPCListener * _listener;
+    ATService * _service;
 }
 
 @property (readonly, copy) NSString *debugDescription;

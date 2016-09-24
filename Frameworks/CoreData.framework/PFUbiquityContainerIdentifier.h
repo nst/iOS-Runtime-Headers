@@ -3,13 +3,13 @@
  */
 
 @interface PFUbiquityContainerIdentifier : NSObject <NSFilePresenter> {
-    NSString *_localPeerID;
-    NSURL *_presentedItemURL;
-    NSString *_storeName;
-    PFUbiquityLocation *_ubiquityRootLocation;
-    BOOL _usedExistingUUIDFile;
-    PFUbiquityLocation *_uuidFileLocation;
-    NSString *_uuidString;
+    NSString * _localPeerID;
+    NSURL * _presentedItemURL;
+    NSString * _storeName;
+    PFUbiquityLocation * _ubiquityRootLocation;
+    BOOL  _usedExistingUUIDFile;
+    PFUbiquityLocation * _uuidFileLocation;
+    NSString * _uuidString;
 }
 
 @property (readonly, copy) NSString *debugDescription;

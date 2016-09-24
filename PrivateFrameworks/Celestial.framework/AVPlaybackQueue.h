@@ -3,15 +3,15 @@
  */
 
 @interface AVPlaybackQueue : NSObject {
-    AVQueue *_avItemQueue;
-    int _avQueueTransactionCount;
-    id _delegate;
-    struct OpaqueFigPlayer { } *_figPlayer;
-    BOOL _hasBuiltPlaybackQueue;
-    int _ignoreAVQueueModifications;
-    NSMutableArray *_pbItemQueue;
-    int _repeatMode;
-    BOOL _waitingToAddFirstItem;
+    AVQueue * _avItemQueue;
+    int  _avQueueTransactionCount;
+    id  _delegate;
+    struct OpaqueFigPlayer { } * _figPlayer;
+    BOOL  _hasBuiltPlaybackQueue;
+    int  _ignoreAVQueueModifications;
+    NSMutableArray * _pbItemQueue;
+    int  _repeatMode;
+    BOOL  _waitingToAddFirstItem;
 }
 
 - (void)beginAVQueueTransaction;

@@ -3,8 +3,8 @@
  */
 
 @interface ABVCardCardDAVValueSetter : ABVCardPersonValueSetter {
-    BOOL _importingToExistingGroup;
-    BOOL _recordIsGroup;
+    BOOL  _importingToExistingGroup;
+    BOOL  _recordIsGroup;
 }
 
 @property BOOL recordIsGroup;

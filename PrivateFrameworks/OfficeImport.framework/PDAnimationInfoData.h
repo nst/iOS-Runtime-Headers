@@ -3,10 +3,10 @@
  */
 
 @interface PDAnimationInfoData : NSObject {
-    PDBuild *mBuild;
-    OADDrawable *mDrawable;
-    unsigned int mOrder;
-    PDSequentialTimeNode *mSequentialTimeNodeData;
+    PDBuild * mBuild;
+    OADDrawable * mDrawable;
+    unsigned int  mOrder;
+    PDSequentialTimeNode * mSequentialTimeNodeData;
 }
 
 - (id)build;

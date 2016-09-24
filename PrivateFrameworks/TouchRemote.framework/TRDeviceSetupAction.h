@@ -3,12 +3,13 @@
  */
 
 @interface TRDeviceSetupAction : NSObject {
-    NSString *_actionType;
-    NSDictionary *_parameters;
+    NSString * _actionType;
+    NSDictionary * _parameters;
 }
 
 @property (nonatomic, readonly, copy) NSString *actionType;
 @property (nonatomic, readonly, copy) NSDictionary *parameters;
+@property (nonatomic, readonly) unsigned int protocolVersion;
 
 + (id)actionWithActionType:(id)arg1 parameters:(id)arg2;
 + (id)actionWithData:(id)arg1 error:(id*)arg2 supportsLegacy:(BOOL)arg3;
@@ -21,5 +22,6 @@
 - (id)init;
 - (id)parameters;
 - (id)propertyListRepresentation;
+- (unsigned int)protocolVersion;
 
 @end

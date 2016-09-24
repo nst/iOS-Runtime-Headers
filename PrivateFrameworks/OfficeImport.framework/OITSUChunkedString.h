@@ -3,15 +3,15 @@
  */
 
 @interface OITSUChunkedString : NSMutableString {
-    unsigned int _chunkLength;
+    unsigned int  _chunkLength;
     struct vector<boost::shared_ptr<TSUStringChunk>, std::__1::allocator<boost::shared_ptr<TSUStringChunk> > > { 
         struct shared_ptr<TSUStringChunk> {} *__begin_; 
         struct shared_ptr<TSUStringChunk> {} *__end_; 
         struct __compressed_pair<boost::shared_ptr<TSUStringChunk> *, std::__1::allocator<boost::shared_ptr<TSUStringChunk> > > { 
             struct shared_ptr<TSUStringChunk> {} *__first_; 
         } __end_cap_; 
-    } _chunks;
-    unsigned int _length;
+    }  _chunks;
+    unsigned int  _length;
 }
 
 - (id).cxx_construct;

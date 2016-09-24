@@ -2,17 +2,23 @@
    Image: /System/Library/PrivateFrameworks/PhotosPlayer.framework/PhotosPlayer
  */
 
-@interface ISCrossfadeLayer : CALayer {
-    CALayer *__contentLayer;
-    CALayer *__heroLayer;
-    ISCrossfadeItem *_crossfadeItem;
-    ISPlaybackSpec *_playbackSpec;
+@interface ISCrossfadeLayer : CALayer <CALayerDelegate> {
+    CALayer * __contentLayer;
+    CALayer * __heroLayer;
+    ISCrossfadeItem * _crossfadeItem;
+    ISPlaybackSpec * _playbackSpec;
+    ISLayerPlayer * _player;
 }
 
 @property (nonatomic, readonly) CALayer *_contentLayer;
 @property (setter=_setHeroLayer:, nonatomic, retain) CALayer *_heroLayer;
 @property (nonatomic, retain) ISCrossfadeItem *crossfadeItem;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic, retain) ISPlaybackSpec *playbackSpec;
+@property (nonatomic, retain) ISLayerPlayer *player;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_contentLayer;
@@ -28,7 +34,10 @@
 - (void)pause;
 - (void)playFromBeginning;
 - (id)playbackSpec;
+- (id)player;
+- (void)setContentsGravity:(id)arg1;
 - (void)setCrossfadeItem:(id)arg1;
 - (void)setPlaybackSpec:(id)arg1;
+- (void)setPlayer:(id)arg1;
 
 @end

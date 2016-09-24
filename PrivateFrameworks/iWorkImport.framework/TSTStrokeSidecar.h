@@ -3,11 +3,11 @@
  */
 
 @interface TSTStrokeSidecar : TSPObject <TSTCustomStrokeProviding> {
-    NSPointerArray *_bottomRowStrokes;
-    NSPointerArray *_leftColumnStrokes;
-    int _maxOrder;
-    NSPointerArray *_rightColumnStrokes;
-    NSPointerArray *_topRowStrokes;
+    NSPointerArray * _bottomRowStrokes;
+    NSPointerArray * _leftColumnStrokes;
+    int  _maxOrder;
+    NSPointerArray * _rightColumnStrokes;
+    NSPointerArray * _topRowStrokes;
 }
 
 @property (nonatomic, retain) NSPointerArray *bottomRowStrokes;
@@ -21,7 +21,8 @@
 @property (nonatomic, retain) NSPointerArray *topRowStrokes;
 
 - (id)bottomRowStrokes;
-- (id)cellBorderAtCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (id)cellBorderAtCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (void)dealloc;
 - (void)flattenStrokeOrder;
 - (id)initForUpgradeWithTableModel:(id)arg1;
 - (id)initFromUnarchiver:(id)arg1;
@@ -32,25 +33,26 @@
 - (void)moveColumnIndexRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 toIndex:(unsigned char)arg2;
 - (void)moveRowIndexRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 toIndex:(unsigned short)arg2;
 - (id)p_flattenMajorStrokeLayer:(id)arg1 minorStrokeLayer:(id)arg2;
+- (void)p_setBottomStroke:(id)arg1 order:(int)arg2 atCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg3;
+- (void)p_setLeftStroke:(id)arg1 order:(int)arg2 atCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg3;
+- (void)p_setRightStroke:(id)arg1 order:(int)arg2 atCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg3;
+- (void)p_setStroke:(id)arg1 order:(int)arg2 inStrokesArray:(id)arg3 atIndex:(unsigned short)arg4 atRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg5;
+- (void)p_setTopStroke:(id)arg1 order:(int)arg2 atCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg3;
 - (void)removeColumns:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)removeRows:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)rightColumnStrokes;
 - (void)saveToArchiver:(id)arg1;
 - (void)setBordersWithCellMap:(id)arg1;
 - (void)setBottomRowStrokes:(id)arg1;
-- (void)setBottomStroke:(id)arg1 order:(int)arg2 atCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg3;
-- (void)setCellBorder:(id)arg1 atCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
+- (void)setCellBorder:(id)arg1 atCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (void)setLeftColumnStrokes:(id)arg1;
-- (void)setLeftStroke:(id)arg1 order:(int)arg2 atCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg3;
 - (void)setMaxOrder:(int)arg1;
 - (void)setRightColumnStrokes:(id)arg1;
-- (void)setRightStroke:(id)arg1 order:(int)arg2 atCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg3;
 - (void)setStroke:(id)arg1 forBottomOfRow:(unsigned short)arg2 order:(int)arg3 columnRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg4;
 - (void)setStroke:(id)arg1 forLeftOfColumn:(unsigned char)arg2 order:(int)arg3 rowRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg4;
 - (void)setStroke:(id)arg1 forRightOfColumn:(unsigned char)arg2 order:(int)arg3 rowRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg4;
 - (void)setStroke:(id)arg1 forTopOfRow:(unsigned short)arg2 order:(int)arg3 columnRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg4;
 - (void)setTopRowStrokes:(id)arg1;
-- (void)setTopStroke:(id)arg1 order:(int)arg2 atCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg3;
 - (id)strokeLayerForBottomOfRow:(unsigned short)arg1;
 - (id)strokeLayerForLeftSideOfColumn:(unsigned char)arg1;
 - (id)strokeLayerForRightSideOfColumn:(unsigned char)arg1;

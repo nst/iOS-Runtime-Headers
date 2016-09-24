@@ -3,18 +3,20 @@
  */
 
 @interface UIPhysicalKeyboardEvent : UIPressesEvent {
-    NSString *_commandModifiedInput;
-    NSString *_hint;
-    int _inputFlags;
-    NSString *_markedInput;
-    NSString *_modifiedInput;
-    int _modifierFlags;
-    NSString *_privateInput;
-    NSString *_shiftModifiedInput;
-    NSString *_unmodifiedInput;
+    BOOL  __externalEvent;
+    NSString * _commandModifiedInput;
+    NSString * _hint;
+    int  _inputFlags;
+    NSString * _markedInput;
+    NSString * _modifiedInput;
+    int  _modifierFlags;
+    NSString * _privateInput;
+    NSString * _shiftModifiedInput;
+    NSString * _unmodifiedInput;
 }
 
 @property (nonatomic, retain) NSString *_commandModifiedInput;
+@property (getter=_isExternalEvent, nonatomic) BOOL _externalEvent;
 @property (nonatomic, readonly) int _gsModifierFlags;
 @property (nonatomic, retain) NSString *_hint;
 @property (nonatomic) int _inputFlags;
@@ -36,6 +38,7 @@
 - (int)_gsModifierFlags;
 - (id)_hint;
 - (int)_inputFlags;
+- (BOOL)_isExternalEvent;
 - (BOOL)_isGlobeKey;
 - (BOOL)_isKeyDown;
 - (long)_keyCode;
@@ -50,6 +53,7 @@
 - (id)_unmodifiedInput;
 - (BOOL)isEqual:(id)arg1;
 - (void)set_commandModifiedInput:(id)arg1;
+- (void)set_externalEvent:(BOOL)arg1;
 - (void)set_hint:(id)arg1;
 - (void)set_inputFlags:(int)arg1;
 - (void)set_markedInput:(id)arg1;

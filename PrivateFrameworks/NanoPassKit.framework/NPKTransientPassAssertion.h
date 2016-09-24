@@ -3,8 +3,8 @@
  */
 
 @interface NPKTransientPassAssertion : NSObject {
-    NSString *_uniqueID;
-    NSXPCConnection *_xpcConnection;
+    NSString * _uniqueID;
+    NSXPCConnection * _xpcConnection;
 }
 
 @property (nonatomic, retain) NSString *uniqueID;

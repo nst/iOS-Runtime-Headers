@@ -3,7 +3,7 @@
  */
 
 @interface UISearchContainerViewController : UIViewController {
-    UISearchController *_searchController;
+    UISearchController * _searchController;
 }
 
 @property (nonatomic, retain) UISearchController *searchController;

@@ -3,11 +3,11 @@
  */
 
 @interface NSFilesystemItemRemoveOperation : NSOperation {
-    id _delegate;
-    NSError *_error;
-    BOOL _filterUnderbars;
-    NSString *_removePath;
-    void *_state;
+    id  _delegate;
+    NSError * _error;
+    BOOL  _filterUnderbars;
+    NSString * _removePath;
+    void * _state;
 }
 
 + (id)_errorWithErrno:(int)arg1 atPath:(id)arg2;

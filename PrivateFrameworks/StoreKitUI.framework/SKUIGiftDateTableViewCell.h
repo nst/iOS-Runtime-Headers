@@ -3,13 +3,13 @@
  */
 
 @interface SKUIGiftDateTableViewCell : UITableViewCell {
-    UIView *_bottomBorderView;
-    BOOL _checked;
-    UIImageView *_checkmarkView;
-    UILabel *_dateLabel;
-    UILabel *_labelLabel;
-    UILabel *_placeholderLabel;
-    UIView *_topBorderView;
+    UIView * _bottomBorderView;
+    BOOL  _checked;
+    UIImageView * _checkmarkView;
+    UILabel * _dateLabel;
+    UILabel * _labelLabel;
+    UILabel * _placeholderLabel;
+    UIView * _topBorderView;
 }
 
 @property (getter=isChecked, nonatomic) BOOL checked;

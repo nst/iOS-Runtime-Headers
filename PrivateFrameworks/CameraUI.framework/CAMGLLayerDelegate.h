@@ -2,7 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
  */
 
-@interface CAMGLLayerDelegate : NSObject
+@interface CAMGLLayerDelegate : NSObject <CALayerDelegate>
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 

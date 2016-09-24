@@ -3,7 +3,7 @@
  */
 
 @interface CKDPSubscriptionDeleteRequest : PBRequest <NSCopying> {
-    CKDPIdentifier *_identifier;
+    CKDPIdentifier * _identifier;
 }
 
 @property (nonatomic, readonly) BOOL hasIdentifier;

@@ -3,9 +3,9 @@
  */
 
 @interface AAGenericTermsUIResponse : AAResponse {
-    NSString *_responseAgreeURL;
-    NSData *_responseData;
-    NSDictionary *_responseTermsDictionary;
+    NSString * _responseAgreeURL;
+    NSData * _responseData;
+    NSDictionary * _responseTermsDictionary;
 }
 
 @property (nonatomic, readonly) NSString *agreeURL;

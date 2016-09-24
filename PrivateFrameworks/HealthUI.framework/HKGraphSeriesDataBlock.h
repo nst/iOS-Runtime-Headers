@@ -3,8 +3,8 @@
  */
 
 @interface HKGraphSeriesDataBlock : NSObject {
-    NSArray *_chartPoints;
-    HKValueRange *_yValueRange;
+    NSArray * _chartPoints;
+    HKValueRange * _yValueRange;
 }
 
 @property (nonatomic, copy) NSArray *chartPoints;

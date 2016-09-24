@@ -3,10 +3,10 @@
  */
 
 @interface HKBloodPressureChartPoint : NSObject <HKChartPoint> {
-    NSDate *_date;
-    HKHealthChartPoint *_diastolicChartPoint;
-    HKHealthChartPoint *_systolicChartPoint;
-    id _userInfo;
+    NSDate * _date;
+    HKHealthChartPoint * _diastolicChartPoint;
+    HKHealthChartPoint * _systolicChartPoint;
+    id  _userInfo;
 }
 
 @property (nonatomic, retain) NSDate *date;

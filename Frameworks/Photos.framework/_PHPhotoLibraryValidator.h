@@ -3,7 +3,7 @@
  */
 
 @interface _PHPhotoLibraryValidator : PHValidator {
-    PLPhotoLibrary *_photoLibrary;
+    PLPhotoLibrary * _photoLibrary;
 }
 
 @property (nonatomic, readonly) PLPhotoLibrary *photoLibrary;

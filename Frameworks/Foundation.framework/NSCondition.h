@@ -3,7 +3,7 @@
  */
 
 @interface NSCondition : NSObject <NSLocking> {
-    void *_priv;
+    void * _priv;
 }
 
 @property (copy) NSString *name;
@@ -13,7 +13,6 @@
 - (void)broadcast;
 - (void)dealloc;
 - (id)description;
-- (void)finalize;
 - (id)init;
 - (void)lock;
 - (id)name;

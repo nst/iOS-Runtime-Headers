@@ -3,22 +3,29 @@
  */
 
 @interface CDPDCircleController : NSObject {
-    CDPDCircleStateObserver *_circleJoinObserver;
-    <CDPDCircleProxy> *_circleProxy;
-    <CDPDCircleDelegate> *_delegate;
-    <CDPStateUIProviderInternal> *_uiProvider;
+    CDPDCircleStateObserver * _circleJoinObserver;
+    <CDPDCircleProxy> * _circleProxy;
+    NSObject<CDPDCircleDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _requestSynchronizationQueue;
+    <CDPStateUIProviderInternal> * _uiProvider;
 }
 
 @property (nonatomic, retain) <CDPDCircleProxy> *circleProxy;
-@property (nonatomic) <CDPDCircleDelegate> *delegate;
+@property (nonatomic) NSObject<CDPDCircleDelegate> *delegate;
 @property (nonatomic, retain) <CDPStateUIProviderInternal> *uiProvider;
 
 - (void).cxx_destruct;
 - (void)_joinCDPCircleIgnoringBackups:(BOOL)arg1 completion:(id /* block */)arg2;
 - (unsigned int)_peerCount;
 - (id)_peerDeviceNamesByPeerID;
+- (void)_requestCircleJoinWithObserver:(id)arg1 requestBlock:(id /* block */)arg2 completion:(id /* block */)arg3;
+- (void)_requestToJoinAfterRestoreAndWaitForSuccessWithHandler:(id /* block */)arg1;
+- (void)_requestToJoinAndWaitForSuccessWithHandler:(id /* block */)arg1;
+- (void)_requestToJoinWithObserver:(id)arg1 completion:(id /* block */)arg2;
+- (void)_requestToJoinWithRequestBlock:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (void)_resetCicleToResolvePendingAfterRecoveryWithCompletion:(id /* block */)arg1;
-- (BOOL)applyToJoinCircleWithJoinHandler:(id /* block */)arg1;
+- (void)applyToJoinCircleWithJoinHandler:(id /* block */)arg1;
+- (int)authenticatedCircleStatus:(id*)arg1;
 - (void)cancelApplicationToJoinCircle;
 - (id)circleProxy;
 - (int)circleStatus;
@@ -29,7 +36,7 @@
 - (void)joinCDPCircleWithCompletion:(id /* block */)arg1;
 - (void)joinCircleAfterRecoveryWithCompletion:(id /* block */)arg1;
 - (id)peerID;
-- (void)prepareCircleStateForRecoveryWithCompletion:(id /* block */)arg1;
+- (void)prepareCircleStateForRecovery;
 - (void)setCircleProxy:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setUiProvider:(id)arg1;

@@ -3,11 +3,11 @@
  */
 
 @interface BLTPBBulletinSummary : PBCodable <NSCopying> {
-    unsigned int _destinations;
-    NSMutableArray *_keys;
-    NSString *_publisherBulletinID;
-    NSString *_recordID;
-    NSString *_sectionID;
+    unsigned int  _destinations;
+    NSMutableArray * _keys;
+    NSString * _publisherBulletinID;
+    NSString * _recordID;
+    NSString * _sectionID;
 }
 
 @property (nonatomic) unsigned int destinations;

@@ -3,27 +3,27 @@
  */
 
 @interface NEProxySettings : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
-    BOOL _FTPEnabled;
-    NEProxyServer *_FTPServer;
-    BOOL _HTTPEnabled;
-    BOOL _HTTPSEnabled;
-    NEProxyServer *_HTTPSServer;
-    NEProxyServer *_HTTPServer;
-    BOOL _RTSPEnabled;
-    NEProxyServer *_RTSPServer;
-    BOOL _SOCKSEnabled;
-    NEProxyServer *_SOCKSServer;
-    BOOL _autoProxyConfigurationEnabled;
-    BOOL _autoProxyDiscovery;
-    NSArray *_exceptionList;
-    BOOL _excludeSimpleHostnames;
-    BOOL _gopherEnabled;
-    NEProxyServer *_gopherServer;
-    NSString *_proxyAutoConfigJavaScript;
-    NSURL *_proxyAutoConfigURL;
-    NSArray *_supplementalMatchDomains;
-    NSArray *_supplementalMatchOrders;
-    BOOL _usePassiveFTP;
+    BOOL  _FTPEnabled;
+    NEProxyServer * _FTPServer;
+    BOOL  _HTTPEnabled;
+    BOOL  _HTTPSEnabled;
+    NEProxyServer * _HTTPSServer;
+    NEProxyServer * _HTTPServer;
+    BOOL  _RTSPEnabled;
+    NEProxyServer * _RTSPServer;
+    BOOL  _SOCKSEnabled;
+    NEProxyServer * _SOCKSServer;
+    BOOL  _autoProxyConfigurationEnabled;
+    BOOL  _autoProxyDiscovery;
+    NSArray * _exceptionList;
+    BOOL  _excludeSimpleHostnames;
+    BOOL  _gopherEnabled;
+    NEProxyServer * _gopherServer;
+    NSString * _proxyAutoConfigJavaScript;
+    NSURL * _proxyAutoConfigURL;
+    NSArray * _supplementalMatchDomains;
+    NSArray * _supplementalMatchOrders;
+    BOOL  _usePassiveFTP;
 }
 
 @property BOOL FTPEnabled;
@@ -38,6 +38,7 @@
 @property (copy) NEProxyServer *SOCKSServer;
 @property BOOL autoProxyConfigurationEnabled;
 @property BOOL autoProxyDiscovery;
+@property (readonly) BOOL enabled;
 @property (copy) NSArray *exceptionList;
 @property BOOL excludeSimpleHostnames;
 @property BOOL gopherEnabled;
@@ -71,6 +72,7 @@
 - (void)copyPasswordsFromKeychain;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
+- (BOOL)enabled;
 - (void)encodeWithCoder:(id)arg1;
 - (id)exceptionList;
 - (BOOL)excludeSimpleHostnames;
@@ -80,6 +82,7 @@
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)matchDomains;
+- (BOOL)needToUpdateKeychain;
 - (id)proxyAutoConfigJavaScript;
 - (id)proxyAutoConfigURL;
 - (id)proxyAutoConfigurationJavaScript;

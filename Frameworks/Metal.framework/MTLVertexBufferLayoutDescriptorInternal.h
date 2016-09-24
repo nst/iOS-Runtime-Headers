@@ -3,9 +3,9 @@
  */
 
 @interface MTLVertexBufferLayoutDescriptorInternal : MTLVertexBufferLayoutDescriptor {
-    unsigned int _instanceStepRate;
-    unsigned int _stepFunction;
-    unsigned int _stride;
+    unsigned int  _instanceStepRate;
+    unsigned int  _stepFunction;
+    unsigned int  _stride;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

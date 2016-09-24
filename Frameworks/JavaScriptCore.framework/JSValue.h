@@ -3,8 +3,8 @@
  */
 
 @interface JSValue : NSObject {
-    JSContext *_context;
-    struct OpaqueJSValue { } *m_value;
+    JSContext * _context;
+    struct OpaqueJSValue { } * m_value;
 }
 
 @property (readonly) JSContext *context;
@@ -31,10 +31,10 @@
 + (id)valueWithNewRegularExpressionFromPattern:(id)arg1 flags:(id)arg2 inContext:(id)arg3;
 + (id)valueWithNullInContext:(id)arg1;
 + (id)valueWithObject:(id)arg1 inContext:(id)arg2;
-+ (id)valueWithPoint:(struct CGPoint { float x1; float x2; })arg1 inContext:(id)arg2;
++ (id)valueWithPoint:(struct CGPoint { double x1; double x2; })arg1 inContext:(id)arg2;
 + (id)valueWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inContext:(id)arg2;
-+ (id)valueWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(id)arg2;
-+ (id)valueWithSize:(struct CGSize { float x1; float x2; })arg1 inContext:(id)arg2;
++ (id)valueWithRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inContext:(id)arg2;
++ (id)valueWithSize:(struct CGSize { double x1; double x2; })arg1 inContext:(id)arg2;
 + (id)valueWithUInt32:(unsigned int)arg1 inContext:(id)arg2;
 + (id)valueWithUndefinedInContext:(id)arg1;
 
@@ -76,43 +76,33 @@
 - (id)toNumber;
 - (id)toObject;
 - (id)toObjectOfClass:(Class)arg1;
-- (struct CGPoint { float x1; float x2; })toPoint;
+- (struct CGPoint { double x1; double x2; })toPoint;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })toRange;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })toRect;
-- (struct CGSize { float x1; float x2; })toSize;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })toRect;
+- (struct CGSize { double x1; double x2; })toSize;
 - (id)toString;
 - (unsigned int)toUInt32;
 - (id)valueAtIndex:(unsigned int)arg1;
 - (id)valueForProperty:(id)arg1;
 
-// Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
-
-+ (id)valueWithTransform3D:(struct SCNMatrix4 { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg1 inContext:(id)arg2;
-+ (id)valueWithVector3:(struct SCNVector3 { float x1; float x2; float x3; })arg1 inContext:(id)arg2;
-+ (id)valueWithVector4:(struct SCNVector4 { float x1; float x2; float x3; float x4; })arg1 inContext:(id)arg2;
-
-- (struct SCNMatrix4 { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })toTransform3D;
-- (struct SCNVector3 { float x1; float x2; float x3; })toVector3;
-- (struct SCNVector4 { float x1; float x2; float x3; float x4; })toVector4;
-
 // Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusKit.framework/OpusKit
 
-+ (id)valueWithCATransform3D:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg1 inContext:(id)arg2;
-+ (id)valueWithCoodinateRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 inContext:(id)arg2;
-+ (id)valueWithEdgeInsets:(struct OKEdgeInsets { float x1; float x2; float x3; float x4; })arg1 inContext:(id)arg2;
++ (id)valueWithCATransform3D:(struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })arg1 inContext:(id)arg2;
++ (id)valueWithCoodinateRegion:(struct { struct CLLocationCoordinate2D { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 inContext:(id)arg2;
++ (id)valueWithEdgeInsets:(struct OKEdgeInsets { double x1; double x2; double x3; double x4; })arg1 inContext:(id)arg2;
 + (id)valueWithLocationCoordinate2D:(struct OKLocationCoordinate2D { double x1; double x2; })arg1 inContext:(id)arg2;
-+ (id)valueWithOffset:(struct UIOffset { float x1; float x2; })arg1 inContext:(id)arg2;
-+ (id)valueWithVector3:(struct SCNVector3 { float x1; float x2; float x3; })arg1 inContext:(id)arg2;
-+ (id)valueWithVector4:(struct SCNVector4 { float x1; float x2; float x3; float x4; })arg1 inContext:(id)arg2;
++ (id)valueWithOffset:(struct UIOffset { double x1; double x2; })arg1 inContext:(id)arg2;
++ (id)valueWithVector3:(struct SCNVector3 { double x1; double x2; double x3; })arg1 inContext:(id)arg2;
++ (id)valueWithVector4:(struct SCNVector4 { double x1; double x2; double x3; double x4; })arg1 inContext:(id)arg2;
 
 - (BOOL)isVector3;
 - (BOOL)isVector4;
-- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })toCATransform3D;
-- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })toCoordinateRegion;
-- (struct OKEdgeInsets { float x1; float x2; float x3; float x4; })toEdgeInsets;
+- (struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })toCATransform3D;
+- (struct { struct CLLocationCoordinate2D { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })toCoordinateRegion;
+- (struct OKEdgeInsets { double x1; double x2; double x3; double x4; })toEdgeInsets;
 - (struct OKLocationCoordinate2D { double x1; double x2; })toLocationCoordinate2D;
-- (struct UIOffset { float x1; float x2; })toOffset;
-- (struct SCNVector3 { float x1; float x2; float x3; })toVector3;
-- (struct SCNVector4 { float x1; float x2; float x3; float x4; })toVector4;
+- (struct UIOffset { double x1; double x2; })toOffset;
+- (struct SCNVector3 { double x1; double x2; double x3; })toVector3;
+- (struct SCNVector4 { double x1; double x2; double x3; double x4; })toVector4;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface ML3GenreTable : ML3DatabaseTable {
-    NSArray *_columns;
+    NSArray * _columns;
 }
 
 - (void).cxx_destruct;

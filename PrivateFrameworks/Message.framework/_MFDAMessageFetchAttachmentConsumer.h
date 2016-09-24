@@ -3,12 +3,12 @@
  */
 
 @interface _MFDAMessageFetchAttachmentConsumer : MFDAMailAccountConsumer <DAMessageFetchAttachmentConsumer> {
-    unsigned int _accumulatedLength;
-    BOOL _dataWasBase64;
-    unsigned int _expectedLength;
-    BOOL _fetchSucceeded;
-    MFActivityMonitor *_monitor;
-    MFProgressFilterDataConsumer *_progressFilter;
+    unsigned int  _accumulatedLength;
+    BOOL  _dataWasBase64;
+    unsigned int  _expectedLength;
+    BOOL  _fetchSucceeded;
+    MFActivityMonitor * _monitor;
+    MFProgressFilterDataConsumer * _progressFilter;
 }
 
 @property (readonly) BOOL dataWasBase64;

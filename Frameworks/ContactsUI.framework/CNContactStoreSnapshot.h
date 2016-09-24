@@ -3,23 +3,23 @@
  */
 
 @interface CNContactStoreSnapshot : NSObject {
-    NSMutableArray *_batchContactIdentifiers;
-    NSObject<OS_dispatch_semaphore> *_cacheAccessSemaphore;
-    NSMutableDictionary *_contactMatchInfos;
-    NSMapTable *_contactsCache;
-    unsigned int _contactsCount;
+    NSMutableArray * _batchContactIdentifiers;
+    NSObject<OS_dispatch_semaphore> * _cacheAccessSemaphore;
+    NSMutableDictionary * _contactMatchInfos;
+    NSMapTable * _contactsCache;
+    unsigned int  _contactsCount;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
-    } _currentlyLoadingBackgroundRange;
-    CNContactStoreDataSource *_dataSource;
-    NSMutableAttributedString *_emptyExcerptInstanceMarker;
-    CNContactStoreFilter *_filter;
-    NSMapTable *_identifiersToIndexPath;
-    NSArray *_indexSections;
-    unsigned int _lastRequestedIndex;
-    NSArray *_sections;
-    CNContactMatchSummarizer *_summarizer;
+    }  _currentlyLoadingBackgroundRange;
+    CNContactStoreDataSource * _dataSource;
+    NSMutableAttributedString * _emptyExcerptInstanceMarker;
+    CNContactStoreFilter * _filter;
+    NSMapTable * _identifiersToIndexPath;
+    NSArray * _indexSections;
+    unsigned int  _lastRequestedIndex;
+    NSArray * _sections;
+    CNContactMatchSummarizer * _summarizer;
 }
 
 @property (nonatomic, readonly) NSMutableArray *batchContactIdentifiers;

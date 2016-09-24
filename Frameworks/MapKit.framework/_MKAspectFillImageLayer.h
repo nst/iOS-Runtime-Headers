@@ -3,7 +3,7 @@
  */
 
 @interface _MKAspectFillImageLayer : CALayer {
-    UIImage *_image;
+    UIImage * _image;
 }
 
 @property (nonatomic, retain) UIImage *image;

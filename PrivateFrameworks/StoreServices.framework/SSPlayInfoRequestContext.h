@@ -3,12 +3,12 @@
  */
 
 @interface SSPlayInfoRequestContext : NSObject <NSCopying, SSXPCCoding> {
-    NSNumber *_accountIdentifier;
-    NSNumber *_contentIdentifier;
-    NSString *_playbackType;
-    NSString *_playerGUID;
-    NSData *_sic;
-    NSArray *_sinfs;
+    NSNumber * _accountIdentifier;
+    NSNumber * _contentIdentifier;
+    NSString * _playbackType;
+    NSString * _playerGUID;
+    NSData * _sic;
+    NSArray * _sinfs;
 }
 
 @property (nonatomic, copy) NSData *SICData;

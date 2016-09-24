@@ -3,15 +3,15 @@
  */
 
 @interface AXLangMap : NSObject {
-    NSArray *_alternateLanguageIDs;
-    BOOL _ambiguous;
-    NSArray *_associatedAmbiguousLanguages;
-    NSArray *_dialects;
-    NSString *_generalLanguageID;
-    BOOL _rtl;
-    AXDialectMap *_userPreferredDialect;
-    BOOL _western;
-    AXDialectMap *userLocaleDialect;
+    NSArray * _alternateLanguageIDs;
+    BOOL  _ambiguous;
+    NSArray * _associatedAmbiguousLanguages;
+    NSArray * _dialects;
+    NSString * _generalLanguageID;
+    BOOL  _rtl;
+    AXDialectMap * _userPreferredDialect;
+    BOOL  _western;
+    AXDialectMap * userLocaleDialect;
 }
 
 @property (nonatomic, retain) NSArray *alternateLanguageIDs;

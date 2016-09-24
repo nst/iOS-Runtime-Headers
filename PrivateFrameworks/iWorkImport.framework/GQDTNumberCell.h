@@ -3,8 +3,8 @@
  */
 
 @interface GQDTNumberCell : GQDTCell {
-    GQDTComputedFormatSpec *mComputedFormat;
-    double mValue;
+    GQDTComputedFormatSpec * mComputedFormat;
+    double  mValue;
 }
 
 - (struct __CFString { }*)createStringValue;

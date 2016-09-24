@@ -3,11 +3,11 @@
  */
 
 @interface LSBestAppSuggestionManager : NSObject {
-    int _bestAppNotificationCount;
-    NSXPCConnection *_connection;
-    <LSBestAppSuggestionManagerDelegate> *_delegate;
-    LSBestAppSuggestion *_lastBestAppSuggestion;
-    BOOL _listeningForBestAppSuggestions;
+    int  _bestAppNotificationCount;
+    NSXPCConnection * _connection;
+    <LSBestAppSuggestionManagerDelegate> * _delegate;
+    LSBestAppSuggestion * _lastBestAppSuggestion;
+    BOOL  _listeningForBestAppSuggestions;
 }
 
 @property (retain) NSXPCConnection *connection;

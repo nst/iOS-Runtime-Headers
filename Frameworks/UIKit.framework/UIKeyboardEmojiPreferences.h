@@ -3,13 +3,15 @@
  */
 
 @interface UIKeyboardEmojiPreferences : NSObject {
-    int _currentSequence;
-    NSMutableDictionary *_defaults;
-    BOOL _isDefaultDirty;
-    unsigned int _maximumRecentsCount;
-    NSMutableArray *_recents;
-    NSMutableDictionary *_skinToneBaseKeyPreferences;
-    NSMutableDictionary *_usageHistory;
+    int  _currentSequence;
+    NSMutableDictionary * _defaults;
+    BOOL  _isDefaultDirty;
+    unsigned int  _maximumRecentsCount;
+    EMFEmojiPreferencesClient * _preferencesClient;
+    NSMutableArray * _recents;
+    NSMutableDictionary * _skinToneBaseKeyPreferences;
+    NSMutableDictionary * _typingNames;
+    NSMutableDictionary * _usageHistory;
 }
 
 @property (nonatomic) int currentSequenceKey;
@@ -21,12 +23,17 @@
 
 + (id)sharedInstance;
 
+- (void)_createPreferencesClientIfNecessary;
+- (void)_emojiUsed:(id)arg1 language:(id)arg2;
 - (void)_readPreferencesFromDefaults;
+- (void)_usageForEmoji:(id)arg1 language:(id)arg2 mode:(id)arg3;
 - (int)currentSequenceKey;
 - (void)dealloc;
 - (id)defaultsValueForKey:(id)arg1;
 - (int)emojiCategoryDefaultsIndex:(id)arg1;
+- (void)emojiPredicted:(id)arg1 typingName:(id)arg2 language:(id)arg3;
 - (void)emojiUsed:(id)arg1;
+- (void)emojiUsed:(id)arg1 language:(id)arg2;
 - (id)emptyDefaultsDictionary;
 - (void)handleRead:(id)arg1;
 - (void)handleWrite:(id)arg1;
@@ -44,8 +51,11 @@
 - (void)setRecents:(id)arg1;
 - (void)setSelectedCategoryType:(int)arg1;
 - (void)setSkinToneBaseKeyPreferences:(id)arg1;
+- (void)setTypingNames:(id)arg1;
 - (void)setUsageHistoryKey:(id)arg1;
 - (id)skinToneBaseKeyPreferences;
+- (id)typingNameForEmoji:(id)arg1 language:(id)arg2;
+- (id)typingNames;
 - (void)updateSkinToneBaseKey:(id)arg1 variantUsed:(id)arg2;
 - (id)usageHistoryKey;
 - (void)writeEmojiDefaults;

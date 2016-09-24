@@ -3,14 +3,14 @@
  */
 
 @interface CKDPSubscriptionNotification : PBCodable <NSCopying> {
-    NSMutableArray *_additionalFields;
-    CKDPSubscriptionNotificationAlert *_alert;
+    NSMutableArray * _additionalFields;
+    CKDPSubscriptionNotificationAlert * _alert;
     struct { 
         unsigned int shouldBadge : 1; 
         unsigned int shouldSendContentAvailable : 1; 
-    } _has;
-    BOOL _shouldBadge;
-    BOOL _shouldSendContentAvailable;
+    }  _has;
+    BOOL  _shouldBadge;
+    BOOL  _shouldSendContentAvailable;
 }
 
 @property (nonatomic, retain) NSMutableArray *additionalFields;
@@ -20,6 +20,8 @@
 @property (nonatomic) BOOL hasShouldSendContentAvailable;
 @property (nonatomic) BOOL shouldBadge;
 @property (nonatomic) BOOL shouldSendContentAvailable;
+
++ (Class)additionalFieldsType;
 
 - (void).cxx_destruct;
 - (void)addAdditionalFields:(id)arg1;

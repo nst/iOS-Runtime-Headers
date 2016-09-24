@@ -21,11 +21,16 @@
 - (void)setFragmentSamplerStates:(const id*)arg1 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)setFragmentTexture:(id <MTLTexture>)arg1 atIndex:(unsigned int)arg2;
 - (void)setFragmentTexture:(id <MTLTexture>)arg1 atTextureIndex:(unsigned int)arg2 samplerState:(id <MTLSamplerState>)arg3 atSamplerIndex:(unsigned int)arg4;
-- (void)setFragmentTexture:(id <MTLTexture>)arg1 baseLevel:(unsigned int)arg2 atIndex:(unsigned int)arg3;
 - (void)setFragmentTextures:(const id*)arg1 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)setRenderPipelineState:(id <MTLRenderPipelineState>)arg1;
 - (void)setScissorRect:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1;
 - (void)setStencilFrontReferenceValue:(unsigned int)arg1 backReferenceValue:(unsigned int)arg2;
 - (void)setStencilReferenceValue:(unsigned int)arg1;
+
+@optional
+
+- (void)setColorStoreAction:(unsigned int)arg1 atIndex:(unsigned int)arg2;
+- (void)setDepthStoreAction:(unsigned int)arg1;
+- (void)setStencilStoreAction:(unsigned int)arg1;
 
 @end

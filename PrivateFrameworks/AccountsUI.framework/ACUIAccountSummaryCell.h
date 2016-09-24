@@ -3,13 +3,13 @@
  */
 
 @interface ACUIAccountSummaryCell : PSTableCell {
-    ACAccount *_account;
-    UILabel *_dataclassesLabel;
-    NSString *_desiredValue;
-    NSSet *_enabledDataclasses;
-    int _style;
-    NSSet *_supportedDataclasses;
-    BOOL _useCustomDetailsText;
+    ACAccount * _account;
+    UILabel * _dataclassesLabel;
+    NSString * _desiredValue;
+    NSSet * _enabledDataclasses;
+    int  _style;
+    NSSet * _supportedDataclasses;
+    BOOL  _useCustomDetailsText;
 }
 
 + (void)_configureSpecifier:(id)arg1 forAccount:(id)arg2 withStyle:(int)arg3 valueText:(id)arg4;

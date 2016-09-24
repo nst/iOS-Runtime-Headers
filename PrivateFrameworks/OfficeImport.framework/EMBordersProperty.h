@@ -3,14 +3,14 @@
  */
 
 @interface EMBordersProperty : CMProperty <NSCopying> {
-    EDBorders *edValue;
-    OITSUColor *mBorderBottomColor;
-    OITSUColor *mBorderColor;
-    OITSUColor *mBorderLeftColor;
-    OITSUColor *mBorderRightColor;
-    int mBorderStyle;
-    OITSUColor *mBorderTopColor;
-    int mBorderWidth;
+    EDBorders * edValue;
+    OITSUColor * mBorderBottomColor;
+    OITSUColor * mBorderColor;
+    OITSUColor * mBorderLeftColor;
+    OITSUColor * mBorderRightColor;
+    int  mBorderStyle;
+    OITSUColor * mBorderTopColor;
+    int  mBorderWidth;
 }
 
 - (id)borderColor;

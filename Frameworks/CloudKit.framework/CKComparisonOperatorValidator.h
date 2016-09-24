@@ -3,7 +3,7 @@
  */
 
 @interface CKComparisonOperatorValidator : CKPredicateValidatorInstance {
-    unsigned int _operatorType;
+    unsigned int  _operatorType;
 }
 
 @property (nonatomic) unsigned int operatorType;

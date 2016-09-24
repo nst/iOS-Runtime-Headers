@@ -3,7 +3,7 @@
  */
 
 @interface CNiOSABGroupiOSLegacyIdentifierPredicate : CNPredicate <CNiOSGroupPredicate> {
-    int _iOSLegacyIdentifier;
+    int  _iOSLegacyIdentifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,9 +12,13 @@
 @property (nonatomic, readonly) int iOSLegacyIdentifier;
 @property (readonly) Class superclass;
 
++ (BOOL)supportsSecureCoding;
+
 - (struct __CFArray { }*)cn_copyGroupsInAddressBook:(void*)arg1 error:(struct __CFError {}**)arg2;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (int)iOSLegacyIdentifier;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithiOSLegacyIdentifier:(int)arg1;
 
 @end

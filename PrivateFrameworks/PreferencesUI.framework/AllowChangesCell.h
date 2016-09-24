@@ -3,7 +3,7 @@
  */
 
 @interface AllowChangesCell : PSTableCell {
-    UIImageView *_lock;
+    UIImageView * _lock;
 }
 
 - (void).cxx_destruct;

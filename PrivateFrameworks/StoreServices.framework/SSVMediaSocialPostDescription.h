@@ -3,15 +3,15 @@
  */
 
 @interface SSVMediaSocialPostDescription : NSObject <NSCopying, SSXPCCoding> {
-    NSNumber *_accountIdentifier;
-    NSArray *_attachments;
-    BOOL _attributed;
-    NSString *_authorIdentifier;
-    NSString *_authorType;
-    NSArray *_contentItems;
-    NSArray *_externalServiceDestinations;
-    NSString *_sourceApplicationIdentifier;
-    NSString *_text;
+    NSNumber * _accountIdentifier;
+    NSArray * _attachments;
+    BOOL  _attributed;
+    NSString * _authorIdentifier;
+    NSString * _authorType;
+    NSArray * _contentItems;
+    NSArray * _externalServiceDestinations;
+    NSString * _sourceApplicationIdentifier;
+    NSString * _text;
 }
 
 @property (nonatomic, copy) NSNumber *accountIdentifier;

@@ -3,11 +3,11 @@
  */
 
 @interface ATIDSService : ATMessageLinkListener <ATSocketDelegate, IDSServiceDelegate> {
-    ATIDSConnectionInfo *_connectionInfo;
-    NSMutableArray *_listeners;
-    NSObject<OS_dispatch_queue> *_queue;
-    BOOL _running;
-    IDSService *_service;
+    ATIDSConnectionInfo * _connectionInfo;
+    NSMutableArray * _listeners;
+    NSObject<OS_dispatch_queue> * _queue;
+    BOOL  _running;
+    IDSService * _service;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptGradient : SUScriptObject {
-    SUGradient *_nativeGradient;
+    SUGradient * _nativeGradient;
 }
 
 @property (readonly) NSString *type;

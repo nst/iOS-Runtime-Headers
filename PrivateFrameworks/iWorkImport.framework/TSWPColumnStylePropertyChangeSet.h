@@ -3,24 +3,24 @@
  */
 
 @interface TSWPColumnStylePropertyChangeSet : TSSStylePropertyChangeSet {
-    TSWPSpecColumns *_columns;
-    TSSSpecBool *_continuous;
-    BOOL _definedColumns;
-    BOOL _definedContinuous;
-    BOOL _definedMargins;
-    BOOL _definedMinHorizontalInset;
-    BOOL _definedPadding;
-    BOOL _definedShrinkToFit;
-    BOOL _definedVerticalAlignment;
-    BOOL _definedVerticalText;
-    BOOL _definedWritingDirection;
-    TSWPSpecPadding *_margins;
-    TSSSpecDouble *_minHorizontalInset;
-    TSWPSpecPadding *_padding;
-    TSSSpecBool *_shrinkToFit;
-    TSSSpecInteger *_verticalAlignment;
-    TSSSpecBool *_verticalText;
-    TSSSpecInteger *_writingDirection;
+    TSWPSpecColumns * _columns;
+    TSSSpecBool * _continuous;
+    BOOL  _definedColumns;
+    BOOL  _definedContinuous;
+    BOOL  _definedMargins;
+    BOOL  _definedMinHorizontalInset;
+    BOOL  _definedPadding;
+    BOOL  _definedShrinkToFit;
+    BOOL  _definedVerticalAlignment;
+    BOOL  _definedVerticalText;
+    BOOL  _definedWritingDirection;
+    TSWPSpecPadding * _margins;
+    TSSSpecDouble * _minHorizontalInset;
+    TSWPSpecPadding * _padding;
+    TSSSpecBool * _shrinkToFit;
+    TSSSpecInteger * _verticalAlignment;
+    TSSSpecBool * _verticalText;
+    TSSSpecInteger * _writingDirection;
 }
 
 - (void)enumerateDefinedPropertiesWithBlock:(id /* block */)arg1;

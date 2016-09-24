@@ -3,9 +3,9 @@
  */
 
 @interface _SFURLSpoofingMitigator : NSObject {
-    BOOL _UIShouldReflectCommittedURLInsteadOfCurrentURL;
-    NSDate *_dateOfStartOfLastProvisionalNavigation;
-    unsigned int _recentlyInterruptedNavigationCount;
+    BOOL  _UIShouldReflectCommittedURLInsteadOfCurrentURL;
+    NSDate * _dateOfStartOfLastProvisionalNavigation;
+    unsigned int  _recentlyInterruptedNavigationCount;
 }
 
 @property (nonatomic, readonly) BOOL UIShouldReflectCommittedURLInsteadOfCurrentURL;

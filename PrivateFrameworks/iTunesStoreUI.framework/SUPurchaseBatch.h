@@ -3,13 +3,13 @@
  */
 
 @interface SUPurchaseBatch : NSObject {
-    NSArray *_continuations;
-    NSArray *_errors;
-    NSArray *_items;
-    NSArray *_offers;
-    SUPurchaseManager *_purchaseManager;
-    BOOL _shouldSuspendWhenFinished;
-    NSArray *_validPurchases;
+    NSArray * _continuations;
+    NSArray * _errors;
+    NSArray * _items;
+    NSArray * _offers;
+    SUPurchaseManager * _purchaseManager;
+    BOOL  _shouldSuspendWhenFinished;
+    NSArray * _validPurchases;
 }
 
 @property (nonatomic, retain) NSArray *continuations;

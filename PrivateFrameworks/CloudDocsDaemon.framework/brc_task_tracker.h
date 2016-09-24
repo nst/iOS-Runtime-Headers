@@ -3,9 +3,9 @@
  */
 
 @interface brc_task_tracker : NSObject {
-    bool cancelled;
-    NSObject<OS_dispatch_group> *group;
-    char *label;
+    bool  cancelled;
+    NSObject<OS_dispatch_group> * group;
+    char * label;
 }
 
 - (void).cxx_destruct;

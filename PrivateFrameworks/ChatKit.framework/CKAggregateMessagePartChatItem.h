@@ -3,12 +3,13 @@
  */
 
 @interface CKAggregateMessagePartChatItem : CKTextMessagePartChatItem {
-    NSArray *_subparts;
+    NSArray * _subparts;
 }
 
 @property (nonatomic, copy) NSArray *subparts;
 @property (nonatomic, readonly, copy) NSString *title;
 
+- (void).cxx_destruct;
 - (Class)balloonViewClass;
 - (id)composition;
 - (id)initWithIMChatItem:(id)arg1 maxWidth:(float)arg2;

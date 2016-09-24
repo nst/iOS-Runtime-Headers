@@ -3,8 +3,8 @@
  */
 
 @interface ML3SortMapFaultingNameOrderDictionary : NSMutableDictionary {
-    ML3DatabaseConnection *_connection;
-    NSMutableDictionary *_dirtyInserts;
+    ML3DatabaseConnection * _connection;
+    NSMutableDictionary * _dirtyInserts;
 }
 
 - (void).cxx_destruct;

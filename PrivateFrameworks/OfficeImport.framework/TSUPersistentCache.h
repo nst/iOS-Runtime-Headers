@@ -3,8 +3,8 @@
  */
 
 @interface TSUPersistentCache : NSObject {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSURL *_directoryURL;
+    NSObject<OS_dispatch_queue> * _accessQueue;
+    NSURL * _directoryURL;
 }
 
 @property (nonatomic, readonly) NSURL *directoryURL;

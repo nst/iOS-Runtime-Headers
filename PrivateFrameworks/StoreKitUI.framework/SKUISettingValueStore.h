@@ -3,9 +3,9 @@
  */
 
 @interface SKUISettingValueStore : NSObject {
-    NSMutableDictionary *_modifiedValues;
-    NSObject<OS_dispatch_queue> *_mutexQueue;
-    NSMutableDictionary *_originalValues;
+    NSMutableDictionary * _modifiedValues;
+    NSObject<OS_dispatch_queue> * _mutexQueue;
+    NSMutableDictionary * _originalValues;
 }
 
 - (void).cxx_destruct;

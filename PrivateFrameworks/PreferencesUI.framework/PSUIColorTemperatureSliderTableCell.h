@@ -3,8 +3,8 @@
  */
 
 @interface PSUIColorTemperatureSliderTableCell : PSSliderTableCell {
-    UILabel *_coolerLabel;
-    UILabel *_warmerLabel;
+    UILabel * _coolerLabel;
+    UILabel * _warmerLabel;
 }
 
 + (float)preferredHeight;

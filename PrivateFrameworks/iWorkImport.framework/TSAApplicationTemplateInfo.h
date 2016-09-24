@@ -3,9 +3,9 @@
  */
 
 @interface TSAApplicationTemplateInfo : TSATemplateInfo <NSCopying> {
-    NSString *_documentVariant;
-    NSString *_name;
-    NSString *_previewVariant;
+    NSString * _documentVariant;
+    NSString * _name;
+    NSString * _previewVariant;
 }
 
 @property (nonatomic, readonly) NSURL *bundledDocumentContainerURL;

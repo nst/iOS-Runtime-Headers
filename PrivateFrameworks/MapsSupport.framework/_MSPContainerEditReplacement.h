@@ -3,11 +3,11 @@
  */
 
 @interface _MSPContainerEditReplacement : _MSPContainerEdit <MSPContainerEditReplacement> {
-    NSIndexSet *_indexesOfReplacedObjects;
-    NSArray *_originalImmutableObjects;
-    NSArray *_originalObjects;
-    NSArray *_replacementImmutableObjects;
-    NSArray *_replacementObjects;
+    NSIndexSet * _indexesOfReplacedObjects;
+    NSArray * _originalImmutableObjects;
+    NSArray * _originalObjects;
+    NSArray * _replacementImmutableObjects;
+    NSArray * _replacementObjects;
 }
 
 @property (readonly, copy) NSString *debugDescription;

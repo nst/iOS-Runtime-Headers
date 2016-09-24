@@ -3,18 +3,18 @@
  */
 
 @interface CMArchiveManager : NSObject <TCCancelDelegate> {
-    BOOL mAutoCommit;
-    float mCommitInterval;
-    NSMutableDictionary *mDrawableCache;
-    int mHeight;
-    BOOL mIsOnPhone;
-    BOOL mIsThumbnail;
-    unsigned int mPageCount;
-    NSString *mPassphrase;
-    NSMutableSet *mPausedPaths;
-    NSString *mResourcePathPrefix;
-    NSCache *mStyleObjectCache;
-    int mWidth;
+    BOOL  mAutoCommit;
+    double  mCommitInterval;
+    NSMutableDictionary * mDrawableCache;
+    int  mHeight;
+    BOOL  mIsOnPhone;
+    BOOL  mIsThumbnail;
+    unsigned int  mPageCount;
+    NSString * mPassphrase;
+    NSMutableSet * mPausedPaths;
+    NSString * mResourcePathPrefix;
+    NSCache * mStyleObjectCache;
+    int  mWidth;
 }
 
 @property (readonly, copy) NSString *debugDescription;

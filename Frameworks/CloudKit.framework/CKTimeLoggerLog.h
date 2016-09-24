@@ -3,12 +3,12 @@
  */
 
 @interface CKTimeLoggerLog : NSObject <NSCoding> {
-    double _beginTime;
-    NSString *_beginningMessage;
-    double _endTime;
-    NSString *_endingMessage;
-    NSMutableArray *_pauseRecords;
-    NSString *_type;
+    double  _beginTime;
+    NSString * _beginningMessage;
+    double  _endTime;
+    NSString * _endingMessage;
+    NSMutableArray * _pauseRecords;
+    NSString * _type;
 }
 
 @property (nonatomic) double beginTime;

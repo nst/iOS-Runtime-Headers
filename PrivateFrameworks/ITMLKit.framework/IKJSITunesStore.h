@@ -3,16 +3,18 @@
  */
 
 @interface IKJSITunesStore : IKJSObject <IKJSITunesStore, JSExport> {
-    int _bagOperationLock;
-    NSString *_cookieURL;
-    id _isURLBagDidLoadToken;
-    NSNumber *_lastAccountDSID;
-    NSDictionary *_lastKnownStatusDictionary;
-    SSMetricsController *_metricsController;
-    ISLoadURLBagOperation *_pendingBagOperation;
-    id _ssAccountStoreChangedToken;
-    NSString *_storeFrontSuffix;
-    id _subscriptionStatusDidChangeToken;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _bagOperationLock;
+    NSString * _cookieURL;
+    id  _isURLBagDidLoadToken;
+    NSNumber * _lastAccountDSID;
+    NSDictionary * _lastKnownStatusDictionary;
+    SSMetricsController * _metricsController;
+    ISLoadURLBagOperation * _pendingBagOperation;
+    id  _ssAccountStoreChangedToken;
+    NSString * _storeFrontSuffix;
+    id  _subscriptionStatusDidChangeToken;
 }
 
 @property (nonatomic, readonly) NSString *DSID;

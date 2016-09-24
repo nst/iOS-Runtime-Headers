@@ -3,10 +3,10 @@
  */
 
 @interface CAMTransientImageManagerRequest : NSObject {
-    BOOL _isCanceled;
-    BOOL _isFinished;
-    id /* block */ _resultHandler;
-    NSString *_uuid;
+    BOOL  _isCanceled;
+    BOOL  _isFinished;
+    id /* block */  _resultHandler;
+    NSString * _uuid;
 }
 
 @property (nonatomic) BOOL isCanceled;

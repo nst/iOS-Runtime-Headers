@@ -3,9 +3,9 @@
  */
 
 @interface SKUITableViewSection : NSObject {
-    <SKUITableViewSectionDelegate> *_delegate;
-    BOOL _hidesHeaderView;
-    int _sectionIndex;
+    <SKUITableViewSectionDelegate> * _delegate;
+    BOOL  _hidesHeaderView;
+    int  _sectionIndex;
 }
 
 @property (nonatomic) <SKUITableViewSectionDelegate> *delegate;

@@ -3,9 +3,9 @@
  */
 
 @interface _MFDAMessageStoreSearchResultBodyConsumer : NSObject <DAMailboxFetchSearchResultConsumer, DAMailboxStreamingContentConsumer> {
-    MFConditionLock *_doneCondition;
-    MFError *_error;
-    <MFDAStreamingContentConsumer> *_streamConsumer;
+    MFConditionLock * _doneCondition;
+    MFError * _error;
+    <MFDAStreamingContentConsumer> * _streamConsumer;
 }
 
 @property (nonatomic, retain) MFError *error;

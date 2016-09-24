@@ -3,9 +3,9 @@
  */
 
 @interface WBSHistoryConnectionProxy : NSObject <WBSHistoryClientProtocol, WBSHistoryConnectionProtocol> {
-    NSXPCConnection *_connection;
-    NSObject<OS_dispatch_queue> *_connectionProxyQueue;
-    BOOL _registeredForHistoryNotifications;
+    NSXPCConnection * _connection;
+    NSObject<OS_dispatch_queue> * _connectionProxyQueue;
+    BOOL  _registeredForHistoryNotifications;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *connectionProxyQueue;
@@ -14,6 +14,7 @@
 - (void).cxx_destruct;
 - (id /* block */)_defaultProxyErrorHandlerWithSimpleReplyCompletionHandler:(id /* block */)arg1;
 - (void)_registerForHistoryNotifications;
+- (void)beginHistoryAccessSession:(id /* block */)arg1;
 - (void)beginURLCompletionSession:(id /* block */)arg1;
 - (void)clearHistoryVisitsAddedAfterDate:(id)arg1 endDate:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)clearHistoryWithCompletionHandler:(id /* block */)arg1;

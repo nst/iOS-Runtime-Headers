@@ -3,39 +3,47 @@
  */
 
 @interface MPStreamingDownloadSession : NSObject <NSCopying> {
-    NSString *_assetFlavor;
-    unsigned int _assetQuality;
-    BOOL _didStartLeaseSession;
-    unsigned long long _downloadToken;
-    unsigned int _protectionType;
-    NSDictionary *_purchaseBundle;
-    NSDictionary *_responseAssetDictionary;
-    NSURL *_sourceURL;
+    NSURL * _alternateSourceURL;
+    NSString * _assetFlavor;
+    unsigned int  _assetQuality;
+    BOOL  _didStartLeaseSession;
+    unsigned int  _downloadToken;
+    BOOL  _isHLSAsset;
+    unsigned int  _protectionType;
+    NSDictionary * _purchaseBundle;
+    NSDictionary * _responseAssetDictionary;
+    NSURL * _sourceURL;
 }
 
+@property (nonatomic, copy) NSURL *alternateSourceURL;
 @property (nonatomic, copy) NSString *assetFlavor;
 @property (nonatomic) unsigned int assetQuality;
 @property (nonatomic) BOOL didStartLeaseSession;
-@property (nonatomic) unsigned long long downloadToken;
+@property (nonatomic) unsigned int downloadToken;
+@property (nonatomic) BOOL isHLSAsset;
 @property (nonatomic) unsigned int protectionType;
 @property (nonatomic, copy) NSDictionary *purchaseBundle;
 @property (nonatomic, retain) NSDictionary *responseAssetDictionary;
 @property (nonatomic, copy) NSURL *sourceURL;
 
 - (void).cxx_destruct;
+- (id)alternateSourceURL;
 - (id)assetFlavor;
 - (unsigned int)assetQuality;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (BOOL)didStartLeaseSession;
-- (unsigned long long)downloadToken;
+- (unsigned int)downloadToken;
+- (BOOL)isHLSAsset;
 - (unsigned int)protectionType;
 - (id)purchaseBundle;
 - (id)responseAssetDictionary;
+- (void)setAlternateSourceURL:(id)arg1;
 - (void)setAssetFlavor:(id)arg1;
 - (void)setAssetQuality:(unsigned int)arg1;
 - (void)setDidStartLeaseSession:(BOOL)arg1;
-- (void)setDownloadToken:(unsigned long long)arg1;
+- (void)setDownloadToken:(unsigned int)arg1;
+- (void)setIsHLSAsset:(BOOL)arg1;
 - (void)setProtectionType:(unsigned int)arg1;
 - (void)setPurchaseBundle:(id)arg1;
 - (void)setResponseAssetDictionary:(id)arg1;

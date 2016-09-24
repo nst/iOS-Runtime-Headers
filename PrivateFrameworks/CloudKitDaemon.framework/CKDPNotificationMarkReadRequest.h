@@ -3,7 +3,7 @@
  */
 
 @interface CKDPNotificationMarkReadRequest : PBRequest <NSCopying> {
-    NSString *_uuid;
+    NSString * _uuid;
 }
 
 @property (nonatomic, readonly) BOOL hasUuid;
@@ -21,6 +21,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (unsigned int)requestTypeCode;
+- (Class)responseClass;
 - (void)setUuid:(id)arg1;
 - (id)uuid;
 - (void)writeTo:(id)arg1;

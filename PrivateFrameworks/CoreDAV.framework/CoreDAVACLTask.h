@@ -3,7 +3,7 @@
  */
 
 @interface CoreDAVACLTask : CoreDAVTask {
-    NSArray *_accessControlEntities;
+    NSArray * _accessControlEntities;
 }
 
 @property (nonatomic, retain) NSArray *accessControlEntities;

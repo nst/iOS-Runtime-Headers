@@ -3,8 +3,8 @@
  */
 
 @interface CalDAVCalendarServerScheduleChangesItem : CoreDAVItem {
-    CalDAVCalendarServerActionItem *_action;
-    CoreDAVLeafItem *_dtstamp;
+    CalDAVCalendarServerActionItem * _action;
+    CoreDAVLeafItem * _dtstamp;
 }
 
 @property (nonatomic, retain) CalDAVCalendarServerActionItem *action;

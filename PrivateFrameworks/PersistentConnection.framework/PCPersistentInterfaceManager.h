@@ -3,30 +3,30 @@
  */
 
 @interface PCPersistentInterfaceManager : NSObject <PCInterfaceMonitorDelegate> {
-    long _WWANContextIdentifier;
-    NSString *_WWANInterfaceName;
-    struct __CFSet { } *_WiFiAutoAssociationDelegates;
-    PCSimpleTimer *_WiFiAutoAssociationDisableTimer;
-    BOOL _ctIsWWANInHomeCountry;
-    void *_ctServerConnection;
-    NSMapTable *_delegatesAndQueues;
-    BOOL _hasWWANStatusIndicator;
-    NSTimer *_inCallWWANOverrideTimer;
-    void *_interfaceAssertion;
-    BOOL _isInCall;
-    BOOL _isPowerStateDetectionSupported;
-    BOOL _isWWANInterfaceActivationPermitted;
-    BOOL _isWWANInterfaceDataActive;
-    BOOL _isWWANInterfaceInProlongedHighPowerState;
-    BOOL _isWWANInterfaceUp;
-    BOOL _isWakeOnWiFiEnabled;
-    BOOL _isWakeOnWiFiSupported;
-    double _lastActivationTime;
-    NSRecursiveLock *_lock;
-    BOOL _shouldOverrideOnCallBehavior;
-    struct __CFSet { } *_wakeOnWiFiDelegates;
-    PCSimpleTimer *_wakeOnWiFiDisableTimer;
-    int _wwanRSSI;
+    long  _WWANContextIdentifier;
+    NSString * _WWANInterfaceName;
+    struct __CFSet { } * _WiFiAutoAssociationDelegates;
+    PCSimpleTimer * _WiFiAutoAssociationDisableTimer;
+    BOOL  _ctIsWWANInHomeCountry;
+    void * _ctServerConnection;
+    NSMapTable * _delegatesAndQueues;
+    BOOL  _hasWWANStatusIndicator;
+    NSTimer * _inCallWWANOverrideTimer;
+    void * _interfaceAssertion;
+    BOOL  _isInCall;
+    BOOL  _isPowerStateDetectionSupported;
+    BOOL  _isWWANInterfaceActivationPermitted;
+    BOOL  _isWWANInterfaceDataActive;
+    BOOL  _isWWANInterfaceInProlongedHighPowerState;
+    BOOL  _isWWANInterfaceUp;
+    BOOL  _isWakeOnWiFiEnabled;
+    BOOL  _isWakeOnWiFiSupported;
+    double  _lastActivationTime;
+    NSRecursiveLock * _lock;
+    BOOL  _shouldOverrideOnCallBehavior;
+    struct __CFSet { } * _wakeOnWiFiDelegates;
+    PCSimpleTimer * _wakeOnWiFiDisableTimer;
+    int  _wwanRSSI;
 }
 
 @property (readonly) NSString *WWANInterfaceName;
@@ -101,7 +101,7 @@
 - (BOOL)isWWANInterfaceUp;
 - (BOOL)isWakeOnWiFiSupported;
 - (void)removeDelegate:(id)arg1;
-- (id)urlConnectionBoundToWWANInterface:(BOOL)arg1 withRequest:(id)arg2 delegate:(id)arg3 usesCache:(BOOL)arg4 maxContentLength:(long long)arg5 startImmediately:(BOOL)arg6 connectionProperties:(id)arg7;
-- (id)urlConnectionBoundToWWANInterfaceWithRequest:(id)arg1 delegate:(id)arg2 usesCache:(BOOL)arg3 maxContentLength:(long long)arg4 startImmediately:(BOOL)arg5 connectionProperties:(id)arg6;
+- (id)urlConnectionBoundToWWANInterface:(BOOL)arg1 withRequest:(id)arg2 delegate:(id)arg3 usesCache:(BOOL)arg4 maxContentLength:(int)arg5 startImmediately:(BOOL)arg6 connectionProperties:(id)arg7;
+- (id)urlConnectionBoundToWWANInterfaceWithRequest:(id)arg1 delegate:(id)arg2 usesCache:(BOOL)arg3 maxContentLength:(int)arg4 startImmediately:(BOOL)arg5 connectionProperties:(id)arg6;
 
 @end

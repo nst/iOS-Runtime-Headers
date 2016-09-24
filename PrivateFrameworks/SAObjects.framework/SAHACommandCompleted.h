@@ -27,6 +27,8 @@
 
 // Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
 
+- (id)contentDescription;
+- (id)headerDescription;
 - (id)shortDescription;
 
 @end

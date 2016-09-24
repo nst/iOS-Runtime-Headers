@@ -3,17 +3,17 @@
  */
 
 @interface SKUISlideshowItemViewController : UIViewController <UIGestureRecognizerDelegatePrivate, UIScrollViewDelegate> {
-    SKUIClientContext *_clientContext;
-    <SKUISlideshowItemViewControllerDelegate> *_delegate;
-    SKUISlideshowImageScrollView *_imageScrollView;
-    int _indexInCollection;
+    SKUIClientContext * _clientContext;
+    <SKUISlideshowItemViewControllerDelegate> * _delegate;
+    SKUISlideshowImageScrollView * _imageScrollView;
+    int  _indexInCollection;
     struct CGPoint { 
-        float x; 
-        float y; 
-    } _lastContentOffset;
-    float _lastZoomScale;
-    UIView *_loadingView;
-    BOOL _zoomingGestureThresholdBroken;
+        double x; 
+        double y; 
+    }  _lastContentOffset;
+    double  _lastZoomScale;
+    UIView * _loadingView;
+    BOOL  _zoomingGestureThresholdBroken;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;

@@ -3,8 +3,8 @@
  */
 
 @interface SYDeletedObject : NSObject <SYChange, SYObject> {
-    NSString *_sequencer;
-    NSString *_syncId;
+    NSString * _sequencer;
+    NSString * _syncId;
 }
 
 @property (nonatomic, readonly) int changeType;

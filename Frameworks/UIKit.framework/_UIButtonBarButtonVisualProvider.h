@@ -5,10 +5,10 @@
 @interface _UIButtonBarButtonVisualProvider : NSObject <NSCopying>
 
 - (void)button:(id)arg1 traitCollectionDidChange:(id)arg2;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })buttonAlignmentRectInsets:(id)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })buttonAlignmentRectInsets:(id)arg1;
 - (BOOL)buttonEnabledState:(id)arg1 forRequestedState:(BOOL)arg2;
 - (BOOL)buttonHighlitedState:(id)arg1 forRequestedState:(BOOL)arg2;
-- (struct CGSize { float x1; float x2; })buttonIntrinsicContentSize:(id)arg1;
+- (struct CGSize { double x1; double x2; })buttonIntrinsicContentSize:(id)arg1;
 - (BOOL)buttonSelectionState:(id)arg1 forRequestedState:(BOOL)arg2;
 - (void)configureButton:(id)arg1 fromBarItem:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

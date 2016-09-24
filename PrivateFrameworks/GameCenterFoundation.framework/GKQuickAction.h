@@ -3,17 +3,17 @@
  */
 
 @interface GKQuickAction : NSObject <NSCoding, NSCopying, NSSecureCoding> {
-    NSDate *_date;
-    NSString *_firstName;
-    NSString *_gameBundleID;
-    NSString *_identifier;
-    NSData *_imageData;
-    NSDictionary *_imageURLDictionary;
-    NSString *_lastName;
-    NSString *_launchURL;
-    NSString *_subText;
-    NSString *_titleText;
-    NSString *_type;
+    NSDate * _date;
+    NSString * _firstName;
+    NSString * _gameBundleID;
+    NSString * _identifier;
+    NSData * _imageData;
+    NSDictionary * _imageURLDictionary;
+    NSString * _lastName;
+    NSString * _launchURL;
+    NSString * _subText;
+    NSString * _titleText;
+    NSString * _type;
 }
 
 @property (retain) NSDate *date;
@@ -42,7 +42,6 @@
 - (id)imageURLDictionary;
 - (id)initWithChallenge:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFriendRequest:(id)arg1;
 - (id)initWithInvite:(id)arg1;
 - (id)initWithMatch:(id)arg1;
 - (id)initWithSBSApplicationShortcutItem:(id)arg1;

@@ -3,11 +3,13 @@
  */
 
 @interface _GKStateMachine : NSObject {
-    NSString *_currentState;
-    <_GKStateMachineDelegate> *_delegate;
-    int _lock;
-    BOOL _shouldLogStateTransitions;
-    NSDictionary *_validTransitions;
+    NSString * _currentState;
+    <_GKStateMachineDelegate> * _delegate;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
+    BOOL  _shouldLogStateTransitions;
+    NSDictionary * _validTransitions;
 }
 
 @property (retain) NSString *currentState;

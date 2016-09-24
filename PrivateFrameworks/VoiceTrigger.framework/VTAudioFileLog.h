@@ -13,11 +13,11 @@
         unsigned int mChannelsPerFrame; 
         unsigned int mBitsPerChannel; 
         unsigned int mReserved; 
-    } _asbd;
-    struct OpaqueExtAudioFile { } *_audioFile;
-    unsigned long _audioLength;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSURL *_url;
+    }  _asbd;
+    struct OpaqueExtAudioFile { } * _audioFile;
+    unsigned long  _audioLength;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSURL * _url;
 }
 
 + (id)sharedInstance;

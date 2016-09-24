@@ -3,10 +3,10 @@
  */
 
 @interface PLPhotosDefaults : NSObject {
-    MPMediaItemCollection *_musicCollection;
-    BOOL _shouldPlayMusic;
-    BOOL _summarizeMomentSections;
-    int _transition;
+    MPMediaItemCollection * _musicCollection;
+    BOOL  _shouldPlayMusic;
+    BOOL  _summarizeMomentSections;
+    int  _transition;
 }
 
 + (int)randomTransition;

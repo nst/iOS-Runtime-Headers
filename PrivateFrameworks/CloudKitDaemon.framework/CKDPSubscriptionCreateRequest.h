@@ -3,7 +3,7 @@
  */
 
 @interface CKDPSubscriptionCreateRequest : PBRequest <NSCopying> {
-    CKDPSubscription *_subscription;
+    CKDPSubscription * _subscription;
 }
 
 @property (nonatomic, readonly) BOOL hasSubscription;

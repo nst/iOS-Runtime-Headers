@@ -3,9 +3,9 @@
  */
 
 @interface PRLogging : NSObject {
-    NSObject<OS_dispatch_queue> *_logQueue;
-    BOOL _logToFile;
-    BOOL _logToSyslog;
+    NSObject<OS_dispatch_queue> * _logQueue;
+    BOOL  _logToFile;
+    BOOL  _logToSyslog;
 }
 
 + (id)sharedLogger;

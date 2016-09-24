@@ -3,8 +3,8 @@
  */
 
 @interface GEORequestThrottler : NSObject {
-    NSLock *_lock;
-    NSMapTable *_throttleMap;
+    NSLock * _lock;
+    NSMapTable * _throttleMap;
 }
 
 + (id)sharedThrottler;

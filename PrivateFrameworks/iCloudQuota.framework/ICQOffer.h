@@ -3,17 +3,17 @@
  */
 
 @interface ICQOffer : NSObject {
-    NSString *_accountAltDSID;
-    _ICQAlertSpecification *_alertSpecification;
-    _ICQBannerSpecification *_bannerSpecification;
-    NSString *_bundleId;
-    _ICQButtonSpecification *_buttonSpecification;
-    BOOL _iTunesAccountExists;
-    int _level;
-    NSString *_notificationID;
-    NSDate *_retrievalDate;
-    NSDictionary *_serverDictionary;
-    _ICQFlowSpecification *_upgradeFlowSpecification;
+    NSString * _accountAltDSID;
+    _ICQAlertSpecification * _alertSpecification;
+    _ICQBannerSpecification * _bannerSpecification;
+    NSString * _bundleId;
+    _ICQButtonSpecification * _buttonSpecification;
+    BOOL  _iTunesAccountExists;
+    int  _level;
+    NSString * _notificationID;
+    NSDate * _retrievalDate;
+    NSDictionary * _serverDictionary;
+    _ICQUpgradeFlowSpecification * _upgradeFlowSpecification;
 }
 
 @property (nonatomic, retain) NSString *accountAltDSID;
@@ -25,7 +25,7 @@
 @property (nonatomic) int level;
 @property (nonatomic, retain) NSString *notificationID;
 @property (nonatomic, retain) NSDate *retrievalDate;
-@property (nonatomic, retain) _ICQFlowSpecification *upgradeFlowSpecification;
+@property (nonatomic, retain) _ICQUpgradeFlowSpecification *upgradeFlowSpecification;
 
 + (id)cachedOffer;
 + (id)sampleOfferForLevel:(int)arg1;

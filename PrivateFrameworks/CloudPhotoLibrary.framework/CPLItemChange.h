@@ -3,7 +3,7 @@
  */
 
 @interface CPLItemChange : CPLRecordChange <NSCopying, NSSecureCoding> {
-    NSArray *_containerRelations;
+    NSArray * _containerRelations;
 }
 
 @property (nonatomic, copy) NSArray *containerRelations;

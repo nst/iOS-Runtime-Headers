@@ -3,13 +3,13 @@
  */
 
 @interface PSYSyncSession : NSObject <NSCopying, NSSecureCoding> {
-    NSArray *_activities;
-    NSDictionary *_activityMap;
-    NSUUID *_pairingIdentifier;
-    NSUUID *_sessionIdentifier;
-    int _switchIndex;
-    unsigned int _syncSessionState;
-    unsigned int _syncSessionType;
+    NSArray * _activities;
+    NSDictionary * _activityMap;
+    NSUUID * _pairingIdentifier;
+    NSUUID * _sessionIdentifier;
+    int  _switchIndex;
+    unsigned int  _syncSessionState;
+    unsigned int  _syncSessionType;
 }
 
 @property (nonatomic, retain) NSArray *activities;

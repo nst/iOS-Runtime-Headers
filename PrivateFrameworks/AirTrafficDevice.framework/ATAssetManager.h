@@ -3,20 +3,20 @@
  */
 
 @interface ATAssetManager : NSObject <ATAssetLinkControllerObserver, ATMessageLinkRequestHandler> {
-    NSMutableSet *_allAssets;
-    NSDictionary *_assetClients;
-    NSMutableArray *_assets;
-    NSMutableDictionary *_assetsByDataclass;
-    NSMutableDictionary *_assetsByStoreID;
-    unsigned int _completedAssets;
-    NSMutableArray *_completedStoreAssets;
-    NSDictionary *_legacyAssetClients;
-    NSHashTable *_observers;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_remainingAssetsByDataClass;
-    NSObject<OS_dispatch_source> *_signalSource;
-    unsigned int _totalAssetCount;
-    NSMutableDictionary *_totalAssetCountByDataClass;
+    NSMutableSet * _allAssets;
+    NSDictionary * _assetClients;
+    NSMutableArray * _assets;
+    NSMutableDictionary * _assetsByDataclass;
+    NSMutableDictionary * _assetsByStoreID;
+    unsigned int  _completedAssets;
+    NSMutableArray * _completedStoreAssets;
+    NSDictionary * _legacyAssetClients;
+    NSHashTable * _observers;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableDictionary * _remainingAssetsByDataClass;
+    NSObject<OS_dispatch_source> * _signalSource;
+    unsigned int  _totalAssetCount;
+    NSMutableDictionary * _totalAssetCountByDataClass;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -37,7 +37,7 @@
 - (void)addObserver:(id)arg1;
 - (id)allDataclasses;
 - (id)assetForDataclass:(id)arg1 identifier:(id)arg2;
-- (id)assetForStoreID:(long long)arg1;
+- (id)assetForStoreID:(int)arg1;
 - (void)assetLinkController:(id)arg1 didFinishAsset:(id)arg2;
 - (void)assetLinkController:(id)arg1 didUpdateAsset:(id)arg2;
 - (id)assetProgressForAllDataclasses;

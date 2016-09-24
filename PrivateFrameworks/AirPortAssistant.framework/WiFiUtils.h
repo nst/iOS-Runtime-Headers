@@ -3,17 +3,17 @@
  */
 
 @interface WiFiUtils : NSObject {
-    BOOL _joinInProgress;
-    NSMutableDictionary *_missingBSSIDCounts;
-    double _periodicScanInterval;
-    int _periodicScanType;
-    BOOL _scanInProgress;
-    BOOL _scanOnlyWhenAppActive;
-    NSTimer *_scanTimer;
-    BOOL _scanningActive;
-    NSDictionary *_unmergedScanInfoDict;
-    NSObject<OS_dispatch_semaphore> *_wifiBusy;
-    struct WiFiShimContext { } *_wifiShim;
+    BOOL  _joinInProgress;
+    NSMutableDictionary * _missingBSSIDCounts;
+    double  _periodicScanInterval;
+    int  _periodicScanType;
+    BOOL  _scanInProgress;
+    BOOL  _scanOnlyWhenAppActive;
+    NSTimer * _scanTimer;
+    BOOL  _scanningActive;
+    NSDictionary * _unmergedScanInfoDict;
+    NSObject<OS_dispatch_semaphore> * _wifiBusy;
+    struct WiFiShimContext { } * _wifiShim;
 }
 
 @property (nonatomic, retain) NSTimer *_scanTimer;
@@ -87,7 +87,7 @@
 - (long)joinNetworkWithScanInfoAsync:(id)arg1 password:(id)arg2 rememberChoice:(int)arg3;
 - (long)joinNetworkWithScanInfoSync:(id)arg1 password:(id)arg2 rememberChoice:(int)arg3;
 - (void)joinNetworkWithScanInfoThread:(id)arg1;
-- (void)mergeScanResults:(id)arg1;
+- (void)mergeScanResults:(id)arg1 ageOut:(BOOL)arg2;
 - (id)mergedScanInfoArray;
 - (long)openWiFi;
 - (double)periodicScanInterval;

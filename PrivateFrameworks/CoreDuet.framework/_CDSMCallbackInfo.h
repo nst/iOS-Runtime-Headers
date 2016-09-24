@@ -3,8 +3,8 @@
  */
 
 @interface _CDSMCallbackInfo : NSObject {
-    id /* block */ _handler;
-    NSObject<OS_dispatch_queue> *_handlerQueue;
+    id /* block */  _handler;
+    NSObject<OS_dispatch_queue> * _handlerQueue;
 }
 
 @property (nonatomic, copy) id /* block */ handler;

@@ -5,18 +5,16 @@
 
 @required
 
-- (void)cancelAccessClaimForID:(id)arg1;
-- (NSObject<OS_dispatch_semaphore> *)grantAccessClaim:(NSFileAccessClaim *)arg1 synchronouslyIfPossible:(BOOL)arg2;
-- (void)grantSubarbitrationClaim:(NSFileSubarbitrationClaim *)arg1 withServer:(NSObject<OS_xpc_object> *)arg2;
-- (void)revokeAccessClaimForID:(id)arg1;
-- (void)revokeSubarbitrationClaimForID:(id)arg1;
-- (void)tiePresenterForID:(id)arg1 toItemAtURL:(NSURL *)arg2;
-- (void)writerWithPurposeID:(id)arg1 didChangeItemAtURL:(NSURL *)arg2;
-- (void)writerWithPurposeID:(id)arg1 didChangeUbiquityOfItemAtURL:(NSURL *)arg2;
-- (void)writerWithPurposeID:(id)arg1 didDisconnectItemAtURL:(NSURL *)arg2;
-- (void)writerWithPurposeID:(id)arg1 didMakeItemDisappearAtURL:(NSURL *)arg2;
-- (void)writerWithPurposeID:(id)arg1 didMoveItemAtURL:(NSURL *)arg2 toURL:(NSURL *)arg3;
-- (void)writerWithPurposeID:(id)arg1 didReconnectItemAtURL:(NSURL *)arg2;
-- (void)writerWithPurposeID:(id)arg1 didVersionChangeOfKind:(NSString *)arg2 toItemAtURL:(NSURL *)arg3 withClientID:(NSString *)arg4 name:(NSString *)arg5;
+- (oneway void)cancelAccessClaimForID:(id)arg1;
+- (oneway void)revokeAccessClaimForID:(id)arg1;
+- (oneway void)revokeSubarbitrationClaimForID:(id)arg1;
+- (oneway void)tiePresenterForID:(id)arg1 toItemAtURL:(NSURLPromisePair *)arg2;
+- (oneway void)writerWithPurposeID:(id)arg1 didChangeItemAtURL:(NSURLPromisePair *)arg2;
+- (oneway void)writerWithPurposeID:(id)arg1 didChangeUbiquityOfItemAtURL:(NSURLPromisePair *)arg2;
+- (oneway void)writerWithPurposeID:(id)arg1 didDisconnectItemAtURL:(NSURLPromisePair *)arg2;
+- (oneway void)writerWithPurposeID:(id)arg1 didMakeItemDisappearAtURL:(NSURLPromisePair *)arg2;
+- (oneway void)writerWithPurposeID:(id)arg1 didMoveItemAtURL:(NSURLPromisePair *)arg2 toURL:(NSURLPromisePair *)arg3;
+- (oneway void)writerWithPurposeID:(id)arg1 didReconnectItemAtURL:(NSURLPromisePair *)arg2;
+- (oneway void)writerWithPurposeID:(id)arg1 didVersionChangeOfKind:(NSString *)arg2 toItemAtURL:(NSURLPromisePair *)arg3 withClientID:(NSString *)arg4 name:(NSString *)arg5;
 
 @end

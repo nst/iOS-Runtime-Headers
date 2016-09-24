@@ -3,10 +3,10 @@
  */
 
 @interface WBSHistoryURLCompletionDataStore : NSObject {
-    NSObject<OS_dispatch_queue> *_dataStoreQueue;
-    WBSHistoryService *_historyService;
-    WBSURLCompletionHistorySnapshot *_snapshot;
-    NSDate *_snapshotLastModifiedDate;
+    NSObject<OS_dispatch_queue> * _dataStoreQueue;
+    WBSHistoryService * _historyService;
+    WBSURLCompletionHistorySnapshot * _snapshot;
+    NSDate * _snapshotLastModifiedDate;
 }
 
 - (void).cxx_destruct;

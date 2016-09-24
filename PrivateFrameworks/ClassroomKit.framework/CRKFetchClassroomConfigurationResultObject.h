@@ -3,7 +3,7 @@
  */
 
 @interface CRKFetchClassroomConfigurationResultObject : CATTaskResultObject {
-    NSDictionary *_configuration;
+    NSDictionary * _configuration;
 }
 
 @property (nonatomic, copy) NSDictionary *configuration;
@@ -12,7 +12,6 @@
 
 - (void).cxx_destruct;
 - (id)configuration;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setConfiguration:(id)arg1;

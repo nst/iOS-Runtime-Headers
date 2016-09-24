@@ -3,8 +3,8 @@
  */
 
 @interface PLPidAndProcessName : NSObject {
-    NSNumber *_pid;
-    NSString *_processName;
+    NSNumber * _pid;
+    NSString * _processName;
 }
 
 @property (retain) NSNumber *pid;

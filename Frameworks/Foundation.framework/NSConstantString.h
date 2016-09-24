@@ -17,7 +17,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (unsigned int)fastestEncoding;
-- (void)finalize;
 - (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (unsigned int)hash;
 - (id)initWithCharactersNoCopy:(unsigned short*)arg1 length:(unsigned int)arg2;

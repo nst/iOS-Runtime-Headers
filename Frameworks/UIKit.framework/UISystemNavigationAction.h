@@ -3,7 +3,7 @@
  */
 
 @interface UISystemNavigationAction : BSAction {
-    NSArray *_destinations;
+    NSArray * _destinations;
 }
 
 @property (nonatomic, readonly) NSArray *destinations;

@@ -3,16 +3,16 @@
  */
 
 @interface URLConnectionDelegate : NSObject <NSURLConnectionDelegate> {
-    NSMutableData *fData;
+    NSMutableData * fData;
     struct weak_ptr<ctu::Http::HttpRequestCallbackHandler> { 
         struct HttpRequestCallbackHandler {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } fHandler;
-    NSMutableData *fPostData;
+    }  fHandler;
+    NSMutableData * fPostData;
     struct shared_ptr<ctu::Http::HttpResponse> { 
         struct HttpResponse {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } fResponse;
+    }  fResponse;
 }
 
 @property (readonly, copy) NSString *debugDescription;

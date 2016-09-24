@@ -3,35 +3,35 @@
  */
 
 @interface PLComposeRecipientViewController : UIViewController <ABPeoplePickerNavigationControllerDelegate, MFContactsSearchConsumer, UIPopoverControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
-    NSNumber *_currentSearchTaskID;
-    <PLComposeRecipientViewControllerDelegate> *_delegate;
+    NSNumber * _currentSearchTaskID;
+    <PLComposeRecipientViewControllerDelegate> * _delegate;
     struct { 
         unsigned int showingPeoplePicker : 1; 
         unsigned int showingSearchResultsTable : 1; 
         unsigned int offsettingForResultsTable : 1; 
         unsigned int wasFirstResponder : 1; 
-    } _flags;
+    }  _flags;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
-    } _keyboardFrame;
-    unsigned int _maxExpandRows;
-    UIPopoverController *_peoplePickerPopoverController;
-    NSArray *_properties;
-    UIScrollView *_recipientContainerView;
-    PLComposeRecipientView *_recipientView;
-    MFContactsSearchManager *_searchManager;
-    NSArray *_searchResults;
-    MFContactsSearchResultsModel *_searchResultsModel;
-    UIPopoverController *_searchResultsPopoverController;
-    UITableView *_searchResultsTable;
-    MFSearchShadowView *_shadowView;
+    }  _keyboardFrame;
+    unsigned int  _maxExpandRows;
+    UIPopoverController * _peoplePickerPopoverController;
+    NSArray * _properties;
+    UIScrollView * _recipientContainerView;
+    PLComposeRecipientView * _recipientView;
+    MFContactsSearchManager * _searchManager;
+    NSArray * _searchResults;
+    MFContactsSearchResultsModel * _searchResultsModel;
+    UIPopoverController * _searchResultsPopoverController;
+    UITableView * _searchResultsTable;
+    MFSearchShadowView * _shadowView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -61,7 +61,7 @@
 - (id)composeRecipientView:(id)arg1 composeRecipientForAddress:(id)arg2;
 - (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 identifier:(int)arg3;
 - (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (void)composeRecipientView:(id)arg1 didChangeSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)composeRecipientView:(id)arg1 didChangeSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)composeRecipientView:(id)arg1 didFinishEnteringAddress:(id)arg2;
 - (void)composeRecipientView:(id)arg1 requestDeleteRecipientAtIndex:(int)arg2;
 - (void)composeRecipientView:(id)arg1 showPersonCardForAtom:(id)arg2;

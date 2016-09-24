@@ -3,8 +3,8 @@
  */
 
 @interface SGObject : NSObject <NSCopying, NSSecureCoding> {
-    SGOrigin *_origin;
-    SGRecordId *_recordId;
+    SGOrigin * _origin;
+    SGRecordId * _recordId;
 }
 
 @property (nonatomic, readonly) SGOrigin *origin;

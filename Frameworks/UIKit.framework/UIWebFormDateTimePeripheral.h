@@ -3,8 +3,8 @@
  */
 
 @interface UIWebFormDateTimePeripheral : NSObject <UIFormPeripheral> {
-    <UIWebFormControl> *_control;
-    DOMHTMLInputElement *_inputElement;
+    <UIWebFormControl> * _control;
+    DOMHTMLInputElement * _inputElement;
 }
 
 @property (nonatomic, retain) <UIWebFormControl> *_control;

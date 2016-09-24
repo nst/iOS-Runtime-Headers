@@ -3,16 +3,16 @@
  */
 
 @interface EKGroupInfo : NSObject {
-    NSMutableArray *_calendars;
-    int _customGroupType;
-    NSString *_customTitle;
-    NSString *_customTitleAtBeginningOfSentence;
-    BOOL _selected;
-    BOOL _showSelectAllButton;
-    EKSource *_source;
-    NSString *_title;
-    NSString *_titleForBeginningOfSentence;
-    NSString *_typeTitle;
+    NSMutableArray * _calendars;
+    int  _customGroupType;
+    NSString * _customTitle;
+    NSString * _customTitleAtBeginningOfSentence;
+    BOOL  _selected;
+    BOOL  _showSelectAllButton;
+    EKSource * _source;
+    NSString * _title;
+    NSString * _titleForBeginningOfSentence;
+    NSString * _typeTitle;
 }
 
 @property (nonatomic, readonly, retain) NSArray *calendarInfos;

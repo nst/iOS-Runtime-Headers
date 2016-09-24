@@ -3,7 +3,7 @@
  */
 
 @interface CalDAVCompItem : CoreDAVItem {
-    NSString *_nameAttribute;
+    NSString * _nameAttribute;
 }
 
 @property (nonatomic, retain) NSString *nameAttribute;

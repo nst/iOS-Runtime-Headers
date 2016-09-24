@@ -3,7 +3,7 @@
  */
 
 @interface SUPrepareMediaItemOperation : ISOperation {
-    SUMediaPlayerItem *_mediaItem;
+    SUMediaPlayerItem * _mediaItem;
 }
 
 @property (nonatomic, readonly, copy) SUMediaPlayerItem *mediaPlayerItem;

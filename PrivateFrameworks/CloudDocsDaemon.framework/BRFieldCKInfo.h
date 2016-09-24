@@ -3,19 +3,22 @@
  */
 
 @interface BRFieldCKInfo : PBCodable <NSCopying, PQLValuable> {
-    NSString *_etag;
+    NSString * _etag;
+    NSString * _etagBeforeCrossZoneMove;
     struct { 
         unsigned int knownToServer : 1; 
         unsigned int wasCached : 1; 
-    } _has;
-    BOOL _knownToServer;
-    BOOL _wasCached;
+    }  _has;
+    BOOL  _knownToServer;
+    BOOL  _wasCached;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSString *etag;
+@property (nonatomic, retain) NSString *etagBeforeCrossZoneMove;
 @property (nonatomic, readonly) BOOL hasEtag;
+@property (nonatomic, readonly) BOOL hasEtagBeforeCrossZoneMove;
 @property (nonatomic) BOOL hasKnownToServer;
 @property (nonatomic) BOOL hasWasCached;
 @property (readonly) unsigned int hash;
@@ -31,17 +34,21 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)etag;
+- (id)etagBeforeCrossZoneMove;
 - (BOOL)hasEtag;
+- (BOOL)hasEtagBeforeCrossZoneMove;
 - (BOOL)hasKnownToServer;
 - (BOOL)hasWasCached;
 - (unsigned int)hash;
 - (id)initWithRecord:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)knownToServer;
+- (void)markMovedToCloudDocsZone;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setCKInfoFieldsInRecord:(id)arg1;
 - (void)setEtag:(id)arg1;
+- (void)setEtagBeforeCrossZoneMove:(id)arg1;
 - (void)setHasKnownToServer:(BOOL)arg1;
 - (void)setHasWasCached:(BOOL)arg1;
 - (void)setKnownToServer:(BOOL)arg1;

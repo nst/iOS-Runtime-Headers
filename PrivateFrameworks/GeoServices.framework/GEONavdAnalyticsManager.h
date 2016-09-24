@@ -3,7 +3,7 @@
  */
 
 @interface GEONavdAnalyticsManager : NSObject {
-    <GEONavdAnalyticsReporter> *_analyticsReporter;
+    <GEONavdAnalyticsReporter> * _analyticsReporter;
 }
 
 @property (nonatomic, retain) <GEONavdAnalyticsReporter> *analyticsReporter;
@@ -11,6 +11,7 @@
 + (id)sharedManager;
 
 - (id)analyticsReporter;
+- (void)dealloc;
 - (void)setAnalyticsReporter:(id)arg1;
 
 @end

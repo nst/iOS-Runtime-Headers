@@ -2,14 +2,15 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDAchievementDoctor : NSObject <HDAchievementEngineDelegate> {
-    NSCalendar *_calendar;
-    HKActivitySummary *_currentActivitySummary;
-    <HDHealthDaemon> *_healthDaemon;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSArray *_workoutEndDates;
-    NSArray *_workouts;
-    HKActivitySummary *_yesterdayActivitySummary;
+@interface HDAchievementDoctor : NSObject <HDAchievementEngineDelegate, _HKAchievementPredicateWorkoutsEnvironmentDataSource> {
+    NSCalendar * _calendar;
+    HKActivitySummary * _currentActivitySummary;
+    HDTransientAchievementDataStore * _dataStore;
+    HDProfile * _profile;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSMutableArray * _workoutEndDates;
+    NSMutableArray * _workouts;
+    HKActivitySummary * _yesterdayActivitySummary;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -17,10 +18,9 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-+ (id)_achievementsInSet:(id)arg1 missingFromSet:(id)arg2;
-
 - (void).cxx_destruct;
 - (id)_achievementsGroupedByActivityCacheIndex:(id)arg1;
+- (void)_addWorkout:(id)arg1;
 - (id)_fetchAchievementsWithError:(id*)arg1;
 - (id)_fetchActivitySummariesOrderedByCacheIndexWithError:(id*)arg1;
 - (id)_fetchWorkoutsSortedByEndDateWithError:(id*)arg1;
@@ -30,7 +30,8 @@
 - (BOOL)_queue_detectMissingAchievements:(id*)arg1 resultingKeyValues:(id*)arg2 error:(id*)arg3;
 - (id)_queue_findExpectedAchievements:(id)arg1 missingFromAchievements:(id)arg2;
 - (BOOL)_queue_saveMissingAchievements:(id)arg1 keyValues:(id)arg2 error:(id*)arg3;
-- (long long)activitySummaryIndexToday;
+- (id)_runAchievementEngine:(id)arg1 withPredicateEnvironment:(id)arg2 dataStore:(id)arg3 todayActivitySummary:(id)arg4 yesterdayActivitySummary:(id)arg5 currentDate:(id)arg6 addedWorkouts:(id)arg7;
+- (int)activitySummaryIndexToday;
 - (double)briskMinutesToday;
 - (double)briskMinutesYesterday;
 - (double)caloriesBurnedToday;
@@ -39,13 +40,15 @@
 - (id)energyBurnedGoalToday;
 - (id)energyBurnedGoalYesterday;
 - (id)init;
-- (id)initWithHealthDaemon:(id)arg1 targetQueue:(id)arg2;
-- (unsigned int)numberOfSessionsCompletedAfterDate:(id)arg1 beforeDate:(id)arg2 minimumSessionDuration:(double)arg3;
+- (id)initWithProfile:(id)arg1 targetQueue:(id)arg2;
+- (int)mostRecentWorkoutAnchor;
 - (void)runAchievementsFixupAsDryRun:(BOOL)arg1 persistingResultingKeyValues:(BOOL)arg2 completion:(id /* block */)arg3;
-- (id)sessionsEndingAfterAnchor:(long long)arg1 newAnchor:(long long*)arg2;
 - (unsigned int)standingHoursToday;
 - (unsigned int)standingHoursYesterday;
 - (unsigned int)stepsTakenToday;
 - (unsigned int)stepsTakenYesterday;
+- (id)workoutsEndingAfterAnchor:(int)arg1 newAnchor:(int*)arg2;
+- (id)workoutsInDateRangeStart:(id)arg1 end:(id)arg2;
+- (id)workoutsOfType:(id)arg1;
 
 @end

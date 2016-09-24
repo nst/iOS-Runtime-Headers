@@ -3,17 +3,17 @@
  */
 
 @interface SUDownloadMetadata : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
-    int _activeDownloadPolicyType;
-    BOOL _autoDownload;
-    int _downloadFeeAgreementStatus;
-    BOOL _enabledFor2G;
-    BOOL _enabledFor3G;
-    BOOL _enabledFor4G;
-    BOOL _enabledForCellularRoaming;
-    BOOL _enabledForWifi;
-    BOOL _enabledOnBatteryPower;
-    BOOL _enforceWifiOnlyOverride;
-    int _termsAndConditionsAgreementStatus;
+    int  _activeDownloadPolicyType;
+    BOOL  _autoDownload;
+    int  _downloadFeeAgreementStatus;
+    BOOL  _enabledFor2G;
+    BOOL  _enabledFor3G;
+    BOOL  _enabledFor4G;
+    BOOL  _enabledForCellularRoaming;
+    BOOL  _enabledForWifi;
+    BOOL  _enabledOnBatteryPower;
+    BOOL  _enforceWifiOnlyOverride;
+    int  _termsAndConditionsAgreementStatus;
 }
 
 @property (nonatomic) int activeDownloadPolicyType;

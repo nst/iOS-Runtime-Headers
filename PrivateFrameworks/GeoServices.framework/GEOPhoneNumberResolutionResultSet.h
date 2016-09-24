@@ -3,7 +3,7 @@
  */
 
 @interface GEOPhoneNumberResolutionResultSet : NSObject {
-    NSMutableDictionary *_results;
+    NSMutableDictionary * _results;
 }
 
 - (void)dealloc;

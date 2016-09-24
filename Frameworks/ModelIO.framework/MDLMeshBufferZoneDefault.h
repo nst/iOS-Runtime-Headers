@@ -3,9 +3,9 @@
  */
 
 @interface MDLMeshBufferZoneDefault : NSObject <MDLMeshBufferZone> {
-    <MDLMeshBufferAllocator> *_allocator;
-    unsigned int _capacity;
-    unsigned int _usedCapacity;
+    <MDLMeshBufferAllocator> * _allocator;
+    unsigned int  _capacity;
+    unsigned int  _usedCapacity;
 }
 
 @property (nonatomic, readonly, retain) <MDLMeshBufferAllocator> *allocator;

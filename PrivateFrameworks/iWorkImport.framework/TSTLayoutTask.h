@@ -3,8 +3,8 @@
  */
 
 @interface TSTLayoutTask : NSObject <NSCopying> {
-    NSMutableArray *mCellStatesToLayout;
-    TSTMasterLayout *mMasterLayout;
+    NSMutableArray * mCellStatesToLayout;
+    TSTMasterLayout * mMasterLayout;
 }
 
 @property (nonatomic, readonly) unsigned int numberOfCellStates;

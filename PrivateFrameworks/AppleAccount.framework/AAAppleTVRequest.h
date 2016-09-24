@@ -3,7 +3,7 @@
  */
 
 @interface AAAppleTVRequest : AARequest {
-    ACAccount *_account;
+    ACAccount * _account;
 }
 
 - (void).cxx_destruct;

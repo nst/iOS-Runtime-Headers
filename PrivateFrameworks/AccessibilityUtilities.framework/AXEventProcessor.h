@@ -3,21 +3,21 @@
  */
 
 @interface AXEventProcessor : NSObject {
-    unsigned int _HIDEventFilterMask;
-    id /* block */ _HIDEventHandler;
-    NSThread *_HIDEventReceiveThread;
-    NSString *_HIDEventTapIdentifier;
-    int _HIDEventTapPriority;
-    BOOL _handlingHIDEvents;
-    BOOL _handlingSystemEvents;
-    NSMutableArray *_hidActualEventTapEnabledReasons;
-    BOOL _ignoreAllSystemEvents;
-    BOOL _shouldNotifyUserEventOccurred;
-    BOOL _shouldRunHIDReceiveThreadRunloop;
-    NSMutableArray *_systemActualEventTapEnabledReasons;
-    id /* block */ _systemEventHandler;
-    NSString *_systemEventTapIdentifier;
-    int _systemEventTapPriority;
+    unsigned int  _HIDEventFilterMask;
+    id /* block */  _HIDEventHandler;
+    NSThread * _HIDEventReceiveThread;
+    NSString * _HIDEventTapIdentifier;
+    int  _HIDEventTapPriority;
+    BOOL  _handlingHIDEvents;
+    BOOL  _handlingSystemEvents;
+    NSMutableArray * _hidActualEventTapEnabledReasons;
+    BOOL  _ignoreAllSystemEvents;
+    BOOL  _shouldNotifyUserEventOccurred;
+    BOOL  _shouldRunHIDReceiveThreadRunloop;
+    NSMutableArray * _systemActualEventTapEnabledReasons;
+    id /* block */  _systemEventHandler;
+    NSString * _systemEventTapIdentifier;
+    int  _systemEventTapPriority;
 }
 
 @property (nonatomic) unsigned int HIDEventFilterMask;

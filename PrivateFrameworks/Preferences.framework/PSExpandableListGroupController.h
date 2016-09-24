@@ -3,13 +3,13 @@
  */
 
 @interface PSExpandableListGroupController : NSObject <PSSpecifierGroupController> {
-    int _collaspeAfterCount;
-    PSSpecifier *_groupSpecifier;
-    PSListController *_listController;
-    BOOL _showAll;
-    PSSpecifier *_showAllSpecifier;
-    NSMutableArray *_specifiers;
-    PSSpecifier *_spinnerSpecifier;
+    int  _collaspeAfterCount;
+    PSSpecifier * _groupSpecifier;
+    PSListController * _listController;
+    BOOL  _showAll;
+    PSSpecifier * _showAllSpecifier;
+    NSMutableArray * _specifiers;
+    PSSpecifier * _spinnerSpecifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;

@@ -3,25 +3,25 @@
  */
 
 @interface MusicEntityVerticalSectionHeaderView : UICollectionReusableView <MusicActionableHeaderViewDelegate> {
-    MusicActionableHeaderView *_actionableHeaderView;
-    BOOL _alignsHairlineWithTitle;
-    float _bottomContentInset;
-    <MusicEntityVerticalSectionHeaderViewDelegate> *_delegate;
-    UIView *_hairlineView;
-    float _topContentInset;
+    MusicActionableHeaderView * _actionableHeaderView;
+    BOOL  _alignsHairlineWithTitle;
+    double  _bottomContentInset;
+    <MusicEntityVerticalSectionHeaderViewDelegate> * _delegate;
+    UIView * _hairlineView;
+    double  _topContentInset;
 }
 
 @property (nonatomic, readonly) MusicActionableHeaderView *actionableHeaderView;
 @property (nonatomic) BOOL alignsHairlineWithTitle;
-@property (nonatomic) float bottomContentInset;
+@property (nonatomic) double bottomContentInset;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MusicEntityVerticalSectionHeaderViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
-@property (nonatomic) float topContentInset;
+@property (nonatomic) double topContentInset;
 
-+ (struct { float x1; float x2; int x3; int x4; })_actionableHeaderMetricsForDisplayScale:(float)arg1;
++ (struct { double x1; double x2; int x3; int x4; })_actionableHeaderMetricsForDisplayScale:(float)arg1;
 + (float)heightForTraitCollection:(id)arg1;
 
 - (void).cxx_destruct;
@@ -30,7 +30,7 @@
 - (BOOL)alignsHairlineWithTitle;
 - (float)bottomContentInset;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)music_inheritedLayoutInsetsDidChange;
 - (void)setAlignsHairlineWithTitle:(BOOL)arg1;

@@ -3,15 +3,15 @@
  */
 
 @interface _UIViewServiceDeputyManager : NSObject <_UIViewServiceViewControllerOperatorDelegate> {
-    BOOL __automatic_invalidation_invalidated;
-    int __automatic_invalidation_retainCount;
-    NSMutableDictionary *_connectionHandlers;
-    NSLock *_connectionHandlersLock;
-    id _delegate;
-    NSMutableSet *_deputies;
-    _UIAsyncInvocation *_invalidationInvocation;
-    NSObject<OS_dispatch_queue> *_queue;
-    id /* block */ _terminationHandler;
+    BOOL  __automatic_invalidation_invalidated;
+    int  __automatic_invalidation_retainCount;
+    NSMutableDictionary * _connectionHandlers;
+    NSLock * _connectionHandlersLock;
+    id  _delegate;
+    NSMutableSet * _deputies;
+    _UIAsyncInvocation * _invalidationInvocation;
+    NSObject<OS_dispatch_queue> * _queue;
+    id /* block */  _terminationHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;

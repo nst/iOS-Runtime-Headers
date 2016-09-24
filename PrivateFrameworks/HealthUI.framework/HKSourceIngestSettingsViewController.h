@@ -3,7 +3,7 @@
  */
 
 @interface HKSourceIngestSettingsViewController : _HKIngestSettingsViewController {
-    HKSource *_source;
+    HKSource * _source;
 }
 
 - (void).cxx_destruct;

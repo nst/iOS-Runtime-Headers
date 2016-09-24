@@ -3,9 +3,9 @@
  */
 
 @interface SLSheetBevelledImageView : SLSheetImagePreviewView {
-    BOOL _needsURLPlaceholderImage;
-    UIImageView *_placeholderGlyphView;
-    UIView *_placeholderPreviewView;
+    BOOL  _needsURLPlaceholderImage;
+    UIImageView * _placeholderGlyphView;
+    UIView * _placeholderPreviewView;
 }
 
 @property (nonatomic) BOOL needsURLPlaceholderImage;
@@ -14,7 +14,7 @@
 - (void)ensurePlaceholderPreviewImage;
 - (BOOL)generatePreviewImageFromAttachments;
 - (id)init;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 - (BOOL)needsURLPlaceholderImage;
 - (void)setImage:(id)arg1;

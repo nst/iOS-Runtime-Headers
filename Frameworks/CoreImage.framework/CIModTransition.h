@@ -3,13 +3,13 @@
  */
 
 @interface CIModTransition : CIFilter {
-    NSNumber *inputAngle;
-    CIVector *inputCenter;
-    NSNumber *inputCompression;
-    CIImage *inputImage;
-    NSNumber *inputRadius;
-    CIImage *inputTargetImage;
-    NSNumber *inputTime;
+    NSNumber * inputAngle;
+    CIVector * inputCenter;
+    NSNumber * inputCompression;
+    CIImage * inputImage;
+    NSNumber * inputRadius;
+    CIImage * inputTargetImage;
+    NSNumber * inputTime;
 }
 
 @property (nonatomic, retain) NSNumber *inputAngle;

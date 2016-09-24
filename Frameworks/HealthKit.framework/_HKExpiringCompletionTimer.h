@@ -3,12 +3,12 @@
  */
 
 @interface _HKExpiringCompletionTimer : NSObject {
-    id /* block */ _completion;
-    double _expirationTime;
-    BOOL _invalidated;
-    NSDate *_startDate;
-    double _timeoutInterval;
-    NSObject<OS_dispatch_source> *_timerSource;
+    id /* block */  _completion;
+    double  _expirationTime;
+    BOOL  _invalidated;
+    NSDate * _startDate;
+    double  _timeoutInterval;
+    NSObject<OS_dispatch_source> * _timerSource;
 }
 
 @property (getter=isExpired, nonatomic, readonly) BOOL expired;

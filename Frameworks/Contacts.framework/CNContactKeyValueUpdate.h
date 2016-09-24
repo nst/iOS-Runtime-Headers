@@ -3,14 +3,14 @@
  */
 
 @interface CNContactKeyValueUpdate : CNContactUpdate {
-    CNPropertyDescription *_property;
-    id _value;
+    CNPropertyDescription * _property;
+    id  _value;
 }
 
 @property (readonly) CNPropertyDescription *property;
 @property (readonly) id value;
 
-- (BOOL)applyToABPerson:(void*)arg1 withSaveContext:(id)arg2 error:(id*)arg3;
+- (BOOL)applyToABPerson:(void*)arg1 withPropertiesContext:(id)arg2 error:(id*)arg3;
 - (void)applyToMutableContact:(id)arg1 withIdentifierMap:(id)arg2;
 - (void)dealloc;
 - (id)description;

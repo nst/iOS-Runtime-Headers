@@ -3,7 +3,7 @@
  */
 
 @interface MCDNowPlayingNavigationController : UINavigationController {
-    UIViewController *_fakeViewController;
+    UIViewController * _fakeViewController;
 }
 
 @property (nonatomic, readonly) UIViewController *previousViewController;

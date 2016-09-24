@@ -3,7 +3,7 @@
  */
 
 @interface SKUIUberImageDataConsumer : SKUIImageDataConsumer {
-    UIColor *_backgroundColor;
+    UIColor * _backgroundColor;
 }
 
 @property (nonatomic, retain) UIColor *backgroundColor;

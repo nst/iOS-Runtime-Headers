@@ -3,8 +3,8 @@
  */
 
 @interface ODDLayoutVariablePropertySet : OADProperties {
-    int mDirection;
-    BOOL mHasDirection;
+    int  mDirection;
+    BOOL  mHasDirection;
 }
 
 + (id)defaultProperties;

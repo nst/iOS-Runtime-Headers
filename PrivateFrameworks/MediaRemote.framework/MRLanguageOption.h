@@ -3,11 +3,11 @@
  */
 
 @interface MRLanguageOption : NSObject <NSSecureCoding> {
-    NSString *_displayName;
-    NSString *_identifier;
-    NSArray *_languageOptionCharacteristics;
-    unsigned int _languageOptionType;
-    NSString *_languageTag;
+    NSString * _displayName;
+    NSString * _identifier;
+    NSArray * _languageOptionCharacteristics;
+    unsigned int  _languageOptionType;
+    NSString * _languageTag;
 }
 
 @property (nonatomic, readonly) NSString *displayName;

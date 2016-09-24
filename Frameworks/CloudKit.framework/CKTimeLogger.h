@@ -3,16 +3,16 @@
  */
 
 @interface CKTimeLogger : NSObject <NSCoding> {
-    NSMutableArray *_childLoggers;
-    NSMutableDictionary *_currentSessions;
-    NSMutableDictionary *_logs;
-    NSString *_observedObjectClassName;
-    NSString *_observedObjectDescription;
-    CKTimeLogger *_parentLogger;
-    NSString *_parentLoggerDescription;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSString *_relationMessage;
-    double _relationTime;
+    NSMutableArray * _childLoggers;
+    NSMutableDictionary * _currentSessions;
+    NSMutableDictionary * _logs;
+    NSString * _observedObjectClassName;
+    NSString * _observedObjectDescription;
+    CKTimeLogger * _parentLogger;
+    NSString * _parentLoggerDescription;
+    NSObject<OS_dispatch_queue> * _queue;
+    NSString * _relationMessage;
+    double  _relationTime;
 }
 
 @property (readonly) NSArray *childLoggers;
@@ -28,6 +28,7 @@
 + (id)loggerForObject:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)CKStatusReportArray;
 - (void)addChildLogger:(id)arg1;
 - (void)addCustomLogOfType:(id)arg1 message:(id)arg2 from:(double)arg3 to:(double)arg4;
 - (void)addLog:(id)arg1 forType:(id)arg2;
@@ -65,7 +66,6 @@
 - (void)setParentLoggerDescription:(id)arg1;
 - (void)setRelationMessage:(id)arg1;
 - (void)setRelationTime:(double)arg1;
-- (id)statusReport;
 - (void)togglePauseLoggingSessionOfType:(id)arg1 message:(id)arg2;
 - (void)treeTraversalWithBlock:(id /* block */)arg1;
 

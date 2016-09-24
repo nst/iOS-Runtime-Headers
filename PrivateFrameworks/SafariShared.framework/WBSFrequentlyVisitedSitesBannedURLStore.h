@@ -3,9 +3,9 @@
  */
 
 @interface WBSFrequentlyVisitedSitesBannedURLStore : NSObject {
-    NSMutableDictionary *_bannedURLStringsToEntriesMap;
-    NSObject<OS_dispatch_queue> *_storeQueue;
-    NSURL *_storeURL;
+    NSMutableDictionary * _bannedURLStringsToEntriesMap;
+    NSObject<OS_dispatch_queue> * _storeQueue;
+    NSURL * _storeURL;
 }
 
 - (void).cxx_destruct;

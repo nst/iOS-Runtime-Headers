@@ -7,13 +7,13 @@
         int *list; 
         unsigned int count; 
         unsigned int size; 
-    } _actions;
-    int _component;
-    BOOL _handleLocally;
+    }  _actions;
+    int  _component;
+    BOOL  _handleLocally;
     struct { 
         unsigned int component : 1; 
         unsigned int handleLocally : 1; 
-    } _has;
+    }  _has;
 }
 
 @property (nonatomic, readonly) int*actions;
@@ -23,12 +23,16 @@
 @property (nonatomic) BOOL hasComponent;
 @property (nonatomic) BOOL hasHandleLocally;
 
+- (int)StringAsActions:(id)arg1;
+- (int)StringAsComponent:(id)arg1;
 - (int*)actions;
+- (id)actionsAsString:(int)arg1;
 - (int)actionsAtIndex:(unsigned int)arg1;
 - (unsigned int)actionsCount;
 - (void)addActions:(int)arg1;
 - (void)clearActions;
 - (int)component;
+- (id)componentAsString:(int)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

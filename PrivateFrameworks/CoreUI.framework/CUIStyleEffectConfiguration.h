@@ -3,24 +3,36 @@
  */
 
 @interface CUIStyleEffectConfiguration : NSObject <NSCopying> {
-    BOOL _foregroundColorShouldTintEffects;
-    int _presentationState;
-    int _state;
-    BOOL _useSimplifiedEffect;
-    int _value;
+    double  _brightnessMultiplier;
+    unsigned int  _colorTemperature;
+    double  _effectScale;
+    BOOL  _foregroundColorShouldTintEffects;
+    int  _presentationState;
+    int  _state;
+    BOOL  _useSimplifiedEffect;
+    int  _value;
 }
 
+@property (nonatomic) double brightnessMultiplier;
+@property (nonatomic) unsigned int colorTemperature;
+@property (nonatomic) double effectScale;
 @property (nonatomic) BOOL foregroundColorShouldTintEffects;
 @property (nonatomic) int presentationState;
 @property (nonatomic) int state;
 @property (nonatomic) BOOL useSimplifiedEffect;
 @property (nonatomic) int value;
 
+- (float)brightnessMultiplier;
+- (unsigned int)colorTemperature;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (float)effectScale;
 - (BOOL)foregroundColorShouldTintEffects;
 - (id)init;
 - (int)presentationState;
+- (void)setBrightnessMultiplier:(float)arg1;
+- (void)setColorTemperature:(unsigned int)arg1;
+- (void)setEffectScale:(float)arg1;
 - (void)setForegroundColorShouldTintEffects:(BOOL)arg1;
 - (void)setPresentationState:(int)arg1;
 - (void)setState:(int)arg1;

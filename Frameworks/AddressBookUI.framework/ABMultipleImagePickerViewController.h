@@ -3,9 +3,9 @@
  */
 
 @interface ABMultipleImagePickerViewController : UITableViewController {
-    <ABMultipleSourceImagePickerDelegate> *_delegate;
-    NSMutableArray *_imageCellData;
-    unsigned int _selectedImageIndex;
+    <ABMultipleSourceImagePickerDelegate> * _delegate;
+    NSMutableArray * _imageCellData;
+    unsigned int  _selectedImageIndex;
 }
 
 @property (nonatomic) <ABMultipleSourceImagePickerDelegate> *delegate;

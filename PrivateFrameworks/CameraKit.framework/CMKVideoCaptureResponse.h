@@ -3,13 +3,13 @@
  */
 
 @interface CMKVideoCaptureResponse : CMKCaptureResponse {
-    short _assetSubtype;
-    BOOL _didCompleteUnexpectedly;
-    double _duration;
-    int _recordingStoppedReason;
-    BOOL _unplayable;
-    NSString *_videoCapturePath;
-    UIImage *_videoPreviewImage;
+    short  _assetSubtype;
+    BOOL  _didCompleteUnexpectedly;
+    double  _duration;
+    int  _recordingStoppedReason;
+    BOOL  _unplayable;
+    NSString * _videoCapturePath;
+    UIImage * _videoPreviewImage;
 }
 
 @property (nonatomic) short assetSubtype;

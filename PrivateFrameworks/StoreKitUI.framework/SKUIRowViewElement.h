@@ -3,7 +3,7 @@
  */
 
 @interface SKUIRowViewElement : SKUIViewElement {
-    NSString *_type;
+    NSString * _type;
 }
 
 @property (nonatomic, readonly) NSArray *columns;

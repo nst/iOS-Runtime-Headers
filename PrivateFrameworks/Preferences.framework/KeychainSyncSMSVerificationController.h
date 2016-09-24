@@ -3,11 +3,11 @@
  */
 
 @interface KeychainSyncSMSVerificationController : PSKeychainSyncTextEntryController <UIAlertViewDelegate> {
-    NSString *_countryCode;
-    NSString *_dialingPrefix;
-    UIButton *_footerButton;
-    PSKeychainSyncManager *_keychainSyncManager;
-    NSString *_phoneNumber;
+    NSString * _countryCode;
+    NSString * _dialingPrefix;
+    UIButton * _footerButton;
+    PSKeychainSyncManager * _keychainSyncManager;
+    NSString * _phoneNumber;
 }
 
 @property (nonatomic, retain) NSString *countryCode;
